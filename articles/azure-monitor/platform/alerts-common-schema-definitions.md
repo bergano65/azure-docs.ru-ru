@@ -5,16 +5,16 @@ author: ofirmanor
 ms.topic: conceptual
 ms.subservice: alerts
 ms.date: 03/14/2019
-ms.openlocfilehash: 2d3da9273651b23a80b0f5e2874581a744caf533
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5a1851b71ac017349ff131811d946ec2c077440b
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91330882"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92105997"
 ---
 # <a name="common-alert-schema-definitions"></a>Определения общей схемы оповещений
 
-В этой статье описываются [определения общей схемы оповещений](https://aka.ms/commonAlertSchemaDocs) для Azure Monitor, которые применяются для веб-перехватчиков, Azure Logic Apps, Функций Azure и последовательностей runbook службы автоматизации Azure. 
+В этой статье описываются [определения общей схемы оповещений](./alerts-common-schema.md) для Azure Monitor, которые применяются для веб-перехватчиков, Azure Logic Apps, Функций Azure и последовательностей runbook службы автоматизации Azure. 
 
 Любой экземпляр оповещения описывает затронутый ресурс и причину оповещения. Эти экземпляры описываются в следующих разделах, посвященных общей схеме.
 * **Основные компоненты.** Набор стандартизованных полей, общих для всех типов оповещений, которые описывают ресурс, для которого создано оповещение, и включают некоторые общие метаданные (например, уровень серьезности и описание). 
@@ -541,5 +541,5 @@ ms.locfileid: "91330882"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- См. сведения об [общей схеме оповещений](https://aka.ms/commonAlertSchemaDocs).
-- Узнайте, как [создать приложение логики, которое использует общую схему оповещений для обработки всех оповещений](./alerts-common-schema-integrations.md). 
+- См. сведения об [общей схеме оповещений](./alerts-common-schema.md).
+- Узнайте, как [создать приложение логики, которое использует общую схему оповещений для обработки всех оповещений](./alerts-common-schema-integrations.md).

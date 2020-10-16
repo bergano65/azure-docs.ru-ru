@@ -8,12 +8,12 @@ ms.date: 4/3/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: a1c679ca5a7ff08a4d2490f94548b34e4db49f4d
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 56696f138fbf58993e990e263d2fa8e490672bb6
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91966191"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92106303"
 ---
 # <a name="create-and-provision-a-simulated-iot-edge-device-with-a-virtual-tpm-on-windows"></a>Создание и инициализация имитации устройства IoT Edge с помощью виртуального доверенного платформенного модуля в Windows
 
@@ -97,7 +97,7 @@ ms.locfileid: "91966191"
    Deploy-IoTEdge
    ```
 
-1. На этом этапе в выходных данных может появиться запрос на перезапуск. Если да, перезагрузите устройство прямо сейчас. Когда устройство будет готово, снова запустите PowerShell от имени администратора.
+1. На этом этапе устройства IoT Core могут перезапускаться автоматически. На устройствах Windows 10 или Windows Server может появиться запрос на перезагрузку. Если да, перезагрузите устройство прямо сейчас. Когда устройство будет готово, снова запустите PowerShell от имени администратора.
 
 1. Команда **Initialize-IoTEdge** настраивает среду выполнения IoT Edge на вашем компьютере. По умолчанию при выполнении команды применяется подготовка вручную с помощью контейнеров Windows. Используйте `-Dps` флаг, чтобы использовать службу подготовки устройств вместо подготовки вручную.
 

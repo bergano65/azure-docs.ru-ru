@@ -4,12 +4,12 @@ description: Узнайте, как избежать проблем с прои�
 ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 02/25/2018
-ms.openlocfilehash: 7ce933511532fdb1bfb5189e5a900e87f3d83fa2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a305c692c63f278c4edc4240f7adf9de22b22c56
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88213972"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92106099"
 ---
 # <a name="manage-connections-in-azure-functions"></a>Управление подключениями в функциях Azure
 
@@ -103,7 +103,25 @@ public static async Task Run(string input)
     // Rest of function
 }
 ```
+При работе с функциями v3. x требуется Справочник функциям для Microsoft.Azure.DocУментдб. Core. Добавьте ссылку в код:
 
+```cs
+#r "Microsoft.Azure.DocumentDB.Core"
+```
+Кроме того, создайте файл с именем Function. proj для триггера и добавьте приведенное ниже содержимое.
+
+```cs
+
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.0</TargetFramework>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Azure.DocumentDB.Core" Version="2.12.0" />
+    </ItemGroup>
+</Project>
+
+```
 ### <a name="cosmosclient-code-example-javascript"></a>Пример кода Космосклиент (JavaScript)
 [Космосклиент](/javascript/api/@azure/cosmos/cosmosclient) подключается к экземпляру Azure Cosmos DB. В документации Azure Cosmos DB рекомендуется [использовать отдельный клиент Azure Cosmos DB в течении всего жизненного цикла приложения](../cosmos-db/performance-tips.md#sdk-usage). В следующем примере показан один шаблон в функции, чтобы это делать.
 
@@ -130,7 +148,7 @@ module.exports = async function (context) {
 > [!TIP]
 > Некоторые платформы данных, такие как Entity Framework, обычно получают строки подключения из раздела **ConnectionString** файла конфигурации. В этом случае необходимо добавить строки подключений базы данных SQL непосредственно в список функциональных настроек приложения **Строки подключения** и в [файл local.settings.json](functions-run-local.md#local-settings-file) в локальном проекте. Если вы создаете экземпляр [SqlConnection](/dotnet/api/system.data.sqlclient.sqlconnection?view=dotnet-plat-ext-3.1) в коде функции, вы должны сохранить значение строки подключения в **параметрах приложения** с другими соединениями.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о том, почему мы рекомендуем использовать статические клиенты, см. в разделе [неправильное антишаблонное создание экземпляра](/azure/architecture/antipatterns/improper-instantiation/).
 

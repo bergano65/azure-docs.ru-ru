@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 04/27/2020
 ms.author: mahender
 ms.custom: mvc
-ms.openlocfilehash: 440eb1f39284f8d99a8d6b9067b018c4a54fcd27
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d683ef92c4e8d11e9defbed5454e5849211bf8f7
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87083027"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92104756"
 ---
 # <a name="customize-an-http-endpoint-in-azure-functions"></a>Настройка конечной точки HTTP в функциях Azure
 
@@ -75,7 +75,7 @@ ms.locfileid: "87083027"
 Прокси-сервер может указывать на любой ресурс HTTP, например:
 - Функции Azure 
 - Приложения API в [службе приложений Azure](../app-service/overview.md).
-- Контейнеры Docker в [службе приложений под управлением Linux](../app-service/containers/app-service-linux-intro.md).
+- Контейнеры Docker в [службе приложений под управлением Linux](../app-service/overview.md#app-service-on-linux).
 - Любой другой размещенный API.
 
 Дополнительные сведения о прокси-серверах см. в статье [Работа с функцией "Прокси-серверы Функций Azure"].

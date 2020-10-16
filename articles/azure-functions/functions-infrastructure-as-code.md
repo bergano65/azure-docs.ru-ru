@@ -5,12 +5,12 @@ ms.assetid: d20743e3-aab6-442c-a836-9bcea09bfd32
 ms.topic: conceptual
 ms.date: 04/03/2019
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 56a68fca42bcab7642a5ebad953b59269a4d88a1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2403e3a4bfe7824659a9c34c407e55e6c56e6046
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89180649"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92107731"
 ---
 # <a name="automate-resource-deployment-for-your-function-app-in-azure-functions"></a>Автоматизация развертывания ресурсов приложения-функции для службы "Функции Azure"
 
@@ -516,7 +516,7 @@ ms.locfileid: "89180649"
 }
 ```
 
-Если вы [развертываете пользовательский образ контейнера](./functions-create-function-linux-custom-image.md), необходимо указать его с помощью `linuxFxVersion` и включить конфигурацию, позволяющую получать образ, как в [веб-приложение для контейнеров](../app-service/containers/index.yml). Кроме того, задайте `WEBSITES_ENABLE_APP_SERVICE_STORAGE` для значение `false` , так как содержимое приложения предоставляется в контейнере:
+Если вы [развертываете пользовательский образ контейнера](./functions-create-function-linux-custom-image.md), необходимо указать его с помощью `linuxFxVersion` и включить конфигурацию, позволяющую получать образ, как в [веб-приложение для контейнеров](../app-service/index.yml). Кроме того, задайте `WEBSITES_ENABLE_APP_SERVICE_STORAGE` для значение `false` , так как содержимое приложения предоставляется в контейнере:
 
 ```json
 {

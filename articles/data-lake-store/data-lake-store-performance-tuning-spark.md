@@ -6,12 +6,12 @@ ms.service: data-lake-store
 ms.topic: how-to
 ms.date: 12/19/2016
 ms.author: stewu
-ms.openlocfilehash: 7012808e4ebcd936f30aba767731e7888d92161f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 799a2d20513f331890bec0882fec852c462c5840
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85856922"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92108275"
 ---
 # <a name="performance-tuning-guidance-for-spark-on-hdinsight-and-azure-data-lake-storage-gen1"></a>Рекомендации по настройке производительности для Spark в HDInsight и Azure Data Lake Storage 1-го поколения
 
@@ -22,8 +22,8 @@ ms.locfileid: "85856922"
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 * **Учетная запись Azure Data Lake Storage 1-го поколения**. Инструкции по ее созданию см. в статье [Приступая к работе с Azure Data Lake Storage 1-го поколения](data-lake-store-get-started-portal.md)
 * **Кластер Azure HDInsight** с доступом к учетной записи Data Lake Storage 1-го поколения. Дополнительные сведения см. в статье [Создание кластеров HDInsight, использующих Data Lake Store, с помощью портала Azure](data-lake-store-hdinsight-hadoop-use-portal.md). Убедитесь, что вы включили удаленный рабочий стол для кластера.
-* **Работающий кластер Spark в Data Lake Storage 1-го поколения.** Дополнительные сведения см. в статье [Использование кластера HDInsight Spark для анализа данных в Data Lake Storage 1-го поколения](https://docs.microsoft.com/azure/hdinsight/hdinsight-apache-spark-use-with-data-lake-store).
-* **Рекомендации по настройке производительности для Data Lake Storage 1-го поколения**. Общие понятия производительности см. в разделе [Data Lake Storage 1-го поколения рекомендации по настройке производительности](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-performance-tuning-guidance) . 
+* **Работающий кластер Spark в Data Lake Storage 1-го поколения.** Дополнительные сведения см. в статье [Использование кластера HDInsight Spark для анализа данных в Data Lake Storage 1-го поколения](../hdinsight/spark/apache-spark-use-with-data-lake-store.md).
+* **Рекомендации по настройке производительности для Data Lake Storage 1-го поколения**. Общие понятия производительности см. в разделе [Data Lake Storage 1-го поколения рекомендации по настройке производительности](./data-lake-store-performance-tuning-guidance.md) . 
 
 ## <a name="parameters"></a>Параметры
 

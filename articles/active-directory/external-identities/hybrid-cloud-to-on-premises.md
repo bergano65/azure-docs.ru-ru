@@ -11,12 +11,12 @@ author: msmimart
 manager: celestedg
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 132711b4a3fc584261cd577b4b8f1d4fb13da09d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7eeafe41888163c27f583529bed1998f067e107f
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91819389"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92107629"
 ---
 # <a name="grant-b2b-users-in-azure-ad-access-to-your-on-premises-applications"></a>Предоставление пользователям B2B в Azure AD доступа к локальным приложениям
 
@@ -43,7 +43,7 @@ ms.locfileid: "91819389"
 - **Авторизация через объект пользователя B2B в локальном каталоге**. Приложение должно иметь возможность проверять права пользователей и правильно предоставлять им доступ к ресурсам. Встроенная проверка подлинности Windows и ограниченное делегирование Kerberos требуют наличия объекта пользователя в локальном каталоге Active Directory на Windows Server. Как описано в разделе [Принцип работы единого входа с применением KCD](../manage-apps/application-proxy-configure-single-sign-on-with-kcd.md#how-single-sign-on-with-kcd-works), прокси приложения использует этот объект пользователя для олицетворения пользователя и получения маркера Kerberos для приложения. 
 
    > [!NOTE]
-   > При настройке AD Application Proxy Azure убедитесь, что для **удостоверения делегированного входа** задано **имя участника-пользователя** (по умолчанию) для единого входа IWA.
+   > При настройке AD Application Proxy Azure убедитесь, что для **удостоверения делегированного входа** задано **имя участника-пользователя** (по умолчанию) в конфигурации единого входа для встроенной проверки подлинности Windows (IWA).
 
    При работе с пользователями B2B вы можете использовать два метода создания объектов для гостевых пользователей, которым нужна авторизации в локальном каталоге.
 
@@ -85,7 +85,7 @@ ms.locfileid: "91819389"
 
 Убедитесь, что вы правильно настроили клиентские лицензии (CAL) для внешних гостевых пользователей, которые обращаются к локальным приложениям. Дополнительные сведения см. в разделе "Лицензии External Connector" статьи [Клиентские лицензии и лицензии на управление](https://www.microsoft.com/licensing/product-licensing/client-access-license.aspx). Конкретные требования к лицензированию вы можете обсудить с представителем Microsoft или локальным торговым посредником.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Служба совместной работы Azure Active Directory B2B для гибридных организаций](hybrid-organizations.md)
 

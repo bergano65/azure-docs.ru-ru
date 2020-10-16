@@ -9,12 +9,12 @@ ms.author: jeanyd
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: fb628df5151f9124d7b7f319ff109ffca030ee90
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7fdc367e3db298b60dc9a15453d58a738c13274a
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91317350"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92108309"
 ---
 # <a name="create-an-azure-arc-enabled-postgresql-hyperscale-server-group"></a>Создание группы сервера с Гипермасштабированием PostgreSQL с поддержкой Azure Arc
 
@@ -130,7 +130,7 @@ azdata arc postgres endpoint list -n <server group name>
 ]
 ```
 
-Конечную точку экземпляра PostgreSQL можно использовать для подключения к группе PostgreSQL Scale Server из избранного средства:  [Azure Data Studio](https://aka.ms/getazuredatastudio), [Пгкли](https://www.pgcli.com/) PSQL, pgAdmin и т. д.
+Конечную точку экземпляра PostgreSQL можно использовать для подключения к группе PostgreSQL Scale Server из избранного средства:  [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio), [Пгкли](https://www.pgcli.com/) PSQL, pgAdmin и т. д.
 
 Если вы используете виртуальную машину Azure для тестирования, следуйте приведенным ниже инструкциям.
 
@@ -183,7 +183,7 @@ az network public-ip list -g azurearcvm-rg --query "[].{PublicIP:ipAddress}" -o 
 psql postgresql://postgres:<EnterYourPassword>@10.0.0.4:30655
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь с основными понятиями и руководствами по использованию службы "база данных Azure для PostgreSQL", чтобы распределить данные между несколькими узлами PostgreSQL, а также получить преимущества от всех возможностей службы "база данных Azure для PostgreSQL". :
     * [Узлы и таблицы](../../postgresql/concepts-hyperscale-nodes.md)

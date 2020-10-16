@@ -6,16 +6,16 @@ ms.service: data-lake-store
 ms.topic: how-to
 ms.date: 02/05/2018
 ms.author: jejiang
-ms.openlocfilehash: a99196cfad7abad38408c847a8a0b64ffe95fff5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7f251e6ba2d94c0fcede3387ac12461951de40f1
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85508798"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92108751"
 ---
 # <a name="manage-azure-data-lake-storage-gen1-resources-by-using-storage-explorer"></a>Управление ресурсами Azure Data Lake Storage 1-го поколения с помощью обозревателя службы хранилища
 
-[Azure Data Lake Storage 1-го поколения](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-overview) представляет собой службу для хранения больших объемов неструктурированных данных, например текстовых или двоичных. Вы можете получить доступ к данным из любого места через протоколы HTTP или HTTPS. Через Data Lake Storage 1-го поколения в обозревателе службы хранилища Azure вы можете получать доступ к данным и ресурсам Data Lake Storage 1-го поколения и другим сущностям Azure, например большим двоичным объектам и очередям, а также управлять ими. Теперь это средство можно использовать для управления всеми объектами Azure в одном месте.
+[Azure Data Lake Storage 1-го поколения](./data-lake-store-overview.md) представляет собой службу для хранения больших объемов неструктурированных данных, например текстовых или двоичных. Вы можете получить доступ к данным из любого места через протоколы HTTP или HTTPS. Через Data Lake Storage 1-го поколения в обозревателе службы хранилища Azure вы можете получать доступ к данным и ресурсам Data Lake Storage 1-го поколения и другим сущностям Azure, например большим двоичным объектам и очередям, а также управлять ими. Теперь это средство можно использовать для управления всеми объектами Azure в одном месте.
 
 Другое преимущество заключается в том, что вам не нужно разрешение в подписке для управления данными Data Lake Storage 1-го поколения. В обозревателе службы хранилища вы можете добавить путь Data Lake Storage 1-го поколения к узлу **Локальные и присоединенные**, пока действует соответствующее разрешение.
 
@@ -24,7 +24,7 @@ ms.locfileid: "85508798"
 Чтобы выполнить действия, описанные в этой статье, необходимо следующее.
 
 * Подписка Azure. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial).
-* Учетная запись Data Lake Storage 1-го поколения. За инструкциями по созданию учетной записи обращайтесь к статье [Начало работы с Azure Data Lake Storage 1-го поколения](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-get-started-portal).
+* Учетная запись Data Lake Storage 1-го поколения. За инструкциями по созданию учетной записи обращайтесь к статье [Начало работы с Azure Data Lake Storage 1-го поколения](./data-lake-store-get-started-portal.md).
 
 ## <a name="install-storage-explorer"></a>Установка Обозревателя службы хранилища
 
@@ -195,7 +195,7 @@ ms.locfileid: "85508798"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Последние заметки о выпуске Обозревателя службы хранилищ и связанные с ним видео см. [здесь](https://www.storageexplorer.com).
-* Узнайте, как [управлять Azure Cosmos DB в обозреватель службы хранилища Azure](https://docs.microsoft.com/azure/cosmos-db/storage-explorer).
-* Приступая [к работе с обозреватель службы хранилища](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer).
-* [Начало работы с Azure Data Lake Storage 1-го поколения](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-overview).
+* Узнайте, как [управлять Azure Cosmos DB в обозреватель службы хранилища Azure](../cosmos-db/storage-explorer.md).
+* Приступая [к работе с обозреватель службы хранилища](../vs-azure-tools-storage-manage-with-storage-explorer.md).
+* [Начало работы с Azure Data Lake Storage 1-го поколения](./data-lake-store-overview.md).
 * Просмотрите видео на сайте [YouTube](https://www.youtube.com/watch?v=iNIbg1DLgWo&feature=youtu.be), чтобы узнать, как использовать Azure Cosmos DB в Обозревателе службы хранилища Azure.

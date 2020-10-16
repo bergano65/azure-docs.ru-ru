@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 09/02/2020
-ms.openlocfilehash: ab37fcdb4012394f1c5131a23f7c67063d3d6e37
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: de9623eb0eb14957c1554b7b0f74baa256a15d47
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91825755"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92108394"
 ---
 # <a name="overview-of-azure-monitor-agents"></a>Общие сведения об агентах Azure Monitor
 
@@ -60,7 +60,7 @@ ms.locfileid: "91825755"
 - Отправка данных в журналы Azure Monitor и Azure Monitor метрики для анализа с помощью Azure Monitor. 
 - Отправка данных в службу хранилища Azure для архивирования.
 - Отправка данных сторонним средствам с помощью [концентраторов событий Azure](diagnostics-extension-stream-event-hubs.md).
-- Управляйте безопасностью виртуальных машин с помощью [центра безопасности Azure](../../security-center/security-center-intro.md)  или [Sentinel Azure](../../sentinel/overview.md). (Недоступно в предварительной версии.)
+- Управляйте безопасностью виртуальных машин с помощью [центра безопасности Azure](../../security-center/security-center-introduction.md)  или [Sentinel Azure](../../sentinel/overview.md). (Недоступно в предварительной версии.)
 
 К ограничениям агента Azure Monitor относятся:
 
@@ -81,7 +81,7 @@ ms.locfileid: "91825755"
 * Собирайте журналы и данные о производительности виртуальных или физических компьютеров внутри или за пределами Azure. 
 * Отправляйте данные в рабочую область Log Analytics, чтобы воспользоваться преимуществами функций, поддерживаемых [Azure Monitor журналами](data-platform-logs.md) , такими как [запросы журналов](../log-query/log-query-overview.md).
 * Используйте [Azure Monitor для виртуальных машин](../insights/vminsights-overview.md) , которая позволяет отслеживать масштаб виртуальных машин и отслеживает их процессы и зависимости от других ресурсов и внешних процессов.  
-* Управляйте безопасностью виртуальных машин с помощью [центра безопасности Azure](../../security-center/security-center-intro.md)  или [Sentinel Azure](../../sentinel/overview.md).
+* Управляйте безопасностью виртуальных машин с помощью [центра безопасности Azure](../../security-center/security-center-introduction.md)  или [Sentinel Azure](../../sentinel/overview.md).
 * Использование [управления обновлениями службы автоматизации](../../automation/update-management/update-mgmt-overview.md)Azure, [настройки состояния службы автоматизации](../../automation/automation-dsc-overview.md)Azure или [Отслеживание изменений и инвентаризации Azure Automation](../../automation/change-tracking.md) для предоставления комплексного управления виртуальными машинами Azure
 * Используйте различные [решения](../monitor-reference.md#insights-and-core-solutions) для мониторинга определенной службы или приложения.
 
@@ -205,11 +205,10 @@ ms.locfileid: "91825755"
 | Debian                          | 9      | 4.9  | 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о каждом из агентов см. в следующих статьях:
 
 - [Общие сведения об агенте Log Analytics](log-analytics-agent.md)
 - [Общие сведения о расширении "Диагностика Azure"](diagnostics-extension-overview.md)
 - [Сбор пользовательских метрик для виртуальной машины Linux с помощью агента Telegraf InfluxData](collect-custom-metrics-linux-telegraf.md)
-

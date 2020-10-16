@@ -9,18 +9,18 @@ ms.topic: conceptual
 ms.reviewer: veyalla
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: df904e183d3f77751d86d0cefab5423d753f146b
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: b6f4e50cac2f809172c2525ea9136a63e6bd9066
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91979793"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92107017"
 ---
-# <a name="access-built-in-metrics"></a>Доступ ко встроенным метрикам
+# <a name="access-built-in-metrics"></a>Доступ к встроенным метрикам
 
 Компоненты среды выполнения IoT Edge, центр IoT Edge и агент IoT Edge создают встроенные метрики в [формате демонстрации Prometheus](https://prometheus.io/docs/instrumenting/exposition_formats/). Удаленный доступ к этим метрикам для отслеживания работоспособности IoT Edge устройства.
 
-Начиная с выпуска 1.0.10, метрики автоматически предоставляются по умолчанию через **порт 9600** модулей **edgeHub** и **edgeAgent** ( `http://edgeHub:9600/metrics` и `http://edgeAgent:9600/metics` ). По умолчанию они не сопоставляются с узлом.
+Начиная с выпуска 1.0.10, метрики автоматически предоставляются по умолчанию через **порт 9600** модулей **edgeHub** и **edgeAgent** ( `http://edgeHub:9600/metrics` и `http://edgeAgent:9600/metrics` ). По умолчанию они не сопоставляются с узлом.
 
 Получите доступ к метрикам с узла, предоставив и сопоставляя порт метрик из модуля `createOptions` . Приведенный ниже пример сопоставляет порт метрик по умолчанию с портом 9601 на узле:
 

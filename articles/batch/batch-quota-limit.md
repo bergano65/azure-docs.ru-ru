@@ -4,12 +4,12 @@ description: Узнайте о квотах по умолчанию, лимит�
 ms.topic: conceptual
 ms.date: 06/03/2020
 ms.custom: seodec18
-ms.openlocfilehash: 4c13df8b537d701400a22cd2871e7f8362f02455
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8ca08d43f07633b58cf6f7067c1a8fcd58350678
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84417282"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92107544"
 ---
 # <a name="batch-service-quotas-and-limits"></a>Квоты и ограничения пакетной службы
 
@@ -125,7 +125,7 @@ ms.locfileid: "84417282"
 
 В пулах пакетной службы в конфигурации виртуальной машины, развернутой в виртуальной сети Azure, дополнительные сетевые ресурсы Azure выделяются автоматически. На каждые 50 узлов пула в виртуальной сети требуются следующие ресурсы:
 
-- Одна [группа безопасности сети](../virtual-network/security-overview.md#network-security-groups)
+- Одна [группа безопасности сети](../virtual-network/network-security-groups-overview.md#network-security-groups)
 - Один [общедоступный IP-адрес](../virtual-network/public-ip-addresses.md)
 - Одна [подсистема балансировки нагрузки](../load-balancer/load-balancer-overview.md)
 

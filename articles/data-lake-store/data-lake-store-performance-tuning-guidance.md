@@ -6,12 +6,12 @@ ms.service: data-lake-store
 ms.topic: conceptual
 ms.date: 06/30/2017
 ms.author: stewu
-ms.openlocfilehash: d18440b27d9429a2638a58be40e1ec583b9a85ad
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4c9cb1d0496fe05c208cfd446a51cbf4ef8e8d4e
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88190251"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92108615"
 ---
 # <a name="tune-azure-data-lake-storage-gen1-for-performance"></a>Настройка Azure Data Lake Storage 1-го поколения для повышения производительности
 
@@ -39,15 +39,15 @@ Data Lake Storage 1-го поколения можно масштабирова�
 
 ### <a name="configure-data-ingestion-tools-for-maximum-parallelization"></a>Настройка средств приема данных для обеспечения максимальной параллелизации
 
-После того как решено устранить узкие места в оборудовании и сетевом подключении, можно приступать к настройке средств приема. В следующей таблице перечислены ключевые параметры нескольких популярных средств приема и предоставлены подробные статьи по настройке производительности для них. Дополнительные сведения о выборе подходящего средства для вашего сценария см. в [этой статье](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-data-scenarios).
+После того как решено устранить узкие места в оборудовании и сетевом подключении, можно приступать к настройке средств приема. В следующей таблице перечислены ключевые параметры нескольких популярных средств приема и предоставлены подробные статьи по настройке производительности для них. Дополнительные сведения о выборе подходящего средства для вашего сценария см. в [этой статье](./data-lake-store-data-scenarios.md).
 
 | Средство          | Параметры | Дополнительные сведения                                                                 |
 |--------------------|------------------------------------------------------|------------------------------|
-| PowerShell;       | PerFileThreadCount, ConcurrentFileCount | [Ссылка](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-get-started-powershell) |
-| AdlCopy    | Единицы измерения Azure Data Lake Analytics | [Ссылка](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-copy-data-azure-storage-blob#performance-considerations-for-using-adlcopy)         |
-| DistCp            | -m (mapper) | [Ссылка](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-copy-data-wasb-distcp#performance-considerations-while-using-distcp)                             |
+| PowerShell;       | PerFileThreadCount, ConcurrentFileCount | [Ссылка](./data-lake-store-get-started-powershell.md) |
+| AdlCopy    | Единицы измерения Azure Data Lake Analytics | [Ссылка](./data-lake-store-copy-data-azure-storage-blob.md#performance-considerations-for-using-adlcopy)         |
+| DistCp            | -m (mapper) | [Ссылка](./data-lake-store-copy-data-wasb-distcp.md#performance-considerations-while-using-distcp)                             |
 | Фабрика данных Azure| parallelCopies | [Ссылка](../data-factory/copy-activity-performance.md)                          |
-| Sqoop           | fs.azure.block.size, -m (mapper) | [Ссылка](https://docs.microsoft.com/archive/blogs/shanyu/performance-tuning-for-hdinsight-storm-and-microsoft-azure-eventhubs)        |
+| Sqoop           | fs.azure.block.size, -m (mapper) | [Ссылка](/archive/blogs/shanyu/performance-tuning-for-hdinsight-storm-and-microsoft-azure-eventhubs)        |
 
 ## <a name="structure-your-data-set"></a>Структура набора данных
 
@@ -131,7 +131,7 @@ Data Lake Storage 1-го поколения можно масштабирова�
 | [MapReduce в HDInsight](data-lake-store-performance-tuning-mapreduce.md)            | <ul><li>Mapreduce.map.memory</li><li>Mapreduce.job.maps</li><li>Mapreduce.reduce.memory</li><li>Mapreduce.job.reduces</li></ul> |
 | [Storm в HDInsight](data-lake-store-performance-tuning-storm.md)| <ul><li>Количество рабочих процессов</li><li>Количество экземпляров исполнителей воронки</li><li>Количество экземпляров исполнителей сита </li><li>Количество задач воронки</li><li>Количество задач сита</li></ul>|
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 * [Общие сведения об Azure Data Lake Storage Gen1](data-lake-store-overview.md)
 * [Начало работы с аналитикой озера данных Azure](../data-lake-analytics/data-lake-analytics-get-started-portal.md)
