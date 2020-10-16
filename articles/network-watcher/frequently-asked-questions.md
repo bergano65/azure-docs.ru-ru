@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/10/2019
 ms.author: damendo
-ms.openlocfilehash: b48aab918b477f5c689a50ca476b0b1336642f0f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fd23dff3f60ab52a82633b9876b67c628a8e2dc7
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "77471862"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92123533"
 ---
 # <a name="frequently-asked-questions-faq-about-azure-network-watcher"></a>Часто задаваемые вопросы о наблюдателе за сетями Azure
 Служба [наблюдателя за сетями Azure](https://docs.microsoft.com/azure/network-watcher/network-watcher-monitoring-overview) предоставляет набор средств для мониторинга, диагностики, просмотра метрик и включения или отключения журналов для ресурсов в виртуальной сети Azure. В этой статье содержатся ответы на часто задаваемые вопросы о службе.
@@ -80,6 +80,14 @@ ms.locfileid: "77471862"
 
 ### <a name="how-can-i-manage-the-network-watcher-resource"></a>Как можно управлять ресурсом наблюдателя за сетями? 
 Ресурс наблюдателя за сетями представляет серверную службу для наблюдателя за сетями и полностью управляемая Azure. Клиентам не нужно управлять им. Такие операции, как перемещение, не поддерживаются в ресурсе. Однако [ресурс можно удалить](https://docs.microsoft.com/azure/network-watcher/network-watcher-create#delete-a-network-watcher-in-the-portal). 
+
+## <a name="service-availability-and-redundancy"></a>Доступность и избыточность службы 
+
+### <a name="is-the-network-watcher-service-zone-resilient"></a>Устойчива ли зона службы наблюдателя за сетями? 
+Да. По умолчанию служба наблюдателя за сетями является отказоустойчивой по зонам. 
+
+### <a name="how-do-i-configure-the-network-watcher-service-to-be-zone-resilient"></a>Разделы справки настроить службу наблюдателя за сетями как устойчивую к зонам? 
+Для обеспечения отказоустойчивости зоны не требуется настраивать клиент. Отказоустойчивость зоны для ресурсов наблюдателя за сетями доступна по умолчанию и управляется самой службой. 
 
 ## <a name="nsg-flow-logs"></a>Журналы потоков NSG
 

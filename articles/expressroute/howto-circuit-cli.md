@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 10/05/2020
 ms.author: duau
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: eebb2693d3bc0f65059c6c3c377f1afb7ae7eccd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a1d50c3f8f94fbfd7dbcb9b25e051b7f2951c518
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91757611"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91969098"
 ---
 # <a name="quickstart-create-and-modify-an-expressroute-circuit-using-azure-cli"></a>Краткое руководство. Создание и изменение канала ExpressRoute с помощью Azure CLI
 
@@ -347,7 +347,7 @@ az network express-route update -n MyCircuit -g ExpressRouteResourceGroup --sku-
 * Если подготовка поставщика услуг канала ExpressRoute находится в состоянии **Идет подготовка** или **Подготовлено** то свяжитесь с поставщиком услуг, чтобы отозвать канал с его стороны. Мы будем резервировать ресурсы и выставлять вам счета до тех пор, пока поставщик услуг не завершит отзыв канала и не отправит нам соответствующее уведомление.
 * Когда поставщик услуг отзовет канал (состояние подготовки поставщика услуг изменится на **Не подготовлено**), вы сможете удалить этот канал. Выставление счетов за этот канал будет приостановлено.
 
-## <a name="clean-up-resources"></a><a name="cleanup"></a>Очистка ресурсов
+## <a name="clean-up-resources"></a>Очистка ресурсов
 
 Для удаления канала ExpressRoute выполните следующую команду:
 
@@ -355,7 +355,7 @@ az network express-route update -n MyCircuit -g ExpressRouteResourceGroup --sku-
 az network express-route delete  -n MyCircuit -g ExpressRouteResourceGroup
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Когда вы вместе с поставщиком создадите и подготовите канал, перейдите к следующему шагу, чтобы настроить пиринг:
 

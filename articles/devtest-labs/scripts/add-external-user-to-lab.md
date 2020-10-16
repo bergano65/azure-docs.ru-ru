@@ -1,14 +1,14 @@
 ---
-title: PowerShell. Добавление внешнего пользователя в лабораторию в Azure DevTest Labs
-description: В этой статье представлен сценарий Azure PowerShell, который добавляет внешнего пользователя в лабораторию в Azure DevTest Labs.
+title: Добавление внешнего пользователя в лабораторию в Azure DevTest Labs — PowerShell
+description: В этой статье представлен скрипт Azure PowerShell, который добавляет внешнего пользователя в лабораторию в Azure DevTest Labs.
 ms.devlang: azurecli
 ms.topic: sample
 ms.date: 08/11/2020
 ms.openlocfilehash: 76fbb5e4d7f5db39a0aadba9098ebf1064b3cda5
-ms.sourcegitcommit: 1aef4235aec3fd326ded18df7fdb750883809ae8
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88136227"
 ---
 # <a name="use-powershell-to-add-an-external-user-to-a-lab-in-azure-devtest-labs"></a>Добавление внешнего пользователя в лабораторию в Azure DevTest Labs с помощью PowerShell
@@ -19,7 +19,7 @@ ms.locfileid: "88136227"
 
 [!INCLUDE [sample-powershell-install](../../../includes/sample-powershell-install-no-ssh.md)]
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 * **Лаборатория.** Этот сценарий требует наличия лаборатории. 
 
 ## <a name="sample-script"></a>Пример скрипта
@@ -32,7 +32,7 @@ ms.locfileid: "88136227"
 
 | Get-Help | Примечания |
 |---|---|
-| [Get-Азадусер](/powershell/module/az.resources/get-azaduser) | Извлекает объект-пользователь из Azure Active Directory. |
+| [Get-AzADUser](/powershell/module/az.resources/get-azaduser) | Извлекает объект-пользователь из Azure Active Directory. |
 | [New-AzRoleAssignment](/powershell/module/az.resources/new-azroleassignment) | Присваивает указанную роль заданному субъекту в определенной области. |
 
 ## <a name="next-steps"></a>Дальнейшие действия

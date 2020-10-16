@@ -8,12 +8,12 @@ ms.subservice: disk
 ms.topic: article
 ms.date: 11/05/2019
 ms.author: alkohli
-ms.openlocfilehash: cb2654c2854692d120cf6dea7fa8fb901e14688e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fb0e56c5eeebb4f3a869feacb996d690ea7dde86
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86203518"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92124175"
 ---
 # <a name="azure-data-box-disk-limits"></a>Ограничения для Диска Azure Data Box
 
@@ -35,9 +35,9 @@ ms.locfileid: "86203518"
 
 Актуальные сведения об ограничениях службы хранилища Azure и рекомендациях по именованию общих папок, контейнеров и файлов см. в следующих статьях:
 
-- [Именование контейнеров и ссылка на них](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata)
-- [Именование общих папок и ссылка на них](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata)
-- [Блочные BLOB-объекты и соглашения о страничных объектах](https://docs.microsoft.com/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs)
+- [Именование контейнеров и ссылка на них](/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata)
+- [Именование общих папок и ссылка на них](/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata)
+- [Блочные BLOB-объекты и соглашения о страничных объектах](/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs)
 
 > [!IMPORTANT]
 > Если имеются любые файлы или каталоги, превышающие ограничения службы хранилища Azure или несоответствующие соглашениям об именовании файлов и BLOB-объектов Azure, они не направляются в службу хранилища Azure через службу Data Box.
@@ -64,7 +64,7 @@ ms.locfileid: "86203518"
 
 | Тип данных             | Ограничение по умолчанию          |
 |--------------------------|------------------------|
-| блочный большой двоичный объект, страничный BLOB-объект    | Текущие сведения об этих ограничениях см. в статье целевые [объекты масштабирования хранилища BLOB-объектов Azure](https://docs.microsoft.com/azure/storage/blobs/scalability-targets#scale-targets-for-blob-storage), целевые [объекты масштабирования хранилища Azure](https://docs.microsoft.com/azure/storage/common/scalability-targets-standard-account#scale-targets-for-standard-storage-accounts)уровня "Стандартный" и [целевое устройство масштабирования файлов Azure](https://docs.microsoft.com/azure/storage/files/storage-files-scale-targets#file-share-and-file-scale-targets). <br /><br /> К ограничениям относятся данные из всех источников, включая Диск Data Box.|
+| блочный большой двоичный объект, страничный BLOB-объект    | Текущие сведения об этих ограничениях см. в статье целевые [объекты масштабирования хранилища BLOB-объектов Azure](../storage/blobs/scalability-targets.md#scale-targets-for-blob-storage), целевые [объекты масштабирования хранилища Azure](../storage/common/scalability-targets-standard-account.md#scale-targets-for-standard-storage-accounts)уровня "Стандартный" и [целевое устройство масштабирования файлов Azure](../storage/files/storage-files-scale-targets.md#file-share-and-file-scale-targets). <br /><br /> К ограничениям относятся данные из всех источников, включая Диск Data Box.|
 
 
 ## <a name="azure-object-size-limits"></a>Ограничения размера для объектов Azure
@@ -93,6 +93,6 @@ ms.locfileid: "86203518"
 |-------------------|-----------------------------------------------------------|
 | Имена управляемых дисков       | <li> Длина имени должна составлять от 1 до 80 символов. </li><li> Имя должно начинаться с буквы или цифры, заканчиваться буквой, цифрой или символом подчеркивания. </li><li> Имя может содержать только буквы, цифры, символы подчеркивания, точки или дефисы. </li><li>   Имя не должно содержать пробелы или `/` .                                              |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Проверка [диск Data Box требования к системе](data-box-disk-system-requirements.md)

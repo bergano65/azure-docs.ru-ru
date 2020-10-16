@@ -11,12 +11,12 @@ author: shkale-msft
 ms.author: shkale
 ms.reviewer: mathoma, stevestein, danil
 ms.date: 10/05/2020
-ms.openlocfilehash: 43551ca17180cbb3614c670490a19aeaae6c7701
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: be40cd4a0bef43d81c792fd10508014f5b886fba
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91728664"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92124192"
 ---
 # <a name="automated-backups---azure-sql-database--sql-managed-instance"></a>Автоматическое резервное копирование базы данных SQL Azure & SQL Управляемый экземпляр
 
@@ -50,7 +50,7 @@ ms.locfileid: "91728664"
 > Хранилище, избыточное в виде зоны, в настоящее время доступно только в [определенных регионах](../../storage/common/storage-redundancy.md#zone-redundant-storage). 
 
 > [!NOTE]
-> Настраиваемая избыточность хранилища резервных копий для базы данных SQL Azure в настоящее время доступна в общедоступной предварительной версии в регионе Azure Юго-Восточной Азии. Эта функция пока недоступна для уровня "горизонтальный". 
+> Настраиваемая избыточность хранилища резервных копий для базы данных SQL Azure в настоящее время доступна только в регионе Azure Юго-Восточной Азии. Эта функция пока недоступна для уровня "горизонтальный". 
 
 ### <a name="backup-usage"></a>Использование резервного копирования
 

@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: troubleshooting
 ms.date: 09/10/2020
 ms.author: alkohli
-ms.openlocfilehash: 2a40e908677a173862ad715f7024865ff728d0b9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bb70946fda4fad7a42fd885a2515cb0d82698eca
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90053459"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92124685"
 ---
 # <a name="troubleshoot-issues-related-to-azure-data-box-and-azure-data-box-heavy"></a>Устранение неполадок, связанных с Azure Data Box и Azure Data Box Heavy
 
@@ -27,10 +27,10 @@ ms.locfileid: "90053459"
 
 | Категория ошибки *        | Описание        | Рекомендованное действие    |
 |----------------------------------------------|---------|--------------------------------------|
-| Имя контейнера или общего ресурса | Имена контейнера или общего ресурса не соответствуют правилам именования Azure.  |Скачайте списки ошибок. <br> Переименуйте контейнеры или общие папки. [Подробнее.](#container-or-share-name-errors)  |
-| Ограничение размера контейнера или общего ресурса | Общий объем данных в контейнерах или общих ресурсах превышает предел в Azure.   |Скачайте списки ошибок. <br> Сократите общие данные в контейнере или общей папке. [Подробнее.](#container-or-share-size-limit-errors)|
-| Предельный размер объекта или файла | Объект или файлы в контейнерах или общих папках превышают предел в Azure.|Скачайте списки ошибок. <br> Уменьшите размер файла в контейнере или в общей папке. [Подробнее.](#object-or-file-size-limit-errors) |    
-| Тип данных или файла | Формат данных или тип файла не поддерживаются. |Скачайте списки ошибок. <br> Для страничных BLOB-объектов или управляемых дисков убедитесь, что данные находятся в 512-байтах и скопированы в предварительно созданные папки. [Подробнее.](#data-or-file-type-errors) |
+| Имя контейнера или общего ресурса | Имена контейнера или общего ресурса не соответствуют правилам именования Azure.  |Скачайте списки ошибок. <br> Переименуйте контейнеры или общие папки. [Подробнее](#container-or-share-name-errors).  |
+| Ограничение размера контейнера или общего ресурса | Общий объем данных в контейнерах или общих ресурсах превышает предел в Azure.   |Скачайте списки ошибок. <br> Сократите общие данные в контейнере или общей папке. [Подробнее](#container-or-share-size-limit-errors).|
+| Предельный размер объекта или файла | Объект или файлы в контейнерах или общих папках превышают предел в Azure.|Скачайте списки ошибок. <br> Уменьшите размер файла в контейнере или в общей папке. [Подробнее](#object-or-file-size-limit-errors). |    
+| Тип данных или файла | Формат данных или тип файла не поддерживаются. |Скачайте списки ошибок. <br> Для страничных BLOB-объектов или управляемых дисков убедитесь, что данные находятся в 512-байтах и скопированы в предварительно созданные папки. [Подробнее](#data-or-file-type-errors). |
 | Некритические ошибки BLOB-объекта или файла  | Имена BLOB-объектов или файлов не соответствуют правилам именования Azure, или тип файла не поддерживается. | Эти большие двоичные объекты или файлы не могут быть скопированы, или имена могут быть изменены. [Узнайте, как устранить эти ошибки](#non-critical-blob-or-file-errors). |
 
 \* Первые четыре категории ошибок являются критическими и должны быть исправлены, прежде чем можно будет приступить к подготовке к отправке.
@@ -56,7 +56,7 @@ ms.locfileid: "90053459"
     - Примеры допустимых имен: `my-folder-1` , `my-really-extra-long-folder-111`
     - Примеры недопустимых имен: `my-folder_1` , `my` , `--myfolder` , `myfolder--` , `myfolder!`
 
-    Дополнительные сведения см. в разделе соглашения об именовании Azure для [имен контейнеров](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata#container-names) и [общих имен](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata#share-names).
+    Дополнительные сведения см. в разделе соглашения об именовании Azure для [имен контейнеров](/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata#container-names) и [общих имен](/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata#share-names).
 
 
 ### <a name="error_container_or_share_name_alpha_numeric_dash"></a>ERROR_CONTAINER_OR_SHARE_NAME_ALPHA_NUMERIC_DASH
@@ -75,7 +75,7 @@ ms.locfileid: "90053459"
     - Примеры допустимых имен: `my-folder-1` , `my-really-extra-long-folder-111`
     - Примеры недопустимых имен: `my-folder_1` , `my` , `--myfolder` , `myfolder--` , `myfolder!`
 
-    Дополнительные сведения см. в разделе соглашения об именовании Azure для [имен контейнеров](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata#container-names) и [общих имен](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata#share-names).
+    Дополнительные сведения см. в разделе соглашения об именовании Azure для [имен контейнеров](/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata#container-names) и [общих имен](/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata#share-names).
 
 ### <a name="error_container_or_share_name_improper_dash"></a>ERROR_CONTAINER_OR_SHARE_NAME_IMPROPER_DASH
 
@@ -93,7 +93,7 @@ ms.locfileid: "90053459"
     - Примеры допустимых имен: `my-folder-1` , `my-really-extra-long-folder-111`
     - Примеры недопустимых имен: `my-folder_1` , `my` , `--myfolder` , `myfolder--` , `myfolder!`
 
-    Дополнительные сведения см. в разделе соглашения об именовании Azure для [имен контейнеров](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata#container-names) и [общих имен](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata#share-names).
+    Дополнительные сведения см. в разделе соглашения об именовании Azure для [имен контейнеров](/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata#container-names) и [общих имен](/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata#share-names).
     
 ### <a name="error_file_or_directory_name_illegal"></a>ERROR_FILE_OR_DIRECTORY_NAME_ILLEGAL
 
@@ -104,7 +104,7 @@ ms.locfileid: "90053459"
 - На странице Подключение и копирование локального веб-интерфейса Скачайте и проверьте файлы ошибок, чтобы найти имена папок с проблемами. 
 - Переименуйте каталог или контейнеры, чтобы убедиться, что они соответствуют соглашениям об именовании Azure.
 
-Дополнительные сведения см. в разделе соглашения об именовании Azure для [каталогов](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata#directory-and-file-names)   и [контейнеров](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata#container-names).
+Дополнительные сведения см. в разделе соглашения об именовании Azure для [каталогов](/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata#directory-and-file-names)   и [контейнеров](/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata#container-names).
 
 ## <a name="container-or-share-size-limit-errors"></a>Ошибки ограничения размера контейнера или общего ресурса
 
@@ -190,7 +190,7 @@ ms.locfileid: "90053459"
 На странице **подключение и копирование** локального веб-интерфейса Скачайте и проверьте файлы ошибок.
 Удалите или переименуйте файлы, чтобы удалить неподдерживаемые символы.
 
-Дополнительные сведения см. в разделе соглашения об именовании в Azure для [имен больших двоичных объектов](https://docs.microsoft.com/rest/api/storageservices/Naming-and-Referencing-Containers--Blobs--and-Metadata#blob-names) и [имен файлов](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata#directory-and-file-names).
+Дополнительные сведения см. в разделе соглашения об именовании в Azure для [имен больших двоичных объектов](/rest/api/storageservices/Naming-and-Referencing-Containers--Blobs--and-Metadata#blob-names) и [имен файлов](/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata#directory-and-file-names).
 
 ### <a name="error_blob_or_file_name_character_illegal"></a>ERROR_BLOB_OR_FILE_NAME_CHARACTER_ILLEGAL
 
@@ -201,7 +201,7 @@ ms.locfileid: "90053459"
 На странице **подключение и копирование** локального веб-интерфейса Скачайте и проверьте файлы ошибок.
 Удалите или переименуйте файлы, чтобы удалить неподдерживаемые символы.
 
-Дополнительные сведения см. в разделе соглашения об именовании в Azure для [имен больших двоичных объектов](https://docs.microsoft.com/rest/api/storageservices/Naming-and-Referencing-Containers--Blobs--and-Metadata#blob-names) и [имен файлов](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata#directory-and-file-names).
+Дополнительные сведения см. в разделе соглашения об именовании в Azure для [имен больших двоичных объектов](/rest/api/storageservices/Naming-and-Referencing-Containers--Blobs--and-Metadata#blob-names) и [имен файлов](/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata#directory-and-file-names).
 
 
 ### <a name="error_blob_or_file_name_ending"></a>ERROR_BLOB_OR_FILE_NAME_ENDING
@@ -213,7 +213,7 @@ ms.locfileid: "90053459"
 На странице **подключение и копирование** локального веб-интерфейса Скачайте и проверьте файлы ошибок.
 Удалите или переименуйте файлы, чтобы удалить неподдерживаемые символы.
 
-Дополнительные сведения см. в разделе соглашения об именовании в Azure для [имен больших двоичных объектов](https://docs.microsoft.com/rest/api/storageservices/Naming-and-Referencing-Containers--Blobs--and-Metadata#blob-names) и [имен файлов](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata#directory-and-file-names).
+Дополнительные сведения см. в разделе соглашения об именовании в Azure для [имен больших двоичных объектов](/rest/api/storageservices/Naming-and-Referencing-Containers--Blobs--and-Metadata#blob-names) и [имен файлов](/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata#directory-and-file-names).
 
 
 ### <a name="error_blob_or_file_name_segment_count"></a>ERROR_BLOB_OR_FILE_NAME_SEGMENT_COUNT
@@ -223,7 +223,7 @@ ms.locfileid: "90053459"
 **Предлагаемое решение:** Большие двоичные объекты или файлы, которые вы скопировали, превышают максимальное число сегментов пути. Сегмент пути — это строка между последовательными символами-разделителями, например косой чертой/.
 
 - На странице **подключение и копирование** локального веб-интерфейса Скачайте и проверьте файлы ошибок.
-- Убедитесь, что [имена больших двоичных объектов](https://docs.microsoft.com/rest/api/storageservices/Naming-and-Referencing-Containers--Blobs--and-Metadata#blob-names) и [файлов](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata#directory-and-file-names) соответствуют соглашениям об именовании Azure.
+- Убедитесь, что [имена больших двоичных объектов](/rest/api/storageservices/Naming-and-Referencing-Containers--Blobs--and-Metadata#blob-names) и [файлов](/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata#directory-and-file-names) соответствуют соглашениям об именовании Azure.
 
 ### <a name="error_blob_or_file_name_aggregate_length"></a>ERROR_BLOB_OR_FILE_NAME_AGGREGATE_LENGTH
 
@@ -244,7 +244,7 @@ ms.locfileid: "90053459"
 **Предлагаемое решение:** Длина одного из сегментов пути в большом двоичном объекте или имени файла превышает максимальное число символов. Сегмент пути — это строка между последовательными символами-разделителями, например косой чертой/.
 
 - На странице **подключение и копирование** локального веб-интерфейса Скачайте и проверьте файлы ошибок.
-- Убедитесь, что [имена больших двоичных объектов](https://docs.microsoft.com/rest/api/storageservices/Naming-and-Referencing-Containers--Blobs--and-Metadata#blob-names) и [файлов](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata#directory-and-file-names) соответствуют соглашениям об именовании Azure.
+- Убедитесь, что [имена больших двоичных объектов](/rest/api/storageservices/Naming-and-Referencing-Containers--Blobs--and-Metadata#blob-names) и [файлов](/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata#directory-and-file-names) соответствуют соглашениям об именовании Azure.
 
 
 ### <a name="error_container_or_share_name_disallowed_for_type"></a>ERROR_CONTAINER_OR_SHARE_NAME_DISALLOWED_FOR_TYPE

@@ -10,12 +10,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 07/06/2020
 ms.author: jingwang
-ms.openlocfilehash: 7134fc5d591fffdfb9aea13767e597dddc92b038
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6b79b2722438403e29851d3a87929ddc67eef727
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89434951"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92123755"
 ---
 # <a name="managed-identity-for-data-factory"></a>Управляемое удостоверение для Фабрики данных
 
@@ -57,7 +57,7 @@ ms.locfileid: "89434951"
 
 ### <a name="generate-managed-identity-using-powershell"></a>Создание управляемого удостоверения с помощью PowerShell
 
-Вызовите команду **Set-AzDataFactoryV2** еще раз, после чего отобразятся только что созданные поля Identity:
+Вызовите команду **Set-AzDataFactoryV2** , после чего отобразятся только что созданные поля Identity:
 
 ```powershell
 PS C:\WINDOWS\system32> Set-AzDataFactoryV2 -ResourceGroupName <resourceGroupName> -Name <dataFactoryName> -Location <region>

@@ -6,18 +6,25 @@ ms.author: nlarin
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 07/08/2020
-ms.openlocfilehash: 2785f79d327402a40be0a905877b5113b3f751b7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c98ee8f747975d4237c2906be2060eddbc7b9990
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91710453"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92123275"
 ---
 # <a name="configure-tls-connectivity-in-azure-database-for-postgresql---single-server"></a>Настройка подключения TLS в базе данных Azure для PostgreSQL — один сервер
 
 База данных Azure для PostgreSQL предпочитает подключение клиентских приложений к службе PostgreSQL с помощью протокола TLS, ранее известного как SSL (SSL). Применение TLS-подключений между сервером базы данных и клиентскими приложениями помогает защититься от атак типа "злоумышленник в середине" путем шифрования потока данных между сервером и приложением.
 
 По умолчанию служба базы данных PostgreSQL настроена для обязательного подключения TLS. Если клиентское приложение не поддерживает TLS подключения, можно отключить обязательное применение TLS.
+
+>[!NOTE]
+> Основываясь на отзывах клиентов, мы расширили устаревший корневой сертификат для нашего существующего корневого ЦС Baltimore до 15 февраля 2021 (02/15/2021).
+
+> [!IMPORTANT] 
+> Срок действия корневого сертификата SSL истекает 15 февраля 2021 (02/15/2021). Обновите приложение, чтобы использовать [новый сертификат](https://cacerts.digicert.com/DigiCertGlobalRootG2.crt.pem). Дополнительные сведения см. в разделе [запланированные обновления сертификатов](concepts-certificate-rotation.md) .
+
 
 ## <a name="enforcing-tls-connections"></a>Принудительное подключение TLS
 

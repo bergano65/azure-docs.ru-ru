@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 10/06/2019
 ms.author: mbaldwin
 ms.custom: include file
-ms.openlocfilehash: 6f7f319d2ebb4cd39933addf04f249df02d7819f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 234aa602cccb90d130e4d4b6aca375726ca29f0d
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81314093"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91989583"
 ---
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -120,7 +120,7 @@ New-AzKeyvault -name "<your-unique-keyvault-name>" -ResourceGroupName "myResourc
 1. Выберите хранилище ключей, перейдите на вкладку **Политики доступа** и выберите **Щелкните, чтобы показать политики расширенного доступа**.
 2. Установите флажок **Включить доступ к шифрованию дисков Azure для шифрования томов**.
 3. Выберите **Включить доступ к виртуальным машинам Azure для развертывания** или **Включить доступ к Azure Resource Manager для развертывания шаблонов**, если это необходимо. 
-4. Выберите команду **Сохранить**.
+4. Нажмите кнопку **Сохранить**.
 
     ![Установка политики расширенного доступа к хранилищу Azure Key Vault](../articles/virtual-machines/media/disk-encryption/keyvault-portal-fig4.png)
 
@@ -148,7 +148,7 @@ New-AzKeyvault -name "<your-unique-keyvault-name>" -ResourceGroupName "myResourc
 Используйте команду [az keyvault key create](/cli/azure/keyvault/key?view=azure-cli-latest#az-keyvault-key-create) в Azure CLI, чтобы создать новый KEK и сохранить его в хранилище ключей.
 
 ```azurecli-interactive
-az keyvault key create --name "myKEK" --vault-name "<your-unique-keyvault-name>" --kty RSA-HSM
+az keyvault key create --name "myKEK" --vault-name "<your-unique-keyvault-name>" --kty RSA
 ```
 
 Вместо этого можно импортировать закрытый ключ с помощью команды [az keyvault key import](/cli/azure/keyvault/key?view=azure-cli-latest#az-keyvault-key-import) в Azure CLI.
