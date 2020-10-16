@@ -9,12 +9,12 @@ services: iot-edge
 ms.topic: conceptual
 ms.date: 10/07/2020
 ms.author: kgremban
-ms.openlocfilehash: 3a02459f5b92aa7d708c29c737ed9428ed14215a
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 7ab62b04f8bea76c7efb587665f87ccaf123da24
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92045692"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92109006"
 ---
 # <a name="install-or-uninstall-the-azure-iot-edge-runtime"></a>Установка или удаление среды выполнения Azure IoT Edge
 
@@ -83,6 +83,12 @@ IoT Edge с контейнерами Linux могут работать в люб
 Azure IoT Edge полагается на подсистему контейнера, [совместимую с OCI](https://www.opencontainers.org/) . Убедитесь, что устройство может поддерживать контейнеры.
 
 Если вы устанавливаете IoT Edge на виртуальную машину, включите вложенную виртуализацию и выделите не менее 2 ГБ памяти. Для виртуальных машин Hyper-V версии 2 вложенная виртуализация включена по умолчанию. Для VMware существует переключатель, позволяющий включить эту функцию на виртуальной машине.
+
+Если вы устанавливаете IoT Edge на устройстве IoT Core, используйте следующую команду в [удаленном сеансе PowerShell](/windows/iot-core/connect-your-device/powershell) , чтобы проверить, поддерживаются ли на устройстве контейнеры Windows:
+
+```powershell
+Get-Service vmcompute
+```
 
 ---
 
@@ -160,6 +166,9 @@ Azure IoT Edge пакеты программного обеспечения по
 
 # <a name="windows"></a>[Windows](#tab/windows)
 
+>[!TIP]
+>Для устройств IoT Core рекомендуется запускать команды установки с помощью удаленного сеанса PowerShell. Дополнительные сведения см. [в статье Использование PowerShell для Windows IOT](/windows/iot-core/connect-your-device/powershell).
+
 1. Откройте сеанс PowerShell от имени администратора.
 
    Используйте сеанс AMD64 PowerShell, а не PowerShell (x86). Если вы не уверены, какой тип сеанса вы используете, выполните следующую команду:
@@ -186,7 +195,7 @@ Azure IoT Edge пакеты программного обеспечения по
    Deploy-IoTEdge -ContainerOs Linux
    ```
 
-3. На этом этапе в выходных данных может появиться запрос на перезапуск. Если да, перезагрузите устройство прямо сейчас.
+3. На этом этапе устройства IoT Core могут перезапускаться автоматически. На устройствах Windows 10 или Windows Server может появиться запрос на перезагрузку. Если да, перезагрузите устройство прямо сейчас.
 
 При установке IoT Edge на устройстве можно использовать дополнительные параметры для изменения процесса, включая:
 
@@ -321,6 +330,8 @@ sudo apt-get remove --purge moby-engine
 . {Invoke-WebRequest -useb aka.ms/iotedge-win} | Invoke-Expression; `
 Uninstall-IoTEdge
 ```
+
+`Uninstall-IoTEdge`Команда не работает в Windows IOT базовая. Чтобы удалить IoT Edge, необходимо повторно развернуть образ Windows IoT Core.
 
 Для получения дополнительных сведений о параметрах удаления используйте команду `Get-Help Uninstall-IoTEdge -full` .
 

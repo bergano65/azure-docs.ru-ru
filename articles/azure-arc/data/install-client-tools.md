@@ -9,12 +9,12 @@ ms.author: twright
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 3eb41b868aba7e7350f54594fa43f01eeeabebc4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d61bc99e851b28712262dba8512c06b6e8872c0e
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90940678"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92108224"
 ---
 # <a name="install-client-tools-for-deploying-and-managing-azure-arc-enabled-data-services"></a>Установка клиентских средств для развертывания служб данных с поддержкой Azure Arc и управления ими
 
@@ -32,7 +32,7 @@ ms.locfileid: "90940678"
 | Инструмент | Обязательно | Описание | Установка |
 |---|---|---|---|
 | CLI данных Azure (аздата) | Да | Программа командной строки для установки кластера больших данных и управления им. Интерфейс командной строки Azure также включает служебную программу для подключения и выполнения запросов к SQL Azure и SQL Server экземпляров и серверов Postgres с помощью команд `azdata sql query` (выполнение одного запроса из командной строки), `azdata sql shell` (интерактивная оболочка) `azdata postgres query` и `azdata postgres shell` . | [Установка](/sql/azdata/install/deploy-install-azdata?toc=/azure/azure-arc/data/toc.json&bc=/azure/azure-arc/data/breadcrumb/toc.json) |
-| Azure Data Studio | Да | Полнофункциональное средство для подключения к различным базам данных, включая Azure SQL, SQL Server, Постргрескл и MySQL, а также запросы к ним. Расширения для Azure Data Studio предоставляют возможности администрирования для служб данных, поддерживающих службу "Дуга Azure". | [Установка](https://aka.ms/getazuredatastudio) |
+| Azure Data Studio | Да | Полнофункциональное средство для подключения к различным базам данных, включая Azure SQL, SQL Server, Постргрескл и MySQL, а также запросы к ним. Расширения для Azure Data Studio предоставляют возможности администрирования для служб данных, поддерживающих службу "Дуга Azure". | [Установка](/sql/azure-data-studio/download-azure-data-studio) |
 | Расширение Azure Data CLI для Azure Data Studio | Да | Расширение для Azure Data Studio, которое будет устанавливать Azure Data CLI, если у вас ее еще нет.| Установка из коллекции расширений в Azure Data Studio.|
 | Расширение дуги Azure для Azure Data Studio | Да | Расширение для Azure Data Studio, которое предоставляет возможности управления для служб данных, поддерживающих службу "Дуга Azure". Существует зависимость от расширения Azure Data CLI для Azure Data Studio. | Установка из коллекции расширений в Azure Data Studio.|
 | Расширение PostgreSQL в Azure Data Studio | Нет | Расширение PostgreSQL для Azure Data Studio, предоставляющее возможности управления для PostgreSQL. | <!--{need link} [Install](../azure-data-studio/data-virtualization-extension.md) --> Установка из коллекции расширений в Azure Data Studio.|
@@ -49,6 +49,6 @@ ms.locfileid: "90940678"
 
 <sup>3</sup> если вы используете PowerShell, то фигурный псевдоним для командлета Invoke-WebRequest.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Создание контроллера данных ARC в Azure](create-data-controller.md)

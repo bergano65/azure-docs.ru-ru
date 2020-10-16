@@ -6,12 +6,12 @@ ms.service: data-lake-store
 ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
-ms.openlocfilehash: 9318ce7d73f2d05dde6815a0ded4269510760251
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 388c0db11c38f3dcdb9c4452b8d7283b2e811885
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89441992"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92108700"
 ---
 # <a name="integrating-azure-data-lake-storage-gen1-with-other-azure-services"></a>Интеграция Azure Data Lake Storage 1-го поколения с другими службами Azure
 Azure Data Lake Storage 1-го поколения можно использовать вместе с другими службами Azure для охвата более широкого диапазона сценариев. В следующей статье перечислены службы, с которыми может интегрироваться Data Lake Storage 1-го поколения.
@@ -51,7 +51,7 @@ Power BI можно использовать, чтобы импортирова�
 Данные из Data Lake Storage 1-го поколения можно зарегистрировать в каталоге данных Azure, чтобы упростить их обнаружение в организации. Дополнительные сведения см. в статье [Регистрация данных из Data Lake Storage 1-го поколения в каталоге данных Azure](data-lake-store-with-data-catalog.md).
 
 ## <a name="use-data-lake-storage-gen1-with-sql-server-integration-services-ssis"></a>Использование Data Lake Storage 1-го поколения со службами SQL Server Integration Services (SSIS)
-Вы можете использовать диспетчер подключений Data Lake Storage 1-го поколения в SSIS для подключения пакета служб SSIS к Data Lake Storage 1-го поколения. См. дополнительные сведения об [использовании Data Lake Storage 1-го поколения со службами SSIS](https://docs.microsoft.com/sql/integration-services/connection-manager/azure-data-lake-store-connection-manager).
+Вы можете использовать диспетчер подключений Data Lake Storage 1-го поколения в SSIS для подключения пакета служб SSIS к Data Lake Storage 1-го поколения. См. дополнительные сведения об [использовании Data Lake Storage 1-го поколения со службами SSIS](/sql/integration-services/connection-manager/azure-data-lake-store-connection-manager).
 
 ## <a name="use-data-lake-storage-gen1-with-azure-synapse-analytics"></a>Использование Data Lake Storage 1-го поколения с Azure синапсе Analytics
 Polybase можно использовать для загрузки данных из Data Lake Storage 1-го поколения в Azure синапсе Analytics (ранее — хранилище данных SQL). Дополнительные сведения см. [в статье использование Data Lake Storage 1-го поколения с Azure синапсе Analytics](../synapse-analytics/sql-data-warehouse/sql-data-warehouse-load-from-azure-data-lake-store.md).
@@ -62,5 +62,4 @@ Azure Data Lake Storage 1-го поколения можно использов�
 ## <a name="see-also"></a>См. также раздел
 * [Общие сведения об Azure Data Lake Storage Gen1](data-lake-store-overview.md)
 * [Начало работы с Data Lake Storage 1-го поколения с помощью портала Azure](data-lake-store-get-started-portal.md)
-* [Начало работы с Data Lake Storage 1-го поколения с помощью PowerShell](data-lake-store-get-started-powershell.md)  
-
+* [Начало работы с Data Lake Storage 1-го поколения с помощью PowerShell](data-lake-store-get-started-powershell.md)

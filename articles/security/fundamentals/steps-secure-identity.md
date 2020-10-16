@@ -11,16 +11,16 @@ ms.topic: conceptual
 ms.workload: identity
 ms.date: 01/29/2020
 ms.author: martinco
-ms.openlocfilehash: a8fa14999c75528171fbe811ee64f65b913ed820
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a0a11cf3bfac7d1e8fd2d117e13532e2ce49caa0
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91399811"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92107816"
 ---
 # <a name="five-steps-to-securing-your-identity-infrastructure"></a>Пять шагов по защите инфраструктуры удостоверений
 
-Если вы читаете этот документ, значит вы понимаете значимость безопасности. Скорее всего, вы уже несете ответственность за обеспечение безопасности вашей организации. Если вам нужно убедить других пользователей в важности защиты, посоветуйте им прочитать последний [отчет Microsoft Security Intelligence](https://go.microsoft.com/fwlink/p/?linkid=2073747).
+Если вы читаете этот документ, значит вы понимаете значимость безопасности. Скорее всего, вы уже несете ответственность за обеспечение безопасности вашей организации. Если вам нужно убедить других пользователей в важности защиты, посоветуйте им прочитать последний [отчет Microsoft Security Intelligence](https://www.microsoft.com/security/business/security-intelligence-report).
 
 Этот документ поможет вам достичь более высокого уровня безопасности с помощью возможностей Azure Active Directory и контрольного списка из пяти шагов, предназначенных для защиты организации от кибератак.
 

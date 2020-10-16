@@ -4,12 +4,12 @@ description: Выбор доступных размеров виртуально
 ms.topic: conceptual
 ms.date: 09/22/2020
 ms.custom: seodec18
-ms.openlocfilehash: 2819bb5e4000f18653e47b616a551d69ec525d2c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6dc1b3cf708a6dbaacc87e6c9fc00ae6f0ff3440
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91271313"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92107510"
 ---
 # <a name="choose-a-vm-size-for-compute-nodes-in-an-azure-batch-pool"></a>Выбор размера виртуальной машины для вычислительных узлов в пуле пакетной службы Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "91271313"
 
 ### <a name="pools-in-virtual-machine-configuration"></a>Пулы в конфигурации виртуальной машины
 
-В пулах пакетной службы в конфигурации виртуальной машины поддерживаются почти все размеры виртуальных машин ([Linux](../virtual-machines/linux/sizes.md) и [Windows](../virtual-machines/windows/sizes.md)). Дополнительные сведения о поддерживаемых размерах и ограничениях см. в следующей таблице.
+В пулах пакетной службы в конфигурации виртуальной машины поддерживаются почти все размеры виртуальных машин ([Linux](../virtual-machines/sizes.md) и [Windows](../virtual-machines/sizes.md)). Дополнительные сведения о поддерживаемых размерах и ограничениях см. в следующей таблице.
 
 | Серия виртуальной машины  | Поддерживаемые размеры |
 |------------|---------|

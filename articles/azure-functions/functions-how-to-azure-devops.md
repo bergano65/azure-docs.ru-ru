@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 04/18/2019
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python, devx-track-azurecli
-ms.openlocfilehash: d503d71cf44446f93fab3d292d4c26d9b7b0941d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9312094d1d86ea25ebd573e5d14b6d5bd0619cfc
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88210216"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92108241"
 ---
 # <a name="continuous-delivery-by-using-azure-devops"></a>Непрерывная поставка с помощью Azure DevOps
 
@@ -256,7 +256,7 @@ steps:
 
     - Вы должны быть администратором проекта в Azure DevOps.
 
-    - Необходимо иметь разрешения на создание личного маркера доступа GitHub (PAT) с достаточными разрешениями. Дополнительные сведения см. в разделе [требования к разрешениям GITHUB Pat.](https://aka.ms/azure-devops-source-repos)
+    - Необходимо иметь разрешения на создание личного маркера доступа GitHub (PAT) с достаточными разрешениями. Дополнительные сведения см. в разделе [требования к разрешениям GITHUB Pat.](/azure/devops/pipelines/repos/github#repository-permissions-for-personal-access-token-pat-authentication)
 
     - Необходимо иметь разрешения на фиксацию в главной ветви в репозитории GitHub, чтобы можно было зафиксировать автоматически созданный файл YAML.
 
@@ -266,7 +266,7 @@ steps:
 
     - Вы должны быть администратором проекта в Azure DevOps.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь с [обзором функций Azure](functions-overview.md).
 - Ознакомьтесь с [обзором Azure DevOps](/azure/devops/pipelines/).

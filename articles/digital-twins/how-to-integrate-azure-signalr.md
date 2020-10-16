@@ -7,12 +7,12 @@ ms.author: aymarqui
 ms.date: 09/02/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 0c3d3a050c0b929a3f1042b42006c289ddeb9acb
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: fd23cab844d40f75aa0034096be1bca897d54ff6
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92048123"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92108360"
 ---
 # <a name="integrate-azure-digital-twins-with-azure-signalr-service"></a>Интеграция Azure Digital двойников со службой Azure SignalR
 
@@ -195,7 +195,7 @@ ms.locfileid: "92048123"
 ### <a name="configure-the-sample-client-web-app"></a>Настройка примера клиентского веб-приложения
 
 Затем настройте **Пример веб-приложения интеграции SignalR** , выполнив следующие действия:
-1. С помощью Visual Studio или любого редактора кода откройте распакованную папку _**Azure_Digital_Twins_SignalR_integration_web_app_sample**_ , скачанную в разделе [*Предварительные требования*](#prerequisites) .
+1. Используя Visual Studio или любой другой редактор кода, откройте распакованную папку _**Azure_Digital_Twins_SignalR_integration_web_app_sample**_ , скачанную в разделе [*Загрузка примеров приложений*](#download-the-sample-applications) .
 
 1. Откройте файл *src/App.js* и замените URL-адрес `HubConnectionBuilder` конечной точкой HTTP для функции **Negotiate** , сохраненной ранее:
 

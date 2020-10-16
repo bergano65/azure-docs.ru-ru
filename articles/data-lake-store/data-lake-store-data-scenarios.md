@@ -10,12 +10,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/27/2018
 ms.author: twooley
-ms.openlocfilehash: 058862f2b274ef4e956c82fbcc44dec92a270d32
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fe911ac8985f9997125eb5149348b50a7fa83222
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89441057"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92109261"
 ---
 # <a name="using-azure-data-lake-storage-gen1-for-big-data-requirements"></a>Использование Data Lake Storage Gen1 для обеспечения соответствия требованиям больших данных
 
@@ -48,9 +48,9 @@ ms.locfileid: "89441057"
 
 Ниже перечислены средства, которые можно использовать:
 
-* [Azure Stream Analytics](../stream-analytics/stream-analytics-data-lake-output.md). События, принятые в Центры событий, могут записываться в Azure Data Lake Storage 1-го поколения с помощью выходных данных Azure Data Lake Storage 1-го поколения.
+* [Azure Stream Analytics](../stream-analytics/stream-analytics-define-outputs.md). События, принятые в Центры событий, могут записываться в Azure Data Lake Storage 1-го поколения с помощью выходных данных Azure Data Lake Storage 1-го поколения.
 * [Azure Storm для HDInsight](../hdinsight/storm/apache-storm-write-data-lake-store.md). Данные из кластера Storm можно напрямую записывать в Data Lake Storage 1-го поколения.
-* [EventProcessorHost](../event-hubs/event-hubs-dotnet-standard-getstarted-receive-eph.md). Вы можете получать события из Центров событий, а затем записывать их в Data Lake Storage 1-го поколения с помощью [пакета SDK Data Lake Storage 1-го поколения для .NET](data-lake-store-get-started-net-sdk.md).
+* [EventProcessorHost](../event-hubs/event-hubs-dotnet-standard-getstarted-send.md). Вы можете получать события из Центров событий, а затем записывать их в Data Lake Storage 1-го поколения с помощью [пакета SDK Data Lake Storage 1-го поколения для .NET](data-lake-store-get-started-net-sdk.md).
 
 ### <a name="relational-data"></a>Реляционные данные
 Можно также извлекать данные из реляционных баз данных. В течение определенного периода времени реляционные базы данных собирают огромные объемы данных, которые после обработки с помощью конвейера больших данных могут предоставлять ценные сведения. Для перемещения таких данных в Data Lake Storage 1-го поколения можно использовать следующие средства.
@@ -131,4 +131,4 @@ ms.locfileid: "89441057"
 ![Визуализация данных в Data Lake Storage 1-го поколения](./media/data-lake-store-data-scenarios/visualize-data.png "Визуализация данных в Data Lake Storage 1-го поколения")
 
 * Вы можете начать с использования [фабрики данных Azure для перемещения данных из Data Lake Storage 1-го поколения в Azure синапсе Analytics (ранее — хранилище данных SQL)](../data-factory/copy-activity-overview.md) .
-* После этого можно [интегрировать Power BI с Azure синапсе Analytics](../synapse-analytics/sql-data-warehouse/sql-data-warehouse-get-started-visualize-with-power-bi.md) для создания визуального представления данных.
+* После этого можно [интегрировать Power BI с Azure синапсе Analytics](/power-bi/connect-data/service-azure-sql-data-warehouse-with-direct-connect) для создания визуального представления данных.
