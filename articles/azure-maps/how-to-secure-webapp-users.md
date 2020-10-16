@@ -10,12 +10,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: devx-track-js
-ms.openlocfilehash: 50194341d1d34da4b02558461f532ae64b941b16
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 1668c7ccad75771a598aaa55f5403f070ea2dff8
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91319628"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92090222"
 ---
 # <a name="secure-a-web-application-with-user-sign-in"></a>Защита веб-приложения с помощью входа пользователя
 
@@ -59,7 +59,7 @@ ms.locfileid: "91319628"
    * Сведения о реализации, отличной от AspNetCore, см. в статье [Получение маркера для приложения](https://docs.microsoft.com/azure/active-directory/develop/scenario-web-app-call-api-acquire-token) из документации по Azure AD.
    * Защищенная конечная точка токена отвечает за возврат маркера доступа для пользователя, прошедшего проверку подлинности и уполномоченного, для вызова Azure Maps интерфейсов API.
 
-8. Настройте управление доступом на основе ролей Azure для пользователей или групп. См. раздел [предоставление пользователям доступа на основе ролей](#grant-role-based-access-for-users-to-azure-maps).
+8. Настройте управление доступом на основе ролей Azure (Azure RBAC) для пользователей или групп. См. раздел [предоставление пользователям доступа на основе ролей](#grant-role-based-access-for-users-to-azure-maps).
 
 9. Настройте страницу веб-приложения с помощью веб-пакета SDK Azure Maps для доступа к конечной точке защищенного токена. 
 
@@ -94,13 +94,13 @@ var map = new atlas.Map("map", {
     });
 ```
 
-[!INCLUDE [grant role access to users](./includes/grant-rbac-users.md)]
+[!INCLUDE [grant role-based access to users](./includes/grant-rbac-users.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о сценарии веб-приложений:
 > [!div class="nextstepaction"]
-> [Сценарий: веб-приложение, которое входит в систему пользователей](https://docs.microsoft.com/azure/active-directory/develop/scenario-web-app-sign-user-overview)
+> [Scenario: Веб-приложение, выполняющее вход пользователей](https://docs.microsoft.com/azure/active-directory/develop/scenario-web-app-sign-user-overview)
 
 Найдите метрики использования API для учетной записи Azure Maps:
 > [!div class="nextstepaction"]

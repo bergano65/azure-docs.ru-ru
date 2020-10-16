@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 07/17/2020
 ms.openlocfilehash: 1f0fb1ee8580c0c7f6eb30228b65e0a3780ef0a8
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87076804"
 ---
 # <a name="copy-data-from-salesforce-marketing-cloud-using-azure-data-factory"></a>Копирование данных из Salesforce Marketing Cloud с помощью Фабрики данных Azure
@@ -58,9 +58,9 @@ ms.locfileid: "87076804"
 | host | Для расширенного пакета узел должен быть [поддоменом](https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/your-subdomain-tenant-specific-endpoints.htm) , представленным 28-символьной строкой, начинающейся с букв "MC", например `mc563885gzs27c5t9-63k636ttgm` . <br>Для устаревшего пакета укажите `www.exacttargetapis.com` . | Да |
 | clientid | Идентификатор клиента, связанного с приложением Salesforce Marketing Cloud.  | Да |
 | clientSecret | Секрет клиента, связанного с приложением Salesforce Marketing Cloud. Вы можете пометить это поле как SecureString, чтобы безопасно хранить его в ADF-файле, или сохранить секрет в Azure Key Vault и позволить ADF копировать из него при выполнении копирования данных. Дополнительные сведения см. [в статье хранение учетных данных в Key Vault](store-credentials-in-key-vault.md). | Да |
-| useEncryptedEndpoints | Указывает, шифруются ли конечные точки источника данных с помощью протокола HTTPS. Значение по умолчанию — true.  | Нет |
-| useHostVerification | Указывает, должно ли имя узла в сертификате сервера совпадать с именем узла сервера при подключении по протоколу TLS. Значение по умолчанию — true.  | Нет |
-| usePeerVerification | Указывает, следует ли проверять удостоверение сервера при подключении по протоколу TLS. Значение по умолчанию — true.  | Нет |
+| useEncryptedEndpoints | Указывает, шифруются ли конечные точки источника данных с помощью протокола HTTPS. Значение по умолчанию — true.  | нет |
+| useHostVerification | Указывает, должно ли имя узла в сертификате сервера совпадать с именем узла сервера при подключении по протоколу TLS. Значение по умолчанию — true.  | нет |
+| usePeerVerification | Указывает, следует ли проверять удостоверение сервера при подключении по протоколу TLS. Значение по умолчанию — true.  | нет |
 
 **Пример. Использование расширенной проверки подлинности OAuth 2 STS для расширенного пакета** 
 

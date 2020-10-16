@@ -7,12 +7,13 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 09/18/2019
 ms.author: sttsinar
-ms.openlocfilehash: d6a77cac049ef32949eeba4cbd6fe9217100a360
-ms.sourcegitcommit: 67e8e1caa8427c1d78f6426c70bf8339a8b4e01d
+ms.reviewer: ayshak
+ms.openlocfilehash: 7b1956d704bbdf9475f04efcbdc4b6ee75bb50b2
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91666846"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91996296"
 ---
 # <a name="virtual-machine-isolation-in-azure"></a>Изоляция виртуальных машин в Azure
 
@@ -64,7 +65,7 @@ ms.locfileid: "91666846"
 ### <a name="q-what-are-the-milestones-for-d15_v2-or-ds15_v2-isolation-retirement"></a>Вопрос. Каковы вехи для D15_v2 или DS15_v2 выбытие изоляции? 
 **A**: 
  
-| Date | Действие |
+| Дата | Действие |
 |---|---| 
 | 18 ноября 2019 г. | Доступность D/DS15i_v2 (PAYG, 1 год, RI) | 
 | 14 мая 2020 г. | Последний день для покупки D/DS15i_v2 1-year RI | 

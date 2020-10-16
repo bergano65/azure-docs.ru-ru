@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.custom: mvc, amqp, devx-track-csharp
 ms.date: 11/06/2018
 ms.author: dobett
-ms.openlocfilehash: c9c8aa86aa8a374a33750e306529ef212c9a8bfc
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 12aa18c966745b450b3c9aa55e87e576b0c3f99b
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89012336"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92075966"
 ---
 # <a name="serialize-telemetry-using-protocol-buffers"></a>Сериализация данных телеметрии с помощью буферов протокола
 
@@ -32,7 +32,7 @@ ms.locfileid: "89012336"
 1. формировать классы Protobuf.
 1. Локальное тестирование
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Выполните следующие шаги для изучения данного руководства:
 
@@ -40,7 +40,7 @@ ms.locfileid: "89012336"
 * .NET Core. Вы можете скачать [.NET Core для Mac, Linux и Windows](https://www.microsoft.com/net/download).
 * Postman. Вы можете загрузить [POST для Mac, Windows или Linux](https://www.getpostman.com/apps).
 * [Центр Интернета вещей для вашей подписки Azure](../iot-hub/iot-hub-create-through-portal.md). Для выполнения шагов этого руководства вам понадобится строка подключения Центра Интернета вещей. Вы можете получить строку подключения с портала Azure.
-* [База данных Cosmos DB, развернутая в подписке Azure](../cosmos-db/create-sql-api-dotnet.md#create-account), которая использует SQL API и которая настроена на [строгую согласованность](../cosmos-db/manage-account.md). Для выполнения шагов этого руководства вам понадобится строка подключения базы данных Cosmos DB. Вы можете получить строку подключения с портала Azure.
+* [База данных Cosmos DB, развернутая в подписке Azure](../cosmos-db/create-sql-api-dotnet.md#create-account), которая использует SQL API и которая настроена на [строгую согласованность](../cosmos-db/how-to-manage-database-account.md). Для выполнения шагов этого руководства вам понадобится строка подключения базы данных Cosmos DB. Вы можете получить строку подключения с портала Azure.
 * [Учетная запись хранения Azure, развернутая в подписке Azure.](../storage/common/storage-account-create.md) Для выполнения шагов этого руководства вам понадобится строка подключения учетной записи хранения. Вы можете получить строку подключения с портала Azure.
 
 ## <a name="prepare-your-development-environment"></a>Подготовка среды разработки
@@ -174,7 +174,7 @@ ms.locfileid: "89012336"
 
 1. [Компилятор Protobuf можно скачать с GitHub](https://github.com/protocolbuffers/protobuf/releases/download/v3.4.0/protoc-3.4.0-win32.zip)
 
-1. Запустите компилятор, указав исходный каталог, целевой каталог и имя файла **proto**. Пример:
+1. Запустите компилятор, указав исходный каталог, целевой каталог и имя файла **proto**. Например.
 
     ```cmd
     protoc -I c:\temp\device-simulation-dotnet-master\Services\Models\Protobuf\proto --csharp_out=C:\temp\device-simulation-dotnet-master\Services\Models\Protobuf assettracker.proto
@@ -206,7 +206,7 @@ ms.locfileid: "89012336"
 
 По умолчанию новые файлы JSON и JS модели устройства не копируются в созданное решение. Необходимо явно включить их.
 
-Добавьте запись в файл **services\services.csproj** для каждого файла, который требуется включить. Пример:
+Добавьте запись в файл **services\services.csproj** для каждого файла, который требуется включить. Например.
 
 ```xml
 <None Update="data\devicemodels\assettracker-01.json">

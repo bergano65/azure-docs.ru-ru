@@ -13,10 +13,10 @@ ms.author: trbye
 ms.custom: cog-serv-seo-aug-2020
 keywords: Преобразование текста в речь
 ms.openlocfilehash: 5d60279a2e3cb6aa7226f518783d53a1a38ddaa8
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91357460"
 ---
 # <a name="what-is-text-to-speech"></a>Что такое преобразование текста в речь?
@@ -75,7 +75,7 @@ ms.locfileid: "91357460"
 - [пакет SDK для службы "Речь"](speech-sdk.md);
 - [REST API: Преобразование текста в речь](rest-text-to-speech.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Получение бесплатной подписки на службу речи](overview.md#try-the-speech-service-for-free)
 - [Получение пакета SDK для службы "Речь"](speech-sdk.md)

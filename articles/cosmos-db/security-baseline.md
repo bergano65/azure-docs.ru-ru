@@ -8,10 +8,10 @@ ms.date: 03/16/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
 ms.openlocfilehash: 75344204e03920c96d0868ad584b8701813fabf0
-ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91569518"
 ---
 # <a name="azure-security-baseline-for-cosmos-db"></a>Базовый план безопасности Azure для Cosmos DB
@@ -334,7 +334,7 @@ Azure Cosmos DB предоставляет встроенный RBAC для ра
 
 ### <a name="34-use-single-sign-on-sso-with-azure-active-directory"></a>3.4. Использование единого входа с Azure Active Directory
 
-**Руководство**. Azure Cosmos DB использует два типа ключей для авторизации пользователей и не поддерживает единый вход (SSO) на уровне плоскости данных. Доступ к плоскости управления для Cosmos DB доступен через REST API и поддерживает единый вход. Чтобы выполнить проверку подлинности, установите JSON Web Token, полученный из Azure Active Directory (AAD), в качестве заголовка авторизации.
+**Руководство**. Azure Cosmos DB использует два типа ключей для авторизации пользователей и не поддерживает единый Sign-On (SSO) на уровне плоскости данных. Доступ к плоскости управления для Cosmos DB доступен через REST API и поддерживает единый вход. Чтобы выполнить проверку подлинности, установите JSON Web Token, полученный из Azure Active Directory (AAD), в качестве заголовка авторизации.
 
 Общие сведения о базе данных Azure для Cosmos DB REST API: https://docs.microsoft.com/rest/api/cosmos-db/
 
@@ -1017,7 +1017,7 @@ https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyva
 
 Общие сведения о шифровании данных в Azure Cosmos DB: https://docs.microsoft.com/azure/cosmos-db/database-encryption-at-rest
 
-Включение обратимого удаления в Key Vault: https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal
+Включение Soft-Delete в Key Vault: https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal
 
 **Мониторинг Центра безопасности Azure**: Да
 

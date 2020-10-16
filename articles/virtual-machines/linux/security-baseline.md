@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/13/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 627c0c77cc206cd1b3210fcfc7b2a9bbc3c6daea
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.openlocfilehash: 9468b9c2c906ffe26bae400dc9e4746630a66e0e
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89401101"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91970322"
 ---
 # <a name="azure-security-baseline-for-linux-virtual-machines"></a>Базовый план безопасности Azure для Виртуальные машины Linux
 
@@ -32,7 +32,7 @@ ms.locfileid: "89401101"
 
 Кроме того, при наличии определенного варианта использования централизованного брандмауэра можно также использовать брандмауэр Azure для удовлетворения этих требований.
 
-* [Виртуальные сети и виртуальные машины в Azure](../windows/network-overview.md)
+* [Виртуальные сети и виртуальные машины в Azure](../network-overview.md)
 
 * [Создание виртуальной сети](../../virtual-network/quick-create-portal.md)
 
@@ -64,7 +64,7 @@ ms.locfileid: "89401101"
 
 * [созданию шлюза приложений с брандмауэром веб-приложения с помощью портала Azure](../../web-application-firewall/ag/application-gateway-web-application-firewall-portal.md)
 
-* [Виртуальные сети и виртуальные машины в Azure](../windows/network-overview.md)
+* [Виртуальные сети и виртуальные машины в Azure](../network-overview.md)
 
 * [Сведения о группах безопасности сети](../../virtual-network/tutorial-filter-network-traffic.md)
 
@@ -82,7 +82,7 @@ ms.locfileid: "89401101"
 
 * [Развертывание брандмауэра Azure](../../firewall/tutorial-firewall-deploy-portal.md)
 
-* [Общие сведения об интегрированной аналитике угроз в Центре безопасности Azure](../../security-center/threat-protection.md)
+* [Общие сведения об интегрированной аналитике угроз в Центре безопасности Azure](../../security-center/azure-defender.md)
 
 * [Общие сведения о адаптивной защите сети в центре безопасности Azure](../../security-center/security-center-adaptive-network-hardening.md)
 
@@ -148,7 +148,7 @@ ms.locfileid: "89401101"
 
 * [Настройка Политики Azure и управление ею](../../governance/policy/tutorials/create-and-manage.md)
 
-* [Примеры политик Azure для работы в сети](/azure/governance/policy/samples/#network)
+* [Примеры политик Azure для работы в сети](../../governance/policy/samples/built-in-policies.md#network)
 
 * [Создание схемы Azure](../../governance/blueprints/create-blueprint-portal.md)
 
@@ -182,7 +182,7 @@ ms.locfileid: "89401101"
 
 * [Настройка Политики Azure и управление ею](../../governance/policy/tutorials/create-and-manage.md)
 
-* [Примеры политик Azure для работы в сети](/azure/governance/policy/samples/#network)
+* [Примеры политик Azure для работы в сети](../../governance/policy/samples/built-in-policies.md#network)
 
 **Мониторинг центра безопасности Azure**: недоступен
 
@@ -306,7 +306,7 @@ ms.locfileid: "89401101"
 
 **Руководство**. для обнаружения уязвимости от вредоносных программ в ОС Linux потребуется стороннее средство.
 
-* [Инструкции для адаптации серверов Linux к центру безопасности Azure](../../security-center/quick-onboard-linux-computer.md)
+* [Инструкции для адаптации серверов Linux к центру безопасности Azure](../../security-center/quickstart-onboard-machines.md)
 
 * [Ниже приведены рекомендуемые рекомендации корпорации Майкрософт по обеспечению безопасности, которые могут служить списком критериев для выбранного программного обеспечения уязвимости.](./security-recommendations.md)
 
@@ -488,7 +488,7 @@ ms.locfileid: "89401101"
 
 **Рекомендации**. в случаях, когда сторонним разработчикам требуется доступ к данным клиента (например, во время запроса на поддержку), используйте защищенное хранилище для виртуальных машин Azure, чтобы просматривать и утверждать или отклонять запросы на доступ к данным клиентов.
 
-* [защищенное хранилище для Microsoft Azure](../../security/fundamentals/customer-lockbox-overview.md)
+* [Защищенное хранилище для Microsoft Azure](../../security/fundamentals/customer-lockbox-overview.md)
 
 **Мониторинг центра безопасности Azure**: неприменимо
 
@@ -514,7 +514,7 @@ ms.locfileid: "89401101"
 
 * [Создание дополнительных подписок Azure](../../cost-management-billing/manage/create-subscription.md)
 
-* [Создание групп управления](../../governance/management-groups/create.md)
+* [Создание групп управления](../../governance/management-groups/create-management-group-portal.md)
 
 * [Создание и использование тегов](../../azure-resource-manager/management/tag-resources.md)
 
@@ -584,7 +584,7 @@ ms.locfileid: "89401101"
 
 ### <a name="48-encrypt-sensitive-information-at-rest"></a>4.8. Шифрование конфиденциальной информации при хранении
 
-**Рекомендации**. виртуальные диски на виртуальные машины Linux (ВМ) шифруются при хранении на стороне сервера или с помощью шифрования дисков Azure (ADE). Шифрование дисков Azure использует функцию DM-Encryption в Linux для шифрования управляемых дисков с помощью управляемых клиентом ключей на гостевой виртуальной машине. Шифрование на стороне сервера с использованием управляемых клиентом ключей улучшает работу шифрования дисков Azure, позволяя использовать любые типы ОС и образы для виртуальных машин путем шифрования данных в службе хранилища.
+**Рекомендации**. виртуальные диски на виртуальные машины Linux (ВМ) шифруются при хранении на стороне сервера или с помощью шифрования дисков Azure (ADE). Шифрование дисков Azure использует функцию DM-Crypt Linux для шифрования управляемых дисков с помощью управляемых клиентом ключей на гостевой виртуальной машине. Шифрование на стороне сервера с использованием управляемых клиентом ключей улучшает работу шифрования дисков Azure, позволяя использовать любые типы ОС и образы для виртуальных машин путем шифрования данных в службе хранилища.
 
 * [Шифрование на стороне сервера для управляемых дисков Azure](../windows/disk-encryption.md)
 
@@ -616,7 +616,7 @@ ms.locfileid: "89401101"
 
 **Руководство**. для обнаружения уязвимости от вредоносных программ в ОС Linux потребуется стороннее средство.
 
-* [Инструкции для адаптации серверов Linux к центру безопасности Azure](../../security-center/quick-onboard-linux-computer.md)
+* [Инструкции для адаптации серверов Linux к центру безопасности Azure](../../security-center/quickstart-onboard-machines.md)
 
 * [Рекомендуемые рекомендации корпорации Майкрософт по безопасности](./security-recommendations.md)
 
@@ -700,7 +700,7 @@ ms.locfileid: "89401101"
 
 * [Создание дополнительных подписок Azure](../../cost-management-billing/manage/create-subscription.md)
 
-* [Создание групп управления](../../governance/management-groups/create.md)
+* [Создание групп управления](../../governance/management-groups/create-management-group-portal.md)
 
 * [Создание и использование тегов](../../azure-resource-manager/management/tag-resources.md)
 
@@ -784,7 +784,7 @@ ms.locfileid: "89401101"
 
 * [Настройка Политики Azure и управление ею](../../governance/policy/tutorials/create-and-manage.md)
 
-* [Как отказаться от определенного типа ресурса с помощью Политики Azure](/azure/governance/policy/samples/not-allowed-resource-types)
+* [Как отказаться от определенного типа ресурса с помощью Политики Azure](../../governance/policy/samples/index.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -824,13 +824,13 @@ ms.locfileid: "89401101"
 
 **Руководство**. приложения с высоким риском, развернутые в среде Azure, могут быть изолированы с помощью виртуальных сетей, подсетей, подписок, групп управления и достаточно защищены с помощью брандмауэра Azure, брандмауэра веб-приложения (WAF) или группы безопасности сети (NSG).
 
-* [Виртуальные сети и виртуальные машины в Azure](../windows/network-overview.md)
+* [Виртуальные сети и виртуальные машины в Azure](../network-overview.md)
 
 * [Общие сведения о Брандмауэре Azure](../../firewall/overview.md)
 
 * [Обзор брандмауэра веб-приложения](../../web-application-firewall/overview.md)
 
-* [Общие сведения о защите сети](../../virtual-network/security-overview.md)
+* [Общие сведения о защите сети](../../virtual-network/network-security-groups-overview.md)
 
 * [Обзор виртуальной сети Azure](../../virtual-network/virtual-networks-overview.md)
 

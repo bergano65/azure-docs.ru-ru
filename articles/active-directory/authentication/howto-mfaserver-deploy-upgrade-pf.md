@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 07/11/2018
-ms.author: iainfou
-author: iainfoulds
+ms.author: joflore
+author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 23e485c55ab591bcccdc32818839a8d484a6c3af
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: 3e7c0399cce45b36a96bedb14d225490d48ee049
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88919545"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91966888"
 ---
 # <a name="upgrade-the-phonefactor-agent-to-azure-multi-factor-authentication-server"></a>Переход с агента PhoneFactor на сервер Многофакторной идентификации Azure
 
@@ -70,7 +70,7 @@ ms.locfileid: "88919545"
 
    2. Чтобы установить пользовательский портал на веб-сервер, откройте командную строку от имени администратора и запустите файл MultiFactorAuthenticationUserPortalSetupXX.msi.
 
-      Имя виртуального каталога по умолчанию теперь **MultiFactorAuth** вместо **PhoneFactor**. Если вы хотите использовать предыдущее имя, измените имя виртуального каталога на этапе установки. В противном случае, если вы разрешаете установить использование нового имени по умолчанию, щелкните значок пользовательского портала на сервер Многофакторной идентификации и обновите URL-адрес пользовательского портала на вкладке "Параметры". Существующие пользователи должны быть уведомлены о новом URL-адресе.
+      Имя виртуального каталога по умолчанию теперь **MultiFactorAuth** вместо **PhoneFactor**. Если вы хотите использовать предыдущее имя, измените имя виртуального каталога на этапе установки. В противном случае, если вы разрешаете установить использование нового имени по умолчанию, щелкните значок пользовательского портала на сервер Многофакторной идентификации и обновите URL-адрес пользовательского портала на вкладке Параметры. Существующие пользователи должны быть уведомлены о новом URL-адресе.
 
    3. Перейдите в папку установки пользовательского портала (например, C:\inetpub\wwwroot\MultiFactorAuth) и внесите изменения в файл web.config. Скопируйте значения в разделах appSettings и applicationSettings из исходного файла web.config, резервная копия которого была создана до появления нового файла web.config. Если при установке пакета SDK для веб-службы вы оставили новое имя виртуального каталога по умолчанию, измените URL-адрес в разделе applicationSettings так, чтобы он указывал на правильное расположение. Если в предыдущем файле web.config были изменены еще какие-то значения по умолчанию, внесите такие же изменения в новый файл web.config.
 

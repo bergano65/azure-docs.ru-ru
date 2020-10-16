@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 02/10/2020
 ms.author: erhopf
-ms.openlocfilehash: 517b092f933bedae0f254461d9bfee4d4640db8b
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: 96a085e3183289d9f2add054128c0faa6b0cdb29
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87375736"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91654406"
 ---
 Чтобы создать проект Visual Studio для разработки рабочего стола C++ необходимо настроить параметры разработки Visual Studio, создать проект, выбрать целевую архитектуру и установить пакет SDK службы "Речь".
 
@@ -19,13 +19,13 @@ ms.locfileid: "87375736"
 
 1. Откройте Visual Studio 2019 для отображения окна **Запуск**.
 
-   ![Окно запуска Visual Studio](../articles/cognitive-services/Speech-Service/media/sdk/vs-start-window.png)
+   ![Снимок экрана, на котором показано окно запуска Visual Studio 2019.](../articles/cognitive-services/Speech-Service/media/sdk/vs-start-window.png)
 
 1. Выберите **Продолжить без кода** для перехода в интегрированную среду разработки Visual Studio.
 
 1. В строке меню Visual Studio выберите **Инструменты** > **Get Tools and Features** (Получить инструменты и компоненты), чтобы открыть Visual Studio Installer и просмотреть диалоговое окно **Идет изменение**.
 
-   ![Вкладка "Рабочие нагрузки", диалоговое окно "Идет изменение", Visual Studio Installer](../articles/cognitive-services/Speech-Service/media/sdk/vs-enable-cpp-workload.png)
+   ![Снимок экрана, на котором показана вкладка "Рабочие нагрузки" диалогового окна "Изменение" в Visual Studio Installer.](../articles/cognitive-services/Speech-Service/media/sdk/vs-enable-cpp-workload.png)
 
 1. Во вкладке **Загрузки**  в **Windows** найдите разработку **рабочего стола с рабочей нагрузкой C++** . Если флажок рядом с этой рабочей нагрузкой еще не установлен, установите его.
 

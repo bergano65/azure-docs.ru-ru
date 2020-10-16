@@ -1,6 +1,6 @@
 ---
-title: Интеграция Azure Stream Analytics со службой "Машинное обучение Azure"
-description: В этой статье описывается, как быстро настроить простое Azure Stream Analytics задание, которое интегрирует Машинное обучение Azure с помощью определяемой пользователем функции.
+title: Интеграция Azure Stream Analytics с Машинное обучение Azure Studio (классическая модель)
+description: В этой статье описывается, как быстро настроить простое Azure Stream Analytics задание, которое интегрирует Машинное обучение Azure Studio (классическая модель) с помощью определяемой пользователем функции.
 author: mamccrea
 ms.author: mamccrea
 ms.reviewer: mamccrea
@@ -8,16 +8,16 @@ ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 08/12/2020
 ms.custom: seodec18
-ms.openlocfilehash: 26a1208131f1d9d3df7dccd8e27bda37992f043f
-ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
+ms.openlocfilehash: 529b1ce8026d9880bbc8caf87ab59148baf92df3
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88236686"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92019466"
 ---
 # <a name="do-sentiment-analysis-with-azure-stream-analytics-and-azure-machine-learning-studio-classic"></a>Анализ тональности с помощью Azure Stream Analytics и Машинное обучение Azure Studio (классическая модель)
 
-В этой статье показано, как настроить простое задание Azure Stream Analytics, которое использует Машинное обучение Azure Studio (классическая модель) для анализа тональности. Модель Машинное обучение тональности Analytics используется из Cortana Intelligence Gallery для анализа текстовых данных потоковой передачи и определения оценки тональности.
+В этой статье показано, как настроить простое задание Azure Stream Analytics, которое использует Машинное обучение Azure Studio (классическая модель) для анализа тональности. Модель тональности Analytics в студии (классическая) используется из Cortana Intelligence Gallery для анализа текстовых данных потоковой передачи и определения оценки тональности.
 
 > [!TIP]
 > Для повышения производительности и надежности настоятельно рекомендуется вместо UDF Студии машинного обучения Azure (классической) использовать [UDF машинного обучения Azure](machine-learning-udf.md).
@@ -51,7 +51,7 @@ ms.locfileid: "88236686"
    |---------|---------|
    |Подписка|Выберите свою подписку.|
    |Группа ресурсов|Выберите группу ресурсов.|
-   |имя учетной записи хранения;|Введите имя учетной записи хранения. Это имя должно быть уникальным в пределах Azure.|
+   |Имя учетной записи хранения|Введите имя учетной записи хранения. Это имя должно быть уникальным в пределах Azure.|
    |Расположение|Выберите расположение. Все ресурсы должны использовать одно и то же расположение.|
    |Тип учетной записи|BlobStorage|
 
@@ -79,31 +79,31 @@ ms.locfileid: "88236686"
 
 2. Выберите **Открыть в студии (классическая модель)**.  
    
-   ![Машинное обучение и Stream Analytics, открытие Студии машинного обучения](./media/stream-analytics-machine-learning-integration-tutorial/stream-analytics-machine-learning-integration-tutorial-open-ml-studio.png)  
+   ![Stream Analytics Машинное обучение Azure Studio (классическая модель), Open Studio (классическая модель)](./media/stream-analytics-machine-learning-integration-tutorial/stream-analytics-machine-learning-integration-tutorial-open-ml-studio.png)  
 
 3. Выполните вход, чтобы перейти в рабочую область. Выберите расположение.
 
 4. В нижней части страницы щелкните **запустить** . Процесс выполнения занимает около минуты.
 
-   ![выполнение эксперимента в Студии машинного обучения](./media/stream-analytics-machine-learning-integration-tutorial/stream-analytics-machine-learning-run-experiment.png)  
+   ![Запуск эксперимента в студии (классическая модель)](./media/stream-analytics-machine-learning-integration-tutorial/stream-analytics-machine-learning-run-experiment.png)  
 
 5. После успешного выполнения процесса выберите кнопку **Deploy Web Service** (Развернуть веб-службу) в нижней области страницы.
 
-   ![развертывание эксперимента как веб-службы в Студии машинного обучения](./media/stream-analytics-machine-learning-integration-tutorial/stream-analytics-machine-learning-deploy-web-service.png)  
+   ![Развертывание эксперимента в студии (классическая модель) в качестве веб-службы](./media/stream-analytics-machine-learning-integration-tutorial/stream-analytics-machine-learning-deploy-web-service.png)  
 
 6. Чтобы проверить готовность модели аналитики тональности к использованию, нажмите кнопку **проверить** . Введите текст "Мне нравится Майкрософт".
 
-   ![проверка эксперимента в Студии машинного обучения](./media/stream-analytics-machine-learning-integration-tutorial/stream-analytics-machine-learning-test.png)  
+   ![Тестовый эксперимент в студии Studio (классическая модель)](./media/stream-analytics-machine-learning-integration-tutorial/stream-analytics-machine-learning-test.png)  
 
    Если проверка завершится успешно, вы увидите результат, аналогичный следующему:
 
-   ![результаты проверки в Студии машинного обучения](./media/stream-analytics-machine-learning-integration-tutorial/stream-analytics-machine-learning-test-results.png)  
+   ![Результаты тестирования в студии (классическая модель)](./media/stream-analytics-machine-learning-integration-tutorial/stream-analytics-machine-learning-test-results.png)  
 
 7. В столбце **приложения** выберите ссылку на **книгу Excel 2010 или более раннюю** , чтобы скачать книгу Excel. Книга содержит ключ API и URL-адрес, которые понадобятся вам позже для настройки задания Stream Analytics.
 
-    ![Машинное обучение и Stream Analytics, сводка](./media/stream-analytics-machine-learning-integration-tutorial/stream-analytics-machine-learning-integration-tutorial-quick-glance.png)  
+    ![Stream Analytics Машинное обучение Azure Studio (классическая модель), краткий обзор](./media/stream-analytics-machine-learning-integration-tutorial/stream-analytics-machine-learning-integration-tutorial-quick-glance.png)  
 
-## <a name="create-a-stream-analytics-job-that-uses-the-machine-learning-model"></a>Создание задания Stream Analytics, использующего модель машинного обучения
+## <a name="create-a-stream-analytics-job-that-uses-the-studio-classic-model"></a>Создание задания Stream Analytics, в котором используется модель студии (классическая)
 
 Теперь вы можете создать задание Stream Analytics, считывающее пример твитов из CSV-файла в хранилище BLOB-объектов.
 
@@ -127,7 +127,7 @@ ms.locfileid: "88236686"
    |Контейнер|Выберите контейнер, созданный на предыдущем шаге.|
    |Формат сериализации событий|CSV|
 
-3. Выберите **Сохранить**.
+3. Щелкните **Сохранить**.
 
 ### <a name="configure-the-job-output"></a>Настройка выходных данных для задания
 
@@ -145,11 +145,11 @@ ms.locfileid: "88236686"
    |Контейнер|Выберите контейнер, созданный на предыдущем шаге.|
    |Формат сериализации событий|CSV|
 
-3. Выберите **Сохранить**.
+3. Щелкните **Сохранить**.
 
-### <a name="add-the-machine-learning-function"></a>Добавление функции машинного обучения
+### <a name="add-the-studio-classic-function"></a>Добавление функции Studio (классической)
 
-Ранее вы опубликовали модель машинного обучения в веб-службе. В нашем сценарии выполняемое задание Stream Analytics отправляет каждый пример твита из входных данных в веб-службу для анализа тональности. Веб-служба машинного обучения возвращает тональность (`positive`, `neutral` или `negative`) и вероятность того, что твит положительный.
+Ранее вы опубликовали модель Studio (классической) в веб-службе. В нашем сценарии выполняемое задание Stream Analytics отправляет каждый пример твита из входных данных в веб-службу для анализа тональности. Веб-служба Studio (классическая) возвращает тональности ( `positive` , `neutral` или) и вероятность того, что `negative` твит будет положительным.
 
 В этом разделе вы определите функцию в задании Stream Analysis. Эту функцию можно вызывать для отправки твита в веб-службу и получения ответа.
 
@@ -163,13 +163,13 @@ ms.locfileid: "88236686"
    |---------|---------|
    | Псевдоним функции | Используйте имя `sentiment` и выберите **указать параметры машинное обучение Azure функции вручную**, что дает возможность ввести URL-адрес и ключ.      |
    | URL-адрес| Вставьте URL-адрес веб-службы.|
-   |Key | Вставьте ключ API. |
+   |Ключ | Вставьте ключ API. |
 
 4. Щелкните **Save** (Сохранить).
 
 ### <a name="create-a-query-to-transform-the-data"></a>Создание запроса для преобразования данных
 
-Stream Analytics использует декларативный запрос на основе SQL для проверки входных данных и их обработки. В этом разделе вы создадите запрос, который считывает каждый твит из входных данных, а затем вызывает функцию машинного обучения для выполнения анализа тональности. Затем запрос отправляет результат в приемник выходных данных (хранилище BLOB-объектов).
+Stream Analytics использует декларативный запрос на основе SQL для проверки входных данных и их обработки. В этом разделе вы создадите запрос, который считывает каждый твит из входных данных, а затем вызывает функцию Studio (классическая) для выполнения анализа тональности. Затем запрос отправляет результат в приемник выходных данных (хранилище BLOB-объектов).
 
 1. Вернитесь к обзору Stream Analyticsного задания.
 
@@ -215,18 +215,18 @@ Stream Analytics использует декларативный запрос н
 
 3. Откройте созданный CSV-файл. Вы должны увидеть примерно следующее:  
 
-   ![Машинное обучение и Stream Analytics, просмотр CSV-файла](./media/stream-analytics-machine-learning-integration-tutorial/stream-analytics-machine-learning-integration-tutorial-csv-view.png)  
+   ![Stream Analytics Машинное обучение Azure Studio (классическая модель), представление CSV](./media/stream-analytics-machine-learning-integration-tutorial/stream-analytics-machine-learning-integration-tutorial-csv-view.png)  
 
 ### <a name="view-metrics"></a>Просмотр метрик
 
-Вы можете также просматривать метрики, связанные с функциями Машинного обучения Azure. Следующие метрики, связанные с функциями, отображаются в поле **мониторинг** в обзоре задания.
+Вы также можете просматривать метрики, связанные с функциями Studio (классическая модель). Следующие метрики, связанные с функциями, отображаются в поле **мониторинг** в обзоре задания.
 
-* **Запросы функций** отображает количество запросов, отправленных к веб-службе машинного обучения.  
-* **События функций** отображает количество событий в запросе. По умолчанию каждый запрос к веб-службе машинного обучения может содержать до 1000 событий.
+* **Запросы функций** указывают количество запросов, отправленных в веб-службу Studio (классическая).  
+* **События функций** отображает количество событий в запросе. По умолчанию каждый запрос к веб-службе Studio (классической) содержит до 1 000 событий.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Введение в Azure Stream Analytics](stream-analytics-introduction.md)
 * [Справочник по языку запросов Azure Stream Analytics](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference)
-* [Интеграция машинного обучения в Stream Analytics](stream-analytics-how-to-configure-azure-machine-learning-endpoints-in-stream-analytics.md)
+* [Интеграция REST API и Машинное обучение Studio (классическая модель)](stream-analytics-how-to-configure-azure-machine-learning-endpoints-in-stream-analytics.md)
 * [Справочник по API-интерфейсу REST управления Stream Analytics](https://msdn.microsoft.com/library/azure/dn835031.aspx)

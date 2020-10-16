@@ -20,10 +20,10 @@ translation.priority.mt:
 - zh-cn
 - zh-tw
 ms.openlocfilehash: 0f33b5a28d7c83be7e546c3f61bc517047c51312
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88934860"
 ---
 # <a name="odata-filter-syntax-in-azure-cognitive-search"></a>Синтаксис $filter OData в Azure Когнитивный поиск
@@ -32,7 +32,7 @@ Azure Когнитивный поиск использует [выражения
 
 ## <a name="syntax"></a>Синтаксис
 
-Фильтр в языке OData является логическим выражением, которое, в свою очередь, может быть одним из нескольких типов выражений, как показано в следующем EBNF ([Расширенная форма Backus-Наура](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)):
+Фильтр в языке OData является логическим выражением, которое, в свою очередь, может быть одним из нескольких типов выражений, как показано в следующем EBNF ([Расширенная форма Backus-Naur](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)):
 
 <!-- Upload this EBNF using https://bottlecaps.de/rr/ui to create a downloadable railroad diagram. -->
 

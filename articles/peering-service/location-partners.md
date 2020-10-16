@@ -10,12 +10,12 @@ ms.tgt_pltfrm: na
 ms.workload: Infrastructure-services
 ms.date: 09/24/2020
 ms.author: derekol
-ms.openlocfilehash: 4b034c2657cd1bddd696b40738d51c8a3e6c9798
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.openlocfilehash: d6318fc4fc0dc9ded093bdf9d19b9079208556de
+ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91355258"
+ms.lasthandoff: 10/11/2020
+ms.locfileid: "91939942"
 ---
 # <a name="peering-service-partners"></a>Партнеры по службам пиринга
 
@@ -38,7 +38,7 @@ ms.locfileid: "91355258"
 | [IIJ](https://www.iij.ad.jp/en/) | Япония |
 | [Intercloud](https://intercloud.com/microsoft-saas-applications/)|Европа  |
 | [Kordia](https://www.kordia.co.nz/cloudconnect) |Океания  |
-| [Liquid Telecom](https://liquidcloud.africa/365-direct) | Африка  |
+| [Liquid Telecom](https://liquidcloud.africa/) | Африка  |
 | [NTT Communications](https://www.ntt.com/en/services/network/software-defined-network.html) | Япония |
 | [PCCW](https://www.pccwglobal.com/en/enterprise/products/network/ep-global-internet-access) |Азия |
 | [SingTel](https://www.singtel.com/business/campaign/singnet-cloud-connect-microsoft-direct) |Азия |
@@ -47,7 +47,7 @@ ms.locfileid: "91355258"
 >Дополнительные сведения о прикреплении к партнерской программе службы пиринга см. в статье peeringservice@microsoft.com .
 >
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о службе пиринга см. в статье [Общие сведения о службе пиринга](about.md).
 - Дополнительные сведения о вопросах пиринга см. в статье [часто задаваемые вопросы о службе пиринга](faq.md).

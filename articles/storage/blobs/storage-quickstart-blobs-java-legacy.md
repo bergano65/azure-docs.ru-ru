@@ -9,10 +9,10 @@ ms.service: storage
 ms.subservice: blobs
 ms.topic: conceptual
 ms.openlocfilehash: 9ab45495283f8751912d93e9799958a8effc887a
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87323746"
 ---
 # <a name="quickstart-manage-blobs-with-java-v8-sdk"></a>Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK V8 для Java
@@ -32,7 +32,7 @@ ms.locfileid: "87323746"
 
 [Пример приложения](https://github.com/Azure-Samples/storage-blobs-java-quickstart) — это базовое консольное приложение.
 
-Используйте [Git](https://git-scm.com/) для загрузки копии приложения в среду разработки.
+Используйте команду [git](https://git-scm.com/), чтобы скачать копию приложения в среду разработки.
 
 ```bash
 git clone https://github.com/Azure-Samples/storage-blobs-java-quickstart.git

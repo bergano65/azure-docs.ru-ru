@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 04/14/2019
 ms.author: jeedes
-ms.openlocfilehash: fd82d3d2d2a76e0c0671c57d9254ff8c9030d3a3
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 7c1bd1b3f9931eff2f19eac7b78881d4f7ad8ae0
+ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88548299"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91744327"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-bonusly"></a>Руководство. Интеграция Azure Active Directory с Bonusly
 
@@ -222,11 +222,11 @@ ms.locfileid: "88548299"
 
 1. Нажмите кнопку **Add User**(Добавить пользователя).
 
-    ![Добавление пользователя](./media/bonus-tutorial/ic781044.png "Добавить пользователя")
+    ![Снимок экрана, на котором показан раздел "Manage Users" (Управление пользователями) пользователями, где можно выбрать элемент "Add User" (Добавить пользователя)](./media/bonus-tutorial/ic781044.png "Добавить пользователя")
 
 1. На странице **Добавление пользователя** выполните следующие действия.
 
-    ![Добавление пользователя](./media/bonus-tutorial/ic781045.png "Добавить пользователя")  
+    ![Снимок экрана, на котором показано диалоговое "Add User" (Добавление пользователя), где можно ввести соответствующую информацию](./media/bonus-tutorial/ic781045.png "Добавить пользователя")  
 
     а. В текстовое поле **First name** (Имя) введите имя пользователя, например **Britta**.
 

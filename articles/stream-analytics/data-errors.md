@@ -6,12 +6,12 @@ ms.author: mamccrea
 ms.service: stream-analytics
 ms.topic: troubleshooting
 ms.date: 08/07/2020
-ms.openlocfilehash: 1c649499fd9eaedac0ca4ff9c182e13a9da223ef
-ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
+ms.openlocfilehash: 48f178a74dea0403ff8926cf34fd64cdd9c6839f
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88053156"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92072005"
 ---
 # <a name="azure-stream-analytics-data-errors"></a>Ошибки данных в Azure Stream Analytics
 
@@ -211,6 +211,10 @@ ms.locfileid: "88053156"
 ```
 
 ## <a name="output-data-errors"></a>Ошибки выходных данных
+
+Azure Stream Analytics могут выявление ошибок выходных данных с запросом ввода-вывода или без него в приемнике вывода в зависимости от конфигурации. Например, отсутствует обязательный столбец, например  `PartitionKey` , при использовании выходных данных таблицы Azure может быть идентифицирован без запроса ввода-вывода. Однако нарушения ограничений в выходных данных SQL потребовали запроса ввода-вывода.
+
+Существует несколько ошибок данных, которые могут быть обнаружены только после вызова приемника выходных данных, что может замедлить обработку. Чтобы устранить эту проблему, измените конфигурацию задания или запрос, который вызывает ошибку данных.
 
 ### <a name="outputdataconversionerrorrequiredcolumnmissing"></a>Аутпутдатаконверсионеррор. Рекуиредколумнмиссинг
 

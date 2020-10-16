@@ -7,10 +7,10 @@ ms.topic: how-to
 ms.custom: Understand-apache-spark-code-concepts
 ms.date: 10/15/2019
 ms.openlocfilehash: 7b5be20bb8b5eb1d56c1214104037d5d824445b3
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87132353"
 ---
 # <a name="understand-apache-spark-code-for-u-sql-developers"></a>Знакомство с Apache Spark кодом для разработчиков U-SQL
@@ -126,7 +126,7 @@ Spark предлагает собственные возможности инт�
 |`SQL.MAP<K,V>`   |`MapType(keyType, valueType, valueContainsNull)` |`scala.collection.Map` | `MapType(keyType, valueType, valueContainsNull=True)`|
 |`SQL.ARRAY<T>`   |`ArrayType(elementType, containsNull)` |`scala.collection.Seq` | `ArrayType(elementType, containsNull=True)`|
 
-Дополнительные сведения можно найти в разделе
+Дополнительные сведения см. в разделе:
 
 - [org. Apache. Spark. SQL. types](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.sql.types.package)
 - [Spark SQL и типы кадров данных](https://spark.apache.org/docs/latest/sql-ref-datatypes.html)
@@ -160,14 +160,14 @@ Spark обеспечивает поддержку концепций мета х
 - `SELECT`/`FROM`/`WHERE`/`GROUP BY`+ Агрегаты +`HAVING`/`ORDER BY`+`FETCH`
 - `INNER`/`OUTER`/`CROSS`/`SEMI``JOIN`выражения
 - `CROSS`/`OUTER``APPLY`выражения
-- `PIVOT`/`UNPIVOT`выражения
-- `VALUES`Конструктор наборов строк
+- `PIVOT`/`UNPIVOT` выражения
+- `VALUES` Конструктор наборов строк
 
-- Выражения наборов`UNION`/`OUTER UNION`/`INTERSECT`/`EXCEPT`
+- Выражения наборов `UNION`/`OUTER UNION`/`INTERSECT`/`EXCEPT`
 
 Кроме того, U-SQL предоставляет разнообразные скалярные выражения на основе SQL, такие как
 
-- `OVER`оконные выражения
+- `OVER` оконные выражения
 - разнообразные встроенные функции агрегации и ранжирования (и `SUM` `FIRST` т. д.).
 - Некоторые из наиболее известных скалярных выражений SQL: `CASE` , `LIKE` , ( `NOT` ) `IN` и `AND` `OR` т. д.
 

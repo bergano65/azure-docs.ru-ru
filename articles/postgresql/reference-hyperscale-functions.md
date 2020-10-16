@@ -8,10 +8,10 @@ ms.subservice: hyperscale-citus
 ms.topic: reference
 ms.date: 08/10/2020
 ms.openlocfilehash: 16c3a45e0d88a0546772b3fdc855c90f2e450d14
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91250337"
 ---
 # <a name="functions-in-the-hyperscale-citus-sql-api"></a>Функции в API SQL для масштабирования (Цитус)
@@ -46,7 +46,7 @@ ms.locfileid: "91250337"
 
 #### <a name="return-value"></a>Возвращаемое значение
 
-Н/Д
+Недоступно
 
 #### <a name="example"></a>Пример
 
@@ -70,7 +70,7 @@ SELECT create_distributed_table('github_events', 'repo_id',
 
 #### <a name="return-value"></a>Возвращаемое значение
 
-Н/Д
+Недоступно
 
 #### <a name="example"></a>Пример
 
@@ -90,7 +90,7 @@ SELECT create_reference_table('nation');
 
 #### <a name="return-value"></a>Возвращаемое значение
 
-Н/Д
+Недоступно
 
 #### <a name="example"></a>Пример
 
@@ -126,7 +126,7 @@ DETAIL:  Distribution column types don't match for apples and oranges.
 
 #### <a name="return-value"></a>Возвращаемое значение
 
-Н/Д
+Недоступно
 
 #### <a name="example"></a>Пример
 
@@ -152,7 +152,7 @@ SELECT mark_tables_colocated('stores', ARRAY['products', 'line_items']);
 
 #### <a name="return-value"></a>Возвращаемое значение
 
-Н/Д
+Недоступно
 
 #### <a name="example"></a>Пример
 
@@ -359,7 +359,7 @@ pg_size_pretty
 
 #### <a name="arguments"></a>Аргументы
 
-Н/Д
+Недоступно
 
 #### <a name="return-value"></a>Возвращаемое значение
 
@@ -387,7 +387,7 @@ None
 
 #### <a name="return-value"></a>Возвращаемое значение
 
-Н/Д
+Недоступно
 
 #### <a name="example"></a>Пример
 
@@ -427,7 +427,7 @@ SELECT master_copy_shard_placement(12345, 'good_host', 5432, 'bad_host', 5432);
 
 #### <a name="return-value"></a>Возвращаемое значение
 
-Н/Д
+Недоступно
 
 #### <a name="example"></a>Пример
 
@@ -477,7 +477,7 @@ SELECT master_move_shard_placement(12345, 'from_host', 5432, 'to_host', 5432);
 
 #### <a name="return-value"></a>Возвращаемое значение
 
-Н/Д
+Недоступно
 
 #### <a name="example"></a>Пример
 
@@ -520,7 +520,7 @@ SELECT rebalance_table_shards('github_events', excluded_shard_list:='{1,2}');
 
 #### <a name="arguments"></a>Аргументы
 
-Н/Д
+Недоступно
 
 #### <a name="return-value"></a>Возвращаемое значение
 
@@ -575,7 +575,7 @@ SELECT * FROM get_rebalance_progress();
 
 #### <a name="return-value"></a>Возвращаемое значение
 
-Н/Д
+Недоступно
 
 ### <a name="citus_set_default_rebalance_strategy"></a>Цитус \_ . \_ Настройка \_ стратегии перераспределения по умолчанию \_
 
@@ -587,7 +587,7 @@ SELECT * FROM get_rebalance_progress();
 
 #### <a name="return-value"></a>Возвращаемое значение
 
-Н/Д
+Недоступно
 
 #### <a name="example"></a>Пример
 
@@ -601,7 +601,7 @@ SELECT citus_set_default_rebalance_strategy('by_disk_size');
 
 #### <a name="arguments"></a>Аргументы
 
-Н/Д
+Недоступно
 
 #### <a name="example"></a>Пример
 
@@ -637,7 +637,7 @@ SELECT * from citus_remote_connection_stats();
 
 #### <a name="return-value"></a>Возвращаемое значение
 
-Н/Д
+Недоступно
 
 #### <a name="example"></a>Пример
 
@@ -735,7 +735,7 @@ SELECT isolate_tenant_to_new_shard('lineitem', 135);
 └─────────────────────────────┘
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Многие из функций, описанных в этой статье, изменяют системные [таблицы метаданных](reference-hyperscale-metadata.md) .
 * [Параметры сервера](reference-hyperscale-parameters.md) Настройка поведения некоторых функций

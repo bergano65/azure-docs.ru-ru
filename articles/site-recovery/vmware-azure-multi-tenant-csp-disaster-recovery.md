@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: mayg
 ms.openlocfilehash: 334cbef7460306ef2954881a1cab918573e1e371
-ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91400644"
 ---
 # <a name="set-up-vmware-disaster-recovery-in-a-multi-tenancy-environment-with-the-cloud-solution-provider-csp-program"></a>Настройка аварийного восстановления VMware в мультитенантном окружении с использованием программы поставщика облачных решений (CSP)
@@ -97,7 +97,7 @@ ms.locfileid: "91400644"
 
 Настроив подписки клиента, как описано в этой статье, вы сможете быстро начать предоставлять доступ клиентам в любых соответствующих мультитенантных моделях. Дополнительные сведения о различных мультитенантных моделях и включении локального управления доступом доступны [здесь](vmware-azure-multi-tenant-overview.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Дополнительные сведения об управлении [доступом на основе ролей Azure (Azure RBAC)](site-recovery-role-based-linked-access-control.md) для управления Azure Site Recovery развертываниями.
 - Дополнительные сведения об [архитектуре репликации](vmware-azure-architecture.md)из VMware в Azure.
 - См. дополнительные сведения о [репликации виртуальных машин VMware в Azure](vmware-azure-tutorial.md).

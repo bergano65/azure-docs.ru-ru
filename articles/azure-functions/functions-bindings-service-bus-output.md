@@ -8,10 +8,10 @@ ms.date: 02/19/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python
 ms.openlocfilehash: 3fc8f205bff52fad6e55b7aa6692ec80ae5e954a
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88212155"
 ---
 # <a name="azure-service-bus-output-binding-for-azure-functions"></a>Выходная привязка служебной шины Azure для функций Azure
@@ -346,10 +346,10 @@ public static string Run([HttpTrigger] dynamic input, ILogger log)
 
 ## <a name="exceptions-and-return-codes"></a>Исключения и коды возврата
 
-| Привязка | Ссылка |
+| Привязка | Справочник |
 |---|---|
-| Cлужебная шина | [Коды ошибок службы "Служебная шина"](../service-bus-messaging/service-bus-messaging-exceptions.md) |
-| Cлужебная шина | [Ограничения службы "Служебная шина"](../service-bus-messaging/service-bus-quotas.md) |
+| Служебная шина | [Коды ошибок службы "Служебная шина"](../service-bus-messaging/service-bus-messaging-exceptions.md) |
+| Служебная шина | [Ограничения службы "Служебная шина"](../service-bus-messaging/service-bus-quotas.md) |
 
 <a name="host-json"></a>  
 

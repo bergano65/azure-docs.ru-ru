@@ -12,10 +12,10 @@ ms.date: 04/23/2019
 ms.author: kenwith
 ms.reviewer: asteen, japere
 ms.openlocfilehash: 3ca3df010426347846b29734426edfad4536516b
-ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91568724"
 ---
 # <a name="troubleshoot-kerberos-constrained-delegation-configurations-for-application-proxy"></a>Устранение неполадок конфигураций ограниченного делегирования Kerberos для прокси-сервера приложения
@@ -163,6 +163,6 @@ ms.locfileid: "91568724"
 - Прокси приложения Azure запрашивает билет Kerberos перед отправкой запроса к приложению. Некоторые сторонние приложения не ориентированы на этот метод проверки подлинности. Они ожидают более традиционные согласования. Первый запрос выполняется анонимно, позволяя приложению отправить ответ с поддерживаемыми типами проверки подлинности через 401. Этот тип согласования Kerberos можно включить, выполнив действия, описанные в этом документе: [ограниченное делегирование Kerberos для единого входа](application-proxy-configure-single-sign-on-with-kcd.md).
 - Проверка подлинности с несколькими прыжками — обычно используется в сценариях с многоуровневым приложением, где проверка подлинности требуется как для серверной, так и для интерфейсной части (например, SQL Server Reporting Services). Сведения о настройке сценария с несколькими прыжками см. в статье о поддержке [ограниченного делегирования Kerberos в сценариях с несколькими прыжками](https://support.microsoft.com/help/2005838/kerberos-constrained-delegation-may-require-protocol-transition-in-mul).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Настройка ограниченного делегирования Kerberos в управляемом домене](../../active-directory-domain-services/deploy-kcd.md)

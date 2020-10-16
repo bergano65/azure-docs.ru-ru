@@ -8,10 +8,10 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.date: 12/27/2019
 ms.openlocfilehash: 7750544367044cab2a0243577c200025bb9ff693
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86083038"
 ---
 # <a name="access-grafana-in-azure-hdinsight"></a>Доступ к Grafana в Azure HDInsight
@@ -24,7 +24,7 @@ ms.locfileid: "86083038"
 
 ## <a name="create-an-apache-hadoop-cluster"></a>Создание кластера Apache Hadoop
 
-См. раздел [Создание кластеров Apache Hadoop с помощью портал Azure](../hdinsight-hadoop-create-linux-clusters-portal.md). Для **типа кластера**выберите **Spark**, **Kafka**, **HBase**или **Interactive Query**.
+См. [Создание кластеров под управлением Linux в HDInsight с помощью портала Azure](../hdinsight-hadoop-create-linux-clusters-portal.md). Для **типа кластера**выберите **Spark**, **Kafka**, **HBase**или **Interactive Query**.
 
 ## <a name="access-the-grafana-dashboard"></a>Доступ к панели мониторинга Grafana
 
@@ -50,7 +50,7 @@ ms.locfileid: "86083038"
 
 1. Выберите команду **Удалить**. Выберите **Да**.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об анализе данных с помощью HDInsight см. в следующих статьях:
 

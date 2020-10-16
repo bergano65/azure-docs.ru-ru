@@ -3,12 +3,12 @@ title: Резервное копирование и восстановление
 description: В этой статье описывается, как выполнять резервное копирование и восстановление виртуальных машин Azure с использованием Azure Backup с помощью PowerShell.
 ms.topic: conceptual
 ms.date: 09/11/2019
-ms.openlocfilehash: 87d655652d0207a50f8980f18d18e76fea0b1e21
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: ded2bc8a71bf564e31f40ca9f0d6c8049188768b
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90975100"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92094098"
 ---
 # <a name="back-up-and-restore-azure-vms-with-powershell"></a>Резервное копирование и восстановление виртуальных машин Azure с помощью PowerShell
 
@@ -80,7 +80,7 @@ ms.locfileid: "90975100"
 
     В выходных данных команды для **RegistrationState** должно быть установлено значение **Registered**. Если нет, просто выполните командлет **[Register-азресаурцепровидер](/powershell/module/az.resources/register-azresourceprovider)** еще раз.
 
-## <a name="create-a-recovery-services-vault"></a>Создание хранилища Служб восстановления
+## <a name="create-a-recovery-services-vault"></a>Создание хранилища служб восстановления
 
 Чтобы создать хранилище служб восстановления, выполните описанные ниже действия. Хранилище служб восстановления отличается от хранилища службы архивации.
 
@@ -529,7 +529,7 @@ $details = Get-AzRecoveryServicesBackupJobDetails -Job $restorejob -VaultId $tar
 > [!NOTE]
 >
 > 1. Требуется модуль Азуреаз 3.0.0 или более поздней версии. <br>
-> 2. При создании зашифрованных виртуальных машин с помощью восстановленных дисков у роли Azure должно быть разрешение на выполнение действия **Microsoft.KeyVault/vaults/deploy/action**. Если у роли нет этого разрешения, создайте настраиваемую роль с этим действием. Дополнительные сведения см. в разделе [Пользовательские роли в Azure RBAC](../role-based-access-control/custom-roles.md). <br>
+> 2. При создании зашифрованных виртуальных машин с помощью восстановленных дисков у роли Azure должно быть разрешение на выполнение действия **Microsoft.KeyVault/vaults/deploy/action**. Если у роли нет этого разрешения, создайте настраиваемую роль с этим действием. Дополнительные сведения см. в статье [пользовательские роли Azure](../role-based-access-control/custom-roles.md). <br>
 > 3. После восстановления дисков можно получить шаблон развертывания, который можно использовать непосредственно для создания виртуальной машины. Для создания управляемых и неуправляемых виртуальных машин, которые шифруются и не шифруются, не требуются разные командлеты PowerShell.<br>
 > <br>
 

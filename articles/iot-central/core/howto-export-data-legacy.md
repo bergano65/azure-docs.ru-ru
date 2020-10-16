@@ -8,10 +8,10 @@ ms.date: 06/25/2020
 ms.topic: how-to
 ms.service: iot-central
 ms.openlocfilehash: 5d8f3bc0978cc67edbaee29198c78b41d1d08a32
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90974412"
 ---
 # <a name="export-iot-data-to-cloud-destinations-using-data-export-legacy"></a>Экспорт данных IoT в облачные назначения с помощью экспорта данных (прежние версии)
@@ -67,9 +67,9 @@ ms.locfileid: "90974412"
 
     |Уровень производительности|Тип учетной записи|
     |-|-|
-    |Standard|общего назначения v2|
-    |Standard|общего назначения v1|
-    |Standard|Хранилище BLOB-объектов|
+    |Стандартный|общего назначения v2|
+    |Стандартный|общего назначения v1|
+    |Стандартный|Хранилище BLOB-объектов|
     |Premium|Блочное хранилище BLOB-объектов|
 
 2. Создайте контейнер в учетной записи хранения. Войдите в свою учетную запись хранения. Выберите **Обзор BLOB-объектов** в разделе **Служба BLOB-объектов**. Выберите **+ Контейнер** в верхней части экрана, чтобы создать контейнер.
@@ -750,7 +750,7 @@ ms.locfileid: "90974412"
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы узнали, как экспортировать данные в концентраторы событий Azure, служебную шину Azure и хранилище BLOB-объектов Azure, перейдите к следующему шагу:
 

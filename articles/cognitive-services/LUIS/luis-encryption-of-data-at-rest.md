@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 08/28/2020
 ms.author: egeaney
 ms.openlocfilehash: ce6561652801d52e5600ddc63e573070281da3f2
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89078135"
 ---
 # <a name="language-understanding-service-encryption-of-data-at-rest"></a>Language Understanding шифрование неактивных данных в службе
@@ -32,11 +32,11 @@ ms.locfileid: "89078135"
 
 Существует также возможность управлять подпиской с помощью собственных ключей. Ключи, управляемые клиентом (CMK), также известные как собственный ключ (BYOK), обеспечивают большую гибкость при создании, повороте, отключении и отмене контроля доступа. Они также дают возможность выполнять аудит ключей шифрования, используемых для защиты ваших данных.
 
-Для хранения ключей, управляемых клиентом, необходимо использовать Azure Key Vault. Можно либо создать собственные ключи и хранить их в хранилище ключей, либо использовать API-интерфейсы Azure Key Vault для их генерации. Ресурс Cognitive Services и хранилище ключей должны находиться в одном и том же регионе и в одном клиенте Azure Active Directory (Azure AD), но могут находиться в разных подписках. Дополнительные сведения о Azure Key Vault см. в разделе [что такое Azure Key Vault?](https://docs.microsoft.com/azure/key-vault/key-vault-overview).
+Для их хранения используйте Azure Key Vault. Можно либо создать собственные ключи и хранить их в хранилище ключей, либо использовать API-интерфейсы Azure Key Vault для их генерации. Ресурс Cognitive Services и хранилище ключей должны находиться в одном и том же регионе и в одном клиенте Azure Active Directory (Azure AD), но могут находиться в разных подписках. Дополнительные сведения о Azure Key Vault см. в разделе [что такое Azure Key Vault?](https://docs.microsoft.com/azure/key-vault/key-vault-overview).
 
 ### <a name="customer-managed-keys-for-language-understanding"></a>Ключи, управляемые клиентом, для Language Understanding
 
-Чтобы запросить возможность использования управляемых клиентом ключей, заполните и отправьте [форму запроса ключа, управляемого клиентом Luis Service](https://aka.ms/cogsvc-cmk). Для получения сведений о состоянии вашего запроса потребуется около 3-5 рабочих дней. В зависимости от спроса вы можете поместить в очередь и утвердить, как только пространство станет доступным. После утверждения для использования CMK с LUIS необходимо создать новый ресурс Language Understanding из портал Azure и выбрать в качестве ценовой категории E0. Новый номер SKU будет работать так же, как SKU F0, который уже доступен, за исключением CMK. Пользователи не смогут выполнить обновление с F0 на новый SKU E0.
+Чтобы запросить возможность использования ключей, управляемых клиентом, заполните и отправьте [форму запроса Luis службы Customer-Managed Key](https://aka.ms/cogsvc-cmk). Для получения сведений о состоянии вашего запроса потребуется около 3-5 рабочих дней. В зависимости от спроса вы можете поместить в очередь и утвердить, как только пространство станет доступным. После утверждения для использования CMK с LUIS необходимо создать новый ресурс Language Understanding из портал Azure и выбрать в качестве ценовой категории E0. Новый номер SKU будет работать так же, как SKU F0, который уже доступен, за исключением CMK. Пользователи не смогут выполнить обновление с F0 на новый SKU E0.
 
 ![Изображение подписки LUIS](../media/cognitive-services-encryption/luis-subscription.png)
 
@@ -83,7 +83,7 @@ ms.locfileid: "89078135"
 
 Чтобы отозвать доступ к ключам, управляемым клиентом, используйте PowerShell или Azure CLI. Дополнительные сведения см. в разделе [Azure Key Vault PowerShell](https://docs.microsoft.com/powershell/module/az.keyvault//) или [Azure Key Vault CLI](https://docs.microsoft.com/cli/azure/keyvault). Отзыв доступа позволяет блокировать доступ ко всем данным в Cognitive Services ресурсе, так как ключ шифрования недоступен для Cognitive Services.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* [Форма запроса ключа, управляемого клиентом LUIS Service](https://aka.ms/cogsvc-cmk)
+* [Форма запроса ключа Customer-Managed службы LUIS](https://aka.ms/cogsvc-cmk)
 * [Дополнительные сведения о Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-overview)

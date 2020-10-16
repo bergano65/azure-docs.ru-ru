@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 07/16/2020
-ms.author: iainfou
-author: iainfoulds
+ms.author: joflore
+author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 68419c33286457a770a9988f1f00cc0b5e1f91bc
-ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
+ms.openlocfilehash: 5fd367b337a0f26323411111ea7eb1120bf6d75d
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88235304"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91965188"
 ---
 # <a name="eliminate-bad-passwords-using-azure-active-directory-password-protection"></a>Устранение неверных паролей с помощью Azure Active Directory защиты паролем
 
@@ -123,9 +123,9 @@ ms.locfileid: "88235304"
    | 0               | o                  |
    | 1               | l                  |
    | $               | s                  |
-   | \@              | a                  |
+   | \@              | а                  |
 
-Рассмотрим следующий пример:
+Рассмотрим следующий пример.
 
 * Пароль "blank" запрещен.
 * Пользователь пытается изменить пароль на " Bl@nK ".
@@ -140,7 +140,7 @@ ms.locfileid: "88235304"
 
 Нечеткое сопоставление используется для нормализованного пароля, чтобы определить, содержит ли он пароль, найденный либо в глобальном, либо в пользовательском списках запрещенных паролей. Процесс сопоставления основан на расстоянии редактирования одного (1) сравнения.
 
-Рассмотрим следующий пример:
+Рассмотрим следующий пример.
 
 * Пароль "abcdef" запрещен.
 * Пользователь пытается изменить пароль одним из следующих способов:
@@ -161,7 +161,7 @@ ms.locfileid: "88235304"
 > [!IMPORTANT]
 > Сопоставление подстрок применяется только к именам и другим терминам, которые имеют длину не менее четырех символов.
 
-Рассмотрим следующий пример:
+Рассмотрим следующий пример.
 
 * Пользователь с именем poll, желающий сбросить пароль до "p0LL23fb".
 * После нормализации этот пароль станет «poll23fb».
@@ -222,7 +222,7 @@ ms.locfileid: "88235304"
 
 Дополнительные сведения о лицензировании, включая расходы, можно найти на [сайте с ценами на Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory/).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы приступить к работе с пользовательским списком запрещенных паролей, выполните следующие действия.
 

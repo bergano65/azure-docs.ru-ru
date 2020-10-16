@@ -11,7 +11,7 @@ ms.openlocfilehash: 3818ce9ebae8e6af6ee8bb5ed30c7ab446a6f6b2
 ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91855180"
 ---
 # <a name="apache-spark-guidelines"></a>Рекомендации по Apache Spark
@@ -66,7 +66,7 @@ ms.locfileid: "91855180"
 | Хранилище Azure Data Lake Storage 1-го поколения | [Использование Azure Data Lake Storage 1-го поколения с кластерами Azure HDInsight](../hdinsight-hadoop-use-data-lake-storage-gen1.md) |
 | хранилище BLOB-объектов Azure | [Использование службы хранилища Azure с кластерами Azure HDInsight](../hdinsight-hadoop-use-blob-storage.md) |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Настройка параметров Apache Spark](apache-spark-settings.md)
 * [Оптимизация заданий Apache Spark в Azure HDInsight](apache-spark-perf.md)

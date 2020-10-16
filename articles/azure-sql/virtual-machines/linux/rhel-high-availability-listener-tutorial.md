@@ -9,10 +9,10 @@ ms.author: vanto
 ms.reviewer: jroth
 ms.date: 03/11/2020
 ms.openlocfilehash: 01501b99d5d7c42af98d0397cf6ff8cbca14b07b
-ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89485810"
 ---
 # <a name="tutorial-configure-an-availability-group-listener-for-sql-server-on-rhel-virtual-machines-in-azure"></a>Руководство по настройке прослушивателя группы доступности для SQL Server на виртуальных машинах RHEL в Azure
@@ -136,7 +136,7 @@ Azure создаст пробу и с ее помощью будет прове�
    | **Время ожидания простоя (в минутах)** |*4* |
    | **Плавающий IP-адрес (прямой ответ от сервера)** |**Enabled** |
 
-   :::image type="content" source="media/rhel-high-availability-listener-tutorial/add-load-balancing-rule.png" alt-text="Добавление правила балансировки нагрузки":::
+   :::image type="content" source="media/rhel-high-availability-listener-tutorial/add-load-balancing-rule.png" alt-text="Добавление серверного пула":::
 
 4. Нажмите кнопку **ОК**. 
 5. Azure настроит правило балансировки нагрузки. Теперь подсистема балансировки нагрузки настроена для маршрутизации трафика в экземпляр SQL Server, на котором размещается прослушиватель для группы доступности. 

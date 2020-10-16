@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 04/14/2020
 ms.author: jeedes
-ms.openlocfilehash: 2fadfac3fe9e66c3a05e2cceed19def607ff72c3
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: d980e0a5dd4b042f919775c205a20ea69e51f0bd
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88539289"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91709008"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-123formbuilder-sso"></a>Руководство по интеграции единого входа Azure Active Directory с 123FormBuilder SSO
 
@@ -133,7 +133,7 @@ ms.locfileid: "88539289"
 
 1. Чтобы настроить единый вход на стороне **123FormBuilder**, перейдите по адресу [https://www.123formbuilder.com/form-2709121/](https://www.123formbuilder.com/form-2709121/) и выполните следующие действия:
 
-    ![Настройка единого входа](./media/123formbuilder-tutorial/submit.png) 
+    ![Снимок экрана: экран настройки "SSO SAML — поставщик удостоверений".](./media/123formbuilder-tutorial/submit.png) 
 
     а. В текстовое поле **Email** (Адрес электронной почты) введите адрес электронной почты пользователя, например `B.Simon@Contoso.com`.
 

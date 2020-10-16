@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 08/28/2020
 ms.author: alkohli
 ms.openlocfilehash: 5ed6de28f1e1b0545ebd675c30249e2f2b4747e9
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90890641"
 ---
 # <a name="deploy-vms-on-your-azure-stack-edge-pro-gpu-device-via-azure-powershell-script"></a>Развертывание виртуальных машин на устройстве с Azure Stack ребра Pro GPU с помощью скрипта Azure PowerShell
@@ -27,7 +27,7 @@ ms.locfileid: "90890641"
 
 ### <a name="for-azure-stack-edge-pro-device-via-the-local-web-ui"></a>Для Azure Stack устройства Pro с помощью локального пользовательского веб-интерфейса
 
-1. Параметры сети на устройстве Azure Stack погранично Pro завершены, как описано в разделе [Шаг 1. настройка Azure Stack ребра Pro Device](azure-stack-edge-j-series-connect-resource-manager.md#step-1-configure-azure-stack-edge-pro-device).
+1. Настройте параметры сети на устройстве Azure Stack Edge Pro (см. раздел [Шаг 1. Настройка устройства Azure Stack Edge Pro](azure-stack-edge-j-series-connect-resource-manager.md#step-1-configure-azure-stack-edge-pro-device)).
 
 2. Включите сетевой интерфейс для служб вычислений. IP-адрес этого сетевого интерфейса используется для создания виртуального коммутатора для развертывания виртуальной машины. Это можно сделать следующим образом:
 
@@ -36,7 +36,7 @@ ms.locfileid: "90890641"
         > [!IMPORTANT] 
         > Для служб вычислений можно настроить только один порт.
 
-    2. Включите службы вычислений на сетевом интерфейсе. Azure Stack пограничной Pro создает и управляет виртуальным коммутатором, соответствующим этому сетевому интерфейсу.
+    2. Включите службы вычислений на сетевом интерфейсе. Azure Stack Edge Pro создает виртуальный коммутатор, соответствующий этому сетевому интерфейсу, и управляет им.
 
 3. Вы создали и установили все сертификаты на устройстве Azure Stack ребра Pro и в доверенном корневом хранилище клиента. (см. раздел [Шаг 2. Создание и установка сертификатов](azure-stack-edge-j-series-connect-resource-manager.md#step-2-create-and-install-certificates)).
 
@@ -116,6 +116,6 @@ ms.locfileid: "90890641"
     ```
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Развертывание виртуальных машин с помощью командлетов Azure PowerShell](azure-stack-edge-j-series-deploy-virtual-machine-powershell.md)

@@ -7,10 +7,10 @@ ms.reviewer: jonfan, logicappspm
 ms.topic: article
 ms.date: 08/27/2020
 ms.openlocfilehash: 5032676848536f0b9498cf4beecf86277484a901
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89230812"
 ---
 # <a name="call-trigger-or-nest-logic-apps-by-using-https-endpoints-in-azure-logic-apps"></a>Вызов, активация или вложение приложений логики с помощью конечных точек HTTPS в Azure Logic Apps
@@ -400,7 +400,7 @@ ms.locfileid: "89230812"
 * Настройка доменов управления API в [портал Azure](https://portal.azure.com/)
 * настройка политики для проверки базовой проверки подлинности.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Получение и реагирование на входящие вызовы HTTPS с помощью Azure Logic Apps](../connectors/connectors-native-reqres.md)
 * [Безопасный доступ и данные в Azure Logic Apps — доступ для входящих вызовов триггеров на основе запросов](../logic-apps/logic-apps-securing-a-logic-app.md#secure-inbound-requests)

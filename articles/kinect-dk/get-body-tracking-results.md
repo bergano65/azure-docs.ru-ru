@@ -9,10 +9,10 @@ ms.date: 06/26/2019
 ms.topic: conceptual
 keywords: Kinect, Azure, датчик, пакет SDK, тело, отслеживание, совместное соединение
 ms.openlocfilehash: 1b62022242144d5db51455a32ac04b67c3e5dd7a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85277037"
 ---
 # <a name="get-body-tracking-results"></a>Получение результатов отслеживания тела
@@ -128,7 +128,7 @@ if (pop_frame_result != K4A_WAIT_RESULT_SUCCEEDED)
 k4abt_frame_release(body_frame); // Remember to release the body frame once you finish using it
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 >[Получение доступа к данным о корпусе](access-data-body-frame.md)

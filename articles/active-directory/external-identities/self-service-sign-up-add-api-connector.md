@@ -12,10 +12,10 @@ manager: celestedg
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: db68528a810ebc9cd61b205dd5167396d75db7f7
-ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91613991"
 ---
 # <a name="add-an-api-connector-to-a-user-flow"></a>Добавление соединителя API в поток пользователя
@@ -271,7 +271,7 @@ Content-type: application/json
 | version     | Строка | Да      | Версия API.                                                    |
 | action      | Строка | Да      | Значение должно быть `ShowBlockPage`                                              |
 | userMessage | Строка | Да      | Сообщение, отображаемое для пользователя.                                            |
-| code        | Строка | Нет       | Код ошибки. Может использоваться в целях отладки. Не отображается для пользователя. |
+| code        | Строковый тип | Нет       | Код ошибки. Может использоваться в целях отладки. Не отображается для пользователя. |
 
 **Взаимодействие с конечным пользователем с блокирующим ответом**
 
@@ -296,9 +296,9 @@ Content-type: application/json
 | ----------- | ------- | -------- | -------------------------------------------------------------------------- |
 | version     | Строка  | Да      | Версия API.                                                    |
 | action      | Строка  | Да      | Необходимое значение: `ValidationError`.                                           |
-| status      | Целое число | Да      | `400`Для ответа ValidationError должно быть значение.                        |
+| status      | Целочисленный тип | Да      | `400`Для ответа ValidationError должно быть значение.                        |
 | userMessage | Строка  | Да      | Сообщение, отображаемое для пользователя.                                            |
-| code        | Строка  | Нет       | Код ошибки. Может использоваться в целях отладки. Не отображается для пользователя. |
+| code        | Строковый тип  | Нет       | Код ошибки. Может использоваться в целях отладки. Не отображается для пользователя. |
 
 **Взаимодействие с пользователем при проверке — ошибка проверки**
 
@@ -326,7 +326,7 @@ Content-type: application/json
 * При необходимости используйте более агрессивные уровни ведения журнала (например, "Трассировка" или "Отладка") в разработке.
 * Отслеживайте долгое время ответа API.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 <!-- - Learn [where you can enable an API connector](api-connectors-overview.md#where-you-can-enable-an-api-connector-in-a-user-flow) -->
 - Узнайте, как [Добавить пользовательский рабочий процесс утверждения для самостоятельной регистрации](self-service-sign-up-add-approvals.md)
 - Приступая к работе с [примерами краткого руководства по функциям Azure](code-samples-self-service-sign-up.md#api-connector-azure-function-quickstarts).

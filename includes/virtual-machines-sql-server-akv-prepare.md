@@ -1,5 +1,5 @@
 ---
-title: Включить имя файла
+title: включить файл
 description: включить файл
 services: virtual-machines-windows
 author: rothja
@@ -14,10 +14,10 @@ ms.date: 04/30/2018
 ms.author: jroth
 ms.custom: include file
 ms.openlocfilehash: 66a3ecd82ab61f25c99fd1268d9ce7567b057d66
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86050305"
 ---
 ## <a name="prepare-for-akv-integration"></a>Подготовка к интеграции AKV
@@ -25,16 +25,16 @@ ms.locfileid: "86050305"
 
 1. [Установка Azure PowerShell](#install)
 2. [Создание Azure Active Directory](#register)
-3. [Создание хранилища ключей](#createkeyvault)
+3. [Создайте хранилище ключей.](#createkeyvault)
 
 В следующих разделах описаны эти предварительные условия и представлены сведения, необходимые для использования командлетов PowerShell в дальнейшем.
 
 [!INCLUDE [updated-for-az](./updated-for-az.md)]
 
-### <a name="install-azure-powershell"></a><a id="install"></a>Установка Azure PowerShell
+### <a name="install-azure-powershell"></a><a id="install"></a> Установка Azure PowerShell
 Убедитесь, что установлен последний модуль Azure PowerShell. Подробнее: [Установка и настройка Azure PowerShell](/powershell/azure/install-az-ps).
 
-### <a name="register-an-application-in-your-azure-active-directory"></a><a id="register"></a>Регистрация приложения в Azure Active Directory
+### <a name="register-an-application-in-your-azure-active-directory"></a><a id="register"></a> Регистрация приложения в Azure Active Directory
 
 Во-первых, в вашей подписке должна быть служба [Azure Active Directory](https://azure.microsoft.com/trial/get-started-active-directory/) (AAD). Среди прочих преимуществ она дает возможность предоставить доступ к вашему хранилищу ключей для определенных пользователей и приложений.
 
@@ -53,7 +53,7 @@ ms.locfileid: "86050305"
 
 * Необходимо авторизовать этот новый идентификатор приложения (или идентификатор клиента), чтобы иметь следующие разрешения на доступ: **Get**, **wrapKey**, **unwrapKey**. Это делается с помощью командлета [Set-AzKeyVaultAccessPolicy](https://docs.microsoft.com/powershell/module/az.keyvault/set-azkeyvaultaccesspolicy). Дополнительные сведения см. в статье [Что такое хранилище ключей Azure?](../articles/key-vault/key-vault-overview.md)
 
-### <a name="create-a-key-vault"></a><a id="createkeyvault"></a>Создание хранилища ключей
+### <a name="create-a-key-vault"></a><a id="createkeyvault"></a> Создание хранилища ключей
 Чтобы использовать хранилище ключей Azure для хранения ключей, которые будут использоваться для шифрования на виртуальной машине, необходим доступ к хранилищу ключей. Если вы еще не настроили ваше хранилище ключей, создайте его, выполнив следующие действия, описанные в статье [Приступая к работе с хранилищем ключей Azure](../articles/key-vault/key-vault-overview.md). Перед выполнением этих шагов учтите, что во время этой настройки необходимо собрать некоторые сведения, которые понадобятся в дальнейшем при включении интеграции Azure Key Vault на виртуальной машине SQL.
 
 ```azurepowershell

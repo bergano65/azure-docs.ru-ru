@@ -15,14 +15,14 @@ ms.workload: infrastructure
 ms.date: 09/28/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: d0df2199a2afdbea1ee1c6c543df324e9fe3cc3e
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.openlocfilehash: 02755c164e72e3149497ee8e3c1fdc19141fd54f
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91450766"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91973637"
 ---
-# <a name="nfs-v41-volumes-on-azure-netapp-files-for-sap-hana"></a>Тома NFS версии 4.1 на Azure NetApp Files для SAP HANA
+# <a name="nfs-v41-volumes-on-azure-netapp-files-for-sap-hana"></a>Тома NFS версии 4.1 в Azure NetApp Files для SAP HANA
 
 Azure NetApp Files предоставляет собственные общие папки NFS, которые можно использовать для томов **/Hana/Shared**, **/Hana/Data**и **/Hana/log** . Использование общих ресурсов NFS на основе использовании для томов **/Hana/Data** и **/Hana/log** требует использования протокола NFS версии 4.1. Протокол NFS v3 не поддерживается для использования томов **/Hana/Data** и **/Hana/log** при создании общих папок на использовании. 
 
@@ -131,7 +131,7 @@ Azure NetApp Files предоставляет собственные общие 
  
 
 ## <a name="backup"></a>Резервное копирование
-Помимо потоковых резервных копий и резервного копирования Azure резервное копирование SAP HANA баз данных, как описано в статье [руководство по резервному копированию для SAP HANA на виртуальных машинах Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-hana-backup-guide), Azure NetApp Files открывает возможность выполнять резервное копирование моментальных снимков на основе хранилища. 
+Помимо потоковых резервных копий и резервного копирования Azure резервное копирование SAP HANA баз данных, как описано в статье [руководство по резервному копированию для SAP HANA на виртуальных машинах Azure](./sap-hana-backup-guide.md), Azure NetApp Files открывает возможность выполнять резервное копирование моментальных снимков на основе хранилища. 
 
 SAP HANA поддерживает:
 
@@ -195,4 +195,4 @@ root # > azcopy sync '/hana/data/SID/mnt00001/.snapshot' 'https://azacsnaptmytes
 ## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь со статьей:
 
-- [Обеспечение высокого уровня доступности для SAP HANA на виртуальных машинах Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-hana-availability-overview)
+- [Обеспечение высокого уровня доступности для SAP HANA на виртуальных машинах Azure](./sap-hana-availability-overview.md)

@@ -4,10 +4,10 @@ description: Узнайте, как настроить устройство дл
 ms.topic: article
 ms.date: 04/16/2020
 ms.openlocfilehash: 6b0637019e40308cf40dcdbb4dc78512a8aa91e8
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91438924"
 ---
 # <a name="set-up-an-appliance-with-a-script"></a>Настройка устройства с помощью сценария
@@ -51,7 +51,7 @@ Hyper-V | Windows Server 2016 с 16 ГБ памяти, восемь виртуа
 
     **Алгоритм** | **Загрузить** | **SHA256**
     --- | --- | ---
-    VMware (85,8 МБ) | [Последняя версия](https://go.microsoft.com/fwlink/?linkid=2116601) | 85b74d93dfcee43412386141808d82147916330e6669df94c7969fe1b3d0fe72
+    VMware (85,8 МБ) | [Последняя версия](https://go.microsoft.com/fwlink/?linkid=2116601) | 85b74d93dfcee43412386141808d82147916330e6669df94c7969fe1b3d0fe72
 
 
 
@@ -100,7 +100,7 @@ Hyper-V | Windows Server 2016 с 16 ГБ памяти, восемь виртуа
 
     **Сценарий** | **Загрузить** | **SHA256**
     --- | --- | ---
-    Hyper-V (85,8 МБ) | [Последняя версия](https://go.microsoft.com/fwlink/?linkid=2116657) |  9bbef62e2e22481eda4b77c7fdf05db98c3767c20f0a873114fb0dcfa6ed682a
+    Hyper-V (85,8 МБ) | [Последняя версия](https://go.microsoft.com/fwlink/?linkid=2116657) |  9bbef62e2e22481eda4b77c7fdf05db98c3767c20f0a873114fb0dcfa6ed682a
 
 ### <a name="run-the-script"></a>Выполнение скрипта
 
@@ -129,7 +129,7 @@ Hyper-V | Windows Server 2016 с 16 ГБ памяти, восемь виртуа
 
 Убедитесь, что устройство может подключаться к URL-адресам Azure для [общедоступного](migrate-appliance.md#public-cloud-urls) облака.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 После развертывания устройства необходимо настроить его в первый раз и зарегистрировать в проекте службы "миграция Azure".
 

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
-ms.openlocfilehash: 1f9f1b51ce09577bf17fa4d92273348665987848
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: 9f86f7a0a7eaef7c0dc244a2e089596de3779eae
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89266618"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92018973"
 ---
 # <a name="publish-content-in-the-azure-portal"></a>Публикация содержимого на портале Azure
 
@@ -66,7 +66,7 @@ ms.locfileid: "89266618"
 > 
 > 
 
-Чтобы обновить для указателя конечную дату срока действия, вы можете использовать [REST API](/rest/api/media/operations/locator#update_a_locator) или [.NET API](https://go.microsoft.com/fwlink/?LinkID=533259). 
+Чтобы обновить для указателя конечную дату срока действия, вы можете использовать [REST API](/rest/api/media/operations/locator#update_a_locator) или [.NET API](/dotnet/api/microsoft.windowsazure.mediaservices.client.ilocator). 
 
 > [!NOTE]
 > Когда вы обновляете срок действия последовательного указателя, URL-адрес изменяется.

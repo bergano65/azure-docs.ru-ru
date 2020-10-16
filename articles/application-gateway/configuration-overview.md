@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 09/09/2020
 ms.author: surmb
 ms.openlocfilehash: 0012ac99600c77dce5940387e1da54f29c3f6ab7
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89652008"
 ---
 # <a name="application-gateway-configuration-overview"></a>Обзор настройки шлюза приложений
@@ -67,7 +67,7 @@ ms.locfileid: "89652008"
 > [!NOTE]
 > После создания пользовательской проверки работоспособности необходимо связать ее с параметром HTTP серверной части. Пользовательская проверка не будет отслеживать работоспособность серверного пула, если соответствующий параметр HTTP явно не связан с прослушивателем с помощью правила.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы знакомы с компонентами шлюза приложений, вы можете:
 

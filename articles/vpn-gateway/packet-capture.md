@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 09/03/2020
 ms.author: radwiv
-ms.openlocfilehash: 486ac23f26a7eee6b31322de79bfb68076a598ec
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.openlocfilehash: 3be01f6d8e1fb1f6ba541f8d1cb0c92d2a43b0da
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89441601"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92073110"
 ---
 # <a name="configure-packet-capture-for-vpn-gateways"></a>Настройка записи пакетов для VPN-шлюзов
 
@@ -318,7 +318,7 @@ ms.locfileid: "89441601"
 
 ## <a name="set-up-packet-capture-by-using-powershell"></a>Настройка записи пакетов с помощью PowerShell
 
-В следующих примерах показаны команды PowerShell, которые запускают и останавливают запись пакетов. Дополнительные сведения о параметрах параметров см. в [этом документе PowerShell](https://docs.microsoft.com/powershell/module/az.network/start-azvirtualnetworkgatewaypacketcapture).
+В следующих примерах показаны команды PowerShell, которые запускают и останавливают запись пакетов. Дополнительные сведения о параметрах параметров см. в разделе [Start-азвиртуалнетворкгатевайпаккеткаптуре](https://docs.microsoft.com/powershell/module/az.network/start-azvirtualnetworkgatewaypacketcapture).
 
 ### <a name="start-packet-capture-for-a-vpn-gateway"></a>Запуск записи пакетов для VPN-шлюза
 
@@ -354,6 +354,9 @@ Stop-AzVirtualNetworkGatewayConnectionPacketCapture -ResourceGroupName "YourReso
 - Рекомендуемая минимальная длительность записи пакетов составляет 600 секунд. Из-за проблем синхронизации между несколькими компонентами в пути более короткие записи пакетов могут не предоставлять полные данные.
 - Файлы данных записи пакетов создаются в формате ПКАП. Используйте Wireshark или другие часто доступные приложения для открытия файлов ПКАП.
 - Записи пакетов не поддерживаются на шлюзах, основанных на политиках.
+- Если `SASurl` параметр настроен неправильно, трассировка может завершиться с ошибками хранилища. Примеры правильного создания `SASurl` параметра см. в разделе командлета [азвиртуалнетворкгатевайпаккеткаптуре](https://docs.microsoft.com/powershell/module/az.network/stop-azvirtualnetworkgatewaypacketcapture).
+
+
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

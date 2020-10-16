@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 3/18/2020
 ms.openlocfilehash: 5caed64beb43cbb1e884a3dde6bc0052c617f83e
-ms.sourcegitcommit: 3246e278d094f0ae435c2393ebf278914ec7b97b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89378786"
 ---
 # <a name="security-in-azure-database-for-mysql"></a>Безопасность в Базе данных Azure для MySQL
@@ -38,7 +38,7 @@ ms.locfileid: "89378786"
 Конечные точки службы виртуальной сети расширяют возможности подключения к виртуальной сети по магистрали Azure. С помощью правил виртуальной сети можно включить сервер базы данных Azure для MySQL, чтобы разрешить подключения из выбранных подсетей в виртуальной сети. Дополнительные сведения см. в разделе [Общие сведения о конечной точке службы виртуальной сети](concepts-data-access-and-security-vnet.md).
 
 ### <a name="private-ip"></a>Частный IP-адрес
-Частная ссылка позволяет подключаться к базе данных Azure для MySQL в Azure с помощью частной конечной точки. Приватный канал Azure, по сути, предоставляет службы Azure в частной виртуальной сети (VNet). Доступ к ресурсам PaaS можно получить, используя частный IP-адрес, как и любой другой ресурс в виртуальной сети. Дополнительные сведения см. в статье [Общие сведения о частной ссылке](concepts-data-access-security-private-link.md) .
+Частная ссылка позволяет подключаться к базе данных Azure для MySQL в Azure с помощью частной конечной точки. Приватный канал Azure, по сути, предоставляет службы Azure в частной виртуальной сети (VNet). Доступ к ресурсам PaaS можно получить, используя закрытый IP-адрес и любой другой ресурс в виртуальной сети. Дополнительные сведения см. в статье [Общие сведения о частной ссылке](concepts-data-access-security-private-link.md) .
 
 ## <a name="access-management"></a>Управление доступом
 
@@ -52,5 +52,5 @@ ms.locfileid: "89378786"
 [Ведение журнала аудита](concepts-audit-logs.md) доступно для наблюдения за действиями в базах данных. 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Включение правил брандмауэра для [IP-адресов](concepts-firewall-rules.md) или [виртуальных сетей](concepts-data-access-and-security-vnet.md)

@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 8/30/2019
 ms.openlocfilehash: 63b657e77172282225a9bc890b2f185b0f4d42a1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "81417132"
 ---
 # <a name="use-azure-data-factory-to-migrate-data-from-an-on-premises-hadoop-cluster-to-azure-storage"></a>Перенос данных из локального кластера Hadoop в службу хранилища Azure с помощью фабрики данных Azure 
@@ -139,7 +139,7 @@ DistCp использует MapReduce для воздействия на сво�
 > Это гипотетический пример цен. Реальная цена зависит от фактической пропускной способности в среде.
 > Цена для виртуальной машины Azure Windows (с установленной локальной средой выполнения интеграции) не включена.
 
-### <a name="additional-references"></a>Дополнительные ссылки
+### <a name="additional-references"></a>Дополнительная справка
 
 - [Соединитель HDFS](https://docs.microsoft.com/azure/data-factory/connector-hdfs)
 - [Соединитель хранилища BLOB-объектов Azure](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage)

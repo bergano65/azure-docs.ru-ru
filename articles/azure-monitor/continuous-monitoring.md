@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/12/2018
-ms.openlocfilehash: 0173d324da4f6cf2a24b825fe44fc07b7fe50b84
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: e41fa9f9918f4f17bd89e80610ae608e83eb3402
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87318136"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91996404"
 ---
 # <a name="continuous-monitoring-with-azure-monitor"></a>Непрерывный мониторинг с помощью Azure Monitor
 
@@ -43,7 +43,7 @@ ms.locfileid: "87318136"
 
 [Инфраструктура в виде кода](/azure/devops/learn/what-is-infrastructure-as-code) – это управление инфраструктурой в описательной модели с использованием той же версии, что и команды DevOps для исходного кода. Это повышает надежность и масштабируемость вашей среды и позволяет использовать аналогичные процессы, используемые для управления вашими приложениями.
 
--  Используйте [шаблоны Resource Manager](platform/template-workspace-configuration.md), чтобы включить мониторинг и настройки оповещений для большого набора ресурсов.
+-  Используйте [шаблоны Resource Manager](./samples/resource-manager-workspace.md), чтобы включить мониторинг и настройки оповещений для большого набора ресурсов.
 - Используйте [политику Azure](../governance/policy/overview.md) для применения различных правил к вашим ресурсам. Это обеспечивает соответствие ресурсов корпоративным стандартам и соглашениям об уровне обслуживания. 
 
 
@@ -87,4 +87,3 @@ ms.locfileid: "87318136"
 
 - Дополнительные сведения о различных компонентах см. в статье [Общие сведения о службе Azure Monitor](overview.md).
 - [Добавьте постоянный мониторинг](./app/continuous-monitoring.md) к конвейеру выпуска.
-

@@ -7,10 +7,10 @@ ms.author: anvar
 ms.topic: troubleshooting
 ms.date: 08/17/2020
 ms.openlocfilehash: 6318f426e42612f21da7a43c9857894ae610f68e
-ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88871192"
 ---
 # <a name="troubleshooting-replication-issues-in-agentless-vmware-vm-migration"></a>Устранение проблем репликации в миграции виртуальных машин VMware без агента
@@ -58,7 +58,7 @@ ms.locfileid: "88871192"
 
 $userPrincipalId = $ (Get-AzureRmADUser-UserPrincipalName "user2_email_address"). Удостоверения
 
-Set-AzureRmKeyVaultAccessPolicy-VaultName "keyvaultname"-ObjectId $userPrincipalId-Пермиссионстостораже Get, List, DELETE, Set, Update, реженератекэй, жетсас, листсас, делетесас, сетсас, Recover, Backup, Restore, DELETE
+Set-AzureRmKeyVaultAccessPolicy-VaultName "keyvaultname"-ObjectId $userPrincipalId-Пермиссионстостораже Get, List, DELETE, Set, Update, реженератекэй, жетсас, листсас, делетесас, сетсас, Recover, Backup, Restore, очистить
 
 
 ## <a name="disposeartefactstimedout"></a>диспосеартефактстимедаут

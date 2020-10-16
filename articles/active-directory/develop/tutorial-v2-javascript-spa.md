@@ -1,7 +1,7 @@
 ---
-title: Руководство. Одностраничное приложение JavaScript | Azure
+title: Руководство по созданию одностраничного приложения JavaScript, использующего платформу удостоверений Майкрософт для аутентификации | Azure
 titleSuffix: Microsoft identity platform
-description: Из этого руководства вы узнаете, как одностраничные приложения JavaScript могут вызывать API, для которого требуются маркеры доступа, выданные платформой удостоверений Майкрософт.
+description: В этом руководстве показано, как создать одностраничное приложение (SPA) JavaScript, которое использует платформу удостоверений Майкрософт для реализации входа пользователей, и как получить маркер доступа для вызова API Microsoft Graph от имени пользователей.
 services: active-directory
 author: navyasric
 manager: CelesteDG
@@ -12,52 +12,48 @@ ms.workload: identity
 ms.date: 08/06/2020
 ms.author: nacanuma
 ms.custom: aaddev, identityplatformtop40, devx-track-js
-ms.openlocfilehash: 728c0b4dadfa23b2d52e773928a3f78df27068b6
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 027305d953a24de17e62aa74b33b72494b03e652
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91256830"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91825911"
 ---
-# <a name="sign-in-users-and-call-the-microsoft-graph-api-from-a-javascript-single-page-application-spa"></a>Вход пользователей и вызов API Microsoft Graph из одностраничного приложения JavaScript (SPA)
+# <a name="tutorial-sign-in-users-and-call-the-microsoft-graph-api-from-a-javascript-single-page-application-spa"></a>Руководство по Вход пользователей и вызов API Microsoft Graph из одностраничного приложения JavaScript (SPA)
 
-В этом руководстве описано, как с помощью одностраничного приложения (SPA) JavaScript сделать следующее:
-- войти в личные, рабочие и учебные учетные записи;
-- Получение маркера доступа
-- вызвать API Microsoft Graph и другие API, которым требуются маркеры доступа от *конечной точки платформы удостоверений Майкрософт*.
+В этом руководстве вы создадите одностраничное приложение (SPA) в JavaScript, которое сможет выполнять вход пользователей с личными учетными записями Майкрософт или рабочими и учебными учетными записями, а затем получать маркер доступа для вызова API Microsoft Graph.
+
+В этом руководстве рассматриваются следующие темы:
+
+> [!div class="checklist"]
+> * создание проекта JavaScript с помощью `npm`;
+> * регистрация приложения на портале Azure;
+> * добавление кода для поддержки входа и выхода пользователей;
+> * добавление кода для вызова API Microsoft Graph;
+> * Тестирование приложения
 
 >[!TIP]
 > В этом учебнике используется MSAL.js версии 1.x, в которой можно использовать только поток с неявным предоставлением разрешения для одностраничных приложений. Мы рекомендуем использовать для всех новых приложений [MSAL.js версии 2.x и поток кода авторизации с поддержкой PKCE и CORS](tutorial-v2-javascript-auth-code.md).
+
+## <a name="prerequisites"></a>Предварительные требования
+
+* [Node.js](https://nodejs.org/en/download/) для запуска локального веб-сервера.
+* [Visual Studio Code](https://code.visualstudio.com/download) или другой редактор для изменения файлов проекта.
+* Современный браузер. **Internet Explorer** **не поддерживается** приложением, которое вы создадите в этом руководстве, так как оно использует соглашения [ES6](http://www.ecma-international.org/ecma-262/6.0/).
 
 ## <a name="how-the-sample-app-generated-by-this-guide-works"></a>Как работает пример приложения, созданный в этом руководстве
 
 ![Схема работы примера приложения, создаваемого в этом кратком руководстве](media/active-directory-develop-guidedsetup-javascriptspa-introduction/javascriptspa-intro.svg)
 
-### <a name="more-information"></a>Дополнительные сведения
+Пример приложения, созданный с помощью этого руководства, позволяет одностраничному приложению JavaScript выполнять запрос к API Microsoft Graph или веб-API, принимающему маркеры от конечной точки платформы удостоверений Майкрософт. В этом сценарии после входа пользователя в систему маркер доступа запрашивается и добавляется в HTTP-запросы с использованием заголовка авторизации. Этот маркер будет использоваться для получения профиля пользователя и почтовых сообщений через **API Microsoft Graph**.
 
-Пример приложения, созданный с помощью этого руководства, позволяет одностраничному приложению JavaScript выполнять запрос к API Microsoft Graph или веб-API, принимающему маркеры от конечной точки платформы удостоверений Майкрософт. В этом сценарии после входа пользователя в систему маркер доступа запрашивается и добавляется в HTTP-запросы с использованием заголовка авторизации. Этот маркер будет использоваться для получения профиля пользователя и почтовых сообщений через **API Microsoft Graph**. Получение маркера и его обновление выполняет **библиотека проверки подлинности Майкрософт** (MSAL).
-
-### <a name="libraries"></a>Библиотеки
-
-В этом руководстве используется следующая библиотека:
-
-|Библиотека|Описание|
-|---|---|
-|[msal.js](https://github.com/AzureAD/microsoft-authentication-library-for-js)|MSAL для JavaScript|
+Получение маркера и его обновление выполняет [библиотека проверки подлинности Майкрософт](https://github.com/AzureAD/microsoft-authentication-library-for-js) (MSAL).
 
 ## <a name="set-up-your-web-server-or-project"></a>Настройка веб-сервера или проекта
 
 > Хотите скачать этот пример проекта вместо указанного выше проекта? [Скачайте файлы проекта](https://github.com/Azure-Samples/active-directory-javascript-graphapi-v2/archive/quickstart.zip).
 >
 > Перейдите к [настройке](#register-your-application), чтобы настроить пример кода перед выполнением.
-
-## <a name="prerequisites"></a>Предварительные требования
-
-* Для работы с этим учебником требуется локальный веб-сервер, например [Node.js](https://nodejs.org/en/download/) или [.NET Core](https://www.microsoft.com/net/core), либо интеграция IIS Express с [Visual Studio 2017](https://www.visualstudio.com/downloads/).
-
-* Инструкции в этом руководстве предполагают использование встроенного веб-сервера, например Node.js. Мы рекомендуем использовать [Visual Studio Code](https://code.visualstudio.com/download) в качестве интегрированной среды разработки (IDE).
-
-* Современный браузер. Этот пример кода JavaScript использует соглашения [ES6](http://www.ecma-international.org/ecma-262/6.0/), поэтому он **не** поддерживает **Internet Explorer**.
 
 ## <a name="create-your-project"></a>Создание проекта
 
@@ -76,7 +72,7 @@ ms.locfileid: "91256830"
    npm install morgan --save
    ```
 
-1. Теперь создайте JS-файл с именем `index.js` и добавьте следующий код:
+1. Теперь создайте JS-файл с именем `server.js` и добавьте следующий код:
 
    ```JavaScript
    const express = require('express');
@@ -283,7 +279,7 @@ ms.locfileid: "91256830"
 
 > ### <a name="set-a-redirect-url-for-nodejs"></a>Настройка URL-адреса перенаправления для Node.js
 >
-> При использовании Node.js порт веб-сервера можно задать в файле *index.js*. В этом учебнике используется порт 3000, но вы можете указать любой другой доступный порт.
+> При использовании Node.js порт веб-сервера можно задать в файле *server.js*. В этом учебнике используется порт 3000, но вы можете указать любой другой доступный порт.
 >
 > Чтобы настроить URL-адрес перенаправления в сведениях о регистрации приложения, снова перейдите на панель **Регистрация приложения** и выполните одно из следующих действий:
 >
@@ -486,8 +482,6 @@ ms.locfileid: "91256830"
    ```
 1. В браузере введите **http://localhost:3000** или **http://localhost:{port}** , где *port* — это порт, который прослушивает ваш веб-сервер. Появится содержимое файла *index.html* с кнопкой **Sign In** (Войти).
 
-## <a name="test-your-application"></a>Тестирование приложения
-
 После загрузки файла *index.html* в браузер нажмите кнопку **Sign In** (Войти). Вам будет предложено войти с помощью конечной точки платформы удостоверений Майкрософт.
 
 ![Окно входа учетной записи JavaScript SPA](media/active-directory-develop-guidedsetup-javascriptspa-test/javascriptspascreenshot1.png)
@@ -512,3 +506,11 @@ ms.locfileid: "91256830"
 > При увеличении количества областей от пользователя могут потребоваться дополнительные согласия.
 
 [!INCLUDE [Help and support](../../../includes/active-directory-develop-help-support-include.md)]
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+Чтобы узнать больше о разработке одностраничных приложений (SPA) на платформе удостоверений Майкрософт, ознакомьтесь с нашим циклом из нескольких статей.
+
+> [!div class="nextstepaction"]
+> [Scenario: одностраничное приложение](scenario-spa-overview.md)
+

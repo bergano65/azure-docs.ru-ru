@@ -3,16 +3,16 @@ title: Ошибки недоступности SKU
 description: В этой статье описывается, как устранить ошибку недоступности номера SKU при развертывании ресурсов с помощью Azure Resource Manager.
 ms.topic: troubleshooting
 ms.date: 02/18/2020
-ms.openlocfilehash: 37ad70093cce4cea6689fecbc3b6ccb91db5017b
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 15df8c5ff45994a03e12731cf3798f7f4c2a295b
+ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91333228"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91948635"
 ---
 # <a name="resolve-errors-for-sku-not-available"></a>Устранение ошибок, связанных с недоступностью номера SKU
 
-В этой статье объясняется, как устранить ошибку **SkuNotAvailable**. Если вы не можете найти подходящий SKU в этом регионе или зоне или в альтернативном регионе или зоне, который соответствует вашим потребностям вашего бизнеса, отправьте [запрос SKU](https://aka.ms/skurestriction) в службу поддержки Azure.
+В этой статье объясняется, как устранить ошибку **SkuNotAvailable**. Если вы не можете найти подходящий SKU в этом регионе или зоне или в альтернативном регионе или зоне, который соответствует вашим потребностям вашего бизнеса, отправьте [запрос SKU](../../azure-portal/supportability/sku-series-unavailable.md) в службу поддержки Azure.
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
@@ -124,4 +124,3 @@ virtualMachines  southcentralus  Standard_F4                ...             None
   ]
 }
 ```
-

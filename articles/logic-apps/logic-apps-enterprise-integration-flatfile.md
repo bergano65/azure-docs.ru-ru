@@ -9,17 +9,17 @@ ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 05/09/2020
 ms.openlocfilehash: aebce8f284ed4bb21d99efffc8dd6d0c51b39533
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87001491"
 ---
 # <a name="encode-and-decode-flat-files-in-azure-logic-apps-by-using-the-enterprise-integration-pack"></a>Кодирование и декодирование неструктурированных файлов в Azure Logic Apps с использованием Пакета интеграции Enterprise
 
 Перед отправкой XML-содержимого бизнес-партнеру в сценарии B2B необходимо сначала закодировать это содержимое. Создавая приложение логики, можно кодировать и декодировать неструктурированные файлы с помощью соединителя **неструктурированных файлов** . Приложение логики может получать это XML-содержимое из различных источников, таких как триггер запроса, другое приложение или другие [соединители, поддерживаемые Azure Logic Apps](../connectors/apis-list.md). Дополнительные сведения см. в разделе [что такое Azure Logic Apps](logic-apps-overview.md)?
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас нет ее, вы можете [зарегистрироваться для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 

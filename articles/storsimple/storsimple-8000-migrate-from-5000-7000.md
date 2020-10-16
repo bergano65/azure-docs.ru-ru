@@ -14,10 +14,10 @@ ms.workload: NA
 ms.date: 09/25/2020
 ms.author: alkohli
 ms.openlocfilehash: f6fffadd3c53f67af2e4c833a6a1d442c18efa0b
-ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91398192"
 ---
 # <a name="migrate-data-from-storsimple-5000-7000-series-to-8000-series-device"></a>Перенос данных с устройства StorSimple серий 5000–7000 на устройство серии 8000
@@ -149,5 +149,5 @@ ms.locfileid: "91398192"
 5.  Отобразится пользовательский интерфейс средства миграции StorSimple.
   
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Скачайте пошаговые инструкции о том, как [перенести данные с устройства StorSimple серии 5000–7000 на устройство серии 8000](https://gallery.technet.microsoft.com/Azure-StorSimple-50007000-c1a0460b).

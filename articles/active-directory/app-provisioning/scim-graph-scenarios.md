@@ -12,10 +12,10 @@ ms.date: 04/26/2020
 ms.author: kenwith
 ms.reviewer: arvinh, celested
 ms.openlocfilehash: b69e2c9b12b2db34f3eb70e54d2c6aede6b54784
-ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88235508"
 ---
 # <a name="using-scim-and-microsoft-graph-together-to-provision-users-and-enrich-your-application-with-the-data-it-needs"></a>Использование SCIM и Microsoft Graph вместе для подготовки пользователей и расширения возможностей приложения с помощью необходимых данных
@@ -115,7 +115,7 @@ DELETE /Users/5171a35d82074e068ce2 HTTP/1.1
 > [!NOTE]
 > У Майкрософт есть служба подготовки, которая извлекает данные из приложений отдела кадров, таких как Workday и SuccessFactors. Эти интеграции создаются и управляются корпорацией Майкрософт. Для адаптации нового приложения HR к нашей службе можно запросить его на [UserVoice](https://feedback.azure.com/forums/374982-azure-active-directory-application-requests). 
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
 - [Обзор документации по Microsoft Graph синхронизации](/graph/api/resources/synchronization-overview?view=graph-rest-beta)
 - [Интеграция пользовательского приложения SCIM с Azure AD](use-scim-to-provision-users-and-groups.md)

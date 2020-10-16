@@ -6,10 +6,10 @@ ms.topic: reference
 ms.date: 1/16/2020
 ms.author: jejarry
 ms.openlocfilehash: 9b6766137dd88a5a780dcca7b6eab7c6c3f9bbf4
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86260392"
 ---
 # <a name="sfctl-mesh-gateway"></a>sfctl mesh gateway
@@ -19,9 +19,9 @@ ms.locfileid: "86260392"
 
 |Команда|Описание|
 | --- | --- |
-| delete | Удаляет ресурс шлюза. |
+| "Удалить" | Удаляет ресурс шлюза. |
 | list | Отображает список всех ресурсов шлюза. |
-| show | Возвращает ресурс шлюза вместе с заданным именем. |
+| показать | Возвращает ресурс шлюза вместе с заданным именем. |
 
 ## <a name="sfctl-mesh-gateway-delete"></a>sfctl mesh gateway delete
 Удаляет ресурс шлюза.

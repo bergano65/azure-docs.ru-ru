@@ -20,10 +20,10 @@ translation.priority.mt:
 - zh-cn
 - zh-tw
 ms.openlocfilehash: 9ad6f89392846564631b70f0acfb5658a050be80
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88922826"
 ---
 # <a name="odata-searchin-function-in-azure-cognitive-search"></a>`search.in`Функция OData в Azure когнитивный Поиск
@@ -48,7 +48,7 @@ ms.locfileid: "88922826"
 
 ## <a name="syntax"></a>Синтаксис
 
-Следующая EBNF ([Расширенная форма Backus-Наура](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)) определяет грамматику `search.in` функции:
+Следующая EBNF ([Расширенная форма Backus-Naur](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)) определяет грамматику `search.in` функции:
 
 <!-- Upload this EBNF using https://bottlecaps.de/rr/ui to create a downloadable railroad diagram. -->
 
@@ -74,7 +74,7 @@ search_in_call ::=
 
 Параметры определены в следующей таблице.
 
-| Имя параметра | Тип | Description |
+| Имя параметра | Тип | Описание |
 | --- | --- | --- |
 | `variable` | `Edm.String` | Ссылка на строковое поле (или переменная диапазона для поля коллекции строк в случае, когда `search.in` используется в `any` `all` выражении или). |
 | `valueList` | `Edm.String` | Строка, содержащая список значений с разделителями для сопоставления с `variable` параметром. Если `delimiters` параметр не указан, разделителями по умолчанию являются пробел и запятая. |

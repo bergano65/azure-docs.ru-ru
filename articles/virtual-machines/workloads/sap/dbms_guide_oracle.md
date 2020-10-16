@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 09/20/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: f953d87c53bc13af623c2bfd49ceb953280f8f2a
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.openlocfilehash: 4e72c9d64a71fceb90d0a6ae9984997f73c1b5c6
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91540716"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91963539"
 ---
 # <a name="azure-virtual-machines-oracle-dbms-deployment-for-sap-workload"></a>Виртуальные машины Azure развертывание СУБД Oracle для рабочей нагрузки SAP
 
@@ -380,7 +380,7 @@ Oracle Database и файлы журнала повторяемых операц
 | \oracle\<SID>\origlogaB & mirrlogA | Premium или Ultra Disk | None | Не требуется. |
 | \oracle\<SID>\sapdata1...n | Premium или Ultra Disk | Только для чтения | Можно использовать для Premium |
 | \oracle\<SID>\oraarch | Standard | None | Не требуется. |
-| Домашняя страница Oracle, `saptrace` ,... | Диск ОС (Premium) | | Не требуется |
+| Домашняя страница Oracle, `saptrace` ,... | Диск ОС (Premium) | | Не требуется. |
 
 
 Выбор дисков для размещения журналов повторов в сети должен осуществляться с помощью требований операций ввода-вывода в секунду. Есть возможность хранить все табличные пространства (sapdata1...n) на одном подключенном диске, если он соответствует всем требованиям по размеру, операциям ввода-вывода в секунду и пропускной способности. 
@@ -389,12 +389,12 @@ Oracle Database и файлы журнала повторяемых операц
 
 | Компонент | Диск | Caching | Пул носителей |
 | --- | ---| --- | --- |
-| \oracle\<SID>\origlogaA | Premium или Ultra Disk | Отсутствуют | Можно использовать для Premium  |
-| \oracle\<SID>\origlogaB | Premium или Ultra Disk | Отсутствуют | Можно использовать для Premium |
-| \oracle\<SID>\mirrlogAB | Premium или Ultra Disk | Отсутствуют | Можно использовать для Premium |
-| \oracle\<SID>\mirrlogBA | Premium или Ultra Disk | Отсутствуют | Можно использовать для Premium |
+| \oracle\<SID>\origlogaA | Premium или Ultra Disk | Нет | Можно использовать для Premium  |
+| \oracle\<SID>\origlogaB | Premium или Ultra Disk | Нет | Можно использовать для Premium |
+| \oracle\<SID>\mirrlogAB | Premium или Ultra Disk | Нет | Можно использовать для Premium |
+| \oracle\<SID>\mirrlogBA | Premium или Ultra Disk | Нет | Можно использовать для Premium |
 | \oracle\<SID>\sapdata1...n | Premium или Ultra Disk | Только для чтения | Рекомендуется для уровня "Премиум"  |
-| \oracle\SID\sapdata(n+1)* | Premium или Ultra Disk | Отсутствуют | Можно использовать для Premium |
+| \oracle\SID\sapdata(n+1)* | Premium или Ultra Disk | Нет | Можно использовать для Premium |
 | \oracle\<SID>\oraarch* | Premium или Ultra Disk | None | Не требуется. |
 | Домашняя страница Oracle, `saptrace` ,... | Диск ОС (Premium) | Не требуется. |
 
@@ -444,7 +444,7 @@ Oracle Database и файлы журнала повторяемых операц
 
 ### <a name="storage-configuration"></a>Конфигурация хранилища
 
-Файловые системы ext4, xfs и Oracle ASM поддерживаются для файлов Oracle Database в Azure. Все файлы базы данных должны храниться на виртуальных жестких дисках или Управляемых дисках с этими файловыми системами. Эти виртуальные жесткие диски должны быть подключены к виртуальной машине Azure и созданы на основе [хранилища страничных BLOB-объектов Azure](<https://docs.microsoft.com/rest/api/storageservices/Understanding-Block-Blobs--Append-Blobs--and-Page-Blobs>) или [Управляемых дисков Azure](../../managed-disks-overview.md).
+Файловые системы ext4, xfs и Oracle ASM поддерживаются для файлов Oracle Database в Azure. Все файлы базы данных должны храниться на виртуальных жестких дисках или Управляемых дисках с этими файловыми системами. Эти виртуальные жесткие диски должны быть подключены к виртуальной машине Azure и созданы на основе [хранилища страничных BLOB-объектов Azure](/rest/api/storageservices/Understanding-Block-Blobs--Append-Blobs--and-Page-Blobs) или [Управляемых дисков Azure](../../managed-disks-overview.md).
 
 Ядра UEK Oracle Linux требуют UEK версии не меньше 4 для поддержки [дисков SSD Azure ценовой категории "Премиум"](../../premium-storage-performance.md#disk-caching).
 
@@ -482,12 +482,12 @@ Oracle Database и файлы журнала повторяемых операц
 
 | Компонент | Диск | Caching | Чередование* |
 | --- | ---| --- | --- |
-| /oracle/\<SID>/origlogaA | Premium или Ultra Disk | Отсутствуют | Можно использовать для Premium  |
-| /oracle/\<SID>/origlogaB | Premium или Ultra Disk | Отсутствуют | Можно использовать для Premium |
-| /oracle/\<SID>/mirrlogAB | Premium или Ultra Disk | Отсутствуют | Можно использовать для Premium |
-| /oracle/\<SID>/mirrlogBA | Premium или Ultra Disk | Отсутствуют | Можно использовать для Premium |
+| /oracle/\<SID>/origlogaA | Premium или Ultra Disk | Нет | Можно использовать для Premium  |
+| /oracle/\<SID>/origlogaB | Premium или Ultra Disk | Нет | Можно использовать для Premium |
+| /oracle/\<SID>/mirrlogAB | Premium или Ultra Disk | Нет | Можно использовать для Premium |
+| /oracle/\<SID>/mirrlogBA | Premium или Ultra Disk | Нет | Можно использовать для Premium |
 | /oracle/\<SID>/sapdata1...n | Premium или Ultra Disk | Только для чтения | Рекомендуется для уровня "Премиум"  |
-| /oracle/\<SID>/sapdata(n+1)* | Premium или Ultra Disk | Отсутствуют | Можно использовать для Premium |
+| /oracle/\<SID>/sapdata(n+1)* | Premium или Ultra Disk | Нет | Можно использовать для Premium |
 | /oracle/\<SID>/oraarch* | Premium или Ultra Disk | None | Не требуется. |
 | Домашняя страница Oracle, `saptrace` ,... | Диск ОС (Premium) | Не требуется. |
 
@@ -508,7 +508,7 @@ Oracle Database и файлы журнала повторяемых операц
 ### <a name="backuprestore"></a>Резервное копирование и восстановление
 Для резервного копирования и восстановления можно использовать инструменты SAP BR* для Oracle. Они поддерживаются так же, как и в системе с исходным состоянием и Hyper-V. Для резервного копирования на диски и восстановления с дисков также можно использовать диспетчер восстановления Oracle (RMAN).
 
-Дополнительные сведения об использовании служб архивации и восстановления Azure для резервного копирования и восстановления баз данных Oracle см. в статье [Создание резервных копий и восстановление базы данных Oracle Database 12c на виртуальной машине Linux в Azure](../oracle/oracle-backup-recovery.md).
+Дополнительные сведения об использовании служб архивации и восстановления Azure для резервного копирования и восстановления баз данных Oracle см. в статье [Создание резервных копий и восстановление базы данных Oracle Database 12c на виртуальной машине Linux в Azure](../oracle/oracle-overview.md).
 
 ### <a name="high-availability"></a>Высокий уровень доступности
 Для обеспечения высокой доступности и аварийного восстановления можно использовать Oracle Data Guard. Чтобы обеспечить автоматический переход на другой ресурс в Data Guard, необходимо использовать FSFA (быстрый запуск отработки отказа). Компонент "Наблюдатель" (FSFA) запускает отработку отказа. Если вы не используете FSFA, вам подходит только конфигурация перехода на другой ресурс вручную. Дополнительные сведения см. в статье [Реализация Oracle Data Guard на виртуальной машине Azure под управлением Linux](../oracle/configure-oracle-dataguard.md).
@@ -531,5 +531,3 @@ sudo curl -so /etc/udev/rules.d/68-azure-sriov-nm-unmanaged.rules https://raw.gi
 Читать статью 
 
 - [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](dbms_guide_general.md)
- 
-

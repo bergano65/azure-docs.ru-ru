@@ -3,19 +3,19 @@ title: Управление веб-каналами данных в помощн
 titleSuffix: Azure Cognitive Services
 description: Узнайте, как управлять веб-каналами данных, добавленными в помощник по метрикам.
 services: cognitive-services
-author: aahill
+author: mrbullwinkle
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: metrics-advisor
 ms.topic: conceptual
 ms.date: 08/28/2020
-ms.author: aahi
-ms.openlocfilehash: 22a1be7231b730c83ca97b0f128e43258ed24533
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.author: mbullwin
+ms.openlocfilehash: de8d5d8e9fc5ce1df05cfd4c67ef146760e2c7e9
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90937814"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92043176"
 ---
 # <a name="how-to-manage-your-data-feeds"></a>Руководство. Управление веб-каналами данных
 
@@ -97,7 +97,7 @@ ms.locfileid: "90937814"
 > Этот параметр не влияет на источник данных и не влияет на диаграммы данных, отображаемые на портале. Автоматическое заполнение происходит только при обнаружении аномалий.
 
 Некоторые временные ряды не являются непрерывными. При отсутствии точек данных помощник по метрикам будет использовать указанное значение для их заполнения перед обнаружением аномалий для повышения точности.
-Доступны следующие возможности: 
+Доступны следующие параметры. 
 
 * Использование значения из предыдущей фактической точки данных. Этот параметр используется по умолчанию.
 * Использование определенного значения.
@@ -106,11 +106,11 @@ ms.locfileid: "90937814"
 
 Шаблоны ссылок на действия используются для предварительной настройки URL-адресов HTTP, которые содержат заполнители `%datafeed` ,, `%metric` , `%timestamp` `%detect_config` и `%tagset` . Вы можете использовать шаблон для перенаправления аномалий или инцидента на конкретный URL-адрес для детализации.
 
-:::image type="content" source="../media/action-link-template.png" alt-text="Шаблон ссылки на действие" lightbox="../media/action-link-template.png":::
+:::image type="content" source="../media/action-link-template.png" alt-text="Веб-канал данных обратной передачи" lightbox="../media/action-link-template.png":::
 
 Когда вы заполните ссылку действие, щелкните **ссылку переход к действию** в параметре действия в списке инцидентов и контекстное меню дерева инцидентов. Замените заполнители в шаблоне ссылки на действие соответствующими значениями аномалии или инцидента.
 
-| Заполнитель | Примеры | Комментировать |
+| Заполнитель | Примеры | Комментарий |
 | ---------- | -------- | ------- |
 | `%datafeed` | - | Идентификатор веб-канала данных |
 | `%metric` | - | ИДЕНТИФИКАТОР метрики |

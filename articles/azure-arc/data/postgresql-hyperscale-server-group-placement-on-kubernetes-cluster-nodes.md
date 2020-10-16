@@ -10,10 +10,10 @@ ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
 ms.openlocfilehash: 2b69eb076c727a4383b7459ef914ac79dca31c84
-ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91628423"
 ---
 # <a name="azure-arc-enabled-postgresql-hyperscale-server-group-placement"></a>Размещение группы серверов PostgreSQL в службе "Дуга Azure" с поддержкой масштабирования
@@ -361,6 +361,6 @@ Kubernetes запланировал новый модуль PostgreSQL на на
 - Масштабирование дуги Azure с включенной функцией масштабирования postgres без масштабирования Kubernetes: путем установки правильных ограничений ресурсов (запросов и ограничений в памяти и виртуальное ядро) на рабочих нагрузках, размещенных в Kubernetes (включенная в состав Azure Arc PostgreSQL Scale), вы сможете совместно использовать рабочие нагрузки на Kubernetes и снизить риск конфликтов ресурсов. Необходимо убедиться, что физические характеристики физических узлов кластера Kubernetes могут учитывать определенные вами ограничения ресурсов. Также следует убедиться, что равновесия остается в процессе развития рабочих нагрузок со временем или при добавлении дополнительных рабочих нагрузок в кластер Kubernetes.
 - Используйте механизмы Kubernetes (селектор Pod, сходство, сглаживание), чтобы повлиять на размещение модулей.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Масштабирование группы масштабируемых серверов PostgreSQL в службе "Дуга Azure" путем добавления дополнительных рабочих узлов](scale-out-postgresql-hyperscale-server-group.md)

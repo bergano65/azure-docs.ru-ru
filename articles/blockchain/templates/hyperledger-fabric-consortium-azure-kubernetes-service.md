@@ -5,10 +5,10 @@ ms.date: 08/06/2020
 ms.topic: how-to
 ms.reviewer: ravastra
 ms.openlocfilehash: 081c7a10ee091f573e8f999c94588ef85c784f74
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89651557"
 ---
 # <a name="deploy-hyperledger-fabric-consortium-on-azure-kubernetes-service"></a>Развертывание в службе Azure Kubernetes Service Fabric Consortium
@@ -26,7 +26,7 @@ ms.locfileid: "89651557"
 
 Прежде чем использовать шаблон решения, Сравните свой сценарий с общими вариантами использования доступных параметров Azure Блокчейн:
 
-Параметр | Модель службы | Общий вариант использования
+Параметр | Модель службы | Типичный сценарий использования
 -------|---------------|-----------------
 Шаблоны решений | IaaS | Шаблоны решений — это Azure Resource Manager шаблоны, которые можно использовать для предоставления полностью настроенной топологии сети блокчейн. Шаблоны развертывают и настраивают Microsoft Azure службы вычислений, сети и хранения для типа сети блокчейн. Шаблоны решений предоставляются без соглашения об уровне обслуживания. Для поддержки используйте [Microsoft Q&страницу](/answers/topics/azure-blockchain-workbench.html) .
 [Служба Блокчейн Azure](../service/overview.md) | PaaS | Предварительная версия Azure Блокчейн Service позволяет упростить образование, управление и руководство по сетям блокчейн в консорциуме W3C. Используйте службу Блокчейн Azure для решений, которым требуется служба PaaS, управления консорциумом, а также конфиденциальность контрактов и транзакций.

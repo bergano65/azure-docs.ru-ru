@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 09/09/2020
 ms.author: manayar
 ms.openlocfilehash: 0a777b9008864368a6d1731cae0374e55a4c585f
-ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91842875"
 ---
 # <a name="preview-automatic-vm-guest-patching-for-windows-vms-in-azure"></a>Предварительный просмотр: Автоматическая установка исправлений гостевых виртуальных машин для виртуальных машин Windows в Azure
@@ -67,7 +67,7 @@ ms.locfileid: "91842875"
 
 В настоящее время поддерживаются следующие SKU платформы (и периодически добавляются дополнительные):
 
-| Publisher               | Предложение ОС      |  Sku               |
+| Издатель               | Предложение ОС      |  Sku               |
 |-------------------------|---------------|--------------------|
 | Корпорация Майкрософт   | WindowsServer | 2012-R2-Datacenter |
 | Корпорация Майкрософт   | WindowsServer | 2016-Datacenter    |
@@ -275,6 +275,6 @@ Invoke-AzVmPatchAssessment -ResourceGroupName "myResourceGroup" -VMName "myVM"
 az vm assess-patches --resource-group myResourceGroup --name myVM
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 > [!div class="nextstepaction"]
 > [Дополнительные сведения о создании виртуальных машин Windows и управлении ими](tutorial-manage-vm.md)

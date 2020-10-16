@@ -17,14 +17,14 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 78dcd9d020923251439a05316569b559c19057d1
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89661445"
 ---
 # <a name="renew-federation-certificates-for-microsoft-365-and-azure-active-directory"></a>Продлите сертификаты Федерации для Microsoft 365 и Azure Active Directory
-## <a name="overview"></a>Overview
+## <a name="overview"></a>Обзор
 Для успешной федерации между Azure Active Directory (Azure AD) и службами федерации Active Directory (AD FS) сертификаты, используемые службами AD FS для подписывания маркеров безопасности в Azure AD, должны соответствовать параметрам, настроенным в Azure AD. Расхождение может привести к нарушению отношений доверия. Azure AD гарантирует, что эта информация синхронизируется при развертывании AD FS и прокси веб-приложения (для доступа к экстрасети).
 
 В этой статье представлены дополнительные сведения об управлении сертификатами для подписи маркеров и их синхронизации с Azure AD в следующих случаях:
@@ -167,7 +167,7 @@ https://(ваше_имя_FS)/federationmetadata/2007-06/federationmetadata.xml
 
 1. Откройте модуль Microsoft Azure Active Directory для Windows PowerShell.
 2. Запустите $cred=Get-Credential. Если этот командлет запрашивает учетные данные, введите данные учетной записи администратора облачных служб.
-3. Выполните команду Connect-MsolService – Credential $cred. Этот командлет подключает вас к облачной службе. Перед выполнением любых дополнительных командлетов, установленных с помощью средства, необходимо создать контекст, который подключит вас к облачной службе.
+3. Запустите Connect-MsolService — $cred учетных данных. Этот командлет подключает вас к облачной службе. Перед выполнением любых дополнительных командлетов, установленных с помощью средства, необходимо создать контекст, который подключит вас к облачной службе.
 4. Если эти команды выполняются на компьютере, который не является основным сервером федерации AD FS, выполните команду Set-MSOLAdfscontext -Computer &lt;основной сервер AD FS&gt;, где &lt;основной сервер AD FS&gt; — это внутреннее полное доменное имя основного сервера AD FS. Этот командлет создает контекст, подключающий вас к AD FS.
 5. Выполните Update-MSOLFederatedDomain –DomainName &lt;домен&gt;. Этот командлет обновляет параметры AD FS в облачной службе и настраивает отношения доверия между ними.
 

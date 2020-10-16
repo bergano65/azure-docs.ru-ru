@@ -8,12 +8,12 @@ ms.author: kgremban
 ms.date: 3/27/2020
 ms.topic: conceptual
 ms.service: iot-edge
-ms.openlocfilehash: 823b16dcaf113136b10fdaa054da20840b99f02d
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 1883ffdff20bbbef8efec1440854f01a21a281dc
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91297051"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92045726"
 ---
 # <a name="use-visual-studio-2019-to-develop-and-debug-modules-for-azure-iot-edge"></a>Использование Visual Studio 2019 для разработки и отладки модулей для Azure IoT Edge
 
@@ -32,7 +32,7 @@ ms.locfileid: "91297051"
 
 В этой статье предполагается, что для разработки вы используете компьютер или виртуальную машину под управлением Windows. На компьютерах Windows можно разрабатывать модули Windows или Linux. Для разработки модулей Windows используйте компьютер под управлением Windows версии 1809/Build 17763 или более поздней. Для разработки модулей Linux используйте компьютер Windows, соответствующий [требованиям для работы DOCKER Desktop](https://docs.docker.com/docker-for-windows/install/#what-to-know-before-you-install).
 
-Поскольку в этой статье в качестве основного средства разработки используется Visual Studio 2019, установите Visual Studio. Убедитесь, что вы включили рабочие нагрузки разработки и разработки **классических приложений** **Azure** на C++ в установке Visual Studio 2019. Вы можете [изменить Visual Studio 2019](https://docs.microsoft.com/visualstudio/install/modify-visual-studio?view=vs-2019) , добавив необходимые рабочие нагрузки.
+Поскольку в этой статье в качестве основного средства разработки используется Visual Studio 2019, установите Visual Studio. Убедитесь, что вы включили рабочие нагрузки разработки и разработки **классических приложений** **Azure** на C++ в установке Visual Studio 2019. Вы можете [изменить Visual Studio 2019](/visualstudio/install/modify-visual-studio?view=vs-2019) , добавив необходимые рабочие нагрузки.
 
 После того как Visual Studio 2019 будет готова, вам понадобятся следующие средства и компоненты:
 
@@ -62,7 +62,7 @@ ms.locfileid: "91297051"
   vcpkg.exe --triplet x64-windows integrate install
   ```
 
-- [Реестр контейнеров Azure](https://docs.microsoft.com/azure/container-registry/) или [Docker Hub](https://docs.docker.com/docker-hub/repos/#viewing-repository-tags).
+- [Реестр контейнеров Azure](../container-registry/index.yml) или [Docker Hub](https://docs.docker.com/docker-hub/repos/#viewing-repository-tags).
 
   > [!TIP]
   > Вместо облачного реестра можно использовать локальный реестр Docker для создания прототипов и тестирования.
@@ -230,9 +230,9 @@ ms.locfileid: "91297051"
 
 1. Нажмите кнопку обновить, чтобы просмотреть новые модули, работающие с модулем **симулатедтемпературесенсор** , а также **$edgeAgent** и **$edgeHub**.
 
-## <a name="view-generated-data"></a>просмотр сформированных данных.
+## <a name="view-generated-data"></a>Просмотр сформированных данных
 
-1. Чтобы отслеживать сообщение D2C для конкретного устройства IoT-погранично, выберите его в центре Интернета вещей в **Cloud Explorer** а затем в окне **действия** выберите команду **начать мониторинг встроенной конечной точки события** .
+1. Чтобы отслеживать сообщение D2C для конкретного устройства IoT-Edge, выберите его в центре Интернета вещей **Cloud Explorer** а затем щелкните **запустить мониторинг встроенной конечной точки события** в окне **действия** .
 
 1. Чтобы отключить мониторинг данных, в окне **действия** выберите пункт **закончить мониторинг встроенной конечной точки события** .
 

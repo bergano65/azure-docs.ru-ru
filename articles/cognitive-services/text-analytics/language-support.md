@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 09/12/2020
+ms.date: 10/07/2020
 ms.author: aahi
-ms.openlocfilehash: 185a6a26350f7803d109e26d8985510380b8cc16
-ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
+ms.openlocfilehash: ed2a5b4688965f790567018bc11051b77c494e7a
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2020
-ms.locfileid: "90056597"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91977737"
 ---
 # <a name="text-analytics-api-v3-language-support"></a>Поддержка языков API анализа текста v3 
 
@@ -36,6 +36,7 @@ ms.locfileid: "90056597"
 | Французский                |     `fr`      |     ✓      |     ✓      |         2019-10-01         |                    |
 | Немецкий                |     `de`      |     ✓      |     ✓      |         2019-10-01         |                    |
 | Греческий                 |     `el`      |     ✓      |            |                            |                    |
+| Hindi                 |     `hi`      |           |      ✓      |          2020-04-01                  |                    |
 | Итальянский               |     `it`      |     ✓      |     ✓      |         2019-10-01         |                    |
 | Японский              |     `ja`      |     ✓      |     ✓      |         2019-10-01         |                    |
 | Корейский                |     `ko`      |            |     ✓      |         2019-10-01         |                    |
@@ -126,6 +127,6 @@ API анализа текста может обнаружить широкий �
 
 ---
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также статью
 
 * [Что такое API анализа текста?](overview.md)   

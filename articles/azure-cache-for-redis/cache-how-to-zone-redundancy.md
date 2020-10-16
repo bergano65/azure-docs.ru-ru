@@ -7,10 +7,10 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 08/11/2020
 ms.openlocfilehash: 33c346fa2e4572799ad6341bd5115cdd6e3b9ec9
-ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91569989"
 ---
 # <a name="enable-zone-redundancy-for-azure-cache-for-redis-preview"></a>Включение избыточности зоны для кэша Azure для Redis (Предварительная версия)
@@ -22,7 +22,7 @@ ms.locfileid: "91569989"
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендуется для рабочих нагрузок в рабочей среде. Дополнительные сведения см. в разделе Дополнительные [условия использования для предварительных версий Microsoft Azure.](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) 
 > 
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 * Подписка Azure. [создайте ее бесплатно](https://azure.microsoft.com/free/)
 
 > [!NOTE]

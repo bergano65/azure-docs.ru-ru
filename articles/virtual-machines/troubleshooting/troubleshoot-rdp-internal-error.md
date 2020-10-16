@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 10/22/2018
 ms.author: genli
-ms.openlocfilehash: 7cbb67a215d44759b2b503929c37cb50ea94709c
-ms.sourcegitcommit: 1fe5127fb5c3f43761f479078251242ae5688386
+ms.openlocfilehash: d4736515d8e011ce1e72c51ecb3ce1cfd2e1e1cd
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90069770"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91978532"
 ---
 #  <a name="an-internal-error-occurs-when-you-try-to-connect-to-an-azure-vm-through-remote-desktop"></a>Внутренняя ошибка при попытке подключения к виртуальной Машине Azure через удаленный рабочий стол
 
@@ -97,7 +97,7 @@ ms.locfileid: "90069770"
         Set-NetFirewallRule -Name "RemoteDesktop-UserMode-In-TCP" -LocalPort <NEW PORT (decimal)>
         ```
 
-    3. [Обновите группу безопасности сети для нового порта](../../virtual-network/security-overview.md) на порте RDP портала Azure.
+    3. [Обновите группу безопасности сети для нового порта](../../virtual-network/network-security-groups-overview.md) на порте RDP портала Azure.
 
 #### <a name="step-2-set-correct-permissions-on-the-rdp-self-signed-certificate"></a>Шаг 2. Установка правильных разрешений на самозаверяющем сертификате RDP
 
@@ -198,7 +198,7 @@ ms.locfileid: "90069770"
 Чтобы включить журнал дампа и последовательную консоль, выполните следующий сценарий.
 
 1. Откройте сеанс командной строки с повышенными привилегиями (**Запуск от имени администратора**).
-2. Выполните следующий сценарий:
+2. Выполните следующий скрипт:
 
     В этом сценарии мы предполагаем, что подключенному диску ОС присвоена буква F. Замените ее соответствующим значением для своей виртуальной машины.
 

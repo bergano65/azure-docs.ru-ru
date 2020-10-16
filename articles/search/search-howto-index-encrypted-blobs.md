@@ -10,10 +10,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 09/08/2020
 ms.openlocfilehash: 3330b4d5df366a5e886157e875f40d7e370c7442
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91543202"
 ---
 # <a name="how-to-index-encrypted-blobs-using-blob-indexers-and-skillsets-in-azure-cognitive-search"></a>Индексирование зашифрованных больших двоичных объектов с помощью индексаторов больших двоичных объектов и навыков в Azure Когнитивный поиск
@@ -36,7 +36,7 @@ ms.locfileid: "91543202"
 В этом примере предполагается, что вы уже отправили файлы в хранилище BLOB-объектов Azure и выполнили их шифрование в процессе. Если вам нужна помощь с начальной отправкой и шифрованием файлов, ознакомьтесь с [этим руководством](../storage/blobs/storage-encrypt-decrypt-blobs-key-vault.md) , чтобы получить сведения о том, как это сделать.
 
 + [Хранилище Azure](https://azure.microsoft.com/services/storage/)
-+ [Хранилище ключей Azure](https://azure.microsoft.com/services/key-vault/)
++ [Azure Key Vault](https://azure.microsoft.com/services/key-vault/);
 + [Функция Azure](https://azure.microsoft.com/services/functions/)
 + [Классическое приложение Postman](https://www.getpostman.com/)
 + [Создайте службу поиска](search-create-service-portal.md) или [найдите существующую службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) 
@@ -168,7 +168,7 @@ ms.locfileid: "91543202"
 
 После завершения выполнения индексатора можно выполнить некоторые запросы, чтобы убедиться, что данные успешно расшифрованы и проиндексированы. Перейдите к службе Когнитивный поиск Azure на портале и используйте [Обозреватель поиска](search-explorer.md) для выполнения запросов по индексированным данным.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы успешно проиндексировани зашифрованные файлы, вы можете выполнить [итерацию по этому конвейеру, добавив дополнительные профессиональные навыки](cognitive-search-defining-skillset.md). Это позволит расширить возможности и получить дополнительные сведения о данных.
 

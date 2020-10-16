@@ -8,12 +8,12 @@ ms.date: 05/14/2019
 ms.author: normesta
 ms.reviewer: seguler
 ms.subservice: common
-ms.openlocfilehash: f2b46e37241cf142f751f2f65a1ef9f092166ec8
-ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
+ms.openlocfilehash: 5b37417efdb99f6b90983b86954da70fa6f7c6a9
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2020
-ms.locfileid: "86120642"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91716095"
 ---
 #  <a name="tutorial-migrate-on-premises-data-to-cloud-storage-with-azcopy"></a>Руководство по Перенос локальных данных в облачное хранилище с помощью AzCopy
 
@@ -62,7 +62,7 @@ ms.locfileid: "86120642"
 
 ## <a name="authenticate-with-azure-ad"></a>Аутентификация с помощью Azure AD
 
-Сначала назначьте своему удостоверению роль [участника для данных больших двоичных объектов хранилища](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-queue-data-contributor). См. подробнее о [предоставлении доступа к большому двоичному объекту Azure и создании очереди данных с помощью управления доступом на основе ролей на портале Azure](https://docs.microsoft.com/azure/storage/common/storage-auth-aad-rbac-portal).
+Сначала назначьте своему удостоверению роль [участника для данных больших двоичных объектов хранилища](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-queue-data-contributor). См. статью о [назначении роли Azure для доступа к большим двоичным объектам и данным очереди с помощью портала Azure](https://docs.microsoft.com/azure/storage/common/storage-auth-aad-rbac-portal).
 
 Затем откройте командную строку, введите следующую команду и нажмите клавишу ВВОД.
 

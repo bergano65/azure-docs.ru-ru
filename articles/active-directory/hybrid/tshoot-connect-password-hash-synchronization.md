@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 77271679306b0fbde10c748afc7535f3ad3d0945
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91317571"
 ---
 # <a name="troubleshoot-password-hash-synchronization-with-azure-ad-connect-sync"></a>Устранение неполадок синхронизации хэшированных паролей в службе синхронизации Azure AD Connect
@@ -312,7 +312,7 @@ ms.locfileid: "91317571"
 
 2. Если с паролем в Active Directory все в порядке, отследите пользователя в модуле синхронизации. Отследив пользователя от локального Active Directory до Azure AD, вы сможете убедиться в отсутствии ошибок в объекте.
 
-    а. Запустите [Synchronization Service Manager](how-to-connect-sync-service-manager-ui.md).
+    a. Запустите [Synchronization Service Manager](how-to-connect-sync-service-manager-ui.md).
 
     b. Щелкните **Соединители**.
 
@@ -356,13 +356,13 @@ ms.locfileid: "91317571"
 
 | Состояние | Описание |
 | --- | --- |
-| Успешно |Пароль успешно синхронизирован |
+| Успех |Пароль успешно синхронизирован |
 | FilteredByTarget |Для пароля установлено значение **Пользователь должен изменить пароль при следующем входе**. Пароль не синхронизирован. |
 | NoTargetConnection |Объект отсутствует в метавселенной или в пространстве соединителя Azure AD. |
 | SourceConnectorNotPresent |Объект не найден в локальном пространстве соединителя Active Directory. |
 | TargetNotExportedToDirectory |Объект в пространстве соединителя Azure AD еще не экспортирован. |
 | MigratedCheckDetailsForMoreInfo |Запись журнала создана до выхода версии 1.0.9125.0 и отображается в исходном состоянии. |
-| Error |Служба вернула неизвестную ошибку. |
+| Ошибка |Служба вернула неизвестную ошибку. |
 | Неизвестно |Произошла ошибка при попытке обработать пакет хэшей паролей.  |
 | MissingAttribute |Недоступны определенные атрибуты (например, хэш Kerberos), необходимые доменным службам Azure AD. |
 | RetryRequestedByTarget |Ранее были недоступны определенные атрибуты (например, хэш Kerberos), необходимые доменным службам Azure AD. Предпринята попытка повторно синхронизировать хэш пароля пользователя. |
@@ -445,7 +445,7 @@ Set-ADSyncAADPasswordSyncConfiguration -SourceConnector $adConnector -TargetConn
 Set-ADSyncAADPasswordSyncConfiguration -SourceConnector $adConnector -TargetConnector $aadConnector -Enable $true
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Реализация синхронизации хэшированных паролей в службе синхронизации Azure AD Connect](how-to-connect-password-hash-synchronization.md)
 * [Службы синхронизации Azure AD Connect: общие сведений о синхронизации и ее настройка](how-to-connect-sync-whatis.md)

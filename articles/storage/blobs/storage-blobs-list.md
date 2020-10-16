@@ -9,18 +9,18 @@ ms.date: 09/22/2020
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-csharp
-ms.openlocfilehash: e8a35902c198412f6e41c0cf39162836deb5e443
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 2ebf383c1a904027d3ff5a1864ea9f50e87a5fa8
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91280102"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92093299"
 ---
 # <a name="list-blobs-with-net"></a>Получение списка больших двоичных объектов с помощью .NET
 
 При перечислении больших двоичных объектов из кода можно указать ряд параметров для управления способом возврата результатов из службы хранилища Azure. Можно указать число возвращаемых результатов в каждом наборе результатов, а затем извлечь последующие наборы. Можно указать префикс для возврата больших двоичных объектов, имена которых начинаются с указанного символа или строки. Кроме того, можно создать неструктурированный или структурированный список больших двоичных объектов. В структурированном списке большие двоичные объекты представлены так, будто они организованы по папкам.
 
-В этой статье показано, как получить список больших двоичных объектов с помощью [клиентской библиотеки службы хранилища Azure для .NET](/dotnet/api/overview/azure/storage?view=azure-dotnet).  
+В этой статье показано, как получить список больших двоичных объектов с помощью [клиентской библиотеки службы хранилища Azure для .NET](/dotnet/api/overview/azure/storage).  
 
 ## <a name="understand-blob-listing-options"></a>Общие сведения о параметрах получения списка больших двоичных объектов
 
@@ -28,10 +28,10 @@ ms.locfileid: "91280102"
 
 # <a name="net-v12"></a>[Платформа .NET версии 12](#tab/dotnet)
 
-- [Блобконтаинерклиент. BLOB](/dotnet/api/azure.storage.blobs.blobcontainerclient.getblobs?view=azure-dotnet)
-- [Блобконтаинерклиент. Жетблобсасинк](/dotnet/api/azure.storage.blobs.blobcontainerclient.getblobsasync?view=azure-dotnet)
-- [Блобконтаинерклиент. Жетблобсбихиерарчи](/dotnet/api/azure.storage.blobs.blobcontainerclient.getblobsbyhierarchy?view=azure-dotnet)
-- [Блобконтаинерклиент. Жетблобсбихиерарчясинк](/dotnet/api/azure.storage.blobs.blobcontainerclient.getblobsbyhierarchyasync?view=azure-dotnet)
+- [Блобконтаинерклиент. BLOB](/dotnet/api/azure.storage.blobs.blobcontainerclient.getblobs)
+- [Блобконтаинерклиент. Жетблобсасинк](/dotnet/api/azure.storage.blobs.blobcontainerclient.getblobsasync)
+- [Блобконтаинерклиент. Жетблобсбихиерарчи](/dotnet/api/azure.storage.blobs.blobcontainerclient.getblobsbyhierarchy)
+- [Блобконтаинерклиент. Жетблобсбихиерарчясинк](/dotnet/api/azure.storage.blobs.blobcontainerclient.getblobsbyhierarchyasync)
 
 # <a name="net-v11"></a>[Версии 11 .NET](#tab/dotnet11)
 
@@ -65,7 +65,7 @@ ms.locfileid: "91280102"
 
 Метаданные большого двоичного объекта можно вернуть с результатами. 
 
-- Если вы используете пакет SDK для .NET версии 12, укажите значение **метаданных** для перечисления [блобтраитс](https://docs.microsoft.com/dotnet/api/azure.storage.blobs.models.blobtraits?view=azure-dotnet) .
+- Если вы используете пакет SDK для .NET версии 12, укажите значение **метаданных** для перечисления [блобтраитс](https://docs.microsoft.com/dotnet/api/azure.storage.blobs.models.blobtraits) .
 
 - Если вы используете пакет SDK для .NET версии 11, укажите значение **метаданных** для перечисления [блоблистингдетаилс](/dotnet/api/microsoft.azure.storage.blob.bloblistingdetails) . Служба хранилища Azure включает метаданные для каждого возвращенного большого двоичного объекта, поэтому вам не нужно вызывать один из методов **FetchAttributes** в этом контексте, чтобы получить метаданные большого двоичного объекта.
 
@@ -153,7 +153,7 @@ Blob name: FolderA/FolderB/FolderC/blob3.txt
 
 # <a name="net-v12"></a>[Платформа .NET версии 12](#tab/dotnet)
 
-Чтобы составить список больших двоичных объектов в иерархическом порядке, вызовите метод [блобконтаинерклиент. жетблобсбихиерарчи](/dotnet/api/azure.storage.blobs.blobcontainerclient.getblobsbyhierarchy?view=azure-dotnet)или [блобконтаинерклиент. жетблобсбихиерарчясинк](/dotnet/api/azure.storage.blobs.blobcontainerclient.getblobsbyhierarchyasync?view=azure-dotnet) .
+Чтобы составить список больших двоичных объектов в иерархическом порядке, вызовите метод [блобконтаинерклиент. жетблобсбихиерарчи](/dotnet/api/azure.storage.blobs.blobcontainerclient.getblobsbyhierarchy)или [блобконтаинерклиент. жетблобсбихиерарчясинк](/dotnet/api/azure.storage.blobs.blobcontainerclient.getblobsbyhierarchyasync) .
 
 В следующем примере перечисляются большие двоичные объекты в указанном контейнере с помощью иерархического перечисления с указанным необязательным размером сегмента и записывает имя большого двоичного объекта в окно консоли.
 

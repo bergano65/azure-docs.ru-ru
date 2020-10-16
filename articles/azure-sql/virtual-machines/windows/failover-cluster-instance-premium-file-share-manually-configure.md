@@ -14,10 +14,10 @@ ms.workload: iaas-sql-server
 ms.date: 06/18/2020
 ms.author: mathoma
 ms.openlocfilehash: 1b10489ef74e681eab59694d24c4babc3ce69163
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91298717"
 ---
 # <a name="create-an-fci-with-a-premium-file-share-sql-server-on-azure-vms"></a>Создание FCI с общей папкой Premium (SQL Server на виртуальных машинах Azure)
@@ -46,18 +46,18 @@ ms.locfileid: "91298717"
 1. Выберите **Подключить**, чтобы открыть строку подключения общей папки.
 1. В раскрывающемся списке выберите букву диска, которую нужно использовать, а затем скопируйте оба блока кода в Блокнот.
 
-   :::image type="content" source="media/failover-cluster-instance-premium-file-share-manually-configure/premium-file-storage-commands.png" alt-text="Скопируйте обе команды PowerShell с портала подключения общей папки":::
+   :::image type="content" source="media/failover-cluster-instance-premium-file-share-manually-configure/premium-file-storage-commands.png" alt-text="Скопируйте обе команды PowerShell с портала подключения общей папки&quot;:::
 
 1. Используйте протокол удаленного рабочего стола (RDP) для подключения к виртуальной машине SQL Server с учетной записью, которую SQL Server FCI будет использовать для учетной записи службы.
 1. Откройте административную консоль командной строки PowerShell.
 1. Выполните команды, сохраненные ранее во время работы на портале.
-1. Перейдите в файловый ресурс с помощью проводника или диалогового окна " **выполнить** " (выберите Windows + R). Укажите сетевой путь `\\storageaccountname.file.core.windows.net\filesharename`. Например `\\sqlvmstorageaccount.file.core.windows.net\sqlpremiumfileshare`.
+1. Перейдите в файловый ресурс с помощью проводника или диалогового окна &quot; **выполнить** &quot; (выберите Windows + R). Укажите сетевой путь `\\storageaccountname.file.core.windows.net\filesharename`. Например `\\sqlvmstorageaccount.file.core.windows.net\sqlpremiumfileshare`.
 
 1. Создайте по крайней мере одну папку во вновь подключенной общей папке, чтобы поместить файлы данных SQL в.
 1. Повторите эти действия для каждой виртуальной машины SQL Server, которая будет входить в состав кластера.
 
   > [!IMPORTANT]
-  > - Рассмотрите возможность использования отдельной общей папки для файлов резервных копий, чтобы сохранить количество операций ввода-вывода в секунду и емкость этого общего ресурса для файлов данных и журналов. Для файлов резервных копий можно использовать файловый ресурс уровня "Премиум" или "Стандартный".
+  > - Рассмотрите возможность использования отдельной общей папки для файлов резервных копий, чтобы сохранить количество операций ввода-вывода в секунду и емкость этого общего ресурса для файлов данных и журналов. Для файлов резервных копий можно использовать файловый ресурс уровня &quot;Премиум" или "Стандартный".
   > - Если вы используете Windows 2012 R2 или более ранней версии, выполните те же действия, чтобы подключить общую папку, которую планируется использовать в качестве файлового ресурса-свидетеля. 
   > 
 
@@ -96,17 +96,18 @@ ms.locfileid: "91298717"
 1. Выберите **Далее**.
 1. В разделе **Выбор тестов** выберите все тесты, кроме **Хранилище** и **Локальные дисковые пространства**, как показано ниже:
 
-   :::image type="content" source="media/failover-cluster-instance-premium-file-share-manually-configure/cluster-validation.png" alt-text="Выбор проверочных тестов кластера":::
+   :::image type="content" source="media/failover-cluster-instance-premium-file-share-manually-configure/cluster-validation.png" alt-text="Скопируйте обе команды PowerShell с портала подключения общей папки&quot;:::
 
-1. Выберите **Далее**.
-1. В разделе **Подтверждение** нажмите **Далее**.
+1. Используйте протокол удаленного рабочего стола (RDP) для подключения к виртуальной машине SQL Server с учетной записью, которую SQL Server FCI будет использовать для учетной записи службы.
+1. Откройте административную консоль командной строки PowerShell.
+1. Выполните команды, сохраненные ранее во время работы на портале.
+1. Перейдите в файловый ресурс с помощью проводника или диалогового окна &quot; **выполнить** &quot; (выберите Windows + R). Укажите сетевой путь `\\storageaccountname.file.core.windows.net\filesharename`. Например `\\sqlvmstorageaccount.file.core.windows.net\sqlpremiumfileshare`.
 
-Мастер **проверки конфигурации** выполняет проверочные тесты.
+1. Создайте по крайней мере одну папку во вновь подключенной общей папке, чтобы поместить файлы данных SQL в.
+1. Повторите эти действия для каждой виртуальной машины SQL Server, которая будет входить в состав кластера.
 
-Чтобы проверить кластер с помощью PowerShell, запустите следующий скрипт из сеанса PowerShell администратора на одной из виртуальных машин:
-
-   ```powershell
-   Test-Cluster –Node ("<node1>","<node2>") –Include "Inventory", "Network", "System Configuration"
+  > [!IMPORTANT]
+  > - Рассмотрите возможность использования отдельной общей папки для файлов резервных копий, чтобы сохранить количество операций ввода-вывода в секунду и емкость этого общего ресурса для файлов данных и журналов. Для файлов резервных копий можно использовать файловый ресурс уровня &quot;Премиум"
    ```
 
 После проверки кластера создайте отказоустойчивый кластер.
@@ -151,7 +152,18 @@ New-Cluster -Name <FailoverCluster-Name> -Node ("<node1>","<node2>") –StaticAd
 
 Протестируйте отработку отказа кластера. В **Диспетчер отказоустойчивости кластеров**щелкните правой кнопкой мыши кластер, выберите **другие действия**  >  **переместить основной кластер ресурс**  >  **выберите узел**, а затем выберите другой узел кластера. Перенесите основной кластерный ресурс на каждый узел кластера, а затем верните его на основной узел. Если вам удалось успешно перенести ресурс на каждый узел, вы готовы к установке SQL Server.  
 
-:::image type="content" source="media/failover-cluster-instance-premium-file-share-manually-configure/test-cluster-failover.png" alt-text="Тестирование отказоустойчивости кластеров путем переноса основного кластерного ресурса на другие узлы":::
+:::image type="content" source="media/failover-cluster-instance-premium-file-share-manually-configure/test-cluster-failover.png" alt-text="Скопируйте обе команды PowerShell с портала подключения общей папки&quot;:::
+
+1. Используйте протокол удаленного рабочего стола (RDP) для подключения к виртуальной машине SQL Server с учетной записью, которую SQL Server FCI будет использовать для учетной записи службы.
+1. Откройте административную консоль командной строки PowerShell.
+1. Выполните команды, сохраненные ранее во время работы на портале.
+1. Перейдите в файловый ресурс с помощью проводника или диалогового окна &quot; **выполнить** &quot; (выберите Windows + R). Укажите сетевой путь `\\storageaccountname.file.core.windows.net\filesharename`. Например `\\sqlvmstorageaccount.file.core.windows.net\sqlpremiumfileshare`.
+
+1. Создайте по крайней мере одну папку во вновь подключенной общей папке, чтобы поместить файлы данных SQL в.
+1. Повторите эти действия для каждой виртуальной машины SQL Server, которая будет входить в состав кластера.
+
+  > [!IMPORTANT]
+  > - Рассмотрите возможность использования отдельной общей папки для файлов резервных копий, чтобы сохранить количество операций ввода-вывода в секунду и емкость этого общего ресурса для файлов данных и журналов. Для файлов резервных копий можно использовать файловый ресурс уровня &quot;Премиум":::
 
 
 ## <a name="create-sql-server-fci"></a>Создание экземпляра отказоустойчивого кластера SQL Server
@@ -172,7 +184,18 @@ New-Cluster -Name <FailoverCluster-Name> -Node ("<node1>","<node2>") –StaticAd
 
    Каталоги данных экземпляра отказоустойчивого кластера должны находиться в общей папки уровня "Премиум". Введите полный путь к общей папке в следующем формате: `\\storageaccountname.file.core.windows.net\filesharename\foldername` . Появится предупреждение о том, что вы указали файловый сервер в качестве каталога данных. Это нормально. Убедитесь, что учетная запись пользователя, которая использовалась для доступа к виртуальной машине по протоколу RDP, если вы сохранили общую папку, — это та же учетная запись, которую использует служба SQL Server, чтобы избежать возможных сбоев.
 
-   :::image type="content" source="media/failover-cluster-instance-premium-file-share-manually-configure/use-file-share-as-data-directories.png" alt-text="Использование общей папки в качестве каталога для хранения данных SQL":::
+   :::image type="content" source="media/failover-cluster-instance-premium-file-share-manually-configure/use-file-share-as-data-directories.png" alt-text="Скопируйте обе команды PowerShell с портала подключения общей папки&quot;:::
+
+1. Используйте протокол удаленного рабочего стола (RDP) для подключения к виртуальной машине SQL Server с учетной записью, которую SQL Server FCI будет использовать для учетной записи службы.
+1. Откройте административную консоль командной строки PowerShell.
+1. Выполните команды, сохраненные ранее во время работы на портале.
+1. Перейдите в файловый ресурс с помощью проводника или диалогового окна &quot; **выполнить** &quot; (выберите Windows + R). Укажите сетевой путь `\\storageaccountname.file.core.windows.net\filesharename`. Например `\\sqlvmstorageaccount.file.core.windows.net\sqlpremiumfileshare`.
+
+1. Создайте по крайней мере одну папку во вновь подключенной общей папке, чтобы поместить файлы данных SQL в.
+1. Повторите эти действия для каждой виртуальной машины SQL Server, которая будет входить в состав кластера.
+
+  > [!IMPORTANT]
+  > - Рассмотрите возможность использования отдельной общей папки для файлов резервных копий, чтобы сохранить количество операций ввода-вывода в секунду и емкость этого общего ресурса для файлов данных и журналов. Для файлов резервных копий можно использовать файловый ресурс уровня &quot;Премиум":::
 
 1. После завершения процедуры в мастере программа установки установит экземпляр отказоустойчивого кластера SQL Server на первом узле.
 
@@ -212,7 +235,7 @@ New-AzSqlVM -Name $vm.Name -ResourceGroupName $vm.ResourceGroupName -Location $v
 - Функция файлового потока для отказоустойчивых кластеров с общими папками уровня "Премиум" не поддерживается. Чтобы использовать FILESTREAM, разверните кластер с помощью [Локальные дисковые пространства](failover-cluster-instance-storage-spaces-direct-manually-configure.md) или [общих дисков Azure](failover-cluster-instance-azure-shared-disks-manually-configure.md) .
 - Поддерживается только регистрация в поставщике ресурсов виртуальной машины SQL в [режиме упрощенного управления](sql-vm-resource-provider-register.md#management-modes) . 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Если вы еще не сделали этого, настройте подключение к FCI с [именем виртуальной сети и подсистемой балансировки нагрузки Azure](hadr-vnn-azure-load-balancer-configure.md) или [именем распределенной сети (DNN)](hadr-distributed-network-name-dnn-configure.md). 
 
@@ -220,6 +243,6 @@ New-AzSqlVM -Name $vm.Name -ResourceGroupName $vm.ResourceGroupName -Location $v
 
 Дополнительные сведения см. в обзоре [FCI с SQL Server на виртуальных машинах Azure и в](failover-cluster-instance-overview.md) разделе рекомендации по [конфигурации кластера](hadr-cluster-best-practices.md). 
 
-Дополнительные сведения можно найти в разделе 
+Дополнительные сведения см. в разделе: 
 - [технологии кластера под управлением Windows](/windows-server/failover-clustering/failover-clustering-overview);   
-- [Экземпляры отказоустойчивого кластера SQL Server](/sql/sql-server/failover-clusters/windows/always-on-failover-cluster-instances-sql-server)
+- [Экземпляры отказоустойчивого кластера SQL Server](/sql/sql-server/failover-clusters/windows/always-on-failover-cluster-instances-sql-server)

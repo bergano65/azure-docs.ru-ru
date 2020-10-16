@@ -10,10 +10,10 @@ ms.date: 11/14/2019
 ms.author: absha
 ms.custom: mvc
 ms.openlocfilehash: 33240d1f44d2f26569791f72a3d5fc3a6656a757
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84808037"
 ---
 # <a name="configure-end-to-end-tls-by-using-application-gateway-with-the-portal"></a>Настройка сквозного протокола TLS с помощью шлюза приложений на портале
@@ -67,7 +67,7 @@ ms.locfileid: "84808037"
 
    ![Корневой сертификат](./media/end-to-end-ssl-portal/trustedrootcert.png)
 
-8. Нажмите кнопку **Сохранить**.
+8. Щелкните **Сохранить**.
 
 ## <a name="enable-end-to-end-tls-for-an-existing-application-gateway"></a>Включение сквозного протокола TLS для существующего шлюза приложений
 

@@ -6,12 +6,12 @@ ms.author: flborn
 ms.date: 06/15/2020
 ms.topic: tutorial
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 403a5b68e3320700e275c744210f480be2c88e84
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 07374debf8d660d8f1c32788db3d218da611d539
+ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89021329"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91650482"
 ---
 # <a name="tutorial-securing-azure-remote-rendering-and-model-storage"></a>Руководство по Защита службы "Удаленная отрисовка Azure" и хранилища моделей
 
@@ -163,7 +163,7 @@ var loadModelAsync = ARRSessionService.CurrentActiveSession.Actions.LoadModelAsy
     ```
 
     Этот код добавляет три дополнительные строковые переменные в компонент **RemoteRenderingCoordinator**.
-    ![Связанная модель](./media/storage-account-linked-model.png)
+    ![Снимок экрана: выделенные переменные "Имя учетной записи хранения", "Имя контейнера BLOB-объектов" и "Путь модели" для компонента RemoteRenderingCoordinator.](./media/storage-account-linked-model.png)
 
 1. Добавьте значения в компонент **RemoteRenderingCoordinator**. После выполнения инструкций в [кратком руководстве по преобразованию модели](../../../quickstarts/convert-model.md) значения должны быть такими:
 
@@ -392,12 +392,13 @@ return await Task.FromResult(new AzureFrontendAccountInfo(AccountDomain, AzureRe
     * **Azure Tenant ID** (Идентификатор арендатора Azure) — это *идентификатор каталога (арендатора)* , указанный при регистрации приложения AAD (см. изображение ниже).
     * **Azure Remote Rendering Account ID** (Идентификатор учетной записи Удаленной отрисовки Azure) — это тот же **идентификатор учетной записи**, который вы использовали для **RemoteRenderingCoordinator**.
 
-    ![Компонент проверки подлинности AAD](./media/app-overview-data.png)
+    ![Снимок экрана: выделенные ИД приложения (клиента) и ИД каталога (клиента).](./media/app-overview-data.png)
 
 1. Нажмите кнопку воспроизведения в редакторе Unity и дайте согласие на выполнение сеанса.
     Так как компонент **AADAuthentication** имеет контроллер представления, он автоматически привязывается для отображения запроса после модальной панели авторизации сеанса.
 1. Следуйте инструкциям, приведенным на панели справа от **AppMenu**.
-    Должно отображаться примерно следующее: ![Компонент аутентификации AAD](./media/device-flow-instructions.png) После ввода указанного кода на дополнительном устройстве (или в браузере на том же устройстве) и входа с использованием ваших учетных данных запрашивающему приложению (в данном случае редактору Unity) будет возвращен маркер доступа.
+    Должно отображаться примерно следующее: ![Иллюстрация с отображением панели инструкций справа от AppMenu.](./media/device-flow-instructions.png)
+    После ввода указанного кода на дополнительном устройстве (или в браузере на том же устройстве) и входа с использованием ваших учетных данных запрашивающему приложению (в данном случае редактору Unity) будет возвращен маркер доступа.
 1. После этого все функции приложения должны работать надлежащим образом. Проверьте наличие ошибок в консоли Unity, если вам не удалось выполнить эти этапы так, как ожидалось.
 
 ## <a name="build-to-device"></a>Сборка на устройстве

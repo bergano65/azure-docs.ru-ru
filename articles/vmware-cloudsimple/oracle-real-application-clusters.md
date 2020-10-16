@@ -9,10 +9,10 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: 2cc2f954f4255c00b7c3549ab5d33d71b240fb70
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86507679"
 ---
 # <a name="optimize-your-cloudsimple-private-cloud-for-installing-oracle-rac"></a>Оптимизируйте частное облако Клаудсимпле для установки Oracle RAC
@@ -46,10 +46,10 @@ ms.locfileid: "86507679"
 
 | Диск                                      | Назначение                                       | Общий диск |
 |-------------------------------------------|-----------------------------------------------|-------------|
-| OS                                        | Диск операционной системы                         | Нет          |
-| СЕТКИ                                      | Расположение установки для программного обеспечения сетки Oracle     | Нет          |
-| DATABASE                                  | Расположение установки по для базы данных Oracle | Нет          |
-| орахоме                                   | Базовое расположение для двоичных файлов базы данных Oracle    | Нет          |
+| OS                                        | Диск операционной системы                         | нет          |
+| СЕТКИ                                      | Расположение установки для программного обеспечения сетки Oracle     | нет          |
+| DATABASE                                  | Расположение установки по для базы данных Oracle | нет          |
+| орахоме                                   | Базовое расположение для двоичных файлов базы данных Oracle    | нет          |
 | ФАЙЛ1, ФАЙЛ2, DATA3, DATA4                | Диск, на котором хранятся файлы базы данных Oracle   | Да         |
 | REDO1, REDO2, REDO3, REDO4, REDO5, REDO6  | Повторные диски журналов                                | Да         |
 | OCR1, OCR2, OCR3, OCR4, OCR5              | Голосование дисков                                  | Да         |
@@ -259,7 +259,7 @@ Oracle использует общий диск для хранения файл
 13. Выберите созданную группу узлов.
 14. Нажмите кнопку **ОК** , чтобы создать правило.
 
-## <a name="references"></a>Ссылки (на английском языке)
+## <a name="references"></a>Ссылки
 
 * [О политиках vSAN](https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.virtualsan.doc/GUID-08911FD3-2462-4C1C-AE81-0D4DBC8F7990.html)
 * [Атрибут с несколькими модулями записи VMware для общих VMDK-устройств](https://docs.vmware.com/en/VMware-Cloud-on-AWS/solutions/VMware-Cloud-on-AWS.df6735f8b729fee463802083d46fdc75/GUID-A7642A82B3D6C5F7806DB40A3F2766D9.html)

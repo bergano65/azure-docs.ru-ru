@@ -8,7 +8,7 @@ ms.openlocfilehash: c5ece96acc3ee07ba2896279888363c7d52d737e
 ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91856455"
 ---
 # <a name="azure-arc-enabled-servers-data-residency"></a>Серверы с поддержкой дуги Azure: местонахождение данных
@@ -32,6 +32,6 @@ ms.locfileid: "91856455"
 
 Дополнительные сведения о региональной устойчивости и поддержке соответствия требованиям см. в разделе [Azure geography](https://azure.microsoft.com/global-infrastructure/geographies/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о разработке для обеспечения [устойчивости Azure](/azure/architecture/reliability/architect).

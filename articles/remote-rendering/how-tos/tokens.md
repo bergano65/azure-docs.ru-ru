@@ -7,10 +7,10 @@ ms.date: 02/11/2020
 ms.topic: how-to
 ms.custom: devx-track-azurepowershell
 ms.openlocfilehash: 7e8e2f3f9dd49693faa26eaaab309fcad58f6f9f
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89076163"
 ---
 # <a name="get-service-access-tokens"></a>Получение маркеров доступа к службе
@@ -41,11 +41,11 @@ ms.locfileid: "89076163"
 
 ### <a name="get-token-response"></a>Ответ "получить токен"
 
-| Код состояния | полезные данные JSON | Примечания |
+| Код состояния | полезные данные JSON | Комментарии |
 |-----------|:-----------|:-----------|
 | 200 | AccessToken: строка | Успех |
 
-| Заголовок | Цель |
+| Header | Назначение |
 |--------|:------|
 | MS-КП | Это значение можно использовать для трассировки вызова в службе |
 
@@ -66,7 +66,7 @@ Write-Output "Token: $($response.AccessToken)"
 
 Сценарий просто выводит маркер в выход, откуда его можно скопировать & вставить. Для реальных проектов этот процесс следует автоматизировать.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Примеры скриптов PowerShell](../samples/powershell-example-scripts.md)
 * [Интерфейсные API Azure](../how-tos/frontend-apis.md)

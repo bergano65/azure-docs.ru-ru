@@ -1,5 +1,5 @@
 ---
-title: Включить имя файла
+title: включить файл
 description: включить файл
 services: vpn-gateway
 author: cherylmc
@@ -9,10 +9,10 @@ ms.date: 03/21/2018
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 5b9e036816aa532d32b1b4305ef6ae646ae05bae
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "67185176"
 ---
 В таблице ниже перечислены требования к VPN-шлюзам с маршрутизацией на основе политик и маршрутов. Эта таблица относится к классической модели развертывания и модели диспетчера ресурсов. При классической модели VPN-шлюзы с маршрутизацией на основе политик совпадают со статическими шлюзами, а шлюзы с маршрутизацией на основе маршрутов — с динамическими шлюзами.

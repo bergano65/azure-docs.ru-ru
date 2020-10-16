@@ -15,16 +15,16 @@ ms.topic: how-to
 ms.date: 06/11/2018
 ms.author: allensu
 ms.openlocfilehash: 1521d08ef9d431bbe8b3fd3a578297d440ed56b3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84887213"
 ---
 # <a name="control-azure-cdn-caching-behavior-with-query-strings---standard-tier"></a>Управление режимом кэширования Azure CDN с помощью строк запросов (ценовая категория "Стандартный")
 > [!div class="op_single_selector"]
-> * [Уровень служб "Стандартный"](cdn-query-string.md)
-> * [Уровень служб "Премиум"](cdn-query-string-premium.md)
+> * [Уровень "Стандартный"](cdn-query-string.md)
+> * [Уровень Премиум](cdn-query-string-premium.md)
 > 
 
 ## <a name="overview"></a>Обзор

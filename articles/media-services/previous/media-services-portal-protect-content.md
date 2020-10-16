@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
 ms.openlocfilehash: 061d66f08e79f935c778eb84dd47f71cab1a62d7
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89266635"
 ---
 # <a name="configure-content-protection-policies-by-using-the-azure-portal"></a>Настройка политик защиты содержимого с помощью портала Azure
@@ -75,10 +75,10 @@ ms.locfileid: "89266635"
 ## <a name="widevine-license-template"></a>Шаблон лицензии Widevine
 Шаблон лицензии Widevine позволяет включить функции, предусмотренные в лицензиях Widevine.
 
-### <a name="basic"></a>Базовый
+### <a name="basic"></a>Basic
 Если выбрать тип лицензии **Базовый**, то шаблон будет создан со всеми значениями по умолчанию.
 
-### <a name="advanced"></a>Продвинутый уровень
+### <a name="advanced"></a>Дополнительно
 Подробные сведения о шаблоне прав Widevine см. в статье [Общие сведения о шаблоне лицензии Widevine](media-services-widevine-license-template-overview.md).
 
 ![Расширенная защита содержимого](./media/media-services-portal-content-protection/media-services-content-protection005.png)
@@ -107,15 +107,15 @@ ms.locfileid: "89266635"
 #### <a name="drm"></a>DRM
 1. После выбора **DRM** можно увидеть различные политики защиты содержимого (которые в этот момент необходимо настраивать) и набор потоковых протоколов:
 
-    а. **PlayReady and Widevine with MPEG-DASH** (PlayReady и Widevine с MPEG-DASH): динамически шифрует поток MPEG-DASH, используя системы DRM PlayReady и Widevine.
+    a. **PlayReady and Widevine with MPEG-DASH** (PlayReady и Widevine с MPEG-DASH): динамически шифрует поток MPEG-DASH, используя системы DRM PlayReady и Widevine.
 
     b. **PlayReady and Widevine with MPEG-DASH + FairPlay with HLS** (PlayReady и Widevine с MPEG-DASH + FairPlay с HLS): динамически шифрует поток MPEG-DASH, используя системы DRM PlayReady и Widevine. Этот параметр также шифрует потоки HLS, используя FairPlay.
 
     c. **PlayReady only with Smooth Streaming, HLS and MPEG-DASH** (PlayReady только с Smooth Streaming, HLS и MPEG-DASH): динамически шифрует потоки Smooth Streaming, HLS и MPEG-DASH, используя систему DRM PlayReady.
 
-    г. **Widevine only with MPEG-DASH** (Widevine только с MPEG-DASH): динамически шифрует поток MPEG-DASH, используя систему DRM Widevine.
+    d. **Widevine only with MPEG-DASH** (Widevine только с MPEG-DASH): динамически шифрует поток MPEG-DASH, используя систему DRM Widevine.
     
-    Д. **FairPlay only with HLS** (FairPlay только с HLS): динамически шифрует поток HLS, используя FairPlay.
+    д) **FairPlay only with HLS** (FairPlay только с HLS): динамически шифрует поток HLS, используя FairPlay.
 
 1. Чтобы включить шифрование FairPlay на колонке **Глобальные параметры системы защиты содержимого**, выберите **Конфигурация FairPlay**. Затем выберите **сертификат приложения**и введите **секретный ключ приложения**.
 

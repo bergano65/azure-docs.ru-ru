@@ -13,20 +13,20 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 01/08/2020
 ms.author: apimpm
-ms.openlocfilehash: 8e02a47cd6ae6e4883b5113b07d4049cd723232d
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 419de27ad87b113de62dacb0dc384702420afbd6
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86250198"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92071121"
 ---
 # <a name="how-to-secure-back-end-services-using-client-certificate-authentication-in-azure-api-management"></a>Защита фоновых служб посредством проверки подлинности с помощью сертификата клиента в службе Azure API Management
 
 Управление API позволяет защитить доступ к внутренней службе API с помощью сертификатов клиента. В этом руководстве описывается, как на портале Azure управлять сертификатами в экземпляре службы управления API Azure. Также объясняется, как настроить API для доступа к внутренней службе с помощью сертификата.
 
-Сведения об управлении сертификатами с помощью REST API службы управления API см. в статье, посвященной <a href="https://docs.microsoft.com/rest/api/apimanagement/apimanagementrest/azure-api-management-rest-api-certificate-entity">сущности сертификата REST API службы управления API Azure</a>.
+Сведения об управлении сертификатами с помощью REST API службы управления API см. в статье, посвященной <a href="/rest/api/apimanagement/apimanagementrest/azure-api-management-rest-api-certificate-entity">сущности сертификата REST API службы управления API Azure</a>.
 
-## <a name="prerequisites"></a><a name="prerequisites"> </a>Обязательные условия
+## <a name="prerequisites"></a><a name="prerequisites"> </a>Предварительные требования
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -46,7 +46,7 @@ ms.locfileid: "86250198"
 3. Щелкните **+ Добавить**.
     ![Добавление сертификатов клиента](media/api-management-howto-mutual-certificates/apim-client-cert-add.png)
 4. Выберите сертификат и укажите его идентификатор и пароль.
-5. Нажмите **Создать**.
+5. Нажмите кнопку **Создать**.
 
 > [!NOTE]
 > Сертификат должен быть в формате **PFX** . Разрешено использовать самозаверяющие сертификаты.
@@ -75,7 +75,7 @@ ms.locfileid: "86250198"
 3. Измените значение параметра **Учетные данные шлюза** на **Сертификат клиента** и выберите свой сертификат в раскрывающемся списке.
     ![Включение сертификатов клиента](media/api-management-howto-mutual-certificates/apim-client-cert-enable-select.png)
 
-4. Нажмите кнопку **Сохранить**.
+4. Выберите команду **Сохранить**.
 
 > [!WARNING]
 > Изменение вступает в силу немедленно, и для проверки подлинности на фоновом сервере при вызове операций этого API теперь будет использоваться сертификат.

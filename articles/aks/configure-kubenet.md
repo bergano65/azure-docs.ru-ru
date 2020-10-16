@@ -5,12 +5,12 @@ services: container-service
 ms.topic: article
 ms.date: 06/02/2020
 ms.reviewer: nieberts, jomore
-ms.openlocfilehash: c30b82e44833e413c1576bf64e8fef263c58b246
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 3bc245fa02f57a433a76a316caac67ed5d884fe9
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91264615"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92072753"
 ---
 # <a name="use-kubenet-networking-with-your-own-ip-address-ranges-in-azure-kubernetes-service-aks"></a>Использование сети kubenet с пользовательскими диапазонами IP-адресов в Службе Azure Kubernetes (AKS)
 
@@ -56,7 +56,7 @@ Azure поддерживает не более 400 маршрутов в UDR, �
 * В отличие от кластеров Azure CNI, несколько кластеров кубенет не могут совместно использовать подсеть.
 * Функции, **не поддерживаемые в кубенет** , включают:
    * [Политики сети Azure](use-network-policies.md#create-an-aks-cluster-and-enable-network-policy), но Калико сетевые политики поддерживаются в кубенет
-   * [Пулы узлов Windows](windows-node-limitations.md)
+   * [Пулы узлов Windows](./windows-faq.md)
    * [Надстройка виртуальных узлов](virtual-nodes-portal.md#known-limitations)
 
 ### <a name="ip-address-availability-and-exhaustion"></a>Доступность и исчерпание IP-адресов

@@ -4,10 +4,10 @@ description: Сведения об устранении неполадок, во
 ms.date: 02/10/2020
 ms.topic: troubleshooting
 ms.openlocfilehash: 4908b8ed97bad43d9d24427660a8691ee43d7eaf
-ms.sourcegitcommit: 3246e278d094f0ae435c2393ebf278914ec7b97b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89376984"
 ---
 # <a name="troubleshoot-problems-while-backing-up-azure-file-shares"></a>Устранение неполадок при резервном копировании файловых ресурсов Azure
@@ -318,7 +318,7 @@ ms.locfileid: "89376984"
 
 Проверьте, не удаляется ли резервная копия файлового ресурса без возможности восстановления. Если да, то следует прерывать резервное копирование для общей папки во избежание неповторяемых сбоев резервного копирования. Дополнительные сведения о том, как отключить защиту, см. в разделе [Отключение защиты для файлового ресурса Azure](./manage-afs-backup.md#stop-protection-on-a-file-share) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о резервном копировании файловых ресурсов Azure см. в следующих статьях:
 

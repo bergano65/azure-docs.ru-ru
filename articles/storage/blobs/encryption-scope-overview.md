@@ -10,10 +10,10 @@ ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
 ms.openlocfilehash: 6fb3c9b6dbbab036ddb00edd7e1d5980bb425ebe
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91326122"
 ---
 # <a name="encryption-scopes-for-blob-storage-preview"></a>Области шифрования для хранилища BLOB-объектов (Предварительная версия)
@@ -58,7 +58,7 @@ ms.locfileid: "91326122"
 > [!NOTE]
 > Невозможно удалить область шифрования.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Шифрование службы хранилища Azure для неактивных данных](../common/storage-service-encryption.md)
 - [Создание и управление областями шифрования (Предварительная версия)](encryption-scope-manage.md)

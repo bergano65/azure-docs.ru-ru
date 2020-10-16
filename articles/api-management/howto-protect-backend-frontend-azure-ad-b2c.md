@@ -15,10 +15,10 @@ ms.date: 02/20/2020
 ms.author: wieastbu
 ms.custom: fasttrack-new
 ms.openlocfilehash: 60177dd00dc6326aae4cfdc0b658c85f2635f8c0
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86253700"
 ---
 # <a name="protect-spa-backend-with-oauth-20-azure-active-directory-b2c-and-azure-api-management"></a>Защита серверной части SPA с помощью OAuth 2,0, Azure Active Directory B2C и Azure API Management
@@ -31,7 +31,7 @@ ms.locfileid: "86253700"
 
 Для глубокой защиты мы используем Еасяус для повторной проверки маркера внутри API серверной части.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 Чтобы выполнить шаги в этой статье, необходимо иметь следующее:
 * Учетная запись хранения Azure (StorageV2) общего назначения v2 для размещения одностраничного приложения с одним внешним интерфейсом
 * Экземпляр службы управления API Azure 
@@ -99,7 +99,7 @@ ms.locfileid: "86253700"
 
 ## <a name="build-the-function-api"></a>Создание API функции
 1. Вернитесь к стандартному клиенту Azure AD в портал Azure, чтобы мы могли еще раз настроить элементы в подписке. 
-1. Перейдите в колонку "приложения-функции" портал Azure откройте пустое приложение-функцию, а затем создайте новую функцию в своем портале.
+1. Перейдите в колонку "приложения-функции" портал Azure откройте пустое приложение-функцию, а затем создайте новую In-Portal функции веб-перехватчика + API с помощью краткого руководства.
 1. Вставьте пример кода из приведенного ниже в Run. CSX поверх существующего кода, который отображается.
 
    ```csharp

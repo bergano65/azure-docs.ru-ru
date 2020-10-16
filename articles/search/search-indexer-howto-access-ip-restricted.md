@@ -8,12 +8,12 @@ ms.author: arjagann
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 09/07/2020
-ms.openlocfilehash: c80462707d3dccbb8fccff244017053c25ad46e8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f485569caef285601d1dce7acd116f13675da83a
+ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89463780"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91950199"
 ---
 # <a name="setting-up-ip-firewall-rules-to-enable-indexer-access"></a>Настройка правил брандмауэра IP-адресов для включения доступа к индексатору
 
@@ -89,6 +89,6 @@ Aliases:  contoso.search.windows.net
 
 Теперь, когда вы узнали, как получить два набора IP-адресов, чтобы разрешить доступ к индексам, воспользуйтесь следующими ссылками, чтобы обновить правила брандмауэра IP-адресов для некоторых распространенных источников данных.
 
-- [Настройка брандмауэров службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-network-security)
-- [Настройка брандмауэра IP для CosmosDB](https://docs.microsoft.com/azure/cosmos-db/firewall-support)
-- [Настройка брандмауэра IP для Azure SQL Server](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure)
+- [Настройка брандмауэров службы хранилища Azure](../storage/common/storage-network-security.md)
+- [Настройка брандмауэра IP для CosmosDB](../cosmos-db/firewall-support.md)
+- [Настройка брандмауэра IP для Azure SQL Server](../azure-sql/database/firewall-configure.md)

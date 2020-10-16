@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 11/12/2019
 ms.author: raynew
 ms.openlocfilehash: a5764e44db31755110ac99a3e8e8e0984cdf9604
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87490580"
 ---
 # <a name="plan-capacity-for-hyper-v-vm-disaster-recovery"></a>Планирование ресурсов для аварийного восстановления виртуальной машины Hyper-V 
@@ -59,7 +59,7 @@ ms.locfileid: "87490580"
 
    d. В **Retention in days** (Период хранения в днях) укажите, как долго следует хранить реплики (в днях).
 
-   д. В полях **Number of hours in which initial replication for the batch of virtual machines should complete** (Период (в часах), в течение которого должна быть выполнена начальная репликация для пакета виртуальных машин) и **Number of virtual machines per initial replication batch** (Число виртуальных машин на пакет начальной репликации) указываются параметры, используемые для вычисления требований к начальной репликации. При развертывании службы Site Recovery выполняется отправка всего начального набора данных.
+   д) В полях **Number of hours in which initial replication for the batch of virtual machines should complete** (Период (в часах), в течение которого должна быть выполнена начальная репликация для пакета виртуальных машин) и **Number of virtual machines per initial replication batch** (Число виртуальных машин на пакет начальной репликации) указываются параметры, используемые для вычисления требований к начальной репликации. При развертывании службы Site Recovery выполняется отправка всего начального набора данных.
 
    ![Снимок экрана листа планировщик ресурсов, в котором отображаются необходимые входные данные.](./media/site-recovery-capacity-planner/inputs.png)
 
@@ -97,7 +97,7 @@ ms.locfileid: "87490580"
 
    d. В поле **Общий объем хранилища (в ГБ)** укажите общий размер хранилища виртуальной машины. Например, если на исходном сервере есть три диска, каждый по 500 ГБ, общий размер хранилища составляет 1500 ГБ.
 
-   д. В поле **Number of disks attached** (Число подключенных дисков) укажите общее число дисков исходного сервера.
+   д) В поле **Number of disks attached** (Число подключенных дисков) укажите общее число дисков исходного сервера.
 
    е) В поле **Disk capacity utilization (%)** (Уровень использования емкости диска (в %)) укажите среднее значение использования.
 
@@ -146,5 +146,5 @@ ms.locfileid: "87490580"
 
    ![Снимок экрана, показывающий измененные входные данные и результирующие выходные данные на листе планировщик ресурсов.](./media/site-recovery-capacity-planner/capacity-planner.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 [Узнайте, как запустить](./hyper-v-deployment-planner-overview.md) инструмент планирования ресурсов.

@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 09/30/2020
 ms.author: makromer
 ms.openlocfilehash: 841484a647d2737d621c75ebe63f65f2de829a26
-ms.sourcegitcommit: 67e8e1caa8427c1d78f6426c70bf8339a8b4e01d
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91666515"
 ---
 # <a name="dedupe-rows-and-find-nulls-using-data-flow-snippets"></a>Декопия строк и поиск значений NULL с помощью фрагментов потока данных
@@ -63,6 +63,6 @@ ms.locfileid: "91666515"
 
   Теперь у вас есть рабочий поток данных с общими проверками дедупинг и NULL, используя существующие фрагменты кода из библиотеки сценариев потока данных и добавляя их в существующую структуру.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Создайте оставшуюся часть логики потока данных с помощью [преобразования потоков данных](concepts-data-flow-overview.md)сопоставления.

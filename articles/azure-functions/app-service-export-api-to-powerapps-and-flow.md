@@ -4,16 +4,16 @@ description: Общие сведения о предоставлении API, р
 ms.topic: conceptual
 ms.date: 04/28/2020
 ms.reviewer: sunayv
-ms.openlocfilehash: 7d968c62afbfc92952f747e1e7627c98fe07436d
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 359f19598d5f1dff6cda4b303d33ed721ed72d97
+ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87015091"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92054803"
 ---
 # <a name="exporting-an-azure-hosted-api-to-powerapps-and-microsoft-flow"></a>Экспорт размещенного в Azure API в PowerApps и Microsoft Flow
 
-[PowerApps](https://powerapps.microsoft.com/guided-learning/learning-introducing-powerapps/) — это служба для создания и использования пользовательских бизнес-приложений, которые подключаются к данным и работают на различных платформах. [Microsoft Flow](/learn/modules/get-started-with-flow/index) позволяет легко автоматизировать рабочие и бизнес-процессы между избранными приложениями и службами. PowerApps и Microsoft Flow содержат ряд встроенных соединителей для источников данных, таких как Office 365, Dynamics 365, Salesforce и т д. В некоторых случаях разработчикам приложений и потоков также нужно подключиться к источникам данных и API, созданным в их организации.
+[PowerApps](https://powerapps.microsoft.com/guided-learning/learning-introducing-powerapps/) — это служба для создания и использования пользовательских бизнес-приложений, которые подключаются к данным и работают на различных платформах. [Power автоматизиру](/learn/modules/get-started-with-flow/index) упрощает автоматизацию рабочих процессов и бизнес-процессов между вашими избранными приложениями и службами. PowerApps и Microsoft Flow содержат ряд встроенных соединителей для источников данных, таких как Office 365, Dynamics 365, Salesforce и т д. В некоторых случаях разработчикам приложений и потоков также нужно подключиться к источникам данных и API, созданным в их организации.
 
 Аналогичным образом разработчикам, которым необходимо расширить возможности совместного использования API внутри организации, может потребоваться предоставить доступ к своим API создателям приложений и потоков. В этой статье показано, как экспортировать API, созданный с помощью [функций Azure](../azure-functions/functions-overview.md) или [службы приложений Azure](../app-service/overview.md). Экспортированный API становится *настраиваемым соединителем*, который используется в PowerApps и Microsoft Flow так же, как встроенный соединитель.
 
@@ -103,7 +103,7 @@ ms.locfileid: "87015091"
 
 4. На вкладке **Общие** просмотрите данные, которые поступают из определения OpenAPI.
 
-5. Если появится запрос на ввод сведений о проверке подлинности, введите значения для соответствующего типа проверки подлинности на вкладке **Безопасность**. Нажмите кнопку **Continue**(Продолжить).
+5. Если появится запрос на ввод сведений о проверке подлинности, введите значения для соответствующего типа проверки подлинности на вкладке **Безопасность**. Нажмите кнопку **Продолжить**.
 
     ![Вкладка "Безопасность"](media/app-service-export-api-to-powerapps-and-flow/tab-security.png)
 

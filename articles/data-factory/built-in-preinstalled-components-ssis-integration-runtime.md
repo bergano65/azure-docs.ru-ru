@@ -12,12 +12,12 @@ ms.reviewer: douglasl
 manager: mflasko
 ms.custom: seo-lt-2019
 ms.date: 05/14/2020
-ms.openlocfilehash: 0c3fa3e61f3e35bcd29e923b87ddf68f0860486e
-ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
+ms.openlocfilehash: 17831f06d4176ae6666bbc7b05a11ee689b842fc
+ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89483139"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92096697"
 ---
 # <a name="built-in-and-preinstalled-components-on-azure-ssis-integration-runtime"></a>Встроенные и предварительно установленные компоненты в Azure-SSIS Integration Runtime
 
@@ -29,7 +29,7 @@ ms.locfileid: "89483139"
 
 | Тип | Имя — версия — платформа |
 |------|---------------------------|
-| **Встроенные клиенты/драйверы/поставщики** | *Распространяемый пакет ядра СУБД Access 2016* — RTM — X64<br/><br/>*Объекты Microsoft AMO* — 15.0.1000.81 — X64<br/><br/>*Поставщик OLE DB для Microsoft Analysis Services* — 15.0.1000.81 — X64<br/><br/>*Microsoft ODBC Driver for SQL Server версии 13* — 14.0.900.902 — X64<br/><br/>*Microsoft OLEDB Driver for SQL Server версии 18* — 18.1.0.0 — X64<br/><br/>*Поставщик Microsoft OLE DB для DB2* — 6.0 — X64<br/><br/>*Пакет SDK клиентских компонентов SharePoint Online* — 15.4711.1001 — X64 |
+| **Встроенные клиенты/драйверы/поставщики** | *Распространяемый пакет ядра СУБД Access 2016* — RTM — X64<br/><br/>*Объекты Microsoft AMO* — 15.0.1000.81 — X64<br/><br/>*Поставщик OLE DB для Microsoft Analysis Services* — 15.0.1000.81 — X64<br/><br/>*Microsoft SQL Server 2012 Native Client* -11.4.7462.6-x64<br/><br/>*Microsoft ODBC Driver for SQL Server версии 13* — 14.0.900.902 — X64<br/><br/>*Microsoft OLEDB Driver for SQL Server версии 18* — 18.1.0.0 — X64<br/><br/>*Поставщик Microsoft OLE DB для DB2* — 6.0 — X64<br/><br/>*Пакет SDK клиентских компонентов SharePoint Online* — 15.4711.1001 — X64 |
 
 ## <a name="built-in-and-preinstalled-connection-managers-on-azure-ssis-ir"></a>Встроенные и предварительно установленные диспетчеры подключений в Azure-SSIS IR
 

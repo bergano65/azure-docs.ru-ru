@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 06/07/2018
 ms.reviewer: harelbr
 ms.openlocfilehash: 1cdfc6dc3ac74997743512ee07f9293699e3ad10
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87309296"
 ---
 # <a name="alert-on-issues-in-azure-cloud-services-using-the-azure-diagnostics-integration-with-azure-application-insights"></a>Оповещение о проблемах в облачных службах Azure с использованием интеграции системы диагностики Azure с помощью Azure Application Insights
@@ -78,7 +78,7 @@ EventLogs
 | where Failures > 3
 ```
 
-## <a name="create-an-alert"></a>Создание оповещения
+## <a name="create-an-alert"></a>Создание оповещения.
 
 В меню навигации в ресурсе Application Insights перейдите к **Оповещение**, а затем выберите **Новое правило генерации оповещений**.
 
@@ -91,7 +91,7 @@ EventLogs
 В поле **Поисковый запрос** вставьте комбинированный запрос, который был подготовлен на предыдущем шаге.
 
 Затем перейдите к **Пороговому значению** и установите значение, равное 0. При необходимости можно изменить **Период** и периодичность **полей**.
-Нажмите кнопку **Done**(Готово).
+Нажмите кнопку **Готово**.
 
 ![Снимок экрана "Настройка логики сигналов запроса"](./media/proactive-cloud-services/003.png)
 
@@ -107,7 +107,7 @@ EventLogs
 
 После определения группы действий подтвердите свои изменения и нажмите **Создать правило генерации оповещений**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения об автоматическом обнаружении.
 

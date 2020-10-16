@@ -4,10 +4,10 @@ description: Приступая к работе с Azure Advisor
 ms.topic: article
 ms.date: 02/01/2019
 ms.openlocfilehash: e91049077502a6c0eedf0a4f979c073690c214da
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85117868"
 ---
 # <a name="get-started-with-azure-advisor"></a>Приступая к работе с Помощником по Azure
@@ -82,7 +82,7 @@ ms.locfileid: "85117868"
 
     ![Пример настройки ресурсов Помощника](./media/advisor-get-started/advisor-configure-resources.png)
 
-1. Нажмите кнопку **Применить** .
+1. Нажмите кнопку **Применить**.
 
 ## <a name="configure-low-usage-vm-recommendation"></a>Настройка рекомендаций для виртуальной машины с низким уровнем использования
 
@@ -119,11 +119,11 @@ Advisor отслеживает использование виртуальной
 
 При скачивании учитываются все фильтры, примененные к панели мониторинга Помощника.  Если выбрать скачивание во время просмотра определенной категории рекомендаций или определенной рекомендации, то скачанная сводка будет включать в себя сведения только для этой категории или этой рекомендации соответственно. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Помощнике см. в таких разделах.
 
-- [Общие сведения об Azure Advisor](advisor-overview.md)
+- [Общие сведения о Помощнике по Azure](advisor-overview.md)
 - [Рекомендации по обеспечению надежности Advisor](advisor-high-availability-recommendations.md)
 - [Рекомендации Azure Advisor по безопасности](advisor-security-recommendations.md)
 - [Рекомендации Azure Advisor по производительности](advisor-performance-recommendations.md)

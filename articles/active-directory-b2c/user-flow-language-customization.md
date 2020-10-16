@@ -12,10 +12,10 @@ ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 6b3bb3648fff6bc893ea07204fad79d2830a1b47
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91355099"
 ---
 # <a name="language-customization-in-azure-active-directory-b2c"></a>Настройка языка в Azure Active Directory B2C
@@ -221,7 +221,7 @@ Azure AD B2C включает поддержку следующих языков
 | Галисийский              | gl            | ![X, указывающее на отсутствие.](./media/user-flow-language-customization/no.png) | ![Зеленая галочка.](./media/user-flow-language-customization/yes.png) |
 | Гуджарати              | gu            | ![Зеленая галочка.](./media/user-flow-language-customization/yes.png) | ![X, указывающее на отсутствие.](./media/user-flow-language-customization/no.png) |
 | Иврит                | he            | ![X, указывающее на отсутствие.](./media/user-flow-language-customization/no.png) | ![Зеленая галочка.](./media/user-flow-language-customization/yes.png) |
-| Хинди                 | hi            | ![Зеленая галочка.](./media/user-flow-language-customization/yes.png) | ![Зеленая галочка.](./media/user-flow-language-customization/yes.png) |
+| Hindi                 | hi            | ![Зеленая галочка.](./media/user-flow-language-customization/yes.png) | ![Зеленая галочка.](./media/user-flow-language-customization/yes.png) |
 | Хорватский              | hr            | ![Зеленая галочка.](./media/user-flow-language-customization/yes.png) | ![Зеленая галочка.](./media/user-flow-language-customization/yes.png) |
 | Венгерский             | hu            | ![Зеленая галочка.](./media/user-flow-language-customization/yes.png) | ![Зеленая галочка.](./media/user-flow-language-customization/yes.png) |
 | Индонезийский            | идентификатор            | ![X, указывающее на отсутствие.](./media/user-flow-language-customization/no.png) | ![Зеленая галочка.](./media/user-flow-language-customization/yes.png) |

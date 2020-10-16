@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 11/20/2018
 ms.author: genli
-ms.openlocfilehash: 6c877690cf27edd73f1d828b8a1dda6f4f34e780
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 878e2c233f2171c3c9a6fbd2a8d629d3f3987c3a
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "77918178"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91976731"
 ---
 #  <a name="cannot-connect-remotely-to-a-vm-because-rdp-port-is-not-enabled-in-nsg"></a>Ошибка удаленного подключения к виртуальной машине из-за отключенного порта RDP в NSG
 
@@ -48,7 +48,7 @@ ms.locfileid: "77918178"
 
 Если вы указываете IP-адрес источника, этот параметр разрешает передачу трафика только с определенного IP-адреса или диапазона IP-адресов для подключения к виртуальной машине. Убедитесь, что компьютер, который используется для начала сеанса RDP, находится в диапазоне.
 
-Дополнительные сведения о группах безопасности сети см. в [этой статье](../../virtual-network/security-overview.md).
+Дополнительные сведения о группах безопасности сети см. в [этой статье](../../virtual-network/network-security-groups-overview.md).
 
 > [!NOTE]
 > RDP-порт 3389 доступен через Интернет. Поэтому мы рекомендуем использовать этот порт только для тестирования. Для рабочих сред мы рекомендуем использовать VPN или частное подключение.
@@ -56,6 +56,3 @@ ms.locfileid: "77918178"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Если порт RDP уже включен в NSG, ознакомьтесь со статьей [Устранение общей ошибки RDP на виртуальной машине Azure](./troubleshoot-rdp-general-error.md).
-
-
-

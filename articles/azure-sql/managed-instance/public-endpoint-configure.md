@@ -11,10 +11,10 @@ ms.author: srbozovi
 ms.reviewer: vanto, sstein
 ms.date: 05/07/2019
 ms.openlocfilehash: f3708885759a6a353742fe89b4454b39496aeeab
-ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91619990"
 ---
 # <a name="configure-public-endpoint-in-azure-sql-managed-instance"></a>Configure public endpoint in Azure SQL Managed Instance (Настройка общедоступной конечной точки в управляемом экземпляре SQL Azure)
@@ -116,6 +116,6 @@ Set-AzSqlInstance -PublicDataEndpointEnabled $false -force
 
     ![На снимке экрана показаны строки подключения для общедоступных и частных конечных точек.](./media/public-endpoint-configure/mi-public-endpoint-conn-string.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте, как [безопасно использовать Azure SQL управляемый экземпляр с общедоступной конечной точкой](public-endpoint-overview.md).

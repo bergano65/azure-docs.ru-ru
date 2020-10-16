@@ -7,18 +7,18 @@ ms.date: 9/22/2020
 ms.topic: tutorial
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 87cd87be254a8d373f46e64537c8c745469b3ec2
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.openlocfilehash: ccc450242c50f82d4215f6b172f72d8eceab7c52
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91578900"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92046342"
 ---
 # <a name="tutorial-how-to-convert-an-iot-plug-and-play-device-to-a-module-c"></a>Руководство по Преобразование устройства Plug and Play IoT в модуль (C#)
 
 В этом руководстве показано, как преобразовать код устройства IoT Plug and Play для запуска в качестве универсального модуля.
 
-Устройство — это устройство IoT Plug and Play, если оно публикует свой идентификатор модели при подключении к центру Интернета вещей и реализует свойства и методы, описанные в модели DTDL, определяемой идентификатором модели. Дополнительные сведения о том, как устройства используют DTDL и идентификатор модели, см. в статье [Руководство разработчика IoT Plug and Play](concepts-developer-guide.md). Модули используют идентификаторы моделей и модели DTDL одинаковым образом.
+Устройство — это устройство IoT Plug and Play, если оно публикует свой идентификатор модели при подключении к центру Интернета вещей и реализует свойства и методы, описанные в модели DTDL, определяемой идентификатором модели. Дополнительные сведения о том, как устройства используют DTDL и идентификатор модели, см. в статье [Руководство разработчика IoT Plug and Play](./concepts-developer-guide-device-csharp.md). Модули используют идентификаторы моделей и модели DTDL одинаковым образом.
 
 Чтобы продемонстрировать реализацию модуля Plug and Play IoT, в этом руководстве показано, как преобразовать пример (C#) устройства термостата в универсальный модуль.
 
@@ -175,7 +175,7 @@ git clone https://github.com/Azure-Samples/azure-iot-samples-csharp.git
 
     | Имя | Значение |
     | ---- | ----- |
-    | DEVICE_ID | my-module-device |
+    | IOTHUB_DEVICE_ID | my-module-device |
     | IOTHUB_CONNECTION_STRING | Значение, которое записали после завершения [настройки среды](set-up-environment.md). |
 
     > [!TIP]
@@ -224,7 +224,7 @@ git clone https://github.com/Azure-Samples/azure-iot-samples-csharp.git
 Дополнительные сведения о развертывании контейнеризованного модуля см. в следующих статьях:
 
 * [Запуск Azure IoT Edge на виртуальных машинах Ubuntu](../iot-edge/how-to-install-iot-edge-ubuntuvm.md)
-* [Установка среды выполнения Azure IoT Edge в системах Linux на основе Debian](../iot-edge/how-to-install-iot-edge-linux.md)
+* [Установка среды выполнения Azure IoT Edge в системах Linux на основе Debian](../iot-edge/how-to-install-iot-edge.md)
 
 Средство Обозревателя Интернета вещей Azure можно использовать для просмотра следующих компонентов:
 
@@ -238,4 +238,4 @@ git clone https://github.com/Azure-Samples/azure-iot-samples-csharp.git
 Из этого учебника вы узнали, как подключить устройство IoT Plug and Play с модулями к центру Интернета вещей. Дополнительные сведения о моделях устройства IoT Plug and Play см. в статье
 
 > [!div class="nextstepaction"]
-> [Руководство разработчика IoT Plug and Play](concepts-developer-guide.md)
+> [Руководство разработчика IoT Plug and Play](./concepts-developer-guide-device-csharp.md)

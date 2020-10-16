@@ -8,21 +8,21 @@ ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 04/08/2020
 ms.openlocfilehash: 3bf63aa08ec4c1deff2551cfcc0cf188a75261bc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "82515486"
 ---
 # <a name="rest-api-to-query-apache-hbase-in-azure-hdinsight"></a>REST API запрос Apache HBase в Azure HDInsight
 
 В этой статье описываются действия по устранению неполадок и возможные способы решения проблем при взаимодействии с кластерами Azure HDInsight.
 
-## <a name="issue"></a>Проблемы
+## <a name="issue"></a>Проблема
 
 Использование интерфейса RESTFUL Apache HBase для запроса таблицы в пространстве имен, отличном от значения по умолчанию, приводит к ошибке времени выполнения (HTTP Status 500).
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 REST API HBase поддерживается только при использовании пространства имен по умолчанию. Это известная проблема, связанная с использованием пространств имен HBase или выполнением вызовов, ссылающихся на конкретные столбцы с семействами столбцов с помощью сервера RESTFUL в HDInsight. Это обусловлено проблемами безопасности в шлюзе HDInsight. При использовании API для создания таблицы с пространством имен, обращающейся к столбцам через семейства столбцов, необходимо указать `:` символ, который считается проблемой безопасности в модуле шлюза IIS.
 

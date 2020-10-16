@@ -14,12 +14,12 @@ ms.custom:
 - seo-dt-2019
 ms.topic: troubleshooting
 ms.date: 02/20/2020
-ms.openlocfilehash: 9a8ae9be983ecb0e6b50ef889525ae33726c2d97
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 673480d1b5171e03b701cd2102c7a640aae58ad0
+ms.sourcegitcommit: b437bd3b9c9802ec6430d9f078c372c2a411f11f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91330338"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91893753"
 ---
 # <a name="online-migration-issues--limitations-to-azure-db-for-mysql-with-azure-database-migration-service"></a>Проблемы оперативной миграции & ограничения для базы данных Azure для MySQL с Azure Database Migration Service
 
@@ -82,12 +82,12 @@ ms.locfileid: "91330338"
 
     **Возможное решение**: замените первичный ключ другими типами данных или столбцами, которые не относятся к LOB.
 
-- **Ограничение**: данные могут быть усечены на целевом объекте, если длина столбца больших объектов (LOB) превышает 32 КБ. Вы можете проверить длину столбца LOB с помощью этого запроса:
+- **Ограничение**: Если длина столбца больших объектов (LOB) превышает значение параметра "ограничить размер LOB" (не должно превышать 64 КБ), данные могут быть усечены в целевом объекте. Вы можете проверить длину столбца LOB с помощью этого запроса:
     ```
     SELECT max(length(description)) as LEN from catalog;
     ```
 
-    **Решение**. Если у вас есть объект LOB, размер которого ПРЕВЫШАЕТ 32 КБ, обратитесь в службу технической [поддержки по](mailto:AskAzureDatabaseMigrations@service.microsoft.com)адресу.
+    **Решение**. Если у вас есть объект LOB, размер которого ПРЕВЫШАЕТ 64 КБ, используйте параметр "Разрешить неограниченный объем LOB". Обратите внимание, что при миграции с использованием параметра "Разрешить неограниченный размер LOB" будет выполняться медленнее миграции с использованием параметра "ограничить размер LOB".
 
 ## <a name="limitations-when-migrating-online-from-aws-rds-mysql"></a>Ограничения при миграции через Интернет из AWS RDS MySQL
 

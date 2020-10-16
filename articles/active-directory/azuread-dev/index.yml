@@ -1,6 +1,10 @@
 ### YamlMime:Landing
 title: Azure Active Directory для разработчиков
-summary: Azure Active Directory (Azure AD) — это облачная служба идентификации, которая позволяет разработчиками создавать приложения с поддержкой безопасного входа пользователей с рабочей или учебной учетной записью Майкрософт. Azure AD могут использовать разработчики, которые создают приложения с одним клиентом и бизнес-приложения, а также разрабатывают мультитенантные приложения. Платформа удостоверений Майкрософт — это решение на основе платформы для разработчиков Azure Active Directory (Azure AD). С новыми приложениями мы рекомендуем использовать платформу удостоверений Майкрософт (версия 2.0) и MSAL для получения маркеров и доступа к защищенным веб-API.
+summary: >
+  Azure Active Directory (Azure AD) — это облачная служба идентификации, которая позволяет разработчиками создавать приложения с поддержкой входа пользователей с рабочей или учебной учетной записью Майкрософт. Azure AD поддерживает создание однотенантных бизнес-приложений (LOB) и мультитенантных приложений.
+
+
+  ВНИМАНИЕ! Это руководство предназначено для более старой конечной точки Azure AD версии 1.0. Для новых проектов используйте платформу удостоверений Майкрософт.
 metadata:
   ms.topic: landing-page
   ms.date: 01/27/2020
@@ -9,12 +13,13 @@ metadata:
   ms.service: active-directory
   ms.subservice: azuread-dev
   ms.workload: identity
-  ms.openlocfilehash: 113a28ca5b4152ca8beedc7bdc3f1027c5acdf17
-  ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+  ROBOTS: NOINDEX
+  ms.openlocfilehash: 9089b944402c31135b32b3304ecf7cf69d86ad93
+  ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 10/09/2020
-  ms.locfileid: "88116076"
+  ms.lasthandoff: 10/14/2020
+  ms.locfileid: "92055126"
 landingContent:
 - title: Azure Active Directory для разработчиков
   linkLists:
@@ -22,33 +27,19 @@ landingContent:
     links:
     - text: Azure Active Directory для разработчиков (версия 1.0)
       url: v1-overview.md
-    - text: Развитие платформы удостоверений Майкрософт
-      url: ./about-microsoft-identity-platform.md
-    - text: Платформа удостоверений Майкрософт (версия 2.0)
-      url: ../develop/v2-overview.md
-  - linkListType: concept
-    links:
-    - text: Зачем выполнять обновление до платформы удостоверений Майкрософт (версия 2.0)?
-      url: azure-ad-endpoint-comparison.md
-    - text: Типы приложений и сценариев
-      url: app-types.md
-- title: Протоколы проверки подлинности
+- title: Сравнение платформ
   linkLists:
   - linkListType: overview
     links:
-    - text: Основные сведения об аутентификации
-      url: v1-authentication-scenarios.md
-  - linkListType: concept
-    links:
-    - text: Поток кода авторизации OAuth 2.0
-      url: v1-protocols-oauth-code.md
-    - text: Поток кода OpenID Connect
-      url: v1-protocols-openid-connect-code.md
-    - text: Поток предоставления учетных данных клиента OAuth 2.0
-      url: v1-oauth2-client-creds-grant-flow.md
-- title: Примеры
+    - text: Развитие платформы удостоверений Майкрософт
+      url: about-microsoft-identity-platform.md
+    - text: Преимущества обновления до версии 2.0
+      url: azure-ad-endpoint-comparison.md
+- title: Платформа удостоверений Майкрософт
   linkLists:
-  - linkListType: download
+  - linkListType: overview
     links:
-    - text: Примеры приложений
-      url: sample-v1-code.md
+    - text: Что такое платформа удостоверений Майкрософт?
+      url: ../develop/v2-overview.md
+    - text: Перенос приложений из ADAL в MSAL
+      url: ../develop/msal-migration.md

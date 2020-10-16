@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 10/1/2020
-ms.openlocfilehash: b32ef80ad670e369315ec3ddb6972aef30bec27a
-ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
+ms.openlocfilehash: 42ca56e33ff0bc8f48c35849480d8094a2be1cb7
+ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91627573"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91876555"
 ---
 # <a name="read-replicas-in-azure-database-for-mysql"></a>Реплики чтения в базе данных Azure для MySQL
 
@@ -93,11 +93,9 @@ mysql -h myreplica.mysql.database.azure.com -u myadmin@myreplica -p
 
 ## <a name="monitor-replication"></a>Мониторинг репликации
 
-Служба "База данных Azure для MySQL" также предоставляет для Azure Monitor метрику **Replication lag in seconds** (Задержка репликации в секундах). Эта метрика доступна только для реплик.
+Служба "База данных Azure для MySQL" также предоставляет для Azure Monitor метрику **Replication lag in seconds** (Задержка репликации в секундах). Эта метрика доступна только для реплик. Эта метрика вычисляется на основе метрики `seconds_behind_master`, которую можно получить с помощью команды MySQL `SHOW SLAVE STATUS`. Настройте отправку предупреждений о достижении недопустимого для вашей рабочей нагрузки значения задержки репликации.
 
-Эта метрика вычисляется на основе метрики `seconds_behind_master`, которую можно получить с помощью команды MySQL `SHOW SLAVE STATUS`.
-
-Настройте отправку предупреждений о достижении недопустимого для вашей рабочей нагрузки значения задержки репликации.
+Если вы видите увеличенную задержку репликации, см. раздел [Устранение неполадок репликации](howto-troubleshoot-replication-latency.md) для устранения неполадок и понимания возможных причин.
 
 ## <a name="stop-replication"></a>Остановка репликации
 

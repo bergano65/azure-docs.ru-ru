@@ -12,10 +12,10 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 07/16/2020
 ms.openlocfilehash: 83950c2d3c5439886ff787b69d9da4d0c214de31
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87092547"
 ---
 # <a name="update-azure-machine-learning-studio-classic-models-by-using-update-resource-activity"></a>Обновление моделей Машинное обучение Azure Studio (классическая модель) с помощью действия "обновить ресурс"
@@ -63,7 +63,7 @@ ms.locfileid: "87092547"
 | :---------------------------- | :--------------------------------------- | :------- |
 | name                          | Имя действия в конвейере.     | Да      |
 | description                   | Описание действия.  | Нет       |
-| type                          | Для действия "обновить ресурс" Машинное обучение Azure Studio (классическая модель) тип действия — **AzureMLUpdateResource**. | Да      |
+| type                          | Для действия "обновить ресурс" Машинное обучение Azure Studio (классическая модель) тип действия —  **AzureMLUpdateResource**. | Да      |
 | linkedServiceName             | Связанная служба Машинное обучение Azure Studio (классическая), содержащая свойство updateResourceEndpoint. | Да      |
 | trainedModelName              | Имя модуля модели обучения для обновления в эксперименте веб-службы. | Да      |
 | trainedModelLinkedServiceName | Имя связанной службы хранилища Azure, содержащей файл iLearner, который был отправлен действием обновления. | Да      |

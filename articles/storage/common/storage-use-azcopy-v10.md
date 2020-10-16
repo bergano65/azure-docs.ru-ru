@@ -11,7 +11,7 @@ ms.openlocfilehash: 2f5b82f07ecff36ba95917a1f1b347c42ae7e074
 ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91856792"
 ---
 # <a name="get-started-with-azcopy"></a>Начало работы с AzCopy
@@ -320,6 +320,6 @@ URL-адрес отображается в выходных данных это�
 
 См. раздел [Настройка, оптимизация и устранение неполадок AzCopy](storage-use-azcopy-configure.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Если у вас есть вопросы, проблемы или общие отзывы, отправьте их [на страницу GitHub](https://github.com/Azure/azure-storage-azcopy) .

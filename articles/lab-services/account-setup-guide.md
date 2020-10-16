@@ -4,10 +4,10 @@ description: Это поможет администраторам быстро �
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: c186560b27ebcb543a23785dc5fbc556614f64b9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85445429"
 ---
 # <a name="lab-account-setup-guide"></a>Руководства по настройке учетной записи лаборатории
@@ -97,7 +97,7 @@ Azure Marketplace предоставляет сотни образов, кото
 
    ![Снимок экрана: Включение пользовательских образов в общей коллекции образов](./media/setup-guide/enable-sig-custom-images.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Управление учетными записями лабораторий](how-to-manage-lab-accounts.md)
 

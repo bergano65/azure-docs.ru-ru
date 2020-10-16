@@ -4,10 +4,10 @@ description: Настройте среду решения Azure VMware для р
 ms.topic: how-to
 ms.date: 06/09/2020
 ms.openlocfilehash: 37fd74f9859813061ff5653fd2c2b0b6cad319e3
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91580749"
 ---
 # <a name="set-up-azure-backup-server-for-azure-vmware-solution"></a>Настройка Azure Backup Server для решения Azure VMware
@@ -140,7 +140,7 @@ Azure Backup Server виртуальную машину необходимо п�
 
 1. В меню слева выберите **Все службы**.
 
-   ![В меню слева выберите Все службы.](../backup/media/backup-create-rs-vault/click-all-services.png)
+   ![В меню слева выберите все службы.](../backup/media/backup-create-rs-vault/click-all-services.png)
 
 1. В диалоговом окне **все службы** введите **службы восстановления** и в списке выберите **хранилища служб восстановления** .
 
@@ -385,7 +385,7 @@ Azure Backup Server v3 принимает только тома хранилищ
 
 ![Добавить доступные тома](../backup/media/backup-mabs-add-storage/mabs-add-storage-7.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Перейдите к следующему руководству, чтобы узнать, как настроить резервное копирование виртуальных машин VMware, работающих в решении VMware для Azure, с помощью Azure Backup Server.
 

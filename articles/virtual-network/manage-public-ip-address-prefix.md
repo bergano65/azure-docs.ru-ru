@@ -14,17 +14,17 @@ ms.workload: infrastructure-services
 ms.date: 05/13/2019
 ms.author: allensu
 ms.openlocfilehash: 90fc35249daea51a08cb83143c6be024e78964a7
-ms.sourcegitcommit: 23aa0cf152b8f04a294c3fca56f7ae3ba562d272
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91804016"
 ---
 # <a name="create-change-or-delete-a-public-ip-address-prefix"></a>Создание, изменение и удаление префикса общедоступного IP-адреса
 
 Общие сведения о префиксе общедоступного IP-адреса, а также о его создании, изменении и удалении. Префикс общедоступного IP-адреса — это непрерывный диапазон адресов на основе указанного количества общедоступных IP-адресов. Адреса назначаются для вашей подписки. При создании ресурса общедоступного IP-адреса можно присвоить префиксу статический общедоступный адрес и связать его с виртуальными машинами, подсистемами балансировки нагрузки или другими ресурсами, чтобы обеспечить подключение к Интернету. Если вы не знакомы с префиксами общедоступных IP-адресов, см. раздел [Обзор префикс общедоступного IP-адреса](public-ip-address-prefix.md)
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -46,7 +46,7 @@ ms.locfileid: "91804016"
 3. В колонке **Префикс общедоступного IP-адреса** щелкните **Создать**.
 4. Введите или выберите значения для перечисленных ниже параметров в разделе **Создать префикс общедоступного IP-адреса**, а затем щелкните **Создать**.
 
-   |Параметр|Необходим?|Сведения|
+   |Параметр|Необходим?|Подробнее|
    |---|---|---|
    |Подписка|Да|Ресурс в пределах одной и той же [подписки](../azure-glossary-cloud-terminology.md?toc=%2fazure%2fvirtual-network%2ftoc.json#subscription), с которым будет связан общедоступный IP-адрес.|
    |Группа ресурсов|Да|Ресурс в пределах одной или разных [групп ресурсов](../azure-glossary-cloud-terminology.md?toc=%2fazure%2fvirtual-network%2ftoc.json#resource-group), с которым будет связан общедоступный IP-адрес.|
@@ -56,7 +56,7 @@ ms.locfileid: "91804016"
 
 **Команды**
 
-|Инструмент|Get-Help|
+|Средство|Get-Help|
 |---|---|
 |CLI|[az network public-ip prefix create](/cli/azure/network/public-ip/prefix#az-network-public-ip-prefix-create)|
 |PowerShell|[New-АзпублиЦиппрефикс](/powershell/module/az.network/new-azpublicipprefix)|
@@ -77,7 +77,7 @@ ms.locfileid: "91804016"
 
 Кроме того, для создания ресурса общедоступного IP-адреса можно использовать приведенные ниже команды CLI и PS с параметрами--public-IP-prefix (CLI) и-ПублиЦиппрефикс (PS). 
 
-|Инструмент|Get-Help|
+|Средство|Get-Help|
 |---|---|
 |CLI|[az network public-ip create](/cli/azure/network/public-ip?view=azure-cli-latest#az-network-public-ip-create)|
 |PowerShell|[New-AzPublicIpAddress](/powershell/module/az.network/new-azpublicipaddress?view=azps-2.0.0)|
@@ -92,7 +92,7 @@ ms.locfileid: "91804016"
 
 **Команды**
 
-|Инструмент|Get-Help|
+|Средство|Get-Help|
 |---|---|
 |CLI|Команда [az network public-ip prefix list](/cli/azure/network/public-ip/prefix#az-network-public-ip-prefix-list) выводит список общедоступных IP-адресов, [az network public-ip prefix show](/cli/azure/network/public-ip/prefix#az-network-public-ip-prefix-show) — отображает параметры, [az network public-ip prefix update](/cli/azure/network/public-ip/prefix#az-network-public-ip-prefix-update) — обновляет, а [az network public-ip prefix delete](/cli/azure/network/public-ip/prefix#az-network-public-ip-prefix-delete) — удаляет|
 |PowerShell|[Get-азпублиЦиппрефикс](/powershell/module/az.network/get-azpublicipprefix) для получения объекта общедоступного IP-адреса и просмотра его параметров, [Set-азпублиЦиппрефикс](/powershell/module/az.network/set-azpublicipprefix) для обновления параметров; [Remove-азпублиЦиппрефикс](/powershell/module/az.network/remove-azpublicipprefix) to delete|
@@ -108,6 +108,6 @@ ms.locfileid: "91804016"
 | Microsoft.Network/publicIPPrefixes/delete                         | Удаление префикса общедоступного IP-адреса                              |
 |Microsoft.Network/publicIPPrefixes/join/action                     | Создание общедоступного IP-адреса из префикса |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте больше о сценариях и преимуществах использования [префикса общедоступного IP-адреса](public-ip-address-prefix.md)

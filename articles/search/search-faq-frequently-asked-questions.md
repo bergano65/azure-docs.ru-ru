@@ -1,5 +1,5 @@
 ---
-title: Часто задаваемые вопросы
+title: Вопросы и ответы
 titleSuffix: Azure Cognitive Search
 description: Получите ответы на часто задаваемые вопросы о службе Microsoft Azure Когнитивный поиск, облачной службе поиска на Microsoft Azure.
 manager: nitinme
@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 04/10/2020
 ms.openlocfilehash: 9d6acdcf9487b2d1a5964d4ec686cd23666275b0
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88923098"
 ---
 # <a name="azure-cognitive-search---frequently-asked-questions-faq"></a>Azure Когнитивный поиск — часто задаваемые вопросы
@@ -101,8 +101,8 @@ Azure Когнитивный поиск поддерживает несколь�
 
 У вас есть вопрос об отсутствующей функции или компоненте? Отправьте запрос на [веб-сайте User Voice](https://feedback.azure.com/forums/263029-azure-search).
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
  [StackOverflow: Azure Когнитивный поиск](https://stackoverflow.com/questions/tagged/azure-search)   
  [How full text search works in Azure Cognitive Search](search-lucene-query-architecture.md) (Как выполняется полнотекстовый поиск в Когнитивном поиске Azure)  
- [Что собой представляет Когнитивный поиск Azure?](search-what-is-azure-search.md)
+ [Что такое Azure Когнитивный поиск?](search-what-is-azure-search.md)

@@ -4,10 +4,10 @@ description: Процедура развертывания для примера
 ms.date: 07/31/2020
 ms.topic: sample
 ms.openlocfilehash: 5fb8855f82b16a149e2ab8091a1722236f115171
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87495834"
 ---
 # <a name="deploy-the-fedramp-moderate-blueprint-sample"></a>Развертывание примера схемы FedRAMP Moderate

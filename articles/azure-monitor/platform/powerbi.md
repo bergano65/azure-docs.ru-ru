@@ -7,10 +7,10 @@ author: bwren
 ms.author: bwren
 ms.date: 05/01/2019
 ms.openlocfilehash: 8b9624313716081a039b12c73e54b9f7afc2a323
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86505318"
 ---
 # <a name="import-azure-monitor-log-data-into-power-bi"></a>Импорт Azure Monitor данных журнала в Power BI
@@ -39,7 +39,7 @@ ms.locfileid: "86505318"
 Power BI Desktop — это классическое приложение, позволяющее создавать наборы данных и отчеты, которые можно опубликовать в Power BI.  Его также можно использовать для создания запроса с использованием языка Power Query, экспортированного из Azure Monitor. 
 
 1. Установите приложение [Power BI Desktop](https://powerbi.microsoft.com/desktop/), если у вас его еще нет, а затем откройте его.
-2. Выберите **получить данные**  >  **пустой запрос** , чтобы открыть новый запрос.  Затем выберите **Расширенный редактор** и вставьте содержимое экспортированного файла в запрос. Нажмите кнопку **Done**(Готово).
+2. Выберите **получить данные**  >  **пустой запрос** , чтобы открыть новый запрос.  Затем выберите **Расширенный редактор** и вставьте содержимое экспортированного файла в запрос. Нажмите кнопку **Готово**.
 
     ![Запрос Power BI Desktop](media/powerbi/desktop-new-query.png)
 

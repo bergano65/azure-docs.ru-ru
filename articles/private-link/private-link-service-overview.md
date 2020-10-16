@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 09/16/2019
 ms.author: sumi
 ms.openlocfilehash: a6bbb2abe24eba96fd2c55b7aaf15ccd8ae33530
-ms.sourcegitcommit: 5a37753456bc2e152c3cb765b90dc7815c27a0a8
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87760959"
 ---
 # <a name="what-is-azure-private-link-service"></a>Что такое служба частной связи Azure?
@@ -66,7 +66,7 @@ ms.locfileid: "87760959"
 |||
 
 
-### <a name="details"></a>Сведения
+### <a name="details"></a>Подробнее
 
 - Доступ к службе Private Link можно получить из утвержденных частных конечных точек в любом общедоступном регионе. Частная конечная точка может быть достигнута из той же виртуальной сети, с использованием виртуальных сетей, глобально равноправных виртуальных сетей и локальных, с помощью частных подключений VPN или ExpressRoute. 
  
@@ -91,7 +91,7 @@ ms.locfileid: "87760959"
 - Идентификатор GUID будет предоставляться платформой. Это позволяет сделать имя глобально уникальным. 
 - Суффикс добавляется Azure: *Region*. Azure. привателинксервице 
 
-Полный псевдоним: *prefix*. {GUID}. *регион*. Azure. привателинксервице  
+Полный псевдоним:  *prefix*. {GUID}. *регион*. Azure. привателинксервице  
 
 ## <a name="control-service-exposure"></a>Предоставление доступа к службе
 
@@ -113,7 +113,7 @@ ms.locfileid: "87760959"
 
 |Поле |Длина (октетов)  |Описание  |
 |---------|---------|----------|
-|Type  |1        |PP2_TYPE_AZURE (0xEE)|
+|Тип  |1        |PP2_TYPE_AZURE (0xEE)|
 |Длина  |2      |Длина значения|
 |Значение  |1     |PP2_SUBTYPE_AZURE_PRIVATEENDPOINT_LINKID (0x01)|
 |  |4        |UINT32 (4 байта), представляющее LINKID для закрытой конечной точки. Кодировка в формате с прямым порядком байтов.|
@@ -128,6 +128,6 @@ ms.locfileid: "87760959"
 - Поддерживает только трафик IPv4
 - Поддерживает только TCP-трафик
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - [Создание службы частной связи с помощью Azure PowerShell](create-private-link-service-powershell.md)
 - [Создание службы частной связи с помощью Azure CLI](create-private-link-service-cli.md)

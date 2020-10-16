@@ -8,15 +8,15 @@ ms.date: 07/07/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
 ms.openlocfilehash: a85fdf1e1e27b1ce5abb0c7890b717d48ba3bd3f
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89230455"
 ---
 # <a name="azure-resource-graph-security-baseline-for-azure-security-benchmark"></a>Базовый план безопасности графа ресурсов Azure для производительности системы безопасности Azure
 
-Этот базовый план безопасности применяет рекомендации из [теста безопасности Azure](../../../security/benchmarks/overview.md) к графу ресурсов Azure. Azure Security Benchmark содержит рекомендации по обеспечению безопасности облачных решений в Azure. Содержимое группируются по **элементам управления безопасностью** , определенным в тестовом производительности системы безопасности Azure, и связанным рекомендациям, применимым к графу ресурсов Azure. **Элементы управления** , неприменимые к графу ресурсов Azure, были исключены. Чтобы увидеть, как граф ресурсов Azure полностью соответствует тестовому производительности системы безопасности Azure, ознакомьтесь с [полным базовым файлом сопоставления безопасности виртуальной сети Azure](https://github.com/MicrosoftDocs/SecurityBenchmarks/tree/master/Azure%20Offer%20Security%20Baselines).
+Этот базовый план безопасности применяет рекомендации из [теста безопасности Azure](../../../security/benchmarks/overview.md) к графу ресурсов Azure. Тест производительности системы безопасности Azure содержит рекомендации по обеспечению безопасности облачных решений в Azure. Содержимое группируются по **элементам управления безопасностью** , определенным в тестовом производительности системы безопасности Azure, и связанным рекомендациям, применимым к графу ресурсов Azure. **Элементы управления** , неприменимые к графу ресурсов Azure, были исключены. Чтобы увидеть, как граф ресурсов Azure полностью соответствует тестовому производительности системы безопасности Azure, ознакомьтесь с [полным базовым файлом сопоставления безопасности виртуальной сети Azure](https://github.com/MicrosoftDocs/SecurityBenchmarks/tree/master/Azure%20Offer%20Security%20Baselines).
 
 
 

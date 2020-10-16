@@ -9,12 +9,12 @@ ms.author: jeanyd
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 4fb64a2ea55744d66b203ef4d901f22ae4695e1a
-ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
+ms.openlocfilehash: d27537f017707e937303dd0c08a589db28aac6ef
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91630429"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92071444"
 ---
 # <a name="backup-and-restore-for-azure-arc-enabled-postgresql-hyperscale-server-groups"></a>Резервное копирование и восстановление для PostgreSQLных групп серверов с поддержкой дуги Azure
 
@@ -82,7 +82,12 @@ azdata arc postgres server create -n postgres01 --workers 2 --storage-class-back
 
 ## <a name="take-manual-full-backup"></a>Выполнить полное резервное копирование вручную
 
+
 Затем выполните полное резервное копирование вручную.
+
+> [!CAUTION]
+> **Только для пользователей службы Azure Kubernetes Service (AKS):** мы осведомлены о проблемах с созданием резервных копий группы серверов, размещенной в службе Azure KUBERNETES (AKS). Мы уже работаем над устранением этой проблемы. До тех пор пока обновление не будет развернуто в будущем выпуске или обновлении, перед созданием резервной копии необходимо удалить модули из групп серверов. Для каждой из модулей, используемых в группе серверов (эти модули перечислены в списке с помощью команды **kubectl Get \<namespace name> ** ** \<server group pod name> \<namespace name> Pod **-n), удалите их, выполнив kubectl. Не удаляйте модули Pod, которые не являются частью группы серверов. Удаление модулей Pod не помещает ваши данные под угрозу. Дождитесь возвращения всех модулей Pod в оперативный режим и в состоянии = выполняется перед созданием резервной копии. Состояние Pod указывается в выходных данных команды kubectl Get Pod, приведенной выше.
+
 
 Чтобы создать полную резервную копию всех папок данных и журналов группы серверов, выполните следующую команду:
 
@@ -96,12 +101,12 @@ azdata arc postgres backup create [--name <backup name>] --server-name <server g
 
 Эта команда координирует распределенное полное резервное копирование по всем узлам, составляющим группу серверов PostgreSQL с поддержкой дуги Azure. Иными словами, он будет создавать резервные копии всех данных в координаторе и рабочих узлах.
 
-Пример:
+Например.
 ```console
 azdata arc postgres backup create --name MyBackup_Aug31_0730amPST --server-name postgres01
 ```
 
-После завершения резервного копирования будет возвращен идентификатор, имя и состояние резервной копии. Пример:
+После завершения резервного копирования будет возвращен идентификатор, имя и состояние резервной копии. Например.
 ```console
 {
   "ID": "d134f51aa87f4044b5fb07cf95cf797f",
@@ -125,7 +130,7 @@ azdata arc postgres backup create --name MyBackup_Aug31_0730amPST --server-name 
 azdata arc postgres backup list --server-name <servergroup name>
 ```
 
-Пример:
+Например.
 ```console
 azdata arc postgres backup list --server-name postgres01
 ```
@@ -151,7 +156,7 @@ azdata arc postgres backup restore --server-name <server group name> --backup-id
 - __BACKUP-ID__ — это идентификатор резервной копии, отображаемый в команде list Backup (см. шаг 3).
 Это приведет к координации распределенного полного восстановления по всем узлам, составляющим группу серверов PostgreSQL с поддержкой дуги Azure. Иными словами, он восстановит все данные в координаторе и рабочих узлах.
 
-Пример:
+Например.
 ```console
 azdata arc postgres backup restore --server-name postgres01 --backup-id d134f51aa87f4044b5fb07cf95cf797f
 ```

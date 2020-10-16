@@ -8,12 +8,12 @@ ms.subservice: disk
 ms.topic: how-to
 ms.date: 08/12/2020
 ms.author: alkohli
-ms.openlocfilehash: cfa2dee41f07e273d933da356f74063453cb1775
-ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
+ms.openlocfilehash: b09176ad8cb93d7710975b67de619b4f58eaa2f0
+ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88142542"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91951916"
 ---
 # <a name="use-self-managed-shipping-for-azure-data-box-in-the-azure-portal"></a>Использование функции самоуправляемой доставки Azure Data Box на портале Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "88142542"
 * Сингапур
 * Южная Корея
 * Индия
-* Южно-Африканская Республика
+* ЮАР
 
 ## <a name="use-self-managed-shipping"></a>Использование самоуправляемой доставки
 
@@ -41,7 +41,7 @@ ms.locfileid: "88142542"
 2. При выборе типа доставки выберите вариант **Самоуправляемая доставка**. Этот вариант доступен только в том случае, если вы находитесь в одном из поддерживаемых регионов, указанных в разделе "Предварительные требования".
 
 3. После того как вы указали адрес доставки, проверьте его и завершите заказ.
-   ![Самоуправляемая доставка](media\data-box-portal-customer-managed-shipping\choose-self-managed-shipping-2.png)
+   ![Самостоятельно управляемая доставка 2](media\data-box-portal-customer-managed-shipping\choose-self-managed-shipping-2.png)
 
 4. Когда устройство будет подготовлено и вы получите для него уведомление по электронной почте, вы можете запланировать отправку.
 
@@ -78,7 +78,7 @@ ms.locfileid: "88142542"
 
 9. Если вы получили приглашение на сдачу устройства, ваш заказ на портале Azure должен находиться в состоянии **Все готово для получения в центре данных Azure**. Для сдачи устройства следуйте инструкциям в разделе **Планирование сдачи**.
 
-   ![Просмотр кода авторизации](media\data-box-portal-customer-managed-shipping\data-box-portal-received-complete-02b.png)
+   ![Просмотр кода авторизации 2](media\data-box-portal-customer-managed-shipping\data-box-portal-received-complete-02b.png)
 
 10. После проверки идентификатора и кода авторизации и сдачи устройства в центре обработки данных состояние вашего заказа должно измениться на **Получено**.
 

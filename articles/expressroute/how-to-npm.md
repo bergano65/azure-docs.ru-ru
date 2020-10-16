@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 01/25/2019
 ms.author: duau
 ms.openlocfilehash: 7810afffd5da6d46439ff27ddb3f5b0aafdc2341
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90981319"
 ---
 # <a name="configure-network-performance-monitor-for-expressroute"></a>Настройка решения "Монитор производительности сети" для ExpressRoute
@@ -20,7 +20,7 @@ ms.locfileid: "90981319"
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
-Можно сделать следующее.
+Вы можете:
 
 * отслеживать потери и задержки в различных виртуальных сетях и настроить оповещения;
 

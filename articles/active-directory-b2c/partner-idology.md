@@ -12,10 +12,10 @@ ms.date: 06/08/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: cfce5b42d37908d0ba89cff9c4831cb25b968524
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91259328"
 ---
 # <a name="tutorial-for-configuring-idology-with-azure-active-directory-b2c"></a>Руководство по настройке Идологи с помощью Azure Active Directory B2C 
@@ -139,7 +139,7 @@ ms.locfileid: "91259328"
 
 7. После ввода **продолжения**появится головоломка идологи.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения см. в следующих статьях:
 

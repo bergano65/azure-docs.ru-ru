@@ -12,10 +12,10 @@ ms.author: sashan
 ms.reviewer: ''
 ms.date: 07/29/2020
 ms.openlocfilehash: 45544d246f1390271300d5ffa1fff1fdc5d9317f
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91443781"
 ---
 # <a name="copy-a-transactionally-consistent-copy-of-a-database-in-azure-sql-database"></a>Копирование транзакционно согласованной копии базы данных в базе данных SQL Azure
@@ -29,7 +29,7 @@ ms.locfileid: "91443781"
 Копия базы данных — это транзакционно согласованный моментальный снимок базы данных-источника на момент времени после инициирования запроса на копирование. Для копии можно выбрать один и тот же сервер или другой сервер. Кроме того, можно выбрать сохранение избыточности резервных копий, уровня служб и размера вычислений базы данных-источника, а также использование другой избыточности хранилища резервных копий или размера вычислений в пределах одного или другого уровня служб. После завершения копирования копия становится полностью работоспособной и независимой базой данных. Имена входа, пользователи и разрешения в копируемой базе данных управляются независимо от базы данных источника. Копия создается с помощью технологии георепликации. После завершения заполнения реплик связь георепликации автоматически прекращается. Все требования для использования георепликации применяются к операции копирования базы данных. Дополнительные сведения см. в разделе [Общие сведения об активной георепликации](active-geo-replication-overview.md) .
 
 > [!NOTE]
-> Настраиваемая избыточность хранилища резервных копий базы данных SQL Azure сейчас доступна в общедоступной предварительной версии в регионе Azure Юго-Восточной Азии. Если в предварительной версии база данных-источник создается с избыточностью хранилища резервных копий с локально избыточностью или с избыточностью зоны, копирование базы данных на сервер в другом регионе Azure не поддерживается. 
+> Настраиваемая избыточность хранилища резервных копий для Базы данных SQL Azure сейчас предоставляется только в регионе Azure Юго-Восточной Азии в режиме общедоступной предварительной версии. Если в предварительной версии база данных-источник создается с избыточностью хранилища резервных копий с локально избыточностью или с избыточностью зоны, копирование базы данных на сервер в другом регионе Azure не поддерживается. 
 
 ## <a name="logins-in-the-database-copy"></a>Имена входа в копии базы данных
 
@@ -56,7 +56,7 @@ ms.locfileid: "91443781"
 Для PowerShell используйте командлет [New-азсклдатабасекопи](/powershell/module/az.sql/new-azsqldatabasecopy) .
 
 > [!IMPORTANT]
-> Модуль PowerShell Azure Resource Manager (RM) по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Модуль AzureRM продолжит принимать исправления ошибок до 2020 декабря.  Аргументы для команд в модуле AZ и в модулях AzureRm существенно идентичны. Дополнительные сведения о совместимости см. [в разделе Введение в новый модуль Azure PowerShell AZ](/powershell/azure/new-azureps-module-az).
+> Модуль PowerShell Azure Resource Manager (RM) по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Исправления ошибок для модуля AzureRM будут продолжать выпускаться как минимум до декабря 2020 г.  Аргументы команд в модулях Az и AzureRm практически идентичны. Дополнительные сведения о совместимости см. в статье [Знакомство с новым модулем Az для Azure PowerShell](/powershell/azure/new-azureps-module-az).
 
 ```powershell
 New-AzSqlDatabaseCopy -ResourceGroupName "<resourceGroup>" -ServerName $sourceserver -DatabaseName "<databaseName>" `
@@ -128,7 +128,7 @@ CREATE DATABASE Database2 AS COPY OF server1.Database1;
 
 ## <a name="monitor-the-progress-of-the-copying-operation"></a>Отслеживание хода операции копирования
 
-Отслеживайте процесс копирования, запрашивая представления [sys. databases](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-databases-transact-sql), [sys. dm_database_copies](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-database-copies-azure-sql-database)и [sys. dm_operation_status](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-operation-status-azure-sql-database) . Во время копирования в столбце **state_desc** представления sys. databases для новой базы данных задается значение **копирование**.
+Отслеживайте процесс копирования, запрашивая представления [sys. databases](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-databases-transact-sql), [sys.dm_database_copies](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-database-copies-azure-sql-database)и [sys.dm_operation_status](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-operation-status-azure-sql-database) . Во время копирования в столбце **state_desc** представления sys. databases для новой базы данных задается значение **копирование**.
 
 * В случае сбоя копирования в столбце **state_desc** представления sys. databases для новой базы данных устанавливается значение **SUSPECT**. Выполните инструкцию DROP для новой базы данных и повторите попытку позднее.
 * Если копирование выполняется, столбец **state_desc** в представлении sys. databases для новой базы данных устанавливается в состояние «в **сети**». Это означает, что копирование завершено и новая база данных является обычной базой данных, которую можно изменять независимо от исходной.
@@ -177,7 +177,7 @@ CREATE DATABASE Database2 AS COPY OF server1.Database1;
 
 При копировании базы данных в базе данных SQL Azure могут возникнуть следующие ошибки. Дополнительные сведения см. в статье [Копирование базы данных SQL Azure](database-copy.md).
 
-| Код ошибки | Статус | Описание |
+| Код ошибки | Уровень серьезности | Описание |
 | ---:| ---:|:--- |
 | 40635 |16 |Клиент с IP-адресом %.&#x2a;ls временно отключен. |
 | 40637 |16 |Возможность создания копии базы данных в настоящее время отключена. |
@@ -193,7 +193,7 @@ CREATE DATABASE Database2 AS COPY OF server1.Database1;
 | 40570 |16 |Произошел сбой при копировании базы данных из-за внутренней ошибки. Удалите целевую базу данных и повторите попытку позднее. |
 | 40571 |16 |Произошел сбой при копировании базы данных из-за внутренней ошибки. Удалите целевую базу данных и повторите попытку позднее. |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения об именах входа см. в статьях [Управление именами входа](logins-create-manage.md) и [Управление безопасностью базы данных SQL Azure после аварийного восстановления](active-geo-replication-security-configure.md).
 * Сведения о том, как экспортировать базу данных, см. в разделе [Экспорт базы данных в BACPAC-](database-export.md)файл.

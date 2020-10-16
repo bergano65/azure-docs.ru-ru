@@ -7,10 +7,10 @@ ms.date: 12/09/2018
 ms.author: mavane
 ms.custom: seodec18
 ms.openlocfilehash: 72f9e332a4faa98a8a86ef7b6edbefe20357e33f
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91356891"
 ---
 # <a name="develop-arm-templates-for-cloud-consistency"></a>Разработка шаблонов ARM для согласованности в облаке
@@ -665,7 +665,7 @@ Get-AzureRmVMExtensionImage -Location myLocation -PublisherName Microsoft.PowerS
 * Имейте в виду, что некоторые тесты могут выполняться без подключения к Azure Resource Manager. Другие, такие как тестирование развертывания шаблона, требуют выполнения некоторых действий со стороны Resource Manager, которые не могут происходить в автономном режиме.
 * Тестирование шаблона развертывания с использованием API проверки не тождественно фактическому развертыванию. Кроме того, даже при развертывании шаблона из локального файла все ссылки на вложенные шаблоны в шаблоне извлекаются Resource Manager напрямую, а артефакты, на которые ссылаются расширения виртуальной машины, извлекаются агентом виртуальной машины, работающим на развернутой виртуальной машине.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Рекомендации по использованию шаблона Azure Resource Manager](/azure-stack/user/azure-stack-develop-templates)
 * [Рекомендации по использованию шаблонов ARM](template-syntax.md)

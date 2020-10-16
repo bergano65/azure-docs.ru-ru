@@ -8,10 +8,10 @@ ms.date: 06/05/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
 ms.openlocfilehash: 515cfd5267917f88131571adcb1bea0db274157c
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89437944"
 ---
 # <a name="azure-security-baseline-for-azure-data-factory"></a>Базовый план безопасности Azure для фабрики данных Azure
@@ -30,7 +30,7 @@ ms.locfileid: "89437944"
 
 **Руководство**. при создании Azure-SSIS Integration Runtime (IR) вы можете присоединить его к виртуальной сети. Это позволит фабрике данных Azure создавать определенные сетевые ресурсы, например группу безопасности сети (NSG) и подсистему балансировки нагрузки. Вы также можете предоставить собственный статический общедоступный IP-адрес или настроить фабрику данных Azure для вас. В NSG, автоматически созданной фабрикой данных Azure, порт 3389 по умолчанию открыт для всего трафика. Заблокируйте это, чтобы обеспечить доступ только администраторам.
 
-Локально размещенная IRs может быть развернута на локальном компьютере или виртуальной машине Azure внутри виртуальной сети. Убедитесь, что для развертывания подсети виртуальной сети настроено NSG, разрешающее только административный доступ. Для защиты Azure-SSIS IR в правиле брандмауэра Windows на каждом IR-узле по умолчанию разрешается исходящие порты 3389. Вы можете защитить ресурсы, настроенные виртуальной сетью, путем связывания NSG с подсетью и задания правил с определенными правилами.
+Self-Hosted IRs можно развернуть на локальном компьютере или в виртуальной машине Azure внутри виртуальной сети. Убедитесь, что для развертывания подсети виртуальной сети настроено NSG, разрешающее только административный доступ. Для защиты Azure-SSIS IR в правиле брандмауэра Windows на каждом IR-узле по умолчанию разрешается исходящие порты 3389. Вы можете защитить ресурсы, настроенные виртуальной сетью, путем связывания NSG с подсетью и задания правил с определенными правилами.
 
 Где доступна частная ссылка, используйте частные конечные точки для защиты любых ресурсов, связанных с конвейером фабрики данных Azure, например Azure SQL Server. Благодаря частному каналу трафик между виртуальной сетью и службой проходит через магистральную сеть Майкрософт, что устраняет уязвимость в общедоступном Интернете.
 
@@ -331,7 +331,7 @@ ms.locfileid: "89437944"
 
 Хотя Azure AD является рекомендуемым методом для администрирования доступа пользователей, помните, что если вы используете Integration Runtime на виртуальной машине Azure, ваша ВИРТУАЛЬная машина также может иметь локальные учетные записи. Как локальные, так и доменные учетные записи должны проверяться и управляться обычным образом с минимальным объемом памяти. Кроме того, мы советуем рассмотреть, что диспетчер привилегированных удостоверений проверяется на наличие JIT-функции, чтобы снизить доступность административных разрешений.
 
-* [Роли и разрешения для службы "Фабрика данных Azure"](https://docs.microsoft.com/azure/data-factory/concepts-roles-permissions)
+* [Roles and permissions for Azure Data Factory](https://docs.microsoft.com/azure/data-factory/concepts-roles-permissions) (Роли и разрешения для службы "Фабрика данных Azure")
 
 * [Сведения о диспетчере привилегированных удостоверений](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-deployment-plan)
 
@@ -370,7 +370,7 @@ ms.locfileid: "89437944"
 
 * [Сведения о диспетчере привилегированных удостоверений](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-deployment-plan)
 
-* [Роли и разрешения для службы "Фабрика данных Azure"](https://docs.microsoft.com/azure/data-factory/concepts-roles-permissions)
+* [Roles and permissions for Azure Data Factory](https://docs.microsoft.com/azure/data-factory/concepts-roles-permissions) (Роли и разрешения для службы "Фабрика данных Azure")
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -608,7 +608,7 @@ ms.locfileid: "89437944"
 
 * [Настройка Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal)
 
-* [Роли и разрешения для службы "Фабрика данных Azure"](https://docs.microsoft.com/azure/data-factory/concepts-roles-permissions)
+* [Roles and permissions for Azure Data Factory](https://docs.microsoft.com/azure/data-factory/concepts-roles-permissions) (Роли и разрешения для службы "Фабрика данных Azure")
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -994,7 +994,7 @@ ms.locfileid: "89437944"
 
 * [Настройка Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/quickstart-assign-role-user-portal)
 
-* [Роли и разрешения для службы "Фабрика данных Azure"](https://docs.microsoft.com/azure/data-factory/concepts-roles-permissions)
+* [Roles and permissions for Azure Data Factory](https://docs.microsoft.com/azure/data-factory/concepts-roles-permissions) (Роли и разрешения для службы "Фабрика данных Azure")
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 

@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.service: iot-central
 services: iot-central
 ms.openlocfilehash: beeb771ea5053dd0ad867a7568aa64bbb2d0b4ed
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90985286"
 ---
 # <a name="configure-the-application-dashboard"></a>Настройка панели мониторинга приложения
@@ -33,7 +33,7 @@ ms.locfileid: "90985286"
 1. Выберите одно или несколько устройств в раскрывающемся списке **устройства** , чтобы отобразить их на плитке. Теперь на устройствах отображаются доступные данные телеметрии, свойства и команды.
 1. Выберите **температура** в разделе телеметрии, а затем щелкните **добавить плитку**. Теперь плитка отображается на панели мониторинга, где можно изменять визуализацию, изменять размер плитки и настраивать ее:
 
-:::image type="content" source="media/howto-add-tiles-to-your-dashboard/device-details.png" alt-text="Добавление плитки телеметрии температуры на панель мониторинга":::
+:::image type="content" source="media/howto-add-tiles-to-your-dashboard/device-details.png" alt-text="Панель мониторинга для приложений на основе пользовательского шаблона приложения":::
 
 Завершив добавление и настройку плиток на панели мониторинга, нажмите кнопку **сохранить**.
 
@@ -75,23 +75,23 @@ ms.locfileid: "90985286"
 
 Для графики, линейчатых диаграмм и круговых диаграмм можно настроить цвет различных значений телеметрии. Щелкните значок палитры рядом с данными телеметрии, которые необходимо настроить.
 
-:::image type="content" source="media/howto-add-tiles-to-your-dashboard/color-customization.png" alt-text="Изменение цвета значения телеметрии":::
+:::image type="content" source="media/howto-add-tiles-to-your-dashboard/color-customization.png" alt-text="Панель мониторинга для приложений на основе пользовательского шаблона приложения":::
 
 Для плиток, показывающих свойства строк или данные телеметрии, можно выбрать способ отображения текста. Например, если устройство хранит URL-адрес в строковом свойстве, можно отобразить его как ссылку для щелчка. Если URL-адрес ссылается на изображение, то это изображение можно отобразить на плитке последнего известного значения или плитке свойств. Чтобы изменить способ отображения строки, в конфигурации плитки щелкните значок шестеренки рядом с типом телеметрии или свойством:
 
-:::image type="content" source="media/howto-add-tiles-to-your-dashboard/string-customization.png" alt-text="Изменение отображения строки на плитке":::
+:::image type="content" source="media/howto-add-tiles-to-your-dashboard/string-customization.png" alt-text="Панель мониторинга для приложений на основе пользовательского шаблона приложения":::
 
 Для числового **KPI**, **последнего известного значения**и плиток **свойств** можно использовать условное форматирование для настройки цвета плитки на основе ее текущего значения. Чтобы добавить условное форматирование, щелкните **настроить** на плитке, а затем щелкните значок **условного форматирования** рядом со значением для настройки:
 
-:::image type="content" source="media/howto-add-tiles-to-your-dashboard/conditional-formatting-1.png" alt-text="Снимок экрана, показывающий, как найти параметр настройки для плитки, а затем значок условного форматирования":::
+:::image type="content" source="media/howto-add-tiles-to-your-dashboard/conditional-formatting-1.png" alt-text="Панель мониторинга для приложений на основе пользовательского шаблона приложения":::
 
 Добавьте правила условного форматирования:
 
-:::image type="content" source="media/howto-add-tiles-to-your-dashboard/conditional-formatting-2.png" alt-text="Снимок экрана, показывающий правила условного форматирования для среднего потока. Три правила — менее Tha 20 — зеленый, меньше 50 — желтый, а все больше 50 — красный.":::
+:::image type="content" source="media/howto-add-tiles-to-your-dashboard/conditional-formatting-2.png" alt-text="Панель мониторинга для приложений на основе пользовательского шаблона приложения":::
 
 На следующем снимке экрана показан результат использования правила условного форматирования:
 
-:::image type="content" source="media/howto-add-tiles-to-your-dashboard/conditional-formatting-3.png" alt-text="Снимок экрана, показывающий желтый цвет фона на плитке среднего потока воды. Число на плитке — 40,84":::
+:::image type="content" source="media/howto-add-tiles-to-your-dashboard/conditional-formatting-3.png" alt-text="Панель мониторинга для приложений на основе пользовательского шаблона приложения":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

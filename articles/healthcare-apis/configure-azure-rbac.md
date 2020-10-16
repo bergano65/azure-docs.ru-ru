@@ -9,10 +9,10 @@ ms.date: 03/15/2020
 ms.author: matjazl
 ms.reviewer: dseven
 ms.openlocfilehash: 1df2d112814c93261c364883f4b834e0bdb657bb
-ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91839917"
 ---
 # <a name="configure-azure-rbac-for-fhir"></a>Настройка Azure RBAC для FHIR 
@@ -56,7 +56,7 @@ ms.locfileid: "91839917"
 
 API Azure для FHIR будет кэшировать решения в течение 5 минут. Если вы предоставите пользователю доступ к серверу FHIR, добавив его в список разрешенных идентификаторов объектов или удалите их из списка, вы должны пройти до пяти минут на изменение разрешений для распространения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Из этой статьи вы узнали, как назначать роли Azure для плоскости данных FHIR. Дополнительные сведения о дополнительных параметрах для API Azure для FHIR:
  

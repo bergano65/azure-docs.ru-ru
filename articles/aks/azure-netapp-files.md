@@ -5,10 +5,10 @@ services: container-service
 ms.topic: article
 ms.date: 09/26/2019
 ms.openlocfilehash: c0648100e155d1462f3291a7f5f078cf316bc0aa
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84465649"
 ---
 # <a name="integrate-azure-netapp-files-with-azure-kubernetes-service"></a>Интеграция Azure NetApp Files со службой Kubernetes Azure
@@ -36,7 +36,7 @@ ms.locfileid: "84465649"
 ## <a name="configure-azure-netapp-files"></a>Настройка Azure NetApp Files
 
 > [!IMPORTANT]
-> Прежде чем можно будет зарегистрировать поставщик ресурсов *Microsoft. NetApp* , необходимо заполнить [форму отправки Azure NetApp Files ваитлист][anf-waitlist] для своей подписки. Вы не можете зарегистрировать ресурс, пока не получите официальное электронное письмо с подтверждением от команды Azure NetApp Files.
+> Прежде чем можно будет зарегистрировать поставщик ресурсов  *Microsoft. NetApp* , необходимо заполнить [форму отправки Azure NetApp Files ваитлист][anf-waitlist] для своей подписки. Вы не можете зарегистрировать ресурс, пока не получите официальное электронное письмо с подтверждением от команды Azure NetApp Files.
 
 Зарегистрируйте поставщик ресурсов *Microsoft. NetApp* :
 
@@ -258,7 +258,7 @@ Filesystem             Size  Used Avail Use% Mounted on
 ...
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Azure NetApp Files см. в разделе [что такое Azure NetApp Files][anf]. Дополнительные сведения об использовании NFS с AKS см. в статье [Создание и использование NFS-сервера Linux с помощью службы Kubernetes Azure (AKS) вручную][aks-nfs].
 

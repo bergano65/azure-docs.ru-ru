@@ -4,10 +4,10 @@ description: Узнайте, как упаковать существующее 
 ms.topic: conceptual
 ms.date: 03/30/2020
 ms.openlocfilehash: 72fde75e16341164106bb952d0bb66b83be744e1
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86259257"
 ---
 # <a name="package-and-deploy-an-existing-executable-to-service-fabric"></a>Упаковка и развертывание существующего исполняемого файла вручную
@@ -33,7 +33,7 @@ Visual Studio предоставляет шаблон службы Service Fabri
      * `CodePackage`. Рабочим каталогом будет корневой каталог в пакете приложения (каталог `GuestService1Pkg` в показанной выше структуре файлов).
      * `Work`. Файлы помещаются в подкаталог, который называется рабочим.
 4. Присвойте службе имя и нажмите кнопку **ОК**.
-5. Если службе нужна конечная точка для обмена данными, можно добавить значения протокола, порта и типа в файл ServiceManifest.xml. Например, так: `<Endpoint Name="NodeAppTypeEndpoint" Protocol="http" Port="3000" UriScheme="http" PathSuffix="myapp/" Type="Input" />`.
+5. Если службе нужна конечная точка для обмена данными, можно добавить значения протокола, порта и типа в файл ServiceManifest.xml. Например: `<Endpoint Name="NodeAppTypeEndpoint" Protocol="http" Port="3000" UriScheme="http" PathSuffix="myapp/" Type="Input" />`.
 6. Теперь можно выполнить упаковку и публикацию на локальном кластере, выполнив отладку решения в Visual Studio. Когда все будет готово, можно опубликовать приложение на удаленном кластере или вернуть решение в систему управления версиями.
 7. Прочтите сведения о [проверке работающего приложения](#check-your-running-application), чтобы узнать, как просмотреть данные о работе гостевого исполняемого файла в Service Fabric Explorer.
 
@@ -138,7 +138,7 @@ Service Fabric создает расширенную копию содержим
 ```
 
 * Выберите для `ServiceTypeName`любое имя. Значение используется в файле `ApplicationManifest.xml` для идентификации службы.
-* Укажите `UseImplicitHost="true"`. Этот атрибут сообщает платформе Service Fabric, что служба использует автономное приложение, поэтому платформе нужно только запустить службу как процесс и следить за ее работоспособностью.
+* Задайте значение `UseImplicitHost="true"`. Этот атрибут сообщает платформе Service Fabric, что служба использует автономное приложение, поэтому платформе нужно только запустить службу как процесс и следить за ее работоспособностью.
 
 #### <a name="update-codepackage"></a>Обновление CodePackage
 Элемент CodePackage указывает на расположение и версию кода службы.

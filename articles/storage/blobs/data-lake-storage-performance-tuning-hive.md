@@ -9,10 +9,10 @@ ms.date: 11/18/2019
 ms.author: normesta
 ms.reviewer: stewu
 ms.openlocfilehash: fb908fe94f940073753ea8e1cde3da2b2a0c4b6b
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88034776"
 ---
 # <a name="tune-performance-hive-hdinsight--azure-data-lake-storage-gen2"></a>Настройка производительности: Hive, HDInsight & Azure Data Lake Storage 2-го поколения
@@ -58,7 +58,7 @@ ms.locfileid: "88034776"
 Число одновременно выполняемых задач для параллелизма ограничивается общим объемом памяти YARN.  Число контейнеров YARN определяет, сколько параллельных задач можно запустить.  Чтобы узнать, сколько памяти YARN доступно для каждого узла, зайдите в Ambari.  Перейдите по адресу YARN и просмотрите вкладку configs (конфигурации).  В этом окне отображается память YARN.  
 
 - Общий объем памяти YARN = узлы * YARN память на узел
-- \#YARN Containers = Total YARN память/Tez размер контейнера
+- \# YARN Containers = Total YARN память/Tez размер контейнера
 
 При использовании Azure Data Lake Storage 2-го поколения повышение производительности достигается за счет максимально возможного уровня параллелизма.  Tez автоматически вычисляет число задач, которые нужно создать, поэтому нет необходимости настраивать этот параметр.   
 
@@ -68,7 +68,7 @@ ms.locfileid: "88034776"
 
 - Общий объем памяти YARN = узлы * YARN память на узел
 - Общий объем памяти YARN = 8 узлов * 96 ГБ = 768GB
-- \#контейнеров YARN = 768GB/3072MB = 256
+- \# контейнеров YARN = 768GB/3072MB = 256
 
 ## <a name="further-information-on-hive-tuning"></a>Дополнительные сведения о настройке Hive
 

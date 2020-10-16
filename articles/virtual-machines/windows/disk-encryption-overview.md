@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.author: mbaldwin
 ms.date: 10/05/2019
 ms.custom: seodec18
-ms.openlocfilehash: 4650df71acb088fafc1280d31d9abfb398e06741
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 4ffed14c1877f92b8f8989ea65500f441506fa34
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87284495"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91977295"
 ---
 # <a name="azure-disk-encryption-for-windows-vms"></a>Шифрование дисков Azure для виртуальных машин Windows 
 
@@ -37,7 +37,7 @@ ms.locfileid: "87284495"
 
 Шифрование дисков Azure также доступно для виртуальных машин с хранилищем класса Рremium.
 
-Шифрование дисков Azure недоступно на [виртуальных машинах поколения 2](generation-2.md#generation-1-vs-generation-2-capabilities) и [виртуальных машинах серии Lsv2](../lsv2-series.md). Дополнительные сведения об исключениях см. в статье [Шифрование дисков Azure. Неподдерживаемые сценарии](disk-encryption-windows.md#unsupported-scenarios).
+Шифрование дисков Azure недоступно на [виртуальных машинах поколения 2](../generation-2.md#generation-1-vs-generation-2-capabilities) и [виртуальных машинах серии Lsv2](../lsv2-series.md). Дополнительные сведения об исключениях см. в статье [Шифрование дисков Azure. Неподдерживаемые сценарии](disk-encryption-windows.md#unsupported-scenarios).
 
 ### <a name="supported-operating-systems"></a>Поддерживаемые операционные системы
 
@@ -86,7 +86,7 @@ ms.locfileid: "87284495"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Краткое руководство. Создание и шифрование виртуальной машины Windows с помощью Azure CLI](disk-encryption-cli-quickstart.md)
+- [Краткое руководство. Создание и шифрование виртуальной машины Windows с помощью Azure CLI ](disk-encryption-cli-quickstart.md)
 - [Краткое руководство. Создание и шифрование виртуальной машины Windows с помощью Azure PowerShell](disk-encryption-powershell-quickstart.md)
 - [Сценарии шифрования дисков Azure для виртуальных машин Windows](disk-encryption-windows.md)
 - [Скрипт CLI для подготовки необходимых компонентов для службы "Шифрование дисков Azure"](https://github.com/ejarvi/ade-cli-getting-started)

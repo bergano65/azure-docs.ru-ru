@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 06/14/2020
 ms.author: jpalma
 author: palma21
-ms.openlocfilehash: a58b00018f6ac89f024661d8d3f50ea5249e620b
-ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
+ms.openlocfilehash: 414ae3b2adb60b9442a69e3ebcc8b13b29c67cb7
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89182128"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92070509"
 ---
 # <a name="use-a-public-standard-load-balancer-in-azure-kubernetes-service-aks"></a>Использование общедоступной Load Balancer (цен. категория "Стандартный") в службе Kubernetes Azure (AKS)
 
@@ -229,7 +229,7 @@ az aks update \
 > [!IMPORTANT]
 > Необходимо [рассчитать требуемую квоту и проверить требования][requirements] перед настройкой *аллокатедаутбаундпортс* , чтобы избежать проблем с подключением или масштабированием.
 
-Можно также использовать **`load-balancer-outbound-ports`** параметры при создании кластера, но необходимо также указать **`load-balancer-managed-outbound-ip-count`** , **`load-balancer-outbound-ips`** или **`load-balancer-outbound-ip-prefixes`** .  Пример:
+Можно также использовать **`load-balancer-outbound-ports`** параметры при создании кластера, но необходимо также указать **`load-balancer-managed-outbound-ip-count`** , **`load-balancer-outbound-ips`** или **`load-balancer-outbound-ip-prefixes`** .  Например.
 
 ```azurecli-interactive
 az aks create \
@@ -317,12 +317,12 @@ spec:
 
 Ниже приведен список заметок, поддерживаемых для служб Kubernetes с типом `LoadBalancer` . Эти заметки применяются только к **входящим** потокам:
 
-| Заметка | Значение | Описание
+| Annotation | Значение | Описание
 | ----------------------------------------------------------------- | ------------------------------------- | ------------------------------------------------------------ 
 | `service.beta.kubernetes.io/azure-load-balancer-internal`         | `true` или `false`                     | Укажите, должна ли подсистема балансировки нагрузки быть внутренней. Значение по умолчанию — Public, если не задано.
 | `service.beta.kubernetes.io/azure-load-balancer-internal-subnet`  | Имя подсети                    | Укажите подсеть, к которой должна быть привязана внутренняя подсистема балансировки нагрузки. Если значение не задано, по умолчанию используется подсеть, настроенная в облачном файле конфигурации.
 | `service.beta.kubernetes.io/azure-dns-label-name`                 | Имя DNS-метки в общедоступных IP-адресах   | Укажите имя DNS-метки для **общедоступной** службы. Если задана пустая строка, запись DNS в общедоступном IP-адресе не будет использоваться.
-| `service.beta.kubernetes.io/azure-shared-securityrule`            | `true` или `false`                     | Укажите, что служба должна быть предоставлена с помощью правила безопасности Azure, которое может использоваться совместно с другой службой, характерным правилом для увеличения числа служб, которые могут быть предоставлены. Эта аннотация полагается на функцию расширенных [правил безопасности](../virtual-network/security-overview.md#augmented-security-rules) в Azure группы безопасности сети. 
+| `service.beta.kubernetes.io/azure-shared-securityrule`            | `true` или `false`                     | Укажите, что служба должна быть предоставлена с помощью правила безопасности Azure, которое может использоваться совместно с другой службой, характерным правилом для увеличения числа служб, которые могут быть предоставлены. Эта аннотация полагается на функцию расширенных [правил безопасности](../virtual-network/network-security-groups-overview.md#augmented-security-rules) в Azure группы безопасности сети. 
 | `service.beta.kubernetes.io/azure-load-balancer-resource-group`   | Имя группы ресурсов            | Укажите группу ресурсов для общедоступных IP-адресов подсистемы балансировки нагрузки, которые находятся не в той же группе ресурсов, что и инфраструктура кластера (Группа ресурсов узла).
 | `service.beta.kubernetes.io/azure-allowed-service-tags`           | Список разрешенных тегов службы          | Укажите список разрешенных [тегов службы][service-tags] , разделенных запятыми.
 | `service.beta.kubernetes.io/azure-load-balancer-tcp-idle-timeout` | Время ожидания простоя TCP в минутах          | Укажите время в минутах, в течение которого время ожидания простоя подключения TCP будет происходить в подсистеме балансировки нагрузки. По умолчанию и минимальное значение равно 4. Максимальное значение равно 30. Должно быть целым числом.
@@ -426,4 +426,4 @@ spec:
 [requirements]: #requirements-for-customizing-allocated-outbound-ports-and-idle-timeout
 [use-multiple-node-pools]: use-multiple-node-pools.md
 [troubleshoot-snat]: #troubleshooting-snat
-[service-tags]: ../virtual-network/security-overview.md#service-tags
+[service-tags]: ../virtual-network/network-security-groups-overview.md#service-tags

@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 09/11/2020
 ms.author: jushiman
-ms.openlocfilehash: 62b2fd0554c218b733501805779745049d3b8c92
-ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
+ms.openlocfilehash: d8acab17e9d8dfc078b46f6a279cc671a70b0a50
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90532713"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91974844"
 ---
 # <a name="preview-maintenance-control-for-os-image-upgrades-on-azure-virtual-machine-scale-sets-using-powershell"></a>Предварительный просмотр. Управление обновлением образа ОС в масштабируемых наборах виртуальных машин Azure с помощью PowerShell
 
@@ -44,7 +44,7 @@ Install-Module -Name Az.Maintenance
 
 ## <a name="connect-to-an-azure-account"></a>Подключение к учетной записи Azure
 
-Подключитесь к нужной учетной записи Azure с помощью команды [Connect-азаккаунт](https://docs.microsoft.com/powershell/module/az.accounts/connect-azaccount) и [Set-азаккаунт](https://docs.microsoft.com/powershell/module/az.accounts/set-azcontext).
+Подключитесь к нужной учетной записи Azure с помощью команды [Connect-азаккаунт](/powershell/module/az.accounts/connect-azaccount) и [Set-азаккаунт](/powershell/module/az.accounts/set-azcontext).
 
 ```azurepowershell-interactive
 Connect-AzAccount
@@ -56,7 +56,7 @@ $location="eastus2"
 $vmss="myMaintenanceVMSS"
 ```
 
-## <a name="create-a-maintenance-configuration"></a>Создание конфигурации обслуживания
+## <a name="create-a-maintenance-configuration"></a>Создайте конфигурацию обслуживания.
 
 Создайте группу ресурсов в качестве контейнера для вашей конфигурации. В этом примере в *eastus2*создается группа ресурсов с именем *мимаинтенанцерг* . Если у вас уже есть группа ресурсов, которую вы хотите использовать, эту часть можно пропустить. Просто замените имя группы ресурсов своим собственным в остальных примерах.
 
@@ -115,7 +115,7 @@ New-AzConfigurationAssignment `
 Вы можете включить автоматическое обновление ОС для каждого масштабируемого набора виртуальных машин, который будет использовать управление обслуживанием. См. статью документирование [автоматического обновления образа ОС в масштабируемом наборе виртуальных машин Azure](../virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade.md) для включения автоматического обновления ОС в масштабируемом наборе виртуальных машин. 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения об обслуживании и обновлениях для виртуальных машин, работающих в Azure.
 

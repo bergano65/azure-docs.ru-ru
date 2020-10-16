@@ -12,10 +12,10 @@ ms.date: 07/22/2020
 ms.subservice: app-mgmt
 ms.author: kenwith
 ms.openlocfilehash: 3f6b1bb189390f6ddd02e9ea2d636dcaa66a4f19
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88210864"
 ---
 # <a name="azure-ad-application-proxy-version-release-history"></a>Azure AD Application Proxy: журнал выпусков версий
@@ -25,7 +25,7 @@ ms.locfileid: "88210864"
 
 Ниже приведен список связанных ресурсов.
 
-Ресурс |  Подробности
+Ресурс |  Подробнее
 --------- | --------- |
 Как включить прокси приложения | В этом [руководстве](application-proxy-add-on-premises-application.md)описаны предварительные требования для включения прокси приложения и установки и регистрации соединителя.
 Сведения о соединителях прокси приложения Azure AD | Дополнительные сведения об [управлении соединителями](application-proxy-connectors.md) и том, как соединители подходят к [автоматическому обновлению](application-proxy-connectors.md#automatic-updates).
@@ -83,7 +83,7 @@ ms.locfileid: "88210864"
 - Добавлена поддержка WebSocket для приложения QlikSense. Дополнительные сведения о том, как интегрировать QlikSense с прокси приложения, см. в этом [пошаговом руководстве](application-proxy-qlik.md). 
 - Усовершенствован мастер установки, облегчающий настройку исходящего прокси-сервера. 
 - Задайте TLS 1,2 в качестве протокола по умолчанию для соединителей. 
-- Добавлено новое лицензионное соглашение с конечным пользователем (EULA).  
+- Добавлено новое лицензионное соглашение End-User (EULA).  
 
 ### <a name="fixed-issues"></a>Устраненные проблемы
 

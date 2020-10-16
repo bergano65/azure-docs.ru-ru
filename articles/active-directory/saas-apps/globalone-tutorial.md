@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 08/07/2020
 ms.author: jeedes
-ms.openlocfilehash: 7079ffd5cb2fe643d93dea0f5c9384a7931dc8a6
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 1754929629bd05dc48419e521fa8e07f7c873217
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88550685"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91823399"
 ---
 # <a name="tutorial-integrate-ey-globalone-with-azure-active-directory"></a>Руководство по интеграции EY GlobalOne с Azure Active Directory
 
@@ -80,7 +80,7 @@ ms.locfileid: "88550685"
 
 1. Приложение EY GlobalOne ожидает проверочные утверждения SAML в определенном формате, что требует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Нажмите кнопку **Изменить**, чтобы открыть диалоговое окно Атрибуты пользователя.
 
-    ![Изображение](common/edit-attribute.png)
+    ![Снимок экрана, на котором показан раздел "Атрибуты пользователя" с выбранным значком "Изменить"](common/edit-attribute.png)
 
 1. В дополнение к описанному выше приложение EY GlobalOne ожидает несколько дополнительных атрибутов в ответе SAML. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** выполните следующие действия, чтобы добавить атрибут токена SAML, как показано в приведенной ниже таблице.
 
@@ -93,7 +93,7 @@ ms.locfileid: "88550685"
 
     а. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![Изображение](common/new-save-attribute.png)
+    ![Снимок экрана, на котором показан раздел "Утверждения пользователя" с выбранными действиями "Добавить новое утверждение" и "Сохранить"](common/new-save-attribute.png)
 
     ![Изображение](common/new-attribute-details.png)
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: troubleshooting
 ms.date: 09/11/2020
 ms.reviewer: arvinh
-ms.openlocfilehash: 2f83679a39f919e5e9932303731560aedd796233
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4b4c02efffb39e88a01c35d3c818930a0f6fd9cf
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90052395"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92069761"
 ---
 # <a name="known-issues-application-provisioning"></a>Известные проблемы: Подготовка приложений
 Известные проблемы, с которыми следует помнить при работе с подготовкой приложений. Вы можете отправить отзыв о службе подготовки приложений в UserVoice. см. раздел [Azure AD Application подготавливать UserVoice](https://aka.ms/appprovisioningfeaturerequest). Мы внимательно отслеживаем UserVoice, чтобы мы могли улучшить службу. 
@@ -72,7 +72,7 @@ ms.locfileid: "90052395"
 
 **Задан фиксированный интервал подготовки**
 
-[Время](https://docs.microsoft.com/azure/active-directory/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user#how-long-will-it-take-to-provision-users) между циклами подготовки в настоящее время не настраивается. 
+[Время](./application-provisioning-when-will-provisioning-finish-specific-user.md#how-long-will-it-take-to-provision-users) между циклами подготовки в настоящее время не настраивается. 
 
 **Изменения, не перемещаются из целевого приложения в Azure AD**
 
@@ -87,5 +87,5 @@ ms.locfileid: "90052395"
 Если группа находится в области действия, а член выходит за пределы области действия, группа будет подготовлена. Пользователь вне области не будет подготовлен. Если элемент возвращается в область, служба не будет немедленно обнаруживать это изменение. Перезагрузка приведет к устранению проблемы. Рекомендуется периодически перезапускать службу, чтобы обеспечить правильную подготовку всех пользователей.  
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Описание процесса подготовки](how-provisioning-works.md)

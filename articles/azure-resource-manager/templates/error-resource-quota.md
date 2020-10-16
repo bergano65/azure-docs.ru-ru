@@ -4,10 +4,10 @@ description: Описывает, как устранять ошибки квот
 ms.topic: troubleshooting
 ms.date: 03/09/2018
 ms.openlocfilehash: 75e8abf31d035a1e3a106bc0c6561624762db5d5
-ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90530426"
 ---
 # <a name="resolve-errors-for-resource-quotas"></a>Устранение ошибок квот ресурсов
@@ -42,7 +42,7 @@ please delete some resources of this type before creating a new one.
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 
-### <a name="azure-cli"></a>Azure CLI;
+### <a name="azure-cli"></a>Azure CLI
 
 Чтобы узнать квоты виртуальной машины, выполните команду `az vm list-usage` в Azure CLI.
 

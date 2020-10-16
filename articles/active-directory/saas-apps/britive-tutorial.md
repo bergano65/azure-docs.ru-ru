@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/25/2020
 ms.author: jeedes
-ms.openlocfilehash: 02358dcffa6f757e3c61b3c1ae0e7c5298f7d9ca
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 63d3a874c3d3d55ec1e3af3765ae63119dca287b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88542689"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91740366"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-britive"></a>Руководство по интеграции единого входа Azure Active Directory с Britive
 
@@ -129,11 +129,11 @@ ms.locfileid: "88542689"
 
 1. Щелкните значок **Admin Settings** (Параметры администрирования) и выберите раздел **Security** (Безопасность).
 
-    ![Конфигурация Britive](./media/britive-tutorial/configure1.png)
+    ![Снимок экрана: веб-сайт Britive с выбранным значком параметров и разделом "Безопасность".](./media/britive-tutorial/configure1.png)
 
 1. Щелкните **SSO Configuration** (Настройка единого входа) и сделайте следующее:
 
-    ![Конфигурация Britive](./media/britive-tutorial/configure2.png)
+    ![Снимок экрана: страница "Настройка единого входа" где можно ввести сведения, описанные на этом шаге.](./media/britive-tutorial/configure2.png)
 
     а. Скопируйте **идентификатор аудитории/сущности** и вставьте его в текстовом поле **Идентификатор (сущности)** в разделе **Базовая конфигурация SAML** на портале Azure.
 
@@ -147,15 +147,15 @@ ms.locfileid: "88542689"
 
 1. Щелкните значок **Admin Settings** (Параметры администрирования) и выберите раздел **User Administration** (Администрирование пользователей).
 
-    ![Конфигурация Britive](./media/britive-tutorial/user1.png)
+    ![Снимок экрана: веб-сайт Britive с выбранным значком параметров и разделом "Администрирование пользователей".](./media/britive-tutorial/user1.png)
 
 1. Нажмите кнопку **ADD USER** (ДОБАВИТЬ ПОЛЬЗОВАТЕЛЯ).
 
-    ![Конфигурация Britive](./media/britive-tutorial/user2.png)
+    ![Снимок экрана: кнопка "Добавить пользователя".](./media/britive-tutorial/user2.png)
 
 1. Заполните все необходимые сведения о пользователе в соответствии с требованиями организации и нажмите кнопку **ADD USER** (ДОБАВИТЬ ПОЛЬЗОВАТЕЛЯ).
 
-    ![Конфигурация Britive](./media/britive-tutorial/user3.png)
+    ![Снимок экрана: страница "Добавление пользователя", где можно ввести сведения о пользователе.](./media/britive-tutorial/user3.png)
 
 ## <a name="test-sso"></a>Проверка единого входа
 

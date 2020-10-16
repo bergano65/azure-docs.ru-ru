@@ -4,10 +4,10 @@ description: В этой статье показано, как можно исп
 ms.topic: how-to
 ms.date: 09/15/2020
 ms.openlocfilehash: 0a72cc991e768a7bed01762d984cc56238ae0ad0
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90984841"
 ---
 # <a name="automatically-update-messaging-units-of-an-azure-service-bus-namespace"></a>Автоматическое обновление единиц обмена сообщениями в пространстве имен Служебной шины Azure 
@@ -36,7 +36,7 @@ ms.locfileid: "90984841"
 1. Выберите **пространство имен Premium** из списка пространств имен. 
 1. Переключитесь на страницу **масштаб** . 
 
-    :::image type="content" source="./media/automate-update-messaging-units/scale-page.png" alt-text="Пространство имен служебной шины — страница "Масштаб"":::
+    :::image type="content" source="./media/automate-update-messaging-units/scale-page.png" alt-text="Пространство имен служебной шины — страница &quot;Масштаб&quot;":::
 
 ## <a name="manual-scale"></a>Ручное масштабирование 
 Этот параметр позволяет задать фиксированное число единиц обмена сообщениями для пространства имен. 
@@ -45,7 +45,7 @@ ms.locfileid: "90984841"
 1. Для параметра **единицы обмена сообщениями** выберите число единиц обмена сообщениями из раскрывающегося списка.
 1. Нажмите кнопку **сохранить** на панели инструментов, чтобы сохранить параметр. 
 
-    :::image type="content" source="./media/automate-update-messaging-units/manual-scale.png" alt-text="Масштабирование единиц обмена сообщениями вручную":::       
+    :::image type="content" source="./media/automate-update-messaging-units/manual-scale.png" alt-text="Пространство имен служебной шины — страница &quot;Масштаб&quot;":::       
 
 
 ## <a name="custom-autoscale---default-condition"></a>Пользовательское условие автомасштабирования по умолчанию
@@ -64,14 +64,14 @@ ms.locfileid: "90984841"
 1. Выберите **Масштаб на основе метрики** для **режима масштабирования**. 
 1. Выберите **+ Добавить правило**. 
 
-    :::image type="content" source="./media/automate-update-messaging-units/default-scale-metric-add-rule-link.png" alt-text="Масштабирование по умолчанию на основе метрики":::    
+    :::image type="content" source="./media/automate-update-messaging-units/default-scale-metric-add-rule-link.png" alt-text="Пространство имен служебной шины — страница &quot;Масштаб&quot;":::    
 1. На странице **правило масштабирования** выполните следующие действия.
     1. Выберите метрику из раскрывающегося списка **имя метрики** . В этом примере это **ЦП**. 
     1. Выберите оператор и пороговые значения. В этом примере они **больше** и **75** для **порогового значения метрики, чтобы активировать действие масштабирования**. 
     1. Выберите **операцию** в разделе **действие** . В этом примере он имеет значение **увеличить**. 
     1. Затем выберите **Добавить** .
     
-        :::image type="content" source="./media/automate-update-messaging-units/scale-rule-cpu-75.png" alt-text="По умолчанию — масштабировать, если загрузка ЦП превышает 75%":::       
+        :::image type="content" source="./media/automate-update-messaging-units/scale-rule-cpu-75.png" alt-text="Пространство имен служебной шины — страница &quot;Масштаб&quot;":::       
 
         > [!NOTE]
         > Функция автомасштабирования увеличивает количество единиц обмена сообщениями для пространства имен, если общая загрузка ЦП превышает 75% в этом примере. Приращения выполняется от 1 до 2, от 2 до 4 и от 4 до 8. 
@@ -81,13 +81,13 @@ ms.locfileid: "90984841"
     1. Выберите **операцию** в разделе **действие** . В этом примере это значение **уменьшается**. 
     1. Затем выберите **Добавить** . 
 
-        :::image type="content" source="./media/automate-update-messaging-units/scale-rule-cpu-25.png" alt-text="Масштаб по умолчанию в случае, если загрузка ЦП меньше 25%":::       
+        :::image type="content" source="./media/automate-update-messaging-units/scale-rule-cpu-25.png" alt-text="Пространство имен служебной шины — страница &quot;Масштаб&quot;":::       
 
         > [!NOTE]
         > Функция автомасштабирования сокращает количество единиц обмена сообщениями для пространства имен, если в этом примере общая загрузка ЦП ниже 25%. Уменьшение выполняется от 8 до 4, от 4 до 2 и от 2 до 1. 
 1. Задайте **минимальное** и **Максимальное** **число единиц** обмена сообщениями.
 
-    :::image type="content" source="./media/automate-update-messaging-units/default-scale-metric-based.png" alt-text="Правило по умолчанию, основанное на метрике":::
+    :::image type="content" source="./media/automate-update-messaging-units/default-scale-metric-based.png" alt-text="Пространство имен служебной шины — страница &quot;Масштаб&quot;":::
 1. Нажмите кнопку **сохранить** на панели инструментов, чтобы сохранить параметр автомасштабирования. 
         
 ### <a name="scale-to-specific-number-of-messaging-units"></a>Масштабировать до указанного числа единиц обмена сообщениями
@@ -98,7 +98,7 @@ ms.locfileid: "90984841"
 1. Выберите **масштаб для конкретных единиц обмена сообщениями в** **режиме масштабирования**. 
 1. Для **единиц обмена сообщениями**выберите число единиц обмена сообщениями по умолчанию. 
 
-    :::image type="content" source="./media/automate-update-messaging-units/default-scale-messaging-units.png" alt-text="По умолчанию — масштабирование по конкретным единицам обмена сообщениями":::       
+    :::image type="content" source="./media/automate-update-messaging-units/default-scale-messaging-units.png" alt-text="Пространство имен служебной шины — страница &quot;Масштаб&quot;":::       
 
 ## <a name="custom-autoscale---additional-conditions"></a>Настраиваемое Автомасштабирование — дополнительные условия
 В предыдущем разделе показано, как добавить условие по умолчанию для параметра автомасштабирования. В этом разделе показано, как добавить дополнительные условия в параметр автомасштабирования. Для этих дополнительных условий, не относящихся к умолчанию, можно задать расписание на основе конкретных дней недели или диапазона дат. 
@@ -107,7 +107,7 @@ ms.locfileid: "90984841"
 1. На странице **Настройка автомасштабирования** выберите **Настраиваемый Автомасштабирование** для параметра **Выбор способа масштабирования ресурса** . 
 1. Выберите **Добавить условие масштабирования** в блоке **по умолчанию** . 
 
-    :::image type="content" source="./media/automate-update-messaging-units/add-scale-condition-link.png" alt-text="Пользовательский — добавить ссылку на условие масштабирования":::    
+    :::image type="content" source="./media/automate-update-messaging-units/add-scale-condition-link.png" alt-text="Пространство имен служебной шины — страница &quot;Масштаб&quot;":::    
 1. Укажите **имя** условия. 
 1. Убедитесь, что выбран параметр **масштабировать на основе метрики** . 
 1. Выберите **+ Добавить правило** , чтобы добавить правило для увеличения числа единиц обмена сообщениями, если общая загрузка цп превышает 75%. Выполните действия из раздела [условие по умолчанию](#custom-autoscale---default-condition) . 
@@ -115,26 +115,26 @@ ms.locfileid: "90984841"
 6. Можно также задать **Расписание** для пользовательского условия (но не для условия по умолчанию). Можно указать даты начала и окончания для условия (или) выбрать конкретные дни (понедельник, вторник и т. д.) в неделе. 
     1. Если выбран параметр **указать даты начала и окончания**, выберите **Часовой пояс**, **дату и время начала** и **дату и время окончания** (как показано на следующем рисунке), чтобы условие действовало. 
 
-       :::image type="content" source="./media/automate-update-messaging-units/custom-min-max-default.png" alt-text="Минимальное, максимальное и значение по умолчанию для количества единиц обмена сообщениями":::
+       :::image type="content" source="./media/automate-update-messaging-units/custom-min-max-default.png" alt-text="Пространство имен служебной шины — страница &quot;Масштаб&quot;":::
     1. Если выбран вариант **повторять определенные дни**, выберите дни недели, часовой пояс, время начала и время окончания, когда должно применяться условие. 
 
-        :::image type="content" source="./media/automate-update-messaging-units/repeat-specific-days.png" alt-text="Повторять определенные дни":::
+        :::image type="content" source="./media/automate-update-messaging-units/repeat-specific-days.png" alt-text="Пространство имен служебной шины — страница &quot;Масштаб&quot;":::
   
 ### <a name="scale-to-specific-number-of-messaging-units"></a>Масштабировать до указанного числа единиц обмена сообщениями
 1. На странице **Настройка автомасштабирования** выберите **Настраиваемый Автомасштабирование** для параметра **Выбор способа масштабирования ресурса** . 
 1. Выберите **Добавить условие масштабирования** в блоке **по умолчанию** . 
 
-    :::image type="content" source="./media/automate-update-messaging-units/add-scale-condition-link.png" alt-text="Пользовательский — добавить ссылку на условие масштабирования":::    
+    :::image type="content" source="./media/automate-update-messaging-units/add-scale-condition-link.png" alt-text="Пространство имен служебной шины — страница &quot;Масштаб&quot;":::    
 1. Укажите **имя** условия. 
 2. Выберите параметр **масштабировать в определенные единицы обмена сообщениями** для **режима масштабирования**. 
 1. Выберите число **единиц обмена сообщениями** из раскрывающегося списка. 
 6. В поле **Расписание**укажите даты начала и окончания для условия (или) выберите конкретные дни (понедельник, вторник и т. д.) в неделю и раз. 
     1. Если выбран параметр **указать даты начала и окончания**, выберите **Часовой пояс**, **дату и время начала** и **дату и время окончания** действия условия. 
     
-    :::image type="content" source="./media/automate-update-messaging-units/scale-specific-messaging-units-start-end-dates.png" alt-text="масштабировать до конкретных единиц обмена сообщениями — даты начала и окончания":::        
+    :::image type="content" source="./media/automate-update-messaging-units/scale-specific-messaging-units-start-end-dates.png" alt-text="Пространство имен служебной шины — страница &quot;Масштаб&quot;":::        
     1. Если выбран вариант **повторять определенные дни**, выберите дни недели, часовой пояс, время начала и время окончания, когда должно применяться условие.
     
-    :::image type="content" source="./media/automate-update-messaging-units/repeat-specific-days-2.png" alt-text="масштабировать до конкретных единиц обмена сообщениями — повторять определенные дни":::
+    :::image type="content" source="./media/automate-update-messaging-units/repeat-specific-days-2.png" alt-text="Пространство имен служебной шины — страница &quot;Масштаб&quot;":::
 
 > [!IMPORTANT]
 > Дополнительные сведения о работе параметров автомасштабирования, особенно о том, как он выбирает профиль или условие и оценивает несколько правил, см. в разделе Общие сведения о [параметрах автомасштабирования](../azure-monitor/platform/autoscale-understanding-settings.md).          

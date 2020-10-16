@@ -9,12 +9,12 @@ ms.date: 05/28/2019
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: edfe0a383ab68b640b5bc7e7e0a1fdd038d0fa38
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 59656db2bbb8a6898ae08a168dbbc7e0a6a82aec
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91318336"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92044723"
 ---
 # <a name="tutorial-develop-a-c-iot-edge-module-for-windows-devices"></a>Руководство по Разработка модулей IoT Edge на языке C для устройств с Windows
 
@@ -49,8 +49,8 @@ ms.locfileid: "91318336"
 
 * [Центр Интернета вещей](../iot-hub/iot-hub-create-through-portal.md) ценовой категории "Бесплатный" или "Стандартный" в Azure.
 * [Устройство с Windows, на котором выполняется Azure IoT Edge](quickstart.md).
-* реестр контейнеров, например [Реестр контейнеров Azure](https://docs.microsoft.com/azure/container-registry/);
-* Настроенная среда [Visual Studio 2019](https://docs.microsoft.com/visualstudio/install/install-visual-studio) с расширением [Azure IoT Edge Tools](https://marketplace.visualstudio.com/items?itemName=vsc-iot.vs16iotedgetools).
+* реестр контейнеров, например [Реестр контейнеров Azure](../container-registry/index.yml);
+* Настроенная среда [Visual Studio 2019](/visualstudio/install/install-visual-studio) с расширением [Azure IoT Edge Tools](https://marketplace.visualstudio.com/items?itemName=vsc-iot.vs16iotedgetools).
 * Приложение [Docker Desktop](https://docs.docker.com/docker-for-windows/install/), настроенное для запуска контейнеров Windows.
 * Установите пакет SDK Azure IoT для C для Windows X64 с помощью vcpkg:
 
@@ -344,11 +344,12 @@ ms.locfileid: "91318336"
 
 ## <a name="deploy-modules-to-device"></a>Развертывание модулей на устройстве
 
-Разверните проект модуля на устройство IoT Edge с помощью обозревателя Visual Studio Cloud Explorer и расширения Azure IoT Edge Tools. У вас уже есть манифест развертывания, подготовленный для вашего сценария (файл **deployment.windows-amd64.json** в папке config). Теперь вам осталось выбрать устройство для получения развертывания.
+Разверните проект модуля на устройство IoT Edge с помощью Visual Studio Cloud Explorer и расширения Azure IoT Edge Tools. У вас уже есть манифест развертывания, подготовленный для вашего сценария (файл **deployment.windows-amd64.json** в папке config). Теперь вам осталось выбрать устройство для получения развертывания.
+
 
 Убедитесь, что устройство IoT Edge работает.
 
-1. В Visual Studio Cloud Explorer разверните ресурсы, чтобы увидеть список устройств IoT.
+1. В Visual Studio Cloud Explorer разверните ресурсы, чтобы увидеть список устройств Интернета вещей.
 
 2. Щелкните правой кнопкой мыши имя устройства IoT Edge, на котором необходимо выполнить развертывание.
 
@@ -356,7 +357,7 @@ ms.locfileid: "91318336"
 
 4. В проводнике выберите файл **deployment.windows amd64** из папки config решения.
 
-5. Обновите Cloud Explorer для просмотра развернутых модулей, перечисленных для устройства.
+5. Обновите Cloud Explorer, чтобы отобразился список развернутых модулей для устройства.
 
 ## <a name="view-generated-data"></a>Просмотр сформированных данных
 
@@ -364,7 +365,7 @@ ms.locfileid: "91318336"
 
 Расширение IoT Edge Tools можно использовать для просмотра сообщений по мере их поступления в Центр Интернета вещей.
 
-1. В Visual Studio Cloud Explorer выберите имя устройства IoT Edge.
+1. В Visual Studio Cloud Explorer выберите имя устройства IoT Edge.
 
 2. Из списка **Actions** (Действия) выберите **Start Monitoring Built-in Event Endpoint** (Начать мониторинг встроенной конечной точки событий).
 
@@ -396,7 +397,7 @@ ms.locfileid: "91318336"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом руководстве вы создали модуль IoT Edge с кодом для фильтрации необработанных данных, созданных устройством IoT Edge. Дополнительные сведения о создании собственных модулей см. в статьях [о разработке модулей IoT Edge](module-development.md) и [о разработке модулей с помощью Visual Studio](how-to-visual-studio-develop-module.md). Примеры модулей IoT Edge, включая смоделированный модуль температуры, см. в [этой статье](https://github.com/Azure/iotedge/tree/master/edge-modules) и на [странице примеров пакета SDK Azure IoT для C](https://github.com/Azure/azure-iot-sdk-c/tree/master/iothub_client/samples).
+В этом руководстве вы создали модуль IoT Edge с кодом для фильтрации необработанных данных, созданных устройством IoT Edge.
 
 Перейдите к следующим руководствам, чтобы узнать, как Azure IoT Edge поможет развернуть облачные службы Azure для обработки данных на пограничном устройстве.
 

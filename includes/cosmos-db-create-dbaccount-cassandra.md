@@ -5,15 +5,15 @@ services: cosmos-db
 author: SnehaGunda
 ms.service: cosmos-db
 ms.topic: include
-ms.date: 01/22/2020
+ms.date: 10/01/2020
 ms.author: sngun
 ms.custom: include file
-ms.openlocfilehash: 8f7a69b81430d964d1aade26ed179354171e4164
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 1d7af1b29d1ed2d8ff0ae60da0a171b9d8b98bbf
+ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "77134623"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91743163"
 ---
 1. В новом окне браузера войдите на [портал Azure](https://portal.azure.com/).
 
@@ -35,7 +35,7 @@ ms.locfileid: "77134623"
     API|Cassandra|API определяет тип учетной записи, которую нужно создать. Azure Cosmos DB предоставляет пять API: API Core (SQL) для баз данных документов, API Gremlin для графовых баз данных, API MongoDB для баз данных документов, API таблиц Azure и API Cassandra. Для каждого API требуется создать отдельную учетную запись. <br><br>Выберите **Cassandra**, так как в рамках этого краткого руководства вы создадите таблицу, которая работает с API Cassandra. <br><br>[Дополнительные сведения об API Cassandra](../articles/cosmos-db/cassandra-introduction.md).|
     Расположение|Выберите ближайший к пользователям регион|Выберите географическое расположение для размещения учетной записи Azure Cosmos DB. Используйте ближайшее к пользователям расположение, чтобы предоставить им максимально быстрый доступ к данным.
 
-    Выберите **Просмотр и создание**. Можете пропустить разделы **Сеть** и **Теги**. 
+    Выберите **Просмотр и создание**. Вы можете пропустить разделы **Сеть**, **Резервное копирование**, **Шифрование** и **Теги**. 
 
     ![Страница "Новая учетная запись" для Azure Cosmos DB](./media/cosmos-db-create-dbaccount-cassandra/azure-cosmos-db-create-new-account.png)
 

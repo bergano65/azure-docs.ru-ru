@@ -12,10 +12,10 @@ manager: celestedg
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d664d7cd169593924917bb02a0220e4047eb0cdb
-ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88165258"
 ---
 # <a name="add-a-custom-approval-workflow-to-self-service-sign-up"></a>Добавление пользовательского рабочего процесса утверждения для самостоятельной регистрации
@@ -325,8 +325,8 @@ Content-type: application/json
 | mail                                                | Да      | Эквивалентно `email` утверждению, отправленному в API.                                                                                                               |
 | userType                                            | Да      | Этот параметр должен содержать значение `Guest`. Назначает этого пользователя в качестве гостевого пользователя.                                                                                                                 |
 | удостоверения;                                          | Да      | Сведения об федеративного удостоверения.                                                                                                                                    |
-| \<otherBuiltInAttribute>                            | нет       | Другие встроенные атрибуты, такие как `displayName` , `city` и другие. Имена параметров совпадают с параметрами, отправленными соединителем API.                            |
-| \<extension\_\{extensions-app-id}\_CustomAttribute> | нет       | Настраиваемые атрибуты пользователя. Имена параметров совпадают с параметрами, отправленными соединителем API.                                                            |
+| \<otherBuiltInAttribute>                            | Нет       | Другие встроенные атрибуты, такие как `displayName` , `city` и другие. Имена параметров совпадают с параметрами, отправленными соединителем API.                            |
+| \<extension\_\{extensions-app-id}\_CustomAttribute> | Нет       | Настраиваемые атрибуты пользователя. Имена параметров совпадают с параметрами, отправленными соединителем API.                                                            |
 
 ### <a name="for-a-federated-azure-active-directory-user"></a>Для федеративного Azure Active Directory пользователя
 
@@ -386,7 +386,7 @@ Content-type: application/json
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Приступая к работе с [примерами краткого руководства по функциям Azure](code-samples-self-service-sign-up.md#api-connector-azure-function-quickstarts).
 - Извлечение [самообслуживания для гостевых пользователей с примером утверждения вручную](code-samples-self-service-sign-up.md#custom-approval-workflows). 

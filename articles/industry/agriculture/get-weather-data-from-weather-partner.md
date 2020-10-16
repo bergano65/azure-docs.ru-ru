@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 03/31/2020
 ms.author: sunasing
 ms.openlocfilehash: 35acf4e9bd338a0e67b046a59d8884df0626e516
-ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87429272"
 ---
 # <a name="get-weather-data-from-weather-partners"></a>Получение данных о погоде от партнеров по погоде
@@ -214,9 +214,9 @@ Azure Фармбеатс поможет вам перенести данные �
 Чтобы устранить неполадки заданий, [Проверьте журналы заданий](troubleshoot-azure-farmbeats.md#weather-data-job-failures).
 
 
-## <a name="appendix"></a>Приложения
+## <a name="appendix"></a>Приложение
 
-|        Партнер   |  Сведения   |
+|        Партнер   |  Подробнее   |
 | ------- | -------             |
 |     Доккердетаилс — imageName         |          Имя образа DOCKER. Например, docker.io/mydockerimage (изображение в hub.docker.com) или myazureacr.azurecr.io/mydockerimage (образ в реестре контейнеров Azure) и т. д. Если реестр не указан, по умолчанию используется hub.docker.com.      |
 |          Доккердетаилс — Имажетаг             |         Имя тега образа DOCKER. Значение по умолчанию — "latest".     |

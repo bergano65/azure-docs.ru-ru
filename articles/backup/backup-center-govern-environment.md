@@ -1,16 +1,16 @@
 ---
-title: Управление пространством резервного копирования с помощью центра архивации
+title: Управление резервным хранилищем с помощью Центра резервного копирования
 description: Узнайте, как управлять средой Azure, чтобы гарантировать, что все ресурсы будут соответствовать требованиям с точки зрения резервного копирования с помощью центра архивации.
 ms.topic: conceptual
 ms.date: 09/01/2020
 ms.openlocfilehash: 8a16769be827bf34e5be82409d5b8eb014cdcf1a
-ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91614351"
 ---
-# <a name="govern-your-backup-estate-using-backup-center"></a>Управление пространством резервного копирования с помощью центра архивации
+# <a name="govern-your-backup-estate-using-backup-center"></a>Управление резервным хранилищем с помощью Центра резервного копирования
 
 Центр архивации позволяет управлять средой Azure, чтобы обеспечить соответствие всех ваших ресурсов с точки зрения резервного копирования. Ниже приведены некоторые возможности управления в центре архивации:
 
@@ -44,7 +44,7 @@ ms.locfileid: "91614351"
 
 ![Меню "защищаемые источники данных"](./media/backup-center-govern-environment/protectable-datasources.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Мониторинг и эксплуатация резервных копий](backup-center-monitor-operate.md)
 * [Выполнение действий с помощью центра архивации](backup-center-actions.md)

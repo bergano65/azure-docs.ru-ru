@@ -12,10 +12,10 @@ ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
 ms.openlocfilehash: d2c2673e6863725e064f3ad8561ab77eb1b051eb
-ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91371530"
 ---
 # <a name="tutorial-load-the-new-york-taxicab-dataset"></a>Учебник. Загрузка набора данных такси в Нью Йорк
@@ -153,7 +153,7 @@ ms.locfileid: "91371530"
 
     ![подключение к серверу](./media/load-data-from-azure-blob-storage-using-polybase/connect-to-server.png)
 
-3. Щелкните **Подключить**. В SSMS открывается окно обозревателя объектов.
+3. Выберите **Подключиться**. В SSMS открывается окно обозревателя объектов.
 
 4. В обозревателе объектов разверните узел **Базы данных**. Затем разверните **Системные базы данных** и **master**, чтобы просмотреть объекты в базе данных master.  Разверните папку **mySampleDatabase**, чтобы просмотреть объекты в новой базе данных.
 
@@ -204,7 +204,7 @@ ms.locfileid: "91371530"
 
 2. Введите полное имя сервера и в качестве имени для входа укажите **LoaderRC20**.  Введите пароль для LoaderRC20.
 
-3. Щелкните **Подключить**.
+3. Выберите **Подключиться**.
 
 4. Когда подключение будет готово, вы увидите в обозревателе объектов два подключения к серверу. Одно подключение — как ServerAdmin, а второе — как MedRCLogin.
 

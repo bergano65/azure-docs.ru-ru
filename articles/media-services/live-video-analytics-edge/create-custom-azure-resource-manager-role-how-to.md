@@ -4,10 +4,10 @@ description: В этой статье содержатся инструкции 
 ms.topic: how-to
 ms.date: 05/27/2020
 ms.openlocfilehash: a780ecbbf2530b15984c596281c4aa7e4f5dd520
-ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90526584"
 ---
 # <a name="create-custom-azure-resource-manager-role-and-assign-to-service-principal"></a>Создание настраиваемой роли Azure Resource Manager и назначение ее субъекту-службе
@@ -16,7 +16,7 @@ ms.locfileid: "90526584"
 
 В этой статье описаны действия по созданию пользовательской роли Azure Resource Manager с Azure Cloud Shell, которая затем используется для создания субъекта-службы.
 
-## <a name="prerequisites"></a>Предварительные условия  
+## <a name="prerequisites"></a>Предварительные требования  
 
 Ниже приведены необходимые условия для этой статьи.
 

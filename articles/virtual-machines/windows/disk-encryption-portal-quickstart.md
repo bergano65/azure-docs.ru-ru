@@ -7,12 +7,12 @@ ms.service: virtual-machines-windows
 ms.subservice: security
 ms.topic: quickstart
 ms.date: 10/02/2019
-ms.openlocfilehash: 7857a037d8e48c8c6ae8d44cf77c863bec91d9d3
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 69d34b6c50d5a4be728453a34c1c092c63c7b6be
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88510653"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91977329"
 ---
 # <a name="quickstart-create-and-encrypt-a-windows-virtual-machine-with-the-azure-portal"></a>Краткое руководство. Создание и шифрование виртуальной машины Windows на портале Azure
 
@@ -39,7 +39,7 @@ ms.locfileid: "88510653"
     :::image type="content" source="../media/disk-encryption/portal-quickstart-windows-vm-creation.png" alt-text="Экран создания виртуальной машины Windows&quot;:::
 
     > [!WARNING]
-    > На вкладке &quot;Диски&quot; доступно поле &quot;Тип шифрования&quot; в разделе **Параметры диска**. Это поле используется для указания параметров шифрования для [управляемых дисков](managed-disks-overview.md) и CMK, а не для службы &quot;Шифрование дисков Azure&quot;.
+    > На вкладке &quot;Диски&quot; доступно поле &quot;Тип шифрования&quot; в разделе **Параметры диска**. Это поле используется для указания параметров шифрования для [управляемых дисков](../managed-disks-overview.md) и CMK, а не для службы &quot;Шифрование дисков Azure&quot;.
     >
     > Чтобы избежать путаницы, мы рекомендуем пропустить вкладку *Диски* в ходе работы с этим руководством.
 
@@ -48,7 +48,7 @@ ms.locfileid: "88510653"
     :::image type="content" source="../media/disk-encryption/portal-quickstart-vm-creation-storage.png" alt-text="Экран создания виртуальной машины Windows&quot;:::
 
     > [!WARNING]
-    > На вкладке &quot;Диски&quot; доступно поле &quot;Тип шифрования&quot; в разделе **Параметры диска**. Это поле используется для указания параметров шифрования для [управляемых дисков](managed-disks-overview.md) и CMK, а не для службы &quot;Шифрование дисков Azure&quot;.
+    > На вкладке &quot;Диски&quot; доступно поле &quot;Тип шифрования&quot; в разделе **Параметры диска**. Это поле используется для указания параметров шифрования для [управляемых дисков](../managed-disks-overview.md) и CMK, а не для службы &quot;Шифрование дисков Azure&quot;.
     >
     > Чтобы избежать путаницы, мы рекомендуем пропустить вкладку *Диски* в ходе работы с этим руководством.
 
@@ -69,7 +69,7 @@ ms.locfileid: "88510653"
     :::image type="content" source="../media/disk-encryption/portal-quickstart-disks-to-encryption.png" alt-text="Экран создания виртуальной машины Windows&quot;:::
 
     > [!WARNING]
-    > На вкладке &quot;Диски&quot; доступно поле &quot;Тип шифрования&quot; в разделе **Параметры диска**. Это поле используется для указания параметров шифрования для [управляемых дисков](managed-disks-overview.md) и CMK, а не для службы &quot;Шифрование дисков Azure&quot;.
+    > На вкладке &quot;Диски&quot; доступно поле &quot;Тип шифрования&quot; в разделе **Параметры диска**. Это поле используется для указания параметров шифрования для [управляемых дисков](../managed-disks-overview.md) и CMK, а не для службы &quot;Шифрование дисков Azure&quot;.
     >
     > Чтобы избежать путаницы, мы рекомендуем пропустить вкладку *Диски* в ходе работы с этим руководством.
 
@@ -81,7 +81,7 @@ ms.locfileid: "88510653"
     :::image type="content" source="../media/disk-encryption/portal-qs-keyvault-create.png" alt-text="Экран создания виртуальной машины Windows&quot;:::
 
     > [!WARNING]
-    > На вкладке &quot;Диски&quot; доступно поле &quot;Тип шифрования&quot; в разделе **Параметры диска**. Это поле используется для указания параметров шифрования для [управляемых дисков](managed-disks-overview.md) и CMK, а не для службы &quot;Шифрование дисков Azure&quot;.
+    > На вкладке &quot;Диски&quot; доступно поле &quot;Тип шифрования&quot; в разделе **Параметры диска**. Это поле используется для указания параметров шифрования для [управляемых дисков](../managed-disks-overview.md) и CMK, а не для службы &quot;Шифрование дисков Azure&quot;.
     >
     > Чтобы избежать путаницы, мы рекомендуем пропустить вкладку *Диски* в ходе работы с этим руководством.
 
@@ -95,7 +95,7 @@ ms.locfileid: "88510653"
     :::image type="content" source="../media/disk-encryption/portal-quickstart-keyvault-enable.png" alt-text="Экран создания виртуальной машины Windows&quot;:::
 
     > [!WARNING]
-    > На вкладке &quot;Диски&quot; доступно поле &quot;Тип шифрования&quot; в разделе **Параметры диска**. Это поле используется для указания параметров шифрования для [управляемых дисков](managed-disks-overview.md) и CMK, а не для службы &quot;Шифрование дисков Azure&quot;.
+    > На вкладке &quot;Диски&quot; доступно поле &quot;Тип шифрования&quot; в разделе **Параметры диска**. Это поле используется для указания параметров шифрования для [управляемых дисков](../managed-disks-overview.md) и CMK, а не для службы &quot;Шифрование дисков Azure&quot;.
     >
     > Чтобы избежать путаницы, мы рекомендуем пропустить вкладку *Диски* в ходе работы с этим руководством.
 

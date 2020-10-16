@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/25/2019
 ms.author: jeedes
-ms.openlocfilehash: e9ca679c7bb8deedca20a5aa97cbb53a9139ea8a
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 6d0062214b4faa0cb2b26c30f1c2833d25d5493e
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88536907"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91774563"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-deputy"></a>Руководство по Интеграция Azure Active Directory с Deputy
 
@@ -99,7 +99,7 @@ ms.locfileid: "88536907"
 
 4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа для приложения Deputy](common/idp-intiated.png)
+    ![Снимок экрана, на котором показан раздел "Базовая конфигурация SAML" с выбранными полем "Идентификатор", полем "URL-адрес ответа" и кнопкой "Сохранить"](common/idp-intiated.png)
 
     а. В текстовом поле **Идентификатор** введите URL-адрес в таком формате:
 
@@ -171,7 +171,7 @@ ms.locfileid: "88536907"
 
 1. Перейдите по URL-адресу `https://(your-subdomain).deputy.com/exec/config/system_config`. Выберите пункт **Параметры безопасности** и нажмите кнопку **Изменить**.
    
-    ![Настройка единого входа](./media/deputy-tutorial/tutorial_deputy_004.png)
+    ![Снимок экрана, на котором показана страница "System Config" (Конфигурация системы) с выбранной кнопкой "Security Settings - Edit" (Параметры безопасности — изменить)](./media/deputy-tutorial/tutorial_deputy_004.png)
 
 2. На странице **Параметры безопасности** сделайте следующее:
 

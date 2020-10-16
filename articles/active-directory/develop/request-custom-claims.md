@@ -13,10 +13,10 @@ ms.date: 08/26/2019
 ms.author: marsma
 ms.custom: aaddev
 ms.openlocfilehash: a570dccad5f14cf9adf5ca2825d8a3b31ae60d3f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85477198"
 ---
 # <a name="how-to-request-custom-claims-using-msal-for-ios-and-macos"></a>Как запросить настраиваемые утверждения с помощью MSAL для iOS и macOS
@@ -33,7 +33,7 @@ OpenID Connect Connect позволяет при необходимости за
 > [!NOTE]
 > MSAL обходит кэш маркера доступа всякий раз, когда указан запрос на утверждение. Важно предоставлять `claimsRequest` параметр только в том случае, если требуются дополнительные утверждения (в отличие от того, что всегда предоставляет один и тот же `claimsRequest` параметр в каждом ВЫЗОВЕ API MSAL).
 
-`claimsRequest`можно указать в `MSALSilentTokenParameters` и `MSALInteractiveTokenParameters` :
+`claimsRequest` можно указать в `MSALSilentTokenParameters` и `MSALInteractiveTokenParameters` :
 
 ```objc
 /*!
@@ -49,7 +49,7 @@ OpenID Connect Connect позволяет при необходимости за
 
 @end
 ```
-`MSALClaimsRequest`можно сформировать из NSString представления запроса на утверждение JSON. 
+`MSALClaimsRequest` можно сформировать из NSString представления запроса на утверждение JSON. 
 
 Objective-C.
 
@@ -98,7 +98,7 @@ do {
 
 
 
-`MSALClaimsRequest`следует задать в параметрах токена и предоставить одному из API-интерфейсов получения маркера MSAL:
+`MSALClaimsRequest` следует задать в параметрах токена и предоставить одному из API-интерфейсов получения маркера MSAL:
 
 Objective-C.
 

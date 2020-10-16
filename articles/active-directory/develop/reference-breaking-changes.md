@@ -13,10 +13,10 @@ ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
 ms.openlocfilehash: 0c5abf345fda9db4cc5123360245e42ea0ef40e1
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88115039"
 ---
 # <a name="whats-new-for-authentication"></a>Новые возможности для проверки подлинности.
@@ -28,7 +28,7 @@ ms.locfileid: "88115039"
 - Новые возможности
 - Известные проблемы
 - Изменения протокола
-- Нерекомендуемые функции.
+- Нерекомендуемые функции
 
 > [!TIP]
 > Эта страница обновляется регулярно, поэтому нужно часто пересматривать ее. Если иное не указано, эти изменения вводятся только для приложений, зарегистрированных после вступления в силу соответствующих изменений.
@@ -69,7 +69,7 @@ ms.locfileid: "88115039"
 
 Ошибка в журналах входа будет ААДСТС 50052: Инвалидпассвордексцеедсмаксленгс
 
-Сообщение:`The password entered exceeds the maximum length of 256. Please reach out to your admin to reset the password.`
+Сообщение: `The password entered exceeds the maximum length of 256. Please reach out to your admin to reset the password.`
 
 Исправление.
 
@@ -127,7 +127,7 @@ ms.locfileid: "88115039"
 
 #### <a name="example-request"></a>Пример запроса
 
-`https://login.microsoftonline.com/contoso.com/oauth2/authorize?resource=https://gateway.contoso.com/api&response_type=token&client_id=14c88eee-b3e2-4bb0-9233-f5e3053b3a28&...`В этом примере клиент ресурсов (центр) — это contoso.com, а приложение ресурсов — это приложение с одним клиентом, которое вызывается `gateway.contoso.com/api` для клиента Contoso, а клиентское приложение — `14c88eee-b3e2-4bb0-9233-f5e3053b3a28` .  Если у клиентского приложения есть субъект-служба в Contoso.com, этот запрос может быть продолжен.  Однако если это не так, запрос завершится с ошибкой, описанной выше.
+`https://login.microsoftonline.com/contoso.com/oauth2/authorize?resource=https://gateway.contoso.com/api&response_type=token&client_id=14c88eee-b3e2-4bb0-9233-f5e3053b3a28&...` В этом примере клиент ресурсов (центр) — это contoso.com, а приложение ресурсов — это приложение с одним клиентом, которое вызывается `gateway.contoso.com/api` для клиента Contoso, а клиентское приложение — `14c88eee-b3e2-4bb0-9233-f5e3053b3a28` .  Если у клиентского приложения есть субъект-служба в Contoso.com, этот запрос может быть продолжен.  Однако если это не так, запрос завершится с ошибкой, описанной выше.
 
 Однако если приложение шлюза Contoso было приложением с несколькими клиентами, то запрос будет продолжать работать независимо от клиентского приложения с субъектом-службой в Contoso.com.
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 04/15/2019
 ms.author: jeedes
-ms.openlocfilehash: df04cc41f2b5947bb0cf23715a857a3449627f23
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: d8050b87d122ef676b52f1cab5e06175a55602b1
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88550264"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91713868"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-attendance-management-services"></a>Руководство по интеграции Azure Active Directory с Attendance Management Services
 
@@ -128,11 +128,11 @@ ms.locfileid: "88550264"
 
 1. Щелкните **SAML authentication** (Аутентификация SAML) в разделе **Security management** (Управление безопасностью).
 
-    ![Конфигурация Attendance Management Services](./media/attendancemanagementservices-tutorial/user1.png)
+    ![Снимок экрана: элемент "Аутентификация SAML", выбранный на странице, где используются символы, отличные от латинских.](./media/attendancemanagementservices-tutorial/user1.png)
 
 1. Выполните следующие действия:
 
-    ![Конфигурация Attendance Management Services](./media/attendancemanagementservices-tutorial/user2.png)
+    ![Снимок экрана: окно, в котором можно выполнять задачи, описанные в этом шаге.](./media/attendancemanagementservices-tutorial/user2.png)
 
     а. Установите флажок **Use SAML authentication** (Использовать аутентификацию SAML).
 
@@ -206,15 +206,15 @@ ms.locfileid: "88550264"
 
 1. Щелкните **User management** (Управление пользователями) в разделе **Security management** (Управление безопасностью).
 
-    ![Добавление сотрудника](./media/attendancemanagementservices-tutorial/user5.png)
+    ![Снимок экрана: элемент "Управление пользователями", выбранный на странице, где используются символы, отличные от латинских.](./media/attendancemanagementservices-tutorial/user5.png)
 
 1. Щелкните **New rules login** (Создать имя для входа на основе правил).
 
-    ![Добавление сотрудника](./media/attendancemanagementservices-tutorial/user3.png)
+    ![Снимок экрана: выбор кнопки со знаком "плюс".](./media/attendancemanagementservices-tutorial/user3.png)
 
 1. В разделе **OBCiD information** (Сведения OBCiD) сделайте следующее.
 
-    ![Добавление сотрудника](./media/attendancemanagementservices-tutorial/user4.png)
+    ![Снимок экрана: окно, в котором можно выполнять описанные задачи.](./media/attendancemanagementservices-tutorial/user4.png)
 
     а. В текстовое поле **OBCiD** введите электронную почту пользователя, например `BrittaSimon\@contoso.com`.
 

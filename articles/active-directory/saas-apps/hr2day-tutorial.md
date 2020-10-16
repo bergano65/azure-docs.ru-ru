@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
-ms.openlocfilehash: 3c50e29e1373e9a9c01e9f5812c4146de070144a
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 931a8463578468ec3a028d17b3f96d317c6fbe02
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88553127"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91826403"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-hr2day-by-merces"></a>Руководство по Интеграция Azure Active Directory с HR2day by Merces
 
@@ -110,7 +110,7 @@ ms.locfileid: "88553127"
 
 5. Приложение HR2day от Merces ожидает проверочные утверждения SAML в определенном формате, поэтому следует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
-    ![Изображение](common/edit-attribute.png)
+    ![Снимок экрана, на котором показан раздел "Атрибуты пользователя" с выбранным значком "Изменить"](common/edit-attribute.png)
 
     > [!NOTE]
     > Перед настройкой утверждения SAML нужно обратиться в [службу технической поддержки клиентов HR2day от Merces](mailto:servicedesk@merces.nl) и запросить значение уникального идентификатора для вашего клиента. Он вам потребуется для выполнения действий, описанных в следующем разделе.
@@ -124,9 +124,9 @@ ms.locfileid: "88553127"
 
     а. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![Изображение](common/new-save-attribute.png)
+    ![Снимок экрана, на котором показан раздел "Утверждения пользователя" с параметром "Добавить новое утверждение".](common/new-save-attribute.png)
 
-    ![Изображение](common/new-attribute-details.png)
+    ![Снимок экрана, на котором показано диалоговое окно "Управление утверждениями пользователя", где можно ввести описанные значения](common/new-attribute-details.png)
 
     b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 

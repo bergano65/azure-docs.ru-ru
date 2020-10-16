@@ -3,12 +3,13 @@ title: Указание конечных точек службы Service Fabric
 description: В этой статье поясняется, как описать ресурсы конечной точки в манифесте служб, включая настройку конечных точек HTTPS.
 ms.topic: conceptual
 ms.date: 09/16/2020
-ms.openlocfilehash: c0c3c45c47447390901e5e0d60e77ab6b85a6a0d
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.custom: contperfq1
+ms.openlocfilehash: 775e554128b9828915ce7dafaf4bccf597911912
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91354765"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92017596"
 ---
 # <a name="specify-resources-in-a-service-manifest"></a>Указание ресурсов в манифесте службы
 ## <a name="overview"></a>Обзор
@@ -220,7 +221,7 @@ PS C:\> New-ServiceFabricApplication -ApplicationName fabric:/myapp -Application
 
 Предположим, что значение Port1 и Protocol1 для параметров приложения равно null или пусто. Порт будет принят ServiceFabric, а протокол будет TCP.
 
-Предположим, что вы задали неверное значение. Скажем, для Port вы указали строковое значение "foo" вместо int.  Команда New-ServiceFabricApplication завершится ошибкой: `The override parameter with name 'ServiceEndpoint1' attribute 'Port1' in section 'ResourceOverrides' is invalid. The value specified is 'Foo' and required is 'int'.`
+Предположим, что вы задали неверное значение. Скажем, для Port вы указали строковое значение "foo" вместо int.  New-ServiceFabricApplication команда завершится ошибкой: `The override parameter with name 'ServiceEndpoint1' attribute 'Port1' in section 'ResourceOverrides' is invalid. The value specified is 'Foo' and required is 'int'.`
 
 ## <a name="next-steps"></a>Next Steps
 

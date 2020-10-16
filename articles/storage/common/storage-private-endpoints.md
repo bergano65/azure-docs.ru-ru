@@ -11,10 +11,10 @@ ms.author: santoshc
 ms.reviewer: santoshc
 ms.subservice: common
 ms.openlocfilehash: 7a216b9e430c10f42d48df01746e111355cf91b8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85513287"
 ---
 # <a name="use-private-endpoints-for-azure-storage"></a>Использование частных конечных точек для службы хранилища Azure
@@ -79,7 +79,7 @@ ms.locfileid: "85513287"
 
 В приведенном выше примере записи ресурсов DNS для учетной записи хранения "Сторажеаккаунта" при разрешении из-за пределов виртуальной сети, в которой размещается частная конечная точка, будут:
 
-| Имя                                                  | Type  | Значение                                                 |
+| Имя                                                  | Тип  | Значение                                                 |
 | :---------------------------------------------------- | :---: | :---------------------------------------------------- |
 | ``StorageAccountA.blob.core.windows.net``             | CNAME | ``StorageAccountA.privatelink.blob.core.windows.net`` |
 | ``StorageAccountA.privatelink.blob.core.windows.net`` | CNAME | \<storage service public endpoint\>                   |
@@ -89,7 +89,7 @@ ms.locfileid: "85513287"
 
 Записи ресурсов DNS для Сторажеаккаунта, разрешенные клиентом в виртуальной сети, где размещается частная конечная точка, будут:
 
-| Имя                                                  | Type  | Значение                                                 |
+| Имя                                                  | Тип  | Значение                                                 |
 | :---------------------------------------------------- | :---: | :---------------------------------------------------- |
 | ``StorageAccountA.blob.core.windows.net``             | CNAME | ``StorageAccountA.privatelink.blob.core.windows.net`` |
 | ``StorageAccountA.privatelink.blob.core.windows.net`` | Объект     | 10.1.1.5                                              |
@@ -139,7 +139,7 @@ ms.locfileid: "85513287"
 
 Сейчас нельзя настроить правила [группы безопасности сети](../../virtual-network/security-overview.md) (NSG) и определяемые пользователем маршруты для частных конечных точек. Правила NSG, применяемые к подсети, в которой размещается частная конечная точка, применяются только к другим конечным точкам (например, к сетевым картам), чем частная Для этой проблемы ограниченный обходной путь заключается в реализации правил доступа для частных конечных точек в исходных подсетях, хотя этот подход может потребовать более высоких затрат на управление.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Настройка брандмауэров службы хранилища Azure и виртуальных сетей](storage-network-security.md)
 - [Рекомендации по обеспечению безопасности для хранилища BLOB-объектов](../blobs/security-recommendations.md)

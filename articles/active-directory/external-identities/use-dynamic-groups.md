@@ -12,10 +12,10 @@ manager: celestedg
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6adf7e6c5abbba3c018f9a03b5167aec7537c704
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87908966"
 ---
 # <a name="dynamic-groups-and-azure-active-directory-b2b-collaboration"></a>Динамические группы и служба совместной работы Azure Active Directory B2B
@@ -38,7 +38,7 @@ ms.locfileid: "87908966"
    ```
    user.objectId -ne null
    ```
-1. Нажмите кнопку **OK**. Правило отображается в поле синтаксис правила:
+1. Щелкните **ОК**. Правило отображается в поле синтаксис правила:
 
    ![Синтаксис правил для динамической группы "все пользователи"](media/use-dynamic-groups/all-user-rule-syntax.png)
 

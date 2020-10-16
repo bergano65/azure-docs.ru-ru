@@ -4,10 +4,10 @@ description: Сведения о том, как копировать прило�
 ms.topic: how-to
 ms.date: 02/17/2020
 ms.openlocfilehash: e21b8551fb62c4335910fd05bb9590eaf6f7e35a
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85954899"
 ---
 # <a name="copy-applications-and-data-to-pool-nodes"></a>Копирование приложений и данных в узлы пула

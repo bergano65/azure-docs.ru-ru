@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/08/2019
-ms.openlocfilehash: 70ab387018fc54b4dad9ee911d4c7557e1e7805c
-ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
+ms.openlocfilehash: e3a8e8b908c9d278654bfe992474811d6a9ddb86
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90030350"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91993712"
 ---
 # <a name="monitoring-azure-resources-with-azure-monitor"></a>Мониторинг ресурсов Azure с помощью Azure Monitor
 При наличии критически важных приложений и бизнес-процессов, использующих ресурсы Azure, необходимо отслеживать эти ресурсы на предмет их доступности, производительности и работы. В этой статье описаны данные мониторинга, созданные ресурсами Azure, а также анализ таких данных и оповещений о них с помощью функций Azure Monitor.
@@ -80,7 +80,7 @@ Azure Monitor — это комплексная служба мониторин
 - [Концентраторы событий](../platform/resource-logs.md#send-to-azure-event-hubs) для потоковой передачи данных во внешние системы, такие как сторонние решения SIEM и другие решения Log Analytics. 
 - [Учетная запись хранения Azure](../platform/resource-logs.md#send-to-azure-storage), которая используется для аудита, статического анализа или резервного копирования.
 
-Выполните процедуру, описанную в разделе [Создание параметра диагностики для сбора журналов и метрик платформы в Azure](../platform/diagnostic-settings.md), для создания параметров диагностики и управления ими на портале Azure. См. раздел [Создание параметра диагностики в Azure с помощью шаблона Resource Manager](../platform/diagnostic-settings-template.md), чтобы определить их в шаблоне и включить полный мониторинг ресурса при создании.
+Выполните процедуру, описанную в разделе [Создание параметра диагностики для сбора журналов и метрик платформы в Azure](../platform/diagnostic-settings.md), для создания параметров диагностики и управления ими на портале Azure. См. раздел [Создание параметра диагностики в Azure с помощью шаблона Resource Manager](../samples/resource-manager-diagnostic-settings.md), чтобы определить их в шаблоне и включить полный мониторинг ресурса при создании.
 
 
 ## <a name="monitoring-in-the-azure-portal"></a>Мониторинг на портале Azure
@@ -160,5 +160,4 @@ Azure Monitor — это комплексная служба мониторин
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* См. сведения о журналах ресурсов для разных служб Azure в описании [поддерживаемых служб, схем и категорий для журналов ресурсов Azure](../platform/resource-logs-schema.md).  
-
+* См. сведения о журналах ресурсов для разных служб Azure в описании [поддерживаемых служб, схем и категорий для журналов ресурсов Azure](../platform/resource-logs-schema.md).

@@ -10,10 +10,10 @@ ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 08/20/2019
 ms.openlocfilehash: e37b35e3473b2da397904d01be5e65cf8cafbbe5
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91541124"
 ---
 # <a name="use-microsoft-azure-traffic-manager-to-manage-endpoint-quota-across-keys"></a>Использование диспетчера трафика Microsoft Azure для распределения квоты конечной точки на несколько ключей
@@ -76,7 +76,7 @@ New-AzResourceGroup -Name luis-traffic-manager -Location "West US"
 
     В таблице ниже показаны значения каждой переменной в командлете:
 
-    |Параметр конфигурации|Имя переменной или значение|Цель|
+    |Параметр конфигурации|Имя переменной или значение|Назначение|
     |--|--|--|
     |-Name|luis-profile-eastus|Имя диспетчера трафика на портале Azure|
     |-ResourceGroupName|luis-traffic-manager|Создан в предыдущем разделе|
@@ -95,14 +95,14 @@ New-AzResourceGroup -Name luis-traffic-manager -Location "West US"
     ```
     В таблице ниже показаны значения каждой переменной в командлете:
 
-    |Параметр конфигурации|Имя переменной или значение|Цель|
+    |Параметр конфигурации|Имя переменной или значение|Назначение|
     |--|--|--|
     |-EndpointName|luis-east-endpoint|Имя конечной точки в профиле|
     |-TrafficManagerProfile|$eastprofile|Используйте объект профиля, созданный на шаге 1|
     |-Type|ExternalEndpoints|Дополнительные сведения см. в статье [Конечная точка диспетчера трафика][traffic-manager-endpoints]. |
     |-Target|eastus.api.cognitive.microsoft.com|Домен LUIS конечной точки.|
     |-EndpointLocation|"eastus"|Регион конечной точки.|
-    |-EndpointStatus|Активировано|Включить конечную точку при ее создании.|
+    |-EndpointStatus|Включен|Включить конечную точку при ее создании.|
 
     Успешный ответ выглядит следующим образом:
 
@@ -144,7 +144,7 @@ New-AzResourceGroup -Name luis-traffic-manager -Location "West US"
 
     В таблице ниже показаны значения каждой переменной в командлете:
 
-    |Параметр конфигурации|Имя переменной или значение|Цель|
+    |Параметр конфигурации|Имя переменной или значение|Назначение|
     |--|--|--|
     |-Name|luis-profile-westus|Имя диспетчера трафика на портале Azure|
     |-ResourceGroupName|luis-traffic-manager|Создан в предыдущем разделе|
@@ -164,14 +164,14 @@ New-AzResourceGroup -Name luis-traffic-manager -Location "West US"
 
     В таблице ниже показаны значения каждой переменной в командлете:
 
-    |Параметр конфигурации|Имя переменной или значение|Цель|
+    |Параметр конфигурации|Имя переменной или значение|Назначение|
     |--|--|--|
     |-EndpointName|luis-west-endpoint|Имя конечной точки в профиле|
     |-TrafficManagerProfile|$westprofile|Используйте объект профиля, созданный на шаге 1|
     |-Type|ExternalEndpoints|Дополнительные сведения см. в статье [Конечная точка диспетчера трафика][traffic-manager-endpoints]. |
     |-Target|westus.api.cognitive.microsoft.com|Домен LUIS конечной точки.|
     |-EndpointLocation|"westus"|Регион конечной точки.|
-    |-EndpointStatus|Активировано|Включить конечную точку при ее создании.|
+    |-EndpointStatus|Включен|Включить конечную точку при ее создании.|
 
     Успешный ответ выглядит следующим образом:
 
@@ -211,7 +211,7 @@ New-AzResourceGroup -Name luis-traffic-manager -Location "West US"
 
     В таблице ниже показаны значения каждой переменной в командлете:
 
-    |Параметр конфигурации|Имя переменной или значение|Цель|
+    |Параметр конфигурации|Имя переменной или значение|Назначение|
     |--|--|--|
     |-Name|luis-profile-parent|Имя диспетчера трафика на портале Azure|
     |-ResourceGroupName|luis-traffic-manager|Создан в предыдущем разделе|
@@ -231,13 +231,13 @@ New-AzResourceGroup -Name luis-traffic-manager -Location "West US"
 
     В таблице ниже показаны значения каждой переменной в командлете:
 
-    |Параметр конфигурации|Имя переменной или значение|Цель|
+    |Параметр конфигурации|Имя переменной или значение|Назначение|
     |--|--|--|
     |-EndpointName|child-endpoint-useast|Профиль для региона "Восточная часть США"|
     |-TrafficManagerProfile|$parentprofile|Профиль, которому будет назначена эта конечная точка|
     |-Type|NestedEndpoints|Дополнительные сведения см. в разделе [Add-азтраффикманажерендпоинтконфиг](https://docs.microsoft.com/powershell/module/az.trafficmanager/Add-azTrafficManagerEndpointConfig). |
     |-TargetResourceId|$eastprofile.Id|Идентификатор дочернего профиля|
-    |-EndpointStatus|Активировано|Состояние конечной точки после добавления в родительский профиль|
+    |-EndpointStatus|Включен|Состояние конечной точки после добавления в родительский профиль|
     |-EndpointLocation|"eastus"|[Имя региона Azure](https://azure.microsoft.com/global-infrastructure/regions/) ресурса.|
     |-MinChildEndpoints|1|Минимальное число дочерних конечных точек|
 
@@ -268,13 +268,13 @@ New-AzResourceGroup -Name luis-traffic-manager -Location "West US"
 
     В таблице ниже показаны значения каждой переменной в командлете:
 
-    |Параметр конфигурации|Имя переменной или значение|Цель|
+    |Параметр конфигурации|Имя переменной или значение|Назначение|
     |--|--|--|
     |-EndpointName|child-endpoint-uswest|Профиль для региона "Западная часть США"|
     |-TrafficManagerProfile|$parentprofile|Профиль, которому будет назначена эта конечная точка|
     |-Type|NestedEndpoints|Дополнительные сведения см. в разделе [Add-азтраффикманажерендпоинтконфиг](https://docs.microsoft.com/powershell/module/az.trafficmanager/Add-azTrafficManagerEndpointConfig). |
     |-TargetResourceId|$westprofile.Id|Идентификатор дочернего профиля|
-    |-EndpointStatus|Активировано|Состояние конечной точки после добавления в родительский профиль|
+    |-EndpointStatus|Включен|Состояние конечной точки после добавления в родительский профиль|
     |-EndpointLocation|"westus"|[Имя региона Azure](https://azure.microsoft.com/global-infrastructure/regions/) ресурса.|
     |-MinChildEndpoints|1|Минимальное число дочерних конечных точек|
 
@@ -369,7 +369,7 @@ dns.resolveAny('luis-dns-parent.trafficmanager.net', (err, ret) => {
 ## <a name="clean-up"></a>Очистка
 Удалите два ключа конечной точки LUIS, три профиля диспетчера трафика и группу ресурсов, содержащую эти пять ресурсов. Это необходимо сделать на портале Azure. Удалите пять ресурсов из списка ресурсов. Затем удалите группу ресурсов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Чтобы узнать, как добавить код управления трафиком в бот BotFramework, ознакомьтесь с вариантами [ПО промежуточного слоя](https://docs.microsoft.com/azure/bot-service/bot-builder-create-middleware?view=azure-bot-service-4.0&tabs=csaddmiddleware%2Ccsetagoverwrite%2Ccsmiddlewareshortcircuit%2Ccsfallback%2Ccsactivityhandler) в BotFramework версии 4.
 

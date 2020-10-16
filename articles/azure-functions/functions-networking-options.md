@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 4/11/2019
 ms.custom: fasttrack-edit
 ms.openlocfilehash: 271730e57a2d7ef8324420744b4bcd088b9809cc
-ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90530100"
 ---
 # <a name="azure-functions-networking-options"></a>Параметры сети для Функций Azure
@@ -133,7 +133,7 @@ az resource update -g <resource_group> -n <function_app_name>/config/web --set p
 
 При интеграции приложения-функции в плане категории "Премиум" или плане службы приложений с виртуальной сетью приложение по умолчанию может выполнять исходящие вызовы через Интернет. Добавив параметр приложения `WEBSITE_VNET_ROUTE_ALL=1`, вы принудительно передаете весь исходящий трафик в виртуальную сеть, где могут использоваться правила группы безопасности сети для ограничения трафика.
 
-## <a name="automation"></a>Автоматизация
+## <a name="automation"></a>Служба автоматизации
 Следующие API позволяют программно управлять региональной интеграцией виртуальной сети.
 
 + **Azure CLI**. Используйте [`az functionapp vnet-integration`](/cli/azure/functionapp/vnet-integration) команды для добавления, перечисления или удаления региональных интеграций виртуальной сети.  

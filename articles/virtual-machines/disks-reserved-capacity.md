@@ -7,12 +7,12 @@ ms.date: 01/30/2020
 ms.topic: how-to
 ms.service: virtual-machines
 ms.subservice: disks
-ms.openlocfilehash: 9a6a56491a327d5d4eafc2c05dc2b54b137096b8
-ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
+ms.openlocfilehash: e3642a621253b79fdfcdd8cb2b648dee534c6758
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2020
-ms.locfileid: "88752060"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91968691"
 ---
 # <a name="reduce-costs-with-azure-disks-reservation"></a>Сокращение расходов с помощью резервирования дисков Azure
 
@@ -89,7 +89,7 @@ ms.locfileid: "88752060"
 
 ## <a name="cancel-exchange-or-refund-reservations"></a>Отмена, обмен резервирования, возмещение средств за резервирование
 
-Вы можете отменять, обмениваться и возмещать в определенные ограничения резервирования. Дополнительные сведения см. в статье [Self-service exchanges and refunds for Azure Reservations](https://docs.microsoft.com/azure/cost-management-billing/reservations/exchange-and-refund-azure-reservations) (Самостоятельное выполнение обмена и возмещения средств для резервирований Azure).
+Вы можете отменять, обмениваться и возмещать в определенные ограничения резервирования. Дополнительные сведения см. в статье [Self-service exchanges and refunds for Azure Reservations](../cost-management-billing/reservations/exchange-and-refund-azure-reservations.md) (Самостоятельное выполнение обмена и возмещения средств для резервирований Azure).
 
 ## <a name="expiration-of-a-reservation"></a>Срок действия резервирования
 
@@ -104,4 +104,4 @@ ms.locfileid: "88752060"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Основные сведения о резервировании в Azure](../cost-management-billing/reservations/save-compute-costs-reservations.md)
-- [Общие сведения о применении скидки на резервирование в службе "Хранилище дисков Azure"](../cost-management-billing/reservations/understand-disk-reservations.md)
+- [Узнайте, как применяется скидка на резервирование для Хранилище дисков Azure](../cost-management-billing/reservations/understand-disk-reservations.md)

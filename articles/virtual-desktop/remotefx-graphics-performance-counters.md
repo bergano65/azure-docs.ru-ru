@@ -7,10 +7,10 @@ ms.date: 05/23/2019
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: dc5c6499fa47a1e32a517032d5cc2a97b3f2677f
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88007172"
 ---
 # <a name="diagnose-graphics-performance-issues-in-remote-desktop"></a>Диагностика проблем производительности графики в удаленный рабочий стол
@@ -98,7 +98,7 @@ ms.locfileid: "88007172"
 > [!NOTE]
 > В настоящее время счетчик исходных кадров/секунд не поддерживается. Сейчас счетчик исходных кадров/секунд всегда будет отображать 0.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Сведения о создании виртуальной машины Azure, оптимизированной для GPU, см. в разделе [Настройка ускорения графического процессора для среды виртуальных рабочих столов Windows](configure-vm-gpu.md).
 - Общие сведения об устранении неполадок и путях эскалации см. в разделе [Общие сведения об устранении неполадок, Отзывы и поддержка](troubleshoot-set-up-overview.md).

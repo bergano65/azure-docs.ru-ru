@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 09/24/2020
 ms.author: b-juche
-ms.openlocfilehash: e2c487b62813bc4480786daa08666fe6471bd18d
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: d0a16dc639fb3206b480c1091a66686955cbb11d
+ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91325714"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91932351"
 ---
 # <a name="create-an-smb-volume-for-azure-netapp-files"></a>Создание тома SMB для Azure NetApp Files
 
@@ -62,9 +62,9 @@ Azure NetApp Files поддерживает создание томов с по�
 
     Адресное пространство виртуальной сети, в которой развертывается Azure NetApp Files, должно быть добавлено на новый или существующий сайт Active Directory (где размещен контроллер домена, доступный Azure NetApp Files). 
 
-* Указанные DNS-серверы должны быть доступны из [делегированной подсети](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-delegate-subnet) Azure NetApp Files.  
+* Указанные DNS-серверы должны быть доступны из [делегированной подсети](./azure-netapp-files-delegate-subnet.md) Azure NetApp Files.  
 
-    См. [Рекомендации по планированию сети Azure NetApp Files](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-network-topologies), чтобы ознакомиться с поддерживаемыми сетевыми топологиями.
+    См. [Рекомендации по планированию сети Azure NetApp Files](./azure-netapp-files-network-topologies.md), чтобы ознакомиться с поддерживаемыми сетевыми топологиями.
 
     Группы безопасности сети (NSG) и брандмауэры должны иметь соответствующим образом настроенные правила, чтобы разрешить запросы к Active Directory и запросы трафика DNS. 
 
@@ -72,7 +72,7 @@ Azure NetApp Files поддерживает создание томов с по�
 
     Если у вас есть контроллеры домена, недоступные делегированной подсети Azure NetApp Files, можно указать сайт Active Directory во время создания подключения Active Directory.  Служба Azure NetApp Files должна взаимодействовать только с контроллерами домена на сайте, на которых находится адресное пространство делегированной подсети Azure NetApp Files.
 
-    Сведения сайтах и службах Active Directory см. в разделе [Проектирование топологии сайта](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/designing-the-site-topology). 
+    Сведения сайтах и службах Active Directory см. в разделе [Проектирование топологии сайта](/windows-server/identity/ad-ds/plan/designing-the-site-topology). 
     
 * Чтобы включить шифрование AES для тома SMB, установите флажок **шифрование AES** в окне [Присоединение Active Directory](#create-an-active-directory-connection) . Azure NetApp Files поддерживает типы шифрования DES, Kerberos AES 128 и Kerberos AES 256 (от минимального уровня безопасности до наиболее безопасного). При включении шифрования AES учетные данные пользователя, используемые для приподключения Active Directory, должны иметь включенный параметр с наивысшей соответствующей учетной записью, соответствующий возможностям, включенным для Active Directory.    
 
@@ -82,21 +82,21 @@ Azure NetApp Files поддерживает создание томов с по�
 
     ![Active Directory MMC "пользователи и компьютеры"](../media/azure-netapp-files/ad-users-computers-mmc.png)
 
-* Azure NetApp Files поддерживает [Подписывание LDAP](https://docs.microsoft.com/troubleshoot/windows-server/identity/enable-ldap-signing-in-windows-server), что обеспечивает безопасную передачу трафика LDAP между службой Azure NetApp Files и целевыми [контроллерами домена Active Directory](https://docs.microsoft.com/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview). Если вы используете рекомендации Microsoft консультационных [ADV190023](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/ADV190023) для подписывания LDAP, то следует включить функцию подписывания ldap в Azure NetApp Files, установив флажок **Подписывание LDAP** в окне [присоединиться Active Directory](#create-an-active-directory-connection) . 
+* Azure NetApp Files поддерживает [Подписывание LDAP](/troubleshoot/windows-server/identity/enable-ldap-signing-in-windows-server), что обеспечивает безопасную передачу трафика LDAP между службой Azure NetApp Files и целевыми [контроллерами домена Active Directory](/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview). Если вы используете рекомендации Microsoft консультационных [ADV190023](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/ADV190023) для подписывания LDAP, то следует включить функцию подписывания ldap в Azure NetApp Files, установив флажок **Подписывание LDAP** в окне [присоединиться Active Directory](#create-an-active-directory-connection) . 
 
     Конфигурация [привязки канала LDAP](https://support.microsoft.com/help/4034879/how-to-add-the-ldapenforcechannelbinding-registry-entry) не влияет на службу Azure NetApp Files. 
 
-Дополнительные сведения об Active Directory см. в [часто задаваемых вопросах об SMB](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-faqs#smb-faqs) Azure NetApp Files. 
+Дополнительные сведения об Active Directory см. в [часто задаваемых вопросах об SMB](./azure-netapp-files-faqs.md#smb-faqs) Azure NetApp Files. 
 
 ## <a name="decide-which-domain-services-to-use"></a>Выбор доменных служб для использования 
 
-Для подключений AD Azure NetApp Files поддерживает и [доменные службы Active Directory](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/understanding-active-directory-site-topology) (ADDS), и доменные службы Azure Active Directory (AADDS).  Перед созданием подключения к Active Directory необходимо решить, следует ли использовать ADDS или AADDS.  
+Для подключений AD Azure NetApp Files поддерживает и [доменные службы Active Directory](/windows-server/identity/ad-ds/plan/understanding-active-directory-site-topology) (ADDS), и доменные службы Azure Active Directory (AADDS).  Перед созданием подключения к Active Directory необходимо решить, следует ли использовать ADDS или AADDS.  
 
-Дополнительные сведения см. в статье [Сравнение самостоятельно управляемых доменных служб Active Directory, Azure Active Directory и управляемых доменных служб Azure Active Directory](https://docs.microsoft.com/azure/active-directory-domain-services/compare-identity-solutions). 
+Дополнительные сведения см. в статье [Сравнение самостоятельно управляемых доменных служб Active Directory, Azure Active Directory и управляемых доменных служб Azure Active Directory](../active-directory-domain-services/compare-identity-solutions.md). 
 
 ### <a name="active-directory-domain-services"></a>Доменные службы Active Directory
 
-Для Azure NetApp Files можно использовать предпочтительную область [сайтов и служб Active Directory](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/understanding-active-directory-site-topology). Этот параметр позволяет выполнять операции чтения и записи в контроллеры домена доменных служб Active Directory Services (ADDS), которые [доступны службе Azure NetApp Files](azure-netapp-files-network-topologies.md). Это также предотвращает взаимодействие службы с контроллерами домена, которые не находятся на указанном сайте модуля "Active Directory — сайты и службы". 
+Для Azure NetApp Files можно использовать предпочтительную область [сайтов и служб Active Directory](/windows-server/identity/ad-ds/plan/understanding-active-directory-site-topology). Этот параметр позволяет выполнять операции чтения и записи в контроллеры домена доменных служб Active Directory Services (ADDS), которые [доступны службе Azure NetApp Files](azure-netapp-files-network-topologies.md). Это также предотвращает взаимодействие службы с контроллерами домена, которые не находятся на указанном сайте модуля "Active Directory — сайты и службы". 
 
 Чтобы найти имя сайта при использовании ADDS, можно обратиться к администраторам организации, которые отвечают за работу доменных служб Active Directory. В приведенном ниже примере показан подключаемый модуль "Active Directory — сайты и службы", в котором отображается имя сайта. 
 
@@ -106,7 +106,7 @@ Azure NetApp Files поддерживает создание томов с по�
 
 ### <a name="azure-active-directory-domain-services"></a>Доменные службы Azure Active Directory 
 
-Сведения о конфигурации доменных служб Azure Active Directory (AADDS) и соответствующие инструкции см. в статье [Документация по доменным службам Azure AD](https://docs.microsoft.com/azure/active-directory-domain-services/).
+Сведения о конфигурации доменных служб Azure Active Directory (AADDS) и соответствующие инструкции см. в статье [Документация по доменным службам Azure AD](../active-directory-domain-services/index.yml).
 
 Дополнительные моменты относительно AADDS, которые следует учитывать при использовании Azure NetApp Files: 
 
@@ -184,10 +184,10 @@ Azure NetApp Files поддерживает создание томов с по�
         Get-AzProviderFeature -ProviderNamespace Microsoft.NetApp -FeatureName ANFAesEncryption
         ```
         
-        Вы также можете использовать [Azure CLI команды](https://docs.microsoft.com/cli/azure/feature?view=azure-cli-latest&preserve-view=true) `az feature register` , `az feature show` чтобы зарегистрировать эту функцию и отобразить состояние регистрации. 
+        Вы также можете использовать [Azure CLI команды](/cli/azure/feature?preserve-view=true&view=azure-cli-latest) `az feature register` , `az feature show` чтобы зарегистрировать эту функцию и отобразить состояние регистрации. 
 
     * **Подписывание LDAP**   
-        Установите этот флажок, чтобы включить подписывание LDAP. Эта функция обеспечивает безопасный поиск LDAP между службой Azure NetApp Files и указанными пользователем [контроллерами домена служб домен Active Directory Services](https://docs.microsoft.com/windows/win32/ad/active-directory-domain-services). Дополнительные сведения см. в разделе [ADV190023 | Руководство Майкрософт по включению привязки каналов LDAP и подписывания LDAP](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/ADV190023).  
+        Установите этот флажок, чтобы включить подписывание LDAP. Эта функция обеспечивает безопасный поиск LDAP между службой Azure NetApp Files и указанными пользователем [контроллерами домена служб домен Active Directory Services](/windows/win32/ad/active-directory-domain-services). Дополнительные сведения см. в разделе [ADV190023 | Руководство Майкрософт по включению привязки каналов LDAP и подписывания LDAP](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/ADV190023).  
 
         ![Active Directory подписывания LDAP](../media/azure-netapp-files/active-directory-ldap-signing.png) 
 
@@ -206,7 +206,7 @@ Azure NetApp Files поддерживает создание томов с по�
         Get-AzProviderFeature -ProviderNamespace Microsoft.NetApp -FeatureName ANFLdapSigning
         ```
         
-        Вы также можете использовать [Azure CLI команды](https://docs.microsoft.com/cli/azure/feature?view=azure-cli-latest&preserve-view=true) `az feature register` , `az feature show` чтобы зарегистрировать эту функцию и отобразить состояние регистрации. 
+        Вы также можете использовать [Azure CLI команды](/cli/azure/feature?preserve-view=true&view=azure-cli-latest) `az feature register` , `az feature show` чтобы зарегистрировать эту функцию и отобразить состояние регистрации. 
 
      * **Пользователи политики резервного копирования**  
         Можно включить дополнительные учетные записи, требующие повышенных прав доступа к учетной записи компьютера, созданной для использования с Azure NetApp Files. Указанным учетным записям можно будет изменять разрешения NTFS на уровне файлов и папок. Например, можно указать непривилегированную учетную запись службы, используемую для переноса данных в общую папку SMB в Azure NetApp Files.  
@@ -228,7 +228,7 @@ Azure NetApp Files поддерживает создание томов с по�
         Get-AzProviderFeature -ProviderNamespace Microsoft.NetApp -FeatureName ANFBackupOperator
         ```
         
-        Вы также можете использовать [Azure CLI команды](https://docs.microsoft.com/cli/azure/feature?view=azure-cli-latest&preserve-view=true) `az feature register` , `az feature show` чтобы зарегистрировать эту функцию и отобразить состояние регистрации. 
+        Вы также можете использовать [Azure CLI команды](/cli/azure/feature?preserve-view=true&view=azure-cli-latest) `az feature register` , `az feature show` чтобы зарегистрировать эту функцию и отобразить состояние регистрации. 
 
     * Учетные данные, включая **имя пользователя** и **пароль**.
 
@@ -325,6 +325,6 @@ Azure NetApp Files поддерживает создание томов с по�
 
 * [Подключение или отключение тома для виртуальных машин Windows или Linux](azure-netapp-files-mount-unmount-volumes-for-virtual-machines.md)
 * [Ограничения ресурсов для службы Azure NetApp Files](azure-netapp-files-resource-limits.md)
-* [Часто задаваемые вопросы о SMB](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-faqs#smb-faqs)
-* [Узнайте об интеграции виртуальной сети для служб Azure](https://docs.microsoft.com/azure/virtual-network/virtual-network-for-azure-services)
-* [Установка нового леса Active Directory с помощью Azure CLI](https://docs.microsoft.com/windows-server/identity/ad-ds/deploy/virtual-dc/adds-on-azure-vm)
+* [Часто задаваемые вопросы о SMB](./azure-netapp-files-faqs.md#smb-faqs)
+* [Узнайте об интеграции виртуальной сети для служб Azure](../virtual-network/virtual-network-for-azure-services.md)
+* [Установка нового леса Active Directory с помощью Azure CLI](/windows-server/identity/ad-ds/deploy/virtual-dc/adds-on-azure-vm)

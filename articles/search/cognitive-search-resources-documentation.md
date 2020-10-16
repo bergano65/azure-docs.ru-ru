@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/12/2020
 ms.openlocfilehash: eaafb9536a8667417c0abf4ab570609f2db290bc
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88935353"
 ---
 # <a name="documentation-resources-for-ai-enrichment-in-azure-cognitive-search"></a>Ресурсы документации для обогащения данных с помощью ИИ в Когнитивном поиске Azure
@@ -96,8 +96,8 @@ ms.locfileid: "88935353"
   + [Создание набора навыков (API-Version = 2020-06-30)](/rest/api/searchservice/create-skillset)
   + [Create индексатор (API-Version = 2020-06-30)](/rest/api/searchservice/create-indexer)
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 + [REST API Когнитивного поиска Azure](/rest/api/searchservice/)
 + [Indexers in Azure Cognitive Search](search-indexer-overview.md) (Индексаторы в службе "Когнитивный поиск Azure")
-+ [Что собой представляет Когнитивный поиск Azure?](search-what-is-azure-search.md)
++ [Что такое Azure Когнитивный поиск?](search-what-is-azure-search.md)

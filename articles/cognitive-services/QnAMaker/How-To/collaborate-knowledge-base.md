@@ -6,10 +6,10 @@ ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 07/13/2020
 ms.openlocfilehash: 8adc02d4b397c2b0bdaf5d3998cfbe229c896d41
-ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91776856"
 ---
 # <a name="collaboration-with-authors-and-editors"></a>Совместная работа с авторами и редакторами
@@ -38,7 +38,7 @@ QnA Maker позволяет нескольким пользователям с�
 
     ![IAM в QnA Maker](../media/qnamaker-how-to-collaborate-knowledge-base/qnamaker-iam.png)
 
-1. Нажмите **Добавить**.
+1. Выберите **Добавить**.
 
     ![Добавление IAM в QnA Maker](../media/qnamaker-how-to-collaborate-knowledge-base/qnamaker-iam-add.png)
 
@@ -68,7 +68,7 @@ QnA Maker позволяет нескольким пользователям с�
 
 1. Введите адрес электронной почты пользователя и нажмите кнопку ":::
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Тестирование базы знаний](./test-knowledge-base.md)

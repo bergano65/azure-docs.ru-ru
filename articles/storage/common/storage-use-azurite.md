@@ -9,10 +9,10 @@ ms.subservice: common
 ms.topic: how-to
 ms.custom: devx-track-csharp
 ms.openlocfilehash: f18746242ef9f680f44be1fd614c6c769289aadb
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91331579"
 ---
 # <a name="use-the-azurite-emulator-for-local-azure-storage-development"></a>Использование эмулятора Азурите для разработки локальных хранилищ Azure
@@ -489,7 +489,7 @@ var client = new QueueClient(
 
 Если вы не импортируете сертификат, вы получите следующее сообщение об ошибке:
 
-`unable to verify the first certificate` либо `self signed certificate in chain`
+`unable to verify the first certificate` или `self signed certificate in chain`
 
 ##### <a name="add-azurite-via-https-connection-string"></a>Добавление Азурите с помощью строки подключения HTTPS
 
@@ -566,7 +566,7 @@ var client = new QueueClient(
 
 Публикации и предложения для Азурите — Добро пожаловать. Перейдите на страницу [проекта Азурите GitHub](https://github.com/Azure/Azurite/projects) или [проблемы GitHub](https://github.com/Azure/Azurite/issues) для вех и рабочих элементов, которые отслеживаются для предстоящих компонентов и исправлений ошибок. Подробные рабочие элементы также отправляются в GitHub.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Используйте эмулятор хранения Azure для разработки и тестирования](storage-use-emulator.md) документов в старом эмуляторе хранения Azure, который заменяется азурите.
 - [Настройка строк подключения службы хранилища Azure](storage-configure-connection-string.md) содержит сведения о том, как собрать допустимую строку подключения к службе хранилища Azure.

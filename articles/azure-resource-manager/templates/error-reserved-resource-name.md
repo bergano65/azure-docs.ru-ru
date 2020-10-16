@@ -4,10 +4,10 @@ description: Описывается, как устранить ошибки пр
 ms.topic: troubleshooting
 ms.date: 11/08/2017
 ms.openlocfilehash: e76f4bf9bfee7de6e7523d69acf1388d2dd80e93
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "75477633"
 ---
 # <a name="resolve-reserved-resource-name-errors"></a>Ошибки имен зарезервированных ресурсов Azure
@@ -23,7 +23,7 @@ Code=ReservedResourceName;
 Message=The resource name <resource-name> or a part of the name is a trademarked or reserved word.
 ```
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 Ресурсы, которые имеют общедоступную конечную точку, не могут содержать зарезервированные слова или товарные знаки в имени.
 
@@ -54,7 +54,7 @@ Message=The resource name <resource-name> or a part of the name is a trademarked
 * ONENOTE;
 * OUTLOOK;
 * POWERPOINT;
-* SHAREPOINT;
+* SHAREPOINT
 * SKYPE;
 * VISIO;
 * VISUALSTUDIO.

@@ -8,10 +8,10 @@ ms.topic: tutorial
 ms.date: 05/08/2020
 ms.author: aapowell
 ms.openlocfilehash: ff408f114784fa3f0b8fab49521b5ec7ec2be102
-ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88797723"
 ---
 # <a name="tutorial-publish-a-hugo-site-to-azure-static-web-apps-preview"></a>Руководство по Публикация сайта Hugo в предварительной версии службы "Статические веб-приложения Azure"
@@ -115,7 +115,7 @@ ms.locfileid: "88797723"
 
 1. В поле _Номер SKU_ выберите **Бесплатный**.
 
-   :::image type="content" source="./media/publish-hugo/basic-app-details.png" alt-text="Заполненные сведениями поля":::
+   :::image type="content" source="./media/publish-hugo/basic-app-details.png" alt-text="Создание ресурса Статические веб-приложения Azure на портале":::
 
 1. Нажмите кнопку **Войти по учетным данным GitHub**.
 
@@ -125,7 +125,7 @@ ms.locfileid: "88797723"
 
 1. В поле _Ветвь_ выберите **главная**.
 
-   :::image type="content" source="./media/publish-hugo/completed-github-info.png" alt-text="Поля, заполненные сведениями о GitHub":::
+   :::image type="content" source="./media/publish-hugo/completed-github-info.png" alt-text="Создание ресурса Статические веб-приложения Azure на портале":::
 
 ### <a name="build"></a>Сборка
 
@@ -149,7 +149,7 @@ ms.locfileid: "88797723"
 
 1. На портале Azure в окне _Обзор_ для только что созданного ресурса "Статические веб-приложения Azure" щелкните ссылку на _URL-адрес_, чтобы открыть развернутое приложение.
 
-   :::image type="content" source="./media/publish-hugo/deployed-app.png" alt-text="Развернутое приложение":::
+   :::image type="content" source="./media/publish-hugo/deployed-app.png" alt-text="Создание ресурса Статические веб-приложения Azure на портале":::
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

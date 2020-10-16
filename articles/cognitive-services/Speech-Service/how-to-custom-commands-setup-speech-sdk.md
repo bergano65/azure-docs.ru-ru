@@ -12,10 +12,10 @@ ms.date: 06/18/2020
 ms.author: xiaojul
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 49922599adb30e6c631f29b4831fda60cc000a40
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91360129"
 ---
 # <a name="integrate-with-a-client-application-using-speech-sdk"></a>Интеграция с клиентским приложением с помощью речевого пакета SDK
@@ -404,7 +404,7 @@ ms.locfileid: "91360129"
 
 1. В строке меню выберите **файл**  >  **сохранить все** , чтобы сохранить изменения.
 
-## <a name="try-it-out"></a>Попробуйте!
+## <a name="try-it-out"></a>Попробуйте продукт
 
 1. В строке меню выберите **Сборка** > **Построить решение**, чтобы создать приложение. Теперь код должен компилироваться без ошибок.
 

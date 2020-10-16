@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.service: security-center
 manager: rkarlin
 ms.openlocfilehash: 500fa45db7e0e6bffb587d9d352ee1ab49f14703
-ms.sourcegitcommit: 5b69ba21787c07547edfbfd5254eaf34315cfadd
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91712278"
 ---
 # <a name="harden-your-docker-hosts"></a>Защита узлов Docker
@@ -27,12 +27,12 @@ ms.locfileid: "91712278"
 
 ## <a name="availability"></a>Доступность
 
-|Аспект|Сведения|
+|Аспект|Подробнее|
 |----|:----|
 |Состояние выпуска:|Общедоступная версия (GA)|
-|Цены|Требуется [защитник Azure для серверов](defender-for-servers-introduction.md)|
-|Необходимые роли и разрешения:|**Читатель** в рабочей области, к которой подключается узел|
-|Облако.|![Да](./media/icons/yes-icon.png) Коммерческие облака<br>![Да](./media/icons/yes-icon.png) Национальные и независимые (US Gov, China Gov, другие правительственные облака).|
+|Цены|Требуется [Azure Defender для серверов](defender-for-servers-introduction.md)|
+|Требуемые роли и разрешения|**Читатель** в рабочей области, к которой подключается узел|
+|Облако.|![Да](./media/icons/yes-icon.png) Коммерческие облака<br>![Да](./media/icons/yes-icon.png) Национальные и независимые (US Gov, China Gov, другие правительственные облака)|
 |||
 
 ## <a name="identify-and-remediate-security-vulnerabilities-in-your-docker-configuration"></a>Выявление и исправление уязвимостей системы безопасности в конфигурации DOCKER
@@ -71,7 +71,7 @@ ms.locfileid: "91712278"
 1. Если вы уверены, что команда подходит и готова для вашего узла, выберите **выполнить**.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Усиление защиты DOCKER — это лишь один аспект функций безопасности контейнера центра безопасности. 
 

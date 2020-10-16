@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 04/01/2020
 ms.author: aahi
 ms.openlocfilehash: f6a1bc652125990a7daf3414895f34b95c544912
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "83590560"
 ---
 # <a name="configure-text-analytics-docker-containers"></a>Настройка контейнеров Docker API анализа текста
@@ -47,9 +47,9 @@ ms.locfileid: "83590560"
 
 Этот параметр можно найти в следующем месте.
 
-* Портал Azure: **анализ текста** обзор с меткой`Endpoint`
+* Портал Azure: **анализ текста** обзор с меткой `Endpoint`
 
-|Обязательный| name | Тип данных | Описание |
+|Обязательно| Имя | Тип данных | Описание |
 |--|------|-----------|-------------|
 |Да| `Billing` | Строка | URI конечной точки выставления счетов. Дополнительные сведения о получении URI выставления счетов см. в разделе [сбор обязательных параметров](how-tos/text-analytics-how-to-install-containers.md#gathering-required-parameters). Дополнительные сведения и полный список региональных конечных точек см. в статье [Custom subdomain names for Cognitive Services](../cognitive-services-custom-subdomains.md) (Пользовательские имена поддоменов для Cognitive Services). |
 
@@ -77,12 +77,12 @@ ms.locfileid: "83590560"
 
 Точный синтаксис расположения подключения к узлу зависит от операционной системы узла. Кроме того,расположение подключения на [главном компьютере](how-tos/text-analytics-how-to-install-containers.md#the-host-computer) может оказаться недоступным из-за конфликта между разрешениями для учетной записи службы Docker и расположения подключения к узлу. 
 
-|Необязательный| name | Тип данных | Описание |
+|Необязательно| Имя | Тип данных | Описание |
 |-------|------|-----------|-------------|
-|Нельзя использовать| `Input` | Строка | Контейнеры API анализа текста не используют этот элемент.|
-|Необязательный| `Output` | Строка | Цель выходного подключения. Значение по умолчанию — `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример.<br>`--mount type=bind,src=c:\output,target=/output`|
+|Не разрешено| `Input` | Строка | Контейнеры API анализа текста не используют этот элемент.|
+|Необязательный| `Output` | Строка | Цель выходного подключения. Значение по умолчанию — `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример.<br>`--mount type=bind,src=c:\output,target=/output`|
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Изучите статью об [установке и запуске контейнеров](how-tos/text-analytics-how-to-install-containers.md).
-* Использование большего числа [контейнеров Cognitive Services](../cognitive-services-container-support.md)
+* Воспользуйтесь [дополнительными контейнерами Cognitive Services](../cognitive-services-container-support.md)

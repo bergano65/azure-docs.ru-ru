@@ -5,10 +5,10 @@ ms.topic: tutorial
 ms.date: 09/14/2020
 ms.custom: ''
 ms.openlocfilehash: 1e8a5cd856358a0dc3e9c356cb3a55f75db29c86
-ms.sourcegitcommit: 7374b41bb1469f2e3ef119ffaf735f03f5fad484
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90708299"
 ---
 # <a name="tutorial-deploy-a-multi-container-group-using-docker-compose"></a>Руководство по развертыванию многоконтейнерной группы с помощью Docker Compose 
@@ -212,7 +212,7 @@ azurevotingappredis_azure-vote-front   myregistry.azurecr.io/azure-vote-front   
 
 Чтобы просмотреть запущенное приложение в облаке, введите отображаемый IP-адрес в локальном веб-браузере. Для данного примера введите `52.179.23.131`. Нагрузки примера приложения, как показано в следующем примере:
 
-:::image type="content" source="media/tutorial-docker-compose/azure-vote-aci.png" alt-text="Образ приложения для голосования в ACI":::
+:::image type="content" source="media/tutorial-docker-compose/azure-vote-aci.png" alt-text="Образ приложения для голосования":::
 
 Чтобы просмотреть журналы внешнего контейнера, выполните команду [docker logs](https://docs.docker.com/engine/reference/commandline/logs). Пример:
 

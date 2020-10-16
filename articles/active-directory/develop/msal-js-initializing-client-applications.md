@@ -14,10 +14,10 @@ ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.openlocfilehash: 5af5d3a88262792f4b32e2ce3d8143ac680f083a
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87027042"
 ---
 # <a name="initialize-client-applications-using-msaljs"></a>Инициализация клиентских приложений с помощью MSAL.js
@@ -28,7 +28,7 @@ ms.locfileid: "87027042"
 
 Дополнительные сведения о типах клиентских приложений и параметрах конфигурации приложений см. [в разделе общедоступные и конфиденциальные клиентские приложения в MSAL](msal-client-applications.md).
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед инициализацией приложения сначала необходимо [зарегистрировать его в портал Azure](scenario-spa-app-registration.md), установив отношения доверия между приложением и платформой Microsoft Identity.
 
@@ -107,9 +107,9 @@ msalInstance.handleRedirectPromise().then((tokenResponse) => {
 
 Существует три возможных результата из обещания:
 
-- `.then`вызывается и `tokenResponse` является истинным: приложение возвращается из операции перенаправления, которая была успешной.
-- `.then`вызывается метод и `tokenResponse` имеет значение false ( `null` ): приложение не возвращает значение из операции перенаправления.
-- `.catch`вызывается: приложение возвращается из операции перенаправления, и произошла ошибка.
+- `.then` вызывается и `tokenResponse` является истинным: приложение возвращается из операции перенаправления, которая была успешной.
+- `.then` вызывается метод и `tokenResponse` имеет значение false ( `null` ): приложение не возвращает значение из операции перенаправления.
+- `.catch` вызывается: приложение возвращается из операции перенаправления, и произошла ошибка.
 
 ## <a name="initialize-msaljs-1x-apps"></a>Инициализация приложений MSAL.js 1. x
 

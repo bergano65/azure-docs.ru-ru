@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. создание конвейера CI/CD для языка программирования Go с помощью Azure DevOps Starter
+title: Краткое руководство. Создание конвейера CI/CD для языка программирования Go с помощью Azure DevOps Starter
 description: Служба DevOps Starter позволяет быстро приступить к работе с Azure. Эта функция позволяет запустить веб-приложение на языке Go в службе Azure, выполнив несколько простых действий.
 ms.prod: devops
 ms.technology: devops-cicd
@@ -13,16 +13,16 @@ ms.topic: quickstart
 ms.date: 07/09/2018
 ms.author: mlearned
 ms.custom: mvc
-ms.openlocfilehash: 02304758ef89ff7c94d1c3d8f98f6931ab7fd8dc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ad62b59587f5ef7823e601cd8b6b526b75b8fd03
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82233131"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91854619"
 ---
 # <a name="create-a-cicd-pipeline-for-go-using-azure-devops-starter"></a>Создание конвейера CI/CD для Go с помощью Azure DevOps Starter
 
-Настройте непрерывную интеграцию (CI) и непрерывную доставку (CD) для приложения Go с помощью Azure DevOps Starter. DevOps Starter упрощает первоначальную настройку конвейера сборки и выпуска Azure DevOps.
+Настройте непрерывную интеграцию (CI) и непрерывную поставку (CD) для приложения Go с помощью Azure DevOps Starter. DevOps Starter упрощает первоначальную настройку конвейера сборки и выпуска Azure DevOps.
 
 Если у вас нет подписки Azure, вы можете получить ее бесплатно с помощью [Visual Studio Dev Essentials](https://visualstudio.microsoft.com/dev-essentials/).
 
@@ -50,7 +50,7 @@ DevOps Starter позволяет создать конвейер CI/CD в Azure
 
 1. Задайте имя проекта Azure DevOps. 
 
-1. Выберите подписку Azure и расположение, введите имя для приложения и нажмите кнопку **Готово**. Через несколько минут панель мониторинга DevOps Starter отобразится в портал Azure. Пример приложения настраивается в репозитории в организации Azure DevOps, после чего выполняется сборка и развертывание приложения в Azure. 
+1. Выберите подписку Azure и расположение, введите имя для приложения и нажмите кнопку **Готово**. Через несколько минут панель мониторинга DevOps Starter отобразится на портале Azure. Пример приложения настраивается в репозитории в организации Azure DevOps, после чего выполняется сборка и развертывание приложения в Azure. 
 
     Панель мониторинга позволяет просматривать репозиторий кода, конвейер CI/CD и приложение в Azure. В области справа выберите **Обзор** для просмотра выполняющегося приложения.
 
@@ -58,9 +58,9 @@ DevOps Starter позволяет создать конвейер CI/CD в Azure
 
 ## <a name="commit-your-code-changes-and-execute-the-cicd"></a>Фиксация изменений, внесенных в код, и выполнение процесса CI/CD
 
-DevOps Starter создает репозиторий Git в Azure Repos или GitHub. Выполните следующие действия, чтобы просмотреть репозиторий и внести изменения в код приложения.
+DevOps Starter создает репозиторий Git в Azure Repos или на сайте GitHub. Выполните следующие действия, чтобы просмотреть репозиторий и внести изменения в код приложения.
 
-1. На левой панели DevOps Starter выберите ссылку для главной ветви. По этой ссылке откроется представление созданного репозитория Git.
+1. В левой части окна DevOps Starter выберите ссылку на главную ветвь. По этой ссылке откроется представление созданного репозитория Git.
 
 1. Чтобы просмотреть URL-адрес для клонирования репозитория, щелкните **Клонировать** в правом верхнем углу. Вы можете клонировать свой репозиторий Git в предпочитаемую интегрированную среду разработки. В следующих нескольких шагах вы можете использовать веб-браузер для создания и фиксации изменений кода непосредственно в главной ветви.
 
@@ -123,4 +123,4 @@ DevOps Starter создает репозиторий Git в Azure Repos или G
 См. дополнительные сведения об изменении конвейеров сборки и выпуска в соответствии с потребностями разработчиков:
 
 > [!div class="nextstepaction"]
-> [Define your multi-stage continuous deployment (CD) pipeline](https://docs.microsoft.com/azure/devops/pipelines/release/define-multistage-release-process?view=vsts) (Настройка многоэтапного конвейера для непрерывного развертывания)
+> [Define your multi-stage continuous deployment (CD) pipeline](/azure/devops/pipelines/release/define-multistage-release-process?view=vsts) (Настройка многоэтапного конвейера для непрерывного развертывания)

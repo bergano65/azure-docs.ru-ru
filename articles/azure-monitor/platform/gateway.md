@@ -7,10 +7,10 @@ author: bwren
 ms.author: bwren
 ms.date: 12/24/2019
 ms.openlocfilehash: 94c668e7ffaff81fed9c2e511bc38239069fa43e
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87305216"
 ---
 # <a name="connect-computers-without-internet-access-by-using-the-log-analytics-gateway-in-azure-monitor"></a>Подключение компьютеров без доступа к Интернету с помощью шлюза Log Analytics в Azure Monitor
@@ -82,7 +82,7 @@ ms.locfileid: "87305216"
 - Польский
 - Португальский (Бразилия)
 - Португальский (Португалия)
-- русском языке
+- Русский
 - испанский (международный).
 
 ### <a name="supported-encryption-protocols"></a>Поддерживаемые протоколы шифрования
@@ -114,7 +114,7 @@ ms.locfileid: "87305216"
  
    ![Снимок экрана с инструкциями по скачиванию шлюза Log Analytics](./media/gateway/download-gateway.png)
 
-или диспетчер конфигурации служб 
+или 
 
 1. В колонке рабочей области в разделе **Параметры** щелкните **Дополнительные параметры**.
 1. Перейдите в раздел **подключенные источники**  >  **серверы Windows** и выберите **Скачать log Analytics шлюз**.
@@ -305,13 +305,13 @@ Msiexec.exe /I "oms gateway.msi" /qn PORTNUMBER=8080 PROXY="10.80.2.200" HASPROX
 
 Если компьютер зарегистрирован в качестве гибридной рабочей роли Runbook автоматически, например, если Управление обновлениями решение включено для одной или нескольких виртуальных машин, выполните следующие действия.
 
-1. Добавьте URL-адреса службы Job Runtime Data в список разрешенных узлов в шлюзе Log Analytics. Пример: `Add-OMSGatewayAllowedHost we-jobruntimedata-prod-su1.azure-automation.net`
+1. Добавьте URL-адреса службы Job Runtime Data в список разрешенных узлов в шлюзе Log Analytics. Например: `Add-OMSGatewayAllowedHost we-jobruntimedata-prod-su1.azure-automation.net`
 1. Перезапустите службу шлюза Log Analytics, используя командлет PowerShell `Restart-Service OMSGatewayService`.
 
 Если компьютер присоединен к службе автоматизации Azure с помощью командлета регистрации гибридной рабочей роли Runbook, выполните следующие действия.
 
-1. Добавьте URL-адрес для внесения службы агента в список разрешенных узлов в шлюзе Log Analytics. Пример: `Add-OMSGatewayAllowedHost ncus-agentservice-prod-1.azure-automation.net`
-1. Добавьте URL-адреса службы Job Runtime Data в список разрешенных узлов в шлюзе Log Analytics. Пример: `Add-OMSGatewayAllowedHost we-jobruntimedata-prod-su1.azure-automation.net`
+1. Добавьте URL-адрес для внесения службы агента в список разрешенных узлов в шлюзе Log Analytics. Например: `Add-OMSGatewayAllowedHost ncus-agentservice-prod-1.azure-automation.net`
+1. Добавьте URL-адреса службы Job Runtime Data в список разрешенных узлов в шлюзе Log Analytics. Например: `Add-OMSGatewayAllowedHost we-jobruntimedata-prod-su1.azure-automation.net`
 1. Перезапустите службу шлюза Log Analytics.
     `Restart-Service OMSGatewayService`
 
@@ -321,7 +321,7 @@ Msiexec.exe /I "oms gateway.msi" /qn PORTNUMBER=8080 PROXY="10.80.2.200" HASPROX
 
 1. Установите шлюз Log Analytics (Microsoft установщик Windows).
 1. Откройте окно консоли PowerShell.
-1. Импортируйте модуль, введя следующую команду:`Import-Module OMSGateway`
+1. Импортируйте модуль, введя следующую команду: `Import-Module OMSGateway`
 1. Если при выполнении предыдущего шага не произошла ошибка, значит импорт модуля выполнен успешно и вы можете использовать командлеты. Введите `Get-Module OMSGateway`
 1. После использования командлетов для внесения изменений перезапустите службу шлюза OMS.
 
@@ -329,10 +329,10 @@ Msiexec.exe /I "oms gateway.msi" /qn PORTNUMBER=8080 PROXY="10.80.2.200" HASPROX
 
 | **Командлет** | **Параметры** | **Описание** | **Пример** |
 | --- | --- | --- | --- |  
-| `Get-OMSGatewayConfig` |Key |Получает конфигурацию службы |`Get-OMSGatewayConfig` |  
+| `Get-OMSGatewayConfig` |Ключ |Получает конфигурацию службы |`Get-OMSGatewayConfig` |  
 | `Set-OMSGatewayConfig` |Ключ (обязательно) <br> Значение |Изменяет конфигурацию службы |`Set-OMSGatewayConfig -Name ListenPort -Value 8080` |  
 | `Get-OMSGatewayRelayProxy` | |Получает адрес (и учетные данные) прокси-сервера ретрансляции (вышестоящего) |`Get-OMSGatewayRelayProxy` |  
-| `Set-OMSGatewayRelayProxy` |Адрес<br> Имя пользователя<br> Пароль (защищенная строка) |Задает адрес (и учетные данные) прокси-сервера ретрансляции (вышестоящего) |1. Задайте прокси-сервер ретрансляции и учетные данные:<br> `Set-OMSGatewayRelayProxy`<br>`-Address http://www.myproxy.com:8080`<br>`-Username user1 -Password 123` <br><br> 2. Укажите прокси-сервер ретрансляции, для которого не требуется проверка подлинности:`Set-OMSGatewayRelayProxy`<br> `-Address http://www.myproxy.com:8080` <br><br> 3. Очистите параметр прокси-сервера ретрансляции:<br> `Set-OMSGatewayRelayProxy` <br> `-Address ""` |  
+| `Set-OMSGatewayRelayProxy` |Адрес<br> Имя пользователя<br> Пароль (защищенная строка) |Задает адрес (и учетные данные) прокси-сервера ретрансляции (вышестоящего) |1. Задайте прокси-сервер ретрансляции и учетные данные:<br> `Set-OMSGatewayRelayProxy`<br>`-Address http://www.myproxy.com:8080`<br>`-Username user1 -Password 123` <br><br> 2. Укажите прокси-сервер ретрансляции, для которого не требуется проверка подлинности: `Set-OMSGatewayRelayProxy`<br> `-Address http://www.myproxy.com:8080` <br><br> 3. Очистите параметр прокси-сервера ретрансляции:<br> `Set-OMSGatewayRelayProxy` <br> `-Address ""` |  
 | `Get-OMSGatewayAllowedHost` | |Получает разрешенный в данный момент узел (только локально настроенный разрешенный узел, не загружает разрешенные узлы автоматически) |`Get-OMSGatewayAllowedHost` | 
 | `Add-OMSGatewayAllowedHost` |Узел (обязательно) |Добавляет узел в список разрешенных |`Add-OMSGatewayAllowedHost -Host www.test.com` |  
 | `Remove-OMSGatewayAllowedHost` |Узел (обязательно) |Удаляет узел из списка разрешенных |`Remove-OMSGatewayAllowedHost`<br> `-Host www.test.com` |  

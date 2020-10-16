@@ -10,10 +10,10 @@ ms.date: 09/22/2020
 ms.author: cherylmc
 ms.custom: fasttrack-edit
 ms.openlocfilehash: d44964b5aed55e2ee70d18e6be5d632b652956e1
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90976264"
 ---
 # <a name="scenario-route-traffic-through-an-nva"></a>Сценарий: маршрутизация трафика через NVA
@@ -39,7 +39,7 @@ ms.locfileid: "90976264"
 
 **Матрица подключения**
 
-| Как получить             | В:|   *NVA спицы*|*NVA виртуальных сетей*|*Не NVA виртуальных сетей*|*Ветви*|
+| Как получить             | на:|   *NVA спицы*|*NVA виртуальных сетей*|*Не NVA виртуальных сетей*|*Ветви*|
 |---|---|---|---|---|---|
 | **NVA спицы**   | &#8594; | 0/0 UDR  |  Пиринг |   0/0 UDR    |  0/0 UDR  |
 | **NVA виртуальных сетей**    | &#8594; |   Статические |      X   |        X     |      X    |
@@ -99,7 +99,7 @@ ms.locfileid: "90976264"
 
 **Рис. 2**
 
-:::image type="content" source="./media/routing-scenarios/nva/nva.png" alt-text="Рис. 2" lightbox="./media/routing-scenarios/nva/nva.png":::
+:::image type="content" source="./media/routing-scenarios/nva/nva.png" alt-text="Рис. 1" lightbox="./media/routing-scenarios/nva/nva.png":::
 
 ## <a name="scenario-workflow"></a><a name="workflow"></a>Рабочий процесс сценария
 
@@ -117,7 +117,7 @@ ms.locfileid: "90976264"
 
 2. Добавьте агрегированную статическую запись маршрута для виртуальных сетей 2, 5, 6 в таблицу маршрутов по умолчанию Hub 1.
 
-   :::image type="content" source="./media/routing-scenarios/nva/nva-static-expand.png" alt-text="Пример":::
+   :::image type="content" source="./media/routing-scenarios/nva/nva-static-expand.png" alt-text="Рис. 1":::
 
 3. Настройте статический маршрут для виртуальных сетей 5, 6 в виртуальном сетевом подключении виртуальной сети 2. Сведения о настройке конфигурации маршрутизации для подключения к виртуальной сети см. в разделе [Маршрутизация виртуальных концентраторов](how-to-virtual-hub-routing.md#routing-configuration).
 
@@ -129,7 +129,7 @@ ms.locfileid: "90976264"
 
 **Рис. 3**
 
-   :::image type="content" source="./media/routing-scenarios/nva/nva-result.png" alt-text="Рис. 3" lightbox="./media/routing-scenarios/nva/nva-result.png":::
+   :::image type="content" source="./media/routing-scenarios/nva/nva-result.png" alt-text="Рис. 1" lightbox="./media/routing-scenarios/nva/nva-result.png":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

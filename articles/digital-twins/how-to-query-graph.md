@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 3/26/2020
 ms.topic: conceptual
 ms.service: digital-twins
-ms.openlocfilehash: 72658a97f89b14529e8ccb3639cb1b78f1b92316
-ms.sourcegitcommit: efaf52fb860b744b458295a4009c017e5317be50
+ms.openlocfilehash: 127fd9a9e47a85479018524998e33f44b0a65ba8
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91848813"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92078482"
 ---
 # <a name="query-the-azure-digital-twins-twin-graph"></a>Запрос к графу Azure Digital двойников двойника
 
@@ -43,6 +43,96 @@ FROM DIGITALTWINS
 SELECT TOP (5)
 FROM DIGITALTWINS
 WHERE ...
+```
+
+### <a name="count-items"></a>Количество элементов
+
+Количество элементов в результирующем наборе можно подсчитать с помощью `Select COUNT` предложения:
+
+```sql
+SELECT COUNT() 
+FROM DIGITALTWINS
+``` 
+
+Добавьте `WHERE` предложение для подсчета количества элементов, соответствующих определенным критериям. Ниже приведены некоторые примеры инвентаризации с примененным фильтром на основе типа модели двойника (Дополнительные сведения об этом синтаксисе см. в разделе [*запрос по модели*](#query-by-model) ниже).
+
+```sql
+SELECT COUNT() 
+FROM DIGITALTWINS 
+WHERE IS_OF_MODEL('dtmi:sample:Room;1') 
+SELECT COUNT() 
+FROM DIGITALTWINS c 
+WHERE IS_OF_MODEL('dtmi:sample:Room;1') AND c.Capacity > 20
+```
+
+Также можно использовать `COUNT` вместе с `JOIN` предложением. Ниже приведен запрос, который подсчитывает все лампочки, содержащиеся в светлых панелях комнат 1 и 2:
+
+```sql
+SELECT COUNT()  
+FROM DIGITALTWINS Room  
+JOIN LightPanel RELATED Room.contains  
+JOIN LightBulb RELATED LightPanel.contains  
+WHERE IS_OF_MODEL(LightPanel, 'dtmi:contoso:com:lightpanel;1')  
+AND IS_OF_MODEL(LightBulb, 'dtmi:contoso:com:lightbulb ;1')  
+AND Room.$dtId IN ['room1', 'room2'] 
+```
+
+### <a name="specify-return-set-with-projections"></a>Указание возвращаемого набора с проекциями
+
+С помощью проекций можно выбрать, какие столбцы будут возвращены запросом. 
+
+>[!NOTE]
+>В настоящее время сложные свойства не поддерживаются. Чтобы обеспечить допустимость свойств проекции, объедините проекции с помощью `IS_PRIMITIVE` проверки. 
+
+Ниже приведен пример запроса, который использует проекцию для возврата двойников и связей. Следующий запрос проецирует *потребитель*, *фабрику* и *ребро* из сценария, в котором *фабрика* с идентификатором *ABC* связана с *потребителем* через связь *фабрики. Customer*, и эта связь представлена в качестве *границы*.
+
+```sql
+SELECT Consumer, Factory, Edge 
+FROM DIGITALTWINS Factory 
+JOIN Consumer RELATED Factory.customer Edge 
+WHERE Factory.$dtId = 'ABC' 
+```
+
+Можно также использовать проекцию для возвращения свойства двойника. Следующий запрос проецирует свойство *Name* объектов- *получателей* , связанных с *фабрикой* , с идентификатором *ABC* с помощью связи *фабрики. Customer*. 
+
+```sql
+SELECT Consumer.name 
+FROM DIGITALTWINS Factory 
+JOIN Consumer RELATED Factory.customer Edge 
+WHERE Factory.$dtId = 'ABC' 
+AND IS_PRIMITIVE(Consumer.name)
+```
+
+Можно также использовать проекцию для возврата свойства связи. Как и в предыдущем примере, следующий запрос проецирует свойство *Name* *потребителей* , связанных с *фабрикой* , с идентификатором *ABC* через связь *Factory. Customer*; но теперь он также возвращает два свойства этой связи: *Prop1* и *Prop2*. Это достигается путем именования *границы* связи и сбора ее свойств.  
+
+```sql
+SELECT Consumer.name, Edge.prop1, Edge.prop2, Factory.area 
+FROM DIGITALTWINS Factory 
+JOIN Consumer RELATED Factory.customer Edge 
+WHERE Factory.$dtId = 'ABC' 
+AND IS_PRIMITIVE(Factory.area) AND IS_PRIMITIVE(Consumer.name) AND IS_PRIMITIVE(Edge.prop1) AND IS_PRIMITIVE(Edge.prop2)
+```
+
+Можно также использовать псевдонимы для упрощения запросов с помощью проекции.
+
+Следующий запрос выполняет те же операции, что и предыдущий пример, но присваивает имена свойств `consumerName` , `first` `second` и `factoryArea` . 
+ 
+```sql
+SELECT Consumer.name AS consumerName, Edge.prop1 AS first, Edge.prop2 AS second, Factory.area AS factoryArea 
+FROM DIGITALTWINS Factory 
+JOIN Consumer RELATED Factory.customer Edge 
+WHERE Factory.$dtId = 'ABC' 
+AND IS_PRIMITIVE(Factory.area) AND IS_PRIMITIVE(Consumer.name) AND IS_PRIMITIVE(Edge.prop1) AND IS_PRIMITIVE(Edge.prop2)" 
+```
+
+Вот похожий запрос, который запрашивает тот же набор, что и приведенный выше, но проецирует только свойство *Consumer.Name* как и `consumerName` проецирует готовую *фабрику* как двойника. 
+
+```sql
+SELECT Consumer.name AS consumerName, Factory 
+FROM DIGITALTWINS Factory 
+JOIN Consumer RELATED Factory.customer Edge 
+WHERE Factory.$dtId = 'ABC' 
+AND IS_PRIMITIVE(Factory.area) AND IS_PRIMITIVE(Consumer.name) 
 ```
 
 ### <a name="query-by-property"></a>Запрос по свойству
@@ -192,7 +282,7 @@ AND Room.$dtId IN ['room1', 'room2']
 
 Поддерживаются следующие операторы:
 
-| Family | Операторы |
+| Семейство | Операторы |
 | --- | --- |
 | Логические |AND, OR, NOT |
 | Сравнение |=,! =, <, >, <=, >= |

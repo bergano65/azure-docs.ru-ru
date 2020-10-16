@@ -9,10 +9,10 @@ ms.service: iot-central
 services: iot-central
 manager: philmea
 ms.openlocfilehash: 660f6dfae23331455408ae7127274550a3a4cc3a
-ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90019841"
 ---
 # <a name="customize-the-azure-iot-central-ui"></a>Настройка пользовательского интерфейса IoT Central Azure
@@ -71,7 +71,7 @@ ms.locfileid: "90019841"
 > [!NOTE]
 > Вы всегда можете вернуться к ссылкам справки по умолчанию на странице **Настройка справки** .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы узнали, как настроить пользовательский интерфейс в приложении IoT Central, вот несколько предлагаемых дальнейших действий:
 

@@ -8,10 +8,10 @@ ms.subservice: hyperscale-citus
 ms.topic: how-to
 ms.date: 07/27/2020
 ms.openlocfilehash: 46b842994cbcf7efe66d5992c79246d77626e268
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90907402"
 ---
 # <a name="configure-hyperscale-citus-high-availability"></a>Настройка высокой доступности Цитус
@@ -29,8 +29,8 @@ ms.locfileid: "90907402"
 
 На вкладке **Обзор** группы серверов будут перечислены все узлы и их резервы, а также столбец с **высоким уровнем доступности** , указывающий, успешно ли включен уровень доступности для каждого узла.
 
-:::image type="content" source="./media/howto-hyperscale-high-availability/02-ha-column.png" alt-text="столбец ha в обзоре группы серверов":::
+:::image type="content" source="./media/howto-hyperscale-high-availability/02-ha-column.png" alt-text="ползунок высокой доступности":::
 
-### <a name="next-steps"></a>Дальнейшие действия
+### <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о [высокой доступности](concepts-hyperscale-high-availability.md).

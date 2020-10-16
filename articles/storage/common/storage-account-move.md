@@ -10,10 +10,10 @@ ms.date: 05/11/2020
 ms.author: normesta
 ms.reviewer: dineshm
 ms.openlocfilehash: a5b9b4c7d3bdd0c68d3a91a39972389e48ed910d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85515008"
 ---
 # <a name="move-an-azure-storage-account-to-another-region"></a>Перемещение учетной записи хранения Azure в другой регион
@@ -31,7 +31,7 @@ ms.locfileid: "85515008"
 > * Перемещение данных в новую учетную запись хранения.
 > * Удалите ресурсы из исходного региона.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Убедитесь, что службы и функции, используемые вашей учетной записью, поддерживаются в целевом регионе.
 
@@ -109,9 +109,9 @@ ms.locfileid: "85515008"
 
     ![Библиотека шаблонов Azure Resource Manager](./media/storage-account-move/azure-resource-manager-template-library.png)
 
-4. Выберите **Создать**.
+4. Нажмите кнопку **создания**.
 
-5. Выберите **создать собственный шаблон в редакторе**.
+5. Выберите **Создать собственный шаблон в редакторе**.
 
 6. Выберите **загрузить файл**и следуйте инструкциям по загрузке **template.jsв** файл, скачанный в предыдущем разделе.
 
@@ -268,7 +268,7 @@ Remove-AzStorageAccount -ResourceGroupName  $resourceGroup -AccountName $storage
 ```
 ---
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы переместили учетную запись хранения Azure из одного региона в другой и очистили исходные ресурсы.  Дополнительные сведения о перемещении ресурсов между регионами и аварийном восстановлении в Azure см. по следующей ссылке:
 

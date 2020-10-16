@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 11/4/2019
 ms.author: caya
 ms.openlocfilehash: 0652c49acf58a52244cc27ae3e59120ac7f03858
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84807108"
 ---
 # <a name="install-an-application-gateway-ingress-controller-agic-using-an-existing-application-gateway"></a>Установка контроллера входящего трафика шлюза приложений (АГИК) с помощью существующего шлюза приложений
@@ -27,7 +27,7 @@ ms.locfileid: "84807108"
 - [Установка контроллера входящего трафика с помощью Helm](#install-ingress-controller-as-a-helm-chart)
 - [Шлюз приложений с несколькими кластерами и общим доступом](#multi-cluster--shared-application-gateway). Установите агик в среде, где шлюз приложений является общим для одного или нескольких кластеров AKS и (или) других компонентов Azure.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 В этом документе предполагается, что у вас уже установлены следующие средства и инфраструктура:
 - [AKS](https://azure.microsoft.com/services/kubernetes-service/) с включенной поддержкой [расширенных сетей](https://docs.microsoft.com/azure/aks/configure-azure-cni)
 - [Шлюз приложений версии 2](https://docs.microsoft.com/azure/application-gateway/create-zone-redundant) в той же виртуальной сети, что и AKS
@@ -36,7 +36,7 @@ ms.locfileid: "84807108"
 
 Перед установкой АГИК создайте __резервную копию конфигурации шлюза приложений__ :
   1. с помощью [портал Azure](https://portal.azure.com/) перейдите к своему `Application Gateway` экземпляру
-  2. из `Export template` Click`Download`
+  2. из `Export template` Click `Download`
 
 Скачанный ZIP-файл будет содержать шаблоны JSON, bash и скрипты PowerShell, которые можно использовать для восстановления шлюза приложений, если это необходимо.
 
@@ -79,7 +79,7 @@ ms.locfileid: "84807108"
 Далее нам нужно создать удостоверение Azure и дать ему права на ARM.
 Используйте [Cloud Shell](https://shell.azure.com/) , чтобы выполнить все приведенные ниже команды и создать удостоверение.
 
-1. Создайте удостоверение Azure **в той же группе ресурсов, что и узлы AKS**. Важно выбрать правильную группу ресурсов. Группа ресурсов, необходимая в приведенной ниже команде, *не* является ссылкой на область портала AKS. Это группа ресурсов `aks-agentpool` виртуальных машин. Обычно эта группа ресурсов начинается с `MC_` и содержит имя AKS. Например:`MC_resourceGroup_aksABCD_westus`
+1. Создайте удостоверение Azure **в той же группе ресурсов, что и узлы AKS**. Важно выбрать правильную группу ресурсов. Группа ресурсов, необходимая в приведенной ниже команде, *не* является ссылкой на область портала AKS. Это группа ресурсов `aks-agentpool` виртуальных машин. Обычно эта группа ресурсов начинается с `MC_` и содержит имя AKS. Например: `MC_resourceGroup_aksABCD_westus`
 
     ```azurecli
     az identity create -g <agent-pool-resource-group> -n <identity-name>
@@ -91,9 +91,9 @@ ms.locfileid: "84807108"
     az identity show -g <resourcegroup> -n <identity-name>
     ```
 
-1. Предоставьте удостоверению `Contributor` доступ к шлюзу приложений. Для этого вам потребуется идентификатор шлюза приложений, который будет выглядеть примерно так:`/subscriptions/A/resourceGroups/B/providers/Microsoft.Network/applicationGateways/C`
+1. Предоставьте удостоверению `Contributor` доступ к шлюзу приложений. Для этого вам потребуется идентификатор шлюза приложений, который будет выглядеть примерно так: `/subscriptions/A/resourceGroups/B/providers/Microsoft.Network/applicationGateways/C`
 
-    Получите список идентификаторов шлюзов приложений в подписке с помощью:`az network application-gateway list --query '[].id'`
+    Получите список идентификаторов шлюзов приложений в подписке с помощью: `az network application-gateway list --query '[].id'`
 
     ```azurecli
     az role assignment create \
@@ -102,7 +102,7 @@ ms.locfileid: "84807108"
         --scope <App-Gateway-ID>
     ```
 
-1. Предоставьте удостоверению `Reader` доступ к группе ресурсов шлюза приложений. Идентификатор группы ресурсов будет выглядеть следующим образом: `/subscriptions/A/resourceGroups/B` . Все группы ресурсов можно получить с помощью:`az group list --query '[].id'`
+1. Предоставьте удостоверению `Reader` доступ к группе ресурсов шлюза приложений. Идентификатор группы ресурсов будет выглядеть следующим образом: `/subscriptions/A/resourceGroups/B` . Все группы ресурсов можно получить с помощью: `az group list --query '[].id'`
 
     ```azurecli
     az role assignment create \
@@ -239,13 +239,13 @@ armAuth:
 
 Перед включением этого параметра создайте __резервную копию конфигурации шлюза приложений__ :
   1. с помощью [портал Azure](https://portal.azure.com/) перейдите к своему `Application Gateway` экземпляру
-  2. из `Export template` Click`Download`
+  2. из `Export template` Click `Download`
 
 Скачанный ZIP-файл будет содержать шаблоны JSON, bash и сценарии PowerShell, которые можно использовать для восстановления шлюза приложений.
 
 ### <a name="example-scenario"></a>Пример сценария
 Рассмотрим воображаемый шлюз приложений, который управляет трафиком для двух веб-сайтов:
-  - `dev.contoso.com`— размещается в новом AKS с использованием шлюза приложений и АГИК
+  - `dev.contoso.com` — размещается в новом AKS с использованием шлюза приложений и АГИК
   - `prod.contoso.com`— размещено в [масштабируемом наборе виртуальных машин Azure](https://azure.microsoft.com/services/virtual-machine-scale-sets/) ;
 
 При использовании параметров по умолчанию АГИК предполагает владение шлюзом приложений на 100%, на который указывает. АГИК перезаписывает все настройки шлюза приложений. Если необходимо вручную создать прослушиватель для `prod.contoso.com` (в шлюзе приложений), не определяя его в Kubernetes входящих данных, агик удалит конфигурацию в течение нескольких `prod.contoso.com` секунд.

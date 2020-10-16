@@ -8,13 +8,13 @@ ms.service: key-vault
 ms.subservice: general
 ms.topic: conceptual
 ms.openlocfilehash: c8d2304017a8fccd83c9c64559b8c5edf48481b7
-ms.sourcegitcommit: ffa7a269177ea3c9dcefd1dea18ccb6a87c03b70
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91604448"
 ---
-# <a name="key-vault-authentication-fundamentals"></a>Основы проверки подлинности Key Vault
+# <a name="key-vault-authentication-fundamentals"></a>Основы проверки подлинности в Key Vault
 
 Azure Key Vault позволяет безопасно хранить учетные данные приложений, такие как секреты, ключи и сертификаты, в центральном и безопасном облачном репозитории, а также управлять ими. Key Vault исключает необходимость хранить учетные данные в приложениях. Приложения могут проходить проверку подлинности в Key Vault во время выполнения для получения учетных данных.
 

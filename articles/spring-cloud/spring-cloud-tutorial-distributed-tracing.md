@@ -8,16 +8,16 @@ ms.date: 10/06/2019
 ms.author: brendm
 ms.custom: devx-track-java
 zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: 97926d5bdf3123ae50714d36ad0234872f67aa96
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 30eb19e418292e74989be81d94ed684c917f6971
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90908292"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92088641"
 ---
 # <a name="use-distributed-tracing-with-azure-spring-cloud"></a>Использование распределенной трассировки в Azure Spring Cloud
 
-Инструменты распределенной трассировки в Azure Spring Cloud позволяют легко выполнять отладку и мониторинг сложных проблем. Azure Spring Cloud интегрирует [Spring Cloud Sleuth](https://spring.io/projects/spring-cloud-sleuth) с Azure [Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview). Эта интеграция предоставляет мощные возможности распределенной трассировки через портал Azure.
+Инструменты распределенной трассировки в Azure Spring Cloud позволяют легко выполнять отладку и мониторинг сложных проблем. Azure Spring Cloud интегрирует [Spring Cloud Sleuth](https://spring.io/projects/spring-cloud-sleuth) с Azure [Application Insights](../azure-monitor/app/app-insights-overview.md). Эта интеграция предоставляет мощные возможности распределенной трассировки через портал Azure.
 
 ::: zone pivot="programming-language-csharp"
 Из этой статьи вы узнаете, как разрешить приложению .NET Core Стилтое использовать распределенную трассировку.
@@ -144,15 +144,15 @@ spring.sleuth.sampler.probability=0.5
 
 ## <a name="view-the-application-map"></a>Просмотр схемы приложений
 
-Вернитесь на страницу **Распределенная трассировка** и выберите действие **Просмотреть схему приложений**. Проверьте визуальное представление приложения и параметры мониторинга. Сведения об использовании схемы приложения см. в [статье о рассмотрении распределенных приложений](https://docs.microsoft.com/azure/azure-monitor/app/app-map).
+Вернитесь на страницу **Распределенная трассировка** и выберите действие **Просмотреть схему приложений**. Проверьте визуальное представление приложения и параметры мониторинга. Сведения об использовании схемы приложения см. в [статье о рассмотрении распределенных приложений](../azure-monitor/app/app-map.md).
 
 ## <a name="use-search"></a>Использование поиска
 
-Используйте функцию поиска для запроса других конкретных элементов телеметрии. На странице **Distributed Tracing** (Распределенная трассировка) выберите **Поиск**. Дополнительные сведения об использовании функции поиска см. в статье [Поиск в Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/diagnostic-search).
+Используйте функцию поиска для запроса других конкретных элементов телеметрии. На странице **Distributed Tracing** (Распределенная трассировка) выберите **Поиск**. Дополнительные сведения об использовании функции поиска см. в статье [Поиск в Application Insights](../azure-monitor/app/diagnostic-search.md).
 
 ## <a name="use-application-insights"></a>Использование Application Insights
 
-Кроме функций поиска и схемы приложений Application Insights предоставляет возможности для мониторинга. Найдите на портале Azure имя своего приложения и откройте для него страницу Application Insights, чтобы получить сведения о мониторинге. Дополнительные сведения об использовании этих средств см. в [документации по запросам к журналам Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/query-language).
+Кроме функций поиска и схемы приложений Application Insights предоставляет возможности для мониторинга. Найдите на портале Azure имя своего приложения и откройте для него страницу Application Insights, чтобы получить сведения о мониторинге. Дополнительные сведения об использовании этих средств см. в [документации по запросам к журналам Azure Monitor](/azure/data-explorer/kusto/query/).
 
 ## <a name="disable-application-insights"></a>Отключение Application Insights
 

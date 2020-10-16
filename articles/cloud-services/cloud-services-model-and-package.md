@@ -7,12 +7,12 @@ ms.service: cloud-services
 ms.topic: article
 ms.date: 07/05/2017
 ms.author: tagore
-ms.openlocfilehash: 32603f4ab33e020245861e5dc66d2ade545fa627
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 180295599082a762fc525c4740079ceefc0954a1
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79247492"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92077190"
 ---
 # <a name="what-is-the-cloud-service-model-and-how-do-i-package-it"></a>Что такое модель облачных служб и как создать ее пакет?
 Облачная служба создается из трех компонентов: определения службы *(CSDEF-файл)*, конфигурации службы *(CSCFG-файл)* и пакета службы *(CSPKG-файл)*. Файлы **ServiceDefinition.csdef** и **ServiceConfig.cscfg** являются XML-файлами, которые описывают структуру облачной службы и ее конфигурацию. В совокупности это называется моделью. **ServicePackage.cspkg** — это ZIP-файл, который создается на основе файла **ServiceDefinition.csdef** и который, помимо прочего, содержит все необходимые зависимости в двоичном формате. Azure создает облачную службу из двух файлов: **ServicePackage.cspkg** и **ServiceConfig.cscfg**.
@@ -85,7 +85,7 @@ ms.locfileid: "79247492"
 
 Чтобы лучше понять используемую здесь схему XML, изучите статью [Схема определения службы](/previous-versions/azure/reference/ee758711(v=azure.100)). В ней приводится краткое описание некоторых элементов.
 
-**Черн**  
+**Сайты**  
  Содержит определения для веб-сайтов или веб-приложений, размещаемых в IIS7.
 
 **InputEndpoints**  
@@ -103,7 +103,7 @@ ms.locfileid: "79247492"
 **LocalResources**  
  Содержит определения для локальных ресурсов хранилища. Локальный ресурс хранилища — это зарезервированный каталог в файловой системе виртуальной машины, в которой выполняется экземпляр роли.
 
-**Импорт**  
+**Импортирует**  
  Содержит определения для импортированных модулей. В предыдущем примере кода показаны модули для удаленного рабочего стола и Azure Connect.
 
 **Запуск**  
@@ -136,7 +136,7 @@ ms.locfileid: "79247492"
 
 Чтобы лучше понять используемую здесь схему XML, см. статью [Service Configuration Schema](/previous-versions/azure/reference/ee758710(v=azure.100)) (Схема конфигурации службы). В этой статье приводится краткое описание некоторых элементов.
 
-**Вхождений**  
+**Экземпляры**  
  Задает количество запущенных экземпляров для роли. Чтобы предотвратить возможную недоступность облачной службы во время обновлений, рекомендуется развернуть несколько экземпляров веб-ролей. Развертывая более одного экземпляра, вы выполните рекомендации [Соглашения об уровне обслуживания Azure Compute](https://azure.microsoft.com/support/legal/sla/), что гарантирует 99,95 % внешней доступности для ролей с выходом в Интернет, если для службы развернуто два (или более) экземпляра роли.
 
 **ConfigurationSettings**  
@@ -273,7 +273,7 @@ cspack [DirectoryName]\[ServiceDefinition]
 | \[PhysicalPath\] |Физические каталоги содержимого для каждого виртуального пути, заданного в узле «Сайт» определения службы. |
 | \[RoleAssemblyName\] |Имя двоичного файла для роли. |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Я создаю пакет облачной службы и я хочу выполнить следующие действия.
 
 * [Настроить удаленный рабочий стол для экземпляра облачной службы.][remotedesktop]
@@ -289,9 +289,6 @@ cspack [DirectoryName]\[ServiceDefinition]
 [deploy]: cloud-services-how-to-create-deploy-portal.md
 [remotedesktop]: cloud-services-role-enable-remote-desktop-new-portal.md
 [vs_remote]: cloud-services-role-enable-remote-desktop-visual-studio.md
-[vs_deploy]: ../vs-azure-tools-cloud-service-publish-set-up-required-services-in-visual-studio.md
-[vs_reconfigure]: ../vs-azure-tools-configure-roles-for-cloud-service.md
-[vs_create]: ../vs-azure-tools-azure-project-create.md
-
-
-
+[vs_deploy]: /visualstudio/azure/vs-azure-tools-cloud-service-publish-set-up-required-services-in-visual-studio
+[vs_reconfigure]: /visualstudio/azure/vs-azure-tools-configure-roles-for-cloud-service
+[vs_create]: /visualstudio/azure/vs-azure-tools-azure-project-create

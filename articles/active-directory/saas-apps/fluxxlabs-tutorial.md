@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 05/21/2020
 ms.author: jeedes
-ms.openlocfilehash: 756bbaab1cbf359def01e371e4370607bee67ce3
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 00cf3e33c87255485f7ea73526e474b0d941124b
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88554868"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91826375"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-fluxx-labs"></a>Руководство по Интеграция единого входа Azure Active Directory с Fluxx Labs
 
@@ -139,15 +139,15 @@ ms.locfileid: "88554868"
 
 2. Выберите **Admin** (Администратор) в разделе **Settings** (Параметры).
 
-    ![Конфигурация Fluxx Labs](./media/fluxxlabs-tutorial/config1.png)
+    ![Снимок экрана, на котором показан раздел "Settings" (Параметры) с выбранным параметром "Admin" (Администратор)](./media/fluxxlabs-tutorial/config1.png)
 
 3. На панели администрирования выберите **Plug-ins** > **Integrations** и **SAML SSO-(Disabled)** (Подключаемые модули > Интеграция > Единый вход SAML (отключен)).
 
-    ![Конфигурация Fluxx Labs](./media/fluxxlabs-tutorial/config2.png)
+    ![Снимок экрана, на котором показана вкладка "Integrations" (Интеграции) с выбранным параметром "SAML SSO - (Disabled)" (Единый вход SAML (отключен)).](./media/fluxxlabs-tutorial/config2.png)
 
 4. В разделе атрибутов выполните следующие действия.
 
-    ![Конфигурация Fluxx Labs](./media/fluxxlabs-tutorial/config3.png)
+    ![Снимок экрана, на котором показан раздел "Attributes" (Атрибуты) с установленным флажком "SAML SSO" (Единый вход SAML), значениями в полях и выбранной кнопкой "Save" (Сохранить)](./media/fluxxlabs-tutorial/config3.png)
 
     а. Установите флажок **SAML SSO** (Единый вход SAML).
 
@@ -180,11 +180,11 @@ ms.locfileid: "88554868"
 
 2. Щелкните показанный ниже **значок**.
 
-    ![Конфигурация Fluxx Labs](./media/fluxxlabs-tutorial/config6.png)
+    ![Снимок экрана, на котором показаны параметры администратора и выбран значок "Плюс" под разделом "Your Dashboard is Empty" (Ваша панель мониторинга пуста)](./media/fluxxlabs-tutorial/config6.png)
 
 3. На панели мониторинга щелкните показанный ниже значок, чтобы открыть карту **New PEOPLE** (Новые пользователи).
 
-    ![Конфигурация Fluxx Labs](./media/fluxxlabs-tutorial/config4.png)
+    ![Снимок экрана, на котором показано меню "Contact Management" (Управление контактами) и выбран значок "Плюс" рядом с выделенным пунктом "People" (Люди)](./media/fluxxlabs-tutorial/config4.png)
 
 4. В разделе **NEW PEOPLE** (Новые пользователи) выполните следующие действия:
 

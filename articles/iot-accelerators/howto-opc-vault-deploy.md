@@ -8,17 +8,17 @@ ms.topic: conceptual
 ms.service: industrial-iot
 services: iot-industrialiot
 manager: philmea
-ms.openlocfilehash: 365cb0912d84f0664b2a5432cd54cd553df62466
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 98dc9345d2c8b392fd094458b612857d6d454739
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91282029"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92071495"
 ---
 # <a name="build-and-deploy-the-opc-vault-certificate-management-service"></a>Создание и развертывание службы управления сертификатами хранилища OPC
 
 > [!IMPORTANT]
-> Пока мы обновляем эту статью, ознакомьтесь с наиболее актуальными материалами в [Azure для промышленного центра Интернета вещей](https://azure.github.io/Industrial-IoT/) .
+> Актуальную информацию по этой теме см. в статье [Промышленный Интернет вещей в Azure](https://azure.github.io/Industrial-IoT/).
 
 В этой статье объясняется, как развернуть службу управления сертификатами хранилища OPC в Azure.
 
@@ -31,7 +31,7 @@ ms.locfileid: "91282029"
 
 В настоящее время операция сборки и развертывания ограничена Windows.
 Примеры написаны для .NET Standard C#, для которых необходимо создать службу и примеры для развертывания.
-Все средства, необходимые для .NET Standard, входят в состав средств .NET Core. См. статью Начало [работы с .NET Core](https://docs.microsoft.com/dotnet/articles/core/getting-started).
+Все средства, необходимые для .NET Standard, входят в состав средств .NET Core. См. статью Начало [работы с .NET Core](/dotnet/articles/core/getting-started).
 
 1. [Установите .NET Core 2.1 +][dotnet-install].
 2. [Установите DOCKER][docker-url] (необязательно, только если требуется локальная сборка DOCKER).
@@ -97,7 +97,7 @@ cd azure-iiot-opc-vault-service
 2. Перейдите к группе ресурсов, в которой была развернута служба.
 3. Выберите **Удалить группу ресурсов** и подтвердите выбор.
 4. Через некоторое время все развернутые компоненты службы будут удалены.
-5. Перейдите в **Azure Active Directory**  >  **Регистрация приложений**.
+5. Перейдите к **Azure Active Directory** > **Регистрация приложений**
 6. Для каждой развернутой группы ресурсов должно быть указано три регистрации. Регистрации имеют следующие имена: `resourcegroup-client` , `resourcegroup-module` , `resourcegroup-service` . Удалите каждую регистрацию отдельно.
 
 Теперь все развернутые компоненты будут удалены.

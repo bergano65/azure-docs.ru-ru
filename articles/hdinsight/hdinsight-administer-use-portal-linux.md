@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 04/24/2020
 ms.openlocfilehash: 05d057be76a1b468f892b3123080e32a948153ae
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "82598504"
 ---
 # <a name="manage-apache-hadoop-clusters-in-hdinsight-by-using-the-azure-portal"></a>Управление кластерами Apache Hadoop в HDInsight с помощью портала Azure
@@ -27,9 +27,9 @@ ms.locfileid: "82598504"
 
 ## <a name="getting-started"></a>Приступая к работе
 
-Выполните вход на странице [https://portal.azure.com](https://portal.azure.com).
+Войдите на портал [https://portal.azure.com](https://portal.azure.com).
 
-## <a name="list-and-show-clusters"></a><a name="showClusters"></a>Вывод списка и отображение кластеров
+## <a name="list-and-show-clusters"></a><a name="showClusters"></a> Вывод списка и отображение кластеров
 
 На странице **Кластеры HDInsight** появится список существующих кластеров.  На портале
 1. В меню слева выберите **Все службы**.
@@ -43,17 +43,17 @@ ms.locfileid: "82598504"
 
 **Строка меню сверху**  
 
-| Item| Описание |
+| Элемент| Описание |
 |---|---|
 |Переместить|Перемещает кластер в другую группу ресурсов или подписку.|
-|Удалить|Удаляет кластер. |
+|DELETE|Удаляет кластер. |
 |Обновить|Обновляет представление.|
 
 **Меню слева:**  
 
   - **Меню сверху слева**
 
-    | Item| Описание |
+    | Элемент| Описание |
     |---|---|
     |Обзор|Содержит общие сведения для кластера.|
     |Журнал действий|Отображение и запрашивание журналов действий.|
@@ -65,7 +65,7 @@ ms.locfileid: "82598504"
 
   - **Меню параметров**  
 
-    | Item| Описание |
+    | Элемент| Описание |
     |---|---|
     |Размер кластера|Проверка, увеличение и уменьшение количества рабочих узлов кластера. См. раздел о [масштабировании кластеров](hdinsight-administer-use-portal-linux.md#scale-clusters).|
     |Ограничения квоты|Отображение сведений об используемых и доступных ядрах для подписки.|
@@ -82,7 +82,7 @@ ms.locfileid: "82598504"
 
   - **Меню "Мониторинг"**
 
-    | Item| Описание |
+    | Элемент| Описание |
     |---|---|
     |видны узлы|Управление оповещениями и действиями.|
     |Метрики|Отслеживайте метрики кластера в журналах Azure Monitor.|
@@ -91,16 +91,16 @@ ms.locfileid: "82598504"
 
   - **Меню "Поддержка и устранение неполадок"**
 
-    | Item| Описание |
+    | Элемент| Описание |
     |---|---|
     |Работоспособность ресурса|См. [Обзор службы "Работоспособность ресурсов Azure"](../service-health/resource-health-overview.md).|
-    |Новый запрос на техническую поддержку|Позволяет создать запрос в службу поддержки Майкрософт.|
+    |Новый запрос на поддержку|Позволяет создать запрос в службу поддержки Майкрософт.|
 
-## <a name="cluster-properties"></a><a name="properties"></a>Свойства кластера
+## <a name="cluster-properties"></a><a name="properties"></a> Свойства кластера
 
 На [домашней странице кластера](#homePage) в разделе **Параметры** выберите **Свойства**.
 
-|Item | Описание |
+|Элемент | Описание |
 |---|---|
 |ИМЯ узла|Имя кластера.|
 |URL-АДРЕС КЛАСТЕРА|URL-адрес веб-интерфейса Ambari.|
@@ -159,7 +159,7 @@ ms.locfileid: "82598504"
 
 - С помощью фабрики данных Azure. Сведения о создании связанных служб HDInsight по запросу см. в статье [Руководство. Создание кластеров Apache Hadoop в HDInsight по запросу с помощью Фабрики данных Azure](hdinsight-hadoop-create-linux-clusters-adf.md).
 - С помощью Azure PowerShell.  См. статью [Анализ данных о задержке рейсов с помощью Hive в HDInsight](./interactive-query/interactive-query-tutorial-analyze-flight-data.md).
-- С помощью интерфейса командной строки Azure. См. раздел [Управление кластерами Azure HDInsight с помощью Azure CLI](hdinsight-administer-use-command-line.md).
+- с помощью Azure CLI. См. раздел [Управление кластерами Azure HDInsight с помощью Azure CLI](hdinsight-administer-use-command-line.md).
 - С помощью пакета SDK для HDInsight .NET. См. дополнительные сведения об [отправке заданий Apache Hadoop](hadoop/submit-apache-hadoop-jobs-programmatically.md).
 
 Сведения о ценах см. на странице [цен на HDInsight](https://azure.microsoft.com/pricing/details/hdinsight/). Удаление кластера на портале описано в разделе [Удаление кластеров](#delete-clusters).

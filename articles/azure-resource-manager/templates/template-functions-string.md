@@ -3,12 +3,12 @@ title: Функции шаблона — строка
 description: Описывает функции, используемые в шаблоне Azure Resource Manager для работы со строками.
 ms.topic: conceptual
 ms.date: 04/08/2020
-ms.openlocfilehash: 42df0317658971b9e9bf3fb805c9a5ff44efaf45
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a0733ffc790854c60dca46da3f763738b7820215
+ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/09/2020
-ms.locfileid: "85962073"
+ms.locfileid: "91874719"
 ---
 # <a name="string-functions-for-arm-templates"></a>Строковые функции для шаблонов ARM
 
@@ -27,6 +27,7 @@ ms.locfileid: "85962073"
 * [format](#format)
 * [guid](#guid)
 * [indexOf](#indexof)
+* [json](#json)
 * [last](#last)
 * [lastIndexOf](#lastindexof)
 * [length](#length)
@@ -108,8 +109,8 @@ ms.locfileid: "85962073"
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| base64Output | Строка | b25lLCB0d28sIHRocmVl |
-| toStringOutput | Строка | one, two, three |
+| base64Output | Строковый тип | b25lLCB0d28sIHRocmVl |
+| toStringOutput | Строковый тип | one, two, three |
 | toJsonOutput | Объект | {"one": "a", "two": "b"} |
 
 ## <a name="base64tojson"></a>base64ToJson
@@ -173,8 +174,8 @@ ms.locfileid: "85962073"
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| base64Output | Строка | b25lLCB0d28sIHRocmVl |
-| toStringOutput | Строка | one, two, three |
+| base64Output | Строковый тип | b25lLCB0d28sIHRocmVl |
+| toStringOutput | Строковый тип | one, two, three |
 | toJsonOutput | Объект | {"one": "a", "two": "b"} |
 
 ## <a name="base64tostring"></a>base64ToString
@@ -238,8 +239,8 @@ ms.locfileid: "85962073"
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| base64Output | Строка | b25lLCB0d28sIHRocmVl |
-| toStringOutput | Строка | one, two, three |
+| base64Output | Строковый тип | b25lLCB0d28sIHRocmVl |
+| toStringOutput | Строковый тип | one, two, three |
 | toJsonOutput | Объект | {"one": "a", "two": "b"} |
 
 ## <a name="concat"></a>concat
@@ -289,7 +290,7 @@ ms.locfileid: "85962073"
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| concatOutput | Строка | prefix-5yj4yjf5mbg72 |
+| concatOutput | Строковый тип | prefix-5yj4yjf5mbg72 |
 
 В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/concat-array.json) показано, как объединить два массива.
 
@@ -465,8 +466,8 @@ ms.locfileid: "85962073"
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| dataUriOutput | Строка | data:text/plain;charset=utf8;base64,SGVsbG8= |
-| toStringOutput | Строка | Привет, мир! |
+| dataUriOutput | Строковый тип | data:text/plain;charset=utf8;base64,SGVsbG8= |
+| toStringOutput | Строковый тип | Привет, мир! |
 
 ## <a name="datauritostring"></a>dataUriToString
 
@@ -520,8 +521,8 @@ ms.locfileid: "85962073"
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| dataUriOutput | Строка | data:text/plain;charset=utf8;base64,SGVsbG8= |
-| toStringOutput | Строка | Привет, мир! |
+| dataUriOutput | Строковый тип | data:text/plain;charset=utf8;base64,SGVsbG8= |
+| toStringOutput | Строковый тип | Привет, мир! |
 
 ## <a name="empty"></a>пустых
 
@@ -703,8 +704,8 @@ ms.locfileid: "85962073"
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| arrayOutput | Строка | one |
-| stringOutput | Строка | O |
+| arrayOutput | Строковый тип | one |
+| stringOutput | Строковый тип | O |
 
 ## <a name="format"></a>format
 
@@ -761,7 +762,7 @@ ms.locfileid: "85962073"
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| форматтест | Строка | Привет, пользователь. Форматированное число: 8 175 133 |
+| форматтест | Строковый тип | Привет, пользователь. Форматированное число: 8 175 133 |
 
 ## <a name="guid"></a>guid
 
@@ -774,7 +775,7 @@ ms.locfileid: "85962073"
 | Параметр | Обязательно | Тип | Описание |
 |:--- |:--- |:--- |:--- |
 | baseString |Да |строка |Значение, используемое в хэш-функции для создания GUID. |
-| Дополнительные параметры (если необходимы) |нет |строка |Можно добавить столько строк, сколько необходимо для создания значения, которое задает уровень уникальности. |
+| Дополнительные параметры (если необходимы) |Нет |строка |Можно добавить столько строк, сколько необходимо для создания значения, которое задает уровень уникальности. |
 
 ### <a name="remarks"></a>Remarks
 
@@ -895,6 +896,12 @@ ms.locfileid: "85962073"
 | lastString | Int | 0 |
 | notFound | Int | -1 |
 
+## <a name="json"></a>json
+
+`json(arg1)`
+
+Преобразует допустимую строку JSON в тип данных JSON. Дополнительные сведения см. в разделе [Функция JSON](template-functions-object.md#json).
+
 ## <a name="last"></a>last
 
 `last (arg1)`
@@ -944,8 +951,8 @@ ms.locfileid: "85962073"
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| arrayOutput | Строка | three |
-| stringOutput | Строка | й |
+| arrayOutput | Строковый тип | three |
+| stringOutput | Строковый тип | й |
 
 ## <a name="lastindexof"></a>lastIndexOf
 
@@ -1195,7 +1202,7 @@ ms.locfileid: "85962073"
 |:--- |:--- |:--- |:--- |
 | значение_для_заполнения  |Да |строка или целое число |Значение, выравниваемое по правому краю. |
 | общая_длина |Да |INT |Общее число символов в возвращаемой строке. |
-| символ_заполнения |нет |одиночный символ |Символ, используемый для заполнения левой части до достижения общей длины. Значение по умолчанию — пробел. |
+| символ_заполнения |Нет |одиночный символ |Символ, используемый для заполнения левой части до достижения общей длины. Значение по умолчанию — пробел. |
 
 Если длина исходной строки превышает число знаков для заполнения, то знаки не добавляются.
 
@@ -1231,7 +1238,7 @@ ms.locfileid: "85962073"
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| stringOutput | Строка | 0000000123 |
+| stringOutput | Строковый тип | 0000000123 |
 
 ## <a name="replace"></a>replace
 
@@ -1283,8 +1290,8 @@ ms.locfileid: "85962073"
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| firstOutput | Строка | 1231231234 |
-| secondOutput | Строка | 123-123-xxxx |
+| firstOutput | Строковый тип | 1231231234 |
+| secondOutput | Строковый тип | 123-123-xxxx |
 
 ## <a name="skip"></a>skip
 
@@ -1352,7 +1359,7 @@ ms.locfileid: "85962073"
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
 | arrayOutput | Массив | ["three"] |
-| stringOutput | Строка | two three |
+| stringOutput | Строковый тип | two three |
 
 ## <a name="split"></a>разделение
 
@@ -1546,9 +1553,9 @@ ms.locfileid: "85962073"
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| objectOutput | Строка | {"valueA":10,"valueB":"Example Text"} |
-| arrayOutput | Строка | ["a","b","c"] |
-| intOutput | Строка | 5 |
+| objectOutput | Строковый тип | {"valueA":10,"valueB":"Example Text"} |
+| arrayOutput | Строковый тип | ["a","b","c"] |
+| intOutput | Строковый тип | 5 |
 
 ## <a name="substring"></a>substring
 
@@ -1561,8 +1568,8 @@ ms.locfileid: "85962073"
 | Параметр | Обязательно | Тип | Описание |
 |:--- |:--- |:--- |:--- |
 | stringToParse |Да |строка |Исходная строка, из которой извлекается подстрока. |
-| startIndex |нет |INT |Отсчитываемая от нуля позиция первого знака для подстроки. |
-| length |нет |INT |Число символов в подстроке. Этот параметр должен ссылаться на позицию в строке. Значение этого параметра должно быть равным нулю или больше него. |
+| startIndex |Нет |INT |Отсчитываемая от нуля позиция первого знака для подстроки. |
+| length |Нет |INT |Число символов в подстроке. Этот параметр должен ссылаться на позицию в строке. Значение этого параметра должно быть равным нулю или больше него. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -1609,7 +1616,7 @@ ms.locfileid: "85962073"
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| substringOutput | Строка | two |
+| substringOutput | Строковый тип | two |
 
 ## <a name="take"></a>take
 
@@ -1677,7 +1684,7 @@ ms.locfileid: "85962073"
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
 | arrayOutput | Массив | ["one", "two"] |
-| stringOutput | Строка | on |
+| stringOutput | Строковый тип | on |
 
 ## <a name="tolower"></a>toLower
 
@@ -1727,8 +1734,8 @@ ms.locfileid: "85962073"
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| toLowerOutput | Строка | one two three |
-| toUpperOutput | Строка | ONE TWO THREE |
+| toLowerOutput | Строковый тип | one two three |
+| toUpperOutput | Строковый тип | ONE TWO THREE |
 
 ## <a name="toupper"></a>toUpper
 
@@ -1778,8 +1785,8 @@ ms.locfileid: "85962073"
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| toLowerOutput | Строка | one two three |
-| toUpperOutput | Строка | ONE TWO THREE |
+| toLowerOutput | Строковый тип | one two three |
+| toUpperOutput | Строковый тип | ONE TWO THREE |
 
 ## <a name="trim"></a>trim
 
@@ -1825,7 +1832,7 @@ ms.locfileid: "85962073"
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| return | Строка | one two three |
+| return | Строковый тип | one two three |
 
 ## <a name="uniquestring"></a>uniqueString
 
@@ -1838,7 +1845,7 @@ ms.locfileid: "85962073"
 | Параметр | Обязательно | Тип | Описание |
 |:--- |:--- |:--- |:--- |
 | baseString |Да |строка |Значение, используемое в хэш-функции для создания уникальной строки. |
-| Дополнительные параметры (если необходимы) |нет |строка |Можно добавить столько строк, сколько необходимо для создания значения, которое задает уровень уникальности. |
+| Дополнительные параметры (если необходимы) |Нет |строка |Можно добавить столько строк, сколько необходимо для создания значения, которое задает уровень уникальности. |
 
 ### <a name="remarks"></a>Remarks
 
@@ -1981,9 +1988,9 @@ uri('http://contoso.org/firstpath/azuredeploy.json/', 'myscript.sh') -> http://c
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| uriOutput | Строка | `http://contoso.com/resources/nested/azuredeploy.json` |
-| componentOutput | Строка | `http%3A%2F%2Fcontoso.com%2Fresources%2Fnested%2Fazuredeploy.json` |
-| toStringOutput | Строка | `http://contoso.com/resources/nested/azuredeploy.json` |
+| uriOutput | Строковый тип | `http://contoso.com/resources/nested/azuredeploy.json` |
+| componentOutput | Строковый тип | `http%3A%2F%2Fcontoso.com%2Fresources%2Fnested%2Fazuredeploy.json` |
+| toStringOutput | Строковый тип | `http://contoso.com/resources/nested/azuredeploy.json` |
 
 ## <a name="uricomponent"></a>uriComponent
 
@@ -2036,9 +2043,9 @@ uri('http://contoso.org/firstpath/azuredeploy.json/', 'myscript.sh') -> http://c
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| uriOutput | Строка | `http://contoso.com/resources/nested/azuredeploy.json` |
-| componentOutput | Строка | `http%3A%2F%2Fcontoso.com%2Fresources%2Fnested%2Fazuredeploy.json` |
-| toStringOutput | Строка | `http://contoso.com/resources/nested/azuredeploy.json` |
+| uriOutput | Строковый тип | `http://contoso.com/resources/nested/azuredeploy.json` |
+| componentOutput | Строковый тип | `http%3A%2F%2Fcontoso.com%2Fresources%2Fnested%2Fazuredeploy.json` |
+| toStringOutput | Строковый тип | `http://contoso.com/resources/nested/azuredeploy.json` |
 
 ## <a name="uricomponenttostring"></a>uriComponentToString
 
@@ -2091,9 +2098,9 @@ uri('http://contoso.org/firstpath/azuredeploy.json/', 'myscript.sh') -> http://c
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| uriOutput | Строка | `http://contoso.com/resources/nested/azuredeploy.json` |
-| componentOutput | Строка | `http%3A%2F%2Fcontoso.com%2Fresources%2Fnested%2Fazuredeploy.json` |
-| toStringOutput | Строка | `http://contoso.com/resources/nested/azuredeploy.json` |
+| uriOutput | Строковый тип | `http://contoso.com/resources/nested/azuredeploy.json` |
+| componentOutput | Строковый тип | `http%3A%2F%2Fcontoso.com%2Fresources%2Fnested%2Fazuredeploy.json` |
+| toStringOutput | Строковый тип | `http://contoso.com/resources/nested/azuredeploy.json` |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * Описание разделов в шаблоне Azure Resource Manager см. в статье [Создание шаблонов Azure Resource Manager](template-syntax.md).

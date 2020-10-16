@@ -8,10 +8,10 @@ ms.date: 07/09/2020
 ms.author: tisande
 ms.custom: query-reference
 ms.openlocfilehash: b90b45072128252e8abc22d3422c84c813808119
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87446375"
 ---
 # <a name="datetimediff-azure-cosmos-db"></a>Датетимедифф (Azure Cosmos DB)
@@ -26,17 +26,17 @@ DateTimeDiff (<DateTimePart> , <StartDate> , <EndDate>)
 
 ## <a name="arguments"></a>Аргументы
   
-*датетимепарт*  
+*DateTimePart*  
    Часть даты, до которой Датетимеадд добавляет целое число. В этой таблице перечислены все допустимые аргументы Датетимепарт:
 
-| датетимепарт | сокращения;        |
+| DateTimePart | сокращения;        |
 | ------------ | -------------------- |
-| Год         | "Year", "гггг", "гг" |
+| Year;         | "Year", "гггг", "гг" |
 | Месяц        | "month", "mm", "m"   |
 | День          | "Day", "DD", "d"     |
 | Час         | "Hour", "HH"         |
 | Минута       | "Minute", "MI", "n"  |
-| Секунда       | "Second", "SS", "s"  |
+| Second       | "Second", "SS", "s"  |
 | Миллисекунда  | "миллисекунда", "MS"  |
 | Микросекунды  | "микросекунда", "MCS" |
 | Потребовавшееся   | "наносекундных", "NS"   |
@@ -59,13 +59,13 @@ DateTimeDiff (<DateTimePart> , <StartDate> , <EndDate>)
   Дополнительные сведения о формате ISO 8601 см. в разделе [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601)
 
 *Предшеству*  
-   Строковое значение даты и времени ISO 8601 в формате UTC`YYYY-MM-DDThh:mm:ss.fffffffZ`
+   Строковое значение даты и времени ISO 8601 в формате UTC `YYYY-MM-DDThh:mm:ss.fffffffZ`
 
 ## <a name="return-types"></a>Типы возвращаемых данных
 
 Возвращает целочисленное значение со знаком.
 
-## <a name="remarks"></a>Комментарии
+## <a name="remarks"></a>Remarks
 
 Датетимедифф будет возвращать `undefined` по следующим причинам:
 

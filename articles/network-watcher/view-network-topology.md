@@ -12,10 +12,10 @@ ms.workload: infrastructure-services
 ms.date: 05/09/2018
 ms.author: damendo
 ms.openlocfilehash: c04da65af27ebd5ac654bc059ae004c157a20f33
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84737535"
 ---
 # <a name="view-the-topology-of-an-azure-virtual-network"></a>Просмотр топологии виртуальной сети Azure
@@ -133,7 +133,7 @@ ms.locfileid: "84737535"
 | Containment       | Виртуальная сеть содержит подсеть. Подсеть содержит сетевой интерфейс.                            |
 | Связь        | Сетевой интерфейс связывается с виртуальной машиной. Общедоступный IP-адрес связывается с сетевым интерфейсом. |
 
-## <a name="properties"></a>Элемент Property
+## <a name="properties"></a>Свойства
 
 Все ресурсы, возвращаемые в топологии, имеют следующие свойства:
 
@@ -145,7 +145,7 @@ ms.locfileid: "84737535"
     - **Name** (Имя): имя ресурса, на который указывает ссылка.
     - **ResourceId** (Идентификатор ресурса): универсальный код ресурса (URI), на который добавляется ссылка при установке связи.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как [диагностировать проблему фильтрации входящего и исходящего трафика виртуальной машины](diagnose-vm-network-traffic-filtering-problem.md), используя функцию для проверки потока IP в Наблюдателе за сетями.
 - Узнайте, как [диагностировать проблему маршрутизации исходящего трафика виртуальной машины](diagnose-vm-network-routing-problem.md), используя функцию следующего прыжка в Наблюдателе за сетями.

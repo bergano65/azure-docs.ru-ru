@@ -115,3 +115,5 @@
       href: faq.md
     - name: Подготовка рабочей среды и рекомендации
       href: production-readiness.md
+    - name: Принципы прозрачного и ответственного использования ИИ
+      href: 'https://azure.microsoft.com/resources/transparency-note-live-video-analytics-lva/'

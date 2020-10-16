@@ -12,12 +12,12 @@ ms.custom:
 - amqp
 - mqtt
 - devx-track-js
-ms.openlocfilehash: 78db26318fc95adec1b31799ed143b3e4a6b3acc
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 4faec8f79d856b86052745ad530e17b9b25634e8
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91281462"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92045845"
 ---
 # <a name="connect-a-downstream-device-to-an-azure-iot-edge-gateway"></a>Подключение подчиненного устройства к шлюзу Azure IoT Edge
 
@@ -77,7 +77,7 @@ ms.locfileid: "91281462"
 
 ## <a name="provide-the-root-ca-certificate"></a>Укажите сертификат корневого ЦС
 
-Чтобы проверить сертификаты устройства шлюза, подчиненному устройству требуется собственная копия сертификата корневого ЦС. Если вы использовали сценарии, предоставленные в репозитории IoT Edge Git для создания тестовых сертификатов, сертификат корневого ЦС называется **Азуре-ИОТ-тест-Онли. root. ca. CERT. pem**. Если вы еще не сделали это в рамках других этапов подготовки подчиненных устройств, переместите этот файл сертификата в любой каталог на подчиненном устройстве. Для перемещения файла сертификата можно использовать службу, такую как [Azure Key Vault](https://docs.microsoft.com/azure/key-vault) , или функцию, например [протокол безопасного копирования](https://www.ssh.com/ssh/scp/) .
+Чтобы проверить сертификаты устройства шлюза, подчиненному устройству требуется собственная копия сертификата корневого ЦС. Если вы использовали сценарии, предоставленные в репозитории IoT Edge Git для создания тестовых сертификатов, сертификат корневого ЦС называется **Азуре-ИОТ-тест-Онли. root. ca. CERT. pem**. Если вы еще не сделали это в рамках других этапов подготовки подчиненных устройств, переместите этот файл сертификата в любой каталог на подчиненном устройстве. Для перемещения файла сертификата можно использовать службу, такую как [Azure Key Vault](../key-vault/index.yml) , или функцию, например [протокол безопасного копирования](https://www.ssh.com/ssh/scp/) .
 
 ## <a name="install-certificates-in-the-os"></a>Установка сертификатов в ОС
 
@@ -98,7 +98,7 @@ sudo update-ca-certificates
 
 В следующих шагах описано, как установить сертификат ЦС на узле под управлением ОС Windows. В этом примере предполагается, что вы используете сертификат **Азуре-ИОТ-тест-Онли. root. ca. CERT. pem** из статей о предварительных требованиях и скопировали сертификат в расположение на подчиненном устройстве.
 
-Сертификаты можно установить с помощью [импорта сертификата](https://docs.microsoft.com/powershell/module/pkiclient/import-certificate?view=win10-ps) PowerShell с правами администратора:
+Сертификаты можно установить с помощью [импорта сертификата](/powershell/module/pkiclient/import-certificate?view=win10-ps) PowerShell с правами администратора:
 
 ```powershell
 import-certificate  <file path>\azure-iot-test-only.root.ca.cert.pem -certstorelocation cert:\LocalMachine\root
@@ -113,7 +113,7 @@ import-certificate  <file path>\azure-iot-test-only.root.ca.cert.pem -certstorel
 
 Можно также установить сертификаты программным способом с помощью API .NET, как показано в примере кода для .NET далее в этой статье.
 
-Обычно приложения используют стек TLS [Schannel](https://docs.microsoft.com/windows/desktop/com/schannel), предоставляемый ОС Windows, для безопасного подключения через TLS. При использовании Schannel *требуется*, чтобы все сертификаты были установлены в хранилище сертификатов Windows перед попыткой установить TLS-подключение.
+Обычно приложения используют стек TLS [Schannel](/windows/desktop/com/schannel), предоставляемый ОС Windows, для безопасного подключения через TLS. При использовании Schannel *требуется*, чтобы все сертификаты были установлены в хранилище сертификатов Windows перед попыткой установить TLS-подключение.
 
 ## <a name="use-certificates-with-azure-iot-sdks"></a>Использование сертификатов с пакетами SDK для Azure IoT
 

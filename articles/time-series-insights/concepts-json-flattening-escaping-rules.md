@@ -10,10 +10,10 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 09/28/2020
 ms.openlocfilehash: a1f633548ed36320f40e485f540923c8e3045a99
-ms.sourcegitcommit: a0c4499034c405ebc576e5e9ebd65084176e51e4
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91460872"
 ---
 # <a name="json-flattening-escaping-and-array-handling"></a>Преобразование JSON в плоскую структуру, экранирование и обработка массивов
@@ -87,7 +87,7 @@ ms.locfileid: "91460872"
 **Результат в файле Parquet:**\
 Приведенная выше конфигурация и полезные данные создадут три столбца и четыре события.
 
-| TIMESTAMP  | id_string | Values. value_double
+| TIMESTAMP  | id_string | values.value_double
 | ---- | ---- | ---- |
 | `2020-05-01T00:59:59.000Z` | `caaae533-1d6c-4f58-9b75-da102bcc2c8c`| ``25.6073`` |
 | `2020-05-01T01:00:29.000Z` |`caaae533-1d6c-4f58-9b75-da102bcc2c8c` | ``43.9077`` |
@@ -145,7 +145,7 @@ ms.locfileid: "91460872"
 **Результат в файле Parquet:**\
 Приведенная выше конфигурация и полезные данные создадут четыре столбца и шесть событий.
 
-| TIMESTAMP  | plantId_string | данные телеметрии. tagId_string | данные телеметрии. value_double
+| TIMESTAMP  | plantId_string | telemetry.tagId_string | telemetry.value_double
 | ---- | ---- | ---- | ---- |
 | `2020-01-22T16:38:09Z` | `9336971`| ``100231-A-A6`` |  — 31,149018 |
 | `2020-01-22T16:38:09Z` |`9336971` | ``100231-A-A1`` | 20,560796 |
@@ -182,6 +182,6 @@ ms.locfileid: "91460872"
 | ---- | ---- | ---- |
 | `2020-11-01T10:00:00.000Z` | `800500054755`| ``[{"value": 120},{"value":124}]`` |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Общие сведения об [ограничениях пропускной способности](./concepts-streaming-ingress-throughput-limits.md) среды

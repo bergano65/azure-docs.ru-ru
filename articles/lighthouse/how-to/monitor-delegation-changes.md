@@ -4,10 +4,10 @@ description: Узнайте, как отслеживать действия де
 ms.date: 09/08/2020
 ms.topic: how-to
 ms.openlocfilehash: 15e96939d4115bd93260687f637143cc798a4331
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91336604"
 ---
 # <a name="monitor-delegation-changes-in-your-managing-tenant"></a>Мониторинг изменений делегирования в управляющем клиенте
@@ -177,7 +177,7 @@ else {
 
 Появится список изменений делегирования. Можно выбрать пункт **изменить столбцы** , чтобы показать или скрыть **состояние**, **категорию событий**, **время**, **метку времени**, **подписку**, **событие, инициированное**, **группой ресурсов**, **типом ресурса**и значениями **ресурсов** .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте, как подключить клиентов к [Azure лигхсаусе](../concepts/azure-delegated-resource-management.md).
 - Сведения о [Azure Monitor](../../azure-monitor/index.yml) и [журнале действий Azure](../../azure-monitor/platform/platform-logs-overview.md).

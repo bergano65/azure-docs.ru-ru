@@ -7,12 +7,12 @@ ms.date: 02/25/2020
 ms.author: barbkess
 ms.reviewer: lcozzens
 ms.service: azure-app-configuration
-ms.openlocfilehash: 560a2df5946b9cfe1160864752595e86cc6eeb65
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 270f8d471a95e67939a31357bc1cc056fe8ea4a1
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82981227"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92072804"
 ---
 # <a name="how-to-use-managed-identities-for-azure-app-configuration"></a>Использование управляемых удостоверений для конфигурации приложений Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "82981227"
 
 - использовать [Azure Cloud Shell](../cloud-shell/overview.md) с портала Azure;
 - использовать внедренный компонент Azure Cloud Shell с помощью кнопки "Попробовать", расположенной в правом верхнем углу каждого блока кода ниже.
-- [Установите последнюю версию Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) (2,1 или более позднюю), если вы предпочитаете использовать локальную консоль CLI.
+- [Установите последнюю версию Azure CLI](/cli/azure/install-azure-cli) (2,1 или более позднюю), если вы предпочитаете использовать локальную консоль CLI.
 
 Следующие шаги помогут вам создать хранилище конфигураций приложений и назначить ему удостоверение с помощью интерфейса командной строки:
 
@@ -66,7 +66,7 @@ ms.locfileid: "82981227"
 
 - использовать [Azure Cloud Shell](../cloud-shell/overview.md) с портала Azure;
 - использовать внедренный компонент Azure Cloud Shell с помощью кнопки "Попробовать", расположенной в правом верхнем углу каждого блока кода ниже.
-- [установить последнюю версию Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) (2.0.31 или выше), если вы предпочитаете использовать локальную консоль CLI.
+- [установить последнюю версию Azure CLI](/cli/azure/install-azure-cli) (2.0.31 или выше), если вы предпочитаете использовать локальную консоль CLI.
 
 Ниже описано, как создать пользовательское удостоверение и хранилище конфигурации приложения, а затем назначить удостоверение хранилищу с помощью интерфейса командной строки:
 
@@ -101,10 +101,10 @@ ms.locfileid: "82981227"
 
 Чтобы удалить назначенное системой удостоверение, отключите эту функцию с помощью команды [AZ appconfig Identity Remove](/cli/azure/appconfig/identity?view=azure-cli-latest#az-appconfig-identity-remove) в Azure CLI. Назначаемые пользователем удостоверения можно удалить по отдельности. Такое удаление назначаемого системой удостоверения приводит к удалению из AAD. Назначаемые системой удостоверения также удаляются из AAD автоматически, когда удаляется ресурс приложения.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Создание приложения ASP.NET Core с помощью конфигурации приложения Azure](quickstart-aspnet-core-app.md)
 
 [AZ appconfig Identity Assign]: /cli/azure/appconfig/identity?view=azure-cli-latest#az-appconfig-identity-assign
-[AZ login]: /cli/azure/reference-index#az-login
+[az login]: /cli/azure/reference-index#az-login

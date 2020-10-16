@@ -8,12 +8,12 @@ ms.date: 08/20/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: d29a5a6d0d4745655ce5b6d0cead3eaba77ed423
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 57031d4ccdfdba73b8b36c8dc943280a8280ffcc
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91281632"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92048531"
 ---
 # <a name="continuous-integration-and-continuous-deployment-to-azure-iot-edge-devices"></a>Непрерывная интеграция и непрерывное развертывание на Azure IoT Edge устройствах
 
@@ -21,7 +21,7 @@ ms.locfileid: "91281632"
 
 ![Схема ветвей CI и CD для разработки и эксплуатации](./media/how-to-continuous-integration-continuous-deployment/model.png)
 
-Из этой статьи вы узнаете, как использовать встроенные [Azure IOT Edge задачи](https://docs.microsoft.com/azure/devops/pipelines/tasks/build/azure-iot-edge) для Azure pipelines создания конвейеров сборки и выпуска для решения IOT Edge. Каждая задача Azure IoT Edge, добавленная в конвейер, реализует одно из следующих четырех действий.
+Из этой статьи вы узнаете, как использовать встроенные [Azure IOT Edge задачи](/azure/devops/pipelines/tasks/build/azure-iot-edge) для Azure pipelines создания конвейеров сборки и выпуска для решения IOT Edge. Каждая задача Azure IoT Edge, добавленная в конвейер, реализует одно из следующих четырех действий.
 
  | Действие | Описание |
  | --- | --- |
@@ -32,25 +32,25 @@ ms.locfileid: "91281632"
 
 Если не указано иное, процедуры, описанные в этой статье, не анализируют все функциональные возможности, доступные через параметры задачи. Дополнительные сведения см. в следующих разделах:
 
-* [Версия задачи](https://docs.microsoft.com/azure/devops/pipelines/process/tasks?view=azure-devops&tabs=classic#task-versions)
+* [Версия задачи](/azure/devops/pipelines/process/tasks?tabs=classic&view=azure-devops#task-versions)
 * **Дополнительно** — если применимо, укажите модули, которые не должны создаваться.
-* [Параметры управления](https://docs.microsoft.com/azure/devops/pipelines/process/tasks?view=azure-devops&tabs=classic#task-control-options)
-* [Переменные среды](https://docs.microsoft.com/azure/devops/pipelines/process/variables?view=azure-devops&tabs=yaml%2Cbatch#environment-variables)
-* [Выходные переменные](https://docs.microsoft.com/azure/devops/pipelines/process/variables?view=azure-devops&tabs=yaml%2Cbatch#use-output-variables-from-tasks)
+* [Параметры управления](/azure/devops/pipelines/process/tasks?tabs=classic&view=azure-devops#task-control-options)
+* [Переменные среды](/azure/devops/pipelines/process/variables?tabs=yaml%252cbatch&view=azure-devops#environment-variables)
+* [Выходные переменные](/azure/devops/pipelines/process/variables?tabs=yaml%252cbatch&view=azure-devops#use-output-variables-from-tasks)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Репозиторий Azure Repos. Если у вас его нет, вы можете [создать репозиторий Git в проекте](https://docs.microsoft.com/azure/devops/repos/git/create-new-repo?view=vsts&tabs=new-nav). В этой статье мы создали репозиторий, который называется **IoTEdgeRepo**.
-* Решение IoT Edge, зафиксированное и отправленное в репозиторий. Если вы хотите создать пример решения для тестирования инструкций в этой статье, следуйте шагам, изложенным в статье [Использование Visual Studio Code для разработки и отладки модулей для Azure IoT Edge](how-to-vs-code-develop-module.md) или [Сведения об использовании Visual Studio 2017 для разработки и отладки модулей C# для Azure IoT Edge (предварительная версия)](how-to-visual-studio-develop-csharp-module.md). В этой статье мы создали решение в нашем репозитории с именем **иотеджесолутион**, которое содержит код для модуля с именем **filtermodule**.
+* Репозиторий Azure Repos. Если у вас его нет, вы можете [создать репозиторий Git в проекте](/azure/devops/repos/git/create-new-repo?tabs=new-nav&view=vsts). В этой статье мы создали репозиторий, который называется **IoTEdgeRepo**.
+* Решение IoT Edge, зафиксированное и отправленное в репозиторий. Если вы хотите создать пример решения для тестирования инструкций в этой статье, следуйте шагам, изложенным в статье [Использование Visual Studio Code для разработки и отладки модулей для Azure IoT Edge](how-to-vs-code-develop-module.md) или [Сведения об использовании Visual Studio 2017 для разработки и отладки модулей C# для Azure IoT Edge (предварительная версия)](./how-to-visual-studio-develop-module.md). В этой статье мы создали решение в нашем репозитории с именем **иотеджесолутион**, которое содержит код для модуля с именем **filtermodule**.
 
    Все, что требуется в этой статье, — это папка решения, созданная по шаблону IoT Edge в Visual Studio Code или Visual Studio. Вам не требуется создавать, отправлять, развертывать или отлаживать этот код, чтобы продолжить. Эти процессы настраиваются в Azure Pipelines.
 
    Если вы создаете решение, сначала клонируйте репозиторий локально. Затем вы сможете создать решение непосредственно в папке репозитория. Кроме того, вы можете легко фиксировать и отправлять файлы из нее.
 
-* Реестр контейнеров, в который можно отправлять образы модулей. Вы можете использовать [Реестр контейнеров Azure](https://docs.microsoft.com/azure/container-registry/) или сторонний реестр.
+* Реестр контейнеров, в который можно отправлять образы модулей. Вы можете использовать [Реестр контейнеров Azure](../container-registry/index.yml) или сторонний реестр.
 * Активный [центр Интернета вещей](../iot-hub/iot-hub-create-through-portal.md) Azure по крайней мере с двумя IOT Edge устройствами для тестирования отдельных этапов тестового и рабочего развертывания. Следуйте кратким руководствам, чтобы создать устройство IoT Edge в [Linux](quickstart-linux.md) или [Windows](quickstart.md).
 
-Дополнительные сведения об использовании Azure Repos см. в статье [Share your code with Visual Studio 2015 and Azure Repos](https://docs.microsoft.com/azure/devops/repos/git/share-your-code-in-git-vs?view=vsts) (Предоставление общего доступа к коду с помощью Visual Studio и Azure Repos).
+Дополнительные сведения об использовании Azure Repos см. в статье [Share your code with Visual Studio 2015 and Azure Repos](/azure/devops/repos/git/share-your-code-in-git-vs?view=vsts) (Предоставление общего доступа к коду с помощью Visual Studio и Azure Repos).
 
 ## <a name="create-a-build-pipeline-for-continuous-integration"></a>Создание конвейера сборки для непрерывной интеграции
 
@@ -112,13 +112,13 @@ ms.locfileid: "91281632"
        | --- | --- |
        | Исходная папка | Исходная папка, из которой производится копирование. Empty является корнем репозитория. Используйте переменные, если файлы отсутствуют в репозитории. Например, `$(agent.builddirectory)`.
        | Содержимое | Добавьте две строки: `deployment.template.json` и `**/module.json` . |
-       | Целевая папка | Укажите переменную `$(Build.ArtifactStagingDirectory)` . Дополнительные сведения о описании см. в разделе [переменные сборки](https://docs.microsoft.com/azure/devops/pipelines/build/variables?view=azure-devops&tabs=yaml#build-variables) . |
+       | Целевая папка | Укажите переменную `$(Build.ArtifactStagingDirectory)` . Дополнительные сведения о описании см. в разделе [переменные сборки](/azure/devops/pipelines/build/variables?tabs=yaml&view=azure-devops#build-variables) . |
 
    * Задача: **Публикация артефактов сборки**
 
        | Параметр | Описание |
        | --- | --- |
-       | Путь для публикации | Укажите переменную `$(Build.ArtifactStagingDirectory)` . Дополнительные сведения о описании см. в разделе [переменные сборки](https://docs.microsoft.com/azure/devops/pipelines/build/variables?view=azure-devops&tabs=yaml#build-variables) . |
+       | Путь для публикации | Укажите переменную `$(Build.ArtifactStagingDirectory)` . Дополнительные сведения о описании см. в разделе [переменные сборки](/azure/devops/pipelines/build/variables?tabs=yaml&view=azure-devops#build-variables) . |
        | Имя артефакта | Укажите имя по умолчанию: `drop` |
        | Расположение публикации артефакта | Использовать расположение по умолчанию: `Azure Pipelines` |
 

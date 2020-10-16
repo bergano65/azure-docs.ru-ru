@@ -8,10 +8,10 @@ ms.date: 01/22/2019
 ms.author: vitalyg
 ms.subservice: metrics
 ms.openlocfilehash: e554fe48c3cbf8b744bf2f435f7b51e424d28808
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87079559"
 ---
 # <a name="advanced-features-of-azure-metrics-explorer"></a>Расширенные возможности обозревателя метрик Azure
@@ -21,7 +21,7 @@ ms.locfileid: "87079559"
 
 ## <a name="metrics-in-azure"></a>Метрики в Azure
 
-[Метрики в Azure Monitor](data-platform-metrics.md) — это ряд измеренных значений и счетчиков, которые собираются и сохраняются в течение определенного времени. Существуют стандартные метрики (или "метрики платформы") и настраиваемые метрики. Стандартные метрики предоставляет платформа Azure. Стандартные метрики показывают работоспособность и статистику потребления ресурсов Azure. В то время как пользовательские метрики отправляются в Azure приложениями с помощью [Application Insights API для пользовательских событий и метрик](../app/api-custom-events-metrics.md), [расширения Windows система диагностики Azure (WAD)](./diagnostics-extension-overview.md)или [Azure Monitor REST API](./metrics-store-custom-rest-api.md).
+[Метрики в Azure Monitor](data-platform-metrics.md) — это ряд измеренных значений и счетчиков, которые собираются и сохраняются в течение определенного времени. Существуют стандартные метрики (или "метрики платформы") и настраиваемые метрики. Стандартные метрики предоставляет платформа Azure. Стандартные метрики показывают работоспособность и статистику потребления ресурсов Azure. В то время как пользовательские метрики отправляются в Azure приложениями с помощью [Application Insights API для пользовательских событий и метрик](../app/api-custom-events-metrics.md),  [расширения Windows система диагностики Azure (WAD)](./diagnostics-extension-overview.md)или [Azure Monitor REST API](./metrics-store-custom-rest-api.md).
 
 ## <a name="create-views-with-multiple-metrics-and-charts"></a>Создание представлений с несколькими метриками и диаграммами
 
@@ -164,7 +164,7 @@ ms.locfileid: "87079559"
 
 Ознакомьтесь с этой [статьей](alerts-metric.md), чтобы узнать больше о настройке оповещений на основе метрик.
 
-## <a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a>Устранение неполадок
 
 *Данные не отображаются на диаграмме.*
 

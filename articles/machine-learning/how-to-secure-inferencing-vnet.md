@@ -9,14 +9,14 @@ ms.topic: how-to
 ms.reviewer: larryfr
 ms.author: peterlu
 author: peterclu
-ms.date: 09/24/2020
+ms.date: 10/12/2020
 ms.custom: contperfq4, tracking-python, contperfq1
-ms.openlocfilehash: 784a0acf139aa05179fd92afb4eab299c2669590
-ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
+ms.openlocfilehash: 806505e5ac9c9b3dcf53624a1151961b0db45ef9
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91630854"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91972515"
 ---
 # <a name="secure-an-azure-machine-learning-inferencing-environment-with-virtual-networks"></a>Обеспечение безопасности Машинное обучение Azure окружения с помощью виртуальных сетей
 
@@ -81,11 +81,17 @@ ms.locfileid: "91630854"
 
    ![Машинное обучение Azure: Параметры виртуальной сети для Вычислительной среды Машинного обучения](./media/how-to-enable-virtual-network/aks-virtual-network-screen.png)
 
-1. Убедитесь, что в группе NSG, управляющей виртуальной сетью, включено правило безопасности входящего трафика для конечной точки оценки, чтобы ее можно было вызывать извне виртуальной сети.
+1. При развертывании модели в качестве веб-службы для AKS создается конечная точка оценки для обработки запросов, запрашивающих запросы. Убедитесь, что в группе NSG, управляющей виртуальной сетью, включено правило безопасности для входящего трафика для IP-адреса конечной точки оценки, если вы хотите вызвать ее извне из виртуальной сети.
+
+    Чтобы найти IP-адрес конечной точки оценки, просмотрите код URI оценки для развернутой службы. Сведения о просмотре URI оценки см. в разделе [Использование модели, развернутой в качестве веб-службы](how-to-consume-web-service.md#connection-information).
+
    > [!IMPORTANT]
    > Сохраните правила по умолчанию для исходящего трафика для группы безопасности сети. Дополнительные сведения см. в описании стандартных правил безопасности в статье [о группах безопасности](https://docs.microsoft.com/azure/virtual-network/security-overview#default-security-rules).
 
    [![Правило безопасности для входящего трафика](./media/how-to-enable-virtual-network/aks-vnet-inbound-nsg-scoring.png)](./media/how-to-enable-virtual-network/aks-vnet-inbound-nsg-scoring.png#lightbox)
+
+    > [!IMPORTANT]
+    > IP-адрес, показанный в образе для конечной точки оценки, будет отличаться для ваших развертываний. Хотя один и тот же IP-адрес совместно используется всеми развертываниями в одном кластере AKS, каждый кластер AKS будет иметь разные IP-адреса.
 
 Вы также можете использовать пакет SDK для Машинного обучения Azure, чтобы добавить в виртуальную сеть службу Azure Kubernetes. Если в вашей виртуальной сети уже есть кластер AKS, можно подключить его к рабочей области, следуя инструкциям в разделе [Развертывание в AKS](how-to-deploy-and-where.md). Следующий код создает новый экземпляр AKS в подсети `default` виртуальной сети с именем `mynetwork`.
 

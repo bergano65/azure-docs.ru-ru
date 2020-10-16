@@ -9,10 +9,10 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 ms.date: 09/02/2020
 ms.openlocfilehash: 63629f32c97611fa8bc57ecdac968552375125f4
-ms.sourcegitcommit: 3246e278d094f0ae435c2393ebf278914ec7b97b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89381200"
 ---
 # <a name="how-to-create-plans-for-your-saas-offer"></a>Создание планов для предложения SaaS
@@ -150,7 +150,7 @@ ms.locfileid: "89381200"
 - Если план имеет состояние **черновик**, ссылка в столбце Action ( **действие** ) будет иметь значение **Delete черновик**.
 - Если состояние плана — " **динамический**", ссылка в столбце " **действие** " будет либо **прерывать тарифный план** , либо **синхронизировать личную аудиторию**. Ссылка на **личную аудиторию синхронизации** будет публиковать только изменения в вашей частной аудитории без публикации других обновлений, которые могли быть внесены в предложение.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте, [как продать предложение SaaS](create-new-saas-offer-marketing.md) **с помощью совместной работы с корпорацией Майкрософт** и **пропродавать их через программы CSP** .
 - [Как протестировать и опубликовать предложение SaaS на коммерческом рынке](test-publish-saas-offer.md).

@@ -10,13 +10,13 @@ ms.workload: identity
 ms.date: 09/30/2020
 ms.author: rolyon
 ms.openlocfilehash: badf10da8af0ed3829deb2498b51b5d5c8ce6a93
-ms.sourcegitcommit: ffa7a269177ea3c9dcefd1dea18ccb6a87c03b70
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91604413"
 ---
-# <a name="steps-to-add-a-role-assignment"></a>Действия по добавлению назначения ролей
+# <a name="steps-to-add-a-role-assignment"></a>Шаги для добавления назначения роли
 
 [!INCLUDE [Azure RBAC definition grant access](../../includes/role-based-access-control-definition-grant.md)] В этой статье описываются общие действия по добавлению назначения ролей с помощью [портал Azure](role-assignments-portal.md), [Azure PowerShell](role-assignments-powershell.md), [Azure CLI](role-assignments-cli.md)или [REST API](role-assignments-rest.md).
 
@@ -58,7 +58,7 @@ ms.locfileid: "91604413"
 
 ## <a name="step-3-identify-the-needed-scope"></a>Шаг 3. Определение требуемой области
 
-*Область* — это набор ресурсов, к которым предоставляется доступ. В Azure можно указать область на четырех уровнях: [Группа управления](../governance/management-groups/overview.md), подписка, [Группа ресурсов](../azure-resource-manager/management/overview.md#resource-groups)и ресурс. Структура областей строится на отношениях "родитель-потомок". Каждый уровень иерархии делает область более конкретной. Вы можете назначать роли на любом из этих уровней области. Выбранный уровень определяет, насколько широко применяется роль. Более низкие уровни наследуют разрешения роли от более высоких уровней. 
+*Область* — это набор ресурсов, к которым предоставляется доступ. В Azure можно указать область на четырех уровнях: [Группа управления](../governance/management-groups/overview.md), подписка, [Группа ресурсов](../azure-resource-manager/management/overview.md#resource-groups)и ресурс. Структура областей строится на отношениях "родитель-потомок". Каждый уровень иерархии делает область более конкретной. Вы можете назначать роли на любом из этих уровней области действия. Выбранный уровень определяет, насколько широко применяется роль. Более низкие уровни наследуют разрешения роли от более высоких уровней. 
 
 ![Область для назначения ролей](./media/shared/rbac-scope.png)
 
@@ -87,8 +87,8 @@ ms.locfileid: "91604413"
 
 - [Добавление и удаление назначений ролей Azure с помощью портала Azure](role-assignments-portal.md)
 - [Добавление и удаление назначений ролей Azure с помощью Azure PowerShell](role-assignments-powershell.md)
-- [Добавление или удаление назначений ролей Azure с помощью Azure CLI](role-assignments-cli.md)
-- [Добавление или удаление назначений ролей Azure с помощью REST API](role-assignments-rest.md)
+- [Добавление и удаление назначений ролей Azure с помощью Azure CLI](role-assignments-cli.md)
+- [Добавление и удаление назначений ролей Azure с помощью REST API](role-assignments-rest.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

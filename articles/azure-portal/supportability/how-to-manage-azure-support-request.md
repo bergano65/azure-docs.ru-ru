@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 06/30/2020
 ms.author: mblythe
 ms.openlocfilehash: f3b4806bf46750d74a54f68bd2ab58e402e75091
-ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85852383"
 ---
 # <a name="manage-an-azure-support-request"></a>Управление запросом на поддержку Azure
@@ -45,17 +45,17 @@ ms.locfileid: "85852383"
 
 1. На странице **запроса в службу поддержки** выберите **изменить**.
 
-    :::image type="content" source="media/how-to-manage-azure-support-request/change-severity.png" alt-text="Изменение важности запроса поддержки":::
+    :::image type="content" source="media/how-to-manage-azure-support-request/change-severity.png" alt-text="Все запросы на поддержку":::
 
 1. В портал Azure показано одно из двух экранов в зависимости от того, назначен ли ваш запрос инженеру службы поддержки.
 
     - Если запрос не назначен, отобразится экран следующего вида. Выберите новый уровень серьезности, а затем нажмите кнопку **изменить**.
 
-        :::image type="content" source="media/how-to-manage-azure-support-request/unassigned-can-change-severity.png" alt-text="Выберите новый уровень серьезности":::
+        :::image type="content" source="media/how-to-manage-azure-support-request/unassigned-can-change-severity.png" alt-text="Все запросы на поддержку":::
 
     - Если ваш запрос был назначен, отобразится экран следующего вида. Нажмите кнопку **ОК**, а затем создайте [новое сообщение](#send-a-message) , чтобы запросить изменение на уровне серьезности.
 
-        :::image type="content" source="media/how-to-manage-azure-support-request/assigned-cant-change-severity.png" alt-text="Не удается выбрать новый уровень серьезности":::
+        :::image type="content" source="media/how-to-manage-azure-support-request/assigned-cant-change-severity.png" alt-text="Все запросы на поддержку":::
 
 ## <a name="share-diagnostic-information-with-azure-support"></a>Общий доступ к диагностическим сведениям с помощью службы поддержки Azure
 
@@ -69,7 +69,7 @@ ms.locfileid: "85852383"
     
     1. На странице **запрос на поддержку** выберите **предоставить разрешение**, а затем нажмите кнопку **Да** и **ОК**.
     
-        :::image type="content" source="media/how-to-manage-azure-support-request/grant-permission-manage.png" alt-text="Предоставление разрешений для диагностических сведений":::
+        :::image type="content" source="media/how-to-manage-azure-support-request/grant-permission-manage.png" alt-text="Все запросы на поддержку":::
 
 ## <a name="upload-files"></a>Отправка файлов
 
@@ -79,7 +79,7 @@ ms.locfileid: "85852383"
 
 1. На странице **запрос в службу поддержки** найдите файл и нажмите кнопку **Отправить**. Повторите эту процедуру, если имеется несколько файлов.
 
-    :::image type="content" source="media/how-to-manage-azure-support-request/file-upload.png" alt-text="Отправка файла":::
+    :::image type="content" source="media/how-to-manage-azure-support-request/file-upload.png" alt-text="Все запросы на поддержку":::
 
 ### <a name="file-upload-guidelines"></a>Рекомендации по отправке файлов
 
@@ -126,7 +126,7 @@ ms.locfileid: "85852383"
 
 Если необходимо повторно открыть закрытый запрос на поддержку, создайте [новое сообщение](#send-a-message), которое автоматически повторно откроет запрос.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Создание запроса на поддержку Azure](how-to-create-azure-support-request.md)
 

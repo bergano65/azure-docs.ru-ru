@@ -12,10 +12,10 @@ ms.reviewer: larryfr
 ms.date: 07/17/2020
 ms.custom: how-to, devx-track-python
 ms.openlocfilehash: 081c07be49178be2415edccbfc2026336eb8a8a5
-ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90604416"
 ---
 # <a name="use-workspace-behind-a-firewall-for-azure-machine-learning"></a>Использование рабочей области за брандмауэром для Машинное обучение Azure
@@ -58,7 +58,7 @@ ms.locfileid: "90604416"
 | **\*. instances.azureml.net** | Машинное обучение Azureные экземпляры вычислений |
 | **\*. instances.azureml.ms** | Машинное обучение Azureные экземпляры вычислений, когда в рабочей области включена частная ссылка |
 | **windows.net** | хранилище BLOB-объектов Azure |
-| **vault.azure.net** | Azure Key Vault |
+| **vault.azure.net** | Хранилище ключей Azure; |
 | **azurecr.io** | Реестр контейнеров Azure |
 | **mcr.microsoft.com** | Реестр контейнеров Microsoft для базовых образов DOCKER |
 | **your-acr-server-name.azurecr.io** | Требуется только в том случае, если реестр контейнеров Azure находится за виртуальной сетью. В этой конфигурации частная ссылка создается из среды Майкрософт в экземпляр записи контроля доступа в подписке. Используйте имя сервера записи контроля доступа для рабочей области Машинное обучение Azure. |
@@ -95,8 +95,8 @@ ms.locfileid: "90604416"
 
 | **Имя узла** | **Назначение** |
 | ---- | ---- |
-| **usgovarizona.api.ml.azure.us** | Регион США |
-| **usgovvirginia.api.ml.azure.us** | Регион US-Виргиния |
+| **usgovarizona.api.ml.azure.us** | US-Arizona регион |
+| **usgovvirginia.api.ml.azure.us** | US-Virginia регион |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

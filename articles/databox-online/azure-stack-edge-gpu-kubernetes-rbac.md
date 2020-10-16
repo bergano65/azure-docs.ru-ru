@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: alkohli
 ms.openlocfilehash: 0880ae64520997fc6b41ba4a7e8508d927235a8a
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91320818"
 ---
 # <a name="kubernetes-role-based-access-control-on-your-azure-stack-edge-pro-gpu-device"></a>Kubernetes управление доступом на основе ролей на устройстве с Azure Stack ребра Pro GPU
@@ -42,7 +42,7 @@ Kubernetes RBAC позволяет назначать пользователям
     - KUBE — система
     - металлб — система
     - DBE — пространство имен
-    - значение по умолчанию
+    - default
     - kubernetes — панель мониторинга
     - KUBE — Аренда узла
     - KUBE — Открытый
@@ -103,7 +103,7 @@ Kubernetes имеет концепцию привязки ролей и роле
 - Вам запрещено создавать пользователей с уже зарезервированными именами. Например, `aseuser` является зарезервированным пользователем и не может использоваться.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Чтобы понять, как можно создать пользователя, создать пространство имен и предоставить пользователю доступ к пространству имен, см. раздел [доступ к кластеру Kubernetes через kubectl](azure-stack-edge-gpu-create-kubernetes-cluster.md).
 

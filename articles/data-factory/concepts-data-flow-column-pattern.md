@@ -8,10 +8,10 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.date: 09/16/2020
 ms.openlocfilehash: 74656401d7b0ef12cf509674921a6a5153ce992d
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91282941"
 ---
 # <a name="using-column-patterns-in-mapping-data-flow"></a>Использование шаблонов столбцов в потоке данных сопоставления
@@ -84,6 +84,6 @@ ms.locfileid: "91282941"
 * `position` порядковый номер столбца в потоке данных
 * `origin` Преобразование источника или последнего обновления столбца
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Дополнительные сведения о [языке выражений](data-flow-expression-functions.md) потока данных сопоставления для преобразований данных
 * Использование шаблонов столбцов в [преобразовании приемника](data-flow-sink.md) и [Выбор преобразования](data-flow-select.md) с сопоставлением на основе правил

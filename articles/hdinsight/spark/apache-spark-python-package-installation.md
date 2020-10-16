@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: seoapr2020, devx-track-python
 ms.date: 04/29/2020
-ms.openlocfilehash: a6ad1c068a41b4b865c148ebb7cdb509821609d4
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.openlocfilehash: 6ef4a4f422bb787b3ead33ed1047d26d5e3c9c1f
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91823415"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91978077"
 ---
 # <a name="safely-manage-python-environment-on-azure-hdinsight-using-script-action"></a>Безопасное управление средой Python в Azure HDInsight с помощью действия скрипта
 
@@ -81,7 +81,7 @@ ms.locfileid: "91823415"
 
     - Либо используйте репозиторий PyPi, изменив `seaborn` и `py35new` соответствующим образом:
         ```bash
-        sudo /usr/bin/anaconda/env/py35new/bin/pip install seaborn
+        sudo /usr/bin/anaconda/envs/py35new/bin/pip install seaborn
         ```
 
     Используйте приведенную ниже команду, чтобы установить библиотеку определенной версии.
@@ -98,7 +98,7 @@ ms.locfileid: "91823415"
     - Либо используйте репозиторий PyPi, изменив `numpy==1.16.1` и `py35new` соответствующим образом:
 
         ```bash
-        sudo /usr/bin/anaconda/env/py35new/bin/pip install numpy==1.16.1
+        sudo /usr/bin/anaconda/envs/py35new/bin/pip install numpy==1.16.1
         ```
 
     Если вы не знаете имя виртуальной среды, вы можете подключиться по SSH к головному узлу кластера и выполнить команду `/usr/bin/anaconda/bin/conda info -e`, чтобы получить список всех виртуальных сред.

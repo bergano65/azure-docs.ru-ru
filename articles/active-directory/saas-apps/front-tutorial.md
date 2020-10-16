@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
-ms.openlocfilehash: 606ee409a241db7b4deb9d15db86b034b8fbffd3
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: bbd39c85385d6690a80f540c9e0cd23a321e7e84
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88550985"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91821217"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-front"></a>Учебник. Интеграция Azure Active Directory с Front
 
@@ -128,23 +128,23 @@ ms.locfileid: "88550985"
 
 2. Последовательно выберите пункты **Settings (Параметры) (значок шестеренки в нижней части левой боковой панели) > Preferences (Предпочтения)** .
    
-    ![Настройка единого входа на стороне приложения](./media/front-tutorial/tutorial_front_000.png)
+    ![Снимок экрана: пункт "Параметры" (значок шестеренки) с выделенным пунктом "Предпочтения".](./media/front-tutorial/tutorial_front_000.png)
 
 3. Щелкните ссылку **Single Sign On** (Единый вход).
    
-    ![Настройка единого входа на стороне приложения](./media/front-tutorial/tutorial_front_001.png)
+    ![Снимок экрана: раздел "Предпочтения компании" с выбранной ссылкой "Единый вход".](./media/front-tutorial/tutorial_front_001.png)
 
 4. В раскрывающемся списке **Single Sign On** (Единый вход) выберите **SAML**.
    
-    ![Настройка единого входа на стороне приложения](./media/front-tutorial/tutorial_front_002.png)
+    ![Снимок экрана: раскрывающийся список "Единый вход" с выбранным пунктом "SAML".](./media/front-tutorial/tutorial_front_002.png)
 
 5. В текстовое поле **Точка входа** введите значение **URL-адреса входа** из мастера настройки приложения Azure AD.
     
-    ![Настройка единого входа на стороне приложения](./media/front-tutorial/tutorial_front_003.png)
+    ![Снимок экрана: текстовое поле "Точка входа".](./media/front-tutorial/tutorial_front_003.png)
 
 6. Откройте скачанный файл **сертификата в кодировке Base64** в Блокноте, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **Signing certificate** (Сертификат для подписи).
     
-    ![Настройка единого входа на стороне приложения](./media/front-tutorial/tutorial_front_004.png)
+    ![Снимок экрана: выделенный заголовок "Сертификат для подписи" и текстовое поле серого цвета.](./media/front-tutorial/tutorial_front_004.png)
 
 7. В разделе **Service provider settings** (Параметры поставщика услуг) сделайте следующее:
 

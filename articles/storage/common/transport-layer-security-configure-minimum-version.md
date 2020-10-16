@@ -11,10 +11,10 @@ ms.author: tamram
 ms.reviewer: fryu
 ms.subservice: common
 ms.openlocfilehash: 4c88791815d248cc20546d7942e7b0f107071186
-ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90018583"
 ---
 # <a name="enforce-a-minimum-required-version-of-transport-layer-security-tls-for-requests-to-a-storage-account"></a>Принудительная минимальная требуемая версия протокола TLS для запросов к учетной записи хранения
@@ -69,7 +69,7 @@ StorageBlobLogs
 
 В результатах отображается количество запросов, выполненных с каждой версией TLS:
 
-:::image type="content" source="media/transport-layer-security-configure-minimum-version/log-analytics-query-version.png" alt-text="Снимок экрана, показывающий результаты запроса log Analytics для возврата версии TLS":::
+:::image type="content" source="media/transport-layer-security-configure-minimum-version/log-analytics-query-version.png" alt-text="Снимок экрана, показывающий, как создать параметр диагностики для запросов ведения журнала":::
 
 ### <a name="query-logged-requests-by-caller-ip-address-and-user-agent-header"></a>Запрос зарегистрированных запросов по IP-адресу звонящего и заголовку агента пользователя
 
@@ -104,7 +104,7 @@ StorageBlobLogs
 1. Выберите параметр **конфигурации** .
 1. В разделе **Минимальная версия TLS**используйте раскрывающийся список, чтобы выбрать минимальную версию TLS, необходимую для доступа к данным в этой учетной записи хранения, как показано на следующем рисунке.
 
-    :::image type="content" source="media/transport-layer-security-configure-minimum-version/configure-minimum-version-portal.png" alt-text="Снимок экрана, показывающий, как настроить минимальную версию TLS в портал Azure":::
+    :::image type="content" source="media/transport-layer-security-configure-minimum-version/configure-minimum-version-portal.png" alt-text="Снимок экрана, показывающий, как создать параметр диагностики для запросов ведения журнала":::
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
@@ -307,7 +307,7 @@ resources
 1. Отфильтруйте результаты для имени назначения политики, созданного на предыдущем шаге. Отчет показывает, сколько ресурсов не соответствует политике.
 1. Вы можете детализировать отчет для получения дополнительных сведений, включая список учетных записей хранения, которые не соответствуют требованиям.
 
-    :::image type="content" source="media/transport-layer-security-configure-minimum-version/compliance-report-policy-portal.png" alt-text="Снимок экрана с отчетом о соответствии для политики аудита для минимальной версии TLS":::
+    :::image type="content" source="media/transport-layer-security-configure-minimum-version/compliance-report-policy-portal.png" alt-text="Снимок экрана, показывающий, как создать параметр диагностики для запросов ведения журнала":::
 
 ## <a name="use-azure-policy-to-enforce-the-minimum-tls-version"></a>Использование политики Azure для применения минимальной версии TLS
 
@@ -343,13 +343,13 @@ resources
 
 На следующем рисунке показана ошибка, возникающая при попытке создать учетную запись хранения с минимальной версией TLS, установленной на TLS 1,0 (значение по умолчанию для новой учетной записи), если для политики с применением Deny требуется, чтобы минимальная версия TLS была настроена на TLS 1,2.
 
-:::image type="content" source="media/transport-layer-security-configure-minimum-version/deny-policy-error.png" alt-text="Снимок экрана, показывающий ошибку, возникающую при создании учетной записи хранения с нарушением политики":::
+:::image type="content" source="media/transport-layer-security-configure-minimum-version/deny-policy-error.png" alt-text="Снимок экрана, показывающий, как создать параметр диагностики для запросов ведения журнала":::
 
 ## <a name="network-considerations"></a>Рекомендации по сети
 
 Когда клиент отправляет запрос в учетную запись хранения, он сначала устанавливает соединение с общедоступной конечной точкой учетной записи хранения перед обработкой любых запросов. Параметр минимальной версии TLS проверяется после установки соединения. Если в запросе используется более ранняя версия TLS, чем задано параметром, соединение будет продолжаться успешно, но запрос в конечном итоге завершится ошибкой. Дополнительные сведения о общедоступных конечных точках для службы хранилища Azure см. в разделе [синтаксис URI ресурсов](/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata#resource-uri-syntax).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Настройка протокола TLS для клиентского приложения](transport-layer-security-configure-client-version.md)
 - [Рекомендации по обеспечению безопасности для хранилища BLOB-объектов](../blobs/security-recommendations.md)

@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 04/21/2020
+ms.date: 10/13/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 37df1a052a58271c239b8b3bcaa4808ab7c355f0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 20480a252d7aedfd48a59bc05166f645e02e37e9
+ms.sourcegitcommit: 090ea6e8811663941827d1104b4593e29774fa19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85204376"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91998426"
 ---
 # <a name="json-claims-transformations"></a>Преобразования утверждений JSON
 
@@ -30,9 +30,11 @@ ms.locfileid: "85204376"
 
 | Item | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| InputClaim | Любая строка в следующей нотации с точкой | string | JsonPath JSON, в который будет вставлено значение утверждения. |
-| InputParameter | Любая строка в следующей нотации с точкой | string | JsonPath JSON, в который будет вставлено строковое значение константы. |
+| InputClaim | Любая строка в следующей нотации с точкой | строка | JsonPath JSON, в который будет вставлено значение утверждения. |
+| InputParameter | Любая строка в следующей нотации с точкой | строка | JsonPath JSON, в который будет вставлено строковое значение константы. |
 | outputClaim | outputClaim | строка | Созданная строка JSON. |
+
+### <a name="example-1"></a>Пример 1
 
 В следующем примере создается строка JSON на основе значения утверждения "Email" и "OTP", а также константных строк.
 
@@ -53,13 +55,11 @@ ms.locfileid: "85204376"
 </ClaimsTransformation>
 ```
 
-### <a name="example"></a>Пример
-
 В следующем преобразовании утверждений выводится строковый запрос JSON, который будет являться телом запроса, отправленного в SendGrid (поставщик электронной почты стороннего поставщика). Структура объекта JSON определяется идентификаторами в точечной нотации InputParameters и Трансформатионклаимтипес Inputclaim. Числа в точечной нотации подразумевают массивы. Значения берутся из значений Inputclaim и свойств InputParameters "" value ".
 
 - Входные утверждения:
-  - **адрес электронной почты**, персонализации для типа утверждения **. 0. в. 0. Электронная почта**: " someone@example.com "
-  - **OTP**, персонализации типа утверждения преобразования **. 0. dynamic_template_data. OTP** "346349"
+  - **адрес электронной почты**, персонализации для типа утверждения  **. 0. в. 0. Электронная почта**: " someone@example.com "
+  - **OTP**, тип утверждения преобразования **personalizations.0.dynamic_template_data. OTP** "346349"
 - Входной параметр:
   - **template_id**: "d-4c56ffb40fa648b1aa6822283df94f60"
   - **из. адрес электронной почты**: " service@contoso.com "
@@ -90,15 +90,65 @@ ms.locfileid: "85204376"
 }
 ```
 
+### <a name="example-2"></a>Пример 2
+
+В следующем примере создается строка JSON на основе значений утверждений, а также константных строк.
+
+```xml
+<ClaimsTransformation Id="GenerateRequestBody" TransformationMethod="GenerateJson">
+  <InputClaims>
+    <InputClaim ClaimTypeReferenceId="email" TransformationClaimType="customerEntity.email" />
+    <InputClaim ClaimTypeReferenceId="objectId" TransformationClaimType="customerEntity.userObjectId" />
+    <InputClaim ClaimTypeReferenceId="givenName" TransformationClaimType="customerEntity.firstName" />
+    <InputClaim ClaimTypeReferenceId="surname" TransformationClaimType="customerEntity.lastName" />
+  </InputClaims>
+  <InputParameters>
+    <InputParameter Id="customerEntity.role.name" DataType="string" Value="Administrator"/>
+    <InputParameter Id="customerEntity.role.id" DataType="long" Value="1"/>
+  </InputParameters>
+  <OutputClaims>
+    <OutputClaim ClaimTypeReferenceId="requestBody" TransformationClaimType="outputClaim"/>
+  </OutputClaims>
+</ClaimsTransformation>
+```
+
+В следующем преобразовании утверждений выводится строковый запрос JSON, который будет основным текстом запроса, отправленного в REST API. Структура объекта JSON определяется идентификаторами в точечной нотации InputParameters и Трансформатионклаимтипес Inputclaim. Значения берутся из значений Inputclaim и свойств InputParameters "" value ".
+
+- Входные утверждения:
+  - **адрес электронной почты**, утверждение преобразования типа  **customerEntity. email**: " john.s@contoso.com "
+  - **ObjectID**, тип утверждения преобразования **customerEntity. значение userobjectid** "01234567-89ab-cdef-0123-456789abcdef"
+  - **ObjectID**, тип утверждения преобразования **customerEntity. FirstName** "Джон"
+  - **ObjectID**, тип утверждения преобразования **customerEntity. LastName** "Смит"
+- Входной параметр:
+  - **customerEntity.Role.Name**: "Администратор"
+  - **customerEntity.Role.ID** 1
+- Исходящее утверждение:
+  - **requestBody**: значение JSON
+
+```json
+{
+   "customerEntity":{
+      "email":"john.s@contoso.com",
+      "userObjectId":"01234567-89ab-cdef-0123-456789abcdef",
+      "firstName":"John",
+      "lastName":"Smith",
+      "role":{
+         "name":"Administrator",
+         "id": 1
+      }
+   }
+}
+```
+
 ## <a name="getclaimfromjson"></a>GetClaimFromJson
 
 Возвращает указанный элемент из данных JSON.
 
 | Item | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| InputClaim | inputJson | string | Параметр ClaimTypes, используемый в преобразовании утверждений для получения элемента. |
-| InputParameter | claimToExtract | string | Имя элемента JSON, который требуется извлечь. |
-| outputClaim | extractedClaim | string | Параметр ClaimType, созданный после вызова преобразования утверждений (значение элемента указано во входном параметре _claimToExtract_). |
+| InputClaim | inputJson | строка | Параметр ClaimTypes, используемый в преобразовании утверждений для получения элемента. |
+| InputParameter | claimToExtract | строка | Имя элемента JSON, который требуется извлечь. |
+| outputClaim | extractedClaim | строка | Параметр ClaimType, созданный после вызова преобразования утверждений (значение элемента указано во входном параметре _claimToExtract_). |
 
 В следующем примере в процессе преобразования утверждений извлекается элемент `emailAddress` из данных JSON: `{"emailAddress": "someone@example.com", "displayName": "Someone"}`
 
@@ -123,7 +173,7 @@ ms.locfileid: "85204376"
 - Входной параметр:
     - **claimToExtract**: emailAddress.
 - Исходящие утверждения:
-  - **екстрактедклаим**:someone@example.com
+  - **екстрактедклаим**: someone@example.com
 
 
 ## <a name="getclaimsfromjsonarray"></a>GetClaimsFromJsonArray
@@ -132,11 +182,11 @@ ms.locfileid: "85204376"
 
 | Item | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| InputClaim | jsonSourceClaim | string | Параметр ClaimTypes, используемый в преобразовании утверждений для получения утверждений. |
+| InputClaim | jsonSourceClaim | строка | Параметр ClaimTypes, используемый в преобразовании утверждений для получения утверждений. |
 | InputParameter | errorOnMissingClaims | Логическое | Указывает, следует ли выдавать ошибку, если одно из утверждений отсутствует. |
-| InputParameter | includeEmptyClaims | string | Указывает, следует ли включать пустые утверждения. |
-| InputParameter | jsonSourceKeyName | string | Имя ключа элемента |
-| InputParameter | jsonSourceValueName | string | Имя значения элемента |
+| InputParameter | includeEmptyClaims | строка | Указывает, следует ли включать пустые утверждения. |
+| InputParameter | jsonSourceKeyName | строка | Имя ключа элемента |
+| InputParameter | jsonSourceValueName | строка | Имя значения элемента |
 | outputClaim | Коллекция | string, int, boolean и datetime |Список утверждений для извлечения. Имя утверждения должно соответствовать указанному имени во входящем утверждении _jsonSourceClaim_. |
 
 В следующем примере в процессе преобразования утверждений из данных JSON извлекаются следующие утверждения: email (string), displayName (string), membershipNum (int), active (boolean) и birthdate (datetime).
@@ -186,8 +236,8 @@ ms.locfileid: "85204376"
 
 | Item | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| InputClaim | inputJson | string | Параметр ClaimTypes, используемый в преобразовании утверждений для получения утверждения. |
-| InputParameter | claimToExtract | string | Имя извлекаемого элемента JSON. |
+| InputClaim | inputJson | строка | Параметр ClaimTypes, используемый в преобразовании утверждений для получения утверждения. |
+| InputParameter | claimToExtract | строка | Имя извлекаемого элемента JSON. |
 | outputClaim | extractedClaim | long | Параметр ClaimType, который создается после вызова ClaimsTransformation (значение элемента указано во входных параметрах _claimToExtract_). |
 
 В следующем примере в процессе преобразования утверждений из данных JSON извлекается элемент `id`.
@@ -229,9 +279,9 @@ ms.locfileid: "85204376"
 
 | Item | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| InputClaim | inputJson | string | ClaimTypes, используемые преобразованием «утверждения» для получения элемента из данных JSON. |
+| InputClaim | inputJson | строка | ClaimTypes, используемые преобразованием «утверждения» для получения элемента из данных JSON. |
 | outputClaim | ключ | строка | Первый ключ элемента в JSON. |
-| outputClaim | value | string | Значение первого элемента в JSON. |
+| outputClaim | value | строка | Значение первого элемента в JSON. |
 
 В следующем примере преобразование «утверждения» извлекает первый элемент (с заданным именем) из данных JSON.
 
@@ -262,8 +312,8 @@ ms.locfileid: "85204376"
 
 | Item | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| InputClaim | inputJsonClaim | string | Параметр ClaimTypes, используемый в преобразовании утверждений для получения элемента из массива JSON. |
-| outputClaim | extractedClaim | string | ClaimType, который создается после вызова ClaimsTransformation (первый элемент в массиве JSON). |
+| InputClaim | inputJsonClaim | строка | Параметр ClaimTypes, используемый в преобразовании утверждений для получения элемента из массива JSON. |
+| outputClaim | extractedClaim | строка | ClaimType, который создается после вызова ClaimsTransformation (первый элемент в массиве JSON). |
 
 В следующем примере в процессе преобразования утверждений из массива JSON `["someone@example.com", "Someone", 6353399]` извлекается первый элемент (адрес электронной почты).
 
@@ -283,7 +333,7 @@ ms.locfileid: "85204376"
 - Входящие утверждения:
   - **инпутжсонклаим**: [" someone@example.com ", "кто", 6353399]
 - Исходящие утверждения:
-  - **екстрактедклаим**:someone@example.com
+  - **екстрактедклаим**: someone@example.com
 
 ## <a name="xmlstringtojsonstring"></a>XmlStringToJsonString
 
@@ -291,8 +341,8 @@ ms.locfileid: "85204376"
 
 | Item | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| InputClaim | Xml | string | Параметр ClaimTypes, используемый в преобразовании утверждений для преобразования данных из языка XML в формат JSON. |
-| outputClaim | json | string | ClaimType, который создается после вызова ClaimsTransformation (данные в формате JSON). |
+| InputClaim | Xml | строка | Параметр ClaimTypes, используемый в преобразовании утверждений для преобразования данных из языка XML в формат JSON. |
+| outputClaim | json | строка | ClaimType, который создается после вызова ClaimsTransformation (данные в формате JSON). |
 
 ```xml
 <ClaimsTransformation Id="ConvertXmlToJson" TransformationMethod="XmlStringToJsonString">

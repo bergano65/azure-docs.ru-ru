@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
 ms.openlocfilehash: 9c734ff03b1cf277c7e0967d8b76b1941434f414
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86050287"
 ---
 В этой процедуре будут выполнены следующие действия.
@@ -23,7 +23,7 @@ ms.locfileid: "86050287"
 2. Перейдите в папку *загрузочный диск*:\Program Files\Microsoft SQL Remote Blob Storage 10.50\Maintainer\..
 3. Переименуйте **Microsoft.Data.SqlRemoteBlobs.Maintainer.exe.config** в **web.config**.
 4. Используйте `aspnet_regiis -pdf connectionStrings` для расшифровки файла web.config.
-5. В расшифрованном файле web.config в узле `connectionStrings` добавьте строку подключения для вашего экземпляра SQL Server и имя базы данных содержимого. См. указанный ниже пример.
+5. В расшифрованном файле web.config в узле `connectionStrings` добавьте строку подключения для вашего экземпляра SQL Server и имя базы данных содержимого. См. следующий пример.
    
     `<add name="RBSMaintainerConnectionWSSContent" connectionString="Data Source=SHRPT13-SQL12\SHRPT13;Initial Catalog=WSS_Content;Integrated Security=True;Application Name=&quot;Remote Blob Storage Maintainer for WSS_Content&quot;" providerName="System.Data.SqlClient" />`
 6. Используйте `aspnet_regiis –pef connectionStrings` для повторного шифрования файла web.config. 

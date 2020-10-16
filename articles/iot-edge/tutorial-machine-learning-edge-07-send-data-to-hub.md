@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 78d3cbac28a85452f23e4a7c7ba3904fe3d1f488
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: ec7337ad798d586cb93bd13e60ead1ef9f2a4abe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88997886"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91857254"
 ---
 # <a name="tutorial-send-data-via-transparent-gateway"></a>Руководство по отправке данных через прозрачный шлюз
 
@@ -238,5 +238,8 @@ ms.locfileid: "88997886"
 
 См. подробнее в следующих статьях:
 
-* [Connect a downstream device to an Azure IoT Edge gateway](how-to-connect-downstream-device.md) (Подключение подчиненного устройства к шлюзу Azure IoT Edge)
-* [Store data at the edge with Azure Blob Storage on IoT Edge (preview)](how-to-store-data-blob.md) (Хранение данных на границе с помощью хранилища BLOB-объектов Azure в IoT Edge (предварительная версия))
+> [!div class="nextstepaction"]
+> [Connect a downstream device to an Azure IoT Edge gateway](how-to-connect-downstream-device.md) (Подключение подчиненного устройства к шлюзу Azure IoT Edge)
+
+> [!div class="nextstepaction"]
+> [Store data at the edge with Azure Blob Storage on IoT Edge (preview)](how-to-store-data-blob.md) (Хранение данных на границе с помощью хранилища BLOB-объектов Azure в IoT Edge (предварительная версия))

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 02/07/2017
 ms.author: alkohli
-ms.openlocfilehash: 529b93e7754df7aa0a981f4389108b8f53b4be2f
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 26890aaa7bc2d0ea70ff326e36a5767d1d468d5c
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91300570"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91977550"
 ---
 # <a name="install-update-04-on-your-storsimple-virtual-array"></a>Установка обновления 0.4 на виртуальный массив StorSimple
 
@@ -76,26 +76,26 @@ ms.locfileid: "91300570"
 
 1. В локальном веб-интерфейсе перейдите в раздел **обслуживание**  >  **Обновление программного обеспечения**.
    
-    ![обновление устройства](./media/storsimple-virtual-array-install-update/update1m.png)
+    ![Обновление устройства 1](./media/storsimple-virtual-array-install-update/update1m.png)
 
 2. В поле **Путь к файлу обновления**введите имя файла обновления или исправления. Также вы можете найти файл установки обновления или исправления, если он расположен в сетевой папке. Нажмите кнопку **Применить**.
    
-    ![обновление устройства](./media/storsimple-virtual-array-install-update/update2m.png)
+    ![Обновление устройства 2](./media/storsimple-virtual-array-install-update/update2m.png)
 
 3. Отобразится предупреждение. Если это устройство с одним узлом, то после применения обновления оно перезагружается, а также возникает время простоя. Щелкните значок галочки.
    
-   ![обновление устройства](./media/storsimple-virtual-array-install-update/update3m.png)
+   ![Обновление устройства 3](./media/storsimple-virtual-array-install-update/update3m.png)
 
 4. Начинается обновление. После успешного обновления устройство перезапускается. В течение этого времени локальный пользовательский интерфейс недоступен.
    
-    ![обновление устройства](./media/storsimple-virtual-array-install-update/update5m.png)
+    ![Обновление устройства 4](./media/storsimple-virtual-array-install-update/update5m.png)
 
 5. После перезапуска открывается страница **входа** . Чтобы убедиться, что программное обеспечение устройства Обновлено, в локальном веб-интерфейсе перейдите в раздел **обслуживание**  >  **Обновление программного обеспечения**. Для обновления версии 0.4 должна отображаться версия программного обеспечения **10.0.0.0.0.10289.0**.
    
    > [!NOTE]
    > Версии программного обеспечения в локальном веб-интерфейсе и на портале Azure отображаются немного по-разному. Например, для одной и той же версии в локальном пользовательском веб-интерфейсе отображается номер **10.0.0.0.0.10289**, а на портале Azure — **10.0.10289.0**.
    
-    ![обновление устройства](./media/storsimple-virtual-array-install-update/update6m.png)
+    ![Обновление устройства 5](./media/storsimple-virtual-array-install-update/update6m.png)
 
 ## <a name="use-the-azure-portal"></a>Использование портала Azure
 

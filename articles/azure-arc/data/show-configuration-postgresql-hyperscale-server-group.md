@@ -11,10 +11,10 @@ ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
 ms.openlocfilehash: ceab9af7e6556b2d957fafce8cd89d4a0daf9508
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90940774"
 ---
 # <a name="show-the-configuration-of-an-arc-enabled-postgresql-hyperscale-server-group"></a>Отображение конфигурации PostgreSQL, включенной в группу серверов масштабирования.
@@ -362,11 +362,11 @@ azdata arc postgres server show -n postgres02
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - [Узнайте о концепциях PostgreSQL с поддержкой ARC в Azure.](concepts-distributed-postgres-hyperscale.md)
 - [Дополнительные сведения о масштабировании (Добавление рабочих узлов) в группу серверов](scale-out-postgresql-hyperscale-server-group.md)
 - [Узнайте, как масштабировать группу серверов (увеличить или уменьшить объем памяти и/или виртуальных ядер).](scale-up-down-postgresql-hyperscale-server-group-using-cli.md)
 - [Сведения о конфигурации хранилища](storage-configuration.md)
 - [Сведения о мониторинге экземпляра базы данных](monitor-grafana-kibana.md)
 - [Использование расширений PostgreSQL в службе "Дуга Azure", в которой включена PostgreSQLная группа серверов](using-extensions-in-postgresql-hyperscale-server-group.md)
-- [Настройка безопасности для группы PostgreSQL "масштабируемый сервер" в службе "Дуга Azure"](configure-security-postgres-hyperscale.md)
+- [Настройка безопасности для группы серверов Гипермасштабирования PostgreSQL с поддержкой Azure Arc](configure-security-postgres-hyperscale.md)

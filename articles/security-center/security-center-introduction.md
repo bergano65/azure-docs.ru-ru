@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/22/2020
 ms.author: memildin
-ms.openlocfilehash: 2eee46f99af247ffd0e11b262ace0a96453270d4
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: a6f0af188bb999acecad7fee0a90256eff05f902
+ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91323680"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91742083"
 ---
 # <a name="what-is-azure-security-center"></a>Что такое Центр безопасности Azure?
 
@@ -43,7 +43,8 @@ ms.locfileid: "91323680"
 
 -   **Быстрое получение системы безопасности**. В Центре безопасности все выполняется с облачной скоростью. Так как он изначально интегрирован, развернуть Центр безопасности несложно благодаря автоматической подготовке и защите с помощью служб Azure.
 
-[!INCLUDE [azure-lighthouse-supported-service](../../includes/azure-lighthouse-supported-service.md)]
+> [!NOTE]
+> Эта служба поддерживает [Azure Lighthouse](../lighthouse/overview.md), что позволяет поставщикам услуг входить в собственный арендатор для управления подписками и группами ресурсов, которые делегируют клиенты. В сценариях использования Центра безопасности Azure следует делегировать подписку, а не отдельные группы ресурсов.
 
 ## <a name="architecture"></a>Architecture
 

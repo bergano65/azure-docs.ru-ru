@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 07/29/2020
 ms.author: jeedes
-ms.openlocfilehash: adbadc14caad6594dc30f0f9fd9cb1cb49b47888
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 7d3dccc8d34852b967bffcf57e2f3609d9786279
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88544270"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91826688"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-egress"></a>Руководство по интеграции единого входа Azure Active Directory с Egress
 
@@ -146,7 +146,7 @@ ms.locfileid: "88544270"
 
 1. Щелкните **Invite Users** (Пригласить пользователей) в меню слева, а затем выберите **Invite Single User** (Пригласить одного пользователя), чтобы добавить пользователя.
 
-    ![Создание тестового пользователя Egress](./media/egress-tutorial/create-user-1.PNG)
+    ![Снимок экрана, на котором отображается страница "Invite Users" (Приглашение пользователей) с выбранной кнопкой "Invite Single User" (Пригласить одного пользователя)](./media/egress-tutorial/create-user-1.PNG)
 
 1. Введите данные в обязательные поля и щелкните **Invite** (Пригласить).
 

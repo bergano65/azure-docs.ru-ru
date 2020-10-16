@@ -12,10 +12,10 @@ author: minthigpen
 ms.reviewer: Luis.Quintanilla
 ms.date: 07/09/2020
 ms.openlocfilehash: d063af3ba3b9261100af5e48a2c507a80ac76d98
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91322365"
 ---
 # <a name="model-interpretability-in-azure-machine-learning-preview"></a>Интерпретируемость модели в Машинное обучение Azure (Предварительная версия)
@@ -108,7 +108,7 @@ ms.locfileid: "91322365"
 Вы можете запустить объяснение удаленно на Машинное обучение Azure вычислить и записать пояснения в службу журнала выполнения Машинное обучение Azure. После записи этих сведений отчеты и визуализации из описания можно легко найти в Машинное обучение Azure Studio для анализа пользователей.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - См. [инструкции](how-to-machine-learning-interpretability-aml.md) по включению интерпретации для моделей, как локально, так и на машинное обучение Azure удаленных ресурсов вычислений. 
 - Дополнительные сценарии см. в [примерах записных книжек](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/explain-model) . 

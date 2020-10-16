@@ -8,15 +8,15 @@ ms.subservice: core
 ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
-ms.date: 06/17/2020
+ms.date: 10/12/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, devx-track-csharp
-ms.openlocfilehash: 6aacc2778e02b96f31c633671da014ced30778fd
-ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
+ms.openlocfilehash: 5ffdb7a3bb177092d728fbd469aa8cf95e93edb5
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91756676"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91966106"
 ---
 # <a name="consume-an-azure-machine-learning-model-deployed-as-a-web-service"></a>Использование модели Машинного обучения Azure, развернутой в качестве веб-службы
 
@@ -46,7 +46,9 @@ ms.locfileid: "91756676"
 * `scoring_uri` — адрес REST API.
 * `swagger_uri` — Адрес спецификации OpenAPI. Этот URI доступен, если включено автоматическое создание схем. Дополнительные сведения см. в разделе [Развертывание моделей с помощью машинное обучение Azure](how-to-deploy-and-where.md).
 
-Эти сведения для развернутой веб-службы можно получить тремя способами.
+Существует несколько способов получить эту информацию для развернутых веб-служб.
+
+# <a name="python"></a>[Python](#tab/python)
 
 * При развертывании модели, возвращается объект `Webservice` с информацией о службе:
 
@@ -72,6 +74,30 @@ ms.locfileid: "91756676"
     print(service.scoring_uri)
     print(service.swagger_uri)
     ```
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+Если известно имя развернутой службы, используйте команду [AZ ML Service показ](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/service?view=azure-cli-latest#ext_azure_cli_ml_az_ml_service_show) .
+
+```azurecli
+az ml service show -n <service-name>
+```
+
+# <a name="portal"></a>[Портал](#tab/azure-portal)
+
+В Машинное обучение Azure Studio выберите __конечные__точки, __конечные точки в режиме реального времени__, а затем имя конечной точки. В сведениях о конечной точке поле __конечной точки RESTful__ содержит URI оценки. __URI Swagger__ содержит URI Swagger.
+
+---
+
+В следующей таблице показано, как выглядят эти URI:
+
+| Тип URI | Пример |
+| ----- | ----- |
+| URI оценки | `http://104.214.29.152:80/api/v1/service/<service-name>/score` |
+| URI Swagger | `http://104.214.29.152/api/v1/service/<service-name>/swagger.json` |
+
+> [!TIP]
+> IP-адрес будет отличаться для вашего развертывания. Каждый кластер AKS будет иметь собственный IP-адрес, совместно используемый развертываниями в этом кластере.
 
 ### <a name="secured-web-service"></a>Защищенная веб-служба
 
@@ -268,7 +294,7 @@ namespace MLWebServiceClient
 
 ## <a name="call-the-service-go"></a>Вызов службы с помощью Go
 
-В этом примере демонстрируется вызов веб-службы, созданный на языке Go на основе примера [train-within-notebook](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training-with-deep-learning/how-to-use-estimator/notebook_example.ipynb):
+В этом примере демонстрируется вызов веб-службы, созданный на языке Go на основе примера [train-within-notebook](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines/intro-to-pipelines/notebook_runner/training_notebook.ipynb):
 
 ```go
 package main
@@ -360,7 +386,7 @@ func main() {
 
 ## <a name="call-the-service-java"></a>Вызов службы с помощью Java
 
-В этом примере демонстрируется вызов веб-службы, созданный на языке Java на основе примера [train-within-notebook](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training-with-deep-learning/how-to-use-estimator/notebook_example.ipynb):
+В этом примере демонстрируется вызов веб-службы, созданный на языке Java на основе примера [train-within-notebook](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines/intro-to-pipelines/notebook_runner/training_notebook.ipynb):
 
 ```java
 import java.io.IOException;
@@ -440,7 +466,7 @@ public class App {
 
 ## <a name="call-the-service-python"></a>Вызов службы с помощью Python
 
-В этом примере демонстрируется вызов веб-службы, созданный на языке Python на основе примера [train-within-notebook](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training-with-deep-learning/how-to-use-estimator/notebook_example.ipynb):
+В этом примере демонстрируется вызов веб-службы, созданный на языке Python на основе примера [train-within-notebook](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines/intro-to-pipelines/notebook_runner/training_notebook.ipynb):
 
 ```python
 import requests

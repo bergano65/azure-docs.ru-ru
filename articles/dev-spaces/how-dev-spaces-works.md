@@ -5,14 +5,16 @@ ms.date: 06/02/2020
 ms.topic: conceptual
 description: Описывает процессы, которые Power Azure Dev Spaces
 keywords: Azure Dev Spaces, Dev Spaces, Docker, Kubernetes, Azure, AKS, Служба Azure Kubernetes, контейнеры
-ms.openlocfilehash: 81408ed4bbe5322538d893b29c7397104c5b0844
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: 8de2c27ce03c871e60b6437656ad630fc8de8408
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90981272"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91963709"
 ---
 # <a name="how-azure-dev-spaces-works"></a>Принцип работы Azure Dev Spaces
+
+[!INCLUDE [Azure Dev Spaces deprecation](../../includes/dev-spaces-deprecation.md)]
 
 Разработка приложения Kubernetes может оказаться сложной задачей. Требуются файлы конфигурации DOCKER и Kubernetes. Необходимо выяснить, как протестировать приложение локально и взаимодействовать с другими зависимыми службами. Может потребоваться одновременное создание и тестирование нескольких служб, а также группа разработчиков.
 
@@ -22,7 +24,7 @@ Azure Dev Spaces предоставляет несколько способов 
 
 Azure Dev Spaces сокращает усилия по разработке, тестированию и итерации приложения Kubernetes в контексте кластера AKS. Это сокращение усилий позволяет разработчикам сосредоточиться на бизнес-логике своих приложений и не настраивать их службы для работы в Kubernetes.
 
-### <a name="bridge-to-kubernetes"></a>Мост в Kubernetes
+### <a name="bridge-to-kubernetes"></a>Мост с Kubernetes
 
 С помощью моста для Kubernetes можно подключить компьютер разработчика к кластеру Kubernetes, что позволит запускать и отлаживать код на компьютере разработчика, как если бы он был запущен в кластере. Мост в Kubernetes перенаправляет трафик между подключенным кластером, запуская в кластере модуль, который выступает в качестве удаленного агента для перенаправления трафика между компьютером разработки и кластером. Это перенаправление трафика позволяет взаимодействовать с кодом на компьютере разработчика и в службах, работающих в кластере, так, будто они находятся в одном кластере. Дополнительные сведения о подключении компьютера разработчика к кластеру Kubernetes см. в статье [Работа моста с Kubernetes][how-it-works-bridge-to-kubernetes].
 

@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: how-to
 ms.date: 09/22/2020
 ms.openlocfilehash: 1542bba53b51ffdf2129953a81e5d13975ade434
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90939248"
 ---
 # <a name="scale-operations-in-flexible-server"></a>Масштабирование операций на гибком сервере
@@ -43,20 +43,20 @@ ms.locfileid: "90939248"
  :::image type="content" source="./media/how-to-scale-compute-storage-portal/click-compute-storage.png" alt-text="представление вычислений и хранилища":::
 
 4.  Вы можете выбрать класс вычислений между уровнями с возможностью разбивки, общего назначения и оптимизированной для памяти.
-   :::image type="content" source="./media/how-to-scale-compute-storage-portal/list-compute-tiers.png" alt-text="Вывод списка уровней вычислений":::
+   :::image type="content" source="./media/how-to-scale-compute-storage-portal/list-compute-tiers.png" alt-text="представление вычислений и хранилища":::
 
 
 5.  Если вы хорошо используете виртуальных ядер по умолчанию и размеры памяти, можно пропустить следующий шаг.
 
 6.  Если вы хотите изменить число виртуальных ядер, щелкните раскрывающийся список **Размер вычислений** и выберите нужное количество виртуальных ядер/памяти из списка.
     
-    - Пакетный уровень вычислений: многоуровневые :::image type="content" source="./media/how-to-scale-compute-storage-portal/compute-burstable-dropdown.png" alt-text="вычислений":::
+    - Пакетный уровень вычислений: многоуровневые :::image type="content" source="./media/how-to-scale-compute-storage-portal/compute-burstable-dropdown.png" alt-text="представление вычислений и хранилища":::
 
-    - Уровень вычислений общего назначения: :::image type="content" source="./media/how-to-scale-compute-storage-portal/compute-general-purpose-dropdown.png" alt-text="расчеты общего назначения":::
+    - Уровень вычислений общего назначения: :::image type="content" source="./media/how-to-scale-compute-storage-portal/compute-general-purpose-dropdown.png" alt-text="представление вычислений и хранилища":::
 
-    - Оптимизированный для памяти уровень вычислений: :::image type="content" source="./media/how-to-scale-compute-storage-portal/compute-memory-optimized-dropdown.png" alt-text="вычисление, оптимизированное для памяти":::
+    - Оптимизированный для памяти уровень вычислений: :::image type="content" source="./media/how-to-scale-compute-storage-portal/compute-memory-optimized-dropdown.png" alt-text="представление вычислений и хранилища":::
 
-7.  Щелкните **Сохранить**. 
+7.  Выберите команду **Сохранить**. 
 8.  Появится сообщение подтверждения. Нажмите кнопку **ОК** , чтобы перейти к нужному. 
 9.  Уведомление о выполняемой операции масштабирования.
 
@@ -70,18 +70,18 @@ ms.locfileid: "90939248"
 
 3.  Отобразится страница с текущими параметрами.
    
-:::image type="content" source="./media/how-to-scale-compute-storage-portal/click-compute-storage.png" alt-text="Щелкните "COMPUTE + хранилище"":::
+:::image type="content" source="./media/how-to-scale-compute-storage-portal/click-compute-storage.png" alt-text="представление вычислений и хранилища":::
 4.  Размер поля **хранения в гиб** с заголовком слайда отображается с текущим размером.
 
 5.  Подвиньте ползунок в нужный размер. Отображается соответствующий номер операции ввода-вывода. Операции ввода-вывода зависят от уровня и размера вычислений. Также отображаются сведения о стоимости. 
 
- :::image type="content" source="./media/how-to-scale-compute-storage-portal/storage-scaleup.png" alt-text="увеличение масштаба хранилища":::
+ :::image type="content" source="./media/how-to-scale-compute-storage-portal/storage-scaleup.png" alt-text="представление вычислений и хранилища":::
 
 6.  Если вы хорошо используете размер хранилища, нажмите кнопку **сохранить**. 
 7.  Появится сообщение подтверждения. Нажмите кнопку **ОК** , чтобы перейти к нужному. 
 8.  Уведомление о выполняемой операции масштабирования.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 -   Сведения о [непрерывности бизнес-процессов](./concepts-business-continuity.md)
 -   Дополнительные сведения о [высокой доступности](./concepts-high-availability.md)

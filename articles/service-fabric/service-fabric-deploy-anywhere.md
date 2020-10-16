@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 01/07/2020
 ms.custom: sfrev
 ms.openlocfilehash: 8313d75bb6398bbe614c6f56b494079548c99954
-ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91842603"
 ---
 # <a name="comparing-azure-and-standalone-service-fabric-clusters-on-windows-server-and-linux"></a>Сравнение Azure и изолированных кластеров Service Fabric в Windows Server и Linux
@@ -37,7 +37,7 @@ Service Fabric позволяет создавать кластеры Service Fa
 * Широкий охват клиентов не ограничен средой размещения.
 * Дополнительный уровень надежности и защиты от масштабных простоев обеспечивается за счет перемещения служб в другую среду развертывания в случае отключения центра обработки данных или поставщика облачных решений.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Общие сведения об кластерах Service Fabric в Azure см. [здесь](service-fabric-azure-clusters-overview.md)
 * Общие сведения об изолированных кластерах Service Fabric см. в [этой статье](service-fabric-standalone-clusters-overview.md)

@@ -8,17 +8,17 @@ ms.topic: article
 ms.date: 11/08/2019
 ms.custom: devx-track-csharp
 ms.openlocfilehash: fcf7f1a27633c978c10f541d0a341225fbcb126d
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89013781"
 ---
 # <a name="call-or-trigger-logic-apps-by-using-azure-functions-and-azure-service-bus"></a>Вызов или Активация приложений логики с помощью функций Azure и служебной шины Azure
 
 Вы можете использовать [функции Azure](../azure-functions/functions-overview.md) для активации приложения логики, когда требуется развернуть долгосрочный прослушиватель или задачу. Например, можно создать функцию Azure, которая прослушивает очередь [служебной шины Azure](../service-bus-messaging/service-bus-messaging-overview.md) и сразу же запускает приложение логики в качестве триггера push-уведомлений.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
@@ -124,7 +124,7 @@ ms.locfileid: "89013781"
    
    * По возможности повторно используйте экземпляр HTTP-клиентов. Дополнительные сведения см. [в статье Управление подключениями в функциях Azure](../azure-functions/manage-connections.md).
 
-   В этом примере используется [ `Task.Run` метод](/dotnet/api/system.threading.tasks.task.run) в [асинхронном](/dotnet/csharp/language-reference/keywords/async) режиме. Дополнительные сведения см. [в разделе Асинхронное программирование с использованием Async и await](/dotnet/csharp/programming-guide/concepts/async/).
+   В этом примере используется [ `Task.Run` метод](/dotnet/api/system.threading.tasks.task.run) в [асинхронном](/dotnet/csharp/language-reference/keywords/async) режиме. Дополнительные сведения см. в разделе [Асинхронное программирование с использованием ключевых слов async и await](/dotnet/csharp/programming-guide/concepts/async/).
 
    ```csharp
    using System;

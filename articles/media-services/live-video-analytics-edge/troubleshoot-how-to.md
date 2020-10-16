@@ -6,10 +6,10 @@ ms.topic: how-to
 ms.author: inhenkel
 ms.date: 05/24/2020
 ms.openlocfilehash: c297a189f3b13ca8e72daf4eef009bc28fac32bf
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91823202"
 ---
 # <a name="troubleshoot-live-video-analytics-on-iot-edge"></a>Устранение неполадок в Live Video Analytics на IoT Edge
@@ -190,7 +190,7 @@ Unhandled exception. Microsoft.Azure.Devices.Common.Exceptions.UnauthorizedExcep
     ![Снимок экрана ответа в Visual Studio Code.](./media/troubleshoot-how-to/visual-studio-code1.png)
 1. Если предыдущее решение завершается сбоем, попробуйте выполнить следующие действия.
 
-    а. Перейдите в командную строку на устройстве IoT Edge и выполните следующую команду:
+    a. Перейдите в командную строку на устройстве IoT Edge и выполните следующую команду:
     
       ```
       sudo systemctl restart iotedge
@@ -315,7 +315,7 @@ Unhandled exception. Microsoft.Azure.Devices.Common.Exceptions.UnauthorizedExcep
 1. Нажмите кнопку **создания**.
 1. Обновите **двойника удостоверений модуля** , чтобы он указывал на параметр дебуглогсдиректори, указывающий на каталог, в котором собираются журналы.
 
-    а. В таблице **модули** выберите **лваедже**.  
+    a. В таблице **модули** выберите **лваедже**.  
     b. В верхней части панели выберите **модуль удостоверение двойника**. Откроется Редактируемая панель.  
     c. В разделе **требуемый ключ**добавьте следующую пару "ключ-значение":  
     `"DebugLogsDirectory": "/var/lib/azuremediaservices/logs"`
@@ -335,7 +335,7 @@ Unhandled exception. Microsoft.Azure.Devices.Common.Exceptions.UnauthorizedExcep
    > [!NOTE]
    > Эти файлы журналов не предназначены для самостоятельной диагностики. Они предназначены для анализа ваших проблем командой инженеров Azure.
 
-   а. В следующей команде обязательно замените **$DEBUG _LOG_LOCATION_ON_EDGE_DEVICE** расположением журналов отладки на пограничном устройстве, которое вы настроили ранее.  
+   a. В следующей команде обязательно замените **$DEBUG _LOG_LOCATION_ON_EDGE_DEVICE** расположением журналов отладки на пограничном устройстве, которое вы настроили ранее.  
 
    ```
    sudo apt install zip unzip  
@@ -348,6 +348,6 @@ Unhandled exception. Microsoft.Azure.Devices.Common.Exceptions.UnauthorizedExcep
 
     `"DebugLogsDirectory": ""`
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Руководство по Запись видео в облако и его воспроизведение оттуда на основе событий](event-based-video-recording-tutorial.md)

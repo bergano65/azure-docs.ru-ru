@@ -9,10 +9,10 @@ ms.topic: troubleshooting
 ms.date: 06/14/2019
 ms.author: alkohli
 ms.openlocfilehash: 1c1b38c4021660b9f59098f8442d16bfd0ecc582
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87925548"
 ---
 # <a name="use-logs-to-troubleshoot-validation-issues-in-azure-data-box-disk"></a>Используйте журналы для устранения неполадок, связанных с проверкой, в Диск Azure Data Box
@@ -21,7 +21,7 @@ ms.locfileid: "87925548"
 
 ## <a name="validation-tool-log-files"></a>Файлы журналов средства проверки
 
-При проверке данных на дисках с помощью [средства проверки](data-box-disk-deploy-copy-data.md#validate-data)создается *error.xml* для регистрации ошибок. Файл журнала находится в `Drive:\DataBoxDiskImport\logs` папке на диске. Ссылка на журнал ошибок предоставляется при выполнении проверки.
+При проверке данных на дисках с помощью [средства проверки](data-box-disk-deploy-copy-data.md#validate-data)создается *error.xml* для регистрации ошибок. Файл журнала находится в  `Drive:\DataBoxDiskImport\logs` папке на диске. Ссылка на журнал ошибок предоставляется при выполнении проверки.
 
 <!--![Validation tool with link to error log](media/data-box-disk-troubleshoot/validation-tool-link-error-log.png)-->
 
@@ -94,6 +94,6 @@ ms.locfileid: "87925548"
 | `NonVhdFileNotSupportedForManagedDisk` | Не удается отправить файл, не являющийся VHD-файлом, в качестве управляемого диска. |Удалите из папки файлы, не являющиеся VHD-файлами, `ManagedDisk` так как они не поддерживаются, или переместите эти файлы в `PageBlob` папку. Повторите проверку. |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Устранение [ошибок передачи данных](data-box-disk-troubleshoot-upload.md).

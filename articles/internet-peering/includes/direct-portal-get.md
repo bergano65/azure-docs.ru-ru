@@ -1,5 +1,5 @@
 ---
-title: Включить имя файла
+title: включить файл
 titleSuffix: Azure
 description: включить файл
 services: internet-peering
@@ -9,10 +9,10 @@ ms.topic: include
 ms.date: 11/27/2019
 ms.author: prmitiki
 ms.openlocfilehash: e50f53c65c330265d3d9ec1b1804a7910b632b1d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "81678865"
 ---
 1. Перейдите в раздел **группы ресурсов**и выберите группу ресурсов, которая была выбрана при создании ресурса **пиринга** . Если у вас слишком много групп ресурсов, используйте поле **фильтра** .

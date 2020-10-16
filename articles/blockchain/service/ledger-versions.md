@@ -5,10 +5,10 @@ ms.date: 06/30/2020
 ms.topic: conceptual
 ms.reviewer: ravastra
 ms.openlocfilehash: ea7c54e229178320329204a3199ab2b4c44058fe
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85807746"
 ---
 # <a name="supported-azure-blockchain-service-ledger-versions"></a>Поддерживаемые версии книги Azure Блокчейн Service
@@ -68,6 +68,6 @@ admin.nodeInfo.protocols
 ```
 API можно вызвать с помощью консоли жес или библиотеки Web3. Дополнительные сведения об использовании жес см. в разделе [Краткое руководство. Использование жес для подключения к узлу транзакции службы Блокчейн Azure](connect-geth.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Ограничения в службе Блокчейн Azure](limits.md)

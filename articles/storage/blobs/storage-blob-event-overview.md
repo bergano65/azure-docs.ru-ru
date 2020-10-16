@@ -9,10 +9,10 @@ ms.service: storage
 ms.subservice: blobs
 ms.reviewer: dineshm
 ms.openlocfilehash: 62cd31ab6f63aec5ddeb675bca3621a329ab1f2b
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87826574"
 ---
 # <a name="reacting-to-blob-storage-events"></a>Реагирование на события хранилища BLOB-объектов
@@ -36,7 +36,7 @@ ms.locfileid: "87826574"
 Подробные примеры реагирования на события хранилища BLOB-объектов с помощью функций Azure см. в следующих статьях:
 
 - [Учебник. Использование событий Azure Data Lake Storage 2-го поколения для обновления разностной таблицы кирпичей](data-lake-storage-events.md)данных.
-- [Руководство. Автоматизация изменения размера передаваемых изображений с помощью сетки событий](https://docs.microsoft.com/azure/event-grid/resize-images-on-storage-blob-upload-event?tabs=dotnet)
+- [Руководство по Автоматическое изменение размера переданных изображений с помощью службы "Сетка событий"](https://docs.microsoft.com/azure/event-grid/resize-images-on-storage-blob-upload-event?tabs=dotnet)
 
 >[!NOTE]
 > Интеграция событий поддерживается только для учетных записей хранения типа **StorageV2 (общее назначение версии 2)**, **блоккблобстораже**и **блобстораже** . **Хранилище (общее назначение** версии 1) *не поддерживает интеграцию со службой "* сетка событий".

@@ -12,10 +12,10 @@ ms.subservice: fundamentals
 ms.date: 10/31/2019
 ms.author: martinco
 ms.openlocfilehash: 2312befa5fe534cc2042b7586755ac5322d036db
-ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90601319"
 ---
 # <a name="azure-active-directory-identity-and-access-management-operations-reference-guide"></a>Справочник по операциям управления удостоверениями и доступом Azure Active Directory
@@ -201,6 +201,6 @@ Azure Active Directory упрощает управление лицензиям�
 - Оптимизируйте Управление лицензиями и назначением приложений.
 - Автоматизируйте подготовку пользователей в приложениях.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Приступая к работе с [проверками и действиями управления аутентификацией](active-directory-ops-guide-auth.md).

@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: 7e61a881470b206981b65e175c1f7f40b161ebf8
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: e62a5c984afb434b8c47b5ee8c5c66c61485dbfc
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91319764"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92090443"
 ---
 # <a name="secure-an-input-constrained-device-with-azure-ad-and-azure-maps-rest-apis"></a>Защита входного устройства с помощью Azure AD и Azure Maps API-интерфейсов RESTFUL
 
@@ -55,7 +55,7 @@ ms.locfileid: "91319764"
     > [!div class="mx-imgBorder"]
     > ![Выбор разрешений API приложения](./media/how-to-manage-authentication/select-app-permissions.png)
 
-6. Настройте управление доступом на основе ролей Azure для пользователей или групп. См. статью [предоставление пользователям доступа на основе ролей для Azure Maps](#grant-role-based-access-for-users-to-azure-maps).
+6. Настройте управление доступом на основе ролей Azure (Azure RBAC) для пользователей или групп. См. статью [предоставление пользователям доступа на основе ролей для Azure Maps](#grant-role-based-access-for-users-to-azure-maps).
 
 7. Добавление кода для получения потока токенов в приложении. сведения о реализации см. в разделе [поток кода устройства](https://docs.microsoft.com/azure/active-directory/develop/scenario-desktop-acquire-token#device-code-flow). При получении маркеров сослаться на область, `user_impersonation` которая была выбрана на предыдущих шагах.
 
@@ -110,7 +110,7 @@ Access-Control-Expose-Headers: Location
 }
 ```
 
-[!INCLUDE [grant role access to users](./includes/grant-rbac-users.md)]
+[!INCLUDE [grant role-based access to users](./includes/grant-rbac-users.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

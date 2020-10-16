@@ -9,10 +9,10 @@ ms.date: 09/30/2020
 ms.author: twooley
 ms.custom: include file
 ms.openlocfilehash: 358de5761f3535b5f1e75d82539ee8e3ecdbd289
-ms.sourcegitcommit: 67e8e1caa8427c1d78f6426c70bf8339a8b4e01d
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91665633"
 ---
 **Azure Data Lake Storage 2-го поколения** не является выделенной службой или типом учетной записи хранения. Это последний выпуск со специализированными возможностями для аналитики больших данных.  Такие возможности доступны в учетных записях общего назначения версии 2 или BlockBlobStorage. Чтобы воспользоваться ими, включите функцию **Иерархическое пространство имен** в учетной записи. Сведения о целевых показателях масштабируемости см. в следующих статьях: 

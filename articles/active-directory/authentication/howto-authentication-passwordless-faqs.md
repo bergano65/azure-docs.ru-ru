@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: troubleshooting
 ms.date: 08/19/2020
-ms.author: iainfou
-author: iainfoulds
+ms.author: joflore
+author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: aakapo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 16e232cedb13dc246bf7a568adfad401c1fe3eb8
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.openlocfilehash: c5cc6847332765419001eadc5944905f55a425ef
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89236721"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91964797"
 ---
 # <a name="deployment-frequently-asked-questions-faqs-for-hybrid-fido2-security-keys-in-azure-ad-preview"></a>Часто задаваемые вопросы о развертывании для гибридных FIDO2 ключей безопасности в Azure AD (Предварительная версия)
 
@@ -185,7 +185,7 @@ nltest /dsgetdc:<domain> /keylist /kdc
 
 * *CN = Азуреадкерберос, OU = контроллеры домена,\<domain-DN>*
     
-    Объект- *компьютер* , представляющий контроллер домена только для чтения (RODC) в AD DS. Нет компьютера, связанного с этим объектом. Вместо этого это логическое представление контроллера домена.
+    Объект- *компьютер* , представляющий Read-Only контроллер домена (RODC) в AD DS. Нет компьютера, связанного с этим объектом. Вместо этого это логическое представление контроллера домена.
 
 * *CN = krbtgt_AzureAD, CN = Users,\<domain-DN>*
 

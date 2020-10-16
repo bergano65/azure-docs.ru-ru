@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.service: iot-central
 manager: philmea
 ms.openlocfilehash: b447f44d0c95693e560fd5bbfbff8c8daeec964e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "80157693"
 ---
 # <a name="group-multiple-actions-to-run-from-one-or-more-rules"></a>Группирование нескольких действий для запуска из одного или нескольких правил
@@ -59,7 +59,7 @@ ms.locfileid: "80157693"
 
 | Тип действия | Формат вывода |
 | ----------- | -------------- |
-| Электронная почта       | Шаблон электронной почты "Стандартный IoT Central" |
+| Адрес электронной почты       | Шаблон электронной почты "Стандартный IoT Central" |
 | SMS         | Оповещение Azure IoT Central: $ {applicationName}-"$ {ruleName}" активировано на "$ {deviceName}" в $ {Тригжердате} $ {Тригжертиме} |
 | Голосовая связь       | Основное оповещение Azure I. O. T: правило "$ {ruleName}", запущенное на устройстве "$ {deviceName}" в $ {Тригжердате} $ {Тригжертиме}, в приложении $ {applicationName} |
 | webhook     | {"Счемаид": "Азуреиотцентралрулевебхук", "Data": {[Обычная полезная нагрузка веб-перехватчика](howto-create-webhooks.md#payload)}} |

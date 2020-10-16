@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/17/2020
 ms.openlocfilehash: 895e22d94122539ee68bcac8ee4debce2d824ff0
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88935285"
 ---
 # <a name="sentiment-cognitive-skill"></a>Когнитивный навык тональности
@@ -42,14 +42,14 @@ Microsoft.Skills.Text.SentimentSkill
 
 ## <a name="skill-inputs"></a>Входные данные навыков 
 
-| Ввод имени | Description |
+| Ввод имени | Описание |
 |--------------------|-------------|
 | `text` | Анализируемый текст.|
 | `languageCode`    |  (Дополнительно.) Строка, указывающая язык записей. Если этот параметр не задан, используется значение по умолчанию "en". <br/>Ознакомьтесь с [полным списком поддерживаемых языков](../cognitive-services/text-analytics/language-support.md).|
 
 ## <a name="skill-outputs"></a>Выходные данные навыка
 
-| Имя вывода | Description |
+| Имя вывода | Описание |
 |--------------------|-------------|
 | `score` | Значение от 0 до 1, которое представляет тональность анализируемого текста. Значения, близкие к 0, имеют отрицательную тональность, близкие к 0,5 имеют нейтральную, а значения, близкие к 1, имеют положительную тональность.|
 

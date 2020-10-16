@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 08/03/2020
 ms.custom: devx-track-java
 zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: d67b0c89fbec8da9a3057164aa59d458a85c41d7
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: d368c938e805164b70c7d3a22f9229b5efd89dde
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91280595"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92045409"
 ---
 # <a name="quickstart-build-and-deploy-apps-to-azure-spring-cloud"></a>Краткое руководство. Сборка и развертывание приложений в Azure Spring Cloud
 
@@ -261,7 +261,7 @@ https://servicename-solar-system-weather.azuremicroservices.io/weatherforecast
 1. Клонируйте репозиторий Git, выполнив следующую команду:
 
     ```
-    git clone https://github.com/Azure-Samples/PiggyMetrics
+    git clone https://github.com/Azure-Samples/piggymetrics
     ```
   
 1. Перейдите в каталог и создайте проект, выполнив следующую команду:
@@ -276,7 +276,7 @@ https://servicename-solar-system-weather.azuremicroservices.io/weatherforecast
 1. Создайте конфигурации с помощью приведенной ниже команды в корневой папке PiggyMetrics, содержащей родительский файл POM. Если вы уже выполнили вход с помощью Azure CLI, команда автоматически использует учетные данные. В противном случае необходимо будет выполнить вход в соответствии с инструкциями в запросе. Дополнительные сведения см. на нашей [вики-странице](https://github.com/microsoft/azure-maven-plugins/wiki/Authentication).
 
     ```
-    mvn com.microsoft.azure:azure-spring-cloud-maven-plugin:1.1.0:config
+    mvn com.microsoft.azure:azure-spring-cloud-maven-plugin:1.3.0:config
     ```
     
     Вам будет предложено выбрать:

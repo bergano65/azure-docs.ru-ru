@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 08/01/2019
 ms.reviewer: sngun
 ms.openlocfilehash: 1e6d0343a68d502fb567f6010b8c8b3043e282a8
-ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91569487"
 ---
 # <a name="total-cost-of-ownership-tco-with-azure-cosmos-db"></a>Совокупная стоимость владения (TCO) с Azure Cosmos DB
@@ -56,7 +56,7 @@ ms.locfileid: "91569487"
 
 * **Вы можете сэкономить до 65% затрат с зарезервированной емкостью:** Azure Cosmos DB [зарезервированная емкость](cosmos-db-reserved-capacity.md) позволяет экономить деньги за счет предварительной оплаты за ресурсы Azure Cosmos DB в течение одного года или за три года. Предоплата на один или три года позволяет снизить общие расходы на 20–65 % по сравнению с обычными ценами. Для критически важных рабочих нагрузок можно улучшить условия соглашения об уровне обслуживания в плане подготавливаемой мощности.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения о том, [как модель ценообразования Azure Cosmos DB помогает клиентам экономить](total-cost-ownership.md).
 * Дополнительные сведения об [оптимизации для разработки и тестирования](optimize-dev-test.md)

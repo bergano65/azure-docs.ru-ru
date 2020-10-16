@@ -7,10 +7,10 @@ ms.date: 03/20/2020
 ms.reviewer: dariac
 ms.custom: seodec18
 ms.openlocfilehash: b7730558e2a660b0cf00a5b6962d1e2275dd472c
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90984404"
 ---
 # <a name="continuous-deployment-to-azure-app-service"></a>Непрерывное развертывание в службе приложений Azure
@@ -114,7 +114,7 @@ ms.locfileid: "90984404"
    
 1. На странице **поставщик сборки** выберите **Azure pipelines (Предварительная версия)** и нажмите кнопку **продолжить**.
 
-    :::image type="content" source="media/app-service-continuous-deployment/select-build-provider.png" alt-text="Снимок экрана, на котором отображается страница центра развертывания с выбранным Azure Pipelines (Предварительная версия).":::
+    :::image type="content" source="media/app-service-continuous-deployment/select-build-provider.png" alt-text="Снимок экрана со страницей центра развертывания службы приложений.":::
    
 1. На странице **Настройка** в разделе **код** выберите **организацию**, **репозиторий**и **ветвь** , которые нужно развернуть непрерывно, и выберите **продолжить**.
      
@@ -123,11 +123,11 @@ ms.locfileid: "90984404"
        
     В разделе **Build (сборка** ) укажите организацию Azure DevOps, проект, языковую платформу, которую Azure pipelines следует использовать для выполнения задач сборки, а затем нажмите кнопку **продолжить**.
 
-   :::image type="content" source="media/app-service-continuous-deployment/build-configure.png" alt-text="Снимок экрана раздела Build с примером текста в полях.":::
+   :::image type="content" source="media/app-service-continuous-deployment/build-configure.png" alt-text="Снимок экрана со страницей центра развертывания службы приложений.":::
 
 1. После настройки поставщика сборки просмотрите параметры на странице **Сводка** и нажмите кнопку **Готово**.
 
-   :::image type="content" source="media/app-service-continuous-deployment/summary.png" alt-text="Снимок экрана: страница центра развертывания, на которой показаны фиксации и развертывания с выделенной кнопкой "Обновить".":::
+   :::image type="content" source="media/app-service-continuous-deployment/summary.png" alt-text="Снимок экрана со страницей центра развертывания службы приложений.":::
    
 1. Новые фиксации в выбранном репозитории и ветви теперь непрерывно развертываются в службе приложений. Фиксации и развертывания можно отслеживать на странице **Центра развертывания**.
    
@@ -141,11 +141,11 @@ ms.locfileid: "90984404"
 
 1. Выберите **Azure Repos** в качестве поставщика системы управления версиями на странице **центра развертывания** и нажмите кнопку **продолжить**.
 
-    :::image type="content" source="media/app-service-continuous-deployment/deployment-center-src-control.png" alt-text="Снимок экрана со страницей центра развертывания, отображающей элементы непрерывного развертывания (CI/CD).":::
+    :::image type="content" source="media/app-service-continuous-deployment/deployment-center-src-control.png" alt-text="Снимок экрана со страницей центра развертывания службы приложений.":::
 
 1. На странице **поставщик сборки** выберите **Azure pipelines (Предварительная версия)** и нажмите кнопку **продолжить**.
 
-    :::image type="content" source="media/app-service-continuous-deployment/azure-pipelines.png" alt-text="Снимок экрана: центр развертывания показывает Azure Pipelines (Предварительная версия).":::
+    :::image type="content" source="media/app-service-continuous-deployment/azure-pipelines.png" alt-text="Снимок экрана со страницей центра развертывания службы приложений.":::
 
 1. На странице **Настройка** в разделе **код** выберите **организацию**, **репозиторий**и **ветвь** , которые нужно развернуть непрерывно, и выберите **продолжить**.
 
@@ -154,11 +154,11 @@ ms.locfileid: "90984404"
 
    В разделе **Build (сборка** ) укажите организацию Azure DevOps, проект, языковую платформу, которую Azure pipelines следует использовать для выполнения задач сборки, а затем нажмите кнопку **продолжить**.
 
-   :::image type="content" source="media/app-service-continuous-deployment/build-configure.png" alt-text="Снимок экрана: раздел "сборка" с полями "Организация и проект Azure DevOps", заполненными примерами.":::
+   :::image type="content" source="media/app-service-continuous-deployment/build-configure.png" alt-text="Снимок экрана со страницей центра развертывания службы приложений.":::
 
 1. После настройки поставщика сборки просмотрите параметры на странице **Сводка** и нажмите кнопку **Готово**.  
      
-   :::image type="content" source="media/app-service-continuous-deployment/summary-azure-pipelines.png" alt-text="Снимок экрана, показывающий выбранные параметры на странице "Сводка".":::
+   :::image type="content" source="media/app-service-continuous-deployment/summary-azure-pipelines.png" alt-text="Снимок экрана со страницей центра развертывания службы приложений.":::
 
 1. Новые фиксации в выбранном репозитории и ветви теперь непрерывно развертываются в службе приложений. Фиксации и развертывания можно отслеживать на странице **Центра развертывания**.
 

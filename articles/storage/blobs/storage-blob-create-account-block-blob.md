@@ -10,10 +10,10 @@ ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-azurepowershell
 ms.openlocfilehash: 0af98993cc4b3c7d19cdaa61cd7a35e3b444a3df
-ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91613804"
 ---
 # <a name="create-a-blockblobstorage-account"></a>Создание учетной записи Блоккблобстораже
@@ -31,7 +31,7 @@ ms.locfileid: "91613804"
 
 # <a name="portal"></a>[Портал](#tab/azure-portal)
 
-Отсутствует.
+Нет.
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -128,7 +128,7 @@ az login
 
 8. Выберите **проверить и создать** , чтобы проверить параметры учетной записи хранения.
 
-9. Выберите **Создать**.
+9. Нажмите кнопку **создания**.
 
 ## <a name="azure-powershell"></a>[Azure PowerShell](#tab/azure-powershell)
 
@@ -206,7 +206,7 @@ az login
    
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения об учетных записях хранения см. в статье [Общие сведения об учетной записи хранения](https://docs.microsoft.com/azure/storage/common/storage-account-overview).
 

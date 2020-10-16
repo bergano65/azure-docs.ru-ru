@@ -14,10 +14,10 @@ ms.author: shoatman
 ms.custom: aaddev
 ms.reviewer: shoatman, hahamil, brianmel
 ms.openlocfilehash: 5042bfad2cfe06c7c368c6b476aa1b02d67bcc9c
-ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91760760"
 ---
 # <a name="brokered-authentication-in-android"></a>Проверка подлинности через посредника в Android
@@ -139,6 +139,6 @@ MSAL взаимодействует с брокером двумя способ�
 
 Вы можете удалить учетную запись из параметров, если хотите повторить тест.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Режим общего устройства для устройств Android](msal-android-shared-devices.md) позволяет настроить устройство Android таким образом, чтобы его можно было легко предоставить нескольким сотрудникам.

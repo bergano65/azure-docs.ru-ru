@@ -11,17 +11,17 @@ ms.topic: article
 ms.date: 04/26/2020
 ms.author: apimpm
 ms.openlocfilehash: 02962e9c5be2c4b73d121a53a7b595c573ad6cd0
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87015227"
 ---
 # <a name="deploy-to-azure-kubernetes-service"></a>Развертывание в Службе Azure Kubernetes
 
 В этой статье описаны действия по развертыванию компонента самостоятельно размещенного шлюза службы управления API Azure в [службе Azure Kubernetes](https://azure.microsoft.com/services/kubernetes-service/). Сведения о развертывании самостоятельно размещенного шлюза в кластере Kubernetes см. в этом[документе](how-to-deploy-self-hosted-gateway-kubernetes.md).
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - [Создание экземпляра службы управления API Azure](get-started-create-service-instance.md)
 - [Создание кластера Azure Kubernetes](../aks/kubernetes-walkthrough-portal.md)
@@ -36,7 +36,7 @@ ms.locfileid: "87015227"
 5. Убедитесь, что в разделе **сценарии развертывания**выбрано **Kubernetes** .
 6. Выберите **<шлюз-name>. yml** ссылка на файл рядом с **развернутой** , чтобы скачать файл.
 7. При необходимости измените сопоставления портов и имени контейнера в файле yml.
-8. В зависимости от сценария может потребоваться изменить [тип службы](../aks/concepts-network.md#services). Значение по умолчанию — `NodePort`.
+8. В зависимости от сценария может потребоваться изменить [тип службы](../aks/concepts-network.md#services). Значение по умолчанию — `NodePort`.
 9. Щелкните значок **копирования** , расположенный в правой части текстового поля **развернуть** , чтобы сохранить `kubectl` команду в буфер обмена.
 10. Вставьте команду в окно терминала (или команду). Обратите внимание, что команда ждет, что загруженный файл окружения будет находиться в текущем каталоге.
 ```console

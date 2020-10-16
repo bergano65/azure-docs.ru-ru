@@ -16,10 +16,10 @@ ms.workload: na
 ms.date: 10/31/2019
 ms.author: tomsh
 ms.openlocfilehash: f3ec284de3d43e75bd0832b1d98bb9d319a7ca0e
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87925317"
 ---
 # <a name="azure-operational-security-overview"></a>Обзор операционной безопасности Azure
@@ -68,7 +68,7 @@ Azure Backup включает в себя несколько компонент�
 - [Самостоятельное управление паролями](https://azure.microsoft.com/resources/videos/self-service-password-reset-azure-ad/)
 - [Самостоятельное управление группами](/azure/active-directory/active-directory-passwords-update-your-own-password)
 - [Управление привилегированными учетными записями](/azure/active-directory/active-directory-privileged-identity-management-configure)
-- [Управление доступом на основе ролей в Azure (Azure RBAC)](/azure/role-based-access-control/overview)
+- [Управление доступом Azure на основе ролей (Azure RBAC)](/azure/role-based-access-control/overview)
 - [Мониторинг использования приложений](/azure/active-directory/connect-health/active-directory-aadconnect-health)
 - [Расширенный аудит](/azure/active-directory/active-directory-reporting-activity-audit-logs)
 - [Мониторинг безопасности и оповещения](/azure/operations-management-suite/oms-security-responding-alerts)

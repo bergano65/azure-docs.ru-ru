@@ -9,16 +9,16 @@ ms.date: 07/22/2020
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-csharp
-ms.openlocfilehash: a17ab97dbfa1819154695f4c287b59db90f34334
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 3035e0036e5d35729637e35ad8cb1412a0da959f
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89019000"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92091038"
 ---
 # <a name="create-or-delete-a-container-in-azure-storage-with-net"></a>Создание или удаление контейнера в службе хранилища Azure с помощью .NET
 
-Большие двоичные объекты в службе хранилища Azure организованы в контейнеры. Перед отправкой большого двоичного объекта необходимо сначала создать контейнер. В этой статье показано, как создавать и удалять контейнеры с помощью [клиентской библиотеки службы хранилища Azure для .NET](/dotnet/api/overview/azure/storage?view=azure-dotnet).
+Большие двоичные объекты в службе хранилища Azure организованы в контейнеры. Перед отправкой большого двоичного объекта необходимо сначала создать контейнер. В этой статье показано, как создавать и удалять контейнеры с помощью [клиентской библиотеки службы хранилища Azure для .NET](/dotnet/api/overview/azure/storage).
 
 ## <a name="name-a-container"></a>Имя контейнера
 
@@ -229,7 +229,7 @@ private static async Task DeleteContainersWithPrefixAsync(CloudBlobClient blobCl
 
 [!INCLUDE [storage-blob-dotnet-resources-include](../../../includes/storage-blob-dotnet-resources-include.md)]
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 - [Операция создания контейнера](/rest/api/storageservices/create-container)
 - [Операция удаления контейнера](/rest/api/storageservices/delete-container)

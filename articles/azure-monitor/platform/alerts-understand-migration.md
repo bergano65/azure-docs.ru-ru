@@ -6,12 +6,12 @@ ms.date: 07/10/2019
 ms.author: yalavi
 author: yalavi
 ms.subservice: alerts
-ms.openlocfilehash: 52a74593fcfbdc2c1e464077e4ae460f6a5a9c39
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6509425f11b09a2fa5229f9dd68a508241391925
+ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/09/2020
-ms.locfileid: "87852401"
+ms.locfileid: "91875926"
 ---
 # <a name="understand-migration-options-to-newer-alerts"></a>Общие сведения о вариантах миграции для новых оповещений
 
@@ -254,10 +254,12 @@ ms.locfileid: "87852401"
 
 ### <a name="policy-with-deny-effect-preventing-us-from-migrating-your-rules"></a>Политика с результатом "deny" не позволила перенести ваши правила
 
-В рамках миграции будут созданы новые оповещения о метриках и новые группы действий, а затем классические правила генерации оповещений будут удалены. Однако политика может препятствовать созданию ресурсов. В зависимости от политики некоторые или все правила не могут быть перенесены. Политики, блокирующие процесс, перечислены в [средстве миграции](https://portal.azure.com/#blade/Microsoft_Azure_Monitoring/MigrationBladeViewModel). Устраните эту проблему одним из следующих причин:
+В рамках миграции будут созданы новые оповещения о метриках и новые группы действий, а затем классические правила генерации оповещений будут удалены. Однако назначение [политики Azure](../../governance/policy/index.yml) может не позволить нам создавать ресурсы. В зависимости от назначения политики некоторые или все правила не могут быть перенесены. Назначения политики, блокирующие процесс, перечислены в [средстве миграции](https://portal.azure.com/#blade/Microsoft_Azure_Monitoring/MigrationBladeViewModel). Устраните эту проблему одним из следующих причин:
 
-- Исключение подписок или групп ресурсов на время процесса миграции из назначения политики. Дополнительные [сведения об управлении областью исключения политик](../../governance/policy/tutorials/create-and-manage.md#exempt-a-non-compliant-or-denied-resource-using-exclusion).
-- Удаление или изменение влияния на "Audit" или "Append" (например, может решить проблемы, связанные с отсутствующими тегами). Дополнительные [сведения об управлении последствиями политик](../../governance/policy/concepts/definition-structure.md#policy-rule).
+- Исключение подписок, групп ресурсов или отдельных ресурсов на время процесса миграции из назначения политики. Дополнительные [сведения об управлении областями исключения политики](../../governance/policy/tutorials/create-and-manage.md#remove-a-non-compliant-or-denied-resource-from-the-scope-with-an-exclusion).
+- Установите для параметра "режим принудительного применения" значение **отключено** для назначения политики. Дополнительные [сведения о свойстве енфорцементмоде назначения политики](../../governance/policy/concepts/assignment-structure.md#enforcement-mode).
+- Настройте исключение политики Azure (Предварительная версия) для подписок, групп ресурсов или отдельных ресурсов для назначения политики. Дополнительные [сведения о структуре исключения в политике Azure](../../governance/policy/concepts/exemption-structure.md).
+- Удаление или изменение влияния на "Disabled", "Audit", "Append" или "Modify" (например, может решить проблемы, связанные с отсутствующими тегами). Дополнительные [сведения об управлении эффектами политики](../../governance/policy/concepts/definition-structure.md#policy-rule).
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 

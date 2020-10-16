@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 09/19/2019
 ms.author: allensu
 ms.openlocfilehash: b0b19eaa86269feff28c73275e4db4a3d332b3df
-ms.sourcegitcommit: 67e8e1caa8427c1d78f6426c70bf8339a8b4e01d
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91664879"
 ---
 # <a name="high-availability-ports-overview"></a>Общие сведения о портах с высоким уровнем доступности
@@ -97,7 +97,7 @@ Azure Load Balancer (цен. категория "Стандартный") пом
 - Симметрия потока (в основном для сценариев NVA) поддерживается с экземпляром сервера и одним сетевым интерфейсом (и одной IP-конфигурацией) только при использовании, как показано на приведенной выше схеме, и использовании правил балансировки нагрузки портов с высоким уровнем доступности. В других сценариях симметрия потока не поддерживается. Это означает, что два или более ресурсов службы Load Balancer и их соответствующие правила принимают независимые решения и никогда не координируются. См. описание и схему [виртуальных сетевых модулей](#nva). Если вы используете несколько сетевых интерфейсов или добавляете NVA между общедоступным и внутренним Load Balancer, то симметрия потока недоступна.  Вы можете обойти эту проблему с помощью источника, преобразующего сетевые адреса (NAT) потока входящего трафика на IP-адреса устройства, что позволит ответам поступать на тот же виртуальный сетевой модуль.  Тем не менее мы настоятельно рекомендуем использовать одну сетевую карту и эталонную архитектуру, показанную на схеме выше.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Узнайте, как настроить порты высокой доступности для ilB с помощью портала](tutorial-load-balancer-standard-internal-portal.md#create-a-load-balancer-rule), [PowerShell](load-balancer-get-started-ilb-arm-ps.md#create-the-configuration-rules-probe-and-load-balancer), [интерфейса командной строки](load-balancer-get-started-ilb-arm-cli.md#create-the-load-balancer-rule)или [шаблонов](quickstart-load-balancer-standard-internal-template.md).
 - [Дополнительные сведения о Load Balancer (цен. категория "Стандартный")](load-balancer-standard-overview.md)

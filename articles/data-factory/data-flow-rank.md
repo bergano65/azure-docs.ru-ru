@@ -8,12 +8,12 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 10/05/2020
-ms.openlocfilehash: cb3a8c1c6df61a4a20ce596e3ff1118c2870033a
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 8584d1b64191cc5258c6eeeef9ae4125bf1a2c65
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91716533"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92044740"
 ---
 # <a name="rank-transformation-in-mapping-data-flow"></a>Преобразование «ранжирование» в потоке данных сопоставления 
 
@@ -21,7 +21,9 @@ ms.locfileid: "91716533"
 
 Используйте преобразование «ранжирование» для формирования упорядоченного ранжирования на основе условий сортировки, заданных пользователем. 
 
-## <a name="configuration"></a>Конфигурация
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE4GGJo]
+
+## <a name="configuration"></a>Параметр Configuration
 
 ![Параметры ранжирования](media/data-flow/rank-configuration.png "Параметры ранжирования")
 
@@ -67,6 +69,6 @@ PruneColumns
     ) ~> RankByPoints
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Фильтрация строк на основе значений ранжирования с помощью [преобразования «фильтр](data-flow-filter.md)».

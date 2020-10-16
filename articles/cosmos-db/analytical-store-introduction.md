@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: rosouz
 ms.openlocfilehash: d27eb4dc6c4e4bd8f0a744ad925d91aee0faa8d0
-ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91567151"
 ---
 # <a name="what-is-azure-cosmos-db-analytical-store-preview"></a>Что такое Аналитическое хранилище Azure Cosmos DB (предварительная версия)?
@@ -149,13 +149,13 @@ salary: 1000000
 | Double |  ". float64" |    24,99|
 | Массив | ". Array" |    ["a", "b"]|
 |Двоичные данные | ". binary" |0|
-|Логическое    | ". bool"   |Верно|
+|Логическое    | ". bool"   |True|
 |Int32  | ". Int32"  |123|
 |Int64  | ". Int64"  |255486129307|
 |NULL   | ". null"   | null|
-|Строка|    ". String" | "ABC"|
+|Строковый тип|    ". String" | "ABC"|
 |Отметка времени |    ". timestamp" |  Отметка времени (0, 0)|
-|Дата/время   |". Date"    | Исодате ("2020-08-21T07:43:07.375 Z")|
+|Дата и время   |". Date"    | Исодате ("2020-08-21T07:43:07.375 Z")|
 |ObjectId   |". objectId"    | ObjectId ("5f3f7b59330ec25c132623a2")|
 |Документ   |". Object" |    {"a": "a"}|
 

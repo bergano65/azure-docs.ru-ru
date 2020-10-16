@@ -10,10 +10,10 @@ ms.date: 09/23/2020
 ms.author: apimpm
 ms.custom: contperfq1
 ms.openlocfilehash: 9892c311651df39b882c3aa38596a905d22a42ec
-ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91618783"
 ---
 # <a name="protect-a-web-api-backend-in-azure-api-management-by-using-oauth-20-authorization-with-azure-ad"></a>Защита серверной части веб-API в службе управления API Azure с помощью авторизации OAuth 2,0 в Azure AD 
@@ -153,7 +153,7 @@ ms.locfileid: "91618783"
 
 1. Далее в качестве типа предоставления кода авторизации указан **redirect_url**. Запишите этот URL-адрес.
 
-1. Выберите **Создать**.
+1. Нажмите кнопку **создания**.
 
 1. Вернитесь к регистрации клиентского приложения в Azure Active Directory и выберите **Проверка подлинности**.
 
@@ -223,7 +223,7 @@ ms.locfileid: "91618783"
 
 В этом руководстве мы использовали консоль разработчика в APIM как пример клиентского приложения для вызова `Echo API`, защищенного OAuth 2.0. Чтобы узнать больше о том, как создать приложение и реализовать OAuth 2.0, изучите [примеры кода Azure Active Directory](../active-directory/develop/sample-v2-code.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте больше об [Azure Active Directory и OAuth 2.0](../active-directory/develop/authentication-vs-authorization.md).
 - См. другие [видео](https://azure.microsoft.com/documentation/videos/index/?services=api-management) об управлении API.

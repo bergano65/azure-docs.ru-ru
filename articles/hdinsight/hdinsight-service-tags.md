@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 08/11/2020
 ms.openlocfilehash: 112f915f533627ccdc0ac6efe38caacc80b254bc
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89399962"
 ---
 # <a name="nsg-service-tags-for-azure-hdinsight"></a>Теги службы NSG для Azure HDInsight
@@ -56,7 +56,7 @@ ms.locfileid: "89399962"
 
 Если кластер находится в регионе, указанном в этой таблице, необходимо добавить в NSG только один региональный тег службы.
 
-| Country | Region | Тег службы |
+| Country | Регион | Тег службы |
 | ---- | ---- | ---- |
 | Австралия | Восточная Австралия | HDInsight. AustraliaEast |
 | &nbsp; | Australia Southeast | HDInsight. AustraliaSoutheast |
@@ -64,7 +64,7 @@ ms.locfileid: "89399962"
 | Китай | Восточный Китай 2 | HDInsight. ChinaEast2 |
 | &nbsp; | Северный Китай 2 | HDInsight. ChinaNorth2 |
 | США | Центрально-северная часть США | HDInsight. NorthCentralUS |
-| &nbsp; | Западная часть США 2 | HDInsight. WestUS2 |
+| &nbsp; | западная часть США 2 | HDInsight. WestUS2 |
 | &nbsp; | центрально-западная часть США | HDInsight. WestCentralUS |
 | Canada | Восточная Канада | HDInsight. Канадаеаст |
 | Бразилия | Южная Бразилия | HDInsight. Бразилсаус |
@@ -96,7 +96,7 @@ ms.locfileid: "89399962"
 - `HDInsight.WestUS`
 - `HDInsight.EastUS`
 
-| Country | Region | Тег службы |
+| Country | Регион | Тег службы |
 | ---- | ---- | ---- |
 | США | восточная часть США 2 | HDInsight. EastUS2 |
 | &nbsp; | Центральная часть США | HDInsight. CentralUS |
@@ -108,7 +108,7 @@ ms.locfileid: "89399962"
 | Европа | Северная Европа | HDInsight. Норсеуропе |
 | &nbsp; | Западная Европа| HDInsight. WestEurope |
 | Азия | Восточная Азия | HDInsight. EastAsia |
-| &nbsp; | Southeast Asia | HDInsight. SoutheastAsia |
+| &nbsp; | Юго-Восточная Азия | HDInsight. SoutheastAsia |
 | Австралия | Восточная Австралия | HDInsight. AustraliaEast |
 
 #### <a name="group-2"></a>Группа 2
@@ -123,7 +123,7 @@ ms.locfileid: "89399962"
 
 Для кластеров в регионах *центрального региона Германии* и *северо в Германии* необходимо разрешить два тега службы: `HDInsight.GermanyCentral` и `HDInsight.GermanyNortheast` .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Группы безопасности сети: Теги служб](../virtual-network/security-overview.md#security-rules)
 - [Создание виртуальных сетей для кластеров Azure HDInsight](hdinsight-create-virtual-network.md)

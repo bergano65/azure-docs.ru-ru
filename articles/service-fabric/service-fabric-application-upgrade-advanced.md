@@ -4,10 +4,10 @@ description: В этой статье рассматриваются некот�
 ms.topic: conceptual
 ms.date: 03/11/2020
 ms.openlocfilehash: cc2fdc8f99b74078bd8d5274cbe52265ab8455ae
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86248090"
 ---
 # <a name="service-fabric-application-upgrade-advanced-topics"></a>Обновление приложения Service Fabric: дополнительные разделы
@@ -100,7 +100,7 @@ Start-ServiceFabricClusterUpgrade [-CodePackageVersion] <String> [-ClusterManife
 >
 
 > [!NOTE]
-> Эту функцию можно настроить в существующих службах с помощью командлета Update-ServiceFabricService или шаблона ARM, как упоминалось выше, если версия кода кластера 7.1.XXX или выше.
+> Эту функцию можно настроить в существующих службах с помощью командлета Update-ServiceFabricService или шаблона ARM, как упоминалось выше, если используется версия кода кластера 7.1.XXX или выше.
 >
 >
 

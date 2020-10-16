@@ -142,3 +142,9 @@
   items:
     - name: Справочник по Transact-SQL (T-SQL)
       href: 'https://docs.microsoft.com/sql/t-sql/language-reference'
+- name: Ресурсы
+  items:
+    - name: Участники
+      items:
+        - name: Безопасность
+          href: resources-partners-security.md

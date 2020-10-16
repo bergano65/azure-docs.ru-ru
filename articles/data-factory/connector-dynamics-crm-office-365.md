@@ -13,10 +13,10 @@ ms.reviewer: douglasl
 ms.custom: seo-lt-2019
 ms.date: 09/23/2020
 ms.openlocfilehash: 942cbda3652692acc8eedf2ec9508bb501a60547
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91332106"
 ---
 # <a name="copy-data-from-and-to-dynamics-365-common-data-service-or-dynamics-crm-by-using-azure-data-factory"></a>Копирование данных из Dynamics 365 (Common Data Service) или Dynamics CRM и в эти решения с помощью фабрики данных Azure
@@ -43,7 +43,7 @@ ms.locfileid: "91332106"
 
 | Версии Dynamics | Типы проверки подлинности | Примеры связанной службы |
 |:--- |:--- |:--- |
-| Common Data Service <br/><br/> Dynamics 365 Online <br/><br/> Dynamics CRM Online | Субъект-служба Azure Active Directory (Azure AD) <br/><br/> Office 365 | [Служба Dynamics Online и Azure AD — проверка подлинности субъекта или Office 365](#dynamics-365-and-dynamics-crm-online) |
+| Common Data Service <br/><br/> Dynamics 365 Online <br/><br/> Dynamics CRM Online | Субъект-служба Azure Active Directory (Azure AD) <br/><br/> Office 365 | [Служба Dynamics Online и Azure AD — проверка подлинности субъекта или Office 365](#dynamics-365-and-dynamics-crm-online) |
 | Локальная среда Dynamics 365 с развертыванием с выходом в Интернет (IFD) <br/><br/> Dynamics CRM 2016 (локальная версия) с IFD <br/><br/> Dynamics CRM 2015 (локальная версия) с IFD | IFD | [Локальная среда Dynamics с IFD и IFD Authentication](#dynamics-365-and-dynamics-crm-on-premises-with-ifd) |
 
 В частности, для Dynamics 365 поддерживаются следующие типы приложений:
@@ -379,20 +379,20 @@ ms.locfileid: "91332106"
 |:--- |:--- |:--- |:--- |
 | AttributeTypeCode.BigInt | Long | ✓ | ✓ |
 | AttributeTypeCode.Boolean | Логическое | ✓ | ✓ |
-| AttributeType.Customer | GUID | ✓ | ✓ (См. [руководство](#writing-data-to-a-lookup-field)) |
+| AttributeType.Customer | Код GUID | ✓ | ✓ (См. [руководство](#writing-data-to-a-lookup-field)) |
 | AttributeType.DateTime | Datetime | ✓ | ✓ |
-| AttributeType.Decimal | Decimal | ✓ | ✓ |
-| AttributeType.Double | Тип Double | ✓ | ✓ |
-| AttributeType.EntityName | Строка | ✓ | ✓ |
+| AttributeType.Decimal | Десятичный тип | ✓ | ✓ |
+| AttributeType.Double | Double | ✓ | ✓ |
+| AttributeType.EntityName | Строковый тип | ✓ | ✓ |
 | AttributeType.Integer | Int32 | ✓ | ✓ |
-| AttributeType.Lookup | GUID | ✓ | ✓ (См. [руководство](#writing-data-to-a-lookup-field)) |
+| AttributeType.Lookup | Код GUID | ✓ | ✓ (См. [руководство](#writing-data-to-a-lookup-field)) |
 | AttributeType.ManagedProperty | Логическое | ✓ | |
-| AttributeType.Memo | Строка | ✓ | ✓ |
-| AttributeType.Money | Decimal | ✓ | ✓ |
-| AttributeType.Owner | GUID | ✓ | ✓ (См. [руководство](#writing-data-to-a-lookup-field)) |
+| AttributeType.Memo | Строковый тип | ✓ | ✓ |
+| AttributeType.Money | Десятичный тип | ✓ | ✓ |
+| AttributeType.Owner | Код GUID | ✓ | ✓ (См. [руководство](#writing-data-to-a-lookup-field)) |
 | AttributeType.Picklist | Int32 | ✓ | ✓ |
-| AttributeType.Uniqueidentifier | GUID | ✓ | ✓ |
-| AttributeType.String | Строка | ✓ | ✓ |
+| AttributeType.Uniqueidentifier | Код GUID | ✓ | ✓ |
+| AttributeType.String | Строковый тип | ✓ | ✓ |
 | AttributeType.State | Int32 | ✓ | ✓ |
 | AttributeType.Status | Int32 | ✓ | ✓ |
 
@@ -433,5 +433,5 @@ ms.locfileid: "91332106"
 
 Дополнительные сведения о свойствах см. в разделе [действие поиска](control-flow-lookup-activity.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Список хранилищ данных, которые действие копирования в фабрике данных поддерживает как источники и приемники, см. в разделе [Поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats).

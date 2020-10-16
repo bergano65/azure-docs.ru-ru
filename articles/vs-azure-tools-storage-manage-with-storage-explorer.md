@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 11/08/2019
 ms.author: cawa
 ms.openlocfilehash: 9922601d67393d103b95da7286d8db71d913434a
-ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88235251"
 ---
 # <a name="get-started-with-storage-explorer"></a>Начало работы с Обозревателем службы хранилища
@@ -65,7 +65,7 @@ snap connect storage-explorer:password-manager-service :password-manager-service
 
 ---
 
-## <a name="download-and-install"></a>Загрузите и установите
+## <a name="download-and-install"></a>Скачивание и установка
 
 Сведения о загрузке и установке Обозреватель службы хранилища см. в разделе [Обозреватель службы хранилища Azure](https://www.storageexplorer.com).
 

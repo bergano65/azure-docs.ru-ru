@@ -3,12 +3,12 @@ title: Резервное копирование виртуальных маши
 description: Настройте среду решения Azure VMware для резервного копирования виртуальных машин с помощью Azure Backup Server.
 ms.topic: how-to
 ms.date: 06/09/2020
-ms.openlocfilehash: a62bccb729cfa6aec89a3ce6de7283f5d9412428
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.openlocfilehash: b8b5236a8da165efbb8e479e25b58872c4a735ee
+ms.sourcegitcommit: b437bd3b9c9802ec6430d9f078c372c2a411f11f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91580309"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91893022"
 ---
 # <a name="back-up-azure-vmware-solution-vms-with-azure-backup-server"></a>Резервное копирование виртуальных машин решения Azure VMware с помощью Azure Backup Server
 
@@ -105,36 +105,6 @@ ms.locfileid: "91580309"
 
 1. Щелкните TLS правой кнопкой мыши. Файл REG и выберите команду **объединить** или **Открыть** , чтобы добавить параметры в реестр.
 
-## <a name="add-the-provisioning-ip-address"></a>Добавление IP-адреса подготовки 
-
-В ходе предварительной версии решение Azure VMware не разрешает узел ESX с виртуальной машины, развернутой в виртуальной сети. Вам потребуется выполнить дополнительные действия, чтобы добавить запись файла узла на Azure Backup Serverную виртуальную машину.
-
-### <a name="identify-the-ip-address-for-esxi-hosts"></a>Указание IP-адреса для узлов ESXi
-
-1. Откройте браузер и войдите в URL-адреса vCenter. 
-
-   > [!TIP]
-   > URL-адреса можно найти в подсистеме [подключения к локальному серверу vCenter частного облака](tutorial-access-private-cloud.md#connect-to-the-local-vcenter-of-your-private-cloud).
-
-1. В клиенте vSphere выберите кластер, для которого планируется включить резервное копирование.
-
-   :::image type="content" source="media/azure-vmware-solution-backup/vsphere-client-select-host.png" alt-text="Веб-клиент vSphere":::
-
-1. Выберите **Configure**  >  **Networks**  >  **вмкернел Adapters**(настроить сетевые адаптеры). В списке устройств найдите сетевой адаптер, для которого включена роль **подготовки** . Запишите **IP-адрес** и имя узла ESXi.
-
-   :::image type="content" source="media/azure-vmware-solution-backup/vmkernel-adapters-provisioning-enabled.png" alt-text="Веб-клиент vSphere":::
-
-1. Повторите предыдущий шаг для каждого узла ESXi в каждом кластере, для которого планируется включить резервное копирование.
-
-### <a name="update-the-host-file-on-azure-backup-server"></a>Обновление файла узла на Azure Backup Server
-
-1. Откройте Блокнот от имени администратора.
-
-1. Выберите **файл**  >  **Открыть**и выполните поиск по запросу c:\Windows\System32\Drivers\etc\hosts..
-
-1. Добавьте запись для каждого узла ESXi вместе с IP-адресом, указанным в предыдущем разделе.
-
-1. Сохраните изменения и закройте Блокнот.
 
 ## <a name="add-the-account-on-azure-backup-server"></a>Добавление учетной записи в Azure Backup Server
 
@@ -373,7 +343,7 @@ ms.locfileid: "91580309"
 
 1. На экране **Сводка** проверьте параметры и нажмите кнопку **восстановить** , чтобы начать процесс восстановления. Экран **Состояния восстановления** демонстрирует ход операции восстановления.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Для решения проблем с устранением неполадок при настройке резервного копирования см. статью Устранение неполадок Azure Backup Server.
 

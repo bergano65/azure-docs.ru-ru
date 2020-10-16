@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 03/26/2019
 ms.author: jgao
 ms.openlocfilehash: 6086dffaefba003461a6edd8177afab05377103d
-ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91371258"
 ---
 # <a name="manage-azure-resource-manager-resource-groups-by-using-the-azure-portal"></a>Управление группами ресурсов Azure Resource Manager с помощью портала Azure.
@@ -39,13 +39,13 @@ ms.locfileid: "91371258"
 3. Выберите **Добавить**.
 4. Введите следующие значения.
 
-   - **Подписка**. Выберите подписку Azure. 
+   - **Подписка**: Выберите подписку Azure. 
    - **Группа ресурсов.** Введите имя новой группы ресурсов. 
    - **Регион**: выберите расположение Azure, например **Central США**.
 
      ![Создать группу ресурсов](./media/manage-resource-groups-portal/manage-resource-groups-create-group.png)
 5. Выберите **Просмотреть и создать**.
-6. Выберите **Создать**. Создание группы ресурсов займет несколько секунд.
+6. Нажмите кнопку **создания**. Создание группы ресурсов займет несколько секунд.
 7. Выберите **Обновить** в верхнем меню, чтобы обновить список Группа ресурсов, а затем выберите только что созданную группу ресурсов, чтобы открыть ее. Или щелкните **уведомление**(значок колокольчика) вверху, а затем выберите **Перейти к группе ресурсов** , чтобы открыть только что созданную группу ресурсов.
 
     ![Переход к группе ресурсов](./media/manage-resource-groups-portal/manage-resource-groups-add-group-go-to-resource-group.png)
@@ -107,7 +107,7 @@ ms.locfileid: "91371258"
 
 Управление [доступом на основе ролей в Azure (Azure RBAC)](../../role-based-access-control/overview.md) — это способ управления доступом к ресурсам в Azure. Дополнительные сведения см. в статье о [добавлении и удалении назначений ролей Azure с помощью портала Azure](../../role-based-access-control/role-assignments-portal.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Сведения о Azure Resource Manager см. в разделе [Общие сведения о Azure Resource Manager](overview.md).
 - Сведения о синтаксисе шаблона диспетчер ресурсов см. в разделе [Общие сведения о структуре и синтаксисе шаблонов Azure Resource Manager](../templates/template-syntax.md).

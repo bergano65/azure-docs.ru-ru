@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 06/26/2020
 ms.reviewer: christianreddington,anthdela,juselph
 ms.openlocfilehash: fe370ec882fd0462bba6afdf11c718cf46618f0c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85480938"
 ---
 # <a name="governance-of-azure-devtest-labs-infrastructure---company-policy-and-compliance"></a>Система управления инфраструктурой Azure DevTest Labs. Соответствие политикам компании
@@ -67,5 +67,5 @@ ms.locfileid: "85480938"
 В целом, подобные ограничения необходимо применить во всей организации. Они также должны учитывать все возможные методы использования съемных носителей или внешних URL-адресов, допускающих отправку содержимого. Для проверки и внедрения политики безопасности необходимо привлечь соответствующего специалиста. Дополнительные рекомендации см. на веб-сайте [Microsoft Cyber Security](https://www.microsoft.com/security/default.aspx?&WT.srch=1&wt.mc_id=AID623240_SEM_sNYnsZDs) (Кибер-безопасность Майкрософт).
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 См. рекомендации по [переносу и интеграции приложений](devtest-lab-guidance-governance-application-migration-integration.md).

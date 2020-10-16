@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.reviewer: veyalla
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 57b9d46918414cef9e8cbcffb941b98c98f985ff
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 42c79526288fb7e05959ac60cddc6f468656ffd4
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80240348"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91972549"
 ---
 # <a name="communicate-with-edgeagent-using-built-in-direct-methods"></a>Обмен данными с edgeAgent с помощью встроенных прямых методов
 
@@ -69,13 +69,14 @@ az iot hub invoke-module-method --method-name 'RestartModule' -n <hub name> -d <
 
 ![Вызов прямого метода "Рестартмодуле" в портал Azure](./media/how-to-edgeagent-direct-method/restartmodule-direct-method.png)
 
-## <a name="experimental-methods"></a>Экспериментальные методы
+## <a name="diagnostic-direct-methods"></a>Прямые методы диагностики
 
-В качестве экспериментальных функций для тестирования доступны новые параметры прямого метода, включая следующие.
+* [Жетмодулелогс](how-to-retrieve-iot-edge-logs.md#retrieve-module-logs): получение журналов модулей в ответе прямого метода.
+* [Уплоадмодулелогс](how-to-retrieve-iot-edge-logs.md#upload-module-logs): получение журналов модулей и их отправка в хранилище BLOB-объектов Azure.
+* [Уплоадсуппортбундле](how-to-retrieve-iot-edge-logs.md#upload-support-bundle-diagnostics): получение журналов модулей с помощью пакета поддержки и передача ZIP-файла в хранилище BLOB-объектов Azure.
+* [Жеттаскстатус](how-to-retrieve-iot-edge-logs.md#get-upload-request-status): Проверьте состояние отправки журналов или запроса поддержки.
 
-* [Уплоадлогс](https://github.com/Azure/iotedge/blob/master/doc/built-in-logs-pull.md): получение журналов модулей и их отправка в хранилище BLOB-объектов Azure.
-* [Жеттаскстатус](https://github.com/Azure/iotedge/blob/master/doc/built-in-logs-pull.md#gettaskstatus): Проверьте состояние запроса на отправку журналов.
-* [Logs: получение](https://github.com/Azure/iotedge/blob/master/doc/built-in-logs-pull.md#getlogs)журналов модулей, встроенных в ответ прямого метода.
+Эти прямые методы диагностики доступны в 1.0.10 выпуске.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -8,10 +8,10 @@ ms.date: 05/18/2020
 author: mingshen-ms
 ms.author: mingshen
 ms.openlocfilehash: 2e6381afb19018822f6f37171a5ca4b3d929b42e
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88037530"
 ---
 # <a name="saas-fulfillment-apis-in-the-microsoft-commercial-marketplace"></a>API-интерфейсы выполнения SaaS в коммерческом магазине Майкрософт
@@ -55,6 +55,6 @@ API-интерфейсы выполнения SaaS позволяют издат
 >[!Note]
 >API-интерфейсы выполнения SaaS предназначены только для вызова из серверной службы издателя. Интеграция с интерфейсами API непосредственно с веб-страницы издателя не поддерживается. Следует использовать только поток проверки подлинности "служба-служба".
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Если вы еще не сделали этого, зарегистрируйте приложение SaaS в [портал Azure](https://ms.portal.azure.com) , как описано в разделах [Регистрация приложения Azure AD](./pc-saas-registration.md).  Затем используйте самую последнюю версию этого интерфейса для разработки: [API выполнения SaaS версии 2](./pc-saas-fulfillment-api-v2.md).

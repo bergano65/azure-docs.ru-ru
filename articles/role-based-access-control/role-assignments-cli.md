@@ -11,13 +11,13 @@ ms.date: 09/28/2020
 ms.author: rolyon
 ms.custom: contperfq1
 ms.openlocfilehash: 16ead03af14da70b5aaedc21118488c6dd3012c6
-ms.sourcegitcommit: ffa7a269177ea3c9dcefd1dea18ccb6a87c03b70
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91597655"
 ---
-# <a name="add-or-remove-azure-role-assignments-using-azure-cli"></a>Добавление или удаление назначений ролей Azure с помощью Azure CLI
+# <a name="add-or-remove-azure-role-assignments-using-azure-cli"></a>Добавление и удаление назначений ролей Azure с помощью Azure CLI
 
 [!INCLUDE [Azure RBAC definition grant access](../../includes/role-based-access-control-definition-grant.md)] В этой статье описывается назначение ролей с помощью Azure CLI.
 
@@ -28,7 +28,7 @@ ms.locfileid: "91597655"
 - `Microsoft.Authorization/roleAssignments/write` и `Microsoft.Authorization/roleAssignments/delete`, такие как [Администратор доступа пользователей](built-in-roles.md#user-access-administrator) или [Владелец](built-in-roles.md#owner).
 - [Bash в Azure Cloud Shell](/azure/cloud-shell/overview) или [Azure CLI](/cli/azure)
 
-## <a name="steps-to-add-a-role-assignment"></a>Действия по добавлению назначения ролей
+## <a name="steps-to-add-a-role-assignment"></a>Шаги для добавления назначения роли
 
 Чтобы предоставить доступ в Azure RBAC, нужно добавить назначение ролей. Назначение ролей состоит из трех элементов: субъект безопасности, определение роли и область действия. Чтобы добавить назначение ролей, выполните следующие действия.
 
@@ -95,7 +95,7 @@ az role definition list --name "{roleName}"
  
 ### <a name="step-3-identify-the-needed-scope"></a>Шаг 3. Определение требуемой области
 
-Azure предоставляет четыре уровня области: ресурс, [Группа ресурсов](../azure-resource-manager/management/overview.md#resource-groups), подписка и [Группа управления](../governance/management-groups/overview.md). Рекомендуется предоставлять доступ с минимальными необходимыми привилегиями, поэтому не следует назначать роль в более широкой области. Дополнительные сведения об области действия см. в разделе [сведения о области](scope-overview.md).
+Azure предоставляет четыре уровня области: ресурс, [Группа ресурсов](../azure-resource-manager/management/overview.md#resource-groups), подписка и [Группа управления](../governance/management-groups/overview.md). Рекомендуется предоставлять доступ с минимальными необходимыми привилегиями, поэтому не следует назначать роль в более широкой области. Дополнительные сведения об областях см. в статье [Общие сведения об областях для Azure RBAC](scope-overview.md).
 
 **Область ресурса**
 
@@ -359,7 +359,7 @@ az role assignment delete --assignee "alain@example.com" \
 --scope "/providers/Microsoft.Management/managementGroups/marketing-group"
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Вывод списка назначений ролей Azure с помощью Azure CLI](role-assignments-list-cli.md)
 - [Управление ресурсами и группами ресурсов Azure с помощью интерфейса командной строки Azure](../azure-resource-manager/cli-azure-resource-manager.md)

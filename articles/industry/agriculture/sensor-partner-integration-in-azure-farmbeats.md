@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: v-umha
 ms.openlocfilehash: 88a8dcb53ab2f845f52121b11c96c23ad0a3e791
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87078930"
 ---
 # <a name="sensor-partner-integration"></a>Интеграция с партнерскими датчиками
@@ -134,7 +134,7 @@ FarmBeats Datahub содержит следующие API, которые поз
   DeviceModel | Описание |
   --- | ---
   Type (node, gateway)  | Тип устройства — узел или шлюз |
-  Изготовитель  | Имя производителя |
+  Производитель  | Имя производителя |
   ProductCode  | Код продукта устройства или название или номер модели. Например, EnviroMonitor#6800. |
   порты;  | Имя порта и тип (цифровой или аналоговый).  |
   Имя  | Имя для идентификации ресурса. Например, название модели или продукта. |

@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 08/09/2019
 ms.author: rohink
 ms.openlocfilehash: 3378036c4800b274d879743abf937c7860e63ded
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "82926237"
 ---
 # <a name="azure-dns-alias-records-overview"></a>Обзор записей псевдонимов Azure DNS
@@ -20,14 +20,14 @@ ms.locfileid: "82926237"
 
 Набор записей псевдонимов поддерживается для следующих типов записей в зоне DNS Azure: 
 
-- Объект
-- AAAA
-- CNAME
+- A;
+- AAAA;
+- CNAME.
 
 > [!NOTE]
 > Если вы планируете использовать запись псевдонима для записей типов A или AAAA, чтобы указать на [профиль диспетчера трафика Azure](../traffic-manager/quickstart-create-traffic-manager-profile.md), необходимо убедиться в том, что профиль диспетчера трафика имеет только [внешние конечные точки](../traffic-manager/traffic-manager-endpoint-types.md#external-endpoints). Укажите IPv4- или IPv6-адрес для внешних конечных точек в диспетчере трафика. В конечных точках нельзя использовать полные доменные имена (FQDN). Рекомендуется использовать статические IP-адреса.
 
-## <a name="capabilities"></a>Характеристики
+## <a name="capabilities"></a>Возможности
 
 - **Выберите ресурс общедоступного IP-адреса из набора DNS-записей A/AAAA**. Вы можете создать набор записей A/AAAA и сделать его набором записей псевдонима, чтобы он указывал на общедоступный IP-ресурс (Standard или Basic). Набор записей DNS изменяется автоматически при изменении или удалении общедоступного IP-адреса. Несвязанные DNS-записи, которые указывают на неправильные IP-адреса, не используются.
 
@@ -73,7 +73,7 @@ ms.locfileid: "82926237"
 > [!NOTE]
 > Указание зоны, вершине в конечные точки CDN для Azure CDN из Akamai, в настоящее время не поддерживается.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о записях псевдонима см. в следующих статьях:
 

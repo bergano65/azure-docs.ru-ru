@@ -11,10 +11,10 @@ ms.workload: infrastructure-services
 ms.date: 09/29/2020
 ms.author: duau
 ms.openlocfilehash: 5194e088ce2bd35208a92c5295457e6c34cd2cc1
-ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91570327"
 ---
 # <a name="wildcard-domains"></a>Домены с подстановочными знаками
@@ -74,7 +74,7 @@ ms.locfileid: "91570327"
 > [!IMPORTANT]
 > Необходимо иметь соответствующие шаблоны путей в правилах маршрутизации, иначе клиенты будут видеть ошибки. Например, у вас есть два правила маршрутизации, например маршрут 1 ( `*.foo.com/*` сопоставленный с внутренним пулом A) и маршрут 2 ( `/bar.foo.com/somePath/*` сопоставленный с пулом серверной части б). Затем поступит запрос на `bar.foo.com/anotherPath/*` . Передняя дверца Azure выбирает маршрут 2 на основе более конкретного доменного соответствия, чтобы не находить совпадающие шаблоны путей для всех маршрутов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте, как [создать профиль передней дверцы Azure](quickstart-create-front-door.md).
 - Узнайте, как [Добавить личный домен в переднюю дверцу Azure](front-door-custom-domain.md).

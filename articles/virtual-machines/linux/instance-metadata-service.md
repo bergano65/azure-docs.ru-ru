@@ -11,12 +11,12 @@ ms.workload: infrastructure-services
 ms.date: 04/29/2020
 ms.author: sukumari
 ms.reviewer: azmetadatadev
-ms.openlocfilehash: ea11e2f5f8d89381723011686de9e22639997c01
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: ffa9502a42af9e927f82d7a135473ff702b76577
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90974154"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91970713"
 ---
 # <a name="azure-instance-metadata-service-imds"></a>Служба метаданных экземпляров Azure (IMDS)
 
@@ -249,8 +249,8 @@ offer | Предоставление сведений для образа вир
 osType | Windows или Linux | 2017-04-02
 placementGroupId | [Группа размещения](../../virtual-machine-scale-sets/virtual-machine-scale-sets-placement-groups.md) масштабируемого набора виртуальных машин | 2017-08-01
 План | [План](/rest/api/compute/virtualmachines/createorupdate#plan), указывающий наименование, продукт и издателя виртуальной машины (если используется образ Azure Marketplace) | 2018-04-02
-platformUpdateDomain |  [Домен обновления](manage-availability.md), на котором запущена виртуальная машина | 2017-04-02
-platformFaultDomain | [Домен сбоя](manage-availability.md), на котором запущена виртуальная машина | 2017-04-02
+platformUpdateDomain |  [Домен обновления](../manage-availability.md), на котором запущена виртуальная машина | 2017-04-02
+platformFaultDomain | [Домен сбоя](../manage-availability.md), на котором запущена виртуальная машина | 2017-04-02
 поставщик | Поставщик виртуальной машины | 2018-10-01
 publicKeys | [Коллекция открытых ключей](/rest/api/compute/virtualmachines/createorupdate#sshpublickey), назначенная виртуальной машине и путям | 2018-04-02
 publisher | Издатель образа виртуальной машины | 2017-04-02

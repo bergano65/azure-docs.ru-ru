@@ -8,23 +8,23 @@ ms.topic: conceptual
 ms.service: industrial-iot
 services: iot-industrialiot
 manager: philmea
-ms.openlocfilehash: ae0e18a2dfbce52e50b4a8b58d478a46dff12922
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 42024fc506de7befed7c44ebcc410756b6f43a35
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91282108"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92078992"
 ---
 # <a name="deploying-dependencies-for-local-development"></a>Развертывание зависимостей для локальной разработки
 
 > [!IMPORTANT]
-> Пока мы обновляем эту статью, ознакомьтесь с наиболее актуальными материалами в [Azure для промышленного центра Интернета вещей](https://azure.github.io/Industrial-IoT/) .
+> Актуальную информацию по этой теме см. в статье [Промышленный Интернет вещей в Azure](https://azure.github.io/Industrial-IoT/).
 
 В этой статье объясняется, как развернуть только службы платформы Azure, необходимые для локальной разработки и отладки.   В итоге будет развернута группа ресурсов, содержащая все необходимое для локальной разработки и отладки.
 
 ## <a name="deploy-azure-platform-services"></a>Развертывание служб платформы Azure
 
-1. Убедитесь, что установлены расширения PowerShell PowerShell и [AzureRM](https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps) .  Откройте командную строку или терминал и выполните следующую команду:
+1. Убедитесь, что установлены расширения PowerShell PowerShell и [AzureRM](/powershell/azure/azurerm/install-azurerm-ps) .  Откройте командную строку или терминал и выполните следующую команду:
 
    ```bash
    git clone https://github.com/Azure/azure-iiot-components

@@ -493,6 +493,8 @@
                   items:
                     - name: Универсальный
                       href: ../vm-generalized-image-version-cli.md
+                    - name: Специализированный
+                      href: ../vm-specialized-image-version-cli.md
                 - name: Обновление ресурсов образа
                   href: ../update-image-resources-cli.md
                 - name: Регистрация приложения для совместного использования
@@ -577,6 +579,8 @@
           href: build-image-with-packer.md
         - name: Скачивание существующего диска
           href: download-vhd.md
+        - name: Создание управляемого диска на основе определенной версии образа
+          href: ../managed-disk-from-image-version.md
     - name: Защита виртуальных машин
       items:
         - name: Рекомендации

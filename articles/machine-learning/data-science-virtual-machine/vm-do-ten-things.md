@@ -11,10 +11,10 @@ ms.author: laobri
 ms.topic: conceptual
 ms.date: 05/08/2020
 ms.openlocfilehash: b570968a66a0cfd60ac4d6ce6dd7dc31a1003240
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89440462"
 ---
 # <a name="data-science-with-a-windows-data-science-virtual-machine"></a>Обработка и анализ данных с помощью виртуальной машины Windows для обработки и анализа данных
@@ -330,6 +330,6 @@ in
 
 - [Классификация текстовых документов](https://github.com/anargyri/lstm_han). в этом пошаговом руководстве показано, как создать и обучить две архитектуры нейронных сетей: сетевое внимание и сеть с длительной краткосрочной памятью (LSTM). Эти нейронные сети выполняют классификацию текстовых документов с помощью API Keras для глубокого обучения. 
 
-## <a name="summary"></a>Сводка
+## <a name="summary"></a>Итоги
 В этой статье описаны некоторые действия, которые можно выполнить на виртуальной машине Майкрософт для обработки и анализа данных. Существует множество вещей, которые можно сделать, чтобы сделать DSVM эффективной средой аналитики.
 

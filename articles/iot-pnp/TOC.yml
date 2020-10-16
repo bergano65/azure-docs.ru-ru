@@ -48,7 +48,7 @@
     - name: Подключение устройства с использованием MQTT
       href: tutorial-use-mqtt.md
     - name: Взаимодействие с устройством MXChip (пример)
-      href: 'https://docs.microsoft.com/samples/azure-samples/mxchip-iot-devkit-pnp-get-started/sample/'
+      href: /samples/azure-samples/mxchip-iot-devkit-pnp-get-started/sample/
     - name: Перенос устройства в модуль
       href: tutorial-migrate-device-to-module.md
 - name: Основные понятия
@@ -95,8 +95,6 @@
       href: howto-use-iot-explorer.md
     - name: Установка и использование моста для IoT Plug and Play
       href: howto-use-iot-pnp-bridge.md
-    - name: "Установка и использование расширения Azure\_CLI для Интернета вещей"
-      href: howto-use-iot-pnp-cli.md
     - name: Установка и использование средств разработки DTDL
       href: howto-use-dtdl-authoring-tools.md
     - name: "Использование Embedded\_C"
@@ -110,34 +108,34 @@
     - name: Библиотеки и пакеты SDK
       href: libraries-sdks.md
     - name: REST API для Digital Twins
-      href: 'https://docs.microsoft.com/rest/api/iothub/service/digitaltwin'
+      href: /rest/api/iothub/service/digitaltwin
     - name: Azure CLI
       href: /cli/azure/azure-cli-reference-for-IoT
 - name: Ресурсы
   items:
     - name: Возможности получения поддержки и справки
-      href: /azure/iot-fundamentals/iot-support-help
+      href: ../iot-fundamentals/iot-support-help.md
     - name: Службы Azure IoT
       items:
         - name: Центр Интернета вещей
-          href: /azure/iot-hub
+          href: ../iot-hub/index.yml
         - name: Служба подготовки устройств к добавлению в Центр Интернета вещей
-          href: /azure/iot-dps
+          href: ../iot-dps/index.yml
         - name: IoT Central
-          href: 'https://docs.microsoft.com/microsoft-iot-central/'
+          href: /microsoft-iot-central/
         - name: IoT Edge
-          href: /azure/iot-edge
+          href: ../iot-edge/index.yml
         - name: Акселераторы решений для Интернета вещей
-          href: /azure/iot-accelerators
+          href: ../iot-accelerators/index.yml
         - name: IoT Plug and Play
-          href: /azure/iot-pnp
+          href: ./index.yml
         - name: Azure Maps
-          href: /azure/azure-maps
+          href: ../azure-maps/index.yml
         - name: Аналитика временных рядов
-          href: /azure/time-series-insights
+          href: ../time-series-insights/index.yml
     - name: Пакеты SDK для Центра Интернета вещей Azure
       items:
         - name: Пакеты SDK для служб IoT
-          href: /azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks
+          href: ../iot-hub/iot-hub-devguide-sdks.md#azure-iot-hub-service-sdks
         - name: Пакеты SDK для устройств Интернета вещей
-          href: /azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks
+          href: ../iot-hub/iot-hub-devguide-sdks.md#azure-iot-hub-device-sdks

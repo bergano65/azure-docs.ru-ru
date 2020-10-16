@@ -13,12 +13,12 @@ ms.topic: quickstart
 ms.date: 03/24/2020
 ms.author: angrobe
 ms.custom: mvc, devx-track-js
-ms.openlocfilehash: fa6d0f78f984c5e71ccdbcada45ea1bc50be9e95
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 6cffa6065f0e1cefc31223553a42a7a78c1dbea8
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91318625"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91856217"
 ---
 # <a name="create-a-cicd-pipeline-in-azure-pipelines-for-nodejs-with-azure-devops-starter"></a>Создание конвейера CI/CD в Azure Pipelines для Node.js с помощью Azure DevOps Starter
 
@@ -73,7 +73,7 @@ DevOps Starter позволяет создать конвейер CI/CD в Azure
 
     ![Панели мониторинга Azure DevOps](_img/azure-devops-project-nodejs/devops-projects-dashboard.png) 
 
-1. На странице проекта Azure DevOps вы можете пригласить сотрудников для участия в проекте, а также создать канбан-доску для отслеживания выполняемых действий. Дополнительные сведения см. [здесь](https://docs.microsoft.com/azure/devops/user-guide/what-is-azure-devops?view=azure-devops).
+1. На странице проекта Azure DevOps вы можете пригласить сотрудников для участия в проекте, а также создать канбан-доску для отслеживания выполняемых действий. Дополнительные сведения см. [здесь](/azure/devops/user-guide/what-is-azure-devops?view=azure-devops).
 
 ![Обзор Azure DevOps](_img/azure-devops-project-nodejs/azure-devops-overview.png)
 
@@ -195,5 +195,4 @@ DevOps Starter создает репозиторий git в Azure Repos или �
 После настройки процесса CI/CD конвейеры сборки и выпуска создаются автоматически. Вы можете изменить эти конвейеры сборки и выпуска в соответствии с требованиями вашей команды. См. дополнительные сведения о конвейере CI/CD:
 
 > [!div class="nextstepaction"]
-> [Define your multi-stage continuous deployment (CD) process](https://docs.microsoft.com/azure/devops/pipelines/release/define-multistage-release-process?view=vsts) (Определение многоэтапного процесса непрерывного развертывания)
-
+> [Define your multi-stage continuous deployment (CD) process](/azure/devops/pipelines/release/define-multistage-release-process?view=vsts) (Определение многоэтапного процесса непрерывного развертывания)

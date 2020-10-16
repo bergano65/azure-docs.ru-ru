@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 05/06/2019
 ms.author: wolfma
 ms.openlocfilehash: a1de313245e826511a7e9c864165ac44bcb48530
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "80234206"
 ---
 ### <a name="standard-and-neural-voices"></a>Стандартные и нейронные голоса
@@ -26,7 +26,7 @@ ms.locfileid: "80234206"
 | восточная часть США 2 | `https://eastus2.tts.speech.microsoft.com/cognitiveservices/v1` | Да | Нет |
 | Центральная Франция | `https://francecentral.tts.speech.microsoft.com/cognitiveservices/v1` | Да | Нет |
 | Центральная Индия | `https://centralindia.tts.speech.microsoft.com/cognitiveservices/v1` | Да | Да |
-| Восточная Япония | `https://japaneast.tts.speech.microsoft.com/cognitiveservices/v1` | Да | Нет |
+| Japan East | `https://japaneast.tts.speech.microsoft.com/cognitiveservices/v1` | Да | Нет |
 | Западная Япония | `https://japanwest.tts.speech.microsoft.com/cognitiveservices/v1` | Да | Нет |
 | Республика Корея, центральный регион | `https://koreacentral.tts.speech.microsoft.com/cognitiveservices/v1` | Да | Нет |
 | Центрально-северная часть США | `https://northcentralus.tts.speech.microsoft.com/cognitiveservices/v1` | Да | Нет |
@@ -40,7 +40,7 @@ ms.locfileid: "80234206"
 
 ### <a name="custom-voices"></a>Настраиваемое синтезирование голоса
 
-Если вы создали пользовательский шрифт голоса, используйте созданную конечную точку. Вы также можете использовать перечисленные ниже конечные точки, заменив `{deploymentId}` параметр на идентификатор развертывания для модели голоса.
+Если вы создали пользовательский шрифт голоса, используйте созданную конечную точку. Вы также можете использовать перечисленные ниже конечные точки, заменив параметр на `{deploymentId}` идентификатор развертывания для модели голоса.
 
 | Регион | Конечная точка |
 |--------|----------|

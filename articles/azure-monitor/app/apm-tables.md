@@ -2,15 +2,13 @@
 title: Схема ресурсов на основе рабочей области Azure Monitor Application Insights
 description: Сведения о новой структуре и схеме таблицы для Azure Monitor Application Insights ресурсов на основе рабочих областей.
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 05/09/2020
-ms.openlocfilehash: 1d7275c928b4d25e200a3a8d3d690c7575c056e7
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 8f0bee64d74cfd5b6abef5c918c023974fda3fcf
+ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87323185"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91931059"
 ---
 # <a name="workspace-based-resource-changes-preview"></a>Изменения ресурсов на основе рабочей области (Предварительная версия)
 
@@ -20,7 +18,7 @@ ms.locfileid: "87323185"
 
 ## <a name="table-structure"></a>Структура таблицы
 
-| Устаревшее имя таблицы | Имя новой таблицы | Описание |
+| Устаревшее имя таблицы | Имя новой таблицы | Description |
 |:---|:---|:---|
 | availabilityResults | аппаваилабилитиресултс |  Сводные данные из тестов доступности.|
 | бровсертимингс | аппбровсертимингс | Данные о производительности клиента, например время, затраченное на обработку входящих данных.|
@@ -76,8 +74,8 @@ ms.locfileid: "87323185"
 |перформанцебуккет|строка|перформанцебуккет|строка|
 |sdkVersion|строка|SdkVersion|строка|
 |session_Id|строка|SessionId|строка|
-|размер;|real|Размер|real|
-|Успешное завершение|строка|Успешно|Bool|
+|size|real|Размер|real|
+|Успешное завершение|строка|Успех|Bool|
 |TIMESTAMP|DATETIME|TimeGenerated|DATETIME|
 |user_AccountId|строка|UserAccountId|строка|
 |user_AuthenticatedId|строка|усераусентикатедид|строка|
@@ -148,7 +146,7 @@ ms.locfileid: "87323185"
 |cloud_RoleName|строка|аппроленаме|строка|
 |customDimensions|Динамический|Свойства|Динамический|
 |кустоммеасурементс|Динамический|Измерения|Динамический|
-|.|строка|Данные|строка|
+|Данные|строка|Данные|строка|
 |длительность|real|DurationMs|real|
 |`id`|строка|`Id`|строка|
 |iKey|строка|IKey|строка|
@@ -164,7 +162,7 @@ ms.locfileid: "87323185"
 |resultCode|строка|ResultCode|строка|
 |sdkVersion|строка|SdkVersion|строка|
 |session_Id|строка|SessionId|строка|
-|Успешное завершение|строка|Успешно|Bool|
+|Успешное завершение|строка|Успех|Bool|
 |target|строка|Назначение|строка|
 |TIMESTAMP|DATETIME|TimeGenerated|DATETIME|
 |type|строка|DependencyType|строка|
@@ -243,7 +241,7 @@ ms.locfileid: "87323185"
 |user_AccountId|строка|UserAccountId|строка|
 |user_AuthenticatedId|строка|усераусентикатедид|строка|
 |user_Id|строка|UserId|строка|
-|Значение|real|удален||
+|значение|real|удален||
 |валуекаунт|INT|валуекаунт|INT|
 |валуемакс|real|валуемакс|real|
 |валуемин|real|валуемин|real|
@@ -328,7 +326,7 @@ ms.locfileid: "87323185"
 |user_AccountId|строка|UserAccountId|строка|
 |user_AuthenticatedId|строка|усераусентикатедид|строка|
 |user_Id|строка|UserId|строка|
-|Значение|real|Значение|real|
+|значение|real|Значение|real|
 
 ### <a name="apprequests"></a>аппрекуестс
 
@@ -352,24 +350,24 @@ ms.locfileid: "87323185"
 |customDimensions|Динамический|Свойства|Динамический|
 |кустоммеасурементс|Динамический|Измерения|Динамический|
 |длительность|real|DurationMs|Real|
-|`id`|строка|`Id`|Тип String|
+|`id`|строка|`Id`|Строковый тип|
 |iKey|строка|IKey|строка|
 |itemCount|INT|ItemCount|INT|
 |itemId|строка|\_ItemId|строка|
 |itemType|строка|Тип|Строка|
-|name|строка|Имя|Тип String|
+|name|строка|name|Строка|
 |operation_Id|строка|Операции|строка|
 |operation_Name|строка|OperationName|строка|
 |operation_ParentId|строка|оператионпарентид|строка|
 |operation_SyntheticSource|строка|оператионсинсетиксаурце|строка|
-|перформанцебуккет|строка|перформанцебуккет|Тип String|
-|resultCode|строка|ResultCode|Тип String|
+|перформанцебуккет|строка|перформанцебуккет|Строковый тип|
+|resultCode|строка|ResultCode|Строковый тип|
 |sdkVersion|строка|SdkVersion|строка|
 |session_Id|строка|SessionId|строка|
-|source|строка|Источник|Тип String|
-|Успешное завершение|строка|Успешно|Bool|
+|source|строка|Источник|Строковый тип|
+|Успешное завершение|строка|Успех|Bool|
 |TIMESTAMP|DATETIME|TimeGenerated|DATETIME|
-|url|строка|Url|Тип String|
+|url|строка|Url|Строковый тип|
 |user_AccountId|строка|UserAccountId|строка|
 |user_AuthenticatedId|строка|усераусентикатедид|строка|
 |user_Id|строка|UserId|строка|
@@ -396,7 +394,7 @@ ms.locfileid: "87323185"
 |cloud_RoleName|строка|аппроленаме|строка|
 |customDimensions|Динамический|Свойства|Динамический|
 |кустоммеасурементс|Динамический|Измерения|Динамический|
-|подробности|Динамический|Сведения|Динамический|
+|подробности|Динамический|Подробнее|Динамический|
 |handledAt|строка|хандледат|строка|
 |iKey|строка|IKey|строка|
 |иннермостассембли|строка|иннермостассембли|строка|

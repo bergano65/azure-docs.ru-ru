@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 08/05/2020
 ms.author: nichola
 ms.openlocfilehash: 54a1135931c2be9c6b7941c9ff740fd29f855eee
-ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90601254"
 ---
 # <a name="five-steps-for-integrating-all-your-apps-with-azure-ad"></a>Пять шагов по интеграции всех приложений с Azure AD
@@ -107,6 +107,6 @@ Azure Active Directory (Azure AD) — это облачная служба уп�
 
 [Серия видеороликов](https://www.youtube.com/watch?v=zjezqZPPOfc&amp;list=PLLasX02E8BPBxGouWlJV-u-XZWOc2RkiX) содержит исчерпывающие сведения о платформе, а также [множество примеров кода](../develop/sample-v2-code.md) на поддерживаемых языках и платформах.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Ресурсы для переноса приложений в Azure Active Directory](../manage-apps/migration-resources.md)

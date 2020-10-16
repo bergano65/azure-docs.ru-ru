@@ -8,10 +8,10 @@ ms.date: 09/13/2019
 ms.author: jeffpatt
 ms.subservice: files
 ms.openlocfilehash: 7ec511400d1e00d37993f2f4ee581bce1bccb897
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91715982"
 ---
 # <a name="troubleshoot-azure-files-problems-in-windows-smb"></a>Устранение неполадок службы файлов Azure в Windows (SMB)
@@ -141,7 +141,7 @@ TcpTestSucceeded : True
 <a id="error1816"></a>
 ## <a name="error-1816---not-enough-quota-is-available-to-process-this-command"></a>Ошибка 1816-недостаточно квоты для обработки этой команды
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Ошибка 1816 возникает при достижении верхнего предела параллельных открытых дескрипторов, разрешенных для файла или каталога в общем файловом ресурсе Azure. Дополнительные сведения см. в разделе [Целевые показатели масштабируемости службы файлов Azure](https://docs.microsoft.com/azure/storage/files/storage-files-scale-targets#azure-files-scale-targets).
 
@@ -154,7 +154,7 @@ TcpTestSucceeded : True
 Чтобы закрыть открытые дескрипторы для общей папки, каталога или файла, используйте командлет PowerShell [Close-азсторажефилехандле](https://docs.microsoft.com/powershell/module/az.storage/close-azstoragefilehandle) .
 
 > [!Note]  
-> Командлеты Get-Азсторажефилехандле и Close-Азсторажефилехандле включены в раздел AZ PowerShell Module версии 2,4 или более поздней. Чтобы установить последний модуль AZ PowerShell, см. статью [Установка модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps).
+> Командлеты Get-AzStorageFileHandle и Close-AzStorageFileHandle включены в команду AZ PowerShell Module 2,4 или более поздней версии. Чтобы установить последний модуль AZ PowerShell, см. статью [Установка модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps).
 
 <a id="noaaccessfailureportal"></a>
 ## <a name="error-no-access-when-you-try-to-access-or-delete-an-azure-file-share"></a>Ошибка "нет доступа" при попытке доступа или удаления файлового ресурса Azure  
@@ -181,7 +181,7 @@ TcpTestSucceeded : True
 
 Указанный ресурс помечен для удаления клиентом SMB.
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 Эта проблема обычно возникает, если файл или каталог имеет открытый обработчик. 
 
 ### <a name="solution"></a>Решение
@@ -193,7 +193,7 @@ TcpTestSucceeded : True
 - Чтобы закрыть открытые дескрипторы, используйте командлет PowerShell [Close-азсторажефилехандле](https://docs.microsoft.com/powershell/module/az.storage/close-azstoragefilehandle) . 
 
 > [!Note]  
-> Командлеты Get-Азсторажефилехандле и Close-Азсторажефилехандле включены в раздел AZ PowerShell Module версии 2,4 или более поздней. Чтобы установить последний модуль AZ PowerShell, см. статью [Установка модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps).
+> Командлеты Get-AzStorageFileHandle и Close-AzStorageFileHandle включены в команду AZ PowerShell Module 2,4 или более поздней версии. Чтобы установить последний модуль AZ PowerShell, см. статью [Установка модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps).
 
 <a id="slowfilecopying"></a>
 ## <a name="slow-file-copying-to-and-from-azure-files-in-windows"></a>Медленное копирование файлов в службе файлов Azure и из нее в Windows
@@ -226,7 +226,7 @@ TcpTestSucceeded : True
 
 Если вы сопоставили файловый ресурс Azure от имени администратора с помощью команды net use, то может показаться, что он отсутствует.
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 По умолчанию проводник не запускается от имени администратора. При выполнении команды net use из командной строки администрирования пользователь подключает сетевой диск от имени администратора. Подключенные диски ориентированы на пользователя. Если для их подключения использовалась одна учетная запись, а пользователь вошел в систему с помощью другой, то диски отображаться не будут.
 
@@ -236,7 +236,7 @@ TcpTestSucceeded : True
 <a id="netuse"></a>
 ## <a name="net-use-command-fails-if-the-storage-account-contains-a-forward-slash"></a>Если учетная запись хранения содержит косую черту (/), то выполнение команды net use завершается сбоем
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Команда net use интерпретирует косую черту (/) как параметр командной строки. Если имя учетной записи пользователя начинается с косой черты, то сопоставление диска завершится сбоем.
 
@@ -257,7 +257,7 @@ TcpTestSucceeded : True
 <a id="cannotaccess"></a>
 ## <a name="application-or-service-cannot-access-a-mounted-azure-files-drive"></a>Приложение или служба не может получить доступ к подключенному диску службы файлов Azure
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Диски подключаются для каждого пользователя. Если приложение или служба выполняется не под той учетной записью, к которой относится подключенный диск, то приложение не увидит этот диск.
 
@@ -281,7 +281,7 @@ TcpTestSucceeded : True
 
 Когда файл копируется по сети, он расшифровывается на исходном компьютере, передается в виде обычного текста и повторно шифруется в месте назначения. Тем не менее при попытке скопировать зашифрованный файл может появиться следующее сообщение об ошибке: "Вы копируете файл в место, которое не поддерживает шифрование".
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 Эта проблема может возникнуть при использовании шифрованной файловой системы (EFS). Файлы с шифрованием BitLocker нельзя копировать в службу файлов Azure. Однако эта служба не поддерживает шифрованную файловую систему (EFS) NTFS.
 
 ### <a name="workaround"></a>Обходной путь
@@ -298,7 +298,7 @@ TcpTestSucceeded : True
 
 ## <a name="slow-enumeration-of-files-and-folders"></a>Медленное перечисление файлов и папок
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Эта проблема может возникнуть, если на клиентском компьютере для больших каталогов недостаточно кэша.
 
@@ -315,7 +315,7 @@ TcpTestSucceeded : True
 
 ## <a name="error-aaddstenantnotfound-in-enabling-azure-active-directory-domain-service-azure-ad-ds-authentication-for-azure-files-unable-to-locate-active-tenants-with-tenant-id-aad-tenant-id"></a>Ошибка Ааддстенантнотфаунд при включении проверки подлинности Azure Active Directory службы домена (Azure AD DS) для файлов Azure "не удается нахождение активных клиентов с ИДЕНТИФИКАТОРом клиента AAD-клиент-ID"
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Ошибка Ааддстенантнотфаунд возникает при попытке [включить проверку подлинности Azure Active Directory доменных служб (azure AD DS) в службе файлов Azure](storage-files-identity-auth-active-directory-domain-service-enable.md) в учетной записи хранения, где [Служба домена Azure ad (Azure AD DS)](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-overview) не создана в клиенте Azure AD связанной подписки.  
 
@@ -332,7 +332,7 @@ TcpTestSucceeded : True
 
 Во вторых, попробуйте подключить [файловый ресурс Azure к ключу учетной записи хранения](https://docs.microsoft.com/azure/storage/files/storage-how-to-use-files-windows). Если не удалось выполнить подключение, скачайте [AzFileDiagnostics.ps1](https://github.com/Azure-Samples/azure-files-samples/tree/master/AzFileDiagnostics/Windows) , чтобы помочь вам проверить работающую среду клиента, определить несовместимую конфигурацию клиента, которая вызовет сбой доступа для службы "файлы Azure", предоставит рекомендации по самостоятельному исправлению и собирайте трассировки диагностики.
 
-В-третьих, вы можете запустить командлет Debug-Азсторажеаккаунтаус, чтобы выполнить ряд основных проверок конфигурации AD с вошедшим в систему пользователем AD. Этот командлет поддерживается в [AzFilesHybrid версии 0.1.2+](https://github.com/Azure-Samples/azure-files-samples/releases). Необходимо выполнить этот командлет от имени пользователя AD, имеющего разрешение владельца целевой учетной записи хранения.  
+В-третьих, можно запустить командлет Debug-AzStorageAccountAuth, чтобы выполнить ряд основных проверок конфигурации AD с пользователем, вошедшим в систему Active Directory. Этот командлет поддерживается в [AzFilesHybrid версии 0.1.2+](https://github.com/Azure-Samples/azure-files-samples/releases). Необходимо выполнить этот командлет от имени пользователя AD, имеющего разрешение владельца целевой учетной записи хранения.  
 ```PowerShell
 $ResourceGroupName = "<resource-group-name-here>"
 $StorageAccountName = "<storage-account-name-here>"
@@ -360,7 +360,7 @@ Debug-AzStorageAccountAuth -StorageAccountName $StorageAccountName -ResourceGrou
 
 Рекомендуется использовать [средство icacls](https://docs.microsoft.com/windows-server/administration/windows-commands/icacls) для настройки разрешений на уровне каталога или файла в качестве обходного пути. 
 
-## <a name="errors-when-running-join-azstorageaccountforauth-cmdlet"></a>Ошибки при выполнении командлета Join-Азсторажеаккаунтфораус
+## <a name="errors-when-running-join-azstorageaccountforauth-cmdlet"></a>Ошибки при выполнении командлета Join-AzStorageAccountForAuth
 
 ### <a name="error-the-directory-service-was-unable-to-allocate-a-relative-identifier"></a>Ошибка: "службе каталогов не удалось выделить относительный идентификатор"
 

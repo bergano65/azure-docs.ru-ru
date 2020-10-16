@@ -5,10 +5,10 @@ services: container-service
 ms.topic: conceptual
 ms.date: 08/26/2020
 ms.openlocfilehash: 2457de7bdaa94a6e2269515fafe6689d44960625
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90984982"
 ---
 # <a name="sustainable-software-engineering-principles-in-azure-kubernetes-service-aks"></a>Устойчивые принципы проектирования программного обеспечения в службе Azure Kubernetes (AKS)
@@ -45,7 +45,7 @@ ms.locfileid: "90984982"
 
 По возможности рассмотрите возможность сдвига ресурсов кластера на время или регионы, в которых можно использовать избыточную емкость. Например, можно изменить время или регион для пакетного задания, чтобы запустить или использовать [плашечные пулы][spot-pools]. Также рекомендуется выполнить рефакторинг приложения, чтобы использовать очередь для отсчета выполняющихся рабочих нагрузок, которые не требуют немедленной обработки.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о функциях AKS, упомянутых в этой статье:
 

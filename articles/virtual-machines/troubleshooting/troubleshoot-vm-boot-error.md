@@ -14,10 +14,10 @@ ms.topic: troubleshooting
 ms.date: 08/28/2019
 ms.author: tiag
 ms.openlocfilehash: 5a2fd7fcfdae8559bfb39bffff7c73c7082a86aa
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87543288"
 ---
 # <a name="linux-vm-boots-to-grub-rescue"></a>Виртуальная машина Linux загружается в GRUB
@@ -45,7 +45,7 @@ ms.locfileid: "87543288"
 
     1. Убедитесь `/etc/default/grub` , что существуют и имеют правильные или нужные параметры. Если вы не знакомы с параметрами по умолчанию, можно проверить рабочую виртуальную машину.
 
-    2. Затем выполните следующую команду, чтобы повторно создать конфигурацию:`grub2-mkconfig -o /boot/grub2/grub.cfg`
+    2. Затем выполните следующую команду, чтобы повторно создать конфигурацию: `grub2-mkconfig -o /boot/grub2/grub.cfg`
 
    * Если отсутствующий файл имеет значение `/boot/grub/menu.lst` , эта ошибка относится к более старым версиям ОС (**RHEL 6. x**, **CentOS 6. x** и **Ubuntu 14,04**), поэтому команды могут отличаться. Необходимо будет запустить старый сервер и выполнить тестирование, чтобы убедиться, что указаны правильные команды.
 
@@ -65,7 +65,7 @@ ms.locfileid: "87543288"
 
    * Если отсутствующий файл имеет значение `/boot/grub/menu.lst` , эта ошибка относится к более старым версиям ОС (**RHEL 6. x**, **CentOS 6. x** и **Ubuntu 14,04**), поэтому команды могут быть отложены. Запустите старый сервер и проверьте его, чтобы убедиться, что указаны правильные команды.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Обзор агента виртуальной машины Azure](../extensions/agent-windows.md)
 * [Обзор расширений и компонентов виртуальной машины под управлением Windows](../extensions/features-windows.md)

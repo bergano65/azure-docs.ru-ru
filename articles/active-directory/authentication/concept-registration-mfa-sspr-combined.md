@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 07/14/2020
-ms.author: iainfou
-author: iainfoulds
+ms.author: joflore
+author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e4afc5e554e72fc2ab78173368930b2e5317bce7
-ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
+ms.openlocfilehash: 71900bc3741c25299402e31057ea2237cd0a4637
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88718923"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91965154"
 ---
 # <a name="combined-security-information-registration-for-azure-active-directory-overview"></a>Общие сведения о общей регистрации безопасности для Azure Active Directory
 
@@ -51,17 +51,17 @@ ms.locfileid: "88718923"
 
 Объединенная регистрация поддерживает следующие методы и действия проверки подлинности:
 
-| Метод | Зарегистрировать | Change | Удалить |
+| Метод | Зарегистрировать | Change | DELETE |
 | --- | --- | --- | --- |
-| Microsoft Authenticator | Да (максимум 5) | Нет | Да |
-| Другое приложение для проверки подлинности | Да (максимум 5) | Нет | Да |
-| Аппаратный токен | Нет | Нет | Да |
-| Телефон | Да | Да | Да |
+| Microsoft Authenticator | Да (максимум 5) | нет | Да |
+| Другое приложение для проверки подлинности | Да (максимум 5) | нет | Да |
+| Аппаратный токен | нет | нет | Да |
+| Номер телефона | Да | Да | Да |
 | Дополнительный телефон | Да | Да | Да |
-| Рабочий телефон | Нет | Нет | Нет |
-| Адрес электронной почты | Да | Да | Да |
-| Контрольные вопросы | Да | Нет | Да |
-| Пароли приложений | Да | Нет | Да |
+| Рабочий телефон | нет | нет | нет |
+| Email | Да | Да | Да |
+| Контрольные вопросы | Да | нет | Да |
+| Пароли приложений | Да | нет | Да |
 | Ключи безопасности FIDO2<br />*Управляемый режим только на странице [сведений о безопасности](https://mysignins.microsoft.com/security-info)*| Да | Да | Да |
 
 > [!NOTE]
@@ -140,7 +140,7 @@ ms.locfileid: "88718923"
 
 Пользователь, который ранее настроил по крайней мере один метод, который можно использовать для многофакторной проверки подлинности, переходит к [https://aka.ms/mysecurityinfo](https://aka.ms/mysecurityinfo) . Пользователь изменяет текущий метод по умолчанию на другой метод по умолчанию. По завершении пользователь увидит новый метод по умолчанию на странице сведений о безопасности.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы приступить к работе, ознакомьтесь с учебниками, чтобы [включить самостоятельный сброс пароля](tutorial-enable-sspr.md) и [включить многофакторную идентификацию Azure](tutorial-enable-azure-mfa.md).
 

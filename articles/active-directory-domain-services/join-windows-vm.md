@@ -1,20 +1,20 @@
 ---
 title: Присоединение виртуальной машины Windows Server к управляемому домену доменных служб Azure AD | Документация Майкрософт
 description: В этом учебнике вы узнаете, как присоединить виртуальную машину Windows Server к управляемому домену доменных служб Azure Active Directory.
-author: iainfoulds
+author: MicrosoftGuyJFlo
 manager: daveba
 ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: tutorial
 ms.date: 07/06/2020
-ms.author: iainfou
-ms.openlocfilehash: 259b27528779c9934da6d69ca46f2794e2257d24
-ms.sourcegitcommit: 5b6acff3d1d0603904929cc529ecbcfcde90d88b
+ms.author: joflore
+ms.openlocfilehash: 3df96f5576829694b5eb12fd1811de112279884d
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88723033"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91963233"
 ---
 # <a name="tutorial-join-a-windows-server-virtual-machine-to-an-azure-active-directory-domain-services-managed-domain"></a>Руководство по Присоединение виртуальной машины Windows Server к управляемому домену доменных служб Azure Active Directory
 

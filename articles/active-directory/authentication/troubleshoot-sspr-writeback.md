@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: troubleshooting
 ms.date: 08/26/2020
-ms.author: iainfou
-author: iainfoulds
+ms.author: joflore
+author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 50e202d26574c0fc8adfeb7f73eb150ebb1781af
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.openlocfilehash: 94b8d744c964b07c1ed6a4d7e8b89bca2258c1bc
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89664634"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91963964"
 ---
 # <a name="troubleshoot-self-service-password-reset-writeback-in-azure-active-directory"></a>Устранение неполадок самостоятельного сброса пароля в Azure Active Directory
 
@@ -104,29 +104,29 @@ Azure AD Connect требует разрешения AD DS **Сброс паро
 1. Войдите на сервер Azure AD Connect и запустите **Synchronization Service Manager**, выбрав **Запуск** > **Synchronization Service** (Служба синхронизации).
 1. На вкладке **Соединители** выберите локальный соединитель **доменных служб Active Directory**, а затем щелкните **Свойства**.
 
-    :::image type="content" source="./media/troubleshoot-sspr-writeback/synchronization-service-manager.png" alt-text="Synchronization Service Manager, демонстрирующий, как изменить свойства" border="false":::.
+    :::image type="content" source="./media/troubleshoot-sspr-writeback/synchronization-service-manager.png" alt-text="Перезапуск службы Azure AD Sync с помощью графического пользовательского интерфейса" border="false":::.
   
 1. Во всплывающем окне выберите вкладку **Connect to Active Directory Forest** (Подключение к лесу Active Directory) и запишите свойство **Имя пользователя**. Это свойство является учетной записью AD DS, используемой службой Azure AD Connect для выполнения синхронизации каталогов.
 
     Чтобы Azure AD Connect выполнила обратную запись паролей, учетной записи AD DS нужно иметь разрешение на сброс пароля. Проверьте разрешения для этой учетной записи пользователя, выполнив следующие действия.
 
-    :::image type="content" source="./media/troubleshoot-sspr-writeback/synchronization-service-manager-properties.png" alt-text="Поиск учетной записи пользователя службы синхронизации Active Directory" border="false":::
+    :::image type="content" source="./media/troubleshoot-sspr-writeback/synchronization-service-manager-properties.png" alt-text="Перезапуск службы Azure AD Sync с помощью графического пользовательского интерфейса" border="false":::
   
 1. Войдите в локальный контроллер домена и запустите приложение **Пользователи и компьютеры Active Directory**.
 1. Выберите **Просмотр** и убедитесь, что параметр **Advanced Features** (Дополнительные функции) включен.  
 
-    :::image type="content" source="./media/troubleshoot-sspr-writeback/view-advanced-features.png" alt-text="Демонстрация расширенных возможностей для пользователей и компьютеров Active Directory" border="false":::
+    :::image type="content" source="./media/troubleshoot-sspr-writeback/view-advanced-features.png" alt-text="Перезапуск службы Azure AD Sync с помощью графического пользовательского интерфейса" border="false":::
   
 1. Найдите учетную запись пользователя AD DS, которую требуется проверить. Щелкните учетную запись правой кнопкой мыши и выберите **Свойства**.  
 1. Во всплывающем окне перейдите на вкладку **Безопасность** и выберите **Дополнительно**.  
 1. Во всплывающем окне **Advanced Security Settings for Administrator** (Дополнительные параметры безопасности для администратора) перейдите на вкладку **Действующие права доступа**.
 1. Выберите **выбрать пользователя**, выберите учетную запись AD DS, используемую Azure AD Connect, а затем выберите **Просмотреть эффективный доступ**.
 
-    :::image type="content" source="./media/troubleshoot-sspr-writeback/view-effective-access.png" alt-text="Демонстрация учетной записи синхронизации на вкладке Действующие права доступа" border="false":::
+    :::image type="content" source="./media/troubleshoot-sspr-writeback/view-effective-access.png" alt-text="Перезапуск службы Azure AD Sync с помощью графического пользовательского интерфейса" border="false":::
   
 1. Прокрутите список вниз и найдите **Сброс пароля**. Если возле записи установлен флажок, учетная запись AD DS имеет разрешение на сброс пароля выбранной учетной записи пользователя Active Directory.  
 
-    :::image type="content" source="./media/troubleshoot-sspr-writeback/check-permissions.png" alt-text="Проверка наличия разрешения на сброс пароля для учетной записи синхронизации" border="false":::
+    :::image type="content" source="./media/troubleshoot-sspr-writeback/check-permissions.png" alt-text="Перезапуск службы Azure AD Sync с помощью графического пользовательского интерфейса" border="false":::
 
 ## <a name="common-password-writeback-errors"></a>Общие ошибки обратной записи паролей
 
@@ -217,7 +217,7 @@ Azure AD Connect требует разрешения AD DS **Сброс паро
 * **Код поддержки.** Какой код поддержки был сформирован, когда пользователь увидел ошибку?
    * Чтобы найти его, воспроизведите ошибку, затем щелкните ссылку **Код поддержки** внизу экрана и отправьте специалисту службы поддержки идентификатор GUID, который отобразится в результате.
 
-    :::image type="content" source="./media/troubleshoot-sspr-writeback/view-support-code.png" alt-text="Код поддержки находится в правом нижнем углу окна веб-браузера.":::
+    :::image type="content" source="./media/troubleshoot-sspr-writeback/view-support-code.png" alt-text="Перезапуск службы Azure AD Sync с помощью графического пользовательского интерфейса":::
 
   * Если вы находитесь на странице, внизу которой отсутствует код поддержки, нажмите клавишу F12 и поищите SID и CID, после чего отправьте два найденных результата специалисту службы поддержки.
 * **Дату, время и часовой пояс.** Укажите точную дату и время возникновения ошибки, а также *часовой пояс*.

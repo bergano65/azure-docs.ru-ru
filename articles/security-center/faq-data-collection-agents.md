@@ -14,10 +14,10 @@ ms.workload: na
 ms.date: 02/25/2020
 ms.author: memildin
 ms.openlocfilehash: 0a368e54c940ff580b7e8f49dd108fafddde5b17
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91441487"
 ---
 # <a name="faq---questions-about-data-collection-agents-and-workspaces"></a>Вопросы и ответы — сбор данных, агенты и рабочие области
@@ -51,9 +51,9 @@ ms.locfileid: "91441487"
 
 Убедитесь, что компьютеры работают под управлением одной из поддерживаемых операционных систем для агента, как описано на следующих страницах:
 
-* [Агент Log Analytics для операционных систем, поддерживаемых Windows](../azure-monitor/platform/agents-overview.md#supported-operating-systems)
+* [Поддерживаемые операционные системы: Windows](../azure-monitor/platform/agents-overview.md#supported-operating-systems)
 
-* [Агент Log Analytics для поддерживаемых операционных систем Linux](../azure-monitor/platform/agents-overview.md#supported-operating-systems)
+* [Поддерживаемые операционные системы: Linux](../azure-monitor/platform/agents-overview.md#supported-operating-systems)
 
 Дополнительные сведения о [данных, собираемых агентом log Analytics](security-center-enable-data-collection.md).
 

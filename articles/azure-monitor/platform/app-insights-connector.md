@@ -7,10 +7,10 @@ author: bwren
 ms.author: bwren
 ms.date: 02/13/2019
 ms.openlocfilehash: 09485d3279e4ca4fff5b6492bab432d8034d7e42
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91449408"
 ---
 # <a name="application-insights-connector-management-solution-deprecated"></a>Решение по управлению Соединителем Application Insights (устарело)
@@ -185,7 +185,7 @@ ApplicationInsights | summarize AggregatedValue = sum(SampledCount) by Telemetry
 | DeviceType | Устройство клиента |
 | ScreenResolution |   |
 | Continent | Континент, на котором создан запрос |
-| Country | Страна или регион, где был создан запрос |
+| Страна или регион | Страна или регион, где был создан запрос |
 | Province | Провинция, область или район, в котором создан запрос |
 | City | Город, в котором создан запрос |
 | isSynthetic | Указывает, был ли запрос создан пользователем или автоматически. True = автоматизированный метод или False = пользователь создан |
@@ -247,7 +247,7 @@ ApplicationInsights | summarize AggregatedValue = sum(SampledCount) by Telemetry
 | Тип | ApplicationInsights |
 | TelemetryType | Запрос |
 | ResponseCode | HTTP-отклик, отправленный клиенту. |
-| RequestSuccess | Указывает успешное или неудачное выполнение. Значение true или false. |
+| RequestSuccess | Указывает успешное или неудачное выполнение. True или False. |
 | RequestID | Идентификатор, позволяющий уникально идентифицировать запрос |
 | RequestName | GET или POST + базовый URL-адрес |
 | RequestDuration | Время длительности запроса (в секундах) |
@@ -316,7 +316,7 @@ $ConnectionsJson = $Connections | ConvertTo-Json
 ApplicationInsights | summarize by ApplicationName
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Используйте [поиск по журналам](../log-query/log-query-overview.md), чтобы просматривать подробные сведения о приложениях Application Insights.
 

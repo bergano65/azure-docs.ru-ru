@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 06/29/2017
 ms.author: alkohli
-ms.openlocfilehash: dc23a0a68471b82c990d5d8a3086e2e71e88d0c8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: dc630021cbf93074119d4feedcb3a09fae1453e3
+ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85513924"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91949434"
 ---
 # <a name="use-the-storsimple-device-manager-service-to-view-and-manage-jobs-update-3-and-later"></a>Использование службы диспетчера устройств StorSimple для просмотра и администрирования заданий StorSimple (обновление 3 или более поздней версии)
 
@@ -59,11 +59,11 @@ ms.locfileid: "85513924"
 
 2. В колонке **Задания** найдите интересующие вас задания, выполнив запрос с соответствующими фильтрами. Можно искать завершенные, выполняющиеся или отмененные задания.
 
-    ![Колонка "Задание"](./media/storsimple-8000-manage-jobs-u2/jobs1.png)
+    ![Колонка заданий 2](./media/storsimple-8000-manage-jobs-u2/jobs1.png)
 
 2. Выберите нужное задание.
 
-    ![Колонка "Задание"](./media/storsimple-8000-manage-jobs-u2/jobs3.png)
+    ![Колонка заданий 3](./media/storsimple-8000-manage-jobs-u2/jobs3.png)
 
 3. В колонке сведений о задании вы можете просмотреть состояние, подробные данные, а также статистику по времени и данным.
    
@@ -81,11 +81,11 @@ ms.locfileid: "85513924"
 
 2. Щелкните выбранное задание правой кнопкой мыши, чтобы открыть контекстное меню, и выберите действие **Отмена**.
 
-    ![Сведения о задании](./media/storsimple-8000-manage-jobs-u2/jobs2.png)
+    ![Сведения о задании 2](./media/storsimple-8000-manage-jobs-u2/jobs2.png)
 
 3. При запросе подтверждения нажмите кнопку **Да**. Теперь это задание отменено.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте об [управлении политиками архивации StorSimple](storsimple-8000-manage-backup-policies-u2.md).
 * Узнайте, как [использовать службу диспетчера устройств StorSimple для администрирования устройства StorSimple](storsimple-8000-manager-service-administration.md).
 

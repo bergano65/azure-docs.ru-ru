@@ -7,23 +7,23 @@ ms.service: spring-cloud
 ms.topic: how-to
 ms.date: 05/13/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: bff98ea3470110bc29f75361fb3a2adc685e2602
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 1802708c3b9e15a2459f29d15da72f2dc1da1a4f
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90888568"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92093996"
 ---
 # <a name="how-to-enable-system-assigned-managed-identity-for-azure-spring-cloud-application"></a>Как включить управляемое удостоверение, назначенное системой, для приложения Azure Spring Cloud
 
-**Эта статья относится к:** ✔️ Java ✔️ C #
+**Эта статья применима к:** ✔️ Java ✔️ C#
 
 Управляемые удостоверения для ресурсов Azure предоставляют автоматически управляемое удостоверение в Azure Active Directory к ресурсу Azure, например к облачному приложению Azure весны. Это удостоверение можно использовать для аутентификации в любой службе, которая поддерживает аутентификацию Azure AD, не храня какие-либо учетные данные в коде.
 
 В этой статье показано, как включить и отключить назначенные системой управляемые удостоверения для облачного приложения Azure весны с помощью портал Azure и CLI (доступно в версии 0.2.4).
 
 ## <a name="prerequisites"></a>Предварительные требования
-Если вы не знакомы с управляемыми удостоверениями для ресурсов Azure, см. [раздел Обзор](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview).
+Если вы не знакомы с управляемыми удостоверениями для ресурсов Azure, см. [раздел Обзор](../active-directory/managed-identities-azure-resources/overview.md).
 Вам потребуется развернутый экземпляр облака Azure весны. Следуйте инструкциям [краткого руководства, чтобы выполнить развертывание с помощью Azure CLI](spring-cloud-quickstart.md).
 
 ## <a name="add-a-system-assigned-identity"></a>Добавление назначаемого системой удостоверения
@@ -59,9 +59,9 @@ az spring-cloud app identity assign -n app_name -s service_name -g resource_grou
 ## <a name="obtain-tokens-for-azure-resources"></a>Получение маркеров для ресурсов Azure
 Приложение может использовать управляемое удостоверение для получения маркеров для доступа к другим ресурсам, защищенным Azure Active Directory, например Azure Key Vault. Эти маркеры представляют приложение, обращающееся к ресурсу, а не к конкретному пользователю приложения.
 
-Возможно, потребуется [настроить целевой ресурс, чтобы разрешить доступ из приложения](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/howto-assign-access-portal). Например, если вы запрашиваете маркер для доступа к Key Vault, убедитесь, что вы добавили политику доступа, включающую в себя удостоверение приложения. В противном случае вызовы Key Vault будут отклонены, даже если они включают маркеры. Чтобы узнать больше о том, какие ресурсы поддерживают маркеры Azure Active Directory, см. сведения в разделе о [службах Azure, поддерживающих аутентификацию Azure AD](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/services-support-managed-identities#azure-services-that-support-azure-ad-authentication).
+Возможно, потребуется [настроить целевой ресурс, чтобы разрешить доступ из приложения](../active-directory/managed-identities-azure-resources/howto-assign-access-portal.md). Например, если вы запрашиваете маркер для доступа к Key Vault, убедитесь, что вы добавили политику доступа, включающую в себя удостоверение приложения. В противном случае вызовы Key Vault будут отклонены, даже если они включают маркеры. Чтобы узнать больше о том, какие ресурсы поддерживают маркеры Azure Active Directory, см. сведения в разделе о [службах Azure, поддерживающих аутентификацию Azure AD](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication).
 
-Azure Веснное облако использует одну и ту же конечную точку для получения маркера с помощью виртуальной машины Azure. Для получения маркера рекомендуется использовать пакет SDK для Java или пружинный запуск.  См. раздел [Использование маркера виртуальной машины](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token) для различных примеров кода и сценариев, а также рекомендации по важным темам, таким как обработка истечения срока действия маркера и ошибок HTTP.
+Azure Веснное облако использует одну и ту же конечную точку для получения маркера с помощью виртуальной машины Azure. Для получения маркера рекомендуется использовать пакет SDK для Java или пружинный запуск.  См. раздел [Использование маркера виртуальной машины](../active-directory/managed-identities-azure-resources/how-to-use-vm-token.md) для различных примеров кода и сценариев, а также рекомендации по важным темам, таким как обработка истечения срока действия маркера и ошибок HTTP.
 
 Рекомендуется. для получения маркеров используйте Java SDK или пружинные стартовые загрузчики.  Ознакомьтесь с примерами на [следующих шагах](#next-steps).
 
@@ -88,4 +88,3 @@ az spring-cloud app identity remove -n app_name -s service_name -g resource_grou
 * [Доступ к Azure Key Vault с управляемыми удостоверениями в пружинной заначальной загрузке](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/spring/azure-spring-boot-starter-keyvault-secrets/README.md#use-msi--managed-identities)
 * [Дополнительные сведения об управляемых удостоверениях для ресурсов Azure](https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/active-directory/managed-identities-azure-resources/overview.md)
 * [Использование управляемых удостоверений с пакетом SDK для Java](https://github.com/Azure-Samples/Azure-Spring-Cloud-Samples)
-

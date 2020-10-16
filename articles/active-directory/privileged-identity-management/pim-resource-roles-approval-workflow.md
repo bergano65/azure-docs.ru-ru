@@ -16,10 +16,10 @@ ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 096da0547806680f62b569f7c7809a7bbb04cb86
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84742085"
 ---
 # <a name="approve-or-deny-requests-for-azure-resource-roles-in-privileged-identity-management"></a>Утверждение или отклонение запросов ролей ресурсов Azure в управление привилегированными пользователями
@@ -76,7 +76,7 @@ ms.locfileid: "84742085"
 >[!Note]
 >Администратор ресурсов, который считает, что одобренный пользователь не должен быть активным, может удалить назначение активной роли в управление привилегированными пользователями. Хотя администраторы ресурсов не получают уведомления о ожидающих запросах, если они не являются утверждающими, они могут просматривать и отменять ожидающие запросы для всех пользователей, просматривая ожидающие запросы в управление привилегированными пользователями.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Расширение или продление ролей ресурсов Azure в управление привилегированными пользователями](pim-resource-roles-renew-extend.md)
 - [Уведомления по электронной почте в управление привилегированными пользователями](pim-email-notifications.md)

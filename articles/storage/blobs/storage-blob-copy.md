@@ -10,10 +10,10 @@ ms.subservice: blobs
 ms.topic: how-to
 ms.custom: devx-track-csharp, devx-track-python
 ms.openlocfilehash: 2c474ed4d4158356075f861c3c0d5ace69173255
-ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90014656"
 ---
 # <a name="copy-a-blob-with-azure-storage-client-libraries"></a>Копирование большого двоичного объекта с помощью клиентских библиотек службы хранилища Azure
@@ -188,7 +188,7 @@ if (destBlob.CopyState.Status == CopyStatus.Pending)
  - [SDK Azure для Python](https://github.com/azure/azure-sdk-for-python)
  - [Пакет Azure SDK для JavaScript](https://github.com/azure/azure-sdk-for-js)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В следующих разделах содержатся сведения о копировании больших двоичных объектов и прерывании текущих операций копирования с помощью интерфейсов API службы Azure.
 

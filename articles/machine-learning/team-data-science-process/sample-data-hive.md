@@ -12,10 +12,10 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 339273c091a1bcfc4f2de66ef2f79ea8cebbc49b
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86026055"
 ---
 # <a name="sample-data-in-azure-hdinsight-hive-tables"></a>Выборка данных в таблицах Azure HDInsight Hive
@@ -31,7 +31,7 @@ ms.locfileid: "86026055"
 Эта задача выборки является одним из этапов [процесса обработки и анализа данных группы (TDSP)](https://docs.microsoft.com/azure/machine-learning/team-data-science-process/).
 
 ## <a name="how-to-submit-hive-queries"></a>Отправка запросов Hive
-Запросы Hive можно отправлять из командной строки Hadoop на головном узле кластера Hadoop.  Войдите в головной узел кластера Hadoop, откройте консоль командной строки Hadoop и отправьте запросы Hive отсюда. Инструкции по отправке запросов Hive из командной строки Hadoop см. в разделе [Отправка запросов Hive](move-hive-tables.md#submit).
+Запросы Hive можно отправлять из командной строки Hadoop на головном узле кластера Hadoop.  Войдите в головной узел кластера Hadoop, откройте консоль Hadoop Command-Line и отправьте запросы Hive отсюда. Инструкции по отправке запросов Hive из командной строки Hadoop см. в разделе [Отправка запросов Hive](move-hive-tables.md#submit).
 
 ## <a name="uniform-random-sampling"></a><a name="uniform"></a> Универсальная случайная выборка
 Универсальная случайная выборка означает, что каждая строка в наборе данных может попасть в выборку с одинаковой вероятностью. Это можно реализовать, добавив дополнительное поле rand() в набор данных во внутреннем запросе "select", а также во внешнем запросе "select" с условной зависимостью от этого случайного поля.

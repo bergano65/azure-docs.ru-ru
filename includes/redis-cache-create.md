@@ -2,45 +2,26 @@
 title: включить файл
 description: включить файл
 services: redis-cache
-author: wesmc7777
+author: curib
 ms.service: cache
 ms.topic: include
-ms.date: 11/05/2019
-ms.author: wesmc
+ms.date: 10/06/2020
+ms.author: cauribeg
 ms.custom: include file
-ms.openlocfilehash: e0557f8eb2fd120baeebee96acb4ef539344e3e7
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: ae9526a47a77118503274fc824538980ebcd50de
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87528839"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91828926"
 ---
-1. Чтобы создать кэш, войдите на [портал Azure](https://portal.azure.com) и выберите **Создать ресурс**. 
-   
-   ![Выберите "Создать ресурс"](media/redis-cache-create/create-a-resource.png)
+1. Чтобы создать кэш, войдите на [портал Azure](https://portal.azure.com) и выберите **Создать ресурс**.
+
+    :::image type="content" source="media/redis-cache-create/create-resource.png" alt-text="Выбор элемента &quot;Кэш Azure для Redis&quot;.":::
+
    
 1. На странице **Создание** выберите **Базы данных**, а затем **Кэш Azure для Redis**.
-   
-   ![Выберите "Кэш Azure для Redis"](media/redis-cache-create/redis-cache-new-cache-menu.png)
-   
-1. На странице **Новый кэш Redis** настройте параметры для нового кэша.
-   
-   | Параметр      | Рекомендуемое значение  | Description |
-   | ------------ |  ------- | -------------------------------------------------- |
-   | **DNS-имя** | Введите глобально уникальное имя | Имя кэша должно быть строкой длиной от 1 до 63 символов и содержать только цифры, буквы и дефисы. Имя должно начинаться и заканчиваться цифрой или буквой и не может содержать более одного дефиса подряд. *Имя узла* для экземпляра кэша получит значение *\<DNS name>.redis.cache.windows.net*. | 
-   | **подписка** | Раскройте список и выберите нужную подписку. | В этой подписке будет создан новый экземпляр кэша Redis для Azure. | 
-   | **группа ресурсов** | Раскройте список и выберите группу ресурсов или нажмите **Создать** и введите имя для новой группы ресурсов. | Имя группы ресурсов, в которой будут созданы кэш и другие ресурсы. Поместив все ресурсы приложения в одну группу ресурсов, вы сможете легко управлять ими и/или удалить их вместе. | 
-   | **Местоположение** | Откройте список и выберите расположение. | Выберите оптимальный [регион](https://azure.microsoft.com/regions/) для других служб, которые будут использовать кэш. |
-   | **Ценовая категория** | Откройте список и выберите [ценовую категорию](https://azure.microsoft.com/pricing/details/cache/). |  Ценовая категория определяет размер, производительность и функции, доступные для кэша. Дополнительные сведения см. в [обзоре предложения "Кэш Redis для Azure"](../articles/azure-cache-for-redis/cache-overview.md). |
-   
-1. Нажмите кнопку **Создать**. 
-   
-   ![Создание кэша Redis для Azure](media/redis-cache-create/redis-cache-cache-create.png) 
-   
-   > [!NOTE]
-   > Подготовка Кэша может занять 15–20 минут.   
-   
-   Вы можете отслеживать ход выполнения на странице **обзорных сведений** кэша Azure для Redis. Когда **Состояние** примет значение **Running** (Выполняется), кэш будет готов к использованию.
-   
-   ![Созданный кэш Redis для Azure](media/redis-cache-create/redis-cache-cache-created.png)
 
+    :::image type="content" source="media/redis-cache-create/select-cache.png" alt-text="Выбор элемента &quot;Кэш Azure для Redis&quot;." зеленого цвета, выберите **Создать**.
+
+На создание кэша требуется некоторое время. Вы можете отслеживать ход выполнения на странице **Обзор** службы "Кэш Azure для Redis". Когда параметр **Состояние** примет значение **Выполняется**, кэш будет готов к использованию. 

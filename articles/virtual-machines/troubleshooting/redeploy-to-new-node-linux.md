@@ -14,10 +14,10 @@ ms.workload: infrastructure
 ms.date: 10/31/2018
 ms.author: genli
 ms.openlocfilehash: 6b6abaf10f74b29685309ed5a24a5e6b9f261014
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87074440"
 ---
 # <a name="redeploy-linux-virtual-machine-to-new-azure-node"></a>Повторное развертывание виртуальной машины Linux на новом узле Azure
@@ -27,7 +27,7 @@ ms.locfileid: "87074440"
 > После развертывания временный диск будет удален, а связанные с виртуальным сетевым интерфейсом динамические IP-адреса будут обновлены. 
 
 
-## <a name="use-the-azure-cli"></a>Использование Azure CLI
+## <a name="use-the-azure-cli"></a>Использование командной строки Azure CLI
 Установите последнюю версию [Azure CLI](/cli/azure/install-az-cli2) и войдите в систему со своей учетной записью Azure, выполнив команду [az login](/cli/azure/reference-index).
 
 Повторно разверните виртуальную машину, выполнив команду [az vm redeploy](/cli/azure/vm). В следующем примере повторно развертывается виртуальная машина с именем *myVM*, входящая в группу ресурсов с именем *myResourceGroup*:

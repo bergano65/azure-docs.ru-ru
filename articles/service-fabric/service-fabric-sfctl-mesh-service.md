@@ -6,10 +6,10 @@ ms.topic: reference
 ms.date: 1/16/2020
 ms.author: jejarry
 ms.openlocfilehash: 68ea876d9951b49a6683cc74df8b9107fd942e51
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86245676"
 ---
 # <a name="sfctl-mesh-service"></a>sfctl mesh service
@@ -20,7 +20,7 @@ ms.locfileid: "86245676"
 |Команда|Описание|
 | --- | --- |
 | list | Составляет список всех ресурсов службы. |
-| show | Предоставляет ресурс службы с заданным именем. |
+| показать | Предоставляет ресурс службы с заданным именем. |
 
 ## <a name="sfctl-mesh-service-list"></a>sfctl mesh service list
 Составляет список всех ресурсов службы.

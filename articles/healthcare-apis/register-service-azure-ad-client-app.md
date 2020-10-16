@@ -8,12 +8,12 @@ ms.subservice: fhir
 ms.topic: conceptual
 ms.date: 02/07/2019
 ms.author: matjazl
-ms.openlocfilehash: 19d6b0ebfa2570b04c3a9dda3fe69428aa0eed75
-ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
+ms.openlocfilehash: 6f7bf122b292ca144eac406957f19a13c7ba6662
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91629329"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91975830"
 ---
 # <a name="register-a-service-client-application-in-azure-active-directory"></a>Регистрация клиентского приложения службы в Azure Active Directory
 
@@ -73,7 +73,7 @@ ms.locfileid: "91629329"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этой статье вы узнали, как зарегистрировать клиентское приложение службы в Azure Active Directory. Далее вы можете узнать о дополнительных параметрах API Azure для FHIR.
+В этой статье вы узнали, как зарегистрировать клиентское приложение службы в Azure Active Directory. Затем проверьте доступ к серверу FHIR с помощью процедуры POST.
  
 >[!div class="nextstepaction"]
->[Дополнительные параметры](azure-api-for-fhir-additional-settings.md)
+>[Получение доступа к Azure API для FHIR с помощью Postman](access-fhir-postman-tutorial.md)

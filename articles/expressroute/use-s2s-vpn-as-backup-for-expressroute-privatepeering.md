@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 02/05/2020
 ms.author: duau
 ms.openlocfilehash: 0ab74a14c16b7ea1d587cfcc82eea689e2f98c83
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89393026"
 ---
 # <a name="using-s2s-vpn-as-a-backup-for-expressroute-private-peering"></a>Использование S2S VPN в качестве резервной копии для частного пиринга ExpressRoute
@@ -302,7 +302,7 @@ Set-AzExpressRouteCircuit -ExpressRouteCircuit $ckt
 
 Чтобы убедиться, что трафик переключается обратно в ExpressRoute, повторите traceroute и убедитесь, что он проходит через частный пиринг ExpressRoute.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 ExpressRoute предназначен для обеспечения высокого уровня доступности без единой точки отказа в сети Microsoft. По-прежнему канал ExpressRoute ограничен одним географическим регионом и поставщиком услуг. VPN-подключение S2S может быть хорошим решением пассивного резервного копирования аварийного восстановления для канала ExpressRoute. Для надежного решения пассивного резервного копирования, регулярного обслуживания пассивной конфигурации и периодической проверки соединение имеет большое значение. Важно, чтобы конфигурация VPN была устаревшей и периодически (скажем, каждый квартал) повторить шаги проверки и отработки отказа, описанные в этой статье, во время периода обслуживания.
 

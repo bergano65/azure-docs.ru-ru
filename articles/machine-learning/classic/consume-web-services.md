@@ -10,10 +10,10 @@ ms.author: keli19
 ms.custom: seodec18, devx-track-python, devx-track-js, devx-track-csharp
 ms.date: 05/29/2020
 ms.openlocfilehash: 66c9368d06960790c6dc960d2d95bd82be1a6e39
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91345963"
 ---
 # <a name="how-to-consume-a-machine-learning-studio-classic-web-service"></a>Как использовать веб-службу Машинное обучение Studio (классическая модель)
@@ -36,7 +36,7 @@ ms.locfileid: "91345963"
 
 Машинное обучение Azure Studio (классическая модель) имеет два типа служб:
 
-* Служба запросов и ответов (RR) — низкая задержка, Высокомасштабируемая служба, предоставляющая интерфейс для моделей без отслеживания состояния, созданных и развернутых из Машинное обучение Studio (классическая модель).
+* Служба Request-Response (RR) — низкая задержка, Высокомасштабируемая служба, предоставляющая интерфейс для моделей без отслеживания состояния, созданных и развернутых из среды Машинное обучение Studio (классическая модель).
 * Служба пакетного выполнения (BES) — асинхронная служба, оценивающая пакет записей данных.
 
 Дополнительные сведения о Машинное обучение веб-служб см. [в разделе Развертывание веб-службы машинное обучение](deploy-a-machine-learning-web-service.md).

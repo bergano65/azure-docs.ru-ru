@@ -111,20 +111,24 @@
       href: concept-detecting-adult-content.md
 - name: Ответственный подход к использованию ИИ
   items:
-    - name: Примечание о прозрачности
+    - name: Пространственный анализ
       items:
-        - name: Общие сведения о Пространственном анализе
-          href: 'https://docs.microsoft.com/legal/cognitive-services/computer-vision/intro-to-spatial-analysis-public-preview?context=/azure/cognitive-services/Computer-vision/context/context'
-        - name: Характеристики и ограничения
-          href: 'https://docs.microsoft.com/legal/cognitive-services/computer-vision/accuracy-and-limitations?context=/azure/cognitive-services/Computer-vision/context/context'
-    - name: 'Соответствие требованиям, конфиденциальность и безопасность'
-      href: 'https://docs.microsoft.com/legal/cognitive-services/computer-vision/compliance-privacy-security-2?context=/azure/cognitive-services/Computer-vision/context/context'
-    - name: Ответственное использование в развертывании ИИ
-      href: 'https://docs.microsoft.com/legal/cognitive-services/computer-vision/responsible-use-deployment?context=/azure/cognitive-services/Computer-vision/context/context'
-    - name: Рекомендации по проектированию для раскрытия информации
-      href: 'https://docs.microsoft.com/legal/cognitive-services/computer-vision/disclosure-design?context=/azure/cognitive-services/Computer-vision/context/context'
-    - name: Аналитика исследований
-      href: 'https://docs.microsoft.com/legal/cognitive-services/computer-vision/research-insights?context=/azure/cognitive-services/Computer-vision/context/context'
+        - name: Примечание о прозрачности
+          items:
+            - name: Общие сведения о Пространственном анализе
+              href: 'https://docs.microsoft.com/legal/cognitive-services/computer-vision/intro-to-spatial-analysis-public-preview?context=/azure/cognitive-services/Computer-vision/context/context'
+            - name: Характеристики и ограничения
+              href: 'https://docs.microsoft.com/legal/cognitive-services/computer-vision/accuracy-and-limitations?context=/azure/cognitive-services/Computer-vision/context/context'
+        - name: Указания по развертыванию
+          items:
+            - name: Ответственное использование в развертывании ИИ
+              href: 'https://docs.microsoft.com/legal/cognitive-services/computer-vision/responsible-use-deployment?context=/azure/cognitive-services/Computer-vision/context/context'
+            - name: Рекомендации по проектированию для раскрытия информации
+              href: 'https://docs.microsoft.com/legal/cognitive-services/computer-vision/disclosure-design?context=/azure/cognitive-services/Computer-vision/context/context'
+            - name: Аналитика исследований
+              href: 'https://docs.microsoft.com/legal/cognitive-services/computer-vision/research-insights?context=/azure/cognitive-services/Computer-vision/context/context'
+        - name: 'Соответствие требованиям, конфиденциальность и безопасность'
+          href: 'https://docs.microsoft.com/legal/cognitive-services/computer-vision/compliance-privacy-security-2?context=/azure/cognitive-services/Computer-vision/context/context'
 - name: Контейнеры
   items:
     - name: "Контейнер API\_чтения"
@@ -169,8 +173,8 @@
       href: 'https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest#az_cognitiveservices_list'
     - name: Azure PowerShell
       href: 'https://aka.ms/azure-powershell-cognitiveservices'
-    - name: "API \"Компьютерное зрение\" версии\_3.1 (предварительная версия)"
-      href: 'https://westus2.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-preview-2/operations/5d986960601faab4bf452005'
+    - name: "API \"Компьютерное зрение\" версии\_3.1"
+      href: 'https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/5d986960601faab4bf452005'
     - name: "API \"Компьютерное зрение\" версии\_3.0"
       href: 'https://aka.ms/computer-vision-v3-ref'
     - name: "API \"Компьютерное зрение\" версии\_2.1"

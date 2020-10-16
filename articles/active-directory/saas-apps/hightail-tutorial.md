@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 09/10/2019
 ms.author: jeedes
-ms.openlocfilehash: 0348e5c773f37606a3975a8e62e556bef291a758
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.openlocfilehash: d39f46469d80b3e2d7bf361bd349a39afb16bd2d
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89297320"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91826195"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-hightail"></a>Руководство по интеграции единого входа Azure Active Directory с Hightail
 
@@ -155,15 +155,15 @@ ms.locfileid: "89297320"
 
 1. Щелкните **значок пользователя** в правом верхнем углу страницы. 
 
-    ![Настройка единого входа](./media/hightail-tutorial/configure1.png)
+    ![Снимок экрана, на котором показан значок пользователя](./media/hightail-tutorial/configure1.png)
 
 1. Перейдите на вкладку **Просмотр консоли администрирования**.
 
-    ![Настройка единого входа](./media/hightail-tutorial/configure2.png)
+    ![Снимок экрана, на котором показана кнопка "View Admin Console" (Просмотр консоли администрирования) для пользователя](./media/hightail-tutorial/configure2.png)
 
 1. В меню в верхней части окна перейдите на вкладку **SAML** и выполните следующие действия:
 
-    ![Настройка единого входа](./media/hightail-tutorial/configure3.png)
+    ![Снимок экрана, на котором показана вкладка "SAML", где можно указать URL-адрес для входа и сертификат SAML](./media/hightail-tutorial/configure3.png)
 
     а. В текстовое поле **Login URL** (URL-адрес входа) вставьте **URL-адрес входа**, скопированный на портале Azure.
 

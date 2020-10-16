@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 0aefe95f3e78afc4b449539fd683ffc1fe525a15
-ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89280185"
 ---
 # <a name="azure-active-directory-pass-through-authentication-quickstart"></a>Azure Active Directory сквозной аутентификации: Краткое руководство
@@ -79,7 +79,7 @@ ms.locfileid: "89280185"
 ### <a name="azure-government-cloud-prerequisite"></a>Предварительные требования для облака Azure для государственных организаций
 Перед включением сквозной проверки подлинности с помощью Azure AD Connect на шаге 2 Скачайте последнюю версию агента PTA из портал Azure.  Необходимо убедиться, что агент имеет версию **1.5.1742.0.** или более поздней версии.  Чтобы проверить агент, см. статью [обновление агентов проверки подлинности](how-to-connect-pta-upgrade-preview-authentication-agents.md)
 
-После загрузки последнего выпуска агента следуйте приведенным ниже инструкциям, чтобы настроить сквозную аутентификацию с помощью Azure AD Connect.
+После загрузки последнего выпуска агента следуйте приведенным ниже инструкциям, чтобы настроить проверку подлинности Pass-Through с помощью Azure AD Connect.
 
 ## <a name="step-2-enable-the-feature"></a>Шаг 2. Включение компонента
 
@@ -172,7 +172,7 @@ ms.locfileid: "89280185"
 
 Смарт-блокировка помогает блокировать неправильные субъекты, которые пытаются угадать пароли пользователей или использовать методы подбора для получения. Настроив параметры Smart-блокировки в Azure AD и (или) соответствующие параметры блокировки в локальной Active Directory, атаки можно отфильтровывать, прежде чем они будут доступны Active Directory. Ознакомьтесь с [этой статьей](../authentication/howto-password-smart-lockout.md) , чтобы узнать больше о настройке параметров Smart-блокировки в клиенте для защиты учетных записей пользователей.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - [Migrate from AD FS to Pass-through Authentication](https://aka.ms/adfstoptadp) (Переход с AD FS на сквозную проверку подлинности). Подробное руководство по переходу с AD FS (или других технологии федерации) на сквозную проверку подлинности.
 - [Интеллектуальная блокировка](../authentication/howto-password-smart-lockout.md). Узнайте, как настроить возможность интеллектуальной блокировки в клиенте для защиты учетных записей пользователей.
 - [Текущие ограничения](how-to-connect-pta-current-limitations.md). Узнайте о том, какие сценарии поддерживаются для сквозной аутентификации, а какие нет.

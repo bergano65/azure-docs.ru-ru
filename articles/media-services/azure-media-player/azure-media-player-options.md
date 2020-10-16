@@ -8,13 +8,13 @@ ms.topic: reference
 ms.date: 04/20/2020
 ms.custom: devx-track-js
 ms.openlocfilehash: 392ecff2ab120e713a07d130493a4a8339dae5ab
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91296201"
 ---
-# <a name="options"></a>Варианты #
+# <a name="options"></a>Параметры #
 
 ## <a name="setting-options"></a>Значения параметра ##
 
@@ -42,7 +42,7 @@ ms.locfileid: "91296201"
 
 Параметр Controls определяет, есть ли у проигрывателя элементы управления, с которыми может взаимодействовать пользователь. Без управления единственным способом запуска воспроизведения видео является атрибут автозапуска или API.
 
-`<video controls ...>` либо `{ "controls": true }`
+`<video controls ...>` или `{ "controls": true }`
 
 ### <a name="autoplay"></a>autoplay ###
 
@@ -56,19 +56,19 @@ ms.locfileid: "91296201"
 ### <a name="poster"></a>Плакат ###
 Атрибут афиши задает изображение, отображаемое до начала воспроизведения видео. Часто это кадр видеоролика или пользовательского окна приветствия. Как только пользователь нажмет кнопку Воспроизведение, вы откинете этот образ.
 
-`<video poster="myPoster.jpg" ...>` либо `{ "poster": "myPoster.jpg" }`
+`<video poster="myPoster.jpg" ...>` или `{ "poster": "myPoster.jpg" }`
 
 ### <a name="width"></a>width ###
 
 Атрибут width задает отображаемую ширину видео.
 
-`<video width="640" ...>` либо `{ "width": 640 }`
+`<video width="640" ...>` или `{ "width": 640 }`
 
 ### <a name="height"></a>рост ###
 
 Атрибут Height задает отображаемую высоту видео.
 
-`<video height="480" ...>` либо `{ "height": 480 }`
+`<video height="480" ...>` или `{ "height": 480 }`
 
 ### <a name="plugins"></a>plugins ###
 

@@ -6,10 +6,10 @@ ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 05/14/2020
 ms.openlocfilehash: 69f2048da0b4690d9de72e96e296edbd55c4cd9f
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91309461"
 ---
 # <a name="plan-your-luis-app-schema-with-subject-domain-and-data-extraction"></a>Планирование схемы приложения LUIS с темой предметной области и извлечение данных
@@ -71,11 +71,11 @@ ms.locfileid: "91309461"
 * флигхтактион
     * Действие
     * Исходный домен
-    * Destination
+    * Назначение
 
 Чтобы облегчить извлечение дополнительных компонентов в подсущности. Вы выбираете свои функции, основанные на словаре, который вы видите в разделе User фразы продолжительностью, и значениях, которые должны возвращаться в прогнозируемом ответе.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Изучение лифецилце разработки LUIS](luis-concept-app-iteration.md)

@@ -5,20 +5,20 @@ ms.topic: how-to
 ms.date: 09/22/2020
 ms.custom: references_regions
 ms.openlocfilehash: 90556e0843cda94dc79330321d027f8d28eb7d20
-ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91652199"
 ---
 # <a name="create-an-azure-event-hubs-schema-registry-preview"></a>Создание реестра схемы концентраторов событий Azure (Предварительная версия)
 В этой статье показано, как создать группу схем с схемами в реестре схемы, размещенном в концентраторах событий Azure. Общие сведения о компоненте реестра схемы в концентраторах событий Azure см. в разделе [Реестр Azure Schema в концентраторах событий](schema-registry-overview.md).
 
 > [!NOTE]
-> - Функция **реестра схемы** сейчас доступна в **предварительной версии**и не рекомендуется для рабочих нагрузок.
-> - Эта функция доступна только в **стандартных** и **выделенных** уровнях, а не на уровне **Basic** .
+> - Функция **Реестр схем** в настоящее время находится на этапе **предварительной версии** и не рекомендуется для рабочих нагрузок в рабочей среде.
+> - Эта функция доступна только на **стандартных** и **выделенных** уровнях и не предоставляется на уровне **Базовый**.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 [Создайте пространство имен концентраторов событий](event-hubs-create.md#create-an-event-hubs-namespace). Можно также использовать существующее пространство имен. 
 
 ## <a name="create-a-schema-group"></a>Создание группы схем
@@ -64,7 +64,7 @@ ms.locfileid: "91652199"
             ]
         }
         ```
-    1. Выберите **Создать**. 
+    1. Нажмите кнопку **создания**. 
 1. Выберите **схему** из списка схем. 
 
     :::image type="content" source="./media/create-schema-registry/select-schema.png" alt-text="Страница реестра схемы":::
@@ -90,6 +90,6 @@ ms.locfileid: "91652199"
     :::image type="content" source="./media/create-schema-registry/select-version.png" alt-text="Страница реестра схемы":::    
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о реестре схем см. [в разделе реестр Azure Schema в концентраторах событий](schema-registry-overview.md).
 

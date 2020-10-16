@@ -10,12 +10,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 08/05/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 394c87bcd3e4580289fbccc6a31b164f914dc8a3
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: bedb619d77d9e5a88fdc16d0fbd066fa092e0765
+ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89020802"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91950794"
 ---
 # <a name="how-to-use-microsoftazuresearch-v10-in-a-net-application"></a>Как использовать Microsoft. Azure. Search (V10) в приложении .NET
 
@@ -44,7 +44,7 @@ ms.locfileid: "89020802"
 
 Версия пакета SDK для .NET предназначена `2019-05-06` для [REST API когнитивный Поиск Azure](/rest/api/searchservice/). Эта версия включает поддержку [сложных типов](search-howto-complex-data-types.md), [обогащения AI](cognitive-search-concept-intro.md), [автозаполнения](/rest/api/searchservice/autocomplete)и [режима синтаксического анализа Жсонлинес](search-howto-index-json-blobs.md) при индексировании больших двоичных объектов Azure. 
 
-Этот пакет SDK не поддерживает такие [операции управления](/rest/api/searchmanagement/), как создание и масштабирование служб поиска или управление ключами API. Если вам нужно управлять ресурсами поиска из приложения .NET, можно использовать [пакет SDK для управления Azure когнитивный Поиск .NET](https://aka.ms/search-mgmt-sdk).
+Этот пакет SDK не поддерживает такие [операции управления](/rest/api/searchmanagement/), как создание и масштабирование служб поиска или управление ключами API. Если вам нужно управлять ресурсами поиска из приложения .NET, можно использовать [пакет SDK для управления Azure когнитивный Поиск .NET](/dotnet/api/overview/azure/search).
 
 ## <a name="upgrading-to-the-latest-version-of-the-sdk"></a>Обновление до последней версии пакета SDK
 Если вы уже используете более раннюю версию пакета SDK для Azure Когнитивный поиск .NET и хотите перейти на последнюю версию общедоступной версии, в [этой статье](search-dotnet-sdk-migration-version-9.md) объясняется, как это делать.

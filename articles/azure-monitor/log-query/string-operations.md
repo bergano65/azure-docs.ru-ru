@@ -7,10 +7,10 @@ author: bwren
 ms.author: bwren
 ms.date: 08/16/2018
 ms.openlocfilehash: a394fee7178b2e3e167c8bd905ab175b25d1d813
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "75397469"
 ---
 # <a name="work-with-strings-in-azure-monitor-log-queries"></a>Работа со строками в запросах журнала Azure Monitor
@@ -46,7 +46,7 @@ print @"C:\backslash\not\escaped\with @ prefix"
 
 ## <a name="string-comparisons"></a>Сравнения строк
 
-Оператор       |Описание:                         |С учетом регистра|Пример (при `true`)
+Оператор       |Описание                         |С учетом регистра|Пример (при `true`)
 ---------------|------------------------------------|--------------|-----------------------
 `==`           |Равно                              |Да           |`"aBc" == "aBc"`
 `!=`           |Не равно                          |Да           |`"abc" != "ABC"`
@@ -262,7 +262,7 @@ SecurityEvent
 4663 — была предпринята попытка доступа к объекту.  |Идентификатор действия 4663 — была предпринята попытка доступа к объекту.
 
 
-## <a name="split"></a>split
+## <a name="split"></a>разделение
 
 Разделяет указанную строку в соответствии с указанным разделителем и возвращает массив результирующих подстрок.
 
@@ -361,7 +361,7 @@ print toupper("hello"); // result: "HELLO"
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь с дополнительными руководствами по следующим ссылкам:
 * [Статистические функции в запросах Log Analytics](aggregations.md)
 * [Расширенные статистические функции в запросах Azure Log Analytics](advanced-aggregations.md)

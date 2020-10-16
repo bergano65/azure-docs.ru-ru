@@ -12,10 +12,10 @@ ms.author: danil
 ms.reviewer: jrasnik, sstein
 ms.date: 03/10/2020
 ms.openlocfilehash: b5170f1c2e6c72c684cb1afcf1bf9bf8d3ef6fff
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91284369"
 ---
 # <a name="database-advisor-performance-recommendations-for-azure-sql-database"></a>Помощник по базам данных рекомендации по производительности для базы данных SQL Azure
@@ -116,7 +116,7 @@ ms.locfileid: "91284369"
 
 Разработчики могут рассмотреть возможность разработки пользовательских приложений, используя рекомендации по повышению производительности для базы данных SQL Azure. Все рекомендации, перечисленные на портале для базы данных, можно получить с помощью API [Get-азсклдатабасерекоммендедактион](https://docs.microsoft.com/powershell/module/az.sql/get-azsqldatabaserecommendedaction) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения об автоматической настройке индексов базы данных и планов выполнения запросов см. в статье [Автоматическая настройка в Базе данных SQL Azure](automatic-tuning-overview.md).
 - Дополнительные сведения о мониторинге производительности базы данных с помощью автоматической диагностики и анализа первопричин проблем с производительностью см. в статье [Intelligent Insights](intelligent-insights-overview.md).

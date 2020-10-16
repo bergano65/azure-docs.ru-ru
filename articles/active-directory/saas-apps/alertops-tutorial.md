@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 05/20/2019
 ms.author: jeedes
-ms.openlocfilehash: d820a3fc9b12a36a76e2eb887b32d27acc156c76
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: a278204da556b41bd663b8b5c9ff5152e16017cc
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88522363"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91715874"
 ---
 # <a name="tutorial-integrate-alertops-with-azure-active-directory"></a>Руководство по Интеграция AlertOps с Azure Active Directory
 
@@ -108,11 +108,11 @@ ms.locfileid: "88522363"
 
 4. Щелкните **Account settings** (Параметры учетной записи) в области навигации слева.
 
-    ![Конфигурация AlertOps](./media/alertops-tutorial/configure1.png)
+    ![Снимок экрана: меню AlertOps с выделенным элементом "Параметры учетной записи".](./media/alertops-tutorial/configure1.png)
 
 5. На странице **Subscription Settings** (Параметры подписки) выберите **SSO** и выполните следующие действия.
 
-    ![Конфигурация AlertOps](./media/alertops-tutorial/configure2.png)
+    ![Снимок экрана: окно параметров подписки для единого входа с введенными значениями, как описано в этом шаге.](./media/alertops-tutorial/configure2.png)
 
     а. Установите флажок **Use Single Sign-On(SSO)** (Использовать единый вход).
 
@@ -164,15 +164,15 @@ ms.locfileid: "88522363"
 
 2. Щелкните **Users** (Пользователи) на панели навигации слева.
 
-    ![Конфигурация AlertOps](./media/alertops-tutorial/user1.png)
+    ![Снимок экрана: меню AlertOps с выделенным элементом "Пользователи".](./media/alertops-tutorial/user1.png)
 
 3. Щелкните **Add User** (Добавить пользователя).
 
-    ![Конфигурация AlertOps](./media/alertops-tutorial/user2.png)
+    ![Снимок экрана: окно "Пользователи" с кнопкой "Добавить пользователя".](./media/alertops-tutorial/user2.png)
 
 4. На странице **Добавление пользователя** выполните следующие действия.
 
-    ![Конфигурация AlertOps](./media/alertops-tutorial/user3.png)
+    ![Снимок экрана: панель "Добавление пользователя" с введенным значениями, как описано в этом шаге.](./media/alertops-tutorial/user3.png)
 
     а. В текстовом поле **Login User Name** (Имя пользователя для входа) введите имя пользователя, например **BrittaSimon**.
 

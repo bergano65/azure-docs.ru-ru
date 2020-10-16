@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 06/09/2020
 ms.author: victorh
 ms.openlocfilehash: 308098bd1ac49510afccf0a7964face726906332
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84628677"
 ---
 # <a name="application-gateway-support-for-multi-tenant-back-ends-such-as-app-service"></a>Поддержка шлюза приложений для серверных интерфейсов с несколькими клиентами, например службы приложений
@@ -61,6 +61,6 @@ ms.locfileid: "84628677"
 
 Сведения об устранении таких ситуаций см. в [статье Устранение неполадок перенаправления в URL-адрес службы приложений](https://docs.microsoft.com/azure/application-gateway/troubleshoot-app-service-redirection-app-service-url).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как настроить шлюз приложений с многопользовательским приложением, например веб-приложением службы приложений Azure, в качестве участника пула серверной части, посетив [страницу Настройка веб-приложений службы приложений с помощью шлюза приложений](https://docs.microsoft.com/azure/application-gateway/configure-web-app-portal) .

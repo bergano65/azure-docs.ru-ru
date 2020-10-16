@@ -6,10 +6,10 @@ ms.subservice: update-management
 ms.date: 07/16/2018
 ms.topic: conceptual
 ms.openlocfilehash: dabe914ffd4e84e8ded5c0e3b519036479fe33ec
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90987607"
 ---
 # <a name="migrate-azure-monitor-logs-update-deployments-to-azure-portal"></a>Перенос развертываний обновлений журналов Azure Monitor на портал Azure
@@ -43,7 +43,7 @@ ms.locfileid: "90987607"
 
 У всех развертываний обновлений, созданных на портале OMS есть [сохраненный поиск](../azure-monitor/platform/computer-groups.md), известный как группа компьютеров, с тем же именем что и существующее развертывание обновлений. Сохраненный поиск содержит список компьютеров, запланированных в развертывании обновлений.
 
-:::image type="content" source="media/migrate-oms-update-deployments/oms-deployment.png" alt-text="Снимок экрана страницы "развертывания обновлений" с выделенными полями "имя" и "серверы".":::
+:::image type="content" source="media/migrate-oms-update-deployments/oms-deployment.png" alt-text="Снимок экрана со страницей управления обновлениями.":::
 
 Для использования существующего сохраненного поиска, выполните перечисленные ниже действия.
 

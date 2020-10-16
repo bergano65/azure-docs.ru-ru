@@ -10,10 +10,10 @@ ms.author: matjazl
 author: matjazl
 ms.date: 10/13/2019
 ms.openlocfilehash: 937be72bfec96119474e7effe9ba88a2cf253444
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86081849"
 ---
 # <a name="add-data-to-audit-logs-by-using-custom-http-headers"></a>Добавление данных в журналы аудита с помощью настраиваемых заголовков HTTP
@@ -24,7 +24,7 @@ ms.locfileid: "86081849"
 
 Этот поток данных представлен на следующей схеме:
 
-:::image type="content" source="media/custom-headers/custom-headers-diagram.png" alt-text="Схема пользовательских заголовков":::
+:::image type="content" source="media/custom-headers/custom-headers-diagram.png" alt-text="Схема пользовательских заголовков&quot;:::
 
 Пользовательские заголовки можно использовать для сбора информации нескольких типов. Пример:
 
@@ -47,9 +47,9 @@ ms.locfileid: "86081849"
 Эти сведения сериализуются в формат JSON при добавлении в столбец свойств в журнале. Пример:
 
 ```json
-{ "X-MS-AZUREFHIR-AUDIT-USERID" : "1234",
-"X-MS-AZUREFHIR-AUDIT-USERLOCATION" : "XXXX",
-"X-MS-AZUREFHIR-AUDIT-XYZ" : "1234" }
+{ &quot;X-MS-AZUREFHIR-AUDIT-USERID&quot; : &quot;1234&quot;,
+&quot;X-MS-AZUREFHIR-AUDIT-USERLOCATION&quot; : &quot;XXXX&quot;,
+&quot;X-MS-AZUREFHIR-AUDIT-XYZ&quot; : &quot;1234&quot; }
 ```
  
 Как и любой заголовок HTTP, можно повторять заголовки с одинаковыми именами и разными значениями. Пример:
@@ -59,7 +59,7 @@ ms.locfileid: "86081849"
 
 При добавлении в журнал такие значения объединяются в список, разделенный запятыми. Пример:
 
-{ "X-MS-AZUREFHIR-AUDIT-USERLOCATION" : "HospitalA, Emergency" }
+{ &quot;X-MS-AZUREFHIR-AUDIT-USERLOCATION&quot; : &quot;HospitalA, Emergency" }
  
 Можно добавить не более 10 уникальных заголовков (повторы заголовков с одинаковыми именами и разными значениями засчитываются как один заголовок). Общая максимальная длина значения для одного заголовка составляет 2048 символов.
 

@@ -1,14 +1,14 @@
 ---
 title: Сведения о структуре определения политики
 description: Описывает, как определения политик используются для установки соглашений о ресурсах Azure в организации.
-ms.date: 09/22/2020
+ms.date: 10/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: f9b64255723c6e53a6d8fe945bf19506ba30644e
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 84af781ae58ab45b69d71ebdc22fbced910da246
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91330287"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92074266"
 ---
 # <a name="azure-policy-definition-structure"></a>Структура определения службы "Политика Azure"
 
@@ -104,17 +104,17 @@ ms.locfileid: "91330287"
 
 ### <a name="resource-provider-modes"></a>Режимы поставщиков ресурсов
 
-Следующий узел поставщика ресурсов поддерживается полностью:
+Поддерживается следующий режим поставщика ресурсов:
 
 - `Microsoft.Kubernetes.Data` для управления кластерами Kubernetes в Azure или вне Azure. В определениях, использующих этот режим поставщика ресурсов, используются эффекты _Audit_, _Deny_и _disabled_. Использование влияния [енфорцеопаконстраинт](./effects.md#enforceopaconstraint) является _устаревшим_.
 
 В настоящее время в качестве **предварительной версии**поддерживаются следующие режимы поставщика ресурсов:
 
 - `Microsoft.ContainerService.Data` для управления правилами контроллера допуска в [Службе Azure Kubernetes](../../../aks/intro-kubernetes.md). Определения, использующие этот режим поставщика ресурсов, **должны** использовать [енфорцерегополициный](./effects.md#enforceregopolicy) результат. Этот режим является _устаревшим_.
-- `Microsoft.KeyVault.Data` для управления хранилищами и сертификатами в [Azure Key Vault](../../../key-vault/general/overview.md).
+- `Microsoft.KeyVault.Data` для управления хранилищами и сертификатами в [Azure Key Vault](../../../key-vault/general/overview.md). Дополнительные сведения об этих определениях политик см. в статье [интеграция Azure Key Vault с политикой Azure](../../../key-vault/general/azure-policy.md).
 
 > [!NOTE]
-> Режимы поставщиков ресурсов поддерживают только встроенные определения политик.
+> Режимы поставщиков ресурсов поддерживают только встроенные определения политик и не поддерживают [исключения](./exemption-structure.md).
 
 ## <a name="metadata"></a>Метаданные
 
@@ -226,7 +226,7 @@ ms.locfileid: "91330287"
         <condition> | <logical operator>
     },
     "then": {
-        "effect": "deny | audit | append | auditIfNotExists | deployIfNotExists | disabled"
+        "effect": "deny | audit | modify | append | auditIfNotExists | deployIfNotExists | disabled"
     }
 }
 ```
@@ -306,6 +306,9 @@ ms.locfileid: "91330287"
 - `type`
 - `location`
   - Используйте **global** для ресурсов, которые зависят от расположения.
+- `id`
+  - Возвращает идентификатор ресурса, для которого выполняется оценка.
+  - Пример: `/subscriptions/06be863d-0996-4d56-be22-384767287aa2/resourceGroups/myRG/providers/Microsoft.KeyVault/vaults/myVault`
 - `identity.type`
   - Возвращает тип [управляемого удостоверения](../../../active-directory/managed-identities-azure-resources/overview.md), включенный в ресурс.
 - `tags`
@@ -606,8 +609,20 @@ ms.locfileid: "91330287"
     "definitionReferenceId": "StorageAccountNetworkACLs"
   }
   ```
-  
-  
+
+
+- `ipRangeContains(range, targetRange)`
+    - **Range**: [обязательное значение] строка строки, указывающая диапазон IP-адресов.
+    - **таржетранже**: [обязательный] строка строки, указывающая диапазон IP-адресов.
+
+    Возвращает значение, указывающее, содержит ли указанный диапазон IP-адресов целевой диапазон IP-адресов. Пустые диапазоны или смешивание между семействами IP-адресов не разрешено и приводит к сбою оценки.
+
+    Поддерживаемые форматы:
+    - Один IP-адрес (примеры: `10.0.0.0` , `2001:0DB8::3:FFFE` )
+    - Диапазон CIDR (примеры: `10.0.0.0/24` , `2001:0DB8::/110` )
+    - Диапазон, определенный начальным и конечным IP-адресами (примеры: `192.168.0.1-192.168.0.9` , `2001:0DB8::-2001:0DB8::3:FFFF` )
+
+
 #### <a name="policy-function-example"></a>Пример функции политики
 
 В этом примере правила политики функция ресурса `resourceGroup` используется для получения свойства **name** в сочетании с массивом `concat` и функцией объекта для создания условия `like`, требующего, чтобы имя ресурса начиналось с имени группы ресурсов.

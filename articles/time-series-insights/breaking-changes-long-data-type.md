@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 10/01/2020
 ms.custom: dpalled
 ms.openlocfilehash: 2cf86ed4fd4305a37d27bf7a88e8493821ef085c
-ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91629103"
 ---
 # <a name="adding-support-for-long-data-type-in-azure-time-series-insights-gen2"></a>Добавление поддержки для типа данных Long в Azure Time Series Insights Gen2
@@ -240,6 +240,6 @@ ms.locfileid: "91629103"
 
 Если вы являетесь пользователем горячего магазина с большим количеством свойств и считаете, что это изменение приведет к принудительной отправке среды через ограничение имени свойства "горячий магазин 1 000", отправьте запрос в службу поддержки через портал Azure и сообщите об этом взаимодействии.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Просмотрите полный список [поддерживаемых типов данных](concepts-supported-data-types.md).

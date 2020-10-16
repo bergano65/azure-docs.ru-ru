@@ -45,7 +45,7 @@
       href: whats-new.md
     - name: Components
       href: components.md
-    - name: Основные понятия
+    - name: Алгоритм балансировки нагрузки.
       href: concepts.md
     - name: Номера SKU
       href: skus.md
@@ -63,9 +63,12 @@
       href: load-balancer-ha-ports-overview.md
     - name: Несколько внешних интерфейсов
       href: load-balancer-multivip-overview.md
-    - name: Исходящие подключения
+    - name: Исходящий прокси-сервер
       href: load-balancer-outbound-connections.md
     - name: Сброс подключений TCP и время ожидания TCP в режиме простоя
+    - name: Правила для исходящего трафика
+      href: outbound-rules.md
+    - name: Сброс подключений TCP во время ожидания в режиме простоя
       href: load-balancer-tcp-reset.md
     - name: Azure Load Balancer ценовой категории "Стандартный" и зоны доступности
       href: load-balancer-standard-availability-zones.md

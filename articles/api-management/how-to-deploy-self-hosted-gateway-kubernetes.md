@@ -10,10 +10,10 @@ ms.topic: article
 ms.author: apimpm
 ms.date: 04/23/2020
 ms.openlocfilehash: 023c2c89b90d6ddc71abc95db325dcdeb7684a2d
-ms.sourcegitcommit: 206629373b7c2246e909297d69f4fe3728446af5
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89500136"
 ---
 # <a name="deploy-a-self-hosted-gateway-to-kubernetes"></a>Развертывание независимого шлюза в Kubernetes
@@ -127,6 +127,6 @@ ms.locfileid: "89500136"
 Когда [Подключение к Azure](self-hosted-gateway-overview.md#connectivity-to-azure) временно теряется, поток телеметрии в Azure прерывается и данные теряются в течение сбоя.
 Рассмотрите возможность [настройки локального мониторинга](how-to-configure-local-metrics-logs.md) , чтобы обеспечить возможность наблюдения за трафиком API и предотвращения потери данных телеметрии во время простоя подключения Azure.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения о самостоятельно размещенном шлюзе см. в разделе [Обзор самостоятельно размещенного](self-hosted-gateway-overview.md)шлюза.

@@ -7,16 +7,16 @@ ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: brendm
 ms.custom: devx-track-java
-ms.openlocfilehash: 7c4c832819f61d208d0722823d0a74354960f182
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 496f2e812a102e85fea92a535552daaaadf5f31e
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90904262"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92093435"
 ---
 # <a name="quotas-and-service-plans-for-azure-spring-cloud"></a>Квоты и планы обслуживания для Azure Веснного облака
 
-**Эта статья относится к:** ✔️ Java ✔️ C #
+**Эта статья применима к:** ✔️ Java ✔️ C#
 
 Все службы Azure устанавливают ограничения по умолчанию и квоты для ресурсов и компонентов.   Azure Веснного облака предлагает две ценовые категории: "базовый" и "Стандартный". Ограничения для обоих уровней будут подробно описаны в этой статье.
 
@@ -32,4 +32,4 @@ vCPU | 1 на экземпляр службы | 4 на экземпляр слу
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Некоторые ограничения по умолчанию можно увеличить. Если для установки требуется увеличение, [Создайте запрос в службу поддержки](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request).
+Некоторые ограничения по умолчанию можно увеличить. Если для установки требуется увеличение, [Создайте запрос в службу поддержки](../azure-portal/supportability/how-to-create-azure-support-request.md).

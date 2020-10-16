@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
 ms.openlocfilehash: 1aef238ec0b947dda1417b567b343ae9d92754d9
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86249518"
 ---
 # <a name="user-profile-templates-in-azure-api-management"></a>Шаблоны профилей пользователей в службе управления API Azure
@@ -25,7 +25,7 @@ ms.locfileid: "86249518"
   
  С помощью шаблонов в этом разделе вы сможете настроить содержимое страниц профилей пользователей на портале разработчика.  
   
--   [Профиль](#Profile)  
+-   [Profile](#Profile)  
   
 -   [Подписки](#Subscriptions)  
   
@@ -40,7 +40,7 @@ ms.locfileid: "86249518"
 
 [!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
   
-##  <a name="profile"></a><a name="Profile"></a>Профиля  
+##  <a name="profile"></a><a name="Profile"></a> Профиля  
  Шаблон **профиля** позволяет настроить раздел профиля пользователя на странице профиля пользователя на портале разработчика.  
   
  ![Страница профиля пользователя](./media/api-management-user-profile-templates/APIM-User-Profile-Page.png "Страница профиля пользователя APIM")  
@@ -185,7 +185,7 @@ ms.locfileid: "86249518"
 }  
 ```  
   
-##  <a name="subscriptions"></a><a name="Subscriptions"></a>Оформления  
+##  <a name="subscriptions"></a><a name="Subscriptions"></a> Оформления  
  Шаблон **подписок** позволяет настроить раздел подписок на странице профиля пользователя на портале разработчика.  
   
  ![Страница подписки пользователя](./media/api-management-user-profile-templates/APIM-User-Subscription-Page.png "Страница подписки пользователя APIM")  
@@ -406,7 +406,7 @@ ms.locfileid: "86249518"
 }  
 ```  
   
-##  <a name="applications"></a><a name="Applications"></a>Приложений  
+##  <a name="applications"></a><a name="Applications"></a> Приложений  
  Шаблон **приложений** позволяет настроить раздел приложений на странице профиля пользователя на портале разработчика.  
   
  ![Страница "приложения учетной записи пользователя"](./media/api-management-user-profile-templates/APIM-User-Account-Applications-Page.png "Страница приложений учетной записи пользователя APIM")  

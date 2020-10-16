@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 09/29/2020
 ms.author: enewman
 ms.openlocfilehash: 4bbf4c9d4bc83b48b8ecc62946fa9bffa8af50bc
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91533526"
 ---
 # <a name="set-up-a-lab-to-teach-data-science-with-python-and-jupyter-notebooks"></a>Настройка лаборатории для обучения обработки и анализа данных с помощью записных книжек Python и Jupyter
@@ -172,7 +172,7 @@ Jupyter Notebook — это проект с открытым кодом, кот
 ## <a name="conclusion"></a>Заключение
 В этой статье мы рассмотрели шаги по созданию лаборатории для класса записных книжек Jupyter. Аналогичную программу установки можно использовать для других классов машинного обучения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дальнейшие действия являются общими для настройки любой лаборатории.
 

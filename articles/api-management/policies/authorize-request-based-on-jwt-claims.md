@@ -13,16 +13,16 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 10/13/2017
 ms.author: apimpm
-ms.openlocfilehash: 1b84854688fbdcc017b16698dfebfe54a7210110
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b5b0c2feb31eab5e39bbebd7108b3ec8504769d4
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75422178"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92076289"
 ---
 # <a name="authorize-access-based-on-jwt-claims"></a>Авторизация доступа на основе утверждений JWT
 
-В этой статье на примере политики службы управления API Azure показано, как авторизовать доступ к определенным методам HTTP API на основе утверждений JWT. См. дополнительные сведения о [создании и изменении кода политик](../set-edit-policies.md). Также для ознакомления доступны другие [примеры политик](../policy-samples.md).
+В этой статье на примере политики службы управления API Azure показано, как авторизовать доступ к определенным методам HTTP API на основе утверждений JWT. См. дополнительные сведения о [создании и изменении кода политик](../set-edit-policies.md). Также для ознакомления доступны другие [примеры политик](../policy-reference.md).
 
 ## <a name="policy"></a>Политика
 
@@ -30,10 +30,9 @@ ms.locfileid: "75422178"
 
 [!code-xml[Main](../../../api-management-policy-samples/examples/Pre-authorize requests based on HTTP method with validate-jwt.policy.xml)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Подробнее о политиках службы управления API:
 
 + [Политики преобразования](../api-management-transformation-policies.md)
-+ [Примеры политик](../policy-samples.md).
-
++ [Примеры политик](../policy-reference.md).

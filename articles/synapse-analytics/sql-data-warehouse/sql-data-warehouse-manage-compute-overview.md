@@ -12,10 +12,10 @@ ms.author: rortloff
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
 ms.openlocfilehash: 90815d52e6884efe6cff9a7860c093b4b5c1bc94
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85204547"
 ---
 # <a name="manage-compute-in-azure-synapse-analytics-data-warehouse"></a>Управление расчетами в хранилище данных аналитики Azure синапсе
@@ -36,7 +36,7 @@ ms.locfileid: "85204547"
 
 В следующей таблице показано, как изменяется количество распределений на вычислительный узел при изменении количества единиц использования хранилища данных.  DW30000c предоставляет 60 Вычисленийных узлов и достигает значительно большей производительности запросов, чем DW100c.
 
-| Единицы использования хранилища данных  | \#число узлов вычислений | \# распределений на узел |
+| Единицы использования хранилища данных  | \# число узлов вычислений | \# распределений на узел |
 | -------- | ---------------- | -------------------------- |
 | DW100c   | 1                | 60                         |
 | DW200c   | 1                | 60                         |
@@ -124,6 +124,6 @@ ms.locfileid: "85204547"
 
 Для масштабирования пула SQL требуются разрешения, описанные в разделе [ALTER DATABASE](/sql/t-sql/statements/alter-database-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).  Чтобы приостановить и возобновить работу, нужны разрешения [Участник баз данных SQL](../../role-based-access-control/built-in-roles.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json#sql-db-contributor), в частности Microsoft.Sql/servers/databases/action.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об управлении ресурсами вычислений см. в разделе Руководство по управлению [вычислом](manage-compute-with-azure-functions.md) других ресурсов вычислений для отдельных запросов. Дополнительные сведения см. в разделе [Классы ресурсов для управления рабочими нагрузками](resource-classes-for-workload-management.md).

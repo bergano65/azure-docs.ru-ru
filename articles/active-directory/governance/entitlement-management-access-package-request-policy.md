@@ -17,10 +17,10 @@ ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b7b70e8a408c22be0331bfd0dcbe01830b072ab8
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91449981"
 ---
 # <a name="change-request-settings-for-an-access-package-in-azure-ad-entitlement-management"></a>Параметры запроса на изменение для пакета Access в управлении назначениями Azure AD
@@ -196,7 +196,7 @@ ms.locfileid: "91449981"
 
     ![Доступ к пакету — политика-включить параметр политики](./media/entitlement-management-access-package-approval-policy/enable-requests.png)
 
-1. Нажмите кнопку **Далее**.
+1. Щелкните **Далее**.
 
 1. Если требуется, чтобы запрашивающие стороны предпредоставил дополнительные сведения при запросе доступа к пакету Access, выполните действия, описанные в разделе []() Настройка сведений о запрашивающей стороны (Предварительная версия).
 
@@ -204,7 +204,7 @@ ms.locfileid: "91449981"
 
 1. При изменении политики нажмите кнопку **Обновить**. При добавлении новой политики нажмите кнопку **создать**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Изменение параметров утверждения для пакета Access](entitlement-management-access-package-approval-policy.md)
 - [Изменение параметров жизненного цикла пакета Access](entitlement-management-access-package-lifecycle-policy.md)

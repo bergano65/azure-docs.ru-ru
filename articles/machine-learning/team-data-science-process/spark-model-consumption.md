@@ -12,10 +12,10 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: bb38a76de41885b6f39a1c6dce7c44bcb52a4d60
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86027449"
 ---
 # <a name="operationalize-spark-built-machine-learning-models"></a>Ввод моделей машинного обучения, созданных с помощью Spark, в эксплуатацию
@@ -605,7 +605,7 @@ conn.close()
 * Введите имя приложения логики и план служб приложений, чтобы открыть **конструктор приложений логики**.
 * Выберите действие HTTP и введите параметры, показанные на рисунке ниже.
 
-![Конструктор Logic Apps](./media/spark-model-consumption/spark-logica-app-client.png)
+![Конструктор Logic Apps](./media/spark-model-consumption/spark-logica-app-client.png)
 
 ## <a name="whats-next"></a>Дальнейшие действия
 **Перекрестная проверка и очистка параметров**. Дополнительные сведения о том, как можно обучить модели с помощью перекрестной проверки и вычистки параметров Hyper-Parameter, см. в разделе [расширенное исследование данных и моделирование в Spark](spark-advanced-data-exploration-modeling.md) .

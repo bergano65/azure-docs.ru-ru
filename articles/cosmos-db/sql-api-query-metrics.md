@@ -9,10 +9,10 @@ ms.date: 05/23/2019
 ms.author: sngun
 ms.custom: devx-track-csharp
 ms.openlocfilehash: ec98d194921cd9a7eced06ccee20a3375e8c8a82
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89008698"
 ---
 # <a name="tuning-query-performance-with-azure-cosmos-db"></a>Настройка производительности запросов в Azure Cosmos DB
@@ -238,7 +238,7 @@ IReadOnlyDictionary<string, QueryMetrics> metrics = result.QueryMetrics;
 
 ```
 
-| Метрика | Единицы | Описание | 
+| Метрика | Unit | Описание | 
 | ------ | -----| ----------- |
 | `totalExecutionTimeInMs` | Миллисекунды | Время выполнения запроса | 
 | `queryCompileTimeInMs` | Миллисекунды | Время компиляции запроса  | 
@@ -260,7 +260,7 @@ IReadOnlyDictionary<string, QueryMetrics> metrics = result.QueryMetrics;
 
 Ниже приведены некоторые примеры запросов и интерпретации некоторых метрик, возвращаемые из выполнения запроса. 
 
-| query | Образец метрики | Описание | 
+| Запрос | Образец метрики | Описание | 
 | ------ | -----| ----------- |
 | `SELECT TOP 100 * FROM c` | `"RetrievedDocumentCount": 101` | Количество полученных документов составляет 100+1 для соответствия предложению TOP. Время запроса главным образом тратится на `WriteOutputTime` и `DocumentLoadTime`, так как он выполняет сканирование. | 
 | `SELECT TOP 500 * FROM c` | `"RetrievedDocumentCount": 501` | RetrievedDocumentCount теперь выше (500+1 для соответствия предложению TOP). | 

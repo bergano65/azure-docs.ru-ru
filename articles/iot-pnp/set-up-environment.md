@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.service: iot-pnp
 services: iot-pnp
 ms.openlocfilehash: 3b7c9b51bad45bb348f70c8b0e433404b49b5aac
-ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91761368"
 ---
 # <a name="set-up-your-environment-for-the-iot-plug-and-play-quickstarts-and-tutorials"></a>Настройка среды для использования кратких руководств и учебников по Plug and Play IoT
@@ -83,8 +83,8 @@ az iot dps enrollment create --attestation-type symmetrickey --dps-name my-pnp-d
 
 Для выборки концентратора и устройства для подключения к примерам службы требуются следующие переменные среды:
 
-* **IOTHUB_CONNECTION_STRING**: строка подключения центра Интернета вещей, которая была заметка ранее.
-* **IOTHUB_DEVICE_ID**: `my-pnp-device` .
+* **IOTHUB_CONNECTION_STRING**: строка подключения центра Интернета вещей, которую вы записали ранее.
+* **IOTHUB_DEVICE_ID**: `my-pnp-device`.
 
 Например, в оболочке командной системы Linux Bash:
 
@@ -128,7 +128,7 @@ set IOTHUB_DEVICE_ID=my-pnp-device
 
 Настройте средство для использования файлов модели, загруженных ранее. На домашней странице средства выберите **параметры Plug and Play IOT**, а затем **+ Добавить > локальную папку**. Выберите созданную ранее папку *Models* . Затем нажмите кнопку **сохранить** , чтобы сохранить параметры.
 
-Дополнительные сведения см. в статье [Установка и использование Azure IOT Explorer](howto-use-iot-explorer.md).
+Дополнительные сведения см. в статье [Установка и использование обозревателя Интернета вещей Azure](howto-use-iot-explorer.md).
 
 ## <a name="remove-the-resources"></a>Удаление ресурсов
 
@@ -138,7 +138,7 @@ set IOTHUB_DEVICE_ID=my-pnp-device
 az group delete --name my-pnp-resourcegroup
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы настроили среду, вы можете испытать одно из кратких руководств или учебников, таких как:
 

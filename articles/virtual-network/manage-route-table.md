@@ -13,10 +13,10 @@ ms.workload: infrastructure-services
 ms.date: 03/19/2020
 ms.author: kumud
 ms.openlocfilehash: 664e3851370be812cd7a0e58cf9beb1fddb5d991
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87291009"
 ---
 # <a name="create-change-or-delete-a-route-table"></a>Создание, изменение и удаление таблицы маршрутов
@@ -59,7 +59,7 @@ Azure автоматически направляет трафик между п
 
 ### <a name="create-route-table---commands"></a>Создание таблицы маршрутов — команды
 
-| Средство | Команда |
+| Инструмент | Get-Help |
 | ---- | ------- |
 | Azure CLI | [az network route-table create](/cli/azure/network/route-table#az-network-route-table-create) |
 | PowerShell | [New-AzRouteTable](/powershell/module/az.network/new-azroutetable) |
@@ -70,7 +70,7 @@ Azure автоматически направляет трафик между п
 
 ### <a name="view-route-table---commands"></a>Просмотр таблицы маршрутов — команды
 
-| Средство | Команда |
+| Инструмент | Get-Help |
 | ---- | ------- |
 | Azure CLI | [AZ Network Route-список таблиц](/cli/azure/network/route-table#az-network-route-table-list) |
 | PowerShell | [Get-AzRouteTable](/powershell/module/az.network/get-azroutetable) |
@@ -93,7 +93,7 @@ Azure автоматически направляет трафик между п
 
 ### <a name="view-details-of-route-table---commands"></a>Просмотр сведений о командах таблицы маршрутов
 
-| Средство | Команда |
+| Инструмент | Get-Help |
 | ---- | ------- |
 | Azure CLI | [AZ Network Route — таблица-показывать](/cli/azure/network/route-table#az-network-route-table-show) |
 | PowerShell | [Get-AzRouteTable](/powershell/module/az.network/get-azroutetable) |
@@ -108,7 +108,7 @@ Azure автоматически направляет трафик между п
 
 ### <a name="change-a-route-table---commands"></a>Изменение команд таблицы маршрутов
 
-| Средство | Команда |
+| Инструмент | Get-Help |
 | ---- | ------- |
 | Azure CLI | [AZ Network Route-обновление таблицы](/cli/azure/network/route-table#az-network-route-table-update) |
 | PowerShell | [Set-AzRouteTable](/powershell/module/az.network/set-azroutetable) |
@@ -133,7 +133,7 @@ Azure автоматически направляет трафик между п
 
 ### <a name="associate-a-route-table---commands"></a>Связывание команд таблицы маршрутов
 
-| Средство | Команда |
+| Инструмент | Get-Help |
 | ---- | ------- |
 | Azure CLI | [az network vnet subnet update](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-update) |
 | PowerShell | [Set-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/set-azvirtualnetworksubnetconfig) |
@@ -156,7 +156,7 @@ Azure автоматически направляет трафик между п
 
 ### <a name="dissociate-a-route-table---commands"></a>Отмена связи между командами таблицы маршрутов
 
-| Средство | Команда |
+| Инструмент | Get-Help |
 | ---- | ------- |
 | Azure CLI | [az network vnet subnet update](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-update) |
 | PowerShell | [Set-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/set-azvirtualnetworksubnetconfig) |
@@ -173,7 +173,7 @@ Azure автоматически направляет трафик между п
 
 ### <a name="delete-a-route-table---commands"></a>Удаление таблицы маршрутов — команды
 
-| Средство | Команда |
+| Инструмент | Get-Help |
 | ---- | ------- |
 | Azure CLI | [AZ сетевая маршрутизация-таблица Delete](/cli/azure/network/route-table#az-network-route-table-delete) |
 | PowerShell | [Remove-Азраутетабле](/powershell/module/az.network/remove-azroutetable) |
@@ -190,7 +190,7 @@ Azure автоматически направляет трафик между п
 
 1. Введите уникальное **имя маршрута** для маршрута в таблице маршрутов.
 
-1. Введите **префикс адреса**в нотации (CIDR), в которой вы хотите направлять трафик для маршрутизации. Префикс не может дублироваться более чем в одном маршруте в таблице маршрутов, хотя префикс может находиться в пределах другого префикса. Например, если вы определили *10.0.0.0/16* в качестве префикса в одном маршруте, вы по-прежнему можете определить другой маршрут с префиксом адреса *10.0.0.0/22* . Azure выбирает маршрут трафика на основе совпадения с самым длинным префиксом. Дополнительные сведения см. в разделе [как Azure выбирает маршрут](virtual-networks-udr-overview.md#how-azure-selects-a-route).
+1. Введите **префикс адреса**в нотации "неклассовая Inter-Domainная маршрутизация (CIDR)", в которую нужно направить трафик. Префикс не может дублироваться более чем в одном маршруте в таблице маршрутов, хотя префикс может находиться в пределах другого префикса. Например, если вы определили *10.0.0.0/16* в качестве префикса в одном маршруте, вы по-прежнему можете определить другой маршрут с префиксом адреса *10.0.0.0/22* . Azure выбирает маршрут трафика на основе совпадения с самым длинным префиксом. Дополнительные сведения см. в разделе [как Azure выбирает маршрут](virtual-networks-udr-overview.md#how-azure-selects-a-route).
 
 1. Выберите **тип следующего прыжка**. Дополнительные сведения о типах следующего прыжка см. в разделе [Маршрутизация трафика виртуальной сети](virtual-networks-udr-overview.md).
 
@@ -200,7 +200,7 @@ Azure автоматически направляет трафик между п
 
 ### <a name="create-a-route---commands"></a>Создание команд маршрута
 
-| Средство | Команда |
+| Инструмент | Get-Help |
 | ---- | ------- |
 | Azure CLI | [az network route-table route create](/cli/azure/network/route-table/route#az-network-route-table-route-create) |
 | PowerShell | [New-AzRouteConfig](/powershell/module/az.network/new-azrouteconfig) |
@@ -217,7 +217,7 @@ Azure автоматически направляет трафик между п
 
 ### <a name="view-routes---commands"></a>Просмотр маршрутов — команды
 
-| Средство | Команда |
+| Инструмент | Get-Help |
 | ---- | ------- |
 | Azure CLI | [AZ Network Route-таблица Route List](/cli/azure/network/route-table/route#az-network-route-table-route-list) |
 | PowerShell | [Get-Азраутеконфиг](/powershell/module/az.network/get-azrouteconfig) |
@@ -234,7 +234,7 @@ Azure автоматически направляет трафик между п
 
 ### <a name="view-details-of-a-route---commands"></a>Просмотр сведений о командах маршрута
 
-| Средство | Команда |
+| Инструмент | Get-Help |
 | ---- | ------- |
 | Azure CLI | [AZ сетевая маршрутизация-Таблица маршрута](/cli/azure/network/route-table/route#az-network-route-table-route-show) |
 | PowerShell | [Get-Азраутеконфиг](/powershell/module/az.network/get-azrouteconfig) |
@@ -253,7 +253,7 @@ Azure автоматически направляет трафик между п
 
 ### <a name="change-a-route---commands"></a>Изменение команд маршрута
 
-| Средство | Команда |
+| Инструмент | Get-Help |
 | ---- | ------- |
 | Azure CLI | [AZ Network Route — Таблица маршрута обновления](/cli/azure/network/route-table/route#az-network-route-table-route-update) |
 | PowerShell | [Set-Азраутеконфиг](/powershell/module/az.network/set-azrouteconfig) |
@@ -272,7 +272,7 @@ Azure автоматически направляет трафик между п
 
 ### <a name="delete-a-route---commands"></a>Удаление команд маршрута
 
-| Средство | Команда |
+| Инструмент | Get-Help |
 | ---- | ------- |
 | Azure CLI | [AZ сетевая маршрутизация — Таблица маршрута Delete](/cli/azure/network/route-table/route#az-network-route-table-route-delete) |
 | PowerShell | [Remove-Азраутеконфиг](/powershell/module/az.network/remove-azrouteconfig) |
@@ -295,7 +295,7 @@ Azure автоматически направляет трафик между п
 
 ### <a name="view-effective-routes---commands"></a>Просмотр эффективных маршрутов — команды
 
-| Средство | Команда |
+| Инструмент | Get-Help |
 | ---- | ------- |
 | Azure CLI | [AZ Network NIC демонстрация-эффективная-Route-Table](/cli/azure/network/nic#az-network-nic-show-effective-route-table) |
 | PowerShell | [Get-AzEffectiveRouteTable.](/powershell/module/az.network/get-azeffectiveroutetable) |
@@ -324,7 +324,7 @@ Azure автоматически направляет трафик между п
 
 ### <a name="validate-routing-between-two-endpoints---commands"></a>Проверка маршрутизации между двумя конечными точками — команды
 
-| Средство | Команда |
+| Инструмент | Get-Help |
 | ---- | ------- |
 | Azure CLI | [AZ Network наблюдатель "Показывать-следующий прыжок"](/cli/azure/network/watcher#az-network-watcher-show-next-hop) |
 | PowerShell | [Get-Азнетворкватчернекссоп](/powershell/module/az.network/get-aznetworkwatchernexthop) |
@@ -333,7 +333,7 @@ Azure автоматически направляет трафик между п
 
 Для работы с таблицами маршрутов и маршрутами учетной записи должна быть назначена [роль "участник сети](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor) " или [пользовательская роль](../role-based-access-control/custom-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json) , которой назначены соответствующие действия, перечисленные в следующей таблице.
 
-| Действие                                                          |   Имя                                                  |
+| Действие                                                          |   name                                                  |
 |--------------------------------------------------------------   |   -------------------------------------------           |
 | Microsoft.Network/routeTables/read                              |   Чтение таблицы маршрутов.                                    |
 | Microsoft.Network/routeTables/write                             |   Создание или обновление таблицы маршрутов.                        |

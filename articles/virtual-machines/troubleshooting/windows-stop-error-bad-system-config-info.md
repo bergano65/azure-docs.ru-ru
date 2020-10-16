@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 08/24/2020
 ms.author: v-miegge
-ms.openlocfilehash: 4f2b338b8629209363acb7bbe0533831a089fe6f
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.openlocfilehash: 7d1233c97ec80d5a2efa8b53c68e9e07a823165d
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91447323"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91977037"
 ---
 # <a name="windows-stop-error---0x00000074-bad-system-config-info"></a>Windows-ошибка завершения — 0x00000074 неверные сведения о конфигурации системы
 
@@ -27,7 +27,7 @@ ms.locfileid: "91447323"
 
 ## <a name="symptom"></a>Симптом
 
-При использовании [диагностики загрузки](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/boot-diagnostics) для просмотра снимка экрана виртуальной машины вы увидите, что на снимке экрана отображается **#0x00000074** или **BAD_SYSTEM_CONFIG_INFO**код завершения Windows.
+При использовании [диагностики загрузки](./boot-diagnostics.md) для просмотра снимка экрана виртуальной машины вы увидите, что на снимке экрана отображается **#0x00000074** или **BAD_SYSTEM_CONFIG_INFO**код завершения Windows.
 
 *Ваш компьютер столкнулся с проблемой и должен перезапуститься. Вы можете перезапустить.* 
  Дополнительные *сведения об этой неполадке и возможных исправлениях см http://windows.com/stopcode . на странице* 
@@ -36,7 +36,7 @@ ms.locfileid: "91447323"
 
   ![Код завершения Windows 0x00000074, который также отображается как "BAD_SYSTEM_CONFIG_INFO". Windows информирует пользователя о том, что на компьютере возникла проблема, и его необходимо перезапустить.](./media/windows-stop-error-bad-system-config-info/1.png)
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 **BAD_SYSTEM_CONFIG_INFO** код ошибки возникает, если куст **системного** реестра поврежден. Эта ошибка может быть вызвана любой из следующих причин:
 
@@ -58,7 +58,7 @@ ms.locfileid: "91447323"
 
 ### <a name="create-and-access-a-repair-vm"></a>Создание виртуальной машины для восстановления и доступ к ней
 
-1. Выполните шаги 1–3 из списка [команд для восстановления виртуальной машины](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/repair-windows-vm-using-azure-virtual-machine-repair-commands), чтобы подготовить виртуальную машину для восстановления.
+1. Выполните шаги 1–3 из списка [команд для восстановления виртуальной машины](./repair-windows-vm-using-azure-virtual-machine-repair-commands.md), чтобы подготовить виртуальную машину для восстановления.
 1. Проверьте наличие повреждений Hive.
 1. Используйте подключение к удаленному рабочему столу для подключения к виртуальной машине восстановления.
 1. Скопируйте `<VOLUME LETTER OF BROKEN OS DISK>:\windows\system32\config` папку и сохраните ее в работоспособном разделе диска или в другом надежном расположении. Создайте резервную копию этой папки в качестве меры предосторожности, так как вы будете изменять критически важные файлы реестра. 
@@ -133,4 +133,4 @@ ms.locfileid: "91447323"
    
 ### <a name="rebuild-the-vm"></a>Перестроение виртуальной машины
 
-Чтобы перестроить виртуальную машину, [выполните шаг 5 из списка команд для восстановления виртуальной машины](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/repair-windows-vm-using-azure-virtual-machine-repair-commands#repair-process-example).
+Чтобы перестроить виртуальную машину, [выполните шаг 5 из списка команд для восстановления виртуальной машины](./repair-windows-vm-using-azure-virtual-machine-repair-commands.md#repair-process-example).

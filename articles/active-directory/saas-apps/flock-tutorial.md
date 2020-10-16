@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
-ms.openlocfilehash: c14d70f7489115b980479e7225cc3b47f80b3f2f
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 64156741437a6805b7060d2aaa67b8de5b4aad13
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88554973"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91826446"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-flock"></a>Руководство по интеграции Azure Active Directory с приложением Flock
 
@@ -128,7 +128,7 @@ ms.locfileid: "88554973"
 
 2. Выберите вкладку **Authentication** (Аутентификация) в левой панели навигации и выберите **SAML Authentication** (Аутентификация SAML).
 
-    ![Конфигурация Flock](./media/flock-tutorial/configure1.png)
+    ![Снимок экрана, на котором показана вкладка "Authentication" (Аутентификация) с выбранным параметром "SAML Authentication" (Аутентификация SAML)](./media/flock-tutorial/configure1.png)
 
 3. В разделе **Проверка подлинности SAML** сделайте следующее:
 
@@ -203,11 +203,11 @@ ms.locfileid: "88554973"
 
 2. Щелкните **Manage Team** (Управление командой) в левой панели навигации.
 
-    ![Добавление сотрудника](./media/flock-tutorial/user1.png)
+    ![Снимок экрана, на котором показан выбранный параметр "Manage Team" (Управление командой)](./media/flock-tutorial/user1.png)
 
 3. Щелкните вкладку **Add Member** (Добавить участника) и затем выберите **Team Members** (Участники команды).
 
-    ![Добавление сотрудника](./media/flock-tutorial/user2.png)
+    ![Снимок экрана, на котором показана вкладка "Add Member" (Добавление участника) и выбран параметр "Team Members" (Участники команды)](./media/flock-tutorial/user2.png)
 
 4. Введите адрес электронной почты пользователя, например **Brittasimon\@contoso.com**, и выберите **Add Users** (Добавить пользователей).
 

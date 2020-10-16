@@ -8,10 +8,10 @@ author: bwren
 ms.author: bwren
 ms.date: 09/02/2020
 ms.openlocfilehash: ab37fcdb4012394f1c5131a23f7c67063d3d6e37
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91825755"
 ---
 # <a name="overview-of-azure-monitor-agents"></a>Общие сведения об агентах Azure Monitor
@@ -146,7 +146,7 @@ ms.locfileid: "91825755"
 | Windows Server 2016                                      | X | X | X | X |
 | Windows Server 2016 Core                                 |   |   |   | X |
 | Windows Server 2012 R2                                   | X | X | X | X |
-| Windows Server 2012                                      | X | X | X | X |
+| Windows Server 2012                                      | X | X | X | X |
 | Windows Server 2008 R2                                   |   | X | X | X |
 | Windows 10 Корпоративная<br>(включая несколько сеансов) и Pro  | X | X | X | X |
 | Windows 8 Корпоративная и Профессиональная                             |   | X | X |   |
@@ -205,7 +205,7 @@ ms.locfileid: "91825755"
 | Debian                          | 9      | 4.9  | 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о каждом из агентов см. в следующих статьях:
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/28/2018
 ms.author: jeedes
-ms.openlocfilehash: a544a98b3a9d5c2d30f95240325e91018d2f40c9
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: fc0303cc4ba00f873ecfea7b02047ebd1bff7da1
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88549622"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91713874"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-arcgis-enterprise"></a>Руководство по интеграции Azure Active Directory с ArcGIS Enterprise
 
@@ -104,7 +104,7 @@ ms.locfileid: "88549622"
 
 4. Если вы хотите настроить приложение в инициируемом режиме **выдающейся точки распространения**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах в приложении ArcGIS Enterprise](common/idp-intiated.png)
+    ![Снимок экрана, на котором показан раздел "Базовая конфигурация SAML", где можно ввести идентификатор, URL-адрес ответа и нажать кнопку "Сохранить"](common/idp-intiated.png)
 
     а. В текстовом поле **Идентификатор** введите URL-адрес в формате `<EXTERNAL_DNS_NAME>.portal`.
 
@@ -112,7 +112,7 @@ ms.locfileid: "88549622"
 
     c. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах в приложении ArcGIS Enterprise](common/metadata-upload-additional-signon.png)
+    ![Снимок экрана, на котором показан параметр "Задать дополнительные URL-адреса" и поле для ввода URL-адреса входа](common/metadata-upload-additional-signon.png)
 
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://<EXTERNAL_DNS_NAME>/portal/sharing/rest/oauth2/saml/signin`.
 
@@ -138,19 +138,19 @@ ms.locfileid: "88549622"
 
 1. Выберите **Organization > Edit Settings** (Организация > Изменить параметры).
 
-    ![Настройка ArcGIS Enterprise](./media/arcgisenterprise-tutorial/configure1.png)
+    ![Снимок экрана: вкладка "Организация" ArcGIS Enterprise с выделенным элементом "Изменить параметры".](./media/arcgisenterprise-tutorial/configure1.png)
 
 1. Выберите вкладку **Security** (Безопасность).
 
-    ![Настройка ArcGIS Enterprise](./media/arcgisenterprise-tutorial/configure2.png)
+    ![Снимок экрана: выбранная вкладка "Безопасность".](./media/arcgisenterprise-tutorial/configure2.png)
 
 1. Прокрутите вниз до раздела **Enterprise Logins via SAML** (Корпоративный вход через SAML) и выберите **Set Enterprise Login** (Настроить корпоративный вход).
 
-    ![Настройка ArcGIS Enterprise](./media/arcgisenterprise-tutorial/configure3.png)
+    ![Снимок экрана: раздел "Корпоративный вход через SAML", где можно выполнить настройки и нажать кнопку "Задать корпоративный вход".](./media/arcgisenterprise-tutorial/configure3.png)
 
 1. В разделе **Set Identity Provider** (Назначение поставщика удостоверений) выполните следующие действия:
 
-    ![Настройка ArcGIS Enterprise](./media/arcgisenterprise-tutorial/configure4.png)
+    ![Снимок экрана: раздел "Назначение поставщика удостоверений", где можно выполнить описанные здесь действия.](./media/arcgisenterprise-tutorial/configure4.png)
 
     а. В текстовом поле **Имя** укажите имя, например **Azure Active Directory Test**.
 
@@ -158,7 +158,7 @@ ms.locfileid: "88549622"
 
     c. Щелкните ссылку **Show advanced settings** (Показать дополнительные параметры), скопируйте значение **идентификатора сущности** и вставьте его в текстовое поле **Идентификатор** в разделе **Домены и URL-адреса приложения ArcGIS Enterprise** на портале Azure.
     
-    ![Настройка ArcGIS Enterprise](./media/arcgisenterprise-tutorial/configure5.png)
+    ![Снимок экрана: выделенные поле "Идентификатор сущности" и кнопка "Обновить поставщик удостоверений".](./media/arcgisenterprise-tutorial/configure5.png)
 
     d. Нажмите кнопку **Update Identity Provider** (Обновить поставщика удостоверений).
 

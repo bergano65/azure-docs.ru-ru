@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 09/30/2020
 ms.author: radeltch
-ms.openlocfilehash: 3a5238ec9e9bc30da330be206eb559acc3c2ec07
-ms.sourcegitcommit: ffa7a269177ea3c9dcefd1dea18ccb6a87c03b70
+ms.openlocfilehash: ce24bf541c5a71c50bb34f5e42aa3452f01b871c
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91598085"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91978175"
 ---
 # <a name="high-availability-of-sap-hana-scale-up-with-azure-netapp-files-on-red-hat-enterprise-linux"></a>Высокий уровень доступности SAP HANA с Azure NetApp Files на Red Hat Enterprise Linux
 
@@ -81,21 +81,21 @@ ms.locfileid: "91598085"
 - [SAP HANA репликацию системы в кластере Pacemaker.](https://access.redhat.com/articles/3004101)
 - Общая документация по RHEL
     - [Общие сведения о надстройке для обеспечения высокой доступности](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/high_availability_add-on_overview/index)
-    - [Администрирование надстройки высокого уровня доступности.](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/high_availability_add-on_administration/index)
-    - [Справочник по надстройке высокого уровня доступности.](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/high_availability_add-on_reference/index)
-    - [Настройка SAP HANA репликации системы в кластере Pacemaker, если файлы FileSystem хранятся в общих папках NFS](https://access.redhat.com/solutions/5156571)
+    - [Add-On администрирования высокого уровня доступности.](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/high_availability_add-on_administration/index)
+    - [Справочник по Add-On высокого уровня доступности.](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/high_availability_add-on_reference/index)
+    - [Настройка SAP HANA репликации системы в Scale-Up в кластере Pacemaker, если файловые системы HANA находятся в общих папках NFS](https://access.redhat.com/solutions/5156571)
 - Документация по RHEL для Azure:
     - [Политики поддержки для кластеров высокой доступности RHEL — Виртуальные машины Microsoft Azure как члены кластера.](https://access.redhat.com/articles/3131341)
-    - [Установка и настройка кластера с высоким уровнем доступности Red Hat Enterprise Linux 7,4 (и более поздних версий) на Microsoft Azure.](https://access.redhat.com/articles/3252491)
+    - [Установка и настройка High-Availability кластера Red Hat Enterprise Linux 7,4 (и более поздних версий) на Microsoft Azure.](https://access.redhat.com/articles/3252491)
     - [Установите SAP HANA на Red Hat Enterprise Linux для использования в Microsoft Azure.](https://access.redhat.com/solutions/3193782)
     - [Настройка SAP HANA масштабируемой репликации системы в кластере Pacemaker, если файловые системы HANA находятся в общих папках NFS](https://access.redhat.com/solutions/5156571)
 - [Приложения NetApp SAP в Microsoft Azure. Использование Azure NetApp Files](https://www.netapp.com/us/media/tr-4746.pdf)
 
 ## <a name="overview"></a>Обзор
 
-Традиционно в среде масштабирования все файловые системы для SAP HANA подключаются из локального хранилища. Настройка высокого уровня доступности SAP HANA репликации системы на Red Hat Enterprise Linux опубликована в разделе Guide [настройка SAP HANA репликации системы в RHEL](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-hana-high-availability-rhel)
+Традиционно в среде масштабирования все файловые системы для SAP HANA подключаются из локального хранилища. Настройка высокого уровня доступности SAP HANA репликации системы на Red Hat Enterprise Linux опубликована в разделе Guide [настройка SAP HANA репликации системы в RHEL](./sap-hana-high-availability-rhel.md)
 
-Чтобы обеспечить SAP HANA высокую доступность системы масштабирования на [Azure NetApp Files](https://docs.microsoft.com/azure/azure-netapp-files/) общих ресурсах NFS, нам потребуется дополнительная настройка ресурсов в кластере, чтобы ресурсы Hana можно было восстановить, когда один узел теряет доступ к общим папкам NFS в использовании.  Кластер управляет подключениями NFS, что позволяет отслеживать работоспособность ресурсов. Применяются зависимости между подключением файловой системы и SAP HANAными ресурсами.  
+Чтобы обеспечить SAP HANA высокую доступность системы масштабирования на [Azure NetApp Files](../../../azure-netapp-files/index.yml) общих ресурсах NFS, нам потребуется дополнительная настройка ресурсов в кластере, чтобы ресурсы Hana можно было восстановить, когда один узел теряет доступ к общим папкам NFS в использовании.  Кластер управляет подключениями NFS, что позволяет отслеживать работоспособность ресурсов. Применяются зависимости между подключением файловой системы и SAP HANAными ресурсами.  
 
 ![SAP HANA масштабируемости высокой доступности в использовании](./media/sap-hana-high-availability-rhel/sap-hana-scale-up-netapp-files-red-hat.png)
 
@@ -125,29 +125,29 @@ SAP HANA Конфигурация репликации системы испол
 
 ## <a name="set-up-the-azure-netapp-file-infrastructure"></a>Настройка инфраструктуры файлов Azure NetApp
 
-Прежде чем продолжить настройку для Azure NetApp Filesной инфраструктуры, ознакомьтесь с [документацией по файлам Azure NetApp](https://docs.microsoft.com/azure/azure-netapp-files/).
+Прежде чем продолжить настройку для Azure NetApp Filesной инфраструктуры, ознакомьтесь с [документацией по файлам Azure NetApp](../../../azure-netapp-files/index.yml).
 
 Azure NetApp Files доступен в нескольких [регионах Azure](https://azure.microsoft.com/global-infrastructure/services/?products=netapp). Проверьте, предлагает ли выбранный регион Azure Azure NetApp Files.
 
 Сведения о доступности Azure NetApp Files по регионам Azure см. в разделе [доступность Azure NetApp Files по регионам Azure](https://azure.microsoft.com/global-infrastructure/services/?products=netapp&regions=all).
 
-Перед развертыванием Azure NetApp Files запросите подключение к Azure NetApp Files, перейдя к [инструкциям Azure NetApp Files](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-register).
+Перед развертыванием Azure NetApp Files запросите подключение к Azure NetApp Files, перейдя к [инструкциям Azure NetApp Files](../../../azure-netapp-files/azure-netapp-files-register.md).
 
 ### <a name="deploy-azure-netapp-files-resources"></a>Развертывание ресурсов Azure NetApp Files
 
-В следующих инструкциях предполагается, что вы уже развернули [виртуальную сеть Azure](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview). Azure NetApp Files ресурсы и виртуальные машины, на которых будут подключены Azure NetApp Files ресурсы, должны быть развернуты в одной виртуальной сети Azure или в одноранговых виртуальных сетях Azure.
+В следующих инструкциях предполагается, что вы уже развернули [виртуальную сеть Azure](../../../virtual-network/virtual-networks-overview.md). Azure NetApp Files ресурсы и виртуальные машины, на которых будут подключены Azure NetApp Files ресурсы, должны быть развернуты в одной виртуальной сети Azure или в одноранговых виртуальных сетях Azure.
 
-1. Если вы еще не развернули ресурсы, запросите подключение [к Azure NetApp Files](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-register).
+1. Если вы еще не развернули ресурсы, запросите подключение [к Azure NetApp Files](../../../azure-netapp-files/azure-netapp-files-register.md).
 
-2. Создайте учетную запись NetApp в выбранном регионе Azure, следуя инструкциям в разделе [Создание учетной записи NetApp](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-create-netapp-account).
+2. Создайте учетную запись NetApp в выбранном регионе Azure, следуя инструкциям в разделе [Создание учетной записи NetApp](../../../azure-netapp-files/azure-netapp-files-create-netapp-account.md).
 
-3.  Настройте пул емкости Azure NetApp Files, следуя инструкциям в разделе [Настройка пула емкости Azure NetApp Files](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-set-up-capacity-pool).
+3.  Настройте пул емкости Azure NetApp Files, следуя инструкциям в разделе [Настройка пула емкости Azure NetApp Files](../../../azure-netapp-files/azure-netapp-files-set-up-capacity-pool.md).
 
-    Архитектура HANA, представленная в этой статье, использует один пул емкости Azure NetApp Files на уровне *Ultra* Service. Для рабочих нагрузок HANA в Azure рекомендуется использовать [уровень обслуживания](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-service-levels)Azure NetApp Files *Ultra* или *Premium* .
+    Архитектура HANA, представленная в этой статье, использует один пул емкости Azure NetApp Files на уровне *Ultra* Service. Для рабочих нагрузок HANA в Azure рекомендуется использовать [уровень обслуживания](../../../azure-netapp-files/azure-netapp-files-service-levels.md)Azure NetApp Files *Ultra* или *Premium* .
 
-4.  Делегируйте подсеть Azure NetApp Files, как описано в инструкциях в разделе [Делегирование подсети для Azure NetApp Files](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-delegate-subnet).
+4.  Делегируйте подсеть Azure NetApp Files, как описано в инструкциях в разделе [Делегирование подсети для Azure NetApp Files](../../../azure-netapp-files/azure-netapp-files-delegate-subnet.md).
 
-5.  Разверните Azure NetApp Files тома, следуя инструкциям в разделе [Создание тома NFS для Azure NetApp Files](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-create-volumes).
+5.  Разверните Azure NetApp Files тома, следуя инструкциям в разделе [Создание тома NFS для Azure NetApp Files](../../../azure-netapp-files/azure-netapp-files-create-volumes.md).
 
     При развертывании томов обязательно выберите версию Нфсв 4.1. Разверните тома в выделенной  подсети Azure NetApp Files. IP-адреса томов Azure NetApp Files назначаются автоматически.
 
@@ -171,10 +171,10 @@ Azure NetApp Files доступен в нескольких [регионах Az
 
 - Пул минимальных мощностей — 4 тебибитес (тиб).
 - Минимальный размер тома — 100 гибибайтах (гиб).
-- Azure NetApp Files и все виртуальные машины, на которых будут подключаться Azure NetApp Filesные тома, должны находиться в одной виртуальной сети Azure или в [одноранговой виртуальной сети](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview) в том же регионе.
+- Azure NetApp Files и все виртуальные машины, на которых будут подключаться Azure NetApp Filesные тома, должны находиться в одной виртуальной сети Azure или в [одноранговой виртуальной сети](../../../virtual-network/virtual-network-peering-overview.md) в том же регионе.
 - Выбранная виртуальная сеть должна иметь подсеть, делегированную Azure NetApp Files.
-- Пропускная способность тома Azure NetApp Files является функцией квоты тома и уровня обслуживания, как описано в статье [об уровне обслуживания для Azure NetApp Files](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-service-levels). При изменении размера томов HANA Azure NetApp убедитесь, что полученная пропускная способность соответствует требованиям к системе HANA.
-- С помощью [политики экспорта](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-configure-export-policy)Azure NetApp Files можно управлять разрешенными клиентами, типом доступа (чтение и запись, только чтение и т. д.).
+- Пропускная способность тома Azure NetApp Files является функцией квоты тома и уровня обслуживания, как описано в статье [об уровне обслуживания для Azure NetApp Files](../../../azure-netapp-files/azure-netapp-files-service-levels.md). При изменении размера томов HANA Azure NetApp убедитесь, что полученная пропускная способность соответствует требованиям к системе HANA.
+- С помощью [политики экспорта](../../../azure-netapp-files/azure-netapp-files-configure-export-policy.md)Azure NetApp Files можно управлять разрешенными клиентами, типом доступа (чтение и запись, только чтение и т. д.).
 - Azure NetApp Files функция еще не поддерживает зону. Сейчас эта функция не развернута во всех зонах доступности в регионе Azure. Учитывайте возможную задержку в некоторых регионах Azure.
 
 > [!IMPORTANT]
@@ -182,7 +182,7 @@ Azure NetApp Files доступен в нескольких [регионах Az
 
 ### <a name="sizing-of-hana-database-on-azure-netapp-files"></a>Изменение размера базы данных HANA на Azure NetApp Files
 
-Пропускная способность Azure NetApp Filesого тома — это функция размера тома и уровня обслуживания, как описано в статье [об уровне обслуживания для Azure NetApp Files](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-service-levels).
+Пропускная способность Azure NetApp Filesого тома — это функция размера тома и уровня обслуживания, как описано в статье [об уровне обслуживания для Azure NetApp Files](../../../azure-netapp-files/azure-netapp-files-service-levels.md).
 
 При проектировании инфраструктуры для SAP в Azure необходимо учитывать некоторые минимальные требования к хранилищу SAP, которые переводятся в характеристики минимальной пропускной способности.
 
@@ -190,7 +190,7 @@ Azure NetApp Files доступен в нескольких [регионах Az
 - Прочтите действие не менее 400 МБ/с для/Hana/Data для размеров операций ввода-вывода 16 МБ и 64-МБ.
 - Операция записи по крайней мере 250 МБ/с для/Hana/Data с размерами операций ввода-вывода 16 МБ и 64-МБ.
 
-Ниже представлены [ограничения пропускной способности Azure NetApp Files](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-service-levels) на 1 ТиБ квоты тома.
+Ниже представлены [ограничения пропускной способности Azure NetApp Files](../../../azure-netapp-files/azure-netapp-files-service-levels.md) на 1 ТиБ квоты тома.
 
 - Уровень хранилища Premium — 64 MiB/с.
 - Ultra Storage уровня — 128 MiB/с.
@@ -256,7 +256,7 @@ Azure NetApp Files доступен в нескольких [регионах Az
         1.  Щелкните **ОК**.
 
 > [!NOTE] 
-> Если в серверный пул внутренней (без общедоступного IP-адреса) подсистемы балансировки нагрузки Azure ценовой категории "Стандартный" помещаются виртуальные машины без общедоступных IP-адресов, у них не будет исходящего подключения к Интернету без дополнительной настройки, разрешающей маршрутизацию к общедоступным конечным точкам. Подробные сведения о такой настройке см. в статье [Подключение к общедоступной конечной точке для виртуальных машин с помощью Azure Load Balancer (цен. категория "Стандартный") в сценариях обеспечения высокого уровня доступности SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-standard-load-balancer-outbound-connections).
+> Если в серверный пул внутренней (без общедоступного IP-адреса) подсистемы балансировки нагрузки Azure ценовой категории "Стандартный" помещаются виртуальные машины без общедоступных IP-адресов, у них не будет исходящего подключения к Интернету без дополнительной настройки, разрешающей маршрутизацию к общедоступным конечным точкам. Подробные сведения о такой настройке см. в статье [Подключение к общедоступной конечной точке для виртуальных машин с помощью Azure Load Balancer (цен. категория "Стандартный") в сценариях обеспечения высокого уровня доступности SAP](./high-availability-guide-standard-load-balancer-outbound-connections.md).
 
 9. Если же ваш сценарий требует использовать подсистему балансировки нагрузки ценовой категории "Базовый", выполните следующие шаги по настройке.
     1.  Настройте подсистему балансировки нагрузки. Сначала создайте пула IP-адресов для интерфейсной части.
@@ -308,7 +308,7 @@ Azure NetApp Files доступен в нескольких [регионах Az
 Дополнительные сведения о портах, требуемых для SAP HANA, см. в разделе [подключения к базам данных клиента](https://help.sap.com/viewer/78209c1d3a9b41cd8624338e42a12bf6/latest/en-US/7a9343c9f2a2436faa3cfdb5ca00c052.html) в руководству по [базам данных клиента SAP HANA](https://help.sap.com/viewer/78209c1d3a9b41cd8624338e42a12bf6) или в статье о SAP [2388694](https://launchpad.support.sap.com/#/notes/2388694).
 
 > [!IMPORTANT]
-> Не включайте метки времени TCP на виртуальных машинах Azure, размещенных за Azure Load Balancer. Включение меток времени TCP помешает работе проб работоспособности. Установите для параметра **net.ipv4.tcp_timestamps** значение **0**. Дополнительные сведения см. в статье [Пробы работоспособности Load Balancer](https://docs.microsoft.com/azure/load-balancer/load-balancer-custom-probe-overview). Также см. [примечание к SAP 2382421](https://launchpad.support.sap.com/#/notes/2382421).
+> Не включайте метки времени TCP на виртуальных машинах Azure, размещенных за Azure Load Balancer. Включение меток времени TCP помешает работе проб работоспособности. Установите для параметра **net.ipv4.tcp_timestamps** значение **0**. Дополнительные сведения см. в статье [Пробы работоспособности Load Balancer](../../../load-balancer/load-balancer-custom-probe-overview.md). Также см. [примечание к SAP 2382421](https://launchpad.support.sap.com/#/notes/2382421).
 
 ## <a name="mount-the-azure-netapp-files-volume"></a>Подключение Azure NetApp Filesного тома
 
@@ -457,7 +457,7 @@ Azure NetApp Files доступен в нескольких [регионах Az
 
 ## <a name="configure-sap-hana-system-replication"></a>Configuring SAP HANA System Replication (Настройка репликации системы SAP HANA)
 
-Выполните действия, описанные в разделе Настройка [репликации системы SAP HANA](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-hana-high-availability-rhel#configure-sap-hana-20-system-replication) , чтобы настроить репликацию системы SAP HANA. 
+Выполните действия, описанные в разделе Настройка [репликации системы SAP HANA](./sap-hana-high-availability-rhel.md#configure-sap-hana-20-system-replication) , чтобы настроить репликацию системы SAP HANA. 
 
 ## <a name="cluster-configuration"></a>Конфигурация кластера
 
@@ -465,7 +465,7 @@ Azure NetApp Files доступен в нескольких [регионах Az
 
 ### <a name="create-a-pacemaker-cluster"></a>Создание кластера Pacemaker
 
-Выполните действия, описанные в разделе [Настройка Pacemaker на Red Hat Enterprise Linux](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-rhel-pacemaker) в Azure, чтобы создать базовый кластер Pacemaker для этого сервера Hana.
+Выполните действия, описанные в разделе [Настройка Pacemaker на Red Hat Enterprise Linux](./high-availability-guide-rhel-pacemaker.md) в Azure, чтобы создать базовый кластер Pacemaker для этого сервера Hana.
 
 ### <a name="configure-filesystem-resources"></a>Настройка ресурсов файловой системы
 
@@ -536,11 +536,11 @@ Azure NetApp Files доступен в нескольких [регионах Az
     ```
 
    > [!TIP]
-   > Если в конфигурацию входят файловые системы, за пределами группы `hanadb1_nfs` или `hanadb2_nfs` , включите `sequential=false` параметр, чтобы в файловых системах не было зависимостей упорядочения. Все файловые системы должны начинаться раньше `hana_nfs1_active` , но им не нужно начинать ни в каком порядке относительно друг друга. Дополнительные сведения см. в разделе [разделы справки Настройка репликации системы SAP HANA в кластере Pacemaker, если файлы FileSystem хранятся в общих папках NFS](https://access.redhat.com/solutions/5156571) .
+   > Если в конфигурацию входят файловые системы, за пределами группы `hanadb1_nfs` или `hanadb2_nfs` , включите `sequential=false` параметр, чтобы в файловых системах не было зависимостей упорядочения. Все файловые системы должны начинаться раньше `hana_nfs1_active` , но им не нужно начинать ни в каком порядке относительно друг друга. Дополнительные сведения см. [в разделе разделы справки Настройка репликации системы SAP HANA в Scale-Up в кластере Pacemaker, если файловые системы Hana находятся в общих папках NFS](https://access.redhat.com/solutions/5156571) .
 
 ### <a name="configure-sap-hana-cluster-resources"></a>Настройка ресурсов кластера SAP HANA
 
-1. Выполните действия, описанные в разделе [Создание ресурсов кластера SAP HANA](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-hana-high-availability-rhel#create-sap-hana-cluster-resources) , чтобы создать ресурсы SAP HANA в кластере. После создания SAP HANA ресурсов необходимо создать ограничение для правила расположения между SAP HANAными ресурсами и FileSystem (подключения NFS).
+1. Выполните действия, описанные в разделе [Создание ресурсов кластера SAP HANA](./sap-hana-high-availability-rhel.md#create-sap-hana-cluster-resources) , чтобы создать ресурсы SAP HANA в кластере. После создания SAP HANA ресурсов необходимо создать ограничение для правила расположения между SAP HANAными ресурсами и FileSystem (подключения NFS).
 
 2. **[1]** Настройка ограничений между ресурсами SAP HANA и ПОДКЛЮЧЕНИЯми NFS
 
@@ -687,4 +687,4 @@ Azure NetApp Files доступен в нескольких [регионах Az
          vip_HN1_03 (ocf::heartbeat:IPaddr2):       Started hanadb2
     ```
 
-   Рекомендуется тщательно протестировать конфигурацию кластера SAP HANA, выполняя тесты, описанные в разделе [установка SAP HANA репликацию системы на RHEL](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-hana-high-availability-rhel#test-the-cluster-setup).   
+   Рекомендуется тщательно протестировать конфигурацию кластера SAP HANA, выполняя тесты, описанные в разделе [установка SAP HANA репликацию системы на RHEL](./sap-hana-high-availability-rhel.md#test-the-cluster-setup).

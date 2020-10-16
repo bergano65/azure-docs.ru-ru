@@ -13,17 +13,17 @@ ms.author: kenwith
 ms.reviewer: kasimpso
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 23d2d6645bea6e99e9f62e36364adf8816329c26
-ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90601145"
 ---
 # <a name="hide-enterprise-applications-from-end-users-in-azure-active-directory"></a>Скрыть корпоративные приложения от конечных пользователей в Azure Active Directory
 
 Инструкции по скрытию приложений с панели "MyApps" конечных пользователей или средства запуска Microsoft 365. Когда приложение скрыто, у пользователей по-прежнему есть к нему доступ. 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для скрытия приложения на панели "MyApps" и Microsoft 365 средстве запуска требуются права администратора приложения.
 
@@ -40,7 +40,7 @@ ms.locfileid: "90601145"
 5.  Найдите приложение, которое нужно скрыть, а затем щелкните его.  Откроется колонка обзора приложения.
 6.  Нажмите кнопку **Свойства**. 
 7.  Для вопроса **Видно пользователям?** выберите **Нет**.
-8.  Нажмите **Сохранить**.
+8.  Выберите команду **Сохранить**.
 
 > [!NOTE]
 > Эти инструкции относятся только к корпоративным приложениям.

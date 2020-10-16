@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7d3315a8d6bca9406461d0082ed85bbefc9459f4
-ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88950210"
 ---
 # <a name="user-experiences-with-azure-ad-identity-protection"></a>Взаимодействие с пользователем с защита идентификации Azure AD
@@ -67,7 +67,7 @@ ms.locfileid: "88950210"
 
 1. Пользователя информируют о риске для безопасности учетной записи из-за подозрительной активности или утери учетных данных.
    
-    ![Исправление](./media/concept-identity-protection-user-experience/101.png)
+    ![Серверы](./media/concept-identity-protection-user-experience/101.png)
 
 1. Пользователь должен подтвердить свою личность, выполнив Azure MFA с одним из ранее зарегистрированных методов. 
 1. Наконец, пользователь вынужден изменить свой пароль с помощью самостоятельного сброса пароля, так как кто-то другой мог иметь доступ к своей учетной записи.
@@ -80,7 +80,7 @@ ms.locfileid: "88950210"
 
 ИТ-специалисты могут следовать инструкциям в разделе [разблокирование пользователей](howto-identity-protection-remediate-unblock.md#unblocking-based-on-user-risk) , чтобы пользователи могли снова войти в систему.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 - [Устранение рисков и разблокирование пользователей](howto-identity-protection-remediate-unblock.md)
 

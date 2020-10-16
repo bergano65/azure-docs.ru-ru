@@ -1,25 +1,18 @@
 ---
 title: Интеграция Microsoft Azure с Oracle Cloud Infrastructure | Документация Майкрософт
 description: Сведения о решениях, которые интегрируют приложения Oracle, работающие на Microsoft Azure, с базами данных в Oracle Cloud Infrastructure (OCI).
-services: virtual-machines-linux
-documentationcenter: ''
 author: dbakevlar
-manager: ''
-tags: ''
-ms.assetid: ''
-ms.service: virtual-machines
+ms.service: virtual-machines-linux
 ms.topic: article
-ms.tgt_pltfrm: vm-linux
-ms.workload: infrastructure-services
 ms.date: 06/01/2020
 ms.author: kegorman
-ms.custom: ''
-ms.openlocfilehash: a73d327ad2a251b5043da7e58c14e5f6f311e334
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.reviewer: cynthn
+ms.openlocfilehash: 2e09f92e21743d39cbd132637cc63b27e8cfe944
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91274509"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91996148"
 ---
 # <a name="oracle-application-solutions-integrating-microsoft-azure-and-oracle-cloud-infrastructure"></a>Решения для приложений Oracle с интеграцией Microsoft Azure и Oracle Cloud Infrastructure
 
@@ -68,7 +61,7 @@ ms.locfileid: "91274509"
 
 Сетевая безопасность является важнейшим компонентом любого корпоративного приложения, что справедливо и для этого решения с поддержкой нескольких облаков. Весь трафик через ExpressRoute и FastConnect передается через частную сеть. Такая конфигурация обеспечивает безопасную связь между виртуальной сетью Azure и виртуальной облачной сетью Oracle. Вам не придется выделять общедоступные IP-адреса виртуальным машинам в Azure, а также не потребуется шлюз Интернета в OCI. Все взаимодействие происходит через частные IP-адреса компьютеров.
 
-Кроме того, вы можете настроить [списки безопасности](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm) в виртуальной облачной сети OCI и правила безопасности, подключенные к [группам безопасности сети](../../../virtual-network/security-overview.md) в Azure. Эти правила позволяют управлять трафиком, передаваемым между компьютерами в виртуальных сетях. Правила сетевой безопасности можно добавлять на уровне компьютера, подсети или виртуальной сети.
+Кроме того, вы можете настроить [списки безопасности](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm) в виртуальной облачной сети OCI и правила безопасности, подключенные к [группам безопасности сети](../../../virtual-network/network-security-groups-overview.md) в Azure. Эти правила позволяют управлять трафиком, передаваемым между компьютерами в виртуальных сетях. Правила сетевой безопасности можно добавлять на уровне компьютера, подсети или виртуальной сети.
 
 [Приложения Azure на основе сервера WebLogic](oracle-weblogic.md) создают для каждого из них группу безопасности сети, предварительно настроенную для работы с конфигурациями портов на сервере WebLogic.
  

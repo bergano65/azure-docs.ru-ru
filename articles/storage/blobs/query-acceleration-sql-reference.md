@@ -11,10 +11,10 @@ ms.author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.reviewer: ereilebr
 ms.openlocfilehash: affddf7367f58107106ae07a07b8baedac73e251
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89659567"
 ---
 # <a name="query-acceleration-sql-language-reference"></a>Справочник по языку SQL для ускорения запросов
@@ -61,7 +61,7 @@ SELECT sys.split(split_size)FROM BlobStorage
 |FLOAT    |64-разрядная ("двойная точность") с плавающей запятой.|
 |STRING   |Строка переменной длины в Юникоде.            |
 |timestamp|Момент времени.                           |
-|BOOLEAN  |Значение true или false.                             |
+|BOOLEAN  |True или False.                             |
 
 При чтении значений из данных в формате CSV все значения считываются как строки.  Строковые значения могут быть преобразованы в другие типы с помощью выражений ПРИВЕДЕНия.  Значения могут быть неявно приведены к другим типам в зависимости от контекста. Дополнительные сведения см. в разделе [приоритет типов данных (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/data-types/data-type-precedence-transact-sql).
 
@@ -94,7 +94,7 @@ SELECT sys.split(split_size)FROM BlobStorage
 |[AND](https://docs.microsoft.com/sql/t-sql/language-elements/bitwise-and-transact-sql)    |Выполняет побитовую логическую операцию «И» между двумя целочисленными значениями.|
 |[OR](https://docs.microsoft.com/sql/t-sql/language-elements/bitwise-or-transact-sql)    |Выполняет побитовую логическую операцию или между двумя указанными целочисленными значениями, преобразованными в двоичные выражения в инструкциях Transact-SQL.|
 |[NOT](https://docs.microsoft.com/sql/t-sql/language-elements/not-transact-sql)    |Инвертирует входное логическое значение.|
-|[CAST](https://docs.microsoft.com/sql/t-sql/functions/cast-and-convert-transact-sql)    |Преобразует выражение одного типа данных в другой.|
+|[CAST](https://docs.microsoft.com/sql/t-sql/functions/cast-and-convert-transact-sql)    |Преобразует выражение из одного типа данных в другой.|
 |[BETWEEN](https://docs.microsoft.com/sql/t-sql/language-elements/between-transact-sql)    |Определяет диапазон для проверки.|
 |[IN](https://docs.microsoft.com/sql/t-sql/language-elements/in-transact-sql)    |Определяет, совпадает ли указанное значение с одним из значений, содержащихся во вложенном запросе или списке.|
 |[NULLIF](https://docs.microsoft.com/sql/t-sql/language-elements/nullif-transact-sql)    |Возвращает значение NULL, если два указанных выражения равны.|
@@ -114,7 +114,7 @@ SELECT sys.split(split_size)FROM BlobStorage
 
 Язык SQL для ускорения запросов поддерживает следующие стандартные строковые функции SQL:
 
-|Функция|Описание|
+|Компонент|Описание|
 |--|--|
 |CHAR_LENGTH    | Возвращает длину в символах строкового выражения, если строковое выражение имеет символьный тип данных; в противном случае возвращает длину строкового выражения в байтах (наименьшее целое число не меньше числа бит, деленного на 8). (Эта функция аналогична функции CHARACTER_LENGTH.)|
 |CHARACTER_LENGTH    |Возвращает длину в символах строкового выражения, если строковое выражение имеет символьный тип данных; в противном случае возвращает длину строкового выражения в байтах (наименьшее целое число не меньше числа бит, деленного на 8). (Эта функция аналогична функции CHAR_LENGTH|

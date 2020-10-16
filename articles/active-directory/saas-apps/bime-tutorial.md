@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/06/2019
 ms.author: jeedes
-ms.openlocfilehash: 149656bebac7e8fab24dc1e1847a4e56bf5f3888
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 0465d6219f9c9d13b4dd3321beb90af524cade36
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88547347"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91741625"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-bime"></a>Руководство по интеграции Azure Active Directory с Bime
 
@@ -132,7 +132,7 @@ ms.locfileid: "88547347"
 
 2. На панели инструментов щелкните **Admin** (Администратор), а затем — **Account** (Учетная запись).
   
-    ![Администратор](./media/bime-tutorial/ic775558.png "Административный")
+    ![Снимок экрана: выбранные элементы "Администратор" и "Учетная запись".](./media/bime-tutorial/ic775558.png "Административный")
 
 3. На странице конфигурации учетной записи выполните следующие действия.
   
@@ -207,7 +207,7 @@ ms.locfileid: "88547347"
 
 2. На панели инструментов щелкните **Admin** (Администратор), а затем — **Users** (Пользователи).
 
-    ![Администратор](./media/bime-tutorial/ic775561.png "Административный")
+    ![Снимок экрана: выбранные элементы "Администратор" и "Пользователи".](./media/bime-tutorial/ic775561.png "Административный")
 
 3. В разделе **Users List** (Список пользователей) щелкните **Add New User** (Добавить пользователя) ("+").
 

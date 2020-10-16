@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 09/22/2020
 ms.openlocfilehash: 30c2da4ac750375c66b92cdca552e1a51a8dbc40
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90940402"
 ---
 # <a name="limits-in-azure-database-for-postgresql---flexible-server"></a>Ограничения в базе данных Azure для PostgreSQL-гибкого сервера
@@ -29,7 +29,7 @@ ms.locfileid: "90940402"
 | **Накапливаемыми ресурсами**        |        |             |                 |                      |
 | B1ms                 | 1      | 2 гиб       | 50              | 47                   |
 | B2s                  | 2      | 4 гиб       | 100             | 97                   |
-| **общего назначения**  |        |             |                 |                      |
+| **Общего назначения**  |        |             |                 |                      |
 | D2s_v3               | 2      | 8 гиб       | 214             | 211                  |
 | D4s_v3               | 4      | 16 гиб      | 429             | 426                  |
 | D8s_v3               | 8      | 32 ГиБ      | 859             | 856                  |
@@ -75,7 +75,7 @@ PostgreSQL подключение, даже бездействующее, мож
 
 ### <a name="high-availability"></a>Высокий уровень доступности
 
-- В настоящее время избыточность в зонах не поддерживается для пакетных серверов.
+- Zone-Redundant HA сейчас не поддерживается для пакетных серверов.
 - IP-адрес сервера базы данных изменяется при отработки отказа сервера в режим высокой доступности. Убедитесь, что вместо IP-адреса сервера используется запись DNS.
 
 ### <a name="availability-zones"></a>Зоны доступности
@@ -116,7 +116,7 @@ PostgreSQL подключение, даже бездействующее, мож
 * Реплики чтения пока не поддерживаются. Если требуются реплики Read, рекомендуется использовать параметр [Single Server](../overview-single-server.md) .
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Сведения [о доступных параметрах вычислений и хранилища](concepts-compute-storage.md)
 - См. [поддерживаемые версии базы данных PostgreSQL](concepts-supported-versions.md).

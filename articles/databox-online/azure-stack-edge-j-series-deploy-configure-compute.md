@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 08/28/2020
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to configure compute on Azure Stack Edge Pro so I can use it to transform the data before sending it to Azure.
-ms.openlocfilehash: 3281642134e7a6a2531f43ad4b3f80cff34d03b6
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 6bea4ee4452675a50ef9144da300c3e15652a81f
+ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90890927"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91952171"
 ---
 # <a name="tutorial-transform-data-with-azure-stack-edge-pro"></a>Руководство по Преобразование данных с помощью Azure Stack Edge Pro
 
@@ -61,15 +61,15 @@ ms.locfileid: "90890927"
     |Центр Интернета вещей     | Выберите **Новый** или **Существующий**. <br> По умолчанию для создания ресурса Интернета вещей используется уровень служб "Стандартный" (S1). Чтобы использовать ресурс Интернета вещей уровня служб "Бесплатный", создайте его и выберите существующий ресурс. <br> В любом случае для ресурса Интернета вещей используется та же подписка и группа ресурсов, что и для ресурса Azure Stack Edge.     |
     |Имя     |Введите имя ресурса Центра Интернета вещей.         |
 
-    ![Начало работы с вычислениями](./media/azure-stack-edge-j-series-deploy-configure-compute/configure-compute-3.png)
+    ![Начало работы с вычислениями 2](./media/azure-stack-edge-j-series-deploy-configure-compute/configure-compute-3.png)
 
 4. Нажмите кнопку **создания**. Для создания ресурса Центра Интернета вещей нужно несколько минут. После этого на плитке **Настройка вычислений** появляется конфигурация вычислений. 
 
-    ![Начало работы с вычислениями](./media/azure-stack-edge-j-series-deploy-configure-compute/configure-compute-4.png)
+    ![Начало работы с вычислениями 3](./media/azure-stack-edge-j-series-deploy-configure-compute/configure-compute-4.png)
 
 5. Чтобы подтвердить настройку роли вычислений Edge, на плитке **Настройка вычислений** щелкните **Просмотреть вычисления**.
     
-    ![Начало работы с вычислениями](./media/azure-stack-edge-j-series-deploy-configure-compute/configure-compute-5.png)
+    ![Начало работы с вычислениями 4](./media/azure-stack-edge-j-series-deploy-configure-compute/configure-compute-5.png)
 
     > [!NOTE]
     > Если диалоговое окно **Настройка вычислений** закрыть, прежде чем устройство Azure Stack Edge Pro будет связано с Центром Интернета вещей, Центр Интернета вещей будет создан, но не отобразится в настройках вычислений. 

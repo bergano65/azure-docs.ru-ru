@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 06/02/2020
 ms.author: b-juche
-ms.openlocfilehash: 90e88020f735f34d308935f1233fb91c0eddfe32
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: 72c574779d63a3629ea3c99529686b7d3247fe25
+ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85961070"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91931212"
 ---
 # <a name="develop-for-azure-netapp-files-with-rest-api-using-powershell"></a>Разработка для Azure NetApp Files с REST API с помощью PowerShell
 
@@ -34,9 +34,9 @@ REST API для службы Azure NetApp Files определяет опера�
 
 ## <a name="access-the-azure-netapp-files-rest-api"></a>Доступ к REST API Azure NetApp Files  
 
-1. [Установите Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest), если это еще не сделано.
+1. [Установите Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest), если это еще не сделано.
 2. Создайте субъект-службу в Azure Active Directory (Azure AD).
-   1. Убедитесь, что у вас [достаточно разрешений](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#required-permissions).
+   1. Убедитесь, что у вас [достаточно разрешений](../active-directory/develop/howto-create-service-principal-portal.md#permissions-required-for-registering-an-app).
 
    2. Выполните следующую команду в Azure CLI:  
 
@@ -437,4 +437,4 @@ Invoke-RestMethod -Method Get -Headers $headers -Uri https://management.azure.co
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 
-[См. статью о REST API Azure NetApp Files](https://docs.microsoft.com/rest/api/netapp/)
+[См. статью о REST API Azure NetApp Files](/rest/api/netapp/)

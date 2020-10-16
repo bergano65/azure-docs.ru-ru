@@ -6,16 +6,16 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 09/02/2020
-ms.author: iainfou
-author: iainfoulds
+ms.author: joflore
+author: MicrosoftGuyJFlo
 manager: daveba
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3bf90909cdd3bd3013dc43d50a9589945f5215c7
-ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
+ms.openlocfilehash: 42ba860c3174ad8725dd15ac3045d270524b110e
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90532737"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91965477"
 ---
 # <a name="authentication-methods-in-azure-active-directory---security-questions"></a>Методы проверки подлинности в Azure Active Directory вопросы безопасности
 
@@ -87,7 +87,7 @@ ms.locfileid: "90532737"
 * Для определения вопросов и ответов можно использовать любой набор символов, в том числе символы Юникода.
 * Количество определенных вопросов должно быть не меньше числа вопросов, необходимых для регистрации.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы приступить к работе, см. [руководство по самостоятельному сбросу пароля (SSPR)][tutorial-sspr].
 

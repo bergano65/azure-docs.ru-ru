@@ -13,12 +13,12 @@ ms.date: 10/09/2020
 ms.author: jmprieur
 ms.reviewer: marsma
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: 4d915cee962546e355ee9d53c683581730bbbf36
-ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
+ms.openlocfilehash: 77cb3b0c13a6bfe41c6f7a1a5a0f9d7278aea1db
+ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91778871"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91930158"
 ---
 # <a name="microsoft-identity-web-authentication-library"></a>Библиотека веб-аутентификации Microsoft Identity
 
@@ -44,6 +44,7 @@ Microsoft Identity Web — это набор библиотек ASP.NET Core, у
 - [Microsoft. Identity. Web](https://www.nuget.org/packages/Microsoft.Identity.Web) — основной пакет. Требуется для всех приложений, использующих веб-сайт Microsoft Identity.
 - [Microsoft. Identity. Web. UI](https://www.nuget.org/packages/Microsoft.Identity.Web.UI) — необязательно. Добавляет пользовательский интерфейс для входа и выхода пользователя и связанного контроллера для веб-приложений.
 - [Microsoft. Identity. Web. MicrosoftGraph](https://www.nuget.org/packages/Microsoft.Identity.Web.MicrosoftGraph) — необязательный. Предоставляет Упрощенное взаимодействие с Microsoft Graph API.
+- [Microsoft. Identity. Web. микрософтграфбета](https://www.nuget.org/packages/Microsoft.Identity.Web.MicrosoftGraphBeta) — необязательный. Предоставляет Упрощенное взаимодействие с [конечной точкой бета-версии](/graph/api/overview?view=graph-rest-beta&preserve-view=true)Microsoft Graph API.
 
 #### <a name="project-templates"></a>Шаблоны проектов
 
@@ -69,7 +70,7 @@ dotnet new blazorserver2 --auth SingleOrg --calls-graph --client-id &quot;000000
 
 #### <a name="github"></a>GitHub
 
-Microsoft Identity Web — это проект с открытым кодом, размещенный на сайте GitHub: [AzureAD/Microsoft-Identity-Web](https://github.com/AzureAD/microsoft-identity-web?azure-portal=true)
+Microsoft Identity Web — это проект с открытым кодом, размещенный на сайте GitHub: <a href="https://github.com/AzureAD/microsoft-identity-web" target="_blank">AzureAD/Microsoft- <span class="docon docon-navigate-external x-hidden-focus"></span> Identity-Web</a>
 
 [Вики-сайт репозитория](https://github.com/AzureAD/microsoft-identity-web/wiki) содержит дополнительную документацию, и если вам нужна помощь или обнаружение ошибки, можно [придать ему сообщение](https://github.com/AzureAD/microsoft-identity-web/issues).
 
@@ -77,7 +78,7 @@ Microsoft Identity Web — это проект с открытым кодом, �
 
 Веб-сайт Microsoft Identity включает несколько функций, которые не предоставляются при использовании шаблонов проектов ASP.NET 3,1 по умолчанию.
 
-| Функция                                                                                  | ASP.NET Core 3.1                                                     | Веб-сайт Microsoft Identity                                                                                  |
+| Компонент                                                                                  | ASP.NET Core 3.1                                                     | Веб-сайт Microsoft Identity                                                                                  |
 |------------------------------------------------------------------------------------------|----------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | [Вход пользователей](scenario-web-app-sign-user-app-configuration.md) в веб-приложениях             | <li>Рабочие или учебные учетные записи<li>Удостоверения социальных сетей (с Azure AD B2C) | <li>Рабочие или учебные учетные записи<li>Personal Microsoft accounts (Личные учетные записи Майкрософт)<li>Удостоверения социальных сетей (с Azure AD B2C)     |
 | [Защита веб-API](scenario-protected-web-api-app-configuration.md#microsoftidentityweb) | <li>Рабочие или учебные учетные записи<li>Удостоверения социальных сетей (с Azure AD B2C) | <li>Рабочие или учебные учетные записи<li>Personal Microsoft accounts (Личные учетные записи Майкрософт)<li>Удостоверения социальных сетей (с Azure AD B2C)     |
@@ -90,16 +91,16 @@ Microsoft Identity Web — это проект с открытым кодом, �
 | [Область действия/проверка роли приложения] [сценарий — API-проверка] в веб-API                        | Нет                                                                   | Да                                                                                                     |
 | `WWW-Authenticate` Создание заголовков в веб-API                                         | Нет                                                                   | Да                                                                                                     |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Чтобы просмотреть Microsoft Identity Web в действии, воспользуйтесь нашим руководством по Блазор Server.
 
-[Руководство. Создание серверного приложения Блазор, использующего платформу идентификации Майкрософт для проверки подлинности](tutorial-blazor-server.md)
+[Руководство по Создание приложения Blazor Server, которое использует платформу удостоверений Майкрософт для аутентификации](tutorial-blazor-server.md)
 
 Веб-вики Microsoft Identity на сайте GitHub содержит подробную справочную документацию по различным аспектам библиотеки. Например, использование сертификатов, добавочное согласие и ссылка на условный доступ можно найти здесь:
 
-- [Использование сертификатов с Microsoft. Identity. Web](https://github.com/AzureAD/microsoft-identity-web/wiki/Using-certificates?azure-portal=true) (GitHub)
-- [Поэтапное согласие и условный доступ](https://github.com/AzureAD/microsoft-identity-web/wiki/Managing-incremental-consent-and-conditional-access?azure-portal=true) (GitHub)
+- <a href="https://github.com/AzureAD/microsoft-identity-web/wiki/Using-certificates" target="_blank">Использование сертификатов с Microsoft. Identity. Web <span class="docon docon-navigate-external x-hidden-focus"></span> </a> GitHub
+- <a href="https://github.com/AzureAD/microsoft-identity-web/wiki/Managing-incremental-consent-and-conditional-access" target="_blank">Последовательное согласие и <span class="docon docon-navigate-external x-hidden-focus"></span> Условный доступ</a> GitHub
 
 <!-- LINKS -->
 <!--  [miw-certs]: microsoft-identity-web-certificates.md  -->

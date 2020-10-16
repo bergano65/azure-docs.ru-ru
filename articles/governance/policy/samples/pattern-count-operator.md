@@ -1,14 +1,14 @@
 ---
 title: Шаблон. Оператор count в определении политики
 description: Этот шаблон Политики Azure предоставляет пример использования оператора count в определении политики.
-ms.date: 06/29/2020
+ms.date: 10/14/2020
 ms.topic: sample
-ms.openlocfilehash: 807890b7fb08d790deff6e0be9e08ad91c4ec44d
-ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
+ms.openlocfilehash: 1339dff7f8bc92a8e38ec5635690cc2069dd8df4
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2020
-ms.locfileid: "85565747"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92076408"
 ---
 # <a name="azure-policy-pattern-the-count-operator"></a>Шаблон Политики Azure: оператор count
 

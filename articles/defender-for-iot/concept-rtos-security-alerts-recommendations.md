@@ -14,10 +14,10 @@ ms.workload: na
 ms.date: 09/07/2020
 ms.author: mlottner
 ms.openlocfilehash: cf4924f8a9b97487e64e12ab80df92f2b2a81de2
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90939518"
 ---
 # <a name="security-module-for-azure-rtos-security-alerts-and-recommendations-preview"></a>Модуль безопасности для оповещений и рекомендаций системы безопасности Azure RTO (Предварительная версия)
@@ -95,7 +95,7 @@ ms.locfileid: "90939518"
 
 Полный список всех оповещений и рекомендаций, связанных со службой IoT, см. в статье [оповещения системы безопасности](concept-security-alerts.md)IOT, [рекомендации](concept-recommendations.md)по безопасности IOT.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Краткое руководство. модуль безопасности для Azure RTO](quickstart-azure-rtos-security-module.md)
 - [Настройка и Настройка модуля безопасности для Azure RTO](how-to-azure-rtos-security-module.md)

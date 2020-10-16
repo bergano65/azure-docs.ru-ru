@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 7/28/2020
 ms.topic: troubleshooting
 ms.service: digital-twins
-ms.openlocfilehash: fc397b6d6beb719e11dc3959bbcf4d75c08a8dda
-ms.sourcegitcommit: 5b6acff3d1d0603904929cc529ecbcfcde90d88b
+ms.openlocfilehash: f4abf78c153bd3d61068e4b7607794d6ccf1ed04
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88723934"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92047681"
 ---
 # <a name="troubleshooting-azure-digital-twins-diagnostics-logging"></a>Устранение неполадок в Azure Digital двойников: ведение журнала диагностики
 
@@ -28,7 +28,7 @@ Azure Digital двойников собирает [метрики](troubleshoot-
 
 2. Выберите **параметры диагностики** в меню и **добавьте параметр диагностики**.
 
-    :::image type="content" source="media/troubleshoot-diagnostics/diagnostic-settings.png" alt-text="Снимок экрана со страницей параметров диагностики и кнопкой Добавить":::
+    :::image type="content" source="media/troubleshoot-diagnostics/diagnostic-settings.png" alt-text="Снимок экрана со страницей параметров диагностики и кнопкой &quot;Добавить&quot;":::
 
 3. На следующей странице введите следующие значения:
      * **Имя параметра диагностики**: задайте имя для параметров диагностики.
@@ -49,7 +49,7 @@ Azure Digital двойников собирает [метрики](troubleshoot-
     
 4. Сохраните новые настройки. 
 
-    :::image type="content" source="media/troubleshoot-diagnostics/diagnostic-settings-details.png" alt-text="Снимок экрана со страницей параметров диагностики, в которой пользователь заполнил имя параметра диагностики и внес некоторые флажки для сведений о категории и сведений о назначении. Кнопка сохранить выделена.":::
+    :::image type="content" source="media/troubleshoot-diagnostics/diagnostic-settings-details.png" alt-text="Снимок экрана со страницей параметров диагностики и кнопкой &quot;Добавить&quot;":::
 
 Новые параметры вступят в силу в течение 10 минут. После этого журналы отобразятся на настроенном целевом объекте на странице **параметры диагностики** для вашего экземпляра. 
 
@@ -73,7 +73,7 @@ Azure Digital двойников собирает [метрики](troubleshoot-
 | DELETE | DELETE |
 | Действие | POST |
 
-Ниже приведен полный список операций и соответствующих [вызовов Azure Digital двойников REST API](https://docs.microsoft.com/rest/api/azure-digitaltwins/) , зарегистрированных в каждой категории. 
+Ниже приведен полный список операций и соответствующих [вызовов Azure Digital двойников REST API](/rest/api/azure-digitaltwins/) , зарегистрированных в каждой категории. 
 
 >[!NOTE]
 > Каждая категория журнала содержит несколько операций или вызовов REST API. В приведенной ниже таблице каждая категория журналов сопоставляется со всеми операциями и REST API находящиеся под ней вызовы до тех пор, пока не появится следующая категория журнала. 

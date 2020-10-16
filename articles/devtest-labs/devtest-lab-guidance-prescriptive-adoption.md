@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 06/26/2020
 ms.reviewer: christianreddington,anthdela,juselph
 ms.openlocfilehash: 81767c36b2a5b46eb41be1e516a14fb3ebe3fb7f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85476994"
 ---
 # <a name="devtest-labs-in-the-enterprise"></a>Использование DevTest Labs на предприятии
@@ -29,7 +29,7 @@ ms.locfileid: "85476994"
 
 ## <a name="enterprise-customers"></a>Корпоративные клиенты
 
-Многие текущие корпоративные клиенты DevTest Labs успешно используют DevTest Labs для разработки и тестирования рабочих нагрузок в своих организациях. [Подробнее.](https://azure.microsoft.com/case-studies/?term=DevTest+labs)
+Многие текущие корпоративные клиенты DevTest Labs успешно используют DevTest Labs для разработки и тестирования рабочих нагрузок в своих организациях. [Подробнее](https://azure.microsoft.com/case-studies/?term=DevTest+labs).
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 - [Эталонная архитектура для предприятия](devtest-lab-reference-architecture.md)

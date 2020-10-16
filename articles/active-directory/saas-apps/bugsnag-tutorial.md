@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/13/2019
 ms.author: jeedes
-ms.openlocfilehash: 4f5994aa4114f12b55f2e232ea5a35fa2df87626
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 8f5a8abf4272cf90691e60f97416023a76252e41
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88547738"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91740553"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-bugsnag"></a>Руководство по Интеграция Azure Active Directory с Bugsnag
 
@@ -100,7 +100,7 @@ ms.locfileid: "88547738"
 
 4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа приложения Bugsnag](common/both-replyurl.png)
+    ![Снимок экрана: раздел "Базовая конфигурация SAML", где можно ввести URL-адрес ответа и нажать кнопку "Сохранить".](common/both-replyurl.png)
 
     В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://app.bugsnag.com/user/sign_in/saml/<org_slug>/acs`.
 
@@ -109,7 +109,7 @@ ms.locfileid: "88547738"
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа приложения Bugsnag](common/both-signonurl.png)
+    ![Снимок экрана, на котором показан параметр "Задать дополнительные URL-адреса" и поле для ввода URL-адреса входа](common/both-signonurl.png)
 
     В текстовое поле **URL-адрес входа** введите `https://app.bugsnag.com/user/identity_provider`.
 

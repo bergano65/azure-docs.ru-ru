@@ -4,10 +4,10 @@ description: Узнайте, как выполнить резервное коп
 ms.topic: conceptual
 ms.date: 05/23/2018
 ms.openlocfilehash: 1b3573d757d2f7b1ffec9ae718aa791488960f3b
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91332901"
 ---
 # <a name="back-up-windows-system-state-to-azure"></a>Резервное копирование состояния системы Windows в Azure
@@ -185,7 +185,7 @@ ms.locfileid: "91332901"
 
 Если у вас есть вопросы, [отправьте нам отзыв](https://feedback.azure.com/forums/258995-azure-backup).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * См. дополнительные сведения об [архивации компьютеров Windows](backup-windows-with-mars-agent.md).
 * Теперь, когда вы выполнили резервное копирование состояния системы Windows Server, вы можете [управлять хранилищами и серверами](backup-azure-manage-windows-server.md).

@@ -8,10 +8,10 @@ ms.date: 10/19/2019
 ms.author: rogarana
 ms.subservice: files
 ms.openlocfilehash: 957e827e621d07ed9b5533a1607f955f05985d9b
-ms.sourcegitcommit: 3c66bfd9c36cd204c299ed43b67de0ec08a7b968
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90004788"
 ---
 # <a name="use-azure-files-with-linux"></a>Использование Файлов Azure в Linux
@@ -256,7 +256,7 @@ uname -r
 | Debian 8-9 | Нет |
 | Debian 10 + | Да |
 | Fedora 29 + | Да |
-| CentOS 7 | Нет | 
+| CentOS 7 | Нет | 
 | CentOS 8 + | Да |
 | Red Hat Enterprise Linux 6. x-7. x | Нет |
 | Red Hat Enterprise Linux 8 + | Да |

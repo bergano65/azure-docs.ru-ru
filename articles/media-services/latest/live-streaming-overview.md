@@ -13,12 +13,12 @@ ms.devlang: ne
 ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: 0eb814ea0d941ca01d3a21db1cb507ef273a1a18
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: dc08e23b6ef040ba5833ffa97f71d8cd1da3bb8a
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91328349"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92019806"
 ---
 # <a name="live-streaming-with-azure-media-services-v3"></a>Потоковая трансляция в Службах мультимедиа Azure версии 3
 
@@ -37,7 +37,7 @@ ms.locfileid: "91328349"
 В этой статье приводятся общие сведения и рекомендации по потоковой передаче с помощью служб мультимедиа и ссылки на другие важные статьи.
  
 > [!NOTE]
-> Вы можете использовать [портал Azure](https://portal.azure.com/) для управления [динамическими событиями](live-events-outputs-concept.md) [v3, представления v3,](assets-concept.md)получения сведений о доступе к API. Для всех других задач управления (например, преобразований и заданий) следует использовать [REST API](/rest/api/media/), [CLI](https://aka.ms/ams-v3-cli-ref) или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
+> Вы можете использовать [портал Azure](https://portal.azure.com/) для управления [динамическими событиями](live-events-outputs-concept.md) [v3, представления v3,](assets-concept.md)получения сведений о доступе к API. Для всех других задач управления (например, преобразований и заданий) следует использовать [REST API](/rest/api/media/), [CLI](/cli/azure/ams) или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
 
 ## <a name="dynamic-packaging-and-delivery"></a>Динамическая упаковка и доставка
 

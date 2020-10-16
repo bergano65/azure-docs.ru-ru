@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 07/10/2020
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: 1d39b29ba340b34d6f0add8ff5da473408bd6360
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 204e89bdf8c660a7e96438f8cb3b8a18aeaec306
+ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86259121"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91742389"
 ---
 # <a name="tutorial-copy-data-from-azure-data-box-via-smb-preview"></a>Руководство по Копирование данных из Azure Data Box через SMB (предварительная версия)
 
@@ -50,7 +50,7 @@ ms.locfileid: "86259121"
 
 1. В первую очередь необходимо выполнить проверку подлинности и начать сеанс. Перейдите на страницу **Подключение и копирование**. Чтобы получить учетные данные для доступа к общим папкам, связанным с вашей учетной записью хранения, выберите элемент **Получить учетные данные**. 
 
-    ![Получение учетных данных для доступа к общей папке 1](media/data-box-deploy-export-copy-data/get-share-credentials-1.png)
+    ![Получение учетных данных для доступа к общей папке](media/data-box-deploy-export-copy-data/get-share-credentials-1.png)
 
 2. В диалоговом окне "Доступ к общей папке и копирование данных" скопируйте **имя пользователя** и **пароль**, соответствующие необходимой общей папке. Щелкните **ОК**.
     
@@ -75,7 +75,7 @@ ms.locfileid: "86259121"
 
 4. Нажмите клавиши WINDOWS+R. В окне **Выполнить** введите `\\<device IP address>`. Нажмите кнопку **ОК**, чтобы открыть проводник.
     
-    ![Подключение к общей папке с помощью проводника 2](media/data-box-deploy-export-copy-data/connect-shares-file-explorer-1.png)
+    ![Подключение к общей папке с помощью проводника](media/data-box-deploy-export-copy-data/connect-shares-file-explorer-1.png)
 
     Должны отобразиться папки, в том числе общие.
     

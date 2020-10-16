@@ -7,10 +7,10 @@ ms.topic: how-to
 ms.date: 01/16/2018
 ms.author: alkohli
 ms.openlocfilehash: 6af095c7abdb9aa61e57d543ff2ab2f9192dadc8
-ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91743579"
 ---
 # <a name="change-a-blob-path-from-the-default-path"></a>Изменение пути к большому двоичному объекту по умолчанию
@@ -25,7 +25,7 @@ ms.locfileid: "91743579"
 
 Для создания функции Azure выполните следующие действия:
 
-1. Перейдите на [портал Microsoft Azure](https://portal.azure.com/).
+1. Перейдите на [портал Azure](https://portal.azure.com/).
 
 2. Щелкните **Создать ресурс**. В поле **Поиск** введите **приложение-функция** и нажмите клавишу **ВВОД**. В появившемся списке приложений выберите и щелкните **Приложение-функция**.
 
@@ -215,6 +215,6 @@ ms.locfileid: "91743579"
 
 Вы создали функцию Azure. Эта функция запускается каждый раз, когда задание преобразования данных создает большой двоичный объект.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Использование пользовательского интерфейса для службы диспетчера данных StorSimple (закрытая предварительная версия)](storsimple-data-manager-ui.md)

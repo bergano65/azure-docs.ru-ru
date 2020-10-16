@@ -7,10 +7,10 @@ ms.date: 12/03/2019
 author: markjbrown
 ms.author: mjbrown
 ms.openlocfilehash: e8786c2d6e93c18a5bf9856a5555d6b528f842c5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "75441224"
 ---
 # <a name="create-a-synthetic-partition-key"></a>Создание искусственного ключа секции
@@ -54,7 +54,7 @@ ms.locfileid: "75441224"
 
 С помощью этой стратегии записи равномерно распределяются по значениям ключа секции и по секциям. Вы можете легко читать определенный элемент и дату, так как можете вычислить значение ключа секции для конкретного объекта `Vehicle-Identification-Number` . Преимущество этого метода заключается в том, что можно избежать создания одного ключа горячей секции, т. е. ключа секции, который выполняет всю рабочую нагрузку. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Подробнее о концепции разделения вы можете узнать в следующих статьях:
 

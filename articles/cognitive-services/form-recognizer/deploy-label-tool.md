@@ -10,10 +10,10 @@ ms.topic: how-to
 ms.date: 04/14/2020
 ms.author: pafarley
 ms.openlocfilehash: c7c4e1cc854fdd2fbf03d2274992bbc4a3bb93af
-ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88717903"
 ---
 # <a name="deploy-the-sample-labeling-tool"></a>Развертывание примера средства создания меток
@@ -80,7 +80,7 @@ ms.locfileid: "88717903"
    * Непрерывное развертывание — задайте значение **On** , если вы хотите получить автоматические обновления, когда команда разработчиков вносит изменения в пример средства создания меток.
    * Команда запуска — задает значение `./run.sh eula=accept`
 
-    # <a name="v21-preview"></a>[Предварительная версия версии 2.1](#tab/v2-1) 
+    # <a name="v21-preview"></a>[Предварительная версия 2.1](#tab/v2-1) 
    * Параметры — выберите **один контейнер**
    * Источник образа — выберите **частный реестр** 
    * URL-адрес сервера — установите значение `https://mcr.microsoft.com`
@@ -129,7 +129,7 @@ az container create \
   --memory 8 \
   --command-line "./run.sh eula=accept"
 ``` 
-# <a name="v21-preview"></a>[Предварительная версия версии 2.1](#tab/v2-1)    
+# <a name="v21-preview"></a>[Предварительная версия 2.1](#tab/v2-1)    
 ```azurecli
 DNS_NAME_LABEL=aci-demo-$RANDOM
 
@@ -155,6 +155,6 @@ az container create \
 
 Средство OCR с метками также доступно в виде проекта с открытым исходным кодом на сайте GitHub. Средство — это веб-приложение, созданное с помощью команды React + Redux и написанное в TypeScript. Чтобы узнать больше или внести свой вклад, см. статью [Средство маркировки документов OCR](https://github.com/microsoft/OCR-Form-Tools/blob/master/README.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Используйте краткое руководство [обучение с метками](./quickstarts/label-tool.md) , чтобы узнать, как использовать средство для ручной маркировки обучающих данных и выполнения контролируемого обучения.

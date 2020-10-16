@@ -7,14 +7,14 @@ metadata:
   author: mgoedtel
   ms.service: azure-arc
   ms.topic: landing-page
-  ms.date: 06/26/2020
+  ms.date: 10/07/2020
   ms.author: magoedte
-  ms.openlocfilehash: f03e869e884fff8a1d196817b658c28bbdc55ca9
-  ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+  ms.openlocfilehash: 845b1cac20e7dae35741027ebf2b709288c7dccc
+  ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 09/22/2020
-  ms.locfileid: "90908103"
+  ms.lasthandoff: 10/14/2020
+  ms.locfileid: "92016626"
 landingContent:
 - title: Подключение компьютеров к Azure с помощью серверов с поддержкой Azure Arc
   linkLists:
@@ -36,3 +36,9 @@ landingContent:
     links:
     - text: Развертывание агента серверов с поддержкой Arc
       url: ./learn/quick-enable-hybrid-vm.md
+- title: Эталонная архитектура
+  linkLists:
+  - linkListType: architecture
+    links:
+    - text: Управление конфигурациями для гибридных серверов
+      url: /azure/architecture/hybrid/azure-arc-hybrid-config

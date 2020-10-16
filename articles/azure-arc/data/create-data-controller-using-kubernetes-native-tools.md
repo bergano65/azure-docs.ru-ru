@@ -10,10 +10,10 @@ ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
 ms.openlocfilehash: bfdda75c0826ed12fbce1eb47680f91abbde4934
-ms.sourcegitcommit: 487a9f5272300d60df2622c3d13e794d54680f90
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91661063"
 ---
 # <a name="create-azure-arc-data-controller-using-kubernetes-tools"></a>Создание контроллера данных ARC в Azure с помощью средств Kubernetes
@@ -280,7 +280,7 @@ kubectl describe po/<pod name> --namespace arc
 
 Если у вас возникли роняли с созданием, ознакомьтесь с [руководством по устранению неполадок](troubleshoot-guide.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Создание управляемого экземпляра SQL с помощью собственных средств Kubernetes](./create-sql-managed-instance-using-kubernetes-native-tools.md)
 - [Создание группы PostgreSQL Scale Server с помощью Kubernetes-Native Tools](./create-postgresql-hyperscale-server-group-kubernetes-native-tools.md)

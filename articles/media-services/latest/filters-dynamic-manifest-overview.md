@@ -15,10 +15,10 @@ ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.openlocfilehash: acb30c1659c4c29e0af83da5594bdd9a7e3465d8
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89299037"
 ---
 # <a name="filter-your-manifests-using-dynamic-packager"></a>Фильтрация манифестов с помощью динамического упаковщика
@@ -150,7 +150,7 @@ ms.locfileid: "89299037"
     - Чтобы определить свойства дорожек в ресурсе, [получите и проверьте файл манифеста](#get-and-examine-manifest-files).
     - Ниже приведена формула для задания свойств метки времени фильтра ресурсов: <br/>старттиместамп = &lt; время начала в манифесте &gt;  +   &lt; ожидаемое время начала фильтра в секундах &gt; * шкала времени
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В следующих статьях показано, как создавать фильтры программным способом.  
 

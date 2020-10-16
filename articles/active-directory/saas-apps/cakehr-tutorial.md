@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 10/16/2019
 ms.author: jeedes
-ms.openlocfilehash: 2884302ae636739243e0277fa49ef6889b077c86
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 8464d8918ccb6351de06dcba9a355e93c2cd97cd
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88547602"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91740350"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-cakehr"></a>Руководство по Интеграция единого входа Azure Active Directory с CakeHR
 
@@ -142,11 +142,11 @@ ms.locfileid: "88547602"
 
 1. В правом верхнем углу страницы щелкните **профиль** и выберите **Settings** (Параметры).
 
-    ![Настройка CakeHR](./media/cakehr-tutorial/config01.png)
+    ![Снимок экрана: элемент "Профиль" с выбранным пунктом "Параметры".](./media/cakehr-tutorial/config01.png)
 
 1. В левой части строки меню щелкните **INTEGRATIONS** > **SAML SSO** (Интеграции > Единый вход SAML) и выполните следующие действия:
 
-    ![Настройка CakeHR](./media/cakehr-tutorial/config02.png)
+    ![Снимок экрана: панель "Параметры", где выполняются эти действия.](./media/cakehr-tutorial/config02.png)
 
     а. В текстовое поле **Entity ID** (Идентификатор сущности) введите значение `cake.hr`.
 
@@ -168,11 +168,11 @@ ms.locfileid: "88547602"
 
 2. В левой части строки меню щелкните **COMPANY** > **ADD** (Компания > Добавить).
 
-    ![Настройка CakeHR](./media/cakehr-tutorial/config03.png)
+    ![Снимок экрана: страница CakeHR с выбранным элементом "Компания" и выделенной кнопкой "Добавить".](./media/cakehr-tutorial/config03.png)
 
 3. Во всплывающем окне **Add new employee** (Добавление нового сотрудника) выполните описанные ниже действия.
 
-     ![Настройка CakeHR](./media/cakehr-tutorial/config04.png)
+     ![Снимок экрана: окно "Добавление нового сотрудника", где выполняются эти действия.](./media/cakehr-tutorial/config04.png)
 
     а. В текстовое поле **Full name** (Полное имя) введите имя пользователя, например "B.Simon".
 

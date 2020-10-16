@@ -12,12 +12,12 @@ ms.workload: ''
 ms.topic: tutorial
 ms.date: 08/24/2020
 ms.author: inhenkel
-ms.openlocfilehash: dfd7b3dcc7e27dd1251c35c6272b5aa7f8036006
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: cc3060c9253b23b97089ea35625aceb26737baba
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88941917"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92017001"
 ---
 # <a name="tutorial-store-azure-media-services-events-in-azure-log-analytics"></a>Руководство по хранению событий Служб мультимедиа Azure в Azure Log Analytics
 
@@ -43,11 +43,11 @@ ms.locfileid: "88941917"
 > * [Подписка Azure](how-to-set-azure-subscription.md)
 > * Учетная запись [Служб мультимедиа](create-account-howto.md) и группа ресурсов.
 > * Установка [FFmpeg](https://ffmpeg.org/download.html) для вашей ОС.
-> * Рабочая область [Log Analytics](https://docs.microsoft.com/azure/azure-monitor/learn/quick-create-workspace) .
+> * Рабочая область [Log Analytics](../../azure-monitor/learn/quick-create-workspace.md) .
 
 ## <a name="subscribe-to-a-media-services-event-with-logic-app"></a>Подписка на событие Служб мультимедиа с помощью приложения логики
 
-1. На портале Azure создайте рабочую область [Log Analytics](https://docs.microsoft.com/azure/azure-monitor/learn/quick-create-workspace), если это еще не сделано. Вам потребуется идентификатор рабочей области и один из ключей, поэтому не закрывайте окно браузера. Затем откройте портал на другой вкладке или в новом окне.
+1. На портале Azure создайте рабочую область [Log Analytics](../../azure-monitor/learn/quick-create-workspace.md), если это еще не сделано. Вам потребуется идентификатор рабочей области и один из ключей, поэтому не закрывайте окно браузера. Затем откройте портал на другой вкладке или в новом окне.
 
 1. Перейдите к учетной записи Служб мультимедиа Azure и щелкните раздел **События**. Будут показаны все методы подписки на события Служб мультимедиа Azure.
     > [!div class="mx-imgBorder"]
@@ -140,7 +140,7 @@ ms.locfileid: "88941917"
     > [!div class="mx-imgBorder"]
     > ![Проверка текста и шагов функций](media/tutorial-events-log-analytics/verify-changes-to-json.png)
 
-1. При просмотре всех ресурсов в группе ресурсов будет указано приложение логики и два соединителя API приложений логики: один для событий и один для Log Analytics. Дополнительные сведения о системных разделах Сетки событий см. в статье [Системные разделы в службе "Сетка событий Azure"](https://docs.microsoft.com/azure/event-grid/system-topics).
+1. При просмотре всех ресурсов в группе ресурсов будет указано приложение логики и два соединителя API приложений логики: один для событий и один для Log Analytics. Дополнительные сведения о системных разделах Сетки событий см. в статье [Системные разделы в службе "Сетка событий Azure"](../../event-grid/system-topics.md).
     > [!div class="mx-imgBorder"]
     > ![Все ресурсы в группе ресурсов](media/tutorial-events-log-analytics/contoso-rg-listing.png)
 
@@ -231,4 +231,4 @@ ms.locfileid: "88941917"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Вы можете создать различные запросы и сохранить их. Их можно добавить на [Панель мониторинга Azure](https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-logs-dashboards).
+Вы можете создать различные запросы и сохранить их. Их можно добавить на [Панель мониторинга Azure](../../azure-monitor/learn/tutorial-logs-dashboards.md).

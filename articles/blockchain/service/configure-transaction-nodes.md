@@ -5,10 +5,10 @@ ms.date: 11/20/2019
 ms.topic: how-to
 ms.reviewer: janders
 ms.openlocfilehash: b3a4650977f1ad1a7a6967daa162adc8d2ef7bff
-ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90530392"
 ---
 # <a name="configure-azure-blockchain-service-transaction-nodes"></a>Настройка узлов транзакций службы Azure Блокчейн
@@ -37,10 +37,10 @@ ms.locfileid: "90530392"
 
     | Параметр | Описание |
     |---------|-------------|
-    | name | Имя узла транзакций. Имя, используемое при создании адреса DNS для конечной точки узла транзакций. Например, `newnode-myblockchainmember.blockchain.azure.com`. Имя узла нельзя изменить после его создания. |
+    | Имя | Имя узла транзакций. Имя, используемое при создании адреса DNS для конечной точки узла транзакций. Например, `newnode-myblockchainmember.blockchain.azure.com`. Имя узла нельзя изменить после его создания. |
     | Пароль | Задайте надежный пароль. Используйте пароль для доступа к конечной точке узла транзакции с обычной проверкой подлинности.
 
-1. Щелкните **Создать**.
+1. Нажмите кнопку **создания**.
 
     Подготовка нового узла транзакций занимает около 10 минут. На дополнительные узлы транзакций взимается плата. Дополнительные сведения о затратах см. на странице [цен на Azure](https://aka.ms/ABSPricing).
 

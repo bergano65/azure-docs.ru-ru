@@ -12,10 +12,10 @@ ms.topic: article
 ms.date: 08/17/2019
 ms.author: Zhchia
 ms.openlocfilehash: f5f7ed8a905aad873ecfc878979ac32af1e21730
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91312249"
 ---
 # <a name="tutorial-configure-workgrid--for-automatic-user-provisioning"></a>Учебник. Настройка Воркгрид для автоматической подготовки пользователей
@@ -136,7 +136,7 @@ ms.locfileid: "91312249"
 
 12. Проверьте атрибуты группы, которые синхронизированы из Azure AD в Воркгрид в разделе " **сопоставление атрибутов** ". Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в воркгрид для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-    ![Снимок экрана раздела "сопоставления атрибутов" с тремя отображаемыми сопоставлениями.](media/Workgrid-provisioning-tutorial/groupattribute.png)
+    ![Снимок экрана: раздел "Сопоставление атрибутов" с тремя сопоставляемыми атрибутами](media/Workgrid-provisioning-tutorial/groupattribute.png)
 
 13. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 

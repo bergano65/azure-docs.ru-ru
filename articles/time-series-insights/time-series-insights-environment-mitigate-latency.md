@@ -13,16 +13,16 @@ ms.topic: troubleshooting
 ms.date: 09/29/2020
 ms.custom: seodec18
 ms.openlocfilehash: e89189b22b144d9e92ee8315bc6fd9aabe699eec
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91531655"
 ---
 # <a name="monitor-and-mitigate-throttling-to-reduce-latency-in-azure-time-series-insights-gen1"></a>Мониторинг и устранение рисков для уменьшения задержки в Gen1 временных рядов Azure
 
 > [!CAUTION]
-> Это Gen1 статья.
+> Эта статья посвящена службе "Аналитика временных рядов Azure" 1-го поколения.
 
 Если объем входящих данных превышает пределы, установленные в конфигурации вашей среды, в службе "Аналитика временных рядов Azure" могут возникнуть задержки или регулирования.
 
@@ -95,7 +95,7 @@ ms.locfileid: "91531655"
 
 Чтобы избежать задержки и регулирования, следует правильно настроить среду для того объема данных, который поступает для анализа. Дополнительные сведения о добавлении емкости в среду см. в статье [масштабирование среды](time-series-insights-how-to-scale-your-environment.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Ознакомьтесь с [диагностикой и устранением проблем в среде службы "аналитика временных рядов Azure](time-series-insights-diagnose-and-solve-problems.md)".
 

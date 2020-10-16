@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a9020e364a5c8d7a59dad5549e88036dc9edaad7
-ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90089672"
 ---
 # <a name="device-identity-and-desktop-virtualization"></a>Удостоверение устройств и виртуализация настольных систем
@@ -52,13 +52,13 @@ ms.locfileid: "90089672"
 |   |   | Текущие окна | Не постоянный | Да<sup>5</sup> |
 |   |   | Устройства Windows нижнего уровня | Не постоянный | Да<sup>6</sup> |
 |   | Управляемые<sup>4</sup> | Windows Current и Windows нижнего уровня | Постоянный | Да |
-|   |   | Текущие окна | Не постоянный | нет |
+|   |   | Текущие окна | Не постоянный | Нет |
 |   |   | Устройства Windows нижнего уровня | Не постоянный | Да<sup>6</sup> |
-| присоединение к Azure AD; | Федеративные | Текущие окна | Постоянный | нет |
-|   |   |   | Не постоянный | нет |
-|   | Управляемые | Текущие окна | Постоянный | нет |
-|   |   |   | Не постоянный | нет |
-| регистрация в Azure AD; | Федеративные и управляемые | Windows: текущая или Windows-уровень вниз | Постоянный/не постоянный | Н/Д |
+| присоединение к Azure AD; | Федеративные | Текущие окна | Постоянный | Нет |
+|   |   |   | Не постоянный | Нет |
+|   | Управляемые | Текущие окна | Постоянный | Нет |
+|   |   |   | Не постоянный | Нет |
+| регистрация в Azure AD; | Федеративные и управляемые | Windows: текущая или Windows-уровень вниз | Постоянный/не постоянный | Не применимо |
 
 <sup>1</sup> **текущие устройства Windows** представляют собой Windows 10, Windows Server 2016 и Windows Server 2019.
 

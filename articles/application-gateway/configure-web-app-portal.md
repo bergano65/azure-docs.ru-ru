@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 09/23/2020
 ms.author: victorh
 ms.openlocfilehash: df92e08e91761d77c606ccb5389eee7dc219c101
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91323394"
 ---
 # <a name="configure-app-service-with-application-gateway"></a>Настройка службы приложений с помощью шлюза приложений
@@ -56,7 +56,7 @@ ms.locfileid: "91323394"
 3. В разделе **переопределение имени узла**выберите выбрать **имя узла из серверного целевого объекта**.
 4. Щелкните **Сохранить**.
 
-   :::image type="content" source="./media/configure-web-app-portal/http-settings.png" alt-text="Выбор имени узла из серверных параметров HTTP":::
+   :::image type="content" source="./media/configure-web-app-portal/http-settings.png" alt-text="Серверная часть службы приложений":::
 
 ## <a name="additional-configuration-in-case-of-redirection-to-app-services-relative-path"></a>Дополнительная настройка в случае перенаправления в относительный путь службы приложений
 
@@ -70,6 +70,6 @@ ms.locfileid: "91323394"
 
 Один из способов ограничения доступа к веб-приложению — использовать [ограничения статических IP-адресов в Службе приложений Azure](../app-service/app-service-ip-restrictions.md). Например, можно ограничить веб-приложение, чтобы получать трафик только из шлюза приложения. Используйте функцию ограничения IP-адреса для службы приложения, чтобы сделать виртуальный IP-адрес шлюза приложения единственным адресом с доступом.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о службе приложений и другой поддержке нескольких клиентов с помощью шлюза приложений см. в разделе [Поддержка службы с несколькими клиентами с помощью шлюза приложений](https://docs.microsoft.com/azure/application-gateway/application-gateway-web-app-overview).

@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 09/03/2020
 ms.author: juliako
 ms.openlocfilehash: e2b45ebf9acea7334678110015d8cfd3022675f4
-ms.sourcegitcommit: 59ea8436d7f23bee75e04a84ee6ec24702fb2e61
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89505345"
 ---
 # <a name="azure-media-services-video-indexer-release-notes"></a>Заметки о выпуске индексатора видео служб мультимедиа Azure
@@ -28,7 +28,7 @@ ms.locfileid: "89505345"
 * Последние выпуски.
 * Известные проблемы
 * Исправления ошибок
-* Нерекомендуемые функции.
+* Нерекомендуемые функции
 
 ## <a name="august-2020"></a>Август 2020 г.
 

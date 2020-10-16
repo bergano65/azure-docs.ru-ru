@@ -1,14 +1,14 @@
 ---
 title: Расширение Политики Azure для Visual Studio Code
 description: Узнайте, как использовать расширение политики Azure для Visual Studio Code поиска псевдонимов Azure Resource Manager.
-ms.date: 06/16/2020
+ms.date: 10/14/2020
 ms.topic: how-to
-ms.openlocfilehash: 9b3f27492bee5301e22e83ebf9734afa3de43897
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.openlocfilehash: ea05ffab9c57c50e451008a1ec7c534afbedf282
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89648327"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92077938"
 ---
 # <a name="use-azure-policy-extension-for-visual-studio-code"></a>Использование расширения политики Azure для Visual Studio Code
 
@@ -40,7 +40,7 @@ ms.locfileid: "89648327"
 
 1. В результатах поиска выберите пункт **Политика Azure** и нажмите кнопку **установить**.
 
-1. При необходимости выберите **перезагрузить** .
+1. При необходимости выберите **Перезагрузить**.
 
 ## <a name="set-the-azure-environment"></a>Настройка среды Azure
 
@@ -64,13 +64,13 @@ ms.locfileid: "89648327"
 
      В расширении политики Azure выберите вход в **Azure**.
 
-     :::image type="content" source="../media/extension-for-vscode/azure-cloud-sign-in-policy-extension.png" alt-text="Снимок экрана Visual Studio Code и значок для расширения политики Azure." border="false":::
+     :::image type="content" source="../media/extension-for-vscode/azure-cloud-sign-in-policy-extension.png" alt-text="Снимок экрана: выбор страны для входа в облако Azure для Visual Studio Code." border="false":::
 
    - Палитра команд
 
      В строке меню выберите **вид**  >  **Палитра команд**и введите **Azure: вход**.
 
-     :::image type="content" source="../media/extension-for-vscode/azure-cloud-sign-in-command-palette.png" alt-text="Снимок экрана параметров входа в облако Azure для Visual Studio Code из палитры команд." border="false":::
+     :::image type="content" source="../media/extension-for-vscode/azure-cloud-sign-in-command-palette.png" alt-text="Снимок экрана: выбор страны для входа в облако Azure для Visual Studio Code." border="false":::
 
 1. Следуйте инструкциям по входу, чтобы войти в Azure. После подключения имя учетной записи Azure отобразится в строке состояния в нижней части окна Visual Studio Code.
 
@@ -82,7 +82,7 @@ ms.locfileid: "89648327"
 
    - Палитра команд: 
 
-     В строке меню выберите **вид**  >  **Палитра команд**и введите **Azure: выберите подписки**.
+     В строке меню выберите **вид** > **Палитра команд**и введите **Azure: выберите подписки**.
 
    - Нижний колонтитул окна
 
@@ -125,7 +125,7 @@ ms.locfileid: "89648327"
 
 После открытия ресурса при наведении указателя мыши на имя или значение свойства диспетчер ресурсов отображается псевдоним политики Azure, если он существует. В этом примере ресурс является `Microsoft.Compute/virtualMachines` типом ресурса, а свойство **Properties. StorageProfile. imageReference. предложение** наводится на него. При наведении указателя мыши отображаются совпадающие псевдонимы.
 
-:::image type="content" source="../media/extension-for-vscode/extension-hover-shows-property-alias.png" alt-text="Снимок экрана расширения политики Azure для Visual Studio Code наведения указателя мыши на свойство для отображения имен псевдонимов." border="false":::
+:::image type="content" source="../media/extension-for-vscode/extension-hover-shows-property-alias.png" alt-text="Снимок экрана: выбор страны для входа в облако Azure для Visual Studio Code." border="false":::
 
 > [!NOTE]
 > Расширение VS Code предоставляет только свойства режима диспетчера ресурсов и не отображает свойств [режима поставщика ресурсов](../concepts/definition-structure.md#mode).

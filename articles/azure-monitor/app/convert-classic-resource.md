@@ -1,22 +1,20 @@
 ---
 title: Перенос классического ресурса Azure Monitor Application Insights в ресурс на основе рабочей области | Документация Майкрософт
 description: Сведения о действиях, необходимых для обновления классической модели Azure Monitor Application Insights на основе рабочей области.
-author: mrbullwinkle
-ms.author: mbullwin
 ms.topic: conceptual
 ms.date: 09/23/2020
-ms.openlocfilehash: aab2d1ec5a6c3e046840e736ced0993e560c4661
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 0d2c7d1b9ee57e6d201205c04557e1b5f5623eb0
+ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91333347"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91930583"
 ---
 # <a name="migrate-to-workspace-based-application-insights-resources"></a>Переход на ресурсы Application Insights на основе рабочих областей
 
 В этом руководстве рассматривается процесс миграции классического Application Insights ресурса в ресурс на основе рабочей области. Ресурсы рабочей области поддерживают полную интеграцию Application Insights и Log Analytics. Ресурсы на основе рабочей области отправляют Application Insights телеметрии в общую рабочую область Log Analytics, которая позволяет получать доступ к [последним функциям Azure Monitor](#new-capabilities) , сохраняя журналы приложений, инфраструктуры и платформы в едином консолидированном расположении.
 
-Ресурсы на основе рабочей области обеспечивают общий контроль доступа на основе ролей (RBAC) для ресурсов и устраняют необходимость в запросах между приложениями и рабочими областями.
+Ресурсы на основе рабочей области обеспечивают общий Role-Based управления доступом (RBAC) для ресурсов и устраняют необходимость в запросах между приложениями и рабочими областями.
 
 **Ресурсы на основе рабочей области в настоящее время доступны во всех коммерческих регионах и в Azure для государственных организаций США.**
 

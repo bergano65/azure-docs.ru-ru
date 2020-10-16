@@ -14,10 +14,10 @@ ms.date: 03/30/2020
 ms.author: prtyag
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 6d723e95212e457a81eedf7726bf3c5bd2499643
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84488891"
 ---
 # <a name="enable-kdump-service"></a>Включение службы Кдумп
@@ -55,7 +55,7 @@ ms.locfileid: "84488891"
 |   Тип II                   |  SuSE        |   SLES 12 с пакетом обновления 3 (SP3)         |  S576m      |
 |   Тип II                   |  SuSE        |   SLES 12 с пакетом обновления 4 (SP4)         |  S576m      |
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Служба кдумп использует `/var/crash` каталог для записи дампов, убедитесь, что раздел соответствует этому каталогу, достаточно места для размещения дампов.
 

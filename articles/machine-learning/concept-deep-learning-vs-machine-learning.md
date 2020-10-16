@@ -11,10 +11,10 @@ author: FrancescaLazzeri
 ms.date: 09/22/2020
 ms.custom: contperfq1
 ms.openlocfilehash: d462ed4627254275703d88cadbaf5d55a106da55
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91330134"
 ---
 # <a name="deep-learning-vs-machine-learning-in-azure-machine-learning"></a>Глубокое обучение и машинное обучение в Машинное обучение Azure
@@ -115,7 +115,7 @@ ms.locfileid: "91330134"
 
 Свертки нейронных сетей использовались в таких областях, как распознавание видео, распознавание изображений и системы рекомендаций.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В следующих статьях приведены дополнительные параметры для использования моделей глубокого обучения с открытым кодом в [машинное обучение Azure](https://docs.microsoft.com/azure/machine-learning/?WT.mc_id=docs-article-lazzeri).
 

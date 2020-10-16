@@ -4,10 +4,10 @@ description: Создание маркера с разрешениями, огр
 ms.topic: article
 ms.date: 05/27/2020
 ms.openlocfilehash: 8661ff2e320788d3899ae16dd3bee7d3ff662caa
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84509412"
 ---
 # <a name="create-a-token-with-repository-scoped-permissions"></a>Создание токена с разрешениями уровня репозитория
@@ -159,7 +159,7 @@ az acr token create --name MyToken \
     1. Введите имя и описание для карты области. 
     1. В разделе **Репозитории** введите `samples/hello-world` и в разделе **Разрешения** выберите `content/read` и `content/write`. Затем выберите **+ Добавить**.  
 
-        :::image type="content" source="media/container-registry-repository-scoped-permissions/portal-scope-map-add.png" alt-text="Создание карты области на портале":::
+        :::image type="content" source="media/container-registry-repository-scoped-permissions/portal-scope-map-add.png" alt-text="Создание токена на портале":::
 
     1. После добавления репозиториев и разрешений выберите **Добавить**, чтобы добавить карту области.
 1. Примите **Состояние** токена по умолчанию **Включено**, а затем выберите **Создать**.
@@ -176,7 +176,7 @@ az acr token create --name MyToken \
 1. На экране пароля при необходимости задайте дату окончания срока действия пароля и выберите **Создать**. Рекомендуется задать дату окончания срока действия.
 1. После создания пароля скопируйте и сохраните его в надежном месте. После закрытия экрана вы не сможете повторно получить созданный пароль, но сможете создать новый.
 
-    :::image type="content" source="media/container-registry-repository-scoped-permissions/portal-token-password.png" alt-text="Создание пароля токена на портале":::
+    :::image type="content" source="media/container-registry-repository-scoped-permissions/portal-token-password.png" alt-text="Создание токена на портале":::
 
 ## <a name="authenticate-with-token"></a>Проверка подлинности с помощью токена
 
@@ -186,8 +186,8 @@ az acr token create --name MyToken \
 
 |Действие  |Процедура проверки подлинности  |
   |---------|---------|
-  |`content/delete`    | `az acr repository delete` в Azure CLI<br/><br/>Пример: `az acr repository delete --name myregistry --repository myrepo --username MyToken --password xxxxxxxxxx`|
-  |`content/read`     |  `docker login`<br/><br/>`az acr login` в Azure CLI<br/><br/>Пример: `az acr login --name myregistry --username MyToken --password xxxxxxxxxx`  |
+  |`content/delete`    | `az acr repository delete` в Azure CLI<br/><br/>Например, `az acr repository delete --name myregistry --repository myrepo --username MyToken --password xxxxxxxxxx`.|
+  |`content/read`     |  `docker login`<br/><br/>`az acr login` в Azure CLI<br/><br/>Например, `az acr login --name myregistry --username MyToken --password xxxxxxxxxx`.  |
   |`content/write`     |  `docker login`<br/><br/>`az acr login` в Azure CLI     |
   |`metadata/read`    | `az acr repository show`<br/><br/>`az acr repository show-tags`<br/><br/>`az acr repository show-manifests` в Azure CLI   |
   |`metadata/write`     |  `az acr repository untag`<br/><br/>`az acr repository update` в Azure CLI |

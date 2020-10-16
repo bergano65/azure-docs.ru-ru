@@ -2,7 +2,7 @@
 title: Присоединение виртуальной машины RHEL к доменным службам Azure AD | Документация Майкрософт
 description: Узнайте, как настроить и присоединить Red Hat Enterprise Linuxную виртуальную машину к управляемому домену доменных служб Azure AD.
 services: active-directory-ds
-author: iainfoulds
+author: MicrosoftGuyJFlo
 manager: daveba
 ms.assetid: 16100caa-f209-4cb0-86d3-9e218aeb51c6
 ms.service: active-directory
@@ -10,13 +10,13 @@ ms.subservice: domain-services
 ms.workload: identity
 ms.topic: how-to
 ms.date: 07/13/2020
-ms.author: iainfou
-ms.openlocfilehash: f2a6cb422c1133f0ed53d2c1061501a47d9c92f1
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.author: joflore
+ms.openlocfilehash: ffde2317ea66a15936df75c4fe2455f627ea6e98
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87005095"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91962128"
 ---
 # <a name="join-a-red-hat-enterprise-linux-virtual-machine-to-an-azure-active-directory-domain-services-managed-domain"></a>Присоединение виртуальной машины Red Hat Enterprise Linux к управляемому домену доменных служб Azure Active Directory
 
@@ -225,7 +225,7 @@ Successfully enrolled machine in realm
 
 Если виртуальная машина не может успешно завершить процесс присоединения к домену, убедитесь, что группа безопасности сети виртуальной машины разрешает исходящий трафик Kerberos для порта TCP + UDP 464 в подсети виртуальной сети для управляемого домена.
 
-Теперь проверьте, можно ли запрашивать сведения об Active Directory для пользователя с помощью`getent`
+Теперь проверьте, можно ли запрашивать сведения об Active Directory для пользователя с помощью `getent`
 
 ```console
 sudo getent passwd contosoadmin

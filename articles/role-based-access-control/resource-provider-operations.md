@@ -10,10 +10,10 @@ ms.author: rolyon
 ms.date: 09/22/2020
 ms.custom: generated
 ms.openlocfilehash: ade4a6b791a8aca963a056800bd8c58767aeb766
-ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91400100"
 ---
 # <a name="azure-resource-provider-operations"></a>Операции с поставщиками ресурсов Azure
@@ -22,7 +22,7 @@ ms.locfileid: "91400100"
 
 Щелкните имя поставщика ресурсов в следующей таблице, чтобы просмотреть список операций.
 
-## <a name="all"></a>Все
+## <a name="all"></a>All
 
 | Общие сведения |
 | --- |
@@ -1421,7 +1421,7 @@ ms.locfileid: "91400100"
 > | Microsoft. Датабокс/операции/чтение | Перечисление или получение операций |
 > | **DataAction** | **Описание** |
 > | Microsoft.DataBox/register/action | Регистрация поставщика Microsoft.Databox. |
-> | Microsoft. Датабокс/отменить регистрацию или действие | Отмена регистрации поставщика Microsoft. Датабокс |
+> | Microsoft. Датабокс/отменить регистрацию или действие | Поставщик Un-Register Microsoft. Датабокс |
 > | Microsoft.DataBox/jobs/cancel/action | Отменяет выполняемый заказ. |
 > | Microsoft.DataBox/jobs/bookShipmentPickUp/action | Позволяет заказать прием посылки для обратной отправки. |
 > | Microsoft.DataBox/jobs/listCredentials/action | Выводит список незашифрованных учетных данных, связанных с заказом. |
@@ -4258,7 +4258,7 @@ ms.locfileid: "91400100"
 > | Microsoft. Склвиртуалмачине/Склвиртуалмачинес/запись | Создание нового или изменение свойств существующей виртуальной машины SQL |
 > | Microsoft. Склвиртуалмачине/Склвиртуалмачинес/Delete | Удалить существующую виртуальную машину SQL |
 
-## <a name="analytics"></a>Analytics
+## <a name="analytics"></a>Аналитика
 
 ### <a name="microsoftanalysisservices"></a>Microsoft.AnalysisServices
 
@@ -5667,7 +5667,7 @@ ms.locfileid: "91400100"
 > | Microsoft. ApiManagement/Service/Полицидескриптионс/Read | Список всех описаний политик. |
 > | Microsoft.ApiManagement/service/policySnippets/read | Список всех фрагментов политик. |
 > | Microsoft. ApiManagement/Service/Порталсеттингс/Read | Содержит коллекцию параметров портала. или получите параметры входа для портала или получите параметры регистрации для портала или получите параметры делегирования для портала. |
-> | Microsoft. ApiManagement/Service/Порталсеттингс/Write | Обновите параметры входа. или создайте или обновите параметры входа. или обновить параметры регистрации или обновить параметры регистрации или изменить параметры делегирования. или создайте или обновите параметры делегирования. |
+> | Microsoft. ApiManagement/Service/Порталсеттингс/Write | Обновление параметров Sign-In. или создайте или обновите параметры Sign-In. или обновить параметры регистрации или обновить параметры регистрации или изменить параметры делегирования. или создайте или обновите параметры делегирования. |
 > | Microsoft. ApiManagement/Service/Порталсеттингс/Листсекретс/Action | Возвращает ключ проверки параметров делегирования портала. или получите URI контейнера BLOB-объектов мультимедийного содержимого. |
 > | Microsoft.ApiManagement/service/products/read | Перечисляет коллекцию продуктов в указанном экземпляре службы. или возвращает сведения о продукте, указанном по его идентификатору. |
 > | Microsoft.ApiManagement/service/products/write | Создает или обновляет продукт. или обновить существующие сведения о продукте. |
@@ -6287,8 +6287,8 @@ ms.locfileid: "91400100"
 > | microsoft.aadiam/diagnosticsettings/read | Чтение параметра диагностики. |
 > | microsoft.aadiam/diagnosticsettings/delete | Удаление параметра диагностики. |
 > | microsoft.aadiam/diagnosticsettingscategories/read | Чтение категорий параметра диагностики. |
-> | Microsoft. аадиам/metricDefinitions/Read | Чтение определений метрик на уровне клиента |
-> | Microsoft. аадиам/метрики/чтение | Чтение метрик уровня клиента |
+> | Microsoft. аадиам/metricDefinitions/Read | Чтение определений метрик Tenant-Level |
+> | Microsoft. аадиам/метрики/чтение | Чтение метрик Tenant-Level |
 > | Microsoft. аадиам/Привателинкфоразуреад/Read | Чтение определения политики частной связи |
 > | Microsoft. аадиам/Привателинкфоразуреад/запись | Создание и обновление определения политики для частных ссылок |
 > | Microsoft. аадиам/Привателинкфоразуреад/Delete | Удаление определения политики для закрытых ссылок |

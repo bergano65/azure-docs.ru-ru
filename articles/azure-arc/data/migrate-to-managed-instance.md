@@ -10,10 +10,10 @@ ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
 ms.openlocfilehash: 86563b0a44bade2cedaf76af3c247821756111fe
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90939634"
 ---
 # <a name="migrate-sql-server-to-azure-arc-enabled-sql-managed-instance"></a>Миграция: SQL Server в SQL Управляемый экземпляр с поддержкой Arc
@@ -150,7 +150,7 @@ GO
 kubectl get pods -n <namespace of data controller>
 ```
 
-Пример:
+Пример.
 
 Скопируйте файл резервной копии из локального хранилища в модуль SQL в кластере.
 
@@ -175,7 +175,7 @@ WITH MOVE '<database name>' to '/var/opt/mssql/data/<file name>.mdf'
 GO
 ```
 
-Пример:
+Пример.
 
 ```sql
 RESTORE DATABASE test FROM DISK = '/var/opt/mssql/data/test.bak'
@@ -188,10 +188,10 @@ GO
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Дополнительные сведения о функциях и возможностях SQL Управляемый экземпляр с поддержкой ARC в Azure](managed-instance-features.md)
 
-[Начните с создания контроллера данных](create-data-controller.md)
+[Начните работу, создав контроллер данных.](create-data-controller.md)
 
 [Контроллер данных уже создан? Создание SQL Управляемый экземпляр с поддержкой дуги Azure](create-sql-managed-instance.md)

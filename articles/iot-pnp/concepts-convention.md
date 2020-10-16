@@ -7,12 +7,12 @@ ms.date: 07/10/2020
 ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 8b5492a737b733f486455507a8a813b5d583d453
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.openlocfilehash: a58fa45f47ee8dce4ec96591551abad76c1218ee
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91573843"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92045488"
 ---
 # <a name="iot-plug-and-play-conventions"></a>Соглашения IoT Plug and Play
 
@@ -132,7 +132,7 @@ ms.locfileid: "91573843"
 
 Когда устройство запускается, оно должно запросить двойника устройства и проверить наличие обновлений свойств, доступных для записи. Если версия свойства, доступного для записи, увеличилась, когда устройство находится в автономном режиме, устройство должно отправить ответ сообщаемого свойства, чтобы подтвердить, что он получил обновление.
 
-Когда устройство запускается впервые, оно может отправить исходное значение для сообщаемого свойства, если оно не получает от концентратора начальное требуемое свойство. В этом случае устройству должно быть присвоено значение `av` `1` . Пример:
+Когда устройство запускается впервые, оно может отправить исходное значение для сообщаемого свойства, если оно не получает от концентратора начальное требуемое свойство. В этом случае устройству должно быть присвоено значение `av` `1` . Например.
 
 ```json
 "reported": {
@@ -343,6 +343,6 @@ ms.locfileid: "91573843"
 Теперь, когда вы узнали о соглашениях IoT Plug and Play, ниже приведены некоторые дополнительные ресурсы.
 
 - [Язык определения цифровых двойников (DTDL)](https://github.com/Azure/opendigitaltwins-dtdl)
-- [Пакет SDK для устройств для C](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/)
-- [REST API IoT](https://docs.microsoft.com/rest/api/iothub/device)
+- [Пакет SDK для устройств для C](/azure/iot-hub/iot-c-sdk-ref/)
+- [REST API IoT](/rest/api/iothub/device)
 - [Компоненты модели](./concepts-components.md)

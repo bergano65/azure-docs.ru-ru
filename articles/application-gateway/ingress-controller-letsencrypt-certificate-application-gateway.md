@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 11/4/2019
 ms.author: caya
 ms.openlocfilehash: df8722e8160538daa1535711092790dbb2405097
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84807029"
 ---
 # <a name="use-certificates-with-letsencryptorg-on-application-gateway-for-aks-clusters"></a>Использование сертификатов с LetsEncrypt.org в шлюзе приложений для кластеров AKS
@@ -58,7 +58,7 @@ ms.locfileid: "84807029"
 
     Создайте `ClusterIssuer` ресурс. Он необходим `cert-manager` для представления `Lets Encrypt` центра сертификации, в котором будут получены подписанные сертификаты.
 
-    При использовании ресурса, не являющегося пространством имен `ClusterIssuer` , диспетчер сертификатов выдает сертификаты, которые можно использовать из нескольких пространств имен. `Let’s Encrypt`использует протокол ACME, чтобы проверить, что вы управляете заданным доменным именем и выдаете сертификат. Дополнительные сведения о настройке `ClusterIssuer` свойств см. [здесь](https://docs.cert-manager.io/en/latest/tasks/issuers/index.html). `ClusterIssuer`предложит `cert-manager` выдавать сертификаты с помощью `Lets Encrypt` промежуточной среды, используемой для тестирования (корневой сертификат отсутствует в магазинах доверия браузера или клиента).
+    При использовании ресурса, не являющегося пространством имен `ClusterIssuer` , диспетчер сертификатов выдает сертификаты, которые можно использовать из нескольких пространств имен. `Let’s Encrypt` использует протокол ACME, чтобы проверить, что вы управляете заданным доменным именем и выдаете сертификат. Дополнительные сведения о настройке `ClusterIssuer` свойств см. [здесь](https://docs.cert-manager.io/en/latest/tasks/issuers/index.html). `ClusterIssuer` предложит `cert-manager` выдавать сертификаты с помощью `Lets Encrypt` промежуточной среды, используемой для тестирования (корневой сертификат отсутствует в магазинах доверия браузера или клиента).
 
     Тип запроса по умолчанию в YAML ниже — `http01` . Другие проблемы задокументированы в [типах letsencrypt.org-Challenge](https://letsencrypt.org/docs/challenge-types/)
 
@@ -133,8 +133,8 @@ ms.locfileid: "84807029"
 4. Рабочий сертификат
 
     После успешной установки промежуточного сертификата можно переключиться на рабочий сервер ACME:
-    1. Замените промежуточную аннотацию для ресурса входящих данных на:`certmanager.k8s.io/cluster-issuer: letsencrypt-prod`
-    1. Удалите существующую промежуточную среду, `ClusterIssuer` созданную на предыдущем шаге, и создайте новую, заменив сервер ACME с КЛУСТЕРИССУЕР YAML выше на`https://acme-v02.api.letsencrypt.org/directory`
+    1. Замените промежуточную аннотацию для ресурса входящих данных на: `certmanager.k8s.io/cluster-issuer: letsencrypt-prod`
+    1. Удалите существующую промежуточную среду, `ClusterIssuer` созданную на предыдущем шаге, и создайте новую, заменив сервер ACME с КЛУСТЕРИССУЕР YAML выше на `https://acme-v02.api.letsencrypt.org/directory`
 
 5. Истечение срока действия сертификата и его продление
 

@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 08/03/2020
 ms.author: jingwang
 ms.openlocfilehash: 78e7fc6b2a4c9804fbba60aa9946cc612b494461
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87531291"
 ---
 # <a name="copy-data-from-zoho-using-azure-data-factory-preview"></a>Копирование данных из Zoho с помощью фабрики данных Azure (предварительная версия)
@@ -52,11 +52,11 @@ ms.locfileid: "87531291"
 
 | Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
-| type | Для свойства type необходимо задать значение **Zoho** | да |
-| connectionProperties | Группа свойств, определяющих способ подключения к Zoho. | да |
+| type | Для свойства type необходимо задать значение **Zoho** | Да |
+| connectionProperties | Группа свойств, определяющих способ подключения к Zoho. | Да |
 | ***В разделе `connectionProperties` :*** | | |
 | endpoint | Конечная точка сервера Zoho (`crm.zoho.com/crm/private`). | Да |
-| authenticationType | Допустимые значения: `OAuth_2.0` и `Access Token` . | да |
+| authenticationType | Допустимые значения: `OAuth_2.0` и `Access Token` . | Да |
 | clientid | Идентификатор клиента, связанный с приложением Zoho. | Да для проверки подлинности OAuth 2,0 | 
 | клиентсекрект | Clientsecret, связанный с приложением Zoho. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да для проверки подлинности OAuth 2,0 | 
 | refreshtoken | Маркер обновления OAuth 2,0, связанный с приложением Zoho, который используется для обновления маркера доступа по истечении срока его действия. Срок действия маркера обновления никогда не истечет. Чтобы получить маркер обновления, необходимо запросить `offline` access_type. Дополнительные сведения см. в [этой статье](https://www.zoho.com/crm/developer/docs/api/auth-request.html). <br>Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md).| Да для проверки подлинности OAuth 2,0 |
@@ -130,7 +130,7 @@ ms.locfileid: "87531291"
 
 | Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
-| type | Свойство Type набора данных должно иметь значение **зохубжект** . | да |
+| type | Свойство Type набора данных должно иметь значение **зохубжект** . | Да |
 | tableName | Имя таблицы. | Нет (если свойство query указано в источнике действия) |
 
 **Пример**
@@ -160,7 +160,7 @@ ms.locfileid: "87531291"
 
 | Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
-| type | Свойство type источника действия копирования должно иметь значение **ZohoSource**. | да |
+| type | Свойство type источника действия копирования должно иметь значение **ZohoSource**. | Да |
 | query | Используйте пользовательский SQL-запрос для чтения данных. Например: `"SELECT * FROM Accounts"`. | Нет (если для набора данных задано свойство tableName) |
 
 **Пример**.

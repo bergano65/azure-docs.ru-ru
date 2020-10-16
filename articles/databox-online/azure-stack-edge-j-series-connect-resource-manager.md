@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 08/28/2020
 ms.author: alkohli
 ms.openlocfilehash: 5cf406dc0577f477858dd8a6570f7975747112e0
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90891264"
 ---
 # <a name="connect-to-azure-resource-manager-on-your-azure-stack-edge-pro-device"></a>Подключение к Azure Resource Manager на устройстве Azure Stack ребра Pro
@@ -36,9 +36,9 @@ Azure Resource Manager предоставляет последовательны
 
 | # | Конечная точка | Поддерживаемые протоколы | Используемый порт | Назначение |
 | --- | --- | --- | --- | --- |
-| 1. | Azure Resource Manager | https | 443 | Подключение к Azure Resource Manager для автоматизации |
-| 2. | Служба маркеров безопасности | https | 443 | Проверка подлинности с помощью маркеров доступа и обновления |
-| 3. | BLOB-объект | https | 443 | Подключение к хранилищу BLOB-объектов с помощью протокола RESTFUL |
+| 1. | Azure Resource Manager | HTTPS | 443 | Подключение к Azure Resource Manager для автоматизации |
+| 2. | Служба маркеров безопасности | HTTPS | 443 | Проверка подлинности с помощью маркеров доступа и обновления |
+| 3. | BLOB-объект | HTTPS | 443 | Подключение к хранилищу BLOB-объектов с помощью протокола RESTFUL |
 
 
 ## <a name="connecting-to-azure-resource-manager-workflow"></a>Подключение к рабочему процессу Azure Resource Manager
@@ -460,4 +460,4 @@ ExtendedProperties : {}
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Развертывание виртуальных машин на устройстве Azure Stack пограничной Pro](azure-stack-edge-j-series-deploy-virtual-machine-powershell.md).
+[Развертывание виртуальных машин на устройстве Azure Stack Edge Pro](azure-stack-edge-j-series-deploy-virtual-machine-powershell.md)

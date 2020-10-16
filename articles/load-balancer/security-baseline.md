@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/28/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: e62da791e8c60f884855fba16315a03fe22cecb5
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.openlocfilehash: 6d03f0057e657933f4b0f38c48f2a2cdbe1ba2a4
+ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91450746"
+ms.lasthandoff: 10/11/2020
+ms.locfileid: "91940333"
 ---
 # <a name="azure-security-baseline-for-azure-load-balancer"></a>Базовый план безопасности Azure для Azure Load Balancer
 
@@ -98,7 +98,7 @@ Load Balancer (цен. категория "Стандартный") по умо�
 Используйте адаптивную функцию усиления защиты сети в центре безопасности, чтобы рекомендовать конфигурации групп безопасности сети, ограничивающие порты и исходные IP-адреса на основе фактического трафика и аналитики угроз.
  
 
-- [Управление защитой от атак DDoS Azure уровня "Стандартный" с помощью портала Azure](https://docs.microsoft.com/azure/virtual-network/manage-ddos`protection)
+- [Управление защитой от атак DDoS Azure уровня "Стандартный" с помощью портала Azure](https://docs.microsoft.com/azure/virtual-network/manage-ddos-protection)
 
 - [Фильтрация на основе аналитики угроз в Брандмауэре Azure](https://docs.microsoft.com/azure/firewall/threat-intel)
 

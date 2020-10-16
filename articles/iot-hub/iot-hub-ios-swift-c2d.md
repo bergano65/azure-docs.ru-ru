@@ -9,10 +9,10 @@ ms.date: 04/19/2018
 ms.author: kgremban
 ms.custom: mqtt
 ms.openlocfilehash: d8552391e8e8c389a44174595305b8f28224a833
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "81732533"
 ---
 # <a name="send-cloud-to-device-messages-with-iot-hub-ios"></a>Отправка сообщений из облака на устройство с помощью Центра Интернета вещей (iOS)
@@ -100,7 +100,7 @@ pod install
 
 5. Сохраните изменения. 
 
-6. Запустите проект в эмуляторе устройства с помощью кнопки " **Сборка" и "выполнить** " или команды со списком ключей **+ r**.
+6. Выполните проект в эмуляторе устройства, нажав кнопку **Сборка и запуск** или клавиши **COMMAND+R**.
 
    ![Запуск проекта](media/iot-hub-ios-swift-c2d/run-sample.png)
 
@@ -152,7 +152,7 @@ pod install
 
    ![Изменение эмулируемого устройства](media/iot-hub-ios-swift-c2d/change-device.png)
 
-7. Выполните проект в эмуляторе устройства, нажав кнопку **Сборка и запуск** или клавиши **COMMAND+R**.
+7. Запустите проект в эмуляторе устройства с помощью кнопки " **Сборка" и "выполнить** " или команды со списком ключей **+ r**.
 
    ![Запуск проекта](media/iot-hub-ios-swift-c2d/run-app.png)
 

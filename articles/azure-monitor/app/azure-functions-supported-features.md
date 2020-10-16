@@ -7,10 +7,10 @@ ms.author: tilee
 ms.date: 4/23/2019
 ms.reviewer: mbullwin
 ms.openlocfilehash: 333bba2b1d3cd83457196e38b827daa78199f235
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87033519"
 ---
 # <a name="application-insights-for-azure-functions-supported-features"></a>Application Insights для функций, поддерживаемых в службе "Функции Azure"
@@ -42,7 +42,7 @@ ms.locfileid: "87033519"
 | &bull; Выборка                     | Да             | Да               | 
 | &bull; Пакет пульса                   |                 | Да               | 
 | | | | 
-| **Correlation** (корреляция).                       |                   |                   |               
+| **Correlation**                       |                   |                   |               
 | &bull; Служебная шина                     |                   | Да               | 
 | &bull; EventHub                       |                   | Да               | 
 | | | | 

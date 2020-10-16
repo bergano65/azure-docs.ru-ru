@@ -12,10 +12,10 @@ ms.date: 06/01/2020
 ms.author: kenwith
 ms.reviewer: arvindh, luleon, phsignor
 ms.openlocfilehash: cff2af745e9b79f573aba02e0a9baefe4a5e45a3
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91819266"
 ---
 # <a name="configure-how-end-users-consent-to-applications"></a>Настройка согласия конечных пользователей для приложений
@@ -177,7 +177,7 @@ Set-AzureADMSAuthorizationPolicy `
 Чтобы получить дополнительные сведения, обратитесь к разделу
 
 * [Настройка параметров согласия пользователя](configure-user-consent.md)
-* [Управление политиками согласия приложений](manage-app-consent-policies.md)
+* [Управление политиками согласия для приложений](manage-app-consent-policies.md)
 * [Настройка рабочего процесса согласия администратора](configure-admin-consent-workflow.md)
 * [Узнайте, как управлять согласием для приложений и оценивать запросы на согласие](manage-consent-requests.md)
 * [Предоставление приложению согласия администратора на уровне арендатора](grant-admin-consent.md)

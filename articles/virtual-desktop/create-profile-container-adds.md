@@ -7,17 +7,17 @@ ms.date: 04/10/2020
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: ea834ed874f3011d95f8b924df860576f72bc4ee
-ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88825619"
 ---
 # <a name="create-a-profile-container-with-azure-files-and-azure-ad-ds"></a>Создание контейнера профиля с помощью службы файлов Azure и Azure AD DS
 
 В этой статье показано, как создать контейнер профиля Фслогикс с помощью службы файлов Azure и Azure Active Directory доменных служб (AD DS).
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 В этой статье предполагается, что вы уже настроили экземпляр AD DS Azure. Если у вас еще нет, выполните инструкции в разделе [Создание базового управляемого домена](../active-directory-domain-services/tutorial-create-instance.md) , а затем вернитесь сюда.
 
@@ -96,7 +96,7 @@ ms.locfileid: "88825619"
 
 6. Войдя на виртуальную машину, запустите командную строку от имени администратора.
 
-7. Выполните следующую команду.
+7. Выполните следующую команду:
 
      ```cmd
      net use <desired-drive-letter>: \\<storage-account-name>.file.core.windows.net\<share-name> <storage-account-key> /user:Azure\<storage-account-name>
@@ -146,7 +146,7 @@ ms.locfileid: "88825619"
 
 3. После запуска программы установки установите флажок **я принимаю условия лицензии.** Если применимо, укажите новый ключ.
 
-4. Нажмите кнопку **Установить**.
+4. Выберите пункт **Установить**.
 
 5. Откройте **диск C**, а затем последовательно выберите **Program Files**  >  **фслогикс**  >  **Apps** (программы), чтобы убедиться, что агент фслогикс установлен правильно.
 

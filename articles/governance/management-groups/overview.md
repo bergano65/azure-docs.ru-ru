@@ -4,12 +4,12 @@ description: Сведения о группах управления и спос
 ms.date: 09/22/2020
 ms.topic: overview
 ms.custom: contperfq1
-ms.openlocfilehash: e3bc3ee34227fd23ea9f56070f8ea7776a10a134
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.openlocfilehash: be3369369f28930fd1ecad295a4dad4d14e75cd3
+ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91533813"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91951882"
 ---
 # <a name="what-are-azure-management-groups"></a>Что такое группы управления Azure?
 
@@ -202,6 +202,6 @@ ms.locfileid: "91533813"
 
 Дополнительные сведения о группах управления:
 
-- [Создание групп управления для организации ресурсов Azure](./create.md)
+- [Создание групп управления для организации ресурсов Azure](./create-management-group-portal.md)
 - [Изменение, удаление групп управления и управление ими](./manage.md)
 - См. статью [Как защитить иерархию ресурсов](./how-to/protect-resource-hierarchy.md)

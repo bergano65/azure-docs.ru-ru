@@ -10,13 +10,13 @@ ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
 ms.openlocfilehash: 0f3f9e7f4566800bdea6871cae1c5bafb3b37b95
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90939188"
 ---
-# <a name="supported-versions-of-postgres-with-azure-arc-enabled-postgresql-hyperscale"></a>Поддерживаемые версии Postgres с поддержкой дуги PostgreSQL в Azure
+# <a name="supported-versions-of-postgres-with-azure-arc-enabled-postgresql-hyperscale"></a>Поддерживаемые версии Postgres с Гипермасштабированием PostgreSQL с поддержкой Azure Arc
 
 В этой статье объясняется, какие версии postgres доступны в службе "Дуга Azure" с поддержкой PostgreSQL Scale.
 Список поддерживаемых версий со временем развивается. Сегодня поддерживаются следующие основные версии:

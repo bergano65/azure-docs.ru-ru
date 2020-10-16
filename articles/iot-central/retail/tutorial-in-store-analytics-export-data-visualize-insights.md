@@ -11,12 +11,12 @@ ms.custom:
 ms.author: dobett
 author: dominicbetts
 ms.date: 11/12/2019
-ms.openlocfilehash: 6062e8a74af4bb0a19d02ccf9a4c50da0cc4a7c5
-ms.sourcegitcommit: 25490467e43cbc3139a0df60125687e2b1c73c09
+ms.openlocfilehash: f00448f19cc0a2118477a9527005548fea25537e
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80999574"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91651451"
 ---
 # <a name="tutorial-export-data-from-azure-iot-central-and-visualize-insights-in-power-bi"></a>Руководство по Экспорт данных из Azure IoT Central и визуализация аналитических сведений в Power BI
 
@@ -409,7 +409,7 @@ ms.locfileid: "80999574"
     * Выберите поле **Метка времени**, а затем выберите **x-opt-enqueuedtime** в списке **Динамическое содержимое**.
     * Выберите поле **Dwell Time 1** (Время ожидания 1), а затем выберите **Подробнее** рядом с элементом **Parse Telemetry** (Анализ телеметрии). Затем выберите **DwellTime1**.
     * Выберите поле **Dwell Time 2** (Время ожидания 2), а затем выберите **Подробнее** рядом с элементом **Parse Telemetry** (Анализ телеметрии). Затем выберите **DwellTime2**.
-    * Выберите **Сохранить**, чтобы сохранить изменения. Действие **Dwell Time interface** (Интерфейс времени ожидания) выглядит, как на следующем снимке экрана. ![Действие присутствия](./media/tutorial-in-store-analytics-visualize-insights/occupancy-action-1.png)
+    * Выберите **Сохранить**, чтобы сохранить изменения. Действие **Dwell Time interface** (Интерфейс времени ожидания) выглядит, как на следующем снимке экрана. ![Снимок экрана: действие "Интерфейс времени ожидания".](./media/tutorial-in-store-analytics-visualize-insights/occupancy-action-1.png)
 1. Выберите действие **People Count interface** (Интерфейс количества людей) и **Добавить действие**.
 1. В поле **Поиск соединителей и действий** введите **Power BI**, а затем нажмите клавишу **ВВОД**.
 1. Выберите действие **Добавить строки в набор данных (предварительная версия)** .
@@ -484,7 +484,7 @@ ms.locfileid: "80999574"
 
 Измените размеры и расположение плиток на панели мониторинга, как на следующем снимке экрана.
 
-![Информационная панель Power BI](./media/tutorial-in-store-analytics-visualize-insights/pbi-dashboard.png)
+![Снимок экрана: панель мониторинга Power BI с плитками, размеры и расположения которых изменены.](./media/tutorial-in-store-analytics-visualize-insights/pbi-dashboard.png)
 
 Вы можете добавить некоторые дополнительные графические ресурсы для дальнейшей настройки панели мониторинга:
 

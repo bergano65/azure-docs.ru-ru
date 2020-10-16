@@ -12,10 +12,10 @@ ms.author: mimart
 ms.subservice: B2C
 ms.custom: fasttrack-edit
 ms.openlocfilehash: 416e2c767b5afd40fea38e6f75fcd3f01440b49a
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89255361"
 ---
 # <a name="billing-model-for-azure-active-directory-b2c"></a>Модель выставления счетов для Azure Active Directory B2C
@@ -186,6 +186,6 @@ Azure AD B2C клиенты могут быть перемещены в друг
 1. Повторно установите ссылку для выставления счетов в конечной подписке, следуя приведенной выше процедуре [Create a Link](#create-the-link) .
 1. Теперь ресурс Azure AD B2C перемещен в целевую подписку Azure (связанную с целевой Azure Active Directory) и будет взиматься через эту подписку с этого момента.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Последние сведения о ценах см. на странице [цен на Azure Active Directory B2C](https://azure.microsoft.com/pricing/details/active-directory-b2c/).

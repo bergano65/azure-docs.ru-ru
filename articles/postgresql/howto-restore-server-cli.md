@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 10/25/2019
 ms.custom: devx-track-azurecli
 ms.openlocfilehash: c7e8f0fc3a90a0811d38840004f7ae12a9a225ce
-ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91708515"
 ---
 # <a name="how-to-back-up-and-restore-a-server-in-azure-database-for-postgresql---single-server-using-the-azure-cli"></a>Как создать резервную копию и восстановить сервер в базе данных Azure для PostgreSQL — один сервер с помощью Azure CLI
@@ -123,7 +123,7 @@ az postgres server georestore --resource-group newresourcegroup --name mydemoser
 
 На новом сервере, созданном во время восстановления, нет правил брандмауэра или конечных точек службы виртуальной сети, которые настроены на сервере-источнике. Для этого нового сервера правила нужно настроить отдельно.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Дополнительные сведения о [резервных копиях](concepts-backup.md) службы
 - Дополнительные сведения о [репликах](concepts-read-replicas.md)
 - Дополнительные сведения о возможностях обеспечения [непрерывности бизнес-процессов](concepts-business-continuity.md)

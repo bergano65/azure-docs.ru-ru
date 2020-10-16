@@ -10,10 +10,10 @@ ms.author: keli19
 ms.custom: previous-ms.author=yahajiza, previous-author=YasinMSFT
 ms.date: 01/06/2017
 ms.openlocfilehash: c9cfe05b6547cbdc61a1c8cc6223f08900cf09d9
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91345053"
 ---
 # <a name="deploy-an-azure-machine-learning-studio-classic-web-service"></a>Развертывание веб-службы Машинное обучение Azure Studio (классическая модель)
@@ -27,7 +27,7 @@ ms.locfileid: "91345053"
 
 Машинное обучение Azure Studio (классическая модель) имеет два типа веб-служб:
 
-* Служба "запрос — ответ" (RR): низкая задержка, Высокомасштабируемая служба, которая оценивает единственную запись данных.
+* Служба Request-Response (RR): низкая задержка, Высокомасштабируемая служба, которая оценивает единственную запись данных.
 * Служба пакетного выполнения (BES) — асинхронная служба, которая оценивает пакет записей данных.
 
 Входные данные для службы BES похожи на входные данные, используемые в службе RRS. Основная разница заключается в том, что служба BES считывает блок записей из различных источников, таких как хранилище BLOB-объектов Azure, Хранилище таблиц в Azure, база данных SQL Azure, HDInsight (запросы Hive) и HTTP.
@@ -284,7 +284,7 @@ ms.locfileid: "91345053"
 
 Один из вариантов обновления веб-службы — переобучить модель программно. Дополнительные сведения см. в статье [программное переобучение моделей машинное обучение Studio (классическая модель)](/azure/machine-learning/studio/retrain-machine-learning-model).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные технические сведения о том, как работает развертывание, см. в статье [как машинное обучение Studio (классическая модель) подвигается от эксперимента к рабочей веб-службе](model-progression-experiment-to-web-service.md).
 

@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 07/17/2020
-ms.author: iainfou
-author: iainfoulds
+ms.author: joflore
+author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a6013ed47196e2300f56f0066c634da2a64fdee8
-ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
+ms.openlocfilehash: f1cd40b8df0251aee7692df24e9bc3f7186c155d
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90526873"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91966514"
 ---
 # <a name="enable-azure-active-directory-self-service-password-reset-at-the-windows-sign-in-screen"></a>Включение Azure Active Directory самостоятельного сброса пароля на экране входа Windows
 
@@ -137,7 +137,7 @@ ms.locfileid: "90526873"
 > [!WARNING]
 > Протокол TLS 1.2 должен быть включен, а не просто настроен на автоматический обмен записями.
 
-### <a name="install"></a>Установить
+### <a name="install"></a>Установка
 
 Для Windows 7, 8 и 8,1 на компьютере должен быть установлен небольшой компонент, чтобы включить SSPR на экране входа. Чтобы установить этот компонент SSPR, выполните следующие действия.
 
@@ -183,6 +183,6 @@ HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Authentication\Credential Provide
 
 Дополнительные сведения для пользователей, использующих эту функцию, можно найти в статьях [Сброс рабочего или учебного пароля](../user-help/active-directory-passwords-update-your-own-password.md) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы упростить регистрацию пользователей, можно [предварительно заполнить контактную информацию для проверки подлинности пользователя для SSPR](howto-sspr-authenticationdata.md).

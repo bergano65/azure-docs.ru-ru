@@ -17,10 +17,10 @@ ms.author: kenwith
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 602ca070bcaefd20585681e409ab85e9d455160a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84764695"
 ---
 # <a name="problem-installing-the-application-proxy-agent-connector"></a>Проблема при установке соединителя агента прокси приложения
@@ -81,7 +81,7 @@ ms.locfileid: "84764695"
 
 Ниже приведены возможные значения **исинусерсторе** и их смысл:
 
-- **false** — сертификат клиента был создан во время установки или регистрации, инициированной командой Register-апппроксиконнектор. Он хранится в личном контейнере в хранилище сертификатов на локальном компьютере. 
+- **false** — сертификат клиента был создан во время установки или регистрации, инициированной Register-AppProxyConnector командой. Он хранится в личном контейнере в хранилище сертификатов на локальном компьютере. 
 
 Выполните следующие действия, чтобы проверить сертификат:
 
@@ -103,7 +103,7 @@ ms.locfileid: "84764695"
 
 Если соединитель несколько месяцев не подключается к службе, возможно, его сертификаты устарели. Сбой обновления сертификата приводит к просроченному сертификату. Это позволит службе соединителя перестать работать. Событие 1000 регистрируется в журнале администратора соединителя:
 
-"Сбой повторной регистрации соединителя: срок действия сертификата доверия соединителя истек. Выполните командлет PowerShell Register-Апппроксиконнектор на компьютере, на котором запущен соединитель, чтобы повторно зарегистрировать соединитель. "
+"Сбой повторной регистрации соединителя: срок действия сертификата доверия соединителя истек. Выполните командлет PowerShell Register-AppProxyConnector на компьютере, на котором запущен соединитель, чтобы повторно зарегистрировать соединитель. "
 
 В этом случае удалите и переустановите соединитель для активации регистрации или выполните следующие команды PowerShell:
 
@@ -112,7 +112,7 @@ Import-module AppProxyPSModule
 Register-AppProxyConnector
 ```
 
-Дополнительные сведения о команде Register-Апппроксиконнектор см. в статье [Создание сценария автоматической установки для соединителя Azure AD application proxy](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-register-connector-powershell) .
+Дополнительные сведения о команде Register-AppProxyConnector см. в статье [Создание сценария автоматической установки для соединителя AD application proxy Azure](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-register-connector-powershell) .
 
 ## <a name="verify-admin-is-used-to-install-the-connector"></a>Проверка прав администратора у пользователя, устанавливающего соединитель
 

@@ -12,10 +12,10 @@ manager: celestedg
 ms.workload: identity
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d281b0ecd38ebbb76e093fd4f85213da4fc7d713
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91265801"
 ---
 # <a name="billing-model-for-azure-ad-external-identities"></a>Модель выставления счетов для внешних удостоверений Azure AD
@@ -70,6 +70,6 @@ ms.locfileid: "91265801"
 
 После выполнения этих действий плата за использование подписки Azure будет взиматься на основе данных Azure Direct или Соглашение Enterprise, если это применимо.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Последние сведения о ценах см. на странице [цен на Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory/).

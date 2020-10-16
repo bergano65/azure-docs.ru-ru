@@ -5,14 +5,14 @@ services: container-service
 ms.topic: article
 ms.date: 09/22/2020
 author: jluk
-ms.openlocfilehash: fd4f79e0cae5028e4bbaa8a4f5115d5a767dcf54
-ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
+ms.openlocfilehash: a1fafdf1db29917982bbf136de45237459712bcd
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91368861"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92073467"
 ---
-# <a name="secure-pods-with-azure-policy"></a>Защита модулей Pod с помощью политики Azure
+# <a name="secure-pods-with-azure-policy"></a>Защита групп pod с помощью Политики Azure
 
 Чтобы повысить уровень безопасности кластера AKS, вы можете контролировать предоставляемые модули Pod и, если что-либо работает с политикой компании. Этот доступ определяется с помощью встроенных политик, предоставляемых [надстройкой политики Azure для AKS][kubernetes-policy-reference]. Обеспечивая дополнительный контроль над аспектами безопасности спецификации Pod, например привилегированными привилегиями, обеспечивает более строгое соответствие безопасности и видимость того, что развертывается в кластере. Если модуль Pod не соответствует условиям, указанным в политике, политика Azure может запретить запуск или пометить нарушение. В этой статье показано, как использовать политику Azure для ограничения развертывания модулей Pod в AKS.
 
@@ -336,7 +336,7 @@ az aks disable-addons --addons azure-policy --name MyAKSCluster --resource-group
 [policy-recommendations]: ../governance/policy/concepts/policy-for-kubernetes.md
 [policy-limitations]: ../governance/policy/concepts/policy-for-kubernetes.md?#limitations
 [kubernetes-policy-reference]: ../governance/policy/concepts/policy-for-kubernetes.md
-[policy-samples]: policy-samples.md#microsoftcontainerservice
+[policy-samples]: ./policy-reference.md#microsoftcontainerservice
 [aks-quickstart-cli]: kubernetes-walkthrough.md
 [aks-quickstart-portal]: kubernetes-walkthrough-portal.md
 [install-azure-cli]: /cli/azure/install-azure-cli

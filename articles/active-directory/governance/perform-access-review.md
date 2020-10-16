@@ -16,10 +16,10 @@ ms.author: barclayn
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7e03ba5e7a4a24ee3114946230f78a64ea3d42cf
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91265687"
 ---
 # <a name="review-access-to-groups-and-applications-in-azure-ad-access-reviews"></a>Просмотр доступа к группам и приложениям в проверках доступа Azure AD
@@ -126,7 +126,7 @@ Azure Active Directory (Azure AD) упрощает управление дост
 
 3. Щелкните " **попробовать!** " в баннере в верхней части страницы. Это позволит перейти к новой возможности моего доступа.
   
-### <a name="email"></a>Адрес электронной почты
+### <a name="email"></a>Email
 
   >[!IMPORTANT]
 > При получении сообщения электронной почты могут воздержаться задержки, а в некоторых случаях это может занять до 24 часов. Добавьте azure-noreply@microsoft.com в список надежных получателей, чтобы убедиться, что получены все сообщения электронной почты.
@@ -203,6 +203,6 @@ Azure Active Directory (Azure AD) упрощает управление дост
 >[!NOTE]
 >Если вы принимаете рекомендации, предыдущие решения не изменятся.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Выполнение проверки доступа для групп или приложений](complete-access-review.md)

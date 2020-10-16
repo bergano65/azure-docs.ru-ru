@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: how-to
 ms.date: 9/21/2020
 ms.openlocfilehash: 132319575147c2ff1075881b1f1faec8bc5029f4
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90940451"
 ---
 # <a name="create-and-manage-firewall-rules-for-azure-database-for-mysql---flexible-server-using-the-azure-portal"></a>Создание и Администрирование правил брандмауэра для базы данных Azure для MySQL — гибкого сервера с помощью портал Azure
@@ -48,21 +48,21 @@ ms.locfileid: "90940451"
 
 3. Щелкните **Добавить IP-адрес текущего клиента** в правилах брандмауэра. Автоматически будет создано правило брандмауэра с общедоступным IP-адресом компьютера, определенным системой Azure.
 
-   <!--:::image type="content" source="./media/howto-manage-firewall-portal/2-add-my-ip.png" alt-text="Azure portal - click Add My IP":::-->
+   <!--:::image type="content" source="./media/howto-manage-firewall-portal/2-add-my-ip.png" alt-text="Azure portal - click Connection Security":::-->
 
 4. Проверьте IP-адрес перед сохранением конфигурации. В некоторых случаях IP-адрес, определенный порталом Azure, может отличаться от IP-адреса, используемого для доступа к Интернету и серверам Azure. Поэтому может потребоваться изменить начальный IP-адрес и конечный IP-адрес, чтобы функция правила была ожидаемой.
 
    Для проверки IP-адреса можно использовать поисковую подсистему или другое средство в Интернете. Например, выполните поиск текста "какой у меня IP-адрес".
 
-   <!--:::image type="content" source="./media/howto-manage-firewall-portal/3-what-is-my-ip.png" alt-text="Bing search for What is my IP":::-->
+   <!--:::image type="content" source="./media/howto-manage-firewall-portal/3-what-is-my-ip.png" alt-text="Azure portal - click Connection Security":::-->
 
 5. Добавьте дополнительные адресные пространства. В правилах брандмауэра для гибкого сервера базы данных Azure для MySQL можно указать один IP-адрес или диапазон адресов. Если вы хотите ограничить правило одним IP-адресом, введите тот же адрес в поле Начальный IP-адрес и конечный IP-адрес. Открытие брандмауэра позволяет администраторам, пользователям и приложениям получать доступ к любой базе данных на сервере MySQL, к которой у них есть действительные учетные данные.
 
-   <!--:::image type="content" source="./media/howto-manage-firewall-portal/4-specify-addresses.png" alt-text="Azure portal - firewall rules":::-->
+   <!--:::image type="content" source="./media/howto-manage-firewall-portal/4-specify-addresses.png" alt-text="Azure portal - click Connection Security":::-->
 
 6. Нажмите кнопку **сохранить** на панели инструментов, чтобы сохранить это правило брандмауэра. Дождитесь подтверждения успешного обновления правил брандмауэра.
 
-   <!--:::image type="content" source="./media/howto-manage-firewall-portal/5-save-firewall-rule.png" alt-text="Azure portal - click Save":::-->
+   <!--:::image type="content" source="./media/howto-manage-firewall-portal/5-save-firewall-rule.png" alt-text="Azure portal - click Connection Security":::-->
 
 ## <a name="connect-from-azure"></a>Подключение из Azure
 

@@ -8,10 +8,10 @@ ms.date: 07/29/2020
 ms.author: mjbrown
 ms.custom: devx-track-azurecli, devx-track-csharp
 ms.openlocfilehash: 2362326bccd90af997aa9237ec5f14e39ae62c85
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89020003"
 ---
 # <a name="create-an-azure-cosmos-container"></a>Создание контейнера Azure Cosmos
@@ -53,7 +53,7 @@ ms.locfileid: "89020003"
    * Укажите подготавливаемую пропускную способность (например, 1000 ЕЗ/с).
    * Щелкните **ОК**.
 
-    :::image type="content" source="./media/how-to-create-container/partitioned-collection-create-mongodb.png" alt-text="Снимок экрана: Azure Cosmos DB API для MongoDB, диалоговое окно Добавление контейнера":::
+    :::image type="content" source="./media/how-to-create-container/partitioned-collection-create-mongodb.png" alt-text="Снимок экрана панели обозреватель данных с выделенным новым контейнером":::
 
 ### <a name="cassandra-api"></a><a id="portal-cassandra"></a>API Cassandra
 
@@ -69,7 +69,7 @@ ms.locfileid: "89020003"
    * Укажите подготавливаемую пропускную способность (например, 1000 ЕЗ/с).
    * Щелкните **ОК**.
 
-    :::image type="content" source="./media/how-to-create-container/partitioned-collection-create-cassandra.png" alt-text="Снимок экрана API Cassandra, диалоговое окно добавления таблицы":::
+    :::image type="content" source="./media/how-to-create-container/partitioned-collection-create-cassandra.png" alt-text="Снимок экрана панели обозреватель данных с выделенным новым контейнером":::
 
 > [!NOTE]
 > Для API Cassandra первичный ключ используется в качестве ключа секции.
@@ -89,7 +89,7 @@ ms.locfileid: "89020003"
    * Укажите подготавливаемую пропускную способность (например, 1000 ЕЗ/с).
    * Щелкните **ОК**.
 
-    :::image type="content" source="./media/how-to-create-container/partitioned-collection-create-gremlin.png" alt-text="Снимок экрана API Gremlin, диалоговое окно добавления графа":::
+    :::image type="content" source="./media/how-to-create-container/partitioned-collection-create-gremlin.png" alt-text="Снимок экрана панели обозреватель данных с выделенным новым контейнером":::
 
 ### <a name="table-api"></a><a id="portal-table"></a>API таблиц
 
@@ -103,7 +103,7 @@ ms.locfileid: "89020003"
    * Укажите подготавливаемую пропускную способность (например, 1000 ЕЗ/с).
    * Щелкните **ОК**.
 
-    :::image type="content" source="./media/how-to-create-container/partitioned-collection-create-table.png" alt-text="Снимок экрана API таблиц, диалоговое окно добавления таблицы":::
+    :::image type="content" source="./media/how-to-create-container/partitioned-collection-create-table.png" alt-text="Снимок экрана панели обозреватель данных с выделенным новым контейнером":::
 
 > [!Note]
 > Для API таблиц ключ секции указывается каждый раз при добавлении новой строки.

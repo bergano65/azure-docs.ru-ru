@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 04/07/2020
 ms.author: rochakm
 ms.openlocfilehash: ab3597ddba3e41e88c8b2b575ed5857aca01e610
-ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91397969"
 ---
 # <a name="troubleshoot-azure-to-azure-vm-replication-errors"></a>Устранение ошибок репликации виртуальных машин из Azure в Azure
@@ -281,14 +281,14 @@ Azure data disk <DiskName> <DiskURI> with logical unit number <LUN> <LUNValue> w
 1. Перейдите к разделу **реплицированные элементы**  >  _диски имен виртуальных машин_  >  **Disks**.
 1. Выберите незащищенный диск, а затем щелкните **включить репликацию**.
 
-   :::image type="content" source="./media/azure-to-azure-troubleshoot-errors/add-disk.png" alt-text="Включите репликацию на дисках виртуальных машин.":::
+   :::image type="content" source="./media/azure-to-azure-troubleshoot-errors/add-disk.png" alt-text="com — ошибка.":::
 
 #### <a name="to-dismiss-the-warning"></a>Чтобы закрыть предупреждение
 
 1. Перейдите в раздел " **реплицированные элементы**"  >  _имя виртуальной машины_.
 1. Выберите предупреждение в разделе **Обзор** и нажмите кнопку **ОК**.
 
-   :::image type="content" source="./media/azure-to-azure-troubleshoot-errors/dismiss-warning.png" alt-text="Отклонить предупреждение о новом диске.":::
+   :::image type="content" source="./media/azure-to-azure-troubleshoot-errors/dismiss-warning.png" alt-text="com — ошибка.":::
 
 ## <a name="vm-removed-from-vault-completed-with-information-error-code-150225"></a>Виртуальная машина, удаленная из хранилища, завершилась с информацией (код ошибки 150225)
 
@@ -309,7 +309,7 @@ Azure data disk <DiskName> <DiskURI> with logical unit number <LUN> <LUNValue> w
 
 1. Удалите блокировку виртуальной машины или группы ресурсов виртуальной машины. Например, на следующем рисунке блокировка ресурса на виртуальной машине `MoveDemo` должна быть удалена:
 
-   :::image type="content" source="./media/site-recovery-azure-to-azure-troubleshoot/vm-locks.png" alt-text="Снятие блокировки с виртуальной машины.":::
+   :::image type="content" source="./media/site-recovery-azure-to-azure-troubleshoot/vm-locks.png" alt-text="com — ошибка.":::
 
 1. Скачайте скрипт, чтобы [Удалить устаревшую конфигурацию Site Recovery](https://github.com/AsrOneSdk/published-scripts/blob/master/Cleanup-Stale-ASR-Config-Azure-VM.ps1).
 1. Запустите скрипт _Cleanup-stale-asr-config-Azure-VM.ps1_. Укажите **идентификатор подписки**, **группу ресурсов виртуальной машины**и **имя виртуальной машины** в качестве параметров.
@@ -334,7 +334,7 @@ Azure data disk <DiskName> <DiskURI> with logical unit number <LUN> <LUNValue> w
 
 1. Удалите блокировку виртуальной машины или группы ресурсов виртуальной машины. Например, на следующем рисунке блокировка ресурса на виртуальной машине `MoveDemo` должна быть удалена:
 
-   :::image type="content" source="./media/site-recovery-azure-to-azure-troubleshoot/vm-locks.png" alt-text="Снятие блокировки с виртуальной машины.":::
+   :::image type="content" source="./media/site-recovery-azure-to-azure-troubleshoot/vm-locks.png" alt-text="com — ошибка.":::
 
 1. Скачайте скрипт, чтобы [Удалить устаревшую конфигурацию Site Recovery](https://github.com/AsrOneSdk/published-scripts/blob/master/Cleanup-Stale-ASR-Config-Azure-VM.ps1).
 1. Запустите скрипт _Cleanup-stale-asr-config-Azure-VM.ps1_. Укажите **идентификатор подписки**, **группу ресурсов виртуальной машины**и **имя виртуальной машины** в качестве параметров.
@@ -367,7 +367,7 @@ Site Recovery в настоящее время требуется, чтобы г
 
 1. Удалите блокировку, если она есть, из виртуальной машины или группы ресурсов виртуальной машины. Например, на следующем рисунке блокировка ресурса на виртуальной машине `MoveDemo` должна быть удалена:
 
-   :::image type="content" source="./media/site-recovery-azure-to-azure-troubleshoot/vm-locks.png" alt-text="Снятие блокировки с виртуальной машины.":::
+   :::image type="content" source="./media/site-recovery-azure-to-azure-troubleshoot/vm-locks.png" alt-text="com — ошибка.":::
 
 1. Скачайте скрипт, чтобы [Удалить устаревшую конфигурацию Site Recovery](https://github.com/AsrOneSdk/published-scripts/blob/master/Cleanup-Stale-ASR-Config-Azure-VM.ps1).
 1. Запустите скрипт _Cleanup-stale-asr-config-Azure-VM.ps1_. Укажите **идентификатор подписки**, **группу ресурсов виртуальной машины**и **имя виртуальной машины** в качестве параметров.
@@ -404,17 +404,17 @@ Site Recovery в настоящее время требуется, чтобы г
 
 Если в конфигурации аварийного восстановления исходная виртуальная машина является частью виртуальной сети, а другая виртуальная машина из той же виртуальной сети уже сопоставлена с сетью в Целевой группе ресурсов, раскрывающийся список "Выбор сети" недоступен (отображается серым цветом) по умолчанию.
 
-:::image type="content" source="./media/site-recovery-azure-to-azure-troubleshoot/unabletoselectnw.png" alt-text="Список выбора сети недоступен.":::
+:::image type="content" source="./media/site-recovery-azure-to-azure-troubleshoot/unabletoselectnw.png" alt-text="com — ошибка.":::
 
 ### <a name="issue-2-you-previously-protected-the-vm-and-then-you-disabled-the-replication"></a>Вопрос 2. Вы ранее защитили виртуальную машину, а затем отключили репликацию
 
 Отключение репликации виртуальной машины не приводит к удалению сетевого сопоставления. Сопоставление должно быть удалено из хранилища служб восстановления, в котором была защищена виртуальная машина. Выберите **хранилище служб восстановления** и перейдите к разделу **Управление**  >  **инфраструктурой Site Recovery**  >  **для**  >  **сетевого сопоставления**виртуальных машин Azure.
 
-:::image type="content" source="./media/site-recovery-azure-to-azure-troubleshoot/delete_nw_mapping.png" alt-text="Удаление сетевого сопоставления.":::
+:::image type="content" source="./media/site-recovery-azure-to-azure-troubleshoot/delete_nw_mapping.png" alt-text="com — ошибка.":::
 
 Целевая сеть, настроенная во время настройки аварийного восстановления, может быть изменена после начальной установки и после защиты виртуальной машины. Чтобы **изменить сетевое сопоставление** , выберите имя сети:
 
-:::image type="content" source="./media/site-recovery-azure-to-azure-troubleshoot/modify_nw_mapping.png" alt-text="Измените Сетевое сопоставление.":::
+:::image type="content" source="./media/site-recovery-azure-to-azure-troubleshoot/modify_nw_mapping.png" alt-text="com — ошибка.":::
 
 
 ## <a name="com-or-vss-error-code-151025"></a>COM+ или VSS (код ошибки 151025)
@@ -437,7 +437,7 @@ Site Recovery extension failed to install.
 1. Откройте консоль службы в Windows.
 1. Убедитесь, что в качестве **типа запуска**для системного приложения COM+ и служба теневого копирования томов не задано значение **отключено** .
 
-   :::image type="content" source="./media/azure-to-azure-troubleshoot-errors/com-error.png" alt-text="Проверьте тип запуска COM и системного приложения и служба теневого копирования томов.":::
+   :::image type="content" source="./media/azure-to-azure-troubleshoot-errors/com-error.png" alt-text="com — ошибка.":::
 
 ## <a name="unsupported-managed-disk-size-error-code-150172"></a>Неподдерживаемый размер управляемого диска (код ошибки 150172)
 
@@ -573,6 +573,6 @@ Protection couldn't be enabled for the virtual machine as it has <DiskName> with
     `./install -d /usr/local/ASR -r MS -q -v Azure`
 6. Если установщик будет выполнен, повторите задание включить репликацию.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Репликация виртуальных машин Azure в другой регион Azure](azure-to-azure-how-to-enable-replication.md)

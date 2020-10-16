@@ -8,17 +8,17 @@ ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 11/26/2019
 ms.openlocfilehash: a40f92e88d2d8e5ca253446b9c67ad30df538a5b
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86043433"
 ---
 # <a name="process-real-time-iot-data-streams-with-azure-stream-analytics"></a>Обработка потоков данных IoT в режиме реального времени с помощью Azure Stream Analytics
 
 Из этой статьи вы узнаете, как создать логику обработки потоков для сбора данных с устройств "Интернет вещей" (IoT). Вы используете реальный вариант использования "Интернет вещей" (IoT), чтобы продемонстрировать, как быстро и появился создать решение.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Создайте бесплатную [подписку Azure](https://azure.microsoft.com/pricing/free-trial/).
 * Скачайте пример запроса и файлы данных с сайта [GitHub](https://aka.ms/azure-stream-analytics-get-started-iot).

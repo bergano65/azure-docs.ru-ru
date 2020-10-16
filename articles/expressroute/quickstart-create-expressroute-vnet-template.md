@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.custom: subject-armsq
 ms.date: 08/31/2020
 ms.author: duau
-ms.openlocfilehash: f1dbb9623ddc87f9940fd97b05abbee113fd71c4
-ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
+ms.openlocfilehash: f45fc32e99fff7403c40048b8c7ad117b0395cc9
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90016560"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91759243"
 ---
 # <a name="quickstart-create-an-expressroute-circuit-with-private-peering-using-an-arm-template"></a>Краткое руководство. Создание канала ExpressRoute с частным пирингом с помощью шаблона ARM
 
@@ -92,11 +92,11 @@ ms.locfileid: "90016560"
 
 1. Группа ресурсов должна содержать следующие ресурсы:
 
-     :::image type="content" source="./media/quickstart-create-expressroute-vnet/expressroute-resource-group.png" alt-text="Группа ресурсов развертывания ExpressRoute":::
+     :::image type="content" source="./media/quickstart-create-expressroute-vnet/expressroute-resource-group.png" alt-text="Результаты развертывания шаблона Resource Manager ExpressRoute в PowerShell":::
 
 1. Выберите канал ExpressRoute **er-ck01**, чтобы убедиться, что канал имеет состояние **Включен**, поставщик — состояние **Не подготовлено**, а частный пиринг — состояние **Подготовлен**.
 
-    :::image type="content" source="./media/quickstart-create-expressroute-vnet/expressroute-circuit.png" alt-text="Канал развертывания ExpressRoute":::
+    :::image type="content" source="./media/quickstart-create-expressroute-vnet/expressroute-circuit.png" alt-text="Результаты развертывания шаблона Resource Manager ExpressRoute в PowerShell":::
 
 > [!NOTE]
 > Прежде чем связать виртуальную сеть с каналом, необходимо будет вызвать поставщик для завершения процесса подготовки.
@@ -120,11 +120,7 @@ Remove-AzResourceGroup -Name <your resource group name>
 * Общедоступный IP-адрес
 * группы безопасности сети.
 
-Чтобы узнать больше о связывании виртуальной сети с каналом, см. учебники по ExpressRoute.
+Чтобы узнать, как связать виртуальную сеть с каналом, см. руководства по ExpressRoute.
 
 > [!div class="nextstepaction"]
 > [Учебники по ExpressRoute](expressroute-howto-linkvnet-portal-resource-manager.md)
-
-* Дополнительную информацию о рабочих процессах ExpressRoute см. в статье [Процедуры ExpressRoute для подготовки каналов и состояний каналов](expressroute-workflows.md).
-* Дополнительную информацию о пиринге канала см. в статье [Каналы ExpressRoute и домены маршрутизации](expressroute-circuit-peerings.md).
-* Подробнее о работе с виртуальными сетями см. в статье [Обзор виртуальных сетей](../virtual-network/virtual-networks-overview.md).

@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 04/14/2019
 ms.author: sharrai
 ms.openlocfilehash: 9e8a1246a2e48c3c569b82845c713ba25ee2467a
-ms.sourcegitcommit: ac5cbef0706d9910a76e4c0841fdac3ef8ed2e82
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89426128"
 ---
 # <a name="troubleshoot-hyper-v-to-azure-replication-and-failover"></a>Устранение неполадок с отработкой отказа и репликацией из Hyper-V в Azure
@@ -130,7 +130,7 @@ ms.locfileid: "89426128"
 
 2. Чтобы создавать моментальные снимки VSS для виртуальной машины, установите на виртуальной машине службы Integration Services Hyper-V и включите службу интеграции резервного копирования (VSS).
     - Убедитесь, что службы или управляющие программы Integration Services VSS выполняются на гостевой виртуальной машине и находятся в состоянии **ОК**.
-    - Это можно проверить в сеансе PowerShell с повышенными привилегиями на узле Hyper-V с помощью команды **Get-VMIntegrationService-VMName \<VMName> -Name VSS** . Эти сведения можно также получить, войдя на гостевую виртуальную машину. [Подробнее](/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services).
+    - Это можно проверить в сеансе PowerShell с повышенными привилегиями на узле Hyper-V с помощью команды **Get-VMIntegrationService-VMName \<VMName> -Name VSS** . Эти сведения можно также получить, войдя на гостевую виртуальную машину. [Подробнее.](/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services)
     - Убедитесь, что службы интеграции резервного копирования или VSS на виртуальной машине запущены и находятся в работоспособном состоянии. В противном случае перезапустите эти службы и службу запросов на теневое копирование томов Hyper-V на сервере узла Hyper-V.
 
 ### <a name="common-errors"></a>Распространенные ошибки

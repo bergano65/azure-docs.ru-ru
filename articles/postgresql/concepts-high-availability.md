@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 6/15/2020
 ms.openlocfilehash: 075f5fde272d4ee2e932e5f6c1f0e34324c38837
-ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91707937"
 ---
 # <a name="high-availability-in-azure-database-for-postgresql--single-server"></a>Высокий уровень доступности в базе данных Azure для PostgreSQL — один сервер
@@ -73,11 +73,11 @@ ms.locfileid: "91707937"
 
 
 
-## <a name="summary"></a>Сводка
+## <a name="summary"></a>Итоги
 
 База данных Azure для PostgreSQL предоставляет возможность быстрого перезапуска серверов баз данных, избыточного хранилища и эффективной маршрутизации из шлюза. Для дополнительной защиты данных можно настроить георепликацию резервных копий, а также развернуть одну или несколько реплик чтения в других регионах. Благодаря встроенным возможностям высокого уровня доступности база данных Azure для PostgreSQL защищает базы данных от большинства распространенных простоев, а также предлагает ведущие в отрасли, [99,99% времени соглашения об уровне обслуживания](https://azure.microsoft.com/support/legal/sla/postgresql). Все эти возможности доступности и надежности позволяют платформе Azure быть идеальной платформой для выполнения критически важных приложений.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Дополнительные сведения о [регионах Azure](../availability-zones/az-overview.md)
 - Ознакомьтесь с дополнительными сведениями об [обработке временных ошибок подключения](concepts-connectivity.md).
 - Чтобы узнать, как реплицировать данные с репликами для чтения, см. [здесь](howto-read-replicas-portal.md).

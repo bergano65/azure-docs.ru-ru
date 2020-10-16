@@ -4,10 +4,10 @@ description: Аналитические запросы можно просмат
 ms.topic: conceptual
 ms.date: 08/10/2018
 ms.openlocfilehash: 804da7d3aaa2fd1b7973a686bc9ca5cb5ee973a2
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90979171"
 ---
 # <a name="feed-power-bi-from-application-insights"></a>Использование данных Application Insights в Power BI
@@ -77,7 +77,7 @@ ms.locfileid: "90979171"
 
    ![Снимок экрана Power BI Desktop, на котором выделен измененный заголовок](./media/export-power-bi/changetitle.png)
 
-## <a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a>Устранение неполадок
 
 Могут возникнуть ошибки, относящиеся к учетным данным или размеру набора данных. Ниже приведены сведения о том, что нужно делать в случае возникновения таких ошибок.
 
@@ -144,7 +144,7 @@ ms.locfileid: "90979171"
 
 После первоначального импорта панель мониторинга и отчеты продолжают обновляться ежедневно. При этом можно управлять расписанием обновления для набора данных.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Дополнительные сведения о Power BI](https://www.powerbi.com/learning/)
 * [Руководство по аналитике](../log-query/get-started-portal.md)
 

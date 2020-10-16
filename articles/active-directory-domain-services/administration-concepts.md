@@ -2,20 +2,20 @@
 title: Основные понятия управления для доменных служб Azure AD | Документация Майкрософт
 description: Узнайте, как администрировать управляемый домен доменных служб Azure Active Directory и поведение учетных записей и паролей пользователей.
 services: active-directory-ds
-author: iainfoulds
+author: MicrosoftGuyJFlo
 manager: daveba
 ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 06/05/2020
-ms.author: iainfou
-ms.openlocfilehash: 6266248b817485562c7ed2643b3dda5f32cecc53
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.author: joflore
+ms.openlocfilehash: 95c6a1f24335849fb2d2c4de56b4ed60e8e5f73f
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87489679"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91962825"
 ---
 # <a name="management-concepts-for-user-accounts-passwords-and-administration-in-azure-active-directory-domain-services"></a>Основные понятия управления учетными записями пользователей, паролями и администрированием в доменных службах Azure Active Directory
 
@@ -81,7 +81,7 @@ AD DS Azure включает политику паролей по умолчан
 | Номер SKU   | Максимальное число объектов | Частота резервного копирования | Максимальное число доверий исходящих лесов |
 |------------|----------------------|------------------|----|
 | Standard   | Неограниченно            | Каждые 7 дней     | 0  |
-| Корпорация | Неограниченно            | Каждые 3 дня     | 5  |
+| Enterprise | Неограниченно            | Каждые 3 дня     | 5  |
 | Премиум    | Неограниченно            | Ежедневно            | 10 |
 
 Перед этими номерами SKU Azure AD DS используется модель выставления счетов на основе числа объектов (учетных записей пользователей и компьютеров) в управляемом домене. Больше нет переменных цен на основе числа объектов в управляемом домене.

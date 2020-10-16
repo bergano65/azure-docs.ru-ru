@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
 ms.openlocfilehash: 1452f380cec711fb224f532ccb02d11c5bbad697
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86255189"
 ---
 # <a name="application-templates-in-azure-api-management"></a>Шаблоны приложений в службе управления API Azure
@@ -27,7 +27,7 @@ ms.locfileid: "86255189"
   
 -   [Список приложений](#ProductList)  
   
--   [Приложения](#Application)  
+-   [Приложение](#Application)  
   
 > [!NOTE]
 >  Примеры шаблонов по умолчанию включены в следующую документацию, но могут в любой момент измениться, так как ведется постоянная работа по их улучшению. Актуальные шаблоны по умолчанию можно просмотреть на портале разработчика, перейдя к требуемому отдельному шаблону. Дополнительные сведения о работе с шаблонами см. в статье [Настройка портала разработчика в службе управления API Azure с помощью шаблонов](./api-management-developer-portal-templates.md).  
@@ -36,7 +36,7 @@ ms.locfileid: "86255189"
 
 [!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
   
-##  <a name="application-list"></a><a name="ProductList"></a>Список приложений  
+##  <a name="application-list"></a><a name="ProductList"></a> Список приложений  
  Шаблон **списка приложений** позволяет настроить текст страницы со списком приложений на портале разработчика.  
   
  ![Шаблоны портала разработчика страницы списка приложений](./media/api-management-application-templates/APIM-Application-List-Page-Developer-Portal-Templates.png "Шаблоны портала разработчика для страницы списка приложений APIM")  
@@ -137,7 +137,7 @@ ms.locfileid: "86255189"
 }  
 ```  
   
-##  <a name="application"></a><a name="Application"></a>Приклад  
+##  <a name="application"></a><a name="Application"></a> Приклад  
  Шаблон **приложения** позволяет настроить текст страницы приложения на портале разработчика.  
   
  ![Шаблоны портала разработчика страницы приложения](./media/api-management-application-templates/APIM-Application-Page-Developer-Portal-Templates.png "Шаблоны портала разработчика страницы приложения APIM")  

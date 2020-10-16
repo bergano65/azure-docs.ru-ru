@@ -7,12 +7,12 @@ ms.service: azure-app-configuration
 ms.topic: conceptual
 ms.date: 3/12/2020
 ms.author: lcozzens
-ms.openlocfilehash: 3ec2a0e38f3bead5fbab8a119099bb5bbc3ded2e
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: a29c8c02093f47807ec71ffcc01e26514976ce79
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87042116"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92071716"
 ---
 # <a name="using-private-endpoints-for-azure-app-configuration"></a>Использование частных конечных точек для настройки приложения Azure
 
@@ -71,5 +71,5 @@ Azure полагается на разрешение DNS для маршрути
 
 Узнайте, как настроить DNS-сервер с помощью частных конечных точек:
 
-- [Разрешение имен ресурсов в виртуальных сетях Azure](/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances#name-resolution-that-uses-your-own-dns-server)
-- [Конфигурация DNS для частных конечных точек](/azure/private-link/private-endpoint-overview#dns-configuration)
+- [Разрешение имен ресурсов в виртуальных сетях Azure](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md#name-resolution-that-uses-your-own-dns-server)
+- [Конфигурация DNS для частных конечных точек](../private-link/private-endpoint-overview.md#dns-configuration)

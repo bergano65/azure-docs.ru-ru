@@ -16,10 +16,10 @@ ms.date: 03/19/2020
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.openlocfilehash: 2f835c270930734bf9963a7c7c3168b873eddaf6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84791917"
 ---
 # <a name="list-azure-deny-assignments-using-the-rest-api"></a>Список запрещенных назначений в Azure с помощью REST API
@@ -29,11 +29,11 @@ ms.locfileid: "84791917"
 > [!NOTE]
 > Вы не можете напрямую создавать собственные назначения Deny. Дополнительные сведения о создании назначений Deny см. в статье [запрещение назначений в Azure](deny-assignments.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы получить сведения о назначении Deny, необходимо следующее:
 
-- `Microsoft.Authorization/denyAssignments/read`разрешение, которое входит в большинство [встроенных ролей Azure](built-in-roles.md).
+- `Microsoft.Authorization/denyAssignments/read` разрешение, которое входит в большинство [встроенных ролей Azure](built-in-roles.md).
 
 ## <a name="list-a-single-deny-assignment"></a>Вывод списка определенного запрета назначения
 
@@ -46,7 +46,7 @@ ms.locfileid: "84791917"
 1. Внутри URI замените *{scope}* областью, для которой требуется создать список запретов назначений.
 
     > [!div class="mx-tableFixed"]
-    > | Область | Type |
+    > | Область | Тип |
     > | --- | --- |
     > | `subscriptions/{subscriptionId}` | Подписка |
     > | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | Группа ресурсов |
@@ -71,7 +71,7 @@ ms.locfileid: "84791917"
 1. Внутри URI замените *{scope}* областью, для которой требуется создать список запретов назначений.
 
     > [!div class="mx-tableFixed"]
-    > | Область | Type |
+    > | Область | Тип |
     > | --- | --- |
     > | `subscriptions/{subscriptionId}` | Подписка |
     > | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | Группа ресурсов |
@@ -80,7 +80,7 @@ ms.locfileid: "84791917"
 1. Замените *{filter}* условием, по которому требуется отфильтровать список запретов назначений.
 
     > [!div class="mx-tableFixed"]
-    > | Filter | Описание: |
+    > | Filter | Описание |
     > | --- | --- |
     > | (без фильтра) | Список всех запретов назначений в указанной области, выше и ниже. |
     > | `$filter=atScope()` | Список запрещает назначения только для указанной области и более поздних версий. Не включаются запреты назначений во внутренних областях. |
@@ -102,14 +102,14 @@ ms.locfileid: "84791917"
 1. Замените *{filter}* условием, по которому требуется отфильтровать список запретов назначений. Необходимо указать фильтр.
 
     > [!div class="mx-tableFixed"]
-    > | Filter | Описание: |
+    > | Filter | Описание |
     > | --- | --- |
     > | `$filter=atScope()` | Вывод списка запретов назначений только в корневой области. Не включаются запреты назначений во внутренних областях. |
     > | `$filter=denyAssignmentName+eq+'{deny-assignment-name}'` | Вывод списка всех запретов назначений с указанным названием. |
 
 1. Удалите повышенный уровень доступа.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Общие сведения о назначении Deny в Azure](deny-assignments.md)
 - [Повышение прав доступа для управления всеми подписками Azure и группами управления](elevate-access-global-admin.md)

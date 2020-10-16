@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/13/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 7726a0f1acb8f7fde2b491979d478badeca1b384
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.openlocfilehash: e79055c3dbc710be23a82eede98e1b55b17e10d5
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89400387"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91978026"
 ---
 # <a name="azure-security-baseline-for-windows-virtual-machines"></a>Базовый план безопасности Azure для Виртуальные машины Windows
 
@@ -32,7 +32,7 @@ ms.locfileid: "89400387"
 
 Кроме того, при наличии определенного варианта использования централизованного брандмауэра можно также использовать брандмауэр Azure для удовлетворения этих требований.
 
-* [Виртуальные сети и виртуальные машины в Azure](./network-overview.md)
+* [Виртуальные сети и виртуальные машины в Azure](../network-overview.md)
 
 * [Создание виртуальной сети](../../virtual-network/quick-create-portal.md)
 
@@ -80,7 +80,7 @@ ms.locfileid: "89400387"
 
 * [Развертывание брандмауэра Azure](../../firewall/tutorial-firewall-deploy-portal.md)
 
-* [Общие сведения об интегрированной аналитике угроз в Центре безопасности Azure](../../security-center/threat-protection.md)
+* [Общие сведения об интегрированной аналитике угроз в Центре безопасности Azure](../../security-center/azure-defender.md)
 
 * [Общие сведения о адаптивной защите сети в центре безопасности Azure](../../security-center/security-center-adaptive-network-hardening.md)
 
@@ -146,7 +146,7 @@ ms.locfileid: "89400387"
 
 * [Настройка Политики Azure и управление ею](../../governance/policy/tutorials/create-and-manage.md)
 
-* [Примеры политик Azure для работы в сети](/azure/governance/policy/samples/#network)
+* [Примеры политик Azure для работы в сети](../../governance/policy/samples/built-in-policies.md#network)
 
 * [Создание схемы Azure](../../governance/blueprints/create-blueprint-portal.md)
 
@@ -180,7 +180,7 @@ ms.locfileid: "89400387"
 
 * [Настройка Политики Azure и управление ею](../../governance/policy/tutorials/create-and-manage.md)
 
-* [Примеры политик Azure для работы в сети](/azure/governance/policy/samples/#network)
+* [Примеры политик Azure для работы в сети](../../governance/policy/samples/built-in-policies.md#network)
 
 **Мониторинг центра безопасности Azure**: недоступен
 
@@ -252,7 +252,7 @@ ms.locfileid: "89400387"
 
 **Руководство**. Убедитесь, что для всех учетных записей хранения log Analytics или рабочих областей, используемых для хранения журналов виртуальных машин, задан срок хранения журнала в соответствии с нормативными требованиями вашей организации.
 
-* [Мониторинг виртуальных машин в Azure](./monitor.md)
+* [Мониторинг виртуальных машин в Azure](../../azure-monitor/insights/monitor-vm-azure.md)
 
 * [Настройка срока хранения Log Analytics рабочей области](../../azure-monitor/platform/manage-cost-storage.md)
 
@@ -458,7 +458,7 @@ ms.locfileid: "89400387"
 
 * [Выполнение пользовательских запросов в Azure Monitor](../../azure-monitor/log-query/get-started-queries.md)
 
-* [Мониторинг виртуальных машин в Azure](./monitor.md)
+* [Мониторинг виртуальных машин в Azure](../../azure-monitor/insights/monitor-vm-azure.md)
 
 **Мониторинг центра безопасности Azure**: недоступен
 
@@ -508,7 +508,7 @@ ms.locfileid: "89400387"
 
 * [Создание дополнительных подписок Azure](../../cost-management-billing/manage/create-subscription.md)
 
-* [Создание групп управления](../../governance/management-groups/create.md)
+* [Создание групп управления](../../governance/management-groups/create-management-group-portal.md)
 
 * [Создание и использование тегов](../../azure-resource-manager/management/tag-resources.md)
 
@@ -610,7 +610,7 @@ ms.locfileid: "89400387"
 
 **Рекомендации**. Следуйте рекомендациям центра безопасности Azure по выполнению оценки уязвимостей на виртуальных машинах Azure. Используйте рекомендованное или стороннее решение для проведения оценки уязвимостей для виртуальных машин.
 
-* [Реализация рекомендаций по оценке уязвимостей в центре безопасности Azure](../../security-center/security-center-vulnerability-assessment-recommendations.md)
+* [Реализация рекомендаций по оценке уязвимостей в центре безопасности Azure](../../security-center/deploy-vulnerability-assessment-vm.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -692,7 +692,7 @@ ms.locfileid: "89400387"
 
 * [Создание дополнительных подписок Azure](../../cost-management-billing/manage/create-subscription.md)
 
-* [Создание групп управления](../../governance/management-groups/create.md)
+* [Создание групп управления](../../governance/management-groups/create-management-group-portal.md)
 
 * [Создание и использование тегов](../../azure-resource-manager/management/tag-resources.md)
 
@@ -775,7 +775,7 @@ ms.locfileid: "89400387"
 
 * [Настройка Политики Azure и управление ею](../../governance/policy/tutorials/create-and-manage.md)
 
-* [Как отказаться от определенного типа ресурса с помощью Политики Azure](/azure/governance/policy/samples/not-allowed-resource-types)
+* [Как отказаться от определенного типа ресурса с помощью Политики Azure](../../governance/policy/samples/index.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -817,13 +817,13 @@ ms.locfileid: "89400387"
 
 **Руководство**. приложения с высоким риском, развернутые в среде Azure, могут быть изолированы с помощью виртуальной сети, подсети, подписок, групп управления и т. д., а также с помощью брандмауэра Azure, брандмауэра веб-приложения (WAF) или группы безопасности сети (NSG).
 
-* [Виртуальные сети и виртуальные машины в Azure](./network-overview.md)
+* [Виртуальные сети и виртуальные машины в Azure](../network-overview.md)
 
 * [Общие сведения о Брандмауэре Azure](../../firewall/overview.md)
 
 * [Обзор брандмауэра веб-приложения](../../web-application-firewall/overview.md)
 
-* [Общие сведения о защите сети](../../virtual-network/security-overview.md)
+* [Общие сведения о защите сети](../../virtual-network/network-security-groups-overview.md)
 
 * [Обзор виртуальной сети Azure](../../virtual-network/virtual-networks-overview.md)
 
@@ -969,7 +969,7 @@ ms.locfileid: "89400387"
 
 **Рекомендации**. Используйте управляемое удостоверение службы в сочетании с Azure Key Vault, чтобы упростить и защитить управление секретами для облачных приложений.
 
-* [Интеграция с удостоверениями, управляемыми Azure](../../azure-app-configuration/howto-integrate-azure-managed-service-identity.md)
+* [Интеграция с удостоверениями Azure-Managed](../../azure-app-configuration/howto-integrate-azure-managed-service-identity.md)
 
 * [Создание Key Vault](../../key-vault/secrets/quick-create-portal.md)
 

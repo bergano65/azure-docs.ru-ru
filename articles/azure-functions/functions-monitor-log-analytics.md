@@ -7,10 +7,10 @@ ms.date: 04/15/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python
 ms.openlocfilehash: 51c611b2565ae0a5a054a45f0aedcb039351b46b
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88208372"
 ---
 # <a name="monitoring-azure-functions-with-azure-monitor-logs"></a>Мониторинг функций Azure с помощью журналов Azure Monitor
@@ -38,7 +38,7 @@ Azure Monitor использует версию [языка запросов Kus
 
 1. Введите **имя параметров диагностики**и нажмите кнопку **сохранить**.
 
-   :::image type="content" source="media/functions-monitor-log-analytics/choose-table.png" alt-text="Добавление параметра диагностики":::
+   :::image type="content" source="media/functions-monitor-log-analytics/choose-table.png" alt-text="Выбор параметров диагностики":::
 
 ## <a name="user-generated-logs"></a>Журналы, созданные пользователем
 
@@ -89,7 +89,7 @@ logging.info('My app logs here.')
 
    Функции Azure записывают все журналы в таблицу **функтионапплогс** в разделе **логманажемент**. 
 
-   :::image type="content" source="media/functions-monitor-log-analytics/querying.png" alt-text="Окно запроса в Log Analytics рабочей области":::
+   :::image type="content" source="media/functions-monitor-log-analytics/querying.png" alt-text="Выбор параметров диагностики":::
 
 Ниже приведены некоторые примеры запросов.
 
@@ -121,7 +121,7 @@ FunctionAppLogs
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Ознакомьтесь с [обзором функций Azure](functions-overview.md).
 - Дополнительные сведения о [журналах Azure Monitor](../azure-monitor/platform/data-platform-logs.md).

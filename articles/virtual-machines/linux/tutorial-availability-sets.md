@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/17/2020
 ms.author: cynthn
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: e04f6120f7d9a5646a3b30553b5083c5259acae2
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 4b3817bd33c72ce6d1c3426aa8379101c84f5bc5
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87499642"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91961516"
 ---
 # <a name="tutorial-create-and-deploy-highly-available-virtual-machines-with-the-azure-cli"></a>Руководство по Создание и развертывание виртуальных машин высокого уровня доступности с помощью Azure CLI
 
@@ -116,5 +116,5 @@ az vm availability-set list-sizes \
 > [Создание масштабируемого набора виртуальных машин](tutorial-create-vmss.md)
 
 * Дополнительные сведения о зонах доступности см. в статье [Что такое Зоны доступности в Azure?](../../availability-zones/az-overview.md).
-* Дополнительная документация о группах и зонах доступности также доступна [здесь](./manage-availability.md).
+* Дополнительная документация о группах и зонах доступности также доступна [здесь](../manage-availability.md).
 * Чтобы опробовать зоны доступности, ознакомьтесь со статьей [Создание виртуальной машины Linux в зоне доступности с помощью Azure CLI](./create-cli-availability-zone.md)

@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 09/16/2020
 ms.author: cherylmc
 ms.openlocfilehash: af3513c4a4f3b3187e85c65de51ad2e6e2d7279c
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90983179"
 ---
 # <a name="modify-local-network-gateway-settings-using-the-azure-portal"></a>Изменение параметров шлюза локальной сети с помощью портала Azure
@@ -35,7 +35,7 @@ ms.locfileid: "90983179"
 
 Это та же самая страница конфигурации с конечной точкой FQDN:
 
-:::image type="content" source="./media/vpn-gateway-modify-local-network-gateway-portal/fqdn.png" alt-text="Настройка шлюза локальной сети — полное доменное имя":::
+:::image type="content" source="./media/vpn-gateway-modify-local-network-gateway-portal/fqdn.png" alt-text="Настройка шлюза локальной сети — IP-адрес":::
 
 ## <a name="modify-the-gateway-ip-address"></a><a name="ip"></a>Изменение IP-адреса шлюза
 
@@ -85,6 +85,6 @@ ms.locfileid: "90983179"
 2. Снимите флажок **"настроить параметры BGP"** , чтобы удалить существующий IP-адрес BGP ASN и узла BGP.
 3. Нажмите кнопку **Save** (Сохранить), чтобы сохранить настройки.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Проверьте подключение шлюза. См. статью [Проверка подключения шлюза](vpn-gateway-verify-connection-resource-manager.md).

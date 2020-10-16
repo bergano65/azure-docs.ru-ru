@@ -9,13 +9,13 @@ ms.topic: conceptual
 ms.date: 04/29/2020
 ms.author: makromer
 ms.openlocfilehash: 3d2ef6fb0cd7af444b9bff755eee4eee70d03d15
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "82691903"
 ---
-# <a name="migrate-normalized-database-schema-from-azure-sql-database-to-azure-cosmosdb-denormalized-container"></a>Перенос нормализованной схемы базы данных из базы данных SQL Azure в Денормализованный контейнер Azure CosmosDB
+# <a name="migrate-normalized-database-schema-from-azure-sql-database-to-azure-cosmosdb-denormalized-container"></a>Перенос нормализованной схемы базы данных из базы данных SQL Azure в денормализованный контейнер Azure CosmosDB
 
 В этом руководство объясняется, как взять существующую нормализованную схему базы данных в базе данных SQL Azure и преобразовать ее в денормализованную схему Azure CosmosDB для загрузки в Azure CosmosDB.
 

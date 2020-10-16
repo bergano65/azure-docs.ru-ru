@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
 ms.openlocfilehash: 4c8cd4aa3e91c5d69c40e47683818ed8bc9be338
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86249909"
 ---
 # <a name="product-templates-in-azure-api-management"></a>Шаблоны продуктов в службе управления API Azure
@@ -37,7 +37,7 @@ ms.locfileid: "86249909"
 
 [!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
   
-##  <a name="product-list"></a><a name="ProductList"></a>Список продуктов  
+##  <a name="product-list"></a><a name="ProductList"></a> Список продуктов  
  Шаблон **списка продуктов** позволяет настроить текст страницы со списком продуктов на портале разработчика.  
   
  ![Список продуктов](./media/api-management-product-templates/APIM_ProductsListTemplatePage.png "APIM_ProductsListTemplatePage")  
@@ -123,7 +123,7 @@ ms.locfileid: "86249909"
 }  
 ```  
   
-##  <a name="product"></a><a name="Product"></a>Продукта  
+##  <a name="product"></a><a name="Product"></a> Продукта  
  Шаблон **продукта** позволяет настроить текст страницы со информацией о продукте на портале разработчика.  
   
  ![Страница продукта портала разработчика](./media/api-management-product-templates/APIM_ProductPage.png "APIM_ProductPage")  
@@ -206,7 +206,7 @@ ms.locfileid: "86249909"
   
 |Свойство|Тип|Описание|  
 |--------------|----------|-----------------|  
-|Произведение|[Продукт](api-management-template-data-model-reference.md#Product)|Выбранный продукт.|  
+|Продукт|[Продукт](api-management-template-data-model-reference.md#Product)|Выбранный продукт.|  
 |IsDeveloperSubscribed|Логическое|Указывает, подписан ли текущий пользователь на этот продукт.|  
 |SubscriptionState|number|Состояние подписки. Возможны следующие состояния.<br /><br /> —-   `0 - suspended`: подписка заблокирована, и подписчик не может вызвать ни один API продукта.<br />— -   `1 - active`: подписка активна.<br />— -   `2 - expired`: срок действия подписки истек, и она была деактивирована.<br />— -   `3 - submitted`: запрос разработчика на подписку выполнен, но еще не был утвержден или отклонен.<br />—-   `4 - rejected`: администратор отклонил запрос на подписку.<br />— -   `5 - cancelled`: подписка была отменена разработчиком или администратором.|  
 |Ограничения|массиве|Это свойство является устаревшим и не должно использоваться.|  

@@ -6,10 +6,10 @@ ms.date: 03/04/2020
 ms.topic: conceptual
 ms.custom: mvc
 ms.openlocfilehash: 353f29d9b4c6599226619d40e4378e21618bcad4
-ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86185914"
 ---
 # <a name="limit-change-tracking-and-inventory-deployment-scope"></a>Ограничение области развертывания Отслеживание изменений и инвентаризации
@@ -30,7 +30,7 @@ ms.locfileid: "86185914"
 
 3. Выберите **конфигурации области (Предварительная версия)** в разделе **Источники данных рабочей области**.
 
-4. Нажмите кнопку с многоточием справа от параметра `MicrosoftDefaultScopeConfig-ChangeTracking` Конфигурация области и выберите **изменить**. 
+4. Нажмите кнопку с многоточием справа от параметра  `MicrosoftDefaultScopeConfig-ChangeTracking` Конфигурация области и выберите **изменить**. 
 
 5. В области изменения щелкните **Выбор группы компьютеров**. В области "Группы компьютеров" отображаются сохраненные поисковые запросы, которые используются для создания конфигурации области. Для Отслеживание изменений и инвентаризации используется сохраненный поисковый запрос:
 

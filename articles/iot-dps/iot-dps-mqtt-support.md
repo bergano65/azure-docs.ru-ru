@@ -11,10 +11,10 @@ ms.custom:
 - amqp
 - mqtt
 ms.openlocfilehash: 7683f5d60c5d788707e2f89774cee42e7820db87
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87924212"
 ---
 # <a name="communicate-with-your-dps-using-the-mqtt-protocol"></a>Обмен данными с DP с помощью протокола MQTT
@@ -48,7 +48,7 @@ ms.locfileid: "87924212"
 
 * В поле **Пароль** укажите маркер SAS. Формат маркера SAS аналогичен описанному для протоколов HTTPS и AMQP:
 
-  `SharedAccessSignature sr={URL-encoded-resourceURI}&sig={signature-string}&se={expiry}&skn=registration`Значение resourceURI должно быть в формате `{idScope}/registrations/{registration_id}` . Имя политики должно иметь значение `registration` .
+  `SharedAccessSignature sr={URL-encoded-resourceURI}&sig={signature-string}&se={expiry}&skn=registration` Значение resourceURI должно быть в формате `{idScope}/registrations/{registration_id}` . Имя политики должно иметь значение `registration` .
 
   > [!NOTE]
   > При использовании аутентификации с помощью сертификата X.509 пароли маркеров SAS не требуются.

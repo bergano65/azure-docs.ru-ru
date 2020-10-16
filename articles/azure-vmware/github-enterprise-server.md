@@ -3,12 +3,12 @@ title: Настройка сервера GitHub Enterprise в частном о�
 description: Узнайте, как настроить GitHub Enterprise Server в частном облаке решения Azure VMware.
 ms.topic: how-to
 ms.date: 09/22/2020
-ms.openlocfilehash: 53e5264eed761909217c2e3a902c9fee9faaffaa
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: afce212416c7c12631a7f8d388dc991ed957736f
+ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91345183"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91949315"
 ---
 # <a name="set-up-github-enterprise-server-on-your-azure-vmware-solution-private-cloud"></a>Настройка сервера GitHub Enterprise в частном облаке решения Azure VMware
 
@@ -24,13 +24,7 @@ ms.locfileid: "91345183"
 
 :::image type="content" source="media/github-enterprise-server/github-options.png" alt-text="Выберите Запуск GitHub локально или в облаке.":::  
 
-:::image type="content" source="media/github-enterprise-server/deploy-ova-template.png" alt-text="Разверните шаблон OVA.":::  
-
-Укажите понятное имя для новой виртуальной машины, например Гисубентерприсесервер. В имя виртуальной машины не нужно включать сведения о выпуске, так как эти сведения устаревают при обновлении экземпляра. Выберите все значения по умолчанию (в ближайшее время изменяйте эти сведения) и дождитесь завершения импорта OVA.
-
-После импорта [Настройте конфигурацию оборудования](https://docs.github.com/en/enterprise/admin/installation/installing-github-enterprise-server-on-vmware#creating-the-github-enterprise-server-instance) в соответствии с вашими потребностями. В нашем примере сценария потребуется следующая конфигурация.
-
-| Ресурс | Стандартная установка | Стандартная установка + "компоненты бета-версии" (действия) |
+:::image type="content" source="media/github-enterprise-server/deploy-ova-template.png" alt-text="Выберите Запуск GitHub локально или в облаке." (действия) |
 | --- | --- | --- |
 | Число виртуальных ЦП | 4 | 8 |
 | Память | 32 Гб | 61 ГБ |
@@ -41,11 +35,11 @@ ms.locfileid: "91345183"
 
 ## <a name="configuring-the-github-enterprise-server-instance"></a>Настройка экземпляра GitHub Enterprise Server
 
-:::image type="content" source="media/github-enterprise-server/install-github-enterprise.png" alt-text="Установите GitHub Enterprise.":::  
+:::image type="content" source="media/github-enterprise-server/install-github-enterprise.png" alt-text="Выберите Запуск GitHub локально или в облаке.":::  
 
 После включения новой подготовленной виртуальной машины [Настройте ее через браузер](https://docs.github.com/en/enterprise/admin/installation/installing-github-enterprise-server-on-vmware#configuring-the-github-enterprise-server-instance). Вам потребуется отправить файл лицензии и задать пароль консоли управления. Обязательно запишите этот пароль в безопасном месте.
 
-:::image type="content" source="media/github-enterprise-server/ssh-access.png" alt-text="Доступ к консоли администрирования через SSH.":::    
+:::image type="content" source="media/github-enterprise-server/ssh-access.png" alt-text="Выберите Запуск GitHub локально или в облаке.":::    
 
 Рекомендуется по крайней мере выполнить следующие действия:
 
@@ -53,11 +47,11 @@ ms.locfileid: "91345183"
 
 2. [Настройте TLS на своем экземпляре](https://docs.github.com/en/enterprise/admin/configuration/configuring-tls) , чтобы можно было использовать сертификат, подписанный доверенным центром сертификации.
 
-:::image type="content" source="media/github-enterprise-server/configuring-your-instance.png" alt-text="Настройка экземпляра.":::
+:::image type="content" source="media/github-enterprise-server/configuring-your-instance.png" alt-text="Выберите Запуск GitHub локально или в облаке.":::
 
 Примените свои параметры.  Пока экземпляр перезапускается, вы можете перейти к следующему шагу, **настройке хранилища BLOB-объектов для действий GitHub**.
 
-:::image type="content" source="media/github-enterprise-server/create-admin-account.png" alt-text="Создайте учетную запись администратора.":::
+:::image type="content" source="media/github-enterprise-server/create-admin-account.png" alt-text="Выберите Запуск GitHub локально или в облаке.":::
 
 После перезапуска экземпляра создайте новую учетную запись администратора на экземпляре. Также обязательно запишите пароль этого пользователя.
 
@@ -80,9 +74,9 @@ ms.locfileid: "91345183"
 > [!NOTE]
 > [В настоящее время действия GitHub доступны в виде ограниченной бета-версии для сервера GitHub Enterprise Server версии 2,22](https://docs.github.com/en/enterprise/admin/github-actions).
 
-Внешнее хранилище BLOB-объектов необходимо для включения действий GitHub на сервере GitHub Enterprise Server (в настоящее время доступен в качестве функции бета-версии). Это внешнее хранилище BLOB-объектов используется действиями для хранения артефактов и журналов. Действия на сервере GitHub Enterprise Server [поддерживают хранилище BLOB-объектов Azure в качестве поставщика хранилища](https://docs.github.com/en/enterprise/admin/github-actions/enabling-github-actions-and-configuring-storage#about-external-storage-requirements) (и другие). Итак, мы подготавливаем новую учетную запись хранения Azure с [типом учетной записи хранения](https://docs.microsoft.com/azure/storage/common/storage-account-overview?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json#types-of-storage-accounts) блобстораже:
+Внешнее хранилище BLOB-объектов необходимо для включения действий GitHub на сервере GitHub Enterprise Server (в настоящее время доступен в качестве функции бета-версии). Это внешнее хранилище BLOB-объектов используется действиями для хранения артефактов и журналов. Действия на сервере GitHub Enterprise Server [поддерживают хранилище BLOB-объектов Azure в качестве поставщика хранилища](https://docs.github.com/en/enterprise/admin/github-actions/enabling-github-actions-and-configuring-storage#about-external-storage-requirements) (и другие). Итак, мы подготавливаем новую учетную запись хранения Azure с [типом учетной записи хранения](../storage/common/storage-account-overview.md?toc=%252fazure%252fstorage%252fblobs%252ftoc.json#types-of-storage-accounts) блобстораже:
 
-:::image type="content" source="media/github-enterprise-server/storage-account.png" alt-text="Подготавливает учетную запись хранилища BLOB-объектов Azure.":::
+:::image type="content" source="media/github-enterprise-server/storage-account.png" alt-text="Выберите Запуск GitHub локально или в облаке.":::
 
 После завершения развертывания нового ресурса Блобстораже скопируйте и запишите строку подключения (доступно в разделе ключи доступа). Эта строка будет потребоваться чуть ниже.
 
@@ -97,9 +91,9 @@ ms.locfileid: "91345183"
 
 Сначала создадим новую виртуальную машину в кластере. Мы будем основывать виртуальную машину на [последнем выпуске Ubuntu Server](http://releases.ubuntu.com/20.04.1/).
 
-:::image type="content" source="media/github-enterprise-server/provision-new-vm.png" alt-text="Подготавливает новую виртуальную машину.":::
+:::image type="content" source="media/github-enterprise-server/provision-new-vm.png" alt-text="Выберите Запуск GitHub локально или в облаке.":::
 
-:::image type="content" source="media/github-enterprise-server/provision-new-vm-2.png" alt-text="Подготавливает новую виртуальную машину шаг 2.":::
+:::image type="content" source="media/github-enterprise-server/provision-new-vm-2.png" alt-text="Выберите Запуск GitHub локально или в облаке.":::
 
 После создания виртуальной машины включите ее и подключите к ней через SSH.
 
@@ -168,15 +162,15 @@ ms.locfileid: "91345183"
 
 Скопируйте `config.sh` команду и вставьте ее в сеанс в средстве выполнения действий (созданном ранее).
 
-:::image type="content" source="media/github-enterprise-server/actions-runner.png" alt-text="Средство выполнения действий.":::
+:::image type="content" source="media/github-enterprise-server/actions-runner.png" alt-text="Выберите Запуск GitHub локально или в облаке.":::
 
 Чтобы *запустить средство выполнения* , используйте команду Run.sh:
 
-:::image type="content" source="media/github-enterprise-server/run-runner.png" alt-text="Запустите средство выполнения.":::
+:::image type="content" source="media/github-enterprise-server/run-runner.png" alt-text="Выберите Запуск GitHub локально или в облаке.":::
 
 Чтобы сделать это средство можно доступным для организаций в Организации, измените доступ к нему.
 
-:::image type="content" source="media/github-enterprise-server/edit-runner-access.png" alt-text="Изменение доступа к средству выполнения.":::
+:::image type="content" source="media/github-enterprise-server/edit-runner-access.png" alt-text="Выберите Запуск GitHub локально или в облаке.":::
 
 Здесь мы предоставляем доступ ко всем организациям, но вы также можете ограничить доступ к подмножеству организаций и даже к конкретным репозиториям.
 
@@ -188,7 +182,7 @@ ms.locfileid: "91345183"
 
 После включения GitHub Connect выберите **сервер для использования действий из GitHub.com в параметре выполнения рабочего процесса** .
 
-:::image type="content" source="media/github-enterprise-server/enable-using-actions.png" alt-text="Включите использование действий из GitHub.com в запусках рабочих процессов.":::
+:::image type="content" source="media/github-enterprise-server/enable-using-actions.png" alt-text="Выберите Запуск GitHub локально или в облаке.":::
 
 ## <a name="setting-up-and-running-your-first-workflow"></a>Настройка и запуск первого рабочего процесса
 
@@ -196,30 +190,30 @@ ms.locfileid: "91345183"
 
 В этом базовом рабочем процессе мы будем использовать, `octokit/request-action` чтобы просто открыть вопрос в GitHub с помощью API.
 
-:::image type="content" source="media/github-enterprise-server/workflow-example.png" alt-text="Пример рабочего процесса.":::
+:::image type="content" source="media/github-enterprise-server/workflow-example.png" alt-text="Выберите Запуск GitHub локально или в облаке.":::
 
 >[!NOTE]
 >GitHub.com размещает действие, но при его выполнении на сервере GitHub Enterprise Server он *автоматически* использует API сервера GitHub Enterprise.
 
 Если вы решили не включать GitHub Connect, можно использовать следующий альтернативный рабочий процесс.
 
-:::image type="content" source="media/github-enterprise-server/workflow-example-2.png" alt-text="Альтернативный пример рабочего процесса.":::
+:::image type="content" source="media/github-enterprise-server/workflow-example-2.png" alt-text="Выберите Запуск GitHub локально или в облаке.":::
 
 Перейдите к репозиторию в экземпляре и добавьте указанный выше рабочий процесс как: `.github/workflows/hello-world.yml`
 
-:::image type="content" source="media/github-enterprise-server/workflow-example-3.png" alt-text="Другой пример рабочего процесса.":::
+:::image type="content" source="media/github-enterprise-server/workflow-example-3.png" alt-text="Выберите Запуск GitHub локально или в облаке.":::
 
 На вкладке **действия** для репозитория дождитесь выполнения рабочего процесса.
 
-:::image type="content" source="media/github-enterprise-server/executed-example-workflow.png" alt-text="Выполненный пример рабочего процесса.":::
+:::image type="content" source="media/github-enterprise-server/executed-example-workflow.png" alt-text="Выберите Запуск GitHub локально или в облаке.":::
 
 Кроме того, вы можете следить за его обработкой.
 
-:::image type="content" source="media/github-enterprise-server/workflow-processed-by-runner.png" alt-text="Рабочий процесс, обработанный средством Runner.":::
+:::image type="content" source="media/github-enterprise-server/workflow-processed-by-runner.png" alt-text="Выберите Запуск GitHub локально или в облаке.":::
 
 Если все успешно завершилось, в репозитории появится новая ошибка — "Hello World".
 
-:::image type="content" source="media/github-enterprise-server/example-in-repo.png" alt-text="Пример в репозитории.":::
+:::image type="content" source="media/github-enterprise-server/example-in-repo.png" alt-text="Выберите Запуск GitHub локально или в облаке.":::
 
 Поздравляем! Вы только что выполнили рабочий процесс первого действия на сервере GitHub Enterprise, работающем в частном облаке решения Azure VMware.
 

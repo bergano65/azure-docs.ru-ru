@@ -16,10 +16,10 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 08305b6aec7dcd5906f4316767c4c512d3a0535e
-ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90600506"
 ---
 # <a name="remediate-users-flagged-for-risk-in-the-azure-active-directory-portal"></a>Применение защитных мер к пользователям, находящимся в группе риска на портале Azure Active Directory
@@ -89,7 +89,7 @@ ms.locfileid: "90600506"
 - [Включите конвейер аудита](https://aka.ms/improvesecurity) для анализа действий в своем клиенте. После завершения анализа журналы действий в хранилище аудита начнут заполняться соответствующими данными. На этом этапе вы также можете использовать [ресурс поиска и исследования в центре безопасности и соответствия требованиям](https://aka.ms/sccsearch). 
 - Просмотрите делегированные разрешения и правила переадресации сообщений для всех почтовых ящиков. Чтобы выполнить эту задачу, можно использовать этот [сценарий PowerShell](https://aka.ms/delegateforwardrules). 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Защита идентификации Azure Active Directory](../identity-protection/overview-identity-protection.md)
 * [Пользователи, помеченные для события риска](../identity-protection/overview-identity-protection.md)

@@ -2,17 +2,18 @@
 title: Концепция. Интеграция развертывания решения Azure VMware в центральную и периферийную архитектуру
 description: Ознакомьтесь с рекомендациями по интеграции развертывания решения Azure VMware в существующую или новую архитектуру, а также в новой и периферийной архитектурах в Azure.
 ms.topic: conceptual
-ms.date: 09/09/2020
-ms.openlocfilehash: bfd0da4f03eedaf215ddb55facffc2296a9d0b85
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.date: 10/14/2020
+ms.openlocfilehash: 66c6cc4841b4b36775fda89b29dc588100c3ad87
+ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91580284"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92058477"
 ---
 # <a name="integrate-azure-vmware-solution-in-a-hub-and-spoke-architecture"></a>Интеграция решения Azure VMware в центральную и периферийную архитектуру
 
 В этой статье мы предоставляем рекомендации по интеграции развертывания решения Azure VMware в существующую или новую [центральную и лучевую архитектуру](/azure/architecture/reference-architectures/hybrid-networking/shared-services) в Azure. 
+
 
 В сценарии "звезда" и "звезда" предполагается Гибридная облачная среда с рабочими нагрузками:
 
@@ -26,9 +27,12 @@ ms.locfileid: "91580284"
 
 Трафик между локальным центром обработки данных, частным облаком решения Azure VMware и концентратором проходит через подключения Azure ExpressRoute. Резервные виртуальные сети обычно содержат рабочие нагрузки на основе IaaS, но могут иметь службы PaaS, такие как [Среда службы приложений](../app-service/environment/intro.md), которые имеют прямую интеграцию с виртуальной сетью или другие службы PaaS с включенной [частной связью Azure](../private-link/index.yml) .
 
+>[!IMPORTANT]
+>Вы можете использовать существующий шлюз ExpressRoute для подключения к решению Azure VMware, если он не превышает ограничение в четыре канала ExpressRoute на виртуальную сеть.  Однако для доступа к решению Azure VMware из локальной среды через ExpressRoute необходимо иметь Global Reach ExpressRoute, так как шлюз ExpressRoute не обеспечивает транзитную маршрутизацию между подключенными цепями.
+
 На схеме показан пример развертывания на основе концентратора и периферийного сервера в Azure, подключенного к локальной среде и решению VMware для Azure с помощью ExpressRoute Global Reach.
 
-:::image type="content" source="./media/hub-spoke/azure-vmware-solution-hub-and-spoke-deployment.png" alt-text="Развертывание в центре решений Azure VMware и в периферийном развертывании" border="false":::
+:::image type="content" source="./media/hub-spoke/azure-vmware-solution-hub-and-spoke-deployment.png" alt-text="Развертывание в центре решений Azure VMware и в периферийном развертывании" border="false" lightbox="./media/hub-spoke/azure-vmware-solution-hub-and-spoke-deployment.png":::
 
 Архитектура имеет следующие основные компоненты:
 
@@ -65,12 +69,12 @@ ms.locfileid: "91580284"
 
 * **Поток трафика решения "из локальной среды в Azure VMware"**
 
-  :::image type="content" source="media/hub-spoke/on-premises-azure-vmware-solution-traffic-flow.png" alt-text="Развертывание в центре решений Azure VMware и в периферийном развертывании" border="false":::
+  :::image type="content" source="./media/hub-spoke/on-premises-azure-vmware-solution-traffic-flow.png" alt-text="Развертывание в центре решений Azure VMware и в периферийном развертывании" border="false" lightbox="./media/hub-spoke/on-premises-azure-vmware-solution-traffic-flow.png":::
 
 
 * **Поток трафика виртуальной сети Azure VMware к концентратору**
 
-  :::image type="content" source="media/hub-spoke/azure-vmware-solution-hub-vnet-traffic-flow.png" alt-text="Развертывание в центре решений Azure VMware и в периферийном развертывании" border="false":::
+  :::image type="content" source="./media/hub-spoke/azure-vmware-solution-hub-vnet-traffic-flow.png" alt-text="Развертывание в центре решений Azure VMware и в периферийном развертывании" border="false" lightbox="./media/hub-spoke/azure-vmware-solution-hub-vnet-traffic-flow.png":::
 
 
 Дополнительные сведения о сети и концепциях подключения для Azure VMware см. в [документации по продукту VMware для Azure](./concepts-networking.md).
@@ -105,14 +109,17 @@ ms.locfileid: "91580284"
 :::image type="content" source="media/hub-spoke/azure-vmware-solution-second-level-traffic-segmentation.png" alt-text="Развертывание в центре решений Azure VMware и в периферийном развертывании" border="false":::
 
 
-### <a name="jumpbox-and-azure-bastion"></a>Jumpbox и Azure бастиона
+### <a name="jump-box-and-azure-bastion"></a>Поле перехода и Azure бастиона
 
-Доступ к среде решения Azure VMware с помощью Jumpbox, которая является виртуальной машиной Windows 10 или Windows Server, развернутой в подсети общей службы в виртуальной сети концентратора.
+Доступ к среде решения Azure VMware с помощью поля перехода — это виртуальная машина Windows 10 или Windows Server, развернутая в подсети общей службы в виртуальной сети концентратора.
 
-В целях безопасности рекомендуется развертывать [Microsoft Azure службу бастиона](../bastion/index.yml) в виртуальной сети Hub. Azure бастиона обеспечивает простой доступ по протоколу RDP и SSH к виртуальным машинам, развернутым в Azure, без необходимости подготавливать общедоступные IP-адреса к этим ресурсам. После подготовки службы бастиона Azure вы сможете получить доступ к выбранной виртуальной машине из портал Azure. После установления подключения открывается новая вкладка, на которой отображается рабочий стол Jumpbox и на этом компьютере можно получить доступ к плоскости управления частного облака решения VMware для Azure.
+>[!IMPORTANT]
+>Azure бастиона — это служба, рекомендуемая для подключения к полю перехода, чтобы предотвратить предоставление доступа к решению VMware для Azure через Интернет. Вы не можете использовать Azure бастиона для подключения к виртуальным машинам Azure VMware, так как они не являются объектами Azure IaaS.  
+
+В целях безопасности рекомендуется развертывать [Microsoft Azure службу бастиона](../bastion/index.yml) в виртуальной сети Hub. Azure бастиона обеспечивает простой доступ по протоколу RDP и SSH к виртуальным машинам, развернутым в Azure, без необходимости подготавливать общедоступные IP-адреса к этим ресурсам. После подготовки службы бастиона Azure вы сможете получить доступ к выбранной виртуальной машине из портал Azure. После установления подключения откроется новая вкладка, в которой отображается окно переходов Рабочий стол, а с этого рабочего стола — доступ к плоскости управления частного облака решения VMware для Azure.
 
 > [!IMPORTANT]
-> Не предоставляйте общедоступный IP-адрес виртуальной машине Jumpbox или предоставляйте к общедоступному Интернету порт 3389/TCP. 
+> Не предоставляйте общедоступный IP-адрес виртуальной машине с полем перехода или предоставляйте доступ через Интернет к порту 3389/TCP. 
 
 
 :::image type="content" source="media/hub-spoke/azure-bastion-hub-vnet.png" alt-text="Развертывание в центре решений Azure VMware и в периферийном развертывании" border="false":::

@@ -13,10 +13,10 @@ ms.workload: infrastructure
 ms.date: 08/19/2018
 ms.author: genli
 ms.openlocfilehash: 9b51205fe67bfe5be46491b0238e987fc14f6737
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87074353"
 ---
 # <a name="troubleshoot-a-windows-vm-by-attaching-the-os-disk-to-a-recovery-vm-using-the-azure-portal"></a>Устранение неполадок с виртуальной машиной Windows при подключении диска операционной системы к виртуальной машине восстановления с помощью портала Azure
@@ -127,7 +127,7 @@ ms.locfileid: "87074353"
 
 ## <a name="swap-the-os-disk-for-the-vm"></a>Переключение диска операционной системы для виртуальной машины
 
-Портал Azure теперь поддерживает изменение диска операционной системы виртуальной машины. Для этого выполните следующие действия.
+Портал Azure теперь поддерживает изменение диска операционной системы виртуальной машины. Для этого выполните следующие действия:
 
 1. Перейдите в [портал Azure](https://portal.azure.com). Выберите **виртуальные машины** на боковой панели, а затем выберите виртуальную машину с проблемой.
 1. На левой панели выберите **диски**, а затем выберите вариант **переключить диск ОС**.

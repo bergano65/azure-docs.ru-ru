@@ -5,21 +5,23 @@ description: Узнайте, как обновить веб-службу, кот
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
+ms.reviewer: larryfr
 ms.author: gopalv
 author: gvashishtha
 ms.date: 07/31/2020
-ms.openlocfilehash: 5f2def8d41252b2267f2de736dc93825ac767540
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.custom: deploy
+ms.openlocfilehash: 3d468048030cad009171622bed175531834b947d
+ms.sourcegitcommit: 090ea6e8811663941827d1104b4593e29774fa19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91328332"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91998788"
 ---
 # <a name="update-a-deployed-web-service"></a>Обновление развернутой веб-службы
 
 Из этой статьи вы узнаете, как обновить веб-службу, развернутую с помощью Машинное обучение Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 В этом учебнике предполагается, что вы уже развернули веб-службу с Машинное обучение Azure. Если вам нужно узнать, как развернуть веб-службу, [выполните следующие действия](how-to-deploy-and-where.md).
 

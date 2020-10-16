@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: how-to
 ms.date: 09/22/2020
 ms.openlocfilehash: 46d8fe6427b2a3e7811719792ac4bf67ddbcc3c5
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90940379"
 ---
 # <a name="create-and-manage-virtual-networks-for-azure-database-for-postgresql---flexible-server-using-the-azure-portal"></a>Создание виртуальных сетей для базы данных Azure для PostgreSQL-гибкого сервера и управление ими с помощью портал Azure
@@ -48,7 +48,7 @@ ms.locfileid: "90940379"
 
 >[!Note]
 > После развертывания гибкого сервера в виртуальной сети и подсети его нельзя переместить в общедоступный (разрешенный IP-адрес).
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - [Создание базы данных Azure для PostgreSQL-гибкой виртуальной сети сервера и управление ею с помощью Azure CLI](./how-to-manage-virtual-network-cli.md).
 - Дополнительные сведения о работе [в сети в базе данных Azure для PostgreSQL-гибкого сервера](./concepts-networking.md)
 - Узнайте больше о [базе данных Azure для PostgreSQL-гибкой виртуальной сети сервера](./concepts-networking.md#private-access-vnet-integration).

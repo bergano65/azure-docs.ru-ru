@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
 ms.openlocfilehash: d44866e2d04ab1bab5d2eca01374350a7d73a0ea
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91577345"
 ---
 # <a name="glossary-of-terms-for-iot-plug-and-play"></a>Глоссарий терминов для Интернета вещей Plug and Play
@@ -101,7 +101,7 @@ ms.locfileid: "91577345"
 
 Язык запросов Центра Интернета вещей используется в нескольких целях. Например, его можно использовать для поиска устройств, зарегистрированных в центре Интернета вещей, или настройки [маршрутизации цифровых двойников](#digital-twin-route).
 
-## <a name="iot-plug-and-play-bridge"></a>Мост Plug and Play IoT
+## <a name="iot-plug-and-play-bridge"></a>Мост для IoT Plug and Play
 
 Центр Интернета вещей Plug and Play — это приложение с открытым кодом, которое позволяет подключать существующие датчики и периферийные устройства, подключенные к шлюзам Windows или Linux, к Интернету с помощью [устройств IoT Plug and Play](#iot-plug-and-play-device).
 

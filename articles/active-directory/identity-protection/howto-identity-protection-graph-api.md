@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e16f33cb8aa7c6ceeb1398dd23ccba31b5f936b1
-ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91776142"
 ---
 # <a name="get-started-with-azure-active-directory-identity-protection-and-microsoft-graph"></a>Начало работы с защитой идентификации Azure Active Directory и Microsoft Graph
@@ -70,7 +70,7 @@ Microsoft Graph — это конечная точка Unified API (Майкро
 1. В созданном **приложении** выберите **Сертификаты & секреты**.
 1. В разделе **Секреты клиента** выберите **Новый секрет клиента**.
    1. Введите **Описание** секрета клиента и задайте период времени окончания срока действия согласно политикам организации.
-   1. Нажмите **Добавить**.
+   1. Выберите **Добавить**.
 
    > [!NOTE]
    > Если ключ будет утерян, вам нужно будет вернуться в этот раздел и создать новый ключ. Не предоставляйте этот ключ никому: с его помощью кто угодно может получить доступ к вашим данным.
@@ -103,7 +103,7 @@ Microsoft Graph — это конечная точка Unified API (Майкро
 
 Ответ, если он был успешным, представляет собой коллекцию обнаружений рисков идентификации и связанных данных в формате OData JSON, который можно проанализировать и обработать по своему усмотрению.
 
-### <a name="sample"></a>Пример
+### <a name="sample"></a>Образец
 
 В этом примере показано использование общего секрета для проверки подлинности. В рабочей среде, где хранение секретов в коде обычно рекомендуется. Организации могут использовать управляемые удостоверения для ресурсов Azure, чтобы защитить эти учетные данные. Дополнительные сведения об управляемых удостоверениях см. в статье [что такое управляемые удостоверения для ресурсов Azure](../managed-identities-azure-resources/overview.md).
 
@@ -160,7 +160,7 @@ GET https://graph.microsoft.com/v1.0/identityProtection/riskDetections?$filter=d
 GET https://graph.microsoft.com/v1.0/identityProtection/riskyUsers?$filter=riskDetail eq 'userPassedMFADrivenByRiskBasedPolicy'
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Поздравляем, вы только что выполнили первый вызов Microsoft Graph.  
 Теперь вы можете запросить обнаружение рисков удостоверений и использовать данные, но вы увидите их по своему усмотрению.

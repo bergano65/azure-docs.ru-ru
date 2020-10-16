@@ -4,10 +4,10 @@ description: В этой статье представлен обзор комп
 ms.topic: conceptual
 ms.date: 02/11/2020
 ms.openlocfilehash: f2184654a8169cb353fb40fa76f0a7fe9b3df6f6
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87422663"
 ---
 # <a name="physical-server-to-azure-disaster-recovery-architecture"></a>Архитектура для аварийного восстановления физических серверов в Azure
@@ -27,7 +27,7 @@ ms.locfileid: "87422663"
 
 **Архитектура: репликация физических компьютеров в Azure**
 
-![Components](./media/physical-azure-architecture/arch-enhanced.png)
+![Компоненты](./media/physical-azure-architecture/arch-enhanced.png)
 
 ## <a name="set-up-outbound-network-connectivity"></a>Настройка исходящего сетевого подключения
 
@@ -40,7 +40,7 @@ ms.locfileid: "87422663"
 
 При использовании прокси-сервера или брандмауэра на основе URL-адресов для управления исходящими подключениями разрешите использование этих URL-адресов:
 
-| **Имя**                  | **Коммерческое**                               | **Государственные организации**                                 | **Описание** |
+| **имя**;                  | **Коммерческие организации**                               | **Государственные организации**                                 | **Описание** |
 | ------------------------- | -------------------------------------------- | ---------------------------------------------- | ----------- |
 | Память                   | `*.blob.core.windows.net`                  | `*.blob.core.usgovcloudapi.net`               | Позволяет записывать данные из виртуальной машины в учетную запись хранения кэша в исходном регионе. |
 | Azure Active Directory    | `login.microsoftonline.com`                | `login.microsoftonline.us`                   | Обеспечивает авторизацию и проверку подлинности URL-адресов службы Site Recovery. |
@@ -92,6 +92,6 @@ ms.locfileid: "87422663"
 
 ![Восстановление размещения](./media/physical-azure-architecture/enhanced-failback.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Инструкции](physical-azure-disaster-recovery.md)по настройке аварийного восстановления для физических серверов в Azure см. в этом разделе.

@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 09/01/2020
+ms.date: 10/14/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: ef7599441cbfa11c555453adea0ca135569524b5
-ms.sourcegitcommit: a0c4499034c405ebc576e5e9ebd65084176e51e4
+ms.openlocfilehash: f88548b57cee9b5f637247fda1536488382ae2f6
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91459835"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92042632"
 ---
 # <a name="define-a-conditional-access-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Определение технического профиля условного доступа в Azure Active Directory B2C настраиваемой политике
 
@@ -59,7 +59,7 @@ Web.TPEngine.Providers.ConditionalAccessProtocolProvider, Web.TPEngine, Version=
 
 Элемент **inputclaim** содержит список утверждений для отправки в условный доступ. Вы также можете сопоставлять имя утверждения с именем, определенным в техническом профиле условного доступа.
 
-| клаимреференцеид | Обязательный | Тип данных | Описание |
+| клаимреференцеид | Обязательно | Тип данных | Описание |
 | --------- | -------- | ----------- |----------- |
 | UserId | Да | строка | Идентификатор пользователя, выполнившего вход. |
 | аусентикатионмесодсусед | Да |stringCollection | Список методов, которые пользователь использовал для входа. Возможные значения: `Password` и `OneTimePasscode` . |
@@ -73,7 +73,7 @@ Web.TPEngine.Providers.ConditionalAccessProtocolProvider, Web.TPEngine, Version=
 
 Элемент **OutputClaims** содержит список утверждений, созданных кондитионалакцесспротоколпровидер. Вы также можете сопоставлять имя утверждения с именем, определенным ниже.
 
-| клаимреференцеид | Обязательный | Тип данных | Описание |
+| клаимреференцеид | Обязательно | Тип данных | Описание |
 | --------- | -------- | ----------- |----------- |
 | Сложности | Да |stringCollection | Список действий для исправления обнаруженной угрозы. Возможные значения: `block` |
 | мултикондитионалакцессстатус | Да | stringCollection |  |
@@ -121,7 +121,7 @@ Web.TPEngine.Providers.ConditionalAccessProtocolProvider, Web.TPEngine, Version=
 
 Элемент **inputclaim** содержит список утверждений для отправки в условный доступ. Вы также можете сопоставлять имя утверждения с именем, определенным в техническом профиле условного доступа.
 
-| клаимреференцеид | Обязательный | Тип данных | Описание |
+| клаимреференцеид | Обязательно | Тип данных | Описание |
 | --------- | -------- | ----------- |----------- |
 | чалленжессатисфиед | Да | stringCollection| Список удовлетворенных проблем, которые устраняют определенную угрозу в результате возврата из режима оценки, выявляют проблемы.|
 
@@ -521,3 +521,7 @@ Web.TPEngine.Providers.ConditionalAccessProtocolProvider, Web.TPEngine, Version=
   </RelyingParty>
 </TrustFrameworkPolicy>
 ```
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+- Пример политики условного доступа можно найти на сайте [GitHub](https://github.com/azure-ad-b2c/samples/tree/master/policies/conditional-access).

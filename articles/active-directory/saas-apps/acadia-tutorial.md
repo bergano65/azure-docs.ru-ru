@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 1/17/2019
 ms.author: jeedes
-ms.openlocfilehash: 39339803945034765fbc30e6f5fc11e737f750c4
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: f3fa61e7c00dca8cb133ec21ba395d943ebdc956
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88538439"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91708464"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-acadia"></a>Руководство по Интеграция Azure Active Directory с Acadia
 
@@ -100,7 +100,7 @@ ms.locfileid: "88538439"
 
 4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа для приложения Acadia](common/idp-intiated.png)
+    ![Снимок экрана: элементы экрана, необходимые для настройки приложения в режиме, инициированном IDP.](common/idp-intiated.png)
 
     а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<CUSTOMER>.acadia.sysalli.com/shibboleth`.
 

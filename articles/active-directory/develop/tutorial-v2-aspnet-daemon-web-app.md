@@ -1,5 +1,6 @@
 ---
-title: Создание мультитенантной управляющей программы, которая использует конечную точку платформы удостоверений Майкрософт
+title: Руководство по Создание мультитенантной управляющей программы, обращающейся к бизнес-данным Microsoft Graph | Azure
+titleSuffix: Microsoft identity platform
 description: Из этого учебника вы узнаете, как вызвать веб-API ASP.NET, защищенный с помощью Azure Active Directory, из классического приложения для Windows (WPF). Клиент WPF выполняет проверку подлинности пользователя, запрашивает маркер доступа и вызывает веб-API.
 services: active-directory
 author: jmprieur
@@ -11,14 +12,14 @@ ms.workload: identity
 ms.date: 12/10/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET
-ms.openlocfilehash: 4b05bbf818676cc70f485dd94ece79141e8f01a4
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: 72b72959f7b5c89bfad4495c8534de5dfaaefe8b
+ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90982853"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91611101"
 ---
-# <a name="tutorial-build-a-multitenant-daemon-that-uses-the-microsoft-identity-platform-endpoint"></a>Руководство по Создание мультитенантной управляющей программы, которая использует конечную точку платформы удостоверений Майкрософт
+# <a name="tutorial-build-a-multi-tenant-daemon-that-uses-the-microsoft-identity-platform"></a>Руководство по Создание мультитенантной управляющей программы, которая использует конечную платформу удостоверений Майкрософт
 
 В этом учебнике вы узнаете, как использовать платформу удостоверений Майкрософт для доступа к данным бизнес-клиентов Майкрософт с использованием продолжительного неинтерактивного процесса. Пример управляющей программы использует [предоставление учетных данных клиента OAuth2](v2-oauth2-client-creds-grant-flow.md) для получения маркера доступа. Затем управляющая программа использует этот маркер для вызова [Microsoft Graph](https://graph.microsoft.io) и доступа к данным организации.
 
@@ -30,28 +31,23 @@ ms.locfileid: "90982853"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
+## <a name="prerequisites"></a>Предварительные требования
+
+- [Visual Studio 2017 или 2019.](https://visualstudio.microsoft.com/downloads/)
+- Клиент Azure AD. Дополнительные сведения см. в статье о том, [как получить клиент Azure AD](quickstart-create-new-tenant.md).
+- Одна или несколько учетных записей пользователей в арендаторе Azure AD. Этот пример не будет работать с учетной записью Майкрософт. Если вы вошли на [портал Azure](https://portal.azure.com) с учетной записью Майкрософт и ранее не создавали учетную запись пользователя в каталоге, создайте ее сейчас.
+
+## <a name="scenario"></a>Сценарий
+
 Это приложение создается в формате приложения ASP.NET MVC. Для входа пользователей в нем используется ПО промежуточного слоя OWIN для OpenID Connect.
 
 Компонент управляющей программы в этом примере является контроллером API `SyncController.cs`. При вызове этот контроллер извлекает список пользователей в арендаторе Azure Active Directory (Azure AD) клиента из Microsoft Graph. `SyncController.cs` активируется AJAX-вызовом в веб-приложении. Контроллер использует [библиотеку аутентификации Майкрософт (MSAL) для .NET](msal-overview.md), чтобы получить маркер доступа для Microsoft Graph.
-
->[!NOTE]
-> Если вы не знакомы с платформой удостоверений Майкрософт, рекомендуем начать с руководства по [управляющей программе .NET Core](quickstart-v2-netcore-daemon.md).
-
-## <a name="scenario"></a>Сценарий
 
 Так как это мультитенантное приложение, предназначенное для использования любым корпоративным клиентом Майкрософт, оно должно предоставить клиентам возможность зарегистрироваться или подключить приложение к данным организации. В рамках потока подключения администратор компании сначала напрямую предоставляет *разрешения* приложению, чтобы оно могло получать доступ к данным компании неинтерактивным способом (при отсутствии пользователя, выполнившего вход). В большей части логики в этом примере показано, как реализовать этот поток подключения с помощью конечной точки предоставления [согласия администратора](v2-permissions-and-consent.md#using-the-admin-consent-endpoint) платформы удостоверений.
 
 ![Схема, на которой показано приложение UserSync с тремя локальными элементами, подключенными к Azure: Startup.Auth с получением маркера в интерактивном режиме для подключения к Azure AD, AccountController с получением согласия администратора для подключения к Azure AD и SyncController со считыванием данных пользователя для подключения к Microsoft Graph.](./media/tutorial-v2-aspnet-daemon-webapp/topology.png)
 
 Дополнительные сведения об основных понятиях, используемых в этом примере, см. в [документации по протоколу учетных данных клиента для конечной точки платформы удостоверений](v2-oauth2-client-creds-grant-flow.md).
-
-## <a name="prerequisites"></a>Предварительные требования
-
-Чтобы запустить пример в этом кратком руководстве, вам потребуется:
-
-- [Visual Studio 2017 или 2019.](https://visualstudio.microsoft.com/downloads/)
-- Клиент Azure AD. Дополнительные сведения см. в статье о том, [как получить клиент Azure AD](quickstart-create-new-tenant.md).
-- Одна или несколько учетных записей пользователей в арендаторе Azure AD. Этот пример не будет работать с учетной записью Майкрософт (ранее она называлась учетной записью Windows Live). Если вы вошли на [портал Azure](https://portal.azure.com) с учетной записью Майкрософт и ранее не создавали учетную запись пользователя в каталоге, ее необходимо создать сейчас.
 
 ## <a name="clone-or-download-this-repository"></a>Клонирование или скачивание этого репозитория
 
@@ -256,17 +252,8 @@ Visual Studio опубликует проект и автоматически о
 Чтобы предоставить рекомендацию, откройте страницу [форума User Voice](https://feedback.azure.com/forums/169401-azure-active-directory).
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Дополнительные сведения о различных потоках проверки подлинности и сценариях приложений, поддерживаемых платформой идентификации Майкрософт, см. [здесь](authentication-flows-app-scenarios.md).
 
-Дополнительные сведения см. в следующей документации:
+Узнайте подробнее о создании управляющих приложений, использующих платформу удостоверений Майкрософт для доступа к защищенным веб-API:
 
-- [Tenancy in Azure Active Directory](single-and-multi-tenant-apps.md) (Аренда в Azure Active Directory)
-- [Основные сведения о процедуре предоставления согласия для приложений Azure AD](application-consent-experience.md)
-- [Sign in any Azure Active Directory user using the multi-tenant application pattern](howto-convert-app-to-be-multi-tenant.md) (Реализация входа любого пользователя Azure Active Directory с помощью шаблона мультитенантного приложения)
-- [Understand user and admin consent](howto-convert-app-to-be-multi-tenant.md#understand-user-and-admin-consent) (Получение согласия пользователя и администратора)
-- [Application and service principal objects in Azure Active Directory](app-objects-and-service-principals.md) (Объекты приложения и субъекта-службы в Azure Active Directory)
-- [Краткое руководство. Регистрация приложения с помощью платформы удостоверений Майкрософт](quickstart-register-app.md)
-- [Краткое руководство. Настройка клиентского приложения для доступа к веб-API](quickstart-configure-app-access-web-apis.md)
-- [Public client and confidential client applications](msal-client-applications.md) (Общедоступные клиентские и конфиденциальные клиентские приложения)
-
-Более простой пример мультитенантной консольной управляющей программы вы найдете в статье [Краткое руководство. Получение маркера безопасности и вызов API Microsoft Graph из консольного приложения с помощью удостоверения приложения](quickstart-v2-netcore-daemon.md).
+> [!div class="nextstepaction"]
+> [Scenario: Создание управляющей программы, которая вызывает веб-API](scenario-daemon-overview.md)

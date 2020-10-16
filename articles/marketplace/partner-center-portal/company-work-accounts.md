@@ -8,10 +8,10 @@ author: parthpandyaMSFT
 ms.author: parthp
 ms.date: 05/30/2019
 ms.openlocfilehash: 246fbcd9bc72683e41489daf105f174f9380c029
-ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91400270"
 ---
 # <a name="company-work-accounts-and-partner-center"></a>Рабочие учетные записи компании и центр партнеров
@@ -52,6 +52,6 @@ ms.locfileid: "91400270"
 
 ![Схема для устранения неполадок при входе в рабочую учетную запись](./media/onboarding-aad-flow.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Управление учетной записью коммерческой платформы в Центре партнеров](./manage-account.md) 

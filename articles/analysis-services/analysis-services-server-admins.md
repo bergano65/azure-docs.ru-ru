@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/07/2020
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: bc17d27837d5b96f06b5172fb019db873418db94
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: 8c876e27165eba30b17874eca600ba81be2e9354
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87922955"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92019446"
 ---
 # <a name="manage-server-administrators"></a>Управление администраторами серверов
 
@@ -40,13 +40,13 @@ ms.locfileid: "87922955"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Используйте командлет [New-азаналисиссервицессервер](https://docs.microsoft.com/powershell/module/az.analysisservices/new-azanalysisservicesserver) , чтобы указать параметр администратора при создании нового сервера. <br>
-Используйте командлет [Set-азаналисиссервицессервер](https://docs.microsoft.com/powershell/module/az.analysisservices/set-azanalysisservicesserver) , чтобы изменить параметр администратора для существующего сервера.
+Используйте командлет [New-азаналисиссервицессервер](/powershell/module/az.analysisservices/new-azanalysisservicesserver) , чтобы указать параметр администратора при создании нового сервера. <br>
+Используйте командлет [Set-азаналисиссервицессервер](/powershell/module/az.analysisservices/set-azanalysisservicesserver) , чтобы изменить параметр администратора для существующего сервера.
 
 ## <a name="rest-api"></a>REST API
 
-Используйте команду [Create](https://docs.microsoft.com/rest/api/analysisservices/servers/create) для указания свойства asAdministrator при создании нового сервера. <br>
-Используйте команду [Update](https://docs.microsoft.com/rest/api/analysisservices/servers/update) для указания свойства asAdministrator при изменении существующего сервера. <br>
+Используйте команду [Create](/rest/api/analysisservices/servers/create) для указания свойства asAdministrator при создании нового сервера. <br>
+Используйте команду [Update](/rest/api/analysisservices/servers/update) для указания свойства asAdministrator при изменении существующего сервера. <br>
 
 
 
@@ -54,4 +54,4 @@ ms.locfileid: "87922955"
 
 [Аутентификация и пользовательские разрешения](analysis-services-manage-users.md)  
 [Управление ролями и пользователями базы данных](analysis-services-database-users.md)  
-[Управление доступом на основе ролей в Azure (Azure RBAC)](../role-based-access-control/overview.md)  
+[Управление доступом Azure на основе ролей (Azure RBAC)](../role-based-access-control/overview.md)

@@ -1,23 +1,18 @@
 ---
 title: Обзор образов Red Hat Enterprise Linux в Azure
 description: Сведения о Red Hat Enterprise Linux образах в Microsoft Azure.
-services: virtual-machines-linux
-documentationcenter: ''
 author: asinn826
-manager: BorisB2015
-editor: ''
 ms.service: virtual-machines-linux
 ms.topic: article
-ms.tgt_pltfrm: vm-linux
-ms.workload: infrastructure-services
 ms.date: 02/10/2020
 ms.author: alsin
-ms.openlocfilehash: 9aa0ca41f63da94e2dedaffe65ea518b8adff0dc
-ms.sourcegitcommit: 14bf4129a73de2b51a575c3a0a7a3b9c86387b2c
+ms.reviewer: cynthn
+ms.openlocfilehash: 46504f7d6d3a989119a3c851fc029bdf4494e01f
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87439470"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91994309"
 ---
 # <a name="overview-of-red-hat-enterprise-linux-images"></a>Общие сведения об образах Red Hat Enterprise Linux
 
@@ -108,7 +103,7 @@ az vm create --name RhelVM --resource-group TestRG --image RedHat:RHEL:8-LVM:lat
 |Издатель | ПРЕДЛОЖЕНИЕ | Значение номера SKU | Версия | Сведения
 |----------|-------|------------|---------|--------
 |RedHat | RHEL | 8 | Сцепленные значения дополнительной версии RHEL и опубликованной даты (например, 8.0.20191023). | Эти образы представляют собой RHEL 8 LVM секционированных изображений, подключенных к стандартным репозиториям Red Hat.
-|RedHat | RHEL | 8 — Gen2 | Сцепленные значения дополнительной версии RHEL и опубликованной даты (например, 8.0.20191024). | Эти образы являются изображениями Hyper-V поколения 2 RHEL 8 LVM, подключенными к стандартным репозиториям Red Hat. Дополнительные сведения о виртуальных машинах поколения 2 в Azure см. в статье [Поддержка виртуальных](../../linux/generation-2.md)машин поколения 2 в Azure.
+|RedHat | RHEL | 8 — Gen2 | Сцепленные значения дополнительной версии RHEL и опубликованной даты (например, 8.0.20191024). | Эти образы являются изображениями Hyper-V поколения 2 RHEL 8 LVM, подключенными к стандартным репозиториям Red Hat. Дополнительные сведения о виртуальных машинах поколения 2 в Azure см. в статье [Поддержка виртуальных](../../generation-2.md)машин поколения 2 в Azure.
 
 ## <a name="rhel-longer-support-add-ons"></a>RHEL больше не поддерживает надстройки
 
@@ -116,7 +111,7 @@ az vm create --name RhelVM --resource-group TestRG --image RedHat:RHEL:8-LVM:lat
 
 По состоянию на апрель 2019 доступны образы RHEL, которые подключены к репозиториям ЕУС по умолчанию. Дополнительные сведения о RHEL ЕУС доступны в [документации по Red Hat](https://access.redhat.com/articles/rhel-eus).
 
-Переключение на репозитории ЕУС возможно и поддерживается. Инструкции по переключению виртуальной машины на ЕУС и дополнительные сведения о сроках действия поддержки ЕУС см. в разделе [RHEL ЕУС и блокировка версий RHEL VMS](https://aka.ms/rhui-update#rhel-eus-and-version-locking-rhel-vms).
+Переключение на репозитории ЕУС возможно и поддерживается. Инструкции по переключению виртуальной машины на ЕУС и дополнительные сведения о сроках действия поддержки ЕУС см. в разделе [RHEL ЕУС и блокировка версий RHEL VMS](./redhat-rhui.md#rhel-eus-and-version-locking-rhel-vms).
 
 >[!NOTE]
 > ЕУС не поддерживается в Дополнениех RHEL. Это означает, что если вы устанавливаете пакет, который обычно доступен в канале RHEL, вы не сможете сделать это на ЕУС. Дополнительные сведения о жизненном цикле дополнительных продуктов Red Hat см. в разделе [Red Hat Enterprise Linux дополнительный жизненный цикл](https://access.redhat.com/support/policy/updates/extras/).
@@ -150,7 +145,7 @@ RedHat:RHEL:7.6:7.6.2019102813
 RHEL 7.4      |RedHat: RHEL: 7.4:7.4.2019041718 | Образы, опубликованные 2019 апреля и более поздних версий, по умолчанию ЕУС.|
 RHEL 7.5      |RedHat: RHEL: 7.5:7.5.2019060305 | Изображения, опубликованные 2019 июня и более поздних версий, по умолчанию ЕУС. |
 RHEL 7.6      |RedHat: RHEL: 7.6:7.6.2019052206 | Опубликованные образы 2019 и более поздних версий по умолчанию ЕУС. |
-RHEL 8,0      |Недоступно                            | Нет ЕУС, доступных по Red Hat.                               |
+RHEL 8,0      |Н/Д                            | Нет ЕУС, доступных по Red Hat.                               |
 
 ### <a name="update-services-for-sap"></a>Обновление служб для SAP
 
@@ -183,6 +178,6 @@ RHEL 8,0      |Недоступно                            | Нет ЕУС, 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Полный список образов RHEL в Azure см. в статье [образы Red Hat Enterprise Linux (RHEL), доступные в Azure](./redhat-imagelist.md).
-* Дополнительные сведения о инфраструктуре обновления Red Hat для Azure см. в разделе [инфраструктура обновления Red Hat для виртуальных машин RHEL по запросу в Azure](https://aka.ms/rhui-update).
+* Дополнительные сведения о инфраструктуре обновления Red Hat для Azure см. в разделе [инфраструктура обновления Red Hat для виртуальных машин RHEL по запросу в Azure](./redhat-rhui.md).
 * Дополнительные сведения о предложении RHEL BYOS см. [в статье Red Hat Enterprise Linux собственные образы на основе собственных подписок в Azure](./byos.md).
 * Сведения о политиках поддержки Red Hat для всех версий RHEL см. в разделе [жизненный цикл Red Hat Enterprise Linux](https://access.redhat.com/support/policy/updates/errata).

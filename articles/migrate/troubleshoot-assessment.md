@@ -8,10 +8,10 @@ ms.manager: abhemraj
 ms.author: hamusa
 ms.date: 01/02/2020
 ms.openlocfilehash: a7b463394a6919dee56e0448997dbd6c59ac9cc6
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91576597"
 ---
 # <a name="troubleshoot-assessmentdependency-visualization"></a>Устранение неполадок с визуализацией оценок и зависимостей
@@ -126,7 +126,7 @@ ms.locfileid: "91576597"
 Средство оценки серверов непрерывно ведет журнал производительности локальных компьютеров. Эти данные используются для предоставления рекомендаций по выбору номера SKU виртуальной машины и диска в Azure. [Узнайте, как](concepts-assessment-calculation.md#calculate-sizing-performance-based) собираются данные на основе производительности.
 
 ## <a name="why-is-my-assessment-showing-a-warning-that-it-was-created-with-an-invalid-combination-of-reserved-instances-vm-uptime-and-discount-"></a>Почему моя оценка отображает предупреждение о том, что она была создана с недопустимым сочетанием зарезервированных экземпляров, времени доступности и скидки виртуальной машины (%)?
-При выборе "зарезервированные экземпляры" скидка (%) и свойства "время работы виртуальной машины" неприменимы. При создании оценки с недопустимым сочетанием этих свойств кнопки "Изменить" и "повторное вычисление" отключаются. Создайте новую оценку. [Подробнее](https://go.microsoft.com/fwlink/?linkid=2131554).
+При выборе "зарезервированные экземпляры" скидка (%) и свойства "время работы виртуальной машины" неприменимы. При создании оценки с недопустимым сочетанием этих свойств кнопки "Изменить" и "повторное вычисление" отключаются. Создайте новую оценку. [Подробнее.](https://go.microsoft.com/fwlink/?linkid=2131554)
 
 ## <a name="i-do-not-see-performance-data-for-some-network-adapters-on-my-physical-servers"></a>Я не вижу данные производительности для некоторых сетевых адаптеров на моих физических серверах
 
@@ -222,6 +222,6 @@ ms.locfileid: "91576597"
 - Для виртуальных машин Hyper-V данные операционной системы собираются с узла Hyper-V.
 - Для физических серверов он извлекается с сервера.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Создание](how-to-create-assessment.md) или [Настройка](how-to-modify-assessment.md) оценки.

@@ -9,16 +9,16 @@ ms.date: 1/8/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 92540c57179ae0198f78b588681167fe48097362
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7f6e90edc0503326dc9dbb06abfcf59fa2d51e1e
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82134368"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92043822"
 ---
 # <a name="deploy-iot-edge-modules-at-scale-using-visual-studio-code"></a>Развертывание модулей IoT Edge в масштабе с помощью Visual Studio Code
 
-Вы можете создать **IOT Edge автоматическое развертывание** с помощью Visual Studio Code, чтобы управлять текущими развертываниями для нескольких устройств одновременно. Автоматические развертывания для IoT Edge входят в состав функции [автоматического управления устройствами](/azure/iot-hub/iot-hub-automatic-device-management) в Центре Интернета вещей. Развертывания — это динамические процессы, которые позволяют развертывать несколько модулей на нескольких устройствах. Кроме того, можно отвести наблюдение за состоянием и работоспособностью модулей, а также при необходимости вносить изменения.
+Вы можете создать **IOT Edge автоматическое развертывание** с помощью Visual Studio Code, чтобы управлять текущими развертываниями для нескольких устройств одновременно. Автоматические развертывания для IoT Edge входят в состав функции [автоматического управления устройствами](../iot-hub/iot-hub-automatic-device-management.md) в Центре Интернета вещей. Развертывания — это динамические процессы, которые позволяют развертывать несколько модулей на нескольких устройствах. Кроме того, можно отвести наблюдение за состоянием и работоспособностью модулей, а также при необходимости вносить изменения.
 
 Дополнительные сведения см. в статье [Общие сведения об автоматических развертываниях IoT Edge для отдельных устройств или в большом масштабе](module-deployment-monitoring.md).
 
@@ -27,7 +27,10 @@ ms.locfileid: "82134368"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * [Центр Интернета вещей](../iot-hub/iot-hub-create-through-portal.md) в подписке Azure.
-* [Устройство IoT Edge](how-to-register-device.md#register-with-visual-studio-code) с установленной средой выполнения IoT Edge.
+* Одно или несколько устройств IoT Edge.
+
+  Если устройство IoT Edge не настроено, вы можете создать его на виртуальной машине Azure. Выполните действия, описанные в одной из кратких руководств, чтобы [создать виртуальное устройство Linux](quickstart-linux.md) или [создать виртуальное устройство Windows](quickstart.md).
+
 * [Visual Studio Code](https://code.visualstudio.com/).
 * [Средства Azure IoT](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools#overview) для Visual Studio Code.
 
@@ -57,13 +60,16 @@ ms.locfileid: "82134368"
 
 Вот пример простого манифеста развертывания с одним модулем.
 
+>[!NOTE]
+>Этот пример манифеста развертывания использует схему версии 1,1 для агента IoT Edge и концентратора. Версия схемы 1,1 была выпущена вместе с IoT Edge версии 1.0.10 и включает такие функции, как порядок запуска модуля и определение приоритетов маршрутов.
+
 ```json
 {
   "content": {
     "modulesContent": {
       "$edgeAgent": {
         "properties.desired": {
-          "schemaVersion": "1.0",
+          "schemaVersion": "1.1",
           "runtime": {
             "type": "docker",
             "settings": {
@@ -92,7 +98,7 @@ ms.locfileid: "82134368"
           },
           "modules": {
             "SimulatedTemperatureSensor": {
-              "version": "1.0",
+              "version": "1.1",
               "type": "docker",
               "status": "running",
               "restartPolicy": "always",

@@ -10,10 +10,10 @@ ms.author: samkemp
 ms.topic: conceptual
 ms.date: 07/17/2020
 ms.openlocfilehash: 205aed1811c3d9d21a10be7bc4f01c73eb7295b7
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89254806"
 ---
 # <a name="track-experiments-and-deploy-models-in-azure-machine-learning"></a>Отслеживание экспериментов и развертывание моделей в Машинное обучение Azure
@@ -165,7 +165,7 @@ with mlflow.start_run():
 
 Затем нажмите кнопку __развернуть__ в области сведения о модели:
 
-![Развернуть](./media/how-to-track-experiments/mlflow-experiments-4.png)
+![Развертывание](./media/how-to-track-experiments/mlflow-experiments-4.png)
 
 Мы выполним развертывание модели в кластере вывода (служба Azure Kubernetes), созданном на шаге 1. Заполните приведенные ниже сведения, указав имя службы и имя кластера вычислений AKS (созданного на шаге 1). Также рекомендуется увеличить __емкость резерва ЦП__ до 1 (от 0,1) и __емкость резерва памяти__ равна 1 (из 0,5). Вы можете увеличить это увеличение, щелкнув __Дополнительно__ и заполнив подробные сведения. Затем нажмите кнопку __развернуть__.
 
@@ -202,6 +202,6 @@ print(output)
 
 Удалите вычисление, созданное на шаге 1, чтобы не вычислять непрерывные затраты на вычисления. В меню слева в Машинное обучение Azure Studio щелкните вычисления кластеры вывода > > выберите вычисления > удалить.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 * Дополнительные сведения о [развертывании моделей в AzureML](https://docs.microsoft.com/azure/machine-learning/how-to-deploy-and-where)

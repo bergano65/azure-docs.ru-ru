@@ -7,10 +7,10 @@ ms.service: mariadb
 ms.topic: conceptual
 ms.date: 6/8/2020
 ms.openlocfilehash: c3f557c757a46252b9fa0416cc62a827b233f1b2
-ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88065358"
 ---
 # <a name="connectivity-architecture-in-azure-database-for-mariadb"></a>Архитектура подключения в базе данных Azure для MariaDB
@@ -34,7 +34,7 @@ ms.locfileid: "88065358"
 | Central2 Австралия     | 20.36.113.0   |
 | Восточная Австралия | 13.75.149.87, 40.79.161.1     |
 | Юго-Восточная Австралия |191.239.192.109, 13.73.109.251   |
-| Brazil South | 104.41.11.5, 191.233.201.8, 191.233.200.16  |
+| Южная Бразилия | 104.41.11.5, 191.233.201.8, 191.233.200.16  |
 | Центральная Канада |40.85.224.249  |
 | Восточная Канада | 40.86.226.166    |
 | Центральная часть США | 23.99.160.139, 13.67.215.62, 52.182.136.37, 52.182.136.38     |
@@ -83,7 +83,7 @@ ms.locfileid: "88065358"
 > [!IMPORTANT]
 > Поддержка перенаправления в расширении PHP [mysqlnd_azure](https://github.com/microsoft/mysqlnd_azure) в настоящее время доступна в предварительной версии.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Создание правил брандмауэра MariaDB в Базе данных Azure для MariaDB и управление ими на портале Azure](./howto-manage-firewall-portal.md)
 * [Создание правил брандмауэра Базы данных Azure для MariaDB и управление ими с помощью Azure CLI](./howto-manage-firewall-cli.md)

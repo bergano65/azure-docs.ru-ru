@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 10/07/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python, github-actions-azure
-ms.openlocfilehash: 48482658fdabc3e826b6855c500829a16c166749
-ms.sourcegitcommit: efaf52fb860b744b458295a4009c017e5317be50
+ms.openlocfilehash: 3f35a8130c834112961f4542883704c2b8dbd08f
+ms.sourcegitcommit: 090ea6e8811663941827d1104b4593e29774fa19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91851124"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91999255"
 ---
 # <a name="continuous-delivery-by-using-github-action"></a>Непрерывная поставка с помощью действия GitHub
 
@@ -32,6 +32,18 @@ ms.locfileid: "91851124"
 > [!NOTE]
 > Не нужно создавать субъект-службу, если вы решили использовать профиль публикации для проверки подлинности.
 
+## <a name="downloading-and-using-a-publish-profile-as-deployment-credential-recommended"></a>Загрузка и использование профиля публикации в качестве учетных данных развертывания (рекомендуется)
+
+Чтобы скачать профиль публикации приложения функции, выполните следующие действия.
+
+1. Выберите страницу **Обзор** приложения-функции и щелкните **получить профиль публикации**.
+
+   :::image type="content" source="media/functions-how-to-github-actions/get-publish-profile.png" alt-text="Загрузить профиль публикации":::
+
+1. Сохраните и скопируйте содержимое файла параметров публикации.
+
+## <a name="create-a-service-principal-deprecated"></a>Создание субъекта-службы (не рекомендуется)
+=======
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Учетная запись Azure с активной подпиской. [Создайте учетную запись бесплатно](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
@@ -44,7 +56,8 @@ ms.locfileid: "91851124"
 
 Рекомендуемый способ аутентификации с помощью функций Azure для действий GitHub — профиль публикации. Вы также можете пройти проверку подлинности с помощью субъекта-службы, но процесс требует дополнительных действий. 
 
-Сохраните учетные данные профиля публикации или субъекта-службы в качестве [секрета GitHub](https://docs.github.com/en/actions/reference/encrypted-secrets) для аутентификации в Azure. Вы получите доступ к секрету в рабочем процессе. 
+## <a name="configure-the-github-secret"></a>Настройка секрета GitHub
+= = = = = = = Сохранить учетные данные или субъект-службу в качестве [секрета GitHub](https://docs.github.com/en/actions/reference/encrypted-secrets) для аутентификации в Azure. Вы получите доступ к секрету в рабочем процессе. 
 
 # <a name="publish-profile"></a>[Опубликовать профиль](#tab/publish-profile)
 

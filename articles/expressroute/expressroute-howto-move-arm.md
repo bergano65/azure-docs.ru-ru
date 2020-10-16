@@ -9,10 +9,10 @@ ms.date: 02/25/2019
 ms.author: duau
 ms.custom: devx-track-azurepowershell
 ms.openlocfilehash: 460ea446fc6dfc43e81a1a57bbba032a61f3a72d
-ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90532551"
 ---
 # <a name="move-expressroute-circuits-from-classic-to-resource-manager-deployment-model-using-powershell"></a>Перемещение каналов ExpressRoute из классической модели развертывания в модель развертывания с помощью Resource Manager с использованием PowerShell
@@ -92,7 +92,7 @@ ms.locfileid: "90532551"
 Move-AzExpressRouteCircuit -Name "MyCircuit" -ResourceGroupName "DemoRG" -Location "West US" -ServiceKey "<Service-key>"
 ```
 
-В классическом режиме для а ExpressRoute не предусмотрена привязка к региону. Но в Resource Manager каждый ресурс должен быть сопоставлен с регионом Azure. Регион, указанный в командлете Move-АзекспрессраутеЦиркуит, технически может быть любым регионом. В соответствии с задачами организации может потребоваться выбрать регион, который точно представляет ваше расположение пиринга.
+В классическом режиме для а ExpressRoute не предусмотрена привязка к региону. Но в Resource Manager каждый ресурс должен быть сопоставлен с регионом Azure. Регион, указанный в командлете Move-AzExpressRouteCircuit, технически может быть любым регионом. В соответствии с задачами организации может потребоваться выбрать регион, который точно представляет ваше расположение пиринга.
 
 > [!NOTE]
 > * После перемещения классического канала ExpressRoute в модель развертывания диспетчер ресурсов он по умолчанию будет иметь доступ как к классической, так и по диспетчер ресурсов модели развертывания.

@@ -3,19 +3,19 @@ title: Граф метрик советника по метрикам
 titleSuffix: Azure Cognitive Services
 description: Настройка диаграммы метрик и визуализация связанных аномалий в данных.
 services: cognitive-services
-author: aahill
+author: mrbullwinkle
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: metrics-advisor
 ms.topic: conceptual
 ms.date: 09/08/2020
-ms.author: aahi
-ms.openlocfilehash: 09ea16f07973757b169f21c7c3f909a24651daa4
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.author: mbullwin
+ms.openlocfilehash: bcedef4a1339dacaff3fe841e97f985c42320819
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90940643"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92043159"
 ---
 # <a name="how-to-build-a-metrics-graph-to-analyze-related-metrics"></a>Пошаговое руководство. Построение диаграммы метрик для анализа связанных метрик
 
@@ -35,7 +35,7 @@ ms.locfileid: "90940643"
 
 Нажмите кнопку **Добавить связь**, и вы сможете выбрать другую метрику и указать тип связи между двумя узлами. Можно также применить определенные фильтры измерений. 
 
-:::image type="content" source="../media/graph/metrics-graph-node-action.png" alt-text="Добавление узла и отношения":::
+:::image type="content" source="../media/graph/metrics-graph-node-action.png" alt-text="Выбор метрики":::
 
 После повторения описанных выше шагов вы получите граф метрик, описывающий связи между всеми связанными метриками.
 **Указание цветов узла**
@@ -50,7 +50,7 @@ ms.locfileid: "90940643"
 
 Щелкните инцидент в графе и прокрутите вниз до пункта **анализ перекрестных метрик**, под диагностическими сведениями.
 
-:::image type="content" source="../media/graph/metrics-graph-cross-metrics-analysis.png" alt-text="Просмотр связанных метрик и аномалий":::
+:::image type="content" source="../media/graph/metrics-graph-cross-metrics-analysis.png" alt-text="Выбор метрики":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -4,12 +4,12 @@ description: Получение количества просмотров стр
 ms.topic: conceptual
 ms.date: 08/06/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 5a90f0b4223d69ccb6c4def871eb9d5bf5fbc2e8
-ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
+ms.openlocfilehash: b109aaea1ae5e751f40b55a3c703f0739661e10d
+ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91841447"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91876215"
 ---
 # <a name="application-insights-for-web-pages"></a>Application Insights для веб-страниц
 
@@ -115,7 +115,7 @@ cfg: { // Application Insights Configuration
 
 ### <a name="sending-telemetry-to-the-azure-portal"></a>Отправка данных телеметрии в портал Azure
 
-По умолчанию в Application Insights SDK для JavaScript выполняется Автосбор нескольких элементов телеметрии, которые полезны для определения работоспособности приложения и базового интерфейса пользователя. Сюда входит следующее.
+По умолчанию в Application Insights SDK для JavaScript выполняется Автосбор нескольких элементов телеметрии, которые полезны для определения работоспособности приложения и базового интерфейса пользователя. Они перечислены ниже.
 
 - **Неперехваченные исключения** в приложении, включая сведения о
     - Трассировка стека
@@ -200,6 +200,41 @@ appInsights.trackTrace({message: 'this message will not be sent'}); // Not sent
 | ажаксперфлукупделай | 25 | Значение по умолчанию — 25 мс. Время ожидания перед повторной попыткой поиска окон. `ajax` время, необходимое для запроса, равно времени в миллисекундах и передается непосредственно в setTimeout ().
 | енаблеунхандледпромисережектионтраккинг | false | Если задано значение true, необработанные отклонения в обещании будут собираются и сообщаются как ошибка JavaScript. Если Дисабликсцептионтраккинг имеет значение true (не записывать исключения), значение конфигурации будет проигнорировано, а необработанные отклонения обещаний не будут выводиться.
 
+## <a name="enable-time-on-page-tracking"></a>Включение отслеживания времени на странице
+
+С помощью параметра `autoTrackPageVisitTime: true` время, затрачиваемое пользователем на каждую страницу, будет отслеживаниь. На каждом новом PageView время, которое пользователь тратил на *предыдущей* странице, отправляется как [Пользовательская метрика](../platform/metrics-custom-overview.md) с именем `PageVisitTime` . Эта пользовательская метрика отображается в [Обозреватель метрик](../platform/metrics-getting-started.md) как "Метрика на основе журнала".
+
+## <a name="enable-correlation"></a>Включить корреляцию
+
+Корреляция создает и отправляет данные, обеспечивающие распределенную трассировку и включающую [схему приложения](../app/app-map.md), [представление сквозных транзакций](../app/app-map.md#go-to-details)и другие средства диагностики.
+
+В следующем примере показаны все возможные конфигурации, необходимые для включения корреляции, с примечаниями для конкретного сценария ниже.
+
+```javascript
+// excerpt of the config section of the JavaScript SDK snippet with correlation
+// between client-side AJAX and server requests enabled.
+cfg: { // Application Insights Configuration
+    instrumentationKey: "YOUR_INSTRUMENTATION_KEY_GOES_HERE"
+    disableFetchTracking: false,
+    enableCorsCorrelation: true,
+    enableRequestHeaderTracking: true,
+    enableResponseHeaderTracking: true,
+    correlationHeaderExcludedDomains: ['myapp.azurewebsites.net', '*.queue.core.windows.net']
+    /* ...Other Configuration Options... */
+}});
+</script>
+
+``` 
+
+Если какой-либо из сторонних серверов, с которыми взаимодействует клиент, не может принять `Request-Id` `Request-Context` заголовки и, и вы не можете обновить их конфигурацию, их необходимо разместить в списке исключений через `correlationHeaderExcludeDomains` свойство конфигурации. Это свойство поддерживает подстановочные знаки.
+
+На стороне сервера должна быть возможность принимать соединения с этими заголовками. В зависимости от `Access-Control-Allow-Headers` конфигурации на стороне сервера часто требуется расширить список на стороне сервера, вручную добавив `Request-Id` и `Request-Context` .
+
+Access-Control-Allow-Headers: `Request-Id` , `Request-Context` , `<your header>`
+
+> [!NOTE]
+> Если вы используете Опентелемтри или Application Insights пакеты SDK, выпущенные в 2020 или более поздней версии, рекомендуется использовать [WC3 трацеконтекст](https://www.w3.org/TR/trace-context/). См [. Руководство](../app/correlation.md#enable-w3c-distributed-tracing-support-for-web-apps)по настройке конфигурации.
+
 ## <a name="single-page-applications"></a>Одностраничные приложения
 
 По умолчанию этот пакет SDK **не** будет управлять изменением маршрута на основе состояния, которое происходит в одностраничных приложениях. Чтобы включить автоматическое отслеживание изменений маршрута для одностраничного приложения, можно добавить `enableAutoRouteTracking: true` в конфигурацию установки.
@@ -208,10 +243,6 @@ appInsights.trackTrace({message: 'this message will not be sent'}); // Not sent
 > [!NOTE]
 > Используйте `enableAutoRouteTracking: true` , только если **не** используется подключаемый модуль "реагирующий". Оба варианта могут отправлять новые PageViews при изменении маршрута. Если оба этих флажка включены, может быть отправлен дубликат PageViews.
 
-## <a name="configuration-autotrackpagevisittime"></a>Конфигурация: Аутотраккпажевиситтиме
-
-С помощью параметра `autoTrackPageVisitTime: true` время, затрачиваемое пользователем на каждую страницу, будет отслеживаниь. На каждом новом PageView время, которое пользователь тратил на *предыдущей* странице, отправляется как [Пользовательская метрика](../platform/metrics-custom-overview.md) с именем `PageVisitTime` . Эта пользовательская метрика отображается в [Обозреватель метрик](../platform/metrics-getting-started.md) как "Метрика на основе журнала".
-
 ## <a name="extensions"></a>Модули
 
 | Модули |
@@ -219,38 +250,6 @@ appInsights.trackTrace({message: 'this message will not be sent'}); // Not sent
 | [React](javascript-react-plugin.md)|
 | [React Native](javascript-react-native-plugin.md)|
 | [Angular](javascript-angular-plugin.md) |
-
-## <a name="correlation"></a>Correlation
-
-Корреляция между клиентом и сервером поддерживается для следующих компонентов:
-
-- Запросы XHR/AJAX 
-- Запросы на получение 
-
-Связь между клиентом и сервером **не поддерживается** для `GET` `POST` запросов и.
-
-### <a name="enable-cross-component-correlation-between-client-ajax-and-server-requests"></a>Включение корреляции между компонентами между клиентскими запросами AJAX и сервером
-
-Чтобы включить `CORS` корреляцию, клиенту необходимо отправить два дополнительных заголовка запроса `Request-Id` `Request-Context` , и серверная часть должна иметь возможность принимать соединения с этими заголовками. Отправка этих заголовков включается параметром `enableCorsCorrelation: true` в конфигурации пакета SDK для JavaScript. 
-
-В зависимости от `Access-Control-Allow-Headers` конфигурации на стороне сервера часто требуется расширить список на стороне сервера, вручную добавив `Request-Id` и `Request-Context` .
-
-Access-Control-Allow-Headers: `Request-Id` , `Request-Context` , `<your header>`
-
-Если какой-либо из сторонних серверов, с которыми взаимодействует клиент, не может принять `Request-Id` `Request-Context` заголовки и, и вы не можете обновить их конфигурацию, их необходимо разместить в списке исключений через `correlationHeaderExcludeDomains` свойство конфигурации. Это свойство поддерживает подстановочные знаки.
-
-```javascript
-// excerpt of the config section of the JavaScript SDK snippet with correlation
-// between client-side AJAX and server requests enabled.
-cfg: { // Application Insights Configuration
-    instrumentationKey: "YOUR_INSTRUMENTATION_KEY_GOES_HERE"
-    enableCorsCorrelation: true,
-    correlationHeaderExcludedDomains: ['myapp.azurewebsites.net', '*.queue.core.windows.net']
-    /* ...Other Configuration Options... */
-}});
-</script>
-
-``` 
 
 ## <a name="explore-browserclient-side-data"></a>Изучение данных в браузере и на стороне клиента
 

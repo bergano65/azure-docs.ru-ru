@@ -16,10 +16,10 @@ ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6f38ef7db114705392bd1d3dc6f9a4562a809e20
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86023889"
 ---
 # <a name="activate-my-azure-resource-roles-in-privileged-identity-management"></a>Активация ролей ресурсов Azure в управление привилегированными пользователями
@@ -104,7 +104,7 @@ ms.locfileid: "86023889"
 
    ![Мой список запросов с выделенным действием отмены](./media/pim-resource-roles-activate-your-roles/resources-my-requests-cancel.png)
 
-## <a name="troubleshoot"></a>Устранение неполадок
+## <a name="troubleshoot"></a>Диагностика
 
 ### <a name="permissions-are-not-granted-after-activating-a-role"></a>Разрешения не предоставляются после активации роли
 
@@ -113,7 +113,7 @@ ms.locfileid: "86023889"
 1. Закройте портал Azure, а затем войдите на него снова.
 1. В управление привилегированными пользователями убедитесь, что вы указаны в списке как член роли.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Расширение или продление ролей ресурсов Azure в управление привилегированными пользователями](pim-resource-roles-renew-extend.md)
 - [Активировать роли Azure AD в управление привилегированными пользователями](pim-how-to-activate-role.md)

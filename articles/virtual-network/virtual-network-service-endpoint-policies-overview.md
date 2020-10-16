@@ -12,13 +12,13 @@ ms.workload: infrastructure-services
 ms.date: 02/21/2020
 ms.author: rdhillon
 ms.openlocfilehash: 14ecb30af11bf750c90e45c3fb6b443d861a1445
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89400761"
 ---
-# <a name="virtual-network-service-endpoint-policies-for-azure-storage"></a>Политики конечной точки службы виртуальной сети в службе хранилища Azure
+# <a name="virtual-network-service-endpoint-policies-for-azure-storage"></a>Политики конечных точек службы виртуальной сети для службы хранилища Azure
 
 Политики конечных точек службы виртуальной сети позволяют фильтровать исходящий трафик виртуальной сети в учетных записях хранения Azure через конечную точку службы и разрешать утечка данных только для конкретных учетных записей хранения Azure. Политики конечных точек обеспечивают детализированный контроль доступа для трафика виртуальной сети к службе хранилища Azure при подключении через конечную точку службы.
 

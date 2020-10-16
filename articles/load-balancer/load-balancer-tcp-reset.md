@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 10/07/2020
 ms.author: allensu
 ms.openlocfilehash: 060048bf786f424d5df6eb8fb4813877acb0fea0
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91823217"
 ---
 # <a name="load-balancer-tcp-reset-and-idle-timeout"></a>Load Balancer сброс TCP и время ожидания простоя
@@ -61,7 +61,7 @@ Azure Load Balancer имеет следующий диапазон времен�
 - Сброс TCP не отправляется для внутренних подсистем балансировки нагрузки с настроенными портами высокой доступности.
 - Время ожидания простоя TCP не влияет на правила балансировки нагрузки по протоколу UDP.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о [Load Balancer (цен. Категория "Стандартный")](load-balancer-standard-overview.md).
 - Узнайте о [правилах исходящих подключений](load-balancer-outbound-rules-overview.md).

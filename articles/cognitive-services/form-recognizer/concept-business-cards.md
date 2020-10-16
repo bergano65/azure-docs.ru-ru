@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 08/17/2019
 ms.author: pafarley
 ms.openlocfilehash: f8f173291448d9da4d8967ff56b0fa027ca73409
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91334554"
 ---
 # <a name="business-card-concepts"></a>Сведения о визитных карточках
@@ -387,7 +387,7 @@ API визитной карточки также может вернуть ве�
 
 API-интерфейс визитной карточки также работает с [функцией обработки Аибуилдер Business Card](https://docs.microsoft.com/ai-builder/prebuilt-business-card).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Чтобы приступить к распознаванию визитных карточек, следуйте инструкциям из [руководства по API для визитных карточек Python](./quickstarts/python-business-cards.md) .
 

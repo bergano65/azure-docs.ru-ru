@@ -8,12 +8,12 @@ ms.service: azure-app-configuration
 ms.topic: tutorial
 ms.date: 04/14/2020
 ms.author: shuawan
-ms.openlocfilehash: 2b5440ad2bec94d4ef14fa29e723cc91a4fcdf10
-ms.sourcegitcommit: d9ba60f15aa6eafc3c5ae8d592bacaf21d97a871
+ms.openlocfilehash: ee5f70f40103a92ff26cfcabc6adf9e2b825b59b
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91766854"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92074844"
 ---
 # <a name="integrate-with-kubernetes-deployment-using-helm"></a>Интеграция с развертыванием Kubernetes с помощью Helm
 
@@ -28,12 +28,12 @@ Helm предоставляет способ для определения, ус
 > * использование значений из службы "Конфигурация приложений" при развертывании приложения в Kubernetes с помощью Helm;
 > * создание секрета Kubernetes на основе ссылки на Key Vault в службе "Конфигурация приложений".
 
-В этом руководстве предполагается, что у вас есть базовое понимание принципов управления Kubernetes с помощью Helm. Дополнительные сведения об установке приложений с помощью Helm в Службе Azure Kubernetes см. [здесь](https://docs.microsoft.com/azure/aks/kubernetes-helm).
+В этом руководстве предполагается, что у вас есть базовое понимание принципов управления Kubernetes с помощью Helm. Дополнительные сведения об установке приложений с помощью Helm в Службе Azure Kubernetes см. [здесь](../aks/kubernetes-helm.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 - [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
-- Установленный [интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) версии 2.4.0 или более поздней.
+- Установленный [интерфейс командной строки Azure](/cli/azure/install-azure-cli?view=azure-cli-latest) версии 2.4.0 или более поздней.
 - Установленный [Helm](https://helm.sh/docs/intro/install/) версии 2.14.0 или более поздней.
 - Кластер Kubernetes.
 
@@ -51,7 +51,7 @@ Helm предоставляет способ для определения, ус
     Поля **Метка** и **Тип контента** пока заполнять не нужно.
 
 ## <a name="add-a-key-vault-reference-to-app-configuration"></a>Добавление ссылки на Key Vault в службу "Конфигурация приложений Azure"
-1. Войдите на [портал Azure](https://portal.azure.com) и добавьте в [Key Vault](https://docs.microsoft.com/azure/key-vault/secrets/quick-create-portal#add-a-secret-to-key-vault) секрет с именем **Password** и значением **myPassword**. 
+1. Войдите на [портал Azure](https://portal.azure.com) и добавьте в [Key Vault](../key-vault/secrets/quick-create-portal.md#add-a-secret-to-key-vault) секрет с именем **Password** и значением **myPassword**. 
 2. Выберите экземпляр хранилища службы "Конфигурация приложений", который вы создали в предыдущем разделе.
 
 3. Выберите **Обозреватель конфигураций**.
@@ -185,7 +185,7 @@ settings:
 Сначала в службе "Конфигурация приложений" скачайте конфигурацию в файл *myConfig.yaml*. Чтобы скачать только те ключи, которые начинаются со строки **settings.** , примените фильтр ключей. Если для вашего случая фильтр ключей не может исключить все упомянутые в Key Vault ключи, попробуйте использовать для их исключения аргумент **--skip-keyvault**. 
 
 > [!TIP]
-> Дополнительные сведения см. в статье о [команде export](https://docs.microsoft.com/cli/azure/appconfig/kv?view=azure-cli-latest#az-appconfig-kv-export). 
+> Дополнительные сведения см. в статье о [команде export](/cli/azure/appconfig/kv?view=azure-cli-latest#az-appconfig-kv-export). 
 
 ```azurecli-interactive
 az appconfig kv export -n myAppConfiguration -d file --path myConfig.yaml --key "settings.*"  --separator "." --format yaml
@@ -225,7 +225,7 @@ else{
 
 ```
 
-Убедитесь, что настройки и секреты были успешно заданы, открыв [панель мониторинга Kubernetes](https://docs.microsoft.com/azure/aks/kubernetes-dashboard). Вы увидите, что значения **color** и **message** из службы "Конфигурация приложений" успешно перенесены в переменные среды контейнера.
+Убедитесь, что настройки и секреты были успешно заданы, открыв [панель мониторинга Kubernetes](../aks/kubernetes-dashboard.md). Вы увидите, что значения **color** и **message** из службы "Конфигурация приложений" успешно перенесены в переменные среды контейнера.
 
 ![Краткое руководство. Запуск приложения, размещенного локально](./media/kubernetes-dashboard-env-variables.png)
 
@@ -242,4 +242,4 @@ else{
 Из этого руководства вы узнали, как экспортировать данные из службы "Конфигурация приложений Azure", чтобы использовать их в Helm при развертывании Kubernetes. Чтобы узнать больше об использовании службы "Конфигурация приложений", перейдите к примерам скриптов Azure CLI.
 
 > [!div class="nextstepaction"]
-> [Azure CLI](https://docs.microsoft.com/cli/azure/appconfig?view=azure-cli-latest)
+> [Azure CLI](/cli/azure/appconfig?view=azure-cli-latest)

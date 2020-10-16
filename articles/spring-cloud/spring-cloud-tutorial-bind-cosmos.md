@@ -7,16 +7,16 @@ ms.topic: how-to
 ms.date: 10/06/2019
 ms.author: brendm
 ms.custom: devx-track-java
-ms.openlocfilehash: 9b7af755c7f0903787bb3798ea1f6877cae180f1
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 20926988d554d562f36587734bd99c34b4731e69
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90908309"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92088726"
 ---
 # <a name="bind-an-azure-cosmos-db-database-to-your-azure-spring-cloud-application"></a>Привязывание базы данных Azure Cosmos DB к приложению Azure Spring Cloud
 
-**Эта статья относится к:** ✔️ Java
+**Эта статья применима к:** ✔️ Java
 
 Чтобы не настраивать приложения Spring Boot вручную, вы можете автоматически привязать выбранные службы Azure к приложениям с помощью Azure Spring Cloud. В этой статье показано, как привязать приложение к базе данных Azure Cosmos DB.
 
@@ -29,7 +29,7 @@ ms.locfileid: "90908309"
 
 Azure Cosmos DB имеет пять различных типов API, поддерживающих привязку. В приведенной ниже процедуре показано, как их использовать:
 
-1. Создает базу данных Azure Cosmos DB. Дополнительные сведения см. в статье [Краткое руководство. Создание учетной записи, базы данных, контейнера и элементов Azure Cosmos на портале Azure](https://docs.microsoft.com/azure/cosmos-db/create-cosmosdb-resources-portal). 
+1. Создает базу данных Azure Cosmos DB. Дополнительные сведения см. в статье [Краткое руководство. Создание учетной записи, базы данных, контейнера и элементов Azure Cosmos на портале Azure](../cosmos-db/create-cosmosdb-resources-portal.md). 
 
 1. Запишите имя базы данных. Для этой процедуры имя базы данных — **testdb**.
 

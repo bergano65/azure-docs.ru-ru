@@ -13,10 +13,10 @@ tags: ''
 keywords: ''
 ms.service: multiple
 ms.openlocfilehash: 6780942d922f885c7afebd8e64f4f28654c3800e
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87042536"
 ---
 # <a name="deploy-micro-focus-enterprise-server-50-to-aks"></a>Развертывание Micro Focus Enterprise Server 5,0 в AKS
@@ -35,7 +35,7 @@ ms.locfileid: "87042536"
 
 Это позволяет масштабировать (и масштабировать) рабочие нагрузки модернизации мэйнфрейма в Azure, выполнив истинное преимущество облачной платформы.
 
-Всё? Приступим к работе!
+Всё? Давайте начнем!
 
 ## <a name="create-the-azure-container-registry"></a>Создание реестра контейнеров Azure
 

@@ -8,10 +8,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 09/25/2020
 ms.openlocfilehash: 90691fda7b0bf58768c7e9be6a78fb27a7807186
-ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91400372"
 ---
 # <a name="visualize-azure-cognitive-search-logs-and-metrics-with-power-bi"></a>Визуализация журналов Когнитивный поиск Azure и метрик с помощью Power BI
@@ -97,7 +97,7 @@ ms.locfileid: "91400372"
 
 1. Проверьте, не обновляется ли набор данных. На шаге 8 выше показан индикатор состояния обновления. Если обновление по-прежнему выполняется, дождитесь завершения обновления, чтобы открыть и обновить отчет.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 [Дополнительные сведения об Azure Когнитивный поиск](./index.yml)
 
 [Что такое Power BI?](/power-bi/fundamentals/power-bi-overview)

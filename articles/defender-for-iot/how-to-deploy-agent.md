@@ -14,10 +14,10 @@ ms.workload: na
 ms.date: 07/23/2019
 ms.author: mlottner
 ms.openlocfilehash: 8e18b79cc14fe98879ec97361f6e275d8fd918bb
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90940930"
 ---
 # <a name="select-and-deploy-a-security-agent-on-your-iot-device"></a>Выбор и развертывание агента безопасности на устройстве IoT
@@ -89,15 +89,15 @@ ms.locfileid: "90940930"
 |--------------|------------|--------------|
 |C|Ubuntu 16.04 |    X64|
 |C|Ubuntu 18.04 |    x64, ARMv7|
-|C|Debian 9 |    x64, x86|
+|C|Debian 9 |    x64, x86|
 |C#|Ubuntu 16.04     |X64|
 |C#|Ubuntu 18.04    |x64, ARMv7|
-|C#|Debian 9    |X64|
+|C#|Debian 9    |X64|
 |C#|Windows Server 2016|    X64|
 |C#|Windows 10 IoT Базовая, сборка 17763    |X64|
 |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Чтобы узнать больше о параметрах конфигурации, перейдите к руководству по настройке агента.
 > [!div class="nextstepaction"]

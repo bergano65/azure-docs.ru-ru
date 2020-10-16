@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 4/10/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: ad0111f9be8c0b981093618be7296d0ec7f90e30
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 8c698cdf5b26cb1682eec2828922517cf4272275
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91326547"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92048446"
 ---
 # <a name="manage-a-graph-of-digital-twins-using-relationships"></a>Управление графиком цифровых двойников с помощью связей
 
@@ -74,7 +74,7 @@ public async static Task CreateRelationship(DigitalTwinsClient client, string sr
 
 ## <a name="list-relationships"></a>Список связей
 
-Чтобы получить доступ к списку связей для заданного двойника в графе, можно использовать:
+Для доступа к списку **исходящих** связей, поступающих от заданного двойника на графе, можно использовать:
 
 ```csharp
 await client.GetRelationshipsAsync(id);
@@ -110,11 +110,11 @@ public async Task<List<BasicRelationship>> FindOutgoingRelationshipsAsync(string
 
 Полученные связи можно использовать для перехода к другим двойников в графе. Для этого прочтите `target` поле из возвращаемой связи и используйте его в качестве идентификатора для следующего вызова `GetDigitalTwin` . 
 
-### <a name="find-relationships-to-a-digital-twin"></a>Поиск связей с цифровым двойника
+### <a name="find-incoming-relationships-to-a-digital-twin"></a>Поиск входящих отношений для цифрового двойника
 
-В Azure Digital двойников также есть API для поиска всех входящих отношений с заданным двойника. Это часто полезно для обратных переходов или при удалении двойника.
+В Azure Digital двойников также есть API для поиска всех **входящих** отношений с заданным двойника. Это часто полезно для обратных переходов или при удалении двойника.
 
-Предыдущий пример кода посвящен поиску исходящих связей. Следующий пример похож на, но вместо этого находит входящие связи. Они также удаляются после их обнаружения.
+Предыдущий пример кода посвящен поиску исходящих связей от двойника. Следующий пример структурирован аналогично, но находит *Входящие* связи с двойника.
 
 Обратите внимание, что `IncomingRelationship` вызовы не возвращают полный текст связи.
 
@@ -247,7 +247,7 @@ static async Task<bool> CreateFloorOrBuilding(string id, bool makeFloor=true)
 | комната    | Room21 | Floor02 | содержит | … |
 | комната    | Room22 | Floor02 | содержит | … |
 
-В следующем примере кода используется [API Microsoft Graph](https://docs.microsoft.com/graph/overview) для чтения электронной таблицы и создания графа Двойникаов Azure Digital двойников на основе результатов.
+В следующем примере кода используется [API Microsoft Graph](/graph/overview) для чтения электронной таблицы и создания графа Двойникаов Azure Digital двойников на основе результатов.
 
 ```csharp
 var range = msftGraphClient.Me.Drive.Items["BuildingsWorkbook"].Workbook.Worksheets["Building"].usedRange;

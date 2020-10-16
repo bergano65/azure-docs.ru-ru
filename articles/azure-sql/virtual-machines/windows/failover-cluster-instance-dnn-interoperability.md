@@ -13,10 +13,10 @@ ms.workload: iaas-sql-server
 ms.date: 06/02/2020
 ms.author: mathoma
 ms.openlocfilehash: ca782e9949f990857db408919cac342d7f712d2b
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91272622"
 ---
 # <a name="feature-interoperability-with-sql-server-fci--dnn"></a>Взаимодействие функций с SQL Server FCI & DNN
@@ -67,7 +67,7 @@ READ_ONLY_ROUTING_URL = 'TCP://dnnlsnr:1444'
 
 Вы можете опустить порт в URL-адресе, если это порт 1433 по умолчанию. Для именованного экземпляра настройте статический порт для именованного экземпляра и укажите его в URL-адресе маршрутизации только для чтения.  
 
-## <a name="replication"></a>Replication
+## <a name="replication"></a>Репликация
 
 Репликация включает три компонента: издатель, распространитель, подписчик. Любой из этих компонентов может быть экземпляром отказоустойчивого кластера. Поскольку FCI VNN интенсивно используется в конфигурации репликации, как явно, так и неявно, для работы репликации может потребоваться сетевой псевдоним, который сопоставляет VNN с DNN. 
 
@@ -86,7 +86,7 @@ READ_ONLY_ROUTING_URL = 'TCP://dnnlsnr:1444'
 
 Используйте полное имя экземпляра для именованного экземпляра, как показано на следующем рисунке: 
 
-:::image type="content" source="media/failover-cluster-instance-dnn-interoperability/alias-named-instance-configuration-manager.png" alt-text="Используйте полное имя экземпляра при настройке сетевого псевдонима для именованного экземпляра." :::
+:::image type="content" source="media/failover-cluster-instance-dnn-interoperability/alias-named-instance-configuration-manager.png" alt-text="Настройте DNS-имя DNN в качестве сетевого псевдонима с помощью диспетчер конфигурации SQL Server." :::
 
 ## <a name="database-mirroring"></a>Зеркальное отображение базы данных
 
@@ -177,5 +177,5 @@ GO
 Дополнительные сведения см. в разделе: 
 
 - [технологии кластера под управлением Windows](/windows-server/failover-clustering/failover-clustering-overview);   
-- [Экземпляры отказоустойчивого кластера SQL Server](/sql/sql-server/failover-clusters/windows/always-on-failover-cluster-instances-sql-server)
+- [Экземпляры отказоустойчивого кластера SQL Server](/sql/sql-server/failover-clusters/windows/always-on-failover-cluster-instances-sql-server)
 

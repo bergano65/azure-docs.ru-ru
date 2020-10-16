@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 07/25/2019
 ms.author: alkohli
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 4e544d135883d0c936b3f23b3e50e385268c992c
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 05447db97311fb78707079528e0570b3fd42df59
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87006302"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91977584"
 ---
 # <a name="deploy-storsimple-virtual-array---set-up-as-file-server-via-azure-portal"></a>Развертывание виртуального массива StorSimple. Установка в качестве файлового сервера на портале Azure
 ![Схема, на которой показаны шаги, необходимые для развертывания виртуального массива. Первая часть третьего шага помечается как файловый сервер и выделяется.](./media/storsimple-virtual-array-deploy3-fs-setup/fileserver4.png)
@@ -33,7 +33,7 @@ ms.locfileid: "87006302"
 
 Установка и настройка могут занять около 10 минут. Информация в этой статье касается только развертывания виртуальных массивов StorSimple. Инструкции по развертыванию устройств StorSimple 8000 см. в статье о [развертывании устройства StorSimple серии 8000 с обновлением 2](storsimple-deployment-walkthrough-u2.md).
 
-## <a name="setup-prerequisites"></a>Предварительные требования к установке и настройке
+## <a name="setup-prerequisites"></a>Setup prerequisites
 Перед установкой и настройкой виртуального массива StorSimple проверьте следующее.
 
 * Вы подготовили виртуальный массив и подключились к нему, как описано в статье [Развертывание виртуального массива StorSimple — подготовка виртуального массива в Hyper-V](storsimple-virtual-array-deploy2-provision-hyperv.md) или [Развертывание виртуального массива StorSimple — подготовка виртуального массива в VMware](storsimple-virtual-array-deploy2-provision-vmware.md).
@@ -118,18 +118,18 @@ ms.locfileid: "87006302"
     ![Снимок экрана со страницей "все ресурсы" портал Azure. Выделена служба Device Manager.](./media/storsimple-virtual-array-deploy3-fs-setup/searchdevicemanagerservice1.png) 
 13. В отфильтрованном списке выберите службу диспетчера устройств StorSimple и последовательно выберите **Управление > Устройства**. В колонке **Устройства** убедитесь, что устройство успешно подключено к службе и имеет состояние **Готово к настройке**.
     
-    ![Настройка файлового сервера](./media/storsimple-virtual-array-deploy3-fs-setup/deployfs2m.png)
+    ![Развертывание](./media/storsimple-virtual-array-deploy3-fs-setup/deployfs2m.png)
 
 ## <a name="step-2-configure-the-device-as-file-server"></a>Шаг 2. Настройка устройства в качестве файлового сервера
 Чтобы завершить необходимую настройку устройства, выполните на [портале Azure](https://portal.azure.com/) указанные ниже действия.
 
 #### <a name="to-configure-the-device-as-file-server"></a>Настройка устройства в качестве файлового сервера
-1. Перейдите в службу StorSimple Device Manager и перейдите в раздел **управление > устройства**. В колонке **Устройства** выберите устройство, которое вы только что создали. Для него должно отображаться состояние **Готово к настройке**.
+1. Перейдите в службу StorSimple Device Manager и перейдите в раздел  **управление > устройства**. В колонке **Устройства** выберите устройство, которое вы только что создали. Для него должно отображаться состояние **Готово к настройке**.
    
    ![Настройка файлового сервера](./media/storsimple-virtual-array-deploy3-fs-setup/deployfs2m.png) 
 2. Щелкните устройство. Вы увидите сообщение, указывающее, что устройство готово к настройке.
    
-    ![Настройка файлового сервера](./media/storsimple-virtual-array-deploy3-fs-setup/deployfs3m.png)
+    ![Настройка файлового сервера 2](./media/storsimple-virtual-array-deploy3-fs-setup/deployfs3m.png)
 3. На панели команд щелкните **Настроить**. Откроется колонка **Настройка**. В колонке **Настройка** выполните следующие действия.
    
    1. Имя файлового сервера заполняется автоматически.
@@ -140,7 +140,7 @@ ms.locfileid: "87006302"
     
    4. Щелкните **Настроить обязательные параметры**, чтобы указать данные учетной записи хранения, которую следует использовать с устройством. Щелкните **Добавить**, если учетная запись хранения не настроена. **Убедитесь, что используемая учетная запись хранения поддерживает блочные BLOB-объекты. Страничные BLOB-объекты не поддерживаются.** Дополнительные сведения о [блочных и страничных BLOB-объектах](https://docs.microsoft.com/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs).
    
-      ![Настройка файлового сервера](./media/storsimple-virtual-array-deploy3-fs-setup/deployfs6m.png) 
+      ![Настройка файлового сервера 3](./media/storsimple-virtual-array-deploy3-fs-setup/deployfs6m.png) 
 4. В колонке **добавления учетных данных учетной записи хранения** выполните следующие действия. 
 
     1. Выберите текущую подписку, если учетная запись хранения находится в той же подписке, что и служба. Укажите другую подписку, если учетная запись хранения находится за пределами подписки на службу. 
@@ -153,19 +153,19 @@ ms.locfileid: "87006302"
     
     5. Нажмите кнопку **Добавить**, чтобы добавить эти данные учетной записи хранения. 
    
-        ![Настройка файлового сервера](./media/storsimple-virtual-array-deploy3-fs-setup/deployfs8m.png)
+        ![Настройка файлового сервера 4](./media/storsimple-virtual-array-deploy3-fs-setup/deployfs8m.png)
 
-5. После успешного создания учетных данных учетной записи хранения колонка **Настройка** обновится, и в ней появятся указанные данные. Щелкните **Настройка**.
+5. После успешного создания учетных данных учетной записи хранения колонка **Настройка** обновится, и в ней появятся указанные данные. Нажмите **Настроить**.
    
-   ![Настройка файлового сервера](./media/storsimple-virtual-array-deploy3-fs-setup/deployfs11m.png)
+   ![Настройка файлового сервера 5](./media/storsimple-virtual-array-deploy3-fs-setup/deployfs11m.png)
    
    Вы увидите, что файловый сервер создается. После успешного создания сервера вы получите уведомление.
    
-   ![Настройка файлового сервера](./media/storsimple-virtual-array-deploy3-fs-setup/deployfs13m.png)
+   ![Настройка файлового сервера 5b](./media/storsimple-virtual-array-deploy3-fs-setup/deployfs13m.png)
    
    Состояние устройства также изменится на состояние **В сети**.
    
-   ![Настройка файлового сервера](./media/storsimple-virtual-array-deploy3-fs-setup/deployfs14m.png)
+   ![Настройка 5C файлового сервера](./media/storsimple-virtual-array-deploy3-fs-setup/deployfs14m.png)
    
    Теперь вы можете добавить общую папку.
 
@@ -189,21 +189,21 @@ ms.locfileid: "87006302"
    
    5. Нажмите кнопку **Добавить**, чтобы создать общую папку. 
     
-       ![Добавление общей папки](./media/storsimple-virtual-array-deploy3-fs-setup/deployfs18m.png)
+       ![Добавление общей папки 1](./media/storsimple-virtual-array-deploy3-fs-setup/deployfs18m.png)
    
        Вы получите уведомление о том, что общая папка создается.
    
-       ![Добавление общей папки](./media/storsimple-virtual-array-deploy3-fs-setup/deployfs19m.png)
+       ![Добавление общей папки 2](./media/storsimple-virtual-array-deploy3-fs-setup/deployfs19m.png)
    
       После создания общей папки с указанными параметрами колонка **Общие папки** обновится, и в ней появится новая папка. По умолчанию для нее включены мониторинг и резервное копирование.
    
-      ![Добавление общей папки](./media/storsimple-virtual-array-deploy3-fs-setup/deployfs22m.png)
+      ![Добавление общего ресурса 3](./media/storsimple-virtual-array-deploy3-fs-setup/deployfs22m.png)
 
 ## <a name="step-4-connect-to-the-share"></a>Шаг 4. Подключение к общей папке
 Теперь необходимо подключиться к общим папкам, созданным на предыдущем этапе. Выполните следующие действия на узле Windows Server, который подключен к виртуальному массиву StorSimple.
 
 #### <a name="to-connect-to-the-share"></a>Подключение к общей папке
-1. Нажмите сочетание клавиш :::image type="icon" source="./media/storsimple-virtual-array-deploy3-fs-setup/image22.png"::: + R. В окне выполнения укажите *&#92;&#92;&lt;имя файлового сервера&gt;* в качестве пути, заменив *имя файлового сервера* именем устройства, присвоенным файловому серверу. Нажмите кнопку **ОК**.
+1. Нажмите сочетание клавиш :::image type="icon" source="./media/storsimple-virtual-array-deploy3-fs-setup/image22.png"::: + R. В окне выполнения укажите *&#92;&#92;&lt;имя файлового сервера&gt;* в качестве пути, заменив *имя файлового сервера* именем устройства, присвоенным файловому серверу. Нажмите кнопку **OK**.
    
    ![Снимок экрана: диалоговое окно "выполнить". Поле Открыть заполняется путем, ведущим к файловому серверу.](./media/storsimple-virtual-array-deploy3-fs-setup/image23.png)
 2. Откроется проводник. и вы сможете увидеть общие папки. Для просмотра содержимого выберите и дважды щелкните общую папку.

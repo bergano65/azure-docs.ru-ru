@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 08/03/2020
 ms.author: jingwang
 ms.openlocfilehash: 14b3857211eca39ebe09a3a0752ca1d8eee17bc0
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87529999"
 ---
 # <a name="copy-data-from-xero-using-azure-data-factory"></a>Копирование данных из Xero с помощью Фабрики данных Azure
@@ -53,11 +53,11 @@ ms.locfileid: "87529999"
 
 | Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
-| type | Для свойства type необходимо задать значение **Xero**. | да |
-| connectionProperties | Группа свойств, определяющих способ подключения к Xero. | да |
+| type | Для свойства type необходимо задать значение **Xero**. | Да |
+| connectionProperties | Группа свойств, определяющих способ подключения к Xero. | Да |
 | ***В разделе `connectionProperties` :*** | | |
-| узел | Конечная точка сервера Xero (`api.xero.com`).  | да |
-| authenticationType | Допустимые значения: `OAuth_2.0` и `OAuth_1.0` . | да |
+| узел | Конечная точка сервера Xero (`api.xero.com`).  | Да |
+| authenticationType | Допустимые значения: `OAuth_2.0` и `OAuth_1.0` . | Да |
 | consumerKey | Ключ пользователя, связанный с приложением Xero. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
 | privateKey | Закрытый ключ из PEM-файла, созданный для частного приложения Xero. Дополнительные сведения см. в статье [Create a public/private key pair](https://developer.xero.com/documentation/auth-and-limits/create-publicprivate-key) (Создание открытого и закрытого ключей). Примечание для **создания privateKey. PEM с нумбитс 512** с помощью `openssl genrsa -out privatekey.pem 512` , 1024 не поддерживается. Включает весь текст из PEM-файла, в том числе окончания строк Unix (\n). Пример см. ниже.<br/>Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
 | tenantId | Идентификатор клиента, связанный с приложением Xero. Применимо к проверке подлинности OAuth 2,0.<br>Сведения о том, как получить идентификатор клиента, см. в [разделе Проверка клиентов, которым вы имеете право доступа](https://developer.xero.com/documentation/oauth2/auth-flow). | Да для проверки подлинности OAuth 2,0 |
@@ -143,7 +143,7 @@ ms.locfileid: "87529999"
 
 | Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
-| type | Свойство Type набора данных должно иметь значение **ксерубжект** . | да |
+| type | Свойство Type набора данных должно иметь значение **ксерубжект** . | Да |
 | tableName | Имя таблицы. | Нет (если свойство query указано в источнике действия) |
 
 **Пример**
@@ -218,7 +218,7 @@ ms.locfileid: "87529999"
 
 - Bank_Transactions
 - Contact_Groups 
-- "Контакты" 
+- Контакты 
 - Contacts_Sales_Tracking_Categories 
 - Contacts_Phones 
 - Contacts_Addresses 

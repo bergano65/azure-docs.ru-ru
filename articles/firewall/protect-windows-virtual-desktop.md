@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 05/06/2020
 ms.author: victorh
 ms.openlocfilehash: ae33d763bda49756e9f90a05feda5089b63ef28b
-ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91400168"
 ---
 # <a name="use-azure-firewall-to-protect-window-virtual-desktop-deployments"></a>Защита развертываний виртуальных рабочих столов в Windows с помощью Брандмауэра Azure
@@ -74,6 +74,6 @@ ms.locfileid: "91400168"
    По умолчанию виртуальные машины под управлением Windows подключаются к time.windows.com через UDP-порт 123 для синхронизации времени. Создайте Сетевое правило, разрешающее этот доступ, или для сервера времени, который используется в вашей среде.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о виртуальном рабочем столе Windows: [что такое виртуальный рабочий стол Windows?](../virtual-desktop/overview.md)

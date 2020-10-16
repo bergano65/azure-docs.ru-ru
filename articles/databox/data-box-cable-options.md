@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 10/24/2018
 ms.author: alkohli
 ms.openlocfilehash: bab81809f42c9afa3d2c701398fa5ff8ffc2800d
-ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91744174"
 ---
 # <a name="cabling-options-for-your-azure-data-box"></a>Варианты подключения кабелей к устройству Azure Data Box
@@ -129,6 +129,6 @@ ms.locfileid: "91744174"
 2. Для определения IP-адреса используйте DHCP-сервер или DNS-сервер.
 3. С сервера в той же сети обратитесь к локальному веб-интерфейсу устройства, используя IP-адрес, назначенный сервером DHCP. Войдите в систему и разблокируйте Data Box, используя пароль разблокировки с портала Azure.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - После подключения устройства ознакомьтесь со статьей [Руководство: копирование данных в Azure Data Box](data-box-deploy-copy-data.md).

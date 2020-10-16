@@ -8,10 +8,10 @@ ms.subservice: hyperscale-citus
 ms.topic: conceptual
 ms.date: 04/28/2020
 ms.openlocfilehash: 2d781ca7293d4bd95ae62eadc50295ca14c2d381
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91314936"
 ---
 # <a name="backup-and-restore-in-azure-database-for-postgresql---hyperscale-citus"></a>Резервное копирование и восстановление в базе данных Azure для PostgreSQL — масштабирование (Цитус)
@@ -63,7 +63,7 @@ ms.locfileid: "91314936"
 * Убедитесь, что заданы соответствующие данные для входа и разрешений уровня базы данных.
 * Настройте оповещения соответствующим образом.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Сведения о [зонах доступности Azure](/azure/availability-zones/az-overview).
 * Установка [рекомендуемых оповещений](/azure/postgresql/howto-hyperscale-alert-on-metric#suggested-alerts) для групп серверов с горизонтальным масштабированием (Цитус).

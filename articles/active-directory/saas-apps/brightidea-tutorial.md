@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/23/2019
 ms.author: jeedes
-ms.openlocfilehash: 7909f793407956247a8378a86e20bbe7b1bcddb6
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 75e4937966c549c4d815a8776c70aa6366abe3e0
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88542808"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91740825"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-brightidea"></a>Руководство по Интеграция Azure Active Directory с Brightidea
 
@@ -112,14 +112,14 @@ ms.locfileid: "88542808"
 
     c. После успешной передачи файла метаданных поля **Идентификатор** и **URL-адрес ответа** в текстовом поле раздела Brightidea автоматически заполняются значениями:
 
-    ![Изображение](common/idp-intiated.png)
+    ![Снимок экрана, на котором показан раздел "Базовая конфигурация SAML", где можно ввести идентификатор, URL-адрес ответа и нажать кнопку "Сохранить"](common/idp-intiated.png)
 
     > [!Note]
     > Если поля **Идентификатор** и **URL-адрес ответа** автоматически не заполняются, введите эти значения вручную в соответствии с поставленной задачей.
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
-    ![Изображение](common/metadata-upload-additional-signon.png)
+    ![Снимок экрана, на котором показан параметр "Задать дополнительные URL-адреса" и поле для ввода URL-адреса входа](common/metadata-upload-additional-signon.png)
 
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://<SUBDOMAIN>.brightidea.com`.
 
@@ -143,21 +143,21 @@ ms.locfileid: "88542808"
 
 2. Чтобы включить единый вход в системе Brightidea, перейдите на вкладку **Enterprise Setup** (Корпоративные настройки) -> **Authentication** (Проверка подлинности). Отобразятся две вложенные вкладки: Auth Selection (Выбор проверки подлинности) и SAML Profiles (Профили SAML).
 
-    ![Конфигурация Brightidea](./media/brightidea-tutorial/configure1.png)
+    ![Снимок экрана: сайт Brightidea с выбранной вкладкой "Проверка подлинности".](./media/brightidea-tutorial/configure1.png)
 
 3. Щелкните **Auth Selection** (Выбор проверки подлинности). По умолчанию отображаются только два стандартных метода: вход в учетную запись и регистрация в Brightidea. После добавления метод единого входа также отобразится в списке.
 
-    ![Конфигурация Brightidea](./media/brightidea-tutorial/configure2.png)
+    ![Снимок экрана: вкладка "Проверка подлинности " Brightidea с выбранным параметром "Выбор проверки подлинности".](./media/brightidea-tutorial/configure2.png)
 
 4. Выберите **SAML Profiles** (Профили SAML) и выполните следующие действия:
 
-    ![Конфигурация Brightidea](./media/brightidea-tutorial/configure3.png)
+    ![Снимок экрана: вкладка "Проверка подлинности" Brightidea с выбранным параметром "Профили SAML", который предоставляет возможности скачивания метаданных и добавления нового поставщика удостоверений.](./media/brightidea-tutorial/configure3.png)
 
     а. Щелкните **Download Metadata** (Скачать метаданные) и передайте файл в разделе **базовой конфигурации SAML** на портале Azure.
 
     b. Нажмите кнопку **Добавить новый** в разделе **настройки поставщика удостоверений** и выполните следующие действия:
     
-    ![Конфигурация Brightidea](./media/brightidea-tutorial/configure4.png)
+    ![Снимок экрана: раздел настройки поставщика удостоверений Brightidea для ввода сведений.](./media/brightidea-tutorial/configure4.png)
     
    * Введите **имя профиля SAML**, например, `Azure Ad SSO`.
     

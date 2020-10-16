@@ -14,10 +14,10 @@ ms.reviewer: jeedes
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
 ms.openlocfilehash: 87d455a77096a2ae9339c578f3405c629d79fa76
-ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90603345"
 ---
 # <a name="plan-a-single-sign-on-deployment"></a>Планирование развертывания единого входа
@@ -60,7 +60,7 @@ Azure Marketplace имеет более 3000 приложений с предв�
 
 ### <a name="considerations-for-password-based-sso"></a>Рекомендации по использованию единого входа на основе пароля
 
-Для использования Azure AD для единого входа на основе пароля требуется развернуть расширение браузера, которое будет безопасно извлекать учетные данные и заполнять формы для входа. Определите механизм для развертывания расширения в масштабе с помощью [поддерживаемых браузеров](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction). Возможны следующие значения.
+Для использования Azure AD для единого входа на основе пароля требуется развернуть расширение браузера, которое будет безопасно извлекать учетные данные и заполнять формы для входа. Определите механизм для развертывания расширения в масштабе с помощью [поддерживаемых браузеров](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction). Доступны следующие варианты:
 
 - [групповая политика для Internet Explorer](https://azure.microsoft.com/documentation/articles/active-directory-saas-ie-group-policy/)
 - [Configuration Manager для Internet Explorer](https://docs.microsoft.com/configmgr/core/clients/deploy/deploy-clients-to-windows-computers)
@@ -158,8 +158,8 @@ Microsoft Cloud App Security (МКАС) — это решение брокера
 Для всех предварительно интегрированных приложений SaaS Корпорация Майкрософт предоставляет учебник, и вам не понадобятся эти сведения. Если приложение не входит в магазин приложений или коллекцию, может потребоваться выполнить собираются следующие фрагменты данных:
 
 - **Текущий поставщик удостоверений, применяемый приложением для единого входа,** например: AD FS, PingFederate, Okta
-- **Протоколы, поддерживаемые целевым приложением** , например SAML 2,0, OpenID Connect Connect, OAuth, auth на основе форм, WS-подача, WS-Trust
-- **Протокол, настраиваемый с помощью Azure AD** , например SAML 2,0 или 1,1, OpenID Connect Connect, OAuth, на основе форм, WS-подача
+- **Протоколы, поддерживаемые целевым приложением** , например SAML 2,0, OpenID Connect Connect, OAuth, Forms-Based AUTH, WS-подача WS-Trust
+- **Протокол, настраиваемый с помощью Azure AD** , например SAML 2,0 или 1,1, OpenID Connect Connect, OAuth, на основе форм WS-Fed
 
 ### <a name="attribute-requirements"></a>Требования к атрибутам
 
@@ -303,7 +303,7 @@ Microsoft Cloud App Security (МКАС) — это решение брокера
 
 - [Проблема с федеративным SSO для приложений, не перечисленных в коллекции приложений Azure](https://docs.microsoft.com/azure/active-directory/manage-apps/application-sign-in-problem-federated-sso-non-gallery)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Отладка единого входа на основе SAML](https://docs.microsoft.com/azure/active-directory/develop/active-directory-saml-debugging)
 
@@ -317,7 +317,7 @@ Microsoft Cloud App Security (МКАС) — это решение брокера
 
 [Azure AD B2B](https://docs.microsoft.com/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b) (для внешних пользователей, таких как партнеры и поставщики)
 
-[Условный доступ Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal)
+[Условный доступ Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal)
 
 [Защита идентификации Azure](https://docs.microsoft.com/azure/active-directory/active-directory-identityprotection)
 

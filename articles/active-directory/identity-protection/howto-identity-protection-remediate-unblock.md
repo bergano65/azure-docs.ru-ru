@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c297e1a4f6443e584f04914712314d33df23b119
-ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91776108"
 ---
 # <a name="remediate-risks-and-unblock-users"></a>Устранение рисков и разблокирование пользователей
@@ -93,6 +93,6 @@ ms.locfileid: "91776108"
 
 Используя модуль предварительной версии SDK для Microsoft Graph PowerShell, организации могут управлять рисками с помощью PowerShell. Модули предварительной версии и примеры кода можно найти в [репозитории GitHub Azure AD](https://github.com/AzureAD/IdentityProtectionTools).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 См. дополнительные сведения о [защите идентификации Azure AD](overview-identity-protection.md).

@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 03/11/2020
 ms.author: trbye
 ms.openlocfilehash: 2b0bb997ecea55d25748152bab7bb6963d67657f
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91357647"
 ---
 # <a name="what-is-direct-line-speech"></a>Что такое Direct Line Speech?
@@ -35,7 +35,7 @@ ms.locfileid: "91357647"
 
 Мы также предлагаем краткие руководства, предназначенные для выполнения кода и быстрого изучения интерфейсов API. В этой таблице содержится список кратких руководств по голосовым помощникам, упорядоченных по языку и платформе.
 
-| Краткое руководство | Платформа | Справочник по API |
+| Краткое руководство | Платформа | Справочник по интерфейсам API |
 |------------|----------|---------------|
 | C#, UWP | Windows | [Обзор](https://aka.ms/csspeech/csharpref) |
 | Java | Windows, macOS, Linux | [Обзор](https://aka.ms/csspeech/javaref) |

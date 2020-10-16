@@ -11,10 +11,10 @@ ms.custom:
 - contperfq1
 - device-developer
 ms.openlocfilehash: d6dd1bbf853a13948f55db4ae694b28cb7549c9b
-ms.sourcegitcommit: 23aa0cf152b8f04a294c3fca56f7ae3ba562d272
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91803795"
 ---
 # <a name="define-a-new-iot-device-type-in-your-azure-iot-central-application"></a>Определение типа нового устройства Интернета вещей в приложении Azure IoT Central
@@ -274,6 +274,6 @@ ms.locfileid: "91803795"
 
 После публикации шаблона устройства оператор может перейти на страницу **Устройства** и добавить реальные или имитированные устройства, использующие шаблон устройства. Вы можете продолжать изменять и сохранять шаблон устройства по мере внесения изменений. Если вы хотите отправить эти изменения оператору для просмотра на странице **Устройства**, необходимо каждый раз выбирать **Опубликовать**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Если вы являетесь разработчиком устройства, рекомендуем следующий шаг — ознакомиться с [управлением версиями шаблонов устройств](./howto-version-device-template.md).

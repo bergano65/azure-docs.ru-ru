@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: troubleshooting
 ms.date: 08/19/2020
-ms.author: iainfou
-author: iainfoulds
+ms.author: joflore
+author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: aakapo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ecab82e43bff6c0d1d83c9c1cdc38cafd809e277
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.openlocfilehash: 690d4761657b8bf6e5ba63ddfbce7163584e64e2
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89236731"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91964576"
 ---
 # <a name="troubleshooting-for-hybrid-deployments-of-fido2-security-keys-in-azure-ad-preview"></a>Устранение неполадок гибридных развертываний ключей безопасности FIDO2 в Azure AD (Предварительная версия)
 
@@ -46,7 +46,7 @@ ms.locfileid: "89236731"
 
 Windows Hello Face — это оптимальный способ работы с устройством, на котором зарегистрирован пользователь. Ключи безопасности FIDO2 предназначены для использования на общих устройствах или в том случае, если регистрация Windows Hello для бизнеса является барьером.
 
-Если пользователь Windows Hello не попытается выполнить сценарий входа с помощью ключа безопасности FIDO2, пользователи могут отключить вход с помощью Hello Face, удалив регистрацию лиц в **параметрах > параметры входа**.
+Если пользователь Windows Hello не попытается выполнить сценарий входа с помощью ключа безопасности FIDO2, пользователи могут отключить вход с помощью Hello Face, удалив регистрацию лиц в разделе **параметры > параметры Sign-In**.
 
 ### <a name="users-arent-able-to-use-fido2-security-keys-immediately-after-they-create-a-hybrid-azure-ad-joined-machine"></a>Пользователи не могут использовать ключи безопасности FIDO2 сразу после создания гибридного компьютера, присоединенного к Azure AD
 
@@ -86,9 +86,9 @@ Windows Hello Face — это оптимальный способ работы �
 
 **Разделы реестра**
 
-* *HKEY_LOCAL_MACHINE \Софтваре\полиЦиес\микрософт\фидо [ \* ]*
-* *HKEY_LOCAL_MACHINE \Софтваре\полиЦиес\микрософт\пассвордфорворк \* [ \* ]*
-* *HKEY_LOCAL_MACHINE \Софтваре\микрософт\полиЦиес\пассвордфорворк \* [ \* ]*
+* *HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\FIDO [ \* ]*
+* *HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\PasswordForWork\* [ \* ]*
+* *HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Policies\PasswordForWork\* [ \* ]*
 
 **Диагностические сведения**
 

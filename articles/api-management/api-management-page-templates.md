@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
 ms.openlocfilehash: 24d026785025dba4ae45de404edec67c2cf3871a
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91335591"
 ---
 # <a name="page-templates-in-azure-api-management"></a>Шаблоны страниц в службе управления API Azure
@@ -161,7 +161,7 @@ ms.locfileid: "91335591"
 ### <a name="controls"></a>Элементы управления  
  Шаблон может использовать следующие [элементы управления страницы](api-management-page-controls.md).  
   
--   [sign-up](api-management-page-controls.md#sign-up)  
+-   [регистрация](api-management-page-controls.md#sign-up)  
   
 ### <a name="data-model"></a>Модель данных  
  Сущность [регистрация пользователя](api-management-template-data-model-reference.md#UserSignUp).  
@@ -247,5 +247,5 @@ ms.locfileid: "91335591"
 }  
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о работе с шаблонами см. в статье [Настройка портала разработчика в службе управления API Azure с помощью шаблонов](api-management-developer-portal-templates.md).

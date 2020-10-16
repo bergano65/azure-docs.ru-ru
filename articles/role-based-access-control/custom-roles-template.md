@@ -11,10 +11,10 @@ ms.workload: identity
 ms.date: 06/25/2020
 ms.author: rolyon
 ms.openlocfilehash: bcf1966ffc326291448cb611d99390fe0d652151
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85398043"
 ---
 # <a name="create-an-azure-custom-role-using-an-azure-resource-manager-template"></a>Создание настраиваемой роли Azure с помощью шаблона Azure Resource Manager
@@ -23,7 +23,7 @@ ms.locfileid: "85398043"
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы создать настраиваемую роль, необходимо иметь следующее:
 
@@ -74,7 +74,7 @@ ms.locfileid: "85398043"
 
 1. Введите список действий для пользовательской роли в виде списка с разделителями-запятыми *, например Microsoft. Resources/Resources/Read, Microsoft. Resources/Subscriptions/resourceGroups/Read*.
 
-1. При необходимости нажмите клавишу ВВОД, чтобы выполнить команду New-Аздеплоймент.
+1. При необходимости нажмите клавишу ВВОД, чтобы выполнить команду New-AzDeployment.
 
     Команда [New-аздеплоймент](/powershell/module/az.resources/new-azdeployment) развертывает шаблон для создания настраиваемой роли.
 
@@ -118,7 +118,7 @@ ms.locfileid: "85398043"
     Get-AzRoleDefinition "Custom Role - RG Reader" | ConvertTo-Json
     ```
 
-    Выходные данные должны иметь следующий вид.
+    Вы должны увидеть результат, аналогичный приведенному ниже:
 
     ```azurepowershell
     {
@@ -163,7 +163,7 @@ ms.locfileid: "85398043"
 
 1. Введите **Y** , чтобы подтвердить, что вы хотите удалить настраиваемую роль.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Общие сведения о определениях ролей Azure](role-definitions.md)
 - [Краткое руководство. Добавление назначения роли Azure с помощью шаблона Azure Resource Manager](quickstart-role-assignments-template.md)

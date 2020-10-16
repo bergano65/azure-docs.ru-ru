@@ -6,16 +6,16 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/12/2020
-ms.openlocfilehash: 8ae8c633bdfca72d6e383715cac9b1bcdddd9d17
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.openlocfilehash: 43cdb9de111bdea5486e49a56d58d38279b685c7
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91449785"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91996373"
 ---
 # <a name="create-interactive-reports-azure-monitor-for-vms-with-workbooks"></a>Create interactive reports Azure Monitor for VMs with workbooks (Создание интерактивных отчетов Azure Monitor для виртуальных машин с книгами)
 
-Книги объединяют текст, [заносить в журнал запросы](../log-query/query-language.md), метрики и параметры в расширенные Интерактивные отчеты. Книги может редактировать любой другой член группы, у которого есть доступ к тем же ресурсам Azure.
+Книги объединяют текст, [заносить в журнал запросы](/azure/data-explorer/kusto/query/), метрики и параметры в расширенные Интерактивные отчеты. Книги может редактировать любой другой член группы, у которого есть доступ к тем же ресурсам Azure.
 
 Книги полезны в следующих сценариях:
 

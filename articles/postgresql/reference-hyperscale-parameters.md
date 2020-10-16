@@ -8,10 +8,10 @@ ms.subservice: hyperscale-citus
 ms.topic: reference
 ms.date: 08/10/2020
 ms.openlocfilehash: 07f966c7b0be542f848f1a0a4eaf2b5549735b4b
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91336247"
 ---
 # <a name="server-parameters"></a>Параметры сервера
@@ -345,7 +345,7 @@ STATEMENT:  select * from foo;
 * [parallel_tuple_cost](https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-PARALLEL-TUPLE-COST) — задает оценку стоимости планировщика для передачи каждого кортежа (строки) от рабочей роли до главной серверной части.
 * [pg_stat_statements. Save](https://www.postgresql.org/docs/current/pgstatstatements.html#id-1.11.7.38.8) — сохранение статистики pg_stat_statements по завершении работы сервера
 * [pg_stat_statements. Track](https://www.postgresql.org/docs/current/pgstatstatements.html#id-1.11.7.38.8) — выбор инструкций, которые отправляются pg_stat_statements
-* [pg_stat_statements. track_utility](https://www.postgresql.org/docs/current/pgstatstatements.html#id-1.11.7.38.8) — выбирает, будут ли команды программы отслеживаниться по pg_stat_statements
+* [pg_stat_statements. track_utility](https://www.postgresql.org/docs/current/pgstatstatements.html#id-1.11.7.38.8) — выбирает, будут ли команды программы отслеживаниться с помощью pg_stat_statements
 * [quote_all_identifiers](https://www.postgresql.org/docs/current/runtime-config-compatible.html#GUC-QUOTE-ALL-IDENTIFIERS) — при создании фрагментов SQL, в кавычках все идентификаторы
 * [random_page_cost](https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-RANDOM-PAGE-COST) — задает оценку стоимости планировщика для страницы непоследовательно извлекаемого диска
 * [row_security](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-ROW-SECURITY) — обеспечивает безопасность строк
@@ -383,7 +383,7 @@ STATEMENT:  select * from foo;
 * [ксмлбинари](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-XMLBINARY) — задает способ кодирования двоичных значений в формате XML
 * [ксмлоптион](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-XMLOPTION) — указывает, следует ли рассматривать XML-данные в операциях неявного анализа и сериализации как документы или фрагменты содержимого.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Другой формой конфигурации, помимо параметров сервера, являются [Параметры конфигурации](concepts-hyperscale-configuration-options.md) ресурсов в группе серверов Цитус.
 * Базовая база данных PostgreSQL также имеет [Параметры конфигурации](http://www.postgresql.org/docs/current/static/runtime-config.html).

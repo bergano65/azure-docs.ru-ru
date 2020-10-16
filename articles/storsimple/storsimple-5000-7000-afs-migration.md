@@ -14,10 +14,10 @@ ms.workload: NA
 ms.date: 04/19/2019
 ms.author: alkohli
 ms.openlocfilehash: 5d656fd8757580b8ce96acf168e92fc847d400ca
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85514068"
 ---
 # <a name="migrate-data-from-storsimple-5000-7000-series-to-azure-file-sync"></a>Перенос данных с устройств StorSimple серий 5000–7000 в службу "Синхронизация файлов Azure"
@@ -56,7 +56,7 @@ ms.locfileid: "85514068"
 - Тома StorSimple подключаются на узле и содержат общие файловые ресурсы.
 - В локальном хранилище узла достаточно места для хранения локально кэшированных данных.
 - Доступ на уровне владельца к подписке Azure, которая будет использоваться для развертывания Синхронизация файлов Azure. При создании облачной конечной точки для группы синхронизации могут возникнуть проблемы, если у вас нет разрешений владельца или уровня администратора.
-- Получите доступ к [учетной записи хранения общего назначения версии 2](https://docs.microsoft.com/azure/storage/common/storage-account-overview) с общим файловым ресурсом Azure, с которым нужно выполнить синхронизацию. Дополнительные сведения см. [в разделе Создание учетной записи хранения](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account).
+- Получите доступ к [учетной записи хранения общего назначения версии 2](https://docs.microsoft.com/azure/storage/common/storage-account-overview) с общим файловым ресурсом Azure, с которым нужно выполнить синхронизацию. Дополнительные сведения см. в разделе [Создание учетной записи хранения](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account).
   - [Создание общей папки с помощью портала Azure](https://docs.microsoft.com/azure/storage/files/storage-how-to-create-file-share).
 
 ## <a name="migration-process"></a>Процесс миграции
@@ -73,7 +73,7 @@ ms.locfileid: "85514068"
     - [Установите агент синхронизация файлов Azure](https://docs.microsoft.com/azure/storage/files/storage-sync-files-deployment-guide#install-the-azure-file-sync-agent).
     - [Разверните службу синхронизации хранилища](https://docs.microsoft.com/azure/storage/files/storage-sync-files-deployment-guide#deploy-the-storage-sync-service). 
     - [Зарегистрируйте Windows Server с помощью службы синхронизации хранилища](https://docs.microsoft.com/azure/storage/files/storage-sync-files-deployment-guide#register-windows-server-with-storage-sync-service). 
-    - [Создание группы синхронизации и облачной конечной точки](https://docs.microsoft.com/azure/storage/files/storage-sync-files-deployment-guide#create-a-sync-group-and-a-cloud-endpoint). Вам нужно создать группы синхронизации для каждого общего файлового ресурса Windows, который необходимо перенести с узла.
+    - [Создайте группу синхронизации и облачную конечную точку](https://docs.microsoft.com/azure/storage/files/storage-sync-files-deployment-guide#create-a-sync-group-and-a-cloud-endpoint). Вам нужно создать группы синхронизации для каждого общего файлового ресурса Windows, который необходимо перенести с узла.
     - [Создайте конечную точку сервера](https://docs.microsoft.com/azure/storage/files/storage-sync-files-deployment-guide?tabs=portal#create-a-server-endpoint). Укажите путь в качестве пути к тому StorSimple, который содержит данные общего файлового ресурса. Например, если том StorSimple — это диск `J`, а ваши данные находятся в `J:/<myafsshare>`, добавьте этот путь в качестве конечной точки сервера. Для параметра **Tiering** (Распределение по уровням) оставьте значение **Отключено**.
 2.  Подождите, пока не завершится синхронизация файлового сервера. Для каждого сервера в данной группе синхронизации проверьте следующее:
     - Метки времени последней попытки синхронизации для отправки и загрузки не устарели.
@@ -100,7 +100,7 @@ ms.locfileid: "85514068"
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если AFS вам не подходит, узнайте, как [перенести данные с устройства StorSimple серий 5000–7000 на устройство серии 8000](storsimple-8000-migrate-from-5000-7000.md).
 

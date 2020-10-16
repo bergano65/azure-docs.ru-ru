@@ -10,13 +10,13 @@ ms.subservice: language-understanding
 ms.topic: reference
 ms.date: 07/01/2020
 ms.openlocfilehash: 7c3c0f603b9e7d83e40f43ab00d31f4ca63f2b4f
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91535378"
 ---
-# <a name="sentiment-analysis"></a>Анализ тональности
+# <a name="sentiment-analysis"></a>Анализ мнений
 Если настроен анализ тональности, он входит в ответ JSON LUIS. Дополнительные сведения об анализе тональности см. в документации по [анализу текста](https://docs.microsoft.com/azure/cognitive-services/text-analytics/).
 
 LUIS использует Анализ текста v2. 
@@ -47,7 +47,7 @@ LUIS использует Анализ текста v2.
 ```
 * * *
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о [конечной точке прогнозирования V3](luis-migration-api-v3.md).
 

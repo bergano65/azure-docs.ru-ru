@@ -7,10 +7,10 @@ ms.date: 10/08/2020
 ms.author: peshultz
 ms.custom: references_regions
 ms.openlocfilehash: fcc0538dfef1581a244ae5fd9a3515be3470026c
-ms.sourcegitcommit: efaf52fb860b744b458295a4009c017e5317be50
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91850937"
 ---
 # <a name="create-an-azure-batch-pool-without-public-ip-addresses"></a>Создание пула пакетной службы Azure без общедоступных IP-адресов
@@ -113,7 +113,7 @@ client-request-id: 00000000-0000-0000-0000-000000000000
 
 Другим способом обеспечения исходящего подключения является использование определяемого пользователем маршрута (UDR). Это позволяет перенаправлять трафик на прокси-компьютер, имеющий доступ к Интернету.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о [создании пулов в виртуальной сети](batch-virtual-network.md).
 - Узнайте, как [использовать частные конечные точки с учетными записями пакетной](private-connectivity.md)службы.

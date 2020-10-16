@@ -14,10 +14,10 @@ ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18, contperfq4
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 747edfdb2a2709a842f767d2ace09662d139c827
-ms.sourcegitcommit: 67e8e1caa8427c1d78f6426c70bf8339a8b4e01d
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91666438"
 ---
 # <a name="associate-or-add-an-azure-subscription-to-your-azure-active-directory-tenant"></a>Связывание или добавление подписки Azure в клиент Azure Active Directory
@@ -46,7 +46,7 @@ ms.locfileid: "91666438"
 - Ознакомьтесь с приведенным ниже списком изменений, которые будут выполнены после связывания или добавления подписки, и того, как это может быть затронуто.
 
   - Пользователи, которым назначены роли с помощью Azure RBAC, потеряют доступ
-  - Администратор служб и Соадминистратор потеряют доступ
+  - Администратор службы и Co-Administrators потеряют доступ
   - Если у вас есть хранилища ключей, они станут недоступными и их потребуется исправить после сопоставления.
   - Если у вас есть управляемые удостоверения для таких ресурсов, как виртуальные машины или Logic Apps, необходимо повторно включить или создать их заново после сопоставления.
   - Если у вас есть зарегистрированная Azure Stack, ее потребуется повторно зарегистрировать после связи
@@ -95,7 +95,7 @@ ms.locfileid: "91666438"
 
 - Дополнительные сведения см. в статье [Перенос подписки Azure в другой каталог Azure AD](../../role-based-access-control/transfer-subscription.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Сведения о создании нового клиента Azure AD см. [в разделе Краткое руководство. Создание нового клиента в Azure Active Directory](active-directory-access-create-new-tenant.md).
 

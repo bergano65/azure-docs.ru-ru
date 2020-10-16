@@ -4,12 +4,12 @@ description: В этой статье приведены общие сведен
 ms.topic: overview
 ms.date: 09/22/2020
 ms.custom: references_regions
-ms.openlocfilehash: a0cc54f6ada1a5900e817c8e22fc192cd73f6550
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 30ef2f102a4b8d9f9908ba915f179889710bafd0
+ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91653576"
+ms.lasthandoff: 10/11/2020
+ms.locfileid: "91938803"
 ---
 # <a name="azure-schema-registry-in-event-hubs-preview"></a>Реестр схем Azure в Центрах событий (предварительная версия)
 Во многих сценариях потоковой передачи событий и обмена сообщениями полезные данные событий или сообщений содержит структурированные данные, которые либо сериализуются, либо десериализуется с использованием управляемого схемой формата, например Apache Avro. Так же, как и при использовании схемы JSON, отправителям и получателям может потребоваться проверить целостность данных с помощью документа схемы. Для управляемых схемой форматов предоставление схемы объекту-получателю сообщений является необходимым условием для того, чтобы этот объект-получатель мог десериализовать данные. 
@@ -41,7 +41,7 @@ ms.locfileid: "91653576"
 - [Java — azure-data-schemaregistry-avro](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/schemaregistry/azure-data-schemaregistry-avro/)
 - [Python — azure-schemaregistry-avroserializer](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/schemaregistry/azure-schemaregistry-avroserializer)
 - [JavaScript — @azure/schema-registry-avro](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/schemaregistry/schema-registry-avro)
-- [Apache Kafka](https://github.com/Azure/azure-schema-registry-for-kafka/tree/master/avro/samples) — запуск интегрированных в Kafka сериализаторов и десериализаторы Apache Avro, которые поддерживаются реестром схем Azure. Клиентский сериализатор Apache Kafka клиента Java для реестра схем Azure можно использовать в любом сценарии Apache Kafka, с любым развертыванием на основе Apache Kafka® и любой облачной службой. 
+- [Apache Kafka](https://github.com/Azure/azure-schema-registry-for-kafka/) — запуск интегрированных в Kafka сериализаторов и десериализаторы Apache Avro, которые поддерживаются реестром схем Azure. Клиентский сериализатор Apache Kafka клиента Java для реестра схем Azure можно использовать в любом сценарии Apache Kafka, с любым развертыванием на основе Apache Kafka® и любой облачной службой. 
 
 На следующем рисунке показан поток сведений реестра схем, передаваемый с помощью Центров событий. 
 
@@ -70,4 +70,4 @@ ms.locfileid: "91653576"
     - [Java](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/schemaregistry/azure-data-schemaregistry-avro/src/samples)
     - [JavaScript](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/schemaregistry/schema-registry-avro/samples )
     - [Python](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/schemaregistry/azure-schemaregistry-avroserializer/samples )
-    - [Интеграция Kafka и Avro для реестра схем Azure](https://github.com/Azure/azure-schema-registry-for-kafka/tree/master/avro/samples)
+    - [Интеграция Kafka и Avro для реестра схем Azure](https://github.com/Azure/azure-schema-registry-for-kafka/tree/master/csharp/avro/samples)

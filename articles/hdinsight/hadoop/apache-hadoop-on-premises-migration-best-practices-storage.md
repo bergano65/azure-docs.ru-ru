@@ -12,7 +12,7 @@ ms.openlocfilehash: cd27babee4b78d22bbd49ab53c1ed2fe5a54a0da
 ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91856693"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight"></a>Миграция локальных Apache Hadoop кластеров в Azure HDInsight
@@ -220,6 +220,6 @@ HDInsight по умолчанию имеет полный доступ к дан
 
 Дополнительные сведения см. в статье [Добавление дополнительных учетных записей хранения в HDInsight](../hdinsight-hadoop-add-storage.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Ознакомьтесь со следующей статьей в этой серии: рекомендации по [переносу данных из локальной среды в Azure HDInsight Hadoop миграции](apache-hadoop-on-premises-migration-best-practices-data-migration.md).

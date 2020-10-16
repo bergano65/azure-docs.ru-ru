@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 07/14/2020
 ms.author: jeedes
-ms.openlocfilehash: 7377c6ea92ea53ca14525938e7522448afac541c
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: d2a3eda97fec03e767425b7f7a126073b2f13ca5
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88548362"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91713649"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-amazon-web-services-aws"></a>Руководство по Интеграция единого входа Azure Active Directory с Amazon Web Services (AWS)
 
@@ -304,7 +304,7 @@ ms.locfileid: "88548362"
 
 18. Создайте политику для этого пользователя.
 
-    ![Снимок экрана: раздел Add user (Добавление пользователя)](./media/amazon-web-service-tutorial/adduser2.png)
+    ![Снимок экрана: страница Add user (Добавление пользователя), где можно создать политику для пользователя.](./media/amazon-web-service-tutorial/adduser2.png)
 
     а. Щелкните **Attach existing policies directly** (Подключить существующие политики напрямую).
 
@@ -322,7 +322,7 @@ ms.locfileid: "88548362"
 
 20. Скачайте учетные данные пользователя.
 
-    ![Снимок экрана: раздел Add user (Добавление пользователя)](./media/amazon-web-service-tutorial/adduser4.png)
+    ![Снимок экрана: страница Add user (Добавление пользователя) с кнопкой Download CSV (Скачать CSV) для получения учетных данных пользователя.](./media/amazon-web-service-tutorial/adduser4.png)
 
     а. Скопируйте значения полей **Access key ID** (Идентификатор ключа доступа) и **Secret access key** (Секретный ключ доступа) для этого пользователя.
 

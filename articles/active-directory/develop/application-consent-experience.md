@@ -14,10 +14,10 @@ ms.date: 03/27/2019
 ms.author: ryanwi
 ms.reviewer: zachowd
 ms.openlocfilehash: 6e768c1e938006afd62fc097a80f8ebc3ea0f3e6
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88115481"
 ---
 # <a name="understanding-azure-ad-application-consent-experiences"></a>Основные сведения о процедуре предоставления согласия для приложений Azure AD
@@ -80,7 +80,7 @@ ms.locfileid: "88115481"
         
     1. Пользователи без прав администратора увидят экран 2b, изображенный выше.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Ознакомьтесь с пошаговым руководством по [реализации согласия в инфраструктуре согласия Azure AD](./quickstart-register-app.md).
 - Получите более подробные сведения об [использовании инфраструктуры согласия в мультитенантном приложении](./howto-convert-app-to-be-multi-tenant.md), чтобы реализовать согласие пользователя и администратора, с поддержкой нескольких дополнительных шаблонов многоуровневого приложения.
 - Узнайте, [как настроить домен издателя приложения](howto-configure-publisher-domain.md).

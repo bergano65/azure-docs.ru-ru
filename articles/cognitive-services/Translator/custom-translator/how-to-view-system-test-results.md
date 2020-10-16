@@ -10,10 +10,10 @@ ms.date: 08/17/2020
 ms.author: swmachan
 ms.topic: conceptual
 ms.openlocfilehash: 04e21e4bcd56506ba27730ebc1f9b0db8dc39615
-ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88509691"
 ---
 # <a name="view-system-test-results"></a>Просмотр результатов теста системы
@@ -100,7 +100,7 @@ ms.locfileid: "88509691"
 >[!Note]
 >При выборе **Не развернуто** во всех регионах отменяется развертывание модели для всех регионов и модель переводится в неразвернутое состояние. После этого модель недоступна для использования.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Начните использовать развернутую пользовательскую модель перевода с помощью [API перевода текстов Майкрософт версии 3](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-translate?tabs=curl).
 - Узнайте, как [настроить параметры](how-to-manage-settings.md) для предоставления общего доступа к рабочей области и управлять ключом подписки.

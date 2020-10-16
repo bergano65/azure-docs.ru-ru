@@ -12,10 +12,10 @@ ms.author: joke
 ms.reviewer: sstein
 ms.date: 03/13/2019
 ms.openlocfilehash: e8c222d7cdcdb203cd323cde38818e5b51643159
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91443373"
 ---
 # <a name="migrate-to-the-new-elastic-database-jobs-preview"></a>Переход на новый Задания обработки эластичных баз данных (Предварительная версия)
@@ -93,7 +93,7 @@ Use-AzureSqlJobConnection -CurrentAzureSubscription -Credential (Get-Credential)
 
 Теперь когда обе версии (новая и старая) командлетов задания обработки эластичных баз данных инициализированы, можно выполнить миграцию учетных данных задания, и заданий в новую *базу данных заданий*.
 
-### <a name="setup"></a>Установка
+### <a name="setup"></a>Настройка
 
 ```powershell
 $ErrorActionPreference = "Stop";
@@ -145,7 +145,7 @@ function Migrate-Credentials ($agent) {
 Migrate-Credentials $agent
 ```
 
-Пример выходных данных
+Пример полученных результатов
 
 ```powershell
 # You should see similar output after executing the above
@@ -628,7 +628,7 @@ $jobs | Start-AzSqlElasticJob
 $jobs | Set-AzSqlElasticJob -Enable
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Создание заданий обработки эластичных баз данных и управление ими с помощью PowerShell](elastic-jobs-powershell-create.md)
 - [Use Transact-SQL (T-SQL) to create and manage Elastic Database Jobs](elastic-jobs-tsql-create-manage.md) (Создание заданий обработки эластичных БД и управление ими с использованием Transact-SQL (T-SQL))

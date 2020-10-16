@@ -9,12 +9,12 @@ ms.service: synapse-analytics
 ms.subservice: spark
 ms.topic: quickstart
 ms.date: 04/15/2020
-ms.openlocfilehash: aca58328ada4f01072cf3779735bcd5cb518ef0a
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: cf899962f6e62b0943f48494bf5c3fe27a6327a9
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91260773"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91651723"
 ---
 # <a name="quickstart-create-an-apache-spark-pool-in-azure-synapse-analytics-using-web-tools"></a>Краткое руководство. Создание пула Apache Spark в Azure Synapse Analytics с помощью веб-инструментов
 
@@ -85,7 +85,7 @@ ms.locfileid: "91260773"
 
     ![Представление выходных данных в обозревателе хранилища](./media/quickstart-apache-spark-notebook/spark-get-started-default-storage.png "Представление выходных данных в обозревателе хранилища")
 
-    ![Представление выходных данных в обозревателе хранилища](./media/quickstart-apache-spark-notebook/spark-get-started-default-storage2.png "Представление выходных данных в обозревателе хранилища")
+    ![Снимок экрана, на котором выделен путь default > demodata > demo_df path.](./media/quickstart-apache-spark-notebook/spark-get-started-default-storage2.png "Представление выходных данных в обозревателе хранилища")
 
 ## <a name="run-spark-sql-statements"></a>Выполнение инструкций SQL Spark
 

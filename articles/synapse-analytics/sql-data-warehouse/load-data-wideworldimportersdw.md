@@ -12,10 +12,10 @@ ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, synapse-analytics
 ms.openlocfilehash: 6f089a67262c78f31092780bb8b4d7d803d47e0d
-ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91369099"
 ---
 # <a name="tutorial-load-data-to--azure-synapse-analytics-sql-pool"></a>Учебник. Загрузка данных в пул SQL Azure синапсе Analytics
@@ -83,7 +83,7 @@ ms.locfileid: "91369099"
 
 1. Выберите **проверить и создать** , чтобы проверить параметры, а затем щелкните **создать** , чтобы создать хранилище данных. Вы можете отслеживать ход выполнения, открыв страницу **развертывание в ходе выполнения** в меню **уведомления** .
 
-     ![На снимке экрана показаны уведомления, выполняемые при развертывании.](./media/load-data-wideworldimportersdw/notification.png)
+     ![Снимок экрана: вкладка "Уведомления" с сообщением о выполнении развертывания](./media/load-data-wideworldimportersdw/notification.png)
 
 ## <a name="create-a-server-level-firewall-rule"></a>создадим правило брандмауэра на уровне сервера;
 
@@ -139,7 +139,7 @@ ms.locfileid: "91369099"
 
     ![подключение к серверу](./media/load-data-wideworldimportersdw/connect-to-server.png)
 
-3. Нажмите кнопку **Подключить**. В SSMS открывается окно обозревателя объектов.
+3. Нажмите кнопку **Соединить**. В SSMS открывается окно обозревателя объектов.
 
 4. В обозревателе объектов разверните узел **Базы данных**. Затем разверните **Системные базы данных** и **master**, чтобы просмотреть объекты в базе данных master.  Разверните **SampleDW** , чтобы просмотреть объекты в новой базе данных.
 
@@ -536,7 +536,7 @@ ms.locfileid: "91369099"
 
 В сценарии используется инструкция T-SQL [CREATE TABLE AS SELECT (CTAS)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest), чтобы загрузить данные из Azure Storage Blob в новые таблицы в хранилище данных. CTAS создает таблицу на основе результатов инструкции Select. В новой таблице содержатся те же столбцы и типы данных, которые были выведены инструкцией Select. Когда инструкция SELECT выбирает из внешней таблицы, данные импортируются в реляционную таблицу в хранилище данных.
 
-Этот скрипт не загружает данные в таблицы WWI. dimension_Date и WWI. fact_Sale. Эти таблицы создаются на следующих этапах для ограничения числа строк в таблицах с допустимыми пределами.
+Этот сценарий не загружает данные в wwi.dimension_Date и wwi.fact_Sale таблицы. Эти таблицы создаются на следующих этапах для ограничения числа строк в таблицах с допустимыми пределами.
 
 1. Выполните следующий сценарий для загрузки данных в новые таблицы в хранилище данных.
 
@@ -732,7 +732,7 @@ ms.locfileid: "91369099"
 
 ## <a name="create-tables-and-procedures-to-generate-the-date-and-sales-tables"></a>Создание таблиц и процедур для создания таблиц Date и Sales
 
-В этом разделе создаются таблицы WWI. dimension_Date и WWI. fact_Sale. Он также создает хранимые процедуры, которые могут формировать миллионы строк в таблицах WWI. dimension_Date и WWI. fact_Sale.
+В этом разделе создаются таблицы wwi.dimension_Date и wwi.fact_Sale. Он также создает хранимые процедуры, которые могут формировать миллионы строк в таблицах wwi.dimension_Date и wwi.fact_Sale.
 
 1. Создайте таблицы dimension_Date и fact_Sale.  
 
@@ -876,7 +876,7 @@ ms.locfileid: "91369099"
     END;
     ```
 
-4. Создайте эту процедуру, которая заполняет таблицы WWI. dimension_Date и WWI. fact_Sale. Она осуществляет вызов [wwi].[PopulateDateDimensionForYear] для заполнения wwi.dimension_Date.
+4. Создайте эту процедуру, которая заполняет таблицы wwi.dimension_Date и wwi.fact_Sale. Она осуществляет вызов [wwi].[PopulateDateDimensionForYear] для заполнения wwi.dimension_Date.
 
     ```sql
     CREATE PROCEDURE [wwi].[Configuration_PopulateLargeSaleTable] @EstimatedRowsPerDay [bigint],@Year [int] AS
@@ -933,7 +933,7 @@ ms.locfileid: "91369099"
 
 ## <a name="generate-millions-of-rows"></a>Создание нескольких миллионов строк
 
-Используйте созданные хранимые процедуры для создания миллионов строк в таблице WWI. fact_Sale и соответствующие данные в таблице WWI. dimension_Date.
+Используйте созданные хранимые процедуры для создания миллионов строк в wwi.fact_Sale таблице и соответствующих данных в таблице wwi.dimension_Date.
 
 1. Запустите эту процедуру, чтобы задать начальное значение [wwi].[seed_Sale] с несколькими строками.
 
@@ -941,7 +941,7 @@ ms.locfileid: "91369099"
     EXEC [wwi].[InitialSalesDataPopulation]
     ```
 
-2. Выполните эту процедуру, чтобы заполнить WWI. fact_Sale с 100 000 строк в день для каждого дня в году 2000.
+2. Выполните эту процедуру, чтобы заполнить wwi.fact_Sale 100 000 строк в день для каждого дня в году 2000.
 
     ```sql
     EXEC [wwi].[Configuration_PopulateLargeSaleTable] 100000, 2000
@@ -1091,7 +1091,7 @@ SELECT TOP 1 * FROM [wwi].[dimension_TransactionType];
 
 5. Чтобы удалить группу ресурсов, щелкните **SampleRG**, а затем нажмите кнопку **Удалить группу ресурсов**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Из этого руководства вы узнали, как создать хранилище данных, а также как создать пользователя для загрузки данных. Вы создали внешние таблицы для определения структуры данных, хранящихся в Azure Storage Blob, а затем использовали инструкцию PolyBase CREATE TABLE AS SELECT для загрузки данных в хранилище данных.
 

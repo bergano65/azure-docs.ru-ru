@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 09/14/2020
-ms.author: iainfou
-author: iainfoulds
+ms.author: joflore
+author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: librown, aakapo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e523f8cc3aa9ab2f42d2d28909c9dec2dad30b43
-ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
+ms.openlocfilehash: f99d57e084a6a765b8598ba7f8eebbd7ddb34d74
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90526958"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91964644"
 ---
 # <a name="enable-passwordless-security-key-sign-in-preview"></a>Включить вход в систему без пароля (Предварительная версия)
 
@@ -27,7 +27,7 @@ ms.locfileid: "90526958"
 > [!NOTE]
 > Ключи безопасности FIDO2 — это общедоступная Предварительная версия функции Azure Active Directory. Дополнительные сведения о предварительных версиях см. в разделе Дополнительные  [условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-## <a name="requirements"></a>Requirements (Требования)
+## <a name="requirements"></a>Требования
 
 - [Многофакторная идентификация Azure](howto-mfa-getstarted.md)
 - Разрешить [объединенную предварительную версию регистрации сведений о безопасности](concept-registration-mfa-sspr-combined.md)
@@ -59,7 +59,7 @@ ms.locfileid: "90526958"
 
 ## <a name="user-registration-and-management-of-fido2-security-keys"></a>Регистрация пользователей и управление ключами безопасности FIDO2
 
-1. Перейдите по ссылке [https://myprofile.microsoft.com](https://myprofile.microsoft.com) .
+1. Перейдите по ссылке [https://myprofile.microsoft.com](https://myprofile.microsoft.com).
 1. Войдите, если он еще не создан.
 1. Щелкните **сведения о безопасности**.
    1. Если у пользователя уже есть по крайней мере один зарегистрированный метод многофакторной идентификации Azure, он может немедленно зарегистрировать ключ безопасности FIDO2.
@@ -68,7 +68,7 @@ ms.locfileid: "90526958"
 1. Выберите **USB-устройство** или **устройство NFC**.
 1. Получите ключ и нажмите кнопку **Далее**.
 1. Появится окно с просьбой создать или ввести ПИН-код для ключа безопасности, а затем выполнить требуемый жест для ключа — Биометрия или сенсорного ввода.
-1. Пользователь вернется к объединенному интерфейсу регистрации и попросит ввести понятное имя для ключа, чтобы пользователь мог указать, какой из них имеет несколько. Нажмите кнопку **Далее**.
+1. Пользователь вернется к объединенному интерфейсу регистрации и попросит ввести понятное имя для ключа, чтобы пользователь мог указать, какой из них имеет несколько. Щелкните **Далее**.
 1. Нажмите кнопку **Готово** , чтобы завершить процесс.
 
 ## <a name="sign-in-with-passwordless-credential"></a>Вход с использованием учетных данных без пароля
@@ -97,7 +97,7 @@ ms.locfileid: "90526958"
 
 Мы работаем над поддержкой функции, которая разрешает изменение имени участника-пользователя для гибридного присоединения к Azure AD и устройств, присоединенных к Azure AD. При изменении имени участника-пользователя вы больше не сможете изменить ключи безопасности FIDO2, чтобы учитывать изменения. Решение заключается в сбросе устройства и повторной регистрации пользователя.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [FIDO2 безопасность ключ безопасности Windows 10 вход](howto-authentication-passwordless-security-key-windows.md)
 

@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 09/03/2020
 ms.author: cherylmc
 ms.openlocfilehash: 12ab54e51b26c4b3d77f5518d4e4f44efe34affd
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90983306"
 ---
 # <a name="configure-a-vnet-to-vnet-vpn-gateway-connection-by-using-the-azure-portal"></a>Настройка подключения VPN-шлюза "виртуальная сеть — виртуальная сеть" с использованием портала Azure
@@ -148,7 +148,7 @@ ms.locfileid: "90983306"
    ![Страница "подключения"](./media/vpn-gateway-howto-vnet-vnet-resource-manager-portal/connections.png "Страница "подключения"")
 2. Выберите **+ Добавить** , чтобы открыть страницу **Добавление подключения** .
 
-   ![Добавить подключение](./media/vpn-gateway-howto-vnet-vnet-resource-manager-portal/vnet1-vnet4-connection.png "Добавление подключения")
+   ![Добавить соединение](./media/vpn-gateway-howto-vnet-vnet-resource-manager-portal/vnet1-vnet4-connection.png "Добавление подключения")
 3. На странице **Добавление подключения** укажите значения для подключения:
 
    - **Имя**: введите имя для подключения. Например, *VNet1toVNet4*.
@@ -178,7 +178,7 @@ ms.locfileid: "90983306"
    ![Проверка подключений](./media/vpn-gateway-howto-vnet-vnet-resource-manager-portal/view-connections.png "Проверка подключений")
 3. В столбце **имя** выберите одно из соединений, чтобы просмотреть дополнительные сведения. Когда начнется передача данных, появятся значения для параметров **Входящие данные** и **Исходящие данные**.
 
-   ![На снимке экрана показана группа ресурсов, в которой содержатся значения для данных и данных.](./media/vpn-gateway-howto-vnet-vnet-resource-manager-portal/status.png "Status")
+   ![На снимке экрана показана группа ресурсов, в которой содержатся значения для данных и данных.](./media/vpn-gateway-howto-vnet-vnet-resource-manager-portal/status.png "Состояние")
 
 ## <a name="add-additional-connections"></a>Добавление дополнительных подключений
 
@@ -189,7 +189,7 @@ ms.locfileid: "90983306"
 
 [!INCLUDE [vpn-gateway-vnet-vnet-faq](../../includes/vpn-gateway-faq-vnet-vnet-include.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Сведения об ограничении сетевого трафика к ресурсам в виртуальной сети см. в статье [Безопасность сети](../virtual-network/security-overview.md).
 

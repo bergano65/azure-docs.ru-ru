@@ -14,10 +14,10 @@ ms.workload: na
 ms.date: 09/08/2020
 ms.author: memildin
 ms.openlocfilehash: 4bad3227e08c0fbe0d280967e45bbef9d477e1b3
-ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89569141"
 ---
 # <a name="remediate-recommendations-in-azure-security-center"></a>Рекомендации по устранению проблем (Центр безопасности Azure)
@@ -70,7 +70,7 @@ ms.locfileid: "89569141"
 Для применения конфигурации ресурса в операции исправления используется вызов API развертывания шаблона или исправления неактивных обновлений. Эти операции регистрируются в [журнале действий Azure](../azure-resource-manager/management/view-activity-logs.md).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этом документе было показано, как исправить рекомендации в центре безопасности. Дополнительные сведения о центре безопасности см. в следующих разделах:
 

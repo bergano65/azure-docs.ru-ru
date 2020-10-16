@@ -13,13 +13,13 @@ ms.author: ryanwi
 ms.reviewer: lenalepa, sureshja, jesakowi
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started
 ms.openlocfilehash: 036c40395e5da5ebc09a87e420893d7dbd2ec668
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88116807"
 ---
-# <a name="microsoft-identity-platform-best-practices-and-recommendations"></a>Рекомендации и рекомендации по платформе Microsoft Identity
+# <a name="microsoft-identity-platform-best-practices-and-recommendations"></a>Рекомендации и советы по платформе удостоверений Майкрософт
 
 В этой статье описываются рекомендации, рекомендации и общие сведения при интеграции с платформой идентификации Майкрософт.  Этот контрольный список поможет вам обеспечить высокую качество и безопасную интеграцию. Регулярно изучите этот список, чтобы обеспечить качество и безопасность интеграции приложения с платформой идентификации. Контрольный список не предназначен для просмотра всего приложения. Содержимое контрольного списка может быть изменено по мере внесения улучшений в платформу.
 
@@ -30,7 +30,7 @@ ms.locfileid: "88116807"
 > [!TIP]
 > *Помощник по интеграции* в портал Azure может помочь в применении многих из этих рекомендаций и рекомендаций. Выберите любую из [регистраций приложений](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) в портал Azure, а затем выберите пункт меню **Помощник по интеграции (Предварительная версия)** , чтобы начать работу с помощником.
 
-## <a name="basics"></a>Основные сведения
+## <a name="basics"></a>Основы
 
 ![CheckBox ](./media/active-directory-integration-checklist/checkbox-two.svg) Прочтите и изучите [политики платформы Майкрософт](https://go.microsoft.com/fwlink/?linkid=2090497&clcid=0x409). Убедитесь, что ваше приложение соответствует условиям, которые были разработаны для защиты пользователей и платформы.
 

@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6a1acdbeb29091bae0be214b740023f13928506a
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91319849"
 ---
 # <a name="plan-and-troubleshoot-user-principal-name-changes-in-azure-active-directory"></a>Планирование и устранение неполадок при изменении имени субъекта-пользователя в Azure Active Directory
@@ -58,7 +58,7 @@ Bsimon@contoso.comдляBritta.Simon@contoso.com
     Например, если пользователь изменил подразделения, вы можете изменить его домен: 
 
    * Запустите командлет Britta.Simon@contoso.com для установки по пути Britta.Simon@contosolabs.com. <br>
-     либо<br>
+     Или<br>
     * Запустите командлет Britta.Simon@corp.contoso.com для установки по пути Britta.Simon@labs.contoso.com. 
 
 Рекомендуется изменять UPN пользователя каждый раз при обновлении своего основного адреса электронной почты.
@@ -246,7 +246,7 @@ Microsoft Authenticator приложение предлагает вариант
 
 Пользователи OneDrive могут столкнуться с проблемами после изменения имени участника-пользователя. Дополнительные сведения см. [в статье влияние изменений UPN на URL-адрес onedrive и функции onedrive](/onedrive/upn-changes).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 См. следующие ресурсы:
 * [Azure AD Connect: принципы проектирования](./plan-connect-design-concepts.md)

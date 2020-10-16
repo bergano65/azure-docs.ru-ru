@@ -6,10 +6,10 @@ ms.author: jakras
 ms.date: 04/22/2020
 ms.topic: troubleshooting
 ms.openlocfilehash: 082148ecfd4332abb42f96afcd94032d428069ce
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84782523"
 ---
 # <a name="azure-remote-rendering-support-options"></a>Варианты поддержки для удаленной подготовки к просмотру Azure
@@ -30,8 +30,8 @@ ms.locfileid: "84782523"
 
 1. Заполните поля:
 
-    * **Тип проблемы**:`Technical`
-    * **Служба**:`Remote Rendering`
+    * **Тип проблемы**: `Technical`
+    * **Служба**: `Remote Rendering`
 
     ![Поля запроса в службу поддержки портал Azure](media/portal-request.png)
 
@@ -58,6 +58,6 @@ ms.locfileid: "84782523"
 
 Чтобы получить быстрые и заслуживающие доверия ответы на свои технические вопросы по продуктам от инженеров Майкрософт, специалистов Azure Most Valuable Professional (MVP) или нашего сообщества экспертов, воспользуйтесь [разделом вопросов и ответов на сайте Майкрософт](https://docs.microsoft.com/answers/topics/azure-remote-rendering.html), который является предпочтительной площадкой для получения поддержки от сообщества.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Устранение проблем](troubleshoot.md)

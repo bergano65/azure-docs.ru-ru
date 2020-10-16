@@ -7,10 +7,10 @@ ms.service: data-catalog
 ms.topic: how-to
 ms.date: 08/01/2019
 ms.openlocfilehash: 53a861761f819c2127228e7ef688f04d91744d25
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87081259"
 ---
 # <a name="how-to-connect-to-data-sources"></a>Подключение к источникам данных
@@ -38,7 +38,7 @@ ms.locfileid: "87081259"
 | Excel |ODC |Excel 2010 или более поздней версии |
 | Excel (первые 1000) |ODC |Excel 2010 или более поздней версии |
 | Power Query |.xlsx |Excel 2016 или Excel 2010 либо Excel 2013 с установленной надстройкой Power Query для Excel |
-| Power BI Desktop |.pbix |Power BI Desktop, июль 2016 г. или более поздней версии |
+| Power BI Desktop |.pbix |Power BI Desktop, июль 2016 г. или более поздней версии |
 | SQL Server Data Tools |vsweb:// |Visual Studio 2013 с обновлением 4 или более поздней версии с установленным инструментарием SQL Server |
 | Диспетчер отчетов |http:// |Ознакомьтесь с [требованиями к браузеру для SQL Server Reporting Services](https://technet.microsoft.com/library/ms156511.aspx) |
 
@@ -59,5 +59,5 @@ ms.locfileid: "87081259"
 ## <a name="summary"></a>Сводка
 Регистрация источников данных в **каталоге данных Azure** позволяет быстрее обнаруживать эти данные благодаря тому, что из источника в службу каталога копируются структурные и описательные метаданные. После регистрации и обнаружения источника данных пользователи могут подключаться к источнику данных на портале **каталога данных Azure** с помощью меню Open in… (Открыть в...) или выбранных инструментов для работы с данными.
 
-## <a name="see-also"></a>См. также статью
+## <a name="see-also"></a>См. также
 * Пошаговые инструкции по подключению к источникам данных см. в руководстве [Начало работы с каталогом данных Azure](data-catalog-get-started.md).

@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 07/14/2020
-ms.author: iainfou
-author: iainfoulds
+ms.author: joflore
+author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b5f8d08f0814ec69719c002ea9efd39bb38b7d16
-ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
+ms.openlocfilehash: 0353de10a5bd458f8c8274cd8e04168443e792df
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88718022"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91965307"
 ---
 # <a name="how-it-works-azure-multi-factor-authentication"></a>Как это работает: служба Многофакторной идентификации Azure
 
@@ -59,7 +59,7 @@ ms.locfileid: "88718022"
 
 ![Обзорная схема защиты процесса входа с помощью условного доступа](media/tutorial-enable-azure-mfa/conditional-access-overview.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о лицензировании см. в статье [функции и лицензии для службы многофакторной идентификации Azure](concept-mfa-licensing.md).
 

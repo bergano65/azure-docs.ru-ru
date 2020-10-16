@@ -14,12 +14,12 @@ ms.topic: how-to
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 93f5e4d659b94bd79345a5e687de14ab6a5e8ba6
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: 49cac230363750e481e165712bf4f619e5cba7ae
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89267978"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92017851"
 ---
 # <a name="create-a-media-services-account"></a>Создание учетной записи служб мультимедиа
 
@@ -47,7 +47,7 @@ ms.locfileid: "89267978"
 * Просмотр [ресурсов](assets-concept.md)(не управляемых) v3, 
 * [Получение сведений о доступе к API](./access-api-howto.md). 
 
-Для всех других задач управления (например, [преобразований, заданий](transforms-jobs-concept.md) и [защиты содержимого](content-protection-overview.md)) используйте [REST API](https://aka.ms/ams-v3-rest-ref), [CLI](https://aka.ms/ams-v3-cli-ref)или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
+Для всех других задач управления (например, [преобразований, заданий](transforms-jobs-concept.md) и [защиты содержимого](content-protection-overview.md)) используйте [REST API](/rest/api/media/accountfilters), [CLI](/cli/azure/ams)или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
 <!-- Move this section. This section should be moved to conceptual.  It doesn't belong in task based -->
 
 ### <a name="use-the-azure-portal-to-create-a-media-services-account"></a>Создание учетной записи служб мультимедиа с помощью портал Azure
@@ -56,7 +56,7 @@ ms.locfileid: "89267978"
 1. Щелкните **+ создать ресурс**  >  **Media**  >  **службы**мультимедиа мультимедиа.
 1. В разделе **Создание учетной записи служб мультимедиа** введите необходимые значения.
 
-    | name | Описание |
+    | Имя | Описание |
     | ---|---|
     |**Account Name** (Имя учетной записи)|Введите имя новой учетной записи служб мультимедиа. Имя учетной записи служб мультимедиа может состоять из цифр или букв в нижнем регистре без пробелов и должно иметь длину от 3 до 24 символов.|
     |**Подписка**|Если у вас есть несколько подписок, выберите одну из них в списке подписок Azure, к которым у вас есть доступ.|
@@ -71,7 +71,7 @@ ms.locfileid: "89267978"
 
 ## <a name="cli"></a>[CLI](#tab/cli/)
 
-## <a name="use-the-azure-cli"></a>Использование Azure CLI
+## <a name="use-the-azure-cli"></a>Использование командной строки Azure CLI
 
 <!-- NOTE: The following are in the includes file and are reused in other How To articles. All task based content should be in the includes folder with the task- prefix prepended to the file name. -->
 
@@ -91,7 +91,7 @@ ms.locfileid: "89267978"
 
 [!INCLUDE [Create a Media Services account with CLI](./includes/task-create-media-services-account-cli.md)]
 
-### <a name="see-also"></a>См. также
+### <a name="see-also"></a>См. также статью
 
 * [Azure CLI](/cli/azure/ams?view=azure-cli-latest)
 * [Подключение дополнительного хранилища к учетной записи служб мультимедиа](/cli/azure/ams/account/storage?view=azure-cli-latest#az-ams-account-storage-add)

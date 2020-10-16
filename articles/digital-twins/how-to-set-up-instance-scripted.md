@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 7/23/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 83741f5bc55eb222b379a274ef403f766553b21f
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 4e8e26f73aef155e4194ca7a4178827b6a7366fb
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91328651"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92047426"
 ---
 # <a name="set-up-an-azure-digital-twins-instance-and-authentication-scripted"></a>Настройка экземпляра Azure Digital двойников и проверки подлинности (с помощью сценария)
 
@@ -20,7 +20,7 @@ ms.locfileid: "91328651"
 
 В этой статье описаны действия по **настройке нового экземпляра Azure Digital двойников**, включая создание экземпляра и настройку проверки подлинности. По завершении работы с этой статьей у вас будет готовый экземпляр Azure Digital двойников для начала программирования.
 
-Эта версия этой статьи завершает эти действия, запуская [пример **скрипта автоматического развертывания** ](https://docs.microsoft.com/samples/azure-samples/digital-twins-samples/digital-twins-samples/) , который упрощает процесс. 
+Эта версия этой статьи завершает эти действия, запуская [пример **скрипта автоматического развертывания** ](/samples/azure-samples/digital-twins-samples/digital-twins-samples/) , который упрощает процесс. 
 * Для просмотра действий CLI вручную, выполняемых сценарием в фоновом режиме, см. версию CLI этой статьи: [*инструкции по настройке экземпляра и проверки подлинности (CLI)*](how-to-set-up-instance-cli.md).
 * Чтобы просмотреть действия вручную в соответствии с портал Azure, см. версию портала этой статьи: инструкции по [*настройке экземпляра и проверки подлинности (портал)*](how-to-set-up-instance-portal.md).
 
@@ -28,7 +28,7 @@ ms.locfileid: "91328651"
 
 ## <a name="prerequisites-download-the-script"></a>Предварительные требования: скачивание скрипта
 
-Пример скрипта написан на PowerShell. Она входит в [**примеры цифровых двойников Azure**](https://docs.microsoft.com/samples/azure-samples/digital-twins-samples/digital-twins-samples/), которые можно загрузить на компьютер, перейдя по этой ссылке и нажав кнопку *скачать ZIP-файл* под заголовком.
+Пример скрипта написан на PowerShell. Она входит в [**примеры цифровых двойников Azure**](/samples/azure-samples/digital-twins-samples/digital-twins-samples/), которые можно загрузить на компьютер, перейдя по этой ссылке и нажав кнопку *скачать ZIP-файл* под заголовком.
 
 При этом пример проекта будет скачан на компьютер как _**Azure_Digital_Twins_samples.zip**_. Перейдите в папку на компьютере и распакуйте ее, чтобы извлечь файлы.
 
@@ -49,11 +49,13 @@ ms.locfileid: "91328651"
  
 2. На панели значков Cloud Shell убедитесь, что Cloud Shell настроена для запуска версии PowerShell.
 
-    :::image type="content" source="media/how-to-set-up-instance/cloud-shell/cloud-shell-powershell.png" alt-text="Окно Cloud Shell, в котором отображается выбор версии PowerShell":::
+    :::image type="content" source="media/how-to-set-up-instance/cloud-shell/cloud-shell-powershell.png" alt-text="Окно Cloud Shell, в котором отображается выбор версии PowerShell&quot;:::
 
-1. Выберите значок "Отправить/скачать файлы" и нажмите кнопку "Отправить".
+1. Выберите значок &quot;Отправить/скачать файлы" и нажмите кнопку "Отправить".
 
-    :::image type="content" source="media/how-to-set-up-instance/cloud-shell/cloud-shell-upload.png" alt-text="Окно Cloud Shell, показывающее значок отправки":::
+    :::image type="content" source="media/how-to-set-up-instance/cloud-shell/cloud-shell-upload.png" alt-text="Окно Cloud Shell, в котором отображается выбор версии PowerShell&quot;:::
+
+1. Выберите значок &quot;Отправить/скачать файлы":::
 
     Перейдите в файл _**deploy.ps1**_ на компьютере (в _Azure_Digital_Twins_samples > сценарии > **deploy.ps1** _) и нажмите кнопку "Открыть". Файл будет отправлен в Cloud Shell, чтобы его можно было запустить в окне Cloud Shell.
 
@@ -69,7 +71,7 @@ ms.locfileid: "91328651"
     * Для экземпляра: имя *группы ресурсов* . Вы можете использовать существующую группу ресурсов или ввести новое имя, чтобы создать его.
     * Для экземпляра: *имя* вашего экземпляра Digital двойников для Azure. Имя нового экземпляра должно быть уникальным в пределах региона для вашей подписки (это означает, что если в вашей подписке есть другой экземпляр Azure Digital двойников в регионе, где уже используется выбранное имя, вам будет предложено выбрать другое имя).
     * Для регистрации приложения: *Отображаемое имя приложения Azure AD* , связываемое с регистрацией. Регистрация приложения — это место, где вы настраиваете разрешения на доступ к [API-интерфейсам цифровых двойников Azure](how-to-use-apis-sdks.md). Позже клиентское приложение будет проходить проверку подлинности при регистрации приложения, и в результате ему будут предоставлены настроенные разрешения на доступ к API.
-    * Для регистрации приложения: *URL-адрес ответа приложения Azure AD* для приложения Azure AD. Используйте ключевое слово `http://localhost`. Сценарий настроит *общедоступный клиентский/собственный (мобильный & Настольный)* универсальный код ресурса (URI).
+    * Для регистрации приложения: *URL-адрес ответа приложения Azure AD* для приложения Azure AD. Используйте команду `http://localhost`. Сценарий настроит *общедоступный клиентский/собственный (мобильный & Настольный)* универсальный код ресурса (URI).
 
 Скрипт создаст экземпляр Azure Digital двойников, назначьте пользователю Azure роль *владельца Azure Digital двойников (Предварительная версия)* на экземпляре и настройте регистрацию приложения Azure AD для использования в клиентском приложении.
 
@@ -82,7 +84,9 @@ ms.locfileid: "91328651"
 
 Ниже приведен фрагмент журнала вывода из скрипта:
 
-:::image type="content" source="media/how-to-set-up-instance/cloud-shell/deployment-script-output.png" alt-text="Cloud Shell окно, показывающее журнал входных и выходных данных при выполнении скрипта развертывания" lightbox="media/how-to-set-up-instance/cloud-shell/deployment-script-output.png":::
+:::image type="content" source="media/how-to-set-up-instance/cloud-shell/deployment-script-output.png" alt-text="Окно Cloud Shell, в котором отображается выбор версии PowerShell&quot;:::
+
+1. Выберите значок &quot;Отправить/скачать файлы" lightbox="media/how-to-set-up-instance/cloud-shell/deployment-script-output.png":::
 
 Если сценарий завершается успешно, окончательная печать будет говорить `Deployment completed successfully` . В противном случае выполняйте сообщение об ошибке и повторно запустите скрипт. Он обходит уже выполненные действия и снова запросит входные данные в том месте, где вы остановились.
 
@@ -103,7 +107,9 @@ ms.locfileid: "91328651"
 
 При выборе откроется страница *обзора* экземпляра. Запомните его *имя*, *группу ресурсов*и *имя узла*. Эти данные могут потребоваться позже для обнаружения экземпляра и подключения к нему.
 
-:::image type="content" source="media/how-to-set-up-instance/portal/instance-important-values.png" alt-text="Выделение важных значений на странице обзора экземпляра":::
+:::image type="content" source="media/how-to-set-up-instance/portal/instance-important-values.png" alt-text="Окно Cloud Shell, в котором отображается выбор версии PowerShell&quot;:::
+
+1. Выберите значок &quot;Отправить/скачать файлы":::
 
 ### <a name="collect-app-registration-values"></a>Получение значений регистрации приложения 
 
@@ -113,7 +119,9 @@ ms.locfileid: "91328651"
 
 Вы должны увидеть только что созданную регистрацию приложения в этом списке. Выберите его, чтобы открыть подробные сведения:
 
-:::image type="content" source="media/how-to-set-up-instance/portal/app-important-values.png" alt-text="Представление портала с важными значениями для регистрации приложения":::
+:::image type="content" source="media/how-to-set-up-instance/portal/app-important-values.png" alt-text="Окно Cloud Shell, в котором отображается выбор версии PowerShell&quot;:::
+
+1. Выберите значок &quot;Отправить/скачать файлы":::
 
 Запишите *идентификатор приложения (клиента)* и *идентификатор каталога (клиента)* , показанные на **странице.** Если вы не являетесь пользователем, который будет писать код для клиентских приложений, вам потребуется поделиться этими значениями с пользователем, который будет иметь значение.
 
@@ -157,7 +165,7 @@ ms.locfileid: "91328651"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Вытестируйте отдельные REST API вызовы в экземпляре с помощью команд CLI Azure Digital двойников: 
-* [AZ DT Справочник](https://docs.microsoft.com/cli/azure/ext/azure-iot/dt?view=azure-cli-latest&preserve-view=true)
+* [AZ DT Справочник](/cli/azure/ext/azure-iot/dt?preserve-view=true&view=azure-cli-latest)
 * [*Практическое руководство. Использование CLI для Azure Digital Twins*](how-to-use-cli.md)
 
 Или см. раздел как подключить клиентское приложение к экземпляру, написав код проверки подлинности клиентского приложения:

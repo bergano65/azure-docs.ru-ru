@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 9/22/2020
 ms.author: JenCook
 ms.openlocfilehash: 70a17aacde67744eae74ca263200f2c65fbd300a
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90997832"
 ---
 # <a name="attesting-sgx-enclaves"></a>Аттестация Енклавес SGX
@@ -36,5 +36,5 @@ ms.locfileid: "90997832"
 
 они совместимы с конфиденциальными вычислениями в Azure с использованием инфраструктуры Intel SGX. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Попробуйте [Microsoft Azure примеры аттестации для приложений, поддерживающих анклава](https://docs.microsoft.com/samples/azure-samples/microsoft-azure-attestation/sample-code-for-intel-sgx-attestation-using-microsoft-azure-attestation/).

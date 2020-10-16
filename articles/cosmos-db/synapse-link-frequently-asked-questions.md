@@ -6,12 +6,12 @@ ms.author: rosouz
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 09/09/2020
-ms.openlocfilehash: 9eb1f9162f0546e08f59391af1042becad25cf3b
-ms.sourcegitcommit: 23aa0cf152b8f04a294c3fca56f7ae3ba562d272
+ms.openlocfilehash: 6f34b36d495a2ef326727629d090a0da5260ce10
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91803999"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92014568"
 ---
 # <a name="frequently-asked-questions-about-azure-synapse-link-for-azure-cosmos-db"></a>Часто задаваемые вопросы об Azure Synapse Link для Azure Cosmos DB
 
@@ -35,7 +35,9 @@ ms.locfileid: "91803999"
 
 ### <a name="is-backup-and-restore-supported-for-azure-synapse-link-enabled-accounts"></a>Поддерживается ли резервное копирование и восстановление для учетных записей с поддержкой канала Azure синапсе?
 
-В предварительной версии для учетных записей баз данных с поддержкой канала Azure синапсе резервное копирование и восстановление контейнеров не поддерживается. Если у вас есть производственные рабочие нагрузки, для которых требуются функции резервного копирования и восстановления, мы рекомендуем не включать ссылку синапсе для этих учетных записей базы данных. 
+Для контейнеров с включенным аналитическим хранилищем в настоящее время автоматическое резервное копирование и восстановление данных в аналитическом хранилище не поддерживается. 
+
+Если в учетной записи базы данных включена ссылка синапсе, Azure Cosmos DB продолжит автоматически [выполнять резервное копирование](https://docs.microsoft.com/azure/cosmos-db/online-backup-and-restore) данных в хранилище транзакций (только) контейнеров с запланированным интервалом резервного копирования, как всегда. Важно отметить, что при восстановлении контейнера с включенным аналитическим хранилищем в новую учетную запись контейнер будет восстановлен только с хранилищем транзакций и без включенного аналитического хранилища. 
 
 ### <a name="can-i-disable-the-azure-synapse-link-feature-for-my-azure-cosmos-db-account"></a>Можно ли отключить компонент Azure синапсе Link для учетной записи Azure Cosmos DB?
 

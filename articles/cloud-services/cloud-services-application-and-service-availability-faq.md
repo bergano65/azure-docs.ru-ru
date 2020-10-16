@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: d7a2596d4f6a8aa9fb4c95dfb5a3ccab7d7206f3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2707c5a6cb110d30b85b765f6c8b144e8cca7abe
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89461312"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92074725"
 ---
 # <a name="application-and-service-availability-issues-for-azure-cloud-services-frequently-asked-questions-faqs"></a>Проблемы доступности приложений и служб для облачных служб Azure. Вопросы и ответы (FAQ)
 
@@ -33,7 +33,7 @@ ms.locfileid: "89461312"
 
 Полные сведения о последних обновлениях гостевой ОС см. в статье [Выпуски гостевой ОС Azure и таблица совместимости пакетов SDK](cloud-services-guestos-update-matrix.md).
 
-Полезные сведения о перезапусках и ссылки на дополнительную техническую информацию по обновлениям гостевой и базовой ОС см. в записи блога MSDN [Role Instance Restarts Due to OS Upgrades](https://docs.microsoft.com/archive/blogs/kwill/role-instance-restarts-due-to-os-upgrades) (Перезапуски экземпляров ролей из-за обновлений ОС).
+Полезные сведения о перезапусках и ссылки на дополнительную техническую информацию по обновлениям гостевой и базовой ОС см. в записи блога MSDN [Role Instance Restarts Due to OS Upgrades](/archive/blogs/kwill/role-instance-restarts-due-to-os-upgrades) (Перезапуски экземпляров ролей из-за обновлений ОС).
 
 ## <a name="why-does-the-first-request-to-my-cloud-service-after-the-service-has-been-idle-for-some-time-take-longer-than-usual"></a>Почему первый запрос в облачную службу после простоя службы в течение некоторого времени занимает больше времени, чем обычно?
 Когда веб-сервер получает первый запрос, он сначала перекомпилирует код, а затем обрабатывает запрос. Вот почему первый запрос занимает больше времени, чем другие. По умолчанию пул приложений завершает работу в случае бездействия пользователя. Пул приложений также будет перезапускаться по умолчанию каждые 1,740 минут (29 часов).

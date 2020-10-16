@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 10/06/2019
 ms.author: azfuncdf
 ms.openlocfilehash: d480b8db69b34eda7ca1ea8e1b2755179f9c673f
-ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88055179"
 ---
 # <a name="developers-guide-to-durable-entities-in-net"></a>Рекомендации разработчика по устойчивым сущностям в .NET
@@ -267,7 +267,7 @@ context.SignalEntity<ICounter>("myCounter", ...);
 * Интерфейсы сущности должны определять только методы.
 * Интерфейсы сущностей не должны содержать универсальные параметры.
 * Методы интерфейса сущности не должны иметь более одного параметра.
-* Методы интерфейса сущности должны возвращать `void` , `Task` или`Task<T>` 
+* Методы интерфейса сущности должны возвращать `void` , `Task` или `Task<T>` 
 
 Если какое-либо из этих правил нарушается, `InvalidOperationException` во время выполнения создается исключение, когда интерфейс используется в качестве аргумента типа для `SignalEntity` или `CreateProxy` . В сообщении об исключении объясняется, какое правило было разорвано.
 
@@ -507,7 +507,7 @@ public static void Counter([EntityTrigger] IDurableEntityContext ctx)
 * `SignalEntity(EntityId, operation, input)`: отправляет одностороннее сообщение в сущность.
 * `CreateNewOrchestration(orchestratorFunctionName, input)`: запускает новое согласование.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Сведения о концепциях сущностей](durable-functions-entities.md)

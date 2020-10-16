@@ -77,6 +77,10 @@
           href: ./afds/waf-front-door-geo-filtering.md
         - name: ВОПРОСЫ И ОТВЕТЫ
           href: ./afds/waf-faq.md
+    - name: Безопасность
+      items:
+        - name: Базовые средства безопасности
+          href: security-baseline.md
     - name: WAF и Политика Azure
       href: ./shared/waf-azure-policy.md
 - name: Практические руководства
@@ -131,6 +135,8 @@
           href: ./afds/waf-front-door-tutorial-geo-filtering.md
         - name: Мониторинг и ведение журналов
           href: ./afds/waf-front-door-monitor.md
+    - name: Использование Azure Sentinel с Брандмауэром веб-приложений
+      href: waf-sentinel.md
     - name: Диагностика
       items:
         - name: Шлюз приложений

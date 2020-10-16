@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 09/23/2020
 ms.openlocfilehash: 38dd103189446e287f3d62d93344ed89a364d238
-ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91708787"
 ---
 # <a name="networking-overview---azure-database-for-postgresql---flexible-server"></a>Обзор сети: база данных Azure для PostgreSQL — гибкий сервер
@@ -118,6 +118,6 @@ ms.locfileid: "91708787"
 
 База данных Azure для PostgreSQL — гибкий сервер поддерживает только зашифрованные подключения с использованием протокола TLS. Все входящие подключения с TLS 1,0 и TLS 1,1 будут отклонены. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Узнайте, как создать гибкий сервер с **частным доступом (интеграция с виртуальной сетью)** в [портал Azure](how-to-manage-virtual-network-portal.md) или [в Azure CLI](how-to-manage-virtual-network-cli.md).
 * Узнайте, как создать гибкий сервер с общедоступным **(разрешенным IP-адресом)** в [портал Azure](how-to-manage-firewall-portal.md) или [Azure CLI](how-to-manage-firewall-cli.md).

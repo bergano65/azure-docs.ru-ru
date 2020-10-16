@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 09/22/2020
 ms.openlocfilehash: bed196d1be101ffa75affc389d390ec0fa764b05
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90937055"
 ---
 # <a name="backup-and-restore-in-azure-database-for-postgresql---flexible-server"></a>Резервное копирование и восстановление в базе данных Azure для PostgreSQL — гибкого сервера
@@ -98,7 +98,7 @@ ms.locfileid: "90937055"
 -  Если вы восстановили базу данных, настроенную с высокой доступностью, и хотите настроить для восстановленного сервера высокий уровень доступности, можно выполнить [действия](./how-to-manage-high-availability-portal.md).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 -   Сведения о [непрерывности бизнес-процессов](./concepts-business-continuity.md)
 -   Сведения о [высокой доступности с избыточностью зоны](./concepts-high-availability.md)

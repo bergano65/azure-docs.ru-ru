@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 11/27/2019
 ms.author: prmitiki
 ms.openlocfilehash: 75ec1a4ededfea4f9b40461d69b6e16d947e6919
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84712485"
 ---
 # <a name="peering-service-partner-walkthrough"></a>Пошаговое руководство по Службе пиринга для партнеров
@@ -31,7 +31,7 @@ ms.locfileid: "84712485"
 1. Следуйте инструкциям по [преобразованию устаревшего прямого пиринга в ресурс Azure с помощью портала](howto-legacy-direct-portal.md). При необходимости закажите дополнительные цепи, чтобы удовлетворить требованиям высокого уровня доступности.
 1. Затем выполните действия по [включению службы пиринга на непосредственном одноранговом пиринге с помощью портала](howto-peering-service-portal.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения о [политике пиринга](https://peering.azurewebsites.net/peering).
 * Чтобы узнать о действиях по настройке прямого пиринга с корпорацией Майкрософт, следуйте [пошаговому руководству по прямому пирингу](walkthrough-direct-all.md).

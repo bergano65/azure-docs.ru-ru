@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 08/28/2020
 ms.author: alkohli
 ms.openlocfilehash: cb783e5da7364f38944ce31ce49a6a6529658fe3
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90903220"
 ---
 # <a name="connect-to-and-manage-a-kubernetes-cluster-via-kubectl-on-your-azure-stack-edge-pro-gpu-device"></a>Подключение к кластеру Kubernetes и управление им через kubectl на устройстве с графическим процессором Azure Stack. Pro
@@ -170,6 +170,6 @@ ms.locfileid: "90903220"
 Подробные инструкции см. в разделе [Удаление конфигурации вычислений](azure-stack-edge-j-series-manage-compute.md#remove-compute-configuration).
    
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Развертывание приложения без отслеживания состояния на Azure Stack пограничной Pro](azure-stack-edge-j-series-deploy-stateless-application-kubernetes.md).

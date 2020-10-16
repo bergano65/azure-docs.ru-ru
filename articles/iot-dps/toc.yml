@@ -38,15 +38,17 @@
 - name: Учебники
   items:
     - name: 1. Подготовка наборов устройств с группами регистрации
-      href: how-to-legacy-device-symm-key.md
+      items:
+        - name: Подготовка устройств к работе с использованием симметричных ключей
+          href: how-to-legacy-device-symm-key.md
+        - name: Использование пользовательских политик распределения
+          href: tutorial-custom-allocation-policies.md
     - name: 2. Подготовка устройств для нескольких центров
       items:
         - name: Связывание нескольких центров с DP
           href: tutorial-provision-multiple-hubs.md
         - name: Подготовка к мультитенантности
           href: how-to-provision-multitenant.md
-        - name: Использование пользовательских политик распределения
-          href: tutorial-custom-allocation-policies.md
 - name: Примеры
   items:
     - name: Пример аттестации имитированного устройства с доверенным платформенным модулем

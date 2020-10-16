@@ -4,12 +4,12 @@ description: Ознакомьтесь с командами интерфейса
 ms.topic: how-to
 ms.date: 07/24/2018
 ms.custom: H1Hack27Feb2017, devx-track-azurecli
-ms.openlocfilehash: 048dbad89893354ae78c03fc522f8ebeeb6a80f4
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: 92d5e60f549855b39185564f7f6d2902b765cf76
+ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87531683"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92055517"
 ---
 # <a name="manage-batch-resources-with-azure-cli"></a>Управление ресурсами пакетной службы с помощью Azure CLI
 
@@ -107,7 +107,7 @@ az login
 
 ## <a name="script-examples"></a>Примеры скриптов
 
-Дополнительные сведения о выполнении распространенных задач см. в [примерах скриптов CLI](cli-samples.md) для пакетной службы. В этих примерах описываются разные команды, используемые в Azure CLI для пакетной службы для создания и администрирования учетных записей, пулов, заданий и задач. 
+Дополнительные сведения о выполнении распространенных задач см. в [примерах скриптов CLI](./scripts/batch-cli-sample-create-account.md) для пакетной службы. В этих примерах описываются разные команды, используемые в Azure CLI для пакетной службы для создания и администрирования учетных записей, пулов, заданий и задач.
 
 ## <a name="json-files-for-resource-creation"></a>JSON-файлы для создания ресурса
 

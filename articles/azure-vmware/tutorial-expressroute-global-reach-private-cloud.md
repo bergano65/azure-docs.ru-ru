@@ -3,12 +3,12 @@ title: Учебник по настройке пиринга между лока
 description: Создание пиринга ExpressRoute Global Reach к частному облаку в решении Azure VMware.
 ms.topic: tutorial
 ms.date: 09/21/2020
-ms.openlocfilehash: 07b7e1c2636f3754eda56af574586a1027403d3e
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.openlocfilehash: 9de6cbe177ac8d2ca4957e80c7ca1072a0d7985e
+ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91576733"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91948312"
 ---
 # <a name="tutorial-peer-on-premises-environments-to-a-private-cloud"></a>Руководство по Настройка пиринга между локальной средой и частным облаком
 
@@ -83,7 +83,7 @@ ExpressRoute Global Reach подключает локальную среду к 
 [Команды CLI](../expressroute/expressroute-howto-set-global-reach-cli.md) дополнены подробными сведениями и примерами, которые помогут настроить пиринг ExpressRoute Global Reach между локальными средами и частным облаком решения Azure VMware.  
 
 > [!TIP]  
-> Для краткости выходных данных команд Azure CLI в этих инструкциях для выполнения запроса JMESPath можно использовать аргумент [`–query`, позволяющий отобразить только необходимые результаты](https://docs.microsoft.com/cli/azure/query-azure-cli).
+> Для краткости выходных данных команд Azure CLI в этих инструкциях для выполнения запроса JMESPath можно использовать аргумент [`–query`, позволяющий отобразить только необходимые результаты](/cli/azure/query-azure-cli).
 
 
 1. Войдите на портал Azure, используя ту же подписку, к которой относится канал ExpressRoute локальный среды, и откройте Cloud Shell. В качестве оболочки оставьте Bash.

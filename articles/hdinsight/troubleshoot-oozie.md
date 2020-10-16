@@ -8,10 +8,10 @@ ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 04/27/2020
 ms.openlocfilehash: fb795a9d7100019b2b1820c592f87025b77f5878
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86045864"
 ---
 # <a name="troubleshoot-apache-oozie-in-azure-hdinsight"></a>Устранение неполадок Apache Oozie в Azure HDInsight
@@ -28,7 +28,7 @@ ms.locfileid: "86045864"
 
 ## <a name="ja009-cant-initialize-cluster"></a>JA009: не удается инициализировать кластер
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 Состояние задания изменяется на **SUSPENDED** (Приостановлено). В подробной информации о задании `RunHiveScript` состояние отображается как **START_MANUAL**. При выборе действия отображается следующее сообщение об ошибке:
 
@@ -36,7 +36,7 @@ ms.locfileid: "86045864"
 JA009: Cannot initialize Cluster. Please check your configuration for map
 ```
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Адреса хранилища BLOB-объектов Azure, используемые в файле **job.xml**, не содержат контейнер хранилища или имя учетной записи хранения. Адрес хранилища BLOB-объектов должен иметь формат `wasbs://containername@storageaccountname.blob.core.windows.net`.
 
@@ -48,7 +48,7 @@ JA009: Cannot initialize Cluster. Please check your configuration for map
 
 ## <a name="ja002-oozie-isnt-allowed-to-impersonate-ltusergt"></a>JA002: Oozie не разрешено олицетворять &lt; пользователя&gt;
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 Состояние задания изменяется на **SUSPENDED** (Приостановлено). В подробной информации о задании `RunHiveScript` состояние отображается как **START_MANUAL**. Если выбрать действие, отобразится следующее сообщение об ошибке:
 
@@ -56,7 +56,7 @@ JA009: Cannot initialize Cluster. Please check your configuration for map
 JA002: User: oozie is not allowed to impersonate <USER>
 ```
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Текущие права доступа не позволяют Oozie работать от имени учетной записи указанного пользователя.
 
@@ -75,7 +75,7 @@ sudo adduser USERNAME users
 
 ## <a name="launcher-error-sqoop"></a>ОШИБКА запуска (Sqoop)
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 Состояние задания изменяется на **KILLED** (Прекращено). В подробной информации о задании `RunSqoopExport` состояние отображается как **ERROR**. Если выбрать действие, отобразится следующее сообщение об ошибке:
 
@@ -83,7 +83,7 @@ sudo adduser USERNAME users
 Launcher ERROR, reason: Main class [org.apache.oozie.action.hadoop.SqoopMain], exit code [1]
 ```
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Sqoop не удалось загрузить драйвер базы данных, необходимый для доступа к базе данных.
 

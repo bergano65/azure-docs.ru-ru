@@ -7,10 +7,10 @@ ms.date: 9/13/2020
 ms.topic: article
 ms.service: api-management
 ms.openlocfilehash: d537040be4ed4cbf961a4621980d3d290e306359
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91345138"
 ---
 # <a name="api-management-dapr-integration-policies"></a>Политики интеграции ДАПР управления API
@@ -37,7 +37,7 @@ template:
 ```
 
 
-## <a name="distributed-application-runtime-dapr-integration-policies"></a>Политики интеграции среды выполнения распределенного приложения (ДАПР)
+## <a name="distributed-application-runtime-dapr-integration-policies"></a>Политики интеграции Distributed Application Runtime (Dapr)
 
 -  [Отправить запрос в службу](api-management-dapr-policies.md#invoke): использует среду выполнения ДАПР для выявления и надежной связи с микрослужбой ДАПР. Дополнительные сведения о вызове службы в ДАПР см. в описании в этом файле [readme](https://github.com/dapr/docs/blob/master/concepts/service-invocation/README.md#service-invocation) .
 -  [Отправить сообщение в Pub/подразделы](api-management-dapr-policies.md#pubsub): использует среду выполнения ДАПР для публикации сообщения в раздел публикации и подписки. Дополнительные сведения о публикации и подписывание сообщений в ДАПР см. в описании в файле [сведений](https://github.com/dapr/docs/blob/master/concepts/publish-subscribe-messaging/README.md) .
@@ -236,7 +236,7 @@ template:
 |---------------------|--------------|----------|
 | Invoke-ДАПР — привязка | Корневой элемент | Да      |
 | метаданные            | Привязка конкретных метаданных в виде пар «ключ-значение». Сопоставляется со свойством [метаданных](https://github.com/dapr/docs/blob/master/reference/api/bindings_api.md#invoking-output-bindings) в ДАПР. | Нет |
-| .            | Содержимое сообщения. Сопоставляется со свойством [Data](https://github.com/dapr/docs/blob/master/reference/api/bindings_api.md#invoking-output-bindings) в ДАПР. | Нет |
+| Данные            | Содержимое сообщения. Сопоставляется со свойством [Data](https://github.com/dapr/docs/blob/master/reference/api/bindings_api.md#invoking-output-bindings) в ДАПР. | Нет |
 
 
 ### <a name="attributes"></a>Атрибуты

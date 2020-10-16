@@ -220,6 +220,8 @@
               href: iot-hub-reliability-features-in-sdks.md
             - name: Разработка для платформы Android Things
               href: iot-hub-how-to-android-things.md
+        - name: Разработка без использования пакета SDK для Azure IoT
+          href: iot-hub-devguide-no-sdk.md
         - name: Запрос данных Avro из маршрута концентратора
           href: iot-hub-query-avro-data.md
         - name: Упорядочение событий изменения состояния подключения устройства из Сетки событий

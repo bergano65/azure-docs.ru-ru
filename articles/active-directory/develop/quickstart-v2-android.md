@@ -1,6 +1,7 @@
 ---
-title: Краткое руководство. Использование приложений Android с платформой удостоверений Майкрософт | Azure
-description: Узнайте, как приложения Android могут вызывать API, которому требуются маркеры доступа от конечной точки платформы удостоверений Майкрософт.
+title: Краткое руководство. Добавление возможности входа в приложение Android с помощью учетной записи Майкрософт | Azure
+titleSuffix: Microsoft identity platform
+description: Из этого краткого руководства вы узнаете, как приложения Android могут вызывать API, которому требуются маркеры доступа, выданные платформой удостоверений Майкрософт.
 services: active-directory
 author: mmacy
 manager: CelesteDG
@@ -11,12 +12,12 @@ ms.workload: identity
 ms.date: 10/15/2019
 ms.author: marsma
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:Android
-ms.openlocfilehash: a46cd1b916edeae8a24fb997db46e5a0651567cb
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: e8f60a3f39e770c1b09668a6d76e025b07ebbd6d
+ms.sourcegitcommit: b437bd3b9c9802ec6430d9f078c372c2a411f11f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88115277"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91893515"
 ---
 # <a name="quickstart-sign-in-users-and-call-the-microsoft-graph-api-from-an-android-app"></a>Краткое руководство. Вход пользователей и вызов API Microsoft Graph из приложения Android
 
@@ -24,17 +25,14 @@ ms.locfileid: "88115277"
 
 Чтобы приложение получало маркеры от платформы удостоверений Майкрософт, оно должно быть представлено объектом приложения в Azure Active Directory.
 
-> [!div renderon="docs"]
-> Для удобства пример кода в файле `AndroidManifest.xml` содержит предварительно настроенный код `redirect_uri`, поэтому вам не нужно сначала регистрировать собственный объект приложения. Код `redirect_uri` частично зависит от ключа подписывания приложения. Пример проекта предварительно настроен с помощью ключа подписывания, поэтому предоставленный код `redirect_uri` будет работать. Дополнительные сведения о регистрации объекта приложения и его интеграции с приложением см. в руководстве [Вход пользователей и вызов Microsoft Graph из приложения Android](tutorial-v2-android.md).
+## <a name="prerequisites"></a>Предварительные требования
 
-
-> [!NOTE]
-> **Предварительные требования**
-> * Android Studio 
-> * Android 16+
+* Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) бесплатно.
+* Android Studio
+* Android 16+
 
 > [!div class="sxs-lookup" renderon="portal"]
-> ### <a name="step-1-configure-your-application-in-the-azure-portal"></a>Шаг 1. Настройка приложения на портале Azure 
+> ### <a name="step-1-configure-your-application-in-the-azure-portal"></a>Шаг 1. Настройка приложения на портале Azure
 >  Для работы примера кода в этом кратком руководстве необходимо добавить URI перенаправления, совместимый с брокером авторизации.
 > > [!div renderon="portal" id="makechanges" class="nextstepaction"]
 > > [Внести эти изменения для меня]()
@@ -42,15 +40,15 @@ ms.locfileid: "88115277"
 > > [!div id="appconfigured" class="alert alert-info"]
 > > ![Уже настроено](media/quickstart-v2-android/green-check.png). Ваше приложение настроено с помощью этих атрибутов
 >
-> ### <a name="step-2-download-the-project"></a>Шаг 2. Скачивание проекта 
+> ### <a name="step-2-download-the-project"></a>Шаг 2. Скачивание проекта
 > [!div class="sxs-lookup" renderon="portal"]
 > Выполните проект с помощью Android Studio.
-> [!div renderon="portal" id="autoupdate" class="nextstepaction"]
+> [!div class="sxs-lookup" renderon="portal" id="autoupdate" class="nextstepaction"]
 > [Скачивание примера кода](https://github.com/Azure-Samples/ms-identity-android-java/archive/master.zip)
 >
 > [!div class="sxs-lookup" renderon="portal"]
 > ### <a name="step-3-your-app-is-configured-and-ready-to-run"></a>Шаг 3. Приложение настроено и готово к запуску
-> Мы уже настроили для проекта нужные значения свойств приложения, и его можно запускать. 
+> Мы уже настроили для проекта нужные значения свойств приложения, и его можно запускать.
 > Пример приложения запускается на экране **Single Account Mode** (Режим единой учетной записи). Область по умолчанию, **user.read**, предоставляется по умолчанию и используется при чтении данных собственного профиля во время вызова API Microsoft Graph. URL-адрес для вызова Microsoft Graph API предоставляется по умолчанию. При необходимости их можно изменить.
 >
 > ![Пример приложения MSAL с использованием одной и нескольких учетных записей](./media/quickstart-v2-android/quickstart-sample-app.png)
@@ -112,8 +110,8 @@ ms.locfileid: "88115277"
 
 MSAL ([com.microsoft.identity.client](https://javadoc.io/doc/com.microsoft.identity.client/msal)) — это библиотека, используемая для выполнения входа пользователей и запросов маркеров, которые нужны для доступа к API, защищенному платформой удостоверений Майкрософт. Gradle 3.0+ устанавливает библиотеку при добавлении в файл **Скрипты Gradle** > **build.gradle (модуль: app)** в разделе **Зависимости** следующего фрагмента кода:
 
-```gradle  
-implementation 'com.microsoft.identity.client:msal:1.+'
+```gradle
+implementation 'com.microsoft.identity.client:msal:2.+'
 ```
 
 Следующий фрагмент кода можно увидеть в примере проекта в build.gradle (модуль: app):
@@ -121,7 +119,7 @@ implementation 'com.microsoft.identity.client:msal:1.+'
 ```java
 dependencies {
     ...
-    implementation 'com.microsoft.identity.client:msal:1.+'
+    implementation 'com.microsoft.identity.client:msal:2.+'
     ...
 }
 ```
@@ -384,9 +382,9 @@ private void loadAccounts() {
 Ниже представлены некоторые ситуации, когда пользователю может быть предложено выбрать учетную запись, ввести учетные данные или дать согласие на разрешения, запрошенные вашим приложением:
 
 * первый вход пользователей в приложение;
-* Если пользователь сбрасывает пароль, то потребуется вводить свои учетные данные. 
-* Если отменяется согласие. 
-* Приложение явно требует согласия. 
+* Если пользователь сбрасывает пароль, то потребуется вводить свои учетные данные.
+* Если отменяется согласие.
+* Приложение явно требует согласия.
 * Когда ваше приложение впервые запрашивает доступ к ресурсу.
 * Когда требуются политики условного доступа или MFA.
 
@@ -476,20 +474,11 @@ mMultipleAccountApp.removeAccount(accountList.get(accountListSpinner.getSelected
 }
 ```
 
+[!INCLUDE [Help and support](../../../includes/active-directory-develop-help-support-include.md)]
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
-### <a name="learn-the-steps-to-create-the-application-used-in-this-quickstart"></a>Изучите этапы создания приложения, используемые в этом кратком руководстве
-
-Ознакомьтесь с пошаговым руководством [Вход пользователей и вызов Microsoft Graph из приложения Android](tutorial-v2-android.md). В нем приведены сведения о создании приложения Android, которое получает маркер доступа и с его помощью вызывает API Microsoft Graph.
+Перейдите к учебнику по Android, с помощью которого вы создадите приложение Android, получающее маркер доступа от платформы удостоверений Майкрософт и использующее его для вызова API Microsoft Graph.
 
 > [!div class="nextstepaction"]
-> [Вход пользователей и вызов API Microsoft Graph из приложения Android](./tutorial-v2-android.md)
-
-### <a name="msal-for-android-library-wiki"></a>MSAL для вики-сайта библиотеки Android
-
-Дополнительные сведения см. в статье
-
-> [!div class="nextstepaction"]
-> [MSAL для вики-сайта библиотеки Android](https://github.com/AzureAD/microsoft-authentication-library-for-android/wiki)
-
-[!INCLUDE [Help and support](../../../includes/active-directory-develop-help-support-include.md)]
+> [Учебник. Вход пользователей и вызов Microsoft Graph из приложения Android](tutorial-v2-android.md)

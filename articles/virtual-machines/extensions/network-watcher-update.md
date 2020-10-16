@@ -1,5 +1,5 @@
 ---
-title: Обновите расширение наблюдателя за сетями до последней версии.
+title: Обновление расширения наблюдателя за сетями до последней версии
 description: Узнайте, как обновить расширение наблюдателя за сетями до последней версии.
 services: virtual-machines-windows
 documentationcenter: ''
@@ -12,12 +12,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 09/23/2020
 ms.author: damendo
-ms.openlocfilehash: c386685d63894472623ffc4392a529541a91391c
-ms.sourcegitcommit: b48e8a62a63a6ea99812e0a2279b83102e082b61
+ms.openlocfilehash: fd3fff2d438bbf804e35f04db0cfae15eea5e782
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91410362"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91973345"
 ---
 # <a name="how-to-update-the-network-watcher-extension-to-the-latest-the-version"></a>Обновление расширения наблюдателя за сетями до последней версии 
 
@@ -25,7 +25,7 @@ ms.locfileid: "91410362"
 
 [Наблюдатель за сетями Azure](../../network-watcher/network-watcher-monitoring-overview.md) — это служба мониторинга производительности, диагностики и анализа сети, которая позволяет наблюдать за сетями Azure. Расширение виртуальной машины для агента службы "Наблюдатель за сетями" необходимо для записи трафика по требованию и других дополнительных функций виртуальных машин Azure. Расширение наблюдателя за сетями используется такими компонентами, как монитор подключения, монитор подключения (Предварительная версия), устранение неполадок подключения и запись пакетов.   
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 В этом документе предполагается, что на виртуальной машине установлено расширение наблюдателя за сетями, а также инструкции по его обновлению до последней версии. 
 
 ## <a name="latest-version"></a>Последняя версия
@@ -114,4 +114,4 @@ az vm extension set --resource-group "DALANDEMO" --vm-name "Linux-01" --name "Ne
 
 ## <a name="support"></a>Поддержка
 
-Если вам нужна дополнительная помощь в любой момент в этой статье, см. документацию по расширениям наблюдателя за сетями ([Linux](https://docs.microsoft.com/azure/virtual-machines/extensions/network-watcher-linux), [Windows](https://docs.microsoft.com/azure/virtual-machines/extensions/network-watcher-windows)) или обратитесь к экспертам Azure на [форумах MSDN Azure и Stack overflow](https://azure.microsoft.com/support/forums/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните "Получить поддержку". Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).
+Если вам нужна дополнительная помощь в любой момент в этой статье, см. документацию по расширениям наблюдателя за сетями ([Linux](./network-watcher-linux.md), [Windows](./network-watcher-windows.md)) или обратитесь к экспертам Azure на [форумах MSDN Azure и Stack overflow](https://azure.microsoft.com/support/forums/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните "Получить поддержку". Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).

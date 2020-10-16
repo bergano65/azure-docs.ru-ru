@@ -2,20 +2,20 @@
 title: Присоединение виртуальной машины SLE к доменным службам Azure AD | Документация Майкрософт
 description: Узнайте, как настроить и присоединить виртуальную машину SUSE Linux Enterprise к управляемому домену доменных служб Azure AD.
 services: active-directory-ds
-author: iainfoulds
+author: MicrosoftGuyJFlo
 manager: daveba
 ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: how-to
 ms.date: 08/12/2020
-ms.author: iainfou
-ms.openlocfilehash: 9f50be95e456802c6ad403acd6a2f539780e53a2
-ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
+ms.author: joflore
+ms.openlocfilehash: 5d89f1a3d6028afb3450e0112a6081c9c706775b
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88251214"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91962468"
 ---
 # <a name="join-a-suse-linux-enterprise-virtual-machine-to-an-azure-active-directory-domain-services-managed-domain"></a>Присоединение виртуальной машины SUSE Linux Enterprise к управляемому домену доменных служб Azure Active Directory
 
@@ -141,7 +141,7 @@ sudo vi /etc/hosts
 
 1. Укажите значение для расположения домашнего каталога. Чтобы домашняя папка соблюдались в формате */хоме/user_name*, используйте */Хоме/%у*. Дополнительные сведения о возможных переменных см. на справочной странице SSSD. conf ( `man 5 sssd.conf` ) раздела *override_homedir*.
 
-1. Щелкните **ОК**.
+1. Нажмите кнопку **OK**.
 
 1. Чтобы сохранить изменения, нажмите кнопку **ОК**. Затем убедитесь, что значения отображаются правильно. Чтобы выйти из диалогового окна, нажмите **кнопку Отмена**.
 
@@ -250,7 +250,7 @@ sudo vi /etc/hosts
     sudo zypper update
     ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если при подключении виртуальной машины к управляемому домену или при входе с помощью учетной записи домена возникли проблемы, см. раздел [Устранение неполадок при присоединении к домену](join-windows-vm.md#troubleshoot-domain-join-issues).
 

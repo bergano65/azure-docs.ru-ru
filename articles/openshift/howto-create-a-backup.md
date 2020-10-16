@@ -8,12 +8,12 @@ author: troy0820
 ms.author: b-trconn
 keywords: aro, openshift, az aro, red hat, cli
 ms.custom: mvc
-ms.openlocfilehash: 6cf77aa41a9a485ba70519fed33c1b6aec736525
-ms.sourcegitcommit: 4feb198becb7a6ff9e6b42be9185e07539022f17
+ms.openlocfilehash: 49ffc33310564299131e2831b74154719b7cf7c7
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89470074"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92078584"
 ---
 # <a name="create-an-azure-red-hat-openshift-4-cluster-application-backup"></a>Создание резервной копии приложения кластера Azure Red Hat OpenShift 4
 
@@ -90,7 +90,7 @@ EOF
 
 ## <a name="install-velero-on-azure-red-hat-openshift-4-cluster"></a>Установка Велеро в кластере Azure Red Hat OpenShift 4
 
-Этот шаг устанавливает велеро в собственный проект и [пользовательские определения ресурсов](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/) , необходимые для резервного копирования и восстановления с помощью велеро. Убедитесь, что вы успешно вошли в кластер Azure Red Hat OpenShift v4.
+Этот шаг устанавливает Велеро в собственный проект и [пользовательские определения ресурсов](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/) , необходимые для резервного копирования и восстановления с помощью велеро. Убедитесь, что вы успешно вошли в кластер Azure Red Hat OpenShift v4.
 
 
 ```bash
@@ -120,14 +120,34 @@ oc get backups -n velero <name of backup> -o yaml
 
 Будет выводиться успешная резервная копия `phase:Completed` , и объекты будут находиться в контейнере в учетной записи хранения.
 
+## <a name="create-a-backup-with-velero-to-include-snapshots"></a>Создание резервной копии с Велеро для включения моментальных снимков
+
+Чтобы создать резервную копию приложения с Велеро для включения постоянных томов приложения, необходимо включить пространство имен, в которое входит приложение, а также включить `snapshot-volumes=true` флаг при создании резервной копии.
+
+```bash
+velero backup create <name of backup> --include-namespaces=nginx-example --snapshot-volumes=true --include-cluster-resources=true
+```
+
+Состояние резервного копирования можно проверить, выполнив команду.
+
+```bash
+oc get backups -n velero <name of backup> -o yaml
+```
+
+Успешная архивация с выходными данными `phase:Completed` и объекты будут находиться в контейнере в учетной записи хранения.
+
+Дополнительные сведения о создании резервных копий и восстановлении с помощью Велеро см. [в статье резервное копирование ресурсов OpenShift в собственном виде](https://www.openshift.com/blog/backup-openshift-resources-the-native-way) .
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье была создана резервная копия приложения кластера Azure Red Hat OpenShift 4. Вы ознакомились с выполнением следующих задач:
 
 > [!div class="checklist"]
 > * Создание резервной копии приложения кластера OpenShift v4 с помощью Велеро
+> * Создание резервной копии приложения кластера OpenShift v4 с моментальными снимками с помощью Велеро
 
 
 Перейдите к следующей статье, чтобы узнать, как создать восстановление приложения кластера Azure Red Hat OpenShift 4.
 
 * [Создание восстановления приложения кластера Azure Red Hat OpenShift 4](howto-create-a-restore.md)
+* [Создание восстановления приложения кластера Azure Red Hat OpenShift 4, включая моментальные снимки](howto-create-a-restore.md)

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 08/21/2020
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: b99ac957c9c5030b484b244223847be4aa53a39d
-ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
+ms.openlocfilehash: 174ad4692d043390e6773a98e31f0985d75c8e2e
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2020
-ms.locfileid: "88749091"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92018820"
 ---
 # <a name="data-sources-supported-in-azure-analysis-services"></a>Источники данных, поддерживаемые в службах Azure Analysis Services
 
@@ -79,7 +79,7 @@ ms.locfileid: "88749091"
 **Примечания.**  
 <a name="tab1400b">6</a> — только табличная модель 1400 и более поздние.  
 <a name="sqlim">7</a> — при указании в качестве *поставщика* источника данных в табличных моделях данных 1200 и выше укажите драйвер MSOLEDBSQL (рекомендуется), Microsoft OLE DB Driver for SQL Server, SQL Server Native Client 11.0 или поставщик данных .NET Framework для SQL Server.  
-<a name="instgw">8</a> — при указании MSOLEDBSQL в качестве поставщика данных может потребоваться скачать и установить [Microsoft OLE DB Driver for SQL Server](https://docs.microsoft.com/sql/connect/oledb/oledb-driver-for-sql-server) на том же компьютере, что и локальный шлюз данных.  
+<a name="instgw">8</a> — при указании MSOLEDBSQL в качестве поставщика данных может потребоваться скачать и установить [Microsoft OLE DB Driver for SQL Server](/sql/connect/oledb/oledb-driver-for-sql-server) на том же компьютере, что и локальный шлюз данных.  
 <a name="oracle">9</a> — укажите поставщик данных Oracle для .NET для табличных моделей 1200 или как *поставщик* источника данных в табличных моделях 1400 и выше. При указании в качестве структурированного источника данных обязательно [Включите управляемый поставщик Oracle](#enable-oracle-managed-provider).   
 <a name="teradata">10</a> — укажите поставщик данных Teradata для .NET для табличных моделей уровня 1200 или как *поставщик* источника данных в табличных моделях 1400 и выше.  
 <a name="filesSP">11</a> — файлы в локальной среде SharePoint не поддерживаются.

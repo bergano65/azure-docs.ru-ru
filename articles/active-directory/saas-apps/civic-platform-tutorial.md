@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 07/25/2019
 ms.author: jeedes
-ms.openlocfilehash: 47ffaef940b3fe2ffe033405a712195c5c74d774
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 85b355981a50804f1c43441efa38c5db59967c1d
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88520389"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91760637"
 ---
 # <a name="tutorial-integrate-civic-platform-with-azure-active-directory"></a>Руководство по Интеграция платформы Civic Platform с Azure Active Directory
 
@@ -91,7 +91,7 @@ ms.locfileid: "88520389"
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы копировать **URL-адрес метаданных федерации приложений** и сохранить его на компьютере.
 
-    ![Ссылка для скачивания сертификата](common/copy-metadataurl.png)
+    ![Снимок экрана, на котором показана страница "Настройка единого входа с помощью SAML", где можно скопировать URL-адрес метаданных федерации приложения](common/copy-metadataurl.png)
 
 1. Перейдите в раздел **Azure Active Directory** > **Регистрация приложений** в Azure AD и выберите нужное приложение.
 
@@ -120,21 +120,21 @@ ms.locfileid: "88520389"
 
 1. Нажмите кнопку **Стандартный выбор**.
 
-    ![Ссылка для скачивания сертификата](media/civic-platform-tutorial/standard-choices.png)
+    ![Снимок экрана, на котором показан сайт Atlassian Cloud, где в разделе "Administrator Tools" (Средства администратора) выбран элемент "Standard Choices" (Стандартный выбор)](media/civic-platform-tutorial/standard-choices.png)
 
 1. Создайте стандартный вариант **ssoconfig**.
 
 1. Найдите **ssoconfig** и отправьте его.
 
-    ![Ссылка для скачивания сертификата](media/civic-platform-tutorial/sso-config.png)
+    ![Снимок экрана, на котором показан раздел "Standard Choices Search" (Поиск стандартного выбора) с введенным поисковым запросом "ssoconfig"](media/civic-platform-tutorial/sso-config.png)
 
 1. Разверните SSOCONFIG, щелкнув красную точку.
 
-    ![Ссылка для скачивания сертификата](media/civic-platform-tutorial/sso-config01.png)
+    ![Снимок экрана, на котором показан раздел "Standard Choices Browse" (Обзор стандартного выбора) с элементом SSOCONFIG](media/civic-platform-tutorial/sso-config01.png)
 
 1. Укажите сведения о конфигурации, связанные с единым входом, на следующем шаге:
 
-    ![Ссылка для скачивания сертификата](media/civic-platform-tutorial/sso-config02.png)
+    ![Снимок экрана, на котором показан элемент "Standard Choices Item Edit" (Изменение элемента стандартного выбора) для SSOCONFIG](media/civic-platform-tutorial/sso-config02.png)
 
     1. В поле **applicationid** введите значение **Идентификатора приложения**, скопированное с портала Azure.
 

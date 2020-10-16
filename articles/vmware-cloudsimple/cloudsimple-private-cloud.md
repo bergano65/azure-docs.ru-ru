@@ -9,10 +9,10 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: e2096e8c0ebfb233c7449510bf0bc8e80b56231e
-ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88140723"
 ---
 # <a name="cloudsimple-private-cloud-overview"></a>Общие сведения о частном облаке Клаудсимпле
@@ -132,7 +132,7 @@ ms.locfileid: "88140723"
 | Максимальное число узлов в частном облаке | 64 |
 | Минимальное число узлов в новом кластере | 3 |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Узнайте, как [создать частное облако](create-private-cloud.md)
 * Узнайте, как [настроить среду частного облака](quickstart-create-private-cloud.md)

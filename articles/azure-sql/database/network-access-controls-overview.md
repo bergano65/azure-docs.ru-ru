@@ -12,12 +12,12 @@ author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: vanto
 ms.date: 03/09/2020
-ms.openlocfilehash: caad78bf61c9ad470464d69c7320aa1d08dcee09
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.openlocfilehash: 4afb6844512bd59a5c377d826267a748837ed855
+ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89435377"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91952001"
 ---
 # <a name="azure-sql-database-and-azure-synapse-analytics-network-access-controls"></a>Управление доступом к сети для базы данных SQL Azure и Azure синапсе Analytics
 
@@ -42,7 +42,7 @@ ms.locfileid: "89435377"
 
 ## <a name="allow-azure-services"></a>Разрешить службы Azure
 
-При создании нового логического сервера SQL Server [из портал Azure](single-database-create-quickstart.md)этот параметр остается неустановленным.
+По умолчанию при создании нового логического сервера SQL Server [из портал Azure](single-database-create-quickstart.md)этот параметр имеет значение **Off**. Этот параметр отображается, если подключение разрешено с помощью конечной точки общедоступной службы.
 
 Этот параметр можно также изменить через панель брандмауэра после создания логического сервера SQL Server, как показано ниже.
   
@@ -80,9 +80,9 @@ PS C:\> $sql.Properties.AddressPrefixes
 ```
 
 > [!TIP]
-> Командлет Get-Азнетворксервицетаг Возвращает глобальный диапазон для тега службы SQL, несмотря на указание параметра location. Не забудьте отфильтровать его в регионе, где размещена база данных центра, используемая группой синхронизации.
+> Get-AzNetworkServiceTag Возвращает глобальный диапазон для тега службы SQL, несмотря на указание параметра location. Не забудьте отфильтровать его в регионе, где размещена база данных центра, используемая группой синхронизации.
 
-Обратите внимание, что выходные данные скрипта PowerShell находятся в нотации, соотношении междоменной маршрутизации (CIDR). Его необходимо преобразовать в формат начального и конечного IP-адресов с помощью [Get-IPrangeStartEnd.ps1](https://gallery.technet.microsoft.com/scriptcenter/Start-and-End-IP-addresses-bcccc3a9) следующим образом:
+Обратите внимание, что выходные данные скрипта PowerShell находятся в нотации неInter-Domainной маршрутизации (CIDR). Его необходимо преобразовать в формат начального и конечного IP-адресов с помощью [Get-IPrangeStartEnd.ps1](https://gallery.technet.microsoft.com/scriptcenter/Start-and-End-IP-addresses-bcccc3a9) следующим образом:
 
 ```powershell
 PS C:\> Get-IPrangeStartEnd -ip 52.229.17.93 -cidr 26

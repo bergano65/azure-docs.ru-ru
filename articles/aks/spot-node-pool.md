@@ -6,10 +6,10 @@ ms.service: container-service
 ms.topic: article
 ms.date: 02/25/2020
 ms.openlocfilehash: dbb003c287a18810c2c14c4f2ea401fa55cca427
-ms.sourcegitcommit: 25bb515efe62bfb8a8377293b56c3163f46122bf
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87987296"
 ---
 # <a name="preview---add-a-spot-node-pool-to-an-azure-kubernetes-service-aks-cluster"></a>Предварительный просмотр. Добавление пула узлов с плашечными узлами в кластер Azure Kubernetes Service (AKS)
@@ -50,7 +50,7 @@ az feature register --namespace "Microsoft.ContainerService" --name "spotpoolpre
 az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/spotpoolpreview')].{Name:name,State:properties.state}"
 ```
 
-Когда все будет готово, обновите регистрацию поставщика ресурсов *Microsoft.ContainerService* с помощью команды [az provider register][az-provider-register].
+Когда все будет готово, обновите регистрацию поставщика ресурсов *Microsoft. ContainerService* с помощью команды [AZ Provider Register][az-provider-register] :
 
 ```azurecli-interactive
 az provider register --namespace Microsoft.ContainerService
@@ -138,7 +138,7 @@ spec:
 
 Переменное ценообразование позволяет вам указать максимальную цену в долларах США с точностью до 5 знаков после запятой. Например, значение *0,98765* будет максимальной ценой $0,98765 долларов США в час. Если для параметра Максимальная цена задано значение *-1*, то экземпляр не будет удален на основе цены. Цена за экземпляр будет представлять собой текущую цену на точку или цену для стандартного экземпляра, в зависимости от того, сколько ресурсов и квоты доступны.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье вы узнали, как добавить пул узлов с плашечными узлами в кластер AKS. Дополнительные сведения об управлении модулями Pod в пулах узлов см. в разделе рекомендации [по использованию расширенных функций планировщика в AKS][operator-best-practices-advanced-scheduler].
 

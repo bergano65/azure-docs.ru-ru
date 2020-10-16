@@ -20,10 +20,10 @@ translation.priority.mt:
 - zh-cn
 - zh-tw
 ms.openlocfilehash: fc5803f96c30ea1df362676aa8c4104bb0b69db3
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88934877"
 ---
 # <a name="odata-comparison-operators-in-azure-cognitive-search---eq-ne-gt-lt-ge-and-le"></a>Операторы сравнения OData в Azure когнитивный поиск- `eq` , `ne` ,,, `gt` `lt` `ge` и `le`
@@ -49,7 +49,7 @@ ms.locfileid: "88934877"
 
 ## <a name="syntax"></a>Синтаксис
 
-Следующая EBNF ([Расширенная форма Backus-Наура](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)) определяет грамматику выражения OData, в которой используются операторы сравнения.
+Следующая EBNF ([Расширенная форма Backus-Naur](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)) определяет грамматику выражения OData, в которой используются операторы сравнения.
 
 <!-- Upload this EBNF using https://bottlecaps.de/rr/ui to create a downloadable railroad diagram. -->
 
@@ -81,9 +81,9 @@ comparison_operator ::= 'gt' | 'lt' | 'ge' | 'le' | 'eq' | 'ne'
 | --- | --- | --- |
 | `Edm.Double` | `Edm.Double` | Для сравнения применяются [специальные правила для `NaN` ](#special-case-nan) |
 | `Edm.Double` | `Edm.Int64` | Константа преобразуется в `Edm.Double` , что приводит к утере точности для значений большой величины |
-| `Edm.Double` | `Edm.Int32` | н/д |
+| `Edm.Double` | `Edm.Int32` | Недоступно |
 | `Edm.Int64` | `Edm.Double` | Сравнения с `NaN` , `-INF` или `INF` не разрешены |
-| `Edm.Int64` | `Edm.Int64` | н/д |
+| `Edm.Int64` | `Edm.Int64` | Недоступно |
 | `Edm.Int64` | `Edm.Int32` | Константа преобразуется в `Edm.Int64` перед сравнением |
 | `Edm.Int32` | `Edm.Double` | Сравнения с `NaN` , `-INF` или `INF` не разрешены |
 | `Edm.Int32` | `Edm.Int64` | Недоступно |

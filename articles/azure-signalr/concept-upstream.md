@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 06/11/2020
 ms.author: chenyl
 ms.openlocfilehash: c3e317a87ba888fac3c069cc5327bd89c859e9de
-ms.sourcegitcommit: 7f62a228b1eeab399d5a300ddb5305f09b80ee14
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89514243"
 ---
 # <a name="upstream-settings"></a>Параметры функции отправки данных в вышестоящий ресурс
@@ -82,7 +82,7 @@ http://host.com/chat/api/messages/broadcast
 3. Добавьте URL-адреса в **шаблон вышестоящего URL-адреса**. Затем параметры, такие как **правила центра** , будут показывать значение по умолчанию.
 4. Чтобы задать параметры для **правил концентратора**, **правил событий**, **правил категорий**и **вышестоящей проверки подлинности**, выберите значение **Правила концентратора**. Появится страница, позволяющая изменить параметры.
 
-    :::image type="content" source="media/concept-upstream/upstream-detail-portal.png" alt-text="Сведения о вышестоящем параметре":::
+    :::image type="content" source="media/concept-upstream/upstream-detail-portal.png" alt-text="Параметры функции отправки данных в вышестоящий ресурс":::
 
 5. Чтобы настроить **вышестоящий способ проверки подлинности**, сначала убедитесь, что вы включили управляемое удостоверение. Затем выберите **использовать управляемое удостоверение**. В соответствии с вашими потребностями можно выбрать любые параметры в разделе **идентификатор ресурса проверки подлинности**. Дополнительные сведения см. в статье [управляемые удостоверения для службы Azure SignalR](howto-use-managed-identity.md) .
 
@@ -156,7 +156,7 @@ Content-Type: `application/json` или `application/x-msgpack`
 |Имя  |Тип  |Описание  |
 |---------|---------|---------|
 |InvocationId |строка | Необязательная строка, представляющая сообщение вызова. Поиск сведений в [вызовах](https://github.com/dotnet/aspnetcore/blob/master/src/SignalR/docs/specs/HubProtocol.md#invocations).|
-|целевого объекта |строка | То же, что и у события, и того же целевого объекта в [сообщении вызова](https://github.com/dotnet/aspnetcore/blob/master/src/SignalR/docs/specs/HubProtocol.md#invocation-message-encoding). |
+|Назначение |строка | То же, что и у события, и того же целевого объекта в [сообщении вызова](https://github.com/dotnet/aspnetcore/blob/master/src/SignalR/docs/specs/HubProtocol.md#invocation-message-encoding). |
 |Аргументы |Массив объектов |Массив, содержащий аргументы, применяемые к методу, на который ссылается `Target` . |
 
 ### <a name="signature"></a>Подпись
@@ -166,7 +166,7 @@ Content-Type: `application/json` или `application/x-msgpack`
 Hex_encoded(HMAC_SHA256(accessKey, connection-id))
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Управляемые удостоверения для службы Azure SignalR](howto-use-managed-identity.md)
 - [Azure Functions development and configuration with Azure SignalR Service](signalr-concept-serverless-development-config.md) (Разработка и настройка функций Azure с помощью Службы Azure SignalR)

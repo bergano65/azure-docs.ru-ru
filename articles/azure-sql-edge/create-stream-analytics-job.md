@@ -10,10 +10,10 @@ ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 07/27/2020
 ms.openlocfilehash: f0fcdf7aab5f43a0412cd28a1c15188b19770dc6
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90888095"
 ---
 # <a name="create-a-data-streaming-job-in-azure-sql-edge"></a>Создание задания потоковой передачи данных в Azure SQL ребро 
@@ -240,7 +240,7 @@ exec sys.sp_get_streaming_job @name=N'StreamingJob1'
 
 Задание потоковой передачи может иметь одно из следующих состояний:
 
-| Status | Описание |
+| Состояние | Описание |
 |--------| ------------|
 | Создание | Задание потоковой передачи было создано, но еще не запущено. |
 | Запуск | Задание потоковой передачи запускается. |
@@ -250,7 +250,7 @@ exec sys.sp_get_streaming_job @name=N'StreamingJob1'
 | Остановлена | Выполнение задания потоковой передачи остановлено. |
 | Failed | Сбой задания потоковой передачи. Обычно это указывает на неустранимую ошибку при обработке. |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Просмотр метаданных, связанных с заданиями потоковой передачи в Azure SQL ребро](streaming-catalog-views.md) 
 - [Создание внешнего потока](create-external-stream-transact-sql.md)

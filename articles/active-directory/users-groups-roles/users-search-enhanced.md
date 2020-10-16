@@ -16,10 +16,10 @@ ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: be0d428120f53a4edb9763199a78b0e50409b19a
-ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91708749"
 ---
 # <a name="user-management-enhancements-preview-in-azure-active-directory"></a>Улучшения управления пользователями (Предварительная версия) в Azure Active Directory
@@ -138,7 +138,7 @@ ms.locfileid: "91708749"
 Что случилось со столбцом имени пользователя? | Столбец **имя пользователя** по-прежнему существует, но был переименован в **имя участника-пользователя**. Это лучше отражает сведения, содержащиеся в этом столбце. Вы также заметите, что теперь полное имя участника-пользователя отображается для гостей B2B. Это соответствует тому, что вы получаете в Microsoft Graph.  
 Почему можно выполнить только Поиск "начинается с", а не "Contains"? | Существуют некоторые ограничения, препятствующие выполнению поиска "Contains". Мы слышали отзывы, поэтому оставайтесь в курсе.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Операции пользователя
 

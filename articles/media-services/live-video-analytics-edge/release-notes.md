@@ -3,12 +3,12 @@ title: Заметки о выпуске Live Video Analytics в IoT Edge. Azure
 description: В этом разделе содержатся заметки о выпуске Live Video Analytics на IoT Edge выпусках, улучшениях, исправлениях ошибок и известных проблемах.
 ms.topic: conceptual
 ms.date: 08/19/2020
-ms.openlocfilehash: e33a62891f9503a4f2ff907585316c3737c876e6
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 18da50fe763ef7c5fc3c06ac00052679c488cae7
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91250476"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92015640"
 ---
 # <a name="live-video-analytics-on-iot-edge-release-notes"></a>Заметки о выпуске Live Video Analytics в IoT Edge
 
@@ -19,7 +19,7 @@ ms.locfileid: "91250476"
 * Последние выпуски.
 * Известные проблемы
 * Исправления ошибок
-* Нерекомендуемые функции.
+* Нерекомендуемые функции
 
 <hr width=100%>
 
@@ -36,7 +36,7 @@ mcr.microsoft.com/media/live-video-analytics:1.0.4
 
 ### <a name="module-updates"></a>Обновления модулей
 
-* Новый узел расширения графа, [медиаграфкогнитивесервицесвисионекстенсион](spatial-analysis-tutorial.md) доступен для интеграции с модулем [пространственного анализа](https://docs.microsoft.com/legal/cognitive-services/computer-vision/intro-to-spatial-analysis-public-preview)(Предварительная версия) из Cognitive Services.
+* Новый узел расширения графа, [медиаграфкогнитивесервицесвисионекстенсион](spatial-analysis-tutorial.md) доступен для интеграции с модулем [пространственного анализа](/legal/cognitive-services/computer-vision/intro-to-spatial-analysis-public-preview)(Предварительная версия) из Cognitive Services.
 * Добавлена поддержка для устройств Linux ARM64. для развертывания на таких устройствах выполните [действия вручную](deploy-iot-edge-device.md) .
 
 ### <a name="documentation-updates"></a>Обновления документации

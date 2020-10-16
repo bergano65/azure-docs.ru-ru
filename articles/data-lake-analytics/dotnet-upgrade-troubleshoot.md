@@ -8,10 +8,10 @@ ms.topic: troubleshooting
 ms.workload: big-data
 ms.date: 10/11/2019
 ms.openlocfilehash: f553da53f665676dd44ec581d082f9a39e242516
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87132387"
 ---
 # <a name="azure-data-lake-analytics-is-upgrading-to-the-net-framework-v472"></a>Azure Data Lake Analytics выполняется обновление до .NET Framework v 4.7.2
@@ -45,7 +45,7 @@ ms.locfileid: "87132387"
 
 В большинстве случаев не следует повлиять на обратную несовместимость.
 
-## <a name="timeline"></a>Информация о сроках
+## <a name="timeline"></a>Сроки
 
 Вы можете проверить развертывание новой среды выполнения в статье [Устранение неполадок среды выполнения](runtime-troubleshoot.md), а также просмотреть все предыдущие выполненные задания.
 

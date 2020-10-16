@@ -7,10 +7,10 @@ ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: 4fa281f6435013e9feb6808aab04ffa69c5f96c4
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88008616"
 ---
 # <a name="windows-virtual-desktop-classic-environment"></a>Среда виртуальных рабочих столов Windows (классическая модель)
@@ -57,7 +57,7 @@ ms.locfileid: "88008616"
 
 После назначения пользователей группам приложений они могут подключаться к развертыванию виртуальных рабочих столов Windows с любыми клиентами виртуальных рабочих столов Windows.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте больше о делегированном доступе и о том, как назначать роли пользователям с [делегированным доступом в виртуальном рабочем столе Windows](delegated-access-virtual-desktop-2019.md).
 

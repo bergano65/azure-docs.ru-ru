@@ -9,10 +9,10 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: c31ebfedeee0fe208f68c190402796b98c73ea1b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85829879"
 ---
 # <a name="how-to-secure-your-private-cloud-environment"></a>Как защитить среду частного облака
@@ -39,7 +39,7 @@ ms.locfileid: "85829879"
 
 1. [Эскалировать привилегии](escalate-private-cloud-privileges.md) для **клаудовнер \@ клаудсимпле. локальный** пользователь в частном облаке.
 2. Войдите в vCenter с помощью **клаудовнер \@ клаудсимпле. local.**
-3. [Добавление пользователей с единым входом vCenter](https://docs.vmware.com/en/VMware-vSphere/5.5/com.vmware.vsphere.security.doc/GUID-72BFF98C-C530-4C50-BF31-B5779D2A4BBB.html).
+3. [Добавьте пользователей vCenter Sign-On](https://docs.vmware.com/en/VMware-vSphere/5.5/com.vmware.vsphere.security.doc/GUID-72BFF98C-C530-4C50-BF31-B5779D2A4BBB.html).
 4. Добавление пользователей в [группы единого входа vCenter](https://docs.vmware.com/en/VMware-vSphere/5.5/com.vmware.vsphere.security.doc/GUID-CDEA6F32-7581-4615-8572-E0B44C11D80D.html).
 
 Дополнительные сведения о предопределенных ролях и группах см. в статье [клаудсимплеing a Private Cloud Role Permission of VMware vCenter](learn-private-cloud-permissions.md) .

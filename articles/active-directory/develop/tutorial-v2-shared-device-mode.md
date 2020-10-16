@@ -1,6 +1,7 @@
 ---
-title: Использование режима общего устройства с MSAL Android | Azure
-description: Сведения о том, как подготовить устройство Android для работы в режиме общего доступа и запустить приложение для сотрудников, взаимодействующих с клиентами.
+title: Руководство по Использование режима общего устройства с библиотекой проверки подлинности Майкрософт (MSAL) для Android | Azure
+titleSuffix: Microsoft identity platform
+description: В этом руководстве вы узнаете, как подготовить устройство Android для работы в режиме общего доступа и запустить приложение для сотрудников, взаимодействующих с клиентами.
 services: active-directory
 author: mmacy
 manager: CelesteDG
@@ -12,23 +13,35 @@ ms.date: 1/15/2020
 ms.author: hahamil
 ms.reviewer: brandwe
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 4bbcf73654d7f588c63a9bf81ab6a689360ec978
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.openlocfilehash: 2aa786f78d3e730bb351d1fa84b0c7fbb32d6786
+ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91355063"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91611237"
 ---
 # <a name="tutorial-use-shared-device-mode-in-your-android-application"></a>Руководство по Использование режима общего устройства в приложении Android
 
-> [!NOTE]
-> Эта функция предоставляется в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
-> Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+В этом руководстве содержатся рекомендации для разработчиков и администраторов клиентов по настройке и поддержке режима общего устройства в приложении Android.
+
+В этом руководстве рассматриваются следующие темы:
+
+> [!div class="checklist"]
+> * Скачивание примера кода
+> * Включение и обнаружение режима общего устройства
+> * Обнаружение режима использования одной и нескольких учетных записей
+> * Обнаружение смены пользователя и включение глобальных входа и выхода
+> * Настройка клиента и регистрация приложения на портале Azure
+> * Настройка устройства Android в режиме общего устройства
+> * Запуск примера приложения
+
+## <a name="prerequisites"></a>Предварительные требования
+
+- Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) бесплатно.
 
 ## <a name="developer-guide"></a>Руководство разработчика
 
-Это руководство содержит рекомендации для разработчиков по реализации режима общего устройства в приложении Android с помощью библиотеки проверки подлинности Майкрософт (MSAL). Сведения о том, как интегрировать MSAL с приложением Android, войти в систему, вызвать Microsoft Graph и выйти из учетной записи пользователя, см. в [руководстве по MSAL Android](./tutorial-v2-android.md).
+В этом разделе руководства содержатся рекомендации для разработчиков по реализации режима общего устройства в приложении Android с помощью библиотеки проверки подлинности Майкрософт (MSAL). Сведения о том, как интегрировать MSAL с приложением Android, войти в систему, вызвать Microsoft Graph и выйти из учетной записи пользователя, см. в [руководстве по MSAL Android](./tutorial-v2-android.md).
 
 ### <a name="download-the-sample"></a>Скачивание примера приложения
 
@@ -209,9 +222,11 @@ private void onSignOutClicked()
 > [!NOTE]
 > При регистрации приложения используйте краткое руководство, которое предоставляется на экране слева, а затем выберите **Android**. Вы перейдете к странице, где будет предложено ввести **имя пакета** и **хэш подписи** для приложения. Эти параметры очень важны для того, чтобы конфигурация приложения работала нормально. Затем вы получите объект конфигурации, который можно использовать для приложения. Его нужно скопировать и вставить в файл auth_config.json.
 
-![Экран регистрации приложений](media/tutorial-v2-shared-device-mode/register-app.png) Выберите действие **Make this change for me** (Внести это изменение для меня) и укажите на портале Azure значения, которые приведены в кратком руководстве. Когда это будет сделано, мы автоматически создадим для вас все необходимые файлы конфигурации.
+:::image type="content" source="media/tutorial-v2-shared-device-mode/register-app.png" alt-text="Краткое руководство по настройке страницы приложения Android на портале Azure":::
 
-![Экран сведений о конфигурации приложения](media/tutorial-v2-shared-device-mode/config-info.png)
+Выберите действие **Make this change for me** (Внести это изменение для меня) и укажите на портале Azure значения, которые приведены в кратком руководстве. Когда это будет сделано, мы автоматически создадим для вас все необходимые файлы конфигурации.
+
+:::image type="content" source="media/tutorial-v2-shared-device-mode/config-info.png" alt-text="Краткое руководство по настройке страницы приложения Android на портале Azure":::
 
 ## <a name="set-up-a-tenant"></a>Настройка клиента
 
@@ -227,25 +242,25 @@ private void onSignOutClicked()
 
 Запустите приложение Authenticator и перейдите на главную страницу учетной записи. На странице **Добавление учетной записи** вы можете сразу перевести устройство в режим общего доступа.
 
-![Экран добавления учетной записи в Authenticator](media/tutorial-v2-shared-device-mode/authenticator-add-account.png)
+:::image type="content" source="media/tutorial-v2-shared-device-mode/authenticator-add-account.png" alt-text="Краткое руководство по настройке страницы приложения Android на портале Azure":::
 
- Перейдите на панель **Параметры**, используя панель меню справа. Щелкните **Регистрации устройства** в разделе **Work & School accounts** (Рабочие и учебные учетные записи).
+Перейдите на панель **Параметры**, используя панель меню справа. Щелкните **Регистрации устройства** в разделе **Work & School accounts** (Рабочие и учебные учетные записи).
 
- ![Экран добавления учетной записи в Authenticator](media/tutorial-v2-shared-device-mode/authenticator-settings.png)
+:::image type="content" source="media/tutorial-v2-shared-device-mode/authenticator-settings.png" alt-text="Краткое руководство по настройке страницы приложения Android на портале Azure":::
 
- При нажатии этой кнопки вам будет предложено авторизовать доступ к контактам устройства. Это требования к интеграции учетных записей на устройстве Android. Выберите **разрешить**.
+При нажатии этой кнопки вам будет предложено авторизовать доступ к контактам устройства. Это требования к интеграции учетных записей на устройстве Android. Выберите **разрешить**.
 
- ![Экран добавления учетной записи в Authenticator](media/tutorial-v2-shared-device-mode/authenticator-allow-screen.png)
+:::image type="content" source="media/tutorial-v2-shared-device-mode/authenticator-allow-screen.png" alt-text="Краткое руководство по настройке страницы приложения Android на портале Azure":::
 
 Администратору облачных устройств следует ввести адрес электронной почты своей организации в разделе **Также возможна регистрация как общего устройства**. После этого нажмите кнопку **Зарегистрировать как общее устройство** и введите учетные данные.
 
-![Экран регистрации устройства](media/tutorial-v2-shared-device-mode/register-device.png)
+:::image type="content" source="media/tutorial-v2-shared-device-mode/register-device.png" alt-text="Краткое руководство по настройке страницы приложения Android на портале Azure":::
 
-![Снимок экрана: страница входа](media/tutorial-v2-shared-device-mode/sign-in.png)
+:::image type="content" source="media/tutorial-v2-shared-device-mode/sign-in.png" alt-text="Краткое руководство по настройке страницы приложения Android на портале Azure":::
 
 Теперь устройство находится в режиме общего доступа.
 
-![Экран регистрации устройства](media/tutorial-v2-shared-device-mode/shared-device-mode-screen.png)
+:::image type="content" source="media/tutorial-v2-shared-device-mode/shared-device-mode-screen.png" alt-text="Краткое руководство по настройке страницы приложения Android на портале Azure":::
 
  Все операции входа и выхода на этом устройстве будут глобальными. Это означает, что они будут применяться ко всем приложениям, интегрированным с MSAL и Microsoft Authenticator на этом устройстве. Теперь вы можете развертывать на устройстве приложения, которые используют возможности режима общего устройства.
 
@@ -253,14 +268,17 @@ private void onSignOutClicked()
 
 Когда вы переводите устройство в режим общего доступа, оно регистрируется для вашей организации и отслеживается в ее арендаторе. Чтобы просмотреть сведения о своих общих устройствах, найдите раздел **Тип соединение** в колонке Azure Active Directory на портале Azure.
 
-![Колонка с полным списком устройств на портале Azure](media/tutorial-v2-shared-device-mode/registered-device-screen.png)
+:::image type="content" source="media/tutorial-v2-shared-device-mode/registered-device-screen.png" alt-text="Краткое руководство по настройке страницы приложения Android на портале Azure":::
 
 ## <a name="running-the-sample-app"></a>Выполнение примера приложения
 
 Это простой пример приложения, которое обращается к API Graph вашей организации. При первом запуске вам будет предложено подтвердить согласие, так как приложение является новым для вашей учетной записи сотрудника.
 
-![Экран сведений о конфигурации приложения](media/tutorial-v2-shared-device-mode/run-app-permissions-requested.png)
+:::image type="content" source="media/tutorial-v2-shared-device-mode/run-app-permissions-requested.png" alt-text="Краткое руководство по настройке страницы приложения Android на портале Azure":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения см. в статье о [режиме общего доступа к устройству Android](msal-android-shared-devices.md).
+Узнайте больше о работе с библиотекой проверки подлинности Майкрософт и использовании режима общего устройства на устройствах Android:
+
+> [!div class="nextstepaction"]
+> [Режим совместной работы с устройством Android](msal-android-shared-devices.md)

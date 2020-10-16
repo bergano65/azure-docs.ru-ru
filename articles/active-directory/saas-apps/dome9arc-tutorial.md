@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 10/17/2019
 ms.author: jeedes
-ms.openlocfilehash: 9435a0eccff5a3be0dc9e0a2844bae175d753a5c
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: be9d0503b411577d4ecbfb65c4bdae42a571d175
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88555886"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91775149"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-check-point-cloudguard-dome9-arc"></a>Руководство по интеграции единого входа Azure Active Directory с Check Point CloudGuard Dome9 Arc
 
@@ -156,11 +156,11 @@ ms.locfileid: "88555886"
 
 2. Щелкните **Profile Settings** (Параметры профиля) в правом верхнем углу и выберите пункт **Account Settings** (Параметры учетной записи). 
 
-    ![Конфигурация Check Point CloudGuard Dome9 Arc](./media/dome9arc-tutorial/configure1.png)
+    ![Снимок экрана, на котором показано меню "Profile Settings" (Параметры профиля) с выбранным параметром "Account Settings" (Параметры учетной записи)](./media/dome9arc-tutorial/configure1.png)
 
 3. Перейдите на вкладку **SSO** (Единый вход) и щелкните **Enable** (Включить).
 
-    ![Конфигурация Check Point CloudGuard Dome9 Arc](./media/dome9arc-tutorial/configure2.png)
+    ![Снимок экрана, на котором показана вкладка "SSO" (Единый вход) и выбран параметр "Enable" (Включить).](./media/dome9arc-tutorial/configure2.png)
 
 4. В разделе настройки единого входа выполните следующие действия:
 
@@ -189,11 +189,11 @@ ms.locfileid: "88555886"
 
 2. Щелкните **Users & Roles** (Пользователи и роли), а затем выберите **Users** (Пользователи).
 
-    ![Добавление сотрудника](./media/dome9arc-tutorial/user1.png)
+    ![Снимок экрана, на котором показан раздел "Users & Roles" (Пользователи и роли) с выбранным действием "Users" (Пользователи)](./media/dome9arc-tutorial/user1.png)
 
 3. Нажмите кнопку **Add user** (Добавить пользователя).
 
-    ![Добавление сотрудника](./media/dome9arc-tutorial/user2.png)
+    ![Снимок экрана, на котором показан раздел "Users & Roles" (Пользователи и роли) с выбранным действием "Add user" (Добавить пользователя)](./media/dome9arc-tutorial/user2.png)
 
 4. В разделе **Создание пользователя** выполните следующие действия.
 

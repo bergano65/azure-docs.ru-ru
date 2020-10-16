@@ -11,10 +11,10 @@ ms.date: 09/30/2020
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.openlocfilehash: 4e5c13c635091988f299d31c67795916e709d51a
-ms.sourcegitcommit: ffa7a269177ea3c9dcefd1dea18ccb6a87c03b70
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91597627"
 ---
 # <a name="add-or-remove-azure-role-assignments-using-the-azure-portal"></a>Добавление и удаление назначений ролей Azure с помощью портала Azure
@@ -41,7 +41,7 @@ ms.locfileid: "91597627"
 
 1. Найдите соответствующую роль. Разрешения объединяются в роли. Вы можете выбрать из списка несколько [встроенных ролей Azure](built-in-roles.md) или использовать собственные пользовательские роли.
 
-1. Определение требуемой области. Azure предоставляет четыре уровня области: [Группа управления](../governance/management-groups/overview.md), подписка, [Группа ресурсов](../azure-resource-manager/management/overview.md#resource-groups)и ресурс. Дополнительные сведения об области действия см. в разделе [сведения о области](scope-overview.md).
+1. Определение требуемой области. Azure предоставляет четыре уровня области: [Группа управления](../governance/management-groups/overview.md), подписка, [Группа ресурсов](../azure-resource-manager/management/overview.md#resource-groups)и ресурс. Дополнительные сведения об областях см. в статье [Общие сведения об областях для Azure RBAC](scope-overview.md).
 
 1. Выполните действия, описанные в одном из следующих разделов, чтобы назначить роль.
 
@@ -202,7 +202,7 @@ ms.locfileid: "91597627"
 
    ![Удаление сообщения о назначении роли для наследуемых назначений ролей](./media/role-assignments-portal/remove-role-assignment-inherited.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Вывод списка назначений ролей Azure с помощью портал Azure](role-assignments-list-portal.md)
 - [Руководство. Предоставление доступа пользователям к ресурсам Azure с помощью портала Azure](quickstart-assign-role-user-portal.md)

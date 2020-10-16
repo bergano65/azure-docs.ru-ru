@@ -17,10 +17,10 @@ ms.author: kenwith
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c63137c6943d9adc0ea7c19f7551d1f31587f42a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84765001"
 ---
 # <a name="how-to-configure-an-application-proxy-application"></a>Как настроить приложение прокси приложения
@@ -67,6 +67,6 @@ ms.locfileid: "84765001"
 
 Сообщение об ошибке отображается в правом верхнем углу при попытке отправить сертификат. Для просмотра сообщений об ошибках также можно выбрать значок уведомления.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Публикация приложений с помощью прокси приложения Azure AD](application-proxy-add-on-premises-application.md)

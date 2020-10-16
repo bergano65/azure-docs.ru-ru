@@ -13,10 +13,10 @@ ms.author: aahi
 ms.custom: seodec18, cog-serv-seo-aug-2020
 keywords: локальное, оптическое распознавание, Docker, контейнер
 ms.openlocfilehash: acf6a391965dcba20a2dabc18648076b88c5e7c5
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91536381"
 ---
 # <a name="install-read-ocr-docker-containers-preview"></a>Установить чтение с оптического распознавания контейнеров DOCKER (Предварительная версия) 
@@ -47,11 +47,11 @@ ms.locfileid: "91536381"
 
 При рассмотрении используемой версии контейнера Обратите внимание, что версия 3.1-Preview находится в более раннем состоянии предварительной версии. Если вы используете "Read 2,0 Containers" сегодня, ознакомьтесь с [руководством по миграции](read-container-migration-guide.md) , чтобы узнать об изменениях в новых версиях.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед использованием контейнеров необходимо выполнить следующие предварительные требования:
 
-|Обязательный|Цель|
+|Обязательно|Назначение|
 |--|--|
 |Модуль Docker| На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду с Docker для [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> **В ОС Windows** для Docker нужно также настроить поддержку контейнеров Linux.<br><br>|
 |Опыт работы с Docker | Требуется базовое представление о понятиях Docker, включая реестры, репозитории, контейнеры и образы контейнеров, а также знание основных команд `docker`.| 
@@ -93,14 +93,14 @@ grep -q avx2 /proc/cpuinfo && echo AVX2 supported || echo No AVX2 support detect
 | Контейнер | Реестр контейнеров, имя репозитория или образа |
 |-----------|------------|
 | Чтение 2,0-Preview | `mcr.microsoft.com/azure-cognitive-services/vision/read:2.0-preview` |
-| Чтение 3,0-Preview | `mcr.microsoft.com/azure-cognitive-services/vision/read:3.0-preview` |
-| Чтение 3,1-Preview | `mcr.microsoft.com/azure-cognitive-services/vision/read:3.1-preview` |
+| Чтение 3.0, предварительная версия | `mcr.microsoft.com/azure-cognitive-services/vision/read:3.0-preview` |
+| Чтение 3.1, предварительная версия | `mcr.microsoft.com/azure-cognitive-services/vision/read:3.1-preview` |
 
 Используйте [`docker pull`](https://docs.docker.com/engine/reference/commandline/pull/) команду, чтобы скачать образ контейнера.
 
 ### <a name="docker-pull-for-the-read-container"></a>Извлечение DOCKER для контейнера чтения
 
-# <a name="version-31-preview"></a>[Версия 3,1-Preview](#tab/version-3-1)
+# <a name="version-31-preview"></a>[Версия 3.1 (предварительная версия)](#tab/version-3-1)
 
 ```bash
 docker pull mcr.microsoft.com/azure-cognitive-services/vision/read:3.1-preview
@@ -135,7 +135,7 @@ docker pull mcr.microsoft.com/azure-cognitive-services/vision/read:2.0-preview
 
 Доступны [примеры](computer-vision-resource-container-config.md#example-docker-run-commands) `docker run` команд.
 
-# <a name="version-31-preview"></a>[Версия 3,1-Preview](#tab/version-3-1)
+# <a name="version-31-preview"></a>[Версия 3.1 (предварительная версия)](#tab/version-3-1)
 
 ```bash
 docker run --rm -it -p 5000:5000 --memory 18g --cpus 8 \
@@ -145,7 +145,7 @@ Billing={ENDPOINT_URI} \
 ApiKey={API_KEY}
 ```
 
-Эта команда:
+Команда:
 
 * Запускает контейнер чтения из образа контейнера.
 * Выделяет 8 ядер ЦП и 18 гигабайт (ГБ) памяти.
@@ -163,7 +163,7 @@ ApiKey={API_KEY}
 
 ```
 
-Эта команда:
+Команда:
 
 * Запускает контейнер чтения из образа контейнера.
 * Выделяет 8 ядер ЦП и 18 гигабайт (ГБ) памяти.
@@ -180,7 +180,7 @@ Billing={ENDPOINT_URI} \
 ApiKey={API_KEY}
 ```
 
-Эта команда:
+Команда:
 
 * Запускает контейнер чтения из образа контейнера.
 * Выделяет 8 ядер ЦП и 16 гигабайт (ГБ) памяти.
@@ -215,7 +215,7 @@ ApiKey={API_KEY}
 
 Контейнер предоставляет интерфейсы REST API конечной точки прогнозирования запросов. 
 
-# <a name="version-31-preview"></a>[Версия 3,1-Preview](#tab/version-3-1)
+# <a name="version-31-preview"></a>[Версия 3.1 (предварительная версия)](#tab/version-3-1)
 
 Используйте узел `http://localhost:5000` для API контейнера. Путь к Swagger можно просмотреть по адресу: `http://localhost:5000/swagger/vision-v3.1-preview-read/swagger.json` .
 
@@ -232,7 +232,7 @@ ApiKey={API_KEY}
 ### <a name="asynchronous-read"></a>Асинхронное чтение
 
 
-# <a name="version-31-preview"></a>[Версия 3,1-Preview](#tab/version-3-1)
+# <a name="version-31-preview"></a>[Версия 3.1 (предварительная версия)](#tab/version-3-1)
 
 Операции и можно использовать `POST /vision/v3.1/read/analyze` `GET /vision/v3.1/read/operations/{operationId}` совместно для асинхронного чтения образа, аналогично тому, как служба компьютерное зрение использует соответствующие операции RESTful. Асинхронный метод POST возвратит объект `operationId` , который используется в качестве идентификатора для HTTP-запроса GET.
 
@@ -449,7 +449,7 @@ ApiKey={API_KEY}
 
 Для синхронного чтения образа можно использовать следующую операцию. 
 
-# <a name="version-31-preview"></a>[Версия 3,1-Preview](#tab/version-3-1)
+# <a name="version-31-preview"></a>[Версия 3.1 (предварительная версия)](#tab/version-3-1)
 
 `POST /vision/v3.1/read/syncAnalyze` 
 
@@ -497,7 +497,7 @@ ApiKey={API_KEY}
 
 [!INCLUDE [Discoverability of more container information](../../../includes/cognitive-services-containers-discoverability.md)]
 
-## <a name="summary"></a>Сводка
+## <a name="summary"></a>Итоги
 
 Из этой статьи вы узнали основные понятия и рабочий процесс, позволяющий скачивать, устанавливать и запускать контейнеры компьютерного зрения. В разделе "Сводка" сделайте следующее.
 
@@ -516,4 +516,4 @@ ApiKey={API_KEY}
 * Дополнительные сведения о распознавании печатного и рукописного текста см. в статье [Обзор компьютерного зрения](overview.md).
 * Дополнительные сведения о методах, поддерживаемых контейнером, см. в статье [API компьютерного зрения](//westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa).
 * Чтобы разрешать проблемы, связанные с функциональностью Компьютерного зрения, ознакомьтесь с [часто задаваемыми вопросами](FAQ.md).
-* Использование большего числа [контейнеров Cognitive Services](../cognitive-services-container-support.md)
+* Воспользуйтесь [дополнительными контейнерами Cognitive Services](../cognitive-services-container-support.md)

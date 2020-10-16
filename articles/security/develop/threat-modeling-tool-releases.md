@@ -17,17 +17,17 @@ ms.topic: article
 ms.date: 03/22/2019
 ms.author: jegeib
 ms.openlocfilehash: e6f8ba54218f9b5b730ce3454c087d6072930edf
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87825877"
 ---
 # <a name="threat-modeling-tool-releases"></a>Выпуски Threat Modeling Tool
 
 Microsoft Threat Modeling Tool выпущено в виде бесплатного приложения Windows, щелкните [здесь](https://aka.ms/threatmodelingtool), чтобы скачать. Этот механизм доставки позволяет нам отправлять последние улучшения и исправления клиентам каждый раз при запуске средства.
 
-## <a name="system-requirements"></a>Системные требования
+## <a name="system-requirements"></a>Требования к системе
 
 - Поддерживаемые операционные системы
   - Юбилейное обновление Microsoft Windows 10 или более поздней версии
@@ -49,6 +49,6 @@ Microsoft Threat Modeling Tool выпущено в виде бесплатног
 - [Threat Modeling Tool, выпуск общедоступной версии 7.1.51023.1](threat-modeling-tool-releases-71510231.md) от 01.11.2018 г.
 - [Threat Modeling Tool, выпуск общедоступной версии 7.1.50911.2](threat-modeling-tool-releases-71509112.md) от 12.09.2018 г.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Скачайте последнюю версию [Microsoft Threat Modeling Tool](https://aka.ms/threatmodelingtool).

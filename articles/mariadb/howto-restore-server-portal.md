@@ -7,10 +7,10 @@ ms.service: mariadb
 ms.topic: how-to
 ms.date: 6/30/2020
 ms.openlocfilehash: 6d050a8bd351617a6ab567243c5b1ef8d9f93ded
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86115916"
 ---
 # <a name="how-to-backup-and-restore-a-server-in-azure-database-for-mariadb-using-the-azure-portal"></a>Как создать резервную копию сервера в службе "База данных Azure для MariaDB" и восстановить его с помощью портала Azure
@@ -81,7 +81,7 @@ ms.locfileid: "86115916"
 
 Если вы настроили сервер для геоизбыточного резервного копирования, из резервной копии можно создать новый сервер. Его можно создать в любом регионе, где доступна служба "База данных Azure для MariaDB".  
 
-1. Нажмите кнопку **создать ресурс** (+) в левом верхнем углу портала. Выберите **databases**  >  **база данных Azure для MariaDB**.
+1. Нажмите кнопку **Создать ресурс** (+) в левом верхнем углу окна портала. Выберите **Базы данных** > **База данных Azure для MariaDB**.
 
    :::image type="content" source="./media/howto-restore-server-portal/2_navigate-to-mariadb.png" alt-text="Перейдите к базе данных Azure для MariaDB.":::
  
@@ -89,7 +89,7 @@ ms.locfileid: "86115916"
 
 3. Выберите **резервное копирование** в качестве **источника данных**. Это действие загружает раскрывающееся меню, содержащее список серверов с включенными географически избыточными резервными копиями.
    
-   :::image type="content" source="./media/howto-restore-server-portal/3-geo-restore.png" alt-text="Выберите источник данных.":::
+   :::image type="content" source="./media/howto-restore-server-portal/3-geo-restore.png" alt-text="Перейдите к базе данных Azure для MariaDB.":::
     
    > [!NOTE]
    > Сразу после создания сервер может быть еще не готов к географическому восстановлению. Заполнение метаданных может занять несколько часов.
@@ -97,23 +97,19 @@ ms.locfileid: "86115916"
 
 4. Выберите раскрывающийся список **резервная копия** .
    
-   :::image type="content" source="./media/howto-restore-server-portal/4-geo-restore-backup.png" alt-text="Выберите раскрывающееся меню резервное копирование.":::
+   :::image type="content" source="./media/howto-restore-server-portal/4-geo-restore-backup.png" alt-text="Перейдите к базе данных Azure для MariaDB.":::
 
 5. Выберите исходный сервер для восстановления.
    
-   :::image type="content" source="./media/howto-restore-server-portal/5-select-backup.png" alt-text="Выберите резервное копирование.":::
+   :::image type="content" source="./media/howto-restore-server-portal/5-select-backup.png" alt-text="Перейдите к базе данных Azure для MariaDB.":::
 
 6. По умолчанию сервер будет иметь значения для параметра количество **виртуальных ядер**, **срок хранения резервной**копии, **параметр избыточности резервной копии**, **Версия подсистемы**и **учетные данные администратора**. Выберите **Continue** (Продолжить). 
    
-   :::image type="content" source="./media/howto-restore-server-portal/6-accept-backup.png" alt-text="Продолжайте резервное копирование.":::
+   :::image type="content" source="./media/howto-restore-server-portal/6-accept-backup.png" alt-text="Перейдите к базе данных Azure для MariaDB." или "С оптимизацией для операций в памяти") и объем **хранилища** во время восстановления нельзя.
 
-7. Заполните оставшиеся поля формы в соответствии со своими предпочтениями. Вы можете выбрать любое **расположение**.
+   :::image type="content" source="./media/howto-restore-server-portal/7-create.png" alt-text="Перейдите к базе данных Azure для MariaDB."::: 
 
-    Выбрав расположение, можно выбрать параметр **настроить сервер** , чтобы обновить **поколение вычислений** (если оно доступно в выбранном регионе), число **виртуальных ядер**, **срок хранения резервной копии**и **избыточность резервной копии**. Изменить **ценовую категорию** ("Базовый", "Общего назначения" или "С оптимизацией для операций в памяти") и объем **хранилища** во время восстановления нельзя.
-
-   :::image type="content" source="./media/howto-restore-server-portal/7-create.png" alt-text="Форма заливки."::: 
-
-8. Выберите **Просмотр и создание **, чтобы просмотреть выбранные элементы. 
+8. Выберите **Просмотр и создание** , чтобы просмотреть выбранные элементы. 
 
 9. Щелкните **Создать**, чтобы подготовить сервер. Это может занять несколько минут.
 

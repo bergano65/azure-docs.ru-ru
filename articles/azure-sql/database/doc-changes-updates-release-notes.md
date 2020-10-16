@@ -11,12 +11,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 06/17/2020
 ms.author: sstein
-ms.openlocfilehash: 0e44280c0a6c0d39c98e3aeecd5e9a3707332e81
-ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
+ms.openlocfilehash: 027a816e846996aa7c61a1747327128f9a0feed0
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88236579"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92079213"
 ---
 # <a name="whats-new-in-azure-sql-database--sql-managed-instance"></a>Что нового в базе данных SQL Azure & Управляемый экземпляр SQL?
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -64,15 +64,16 @@ ms.locfileid: "88236579"
 
 | Компонент | Сведения |
 | ---| --- |
+| <a href="/azure/azure-sql/database/elastic-transactions-overview">Распределенные транзакции</a> | Распределенные транзакции между управляемыми экземплярами. |
 | <a href="/azure/sql-database/sql-database-instance-pools">Пулы экземпляров</a> | Удобный и экономичный способ переноса небольших экземпляров SQL в облако. |
 | <a href="https://aka.ms/managed-instance-aadlogins">Участники сервера Azure AD уровня экземпляра (имена для входа)</a> | Создайте имена для входа на уровне экземпляра, используя инструкцию <a href="https://docs.microsoft.com/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current">создания имени входа из внешнего поставщика</a> . |
-| [репликация транзакций](../managed-instance/replication-transactional-overview.md) | Репликация изменений из таблиц в другие базы данных в SQL Управляемый экземпляр, базе данных SQL или SQL Server. Или обновлять таблицы при изменении некоторых строк в других экземплярах SQL Управляемый экземпляр или SQL Server. Дополнительные сведения см. [в статье Настройка репликации в Azure SQL управляемый экземпляр](../managed-instance/replication-between-two-instances-configure-tutorial.md). |
+| [Репликация транзакций](../managed-instance/replication-transactional-overview.md) | Репликация изменений из таблиц в другие базы данных в SQL Управляемый экземпляр, базе данных SQL или SQL Server. Или обновлять таблицы при изменении некоторых строк в других экземплярах SQL Управляемый экземпляр или SQL Server. Дополнительные сведения см. [в статье Настройка репликации в Azure SQL управляемый экземпляр](../managed-instance/replication-between-two-instances-configure-tutorial.md). |
 | Обнаружение угроз |Дополнительные сведения см. [в статье Настройка обнаружения угроз в Azure SQL управляемый экземпляр](../managed-instance/threat-detection-configure.md).|
 | Долгосрочное хранение резервных копий | Дополнительные сведения см. в статье [Настройка долгосрочного резервного копирования в Azure SQL управляемый экземпляр](../managed-instance/long-term-backup-retention-configure.md), которая в настоящее время ограничена общедоступной предварительной версией. | 
 
 ---
 
-## <a name="sql-managed-instance-new-features-and-known-issues"></a>Новые функции и известные проблемы SQL Управляемый экземпляр
+## <a name="new-features"></a>новые функции;
 
 ### <a name="sql-managed-instance-h2-2019-updates"></a>Обновления SQL Управляемый экземпляр H2 2019
 
@@ -93,10 +94,13 @@ ms.locfileid: "88236579"
   - Новая встроенная [роль участника «экземпляр](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#sql-managed-instance-contributor) » обеспечивает соответствие требованиям к разделению (разделения обязанностей) с учетом принципов безопасности и соответствия стандартам предприятия.
   - SQL Управляемый экземпляр доступен в следующих регионах Azure для государственных организаций (US Gov (Техас), US Gov (Аризона)), а также в Северный Китай 2 и Восточный Китай 2. Она также доступна в следующих общедоступных регионах: Центральная Австралия, Центральная Австралия 2, Южная Бразилия, Юго-Восточная часть Франции, Центральная ОАЭ, Северная Народно-Восточная, Южная Африка, Северная Африка, Юго-Африканская Республика.
 
-### <a name="known-issues"></a>Известные проблемы
+## <a name="known-issues"></a>Известные проблемы
 
 |Проблема  |Дата обнаружения  |Состояние  |Дата разрешения  |
 |---------|---------|---------|---------|
+|[Распределенные транзакции могут выполняться после удаления Управляемый экземпляр из группы доверия сервера](#distributed-transactions-can-be-executed-after-removing-managed-instance-from-server-trust-group)|Октябрь 2020|Есть обходной путь||
+|[Распределенные транзакции не могут быть выполнены после Управляемый экземпляр операции масштабирования](#distributed-transactions-cannot-be-executed-after-managed-instance-scaling-operation)|Октябрь 2020|Есть обходной путь||
+|[BULK INSERT](https://docs.microsoft.com/sql/t-sql/statements/bulk-insert-transact-sql) в Azure SQL и `BACKUP` / `RESTORE` инструкции в управляемый экземпляр не могут использовать удостоверение управления Azure AD для проверки подлинности в службе хранилища Azure|Sep 2020|Есть обходной путь||
 |[Субъект-служба не может получить доступ к Azure AD и AKV](#service-principal-cannot-access-azure-ad-and-akv)|Авг 2020|Есть обходной путь||
 |[Восстановление резервной копии вручную без КОНТРОЛЬной суммы может завершиться ошибкой](#restoring-manual-backup-without-checksum-might-fail)|Май 2020 г.|"Разрешено"|Июнь 2020 г.|
 |[Агент перестает отвечать при изменении, отключении или включении существующих заданий](#agent-becomes-unresponsive-upon-modifying-disabling-or-enabling-existing-jobs)|Май 2020 г.|"Разрешено"|Июнь 2020 г.|
@@ -125,11 +129,34 @@ ms.locfileid: "88236579"
 |Компонент Database Mail с внешними (не Azure) почтовыми серверами с использованием безопасного подключения||"Разрешено"|Октябрь 2019|
 |Автономные базы данных не поддерживаются в SQL Управляемый экземпляр||"Разрешено"|Авг 2019|
 
+### <a name="distributed-transactions-can-be-executed-after-removing-managed-instance-from-server-trust-group"></a>Распределенные транзакции могут выполняться после удаления Управляемый экземпляр из группы доверия сервера
+
+[Группы доверия сервера](https://docs.microsoft.com/azure/azure-sql/managed-instance/server-trust-group-overview) используются для установления отношений доверия между управляемыми экземплярами, необходимыми для выполнения [распределенных транзакций](https://docs.microsoft.com/azure/azure-sql/database/elastic-transactions-overview). После удаления Управляемый экземпляр из группы доверия серверов или удаления группы вы по-прежнему можете выполнять распределенные транзакции. Существует обходной путь, который можно применить, чтобы убедиться, что распределенные транзакции отключены и [инициируются пользователем вручную при отработке отказа](https://docs.microsoft.com/azure/azure-sql/managed-instance/user-initiated-failover) управляемый экземпляр.
+
+### <a name="distributed-transactions-cannot-be-executed-after-managed-instance-scaling-operation"></a>Распределенные транзакции не могут быть выполнены после Управляемый экземпляр операции масштабирования
+
+Управляемый экземпляр операции масштабирования, включающие изменение уровня служб или виртуальных ядер, будут сбрасывать параметры группы доверия сервера на серверной части и отключать выполнение [распределенных транзакций](https://docs.microsoft.com/azure/azure-sql/database/elastic-transactions-overview). В качестве обходного решения удалите и создайте новую [группу доверия серверов](https://docs.microsoft.com/azure/azure-sql/managed-instance/server-trust-group-overview) на портал Azure.
+
+### <a name="bulk-insert-and-backuprestore-statements-cannot-use-managed-identity-to-access-azure-storage"></a>Инструкции BULK INSERT и BACKUP/Restore не могут использовать управляемое удостоверение для доступа к службе хранилища Azure
+
+Инструкция инструкции reinsert не может использовать `DATABASE SCOPED CREDENTIAL` с управляемым удостоверением для проверки подлинности в службе хранилища Azure. В качестве обходного решения переключитесь на проверку подлинности ПОДПИСАНного URL-доступа. Следующий пример не будет работать в Azure SQL (база данных и Управляемый экземпляр):
+
+```sql
+CREATE DATABASE SCOPED CREDENTIAL msi_cred WITH IDENTITY = 'Managed Identity';
+GO
+CREATE EXTERNAL DATA SOURCE MyAzureBlobStorage
+  WITH ( TYPE = BLOB_STORAGE, LOCATION = 'https://****************.blob.core.windows.net/curriculum', CREDENTIAL= msi_cred );
+GO
+BULK INSERT Sales.Invoices FROM 'inv-2017-12-08.csv' WITH (DATA_SOURCE = 'MyAzureBlobStorage');
+```
+
+**Обходное решение**. Используйте [подписанный URL для проверки подлинности в хранилище](https://docs.microsoft.com/sql/t-sql/statements/bulk-insert-transact-sql?view=sql-server-ver15#f-importing-data-from-a-file-in-azure-blob-storage).
+
 ### <a name="service-principal-cannot-access-azure-ad-and-akv"></a>Субъект-служба не может получить доступ к Azure AD и AKV
 
 В некоторых обстоятельствах может существовать ошибка субъекта-службы, используемого для доступа к службам Azure AD и Azure Key Vault (AKV). В результате эта проблема влияет на использование проверки подлинности Azure AD и прозрачного шифрования базы данных (TDE) с помощью SQL Управляемый экземпляр. Это может быть вызвано нерегулярной проблемой подключения или невозможностью выполнения таких инструкций, как создание имени входа или пользователя от внешнего поставщика или выполнение от имени входа или пользователя. Настройка TDE с помощью управляемого клиентом ключа на новом Управляемый экземпляр Azure SQL может также не работать в некоторых обстоятельствах.
 
-**Обходное решение**. чтобы предотвратить возникновение этой проблемы в управляемый экземпляр SQL перед выполнением каких-либо команд обновления или на тот случай, если эта проблема уже возникла после выполнения команд UPDATE, перейдите на портал Azure, откройте [колонку администратора](https://docs.microsoft.com/azure/azure-sql/database/authentication-aad-configure?tabs=azure-powershell#azure-portal)SQL управляемый экземпляр Active Directory. Убедитесь, что отображается сообщение об ошибке "Управляемый экземпляр требуется субъект-служба для доступа к Azure Active Directory. Щелкните здесь, чтобы создать субъект-службу. Если вы столкнулись с этим сообщением об ошибке, щелкните его и выполните пошаговые инструкции, указанные до устранения этой ошибки.
+**Решение**. чтобы предотвратить возникновение этой проблемы в управляемый экземпляр SQL перед выполнением каких-либо команд обновления или на тот случай, если эта проблема уже возникла после выполнения команд UPDATE, перейдите в колонку портал Azure, доступ к [колонке администрирования](https://docs.microsoft.com/azure/azure-sql/database/authentication-aad-configure?tabs=azure-powershell#azure-portal)SQL управляемый экземпляр Active Directory. Убедитесь, что отображается сообщение об ошибке "Управляемый экземпляр требуется субъект-служба для доступа к Azure Active Directory. Щелкните здесь, чтобы создать субъект-службу. Если вы столкнулись с этим сообщением об ошибке, щелкните его и выполните пошаговые инструкции, указанные до устранения этой ошибки.
 
 ### <a name="restoring-manual-backup-without-checksum-might-fail"></a>Восстановление резервной копии вручную без КОНТРОЛЬной суммы может завершиться ошибкой
 

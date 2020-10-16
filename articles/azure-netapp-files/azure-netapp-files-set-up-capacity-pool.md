@@ -15,10 +15,10 @@ ms.topic: how-to
 ms.date: 09/22/2020
 ms.author: b-juche
 ms.openlocfilehash: 2b52ad50854092cddd7b9e79cbeebd4a83017081
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91325422"
 ---
 # <a name="set-up-a-capacity-pool"></a>Настройка пула емкости
@@ -60,16 +60,16 @@ ms.locfileid: "91325422"
 
      > [!IMPORTANT] 
      > Настройка **типа QoS** " **вручную** " является постоянной. Невозможно преобразовать пул емкости QoS вручную для использования автоматического качества обслуживания. Однако можно преобразовать пул автоматического качества обслуживания, чтобы использовать QoS вручную. См. раздел [Изменение пула емкости для использования QoS вручную](manage-manual-qos-capacity-pool.md#change-to-qos).   
-     > Для использования типа QoS вручную для пула ресурсов требуется регистрация. См. раздел [Управление пулом емкости QoS вручную](manage-manual-qos-capacity-pool.md#register-the-feature). 
+     > Чтобы использовать тип QoS вручную, для пула емкости требуется регистрация. См. статью [Управление пулом емкости качества обслуживания вручную](manage-manual-qos-capacity-pool.md#register-the-feature). 
 
     ![Новый пул емкости](../media/azure-netapp-files/azure-netapp-files-new-capacity-pool.png)
 
 4. Нажмите кнопку **Создать**.
 
-## <a name="next-steps"></a>Дальнейшие действия 
+## <a name="next-steps"></a>Дальнейшие шаги 
 
 - [Иерархия хранилища](azure-netapp-files-understand-storage-hierarchy.md) 
 - [Уровни обслуживания для Azure NetApp Files](azure-netapp-files-service-levels.md)
 - [Страница цен Azure NetApp Files](https://azure.microsoft.com/pricing/details/storage/netapp/)
-- [Управление пулом емкости QoS вручную](manage-manual-qos-capacity-pool.md)
+- [Управление пулом емкости качества обслуживания вручную](manage-manual-qos-capacity-pool.md)
 - [Делегирование подсети службе Azure NetApp Files](azure-netapp-files-delegate-subnet.md)

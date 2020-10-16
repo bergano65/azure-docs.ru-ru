@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 07/15/2020
 ms.author: apimpm
-ms.openlocfilehash: 262d12e1b0ff74570b44b7794f8b55619a9afa97
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: eec913237ba978e52bb64fbd4c1f043a9214ffc8
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87905148"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92077853"
 ---
 # <a name="feature-based-comparison-of-the-azure-api-management-tiers"></a>Сравнение возможностей категорий управления API Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "87905148"
 > [!IMPORTANT]
 > Обратите внимание, что уровень разработчика предназначен для непроизводственных вариантов использования и оценок. Он не предлагает соглашение об уровне обслуживания.
 
-| Признак                                                                                      | Потребление | Разработка | Basic | Standard | Premium |
+| Функция                                                                                      | Потребление | Разработчик | Basic | Standard | Premium |
 | -------------------------------------------------------------------------------------------- | ----------- | --------- | ----- | -------- | ------- |
 | Интеграция Azure AD<sup>1</sup>                                                             | Нет          | Да       | Нет    | Да      | Да     |
 | Поддержка виртуальной сети                                                               | Нет          | Да       | Нет    | Нет       | Да     |
@@ -37,9 +37,9 @@ ms.locfileid: "87905148"
 | Встроенная аналитика                                                                           | Нет          | Да       | Да   | Да      | Да     |
 | Локально [размещенный шлюз](self-hosted-gateway-overview.md)<sup>3</sup>                           | Нет          | Да       | Нет    | Нет       | Да     |
 | [Параметры протокола TLS](api-management-howto-manage-protocols-ciphers.md)                             | Да         | Да       | Да   | Да      | Да     |
-| [Внешний кэш](https://aka.ms/apimbyoc)                                                    | Да         | Да       | Да   | Да      | Да     |
+| [Внешний кэш](./api-management-howto-cache-external.md)                                                    | Да         | Да       | Да   | Да      | Да     |
 | [Аутентификация на основе сертификата клиента](api-management-howto-mutual-certificates-for-clients.md) | Да         | Да       | Да   | Да      | Да     |
-| [Архивация и восстановление](api-management-howto-disaster-recovery-backup-restore.md)               | Нет          | Да       | Да   | Да      | Да     |
+| [Резервное копирование и восстановление](api-management-howto-disaster-recovery-backup-restore.md)               | Нет          | Да       | Да   | Да      | Да     |
 | [Управление через Git](api-management-configuration-repository-git.md)                        | Нет          | Да       | Да   | Да      | Да     |
 | API прямого управления                                                                        | Нет          | Да       | Да   | Да      | Да     |
 | Журналы и метрики Azure Monitor                                                               | Да         | Да       | Да   | Да      | Да     |

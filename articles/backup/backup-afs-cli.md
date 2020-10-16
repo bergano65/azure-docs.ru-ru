@@ -4,10 +4,10 @@ description: Узнайте, как использовать Azure CLI для р
 ms.topic: conceptual
 ms.date: 01/14/2020
 ms.openlocfilehash: 12d258a3242530745cc8ce31afae18f622323488
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91293294"
 ---
 # <a name="back-up-azure-file-shares-with-cli"></a>Резервное копирование файловых ресурсов Azure с помощью интерфейса командной строки
@@ -100,7 +100,7 @@ Name                                  ResourceGroup
 
 Атрибут **Name** в выходных данных соответствует имени задания, созданного службой архивации для операции резервного копирования по требованию. Чтобы отвести состояние задания, используйте командлет [AZ Backup Job показывать](/cli/azure/backup/job#az-backup-job-show) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Узнайте, как [восстановить файловые ресурсы Azure с помощью интерфейса командной строки](restore-afs-cli.md) .
 * Узнайте, как [управлять резервным копированием файловых ресурсов Azure с помощью интерфейса командной строки](manage-afs-backup-cli.md)

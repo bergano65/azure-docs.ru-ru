@@ -6,10 +6,10 @@ ms.topic: how-to
 ms.date: 04/28/2020
 ms.custom: cc996988-fb4f-47
 ms.openlocfilehash: c7dc18d8186d7262154cc0718bb6ad77ebbb5d2e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85829845"
 ---
 # <a name="create-a-function-triggered-by-azure-cosmos-db"></a>Создание функции, активируемой с помощью Azure Cosmos DB
@@ -50,7 +50,7 @@ ms.locfileid: "85829845"
 
 1. На странице **Новая функция** введите `cosmos` в поле поиска, а затем выберите шаблон **Триггер Azure Cosmos DB**.
 
-   :::image type="content" source="./media/functions-create-cosmos-db-triggered-function/function-choose-cosmos.png" alt-text="Страница "Функции" на портале Azure":::
+   :::image type="content" source="./media/functions-create-cosmos-db-triggered-function/function-choose-cosmos.png" alt-text="Код Azure Cosmos DB":::
 
 
 1. Настройте новый триггер с параметрами, как показано в следующей таблице.
@@ -64,7 +64,7 @@ ms.locfileid: "85829845"
     | **Имя коллекции для аренды** | Аренда | Имя коллекции, в которой хранятся сведения об аренде. |
     | **Создать коллекцию аренды, если ее не существует** | Да | Проверяет существование коллекции аренды и автоматически создает ее при необходимости. |
 
-    :::image type="content" source="./media/functions-create-cosmos-db-triggered-function/functions-cosmosdb-trigger-settings.png" alt-text="Создать функцию, активируемую с помощью Azure Cosmos DB":::
+    :::image type="content" source="./media/functions-create-cosmos-db-triggered-function/functions-cosmosdb-trigger-settings.png" alt-text="Код Azure Cosmos DB":::
 
 1. Выберите **Создать функцию**. 
 
@@ -72,7 +72,7 @@ ms.locfileid: "85829845"
 
 1. Чтобы отобразить код функции на основе шаблона, выберите **Код + тестовый**.
 
-    :::image type="content" source="./media/functions-create-cosmos-db-triggered-function/function-cosmosdb-template.png" alt-text="Шаблон функции Cosmos DB на C#":::
+    :::image type="content" source="./media/functions-create-cosmos-db-triggered-function/function-cosmosdb-template.png" alt-text="Код Azure Cosmos DB":::
 
     Этот шаблон функции записывает в журналы количество документов и идентификатор первого документа.
 
@@ -111,15 +111,7 @@ ms.locfileid: "85829845"
 
 1. Разверните новый контейнер **Элементы** в Data Explorer, выберите **Элементы**, а затем — **Новый элемент**.
 
-    :::image type="content" source="./media/functions-create-cosmos-db-triggered-function/create-item-in-container.png" alt-text="Создание элемента в контейнере "Элементы"":::
-
-1. Замените содержимое нового элемента следующим содержимым, а затем выберите **Сохранить**.
-
-    ```yaml
-    {
-        "id": "task1",
-        "category": "general",
-        "description": "some task"
+    :::image type="content" source="./media/functions-create-cosmos-db-triggered-function/create-item-in-container.png" alt-text="Код Azure Cosmos DB"
     }
     ```
 

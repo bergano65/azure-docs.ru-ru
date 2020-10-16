@@ -14,12 +14,12 @@ ms.custom:
 - seo-dt-2019
 ms.topic: troubleshooting
 ms.date: 02/20/2020
-ms.openlocfilehash: 2d268c5ced0d427216ce4f6a7e9c97c6b5b8b0f4
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 14722f46f06351504583da7231179d206f7a3c26
+ms.sourcegitcommit: b437bd3b9c9802ec6430d9f078c372c2a411f11f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91330321"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91893736"
 ---
 # <a name="known-issuesmigration-limitations-with-online-migrations-from-postgresql-to-azure-db-for-postgresql"></a>Известные проблемы и ограничения миграции при оперативной миграции из PostgreSQL в базу данных Azure для PostgreSQL
 
@@ -81,6 +81,8 @@ ms.locfileid: "91330321"
     SELECT Concat('DROP TRIGGER ', Trigger_Name, ';') FROM  information_schema.TRIGGERS WHERE TRIGGER_SCHEMA = 'your_schema';
      ```
 
+## <a name="size-limitations"></a>Ограничения размера
+- Вы можете перенести до 2 ТБ данных из PostgreSQL в Azure DB для PostgreSQL с помощью одной службы DMS.
 ## <a name="datatype-limitations"></a>Ограничения типа данных
 
   **Ограничение**: Если в таблицах нет первичного ключа, изменения могут быть не синхронизированы с целевой базой данных.

@@ -7,10 +7,10 @@ ms.date: 02/25/2019
 ms.topic: conceptual
 ms.custom: devx-track-python
 ms.openlocfilehash: 1ab0b2def1a22470c1d0b6339e1525cd683b4a0b
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90987566"
 ---
 # <a name="manage-python-2-packages-in-azure-automation"></a>Управление пакетами Python 2 в службе автоматизации Azure
@@ -21,15 +21,19 @@ ms.locfileid: "90987566"
 
 В учетной записи службы автоматизации в области **Общие ресурсы** выберите **Пакеты Python 2**. Щелкните **+ Добавить пакет Python 2**.
 
-:::image type="content" source="media/python-packages/add-python-package.png" alt-text="Снимок экрана: страница "пакеты Python 2" отображает пакеты Python 2 в меню слева и добавляет выделенный пакет Python 2.":::
+:::image type="content" source="media/python-packages/add-python-package.png" alt-text="Снимок экрана: страница &quot;пакеты Python 2&quot; отображает пакеты Python 2 в меню слева и добавляет выделенный пакет Python 2.&quot;:::
 
-На странице "Добавление пакета Python 2" выберите локальный пакет для передачи. Пакет может иметь расширение файла **.whl** или **.tar.gz**. Выбрав пакет, щелкните **ОК**, чтобы передать его.
+На странице &quot;Добавление пакета Python 2" выберите локальный пакет для передачи. Пакет может иметь расширение файла **.whl** или **.tar.gz**. Выбрав пакет, щелкните **ОК**, чтобы передать его.
 
-:::image type="content" source="media/python-packages/upload-package.png" alt-text="На снимке экрана показана страница Добавление пакета Python 2 с загруженным файлом tar. gz.":::
+:::image type="content" source="media/python-packages/upload-package.png" alt-text="Снимок экрана: страница &quot;пакеты Python 2&quot; отображает пакеты Python 2 в меню слева и добавляет выделенный пакет Python 2.&quot;:::
+
+На странице &quot;Добавление пакета Python 2":::
 
 После импорта пакета он появится в списке на странице пакетов Python 2 в учетной записи службы автоматизации. Если вам нужно удалить пакет, выберите его и нажмите кнопку **Удалить**.
 
-:::image type="content" source="media/python-packages/package-list.png" alt-text="На снимке экрана показана страница пакетов Python 2 после импорта пакета.":::
+:::image type="content" source="media/python-packages/package-list.png" alt-text="Снимок экрана: страница &quot;пакеты Python 2&quot; отображает пакеты Python 2 в меню слева и добавляет выделенный пакет Python 2.&quot;:::
+
+На странице &quot;Добавление пакета Python 2":::
 
 ## <a name="import-packages-with-dependencies"></a>Импорт пакетов с зависимостями
 
@@ -54,7 +58,9 @@ C:\Python27\Scripts\pip2.7.exe download -d <output dir> <package name>
 * -a \<automationAccount\>
 * -m \<modulePackage\>
 
-:::image type="content" source="media/python-packages/import-python-runbook.png" alt-text="На снимке экрана показана страница обзора для import_py2package_from_pypi с панелью "запустить Runbook" в правой части.":::
+:::image type="content" source="media/python-packages/import-python-runbook.png" alt-text="Снимок экрана: страница &quot;пакеты Python 2&quot; отображает пакеты Python 2 в меню слева и добавляет выделенный пакет Python 2.&quot;:::
+
+На странице &quot;Добавление пакета Python 2":::
 
 Runbook позволяет указать нужный пакет для скачивания. Например, если задать параметр `Azure`, будут скачаны все модули Azure и все зависимости (около 105).
 

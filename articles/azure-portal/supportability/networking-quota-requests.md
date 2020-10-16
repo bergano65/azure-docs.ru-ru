@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.service: azure-supportability
 ms.assetid: ce37c848-ddd9-46ab-978e-6a1445728a3b
 ms.openlocfilehash: acb05da0255445de31e08f2724dcb484a3e05b17
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84764271"
 ---
 # <a name="networking-limit-increase"></a>Увеличение лимита сети
@@ -39,7 +39,7 @@ ms.locfileid: "84764271"
 
 1. Выберите **Новый запрос в службу поддержки**.
 
-    ![Новый запрос на техническую поддержку](./media/networking-quota-request/new-support-request.png)
+    ![Новый запрос на поддержку](./media/networking-quota-request/new-support-request.png)
 
 1. В качестве **типа проблемы**выберите **пределы службы и подписки (квоты)**.
 

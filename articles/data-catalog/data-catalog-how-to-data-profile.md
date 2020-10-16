@@ -7,10 +7,10 @@ ms.service: data-catalog
 ms.topic: how-to
 ms.date: 08/01/2019
 ms.openlocfilehash: b27ff631ce13d70d15a6fd2b6dd5ad5bccaf5450
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89442077"
 ---
 # <a name="how-to-data-profile-data-sources-in-azure-data-catalog"></a>Как источники данных профиля данных в каталоге данных Azure
@@ -84,11 +84,11 @@ ms.locfileid: "89442077"
 * Количество строк со значением NULL
 * Минимальное, максимальное, среднее и стандартное отклонение значений столбца
 
-## <a name="summary"></a>Сводка
+## <a name="summary"></a>Итоги
 
 Профилирование данных дает возможность пользоваться информацией о зарегистрированных ресурсах данных и связанной с ними статистикой. Это позволяет определить, насколько те или иные данные подходят для решения бизнес-задач. С помощью профилей данных можно не только аннотировать и документировать источники данных, но и предоставлять пользователям более точное описание своих данных.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также:
 
 * [Как регистрировать источники данных](data-catalog-how-to-register.md)
 * [Начало работы с Каталогом данных Azure](data-catalog-get-started.md)

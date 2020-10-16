@@ -6,12 +6,13 @@ ms.author: sakhare
 ms.topic: how-to
 ms.service: virtual-machines
 ms.date: 08/17/2020
-ms.openlocfilehash: 2c3b11ca0c2bb916a5a3fcaf50eb99c7db3aa8e7
-ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
+ms.reviewer: cynthn
+ms.openlocfilehash: 6deb7b535c3876ae8a8e83174b97a75582e82e58
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88643074"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91996434"
 ---
 # <a name="deploy-azure-monitor-for-sap-solutions-with-azure-portal"></a>Развертывание Azure Monitor для решений SAP с помощью портал Azure
 
@@ -29,7 +30,7 @@ Azure Monitor для ресурсов решений SAP можно создат
 
 2. На вкладке **Основные сведения** укажите необходимые значения. Если применимо, можно использовать существующую рабочую область Log Analytics.
 
-   :::image type="content" source="./media/azure-monitor-sap/azure-monitor-quickstart-2.png" alt-text="Отображение параметров конфигурации портал Azure." lightbox="./media/azure-monitor-sap/azure-monitor-quickstart-2.png":::
+   :::image type="content" source="./media/azure-monitor-sap/azure-monitor-quickstart-2.png" alt-text="На рисунке показано, как выбрать Azure Monitor для решений SAP в Azure Marketplace." lightbox="./media/azure-monitor-sap/azure-monitor-quickstart-2.png":::
 
 3. При выборе виртуальной сети убедитесь, что системы, которые вы хотите отслеживать, доступны в пределах этой виртуальной сети. 
 
@@ -42,7 +43,7 @@ Azure Monitor для ресурсов решений SAP можно создат
 
 1. Перейдите на вкладку **поставщик** , чтобы добавить поставщиков, которые нужно настроить. Вы можете добавить нескольких поставщиков один за другим или добавить их после развертывания ресурса мониторинга. 
 
-   :::image type="content" source="./media/azure-monitor-sap/azure-monitor-quickstart-3.png" alt-text="Отображение вкладки поставщик для добавления дополнительных поставщиков в Azure Monitor для решений SAP." lightbox="./media/azure-monitor-sap/azure-monitor-quickstart-3.png":::
+   :::image type="content" source="./media/azure-monitor-sap/azure-monitor-quickstart-3.png" alt-text="На рисунке показано, как выбрать Azure Monitor для решений SAP в Azure Marketplace." lightbox="./media/azure-monitor-sap/azure-monitor-quickstart-3.png":::
 
 2. Щелкните **Добавить поставщика** и выберите **SAP HANA** в раскрывающемся списке. 
 
@@ -56,7 +57,7 @@ Azure Monitor для ресурсов решений SAP можно создат
 
 7. По завершении нажмите кнопку **Добавить поставщика**. Продолжайте добавлять дополнительные поставщики по мере необходимости или выберите **проверить и создать** , чтобы завершить развертывание.
 
-   :::image type="content" source="./media/azure-monitor-sap/azure-monitor-quickstart-4.png" alt-text="Изображение параметров конфигурации при добавлении сведений о поставщике." lightbox="./media/azure-monitor-sap/azure-monitor-quickstart-4.png":::
+   :::image type="content" source="./media/azure-monitor-sap/azure-monitor-quickstart-4.png" alt-text="На рисунке показано, как выбрать Azure Monitor для решений SAP в Azure Marketplace." lightbox="./media/azure-monitor-sap/azure-monitor-quickstart-4.png":::
 
 ### <a name="high-availability-cluster-pacemaker-provider"></a>Поставщик кластера высокой доступности (Pacemaker)
 
@@ -71,7 +72,7 @@ Azure Monitor для ресурсов решений SAP можно создат
 
 4. По завершении нажмите кнопку **Добавить поставщика**. Продолжайте добавлять дополнительные поставщики по мере необходимости или выберите **проверить и создать** , чтобы завершить развертывание.
 
-   :::image type="content" source="./media/azure-monitor-sap/azure-monitor-quickstart-5.png" alt-text="На рисунке показаны параметры, относящиеся к поставщику Pacemaker кластера высокой доступности." lightbox="./media/azure-monitor-sap/azure-monitor-quickstart-5.png":::
+   :::image type="content" source="./media/azure-monitor-sap/azure-monitor-quickstart-5.png" alt-text="На рисунке показано, как выбрать Azure Monitor для решений SAP в Azure Marketplace." lightbox="./media/azure-monitor-sap/azure-monitor-quickstart-5.png":::
 
 
 ### <a name="microsoft-sql-server-provider"></a>Поставщик Microsoft SQL Server
@@ -109,7 +110,7 @@ Azure Monitor для ресурсов решений SAP можно создат
 
 4. По завершении нажмите кнопку **Добавить поставщика**. Продолжайте добавлять дополнительные поставщики по мере необходимости или выберите **проверить и создать** , чтобы завершить развертывание.
 
-     :::image type="content" source="./media/azure-monitor-sap/azure-monitor-quickstart-6.png" alt-text="На рисунке показаны сведения о добавлении поставщика Microsoft SQL Server." lightbox="./media/azure-monitor-sap/azure-monitor-quickstart-6.png":::
+     :::image type="content" source="./media/azure-monitor-sap/azure-monitor-quickstart-6.png" alt-text="На рисунке показано, как выбрать Azure Monitor для решений SAP в Azure Marketplace." lightbox="./media/azure-monitor-sap/azure-monitor-quickstart-6.png":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

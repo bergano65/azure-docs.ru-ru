@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 12/07/2018
 ms.custom: seodec18, devx-track-csharp
 ms.openlocfilehash: e5d346a6f412b5764400a42e2bebbafec610009b
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89015430"
 ---
 # <a name="high-frequency-trading-simulation-with-stream-analytics"></a>Моделирование высокочастотного трейдинга с помощью Stream Analytics
@@ -455,7 +455,7 @@ FROM simulation /* output trade simulation to PBI */
 ![Точечная диаграмма прибыли и убытков в Power BI](./media/stream-analytics-high-frequency-trading/pnl-power-bi-chart.png)
 
 
-## <a name="summary"></a>Сводка
+## <a name="summary"></a>Итоги
 Мы можем реализовать реалистичную модель высокочастотного трейдинга, выполнив в Azure Stream Analytics запрос умеренной сложности. Из-за отсутствия встроенной функции линейной регрессии мы упростили эту модель, сократив число переменных с пяти до двух. Но при необходимости вы также можете реализовать более сложные алгоритмы с большим числом измерений в качестве пользовательской агрегатной функции JavaScript. 
 
 Следует отметить, что большую часть запроса (кроме пользовательской агрегатной функции JavaScript), можно протестировать и отладить в Visual Studio с помощью [инструментов Azure Stream Analytics для Visual Studio](stream-analytics-tools-for-visual-studio-install.md). Написав начальный запрос, автор потратил меньше 30 минут на тестирование и отладку запроса в Visual Studio. 

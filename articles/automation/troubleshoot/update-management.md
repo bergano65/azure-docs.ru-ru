@@ -2,15 +2,15 @@
 title: Устранение неполадок с Управлением обновлениями службы автоматизации Azure
 description: Эта статья содержит сведения об устранении неполадок с Управлением обновлениями службы автоматизации Azure.
 services: automation
-ms.date: 09/30/2020
+ms.date: 10/14/2020
 ms.topic: conceptual
 ms.service: automation
-ms.openlocfilehash: c70d164325f536187c5ce99419bb41daaa9b1e88
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3d6a87d9b420ea394baaa21c87dff457e4c908d0
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91858410"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92070339"
 ---
 # <a name="troubleshoot-update-management-issues"></a>Устранение неполадок с Управлением обновлениями
 
@@ -486,6 +486,8 @@ Unable to Register Machine for Patch Management, Registration Failed with Except
 Период обслуживания по умолчанию для обновлений — 120 минут. Период обслуживания можно увеличить до 6 часов или 360 минут.
 
 ### <a name="resolution"></a>Решение
+
+Чтобы понять, почему это произошло во время выполнения обновления после его успешного запуска, [Проверьте выходные данные задания](../update-management/update-mgmt-deploy-updates.md#view-results-of-a-completed-update-deployment) на затронутом компьютере в ходе выполнения. Просмотрите конкретные сообщения об ошибках ваших компьютеров и примите меры.  
 
 Измените все неудачные запланированные развертывания обновлений и увеличьте период обслуживания.
 

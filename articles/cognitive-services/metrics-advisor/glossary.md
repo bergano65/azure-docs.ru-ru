@@ -3,19 +3,19 @@ title: Глоссарий советника по метрикам
 titleSuffix: Azure Cognitive Services
 description: Основные идеи и понятия службы Advisor
 services: cognitive-services
-author: aahill
+author: mrbullwinkle
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: metrics-advisor
 ms.topic: conceptual
 ms.date: 09/14/2020
-ms.author: aahi
-ms.openlocfilehash: 25e5cb6e34624f3272e83e1e7c1cd847b865ae8e
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.author: mbullwin
+ms.openlocfilehash: 34f9d480234ecaef0d581cfecd68e2cdd1cf6fdc
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90938798"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92046780"
 ---
 # <a name="metrics-advisor-glossary-of-common-vocabulary-and-concepts"></a>Глоссарий по метрикам общего словаря и концепций
 
@@ -181,7 +181,7 @@ ms.locfileid: "90938798"
 
 **Аномалии в первых n всех рядах**: оповещения будут активироваться только для аномалий в n первых сериях. Можно задать параметры, определяющие количество отметок времени, которое следует учитывать, и количество аномалий, которые должны быть в них для отправки предупреждения.
 
-### <a name="severity"></a>Уровень серьезности
+### <a name="severity"></a>Severity
 
 Серьезность — это показатель, который помощник по метрикам использует для описания серьезности инцидента, включая *высокий*, *средний*и *низкий*.
 

@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.custom: H1Hack27Feb2017,hdinsightactive
 ms.date: 02/14/2020
 ms.openlocfilehash: c678372fbd54e528a8a16eacc601e815cfd32e58
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86082239"
 ---
 # <a name="add-custom-apache-hive-libraries-when-creating-your-hdinsight-cluster"></a>Добавление пользовательских библиотек Apache Hive при создании кластера HDInsight
@@ -33,7 +33,7 @@ ms.locfileid: "86082239"
 
 [https://hdiconfigactions.blob.core.windows.net/setupcustomhivelibsv01/setup-customhivelibs-v01.ps1](https://hdiconfigactions.blob.core.windows.net/setupcustomhivelibsv01/setup-customhivelibs-v01.ps1)
 
-### <a name="requirements"></a>Requirements (Требования)
+### <a name="requirements"></a>Требования
 
 * Скрипты необходимо применять к **головным узлам** и **рабочим узлам**.
 
@@ -56,7 +56,7 @@ ms.locfileid: "86082239"
 
 1. Для **действий сценария**укажите следующие сведения.
 
-    |Свойство. |Значение |
+    |Свойство |Значение |
     |---|---|
     |Тип скрипта|- Custom|
     |Имя|Библиотеки |
@@ -71,6 +71,6 @@ ms.locfileid: "86082239"
 
 После завершения создания кластера можно использовать JAR, добавленные с помощью этого скрипта из Hive без использования `ADD JAR` инструкции.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о работе с Hive см. в статье [Обзор Apache Hive и HiveQL в Azure HDInsight](hadoop/hdinsight-use-hive.md).

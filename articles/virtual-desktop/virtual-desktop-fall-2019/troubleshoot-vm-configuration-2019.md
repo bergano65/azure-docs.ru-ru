@@ -7,10 +7,10 @@ ms.date: 05/11/2020
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: 90b4c574a03d8dee50beff60304fb5c1f3b52945
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88008633"
 ---
 # <a name="windows-virtual-desktop-classic-session-host-virtual-machine-configuration"></a>Конфигурация виртуальной машины узла сеансов Windows Virtual Desktop (классическая модель)
@@ -20,7 +20,7 @@ ms.locfileid: "88008633"
 
 Используйте эту статью для устранения неполадок, возникающих при настройке виртуальных машин узла сеансов виртуальных рабочих столов Windows.
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Предоставление отзыва
 
 Посетите [техническое сообщество Виртуального рабочего стола Windows](https://techcommunity.microsoft.com/t5/Windows-Virtual-Desktop/bd-p/WindowsVirtualDesktop), чтобы обсудить службу "Виртуальный рабочий стол Windows" с группой разработчиков и активными членами сообщества.
 
@@ -114,7 +114,7 @@ ms.locfileid: "88008633"
 
 При первой установке агента виртуальных рабочих столов Windows на виртуальных машинах узла сеансов (вручную либо с помощью шаблона Azure Resource Manager и PowerShell DSC) он предоставляет маркер регистрации. В следующем разделе рассматриваются проблемы, связанные с агентом виртуальных рабочих столов и маркером Windows.
 
-### <a name="error-the-status-filed-in-get-rdssessionhost-cmdlet-shows-status-as-unavailable"></a>Ошибка: состояние, зарегистрированное в командлете Get-Рдссессионхост, показывает состояние "недоступно"
+### <a name="error-the-status-filed-in-get-rdssessionhost-cmdlet-shows-status-as-unavailable"></a>Ошибка: состояние, зарегистрированное в командлете Get-RdsSessionHost, показывает состояние "недоступно"
 
 > [!div class="mx-imgBorder"]
 > ![Командлет Get-Рдссессионхост отображает состояние недоступно.](../media/23b8e5f525bb4e24494ab7f159fa6b62.png)
@@ -140,7 +140,7 @@ ms.locfileid: "88008633"
 2. Создайте новый токен с помощью RDS-Неврегистратионинфо.
 3. Убедитесь, что параметр-Експриатионхаурс имеет значение 72 (максимальное значение — 99999).
 
-### <a name="error-windows-virtual-desktop-agent-isnt-reporting-a-heartbeat-when-running-get-rdssessionhost"></a>Ошибка: агент виртуальных рабочих столов Windows не сообщает о пульсе при выполнении Get-Рдссессионхост
+### <a name="error-windows-virtual-desktop-agent-isnt-reporting-a-heartbeat-when-running-get-rdssessionhost"></a>Ошибка: агент виртуальных рабочих столов Windows не сообщает о пульсе при запуске Get-RdsSessionHost
 
 **Причина 1:** Служба Рдажентбутлоадер остановлена.
 

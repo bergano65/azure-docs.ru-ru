@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 4/15/2019
 ms.author: mayg
 ms.openlocfilehash: 308958f00a3658196f124ac911d4d0195ebeb228
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86119843"
 ---
 # <a name="run-the-deployment-planner-for-vmware-disaster-recovery"></a>Запуск Планировщик развертывания аварийного восстановления VMware
@@ -23,7 +23,7 @@ ms.locfileid: "86119843"
 
 1.  [Профилирование](#profile-vmware-vms)
 2.  [Создание отчета](#generate-report).
-3.  [Оценка пропускной способности.](#get-throughput)
+3.  [Получение данных пропускной способности](#get-throughput).
 
 Сначала планировщик необходимо запустить в режиме профилирования, чтобы получить сведения об активности обработки данных и числе операций ввода-вывода в секунду на виртуальной машине. Затем запустите ее в режиме создания отчетов, чтобы узнать пропускную способность сети, требования к хранилищу, а также оценить затраты на аварийное восстановление.
 

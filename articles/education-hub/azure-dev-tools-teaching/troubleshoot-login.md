@@ -8,10 +8,10 @@ ms.service: azure-education
 ms.subservice: education-hub
 ms.date: 06/30/2020
 ms.openlocfilehash: 276ab2cc1d79235c00ce1bb50ff9b648bb1de6ea
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87097682"
 ---
 # <a name="troubleshooting-student-login-issues"></a>Устранение проблем с входом в учащийся
@@ -19,7 +19,7 @@ ms.locfileid: "87097682"
 
 Если студент пытается войти в систему и получает следующее сообщение об ошибке, используйте одно из описанных ниже решений.
 
-:::image type="content" source="media/troubleshoot-login/error-login-message.png" alt-text="Сообщение об ошибке входа." border="false":::
+:::image type="content" source="media/troubleshoot-login/error-login-message.png" alt-text="Сообщение об ошибке при входе." border="false":::
 
 Существует два решения: создание нового учетная запись Майкрософт или использование существующего учетная запись Майкрософт.
 
@@ -39,18 +39,18 @@ ms.locfileid: "87097682"
 
 1. Щелкните **Управление способом входа в Майкрософт**. Вам будет предложено подтвердить свою личность. Вам будет отправлен код безопасности по электронной почте.
 
-    :::image type="content" source="media/troubleshoot-accounts/manage-sign-in.png" alt-text="Управление входом." border="false":::
+    :::image type="content" source="media/troubleshoot-accounts/manage-sign-in.png" alt-text="Сообщение об ошибке при входе." border="false":::
 
 1. Введите код безопасности, отправляемый по электронной почте.
 
-    :::image type="content" source="media/troubleshoot-accounts/sign-in-enter-code.png" alt-text="Введите код входа." border="false":::
+    :::image type="content" source="media/troubleshoot-accounts/sign-in-enter-code.png" alt-text="Сообщение об ошибке при входе." border="false":::
 
 1. Щелкните **Добавить адрес электронной почты** в свою учетную запись и введите свой адрес электронной почты университета.
 При следующем входе вы можете использовать свой адрес электронной почты университета, чтобы получить доступ к средствам разработки Azure для обучения.
 
-    :::image type="content" source="media/troubleshoot-accounts/manage-sign-in-add-email.png" alt-text="Управление входом в корпорацию Майкрософт." border="false":::
+    :::image type="content" source="media/troubleshoot-accounts/manage-sign-in-add-email.png" alt-text="Сообщение об ошибке при входе." border="false":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- [FAQ](program-faq.md)
+- [Часто задаваемые вопросы](program-faq.md)
 
 - [Варианты поддержки](program-support.md)

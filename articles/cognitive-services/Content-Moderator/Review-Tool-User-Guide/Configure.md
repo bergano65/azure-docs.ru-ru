@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 03/15/2019
 ms.author: pafarley
 ms.openlocfilehash: 2d685683bdc359b31a5a6c550c19e8c0d858f12a
-ms.sourcegitcommit: 537c539344ee44b07862f317d453267f2b7b2ca6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84689849"
 ---
 # <a name="configure-the-review-tool"></a>Настройка средства проверки
@@ -94,7 +94,7 @@ ms.locfileid: "84689849"
 
 [Средство проверки](./human-in-the-loop.md) включает следующие соединители:
 
-- API распознавания эмоций
+- эмоция.
 - Распознавание лиц
 - облачная служба PhotoDNA.
 - Анализ текста
@@ -138,6 +138,6 @@ ms.locfileid: "84689849"
 
 Если вы ввели ключ подписки в обоих местах, то пробный ключ, входящий в состав учетной записи средства проверки, не будет использоваться, но останется доступным.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Следуйте указаниям в [кратком руководстве по проверке](../quick-start.md) , чтобы приступить к использованию средства проверки в сценариях контроля содержимого.

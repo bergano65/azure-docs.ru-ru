@@ -12,10 +12,10 @@ ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
 ms.openlocfilehash: 4d66a1174b1b4adc94b24c6aecd55b2b8679f2f7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85211890"
 ---
 # <a name="how-to-monitor-the-gen2-cache"></a>Мониторинг кэша 2-го поколения
@@ -58,5 +58,5 @@ ms.locfileid: "85211890"
 > [!IMPORTANT]
 > Если процент попаданий в кэш или процент использования кэша не обновляется после повторного выполнения рабочей нагрузки, Рабочий набор может уже находиться в памяти. Кэшируются только кластеризованные таблицы columnstore.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о настройке производительности общих запросов см. в разделе [Наблюдение за выполнением запросов](sql-data-warehouse-manage-monitor.md#monitor-query-execution).

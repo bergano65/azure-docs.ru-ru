@@ -16,10 +16,10 @@ ms.date: 03/19/2020
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.openlocfilehash: b459f44308827308c28687db3c3fc33df470ea8d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84790196"
 ---
 # <a name="create-or-update-azure-custom-roles-using-the-rest-api"></a>Создание или обновление пользовательских ролей Azure с помощью REST API
@@ -44,7 +44,7 @@ ms.locfileid: "84790196"
 1. Замените *{Filter}* типом роли.
 
     > [!div class="mx-tableFixed"]
-    > | Filter | Описание: |
+    > | Filter | Описание |
     > | --- | --- |
     > | `$filter=type+eq+'CustomRole'` | Фильтр, основанный на типе Кустомроле |
 
@@ -61,7 +61,7 @@ ms.locfileid: "84790196"
 1. В URI замените *{scope}* на область, для которой нужно получить список ролей.
 
     > [!div class="mx-tableFixed"]
-    > | Область | Type |
+    > | Область | Тип |
     > | --- | --- |
     > | `subscriptions/{subscriptionId1}` | Подписка |
     > | `subscriptions/{subscriptionId1}/resourceGroups/{resourceGroup1}` | Группа ресурсов |
@@ -71,7 +71,7 @@ ms.locfileid: "84790196"
 1. Замените *{Filter}* типом роли.
 
     > [!div class="mx-tableFixed"]
-    > | Filter | Описание: |
+    > | Filter | Описание |
     > | --- | --- |
     > | `$filter=type+eq+'CustomRole'` | Фильтр, основанный на типе Кустомроле |
 
@@ -88,7 +88,7 @@ ms.locfileid: "84790196"
 1. В URI замените *{scope}* на область, для которой нужно получить список ролей.
 
     > [!div class="mx-tableFixed"]
-    > | Область | Type |
+    > | Область | Тип |
     > | --- | --- |
     > | `subscriptions/{subscriptionId1}` | Подписка |
     > | `subscriptions/{subscriptionId1}/resourceGroups/{resourceGroup1}` | Группа ресурсов |
@@ -98,7 +98,7 @@ ms.locfileid: "84790196"
 1. Замените *{Filter}* отображаемым именем роли.
 
     > [!div class="mx-tableFixed"]
-    > | Filter | Описание: |
+    > | Filter | Описание |
     > | --- | --- |
     > | `$filter=roleName+eq+'{roleDisplayName}'` | Используйте точное отображаемое имя роли в формате URL-адреса. Например, `$filter=roleName+eq+'Virtual%20Machine%20Contributor'` |
 
@@ -117,7 +117,7 @@ ms.locfileid: "84790196"
 1. В URI замените *{scope}* на область, для которой нужно получить список ролей.
 
     > [!div class="mx-tableFixed"]
-    > | Область | Type |
+    > | Область | Тип |
     > | --- | --- |
     > | `subscriptions/{subscriptionId1}` | Подписка |
     > | `subscriptions/{subscriptionId1}/resourceGroups/{resourceGroup1}` | Группа ресурсов |
@@ -171,7 +171,7 @@ ms.locfileid: "84790196"
 1. В URI замените *{scope}* на первую область `assignableScopes` пользовательской роли.
 
     > [!div class="mx-tableFixed"]
-    > | Область | Type |
+    > | Область | Тип |
     > | --- | --- |
     > | `subscriptions/{subscriptionId1}` | Подписка |
     > | `subscriptions/{subscriptionId1}/resourceGroups/{resourceGroup1}` | Группа ресурсов |
@@ -240,7 +240,7 @@ ms.locfileid: "84790196"
 1. В URI замените *{scope}* на первую область `assignableScopes` пользовательской роли.
 
     > [!div class="mx-tableFixed"]
-    > | Область | Type |
+    > | Область | Тип |
     > | --- | --- |
     > | `subscriptions/{subscriptionId1}` | Подписка |
     > | `subscriptions/{subscriptionId1}/resourceGroups/{resourceGroup1}` | Группа ресурсов |
@@ -330,7 +330,7 @@ ms.locfileid: "84790196"
 1. В URI замените *{scope}* на область, для которой нужно удалить пользовательскую роль.
 
     > [!div class="mx-tableFixed"]
-    > | Область | Type |
+    > | Область | Тип |
     > | --- | --- |
     > | `subscriptions/{subscriptionId1}` | Подписка |
     > | `subscriptions/{subscriptionId1}/resourceGroups/{resourceGroup1}` | Группа ресурсов |
@@ -338,8 +338,8 @@ ms.locfileid: "84790196"
 
 1. Замените *{roleDefinitionId}* идентификатором GUID настраиваемой роли.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Настраиваемые роли Azure](custom-roles.md)
-- [Добавление или удаление назначений ролей Azure с помощью REST API](role-assignments-rest.md)
+- [Добавление и удаление назначений ролей Azure с помощью REST API](role-assignments-rest.md)
 - [Справочник по REST API Azure](/rest/api/azure/)

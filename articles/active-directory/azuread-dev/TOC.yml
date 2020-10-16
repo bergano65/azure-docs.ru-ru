@@ -1,15 +1,18 @@
 - name: Azure Active Directory для разработчиков
   href: index.yml
 - name: Обзор
-  href: v1-overview.md
-- name: Примеры
-  href: sample-v1-code.md
-- name: Основные понятия
+  expanded: true
   items:
+    - name: Обзор
+      href: v1-overview.md
     - name: Развитие платформы удостоверений Майкрософт
       href: about-microsoft-identity-platform.md
     - name: "Преимущества обновления до версии\_2.0"
       href: azure-ad-endpoint-comparison.md
+- name: Примеры
+  href: sample-v1-code.md
+- name: Основные понятия
+  items:
     - name: Типы приложений
       items:
         - name: Типы приложений

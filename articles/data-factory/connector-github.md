@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 06/03/2020
 ms.author: daperlov
 ms.openlocfilehash: 0e17580524d6a67934aed83c6f745583b92e2422
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84771042"
 ---
 # <a name="use-github-to-read-common-data-model-entity-references"></a>Использование GitHub для чтения ссылок на сущности общих моделей данных
@@ -24,12 +24,12 @@ ms.locfileid: "84771042"
 
 Для связанной службы GitHub поддерживаются следующие свойства.
 
-| Свойство. | Описание | Обязательно |
+| Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
 | type | Для свойства Type необходимо задать значение **GitHub**. | да
 | userName | Имя пользователя GitHub | да |
 | password | Пароль GitHub | да |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 Создайте [исходный набор данных](data-flow-source.md) в сопоставлении потока данных.

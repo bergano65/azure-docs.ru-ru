@@ -4,10 +4,10 @@ description: Описывает, как определять и использо
 ms.topic: conceptual
 ms.date: 03/09/2020
 ms.openlocfilehash: 69f4e98d389cc8dbe5cd3f4b628189676c501106
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84672941"
 ---
 # <a name="user-defined-functions-in-azure-resource-manager-template"></a>Определяемые пользователем функции в шаблоне Azure Resource Manager
@@ -104,7 +104,7 @@ ms.locfileid: "84672941"
 * Для параметров этой функции нельзя задавать значения по умолчанию.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о доступных свойствах определяемых пользователем функций см. в разделе Общие сведения о [структуре и синтаксисе шаблонов Azure Resource Manager](template-syntax.md).
 * Список доступных функций шаблонов см. в разделе [функции шаблонов Azure Resource Manager](template-functions.md).

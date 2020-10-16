@@ -8,10 +8,10 @@ ms.date: 08/25/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
 ms.openlocfilehash: 83cc1b2fd0936d814e4a31714fecfdea7ccce988
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89225672"
 ---
 # <a name="azure-security-baseline-for-azure-dns"></a>Базовый план безопасности Azure для Azure DNS
@@ -260,7 +260,7 @@ ms.locfileid: "89225672"
 
 ### <a name="46-use-azure-rbac-to-manage-access-to-resources"></a>4,6. Использование Azure RBAC для управления доступом к ресурсам
 
-**Руководство**. Управление доступом на основе ролей в Azure (Azure RBAC) обеспечивает точное управление доступом для пользователей, групп и ресурсов Azure. С помощью Azure RBAC можно предоставить пользователям необходимый уровень доступа. 
+**Руководство**. Azure Role-Based Access Control (Azure RBAC) обеспечивает точное управление доступом для пользователей, групп и ресурсов Azure. С помощью Azure RBAC можно предоставить пользователям необходимый уровень доступа. 
 
 В Azure DNS существует роль участника зоны DNS, а также уровень зоны и уровень набора записей Azure RBAC. Кроме того, можно создать собственные пользовательские роли Azure, чтобы обеспечить более детальный контроль.
 

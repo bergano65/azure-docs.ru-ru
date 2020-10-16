@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: lahugh
 ms.openlocfilehash: 698b95dc5b38e1d365a80878a5057dee357d81af
-ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91649581"
 ---
 # <a name="ev3-and-esv3-series"></a>Серии Ev3 и Esv3
@@ -24,7 +24,7 @@ ms.locfileid: "91649581"
 
 Хранилище данных диска оплачивается отдельно от виртуальных машин. Используйте экземпляры серии ESv3 для дисков хранилища класса Premium. Счетчики цены и учета стоимости для размеров ESv3 такие же, как у серий Ev3.
 
-Виртуальная машина серии Ev3 Intel® технологии Hyper-Threading.
+Виртуальная машина серии Ev3 — технология Intel® Hyper-Threading.
 
 [ACU](acu.md): 160-190<br>
 [Хранилище класса Premium](premium-storage-performance.md): не поддерживается<br>
@@ -54,7 +54,7 @@ ms.locfileid: "91649581"
 
 Экземпляры серии Esv3 работают на процессорах Intel® Xeon® Platinum 8272CL (Cascade Lake), Intel® Xeon® 8171M 2,1 ГГц (Skylake) или Intel® Xeon® 2673-Broadwell v4 2,3 ГГц (), функции Intel Turbo Boost, 2,0 и используют хранилище класса Premium. Экземпляры серии Esv3 идеально подходят для корпоративных приложений с большим объемом памяти.
 
-Виртуальная машина серии Esv3 Intel® технологии Hyper-Threading.
+Виртуальная машина серии Esv3 — технология Intel® Hyper-Threading.
 
 [ACU](acu.md): 160-190<br>
 [Хранилище класса Premium](premium-storage-performance.md): поддерживается<br>

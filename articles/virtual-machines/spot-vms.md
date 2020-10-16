@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 10/05/2020
 ms.author: cynthn
 ms.reviewer: jagaveer
-ms.openlocfilehash: 66d62cde9ea17e73f561dfbce94eb3d3e7175b6d
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.openlocfilehash: b8e5c6b6b755134772cc8eaea3dab3af7f5346c9
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91827812"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91963369"
 ---
 # <a name="use-spot-vms-in-azure"></a>Использование плашечных виртуальных машин в Azure
 
@@ -99,17 +99,17 @@ ms.locfileid: "91827812"
 
 **Вопрос.** Как выполняется управление квотой для точечных виртуальных машин?
 
-**Ответ.** Для точечных виртуальных машин выделяется отдельный пул квот. Эти квоты совместно используются всеми точечными виртуальными машинами и экземплярами масштабируемых наборов. Дополнительные сведения см. в статье [Подписка Azure, границы, квоты и ограничения службы](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits).
+**Ответ.** Для точечных виртуальных машин выделяется отдельный пул квот. Эти квоты совместно используются всеми точечными виртуальными машинами и экземплярами масштабируемых наборов. Дополнительные сведения см. в статье [Подписка Azure, границы, квоты и ограничения службы](../azure-resource-manager/management/azure-subscription-service-limits.md).
 
 
 **Вопрос.** Могу ли я запросить увеличение квоты на точечные экземпляры?
 
-**Ответ.** Да, вы можете отправить запрос на увеличение квоты для точечных виртуальных машин, используя [стандартный процесс запроса квот](https://docs.microsoft.com/azure/azure-portal/supportability/per-vm-quota-requests).
+**Ответ.** Да, вы можете отправить запрос на увеличение квоты для точечных виртуальных машин, используя [стандартный процесс запроса квот](../azure-portal/supportability/per-vm-quota-requests.md).
 
 
 **Вопрос.** Где можно задать вопрос?
 
-**Ответ.** Разместите вопрос с тегом `azure-spot` в разделе [вопросов и ответов](https://docs.microsoft.com/answers/topics/azure-spot.html). 
+**Ответ.** Разместите вопрос с тегом `azure-spot` в разделе [вопросов и ответов](/answers/topics/azure-spot.html). 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Используйте интерфейс [командной строки](./linux/spot-cli.md), [портал](spot-portal.md), [шаблон ARM](./linux/spot-template.md)или [PowerShell](./windows/spot-powershell.md) для развертывания плашечных виртуальных машин.

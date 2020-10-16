@@ -15,10 +15,10 @@ ms.workload: infrastructure-services
 ms.date: 05/28/2020
 ms.author: allensu
 ms.openlocfilehash: fbd4c4ecfa2be9815e5d301a02460dc28171716a
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91329267"
 ---
 # <a name="public-ip-addresses"></a>Общедоступные IP-адреса
@@ -37,14 +37,14 @@ ms.locfileid: "91329267"
 
 Общедоступные IP-адреса создаются с адресами IPv4 или IPv6. 
 
-## <a name="sku"></a>Номер SKU
+## <a name="sku"></a>номер SKU
 
 Общедоступные IP-адреса создаются с использованием одного из следующих номеров SKU:
 
 >[!IMPORTANT]
 > Соответствующие номера SKU необходимы для подсистемы балансировки нагрузки и ресурсов общедоступного IP-адреса. Невозможно объединить ресурсы номеров SKU уровня "Базовый" и "Стандартный". Изолированные виртуальные машины, виртуальные машины в ресурсе группы доступности и ресурсы масштабируемого набора виртуальных машин нельзя подключить к обоим SKU одновременно.  В новых конструкциях рекомендуется использовать номер SKU уровня "Стандартный".  Дополнительные сведения вы найдете в статье [Azure Load Balancer Standard overview](../load-balancer/load-balancer-standard-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) (Обзор Load Balancer уровня "Стандартный").
 
-### <a name="standard"></a>Standard
+### <a name="standard"></a>Стандартный
 
 Общедоступные IP-адреса стандартного SKU:
 
@@ -194,7 +194,7 @@ IP-адрес освобождается, когда метод распреде
 
 За общедоступные IP-адреса взимается номинальная плата. Дополнительные сведения о ценах на IP-адреса в Azure см. на [соответствующей](https://azure.microsoft.com/pricing/details/ip-addresses) странице.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Сведения о [частных IP-адресах в Azure](private-ip-addresses.md)
 * [Развертывание виртуальной машины со статическим общедоступным IP-адресом с использованием портала Azure](virtual-network-deploy-static-pip-arm-portal.md)
 

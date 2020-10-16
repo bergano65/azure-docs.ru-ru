@@ -14,10 +14,10 @@ ms.reviewer: maghan
 manager: anandsub
 robots: noindex
 ms.openlocfilehash: 45aa444393ed81bc320a770203ca114c35e16107
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84195902"
 ---
 # <a name="troubleshoot-data-factory-issues"></a>Устранение неполадок Фабрики данных
@@ -47,9 +47,9 @@ ms.locfileid: "84195902"
 ### <a name="problem-unauthorized-error-when-running-a-data-factory-cmdlet"></a>Проблема: ошибка авторизации при выполнении командлета фабрики данных
 Скорее всего, для Azure PowerShell используется неправильная учетная запись или подписка Azure. Чтобы выбрать правильную учетную запись и подписку Azure для Azure PowerShell, используйте такие командлеты:
 
-1. Connect-Азаккаунт — используйте правильный идентификатор пользователя и пароль.
-2. Get-Азсубскриптион — Просмотр всех подписок для учетной записи.
-3. SELECT-Азсубскриптион &lt; имя подписки &gt; — выберите подходящую подписку. Используйте подписку, которая использовалась для создания фабрики данных на портале Azure.
+1. Connect-AzAccount — используйте правильный идентификатор пользователя и пароль.
+2. Get-AzSubscription — Просмотр всех подписок для учетной записи.
+3. Select-AzSubscription &lt; имя подписки &gt; — выберите подходящую подписку. Используйте подписку, которая использовалась для создания фабрики данных на портале Azure.
 
 ### <a name="problem-fail-to-launch-data-management-gateway-express-setup-from-azure-portal"></a>Проблема: не удается запустить экспресс-установку шлюза управления данными с портала Azure
 Для экспресс-установки шлюза управления данными требуется Internet Explorer или другой веб-браузер, совместимый с Microsoft ClickOnce. Если не удается запустить экспресс-установку, выполните одно из следующих действий:

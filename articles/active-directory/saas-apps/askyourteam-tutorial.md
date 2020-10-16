@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/28/2020
 ms.author: jeedes
-ms.openlocfilehash: ad68208f8993ce84c71c97d97de7e2b090f1e7da
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 6ab6a355b986daeca41ffd18a51689cd9d880dcd
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88549428"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91713815"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-askyourteam"></a>Руководство по интеграции единого входа Azure Active Directory с AskYourTeam
 
@@ -131,19 +131,19 @@ ms.locfileid: "88549428"
 
 1. Щелкните **My Organisation** (Моя организация).
 
-    ![Конфигурация AskYourTeam](./media/askyourteam-tutorial/user1.png)
+    ![Снимок экрана: ссылка "Моя организация".](./media/askyourteam-tutorial/user1.png)
 
 1. Щелкните **Integrations** (Интеграции).
 
-    ![Конфигурация AskYourTeam](./media/askyourteam-tutorial/configure1.png)
+    ![Снимок экрана: ссылка "Интеграции".](./media/askyourteam-tutorial/configure1.png)
 
 1. Щелкните **Edit Settings** (Изменить параметры).
 
-    ![Конфигурация AskYourTeam](./media/askyourteam-tutorial/configure2.png)
+    ![Снимок экрана: сообщение единого входа с кнопкой "Изменить параметры".](./media/askyourteam-tutorial/configure2.png)
 
 1. На странице **Edit Single Sign-On Integration** (Изменение интеграции единого входа) выполните следующие действия. 
 
-    ![Конфигурация AskYourTeam](./media/askyourteam-tutorial/configure3.png)
+    ![Снимок экрана: страница "Изменение интеграции единого входа", где можно ввести значения для этого шага.](./media/askyourteam-tutorial/configure3.png)
 
     а. В текстовое поле **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML) вставьте значение **URL-адрес для входа**, скопированное на портале Azure.
 
@@ -168,15 +168,15 @@ ms.locfileid: "88549428"
 
 1. Щелкните **My Organisation** (Моя организация).
 
-    ![Конфигурация AskYourTeam](./media/askyourteam-tutorial/user1.png)
+    ![Снимок экрана: ссылка "Моя организация", с которой начинается эта задача.](./media/askyourteam-tutorial/user1.png)
 
 1. Щелкните **Users** (Пользователи) и выберите **New User** (Новый пользователь).
 
-    ![Конфигурация AskYourTeam](./media/askyourteam-tutorial/user2.png)
+    ![Снимок экрана: ссылка "Пользователи" с кнопкой "Создать пользователя".](./media/askyourteam-tutorial/user2.png)
 
 1. В разделе **New User** (Новый пользователь) выполните следующие действия.
 
-    ![Конфигурация AskYourTeam](./media/askyourteam-tutorial/user3.png)
+    ![Снимок экрана: раздел "Новый пользователь", где можно ввести сведения о пользователе.](./media/askyourteam-tutorial/user3.png)
 
     1. В текстовом поле **First name** (Имя) введите имя пользователя.
 

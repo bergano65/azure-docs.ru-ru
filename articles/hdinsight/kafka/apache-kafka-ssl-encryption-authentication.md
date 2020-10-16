@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 05/01/2019
 ms.openlocfilehash: 9a95970647a26ea80db9f63fb8523c6a65cc5e06
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86082086"
 ---
 # <a name="set-up-tls-encryption-and-authentication-for-apache-kafka-in-azure-hdinsight"></a>Настройка шифрования и проверки подлинности TLS для Apache Kafka в Azure HDInsight
@@ -52,7 +52,7 @@ ms.locfileid: "86082086"
 Используйте следующие подробные инструкции для завершения установки компонента Service Broker.
 
 > [!Important]
-> В следующих фрагментах кода Внкс — это сокращение для одного из трех рабочих узлов, которое должно быть заменено `wn0` `wn1` или `wn2` соответствующим образом. `WorkerNode0_Name`и `HeadNode0_Name` должны быть заменены именами соответствующих компьютеров.
+> В следующих фрагментах кода Внкс — это сокращение для одного из трех рабочих узлов, которое должно быть заменено `wn0` `wn1` или `wn2` соответствующим образом. `WorkerNode0_Name` и `HeadNode0_Name` должны быть заменены именами соответствующих компьютеров.
 
 1. Выполните начальную настройку на головном узле 0, который для HDInsight будет заполнять роль центра сертификации (ЦС).
 
@@ -355,6 +355,6 @@ ms.locfileid: "86082086"
     $ /usr/hdp/current/kafka-broker/bin/kafka-console-consumer.sh --bootstrap-server <FQDN_WORKER_NODE>:9093 --topic topic1 --consumer.config ~/ssl/client-ssl-auth.properties --from-beginning
     ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Что такое Apache Kafka в HDInsight?](apache-kafka-introduction.md)

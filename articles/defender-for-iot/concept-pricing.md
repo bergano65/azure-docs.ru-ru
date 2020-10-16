@@ -14,10 +14,10 @@ ms.workload: na
 ms.date: 09/04/2020
 ms.author: mlottner
 ms.openlocfilehash: 24ae6c4014948639aa737a0d2d88ec15f98a7cb4
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90939528"
 ---
 # <a name="pricing-and-associated-costs"></a>Цены и связанные затраты
@@ -52,7 +52,7 @@ ms.locfileid: "90939528"
 
 В следующей таблице приводится сводка связанных затрат и последствий каждого из них.
 
-| Параметр | Использование | Комментировать |
+| Параметр | Использование | Комментарий |
 | --- | --- | --- |
 | **Хранилище Log Analytics** |  |
 | Рекомендации и оповещения для устройств| Рекомендации по безопасности и предупреждения, созданные службой | Не является обязательным |

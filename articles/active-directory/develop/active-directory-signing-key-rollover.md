@@ -13,10 +13,10 @@ ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin
 ms.custom: aaddev
 ms.openlocfilehash: b65ad1f22d20686a1ee47631f9209e1b15b0ab58
-ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88948136"
 ---
 # <a name="signing-key-rollover-in-microsoft-identity-platform"></a>Смена ключей подписывания на платформе Microsoft Identity
@@ -37,7 +37,7 @@ ms.locfileid: "88948136"
 * [Собственные клиентские приложения, осуществляющие доступ к ресурсам](#nativeclient)
 * [Веб-приложения и интерфейсы API, осуществляющие доступ к ресурсам](#webclient)
 * [Веб-приложения и интерфейсы API, защищающие ресурсы и созданные с помощью служб приложений Azure](#appservices)
-* [Веб-приложения и интерфейсы API, защищающие ресурсы с помощью по промежуточного слоя .NET OWIN OpenID Connect Connect, WS-подача или Виндовсазуреактиведиректорибеарераусентикатион](#owin)
+* [Веб-приложения и интерфейсы API, защищающие ресурсы с помощью .NET OWIN OpenID Connect Connect, WS-Fed или Виндовсазуреактиведиректорибеарераусентикатион по промежуточного слоя](#owin)
 * [Веб-приложения и интерфейсы API, защищающие ресурсы с использованием ПО промежуточного слоя для аутентификации на основе токена носителя JWT или OpenID Connect .NET Core](#owincore)
 * [Веб-приложения и интерфейсы API, защищающие ресурсы с помощью модуля Node.js passport-azure-ad](#passport)
 * [Веб-приложения и интерфейсы API, защищающие ресурсы и созданные с помощью Visual Studio 2015 или более поздней версии](#vs2015)
@@ -284,7 +284,7 @@ namespace JWTValidation
           </keys>
    ```
 2. В **\<add thumbprint="">** параметре измените значение отпечатка, заменив любой символ другим. Сохраните файл **Web.config**.
-3. Выполните сборку приложения и запустите его. Если у вас получилось войти, приложение успешно обновляет ключ, скачивая необходимые данные из документа метаданных федерации каталога. Если у вас возникают проблемы при входе в систему, убедитесь, что изменения в приложении верны, прочитав статью [Добавление входа в веб-приложение с помощью платформы удостоверений Майкрософт](https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect) или скачайте и изучите следующий пример кода: [Многоклиентское облачное приложение для Azure Active Directory](https://code.msdn.microsoft.com/multi-tenant-cloud-8015b84b).
+3. Выполните сборку приложения и запустите его. Если у вас получилось войти, приложение успешно обновляет ключ, скачивая необходимые данные из документа метаданных федерации каталога. Если у вас возникают проблемы при входе, убедитесь, что изменения в приложении верны, прочитав [добавление Sign-On в веб-приложение с помощью платформы удостоверений Майкрософт](https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect) , или скачайте и проверите следующий пример кода: [Многоклиентское облачное приложение для Azure Active Directory](https://code.msdn.microsoft.com/multi-tenant-cloud-8015b84b).
 
 ### <a name="web-applications-protecting-resources-and-created-with-visual-studio-2008-or-2010-and-windows-identity-foundation-wif-v10-for-net-35"></a><a name="vs2010"></a>Защищающие ресурсы веб-приложения, созданные с помощью Visual Studio 2008 или 2010 и Windows Identity Foundation v1.0 для .NET 3.5
 Если приложение создано на платформе Windows Identity Foundation v1.0, в нем не предусмотрен механизм автоматического обновления конфигурации для использования нового ключа.

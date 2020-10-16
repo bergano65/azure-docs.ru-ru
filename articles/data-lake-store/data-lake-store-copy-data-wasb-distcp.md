@@ -7,10 +7,10 @@ ms.topic: how-to
 ms.date: 01/03/2020
 ms.author: twooley
 ms.openlocfilehash: c608f357eb1eff9fd36e583b98d26250a71cb923
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85515676"
 ---
 # <a name="use-distcp-to-copy-data-between-azure-storage-blobs-and-azure-data-lake-storage-gen1"></a>Использование DistCp для копирования данных между большими двоичными объектами службы хранилища Azure и Azure Data Lake Storage 1-го поколения
@@ -23,7 +23,7 @@ ms.locfileid: "85515676"
 
 Если у вас есть кластер HDInsight с доступом к Azure Data Lake Storage 1-го поколения, вы можете использовать средства экосистемы Hadoop, такие как DistCp, для копирования данных в хранилище кластера HDInsight (WASB) и обратно в учетную запись Data Lake Storage 1-го поколения. В этой статье показано, как использовать средство DistCp.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 * **Учетная запись Azure Data Lake Storage 1-го поколения**. За инструкциями по созданию учетной записи обращайтесь к статье [Начало работы с Azure Data Lake Storage 1-го поколения](data-lake-store-get-started-portal.md).
@@ -115,7 +115,7 @@ HDInsight An кластер поставляется с инструментом
 
 * Если выполняется копирование из учетной записи хранилища BLOB-объектов Azure, задание копирования может регулироваться на стороне хранилища BLOB-объектов. Это снижает производительность задания копирования. Дополнительные сведения об ограничениях хранилища BLOB-объектов Azure см. в статье ограничения хранилища Azure в [подписке Azure и ограничениях службы](../azure-resource-manager/management/azure-subscription-service-limits.md).
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 * [Копирование данных из больших двоичных объектов службы хранилища Azure в Data Lake Storage 1-го поколения](data-lake-store-copy-data-azure-storage-blob.md)
 * [Защита данных в Data Lake Storage Gen1](data-lake-store-secure-data.md)

@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.custom: H1Hack27Feb2017,hdinsightactive
 ms.date: 12/16/2019
 ms.openlocfilehash: 8031e917d998b877e6c3a5830d69abf81c9bdebe
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86086727"
 ---
 # <a name="analyze-twitter-data-using-apache-hive-and-apache-hadoop-on-hdinsight"></a>Анализ данных Twitter с помощью Apache Hive и Apache Hadoop в HDInsight
@@ -308,7 +308,7 @@ hdfs dfs -put tweets.txt /tutorials/twitter/data/tweets.txt
     > [!NOTE]  
     > Если вы изменили фильтр в сценарии `gettweets.py`, замените **Azure** одним из используемых фильтров.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы узнали, как преобразовать неструктурированный набор данных JSON в структурированную [Apache Hive](https://hive.apache.org/) таблицу. Дополнительные сведения о Hive в HDInsight см. в следующих документах:
 

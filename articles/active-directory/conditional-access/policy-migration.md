@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d1811d5b9ae4d3e34b48e1cdc156438f2bad98d1
-ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90601662"
 ---
 # <a name="conditional-access-classic-policy-migration"></a>Миграция классической политики условного доступа
@@ -115,7 +115,7 @@ ms.locfileid: "90601662"
 
 ![Выбор платформ устройств условного доступа](./media/policy-migration/41.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Используйте режим "только отчет" для условного доступа, чтобы определить влияние новых политик.](concept-conditional-access-report-only.md)
 - Если вы хотите узнать, как настроить политику условного доступа, см. раздел [Общие политики условного доступа](concept-conditional-access-policy-common.md).

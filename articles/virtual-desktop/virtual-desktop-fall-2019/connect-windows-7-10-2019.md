@@ -7,10 +7,10 @@ ms.date: 07/16/2020
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: 420c507361e3e2437366e6ccf2d46a8b78684e59
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88008368"
 ---
 # <a name="connect-with-the-windows-desktop-classic-client"></a>Подключение к классическому клиенту Windows Desktop (классическая модель)
@@ -61,13 +61,13 @@ ms.locfileid: "88008368"
 1. На главной странице клиента выберите **подписывать с URL-адресом**.
 2. Введите URL-адрес рабочего пространства или адрес электронной почты.
    - Если вы используете **URL-адрес рабочего пространства**, введите предоставленный администратором адрес. Если обращение к ресурсам выполняется из Виртуального рабочего стола Windows, можно использовать один из следующих URL-адресов.
-     - Виртуальный рабочий стол Windows (классическая модель):`https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`
-     - Виртуальный рабочий стол Windows:`https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`
+     - Виртуальный рабочий стол Windows (классическая модель): `https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`.
+     - Виртуальный рабочий стол Windows: `https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`.
    - Если вместо этого вы используете поле **электронной почты** , введите свой адрес электронной почты. Это означает, что клиент будет искать URL-адрес, связанный с вашим адресом электронной почты, если администратор настроил [Обнаружение электронной почты](/windows-server/remote/remote-desktop-services/rds-email-discovery).
 3. Выберите **Далее**.
 4. При появлении запроса войдите в систему со своей учетной записью.
 5. Ресурсы должны отображаться в центре подключений, сгруппированном по рабочим областям.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об использовании настольного клиента Windows см. в статье Начало [работы с настольным клиентом Windows](/windows-server/remote/remote-desktop-services/clients/windowsdesktop/).

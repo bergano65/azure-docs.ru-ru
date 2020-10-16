@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 09/27/2020
 ms.openlocfilehash: 06d70012756694dca1fad8fa90db0293bb106bf9
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91828134"
 ---
 # <a name="sink-transformation-in-mapping-data-flow"></a>Преобразование приемника в потоке данных сопоставления
@@ -84,5 +84,5 @@ ms.locfileid: "91828134"
 
 При выборке предварительной версии данных в отладочном кластере данные в приемник не записываются. Будет возвращен моментальный снимок данных, которые выглядят, но в назначение ничего не будет записано. Чтобы проверить запись данных в приемник, запустите отладку конвейера из холста конвейера.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Теперь, когда вы создали поток данных, добавьте [в конвейер действие потока данных](concepts-data-flow-overview.md).

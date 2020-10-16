@@ -4,10 +4,10 @@ description: Узнайте, как сообщать об использован
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: 1d2663113e929145308f5a5712b968f3551668c2
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87287284"
 ---
 # <a name="report-azure-devtest-labs-usage-across-multiple-labs-and-subscriptions"></a>Использование отчетов Azure DevTest Labs в нескольких лабораториях и подписках
@@ -73,7 +73,7 @@ ms.locfileid: "87287284"
 
 [Фабрику данных Azure](https://azure.microsoft.com/services/data-factory/) можно использовать для создания, связывания и управления ресурсами в одном интерфейсе размещения. Если требуется больший контроль, отдельный ресурс можно создать в одной группе ресурсов и управлять им независимо от службы фабрики данных.  
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Когда система будет настроена и данные переходят в долгосрочное хранение, на следующем этапе следует указать вопросы, на которые должны ответить эти данные. Пример: 
 

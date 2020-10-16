@@ -1,5 +1,5 @@
 ---
-title: Проверенные среды
+title: Курируемые среды
 titleSuffix: Azure Machine Learning
 description: Коллекция проверенных сред, доступных в Машинное обучение Azure
 services: machine-learning
@@ -11,10 +11,10 @@ ms.subservice: core
 ms.topic: reference
 ms.date: 09/03/2020
 ms.openlocfilehash: 4ae96976f81aab9a0949594551c82d3a3fec4f0a
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89662077"
 ---
 # <a name="azure-machine-learning-curated-environments"></a>Машинное обучение Azure проверенные среды
@@ -24,7 +24,7 @@ ms.locfileid: "89662077"
 > [!NOTE]
 > Этот список обновляется по состоянию на сентябрь 2020. Используйте пакет SDK для Python, чтобы получить самый обновленный список. Дополнительные сведения см. в [статье о средах](./how-to-use-environments.md#use-a-curated-environment).
 
-## <a name="azureml-automl"></a>AzureML-Аутомл
+## <a name="azureml-automl"></a>AzureML-AutoML
 
 **Каналы пакетов:**
 
@@ -311,7 +311,7 @@ ms.locfileid: "89662077"
 * azureml-train-automl-runtime
 * azureml-от участников сообщества-аутомл-DNN — прогнозирование
 
-## <a name="azureml-minimal"></a>AzureML — минимальный
+## <a name="azureml-minimal"></a>AzureML-Minimal
 
 **Каналы пакетов:**
 
@@ -937,7 +937,7 @@ ms.locfileid: "89662077"
 * tensorflow — GPU
 * хоровод
 
-## <a name="azureml-tutorial"></a>AzureML — учебник
+## <a name="azureml-tutorial"></a>AzureML-Tutorial
 
 **Каналы пакетов:**
 

@@ -7,10 +7,10 @@ ms.topic: how-to
 ms.date: 09/03/2020
 ms.author: v-erkel
 ms.openlocfilehash: 9454dd8d1d6648396980f5148384d2e0119e0dab
-ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91612988"
 ---
 # <a name="prerequisites-for-azure-hpc-cache"></a>Необходимые условия для кэша HPC для Azure
@@ -161,6 +161,6 @@ ms.locfileid: "91612988"
 
 Если вы хотите создать кэш HPC Azure или управлять им из интерфейса командной строки Azure (Azure CLI), необходимо установить программное обеспечение CLI и расширение кэша HPC. Следуйте инструкциям в разделе [настройка Azure CLI для кэша HPC Azure](az-cli-prerequisites.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Создание экземпляра кэша Azure HPC](hpc-cache-create.md) из портал Azure

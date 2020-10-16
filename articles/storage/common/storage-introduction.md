@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 04/08/2020
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 1f335640eb37f51857fa295298d0a3ca91f2a370
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 337a4c1ba3e355c2ba1dd7ea6e34645112d1c7b1
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91714985"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92091310"
 ---
 # <a name="introduction-to-the-core-azure-storage-services"></a>Общие сведения о базовых службах хранилища Azure
 
@@ -41,7 +41,7 @@ ms.locfileid: "91714985"
 
 В следующей таблице сравниваются файлы, большие двоичные объекты, диски, очереди и таблицы, а также приведены примеры сценариев для каждого из них.
 
-| Компонент | Описание | Назначение |
+| Функция | Описание | Назначение |
 |--------------|-------------|-------------|
 | **Файлы Azure** |Предоставляет полностью управляемые облачные файловые ресурсы, к которым можно получить доступ из любого места через стандартный промышленный протокол SMB.<br><br>Вы можете подключать файловые ресурсы Azure из облачных или локальных развертываний Windows, Linux и macOS. | Вы хотите "претянуть и сдвинуть" приложение в облако, которое уже использует собственные API файловой системы для обмена данными между ИТ и другими приложениями, работающими в Azure.<br/><br/>Вы хотите заменить или дополнить локальные файловые серверы или устройства NAS.<br><br> Вы хотите сохранить инструменты разработки и отладки, к которым нужен доступ со множества виртуальных машин. |
 | **Большие двоичные объекты Azure** | Позволяет хранить неструктурированные данные и обращаться к ним в большом масштабе в блочных BLOB-объектах.<br/><br/>Хранилище BLOB-объектов также поддерживает [Azure Data Lake Storage 2-го поколения](../blobs/data-lake-storage-introduction.md) для корпоративных решений аналитики больших данных. | Вам нужно, чтобы приложение поддерживало потоковую передачу и произвольный доступ.<br/><br/>Вам нужен доступ к приложению откуда угодно.<br/><br/>Вам нужно создать корпоративное хранилище Data Lake на платформе Azure и выполнять анализ больших данных. |
@@ -61,7 +61,7 @@ ms.locfileid: "91714985"
 - Хранение резервных копий и восстановление данных, аварийное восстановление и архивация.
 - Хранение данных для анализа локальной службой или службой, размещенной в Azure.
 
-Доступ к объектам в хранилище BLOB-объектов можно получить в любой точке мира по протоколу HTTP или HTTPS. Пользователи и клиентские приложения могут обращаться к большим двоичным объектам с помощью URL-адресов, [REST API службы хранилища Azure](https://docs.microsoft.com/rest/api/storageservices/blob-service-rest-api), [Azure PowerShell](https://docs.microsoft.com/powershell/module/azure.storage), [Azure CLI](https://docs.microsoft.com/cli/azure/storage) или клиентской библиотеки службы хранилища Azure. Клиентские библиотеки службы хранилища доступны для различных языков, в том числе [.NET](/dotnet/api/overview/azure/storage?view=azure-dotnet), [Java](https://docs.microsoft.com/java/api/overview/azure/storage), [Node.js](https://azure.github.io/azure-storage-node), [Python](https://azure-storage.readthedocs.io/), [PHP](https://azure.github.io/azure-storage-php/) и [Ruby](https://azure.github.io/azure-storage-ruby).
+Доступ к объектам в хранилище BLOB-объектов можно получить в любой точке мира по протоколу HTTP или HTTPS. Пользователи и клиентские приложения могут обращаться к большим двоичным объектам с помощью URL-адресов, [REST API службы хранилища Azure](https://docs.microsoft.com/rest/api/storageservices/blob-service-rest-api), [Azure PowerShell](https://docs.microsoft.com/powershell/module/azure.storage), [Azure CLI](https://docs.microsoft.com/cli/azure/storage) или клиентской библиотеки службы хранилища Azure. Клиентские библиотеки службы хранилища доступны для различных языков, в том числе [.NET](/dotnet/api/overview/azure/storage), [Java](https://docs.microsoft.com/java/api/overview/azure/storage), [Node.js](https://azure.github.io/azure-storage-node), [Python](https://azure-storage.readthedocs.io/), [PHP](https://azure.github.io/azure-storage-php/) и [Ruby](https://azure.github.io/azure-storage-ruby).
 
 Дополнительные сведения о хранилище BLOB-объектов см. в статье [Общие сведения о хранилище объектов в Azure](../blobs/storage-blobs-introduction.md).
 
@@ -105,7 +105,7 @@ ms.locfileid: "91714985"
 
 ## <a name="types-of-storage-accounts"></a>Типы учетных записей хранения
 
-Служба хранилища Azure предлагает несколько типов учетных записей хранения. Каждый тип поддерживает различные возможности, и у каждого из них своя модель ценообразования. Дополнительные сведения о типах учетных записей хранения см. в статье [Общие сведения об учетной записи хранения](storage-account-overview.md).
+В службе хранилища Azure предлагается три типа учетных записей хранения. Каждый тип поддерживает различные возможности, и у каждого из них своя модель ценообразования. Дополнительные сведения о типах учетных записей хранения см. в статье [Общие сведения об учетной записи хранения](storage-account-overview.md).
 
 ## <a name="secure-access-to-storage-accounts"></a>Безопасный доступ к учетным записям хранения
 
@@ -173,9 +173,8 @@ ms.locfileid: "91714985"
 - [Командлеты Azure CLI для службы хранилища](https://docs.microsoft.com/cli/azure/storage)
 - [Служебная программа командной строки AzCopy](https://aka.ms/downloadazcopy)
 - [Обозреватель службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/) — это бесплатное автономное приложение от корпорации Майкрософт, позволяющее визуализировать данные из службы хранилища Azure на платформе Windows, macOS и Linux.
-- [Клиентские средства службы хранилища Azure](../storage-explorers.md)
-- [Средства для разработчиков Azure](https://azure.microsoft.com/tools/)
+- [Шаблоны Azure Resource Manager для службы хранилища Azure](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Storage)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы приступить к работе с основными службами хранилища Azure, см. статью [Создание учетной записи хранения](storage-account-create.md).

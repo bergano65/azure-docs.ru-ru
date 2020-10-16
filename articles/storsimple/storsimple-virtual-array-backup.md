@@ -16,10 +16,10 @@ ms.date: 02/27/2017
 ms.author: alkohli
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 5c49a46dfcd97f5feb43b0b910476ef3ad6f402a
-ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91742253"
 ---
 # <a name="back-up-shares-or-volumes-on-your-storsimple-virtual-array"></a>Архивация общих ресурсов или томов на виртуальном массиве StorSimple
@@ -108,11 +108,11 @@ ms.locfileid: "91742253"
    
      ![Фильтрация резервных копий](./media/storsimple-virtual-array-backup/viewbackups2.png)
 
-3. Щелкните **Применить**. В колонке **Каталог архивов** отобразится отфильтрованный список резервных копий. Обратите внимание, что в определенный момент времени может отображаться только 100 резервных копий.
+3. Нажмите кнопку **Применить**. В колонке **Каталог архивов** отобразится отфильтрованный список резервных копий. Обратите внимание, что в определенный момент времени может отображаться только 100 резервных копий.
    
     ![Обновленный каталог резервных копий](./media/storsimple-virtual-array-backup/viewbackups3.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения см. в статье [Использование пользовательского веб-интерфейса для администрирования виртуального массива StorSimple](storsimple-ova-web-ui-admin.md).
 

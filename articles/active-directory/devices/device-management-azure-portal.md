@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: hafowler
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e76c5f51486f7c1673fb5359eabc99ee41130472
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91278862"
 ---
 # <a name="manage-device-identities-using-the-azure-portal"></a>Управление удостоверениями устройств с помощью портала Azure
@@ -213,7 +213,7 @@ Azure AD предоставляет централизованное управ�
 
 ![Журналы аудита](./media/device-management-azure-portal/65.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Как управлять устаревшими устройствами в Azure AD](manage-stale-devices.md)
 

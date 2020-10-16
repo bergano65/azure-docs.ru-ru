@@ -9,10 +9,10 @@ ms.topic: troubleshooting
 ms.date: 01/30/2020
 ms.author: jlian
 ms.openlocfilehash: 7f3f5177e084693c45bed1088a4e1d091be100ed
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84688914"
 ---
 # <a name="500xxx-internal-errors"></a>Внутренние ошибки 500xxx
@@ -31,7 +31,7 @@ ms.locfileid: "84688914"
 
 * **InternalServerError (без кода ошибки)**: в центре Интернета вещей произошла внутренняя ошибка.
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 В ответе на ошибку 500xxx может быть несколько причин. Во всех случаях проблема, скорее всего, является временной. Команда по работе с Центром Интернета вещей прикладывает все усилия, чтобы выполнять гарантии [Соглашения об уровне обслуживания](https://azure.microsoft.com/support/legal/sla/iot-hub/), но в работе небольших подмножеств узлов Центра Интернета вещей иногда могут возникать сбои. Если устройство пытается подключиться к узлу со сбоем, возникает эта ошибка.
 

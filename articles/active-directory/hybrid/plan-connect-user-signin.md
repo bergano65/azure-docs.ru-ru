@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 3365a58a0c667ca55b74a5120cdd7a78ad0abc79
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91299916"
 ---
 # <a name="azure-ad-connect-user-sign-in-options"></a>Параметры входа в Azure AD Connect
@@ -68,7 +68,7 @@ Azure AD поддерживает следующие методы проверк
 Кроме того, можно также включить единый вход для пользователей на компьютерах, присоединенных к домену, которые входят в корпоративную сеть. Используя единый вход, пользователи с необходимыми разрешениями могут просто ввести имя пользователя, чтобы получить защищенный доступ к ресурсам в облаке.
 ![Сквозная проверка подлинности](./media/plan-connect-user-signin/pta.png)
 
-Дополнительные сведения можно найти в разделе
+Дополнительные сведения см. в разделе:
 - [Сквозная проверка подлинности](how-to-connect-pta.md)
 - [Единый вход](how-to-connect-sso.md)
 
@@ -190,6 +190,6 @@ Azure AD поддерживает следующие методы проверк
 >
 >
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Дополнительные сведения об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).
 - Дополнительные сведения о [Azure AD Connect концепциях проектирования](plan-connect-design-concepts.md).

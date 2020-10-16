@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 10/14/2019
 ms.author: jeedes
-ms.openlocfilehash: 6f2b7ec07583859e12711237c6a899d61335c969
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: b05a85dd61cdf4edc366edc3fbf20e4097308d09
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88545481"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91713572"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-amplitude"></a>Руководство по интеграции единого входа Azure Active Directory с Amplitude
 
@@ -141,15 +141,15 @@ ms.locfileid: "88545481"
 
 1. Щелкните **Plan Admin** (Администратор плана) на панели навигации слева.
 
-    ![Настройка единого входа](./media/amplitude-tutorial/configure1.png)
+    ![Снимок экрана: меню Amplitude с выбранным элементом "Администратор плана".](./media/amplitude-tutorial/configure1.png)
 
 1. Выберите **Microsoft Azure Active Directory Metadata** (Метаданные Microsoft Azure Active Directory) в разделе **SSO Integration** (Интеграция единого входа).
 
-    ![Настройка единого входа](./media/amplitude-tutorial/configure2.png)
+    ![Снимок экрана: панель "Администратор плана" с выделенной ссылкой "Метаданные Microsoft Azure Active Directory".](./media/amplitude-tutorial/configure2.png)
 
 1. В разделе **Set Up Single Sign-On** (Настройка единого входа) сделайте следующее:
 
-    ![Настройка единого входа](./media/amplitude-tutorial/configure3.png)
+    ![Снимок экрана: раздел "Настройка единого входа" со значениями, описанными на этом шаге.](./media/amplitude-tutorial/configure3.png)
 
     а. Откройте в Блокноте **XML-файл метаданных**, скачанный с портала Azure, и вставьте его содержимое в текстовое поле **Microsoft Azure Active Directory Metadata** (Метаданные Microsoft Azure Active Directory).
 

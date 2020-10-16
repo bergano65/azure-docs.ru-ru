@@ -14,10 +14,10 @@ ms.workload: na
 ms.date: 04/19/2020
 ms.author: memildin
 ms.openlocfilehash: 9a781fd48b30ccb32b0a733e5aa1ac054b96dc12
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91323661"
 ---
 # <a name="integrate-security-solutions-in-azure-security-center"></a>Интеграция решений по обеспечению безопасности в центре безопасности Azure
@@ -77,7 +77,7 @@ ms.locfileid: "91323661"
 
    - **Консоль решения** — открывает интерфейс управления для этого решения.
    - **Link VM** — открывает страницу «связывание приложений». В ней можно подключить ресурсы к решению партнера.
-   - **Удалить решение**
+   - **Удаление решения**
    - **Настройка**
 
    ![Сведения о партнерском решении](./media/security-center-partner-integration/partner-solutions-detail.png)
@@ -101,7 +101,7 @@ ms.locfileid: "91323661"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Из этой статьи вы узнали, как интегрировать партнерские решения в центре безопасности. Связанные сведения см. в следующих статьях:
 

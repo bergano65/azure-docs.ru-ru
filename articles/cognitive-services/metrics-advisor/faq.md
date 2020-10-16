@@ -3,19 +3,19 @@ title: Рекомендации по метрикам часто задавае�
 titleSuffix: Azure Cognitive Services
 description: Часто задаваемые вопросы о службе советника по метрикам.
 services: cognitive-services
-author: aahill
+author: mrbullwinkle
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: metrics-advisor
 ms.topic: conceptual
 ms.date: 09/30/2020
-ms.author: aahi
-ms.openlocfilehash: e4a75bdd6147ee2189660c37062c5bec9d55d512
-ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
+ms.author: mbullwin
+ms.openlocfilehash: 42b23876761afa213b07f07b3a61e125dcf0824b
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91631751"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92046814"
 ---
 # <a name="metrics-advisor-frequently-asked-questions"></a>Рекомендации по метрикам часто задаваемые вопросы
 

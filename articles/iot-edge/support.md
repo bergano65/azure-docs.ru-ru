@@ -4,16 +4,16 @@ description: Узнайте, в каких операционных систем
 author: kgremban
 manager: philmea
 ms.author: kgremban
-ms.date: 09/10/2020
+ms.date: 10/12/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 679fa4002f687f715ab1fe9701997d46e4b6f2cd
-ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
+ms.openlocfilehash: 51e569e9d056232f75a77f541013a239b4c814a9
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90018464"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92046627"
 ---
 # <a name="azure-iot-edge-supported-systems"></a>Поддерживаемые Azure IoT Edge системы
 
@@ -65,12 +65,11 @@ Azure IoT Edge работает на большинстве операционн
 | Raspbian Stretch |  | ![Raspbian Stretch + ARM32v7](./media/tutorial-c-module/green-check.png) |  |
 | [Ubuntu Server 16.04](https://wiki.ubuntu.com/XenialXerus/ReleaseNotes) | ![Ubuntu Server 16.04 + AMD64](./media/tutorial-c-module/green-check.png) |  | Общедоступная предварительная версия  |
 | [Ubuntu Server 18.04](https://wiki.ubuntu.com/BionicBeaver/ReleaseNotes) | ![Ubuntu Server 18.04 + AMD64](./media/tutorial-c-module/green-check.png) |  | Общедоступная предварительная версия |
-| [Windows 10 IoT Базовая](https://docs.microsoft.com/windows/iot-core/windows-iot-core), сборка 17763 | ![Windows IoT Core + AMD64](./media/tutorial-c-module/green-check.png) |  |  |
-| [Windows 10 IoT Корпоративная](https://docs.microsoft.com/windows/iot-core/windows-iot-enterprise), сборка 17763 | ![Windows 10 IoT Корпоративная + AMD64](./media/tutorial-c-module/green-check.png) |  |  |
-| [Windows Server 2019](https://docs.microsoft.com/windows-server/get-started-19/rel-notes-19), сборка 17763 | ![Windows Server 2019 + AMD64](./media/tutorial-c-module/green-check.png) |  |  |
-| [Windows Server IoT 2019](https://docs.microsoft.com/windows/iot-core/windows-server), сборка 17763 | ![Windows Server IoT 2019 + AMD64](./media/tutorial-c-module/green-check.png) |  |  |
+| [Windows 10 IoT Корпоративная](/windows/iot-core/windows-iot-enterprise), сборка 17763 | ![Windows 10 IoT Корпоративная + AMD64](./media/tutorial-c-module/green-check.png) |  |  |
+| [Windows Server 2019](/windows-server/get-started-19/rel-notes-19), сборка 17763 | ![Windows Server 2019 + AMD64](./media/tutorial-c-module/green-check.png) |  |  |
+| [Windows Server IoT 2019](/windows/iot-core/windows-server), сборка 17763 | ![Windows Server IoT 2019 + AMD64](./media/tutorial-c-module/green-check.png) |  |  |
 
-Перечисленные выше операционные системы Windows являются требованиями к устройствам, на которых запускаются контейнеры Windows, что является единственной поддерживаемой конфигурацией для рабочей среды. Установочные пакеты Azure IoT Edge для Windows позволяют использовать контейнеры Linux в Windows, но эта конфигурация предназначена только для разработки и тестирования. Дополнительные сведения см. в статье [Использование IoT Edge в Windows для запуска контейнеров Linux](how-to-install-iot-edge-windows-with-linux.md).
+Перечисленные выше операционные системы Windows являются требованиями к устройствам, на которых запускаются контейнеры Windows, что является единственной поддерживаемой конфигурацией для рабочей среды. Установочные пакеты Azure IoT Edge для Windows позволяют использовать контейнеры Linux в Windows, но эта конфигурация предназначена только для разработки и тестирования. 
 
 ### <a name="tier-2"></a>Уровень 2
 
@@ -108,14 +107,16 @@ sudo apt-get install libssl1.0.2
 
 | Release | Управляющая программа безопасности | Центр Edge<br>Агент Edge | Libiothsm | Moby |
 |--|--|--|--|--|
+| **1.0.10** | 1.0.10 | 1.0.10 | 1.0.10 |  |
 | **1.0.9** | 1.0.9.5<br>1.0.9.4<br>1.0.9.3<br>1.0.9.2<br>1.0.9.1<br>1.0.9 | 1.0.9.5<br>1.0.9.4<br>1.0.9.3<br>1.0.9.2<br>1.0.9.1<br>1.0.9 | 1.0.9.5<br>1.0.9.4<br>1.0.9.3<br>1.0.9.2<br>1.0.9.1<br>1.0.9 |  |
 | **1.0.8** | 1.0.8 | 1.0.8.5<br>1.0.8.4<br>1.0.8.3<br>1.0.8.2<br>1.0.8.1<br>1.0.8 | 1.0.8 | 3.0.6 |
 | **1.0.7** | 1.0.7.1<br>1.0.7 | 1.0.7.1<br>1.0.7 | 1.0.7.1<br>1.0.7 | 3.0.5<br>3.0.4 (ARMv7hl, CentOS) |
 | **1.0.6** | 1.0.6.1<br>1.0.6 | 1.0.6.1<br>1.0.6 | 1.0.6.1<br>1.0.6 |  |
 | **1.0.5** | 1.0.5 | 1.0.5 | 1.0.5 | 3.0.2 |
 
-IoT Edge использует пакет SDK Microsoft.Azure.Device.Client. Дополнительные сведения см. в [репозитории GitHub пакета SDK для Azure IoT на C#](https://github.com/Azure/azure-iot-sdk-csharp) или на странице [справочных сведений об Azure SDK для .NET](https://docs.microsoft.com/dotnet/api/overview/azure/iot/client?view=azure-dotnet). В приведенном ниже списке указана версия клиентского пакета SDK, на основе которого тестируется каждый выпуск.
+IoT Edge использует пакет SDK Microsoft. Azure. Devices. Client. Дополнительные сведения см. в [репозитории GitHub пакета SDK для Azure IoT на C#](https://github.com/Azure/azure-iot-sdk-csharp) или на странице [справочных сведений об Azure SDK для .NET](/dotnet/api/overview/azure/iot/client). В приведенном ниже списке указана версия клиентского пакета SDK, на основе которого тестируется каждый выпуск.
 
+* **IOT EDGE 1.0.10**: КЛИЕНТСКИЙ пакет SDK 1.28.0
 * **IoT Edge 1.0.9**: клиентский пакет SDK 1.21.1
 * **IoT Edge 1.0.8**: клиентский пакет SDK 1.20.3
 * **IoT Edge 1.0.7**: клиентский пакет SDK 1.20.1

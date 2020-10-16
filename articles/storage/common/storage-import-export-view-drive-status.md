@@ -9,10 +9,10 @@ ms.date: 05/17/2018
 ms.author: alkohli
 ms.subservice: common
 ms.openlocfilehash: 8110b98c055a211203fb937990e860fc8dea74f4
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88520468"
 ---
 # <a name="view-the-status-of-azure-importexport-jobs"></a>Просмотр состояния заданий службы "Импорт и экспорт Azure"
@@ -76,7 +76,7 @@ ms.locfileid: "88520468"
 Служба импорта и экспорта не имеет соглашения об уровне обслуживания, но служба стремится завершить копирование в течение 7 – 10 дней после получения дисков. Помимо состояния, опубликованного портал Azure, можно использовать интерфейсы API для отслеживания хода выполнения задания. Используйте параметр процента завершения в вызове API операции [List Jobs](/previous-versions/azure/dn529083(v=azure.100)) , чтобы просмотреть ход выполнения копирования в процентах.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Передача данных с помощью служебной программы командной строки AzCopy](storage-use-azcopy.md)
 * [Пример экспорта REST API импорта Azure](https://github.com/Azure-Samples/storage-dotnet-import-export-job-management/)

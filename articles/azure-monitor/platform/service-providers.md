@@ -7,10 +7,10 @@ author: MeirMen
 ms.author: meirm
 ms.date: 02/03/2020
 ms.openlocfilehash: 0869de4ccfe89cc3919ec2d2d80aa3e18749039a
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87921098"
 ---
 # <a name="azure-monitor-logs-for-service-providers"></a>Журналы Azure Monitor для поставщиков услуг
@@ -79,7 +79,7 @@ Log Analytics рабочие области предоставляют адми�
 
 2. Power BI в качестве центрального расположения. Power BI может служить центральным расположением, когда различные рабочие области экспортируют данные в него с помощью интеграции между рабочей областью Log Analytics и [Power BI](./powerbi.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Автоматизация создания и настройки рабочих областей с помощью [шаблонов Resource Manager](template-workspace-configuration.md).
 

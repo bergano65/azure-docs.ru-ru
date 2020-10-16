@@ -2,15 +2,15 @@
 title: Создание и развертывание спецификации шаблона
 description: Узнайте, как создать спецификацию шаблона на основе шаблона ARM. Затем разверните спецификацию шаблона в группе ресурсов в подписке.
 author: tfitzmac
-ms.date: 09/25/2020
+ms.date: 10/02/2020
 ms.topic: quickstart
 ms.author: tomfitz
-ms.openlocfilehash: a4f24e69f29614de27947573d968d817dce4a57b
-ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
+ms.openlocfilehash: e1bd2f3da8204cf5947d0cf423cd57b023674608
+ms.sourcegitcommit: 638f326d02d108cf7e62e996adef32f2b2896fd5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91369221"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91728783"
 ---
 # <a name="quickstart-create-and-deploy-template-spec-preview"></a>Краткое руководство. Создание и развертывание спецификации шаблона (предварительная версия)
 
@@ -27,7 +27,7 @@ ms.locfileid: "91369221"
 
 ## <a name="create-template-spec"></a>Создание спецификации шаблона
 
-Спецификация шаблона — это новый тип ресурсов с именем **Microsoft.Resources/templateSpecs**. Чтобы создать спецификацию шаблона, можно использовать Azure PowerShell, Azure CLI или шаблон ARM. В любом случае вам понадобится шаблон ARM, упакованный в спецификацию шаблона.
+Спецификация шаблона — это тип ресурсов с именем **Microsoft.Resources/templateSpecs**. Чтобы создать спецификацию шаблона, можно использовать Azure PowerShell, Azure CLI или шаблон ARM. В любом случае вам понадобится шаблон ARM, упакованный в спецификацию шаблона.
 
 В PowerShell и CLI шаблон ARM передается команде в качестве параметра. При использовании шаблона ARM, шаблон ARM, который необходимо упаковать в спецификацию шаблона, встроен в определение спецификации шаблона.
 

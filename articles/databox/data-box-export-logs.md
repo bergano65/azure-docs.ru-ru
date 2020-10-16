@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 07/10/2020
 ms.author: alkohli
 ms.openlocfilehash: 1d924e96cfc287060107f541e44980295eb24745
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87494491"
 ---
 # <a name="tracking-and-event-logging-for-your-azure-data-box-and-azure-data-box-heavy-export-orders"></a>Отслеживание и ведение журнала событий для Azure Data Box и Azure Data Box Heavy экспорт заказов
@@ -190,7 +190,7 @@ ms.locfileid: "87494491"
 
 ### <a name="chain-of-custody-audit-logs"></a>Цепочка журналов аудита поставок
 
-Цепочка журналов аудита поставок содержит сведения о включении и доступе к общим папкам на Data Box или Data Box Heavy, когда она находится за пределами центра обработки данных Azure. Эти журналы находятся по адресу:`storage-account/azuredatabox-chainofcustodylogs`
+Цепочка журналов аудита поставок содержит сведения о включении и доступе к общим папкам на Data Box или Data Box Heavy, когда она находится за пределами центра обработки данных Azure. Эти журналы находятся по адресу: `storage-account/azuredatabox-chainofcustodylogs`
 
 Ниже приведен пример журнала аудита из Data Box.
 

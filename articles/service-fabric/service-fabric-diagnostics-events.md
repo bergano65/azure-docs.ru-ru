@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 11/21/2018
 ms.author: srrengar
 ms.openlocfilehash: 638b650e485ad3e83bd6021639a7e55b540d9cdc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "75451734"
 ---
 # <a name="service-fabric-events"></a>События Service Fabric 
@@ -18,7 +18,7 @@ ms.locfileid: "75451734"
 * Кластер
 * Приложение
 * Служба
-* Partition (Раздел)
+* Секция
 * Реплика 
 * Контейнер
 
@@ -39,6 +39,6 @@ ms.locfileid: "75451734"
 * События записываются через стандартные каналы, такие как ETW или журналы событий Windows, и могут быть представлены любым средством мониторинга, которое поддерживает такие данные, как журналы Azure Monitor. По умолчанию в кластерах, созданных на портале, включена диагностика, и агент диагностики Microsoft Azure отправляет события в хранилище таблиц Azure, но вам все равно нужно интегрировать его с ресурсом log Analytics. Узнайте больше о настройке [агента система диагностики Azure](service-fabric-diagnostics-event-aggregation-wad.md) для изменения конфигурации диагностики кластера, чтобы получить дополнительные журналы, счетчики производительности и [интеграцию Azure Monitor журналов](service-fabric-diagnostics-event-analysis-oms.md) .
 * Через Rest API службы EventStore, которые позволяют запрашивать кластер напрямую, или через клиентскую библиотеку Service Fabric. Дополнительные сведения см. в статье [Query EventStore APIs for cluster events](service-fabric-diagnostics-eventstore-query.md) (Запрос к API EventStore для события кластера).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения о мониторинге кластера см. в статье [Мониторинг кластера и платформы](service-fabric-diagnostics-event-generation-infra.md).
 * Дополнительные сведения о службе EventStore см. в [этой статье](service-fabric-diagnostics-eventstore.md).

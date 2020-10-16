@@ -7,10 +7,10 @@ ms.reviewer: rarayudu, logicappspm
 ms.topic: conceptual
 ms.date: 05/29/2020
 ms.openlocfilehash: 427b488fe6673bef505fccdaa7185d69437bceaf
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89231322"
 ---
 # <a name="create-an-integration-service-environment-ise-by-using-the-logic-apps-rest-api"></a>Создание среды службы интеграции (ISE) с помощью REST API Logic Apps 
@@ -56,7 +56,7 @@ ms.locfileid: "89231322"
 
 <a name="request-body"></a>
 
-## <a name="request-body"></a>Текст запроса
+## <a name="request-body"></a>Тело запроса
 
 Ниже приведен синтаксис текста запроса, описывающий свойства, используемые при создании интегрированной среды сценариев. Чтобы создать интегрированную среду сценариев, разрешающую использование самозаверяющего сертификата, установленного в `TrustedRoot` расположении, включите `certificates` объект в раздел описания интегрированной среды сценариев `properties` . Для существующей интегрированной среды сценариев можно отправить запрос PATCH только для `certificates` объекта. Дополнительные сведения об использовании самозаверяющих сертификатов см. [в разделе безопасный доступ и доступ к данным для исходящих вызовов других служб и систем](../logic-apps/logic-apps-securing-a-logic-app.md#secure-outbound-requests).
 

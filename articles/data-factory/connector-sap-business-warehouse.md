@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 09/04/2019
 ms.openlocfilehash: 86d4f82b70a6b6b3ceed262cf96fa291e26dd53c
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87534385"
 ---
 # <a name="copy-data-from-sap-business-warehouse-using-azure-data-factory"></a>Копирование данных из SAP Business Warehouse с помощью фабрики данных Azure
@@ -69,13 +69,13 @@ ms.locfileid: "87534385"
 
 | Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
-| type | Для свойства type необходимо задать значение **SapBw** | да |
-| server | Имя сервера, на котором размещен экземпляр SAP Business Warehouse. | да |
-| systemNumber | Номер системы SAP Business Warehouse.<br/>Допустимые значения: двузначное десятичное число, представленное в виде строки. | да |
+| type | Для свойства type необходимо задать значение **SapBw** | Да |
+| server | Имя сервера, на котором размещен экземпляр SAP Business Warehouse. | Да |
+| systemNumber | Номер системы SAP Business Warehouse.<br/>Допустимые значения: двузначное десятичное число, представленное в виде строки. | Да |
 | clientid | Идентификатор клиента в системе SAP Business Warehouse.<br/>Допустимые значения: трехзначное десятичное число, представленное в виде строки. | Да |
-| userName | Имя пользователя, имеющего доступ к серверу SAP. | да |
+| userName | Имя пользователя, имеющего доступ к серверу SAP. | Да |
 | password | Пароль для пользователя Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
-| connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Требуется локальная среда IR, как упоминалось в разделе [Предварительные требования](#prerequisites). |да |
+| connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Требуется локальная среда IR, как упоминалось в разделе [Предварительные требования](#prerequisites). |Да |
 
 **Пример**.
 
@@ -137,8 +137,8 @@ ms.locfileid: "87534385"
 
 | Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
-| type | Свойство Type источника действия копирования должно иметь значение **сапбвсаурце** . | да |
-| query | Указывает запрос многомерных выражений для чтения данных из экземпляра SAP Business Warehouse. | да |
+| type | Свойство Type источника действия копирования должно иметь значение **сапбвсаурце** . | Да |
+| query | Указывает запрос многомерных выражений для чтения данных из экземпляра SAP Business Warehouse. | Да |
 
 **Пример**.
 
@@ -182,26 +182,26 @@ ms.locfileid: "87534385"
 |:--- |:--- |
 | ACCP | Int |
 | CHAR | Строка |
-| CLNT | Строка |
-| CURR | Decimal |
-| CUKY | Строка |
-| DEC | Decimal |
+| CLNT | Строковый тип |
+| CURR | Десятичный тип |
+| CUKY | Строковый тип |
+| DEC | Десятичный тип |
 | FLTP | Double |
 | INT1 | Byte |
 | INT2 | Int16 |
 | INT4 | Int |
-| LANG | Строка |
-| LCHR | Строка |
+| LANG | Строковый тип |
+| LCHR | Строковый тип |
 | LRAW | Byte[] |
 | PREC | Int16 |
-| QUAN | Decimal |
+| QUAN | Десятичный тип |
 | RAW | Byte[] |
 | RAWSTRING | Byte[] |
-| STRING | Строка |
-| ЕДИНИЦА ИЗМЕРЕНИЯ | Строка |
-| DATS | Строка |
-| NUMC | Строка |
-| TIMS | Строка |
+| STRING | Строковый тип |
+| ЕДИНИЦА ИЗМЕРЕНИЯ | Строковый тип |
+| DATS | Строковый тип |
+| NUMC | Строковый тип |
+| TIMS | Строковый тип |
 
 
 ## <a name="lookup-activity-properties"></a>Свойства действия поиска

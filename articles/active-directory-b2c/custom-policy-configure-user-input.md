@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 03/17/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 47fdf445fa11693dd3a998b8c73ac0c3ed8452a8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ff9093872b2a5e069aef43ae2230b08447eea602
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85389366"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92069863"
 ---
 #  <a name="add-claims-and-customize-user-input-using-custom-policies-in-azure-active-directory-b2c"></a>Добавление утверждений и настройка пользовательского ввода с помощью настраиваемых политик в Azure Active Directory B2C
 
@@ -95,12 +95,12 @@ ms.locfileid: "85389366"
    </TechnicalProfile>
   </TechnicalProfiles>
 </ClaimsProvider>
-<ClaimsProvider>
 ```
 
 Чтобы получить утверждение "город" после начального входа с помощью федеративной учетной записи, его необходимо добавить в технический профиль в качестве исходящего утверждения `SelfAsserted-Social` . Чтобы пользователи локальных и федеративных учетных записей могли изменять данные профиля позже, добавьте выходное утверждение в `SelfAsserted-ProfileUpdate` технический профиль. Переопределите эти технические профили в файле расширения. Укажите весь список исходящих утверждений для управления порядком представления заявок на экране. Найдите элемент **ClaimsProviders**. Добавьте новый Клаимспровидерс следующим образом:
 
 ```xml
+<ClaimsProvider>
   <DisplayName>Self Asserted</DisplayName>
   <TechnicalProfiles>
     <!--Federated account first-time sign-in page-->

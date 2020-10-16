@@ -9,10 +9,10 @@ ms.date: 03/05/2019
 ms.author: robinsh
 ms.custom: include file
 ms.openlocfilehash: 178236f774b0e1a6fe20c73afe0e7fd6965e67a5
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "67235425"
 ---
 Настроив конечные точки и маршруты сообщений, можно просмотреть их конфигурацию на портале. Войдите на [портал Azure](https://portal.azure.com) и перейдите в раздел **Группы ресурсов**. Затем выберите группу ресурсов и центр (имя центра в этом руководстве начинается с `ContosoTestHub`). Отобразится панель Центра Интернета вещей.

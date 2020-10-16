@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 08/29/2019
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: 6c88a1eaee50676cfe6bb9589779d7156b805e30
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: 77dc64d9660f9a0bf66559c4a5a976362cf1acd0
+ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87920982"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91951644"
 ---
 ::: zone target = "docs"
 
@@ -97,11 +97,11 @@ ms.locfileid: "87920982"
 
 1. В первую очередь необходимо выполнить проверку подлинности и начать сеанс. Перейдите на страницу **Подключение и копирование**. Чтобы получить учетные данные для доступа к общим папкам, связанным с вашей учетной записью хранения, щелкните **Получить учетные данные**.
 
-    ![Получение учетных данных для доступа к общей папке 1](media/data-box-heavy-deploy-copy-data/get-share-credentials-1.png)
+    ![Получение учетных данных для доступа к общей папке](media/data-box-heavy-deploy-copy-data/get-share-credentials-1.png)
 
 2. В диалоговом окне "Доступ к общей папке и копирование данных" скопируйте **имя пользователя** и **пароль**, соответствующие необходимой общей папке. Нажмите кнопку **ОК**.
     
-    ![Получение учетных данных для доступа к общей папке 1](media/data-box-heavy-deploy-copy-data/get-share-credentials-2.png)
+    ![Получение учетных данных для доступа к общей папке 2](media/data-box-heavy-deploy-copy-data/get-share-credentials-2.png)
 
 3. Чтобы получить доступ к общим папкам, связанным с вашей учетной записью хранения (*databoxe2etest* в следующем примере) на главном компьютере, откройте окно командной строки. В командной строке введите:
 
@@ -122,7 +122,7 @@ ms.locfileid: "87920982"
 
 4. Нажмите клавиши WINDOWS+R. В окне **Выполнить** введите `\\<device IP address>`. Нажмите кнопку **ОК**, чтобы открыть проводник.
     
-    ![Подключение к общей папке с помощью проводника 2](media/data-box-heavy-deploy-copy-data/connect-shares-file-explorer-1.png)
+    ![Подключение к общей папке с помощью проводника](media/data-box-heavy-deploy-copy-data/connect-shares-file-explorer-1.png)
 
     Должны отобразиться папки, в том числе общие.
     

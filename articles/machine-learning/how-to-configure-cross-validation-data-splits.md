@@ -12,10 +12,10 @@ author: CESARDELATORRE
 ms.reviewer: nibaccam
 ms.date: 06/16/2020
 ms.openlocfilehash: 3e2711243d7c093d3ab8aa5f0e7ebac0a5ec95f9
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90886196"
 ---
 # <a name="configure-data-splits-and-cross-validation-in-automated-machine-learning"></a>Настройка разбиения данных и перекрестной проверки в автоматизированном машинном обучении
@@ -156,7 +156,7 @@ automl_config = AutoMLConfig(compute_target = aml_remote_compute,
 > [!NOTE]
 > Чтобы использовать `cv_split_column_names` с `training_data` и `label_column_name` , обновите пакет SDK для машинное обучение Azure Python версии 1.6.0 или более поздней. Сведения о предыдущих версиях пакета SDK см. в разделе Использование `cv_splits_indices` , но обратите внимание, что он используется `X` только с `y` входными данными набора данных и. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Предотвращение несбалансированных данных и перегонка](concept-manage-ml-pitfalls.md).
 * [Руководство. Использование автоматизированного машинного обучения для прогнозирования годуного в такси фрагмента данных](tutorial-auto-train-models.md#split-the-data-into-train-and-test-sets).

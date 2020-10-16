@@ -7,10 +7,10 @@ ms.author: cweining
 ms.date: 11/08/2019
 ms.reviewer: mbullwin
 ms.openlocfilehash: f514dd7b54ac091535aeab43a8a7d2a645b50a09
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87315841"
 ---
 # <a name="profile-web-apps-running-on-an-azure-virtual-machine-or-a-virtual-machine-scale-set-by-using-application-insights-profiler"></a>Профилирование веб-приложений, работающих на виртуальной машине Azure или в масштабируемом наборе виртуальных машин, с использованием Application Insights Profiler
@@ -54,7 +54,7 @@ ms.locfileid: "87315841"
 
    Чтобы применить изменения, обычно нужно полностью развернуть шаблон или опубликовать его в облачных службах с помощью командлетов PowerShell или Visual Studio.  
 
-   Следующие команды PowerShell являются альтернативным способом для существующих виртуальных машин, которые касаются только расширения система диагностики Azure. Добавьте упомянутый выше Профилерсинк в файл config, возвращаемый командой Get-Азвмдиагностиксекстенсион. Затем передайте обновленную конфигурацию в команду Set-Азвмдиагностиксекстенсион.
+   Следующие команды PowerShell являются альтернативным способом для существующих виртуальных машин, которые касаются только расширения система диагностики Azure. Добавьте ранее упомянутый Профилерсинк в файл config, возвращаемый командой Get-AzVMDiagnosticsExtension. Затем передайте обновленную конфигурацию в команду Set-AzVMDiagnosticsExtension.
 
     ```powershell
     $ConfigFilePath = [IO.Path]::GetTempFileName()
@@ -87,7 +87,7 @@ ms.locfileid: "87315841"
 
     ![Проверьте, установлено ли расширение WAD][wadextension]
 
-2. Найдите расширение диагностики виртуальных машин для виртуальной машины. Перейдите на страницу [https://resources.azure.com](https://resources.azure.com). Разверните группу ресурсов, Microsoft. COMPUTE virtualMachines, имя виртуальной машины и расширения.  
+2. Найдите расширение диагностики виртуальных машин для виртуальной машины. Перейдите по адресу [https://resources.azure.com](https://resources.azure.com). Разверните группу ресурсов, Microsoft. COMPUTE virtualMachines, имя виртуальной машины и расширения.  
 
     ![Перейдите к WAD config в обозреватель ресурсов Azure][azureresourceexplorer]
 

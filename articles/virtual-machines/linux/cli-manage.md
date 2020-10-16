@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 05/12/2017
 ms.author: rclaus
 ms.openlocfilehash: 5a9dd8aaeed0642461e4244a72a3dab5c96a77b6
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87372252"
 ---
 # <a name="common-azure-cli-commands-for-managing-azure-resources"></a>Основные команды Azure CLI для управления ресурсами Azure
@@ -23,14 +23,14 @@ Azure CLI позволяет создавать ресурсы Azure в macOS, L
 Чтобы получить подробные сведения о конкретных параметрах командной строки, можно использовать интерактивную справку по командам, к которой можно получить доступ с помощью команды `az <command> <subcommand> --help`.
 
 ### <a name="create-vms"></a>Создание виртуальных машин
-| Задача | Команды интерфейса командной строки Azure |
+| Задача | Команды Azure CLI |
 | --- | --- |
 | Создание группы ресурсов | `az group create --name myResourceGroup --location eastus` |
 | Создание виртуальной машины Linux | `az vm create --resource-group myResourceGroup --name myVM --image ubuntults` |
 | Создание виртуальной машины Windows | `az vm create --resource-group myResourceGroup --name myVM --image win2016datacenter` |
 
 ### <a name="manage-vm-state"></a>Управление состоянием виртуальной машины
-| Задача | Команды интерфейса командной строки Azure |
+| Задача | Команды Azure CLI |
 | --- | --- |
 | Запуск виртуальной машины | `az vm start --resource-group myResourceGroup --name myVM` |
 | Остановка виртуальной машины | `az vm stop --resource-group myResourceGroup --name myVM` |
@@ -40,7 +40,7 @@ Azure CLI позволяет создавать ресурсы Azure в macOS, L
 | Удаление виртуальной машины | `az vm delete --resource-group myResourceGroup --name myVM` |
 
 ### <a name="get-vm-info"></a>Получение сведений о виртуальной машине
-| Задача | Команды интерфейса командной строки Azure |
+| Задача | Команды Azure CLI |
 | --- | --- |
 | Вывод списка виртуальных машин | `az vm list` |
 | Получение информации о виртуальной машине | `az vm show --resource-group myResourceGroup --name myVM` |
@@ -48,7 +48,7 @@ Azure CLI позволяет создавать ресурсы Azure в macOS, L
 | Получить все доступные размеры виртуальной машины | `az vm list-sizes --location eastus` |
 
 ## <a name="disks-and-images"></a>Диски и образы
-| Задача | Команды интерфейса командной строки Azure |
+| Задача | Команды Azure CLI |
 | --- | --- |
 | Добавление диска данных в виртуальную машину | `az vm disk attach --resource-group myResourceGroup --vm-name myVM --disk myDataDisk --size-gb 128 --new` |
 | Удаление диска данных от виртуальной машины | `az vm disk detach --resource-group myResourceGroup --vm-name myVM --disk myDataDisk` |

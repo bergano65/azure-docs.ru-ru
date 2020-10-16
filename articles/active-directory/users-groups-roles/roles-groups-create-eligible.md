@@ -14,10 +14,10 @@ ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 07dc11877b38e830d90f544f1d7524b378bf5902
-ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90053758"
 ---
 # <a name="create-a-role-assignable-group-in-azure-active-directory"></a>Создание назначаемой роли группы в Azure Active Directory
@@ -124,7 +124,7 @@ POST https://graph.microsoft.com/beta/groups
 
 Для группы этого типа всегда будет `isPublic` иметь значение false и `isSecurityEnabled` всегда будет иметь значение true.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Назначение роли для облачной группы](roles-groups-assign-role.md)
 - [Использование облачных групп для управления назначениями ролей](roles-groups-concept.md)

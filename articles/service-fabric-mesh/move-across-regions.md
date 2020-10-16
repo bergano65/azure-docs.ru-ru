@@ -7,10 +7,10 @@ ms.topic: how-to
 ms.date: 01/14/2020
 ms.custom: subject-moving-resources
 ms.openlocfilehash: c842a065f108a924c6bffd70d6c2edbbd31b6dff
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86260152"
 ---
 # <a name="move-a-service-fabric-mesh-application-to-another-azure-region"></a>Перемещение Service Fabric приложения сетки в другой регион Azure
@@ -19,7 +19,7 @@ ms.locfileid: "86260152"
 
  [Service Fabricная сетка не поддерживает](../azure-resource-manager/management/region-move-support.md#microsoftservicefabricmesh) возможность прямого перемещения ресурсов между регионами Azure. Тем не менее ресурсы можно перемещать косвенно, развертывая копию текущего шаблона Azure Resource Manager в новом целевом регионе, а затем перенаправляя входящий трафик и зависимости на только что созданное Service Fabricное приложение сетки.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Входной контроллер (например, [шлюз приложений](../application-gateway/index.yml)), служащий посредником для маршрутизации трафика между клиентами и приложением Service Fabricной сетки
 * Доступность Service Fabric сети (Предварительная версия) в целевом регионе Azure ( `westus` , `eastus` или `westeurope` )
@@ -56,7 +56,7 @@ ms.locfileid: "86260152"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Перемещение ресурсов Azure в разных регионах](../azure-resource-manager/management/move-region.md)
+* [Перемещение ресурсов Azure между регионами](../azure-resource-manager/management/move-region.md)
 * [Поддержка перемещения ресурсов Azure в разных регионах](../azure-resource-manager/management/region-move-support.md)
 * [Перемещение ресурсов в новую группу ресурсов или подписку](../azure-resource-manager/management/move-resource-group-and-subscription.md)
 * [Поддержка операций перемещения для ресурсов](../azure-resource-manager/management/move-support-resources.md

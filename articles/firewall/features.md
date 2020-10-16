@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 10/08/2020
 ms.author: victorh
 ms.openlocfilehash: 7429be4430b2b520fb2a66b6b2c0dd138af8e501
-ms.sourcegitcommit: efaf52fb860b744b458295a4009c017e5317be50
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91850597"
 ---
 # <a name="azure-firewall-features"></a>Функции службы "Брандмауэр Azure"
@@ -115,6 +115,6 @@ ms.locfileid: "91850597"
 
 Брандмауэр Azure соответствует требованиям стандартов Payment Card Industry Data Security Standard (PCI DSS), Международной организация по стандартизации (ISO) и ICSA Labs, а также требованиям к отчетам System and Organization Controls (SOC). Дополнительные сведения см. в статье о [сертификатах соответствия Брандмауэра Azure](compliance-certifications.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Логика обработки правил Брандмауэра Azure](rule-processing.md)

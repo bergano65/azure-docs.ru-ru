@@ -2,19 +2,17 @@
 title: Текстовые параметры книг Azure Monitor
 description: Упростите создание сложных отчетов с помощью предварительно созданных и настраиваемых параметризованных книг. Дополнительные сведения о текстовых параметрах книги.
 services: azure-monitor
-author: mrbullwinkle
 manager: carmonm
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 10/23/2019
-ms.author: mbullwin
-ms.openlocfilehash: c804cc8942a40e2f30c980636194daa82e0fb0e8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7241777c0b94ce7ccadbd273c5c305c679bfe30a
+ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81687327"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91932317"
 ---
 # <a name="workbook-text-parameters"></a>Текстовые параметры книги
 
@@ -27,10 +25,10 @@ ms.locfileid: "81687327"
 2. Выберите _Добавить параметры_ из ссылок в книге.
 3. Нажмите синюю кнопку _Добавить параметр_ .
 4. В новой области параметров, которая появляется на экране, введите:
-    1. Имя параметра:`SlowRequestThreshold`
-    2. Тип параметра:`Text`
-    3. Обязательно:`checked`
-    4. Получить значение по умолчанию из запроса:`unchecked`
+    1. Имя параметра: `SlowRequestThreshold`
+    2. Тип параметра: `Text`
+    3. Обязательно: `checked`
+    4. Получить значение по умолчанию из запроса: `unchecked`
 5. Нажмите кнопку "Сохранить" на панели инструментов, чтобы создать параметр.
 
     ![Изображение, показывающее создание текстового параметра](./media/workbooks-text/text-create.png)
@@ -67,10 +65,10 @@ ms.locfileid: "81687327"
 2. Выберите _Добавить параметры_ из ссылок в книге.
 3. Нажмите синюю кнопку _Добавить параметр_ .
 4. В новой области параметров, которая появляется на экране, введите:
-    1. Имя параметра:`SlowRequestThreshold`
-    2. Тип параметра:`Text`
-    3. Обязательно:`checked`
-    4. Получить значение по умолчанию из запроса:`checked`
+    1. Имя параметра: `SlowRequestThreshold`
+    2. Тип параметра: `Text`
+    3. Обязательно: `checked`
+    4. Получить значение по умолчанию из запроса: `checked`
 5. В поле ККЛ добавьте следующий фрагмент кода:
     ```kusto
     requests

@@ -12,10 +12,10 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 656e5a358d29e249edfb956f75526c54b6f70852
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91318217"
 ---
 # <a name="team-data-science-process-for-data-scientists"></a>Командный процесс обработки и анализа данных для специалистов по обработке и анализу данных
@@ -63,5 +63,5 @@ ms.locfileid: "91318217"
 |                                                                                           | [Журналы Azure Monitor](../../log-analytics/log-analytics-overview.md)                                                   | Другим методом мониторинга приложения является его интеграция с процессом DevOps. Система журналов Azure Monitor предоставляет широкий набор функций, позволяющих просматривать аналитические решения после их развертывания.                                                                                                                                                                                                                                                                                                                                                                                                                       | [Выполните инструкции из этого руководства](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-queries) по использованию журналов Azure Monitor.                                                                                                                                                                                                                                                                                                       |
 | Выполнить эту схему обучения                                                               |                                                                                                                           | Поздравляем! Вы завершили эту схему обучения.                                                                                                                                                                                                                                                                                                                                            |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 [Team Data Science Process for Developer Operations](team-data-science-process-for-devops.md) (Командный процесс обработки и анализа данных группы для операций разработки). В этой статье рассматриваются функции операций разработки (DevOps), которые относятся к реализации решения расширенной аналитики и Cognitive Services.

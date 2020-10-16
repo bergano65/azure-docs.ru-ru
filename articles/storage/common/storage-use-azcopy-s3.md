@@ -9,10 +9,10 @@ ms.date: 07/27/2020
 ms.author: normesta
 ms.subservice: common
 ms.openlocfilehash: ac093f707167160e916c15b935cb3d8ff6bbc748
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88037122"
 ---
 # <a name="copy-data-from-amazon-s3-to-azure-storage-by-using-azcopy"></a>Копирование данных из Amazon S3 в службу хранилища Azure с помощью AzCopy
@@ -161,7 +161,7 @@ AzCopy выполняет следующие действия:
    Этот ключ будет использоваться для сохранения исходных метаданных недопустимого **ключа**.
    Этот ключ можно использовать для попыток восстановления метаданных на стороне Azure, так как ключ метаданных сохраняется как значение в службе хранилища BLOB-объектов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные примеры приведены в любой из следующих статей:
 

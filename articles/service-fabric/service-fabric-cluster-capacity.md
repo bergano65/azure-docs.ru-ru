@@ -6,10 +6,10 @@ ms.date: 05/21/2020
 ms.author: pepogors
 ms.custom: sfrev
 ms.openlocfilehash: d2b303c22eea9fb46a68bb3c8e36991d47d61554
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91817731"
 ---
 # <a name="service-fabric-cluster-capacity-planning-considerations"></a>Рекомендации по планированию загрузки кластера Service Fabric
@@ -91,7 +91,7 @@ ms.locfileid: "91817731"
 
 #### <a name="advantages"></a>Преимущества
 
-* Сокращает количество обязательных шагов для операций масштабирования (деактивация узла и Remove-ServiceFabricNodeState вызываются автоматически).
+* Сокращает количество необходимых шагов для операций масштабирования (деактивация узла и Remove-ServiceFabricNodeState вызывается автоматически).
 * Снижается риск потери данных из-за операций изменения размера виртуальной машины на месте и операций инфраструктуры Azure.
 
 #### <a name="disadvantages"></a>Недостатки
@@ -182,7 +182,7 @@ ms.locfileid: "91817731"
 
 Для рабочих нагрузок без отслеживания состояния минимальный поддерживаемый размер типа непервичного узла составляет три для поддержки кворума, однако рекомендуется использовать тип узла 5.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Перед настройкой кластера проверьте `Not Allowed` [политики обновления кластера](service-fabric-cluster-fabric-settings.md) , чтобы устранить необходимость повторного создания кластера позже из-за неизменяемых параметров конфигурации системы.
 

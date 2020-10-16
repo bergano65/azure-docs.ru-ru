@@ -13,10 +13,10 @@ ms.workload: infrastructure-services
 ms.date: 08/20/2020
 ms.author: vinigam
 ms.openlocfilehash: dcbb82c1315e6150ddcfadbb52b2976447329b87
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89441839"
 ---
 # <a name="migrate-to-connection-monitor-preview-from-network-performance-monitor"></a>Миграция в монитор подключения (Предварительная версия) с Монитор производительности сети
@@ -70,7 +70,7 @@ ms.locfileid: "89441839"
 * Перенесите все внешние интеграции в таблицу ConnectionMonitor_CL. Примерами внешних интеграций являются панели мониторинга в Power BI и Grafana, а также интеграция с системами управления сведениями о безопасности и событиями (SIEM).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о мониторе подключений (Предварительная версия) см. в следующих статьях:
 * [Миграция из монитора подключения в монитор подключений (Предварительная версия)](migrate-to-connection-monitor-preview-from-connection-monitor.md)

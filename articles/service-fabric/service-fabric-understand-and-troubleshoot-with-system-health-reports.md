@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 2/28/2018
 ms.author: gwallace
 ms.openlocfilehash: 8e60ac5065c2f9543a641daf4f62299c00c61fc8
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86260193"
 ---
 # <a name="use-system-health-reports-to-troubleshoot"></a>Устранение неполадок с помощью отчетов о работоспособности системы
@@ -647,7 +647,7 @@ HealthEvents          :
 
 - **IStatefulServiceReplica. ChangeRole (P)**. наиболее распространенным случаем является то, что служба не вернула задачу из `RunAsync` .
 
-Другие вызовы API, которые могут быть задержаны, находятся в интерфейсе **IReplicator** . Например:
+Другие вызовы API, которые могут быть задержаны, находятся в интерфейсе **IReplicator** . Пример.
 
 - **IReplicator.CatchupReplicaSet**. Это предупреждение означает одну из следующих ситуаций: недостаточно реплик (это можно определить, посмотрев состояние реплик в секции или отчет о работоспособности System.FM для заблокированной перенастройки); реплики не подтверждают операции. С помощью командлета PowerShell `Get-ServiceFabricDeployedReplicaDetail` можно узнать ход выполнения всех реплик. Проблема связана с репликами, у которых значение `LastAppliedReplicationSequenceNumber` ниже значения `CommittedSequenceNumber` первичной реплики.
 
@@ -773,7 +773,7 @@ HealthEvents                       :
                                      Transitions           : Error->Ok = 7/14/2017 4:55:14 PM, LastWarning = 1/1/0001 12:00:00 AM
 ```
 
-### <a name="download"></a>Загрузка
+### <a name="download"></a>Скачивание
 System.Hosting сообщает об ошибке, если скачивание пакета приложения завершается сбоем.
 
 * **SourceId**: System.Hosting.
@@ -851,7 +851,7 @@ HealthEvents               :
                              Transitions           : Error->Ok = 7/14/2017 4:55:14 PM, LastWarning = 1/1/0001 12:00:00 AM
 ```
 
-### <a name="download"></a>Загрузка
+### <a name="download"></a>Скачивание
 System.Hosting сообщает об ошибке при скачивании пакета службы.
 
 * **SourceId**: System.Hosting.

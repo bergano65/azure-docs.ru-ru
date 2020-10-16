@@ -4,10 +4,10 @@ description: В этой статье объясняется, как време�
 ms.topic: article
 ms.date: 09/29/2020
 ms.openlocfilehash: f89e17e494cc777691b7f7ca47538cd29114d2dc
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91575264"
 ---
 # <a name="suspend-and-reactivate-messaging-entities-disable"></a>Приостановка и повторная активация сущностей обмена сообщениями (отключение)
@@ -74,7 +74,7 @@ Set-AzServiceBusQueue -ResourceGroup mygrp -NamespaceName myns -QueueName myqueu
 Перечисление [EntityStatus](/dotnet/api/microsoft.servicebus.messaging.entitystatus) также определяет набор переходных состояний, которые могут устанавливаться только системой. 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об обмене сообщениями через служебную шину см. в следующих статьях:
 

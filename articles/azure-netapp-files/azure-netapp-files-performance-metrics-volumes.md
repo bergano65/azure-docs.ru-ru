@@ -7,12 +7,12 @@ ms.service: azure-netapp-files
 ms.workload: storage
 ms.topic: conceptual
 ms.date: 08/07/2019
-ms.openlocfilehash: a254465d9055fcf1cf10a2a1d6eb82b2afc16f0b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: cf25ef59bc1ea5db61dcfb3c76c0d978cb1f95d0
+ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82692272"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91931842"
 ---
 # <a name="performance-benchmark-test-recommendations-for-azure-netapp-files"></a>Рекомендации по тестам производительности для Azure NetApp Files
 
@@ -24,7 +24,7 @@ ms.locfileid: "82692272"
 
 ### <a name="vm-instance-sizing"></a>Размер экземпляра виртуальной машины
 
-Для получения наилучших результатов убедитесь, что для выполнения тестов используется экземпляр виртуальной машины, соответствующий размеру. В следующих примерах используется экземпляр Standard_D32s_v3. Дополнительные сведения о размерах экземпляров виртуальных машин см. в статьях [размеры виртуальных машин Windows в Azure](https://docs.microsoft.com/azure/virtual-machines/windows/sizes?toc=%2fazure%2fvirtual-network%2ftoc.json) для виртуальных машин под управлением Windows и [размеры виртуальной машины Linux в Azure](https://docs.microsoft.com/azure/virtual-machines/linux/sizes?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) для ВМ под управлением Linux.
+Для получения наилучших результатов убедитесь, что для выполнения тестов используется экземпляр виртуальной машины, соответствующий размеру. В следующих примерах используется экземпляр Standard_D32s_v3. Дополнительные сведения о размерах экземпляров виртуальных машин см. в статьях [размеры виртуальных машин Windows в Azure](../virtual-machines/sizes.md?toc=%252fazure%252fvirtual-network%252ftoc.json) для виртуальных машин под управлением Windows и [размеры виртуальной машины Linux в Azure](../virtual-machines/sizes.md?toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json) для ВМ под управлением Linux.
 
 ### <a name="azure-netapp-files-volume-sizing"></a>Изменение размера тома Azure NetApp Files
 
@@ -109,11 +109,11 @@ FIO доступен в двоичном формате как для Linux, т�
 
 Вы также можете создать панель мониторинга в Azure Monitor для Azure NetApp Files, перейдя на страницу метрики, отфильтровать NetApp и указав интересующие вас счетчики томов: 
 
-![Панель мониторинга Azure Monitor](../media/azure-netapp-files/azure-netapp-files-benchmark-monitor-dashboard.png)
+![Панель мониторинга Azure Monitor](../media/azure-netapp-files/azure-netapp-files-benchmark-monitor-dashboard.png)
 
 ### <a name="azure-monitor-api-access"></a>Доступ к Azure Monitor API
 
-Доступ к счетчикам Azure NetApp Files можно получить с помощью вызовов REST API. См. раздел [Поддерживаемые метрики с Azure Monitor: Microsoft. NetApp/нетаппаккаунтс/капаЦитипулс/Volumes](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-supported#microsoftnetappnetappaccountscapacitypoolsvolumes) для счетчиков пулов и томов емкости.
+Доступ к счетчикам Azure NetApp Files можно получить с помощью вызовов REST API. См. раздел [Поддерживаемые метрики с Azure Monitor: Microsoft. NetApp/нетаппаккаунтс/капаЦитипулс/Volumes](../azure-monitor/platform/metrics-supported.md#microsoftnetappnetappaccountscapacitypoolsvolumes) для счетчиков пулов и томов емкости.
 
 В следующем примере показан URL-адрес GET для просмотра размера логического тома.
 
@@ -121,7 +121,7 @@ FIO доступен в двоичном формате как для Linux, т�
 `curl -X GET -H "Authorization: Bearer TOKENGOESHERE" -H "Content-Type: application/json" https://management.azure.com/subscriptions/SUBIDGOESHERE/resourceGroups/RESOURCEGROUPGOESHERE/providers/Microsoft.NetApp/netAppAccounts/ANFACCOUNTGOESHERE/capacityPools/ANFPOOLGOESHERE/Volumes/ANFVOLUMEGOESHERE/providers/microsoft.insights/metrics?api-version=2018-01-01&metricnames=VolumeLogicalSize`
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Уровни обслуживания для Azure NetApp Files](azure-netapp-files-service-levels.md)
 - [Тесты производительности для Linux](performance-benchmarks-linux.md)

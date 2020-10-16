@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 02/13/2018
 ms.author: apimpm
-ms.openlocfilehash: 517b70d798d8cdd1b361b244111a8b6781286207
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ea674981036b4be292329a4b30b43180ed26d642
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87851228"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92092789"
 ---
 # <a name="how-to-create-and-use-groups-to-manage-developer-accounts-in-azure-api-management"></a>Как создавать и использовать группы для управления учетными записями разработчика в службе управления Azure API
 
@@ -66,10 +66,10 @@ ms.locfileid: "87851228"
 3. Щелкните **Контроль доступа**.
 4. Щелкните **+ Добавить группу**.
 
-    ![Связывание группы с продуктом](./media/api-management-howto-create-groups/groups002.png)
+    ![Снимок экрана, на котором выделяется кнопка "добавить группу".](./media/api-management-howto-create-groups/groups002.png)
 5. Выберите группу, которую нужно добавить.
 
-    ![Связывание группы с продуктом](./media/api-management-howto-create-groups/groups003.png)
+    ![Снимок экрана, на котором показана выбранная группа, и выделяется кнопка выбора.](./media/api-management-howto-create-groups/groups003.png)
 
     Чтобы удалить группу из продукта, нажмите кнопку **Удалить**.
 
@@ -90,7 +90,7 @@ ms.locfileid: "87851228"
     ![Добавление элементов](./media/api-management-howto-create-groups/groups005.png)
 3. Нажмите кнопку **+ Добавить** и выберите элемент.
 
-    ![Добавление элементов](./media/api-management-howto-create-groups/groups006.png)
+    ![Снимок экрана, посвященный кнопке "Добавить", выбранному пользователю и кнопке "выбрать".](./media/api-management-howto-create-groups/groups006.png)
 4. Нажмите кнопку **Выбрать**.
 
 После добавления связи между разработчиком и группой ее можно просмотреть на вкладке **Пользователи** .

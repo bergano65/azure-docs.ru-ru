@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 06/01/2020
 ms.custom: devx-track-js
 ms.openlocfilehash: 982adf6c6d7cd825d185802321ce30a04bd2f216
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91323300"
 ---
 # <a name="monitor-your-nodejs-services-and-apps-with-application-insights"></a>Мониторинг служб и приложений Node.js с помощью Application Insights
@@ -413,7 +413,7 @@ client.config.PROPERTYNAME = VALUE;
 | коррелатионидретринтервалмс    | Время ожидания перед повторной попыткой получения идентификатора для корреляции между компонентами (по умолчанию `30000` ).     |
 | коррелатионхеадерексклудеддомаинс| Список доменов, исключаемых из вставки заголовка корреляции между компонентами (по умолчанию см. [config. TS](https://github.com/Microsoft/ApplicationInsights-node.js/blob/develop/Library/Config.ts)).|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Навигация и панели мониторинга на портале Application Insights](./overview-dashboard.md)
 * [Знакомство с аналитикой в Application Insights](../log-query/get-started-portal.md)

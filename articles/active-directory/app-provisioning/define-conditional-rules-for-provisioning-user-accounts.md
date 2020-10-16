@@ -11,10 +11,10 @@ ms.topic: how-to
 ms.date: 06/08/2020
 ms.author: kenwith
 ms.openlocfilehash: 1765c6a7d19a11730567acd5e41deebc0a20cec2
-ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88235830"
 ---
 # <a name="attribute-based-application-provisioning-with-scoping-filters"></a>Подготовка приложений на основе атрибутов с использованием фильтров области
@@ -82,7 +82,7 @@ ms.locfileid: "88235830"
 
    d. **имеет значение false**. Предложение возвращает значение true, если вычисленный атрибут содержит логическое значение false.
 
-   д. **имеет значение NULL**. Предложение возвращает значение true, если вычисленный атрибут имеет пустое значение.
+   д) **имеет значение NULL**. Предложение возвращает значение true, если вычисленный атрибут имеет пустое значение.
 
    е) **не равно NULL**. Предложение возвращает значение true, если вычисленный атрибут имеет не пустое значение.
 
@@ -116,14 +116,14 @@ ms.locfileid: "88235830"
 
 
 ## <a name="common-scoping-filters"></a>Общие фильтры области
-| Целевой атрибут| Оператор | Значение | Описание:|
+| Целевой атрибут| Оператор | Значение | Описание|
 |----|----|----|----|
 |userPrincipalName|СООТВЕТСТВИЕ РЕГУЛЯРНОГО ВЫРАЖЕНИЯ|.\*@domain.com |Все пользователи с userPrincipal, которые имеют домен, @domain.com будут находиться в области подготовки|
 |userPrincipalName|НЕ СОПОСТАВЛЯТЬ РЕГУЛЯРНОЕ ВЫРАЖЕНИЕ|.\*@domain.com|Все пользователи с userPrincipal, у которых есть домен, @domain.com будут вне области подготовки|
 |department|EQUALS|sales|Все пользователи из отдела продаж находятся в области подготовки|
 |воркерид|СООТВЕТСТВИЕ РЕГУЛЯРНОГО ВЫРАЖЕНИЯ|(1[0–9][0–9][0–9][0–9][0–9][0–9]).| Все сотрудники с Воркеридс между 1000000 и 2000000 находятся в области подготовки.|
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 * [Автоматизация подготовки пользователей и ее отмены в приложениях SaaS](../app-provisioning/user-provisioning.md)
 * [Настройка сопоставлений атрибутов для подготовки пользователей для приложений SaaS в Azure Active Directory](../app-provisioning/customize-application-attributes.md)
 * [Написание выражений для сопоставления атрибутов](functions-for-customizing-application-data.md)

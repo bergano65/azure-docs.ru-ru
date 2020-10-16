@@ -8,18 +8,23 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 09/29/2020
+ms.date: 10/07/2020
 ms.author: aahi
-ms.openlocfilehash: 12f3ce506d8b4588dc9c670e49cabd3bc7767566
-ms.sourcegitcommit: a0c4499034c405ebc576e5e9ebd65084176e51e4
+ms.openlocfilehash: f79152dbfa5a0576cd13484f9b3704eaed3901ea
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91460277"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92015930"
 ---
 # <a name="whats-new-in-the-text-analytics-api"></a>Новые возможности в API "Анализ текста"
 
 API анализа текста обновляется на постоянной основе. В этой статье содержатся сведения о новых выпусках и функциях, чтобы оставаться в курсе последних нововведений.
+
+## <a name="october-2020"></a>Октябрь 2020 г.
+
+* Поддержка хинди для анализ тональности v3. x, начиная с версии модели `2020-04-01` . 
+* Модель версии `2020-09-01` для конечной точки/лангуажес v3, которая расширяет возможности определения и точности языка.
 
 ## <a name="september-2020"></a>Сентябрь 2020 г.
 
@@ -171,11 +176,11 @@ API анализа текста v3 теперь общедоступен со с
     * Навык
 
 * Распознавание следующих типов сущностей личных сведений (только на английском языке):
-    * Человек
-    * План
+    * Модель Person
+    * Организация
     * Возраст в качестве подтипа по количеству
     * Дата в качестве подтипа в разделе DateTime
-    * Адрес электронной почты 
+    * Email 
     * Номер телефона (только США)
     * URL-адрес
     * IP-адрес
@@ -187,21 +192,21 @@ API анализа текста v3 теперь общедоступен со с
 
 #### <a name="named-entity-recognition-ner"></a>Распознавание именованных сущностей (NER)
 
-* [Новая конечная точка](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0-Preview-1/operations/EntitiesRecognitionPii) для распознавания типов сущностей личных сведений (только на английском языке)
+* [Новая конечная точка](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-Preview-2/operations/EntitiesRecognitionPii) для распознавания типов сущностей личных сведений (только на английском языке)
 
-* Разделяйте конечные точки для [распознавания сущностей](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0-Preview-1/operations/EntitiesRecognitionGeneral) и [связывания сущностей](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0-Preview-1/operations/EntitiesLinking).
+* Разделяйте конечные точки для [распознавания сущностей](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-Preview-2/operations/EntitiesRecognitionGeneral) и [связывания сущностей](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-Preview-2/operations/EntitiesLinking).
 
 * [Версия модели](concepts/model-versioning.md) `2019-10-01` , которая включает в себя:
     * Расширенное обнаружение и классификация сущностей, найденных в тексте. 
     * Распознавание следующих новых типов сущностей:
-        * Номер телефона
+        * номер телефона.
         * IP-адрес
 
 Связывание сущностей поддерживает английский и испанский языки. Языковая поддержка NER зависит от типа сущности.
 
 #### <a name="sentiment-analysis-v3-public-preview"></a>Общедоступная предварительная версия 3 анализа тональности
 
-* [Новая конечная точка](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0-Preview-1/operations/Sentiment) для анализа тональности.
+* [Новая конечная точка](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-Preview-2/operations/Sentiment) для анализа тональности.
 * [Версия модели](concepts/model-versioning.md) `2019-10-01` , которая включает в себя:
 
     * Значительные улучшения в точности и подробностях классификации и оценки текста API.

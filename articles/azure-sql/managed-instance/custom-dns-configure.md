@@ -13,10 +13,10 @@ ms.author: srbozovi
 ms.reviewer: sstein, bonova
 ms.date: 07/17/2019
 ms.openlocfilehash: 9fdd61c5799724ab3ab098584f85ce52cdd6ccf4
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91283264"
 ---
 # <a name="configure-a-custom-dns-for-azure-sql-managed-instance"></a>Настройка пользовательского DNS для Управляемый экземпляр Azure SQL
@@ -32,7 +32,7 @@ ms.locfileid: "91283264"
 > [!IMPORTANT]
 > Обновление DNS-серверов виртуальной сети не повлияет на Управляемый экземпляр SQL немедленно. Конфигурация DNS Управляемый экземпляр SQL обновляется по истечении срока действия аренды DHCP или после обновления платформы (в зависимости от того, что происходит раньше). **Пользователям рекомендуется задать конфигурацию DNS виртуальной сети перед созданием своего первого управляемого экземпляра.**
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Общие сведения см. в статье [что такое Azure SQL управляемый экземпляр?](sql-managed-instance-paas-overview.md).
 - Руководство, в котором показано, как создать управляемый экземпляр, см. в разделе [Создание управляемого экземпляра](instance-create-quickstart.md).

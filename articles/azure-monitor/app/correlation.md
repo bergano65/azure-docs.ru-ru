@@ -7,12 +7,12 @@ ms.author: lagayhar
 ms.date: 06/07/2019
 ms.reviewer: sergkanz
 ms.custom: devx-track-python, devx-track-csharp
-ms.openlocfilehash: 53ce3764d074388213a3a4be08502b09743e28cb
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.openlocfilehash: 5d8adea95708f4c7bbe3e7113c3e39e0484159ee
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91827621"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92018055"
 ---
 # <a name="telemetry-correlation-in-application-insights"></a>Корреляция данных телеметрии в Application Insights
 
@@ -34,7 +34,7 @@ Application Insights определяет [модель данных](../../azur
 
 ## <a name="example"></a>Пример
 
-Рассмотрим пример. Приложение под названием «цены на акции» показывает текущую стоимость рынка акций с помощью внешнего API, который называется «склад». В приложении "цены на акции" есть страница "акции", которая открывается веб-браузером клиента с помощью `GET /Home/Stock` . Приложение запрашивает стандартный API-интерфейс с помощью вызова HTTP `GET /api/stock/value` .
+Давайте рассмотрим пример. Приложение под названием «цены на акции» показывает текущую стоимость рынка акций с помощью внешнего API, который называется «склад». В приложении "цены на акции" есть страница "акции", которая открывается веб-браузером клиента с помощью `GET /Home/Stock` . Приложение запрашивает стандартный API-интерфейс с помощью вызова HTTP `GET /api/stock/value` .
 
 Вы можете проанализировать итоговые данные телеметрии, выполнив запрос:
 
@@ -62,7 +62,7 @@ Application Insights переходит в [консорциум W3C Trace-conte
 - `traceparent`: Содержит глобальный уникальный идентификатор операции и уникальный идентификатор вызова.
 - `tracestate`: Содержит контекст трассировки, зависящий от системы.
 
-Последняя версия пакета SDK Application Insights поддерживает протокол контекста Trace, но может потребоваться согласие на него. (Будет поддерживаться обратная совместимость с предыдущим протоколом корреляции, поддерживаемым пакетом SDK для Application Insights.)
+Последняя версия пакета SDK для Application Insights поддерживает протокол Trace-Context, но может потребоваться согласие на него. (Будет поддерживаться обратная совместимость с предыдущим протоколом корреляции, поддерживаемым пакетом SDK для Application Insights.)
 
 [Протокол HTTP корреляции, также называемый Request-ID](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/HttpCorrelationProtocol.md), является устаревшим. Этот протокол определяет два заголовка:
 
@@ -84,7 +84,7 @@ Application Insights также определяет [расширение](http
 
 ### <a name="enable-w3c-distributed-tracing-support-for-net-apps"></a>Включить поддержку распределенной трассировки W3C для приложений .NET
 
-По умолчанию Распределенная трассировка на основе W3C Трацеконтекст включена во всех последних пакетах SDK .NET Framework/. NET Core, а также обратной совместимости с устаревшим протоколом Request-ID.
+По умолчанию Распределенная трассировка на основе W3C Трацеконтекст включена во всех последних пакетах SDK .NET Framework/. NET Core, а также обратной совместимости с устаревшим протоколом Request-Id.
 
 ### <a name="enable-w3c-distributed-tracing-support-for-java-apps"></a>Включение поддержки распределенной трассировки консорциума W3C для приложений Java
 
@@ -133,34 +133,21 @@ Application Insights также определяет [расширение](http
 
 Эта функция находится в `Microsoft.ApplicationInsights.JavaScript` . Она отключена по умолчанию. Чтобы включить его, используйте `distributedTracingMode` конфигурацию. AI_AND_W3C предоставляется для обеспечения обратной совместимости со всеми устаревшими службами, оснащенными Application Insights.
 
-- **Установка NPM (пропуск при использовании программы установки фрагмента кода)**
+- **[Установка на основе NPM](./javascript.md#npm-based-setup)**
 
-  ```javascript
-  import { ApplicationInsights, DistributedTracingModes } from '@microsoft/applicationinsights-web';
-
-  const appInsights = new ApplicationInsights({ config: {
-    instrumentationKey: 'YOUR_INSTRUMENTATION_KEY_GOES_HERE',
+Добавьте следующую конфигурацию:
+  ```JavaScript
     distributedTracingMode: DistributedTracingModes.W3C
-    /* ...other configuration options... */
-  } });
-  appInsights.loadAppInsights();
   ```
   
-- **Настройка фрагмента кода (не учитывать при использовании программы установки NPM)**
+- **[Настройка на основе фрагментов кода](./javascript.md#snippet-based-setup)**
 
+Добавьте следующую конфигурацию:
   ```
-  <script type="text/javascript">
-  var sdkInstance="appInsightsSDK";window[sdkInstance]="appInsights";var aiName=window[sdkInstance],aisdk=window[aiName]||function(e){function n(e){i[e]=function(){var n=arguments;i.queue.push(function(){i[e].apply(i,n)})}}var i={config:e};i.initialize=!0;var a=document,t=window;setTimeout(function(){var n=a.createElement("script");n.src=e.url||"https://az416426.vo.msecnd.net/scripts/b/ai.2.min.js",a.getElementsByTagName("script")[0].parentNode.appendChild(n)});try{i.cookie=a.cookie}catch(e){}i.queue=[],i.version=2;for(var r=["Event","PageView","Exception","Trace","DependencyData","Metric","PageViewPerformance"];r.length;)n("track"+r.pop());n("startTrackPage"),n("stopTrackPage");var o="Track"+r[0];if(n("start"+o),n("stop"+o),!(!0===e.disableExceptionTracking||e.extensionConfig&&e.extensionConfig.ApplicationInsightsAnalytics&&!0===e.extensionConfig.ApplicationInsightsAnalytics.disableExceptionTracking)){n("_"+(r="onerror"));var s=t[r];t[r]=function(e,n,a,t,o){var c=s&&s(e,n,a,t,o);return!0!==c&&i["_"+r]({message:e,url:n,lineNumber:a,columnNumber:t,error:o}),c},e.autoExceptionInstrumented=!0}return i}
-  (
-    {
-      instrumentationKey:"INSTRUMENTATION_KEY",
       distributedTracingMode: 2 // DistributedTracingModes.W3C
-      /* ...other configuration options... */
-    }
-  );
-  window[aiName]=aisdk,aisdk.queue&&0===aisdk.queue.length&&aisdk.trackPageView({});
-  </script>
   ```
+> [!IMPORTANT] 
+> Чтобы просмотреть все конфигурации, необходимые для включения корреляции, см. [документацию по корреляции JavaScript](/azure/azure-monitor/app/javascript#enable-correlation).
 
 ## <a name="telemetry-correlation-in-opencensus-python"></a>Корреляция телеметрии в Опенценсус Python
 
@@ -170,7 +157,7 @@ Application Insights также определяет [расширение](http
 
 ### <a name="incoming-request-correlation"></a>Корреляция входящих запросов
 
-Опенценсус Python сопоставляет заголовки контекста W3C Trace и context из входящих запросов с диапазонами, созданными из самих запросов. Опенценсус сделает это автоматически с интеграцией для этих популярных платформ веб-приложений: Flask, Django и пирамидальная. Необходимо просто заполнить заголовки W3C Trace-контекста [правильным форматом](https://www.w3.org/TR/trace-context/#trace-context-http-headers-format) и отправить их вместе с запросом. Вот пример приложения Flask, которое демонстрирует это:
+Опенценсус Python сопоставляет заголовки W3C Trace-Context от входящих запросов к диапазонам, которые создаются из самих запросов. Опенценсус сделает это автоматически с интеграцией для этих популярных платформ веб-приложений: Flask, Django и пирамидальная. Необходимо просто заполнить заголовки W3C Trace-Context [правильным форматом](https://www.w3.org/TR/trace-context/#trace-context-http-headers-format) и отправить их вместе с запросом. Вот пример приложения Flask, которое демонстрирует это:
 
 ```python
 from flask import Flask

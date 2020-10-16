@@ -8,10 +8,10 @@ ms.date: 08/18/2020
 ms.author: tisande
 ms.custom: query-reference
 ms.openlocfilehash: 673e6a8cb86986ff24e3ee55589d13e8a9e4fdc5
-ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88608828"
 ---
 # <a name="datetimetotimestamp-azure-cosmos-db"></a>Датетиметотиместамп (Azure Cosmos DB)
@@ -47,7 +47,7 @@ DateTimeToTimestamp (<DateTime>)
 
 Возвращает числовое значение со знаком, равное текущему количеству миллисекунд, прошедших с момента выпуска UNIX, т. е. количество миллисекунд, истекших с 00:00:00 в четверг, 1 января 1970.
 
-## <a name="remarks"></a>Комментарии
+## <a name="remarks"></a>Remarks
 
 Датетиметотиместамп возвращает, `undefined` Если указано недопустимое значение DateTime
 
@@ -67,7 +67,7 @@ SELECT DateTimeToTimestamp("2020-07-09T23:20:13.4575530Z") AS Timestamp
 ]
 ```  
 
-Вот еще один пример:
+Еще один пример:
 
 ```sql
 SELECT DateTimeToTimestamp("2020-07-09") AS Timestamp
@@ -81,7 +81,7 @@ SELECT DateTimeToTimestamp("2020-07-09") AS Timestamp
 ]
 ```  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Функции даты и времени Azure Cosmos DB](sql-query-date-time-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)

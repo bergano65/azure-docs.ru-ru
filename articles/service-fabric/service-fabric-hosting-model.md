@@ -7,10 +7,10 @@ ms.date: 04/15/2017
 ms.author: harahma
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 5f3f6238bb72704d13fef4a7171aeaebee5f9141
-ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91708702"
 ---
 # <a name="azure-service-fabric-hosting-model"></a>Модель размещения Azure Service Fabric
@@ -174,7 +174,7 @@ Service Fabric предназначен для определенных вари
 
 Service Fabric не поддерживает подпроцессы надежных услуг и, следовательно, надежного разветвления субъекта. Примером того, почему они не поддерживаются, является [CodePackageActivationContext](/dotnet/api/system.fabric.codepackageactivationcontext?view=azure-dotnet), который нельзя использовать для регистрации неподдерживаемого подпроцесса, а токены отмены только отправляются на зарегистрированные процессы. В результате этого возникают всевозможные проблемы, такие как сбои обновлений, когда подпроцесс не закрывается после того, как родительский процесс получил токен отмены.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 [Создайте пакет приложения][a4] и подготовьте его к развертыванию.
 
 [Развертывание и удаление приложений с помощью PowerShell][a5]. В статье представлены сведения об управлении экземплярами приложений с помощью PowerShell.

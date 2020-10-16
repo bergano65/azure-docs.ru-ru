@@ -5,15 +5,15 @@ author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: conceptual
-ms.date: 08/26/2020
+ms.date: 10/08/2020
 ms.author: normesta
 ms.reviewer: jamesbak
-ms.openlocfilehash: c1e9e3d63e8a4f7fe461e2d33603da91d3d9bec6
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.openlocfilehash: fee5427981cbd2c04a5ee88500a1aee77e2e5ffd
+ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91441782"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91876130"
 ---
 # <a name="known-issues-with-azure-data-lake-storage-gen2"></a>Известные проблемы с Azure Data Lake Storage 2-го поколения
 
@@ -41,7 +41,7 @@ API больших двоичных объектов и API Data Lake Storage 2-
 
 В этом разделе описываются проблемы и ограничения, возникающие при использования API больших двоичных объектов и API Data Lake Storage 2-го поколения для обработки одних и тех же данных.
 
-* Не поддерживается одновременная запись в один экземпляр файла через API больших двоичных объектов и API Data Lake Storage. Когда выполняется запись в файл с помощью API Data Lake Storage 2-го поколения, информация о блокировках этого файла не возвращается вызовом [Get Block List](https://docs.microsoft.com/rest/api/storageservices/get-block-list) из API больших двоичных объектов. Файл можно перезаписать с помощью API Data Lake Storage 2-го поколения или API больших двоичных объектов. Это не повлияет на свойства файла.
+* Для записи в один и тот же экземпляр файла нельзя использовать интерфейсы API и Data Lake Storage API. Когда выполняется запись в файл с помощью API Data Lake Storage 2-го поколения, информация о блокировках этого файла не возвращается вызовом [Get Block List](https://docs.microsoft.com/rest/api/storageservices/get-block-list) из API больших двоичных объектов. Единственным исключением является перезапись при использовании. Вы можете перезаписать файл или большой двоичный объект с помощью любого API.
 
 * Если вы выполняете операцию [List Blobs](https://docs.microsoft.com/rest/api/storageservices/list-blobs) без указания разделителя, результаты будут содержать не только большие двоичные объекты, но и каталоги. Если вы хотите указать разделитель, используйте только прямую косую черту (`/`). Это единственный поддерживаемый разделитель.
 

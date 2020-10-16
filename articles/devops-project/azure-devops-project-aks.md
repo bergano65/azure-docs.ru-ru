@@ -8,12 +8,12 @@ ms.technology: devops-cicd
 ms.topic: tutorial
 ms.date: 03/24/2020
 author: mlearned
-ms.openlocfilehash: 7e298afa7efa6035b24f689d1163308ac6b14bff
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: af61254643e9f072995bceed1b6ecf8ecc29e5f8
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82233335"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91855458"
 ---
 # <a name="deploy-aspnet-core-apps-to-azure-kubernetes-service-with-azure-devops-starter"></a>Развертывание приложения ASP.NET Core в Службе Azure Kubernetes с помощью Azure DevOps Starter
 
@@ -24,7 +24,7 @@ Azure DevOps Starter — это упрощенный интерфейс, кот
 * автоматически создавать ресурсы Azure, например Службу Azure Kubernetes (AKS);
 * создавать и настраивать конвейер выпуска для CI/CD в Azure DevOps;
 * создавать ресурс Azure Application Insights для мониторинга.
-* позволяет выполнять мониторинг производительности рабочих нагрузок контейнера в кластере AKS с помощью [Azure Monitor для контейнеров](https://docs.microsoft.com/azure/azure-monitor/insights/container-insights-overview).
+* позволяет выполнять мониторинг производительности рабочих нагрузок контейнера в кластере AKS с помощью [Azure Monitor для контейнеров](../azure-monitor/insights/container-insights-overview.md).
 
 Выполняя данное руководство, вы сделаете следующее:
 
@@ -171,4 +171,4 @@ DevOps Starter автоматически создает и настраивае
 См. дополнительные сведения об использовании панели мониторинга Kubernetes:
 
 > [!div class="nextstepaction"]
-> [Define your multi-stage continuous deployment (CD) process](https://docs.microsoft.com/azure/aks/kubernetes-dashboard) (Определение процесса многоэтапного непрерывного развертывания (CD))
+> [Define your multi-stage continuous deployment (CD) process](../aks/kubernetes-dashboard.md) (Определение процесса многоэтапного непрерывного развертывания (CD))

@@ -11,10 +11,10 @@ ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-azurepowershell
 ms.openlocfilehash: 4105698198e6fb7f4e3d3526ff9590ebca4898f1
-ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91612172"
 ---
 # <a name="object-replication-for-block-blobs"></a>Репликация объектов для блочных BLOB-объектов
@@ -72,7 +72,7 @@ ms.locfileid: "91612172"
 
 Репликация объектов требует дополнительных затрат на чтение и запись транзакций с исходными и целевыми учетными записями, а также за исходящий трафик для репликации данных из исходной учетной записи в целевую учетную запись и расходов на чтение канала изменений обработки.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Настройка репликации объектов](object-replication-configure.md)
 - [Поддержка веб-канала изменений в хранилище BLOB-объектов Azure](storage-blob-change-feed.md)

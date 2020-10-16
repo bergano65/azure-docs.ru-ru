@@ -1,25 +1,18 @@
 ---
 title: Разработка базы данных Oracle и ее реализация в Azure | Документация Майкрософт
 description: Разработка базы данных Oracle и ее реализация в среду Azure.
-services: virtual-machines-linux
-documentationcenter: virtual-machines
 author: dbakevlar
-manager: ''
-editor: ''
-tags: azure-resource-manager
-ms.assetid: ''
 ms.service: virtual-machines-linux
 ms.topic: article
-ms.tgt_pltfrm: vm-linux
-ms.workload: infrastructure
 ms.date: 08/02/2018
 ms.author: kegorman
-ms.openlocfilehash: 70de7363634cee2790a40ecf056134cf002c762d
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.reviewer: cynthn
+ms.openlocfilehash: 9ccf7ddb44a25ec123f13b5d7b6cdb5354b63778
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91274713"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91996640"
 ---
 # <a name="design-and-implement-an-oracle-database-in-azure"></a>Разработка базы данных Oracle и ее реализация в Azure
 
@@ -49,7 +42,7 @@ ms.locfileid: "91274713"
 | **Сеть** |Локальная или глобальная сеть  |SDN (программно-конфигурируемая сеть)|
 | **Группа безопасности** |Средства ограничения портов и IP-адресов |[Группа безопасности сети (NSG)](https://azure.microsoft.com/blog/network-security-groups) |
 | **Устойчивость** |MTBF (среднее время безотказной работы) |MTTR (среднее время восстановления)|
-| **Плановое техническое обслуживание** |Установка исправлений и обновлений|[Группы доступности](../../windows/infrastructure-example.md) (установка исправлений и обновлений, управляемая Azure) |
+| **Плановое техническое обслуживание** |Установка исправлений и обновлений|[Группы доступности](/previous-versions/azure/virtual-machines/windows/infrastructure-example) (установка исправлений и обновлений, управляемая Azure) |
 | **Ресурс** |Выделенные  |Совместное использование с другими клиентами|
 | **Регионы** |Центры обработки данных |[Пары регионов](../../regions.md#region-pairs)|
 | **Память** |Сеть SAN и физические диски |[Хранилище под управлением Azure](https://azure.microsoft.com/pricing/details/managed-disks/?v=17.23h)|
@@ -230,7 +223,7 @@ SQL> @?/rdbms/admin/awrrpt.sql
 - [Настройка Oracle ASM](configure-oracle-asm.md)
 - [Настройка Oracle Data Guard](configure-oracle-dataguard.md)
 - [Реализация Oracle Golden Gate на виртуальной машине Azure под управлением Linux](configure-oracle-golden-gate.md)
-- [Создание резервных копий и восстановление базы данных Oracle Database 12c на виртуальной машине Linux в Azure](oracle-backup-recovery.md)
+- [Создание резервных копий и восстановление базы данных Oracle Database 12c на виртуальной машине Linux в Azure](./oracle-overview.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

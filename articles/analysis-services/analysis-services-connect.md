@@ -8,12 +8,12 @@ ms.date: 09/04/2020
 ms.author: owend
 ms.reviewer: minewiskan
 ms.custom: references_regions
-ms.openlocfilehash: 10e091ed58146d992d7b9c1f65b8b64f881a41b9
-ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
+ms.openlocfilehash: 93b1e9a2ea052a39e891cf9084b632f434c341df
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2020
-ms.locfileid: "91400287"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92013701"
 ---
 # <a name="connecting-to-servers"></a>Подключение к серверам
 
@@ -21,7 +21,7 @@ ms.locfileid: "91400287"
 
 ## <a name="client-libraries"></a>Клиентские библиотеки
 
-[Получение последних версий клиентских библиотек](https://docs.microsoft.com/analysis-services/client-libraries?view=azure-analysis-services-current)
+[Получение последних версий клиентских библиотек](/analysis-services/client-libraries?view=azure-analysis-services-current)
 
 Все подключения к серверу независимо от типа требуют обновленных клиентских библиотек AMO, ADOMD.NET и OLEDB для взаимодействия с сервером Analysis Services. Для SSMS, Visual Studio, Excel 2016 и более поздних версий и Power BI последние клиентские библиотеки устанавливаются или обновляются в ежемесячных выпусках. Однако в некоторых случаях последние версии могут отсутствовать в приложении. Например, если политики откладывают обновления или Microsoft 365 обновления находятся на отложенном канале.
 
@@ -79,7 +79,7 @@ ms.locfileid: "91400287"
 
 ## <a name="connect-as-a-linked-server-from-sql-server"></a>Подключиться как связанный сервер из SQL Server
 
-SQL Server может подключаться к ресурсу Azure Analysis Services как к [связанному серверу](https://docs.microsoft.com/sql/relational-databases/linked-servers/create-linked-servers-sql-server-database-engine) , указав MSOLAP в качестве поставщика источника данных. Перед настройкой соединения с связанным сервером обязательно установите последнюю версию [клиентской библиотеки MSOLAP](https://docs.microsoft.com/analysis-services/client-libraries?view=azure-analysis-services-current) (поставщика). 
+SQL Server может подключаться к ресурсу Azure Analysis Services как к [связанному серверу](/sql/relational-databases/linked-servers/create-linked-servers-sql-server-database-engine) , указав MSOLAP в качестве поставщика источника данных. Перед настройкой соединения с связанным сервером обязательно установите последнюю версию [клиентской библиотеки MSOLAP](/analysis-services/client-libraries?view=azure-analysis-services-current) (поставщика). 
 
 Для соединений связанного сервера с Azure Analysis Services необходимо создать экземпляр поставщика MSOLAP вне процесса SQL Server. При настройке параметров связанных серверов убедитесь, что **не выбран**параметр **Разрешить необрабатываемые процессы** .
 
@@ -100,5 +100,4 @@ Cannot initialize the data source object of OLE DB provider "MSOLAP" for linked 
 
 [Подключение к Excel](analysis-services-connect-excel.md)    
 [Подключение с помощью Power BI](analysis-services-connect-pbi.md)   
-[Управление службами Analysis Services](analysis-services-manage.md)   
-
+[Управление службами Analysis Services](analysis-services-manage.md)

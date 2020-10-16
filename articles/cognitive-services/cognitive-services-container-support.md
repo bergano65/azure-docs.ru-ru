@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 09/28/2020
 ms.author: aahi
 keywords: локальная среда, Docker, контейнер, Kubernetes
-ms.openlocfilehash: ed61760312ad8bada0241b0338c36ab3557e2caa
-ms.sourcegitcommit: 67e8e1caa8427c1d78f6426c70bf8339a8b4e01d
+ms.openlocfilehash: cf0ea6339de1ba6aca93a1a71990515d296f2e3a
+ms.sourcegitcommit: 090ea6e8811663941827d1104b4593e29774fa19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91665418"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91999688"
 ---
 # <a name="azure-cognitive-services-containers"></a>Контейнеры Cognitive Services Azure
 
@@ -72,7 +72,7 @@ Cognitive Services ресурсы доступны на [Microsoft Azure](https:
 | [Анализ текста][ta-containers-language] | F0, S | **Определение языка** ([изображение](https://go.microsoft.com/fwlink/?linkid=2018759&clcid=0x409)) | Решение может определить язык введенного текста (поддерживается более 120 языков) и сообщить один код языка для каждого документа, отправленного в запросе. Код языка сопряжен с показателем, указывающим степень оценки. |
 | [Анализ текста][ta-containers-sentiment] | F0, S | **Анализ тональности v3** ([изображение](https://go.microsoft.com/fwlink/?linkid=2018654&clcid=0x409)) | Анализирует необработанный текст на предмет положительной или отрицательной тональности. Эта версия анализа тональности возвращает метки тональности (например, *положительный* или *отрицательный*) для каждого документа и предложения внутри него. |
 | [Анализ текста][ta-containers-health] | F0, S | **Анализ текста для работоспособности** | Извлеките и пометка медицинских данных из неструктурированного текста клинической практике. |
-| [Пространственный анализ][spa-containers] | S0 | **Пространственный анализ** | Извлеките и пометка медицинских данных из неструктурированного текста клинической практике. |
+| [Пространственный анализ][spa-containers] | S0 | **Пространственный анализ** | Анализирует потоковую передачу видео в реальном времени, чтобы понять пространственные отношения между людьми, их движением и взаимодействием с объектами в физических средах. |
 
 <!--
 |[Personalizer](https://go.microsoft.com/fwlink/?linkid=2083923&clcid=0x409) |F0, S0|**Personalizer** ([image](https://go.microsoft.com/fwlink/?linkid=2083928&clcid=0x409))|Azure Personalizer is a cloud-based API service that allows you to choose the best experience to show to your users, learning from their real-time behavior.|
@@ -91,7 +91,7 @@ Cognitive Services ресурсы доступны на [Microsoft Azure](https:
 
 [!INCLUDE [Container repositories and images](containers/includes/cognitive-services-container-images.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Прежде чем использовать контейнеры Azure Cognitive Services, необходимо выполнить указанные ниже предварительные требования.
 

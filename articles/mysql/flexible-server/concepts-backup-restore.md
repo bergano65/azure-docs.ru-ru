@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 09/21/2020
 ms.openlocfilehash: a72552d8654a45d1ff4c1890c8086d43d7bd801d
-ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91756540"
 ---
 # <a name="backup-and-restore-in-azure-database-for-mysql-flexible-server-preview"></a>Резервное копирование и восстановление в базе данных Azure для гибкого сервера MySQL (Предварительная версия)
@@ -88,7 +88,7 @@ ms.locfileid: "91756540"
 -   Убедитесь, что имеются соответствующие имена входа и разрешения уровня базы данных.
 -   Настройте оповещения соответствующим образом.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 -   Сведения о [непрерывности бизнес-процессов](./concepts-business-continuity.md)
 -   Сведения о [высокой доступности с избыточностью зоны](./concepts-high-availability.md)

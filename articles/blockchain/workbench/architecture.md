@@ -5,10 +5,10 @@ ms.date: 09/05/2019
 ms.topic: conceptual
 ms.reviewer: brendal
 ms.openlocfilehash: 1fff70ef2eeb1dc27d33769fd48fe5923f56717b
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87049177"
 ---
 # <a name="azure-blockchain-workbench-architecture"></a>Архитектура Azure Blockchain Workbench
@@ -99,7 +99,7 @@ Blockchain Workbench автоматически развертывает два 
 
 Это хранилище вне сети обеспечивает возможность корпоративным организациям запрашивать данные в SQL, а не в блокчейн-реестре. Кроме того, стандартизировав стандартную схему, которая не зависит от стеков технологии блокчейн, хранилище вне сети позволяет повторно использовать отчеты и другие артефакты по нескольким проектам, сценариям и организациям.
 
-## <a name="azure-storage"></a>Служба хранилища Azure
+## <a name="azure-storage"></a>Хранилище Azure
 
 Azure Storage используется для хранения контрактов и метаданных, связанных с контрактами.
 

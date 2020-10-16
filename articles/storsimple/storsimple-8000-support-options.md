@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 08/13/2019
 ms.author: alkohli
 ms.openlocfilehash: 55cc3049e437cc18eac6dc537de3ee1c0d894c23
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87070337"
 ---
 # <a name="storsimple-solution-support"></a>Поддержка решения StorSimple
@@ -111,7 +111,7 @@ ms.locfileid: "87070337"
 
 
 
-*<text>* Покрытие уровня "Премиум" недоступно во всех расположениях. Перед покупкой поддержки StorSimple Premium обратитесь в корпорацию Майкрософт по адресу Сссупопс \@ Microsoft.com.*
+*<text> * Покрытие уровня "Премиум" недоступно во всех расположениях. Перед покупкой поддержки StorSimple Premium обратитесь в корпорацию Майкрософт по адресу Сссупопс \@ Microsoft.com.*
 
 ***Устройство StorSimple должно быть развернуто в регионе, в котором клиент имеет поддержку Premier, чтобы получить возможность бесплатного обновления до поддержки StorSimple уровня "Премиум".*
 

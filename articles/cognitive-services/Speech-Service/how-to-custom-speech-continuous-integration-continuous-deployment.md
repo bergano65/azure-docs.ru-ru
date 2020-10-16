@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 06/09/2020
 ms.author: kaprochi
 ms.openlocfilehash: 46bdc314e7aa0002937e808d7982f43c8e725d6f
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91357477"
 ---
 # <a name="cicd-for-custom-speech"></a>CI/CD для набора средств "Пользовательское распознавание речи"
@@ -88,7 +88,7 @@ ms.locfileid: "91357477"
 - Выполните автоматическую проверку точности, чтобы установить [частоту погрешности слов](how-to-custom-speech-evaluate-data.md#what-is-word-error-rate-wer) в модели (WER). Сохраните результаты теста в большом двоичном объекте Azure.
 - Выполните рабочий процесс CD, чтобы создать конечную точку после улучшения WER.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о DevOps с помощью речи:
 

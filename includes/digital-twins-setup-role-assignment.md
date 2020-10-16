@@ -6,10 +6,10 @@ ms.topic: include
 ms.date: 7/17/2020
 ms.author: baanders
 ms.openlocfilehash: 6f43a55b3a409a84e3baf99dae24af7616ea4385
-ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87408371"
 ---
 Azure Digital двойников использует [Azure Active Directory (Azure AD)](../articles/active-directory/fundamentals/active-directory-whatis.md) для управления доступом на основе РОЛЕЙ (RBAC). Это означает, что прежде чем пользователь сможет выполнять вызовы плоскости данных в ваш экземпляр Azure Digital двойников, ему нужно назначить роль с соответствующими разрешениями.

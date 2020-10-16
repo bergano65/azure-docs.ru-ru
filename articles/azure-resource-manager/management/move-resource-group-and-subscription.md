@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 09/15/2020
 ms.custom: devx-track-azurecli
 ms.openlocfilehash: cd05fe045532ee1b1f1fb88e502d786daabf9365
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91319560"
 ---
 # <a name="move-resources-to-a-new-resource-group-or-subscription"></a>Перемещение ресурсов в новую группу ресурсов или подписку
@@ -178,11 +178,11 @@ Authorization: Bearer <access-token>
 
 Чтобы включить параметр переместить, выберите ресурсы, которые требуется переместить. Чтобы выбрать все ресурсы, установите флажок в верхней части списка. Или выберите ресурсы по отдельности. После выбора ресурсов параметр перемещение становится доступным.
 
-:::image type="content" source="./media/move-resource-group-and-subscription/select-resources.png" alt-text="Выбор ресурсов":::
+:::image type="content" source="./media/move-resource-group-and-subscription/select-resources.png" alt-text="параметр MOVE отключен":::
 
 Нажмите кнопку **переместить** .
 
-:::image type="content" source="./media/move-resource-group-and-subscription/move-options.png" alt-text="Параметры перемещения":::
+:::image type="content" source="./media/move-resource-group-and-subscription/move-options.png" alt-text="параметр MOVE отключен":::
 
 Эта кнопка предоставляет три варианта:
 
@@ -194,11 +194,11 @@ Authorization: Bearer <access-token>
 
 Выберите целевую группу ресурсов. Подтвердите обновление сценариев для этих ресурсов и нажмите кнопку **ОК**. Если выбрано перемещение в новую подписку, необходимо также выбрать целевую подписку.
 
-:::image type="content" source="./media/move-resource-group-and-subscription/move-destination.png" alt-text="Выбор назначения":::
+:::image type="content" source="./media/move-resource-group-and-subscription/move-destination.png" alt-text="параметр MOVE отключен":::
 
 После проверки возможности перемещения ресурсов вы увидите уведомление о том, что операция перемещения выполняется.
 
-:::image type="content" source="./media/move-resource-group-and-subscription/move-notification.png" alt-text="уведомлений":::
+:::image type="content" source="./media/move-resource-group-and-subscription/move-notification.png" alt-text="параметр MOVE отключен":::
 
 После ее завершения отобразится уведомление о результате.
 
@@ -297,6 +297,6 @@ POST https://management.azure.com/subscriptions/{source-subscription-id}/resourc
 
 Сейчас не все ресурсы в службе поддержки Azure перемещаются. Список ресурсов, поддерживающих перемещение, см. в разделе [Поддержка операций перемещения для ресурсов](move-support-resources.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Список ресурсов, которые поддерживают перемещение, см. в разделе [Поддержка операций перемещения для ресурсов](move-support-resources.md).

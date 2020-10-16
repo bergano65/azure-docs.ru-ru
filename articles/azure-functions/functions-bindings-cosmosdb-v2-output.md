@@ -7,10 +7,10 @@ ms.date: 02/24/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python
 ms.openlocfilehash: 6a75b0c5b30f60afe51eebc395d21b7c05e8af7f
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88212761"
 ---
 # <a name="azure-cosmos-db-output-binding-for-azure-functions-2x-and-higher"></a>Выходная привязка Azure Cosmos DB для функций Azure 2. x и более поздних версий
@@ -569,7 +569,7 @@ public String cosmosDbQueryById(
 |**type**     | Недоступно | Нужно задать значение `cosmosDB`.        |
 |**direction**     | Недоступно | Нужно задать значение `out`.         |
 |**name**     | Недоступно | Имя параметра привязки, представляющего документ в функции.  |
-|**Имя** | **DatabaseName**|База данных, содержащая коллекцию, в которой создается документ.     |
+|**databaseName** | **DatabaseName**|База данных, содержащая коллекцию, в которой создается документ.     |
 |**collectionName** |**CollectionName**  | Имя коллекции, в которой создается документ. |
 |**createIfNotExists**  |**CreateIfNotExists**    | Логическое значение, указывающее, будет ли создана коллекция при ее отсутствии. Значение по умолчанию — *false*, так как коллекции создаются с использованием зарезервированной пропускной способности, с которой связаны ценовые требования. Дополнительные сведения см. на [странице с расценками](https://azure.microsoft.com/pricing/details/cosmos-db/).  |
 |**partitionKey**|**PartitionKey** |Если `CreateIfNotExists` имеет значение true, он определяет путь к ключу раздела для созданной коллекции.|
@@ -589,7 +589,7 @@ public String cosmosDbQueryById(
 
 ## <a name="exceptions-and-return-codes"></a>Исключения и коды возврата
 
-| Привязка | Ссылка |
+| Привязка | Справочник |
 |---|---|
 | Cosmos DB | [Коды ошибок Cosmos DB](/rest/api/cosmos-db/http-status-codes-for-cosmosdb) |
 
@@ -618,7 +618,7 @@ public String cosmosDbQueryById(
 |---------|---------|---------|
 |GatewayMode|Шлюз|Режим подключения, используемый функцией при подключении к службе Azure Cosmos DB. Возможные значения: `Direct` и `Gateway`.|
 |Протокол|Https|Протокол подключения, используемый функцией при подключении к службе Azure Cosmos DB.  [Описание обоих режимов](../cosmos-db/performance-tips.md#networking)|
-|leasePrefix|н/д|Префикс аренды для использования во всех функциях приложения.|
+|leasePrefix|Недоступно|Префикс аренды для использования во всех функциях приложения.|
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 

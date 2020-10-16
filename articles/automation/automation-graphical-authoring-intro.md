@@ -6,10 +6,10 @@ ms.subservice: process-automation
 ms.date: 03/16/2018
 ms.topic: conceptual
 ms.openlocfilehash: 161272fe35ee9ea1e0880b991273e5d1a79eafb4
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90987324"
 ---
 # <a name="author-graphical-runbooks-in-azure-automation"></a>Создание графических модулей Runbook в службе автоматизации Azure
@@ -91,11 +91,11 @@ ms.locfileid: "90987324"
 
 Включая для действия режим повтора, можно задать условие и значение задержки. Задержка — это время (в секундах или минутах) ожидания модуля runbook перед повторным выполнением действия. Если задержка не указана, действие выполняется снова сразу же после завершения.
 
-:::image type="content" source="media/automation-graphical-authoring-intro/retry-delay.png" alt-text="Снимок экрана: включение параметров функции "включить повторы".":::
+:::image type="content" source="media/automation-graphical-authoring-intro/retry-delay.png" alt-text="Снимок экрана: включение параметров функции &quot;включить повторы&quot;.":::
 
 Условие повтора — это выражение PowerShell, которое вычисляется после каждого выполнения действия. Если выражение возвращает значение True, действие выполняется повторно. Если выражение возвращает значение False, действие не выполняется повторно, а модуль Runbook переходит к следующему действию.
 
-:::image type="content" source="media/automation-graphical-authoring-intro/retry-condition.png" alt-text="Снимок экрана, показывающий повторную попытку до наступления этого условия, и примеры выражений PowerShell, которые могут использоваться в условии повтора.":::
+:::image type="content" source="media/automation-graphical-authoring-intro/retry-condition.png" alt-text="Снимок экрана: включение параметров функции &quot;включить повторы&quot;.":::
 
 В качестве условия повтора может использоваться переменная с именем `RetryData`, которая предоставляет доступ к сведениям о попытках выполнить действие. У этой переменной есть свойства, приведенные в таблице ниже.
 

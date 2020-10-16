@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: v-umha
 ms.openlocfilehash: c66d3d6fd3ee0bcba01db61183f40cd3ccf3f39d
-ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88797944"
 ---
 # <a name="troubleshoot-azure-farmbeats"></a>Устранение неполадок в Azure FarmBeats
@@ -327,26 +327,36 @@ ms.locfileid: "88797944"
 > [!NOTE]
 > Чтобы просмотреть теги служб в группе ресурсов, щелкните "изменить столбцы" и добавьте "Теги" в представление группы ресурсов.
 
-:::image type="content" source="./media/troubleshoot-Azure-farmbeats/weather-log-1.png" alt-text="Проект FarmBeats":::
+:::image type="content" source="./media/troubleshoot-Azure-farmbeats/weather-log-1.png" alt-text="Проект FarmBeats&quot;:::
 
-3. На странице "Обзор" фабрики данных щелкните " **создать и отслеживать**". В браузере откроется новая вкладка. Щелкните **монитор**
+3. На странице &quot;Обзор&quot; фабрики данных щелкните " **создать и отслеживать**". В браузере откроется новая вкладка. Щелкните **монитор**
 
-:::image type="content" source="./media/troubleshoot-Azure-farmbeats/weather-log-2.png" alt-text="Проект FarmBeats":::
+:::image type="content" source="./media/troubleshoot-Azure-farmbeats/weather-log-2.png" alt-text="Проект FarmBeats&quot;:::
+
+3. На странице &quot;Обзор&quot; фабрики данных щелкните ":::
 
 4. Вы увидите список запусков конвейеров, которые являются частью выполнения задания weather. Щелкните задание, для которого требуется получить журналы.
  
-:::image type="content" source="./media/troubleshoot-Azure-farmbeats/weather-log-3.png" alt-text="Проект FarmBeats":::
+:::image type="content" source="./media/troubleshoot-Azure-farmbeats/weather-log-3.png" alt-text="Проект FarmBeats&quot;:::
+
+3. На странице &quot;Обзор&quot; фабрики данных щелкните ":::
 
 5. На странице Обзор конвейера вы увидите список запусков действий. Запишите идентификаторы запуска действий, для которых необходимо вести журнал.
  
-:::image type="content" source="./media/troubleshoot-Azure-farmbeats/weather-log-4.png" alt-text="Проект FarmBeats":::
+:::image type="content" source="./media/troubleshoot-Azure-farmbeats/weather-log-4.png" alt-text="Проект FarmBeats&quot;:::
+
+3. На странице &quot;Обзор&quot; фабрики данных щелкните ":::
 
 6. Вернитесь в группу ресурсов Фармбеатс в портал Azure и щелкните учетную запись хранения с именем **датахублогс-XXXX** .
  
-:::image type="content" source="./media/troubleshoot-Azure-farmbeats/weather-log-5.png" alt-text="Проект FarmBeats":::
+:::image type="content" source="./media/troubleshoot-Azure-farmbeats/weather-log-5.png" alt-text="Проект FarmBeats&quot;:::
+
+3. На странице &quot;Обзор&quot; фабрики данных щелкните ":::
 
 7. Щелкните **контейнеры**  ->  **adfjobs**. В поле поиска введите идентификатор запуска задания, записанный на шаге 5 выше.
  
-:::image type="content" source="./media/troubleshoot-Azure-farmbeats/weather-log-6.png" alt-text="Проект FarmBeats":::
+:::image type="content" source="./media/troubleshoot-Azure-farmbeats/weather-log-6.png" alt-text="Проект FarmBeats&quot;:::
+
+3. На странице &quot;Обзор&quot; фабрики данных щелкните ":::
 
 8. Результат поиска будет содержать папку с журналами, относящимися к заданию. Скачайте журналы и отправьте их farmbeatssupport@microsoft.com для получения помощи в отладке проблемы.

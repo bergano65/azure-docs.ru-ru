@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/12/2019
 ms.author: jeedes
-ms.openlocfilehash: 155675d6d0f6026c528be66f9a67a21fe65d00ba
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: f41312521202f406c3826880f345e0bbe7600bd3
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88555191"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91817217"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-filecloud"></a>Учебник. Интеграция Azure Active Directory с FileCloud
 
@@ -130,19 +130,19 @@ ms.locfileid: "88555191"
 
 2. В левой панели навигации щелкните **Settings**(Параметры). 
    
-    ![Настройка единого входа на стороне приложения](./media/filecloud-tutorial/tutorial_filecloud_000.png)
+    ![Снимок экрана: выделенный элемент "Параметры" в левой панели навигации.](./media/filecloud-tutorial/tutorial_filecloud_000.png)
 
 3. Щелкните вкладку **SSO** (Единый вход) в разделе "Settings" (Параметры). 
    
-    ![Настройка единого входа на стороне приложения](./media/filecloud-tutorial/tutorial_filecloud_001.png)
+    ![Снимок экрана: раздел "Параметры" с выбранной вкладкой "Единый вход".](./media/filecloud-tutorial/tutorial_filecloud_001.png)
 
 4. На панели **Single Sign On (SSO) Settings** (Параметры единого входа) для параметра **Default SSO Type** (Тип единого входа по умолчанию) выберите значение **SAML**.
    
-    ![Настройка единого входа на стороне приложения](./media/filecloud-tutorial/tutorial_filecloud_002.png)
+    ![Снимок экрана: панель "Параметры единого входа" с выбранным параметром "SAML".](./media/filecloud-tutorial/tutorial_filecloud_002.png)
 
 5. В текстовое поле **IdP End Point URL** (URL-адрес конечной точки IdP) вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
 
-    ![Настройка единого входа на стороне приложения](./media/filecloud-tutorial/tutorial_filecloud_003.png)
+    ![Снимок экрана: раздел "Параметры SAML" с выделенным параметром "URL-адрес конечной точки IdP".](./media/filecloud-tutorial/tutorial_filecloud_003.png)
 
 6. Откройте скачанный файл метаданных в Блокноте, скопируйте его содержимое в буфер обмена, а затем вставьте в текстовое поле **IdP Meta Data** (Метаданные IdP) на панели **SAML Settings** (Параметры SAML).
 

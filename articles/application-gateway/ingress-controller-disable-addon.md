@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 06/10/2020
 ms.author: caya
 ms.openlocfilehash: fe4da0435731c536a723cb2cb43428166456360b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84807953"
 ---
 # <a name="disable-and-re-enable-agic-add-on-for-your-aks-cluster"></a>Отключение и повторное включение надстройки АГИК для кластера AKS
@@ -40,5 +40,5 @@ appgwId=$(az network application-gateway show -n <application-gateway-name> -g <
 az aks enable-addons -n <AKS-cluster-name> -g <AKS-cluster-resource-group> -a ingress-appgw --appgw-id $appgwId
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о том, как включить надстройку АГИК с помощью существующего шлюза приложений и кластера AKS, см. в разделе [агик Add-in серия статей Brownfield Deployment](tutorial-ingress-controller-add-on-existing.md).

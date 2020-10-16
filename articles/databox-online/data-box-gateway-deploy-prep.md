@@ -8,12 +8,12 @@ ms.subservice: gateway
 ms.topic: tutorial
 ms.date: 06/24/2019
 ms.author: alkohli
-ms.openlocfilehash: 8a8b53af6e23b2dd0ff011a6bfbf99a1da427063
-ms.sourcegitcommit: cd0a1ae644b95dbd3aac4be295eb4ef811be9aaa
+ms.openlocfilehash: 1b49ce9f3b04a31e3f062c81f63d3e639a09c6bd
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88611642"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91741947"
 ---
 # <a name="tutorial-prepare-to-deploy-azure-data-box-gateway"></a>Руководство по Подготовка Шлюза Azure Data Box к развертыванию
 
@@ -120,7 +120,7 @@ ms.locfileid: "88611642"
 
 Создание ресурса займет несколько минут. После успешного создания и развертывания ресурса вы получите уведомление. Выберите **Перейти к ресурсу**.
 
-![Просмотр сведений о ресурсе Шлюза Data Box](media/data-box-gateway-deploy-prep/data-box-gateway-resource2.png)
+![Просмотр сведений о ресурсе Шлюза Data Box (2)](media/data-box-gateway-deploy-prep/data-box-gateway-resource2.png)
 
 ## <a name="download-the-virtual-device-image"></a>Скачивание образа виртуального устройства.
 

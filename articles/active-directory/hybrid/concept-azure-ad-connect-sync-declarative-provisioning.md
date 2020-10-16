@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 59dc94e37dfa1ef8b0b079bf5d78d0504e0cb8c7
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91313626"
 ---
 # <a name="azure-ad-connect-sync-understanding-declarative-provisioning"></a>Служба синхронизации Azure AD Connect: общие сведения о декларативной подготовке
@@ -151,7 +151,7 @@ ms.locfileid: "91313626"
 В рамках этого сценария необходимо изменить область правил синхронизации, что, в свою очередь, позволит использовать для объектов источника разные правила синхронизации. Таким образом, можно определить другие значения приоритета.  
 ![Несколько объектов, присоединенных к одному объекту метавселенной](./media/concept-azure-ad-connect-sync-declarative-provisioning/multiple2.png)  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Дополнительные сведения о языке выражений см. в статье [Служба синхронизации Azure AD Connect: общие сведения о выражениях декларативной подготовки](concept-azure-ad-connect-sync-declarative-provisioning-expressions.md).
 * Примеры стандартного использования декларативной подготовки см. в статье [Службы синхронизации Azure AD Connect: рекомендации по изменению конфигурации по умолчанию](concept-azure-ad-connect-sync-default-configuration.md).
 * Инструкции по практическим изменениям с помощью декларативной подготовки см. в статье [Службы синхронизации Azure AD Connect: изменение конфигурации по умолчанию](how-to-connect-sync-change-the-configuration.md).

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 08/06/2019
 ms.author: jeedes
-ms.openlocfilehash: 9888ae6f7d28f6fef5901ea246d71d7b9ae9f78f
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 4fcc9ab0811c447cebff825a0c45c9dac877219c
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88530619"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91761844"
 ---
 # <a name="tutorial-integrate-carbonite-endpoint-backup-with-azure-active-directory"></a>Руководство по интеграции Carbonite Endpoint Backup с Azure Active Directory
 
@@ -127,21 +127,21 @@ ms.locfileid: "88530619"
 
 3. Если вы хотите настроить Carbonite Endpoint Backup вручную, откройте новое окно веб-браузера и войдите на свой корпоративный сайт Carbonite Endpoint Backup с правами администратора и выполните следующие действия.
 
-4. Щелкните **Company** (Компания) в левой области.
+4. Щелкните **Company** (Организация) в левой области.
 
-    ![Настройка Carbonite Endpoint Backup ](media/carbonite-endpoint-backup-tutorial/configure1.png)
+    ![Снимок экрана, на котором показан сайт Carbonite Endpoint с выбранным элементом "Company" (Организация)](media/carbonite-endpoint-backup-tutorial/configure1.png)
 
 5. Щелкните **Single sign-on** (Единый вход).
 
-    ![Настройка Carbonite Endpoint Backup ](media/carbonite-endpoint-backup-tutorial/configure2.png)
+    ![Снимок экрана, на котором показана страница "Company" (Организация) с выбранным параметром "Single sign-on" (Единый вход)](media/carbonite-endpoint-backup-tutorial/configure2.png)
 
 6. Щелкните **Enable** (Включить), а затем выберите **Edit settings** (Изменить параметры), чтобы выполнить настройку.
 
-    ![Настройка Carbonite Endpoint Backup ](media/carbonite-endpoint-backup-tutorial/configure3.png)
+    ![Снимок экрана, на котором показана вкладка "Single sign-on" (Единый вход) с выбранными параметрами" Enable" (Включить) и "Edit settings" (Изменить параметры)](media/carbonite-endpoint-backup-tutorial/configure3.png)
 
 7. На странице параметров **единого входа** сделайте следующее:
 
-    ![Настройка Carbonite Endpoint Backup ](media/carbonite-endpoint-backup-tutorial/configure4.png)
+    ![Снимок экрана, на котором показана вкладка "Single sign-on" (Единый вход) с информацией, описанной на этом шаге](media/carbonite-endpoint-backup-tutorial/configure4.png)
 
     1. В текстовое поле **Identity provider name** (Имя поставщика удостоверений) вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
 
@@ -187,11 +187,11 @@ ms.locfileid: "88530619"
 
 1. Щелкните **Users** (Пользователи) в области слева, а затем выберите **Add user** (Добавить пользователя).
 
-    ![Добавление пользователя в Carbonite Endpoint Backup](media/carbonite-endpoint-backup-tutorial/adduser1.png)
+    ![Снимок экрана, на котором показана страница Carbonite Endpoint с последовательно выбранными элементами "Users" (Пользователи) и "Add user" (Добавить пользователя)](media/carbonite-endpoint-backup-tutorial/adduser1.png)
 
 1. На странице **добавления пользователя** сделайте следующее:
 
-    ![Добавление пользователя в Carbonite Endpoint Backup](media/carbonite-endpoint-backup-tutorial/adduser2.png)
+    ![Снимок экрана, на котором показана страница "Add user" (Добавление пользователя), где можно выполнить описанные здесь действия](media/carbonite-endpoint-backup-tutorial/adduser2.png)
 
     1. Укажите **адрес электронной почты**, **имя** и **фамилию** пользователя и предоставьте ему необходимые разрешения согласно требованиям организации.
 

@@ -4,10 +4,10 @@ description: Создание оповещений Помощника по Azure
 ms.topic: article
 ms.date: 09/09/2019
 ms.openlocfilehash: 837f12a12e532902ee76e345afa430f758f79c10
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90973648"
 ---
 # <a name="create-azure-advisor-alerts-on-new-recommendations-using-the-azure-portal"></a>Создание оповещений помощника Azure для новых рекомендаций с помощью портал Azure 
@@ -187,11 +187,11 @@ ms.locfileid: "90973648"
 
 1. На **портале**выберите **Помощник по Azure**.
 
-    :::image type="content" source="./media/advisor-alerts/create1.png" alt-text="Снимок экрана: меню "портал Azure", в котором выбран помощник по Azure.":::
+    :::image type="content" source="./media/advisor-alerts/create1.png" alt-text="Снимок экрана с разделом сведений о предупреждении.":::
 
 2. В разделе **мониторинг** в меню слева выберите **оповещения**.
 
-    :::image type="content" source="./media/advisor-alerts/create2.png" alt-text="Снимок экрана: меню портал Azure, в котором отображаются выбранные оповещения.":::
+    :::image type="content" source="./media/advisor-alerts/create2.png" alt-text="Снимок экрана с разделом сведений о предупреждении.":::
 
 3. Чтобы изменить оповещение, щелкните имя оповещения, чтобы открыть оповещение и изменить поля, которые нужно изменить.
 

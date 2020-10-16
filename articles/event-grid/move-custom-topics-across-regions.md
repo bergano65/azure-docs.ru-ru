@@ -5,10 +5,10 @@ ms.topic: how-to
 ms.custom: subject-moving-resources
 ms.date: 08/28/2020
 ms.openlocfilehash: d0656a4f6ec1c7431cf7111f786b0f1d779166e3
-ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89145351"
 ---
 # <a name="move-azure-event-grid-custom-topics-to-another-region"></a>Перемещение пользовательских разделов из службы "Сетка событий Azure" в другой регион
@@ -29,7 +29,7 @@ ms.locfileid: "89145351"
 - Выполните инструкции из [краткого руководства: перенаправление пользовательских событий в веб-конечную точку](custom-event-quickstart-portal.md) в исходном регионе. Выполните этот шаг, чтобы выполнить тестирование шагов в этой статье. 
 - Убедитесь, что служба "Сетка событий" доступна в целевом регионе. См. страницу [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=event-grid&regions=all).
 
-## <a name="prepare"></a>Подготовка
+## <a name="prepare"></a>Подготовка.
 Чтобы приступить к работе, экспортируйте шаблон диспетчер ресурсов для пользовательского раздела. 
 
 1. Войдите на [портал Azure](https://portal.azure.com).
@@ -38,22 +38,9 @@ ms.locfileid: "89145351"
     :::image type="content" source="./media/move-custom-topics-across-regions/search-topics.png" alt-text="Поиск и выбор разделов сетки событий":::
 3. Выберите **раздел** , который необходимо экспортировать в шаблон диспетчер ресурсов. 
 
-    :::image type="content" source="./media/move-custom-topics-across-regions/select-custom-topic.png" alt-text="Выберите пользовательский раздел":::   
-4. На странице **раздела "Сетка событий** " выберите **Экспорт шаблона** в разделе **Параметры** в меню слева и нажмите кнопку **скачать** на панели инструментов. 
+    :::image type="content" source="./media/move-custom-topics-across-regions/select-custom-topic.png" alt-text="Поиск и выбор разделов сетки событий" выберите **Экспорт шаблона** в разделе **Параметры** в меню слева и нажмите кнопку **скачать** на панели инструментов. 
 
-    :::image type="content" source="./media/move-custom-topics-across-regions/export-template-download.png" alt-text="Экспорт шаблона — > скачивание":::   
-
-    > [!IMPORTANT]
-    > В шаблон экспортируется только раздел. Подписки для раздела не экспортируются. Поэтому необходимо создать подписки для раздела после перемещения раздела в целевой регион. 
-5. Выберите **ZIP** -файл, скачанный с портала, и распакуйте его в выбранную папку. Этот ZIP-файл содержит шаблонные и параметры JSON-файлы. 
-1. Откройте **template.js** в любом редакторе по своему усмотрению. 
-8. Обновите `location` ресурс **раздела** до целевого региона или расположения. Чтобы получить коды расположения, см. раздел [расположения Azure](https://azure.microsoft.com/global-infrastructure/locations/). Код для региона — это имя региона без пробелов, например, `West US` равно `westus` .
-
-    ```json
-    "type": "Microsoft.EventGrid/topics",
-    "apiVersion": "2020-06-01",
-    "name": "[parameters('topics_mytopic0130_name')]",
-    "location": "westus"
+    :::image type="content" source="./media/move-custom-topics-across-regions/export-template-download.png" alt-text="Поиск и выбор разделов сетки событий"
     ```
 1. **Сохраните** шаблон. 
 
@@ -63,7 +50,7 @@ ms.locfileid: "89145351"
 1. В портал Azure выберите **создать ресурс**.
 2. В **поле Поиск в Marketplace**введите **шаблон развертывание**и нажмите клавишу **Ввод**.
 3. Выберите **шаблоны развертывания**.
-4. Нажмите кнопку **Создать**.
+4. Нажмите кнопку **создания**.
 5. Выберите **Создать собственный шаблон в редакторе**.
 6. Выберите **загрузить файл**и следуйте инструкциям по загрузке **template.jsв** файл, скачанный в предыдущем разделе.
 7. Нажмите кнопку **сохранить** , чтобы сохранить шаблон. 
@@ -74,14 +61,14 @@ ms.locfileid: "89145351"
     1. В поле **имя раздела**введите новое имя раздела. 
     1. В нижней части страницы выберите **Review + create** (Проверить и создать). 
     
-        :::image type="content" source="./media/move-custom-topics-across-regions/deploy-template.png" alt-text="Пользовательское развертывание":::
+        :::image type="content" source="./media/move-custom-topics-across-regions/deploy-template.png" alt-text="Поиск и выбор разделов сетки событий":::
     1. На странице **Проверка и создание** проверьте параметры и нажмите кнопку **создать**. 
 
 ## <a name="verify"></a>Проверка
 
 1. После успешного развертывания выберите **Перейти к ресурсу**. 
 
-    :::image type="content" source="./media/move-custom-topics-across-regions/navigate-custom-topic.png" alt-text="Перейти к ресурсу":::
+    :::image type="content" source="./media/move-custom-topics-across-regions/navigate-custom-topic.png" alt-text="Поиск и выбор разделов сетки событий":::
 1. Убедитесь, что отображается страница **раздела сетки событий** для пользовательского раздела.   
 1. Выполните действия, описанные в разделе [Маршрутизация пользовательских событий в веб-конечную точку](custom-event-quickstart-portal.md#send-an-event-to-your-topic) , чтобы отправить события в раздел. Убедитесь, что вызывается обработчик событий веб-перехватчика. 
 
@@ -102,7 +89,7 @@ ms.locfileid: "89145351"
 2. Выберите группу ресурсов для удаления и щелкните **Удалить** на панели инструментов. 
 3. На странице Подтверждение введите имя группы ресурсов и выберите **Удалить**.  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Вы узнали, как переместить пользовательский раздел сетки событий из одного региона в другой. Сведения о перемещении системных разделов, доменов и пространств имен партнеров в регионах см. в следующих статьях.
 
 - [Перемещение системных разделов по регионам](move-system-topics-across-regions.md). 

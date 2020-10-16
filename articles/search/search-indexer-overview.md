@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 09/25/2020
 ms.custom: fasttrack-edit
 ms.openlocfilehash: 7f6be959bf09cbe20bb37dfa3d17d64467758bd6
-ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91397901"
 ---
 # <a name="indexers-in-azure-cognitive-search"></a>Indexers in Azure Cognitive Search (Индексаторы в службе "Когнитивный поиск Azure")
@@ -88,7 +88,7 @@ ms.locfileid: "91397901"
 
 На следующем рисунке показан пример представления [сеанса отладки](cognitive-search-debug-session.md) индексатора этапов индексатора: взлом документов, сопоставления полей, выполнение набора навыков и сопоставления полей вывода.
 
-:::image type="content" source="media/search-indexer-overview/sample-debug-session.png" alt-text="Пример сеанса отладки" lightbox="media/search-indexer-overview/sample-debug-session.png":::
+:::image type="content" source="media/search-indexer-overview/sample-debug-session.png" alt-text="Этапы индексатора" lightbox="media/search-indexer-overview/sample-debug-session.png":::
 
 ## <a name="basic-configuration-steps"></a>Основные этапы настройки
 
@@ -167,7 +167,7 @@ api-key: [Search service admin key]
 
 История выполнения включает не более 50 последних завершенных выполнений, которые сортируются в обратном хронологическом порядке (то есть в ответе первым отображается последнее выполнение).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Теперь, когда вы ознакомились с основной идеей, можно переходить к изучению требований и задач, связанных с каждым типом источника данных.
 
 * [База данных SQL Azure, SQL Управляемый экземпляр или SQL Server на виртуальной машине Azure](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)

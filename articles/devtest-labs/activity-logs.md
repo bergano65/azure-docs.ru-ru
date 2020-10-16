@@ -4,10 +4,10 @@ description: В этой статье приведены инструкции п
 ms.topic: how-to
 ms.date: 07/10/2020
 ms.openlocfilehash: 24b5eb25f1c8c9044ad6e77545381a43a11714f9
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87097853"
 ---
 # <a name="view-activity-logs-for-labs-in-azure-devtest-labs"></a>Просмотр журналов действий для лабораторий в Azure DevTest Labs 
@@ -27,24 +27,24 @@ ms.locfileid: "87097853"
     :::image type="content" source="./media/activity-logs/configuration-policies-link.png" alt-text="В меню слева выберите Конфигурация и политики.":::
 1. На странице **Конфигурация и политики** в меню слева в разделе **Управление**выберите пункт **Журнал действий** . Вы должны увидеть записи для операций, выполненных в лаборатории. 
 
-    :::image type="content" source="./media/activity-logs/activity-log.png" alt-text="Журнал действий":::    
+    :::image type="content" source="./media/activity-logs/activity-log.png" alt-text="В меню слева выберите Конфигурация и политики.":::    
 1. Выберите событие, чтобы просмотреть сведения о нем. На странице **Сводка** отображаются такие сведения, как имя операции, метка времени и кто выполнил операцию. 
     
-    :::image type="content" source="./media/activity-logs/stop-vm-event.png" alt-text="Событие завершение виртуальной машины — Сводка":::        
+    :::image type="content" source="./media/activity-logs/stop-vm-event.png" alt-text="В меню слева выберите Конфигурация и политики.":::        
 1. Перейдите на вкладку **JSON** , чтобы просмотреть дополнительные сведения. В следующем примере вы видите имя виртуальной машины и операцию, выполненную на виртуальной машине (остановлена).
 
-    :::image type="content" source="./media/activity-logs/stop-vm-event-json.png" alt-text="Событие останавливает виртуальную машину — JSON":::           
+    :::image type="content" source="./media/activity-logs/stop-vm-event-json.png" alt-text="В меню слева выберите Конфигурация и политики.":::           
 1. Перейдите на вкладку **Журнал изменений (Предварительная версия)** , чтобы просмотреть историю изменений. В следующем примере показано изменение, выполненное на виртуальной машине. 
 
-    :::image type="content" source="./media/activity-logs/change-history.png" alt-text="Журнал изменений события останавливает виртуальную машину":::             
+    :::image type="content" source="./media/activity-logs/change-history.png" alt-text="В меню слева выберите Конфигурация и политики.":::             
 1. Выберите изменение в списке Журнал изменений, чтобы просмотреть дополнительные сведения об изменении. 
 
-    :::image type="content" source="./media/activity-logs/change-details.png" alt-text="Событие останавливает виртуальную машину — сведения об изменении":::             
+    :::image type="content" source="./media/activity-logs/change-details.png" alt-text="В меню слева выберите Конфигурация и политики.":::             
 
 Дополнительные сведения о журналах действий см. в статье [Журнал действий Azure](../azure-monitor/platform/activity-log.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о настройке **оповещений** в журналах действий см. в разделе [Создание предупреждений](create-alerts.md).
-- Дополнительные сведения о журналах действий см. в статье [Журнал действий Azure](../azure-monitor/platform/activity-log.md).
+- Дополнительные сведения о журналах действий см. в статье  [Журнал действий Azure](../azure-monitor/platform/activity-log.md).
 

@@ -15,10 +15,10 @@ ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: b-juche
 ms.openlocfilehash: edfebe3d9470defbe70b3694d5574e58ca3b5938
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91325527"
 ---
 # <a name="performance-considerations-for-azure-netapp-files"></a>Рекомендации по ускорению Azure NetApp Files
@@ -70,7 +70,7 @@ ms.locfileid: "91325527"
 Если вы используете тома качества обслуживания вручную, вам не придется переподготавливать квоту тома, чтобы добиться более высокой пропускной способности, поскольку пропускную способность можно назначить каждому тому независимо. Тем не менее, необходимо убедиться, что пул емкости предварительно подготовлен с достаточной пропускной способностью для ваших потребностей в производительности. Пропускная способность пула ресурсов подготавливается в соответствии с ее размером и уровнем обслуживания. Дополнительные сведения см. в разделе [уровни обслуживания для Azure NetApp Files](azure-netapp-files-service-levels.md) .
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Уровни обслуживания для Azure NetApp Files](azure-netapp-files-service-levels.md)
 - [Тесты производительности для Linux](performance-benchmarks-linux.md)

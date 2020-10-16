@@ -8,10 +8,10 @@ ms.date: 09/03/2019
 author: jasonwhowell
 ms.author: jasonh
 ms.openlocfilehash: f39b93058f3f96d37683ec1f3ae3de0f8c1cb786
-ms.sourcegitcommit: b48e8a62a63a6ea99812e0a2279b83102e082b61
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91409533"
 ---
 # <a name="azure-cosmos-db-gremlin-server-response-headers"></a>Заголовки ответа сервера Azure Cosmos DB Gremlin
@@ -106,7 +106,7 @@ try {
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Коды состояния HTTP для Azure Cosmos DB](/rest/api/cosmos-db/http-status-codes-for-cosmosdb) 
 * [Общие заголовки ответа для Azure Cosmos DB RESTFUL](/rest/api/cosmos-db/common-cosmosdb-rest-response-headers)
 * [Требования поставщика драйвера TinkerPop Graph]( http://tinkerpop.apache.org/docs/current/dev/provider/#_graph_driver_provider_requirements)

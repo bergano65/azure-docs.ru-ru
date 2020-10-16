@@ -12,10 +12,10 @@ ms.subservice: fundamentals
 ms.date: 10/31/2019
 ms.author: martinco
 ms.openlocfilehash: f420f66e1db6efc6a0aa43cb88f26687839f0d1a
-ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89321520"
 ---
 # <a name="azure-active-directory-governance-operations-reference-guide"></a>Справочное руководство по операциям управления Azure Active Directory
@@ -128,7 +128,7 @@ ms.locfileid: "89321520"
 > [!NOTE]
 > Для управления назначениями Azure AD требуются лицензии Azure AD Premium P2.
 
-## <a name="summary"></a>Сводка
+## <a name="summary"></a>Итоги
 
 Безопасность системы управления удостоверениями состоит из восьми аспектов. Этот список поможет вам определить действия, которые необходимо предпринять для оценки и аттестации доступа, предоставленного непривилегированным и привилегированным удостоверениям, аудит и управление изменениями в среде.
 
@@ -141,6 +141,6 @@ ms.locfileid: "89321520"
 - Заблокируйте доступ к порталу Azure EA.
 - Реализуйте управление назначением для предоставления управляемого доступа к коллекции ресурсов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Приступая к работе с [операционными проверками и действиями Azure AD](active-directory-ops-guide-ops.md).

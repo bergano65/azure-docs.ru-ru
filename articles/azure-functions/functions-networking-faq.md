@@ -5,10 +5,10 @@ ms.topic: troubleshooting
 ms.date: 4/11/2019
 ms.reviewer: glenga
 ms.openlocfilehash: d07484943f8ba85cc8e46737f3ef85b6e25d5187
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91538064"
 ---
 # <a name="frequently-asked-questions-about-networking-in-azure-functions"></a>Часто задаваемые вопросы о сети в службе "функции Azure"
@@ -57,7 +57,7 @@ ms.locfileid: "91538064"
 
 Сценарии, в которых необходим только односторонний доступ к ресурсам виртуальной сети или менее полные сетевые изоляции, см. в статье [Общие сведения о функциях сети](functions-networking-options.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о работе в сети и функциях: 
 

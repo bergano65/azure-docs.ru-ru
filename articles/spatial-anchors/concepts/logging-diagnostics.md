@@ -9,12 +9,12 @@ ms.date: 02/22/2019
 ms.topic: conceptual
 ms.service: azure-spatial-anchors
 ms.custom: devx-track-csharp
-ms.openlocfilehash: da941aa8b616fffeb2e283480c2a1e2f9cf7a093
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 45d345e8d8dbe45ecb4873904f31141111827647
+ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89003122"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92097360"
 ---
 # <a name="logging-and-diagnostics-in-azure-spatial-anchors"></a>Ведение журналов и диагностика в пространственных привязках Azure
 
@@ -43,9 +43,9 @@ ms.locfileid: "89003122"
 
 Эти обратные вызовы событий предоставляются для обработки журналов и ошибок из сеанса:
 
-- [LogLevel](https://docs.microsoft.com/dotnet/api/microsoft.azure.spatialanchors.cloudspatialanchorsession.loglevel): задает уровень детализации для событий, получаемых из среды выполнения.
-- [Онлогдебуг](https://docs.microsoft.com/dotnet/api/microsoft.azure.spatialanchors.cloudspatialanchorsession.onlogdebug): предоставляет стандартные события журнала отладки.
-- [Ошибка](https://docs.microsoft.com/dotnet/api/microsoft.azure.spatialanchors.cloudspatialanchorsession.error): предоставляет события журнала, которые среда выполнения считает ошибками.
+- [LogLevel](/dotnet/api/microsoft.azure.spatialanchors.cloudspatialanchorsession.loglevel): задает уровень детализации для событий, получаемых из среды выполнения.
+- [Онлогдебуг](/dotnet/api/microsoft.azure.spatialanchors.cloudspatialanchorsession.onlogdebug): предоставляет стандартные события журнала отладки.
+- [Ошибка](/dotnet/api/microsoft.azure.spatialanchors.cloudspatialanchorsession.error): предоставляет события журнала, которые среда выполнения считает ошибками.
 
 ## <a name="diagnostics-logging"></a>ведет журнал диагностики.
 

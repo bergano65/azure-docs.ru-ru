@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
-ms.openlocfilehash: 43f7cddfa6fb887fd421d1f90a41145c6182654d
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 4df9b28d7a0d3e6b96aca3c99b5dacda3d41a676
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88517167"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91828019"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-silverback"></a>Руководство: интеграция Azure Active Directory с Silverback
 
@@ -160,7 +160,7 @@ ms.locfileid: "88517167"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension** .  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -213,7 +213,7 @@ ms.locfileid: "88517167"
 
     c. В текстовое поле **Last Name** (Фамилия) введите фамилию пользователя, например **Simon**.
 
-    d. В текстовое поле **Email address** (Адрес электронной почты) введите адрес электронной почты пользователя, например **Brittasimon@contoso.com** .
+    d. В текстовом поле **Email Address** (Адрес электронной почты) введите адрес электронной почты пользователя, например **Brittasimon\@contoso.com**.
 
     д) Введите пароль в поле **Password** (Пароль).
 

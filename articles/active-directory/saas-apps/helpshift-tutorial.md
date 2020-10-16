@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/20/2019
 ms.author: jeedes
-ms.openlocfilehash: fb9c776061407669f27f61ac4bc536b859d04b66
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 41dd61182674d63e7c8b83232c53b9e7054de04d
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88550625"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91816858"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-helpshift"></a>Руководство по Интеграция единого входа Azure Active Directory с Helpshift
 
@@ -134,11 +134,11 @@ ms.locfileid: "88550625"
 
 1. Откройте в Helpshift **панель мониторинга** и щелкните **значок параметров**.
 
-    ![Конфигурация Helpshift](./media/helpshift-tutorial/configuration01.png)
+    ![Снимок экрана: значок параметров Helpshift.](./media/helpshift-tutorial/configuration01.png)
 
 1. Щелкните вкладку **Integrations** (Интеграции) и выполните следующие шаги.
 
-    ![Конфигурация Helpshift](./media/helpshift-tutorial/configuration02.png)
+    ![Снимок экрана: вкладка "Интеграция", на которой можно выполнить описанные действия.](./media/helpshift-tutorial/configuration02.png)
 
     а. Включите **Single Sign-On(SAML – SSO)** (Единый вход SAML).
 

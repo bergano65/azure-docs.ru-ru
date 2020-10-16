@@ -2,21 +2,21 @@
 title: 'Azure бастиона: Просмотр сеанса виртуальной машины: во весь экран'
 description: Узнайте, как изменить представление виртуальной машины на полноэкранное и обратно в браузере для подключения RDP или SSH в Azure бастиона.
 services: bastion
-author: charwen
+author: cherylmc
 ms.service: bastion
 ms.topic: how-to
 ms.date: 02/03/2020
-ms.author: charwen
-ms.openlocfilehash: fa795d7b066733aba54f8612bbabecf264a11c70
-ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
+ms.author: cherylmc
+ms.openlocfilehash: 7db85c5e1d5f67c30adf08969c51bb4c57838fb5
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88270297"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92079145"
 ---
 # <a name="change-to-full-screen-view-for-a-vm-session-azure-bastion"></a>Переход в полноэкранный режим для сеанса виртуальной машины: Azure бастиона
 
-Эта статья поможет вам изменить представление виртуальной машины на полноэкранное и обратно в браузере. Перед началом работы с виртуальной машиной убедитесь, что выполнены действия по [созданию узла бастиона](bastion-create-host-portal.md). Затем подключитесь к виртуальной машине, которую вы хотите использовать, с помощью [RDP](bastion-connect-vm-rdp.md) или [SSH](bastion-connect-vm-ssh.md).
+Эта статья поможет вам изменить представление виртуальной машины на полноэкранное и обратно в браузере. Перед началом работы с виртуальной машиной убедитесь, что выполнены действия по [созданию узла бастиона](./tutorial-create-host-portal.md). Затем подключитесь к виртуальной машине, которую вы хотите использовать, с помощью [RDP](bastion-connect-vm-rdp.md) или [SSH](bastion-connect-vm-ssh.md).
 
 ## <a name="launch-the-clipboard-tool"></a>Запуск средства буфера обмена
 

@@ -8,17 +8,17 @@ ms.topic: how-to
 ms.date: 11/4/2019
 ms.author: caya
 ms.openlocfilehash: 8c8b8b0090877db7abc8fae0e44f928e8b10dcf5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84808003"
 ---
 # <a name="add-health-probes-to-your-service"></a>Добавление проб работоспособности в службу
 По умолчанию входной контроллер выполняет инициализацию HTTP GET для предоставляемых модулей Pod.
 Свойства зонда можно настроить, добавив [проверку готовности или динамической проверки](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/) в `deployment` / `pod` спецификацию.
 
-## <a name="with-readinessprobe-or-livenessprobe"></a>С `readinessProbe` или`livenessProbe`
+## <a name="with-readinessprobe-or-livenessprobe"></a>С `readinessProbe` или `livenessProbe`
 ```yaml
 apiVersion: extensions/v1beta1
 kind: Deployment
@@ -50,11 +50,11 @@ spec:
 * [Действие HttpGet](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#httpgetaction-v1-core)
 
 > [!NOTE]
-> * `readinessProbe`и `livenessProbe` поддерживаются при настройке с помощью `httpGet` .
+> * `readinessProbe` и `livenessProbe` поддерживаются при настройке с помощью `httpGet` .
 > * Проверка на портах, отличных от показанных в модуле Pod, сейчас не поддерживается.
 > * `HttpHeaders`, `InitialDelaySeconds` , `SuccessThreshold` не поддерживаются.
 
-##  <a name="without-readinessprobe-or-livenessprobe"></a>Без `readinessProbe` или`livenessProbe`
+##  <a name="without-readinessprobe-or-livenessprobe"></a>Без `readinessProbe` или `livenessProbe`
 Если указанные выше проверки не предоставлены, то контроллер входящего трафика предполагала, что служба доступна в `Path` указанном для `backend-path-prefix` аннотации или `path` указании в `ingress` определении службы.
 
 ## <a name="default-values-for-health-probe"></a>Значения по умолчанию для проверки работоспособности

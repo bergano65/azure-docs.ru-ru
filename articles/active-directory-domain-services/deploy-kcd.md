@@ -2,7 +2,7 @@
 title: Ограниченное делегирование Kerberos для доменных служб Azure AD | Документация Майкрософт
 description: Узнайте, как включить ограниченное делегирование Kerberos на основе ресурсов (KCD) в управляемом домене доменных служб Azure Active Directory.
 services: active-directory-ds
-author: iainfoulds
+author: MicrosoftGuyJFlo
 manager: daveba
 ms.assetid: 938a5fbc-2dd1-4759-bcce-628a6e19ab9d
 ms.service: active-directory
@@ -10,13 +10,13 @@ ms.subservice: domain-services
 ms.workload: identity
 ms.topic: how-to
 ms.date: 07/06/2020
-ms.author: iainfou
-ms.openlocfilehash: 7f1640f74c3fca27e1d992f3e2cc538f6e2c7fef
-ms.sourcegitcommit: 5b6acff3d1d0603904929cc529ecbcfcde90d88b
+ms.author: joflore
+ms.openlocfilehash: 949dbfd4cc2e4ac05cddf035e22119bfb16e306f
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88722999"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91960717"
 ---
 # <a name="configure-kerberos-constrained-delegation-kcd-in-azure-active-directory-domain-services"></a>Настройка ограниченного делегирования Kerberos (KCD) в доменных службах Azure Active Directory
 

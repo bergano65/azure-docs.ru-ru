@@ -10,10 +10,10 @@ ms.date: 08/18/2020
 ms.author: anfeldma
 ms.custom: devx-track-java
 ms.openlocfilehash: f0cb3d5f9184bacef42a0258add6dd2461a71dd7
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91326666"
 ---
 # <a name="spring-data-azure-cosmos-db-v3-for-core-sql-api-release-notes-and-resources"></a>Пружинные данные Azure Cosmos DB v3 для API Core (SQL): заметки о выпуске и ресурсы
@@ -27,7 +27,7 @@ ms.locfileid: "91326666"
 > * [Пакет SDK для Async Java версии 2](sql-api-sdk-async-java.md)
 > * [Пакет SDK для Sync Java версии 2](sql-api-sdk-java.md)
 > * [Пружинные данные v2](sql-api-sdk-java-spring-v2.md)
-> * [Пружинные данные v3](sql-api-sdk-java-spring-v3.md)
+> * [Spring Data версии 3](sql-api-sdk-java-spring-v3.md)
 > * [Соединитель Spark](sql-api-sdk-java-spark.md)
 > * [Python](sql-api-sdk-python.md)
 > * [REST](/rest/api/cosmos-db/)
@@ -45,14 +45,14 @@ ms.locfileid: "91326666"
 Вы можете использовать пружинные данные Azure Cosmos DB в [облачных приложениях Azure для весны](https://azure.microsoft.com/services/spring-cloud/) .
 
 > [!IMPORTANT]  
-> Эти заметки о выпуске предназначены для предварительных Azure Cosmos DB данных версии 3. [Заметки о выпуске для версии 2](sql-api-sdk-java-spring-v2.md)можно найти здесь. 
+> Эти заметки о выпуске применимы к Spring Data Azure Cosmos DB версии 3. Заметки о выпуске для версии 2 см. [здесь](sql-api-sdk-java-spring-v2.md). 
 >
-> Пружинные данные Azure Cosmos DB поддерживают только API SQL.
+> Spring Data Azure Cosmos DB поддерживает только API SQL.
 >
-> Сведения о пружинных данных в других Azure Cosmos DB API см. в этих статьях:
-> * [Пружинные данные для Apache Cassandra с Azure Cosmos DB](https://docs.microsoft.com/azure/developer/java/spring-framework/configure-spring-data-apache-cassandra-with-cosmos-db)
-> * [Пружинные данные MongoDB с Azure Cosmos DB](https://docs.microsoft.com/azure/developer/java/spring-framework/configure-spring-data-mongodb-with-cosmos-db)
-> * [Пружинные данные Gremlin с Azure Cosmos DB](https://docs.microsoft.com/azure/developer/java/spring-framework/configure-spring-data-gremlin-java-app-with-cosmos-db)
+> Сведения о Spring Data в других API-интерфейсах Azure Cosmos DB см. в этих статьях:
+> * [Как использовать API Apache Cassandra Spring Data с Azure Cosmos DB](https://docs.microsoft.com/azure/developer/java/spring-framework/configure-spring-data-apache-cassandra-with-cosmos-db)
+> * [Как использовать API MongoDB Spring Data с Azure Cosmos DB](https://docs.microsoft.com/azure/developer/java/spring-framework/configure-spring-data-mongodb-with-cosmos-db)
+> * [Использование начального приложения Spring Data Gremlin с API SQL Azure Cosmos DB](https://docs.microsoft.com/azure/developer/java/spring-framework/configure-spring-data-gremlin-java-app-with-cosmos-db)
 >
 
 ## <a name="start-here"></a>Начало работы

@@ -11,10 +11,10 @@ ms.reviewer: vanto
 ms.date: 06/17/2020
 ms.custom: azure-synapse
 ms.openlocfilehash: 74926411b659cf5973b03b2caca58d7666803f9c
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91444542"
 ---
 # <a name="write-audit-to-a-storage-account-behind-vnet-and-firewall"></a>Запись аудита в учетную запись хранения за пределами виртуальной сети и брандмауэра
@@ -25,7 +25,7 @@ ms.locfileid: "91444542"
 
 В этой статье описаны два способа настройки базы данных SQL Azure и учетной записи хранения Azure для этого параметра. Первый использует портал Azure, второй использует ОСТАВШУЮся.
 
-## <a name="background"></a>Историческая справка
+## <a name="background"></a>История
 
 [Виртуальная сеть Azure (VNet)](../../virtual-network/virtual-networks-overview.md) — это фундаментальный Стандартный блок для частной сети в Azure. Виртуальная сеть позволяет ресурсам Azure различных типов (например, виртуальным машинам Azure) обмениваться данными друг с другом через локальные сети и через Интернет. Виртуальная сеть аналогична традиционной сети в собственном центре обработки данных, но предоставляет дополнительные преимущества инфраструктуры Azure, такие как масштабирование, доступность и изоляция.
 
@@ -101,7 +101,7 @@ ms.locfileid: "91444542"
    PUT https://management.azure.com/subscriptions/<subscription ID>/resourceGroups/<resource group>/providers/Microsoft.Sql/servers/<azure server name>?api-version=2015-05-01-preview
    ```
 
-   Текст запроса
+   Тело запроса
 
    ```json
    {
@@ -130,7 +130,7 @@ ms.locfileid: "91444542"
      PUT https://management.azure.com/subscriptions/<subscription ID>/resourceGroups/<resource group>/providers/Microsoft.Sql/servers/<azure server name>/auditingSettings/default?api-version=2017-03-01-preview
    ```
 
-   Текст запроса
+   Тело запроса
 
    ```json
    {
@@ -158,7 +158,7 @@ ms.locfileid: "91444542"
 > [!NOTE]
 > Связанный пример относится к внешнему общедоступному репозиторию и предоставляется "как есть", без гарантий и не поддерживается ни в одной программе или службе поддержки Майкрософт.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [С помощью PowerShell создайте конечную точку службы виртуальной сети, а затем правило виртуальной сети для базы данных SQL Azure.](scripts/vnet-service-endpoint-rule-powershell-create.md)
 * [Правила виртуальной сети. операции с помощью API-интерфейсов RESTFUL](/rest/api/sql/virtualnetworkrules)

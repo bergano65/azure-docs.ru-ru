@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 09/25/2020
 ms.openlocfilehash: 081f073fa4933d67604173d2169a7abdc3ac7c3f
-ms.sourcegitcommit: dc68a2c11bae2e9d57310d39fbed76628233fd7f
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91403574"
 ---
 # <a name="how-to-index-large-data-sets-in-azure-cognitive-search"></a>Как индексировать большие наборы данных в Azure Когнитивный поиск
@@ -159,7 +159,7 @@ ms.locfileid: "91403574"
 > [!Note]
 > Увеличивая количество реплик, попробуйте увеличить и количество разделы, если прогнозируется значительное увеличение размера индекса. Разделы хранят фрагменты индексированного содержимого. Чем больше разделов, тем меньше объем сохраненной в каждом из них информации.
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 + [Обзор индексатора](search-indexer-overview.md)
 + [Импорт данных в службу поиска Azure с помощью портала](search-import-data-portal.md)

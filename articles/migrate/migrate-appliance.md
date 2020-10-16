@@ -4,10 +4,10 @@ description: Содержит сводку по поддержке устрой�
 ms.topic: conceptual
 ms.date: 05/04/2020
 ms.openlocfilehash: ac3c90f1c09d290d5112a0e0d7abc5218788caf7
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91450040"
 ---
 # <a name="azure-migrate-appliance"></a>Устройство службы "Миграция Azure"
@@ -219,7 +219,7 @@ IPv6-адреса | vm.Guest.Net
 --- | --- | ---
 Application Name  | HKLM: \ Софтваре\микрософт\виндовс\куррентверсион\унинсталл\* <br/> HKLM: \ Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*  | DisplayName
 Версия  | HKLM: \ Софтваре\микрософт\виндовс\куррентверсион\унинсталл\*  <br/> HKLM: \ Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*  | дисплайверсион 
-Поставщик  | HKLM: \ Софтваре\микрософт\виндовс\куррентверсион\унинсталл\*  <br/> HKLM: \ Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*  | Publisher
+Поставщик  | HKLM: \ Софтваре\микрософт\виндовс\куррентверсион\унинсталл\*  <br/> HKLM: \ Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*  | Издатель
 
 #### <a name="windows-vm-features-data"></a>Данные о функциях виртуальной машины Windows
 
@@ -248,7 +248,7 @@ Parent  | Get-WindowsFeature  | Parent
 
 Данные  | класс WMI  | Свойство класса WMI
 --- | --- | ---
-Имя  | Win32_operatingsystem  | Caption
+Имя  | Win32_operatingsystem  | Заголовок
 Версия  | Win32_operatingsystem  | Версия
 Architecture  | Win32_operatingsystem  | OSArchitecture
 
@@ -256,7 +256,7 @@ Architecture  | Win32_operatingsystem  | OSArchitecture
 
 Ниже приведены данные об установленных приложениях, собираемых устройством с каждой виртуальной машины, для которой разрешено обнаружение приложений. В зависимости от операционной системы виртуальной машины выполняются одна или несколько команд. Эти данные отправляются в Azure.
 
-Данные  | Команда
+Данные  | Get-Help
 --- | --- 
 Имя | RPM, dpkg — запрос, привязка
 Версия | RPM, dpkg — запрос, привязка
@@ -266,7 +266,7 @@ Architecture  | Win32_operatingsystem  | OSArchitecture
 
 Ниже приведены данные операционной системы, которые устройство собирает для каждой виртуальной машины, включенной для обнаружения приложений. Эти данные отправляются в Azure.
 
-**Data**  | **Команда** 
+**Data**  | **Command** 
 --- | --- | ---
 Имя <br/> version | Собраны из одного или нескольких следующих файлов:<br/> <br/>/etc/os-release  <br> /usr/lib/os-release  <br> /etc/enterprise-release  <br> /etc/redhat-release  <br> /etc/oracle-release  <br> /etc/SuSE-release  <br> /etc/lsb-release  <br> /etc/debian_version 
 Architecture | uname

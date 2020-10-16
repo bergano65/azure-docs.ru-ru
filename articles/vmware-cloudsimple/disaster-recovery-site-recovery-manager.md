@@ -9,10 +9,10 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: 6714b2c5d87141fd94d0f96d9cf07913442d18d6
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91267063"
 ---
 # <a name="set-up-private-cloud-as-a-disaster-recovery-target-with-vmware-site-recovery-manager"></a>Настройка частного облака в качестве цели аварийного восстановления с помощью VMware Site Recovery Manager
@@ -111,7 +111,7 @@ ms.locfileid: "91267063"
 
 2. Разверните вра в локальной среде, используя OVF в образе VR ISO из vmware.com. Для вра 6,5 [этот блог VMware](https://blogs.vmware.com/virtualblocks/2017/01/20/vr-65-ovf-choices) содержит соответствующие сведения.
 
-3. Зарегистрируйте локальную вра с помощью единого входа vCenter на локальном сайте. Подробные инструкции по репликации vSphere 6,5 см. в документе VMware [VMware vSphere Установка и Настройка репликации 6,5](https://docs.vmware.com/en/vSphere-Replication/6.5/vsphere-replication-65-install.pdf).
+3. Зарегистрируйте локальную вра с помощью одного Sign-On vCenter на локальном сайте. Подробные инструкции по репликации vSphere 6,5 см. в документе VMware [VMware vSphere Установка и Настройка репликации 6,5](https://docs.vmware.com/en/vSphere-Replication/6.5/vsphere-replication-65-install.pdf).
 
 ## <a name="install-vsphere-replication-appliance-in-your-private-cloud-environment"></a>Установка устройства репликации vSphere в среде частного облака
 
@@ -137,7 +137,7 @@ ms.locfileid: "91267063"
 3. Подготовьте среду частного облака к установке вра.
 4. Разверните вра в частном облаке, используя OVF в образе VR ISO из vmware.com. Для вра 6,5 [этот блог VMware](https://blogs.vmware.com/virtualblocks/2017/01/20/vr-65-ovf-choices) содержит актуальные сведения.
 5. Настройте правила брандмауэра для вра. Описание приведено ниже на [портале клаудсимпле: Настройка правил брандмауэра для вра](#cloudsimple-portal-configure-firewall-rules-for-vra).
-6. Регистрация частного облака вра с помощью единого входа vCenter на сайте частного облака.
+6. Регистрация частного облака вра с помощью одного Sign-On vCenter на сайте частного облака.
 7. Настройка подключений репликации vSphere между двумя устройствами. Убедитесь, что нужные порты открыты через брандмауэры. Список номеров портов, которые должны быть открыты для репликации vSphere 6,5, см. в [этой статье базы знаний VMware](https://kb.vmware.com/s/article/2087769) .
 
 Подробные инструкции по установке vSphere Replication 6,5 см. в документе VMware [VMware vSphere Установка и Настройка репликации 6,5](https://docs.vmware.com/en/vSphere-Replication/6.5/vsphere-replication-65-install.pdf).
@@ -227,7 +227,7 @@ ms.locfileid: "91267063"
 * [Варианты OVF при развертывании vSphere Replication 6,5](https://blogs.vmware.com/virtualblocks/2017/01/20/vr-65-ovf-choices/)
 * [Установка и настройка VMware vSphere репликации 6,5](https://docs.vmware.com/en/vSphere-Replication/6.5/vsphere-replication-65-install.pdf)
 * [Предварительные требования и рекомендации для СРМ 6,5](https://docs.vmware.com/en/Site-Recovery-Manager/6.5/com.vmware.srm.install_config.doc/GUID-BB0C03E4-72BE-4C74-96C3-97AC6911B6B8.html)
-* [Site Recovery Manager в топологии с двумя сайтами с одним экземпляром vCenter Server на контроллер служб платформы](https://docs.vmware.com/en/Site-Recovery-Manager/6.5/com.vmware.srm.install_config.doc/GUID-F474543A-88C5-4030-BB86-F7CC51DADE22.html)
+* [Site Recovery Manager в топологии Two-Site с одним экземпляром vCenter Server на контроллер служб платформы](https://docs.vmware.com/en/Site-Recovery-Manager/6.5/com.vmware.srm.install_config.doc/GUID-F474543A-88C5-4030-BB86-F7CC51DADE22.html)
 * [Руководства по установке и настройке VMware Site Recovery Manager 6,5](https://docs.vmware.com/en/Site-Recovery-Manager/6.5/com.vmware.srm.install_config.doc/GUID-437E1B65-A17B-4B4B-BA5B-C667C90FA418.html)
 * [Блог VMware по СРМ с репликацией на основе массивов и репликацией vSphere](https://blogs.vmware.com/virtualblocks/2017/06/22/srm-array-based-replication-vs-vsphere-replication)
 * [Блог по VMware о вариантах СРМ нескольких сайтов](https://blogs.vmware.com/virtualblocks/2016/07/28/srm-multisite)

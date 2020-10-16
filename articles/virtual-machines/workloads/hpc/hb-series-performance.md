@@ -2,18 +2,17 @@
 title: Производительность размера виртуальной машины серии ХБ
 description: Узнайте о результатах тестирования производительности для размеров виртуальных машин серии ХБ в Azure.
 author: vermagit
-manager: gwallace
 ms.service: virtual-machines
-ms.workload: infrastructure-services
 ms.topic: article
 ms.date: 09/09/2020
 ms.author: amverma
-ms.openlocfilehash: 34e9ef3ab46f2ce11500aa87db9676635d3e9b4f
-ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
+ms.reviewer: cynthn
+ms.openlocfilehash: 2267dc23e2f886d87342fc22c3b12a03e8df6a86
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90016288"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91994849"
 ---
 # <a name="hb-series-virtual-machine-sizes"></a>Размеры виртуальных машин серии ХБ
 
@@ -22,7 +21,7 @@ ms.locfileid: "90016288"
 | Рабочая нагрузка                                        | HB                    |
 |-------------------------------------------------|-----------------------|
 | STREAM триады                                    | 260 ГБ/с (32-33 Гб/с на КККС)  |
-| Высокопроизводительная Linpack (ХПЛ)                  | 1 000 гигафлопс (Рпеак), 860 гигафлопс (Рмакс) |
+| High-Performance Linpack (ХПЛ)                  | 1 000 гигафлопс (Рпеак), 860 гигафлопс (Рмакс) |
 | Задержка & RDMA, пропускная способность                        | 1,27 микросекунд, 99,1 ГБ/с   |
 | FIO на локальном SSD NVMe                           | 1,7 ГБ/с, операций чтения, 1,0 ГБ/с      |  
 | ИОР на 4 * SSD (цен. категория "Премиум") Azure (управляемые диски P30, конфигурацию RAID0) * *  | 725 МБ/с, 780 МБ/операций записи   |
@@ -46,7 +45,7 @@ ms.locfileid: "90016288"
 ./mvapich2-2.3.install/bin/mpirun_rsh -np 2 -hostfile ~/hostfile MV2_CPU_MAPPING=[INSERT CORE #] ./mvapich2-2.3/osu_benchmarks/mpi/pt2pt/osu_bw
 ```
 
-:::image type="content" source="./media/bandwidth-hb.png" alt-text="Пропускная способность MPI в Azure ХБ.":::
+:::image type="content" source="./media/bandwidth-hb.png" alt-text="MPI с задержкой в Azure ХБ.":::
 
 
 ## <a name="mellanox-perftest"></a>Mellanox Perftest

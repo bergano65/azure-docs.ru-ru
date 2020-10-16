@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: ''
-ms.openlocfilehash: 94ba4b159e0a7e52603e7c200c11828f996cf6d8
-ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
+ms.openlocfilehash: b45eea7a6c4bccbdc6669752255469174493ab55
+ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90090522"
+ms.lasthandoff: 10/11/2020
+ms.locfileid: "91938346"
 ---
 # <a name="azure-maps-community---open-source-projects"></a>Azure Maps сообщество — проекты с открытым исходным кодом
 
@@ -39,8 +39,10 @@ ms.locfileid: "90090522"
 |-|-|
 | [Модуль анимации Azure Maps](https://github.com/Azure-Samples/azure-maps-animations) | Обширная библиотека анимации для использования с веб-пакетом SDK для Azure Maps. |
 | [Модуль управления географом Azure Maps](https://github.com/Azure-Samples/azure-maps-geolocation-control) | Модуль веб-пакета SDK Azure Maps, который предоставляет элемент управления, который использует API географического расположения браузера для поиска пользователя на карте. |
+| [Модуль источника данных Azure Maps климатические](https://github.com/Azure-Samples/azure-maps-gridded-data-source) | Модуль для веб-пакета SDK Azure Maps, предоставляющий источник данных, который объединяет точки данных в ячейки области сетки. Эта операция также известна многим именам, например тесселяции, группирования данных или шестнадцатеричные ячейки.  |
 | [Azure Maps полноэкранный модуль управления](https://github.com/Azure-Samples/azure-maps-fullscreen-control) | Модуль веб-пакета SDK Azure Maps, который предоставляет элемент управления для отображения карт в полноэкранном режиме. |
 | [Модуль управления выбором Azure Maps](https://github.com/Azure-Samples/azure-maps-selection-control) | Модуль веб-пакета SDK Azure Maps, который предоставляет элементы управления для выбора данных в источнике данных с помощью средств рисования или запроса многоугольника диапазона маршрутов. |
+| [Модуль Azure Maps считывания карт](https://github.com/Azure-Samples/azure-maps-swipe-map) | Модуль для веб-пакета SDK Azure Maps, который позволяет прокрутить две перекрывающиеся карты, идеально подходит для сравнения двух перекрывающихся наборов данных. |
 | [Модуль синхронизации Azure Maps](https://github.com/Azure-Samples/azure-maps-sync-maps) | Модуль веб-пакета SDK Azure Maps, который синхронизирует камеры двух или более карт. |
 | [Модуль пользовательского интерфейса Azure Maps Services](https://github.com/Azure-Samples/azure-maps-services-ui) | Набор элементов управления веб-ИНТЕРФЕЙСов, которые служат оболочкой для служб Azure Maps RESTFUL. |
 
@@ -75,7 +77,7 @@ ms.locfileid: "90090522"
 - Azure Maps проекты с открытым исходным кодом и примеры не являются продуктом, поэтому они не поддерживаются поддержка Premier или другими официальными каналами поддержки.
 - Azure Maps проекты с открытым исходным кодом и примеры поддерживаются аналогично другим проектам с открытым исходным кодом, осуществляемым корпорацией Майкрософт вместе со службой поддержки сообщества.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Найдите другие проекты Azure Maps с открытым кодом.
 

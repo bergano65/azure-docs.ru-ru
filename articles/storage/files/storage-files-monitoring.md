@@ -11,10 +11,10 @@ ms.author: normesta
 ms.reviewer: fryu
 ms.custom: monitoring, devx-track-csharp
 ms.openlocfilehash: 4b2f819edd875130c57d487536691b4588dcc71f
-ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91772674"
 ---
 # <a name="monitoring-azure-files"></a>Мониторинг файлов Azure
@@ -481,7 +481,7 @@ Azure Monitor оповещения заблаговременно уведомл
 12. Заполните **сведения о предупреждении** , такие как **имя правила оповещения**, * * описание и **серьезность**.
 13. Щелкните **создать правило генерации оповещений** , чтобы создать оповещение.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Справочник по данным мониторинга файлов Azure](storage-files-monitoring.md)
 - [Мониторинг ресурсов Azure с помощью Azure Monitor](../../azure-monitor/insights/monitor-azure-resource.md)

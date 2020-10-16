@@ -5,17 +5,17 @@ ms.topic: conceptual
 ms.date: 04/17/2017
 ms.reviewer: sergkanz
 ms.openlocfilehash: 0f9fc96479569c3411024068ed614d422035ab17
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87315977"
 ---
 # <a name="dependency-telemetry-application-insights-data-model"></a>Телеметрия зависимостей: модель данных Application Insights
 
 Телеметрия зависимостей (в [Application Insights](./app-insights-overview.md)) представляет взаимодействие отслеживаемого компонента с удаленным, таким как SQL или конечная точка HTTP.
 
-## <a name="name"></a>Имя
+## <a name="name"></a>name
 
 Имя команды, инициированной этим вызовом зависимости. Низкое значение кратности. Примерами являются имя хранимой процедуры и шаблон пути URL-адреса.
 
@@ -27,7 +27,7 @@ ms.locfileid: "87315977"
 
 Команда, инициированная этим вызовом зависимости. Примерами являются оператор SQL и HTTP URL со всеми параметрами запроса.
 
-## <a name="type"></a>Тип
+## <a name="type"></a>Type
 
 Имя типа зависимости. Низкое значение кратности для логической группировки зависимостей и интерпретации других полей, таких как commandName и resultCode. Примерами являются SQL, таблица Azure и HTTP.
 
@@ -43,7 +43,7 @@ ms.locfileid: "87315977"
 
 Код результата для вызова зависимости. Примерами являются код ошибки SQL и код состояния HTTP.
 
-## <a name="success"></a>Успешно
+## <a name="success"></a>Успех
 
 Указание того, был ли вызов успешным.
 
@@ -56,7 +56,7 @@ ms.locfileid: "87315977"
 [!INCLUDE [application-insights-data-model-measurements](../../../includes/application-insights-data-model-measurements.md)]
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Настройка отслеживания зависимостей для платформы [.NET](./asp-net-dependencies.md)
 - Настройка отслеживания зависимостей для платформы [Java](./java-agent.md)

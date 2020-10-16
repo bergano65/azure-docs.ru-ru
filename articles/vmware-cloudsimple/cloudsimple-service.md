@@ -9,10 +9,10 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: ec77209c0995bf5aec0957c8d4d2269f27d743bc
-ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88142134"
 ---
 # <a name="cloudsimple-service-overview"></a>Общие сведения о службе Клаудсимпле
@@ -23,6 +23,6 @@ ms.locfileid: "88142134"
 
 Для каждой службы Клаудсимпле требуется подсеть шлюза, которая является уникальной для региона, в котором она создана. Подсеть шлюза используется при создании пограничной сети и требует блока/28 CIDR.  Адресное пространство подсети шлюза должно быть уникальным. Она не должна перекрываться с сетью, которая взаимодействует с средой Клаудсимпле. Сети, взаимодействующие с Клаудсимпле, включают в себя локальные сети и виртуальную сеть Azure.  Подсеть шлюза невозможно удалить после ее создания.  Подсеть шлюза удаляется при удалении службы.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Узнайте, как [создать службу клаудсимпле в Azure](quickstart-create-cloudsimple-service.md).

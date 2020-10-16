@@ -13,10 +13,10 @@ ms.reviewer: calebb
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
 ms.openlocfilehash: 9694dd06b67219e0f02c3fe1c7c53d1fc103a0c2
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91258631"
 ---
 # <a name="azure-active-directory-conditional-access-faqs"></a>Azure Active Directory часто задаваемые вопросы о условном доступе
@@ -61,6 +61,6 @@ Microsoft Teams также поддерживается отдельно в ка
 
 Чтобы просмотреть затронутые вкладки, необходимо использовать веб-клиент Teams в Microsoft Windows, Internet Explorer или Chrome с установленным расширением Accounts. Некоторые вкладки зависят от веб-аутентификации, которая не работает в Microsoft Teams Desktop Client, если включен условный доступ. Корпорация Майкрософт работает с партнерами, чтобы включить эти сценарии. На сегодняшний день мы включили сценарии, включающие планировщик, OneNote и Stream.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Чтобы настроить политики условного доступа для своей среды, ознакомьтесь с [рекомендациями по условному доступу в Azure Active Directory](best-practices.md). 

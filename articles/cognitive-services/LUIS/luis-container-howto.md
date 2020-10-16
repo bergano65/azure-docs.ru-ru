@@ -13,10 +13,10 @@ ms.date: 09/28/2020
 ms.author: aahi
 keywords: локальная среда, Docker, контейнер
 ms.openlocfilehash: c65a81d9daed85b5bf056d24949e36ec227c19c6
-ms.sourcegitcommit: a0c4499034c405ebc576e5e9ebd65084176e51e4
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91460991"
 ---
 # <a name="install-and-run-docker-containers-for-luis"></a>Установка и запуск контейнеров DOCKER для LUIS
@@ -37,7 +37,7 @@ ms.locfileid: "91460991"
 
 Чтобы запустить контейнер LUIS, обратите внимание на следующие предварительные требования.
 
-|Обязательный|Цель|
+|Обязательно|Назначение|
 |--|--|
 |Модуль Docker| На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду с Docker для [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> **В ОС Windows** для Docker нужно также настроить поддержку контейнеров Linux.<br><br>|
 |Опыт работы с Docker | Требуется базовое представление о понятиях Docker, включая реестры, репозитории, контейнеры и образы контейнеров, а также знание основных команд `docker`.|
@@ -123,7 +123,7 @@ docker pull mcr.microsoft.com/azure-cognitive-services/language/luis:latest
 
 Перед упаковкой приложения LUIS потребуется следующее:
 
-|Требования к упаковке|Сведения|
+|Требования к упаковке|Подробнее|
 |--|--|
 |Экземпляр ресурса _Cognitive Services_ Azure|Поддерживаемые регионы:<br><br>Западная часть США (`westus`)<br>Западная Европа (`westeurope`)<br>Восточная Австралия (`australiaeast`)|
 |Обученное или опубликованное приложение LUIS|Без [неподдерживаемых зависимостей][unsupported-dependencies]. |
@@ -221,7 +221,7 @@ ApiKey={API_KEY}
 * Не изменяйте порядок аргументов, если вы не знакомы с контейнерами DOCKER.
 * Если используется другая операционная система, используйте правильную консоль или терминал, синтаксис папок для подключений и символ продолжения строки для вашей системы. В этих примерах предполагается наличие в консоли Windows символа продолжения строки `^` . Так как контейнер является операционной системой Linux, целевое подключение использует синтаксис папки в формате Linux.
 
-Эта команда:
+Команда:
 
 * запускает контейнер из образа контейнера LUIS;
 * Загружает приложение LUIS из входных данных Mount в *к:\инпут*, расположенном на узле контейнера.
@@ -377,7 +377,7 @@ curl -X GET \
 <!--blogs/samples/video courses -->
 [!INCLUDE [Discoverability of more container information](../../../includes/cognitive-services-containers-discoverability.md)]
 
-## <a name="summary"></a>Сводка
+## <a name="summary"></a>Итоги
 
 В этой статье описаны основные понятия и рабочий процесс для скачивания, установки и выполнения контейнеров Интеллектуальной службы распознавания речи (LUIS). В разделе "Сводка" сделайте следующее.
 
@@ -390,12 +390,12 @@ curl -X GET \
 > [!IMPORTANT]
 > Контейнеры Cognitive Services не лицензируются для запуска без подключения к Azure для отслеживания использования. Клиенты должны разрешить контейнерам непрерывную передачу данных для выставления счетов в службу контроля потребления. Контейнеры Cognitive Services не отправляют в корпорацию Майкрософт данные клиента (например анализируемые изображения или тексты).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Проверьте настройки [контейнеров](luis-container-configuration.md) на наличие параметров конфигурации.
 * См. раздел [ограничения контейнера Luis](luis-container-limitations.md) для известных ограничений возможностей.
 * Ознакомьтесь со статьей об [устранение неполадок](troubleshooting.md), чтобы устранить проблемы, связанные с функциональностью LUIS.
-* Использование большего числа [контейнеров Cognitive Services](../cognitive-services-container-support.md)
+* Воспользуйтесь [дополнительными контейнерами Cognitive Services](../cognitive-services-container-support.md)
 
 <!-- Links - external -->
 [download-published-package]: https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/apps-packagepublishedapplicationasgzip

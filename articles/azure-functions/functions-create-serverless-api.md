@@ -7,17 +7,17 @@ ms.date: 04/27/2020
 ms.author: mahender
 ms.custom: mvc
 ms.openlocfilehash: 440eb1f39284f8d99a8d6b9067b018c4a54fcd27
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87083027"
 ---
 # <a name="customize-an-http-endpoint-in-azure-functions"></a>Настройка конечной точки HTTP в функциях Azure
 
 В этой статье вы узнаете, как функции Azure позволяют создавать масштабируемые API. Функции Azure поставляются с набором встроенных триггеров и привязок HTTP, которые упрощают создание конечной точки на различных языках, включая Node.js, C# и т. д. В этой статье вы настроите триггер HTTP для выполнения определенных действий в структуре API. Вы также подготовитесь к увеличению API, интегрируя его с Прокси-серверы Функций Azure и настроив макеты API. Эти задачи выполняются поверх среды вычислений без сервера, поэтому вам не нужно беспокоиться о масштабировании ресурсов. Вы можете просто сосредоточиться на логике API.
 
-## <a name="prerequisites"></a>Обязательные условия 
+## <a name="prerequisites"></a>Предварительные требования 
 
 [!INCLUDE [Previous quickstart note](../../includes/functions-quickstart-previous-topics.md)]
 
@@ -40,7 +40,7 @@ ms.locfileid: "87083027"
     | Поле | Образец значения | Описание |
     |---|---|---|
     | Шаблон маршрута | /hello | Определяет пути, используемые для вызова этой функции |
-    | Уровень авторизации | Анонимный | (Необязательно.) Предоставляет доступ к функции без ключа API |
+    | Уровень авторизации | Анонимные | (Необязательно.) Предоставляет доступ к функции без ключа API |
     | Выбранные методы HTTP | GET | Разрешает использовать только выбранные методы HTTP для вызова этой функции |
 
     `/api`Префикс базового пути не был включен в шаблон маршрута, так как он обрабатывается глобальным параметром.
@@ -112,13 +112,13 @@ ms.locfileid: "87083027"
     | Внутренний URL-адрес | https://%HELLO_HOST%/api/hello | Определяет конечную точку, к которой должен быть отправлен запрос |
 
     
-    :::image type="content" source="./media/functions-create-serverless-api/creating-proxy.png" alt-text="Создание прокси":::
+    :::image type="content" source="./media/functions-create-serverless-api/creating-proxy.png" alt-text="Настройка функции HTTP":::
 
     Прокси-серверы Функций Azure не предоставляет `/api` префикс базового пути, который должен быть добавлен в шаблон маршрута. `%HELLO_HOST%`Синтаксис ссылается на созданный ранее параметр приложения. Разрешенный URL-адрес будет указывать на исходную функцию.
 
 1. Попробуйте создать новый прокси-сервер, скопировав URL-адрес прокси-сервера и проверив его в браузере или с помощью избранного HTTP-клиента:
-    - Для анонимной функции используйте: `https://YOURPROXYAPP.azurewebsites.net/api/remotehello?name="Proxies"` .
-    - Для функции с использованием авторизации: `https://YOURPROXYAPP.azurewebsites.net/api/remotehello?code=YOURCODE&name="Proxies"` .
+    - Для анонимной функции используйте:   `https://YOURPROXYAPP.azurewebsites.net/api/remotehello?name="Proxies"` .
+    - Для функции с использованием авторизации:   `https://YOURPROXYAPP.azurewebsites.net/api/remotehello?code=YOURCODE&name="Proxies"` .
 
 ## <a name="create-a-mock-api"></a>Создание макета API
 

@@ -1,27 +1,22 @@
 ---
-title: Публикация удаленного рабочего стола с помощью прокси приложения Azure AD | Документация Майкрософт
-description: Описывается настройка прокси приложения с помощью RDS.
+title: Публикация удаленного рабочего стола с помощью прокси приложения Azure Active Directory
+description: Описание настройки прокси приложения с помощью службы удаленных рабочих столов (RDS)
 services: active-directory
-documentationcenter: ''
 author: kenwith
 manager: celestedg
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: how-to
 ms.date: 07/22/2020
 ms.author: kenwith
-ms.custom: it-pro
 ms.reviewer: japere
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7ffdccf9cf3b6de4ba15d6076d7a5b9e0a93f464
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.openlocfilehash: 83d7ed6c937d515520058819636bc23c8de173fd
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89396766"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92015282"
 ---
 # <a name="publish-remote-desktop-with-azure-ad-application-proxy"></a>Публикация удаленного рабочего стола с помощью прокси приложения Azure AD
 
@@ -101,7 +96,7 @@ ms.locfileid: "89396766"
    Set-RDSessionCollectionConfiguration -CollectionName "<yourcollectionname>" -CustomRdpProperty "pre-authentication server address:s:<proxyfrontendurl>`nrequire pre-authentication:i:1"
    ```
 
-   **Пример:**
+   **Например:**
    ```
    Set-RDSessionCollectionConfiguration -CollectionName "QuickSessionCollection" -CustomRdpProperty "pre-authentication server address:s:https://remotedesktoptest-aadapdemo.msappproxy.net/`nrequire pre-authentication:i:1"
    ```
@@ -146,6 +141,6 @@ ms.locfileid: "89396766"
 2. В разделе [Направление трафика RDS в прокси приложения](#direct-rds-traffic-to-application-proxy) полностью пропустите шаг 8.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-
-[Включение удаленного доступа к SharePoint с помощью Azure AD application proxy](application-proxy-integrate-with-sharepoint-server.md) 
- [Вопросы безопасности при удаленном доступе к приложениям с помощью Azure AD application proxy](application-proxy-security.md)
+- [Настройка удаленного доступа к SharePoint с помощью прокси приложения Azure AD](application-proxy-integrate-with-sharepoint-server.md)
+- [Вопросы безопасности при удаленном доступе к приложениям через прокси приложения Azure AD](application-proxy-security.md)
+- [Рекомендации по балансировке нагрузки нескольких серверов приложений](application-proxy-high-availability-load-balancing.md#best-practices-for-load-balancing-among-multiple-app-servers)

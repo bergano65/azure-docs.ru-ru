@@ -4,10 +4,10 @@ description: Узнайте, как сбросить пароли для вир�
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: d63d14da8859c12fa797a04fa9a3c3230219adab
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85445344"
 ---
 # <a name="set-or-reset-password-for-virtual-machines-in-classroom-labs-students"></a>Установка или сброс пароля для виртуальных машин в учебных лабораториях (студенты)
@@ -29,5 +29,5 @@ ms.locfileid: "85445344"
 ![Сброс пароля впоследствии](./media/how-to-set-virtual-machine-passwords/student-set-password-2.png)
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о других вариантах использования учащихся, которые может настроить владелец лаборатории, см. в следующей статье: [Настройка использования учащихся](how-to-configure-student-usage.md).

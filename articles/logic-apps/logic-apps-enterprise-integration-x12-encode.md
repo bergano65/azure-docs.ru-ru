@@ -9,10 +9,10 @@ ms.reviewer: jonfan, logicappspm
 ms.topic: article
 ms.date: 01/27/2017
 ms.openlocfilehash: c87a61dc77e656a1cfe667ce87f852303a0cc486
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "74792345"
 ---
 # <a name="encode-x12-messages-in-azure-logic-apps-with-enterprise-integration-pack"></a>Кодирование сообщений X12 в Azure Logic Apps с помощью Пакета интеграции Enterprise
@@ -45,7 +45,7 @@ ms.locfileid: "74792345"
 
     Свойства со звездочкой обязательные.
 
-    | Свойство. | Сведения |
+    | Свойство | Подробнее |
     | --- | --- |
     | Имя подключения* |Введите имя подключения |
     | Учетная запись интеграции* |Выберите имя для учетной записи интеграции. Убедитесь, что учетная запись интеграции и приложение логики находятся в одном регионе Azure. |
@@ -90,6 +90,6 @@ ms.locfileid: "74792345"
 ## <a name="view-the-swagger"></a>Просмотр Swagger
 Ознакомьтесь с [дополнительными сведениями о Swagger](/connectors/x12/). 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 [Дополнительные сведения о Пакете интеграции Enterprise](logic-apps-enterprise-integration-overview.md "Дополнительные сведения о Пакет интеграции Enterprise") 
 

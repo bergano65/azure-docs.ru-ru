@@ -12,10 +12,10 @@ ms.reviewer: nibaccam
 ms.date: 09/22/2020
 ms.custom: how-to
 ms.openlocfilehash: 116dd65bf04c01f513e196a2f1b37d54aacbf1fe
-ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91841362"
 ---
 # <a name="connect-to-data-with-the-azure-machine-learning-studio"></a>Подключение к данным с помощью Машинное обучение Azure Studio
@@ -167,7 +167,7 @@ ms.locfileid: "91841362"
 
 Используйте свои наборы данных в экспериментах машинного обучения для обучения моделей ML. [Дополнительные сведения о способах обучения с помощью наборов данных](how-to-train-with-datasets.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Пошаговый пример обучения с помощью табулардатасетс и автоматизированного машинного обучения](tutorial-first-experiment-automated-ml.md).
 

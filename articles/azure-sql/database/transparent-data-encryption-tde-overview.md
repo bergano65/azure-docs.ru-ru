@@ -11,13 +11,13 @@ ms.topic: conceptual
 author: jaszymas
 ms.author: jaszymas
 ms.reviewer: vanto
-ms.date: 06/15/2020
-ms.openlocfilehash: d9bc5e91d45b75c47cee31c45b937f7d3f0118b8
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.date: 10/12/2020
+ms.openlocfilehash: 10728a5500d8ad36c006bac9176422c6afb9bf1a
+ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87836689"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91945998"
 ---
 # <a name="transparent-data-encryption-for-sql-database-sql-managed-instance-and-azure-synapse-analytics"></a>Прозрачное шифрование данных для базы данных SQL, SQL Управляемый экземпляр и Azure синапсе Analytics
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
@@ -32,7 +32,7 @@ ms.locfileid: "87836689"
 > Все вновь созданные базы данных SQL шифруются по умолчанию с помощью прозрачного шифрования данных, управляемого службой. Существующие базы данных SQL, созданные до 2017 мая, а базы данных SQL, созданные с помощью инструкции RESTORE, Георепликация и копия базы данных, по умолчанию не шифруются. Существующие базы данных SQL Управляемый экземпляр, созданные до февраля 2019, по умолчанию не шифруются. Базы данных SQL Управляемый экземпляр, созданные с помощью инструкции RESTORE, наследуют состояние шифрования от источника.
 
 > [!NOTE]
-> TDE нельзя использовать для шифрования базы данных **master** в базе данных SQL.  База данных **master** содержит объекты, которые необходимы для выполнения операций TDE для пользовательских баз данных.
+> TDE нельзя использовать для шифрования базы данных **master** в базе данных SQL Azure и azure SQL управляемый экземпляр. База данных **master** содержит объекты, которые необходимы для выполнения операций TDE для пользовательских баз данных.
 
 ## <a name="service-managed-transparent-data-encryption"></a>Управляемое службой прозрачное шифрование данных
 
@@ -53,7 +53,7 @@ ms.locfileid: "87836689"
 
 Для операций в пределах Azure базу данных не нужно расшифровывать. Параметры TDE базы данных-источника прозрачно наследуются целевым объектом. Это относится ко всем следующим операциям:
 
-- геовосстановлением;
+- Геовосстановление
 - восстановление на определенный момент времени через интерфейс самообслуживания;
 - восстановление удаленной базы данных;
 - Активная георепликация
@@ -91,7 +91,7 @@ ms.locfileid: "87836689"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 > [!IMPORTANT]
-> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается, но вся будущая разработка предназначена для модуля AZ. SQL. Эти командлеты см. в разделе [AzureRM. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле AZ и в модулях AzureRm существенно идентичны.
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается, но вся будущая разработка предназначена для модуля AZ. SQL. Сведения об этих командлетах см. в разделе [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы команд в модулях Az и AzureRm практически идентичны.
 
 Для настройки TDE с помощью PowerShell нужно подключиться в качестве владельца Azure, участника или диспетчера безопасности SQL.
 

@@ -12,10 +12,10 @@ ms.author: sawinark
 manager: mflasko
 ms.reviewer: douglasl
 ms.openlocfilehash: 94b581f677e370911a60db08276ff7dd0eb45486
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87927085"
 ---
 # <a name="run-sql-server-integration-services-packages-with-the-azure-enabled-dtexec-utility"></a>Выполнение пакетов SQL Server Integration Services с помощью служебной программы dtexec с поддержкой Azure
@@ -32,7 +32,7 @@ ms.locfileid: "87927085"
 
 Азуредтексек можно настроить с помощью среды SSMS, чтобы использовать приложение Azure Active Directory (Azure AD), которое создает конвейеры в фабрике данных. Кроме того, его можно настроить для доступа к файловым системам, файловым ресурсам или файлам Azure, где хранятся пакеты. В зависимости от значений, которые вы присваиваете параметрам вызова, Азуредтексек создает и выполняет уникальный конвейер фабрики данных с действием выполнить пакет служб SSIS. Вызов Азуредтексек с теми же значениями параметров перезапускает существующий конвейер.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 Чтобы использовать Азуредтексек, скачайте и установите последнюю версию SSMS, которая имеет версию 18,3 или более позднюю. Скачайте его с [этого веб-сайта](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-2017).
 
 ## <a name="configure-the-azuredtexec-utility"></a>Настройка служебной программы Азуредтексек
@@ -93,7 +93,7 @@ ms.locfileid: "87927085"
 > [!NOTE]
 > При вызове Азуредтексек с новыми значениями параметров создается новый конвейер, за исключением параметра **/de [нарий]**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 После того как уникальные конвейеры с действием выполнение пакета служб SSIS в них создаются и запускаются при вызове Азуредтексек, их можно отслеживать на портале фабрики данных. Вы также можете назначить им триггеры фабрики данных, если вы хотите управлять ими или запланировать их с помощью фабрики данных. Дополнительные сведения см. в статье [выполнение пакетов служб SSIS в качестве действий фабрики данных](https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-ssis-activity).
 

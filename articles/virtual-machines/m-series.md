@@ -8,17 +8,17 @@ ms.topic: conceptual
 ms.date: 03/31/2020
 ms.author: jushiman
 ms.openlocfilehash: fe63f9d5a9d215a31a56d7214170d86f46a4e4a2
-ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91653661"
 ---
 # <a name="m-series"></a>Серия M
 
 Серия M предусматривает наибольшие число виртуальных ЦП (до 128) и объем памяти (до 3,8 ТиБ). Это идеальный вариант для очень крупных баз данных или других приложений, которым требуются высокие показатели виртуальной ЦП и памяти. Размеры серий M поддерживаются как в процессорах Intel &reg; Xeon &reg; E7-8890 v3 @ 2,50 ГГц, так и в Intel &reg; Xeon &reg; Platinum 8280M (Cascade Lake).
 
-Виртуальная машина серии M — &reg; технология Intel Hyper-Threading.
+Виртуальная машина серии M — функция Intel &reg; Hyper-Threading Technology.
 
 [ACU](acu.md): 160-180<br>
 [Хранилище класса Premium](premium-storage-performance.md): поддерживается<br>

@@ -1,16 +1,16 @@
 ---
 title: Общие сведения о службе "Сетка Azure Service Fabric"
 description: Дополнительные сведения о Сетке Azure Service Fabric. С помощью Сетки Service Fabric можно развертывать и масштабировать приложение, не беспокоясь о его потребностях в инфраструктуре.
-author: dkkapur
-ms.author: dekapur
+author: georgewallace
+ms.author: gwallace
 ms.date: 10/1/2018
 ms.topic: overview
-ms.openlocfilehash: b7061a178a3f5a9d126afab3fc1f9aa77d5cc050
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 32e855ef1580dd065ee681e635994064a9038f77
+ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87927034"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91840274"
 ---
 # <a name="what-is-service-fabric-mesh"></a>Что такое Сетка Service Fabric?
 

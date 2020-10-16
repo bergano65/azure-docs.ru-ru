@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 7/14/2020
 ms.author: raynew
 ms.openlocfilehash: d77f62a57a75f13589b11e023f902c1a128a0d95
-ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88950499"
 ---
 # <a name="general-questions-about-azure-site-recovery"></a>Общие вопросы об Azure Site Recovery
@@ -222,7 +222,7 @@ Azure Site Recovery реплицирует данные в учетную зап
 3. Изменить каталог на "VX/Scripts" в папке установки<br>
     `# cd VX/scripts`
 4. Создайте скрипт оболочки bash с именем "customscript.sh" с разрешениями на выполнение для привилегированного пользователя.<br>
-    а. Скрипт должен поддерживать параметры командной строки "--Pre" и "--Post" (Обратите внимание на двойные тире).<br>
+    a. Скрипт должен поддерживать параметры командной строки "--Pre" и "--Post" (Обратите внимание на двойные тире).<br>
     b. При вызове скрипта с предварительным параметром он должен заморозить входные и выходные данные приложения и при вызове после параметра следует разморозить входные и выходные данные приложения.<br>
     c. Пример шаблона —<br>
 

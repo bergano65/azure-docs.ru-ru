@@ -214,6 +214,8 @@
           href: log-query/scope.md
         - name: Простой интерфейс журналов
           href: log-query/simple-logs.md
+        - name: Отправка запросов с помощью Azure Data Explorer
+          href: platform/azure-data-explorer-monitor-proxy.md
         - name: Запросы журнала
           items:
             - name: Стандартные столбцы
@@ -303,6 +305,14 @@
               href: platform/service-providers.md
             - name: Кластеры категории "Выделенный"
               href: log-query/logs-dedicated-clusters.md
+        - name: Экспорт данных
+          items:
+            - name: Экспорт данных рабочей области
+              href: platform/logs-data-export.md
+            - name: Экспорт с помощью Logic Apps
+              href: platform/logs-export-logic-app.md
+            - name: Запросы к экспортированным данным с использованием Data Explorer
+              href: platform/azure-data-explorer-query-storage.md
     - name: Обозреватель метрик
       items:
         - name: Начало работы с обозревателем метрик
@@ -658,6 +668,8 @@
                       href: app/javascript-react-plugin.md
                     - name: Подключаемый модуль React Native
                       href: app/javascript-react-native-plugin.md
+                    - name: Подключаемый модуль Angular
+                      href: app/javascript-angular-plugin.md
                 - name: Диагностика
                   items:
                     - name: Сбоев при загрузке пакетов SDK

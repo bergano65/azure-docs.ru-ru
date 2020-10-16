@@ -8,10 +8,10 @@ ms.date: 09/25/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
 ms.openlocfilehash: 0f433c33f50506309e88b7ffa2c8aaf498fb3613
-ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91761164"
 ---
 # <a name="azure-security-baseline-for-service-bus"></a>Базовый план безопасности Azure для служебной шины
@@ -715,7 +715,7 @@ ms.locfileid: "91761164"
 
 **Руководство**. Служебная шина Azure обеспечивает шифрование неактивных данных с помощью Azure шифрование службы хранилища (Azure SSE). Служебная шина использует хранилище Azure для хранения данных. по умолчанию все данные, хранящиеся в службе хранилища Azure, шифруются с помощью ключей, управляемых корпорацией Майкрософт. Если для хранения ключей, управляемых клиентом, используется Azure Key Vault, обязательно выполните регулярное автоматическое резервное копирование ключей.
 
-Регулярное автоматическое резервное копирование Key Vault секретных данных с помощью следующей команды PowerShell: Backup-Азкэйваултсекрет
+Регулярное автоматическое резервное копирование Key Vault секретных данных с помощью следующей команды PowerShell: Backup-AzKeyVaultSecret
 
 - [Как настроить ключи, управляемые клиентом, для шифрования неактивных данных служебной шины Azure](configure-customer-managed-key.md)
 

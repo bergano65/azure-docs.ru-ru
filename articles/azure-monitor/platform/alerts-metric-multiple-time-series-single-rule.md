@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 10/04/2020
 ms.subservice: alerts
 ms.openlocfilehash: 81e09e6d9c6a57339f1d6f1eb5ce4f494555fa19
-ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91704486"
 ---
 # <a name="monitor-multiple-time-series-in-a-single-metric-alert-rule"></a>Мониторинг нескольких временных рядов в одном правиле генерации оповещений метрик
@@ -180,6 +180,6 @@ ms.locfileid: "91704486"
 Во избежание чрезмерных затрат каждое правило генерации оповещений может отслеживать до 5000 временных рядов по умолчанию. Чтобы увеличить это ограничение в подписке, откройте запрос в службу поддержки.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о мониторинге при масштабировании с помощью оповещений метрик и [динамических порогов](alerts-dynamic-thresholds.md).

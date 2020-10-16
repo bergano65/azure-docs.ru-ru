@@ -9,12 +9,12 @@ ms.date: 08/04/2020
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc, devx-track-csharp
-ms.openlocfilehash: 3d5ca648b149fa85b28f695956a438cdac9e67e8
-ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
+ms.openlocfilehash: a8d09f762002c89d225ccc00eac83da336850a3c
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90086629"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92047953"
 ---
 # <a name="tutorial-store-data-at-the-edge-with-sql-server-databases"></a>Руководство по Хранение данных в граничной системе с помощью баз данных SQL Server
 
@@ -42,7 +42,7 @@ ms.locfileid: "90086629"
 * [Центр Интернета вещей](../iot-hub/iot-hub-create-through-portal.md) ценовой категории "Бесплатный" или "Стандартный" в Azure.
 * Устройство AMD64 [с Linux, на котором выполняется Azure IoT Edge](quickstart-linux.md);
   * Устройства ARM, такие как Raspberry Pis, не могут выполнять SQL Server. Если вы хотите использовать SQL на устройстве ARM, вы можете зарегистрироваться, чтобы использовать предварительную версию [SQL Azure для пограничных вычислений](https://azure.microsoft.com/services/sql-edge/).
-* реестр контейнеров, например [Реестр контейнеров Azure](https://docs.microsoft.com/azure/container-registry/);
+* реестр контейнеров, например [Реестр контейнеров Azure](../container-registry/index.yml);
 * средство [Visual Studio Code](https://code.visualstudio.com/), настроенное с помощью [Azure IoT Tools](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools);
 * выпуск [Docker CE](https://docs.docker.com/install/), настроенный для выполнения контейнеров Linux.
 
@@ -228,7 +228,7 @@ ms.locfileid: "90086629"
 7. Перейдите в раздел **Модули**. Вы должны увидеть три модуля. Модуль *SimulatedTemperatureSensor* по умолчанию добавляется в новые решения и предоставляет тестовые данные для использования с другими модулями. Модуль *sqlFunction* создается в самом начале, и в него добавляется новый код. Наконец, модуль *sql* был импортирован из Azure Marketplace.
 
    >[!Tip]
-   >Модуль SQL Server поставляется с паролем по умолчанию, заданным в переменных среды манифеста развертывания. Каждый раз при создании контейнера SQL Server в рабочей среде нужно [изменять стандартный пароль системного администратора](https://docs.microsoft.com/sql/linux/quickstart-install-connect-docker).
+   >Модуль SQL Server поставляется с паролем по умолчанию, заданным в переменных среды манифеста развертывания. Каждый раз при создании контейнера SQL Server в рабочей среде нужно [изменять стандартный пароль системного администратора](/sql/linux/quickstart-install-connect-docker).
 
 8. Закройте файл **deployment.template.json**.
 
@@ -331,9 +331,9 @@ ms.locfileid: "90086629"
 
 [!INCLUDE [iot-edge-clean-up-cloud-resources](../../includes/iot-edge-clean-up-cloud-resources.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+В этом руководстве вы создали модуль службы "Функции Azure", который содержит код для фильтрации необработанных данных, созданных вашим устройством IoT Edge. Когда вы будете готовы создавать собственные модули, вы можете узнать больше о том, как [разрабатывать решения службы "Функции Azure" с помощью Azure IoT Edge для Visual Studio Code](./how-to-vs-code-develop-module.md).
 
-В этом руководстве вы создали модуль службы "Функции Azure", который содержит код для фильтрации необработанных данных, созданных вашим устройством IoT Edge. Когда вы будете готовы создавать собственные модули, вы можете узнать больше о том, как [разрабатывать решения службы "Функции Azure" с помощью Azure IoT Edge для Visual Studio Code](how-to-develop-csharp-function.md).
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы хотите применить другой метод хранения данных на пограничных устройствах, прочитайте о том, как использовать хранилище BLOB-объектов Azure в IoT Edge.
 

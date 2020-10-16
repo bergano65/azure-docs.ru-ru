@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.custom: devx-track-csharp
 ms.date: 01/30/2020
 ms.author: lcozzens
-ms.openlocfilehash: f0d1e57c7e212fefc6e17a8170e3b4537b190f60
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: b8756db881448edcaac1fda44b60229975350676
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88211642"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92074742"
 ---
 # <a name="integrate-with-a-cicd-pipeline"></a>Интеграция с конвейером CI/CD
 
@@ -35,9 +35,9 @@ ms.locfileid: "88211642"
 
 ### <a name="prerequisites"></a>Предварительные требования
 
-Если сборка выполняется локально, скачайте и установите [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest), если этот компонент отсутствует.
+Если сборка выполняется локально, скачайте и установите [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest), если этот компонент отсутствует.
 
-Чтобы выполнить облачную сборку, например с помощью DevOps в Azure, убедитесь, что в системе сборки установлен [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+Чтобы выполнить облачную сборку, например с помощью DevOps в Azure, убедитесь, что в системе сборки установлен [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest).
 
 ### <a name="export-an-app-configuration-store"></a>Экспорт хранилища Конфигурации приложений
 
@@ -107,4 +107,4 @@ ms.locfileid: "88211642"
 В этом руководстве вы экспортировали данные Конфигурации приложений Azure для использования в конвейере развертывания. Чтобы узнать больше об использовании службы "Конфигурация приложений", перейдите к примерам скриптов Azure CLI.
 
 > [!div class="nextstepaction"]
-> [Azure CLI](https://docs.microsoft.com/cli/azure/appconfig?view=azure-cli-latest)
+> [Azure CLI](/cli/azure/appconfig?view=azure-cli-latest)

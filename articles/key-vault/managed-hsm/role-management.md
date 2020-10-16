@@ -8,12 +8,12 @@ ms.subservice: managed-hsm
 ms.topic: tutorial
 ms.date: 09/15/2020
 ms.author: ambapat
-ms.openlocfilehash: 6654b97f914ce4c1e3e55d38f47bd5bde0a4891e
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: 814167425fcd39e90edccd952e1a3e4fbd570988
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90992450"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91818031"
 ---
 # <a name="managed-hsm-role-management"></a>Управление ролями в службе "Управляемое устройство HSM"
 
@@ -52,7 +52,7 @@ az login
 
 ### <a name="assign-roles-for-all-keys"></a>Назначение ролей для всех ключей
 
-Команда `az keyvault role assignment create` позволяет назначить роль **Managed HSM Crypto Officer** (Специалист по криптографии для Управляемого устройства HSM) некоторому пользователю, обозначенному именем участника-пользователя **user2@contoso.com** для всех **ключей** (область действия `/keys`) в ContosoHSM.
+Команда `az keyvault role assignment create` позволяет назначить роль **Managed HSM Crypto Officer** (Специалист по криптографии для управляемого устройства HSM) некоторому пользователю, определяемого именем участника-пользователя **user2\@contoso.com**, для всех **ключей** (область действия `/keys`) в ContosoHSM.
 
 ```azurecli-interactive
 az keyvault role assignment create --hsm-name ContosoMHSM --role "Managed HSM Crypto Officer" --assignee user2@contoso.com  --scope /keys
@@ -60,7 +60,7 @@ az keyvault role assignment create --hsm-name ContosoMHSM --role "Managed HSM Cr
 
 ### <a name="assign-role-for-a-specific-key"></a>Назначение роли для конкретного ключа
 
-Команда `az keyvault role assignment create` позволяет назначить роль **Managed HSM Crypto Officer** (Специалист по криптографии для Управляемого устройства HSM) любому пользователю, обозначенному именем участника-пользователя **user2@contoso.com** для конкретного ключа с именем **myrsakey**.
+Команда `az keyvault role assignment create` позволяет назначить роль **Managed HSM Crypto Officer** (Специалист по криптографии для Управляемого устройства HSM) любому пользователю, определяемому именем участника-пользователя **user2\@contoso.com**, для конкретного ключа с именем **myrsakey**.
 
 ```azurecli-interactive
 az keyvault role assignment create --hsm-name ContosoMHSM --role "Managed HSM Crypto Officer" --assignee user2@contoso.com  --scope /keys/myrsakey
@@ -97,7 +97,7 @@ az keyvault role assignment list --hsm-name ContosoMHSM --assignee user2@contoso
 
 ## <a name="delete-a-role-assignment"></a>Удаление назначения ролей
 
-Команда `az keyvault role assignment delete` позволяет удалить роль **Managed HSM Crypto Officer** (Специалист по криптографии для Управляемого устройства HSM), назначенную пользователю **user2@contoso.com** для ключа **myrsakey2**.
+Команда `az keyvault role assignment delete` позволяет удалить роль **Managed HSM Crypto Officer** (Специалист по криптографии для Управляемого устройства HSM), назначенную пользователю **user2\@contoso.com** для ключа **user2contoso**.
 
 ```azurecli-interactive
 az keyvault role assignment delete --hsm-name ContosoMHSM --role "Managed HSM Crypto Officer" --assignee user2@contoso.com  --scope /keys/myrsakey2

@@ -6,13 +6,13 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 05/28/2020
 ms.openlocfilehash: 25f2c4f4698785326f80c24d3749e7585e85d5bb
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91309512"
 ---
-# <a name="devops-practices-for-luis"></a>Рекомендации по DevOps для LUIS
+# <a name="devops-practices-for-luis"></a>Рекомендации по использованию DevOps с LUIS
 
 Разработчики программного обеспечения, которые разрабатывают приложение Language Understanding (LUIS), могут применять DevOps рекомендации по управлению [версиями](luis-concept-devops-sourcecontrol.md), [автоматизированным сборкам](luis-concept-devops-automation.md), [тестированию](luis-concept-devops-testing.md)и [управлению выпусками](luis-concept-devops-automation.md#release-management) , следуя этим рекомендациям.
 
@@ -211,7 +211,7 @@ ms.locfileid: "91309512"
 
 Когда изменения в запросе на вытягивание объединяются в главную базу, то есть следует применить управление версиями, чтобы все обновления в главной базе были установлены независимо.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения о [тестировании для Luis DevOps](luis-concept-devops-testing.md)
 * Узнайте, как [реализовать DevOps для Luis с GitHub](luis-how-to-devops-with-github.md)

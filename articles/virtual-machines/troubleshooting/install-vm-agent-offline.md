@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 07/06/2020
 ms.author: genli
 ms.openlocfilehash: 456aa225fa8eed47ca794c54e61b77a30c93fa9a
-ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85983235"
 ---
 # <a name="install-the-azure-virtual-machine-agent-in-offline-mode"></a>Установка агента виртуальной машины Azure в автономном режиме 
@@ -65,7 +65,7 @@ ms.locfileid: "85983235"
         - HKEY_LOCAL_MACHINE\BROKENSYSTEM\ControlSet001\Services\WindowsAzureGuestAgent
         - HKEY_LOCAL_MACHINE\BROKENSYSTEM\ControlSet001\Services\RdAgent
 
-8.  Используйте имеющиеся файлы на виртуальной машине для устранения неполадок, как репозиторий для установки агента виртуальной машины. Необходимо выполнить следующие шаги.
+8.  Используйте имеющиеся файлы на виртуальной машине для устранения неполадок, как репозиторий для установки агента виртуальной машины. Выполните следующие шаги:
 
     1. Из виртуальной машины для устранения неполадок экспортируйте следующие подразделы в формате реестра (REG): 
         - HKEY_LOCAL_MACHINE  \SYSTEM\ControlSet001\Services\WindowsAzureGuestAgent
@@ -122,7 +122,7 @@ ms.locfileid: "85983235"
    GuestAgentStatus:Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMModel.GuestAgentStatus
    ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Обзор агента виртуальной машины Azure](../extensions/agent-windows.md)
 - [Обзор расширений и компонентов виртуальной машины под управлением Windows](../extensions/features-windows.md)

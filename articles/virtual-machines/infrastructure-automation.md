@@ -8,10 +8,10 @@ ms.workload: infrastructure
 ms.date: 07/17/2020
 ms.author: cynthn
 ms.openlocfilehash: 36ac0058f8f2cf3ca106b30c86207e46d0712193
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87830552"
 ---
 # <a name="use-infrastructure-automation-tools-with-virtual-machines-in-azure"></a>Использование средств автоматизации инфраструктуры на виртуальных машинах в Azure
@@ -134,7 +134,7 @@ ms.locfileid: "87830552"
 
 Вы узнаете, как выполнять следующие задачи:
 
-- [Как создать инфраструктуру непрерывной интеграции и непрерывного развертывания на виртуальной машине Linux в Azure с помощью Jenkins, GitHub и Docker](/azure/developer/jenkins/pipeline-with-github-and-docker)
+- [Создание инфраструктуры разработки на виртуальной машине Linux в Azure с помощью Jenkins, GitHub и DOCKER](/azure/developer/jenkins/pipeline-with-github-and-docker).
 
 
 ## <a name="azure-resource-manager-template"></a>Шаблон Azure Resource Manager
@@ -147,5 +147,5 @@ ms.locfileid: "87830552"
 - [Скачайте шаблон для виртуальной машины](./windows/download-template.md).
 - [Создайте шаблон Azure Image Builder](./linux/image-builder-json.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Средства автоматизации инфраструктуры в Azure позволяют выполнять разные задачи. Вы можете использовать решения, которые максимально отвечают вашим потребностям и требованиям среды. Чтобы приступить к работе и оценить несколько стандартных средств Azure, ознакомьтесь с руководством по автоматизации настройки виртуальной машины [Linux](./linux/tutorial-automate-vm-deployment.md) или [Windows](./windows/tutorial-automate-vm-deployment.md).

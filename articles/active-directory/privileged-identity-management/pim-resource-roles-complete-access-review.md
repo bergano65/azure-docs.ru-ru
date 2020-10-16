@@ -16,10 +16,10 @@ ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 1601c9fc750df1f8e18bdaa072ede1b5ee164329
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84743819"
 ---
 # <a name="complete-an-access-review-of-azure-resource-roles-in-privileged-identity-management"></a>Выполните проверку доступа к ролям ресурсов Azure в управление привилегированными пользователями
@@ -44,7 +44,7 @@ ms.locfileid: "84743819"
 
 ![Параметры для управления проверкой — "отключить", "сбросить", "Применить", "Удалить"](media/pim-resource-roles-complete-access-review/rbac-access-review-menu.png)
 
-### <a name="stop"></a>Остановить
+### <a name="stop"></a>Стоп
 
 Все проверки доступа имеют дату окончания. Нажмите кнопку " **завершить** ", чтобы завершить его раньше. Все пользователи, которые еще не завершили проверку на этот раз, не смогут завершить их после того, как вы завершите проверку. Нельзя перезапустить проверку после ее остановки.
 
@@ -56,7 +56,7 @@ ms.locfileid: "84743819"
 
 После завершения проверки доступа нажмите кнопку **Применить** , чтобы реализовать результат проверки. Если в процессе проверки пользователю было отказано в доступе, то это приведет к удалению назначенной пользователю роли.  
 
-### <a name="delete"></a>Удалить
+### <a name="delete"></a>DELETE
 
 Если проверка вам больше не нужна, удалите ее. Выберите **Удалить** Yo удалить проверку из службы Управление привилегированными пользователями.
 
@@ -72,7 +72,7 @@ ms.locfileid: "84743819"
 
 ![Список страниц рецензентов и имя участника-пользователя](media/pim-resource-roles-complete-access-review/rbac-access-review-reviewers.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Запуск проверки доступа для ролей ресурсов Azure в управление привилегированными пользователями](pim-resource-roles-start-access-review.md)
 - [Выполните проверку доступа к моим ролям ресурсов Azure в управление привилегированными пользователями](pim-resource-roles-perform-access-review.md)

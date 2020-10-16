@@ -1,5 +1,5 @@
 ---
-title: Поддерживаемые хранилища данных в общей папке данных Azure
+title: Поддерживаемые хранилища данных в Azure Data Share
 description: Сведения о хранилищах данных, которые поддерживаются для использования общей папки данных Azure.
 ms.service: data-share
 author: jifems
@@ -7,13 +7,13 @@ ms.author: jife
 ms.topic: conceptual
 ms.date: 08/14/2020
 ms.openlocfilehash: bb8b13e1141a8cb4610e15ed693e28042dd20d72
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89259019"
 ---
-# <a name="supported-data-stores-in-azure-data-share"></a>Поддерживаемые хранилища данных в общей папке данных Azure
+# <a name="supported-data-stores-in-azure-data-share"></a>Поддерживаемые хранилища данных в Azure Data Share
 
 Общая папка данных Azure предоставляет доступ к открытым и гибким данным, включая возможность совместного использования с различными хранилищами данных. Поставщики данных могут обмениваться данными из одного типа хранилища данных, и их потребители данных могут выбрать хранилище данных для получения данных. 
 
@@ -28,7 +28,7 @@ ms.locfileid: "89259019"
 | Хранилище BLOB-объектов Azure |✓ | |
 | Хранилище Azure Data Lake Storage 1-го поколения |✓ | |
 | Azure Data Lake Storage 2-го поколения |✓ ||
-| База данных SQL Azure. |Общедоступная предварительная версия | |
+| База данных SQL Azure |Общедоступная предварительная версия | |
 | Azure синапсе Analytics (ранее — хранилище данных SQL Azure) |Общедоступная предварительная версия | |
 | Azure Data Explorer | |✓ |
 
@@ -38,12 +38,12 @@ ms.locfileid: "89259019"
 
 В таблице ниже приведены различные сочетания и варианты, которые пользователи данных имеют при принятии и настройке общей папки данных. Дополнительные сведения о настройке сопоставлений наборов данных см. в разделе [Настройка сопоставлений наборов данных](how-to-configure-mapping.md).
 
-| Хранилище данных | хранилище BLOB-объектов Azure | Хранилище Azure Data Lake Storage 1-го поколения | Azure Data Lake Storage 2-го поколения | База данных SQL Azure. | Azure Synapse Analytics | Azure Data Explorer
+| Хранилище данных | хранилище BLOB-объектов Azure | Хранилище Azure Data Lake Storage 1-го поколения | Azure Data Lake Storage 2-го поколения | База данных SQL Azure | Azure Synapse Analytics | Azure Data Explorer
 |:--- |:--- |:--- |:--- |:--- |:--- |:--- |
 | Хранилище BLOB-объектов Azure | ✓ || ✓ ||
 | Хранилище Azure Data Lake Storage 1-го поколения | ✓ | | ✓ ||
 | Azure Data Lake Storage 2-го поколения | ✓ | | ✓ ||
-| База данных SQL Azure. | ✓ | | ✓ | ✓ | ✓ ||
+| База данных SQL Azure | ✓ | | ✓ | ✓ | ✓ ||
 | Azure синапсе Analytics (ранее — хранилище данных SQL Azure) | ✓ | | ✓ | ✓ | ✓ ||
 | Azure Data Explorer |||||| ✓ |
 
@@ -67,6 +67,6 @@ ms.locfileid: "89259019"
 
 Дополнительные сведения см. в разделе [общий доступ и получение данных из обозреватель данных Azure](/azure/data-explorer/data-share) . 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Чтобы узнать, как начать совместное использование данных, перейдите к руководству по [совместному использованию данных](share-your-data.md) .

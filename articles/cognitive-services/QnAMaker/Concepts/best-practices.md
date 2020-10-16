@@ -6,10 +6,10 @@ ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 02/15/2020
 ms.openlocfilehash: 15cb1391cb6482401c2a091a4d5c0e9d819ba52d
-ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91777026"
 ---
 # <a name="best-practices-of-a-qna-maker-knowledge-base"></a>Рекомендации по использованию базы знаний QnA Maker
@@ -143,7 +143,7 @@ QnA Maker дает пользователям возможность [совме
 
 [Активное обучение](../How-to/use-active-learning.md) позволяет идеально предложить альтернативные вопросы при обеспечении достаточного качества и количества пользовательских запросов. Очень важно разрешить пользовательским запросам от клиента к приложению принимать участие в цикле обратной связи активного обучения без цензуры. После того как на портале QnA Maker предложены вопросы, можно **[отфильтровать по предложениям](../How-To/improve-knowledge-base.md#accept-an-active-learning-suggestion-in-the-knowledge-base)** , просмотреть и принять или отклонить эти предложения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Редактирование базы знаний](../How-to/edit-knowledge-base.md)

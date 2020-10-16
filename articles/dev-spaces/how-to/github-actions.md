@@ -7,14 +7,16 @@ description: Проверка и проверка изменений в запр
 keywords: DOCKER, Kubernetes, Azure, AKS, служба Kubernetes Azure, контейнеры, действия GitHub, Helm, сеть службы, маршрутизация в сети службы, kubectl, K8S
 manager: gwallace
 ms.custom: devx-track-js
-ms.openlocfilehash: 25cb0de10e83069514c7918a5a2cdac019fe1ebb
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 8c11150105db7a7bb48d20992dcc259cb5d87752
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91316109"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91973110"
 ---
 # <a name="github-actions--azure-kubernetes-service-preview"></a>Действия GitHub & службы Azure Kubernetes (Предварительная версия)
+
+[!INCLUDE [Azure Dev Spaces deprecation](../../../includes/dev-spaces-deprecation.md)]
 
 Azure Dev Spaces предоставляет рабочий процесс с помощью действий GitHub, позволяющих проверять изменения из запроса на вытягивание непосредственно в AKS перед слиянием запроса на включение внесенных изменений в основную ветвь репозитория. Наличие работающего приложения для просмотра изменений запроса на вытягивание может повысить уверенность как разработчика, так и членов группы. Это работающее приложение также может помочь членам группы, таким как, менеджеры по продуктам и проектировщикам, стать частью процесса проверки на ранних стадиях разработки.
 

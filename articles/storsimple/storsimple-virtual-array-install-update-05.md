@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 05/10/2017
 ms.author: alkohli
-ms.openlocfilehash: fa5524525aa76279cdcceaf0f5fd2a74753786ea
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 3a992e432a6111b5da02187bcf6592587c4d31bf
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91300605"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91977516"
 ---
 # <a name="install-update-05-on-your-storsimple-virtual-array"></a>Установка обновления 0.5 на виртуальный массив StorSimple
 
@@ -92,26 +92,26 @@ ms.locfileid: "91300605"
 
 1. В локальном веб-интерфейсе перейдите в раздел **обслуживание**  >  **Обновление программного обеспечения**.
    
-    ![обновление устройства](./media/storsimple-virtual-array-install-update-05/update1m.png)
+    ![Обновление устройства 1](./media/storsimple-virtual-array-install-update-05/update1m.png)
 
 2. В поле **Путь к файлу обновления**введите имя файла обновления или исправления. Также вы можете найти файл установки обновления или исправления, если он расположен в сетевой папке. Нажмите кнопку **Применить**.
    
-    ![обновление устройства](./media/storsimple-virtual-array-install-update-05/update2m.png)
+    ![Обновление устройства 2](./media/storsimple-virtual-array-install-update-05/update2m.png)
 
 3. Отобразится предупреждение. Если это устройство с одним узлом, то после применения обновления оно перезагружается, а также возникает время простоя. Щелкните значок галочки.
    
-   ![обновление устройства](./media/storsimple-virtual-array-install-update-05/update3m.png)
+   ![Обновление устройства 3](./media/storsimple-virtual-array-install-update-05/update3m.png)
 
 4. Начинается обновление. После успешного обновления устройство перезапускается. В течение этого времени локальный пользовательский интерфейс недоступен.
    
-    ![обновление устройства](./media/storsimple-virtual-array-install-update-05/update5m.png)
+    ![Обновление устройства 4](./media/storsimple-virtual-array-install-update-05/update5m.png)
 
 5. После перезапуска открывается страница **входа** . Чтобы убедиться, что программное обеспечение устройства Обновлено, в локальном веб-интерфейсе перейдите в раздел **обслуживание**  >  **Обновление программного обеспечения**. Для обновления 0.5 должна отображаться версия программного обеспечения **10.0.0.0.0.10290.0**.
    
    > [!NOTE]
    > Версии программного обеспечения в локальном веб-интерфейсе и на портале Azure отображаются немного по-разному. Например, для одной и той же версии в локальном пользовательском веб-интерфейсе отображается номер **10.0.0.0.0.10290**, а на портале Azure — **10.0.10290.0**.
    
-    ![обновление устройства](./media/storsimple-virtual-array-install-update-05/update6m.png)
+    ![Обновление устройства 5](./media/storsimple-virtual-array-install-update-05/update6m.png)
 
 6. Следующим шагом является обновление агента MDS. На странице **Обновление программного обеспечения** перейдите к полю **Путь к файлу обновления** и откройте файл `GenevaMonitoringAgentPackageInstaller.msi`. Повторите шаги 2–4. После перезапуска виртуального массива войдите в локальный пользовательский веб-интерфейс.
 

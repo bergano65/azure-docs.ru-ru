@@ -12,10 +12,10 @@ ms.workload: infrastructure-services
 ms.date: 08/28/2020
 ms.author: blehr
 ms.openlocfilehash: 49a89ee90d28c9c7a3f59424b773ee0f221381e4
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89303534"
 ---
 # <a name="quickstart-create-a-public-ip-address-using-the-azure-portal"></a>Краткое руководство. Создание общедоступного IP-адреса с помощью портал Azure
@@ -36,7 +36,7 @@ ms.locfileid: "89303534"
     | ---                     | ---                         |
     | Версия IP-адреса              | Выберите IPv4                 |    
     | номер SKU                     | Выберите **Стандартный**         |
-    | name                    | Введите *мистандардзрпублиЦип*          |
+    | Имя                    | Введите *мистандардзрпублиЦип*          |
     | Назначение IP-адресов   | Обратите внимание, что он будет заблокирован как "статический"                                        |
     | Время ожидания простоя (в минутах)  | Оставьте значение 4        |
     | Метка DNS-имени          | Оставьте значение пустым.    |
@@ -61,7 +61,7 @@ ms.locfileid: "89303534"
     | ---                     | ---                         |
     | Версия IP-адреса              | Выберите IPv4                 |    
     | номер SKU                     | Выберите **Стандартный**         |
-    | name                    | Введите *мистандардпублиЦип*          |
+    | Имя                    | Введите *мистандардпублиЦип*          |
     | Назначение IP-адресов   | Обратите внимание, что он будет заблокирован как "статический"                                        |
     | Время ожидания простоя (в минутах)  | Оставьте значение 4        |
     | Метка DNS-имени          | Оставьте значение пустым.    |
@@ -86,7 +86,7 @@ ms.locfileid: "89303534"
     | ---                     | ---                         |
     | Версия IP-адреса              | Выберите IPv4                 |    
     | номер SKU                     | Выберите **Стандартный**         |
-    | name                    | Введите *мибасикпублиЦип*          |
+    | Имя                    | Введите *мибасикпублиЦип*          |
     | Назначение IP-адресов   | Выберите **статический** (см. Примечание ниже)                                     |
     | Время ожидания простоя (в минутах)  | Оставьте значение 4        |
     | Метка DNS-имени          | Оставьте значение пустым.    |
@@ -102,7 +102,7 @@ ms.locfileid: "89303534"
 
 Дополнительные сведения об отдельных указанных выше полях см. в разделе [Управление общедоступными IP-адресами](https://docs.microsoft.com/azure/virtual-network/virtual-network-public-ip-address#create-a-public-ip-address).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Связывание [общедоступного IP-адреса с виртуальной машиной](https://docs.microsoft.com/azure/virtual-network/associate-public-ip-address-vm#azure-portal)
 - См. дополнительные сведения об [общедоступных IP-адресах в Azure](virtual-network-ip-addresses-overview-arm.md#public-ip-addresses).
 - См. сведения обо всех [параметрах общедоступных IP-адресов](virtual-network-public-ip-address.md#create-a-public-ip-address).

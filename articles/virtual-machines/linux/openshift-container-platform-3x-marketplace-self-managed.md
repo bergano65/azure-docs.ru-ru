@@ -1,6 +1,6 @@
 ---
-title: Развертывание решения для самостоятельного управления платформой OpenShift Container 3,11 в Azure
-description: Развертывание OpenShift контейнера Platform 3,11 с самостоятельно управляемым предложением Marketplace в Azure.
+title: Развертывание предложения OpenShift для платформы контейнеров 3,11 Self-Managed Marketplace в Azure
+description: Развертывание предложения OpenShift Container Platform 3,11 Self-Managed Marketplace в Azure.
 author: haroldwongms
 manager: mdotson
 ms.service: virtual-machines-linux
@@ -11,10 +11,10 @@ ms.workload: infrastructure
 ms.date: 10/14/2019
 ms.author: haroldw
 ms.openlocfilehash: 36adf35c5fbfc3e88b7d9af425ebabc852707e69
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87374105"
 ---
 # <a name="configure-prerequisites"></a>Настройка необходимых компонентов

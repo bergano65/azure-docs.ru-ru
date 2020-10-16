@@ -4,10 +4,10 @@ description: Изучите принципы действия арендатор
 ms.date: 07/03/2020
 ms.topic: conceptual
 ms.openlocfilehash: c409b45d18504d071ffed3185de20ec5e1147bc2
-ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91399250"
 ---
 # <a name="tenants-roles-and-users-in-azure-lighthouse-scenarios"></a>Арендаторы, роли и пользователи в сценариях Azure Lighthouse
@@ -45,7 +45,7 @@ ms.locfileid: "91399250"
 > [!IMPORTANT]
 > Чтобы добавить разрешения для группы Azure AD, **Тип группы** должен быть установлен в значение **Безопасность**. Этот вариант автоматически выбирается при создании группы. Дополнительные сведения см. в статье [Создание простой группы и добавление в нее участников с помощью Azure Active Directory](../../active-directory/fundamentals/active-directory-groups-create-azure-portal.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте о [рекомендуемых методиках обеспечения безопасности для Azure лигхсаусе](recommended-security-practices.md).
 - Подключение клиентов к Azure Лигхсаусе с [помощью шаблонов Azure Resource Manager](../how-to/onboard-customer.md) или [публикации частных или общедоступных управляемых служб в Azure Marketplace](../how-to/publish-managed-services-offers.md).

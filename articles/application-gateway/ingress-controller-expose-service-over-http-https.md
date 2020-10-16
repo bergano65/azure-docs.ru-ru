@@ -8,17 +8,17 @@ ms.topic: how-to
 ms.date: 11/4/2019
 ms.author: caya
 ms.openlocfilehash: 3b816ddc0eccf8c406cfed37d6bfc594e27d3629
-ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85850350"
 ---
 # <a name="expose-an-aks-service-over-http-or-https-using-application-gateway"></a>Предоставление службы AKS по протоколу HTTP или HTTPS с помощью шлюза приложений 
 
 Эти учебники помогут продемонстрировать использование [Kubernetesных ресурсов](https://kubernetes.io/docs/concepts/services-networking/ingress/) для предоставления примера службы Kubernetes через [шлюз приложений Azure](https://azure.microsoft.com/services/application-gateway/) по протоколу HTTP или HTTPS.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Установленная `ingress-azure` Диаграмма Helm.
   - [**Развертывание нуля**](ingress-controller-install-new.md). Если вы начинаете с нуля, ознакомьтесь с инструкциями по установке, в которых описаны действия по развертыванию кластера AKS с помощью шлюза приложений и установке контроллера входящего трафика шлюза приложений в кластере AKS.

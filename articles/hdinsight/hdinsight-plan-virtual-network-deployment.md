@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 05/04/2020
 ms.openlocfilehash: e2db6d1d60026a00fa8e766fbaa1c72975fa2e99
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "82786620"
 ---
 # <a name="plan-a-virtual-network-for-azure-hdinsight"></a>Планирование виртуальной сети для Azure HDInsight
@@ -201,7 +201,7 @@ Azure предоставляет разрешение имен для служб
 
 2. Чтобы определить узел и порт, через которые доступна служба, обратитесь к документу [Порты, используемые службами Hadoop в HDInsight](./hdinsight-hadoop-port-settings-for-services.md).
 
-## <a name="load-balancing"></a>балансировка нагрузки;
+## <a name="load-balancing"></a>Балансировка нагрузки
 
 При создании кластера HDInsight также создается балансировщик нагрузки. Этот тип подсистемы балансировки нагрузки имеет уровень " [базовый](../load-balancer/skus.md)", имеющий определенные ограничения. Одно из этих ограничений заключается в том, что если у вас есть две виртуальные сети в разных регионах, вы не сможете подключиться к базовым подсистемам балансировки нагрузки. Дополнительные сведения см. [в статье вопросы и ответы по виртуальным сетям: ограничения для пиринга глобальной виртуальной](../virtual-network/virtual-networks-faq.md#what-are-the-constraints-related-to-global-vnet-peering-and-load-balancers)сети.
 

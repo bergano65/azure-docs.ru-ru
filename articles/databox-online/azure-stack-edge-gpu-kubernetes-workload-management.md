@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: alkohli
 ms.openlocfilehash: d9e0da9e24a0bd32047d029879c4f0e110dc0c16
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91320801"
 ---
 # <a name="kubernetes-workload-management-on-your-azure-stack-edge-pro-device"></a>Управление рабочей нагрузкой Kubernetes на устройстве Pro Azure Stack
@@ -66,7 +66,7 @@ ms.locfileid: "91320801"
 - **Центр Интернета вещей и дуга Azure**. Выбор развертывания также зависит от цели вашего сценария продукта. Если вы развертываете приложения или контейнеры, которые имеют более глубокую интеграцию с IoT или экосистемой IoT, выберите IoT Edge, чтобы развернуть приложения. Если у вас есть развертывания Kubernetes, предпочтительнее выбрать Azure ARC.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Сведения о локальном развертывании приложения с помощью kubectl см. в следующих статьях:
 

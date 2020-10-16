@@ -8,10 +8,10 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 09/23/2020
 ms.openlocfilehash: 86a6c1a15d804a6c758e90dbd4bdd7057a7a2716
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91295292"
 ---
 # <a name="event-hubs-output-from-azure-stream-analytics"></a>Выходные данные концентраторов событий из Azure Stream Analytics
@@ -62,7 +62,7 @@ ms.locfileid: "91295292"
 
 На следующем рисунке изображены ожидаемые свойства выходного сообщения, проверенные в EventHub с помощью [обозревателя служебной шины](https://github.com/paolosalvatori/ServiceBusExplorer).
 
-:::image type="content" source="media/event-hubs-output/custom-properties.png" alt-text="Настраиваемые свойства события":::
+:::image type="content" source="media/event-hubs-output/custom-properties.png" alt-text="Столбцы свойств":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

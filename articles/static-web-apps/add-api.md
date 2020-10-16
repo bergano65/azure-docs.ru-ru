@@ -9,10 +9,10 @@ ms.date: 05/29/2020
 ms.author: wachegha
 ms.custom: devx-track-js
 ms.openlocfilehash: c84367a5e3ab57090f59196e8474c14cba87f32b
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91250153"
 ---
 # <a name="add-an-api-to-azure-static-web-apps-preview-with-azure-functions"></a>Добавление API в предварительную версию Статистического веб-приложения Azure с помощью Функций Azure
@@ -43,7 +43,7 @@ ms.locfileid: "91250153"
 1. Нажмите клавишу **F1**, чтобы открыть команду в палитре команд.
 1. Вставьте URL-адрес в запрос _Git: Clone_ и нажмите клавишу **ВВОД**.
 
-   :::image type="content" source="media/add-api/vscode-git-0.png" alt-text="Клонирование проекта GitHub с помощью Visual Studio Code":::
+   :::image type="content" source="media/add-api/vscode-git-0.png" alt-text="Создание репозитория из vanilla-basic":::
 
     Следуйте инструкциям на экране, чтобы выбрать расположение репозитория для клонирования проекта.
 
@@ -59,7 +59,7 @@ ms.locfileid: "91250153"
 1. Выберите папку **api** в качестве каталога для рабочей области проекта.
 1. Щелкните **Выбрать**.
 
-   :::image type="content" source="media/add-api/create-azure-functions-vscode-1.png" alt-text="Создание Функций Azure с помощью Visual Studio Code":::
+   :::image type="content" source="media/add-api/create-azure-functions-vscode-1.png" alt-text="Создание репозитория из vanilla-basic":::
 
 1. Введите следующие сведения по соответствующим запросам:
 
@@ -145,13 +145,13 @@ Visual Studio Code интегрируется с [Azure Functions Core Tools](..
 
     Основные инструменты показывают выходные данные работающего приложения на панели _терминала_ . В качестве части выходных данных можно увидеть конечную точку URL-адреса функции, активированной с помощью HTTP, которая выполняется локально.
 
-    :::image type="content" source="media/add-api/create-azure-functions-vscode-2.png" alt-text="Создание Функций Azure с помощью Visual Studio Code":::
+    :::image type="content" source="media/add-api/create-azure-functions-vscode-2.png" alt-text="Создание репозитория из vanilla-basic":::
 
 1. При запуске основных средств перейдите по следующему URL-адресу, чтобы убедиться, что API работает правильно: `http://localhost:7071/api/message` .
 
    Ответ в браузере должен выглядеть следующим образом:
 
-   :::image type="content" source="media/add-api/create-azure-functions-vscode-3.png" alt-text="Создание Функций Azure с помощью Visual Studio Code":::
+   :::image type="content" source="media/add-api/create-azure-functions-vscode-3.png" alt-text="Создание репозитория из vanilla-basic":::
 
 1. Нажмите клавиши **SHIFT + F5** , чтобы прерывать сеанс отладки.
 
@@ -199,7 +199,7 @@ Visual Studio Code интегрируется с [Azure Functions Core Tools](..
 
     Теперь сообщение API должно отобразиться на веб-странице.
 
-   :::image type="content" source="media/add-api/create-azure-functions-vscode-4.png" alt-text="Создание Функций Azure с помощью Visual Studio Code":::
+   :::image type="content" source="media/add-api/create-azure-functions-vscode-4.png" alt-text="Создание репозитория из vanilla-basic":::
 
    > [!NOTE]
    > Для обслуживания файла `index.html` можно использовать другие серверы HTTP или прокси-серверы. Доступ к `index.html` из `file:///` не будет работать.
@@ -251,11 +251,11 @@ Visual Studio Code интегрируется с [Azure Functions Core Tools](..
 
     Так как приложение строится в фоновом режиме, можно щелкнуть баннер, содержащий ссылку, чтобы просмотреть состояние сборки.
 
-    :::image type="content" source="media/add-api/github-action-flag.png" alt-text="Рабочий процесс GitHub":::
+    :::image type="content" source="media/add-api/github-action-flag.png" alt-text="Создание репозитория из vanilla-basic":::
 
 1. После завершения развертывания подразделение может переходить к веб-приложению, щелкнув ссылку _URL-адрес_ , показанную на странице _Обзор_ .
 
-    :::image type="content" source="media/add-api/static-app-url-from-portal.png" alt-text="Доступ к URL-адресу статического приложения на портале Azure":::
+    :::image type="content" source="media/add-api/static-app-url-from-portal.png" alt-text="Создание репозитория из vanilla-basic":::
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

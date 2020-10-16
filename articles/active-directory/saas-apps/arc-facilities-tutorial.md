@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 09/05/2019
 ms.author: jeedes
-ms.openlocfilehash: bca696cc633a1d2a4fd64180135bb4b1e25f801c
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 953b1d766788092564ae32f6c0ab1fb3e57c492f
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88540627"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91713894"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-arc-facilities"></a>Руководство по Интеграции единого входа Azure Active Directory с ARC Facilities
 
@@ -84,15 +84,15 @@ ms.locfileid: "88540627"
 
 1. Приложение ARC Facilities ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Нажмите кнопку **Изменить**, чтобы открыть диалоговое окно "Атрибуты пользователя".
 
-    ![Изображение](common/edit-attribute.png)
+    ![Снимок экрана: диалоговое окно "Атрибуты пользователя" с выделенным значком "Изменить".](common/edit-attribute.png)
 
 1. В дополнение к описанному выше приложение ARC Facilities ожидает несколько дополнительных атрибутов в ответе SAML. В разделе**Утверждения и атрибуты пользователя** в диалоговом окне **Утверждения групп (предварительная версия)** выполните следующие действия:
 
     а. Щелкните **значок ручки** рядом с параметром **Группы, возвращенные в утверждении**.
 
-    ![Изображение](./media/arc-facilities-tutorial/config01.png)
+    ![Снимок экрана: раздел "Атрибуты и утверждения пользователя" со значком "Перо" рядом с выделенным параметром "Группы, возвращенные в утверждении".](./media/arc-facilities-tutorial/config01.png)
 
-    ![Изображение](./media/arc-facilities-tutorial/config02.png)
+    ![Снимок экрана: диалоговое окно "Утверждения групп" с выбранным параметром "Все группы", значением "ИД группы" и выделенной кнопкой "Сохранить".](./media/arc-facilities-tutorial/config02.png)
 
     b. Установите переключатель **Все группы** в списке.
 

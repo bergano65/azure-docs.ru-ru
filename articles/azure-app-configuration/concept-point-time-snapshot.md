@@ -8,12 +8,12 @@ ms.author: lcozzens
 ms.service: azure-app-configuration
 ms.topic: conceptual
 ms.date: 02/20/2020
-ms.openlocfilehash: cbcfedc091fd111bceffe775cb337c118a87c767
-ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
+ms.openlocfilehash: 23f613584638026a2b371849c7d1014b3bb1f136
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90601084"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92073076"
 ---
 # <a name="point-in-time-snapshot"></a>Моментальный снимок на определенный момент времени
 
@@ -23,7 +23,7 @@ ms.locfileid: "90601084"
 
 Для извлечения прошлых значений ключа можно использовать портал Azure или CLI. В Azure CLI используйте `az appconfig revision list` , добавив соответствующие параметры для получения необходимых значений.  Укажите экземпляр конфигурации приложения Azure, указав имя хранилища ( `--name <app-config-store-name>` ) или с помощью строки подключения ( `--connection-string <your-connection-string>` ). Ограничьте вывод, указав конкретный момент времени ( `--datetime` ) и указав максимальное число возвращаемых элементов ( `--top` ).
 
-Если Azure CLI не установлен локально, можно также использовать [Azure Cloud Shell](/azure/cloud-shell/overview).
+Если Azure CLI не установлен локально, можно также использовать [Azure Cloud Shell](../cloud-shell/overview.md).
 
 Извлеките все записанные изменения в значения ключей.
 
@@ -58,4 +58,4 @@ az appconfig revision list --name <your-app-config-store-name> --top 10 --fields
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Создание веб-приложения ASP.NET Core](./quickstart-aspnet-core-app.md)  
+> [Создание веб-приложения ASP.NET Core](./quickstart-aspnet-core-app.md)

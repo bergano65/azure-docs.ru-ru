@@ -8,10 +8,10 @@ ms.subservice: security-develop
 ms.topic: article
 ms.date: 08/17/2017
 ms.openlocfilehash: 65a88f309602462e77336181316c0d5bf19a8a1e
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90980671"
 ---
 # <a name="threat-modeling-tool-feature-overview"></a>Общие сведения о функциях средства моделирования угроз
@@ -174,7 +174,7 @@ ms.locfileid: "90980671"
 
 При выборе угрозы можно использовать три разные функции.
 
-| Функция                               | Информация      |
+| Компонент                               | Сведения      |
 | --------------------------------------- | ------------ |
 | **Индикатор прочитанного** | <p>Угроза помечается как прочитанная, что помогает следить за проверенными элементами.</p><p>![Индикатор прочитанного и непрочитанного](./media/threat-modeling-tool-feature-overview/readmode.png)</p> |
 | **Фокус на взаимодействии** | <p>Взаимодействие на схеме, которое относится к этой угрозе.</p><p>![Фокус на взаимодействии](./media/threat-modeling-tool-feature-overview/interactionfocus.png)</p> |
@@ -198,7 +198,7 @@ ms.locfileid: "90980671"
 
 ![На снимке экрана показан пример отчета моделирования угроз, включая сводку, диаграммы и другие сведения.](./media/threat-modeling-tool-feature-overview/report.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Отправляйте свои вопросы, комментарии и проблемы по адресу tmtextsupport@microsoft.com. **[Скачайте](https://aka.ms/threatmodelingtool)** средство моделирования угроз, чтобы начать работу.
 - Чтобы разместить шаблон для сообщества, перейдите на нашу станицу [GitHub](https://github.com/Microsoft/threat-modeling-templates).

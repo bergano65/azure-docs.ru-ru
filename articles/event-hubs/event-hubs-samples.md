@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 06/23/2020
 ms.custom: devx-track-azurecli
 ms.openlocfilehash: 2e0f8026683302f6b54924625b132e79cb194bad
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87499426"
 ---
 # <a name="git-repositories-with-samples-for-azure-event-hubs"></a>Репозитории Git с примерами кодов для Центров событий Azure 
@@ -16,28 +16,28 @@ ms.locfileid: "87499426"
 
 ## <a name="net-samples"></a>Примеры для .NET
 
-| Version | Расположение выборок |
+| Версия | Расположение выборок |
 | ------- | ---------------- | 
 | Azure. Messaging. EventHubs версии 5 (последняя версия) | [Azure Event Hubs samples](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/eventhub/Azure.Messaging.EventHubs/samples) (Примеры Центров событий Azure)<br/>[Примеры процессоров концентраторов событий на GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/eventhub/Azure.Messaging.EventHubs.Processor/samples) | 
 | Microsoft. Azure. EventHubs версии 4 (устаревшая версия) | [Расположение GitHub](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/) |
 
 ## <a name="java-samples"></a>Примеры для Java
 
-| Version | Расположение выборок |
+| Версия | Расположение выборок |
 | ------- | ---------------- | 
 | Azure-Messaging-eventhubs версии 5 (последняя версия) | [Расположение GitHub](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/eventhubs/azure-messaging-eventhubs/src/samples/java/com/azure/messaging/eventhubs) | 
 | Azure-eventhubs версии 3 (устаревшая версия) | [Расположение GitHub](https://github.com/Azure/azure-event-hubs/tree/master/samples/Java/) |
 
 ## <a name="python-samples"></a>Примеры для Python
 
-| Version | Расположение выборок |
+| Версия | Расположение выборок |
 | ------- | ---------------- | 
 | Azure-eventhub версии 5 (последняя версия) | [Расположение GitHub](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/eventhub/azure-eventhub/samples) | 
 | Azure-eventhub версии 1 (устаревшая версия) | [Расположение GitHub](https://github.com/Azure/azure-sdk-for-python/tree/release/eventhub-v1/sdk/eventhub/azure-eventhubs/examples) |
 
 ## <a name="javascript-samples"></a>Примеры для JavaScript
 
-| Version | Расположение выборок |
+| Версия | Расположение выборок |
 | ------- | ---------------- | 
 | Azure/Event-Hub версии 5 (последняя версия) | [Расположение GitHub](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/eventhub/event-hubs/samples) | 
 | Azure и события-концентраторы версии 2 (устаревшие) | [Расположение GitHub](https://github.com/Azure/azure-sdk-for-js/tree/%40azure/event-hubs_2.1.0/sdk/eventhub/event-hubs/samples) |

@@ -6,12 +6,12 @@ ms.author: flborn
 ms.date: 02/12/2020
 ms.topic: sample
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: fbac172952c9feea92341dbc028567235b9250bc
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.openlocfilehash: c17750fbe016e8bfa86569f34f9af26b1c6de3bd
+ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89075279"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92055857"
 ---
 # <a name="example-powershell-scripts"></a>Примеры скриптов PowerShell
 
@@ -23,7 +23,7 @@ ms.locfileid: "89075279"
 [Репозиторий примеров для ARR](https://github.com/Azure/azure-remote-rendering) содержит в папке *Scripts* примеры скриптов для взаимодействия с REST API этой службы. В этой статье описывается их использование.
 
 > [!CAUTION]
-Слишком частые вызовы функций REST API приведут к тому, что сервер начнет использовать регулирование и в итоге вернет ошибку. В этом случае идентификатор кода ошибки HTTP будет таким: 429 ("Слишком много запросов"). Поэтому очень важно, чтобы между последовательными вызовами была задержка в **5–10 секунд**.
+> Слишком частые вызовы функций REST API приведут к тому, что сервер начнет использовать регулирование и в итоге вернет ошибку. В этом случае идентификатор кода ошибки HTTP будет таким: 429 ("Слишком много запросов"). Поэтому очень важно, чтобы между последовательными вызовами была задержка в **5–10 секунд**.
 
 ## <a name="prerequisites"></a>Предварительные требования
 

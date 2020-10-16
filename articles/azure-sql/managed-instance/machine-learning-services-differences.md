@@ -13,10 +13,10 @@ ms.reviewer: sstein, davidph
 manager: cgronlun
 ms.date: 05/27/2020
 ms.openlocfilehash: 9ff2de18042c466bdd8fa6c71194fff4286c820d
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91325102"
 ---
 # <a name="key-differences-between-machine-learning-services-in-azure-sql-managed-instance-and-sql-server"></a>Основные различия между Службами машинного обучения в Управляемом экземпляре SQL Azure и SQL Server
@@ -37,7 +37,7 @@ ms.locfileid: "91325102"
 
 Если вы решите обновить целевой уровень обслуживания, измените его и отправьте запрос в службу поддержки, чтобы восстановить ограничения выделенных ресурсов для R/Python.
 
-## <a name="language-support"></a>Языковая поддержка
+## <a name="language-support"></a>Поддержка языков
 
 Службы машинного обучения в SQL Управляемый экземпляр и SQL Server поддерживают как среду расширения Python, так и [платформу расширяемости](https://docs.microsoft.com/sql/advanced-analytics/concepts/extensibility-framework)R. Ниже описаны основные различия.
 
@@ -78,7 +78,7 @@ ms.locfileid: "91325102"
 
 Использование памяти зависит от объема памяти, используемого скриптами R, и от количества выполняемых параллельных запросов. Если у вас возникают приведенные выше ошибки, вы можете перенести базу данных на более высокий уровень обслуживания, чтобы решить эту проблему.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - См. Обзор [службы машинного обучения в управляемый экземпляр SQL Azure](machine-learning-services-overview.md).
 - Сведения об использовании Python в Службы машинного обучения см. в разделе [выполнение скриптов Python](https://docs.microsoft.com/sql/machine-learning/tutorials/quickstart-python-create-script?context=/azure/azure-sql/managed-instance/context/ml-context&view=sql-server-ver15).

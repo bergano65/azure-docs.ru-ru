@@ -6,14 +6,14 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: how-to
-ms.date: 01/09/2020
+ms.date: 10/08/2020
 ms.author: cherylmc
-ms.openlocfilehash: ded1887248e7313c2a284388e8338af96ad7614c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 39585a68c5cddc50cd04e82caca71209270f7b68
+ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84987429"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91874124"
 ---
 # <a name="delete-a-virtual-network-gateway-using-powershell-classic"></a>Удаление шлюза виртуальной сети с помощью PowerShell (классическая модель)
 
@@ -35,11 +35,7 @@ ms.locfileid: "84987429"
 
 Откройте консоль PowerShell с повышенными правами и подключитесь к своей учетной записи. Для подключения используйте следующий пример кода:
 
-1. Откройте консоль PowerShell с повышенными правами. Чтобы переключиться на управление службами, используйте следующую команду:
-
-   ```powershell
-   azure config mode asm
-   ```
+1. Откройте консоль PowerShell с повышенными правами.
 2. Подключитесь к учетной записи. Для подключения используйте следующий пример кода:
 
    ```powershell
@@ -156,7 +152,7 @@ Status : Successful
  </Gateway>
 ```
 
-### <a name="gatewaysubnet"></a><a name="gwsub"></a>Подсеть шлюза
+### <a name="gatewaysubnet"></a><a name="gwsub"></a>GatewaySubnet
 
 Удалите **GatewaySubnet** , соответствующий виртуальной сети.
 

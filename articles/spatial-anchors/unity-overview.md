@@ -8,26 +8,26 @@ services: azure-spatial-anchors
 ms.service: azure-spatial-anchors
 ms.date: 02/26/2020
 ms.topic: conceptual
-ms.openlocfilehash: d76207d9991d496c36fa8f9db3911a62d003fafe
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d55890fc97ff24bd4b77628791bdda60c5f54347
+ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "83006135"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92096153"
 ---
 # <a name="building-in-unity-with-azure-spatial-anchors"></a>Создание в Unity с помощью пространственных привязок Azure
 
 Разработчики могут выбрать Unity для создания и развертывания приложений смешанной реальности, использующих пространственные привязки Azure.
 Поддерживаются следующие платформы:
 
-**Unity для HoloLens**
+**Unity для HoloLens;**
 
-[Краткое руководство. Создание приложения HoloLens в Unity с использованием службы "Пространственные привязки Azure"](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-hololens)
+[Краткое руководство. Создание приложения HoloLens в Unity с использованием службы "Пространственные привязки Azure"](./quickstarts/get-started-unity-hololens.md)
 
-**Unity для Android**
+**Unity для Android;**
 
-[Краткое руководство. Создание приложения Unity для Android, использующего пространственные привязки Azure](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-android)
+[Краткое руководство. Создание приложения Unity для Android, использующего пространственные привязки Azure](./quickstarts/get-started-unity-android.md)
 
-**Unity для iOS**
+**Unity для iOS;**
 
-[Краткое руководство. Создание приложения Unity для iOS, использующего пространственные привязки Azure](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-ios)
+[Краткое руководство. Создание приложения Unity для iOS, использующего пространственные привязки Azure](./quickstarts/get-started-unity-ios.md)

@@ -7,10 +7,10 @@ ms.date: 07/07/2020
 author: palma21
 ms.author: jpalma
 ms.openlocfilehash: edb6a8e04537a74b7ea7d4c9bd9bd27fdc39e402
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88007086"
 ---
 # <a name="access-and-identity-options-for-azure-kubernetes-service-aks"></a>Возможности контроля доступа и идентификации в Службе Azure Kubernetes (AKS)
@@ -95,7 +95,7 @@ ms.locfileid: "88007086"
  
 **Сведения о том, как интегрировать AKS с AAD, см. [здесь](managed-aad.md).**
 
-## <a name="azure-role-based-access-control-azure-rbac"></a>Управление доступом на основе ролей в Azure (Azure RBAC)
+## <a name="azure-role-based-access-control-azure-rbac"></a>Управление доступом Azure на основе ролей (Azure RBAC)
 
 RBAC Azure — это система авторизации на основе [Azure Resource Manager](../azure-resource-manager/management/overview.md), которая обеспечивает широкие возможности управления доступом к ресурсам Azure.
 
@@ -145,7 +145,7 @@ AKS предоставляет следующие четыре встроенн�
 
 **Узнайте, как использовать Azure RBAC для авторизации Kubernetes [здесь](manage-azure-rbac.md).**
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Чтобы приступить к работе с Azure AD и управлению доступом на основе ролей Kubernetes, ознакомьтесь с разделом [Интеграция Azure Active Directory со службой Azure Kubernetes][aks-aad].
 - Соответствующие рекомендации см. в разделе рекомендации [по проверке подлинности и авторизации в AKS][operator-best-practices-identity].

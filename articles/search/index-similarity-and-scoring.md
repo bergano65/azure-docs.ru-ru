@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 09/08/2020
 ms.openlocfilehash: 5bd1a9111528146224561995feaecf54612a1c78
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91535667"
 ---
 # <a name="similarity-and-scoring-in-azure-cognitive-search"></a>Сходство и оценка в Когнитивном поиске Azure
@@ -105,6 +105,6 @@ GET https://[service name].search.windows.net/indexes/[index name]/docs?sessionI
 Вы можете использовать эти точки данных в [пользовательских решениях оценки](https://github.com/Azure-Samples/search-ranking-tutorial) или воспользоваться информацией для отладки проблем, связанных с поиском.
 
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
  [Профили оценки](index-add-scoring-profiles.md) [REST API ссылки на](/rest/api/searchservice/) [поисковые документы API](/rest/api/searchservice/search-documents) [Azure когнитивный Поиск .NET SDK](/dotnet/api/overview/azure/search)

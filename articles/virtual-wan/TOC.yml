@@ -5,6 +5,7 @@
     - name: Что такое Виртуальная глобальная сеть?
       href: virtual-wan-about.md
 - name: Учебники
+  expanded: true
   items:
     - name: Создание подключения "сеть — сеть"
       href: virtual-wan-site-to-site-portal.md

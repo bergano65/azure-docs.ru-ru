@@ -7,12 +7,12 @@ ms.date: 09/24/2020
 ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: fd36006292de68e1433ccdfb721c1a4613d0658a
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.openlocfilehash: 22ffbed56b15b55b28bf150b90e489be9e4cfeaf
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91580075"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92090426"
 ---
 # <a name="iot-plug-and-play-device-developer-guide-c"></a>Руководство разработчика для устройств IoT Plug and Play (C#)
 
@@ -36,7 +36,7 @@ DeviceClient.CreateFromConnectionString(
 > [!TIP]
 > Для модулей и IoT Edge используйте `ModuleClient` вместо `DeviceClient` .
 
-## <a name="dps-payload"></a>Полезные данные DP
+## <a name="dps-payload"></a>Полезные данные DPS
 
 Устройства, использующие [службу подготовки устройств (DPS)](../iot-dps/about-iot-dps.md) , могут включать в себя `modelId` для использования в процессе подготовки с помощью следующих полезных данных JSON.
 
@@ -60,7 +60,7 @@ DeviceClient.CreateFromConnectionString(
 public async Task SendComponentTelemetryValueAsync(string componentName, string serializedTelemetry)
 {
   var message = new Message(Encoding.UTF8.GetBytes(serializedTelemetry));
-  message.Properties.Add("$.sub", componentName);
+  message.ComponentName = componentName;
   message.ContentType = "application/json";
   message.ContentEncoding = "utf-8";
   await client.SendEventAsync(message);

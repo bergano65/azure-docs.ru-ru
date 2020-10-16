@@ -7,10 +7,10 @@ ms.date: 02/18/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, cc996988-fb4f-47, devx-track-python
 ms.openlocfilehash: 1d86009d593ef7e594ec2981132bcfb856569c31
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91317231"
 ---
 # <a name="azure-queue-storage-output-bindings-for-azure-functions"></a>Выходные привязки хранилища очередей Azure для функций Azure
@@ -340,7 +340,7 @@ public class HttpTriggerQueueOutput {
 
 В коде и скрипте C# запишите несколько сообщений очереди с помощью одного из следующих типов: 
 
-* `ICollector<T>` либо `IAsyncCollector<T>`
+* `ICollector<T>` или `IAsyncCollector<T>`
 * [CloudQueue](/dotnet/api/microsoft.azure.storage.queue.cloudqueue).
 
 # <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
@@ -356,7 +356,7 @@ public class HttpTriggerQueueOutput {
 
 В коде и скрипте C# запишите несколько сообщений очереди с помощью одного из следующих типов: 
 
-* `ICollector<T>` либо `IAsyncCollector<T>`
+* `ICollector<T>` или `IAsyncCollector<T>`
 * [CloudQueue](/dotnet/api/microsoft.azure.storage.queue.cloudqueue).
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
@@ -421,7 +421,7 @@ public class HttpTriggerQueueOutput {
 |maxDequeueCount|5|Число повторных попыток обработки сообщения, прежде чем поместить его в очередь подозрительных сообщений.|
 |newBatchThreshold|batchSize/2|Каждый раз, когда количество сообщений, обрабатываемых параллельно, достигает этого числа, среда выполнения получает другой пакет.|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Выполнение функции как изменения данных хранилища очередей (триггер)](./functions-bindings-storage-queue-trigger.md)
 

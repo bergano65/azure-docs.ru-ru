@@ -9,10 +9,10 @@ ms.date: 10/06/2020
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 5a3b9160f1fb28c68bdbaa540c78b2890dbcab82
-ms.sourcegitcommit: 5abc3919a6b99547f8077ce86a168524b2aca350
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91812731"
 ---
 * У вас есть виртуальная сеть, к которой необходимо подключиться. Ни одна из подсетей локальной сети не должна перекрывать виртуальные сети, к которым вы хотите подключиться. Сведения о создании виртуальной сети на портале Azure см. в [этом кратком руководстве](../articles/virtual-network/quick-create-portal.md).

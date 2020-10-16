@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 04/30/2020
 ms.custom: fasttrack-edit
 ms.openlocfilehash: b12b85a2248d7709066ba3218327e0a5d52a0192
-ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88962168"
 ---
 # <a name="set-up-staging-environments-in-azure-app-service"></a>Настройка промежуточных сред в службе приложений Azure
@@ -238,7 +238,7 @@ ms.locfileid: "88962168"
 
 1. Перейдите на страницу ресурсов приложения и выберите **слоты развертывания**.
 
-2. В столбце **Процент трафика** для слота, в который нужно направить часть трафика, укажите значение в процентах (от 0 до 100) от общего объема распределяемого трафика. Выберите **Сохранить**.
+2. В столбце **Процент трафика** для слота, в который нужно направить часть трафика, укажите значение в процентах (от 0 до 100) от общего объема распределяемого трафика. Щелкните **Сохранить**.
 
     ![Установка процента трафика](./media/web-sites-staged-publishing/RouteTraffic.png)
 
@@ -426,5 +426,5 @@ Remove-AzResource -ResourceGroupName [resource group name] -ResourceType Microso
 
 - После переключения слотов приложение может столкнуться с неожиданным перезапуском. Это обусловлено тем, что после переключения конфигурация привязки имени узла не синхронизирована, что сама по себе не приводит к перезапуску. Однако некоторые базовые события хранилища (такие как отказоустойчивость тома хранилища) могут обнаружить эти расхождения и принудительно перезапустить все рабочие процессы. Чтобы избежать перезагрузки этих типов, задайте [ `WEBSITE_ADD_SITENAME_BINDINGS_IN_APPHOST_CONFIG=1` параметр приложения](https://github.com/projectkudu/kudu/wiki/Configurable-settings#disable-the-generation-of-bindings-in-applicationhostconfig) во *всех слотах*. Однако этот параметр приложения *не* работает с приложениями Windows Communication Foundation (WCF).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 [Ограничения статических IP-адресов в службе приложений Azure](app-service-ip-restrictions.md)

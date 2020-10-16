@@ -10,10 +10,10 @@ ms.date: 07/24/2020
 ms.topic: conceptual
 ms.service: azure-communication-services
 ms.openlocfilehash: 928737608ae3e3e44b352724713a284ff9a45da9
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90939610"
 ---
 # <a name="authenticate-to-azure-communication-services"></a>Аутентификация в службах связи Azure
@@ -187,10 +187,10 @@ CommunicationUserCredential credential = new CommunicationUserCredential(tokenRe
 
 `refreshProactively`Параметр позволяет выбрать способ управления жизненным циклом маркера. По умолчанию, когда маркер устарел, обратный вызов блокирует запросы API и пытается обновить его. Если для параметра задано значение `refreshProactively` `true` обратного вызова, оно планируется и выполняется асинхронно до истечения срока действия маркера.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Создание маркеров доступа пользователей](../quickstarts/access-tokens.md)
 
 Дополнительные сведения см. в следующих статьях:
-- [Сведения об архитектуре клиента и сервера](../concepts/client-and-server-architecture.md)
+- [Сведения об архитектуре клиент-сервер](../concepts/client-and-server-architecture.md)

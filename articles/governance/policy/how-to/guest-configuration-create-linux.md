@@ -4,12 +4,12 @@ description: Узнайте, как создать политику гостев
 ms.date: 08/17/2020
 ms.topic: how-to
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 4f49732aa2be50b0d8be6f1f3af974121dc9f363
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.openlocfilehash: 9ecf798a18f28c490d95b28c6ea8f02c6f22eee8
+ms.sourcegitcommit: b437bd3b9c9802ec6430d9f078c372c2a411f11f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89076367"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91893243"
 ---
 # <a name="how-to-create-guest-configuration-policies-for-linux"></a>Создание политик гостевой конфигурации для Windows
 
@@ -171,7 +171,7 @@ New-GuestConfigurationPackage `
   -ChefInSpecProfilePath './'
 ```
 
-После создания пакета конфигурации, но перед его публикацией в Azure, можно протестировать пакет с рабочей станции или в среде CI/CD. Командлет гостевой конфигурации `Test-GuestConfigurationPackage` включает в среду разработки тот же агент, который используется на компьютерах Azure. С помощью этого решения можно выполнить локальное тестирование интеграции перед выпуском в платных облачных средах.
+После создания пакета конфигурации, но перед его публикацией в Azure можно протестировать пакет с рабочей станции или среды непрерывной интеграции и непрерывного развертывания (CI/CD). Командлет гостевой конфигурации `Test-GuestConfigurationPackage` включает в среду разработки тот же агент, который используется на компьютерах Azure. С помощью этого решения можно выполнить локальное тестирование интеграции перед выпуском в платных облачных средах.
 
 Поскольку агент фактически оценивает локальную среду, в большинстве случаев командлет тестирования следует выполнять на той же платформе операционной системы, на которой вы планируете проводить аудит.
 
@@ -194,7 +194,7 @@ Test-GuestConfigurationPackage `
 New-GuestConfigurationPackage -Name AuditFilePathExists -Configuration ./Config/AuditFilePathExists.mof -ChefProfilePath './' | Test-GuestConfigurationPackage
 ```
 
-Следующим шагом является публикация файла в хранилище BLOB-объектов. Приведенный ниже скрипт содержит функцию, которую можно использовать для автоматизации этой задачи. Для команд, используемых в функции `publish`, требуется модуль `Az.Storage`.
+Следующим шагом является публикация файла в хранилище BLOB-объектов Azure. Приведенный ниже скрипт содержит функцию, которую можно использовать для автоматизации этой задачи. Для команд, используемых в функции `publish`, требуется модуль `Az.Storage`.
 
 ```azurepowershell-interactive
 function publish {

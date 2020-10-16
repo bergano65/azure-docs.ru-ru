@@ -17,17 +17,17 @@ ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 012eefe9140703a62d7bb1074ab763191a0976cb
-ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87798517"
 ---
 # <a name="create-an-access-review-of-an-access-package-in-azure-ad-entitlement-management"></a>Создание проверки доступа к пакету Access в управлении назначениями Azure AD
 
 Чтобы снизить риск устаревшего доступа, следует включить периодические проверки пользователей, которые имеют активные назначения для пакета Access в управлении назначением Azure AD. Вы можете включить проверку при создании нового пакета Access или изменении существующего пакета Access. В этой статье описывается включение проверок доступа к пакетам Access.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы включить проверку пакетов доступа, необходимо выполнить необходимые условия для создания пакета Access.
 - Azure AD Premium P2

@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 07/10/2020
 ms.openlocfilehash: 4fd16e9dcf9f0b75b48311adf3e9282adbce2a25
-ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91708719"
 ---
 # <a name="monitor-and-tune-azure-database-for-postgresql---single-server"></a>мониторингу и настройке отдельного сервера Базы данных Azure для PostgreSQL
@@ -22,7 +22,7 @@ ms.locfileid: "91708719"
 ### <a name="list-of-metrics"></a>Список метрик
 Для базы данных Azure для PostgreSQL доступны следующие метрики:
 
-|Метрика|Отображаемое имя метрики|Единица измерения|Описание|
+|Метрика|Отображаемое имя метрики|Unit|Описание|
 |---|---|---|---|
 |cpu_percent|Нагрузка ЦП|Процент|Процент используемого ЦП.|
 |memory_percent|Процент памяти|Процент|Процент используемой памяти.|
@@ -76,7 +76,7 @@ ms.locfileid: "91708719"
 > [!IMPORTANT]
 > Уведомления о плановом обслуживании в настоящее время доступны в предварительной версии во всех регионах, **за исключением** западной центральной части США
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - См. раздел [Настройка оповещений](howto-alert-on-metric.md) для получения рекомендаций по созданию оповещения для метрики.
 - Дополнительные сведения о доступе к метрикам и их экспорте с помощью портала Azure, REST API или интерфейса командной строки см. в статье [Обзор метрик в Microsoft Azure](../monitoring-and-diagnostics/monitoring-overview-metrics.md).
 - Читайте наш блог, чтобы ознакомиться с [рекомендациями по мониторингу сервера](https://azure.microsoft.com/blog/best-practices-for-alerting-on-metrics-with-azure-database-for-postgresql-monitoring/).

@@ -6,12 +6,12 @@ ms.author: sngun
 ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 09/01/2020
-ms.openlocfilehash: 4de6d4ba019af75b0f6179b2794ddb6c1e35e0c1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 38129c920b422babfedf5d40bb362c7552f6f712
+ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90030078"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91951967"
 ---
 # <a name="options-to-migrate-your-on-premises-or-cloud-data-to-azure-cosmos-db"></a>Параметры для переноса локальных или облачных данных в Azure Cosmos DB
 
@@ -40,10 +40,10 @@ ms.locfileid: "90030078"
 
 ## <a name="azure-cosmos-db-sql-api"></a>API SQL для Azure Cosmos DB
 
-|Тип перемещения|Решение|Поддерживаемые источники|Поддерживаемые целевые объекты|Рекомендации|
+|Тип перемещения|Решение|Поддерживаемые источники|Поддерживаемые целевые объекты|Ограничения|
 |---------|---------|---------|---------|---------|
-|Вне сети|[Инструмент переноса данных](import-data.md)| &bull;Файлы JSON/CSV<br/>&bull;API SQL для Azure Cosmos DB<br/>&bull;MongoDB<br/>&bull;SQL Server<br/>&bull;Хранилище таблиц<br/>&bull;AWS DynamoDB<br/>&bull;хранилище BLOB-объектов Azure|&bull;API SQL для Azure Cosmos DB<br/>&bull;API таблиц Azure Cosmos DB<br/>&bull;Файлы JSON |&bull; Простота настройки и поддержки нескольких источников. <br/>&bull; Не подходит для больших наборов данных.|
-|Вне сети|[Фабрика данных Azure](../data-factory/connector-azure-cosmos-db.md).| &bull;Файлы JSON/CSV<br/>&bull;API SQL для Azure Cosmos DB<br/>&bull;API Azure Cosmos DB для MongoDB<br/>&bull;MongoDB <br/>&bull;SQL Server<br/>&bull;Хранилище таблиц<br/>&bull;хранилище BLOB-объектов Azure <br/> <br/>Другие поддерживаемые источники см. в статье [фабрика данных Azure](../data-factory/connector-overview.md) .|&bull;API SQL для Azure Cosmos DB<br/>&bull;API Azure Cosmos DB для MongoDB<br/>&bull;Файлы JSON <br/><br/> Другие поддерживаемые целевые объекты см. в статье [фабрика данных Azure](../data-factory/connector-overview.md) . |&bull; Простота настройки и поддержки нескольких источников.<br/>&bull; Использует библиотеку Azure Cosmos DBного выполнителя. <br/>&bull; Подходит для больших наборов данных. <br/>&bull; Отсутствие контрольных точек — это означает, что если проблема возникает во время миграции, необходимо перезапустить весь процесс миграции.<br/>&bull; Отсутствие очереди недоставленных сообщений — это означает, что несколько ошибочных файлов могут прерывать весь процесс миграции.|
+|Вне сети|[Инструмент переноса данных](import-data.md)| &bull;Файлы JSON/CSV<br/>&bull;API SQL для Azure Cosmos DB<br/>&bull;MongoDB<br/>&bull;SQL Server<br/>&bull;Хранилище таблиц<br/>&bull;AWS DynamoDB<br/>&bull;Хранилище BLOB-объектов Azure|&bull;API SQL для Azure Cosmos DB<br/>&bull;API таблиц Azure Cosmos DB<br/>&bull;Файлы JSON |&bull; Простота настройки и поддержки нескольких источников. <br/>&bull; Не подходит для больших наборов данных.|
+|Вне сети|[Фабрика данных Azure](../data-factory/connector-azure-cosmos-db.md).| &bull;Файлы JSON/CSV<br/>&bull;API SQL для Azure Cosmos DB<br/>&bull;API Azure Cosmos DB для MongoDB<br/>&bull;MongoDB <br/>&bull;SQL Server<br/>&bull;Хранилище таблиц<br/>&bull;Хранилище BLOB-объектов Azure <br/> <br/>Другие поддерживаемые источники см. в статье [фабрика данных Azure](../data-factory/connector-overview.md) .|&bull;API SQL для Azure Cosmos DB<br/>&bull;API Azure Cosmos DB для MongoDB<br/>&bull;Файлы JSON <br/><br/> Другие поддерживаемые целевые объекты см. в статье [фабрика данных Azure](../data-factory/connector-overview.md) . |&bull; Простота настройки и поддержки нескольких источников.<br/>&bull; Использует библиотеку Azure Cosmos DBного выполнителя. <br/>&bull; Подходит для больших наборов данных. <br/>&bull; Отсутствие контрольных точек — это означает, что если проблема возникает во время миграции, необходимо перезапустить весь процесс миграции.<br/>&bull; Отсутствие очереди недоставленных сообщений — это означает, что несколько ошибочных файлов могут прерывать весь процесс миграции.|
 |Автономная миграция|[Соединитель Azure Cosmos DB Spark](spark-connector.md)|Azure Cosmos DB API SQL. <br/><br/>Вы можете использовать другие источники с дополнительными соединителями из экосистемы Spark.| Azure Cosmos DB API SQL. <br/><br/>Вы можете использовать другие целевые объекты с дополнительными соединителями из экосистемы Spark.| &bull; Использует библиотеку Azure Cosmos DBного выполнителя. <br/>&bull; Подходит для больших наборов данных. <br/>&bull; Требуется пользовательская настройка Spark. <br/>&bull; Spark учитывает несоответствия схем, и это может быть проблемой во время миграции. |
 |Автономная миграция|[Пользовательский инструмент с библиотекой Cosmos DBного выполнителя](migrate-cosmosdb-data.md)| Источник зависит от пользовательского кода. | API SQL для Azure Cosmos DB| &bull; Предоставляет возможности создания контрольных точек, недоставленных сообщений, что повышает устойчивость к миграции. <br/>&bull; Подходит для очень больших наборов данных (10 ТБ +).  <br/>&bull; Требуется пользовательская установка этого инструмента, запускаемого в качестве службы приложений. |
 |Миграция по сети|[Функции Cosmos DB и API пр](change-feed-functions.md)| API SQL для Azure Cosmos DB | API SQL для Azure Cosmos DB| &bull; Простота настройки. <br/>&bull; Работает только в том случае, если источником является контейнер Azure Cosmos DB. <br/>&bull; Не подходит для больших наборов данных. <br/>&bull; Не фиксирует операции удаления из исходного контейнера. |
@@ -52,16 +52,16 @@ ms.locfileid: "90030078"
 
 ## <a name="azure-cosmos-db-mongo-api"></a>Azure Cosmos DB API Mongo
 
-|Тип перемещения|Решение|Поддерживаемые источники|Поддерживаемые целевые объекты|Рекомендации|
+|Тип перемещения|Решение|Поддерживаемые источники|Поддерживаемые целевые объекты|Ограничения|
 |---------|---------|---------|---------|---------|
 |Справка в Интернете|[Azure Database Migration Service](../dms/tutorial-mongodb-cosmos-db-online.md)| MongoDB|API Azure Cosmos DB для MongoDB |&bull; Использует библиотеку Azure Cosmos DBного выполнителя. <br/>&bull; Подходит для больших наборов данных и отвечает за репликацию динамических изменений. <br/>&bull; Работает только с другими источниками MongoDB.|
 |Автономная миграция|[Миграция баз данных Azure](../dms/tutorial-mongodb-cosmos-db-online.md)| MongoDB| API Azure Cosmos DB для MongoDB| &bull; Использует библиотеку Azure Cosmos DBного выполнителя. <br/>&bull; Подходит для больших наборов данных и отвечает за репликацию динамических изменений. <br/>&bull; Работает только с другими источниками MongoDB.|
-|Вне сети|[Фабрика данных Azure](../data-factory/connector-azure-cosmos-db.md).| &bull;Файлы JSON/CSV<br/>&bull;API SQL для Azure Cosmos DB<br/>&bull;API Azure Cosmos DB для MongoDB <br/>&bull;MongoDB<br/>&bull;SQL Server<br/>&bull;Хранилище таблиц<br/>&bull;хранилище BLOB-объектов Azure <br/><br/> Другие поддерживаемые источники см. в статье [фабрика данных Azure](../data-factory/connector-overview.md) . | &bull;API SQL для Azure Cosmos DB<br/>&bull;API Azure Cosmos DB для MongoDB <br/>&bull; Файлы JSON <br/><br/> Другие поддерживаемые целевые объекты см. в статье [фабрика данных Azure](../data-factory/connector-overview.md) .| &bull; Простота настройки и поддержки нескольких источников. <br/>&bull; Использует библиотеку Azure Cosmos DBного выполнителя. <br/>&bull; Подходит для больших наборов данных. <br/>&bull; Отсутствие контрольных точек означает, что любые проблемы во время миграции потребуют перезапуска всего процесса миграции.<br/>&bull; Отсутствие очереди недоставленных сообщений означает, что несколько ошибочных файлов могут прерывать весь процесс миграции. <br/>&bull; Требуется пользовательский код для увеличения пропускной способности чтения для определенных источников данных.|
+|Вне сети|[Фабрика данных Azure](../data-factory/connector-azure-cosmos-db.md).| &bull;Файлы JSON/CSV<br/>&bull;API SQL для Azure Cosmos DB<br/>&bull;API Azure Cosmos DB для MongoDB <br/>&bull;MongoDB<br/>&bull;SQL Server<br/>&bull;Хранилище таблиц<br/>&bull;Хранилище BLOB-объектов Azure <br/><br/> Другие поддерживаемые источники см. в статье [фабрика данных Azure](../data-factory/connector-overview.md) . | &bull;API SQL для Azure Cosmos DB<br/>&bull;API Azure Cosmos DB для MongoDB <br/>&bull; Файлы JSON <br/><br/> Другие поддерживаемые целевые объекты см. в статье [фабрика данных Azure](../data-factory/connector-overview.md) .| &bull; Простота настройки и поддержки нескольких источников. <br/>&bull; Использует библиотеку Azure Cosmos DBного выполнителя. <br/>&bull; Подходит для больших наборов данных. <br/>&bull; Отсутствие контрольных точек означает, что любые проблемы во время миграции потребуют перезапуска всего процесса миграции.<br/>&bull; Отсутствие очереди недоставленных сообщений означает, что несколько ошибочных файлов могут прерывать весь процесс миграции. <br/>&bull; Требуется пользовательский код для увеличения пропускной способности чтения для определенных источников данных.|
 |Вне сети|[Существующие инструменты Mongo (mongodump, mongorestore, Studio3T)](https://azure.microsoft.com/resources/videos/using-mongodb-tools-with-azure-cosmos-db/)|MongoDB | API Azure Cosmos DB для MongoDB| &bull; Простота настройки и интеграции. <br/>&bull; Требуется настраиваемая обработка для регулирования.|
 
 ## <a name="azure-cosmos-db-cassandra-api"></a>API Cassandra для Azure Cosmos DB
 
-|Тип перемещения|Решение|Поддерживаемые источники|Поддерживаемые целевые объекты|Рекомендации|
+|Тип перемещения|Решение|Поддерживаемые источники|Поддерживаемые целевые объекты|Ограничения|
 |---------|---------|---------|---------|---------|
 |Автономная миграция|[cqlsh COPY, команда](cassandra-import-data.md#migrate-data-using-cqlsh-copy-command)|CSV-файлы | API Cassandra для Azure Cosmos DB| &bull; Простота настройки. <br/>&bull; Не подходит для больших наборов данных. <br/>&bull; Работает, только если источником является таблица Cassandra.|
 |Автономная миграция|[Копирование таблицы с помощью Spark](cassandra-import-data.md#migrate-data-using-spark) | &bull;Apache Cassandra<br/>&bull;API Cassandra для Azure Cosmos DB| API Cassandra для Azure Cosmos DB | &bull; Может использовать возможности Spark для параллельного преобразования и приема. <br/>&bull; Для управления регулированием требуется конфигурация с настраиваемой политикой повтора.|
@@ -82,7 +82,7 @@ ms.locfileid: "90030078"
 * [Библиотека массовых исполнителей Graph](bulk-executor-graph-dotnet.md)
 * [Gremlin Spark](https://github.com/Azure/azure-cosmosdb-spark/blob/2.4/samples/graphframes/main.scala) 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения см. в примерах приложений, использующих библиотеку небольшого выполнителя в [.NET](bulk-executor-dot-net.md) и [Java](bulk-executor-java.md). 
 * Библиотека небольшого Исполнительного исполнителя интегрирована в соединитель Cosmos DB Spark. Дополнительные сведения см. в статье о [соединителе Azure Cosmos DB Spark](spark-connector.md) .  

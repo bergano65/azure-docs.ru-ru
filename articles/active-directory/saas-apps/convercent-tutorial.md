@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/25/2019
 ms.author: jeedes
-ms.openlocfilehash: f765b950074958f801bef2fdc8e555acf9a47986
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 2dfc8bbb570c57ef22c2bde210dc7a64b48fb06d
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88522140"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91775836"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-convercent"></a>Руководство. Интеграция Azure Active Directory с Convercent
 
@@ -98,7 +98,7 @@ ms.locfileid: "88522140"
 
 4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
-    ![Сведения о едином входе домена и URL-адреса в Convercent](common/both-identifier.png)
+    ![Снимок экрана: раздел "Базовая конфигурация SAML" с выделенным полем "Идентификатор (идентификатор сущности)" и выделенной кнопкой "Сохранить".](common/both-identifier.png)
 
     В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<instancename>.convercent.com/`.
 

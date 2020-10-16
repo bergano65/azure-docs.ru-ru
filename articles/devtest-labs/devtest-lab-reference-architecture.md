@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 06/26/2020
 ms.reviewer: christianreddington,anthdela,juselph
 ms.openlocfilehash: e0791fb6c4de3da8108ffbd296c681f993c6b6cb
-ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91367756"
 ---
 # <a name="azure-devtest-labs-reference-architecture-for-enterprises"></a>Azure DevTest Labs эталонной архитектурой для предприятий
@@ -59,8 +59,8 @@ DevTest Labs имеет отличный пользовательский инт
 
 Важно отметить, что DevTest Labs использует базовые ресурсы Azure, которые управляются аналогичным образом: сети, диски, расчеты и т. д. Например, политика Azure применяется к виртуальным машинам, созданным в лаборатории. Центр безопасности Azure может сообщать о соответствии виртуальной машины. А служба Azure Backup может обеспечить регулярное резервное копирование для виртуальных машин в лаборатории.
 
-## <a name="security-considerations"></a>Замечания по безопасности
+## <a name="security-considerations"></a>Вопросы безопасности
 Azure DevTest Labs использует существующие ресурсы в Azure (COMPUTE, Network и т. д.). Поэтому он автоматически получает преимущества от функций безопасности, встроенных в платформу. Например, чтобы разрешить исходящие подключения к удаленному рабочему столу только из корпоративной сети, просто добавьте группу безопасности сети в виртуальную сеть в шлюзе удаленных рабочих столов. Единственным дополнительным фактором безопасности является уровень разрешений, предоставляемых членам команды, которые используют лабораторию ежедневно. Наиболее распространенными разрешениями являются [ *owner* и *User*](devtest-lab-add-devtest-user.md). Дополнительные сведения об этих ролях см. [в разделе Добавление владельцев и пользователей в Azure DevTest Labs](devtest-lab-add-devtest-user.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 См. следующую статью в этой серии: [увеличение масштаба инфраструктуры Azure DevTest Labs](devtest-lab-guidance-scale.md).

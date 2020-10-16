@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 08/27/2020
-ms.openlocfilehash: 449979443577d22f8cc2ec35ec770dd1e107bb76
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 4041b824d099edbefcc45c68163257ca69ddf7de
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88998413"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91995685"
 ---
 # <a name="enable-azure-monitor-for-vms-overview"></a>Общие сведения о включении Azure Monitor для виртуальных машин
 
@@ -30,7 +30,7 @@ ms.locfileid: "88998413"
 * Используйте PowerShell для включения нескольких виртуальных машин Azure, виртуальных машин Arc Azure, Azure VMSS или машин Arc Azure в указанной подписке или группе ресурсов.
 * Включите Azure Monitor для виртуальных машин для мониторинга виртуальных машин или физических компьютеров, размещенных в корпоративной сети или в другой облачной среде.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем начинать работу, убедитесь, что вы понимаете сведения, содержащиеся в следующих разделах. 
 
@@ -70,7 +70,7 @@ Azure Monitor для виртуальных машин поддерживает 
 * [Azure CLI](../learn/quick-create-workspace-cli.md)
 * [PowerShell](../platform/powershell-workspace-configuration.md)
 * [Портал Azure](../learn/quick-create-workspace.md)
-* [Azure Resource Manager](../platform/template-workspace-configuration.md)
+* [Azure Resource Manager](../samples/resource-manager-workspace.md)
 
 - Виртуальная машина Azure
 - Масштабируемый набор виртуальных машин Azure

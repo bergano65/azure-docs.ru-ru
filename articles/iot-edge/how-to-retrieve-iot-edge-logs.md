@@ -1,0 +1,386 @@
+---
+title: Получение журналов IoT Edge — Azure IoT Edge
+description: IoT Edge извлечение и отправку журнала модуля в хранилище BLOB-объектов Azure.
+author: v-tcassi
+manager: philmea
+ms.author: v-tcassi
+ms.date: 09/14/2020
+ms.topic: conceptual
+ms.reviewer: veyalla
+ms.service: iot-edge
+ms.custom: devx-track-azurecli
+services: iot-edge
+ms.openlocfilehash: f5f2a9800d3796d217294e757076d6ff706281d1
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92044204"
+---
+# <a name="retrieve-logs-from-iot-edge-deployments"></a>Получение журналов из IoT Edge развертываний
+
+Получение журналов из IoT Edge развертываний без необходимости физического или SSH-доступа к устройству с помощью прямых методов, входящих в модуль агента IoT Edge. Прямые методы реализуются на устройстве, а затем могут быть вызваны из облака. Агент IoT Edge содержит прямые методы, помогающие удаленно отслеживать IoT Edge устройства и управлять ими. Прямые методы, описанные в этой статье, общедоступны в выпуске 1.0.10.
+
+Дополнительные сведения о прямых методах, способах их использования и их реализации в собственных модулях см. в разделе [изучение и вызов прямых методов из центра Интернета вещей](../iot-hub/iot-hub-devguide-direct-methods.md).
+
+Имена этих прямых методов обрабатываются с учетом регистра.
+
+## <a name="recommended-logging-format"></a>Рекомендуемый формат ведения журнала
+
+Хотя это и не является обязательным, для обеспечения лучшей совместимости с этой функцией рекомендуется использовать следующий формат ведения журнала:
+
+```
+<{Log Level}> {Timestamp} {Message Text}
+```
+
+`{Log Level}` должен соответствовать [формату уровня серьезности системного журнала](https://wikipedia.org/wiki/Syslog#Severity_lnevel) и `{Timestamp}` должен быть отформатирован в формате `yyyy-mm-dd hh:mm:ss.fff zzz` .
+
+[Класс Logger в IOT Edge](https://github.com/Azure/iotedge/blob/master/edge-util/src/Microsoft.Azure.Devices.Edge.Util/Logger.cs) выступает в качестве канонической реализации.
+
+## <a name="retrieve-module-logs"></a>Получение журналов модулей
+
+Используйте прямой метод **жетмодулелогс** для получения журналов модуля IOT Edge.
+
+Этот метод принимает полезные данные JSON со следующей схемой:
+
+```json
+    {
+       "schemaVersion": "1.0",
+       "items": [
+          {
+             "id": "regex string",
+             "filter": {
+                "tail": int,
+                "since": int,
+                "until": int,
+                "loglevel": int,
+                "regex": "regex string"
+             }
+          }
+       ],
+       "encoding": "gzip/none",
+       "contentType": "json/text" 
+    }
+```
+
+| Имя | Type | Описание |
+|-|-|-|
+| schemaVersion | строка | Установите значение `1.0` |
+| items | Массив JSON | Массив с `id` `filter` кортежами и. |
+| ID | строка | Регулярное выражение, предоставляющее имя модуля. Он может сопоставлять несколько модулей на пограничном устройстве. Ожидается формат [регулярных выражений .NET](/dotnet/standard/base-types/regular-expressions) . |
+| фильтр | Раздел JSON | Фильтры журналов, применяемые к модулям, соответствующим `id` регулярному выражению в кортеже. |
+| односторонне | Целое число | Число строк журнала в прошлом для получения, начиная с последнего. OPTIONAL. |
+| since | Целое число | Возвращать только журналы, начиная с этого времени, как продолжительность (1 d, 90 м, 2 дня 3 часа, 2 минуты), rfc3339 отметка времени или отметка времени UNIX.  Если `tail` указаны и `since` , и, журналы извлекаются с использованием `since` значения First. Затем `tail` значение применяется к результату, и возвращается окончательный результат. OPTIONAL. |
+| until | Целое число | Возвращать журналы только до указанного времени, в виде метки времени rfc3339, метки времени UNIX или длительности (1 d, 90 м, 2 дня 3 часа 2 минуты). OPTIONAL. |
+| уровень ведения журнала | Целое число | Фильтровать строки журнала, которые меньше или равны указанному уровню ведения журнала. Строки журнала должны следовать рекомендуемому формату ведения журнала и использовать стандарт [уровня серьезности syslog](https://en.wikipedia.org/wiki/Syslog#Severity_level) . OPTIONAL. |
+| regex | строка | Фильтрация строк журнала, имеющих содержимое, совпадающее с указанным регулярным выражением, с использованием формата [регулярных выражений .NET](/dotnet/standard/base-types/regular-expressions) . OPTIONAL. |
+| encoding | строка | `gzip` или `none`. Значение по умолчанию — `none`. |
+| сontentType | строка | `json` или `text`. Значение по умолчанию — `text`. |
+
+> [!NOTE]
+> Если содержимое журнала превышает предельное значение размера ответа для прямых методов, которое в настоящее время 128 КБ, ответ возвращает ошибку.
+
+Успешный выбор журналов возвращает **"Status": 200** , за которыми следуют полезные данные, содержащие журналы, полученные из модуля, отфильтрованные по параметрам, указанным в запросе.
+
+Например.
+
+```azurecli
+az iot hub invoke-module-method --method-name 'GetModuleLogs' -n <hub name> -d <device id> -m '$edgeAgent' --method-payload \
+'
+    {
+       "schemaVersion": "1.0",
+       "items": [
+          {
+             "id": "edgeAgent",
+             "filter": {
+                "tail": 10
+             }
+          }
+       ],
+       "encoding": "none",
+       "contentType": "text"
+    }
+'
+```
+
+В портал Azure вызовите метод с именем метода `GetModuleLogs` и следующими полезными данными JSON:
+
+```json
+    {
+       "schemaVersion": "1.0",
+       "items": [
+          {
+             "id": "edgeAgent",
+             "filter": {
+                "tail": 10
+             }
+          }
+       ],
+       "encoding": "none",
+       "contentType": "text"
+    }
+```
+
+![Вызов прямого метода "Жетмодулелогс" в портал Azure](./media/how-to-retrieve-iot-edge-logs/invoke-get-module-logs.png)
+
+Вы также можете передать выходные данные CLI в служебные программы Linux, например [gzip](https://en.wikipedia.org/wiki/Gzip), для обработки сжатого ответа. Например.
+
+```azurecli
+az iot hub invoke-module-method \
+  --method-name 'GetModuleLogs' \
+  -n <hub name> \
+  -d <device id> \
+  -m '$edgeAgent' \
+  --method-payload '{"contentType": "text","schemaVersion": "1.0","encoding": "gzip","items": [{"id": "edgeHub","filter": {"since": "2d","tail": 1000}}],}' \
+  -o tsv --query 'payload[0].payloadBytes' \
+  | base64 --decode \
+  | gzip -d
+```
+
+## <a name="upload-module-logs"></a>Отправка журналов модулей
+
+Используйте прямой метод **уплоадмодулелогс** , чтобы отправить запрошенные журналы в указанный контейнер хранилища BLOB-объектов Azure.
+
+Этот метод принимает полезные данные JSON, аналогичные **жетмодулелогс**, с добавлением ключа "sasUrl":
+
+```json
+    {
+       "schemaVersion": "1.0",
+       "sasUrl": "Full path to SAS URL",
+       "items": [
+          {
+             "id": "regex string",
+             "filter": {
+                "tail": int,
+                "since": int,
+                "until": int,
+                "loglevel": int,
+                "regex": "regex string"
+             }
+          }
+       ],
+       "encoding": "gzip/none",
+       "contentType": "json/text" 
+    }
+```
+
+| Имя | Type | Описание |
+|-|-|-|
+| sasURL | строка (URI) | [URL-адрес подписи общего доступа с доступом на запись к контейнеру хранилища BLOB-объектов Azure](/archive/blogs/jpsanders/easily-create-a-sas-to-download-a-file-from-azure-storage-using-azure-storage-explorer). |
+
+Успешный запрос на отправку журналов возвращает **"Status": 200** , за которым следуют полезные данные со следующей схемой:
+
+```json
+    {
+        "status": "string",
+        "message": "string",
+        "correlationId": "GUID"
+    }
+```
+
+| Имя | Type | Описание |
+|-|-|-|
+| status | строка | Один из `NotStarted` ,,, `Running` `Completed` `Failed` или `Unknown` . |
+| message | строка | Сообщение, если ошибка, пустая строка в противном случае. |
+| correlationId | строка   | Идентификатор для запроса состояния запроса на отправку. |
+
+Например.
+
+Следующий вызов передает последние строки журнала 100 из всех модулей в сжатом формате JSON:
+
+```azurecli
+az iot hub invoke-module-method --method-name UploadModuleLogs -n <hub name> -d <device id> -m \$edgeAgent --method-payload \
+'
+    {
+        "schemaVersion": "1.0",
+        "sasUrl": "<sasUrl>",
+        "items": [
+            {
+                "id": ".*",
+                "filter": {
+                    "tail": 100
+                }
+            }
+        ],
+        "encoding": "gzip",
+        "contentType": "json"
+    }
+'
+```
+
+Следующий вызов передает последние 100 строк журнала из edgeAgent и edgeHub с последними 1000 строками из модуля tempSensor в несжатом текстовом формате:
+
+```azurecli
+az iot hub invoke-module-method --method-name UploadModuleLogs -n <hub name> -d <device id> -m \$edgeAgent --method-payload \
+'
+    {
+        "schemaVersion": "1.0",
+        "sasUrl": "<sasUrl>",
+        "items": [
+            {
+                "id": "edge",
+                "filter": {
+                    "tail": 100
+                }
+            },
+            {
+                "id": "tempSensor",
+                "filter": {
+                    "tail": 1000
+                }
+            }
+        ],
+        "encoding": "none",
+        "contentType": "text"
+    }
+'
+```
+
+В портал Azure вызовите метод с именем метода `UploadModuleLogs` и следующими полезными данными JSON после заполнения sasURL данными:
+
+```json
+    {
+       "schemaVersion": "1.0",
+       "sasUrl": "<sasUrl>",
+       "items": [
+          {
+             "id": "edgeAgent",
+             "filter": {
+                "tail": 10
+             }
+          }
+       ],
+       "encoding": "none",
+       "contentType": "text"
+    }
+```
+
+![Вызов прямого метода "Уплоадмодулелогс" в портал Azure](./media/how-to-retrieve-iot-edge-logs/invoke-upload-module-logs.png)
+
+## <a name="upload-support-bundle-diagnostics"></a>Отправка диагностики пакета поддержки
+
+Используйте прямой метод **уплоадсуппортбундле** для объединения и передачи ZIP-файла IOT Edge журналов модулей в доступный контейнер хранилища BLOB-объектов Azure. Этот прямой метод запускает [`iotedge support-bundle`](./troubleshoot.md#gather-debug-information-with-support-bundle-command) команду на устройстве IOT Edge для получения журналов.
+
+Этот метод принимает полезные данные JSON со следующей схемой:
+
+```json
+    {
+        "schemaVersion": "1.0",
+        "sasUrl": "Full path to SAS url",
+        "since": "2d",
+        "until": "1d",
+        "edgeRuntimeOnly": false
+    }
+```
+
+| Имя | Type | Описание |
+|-|-|-|
+| schemaVersion | строка | Установите значение `1.0` |
+| sasURL | строка (URI) | [URL-адрес подписи общего доступа с доступом на запись к контейнеру хранилища BLOB-объектов Azure](/archive/blogs/jpsanders/easily-create-a-sas-to-download-a-file-from-azure-storage-using-azure-storage-explorer) |
+| since | Целое число | Возвращать только журналы, начиная с этого времени, как продолжительность (1 d, 90 м, 2 дня 3 часа, 2 минуты), rfc3339 отметка времени или отметка времени UNIX. OPTIONAL. |
+| until | Целое число | Возвращать журналы только до указанного времени, в виде метки времени rfc3339, метки времени UNIX или длительности (1 d, 90 м, 2 дня 3 часа 2 минуты). OPTIONAL. |
+| еджерунтимеонли | Логическое | Если значение — true, возвращаются только журналы из агента ребра, пограничной концентратора и управляющей программы пограничной системы безопасности. По умолчанию: false.  OPTIONAL. |
+
+> [!IMPORTANT]
+> Пакет поддержки IoT Edge может содержать персональные данные.
+
+Успешный запрос на отправку журналов возвращает **"Status": 200** , за которым следуют полезные данные с той же схемой, что и ответ **уплоадмодулелогс** :
+
+```json
+    {
+        "status": "string",
+        "message": "string",
+        "correlationId": "GUID"
+    }
+```
+
+| Имя | Type | Описание |
+|-|-|-|
+| status | строка | Один из `NotStarted` ,,, `Running` `Completed` `Failed` или `Unknown` . |
+| message | строка | Сообщение, если ошибка, пустая строка в противном случае. |
+| correlationId | строка   | Идентификатор для запроса состояния запроса на отправку. |
+
+Например.
+
+```azurecli
+az iot hub invoke-module-method --method-name 'UploadSupportBundle' -n <hub name> -d <device id> -m '$edgeAgent' --method-payload \
+'
+    {
+        "schemaVersion": "1.0",
+        "sasUrl": "Full path to SAS url",
+        "since": "2d",
+        "until": "1d",
+        "edgeRuntimeOnly": false
+    }
+'
+```
+
+В портал Azure вызовите метод с именем метода `UploadSupportBundle` и следующими полезными данными JSON после заполнения sasURL данными:
+
+```json
+    {
+        "schemaVersion": "1.0",
+        "sasUrl": "Full path to SAS url",
+        "since": "2d",
+        "until": "1d",
+        "edgeRuntimeOnly": false
+    }
+```
+
+![Вызов прямого метода "Уплоадсуппортбундле" в портал Azure](./media/how-to-retrieve-iot-edge-logs/invoke-upload-support-bundle.png)
+
+## <a name="get-upload-request-status"></a>Получение состояния запроса на отправку
+
+Используйте прямой метод **жеттаскстатус** для запроса состояния запроса на отправку журналов. Полезные данные запроса **жеттаскстатус** используют объект `correlationId` из запроса на отправку журналов для получения состояния задачи. `correlationId`Возвращается в ответ на вызов прямого метода **уплоадмодулелогс** .
+
+Этот метод принимает полезные данные JSON со следующей схемой:
+
+```json
+    {
+      "schemaVersion": "1.0",
+      "correlationId": "<GUID>"
+    }
+```
+
+Успешный запрос на отправку журналов возвращает **"Status": 200** , за которым следуют полезные данные с той же схемой, что и ответ **уплоадмодулелогс** :
+
+```json
+    {
+        "status": "string",
+        "message": "string",
+        "correlationId": "GUID"
+    }
+```
+
+| Имя | Type | Описание |
+|-|-|-|
+| status | строка | Один из `NotStarted` ,,, `Running` `Completed` `Failed` или `Unknown` . |
+| message | строка | Сообщение, если ошибка, пустая строка в противном случае. |
+| correlationId | строка   | Идентификатор для запроса состояния запроса на отправку. |
+
+Например.
+
+```azurecli
+az iot hub invoke-module-method --method-name 'GetTaskStatus' -n <hub name> -d <device id> -m '$edgeAgent' --method-payload \
+'
+    {
+      "schemaVersion": "1.0",
+      "correlationId": "<GUID>"
+    }
+'
+```
+
+В портал Azure вызовите метод с именем метода `UploadModuleLogs` и следующими полезными данными JSON после заполнения идентификатора GUID сведениями:
+
+```json
+    {
+      "schemaVersion": "1.0",
+      "correlationId": "<GUID>"
+    }
+```
+
+![Вызов прямого метода "Жеттаскстатус" в портал Azure](./media/how-to-retrieve-iot-edge-logs/invoke-get-task-status.png)
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+[Свойства двойников модулей агента IoT Edge и центра IoT Edge](module-edgeagent-edgehub.md)

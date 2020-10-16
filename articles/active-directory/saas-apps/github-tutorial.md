@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 08/07/2020
 ms.author: jeedes
-ms.openlocfilehash: 007f4d0c0e56051c369d8d06cdd40c9251647673
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: b26ee6d6e82903a3dad91ae931885f62daf5d15b
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90985899"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91821166"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-github"></a>Руководство по Интеграция единого входа Azure Active Directory с GitHub
 
@@ -91,7 +91,7 @@ ms.locfileid: "90985899"
 
 5. Приложение GitHub ожидает утверждения SAML в определенном формате, поэтому следует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию, в котором значение **Уникальный идентификатор пользователя (ID)** сопоставляется с **user.userprincipalname**. Приложение GitHub ожидает сопоставления **уникального идентификатора пользователя (ID)** с **user.mail**, поэтому необходимо изменить сопоставление атрибутов, щелкнув значок **Изменить**.
 
-    ![Изображение](common/edit-attribute.png)
+    ![Снимок экрана, на котором показан раздел "Атрибуты пользователя" с выбранным значком "Изменить"](common/edit-attribute.png)
 
 6. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (Base64)** из предложенных вариантов, и сохраните его на компьютере.
 
@@ -149,11 +149,11 @@ ms.locfileid: "90985899"
 
 2. Перейдите к разделу **Параметры** и щелкните **Безопасность**.
 
-    ![Настройки](./media/github-tutorial/security.png)
+    ![Снимок экрана, на котором показано меню "Organization settings" (Параметры организации) на сайте GitHub с выбранным пунктом "Security" (Безопасность)](./media/github-tutorial/security.png)
 
 3. Установите флажок **Enable SAML authentication** (Включить проверку подлинности SAML). После этого появятся поля конфигурации единого входа. Выполните следующие действия:
 
-    ![Настройки](./media/github-tutorial/saml-sso.png)
+    ![Снимок экрана, на котором показан раздел "SAML single sign-on" (Единый вход SAML) с установленным флажком "Enable SAML authentication" (Включить проверку подлинности SAML) и выделенными текстовыми полями URL-адресов](./media/github-tutorial/saml-sso.png)
 
     а. Скопируйте значение **URL-адреса для единого входа** и вставьте его в текстовое поле **URL-адрес для входа** в разделе **Базовая конфигурация SAML** на портале Azure.
     
@@ -161,7 +161,7 @@ ms.locfileid: "90985899"
 
 4. Задайте значения в следующих полях:
 
-    ![Настройки](./media/github-tutorial/configure.png)
+    ![Снимок экрана, на котором показаны текстовые поля "Sign on URL" (URL-адрес входа), "Issuer" (Издатель) и "Public certificate" (Общедоступный сертификат)](./media/github-tutorial/configure.png)
 
     а. В текстовое поле **Sign on URL** (URL-адрес входа) вставьте значение **URL-адрес входа**, скопированное на портале Azure.
 
@@ -208,7 +208,7 @@ ms.locfileid: "90985899"
 
     b. Щелкните **Send Invitation** (Отправить приглашение).
 
-    ![Приглашение пользователей](./media/github-tutorial/send-invitation.png "Приглашение пользователей")
+    ![Снимок экрана, на котором показана страница диалогового окна "Invite member" (Приглашение участников) с выбранными элементом "Member" (Участник) и кнопкой "Send Invitation" (Отправить приглашение)](./media/github-tutorial/send-invitation.png "Приглашение пользователей")
 
     > [!NOTE]
     > Владелец учетной записи Azure Active Directory получит по электронной почте сообщение со ссылкой для активации учетной записи.

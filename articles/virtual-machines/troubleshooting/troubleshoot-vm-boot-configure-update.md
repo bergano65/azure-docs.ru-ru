@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 09/18/2018
 ms.author: delhan
 ms.openlocfilehash: d7e56fe36af3d841cfd888dd6c1bf05502837cdd
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87079848"
 ---
 # <a name="vm-startup-is-stuck-on-getting-windows-ready-dont-turn-off-your-computer-in-azure"></a>При запуске виртуальная машина зависла на сообщении "Подготовка Windows. Не выключайте компьютер" в Azure
@@ -105,6 +105,6 @@ ms.locfileid: "87079848"
     ![изображение, куда следует отправить немаскируемое прерывание](./media/troubleshoot-vm-configure-update-boot/run-nmi.png)
 6. Снова подключите диск операционной системы к виртуальной машине восстановления и собирайте файл дампа.
 
-## <a name="contact-microsoft-support"></a>Обратиться в службу поддержки Майкрософт
+## <a name="contact-microsoft-support"></a>Обращение в службу поддержки Майкрософт
 
 После сбора файла дампа обратитесь в [службу поддержки Майкрософт](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), чтобы проанализировать первопричину.

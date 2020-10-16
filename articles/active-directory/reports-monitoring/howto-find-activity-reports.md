@@ -15,10 +15,10 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b705cf6ac6fd25c7794db7651db5bc5c5c0e790c
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89230625"
 ---
 # <a name="find-activity-reports-in-the-azure-portal"></a>Поиск отчетов о действиях на портале Azure
@@ -106,7 +106,7 @@ ms.locfileid: "89230625"
 
 Отчет о входах можно использовать для просмотра сведений об использовании приложения путем фильтрации по имени пользователя или приложения.
 
-![Страница "Фильтрация событий входа"](./media/howto-find-activity-reports/07.png "Страница "Фильтрация событий входа"")
+![Страница «Фильтрация Sign-In событий»](./media/howto-find-activity-reports/07.png "Страница «Фильтрация Sign-In событий»")
 
 ## <a name="security-reports"></a>Отчеты о безопасности
 
@@ -155,7 +155,7 @@ ms.locfileid: "89230625"
 
 При скачивании журналов действий в портал Azure мы ограничивают масштабирование до 250000 записей, отсортированных по последним первым. 
 
-#### <a name="resolution"></a>Разрешение
+#### <a name="resolution"></a>Решение
 
 Вы можете в любой момент использовать [интерфейсы API отчетов Azure AD](concept-reporting-api.md), чтобы извлечь до миллиона записей.
 
@@ -176,7 +176,7 @@ ms.locfileid: "89230625"
 | Аудит каталогов | 2 мин | 5 мин |
 | Действия при входе | 2 мин | 5 мин |
 
-#### <a name="resolution"></a>Разрешение
+#### <a name="resolution"></a>Решение
 
 Подождите от 15 минут до двух часов и проверьте, появились ли действия в журнале. Если журналы не появились даже спустя два часа, [отправьте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest) и мы рассмотрим вашу проблему.
 
@@ -197,7 +197,7 @@ ms.locfileid: "89230625"
 | Аудит каталогов | 2 мин | 5 мин |
 | Действия при входе | 2 мин | 5 мин |
 
-#### <a name="resolution"></a>Разрешение
+#### <a name="resolution"></a>Решение
 
 Подождите от 15 минут до двух часов и проверьте, появились ли действия в журнале. Если журналы не появились даже спустя два часа, [отправьте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest) и мы рассмотрим вашу проблему.
 
@@ -220,11 +220,11 @@ ms.locfileid: "89230625"
 
 Дополнительные сведения см. в статье [Политики хранения отчетов Azure Active Directory](reference-reports-data-retention.md).  
 
-#### <a name="resolution"></a>Разрешение
+#### <a name="resolution"></a>Решение
 
 У вас есть два варианта сохранения данных дольше чем в течение 30 дней. Вы можете использовать [API отчетов Azure AD](concept-reporting-api.md), чтобы программным способом извлекать данные и хранить их в базе данных. Кроме того, вы можете интегрировать журналы аудита в стороннюю систему SIEM, такую как Splunk или SumoLogic.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Обзор журналов аудита](concept-audit-logs.md)
 * [Отчеты о действиях входа на портале Azure Active Directory](concept-sign-ins.md)

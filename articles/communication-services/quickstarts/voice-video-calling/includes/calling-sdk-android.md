@@ -4,18 +4,18 @@ ms.service: azure-communication-services
 ms.topic: include
 ms.date: 9/1/2020
 ms.author: mikben
-ms.openlocfilehash: bed2a4ccbe87aef9afa395ed789da393e885cc89
-ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
+ms.openlocfilehash: 368c594352b59f7ec6d04b12ca44e0cd492dc907
+ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91779815"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92082231"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) бесплатно. 
 - Развернутый ресурс Служб коммуникации. [Создайте ресурс Служб коммуникации.](../../create-communication-resource.md)
-- Объект `User Access Token` для включения клиента вызова. Дополнительные сведения о [том, `User Access Token` как получить](../../access-tokens.md)
+- `User Access Token` для включения клиента вызова. Дополнительные сведения о том, [как получить `User Access Token`](../../access-tokens.md)
 - Необязательно. Выполните инструкции из краткого руководства по [началу работы с добавлением вызова в приложение](../getting-started-with-calling.md) .
 
 ## <a name="setting-up"></a>Настройка
@@ -141,7 +141,7 @@ call = callAgent.join(context, groupCallContext, joinCallOptions);
 ### <a name="overview"></a>Обзор
 Мобильные push-уведомления — это всплывающие уведомления, отображаемые на мобильных устройствах. Для вызова мы будем сосредоточиться на push-уведомлениях VoIP (голосовой через Интернет). Мы будем регистрироваться для получения push-уведомлений, обработайте push-уведомления, а затем отменяют регистрацию push-уведомлений.
 
-### <a name="prerequisites"></a>предварительные требования
+### <a name="prerequisites"></a>Предварительные требования
 
 Чтобы завершить работу с этим разделом, создайте учетную запись Firebase и включите облачные службы обмена сообщениями (FCM). Убедитесь, что Firebase Cloud Messaging подключен к экземпляру центра уведомлений Azure (АНХ). Инструкции см. [в статье Connect Firebase to Azure](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-android-push-notification-google-fcm-get-started) .
 В этом разделе также предполагается, что вы используете Android Studio версии 3,6 или более поздней для создания приложения.
@@ -517,7 +517,7 @@ boolean availability = remoteVideoStream.getIsAvailable();
 // Create a view for a video stream
 renderer.createView()
 ```
-* Удалить модуль подготовки отчетов и все `RendererView` связанные с этим модулем подготовки отчетов
+* Удалите модуль подготовки отчетов и все, `RendererView` связанные с этим модулем подготовки отчетов. Вызывается при удалении всех связанных представлений из пользовательского интерфейса.
 ```java
 renderer.dispose()
 ```

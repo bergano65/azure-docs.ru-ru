@@ -12,10 +12,10 @@ ms.author: vanto
 ms.reviewer: sstein
 ms.date: 12/18/2018
 ms.openlocfilehash: b90f86576928e44e00c548f4f3ad3c22c27b8bb3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85829441"
 ---
 # <a name="split-merge-security-configuration"></a>Настройка параметров безопасности для службы разделения и объединения
@@ -59,8 +59,8 @@ ms.locfileid: "85829441"
 
 ### <a name="create-a-new-self-signed-certificate"></a>Создание самозаверяющего сертификата
 
-1. [Создание самозаверяющего сертификата](#create-a-self-signed-certificate)
-2. [Создание PFX-файла для самозаверяющего TLS/SSL-сертификата](#create-pfx-file-for-self-signed-tlsssl-certificate)
+1. [Создание сертификата Self-Signed](#create-a-self-signed-certificate)
+2. [Создать PFX-файл для сертификата Self-Signed TLS/SSL](#create-pfx-file-for-self-signed-tlsssl-certificate)
 3. [Отправка TLS/SSL-сертификата в облачную службу](#upload-tlsssl-certificate-to-cloud-service)
 4. [Обновление сертификата TLS/SSL в файле конфигурации службы](#update-tlsssl-certificate-in-service-configuration-file)
 5. [Импорт центра сертификации TLS/SSL](#import-tlsssl-certification-authority)
@@ -105,7 +105,7 @@ ms.locfileid: "85829441"
 Сертификат необходим для шифрования учетных данных, которые хранятся в хранилище метаданных. Выберите наиболее подходящий из этих трех сценариев и выполните все шаги.
 
 ### <a name="use-a-new-self-signed-certificate"></a>Использование нового самозаверяющего сертификата
-1. [Создание самозаверяющего сертификата](#create-a-self-signed-certificate)
+1. [Создание сертификата Self-Signed](#create-a-self-signed-certificate)
 2. [Создание PFX-файла для самозаверяющего сертификата шифрования](#create-pfx-file-for-self-signed-tlsssl-certificate)
 3. [Передача сертификата шифрования в облачную службу](#upload-encryption-certificate-to-cloud-service)
 4. [Обновление сертификата шифрования в файле конфигурации службы](#update-encryption-certificate-in-service-configuration-file)
@@ -454,14 +454,14 @@ MyID.pvk and MyID.cer with the filename for the encryption certificate
 ## <a name="export-certificate"></a>Экспорт сертификата
 В **мастере экспорта сертификатов**:
 
-1. Нажмите кнопку **Далее**.
+1. Щелкните **Далее**.
 2. Выберите **Да**, а затем — **Export the private key** (Экспортировать закрытый ключ).
-3. Нажмите кнопку **Далее**.
+3. Щелкните **Далее**.
 4. Выберите нужный формат выходного файла.
 5. Проверьте необходимые параметры.
 6. Проверьте **Пароль**.
 7. Введите надежный пароль и подтвердите его.
-8. Нажмите кнопку **Далее**.
+8. Щелкните **Далее**.
 9. Введите или выберите имя файла, в котором будет храниться сертификат (используйте расширение .PFX).
 10. Щелкните **Далее**.
 11. Нажмите кнопку **Готово**.
@@ -474,7 +474,7 @@ MyID.pvk and MyID.cer with the filename for the encryption certificate
    
    * Выберите **Текущий пользователь** , если доступ к службе будет только у тех процессов, которые запущены под учетной записью текущего пользователя.
    * Выберите **Локальный компьютер** , если доступ к службе будет и у других процессов на этом компьютере.
-2. Нажмите кнопку **Далее**.
+2. Щелкните **Далее**.
 3. При импорте из файла подтвердите путь к файлу.
 4. При импорте .PFX-файла:
    1. Введите пароль, защищающий закрытый ключ

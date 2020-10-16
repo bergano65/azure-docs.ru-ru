@@ -6,10 +6,10 @@ ms.subservice: personalizer
 ms.topic: conceptual
 ms.date: 02/18/2020
 ms.openlocfilehash: cfbe5cf8c19bfafb38f6149391e09350785ebf9c
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91303613"
 ---
 # <a name="how-personalizer-works"></a>Принцип работы Персонализатора
@@ -32,7 +32,7 @@ ms.locfileid: "91303613"
 
 На следующем изображении показан архитектурный процесс вызовов "Ранг" и "Вознаграждение".
 
-![замещающий текст](./media/how-personalizer-works/personalization-how-it-works.png "Принцип работы персонализации")
+![Замещающий текст](./media/how-personalizer-works/personalization-how-it-works.png "Принцип работы персонализации")
 
 1. Вы отправляете _действия с функциями_ и _контекстными функциями_ в API ранжирования.
 
@@ -56,6 +56,6 @@ ms.locfileid: "91303613"
 
 Персонализатор базируется на новейших научных и исследовательских разработках в области [обучения с подкреплением](concepts-reinforcement-learning.md), включая статьи, исследовательскую деятельность и текущие области исследований в Microsoft Research.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Сведения о [наиболее частых сценариях](where-can-you-use-personalizer.md) для персонализации

@@ -14,10 +14,10 @@ ms.date: 11/08/2019
 ms.author: sumi
 ms.custom: ''
 ms.openlocfilehash: 7d937542201792c0d1c0be69df9bd1c2b34edea3
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89434475"
 ---
 # <a name="virtual-network-service-endpoints"></a>Конечные точки служб для виртуальной сети
@@ -62,7 +62,7 @@ ms.locfileid: "89434475"
 
 - Функция доступна только для виртуальных сетей, развернутых посредством модели развертывания с помощью Azure Resource Manager.
 - Конечные точки включаются в подсетях, которые настроены в виртуальных сетях Azure. Конечные точки нельзя использовать для трафика из локальной среды в службы Azure. Дополнительные сведения см. [в статье Защита доступа к службам Azure из локальной](#secure-azure-services-to-virtual-networks) среды.
-- В SQL Azure конечная точка службы применяется только к трафику службы Azure в пределах региона виртуальной сети. Для службы хранилища Azure конечные точки также расширяются для включения парных регионов, в которых развертывается виртуальная сеть для поддержки геоизбыточного хранилища с доступом на чтение (RA-GRS) и геоизбыточного хранилища (GRS). Дополнительные сведения см. в статье [Непрерывность бизнес-процессов и аварийное восстановление в службах BizTalk: пары регионов Azure](../best-practices-availability-paired-regions.md?toc=%2fazure%2fvirtual-network%2ftoc.json#what-are-paired-regions).
+- В SQL Azure конечная точка службы применяется только к трафику службы Azure в пределах региона виртуальной сети. Для службы хранилища Azure конечные точки также расширяются для включения парных регионов, в которых развертывается виртуальная сеть для поддержки Read-Access трафика Geo-Redundant хранилища (RA-GRS) и Geo-Redundantного хранилища (GRS). Дополнительные сведения см. в статье [Непрерывность бизнес-процессов и аварийное восстановление в службах BizTalk: пары регионов Azure](../best-practices-availability-paired-regions.md?toc=%2fazure%2fvirtual-network%2ftoc.json#what-are-paired-regions).
 - Для Azure Data Lake Storage (ADLS) Gen 1 возможность интеграции с виртуальной сетью доступна только для виртуальных сетей в том же регионе. Также обратите внимание, что интеграция виртуальной сети для ADLS 1-го поколения использует безопасность конечной точки службы виртуальной сети между виртуальной сетью и Azure Active Directory (Azure AD) для создания дополнительных утверждений безопасности в маркере доступа. Эти утверждения используются для проверки подлинности виртуальной сети в учетной записи ADLS 1-го поколения и для предоставления доступа. Тег *Microsoft. AzureActiveDirectory* , указанный в разделе службы, поддерживающие конечные точки службы, используется только для вспомогательных конечных точек службы для ADLS Gen 1. Azure AD не поддерживает конечные точки службы изначально. Дополнительные сведения о Azure Data Lake Store интеграции с виртуальной сетью Gen 1 см. [в разделе Сетевая безопасность в Azure Data Lake Storage 1-го поколения](../data-lake-store/data-lake-store-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 
 ## <a name="secure-azure-services-to-virtual-networks"></a>Защита служб Azure в виртуальных сетях
@@ -144,7 +144,7 @@ ms.locfileid: "89434475"
 
 Часто задаваемые вопросы см. в разделе [вопросы и ответы о конечной точке службы виртуальной сети](https://docs.microsoft.com/azure/virtual-network/virtual-networks-faq#virtual-network-service-endpoints).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Настройка конечных точек служб для виртуальной сети](tutorial-restrict-network-access-to-resources.md)
 - [Защита учетной записи хранения Azure в виртуальной сети](../storage/common/storage-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json)

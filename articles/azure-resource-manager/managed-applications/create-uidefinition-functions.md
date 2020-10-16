@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 07/13/2020
 ms.author: tomfitz
 ms.openlocfilehash: e4255f0d42e28a72ad55d9b7f81d0dc49b2950cb
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87040993"
 ---
 # <a name="createuidefinition-functions"></a>Функции CreateUiDefinition
@@ -18,19 +18,19 @@ ms.locfileid: "87040993"
 
 ## <a name="function-syntax"></a>Синтаксис функции
 
-Чтобы использовать функцию, заключите вызов в квадратные скобки. Например.
+Чтобы использовать функцию, заключите вызов в квадратные скобки. Пример.
 
 ```json
 "[function()]"
 ```
 
-На строки и другие функции можно ссылаться как на параметры функции, но строки должны быть заключены в одинарные кавычки. Например.
+На строки и другие функции можно ссылаться как на параметры функции, но строки должны быть заключены в одинарные кавычки. Пример.
 
 ```json
 "[fn1(fn2(), 'demo text')]"
 ```
 
-Там, где это применимо, вы можете ссылаться на свойства выходных данных функции с помощью оператора "точка". Например.
+Там, где это применимо, вы можете ссылаться на свойства выходных данных функции с помощью оператора "точка". Пример.
 
 ```json
 "[func().prop1]"
@@ -42,11 +42,11 @@ ms.locfileid: "87040993"
 
 * [contains](create-ui-definition-collection-functions.md#contains)
 * [empty](create-ui-definition-collection-functions.md#empty)
-* [Фильтрация](create-ui-definition-collection-functions.md#filter)
+* [filter](create-ui-definition-collection-functions.md#filter)
 * [first](create-ui-definition-collection-functions.md#first)
 * [last](create-ui-definition-collection-functions.md#last)
 * [length](create-ui-definition-collection-functions.md#length)
-* [Таблица](create-ui-definition-collection-functions.md#map)
+* [map](create-ui-definition-collection-functions.md#map)
 * [skip](create-ui-definition-collection-functions.md#skip)
 * [split](create-ui-definition-collection-functions.md#split)
 * [take](create-ui-definition-collection-functions.md#take)
@@ -63,7 +63,7 @@ ms.locfileid: "87040993"
 * [float](create-ui-definition-conversion-functions.md#float)
 * [int](create-ui-definition-conversion-functions.md#int)
 * [проанализировать](create-ui-definition-conversion-functions.md#parse)
-* [строка](create-ui-definition-conversion-functions.md#string)
+* [string](create-ui-definition-conversion-functions.md#string)
 
 ## <a name="date-functions"></a>Функции данных
 
@@ -76,7 +76,7 @@ ms.locfileid: "87040993"
 
 Эти функции можно использовать в условных выражениях. Некоторые функции не поддерживают все типы данных JSON.
 
-* [and](create-ui-definition-logical-functions.md#and) (и);
+* [and](create-ui-definition-logical-functions.md#and)
 * [coalesce](create-ui-definition-logical-functions.md#coalesce)
 * [equals](create-ui-definition-logical-functions.md#equals)
 * [greater](create-ui-definition-logical-functions.md#greater)

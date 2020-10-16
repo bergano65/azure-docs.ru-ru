@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/12/2019
 ms.author: jeedes
-ms.openlocfilehash: 0c9e0b6a81742ea4022bb8db2dd8d933f917331b
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: b5739ea49bb9f5823538e9a41660a572a3cede04
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88530126"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91760736"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-cezanne-hr-software"></a>Руководство. Интеграция Azure Active Directory с Cezanne HR Software
 
@@ -130,19 +130,19 @@ ms.locfileid: "88530126"
 
 2. В левой панели навигации щелкните **System Setup**(Настройка системы). Выберите пункт **Параметры безопасности**. Далее перейдите к пункту **Конфигурация единого входа**.
 
-    ![Настройка единого входа на стороне приложения](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_000.png)
+    ![Снимок экрана, на котором показан арендатор Cezanne HR Software с выбранными параметрами "Security Settings" (Параметры безопасности) и "Single Sign-On Configuration" (Конфигурация единого входа)](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_000.png)
 
 3. На панели **Allow users to log in using the following Single Sign-On (SSO) Service** (Разрешить пользователям вход с использованием следующей службы единого входа) установите флажок **SAML 2.0** и выберите параметр **Расширенная конфигурация**.
 
-    ![Настройка единого входа на стороне приложения](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_001.png)
+    ![Снимок экрана, на котором показана область "Allow users" (Разрешить пользователям) с установленным флажком "SAML 2.0" и выбранным параметром "Advanced Configuration" (Расширенная конфигурация)](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_001.png)
 
 4. Нажмите кнопку **Добавить** .
 
-    ![Настройка единого входа на стороне приложения](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_002.png)
+    ![Снимок экрана, на котором показана кнопка "Add New" (Добавить)](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_002.png)
 
 5. В разделе **SAML 2.0 Identity providers** (Поставщики удостоверений SAML) выполните следующие действия.
 
-    ![Настройка единого входа на стороне приложения](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_003.png)
+    ![Снимок экрана, на котором показана область, где можно ввести значения, описанные на этом шаге](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_003.png)
 
     а. Введите имя поставщика удостоверений в поле **Отображаемое имя**.
 
@@ -160,7 +160,7 @@ ms.locfileid: "88530126"
 
 6. Нажмите кнопку **Сохранить** .
 
-    ![Настройка единого входа на стороне приложения](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_004.png)
+    ![Снимок экрана, на котором показана кнопка "Save" (Сохранить) для раздела "Single Sign-On Configuration" (Конфигурация единого входа)](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_004.png)
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -223,11 +223,11 @@ ms.locfileid: "88530126"
 
 2. В левой панели навигации щелкните **System Setup**(Настройка системы). Перейдите в раздел **Управление пользователями**. Выберите **Добавить нового пользователя**.
 
-    ![Новый пользователь](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_005.png "Новый пользователь")
+    ![Снимок экрана, на котором показан арендатор Cezanne HR Software с выбранными параметрами "Manage Users" (Управление пользователями) и "Add New User" (Добавить пользователя)](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_005.png "Новый пользователь")
 
 3. В разделе **PERSON DETAILS** (Личные данные) выполните следующие действия:
 
-    ![Новый пользователь](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_006.png "Новый пользователь")
+    ![Снимок экрана, на котором показан раздел "PERSON DETAILS" (Личные данные), где можно ввести значения, описанные на этом шаге](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_006.png "Новый пользователь")
 
     а. Установите для параметра **Внутренний пользователь** значение "Выкл.".
 
@@ -239,7 +239,7 @@ ms.locfileid: "88530126"
 
 4. В разделе **Account Information** (Сведения об учетной записи) выполните следующие действия.
 
-    ![Новый пользователь](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_007.png "Новый пользователь")
+    ![Снимок экрана, на котором показан раздел "ACCOUNT INFORMATION" (Сведения об учетной записи), где можно ввести сведения, описанные на этом шаге](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_007.png "Новый пользователь")
 
     а. В текстовом поле **Username** (Имя пользователя) введите электронный адрес пользователя, например Brittasimon@contoso.com.
 
@@ -251,15 +251,15 @@ ms.locfileid: "88530126"
 
 5. Перейдите на вкладку **Единый вход** и нажмите кнопку **Добавить** в области **Идентификаторы SAML 2.0)** .
 
-    ![Пользователь](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_008.png "Пользователь")
+    ![Снимок экрана, на котором показана складка "Single Sign On" (Единый вход), где можно нажать кнопку "Add New" (Добавить)](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_008.png "Пользователь")
 
 6. Выберите значение в списке **Поставщик удостоверений** и в текстовом поле **Идентификатор пользователя** введите адрес электронной почты учетной записи Britta Simon.
 
-    ![Пользователь](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_009.png "Пользователь")
+    ![Снимок экрана, на котором показана область "SAML 2.0 Identifiers" (Идентификаторы SAML 2.0), где можно выбрать поставщик удостоверений и идентификатор пользователя](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_009.png "Пользователь")
 
 7. Нажмите кнопку **Сохранить** .
 
-    ![Пользователь](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_010.png "Пользователь")
+    ![Снимок экрана, на котором показана кнопка "Save" (Сохранить) для параметров пользователя](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_010.png "Пользователь")
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 

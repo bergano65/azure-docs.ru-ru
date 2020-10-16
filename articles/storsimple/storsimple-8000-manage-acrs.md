@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/31/2017
 ms.author: alkohli
-ms.openlocfilehash: 9f92a6277765447cbc1a9b12f06c3ec49548f4d1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 15c35fb314af27b1ced129a12f752d0a2794e0f8
+ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85513449"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91949910"
 ---
 # <a name="use-the-storsimple-manager-service-to-manage-access-control-records"></a>Использование службы StorSimple Manager для управления записями контроля доступа
 
@@ -63,11 +63,11 @@ ms.locfileid: "85513449"
 
     3. Нажмите кнопку **Добавить**, чтобы создать запись контроля доступа.
 
-        ![Щелкните "Добавить запись контроля доступа"](./media/storsimple-8000-manage-acrs/createacr2.png)
+        ![Щелкните Добавить запись контроля доступа 2](./media/storsimple-8000-manage-acrs/createacr2.png)
 
 4.  Добавленная запись контроля доступа сразу появится в табличном списке записей контроля доступа.
 
-    ![Щелкните "Добавить запись контроля доступа"](./media/storsimple-8000-manage-acrs/createacr5.png)
+    ![Щелкните Добавить запись контроля доступа 3](./media/storsimple-8000-manage-acrs/createacr5.png)
 
 
 ## <a name="edit-an-access-control-record"></a>Изменение записи контроля доступа
@@ -89,11 +89,11 @@ ms.locfileid: "85513449"
 
 3. В колонке **Правка записи контроля доступа** введите новое имя IQN, обозначающее другой узел.
 
-    ![Изменение записей контроля доступа](./media/storsimple-8000-manage-acrs/editacr2.png)
+    ![Изменить записи контроля доступа 2](./media/storsimple-8000-manage-acrs/editacr2.png)
 
 4. Нажмите кнопку **Сохранить**. При запросе подтверждения нажмите кнопку **Да**. 
 
-    ![Изменение записей контроля доступа](./media/storsimple-8000-manage-acrs/editacr3.png)
+    ![Изменить записи контроля доступа 3](./media/storsimple-8000-manage-acrs/editacr3.png)
 
 5. Вы получите уведомление об изменении записи контроля доступа. Таблица со списком также обновится с учетом этих изменений.
 
@@ -109,25 +109,25 @@ ms.locfileid: "85513449"
 #### <a name="to-delete-an-access-control-record"></a>Чтобы удалить запись контроля доступа
 1.  Найдите службу диспетчера устройств StorSimple, дважды щелкните имя этой службы, а затем в разделе **Конфигурация** щелкните **Записи контроля доступа**.
 
-    ![Переход к записям контроля доступа](./media/storsimple-8000-manage-acrs/createacr1.png)
+    ![Перейти к записям контроля доступа 1B](./media/storsimple-8000-manage-acrs/createacr1.png)
 
 2. В табличном списке записей контроля доступа щелкните ту запись, которую нужно удалить.
 
-    ![Переход к записям контроля доступа](./media/storsimple-8000-manage-acrs/deleteacr1.png)
+    ![Перейти к записям контроля доступа 2](./media/storsimple-8000-manage-acrs/deleteacr1.png)
 
 3. Щелкните правой кнопкой мыши и в открывшемся контекстном меню выберите пункт **Удалить**.
 
-    ![Переход к записям контроля доступа](./media/storsimple-8000-manage-acrs/deleteacr2.png)
+    ![Перейти к записям контроля доступа 3](./media/storsimple-8000-manage-acrs/deleteacr2.png)
 
 4. Когда появится запрос на подтверждение, проверьте указанные сведения и щелкните **Удалить**.
 
-    ![Переход к записям контроля доступа](./media/storsimple-8000-manage-acrs/deleteacr3.png)
+    ![Перейти к записям контроля доступа 4](./media/storsimple-8000-manage-acrs/deleteacr3.png)
 
 5. Вы получите уведомление, когда удаление завершится. Таблица будет обновлена с учетом удаления.
 
-    ![Переход к записям контроля доступа](./media/storsimple-8000-manage-acrs/deleteacr5.png)
+    ![Перейти к записям контроля доступа 5](./media/storsimple-8000-manage-acrs/deleteacr5.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте больше об [управлении томами StorSimple](storsimple-8000-manage-volumes-u2.md).
 * Узнайте больше об [использовании службы StorSimple Manager для администрирования устройства StorSimple](storsimple-8000-manager-service-administration.md).
 

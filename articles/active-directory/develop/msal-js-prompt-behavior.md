@@ -14,10 +14,10 @@ ms.author: nacanuma
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.openlocfilehash: 85f5269c3c2616070b826ecc38735c31617db537
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85477555"
 ---
 # <a name="prompt-behavior-in-msaljs-interactive-requests"></a>Поведение запроса в MSAL.js интерактивных запросов
@@ -48,6 +48,6 @@ userAgentApplication.loginRedirect(request);
 
 **Нет:** Это значение обеспечит, чтобы пользователь не выводит никаких интерактивных запросов. Рекомендуется не передавать это значение в интерактивные методы в MSAL.js, так как оно может привести к непредвиденным поведению. Вместо этого используйте `acquireTokenSilent` метод для достижения автоматических вызовов.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте больше о `prompt` параметре в протоколе [неявного предоставления OAuth 2,0](v2-oauth2-implicit-grant-flow.md) , используемом библиотекой MSAL.js.

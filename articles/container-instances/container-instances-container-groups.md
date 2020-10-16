@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 11/01/2019
 ms.custom: mvc
 ms.openlocfilehash: 72ebe6186da179bc5a1effddcc14327455eb7557
-ms.sourcegitcommit: f845ca2f4b626ef9db73b88ca71279ac80538559
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89612408"
 ---
 # <a name="container-groups-in-azure-container-instances"></a>Группы контейнеров в службе "Экземпляры контейнеров Azure"
@@ -78,7 +78,7 @@ ms.locfileid: "89612408"
 ## <a name="storage"></a>Память
 
 Вы можете указать внешние тома для подключения в пределах группы контейнеров. К поддерживаемым томам относятся:
-* [Файловый ресурс Azure][azure-files]
+* [Общая папка Azure][azure-files]
 * [Секрет][secret]
 * [Пустой каталог][empty-directory]
 * [Клонированный репозиторий Git][volume-gitrepo]
@@ -96,7 +96,7 @@ ms.locfileid: "89612408"
 * Контейнер приложения и мониторинга. Контейнер мониторинга периодически выполняет запрос к приложению, чтобы убедиться, что оно правильно работает и отвечает, и выдает предупреждение, если это не так.
 * Интерфейсный контейнер и серверный контейнер. Внешний интерфейс может обслуживать веб-приложение с серверной частью службы для получения данных. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте, как развертывать группу контейнеров с несколькими контейнерами с использованием шаблона Azure Resource Manager:
 

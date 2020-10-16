@@ -7,10 +7,10 @@ ms.topic: how-to
 ms.date: 09/30/2020
 ms.author: v-erkel
 ms.openlocfilehash: 7f1d8d34d6351fc344fdb101ac8e9a96678df9d5
-ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91651434"
 ---
 # <a name="mount-the-azure-hpc-cache"></a>Mount the Azure HPC Cache (Подключение Azure HPC Cache)
@@ -47,7 +47,7 @@ ms.locfileid: "91651434"
 
 Создайте путь к локальному каталогу на каждом клиенте для подключения к кэшу. Создайте путь для каждого пути к пространству имен, которое необходимо подключить.
 
-Пример: `sudo mkdir -p /mnt/hpc-cache-1/target3`
+Например, `sudo mkdir -p /mnt/hpc-cache-1/target3`.
 
 На странице [инструкции по подключению](#use-the-mount-instructions-utility) в портал Azure содержится команда prototype, которую можно скопировать.
 
@@ -99,7 +99,7 @@ ms.locfileid: "91651434"
 
 > Sudo Mount {*Options*} *cache_mount_address*:/*namespace_path* *local_path*
 
-Пример
+Пример.
 
 ```bash
 root@test-client:/tmp# mkdir hpccache
@@ -115,7 +115,7 @@ root@test-client:/tmp#
 
 > mount-o жесткое, устанавливает = TCP, маунтпрото = TCP, Retry = 30 $ {CACHE_IP_ADDRESS}:/$ {NAMESPACE_PATH} $ {LOCAL_FILESYSTEM_MOUNT_POINT}
 
-| Рекомендуемые параметры команды подключения | Description |
+| Рекомендуемые параметры команды подключения | Описание |
 --- | ---
 ``hard`` | Мягкое подключение к кэшу Azure HPC связано с ошибками приложений и возможной потерей данных.
 ``proto=tcp`` | Этот параметр поддерживает соответствующую обработку сетевых ошибок NFS.
@@ -135,6 +135,6 @@ root@test-client:/tmp#
 
 ![снимок экрана: страница параметров >ного пространства имен на портале с выделенным полем вокруг первого столбца таблицы "путь к пространству имен"](media/view-namespace-paths.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Чтобы переместить данные в целевые объекты хранилища кэша, прочитайте статью [заполнение нового хранилища BLOB-объектов Azure](hpc-cache-ingest.md).

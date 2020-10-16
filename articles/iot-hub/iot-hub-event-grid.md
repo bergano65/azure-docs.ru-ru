@@ -12,12 +12,12 @@ ms.custom:
 - amqp
 - mqtt
 - 'Role: Cloud Development'
-ms.openlocfilehash: c1dc3b5fe4eecea42baf7073b9c806eea1648cff
-ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
+ms.openlocfilehash: af1e47c61977d0bc5d03f8cdb87393ed2014e736
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2020
-ms.locfileid: "90056172"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92072311"
 ---
 # <a name="react-to-iot-hub-events-by-using-event-grid-to-trigger-actions"></a>Реагирование на события в Центре Интернета вещей с использованием службы "Сетка событий" для запуска действий
 
@@ -73,6 +73,8 @@ ms.locfileid: "90056172"
   "metadataVersion": "1"
 }]
 ```
+
+
 
 ### <a name="device-telemetry-schema"></a>Схема телеметрии устройства
 
@@ -163,6 +165,10 @@ ms.locfileid: "90056172"
   "metadataVersion": "1"
 }]
 ```
+
+
+> [!WARNING]
+> *Данные двойника* , связанные с событием создания устройства, являются конфигурацией по умолчанию и не *должны* полагаться на фактические `authenticationType` и другие свойства устройства в новом устройстве. Для `authenticationType` и других свойств устройства в созданном устройстве используйте API диспетчера регистрации, предоставленный в пакетах SDK для Azure IOT.
 
 Подробное описание каждого свойства см. в статье [схема событий службы "Сетка событий Azure" для центра Интернета вещей](../event-grid/event-schema-iot-hub.md).
 

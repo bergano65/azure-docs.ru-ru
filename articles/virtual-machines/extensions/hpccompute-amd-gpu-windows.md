@@ -12,15 +12,15 @@ ms.workload: infrastructure-services
 ms.date: 05/10/2020
 ms.author: vikancha
 ms.openlocfilehash: bc7bfecbcb387fa0da0809a9a2287b243e861c49
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87010875"
 ---
 # <a name="amd-gpu-driver-extension-for-windows"></a>Расширение драйвера GPU AMD для Windows
 
-В этой статье представлен обзор расширения виртуальной машины, которое позволяет развертывать драйверы GPU AMD на виртуальных машинах Windows [серии NVv4](../nvv4-series.md) . При установке драйверов AMD с помощью этого расширения вы принимаете и принимаете условия [лицензионного соглашения AMD](https://amd.com/radeonsoftwarems). Во время установки драйвера виртуальная машина может быть перезагружена для завершения процедуры.
+В этой статье представлен обзор расширения виртуальной машины, которое позволяет развертывать драйверы GPU AMD на виртуальных машинах Windows [серии NVv4](../nvv4-series.md) . При установке драйверов AMD с помощью этого расширения вы принимаете и принимаете условия [лицензионного соглашения amd End-User](https://amd.com/radeonsoftwarems). Во время установки драйвера виртуальная машина может быть перезагружена для завершения процедуры.
 
 Инструкции по установке драйверов вручную и сведения о поддерживаемых сейчас версиях приводятся [здесь](../windows/n-series-amd-driver-setup.md).
 
@@ -34,8 +34,8 @@ ms.locfileid: "87010875"
 |---|---|
 | Windows 10 EMS | Сборка 1903 |
 | Windows 10 | Сборка 1809 |
-| Windows Server 2016 | Ядро |
-| Windows Server 2019 | Ядро |
+| Windows Server 2016 | Основные сведения |
+| Windows Server 2019 | Основные сведения |
 
 ### <a name="internet-connectivity"></a>Подключение к Интернету
 

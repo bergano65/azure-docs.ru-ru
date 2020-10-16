@@ -16,10 +16,10 @@ ms.date: 07/25/2019
 ms.author: alkohli
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: d6dfc95820e911781ffa88e2207601703f165839
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87070601"
 ---
 # <a name="deploy-storsimple-virtual-array---provision-in-hyper-v"></a>Развертывание виртуального массива StorSimple — подготовка в Hyper-V
@@ -168,11 +168,11 @@ ms.locfileid: "87070601"
    ![Снимок экрана: вкладка vSphere Client Console, в которой показаны неопределенные символы в поле входа.](./media/storsimple-virtual-array-deploy2-provision-hyperv/image23.png)
 4. В целях безопасности срок действия пароля администратора устройства истекает после первого входа в систему. Вам будет предложено изменить пароль.
 
-   ![Снимок экрана: вкладка "консоль клиента vSphere". текст на странице указывает, что пароль должен быть изменен.](./media/storsimple-virtual-array-deploy2-provision-hyperv/image24.png)
+   ![Снимок экрана: вкладка "консоль клиента vSphere". Текст на странице указывает, что пароль должен быть изменен.](./media/storsimple-virtual-array-deploy2-provision-hyperv/image24.png)
 
    Введите пароль длиной не менее 8 символов. Он должен содержать по крайней мере 3 из 4 указанных далее типов символов: прописные буквы, строчные буквы, цифры и специальные символы. Повторно введите пароль для подтверждения. Вы получите уведомление об изменении пароля.
 
-   ![Снимок экрана: вкладка "консоль клиента vSphere". текст на странице указывает, что пароль изменился.](./media/storsimple-virtual-array-deploy2-provision-hyperv/image25.png)
+   ![Снимок экрана: вкладка "консоль клиента vSphere". Текст на странице указывает, что пароль изменился.](./media/storsimple-virtual-array-deploy2-provision-hyperv/image25.png)
 5. После изменения пароля виртуальный массив может перезапуститься. Подождите, пока устройство запустится.
 
    ![Снимок экрана главной страницы правами storsimpleadmin. Текст на странице запрашивает у пользователя ожидание службы уведомления о системных событиях.](./media/storsimple-virtual-array-deploy2-provision-hyperv/image26.png)

@@ -13,10 +13,10 @@ ms.custom: seo-lt-2019
 ms.topic: conceptual
 ms.date: 10/25/2019
 ms.openlocfilehash: e950e34a1965e309d226c42bf4b3128cbe3bf3c5
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91291509"
 ---
 # <a name="custom-roles-for-sql-server-to-azure-sql-managed-instance-online-migrations"></a>Пользовательские роли для SQL Server в Azure SQL Управляемый экземпляр оперативные миграции
@@ -148,6 +148,6 @@ Azure Database Migration Service использует идентификатор
 
   ИДЕНТИФИКАТОРы приложений теперь отображаются на вкладке **назначения ролей** .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Ознакомьтесь с руководством по миграции для вашего сценария в [руководстве по миграции базы данных](https://datamigration.microsoft.com/)Майкрософт.

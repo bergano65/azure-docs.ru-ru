@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: erhopf
 ms.openlocfilehash: 3747033fcaf65e0c6da07e9f1bb625771958bb4f
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91319067"
 ---
 # <a name="create-a-custom-voice"></a>Создание пользовательского голоса
@@ -143,7 +143,7 @@ ms.locfileid: "91319067"
 
 Пользовательская конечная точка функционально идентична стандартной конечной точке, используемой для запросов преобразования текста в речь. Дополнительные сведения см. в статье о [REST API](rest-text-to-speech.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Руководство. запись образцов голоса](record-custom-voice-samples.md)
 * [Справочник по API преобразования текста в речь](rest-text-to-speech.md)

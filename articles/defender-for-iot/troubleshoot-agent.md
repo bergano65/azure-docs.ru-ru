@@ -14,10 +14,10 @@ ms.workload: na
 ms.date: 09/09/2020
 ms.author: mlottner
 ms.openlocfilehash: e9904e9157a560e2a4853a1a9cd37977defe73ea
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90937391"
 ---
 # <a name="security-agent-troubleshoot-guide-linux"></a>Инструкции по устранению неполадок с агентом безопасности (Linux)
@@ -106,7 +106,7 @@ Defender for IoT agent encountered an error! Error in: {Error Code}, reason: {Er
 | Аутентификация | Не удается проанализировать конфигурацию | Не удается выполнить синтаксический анализ значения конфигурации. Сообщение об ошибке должно указывать, какой ключ не может быть проанализирован. Не удается выполнить синтаксический анализ значения конфигурации, так как значение не относится к ожидаемому типу, или значение выходит за пределы допустимого диапазона. |Исправьте значение ключа в **LocalConfiguration.js** в файле. |Исправьте значение ключа в файле **Authentication.config** в соответствии со схемой. Дополнительные сведения см. в разделе [CS-локалконфиг-Reference](azure-iot-security-local-configuration-c.md) .|
 |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Ознакомьтесь с [обзором](overview.md) службы "защитник для Интернета вещей"
 - Дополнительные сведения о защитнике для [архитектуры](architecture.md) IOT

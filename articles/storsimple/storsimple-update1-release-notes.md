@@ -16,15 +16,15 @@ ms.date: 11/03/2017
 ms.author: alkohli
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 17e20048c4cb4de2be6fe36be100b472f0b8ee73
-ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89459969"
 ---
 # <a name="update-12-release-notes-for-your-storsimple-8000-series-device"></a>Заметки о выпуске обновления 1.2 для устройств StorSimple серии 8000
 
-## <a name="overview"></a>Overview
+## <a name="overview"></a>Обзор
 В приведенных ниже заметках о выпуске описаны новые функции и критические открытые проблемы в обновлении 1.2 для устройств серии StorSimple 8000. Здесь также содержится список обновлений программного обеспечения, драйверов и встроенного ПО дисков StorSimple для этого выпуска. 
 
 Обновление 1.2 можно применить к любому устройству StorSimple под управлением программного обеспечения версии (GA) с обновлением 0.1, 0.2 или 0.3. Обновление 1.2 недоступно, если устройство работает под обновлением 1 или 1.1. Если устройство работает под управлением версии (GA), [обратитесь в службу поддержки Microsoft](storsimple-contact-microsoft-support.md) за помощью в установке этого обновления.
@@ -111,6 +111,6 @@ ms.locfileid: "89459969"
 ## <a name="virtual-device-updates-in-update-12"></a>Обновления для виртуальных устройств в обновлении 1.2
 Это обновление не может применяться к виртуальному устройству. Нужно будет создать новые виртуальные устройства. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Установка обновления 1.2 на устройство](storsimple-install-update-1.md).
 

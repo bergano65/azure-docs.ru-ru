@@ -12,10 +12,10 @@ ms.author: mabasile
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
 ms.openlocfilehash: 8f2e41779e72d565e24b67fd8b18afd87a112e62
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91542107"
 ---
 # <a name="azure-synapse-analytics-data-management-partners"></a>Партнеры по управлению данными в Azure Synapse Analytics
@@ -36,7 +36,7 @@ ms.locfileid: "91542107"
 | ![SqlDBM](./media/sql-data-warehouse-partner-data-management/sqldbm-logo.png) |**SqlDBM**<br>SqlDBM — это облачное средство моделирования данных, которое предоставляет простой и удобный способ разработки базы данных в любом месте в любом браузере. Кроме того, оно содержит все необходимые правила и объекты базы данных, например ключи базы данных, схемы, индексы, ограничения столбцов и отношения. |[Страница продукта](http://sqldbm.com/)<br> [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/sqldbm1583438206845.sqldbm-data-modeling-tool?tab=Overview)<br>|
 | ![телеран](./media/sql-data-warehouse-partner-data-management/teleran-logo.jpg) |**телеран**<br>Элемент управления "запрос телеран" предотвращает достижение недопустимых и плохо сформированных запросов на синапсе и расход ресурсов вычислений. Он отправляет Интеллектуальные сообщения пользователям аналитики для более эффективного взаимодействия с данными. Цель состоит в том, чтобы обеспечить хорошие результаты бизнеса, не тратя затраты на Azure. Анализ использования телеран обеспечивает анализ действий пользователя, приложения, запроса и использования данных. Она позволяет всегда иметь всю картину того, что происходит. Она позволяет улучшить обслуживание, повысить продуктивность бизнеса и оптимизировать затраты на использование синапсе. |[Страница продукта](https://teleran.com/azure-synapse-optimization-cost-control/)<br>|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о других партнерах см. в разделе [партнеры по бизнес-аналитике](sql-data-warehouse-partner-business-intelligence.md), [партнеры по интеграции данных](sql-data-warehouse-partner-data-integration.md), а [машинное обучение и партнеры по искусственному](sql-data-warehouse-partner-machine-learning-ai.md)анализу.
 
 

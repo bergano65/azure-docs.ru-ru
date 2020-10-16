@@ -7,10 +7,10 @@ ms.date: 11/28/2018
 ms.author: gwallace
 ms.custom: mvc, devcenter
 ms.openlocfilehash: aa3ac9d8835cd17387346bb29b3e7c30f286cd1f
-ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91839730"
 ---
 # <a name="configure-a-gateway-resource-to-route-requests"></a>Настройка шлюза для маршрутизации запросов
@@ -222,5 +222,5 @@ ms.locfileid: "91839730"
 * " \<IPAddress> : 80/helloWorld/" приведет к тому, что \<request\> запрос будет направлен в "хелловорлдлистенер" в helloWorldService. 
 * " \<IPAddress> : 80/Counter/" приведет к тому, что \<request\> запрос будет направлен в "каунтерлистенер" в каунтерсервице. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Разверните [пример для входящих данных](https://github.com/Azure-Samples/service-fabric-mesh/tree/2018-09-01-preview/templates/ingress), чтобы увидеть шлюзы в действии.

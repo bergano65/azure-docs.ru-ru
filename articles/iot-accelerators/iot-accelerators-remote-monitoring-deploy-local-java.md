@@ -1,20 +1,19 @@
 ---
 title: Локальное развертывание решения для удаленного мониторинга — IntelliJ IDE в Azure | Документация Майкрософт
 description: В этом пошаговом руководство показано, как развернуть средство удаленного мониторинга Solution Accelerator на локальном компьютере с помощью IntelliJ для тестирования и разработки.
-author: v-krghan
-manager: dominicbetts
+author: dominicbetts
 ms.custom: devx-track-java
-ms.author: v-krghan
+ms.author: dobett
 ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 01/24/2019
 ms.topic: conceptual
-ms.openlocfilehash: f7554843db247ade1cddff78902430a5d84debe1
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 78573cfe00d8e2e7ddcbf705dffdd5530f82c4e0
+ms.sourcegitcommit: 090ea6e8811663941827d1104b4593e29774fa19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87319173"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91998599"
 ---
 # <a name="deploy-the-remote-monitoring-solution-accelerator-locally---intellij"></a>Локальное развертывание акселератора решения для удаленного мониторинга IntelliJ
 
@@ -24,7 +23,7 @@ ms.locfileid: "87319173"
 
 Если вы хотите запустить акселератор решения для удаленного мониторинга в Docker на локальном компьютере, см. статью [Deploy the Remote Monitoring solution accelerator locally — Docker](iot-accelerators-remote-monitoring-deploy-local-docker.md) (Локальное развертывание акселератора решения для удаленного мониторинга в Docker).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Для развертывания служб Azure, используемых акселератором решения для удаленного мониторинга, требуется активная подписка Azure.
 
@@ -191,10 +190,10 @@ Node.js V8 является необходимым условием для ин�
 
 Чтобы получить доступ к состоянию служб, перейдите по следующим URL-адресам:
 
-* IoT — диспетчер концентраторов:`http://localhost:9002/v1/status`
-* Телеметрию устройства:`http://localhost:9004/v1/status`
-* файле`http://localhost:9005/v1/status`
-* адаптер хранилища:`http://localhost:9022/v1/status`
+* Диспетчер IoT-Hub: `http://localhost:9002/v1/status`
+* Телеметрию устройства: `http://localhost:9004/v1/status`
+* файле `http://localhost:9005/v1/status`
+* адаптер хранилища: `http://localhost:9022/v1/status`
 
 ### <a name="start-the-stream-analytics-job"></a>Запуск задания Stream Analytics
 

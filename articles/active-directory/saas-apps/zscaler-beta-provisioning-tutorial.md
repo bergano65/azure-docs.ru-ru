@@ -12,10 +12,10 @@ ms.topic: article
 ms.date: 03/27/2019
 ms.author: jeedes
 ms.openlocfilehash: 71b40fe903e5a837046b9b29f62ef4875e3139e5
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88545924"
 ---
 # <a name="tutorial-configure-zscaler-beta-for-automatic-user-provisioning"></a>Руководство. Настройка бета-версии Zscaler для автоматической подготовки пользователей
@@ -109,7 +109,7 @@ ms.locfileid: "88545924"
 
     ![Подготовка бета-версии Zscaler](./media/zscaler-beta-provisioning-tutorial/secret-token-2.png)
 
-    Выберите **включить подготовку на основе scim** , чтобы получить **базовый URL-адрес** и **токен носителя**, а затем сохраните параметры. Скопируйте **базовый URL-адрес** в **URL-адрес клиента**и **токен носителя**  в **секретный токен** в портал Azure.
+    Выберите **включить подготовку SCIM-Based** , чтобы получить **базовый URL-адрес** и **токен носителя**, а затем сохраните параметры. Скопируйте **базовый URL-адрес** в **URL-адрес клиента**и **токен носителя**  в **секретный токен** в портал Azure.
 
 7. После заполнения полей, показанных на шаге 5, нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к бета-версии Zscaler. Если подключение не выполняется, убедитесь, что у учетной записи Zscaler Beta есть разрешения администратора, и повторите попытку.
 
@@ -119,7 +119,7 @@ ms.locfileid: "88545924"
 
     ![Подготовка бета-версии Zscaler](./media/zscaler-beta-provisioning-tutorial/notification.png)
 
-9. Нажмите **Сохранить**.
+9. Выберите команду **Сохранить**.
 
 10. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с Zscaler Beta**.
 

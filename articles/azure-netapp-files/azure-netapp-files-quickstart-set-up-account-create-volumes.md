@@ -8,12 +8,12 @@ ms.workload: storage
 ms.topic: quickstart
 ms.date: 09/22/2020
 ms.custom: devx-track-azurecli, subject-armqs
-ms.openlocfilehash: d118bef4a7ccc263010fe176432a5301c4104118
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.openlocfilehash: 088961d58cee2f1bb0c6ac042d9d8ee2ad50ba14
+ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91533916"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91931365"
 ---
 # <a name="quickstart-set-up-azure-netapp-files-and-create-an-nfs-volume"></a>Краткое руководство. Настройка Azure NetApp Files и создание тома NFS 
 
@@ -164,7 +164,7 @@ ms.locfileid: "91533916"
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
-В следующем фрагменте кода показано, как создать учетную запись NetApp в шаблоне Azure Resource Manager (ARM) с помощью ресурса [Microsoft.NetApp/netAppAccounts](https://docs.microsoft.com/azure/templates/microsoft.netapp/netappaccounts). Чтобы запустить код, скачайте [полный шаблон ARM](https://github.com/Azure/azure-quickstart-templates/blob/master/101-anf-nfs-volume/azuredeploy.json) из нашего репозитория GitHub.
+В следующем фрагменте кода показано, как создать учетную запись NetApp в шаблоне Azure Resource Manager (ARM) с помощью ресурса [Microsoft.NetApp/netAppAccounts](/azure/templates/microsoft.netapp/netappaccounts). Чтобы запустить код, скачайте [полный шаблон ARM](https://github.com/Azure/azure-quickstart-templates/blob/master/101-anf-nfs-volume/azuredeploy.json) из нашего репозитория GitHub.
 
 :::code language="json" source="~/quickstart-templates/101-anf-nfs-volume/azuredeploy.json" range="177-183":::
 
@@ -238,7 +238,7 @@ ms.locfileid: "91533916"
 
 <!-- [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)] -->
 
-В следующем фрагменте кода показано, как создать пул емкости в шаблоне Azure Resource Manager (ARM) с помощью ресурса [Microsoft.NetApp/netAppAccounts/capacityPools](https://docs.microsoft.com/azure/templates/microsoft.netapp/netappaccounts/capacitypools). Чтобы запустить код, скачайте [полный шаблон ARM](https://github.com/Azure/azure-quickstart-templates/blob/master/101-anf-nfs-volume/azuredeploy.json) из нашего репозитория GitHub.
+В следующем фрагменте кода показано, как создать пул емкости в шаблоне Azure Resource Manager (ARM) с помощью ресурса [Microsoft.NetApp/netAppAccounts/capacityPools](/azure/templates/microsoft.netapp/netappaccounts/capacitypools). Чтобы запустить код, скачайте [полный шаблон ARM](https://github.com/Azure/azure-quickstart-templates/blob/master/101-anf-nfs-volume/azuredeploy.json) из нашего репозитория GitHub.
 
 :::code language="json" source="~/quickstart-templates/101-anf-nfs-volume/azuredeploy.json" range="184-196":::
 
@@ -387,7 +387,7 @@ ms.locfileid: "91533916"
 
 <!-- [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)] --> 
 
-В следующих фрагментах кода показано, как настроить виртуальную сеть и создать том Azure NetApp Files в шаблоне Azure Resource Manager (ARM). Для настройки виртуальной сети требуется ресурс [Microsoft.Network/virtualNetworks](https://docs.microsoft.com/azure/templates/Microsoft.Network/virtualNetworks). Для создания тома используется ресурс [Microsoft.NetApp/netAppAccounts/capacityPools/volumes](https://docs.microsoft.com/azure/templates/microsoft.netapp/netappaccounts/capacitypools/volumes). Чтобы запустить код, скачайте [полный шаблон ARM](https://github.com/Azure/azure-quickstart-templates/blob/master/101-anf-nfs-volume/azuredeploy.json) из нашего репозитория GitHub.
+В следующих фрагментах кода показано, как настроить виртуальную сеть и создать том Azure NetApp Files в шаблоне Azure Resource Manager (ARM). Для настройки виртуальной сети требуется ресурс [Microsoft.Network/virtualNetworks](/azure/templates/Microsoft.Network/virtualNetworks). Для создания тома используется ресурс [Microsoft.NetApp/netAppAccounts/capacityPools/volumes](/azure/templates/microsoft.netapp/netappaccounts/capacitypools/volumes). Чтобы запустить код, скачайте [полный шаблон ARM](https://github.com/Azure/azure-quickstart-templates/blob/master/101-anf-nfs-volume/azuredeploy.json) из нашего репозитория GitHub.
 
 :::code language="json" source="~/quickstart-templates/101-anf-nfs-volume/azuredeploy.json" range="148-176":::
 
@@ -465,4 +465,4 @@ ms.locfileid: "91533916"
 > [!div class="nextstepaction"]
 > [Иерархия хранилища Azure NetApp Files](azure-netapp-files-understand-storage-hierarchy.md)   
 > [Уровни обслуживания для Azure NetApp Files](azure-netapp-files-service-levels.md)   
-> [Создание тома NFS](azure-netapp-files-create-volumes.md)   
+> [Создание тома NFS](azure-netapp-files-create-volumes.md)

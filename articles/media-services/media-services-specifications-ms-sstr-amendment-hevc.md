@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 08/19/2019
 ms.author: johndeu
 ms.openlocfilehash: 6454bc863cb5fd628d581fff380c5ab61354f762
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87053054"
 ---
 # <a name="smooth-streaming-protocol-ms-sstr-amendment-for-hevc"></a>Поправка к протоколу Smooth Streaming (MS-SSTR) для HEVC 
@@ -40,11 +40,11 @@ ms.locfileid: "87053054"
 
 К этому документу относятся следующие термины:
 
->  **время компоновки:** Время представления примера на клиенте, как определено в [[ISO/IEC-14496-12]](https://go.microsoft.com/fwlink/?LinkId=183695).
+>  **время компоновки:** Время представления примера на клиенте, как определено в   [[ISO/IEC-14496-12]](https://go.microsoft.com/fwlink/?LinkId=183695).
 > 
 >   **CENC**: общее шифрование, как определено во втором выпуске спецификации [ISO/IEC 23001-7].
 > 
->   **время декодирования:** Время, необходимое для декодирования образца на клиенте, как определено в [[ISO/IEC 14496-12:2008]](https://go.microsoft.com/fwlink/?LinkId=183695).
+>   **время декодирования:** Время, необходимое для декодирования образца на клиенте, как определено в   [[ISO/IEC 14496-12:2008]](https://go.microsoft.com/fwlink/?LinkId=183695).
 
 **Фрагмент:** независимо загружаемая единица **файла мультимедиа**, которая состоит из одного и больше **образцов**.
 
@@ -56,7 +56,7 @@ ms.locfileid: "87053054"
 > 
 >   **Образец:** наименьшая фундаментальная единица (например, кадр), в которой сохраняется и обрабатывается файл **мультимедиа**.
 > 
->   **может** , не должен, не должно: Эти термины (все прописные) используются, как описано в разделе [[RFC2119]](https://go.microsoft.com/fwlink/?LinkId=90317) все инструкции в необязательном поведении.
+>   **может** , не должен, не должно: Эти термины (все прописные) используются, как описано в разделе   [[RFC2119]](https://go.microsoft.com/fwlink/?LinkId=90317) все инструкции в необязательном поведении.
 
 ## <a name="12-references"></a>1.2. Ссылки
 
@@ -64,7 +64,7 @@ ms.locfileid: "87053054"
 
 ### <a name="121-normative-references"></a>1.2.1. Нормативные ссылки 
 
->  [MS-SSTR] *V20140502* протокола Smooth Streaming[https://msdn.microsoft.com/library/ff469518.aspx](/openspecs/windows_protocols/ms-sstr/8383f27f-7efe-4c60-832a-387274457251)
+>  [MS-SSTR] *V20140502* протокола Smooth Streaming [https://msdn.microsoft.com/library/ff469518.aspx](/openspecs/windows_protocols/ms-sstr/8383f27f-7efe-4c60-832a-387274457251)
 > 
 >   [ISO/IEC 14496-12]. Международная организация по стандартизации (ISO). "Information technology -- Coding of audio-visual objects -- Part 12: ISO Base Media File Format" (Информационные технологии. Кодирование аудиовизуальных объектов. Часть 12. Формат базового медиафайла ISO), ISO/IEC 14496-12:2014, издание 4, добавлено исправление 1, поправки 1, 2.
 >   <https://standards.iso.org/ittf/PubliclyAvailableStandards/c061988_ISO_IEC_14496-12_2012.zip>
@@ -78,17 +78,17 @@ ms.locfileid: "87053054"
 > 
 >   [RFC-6381] IETF RFC-6381, “The 'Codecs' and 'Profiles' Parameters for "Bucket" Media Types” (Параметры "кодеков" и "профилей" для типов медиафайлов "контейнеры") <https://tools.ietf.org/html/rfc6381>
 > 
->   [MPEG4-RA] Центр регистрации MP4, "MP4REG",[http://www.mp4ra.org](https://go.microsoft.com/fwlink/?LinkId=327787)
+>   [MPEG4-RA] Центр регистрации MP4, "MP4REG", [http://www.mp4ra.org](https://go.microsoft.com/fwlink/?LinkId=327787)
 > 
->   RFC2119 Браднер (bradner, S., "Ключевые слова для использования в RFC для указания уровней требований", BCP 14, RFC 2119, 1997 марта,[https://www.rfc-editor.org/rfc/rfc2119.txt](https://go.microsoft.com/fwlink/?LinkId=90317)
+>   RFC2119 Браднер (bradner, S., "Ключевые слова для использования в RFC для указания уровней требований", BCP 14, RFC 2119, 1997 марта,   [https://www.rfc-editor.org/rfc/rfc2119.txt](https://go.microsoft.com/fwlink/?LinkId=90317)
 
 ### <a name="122-informative-references"></a>1.2.2. Справочные ссылки 
 
 >   [MS-GLOS]. Корпорация Майкрософт "*Windows Protocols Master Glossary*" (Главный глоссарий протоколов Windows).
 > 
->   RFC3548 (Josefsson, S., ED., "Base16, base32 и Base64 кодировка данных", RFC 3548, июнь 2003,[https://www.ietf.org/rfc/rfc3548.txt](https://go.microsoft.com/fwlink/?LinkId=90432)
+>   RFC3548 (Josefsson, S., ED., "Base16, base32 и Base64 кодировка данных", RFC 3548, июнь 2003, [https://www.ietf.org/rfc/rfc3548.txt](https://go.microsoft.com/fwlink/?LinkId=90432)
 > 
->   RFC5234 Крокер (Crocker, D., ED. и Оверел (overell, P., "дополненные BNF для спецификаций синтаксиса: ABNF", STD 68, RFC 5234, Январь 2008,[https://www.rfc-editor.org/rfc/rfc5234.txt](https://go.microsoft.com/fwlink/?LinkId=123096)
+>   RFC5234 Крокер (Crocker, D., ED. и Оверел (overell, P., "дополненные BNF для спецификаций синтаксиса: ABNF", STD 68, RFC 5234, Январь 2008,   [https://www.rfc-editor.org/rfc/rfc5234.txt](https://go.microsoft.com/fwlink/?LinkId=123096)
 
 
 ## <a name="13-overview"></a>1.3. Обзор 

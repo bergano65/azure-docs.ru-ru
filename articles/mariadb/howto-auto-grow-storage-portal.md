@@ -7,10 +7,10 @@ ms.service: mariadb
 ms.topic: how-to
 ms.date: 3/18/2020
 ms.openlocfilehash: 5b0df05cf42215e9af42e6b13435dd8c11188c0a
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86120047"
 ---
 # <a name="auto-grow-storage-in-azure-database-for-mariadb-using-the-azure-portal"></a>Автоматическое увеличение объема хранилища в базе данных Azure для MariaDB с помощью портал Azure
@@ -34,7 +34,7 @@ ms.locfileid: "86120047"
 
     ![База данных Azure для MariaDB-Settings_Pricing_tier — автоматическое увеличение](./media/howto-auto-grow-storage-portal/3-auto-grow.png)
 
-4. Чтобы сохранить изменения, нажмите кнопку **ОК**.
+4. Нажмите кнопку **OK**, чтобы сохранить изменения.
 
 5. В уведомлении будет подтверждено, что автоматическое увеличение размера было успешно включено.
 

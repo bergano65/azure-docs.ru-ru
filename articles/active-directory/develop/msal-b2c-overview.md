@@ -14,10 +14,10 @@ ms.author: negoe
 ms.reviewer: nacanuma
 ms.custom: aaddev
 ms.openlocfilehash: 13b478e85278827258ea2fc25a0ee4298039fb1c
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88119796"
 ---
 # <a name="use-microsoft-authentication-library-for-javascript-to-work-with-azure-ad-b2c"></a>Использование библиотеки проверки подлинности Майкрософт для JavaScript для работы с Azure AD B2C
@@ -32,7 +32,7 @@ ms.locfileid: "88119796"
 - Поддержка входа в одностраничное приложение (SPA) *и вызов* защищенного веб-API
 - Включить поддержку сброса паролей
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Создайте [клиент Azure AD B2C](../../active-directory-b2c/tutorial-create-tenant.md), если вы этого еще не сделали.
 
@@ -201,14 +201,14 @@ git clone https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-
 
     После сброса пароля пользователь возвращается в приложение для повторного входа.
 
-    :::image type="content" source="media/msal-b2c-overview/user-journey-02-password-reset.png" alt-text="Экраны потока сброса пароля, показанные Azure AD B2C" border="false":::
+    :::image type="content" source="media/msal-b2c-overview/user-journey-02-password-reset.png" alt-text="Экран входа, отображаемый Azure AD B2C" border="false":::
 
     Дополнительные сведения о кодах ошибок и обработке исключений см. в разделе [MSAL Error and Exception Codes](msal-handling-exceptions.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об этих Azure AD B2C концепциях:
 
-- [Потоки пользователей](../../active-directory-b2c/tutorial-create-user-flows.md)
+- [Маршруты пользователей](../../active-directory-b2c/tutorial-create-user-flows.md)
 - [Пользовательские политики](../../active-directory-b2c/custom-policy-get-started.md)
 - [Настройка UX](../../active-directory-b2c/custom-policy-configure-user-input.md)

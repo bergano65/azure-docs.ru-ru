@@ -6,16 +6,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: include
-ms.date: 07/27/2020
+ms.date: 10/07/2020
 ms.author: aahi
 ms.reviewer: sumeh, assafi
 ms.custom: devx-track-js
-ms.openlocfilehash: 5d9c3c8e795b6651595a17d540aafa849ce81471
-ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
+ms.openlocfilehash: c24a50926fe028dcbf42d3642ae3ec5c9ae84f5b
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2020
-ms.locfileid: "91400965"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91977855"
 ---
 <a name="HOLTop"></a>
 
@@ -147,6 +147,7 @@ const endpoint = '<paste-your-text-analytics-endpoint-here>';
 
 * [Аутентификация клиента](#client-authentication)
 * [Анализ тональности](#sentiment-analysis). 
+* [Интеллектуальный анализ данных](#opinion-mining)
 * [Пример. Как определить язык с помощью Анализа текста](#language-detection)
 * [Распознавание именованных сущностей](#named-entity-recognition-ner)
 * [Связывание сущностей](#entity-linking)

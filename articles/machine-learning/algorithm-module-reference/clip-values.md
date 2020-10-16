@@ -10,10 +10,10 @@ author: likebupt
 ms.author: keli19
 ms.date: 09/09/2019
 ms.openlocfilehash: 99fb41542dff28997438881abad71da11e927a78
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90898809"
 ---
 # <a name="clip-values"></a>Обрезка значений
@@ -116,7 +116,7 @@ ms.locfileid: "90898809"
   
 |Исходные данные|Замена на отсутствие значения|Замена пороговым значением|  
 |-------------------|--------------------------|----------------------------|  
-|1<br /><br /> 2<br /><br /> 3<br /><br /> 4<br /><br /> 5<br /><br /> 6<br /><br /> 7<br /><br /> 8<br /><br /> 9<br /><br /> 10|TRUE<br /><br /> TRUE<br /><br /> 3, FALSE<br /><br /> 4, ЛОЖЬ<br /><br /> 5, ЛОЖЬ<br /><br /> 6, ЛОЖЬ<br /><br /> 7, ЛОЖЬ<br /><br /> 8, ЛОЖЬ<br /><br /> 9, ЛОЖЬ<br /><br /> true|4, TRUE<br /><br /> 4, TRUE<br /><br /> 4, TRUE<br /><br /> 4, TRUE<br /><br /> 5, ЛОЖЬ<br /><br /> 6, ЛОЖЬ<br /><br /> 7, TRUE<br /><br /> 7, TRUE<br /><br /> 7, TRUE<br /><br /> 7, TRUE| 
+|1<br /><br /> 2<br /><br /> 3<br /><br /> 4<br /><br /> 5<br /><br /> 6<br /><br /> 7<br /><br /> 8<br /><br /> 9<br /><br /> 10|TRUE<br /><br /> TRUE<br /><br /> 3, FALSE<br /><br /> 4, ЛОЖЬ<br /><br /> 5, ЛОЖЬ<br /><br /> 6, ЛОЖЬ<br /><br /> 7, ЛОЖЬ<br /><br /> 8, ЛОЖЬ<br /><br /> 9, ЛОЖЬ<br /><br /> TRUE|4, TRUE<br /><br /> 4, TRUE<br /><br /> 4, TRUE<br /><br /> 4, TRUE<br /><br /> 5, ЛОЖЬ<br /><br /> 6, ЛОЖЬ<br /><br /> 7, TRUE<br /><br /> 7, TRUE<br /><br /> 7, TRUE<br /><br /> 7, TRUE| 
  
 ## <a name="next-steps"></a>Дальнейшие действия
 

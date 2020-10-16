@@ -4,6 +4,8 @@
   items:
     - name: Сведения о платформе удостоверений Майкрософт
       href: v2-overview.md
+    - name: Новые возможности в Документации Майкрософт
+      href: whats-new-docs.md
 - name: Краткие руководства
   expanded: true
   items:

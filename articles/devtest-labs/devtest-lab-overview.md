@@ -4,10 +4,10 @@ description: Узнайте, как DevTest Labs может упростить �
 ms.topic: article
 ms.date: 06/20/2020
 ms.openlocfilehash: b7e6493e5fb1c99dfa7962ed464dca3ebc6b0c7e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85480207"
 ---
 # <a name="about-azure-devtest-labs"></a>Сведения об Azure DevTest Labs
@@ -23,7 +23,7 @@ DevTest Labs создает лаборатории, состоящие из пр
 
 > [!VIDEO https://channel9.msdn.com/Blogs/Azure/What-is-Azure-DevTest-Labs/player]
 
-## <a name="capabilities"></a>Характеристики
+## <a name="capabilities"></a>Возможности
 DevTest Labs предоставляет разработчикам следующие возможности для работы с виртуальными машинами:
 
 - Быстро Создавайте виртуальные машины, выполнив менее пяти простых шагов.

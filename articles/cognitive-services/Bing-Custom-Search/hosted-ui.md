@@ -12,10 +12,10 @@ ms.date: 02/12/2019
 ms.author: aahi
 ms.custom: devx-track-js
 ms.openlocfilehash: 4a63a54f5ad4d1bcccecb1d1a4892ef55c238b92
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91319186"
 ---
 # <a name="configure-your-hosted-ui-experience"></a>Настройка размещенного пользовательского интерфейса
@@ -135,7 +135,7 @@ ms.locfileid: "91319186"
 |Search box text placeholder (Заполнитель текста для поля поиска)   | Текст, отображаемый в поле поиска до начала ввода.        |
 |Title link URL (URL-адрес ссылки для заголовка)    |Целевой адрес для ссылки заголовка.         |
 |"Logo URL" (URL-адрес логотипа).     | Изображение, размещающееся рядом с заголовком.         |
-|Favicon (значок)    | Значок, отображаемый в строке заголовка браузера.          |
+|Favicon    | Значок, отображаемый в строке заголовка браузера.          |
 
 Следующие конфигурации применяются только в том случае, если вы используете размещенный пользовательский интерфейс через конечную точку HTML (они не применяются при использовании фрагмента JavaScript).
 
@@ -145,7 +145,7 @@ ms.locfileid: "91319186"
 - "Logo URL" (URL-адрес логотипа).
 - "Favicon URL" (URL-адрес значка).  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Use decoration markers to highlight text](../bing-web-search/hit-highlighting.md) (Использование маркеров оформления для выделения текста)
 - [Отображение веб-страниц на страницах](./page-webpages.md)

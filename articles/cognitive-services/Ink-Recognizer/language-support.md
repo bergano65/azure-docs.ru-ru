@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 08/24/2020
 ms.author: aahi
 ms.openlocfilehash: b4acd431656eb008702f62dc1ecf12bda62dae17
-ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89051089"
 ---
 # <a name="language-and-region-support-for-the-ink-recognizer-api"></a>Поддержка языков и регионов для API распознавателя рукописного ввода
@@ -69,7 +69,7 @@ ms.locfileid: "89051089"
 | Португальский (Португалия)                      |     `pt-PT`     |
 | Ретороманский                                    |     `rm-CH`     |
 | Румынский                                   |     `ro-RO`     |
-| русском языке                                    |     `ru-RU`     |
+| Русский                                    |     `ru-RU`     |
 | Гэльский                            |     `gd-GB`     |
 | Северный сото                           |    `nso-ZA`     |
 | Сербский (кириллица, Босния и Герцеговина) |  `sr-Cyrl-BA`   |
@@ -91,7 +91,7 @@ ms.locfileid: "89051089"
 | Коса                                      |     `xh-ZA`     |
 | Зулу                                       |     `zu-ZA`     |
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 * [Что такое API Распознавателя рукописного текста?](overview.md)
 * [Отправка цифровых рукописных штрихов в API распознавателя рукописного ввода](concepts/send-ink-data.md)

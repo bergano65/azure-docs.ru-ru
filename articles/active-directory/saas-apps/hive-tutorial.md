@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/31/2020
 ms.author: jeedes
-ms.openlocfilehash: 8abf36e79f83c69dd927acd21c5c8652122fc82d
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 6050b9f4a14f39245c7424f47dae081e9efc6ff1
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88544086"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91826138"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-hive"></a>Руководство по Интеграция единого входа Azure Active Directory с Hive
 
@@ -147,11 +147,11 @@ ms.locfileid: "88544086"
 
 1. Щелкните значок **профиля пользователя** и выберите пункт **Your workspace** (Ваша рабочая область).
 
-    ![Конфигурация Hive](./media/hive-tutorial/configure1.png)
+    ![Снимок экрана, на котором показан веб-сайт Hive с выбранным пунктом меню "Your workspace" (Ваша рабочая область)](./media/hive-tutorial/configure1.png)
 
 1. Щелкните **Auth** (Проверка подлинности) и выполните следующие шаги.
 
-    ![Конфигурация Hive](./media/hive-tutorial/configure2.png)
+    ![Снимок экрана, на котором показана страница "Auth" (Проверка подлинности), где можно выполнить описанные задачи](./media/hive-tutorial/configure2.png)
 
     а. Скопируйте значение **Your Workspace ID** (Идентификатор рабочей области) и добавьте его к значениям **URL-адрес единого входа** и **URL-адрес ответа** в разделе **Базовая конфигурация SAML** на портале Azure.
 

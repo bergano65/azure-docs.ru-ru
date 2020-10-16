@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 06/15/2020
 ms.author: cynthn
 ms.reviewer: cynthn
-ms.openlocfilehash: 3a206a7aabee9f75524ab4715afa30ec05c612bf
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: d01ac7d5b01f485c3b0100c468332475a9bd4274
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91328069"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91978549"
 ---
 # <a name="troubleshooting-shared-image-galleries-in-azure"></a>Устранение неполадок с общими галереями изображений в Azure
 
@@ -79,7 +79,7 @@ ms.locfileid: "91328069"
 
 *У пользователя, пытающегося создать виртуальную машину или масштабируемый набор виртуальных машин, нет доступа на чтение к версии образа.*
 
-Обратитесь к владельцу подписки и попросите предоставить ему доступ на чтение к версии образа или к родительским ресурсам (например, к коллекции общих образов или определению образа) через [Управление доступом на основе ролей Azure (Azure RBAC)](https://docs.microsoft.com/azure/role-based-access-control/rbac-and-directory-admin-roles). 
+Обратитесь к владельцу подписки и попросите предоставить ему доступ на чтение к версии образа или к родительским ресурсам (например, к коллекции общих образов или определению образа) через [Управление доступом на основе ролей Azure (Azure RBAC)](../role-based-access-control/rbac-and-directory-admin-roles.md). 
 
 *Версия образа не найдена.*
 
@@ -91,7 +91,7 @@ ms.locfileid: "91328069"
 
 ## <a name="unable-to-share-resources"></a>Не удается предоставить общий доступ к ресурсам
 
-Совместное использование общей коллекции образов, определения образа и версий изображений в подписках включено с помощью [управления доступом на основе ролей Azure (Azure RBAC)](https://docs.microsoft.com/azure/role-based-access-control/rbac-and-directory-admin-roles). 
+Совместное использование общей коллекции образов, определения образа и версий изображений в подписках включено с помощью [управления доступом на основе ролей Azure (Azure RBAC)](../role-based-access-control/rbac-and-directory-admin-roles.md). 
 
 ## <a name="replication-is-slow"></a>Медленная репликация
 
@@ -99,7 +99,7 @@ ms.locfileid: "91328069"
 
 ## <a name="azure-limits-and-quotas"></a>Ограничения и квоты Azure 
 
-[Ограничения и квоты Azure](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits) применяются ко всем ресурсам коллекции общих образов, определения и версии образа. Убедитесь, что вы не превысили пределы для своей подписки. 
+[Ограничения и квоты Azure](../azure-resource-manager/management/azure-subscription-service-limits.md) применяются ко всем ресурсам коллекции общих образов, определения и версии образа. Убедитесь, что вы не превысили пределы для своей подписки. 
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

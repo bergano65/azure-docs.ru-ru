@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 09/25/2020
 ms.author: victorh
 ms.openlocfilehash: ba9f42bc932a37e1052f17db2ae00413e0769d59
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91355743"
 ---
 # <a name="azure-application-gateway-features"></a>Функции шлюза приложений Azure
@@ -24,7 +24,7 @@ ms.locfileid: "91355743"
 
 - [Завершение запросов SSL/TLS](#secure-sockets-layer-ssltls-termination)
 - [Автомасштабирование](#autoscaling)
-- [Избыточность зоны](#zone-redundancy)
+- [Избыточность в пределах зоны](#zone-redundancy)
 - [Статический виртуальный IP-адрес](#static-vip)
 - [Брандмауэр веб-приложения](#web-application-firewall)
 - [Контроллер входящего трафика для AKS](#ingress-controller-for-aks)
@@ -155,7 +155,7 @@ Standard_v2 шлюза приложений можно настроить для
 
 В таблице ниже показана средняя пропускная способность каждого экземпляра шлюза приложений версии 1 с активированной разгрузкой SSL.
 
-| Средний размер ответа страницы сервера | Малый | Средний | Большой |
+| Средний размер ответа страницы сервера | Малый | Средний | большой |
 | --- | --- | --- | --- |
 | 6 КБ |7,5 Мбит/с |13 Мбит/с |50 Мбит/с |
 | 100 КБ |35 Мбит/с |100 Мбит/с |200 Мбит/с |
@@ -167,6 +167,6 @@ Standard_v2 шлюза приложений можно настроить для
 
 Сравнение компонентов шлюза приложений версии 1 – v2 см. в разделе [Автомасштабирование и избыточность в зонах — шлюз приложений версии 2](application-gateway-autoscaling-zone-redundant.md#feature-comparison-between-v1-sku-and-v2-sku) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Сведения о работе шлюза приложений [How an application gateway works](how-application-gateway-works.md)

@@ -8,15 +8,15 @@ ms.topic: how-to
 ms.date: 09/08/2020
 ms.custom: devx-track-java
 ms.openlocfilehash: 995d10b3c7064e462500e0bec4d5d8aa010afe64
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90888771"
 ---
 # <a name="authenticate-azure-spring-cloud-with-key-vault-in-github-actions"></a>Проверка подлинности Azure Spring Cloud с использованием Key Vault в GitHub Actions
 
-**Эта статья относится к:** ✔️ Java ✔️ C #
+**Эта статья применима к:** ✔️ Java ✔️ C#
 
 Хранилище ключей — это безопасное место для хранения ключей. Корпоративным пользователям необходимо хранить учетные данные для сред CI/CD в области, в которой они контролируются. Ключ для получения учетных данных в хранилище ключей должен быть ограничен областью действия ресурса.  Он имеет доступ только к области хранилища ключей, а не ко всей области Azure. Он похож на ключ, который может открыть только надежное поле, а не главный ключ, который может открыть все двери в здании. Это способ получить ключ с помощью другого ключа, который полезен в рабочем процессе CICD. 
 
@@ -112,5 +112,5 @@ jobs:
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Действия весны GitHub Cloud](./spring-cloud-howto-github-actions.md)

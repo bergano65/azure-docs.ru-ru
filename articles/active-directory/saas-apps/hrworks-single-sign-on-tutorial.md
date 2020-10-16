@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/02/2020
 ms.author: jeedes
-ms.openlocfilehash: 0c43dfe3ad28417e13196c5ac1e75419906f6eae
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 1a0fff21c85104498895c9de20de9961a77cffeb
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88549166"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91820488"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-hrworks-single-sign-on"></a>Руководство по Интеграция единого входа Azure Active Directory с HRworks Single Sign-On
 
@@ -156,15 +156,15 @@ ms.locfileid: "88549166"
 
 1. Выберите **Administrator (Администратор)**  > **Persons (Лица)**  > **Persons (Лица)**  > **New person (Создать лицо)** в левой части строки меню.
 
-     ![Настройка единого входа](./media/hrworks-single-sign-on-tutorial/configure02.png)
+     ![Снимок экрана, на котором показана страница HRworks, где выбраны элементы "Persons" (Лица) и (New person) (Создать лицо)](./media/hrworks-single-sign-on-tutorial/configure02.png)
 
 1. Во всплывающем окне нажмите **Next** (Далее).
 
-    ![Настройка единого входа](./media/hrworks-single-sign-on-tutorial/configure03.png)
+    ![Снимок экрана со списком стран, которые можно выбрать для пользователя](./media/hrworks-single-sign-on-tutorial/configure03.png)
 
 1. Во всплывающем элементе **Create new person with country for legal terms** (Создание нового лица с указанием страны для соответствия юридическим условиям) введите нужные данные, например **First name** (Имя), **Last name** (Фамилия), и нажмите **Create** (Создать).
 
-    ![Настройка единого входа](./media/hrworks-single-sign-on-tutorial/configure04.png)
+    ![Снимок экрана, на котором показаны текстовые поля для ввода имени и фамилии пользователя](./media/hrworks-single-sign-on-tutorial/configure04.png)
 
 ## <a name="test-sso"></a>Проверка единого входа
 

@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 03/26/2020
+ms.date: 10/15/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 6381f678979437fdfc10d2ea63a79ed347183e92
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 30273c0103d8a0fde12b1b7c6f66d16dd4ea84cb
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85388924"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92089525"
 ---
 # <a name="walkthrough-integrate-rest-api-claims-exchanges-in-your-azure-ad-b2c-user-journey-to-validate-user-input"></a>Пошаговое руководство. интеграция обмена REST APIми утверждениями в Azure AD B2C пути взаимодействия пользователя для проверки вводимых пользователем данных
 
@@ -93,7 +93,7 @@ ms.locfileid: "85388924"
 </ClaimType>
 ```
 
-## <a name="configure-the-restful-api-technical-profile"></a>Настройка технического профиля RESTful API 
+## <a name="add-the-restful-api-technical-profile"></a>Добавление технического профиля RESTFUL API 
 
 [Технический профиль RESTful](restful-technical-profile.md) обеспечивает поддержку взаимодействия со службой RESTful. Azure AD B2C отправляет данные в службу RESTful в виде коллекции `InputClaims` ответы в виде коллекции `OutputClaims`. Найдите элемент **клаимспровидерс** и добавьте новый поставщик утверждений следующим образом:
 
@@ -105,6 +105,7 @@ ms.locfileid: "85388924"
       <DisplayName>Check loyaltyId Azure Function web hook</DisplayName>
       <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.RestfulProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
       <Metadata>
+        <!-- Set the ServiceUrl with your own REST API endpoint -->
         <Item Key="ServiceUrl">https://your-account.azurewebsites.net/api/ValidateProfile?code=your-code</Item>
         <Item Key="SendClaimsIn">Body</Item>
         <!-- Set AuthenticationType to Basic or ClientCertificate in production environments -->
@@ -129,6 +130,17 @@ ms.locfileid: "85388924"
 ```
 
 В этом примере `userLanguage` отправляется в службу REST как `lang` в полезных данных JSON. Значение утверждения `userLanguage` содержит текущий идентификатор языка пользователя. Дополнительные сведения см. в статье об [арбитрах утверждений](claim-resolver-overview.md).
+
+### <a name="configure-the-restful-api-technical-profile"></a>Настройка технического профиля RESTful API 
+
+После развертывания REST API Задайте метаданные `REST-ValidateProfile` технического профиля в соответствии с собственными REST API, включая:
+
+- **ServiceURL**. Задайте URL-адрес конечной точки REST API.
+- **Сендклаимсин**. Укажите, как входящие утверждения отправляются поставщику утверждений RESTFUL.
+- **AuthenticationType**. Задайте тип проверки подлинности, выполняемой поставщиком утверждений RESTFUL. 
+- **Алловинсекуреаусинпродуктион**. Убедитесь, что в рабочей среде для этих метаданных задано значение `true`
+    
+Дополнительные конфигурации см. в [метаданных технического профиля RESTful](restful-technical-profile.md#metadata) .
 
 В комментариях над `AuthenticationType` и `AllowInsecureAuthInProduction` указаны изменения, которые следует внести при переходе в рабочую среду. Сведения о защите RESTful API для рабочей среды см. в [этой статье](secure-rest-api.md).
 

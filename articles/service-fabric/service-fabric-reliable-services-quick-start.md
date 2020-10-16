@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 07/10/2019
 ms.custom: sfrev, devx-track-csharp
 ms.openlocfilehash: 1de77f870bce5766ab704249034d6d7b6c8b098e
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89012744"
 ---
 # <a name="get-started-with-reliable-services"></a>Приступая к работе с надежными службами
@@ -119,7 +119,7 @@ Service Fabric представляет новый вид службы с отс
 
 ![Добавление службы в приложение Service Fabric](media/service-fabric-reliable-services-quick-start/hello-stateful-NewService.png)
 
-Выберите **.NET Core 2,0-> службу с отслеживанием состояния** и назовите ее *HelloWorldStateful*. Нажмите кнопку **OK**.
+Выберите **.NET Core 2,0-> службу с отслеживанием состояния** и назовите ее *HelloWorldStateful*. Нажмите кнопку **ОК**.
 
 ![Создание службы с отслеживанием состояния в Service Fabric с помощью диалогового окна "Создание проекта"](media/service-fabric-reliable-services-quick-start/hello-stateful-NewProject.png)
 

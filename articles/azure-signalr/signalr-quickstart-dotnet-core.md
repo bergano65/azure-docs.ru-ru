@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.custom: devx-track-csharp
 ms.date: 09/28/2020
 ms.author: zhshang
-ms.openlocfilehash: 77ab19296d1e310e48cdf3609c9f109dc42f6ec1
-ms.sourcegitcommit: b48e8a62a63a6ea99812e0a2279b83102e082b61
+ms.openlocfilehash: b5fc15815c9843c55bf31efe31e12e2de02d3be3
+ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91408311"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91874022"
 ---
 # <a name="quickstart-create-a-chat-room-by-using-signalr-service"></a>Краткое руководство. Создание чата с помощью Службы SignalR
 
@@ -112,11 +112,11 @@ Azure SignalR — это служба Azure, которая помогает р�
     ```csharp
     public void ConfigureServices(IServiceCollection services)
     {
-        services.AddSignalR();
+        services.AddAzureSignalR();
     }
     ```
 
-    В этом коде не указан параметр `AddSignalR()`, а значит в нем для строки подключения к ресурсу SignalR используется ключ конфигурации по умолчанию. По умолчанию используется ключ конфигурации *Azure:SignalR:ConnectionString*.
+    В этом коде не указан параметр `AddAzureSignalR()`, а значит в нем для строки подключения к ресурсу SignalR используется ключ конфигурации по умолчанию. По умолчанию используется ключ конфигурации *Azure:SignalR:ConnectionString*.
 
 5. В файле *Startup.cs* обновите метод `Configure`, заменив его следующим кодом.
 

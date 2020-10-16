@@ -9,10 +9,10 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: 93922986dfe0b2b4e8ba0923931df601cc12428b
-ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90532534"
 ---
 # <a name="use-azure-ad-as-an-identity-provider-for-vcenter-on-cloudsimple-private-cloud"></a>Использование Azure AD в качестве поставщика удостоверений для vCenter в частном облаке Клаудсимпле
@@ -41,7 +41,7 @@ Azure AD — это облачный каталог и служба управл
 
 Прежде чем приступить к работе, вам потребуется доступ к подписке Azure с правами глобального администратора.  Следующие шаги приводят к общим рекомендациям. Подробные сведения содержатся в документации по Azure.
 
-### <a name="azure-ad"></a>Azure AD
+### <a name="azure-ad"></a>Azure AD
 
 > [!NOTE]
 > Если у вас уже есть Azure AD, этот раздел можно пропустить.
@@ -98,7 +98,7 @@ Azure AD — это облачный каталог и служба управл
 
 3. Войдите в частное облако vCenter после эскалации привилегий.
 4. Следуйте инструкциям в разделе [Добавление источника удостоверений в vCenter](set-vcenter-identity.md#add-an-identity-source-on-vcenter) , используя значения из предыдущего шага, чтобы настроить Azure Active Directory в качестве источника удостоверений.
-5. Добавьте пользователей и группы из Azure AD в группы vCenter, как описано в разделе [Добавление членов в группу единого входа vCenter](https://docs.vmware.com/en/VMware-vSphere/5.5/com.vmware.vsphere.security.doc/GUID-CDEA6F32-7581-4615-8572-E0B44C11D80D.html).
+5. Добавьте пользователей и группы из Azure AD в группы vCenter, как описано в разделе [Добавление членов в группу vCenter с одной Sign-Onой](https://docs.vmware.com/en/VMware-vSphere/5.5/com.vmware.vsphere.security.doc/GUID-CDEA6F32-7581-4615-8572-E0B44C11D80D.html).
 
 > [!CAUTION]
 > Новые пользователи должны быть добавлены только в *облако-Owner-Group*, *Cloud-Global-Cluster-Admin-Group*, *Cloud-Global-Storage-* Admin-Group, Cloud-Global- *Network-* Admin-Group или *Cloud-Global-ВМ-Admin-Group*.  Пользователи, добавленные в группу *администраторов* , будут удалены автоматически.  Только учетные записи служб должны быть добавлены в группу *администраторов* .

@@ -12,10 +12,10 @@ ms.custom:
 - 'Role: IoT Device'
 - 'Role: Technical Support'
 ms.openlocfilehash: 4a13d1ff030a63d3ccf33297f215909f5920e16a
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87327690"
 ---
 # <a name="iot-hub-device-streams-preview"></a>Потоки устройств Центра Интернета вещей (предварительная версия)
@@ -172,7 +172,7 @@ az iot hub devicestream show --name <YourIoTHubName>
 
 * [Служба и служебная программа C#](quickstart-device-streams-echo-csharp.md)
 
-* [Служебная программаNode.js](quickstart-device-streams-echo-nodejs.md)
+* [ Служебная программаNode.js](quickstart-device-streams-echo-nodejs.md)
 
 * [Программа для устройства C](quickstart-device-streams-echo-c.md)
 
@@ -208,11 +208,11 @@ az iot hub devicestream show --name <YourIoTHubName>
 
 * [Служба и служебная программа C#](quickstart-device-streams-proxy-csharp.md)
 
-* [Служебная программаNode.js](quickstart-device-streams-proxy-nodejs.md)
+* [ Служебная программаNode.js](quickstart-device-streams-proxy-nodejs.md)
 
 * [Программа для устройства C](quickstart-device-streams-proxy-c.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Используйте приведенные ниже ссылки для получения дополнительных сведений о потоках устройств.
 

@@ -14,12 +14,12 @@ ms.workload: infrastructure
 ms.date: 03/23/2018
 ms.author: cynthn
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 601e51c7a587cd55e9b0b235bbdfb2e559be09e2
-ms.sourcegitcommit: 64ad2c8effa70506591b88abaa8836d64621e166
+ms.openlocfilehash: aeb44a52dc7a83321752bb00e09270fe7bfd0bbe
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88263101"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91972192"
 ---
 # <a name="tutorial-create-and-manage-linux-vms-with-the-azure-cli"></a>Руководство по Создание виртуальных машин Linux и управление ими с помощью Azure CLI
 
@@ -280,7 +280,7 @@ ode                DisplayStatus    Level
 PowerState/running  VM running       Info
 ```
 
-Чтобы узнать рабочее состояние всех виртуальных машин в подписке, используйте [API "Виртуальные машины — показать все"](https://docs.microsoft.com/rest/api/compute/virtualmachines/listall) с параметром **statusOnly**, которому задано значение *true*.
+Чтобы узнать рабочее состояние всех виртуальных машин в подписке, используйте [API "Виртуальные машины — показать все"](/rest/api/compute/virtualmachines/listall) с параметром **statusOnly**, которому задано значение *true*.
 
 ## <a name="management-tasks"></a>Задачи управления
 

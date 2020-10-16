@@ -12,10 +12,10 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.openlocfilehash: cf7a3ff478100c892e59e98c91e9605c88bdc667
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89438829"
 ---
 # <a name="compute-environments-supported-by-azure-data-factory-version-1"></a>Вычислительные среды, поддерживаемые фабрикой данных Azure версии 1
@@ -30,7 +30,7 @@ ms.locfileid: "89438829"
 | ---------------------------------------- | ---------------------------------------- |
 | [Кластер Azure HDInsight по запросу](#azure-hdinsight-on-demand-linked-service) или [собственный кластер HDInsight](#azure-hdinsight-linked-service) | [DotNet](data-factory-use-custom-activities.md), [Hive](data-factory-hive-activity.md), [Pig](data-factory-pig-activity.md), [MapReduce](data-factory-map-reduce.md), [потоковая передача Hadoop](data-factory-hadoop-streaming-activity.md) |
 | [Пакетная служба Azure](#azure-batch-linked-service) | [DotNet](data-factory-use-custom-activities.md) |
-| [Машинное обучение Azure](#azure-machine-learning-linked-service) | [Создание прогнозирующих конвейеров с помощью машинного обучения Azure и фабрики данных Azure](data-factory-azure-ml-batch-execution-activity.md) |
+| [Машинное обучение Azure](#azure-machine-learning-linked-service) | [Действия машинного обучения: выполнение пакета и обновление ресурса](data-factory-azure-ml-batch-execution-activity.md) |
 | [Azure Data Lake Analytics](#azure-data-lake-analytics-linked-service) | [Аналитика озера данных U-SQL](data-factory-usql-activity.md) |
 | [Azure SQL](#azure-sql-linked-service), [azure синапсе Analytics](#azure-synapse-analytics-linked-service) [SQL Server](#sql-server-linked-service) | [Действие хранимой процедуры](data-factory-stored-proc-activity.md) |
 

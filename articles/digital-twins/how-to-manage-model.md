@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 3/12/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 3deb7c0802dbfcdb65bcff6cb2653e73017651f1
-ms.sourcegitcommit: c52e50ea04dfb8d4da0e18735477b80cafccc2cf
+ms.openlocfilehash: 5fd297545e7f07844e28a1f56e724a7f61916bee
+ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89536461"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92057745"
 ---
 # <a name="manage-azure-digital-twins-models"></a>Управление моделями цифровых двойников Azure
 
@@ -84,7 +84,7 @@ ms.locfileid: "89536461"
 После создания моделей их можно передать в экземпляр Digital двойников Azure.
 
 > [!TIP]
-> Перед отправкой в свой экземпляр Azure Digital двойников рекомендуется проверить свои модели в автономном режиме. Для проверки моделей перед их отправкой в службу можно использовать пример [библиотеки средства синтаксического анализа](https://nuget.org/packages/Microsoft.Azure.DigitalTwins.Parser/) [дтдл и проверочного элемента управления](https://docs.microsoft.com/samples/azure-samples/dtdl-validator/dtdl-validator) дтдл, описанный в разделе [*инструкции. анализ и проверка моделей*](how-to-parse-models.md) .
+> Перед отправкой в свой экземпляр Azure Digital двойников рекомендуется проверить свои модели в автономном режиме. Для проверки моделей перед их отправкой в службу можно использовать пример [библиотеки средства синтаксического анализа](https://nuget.org/packages/Microsoft.Azure.DigitalTwins.Parser/) [дтдл и проверочного элемента управления](/samples/azure-samples/dtdl-validator/dtdl-validator) дтдл, описанный в разделе [*инструкции. анализ и проверка моделей*](how-to-parse-models.md) .
 
 Когда вы будете готовы отправить модель, можно использовать следующий фрагмент кода:
 
@@ -113,7 +113,7 @@ foreach (string fileName in dtdlFiles)
 client.CreateModels(dtdlStrings);
 ```
 
-Файлы модели могут содержать более одной модели. В этом случае модели необходимо разместить в массиве JSON. Пример:
+Файлы модели могут содержать более одной модели. В этом случае модели необходимо разместить в массиве JSON. Например.
 
 ```json
 [

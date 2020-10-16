@@ -9,10 +9,10 @@ ms.service: notification-hubs
 ms.reviewer: thsomasu
 ms.lastreviewed: 06/01/2020
 ms.openlocfilehash: 7cdf095898bfe85e6f3b14fa1dcdb7b0c94ccde6
-ms.sourcegitcommit: 1a0dfa54116aa036af86bd95dcf322307cfb3f83
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88042451"
 ---
 # <a name="tutorial-send-push-notifications-to-ios-apps-using-azure-notification-hubs"></a>Руководство по отправке push-уведомлений в приложения iOS с помощью Центров уведомлений Azure
@@ -60,11 +60,11 @@ ms.locfileid: "88042451"
 
 3. Заполните поля  **Адрес электронной почты пользователя** и  **Общее имя** , выберите  **Saved to disk** (Сохранено на диск), а затем —  **Продолжить**. Оставьте поле  **CA Email Address**  (Адрес электронной почты ЦС) пустым, так как оно является необязательным.
 
-   :::image type="content" source="media/ios-sdk-get-started/image2.png" alt-text="Требуемые сведения о сертификате":::
+   :::image type="content" source="media/ios-sdk-get-started/image2.png" alt-text="Keychain Access":::
 
 4. Задайте имя CSR-файлу в поле  **Сохранить как**, выберите расположение в поле  **Где** и нажмите кнопку  **Сохранить**.
 
-   :::image type="content" source="media/ios-sdk-get-started/image3.png" alt-text="Выбор имени файла":::
+   :::image type="content" source="media/ios-sdk-get-started/image3.png" alt-text="Keychain Access":::
 
    При этом CSR-файл сохраняется в выбранном месте. Расположением по умолчанию является  **рабочий стол**. Запомните расположение, выбранное для файла.
 
@@ -76,26 +76,26 @@ ms.locfileid: "88042451"
 
 1. Если вы еще не зарегистрировали свое приложение, перейдите на  [портал подготовки iOS](https://go.microsoft.com/fwlink/p/?LinkId=272456)  в Центре разработчиков Apple. Войдите на портал с помощью идентификатора Apple ID и выберите  **Идентификаторы**. Затем выберите  **+**  , чтобы зарегистрировать новое приложение.
 
-   :::image type="content" source="media/ios-sdk-get-started/image4.png" alt-text="Страница идентификаторов приложений":::
+   :::image type="content" source="media/ios-sdk-get-started/image4.png" alt-text="Keychain Access":::
 
 2. На экране  **Register a New Identifier**  (Регистрация нового идентификатора) установите переключатель  **Идентификаторы приложений** . Затем нажмите кнопку  **Продолжить**.
 
-   :::image type="content" source="media/ios-sdk-get-started/image5.png" alt-text="Страница регистрации нового идентификатора":::
+   :::image type="content" source="media/ios-sdk-get-started/image5.png" alt-text="Keychain Access":::
 
 3. Обновите следующие три значения для нового приложения и нажмите кнопку  **Продолжить**.
 
    - **Описание**: Введите описательное имя для приложения.
    - **Bundle ID** (Идентификатор пакета). Введите идентификатор пакета в форму  **Organization Identifier.Product Name**  (Идентификатор организации.Имя продукта), как описано в  [руководстве по распространению приложения](https://help.apple.com/xcode/mac/current/#/dev91fe7130a). Значения  **Organization Identifier**  (Идентификатор организации) и  **Product Name**  (Имя продукта) должны соответствовать идентификатору организации и имени продукта, указанным при создании проекта Xcode. На приведенном ниже снимке экрана значение  **NotificationHubs**  используется как идентификатор организации, а значение  **GetStarted**  — как имя продукта. Убедитесь, что значение  **Bundle Identifier**  (Идентификатор пакета) совпадает со значением из проекта Xcode, чтобы в Xcode использовался правильный профиль публикации.
 
-      :::image type="content" source="media/ios-sdk-get-started/image6.png" alt-text="Регистрация идентификатора приложения":::
+      :::image type="content" source="media/ios-sdk-get-started/image6.png" alt-text="Keychain Access":::
 
    - **Push-уведомления**. Установите в разделе  **Возможности**  флажок  **Push-уведомления** .
 
-      :::image type="content" source="media/ios-sdk-get-started/image7.png" alt-text="Регистрация нового идентификатора приложения":::
+      :::image type="content" source="media/ios-sdk-get-started/image7.png" alt-text="Keychain Access":::
 
       При этом будет создан идентификатор вашего приложения, а также запрошено подтверждение информации. Выберите  **Продолжить**, а затем нажмите  **Регистрация** , чтобы подтвердить новый идентификатор приложения.
 
-      :::image type="content" source="media/ios-sdk-get-started/image8.png" alt-text="Подтверждение нового идентификатора приложения":::
+      :::image type="content" source="media/ios-sdk-get-started/image8.png" alt-text="Keychain Access":::
 
       После нажатия кнопки  **Регистрация** вы увидите новый идентификатор приложения в виде элемента строки на странице  **Certificates, Identifiers & Profiles**  (Сертификаты, идентификаторы и профили).
 
@@ -118,11 +118,11 @@ ms.locfileid: "88042451"
 
 1. Прокрутите вниз до отмеченного параметра  **Push-уведомления** , а затем выберите  **Настройка** , чтобы создать сертификат.
 
-   :::image type="content" source="media/ios-sdk-get-started/image9.png" alt-text="Идентификатор приложения":::
+   :::image type="content" source="media/ios-sdk-get-started/image9.png" alt-text="Keychain Access":::
 
 2. Откроется окно  **Apple Push Notification service SSL Certificates**  (SSL-сертификаты службы push-уведомлений Apple). Нажмите кнопку  **Создать сертификат**  в разделе  **Development SSL Certificate**  (SSL-сертификат разработки).
 
-   :::image type="content" source="media/ios-sdk-get-started/image10.png" alt-text="Создание сертификата":::
+   :::image type="content" source="media/ios-sdk-get-started/image10.png" alt-text="Keychain Access":::
 
    Появится экран  **Создать новый сертификат** .
 
@@ -133,11 +133,11 @@ ms.locfileid: "88042451"
 
 4. После того как сертификат будет создан на портале, нажмите кнопку  **Скачать** . Сохраните сертификат и запомните расположение, в котором он сохранен.
 
-   :::image type="content" source="media/ios-sdk-get-started/image11.png" alt-text="Скачивание сертификата":::
+   :::image type="content" source="media/ios-sdk-get-started/image11.png" alt-text="Keychain Access":::
 
    Сертификат будет скачан и сохранен в папке  **Файлы для загрузки** .
 
-   :::image type="content" source="media/ios-sdk-get-started/image12.png" alt-text="Поиск файла сертификата":::
+   :::image type="content" source="media/ios-sdk-get-started/image12.png" alt-text="Keychain Access":::
 
    Скачанному сертификату разработки по умолчанию задано имя **aps_development.cer**.
 
@@ -149,7 +149,7 @@ ms.locfileid: "88042451"
 
 6. В программе Keychain Access щелкните правой кнопкой мыши новый сертификат push-уведомлений, созданный в категории  **Сертификаты** . Щелкните  **Экспорт**, укажите имя файла, выберите формат  **.p12**  и нажмите кнопку  **Сохранить**.
 
-   :::image type="content" source="media/ios-sdk-get-started/image14.png" alt-text="Экспорт сертификата":::
+   :::image type="content" source="media/ios-sdk-get-started/image14.png" alt-text="Keychain Access":::
 
    Вы можете выбрать защиту сертификата с помощью пароля, но это необязательно. Нажмите кнопку  **ОК** , если хотите обойти создание пароля. Запишите имя файла и расположение экспортируемого сертификата в формате P12. Они нужны для аутентификации с помощью APNS.
 
@@ -201,11 +201,11 @@ ms.locfileid: "88042451"
 
 2. Выберите  **iOS App Development**  (Разработка приложений для iOS) в разделе  **Разработка**  в качестве типа профиля обеспечения и нажмите кнопку  **Продолжить**.
 
-   :::image type="content" source="media/ios-sdk-get-started/image15.png" alt-text="Список с профилем обеспечения":::
+   :::image type="content" source="media/ios-sdk-get-started/image15.png" alt-text="Keychain Access":::
 
 3. Затем в раскрывающемся списке  **Идентификатор приложения**  выберите созданный идентификатор приложения и нажмите кнопку  **Продолжить**.
 
-   :::image type="content" source="media/ios-sdk-get-started/image16.png" alt-text="Выбор идентификатора приложения":::
+   :::image type="content" source="media/ios-sdk-get-started/image16.png" alt-text="Keychain Access":::
 
 4. В окне  **Выбор сертификатов**  выберите сертификат разработки, используемый для подписывания кода, и нажмите кнопку  **Продолжить**. Это не созданный сертификат push-уведомлений. Если он не существует, создайте его. Если сертификат существует, перейдите к следующему шагу. Выполните приведенные ниже действия, чтобы создать сертификат разработки, если он не существует.
 
@@ -224,7 +224,7 @@ ms.locfileid: "88042451"
 
 8. Наконец, выберите имя профиля в поле  **Идет подготовка имени профиля**, а затем нажмите кнопку  **Создать**.
 
-   :::image type="content" source="media/ios-sdk-get-started/image17.png" alt-text="Выбор имени профиля обеспечения":::
+   :::image type="content" source="media/ios-sdk-get-started/image17.png" alt-text="Keychain Access":::
 
 9. После создания профиля обеспечения выберите  **Скачать**. Запомните расположение, в котором он сохранен.
 
@@ -238,11 +238,11 @@ ms.locfileid: "88042451"
 
 2. Выберите  **Все службы**  в меню слева, а затем выберите  **Notification Hubs**  в разделе  **Мобильный** . Щелкните значок звездочки рядом с именем службы, чтобы добавить ее в раздел  **ИЗБРАННОЕ**  в меню слева. После добавления службы  **Notification Hubs**  в  **ИЗБРАННОЕ** выберите ее.
 
-   :::image type="content" source="media/ios-sdk-get-started/image18.png" alt-text="Портал Azure":::
+   :::image type="content" source="media/ios-sdk-get-started/image18.png" alt-text="Keychain Access":::
 
 3. На странице  **Notification Hubs**  выберите  **Добавить** на панели инструментов.
 
-   :::image type="content" source="media/ios-sdk-get-started/image19.png" alt-text="Добавление кнопки панели инструментов":::
+   :::image type="content" source="media/ios-sdk-get-started/image19.png" alt-text="Keychain Access":::
 
 4. На странице  **Центры уведомлений**  выполните приведенные ниже действия.
 
@@ -252,18 +252,18 @@ ms.locfileid: "88042451"
    4. Создайте группу ресурсов или выберите имеющуюся в поле  **Группа ресурсов**.
    5. Выберите **Создать**.
 
-   :::image type="content" source="media/ios-sdk-get-started/image20.png" alt-text="Настройка свойств":::
+   :::image type="content" source="media/ios-sdk-get-started/image20.png" alt-text="Keychain Access":::
 
 5. Выберите  **Уведомления**  (значок колокольчика), а затем  **Перейти к ресурсу**. Вы также можете обновить список на странице  **Notification Hubs**  и выбрать свой центр.
 
-   :::image type="content" source="media/ios-sdk-get-started/image21.png" alt-text="Уведомления на портале":::
+   :::image type="content" source="media/ios-sdk-get-started/image21.png" alt-text="Keychain Access":::
 
 6. Выберите  **Политики доступа**  из списка. Обратите внимание, что станут доступны две строки подключения. Они потребуются позже для обработки push-уведомлений.
 
    > [!IMPORTANT]
    > Не используйте в приложении политику **DefaultFullSharedAccessSignature**. Этот параметр можно использовать только в серверной части.
 
-   :::image type="content" source="media/ios-sdk-get-started/image22.png" alt-text="Строки подключения":::
+   :::image type="content" source="media/ios-sdk-get-started/image22.png" alt-text="Keychain Access":::
 
 ## <a name="configure-the-notification-hub-with-apns-information"></a>Добавление данных об APNS в центр уведомлений
 
@@ -284,7 +284,7 @@ ms.locfileid: "88042451"
 
 5. Выберите режим  **Песочница** .
 
-   :::image type="content" source="media/ios-sdk-get-started/image23.png" alt-text="Настройка":::
+   :::image type="content" source="media/ios-sdk-get-started/image23.png" alt-text="Keychain Access":::
 
 6. Нажмите кнопку **Сохранить**.
 

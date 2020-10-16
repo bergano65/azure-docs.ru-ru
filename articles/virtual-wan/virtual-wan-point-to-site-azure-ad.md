@@ -2,17 +2,17 @@
 title: 'Настройка проверки подлинности Azure AD для VPN-подключения пользователя: Виртуальная глобальная сеть'
 description: Узнайте, как настроить проверку подлинности Azure Active Directory для VPN пользователей.
 services: virtual-wan
-author: kumudD
+author: cherylmc
 ms.service: virtual-wan
 ms.topic: how-to
-ms.date: 03/17/2020
+ms.date: 10/14/2020
 ms.author: alzam
-ms.openlocfilehash: 21c2cba1d67ba415849b20dedf9ba157ca191d05
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 1102e2dafcf1a78bc9c243f27549b13793ec5408
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87832524"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92079179"
 ---
 # <a name="configure-azure-active-directory-authentication-for-user-vpn"></a>Настройка проверки подлинности Azure Active Directory для VPN пользователя
 
@@ -22,15 +22,14 @@ ms.locfileid: "87832524"
 
 Вы узнаете, как выполнять следующие задачи:
 
-> [!div class="checklist"]
-> * Создание виртуальной глобальной сети
-> * Создание виртуального концентратора
-> * Создание конфигурации VPN пользователя
-> * Скачивание профиля VPN пользователя виртуальной глобальной сети
-> * Применение конфигурации VPN пользователя к виртуальному концентратору
-> * Подключение виртуальной сети к виртуальному концентратору
-> * Скачайте и примените конфигурацию VPN-клиента пользователя.
-> * Просмотр виртуальной глобальной сети
+* Создание виртуальной глобальной сети
+* Создание виртуального концентратора
+* Создание конфигурации VPN пользователя
+* Скачивание профиля VPN пользователя виртуальной глобальной сети
+* Применение конфигурации VPN пользователя к виртуальному концентратору
+* Подключение виртуальной сети к виртуальному концентратору
+* Скачайте и примените конфигурацию VPN-клиента пользователя.
+* Просмотр виртуальной глобальной сети
 
 ![Схема Виртуальной глобальной сети](./media/virtual-wan-about/virtualwanp2s.png)
 
@@ -167,11 +166,11 @@ ms.locfileid: "87832524"
 
 1. Нажмите кнопку с многоточием (...) рядом с удаляемым профилем клиента. Затем щелкните **Remove** (Удалить).
 
-    ![удалить](./media/virtual-wan-point-to-site-azure-ad/delete/delete1.jpg)
+    !["Удалить"](./media/virtual-wan-point-to-site-azure-ad/delete/delete1.jpg)
 
 2. Выберите **Remove** (Удалить), чтобы выполнить удаление.
 
-    ![удалить](./media/virtual-wan-point-to-site-azure-ad/delete/delete2.jpg)
+    !["Удалить"](./media/virtual-wan-point-to-site-azure-ad/delete/delete2.jpg)
 
 #### <a name="diagnose-connection-issues"></a><a name="diagnose"></a>Diagnose connection issues (Диагностика проблем с подключением)
 

@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 04/14/2020
 ms.openlocfilehash: 09fef350a0ff8cc8c2481acd7b8f74cee15d1b9d
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86075558"
 ---
 # <a name="use-ssh-tunneling-to-access-apache-ambari-web-ui-jobhistory-namenode-apache-oozie-and-other-uis"></a>Использование туннелирования SSH для доступа к веб-интерфейсу Apache Ambari, JobHistory, NameNode, Apache Oozie и другим пользовательским интерфейсам
@@ -90,7 +90,7 @@ ssh -C2qTnNf -D 9876 sshuser@CLUSTERNAME-ssh.azurehdinsight.net
     |Свойство |Значение |
     |---|---|
     |Имя узла (или IP-адрес)|SSH-адрес для кластера HDInsight. Например, **mycluster-SSH.azurehdinsight.NET**.|
-    |Port|22|
+    |Порт|22|
     |Тип соединения|SSH|
 
 1. Нажмите кнопку **Сохранить**.
@@ -104,7 +104,7 @@ ssh -C2qTnNf -D 9876 sshuser@CLUSTERNAME-ssh.azurehdinsight.net
     |Свойство |Значение |
     |---|---|
     |Исходный порт|Порт на клиенте, который вы хотите перенаправить. Например, **9876**.|
-    |Destination|SSH-адрес для кластера HDInsight. Например, **mycluster-SSH.azurehdinsight.NET**.|
+    |Назначение|SSH-адрес для кластера HDInsight. Например, **mycluster-SSH.azurehdinsight.NET**.|
     |Динамический|Включает динамическую маршрутизацию прокси-сервера SOCKS.|
 
     ![Выводимые параметры туннелирования конфигурации](./media/hdinsight-linux-ambari-ssh-tunnel/hdinsight-putty-tunnel.png)
@@ -156,7 +156,7 @@ ssh -C2qTnNf -D 9876 sshuser@CLUSTERNAME-ssh.azurehdinsight.net
     > [!NOTE]  
     > URL-адрес для этой страницы должен быть в таком формате: `http://hn1-CLUSTERNAME.randomcharacters.cx.internal.cloudapp.net:8088/cluster`. Этот URI использует полное внутреннее доменное имя узла (FQDN), и он доступен только при использовании туннеля SSH.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали, как создать и использовать туннель SSH, ознакомьтесь со следующим документом, чтобы узнать о других способах использования Ambari:
 

@@ -6,13 +6,13 @@ ms.author: sumuth
 ms.service: postgresql
 ms.topic: how-to
 ms.date: 09/22/2020
-ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 13d78110f50d6ce72b8525914ed0e91dfcadd2cc
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.custom: mvc
+ms.openlocfilehash: 1ac418d855696138341115412dc7e2601d4cf3a1
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90938499"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91961414"
 ---
 # <a name="manage-an-azure-database-for-postgresql---flexible-server-using-the-azure-portal"></a>Управление базой данных Azure для PostgreSQL-гибкого сервера с помощью портал Azure
 
@@ -52,7 +52,7 @@ ms.locfileid: "90938499"
 2. Введите новый пароль и подтвердите его. В текстовом поле будет предложено ввести требования к сложности пароля.
 
 > [!div class="mx-imgBorder"]
-> :::image type="content" source="./media/howto-manage-server-portal/reset-password.png" alt-text="Сброс пароля для гибкого сервера":::
+> :::image type="content" source="./media/howto-manage-server-portal/reset-password.png" alt-text="масштабирование гибкого сервера хранилища":::
 
 3. Нажмите кнопку **сохранить** , чтобы сохранить новый пароль.
 
@@ -63,7 +63,7 @@ ms.locfileid: "90938499"
 1. Выберите сервер в портал Azure. В окне **обзора** выберите **Удалить**.
 2. Введите имя сервера в поле ввода, чтобы подтвердить, что вы хотите удалить сервер.
 
-   :::image type="content" source="./media/howto-manage-server-portal/delete-server.png" alt-text="Удаление гибкого сервера":::
+   :::image type="content" source="./media/howto-manage-server-portal/delete-server.png" alt-text="масштабирование гибкого сервера хранилища":::
 
    > [!IMPORTANT]
    > Удаление сервера необратимо.
@@ -71,7 +71,7 @@ ms.locfileid: "90938499"
   > [!div class="mx-imgBorder"]
   > ![Удаление гибкого сервера](./media/howto-manage-server-portal/delete-server.png)  
 
-3. Выберите команду **Удалить**.
+3. Выберите **Удалить**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -10,10 +10,10 @@ ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 09/22/2020
 ms.openlocfilehash: 517fed0dd9eb1736344546bde9f79e52ee17182f
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91333109"
 ---
 # <a name="troubleshooting-azure-sql-edge-deployments"></a>Устранение неполадок при развертывании Azure SQL ребра 
@@ -146,7 +146,7 @@ docker exec -it <Container ID> /bin/bash
 > Параметр подробного ведения журнала следует использовать только для устранения неполадок, а не для обычной рабочей нагрузки. 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Машинное обучение и искусственный интеллект с помощью ONNX в SQL Server ребра](onnx-overview.md)
 - [Потоковая передача данных в SQL Azure для пограничных вычислений](stream-data.md)

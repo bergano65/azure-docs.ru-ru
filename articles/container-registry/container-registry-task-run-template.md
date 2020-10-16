@@ -4,10 +4,10 @@ description: Поставить в очередь запуск задачи за
 ms.topic: article
 ms.date: 04/22/2020
 ms.openlocfilehash: 7ad40d2e925d5e1443af9bce4115d45b0e8c06e1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "82927774"
 ---
 # <a name="run-acr-tasks-using-resource-manager-templates"></a>Выполнение задач контроля доступа с помощью шаблонов диспетчер ресурсов
@@ -26,7 +26,7 @@ ms.locfileid: "82927774"
 * В качестве [исходного расположения](container-registry-tasks-overview.md#context-locations) для выполнения задачи необходимо указать удаленный контекст, такой как репозиторий GitHub. Нельзя использовать локальный исходный контекст.
 * Для запуска задач с использованием управляемого удостоверения разрешено только управляемое *пользователем* удостоверение.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * **Учетная запись GitHub** . Создайте учетную запись, https://github.com если она еще не создана. 
 * **Пример репозитория разветвления** . для приведенных здесь примеров задач используйте пользовательский интерфейс GitHub, чтобы разбить следующий пример репозитория на учетную запись GitHub: https://github.com/Azure-Samples/acr-build-helloworld-node . Этот репозиторий содержит пример файлы dockerfile и исходный код для создания мелких образов контейнеров.
@@ -233,7 +233,7 @@ basetask
 
 Чтобы просмотреть журнал выполнения, см. действия, описанные в [предыдущем разделе](#view-run-log).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
  * Дополнительные примеры шаблонов см. в [репозитории GitHub](https://github.com/Azure/acr/tree/master/docs/tasks/run-as-deployment).
  * Дополнительные сведения о свойствах шаблона см. в справочнике по шаблонам для [выполнения задач](/azure/templates/microsoft.containerregistry/2019-06-01-preview/registries/taskruns) и [задач](/azure/templates/microsoft.containerregistry/2019-06-01-preview/registries/tasks).

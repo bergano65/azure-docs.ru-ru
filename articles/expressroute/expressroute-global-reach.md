@@ -9,10 +9,10 @@ ms.date: 09/18/2020
 ms.author: duau
 ms.custom: references_regions
 ms.openlocfilehash: e3f9105037c049a53f1b7b99da96dd857070fcc7
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90987617"
 ---
 # <a name="expressroute-global-reach"></a>Global Reach ExpressRoute
@@ -52,7 +52,7 @@ Global Reach ExpressRoute поддерживается в следующих м�
 * Соединенное Королевство
 * США
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Просмотрите [Global REACH часто задаваемые вопросы](expressroute-faqs.md#globalreach).
 - Узнайте, как [включить Global REACH](expressroute-howto-set-global-reach.md).
 - Узнайте, как [связать канал ExpressRoute с виртуальной сетью](expressroute-howto-linkvnet-arm.md).

@@ -6,10 +6,10 @@ ms.subservice: change-inventory-management
 ms.date: 06/15/2020
 ms.topic: conceptual
 ms.openlocfilehash: eab509e389c074232526aa93fcebb72f3bc986c0
-ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86185608"
 ---
 # <a name="manage-change-tracking-and-inventory"></a>Управление решением для отслеживания изменений и инвентаризации
@@ -130,7 +130,7 @@ ms.locfileid: "86185608"
 4. Щелкните **+ Добавить**, чтобы добавить раздел реестра, изменения в котором нужно отслеживать.
 5. В области "Добавление реестра Windows для отслеживания изменений" введите сведения о разделе, для которого необходимо включить отслеживание, и щелкните **Сохранить**. В следующей таблице указаны свойства, которые можно использовать для получения сведений.
 
-    |Свойство  |Описание:  |
+    |Свойство  |Описание  |
     |---------|---------|
     |Активировано     | Значение true, если параметр применен, и false, если нет.        |
     |Имя элемента     | Понятное имя раздела реестра, который нужно отслеживать.        |
@@ -143,8 +143,8 @@ ms.locfileid: "86185608"
 
 |Запрос  |Описание  |
 |---------|---------|
-|`ConfigurationData`<br> &#124; `where ConfigDataType == "WindowsServices" and SvcStartupType == "Auto"`<br> &#124; `where SvcState == "Stopped"`<br> &#124; `summarize arg_max(TimeGenerated, *) by SoftwareName, Computer`         | Показывает самые последние записи инвентаризации для служб Майкрософт, для которых установлено значение "Автоматический" и которые были остановлены. Результаты ограничены самой последней записью для указанного имени программного обеспечения и компьютера.    |
-|`ConfigurationChange`<br> &#124; `where ConfigChangeType == "Software" and ChangeCategory == "Removed"`<br> &#124; `order by TimeGenerated desc`|Показывает записи об изменениях для удаленного программного обеспечения.|
+|`ConfigurationData`<br>&#124; `where ConfigDataType == "WindowsServices" and SvcStartupType == "Auto"`<br>&#124; `where SvcState == "Stopped"`<br>&#124; `summarize arg_max(TimeGenerated, *) by SoftwareName, Computer`         | Показывает самые последние записи инвентаризации для служб Майкрософт, для которых установлено значение "Автоматический" и которые были остановлены. Результаты ограничены самой последней записью для указанного имени программного обеспечения и компьютера.    |
+|`ConfigurationChange`<br>&#124; `where ConfigChangeType == "Software" and ChangeCategory == "Removed"`<br>&#124; `order by TimeGenerated desc`|Показывает записи об изменениях для удаленного программного обеспечения.|
 
 ## <a name="create-alerts-on-changes"></a>Создание оповещений об изменениях
 

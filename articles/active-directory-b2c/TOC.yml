@@ -180,6 +180,12 @@
           href: basic-age-gating.md
         - name: Определение настраиваемых атрибутов
           href: user-flow-custom-attributes.md
+        - name: Соединители API
+          items:
+            - name: Обзор
+              href: api-connectors-overview.md
+            - name: Добавление соединителя API
+              href: add-api-connector.md
         - name: Транзитный внешний токен IdP
           href: idp-pass-through-user-flow.md
     - name: Защита идентификации и условный доступ
@@ -384,6 +390,8 @@
                       displayName: single sign-on
             - name: UserJourneys
               href: userjourneys.md
+            - name: SubJourneys
+              href: subjourneys.md
             - name: RelyingParty
               href: relyingparty.md
             - name: Арбитры утверждений

@@ -3,12 +3,12 @@ title: Общие сведения об агенте Connected Machine для Wi
 description: В этой статье представлен подробный обзор доступного агента серверов с поддержкой Arc Azure, который поддерживает мониторинг виртуальных машин, размещенных в гибридных средах.
 ms.date: 09/30/2020
 ms.topic: conceptual
-ms.openlocfilehash: 20f56745127a5182a5dfa057a4496b127d78eac7
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.openlocfilehash: 248604884cf1b7592b382a3490aab60102e12faf
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91822193"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91979161"
 ---
 # <a name="overview-of-azure-arc-enabled-servers-agent"></a>Обзор агента серверов с поддержкой ARC в Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "91822193"
 
 * Служба метаданных гибридного экземпляра (ХИМДС) управляет подключением к Azure и удостоверением Azure подключенного компьютера.
 
-* Гостевой агент настройки предоставляет гостевую политику и функциональность гостевой настройки, например оценку того, соответствует ли компьютер необходимым политикам.
+* Гостевой агент настройки предоставляет In-Guestную политику и функциональность гостевой настройки, например оценку того, соответствует ли компьютер необходимым политикам.
 
     Обратите внимание на следующее поведение в [гостевой конфигурации](../../governance/policy/concepts/guest-configuration.md) политики Azure для отключенного компьютера:
 
@@ -85,6 +85,7 @@ ms.locfileid: "91822193"
 
 * AzureActiveDirectory
 * AzureTrafficManager.
+* AzureResourceManager
 * азуреарЦинфраструктуре
 
 URL-адреса:
@@ -94,10 +95,15 @@ URL-адреса:
 |`management.azure.com`|Azure Resource Manager|
 |`login.windows.net`|Azure Active Directory|
 |`dc.services.visualstudio.com`|Application Insights|
-|`agentserviceapi.azure-automation.net`|Гостевая конфигурация|
-|`*-agentservice-prod-1.azure-automation.net`|Гостевая конфигурация|
 |`*.guestconfiguration.azure.com` |Гостевая конфигурация|
 |`*.his.arc.azure.com`|Служба гибридной идентификации|
+
+Для предварительных версий агентов (версии 0,11 и ниже) также требуется доступ к следующим URL-адресам:
+
+| Ресурс агента | Описание |
+|---------|---------|
+|`agentserviceapi.azure-automation.net`|Гостевая конфигурация|
+|`*-agentservice-prod-1.azure-automation.net`|Гостевая конфигурация|
 
 Список IP-адресов для каждого тега или региона службы см. в файле JSON [Azure IP Ranges and Service Tags – Public Cloud](https://www.microsoft.com/download/details.aspx?id=56519) (Диапазоны IP-адресов и теги служб Azure — общедоступное облако). Корпорация Майкрософт публикует еженедельные обновления, содержащие каждую службу Azure и диапазоны IP-адресов, которые она использует. Дополнительные сведения см. в разделе [Теги служб](../../virtual-network/security-overview.md#service-tags).
 
@@ -173,7 +179,7 @@ az provider register --namespace 'Microsoft.GuestConfiguration'
     |Имя службы |Отображаемое имя |Имя процесса |Описание |
     |-------------|-------------|-------------|------------|
     |himds |Гибридная служба метаданных экземпляров Azure |himds.exe |Эта служба реализует службу метаданных экземпляров Azure (IMDS) для управления подключением к Azure и удостоверением Azure подключенного компьютера.|
-    |DscService |Служба гостевой конфигурации |dsc_service.exe |База кода Desired State Configuration (DSC v2), используемая в Azure для реализации гостевой политики.|
+    |DscService |Служба гостевой конфигурации |dsc_service.exe |База кода Desired State Configuration (DSC v2), используемая в Azure для реализации политики In-Guest.|
 
 * Во время установки агента создаются указанные ниже переменные среды.
 

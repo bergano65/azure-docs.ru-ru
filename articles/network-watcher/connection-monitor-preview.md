@@ -16,10 +16,10 @@ ms.date: 01/27/2020
 ms.author: vinigam
 ms.custom: mvc
 ms.openlocfilehash: 31733abc945fe7c751f786649fb05b753a7c243d
-ms.sourcegitcommit: b48e8a62a63a6ea99812e0a2279b83102e082b61
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91408868"
 ---
 # <a name="network-connectivity-monitoring-with-connection-monitor-preview"></a>Мониторинг сетевых подключений с помощью монитора подключений (Предварительная версия)
@@ -199,7 +199,7 @@ ms.locfileid: "91408868"
 * **Фильтры на основе состояния** — фильтрация по состоянию монитора подключения, тестовой группы или теста. См. Box 2 на следующем рисунке.
 * **Фильтр на основе оповещений** — фильтрация по предупреждениям, запущенным в ресурсе монитора подключения. См. поле 3 на следующем рисунке.
 
-  :::image type="content" source="./media/connection-monitor-2-preview/cm-view.png" alt-text="Снимок экрана, показывающий, как фильтровать представления мониторов подключений, тестовых групп и тестов в мониторе подключений (Предварительная версия)" lightbox="./media/connection-monitor-2-preview/cm-view.png":::
+  :::image type="content" source="./media/connection-monitor-2-preview/cm-view.png" alt-text="Снимок экрана, показывающий мониторы подключений, созданные в мониторе подключений (Предварительная версия)" lightbox="./media/connection-monitor-2-preview/cm-view.png":::
     
 Например, чтобы просмотреть все тесты в мониторе подключения (Предварительная версия), где исходный IP-адрес — 10.192.64.56:
 1. Измените представление для **проверки**.
@@ -218,16 +218,16 @@ ms.locfileid: "91408868"
 1. В поле поиска введите *Outlook.Office365.com* .
 1. В **области** в фильтре верхнего уровня выберите **назначения**.
   
-  :::image type="content" source="./media/connection-monitor-2-preview/tests-view.png" alt-text="Снимок экрана, показывающий представление, которое отфильтровано для отображения только неудачных тестов для назначения Outlook.Office365.com" lightbox="./media/connection-monitor-2-preview/tests-view.png":::
+  :::image type="content" source="./media/connection-monitor-2-preview/tests-view.png" alt-text="Снимок экрана, показывающий мониторы подключений, созданные в мониторе подключений (Предварительная версия)" lightbox="./media/connection-monitor-2-preview/tests-view.png":::
 
 Чтобы узнать причину сбоя монитора подключения или тестовой группы или теста, щелкните столбец с именем Reason.  Это указывает, какое пороговое значение (Проверка сбоев% или RTT) было нарушено, и связанные с ним диагностические сообщения
   
-  :::image type="content" source="./media/connection-monitor-2-preview/cm-reason-of-failure.png" alt-text="Снимок экрана, показывающий причину сбоя для монитора подключения, тестовой или тестовой группы" lightbox="./media/connection-monitor-2-preview/cm-reason-of-failure.png":::
+  :::image type="content" source="./media/connection-monitor-2-preview/cm-reason-of-failure.png" alt-text="Снимок экрана, показывающий мониторы подключений, созданные в мониторе подключений (Предварительная версия)" lightbox="./media/connection-monitor-2-preview/cm-reason-of-failure.png":::
     
 Для просмотра тенденций в режиме приема-передачи и процента неудачных проверок для монитора подключения:
 1. Выберите монитор подключения, который необходимо исследовать.
 
-    :::image type="content" source="./media/connection-monitor-2-preview/cm-drill-landing.png" alt-text="Снимок экрана, показывающий метрики для монитора подключения, отображаемый тестовой группой" lightbox="./media/connection-monitor-2-preview/cm-drill-landing.png":::
+    :::image type="content" source="./media/connection-monitor-2-preview/cm-drill-landing.png" alt-text="Снимок экрана, показывающий мониторы подключений, созданные в мониторе подключений (Предварительная версия)" lightbox="./media/connection-monitor-2-preview/cm-drill-landing.png":::
 
 1. Вы увидите следующие разделы.  
     1. Основные свойства выбранного монитора подключения для конкретных ресурсов 
@@ -237,7 +237,7 @@ ms.locfileid: "91408868"
     1. Вкладки для групп тестов, источников, назначений и конфигураций тестов — список тестовых групп, источников или назначений в мониторе подключения. Проверка сбоев тестов, агрегирование RTT и проверки со сбоем% значений.  Вы также можете вернуться назад во времени, чтобы просмотреть данные. 
     1. Проблемы — проблемы уровня прыжков для каждого теста в мониторе подключения. 
 
-    :::image type="content" source="./media/connection-monitor-2-preview/cm-drill-landing-2.png" alt-text="Снимок экрана, показывающий метрики для монитора подключений, отображаемый частью группы тестирования, часть 2" lightbox="./media/connection-monitor-2-preview/cm-drill-landing-2.png":::
+    :::image type="content" source="./media/connection-monitor-2-preview/cm-drill-landing-2.png" alt-text="Снимок экрана, показывающий мониторы подключений, созданные в мониторе подключений (Предварительная версия)" lightbox="./media/connection-monitor-2-preview/cm-drill-landing-2.png":::
 
 1. Вы можете выполнить следующие действия:
     * Нажмите кнопку Просмотреть все тесты, чтобы просмотреть все тесты в мониторе подключения.
@@ -247,7 +247,7 @@ ms.locfileid: "91408868"
 1. В представлении Просмотр всех тестов можно выполнить следующие действия.
     * Выберите тесты и нажмите кнопку сравнить.
     
-    :::image type="content" source="./media/connection-monitor-2-preview/cm-compare-test.png" alt-text="Снимок экрана, показывающий сравнение двух тестов" lightbox="./media/connection-monitor-2-preview/cm-compare-test.png":::
+    :::image type="content" source="./media/connection-monitor-2-preview/cm-compare-test.png" alt-text="Снимок экрана, показывающий мониторы подключений, созданные в мониторе подключений (Предварительная версия)" lightbox="./media/connection-monitor-2-preview/cm-compare-test.png":::
     
     * Использование кластера для расширения составных ресурсов, таких как виртуальная сеть, подсети и дочерние ресурсы
     * Просмотрите топологию для всех тестов, щелкнув топология.
@@ -259,7 +259,7 @@ ms.locfileid: "91408868"
 Чтобы просмотреть тренды в RTT и процент неудачных проверок для теста, выполните следующие действия.
 1. Выберите тест, который необходимо исследовать. Вы увидите топологию сети и диаграммы комплексного тренда для проверок со сбоем% и временем кругового пути. Чтобы просмотреть выявленные проблемы, в топологии выберите любой прыжок в пути. (Эти прыжки являются ресурсами Azure.) В настоящее время эта функция недоступна для локальных сетей
 
-  :::image type="content" source="./media/connection-monitor-2-preview/cm-test-topology.png" alt-text="Снимок экрана, показывающий представление топологии теста" lightbox="./media/connection-monitor-2-preview/cm-test-topology.png":::
+  :::image type="content" source="./media/connection-monitor-2-preview/cm-test-topology.png" alt-text="Снимок экрана, показывающий мониторы подключений, созданные в мониторе подключений (Предварительная версия)" lightbox="./media/connection-monitor-2-preview/cm-test-topology.png":::
 
 #### <a name="log-queries-in-log-analytics"></a>Запросы к журналу в Log Analytics
 
@@ -269,11 +269,11 @@ ms.locfileid: "91408868"
 
 В мониторах соединений, созданных до работы монитора подключений (Предварительная версия), доступны все четыре метрики:% Зонды Failed, Аверажераундтрипмс, Чекксфаиледперцент (Предварительная версия) и Раундтриптимемс (Предварительная версия). В мониторах соединений, созданных в интерфейсе монитора подключений (Предварительная версия), данные доступны только для тех метрик, которые помечены *(Предварительная версия)*.
 
-  :::image type="content" source="./media/connection-monitor-2-preview/monitor-metrics.png" alt-text="Снимок экрана, показывающий метрики в мониторе подключения (Предварительная версия)" lightbox="./media/connection-monitor-2-preview/monitor-metrics.png":::
+  :::image type="content" source="./media/connection-monitor-2-preview/monitor-metrics.png" alt-text="Снимок экрана, показывающий мониторы подключений, созданные в мониторе подключений (Предварительная версия)" lightbox="./media/connection-monitor-2-preview/monitor-metrics.png":::
 
 При использовании метрик задайте тип ресурса Microsoft. Network/Нетворкватчерс/Коннектионмониторс.
 
-| Метрика | Отображаемое имя | Единица измерения | Тип агрегирования | Описание | Измерения |
+| Метрика | Отображаемое имя | Unit | Тип агрегирования | Описание | Измерения |
 | --- | --- | --- | --- | --- | --- |
 | ProbesFailedPercent | Доля проб с ошибками, в процентах | Процент | Среднее | Сбой пробы мониторинга подключения. | Нет измерений |
 | AverageRoundtripMs | Среднее Время приема-передачи (мс) | Миллисекунды | Среднее | Среднее время приема сетевого соединения для проверок мониторинга подключения, отправляемых между источником и назначением. |             Нет измерений |
@@ -300,7 +300,7 @@ ms.locfileid: "91408868"
     1. Укажите сведения о предупреждении.
     1. Создайте правило генерации оповещений.
 
-  :::image type="content" source="./media/connection-monitor-2-preview/mdm-alerts.jpg" alt-text="Снимок экрана, показывающий область создания правила в Azure Monitor. Исходный адрес и имя исходной конечной точки выделены" lightbox="./media/connection-monitor-2-preview/mdm-alerts.jpg":::
+  :::image type="content" source="./media/connection-monitor-2-preview/mdm-alerts.jpg" alt-text="Снимок экрана, показывающий мониторы подключений, созданные в мониторе подключений (Предварительная версия)" lightbox="./media/connection-monitor-2-preview/mdm-alerts.jpg":::
 
 ## <a name="diagnose-issues-in-your-network"></a>Диагностика проблем в сети
 
@@ -348,7 +348,7 @@ ms.locfileid: "91408868"
 * BGP не включен в подключении шлюза.
 * Проверка DIP не работает в подсистеме балансировки нагрузки.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
     
    * Узнайте [, как создать монитор подключений (Предварительная версия) с помощью портал Azure](connection-monitor-preview-create-using-portal.md)  
    * Узнайте [, как создать монитор подключений (Предварительная версия) с помощью ARMClient](connection-monitor-preview-create-using-arm-client.md)  

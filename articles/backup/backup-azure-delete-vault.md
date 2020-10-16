@@ -4,10 +4,10 @@ description: Из этой статьи вы узнаете, как удалит
 ms.topic: conceptual
 ms.date: 06/04/2020
 ms.openlocfilehash: fd941db933d243b83c1c19c7ae0fdfc2d7869b8a
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91293073"
 ---
 # <a name="delete-an-azure-backup-recovery-services-vault"></a>Удаление хранилища служб восстановления Azure Backup
@@ -368,7 +368,7 @@ ms.locfileid: "91293073"
 
 3. В портал Azure убедитесь, что хранилище удалено.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Сведения о хранилищах](backup-azure-recovery-services-vault-overview.md) 
  служб восстановления [Сведения о мониторинге хранилищ служб восстановления и управлении ими](backup-azure-manage-windows-server.md)

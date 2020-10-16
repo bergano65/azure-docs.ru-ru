@@ -5,10 +5,10 @@ ms.date: 03/30/2020
 ms.topic: how-to
 ms.reviewer: ravastra
 ms.openlocfilehash: f067f4413f6ad8541cd36a7581f9243bed4e195f
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87023744"
 ---
 # <a name="configure-blockchain-data-manager-using-azure-cli"></a>Настройка диспетчера данных блокчейна с помощью Azure CLI
@@ -23,11 +23,11 @@ ms.locfileid: "87023744"
 * Добавление приложения блокчейна
 * Запуск экземпляра
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Установите последнюю [Azure CLI](/cli/azure/install-azure-cli) и войдите с помощью `az login` .
 * Полное [руководство. использование Visual Studio Code для подключения к сети консорциума Блокчейн службы Azure](connect-vscode.md). При использовании Блокчейн Диспетчер данных рекомендуется использовать *стандартный* уровень службы Azure блокчейн.
-* Создать [раздел "Сетка событий](../../event-grid/custom-event-quickstart-portal.md#create-a-custom-topic) "
+* Создайте [раздел Сетки событий](../../event-grid/custom-event-quickstart-portal.md#create-a-custom-topic).
 * Подробные сведения см. в статье об [обработчиках событий в службе "Сетка событий Azure"](../../event-grid/event-handlers.md).
 
 ## <a name="launch-azure-cloud-shell"></a>Запуск Azure Cloud Shell
@@ -345,7 +345,7 @@ az resource invoke-action \
                           --ids /subscriptions/<Subscription ID>/resourceGroups/<Resource group>/providers/Microsoft.Blockchain/watchers/<Watcher name>
 ```
 
-| Параметр | Описание: |
+| Параметр | Описание |
 |-----------|-------------|
 | action | Используйте **Start** для запуска наблюдателя. |
 | ids | Идентификатор ресурса наблюдателя. Замените \<Subscription ID\> , \<Resource group\> и \<Watcher name\> значениями для ресурса наблюдателя.|
@@ -370,7 +370,7 @@ az resource invoke-action \
                           --ids /subscriptions/<Subscription ID>/resourceGroups/<Resource group>/providers/Microsoft.Blockchain/watchers/<Watcher name>
 ```
 
-| Параметр | Описание: |
+| Параметр | Описание |
 |-----------|-------------|
 | action | Чтобы отключить наблюдатель, используйте параметр " **прерывать** ". |
 | ids | Имя наблюдателя. Замените \<Subscription ID\> , \<Resource group\> и \<Watcher name\> значениями для ресурса наблюдателя. |

@@ -4,10 +4,10 @@ description: Узнайте, как настроить операции Вреа
 ms.topic: how-to
 ms.date: 09/22/2020
 ms.openlocfilehash: 9e512d107ddc4d9bca28323658d09f4b4b378dc3
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91580678"
 ---
 # <a name="set-up-vrealize-operations-for-azure-vmware-solution"></a>Настройка операций Вреализе для решения VMware для Azure
@@ -23,7 +23,7 @@ ms.locfileid: "91580678"
 
 ## <a name="before-you-begin"></a>Перед началом
 * Ознакомьтесь с [документацией по вреализе Operations Manager](https://docs.vmware.com/en/vRealize-Operations-Manager/8.1/com.vmware.vcom.vapp.doc/GUID-7FFC61A0-7562-465C-A0DC-46D092533984.html) , чтобы узнать больше о развертывании операций вреализе. 
-* Ознакомьтесь с основными [сериями руководств](tutorial-network-checklist.md)по решению Azure VMware по определению программного обеспечения центра обработки данных (SDDC).
+* Ознакомьтесь с [циклом учебников](tutorial-network-checklist.md) по программно определяемому центру обработки данных (SDDC) Решения Azure VMware.
 * При необходимости ознакомьтесь с документацией по продукту [Вреализе Operations Remote Controller](https://docs.vmware.com/en/vRealize-Operations-Manager/8.1/com.vmware.vcom.vapp.doc/GUID-263F9219-E801-4383-8A59-E84F3D01ED6B.html) для локальных операций вреализе, управляющих развертыванием решения VMware в Azure. 
 
 

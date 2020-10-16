@@ -9,22 +9,22 @@ ms.topic: how-to
 ms.date: 09/08/2020
 ms.author: memildin
 ms.openlocfilehash: 19e9a33350b6a1a67986dc35a372f737e45ab39a
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90906397"
 ---
 # <a name="prevent-misconfigurations-with-enforcedeny-recommendations"></a>Предотвращение невыполненных настроек с помощью рекомендаций принудительного применения или запрета
 
-Неиспользуемые настройки безопасности являются серьезной причиной инцидентов безопасности. Центр безопасности теперь может помочь *предотвратить* ненужные настройки новых ресурсов с учетом конкретных рекомендаций. 
+Ошибки в конфигурации безопасности являются частой причиной инцидентов безопасности. Центр безопасности теперь помогает *предотвращать* такие ошибки для новых ресурсов в соответствии с определенными рекомендациями. 
 
-Эта функция помогает обеспечить безопасность рабочих нагрузок и стабилизировать оценку безопасности.
+Эта возможность помогает поддерживать безопасность рабочих нагрузок и стабилизировать оценку безопасности.
 
-Применение безопасной конфигурации на основе определенной рекомендации предлагается в двух режимах:
+Применять конфигурацию безопасности в соответствии с определенной рекомендацией можно в двух режимах:
 
-- С помощью **отклонения** от политики Azure можно предотвратить создание неработоспособных ресурсов
-- С помощью параметра **принудительно** можно воспользоваться преимуществами **деплойифнотексист** политики Azure и автоматически исправлять несоответствующие ресурсы после создания
+- параметр **Отклонить** Политики Azure предотвращает создание неработоспособных ресурсов;
+- параметр **Применить** использует действие **DeployIfNotExist** Политики Azure для автоматического исправления несоответствующих ресурсов после создания.
 
 Его можно найти в верхней части страницы сведений о ресурсах для выбранных рекомендаций по безопасности (см. раздел [рекомендации с параметрами Deny/принудительно](#recommendations-with-denyenforce-options)).
 
@@ -32,7 +32,7 @@ ms.locfileid: "90906397"
 
 1. Откройте рекомендацию, которой должны соответствовать новые ресурсы, и нажмите кнопку **Deny (запретить** ) в верхней части страницы.
 
-    :::image type="content" source="./media/security-center-remediate-recommendations/recommendation-deny-button.png" alt-text="Страница рекомендаций с выделенной кнопкой "запретить"":::
+    :::image type="content" source="./media/security-center-remediate-recommendations/recommendation-deny-button.png" alt-text="Страница рекомендаций с выделенной кнопкой &quot;запретить&quot;":::
 
     Откроется панель конфигурация с перечнем параметров области. 
 
@@ -41,18 +41,18 @@ ms.locfileid: "90906397"
     > [!TIP]
     > Можно использовать три точки в конце строки, чтобы изменить одну подписку, или воспользоваться флажками, чтобы выбрать несколько подписок или групп, а затем выбрать команду **изменить на запретить**.
 
-    :::image type="content" source="./media/security-center-remediate-recommendations/recommendation-prevent-resource-creation.png" alt-text="Настройка области действия Deny для политики Azure":::
+    :::image type="content" source="./media/security-center-remediate-recommendations/recommendation-prevent-resource-creation.png" alt-text="Страница рекомендаций с выделенной кнопкой &quot;запретить&quot;":::
 
 
 ## <a name="enforce-a-secure-configuration"></a>Принудительная настройка безопасности
 
 1. Откройте рекомендацию по развертыванию шаблона, если новые ресурсы не соответствуют требованиям, и нажмите кнопку **Применить** в верхней части страницы.
 
-    :::image type="content" source="./media/security-center-remediate-recommendations/recommendation-enforce-button.png" alt-text="Страница рекомендаций с выделенной кнопкой "Применить"":::
+    :::image type="content" source="./media/security-center-remediate-recommendations/recommendation-enforce-button.png" alt-text="Страница рекомендаций с выделенной кнопкой &quot;запретить&quot;":::
 
     Откроется панель конфигурация со всеми параметрами конфигурации политики. 
 
-    :::image type="content" source="./media/security-center-remediate-recommendations/recommendation-enforce-config.png" alt-text="Принудительное применение параметров конфигурации":::
+    :::image type="content" source="./media/security-center-remediate-recommendations/recommendation-enforce-config.png" alt-text="Страница рекомендаций с выделенной кнопкой &quot;запретить&quot;":::
 
 1. Задайте область, имя назначения и другие соответствующие параметры.
 

@@ -8,23 +8,23 @@ ms.reviewer: zhshang
 ms.date: 11/13/2019
 ms.topic: conceptual
 ms.service: signalr
-ms.openlocfilehash: a8e25907b40b910f2b91884d355b6ac85eeaa250
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 105b40da2a612d2a2e9958eff52bfb786c500bc1
+ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/09/2020
-ms.locfileid: "74158190"
+ms.locfileid: "91876079"
 ---
 # <a name="reacting-to-azure-signalr-service-events"></a>Reacting to Azure SignalR Service events (Реагирование на события службы Azure SignalR)
 
-События службы Azure SignalR позволяют приложениям реагировать на подключения клиентов, подключенные или отключенные с помощью современных бессерверных архитектур. При этом не требуется сложный код или дорогостоящие и неэффективные службы опроса.  Вместо этого события отправляются через службу [Сетка событий Azure](https://azure.microsoft.com/services/event-grid/) подписчикам, таким как [Функции Azure](https://azure.microsoft.com/services/functions/), [Azure Logic Apps](https://azure.microsoft.com/services/logic-apps/), или даже в настраиваемый вами прослушиватель HTTP. При этом вы оплачиваете только то, что используете.
+События службы Azure SignalR позволяют приложениям реагировать на подключения клиентов, подключенные или отключенные с помощью современных бессерверных архитектур. При этом не требуется сложный код или дорогостоящие и неэффективные службы опроса.  Вместо этого события отправляются через службу " [Сетка событий Azure](https://azure.microsoft.com/services/event-grid/) " для подписчиков, таких как [функции Azure](https://azure.microsoft.com/services/functions/), [Azure Logic Apps](https://azure.microsoft.com/services/logic-apps/)или даже для настраиваемого прослушивателя HTTP. С помощью Azure SignalR вы платите только за то, что вы использовали.
 
 События службы Azure SignalR надежно отправляются в службу "Сетка событий", которая обеспечивает надежную работу служб доставки для приложений с помощью многофункциональных политик повтора и доставки недоставленных сообщений. Дополнительные сведения см. в разделе [Доставка сообщений в сетке событий и повторная попытка](https://docs.microsoft.com/azure/event-grid/delivery-and-retry).
 
 ![Модель Сетки событий](https://docs.microsoft.com/azure/event-grid/media/overview/functional-model.png)
 
 ## <a name="serverless-state"></a>Бессерверное состояние
-События службы Azure SignalR активны только в том случае, если клиентские соединения находятся в состоянии без сервера. В общем случае, если клиент не направляется на основной сервер, он переходит в бессерверное состояние. Классический режим работает только в том случае, если концентратор, к которому подключаются подключения клиентов, не имеет сервера-концентратора. Однако для предотвращения некоторой проблемы рекомендуется использовать бессерверный режим. Дополнительные сведения о режиме обслуживания см. в разделе [как выбрать режим обслуживания](https://github.com/Azure/azure-signalr/blob/dev/docs/faq.md#what-is-the-meaning-of-service-mode-defaultserverlessclassic-how-can-i-choose).
+События службы Azure SignalR активны только в том случае, если клиентские соединения находятся в состоянии без сервера. Если клиент не направляется на основной сервер, он переходит в бессерверное состояние. Классический режим работает, только если концентратор, к которому подключается клиентские подключения, не имеет сервера-концентратора. Рекомендуется использовать бессерверный режим. Дополнительные сведения о режиме обслуживания см. в разделе [как выбрать режим обслуживания](https://github.com/Azure/azure-signalr/blob/dev/docs/faq.md#what-is-the-meaning-of-service-mode-defaultserverlessclassic-how-can-i-choose).
 
 ## <a name="available-azure-signalr-service-events"></a>Доступные события службы SignalR Azure
 Сетка событий использует [подписки на события](../event-grid/concepts.md#event-subscriptions) для маршрутизации сообщений о событиях подписчикам. Подписки на события службы Azure SignalR поддерживают два типа событий:  
@@ -58,7 +58,7 @@ ms.locfileid: "74158190"
 
 Дополнительные сведения см. в статье [схема событий службы SignalR](../event-grid/event-schema-azure-signalr.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о службе "Сетка событий Azure" и предоставление им событий службы SignalR см. в этой статье.
 

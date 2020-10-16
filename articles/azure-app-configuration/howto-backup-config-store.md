@@ -10,12 +10,12 @@ ms.custom: devx-track-dotnet
 ms.topic: how-to
 ms.date: 04/27/2020
 ms.author: avgupta
-ms.openlocfilehash: a3c1699dd4b7b828c7dc652f14f431878f785061
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: 3c4bdf1268aea06d7b67776a4022c608549994e7
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88207143"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92074861"
 ---
 # <a name="back-up-app-configuration-stores-automatically"></a>Автоматическое резервное копирование хранилищ конфигурации приложений
 
@@ -23,7 +23,7 @@ ms.locfileid: "88207143"
 
 После настройки автоматического резервного копирования Конфигурация приложения будет публиковать события в службе "Сетка событий Azure" для любых изменений, внесенных в значения ключа в хранилище конфигураций. Служба "Сетка событий" поддерживает различные службы Azure, от которых пользователи могут подписываться на события, генерируемые при создании, обновлении или удалении значений ключей.
 
-## <a name="overview"></a>Общие сведения
+## <a name="overview"></a>Обзор
 
 В этой статье вы будете использовать хранилище очередей Azure для получения событий из службы "Сетка событий" и использования триггера таймера для функций Azure для обработки событий в очереди в пакетах. 
 
@@ -40,7 +40,7 @@ ms.locfileid: "88207143"
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Подписка Azure. [Создайте бесплатно](https://azure.microsoft.com/free/). 
-- [Visual Studio 2019](https://visualstudio.microsoft.com/vs) с рабочей нагрузкой разработки Azure.
+- [Visual Studio 2019](https://visualstudio.microsoft.com/vs) с рабочей нагрузкой разработки Azure.
 - [пакет SDK для .NET Core](https://dotnet.microsoft.com/download);
 - Последняя версия Azure CLI (2.3.1 или более поздней версии). Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli). Если вы используете Azure CLI, необходимо сначала войти с помощью `az login` . При необходимости можно использовать Azure Cloud Shell.
 
@@ -124,7 +124,7 @@ az eventgrid event-subscription create \
 - Среда выполнения функций Azure версии 3. x
 - Функция, активируемая таймером каждые 10 минут
 
-Чтобы упростить резервное копирование данных, мы [протестировали и опубликовали функцию](https://github.com/Azure/AppConfiguration/tree/master/examples/ConfigurationStoreBackup) , которую можно использовать без внесения каких-либо изменений в код. Скачайте файлы проекта и [опубликуйте их в собственном приложении функции Azure из Visual Studio](/azure/azure-functions/functions-develop-vs#publish-to-azure).
+Чтобы упростить резервное копирование данных, мы [протестировали и опубликовали функцию](https://github.com/Azure/AppConfiguration/tree/master/examples/ConfigurationStoreBackup) , которую можно использовать без внесения каких-либо изменений в код. Скачайте файлы проекта и [опубликуйте их в собственном приложении функции Azure из Visual Studio](../azure-functions/functions-develop-vs.md#publish-to-azure).
 
 > [!IMPORTANT]
 > Не вносите никаких изменений в переменные среды в скачанном коде. Необходимые параметры приложения будут созданы в следующем разделе.
@@ -133,13 +133,13 @@ az eventgrid event-subscription create \
 ### <a name="build-your-own-function"></a>Создание собственной функции
 
 Если приведенный выше пример кода не соответствует вашим требованиям, можно также создать собственную функцию. Для завершения резервного копирования функция должна иметь возможность выполнять следующие задачи:
-- Периодически Читайте содержимое очереди, чтобы проверить, содержит ли она уведомления из сетки событий. Сведения о реализации см. в [пакете SDK очереди хранилища](/azure/storage/queues/storage-quickstart-queues-dotnet) .
-- Если очередь содержит [уведомления о событиях из сетки событий](/azure/azure-app-configuration/concept-app-configuration-event?branch=pr-en-us-112982#event-schema), извлеките все уникальные `<key, label>` сведения из сообщений о событиях. Сочетание клавиш и метки — это уникальный идентификатор для изменений «ключ-значение» в основном хранилище.
+- Периодически Читайте содержимое очереди, чтобы проверить, содержит ли она уведомления из сетки событий. Сведения о реализации см. в [пакете SDK очереди хранилища](../storage/queues/storage-quickstart-queues-dotnet.md) .
+- Если очередь содержит [уведомления о событиях из сетки событий](./concept-app-configuration-event.md?branch=pr-en-us-112982#event-schema), извлеките все уникальные `<key, label>` сведения из сообщений о событиях. Сочетание клавиш и метки — это уникальный идентификатор для изменений «ключ-значение» в основном хранилище.
 - Чтение всех параметров из основного хранилища. Обновите только те параметры в вторичном хранилище, которые имеют соответствующее событие в очереди. Удалите все параметры из вторичного хранилища, которые присутствовали в очереди, но отсутствуют в основном хранилище. [Пакет SDK для настройки приложений](https://github.com/Azure/AppConfiguration#sdks) можно использовать для программного доступа к хранилищам конфигурации.
 - Удаление сообщений из очереди, если во время обработки не возникало исключений.
 - Реализуйте обработку ошибок в соответствии с вашими потребностями. См. предыдущий пример кода, чтобы увидеть некоторые распространенные исключения, которые может потребоваться решить.
 
-Дополнительные сведения о создании функции см. в статье [Создание функции в Azure, которая активируется таймером](/azure/azure-functions/functions-create-scheduled-function) и [разрабатывает функции Azure с помощью Visual Studio](/azure/azure-functions/functions-develop-vs).
+Дополнительные сведения о создании функции см. в статье [Создание функции в Azure, которая активируется таймером](../azure-functions/functions-create-scheduled-function.md) и [разрабатывает функции Azure с помощью Visual Studio](../azure-functions/functions-develop-vs.md).
 
 
 > [!IMPORTANT]
@@ -167,16 +167,16 @@ az functionapp config appsettings set --name $functionAppName --resource-group $
 
 ## <a name="grant-access-to-the-managed-identity-of-the-function-app"></a>Предоставление доступа к управляемому удостоверению приложения функции
 
-Используйте следующую команду или [портал Azure](/azure/app-service/overview-managed-identity#add-a-system-assigned-identity) , чтобы добавить управляемое системой удостоверение, назначенное для приложения-функции.
+Используйте следующую команду или [портал Azure](../app-service/overview-managed-identity.md#add-a-system-assigned-identity) , чтобы добавить управляемое системой удостоверение, назначенное для приложения-функции.
 
 ```azurecli-interactive
 az functionapp identity assign --name $functionAppName --resource-group $resourceGroupName
 ```
 
 > [!NOTE]
-> Для выполнения требуемого создания ресурсов и управления ролями учетной записи требуются `Owner` разрешения в соответствующей области (ваша подписка или группа ресурсов). Если вам нужна помощь с назначением ролей, Узнайте, [как добавлять или удалять назначения ролей Azure с помощью портал Azure](/azure/role-based-access-control/role-assignments-portal).
+> Для выполнения требуемого создания ресурсов и управления ролями учетной записи требуются `Owner` разрешения в соответствующей области (ваша подписка или группа ресурсов). Если вам нужна помощь с назначением ролей, Узнайте, [как добавлять или удалять назначения ролей Azure с помощью портал Azure](../role-based-access-control/role-assignments-portal.md).
 
-Используйте следующие команды или [портал Azure](/azure/azure-app-configuration/howto-integrate-azure-managed-service-identity#grant-access-to-app-configuration) , чтобы предоставить управляемому удостоверению приложения функции доступ к хранилищам конфигурации приложения. Используйте следующие роли:
+Используйте следующие команды или [портал Azure](./howto-integrate-azure-managed-service-identity.md#grant-access-to-app-configuration) , чтобы предоставить управляемому удостоверению приложения функции доступ к хранилищам конфигурации приложения. Используйте следующие роли:
 - Назначьте `App Configuration Data Reader` роль в основном хранилище конфигураций приложений.
 - Назначьте `App Configuration Data Owner` роль в хранилище конфигурации дополнительного приложения.
 
@@ -196,7 +196,7 @@ az role assignment create \
     --scope $secondaryAppConfigId
 ```
 
-Используйте следующую команду или [портал Azure](/azure/storage/common/storage-auth-aad-rbac-portal#assign-azure-roles-using-the-azure-portal) , чтобы предоставить управляемому удостоверению приложения функции доступ к очереди. Назначьте `Storage Queue Data Contributor` роль в очереди.
+Используйте следующую команду или [портал Azure](../storage/common/storage-auth-aad-rbac-portal.md#assign-azure-roles-using-the-azure-portal) , чтобы предоставить управляемому удостоверению приложения функции доступ к очереди. Назначьте `Storage Queue Data Contributor` роль в очереди.
 
 ```azurecli-interactive
 az role assignment create \
@@ -216,7 +216,7 @@ az appconfig kv set --name $primaryAppConfigName --key Foo --value Bar --yes
 Вы активировали событие. Через некоторое время в сетке событий будет отправлено уведомление о событии в очередь. *После следующего запланированного выполнения функции*просмотрите параметры конфигурации в дополнительном хранилище, чтобы узнать, содержит ли он обновленное значение ключа из основного хранилища.
 
 > [!NOTE]
-> Вы можете [активировать функцию вручную](/azure/azure-functions/functions-manually-run-non-http) во время тестирования и устранения неполадок, не дожидаясь запланированного триггера таймера.
+> Вы можете [активировать функцию вручную](../azure-functions/functions-manually-run-non-http.md) во время тестирования и устранения неполадок, не дожидаясь запланированного триггера таймера.
 
 Убедившись в успешном выполнении функции резервного копирования, вы увидите, что ключ теперь имеется в дополнительном хранилище.
 
@@ -237,15 +237,15 @@ az appconfig kv show --name $secondaryAppConfigName --key Foo
 }
 ```
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Диагностика
 
 Если вы не видите новый параметр в дополнительном хранилище:
 
 - Убедитесь, что функция резервного копирования была активирована *после* создания параметра в основном хранилище.
 - Возможно, сетка событий не смогла отправить уведомление о событии в очередь вовремя. Проверьте, все ли ваша очередь содержит уведомление о событии из основного хранилища. Если это так, снова запустите функцию резервного копирования.
-- Проверьте [журналы функций Azure](/azure/azure-functions/functions-create-scheduled-function#test-the-function) на наличие ошибок или предупреждений.
-- Используйте [портал Azure](/azure/azure-functions/functions-how-to-use-azure-function-app-settings#get-started-in-the-azure-portal) , чтобы убедиться, что приложение-функция Azure содержит правильные значения параметров приложения, которые функции Azure пытаются считать.
-- Вы также можете настроить мониторинг и оповещения для функций Azure с помощью [Application Insights Azure](/azure/azure-functions/functions-monitoring?tabs=cmd). 
+- Проверьте [журналы функций Azure](../azure-functions/functions-create-scheduled-function.md#test-the-function) на наличие ошибок или предупреждений.
+- Используйте [портал Azure](../azure-functions/functions-how-to-use-azure-function-app-settings.md#get-started-in-the-azure-portal) , чтобы убедиться, что приложение-функция Azure содержит правильные значения параметров приложения, которые функции Azure пытаются считать.
+- Вы также можете настроить мониторинг и оповещения для функций Azure с помощью [Application Insights Azure](../azure-functions/functions-monitoring.md?tabs=cmd). 
 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
@@ -255,7 +255,7 @@ az appconfig kv show --name $secondaryAppConfigName --key Foo
 az group delete --name $resourceGroupName
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали, как настроить автоматическую архивацию значений ключей, Узнайте больше о том, как можно повысить геоустойчивость приложения.
 

@@ -7,12 +7,12 @@ ms.date: 10/02/2020
 ms.topic: troubleshooting
 ms.service: virtual-machines
 ms.subservice: imaging
-ms.openlocfilehash: dd17057a56e8dfb269a22458b9aa20fefaab68bc
-ms.sourcegitcommit: 487a9f5272300d60df2622c3d13e794d54680f90
+ms.openlocfilehash: 7c937353c645ee5d977a52ec0f8e935eba19a940
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91661114"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91969982"
 ---
 # <a name="troubleshoot-azure-image-builder-service"></a>Устранение неполадок службы Azure Image Builder
 
@@ -46,7 +46,7 @@ Get-AzImageBuilderTemplate -ImageTemplateName  <imageTemplateName> -ResourceGrou
 'Conflict'. Details: Update/Upgrade of image templates is currently not supported
 ```
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Шаблон уже существует.
 
@@ -69,7 +69,7 @@ Microsoft.VirtualMachineImages/imageTemplates 'helloImageTemplateforSIG01' faile
         "code": "InternalOperationError",
         "message": "Internal error occurred."
 ```
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 В большинстве случаев ошибка при развертывании ресурса возникает из-за отсутствия разрешений.
 
@@ -91,7 +91,7 @@ Build (Managed Image) step failed: Error getting Managed Image '/subscriptions/.
 ImagesClient#Get: Failure responding to request: StatusCode=403 -- Original Error: autorest/azure: Service returned an error.
 Status=403 Code="AuthorizationFailed" Message="The client '......' with object id '......' does not have authorization to perform action 'Microsoft.Compute/images/read' over scope 
 ```
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Отсутствуют разрешения.
 
@@ -111,7 +111,7 @@ Status=403 Code="AuthorizationFailed" Message="The client '......' with object i
 Build (Shared Image Version) step failed for Image Version '/subscriptions/.../providers/Microsoft.Compute/galleries/.../images/... /versions/0.23768.4001': Error getting Image Version '/subscriptions/.../resourceGroups/<rgName>/providers/Microsoft.Compute/galleries/.../images/.../versions/0.23768.4001': Error getting image version '... :0.23768.4001': compute.GalleryImageVersionsClient#Get: Failure responding to request: StatusCode=404 -- Original Error: autorest/azure: Service returned an error. 
 Status=404 Code="ResourceNotFound" Message="The Resource 'Microsoft.Compute/galleries/.../images/.../versions/0.23768.4001' under resource group '<rgName>' was not found."
 ```
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Построитель образов Azure не может нахождение исходного образа.
 
@@ -127,7 +127,7 @@ Status=404 Code="ResourceNotFound" Message="The Resource 'Microsoft.Compute/gall
 Downloading external file (<myFile>) to local file (xxxxx.0.customizer.fp) [attempt 1 of 10] failed: Error downloading '<myFile>' to 'xxxxx.0.customizer.fp'..
 ```
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Неверное имя или расположение файла, или расположение недоступно.
 
@@ -239,7 +239,7 @@ Get-AzImageBuilderTemplate -ImageTemplateName  <imageTemplateName> -ResourceGrou
    "message": "Failed while waiting for packerizer: Microservice has failed: Failed while processing request: Error when executing packerizer: Packer build command has failed: exit status 1. During the image build, a failure has occurred, please review the build log to identify which build/customization step failed. For more troubleshooting steps go to https://aka.ms/azvmimagebuilderts. Image Build log location: https://xxxxxxxxxx.blob.core.windows.net/packerlogs/xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx/customization.log. OperationId: xxxxxx-5a8c-4379-xxxx-8d85493bc791. Use this operationId to search packer logs."
 ```
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Сбой настройки.
 
@@ -269,7 +269,7 @@ Get-AzImageBuilderTemplate -ImageTemplateName  <imageTemplateName> -ResourceGrou
 Deployment failed. Correlation ID: xxxxx-xxxx-xxxx-xxxx-xxxxxxxxx. Failed in building/customizing image: Failed while waiting for packerizer: Timeout waiting for microservice to complete: 'context deadline exceeded'
 ```
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Сборка превысила время ожидания сборки. Эта ошибка отображается в "ластрунстатус".
 
@@ -302,7 +302,7 @@ hours later...
 myBigFile.zip 826000 B / 826000 B  100.00%
 [086cf9c4-0457-4e8f-bfd4-908cfe3fe43c] PACKER OUT 
 ```
-#### <a name="cause"></a>Причина: 
+#### <a name="cause"></a>Причина 
 
 Настройка файлов скачивает большой файл.
 
@@ -318,7 +318,7 @@ myBigFile.zip 826000 B / 826000 B  100.00%
 Deployment failed. Correlation ID: XXXXXX-XXXX-XXXXXX-XXXX-XXXXXX. Failed in distributing 1 images out of total 1: {[Error 0] [Distribute 0] Error publishing MDI to shared image gallery:/subscriptions/<subId>/resourceGroups/xxxxxx/providers/Microsoft.Compute/galleries/xxxxx/images/xxxxxx, Location:eastus. Error: Error returned from SIG client while publishing MDI to shared image gallery for dstImageLocation: eastus, dstSubscription: <subId>, dstResourceGroupName: XXXXXX, dstGalleryName: XXXXXX, dstGalleryImageName: XXXXXX. Error: Error waiting on shared image gallery future for resource group: XXXXXX, gallery name: XXXXXX, gallery image name: XXXXXX.Error: Future#WaitForCompletion: context has been cancelled: StatusCode=200 -- Original Error: context deadline exceeded}
 ```
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Истекло время ожидания создания образа и его репликация в общую галерею образов (SIG) в построителе образов. Если изображение внедряется в подпись, может быть, предполагается, что сборка образа выполнена успешно. Однако общий процесс завершился ошибкой, так как для завершения репликации в построителе образов Ожидалась коллекция общих образов. Несмотря на то, что сборка завершилась неудачно, Репликация продолжится. Свойства версии образа можно получить, проверив *рунаутпут*распространения.
 
@@ -380,7 +380,7 @@ az resource show \
 [45f485cf-5a8c-4379-9937-8d85493bc791] PACKER OUT Build 'azure-arm' errored: unexpected EOF
 [45f485cf-5a8c-4379-9937-8d85493bc791] PACKER OUT 
 ```
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Нехватка ресурсов. Эта проблема обычно возникает при работе Центр обновления Windows с использованием размера виртуальной машины сборки по умолчанию D1_V2.
 
@@ -407,7 +407,7 @@ az resource show \
 [a170b40d-2d77-4ac3-8719-72cdc35cf889] PACKER ERR 2020/04/30 22:29:24 waiting for all plugin processes to complete...
 Done exporting Packer logs to Azure for Packer prefix: [a170b40d-2d77-4ac3-8719-72cdc35cf889] PACKER OUT
 ```
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Время ожидания истекло из – за ожидания создания необходимых ресурсов Azure.
 
@@ -428,7 +428,7 @@ Done exporting Packer logs to Azure for Packer prefix: [a170b40d-2d77-4ac3-8719-
    "message": "network.InterfacesClient#UpdateTags: Failure responding to request: StatusCode=404 -- Original Error: autorest/azure: Service returned an error. Status=404 Code=\"ResourceNotFound\" Message=\"The Resource 'Microsoft.Network/networkInterfaces/aibpls7lz2e.nic.4609d697-be0a-4cb0-86af-49b6fe877fe1' under resource group 'IT_aibImageRG200_window2019VnetTemplate01_9988723b-af56-413a-9006-84130af0e9df' was not found.\""
   },
 ```
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Отсутствуют разрешения.
 
@@ -494,7 +494,7 @@ Done exporting Packer logs to Azure for Packer prefix: [a170b40d-2d77-4ac3-8719-
 [922bdf36-b53c-4e78-9cd8-6b70b9674685] PACKER OUT ==> azure-arm: The resource group was not created by Packer, deleting individual resources ...
 [922bdf36-b53c-4e78-9cd8-6b70b9674685] PACKER ERR ==> azure-arm: The resource group was not created by Packer, deleting individual resources ...
 ```
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Причиной может быть ошибка времени, обусловленная D1_V2 размером виртуальной машины. Если настройки ограничены и выполняются менее трех секунд, команды Sysprep запускаются построителем образов Azure для отмены инициализации. При отмене подготовки построителя образов Azure команда Sysprep проверяет наличие *виндовсазурегуестажент*, которые могут быть не полностью установлены, что приводит к возникновению проблемы с синхронизацией. 
 
@@ -518,11 +518,11 @@ PACKER ERR 2020/03/26 22:11:25 [INFO] 0 bytes written for 'stderr'
 PACKER ERR 2020/03/26 22:11:25 [INFO] RPC client: Communicator ended with: 2300218
 PACKER ERR 2020/03/26 22:11:25 [INFO] RPC endpoint: Communicator ended with: 2300218
 ```
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 Служба Image Builder использует порт 22 (Linux) или 5986 (Windows) для подключения к виртуальной машине сборки. это происходит, когда служба отключается от виртуальной машины сборки во время сборки образа. Причины отключения могут различаться, но включение или Настройка брандмауэров в сценарии может заблокировать указанные выше порты.
 
 #### <a name="solution"></a>Решение
-Проверьте свои сценарии на наличие изменений или включения брандмауэра, а также измените протокол SSH или WinRM и убедитесь, что все изменения обеспечивают постоянное подключение между службой и создание виртуальной машины на указанных выше портах. Дополнительные сведения о сетях с помощью Image Builder см. в [требованиях](https://docs.microsoft.com/azure/virtual-machines/linux/image-builder-networking).
+Проверьте свои сценарии на наличие изменений или включения брандмауэра, а также измените протокол SSH или WinRM и убедитесь, что все изменения обеспечивают постоянное подключение между службой и создание виртуальной машины на указанных выше портах. Дополнительные сведения о сетях с помощью Image Builder см. в [требованиях](./image-builder-networking.md).
 
 ## <a name="devops-task"></a>Задание DevOps 
 
@@ -547,7 +547,7 @@ template name:  t_1556938436xxx
 ### <a name="troubleshooting-successful-builds"></a>Устранение неполадок сборок
 Возможно, в некоторых случаях требуется исследовать успешные сборки и просмотреть журнал. Как уже упоминалось, при успешном завершении сборки образа промежуточная группа ресурсов, содержащая журналы, будет удалена в процессе очистки. Однако, что можно сделать, представляет собой спящий режим после встроенной команды, а затем получает журналы по мере приостановки сборки. Для этого выполните следующие действия.
  
-1. Обновите встроенную команду и добавьте: Write-Host/echo "сон" — это позволит вам искать в журнале.
+1. Обновите встроенную команду и добавьте: Write-Host/echo "Sleep" — это позволит выполнять поиск в журнале.
 2. Добавьте спящий режим по крайней мере для 10mins. можно использовать команду [запуска в спящем режиме](/powershell/module/microsoft.powershell.utility/start-sleep)или `Sleep` Linux.
 3. Используйте приведенный выше метод, чтобы указать расположение журнала, а затем сохраните и проверяя журнал, пока он не перейдет в спящий режим.
 
@@ -582,11 +582,11 @@ template name:  t_1556938436xxx
 2020-05-05T19:33:14.3923479Z ##[error]The operation was canceled.
 2020-05-05T19:33:14.3939721Z ##[section]Finishing: Azure VM Image Builder Task
 ```
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Если сборка не была отменена пользователем, она была отменена агентом пользователя Azure DevOps. Скорее всего, время ожидания в 1 час истекло из-за возможностей Azure DevOps. Если вы используете частный проект и агент, вы получаете 60 минут времени сборки. Если сборка превышает время ожидания, DevOps отменяет выполняемую задачу.
 
-Дополнительные сведения о возможностях и ограничениях Azure DevOps см. в разделе [агенты, размещенные в Майкрософт](https://docs.microsoft.com/azure/devops/pipelines/agents/hosted?view=azure-devops#capabilities-and-limitations)
+Дополнительные сведения о возможностях и ограничениях Azure DevOps см. в разделе [агенты, размещенные в Майкрософт](/azure/devops/pipelines/agents/hosted?view=azure-devops#capabilities-and-limitations)
  
 #### <a name="solution"></a>Решение
 
@@ -601,7 +601,7 @@ Please wait for the Windows Modules Installer
 ```
 
 #### <a name="solution"></a>Решение
-Во-первых, в сборке образа проверяется отсутствие необработанных перезагрузок, необходимых для добавления средства настройки перезапуска Windows в качестве последней настройки и завершения установки всех программ. Наконец, добавьте параметр [/mode: VM](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep-command-line-options) в Sysprep по умолчанию, который AIB использует, см. ниже, "виртуальные машины, созданные из образов AIB", не создаются успешно, > переопределение команд  
+Во-первых, в сборке образа проверяется отсутствие необработанных перезагрузок, необходимых для добавления средства настройки перезапуска Windows в качестве последней настройки и завершения установки всех программ. Наконец, добавьте параметр [/mode: VM](/windows-hardware/manufacture/desktop/sysprep-command-line-options) в Sysprep по умолчанию, который AIB использует, см. ниже, "виртуальные машины, созданные из образов AIB", не создаются успешно, > переопределение команд  
 
  
 ## <a name="vms-created-from-aib-images-do-not-create-successfully"></a>Виртуальные машины, созданные из образов AIB, не создаются успешно

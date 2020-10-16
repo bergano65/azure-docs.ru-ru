@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 09/23/2020
 ms.openlocfilehash: b6689220873aaeb65337ba480e346e5d2c8020ce
-ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91707869"
 ---
 # <a name="logical-replication-and-logical-decoding-in-azure-database-for-postgresql---flexible-server"></a>Логическая репликация и логическая декодирование в базе данных Azure для PostgreSQL — гибкий сервер
@@ -178,7 +178,7 @@ SELECT * FROM pg_replication_slots;
 * **Чтение реплик** . в настоящее время реплики чтения базы данных Azure для PostgreSQL не поддерживаются для гибких серверов.
 * **Слоты и отработка отказа с высокой** доступностью — разъемы логических репликаций на сервере-источнике недоступны на резервном сервере во вторичной базе данных AZ. Это относится к вам, если сервер использует параметр высокой доступности с избыточностью зоны. В случае отработки отказа на резервный сервер слоты логических репликаций не будут доступны в режиме ожидания.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Дополнительные сведения о [параметрах сети](concepts-networking.md)
 * Дополнительные сведения о [расширениях](concepts-extensions.md) , доступных на гибком сервере
 * Дополнительные сведения о [высокой доступности](concepts-high-availability.md)

@@ -7,10 +7,10 @@ ms.topic: how-to
 ms.date: 02/05/2018
 ms.author: jejiang
 ms.openlocfilehash: a99196cfad7abad38408c847a8a0b64ffe95fff5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85508798"
 ---
 # <a name="manage-azure-data-lake-storage-gen1-resources-by-using-storage-explorer"></a>Управление ресурсами Azure Data Lake Storage 1-го поколения с помощью обозревателя службы хранилища
@@ -19,7 +19,7 @@ ms.locfileid: "85508798"
 
 Другое преимущество заключается в том, что вам не нужно разрешение в подписке для управления данными Data Lake Storage 1-го поколения. В обозревателе службы хранилища вы можете добавить путь Data Lake Storage 1-го поколения к узлу **Локальные и присоединенные**, пока действует соответствующее разрешение.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы выполнить действия, описанные в этой статье, необходимо следующее.
 
@@ -142,7 +142,7 @@ ms.locfileid: "85508798"
 1. Выберите папки или файлы, которые вы хотите загрузить.
 2. На панели инструментов в основной области нажмите кнопку **Скачать**.
 3. В диалоговом окне **Select a folder to save the downloaded files into** (Выбор папки, куда нужно сохранить загруженные файлы) укажите расположение и имя.
-4. Нажмите кнопку **Сохранить**.
+4. Щелкните **Сохранить**.
 
 ### <a name="open-a-folder-or-file-from-your-local-computer"></a>Открытие папки или файла с локального компьютера
 
@@ -192,7 +192,7 @@ ms.locfileid: "85508798"
 
 ![Прямая ссылка в проводнике](./media/data-lake-store-in-storage-explorer/storageexplorer-adls-deep-link.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Последние заметки о выпуске Обозревателя службы хранилищ и связанные с ним видео см. [здесь](https://www.storageexplorer.com).
 * Узнайте, как [управлять Azure Cosmos DB в обозреватель службы хранилища Azure](https://docs.microsoft.com/azure/cosmos-db/storage-explorer).

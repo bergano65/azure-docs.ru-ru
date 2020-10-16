@@ -4,10 +4,10 @@ description: Узнайте, как зашифровать данные прил
 ms.topic: article
 ms.date: 03/06/2020
 ms.openlocfilehash: 62bb1e51bada155b98fe46740662b86b753d44fa
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90978476"
 ---
 # <a name="encryption-at-rest-using-customer-managed-keys"></a>Шифрование неактивных с помощью управляемых клиентом ключей
@@ -99,7 +99,7 @@ az webapp config appsettings set --name <app-name> --resource-group <resource-gr
 
 Вы можете отозвать доступ веб-приложения к данным сайта, отключив доступ веб-приложения к Key Vault. Для этого удалите политику доступа для удостоверения веб-приложения. Это то же удостоверение, которое вы создали ранее при настройке ссылок на хранилище ключей.
 
-## <a name="summary"></a>Сводка
+## <a name="summary"></a>Итоги
 
 Теперь файлы приложения шифруются в вашей учетной записи хранения. При запуске веб-приложения он получает URL-адрес SAS из хранилища ключей. Наконец, веб-приложение загружает файлы приложения из учетной записи хранения. 
 
@@ -117,7 +117,7 @@ az webapp config appsettings set --name <app-name> --resource-group <resource-gr
 - Форматы TAR и GZIP не поддерживаются.
 - Эта функция несовместима с локальным кэшем.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Key Vault ссылки для службы приложений](app-service-key-vault-references.md)
 - [Шифрование службы хранилища Azure для неактивных данных](../storage/common/storage-service-encryption.md)

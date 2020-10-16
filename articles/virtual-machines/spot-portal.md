@@ -9,10 +9,10 @@ ms.date: 09/14/2020
 ms.author: cynthn
 ms.reviewer: jagaveer
 ms.openlocfilehash: 0da650646c35a9a663dd29589f963d23cbe552cf
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91828614"
 ---
 # <a name="deploy-spot-vms-using-the-azure-portal"></a>Развертывание плашечных виртуальных машин с помощью портал Azure
@@ -62,6 +62,6 @@ ms.locfileid: "91828614"
 POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachines/{vmName}/simulateEviction?api-version=2020-06-01
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Вы также можете создавать плашечные виртуальные машины с помощью [PowerShell](./windows/spot-powershell.md), [CLI](./linux/spot-cli.md)или [шаблона](./linux/spot-template.md).

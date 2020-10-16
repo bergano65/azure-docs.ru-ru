@@ -12,10 +12,10 @@ ms.date: 09/09/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.openlocfilehash: b71c78f484eef0fc4d9c34a2f218a177dbffa0a8
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91257522"
 ---
 # <a name="desktop-app-that-calls-web-apis-app-registration"></a>Классическое приложение, вызывающее веб-API: регистрация приложения
@@ -57,7 +57,7 @@ URI перенаправления для использования в клас
 
 Классические приложения вызывают интерфейсы API для пользователя, выполнившего вход. Они должны запрашивать делегированные разрешения. Они не могут запрашивать разрешения приложения, которые обрабатываются только в [управляющих приложениях](scenario-daemon-overview.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Классическое приложение: Конфигурация приложения](scenario-desktop-app-configuration.md)

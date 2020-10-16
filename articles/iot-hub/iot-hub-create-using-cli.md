@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 08/23/2018
 ms.author: robinsh
 ms.openlocfilehash: 69372e4c212e2ce81bcd4c91d460aa191a1d3476
-ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90087870"
 ---
 # <a name="create-an-iot-hub-using-the-azure-cli"></a>Создание Центра Интернета вещей с помощью Azure CLI
@@ -20,9 +20,9 @@ ms.locfileid: "90087870"
 
 В этой статье показано, как создать Центр Интернета вещей с помощью Azure CLI.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим руководством вам потребуется подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Для работы с этим руководством вам потребуется подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -72,14 +72,14 @@ ms.locfileid: "90087870"
 
 Вы можете использовать Azure CLI, чтобы [удалить отдельный ресурс](https://docs.microsoft.com/cli/azure/resource), например Центр Интернета вещей, или группу ресурсов со всеми ресурсами, включая любые Центры Интернета вещей.
 
-Чтобы [удалить Центр Интернета](https://docs.microsoft.com/cli/azure/iot/hub#az-iot-hub-delete) вещей, выполните следующую команду:
+Чтобы [удалить центр Интернета вещей](https://docs.microsoft.com/cli/azure/iot/hub#az-iot-hub-delete), выполните следующую команду:
 
 ```azurecli-interactive
 az iot hub delete --name {your iot hub name} -\
   -resource-group {your resource group name}
 ```
 
-Чтобы [удалить группу ресурсов](https://docs.microsoft.com/cli/azure/group#az-group-delete) со всеми ресурсами, выполните следующую команду:
+Чтобы [Удалить группу ресурсов](https://docs.microsoft.com/cli/azure/group#az-group-delete) и все ее ресурсы, выполните следующую команду:
 
 ```azurecli-interactive
 az group delete --name {your resource group name}

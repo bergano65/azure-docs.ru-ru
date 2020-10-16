@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 12/24/2019
 ms.author: ramamill
 ms.openlocfilehash: 01aef3aca4f6967b1681bff9598c7dd7a24739cd
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84692527"
 ---
 # <a name="manage-vmware-vcenter-server"></a>Управление VMware vCenter Server
@@ -120,6 +120,6 @@ ms.locfileid: "84692527"
 1. [Добавьте старый vCenter Server](#add-vmware-server-to-the-vault) и его IP-адрес на сервер конфигурации.
 1. [Повторно включите репликацию](vmware-azure-tutorial.md#enable-replication) для виртуальных машин, оставшихся на старом сервере.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если у вас возникнут проблемы, см. раздел [Устранение неполадок vCenter Server обнаружения](vmware-azure-troubleshoot-vcenter-discovery-failures.md).

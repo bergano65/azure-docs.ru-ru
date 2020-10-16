@@ -8,12 +8,12 @@ ms.date: 06/09/2020
 ms.author: owend
 ms.reviewer: minewiskan
 ms.custom: references_regions
-ms.openlocfilehash: 4844f3e34a6b49559affbb4d4ed7bc5b5e38e538
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 1f7ecf960ae94fae4d829e73daf051b9062e478d
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87050367"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92018200"
 ---
 # <a name="move-analysis-services-to-a-different-region"></a>Переместить Analysis Services в другой регион
 
@@ -48,13 +48,13 @@ ms.locfileid: "87050367"
 > [!NOTE]
 > При использовании локального шлюза данных для подключения к источникам данных необходимо также переместить ресурс шлюза в регион целевого сервера. Дополнительные сведения см. в статье [Установка и настройка локального шлюза данных](analysis-services-gateway-install.md).
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные условия
 
 - **Учетная запись хранения Azure**: требуется для хранения ABF файла резервной копии.
 - **SQL Server Management Studio (SSMS)**: требуется для резервного копирования и восстановления баз данных модели.
 - **Azure PowerShell**. Требуется только в том случае, если вы решили выполнить эту задачу с помощью PowerShell.
 
-## <a name="prepare"></a>Подготовка
+## <a name="prepare"></a>Подготовка.
 
 ### <a name="backup-model-databases"></a>Резервное копирование баз данных
 
@@ -88,7 +88,7 @@ ms.locfileid: "87050367"
 
 Чтобы экспортировать шаблон с помощью PowerShell, выполните следующие действия.
 
-1. С помощью команды [Connect-AzAccount](https://docs.microsoft.com/powershell/module/az.accounts/connect-azaccount?view=azps-2.5.0) войдите в подписку Azure и следуйте инструкциям на экране:
+1. С помощью команды [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount?view=azps-2.5.0) войдите в подписку Azure и следуйте инструкциям на экране:
 
    ```azurepowershell-interactive
    Connect-AzAccount
@@ -177,7 +177,7 @@ ms.locfileid: "87050367"
 
 #### <a name="regions"></a>Регионы
 
-Чтобы получить регионы Azure, см. раздел [расположения Azure](https://azure.microsoft.com/global-infrastructure/locations/). Чтобы получить регионы с помощью PowerShell, выполните команду [Get-азлокатион](https://docs.microsoft.com/powershell/module/az.resources/get-azlocation?view=azps-1.8.0) .
+Чтобы получить регионы Azure, см. раздел [расположения Azure](https://azure.microsoft.com/global-infrastructure/locations/). Чтобы получить регионы с помощью PowerShell, выполните команду [Get-азлокатион](/powershell/module/az.resources/get-azlocation?view=azps-1.8.0) .
 
 ```azurepowershell-interactive
    Get-AzLocation | format-table 
@@ -195,7 +195,7 @@ ms.locfileid: "87050367"
 
 3. Выберите **шаблоны развертывания**.
 
-4. Выберите **Создать**.
+4. Нажмите кнопку **создания**.
 
 5. Выберите **Создать собственный шаблон в редакторе**.
 
@@ -278,7 +278,7 @@ ms.locfileid: "87050367"
 
 Необязательно. [набор ALM Toolkit](http://alm-toolkit.com/) — это инструмент с *открытым исходным кодом* для сравнения и управления Power BI наборами данных *и* Analysis Services табличными моделями. Используйте набор средств для подключения к базам данных исходного и целевого сервера и сравнения. Если миграция базы данных прошла успешно, объекты модели будут иметь то же определение. 
 
-:::image type="content" source="media/move-between-regions/alm-toolkit.png" alt-text="Набор средств ALM":::
+:::image type="content" source="media/move-between-regions/alm-toolkit.png" alt-text="Получение SAS":::
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -292,7 +292,7 @@ ms.locfileid: "87050367"
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-Чтобы удалить исходный сервер с помощью PowerShell, используйте команду Remove-Азаналисиссервицессервер.
+Чтобы удалить исходный сервер с помощью PowerShell, используйте команду Remove-AzAnalysisServicesServer.
 
 ```azurepowershell-interactive
 Remove-AzAnalysisServicesServer -Name "myserver" -ResourceGroupName "myResourceGroup"
@@ -301,4 +301,4 @@ Remove-AzAnalysisServicesServer -Name "myserver" -ResourceGroupName "myResourceG
 ---
 
 > [!NOTE]
-> После завершения перемещения региона рекомендуется, чтобы новый целевой сервер использовал контейнер хранилища в том же регионе для резервных копий, а не контейнер хранилища в регионе исходного сервера. 
+> После завершения перемещения региона рекомендуется, чтобы новый целевой сервер использовал контейнер хранилища в том же регионе для резервных копий, а не контейнер хранилища в регионе исходного сервера.

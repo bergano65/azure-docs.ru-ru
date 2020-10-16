@@ -18,10 +18,10 @@ ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 74c9cd1c55f1b0dde173a7ffbeac92e5518db81e
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88005811"
 ---
 # <a name="license-requirements-to-use-privileged-identity-management"></a>License requirements to use Privileged Identity Management (Требования к лицензии для использования PIM)
@@ -68,7 +68,7 @@ ms.locfileid: "88005811"
 - Все текущие проверки доступа к ролям Azure AD будут завершаться, а управление привилегированными пользователями параметры конфигурации будут удалены.
 - Управление привилегированными пользователями больше не будет отсылать сообщения электронной почты об изменениях назначения ролей.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Deploy Azure AD Privileged Identity Management (PIM)](pim-deployment-plan.md) (Развертывание Azure AD Privileged Identity Management (PIM))
 - [Начало работы с управлением привилегированными пользователями](pim-getting-started.md)

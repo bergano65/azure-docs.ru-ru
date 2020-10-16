@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: tutorial
-ms.date: 07/10/2020
+ms.date: 10/01/2020
 ms.author: alkohli
-ms.openlocfilehash: 301c75df6bedf430af64bbeff63f2eb759691355
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: bd8e6d4175c57bd31c3fd83bf6f9669d2b65ffb2
+ms.sourcegitcommit: 487a9f5272300d60df2622c3d13e794d54680f90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86208910"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91660855"
 ---
 # <a name="tutorial-copy-data-from-azure-data-box-via-nfs-preview"></a>Руководство по Копирование данных из Azure Data Box через NFS (предварительная версия)
 
@@ -45,15 +45,17 @@ ms.locfileid: "86208910"
 
 [!INCLUDE [data-box-shares](../../includes/data-box-shares.md)]
 
-Если вы используете главный компьютер с ОС Linux, то выполните указанные ниже действия, чтобы настроить Data Box для доступа к NFS-клиентам.
+Если вы используете главный компьютер с ОС Linux, то выполните указанные ниже действия, чтобы настроить Data Box для доступа к NFS-клиентам. Data Box может одновременно подключаться к нескольким клиентам NFS (до пяти).
 
-1. Укажите IP-адреса клиентов, которым разрешен доступ к общей папке. В локальном пользовательском веб-интерфейсе перейдите на страницу **Подключение и копирование**. В разделе **Параметры NFS** щелкните **Клиентский доступ NFS**. 
+1. Укажите IP-адреса клиентов, которым разрешен доступ к общей папке.
 
-    ![Настройка клиентского доступа NFS 1](media/data-box-deploy-export-copy-data/nfs-client-access-1.png)
+    1.  В локальном пользовательском веб-интерфейсе перейдите на страницу **Подключение и копирование**. В разделе **Параметры NFS** щелкните **Клиентский доступ NFS**. 
 
-2. Укажите IP-адрес NFS-клиента и щелкните **Добавить**. Вы можете настроить доступ для нескольких NFS-клиентов, выполнив это действие для каждого клиента. Нажмите кнопку **ОК**.
+        ![Открытие клиентского доступа NFS](media/data-box-deploy-export-copy-data/nfs-client-access-1.png)
 
-    ![Настройка клиентского доступа NFS 2](media/data-box-deploy-export-copy-data/nfs-client-access-2.png)
+    1. Чтобы добавить клиент NFS, укажите IP-адрес клиента и щелкните **Добавить**. Data Box может одновременно подключаться к нескольким клиентам NFS (до пяти). По завершении нажмите кнопку **ОК**.
+
+         ![Добавление клиента NFS](media/data-box-deploy-export-copy-data/nfs-client-access-2.png)
 
 2. Убедитесь, что на главном компьютере с ОС Linux установлен NFS-клиент [поддерживаемой версии](data-box-system-requirements.md). Используйте версию, подходящую для используемого вами дистрибутива ОС Linux. 
 
@@ -130,7 +132,7 @@ ms.locfileid: "86208910"
 >
 > * Предварительные требования
 > * подключение к Data Box;
-> * Копирование данных из Data Box
+> * копирование данных из Data Box.
 
 Перейдите к следующему руководству, чтобы узнать, как отправить свой Data Box обратно в корпорацию Майкрософт.
 

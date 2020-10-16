@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: how-to
 ms.date: 9/21/2020
 ms.openlocfilehash: c8251eb2a89a7481ebc981f2b89668c363651b39
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91315020"
 ---
 # <a name="manage-scheduled-maintenance-settings-for-azure-database-for-mysql--flexible-server"></a>Управление параметрами запланированного обслуживания для базы данных Azure для MySQL — гибкого сервера
@@ -33,7 +33,7 @@ ms.locfileid: "91315020"
  
 Службу работоспособности служб Azure можно использовать для [просмотра уведомлений](../../service-health/service-notifications.md) о предстоящем и запланированном обслуживании на гибком сервере. Вы также можете [настроить](../../service-health/resource-health-alert-monitor-guide.md) оповещения в службе "работоспособность служб Azure", чтобы получать уведомления о событиях обслуживания.
  
-## <a name="next-steps"></a>Дальнейшие действия  
+## <a name="next-steps"></a>Дальнейшие шаги  
  
 * Сведения о [плановом обслуживании в базе данных Azure для MySQL — гибком сервере](concepts-maintenance.md)
 * Экономичность [службы работоспособности служб Azure](../../service-health/overview.md)

@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d1d364089d5df24cfc4e7a75c3fd6b81248f0cd6
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91313320"
 ---
 # <a name="identity-synchronization-and-duplicate-attribute-resiliency"></a>Синхронизация удостоверений и устойчивость повторяющихся атрибутов
@@ -101,7 +101,7 @@ _** \<OriginalPrefix> + \<4DigitNumber> \@ \<InitialTenantDomain> . onmicrosoft.
 
 `Get-MsolDirSyncProvisioningError -ErrorCategory PropertyConflict -PropertyName UserPrincipalName`
 
-либо
+Или
 
 `Get-MsolDirSyncProvisioningError -ErrorCategory PropertyConflict -PropertyName ProxyAddresses`
 
@@ -147,7 +147,7 @@ _** \<OriginalPrefix> + \<4DigitNumber> \@ \<InitialTenantDomain> . onmicrosoft.
 1. Объекты с определенными конфигурациями атрибутов по-прежнему вызывают ошибки экспорта вместо помещения в карантин повторяющихся атрибутов.  
    Пример:
    
-    а. Новый пользователь создается в AD с именем участника-пользователя **джо \@ contoso.com** и proxyAddress **SMTP: Джо \@ contoso.com**
+    a. Новый пользователь создается в AD с именем участника-пользователя **джо \@ contoso.com** и proxyAddress **SMTP: Джо \@ contoso.com**
    
     b. Свойства этого объекта конфликтуют с существующей группой, где ProxyAddress — это **SMTP: джо \@ contoso.com**.
    
@@ -159,7 +159,7 @@ _** \<OriginalPrefix> + \<4DigitNumber> \@ \<InitialTenantDomain> . onmicrosoft.
 1. Подробное сообщение об ошибке для двух объектов в конфликте, связанном с именем UPN, содержит одинаковые сведения. Это означает, что свойство UPN обоих объектов изменено или помещено на карантин, но на самом деле данные изменились только в одном объекте.
 2. Подробное сообщение об ошибке, связанное с конфликтом UPN, показывает неправильное свойство displayName пользователя, имя UPN которого изменено или помещено на карантин. Пример:
    
-    а. Сначала **пользователь A** выполняет синхронизацию с **UPN = user \@ contoso.com**.
+    a. Сначала **пользователь A** выполняет синхронизацию с **UPN = user \@ contoso.com**.
    
     b. Попытка синхронизации **пользователя б** выполняется следующим с **именем участника-пользователя (UPN = user \@ contoso.com**).
    

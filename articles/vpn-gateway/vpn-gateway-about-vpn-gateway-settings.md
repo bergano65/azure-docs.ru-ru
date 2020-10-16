@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 09/16/2020
 ms.author: cherylmc
 ms.openlocfilehash: 18367ec163511fac2e90cc5dd0dd0ad6b091afc9
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90976222"
 ---
 # <a name="about-vpn-gateway-configuration-settings"></a>Сведения о параметрах конфигурации VPN-шлюза
@@ -39,7 +39,7 @@ VPN-шлюз — это разновидность шлюза виртуаль�
 
 Для VPN-шлюза требуется `-GatewayType` *Vpn*.
 
-Пример:
+Пример.
 
 ```azurepowershell-interactive
 New-AzVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg `

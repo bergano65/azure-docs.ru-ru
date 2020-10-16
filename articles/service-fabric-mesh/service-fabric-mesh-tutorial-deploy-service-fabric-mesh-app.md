@@ -1,17 +1,17 @@
 ---
 title: Руководство. Развертывание приложения Сетки Service Fabric
 description: Узнайте, как использовать Visual Studio, чтобы опубликовать приложение Сетки Azure Service Fabric, состоящее из веб-сайта ASP.NET Core, который обменивается данными с северной веб-службой.
-author: dkkapur
+author: georgewallace
 ms.topic: tutorial
 ms.date: 09/18/2018
-ms.author: dekapur
+ms.author: gwallace
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 3f0dca5aa9e430fa21d09509121a7ad26feda446
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 6305bdd8c892bb0323cd4f7dc61b7ad22652ed73
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86261319"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91842739"
 ---
 # <a name="tutorial-deploy-a-service-fabric-mesh-application"></a>Руководство по Развертывание приложения Сетки Service Fabric.
 

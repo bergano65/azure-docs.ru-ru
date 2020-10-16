@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 09/30/2020
 ms.custom: seodec18
 ms.openlocfilehash: fb409673e028375812551ec146b43c27e3755d2a
-ms.sourcegitcommit: ffa7a269177ea3c9dcefd1dea18ccb6a87c03b70
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91595535"
 ---
 # <a name="best-practices-for-choosing-a-time-series-id"></a>Лучшие методики при выборе идентификатора временного ряда
@@ -82,7 +82,7 @@ ms.locfileid: "91595535"
   > В портал Azure не вводите имена свойств с разделителями-запятыми в одном почта. в противном случае оно будет рассматриваться как одно имя свойства, содержащее запятые.
   > Введите имя каждого свойства в собственный почта.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Ознакомьтесь с [правилами преобразования и экранирования JSON](./concepts-json-flattening-escaping-rules.md) , чтобы понять, как будут храниться события.
 

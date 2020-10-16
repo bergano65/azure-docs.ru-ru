@@ -17,10 +17,10 @@ ms.author: barclayn
 ms.reviewer: hanki
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: cf6e02ebad2ac5150be4775ad0ff6069fe3db89f
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90980043"
 ---
 # <a name="create-and-manage-a-catalog-of-resources-in-azure-ad-entitlement-management"></a>Создание каталога ресурсов и управление им в управлении назначением Azure AD
@@ -71,7 +71,7 @@ ms.locfileid: "90980043"
 
 1. Выберите тип ресурса: **группы и команды**, **приложения**или **сайты SharePoint**.
 
-    Если вы не видите ресурс, который вы хотите добавить, или не можете добавить ресурс, убедитесь, что у вас есть необходимая роль каталога Azure AD и роль управления назначением. Может потребоваться, чтобы кто-то с необходимыми ролями добавит ресурс в каталог. Дополнительные сведения см. [в разделе необходимые роли для добавления ресурсов в каталог](entitlement-management-delegate.md#required-roles-to-add-resources-to-a-catalog).
+    Если вы не видите ресурс, который вы хотите добавить, или не можете добавить ресурс, убедитесь, что у вас есть необходимая роль каталога Azure AD и роль управления назначением. Может потребоваться, чтобы кто-то с необходимыми ролями добавит ресурс в каталог. Дополнительные сведения см. в разделе [Роли, требуемые для добавления ресурсов в каталог](entitlement-management-delegate.md#required-roles-to-add-resources-to-a-catalog).
 
 1. Выберите один или несколько ресурсов типа, которые вы хотите добавить в каталог.
 
@@ -138,7 +138,7 @@ ms.locfileid: "90980043"
 
     ![Изменить параметры каталога](./media/entitlement-management-shared/catalog-edit.png)
 
-1. Нажмите **Сохранить**.
+1. Выберите команду **Сохранить**.
 
 ## <a name="delete-a-catalog"></a>Удаление каталога
 
@@ -158,6 +158,6 @@ ms.locfileid: "90980043"
 
 Также можно удалить каталог с помощью Microsoft Graph.  Пользователь в соответствующей роли с приложением с делегированным `EntitlementManagement.ReadWrite.All` разрешением может вызвать API для [удаления акцесспаккажекаталог](/graph/api/accesspackagecatalog-delete?view=graph-rest-beta).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Делегирование управления доступом для доступа к диспетчерам пакетов](entitlement-management-delegate-managers.md)

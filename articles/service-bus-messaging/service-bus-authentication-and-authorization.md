@@ -4,10 +4,10 @@ description: Аутентификация приложений в служебн
 ms.topic: article
 ms.date: 06/23/2020
 ms.openlocfilehash: d5d0ed03c869bd574e4cfaa52ac7b62e8cb7fb98
-ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88066868"
 ---
 # <a name="service-bus-authentication-and-authorization"></a>Аутентификация и авторизация в служебной шине
@@ -48,7 +48,7 @@ ms.locfileid: "88066868"
 > [!IMPORTANT]
 > Если вы используете Azure Active Directory управления доступом (также известный как служба контроля доступа или ACS) с служебной шиной, обратите внимание, что поддержка этого метода теперь ограничена, и вы должны [перенести приложение для использования SAS](service-bus-migrate-acs-sas.md) или использовать проверку подлинности OAuth 2,0 в Azure AD (рекомендуется). Дополнительные сведения об устаревании ACS см. в [этой записи блога](/archive/blogs/servicebus/upcoming-changes-to-acs-enabled-namespaces).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о проверке подлинности в Azure AD см. в следующих статьях:
 
 - [Проверка подлинности с помощью управляемых удостоверений](service-bus-managed-service-identity.md)

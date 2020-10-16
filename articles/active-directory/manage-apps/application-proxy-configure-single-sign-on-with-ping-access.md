@@ -17,10 +17,10 @@ ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 512aed93906968b14f7c6a13e08f74bbeb2f5f31
-ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87431091"
 ---
 # <a name="header-based-authentication-for-single-sign-on-with-application-proxy-and-pingaccess"></a>Аутентификация на основе заголовка для единого входа с использованием прокси приложения и PingAccess
@@ -144,8 +144,8 @@ Azure Active Directory прокси приложения (Azure AD) взаимо
 
 | Имя поля Azure AD | Имя поля PingAccess | Формат данных |
 | --- | --- | --- |
-| **Идентификатор приложения (клиента)** | **Идентификатор клиента** | GUID |
-| **Идентификатор каталога (клиента)** | **Издатель** | GUID |
+| **Идентификатор приложения (клиента)** | **Идентификатор клиента** | Код GUID |
+| **Идентификатор каталога (клиента)** | **Издатель** | Код GUID |
 | `PingAccess key` | **Секрет клиента** | Произвольная строка |
 
 Чтобы получить эти сведения, сделайте следующее:
@@ -206,7 +206,7 @@ Azure Active Directory прокси приложения (Azure AD) взаимо
 >
 > Определение политики и назначение можно выполнять с помощью PowerShell или Microsoft Graph. Если вы делаете это в PowerShell, то, возможно, потребуется сначала использовать `New-AzureADPolicy` и назначить его приложению с помощью `Add-AzureADServicePrincipalPolicy` . Дополнительные сведения см. в разделе [Назначение политики сопоставления утверждений](../develop/active-directory-claims-mapping.md#claims-mapping-policy-assignment).
 
-Пример:
+Пример.
 ```powershell
 $pol = New-AzureADPolicy -Definition @('{"ClaimsMappingPolicy":{"Version":1,"IncludeBasicClaimSet":"true", "ClaimsSchema": [{"Source":"user","ID":"employeeid","JwtClaimType":"employeeid"}]}}') -DisplayName "AdditionalClaims" -Type "ClaimsMappingPolicy"
 

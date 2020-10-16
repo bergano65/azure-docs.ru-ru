@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 05/29/2019
 ms.author: apimpm
 ms.openlocfilehash: 043a3d0b63dfc74f587b58b3c2ac42f1a084cc4a
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86250317"
 ---
 # <a name="manage-protocols-and-ciphers-in-azure-api-management"></a>Управление протоколами и шифрами в службе управления API Azure
@@ -27,7 +27,7 @@ ms.locfileid: "86250317"
 
 ![Управление протоколами и шифрами в APIM](./media/api-management-howto-manage-protocols-ciphers/api-management-protocols-ciphers.png)
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы выполнить шаги в этой статье, необходимо иметь следующее:
 
@@ -38,7 +38,7 @@ ms.locfileid: "86250317"
 1. Перейдите к **экземпляру службы управления API** на портале Azure.
 2. В меню выберите пункт **параметры протокола** .  
 3. Включите или отключите нужные протоколы или шифры.
-4. Нажмите кнопку **Сохранить**. Изменения будут применены в течение часа.  
+4. Выберите команду **Сохранить**. Изменения будут применены в течение часа.  
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

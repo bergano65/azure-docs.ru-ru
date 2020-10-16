@@ -7,10 +7,10 @@ ms.topic: reference
 ms.date: 03/16/2020
 ms.subservice: alerts
 ms.openlocfilehash: d86c6d8b67546aede86a3fc3c905f6feb40d92db
-ms.sourcegitcommit: dc68a2c11bae2e9d57310d39fbed76628233fd7f
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91403421"
 ---
 # <a name="troubleshooting-problems-in-azure-monitor-alerts"></a>Устранение неполадок в Azure Monitor оповещениях
@@ -248,6 +248,6 @@ Azure Monitor оповещения заблаговременно уведомл
     Проверьте [документацию по правилу действий](alerts-action-rules.md)или команду [PowerShell Set-азактионруле в правиле действий](/powershell/module/az.alertsmanagement/set-azactionrule?view=azps-3.5.0) . 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Если используется оповещение журнала, см. также раздел [Устранение неполадок с оповещениями журнала](./alerts-troubleshoot-log.md).
 - Вернитесь к [портал Azure](https://portal.azure.com) , чтобы проверить, решена ли ваша ошибка с помощью приведенных выше инструкций. 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
-ms.openlocfilehash: 7dd13df6222f6441b7edb2bd9a789c1f102168d7
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 596a6657018658d2d00abe7f221ffae9a6730a7a
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88554980"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91826456"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-flatter-files"></a>Руководство. Интеграция Azure Active Directory с Flatter Files
 
@@ -121,11 +121,11 @@ ms.locfileid: "88554980"
 
 2. Щелкните **Панель мониторинга**. 
    
-    ![Настройка единого входа](./media/flatter-files-tutorial/tutorial_flatter_files_05.png)  
+    ![Снимок экрана, на котором показан раздел "DASHBOARD" (Панель мониторинга), выбранный в приложении Flatter Files](./media/flatter-files-tutorial/tutorial_flatter_files_05.png)  
 
 3. Выберите элемент **Settings** (Параметры), а затем выполните следующие действия на вкладке **Company** (Компания). 
    
-    ![Настройка единого входа](./media/flatter-files-tutorial/tutorial_flatter_files_06.png)  
+    ![Снимок экрана, на котором показана вкладка "Company" (Организация) с установленным флажком "Use SAML 2.0 For Authentication" (Использовать SAML 2.0 для проверки подлинности) и выбранной кнопкой "Configure SAML" (Настроить SAML)](./media/flatter-files-tutorial/tutorial_flatter_files_06.png)  
     
     а. Установите флажок **Use SAML 2.0 For Authentication**(Использовать SAML 2.0 для проверки подлинности).
     
@@ -207,7 +207,7 @@ ms.locfileid: "88554980"
 
 2. В области навигации слева щелкните **Settings** (Параметры), а затем выберите вкладку **Users** (Пользователи).
    
-    ![Создание пользователя Flatter Files](./media/flatter-files-tutorial/tutorial_flatter_files_09.png)
+    ![Снимок экрана, на котором показана страница "Settings" (Параметры) с выбранной вкладкой "Users" (Пользователи)](./media/flatter-files-tutorial/tutorial_flatter_files_09.png)
 
 3. Нажмите кнопку **Add User**(Добавить пользователя). 
 

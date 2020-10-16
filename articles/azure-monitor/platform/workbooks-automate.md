@@ -2,19 +2,16 @@
 title: Azure Monitor книг и шаблонов Azure Resource Manager
 description: Упрощение сложных отчетов с помощью предварительно созданных и настраиваемых параметризованных Azure Monitor книг, развернутых с помощью шаблонов Azure Resource Manager
 services: azure-monitor
-author: mrbullwinkle
-manager: carmonm
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 04/30/2020
-ms.author: mbullwin
-ms.openlocfilehash: e2463c2ea4044af0b20a1dee91b30870639dc7ce
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 77190b85da08d09cf05a02dcc5787f0c24229948
+ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86504926"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91929733"
 ---
 # <a name="programmatically-manage-workbooks"></a>Программное управление книгами
 
@@ -212,6 +209,6 @@ ms.locfileid: "86504926"
 ### <a name="limitations"></a>Ограничения
 По техническим причинам этот механизм нельзя использовать для создания экземпляров книг в коллекции _книг_ Application Insights. Мы работаем над устранением этого ограничения. В то же время `tsg` для развертывания Application Insights связанных книг рекомендуется использовать коллекцию руководств по устранению неполадок (воркбуктипе:).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте, как используются книги для создания новых [Azure Monitor для работы с хранилищем](../insights/storage-insights-overview.md).

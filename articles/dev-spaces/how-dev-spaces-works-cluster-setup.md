@@ -5,14 +5,16 @@ ms.date: 03/24/2020
 ms.topic: conceptual
 description: Узнайте, как работает настройка кластера Службы Azure Kubernetes для Azure Dev Spaces
 keywords: Azure Dev Spaces, Dev Spaces, Docker, Kubernetes, Azure, AKS, Служба Azure Kubernetes, контейнеры
-ms.openlocfilehash: 41b955fac7abcc700d73d8ace601f80982b2253d
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: 841e67b96e95aa251fa5bf1ef469b68de30f54d9
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88207951"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91972685"
 ---
 # <a name="how-setting-up-a-cluster-for-azure-dev-spaces-works"></a>Как работает настройка кластера для Azure Dev Spaces
+
+[!INCLUDE [Azure Dev Spaces deprecation](../../includes/dev-spaces-deprecation.md)]
 
 Azure Dev Spaces предоставляет несколько способов быстро перебора и отладки приложений Kubernetes, а также совместной работы в кластере Службы Azure Kubernetes (AKS). Один из этих способов — включить Azure Dev Spaces для кластера AKS, чтобы [выполнять службы непосредственно в кластере][how-it-works-up] и [использовать дополнительные возможности сети и маршрутизации][how-it-works-routing]. В этой статье описывается, что происходит при подготовке кластера и включении Azure Dev Spaces.
 

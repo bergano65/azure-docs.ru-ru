@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: article
-ms.date: 08/28/2020
+ms.date: 10/12/2020
 ms.author: alkohli
-ms.openlocfilehash: 5f3c39ce7334145d3ffc1d54badb1f7b766da70f
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: f1bb5662b48765c08ec58d1f7fa9d341de4937bc
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90904454"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91992751"
 ---
 # <a name="azure-stack-edge-pro-limits"></a>Ограничения Azure Stack Edge Pro
 
@@ -27,12 +27,16 @@ ms.locfileid: "90904454"
 
 В следующей таблице описаны ограничения для устройства Pro Azure Stack. 
 
+В следующей таблице описаны ограничения для устройства Azure Stack пограничных устройств.
+
 | Описание | Значение |
 |---|---|
 |Нет. файлов на каждом устройстве |100 млн |
-|Нет. общих папок на каждом устройстве |24 |
 |Нет. общих папок в каждом контейнере |1 |
+|Максимальное число. общих конечных точек и конечных точек RESTFUL на устройство| 24 |
+|Максимальное число. многоуровневые учетные записи хранения на устройство| 24|
 |Максимальный размер файла, записанного в общую папку| 5 ТБ |
+|Максимальное число групп ресурсов на устройство| 800 |
 
 ## <a name="azure-storage-limits"></a>Ограничения службы хранилища Azure
 

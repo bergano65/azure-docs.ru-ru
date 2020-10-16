@@ -12,10 +12,10 @@ ms.service: active-directory
 ms.subservice: B2C
 ms.custom: devx-track-python
 ms.openlocfilehash: 6a113b3a3df475853f3690a0e932378bc0e2ab02
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87844632"
 ---
 # <a name="tutorial-enable-authentication-in-a-python-web-application-with-azure-ad-b2c"></a>Руководство по включению проверки подлинности в веб-приложении Python с помощью Azure AD B2C
@@ -162,13 +162,13 @@ CLIENT_SECRET = "22222222-2222-2222-2222-222222222222" # Placeholder - for use O
 
     Используйте действительный адрес электронной почты и подтвердите его с помощью кода проверки. Задайте пароль. Введите значения запрашиваемых атрибутов.
 
-    :::image type="content" source="media/tutorial-web-app-python/python-flask-web-app-02.png" alt-text="Страница регистрации, отображаемая потоком пользователя Azure AD B2C":::
+    :::image type="content" source="media/tutorial-web-app-python/python-flask-web-app-02.png" alt-text="Окно веб-браузера, где отображается локально выполняющееся веб-приложение Python Flask":::
 
 1. Щелкните **Создать**, чтобы создать локальную учетную запись в каталоге Azure AD B2C.
 
 При нажатии кнопки **Создать** приложение покажет имя выполнившего вход пользователя.
 
-:::image type="content" source="media/tutorial-web-app-python/python-flask-web-app-03.png" alt-text="Окно веб-браузера, где отображается веб-приложение Python Flask после входа пользователя":::
+:::image type="content" source="media/tutorial-web-app-python/python-flask-web-app-03.png" alt-text="Окно веб-браузера, где отображается локально выполняющееся веб-приложение Python Flask":::
 
 Если вы хотите протестировать возможность входа, щелкните ссылку **Logout** (Выйти), а затем **Sign In** (Войти) и введите адрес электронной почты и пароль, которые вы указали при регистрации.
 

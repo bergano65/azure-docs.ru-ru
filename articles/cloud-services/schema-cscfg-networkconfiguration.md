@@ -9,12 +9,12 @@ ms.topic: reference
 caps.latest.revision: 28
 author: tgore03
 ms.author: tagore
-ms.openlocfilehash: 695ba3acfd5af8797de6e6f7454e493d7863627c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a3f62bb33332e818cc40c5195a1cc2f667f819b4
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79529294"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92072583"
 ---
 # <a name="azure-cloud-services-config-networkconfiguration-schema"></a>Схема элемента конфигурации NetworkConfiguration для облачных служб Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "79529294"
 
 - [Схема конфигурации облачных служб (классических)](schema-cscfg-file.md)
 - [Схема определения облачных служб (классических)](schema-csdef-file.md).
-- [Создание виртуальной сети (классической)](../virtual-network/virtual-networks-create-vnet-classic-pportal.md)
+- [Создание виртуальной сети (классической)](/previous-versions/azure/virtual-network/virtual-networks-create-vnet-classic-pportal)
 
 ## <a name="networkconfiguration-element"></a>Элемент NetworkConfiguration
 В следующем примере показан элемент `NetworkConfiguration` и его дочерние элементы:

@@ -5,10 +5,10 @@ ms.topic: how-to
 ms.custom: subject-moving-resources
 ms.date: 08/20/2020
 ms.openlocfilehash: fff8638a819511f84f15c52ad0695cdd5759f971
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89086218"
 ---
 # <a name="move-azure-event-grid-domains-to-another-region"></a>Перемещение доменов службы "Сетка событий Azure" в другой регион
@@ -28,7 +28,7 @@ ms.locfileid: "89086218"
 ## <a name="prerequisites"></a>Предварительные требования
 - Убедитесь, что служба "Сетка событий" доступна в целевом регионе. См. страницу [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=event-grid&regions=all).
 
-## <a name="prepare"></a>Подготовка
+## <a name="prepare"></a>Подготовка.
 Чтобы приступить к работе, экспортируйте шаблон диспетчер ресурсов для домена. 
 
 1. Войдите на [портал Azure](https://portal.azure.com).
@@ -37,10 +37,10 @@ ms.locfileid: "89086218"
     :::image type="content" source="./media/move-domains-across-regions/search-domains.png" alt-text="Поиск и выбор доменов сетки событий":::
 3. Выберите **домен** , который необходимо экспортировать в шаблон диспетчер ресурсов. 
 
-    :::image type="content" source="./media/move-domains-across-regions/select-domain.png" alt-text="Выберите домен":::   
+    :::image type="content" source="./media/move-domains-across-regions/select-domain.png" alt-text="Поиск и выбор доменов сетки событий":::   
 4. На странице **домен сетки событий** выберите **Экспорт шаблона** в разделе **Параметры** в меню слева и нажмите кнопку **скачать** на панели инструментов. 
 
-    :::image type="content" source="./media/move-domains-across-regions/export-template-download.png" alt-text="Экспорт шаблона — > скачивание" lightbox="./media/move-domains-across-regions/export-template-download.png":::   
+    :::image type="content" source="./media/move-domains-across-regions/export-template-download.png" alt-text="Поиск и выбор доменов сетки событий" lightbox="./media/move-domains-across-regions/export-template-download.png":::   
 
     > [!IMPORTANT]
     > Разделы домена и домена экспортируются. Подписки для разделов домена не экспортируются. Поэтому необходимо создать подписки для разделов домена после перемещения разделов предметной области. 
@@ -62,7 +62,7 @@ ms.locfileid: "89086218"
 1. В портал Azure выберите **создать ресурс**.
 2. В **поле Поиск в Marketplace**введите **шаблон развертывание**и нажмите клавишу **Ввод**.
 3. Выберите **шаблоны развертывания**.
-4. Нажмите кнопку **Создать**.
+4. Нажмите кнопку **создания**.
 5. Выберите **Создать собственный шаблон в редакторе**.
 6. Выберите **загрузить файл**и следуйте инструкциям по загрузке **template.jsв** файл, скачанный в предыдущем разделе.
 7. Нажмите кнопку **сохранить** , чтобы сохранить шаблон. 
@@ -73,7 +73,7 @@ ms.locfileid: "89086218"
     1. В поле **доменное имя**введите новое имя для домена. 
     1. Выберите **Review + create** (Просмотреть и создать). 
     
-        :::image type="content" source="./media/move-domains-across-regions/deploy-template.png" alt-text="Развертывание шаблона":::        
+        :::image type="content" source="./media/move-domains-across-regions/deploy-template.png" alt-text="Поиск и выбор доменов сетки событий":::        
     1. После завершения проверки шаблона выберите **создать** в нижней части страницы, чтобы развернуть ресурс. 
     1. После завершения развертывания выберите **Переход к группе ресурсов** для перехода к странице Группа ресурсов. Убедитесь, что в группе ресурсов есть домен. Выберите домен. Убедитесь, что в домене есть разделы предметной области. 
 

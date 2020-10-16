@@ -14,10 +14,10 @@ ms.workload: na
 ms.date: 1/30/2020
 ms.author: mlottner
 ms.openlocfilehash: 06836673f1a567f64217d49cf8e0ca82e132111f
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90938349"
 ---
 # <a name="deploy-a-security-module-on-your-iot-edge-device"></a>Развертывание модуля безопасности на устройстве IoT Edge
@@ -107,7 +107,7 @@ ms.locfileid: "90938349"
     
    Дополнительные сведения о настройке агента см. в разделе [Настройка агентов безопасности](https://docs.microsoft.com/azure/defender-for-iot/how-to-agent-configuration).
 
-1. Нажмите кнопку **Обновить**.
+1. Выберите **Обновить**.
 
 #### <a name="step-2-runtime-settings"></a>Шаг 2. параметры среды выполнения
 
@@ -191,7 +191,7 @@ ms.locfileid: "90938349"
 
 1. Для получения более подробных журналов добавьте следующую переменную среды в развертывание модуля **азуреиотсекурити** : `logLevel=Debug` .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Чтобы узнать больше о параметрах конфигурации, перейдите к руководству по настройке модуля.
 > [!div class="nextstepaction"]

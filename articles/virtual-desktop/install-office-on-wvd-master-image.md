@@ -7,10 +7,10 @@ ms.date: 05/02/2019
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: b6369013d605ae538ad611a28a90e9c099bb7d80
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91326054"
 ---
 # <a name="install-office-on-a-master-vhd-image"></a>Установка Office в главный образ VHD
@@ -161,6 +161,6 @@ reg add HKLM\SOFTWARE\Policies\Microsoft\office\16.0\common\officeupdate /v hide
 
 Сведения об установке Microsoft Teams см. в статье [использование Microsoft Teams на виртуальных рабочих столах Windows](teams-on-wvd.md). Оптимизация мультимедиа для Microsoft Teams на виртуальных рабочих столах Windows доступна в предварительной версии.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы добавили Office в образ, вы можете продолжить настройку главного образа VHD. См. раздел [Подготовка и настройка главного образа VHD](set-up-customize-master-image.md).

@@ -8,10 +8,10 @@ ms.date: 07/02/2020
 ms.author: sngun
 ms.reviewer: sngun
 ms.openlocfilehash: c86207af51ebd1a9442afe6fa609598ec917bf15
-ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91570443"
 ---
 # <a name="global-data-distribution-with-azure-cosmos-db---under-the-hood"></a>Глобальное распределение данных в Azure Cosmos DB — взгляд изнутри
@@ -79,7 +79,7 @@ Azure Cosmos DB — это базовая служба в Azure, поэтому 
 
 Семантика пяти моделей согласованности в Cosmos DB описывается [здесь](consistency-levels.md)и математически описывается с помощью [ВЫСОКОУРОВНЕВЫХ спецификаций](https://github.com/Azure/azure-cosmos-tla)TLA +.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о том, как настроить политики глобального распределения, можно узнать в приведенных ниже статьях.
 

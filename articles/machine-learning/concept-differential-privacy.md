@@ -10,10 +10,10 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.openlocfilehash: 9728bf2c86c0629b09e2325650ce288cf9b3cc7e
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86199793"
 ---
 # <a name="preserve-data-privacy-by-using-differential-privacy-and-the-whitenoise-package-preview"></a>Сохранение конфиденциальности данных с помощью разностной конфиденциальности и пакета Вхитеноисе (Предварительная версия)
@@ -56,7 +56,7 @@ ms.locfileid: "86199793"
 
 Реализация систем с дифференциальной конфиденциальностью — это сложный процесс. WhiteNoise — это проект с открытым кодом, который содержит различные компоненты для создания глобальных систем с дифференциальной конфиденциальностью. WhiteNoise состоит из следующих компонентов верхнего уровня:
 
-- Ядро
+- Основные сведения
 - Система
 
 ### <a name="core"></a>Основные сведения

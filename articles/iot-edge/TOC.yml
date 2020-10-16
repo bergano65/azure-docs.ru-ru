@@ -111,28 +111,26 @@
       href: iot-edge-glossary.md
 - name: Практические руководства
   items:
-    - name: Регистрация устройства IoT Edge
-      href: how-to-register-device.md
-    - name: Установка и администрирование IoT Edge
+    - name: Создание устройства IoT Edge
       items:
-        - name: Linux
-          href: how-to-install-iot-edge-linux.md
-        - name: Windows
-          href: how-to-install-iot-edge-windows.md
-        - name: Использование контейнеров Linux в Windows
-          href: how-to-install-iot-edge-windows-with-linux.md
-        - name: Виртуальная машина Windows Server
-          href: how-to-install-iot-edge-windows-server-vm.md
-        - name: Виртуальная машина Ubuntu
-          href: how-to-install-iot-edge-ubuntuvm.md
-        - name: Kubernetes
-          href: how-to-install-iot-edge-kubernetes.md
+        - name: Установка среды выполнения
+          href: how-to-install-iot-edge.md
+        - name: Регистрация и проверка подлинности устройства
+          items:
+            - name: Проверка подлинности с использованием симметричного ключа
+              href: how-to-manual-provision-symmetric-key.md
+            - name: Проверка подлинности на основе сертификата X.509
+              href: how-to-manual-provision-x509.md
+        - name: Обновление среды выполнения
+          href: how-to-update-iot-edge.md
         - name: Управление сертификатами устройств
           href: how-to-manage-device-certificates.md
         - name: Создание тестовых сертификатов
           href: how-to-create-test-certificates.md
-        - name: Обновление версии среды выполнения
-          href: how-to-update-iot-edge.md
+        - name: IoT Edge в Kubernetes
+          href: how-to-install-iot-edge-kubernetes.md
+        - name: Создание виртуальной машины IoT Edge с помощью шаблона ARM
+          href: how-to-install-iot-edge-ubuntuvm.md
     - name: Автоматическая подготовка с помощью DPS
       items:
         - name: Аттестация доверенного платформенного модуля
@@ -183,6 +181,10 @@
           href: how-to-monitor-module-twins.md
         - name: Прямые методы EdgeAgent
           href: how-to-edgeagent-direct-method.md
+        - name: Получение журналов IoT Edge
+          href: how-to-retrieve-iot-edge-logs.md
+        - name: Доступ к встроенным метрикам
+          href: how-to-access-built-in-metrics.md
     - name: Использование устройств IoT Edge в качестве шлюзов
       items:
         - name: Настройка прозрачного шлюза
@@ -225,36 +227,38 @@
           href: troubleshoot-common-errors.md
 - name: Справочник
   items:
+    - name: Скрипты управления устройствами Windows
+      href: reference-windows-scripts.md
     - name: Azure CLI
       href: /cli/azure/azure-cli-reference-for-IoT
 - name: Ресурсы
   items:
     - name: Возможности получения поддержки и справки
-      href: /azure/iot-fundamentals/iot-support-help
+      href: ../iot-fundamentals/iot-support-help.md
     - name: Службы Azure IoT
       items:
         - name: Центр Интернета вещей
-          href: /azure/iot-hub
+          href: ../iot-hub/index.yml
         - name: Служба подготовки устройств к добавлению в Центр Интернета вещей
-          href: /azure/iot-dps
+          href: ../iot-dps/index.yml
         - name: IoT Central
-          href: 'https://docs.microsoft.com/microsoft-iot-central/'
+          href: /microsoft-iot-central/
         - name: IoT Edge
-          href: /azure/iot-edge
+          href: ./index.yml
         - name: Акселераторы решений для Интернета вещей
-          href: /azure/iot-accelerators
+          href: ../iot-accelerators/index.yml
         - name: IoT Plug and Play
-          href: /azure/iot-pnp
+          href: ../iot-pnp/index.yml
         - name: Azure Maps
-          href: /azure/azure-maps
+          href: ../azure-maps/index.yml
         - name: Аналитика временных рядов
-          href: /azure/time-series-insights
+          href: ../time-series-insights/index.yml
     - name: Пакеты SDK для Центра Интернета вещей Azure
       items:
         - name: Пакеты SDK для служб IoT
-          href: /azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks
+          href: ../iot-hub/iot-hub-devguide-sdks.md#azure-iot-hub-service-sdks
         - name: Пакеты SDK для устройств Интернета вещей
-          href: /azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks
+          href: ../iot-hub/iot-hub-devguide-sdks.md#azure-iot-hub-device-sdks
     - name: Примеры для Интернета вещей Azure
       items:
         - name: C# (.NET)

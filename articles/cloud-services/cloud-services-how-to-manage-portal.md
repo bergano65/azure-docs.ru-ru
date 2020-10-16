@@ -8,12 +8,12 @@ ms.service: cloud-services
 ms.topic: article
 ms.date: 07/05/2017
 ms.author: tagore
-ms.openlocfilehash: 471aa6e5297f8b68f08567a66e3f07e9688ca57e
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 84e450a55f9482c3a713943adfcc4d7940ab873f
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87002936"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92076714"
 ---
 # <a name="manage-cloud-services-in-the-azure-portal"></a>Управление облачными службами с помощью портала Azure
 В области **Облачные службы** портала Azure вы можете:
@@ -83,7 +83,7 @@ ms.locfileid: "87002936"
 
 **Переключается ли время простоя приложения? Как мне справиться?**
 
-Как описано в предыдущем разделе, переключение развертывания обычно происходит быстро, потому что это просто изменение конфигурации в Azure Load Balancer. В некоторых случаях это может занять около 10 секунд и привести к временному сбою подключения. Чтобы ограничить воздействие на клиентов, рассмотрите возможность реализации [логики повтора для клиента](../best-practices-retry-general.md).
+Как описано в предыдущем разделе, переключение развертывания обычно происходит быстро, потому что это просто изменение конфигурации в Azure Load Balancer. В некоторых случаях это может занять около 10 секунд и привести к временному сбою подключения. Чтобы ограничить воздействие на клиентов, рассмотрите возможность реализации [логики повтора для клиента](/azure/architecture/best-practices/transient-faults).
 
 ## <a name="delete-deployments-and-a-cloud-service"></a>Удаление развертываний и облачной службы
 До удаления облачной службы необходимо удалить все текущие развертывания.
@@ -124,6 +124,3 @@ ms.locfileid: "87002936"
 * Узнайте, как [развернуть облачную службу](cloud-services-how-to-create-deploy-portal.md).
 * Настройте [имя пользовательского домена](cloud-services-custom-domain-name-portal.md).
 * Настройте [сертификаты TLS/SSL](cloud-services-configure-ssl-certificate-portal.md).
-
-
-

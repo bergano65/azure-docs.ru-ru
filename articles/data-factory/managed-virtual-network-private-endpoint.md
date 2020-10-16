@@ -14,10 +14,10 @@ ms.custom:
 - references_regions
 ms.date: 07/15/2020
 ms.openlocfilehash: 5a40faa1feac20ae096dfe39a5b1d109d4a11d3d
-ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90564004"
 ---
 # <a name="azure-data-factory-managed-virtual-network-preview"></a>Управляемая виртуальная сеть фабрики данных Azure (Предварительная версия)
@@ -83,7 +83,7 @@ ms.locfileid: "90564004"
 - База данных SQL Azure (не включая Azure SQL Управляемый экземпляр)
 - Azure Synapse Analytics (прежнее название: Хранилище данных SQL Azure)
 - SQL CosmosDB Azure
-- Azure Key Vault
+- Хранилище ключей Azure;
 - Служба частной связи Azure
 - Поиск Azure
 - База данных Azure для MySQL
@@ -111,7 +111,7 @@ ms.locfileid: "90564004"
 - При создании связанной службы для Azure Key Vault ссылка на Azure Integration Runtime отсутствует. Поэтому нельзя создать частную конечную точку во время создания связанной службы Azure Key Vault. Но когда вы создаете связанную службу для хранилищ данных, ссылающихся Azure Key Vault связанную службу, и эта связанная служба ссылается Azure Integration Runtime с включенной управляемой виртуальной сетью, вы можете создать частную конечную точку для связанной службы Azure Key Vault во время создания. 
 - **Проверка подключения** для связанной службы Azure Key Vault только проверяет формат URL-адреса, но не выполняет никаких сетевых операций.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Руководство. [создание конвейера копирования с помощью управляемой виртуальной сети и частных конечных точек](tutorial-copy-data-portal-private.md) 
 - Учебник. [создание конвейера для сопоставления потоков данных с помощью управляемой виртуальной сети и частных конечных точек](tutorial-data-flow-private.md)

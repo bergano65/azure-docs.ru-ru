@@ -14,17 +14,17 @@ ms.workload: na
 ms.date: 03/11/2020
 ms.author: memildin
 ms.openlocfilehash: e6bb3389fe035b1ccfbefaca788a40530581ac7a
-ms.sourcegitcommit: efaf52fb860b744b458295a4009c017e5317be50
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91851085"
 ---
 # <a name="adaptive-network-hardening-in-azure-security-center"></a>Адаптивное усиление защиты сети в центре безопасности Azure
 Узнайте, как настроить Адаптивное усиление защиты сети в центре безопасности.
 
 ## <a name="availability"></a>Доступность
-|Аспект|Сведения|
+|Аспект|Подробнее|
 |----|:----|
 |Состояние выпуска:|Общедоступная версия (GA)|
 |Цены|Требуется [Azure Defender для серверов](defender-for-servers-introduction.md)|

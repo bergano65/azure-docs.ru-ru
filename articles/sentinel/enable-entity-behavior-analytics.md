@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 09/15/2020
 ms.author: yelevin
 ms.openlocfilehash: c55ea0e7753faa6dc21b955d63a57d96e3849f70
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90997115"
 ---
 # <a name="enable-user-and-entity-behavior-analytics-ueba-in-azure-sentinel"></a>Включение анализа поведения пользователей и сущностей (УЕБА) в Azure Sentinel 
@@ -47,7 +47,7 @@ ms.locfileid: "90997115"
 
 1. Выберите **Переход к поиску сущностей**. Вы перейдете на панель поиска сущностей, которая теперь будет отображаться при выборе **поведения сущности** в главном меню "Sentinel" Azure.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 В этом документе вы узнали, как включить и настроить анализ поведения пользователей и сущностей (УЕБА) в Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).

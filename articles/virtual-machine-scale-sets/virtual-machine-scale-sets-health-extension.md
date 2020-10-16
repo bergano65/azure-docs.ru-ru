@@ -10,10 +10,10 @@ ms.date: 05/06/2020
 ms.reviewer: mimckitt
 ms.custom: mimckitt
 ms.openlocfilehash: a38a715b45ab4d0810862ef4d016e4187ea507ab
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84783050"
 ---
 # <a name="using-application-health-extension-with-virtual-machine-scale-sets"></a>Использование расширения "Работоспособность приложения" с масштабируемыми наборами виртуальных машин
@@ -60,7 +60,7 @@ ms.locfileid: "84783050"
 | Имя | Значение и пример | Тип данных
 | ---- | ---- | ---- 
 | версия_API | `2018-10-01` | Дата |
-| publisher | `Microsoft.ManagedServices` | string |
+| publisher | `Microsoft.ManagedServices` | строка |
 | type | `ApplicationHealthLinux` (Linux), `ApplicationHealthWindows` (Windows) | строка |
 | typeHandlerVersion | `1.0` | INT |
 
@@ -68,9 +68,9 @@ ms.locfileid: "84783050"
 
 | Имя | Значение и пример | Тип данных
 | ---- | ---- | ----
-| protocol | `http`, `https` или `tcp` | string |
-| порт | Необязательно, если параметр Protocol имеет `http` или `https` , является обязательным, если используется протокол`tcp` | INT |
-| requestPath | Обязательно, если параметр Protocol имеет `http` или `https` , не разрешен, если используется протокол`tcp` | string |
+| protocol | `http`, `https` или `tcp` | строка |
+| порт | Необязательно, если параметр Protocol имеет `http` или `https` , является обязательным, если используется протокол `tcp` | INT |
+| requestPath | Обязательно, если параметр Protocol имеет `http` или `https` , не разрешен, если используется протокол `tcp` | строка |
 
 ## <a name="deploy-the-application-health-extension"></a>Развертывание расширение "Работоспособность приложения"
 Существует несколько способов развертывания расширения "Работоспособность приложения" в масштабируемые наборы, которые описаны в приведенных ниже примерах.
@@ -165,7 +165,7 @@ extension.jsсодержимого файла.
 ```
 
 
-## <a name="troubleshoot"></a>Устранение неполадок
+## <a name="troubleshoot"></a>Диагностика
 Выходные данные выполнения расширения регистрируются в файле, расположенном в следующих каталогах:
 
 ```Windows

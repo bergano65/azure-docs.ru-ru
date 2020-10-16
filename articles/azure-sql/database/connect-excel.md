@@ -13,10 +13,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 05/29/2020
 ms.openlocfilehash: 304ad51bc40c8165c2dc11bb70287491e3d6dfb9
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91444030"
 ---
 # <a name="connect-excel-to-a-database-in-azure-sql-database-or-azure-sql-managed-instance-and-create-a-report"></a>Подключение Excel к базе данных в базе данных SQL Azure или Управляемый экземпляр SQL Azure и создание отчета
@@ -99,7 +99,7 @@ ms.locfileid: "91444030"
 
     ![Существующее подключение](./media/connect-excel/existing-connection.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Узнайте, как [подключиться к SQL Server Management Studio и выполнить запросы](connect-query-ssms.md) к расширенным запросам и анализу.
 * Узнайте о преимуществах использования [пулов эластичных БД](elastic-pool-overview.md).

@@ -11,10 +11,10 @@ ms.date: 08/08/2019
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: d230bc8a1e9bf388e1cca4e3a3a691223146d734
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85387989"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-qq-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью QQ через Azure Active Directory B2C
@@ -35,7 +35,7 @@ ms.locfileid: "85387989"
 
 ### <a name="register-a-qq-application"></a>Регистрация приложения QQ
 
-1. Перейдите на страницу [https://connect.qq.com/index.html](https://connect.qq.com/index.html).
+1. Перейдите по адресу [https://connect.qq.com/index.html](https://connect.qq.com/index.html).
 1. Выберите **应用管理**(Управление приложениями).
 1. Выберите **创建应用**(Создать приложение) и введите необходимые сведения.
 1. Введите значение `https://your-tenant-name.b2clogin.com/your-tenant-name}.onmicrosoft.com/oauth2/authresp` в поле **授权回调域** (URL-адрес обратного вызова). Например, если `tenant_name` — contoso, задайте URL-адрес `https://contoso.b2clogin.com/contoso.onmicrosoft.com/oauth2/authresp`.

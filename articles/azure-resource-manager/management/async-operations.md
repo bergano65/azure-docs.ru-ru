@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 08/21/2020
 ms.custom: seodec18
 ms.openlocfilehash: e2c5ba137d5277466cf1b382d2b0b1bc02259f00
-ms.sourcegitcommit: 5b6acff3d1d0603904929cc529ecbcfcde90d88b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88723458"
 ---
 # <a name="track-asynchronous-azure-operations"></a>Отслеживание асинхронных операций Azure
@@ -40,7 +40,7 @@ ms.locfileid: "88723458"
 
 Если `Azure-AsyncOperation` не является одним из значений заголовка, найдите:
 
-* `Location` — это URL-адрес для определения момента завершения операции. Это значение следует использовать только в том случае, если не возвращается Azure-AsyncOperation.
+* `Location` — это URL-адрес для определения момента завершения операции. Это значение следует использовать только в том случае, если Azure-AsyncOperation не возвращается.
 * `Retry-After` — это количество секунд ожидания перед проверкой состояния асинхронной операции.
 
 ## <a name="azure-asyncoperation-request-and-response"></a>Запрос и ответ с использованием Azure-AsyncOperation
@@ -81,7 +81,7 @@ ms.locfileid: "88723458"
 
 Операции, которые создают, обновляют или удаляют ресурсы (PUT, PATCH, DELETE), обычно возвращают значение `provisioningState`. После завершения операции возвращается одно из следующих трех значений:
 
-* Выполнено
+* Успешно
 * Ошибка
 * Отменено
 

@@ -17,10 +17,10 @@ ms.author: barclayn
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 96106cc1d9f9040f98c7d9201f05b4cff87af7e5
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91449845"
 ---
 # <a name="add-a-connected-organization-in-azure-ad-entitlement-management"></a>Добавление подключенной Организации в управление назначением Azure AD
@@ -155,7 +155,7 @@ ms.locfileid: "91449845"
 > [!NOTE]
 > В рамках развертывания этой новой функции все подключенные Организации, созданные до 09/09/20, считаются **настроенными**. Если у вас есть пакет Access, который позволял пользователям подписываться из любой организации, следует просмотреть список подключенных организаций, созданных до этой даты, чтобы убедиться, что они не **являются правильно классифицированными.**  Администратор может обновить свойство **State** соответствующим образом. Инструкции см. в статье [Обновление подключенной Организации](#update-a-connected-organization).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Управление доступом для внешних пользователей](./entitlement-management-external-users.md)
 - [Управление доступом пользователей, не наличныхся в вашем каталоге](entitlement-management-access-package-request-policy.md#for-users-not-in-your-directory)

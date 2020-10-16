@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 11/25/2019
 ms.openlocfilehash: d8dd9aaeaadf13fa48577cf2853e7bcf58badb41
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86079298"
 ---
 # <a name="use-the-extended-features-of-the-apache-spark-history-server-to-debug-and-diagnose-spark-applications"></a>Использование расширенных функций сервера журнала Apache Spark для отладки и диагностики приложений Spark
@@ -26,7 +26,7 @@ ms.locfileid: "86079298"
 ### <a name="open-the-spark-history-server-web-ui-from-the-azure-portal"></a>Откройте пользовательский веб-интерфейс сервера журнала Spark из портал Azure
 
 1. Откройте кластер Spark на [портале Azure](https://portal.azure.com/). Дополнительные сведения см. в разделе [Отображение кластеров](../hdinsight-administer-use-portal-linux.md#showClusters).
-2. На **панели мониторинга кластера**выберите **сервер журнала Spark**. При появлении запроса введите учетные данные администратора для кластера Spark.
+2. На **панели мониторинга кластера**выберите  **сервер журнала Spark**. При появлении запроса введите учетные данные администратора для кластера Spark.
 
     ![Запустите сервер журнала Spark из портал Azure.](./media/apache-azure-spark-history-server/azure-portal-dashboard-spark-history.png "Сервер журнала Spark")
 
@@ -97,7 +97,7 @@ ms.locfileid: "86079298"
    ![Тепловая схема на странице с графиком задания & приложения Spark.](./media/apache-azure-spark-history-server/sparkui-graph-heatmap.png)
 
 
-    |Цвет |Описание: |
+    |Color |Description |
     |---|---|
     |Зеленый|задание выполнено успешно.|
     |Оранжевый|Не удалось выполнить задачу, но это не повлияет на окончательный результат задания. Эти задачи имеют дубликаты или экземпляры повторных попыток, которые могут быть выполнены позже.|
@@ -307,7 +307,7 @@ ms.locfileid: "86079298"
 1. Запустите [портал Azure](https://ms.portal.azure.com), а затем выберите свой кластер.
 2. Завершите [действие скрипта](../hdinsight-hadoop-customize-cluster-linux.md) со следующими параметрами.
 
-    |Свойство. |Значение |
+    |Свойство |Значение |
     |---|---|
     |Тип скрипта|- Custom|
     |Имя|упградежар|
@@ -323,7 +323,7 @@ ms.locfileid: "86079298"
 
 + Входные и выходные данные, использующие RDD, не будут отображаться на вкладке " **данные** ".
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 + [Управление ресурсами для кластера Apache Spark в HDInsight](apache-spark-resource-manager.md)
 + [Настройка параметров Apache Spark](apache-spark-settings.md)

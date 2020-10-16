@@ -12,10 +12,10 @@ ms.author: mireks
 ms.reviewer: vanto, sstein
 ms.date: 04/23/2020
 ms.openlocfilehash: d90cc76da20861ae9eca7aaf59a49e5f3e866c92
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91444438"
 ---
 # <a name="use-azure-active-directory-authentication"></a>Использовать проверку подлинности Azure Active Directory
@@ -161,7 +161,7 @@ ms.locfileid: "91444438"
 - Аутентификация Azure AD поддерживается для базы данных SQL Azure и Azure синапсе с помощью портал Azure **импорта базы** данных и **экспорта баз данных** . Импорт и экспорт с помощью аутентификации Azure AD также поддерживаются командой PowerShell.
 - Проверка подлинности Azure AD поддерживается для базы данных SQL, SQL Управляемый экземпляр и Azure синапсе с помощью интерфейса командной строки. Дополнительные сведения см. в статьях [Настройка аутентификации Azure AD и управление ею с помощью базы данных SQL или Azure синапсе](authentication-aad-configure.md) и [SQL Server-AZ SQL Server](https://docs.microsoft.com/cli/azure/sql/server).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Чтобы узнать, как создать и заполнить экземпляр Azure AD, а затем настроить его с помощью базы данных SQL Azure, Управляемый экземпляр SQL или Azure синапсе, см. статью [Настройка и управление Azure Active Directory аутентификацией с помощью базы данных SQL, sql управляемый экземпляр или Azure синапсе](authentication-aad-configure.md).
 - Руководство по использованию участников-серверов Azure AD (имен входа) с SQL Управляемый экземпляр см. в статье [участники сервера Azure AD (имена входа) с sql управляемый экземпляр](../managed-instance/aad-security-configure-tutorial.md)

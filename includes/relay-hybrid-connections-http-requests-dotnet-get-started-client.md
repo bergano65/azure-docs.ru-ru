@@ -1,5 +1,5 @@
 ---
-title: Включить имя файла
+title: включить файл
 description: включить файл
 services: service-bus-relay
 author: clemensv
@@ -9,13 +9,13 @@ ms.date: 08/16/2018
 ms.author: clemensv
 ms.custom: include file
 ms.openlocfilehash: ce29cd03de46e1d93d7f1f28f9f5184cd59a57e7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "79199971"
 ---
-### <a name="create-a-console-application"></a>Создание консольного приложения
+### <a name="create-a-console-application"></a>Создание консольного приложение
 
 Если при создании ретранслятора вы отключили параметр"Требует авторизации клиента", запросы на URL-адрес гибридных подключений можно отправлять с помощью любого браузера. Для доступа к защищенным конечным точкам необходимо создать и передать маркер в заголовок `ServiceBusAuthorization`, который приведен ниже.
 
@@ -25,7 +25,7 @@ ms.locfileid: "79199971"
 
 1. Щелкните созданный проект правой кнопкой мыши и выберите **Управление пакетами NuGet**.
 2. Выберите параметр **Включить предварительные выпуски**. 
-3. Выберите **Обзор** и выполните поиск по ключевой фразе **Microsoft.Azure.Relay**. В результатах поиска выберите **Microsoft Azure ретранслятор**.
+3. Выберите **Обзор** и выполните поиск по ключевой фразе **Microsoft.Azure.Relay**. В результатах поиска выберите  **Microsoft Azure ретранслятор**.
 4. При выборе версии укажите **2.0.0-preview1-20180523**. 
 5. Выберите **Установить** для завершения установки. Закройте диалоговое окно.
 

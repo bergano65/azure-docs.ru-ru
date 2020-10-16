@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.topic: conceptual
 ms.date: 02/06/2020
 ms.author: tagore
-ms.openlocfilehash: da75e1d6208db5adf5f0f63d2a5525fc651513b0
-ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
+ms.openlocfilehash: 233ba17e1ae1b554eff092151ad9f05fd660beb3
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88855923"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91970016"
 ---
 # <a name="technical-deep-dive-on-platform-supported-migration-from-classic-to-azure-resource-manager"></a>Техническое руководство по поддерживаемому платформой переносу из классической модели в модель Azure Resource Manager
 
@@ -135,7 +135,7 @@ ms.locfileid: "88855923"
 После завершения проверки миграцию можно зафиксировать. Ресурсы больше не будут отображаться в классической модели развертывания. Они будут доступны только в модели развертывания с помощью Resource Manager. Перенесенными ресурсами можно управлять только на новом портале.
 
 > [!NOTE]
-> Эта идемпотентная операция. Если не удалось выполнить операцию, повторите ее. Если проблема не будет устранена, создайте запрос в службу поддержки или опубликуйте вопрос на странице [Microsoft Q&A](https://docs.microsoft.com/answers/index.html).
+> Эта идемпотентная операция. Если не удалось выполнить операцию, повторите ее. Если проблема не будет устранена, создайте запрос в службу поддержки или опубликуйте вопрос на странице [Microsoft Q&A](/answers/index.html).
 >
 >
 

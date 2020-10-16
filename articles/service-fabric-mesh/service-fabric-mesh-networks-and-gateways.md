@@ -7,10 +7,10 @@ ms.date: 11/26/2018
 ms.author: gwallace
 ms.custom: mvc, devcenter
 ms.openlocfilehash: 372e8a46bfe588aa22b0f3be0ef8ae442fa342e2
-ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91842705"
 ---
 # <a name="introduction-to-networking-in-service-fabric-mesh-applications"></a>Общие сведения о сетевых подключениях в приложениях службы "Сетка Service Fabric"
@@ -34,7 +34,7 @@ ms.locfileid: "91842705"
 
 Создаваемое в среде "Сетка Service Fabric" приложение должно ссылаться на существующий сетевой ресурс. Вы можете добавить общие порты или удалить имеющиеся порты из конфигурации входящего трафика. Удаление сетевого ресурса завершится ошибкой, если на него есть ссылка в ресурсе приложения. При удалении приложения сетевой ресурс удаляется автоматически.
 
-## <a name="next-steps"></a>Дальнейшие действия 
+## <a name="next-steps"></a>Дальнейшие шаги 
 Чтобы узнать больше о службе "Сетка Service Fabric", прочитайте этот обзор:
 - [Обзор службы "Сетка Service Fabric"](service-fabric-mesh-overview.md)
 

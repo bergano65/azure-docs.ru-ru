@@ -3,19 +3,19 @@ title: Диагностика инцидентов с помощью помощ�
 titleSuffix: Azure Cognitive Services
 description: Узнайте, как диагностировать инциденты с помощью помощника по метрикам и получить подробные представления аномалий в данных.
 services: cognitive-services
-author: aahill
+author: mrbullwinkle
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: metrics-advisor
 ms.topic: conceptual
 ms.date: 08/19/2020
-ms.author: aahi
-ms.openlocfilehash: fb70745cf7773e8caa91b31048af97e8e626bb91
-ms.sourcegitcommit: ffa7a269177ea3c9dcefd1dea18ccb6a87c03b70
+ms.author: mbullwin
+ms.openlocfilehash: d1f792859aa5407cfaceda0e3ed1b5c21ee160f0
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91597949"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92043380"
 ---
 # <a name="how-to-diagnose-an-incident-using-metrics-advisor"></a>Инструкции: диагностика инцидента с помощью помощника по метрикам
 

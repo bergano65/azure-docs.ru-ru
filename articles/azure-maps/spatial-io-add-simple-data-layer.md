@@ -10,10 +10,10 @@ services: azure-maps
 manager: philmea
 ms.custom: devx-track-js
 ms.openlocfilehash: 75b193017bbfccbae0f299c0a1db2fe0e34f1810
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91321804"
 ---
 # <a name="add-a-simple-data-layer"></a>Добавление простого уровня данных
@@ -114,7 +114,7 @@ map.layers.add(layer);
 
 Кластеры также подготавливаются с помощью пузырькового слоя. По умолчанию для радиуса кластера задано значение `16` . Цвет кластера зависит от числа точек в кластере, как определено ниже.
 
-| число точек | Цвет    |
+| число точек | Color    |
 |-------------|----------|
 | &gt;= 100   | `red`    |
 | &gt;= 10    | `yellow` |

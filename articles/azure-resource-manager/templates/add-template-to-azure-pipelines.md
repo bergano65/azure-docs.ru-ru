@@ -4,13 +4,13 @@ description: Описание настройки непрерывной инте
 ms.topic: conceptual
 ms.date: 10/01/2020
 ms.openlocfilehash: 6784df30340e4c54b8b1d6e82b45046666824315
-ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91653406"
 ---
-# <a name="integrate-arm-templates-with-azure-pipelines"></a>Интеграция шаблонов ARM с Azure Pipelines
+# <a name="integrate-arm-templates-with-azure-pipelines"></a>Интеграция шаблонов Resource Manager с Azure Pipelines
 
 Вы можете интегрировать шаблоны Azure Resource Manager (шаблоны ARM) с Azure Pipelines для непрерывной интеграции и непрерывного развертывания (CI/CD). В руководстве по [непрерывной интеграции шаблонов ARM с Azure pipelines](deployment-tutorial-pipeline.md) показано, как использовать [задачу развертывания шаблонов ARM](https://github.com/microsoft/azure-pipelines-tasks/blob/master/Tasks/AzureResourceManagerTemplateDeploymentV3/README.md) для развертывания шаблона из репозитория GitHub. Этот подход работает, если вы хотите развернуть шаблон непосредственно из репозитория.
 
@@ -228,6 +228,6 @@ steps:
 
 При нажатии на кнопку **сохранить**конвейер сборки запускается автоматически. Вернитесь к сводке для конвейера сборки и просмотрите состояние.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об использовании шаблонов ARM с действиями GitHub см. в статье [Развертывание шаблонов Azure Resource Manager с помощью действий GitHub](deploy-github-actions.md).

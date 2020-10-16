@@ -6,16 +6,16 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 04/17/2020
-ms.author: iainfou
-author: iainfoulds
+ms.author: joflore
+author: MicrosoftGuyJFlo
 manager: daveba
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 584fb5c370fa0be629d057eb94dc4c2a8b9edc15
-ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
+ms.openlocfilehash: 6fa6c28eaa75485e0b45bb4404e685b6ee223b46
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88716441"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91965596"
 ---
 # <a name="azure-active-directory-certificate-based-authentication-on-ios"></a>Аутентификация на основе сертификата в Azure Active Directory на устройстве iOS
 
@@ -44,7 +44,7 @@ ms.locfileid: "88716441"
 | Word/Excel/PowerPoint |![Установите флажок, обозначающий поддержку для этого приложения][1] |
 | Yammer |![Установите флажок, обозначающий поддержку для этого приложения][1] |
 
-## <a name="requirements"></a>Requirements (Требования)
+## <a name="requirements"></a>Требования
 
 Чтобы использовать CBA с iOS, действуют следующие требования и рекомендации.
 
@@ -85,7 +85,7 @@ Set-MSOLDomainFederationSettings -domainname <domain> -PromptLoginBehavior Disab
 
 В iOS версии 9 и выше поддерживается собственный почтовый клиент iOS. Чтобы определить, поддерживается ли эта функция для всех других приложений Exchange ActiveSync, обратитесь к разработчику приложения.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Инструкции по настройке проверки подлинности на основе сертификатов в среде см. в статье [Приступая к работе с проверкой подлинности на основе сертификатов](active-directory-certificate-based-authentication-get-started.md) .
 

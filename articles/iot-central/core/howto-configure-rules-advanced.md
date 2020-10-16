@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.service: iot-central
 services: iot-central
 ms.openlocfilehash: 037598212773ca75abbdd086fe0577e0660f2218
-ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91398584"
 ---
 # <a name="use-workflows-to-integrate-your-azure-iot-central-application-with-other-cloud-services"></a>Использование рабочих процессов для интеграции приложения Azure IoT Central с другими облачными службами
@@ -75,7 +75,7 @@ ms.locfileid: "91398584"
 1. В списке действий выберите нужное действие IoT Central.
 1. На этом шаге настройте параметры для выбранного действия. Затем нажмите кнопку **Save** (Сохранить).
 
-:::image type="content" source="./media/howto-configure-rules-advanced/actions.png" alt-text="Найдите соединитель Azure IoT Central v3 и выберите действие.":::
+:::image type="content" source="./media/howto-configure-rules-advanced/actions.png" alt-text="Найдите соединитель Azure IoT Central (предварительная версия) и выберите триггер":::
 
 ## <a name="list-of-actions"></a>Список действий
 

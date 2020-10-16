@@ -11,10 +11,10 @@ ms.date: 06/25/2020
 ms.author: gasinh
 ms.subservice: B2C
 ms.openlocfilehash: f7d89942ad5209b854b8df486ad3e59a3976edfc
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91259057"
 ---
 # <a name="tutorial-for-configuring-typingdna-with-azure-active-directory-b2c"></a>Руководство по настройке Типингдна с помощью Azure Active Directory B2C
@@ -173,7 +173,7 @@ API должен возвращать утверждение,  `saveTypingPatter
 2. Выберите ранее созданный **поток пользователя**.
 3. Выбор **запуска** потока пользователя
 
-    а. **Приложение** — выбор зарегистрированного приложения (пример — JWT)
+    a. **Приложение** — выбор зарегистрированного приложения (пример — JWT)
 
     b. **URL-адрес ответа** — выберите URL-адрес перенаправления
 
@@ -190,7 +190,7 @@ API должен возвращать утверждение,  `saveTypingPatter
 
 • Зарегистрируйтесь [здесь](https://b2cprod.b2clogin.com/b2cprod.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1A_SU_TDNA&client_id=51d907f8-db14-4460-a1fd-27eaeb2a74da&nonce=defaultNonce&redirect_uri=https://jwt.ms/&scope=openid&response_type=id_token&prompt=login) и войдите [здесь](https://b2cprod.b2clogin.com/b2cprod.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1A_SI_TDNA&client_id=51d907f8-db14-4460-a1fd-27eaeb2a74da&nonce=defaultNonce&redirect_uri=https://jwt.ms/&scope=openid&response_type=id_token&prompt=login)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения см. в следующих статьях:
 

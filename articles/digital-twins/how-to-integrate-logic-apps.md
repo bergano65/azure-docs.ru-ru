@@ -8,18 +8,18 @@ ms.date: 9/11/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.reviewer: baanders
-ms.openlocfilehash: baf89ec75f844ae1a1f7797d26d2fb04a0d5df34
-ms.sourcegitcommit: efaf52fb860b744b458295a4009c017e5317be50
+ms.openlocfilehash: cbd8c91391cc1e3afe930094f34e5015ea3c3450
+ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91849849"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92097530"
 ---
 # <a name="integrate-with-logic-apps-using-a-custom-connector"></a>Интеграция с Logic Apps с помощью настраиваемого соединителя
 
 [Azure Logic Apps](../logic-apps/logic-apps-overview.md) — это облачная служба, которая помогает автоматизировать рабочие процессы в приложениях и службах. Подключив Logic Apps к API-интерфейсам Azure Digital двойников, вы можете создавать такие автоматизированные потоки в Azure Digital двойников и их данные.
 
-В Azure Digital двойников в настоящее время нет сертифицированного (предварительно созданного) соединителя для Logic Apps. Вместо этого текущий процесс использования Logic Apps с Azure Digital двойников заключается в создании [**настраиваемого соединителя Logic Apps**](../logic-apps/custom-connector-overview.md)с помощью [настраиваемого цифрового Двойникова Swagger Azure](https://docs.microsoft.com/samples/azure-samples/digital-twins-custom-swaggers/azure-digital-twins-custom-swaggers/) , который был изменен для работы с Logic Apps.
+В Azure Digital двойников в настоящее время нет сертифицированного (предварительно созданного) соединителя для Logic Apps. Вместо этого текущий процесс использования Logic Apps с Azure Digital двойников заключается в создании [**настраиваемого соединителя Logic Apps**](../logic-apps/custom-connector-overview.md)с помощью [настраиваемого цифрового Двойникова Swagger Azure](/samples/azure-samples/digital-twins-custom-swaggers/azure-digital-twins-custom-swaggers/) , который был изменен для работы с Logic Apps.
 
 > [!NOTE]
 > Существует несколько версий Swagger, содержащихся в пользовательском образце Swagger, связанном выше. Последняя версия будет найдена во вложенной папке с самой последней датой, но более ранние версии, содержащиеся в этом примере, также все еще поддерживаются.
@@ -91,9 +91,9 @@ ms.locfileid: "91849849"
 
 Далее вы настроите созданный соединитель для доступа к Azure Digital двойников.
 
-Сначала скачайте пользовательский файл Swagger Microsoft Azure Digital двойников, который был изменен для работы с Logic Apps. Скачайте образец **пользовательских Swagger Azure Digital двойников** по [**этой ссылке**](https://docs.microsoft.com/samples/azure-samples/digital-twins-custom-swaggers/azure-digital-twins-custom-swaggers/) , нажав кнопку *скачать ZIP-файл* . Перейдите к скачанной папке *Azure_Digital_Twins_Custom_Swaggers.zip* и распакуйте ее. 
+Сначала скачайте пользовательский файл Swagger Microsoft Azure Digital двойников, который был изменен для работы с Logic Apps. Скачайте пример **настраиваемого соединителя Swagger (Logic Apps) Azure Digital двойников** по [**этой ссылке**](/samples/azure-samples/digital-twins-custom-swaggers/azure-digital-twins-custom-swaggers/) , нажав кнопку *скачать ZIP-файл* . Перейдите к скачанной папке *Azure_Digital_Twins_custom_Swaggers__Logic_Apps_connector_.zip* и распакуйте ее. 
 
-Пользовательский Swagger для этого учебника находится в папке _**Azure_Digital_Twins_Custom_Swaggers \логикаппс**_ . Эта папка содержит вложенные папки, которые называются *стабильными* и *предварительными*версиями, оба из которых содержат различные версии Swagger, упорядоченные по датам. Папка с самой последней датой будет содержать последнюю копию Swagger. В зависимости от выбранного варианта файл Swagger называется _**digitaltwins.js**_.
+Пользовательский Swagger для этого учебника находится в папке _* * Azure_Digital_Twins_custom_Swaggers__Logic_Apps_connector_\логикаппс **_. Эта папка содержит вложенные папки, которые называются *стабильными* и *предварительными*версиями, оба из которых содержат различные версии Swagger, упорядоченные по датам. Папка с самой последней датой будет содержать последнюю копию Swagger. Независимо от того, какая версия выбрана, файл Swagger имеет имя _** digitaltwins.jsв * * _.
 
 > [!NOTE]
 > Если вы не работаете с предварительной версией функции, обычно рекомендуется использовать самую последнюю *стабильную* версию Swagger. Тем не менее предыдущие версии и предварительные версии Swagger также поддерживаются. 
@@ -173,7 +173,7 @@ ms.locfileid: "91849849"
 Откроется окно *Выбор действия* . Перейдите на вкладку *Пользовательская* . Вы должны увидеть пользовательский соединитель с более ранней версии в верхнем поле.
 
 :::image type="content" source="media/how-to-integrate-logic-apps/custom-action.png" alt-text="Представление портала регистрации приложения Azure AD. В меню ресурсов есть выделение &quot;сертификаты и секреты&quot;, а также выделение на странице &quot;новый секрет клиента&quot;." *Управление цифровыми двойниковми*".
-* _версия API_: в текущей общедоступной предварительной версии это значение — *2020-05-31-Preview* .
+* _версия API_: Последняя версия API. В текущей общедоступной предварительной версии это значение — *2020-05-31-Preview* .
 
 Нажмите кнопку *сохранить* в конструкторе Logic Apps.
 
@@ -185,7 +185,7 @@ ms.locfileid: "91849849"
 
 Теперь, когда приложение логики создано, событие двойника Update, определенное в конструкторе Logic Apps, должно выполняться каждые три секунды. Это означает, что через три секунды вы сможете запросить двойника и увидеть новые исправленные значения.
 
-Вы можете запросить двойника с помощью выбранного метода (например, [пользовательского клиентского приложения](tutorial-command-line-app.md), [примера приложения для цифрового двойников Explorer](https://docs.microsoft.com/samples/azure-samples/digital-twins-explorer/digital-twins-explorer/), [пакетов SDK и API](how-to-use-apis-sdks.md)или [интерфейса командной строки](how-to-use-cli.md)). 
+Вы можете запросить двойника с помощью выбранного метода (например, [пользовательского клиентского приложения](tutorial-command-line-app.md), [примера приложения для цифрового двойников Explorer](/samples/azure-samples/digital-twins-explorer/digital-twins-explorer/), [пакетов SDK и API](how-to-use-apis-sdks.md)или [интерфейса командной строки](how-to-use-cli.md)). 
 
 Дополнительные сведения о запросах к экземпляру Digital двойников для Azure см. [*в статье как выполнить запрос к графу двойника*](how-to-query-graph.md).
 

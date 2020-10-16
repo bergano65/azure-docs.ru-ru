@@ -8,18 +8,18 @@ ms.workload: infrastructure-services
 ms.topic: troubleshooting
 ms.date: 09/02/2020
 ms.author: genli
-ms.openlocfilehash: 3274e45738c079c89560f546fe58163f695e12df
-ms.sourcegitcommit: efaf52fb860b744b458295a4009c017e5317be50
+ms.openlocfilehash: 390cda604b71404735b7c14382d30067e154ef70
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91851107"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91976191"
 ---
 # <a name="prepare-a-windows-vhd-or-vhdx-to-upload-to-azure"></a>Подготовка диска VHD или VHDX для Windows к отправке в Azure
 
 Перед отправкой виртуальной машины Windows из локальной среды в Azure необходимо подготовить виртуальный жесткий диск (VHD или VHDX). Azure поддерживает виртуальные машины поколения 1 и 2, которые имеют формат VHD-файла и имеют диск фиксированного размера. Максимально допустимый размер виртуального жесткого диска для ОС на виртуальной машине поколения 1 составляет 2 ТБ.
 
-Вы можете преобразовать VHDX-файл в VHD, преобразовать динамически расширяемый диск в диск фиксированного размера, но нельзя изменить поколение виртуальной машины. Дополнительные сведения см. [в статье Создание виртуальной машины поколения 1 или 2 в Hyper-V](/windows-server/virtualization/hyper-v/plan/Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V) и [Поддержка виртуальных машин поколения 2 в Azure](generation-2.md).
+Вы можете преобразовать VHDX-файл в VHD, преобразовать динамически расширяемый диск в диск фиксированного размера, но нельзя изменить поколение виртуальной машины. Дополнительные сведения см. [в статье Создание виртуальной машины поколения 1 или 2 в Hyper-V](/windows-server/virtualization/hyper-v/plan/Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V) и [Поддержка виртуальных машин поколения 2 в Azure](../generation-2.md).
 
 Сведения о политике поддержки для виртуальных машин Azure см. в [статье поддержка серверного программного обеспечения Майкрософт для виртуальных машин Azure](https://support.microsoft.com/help/2721672/).
 
@@ -71,7 +71,7 @@ Windows Resource Protection did not find any integrity violations.
    netsh.exe winhttp reset proxy
    ```
 
-    Если виртуальная машина должна работать с конкретным прокси-сервером, добавьте исключение прокси для IP-адреса Azure ([168.63.129.16](/azure/virtual-network/what-is-ip-address-168-63-129-16)), чтобы виртуальная машина могла подключаться к Azure:
+    Если виртуальная машина должна работать с конкретным прокси-сервером, добавьте исключение прокси для IP-адреса Azure ([168.63.129.16](../../virtual-network/what-is-ip-address-168-63-129-16.md)), чтобы виртуальная машина могла подключаться к Azure:
 
     ```
     $proxyAddress='<your proxy server>'
@@ -405,7 +405,7 @@ Get-Service -Name Netlogon, Netman, TermService |
 Чтобы создать только одну виртуальную машину с одного диска, не нужно использовать Sysprep. Вместо этого можно создать виртуальную машину на основе *специализированного образа*. Сведения о том, как создать виртуальную машину на основе специализированного диска, см. в следующих статьях:
 
 - [Создание виртуальной машины Windows из специализированного диска](create-vm-specialized.md)
-- [Create a VM from a specialized VHD disk](/azure/virtual-machines/windows/create-vm-specialized-portal) (Создание виртуальной машины из специализированного VHD-диска)
+- [Create a VM from a specialized VHD disk](./create-vm-specialized-portal.md) (Создание виртуальной машины из специализированного VHD-диска)
 
 Для создания обобщенного образа необходимо запустить Sysprep. Дополнительные сведения см. в разделе [Использование Sysprep: введение](/previous-versions/windows/it-pro/windows-xp/bb457073(v=technet.10)).
 
@@ -427,10 +427,10 @@ Get-Service -Name Netlogon, Netman, TermService |
 
     ![Средство SysPrep](media/prepare-for-upload-vhd-image/syspre.png)
 1. В разделе **Параметры завершения работы** выберите **Завершение работы**.
-1. Щелкните **ОК**.
+1. Нажмите кнопку **OK**.
 1. После завершения работы программы Sysprep завершите работу виртуальной машины. Не используйте **перезагрузку** для завершения работы виртуальной машины.
 
-Теперь диск VHD можно отправлять. Дополнительные сведения о том, как создать виртуальную машину на основе обобщенного диска, см. в разделе [Отправка обобщенного виртуального жесткого диска и его использование для создания новой виртуальной машины в Azure](sa-upload-generalized.md).
+Теперь диск VHD можно отправлять. Дополнительные сведения о том, как создать виртуальную машину на основе обобщенного диска, см. в разделе [Отправка обобщенного виртуального жесткого диска и его использование для создания новой виртуальной машины в Azure](/previous-versions/azure/virtual-machines/windows/sa-upload-generalized).
 
 >[!NOTE]
 > Пользовательский файл *unattend.xml* не поддерживается. Хотя мы поддерживаем свойство **аддитионалунаттендконтент** , которое предоставляет ограниченную поддержку добавления параметров [Microsoft-Windows-Shell-setup](/windows-hardware/customize/desktop/unattend/microsoft-windows-shell-setup) в файл *unattend.xml* , используемый агентом подготовки Azure. Можно использовать, например, [аддитионалунаттендконтент](/dotnet/api/microsoft.azure.management.compute.models.additionalunattendcontent?view=azure-dotnet&preserve-view=true) , чтобы добавить Фирстлогонкоммандс и логонкоммандс. Дополнительные сведения см. в разделе [Аддитионалунаттендконтент фирстлогонкоммандс example](https://github.com/Azure/azure-quickstart-templates/issues/1407).
@@ -468,7 +468,7 @@ Get-Service -Name Netlogon, Netman, TermService |
 
 ### <a name="use-powershell-to-convert-the-disk"></a>Преобразование диска с помощью PowerShell
 
-Вы можете преобразовать виртуальный диск с помощью командлета [Convert-VHD](/powershell/module/hyper-v/convert-vhd) в PowerShell. Сведения об установке этого командлета см. [в статье Установка роли Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/get-started/install-the-hyper-v-role-on-windows-server).
+Вы можете преобразовать виртуальный диск с помощью командлета [Convert-VHD](/powershell/module/hyper-v/convert-vhd) в PowerShell. Сведения об установке этого командлета см. [в статье Установка роли Hyper-V](/windows-server/virtualization/hyper-v/get-started/install-the-hyper-v-role-on-windows-server).
 
 В следующем примере показано преобразование диска из формата VHDX в VHD. Он также преобразует диск из динамически расширяющегося диска в диск фиксированного размера.
 
@@ -488,7 +488,7 @@ Convert-VHD -Path C:\test\MyVM.vhdx -DestinationPath C:\test\MyNewVM.vhd -VHDTyp
 
 ### <a name="use-powershell-to-resize-the-disk"></a>Использование PowerShell для изменения размера диска
 
-Вы можете изменить размер виртуального диска с помощью командлета [resize-VHD](/powershell/module/hyper-v/resize-vhd) в PowerShell. Сведения об установке этого командлета см. [в статье Установка роли Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/get-started/install-the-hyper-v-role-on-windows-server).
+Вы можете изменить размер виртуального диска с помощью командлета [resize-VHD](/powershell/module/hyper-v/resize-vhd) в PowerShell. Сведения об установке этого командлета см. [в статье Установка роли Hyper-V](/windows-server/virtualization/hyper-v/get-started/install-the-hyper-v-role-on-windows-server).
 
 В следующем примере показано, как изменить размер диска с 100,5 MiB на 101 MiB в соответствии с требованиями к выравниванию Azure.
 
@@ -500,7 +500,7 @@ Resize-VHD -Path C:\test\MyNewVM.vhd -SizeBytes 105906176
 
 ### <a name="convert-from-vmware-vmdk-disk-format"></a>Преобразование диска VMware в формате VMDK
 
-Если вы используете образ виртуальной машины Windows в [формате VMDK](https://en.wikipedia.org/wiki/VMDK), то можете использовать службу " [Миграция Azure](https://docs.microsoft.com/azure/migrate/server-migrate-overview) " для преобразования VMDK-файла и его передачи в Azure.
+Если вы используете образ виртуальной машины Windows в [формате VMDK](https://en.wikipedia.org/wiki/VMDK), то можете использовать службу " [Миграция Azure](../../migrate/server-migrate-overview.md) " для преобразования VMDK-файла и его передачи в Azure.
 
 ## <a name="complete-the-recommended-configurations"></a>Выполнение рекомендуемых конфигураций
 
@@ -520,4 +520,4 @@ Resize-VHD -Path C:\test\MyNewVM.vhd -SizeBytes 105906176
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Отправка образа виртуальной машины Windows в Azure для развертываний Resource Manager](upload-generalized-managed.md)
-- [Устранение неполадок при активации виртуальной машины Windows в Azure](troubleshoot-activation-problems.md)
+- [Устранение неполадок при активации виртуальной машины Windows в Azure](../troubleshooting/troubleshoot-activation-problems.md)

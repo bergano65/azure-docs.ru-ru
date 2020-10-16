@@ -7,10 +7,10 @@ ms.topic: how-to
 ms.date: 10/30/2019
 ms.author: v-erkel
 ms.openlocfilehash: 0da8a4fc1b59976c50cd96f2155715a4cb178cc9
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87072767"
 ---
 # <a name="move-data-to-azure-blob-storage"></a>Перемещение данных в хранилище BLOB-объектов Azure
@@ -42,7 +42,7 @@ ms.locfileid: "87072767"
 Общий обзор процесса:
 
 1. Подготовьте систему Linux (виртуальную машину или физическую) с Python версии 3,6 или более поздней. Для лучшей производительности рекомендуется использовать Python 3,7.
-1. Установите программное обеспечение Авере-Клфслоад в системе Linux.
+1. Установите Avere-CLFSLoad программное обеспечение в системе Linux.
 1. Выполните перенос из командной строки Linux.
 
 Программе Авере Клфслоад требуются следующие сведения:

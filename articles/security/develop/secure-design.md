@@ -14,10 +14,10 @@ ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.openlocfilehash: d0cffbd1fa09abef9853e0ef853696c3c8ed353c
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86246815"
 ---
 # <a name="design-secure-applications-on-azure"></a>Разработка безопасных приложений в Azure
@@ -26,7 +26,7 @@ ms.locfileid: "86246815"
 В этой статье описаны следующие этапы SDL:
 
 - Обучение
-- Requirements (Требования)
+- Требования
 - Конструирование
 
 ## <a name="training"></a>Обучение
@@ -49,7 +49,7 @@ ms.locfileid: "86246815"
 
   - Рекомендации [по обеспечению безопасности для решений Azure](https://azure.microsoft.com/resources/security-best-practices-for-azure-solutions) предоставляют набор рекомендаций по обеспечению безопасности для использования при проектировании, развертывании и управлении облачными решениями с помощью Azure.
 
-## <a name="requirements"></a>Requirements (Требования)
+## <a name="requirements"></a>Требования
 Этап определения требований — это важный шаг в определении того, что такое приложение и что оно будет делать при его освобождении. На этапе требований также стоит подумать об элементах управления безопасностью, которые будут созданы в приложении. На этом этапе вы также начнете шаги, которые будут выполнены на протяжении всего жизненного цикла SDL, чтобы обеспечить выпуск и развертывание безопасного приложения.
 
 ### <a name="consider-security-and-privacy-issues"></a>Примите во внимание проблемы безопасности и конфиденциальности

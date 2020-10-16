@@ -10,12 +10,12 @@ ms.author: jafreebe
 ms.reviewer: cephalin
 ms.custom: seodec18, devx-track-java
 zone_pivot_groups: app-service-platform-windows-linux
-ms.openlocfilehash: 0b6d4ebd199e1db9e5b325df5ea08eaede8e581b
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 736d80c4bcfe31a499b84bb24c1c377e69e84218
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91311892"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91976017"
 ---
 # <a name="configure-a-java-app-for-azure-app-service"></a>Настройка приложения Java для службы приложений Azure
 
@@ -29,8 +29,6 @@ ms.locfileid: "91311892"
 
 В противном случае метод развертывания будет зависеть от типа вашего архива.
 
-::: zone pivot="platform-windows"  
-
 ### <a name="java-se"></a>Java SE
 
 Чтобы развернуть JAR-файлы в Java SE, используйте `/api/zipdeploy/` конечную точку сайта KUDU. Дополнительные сведения об этом API см. в [этой документации](./deploy-zip.md#rest).
@@ -39,7 +37,6 @@ ms.locfileid: "91311892"
 
 Чтобы развернуть файлы WAR в Tomcat, используйте конечную точку `/api/wardeploy/` для публикации файла архива. Дополнительные сведения об этом API см. в [этой документации](./deploy-zip.md#deploy-war-file).
 
-::: zone-end
 ::: zone pivot="platform-linux"
 
 ### <a name="jboss-eap"></a>JBoss EAP

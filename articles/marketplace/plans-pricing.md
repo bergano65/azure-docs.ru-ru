@@ -11,7 +11,7 @@ ms.openlocfilehash: e97171e61814b832e78f7bd815d8d6f341a90840
 ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91858178"
 ---
 # <a name="plans-and-pricing-for-commercial-marketplace-offers"></a>Планы и цены на коммерческие предложения Marketplace
@@ -164,7 +164,7 @@ ms.locfileid: "91858178"
 
 Чтобы получить сведения о подписках клиентов, которые работают с бесплатной пробной версией, используйте новое свойство API `isFreeTrial`, которое будет помечено как true или false. Дополнительные сведения см. в разделе об [API получения подписки SaaS](./partner-center-portal/pc-saas-fulfillment-api-v2.md#get-subscription).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Сведения о добавлении или обновлении планов в существующем предложении см. [в статье обновление существующего предложения в коммерческом магазине](./partner-center-portal/update-existing-offer.md).
 - Дополнительные сведения о параметрах транзакций и связанных моделях ценообразования см. в статье [функции Transact Marketplace на рынке](./marketplace-commercial-transaction-capabilities-and-considerations.md).

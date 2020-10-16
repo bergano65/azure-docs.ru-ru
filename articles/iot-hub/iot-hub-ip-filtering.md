@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 05/25/2020
 ms.author: robinsh
 ms.openlocfilehash: 1ba3c89ea4f964f9e6fd5f902aab29a83a058f25
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87074718"
 ---
 # <a name="use-ip-filters"></a>Использование фильтрации IP-адресов
@@ -47,11 +47,11 @@ ms.locfileid: "87074718"
 
 Чтобы добавить правило фильтрации IP-адресов, выберите **+ Добавить правило фильтрации IP-адресов**.
 
-:::image type="content" source="./media/iot-hub-ip-filtering/ip-filter-add-rule.png" alt-text="Добавление правила фильтрации IP-адресов в Центр Интернета вещей":::
+:::image type="content" source="./media/iot-hub-ip-filtering/ip-filter-add-rule.png" alt-text="Параметры фильтрации IP-адресов по умолчанию для Центра Интернета вещей":::
 
 После выбора параметра **Добавить правило фильтрации IP-адресов** заполните поля.
 
-:::image type="content" source="./media/iot-hub-ip-filtering/ip-filter-after-selecting-add.png" alt-text="После выбора параметра Добавить правило фильтрации IP-адресов":::
+:::image type="content" source="./media/iot-hub-ip-filtering/ip-filter-after-selecting-add.png" alt-text="Параметры фильтрации IP-адресов по умолчанию для Центра Интернета вещей":::
 
 * Укажите **имя** правила фильтрации IP-адресов. Оно должно быть уникальной строкой буквенно-цифровых символов длиной не более 128 символов без учета регистра. Допускаются только 7-разрядные буквы и цифры ASCII, а также `{'-', ':', '/', '\', '.', '+', '%', '_', '#', '*', '?', '!', '(', ')', ',', '=', '@', ';', '''}`.
 
@@ -61,7 +61,7 @@ ms.locfileid: "87074718"
 
 После заполнения полей выберите **Сохранить**, чтобы сохранить правило. Появится предупреждение о том, что выполняется обновление.
 
-:::image type="content" source="./media/iot-hub-ip-filtering/ip-filter-save-new-rule.png" alt-text="Уведомление о сохранении правила фильтрации IP-адресов":::
+:::image type="content" source="./media/iot-hub-ip-filtering/ip-filter-save-new-rule.png" alt-text="Параметры фильтрации IP-адресов по умолчанию для Центра Интернета вещей":::
 
 Параметр **Добавить** становится неактивным, когда достигается максимальное число правил фильтрации IP-адресов (10).
 
@@ -71,7 +71,7 @@ ms.locfileid: "87074718"
 
 Чтобы удалить правило фильтрации IP-адресов, выберите значок корзины в этой строке, а затем выберите **Сохранить**. Правило удаляется, а изменения сохраняются.
 
-:::image type="content" source="./media/iot-hub-ip-filtering/ip-filter-delete-rule.png" alt-text="Удаление правила фильтрации IP-адресов в Центре Интернета вещей":::
+:::image type="content" source="./media/iot-hub-ip-filtering/ip-filter-delete-rule.png" alt-text="Параметры фильтрации IP-адресов по умолчанию для Центра Интернета вещей":::
 
 ## <a name="retrieve-and-update-ip-filters-using-azure-cli"></a>Получение и обновление фильтров IP-адресов с помощью Azure CLI
 
@@ -161,7 +161,7 @@ $iothubResource | Set-AzResource -Force
 
 Чтобы сохранить новую последовательность, нажмите кнопку **Сохранить**.
 
-:::image type="content" source="media/iot-hub-ip-filtering/ip-filter-rule-order.png" alt-text="Изменение порядка правил фильтрации IP-адресов в Центре Интернета вещей":::
+:::image type="content" source="media/iot-hub-ip-filtering/ip-filter-rule-order.png" alt-text="Параметры фильтрации IP-адресов по умолчанию для Центра Интернета вещей":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

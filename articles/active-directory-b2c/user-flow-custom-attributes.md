@@ -12,10 +12,10 @@ ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 1d631c47225fac7d8a95541313593333a1399e07
-ms.sourcegitcommit: 0820c743038459a218c40ecfb6f60d12cbf538b3
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87115959"
 ---
 # <a name="define-custom-attributes-in-azure-active-directory-b2c"></a>Определение настраиваемых атрибутов в Azure Active Directory B2C
@@ -48,8 +48,8 @@ ms.locfileid: "87115959"
 
 1. В клиенте Azure AD B2C выберите **Потоки пользователей**.
 1. Откройте политику (например B2C_1_SignupSignin), щелкнув ее.
-1. Выберите **Атрибуты пользователя**, а затем — настраиваемый атрибут (например, ShoeSize). Нажмите кнопку **Сохранить**.
+1. Выберите **Атрибуты пользователя**, а затем — настраиваемый атрибут (например, ShoeSize). Выберите команду **Сохранить**.
 1. Щелкните **Утверждения приложения** и выберите настраиваемый атрибут.
-1. Нажмите кнопку **Сохранить**.
+1. Выберите команду **Сохранить**.
 
 После создания нового пользователя с помощью пользовательского потока, использующего только что созданный настраиваемый атрибут, объект можно запросить в [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer). Кроме того, можно использовать функцию « [Запуск потока пользователя](https://docs.microsoft.com/azure/active-directory-b2c/tutorial-create-user-flows) » в потоке пользователя, чтобы проверить работу клиента. Теперь вы увидите **ShoeSize** в списке атрибутов, собираемых в процессе регистрации, а также в токене, возвращаемом в приложение.

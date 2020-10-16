@@ -17,10 +17,10 @@ ms.reviewer: sumitp
 ms.custom: it-pro;seo-update-azuread-jan
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 94c0d1efa83af53804be89a9e86f4cafd5bc0ae0
-ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86057761"
 ---
 # <a name="change-license-assignments-for-a-user-or-group-in-azure-active-directory"></a>Изменение назначений лицензий для пользователя или группы в Azure Active Directory
@@ -54,7 +54,7 @@ ms.locfileid: "86057761"
 
     ![Страница "назначения лицензий" для пользователя, на котором снят флажок "Office 365 E1" и выбрано Office 365 E3](media/licensing-groups-change-licenses/update-user-license-assignments.png)
 
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
 Azure AD применяет новые лицензии и удаляет старые лицензии одновременно для обеспечения непрерывности обслуживания.
 
@@ -69,11 +69,11 @@ Azure AD применяет новые лицензии и удаляет ста
 
     ![Выбор команды "назначения" на странице лицензий пользователя или группы](media/licensing-groups-change-licenses/update-group-license-assignments.png)
 
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
 Чтобы обеспечить непрерывность обслуживания, Azure AD применяет новые лицензии и удаляет старые лицензии одновременно для всех пользователей в группе.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о сценариях управления лицензиями с помощью групп см. в следующих статьях:
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 10/15/2019
 ms.author: ramamill
 ms.openlocfilehash: f6c47d4cbfe6311333d95b07c0553afa2b3bb15c
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87287734"
 ---
 # <a name="deploy-a-configuration-server"></a>Развертывание сервера конфигурации.
@@ -98,7 +98,7 @@ ms.locfileid: "87287734"
 
 ## <a name="register-the-configuration-server-with-azure-site-recovery-services"></a>Регистрация сервера конфигурации с помощью служб Azure Site Recovery
 
-1. В консоли клиента VMware vSphere Включите виртуальную машину.
+1. Из консоли клиента VMware vSphere включите виртуальную машину.
 2. Виртуальная машина загружается в среду установки Windows Server 2016. Примите лицензионное соглашение и введите пароль администратора.
 3. После установки войдите в виртуальную машину от имени администратора.
 4. При первом входе в систему через несколько секунд запускается средство настройки Azure Site Recovery.

@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 05/29/2020
 ms.author: rogarana
 ms.openlocfilehash: be308a91b5b583f96406f10675344ab263150a81
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91716075"
 ---
 # <a name="overview-of-azure-files-identity-based-authentication-options-for-smb-access"></a>Обзор параметров проверки подлинности на основе удостоверений службы файлов Azure для доступа к SMB
@@ -147,7 +147,7 @@ ms.locfileid: "91716075"
 ## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о службе файлов Azure и аутентификации на основе удостоверений по протоколу SMB см. в следующих ресурсах:
 
-- [Планирование развертывания Файлов Azure](storage-files-planning.md)
+- [Планирование развертывания службы файлов Azure](storage-files-planning.md)
 - [Включение проверки подлинности локальных служб домен Active Directory Services по протоколу SMB для файловых ресурсов Azure](storage-files-identity-auth-active-directory-enable.md)
 - [Включение проверки подлинности доменных служб Azure Active Directory в службе файлов Azure](storage-files-identity-auth-active-directory-domain-service-enable.md)
 - [Часто задаваемые вопросы](storage-files-faq.md)

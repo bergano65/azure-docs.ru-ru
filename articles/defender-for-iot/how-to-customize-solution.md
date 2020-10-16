@@ -14,10 +14,10 @@ ms.workload: na
 ms.date: 09/06/2020
 ms.author: mlottner
 ms.openlocfilehash: ae4330b94654cafc7249e0501c6964df3a8a4616
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90938359"
 ---
 # <a name="customize-your-defender-for-iot-solution"></a>Настройка защитника для решения IoT
@@ -48,7 +48,7 @@ ms.locfileid: "90938359"
 1. В разделе * * Сбор данных * * * выберите параметр решения, который вы хотите изменить.
 1. Не забудьте всегда щелкать **сохранить** в верхней части любого экрана настройки, чтобы сохранить изменения параметров.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Обзор](overview.md) службы "защитник для Интернета вещей"
 - Узнайте, как [получить доступ к данным безопасности](how-to-security-data-access.md)

@@ -7,12 +7,12 @@ ms.date: 07/23/2020
 ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 165f83e0f021d23c26333a294ffe992838bda6b0
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.openlocfilehash: caaa4499cbed1dce1a858c33a9488650649a5a44
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91577719"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92042921"
 ---
 # <a name="use-iot-plug-and-play-models-in-an-iot-solution"></a>Использование моделей Plug and Play IoT в решении IoT
 
@@ -40,10 +40,10 @@ ms.locfileid: "91577719"
 
 ### <a name="get-device-twin-api"></a>Получение API Двойникаа устройства
 
-Решение может использовать API [Get Device двойника](https://docs.microsoft.com/java/api/com.microsoft.azure.sdk.iot.device.deviceclient.getdevicetwin?view=azure-java-stable&preserve-view=true) для получения идентификатора модели для устройства IOT Plug and Play.
+Решение может использовать API [Get Device двойника](/java/api/com.microsoft.azure.sdk.iot.device.deviceclient.getdevicetwin?preserve-view=true&view=azure-java-stable) для получения идентификатора модели для устройства IOT Plug and Play.
 
 > [!TIP]
-> Для модулей и модулей IoT Edge используйте [модулеклиент. жеттвин](https://docs.microsoft.com/java/api/com.microsoft.azure.sdk.iot.device.moduleclient.gettwin?view=azure-java-stable&preserve-view=true).
+> Для модулей и модулей IoT Edge используйте [модулеклиент. жеттвин](/java/api/com.microsoft.azure.sdk.iot.device.moduleclient.gettwin?preserve-view=true&view=azure-java-stable).
 
 В следующем фрагменте ответа двойникаа устройства `modelId` СОДЕРЖИТСЯ идентификатор модели для устройства IoT Plug and Play:
 
@@ -71,7 +71,7 @@ ms.locfileid: "91577719"
 
 ### <a name="get-digital-twin-api"></a>Получение API цифровых двойника
 
-Решение может использовать API [Get Digital двойника](https://docs.microsoft.com/rest/api/iothub/service/digitaltwin/getdigitaltwin) для получения идентификатора модели модели, реализованной на устройстве IOT Plug and Play.
+Решение может использовать API [Get Digital двойника](/rest/api/iothub/service/digitaltwin/getdigitaltwin) для получения идентификатора модели модели, реализованной на устройстве IOT Plug and Play.
 
 В следующем фрагменте ответа Digital двойника `$metadata.$model` содержит идентификатор модели для устройства IoT Plug and Play:
 
@@ -121,7 +121,7 @@ content-encoding:utf-8
 
 Определив идентификатор модели для нового подключения устройства, выполните следующие действия.
 
-1. Получите определение модели, используя идентификатор модели из репозитория модели. Дополнительные сведения см. в разделе [Получение моделей](https://docs.microsoft.com/rest/api/iothub/digitaltwinmodelrepositoryservice/getmodelasync/getmodelasync).
+1. Получите определение модели, используя идентификатор модели из репозитория модели. Дополнительные сведения см. в разделе [Получение моделей](/rest/api/iothub/digitaltwinmodelrepositoryservice/getmodelasync/getmodelasync).
 
 1. Используя определение модели подключенного устройства, можно перечислить возможности устройства.
 
@@ -144,5 +144,5 @@ content-encoding:utf-8
 Теперь, когда вы узнали, как интегрировать модели Интернета вещей Plug and Play в решение IoT, вот некоторые из предлагаемых дальнейших действий:
 
 - [Взаимодействие с устройством из вашего решения](quickstart-service-node.md)
-- [REST API IoT Digital двойника](https://docs.microsoft.com/rest/api/iothub/service/digitaltwin)
+- [REST API IoT Digital двойника](/rest/api/iothub/service/digitaltwin)
 - [Обозреватель Интернета вещей Azure](howto-use-iot-explorer.md)

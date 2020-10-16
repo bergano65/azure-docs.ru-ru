@@ -7,10 +7,10 @@ ms.author: baanders
 ms.topic: troubleshooting
 ms.date: 7/20/2020
 ms.openlocfilehash: bc4fbbc265bef00be27c890c3f090a49591dc415
-ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90562746"
 ---
 # <a name="service-request-failed-status-403-forbidden"></a>Сбой запроса на обслуживание. Состояние: 403 (запрещено)
@@ -77,7 +77,7 @@ az dt role-assignment create --dt-name <your-Azure-Digital-Twins-instance> --ass
 
 Если какой-либо из них отличается от описанного выше, следуйте инструкциям в разделе Настройка регистрации приложения [статьи *Настройка разрешений доступа для клиентских приложений* раздела](how-to-set-up-instance-cli.md#set-up-access-permissions-for-client-applications) *инструкции. Настройка экземпляра и проверки подлинности (CLI или портал)*.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Ознакомьтесь с шагами по настройке создания и аутентификации нового экземпляра Digital двойников в Azure.
 * [*Пошаговое руководство. Настройка экземпляра и проверки подлинности (CLI)*](how-to-set-up-instance-cli.md)

@@ -8,15 +8,15 @@ ms.technology: machine-learning
 ms.topic: conceptual
 author: dphansen
 ms.author: davidph
-ms.date: 07/14/2020
-ms.openlocfilehash: 5a1e0b12179070dc11e838004c4b27cf04b5396b
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.date: 10/13/2020
+ms.openlocfilehash: 8da0b34339f2ac03f50e2dcb1a4ed13cc2ea9785
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91298911"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92075439"
 ---
-# <a name="deploy-and-make-predictions-with-an-onnx-model"></a>Развертывание и создание прогнозов с помощью модели ONNX
+# <a name="deploy-and-make-predictions-with-an-onnx-model-and-sql-machine-learning"></a>Развертывание и создание прогнозов с помощью модели ONNX и машинного обучения SQL
 
 В этом кратком руководстве вы узнаете, как обучить модель, преобразовать ее в ONNX, развернуть в [Azure SQL](onnx-overview.md) или [Azure SQL управляемый экземпляр (Предварительная версия)](../azure-sql/managed-instance/machine-learning-services-overview.md), а затем запустить машинный прогноз на основе данных с помощью переданной модели ONNX.
 
@@ -177,7 +177,7 @@ def convert_dataframe_schema(df, drop=None, batch_axis=False):
 
 ```python
 # Convert the scikit model to onnx format
-onnx_model = skl2onnx.convert_sklearn(model, 'Boston Data', convert_dataframe_schema(x_train))
+onnx_model = skl2onnx.convert_sklearn(model, 'Boston Data', convert_dataframe_schema(x_train), final_types=[('variable1',FloatTensorType([1,1]))])
 # Save the onnx model locally
 onnx_model_path = 'boston1.model.onnx'
 onnxmltools.utils.save_model(onnx_model, onnx_model_path)

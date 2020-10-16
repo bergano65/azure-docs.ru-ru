@@ -15,7 +15,7 @@ ms.openlocfilehash: 500099753ee4fe47f02e7f09d9732b71aa3bae36
 ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91856371"
 ---
 # <a name="get-face-detection-data"></a>Получение данных обнаружения лиц
@@ -76,7 +76,7 @@ ms.locfileid: "91856371"
 
 Дополнительные сведения о каждом из атрибутов см. в разделе Общие сведения об [обнаружении и атрибутах лиц](../concepts/face-detection.md) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этом руководство вы узнали, как использовать различные функции обнаружения лиц. Затем интегрируйте эти функции в приложение, выполнив подробное руководство.
 

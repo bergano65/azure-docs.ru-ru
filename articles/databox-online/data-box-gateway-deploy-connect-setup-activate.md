@@ -8,12 +8,12 @@ ms.subservice: gateway
 ms.topic: tutorial
 ms.date: 03/18/2019
 ms.author: alkohli
-ms.openlocfilehash: 78c06cc7f08fe94a25ea63d9bf76cc1352d9f2b7
-ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
+ms.openlocfilehash: cb6ef6ac25c4afa72160ba437e0ea3b5492cfd93
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "82561672"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91741964"
 ---
 # <a name="tutorial-connect-set-up-activate-azure-data-box-gateway"></a>Руководство по Подключение, настройка и активация Шлюза Azure Data Box
 
@@ -126,7 +126,7 @@ ms.locfileid: "82561672"
     
     3. Устройств будет активировано, после чего на него будут установлены все доступные критические обновления. При этом вы получите соответствующее уведомление. Отслеживайте ход обновления с помощью портала Azure.
 
-        ![Страница "Настройки облака" в локальном пользовательском веб-интерфейсе](./media/data-box-gateway-deploy-connect-setup-activate/image12.png)
+        ![Страница "Настройки облака" в локальном пользовательском веб-интерфейсе (2)](./media/data-box-gateway-deploy-connect-setup-activate/image12.png)
         
         **В диалоговом окне также будет отображаться ключ восстановления, который вам нужно скопировать и сохранить в безопасном месте. Этот ключ используется для восстановления данных в случае невозможности загрузить устройство.**
 

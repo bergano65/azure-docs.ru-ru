@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 08/28/2020
 ms.author: alkohli
 ms.openlocfilehash: df5fea8101834dae089ab97354c438363321a707
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90904480"
 ---
 # <a name="set-azure-resource-manager-password-on-azure-stack-edge-pro-gpu-device"></a>Задание Azure Resource Manager пароля для устройства GPU Pro на Azure Stack
@@ -122,7 +122,7 @@ ms.locfileid: "90904480"
     $pass = ConvertTo-SecureString $password -AsPlainText -Force
     $key = ConvertTo-SecureString $cik -AsPlainText -Force
     ```
-    Используйте указанные выше защищенные строки в качестве параметров командлета Set-Аздатабокседжеусер, чтобы сбросить пароль. Используйте ту же группу ресурсов, которая использовалась при создании ресурса Azure Stack ребра Pro/Шлюз Data Box.
+    Используйте приведенные выше защищенные строки в качестве параметров в командлете Set-AzDataBoxEdgeUser, чтобы сбросить пароль. Используйте ту же группу ресурсов, которая использовалась при создании ресурса Azure Stack ребра Pro/Шлюз Data Box.
 
     ```azurepowershell
     Set-AzDataBoxEdgeUser -ResourceGroupName $resourceGroup -DeviceName $devicename -Name EdgeARMUser  -Password $pass -EncryptionKey $key
@@ -146,6 +146,6 @@ ms.locfileid: "90904480"
     ```
 Используйте новый пароль для подключения к Azure Resource Manager.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Подключение к Azure Resource Manager.](azure-stack-edge-j-series-connect-resource-manager.md)

@@ -4,12 +4,12 @@ description: Узнайте, как создать частный кластер
 services: container-service
 ms.topic: article
 ms.date: 7/17/2020
-ms.openlocfilehash: 10cbd58807c213418a88b42887cdb76868eac34e
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 825e97bfc80695180195fde07eaa1a25ac74b49b
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87015655"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92078159"
 ---
 # <a name="create-a-private-azure-kubernetes-service-cluster"></a>Создание частного кластера Службы Azure Kubernetes
 
@@ -21,8 +21,7 @@ ms.locfileid: "87015655"
 
 Частный кластер доступен в общедоступных регионах, где [поддерживается AKS](https://azure.microsoft.com/global-infrastructure/services/?products=kubernetes-service).
 
-* В настоящее время в Azure Китая 21Vianet не поддерживается.
-* US Gov (Техас) в настоящее время не поддерживается из-за отсутствия поддержки закрытых ссылок.
+US Gov (Техас) в настоящее время не поддерживается из-за отсутствия поддержки закрытых ссылок.
 
 ## <a name="prerequisites"></a>Предварительные требования
 

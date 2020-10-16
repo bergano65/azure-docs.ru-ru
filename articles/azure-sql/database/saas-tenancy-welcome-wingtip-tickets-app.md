@@ -13,10 +13,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 01/25/2019
 ms.openlocfilehash: 2c8c094efdfa9f46c6e6c42e34fd4010e43fa972
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84039905"
 ---
 # <a name="the-wingtip-tickets-saas-application"></a>SaaS-приложение Wingtip Tickets
@@ -42,7 +42,7 @@ ms.locfileid: "84039905"
 
 Шаблон с однотенантной базой данных эффективен для поставщиков услуг, которым требуется изолированный клиент и централизованная служба, обеспечивающая рентабельное использование общих ресурсов. База данных создается для каждой локации или клиента. Все базы данных управляются централизованно. Базы данных могут размещаться в эластичных пулах, чтобы обеспечить рентабельное и простое управление производительностью, а также обработку непрогнозируемой рабочей нагрузки клиентов. База данных каталога содержит сопоставление клиентов и их баз данных. Такое сопоставление осуществляется с помощью функций управления для карты сегментов [клиентской библиотеки эластичной базы данных](elastic-database-client-library.md), которая обеспечивает эффективное управление подключением к приложению.
 
-Ознакомьтесь с [учебниками][docs-tutorials-for-wingtip-dpt] и кодом на сайте GitHub [. ../Microsoft/WingtipTicketsSaaS-DbPerTenant][github-code-for-wingtip-dpt].
+Ознакомьтесь с [учебниками][docs-tutorials-for-wingtip-dpt] и кодом на сайте GitHub  [. ../Microsoft/WingtipTicketsSaaS-DbPerTenant][github-code-for-wingtip-dpt].
 
 ## <a name="sharded-multi-tenant-database-pattern"></a>Шаблон с сегментированной мультитенантной базой данных
 
@@ -50,9 +50,9 @@ ms.locfileid: "84039905"
 
 Этот шаблон также позволяет выполнить *гибридную* модель, в которой можно оптимизировать затраты с помощью нескольких клиентов в базе данных или оптимизировать изоляцию с одним клиентом в своей собственной базе данных. Выбрать шаблон можно как при подготовке клиента, так и позднее. Это не повлияет на работу приложения.  Модель эффективно используется, когда группы клиентов должны обрабатываться по-разному. Например, дешевые клиенты могут назначаться общим базам данных, а клиенты класса "Премиум" — собственным базам данных. 
 
-Ознакомьтесь с [учебниками][docs-tutorials-for-wingtip-mt] и кодом на сайте GitHub [. ../Microsoft/WingtipTicketsSaaS-MultiTenantDb][github-code-for-wingtip-mt].
+Ознакомьтесь с [учебниками][docs-tutorials-for-wingtip-mt] и кодом на сайте GitHub  [. ../Microsoft/WingtipTicketsSaaS-MultiTenantDb][github-code-for-wingtip-mt].
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 #### <a name="conceptual-descriptions"></a>Основные описания
 

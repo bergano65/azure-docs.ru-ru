@@ -8,10 +8,10 @@ ms.date: 07/19/2018
 ms.author: rogarana
 ms.subservice: files
 ms.openlocfilehash: f75f0d1ae12db11590f8ce62f3c7b4c0f3e12817
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91541498"
 ---
 # <a name="addremove-an-azure-file-sync-server-endpoint"></a>Добавление и удаление конечных точек сервера службы "Синхронизация файлов Azure"
@@ -21,7 +21,7 @@ ms.locfileid: "91541498"
 
 Сведения о комплексном процессе развертывания службы "Синхронизация файлов Azure" см. в [этой статье](storage-sync-files-deployment-guide.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 Чтобы создать конечную точку сервера, сначала убедитесь, что соблюдены следующие условия: 
 - На сервере установлен и зарегистрирован агент службы синхронизации файлов Azure. Инструкции по установке агента службы "Синхронизация файлов Azure" см. в статье [Управление зарегистрированными серверами в службе "Синхронизация файлов Azure" (предварительная версия)](storage-sync-files-server-registration.md). 
 - Убедитесь, что служба синхронизации хранилища развернута. Сведения о развертывании службы синхронизации хранилища см. в статье [Развертывание службы синхронизации файлов Azure (предварительная версия)](storage-sync-files-deployment-guide.md). 
@@ -71,7 +71,7 @@ Invoke-StorageSyncFileRecall -Path <path-to-to-your-server-endpoint> -Order Clou
 
     ![Удаление конечной точки сервера из группы синхронизации](media/storage-sync-files-server-endpoint/remove-server-endpoint-1.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - [Управление зарегистрированными серверами в службе "Синхронизация файлов Azure" (предварительная версия)](storage-sync-files-server-registration.md)
-- [Планирование развертывания Синхронизации файлов Azure](storage-sync-files-planning.md)
+- [Планирование развертывания службы синхронизации файлов Azure (предварительная версия)](storage-sync-files-planning.md)
 - [Мониторинг Синхронизации файлов Azure](storage-sync-files-monitoring.md)

@@ -10,10 +10,10 @@ ms.date: 09/05/2019
 ms.reviewer: jushiman
 ms.custom: mimckitt
 ms.openlocfilehash: 4480ad425d9a3953fd5779f99d27b5b6b037e61e
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87029422"
 ---
 # <a name="security-controls-for-azure-virtual-machine-scale-sets"></a>Элементы управления безопасностью для масштабируемых наборов виртуальных машин Azure
@@ -43,7 +43,7 @@ ms.locfileid: "87029422"
 
 | Управление безопасностью | Да/нет | Примечания|
 |---|---|--|
-| Проверка подлинности| Да |  |
+| Аутентификация| Да |  |
 | Авторизация| Да |  |
 
 ## <a name="data-protection"></a>Защита данных
@@ -51,9 +51,9 @@ ms.locfileid: "87029422"
 | Управление безопасностью | Да/нет | Примечания |
 |---|---|--|
 | Шифрование неактивных на стороне сервера: ключи, управляемые корпорацией Майкрософт | Да | См. раздел [Шифрование дисков Azure для масштабируемых наборов виртуальных машин](disk-encryption-overview.md). |
-| Шифрование при передаче (например, шифрование ExpressRoute, Шифрование виртуальной сети и шифрование виртуальной сети)| Да | Виртуальные машины Azure поддерживают шифрование [ExpressRoute](../expressroute/index.yml) и виртуальной сети. См. раздел [Шифрование транзитного пути в виртуальных машинах](../security/fundamentals/encryption-overview.md#in-transit-encryption-in-vms). |
+| Шифрование при передаче (например, шифрование ExpressRoute, Шифрование виртуальной сети и шифрование VNet-VNet);| Да | Виртуальные машины Azure поддерживают шифрование [ExpressRoute](../expressroute/index.yml) и виртуальной сети. См. раздел [Шифрование транзитного пути в виртуальных машинах](../security/fundamentals/encryption-overview.md#in-transit-encryption-in-vms). |
 | Шифрование неактивных на стороне сервера: ключи, управляемые клиентом (BYOK) | Да | Ключи, управляемые клиентом, являются поддерживаемым сценарием шифрования Azure. см. раздел [о шифровании дисков Azure для масштабируемых наборов виртуальных машин](disk-encryption-overview.md) .|
-| Шифрование на уровне столбцов (службы данных Azure)| Н/Д | |
+| Шифрование на уровне столбцов (службы данных Azure)| Недоступно | |
 | Вызовы API в зашифрованном виде| Да | Через HTTPS и TLS. |
 
 ## <a name="configuration-management"></a>Управление конфигурацией

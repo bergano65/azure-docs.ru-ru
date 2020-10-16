@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 5/6/2019
 ms.openlocfilehash: dd39b7ecd51902f5035b4cd17d59dea964d0c962
-ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91708838"
 ---
 # <a name="best-practices-for-query-store"></a>Рекомендации по использованию хранилища запросов
@@ -45,5 +45,5 @@ ms.locfileid: "91708838"
 ## <a name="get-quick-insights-into-query-store"></a>Быстрый анализ хранилища запросов
 Для быстрого анализа данных в хранилище запросов можно использовать функцию [анализа производительности запросов](concepts-query-performance-insight.md) на портале Azure. Визуализации показывают запросы с наибольшим временем выполнения и события максимального ожидания за период.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Дополнительные сведения о том, как получить или задать параметры с помощью [портала Azure](howto-configure-server-parameters-using-portal.md) или [Azure CLI](howto-configure-server-parameters-using-cli.md).

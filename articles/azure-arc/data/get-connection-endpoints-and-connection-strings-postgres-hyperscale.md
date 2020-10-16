@@ -11,10 +11,10 @@ ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
 ms.openlocfilehash: 4087d618209ab4db46f89ef4e6db7ac87ca4cf57
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91331018"
 ---
 # <a name="get-connection-endpoints-and-form-connection-strings-for-your-arc-enabled-postgresql-hyperscale-server-group"></a>Получение конечных точек подключения и формы строки подключения для PostgreSQL группы серверов с поддержкой Arc
@@ -157,7 +157,7 @@ host=192.168.1.121; dbname=postgres user=postgres password={your_password_here} 
 Database=postgres; Data Source=192.168.1.121; User Id=postgres; Password={your_password_here}
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Дополнительные сведения о [масштабировании (Добавление рабочих узлов)](scale-out-postgresql-hyperscale-server-group.md) в группу серверов
 - Дополнительные сведения о [масштабировании (увеличение или уменьшение объема памяти и виртуальных ядер)](scale-up-down-postgresql-hyperscale-server-group-using-cli.md) для группы серверов
 

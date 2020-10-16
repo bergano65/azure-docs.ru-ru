@@ -9,10 +9,10 @@ ms.topic: troubleshooting
 ms.date: 07/28/2020
 ms.author: delhan
 ms.openlocfilehash: f24fb6c4d83da0d443702afaf673079363a9ffb0
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91714457"
 ---
 # <a name="azure-storage-explorer-troubleshooting-guide"></a>Руководство по устранению неполадок в обозревателе хранилищ Azure
@@ -100,7 +100,7 @@ ms.locfileid: "91714457"
 2. Выполните команду OpenSSL.
     * Windows: Откройте каталог установки, выберите **/bin/**, а затем дважды щелкните **openssl.exe**.
     * Mac и Linux: запустите `openssl` из терминала.
-3. Выполните `s_client -showcerts -connect microsoft.com:443`.
+3. Запустите `s_client -showcerts -connect microsoft.com:443`.
 4. Найдите самозаверяющие сертификаты. Если вы не знаете, какие сертификаты являются самозаверяющими, обратите внимание, что в любом месте субъект `("s:")` и издатель совпадают `("i:")` .
 5. При обнаружении самозаверяющих сертификатов для каждого из них скопируйте и вставьте все из (и включая) `-----BEGIN CERTIFICATE-----` `-----END CERTIFICATE-----` в новый CER-файл.
 6. Откройте обозреватель службы хранилища и перейдите к разделу **изменение**  >  **SSL-сертификатов**  >  **Импорт сертификатов**. Затем с помощью средства выбора файлов найдите, выберите и откройте созданные CER файлы.

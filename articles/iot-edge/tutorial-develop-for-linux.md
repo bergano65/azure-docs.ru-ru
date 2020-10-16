@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 7ec61bf4db949649c993fad4a3255b55626cb259
-ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
+ms.openlocfilehash: 23ca4be9387754c84dc256dd72b131bd5b76b458
+ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88056233"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91876470"
 ---
 # <a name="tutorial-develop-iot-edge-modules-for-linux-devices"></a>Руководство по Разработка модулей IoT Edge для устройств Linux
 
@@ -177,19 +177,19 @@ ms.locfileid: "88056233"
 
 Каждый модуль может содержать несколько очередей *ввода* и *вывода*, объявленных в своем коде. Центр IoT Edge, работающий на устройстве, направляет сообщения из ввода одного модуля в вывод одного или нескольких модулей. Конкретный код для объявления входных и выходных данных варьируется в зависимости от языка, но принцип одинаков для всех модулей. Дополнительные сведения о маршрутизации между модулями см. в разделе [Объявление маршрутов](module-composition.md#declare-routes).
 
-В примере кода C#, который поставляется с шаблоном проекта, используется [класс ModuleClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.moduleclient?view=azure-dotnet) из пакета SDK для Центра Интернета вещей для .NET.
+В примере кода C#, который поставляется с шаблоном проекта, используется [класс ModuleClient](/dotnet/api/microsoft.azure.devices.client.moduleclient) из пакета SDK для Центра Интернета вещей для .NET.
 
 1. Откройте файл **Program.cs**, который находится в папке **modules/SampleModule/** .
 
 2. В файле program.cs найдите метод **SetInputMessageHandlerAsync**.
 
-3. Метод [SetInputMessageHandlerAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.moduleclient.setinputmessagehandlerasync?view=azure-dotnet) настраивает очередь ввода для получения входящих сообщений. Проверьте этот метод на инициализацию очереди ввода с названием **input1**.
+3. Метод [SetInputMessageHandlerAsync](/dotnet/api/microsoft.azure.devices.client.moduleclient.setinputmessagehandlerasync) настраивает очередь ввода для получения входящих сообщений. Проверьте этот метод на инициализацию очереди ввода с названием **input1**.
 
    ![Поиск входного имени в конструкторе SetInputMessageCallback](./media/tutorial-develop-for-linux/declare-input-queue.png)
 
 4. Затем найдите метод **SendEventAsync**.
 
-5. Метод [SendEventAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.moduleclient.sendeventasync?view=azure-dotnet) обрабатывает полученные сообщения и настраивает очередь вывода, чтобы передать их вместе. Проверьте этот метод на инициализацию очереди вывода с названием **output1**.
+5. Метод [SendEventAsync](/dotnet/api/microsoft.azure.devices.client.moduleclient.sendeventasync) обрабатывает полученные сообщения и настраивает очередь вывода, чтобы передать их вместе. Проверьте этот метод на инициализацию очереди вывода с названием **output1**.
 
    ![Поиск выходного имени в SendEventToOutputAsync](./media/tutorial-develop-for-linux/declare-output-queue.png)
 

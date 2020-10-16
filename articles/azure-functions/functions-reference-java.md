@@ -4,12 +4,12 @@ description: Информация о разработке функций на я
 ms.topic: conceptual
 ms.date: 09/14/2018
 ms.custom: devx-track-java
-ms.openlocfilehash: 1dd98ede537321403053e2e7c8a5f4f7272665d4
-ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
+ms.openlocfilehash: 346dbb962e05519153537e3edb90763f5fd8da03
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89144929"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91996492"
 ---
 # <a name="azure-functions-java-developer-guide"></a>Руководство разработчика Java по Функциям Azure
 
@@ -145,13 +145,13 @@ _Поддержка Java 11 сейчас доступна в предварит�
 | Версия службы "Функции" | Версии Java (Windows) | Версии Java (Linux) |
 | ----- | ----- | --- |
 | 3.x | 11 (Предварительная версия)<br/>8 | 11 (Предварительная версия)<br/>8 |
-| 2.x | 8 | н/д |
+| 2.x | 8 | Недоступно |
 
 Если для развертывания не указана версия Java, Maven архетипа по умолчанию имеет значение Java 8 во время развертывания в Azure.
 
 ### <a name="specify-the-deployment-version"></a>Укажите версию развертывания
 
-Вы можете управлять версией Java, целевой для Maven архетипа, с помощью `-DjavaVersion` параметра. Значение этого параметра может быть Ether `8` или `11` . Поддержка Java 11 сейчас доступна в предварительной версии. 
+Вы можете управлять версией Java, целевой для Maven архетипа, с помощью `-DjavaVersion` параметра. Значение этого параметра может быть либо `8` `11` . Поддержка Java 11 сейчас доступна в предварительной версии. 
 
 Maven архетипа создает pom.xml, предназначенную для указанной версии Java. Следующие элементы в pom.xml указывают используемую версию Java:
 
@@ -276,8 +276,8 @@ public class Function {
     @FunctionName("echo")
     public static String echo(
         @HttpTrigger(name = "req", methods = { HttpMethod.PUT }, authLevel = AuthorizationLevel.ANONYMOUS, route = "items/{id}") String inputReq,
-        @TableInput(name = "item", tableName = "items", partitionKey = "Example", rowKey = "{id}", connection = "AzureWebJobsStorage") TestInputData inputData
-        @TableOutput(name = "myOutputTable", tableName = "Person", connection = "AzureWebJobsStorage") OutputBinding<Person> testOutputData,
+        @TableInput(name = "item", tableName = "items", partitionKey = "Example", rowKey = "{id}", connection = "AzureWebJobsStorage") TestInputData inputData,
+        @TableOutput(name = "myOutputTable", tableName = "Person", connection = "AzureWebJobsStorage") OutputBinding<Person> testOutputData
     ) {
         testOutputData.setValue(new Person(httpbody + "Partition", httpbody + "Row", httpbody + "Name"));
         return "Hello, " + inputReq + " and " + inputData.getKey() + ".";

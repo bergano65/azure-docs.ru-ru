@@ -1,54 +1,36 @@
 ---
-title: Руководство. Создание и изменение канала с помощью ExpressRoute
-description: В этом учебнике приведены сведения о создании, подготовке, проверке, обновлении, удалении и отзыве канала ExpressRoute.
+title: Краткое руководство. Создание и изменение канала с помощью ExpressRoute — портал Azure
+description: Из этого краткого руководства вы узнаете, как с помощью портала Azure создавать, подготавливать, проверять, обновлять, удалять и отзывать каналы ExpressRoute.
 services: expressroute
 author: duongau
 ms.service: expressroute
-ms.topic: tutorial
-ms.date: 09/01/2020
+ms.topic: quickstart
+ms.date: 10/05/2020
 ms.author: duau
-ms.openlocfilehash: e0ba14cd5db47c12435b2de35d0753b402c947ea
-ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
+ms.openlocfilehash: e25ebd181d0017885a24310e3dac3ff30a59a21e
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89566268"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91973365"
 ---
-# <a name="tutorial-create-and-modify-an-expressroute-circuit"></a>Руководство по Создание и изменение канала ExpressRoute
+# <a name="quickstart-create-and-modify-an-expressroute-circuit"></a>Краткое руководство. Создание и изменение канала ExpressRoute
 
-> [!div class="op_single_selector"]
-> * [Портал Azure](expressroute-howto-circuit-portal-resource-manager.md)
-> * [PowerShell](expressroute-howto-circuit-arm.md)
-> * [Azure CLI](howto-circuit-cli.md)
-> * [Шаблон Azure Resource Manager](expressroute-howto-circuit-resource-manager-template.md)
-> * [Видео — портал Azure](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-create-an-expressroute-circuit)
-> * [PowerShell (классическая модель)](expressroute-howto-circuit-classic.md)
->
+В этом кратком руководстве показано, как создать канал Azure ExpressRoute, используя портал Azure и модель развертывания Azure Resource Manager. Вы также сможете проверять состояние каналов, обновлять, удалять или отзывать их.
 
-В этом учебнике показано, как создать цепь Azure ExpressRoute, используя портал Azure и модель развертывания с помощью Azure Resource Manager. Вы также сможете проверять состояние каналов, обновлять, удалять или отзывать их.
+## <a name="prerequisites"></a>Предварительные требования
 
-Из этого руководства вы узнаете, как выполнить следующие задачи:
-
-> [!div class="checklist"]
-> * Создание канала ExpressRoute
-> * Получение текущего состояния цепи
-> * Изменение канала
-> * Отзыв и удаление канала
-
-## <a name="before-you-begin"></a>Перед началом
-
+* Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) бесплатно.
 * Изучите [предварительные требования](expressroute-prerequisites.md) и [рабочие процессы](expressroute-workflows.md), прежде чем приступить к настройке.
-* Убедитесь в том, что у вас есть доступ к [порталу Azure](https://portal.azure.com).
-* Убедитесь в том, что у вас есть разрешения на создание сетевых ресурсов. Если у вас нет нужных разрешений, обратитесь к администратору учетной записи.
 * Вы можете [просмотреть видео](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-create-an-expressroute-circuit), прежде чем начать, чтобы лучше понять выполняемые действия.
 
 ## <a name="create-and-provision-an-expressroute-circuit"></a><a name="create"></a>Создание и предоставление канала ExpressRoute
 
-### <a name="1-sign-in-to-the-azure-portal"></a>1. Вход на портал Azure
+### <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
 В браузере откройте [портал Azure](https://portal.azure.com) и выполните вход с помощью учетной записи Azure.
 
-### <a name="2-create-a-new-expressroute-circuit"></a>2. Создание канала ExpressRoute
+### <a name="create-a-new-expressroute-circuit"></a>Создание канала ExpressRoute
 
 > [!IMPORTANT]
 > Выставление счетов за использование ExpressRoute начинается после получения ключа службы. Обязательно выполните эту операцию, как только поставщик услуг подключения будет готов предоставить канал.
@@ -59,86 +41,74 @@ ms.locfileid: "89566268"
 
     :::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/create-expressroute-circuit-menu.png" alt-text="Создание канала ExpressRoute":::
 
-2. Когда вы щелкнете **ExpressRoute**, отобразится страница **Create ExpressRoute** (Создание ExpressRoute). Укажите значения для параметров **Группа ресурсов**, **Регион** и **Имя** для канала. Выберите **Next: Конфигурация >** .
+2. После выбора **ExpressRoute** отобразится страница **Create ExpressRoute** (Создание ExpressRoute). Укажите значения для параметров **Группа ресурсов**, **Регион** и **Имя** для канала. Затем щелкните **Next: Конфигурация >** .
 
-    :::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/expressroute-create-basic.png" alt-text="Настройка группы ресурсов и региона":::
+    :::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/expressroute-create-basic.png" alt-text="Создание канала ExpressRoute" или "Не ограничено").
 
-3. При заполнении значений на этой странице вам нужно указать правильный уровень SKU ("Локальный", "Стандартный" или "Премиум") и модель выставления счетов на основе измерения данных ("С учетом трафика" или "Не ограничено").
-
-    :::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/expressroute-create-configuration.png" alt-text="Настройка цепи":::
-    
-    * **Тип порта** определяет, подключаетесь ли вы к поставщику услуг или непосредственно в глобальную сеть Майкрософт в расположении пиринга.
-    * **Создать или импортировать из классической версии** определяет, создается ли цепь или выполняется перенос классической цепи в ARM.
-    * **Поставщик** — это поставщик услуг Интернета, через которого вы будете запрашивать службу.
-    * **Расположение пиринга** — физическое расположение пиринга с корпорацией Майкрософт.
-
-    > [!IMPORTANT]
-    > Параметр "Расположение пиринга" определяет [физическое расположение](expressroute-locations.md) пиринга с корпорацией Майкрософт. Оно **не** связано со свойством Location, которое ссылается на географический регион, в котором находится поставщик сетевых ресурсов Azure. Хотя они не связаны, рекомендуется выбрать поставщик сетевых ресурсов, находящийся недалеко от расположения пиринга канала.
-
-    * **Инвентаризационный номер (SKU)** определяет, какая надстройка включена — ExpressRoute уровня "Локальный", ExpressRoute уровня "Стандартный" или ExpressRoute уровня "Премиум". Укажите **Локальный**, чтобы получить SKU "Локальный", **Стандартный** для получения SKU "Стандартный" или **Премиум**, чтобы получить надстройку "Премиум". Обратите внимание, что вы можете изменить номер SKU, чтобы включить надстройку "Премиум".
+    :::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/expressroute-create-configuration.png" alt-text="Создание канала ExpressRoute" или **Премиум**, чтобы получить надстройку "Премиум". Вы можете изменить номер SKU, чтобы включить надстройку "Премиум".
     > [!IMPORTANT]
     > Изменить номер SKU **Стандартный или Премиум** на **Локальный** нельзя.
     
-    * **Модель выставления счетов** определяет тип выставления счетов. Выберите **С учетом трафика** для тарифного плана с оплатой за трафик или **Не ограничено** для безлимитного тарифного плана. Обратите внимание, что тарифный план **С учетом трафика** можно изменить на **Не ограничено**.
+    * **Модель выставления счетов** определяет тип выставления счетов. Выберите **С учетом трафика** для тарифного плана с оплатой за трафик или **Не ограничено** для безлимитного тарифного плана. Тарифный план **С учетом трафика** можно изменить на **Не ограничено**.
 
     > [!IMPORTANT]
     > Тарифный план **Не ограничено** нельзя изменить на план **С учетом трафика**.
 
     * **Allow classic operation** (Разрешить классические операции) позволит связать классические виртуальные сети с цепью.
 
-### <a name="3-view-the-circuits-and-properties"></a>3. Просмотр каналов и свойств
+### <a name="view-the-circuits-and-properties"></a>Просмотр каналов и свойств
 
 **Просмотр всех каналов**
 
 Вы можете просмотреть все созданные вами каналы, последовательно выбрав в меню слева пункты **Все службы > Сетевые подключения > Цепи ExpressRoute**.
 
-:::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/expressroute-circuit-menu.png" alt-text="Меню цепи Expressroute":::
+:::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/expressroute-circuit-menu.png" alt-text="Создание канала ExpressRoute":::
 
-Здесь будут отображаться все цепи Expressroute, созданные в подписке.
+Здесь будут отображаться все каналы Expressroute, созданные в подписке.
 
-:::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/expressroute-circuit-list.png" alt-text="Список цепей Expressroute":::
+:::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/expressroute-circuit-list.png" alt-text="Создание канала ExpressRoute":::
 
 **Просмотр свойств**
 
 Чтобы просмотреть свойства канала, выберите его. На странице **Обзор** канала отобразится ключ службы в соответствующем поле. Просмотрите ключ службы своей цепи и предоставьте его поставщику услуг для завершения подготовки. Ключ службы соответствует каналу.
 
-:::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/expressroute-circuit-overview.png" alt-text="Просмотр свойств":::
+:::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/expressroute-circuit-overview.png" alt-text="Создание канала ExpressRoute":::
 
-### <a name="4-send-the-service-key-to-your-connectivity-provider-for-provisioning"></a>4. Отправка ключа службы поставщику услуг подключения для подготовки
+### <a name="send-the-service-key-to-your-connectivity-provider-for-provisioning"></a>Отправка ключа службы поставщику услуг подключения для подготовки
 
-На этой странице параметр **Состояние поставщика** предоставляет сведения о текущем состоянии подготовки на стороне поставщика услуг. Параметр **Состояние цепи** предоставляет состояние на стороне инфраструктуры Майкрософт. Дополнительные сведения о состояниях подготовки канала см. в статье [Рабочие процессы](expressroute-workflows.md#expressroute-circuit-provisioning-states).
+На этой странице параметр **Состояние поставщика** содержит сведения о текущем состоянии подготовки на стороне поставщика услуг. Параметр **Состояние канала** отражает состояние на стороне инфраструктуры Майкрософт. Дополнительные сведения о состояниях подготовки канала см. в статье [Рабочие процессы](expressroute-workflows.md#expressroute-circuit-provisioning-states).
 
 Вновь созданный канал ExpressRoute будет имеет следующее состояние:
 
 Состояние поставщика: **Не подготовлено**<BR>
 Состояние канала: **Enabled**
 
-:::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/expressroute-circuit-overview-provisioning-state.png" alt-text="Инициация процесса подготовки":::
+:::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/expressroute-circuit-overview-provisioning-state.png" alt-text="Создание канала ExpressRoute":::
 
-Когда поставщик услуг подключения находится в процессе его включения, канал переходит в следующее состояние:
+Когда поставщик услуг подключения находится в процессе включения, канал переходит в следующее состояние:
 
 Состояние поставщика: **Подготовка**<BR>
 Состояние канала: **Enabled**
 
-Для того чтобы канал ExpressRoute можно было использовать, он должен находиться в следующем состоянии:
+Чтобы использовать канал ExpressRoute, он должен находиться в следующем состоянии:
 
 Состояние поставщика: **Подготовлено**<BR>
 Состояние канала: **Enabled**
 
-### <a name="5-periodically-check-the-status-and-the-state-of-the-circuit-key"></a>5. Периодическая проверка состояния и статуса ключа канала
+### <a name="periodically-check-the-status-and-the-state-of-the-circuit-key"></a>Периодическая проверка состояния и статуса ключа канала
 
 Чтобы просмотреть свойства интересующего вас канала, выберите его. Проверьте **Состояние поставщика**. Чтобы вы могли продолжить работу, оно должно измениться на **Подготовлено**.
 
-:::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/provisioned.png" alt-text="Состояние канала и поставщика":::
+:::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/provisioned.png" alt-text="Создание канала ExpressRoute":::
 
-### <a name="6-create-your-routing-configuration"></a>6. Создание конфигурации маршрутизации
+### <a name="create-your-routing-configuration"></a>Создание конфигурации маршрутизации
 
 Пошаговые инструкции по созданию и изменению пиринга каналов см. в статье [Создание и изменение маршрутизации для канала ExpressRoute](expressroute-howto-routing-portal-resource-manager.md).
 
 > [!IMPORTANT]
 > Эти инструкции распространяются только на каналы от поставщиков, предоставляющих услуги подключения второго уровня. Если ваш поставщик услуг подключения предлагает услуги третьего уровня (обычно это IPVPN, например MPLS), то он возьмет на себя настройку маршрутизации и управление ею.
 
-### <a name="7-link-a-virtual-network-to-an-expressroute-circuit"></a>7. Связывание виртуальной сети с каналом ExpressRoute
+### <a name="link-a-virtual-network-to-an-expressroute-circuit"></a>Связывание виртуальной сети с каналом ExpressRoute
 
 Теперь свяжите виртуальную сеть с каналом ExpressRoute. При работе с моделью развертывания Resource Manager пользуйтесь статьей [Связывание виртуальной сети с каналом ExpressRoute](expressroute-howto-linkvnet-arm.md) .
 
@@ -177,9 +147,9 @@ ms.locfileid: "89566268"
 
 Чтобы изменить канал ExpressRoute, щелкните **Конфигурация**.
 
-:::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/expressroute-circuit-configuration.png" alt-text="Изменение канала":::
+:::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/expressroute-circuit-configuration.png" alt-text="Создание канала ExpressRoute":::
 
-## <a name="deprovisioning-and-deleting-an-expressroute-circuit"></a><a name="delete"></a>отзыве и удалении канала ExpressRoute
+## <a name="deprovisioning-an-expressroute-circuit"></a><a name="delete"></a>Отзыв канала ExpressRoute
 
 Если подготовка поставщика услуг канала ExpressRoute находится в состоянии **Идет подготовка** или **Подготовлено** то свяжитесь с поставщиком услуг, чтобы отозвать канал с его стороны. Мы будем резервировать ресурсы и выставлять вам счета до тех пор, пока поставщик услуг не завершит отзыв канала и не отправит нам соответствующее уведомление.
 
@@ -187,13 +157,16 @@ ms.locfileid: "89566268"
 >* Прежде чем инициировать отзыв, необходимо разорвать связь между цепью ExpressRoute и *всеми виртуальными сетями*. Если операция завершится ошибкой, проверьте, не привязаны ли к каналу какие-либо виртуальные сети.
 >* Если поставщик услуг отзовет канал (состояние подготовки поставщика услуг изменится на **Не подготовлено**), вы можете удалить такой канал. Это приостанавливает выставление счетов для канала.
 
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
 Цепь ExpressRoute можно удалить, щелкнув **соответствующий** значок. 
 
-:::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/expressroute-circuit-delete.png" alt-text="Удаление цепи":::
+:::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/expressroute-circuit-delete.png" alt-text="Создание канала ExpressRoute":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Создав канал, выполните задачи, описанные в следующих статьях:
+Создав канал, переходите к следующему этапу.
 
-* [Создание и изменение маршрутизации для канала ExpressRoute](expressroute-howto-routing-portal-resource-manager.md)
-* [Связывание виртуальной сети с каналом ExpressRoute](expressroute-howto-linkvnet-arm.md)
+> [!div class="nextstepaction"]
+> [Создание и изменение маршрутизации для канала ExpressRoute](expressroute-howto-routing-portal-resource-manager.md)

@@ -2,7 +2,7 @@
 title: Группирование управляемых учетных записей служб для доменных служб Azure AD | Документация Майкрософт
 description: Узнайте, как создать групповую управляемую учетную запись службы (gMSA) для использования с управляемыми доменами доменных служб Azure Active Directory
 services: active-directory-ds
-author: iainfoulds
+author: MicrosoftGuyJFlo
 manager: daveba
 ms.assetid: e6faeddd-ef9e-4e23-84d6-c9b3f7d16567
 ms.service: active-directory
@@ -10,13 +10,13 @@ ms.subservice: domain-services
 ms.workload: identity
 ms.topic: how-to
 ms.date: 07/06/2020
-ms.author: iainfou
-ms.openlocfilehash: 723b8cf7a71e5af672c8665040645d55645fe9f7
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.author: joflore
+ms.openlocfilehash: af1df1dd95d570038c44ea9052db88ae80586c32
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87281860"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91960989"
 ---
 # <a name="create-a-group-managed-service-account-gmsa-in-azure-active-directory-domain-services"></a>Создание групповой управляемой учетной записи службы (gMSA) в доменных службах Azure Active Directory
 
@@ -95,7 +95,7 @@ New-ADServiceAccount -Name WebFarmSvc `
 
 Теперь приложения и службы можно настроить для использования gMSA по мере необходимости.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Gmsa см. в статье [Приступая к работе с групповыми управляемыми учетными записями служб][gmsa-start].
 

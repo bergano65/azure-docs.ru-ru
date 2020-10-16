@@ -7,10 +7,10 @@ ms.date: 08/21/2020
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: fbc2aba21212a83bd73d5664f4fe288017954c0d
-ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90084215"
 ---
 # <a name="add-language-packs-to-a-windows-10-multi-session-image"></a>Добавление языковых пакетов в многосеансовый образ Windows 10
@@ -24,7 +24,7 @@ ms.locfileid: "90084215"
 
 Последний метод является гораздо более эффективным и экономичным. Тем не менее, вам нужно решить, какой метод лучше подходит для ваших нужд. В этой статье показано, как настроить языки для образов.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить многосеансовые образы Windows 10 Enterprise для добавления нескольких языков, необходимо выполнить следующие действия.
 

@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 09/17/2020
 ms.author: ambapat
 ms.openlocfilehash: 7a30a7ab6689b602bc9ad4f696a6fe54c80f2151
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90996851"
 ---
 # <a name="best-practices-when-using-managed-hsm"></a>Рекомендации по использованию управляемого HSM
@@ -30,7 +30,7 @@ ms.locfileid: "90996851"
 
 - Чтобы обеспечить наилучшую доступность и отказоустойчивость зоны, выберите регионы Azure, в которых поддерживаются [зоны доступности](../../availability-zones/az-overview.md) . Эти регионы отображаются в портал Azure в виде "Рекомендуемые регионы".
 
-## <a name="backup"></a>Backup
+## <a name="backup"></a>Резервное копирование
 
 - Обязательно создайте регулярное резервное копирование HSM. Резервные копии можно выполнять на уровне HSM и для конкретных ключей. 
 
@@ -43,7 +43,7 @@ ms.locfileid: "90996851"
 - [Обратимое удаление](../general/soft-delete-overview.md) включено по умолчанию.
 - Включите защиту от очистки, если требуется защитить от принудительного удаления HSM, даже после включения обратимого удаления.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Сведения о полной резервной копии и восстановлении HSM см. в статье [полное резервное копирование и восстановление](backup-restore.md) .
 - Сведения об использовании Azure Monitor для настройки ведения журнала см. в разделе [управляемое протоколирование HSM](logging.md) .

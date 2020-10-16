@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 03/12/2020
 ms.author: sagupt
 ms.openlocfilehash: 66bb500d419d1f5537afafd7a2df543ded8cc7ce
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87057774"
 ---
 # <a name="query-for-advisor-data-in-resource-graph-explorer-azure-resource-graph"></a>Запрос данных Advisor в обозревателе графа ресурсов (граф ресурсов Azure)
@@ -35,7 +35,7 @@ ms.locfileid: "87057774"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о рекомендациях Помощника см. в следующих разделах.
-* [Общие сведения об Azure Advisor](advisor-overview.md)
+* [Общие сведения о Помощнике по Azure](advisor-overview.md)
 * [Начало работы с Помощником](advisor-get-started.md)
 * [Рекомендации по стоимости помощника](advisor-cost-recommendations.md)
 * [Рекомендации по обеспечению надежности Advisor](advisor-high-availability-recommendations.md)

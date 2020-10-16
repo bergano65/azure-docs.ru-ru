@@ -10,10 +10,10 @@ services: iot-central
 manager: peterpr
 ms.custom: contperfq2
 ms.openlocfilehash: 1782982c75e502ea8df70818a134b5b009188959
-ms.sourcegitcommit: efaf52fb860b744b458295a4009c017e5317be50
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91850104"
 ---
 # <a name="manage-devices-in-your-azure-iot-central-application"></a>Управление устройствами в приложении Azure IoT Central
@@ -168,6 +168,6 @@ ms.locfileid: "91850104"
 
 1. Нажмите **Сохранить**. Если вы сохранили записываемые свойства, эти значения отправляются на устройство. Когда устройство подтверждает изменение для записываемого свойства, возвращается состояние " **синхронизировано**". Если вы сохранили облачное свойство, значение обновляется.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы узнали, как управлять устройствами в приложении IoT Central Azure, рекомендуем следующий шаг — научиться[настраивать правила](howto-configure-rules.md) для устройств.

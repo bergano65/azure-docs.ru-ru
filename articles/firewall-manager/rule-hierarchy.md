@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 08/26/2020
 ms.author: victorh
 ms.openlocfilehash: c290904c9f4bc7dba70dad9351dc45b676e0c236
-ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88893784"
 ---
 # <a name="use-azure-firewall-policy-to-define-a-rule-hierarchy"></a>Использование политики брандмауэра Azure для определения иерархии правил
@@ -48,7 +48,7 @@ ms.locfileid: "88893784"
 - Политика брандмауэра базы данных. Политика брандмауэра базы данных наследует политику базового брандмауэра.
 - Политика инженерного брандмауэра. Политика брандмауэра для инженеров также наследует базовую политику брандмауэра.
 
-:::image type="content" source="media/rule-hierarchy/policy-hierarchy.png" alt-text="Иерархия политик" border="false":::
+:::image type="content" source="media/rule-hierarchy/policy-hierarchy.png" alt-text="Группы и требования" border="false":::
 
 ### <a name="create-custom-roles-to-access-the-rule-collection-groups"></a>Создание пользовательских ролей для доступа к группам коллекции правил 
 
@@ -59,10 +59,10 @@ ms.locfileid: "88893784"
 1. Получить подписку:
 
    `Select-AzSubscription -SubscriptionId xxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxxx`
-2. Выполните следующую команду.
+2. Выполните следующую команду:
 
    `Get-AzProviderOperation "Microsoft.Support/*" | FT Operation, Description -AutoSize`
-3. Используйте команду Get-Азроледефинитион, чтобы вывести роль модуля чтения в формате JSON. 
+3. Используйте команду Get-AzRoleDefinition, чтобы вывести роль модуля чтения в формате JSON. 
 
    `Get-AzRoleDefinition -Name "Reader" | ConvertTo-Json | Out-File C:\CustomRoles\ReaderSupportRole.json`
 4. Откройте файл ReaderSupportRole.jsв редакторе.
@@ -122,21 +122,21 @@ ms.locfileid: "88893784"
                              "/subscriptions/xxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxxx"] 
 } 
 ```
-9. Чтобы создать новую настраиваемую роль, используйте команду New-Азроледефинитион и укажите файл определения роли JSON. 
+9. Чтобы создать новую настраиваемую роль, используйте команду New-AzRoleDefinition и укажите файл определения роли JSON. 
 
    `New-AzRoleDefinition -InputFile "C:\CustomRoles\RuleCollectionGroupRole.json`
 
 ### <a name="list-custom-roles"></a>Вывод списка настраиваемых ролей
 
-Чтобы получить список всех пользовательских ролей, можно использовать команду Get-Азроледефинитион:
+Чтобы получить список всех пользовательских ролей, можно использовать команду Get-AzRoleDefinition.
 
    `Get-AzRoleDefinition | ? {$_.IsCustom -eq $true} | FT Name, IsCustom`
 
 Пользовательские роли также можно просмотреть в портал Azure. Перейдите к своей подписке, выберите **Управление доступом (IAM)**, **роли**.
 
-:::image type="content" source="media/rule-hierarchy/sales-app-policy.png" alt-text="салесаппполици":::
+:::image type="content" source="media/rule-hierarchy/sales-app-policy.png" alt-text="Группы и требования":::
 
-:::image type="content" source="media/rule-hierarchy/sales-app-policy-read.png" alt-text="Разрешение на чтение Салесаппполици":::
+:::image type="content" source="media/rule-hierarchy/sales-app-policy-read.png" alt-text="Группы и требования":::
 
 Дополнительные сведения см. в разделе [учебник. Создание настраиваемой роли Azure с помощью Azure PowerShell](../role-based-access-control/tutorial-custom-role-powershell.md).
 
@@ -151,7 +151,7 @@ ms.locfileid: "88893784"
 
 Повторите эту процедуру для других политик брандмауэра.
 
-### <a name="summary"></a>Сводка
+### <a name="summary"></a>Итоги
 
 Политика брандмауэра с настраиваемым RBAC теперь предоставляет избирательный доступ к группам сбора правил политики брандмауэра.
 
@@ -162,7 +162,7 @@ ms.locfileid: "88893784"
 
 Администраторы безопасности могут использовать базовую политику для принудительного применения снятие и блокировать определенные типы трафика (например, ICMP) в соответствии с требованиями Организации. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о [политике брандмауэра Azure](policy-overview.md).
 

@@ -12,10 +12,10 @@ ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.openlocfilehash: 13000c5a61dc2c4d49aa395271beddef64d32245
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88119221"
 ---
 # <a name="daemon-app-that-calls-web-apis---acquire-a-token"></a>Управляющее приложение, вызывающее веб-API — получение маркера
@@ -202,7 +202,7 @@ scope=https%3A%2F%2Fgraph.microsoft.com%2F.default
 
 ## <a name="application-token-cache"></a>Кэш маркеров приложений
 
-В MSAL.NET `AcquireTokenForClient` использует кэш маркеров приложений. (Все остальные методы AcquireToken*XX* используют кэш пользовательских маркеров.) Не вызывайте метод `AcquireTokenSilent` перед вызовом `AcquireTokenForClient` , так как `AcquireTokenSilent` использует кэш *пользовательских* маркеров. `AcquireTokenForClient`проверяет сам кэш маркера *приложения* и обновляет его.
+В MSAL.NET `AcquireTokenForClient` использует кэш маркеров приложений. (Все остальные методы AcquireToken*XX* используют кэш пользовательских маркеров.) Не вызывайте метод `AcquireTokenSilent` перед вызовом `AcquireTokenForClient` , так как `AcquireTokenSilent` использует кэш *пользовательских* маркеров. `AcquireTokenForClient` проверяет сам кэш маркера *приложения* и обновляет его.
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 
@@ -229,7 +229,7 @@ Content: {
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 # <a name="net"></a>[.NET](#tab/dotnet)
 

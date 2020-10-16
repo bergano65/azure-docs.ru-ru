@@ -11,12 +11,12 @@ ms.date: 12/05/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a86d34fca9a88b0df601533a0f3de1cc97ad1a2f
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: a9433945ffe1181b62ee193baf1c2dd0b89ec14c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80050600"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91856812"
 ---
 # <a name="what-is-azure-ad-connect-cloud-provisioning"></a>Что такое подготовка облака Azure AD Connect?
 Облачная подготовка Azure AD Connect — это новый агент Майкрософт, предназначенный для соблюдения и достижения целей гибридной идентификации для синхронизации пользователей, групп и контактов с Azure AD.  Его можно использовать вместе с синхронизацией Azure AD Connect, чтобы получить следующие преимущества:
@@ -30,6 +30,14 @@ ms.locfileid: "80050600"
 
 ## <a name="how-is-azure-ad-connect-cloud-provisioning-different-from-azure-ad-connect-sync"></a>Чем облачная подготовка Azure AD Connect отличается от синхронизации Azure AD Connect?
 При использовании облачной подготовки Azure AD Connect подготовка к синхронизации из AD в Azure AD происходит под управлением Microsoft Online Services. Организации остается лишь развернуть в локальной среде или в среде IaaS небольшой агент, который выполняет роль моста между Azure AD и AD. Конфигурация подготовки хранится в Azure AD и управляется этой службой.
+
+## <a name="azure-ad-connect-cloud-provisioning-video"></a>Видео. Подготовка облака Azure AD Connect
+В следующем кратком видео представлен отличный обзор агента подготовки облака Azure AD Connect:
+
+> [!VIDEO https://youtube.com/embed/mOT3ID02_YQ]
+
+
+## <a name="comparison-between-azure-ad-connect-and-cloud-provisioning"></a>Сравнение Azure AD Connect и агента подготовки облака
 
 В следующей таблице приведено сравнение возможностей Azure AD Connect и облачной подготовки Azure AD Connect.
 
@@ -68,4 +76,4 @@ ms.locfileid: "80050600"
 ## <a name="next-steps"></a>Дальнейшие действия 
 
 - [Что собой представляет подготовка?](what-is-provisioning.md)
-- [Установка средств облачной подготовки](how-to-install.md)
+- [Установка средства подготовки облака](how-to-install.md)

@@ -13,10 +13,10 @@ ms.reviewer: calebb
 ms.collection: M365-identity-device-management
 ms.custom: contperfq4
 ms.openlocfilehash: 08e236d798f700a3c48dd41ba61941bc0037d613
-ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88055383"
 ---
 # <a name="using-the-location-condition-in-a-conditional-access-policy"></a>Использование условия расположения в политике условного доступа 
@@ -196,7 +196,7 @@ Azure Active Directory (Azure AD) в настоящее время не подд
 
 Доступна предварительная версия API Graph для именованных расположений. Дополнительные сведения см. в разделе [API намедлокатион](/graph/api/resources/namedlocation?view=graph-rest-beta).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Если вы хотите узнать, как настроить политику условного доступа, см. статью [Создание политики условного доступа](concept-conditional-access-policies.md).
 - Ищете пример политики, используя условие расположения? См. статью " [Условный доступ: Блокировка доступа по расположению".](howto-conditional-access-policy-location.md)

@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 4a0765f5279eb41324691c431c5973bb55a8b52d
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89662483"
 ---
 # <a name="azure-ad-connect-sync-directory-extensions"></a>Синхронизация Azure AD Connect: расширения каталогов
@@ -87,13 +87,13 @@ ms.locfileid: "89662483"
 
    ![Снимок экрана с новыми атрибутами, отображаемыми в пользовательском интерфейсе](./media/how-to-connect-sync-feature-directory-extensions/dynamicgroup3.png)
 
-   Заполните выражение в соответствии с вашими требованиями. В нашем примере правило имеет значение **(User. extension_9d98ed114c4840d298fad781915f27e4_division-EQ «Sales and Marketing»)**.
+   Заполните выражение в соответствии с вашими требованиями. В нашем примере правило имеет значение **(User.extension_9d98ed114c4840d298fad781915f27e4_division-EQ "продажи и маркетинг")**.
 
 4. После создания группы предоставьте Azure AD некоторое время для заполнения участников, а затем просмотрите участников.
 
    ![Снимок экрана с элементами в динамической группе](./media/how-to-connect-sync-feature-directory-extensions/dynamicgroup4.png)  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Узнайте больше о настройке [службы синхронизации Azure AD Connect](how-to-connect-sync-whatis.md) .
 
 Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).

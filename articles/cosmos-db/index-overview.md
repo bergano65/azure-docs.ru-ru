@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 05/21/2020
 ms.author: tisande
 ms.openlocfilehash: 3d07657fc3345ddd8dfadd163dc3c9f957d77af3
-ms.sourcegitcommit: 1fe5127fb5c3f43761f479078251242ae5688386
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90068393"
 ---
 # <a name="indexing-in-azure-cosmos-db---overview"></a>Индексирование в Azure Cosmos DB — обзор
@@ -180,7 +180,7 @@ Azure Cosmos DB — это база данных без использовани
 
 Например, рассмотрим следующий запрос: `SELECT location FROM location IN company.locations WHERE location.country = 'France'`. Предикат запроса (фильтрация по элементам, где любое расположение имеет значение "France" в качестве страны или региона) соответствует пути, выделенному красным цветом:
 
-:::image type="content" source="./media/index-overview/matching-path.png" alt-text="Сопоставление определенного пути в дереве" border="false":::
+:::image type="content" source="./media/index-overview/matching-path.png" alt-text="Предыдущий элемент, представленный в виде дерева" border="false":::
 
 > [!NOTE]
 > Предложение `ORDER BY`, которое упорядочивается по одному свойству, *всегда* требует индекс диапазона, и если у пути, на который оно ссылается, его нет, оно завершится ошибкой. Аналогичным образом запросу `ORDER BY`, который упорядочивается по нескольким свойствам, *всегда* требуется составной индекс.

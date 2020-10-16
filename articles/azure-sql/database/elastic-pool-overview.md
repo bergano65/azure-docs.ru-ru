@@ -12,13 +12,13 @@ ms.author: moslake
 ms.reviewer: ninarn, sstein
 ms.date: 07/28/2020
 ms.openlocfilehash: 7be0b5f2688198da8926f2039f60bf9ba592e2f3
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91330795"
 ---
-# <a name="elastic-pools-help-you-manage-and-scale-multiple-databases-in-azure-sql-database"></a>Эластичные пулы помогают управлять и масштабировать несколько баз данных в базе данных SQL Azure.
+# <a name="elastic-pools-help-you-manage-and-scale-multiple-databases-in-azure-sql-database"></a>Управление несколькими базами данных в Базе данных SQL Azure и их масштабирование с помощью эластичных пулов
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
 
 Эластичные пулы базы данных SQL Azure — это простое и экономичное решение для управления и масштабирования нескольких баз данных, имеющих различные и непредсказуемые требования к использованию. Базы данных в эластичном пуле находятся на одном сервере и совместно используют множество ресурсов по заданной цене. Пулы эластичных БД в базе данных SQL Azure позволяют разработчикам SaaS оптимизировать соотношение цены и производительности для группы баз данных с назначенным бюджетом и при этом обеспечить эластичность производительности для каждой базы данных.
@@ -219,7 +219,7 @@ MAX (<*Общее число баз данных* x *среднего уровн
 
    Daxko/CSI использует эластичные пулы с базой данных SQL Azure для ускорения цикла разработки и улучшения служб и производительности клиентов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Сведения о ценах см. на странице с [ценами на эластичный пул](https://azure.microsoft.com/pricing/details/sql-database/elastic).
 - Чтобы масштабировать эластичные пулы, см. разделы [Масштабирование эластичных пулов](elastic-pool-scale.md) и [Масштабирование эластичного пула — пример кода](scripts/monitor-and-scale-pool-powershell.md)

@@ -9,12 +9,12 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 8/30/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 04b5c9464c614c32f178e35e72cee98450007a62
-ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
+ms.openlocfilehash: 38072e95ed89d8fbc095e2f8ed41ea1381636300
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91772793"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92015161"
 ---
 # <a name="provide-access-to-key-vault-keys-certificates-and-secrets-with-an-azure-role-based-access-control-preview"></a>Предоставление доступа к ключам, сертификатам и секретам Key Vault с помощью управления доступом на основе ролей Azure (Предварительная версия)
 
@@ -37,7 +37,7 @@ Azure RBAC позволяет пользователям управлять ра
 
 -   Многоуровневые приложения, которым необходимо разделить управление доступом между слоями
 
--   Общее хранилище ключей с общими секретами, когда приложениям требуется доступ к поднаборам секретов в этом хранилище ключей
+-   Совместное использование индивидуального секрета несколькими приложениями
 
 Дополнительные сведения о рекомендациях по управлению Azure Key Vault см. в следующих статьях:
 
@@ -70,7 +70,7 @@ Azure RBAC позволяет пользователям управлять ра
 Для добавления назначений ролей требуются следующие разрешения:
 
 - Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
-- `Microsoft.Authorization/roleAssignments/write` и `Microsoft.Authorization/roleAssignments/delete`, такие как [Администратор доступа пользователей](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles.md#user-access-administrator) или [Владелец](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles.md#owner).
+- `Microsoft.Authorization/roleAssignments/write` и `Microsoft.Authorization/roleAssignments/delete`, такие как [Администратор доступа пользователей](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#user-access-administrator) или [Владелец](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner).
 
 ### <a name="enable-azure-rbac-permissions-on-key-vault"></a>Включение разрешений RBAC в Azure на Key Vault
 
@@ -224,7 +224,7 @@ az role definition create --role-definition '{ \
 
 -   Задержка назначений ролей: в текущей ожидаемой производительности это займет до 10 минут (600 с) после изменения назначения ролей для применения роли.
 
-## <a name="learn-more"></a>Дополнительные сведения
+## <a name="learn-more"></a>Материалы для дальнейшего изучения
 
 - [Обзор Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/overview)
 - [Учебник по настраиваемым ролям](https://docs.microsoft.com/azure/role-based-access-control/tutorial-custom-role-cli)

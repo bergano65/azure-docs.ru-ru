@@ -8,12 +8,12 @@ ms.service: cloud-services
 ms.topic: article
 ms.date: 02/02/2018
 ms.author: tagore
-ms.openlocfilehash: 3b4028a09f69acd5d7a6579b4610785ed32e227d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 39843ad83830a72b5d6b01cc00ecd65269c02e12
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "77469533"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92078601"
 ---
 # <a name="collect-performance-counters-for-your-azure-cloud-service"></a>Сбор данных счетчиков производительности для облачной службы Azure
 
@@ -70,7 +70,7 @@ Get-Counter -ListSet * | Where-Object CounterSetName -eq "Processor" | Select -E
 \Processor(*)\C3 Transitions/sec
 ```
 
-Эти пути отдельных счетчиков можно добавить на платформу диагностики, используемую облачной службой. Дополнительные сведения о создании пути счетчика производительности см. в статье [Specifying a Counter Path](https://msdn.microsoft.com/library/windows/desktop/aa373193(v=vs.85)) (Указание пути счетчика).
+Эти пути отдельных счетчиков можно добавить на платформу диагностики, используемую облачной службой. Дополнительные сведения о создании пути счетчика производительности см. в статье [Specifying a Counter Path](/windows/win32/perfctrs/specifying-a-counter-path) (Указание пути счетчика).
 
 ## <a name="collect-a-performance-counter"></a>Сбор данных счетчика производительности
 
@@ -290,8 +290,5 @@ counterServiceUsed.Increment();
 
 - [Application Insights для облачных служб Azure](../azure-monitor/app/cloudservices.md#performance-counters)
 - [Системные счетчики производительности в Application Insights](../azure-monitor/app/performance-counters.md)
-- [Specifying a Counter Path](https://msdn.microsoft.com/library/windows/desktop/aa373193(v=vs.85)) (Указание пути счетчика)
+- [Specifying a Counter Path](/windows/win32/perfctrs/specifying-a-counter-path) (Указание пути счетчика)
 - [Схема Диагностики Azure — элементы PerformanceCounters](../azure-monitor/platform/diagnostics-extension-schema-windows.md#performancecounters-element)
-
-
-

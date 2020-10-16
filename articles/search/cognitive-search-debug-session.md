@@ -3,17 +3,17 @@ title: Основные понятия отладочных сеансов (Пр
 titleSuffix: Azure Cognitive Search
 description: Сеансы отладки, доступные через портал Azure, предоставляют интегрированную среду разработки, где можно выявлять и устранять ошибки, проверять изменения и отправлять изменения в набор навыков в конвейере обогащения с помощью ИИ. Сеансы отладки находятся на этапе предварительной версии.
 manager: nitinme
-author: tchristiani
-ms.author: terrychr
+author: HeidiSteen
+ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 10/05/2020
-ms.openlocfilehash: 941d7f54bcb44653280abe264ff1cffbeae33679
-ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
+ms.openlocfilehash: f666cc2f9d11b1e05d11ba266897e6fca3cd287e
+ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91743188"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92057626"
 ---
 # <a name="debug-sessions-in-azure-cognitive-search"></a>Сеансы отладки в Azure Когнитивный поиск
 

@@ -12,13 +12,13 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 03/12/2019
 ms.openlocfilehash: 2b98b11d85bde8dd49b6bbde5d048493493b73f5
-ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91620245"
 ---
-# <a name="managed-api-reference-for-azure-sql-managed-instance"></a>Справочник по управляемому API для Управляемый экземпляр Azure SQL
+# <a name="managed-api-reference-for-azure-sql-managed-instance"></a>Справочник по API управления для Управляемого экземпляра SQL Azure
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
 
 Вы можете создавать и настраивать управляемые экземпляры Azure SQL Управляемый экземпляр с помощью портал Azure, PowerShell, Azure CLI, REST API и Transact-SQL. В этой статье содержатся общие сведения о функциях и API, которые можно использовать для создания и настройки управляемых экземпляров.
@@ -31,7 +31,7 @@ ms.locfileid: "91620245"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 > [!IMPORTANT]
-> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Эти командлеты см. в разделе [AzureRM. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле AZ и в модулях AzureRM существенно идентичны.
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка сосредоточена на модуле Az.Sql. Сведения об этих командлетах см. в разделе [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле AZ и в модулях AzureRM существенно идентичны.
 
 Для создания управляемых экземпляров и управления ими с помощью Azure PowerShell используйте приведенные ниже командлеты PowerShell. Если вам нужно установить или обновить PowerShell, см. статью [Установка модуля Azure PowerShell](/powershell/azure/install-az-ps).
 
@@ -104,7 +104,7 @@ ms.locfileid: "91620245"
 |[Операции Управляемый экземпляр — получение](https://docs.microsoft.com/rest/api/sql/managedinstanceoperations/get)|Возвращает конкретную операцию управления, выполняемую в управляемом экземпляре.|
 |[Управляемый экземпляр операции — отмена](https://docs.microsoft.com/rest/api/sql/managedinstanceoperations/cancel)|Отменяет определенную операцию управления, выполненную на управляемом экземпляре.|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Чтобы узнать о переносе базы данных SQL Server в Azure, ознакомьтесь с разделом [Миграция базы данных SQL Server в базу данных SQL в облаке](../database/migrate-to-database-from-sql-server.md).
 - Дополнительные сведения о поддерживаемых функциях см. [здесь](../database/features-comparison.md).

@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 4/15/2020
 ms.topic: tutorial
 ms.service: digital-twins
-ms.openlocfilehash: 0db39884ef54310db849abcef1062adbaeb9f22e
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: e7d966aa5aa4b5a498c80cab26686411dd586185
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91292738"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92044604"
 ---
 # <a name="tutorial-build-out-an-end-to-end-solution"></a>Руководство по Создание комплексного решения
 
@@ -446,7 +446,7 @@ ObserveProperties thermostat67 Temperature room21 Temperature
 
 Если ресурсы, созданные для этого учебника, вам больше не нужны, можете удалить их. 
 
-В [Azure Cloud Shell](https://shell.azure.com) можно удалить все ресурсы Azure в группе ресурсов с помощью команды [az group delete](https://docs.microsoft.com/cli/azure/group?view=azure-cli-latest&preserve-view=true#az-group-delete). Это приведет к удалению всей группы ресурсов, экземпляра Azure Digital Twins, Центра Интернета вещей и регистрации устройства в этом центре, раздела Сетки событий и связанных с ним подписок, а также приложения Функций Azure вместе с двумя функциями и связанными с ними ресурсами, такими как хранилище.
+В [Azure Cloud Shell](https://shell.azure.com) можно удалить все ресурсы Azure в группе ресурсов с помощью команды [az group delete](/cli/azure/group?preserve-view=true&view=azure-cli-latest#az-group-delete). Это приведет к удалению всей группы ресурсов, экземпляра Azure Digital Twins, Центра Интернета вещей и регистрации устройства в этом центре, раздела Сетки событий и связанных с ним подписок, а также приложения Функций Azure вместе с двумя функциями и связанными с ними ресурсами, такими как хранилище.
 
 > [!IMPORTANT]
 > Удаление группы ресурсов — процесс необратимый. Группа ресурсов и все содержащиеся в ней ресурсы удаляются без возможности восстановления. Будьте внимательны, чтобы случайно не удалить не ту группу ресурсов или не те ресурсы. 

@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 08/28/2020
 ms.author: alkohli
 ms.openlocfilehash: 089476980ff3e8b2d3b72cb2d229934cf7850c03
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90899252"
 ---
 # <a name="kubernetes-on-your-azure-stack-edge-pro-gpu-device"></a>Kubernetes на устройстве GPU Pro на Azure Stack
@@ -106,10 +106,10 @@ Kubernetes также можно интегрировать с рабочими 
 
 ### <a name="kubernetes-and-azure-arc"></a>Kubernetes и дуга Azure
 
-Служба "Дуга Azure" — это гибридное средство управления, которое позволяет развертывать приложения в кластерах Kubernetes. Служба "Дуга Azure" также позволяет использовать Azure Monitor для контейнеров для просмотра и мониторинга кластеров. Дополнительные сведения см. в разделе [что такое Azure-Arc Enabled Kubernetes?](https://docs.microsoft.com/azure/azure-arc/kubernetes/overview). Сведения о ценах на ARC Azure см. на странице [цен на дугу Azure](https://azure.microsoft.com/services/azure-arc/#pricing).
+Служба "Дуга Azure" — это гибридное средство управления, которое позволяет развертывать приложения в кластерах Kubernetes. Служба "Дуга Azure" также позволяет использовать Azure Monitor для контейнеров для просмотра и мониторинга кластеров. Дополнительные сведения см. в [разделе что такое Azure-Arc Enabled Kubernetes?](https://docs.microsoft.com/azure/azure-arc/kubernetes/overview). Сведения о ценах на ARC Azure см. на странице [цен на дугу Azure](https://azure.microsoft.com/services/azure-arc/#pricing).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о хранилище Kubernetes см. на [устройстве с Azure Stack пограничным Pro](azure-stack-edge-gpu-kubernetes-storage.md).
 - Общие сведения о модели Kubernetes Networking на [устройстве Azure Stack пограничной Pro](azure-stack-edge-gpu-kubernetes-networking.md).

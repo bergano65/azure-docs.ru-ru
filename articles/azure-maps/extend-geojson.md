@@ -9,10 +9,10 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.openlocfilehash: e6cfbef3751a7b4256f689af0e5b3524ae6fa878
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88037462"
 ---
 # <a name="extended-geojson-geometries"></a>Расширенные геометрические объекты геоjson
@@ -27,7 +27,7 @@ Azure Maps предоставляет список мощных интерфей
 * MultiPoint
 * MultiPolygon
 * Точка
-* Polygon
+* Многоугольник
 
 Некоторые Azure Maps API принимают геометрические объекты, которые не являются частью [спецификации геоjson][1]. Например, [Поиск внутри геометрического](https://docs.microsoft.com/rest/api/maps/search/postsearchinsidegeometry) API принимает круги и многоугольники.
 
@@ -35,7 +35,7 @@ Azure Maps предоставляет список мощных интерфей
 
 ## <a name="circle"></a>Circle
 
-Эта `Circle` геометрия не поддерживается в [спецификации геоjson][1]. `GeoJSON Point Feature`Для представления окружности используется объект.
+Эта `Circle` геометрия не поддерживается в [спецификации геоjson][1]. `GeoJSON Point Feature` Для представления окружности используется объект.
 
 `Circle`Геометрия, представленная с помощью `GeoJSON Feature` объекта, __должна__ содержать следующие координаты и свойства:
 
@@ -71,7 +71,7 @@ Azure Maps предоставляет список мощных интерфей
 
 ## <a name="rectangle"></a>Прямоугольник
 
-Эта `Rectangle` геометрия не поддерживается в [спецификации геоjson][1]. `GeoJSON Polygon Feature`Для представления прямоугольника используется объект. Расширение Rectangle в основном используется модулем средств рисования веб-пакета SDK.
+Эта `Rectangle` геометрия не поддерживается в [спецификации геоjson][1]. `GeoJSON Polygon Feature` Для представления прямоугольника используется объект. Расширение Rectangle в основном используется модулем средств рисования веб-пакета SDK.
 
 `Rectangle`Геометрия, представленная с помощью `GeoJSON Polygon Feature` объекта, __должна__ содержать следующие координаты и свойства:
 
@@ -98,7 +98,7 @@ Azure Maps предоставляет список мощных интерфей
 }
 
 ```
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о данных геоjson см. в Azure Maps:
 

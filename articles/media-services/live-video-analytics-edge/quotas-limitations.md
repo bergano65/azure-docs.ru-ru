@@ -4,10 +4,10 @@ description: В этой статье описывается IoT Edge квот �
 ms.topic: conceptual
 ms.date: 05/22/2020
 ms.openlocfilehash: df1978de4ee1bbbe15d0df3b02a70fb51491e9d2
-ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90529236"
 ---
 # <a name="quotas-and-limitations"></a>Квоты и ограничения

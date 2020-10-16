@@ -10,12 +10,12 @@ ms.author: tamram
 ms.reviewer: wielriac
 ms.subservice: blobs
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 542c9374b70cd765ed27dd4dd158ad81035269f0
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: add94fe05eecd2fb77ba0d6d79fe6765afe3baaa
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89018847"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92091021"
 ---
 # <a name="overview-of-azure-page-blobs"></a>Общие сведения о страничных BLOB-объектах Azure
 
@@ -90,7 +90,7 @@ pageBlob.Create(16 * OneGigabyteAsBytes);
 
 # <a name="net-v12"></a>[Платформа .NET версии 12](#tab/dotnet)
 
-Чтобы изменить размер страничного BLOB-объекта после создания, используйте метод [изменения размера](/dotnet/api/azure.storage.blobs.specialized.pageblobclient.resize?view=azure-dotnet) . Запрошенный размер должен быть кратен 512 байтам.
+Чтобы изменить размер страничного BLOB-объекта после создания, используйте метод [изменения размера](/dotnet/api/azure.storage.blobs.specialized.pageblobclient.resize) . Запрошенный размер должен быть кратен 512 байтам.
 
 :::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/CRUD.cs" id="Snippet_ResizePageBlob":::
 

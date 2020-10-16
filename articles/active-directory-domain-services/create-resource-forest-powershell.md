@@ -1,20 +1,20 @@
 ---
 title: Создание леса ресурсов доменных служб Azure AD с помощью Azure PowerShell | Документация Майкрософт
 description: Из этой статьи вы узнаете, как создать и настроить лес ресурсов доменных служб Azure Active Directory и исходящий лес в локальной среде служб домен Active Directory, используя Azure PowerShell.
-author: iainfoulds
+author: MicrosoftGuyJFlo
 manager: daveba
 ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 07/27/2020
-ms.author: iainfou
-ms.openlocfilehash: 893085179c27ce88c3e310170715e2f83a59ddc7
-ms.sourcegitcommit: 5b6acff3d1d0603904929cc529ecbcfcde90d88b
+ms.author: joflore
+ms.openlocfilehash: e914c273adc632449ed31915127fe6d261a8d56c
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88723169"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91960955"
 ---
 # <a name="create-an-azure-active-directory-domain-services-resource-forest-and-outbound-forest-trust-to-an-on-premises-domain-using-azure-powershell"></a>Создание Azure Active Directory леса ресурсов доменных служб и исходящего доверия лесов в локальном домене с помощью Azure PowerShell
 
@@ -112,7 +112,7 @@ New-AzureADServicePrincipal -AppId "2565bd9d-da50-47d4-8b85-4c97f669dc36"
 
     `New-AzureAaddsForest`Скрипт может создать виртуальную сеть Azure и подсеть AD DS Azure, если эти ресурсы еще не существуют. При необходимости скрипт может создать подсети рабочей нагрузки, если они указаны:
 
-    | Имя                              | Параметр скрипта                  | Описание: |
+    | Имя                              | Параметр скрипта                  | Описание |
     |:----------------------------------|:----------------------------------|:------------|
     | Имя виртуальной сети              | *-Ааддсвнетнаме*                  | Имя виртуальной сети для управляемого домена.|
     | Пространство адресов                     | *-АаддсвнетЦидраддрессспаце*      | Диапазон адресов виртуальной сети в нотации CIDR (при создании виртуальной сети).|
@@ -193,7 +193,7 @@ Install-Script -Name Add-AaddsResourceForestTrust
 
 Теперь предоставьте скрипту следующие сведения:
 
-| Имя                               | Параметр скрипта     | Описание: |
+| Имя                               | Параметр скрипта     | Описание |
 |:-----------------------------------|:---------------------|:------------|
 | Доменное имя Azure AD DS            | *-Манажеддомаинфкдн* | Полное доменное имя управляемого домена, например *aaddscontoso.com* |
 | Локальное AD DS доменное имя      | *-Трустфкдн*         | Полное доменное имя доверенного леса, например *onprem.contoso.com* |

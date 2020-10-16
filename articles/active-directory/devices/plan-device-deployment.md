@@ -11,12 +11,12 @@ author: BarbaraSelden
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 60d3e3c174ad9a3372df084cac9eb67270779298
-ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
+ms.openlocfilehash: bf30570f10f176c47aed0f99127e03a027eff775
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90563902"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92093095"
 ---
 # <a name="plan-your-azure-active-directory-device-deployment"></a>Планирование развертывания устройства Azure Active Directory
 
@@ -34,7 +34,7 @@ Azure Active Directory (Azure AD) позволяет Организации уд
 
 * [Создайте гибридное присоединение к Azure AD](concept-azure-ad-join-hybrid.md) между устройствами в локальной Active Directory и Azure AD. 
 
-## <a name="learn"></a>Learn
+## <a name="learn"></a>Обучение
 
 Перед началом работы убедитесь, что вы знакомы с [обзором управления удостоверениями устройств](overview.md).
 
@@ -62,7 +62,7 @@ Azure Active Directory (Azure AD) позволяет Организации уд
 
 ### <a name="engage-the-right-stakeholders"></a>Привлечение соответствующих заинтересованных лиц
 
-Причиной неудач технических проектов обычно являются неоправданные ожидания относительно влияния, результатов и обязанностей. Чтобы избежать этих трудностей, [Убедитесь, что вы знакомы с нужными заинтересованными лицами](https://aka.ms/deploymentplans) и что роли заинтересованных лиц в проекте хорошо понятны. 
+Причиной неудач технических проектов обычно являются неоправданные ожидания относительно влияния, результатов и обязанностей. Чтобы избежать этих трудностей, [Убедитесь, что вы знакомы с нужными заинтересованными лицами](../fundamentals/active-directory-deployment-plans.md) и что роли заинтересованных лиц в проекте хорошо понятны. 
 
 Для этого плана добавьте в список следующих заинтересованных лиц:
 

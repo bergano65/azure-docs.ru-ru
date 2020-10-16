@@ -11,12 +11,12 @@ ms.workload: na
 ms.topic: article
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: efdfc1c12191977c0422cda6c52eb9b73c95c55f
-ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
+ms.openlocfilehash: 87d26e18ff97416ff8cb0eda08f7beb81005c627
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91651196"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92015708"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Заметки о выпуске Служб мультимедиа Azure версии 3
 
@@ -34,7 +34,7 @@ ms.locfileid: "91651196"
 ## <a name="known-issues"></a>Известные проблемы
 
 > [!NOTE]
-> Вы можете использовать [портал Azure](https://portal.azure.com/) для управления [динамическими событиями](live-events-outputs-concept.md)v3, просмотреть v3 [Assets](assets-concept.md) and Jobs, получить сведения о доступе к API-интерфейсам, шифровать содержимое. Для всех других задач управления (например, для управления преобразованиями и заданиями) используйте [REST API](https://aka.ms/ams-v3-rest-ref), [CLI](https://aka.ms/ams-v3-cli-ref)или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
+> Вы можете использовать [портал Azure](https://portal.azure.com/) для управления [динамическими событиями](live-events-outputs-concept.md)v3, просмотреть v3 [Assets](assets-concept.md) and Jobs, получить сведения о доступе к API-интерфейсам, шифровать содержимое. Для всех других задач управления (например, для управления преобразованиями и заданиями) используйте [REST API](/rest/api/media/accountfilters), [CLI](/cli/azure/ams)или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
 >
 > Дополнительные сведения см. [в разделе ограничения портал Azure для служб мультимедиа v3](frequently-asked-questions.md#what-are-the-azure-portal-limitations-for-media-services-v3).
 
@@ -174,7 +174,7 @@ ms.locfileid: "91651196"
 
 Мы сообщаем о прекращении использования *Windows Azure Media Encoder* (ВАМЕ) и *кодировщика мультимедиа Azure* (AME). Сведения о датах выбытия см. в этой статье о [устаревших компонентах](../previous/legacy-components.md) .
 
-Дополнительные сведения см. в разделах [Переход с ВАМЕ на стандартный кодировщик Служб мультимедиа](https://go.microsoft.com/fwlink/?LinkId=2101334) и [Переход с AME на стандартный кодировщик Служб мультимедиа](https://go.microsoft.com/fwlink/?LinkId=2101335).
+Дополнительные сведения см. в разделах [Переход с ВАМЕ на стандартный кодировщик Служб мультимедиа](../previous/migrate-windows-azure-media-encoder.md) и [Переход с AME на стандартный кодировщик Служб мультимедиа](../previous/migrate-azure-media-encoder.md).
  
 ## <a name="july-2019"></a>Июль 2019 г.
 

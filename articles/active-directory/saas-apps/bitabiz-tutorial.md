@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/06/2019
 ms.author: jeedes
-ms.openlocfilehash: 397197c2ab3ba4f135912eab800f1abd7ab73a0f
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 729427dac174037c8750af7ab0f6cb17fa4d4c1e
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88531104"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91741522"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-bitabiz"></a>Руководство по интеграции Azure Active Directory с BitaBIZ
 
@@ -132,15 +132,15 @@ ms.locfileid: "88531104"
 
 2. Щелкните **SETUP ADMIN** (УСТАНОВИТЬ АДМИНИСТРАТОРА).
 
-    ![Настройка BitaBIZ](./media/bitabiz-tutorial/settings1.png)
+    ![Снимок экрана: часть окна браузера с выбранным элементом "Администратор установки".](./media/bitabiz-tutorial/settings1.png)
 
 3. В разделе **Добавить значение** щелкните **Microsoft integrations** (Интеграции Майкрософт).
 
-    ![Настройка BitaBIZ](./media/bitabiz-tutorial/settings2.png)
+    ![Снимок экрана: раздел "Добавление значения" с выбранным разделом "Интеграции Майкрософт".](./media/bitabiz-tutorial/settings2.png)
 
 4. Прокрутите вниз до раздела **Microsoft Azure AD (Enable single sign on)** (Microsoft Azure AD (Включить единый вход)) и сделайте следующее:
 
-    ![Настройка BitaBIZ](./media/bitabiz-tutorial/settings3.png)
+    ![Снимок экрана: раздел "Microsoft Azure AD", где можно ввести сведения, описанные на этом шаге.](./media/bitabiz-tutorial/settings3.png)
 
     а. Скопируйте значение из текстового поля **Entity ID (”Identifier” in Azure AD)** (Идентификатор сущности ("Идентификатор" в Azure AD)) и вставьте его в текстовое поле **Идентификатор** в разделе **Базовая конфигурация SAML** на портале Azure. 
 
@@ -218,19 +218,19 @@ ms.locfileid: "88531104"
 
 2. Щелкните **SETUP ADMIN** (УСТАНОВИТЬ АДМИНИСТРАТОРА).
 
-    ![Добавление пользователя BitaBIZ](./media/bitabiz-tutorial/settings1.png)
+    ![Снимок экрана: часть окна браузера с выбранным элементом "Администратор установки".](./media/bitabiz-tutorial/settings1.png)
 
 3. Щелкните **Add users** (Добавить пользователей) в разделе **Organization** (Организация).
 
-    ![Добавление пользователя BitaBIZ](./media/bitabiz-tutorial/user1.png)
+    ![Снимок экрана: раздел "Организация" с выбранным параметром "Добавить пользователей".](./media/bitabiz-tutorial/user1.png)
 
 4. Нажмите кнопку **Add new employee** (Добавление нового сотрудника).
 
-    ![Добавление пользователя BitaBIZ](./media/bitabiz-tutorial/user2.png)
+    ![Снимок экрана: заголовок "Добавление пользователей" с выбранной кнопкой "Добавить нового сотрудника".](./media/bitabiz-tutorial/user2.png)
 
 5. На диалоговой странице **Add new employee** (Добавление нового сотрудника) выполните следующие действия.
 
-    ![Добавление пользователя BitaBIZ](./media/bitabiz-tutorial/user3.png)
+    ![Снимок экрана: страница, где можно ввести сведения, описанные на этом шаге.](./media/bitabiz-tutorial/user3.png)
 
     а. В текстовом поле **First Name** (Имя) введите имя пользователя, например Britta.
 

@@ -1,23 +1,18 @@
 ---
 title: Производительность размера виртуальной машины серии HC
 description: Узнайте о результатах тестирования производительности для размеров виртуальных машин серии HC в Azure.
-services: virtual-machines
-documentationcenter: ''
 author: vermagit
-manager: gwallace
-editor: ''
-tags: azure-resource-manager
 ms.service: virtual-machines
-ms.workload: infrastructure-services
 ms.topic: article
 ms.date: 09/10/2020
 ms.author: amverma
-ms.openlocfilehash: 0d63d9770dacf6a200e8b81e8d47d9f807a8a448
-ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
+ms.reviewer: cynthn
+ms.openlocfilehash: 34d47e6c10692cc212b6e178e3f9658069b96020
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90603450"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91995105"
 ---
 # <a name="hc-series-virtual-machine-sizes"></a>Размеры виртуальных машин серии HC
 
@@ -26,7 +21,7 @@ ms.locfileid: "90603450"
 | Рабочая нагрузка                                        | HB                    |
 |-------------------------------------------------|-----------------------|
 | STREAM триады                                    | 190 ГБ/с (Intel MLC AVX-512)  |
-| Высокопроизводительная Linpack (ХПЛ)                  | 3520 гигафлопс (Рпеак), 2970 гигафлопс (Рмакс) |
+| High-Performance Linpack (ХПЛ)                  | 3520 гигафлопс (Рпеак), 2970 гигафлопс (Рмакс) |
 | Задержка & RDMA, пропускная способность                        | 1,05 микросекунд, 96,8 ГБ/с   |
 | FIO на локальном SSD NVMe                           | 1,3 ГБ/с, операций записи 900 МБ/с |  
 | ИОР на 4 SSD (цен. категория "Премиум") Azure (управляемые диски P30, конфигурацию RAID0) * *  | 780 МБ/с, 780 МБ/операций записи |
@@ -49,7 +44,7 @@ ms.locfileid: "90603450"
 ./mvapich2-2.3.install/bin/mpirun_rsh -np 2 -hostfile ~/hostfile MV2_CPU_MAPPING=[INSERT CORE #] ./mvapich2-2.3/osu_benchmarks/mpi/pt2pt/osu_bw
 ```
 
-:::image type="content" source="./media/bandwidth-hc.png" alt-text="Пропускная способность MPI в Azure HC.":::
+:::image type="content" source="./media/bandwidth-hc.png" alt-text="MPI с задержкой в Azure HC.":::
 
 
 ## <a name="mellanox-perftest"></a>Mellanox Perftest

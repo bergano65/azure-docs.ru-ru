@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 10/22/2019
 ms.author: jeedes
-ms.openlocfilehash: abeb52155b933c223ee0621e8ab203ac035e5f36
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 0ce6e4dc44a19f4aaee35cc4477761010d76a96b
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88519754"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91775927"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-comm100-live-chat"></a>Руководство по Интеграция единого входа Azure Active Directory с Comm100 Live Chat
 
@@ -144,7 +144,7 @@ ms.locfileid: "88519754"
 
 1. В меню в левой части щелкните **Security** (Безопасность), затем выберите **Agent Single Sign-On** (Единый вход агента).
 
-   ![Безопасность Comm100 Live Chat](./media/comm100livechat-tutorial/tutorial_comm100livechat_security.png)
+   ![Снимок экрана, на котором показано меню "Security" (Безопасность) слева и выбран пункт "Agent Single Sign-On" (Единый вход агента)](./media/comm100livechat-tutorial/tutorial_comm100livechat_security.png)
 
 1. На странице **Agent Single Sign-On** (Единый вход агента) выполните следующие действия:
 

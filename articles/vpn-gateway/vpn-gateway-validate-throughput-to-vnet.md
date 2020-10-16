@@ -11,10 +11,10 @@ ms.date: 09/02/2020
 ms.author: radwiv
 ms.reviewer: chadmat;genli
 ms.openlocfilehash: d2347c0688ca58698831019a193d03fe2c6721e9
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89398514"
 ---
 # <a name="how-to-validate-vpn-throughput-to-a-virtual-network"></a>Порядок проверки пропускной способности VPN для виртуальной сети
@@ -26,7 +26,7 @@ ms.locfileid: "89398514"
 > [!NOTE]
 > Эта статья помогает диагностировать и устранить распространенные проблемы. Если вам не удается решить проблему с помощью приведенных ниже сведений, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
 
-## <a name="overview"></a>Overview
+## <a name="overview"></a>Обзор
 
 Подключение к VPN-шлюзу состоит из следующих компонентов:
 
@@ -261,7 +261,7 @@ ms.locfileid: "89398514"
 
 Если большое и необычное увеличение задержки Заметится с прыжков в "msn.net", обратитесь в службу поддержки Майкрософт для дальнейшего исследования.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Для получения дополнительных сведений или справки ознакомьтесь со следующей ссылкой:
 

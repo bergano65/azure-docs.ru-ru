@@ -10,10 +10,10 @@ ms.date: 05/04/2020
 ms.author: cynthn
 ms.reviewer: akjosh
 ms.openlocfilehash: e8aabcd1c68272a78b3c1fe88913c5a62496f681
-ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88225841"
 ---
 # <a name="copy-an-image-from-another-gallery-using-the-azure-cli"></a>Копирование изображения из другой коллекции с помощью Azure CLI
@@ -84,7 +84,7 @@ az sig image-definition show \
    --gallery-image-definition myImageDefinition
 ```
 
-Результат будет выглядеть примерно следующим образом:
+Результат должен выглядеть следующим образом.
 
 ```output
 {
@@ -157,7 +157,7 @@ az sig image-version create \
 > Вы также можете сохранить образ в хранилище класса Premium, добавив `--storage-account-type  premium_lrs` [хранилище или избыточное в зону](../storage/common/storage-redundancy.md) , добавив `--storage-account-type  standard_zrs` его при создании версии образа.
 >
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Создайте виртуальную машину на основе [обобщенной](vm-generalized-image-version-cli.md) или [специализированной](vm-specialized-image-version-cli.md) версии образа.
 

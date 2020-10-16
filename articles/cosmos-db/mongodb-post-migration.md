@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 03/20/2020
 ms.author: jasonh
 ms.openlocfilehash: f21aa30de2b2dfcf85e45c7ed4d5c485fe45eed7
-ms.sourcegitcommit: b48e8a62a63a6ea99812e0a2279b83102e082b61
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91409703"
 ---
 # <a name="post-migration-optimization-steps-when-using-azure-cosmos-dbs-api-for-mongodb"></a>Действия по оптимизации после миграции при использовании API Azure Cosmos DB для MongoDB
@@ -60,7 +60,7 @@ Azure Cosmos DB предлагает 5 четко определенных [ур
 
 Большинство пользователей оставляют свой уровень согласованности при настройке согласованности сеансов по умолчанию. Однако существуют [компромиссы доступности и производительности для различных уровней согласованности](consistency-levels-tradeoffs.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Подключение приложения MongoDB к Azure Cosmos DB](connect-mongodb-account.md)
 * [Подключение к учетной записи Azure Cosmos DB с помощью Studio 3T](mongodb-mongochef.md)

@@ -1,6 +1,7 @@
 ---
-title: Краткое руководство. Использование приложений iOS и macOS с платформой удостоверений Майкрософт | Azure
-description: Узнайте, как осуществлять вход пользователям и запрашивать Microsoft Graph в приложении iOS или macOS.
+title: Краткое руководство. Добавление возможности входа в приложение iOS или macOS с помощью учетной записи Майкрософт | Azure
+titleSuffix: Microsoft identity platform
+description: Из этого краткого руководства вы узнаете, как в приложении iOS или macOS реализовать вход пользователей, получение маркера доступа от платформы удостоверений Майкрософт и вызов API Microsoft Graph.
 services: active-directory
 author: mmacy
 manager: CelesteDG
@@ -12,12 +13,12 @@ ms.date: 09/24/2019
 ms.author: marsma
 ms.reviewer: jmprieur, saeeda
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:iOS
-ms.openlocfilehash: 39062396e0076af5901f2fc7d76f5c989e2ccc3a
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 6ab826b6816c8f1b71a28c6bf501b651baa2cfff
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88115260"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91613464"
 ---
 # <a name="quickstart-sign-in-users-and-call-the-microsoft-graph-api-from-an-ios-or-macos-app"></a>Краткое руководство. Вход пользователей и вызов Microsoft API Graph из приложения iOS или macOS
 
@@ -25,13 +26,16 @@ ms.locfileid: "88115260"
 
 Это краткое руководство распространяется на приложения iOS и macOS. Некоторые шаги необходимы только для приложений iOS. Эти действия обращают внимание на то, что они предназначены только для iOS.
 
-![Схема работы приложения, создаваемого в этом кратком руководстве](media/quickstart-v2-ios/ios-intro.svg)
+## <a name="prerequisites"></a>Предварительные требования
 
-> [!NOTE]
-> **Предварительные требования**
-> * XCode 10 или более поздней версии
-> * iOS 10 или более поздней версии
-> * macOS 10.12+
+* Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) бесплатно.
+* XCode 10 или более поздней версии
+* iOS 10 или более поздней версии
+* macOS 10.12+
+
+## <a name="how-the-sample-works"></a>Как работает этот пример
+
+![Схема работы приложения, создаваемого в этом кратком руководстве](media/quickstart-v2-ios/ios-intro.svg)
 
 > [!div renderon="docs"]
 > ## <a name="register-and-download-your-quickstart-app"></a>Регистрация и скачивание приложения, используемого в этом кратком руководстве
@@ -70,16 +74,16 @@ ms.locfileid: "88115260"
 >
 > > [!div id="appconfigured" class="alert alert-info"]
 > > ![Уже настроено](media/quickstart-v2-ios/green-check.png). Ваше приложение настроено с помощью этих атрибутов
-> 
+>
 > #### <a name="step-2-download-the-sample-project"></a>Шаг 2. Загрузка примера проекта
 > > [!div id="autoupdate_ios" class="nextstepaction"]
 > > [Загрузка примера кода для iOS]()
-> 
+>
 > > [!div id="autoupdate_macos" class="nextstepaction"]
 > > [Загрузка примера кода для macOS]()
 > [!div renderon="docs"]
 > #### <a name="step-2-download-the-sample-project"></a>Шаг 2. Загрузка примера проекта
-> 
+>
 > - [Загрузка примера кода для iOS](https://github.com/Azure-Samples/active-directory-ios-swift-native-v2/archive/master.zip)
 > - [Загрузка примера кода для macOS](https://github.com/Azure-Samples/active-directory-macOS-swift-native-v2/archive/master.zip)
 
@@ -262,13 +266,11 @@ self.applicationContext!.getCurrentAccount(with: nil) { (currentAccount, previou
 > | `scopes` | Содержит запрашиваемые области, то есть `[ "user.read" ]` для Microsoft Graph или `[ "<Application ID URL>/scope" ]` для пользовательских веб-API (`api://<Application ID>/access_as_user`). |
 > | `account` | Учетная запись, для которой запрашивается токен. В этом кратком руководстве рассматривается приложение с одной учетной записью. Если вы хотите создать приложение с несколькими учетными записями, нужно определить логику для выбора учетной записи, которая будет использоваться для запросов токенов, с помощью `accountsFromDeviceForParameters:completionBlock:` и правильного идентификатора `accountIdentifier`. |
 
+[!INCLUDE [Help and support](../../../includes/active-directory-develop-help-support-include.md)]
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В руководстве по iOS и macOS вы найдете пошаговые инструкции по созданию приложений, а также полное описание того, о чем говорится в этом кратком руководстве.
-
-### <a name="learn-how-to-create-the-application-used-in-this-quickstart"></a>Узнайте, как создавать приложения, используемые в этом кратком руководстве.
+Перейдите к пошаговому учебнику, с помощью которого вы создадите приложение iOS или macOS, получающее маркер доступа от платформы удостоверений Майкрософт и использующее его для вызова API Microsoft Graph.
 
 > [!div class="nextstepaction"]
-> [Руководство по вызову API Graph для iOS и macOS](./tutorial-v2-ios.md)
-
-[!INCLUDE [Help and support](../../../includes/active-directory-develop-help-support-include.md)]
+> [Учебник. Вход пользователей и вызов Microsoft Graph из приложения iOS или macOS](tutorial-v2-ios.md)

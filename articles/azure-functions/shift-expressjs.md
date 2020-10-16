@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 07/31/2020
 ms.author: cshoe
 ms.openlocfilehash: 266df5371ff5f47526fa9d6567c62e31d51ebb05
-ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87810230"
 ---
 # <a name="shifting-from-expressjs-to-azure-functions"></a>Сдвиг от Express.js к функциям Azure
@@ -136,6 +136,6 @@ export default httpTrigger;
 
 Определяя `get` в `methods` массиве, функция доступна для HTTP- `GET` запросов. Если вы хотите, чтобы ваш API принимал запросы на поддержку `POST` , можно `post` также добавить в массив.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения см. в интерактивном учебнике [рефакторинг Node.js и Express API для бессерверных интерфейсов API с помощью функций Azure](/learn/modules/shift-nodejs-express-apis-serverless/) .

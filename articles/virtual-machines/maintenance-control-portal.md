@@ -8,17 +8,17 @@ ms.workload: infrastructure-services
 ms.date: 04/22/2020
 ms.author: cynthn
 ms.openlocfilehash: b174e2631131e6bf26d7b1cb62442c8a99102e2e
-ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91397289"
 ---
 # <a name="control-updates-with-maintenance-control-and-the-azure-portal"></a>Управление обновлениями с помощью управления обслуживанием и портал Azure
 
 Управление обслуживанием позволяет решить, когда следует применять обновления к изолированным виртуальным машинам и выделенным узлам Azure. В этом разделе рассматриваются параметры портал Azure для управления обслуживанием. Дополнительные сведения о преимуществах использования управления обслуживанием, его ограничений и других параметров управления см. [в разделе Управление обновлениями платформы с помощью управления обслуживанием](maintenance-control.md).
 
-## <a name="create-a-maintenance-configuration"></a>Создание конфигурации обслуживания
+## <a name="create-a-maintenance-configuration"></a>Создайте конфигурацию обслуживания.
 
 1. Войдите на портал Azure.
 
@@ -30,11 +30,11 @@ ms.locfileid: "91397289"
 
    ![Снимок экрана, показывающий, как добавить конфигурацию обслуживания](media/virtual-machines-maintenance-control-portal/maintenance-configurations-add.png)
 
-1. Выберите подписку и группу ресурсов, укажите имя конфигурации и выберите регион. Нажмите кнопку **Далее**.
+1. Выберите подписку и группу ресурсов, укажите имя конфигурации и выберите регион. Щелкните **Далее**.
 
    ![Снимок экрана, показывающий основы настройки обслуживания](media/virtual-machines-maintenance-control-portal/maintenance-configurations-basics.png)
 
-1. Добавьте теги и значения. Нажмите кнопку **Далее**.
+1. Добавьте теги и значения. Щелкните **Далее**.
 
    ![Снимок экрана, показывающий, как добавить теги в конфигурацию обслуживания](media/virtual-machines-maintenance-control-portal/maintenance-configurations-tags.png)
 
@@ -97,6 +97,6 @@ ms.locfileid: "91397289"
 ![Снимок экрана, показывающий, как удалить конфигурацию.](media/virtual-machines-maintenance-control-portal/maintenance-configurations-delete.png)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения см. в разделе [обслуживание и обновления](maintenance-and-updates.md).

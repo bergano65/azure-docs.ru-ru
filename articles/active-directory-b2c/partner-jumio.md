@@ -12,10 +12,10 @@ ms.date: 08/20/2020
 ms.author: gasinh
 ms.subservice: B2C
 ms.openlocfilehash: 4e5becdd026b0a1c9e848b183ebeee5833654461
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91259277"
 ---
 # <a name="tutorial-for-configuring-jumio-with-azure-active-directory-b2c"></a>Руководство по настройке Жумио с помощью Azure Active Directory B2C
@@ -154,7 +154,7 @@ ms.locfileid: "91259277"
 
 3. Выберите **выполнить поток пользователя** , а затем:
 
-   а. Для **приложения**выберите зарегистрированное приложение (пример — JWT).
+   a. Для **приложения**выберите зарегистрированное приложение (пример — JWT).
 
    b. В поле **URL-адрес ответа**выберите **URL-адрес перенаправления**.
 
@@ -164,7 +164,7 @@ ms.locfileid: "91259277"
 
 5. Служба Жумио будет вызываться во время последовательности после создания пользовательского атрибута. Если поток неполон, убедитесь, что пользователь не сохранен в каталоге.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения см. в следующих статьях:
 

@@ -1,14 +1,14 @@
 ---
 title: Получение данных об изменении ресурса
 description: Сведения о том, как узнать об изменении ресурса, как получить список измененных свойств и оценить различия.
-ms.date: 08/10/2020
+ms.date: 10/14/2020
 ms.topic: how-to
-ms.openlocfilehash: 02dfd2b8b66cd09be39a44166a0fd62bb13c8395
-ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
+ms.openlocfilehash: bab51ac7b55e2a838d98b46a09289f2cc19bfde3
+ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88056573"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92057575"
 ---
 # <a name="get-resource-changes"></a>Получение данных об изменении ресурса
 
@@ -279,7 +279,7 @@ POST https://management.azure.com/providers/Microsoft.ResourceGraph/resourceChan
 }
 ```
 
-Каждый из моментальных снимков **beforeSnapshot** и **afterSnapshot** содержит время своего создания и все свойства по состоянию на этот момент. Известно, что изменение произошло в некоторый момент между этими снимками. В приведенном выше примере мы видим, что изменилось свойство **supportsHttpsTrafficOnly**.
+Каждый из моментальных снимков **beforeSnapshot** и **afterSnapshot** содержит время своего создания и все свойства по состоянию на этот момент. Известно, что изменение произошло в некоторый момент между этими снимками. Взглянув на предыдущий пример, можно увидеть, что измененное свойство было **supportsHttpsTrafficOnly**.
 
 Чтобы сравнить результаты, используйте свойство **changes** в ответе **resourceChanges** или **содержимое** обоих моментальных снимков в ответе **resourceChangeDetails**. При сравнении моментальных снимков для значения **timestamp** всегда отображается наличие различий, хотя это и ожидаемо.
 

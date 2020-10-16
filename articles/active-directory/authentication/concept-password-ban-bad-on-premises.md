@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 07/17/2020
-ms.author: iainfou
-author: iainfoulds
+ms.author: joflore
+author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e09ad2991d552cb9886911ac75ea23c690204a71
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: c4802c4faf245819f57f9885129fa876110407dd
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88116654"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91965239"
 ---
 # <a name="enforce-on-premises-azure-ad-password-protection-for-active-directory-domain-services"></a>Принудительная защита паролей в локальной среде Azure AD для домен Active Directory Services
 
@@ -91,7 +91,7 @@ ms.locfileid: "88116654"
 > [!NOTE]
 > Поэтому клиенты, имеющие несколько клиентов Azure AD, должны выбрать один различающиеся клиенты для регистрации каждого леса в целях защиты паролей Azure AD.
 
-## <a name="download"></a>Скачать
+## <a name="download"></a>Скачивание
 
 Два необходимых установщика агента для защиты паролей Azure AD доступны в [центре загрузки Майкрософт](https://www.microsoft.com/download/details.aspx?id=57071).
 

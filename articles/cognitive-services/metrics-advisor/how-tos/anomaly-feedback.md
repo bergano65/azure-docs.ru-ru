@@ -3,19 +3,19 @@ title: Обеспечение обратной связи с аномалией 
 titleSuffix: Azure Cognitive Services
 description: Узнайте, как отправить отзыв об аномалиях, обнаруженных вашим экземпляром советника по метрикам, и настроить результаты.
 services: cognitive-services
-author: aahill
+author: mrbullwinkle
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: metrics-advisor
 ms.topic: conceptual
 ms.date: 09/10/2020
-ms.author: aahi
-ms.openlocfilehash: 50d422edf1a4b45132d0b86eac9d4947cef5e5bf
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.author: mbullwin
+ms.openlocfilehash: 11864cb26b76d414aa2efe2643797a2f66fa30e4
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90938045"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92047613"
 ---
 # <a name="adjust-anomaly-detection-using-feedback"></a>Настройка обнаружения аномалий с помощью обратной связи
 
@@ -37,19 +37,19 @@ ms.locfileid: "90938045"
 
 Попробуйте оставить комментарий в текстовом поле **комментария** одновременно и нажмите кнопку **сохранить** , чтобы сохранить отзыв.
 
-:::image type="content" source="../media/feedback/feedback-menu.png" alt-text="Меню обратной связи.":::
+:::image type="content" source="../media/feedback/feedback-menu.png" alt-text="Режим аннотации обратной связи.":::
 
 ## <a name="give-feedback-for-multiple-continuous-points"></a>Оставить отзыв для нескольких непрерывных точек
 
 Вы можете отправить отзыв для нескольких непрерывных точек одновременно, нажав кнопку вниз и перетащив указатель мыши на те точки, на которые нужно добавить заметки. Вы увидите одно и то же меню обратной связи, как описано выше. Те же отзывы будут применяться ко всем выбранным точкам после нажатия кнопки **сохранить**.
 
-:::image type="content" source="../media/feedback/continuous-points.png" alt-text="Выбор нескольких точек":::
+:::image type="content" source="../media/feedback/continuous-points.png" alt-text="Режим аннотации обратной связи.":::
 
 ## <a name="how-to-view-my-feedback"></a>Как просмотреть свой отзыв
 
 Чтобы узнать, изменилось ли обнаружение аномалий точки, наведите указатель мыши на точку. Во всплывающей подсказке будет отображаться **влияние на отзыв: true** , если обнаружение было изменено. Если отображается **значение false**, то вычисление обратной связи было выполнено в точке, но результат обнаружения аномалий не изменился.
 
-:::image type="content" source="../media/feedback/affected-point.png" alt-text="Точка, на которую влияет отзыв":::
+:::image type="content" source="../media/feedback/affected-point.png" alt-text="Режим аннотации обратной связи.":::
 
 ## <a name="when-should-i-annotate-an-anomaly-as-normal"></a>Когда следует закомментировать аномалию как "нормальная"
 

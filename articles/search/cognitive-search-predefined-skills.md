@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: 417cc13c4a201a0dd86a846c347cb395b8d81c43
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91535531"
 ---
 # <a name="built-in-cognitive-skills-for-text-and-image-processing-during-indexing-azure-cognitive-search"></a>Встроенные профессиональные навыки для обработки текста и изображений во время индексирования (Когнитивный поиск Azure)
@@ -53,7 +53,7 @@ ms.locfileid: "91535531"
 
 Рекомендации по созданию [пользовательского навыка](cognitive-search-custom-skill-web-api.md)см. в разделе [Определение пользовательского интерфейса](cognitive-search-custom-skill-interface.md) и пример. [Создание пользовательского навыка для обогащения искусственного интеллекта](cognitive-search-create-custom-skill-example.md).
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 + [Определение набора навыков](cognitive-search-defining-skillset.md)
 + [Определение интерфейса пользовательских навыков](cognitive-search-custom-skill-interface.md)

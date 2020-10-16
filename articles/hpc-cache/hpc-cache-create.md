@@ -7,10 +7,10 @@ ms.topic: how-to
 ms.date: 09/30/2020
 ms.author: v-erkel
 ms.openlocfilehash: bed158fb99654bd48184073b1266ae630255558b
-ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91613175"
 ---
 # <a name="create-an-azure-hpc-cache"></a>Создание Azure HPC Cache
@@ -192,11 +192,11 @@ az hpc-cache create --resource-group doc-demo-rg --name my-cache-0619 \
 ## <a name="azure-powershell"></a>[Azure PowerShell](#tab/azure-powershell)
 
 > [!CAUTION]
-> Модуль PowerShell AZ. Хпккаче в настоящее время находится в общедоступной предварительной версии. Эта предварительная версия предоставляется без соглашения об уровне обслуживания. Не рекомендуется использовать для рабочих нагрузок в рабочей среде. Некоторые функции могут не поддерживаться или иметь ограниченные возможности. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+> Модуль PowerShell AZ. Хпккаче в настоящее время находится в общедоступной предварительной версии. Эта предварительная версия предоставляется без соглашения об уровне обслуживания. Эта версия не рекомендуется для использования с рабочими нагрузками в производственной среде. Некоторые функции могут не поддерживаться или иметь ограниченные возможности. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-## <a name="requirements"></a>Requirements (Требования)
+## <a name="requirements"></a>Требования
 
-Если вы решили использовать PowerShell локально, для работы с этой статьей установите модуль PowerShell Az и подключитесь к учетной записи Azure с помощью командлета [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount). См. сведения об [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если вы решили использовать Cloud Shell, см. Дополнительные сведения в разделе [обзор Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview) .
+Если вы решили использовать PowerShell локально, для работы с этой статьей установите модуль PowerShell Az и подключитесь к учетной записи Azure с помощью командлета [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount). См. сведения об [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если вы решили использовать Cloud Shell, дополнительные сведения см. в статье [Обзор Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview).
 
 > [!IMPORTANT]
 > Пока модуль PowerShell **AZ. хпккаче** находится на этапе предварительной версии, его необходимо установить отдельно с помощью `Install-Module` командлета. После того как этот модуль PowerShell станет общедоступным, он будет частью будущих выпусков AZ PowerShell, доступных в Azure Cloud Shell.
@@ -282,7 +282,7 @@ upgradeStatus     : @{currentFirmwareVersion=5.3.42; firmwareUpdateDeadline=1/1/
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 После того как кэш появится в списке **ресурсов** , можно перейти к следующему шагу.
 

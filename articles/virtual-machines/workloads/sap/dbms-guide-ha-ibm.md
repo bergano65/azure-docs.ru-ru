@@ -1,25 +1,18 @@
 ---
 title: Настройка IBM DB2 HADR на виртуальных машинах Azure | Документация Майкрософт
 description: Установите высокий уровень доступности IBM DB2 LUW на виртуальных машинах Azure.
-services: virtual-machines-linux
-documentationcenter: ''
 author: msjuergent
-manager: patfilot
-editor: ''
-tags: azure-resource-manager
-keywords: SAP
-ms.service: virtual-machines-linux
+ms.service: virtual-machines
 ms.topic: article
-ms.tgt_pltfrm: vm-linux
-ms.workload: infrastructure
 ms.date: 03/06/2020
 ms.author: juergent
-ms.openlocfilehash: 7d453fba37e62e8528ae7b4ea86d1604973b84a1
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.reviewer: cynthn
+ms.openlocfilehash: 17df60cd039601d3f8036125c5c0098a8000667c
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87051997"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91993310"
 ---
 # <a name="high-availability-of-ibm-db2-luw-on-azure-vms-on-suse-linux-enterprise-server-with-pacemaker"></a>Высокий уровень доступности IBM DB2 LUW на виртуальных машинах Azure на SUSE Linux Enterprise Server с Pacemaker
 
@@ -403,9 +396,9 @@ sudo crm configure property maintenance-mode=false</pre></code>
 
 1. Создайте интерфейсный пул IP-адресов:
 
-   А. В портал Azure откройте Azure Load Balancer, выберите **интерфейсный пул IP-адресов**и нажмите кнопку **Добавить**.
+   а. В портал Azure откройте Azure Load Balancer, выберите **интерфейсный пул IP-адресов**и нажмите кнопку **Добавить**.
 
-   Б. Введите имя нового пула IP-адресов внешнего интерфейса (например, **DB2-Connection**).
+   b. Введите имя нового пула IP-адресов внешнего интерфейса (например, **DB2-Connection**).
 
    c. Установите статическое **назначение** и **Static**введите IP-адрес **Virtual-IP** , определенный в начале.
 
@@ -415,9 +408,9 @@ sudo crm configure property maintenance-mode=false</pre></code>
 
 1. Создайте пул серверной части:
 
-   А. В портал Azure откройте Azure Load Balancer, выберите **серверные пулы**и нажмите кнопку **Добавить**.
+   а. В портал Azure откройте Azure Load Balancer, выберите **серверные пулы**и нажмите кнопку **Добавить**.
 
-   Б. Введите имя нового пула серверной части (например, **DB2-Серверная**часть).
+   b. Введите имя нового пула серверной части (например, **DB2-Серверная**часть).
 
    c. Щелкните **Добавить виртуальную машину**.
 
@@ -425,23 +418,23 @@ sudo crm configure property maintenance-mode=false</pre></code>
 
    д) Выберите виртуальные машины кластера IBM DB2.
 
-   е) Нажмите кнопку **ОК**.
+   е) Щелкните **ОК**.
 
 1. Создание пробы работоспособности:
 
-   А. В портал Azure откройте Azure Load Balancer, выберите **зонды работоспособности**и нажмите кнопку **Добавить**.
+   а. В портал Azure откройте Azure Load Balancer, выберите **зонды работоспособности**и нажмите кнопку **Добавить**.
 
-   Б. Введите имя новой проверки работоспособности (например, **DB2-HP**).
+   b. Введите имя новой проверки работоспособности (например, **DB2-HP**).
 
    c. Выберите **TCP** в качестве протокола и порта **62500**. Установите для параметра **интервал** значение **5**и установите для параметра **порог неработоспособности** значение **2**.
 
-   d. Нажмите кнопку **ОК**.
+   d. Щелкните **ОК**.
 
 1. Создайте правила балансировки нагрузки.
 
-   А. В портал Azure откройте Azure Load Balancer, выберите **правила балансировки нагрузки**, а затем нажмите кнопку **Добавить**.
+   а. В портал Azure откройте Azure Load Balancer, выберите **правила балансировки нагрузки**, а затем нажмите кнопку **Добавить**.
 
-   Б. Введите имя нового правила Load Balancer (например, **DB2-SID**).
+   b. Введите имя нового правила Load Balancer (например, **DB2-SID**).
 
    c. Выберите интерфейсный IP-адрес, пул внутренних серверов и пробы работоспособности, созданные ранее (например, **DB2-** Front).
 
@@ -478,7 +471,7 @@ j2ee/dbhost = db-virt-hostname
 
 Используйте средство настройки J2EE для проверки или обновления URL-адреса JDBC. Поскольку средство настройки J2EE является графическим средством, необходимо установить X Server:
  
-1. Войдите на основной сервер приложений экземпляра J2EE и выполните:`sudo /usr/sap/*SID*/*Instance*/j2ee/configtool/configtool.sh`
+1. Войдите на основной сервер приложений экземпляра J2EE и выполните:   `sudo /usr/sap/*SID*/*Instance*/j2ee/configtool/configtool.sh`
 1. В левом фрейме выберите **хранилище безопасности**.
 1. В правом окне выберите ключевые JDBC/Pool/ \<SAPSID> /УРЛ..
 1. Измените имя узла в URL-адресе JDBC на имя виртуального узла.

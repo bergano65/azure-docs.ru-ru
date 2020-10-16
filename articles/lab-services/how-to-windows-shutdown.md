@@ -4,10 +4,10 @@ description: Действия для автоматического заверш
 ms.topic: article
 ms.date: 09/29/2020
 ms.openlocfilehash: c6021131787dde4fe23ec4caad107bda2e20158a
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91541566"
 ---
 # <a name="guide-to-controlling-windows-shutdown-behavior"></a>Инструкции по управлению поведением при завершении работы Windows
@@ -60,5 +60,5 @@ Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies
 
     ![Команда завершения работы](./media/how-to-windows-shutdown/start-menu.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 См. статью о подготовке виртуальной машины шаблона Windows: руководство по [настройке компьютера шаблона Windows в службах лаборатории Azure](how-to-prepare-windows-template.md) .

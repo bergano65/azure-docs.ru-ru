@@ -9,10 +9,10 @@ ms.subservice: personalizer
 ms.topic: how-to
 ms.date: 02/20/2020
 ms.openlocfilehash: a473085f9c94ca42a75d01b342d60cc33836b096
-ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88244845"
 ---
 # <a name="analyze-your-learning-loop-with-an-offline-evaluation"></a>Анализ цикла обучения с помощью автономной оценки
@@ -23,7 +23,7 @@ ms.locfileid: "88244845"
 
 Дополнительные сведения см. в разделе [Автономные оценки](concepts-offline-evaluation.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Настроенный цикл персонализации
 * Цикл персонализации должен иметь репрезентативный объем данных — в качестве примерную мы рекомендуем по крайней мере 50 000 событий в своих журналах для осмысленных результатов оценки. При необходимости ранее экспортированные файлы _политики обучения_ можно сравнить и протестировать в одном и том же процессе оценивания.

@@ -10,47 +10,44 @@ ms.service: cloud-services
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: tbd
-ms.date: 9/29/2020
+ms.date: 10/12/2020
 ms.author: yohaddad
-ms.openlocfilehash: bdcf9417aca6ece24e5ef577620734eeb48d9362
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.openlocfilehash: 6ceba8e81c4700963e0d147c10085760b9308319
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91531162"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92076663"
 ---
 # <a name="azure-guest-os"></a>Гостевая ОС Azure
 В следующей таблице приведены обновления Microsoft Security Response Center (MSRC) для гостевой ОС Azure. Выполните поиск по этой статье, чтобы определить, применяется ли какое-либо конкретное обновление к используемой гостевой ОС. Обновления всегда переносятся для того [семейства][family-explain], в котором они были введены.
 
 ## <a name="september-2020-guest-os"></a>2020 сентября, гостевая ОС
->[!NOTE]
->В настоящее время выполняется развертывание последней гостевой ОС на виртуальных машинах облачных служб, настроенных для автоматического обновления. После завершения выпуска эта версия будет доступна для обновления вручную через портал Azure и файлы конфигурации. В сентябрьскую гостевую ОС включены следующие исправления. Этот список подлежит изменению.
-
 
 | Категория продуктов | Родительская статья базы знаний | Описание уязвимости | Гостевая ОС | Дата первого появления |
 | --- | --- | --- | --- | --- |
-|  Rel 20-09 |  [4577010]  |  Internet Explorer | 2,102, 3,89, 4,82 | Сен 8, 2020 |
-|  Rel 20-09 |  [4561600]  |  Обновление флэш-памяти | 3,89, 4,82, 5,47, 6,23 | Сен 8, 2020 |
-|  Rel 20-09 |  [4577015]  |  Последнее накопительное обновление (LCU) | 5,47 | Сен 8, 2020 |
-|  Rel 20-09 |  [4570333]  |  Последнее накопительное обновление (LCU) | 6,23 | Сен 8, 2020 |
-|  Rel 20-09 |  [4570673]  |  Обновление стека обслуживания | 2,102 | Сен 8, 2020 |
-|  Rel 20-09 |  [4577051]  |  Ежемесячный накопительный пакет обновления | 2,102 | Сен 8, 2020 |
-|  Rel 20-09 |  [4569767]  |  Сводный показатель безопасности .NET Framework 3,5 | 2,102 | Сен 8, 2020 |
-|  Rel 20-09 |  [4569780]  |  Сводный показатель безопасности .NET Framework 4.5.2 | 2,102 | Сен 8, 2020 |
-|  Rel 20-09 |  [4566426]  |  Обновление стека обслуживания | 3,89 | Сен 8, 2020 |
-|  Rel 20-09 |  [4577038]  |  Ежемесячный накопительный пакет обновления | 3,89 | Сен 8, 2020 |
-|  Rel 20-09 |  [4569765]  |  Сводный показатель безопасности .NET Framework 3,5 | 3,89 | Сен 8, 2020 |
-|  Rel 20-09 |  [4569779]  |  Сводный показатель безопасности .NET Framework 4.5.2 | 3,89 | Сен 8, 2020 |
-|  Rel 20-09 |  [4566425]  |  Обновление стека обслуживания | 2,102 | Сен 8, 2020 |
-|  Rel 20-09 |  [4577066]  |  Ежемесячный накопительный пакет обновления | 2,102 | Сен 8, 2020 |
-|  Rel 20-09 |  [4569768]  |  Сводный показатель безопасности .NET Framework 3,5 | 2,102 | Сен 8, 2020 |
-|  Rel 20-09 |  [4569778]  |  Пакет обеспечения безопасности и качества .NET Framework 4.5.2 | 2,102 | Сен 8, 2020 |
-|  Rel 20-09 |  [4578013]  |  Обновление безопасности | 2,102 | Сен 8, 2020 |
-|  Rel 20-09 |  [4576750]  |  Обновление стека обслуживания | 5,47 | Сен 8, 2020 |
-|  Rel 20-09 |  [4494175]  |  Поступил | 5,47 | Сен 8, 2020 |
-|  Rel 20-09 |  [4570332]  |  Обновление стека обслуживания | 6,23 | Сен 8, 2020 |
-|  Rel 20-09 |  [4570720]  |  Накопительный пакет обновления .NET Framework 3,5 и 4.7.2 | 6,23 | Сен 8, 2020 |
-|  Rel 20-09 |  [4494174]  |  Поступил | 6,23 | Сен 8, 2020 |
+|  Rel 20-09 |  [4577010]  |  Internet Explorer | [2,102], [3,89], [4,82] | Сен 8, 2020 |
+|  Rel 20-09 |  [4561600]  |  Обновление флэш-памяти | [3,89], [4,82], [5,47], [6,23] | Сен 8, 2020 |
+|  Rel 20-09 |  [4577015]  |  Последнее накопительное обновление (LCU) | [5,47] | Сен 8, 2020 |
+|  Rel 20-09 |  [4570333]  |  Последнее накопительное обновление (LCU) | [6,23] | Сен 8, 2020 |
+|  Rel 20-09 |  [4570673]  |  Обновление стека обслуживания | [2,102] | Сен 8, 2020 |
+|  Rel 20-09 |  [4577051]  |  Ежемесячный накопительный пакет обновления | [2,102] | Сен 8, 2020 |
+|  Rel 20-09 |  [4569767]  |  Сводный показатель безопасности .NET Framework 3,5 | [2,102] | Сен 8, 2020 |
+|  Rel 20-09 |  [4569780]  |  Сводный показатель безопасности .NET Framework 4.5.2 | [2,102] | Сен 8, 2020 |
+|  Rel 20-09 |  [4566426]  |  Обновление стека обслуживания | [3,89] | Сен 8, 2020 |
+|  Rel 20-09 |  [4577038]  |  Ежемесячный накопительный пакет обновления | [3,89] | Сен 8, 2020 |
+|  Rel 20-09 |  [4569765]  |  Сводный показатель безопасности .NET Framework 3,5 | [3,89] | Сен 8, 2020 |
+|  Rel 20-09 |  [4569779]  |  Сводный показатель безопасности .NET Framework 4.5.2 | [3,89] | Сен 8, 2020 |
+|  Rel 20-09 |  [4566425]  |  Обновление стека обслуживания | [2,102] | Сен 8, 2020 |
+|  Rel 20-09 |  [4577066]  |  Ежемесячный накопительный пакет обновления | [2,102] | Сен 8, 2020 |
+|  Rel 20-09 |  [4569768]  |  Сводный показатель безопасности .NET Framework 3,5 | [2,102] | Сен 8, 2020 |
+|  Rel 20-09 |  [4569778]  |  Пакет обеспечения безопасности и качества .NET Framework 4.5.2 | [2,102] | Сен 8, 2020 |
+|  Rel 20-09 |  [4578013]  |  Обновление безопасности | [2,102] | Сен 8, 2020 |
+|  Rel 20-09 |  [4576750]  |  Обновление стека обслуживания | [5,47] | Сен 8, 2020 |
+|  Rel 20-09 |  [4494175]  |  Поступил | [5,47] | Сен 8, 2020 |
+|  Rel 20-09 |  [4570332]  |  Обновление стека обслуживания | [6,23] | Сен 8, 2020 |
+|  Rel 20-09 |  [4570720]  |  Накопительный пакет обновления .NET Framework 3,5 и 4.7.2 | [6,23] | Сен 8, 2020 |
+|  Rel 20-09 |  [4494174]  |  Поступил | [6,23] | Сен 8, 2020 |
 
 [4577010]: https://support.microsoft.com/kb/4577010
 [4561600]: https://support.microsoft.com/kb/4561600
@@ -74,6 +71,11 @@ ms.locfileid: "91531162"
 [4570332]: https://support.microsoft.com/kb/4570332
 [4570720]: https://support.microsoft.com/kb/4570720
 [4494174]: https://support.microsoft.com/kb/4494174
+[2,102]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-2-releases
+[3,89]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-3-releases
+[4,82]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-4-releases
+[5,47]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-5-releases
+[6,23]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-6-releases
 
 ## <a name="august-2020-guest-os"></a>Гостевая ОС 2020 августа
 
@@ -122,11 +124,11 @@ ms.locfileid: "91531162"
 [4565912]: https://support.microsoft.com/kb/4565912
 [4569776]: https://support.microsoft.com/kb/4569776
 [4566424]: https://support.microsoft.com/kb/4566424
-[2,101]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-2-releases
-[3,88]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-3-releases
-[4,81]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-4-releases
-[5,46]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-5-releases
-[6,22]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-6-releases
+[2,101]: ./cloud-services-guestos-update-matrix.md#family-2-releases
+[3,88]: ./cloud-services-guestos-update-matrix.md#family-3-releases
+[4,81]: ./cloud-services-guestos-update-matrix.md#family-4-releases
+[5,46]: ./cloud-services-guestos-update-matrix.md#family-5-releases
+[6,22]: ./cloud-services-guestos-update-matrix.md#family-6-releases
 
 
 ## <a name="july-2020-guest-os"></a>Гостевая ОС 2020 июля
@@ -177,11 +179,11 @@ ms.locfileid: "91531162"
 [4565632]: https://support.microsoft.com/kb/4565632
 [4558997]: https://support.microsoft.com/kb/4558997
 [4494174]: https://support.microsoft.com/kb/4494174
-[2,100]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-2-releases
-[3,87]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-3-releases
-[4,80]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-4-releases
-[5,45]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-5-releases
-[6,21]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-6-releases
+[2,100]: ./cloud-services-guestos-update-matrix.md#family-2-releases
+[3,87]: ./cloud-services-guestos-update-matrix.md#family-3-releases
+[4,80]: ./cloud-services-guestos-update-matrix.md#family-4-releases
+[5,45]: ./cloud-services-guestos-update-matrix.md#family-5-releases
+[6,21]: ./cloud-services-guestos-update-matrix.md#family-6-releases
 
 
 ## <a name="june-2020-guest-os"></a>Гостевая ОС (июнь 2020)
@@ -216,11 +218,11 @@ ms.locfileid: "91531162"
 [4561666]: https://support.microsoft.com/kb/4561666
 [4562561]: https://support.microsoft.com/kb/4562561
 [4562562]: https://support.microsoft.com/kb/4562562
-[2,99]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-2-releases
-[3,86]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-3-releases
-[4,79]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-4-releases
-[5.44]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-5-releases
-[6.20]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-6-releases
+[2,99]: ./cloud-services-guestos-update-matrix.md#family-2-releases
+[3,86]: ./cloud-services-guestos-update-matrix.md#family-3-releases
+[4,79]: ./cloud-services-guestos-update-matrix.md#family-4-releases
+[5.44]: ./cloud-services-guestos-update-matrix.md#family-5-releases
+[6.20]: ./cloud-services-guestos-update-matrix.md#family-6-releases
 
 
 ## <a name="may-2020-guest-os"></a>Гостевая ОС за май 2020 года
@@ -262,11 +264,11 @@ ms.locfileid: "91531162"
 [4550994]: https://support.microsoft.com/kb/4550994
 [4552924]: https://support.microsoft.com/kb/4552924
 [4549947]: https://support.microsoft.com/kb/4549947
-[2,98]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-2-releases
-[3,85]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-3-releases
-[4,78]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-4-releases
-[5,43]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-5-releases
-[6,19]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-6-releases
+[2,98]: ./cloud-services-guestos-update-matrix.md#family-2-releases
+[3,85]: ./cloud-services-guestos-update-matrix.md#family-3-releases
+[4,78]: ./cloud-services-guestos-update-matrix.md#family-4-releases
+[5,43]: ./cloud-services-guestos-update-matrix.md#family-5-releases
+[6,19]: ./cloud-services-guestos-update-matrix.md#family-6-releases
 
 
 ## <a name="april-2020-guest-os"></a>Гостевая ОС за апрель 2020 года
@@ -304,11 +306,11 @@ ms.locfileid: "91531162"
 [4540725]: https://support.microsoft.com/kb/4540725
 [4540723]: https://support.microsoft.com/kb/4540723
 [4539571]: https://support.microsoft.com/kb/4539571
-[2,97]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-2-releases
-[3,84]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-3-releases
-[4,77]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-4-releases
-[5,42]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-5-releases
-[6,18]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-6-releases
+[2,97]: ./cloud-services-guestos-update-matrix.md#family-2-releases
+[3,84]: ./cloud-services-guestos-update-matrix.md#family-3-releases
+[4,77]: ./cloud-services-guestos-update-matrix.md#family-4-releases
+[5,42]: ./cloud-services-guestos-update-matrix.md#family-5-releases
+[6,18]: ./cloud-services-guestos-update-matrix.md#family-6-releases
 
 
 ## <a name="march-2020-guest-os"></a>Гостевая ОС за март 2020 года
@@ -335,11 +337,11 @@ ms.locfileid: "91531162"
 [4537814]: https://support.microsoft.com/kb/4537814 
 [4537821]: https://support.microsoft.com/kb/4537821 
 
-[6,17]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-6-releases
-[5,41]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-5-releases
-[4,76]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-4-releases
-[3,83]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-3-releases
-[2,96]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-2-releases
+[6,17]: ./cloud-services-guestos-update-matrix.md#family-6-releases
+[5,41]: ./cloud-services-guestos-update-matrix.md#family-5-releases
+[4,76]: ./cloud-services-guestos-update-matrix.md#family-4-releases
+[3,83]: ./cloud-services-guestos-update-matrix.md#family-3-releases
+[2,96]: ./cloud-services-guestos-update-matrix.md#family-2-releases
 
 
 ## <a name="february-2020-guest-os"></a>Гостевая ОС за февраль 2020 года
@@ -378,11 +380,11 @@ ms.locfileid: "91531162"
 [4532920]: https://support.microsoft.com/kb/4532920
 [4534297]: https://support.microsoft.com/kb/4534297
 
-[6,16]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-6-releases
-[5,40]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-5-releases
-[4,75]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-4-releases
-[3,82]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-3-releases
-[2,95]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-2-releases
+[6,16]: ./cloud-services-guestos-update-matrix.md#family-6-releases
+[5,40]: ./cloud-services-guestos-update-matrix.md#family-5-releases
+[4,75]: ./cloud-services-guestos-update-matrix.md#family-4-releases
+[3,82]: ./cloud-services-guestos-update-matrix.md#family-3-releases
+[2,95]: ./cloud-services-guestos-update-matrix.md#family-2-releases
 
 
 ## <a name="january-2020-guest-os"></a>Гостевая ОС за январь 2020 года
@@ -428,11 +430,11 @@ ms.locfileid: "91531162"
 [4530734]: https://support.microsoft.com/kb/4530734
 [4530691]: https://support.microsoft.com/kb/4530691
 [4530702]: https://support.microsoft.com/kb/4530702
-[6,15]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-6-releases
-[5,39]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-5-releases
-[4,74]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-4-releases
-[3,81]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-3-releases
-[2,94]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-2-releases
+[6,15]: ./cloud-services-guestos-update-matrix.md#family-6-releases
+[5,39]: ./cloud-services-guestos-update-matrix.md#family-5-releases
+[4,74]: ./cloud-services-guestos-update-matrix.md#family-4-releases
+[3,81]: ./cloud-services-guestos-update-matrix.md#family-3-releases
+[2,94]: ./cloud-services-guestos-update-matrix.md#family-2-releases
 
 
 ## <a name="december-2019-guest-os"></a>Гостевая ОС за декабрь 2019 г.
@@ -472,11 +474,11 @@ ms.locfileid: "91531162"
 [4524445]: https://support.microsoft.com/kb/4524445
 [4520724]: https://support.microsoft.com/kb/4520724
 [4523204]: https://support.microsoft.com/kb/4523204
-[6,14]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-6-releases
-[5,38]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-5-releases
-[4,73]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-4-releases
-[3,80]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-3-releases
-[2,93]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-2-releases
+[6,14]: ./cloud-services-guestos-update-matrix.md#family-6-releases
+[5,38]: ./cloud-services-guestos-update-matrix.md#family-5-releases
+[4,73]: ./cloud-services-guestos-update-matrix.md#family-4-releases
+[3,80]: ./cloud-services-guestos-update-matrix.md#family-3-releases
+[2,93]: ./cloud-services-guestos-update-matrix.md#family-2-releases
 
 
 
@@ -515,11 +517,11 @@ ms.locfileid: "91531162"
 [4521864]: https://support.microsoft.com/kb/4521864
 [4521858]: https://support.microsoft.com/kb/4521858
 [4521862]: https://support.microsoft.com/kb/4521862
-[6,13]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-6-releases
-[5,37]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-5-releases
-[4,72]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-4-releases
-[3,79]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-3-releases
-[2,92]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-2-releases
+[6,13]: ./cloud-services-guestos-update-matrix.md#family-6-releases
+[5,37]: ./cloud-services-guestos-update-matrix.md#family-5-releases
+[4,72]: ./cloud-services-guestos-update-matrix.md#family-4-releases
+[3,79]: ./cloud-services-guestos-update-matrix.md#family-3-releases
+[2,92]: ./cloud-services-guestos-update-matrix.md#family-2-releases
 
 
 ## <a name="october-2019-guest-os"></a>Гостевая ОС за октябрь 2019 года
@@ -564,11 +566,11 @@ ms.locfileid: "91531162"
 [4512574]: https://support.microsoft.com/kb/4512574
 [4512577]: https://support.microsoft.com/kb/4512577
 
-[6,12]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-6-releases
-[5,36]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-5-releases
-[4,71]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-4-releases
-[3,78]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-3-releases
-[2,91]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-2-releases
+[6,12]: ./cloud-services-guestos-update-matrix.md#family-6-releases
+[5,36]: ./cloud-services-guestos-update-matrix.md#family-5-releases
+[4,71]: ./cloud-services-guestos-update-matrix.md#family-4-releases
+[3,78]: ./cloud-services-guestos-update-matrix.md#family-3-releases
+[2,91]: ./cloud-services-guestos-update-matrix.md#family-2-releases
 
 
 ## <a name="september-2019-guest-os"></a>Гостевая ОС за сентябрь 2019 года
@@ -606,11 +608,11 @@ ms.locfileid: "91531162"
 [4512488]: https://support.microsoft.com/kb/4512488
 [4512518]: https://support.microsoft.com/kb/4512518
 [4512506]: https://support.microsoft.com/kb/4512506
-[6,11]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-6-releases
-[5,35]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-5-releases
-[4,70]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-4-releases
-[3,77]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-3-releases
-[2,90]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-2-releases
+[6,11]: ./cloud-services-guestos-update-matrix.md#family-6-releases
+[5,35]: ./cloud-services-guestos-update-matrix.md#family-5-releases
+[4,70]: ./cloud-services-guestos-update-matrix.md#family-4-releases
+[3,77]: ./cloud-services-guestos-update-matrix.md#family-3-releases
+[2,90]: ./cloud-services-guestos-update-matrix.md#family-2-releases
 
 
 ## <a name="august-2019-guest-os"></a>Гостевая ОС за август 2019 года
@@ -663,11 +665,11 @@ ms.locfileid: "91531162"
 [4507001]: https://support.microsoft.com/kb/4507001
 [4507704]: https://support.microsoft.com/kb/4507704
 
-[6.1]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-6-releases
-[5,34]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-5-releases
-[4,69]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-4-releases
-[3,76]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-3-releases
-[2,89]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-2-releases
+[6.1]: ./cloud-services-guestos-update-matrix.md#family-6-releases
+[5,34]: ./cloud-services-guestos-update-matrix.md#family-5-releases
+[4,69]: ./cloud-services-guestos-update-matrix.md#family-4-releases
+[3,76]: ./cloud-services-guestos-update-matrix.md#family-3-releases
+[2,89]: ./cloud-services-guestos-update-matrix.md#family-2-releases
 
 
 ## <a name="july-2019-guest-os"></a>Гостевая ОС за июль 2019 года
@@ -2132,9 +2134,9 @@ ms.locfileid: "91531162"
 [4014567]: https://support.microsoft.com/kb/4014567
 [4015550]: https://support.microsoft.com/kb/4015550
 [4013418]: https://support.microsoft.com/kb/4013418
-[4022345]: https://technet.microsoft.com/library/security/4022345.aspx
-[4022344]: https://technet.microsoft.com/library/security/4022344.aspx
-[4021279]: https://technet.microsoft.com/library/security/4021279.aspx
+[4022345]: /security-updates/SecurityAdvisories/2017/4022345
+[4022344]: /security-updates/SecurityAdvisories/2017/4022344
+[4021279]: /security-updates/SecurityAdvisories/2017/4021279
 
 
 [4015217]: https://support.microsoft.com/kb/4015217
@@ -2173,7 +2175,7 @@ ms.locfileid: "91531162"
 [3211320]: https://support.microsoft.com/kb/3211320
 
 
-[3216771]: https://technet.microsoft.com/library/security/MS17-004
+[3216771]: /security-updates/SecurityBulletins/2017/ms17-004
 
 [3204059]: https://support.microsoft.com/kb/3204059
 [3204062]: https://support.microsoft.com/kb/3204062
@@ -2302,7 +2304,7 @@ ms.locfileid: "91531162"
 [3133977]: https://support.microsoft.com/kb/3133977
 [3133681]: https://support.microsoft.com/kb/3133681
 [3123245]: https://support.microsoft.com/kb/3123245
-[Отключение версии-кандидата 4]: https://blogs.msdn.microsoft.com/azuresecurity/2016/04/12/azure-cipher-suite-change-removes-rc4-support/
+[Отключение версии-кандидата 4]: /archive/blogs/azuresecurity/azure-cipher-suite-change-removes-rc4-support
 
 
 [3148531]: https://support.microsoft.com/kb/3148531
@@ -2407,7 +2409,7 @@ ms.locfileid: "91531162"
 [3077657]: https://support.microsoft.com/kb/3077657
 [3057154]: https://support.microsoft.com/kb/3057154
 
-[MS15-034]: https://technet.microsoft.com/library/security/MS15-034
+[MS15-034]: /security-updates/SecurityBulletins/2015/ms15-034
 
 [3042553]: https://support.microsoft.com/en-us/kb/3042553/
 
@@ -2484,5 +2486,5 @@ ms.locfileid: "91531162"
 [3063858]:https://support.microsoft.com/kb/3063858
 
 
-[archive]: https://msdn.microsoft.com/library/azure/dn391773.aspx
+[archive]: /previous-versions/azure/
 [family-explain]: cloud-services-guestos-update-matrix.md#guest-os-family-version-explanation

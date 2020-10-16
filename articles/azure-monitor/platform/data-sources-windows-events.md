@@ -7,10 +7,10 @@ author: bwren
 ms.author: bwren
 ms.date: 11/28/2018
 ms.openlocfilehash: aa34196233ce4037ef6fa49b782b9aa958f7632d
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87075250"
 ---
 # <a name="windows-event-log-data-sources-in-azure-monitor"></a>Источники данных для журнала событий Windows в Azure Monitor
@@ -50,12 +50,12 @@ Azure Monitor собирает события только из журналов
 | EventLevelName |Степень серьезности события в текстовом формате. |
 | EventLog |Имя журнала событий, из которого было получено событие. |
 | ParameterXml |Значения параметров события в формате XML. |
-| ManagementGroupName |Имя группы управления для агентов System Center Operations Manager.  Для других агентов это значение равно`AOI-<workspace ID>` |
+| ManagementGroupName |Имя группы управления для агентов System Center Operations Manager.  Для других агентов это значение равно `AOI-<workspace ID>` |
 | RenderedDescription |Описание события со значениями параметров. |
 | Источник |Источник события. |
 | SourceSystem |Тип агента, из которого было получено событие. <br> OpsManager — агент Windows, подключенный напрямую или управляемый с помощью Operations Manager. <br> Linux — все агенты Linux  <br>  AzureStorage – диагностика Azure |
 | TimeGenerated |Дата и время создания события в Windows. |
-| Имя пользователя |Имя пользователя учетной записи, который зафиксировал событие. |
+| UserName |Имя пользователя учетной записи, который зафиксировал событие. |
 
 ## <a name="log-queries-with-windows-events"></a>Запросы журнала для получения событий Windows
 Ниже приведены различные примеры запросов журнала, которые извлекают записи о событиях Windows.

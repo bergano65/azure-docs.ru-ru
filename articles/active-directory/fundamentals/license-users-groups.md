@@ -14,12 +14,12 @@ ms.author: ajburnle
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c69f2ce964d9171197771d783358dcef2ca60726
-ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
+ms.openlocfilehash: 7473da6289d4b871ae77f18fab4c00cebcb55d98
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89319531"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91977020"
 ---
 # <a name="assign-or-remove-licenses-in-the-azure-active-directory-portal"></a>Назначение или удаление лицензий на портале Azure Active Directory
 
@@ -102,11 +102,11 @@ ms.locfileid: "89319531"
 
 1. На странице **Назначить** выберите **Пользователи и группы**, а затем найдите и выберите группу, которой вы хотите назначить лицензию.
 
-    ![Страница "Назначить лицензию" с выделенными параметрами "Поиск" и "Выбрать"](media/license-users-groups/assign-group-license-blade-with-highlight.png)
+    ![Страница "Назначение лицензии" с выделенным поиском и выбор параметров 2](media/license-users-groups/assign-group-license-blade-with-highlight.png)
 
 1. Выберите **Варианты назначения**, включите нужные варианты лицензии и нажмите **OK**.
 
-    ![Страница параметров лицензии со всеми параметрами, доступными в плане лицензии](media/license-users-groups/license-option-blade-group-assignments.png)
+    ![Страница "лицензионный режим" со всеми параметрами, доступными в лицензионном плане 2](media/license-users-groups/license-option-blade-group-assignments.png)
 
     Страница **Назначить лицензию** обновится, и вы увидите выбранного пользователя и настроенные назначения.
 
@@ -135,7 +135,7 @@ ms.locfileid: "89319531"
 
 1. Выберите **Удалить лицензию**.
 
-    ![Страница "Лицензированные группы" с выделенным параметром "Удалить лицензию"](media/license-users-groups/license-products-group-blade-with-remove-option-highlight.png)
+    ![Страница лицензированных групп с выделенным вариантом "удалить лицензию" 2](media/license-users-groups/license-products-group-blade-with-remove-option-highlight.png)
     
     > [!NOTE]
     > Если локальная учетная запись пользователя, синхронизированная с Azure AD, выходит за пределы области действия синхронизации или при удалении синхронизации, то пользователь обратимо удаляется в Azure AD. В этом случае лицензии, назначенные пользователю напрямую или через лицензирование на основе группы, будут помечены как **приостановленные** , а не **удалены**.

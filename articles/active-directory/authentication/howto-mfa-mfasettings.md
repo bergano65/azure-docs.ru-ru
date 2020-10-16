@@ -6,18 +6,18 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 06/05/2020
-ms.author: iainfou
-author: iainfoulds
+ms.author: joflore
+author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
 ms.custom: contperfq4
-ms.openlocfilehash: 29187ef99ce6628359819739ab5e4b34213eeb8a
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.openlocfilehash: 17fbba605f6f20fa384d59a8c89ee536a9b121bf
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91441624"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91964441"
 ---
 # <a name="configure-azure-multi-factor-authentication-settings"></a>Настройка параметров Многофакторной идентификации Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "91441624"
 
 В портал Azure доступны следующие параметры многофакторной идентификации Azure:
 
-| Компонент | Описание |
+| Функция | Описание |
 | ------- | ----------- |
 | [Блокировка учетной записи](#account-lockout) | Временно заблокируйте учетные записи с помощью многофакторной идентификации Azure, если в строке слишком много попыток проверки подлинности. Эта функция применяется только для пользователей, которые входят в систему с помощью ПИН-кода. (Сервер MFA) |
 | [Блокировка и разблокировка пользователей](#block-and-unblock-users) | Запрещает конкретным пользователям получать запросы многофакторной идентификации Azure. Любые попытки выполнить аутентификацию заблокированных пользователей отклоняются автоматически. Пользователи остаются заблокированными в течение 90 дней с момента блокировки или разблокированы вручную. |

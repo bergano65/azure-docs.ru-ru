@@ -8,14 +8,14 @@ ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
 ms.custom: mvc
-ms.openlocfilehash: 224f86a40fa812003463301f97bcae07de907f3c
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.openlocfilehash: 0435fe3946118d59d786dd3e6cec350a5ab4eee4
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91580720"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92046457"
 ---
-# <a name="iot-plug-and-play-bridge"></a>Мост Plug and Play IoT
+# <a name="iot-plug-and-play-bridge"></a>Мост для IoT Plug and Play
 
 Мост IoT Plug and Play — это приложение с открытым исходным кодом для подключения существующих устройств, подключенных к шлюзу Windows или Linux, в качестве устройств IoT Plug and Play. После установки и настройки приложения на компьютере под управлением Windows или Linux его можно использовать для подключения подключенных устройств к центру Интернета вещей. С помощью моста можно сопоставлять интерфейсы Интернета вещей Plug and Play с данными телеметрии, отправляемыми подключенными устройствами, работать со свойствами устройств и вызывать команды.
 
@@ -30,11 +30,11 @@ ms.locfileid: "91580720"
 |Периферийные устройства|Windows|Linux|
 |---------|---------|---------|
 |[Bluetooth с низким энергопотреблением](https://aka.ms/iot-pnp-bridge-bluetooth)       |Да|Нет|
-|[Камеры.](https://aka.ms/iot-pnp-bridge-camera)               |Да|Нет|
+|[Камеры](https://aka.ms/iot-pnp-bridge-camera)               |Да|Нет|
 |[Modbus](https://aka.ms/iot-pnp-bridge-modbus)                |Да|Да|
 |[MQTT](https://aka.ms/iot-pnp-bridge-mqtt)                    |Да|Да|
 |[Подключение](https://aka.ms/iot-pnp-bridge-serial)                |Да|Да|
-|[Периферийные устройства USB Windows](https://aka.ms/iot-pnp-bridge-usb)  |Да|Не применимо|
+|[Периферийные устройства USB Windows](https://aka.ms/iot-pnp-bridge-usb)  |Да|Н/Д|
 
 >[!Important]
 >Разработчики могут расширить мост Интернета вещей Plug and Play для поддержки дополнительных протоколов устройств, следуя инструкциям в документации по средству для **[разработчиков центра Интернета вещей Plug and Play](https://aka.ms/iot-pnp-bridge-dev-doc)**.
@@ -67,7 +67,7 @@ ms.locfileid: "91580720"
 
 ### <a name="azure-iot-products-and-tools"></a>Продукты и инструменты Azure IoT
 
-- **Центр Интернета вещей Azure** — для подключения устройства к требуется [центр Интернета вещей Azure](https://docs.microsoft.com/azure/iot-hub/) в подписке Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу. Если у вас нет центра Интернета вещей, [следуйте этим инструкциям, чтобы создать его](https://docs.microsoft.com/azure/iot-hub/iot-hub-create-using-cli).
+- **Центр Интернета вещей Azure** — для подключения устройства к требуется [центр Интернета вещей Azure](../iot-hub/index.yml) в подписке Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу. Если у вас нет центра Интернета вещей, [следуйте этим инструкциям, чтобы создать его](../iot-hub/iot-hub-create-using-cli.md).
 
 > [!Note]
 > Сейчас функция IoT Plug and Play доступна в центрах Интернета вещей, созданных в таких регионах, как Центральная часть США, Северная Европа и Восточная Япония. Поддержка Plug and Play IoT не включена в центры Интернета вещей ценовой категории "Базовый". Для взаимодействия с устройством Plug and Play IoT можно использовать средство Azure IoT Explorer. [Скачайте и установите последний выпуск обозревателя Интернета вещей Azure](./howto-use-iot-explorer.md) для вашей операционной системы.

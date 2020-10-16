@@ -4,10 +4,10 @@ description: Узнайте, как добавить виртуальную ма
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: 9421a1e21be9446b0e59328bd9a3730b57655274
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85483862"
 ---
 # <a name="add-a-vm-using-an-image-from-the-attached-shared-image-gallery"></a>Добавление виртуальной машины с помощью образа из коллекции подключенных общих образов
@@ -53,5 +53,5 @@ Azure DevTest Labs позволяет подключить коллекцию о
     ```
 2. Вызовите метод размещения на виртуальных машинах, передав идентификатор общего образа, полученного по предыдущему вызову `properties.SharedImageId` .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Чтобы узнать, как подключить коллекцию общих образов к лаборатории и настроить ее, см. раздел [Configure Shared Image Gallery](configure-shared-image-gallery.md).

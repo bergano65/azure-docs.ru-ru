@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.service: iot-pnp
 services: iot-pnp
 ms.openlocfilehash: 59ea0258d6262f652e9ac563bbda5ec89c4c5819
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91580695"
 ---
 # <a name="install-and-use-the-dtdl-authoring-tools"></a>Установка и использование средств разработки ДТДЛ
@@ -59,6 +59,6 @@ ms.locfileid: "91580695"
 
     :::image type="content" source="media/howto-use-dtdl-authoring-tools/model-intellisense-2.png" alt-text="Проверка модели в VS Code":::
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этом пошаговом руководстве вы узнали, как использовать расширения ДТДЛ для Visual Studio Code и Visual Studio 2019 для создания и проверки файлов модели ДТДЛ. Предлагаемый следующий шаг — Узнайте, как использовать [Обозреватель Интернета вещей Azure с моделями и устройствами](./howto-use-iot-explorer.md).

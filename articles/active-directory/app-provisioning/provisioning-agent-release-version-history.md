@@ -12,10 +12,10 @@ ms.subservice: app-provisioning
 ms.author: kenwith
 ms.reviewer: celested
 ms.openlocfilehash: 9e05d1a85f17800ddf4d77e4e4acba6396a8da47
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84781571"
 ---
 # <a name="azure-ad-connect-provisioning-agent-version-release-history"></a>Агент подготовки Azure AD Connect: журнал выпусков версий
@@ -46,7 +46,7 @@ ms.locfileid: "84781571"
 * Возможность настройки дополнительной трассировки и ведения журнала для отладки проблем с агентом подготовки
 * Возможность выбирать только те атрибуты Azure AD, которые настроены в сопоставлении для повышения производительности синхронизации.
 
-### <a name="fixed-issues"></a>Исправленные проблемы
+### <a name="fixed-issues"></a>Устраненные проблемы
 
 * Исправлена ошибка, из-за которой агент перешел в состояние без реагирования, если возникли проблемы с ошибками подключения Azure AD.
 * Исправлена ошибка, которая вызывала проблемы при чтении двоичных данных из Azure Active Directory

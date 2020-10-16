@@ -14,10 +14,10 @@ ms.topic: how-to
 ms.date: 03/19/2019
 ms.author: allensu
 ms.openlocfilehash: 1f30943eb0cc72f677785d1228b47b65764c1e7d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84887855"
 ---
 # <a name="control-azure-cdn-caching-behavior-with-caching-rules"></a>Управление режимом кэширования Azure CDN с помощью правил кэширования
@@ -113,7 +113,7 @@ ms.locfileid: "84887855"
 > - Для профилей **Azure CDN уровня "Стандартный" от Verizon** распространение обычно завершается в течение 10 минут.  
 >
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 - [Как выполняется кэширование](cdn-how-caching-works.md)
 - [Руководство. Настройка правил кэширования Azure CDN](cdn-caching-rules-tutorial.md)

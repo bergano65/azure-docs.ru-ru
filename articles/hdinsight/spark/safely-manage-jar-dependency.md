@@ -9,10 +9,10 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.date: 02/05/2020
 ms.openlocfilehash: b5b8c014a7150ad83875b9fd361c3538d865d153
-ms.sourcegitcommit: 51df05f27adb8f3ce67ad11d75cb0ee0b016dc5d
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90064156"
 ---
 # <a name="safely-manage-jar-dependencies"></a>Безопасное управление зависимостями JAR
@@ -27,7 +27,7 @@ ms.locfileid: "90064156"
 ## <a name="how-to-shade-a-package"></a>Как затенить пакет?
 
 ### <a name="use-uber-jar"></a>Использование Uber-JAR
-Uber-JAR — это один файл JAR, который содержит JAR и его зависимости. Зависимости в Uber-JAR по умолчанию не затенены. В некоторых случаях это может привести к конфликту версий, если другие компоненты или приложения ссылаются на разные версии этих библиотек. Чтобы избежать этого, можно создать файл Uber-JAR с некоторыми (или всеми) зависимостями от закрашенных зависимостей.
+Uber-JAR — это один файл JAR, который содержит JAR и его зависимости. Зависимости в Uber-JAR по умолчанию не затенены. В некоторых случаях это может привести к конфликту версий, если другие компоненты или приложения ссылаются на разные версии этих библиотек. Чтобы избежать этого, можно создать файл Uber-Jar с определенными (или всеми) зависимостями зависимостей.
 
 ### <a name="shade-package-using-maven"></a>Затенение пакета с помощью Maven
 Maven может создавать приложения, написанные как на Java, так и в Scala. Maven-Shader-Plugin позволяет легко создать затененный Uber JAR.
@@ -77,7 +77,7 @@ assemblyShadeRules in assembly := Seq(
 
 Затем можно запустить `sbt clean` и `sbt assembly` создать затененный JAR-файл. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Использование средств IntelliJ HDInsight](https://docs.microsoft.com/azure/hdinsight/hadoop/hdinsight-tools-for-intellij-with-hortonworks-sandbox)
 

@@ -12,10 +12,10 @@ ms.workload: infrastructure-services
 ms.date: 09/17/2018
 ms.author: duau
 ms.openlocfilehash: b1901ddce2eb9c8ff5ec9ac90a56379e74c11aa6
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89401373"
 ---
 # <a name="direct-traffic-to-specific-endpoints-based-on-user-subnet-using-traffic-manager"></a>Перенаправление трафика к определенным конечным точкам на основе пользовательской подсети с помощью диспетчера трафика
@@ -54,7 +54,7 @@ ms.locfileid: "89401373"
     |Имя|myIISVMEastUS|
     |Имя пользователя| Введите выбранное имя пользователя.|
     |Пароль| Введите выбранный пароль. Пароль должен включать минимум 12 символов и соответствовать [определенным требованиям к сложности](../virtual-machines/windows/faq.md?toc=%2fazure%2fvirtual-network%2ftoc.json#what-are-the-password-requirements-when-creating-a-vm).|
-    |групп ресурсов;| Выберите **Создать**, а затем введите *myResourceGroupTM1*.|
+    |Группа ресурсов| Выберите **Создать**, а затем введите *myResourceGroupTM1*.|
     |Расположение| Выберите **Восточная часть США**.|
     |||
 
@@ -140,7 +140,7 @@ ms.locfileid: "89401373"
     |Имя|myVMEastUS|
     |Имя пользователя| Введите выбранное имя пользователя.|
     |Пароль| Введите выбранный пароль. Пароль должен включать минимум 12 символов и соответствовать [определенным требованиям к сложности](../virtual-machines/windows/faq.md?toc=%2fazure%2fvirtual-network%2ftoc.json#what-are-the-password-requirements-when-creating-a-vm).|
-    |групп ресурсов;| Щелкните **Existing** (Существующая), а затем выберите *myResourceGroupTM1*.|
+    |Группа ресурсов| Щелкните **Existing** (Существующая), а затем выберите *myResourceGroupTM1*.|
     |||
 
 4. Выберите размер виртуальной машины в области **Выбор размера**.
@@ -160,7 +160,7 @@ ms.locfileid: "89401373"
     |Параметр|Значение|
     |---|---|
     |Имя виртуальной машины | *myVMWEurope*|
-    |групп ресурсов; | Щелкните **Existing** (Существующая), а затем выберите *myResourceGroupTM2*.|
+    |Группа ресурсов | Щелкните **Existing** (Существующая), а затем выберите *myResourceGroupTM2*.|
     |Виртуальная сеть | Выберите **Виртуальная сеть** в области **Создание виртуальной сети**, в качестве **имени** введите *myVNet4*, для подсети — *mySubnet4*.|
     |||
 
@@ -194,7 +194,7 @@ ms.locfileid: "89401373"
     | Параметр                 | Значение                                              |
     | ---                     | ---                                                |
     | Тип                    | Конечная точка Azure                                   |
-    | name           | myTestWebSiteEndpoint                                        |
+    | Имя           | myTestWebSiteEndpoint                                        |
     | Тип целевого ресурса           | Общедоступный IP-адрес                          |
     | Целевой ресурс          | **Выберите общедоступный IP-адрес** , чтобы отобразить список ресурсов с общедоступными IP-адресами в той же подписке. В разделе **Ресурс** выберите общедоступный IP-адрес с именем *myIISVMEastUS-ip*. Это общедоступный IP-адрес виртуальной машины сервера IIS в восточной части США.|
     |  Параметры маршрутизации подсети    |   Добавьте IP-адрес тестовой виртуальной машины *myVMEastUS*. Любой пользовательский запрос, исходящий из этой виртуальной машины, будет перенаправлен в конечную точку *myTestWebSiteEndpoint*.    |
@@ -239,7 +239,7 @@ ms.locfileid: "89401373"
 ## <a name="delete-the-traffic-manager-profile"></a>Удаление профиля диспетчера трафика
 Если больше не нужны, удалите группы ресурсов (**ResourceGroupTM1** и **ResourceGroupTM2**). Чтобы это сделать, выберите группу ресурсов (**ResourceGroupTM1** или **ResourceGroupTM2**), а затем щелкните **Удалить**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте о [методе взвешенной маршрутизации трафика](traffic-manager-configure-weighted-routing-method.md).
 - Узнайте о [методе маршрутизации по приоритету](traffic-manager-configure-priority-routing-method.md).

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/26/2020
 ms.author: kumud
-ms.openlocfilehash: 171fc11c8de9cd53a7abd9602768a117341826ef
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: d676d891683cc11dd8c1999c26464373d17e97be
+ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91306606"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91932028"
 ---
 # <a name="azure-virtual-network-frequently-asked-questions-faq"></a>Виртуальная сеть Azure: часто задаваемые вопросы
 
@@ -44,7 +44,7 @@ ms.locfileid: "91306606"
 ### <a name="can-i-perform-wan-optimization-between-vnets-or-a-vnet-and-my-on-premises-data-center"></a>Можно ли выполнять оптимизацию глобальной сети между виртуальными сетями или между виртуальной сетью и локальным центром обработки данных?
 Да. Вы можете развернуть [виртуальные сетевые устройства оптимизации глобальной сети](https://azuremarketplace.microsoft.com/en-us/marketplace/?term=wan%20optimization), предоставляемые несколькими поставщиками через Azure Marketplace.
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Конфигурация
 
 ### <a name="what-tools-do-i-use-to-create-a-vnet"></a>Какие средства необходимо использовать для создания виртуальной сети?
 Для создания или настройки виртуальной сети можно использовать указанные ниже средства.
@@ -255,7 +255,6 @@ DNS, предоставленная Azure, — это мультитенант�
 - кэш Redis; 
 - SKU шлюза приложений (v1)
 - Service Fabric
-- SQL MI
 - Управление API
 - Служба домен Active Directory (добавляет)
 - Logic Apps

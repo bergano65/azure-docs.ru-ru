@@ -1,5 +1,5 @@
 ---
-title: Включить имя файла
+title: включить файл
 description: включить файл
 services: container-service
 author: dlepow
@@ -9,21 +9,21 @@ ms.date: 11/22/2019
 ms.author: danlep
 ms.custom: include file
 ms.openlocfilehash: 6b4678b381e769993b01bbedd1cb4c0aeefc0cc1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
-ms.translationtype: MT
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "80334783"
 ---
 | Ресурс | Ограничение |
 | --- | :--- |
-| Максимальное число кластеров на подписку | 100 |
-| Максимальное число узлов на кластер с группами доступности виртуальных машин и номером SKU "базовый Load Balancer"  | 100 |
-| Максимальное число узлов на кластер с масштабируемыми наборами виртуальных машин и [Load Balancer (цен. Категория "Стандартный") SKU][standard-load-balancer] | 1000 (100 узлов на [пул узлов][node-pool]) |
-| Максимальное число модулей Pod на узел: [Базовая сеть][basic-networking] с кубенет | 110 |
-| Максимальное число модулей Pod на узел: [Расширенная][advanced-networking] работа с сетевыми интерфейсами контейнеров Azure | Развертывание с помощью Azure CLI: 30<sup>1</sup><br />Шаблон Azure Resource Manager: 30<sup>1</sup><br />Развертывание портала: 30 |
+| Максимальное количество кластеров на подписку | 100 |
+| Максимальное количество узлов на кластер с группами доступности виртуальных машин и номером SKU Load Balancer категории "Базовый"  | 100 |
+| Максимальное количество узлов на кластер с Масштабируемыми наборами виртуальных машин и [номером SKU Load Balancer категории "Базовый"][standard-load-balancer] | 1000 (100 узлов на [пул узлов][node-pool]) |
+| Максимальное количество модулей pod на узел: [Базовая организация сети][basic-networking] с использованием Kubenet | 110 |
+| Максимальное количество модулей pod на узел: [Расширенные возможности работы в сети][advanced-networking] благодаря Сетевому интерфейсу контейнеров Azure | Развертывание с помощью Azure CLI: 30<sup>1</sup><br />Шаблон Azure Resource Manager: 30<sup>1</sup><br />Развертывание портала: 30 |
 
-<sup>1</sup> При развертывании кластера Azure Kubernetes Service (AKS) с Azure CLI или шаблоном диспетчер ресурсов это значение можно настроить до 250 модулей Pod на узел. Вы не можете настроить максимальное число модулей Pod на узел после развертывания кластера AKS или при развертывании кластера с помощью портал Azure.<br />
+<sup>1</sup> При развертывании кластера Службы Azure Kubernetes (AKS) с помощью Azure CLI или шаблона Resource Manager это значение можно увеличить до 250 модулей pod на узел. Вы не сможете увеличить количество модулей pod на узел, если кластер AKS уже развернут или вы развернули его на портале Azure.<br />
 
 <!-- LINKS - Internal -->
 [basic-networking]: ../articles/aks/concepts-network.md#kubenet-basic-networking

@@ -13,28 +13,28 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: c570c43560ad865b8bcc5161cbd0c6731ea4a237
-ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
+ms.openlocfilehash: 16af8b8c1258ef7945e88a7af42e86a7bba2003b
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90090658"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91963267"
 ---
 # <a name="azure-performance-diagnostics-vm-extension-for-windows"></a>Расширение виртуальной машины для диагностики производительности Azure для Windows
 
-Расширение виртуальной машины для диагностики производительности Azure позволяет собирать данные диагностики производительности с виртуальных машин Windows. Оно также выполняет анализ и предоставляет отчет с выводами и рекомендации для определения и решения проблем с производительностью виртуальных машин. Это расширение устанавливает инструмент устранения неполадок [PerfInsights](https://aka.ms/perfinsights).
+Расширение виртуальной машины для диагностики производительности Azure позволяет собирать данные диагностики производительности с виртуальных машин Windows. Оно также выполняет анализ и предоставляет отчет с выводами и рекомендации для определения и решения проблем с производительностью виртуальных машин. Это расширение устанавливает инструмент устранения неполадок [PerfInsights](./how-to-use-perfinsights.md).
 
 > [!NOTE]
 > Если вы хотите выполнить диагностику виртуальной машины на портале Azure, развернутой с помощью неклассической модели Azure, советуем использовать новый интерфейс. Дополнительные сведения см. в статье [Диагностика производительности для виртуальных машин Azure](performance-diagnostics.md). 
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Это расширение можно установить на
 * Windows Server 2019
 * Windows Server 2016
 * Windows Server 2012 R2
 * Windows Server 2012
-* Windows Server 2008 R2
+* Windows Server 2008 R2
 * Windows 10
 * Windows 8.1
 * Windows 8
@@ -237,7 +237,7 @@ Set-AzVMExtension -ExtensionName "AzurePerformanceDiagnostics" `
 ```
 
 ## <a name="information-on-the-data-captured"></a>Сведения о собранных данных
-В зависимости от выбранного сценария инструмент PerfInsights собирает различные журналы, конфигурации и диагностические данные. Дополнительные сведения см. в [документации по PerfInsights](https://aka.ms/perfinsights).
+В зависимости от выбранного сценария инструмент PerfInsights собирает различные журналы, конфигурации и диагностические данные. Дополнительные сведения см. в [документации по PerfInsights](./how-to-use-perfinsights.md).
 
 ## <a name="view-and-share-the-results"></a>Просмотр результатов и предоставление к ним общего доступа
 

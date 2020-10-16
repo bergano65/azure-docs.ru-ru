@@ -16,10 +16,10 @@ ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9be6efeba101dc922a1045042b64ac64bc6cd093
-ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89322540"
 ---
 # <a name="find-help-and-open-a-support-ticket-for-azure-active-directory"></a>Поиск справки и создание запроса в службу поддержки — Azure Active Directory
@@ -96,8 +96,8 @@ ms.locfileid: "89322540"
 
 Чтобы получить номера телефонов службы поддержки, перейдите на страницу [Обратитесь в корпорацию Майкрософт для поддержки](https://portal.office.com/Support/ContactUs.aspx).
 
-##  <a name="next-steps"></a>Дальнейшие действия
+##  <a name="next-steps"></a>Дальнейшие шаги
 
-* [Сообщество Microsoft Tech](https://techcommunity.microsoft.com/)
+* [Техническое сообщество Майкрософт](https://techcommunity.microsoft.com/)
 
 * [Техническая документация на сайте docs.microsoft.com](../index.yml)

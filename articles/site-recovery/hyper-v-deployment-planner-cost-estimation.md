@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 4/9/2019
 ms.author: mayg
 ms.openlocfilehash: 29457f2f5021fed9d8785f5764c4119de4be1fa9
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87089555"
 ---
 # <a name="cost-estimation-report-by-azure-site-recovery-deployment-planner"></a>Отчет об оценке затрат, созданный в планировщике развертывания Azure Site Recovery 
@@ -107,15 +107,15 @@ ms.locfileid: "87089555"
 
 1. Укажите значения в следующих столбцах на основе приблизительного размера и числа виртуальных машин, которые соответствуют этой конфигурации: 
 
-    А. **Число виртуальных машин**
+    a. **Число виртуальных машин**
 
-    Б. **IaaS size (Your selection)** (Размер IaaS (по вашему выбору)).
+    b. **IaaS size (Your selection)** (Размер IaaS (по вашему выбору)).
 
     c. **Storage type** (Тип хранилища): Standard или Premium.
 
     d. **общий размер хранилища виртуальной машины (ГБ);**
 
-    д) **Количество операций аварийного восстановления в течение года**
+    д) **Число DR-Drills в году**
 
     е) **Each DR-Drill duration (Days)** (Длительность каждой операции тестирования аварийного восстановления (в днях)).
 

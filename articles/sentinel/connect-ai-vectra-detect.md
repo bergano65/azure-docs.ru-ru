@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 06/21/2020
 ms.author: yelevin
 ms.openlocfilehash: c57f4a49ac89f1347fc88f8bacddce3abab7e44e
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87038228"
 ---
 # <a name="connect-ai-vectra-detect-to-azure-sentinel"></a>Подключение определения Вектра AI к Azure Sentinel
@@ -43,7 +43,7 @@ ms.locfileid: "87038228"
     - Задать протокол как **UDP**
     - Задайте формат **CEF**
     - Задание типов журналов (выбор всех доступных типов журналов)
-    - Щелкните " **сохранить** "
+    - В меню «Параметры» щелкните пункт **Сохранить**
 
 2. Можно нажать кнопку **Test (проверка** ), чтобы принудительно отправить некоторые тестовые события в сервер пересылки журналов.
 

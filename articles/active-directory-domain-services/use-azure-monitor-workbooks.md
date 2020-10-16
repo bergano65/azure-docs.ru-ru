@@ -1,20 +1,20 @@
 ---
 title: Использование книг Azure Monitor с доменными службами Azure AD | Документация Майкрософт
 description: Узнайте, как использовать книги Azure Monitor для просмотра аудита безопасности и понимания проблем в управляемом домене доменных служб Azure Active Directory.
-author: iainfoulds
+author: MicrosoftGuyJFlo
 manager: daveba
 ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: how-to
 ms.date: 07/09/2020
-ms.author: iainfou
-ms.openlocfilehash: 280b7e051c4c9d87c504c1abf6aca0b04bfa1b29
-ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
+ms.author: joflore
+ms.openlocfilehash: 02c4679016ea80a4ac8bb53b502292945cbe9d7b
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2020
-ms.locfileid: "91704605"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91967075"
 ---
 # <a name="review-security-audit-events-in-azure-active-directory-domain-services-using-azure-monitor-workbooks"></a>Проверка событий аудита безопасности в Azure Active Directory доменных служб с помощью Azure Monitor книг
 

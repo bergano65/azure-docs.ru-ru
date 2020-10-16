@@ -12,16 +12,16 @@ ms.topic: conceptual
 ms.date: 09/29/2020
 ms.custom: seodec18
 ms.openlocfilehash: 401d22ee68ba0652eb684b03b06fddf0b0fe3d72
-ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91569463"
 ---
 # <a name="create-a-new-azure-time-series-insights-gen1-environment-in-the-azure-portal"></a>Создайте новую среду Gen1 "аналитика временных рядов Azure" в портал Azure
 
 > [!CAUTION]
-> Это Gen1 статья.
+> Эта статья посвящена службе "Аналитика временных рядов Azure" 1-го поколения.
 
 В этой статье описывается создание новой среды Azure Time Series Insights с помощью портал Azure.
 
@@ -66,7 +66,7 @@ ms.locfileid: "91569463"
 
 1. **(Необязательно)** Щелкните **значок закрепления** в правом верхнем углу, чтобы легко получить доступ к среде службы "аналитика временных рядов Azure" в будущем.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Определите политики доступа к данным](time-series-insights-data-access.md) для защиты среды.
 

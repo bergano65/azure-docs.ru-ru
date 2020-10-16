@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/30/2020
 ms.author: b-juche
-ms.openlocfilehash: 6a7bf07359344e26280021a6a55eecc5b96b7a86
-ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
+ms.openlocfilehash: 9a07c6ae48cdca68a95db7770d90076eb8f10f95
+ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91653695"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91929462"
 ---
 # <a name="faqs-about-smb-performance-for-azure-netapp-files"></a>Часто задаваемые вопросы о производительности SMB для Azure NetApp Files
 
@@ -39,7 +39,7 @@ ms.locfileid: "91653695"
 
 ## <a name="which-windows-versions-support-smb-multichannel"></a>Какие версии Windows поддерживают многоканальный протокол SMB?
 
-Windows поддерживает многоканальный протокол SMB с Windows 2012 для обеспечения лучшей производительности.  Дополнительные сведения см. в статье [развертывание многоканального протокола SMB](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn610980(v%3Dws.11)) и [основы многоканального SMB](https://blogs.technet.microsoft.com/josebda/2012/06/28/the-basics-of-smb-multichannel-a-feature-of-windows-server-2012-and-smb-3-0/) . 
+Windows поддерживает многоканальный протокол SMB с Windows 2012 для обеспечения лучшей производительности.  Дополнительные сведения см. в статье [развертывание многоканального протокола SMB](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn610980(v%3Dws.11)) и [основы многоканального SMB](/archive/blogs/josebda/the-basics-of-smb-multichannel-a-feature-of-windows-server-2012-and-smb-3-0) . 
 
 
 ## <a name="does-my-azure-virtual-machine-support-rss"></a>Поддерживает ли моя виртуальная машина Azure поддержку RSS?
@@ -132,7 +132,7 @@ Azure размещает ограничения сетевой частоты д
 
 ## <a name="is-accelerated-networking-recommended"></a>Рекомендуется ли использовать ускоренную сеть?
 
-Для максимальной производительности рекомендуется настроить [ускоренную сеть](https://docs.microsoft.com/azure/virtual-network/create-vm-accelerated-networking-powershell) там, где это возможно. Учитывайте следующие соображения.  
+Для максимальной производительности рекомендуется настроить [ускоренную сеть](../virtual-network/create-vm-accelerated-networking-powershell.md) там, где это возможно. Учитывайте следующие соображения.  
 
 * Портал Azure по умолчанию включает ускоренную сеть для виртуальных машин, поддерживающих эту функцию.  Однако другие методы развертывания, такие как Ansible и аналогичные средства настройки, могут не иметь.  Невозможность включения ускоренной сети может парализовать производительность компьютера.  
 * Если в сетевом интерфейсе виртуальной машины не включено ускорение работы в сети из-за отсутствия поддержки типа или размера экземпляра, он останется отключенным с более крупными типами экземпляров. В таких случаях потребуется вмешательство вручную.
@@ -154,7 +154,7 @@ Azure размещает ограничения сетевой частоты д
 ![Диаграмма, показывающая влияние подписи SMB на производительность.](../media/azure-netapp-files/azure-netapp-files-smb-signing-performance.png)
 
 
-## <a name="next-steps"></a>Следующие шаги  
+## <a name="next-steps"></a>Дальнейшие шаги  
 
 - [Часто задаваемые вопросы о Azure NetApp Files](azure-netapp-files-faqs.md)
 - См. раздел [Azure NetApp Files. управляемые корпоративные файловые ресурсы для рабочих нагрузок SMB](https://cloud.netapp.com/hubfs/Resources/ANF%20SMB%20Quickstart%20doc%20-%2027-Aug-2019.pdf?__hstc=177456119.bb186880ac5cfbb6108d962fcef99615.1550595766408.1573471687088.1573477411104.328&__hssc=177456119.1.1573486285424&__hsfp=1115680788&hsCtaTracking=cd03aeb4-7f3a-4458-8680-1ddeae3f045e%7C5d5c041f-29b4-44c3-9096-b46a0a15b9b1) об использовании файловых ресурсов smb с Azure NetApp Files.

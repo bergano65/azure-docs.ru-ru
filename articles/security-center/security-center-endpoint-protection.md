@@ -14,10 +14,10 @@ ms.workload: na
 ms.date: 12/29/2019
 ms.author: memildin
 ms.openlocfilehash: 7a9541eb3b7c662b43de0d3a609ecec4fe2621ca
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86519411"
 ---
 # <a name="endpoint-protection-assessment-and-recommendations-in-azure-security-center"></a>Оценка и рекомендации по защите конечных точек в центре безопасности Azure
@@ -39,7 +39,7 @@ ms.locfileid: "86519411"
 
     **антиспиваринаблед**
 
-    **реалтимепротектионенаблед**
+    **RealTimeProtectionEnabled**
 
     **бехавиормониторенаблед**
 
@@ -63,7 +63,7 @@ ms.locfileid: "86519411"
 
     * **амсервицеенаблед**
     * **антиспиваринаблед**
-    * **реалтимепротектионенаблед**
+    * **RealTimeProtectionEnabled**
     * **бехавиормониторенаблед**
     * **иоавпротектионенаблед**
     * **онакцесспротектионенаблед**
@@ -88,7 +88,7 @@ ms.locfileid: "86519411"
 
 * **HKLM: \ Софтваре\симантек\симантек конечная точка Протектион\куррентверсион\публик-опстате\асруннингстатус = 1**
 
-либо
+Или
 
 * **HKLM: \ Software\Wow6432Node\Symantec\Symantec конечная точка Протектион\куррентверсион\продуктнаме = "Symantec Endpoint Protection"**
 

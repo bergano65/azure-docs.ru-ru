@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 10/06/2020
 ms.author: alkohli
 ms.openlocfilehash: ef99ff874376e0d76e45e4b0b2c36a78d938130b
-ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91844011"
 ---
 # <a name="recover-from-a-failed-azure-stack-edge-pro-gpu-device"></a>Восстановление после неудачного Azure Stack устройства GPU с пограничным Pro 
@@ -92,6 +92,6 @@ ms.locfileid: "91844011"
 1. Установите решение для защиты данных на виртуальной машине.
 1. Выполните процедуру восстановления, предоставленную решением "Защита данных" по выбору. См. ссылки из предыдущей таблицы.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте, как [вернуть устройство Pro Azure Stack](azure-stack-edge-return-device.md).

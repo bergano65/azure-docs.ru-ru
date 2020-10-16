@@ -8,10 +8,10 @@ ms.custom:
 - seodec18
 - fasttrack-edit
 ms.openlocfilehash: e8a9fbe6072f3628d755ad3ad5aa5a623fc3ab23
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "80519947"
 ---
 # <a name="configure-your-app-service-or-azure-functions-app-to-use-google-login"></a>Настройка службы приложений или приложения "функции Azure" для использования входа Google
@@ -24,7 +24,7 @@ ms.locfileid: "80519947"
 
 ## <a name="register-your-application-with-google"></a><a name="register"> </a>Регистрация приложения с помощью Google
 
-1. Чтобы создать идентификатор клиента и секрет клиента, следуйте инструкциям в документации Google по [входу в Google для серверных приложений](https://developers.google.com/identity/sign-in/web/server-side-flow) . Нет необходимости вносить изменения в код. Просто используйте следующую информацию:
+1. Для создания идентификатора клиента и секрета клиента следуйте инструкциям по Google [Sign-In для приложений на стороне сервера](https://developers.google.com/identity/sign-in/web/server-side-flow) . Нет необходимости вносить изменения в код. Просто используйте следующую информацию:
     - Для **полномочных источников JavaScript**используйте `https://<app-name>.azurewebsites.net` с именем приложения в *\<app-name>* .
     - Для **разрешения URI перенаправления**используйте `https://<app-name>.azurewebsites.net/.auth/login/google/callback` .
 1. Скопируйте идентификатор приложения и значения секрета приложения.
@@ -37,7 +37,7 @@ ms.locfileid: "80519947"
 1. В [портал Azure]перейдите к приложению службы приложений.
 1. Последовательно выберите **Параметры** > **Аутентификация или авторизация** и установите для параметра **Проверка подлинности Службы приложений** значение **Вкл**.
 1. Выберите **Google**, а затем вставьте значения в поле идентификатор приложения и секрет приложения, полученные ранее. Включите все области, необходимые для приложения.
-1. Нажмите кнопку **OK**.
+1. Щелкните **ОК**.
 
    Служба приложений обеспечивает проверку подлинности, но не ограничивает разрешенный доступ к содержимому и API-интерфейсам сайта. Дополнительные сведения см. в разделе [Авторизация или отказ пользователей](app-service-authentication-how-to.md#authorize-or-deny-users).
 

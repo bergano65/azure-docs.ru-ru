@@ -9,10 +9,10 @@ ms.author: rogarana
 ms.subservice: disks
 ms.custom: references_regions
 ms.openlocfilehash: 82d482cd0a1b3a5b6028b9249030b7b1a093d22d
-ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91570540"
 ---
 # <a name="enable-shared-disk"></a>Включить общий диск
@@ -76,7 +76,7 @@ New-AzDisk -ResourceGroupName 'myResourceGroup' -DiskName 'mySharedDisk' -Disk $
 > Значение параметра `maxShares` может быть задано или изменено только при отключении диска от всех виртуальных машин. Допустимые значения для см. в разделе [размеры дисков](#disk-sizes) `maxShares` .
 
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 ##### <a name="regional-disk-example"></a>Пример для регионального диска
 
@@ -206,9 +206,9 @@ PR_EXCLUSIVE_ACCESS_ALL_REGISTRANTS
 Кроме того, при использовании PR_RESERVE, PR_REGISTER_AND_IGNORE, PR_REGISTER_KEY, PR_PREEMPT_RESERVATION, PR_CLEAR_RESERVATION или PR_RELEASE-RESERVATION необходимо указать постоянный ключ-резервирование.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Если вы предпочитаете использовать шаблоны Azure Resource Manager для развертывания диска, доступны следующие примеры шаблонов:
-- [SSD ценовой категории "Премиум"](https://aka.ms/SharedPremiumDiskARMtemplate)
+- [Диск SSD (цен. категория "Премиум")](https://aka.ms/SharedPremiumDiskARMtemplate)
 - [Региональные диски Ultra](https://aka.ms/SharedUltraDiskARMtemplateRegional)
 - [Зональные Ultra Disks](https://aka.ms/SharedUltraDiskARMtemplateZonal)

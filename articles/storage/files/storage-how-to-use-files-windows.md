@@ -9,10 +9,10 @@ ms.author: rogarana
 ms.subservice: files
 ms.custom: devx-track-azurepowershell
 ms.openlocfilehash: c8a1d1c0f8de742bdafa130cce6927a472efd8f7
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91329352"
 ---
 # <a name="use-an-azure-file-share-with-windows"></a>Использование общей папки Azure в Windows
@@ -65,14 +65,14 @@ ms.locfileid: "91329352"
 
     :::image type="content" source="media/storage-how-to-use-files-windows/select-file-shares.png" alt-text="Например":::
 
-1. Щелкните **Подключить**.
+1. Выберите **Подключиться**.
 
-    :::image type="content" source="media/storage-how-to-use-files-windows/file-share-connect-icon.png" alt-text="Снимок экрана с значком подключения для файлового ресурса.":::
+    :::image type="content" source="media/storage-how-to-use-files-windows/file-share-connect-icon.png" alt-text="Например":::
 
 1. Выберите букву диска для подключения общей папки.
 1. Скопируйте предоставленный скрипт.
 
-    :::image type="content" source="media/storage-how-to-use-files-windows/files-portal-mounting-cmdlet-resize.png" alt-text="Пример текста":::
+    :::image type="content" source="media/storage-how-to-use-files-windows/files-portal-mounting-cmdlet-resize.png" alt-text="Например":::
 
 1. Вставьте сценарий в оболочку на узле, на котором вы хотите подключить общую папку, и запустите ее.
 

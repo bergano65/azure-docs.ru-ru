@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.custom: references_regions
 ms.date: 8/13/2020
 ms.openlocfilehash: 9868403f69f3dc0b56aae06be1afda2134472805
-ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91631041"
 ---
 # <a name="monitoring-in-azure-database-for-mariadb"></a>Мониторинг в Базе данных Azure для MariaDB
@@ -25,7 +25,7 @@ ms.locfileid: "91631041"
 ### <a name="list-of-metrics"></a>Список метрик
 Для Базы данных Azure для MariaDB доступны следующие метрики:
 
-|Метрика|Отображаемое имя метрики|Единица измерения|Описание|
+|Метрика|Отображаемое имя метрики|Unit|Описание|
 |---|---|---|---|
 |cpu_percent|Нагрузка ЦП|Процент|Процент используемого ЦП.|
 |memory_percent|Процент памяти|Процент|Процент используемой памяти.|
@@ -84,7 +84,7 @@ ms.locfileid: "91631041"
 > [!Note]
 > Мы сделаем все попытки предоставить **уведомление о плановом обслуживании** 72 часов для всех событий. Однако в случае критических обновлений или исправлений безопасности уведомления могут быть отправлены ближе к событию или пропущены.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о доступе к метрикам и их экспорте с помощью портала Azure, REST API или интерфейса командной строки см. в статье [Обзор метрик в Microsoft Azure](../monitoring-and-diagnostics/monitoring-overview-metrics.md).
   - См. рекомендации по созданию оповещений для метрики в статье [Как настраивать оповещения](howto-alert-metric.md).

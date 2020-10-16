@@ -61,9 +61,13 @@
     - name: Развертывание аварийного восстановления для виртуальных машин
       href: disaster-recovery-for-virtual-machines.md
     - name: Развертывание виртуальной машины с использованием библиотеки содержимого
-      href: tutorial-deploy-vm-content-library.md
+      href: ./deploy-vm-content-library.md
     - name: Настройка сервера GitHub Enterprise
       href: github-enterprise-server.md
+    - name: Использование общедоступных IP-адресов
+      href: public-ip-usage.md
+    - name: Создание туннеля IPSec
+      href: create-ipsec-tunnel.md
     - name: Интеграция платформенной функциональности Azure
       items:
         - name: Управление API
@@ -82,8 +86,6 @@
           href: protect-azure-vmware-solution-with-application-gateway.md
         - name: Диспетчер трафика
           href: deploy-traffic-manager-balance-workloads.md
-        - name: Использование общедоступных IP-адресов
-          href: public-ip-usage.md
     - name: Решения VMware
       items:
         - name: Настройка vRealize Operations

@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 09/21/2020
 ms.author: jgao
 ms.openlocfilehash: 63879350eba897cfe5a793309e5129323fe8bbde
-ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91372380"
 ---
 # <a name="introduce-health-integration-rollout-to-azure-deployment-manager-public-preview"></a>Внедрение интеграции работоспособности в Azure диспетчер развертывания (общедоступная Предварительная версия)
@@ -197,7 +197,7 @@ ms.locfileid: "91372380"
     1. Если в любой момент обнаруживается неработоспособный ответ, Azure диспетчер развертывания останавливает весь процесс развертывания и возвращает ответ о неработоспособных сигналах службы.
     1. После окончания длительности Хеалсистате healthCheck завершается, а развертывание переходит к следующему шагу.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье вы узнали, как интегрировать наблюдение за работоспособностью в Azure диспетчер развертывания. Перейдите к следующей статье, чтобы узнать, как выполнить развертывание с помощью диспетчера развертывания.
 

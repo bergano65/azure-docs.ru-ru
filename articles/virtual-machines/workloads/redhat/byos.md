@@ -1,25 +1,18 @@
 ---
 title: Red Hat Enterprise Linux образы Azure с собственной подпиской | Документация Майкрософт
 description: Узнайте о собственных образах подписки на Red Hat Enterprise Linux в Azure.
-services: virtual-machines-linux
-documentationcenter: ''
 author: asinn826
-manager: BorisB2015
-editor: ''
-ms.assetid: f495f1b4-ae24-46b9-8d26-c617ce3daf3a
 ms.service: virtual-machines-linux
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: vm-linux
-ms.workload: infrastructure-services
 ms.date: 06/10/2020
 ms.author: alsin
-ms.openlocfilehash: 54d703b8a493610174f00844cd0736f65f3ee541
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.reviewer: cynthn
+ms.openlocfilehash: 8896ed3eed291e6ec18c45df60e6079ada769b28
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87052160"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91993338"
 ---
 # <a name="red-hat-enterprise-linux-bring-your-own-subscription-gold-images-in-azure"></a>Red Hat Enterprise Linux образы Gold собственных подписок в Azure
 
@@ -34,7 +27,7 @@ ms.locfileid: "87052160"
 - Образы соответствуют текущим политикам, описанным в [Red Hat Enterprise Linux образы в Azure](./redhat-images.md).
 - Политики поддержки уровня "Стандартный" применяются к виртуальным машинам, созданным из этих образов.
 - Виртуальные машины, подготовленные на основе образов Red Hat Gold, не несут RHEL плату, связанную с образами RHEL с оплатой по мере использования.
-- Образы являются неуполномоченными. Вы должны использовать диспетчер подписки Red Hat для регистрации и подписки на виртуальные машины, чтобы получать обновления с Red Hat напрямую.
+- Образы являются неуполномоченными. Вы должны использовать Red Hat Subscription-Manager для регистрации и подписки на виртуальные машины, чтобы получать обновления с Red Hat напрямую.
 - Сейчас невозможно динамически переключаться между BYOS и моделями выставления счетов с оплатой по мере использования для образов Linux. Чтобы переключить модель выставления счетов, необходимо повторно развернуть виртуальную машину из соответствующего образа.
 
 >[!NOTE]
@@ -120,7 +113,7 @@ ms.locfileid: "87052160"
     az vm create -n rhel-byos-vm -g rhel-byos-group --image redhat:rhel-byos:rhel-lvm8:latest
     ```
 
-1. Подключитесь к виртуальной машине по протоколу SSH и убедитесь в отсутствии образа. Чтобы выполнить этот шаг, выполните команду `sudo yum repolist` . Для RHEL 8 используйте `sudo dnf repolist` . В выходных данных будет предложено использовать диспетчер подписки для регистрации виртуальной машины с помощью Red Hat.
+1. Подключитесь к виртуальной машине по протоколу SSH и убедитесь в отсутствии образа. Чтобы выполнить этот шаг, выполните команду `sudo yum repolist` . Для RHEL 8 используйте `sudo dnf repolist` . В выходных данных будет предложено использовать Subscription-Manager для регистрации виртуальной машины с помощью Red Hat.
 
 >[!NOTE]
 >В RHEL 8 `dnf` и `yum` являются взаимозаменяемыми. Дополнительные сведения см. в разделе [руководств администратора RHEL 8](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/packaging_and_distributing_software/index).

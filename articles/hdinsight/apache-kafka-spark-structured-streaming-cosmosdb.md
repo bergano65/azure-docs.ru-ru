@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 11/18/2019
 ms.openlocfilehash: 0a2e69a220f6752e5f0392c345b02967e2e76beb
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86203474"
 ---
 # <a name="use-apache-spark-structured-streaming-with-apache-kafka-and-azure-cosmos-db"></a>Использование структурированной потоковой передачи Apache Spark с Apache Kafka в Azure Cosmos DB
@@ -64,7 +64,7 @@ Apache Kafka в HDInsight не предоставляет доступ к бро
 
 1. Используйте следующие сведения, чтобы заполнить раздел **Настраиваемое развертывание**:
 
-    |Свойство. |Значение |
+    |Свойство |Значение |
     |---|---|
     |Подписка|Выберите подписку Azure.|
     |Группа ресурсов|Создайте новую группу или выберите существующую. Эта группа содержит кластер HDInsight.|
@@ -78,7 +78,7 @@ Apache Kafka в HDInsight не предоставляет доступ к бро
 
     ![Значения настраиваемого развертывания HDInsight](./media/apache-kafka-spark-structured-streaming-cosmosdb/hdi-custom-parameters.png)
 
-1. Ознакомьтесь с **условиями, а**затем установите флажок **я принимаю указанные выше условия**.
+1. Прочтите **условия использования** и установите флажок **Я принимаю указанные выше условия**.
 
 1. Наконец, щелкните **Приобрести**. Создание кластеров, виртуальной сети и учетной записи Cosmos DB может занять до 45 минут.
 
@@ -162,4 +162,4 @@ az cosmosdb keys list --name $name --resource-group $resourceGroupName --type ke
 
 * [Пример потоковой передачи Apache Spark (DStream) с использованием Apache Kafka (предварительная версия) в HDInsight](hdinsight-apache-spark-with-kafka.md)
 * [Краткое руководство. Создание кластера Apache Spark в HDInsight с помощью шаблона](spark/apache-spark-jupyter-spark-sql.md)
-* [Вас приветствует Azure Cosmos DB](../cosmos-db/introduction.md)
+* [Вас приветствует Azure Cosmos DB](../cosmos-db/introduction.md)

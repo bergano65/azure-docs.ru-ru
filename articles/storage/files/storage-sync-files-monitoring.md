@@ -8,10 +8,10 @@ ms.date: 09/28/2020
 ms.author: rogarana
 ms.subservice: files
 ms.openlocfilehash: 1ef24522f688c5ae1176630a2f370cd7ee7c3cd7
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91448020"
 ---
 # <a name="monitor-azure-file-sync"></a>Мониторинг службы "Синхронизация файлов Azure"
@@ -282,8 +282,8 @@ ms.locfileid: "91448020"
 9. Заполните **сведения о предупреждении** , такие как **имя правила оповещения**, **Описание** и **серьезность**.
 10. Выберите **Создать правило генерации оповещений**. 
 
-## <a name="next-steps"></a>Дальнейшие действия
-- [Планирование развертывания Синхронизации файлов Azure](storage-sync-files-planning.md)
+## <a name="next-steps"></a>Дальнейшие шаги
+- [Планирование развертывания службы синхронизации файлов Azure (предварительная версия)](storage-sync-files-planning.md)
 - [Параметры брандмауэра и прокси-сервера Синхронизации файлов Azure](storage-sync-files-firewall-and-proxy.md)
 - [Развертывание Синхронизации файлов Azure](storage-sync-files-deployment-guide.md)
 - [Устранение неполадок Синхронизации файлов Azure](storage-sync-files-troubleshoot.md)

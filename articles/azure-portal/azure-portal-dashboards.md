@@ -13,12 +13,12 @@ ms.tgt_pltfrm: NA
 ms.workload: na
 ms.date: 03/23/2020
 ms.author: mblythe
-ms.openlocfilehash: 06cf0a5692b3d80a07c305f53c9e3801cbdb5110
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b4241e51f186ea973702562ab27bb7f13a77de57
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84764015"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92089491"
 ---
 # <a name="create-and-share-dashboards-in-the-azure-portal"></a>Создание панелей мониторинга на портале Azure и предоставление общего доступа к ним
 
@@ -142,7 +142,7 @@ ms.locfileid: "84764015"
 
 ## <a name="publish-and-share-a-dashboard"></a>Публикация и совместное использование панели мониторинга
 
-При создании панели мониторинга она является закрытой по умолчанию, что означает, что это единственный пользователь, который может ее видеть. Чтобы сделать панели мониторинга доступными для других пользователей, их можно опубликовать и предоставить к ним общий доступ. Дополнительные сведения см. в статье [предоставление общего доступа к панелям мониторинга Azure с помощью управления доступом на основе ролей](azure-portal-dashboard-share-access.md).
+При создании панели мониторинга она является закрытой по умолчанию, что означает, что это единственный пользователь, который может ее видеть. Чтобы сделать панели мониторинга доступными для других пользователей, их можно опубликовать и предоставить к ним общий доступ. Дополнительные сведения см. в статье [предоставление общего доступа к панелям мониторинга Azure с помощью управления доступом на основе ролей Azure](azure-portal-dashboard-share-access.md).
 
 ### <a name="open-a-shared-dashboard"></a>Открытие общей панели мониторинга
 
@@ -176,7 +176,7 @@ ms.locfileid: "84764015"
 
     ![Снимок экрана с подтверждением удаления](./media/azure-portal-dashboards/dashboard-delete-dash.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Предоставление общего доступа к панелям мониторинга Azure с помощью управления доступом на основе ролей](azure-portal-dashboard-share-access.md)
+* [Предоставление общего доступа к панелям мониторинга Azure с помощью управления доступом на основе ролей в Azure](azure-portal-dashboard-share-access.md)
 * [Создание панелей мониторинга Azure программными средствами](azure-portal-dashboards-create-programmatically.md)

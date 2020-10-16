@@ -11,10 +11,10 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 113c11b749b42bbaf9e5e40cdf63623288997a92
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89440292"
 ---
 # <a name="agile-development-of-data-science-projects"></a>Гибкая разработка проектов обработки и анализа данных
@@ -152,7 +152,7 @@ ms.locfileid: "89440292"
    1. В поле **имя**замените " **История** " *проектами TDSP*. 
    1. В разделе **типы рабочих элементов на этом уровне невыполненной**работы выберите **новый тип рабочего элемента**, введите *проект TDSP*и нажмите кнопку **Добавить**. 
    1. В разделе **тип рабочего элемента по умолчанию**выберите раскрывающийся список и выберите **проект TDSP**. 
-   1. Выберите **Сохранить**.
+   1. Щелкните **Сохранить**.
    
    ![Задание уровня невыполненной работы портфеля](./media/agile-development/13-rename.png)  
    
@@ -208,7 +208,7 @@ ms.locfileid: "89440292"
 ![18](./media/agile-development/18-workitems1.png)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Совместное программирование с помощью Git](collaborative-coding-with-git.md) описывает, как разрабатывать совместный код для проектов обработки и анализа данных с помощью Git в качестве платформы разработки общего кода и как связать эти действия кода с рабочими процессами, запланированными с помощью гибкого процесса.
 

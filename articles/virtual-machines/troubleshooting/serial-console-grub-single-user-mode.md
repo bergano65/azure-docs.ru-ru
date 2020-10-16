@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 08/06/2019
 ms.author: alsin
 ms.openlocfilehash: 5341cc62a7d02c3072df90becf893dec18427ac2
-ms.sourcegitcommit: 14bf4129a73de2b51a575c3a0a7a3b9c86387b2c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87439535"
 ---
 # <a name="use-serial-console-to-access-grub-and-single-user-mode"></a>Использование последовательной консоли для доступа к GRUB и однопользовательским режимам
@@ -166,7 +166,7 @@ GRUB_CMDLINE_LINUX="console=tty1 console=ttyS0,115200n8 earlyprintk=ttyS0,115200
 1. В текстовом редакторе откройте */etc/default/grub*.
 1. Закомментируйте `GRUB_HIDDEN_TIMEOUT=1` строку.
 1. Убедитесь, что есть `GRUB_TIMEOUT_STYLE=menu` строка.
-1. Выполните `sudo update-grub`.
+1. Запустите `sudo update-grub`.
 
 ### <a name="single-user-mode-in-ubuntu"></a>Однопользовательский режим в Ubuntu
 Если Ubuntu не может загрузиться в обычном режиме, она автоматически перейдет в однопользовательский режим. Чтобы войти в однопользовательский режим вручную, выполните следующие действия.
@@ -240,7 +240,7 @@ GRUB_CMDLINE_LINUX="console=tty1 console=ttyS0,115200n8 earlyprintk=ttyS0,115200
 ### <a name="single-user-mode-in-oracle-linux"></a>Однопользовательский режим в Oracle Linux
 Чтобы включить однопользовательский режим в Oracle Linux, выполните предыдущие инструкции для RHEL.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о последовательной консоли см. в следующих статьях:
 * [Документация по последовательной консоли Linux](serial-console-linux.md)
 * [Использование последовательной консоли для включения GRUB в различных дистрибутивах](http://linuxonazure.azurewebsites.net/why-proactively-ensuring-you-have-access-to-grub-and-sysrq-in-your-linux-vm-could-save-you-lots-of-down-time/)

@@ -4,10 +4,10 @@ description: Используйте функцию периодического 
 ms.topic: article
 ms.date: 2/01/2019
 ms.openlocfilehash: 852e430a9183d92e13536fd6499f3d1404985455
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91538625"
 ---
 # <a name="understanding-periodic-backup-configuration-in-azure-service-fabric"></a>Основные сведения о настройке периодического резервного копирования в Azure Service Fabric
@@ -237,7 +237,7 @@ ms.locfileid: "91538625"
  
 - [Get Partition Backup List](/rest/api/servicefabric/sfclient-api-getpartitionbackuplist) (Получение списка резервного копирования раздела). Возвращает список резервных копий, доступных для данного раздела.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - [Backup restore REST API reference](/rest/api/servicefabric/sfclient-index-backuprestore) (Справочник по REST API службы резервного копирования и восстановления)
 
 [0]: ./media/service-fabric-backuprestoreservice/backup-policy-association-example.png

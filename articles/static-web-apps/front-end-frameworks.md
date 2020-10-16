@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 07/18/2020
 ms.author: cshoe
 ms.openlocfilehash: 4b1bc58b6b4a87cd6e5e09e83020a38261b8746f
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90905379"
 ---
 # <a name="configure-front-end-frameworks-and-libraries-with-azure-static-web-apps-preview"></a>Настройка интерфейсных платформ и библиотек с помощью предварительной версии статических веб-приложений Azure
@@ -33,35 +33,35 @@ ms.locfileid: "90905379"
 | [Alpine.js](https://github.com/alpinejs/alpine/) | `/` | н/д <sup>2</sup> |
 | [Angular](https://angular.io/) | `dist/<APP_NAME>` | `npm run build -- --prod` |
 | [Угловой универсальный](https://angular.io/guide/universal) | `dist/<APP_NAME>/browser` | `npm run prerender` |
-| [аурелиа](https://aurelia.io/) | `dist` | н/д |
-| [Backbone.js](https://backbonejs.org/) | `/` | н/д |
-| [Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor) | `wwwroot` | н/д |
-| [Ember](https://emberjs.com/) | `dist` | н/д |
+| [аурелиа](https://aurelia.io/) | `dist` | Недоступно |
+| [Backbone.js](https://backbonejs.org/) | `/` | Недоступно |
+| [Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor) | `wwwroot` | Недоступно |
+| [Ember](https://emberjs.com/) | `dist` | Недоступно |
 | [Flutter](https://flutter.dev/) | `build/web` | `flutter build web` |
 | [Framework7](https://framework7.io/) | `www` | `npm run build-prod` |
-| [глиммер](https://glimmerjs.com/) | `dist` | н/д |
-| [HTML](https://developer.mozilla.org/docs/Web/HTML) | `/` | н/д |
-| [хиперапп](https://hyperapp.dev/) | `/` | н/д |
-| [JavaScript](https://developer.mozilla.org/docs/Web/javascript) | `/` | н/д |
-| [jQuery](https://jquery.com/) | `/` | н/д |
-| [KnockoutJS](https://knockoutjs.com/) | `dist` | н/д |
-| [лителемент](https://lit-element.polymer-project.org/) | `dist` | н/д |
-| [марко](https://markojs.com/) | `public` | н/д |
-| [Метеор](https://www.meteor.com/) | `bundle` | н/д |
-| [мисрил](https://mithril.js.org/) | `dist` | н/д |
-| [Polymer](https://www.polymer-project.org/) | `build/default` | н/д |
-| [преакт](https://preactjs.com/) | `build` | н/д |
-| [React](https://reactjs.org/) | `build` | н/д |
-| [Трафарета](https://stenciljs.com/) | `www` | н/д |
-| [Svelte](https://svelte.dev/) | `public` | н/д |
-| [Three.js](https://threejs.org/) | `/` | н/д |
-| [TypeScript](https://www.typescriptlang.org/) | `dist` | н/д |
-| [Vue.js](https://vuejs.org/) | `dist` | н/д |
+| [глиммер](https://glimmerjs.com/) | `dist` | Недоступно |
+| [HTML](https://developer.mozilla.org/docs/Web/HTML) | `/` | Недоступно |
+| [хиперапп](https://hyperapp.dev/) | `/` | Недоступно |
+| [JavaScript](https://developer.mozilla.org/docs/Web/javascript) | `/` | Недоступно |
+| [jQuery](https://jquery.com/) | `/` | Недоступно |
+| [KnockoutJS](https://knockoutjs.com/) | `dist` | Недоступно |
+| [лителемент](https://lit-element.polymer-project.org/) | `dist` | Недоступно |
+| [марко](https://markojs.com/) | `public` | Недоступно |
+| [Метеор](https://www.meteor.com/) | `bundle` | Недоступно |
+| [мисрил](https://mithril.js.org/) | `dist` | Недоступно |
+| [Polymer](https://www.polymer-project.org/) | `build/default` | Недоступно |
+| [преакт](https://preactjs.com/) | `build` | Недоступно |
+| [React](https://reactjs.org/) | `build` | Недоступно |
+| [Трафарета](https://stenciljs.com/) | `www` | Недоступно |
+| [Svelte](https://svelte.dev/) | `public` | Недоступно |
+| [Three.js](https://threejs.org/) | `/` | Недоступно |
+| [TypeScript](https://www.typescriptlang.org/) | `dist` | Недоступно |
+| [Vue.js](https://vuejs.org/) | `dist` | Недоступно |
 
 <sup>1</sup> приведенная выше таблица не является исчерпывающим списком платформ и библиотек, которые работают со статическими веб-приложениями Azure.
 
 <sup>2</sup> неприменимо
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Конфигурация сборки и рабочего процесса](github-actions-workflow.md)

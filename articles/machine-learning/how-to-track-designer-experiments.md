@@ -12,10 +12,10 @@ ms.date: 07/30/2020
 ms.topic: conceptual
 ms.custom: how-to
 ms.openlocfilehash: bffbf32cf5faa936a00444f1f39facaf226b8ef2
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90885972"
 ---
 # <a name="enable-logging-in-azure-machine-learning-designer-pipelines"></a>Включение ведения журнала в конвейерах конструктора Машинное обучение Azure
@@ -59,7 +59,7 @@ ms.locfileid: "90885972"
         return dataframe1,
     ```
     
-В этом коде для записи значений в журнал используется пакет SDK для Машинное обучение Azure Python. Он использует Run. get_context () для получения контекста текущего выполнения. Затем он записывает значения в этот контекст с помощью метода Run. Parent. log (). Он использует `parent` для записи значений в родительский запуск конвейера, а не для запуска модуля.
+В этом коде для записи значений в журнал используется пакет SDK для Машинное обучение Azure Python. Для получения контекста текущего запуска используется Run.get_context (). Затем он записывает значения в этот контекст с помощью метода Run. Parent. log (). Он использует `parent` для записи значений в родительский запуск конвейера, а не для запуска модуля.
 
 Дополнительные сведения о том, как использовать пакет SDK для Python для записи значений в журнал, см. [в разделе Включение ведения журнала в учебных курсах машинного обучения Azure](how-to-track-experiments.md).
 
@@ -74,7 +74,7 @@ ms.locfileid: "90885972"
 
     ![Просмотр метрик выполнения в студии](./media/how-to-track-experiments/experiment-page-metrics-across-runs.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье вы узнали, как использовать журналы в конструкторе. Дальнейшие действия см. в соответствующих статьях:
 

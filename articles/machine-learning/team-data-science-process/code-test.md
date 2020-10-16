@@ -12,10 +12,10 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=weig, previous-ms.author=weig
 ms.openlocfilehash: fc837405e03ffac41d216a5ba18384208b07aaf1
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87090303"
 ---
 # <a name="data-science-code-testing-on-azure-with-the-team-data-science-process-and-azure-devops-services"></a>Тестирование кода обработки и анализа данных в Azure с помощью командного процесса обработки и анализа данных и Azure DevOps Services
@@ -54,7 +54,7 @@ ms.locfileid: "87090303"
     
     ![Процесс создания проекта](./media/code-test/create_python_project_in_vs.PNG)
 
-    ![обозреватель решений](./media/code-test/solution_explorer_in_vs.PNG)
+    ![Обозреватель решений](./media/code-test/solution_explorer_in_vs.PNG)
 
 1. Передайте код проекта в репозиторий кода проекта Azure DevOps: 
 
@@ -112,11 +112,11 @@ ms.locfileid: "87090303"
 
 1. Настройте автоматическую сборку и тестирование в Azure DevOps:
 
-    А. В репозитории проекта выберите **Build and Release** (Сборка и выпуск), а затем щелкните **+Создать**, чтобы создать процесс сборки.
+    a. В репозитории проекта выберите **Build and Release** (Сборка и выпуск), а затем щелкните **+Создать**, чтобы создать процесс сборки.
 
     ![Выбранные параметры для запуска нового процесса сборки](./media/code-test/create_new_build.PNG)
 
-    Б. Следуйте инструкциям на экране, чтобы выбрать расположение исходного кода, имя проекта, репозиторий и сведения о ветви.
+    b. Следуйте инструкциям на экране, чтобы выбрать расположение исходного кода, имя проекта, репозиторий и сведения о ветви.
     
     ![Источник, имя, репозиторий и сведения о ветви](./media/code-test/fill_in_build_info.PNG)
 

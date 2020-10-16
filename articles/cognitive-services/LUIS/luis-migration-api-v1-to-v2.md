@@ -10,10 +10,10 @@ ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 04/02/2019
 ms.openlocfilehash: e1e9ac4ceef843712cc2e39f26ff0aca5341e201
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91541328"
 ---
 # <a name="api-v1-to-v2-migration-guide-for-luis-apps"></a>Руководство по переходу с API версии 1 на API версии 2 для приложений на основе LUIS
@@ -165,7 +165,7 @@ LUIS предлагает высказывания из существующих
 ## <a name="common-reasons-for-http-response-status-codes"></a>Наиболее распространенные причины для кодов ответа HTTP
 См. раздел [Коды ответов API LUIS](luis-reference-response-codes.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Используйте документацию по API версии 2, чтобы обновить существующие вызовы REST для API [конечных точек](https://go.microsoft.com/fwlink/?linkid=2092356) и [разработки](https://go.microsoft.com/fwlink/?linkid=2092087) LUIS.
 

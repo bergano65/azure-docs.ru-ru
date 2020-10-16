@@ -12,10 +12,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: da80af9fe598186fa25d59601c9fa4faccb4286a
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87447039"
 ---
 # <a name="import-and-export-azure-ad-connect-configuration-settings-public-preview"></a>Импорт и экспорт Azure AD Connect параметры конфигурации (общедоступная Предварительная версия)
@@ -105,6 +105,6 @@ Azure Active Directory (Azure AD) Connect deployments отличаются от 
  ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Оборудование и предварительные требования](how-to-connect-install-prerequisites.md) 
-- [Параметры Express](how-to-connect-install-express.md)
+- [Стандартные параметры](how-to-connect-install-express.md)
 - [Настраиваемые параметры](how-to-connect-install-custom.md)
 - [Установка агентов Azure AD Connect Health](how-to-connect-health-agent-install.md) 

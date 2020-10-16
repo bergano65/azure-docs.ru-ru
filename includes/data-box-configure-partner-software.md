@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 11/20/2018
 ms.author: alkohli
 ms.openlocfilehash: cbf6d01925e1924bc5f3c7f1e99840d479fef296
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "67185953"
 ---
 Настройте программное обеспечение партнера, чтобы подключиться к клиенту. Чтобы подключиться к программному обеспечению партнеров, вам, как правило, необходима информация (может отличаться), полученная из страницы локального пользовательского интерфейса **Подключиться и копировать** на предыдущем этапе.

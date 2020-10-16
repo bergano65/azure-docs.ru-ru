@@ -7,10 +7,10 @@ ms.topic: how-to
 ms.date: 09/30/2020
 ms.author: v-erkel
 ms.openlocfilehash: 70f350204796099e02f7afe829a6e2e1fdf653c8
-ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91613127"
 ---
 # <a name="edit-storage-targets"></a>Изменение целевых расположений хранилищ
@@ -127,7 +127,7 @@ $ az hpc-cache storage-target remove --resource-group cache-rg --cache-name doc-
 * ``nfs-export`` — Экспорт системы хранения, связываемый с путем, ориентированным на клиента
 * ``target-path`` (необязательно) — подкаталог экспорта (при необходимости).
 
-Пример: ``--junction namespace-path="/nas-1" nfs-export="/datadisk1" target-path="/test"``
+Например, ``--junction namespace-path="/nas-1" nfs-export="/datadisk1" target-path="/test"``.
 
 Необходимо указать все три значения для каждого пути в ``--junction`` операторе. Используйте существующие значения для любых значений, которые не нужно изменять.
 
@@ -165,7 +165,7 @@ az hpc-cache nfs-storage-target update --cache-name mycache \
 
 Команда Update почти идентична команде, используемой для добавления целевого объекта хранилища NFS. Дополнительные сведения и примеры см. в статье [Создание целевого объекта хранилища NFS](hpc-cache-add-storage.md#create-an-nfs-storage-target) .
 
-Чтобы изменить модель использования, обновите ``--nfs3-usage-model`` параметр. Пример: ``--nfs3-usage-model WRITE_WORKLOAD_15``
+Чтобы изменить модель использования, обновите ``--nfs3-usage-model`` параметр. Например, ``--nfs3-usage-model WRITE_WORKLOAD_15``.
 
 Также требуются значения имени кэша, имени целевого объекта хранилища и группы ресурсов.
 
@@ -175,7 +175,7 @@ az hpc-cache nfs-storage-target update --cache-name mycache \
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения об этих параметрах см. в статье [Добавление целевых объектов хранилища](hpc-cache-add-storage.md) .
 * Дополнительные советы по использованию виртуальных путей см. [в статье Планирование обобщенного пространства имен](hpc-cache-namespace.md) .

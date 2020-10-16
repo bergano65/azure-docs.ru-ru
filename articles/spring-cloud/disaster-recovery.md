@@ -7,16 +7,16 @@ ms.topic: conceptual
 ms.date: 10/24/2019
 ms.author: brendm
 ms.custom: devx-track-java
-ms.openlocfilehash: 19e022073f43548a91fad76cb380a75205237bbd
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: e18193b40bb7c59a21a279f451673dc7d11140e4
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90892557"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92092908"
 ---
 # <a name="azure-spring-cloud-disaster-recovery"></a>Аварийное восстановление Azure Spring Cloud
 
-**Эта статья относится к:** ✔️ Java ✔️ C #
+**Эта статья применима к:** ✔️ Java ✔️ C#
 
 В этой статье объясняются некоторые стратегии, которые можно использовать для защиты облачных приложений Azure Spring Cloud от простоя.  Любой регион или центр обработки данных может столкнуться с простоями, вызванными региональными авариями, но тщательное планирование может снизить влияние на клиентов.
 
@@ -50,7 +50,7 @@ ms.locfileid: "90892557"
 
 2. Настройка личного домена для службы. Следуйте инструкциям в [документе о личном домене](spring-cloud-tutorial-custom-domain.md), чтобы настроить личный домен для этих двух существующих экземпляров службы. После успешной настройки оба экземпляра службы будут привязаны к пользовательскому домену: bcdr-test.contoso.com
 
-3. Создайте диспетчер трафика и две конечные точки: [Создание профиля диспетчера трафика с помощью портала Azure](https://docs.microsoft.com/azure/traffic-manager/quickstart-create-traffic-manager-profile).
+3. Создайте диспетчер трафика и две конечные точки: [Создание профиля диспетчера трафика с помощью портала Azure](../traffic-manager/quickstart-create-traffic-manager-profile.md).
 
 Вот профиль диспетчера трафика:
 * DNS-имя диспетчера трафика: `http://asc-bcdr.trafficmanager.net`
@@ -68,4 +68,3 @@ ms.locfileid: "90892557"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Краткое руководство. Развертывание первого приложения Azure Spring Cloud](spring-cloud-quickstart.md)
- 

@@ -12,10 +12,10 @@ ms.topic: article
 ms.date: 08/19/2019
 ms.author: Zhchia
 ms.openlocfilehash: d9bb21ab4b5610c8318fe4ee869f1140faf55367
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88544236"
 ---
 # <a name="tutorial-configure-elium-for-automatic-user-provisioning"></a>Учебник. Настройка Elium для автоматической подготовки пользователей
@@ -116,7 +116,7 @@ Azure AD использует концепцию, называемую *назн
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-1. Нажмите **Сохранить**.
+1. Выберите команду **Сохранить**.
 
 1. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с Elium**.
 

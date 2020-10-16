@@ -7,10 +7,10 @@ ms.author: marwolff
 ms.date: 06/23/2020
 ms.custom: devx-track-js
 ms.openlocfilehash: 5b15492a36032a53ac81929eb55bce0bc70e040c
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91335137"
 ---
 # <a name="source-map-support-for-javascript-applications"></a>Поддержка карт исходного кода для приложений JavaScript
@@ -24,7 +24,7 @@ Application Insights поддерживает отправку карт исхо
 
 Если у вас уже есть учетная запись хранения или контейнер больших двоичных объектов, этот шаг можно пропустить.
 
-1. [Создать новую учетную запись хранения][create storage account]
+1. [Создание новой учетной записи хранения][create storage account]
 2. [Создайте контейнер больших двоичных объектов][create blob container] в вашей учетной записи хранения. Не забудьте установить для параметра "общий доступ" значение `Private` , чтобы убедиться, что исходные карты не являются общедоступными.
 
 > [!div class="mx-imgBorder"]

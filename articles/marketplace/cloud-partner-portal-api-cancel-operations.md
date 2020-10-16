@@ -8,10 +8,10 @@ author: mingshen-ms
 ms.author: mingshen
 ms.date: 07/14/2020
 ms.openlocfilehash: 095d9cf68374ee81cafdb6e7a32df29a57d122cb
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87287927"
 ---
 # <a name="cancel-operation"></a>Отмена операции
@@ -29,12 +29,12 @@ ms.locfileid: "87287927"
 
 |  **Имя**    |      **Описание**                                  |    **Data type**  |
 | ------------ |     ----------------                                  |     -----------   |
-| publisherid  |  Идентификатор издателя, например `contoso`         |   Тип String          |
-| offerId      |  Идентификатор предложения                                     |   Тип String          |
+| publisherid  |  Идентификатор издателя, например `contoso`         |   Строковый тип          |
+| offerId      |  Идентификатор предложения                                     |   Строковый тип          |
 | api-version  |  Текущая версия клиента API                               |    Дата           |
 |  |  |  |
 
-## <a name="header"></a>Заголовок
+## <a name="header"></a>Header
 ------
 
 |  **имя**;              |  **Значение**         |

@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 04/29/2020
 ms.author: pafarley
 ms.openlocfilehash: d6bcb5485833fbfaa3eb72191ee54b1ee69bab04
-ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "82594301"
 ---
 # <a name="use-an-onnx-model-from-custom-vision-with-windows-ml-preview"></a>Использование модели ONNX из Пользовательской службы визуального распознавания с Windows ML (предварительная версия)
@@ -25,7 +25,7 @@ ms.locfileid: "82594301"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Windows 10, версия 1809 или более поздняя.
+* Windows 10 версии 1809 и выше
 * Windows SDK для сборки 17763 или более поздней версии.
 * Visual Studio 2017 версии 15.7 или более поздней с включенной рабочей нагрузкой __Разработка приложений для универсальной платформы Windows__;
 * На компьютере включен режим разработчика. Дополнительные сведения см. в разделе [Включение устройства для разработки](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development).
@@ -59,7 +59,7 @@ ms.locfileid: "82594301"
 1. Используйте `F5` для сборки и запуска проекта.
 1. Нажмите кнопку, чтобы выбрать изображение для оценки.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о других способах экспорта и использования модели пользовательской службы визуального распознавания см. в следующих документах:
 

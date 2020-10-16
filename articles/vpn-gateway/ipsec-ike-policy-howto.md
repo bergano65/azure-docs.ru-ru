@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 09/18/2020
 ms.author: yushwang
 ms.openlocfilehash: eda920640667abc6620c5c90ee7d04a44789353e
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90996755"
 ---
 # <a name="configure-ipsecike-policy-for-s2s-vpn-or-vnet-to-vnet-connections-azure-portal"></a>Настройка политики IPsec/IKE для подключений S2S VPN или VNet-to-VNet: портал Azure
@@ -116,7 +116,7 @@ ms.locfileid: "90996755"
 
 В этом разделе описано, как создать VPN-подключение типа "сеть — сеть" с помощью политики IPsec/IKE. Следующие шаги создают подключение, как показано на следующей схеме.
 
-:::image type="content" source="./media/ipsec-ike-policy-howto/site-to-site-diagram.png" alt-text="Политика "сеть — сеть"" border="false":::
+:::image type="content" source="./media/ipsec-ike-policy-howto/site-to-site-diagram.png" alt-text="Диаграмма политики IPsec/IKE" border="false":::
 
 ### <a name="step-1---create-the-virtual-network-vpn-gateway-and-local-network-gateway"></a><a name="createvnet1"></a>Шаг 1. Создание виртуальной сети, VPN-шлюза и шлюза локальной сети
 
@@ -124,19 +124,19 @@ ms.locfileid: "90996755"
 
 * **Виртуальная сеть:**  TestVNet1
 
-   :::image type="content" source="./media/ipsec-ike-policy-howto/testvnet-1.png" alt-text="Региональной":::
+   :::image type="content" source="./media/ipsec-ike-policy-howto/testvnet-1.png" alt-text="Диаграмма политики IPsec/IKE":::
 
 * **VPN-шлюз:** VNet1GW
 
-   :::image type="content" source="./media/ipsec-ike-policy-howto/vnet-1-gateway.png" alt-text="Шлюз":::
+   :::image type="content" source="./media/ipsec-ike-policy-howto/vnet-1-gateway.png" alt-text="Диаграмма политики IPsec/IKE":::
 
 * **Шлюз локальной сети:** Site6
 
-   :::image type="content" source="./media/ipsec-ike-policy-howto/lng-site-6.png" alt-text="Сайт":::
+   :::image type="content" source="./media/ipsec-ike-policy-howto/lng-site-6.png" alt-text="Диаграмма политики IPsec/IKE":::
 
 * **Подключение:** VNet1 Site6
 
-    :::image type="content" source="./media/ipsec-ike-policy-howto/connection-site-6.png" alt-text="Соединение":::
+    :::image type="content" source="./media/ipsec-ike-policy-howto/connection-site-6.png" alt-text="Диаграмма политики IPsec/IKE":::
 
 ### <a name="step-2---configure-ipsecike-policy-on-the-s2s-vpn-connection"></a><a name="s2sconnection"></a>Шаг 2. Настройка политики IPsec/IKE для VPN-подключения S2S
 
@@ -147,21 +147,15 @@ ms.locfileid: "90996755"
 
 1. Перейдите к ресурсу подключения **VNet1toSite6**в портал Azure. Выберите страницу **Конфигурация** и выберите **Настраиваемая** политика IPSec/IKE, чтобы отобразить все параметры конфигурации. На следующем снимке экрана показана конфигурация в соответствии со списком:
 
-    :::image type="content" source="./media/ipsec-ike-policy-howto/policy-site-6.png" alt-text="Сайт 6":::
+    :::image type="content" source="./media/ipsec-ike-policy-howto/policy-site-6.png" alt-text="Диаграмма политики IPsec/IKE":::
 
 1. Если для IPsec используется алгоритм GCMAES, необходимо указать одинаковую длину ключа и алгоритма для шифрования и целостности данных IPsec. Например, на следующем снимке экрана указывается GCMAES128 для шифрования IPsec и IPsec.
 
-   :::image type="content" source="./media/ipsec-ike-policy-howto/gcmaes.png" alt-text="GCMAES одинаковую для IPsec":::
+   :::image type="content" source="./media/ipsec-ike-policy-howto/gcmaes.png" alt-text="Диаграмма политики IPsec/IKE":::
 
 1. При необходимости можно выбрать **включить** для параметра **использовать селекторы трафика на основе политики** , чтобы разрешить VPN-шлюзу Azure ПОДключаться к VPN-устройствам на основе политик локально, как описано выше.
 
-   :::image type="content" source="./media/ipsec-ike-policy-howto/policy-based-selector.png" alt-text="Селектор трафика на основе политики":::
-
-1. После выбора всех параметров нажмите кнопку **сохранить** , чтобы зафиксировать изменения в ресурсе подключения. Политика будет применена примерно через минуту.
-
-> [!IMPORTANT]
->
-> * После указания для подключения политики IPsec/IKE VPN-шлюз Azure будет только отправлять и принимать предложения IPsec/IKE с определенными алгоритмами шифрования и уровнями стойкости ключей для этого подключения. Локальное VPN-устройство для подключения должно использовать или принимать точную комбинацию политик. Иначе VPN-туннель типа "сеть — сеть" не будет установлен.
+   :::image type="content" source="./media/ipsec-ike-policy-howto/policy-based-selector.png" alt-text="Диаграмма политики IPsec/IKE" не будет установлен.
 >
 > * Параметры **выбора трафика на основе политики** и **время ожидания DPD** можно указать с помощью политики **по умолчанию** без настраиваемой политики IPSec/IKE, как показано на снимке экрана выше.
 >
@@ -170,13 +164,13 @@ ms.locfileid: "90996755"
 
 Шаги по созданию подключения между виртуальными сетями с политикой IPsec/IKE аналогичны действиям VPN-подключения S2S.
 
-:::image type="content" source="./media/ipsec-ike-policy-howto/vnet-policy.png" alt-text="Схема политики "Виртуальная сеть — виртуальная сети"" border="false":::
+:::image type="content" source="./media/ipsec-ike-policy-howto/vnet-policy.png" alt-text="Диаграмма политики IPsec/IKE" border="false":::
 
 1. Чтобы создать подключение между виртуальными сетями, выполните действия, описанные в статье Создание подключения " [Виртуальная](vpn-gateway-vnet-vnet-rm-ps.md) сеть — виртуальная сеть".
 
 2. После выполнения этих действий вы увидите два подключения между виртуальными сетями, как показано на снимке экрана ниже ресурса VNet2GW:
 
-   :::image type="content" source="./media/ipsec-ike-policy-howto/vnet-vnet-connections.png" alt-text="Подключения "виртуальная сеть — виртуальная сеть"":::
+   :::image type="content" source="./media/ipsec-ike-policy-howto/vnet-vnet-connections.png" alt-text="Диаграмма политики IPsec/IKE":::
 
 3. Перейдите к ресурсу подключения и перейдите на страницу **конфигурации** на портале. Выберите **Пользовательская** в **политике IPSec/IKE** , чтобы отобразить параметры настраиваемой политики. Выберите алгоритмы шифрования с соответствующей длиной ключей.
 
@@ -184,14 +178,7 @@ ms.locfileid: "90996755"
    * IKE: AES128, SHA1, DHGroup14, DPD timeout 45 с
    * IPsec: GCMAES128, GCMAES128, PFS14, срок действия SA (14 400 секунд и 102 400 000 КБ).
 
-   :::image type="content" source="./media/ipsec-ike-policy-howto/vnet-vnet-policy.png" alt-text="Политика подключения":::
-
-4. Нажмите кнопку **сохранить** , чтобы применить изменения политики к ресурсу подключения.
-
-5. Примените ту же политику к другому ресурсу подключения VNet2toVNet1. В противном случае VPN-туннель IPsec/IKE не будет подключаться из-за несоответствия политики.
-
-   > [!IMPORTANT]
-   > После указания для подключения политики IPsec/IKE VPN-шлюз Azure будет только отправлять и принимать предложения IPsec/IKE с определенными алгоритмами шифрования и уровнями стойкости ключей для этого подключения. Политики IPsec для обоих подключений должны быть одинаковыми, иначе подключение типа "виртуальная сеть — виртуальная сеть" не будет установлено.
+   :::image type="content" source="./media/ipsec-ike-policy-howto/vnet-vnet-policy.png" alt-text="Диаграмма политики IPsec/IKE" не будет установлено.
 
 6. После выполнения этих действий подключение будет установлено через несколько минут, и вы получите следующую топологию сети:
 
@@ -203,10 +190,10 @@ ms.locfileid: "90996755"
 
 2. Выберите **значение по умолчанию** в параметре **политика IPSec/IKE** . Это приведет к удалению всех пользовательских политик, ранее указанных в подключении, и восстановлению параметров IPsec/IKE по умолчанию для этого подключения:
 
-   :::image type="content" source="./media/ipsec-ike-policy-howto/delete-policy.png" alt-text="Удаление политики":::
+   :::image type="content" source="./media/ipsec-ike-policy-howto/delete-policy.png" alt-text="Диаграмма политики IPsec/IKE":::
 
 3. Нажмите кнопку **сохранить** , чтобы удалить настраиваемую политику и восстановить параметры IPsec/IKE по умолчанию для подключения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о селекторах трафика на основе политик см. в статье [Подключение VPN-шлюзов Azure к нескольким локальным VPN-устройствам на основе политики с помощью PowerShell](vpn-gateway-connect-multiple-policybased-rm-ps.md).

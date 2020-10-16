@@ -12,12 +12,12 @@ ms.author: martinle
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
 tag: azure-Synapse
-ms.openlocfilehash: 9cf65b2fdeb7faa03b950593db86dd32a4ef91a7
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: ea4038e88d41a089958d4199e4c5a00f0d2acabd
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86495744"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92015572"
 ---
 # <a name="analyze-data-with-azure-machine-learning"></a>Анализ данных с помощью машинного обучения Azure
 
@@ -56,7 +56,7 @@ FROM [dbo].[vTargetMail]
 
 Когда данные доступны в Azure Data Lake Storage, хранилища данных в Машинное обучение Azure используются для [подключения к службам хранилища Azure](https://docs.microsoft.com/azure/machine-learning/how-to-access-data). Выполните следующие действия, чтобы создать хранилище данных и соответствующий DataSet.
 
-1. Запустите студию машинного обучения Azure либо из портал Azure, либо войдите в [машинное обучение Azure Studio](https://ml.azure.com/).
+1. Запустите Машинное обучение Azure Studio из портал Azure или войдите в [машинное обучение Azure Studio](https://ml.azure.com/).
 
 1. Щелкните **хранилища данных** в левой области в разделе **Управление** , а затем щелкните **создать хранилище данных**.
 
@@ -90,7 +90,7 @@ FROM [dbo].[vTargetMail]
 
 1. Перетащите созданный ранее набор данных в холст.
 
-    :::image type="content" source="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/import-dataset.png" alt-text="Снимок экрана модуля набора данных на холсте.":::
+    :::image type="content" source="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/import-dataset.png" alt-text="Снимок экрана левой панели интерфейса Машинное обучение Azure":::
 
 ## <a name="clean-the-data"></a>Очистка данных
 
@@ -100,13 +100,13 @@ FROM [dbo].[vTargetMail]
 
 1. В разделе **Data Transformation < Manipulation** (Преобразование данных < Манипуляции) перетащите модуль **Select Columns in Dataset** (Выбор столбцов в наборе данных) на холст. Подключите этот модуль к модулю **набора данных** .
 
-    :::image type="content" source="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/select-columns-zoomed-in.png" alt-text="Снимок экрана: Модуль выбора столбцов на холсте." lightbox="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/select-columns-zoomed-out.png":::
+    :::image type="content" source="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/select-columns-zoomed-in.png" alt-text="Снимок экрана левой панели интерфейса Машинное обучение Azure" lightbox="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/select-columns-zoomed-out.png":::
 
 1. Щелкните модуль, чтобы открыть панель свойств. Щелкните Изменить столбец, чтобы указать столбцы, которые нужно удалить.
 
-1. Исключите два столбца. CustomerAlternateKey и GeographyKey. Щелкните **Сохранить**.
+1. Исключите два столбца. CustomerAlternateKey и GeographyKey. Нажмите кнопку **Сохранить**
 
-    :::image type="content" source="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/drop-columns.png" alt-text="Снимок экрана, показывающий удаленные столбцы.":::
+    :::image type="content" source="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/drop-columns.png" alt-text="Снимок экрана левой панели интерфейса Машинное обучение Azure":::
 
 ## <a name="build-the-model"></a>Создание модели
 
@@ -116,7 +116,7 @@ FROM [dbo].[vTargetMail]
 
 1. На панели свойств введите 0,8 для **целой части строк в первом выходном наборе данных**.
 
-    :::image type="content" source="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/split-data.png" alt-text="Снимок экрана, показывающий соотношение разбиения 0,8.":::
+    :::image type="content" source="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/split-data.png" alt-text="Снимок экрана левой панели интерфейса Машинное обучение Azure":::
 
 1. Перетащите на холст модуль **Двухклассовое увеличивающееся дерево принятия решений** .
 
@@ -124,9 +124,9 @@ FROM [dbo].[vTargetMail]
 
 1. Для модели обучение модели в параметре **столбец метки** на панели Свойства выберите Изменить столбец. Выберите столбец **BikeBuyer** в качестве прогнозируемого столбца и нажмите кнопку **сохранить**.
 
-    :::image type="content" source="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/label-column.png" alt-text="Снимок экрана с выбранным столбцом меток BikeBuyer.":::
+    :::image type="content" source="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/label-column.png" alt-text="Снимок экрана левой панели интерфейса Машинное обучение Azure":::
 
-    :::image type="content" source="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/train-model.png" alt-text="Снимок экрана, показывающий модуль обучения модели, подключенный к высококлассному дереву принятия решений и разделенным модулям данных.":::
+    :::image type="content" source="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/train-model.png" alt-text="Снимок экрана левой панели интерфейса Машинное обучение Azure":::
 
 ## <a name="score-the-model"></a>Оценка модели
 
@@ -134,7 +134,7 @@ FROM [dbo].[vTargetMail]
 
 1. Перетащите модуль **Score Model** (Оценка модели) на холст и подключите его к модулям **Обучение модели** и **Split Data** (Разделение данных).
 
-1. Перетащите **перцептрона алгоритм Байеса с двумя классами** на холст эксперимента. Вы сравните, как этот алгоритм выполняет сравнение с увеличивающимся деревом принятия решений в два класса.
+1. Перетащите **перцептрона алгоритм Байеса с двумя классами** на холст эксперимента. Вы сравните, как этот алгоритм выполняет сравнение с Two-Class увеличивающимся деревом принятия решений.
 
 1. Скопируйте и вставьте модули **обучение модели** и **оценки** на холст.
 
@@ -142,11 +142,11 @@ FROM [dbo].[vTargetMail]
 
 1. Нажмите кнопку **Отправить** , чтобы настроить выполнение конвейера.
 
-    :::image type="content" source="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/algo-comparison-zoomed-in.png" alt-text="Снимок экрана всех оставшихся модулей на холсте." lightbox="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/algo-comparison-zoomed-out.png":::
+    :::image type="content" source="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/algo-comparison-zoomed-in.png" alt-text="Снимок экрана левой панели интерфейса Машинное обучение Azure" lightbox="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/algo-comparison-zoomed-out.png":::
 
 1. После завершения выполнения щелкните правой кнопкой мыши модуль **Анализ модели** и выберите команду **визуализировать результаты оценки**.
 
-    :::image type="content" source="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/result-visualize-zoomed-out.png" alt-text="Снимок экрана результатов.":::
+    :::image type="content" source="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/result-visualize-zoomed-out.png" alt-text="Снимок экрана левой панели интерфейса Машинное обучение Azure":::
 
 Отображенные метрики представляют собой ROC-кривую, lift-кривую, а также диаграмму соотношения полноты и точности. Взгляните на эти метрики, чтобы убедиться, что первая модель выполнена лучше, чем вторая. Чтобы просмотреть прогнозы первой модели, щелкните правой кнопкой мыши модуль оценка модели и выберите команду визуализировать показательный набор данных, чтобы увидеть прогнозируемые результаты.
 

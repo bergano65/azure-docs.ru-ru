@@ -7,10 +7,10 @@ ms.date: 03/25/2020
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: ebf91f68e45148d9a609ff671ffa4683bd74c82c
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89226120"
 ---
 # <a name="connect-to-windows-virtual-desktop-with-the-android-client"></a>Подключение к виртуальному рабочему столу Windows с помощью клиента Android
@@ -47,6 +47,6 @@ ms.locfileid: "89226120"
 
 Когда вы подпишетесь на веб-канал, его содержимое будет регулярно автоматически обновляться. Ресурсы могут добавляться, изменяться или удаляться в соответствии с изменениями, внесенными администратором.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об использовании клиента Android см. в статье Начало [работы с клиентом Android](/windows-server/remote/remote-desktop-services/clients/remote-desktop-android/).

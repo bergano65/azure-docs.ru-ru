@@ -9,23 +9,23 @@ ms.service: virtual-machines
 ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 6/8/2020
-ms.openlocfilehash: 97d3b87edad56394d42daca19cdb8dbf962fade9
-ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
+ms.openlocfilehash: b8f6768ebf988ff568739c86303b52ea5b0a9234
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91649513"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92018718"
 ---
 # <a name="ev4-and-esv4-series"></a>Серии Ev4 и Esv4
 
-Серия Ev4 и Esv4 на &reg; &reg; процессорах Intel Xeon Platinum 8272CL (Cascade Lake) в конфигурации с технологией Hyper-Threading идеально подходит для различных корпоративных приложений с большим объемом памяти и функций до 504GiB ОЗУ. В нем реализована постоянная вся частота процессора Turbo 3,4 ГГц.
+Серия Ev4 и Esv4 на &reg; &reg; процессорах Intel Xeon Platinum 8272CL (Cascade Lake) в конфигурации с технологией Hyper-Threading идеально подходит для различных корпоративных приложений с большим объемом памяти и функций до 504GiB ОЗУ. Он включает всю частоту ядра Turbo 3,4 ГГц.
 
 > [!NOTE]
 > Часто задаваемые вопросы см. в статье  [размеры виртуальных машин Azure без локального временного диска](azure-vms-no-temp-disk.md).
 
 ## <a name="ev4-series"></a>Серия Ev4
 
-Размеры серии Ev4 работают на Intel Xeon &reg; Platinum 8272CL (Cascade Lake). Экземпляры серии Ev4 идеально подходят для корпоративных приложений с большим объемом памяти. Виртуальные машины серии Ev4 — &reg; технология Intel Hyper-Threading.
+Размеры серии Ev4 работают на Intel Xeon &reg; Platinum 8272CL (Cascade Lake). Экземпляры серии Ev4 идеально подходят для корпоративных приложений с большим объемом памяти. Виртуальные машины серии Ev4 имеют функцию Intel &reg; Hyper-Threading Technology.
 
 Удаление хранилища данных диска оплачивается отдельно от виртуальных машин. Чтобы использовать диски хранилища класса Premium, используйте размеры Esv4. Показатели ценообразования и выставления счетов для размеров Esv4 совпадают с серией Ev4.
 
@@ -51,7 +51,7 @@ ms.locfileid: "91649513"
 
 ## <a name="esv4-series"></a>Серия Esv4
 
-Размеры серии Esv4 работают на Intel &reg; Xeon &reg; Platinum 8272CL (Cascade Lake). Экземпляры серии Esv4 идеально подходят для корпоративных приложений с большим объемом памяти. Виртуальные машины серии Evs4 — &reg; технология Intel Hyper-Threading. Удаление хранилища данных диска оплачивается отдельно от виртуальных машин.
+Размеры серии Esv4 работают на Intel &reg; Xeon &reg; Platinum 8272CL (Cascade Lake). Экземпляры серии Esv4 идеально подходят для корпоративных приложений с большим объемом памяти. Виртуальные машины серии Evs4 имеют функцию Intel &reg; Hyper-Threading Technology. Удаление хранилища данных диска оплачивается отдельно от виртуальных машин.
 
 [ACU](acu.md): 195-210<br>
 [Хранилище класса Premium](premium-storage-performance.md): поддерживается<br>

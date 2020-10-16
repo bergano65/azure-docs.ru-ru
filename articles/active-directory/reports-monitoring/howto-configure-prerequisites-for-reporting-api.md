@@ -18,10 +18,10 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 22a8a0efe16b4ab2ea7b8a647284a3449741ac02
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89226970"
 ---
 # <a name="prerequisites-to-access-the-azure-active-directory-reporting-api"></a>Предварительные требования для доступа к API отчетов Azure Active Directory
@@ -46,7 +46,7 @@ API отчетов использует [OAuth](../../api-management/api-managem
 
 - Администратор безопасности
 
-- глобального администратора;
+- глобальный администратор
 
 ## <a name="license-requirements"></a>Требования к лицензии
 
@@ -87,7 +87,7 @@ API отчетов использует [OAuth](../../api-management/api-managem
 
     c. В **текстовом поле** **URL-адрес перенаправления** выберите введите `https://localhost` .
 
-    г. Нажмите **Зарегистрировать**. 
+    d. Выберите **Зарегистрировать**. 
 
 
 ## <a name="grant-permissions"></a>Предоставить разрешения 

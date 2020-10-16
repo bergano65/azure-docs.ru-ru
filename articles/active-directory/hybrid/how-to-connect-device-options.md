@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 90d8cc39174f6392b0c532948305fa713535f0c9
-ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89279233"
 ---
 # <a name="azure-ad-connect-device-options"></a>Azure AD Connect: параметры устройств
@@ -31,7 +31,7 @@ ms.locfileid: "89279233"
 
 ## <a name="configure-device-options-in-azure-ad-connect"></a>Настройка параметров устройств в Azure AD Connect
 
-1.  Запустите Azure AD Connect. На странице **Дополнительные задачи** выберите **Настройка параметров устройств**.  Нажмите кнопку **Далее**.
+1.  Запустите Azure AD Connect. На странице **Дополнительные задачи** выберите **Настройка параметров устройств**.  Щелкните **Далее**.
     ![Настройка параметров устройств](./media/how-to-connect-device-options/deviceoptions.png) 
 
     На странице **Обзор** приводятся подробные сведения.
@@ -43,7 +43,7 @@ ms.locfileid: "89279233"
 2.  Указав учетные данные для Azure AD, на странице "Параметры устройств" можно выбрать операцию для выполнения.
     ![Операции с устройствами](./media/how-to-connect-device-options/deviceoptionsselection.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Настройка гибридного присоединение к Azure AD](../devices/hybrid-azuread-join-plan.md)
 * [Azure AD Connect: включение обратной записи устройств](how-to-connect-device-writeback.md)

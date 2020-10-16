@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 11/11/2019
 ms.author: jeedes
-ms.openlocfilehash: cbcbcb6a649969c5348c3ad445ff43f10372faeb
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 4c4ee5fa6281b0a137bd46a9d3a82db22adc77ea
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91306197"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91760780"
 ---
 # <a name="tutorial-azure-active-directory-ad-single-sign-on-sso-integration-with-f5"></a>Руководство по интеграции единого входа Azure Active Directory с F5
 
@@ -146,38 +146,38 @@ F5 поддерживает единый вход, инициированный 
 
 1. Необходимо импортировать в F5 (расширенный Kerberos) сертификат метаданных, который будет использоваться позже в процессе настройки. Выберите **System > Certificate Management > Traffic Certificate Management >> SSL Certificate List** (Система > Управление сертификатами > Управление сертификатами трафика > Список SSL-сертификатов). Щелкните **"Import"** ("Импортировать") в правом верхнем углу
 
-    ![Настройка F5 (расширенный Kerberos)](./media/advance-kerbf5-tutorial/configure01.png)
+    ![Снимок экрана, на котором выбрана кнопка "Import" (Импортировать) для импорта сертификата метаданных](./media/advance-kerbf5-tutorial/configure01.png)
  
 1. Чтобы настроить SAML IDP, перейдите на страницу **Доступ > Федерация > Поставщик службы SAML > Создать > Из метаданных.**
 
-    ![Настройка F5 (расширенный Kerberos)](./media/advance-kerbf5-tutorial/configure02.png)
+    ![Снимок экрана, на котором показано, как создать поставщик удостоверений SAML из метаданных](./media/advance-kerbf5-tutorial/configure02.png)
 
-    ![Настройка F5 (расширенный Kerberos)](./media/advance-kerbf5-tutorial/configure03.png)
+    ![Снимок экрана, на котором показан экран "Create New SAML IdP Connector" (Создание соединителя поставщика удостоверений SAML)](./media/advance-kerbf5-tutorial/configure03.png)
  
     ![Настройка F5 (расширенный Kerberos)](./media/advance-kerbf5-tutorial/configure04.png)
 
-    ![Настройка F5 (расширенный Kerberos)](./media/advance-kerbf5-tutorial/configure05.png)
+    ![Снимок экрана, на котором показан экран "Single Sign On Service Settings" (Параметры службы единого входа) ](./media/advance-kerbf5-tutorial/configure05.png)
  
 1. Укажите сертификат, отправленный на этапе 3
 
-    ![Настройка F5 (расширенный Kerberos)](./media/advance-kerbf5-tutorial/configure06.png)
+    ![Снимок экрана, на котором показан экран "Edit SAML IdP Connector" (Изменение соединителя поставщика удостоверений SAML)](./media/advance-kerbf5-tutorial/configure06.png)
 
-    ![Настройка F5 (расширенный Kerberos)](./media/advance-kerbf5-tutorial/configure07.png)
+    ![Снимок экрана, на котором показан экран "Single Logout Service Settings" (Параметры службы единого выхода)](./media/advance-kerbf5-tutorial/configure07.png)
 
  1. Чтобы настроить SAML IDP, перейдите на страницу **Доступ > Федерация > Поставщик службы SAML > Локальные службы SP > Создать**.
 
-    ![Настройка F5 (расширенный Kerberos)](./media/advance-kerbf5-tutorial/configure08.png)
+    ![Снимок экрана, на котором показана страница для создания локальной службы SP](./media/advance-kerbf5-tutorial/configure08.png)
  
 1. Нажмите кнопку **ОК**.
 
 1. Выберите конфигурацию SP и щелкните **Bind/UnBind IdP Connectors** (Привязать/отменить привязку соединителей IDP).
 
-     ![Настройка F5 (расширенный Kerberos)](./media/advance-kerbf5-tutorial/configure09.png)
+     ![Снимок экрана, на котором показан поставщик службы SAML](./media/advance-kerbf5-tutorial/configure09.png)
  
  
 1. Щелкните **Добавить новую строку** и выберите **Внешний соединитель IDP**, созданный на предыдущем шаге.
 
-    ![Настройка F5 (расширенный Kerberos)](./media/advance-kerbf5-tutorial/configure10.png)
+    ![Снимок экрана, на котором выбрана кнопка "Add New Row" (Добавить новую строку)](./media/advance-kerbf5-tutorial/configure10.png)
  
 1. Для настройки единого входа Kerberos откройте **Доступ > Единый вход > Kerberos**.
 
@@ -188,54 +188,54 @@ F5 поддерживает единый вход, инициированный 
 
     •   Источник области пользователя `session.logon.last.domain`
 
-    ![Настройка F5 (расширенный Kerberos)](./media/advance-kerbf5-tutorial/configure11.png)
+    ![Снимок экрана, на котором показана страница "Access" (Доступ) > "Single Sign On" (Единый вход)](./media/advance-kerbf5-tutorial/configure11.png)
 
 1. Чтобы настроить профиль доступа, откройте **Доступ > Профиль или политики > Профиль доступа (для политик сеанса)** .
 
-    ![Настройка F5 (расширенный Kerberos)](./media/advance-kerbf5-tutorial/configure12.png)
+    ![Снимок экрана, на котором показана вкладка "Properties" (Свойства) в меню "Profiles/Policies" (Профили и политики)](./media/advance-kerbf5-tutorial/configure12.png)
 
-    ![Настройка F5 (расширенный Kerberos)](./media/advance-kerbf5-tutorial/configure13.png)
+    ![Снимок экрана, на котором показана вкладка "SSO/Auth Domains" (Домены единого входа и аутентификации)](./media/advance-kerbf5-tutorial/configure13.png)
 
-    ![Настройка F5 (расширенный Kerberos)](./media/advance-kerbf5-tutorial/configure14.png)
+    ![Снимок экрана, на котором показана вкладка "Access Policy" (Политика доступа)](./media/advance-kerbf5-tutorial/configure14.png)
 
-    ![Настройка F5 (расширенный Kerberos)](./media/advance-kerbf5-tutorial/configure15.png)
+    ![Снимок экрана, на котором показана вкладка "Properties" (Свойства) в разделе "Access Policy" (Политика доступа)](./media/advance-kerbf5-tutorial/configure15.png)
 
-    ![Настройка F5 (расширенный Kerberos)](./media/advance-kerbf5-tutorial/configure16.png)
+    ![Снимок экрана, на котором показаны свойства для назначения переменной](./media/advance-kerbf5-tutorial/configure16.png)
  
     * session.logon.last.usernameUPN   expr {[mcget {session.saml.last.identity}]}
 
     * session.ad.lastactualdomain  TEXT superdemo.live
 
-    ![Настройка F5 (расширенный Kerberos)](./media/advance-kerbf5-tutorial/configure17.png)
+    ![Снимок экрана, на котором показаны свойства запроса Active Directory](./media/advance-kerbf5-tutorial/configure17.png)
 
     * (userPrincipalName=%{session.logon.last.usernameUPN})
 
-    ![Настройка F5 (расширенный Kerberos)](./media/advance-kerbf5-tutorial/configure18.png)
+    ![Снимок экрана, на котором показана вкладка "Branch Rules" (Правила ветви) и правило "Check Account" (Проверка учетной записи)](./media/advance-kerbf5-tutorial/configure18.png)
 
-    ![Настройка F5 (расширенный Kerberos)](./media/advance-kerbf5-tutorial/configure19.png)
+    ![Снимок экрана, на котором показаны текстовые поля настраиваемой переменной и настраиваемого выражения](./media/advance-kerbf5-tutorial/configure19.png)
 
     * session.logon.last.username  expr { "[mcget {session.ad.last.attr.sAMAccountName}]" }
 
-    ![Настройка F5 (расширенный Kerberos)](./media/advance-kerbf5-tutorial/configure20.png)
+    ![Снимок экрана, на котором показаны значения в полях "SSO Token Name" (Имя токена единого входа) и "SSO Token Password" (Пароль токена единого входа)](./media/advance-kerbf5-tutorial/configure20.png)
 
     * mcget {session.logon.last.username}
     * mcget {session.logon.last.password}
 
 1. Чтобы добавить новый узел, перейдите в раздел **Локальный трафик > Узлы > Список узлов > +** .
 
-    ![Настройка F5 (расширенный Kerberos)](./media/advance-kerbf5-tutorial/configure21.png)
+    ![Снимок экрана, на котором показан раздел "Local Traffic" (Локальный трафик) > "Nodes" (Узлы)](./media/advance-kerbf5-tutorial/configure21.png)
  
 1. Чтобы создать новый пул, перейдите в раздел **Локальный трафик > Пулы > Список пулов > Создать**.
 
-     ![Настройка F5 (расширенный Kerberos)](./media/advance-kerbf5-tutorial/configure22.png)
+     ![Снимок экрана, на котором показан раздел "Local Traffic" (Локальный трафик) > "Pools" (Пулы)](./media/advance-kerbf5-tutorial/configure22.png)
 
  1. Чтобы создать новый виртуальный сервер, перейдите в раздел **Локальный трафик > виртуальные серверы > Список виртуальных серверов > +** .
 
-    ![Настройка F5 (расширенный Kerberos)](./media/advance-kerbf5-tutorial/configure23.png)
+    ![Снимок экрана, на котором показан раздел "Local Traffic" (Локальный трафик) > "Virtual Servers" (Виртуальные серверы)](./media/advance-kerbf5-tutorial/configure23.png)
 
 1. Укажите профиль доступа, созданный на предыдущем шаге.
 
-    ![Настройка F5 (расширенный Kerberos)](./media/advance-kerbf5-tutorial/configure24.png) 
+    ![Снимок экрана, на котором показано, где вы указали созданный профиль доступа](./media/advance-kerbf5-tutorial/configure24.png) 
 
 ### <a name="setting-up-kerberos-delegation"></a>Настройка делегирования Kerberos 
 
@@ -264,15 +264,15 @@ F5 поддерживает единый вход, инициированный 
     * Настройте подходящее делегирование для учетной записи делегирования F5.
     * В приведенном ниже примере для учетной записи делегирования APM настраивается ограниченное делегирование Kerberos для приложения FRP-App1.superdemo.live.
 
-        ![Настройка F5 (расширенный Kerberos)](./media/advance-kerbf5-tutorial/configure25.png)
+        ![Снимок экрана, на котором показана вкладка "APM Delegation Account Properties" (Свойства учетной записи делегирования APM) > "Delegation" (Делегирование)](./media/advance-kerbf5-tutorial/configure25.png)
 
 1. Укажите сведения, указанные в приведенном выше справочном [документе](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-authentication-single-sign-on-11-5-0/2.html)
 
 1. Приложение. Ниже представлено сопоставление переменных для SAML - F5 BIG-IP:
 
-    ![Настройка F5 (расширенный Kerberos)](./media/advance-kerbf5-tutorial/configure26.png)
+    ![Снимок экрана, на котором показана вкладка "Overview" (Обзор) > "Active Sessions" (Активные сеансы)](./media/advance-kerbf5-tutorial/configure26.png)
 
-    ![Настройка F5 (расширенный Kerberos)](./media/advance-kerbf5-tutorial/configure27.png) 
+    ![Снимок экрана, на котором показаны переменные и сеансовые ключи](./media/advance-kerbf5-tutorial/configure27.png) 
 
 1. Ниже приведен полный список атрибутов SAML по умолчанию. GivenName представляется с помощью следующей строки.
 `session.saml.last.attr.name.http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`

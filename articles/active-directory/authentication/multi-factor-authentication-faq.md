@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 07/14/2020
-ms.author: iainfou
-author: iainfoulds
+ms.author: joflore
+author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 57325363909664bb527c2e2101505641858c4285
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: de86bc7d083fbf1890ed90c588b5bdb2e8479dfb
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90706274"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91963981"
 ---
 # <a name="frequently-asked-questions-about-azure-multi-factor-authentication"></a>Часто задаваемые вопросы о Многофакторной идентификации Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "90706274"
 > Лицензирование на основе потребления уже недоступно для новых клиентов, начиная с 1 сентября 2018 г.
 > Начиная с 1 сентября 2018 новые поставщики проверки подлинности могут больше не создаваться. Существующие поставщики аутентификации можно продолжать использовать и обновлять. Многофакторная аутентификация по-прежнему будет предоставляться как функция в лицензиях Azure AD Premium.
 
-## <a name="general"></a>Общие сведения
+## <a name="general"></a>Общее
 
 * [Как Azure сервер Многофакторной идентификации обрабатывает данные пользователей?](#how-does-azure-multi-factor-authentication-server-handle-user-data)
 * [Какие короткие коды SMS используются для отправки сообщений SMS моим пользователям?](#what-sms-short-codes-are-used-for-sending-sms-messages-to-my-users)
@@ -254,7 +254,7 @@ ms.locfileid: "90706274"
 
 Для устранения этой ошибки нужно использовать отдельные учетные записи пользователя для операций администрирования и для операций, не связанных с администрированием. Позже вы сможете связать почтовые ящики с этими учетными записями, чтобы иметь возможность входить в Outlook с помощью учетной записи без привилегий администратора. Чтобы больше узнать об этом решении, ознакомьтесь с [предоставлением администратору возможности открывать и просматривать содержимое почтового ящика пользователя](https://help.outlook.com/141/gg709759.aspx?sl=1).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы не ответили на вопрос, доступны следующие варианты поддержки:
 

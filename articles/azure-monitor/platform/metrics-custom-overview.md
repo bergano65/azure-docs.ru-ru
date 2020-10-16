@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 06/01/2020
 ms.subservice: metrics
 ms.openlocfilehash: 73c9b2bf8cf88ca5e8576c451c9d9ac5f0eae8a3
-ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88639908"
 ---
 # <a name="custom-metrics-in-azure-monitor-preview"></a>Пользовательские метрики в Azure Monitor (Предварительная версия)
@@ -191,7 +191,7 @@ Azure Monitor настраиваемые метрики актуальны в о
 |---|---|
 | **США и Канада** | |
 |центрально-западная часть США | HTTPS: \/ /westcentralus.Monitoring.Azure.com |
-|Западная часть США 2       | HTTPS: \/ /westus2.Monitoring.Azure.com |
+|западная часть США 2       | HTTPS: \/ /westus2.Monitoring.Azure.com |
 |Центрально-северная часть США | HTTPS: \/ /northcentralus.Monitoring.Azure.com
 |Центрально-южная часть США| HTTPS: \/ /southcentralus.Monitoring.Azure.com |
 |Центральная часть США      | HTTPS: \/ /centralus.Monitoring.Azure.com |
@@ -208,7 +208,7 @@ Azure Monitor настраиваемые метрики актуальны в о
 | **Азия** | |
 |Центральная Индия | HTTPS: \/ /centralindia.Monitoring.Azure.com |
 |Восточная Австралия | HTTPS: \/ /australiaeast.Monitoring.Azure.com |
-|Восточная Япония | HTTPS: \/ /japaneast.Monitoring.Azure.com |
+|Japan East | HTTPS: \/ /japaneast.Monitoring.Azure.com |
 |Юго-Восточная Азия  | HTTPS: \/ /SoutheastAsia.Monitoring.Azure.com |
 |Восточная Азия | HTTPS: \/ /eastasia.Monitoring.Azure.com |
 |Республика Корея, центральный регион   | HTTPS: \/ /koreacentral.Monitoring.Azure.com |

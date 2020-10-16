@@ -13,12 +13,12 @@ metadata:
   ms.topic: hub-page
   ms.date: 03/24/2020
   ms.author: trbye
-  ms.openlocfilehash: 2d1d1057d522d082b3a5a3c757d1fe988bc24ba1
-  ms.sourcegitcommit: 67e8e1caa8427c1d78f6426c70bf8339a8b4e01d
+  ms.openlocfilehash: 2d00466672318ef05218fce392797df215b6bb5f
+  ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 10/02/2020
-  ms.locfileid: "91667458"
+  ms.lasthandoff: 10/09/2020
+  ms.locfileid: "91856999"
 highlightedContent:
   items:
   - title: Что собой представляет служба "Речь"
@@ -88,34 +88,6 @@ conceptualContent:
     footerLink:
       text: Подробнее
       url: index-intent-recognition.yml
-  - title: Сценарии бесед
-    links:
-    - itemType: overview
-      text: Сведения о транскрибировании бесед (собрания)
-      url: conversation-transcription.md
-    - itemType: overview
-      text: Сведения о ведении беседы с использованием нескольких устройств (собрания)
-      url: multi-device-conversation.md
-    - itemType: how-to-guide
-      text: Транскрибирование звонков в колл-центр
-      url: call-center-transcription.md
-    footerLink:
-      text: Подробнее
-      url: index-conversation-scenarios.yml
-  - title: Голосовые помощники
-    links:
-    - itemType: overview
-      text: Сведения о голосовых помощниках
-      url: voice-assistants.md
-    - itemType: quickstart
-      text: Создание голосового помощника с помощью пользовательских команд
-      url: custom-commands.md
-    - itemType: get-started
-      text: Создание голосового помощника с помощью Bot Framework
-      url: direct-line-speech.md
-    footerLink:
-      text: Подробнее
-      url: index-voice-assistants.yml
   - title: API Распознавания говорящего
     links:
     - itemType: overview
@@ -135,6 +107,26 @@ conceptualContent:
     - itemType: quickstart
       text: Начало работы с Пользовательскими ключевыми словами
       url: custom-keyword-basics.md
+  - title: Подробный анализ сценария
+    links:
+    - itemType: overview
+      text: Сведения о транскрибировании бесед (собрания)
+      url: conversation-transcription.md
+    - itemType: overview
+      text: Сведения о ведении беседы с использованием нескольких устройств (собрания)
+      url: multi-device-conversation.md
+    - itemType: overview
+      text: Сведения о голосовых помощниках
+      url: voice-assistants.md
+    - itemType: quickstart
+      text: Создание голосового помощника с помощью пользовательских команд
+      url: custom-commands.md
+    - itemType: quickstart
+      text: Создание голосового помощника с помощью Bot Framework
+      url: direct-line-speech.md
+    - itemType: how-to-guide
+      text: Включение транскрибирования вызовов в центр обработки вызовов
+      url: call-center-transcription.md
   - title: Инструменты
     links:
     - itemType: overview

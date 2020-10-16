@@ -6,10 +6,10 @@ ms.author: gwallace
 ms.date: 10/26/2018
 ms.topic: conceptual
 ms.openlocfilehash: 67b4b27a5d1faab3e6c156704d67a30b220ac54c
-ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91840189"
 ---
 # <a name="scaling-service-fabric-mesh-applications"></a>Масштабирование приложений службы "Сетка Service Fabric"
@@ -33,6 +33,6 @@ ms.locfileid: "91840189"
 
 Сведения о том, как задать политику автомасштабирования для службы, см. в статье об [автомасштабировании служб](service-fabric-mesh-howto-auto-scale-services.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Сведения о модели приложения см. в разделе [Сохранение состояния с помощью подключения тома службы файлов Azure в приложении службы "Сетка Service Fabric"](service-fabric-mesh-service-fabric-resources.md).

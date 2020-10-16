@@ -4,7 +4,7 @@
   items:
     - name: Что такое ExpressRoute?
       href: expressroute-introduction.md
-- name: Краткое руководство
+- name: Краткие руководства
   items:
     - name: "Создание канала ExpressRoute\_— портал"
       href: expressroute-howto-circuit-portal-resource-manager.md

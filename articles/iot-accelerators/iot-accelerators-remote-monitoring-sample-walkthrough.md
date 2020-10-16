@@ -8,12 +8,12 @@ services: iot-accelerators
 ms.topic: conceptual
 ms.date: 03/08/2019
 ms.author: dobett
-ms.openlocfilehash: f501eb55f72811063ddf1d8e02a0ce2137d598f3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f9477b11b52431211dc91a0ea6ff0767a9d495be
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80546310"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92073603"
 ---
 # <a name="remote-monitoring-solution-accelerator-overview"></a>Обзор акселератора решения для удаленного мониторинга
 
@@ -106,7 +106,7 @@ ms.locfileid: "80546310"
 
 ### <a name="azure-cosmos-db"></a>Azure Cosmos DB
 
-При развертывании акселератора решений используется [Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/) для хранения правил, предупреждений, параметров конфигурации и других данных автономного неструктурированного защищенного хранилища.
+При развертывании акселератора решений используется [Azure Cosmos DB](../cosmos-db/index.yml) для хранения правил, предупреждений, параметров конфигурации и других данных автономного неструктурированного защищенного хранилища.
 
 ### <a name="azure-stream-analytics-manager-microservice"></a>Микрослужба диспетчера Azure Stream Analytics
 
@@ -120,11 +120,11 @@ ms.locfileid: "80546310"
 
 ### <a name="azure-stream-analytics"></a>Azure Stream Analytics
 
-[Azure Stream Analytics](https://docs.microsoft.com/azure/stream-analytics/) — это модуль обработки событий, который позволяет проверять большие потоки данных из устройств.
+[Azure Stream Analytics](../stream-analytics/index.yml) — это модуль обработки событий, который позволяет проверять большие потоки данных из устройств.
 
 ### <a name="azure-time-series-insights"></a>Azure Time Series Insights
 
-[Аналитика временных рядов Azure](https://docs.microsoft.com/azure/time-series-insights/) хранит данные телеметрии с устройств, подключенных к акселератору решения. Кроме того, эта служба обеспечивает визуализацию и запрашивание данных телеметрии устройства в веб-интерфейсе пользователя решения.
+[Аналитика временных рядов Azure](../time-series-insights/index.yml) хранит данные телеметрии с устройств, подключенных к акселератору решения. Кроме того, эта служба обеспечивает визуализацию и запрашивание данных телеметрии устройства в веб-интерфейсе пользователя решения.
 
 ### <a name="configuration-microservice"></a>Микрослужба конфигурации
 
@@ -136,7 +136,7 @@ ms.locfileid: "80546310"
 
 ### <a name="azure-active-directory"></a>Azure Active Directory
 
-Развертывания акселератора решения используют [Azure Active Directory](https://docs.microsoft.com/azure/active-directory/) в качестве поставщика OpenID Connect. Azure Active Directory хранит сведения пользователей и предоставляет сертификаты для проверки подлинности токенов JWT.
+Развертывания акселератора решения используют [Azure Active Directory](../active-directory/index.yml) в качестве поставщика OpenID Connect. Azure Active Directory хранит сведения пользователей и предоставляет сертификаты для проверки подлинности токенов JWT.
 
 ## <a name="presentation"></a>Уровень представления
 

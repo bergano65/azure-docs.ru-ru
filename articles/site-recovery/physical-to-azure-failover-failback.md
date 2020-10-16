@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 12/17/2019
 ms.author: raynew
 ms.openlocfilehash: 2994f68e4159c7c4aa7d82bef7a5891deb5055a0
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87292821"
 ---
 # <a name="fail-over-and-fail-back-physical-servers-replicated-to-azure"></a>Отработка отказа и восстановление размещения физических серверов, реплицированных в Azure
@@ -130,6 +130,6 @@ ms.locfileid: "87292821"
 2. Выберите сервер обработки, который используется для отправки реплицированных данных в Azure, и нажмите кнопку **ОК**.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После завершения задания повторной защиты локальная виртуальная машина реплицируется в Azure. При необходимости можно [запустить другую отработку отказа](site-recovery-failover.md) в Azure.

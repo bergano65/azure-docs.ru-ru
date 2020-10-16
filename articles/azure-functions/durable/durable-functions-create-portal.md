@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 04/10/2020
 ms.reviewer: azfuncdf
 ms.openlocfilehash: b029fa246977dfe4210f6e8df242415f7e4103f1
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87081922"
 ---
 # <a name="create-durable-functions-using-the-azure-portal"></a>Создание Устойчивых функций с помощью портала Azure
@@ -34,25 +34,18 @@ ms.locfileid: "87081922"
 
 1. На странице приложения-функции в разделе **Средства разработки** на левой панели выберите **Дополнительные инструменты**.
 
-   :::image type="content" source="./media/durable-functions-create-portal/function-app-platform-features-choose-kudu.png" alt-text="Выбор Функций, элемента Функции платформы и Дополнительные инструменты (Kudu)":::
+   :::image type="content" source="./media/durable-functions-create-portal/function-app-platform-features-choose-kudu.png" alt-text="Выбор Функций, элемента &quot;Функции платформы&quot; и &quot;Дополнительные инструменты (Kudu)&quot;":::
 
 2. На странице **Дополнительные инструменты** выберите **Перейти**.
 
 3. В консоли Kudu выберите **Консоль отладки**, а затем — **CMD**.
 
-   :::image type="content" source="./media/durable-functions-create-portal/kudu-choose-debug-console.png" alt-text="Консоль отладки Kudu":::
-
-3. Появится структура каталогов файлов приложения-функции. Перейдите в папку `site/wwwroot`. Из нее вы можете отправить файл `package.json`, перетащив его в окно каталогов файлов. Ниже приведен пример файла `package.json`.
-
-    ```json
-    {
-      "dependencies": {
-        "durable-functions": "^1.3.1"
+   :::image type="content" source="./media/durable-functions-create-portal/kudu-choose-debug-console.png" alt-text="Выбор Функций, элемента &quot;Функции платформы&quot; и &quot;Дополнительные инструменты (Kudu)&quot;"
       }
     }
     ```
 
-   :::image type="content" source="./media/durable-functions-create-portal/kudu-choose-debug-console.png" alt-text="Отправка файла package.json в Kudu":::
+   :::image type="content" source="./media/durable-functions-create-portal/kudu-choose-debug-console.png" alt-text="Выбор Функций, элемента &quot;Функции платформы&quot; и &quot;Дополнительные инструменты (Kudu)&quot;":::
 
 4. Когда файл `package.json` будет передан, запустите команду `npm install` в консоли удаленного выполнения Kudu.
 
@@ -64,7 +57,7 @@ ms.locfileid: "87081922"
 
 1. В поле поиска на странице **Новая функция** введите `durable`, а затем выберите шаблон **Начальный объект HTTP устойчивых функций**.
 
-   :::image type="content" source="./media/durable-functions-create-portal/durable-functions-http-starter-template.png" alt-text="Выбор Начальный объект HTTP Устойчивых функций":::
+   :::image type="content" source="./media/durable-functions-create-portal/durable-functions-http-starter-template.png" alt-text="Выбор Функций, элемента &quot;Функции платформы&quot; и &quot;Дополнительные инструменты (Kudu)&quot;":::
 
 1. Для имени **новой функции** введите `HttpStart`, а затем выберите **Создать функцию**.
 

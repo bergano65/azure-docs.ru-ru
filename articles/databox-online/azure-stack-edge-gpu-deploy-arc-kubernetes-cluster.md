@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 09/01/2020
 ms.author: alkohli
-ms.openlocfilehash: 423345739ca5c078fbff4f267e1e8a118abf107c
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: c38b0b1d3a2e71502ac86bf46771ecfb637ba15d
+ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90903191"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91952222"
 ---
 # <a name="enable-azure-arc-on-kubernetes-cluster-on-your-azure-stack-edge-pro-gpu-device"></a>Включение службы "Дуга Azure" в кластере Kubernetes на устройстве с Azure Stack ребра Pro GPU
 
@@ -68,11 +68,11 @@ ms.locfileid: "90903191"
 
 1. Выберите поставщика ресурсов и в верхней части панели команд выберите **зарегистрировать**. Регистрация занимает несколько минут. 
 
-    ![Регистрация поставщиков ресурсов Kubernetes](media/azure-stack-edge-gpu-connect-powershell-interface/register-k8-resource-providers-2.png)
+    ![Регистрация поставщиков ресурсов Kubernetes 2](media/azure-stack-edge-gpu-connect-powershell-interface/register-k8-resource-providers-2.png)
 
 1. Обновите пользовательский интерфейс, пока не появится регистрация поставщика ресурсов. Повторите эту процедуру для обоих поставщиков ресурсов.
     
-    ![Регистрация поставщиков ресурсов Kubernetes](media/azure-stack-edge-gpu-connect-powershell-interface/register-k8-resource-providers-4.png)
+    ![Регистрация поставщиков ресурсов Kubernetes 3](media/azure-stack-edge-gpu-connect-powershell-interface/register-k8-resource-providers-4.png)
 
 Вы также можете зарегистрировать поставщики ресурсов с помощью `az cli` . Дополнительные сведения см. [в статье регистрация двух поставщиков для Kubernetes с поддержкой ARC в Azure](../azure-arc/kubernetes/connect-cluster.md#register-the-two-providers-for-azure-arc-enabled-kubernetes) .
 

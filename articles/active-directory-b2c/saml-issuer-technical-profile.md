@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 08/17/2020
+ms.date: 10/12/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: bb5383ee7930cb3d54593f71a709c033d3850889
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: f52111fbbbd90f3d2f39f538c4bf1a2672cd504b
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88521218"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91961244"
 ---
 # <a name="define-a-technical-profile-for-a-saml-token-issuer-in-an-azure-active-directory-b2c-custom-policy"></a>Определение технического профиля для издателя токенов SAML в пользовательской политике Azure Active Directory B2C
 
@@ -37,6 +37,7 @@ ms.locfileid: "88521218"
   <OutputTokenFormat>SAML2</OutputTokenFormat>
   <Metadata>
     <Item Key="IssuerUri">https://tenant-name.b2clogin.com/tenant-name.onmicrosoft.com/B2C_1A_signup_signin_SAML</Item>
+    <Item Key="TokenNotBeforeSkewInSeconds">600</Item>
   </Metadata>
   <CryptographicKeys>
     <Key Id="MetadataSigning" StorageReferenceId="B2C_1A_SamlIdpCert"/>
@@ -57,7 +58,8 @@ ms.locfileid: "88521218"
 | attribute | Обязательно | Описание |
 | --------- | -------- | ----------- |
 | IssuerUri | Нет | Имя издателя, которое отображается в ответе SAML. Значение должно совпадать с именем, настроенным в приложении проверяющей стороны. |
-| XmlSignatureAlgorithm | Нет | Метод, который Azure AD B2C использует для подписания утверждения SAML. Возможные значения: `Sha256`, `Sha384`, `Sha512` или `Sha1`. Настройте алгоритм подписи на обеих сторонах, используя одно и то же значение. Используйте только тот алгоритм, который поддерживается вашим сертификатом. Сведения о настройке ответа SAML см. в статье [метаданные SAML проверяющей](relyingparty.md#metadata) стороны.|
+| XmlSignatureAlgorithm | нет | Метод, который Azure AD B2C использует для подписания утверждения SAML. Возможные значения: `Sha256`, `Sha384`, `Sha512` или `Sha1`. Настройте алгоритм подписи на обеих сторонах, используя одно и то же значение. Используйте только тот алгоритм, который поддерживается вашим сертификатом. Сведения о настройке ответа SAML см. в статье [метаданные SAML проверяющей](relyingparty.md#metadata) стороны.|
+|токеннотбефорескевинсекондс| нет| Задает отклонение в виде целого числа для отметки времени, которая отмечает начало периода действия. Чем выше это число, тем больше времени период действия начинается с момента выпуска утверждений для проверяющей стороны. Например, если для Токеннотбефорескевинсекондс задано значение 60 секунд, то при выдаче маркера в 13:05:10 UTC маркер будет действительным с 13:04:10 UTC. Значение по умолчанию — 0. Максимальное значение — 3600 (один час). |
 
 ## <a name="cryptographic-keys"></a>Криптографические ключи
 

@@ -9,10 +9,10 @@ ms.subservice: cosmosdb-sql
 ms.topic: troubleshooting
 ms.reviewer: sngun
 ms.openlocfilehash: 400795d20b6e7ad919f5cbbfa6078987bb65297e
-ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91743970"
 ---
 # <a name="diagnose-and-troubleshoot-the-availability-of-azure-cosmos-sdks-in-multiregional-environments"></a>Диагностика и устранение неполадок с доступностью пакетов SDK для Cosmos Azure в многорегионовых средах
@@ -84,7 +84,7 @@ ms.locfileid: "91743970"
 
 Если пользователь настроил предпочтительный список регионов с более чем одним регионом, а учетная запись Azure Cosmos — несколько регионов записи или отдельный регион записи, а операция является запросом на чтение, клиент повторит эту операцию в следующем регионе из списка предпочтений.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Ознакомьтесь с соглашением об [уровне обслуживания для доступности](high-availability.md#slas-for-availability).
 * Использование последнего [пакета SDK для .NET](sql-api-sdk-dotnet-standard.md)

@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.author: normesta
 ms.date: 04/07/2020
 ms.openlocfilehash: 02b7e02c33161db33420e2efe1ef4b70a138d127
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84465224"
 ---
 # <a name="integrate-a-static-website-with-azure-cdn"></a>Интеграция статического веб-сайта с Azure CDN
@@ -69,6 +69,6 @@ ms.locfileid: "84465224"
 
 Объект, кэшированный в сети Azure CDN, сохраняется в кэше до истечения срока жизни для этого объекта или до [очистки](../../cdn/cdn-purge-endpoint.md) конечной точки. По истечении срока действия Azure CDN проверит, действует ли еще конечная точка CDN и возможен ли анонимный доступ к этому объекту. Если это не так, объект больше не будет кэшироваться.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Используемых Добавьте личный домен в конечную точку Azure CDN. См. раздел [учебник. Добавление пользовательского домена в конечную точку Azure CDN](../../cdn/cdn-map-content-to-custom-domain.md).

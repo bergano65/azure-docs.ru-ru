@@ -12,13 +12,13 @@ ms.date: 10/02/2020
 ms.author: trbye
 ms.custom: devx-track-csharp
 ms.openlocfilehash: f2f333cd01057ff5f6f904924880f88b0685c72f
-ms.sourcegitcommit: 67e8e1caa8427c1d78f6426c70bf8339a8b4e01d
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91667699"
 ---
-# <a name="get-started-with-custom-keyword"></a>Начало работы с пользовательским ключевым словом
+# <a name="get-started-with-custom-keyword"></a>Начало работы с Пользовательскими ключевыми словами
 
 В этом кратком руководстве вы узнаете основы работы с пользовательскими ключевыми словами с помощью Speech Studio и речевого пакета SDK. Ключевое слово — это слово или короткая фраза, которая позволяет активировать ваш продукт. Вы создаете модели ключевых слов в Speech Studio, затем экспортируете файл модели, который используется в приложениях с пакетом SDK для распознавания речи.
 
@@ -84,6 +84,6 @@ KeywordRecognitionResult result = await keywordRecognizer.RecognizeOnceAsync(key
 > [!NOTE]
 > В приведенном здесь примере используется распознавание локального ключевого слова, так как `SpeechConfig` для контекста проверки подлинности не требуется объект и не выполняется обращение к серверной части. Тем не менее можно выполнить как распознавание ключевых слов, так и проверку [с помощью непрерывного подключения к внутреннему серверной](https://docs.microsoft.com/azure/cognitive-services/speech-service/tutorial-voice-enable-your-bot-speech-sdk#view-the-source-code-that-enables-keyword)части.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Протестируйте пользовательское ключевое слово в [кратком руководстве по пакету SDK для речевых устройств](https://aka.ms/sdsdk-quickstart).

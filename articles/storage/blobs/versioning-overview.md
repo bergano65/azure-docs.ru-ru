@@ -11,10 +11,10 @@ ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-azurepowershell
 ms.openlocfilehash: 20e48640d52fba7b3262014c2e84cfc56c7110cc
-ms.sourcegitcommit: d9ba60f15aa6eafc3c5ae8d592bacaf21d97a871
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91767225"
 ---
 # <a name="blob-versioning"></a>Управление версиями BLOB-объектов
@@ -291,7 +291,7 @@ ms.locfileid: "91767225"
 | Если включены обратимое удаление BLOB-объектов и управление версиями | Все существующие версии с полной длиной содержимого независимо от уровня. |
 | Если обратимое удаление BLOB-объекта включено, но управление версиями отключено | Все существующие моментальные снимки обратимого удаления с полной длиной содержимого независимо от уровня. |
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 - [Включение управления версиями BLOB-объектов и работа с ним](versioning-enable.md)
 - [Создание моментального снимка большого двоичного объекта](/rest/api/storageservices/creating-a-snapshot-of-a-blob)

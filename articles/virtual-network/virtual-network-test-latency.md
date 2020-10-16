@@ -15,10 +15,10 @@ ms.workload: infrastructure-services
 ms.date: 10/29/2019
 ms.author: steveesp
 ms.openlocfilehash: 77ea14097538f722569acb5a0371674776aac8e5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84687809"
 ---
 # <a name="test-vm-network-latency"></a>Проверка задержки сети виртуальной машины
@@ -199,7 +199,7 @@ sockperf ping-pong -i 10.0.0.4 --tcp -m 350 -t 101 -p 12345  --full-rtt
 В этом примере Соккперф используется размер сообщения размером 350 байт, что является типичным для среднего пакета. Можно изменить размер выше или ниже, чтобы добиться результатов, которые точнее отражают рабочую нагрузку, выполняемую на виртуальных машинах.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Повысьте задержку с помощью [группы размещения](https://docs.microsoft.com/azure/virtual-machines/linux/co-location)службы "близость" Azure.
 * Узнайте, как [оптимизировать сетевые подключения для виртуальных машин](../virtual-network/virtual-network-optimize-network-bandwidth.md) в вашем сценарии.
 * Узнайте о [том, как пропускная способность выделяется виртуальным машинам](../virtual-network/virtual-machine-network-throughput.md).

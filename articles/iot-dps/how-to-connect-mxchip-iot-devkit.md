@@ -9,15 +9,15 @@ ms.service: iot-dps
 services: iot-dps
 manager: eliotgra
 ms.openlocfilehash: 2a030d9ca5422e12856dcb81b29f8327e684c97e
-ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90528659"
 ---
 # <a name="use-azure-iot-hub-device-provisioning-service-auto-provisioning-to-register-the-mxchip-iot-devkit-with-iot-hub"></a>Использование автоподготовки в службе подготовки устройств к добавлению в Центр Интернета вещей Azure для регистрации MXChip IoT DevKit в Центре Интернета вещей
 
-В этой статье описывается, как использовать службу подготовки устройств для центра Интернета вещей Azure для [подготовки](about-iot-dps.md#provisioning-process) DevKit MXChip IOT в центре Интернета вещей Azure. В этом руководстве вы узнаете, как:
+В этой статье описывается, как использовать службу подготовки устройств для центра Интернета вещей Azure для [подготовки](about-iot-dps.md#provisioning-process) DevKit MXChip IOT в центре Интернета вещей Azure. В этом руководстве описано следующее:
 
 * настройка глобальной конечной точки службы подготовки устройств на устройстве;
 * создание сертификата X.509 с помощью уникального секрета устройства (UDS);
@@ -30,7 +30,7 @@ ms.locfileid: "90528659"
 
 Для работы с этим руководством сначала следует выполнить следующие задачи:
 
-* Настройте Wi-Fi для DevKit и подготовьте среду разработки, следуя указаниям в разделе "Подготовка среды разработки" статьи [Подключение к центру Интернета вещей Azure AZ3166 в облаке](/azure/iot-hub/iot-hub-arduino-iot-devkit-az3166-get-started#prepare-the-development-environment).
+* Настройте Wi-Fi DevKit и подготовьте среду разработки, следуя инструкциям в разделе "Подготовка среды разработки" статьи [Подключение Интернета вещей DEVKIT AZ3166 к центру Интернета вещей Azure в облаке](/azure/iot-hub/iot-hub-arduino-iot-devkit-az3166-get-started#prepare-the-development-environment).
 * Обновите новейшее встроенное ПО до версии 1.3.0 или более новой, воспользовавшись руководством по [обновлению встроенного ПО DevKit](https://microsoft.github.io/azure-iot-developer-kit/docs/firmware-upgrading/).
 * Создайте и свяжите Центр Интернета вещей с экземпляром службы подготовки устройств, следуя шагам из руководства [Настройка службы подготовки устройств для Центра Интернета вещей на портале Azure](/azure/iot-dps/quick-setup-auto-provision).
 

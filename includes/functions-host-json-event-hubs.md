@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 09/04/2018
 ms.author: glenga
 ms.openlocfilehash: 2604a1608f21d7239db755027e15b8198fb3f9f2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
-ms.translationtype: MT
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "81791711"
 ---
 ### <a name="functions-2x-and-higher"></a>Функции 2.x и более поздних версий
@@ -28,14 +28,14 @@ ms.locfileid: "81791711"
 }  
 ```
 
-|Свойство.  |По умолчанию | Описание |
+|Свойство  |По умолчанию | Описание |
 |---------|---------|---------|
 |maxBatchSize|10|Максимальное число событий, получаемых в цикле получения.|
-|prefetchCount|300|Счетчик предварительной выборки по умолчанию, используемый базовым объектом `EventProcessorHost` .|
+|prefetchCount|300|Счетчик предварительной выборки по умолчанию, используемый базовым `EventProcessorHost`.|
 |batchCheckpointFrequency|1|Количество пакетов событий, которые необходимо обработать перед созданием контрольной точки курсора EventHub.|
 
 > [!NOTE]
-> Справочные сведения о host.jsв функциях Azure 2. x и более поздних версий см. в разделе [host.jsпо Справочнику по функциям Azure](../articles/azure-functions/functions-host-json.md).
+> См. сведения о [файле host.json в Функциях Azure версии 2.x и выше](../articles/azure-functions/functions-host-json.md).
 
 ### <a name="functions-1x"></a>Функции 1.x
 
@@ -49,12 +49,12 @@ ms.locfileid: "81791711"
 }
 ```
 
-|Свойство.  |По умолчанию | Описание |
+|Свойство  |По умолчанию | Описание |
 |---------|---------|---------| 
 |maxBatchSize|64|Максимальное число событий, получаемых в цикле получения.|
-|prefetchCount|н/д|Предварительная выборка по умолчанию, которая будет использоваться базовым объектом `EventProcessorHost` .| 
+|prefetchCount|Недоступно|Предварительная выборка по умолчанию, используемая базовым `EventProcessorHost`.| 
 |batchCheckpointFrequency|1|Количество пакетов событий, которые необходимо обработать перед созданием контрольной точки курсора EventHub.| 
 
 > [!NOTE]
-> Справочные сведения о host.jsв функциях Azure 1. x см. в разделе [host.jsпо Справочнику по функциям Azure 1. x](../articles/azure-functions/functions-host-json-v1.md).
+> См. сведения о [файле host.json в Функциях Azure версии 1.x](../articles/azure-functions/functions-host-json-v1.md).
 

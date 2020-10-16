@@ -10,17 +10,17 @@ services: azure-maps
 manager: philmea
 ms.custom: mvc
 ms.openlocfilehash: 701c94237ef5348e11b5d7fbc85d4da1f20136ee
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88036816"
 ---
 # <a name="react-to-azure-maps-events-by-using-event-grid"></a>Реагирование на события Azure Maps c помощью Сетки событий
 
 Azure Maps интегрируется со службой "Сетка событий Azure", чтобы пользователи могли отправлять уведомления о событиях в другие службы и запускать нисходящие процессы. Цель этой статьи — помочь вам настроить бизнес-приложения для прослушивания Azure Maps событий. Это позволяет пользователям реагировать на критические события в надежном, масштабируемом и безопасном режиме. Например, пользователи могут создавать приложения для обновления базы данных, создавать билеты и предоставлять уведомления по электронной почте при каждом входе устройства в геозоны.
 
-Сетка событий Azure — это полностью управляемая служба маршрутизации событий, использующая модель публикации и подписки. Служба "Сетка событий" имеет встроенную поддержку служб Azure, таких как [функции Azure](https://docs.microsoft.com/azure/azure-functions/functions-overview) и [Azure Logic Apps](https://docs.microsoft.com/azure/azure-functions/functions-overview). Он может передавать оповещения о событиях в службы, не относящиеся к Azure, с помощью веб-перехватчиков. Полный список обработчиков событий, которые поддерживает служба "Сетка событий", см. в статье [An introduction to Azure Event Grid](https://docs.microsoft.com/azure/event-grid/overview) (Общие сведения о службе "Сетка событий Azure").
+Сетка событий Azure — это полностью управляемая служба маршрутизации событий, использующая модель публикации и подписки. Сетка событий имеет встроенную поддержку служб Azure, таких как [Функции Azure](https://docs.microsoft.com/azure/azure-functions/functions-overview) и [Azure Logic Apps](https://docs.microsoft.com/azure/azure-functions/functions-overview). Она может передавать оповещения о событиях в службы, не относящиеся к Azure, с помощью веб-перехватчиков. Полный список обработчиков событий, которые поддерживает служба "Сетка событий", см. в статье [An introduction to Azure Event Grid](https://docs.microsoft.com/azure/event-grid/overview) (Общие сведения о службе "Сетка событий Azure").
 
 
 ![Функциональная модель Сетки событий Azure](./media/azure-maps-event-grid-integration/azure-event-grid-functional-model.png)
@@ -77,7 +77,7 @@ Azure Maps интегрируется со службой "Сетка событ
 * Используйте `X-Correlation-id` поле в заголовке ответа, чтобы узнать, не устарели ли ваши сведения об объектах. Сообщения могут поступать не по порядку или с некоторой задержкой.
 * Когда запрос GET или POST в API геозоны вызывается с параметром mode, имеющим значение `EnterAndExit` , то событие Enter или Exit создается для каждой геометрии в геозоны, для которой состояние изменилось с предыдущего вызова ГЕОЗОНЫ API.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о том, как использовать геозоны для операций управления на сайте конструкции, см. в статье
 

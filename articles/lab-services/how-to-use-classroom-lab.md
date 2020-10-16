@@ -3,12 +3,12 @@ title: Как войти в лабораторию для аудитории в 
 description: Узнайте, как зарегистрироваться в лабораторной лаборатории, просмотреть все лабораторные занятия, которые доступны, запустить или отключить виртуальную машину в лаборатории и подключиться к виртуальной машине.
 ms.topic: how-to
 ms.date: 06/26/2020
-ms.openlocfilehash: cd06bfc2dff27f1ef1bc84f01b001b8dbd282cf4
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 0c2f0ba5e6a47e00f47a31e08c036ea17ff2507a
+ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91334061"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91946116"
 ---
 # <a name="how-to-access-a-classroom-lab-in-azure-lab-services"></a>Как войти в лабораторию для аудитории в Службах лабораторий Azure
 В этой статье описывается, как выполнить регистрацию в лаборатории для аудитории, просмотреть все лаборатории, к которым у вас есть доступ, запустить или остановить виртуальную машину в лаборатории и подключиться к этой машине. 

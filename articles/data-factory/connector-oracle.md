@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 09/28/2020
 ms.author: jingwang
 ms.openlocfilehash: b4d2b277eea85fb8a5c9eb733e5bfd64d66f392c
-ms.sourcegitcommit: b48e8a62a63a6ea99812e0a2279b83102e082b61
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91407832"
 ---
 # <a name="copy-data-from-and-to-oracle-by-using-azure-data-factory"></a>Копирование данных из Oracle и обратно с помощью фабрики данных Azure
@@ -53,7 +53,7 @@ ms.locfileid: "91407832"
 > [!Note]
 > Прокси-сервер Oracle не поддерживается.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [data-factory-v2-integration-runtime-requirements](../../includes/data-factory-v2-integration-runtime-requirements.md)] 
 
@@ -360,24 +360,24 @@ ms.locfileid: "91407832"
 | BFILE |Byte[] |
 | BLOB |Byte[]<br/>(поддерживается только в Oracle 10g и более поздних версий) |
 | CHAR |Строка |
-| CLOB |Строка |
+| CLOB |Строковый тип |
 | DATE |Дата и время |
 | FLOAT |десятичное число, строка (если точность больше 28) |
 | ЦЕЛОЕ ЧИСЛО |десятичное число, строка (если точность больше 28) |
-| LONG |Строка |
+| LONG |Строковый тип |
 | LONG RAW |Byte[] |
-| NCHAR |Строка |
-| NCLOB |Строка |
+| NCHAR |Строковый тип |
+| NCLOB |Строковый тип |
 | NUMBER |десятичное число, строка (если точность больше 28) |
-| NVARCHAR2 |Строка |
+| NVARCHAR2 |Строковый тип |
 | RAW |Byte[] |
-| ROWID |Строка |
+| ROWID |Строковый тип |
 | timestamp |Дата и время |
-| TIMESTAMP WITH LOCAL TIME ZONE |Строка |
-| TIMESTAMP WITH TIME ZONE |Строка |
-| UNSIGNED INTEGER |Номер |
-| VARCHAR2 |Строка |
-| XML |Строка |
+| TIMESTAMP WITH LOCAL TIME ZONE |Строковый тип |
+| TIMESTAMP WITH TIME ZONE |Строковый тип |
+| UNSIGNED INTEGER |Число |
+| VARCHAR2 |Строковый тип |
+| XML |Строковый тип |
 
 > [!NOTE]
 > Типы данных INTERVAL YEAR TO MONTH и INTERVAL DAY TO SECOND не поддерживаются.

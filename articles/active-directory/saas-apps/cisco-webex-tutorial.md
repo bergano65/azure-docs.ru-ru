@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 08/21/2019
 ms.author: jeedes
-ms.openlocfilehash: 52481eb40a46457a0374c776ee4897c81ebddf7c
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 466e69ece993ca34f8f6770c0465471d01b9c3ed
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88551291"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91760960"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-cisco-webex-meetings"></a>Руководство по интеграции единого входа Azure Active Directory с Cisco Webex Meetings
 
@@ -164,11 +164,11 @@ ms.locfileid: "88551291"
 
 2. Перейдите к разделу **Common Site Settings** (Общие параметры сайта) и выберите **SSO Configuration** (Настройка единого входа).
  
-    ![Настройка единого входа](./media/cisco-webex-tutorial/tutorial-cisco-webex-11.png)
+    ![Снимок экрана, на котором показана страница "WebEx Administration" (Администрирование WebEx) на сайте Cisco, где выбраны элементы "Common Site Settings" (Общие параметры сайта) и "SSO Configuration" (Настройка единого входа)](./media/cisco-webex-tutorial/tutorial-cisco-webex-11.png)
 
 3. На странице **Webex Administration** (Администрирование Webex) сделайте следующее:
 
-    ![Настройка единого входа](./media/cisco-webex-tutorial/tutorial-cisco-webex-10.png)
+    ![Снимок экрана, на котором показана страница "Webex Administration" (Администрирование Webex) с информацией, описанной на этом шаге](./media/cisco-webex-tutorial/tutorial-cisco-webex-10.png)
 
     а. Выберите **SAML 2.0** в качестве значения для параметра **Federation Protocol** (Протокол федерации).
 

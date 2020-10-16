@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: how-to
 ms.date: 09/22/2020
 ms.openlocfilehash: fc1bca1265139a438fad86bfce770026866d9a2f
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90937007"
 ---
 # <a name="manage-zone-redundant-high-availability-in-flexible-server"></a>Управление избыточностью зоны, высокой доступности на гибком сервере
@@ -35,26 +35,26 @@ ms.locfileid: "90937007"
     :::image type="content" source="./media/how-to-manage-high-availability-portal/subscription-region.png" alt-text="Просмотр подписки и региона":::
 
 2.  Выберите **зону доступности**. Это полезно, если требуется совместное размещение приложения в той же зоне доступности, что и база данных, чтобы сократить задержку. Выберите вариант **нет** , если требуется, чтобы гибкий сервер был развернут в любой зоне доступности.
-    ![AZ выбор выбранной ]() :::image type="content" source="./media/how-to-manage-high-availability-portal/zone-selection.png" alt-text="зоны доступности":::  
+    ![AZ выбор выбранной ]() :::image type="content" source="./media/how-to-manage-high-availability-portal/zone-selection.png" alt-text="Просмотр подписки и региона":::  
 
 3.  Установите флажок **Высокая доступность зоны избыточности** в параметре доступность.
 
-    :::image type="content" source="./media/how-to-manage-high-availability-portal/high-availability-checkbox.png" alt-text="Флажок высокой доступности":::
+    :::image type="content" source="./media/how-to-manage-high-availability-portal/high-availability-checkbox.png" alt-text="Просмотр подписки и региона":::
 
 4.  Если вы хотите изменить вычисление и хранилище по умолчанию, нажмите кнопку  **настроить сервер**.
  
-    :::image type="content" source="./media/how-to-manage-high-availability-portal/configure-server.png" alt-text="Настройка сервера — вычислений и хранилища":::  
+    :::image type="content" source="./media/how-to-manage-high-availability-portal/configure-server.png" alt-text="Просмотр подписки и региона":::  
 
 5.  Если установлен флажок Высокая доступность, уровень, который можно выбрать, будет недоступен для выбора. Вы можете выбрать для **общего назначения** или для **оптимизированного в памяти** уровня вычислений. После этого в раскрывающемся списке можно выбрать **Размер вычислений** для выбора.
 
-    :::image type="content" source="./media/how-to-manage-high-availability-portal/select-compute.png" alt-text="Выбор уровня вычислений":::  
+    :::image type="content" source="./media/how-to-manage-high-availability-portal/select-compute.png" alt-text="Просмотр подписки и региона":::  
 
 
 6.  Выберите **Размер хранилища** в гиб с помощью скользящей линейки и выберите **срок хранения резервной копии** в диапазоне от 7 до 35 дней.
    
-    :::image type="content" source="./media/how-to-manage-high-availability-portal/storage-backup.png" alt-text="Резервное копирование хранилища"::: 
+    :::image type="content" source="./media/how-to-manage-high-availability-portal/storage-backup.png" alt-text="Просмотр подписки и региона"::: 
 
-7. Щелкните **Сохранить**. 
+7. Выберите команду **Сохранить**. 
 
 ## <a name="enable-high-availability-post-server-creation"></a>Включить создание сервера после высокой доступности
 
@@ -64,15 +64,11 @@ ms.locfileid: "90937007"
 
 2.  На странице гибкого сервера щелкните **Высокая доступность** на панели слева, чтобы открыть страницу высокий уровень доступности.
    
-     :::image type="content" source="./media/how-to-manage-high-availability-portal/high-availability-left-panel.png" alt-text="Выбор левой панели"::: 
+     :::image type="content" source="./media/how-to-manage-high-availability-portal/high-availability-left-panel.png" alt-text="Просмотр подписки и региона"::: 
 
 3.  Установите флажок **Высокая доступность зоны избыточности** , чтобы **включить** параметр, и нажмите кнопку **сохранить**   , чтобы сохранить изменения.
 
-     :::image type="content" source="./media/how-to-manage-high-availability-portal/enable-high-availability.png" alt-text="Включить высокий уровень доступности"::: 
-
-4.  В диалоговом окне подтверждения появится сообщение о том, что включение высокой доступности приведет к увеличению затрат из-за дополнительного развертывания сервера и хранилища.
-
-5.  Нажмите кнопку " **включить Ha** ", чтобы включить высокий уровень доступности.
+     :::image type="content" source="./media/how-to-manage-high-availability-portal/enable-high-availability.png" alt-text="Просмотр подписки и региона" **включить Ha** ", чтобы включить высокий уровень доступности.
 
 6.  Отобразится уведомление о том, что выполняется развертывание высокого уровня доступности.
 
@@ -84,11 +80,11 @@ ms.locfileid: "90937007"
 
 2.  На странице гибкого сервера щелкните **Высокая доступность** на передней панели, чтобы открыть страницу высокий уровень доступности.
    
-    :::image type="content" source="./media/how-to-manage-high-availability-portal/high-availability-left-panel.png" alt-text="Выбор левой панели"::: 
+    :::image type="content" source="./media/how-to-manage-high-availability-portal/high-availability-left-panel.png" alt-text="Просмотр подписки и региона"::: 
 
 3.  Установите флажок **Высокая доступность зоны избыточности** , чтобы **Отключить** параметр. Затем нажмите кнопку **сохранить**   , чтобы сохранить изменения.
 
-     :::image type="content" source="./media/how-to-manage-high-availability-portal/disable-high-availability.png" alt-text="Отключить высокий уровень доступности"::: 
+     :::image type="content" source="./media/how-to-manage-high-availability-portal/disable-high-availability.png" alt-text="Просмотр подписки и региона"::: 
 
 4.  Появится диалоговое окно подтверждения, где можно подтвердить отключение высокого уровня доступности.
 
@@ -96,7 +92,7 @@ ms.locfileid: "90937007"
 
 6.  Будет отображаться уведомление о списании развертывания высокого уровня доступности.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 -   Сведения о [непрерывности бизнес-процессов](./concepts-business-continuity.md)
 -   Сведения о [высокой доступности с избыточностью зоны](./concepts-high-availability.md)

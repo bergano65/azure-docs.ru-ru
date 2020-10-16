@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 05/07/2020
 ms.author: allensu
 ms.openlocfilehash: 541aa7da3e804931c1793e455bcbfca83c809dae
-ms.sourcegitcommit: 5d7f8c57eaae91f7d9cf1f4da059006521ed4f9f
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89669181"
 ---
 # <a name="standard-load-balancer-and-availability-zones"></a>Azure Load Balancer ценовой категории "Стандартный" и зоны доступности
@@ -153,7 +153,7 @@ Azure Load Balancer работает с экземплярами виртуал�
 
 Ознакомьтесь с [шаблонами разработки облачных служб Azure](https://docs.microsoft.com/azure/architecture/patterns/) , чтобы повысить устойчивость приложения к сценариям сбоя.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Дополнительные сведения о [зоны доступности](../availability-zones/az-overview.md)
 - Дополнительные сведения о [Load Balancer (цен. Категория "Стандартный")](load-balancer-standard-overview.md)
 - Узнайте, как [распределять нагрузку виртуальных машин в рамках зоны с помощью Load Balancer уровня "Стандартный" с зональным внешним интерфейсом](load-balancer-standard-public-zonal-cli.md).

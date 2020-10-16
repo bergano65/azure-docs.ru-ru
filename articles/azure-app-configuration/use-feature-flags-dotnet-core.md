@@ -14,12 +14,12 @@ ms.topic: tutorial
 ms.date: 09/17/2020
 ms.author: lcozzens
 ms.custom: devx-track-csharp, mvc
-ms.openlocfilehash: f863ca855ca36603085ed96b5aa17d277ae00516
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: f8ad2558c664d1a8b577f01b707200d416d5348a
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91317316"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92078907"
 ---
 # <a name="tutorial-use-feature-flags-in-an-aspnet-core-app"></a>Руководство по использованию флагов функций в приложении ASP.NET Core
 
@@ -27,7 +27,7 @@ ms.locfileid: "91317316"
 
 Библиотеки управления функциями также управляют жизненным циклом флагов функций в фоновом режиме. Например, библиотеки отвечают за обновление и кэширование состояний флагов или гарантируют неизменность состояния флага во время вызова запроса. Кроме того, библиотека ASP.NET Core предоставляет готовое решение по интеграции, включая действия контроллера MVC, представления, маршруты и ПО промежуточного слоя.
 
-В [кратком руководстве по добавлению флагов функций в приложение ASP.NET Core](./quickstart-feature-flag-aspnet-core.md) описано несколько использующихся при этом методов. В нашем руководстве такие методы рассматриваются более подробно. Полную справочную документацию см. в [документации по управлению функциями ASP.NET Core](https://go.microsoft.com/fwlink/?linkid=2091410).
+В [кратком руководстве по добавлению флагов функций в приложение ASP.NET Core](./quickstart-feature-flag-aspnet-core.md) описано несколько использующихся при этом методов. В нашем руководстве такие методы рассматриваются более подробно. Полную справочную документацию см. в [документации по управлению функциями ASP.NET Core](/dotnet/api/microsoft.featuremanagement).
 
 В этом учебнике рассматривается следующее.
 
@@ -301,6 +301,6 @@ app.UseForFeature(featureName, appBuilder => {
 
 Из этого руководства вы узнали, как с помощью библиотек `Microsoft.FeatureManagement` реализовать флаги функций в приложении ASP.NET Core. Подробные сведения о поддержке управления функциями в службе "Конфигурация приложений" и ASP.NET Core см. по следующим ссылкам:
 
-* [Пример кода для флага функции ASP.NET Core](/azure/azure-app-configuration/quickstart-feature-flag-aspnet-core)
-* [Документация по Microsoft.FeatureManagement](https://docs.microsoft.com/dotnet/api/microsoft.featuremanagement)
+* [Пример кода для флага функции ASP.NET Core](./quickstart-feature-flag-aspnet-core.md)
+* [Документация по Microsoft.FeatureManagement](/dotnet/api/microsoft.featuremanagement)
 * [Управление флагами компонентов](./manage-feature-flags.md)

@@ -7,10 +7,10 @@ author: agummadi
 ms.author: agummadi
 ms.date: 04/02/2018
 ms.openlocfilehash: f44afd84c58c94c6a8d3e6145e8a4f66e0e2e782
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86539658"
 ---
 # <a name="pricing-changes-for-azure-network-performance-monitor"></a>Изменения в ценообразовании для Монитора производительности сети Azure
@@ -109,6 +109,6 @@ ms.locfileid: "86539658"
 
 В разделе [наблюдение за подключением](https://azure.microsoft.com/pricing/details/network-watcher/) приведены затраты на мониторинг конечной точки за весь месяц. Для Log Analytics плата за данные доступна на [странице цен](https://azure.microsoft.com/pricing/details/log-analytics/) в разделе о приеме данных.
 
-## <a name="references"></a>Ссылки (на английском языке)
+## <a name="references"></a>Ссылки
 
 [Цены на Log Analytics](https://azure.microsoft.com/pricing/details/log-analytics/). В разделе с часто задаваемыми вопросами содержатся сведения об уровнях "Бесплатный", "На узел" и другие сведения о ценообразовании.

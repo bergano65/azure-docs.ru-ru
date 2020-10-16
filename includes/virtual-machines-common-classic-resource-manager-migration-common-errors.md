@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 02/06/2020
 ms.author: tanmaygore
 ms.openlocfilehash: 7b5318ad7902f323a8af27d2cc5a7975e3c315e1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "80117231"
 ---
 В этой статье перечислены самые распространенные ошибки при переносе ресурсов IaaS из классической модели развертывания Azure в стек Azure Resource Manager, а также способы их устранения.

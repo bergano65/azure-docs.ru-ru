@@ -8,10 +8,10 @@ ms.date: 09/10/2019
 ms.author: victorh
 ms.topic: conceptual
 ms.openlocfilehash: a9b2e8148586ec58ea6a7a033099e726920857b6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84987932"
 ---
 # <a name="url-path-based-routing-overview"></a>Общие сведения о маршрутизации на основе URL-путей
@@ -76,8 +76,8 @@ PathPattern — это список шаблонов пути для сопос
 |---------|---------|
 |`/images/*`     |да|
 |`/images*`     |да|
-|`/images/*.jpg`     |Нет|
-|`/*.jpg`     |Нет|
+|`/images/*.jpg`     |нет|
+|`/*.jpg`     |нет|
 |`/Repos/*/Comments/*`     |нет|
 |`/CurrentUser/Comments/*`     |да|
 
@@ -89,8 +89,8 @@ PathPattern — это список шаблонов пути для сопос
 |---------|---------|
 |`/images/*`     |да|
 |`/images*`     |да|
-|`/images/*.jpg`     |Нет|
-|`/*.jpg`     |Нет|
+|`/images/*.jpg`     |нет|
+|`/*.jpg`     |нет|
 |`/Repos/*/Comments/*`     |нет|
 |`/CurrentUser/Comments/*`     |да|
 
@@ -121,6 +121,6 @@ PathPattern — это список шаблонов пути для сопос
 ]
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомившись с маршрутизацией на основе URL-адресов, создайте шлюз приложений с соответствующими правилами маршрутизации, как указано в статье о [создании шлюза приложений с помощью маршрутизации на основе URL-адресов](create-url-route-portal.md) .

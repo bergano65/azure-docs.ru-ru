@@ -7,12 +7,12 @@ ms.service: azure-netapp-files
 ms.workload: storage
 ms.topic: how-to
 ms.date: 09/22/2020
-ms.openlocfilehash: d5db91a8864d6090466b40197187c9386e053d12
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: eebb0a8dc23a6a442a170dcc6e19495f96ce2921
+ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91325544"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91930600"
 ---
 # <a name="mount-or-unmount-a-volume-for-windows-or-linux-virtual-machines"></a>Подключение или отключение тома для виртуальных машин Windows или Linux 
 
@@ -51,15 +51,15 @@ ms.locfileid: "91325544"
 
 4. Если вы хотите подключить том к Windows с помощью NFS:
 
-    а. Сначала подключите том на виртуальной машине UNIX или Linux.  
+    a. Сначала подключите том на виртуальной машине UNIX или Linux.  
     b. Выполните `chmod 777` команду или `chmod 775` для тома.  
     c. Подключите том через клиент NFS в Windows.
     
 5. Если вы хотите подключить том Kerberos для NFS, см. Дополнительные сведения в разделе [Настройка шифрования Kerberos для нфсв 4.1](configure-kerberos-encryption.md) . 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Настройка домена по умолчанию NFSv4.1 для Azure NetApp Files](azure-netapp-files-configure-nfsv41-domain.md)
-* [Вопросы и ответы по NFS](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-faqs#nfs-faqs)
-* [Обзор сетевой файловой системы](https://docs.microsoft.com/windows-server/storage/nfs/nfs-overview)
+* [Вопросы и ответы по NFS](./azure-netapp-files-faqs.md#nfs-faqs)
+* [Обзор сетевой файловой системы](/windows-server/storage/nfs/nfs-overview)
 * [Подключение тома Kerberos NFS](configure-kerberos-encryption.md#kerberos_mount)

@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.custom: hdinsightactive,hdiseo17may2017,seoapr2020
 ms.date: 08/13/2020
 ms.openlocfilehash: 15d7b11ed49880a81e52c48a93a72e1491a5b645
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89394335"
 ---
 # <a name="apache-components-and-versions-available-for-azure-hdinsight"></a>Компоненты и версии Apache, доступные в Azure HDInsight
@@ -88,11 +88,11 @@ Azure HDInsight поддерживает несколько версий кла�
 | HDInsight 3,6 Spark             | 2.3               | 31 декабря 2020 г.                      | 30 июня 2021 г.               |
 | HDInsight 3,6 Spark             | 2.2               | Прекращено 30 июня 2020 г.          |                             |
 | HDInsight 3,6 Spark             | 2.1               | Прекращено 30 июня 2020 г.          |                             |
-| HDInsight 3,6 Kafka             | 1.1               | 31 декабря 2020 г.                      | 30 июня 2021 г.               |
+| HDInsight 3,6 Kafka             | 1,1               | 31 декабря 2020 г.                      | 30 июня 2021 г.               |
 | HDInsight 3,6 Kafka             | 1.0               | Прекращено 30 июня 2020 г.         |                             |
-| HDInsight 3,6 HBase             | 1.1               | 31 декабря 2020 г.                      | 30 июня 2021 г.               |
+| HDInsight 3,6 HBase             | 1,1               | 31 декабря 2020 г.                      | 30 июня 2021 г.               |
 | Интерактивный запрос HDInsight 3,6 | 2.1               | 31 декабря 2020 г.                      | 30 июня 2021 г.               |
-| HDInsight 3,6             | 1.1               | 31 декабря 2020 г.                      | 30 июня 2021 г.               |
+| HDInsight 3,6             | 1,1               | 31 декабря 2020 г.                      | 30 июня 2021 г.               |
 | Службы машинного обучения HDInsight 3,6      | 9.3               | 31 декабря 2020 г.                      | 31 декабря 2020 г.                |
 
 > [!NOTE]

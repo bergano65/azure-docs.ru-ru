@@ -16,10 +16,10 @@ ms.date: 04/16/2018
 ms.author: barclayn
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 8649c9faf3905e69232cdc15bbba6607abe3e9c4
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90969515"
 ---
 # <a name="create-list-or-delete-a-user-assigned-managed-identity-using-azure-powershell"></a>Создание, перечисление или удаление назначенного пользователем управляемого удостоверения с помощью Azure PowerShell
@@ -36,13 +36,13 @@ ms.locfileid: "90969515"
 
 - Если вы не работали с управляемыми удостоверениями для ресурсов Azure, изучите [общие сведения](overview.md). **Обратите внимание на [различие между управляемыми удостоверениями, назначаемыми системой и назначаемыми пользователями](overview.md#managed-identity-types)**.
 - Если у вас нет учетной записи Azure, [зарегистрируйтесь для получения бесплатной пробной учетной записи](https://azure.microsoft.com/free/), прежде чем продолжать.
-- Для выполнения примеров сценариев существует два варианта.
-    - Используйте [Azure Cloud Shell](../../cloud-shell/overview.md), которую можно открыть с помощью кнопки **попробовать** в верхнем правом углу блоков кода.
-    - Запускайте сценарии локально с Azure PowerShell, как описано в следующем разделе.
+- Выполнить примеры скриптов можно двумя способами:
+    - используйте службу [Azure Cloud Shell](../../cloud-shell/overview.md), которую можно открыть с помощью кнопки **Попробовать** в правом верхнем углу блоков кода.
+    - выполните скрипты локально с помощью Azure PowerShell, как описано в следующем разделе.
 
-### <a name="configure-azure-powershell-locally"></a>Локальная настройка Azure PowerShell
+### <a name="configure-azure-powershell-locally"></a>Настройка Azure PowerShell в локальной среде
 
-Чтобы использовать Azure PowerShell локально для этой статьи (вместо использования Cloud Shell), выполните следующие действия.
+Чтобы для примеров из этой статьи использовать Azure PowerShell локально (вместо Cloud Shell), сделайте следующее:
 
 1. Установите [последнюю версию Azure PowerShell](/powershell/azure/install-az-ps), если это еще не сделано.
 
@@ -58,9 +58,9 @@ ms.locfileid: "90969515"
     Install-Module -Name PowerShellGet -AllowPrerelease
     ```
 
-    `Exit`После выполнения этой команды для следующего шага может потребоваться выйти из текущего сеанса PowerShell.
+    Возможно, после выполнения этой команды для перехода к следующему шагу потребуется выйти (`Exit`) из текущего сеанса PowerShell.
 
-1. Установите предварительную версию `Az.ManagedServiceIdentity` модуля, чтобы выполнить управляемые пользователем операции идентификации в этой статье:
+1. Установите предварительную версию модуля `Az.ManagedServiceIdentity` для выполнения операций с управляемыми удостоверениями, назначаемыми пользователем, в рамках этой статьи.
 
     ```azurepowershell
     Install-Module -Name Az.ManagedServiceIdentity -AllowPrerelease
@@ -102,6 +102,6 @@ Remove-AzUserAssignedIdentity -ResourceGroupName <RESOURCE GROUP> -Name <USER AS
 > [!NOTE]
 > При удалении управляемого удостоверения, назначаемого пользователем, не удаляются ссылки из ресурсов, которым оно было назначено. Назначения удостоверения должны быть удалены отдельно.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Полный список команд Azure PowerShell для управляемых удостоверений для ресурсов Azure и дополнительные сведения о них приведены в разделе [Az.ManagedServiceIdentity](/powershell/module/az.managedserviceidentity#managed_service_identity).

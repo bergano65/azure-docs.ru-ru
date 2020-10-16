@@ -16,12 +16,12 @@ ms.date: 10/09/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7d61a3dd995efd1f433c2e862c4b7a59d31f79a3
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.openlocfilehash: a97142e0c512f4f95235ad08c94c852906d3efd8
+ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89660861"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92095862"
 ---
 # <a name="azure-ad-connect-and-federation"></a>Azure AD Connect и федерация
 Azure Active Directory (Azure AD) Connect позволяет настроить федерацию с локальными службами федерации Active Directory (AD FS) и Azure AD. С помощью федеративного входа ваши пользователи могут входить в службы Azure AD со своими локальными паролями, а в корпоративной сети им не нужно будет вводить пароли повторно. Благодаря возможности федерации с AD FS можно развернуть новую установку AD FS или указать существующую установку в ферме Windows Server 2012 R2.
@@ -34,7 +34,7 @@ Azure Active Directory (Azure AD) Connect позволяет настроить
 | **Параметры входа в Azure AD Connect** | |
 | [Параметры входа в Azure AD Connect](plan-connect-user-signin.md) |Описание разных параметров входа пользователей и их влияние на работу пользователя в среде Azure. |
 | **Установка AD FS с помощью Azure AD Connect** | |
-| [Предварительные требования](how-to-connect-install-custom.md#ad-fs-configuration-pre-requisites) |Предварительные требования для установки AD FS с помощью Azure AD Connect. |
+| [Предварительные требования](how-to-connect-install-custom.md#ad-fs-configuration-prerequisites) |Предварительные требования для установки AD FS с помощью Azure AD Connect. |
 | [Настройка федерации с AD FS](how-to-connect-install-custom.md#configuring-federation-with-ad-fs) |Установка новой фермы AD FS с помощью Azure AD Connect. |
 | [Федерацию с Azure AD с помощью альтернативного имени пользователя](how-to-connect-fed-management.md#alternateid) | Настройка федерации с использованием альтернативного имени пользователя.  |
 | **Изменение конфигурации AD FS** | |

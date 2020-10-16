@@ -8,10 +8,10 @@ ms.date: 02/20/2020
 ms.author: tisande
 ms.custom: devx-track-js
 ms.openlocfilehash: ee88b980c448bfbf581537aef4653fde5354623a
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91302937"
 ---
 # <a name="geospatial-and-geojson-location-data-in-azure-cosmos-db"></a>Данные о геопространственном и географическом расположении в Azure Cosmos DB
@@ -212,7 +212,7 @@ await container.CreateItemAsync( new UserProfile
 
 Если у вас нет информации широты и долготы, но у вас есть физические адреса или расположение, например город или страна или регион, можно найти фактические координаты, используя службу геокодирования, например службы Bing Maps для служб RESTFUL. Дополнительные сведения о геокодировании в Картах Bing можно найти [здесь](https://msdn.microsoft.com/library/ff701713.aspx).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы ознакомились с предварительными сведениями о поддержке геопространственных данных в Azure Cosmos DB, вы можете сделать следующее:
 

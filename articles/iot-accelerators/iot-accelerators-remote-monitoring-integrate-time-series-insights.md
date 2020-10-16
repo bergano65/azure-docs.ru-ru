@@ -8,12 +8,12 @@ ms.date: 09/12/2018
 ms.topic: conceptual
 ms.service: iot-accelerators
 services: iot-accelerators
-ms.openlocfilehash: b0ab1e2e43210ecd7a61b7dffcb12d2c7c5c1c46
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 8b6219c82dc23deb467e87a6866839b8eace8b5d
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86536612"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92072651"
 ---
 # <a name="integrate-azure-time-series-insights-with-remote-monitoring"></a>Интеграция службы "Аналитика временных рядов Azure" с решением удаленного мониторинга
 
@@ -126,7 +126,7 @@ az iot hub consumer-group create --hub-name contosorm30526 --name timeseriesinsi
 1. Нажмите кнопку **Сохранить**, чтобы создать назначение роли. Через несколько секунд субъекту безопасности будет назначена роль в политиках доступа к данным.
 
 > [!NOTE]
-> Если требуется предоставить доступ к службе "Аналитика временных рядов" дополнительным пользователям, можно использовать следующие шаги, чтобы [предоставить доступ к данным](../time-series-insights/time-series-insights-data-access.md#grant-data-access).
+> Если требуется предоставить доступ к службе "Аналитика временных рядов" дополнительным пользователям, можно использовать следующие шаги, чтобы [предоставить доступ к данным](../time-series-insights/concepts-access-policies.md#grant-data-access).
 
 ## <a name="configure-azure-stream-analytics"></a>Настройка Azure Stream Analytics 
 
@@ -217,7 +217,7 @@ docker pull azureiotpcs/pcs-remote-monitoring-webui:1.0.2
 
 1. Потяните о [последнем файле DOCKER YAML](https://github.com/Azure/pcs-cli/tree/5a9b4e0dbe313172eff19236e54a4d461d4f3e51/solutions/remotemonitoring/single-vm) из репозитория GitHub с помощью последнего тега. 
 
-1. Установите SSH-подключение к виртуальной машине, выполнив инструкции в разделе [Создание и использование ключей SSH](https://docs.microsoft.com/azure/virtual-machines/linux/ssh-from-windows).
+1. Установите SSH-подключение к виртуальной машине, выполнив инструкции в разделе [Создание и использование ключей SSH](../virtual-machines/linux/ssh-from-windows.md).
 
 1. После подключения введите `cd /app`.
 
@@ -300,4 +300,4 @@ docker pull azureiotpcs/pcs-remote-monitoring-webui:1.0.2
 
 * Сведения об изучении данных и диагностике оповещений в обозревателе Аналитики временных рядов см. в учебнике по [проведению анализа первопричин](iot-accelerators-remote-monitoring-root-cause-analysis.md).
 
-* Сведения о том, как изучать и запрашивать данные в обозревателе Аналитики временных рядов, см. в документации по [обозревателю Аналитики временных рядов Azure](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-explorer).
+* Сведения о том, как изучать и запрашивать данные в обозревателе Аналитики временных рядов, см. в документации по [обозревателю Аналитики временных рядов Azure](../time-series-insights/time-series-insights-explorer.md).

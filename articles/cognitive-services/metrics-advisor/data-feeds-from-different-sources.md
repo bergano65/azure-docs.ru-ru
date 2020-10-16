@@ -3,19 +3,19 @@ title: Добавление веб-каналов данных из разных
 titleSuffix: Azure Cognitive Services
 description: Добавление различных каналов данных в помощник по метрикам
 services: cognitive-services
-author: aahill
+author: mrbullwinkle
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: metrics-advisor
 ms.topic: conceptual
-ms.date: 09/04/2020
-ms.author: aahi
-ms.openlocfilehash: 343db078880f55701730e096c3da85a6a7e5428a
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.date: 10/12/2020
+ms.author: mbullwin
+ms.openlocfilehash: a37f3cfd250d152129245395680dbd847359e869
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91324473"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92046916"
 ---
 # <a name="add-data-feeds-from-different-data-sources-to-metrics-advisor"></a>Добавление веб-каналов данных из разных источников данных в помощник по метрикам
 
@@ -40,7 +40,7 @@ ms.locfileid: "91324473"
 |[**Azure Application Insights**](#appinsights)|  Basic |
 |[**Хранилище BLOB-объектов Azure (JSON)**](#blob) | Basic<br>ManagedIdentity|
 |[**Azure Cosmos DB (SQL)**](#cosmosdb) | Basic |
-|[**Обозреватель данных Azure (Kusto)**](#kusto) | Basic<br>ManagedIdentity|
+|[**Azure Data Explorer (Kusto)**](#kusto) | Basic<br>ManagedIdentity|
 |[**Azure Data Lake Storage 2-го поколения**](#adl) | Basic<br>DataLakeGen2SharedKey<br>Субъект-служба<br>Субъект-служба из хранилища ключей<br> |
 |[**База данных SQL Azure/SQL Server**](#sql) | Basic<br>ManagedIdentity<br>Субъект-служба<br>Субъект-служба из хранилища ключей<br>азуресклконнектионстринг
 |[**Хранилище таблиц Azure**](#table) | Basic | 
@@ -82,7 +82,7 @@ ms.locfileid: "91324473"
 
 * **Контейнер**: помощник по метрикам ждет, что данные временных рядов хранятся в виде файлов BLOB-объектов (один большой двоичный объект на метку времени) в одном контейнере. Это поле имени контейнера.
 
-* **Шаблон большого двоичного объекта**: это шаблон имен файлов BLOB-объектов. Например, так: `/%Y/%m/X_%Y-%m-%d-%h-%M.json`. Поддерживаются следующие параметры:
+* **Шаблон большого двоичного объекта**: это шаблон имен файлов BLOB-объектов. Например: `/%Y/%m/X_%Y-%m-%d-%h-%M.json`. Поддерживаются следующие параметры:
   * `%Y` год в формате `yyyy`
   * `%m` — месяц в формате `MM`
   * `%d` — день в формате `dd`
@@ -93,7 +93,7 @@ ms.locfileid: "91324473"
   
   * v1 (значение по умолчанию)
 
-      Принимаются только *имена* и *значения* метрик. Пример:
+      Принимаются только *имена* и *значения* метрик. Например.
     
       ``` JSON
       {"count":11, "revenue":1.23}
@@ -101,7 +101,7 @@ ms.locfileid: "91324473"
 
   * Версия 2
 
-      Также принимаются *измерения* метрик и *отметка времени* . Пример:
+      Также принимаются *измерения* метрик и *отметка времени* . Например.
       
       ``` JSON
       [
@@ -131,9 +131,9 @@ ms.locfileid: "91324473"
     select StartDate, JobStatusId, COUNT(*) AS JobNumber from IngestionJobs WHERE and StartDate = '2019-12-12 00:00:00'
     ```
 
-## <a name="span-idkustoazure-data-explorer-kustospan"></a><span id="kusto">Обозреватель данных Azure (Kusto)</span>
+## <a name="span-idkustoazure-data-explorer-kustospan"></a><span id="kusto">Azure Data Explorer (Kusto)</span>
 
-* **Строка подключения**. сведения о том, как получить строку подключения из Azure обозреватель данных (Kusto), см. в статье [Просмотр и копирование строки подключения](https://docs.microsoft.com/azure/data-explorer/kusto/api/connection-strings/kusto) .
+* **Строка подключения**. советник по метрикам поддерживает доступ к Azure обозреватель данных (Kusto) с помощью проверки подлинности приложения Azure AD. Вам потребуется создать и зарегистрировать приложение Azure AD, а затем авторизовать его для доступа к базе данных Azure обозреватель данных. Чтобы получить строку подключения, см. документацию по [Обозреватель данных Azure](https://docs.microsoft.com/azure/data-explorer/provision-azure-ad-app) .
 
 * **Запрос**. см. раздел [язык запросов Kusto](https://docs.microsoft.com/azure/data-explorer/kusto/query) , чтобы получить и сформулировать данные в многомерных рядах данных. В запросе можно использовать `@StartTime` `@EndTime` переменные и. Они должны быть отформатированы: `yyyy-MM-dd HH:mm:ss` .
 
@@ -159,7 +159,7 @@ ms.locfileid: "91324473"
   * `%h` — Это час в формате `HH`
   * `%M` представляет собой минуты в формате `mm`
 
-В настоящее время помощник по метрикам поддерживает схему данных в файлах JSON, как показано ниже. Пример:
+В настоящее время помощник по метрикам поддерживает схему данных в файлах JSON, как показано ниже. Например.
 
 ``` JSON
 [
@@ -232,7 +232,7 @@ The timestamp field must match one of these two formats:
 
 ## <a name="span-idhttphttp-requestspan"></a><span id="http">HTTP-запрос</span>
 
-* **URL-адрес запроса**: URL-адрес HTTP, который может возвращать JSON. Заполнители% Y,% m,% d,% h,% M поддерживаются:% Y = year в формате гггг,% m = месяц в формате MM,% d = день в формате DD,% h = час в формате чч,% M = минута в формате mm. Например, так: `http://microsoft.com/ProjectA/%Y/%m/X_%Y-%m-%d-%h-%M`.
+* **URL-адрес запроса**: URL-адрес HTTP, который может возвращать JSON. Заполнители% Y,% m,% d,% h,% M поддерживаются:% Y = year в формате гггг,% m = месяц в формате MM,% d = день в формате DD,% h = час в формате чч,% M = минута в формате mm. Например: `http://microsoft.com/ProjectA/%Y/%m/X_%Y-%m-%d-%h-%M`.
 * **HTTP-метод запроса**: используйте Get или POST.
 * **Заголовок запроса**: можно добавить обычную проверку подлинности. 
 * **Полезные данные запроса**: поддерживаются только полезные данные JSON. @StartTimeВ полезных данных поддерживается заполнитель. Ответ должен быть в следующем формате JSON: [{"timestamp": "2018-01-01T00:00:00Z", "Market": "en-US", "Count": 11, "доход": 1,23}, {"timestamp": "2018-01-01T00:00:00Z", "DataMarket": "zh-CN", "Count": 22, "доход": 4,56}]. (например, когда принимается значение 2020-06-21T00:00:00Z, @StartTime = 2020-06-21T00:00:00.0000000 + 00:00)

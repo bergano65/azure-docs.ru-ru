@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 09/28/2020
 ms.author: b-juche
-ms.openlocfilehash: d2abb66684738e97ade2a2e67309a4e7b53c4734
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.openlocfilehash: 5e44c2cfc81256a8715c7c625648b6ec25bcd319
+ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91442080"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91929223"
 ---
 # <a name="manage-a-manual-qos-capacity-pool"></a>Управление пулом емкости качества обслуживания вручную
 
@@ -44,7 +44,7 @@ ms.locfileid: "91442080"
     ```azurepowershell-interactive
     Get-AzProviderFeature -ProviderNamespace Microsoft.NetApp -FeatureName ANFFlexPool
     ```
-Вы также можете использовать [Azure CLI команды](https://docs.microsoft.com/cli/azure/feature?view=azure-cli-latest&preserve-view=true) `az feature register` , `az feature show` чтобы зарегистрировать эту функцию и отобразить состояние регистрации. 
+Вы также можете использовать [Azure CLI команды](/cli/azure/feature?preserve-view=true&view=azure-cli-latest) `az feature register` , `az feature show` чтобы зарегистрировать эту функцию и отобразить состояние регистрации. 
 
 ## <a name="set-up-a-new-manual-qos-capacity-pool"></a>Настройка нового пула ресурсов качества обслуживания вручную 
 
@@ -84,7 +84,7 @@ ms.locfileid: "91442080"
 
     ![Изменение пропускной способности QoS](../media/azure-netapp-files/change-qos-throughput.png)
 
-## <a name="next-steps"></a>Дальнейшие действия  
+## <a name="next-steps"></a>Дальнейшие шаги  
 
 * [Настройка пула емкости](azure-netapp-files-set-up-capacity-pool.md)
 * [Метрики для Azure NetApp Files](azure-netapp-files-metrics.md)
@@ -97,5 +97,3 @@ ms.locfileid: "91442080"
 * [Создание тома NFS](azure-netapp-files-create-volumes.md)
 * [Создание тома SMB](azure-netapp-files-create-volumes-smb.md)
 * [Создание тома с двумя протоколами](create-volumes-dual-protocol.md)
-
-

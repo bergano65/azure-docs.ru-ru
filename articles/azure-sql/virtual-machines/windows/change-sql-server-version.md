@@ -15,10 +15,10 @@ ms.author: RamaKoni
 ms.reviewer: sqlblt, daleche
 ms.custom: seo-lt-2019
 ms.openlocfilehash: a57a432a5f0f8e5a6bd802ec08b18350da3a77b3
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91293379"
 ---
 # <a name="in-place-change-of-sql-server-version-on-azure-vm"></a>Замена версии SQL Server на месте на виртуальной машине Azure
@@ -69,11 +69,11 @@ ms.locfileid: "91293379"
 1. На странице **ключ продукта** выберите параметр, чтобы указать, выполняется ли обновление до бесплатного выпуска SQL Server или имеется ключ PID для рабочей версии продукта. Дополнительные сведения см. в статьях [выпуски и поддерживаемые функции SQL Server 2019 (15. x)](https://docs.microsoft.com/sql/sql-server/editions-and-components-of-sql-server-version-15?view=sql-server-ver15) и [поддерживаемые обновления версий и выпусков (SQL Server 2016)](https://docs.microsoft.com/sql/database-engine/install-windows/supported-version-and-edition-upgrades?view=sql-server-ver15).
 1. Нажмите кнопку **Далее** , чтобы перейти на страницу **все готово к обновлению** , а затем выберите **Обновить**. В течение нескольких минут окно программы установки может перестать отвечать на запросы, пока изменения вступают в действие. На **полной** странице будет подтверждено, что обновление завершено. Пошаговые инструкции по обновлению см. [в полной процедуре](https://docs.microsoft.com/sql/database-engine/install-windows/upgrade-sql-server-using-the-installation-wizard-setup?view=sql-server-ver15#procedure).
 
-   :::image type="content" source="./media/change-sql-server-version/complete-page.png" alt-text="Завершить страницу":::
+   :::image type="content" source="./media/change-sql-server-version/complete-page.png" alt-text="Выбор для обновления версии SQL Server":::
 
 Если вы изменили SQL Server Edition в дополнение к изменению версии, также обновите выпуск и ознакомьтесь с разделом **Проверка версии и выпуска в портале** , чтобы изменить экземпляр ВИРТУАЛЬНОЙ машины SQL.
 
-   :::image type="content" source="./media/change-sql-server-version/change-portal.png" alt-text="Изменение метаданных версии":::
+   :::image type="content" source="./media/change-sql-server-version/change-portal.png" alt-text="Выбор для обновления версии SQL Server":::
 
 ## <a name="downgrade-the-version-of-sql-server"></a>Понизить версию SQL Server
 
@@ -91,7 +91,7 @@ ms.locfileid: "91293379"
 
    Убедитесь, что выбраны правильные параметры при создании скрипта таких элементов, как Целевая версия, зависимые объекты и дополнительные параметры.
 
-   :::image type="content" source="./media/change-sql-server-version/scripting-options.png" alt-text="Параметры создания скриптов":::
+   :::image type="content" source="./media/change-sql-server-version/scripting-options.png" alt-text="Выбор для обновления версии SQL Server":::
 
 1. Полностью удалите SQL Server и все связанные службы.
 1. Перезапустите виртуальную машину.
@@ -104,12 +104,12 @@ ms.locfileid: "91293379"
 
 После изменения версии SQL Server снова Зарегистрируйте SQL Serverную виртуальную машину с помощью [поставщика ресурсов виртуальной машины SQL](sql-vm-resource-provider-register.md) , чтобы можно было использовать портал Azure для просмотра версии SQL Server. В указанном номере версии теперь будет отражена только что обновленная версия и выпуск SQL Server установки.
 
-:::image type="content" source="./media/change-sql-server-version/verify-portal.png" alt-text="Проверить версию":::
+:::image type="content" source="./media/change-sql-server-version/verify-portal.png" alt-text="Выбор для обновления версии SQL Server":::
 
 > [!NOTE]
 > Если вы уже зарегистрировались в поставщике ресурсов виртуальной машины SQL, [Отмените регистрацию в RP](sql-vm-resource-provider-register.md#unregister-from-rp) и снова [зарегистрируйте ресурс виртуальной машины SQL](sql-vm-resource-provider-register.md#register-with-rp) , чтобы он обнаружил правильную версию и выпуск SQL Server, установленных на виртуальной машине. При этом обновляются метаданные и сведения о выставлении счетов, связанные с этой виртуальной машиной.
 
-## <a name="remarks"></a>Комментарии
+## <a name="remarks"></a>Remarks
 
 - Рекомендуется инициировать резервное копирование, обновление статистики, перестроение индексов и проверку согласованности после завершения обновления. Кроме того, можно проверить уровни совместимости отдельных баз данных, чтобы убедиться, что они соответствуют нужному уровню.
 - После обновления SQL Server на виртуальной машине убедитесь, что свойство **edition** SQL Server в портал Azure соответствует номеру установленного выпуска для выставления счетов.

@@ -2,21 +2,21 @@
 title: Работа с виртуальными машинами и группы безопасности сети в Azure бастиона
 description: Группы безопасности сети можно использовать с Azure бастиона. Сведения о подсетях, необходимых для этой конфигурации.
 services: bastion
-author: charwen
+author: cherylmc
 ms.service: bastion
 ms.topic: conceptual
 ms.date: 07/07/2020
-ms.author: charwen
-ms.openlocfilehash: a69aa8d8a6dc324d6fe28219316c36ac2ec816a5
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.author: cherylmc
+ms.openlocfilehash: 7853ac3ece01057282bc6cb421018020e15273b5
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90987699"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92079196"
 ---
 # <a name="working-with-nsg-access-and-azure-bastion"></a>Работа с NSG Access и Azure бастиона
 
-При работе с Azure бастиона можно использовать группы безопасности сети (группы безопасности сети). Дополнительные сведения см. в разделе [группы безопасности](../virtual-network/security-overview.md).
+При работе с Azure бастиона можно использовать группы безопасности сети (группы безопасности сети). Дополнительные сведения см. в разделе [группы безопасности](../virtual-network/network-security-groups-overview.md).
 
 :::image type="content" source="./media/bastion-nsg/figure-1.png" alt-text="Группа безопасности сети (NSG)":::
 
@@ -42,7 +42,7 @@ Azure бастиона развертывается специально для 
    * **Входящий трафик из плоскости управления бастиона Azure:** Для подключения плоскости управления включите порт 443 для входящего трафика из тега службы **гатевайманажер** . Это позволяет плоскости управления, то есть, диспетчером шлюзов взаимодействовать с Azure бастиона.
 
 
-   :::image type="content" source="./media/bastion-nsg/inbound.png" alt-text="На снимке экрана показаны правила безопасности для входящего трафика для подключения к Azure бастиона.":::
+   :::image type="content" source="./media/bastion-nsg/inbound.png" alt-text="Группа безопасности сети (NSG)":::
 
 * **Исходящий трафик:**
 
@@ -50,7 +50,7 @@ Azure бастиона развертывается специально для 
    * **Исходящий трафик к другим общедоступным конечным точкам в Azure:** Azure бастиона должен иметь возможность подключения к различным общедоступным конечным точкам в Azure (например, для хранения журналов диагностики и журналов отслеживания использования). По этой причине Azure бастиона требуется исходящий трафик от 443 к тегу службы **AzureCloud** .
 
 
-   :::image type="content" source="./media/bastion-nsg/outbound.png" alt-text="На снимке экрана показаны правила безопасности для исходящего трафика для подключения к Azure бастиона.":::
+   :::image type="content" source="./media/bastion-nsg/outbound.png" alt-text="Группа безопасности сети (NSG)":::
 
 ### <a name="target-vm-subnet"></a>Целевая подсеть виртуальной машины
 Это подсеть, содержащая целевую виртуальную машину, к которой необходимо подключиться по протоколу RDP или SSH.

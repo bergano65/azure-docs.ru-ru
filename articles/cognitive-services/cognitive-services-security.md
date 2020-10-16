@@ -11,10 +11,10 @@ ms.date: 08/28/2020
 ms.author: erhopf
 ms.custom: devx-track-python, devx-track-js, devx-track-csharp
 ms.openlocfilehash: 9b90d886923f4bbdab3715130bde15ecb5921636
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91326819"
 ---
 # <a name="azure-cognitive-services-security"></a>Безопасность Cognitive Services Azure
@@ -197,11 +197,11 @@ NSString* value =
 
 ## <a name="customer-lockbox"></a>Защищенное хранилище клиента
 
-[Защищенное хранилище для Microsoft Azure](../security/fundamentals/customer-lockbox-overview.md) предоставляет пользователям интерфейс для просмотра и утверждения или отклонения запросов на доступ к данным клиентов. Он используется в случаях, когда инженеру Майкрософт требуется доступ к данным клиента во время запроса на поддержку. Сведения о инициировании, отслеживании и хранении запросов защищенное хранилище для последующего просмотра и аудита см. в разделе [защищенное хранилище](../security/fundamentals/customer-lockbox-overview.md). 
+[Защищенное хранилище для Microsoft Azure](../security/fundamentals/customer-lockbox-overview.md) предоставляет пользователям интерфейс для просмотра и утверждения или отклонения запросов на доступ к данным клиентов. Этот интерфейс позволяет специалисту Майкрософт получить доступ к данным клиента в рамках процессов поддержки. Сведения о инициировании, отслеживании и хранении запросов защищенное хранилище для последующего просмотра и аудита см. в разделе [защищенное хранилище](../security/fundamentals/customer-lockbox-overview.md). 
 
 Защищенное хранилище доступна для этой службы:
 
-* Переводчик
+* API перевода
 
 Для следующих служб инженеры Майкрософт не будут получать доступ к данным клиентов на уровне E0: 
 
@@ -220,7 +220,7 @@ NSString* value =
 > [!IMPORTANT]
 > Корпорация Майкрософт **не** использует данные клиентов для улучшения своих речевых моделей. Кроме того, если ведение журнала конечных точек отключено и никакие настройки не используются, данные клиента не сохраняются. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Изучите различные [Cognitive Services](welcome.md)
 * Дополнительные сведения о [Cognitive Services виртуальных сетях](cognitive-services-virtual-networks.md)

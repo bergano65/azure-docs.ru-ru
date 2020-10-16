@@ -8,12 +8,12 @@ ms.date: 09/08/2020
 ms.author: brendm
 ms.custom: devx-track-java
 zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: 98b7f9b1ed5e09a1f731e45f8ca2d148a4084986
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: c5346858aa119f11ef34916b24c70c966286ab86
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91336162"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92089049"
 ---
 # <a name="troubleshoot-common-azure-spring-cloud-issues"></a>Устранение распространенных проблем с пружинным облаком Azure
 
@@ -68,7 +68,7 @@ ms.locfileid: "91336162"
 
 
 
-Дополнительные сведения об Azure Log Analytics см. [в статье Приступая к работе с log Analytics в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-portal).
+Дополнительные сведения об Azure Log Analytics см. [в статье Приступая к работе с log Analytics в Azure Monitor](../azure-monitor/log-query/get-started-portal.md).
 ::: zone-end
 
 ### <a name="my-application-experiences-high-cpu-usage-or-high-memory-usage"></a>В приложении наблюдается высокая загрузка ЦП или интенсивное потребление памяти
@@ -91,7 +91,7 @@ ms.locfileid: "91336162"
 
 Если все экземпляры работают и работают, перейдите в Azure Log Analytics, чтобы запросить журналы приложений и проверить логику кода. Это поможет понять, может ли любой из них повлиять на секционирование масштабирования. Дополнительные сведения см. [в разделе анализ журналов и метрик с помощью параметров диагностики](diagnostic-services.md).
 
-Дополнительные сведения об Azure Log Analytics см. [в статье Приступая к работе с log Analytics в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-portal). Запросите журналы с помощью [языка запросов Kusto](https://docs.microsoft.com/azure/kusto/query/).
+Дополнительные сведения об Azure Log Analytics см. [в статье Приступая к работе с log Analytics в Azure Monitor](../azure-monitor/log-query/get-started-portal.md). Запросите журналы с помощью [языка запросов Kusto](/azure/kusto/query/).
 
 ::: zone pivot="programming-language-java"
 ### <a name="checklist-for-deploying-your-spring-application-to-azure-spring-cloud"></a>Контрольный список для развертывания пружинного приложения в Azure Веснного облака
@@ -113,14 +113,14 @@ ms.locfileid: "91336162"
 
 Когда вы настраиваете экземпляр облачной службы Azure весны с помощью портал Azure, Azure Веснного облака выполняет проверку.
 
-Но при попытке настроить экземпляр облачной службы Azure весны с помощью [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli) или [шаблона Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/)убедитесь в том, что:
+Но при попытке настроить экземпляр облачной службы Azure весны с помощью [Azure CLI](/cli/azure/get-started-with-azure-cli) или [шаблона Azure Resource Manager](../azure-resource-manager/index.yml)убедитесь в том, что:
 
 * подписка активна;
 * Это расположение [поддерживается](spring-cloud-faq.md) в Azure веснного облака.
 * группа ресурсов для экземпляра уже создана;
 * имя ресурса соответствует правилу именования. Оно должно содержать только строчные буквы, цифры и дефисы. Имя должно начинаться с буквы и заканчиваться буквой или цифрой. Значение должно содержать от 2 до 32 символов.
 
-Если вы хотите настроить экземпляр облачной службы Azure весны с помощью шаблона диспетчер ресурсов, сначала ознакомьтесь со [сведениями о структуре и синтаксисе шаблонов Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-authoring-templates).
+Если вы хотите настроить экземпляр облачной службы Azure весны с помощью шаблона диспетчер ресурсов, сначала ознакомьтесь со [сведениями о структуре и синтаксисе шаблонов Azure Resource Manager](../azure-resource-manager/templates/template-syntax.md).
 
 Имя экземпляра облачной службы Azure весны будет использоваться для запроса имени поддомена в `azureapps.io` , поэтому установка завершится ошибкой, если имя конфликтует с существующим. Дополнительные сведения можно найти в журналах действий.
 
@@ -129,7 +129,7 @@ ms.locfileid: "91336162"
 
 Нельзя передать *ZIP* -файл для приложения .NET Core стилтое с помощью портал Azure или шаблона диспетчер ресурсов.
 
-При развертывании пакета приложения с помощью [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli)Azure CLI периодически опрашивает ход развертывания и в итоге отображает результат развертывания.
+При развертывании пакета приложения с помощью [Azure CLI](/cli/azure/get-started-with-azure-cli)Azure CLI периодически опрашивает ход развертывания и в итоге отображает результат развертывания.
 
 Убедитесь, что приложение упаковано в правильном формате *ZIP* -файла. Если пакет не упакован должным образом, процесс перестанет отвечать на запросы или появится сообщение об ошибке.
 ::: zone-end
@@ -139,7 +139,7 @@ ms.locfileid: "91336162"
 
 Невозможно отправить пакет/Source (JAR) файла архива Java с помощью портал Azure или шаблона диспетчер ресурсов.
 
-При развертывании пакета приложения с помощью [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli)Azure CLI периодически опрашивает ход развертывания и в итоге отображает результат развертывания.
+При развертывании пакета приложения с помощью [Azure CLI](/cli/azure/get-started-with-azure-cli)Azure CLI периодически опрашивает ход развертывания и в итоге отображает результат развертывания.
 
 Если опрос будет прерван, вы сможете выполнить приведенную ниже команду для получения журналов развертывания.
 
@@ -153,7 +153,7 @@ ms.locfileid: "91336162"
 
 Невозможно отправить пакет JAR/Source с помощью портал Azure или шаблона диспетчер ресурсов.
 
-При развертывании пакета приложения с помощью [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli)Azure CLI периодически опрашивает ход развертывания и в итоге отображает результат развертывания.
+При развертывании пакета приложения с помощью [Azure CLI](/cli/azure/get-started-with-azure-cli)Azure CLI периодически опрашивает ход развертывания и в итоге отображает результат развертывания.
 
 Если опрос будет прерван, вы сможете выполнить приведенную ниже команду для получения сборки и журналов развертывания.
 
@@ -171,7 +171,7 @@ ms.locfileid: "91336162"
 
 Вы также можете проверить журналы клиента _реестра службы_ в log Analytics Azure. Дополнительные сведения см. в разделе [Анализ журналов и метрик с помощью параметров диагностики](diagnostic-services.md) .
 
-Дополнительные сведения об Azure Log Analytics см. [в статье Приступая к работе с log Analytics в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-portal). Запросите журналы с помощью [языка запросов Kusto](https://docs.microsoft.com/azure/kusto/query/).
+Дополнительные сведения об Azure Log Analytics см. [в статье Приступая к работе с log Analytics в Azure Monitor](../azure-monitor/log-query/get-started-portal.md). Запросите журналы с помощью [языка запросов Kusto](/azure/kusto/query/).
 
 ### <a name="i-want-to-inspect-my-applications-environment-variables"></a>Я хочу проверить переменные среды моего приложения
 
@@ -231,7 +231,7 @@ ms.locfileid: "91336162"
 </dependency>
 ```
 
-Если журналы приложения можно архивировать в учетную запись хранения, но не отправляются в Azure Log Analytics, проверьте, правильно ли [настроена Рабочая область](https://docs.microsoft.com/azure/azure-monitor/learn/quick-create-workspace). Если вы используете бесплатный уровень Log Analytics Azure, обратите внимание, что [уровень Free не обеспечивает соглашения об уровне обслуживания (SLA)](https://azure.microsoft.com/support/legal/sla/log-analytics/v1_3/).
+Если журналы приложения можно архивировать в учетную запись хранения, но не отправляются в Azure Log Analytics, проверьте, правильно ли [настроена Рабочая область](../azure-monitor/learn/quick-create-workspace.md). Если вы используете бесплатный уровень Log Analytics Azure, обратите внимание, что [уровень Free не обеспечивает соглашения об уровне обслуживания (SLA)](https://azure.microsoft.com/support/legal/sla/log-analytics/v1_3/).
 ::: zone-end
 
 ## <a name="next-steps"></a>Дальнейшие действия

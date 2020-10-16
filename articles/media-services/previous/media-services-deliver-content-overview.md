@@ -10,12 +10,12 @@ ms.workload: media
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: b636d1cdf2e4b9bd137768e22240d8a47d724a97
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: 363bb5389eda8336d04b1ff457f8246e89a042d8
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89266040"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92014398"
 ---
 # <a name="deliver-content-to-customers"></a>Доставка содержимого клиентам
 
@@ -69,7 +69,7 @@ ms.locfileid: "89266040"
 > 
 > 
 
-Чтобы обновить срок действия указателя, используйте [REST API](/rest/api/media/operations/locator#update_a_locator) или [.NET API](https://go.microsoft.com/fwlink/?LinkID=533259). Обратите внимание, что при обновлении срока действия указателя SAS изменяется URL-адрес.
+Чтобы обновить срок действия указателя, используйте [REST API](/rest/api/media/operations/locator#update_a_locator) или [.NET API](/dotnet/api/microsoft.windowsazure.mediaservices.client.ilocator). Обратите внимание, что при обновлении срока действия указателя SAS изменяется URL-адрес.
 
 Указатели не предназначены для управления доступом на уровне пользователей. Вы можете предоставлять различные права доступа отдельным пользователям, используя решения для управления цифровыми правами. Дополнительные сведения см. в разделе [Службы мультимедиа — потоковая передача по запросу](/previous-versions/azure/dn282272(v=azure.100)).
 
@@ -113,7 +113,7 @@ http: \/ /testendpoint-testaccount.Streaming.mediaservices.Windows.NET/fecebb23-
 ### <a name="smooth-streaming-format"></a>Формат Smooth Streaming
 {имя конечной точки потоковой передачи - имя учетной записи служб мультимедиа}.streaming.mediaservices.windows.net/{идентификатор указателя}/{имя файла}.ism/Manifest
 
-Пример.
+Пример
 
 http: \/ /testendpoint-testaccount.Streaming.mediaservices.Windows.NET/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ISM/manifest
 

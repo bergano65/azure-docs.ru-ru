@@ -2,17 +2,14 @@
 title: Анализ трендов в Visual Studio | Документация Майкрософт
 description: Сведения об анализе, визуализации и изучении трендов в данных телеметрии Application Insights в Visual Studio.
 ms.topic: conceptual
-author: NumberByColors
-ms.author: daviste
 ms.date: 03/17/2017
-ms.reviewer: mbullwin
 ms.custom: vs-azure
-ms.openlocfilehash: 07848d0b1a2677595eba0da53402993103289d4f
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 9b78dceed3c2a25d6afedf5fca348726d7aafd3d
+ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87318170"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91932249"
 ---
 # <a name="analyzing-trends-in-visual-studio"></a>Анализ трендов в Visual Studio
 Средство "Тренды Application Insights" визуализирует изменение важных событий телеметрии приложения с течением времени, помогая быстро выявлять проблемы и аномалии. В этом средстве можно перейти к более подробным диагностическим сведениям, что позволяет повысить производительность приложения, а также отслеживать причины исключений и анализировать данные пользовательских событий.
@@ -96,9 +93,6 @@ ms.locfileid: "87318170"
 > 
 
 ## <a name="next-steps"></a><a name="next"></a>Следующие шаги
-|  |  |
-| --- | --- |
-| **[Работа с Application Insights в Visual Studio](./visual-studio.md)**<br/>Поиск телеметрии, просмотр данных в CodeLens и настройка Application Insights — все это в Visual Studio |![Щелкните проект правой кнопкой мыши и последовательно выберите пункты "Application Insights" и "Поиск".](./media/visual-studio-trends/34.png) |
-| **[Добавление данных](./asp-net-more.md)**<br/>Мониторинг использования, доступности, зависимостей и исключений. Интеграция трассировок из платформ ведения журналов. Написание пользовательской телеметрии. |![Visual studio](./media/visual-studio-trends/64.png) |
-| **[Работа с порталом Application Insights](./overview-dashboard.md)**<br/>Панели мониторинга, эффективные средства диагностики и анализа, оповещения, карта динамических зависимостей приложения, а также экспорт данных телеметрии. |![Visual studio](./media/visual-studio-trends/62.png) |
+* **[Работа с Application Insights в Visual Studio](./visual-studio.md)**. Поиск телеметрии, просмотр данных в CodeLens и настройка Application Insights — все это в Visual Studio 
+* **[Работа с порталом Application Insights](./overview-dashboard.md)**. Панели мониторинга, эффективные средства диагностики и анализа, оповещения, карта динамических зависимостей приложения, а также экспорт данных телеметрии. 
 

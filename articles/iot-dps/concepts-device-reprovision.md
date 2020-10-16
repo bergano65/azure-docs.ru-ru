@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 ms.openlocfilehash: 9653a584382584d982c55008a6e8547de28691b7
-ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91842858"
 ---
 # <a name="iot-hub-device-reprovisioning-concepts"></a>Основные понятия повторной подготовки устройств к добавлению в центр Интернета вещей
@@ -87,6 +87,6 @@ ms.locfileid: "91842858"
 > [!NOTE]
 > Эти значения и ссылки могут меняться. Это лишь попытка выяснить, когда версии могут быть определены клиентом и какими будут ожидаемые версии.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Повторная инициализация устройств](how-to-reprovision.md)

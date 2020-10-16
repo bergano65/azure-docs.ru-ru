@@ -8,12 +8,12 @@ ms.date: 08/26/2020
 ms.topic: how-to
 ms.custom: subject-moving-resources
 ms.service: digital-twins
-ms.openlocfilehash: 1725c3ff162e4f6b7ac3a5ea1ede6976c827b510
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 3c7f9ed9558adc9d129d1df767a05aff1fa4c66c
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91328502"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92047392"
 ---
 # <a name="move-an-azure-digital-twins-instance-to-a-different-azure-region"></a>Перемещение экземпляра Azure Digital двойников в другой регион Azure
 
@@ -49,18 +49,18 @@ ms.locfileid: "91328502"
     - Служба подготовки устройств (DPS)
 * Какие другие **персональные или корпоративные приложения** имеют подключение к моему экземпляру?
 
-Эти сведения можно получить с помощью [портал Azure](https://portal.azure.com), [интерфейсов API и пакетов SDK](how-to-use-apis-sdks.md)для Azure Digital двойников, [команд интерфейса командной строки Azure Digital двойников](how-to-use-cli.md)или образца [обозревателя Digital двойников (ADT)](https://docs.microsoft.com/samples/azure-samples/digital-twins-explorer/digital-twins-explorer/) .
+Эти сведения можно получить с помощью [портал Azure](https://portal.azure.com), [интерфейсов API и пакетов SDK](how-to-use-apis-sdks.md)для Azure Digital двойников, [команд интерфейса командной строки Azure Digital двойников](how-to-use-cli.md)или образца [обозревателя Digital двойников (ADT)](/samples/azure-samples/digital-twins-explorer/digital-twins-explorer/) .
 
-## <a name="prepare"></a>Подготовка
+## <a name="prepare"></a>Подготовка.
 
-В этом разделе Вы подготовитесь к повторному созданию экземпляра путем **загрузки исходных моделей, двойников и Graph** из исходного экземпляра. Эта статья делает это с помощью примера [Azure Digital двойников (ADT) Explorer](https://docs.microsoft.com/samples/azure-samples/digital-twins-explorer/digital-twins-explorer/) .
+В этом разделе Вы подготовитесь к повторному созданию экземпляра путем **загрузки исходных моделей, двойников и Graph** из исходного экземпляра. Эта статья делает это с помощью примера [Azure Digital двойников (ADT) Explorer](/samples/azure-samples/digital-twins-explorer/digital-twins-explorer/) .
 
 >[!NOTE]
 >Возможно, у вас уже есть файлы, содержащие модели и (или) граф в вашем экземпляре. В этом случае вам не нужно загружать все заново — просто отсутствующие элементы или элементы, которые могли быть изменены после первоначальной отправки этих файлов (например, двойников, которые могли быть обновлены новыми данными).
 
 ### <a name="limitations-of-adt-explorer"></a>Ограничения обозревателя ADT
 
-[Образец Azure Digital двойников (ADT) Explorer](https://docs.microsoft.com/samples/azure-samples/digital-twins-explorer/digital-twins-explorer/) — это пример клиентского приложения, который поддерживает визуальное представление графа и обеспечивает визуальное взаимодействие с вашим экземпляром. В этой статье показано, как использовать ее для скачивания и последующей повторной отправки, моделей, двойников и графов.
+[Образец Azure Digital двойников (ADT) Explorer](/samples/azure-samples/digital-twins-explorer/digital-twins-explorer/) — это пример клиентского приложения, который поддерживает визуальное представление графа и обеспечивает визуальное взаимодействие с вашим экземпляром. В этой статье показано, как использовать ее для скачивания и последующей повторной отправки, моделей, двойников и графов.
 
 Однако обратите внимание, что это **Пример** и не полный инструмент. Она не была протестирована и не была построена для работы с диаграммами большого размера. Поэтому имейте в виду следующие встроенные ограничения:
 * В настоящее время пример был протестирован только на диаграммах размером до 1000 узлов и 2000 связей.
@@ -76,7 +76,7 @@ ms.locfileid: "91328502"
 
 Чтобы продолжить работу с обозревателем ADT, сначала Скачайте пример кода приложения и настройте его для запуска на вашем компьютере. 
 
-Перейдите к примеру: [Azure Digital двойников (ADT) Explorer](https://docs.microsoft.com/samples/azure-samples/digital-twins-explorer/digital-twins-explorer/). Нажмите кнопку *Download ZIP* (Загрузить ZIP-файл), чтобы загрузить файл *ZIP* этого примера кода на свой компьютер с именем _**ADT_Explorer.zip**_. Распакуйте файл.
+Перейдите к примеру: [Azure Digital двойников (ADT) Explorer](/samples/azure-samples/digital-twins-explorer/digital-twins-explorer/). Нажмите кнопку *Download ZIP* (Загрузить ZIP-файл), чтобы загрузить файл *ZIP* этого примера кода на свой компьютер с именем _**ADT_Explorer.zip**_. Распакуйте файл.
 
 Затем настройте разрешения для запуска обозревателя ADT на компьютере. Для этого выполните действия, описанные в разделе " [*Настройка разрешений ОБОЗРЕВАТЕЛЯ ADT*](quickstart-adt-explorer.md#set-adt-explorer-permissions) " руководства по цифровому двойников Azure.
 
@@ -219,7 +219,7 @@ ADT Explorer теперь будет отправлять модели и гра
 Чтобы убедиться, что новый экземпляр настроен правильно, можно использовать следующие средства:
 * [**Портал Azure**](https://portal.azure.com) (хорошо проверять, существует ли новый экземпляр и находится ли он в правильном целевом регионе; также подходит для проверки конечных точек и маршрутов и подключений к другим службам Azure).
 * [ **Команды интерфейса командной строки** Azure Digital двойников](how-to-use-cli.md) (позволяют проверить, существует ли новый экземпляр и находится ли он в правильном целевом регионе; также можно использовать для проверки данных экземпляра).
-* [**Обозреватель ADT**](https://docs.microsoft.com/samples/azure-samples/digital-twins-explorer/digital-twins-explorer/) (подходит для проверки данных экземпляра, таких как модели, двойников и Graph)
+* [**Обозреватель ADT**](/samples/azure-samples/digital-twins-explorer/digital-twins-explorer/) (подходит для проверки данных экземпляра, таких как модели, двойников и Graph)
 * [Интерфейсы API и пакеты SDK для цифровых двойников Azure](how-to-use-apis-sdks.md) (хорошо для проверки данных экземпляра, таких как модели, двойников и Graph) также хорошо подходят для проверки конечных точек и маршрутов).
 
 Вы также можете попытаться запустить любые пользовательские приложения или сквозные потоки, которые работали с исходным экземпляром, чтобы убедиться, что они правильно работают с новым экземпляром.

@@ -10,10 +10,10 @@ ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
 ms.openlocfilehash: 2a931b1a3c3f88af1abec4fd1810aae09c849c48
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90940858"
 ---
 # <a name="create-an-azure-sql-managed-instance-on-azure-arc"></a>Создание управляемого экземпляра SQL Azure в службе "Дуга Azure"
@@ -52,7 +52,7 @@ azdata arc sql mi create --help
 azdata arc sql mi create -n <instanceName> --storage-class-data <storage class> --storage-class-logs <storage class>
 ```
 
-Пример:
+Пример.
 
 ```console
 azdata arc sql mi create -n sqldemo --storage-class-data managed-premium --storage-class-logs managed-premium
@@ -62,7 +62,7 @@ azdata arc sql mi create -n sqldemo --storage-class-data managed-premium --stora
 >
 >  При указании выделения памяти и распределения Виртуальное ядро используйте эту формулу, чтобы убедиться, что создание прошло успешно. для каждого 1 Виртуальное ядро требуется по крайней мере 4 ГБ ОЗУ на узле Kubernetes, где будет запущен экземпляр Pod управляемого экземпляра SQL.
 >
->  При создании экземпляра SQL не используйте в имени верхний регистр при подготовке в Azure.
+>  Не используйте в имени верхний регистр при создании экземпляра SQL для подготовки в Azure.
 >
 >  Чтобы получить список доступных классов хранения в кластере Kubernetes, выполните команду `kubectl get storageclass` 
 
@@ -97,7 +97,7 @@ sqldemo 1/1         10.240.0.4:32023  Ready
 Если вы используете AKS или `kubeadm` OpenShift и т. д., вы можете скопировать внешний IP-адрес и номер порта отсюда и подключиться к нему с помощью любимого средства для подключения к экземпляру SQL Server или SQL Azure, например Azure Data Studio или SQL Server Management Studio. Однако если вы используете виртуальную машину быстрого запуска, см. Дополнительные инструкции в статье [Подключение к службе Arc Azure с поддержкой SQL управляемый экземпляр](connect-managed-instance.md) .
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - [Подключение к SQL Управляемый экземпляр с включенной службой Arc](connect-managed-instance.md)
 - [Регистрация экземпляра в Azure и отправка метрик и журналов о вашем экземпляре](upload-metrics-and-logs-to-azure-monitor.md)
 - [Развертывание управляемого экземпляра SQL Azure с помощью Azure Data Studio](create-sql-managed-instance-azure-data-studio.md)

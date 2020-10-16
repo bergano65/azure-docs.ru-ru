@@ -9,10 +9,10 @@ ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 09/10/2020
 ms.openlocfilehash: d9b6dfc977aab7d8907b5d3c3851a22f96227d78
-ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91757764"
 ---
 # <a name="use-azure-devops-to-create-a-cicd-pipeline-for-a-stream-analytics-job"></a>Создание конвейера CI/CD для Stream Analytics задания с помощью Azure DevOps
@@ -85,7 +85,7 @@ ms.locfileid: "91757764"
 
    |Имя переменной|Значение|
    |-|-|
-   |тестпас|Проверка|
+   |тестпас|Тест|
 
    :::image type="content" source="media/set-up-cicd-pipeline/pipeline-variables-test.png" alt-text="Создание нового конвейера Azure":::
 
@@ -198,7 +198,7 @@ ms.locfileid: "91757764"
 
 :::image type="content" source="media/set-up-cicd-pipeline/create-release.png" alt-text="Создание нового конвейера Azure":::
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Непрерывная интеграция и непрерывное развертывание для Azure Stream Analytics](cicd-overview.md)
 * [Автоматизация сборки, тестирования и развертывания задания Azure Stream Analytics с помощью средств CI/CD](cicd-tools.md)

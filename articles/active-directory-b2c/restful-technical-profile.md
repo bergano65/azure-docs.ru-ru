@@ -12,10 +12,10 @@ ms.date: 06/08/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 172824a2215e8a102ad4c284c847072960344549
-ms.sourcegitcommit: 1a0dfa54116aa036af86bd95dcf322307cfb3f83
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88041533"
 ---
 # <a name="define-a-restful-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Определение технического профиля RESTful в пользовательской политике Azure Active Directory B2C
@@ -60,7 +60,7 @@ REST API технический профиль позволяет отправи
 1. Создайте свои полезные данные JSON с помощью преобразования утверждений [женератежсон](json-transformations.md) .
 1. В REST API техническом профиле:
     1. Добавьте преобразование «входные утверждения» со ссылкой на `GenerateJson` Преобразование «утверждения».
-    1. Задайте `SendClaimsIn` для параметра метаданных значение`body`
+    1. Задайте `SendClaimsIn` для параметра метаданных значение `body`
     1. Задайте `ClaimUsedForRequestPayload` параметру метаданных имя утверждения, содержащего полезные данные JSON.
     1. Во входном утверждении добавьте ссылку на входное утверждение, содержащее полезные данные JSON.
 
@@ -235,11 +235,11 @@ REST API может возвращать сообщения об ошибках,
 }
 ```
 
-| attribute | Обязательно | Description |
+| attribute | Обязательно | Описание |
 | --------- | -------- | ----------- |
 | version | Да | Версия REST API. Например: 1.0.1 |
 | status | Да | Должно быть 409 |
-| код | Нет | Код ошибки, полученный от поставщика конечной точки RESTful, который отображается при включении `DebugMode`. |
+| code | Нет | Код ошибки, полученный от поставщика конечной точки RESTful, который отображается при включении `DebugMode`. |
 | requestId | Нет | Идентификатор запроса, полученный от поставщика конечной точки RESTful, который отображается при включении `DebugMode`. |
 | userMessage | Да | Сообщение об ошибке, которое отображается для пользователя. |
 | developerMessage | Нет | Подробное описание проблемы и методов ее исправления, которое отображается при включении `DebugMode`. |

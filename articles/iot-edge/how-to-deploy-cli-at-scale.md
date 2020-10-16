@@ -5,30 +5,33 @@ keywords: ''
 author: kgremban
 manager: philmea
 ms.author: kgremban
-ms.date: 4/14/2020
+ms.date: 10/13/2020
 ms.topic: conceptual
 ms.service: iot-edge
 ms.custom: devx-track-azurecli
 services: iot-edge
-ms.openlocfilehash: 8b9c8107c102409b717da0a277b7cdd360e9c8ee
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.openlocfilehash: 0a73651b11c9ca6f7cb34deb755543c3b5a6d710
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91439668"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92042989"
 ---
 # <a name="deploy-and-monitor-iot-edge-modules-at-scale-using-the-azure-cli"></a>Развертывание и мониторинг большого числа модулей IoT Edge с помощью Azure CLI
 
-Создайте **автоматическое развертывание IoT Edge** с помощью интерфейса командной строки Azure, чтобы управлять текущими развертываниями одновременно для большого числа устройств. Автоматические развертывания для IoT Edge входят в состав функции [автоматического управления устройствами](/azure/iot-hub/iot-hub-automatic-device-management) в Центре Интернета вещей. Развертывания — это динамические процессы, которые позволяют развертывать несколько модулей на нескольких устройствах, отслеживать состояние и работоспособность этих модулей и вносить изменения при необходимости.
+Создайте **автоматическое развертывание IoT Edge** с помощью интерфейса командной строки Azure, чтобы управлять текущими развертываниями одновременно для большого числа устройств. Автоматические развертывания для IoT Edge входят в состав функции [автоматического управления устройствами](../iot-hub/iot-hub-automatic-device-management.md) в Центре Интернета вещей. Развертывания — это динамические процессы, которые позволяют развертывать несколько модулей на нескольких устройствах, отслеживать состояние и работоспособность этих модулей и вносить изменения при необходимости.
 
 Дополнительные сведения см. в статье [Общие сведения об автоматических развертываниях IoT Edge для отдельных устройств или в большом масштабе](module-deployment-monitoring.md).
 
 С помощью этого руководства вы настроите Azure CLI и расширение Интернета вещей. Вы также узнаете, как развернуть модули на наборе устройств IoT Edge и отслеживать ход выполнения с помощью доступных команд интерфейса командной строки.
 
-## <a name="cli-prerequisites"></a>Технические условия CLI
+## <a name="prerequisites"></a>Предварительные требования
 
 * [Центр Интернета вещей](../iot-hub/iot-hub-create-using-cli.md) в подписке Azure.
-* [Устройство IoT Edge](how-to-register-device.md#prerequisites-for-the-azure-cli) с установленной средой выполнения IoT Edge.
+* Одно или несколько устройств IoT Edge.
+
+  Если устройство IoT Edge не настроено, вы можете создать его на виртуальной машине Azure. Выполните действия, описанные в одной из кратких руководств, чтобы [создать виртуальное устройство Linux](quickstart-linux.md) или [создать виртуальное устройство Windows](quickstart.md).
+
 * [Интерфейс командной строки Azure](/cli/azure/install-azure-cli) в вашей среде. Вам понадобится как минимум Azure CLI версии 2.0.70 или более поздней. Для проверки используйте `az --version`. Эта версия поддерживает команды расширения az и представляет собой платформу команд Knack.
 * [Расширение Интернета вещей для Azure CLI](https://github.com/Azure/azure-iot-cli-extension).
 
@@ -40,13 +43,16 @@ ms.locfileid: "91439668"
 
 Вот пример простого манифеста развертывания с одним модулем.
 
+>[!NOTE]
+>Этот пример манифеста развертывания использует схему версии 1,1 для агента IoT Edge и концентратора. Версия схемы 1,1 была выпущена вместе с IoT Edge версии 1.0.10 и включает такие функции, как порядок запуска модуля и определение приоритетов маршрутов.
+
 ```json
 {
   "content": {
     "modulesContent": {
       "$edgeAgent": {
         "properties.desired": {
-          "schemaVersion": "1.0",
+          "schemaVersion": "1.1",
           "runtime": {
             "type": "docker",
             "settings": {
@@ -75,7 +81,7 @@ ms.locfileid: "91439668"
           },
           "modules": {
             "SimulatedTemperatureSensor": {
-              "version": "1.0",
+              "version": "1.1",
               "type": "docker",
               "status": "running",
               "restartPolicy": "always",

@@ -9,10 +9,10 @@ ms.date: 05/04/2020
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: efb32631c5ee1eedece6d2a06b94702b602ed418
-ms.sourcegitcommit: 0b2367b4a9171cac4a706ae9f516e108e25db30c
-ms.translationtype: MT
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
+ms.lasthandoff: 10/05/2020
 ms.locfileid: "86276126"
 ---
 ### <a name="which-regions-are-available"></a><a name="regions"></a>Какие регионы доступны?
@@ -49,9 +49,9 @@ RDP и SSH — протоколы на основе использования.
 
 Используйте браузер Microsoft Edge или Google Chrome в ОС Windows. Для Apple Mac используйте браузер Google Chrome. ОС Windows и Mac также поддерживают Microsoft Edge Chromium.
 
-### <a name="where-does-azure-bastion-store-customer-data"></a><a name="data"></a>Где Azure бастиона хранит данные клиента?
+### <a name="where-does-azure-bastion-store-customer-data"></a><a name="data"></a>Где Бастион Azure хранит данные клиента?
 
-Azure бастиона не перемещает и не хранит данные клиента вне региона, в котором он развернут.
+Бастион Azure не перемещает и не хранит данные клиента за пределами региона, в котором он развернут.
 
 ### <a name="are-any-roles-required-to-access-a-virtual-machine"></a><a name="roles"></a>Нужны ли какие-то роли для доступа к виртуальной машине?
 

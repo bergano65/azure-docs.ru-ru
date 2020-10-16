@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 07/22/2020
 ms.author: apimpm
 ms.custom: references_regions
-ms.openlocfilehash: 5b96ac9cf43782764e88039d736ba61454d65911
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.openlocfilehash: fbff4cc067ce831e9d9f69a457f348a94257e86d
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91539203"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92076918"
 ---
 # <a name="how-to-use-azure-api-management-with-virtual-networks"></a>Как использовать управление API Azure с виртуальными сетями
 Виртуальные сети Azure позволяют размещать любые ресурсы Azure в сети, недоступной из Интернета, доступом к которой управляете вы сами. Эти сети можно подключать к локальным сетям с помощью различных технологий VPN. Начать изучение виртуальных сетей Azure лучше всего со статьи [Что такое виртуальная сеть Azure?](../virtual-network/virtual-networks-overview.md).
@@ -109,7 +109,7 @@ ms.locfileid: "91539203"
 
 <a name="required-ports"> </a> При размещении экземпляра Управления API в виртуальной сети используются порты, указанные в следующей таблице.
 
-| Исходные и конечные порты | Направление          | Транспортный протокол |   [Теги служб](../virtual-network/security-overview.md#service-tags) <br> Ресурс и назначение   | Назначение (\*)                                                 | Тип виртуальной сети |
+| Исходные и конечные порты | Направление          | Транспортный протокол |   [Теги служб](../virtual-network/network-security-groups-overview.md#service-tags) <br> Ресурс и назначение   | Назначение (\*)                                                 | Тип виртуальной сети |
 |------------------------------|--------------------|--------------------|---------------------------------------|-------------------------------------------------------------|----------------------|
 | * / [80], 443                  | Входящий трафик            | TCP                | INTERNET — VIRTUAL_NETWORK            | Подключения клиентов к службе управления API                      | External             |
 | * / 3443                     | Входящий трафик            | TCP                | ApiManagement / VIRTUAL_NETWORK       | Конечная точка управления для портала Azure и PowerShell         | Внешний и внутренний  |
@@ -122,7 +122,7 @@ ms.locfileid: "91539203"
 | */1886, 443                     | Исходящие           | TCP                | VIRTUAL_NETWORK / AzureMonitor         | Публикация [журналов диагностики и метрик](api-management-howto-use-azure-monitor.md), [работоспособность ресурсов](../service-health/resource-health-overview.md) и [Application Insights](api-management-howto-app-insights.md)                   | Внешний и внутренний  |
 | */25, 587, 25028                       | Исходящие           | TCP                | VIRTUAL_NETWORK — INTERNET            | Подключение к SMTP-ретранслятору для отправки сообщений электронной почты                    | Внешний и внутренний  |
 | * / 6381 - 6383              | Входящий и исходящий | TCP                | VIRTUAL_NETWORK — VIRTUAL_NETWORK     | Доступ к службе Redis для политик [кэша](api-management-caching-policies.md) между компьютерами         | Внешний и внутренний  |
-| */4290              | Входящий и исходящий | UDP                | VIRTUAL_NETWORK — VIRTUAL_NETWORK     | Счетчики синхронизации для политик [ограничения скорости](api-management-access-restriction-policies.md#LimitCallRateByKey) между компьютерами         | Внешний и внутренний  |
+| */4290              | Входящий и исходящий | Протокол UDP                | VIRTUAL_NETWORK — VIRTUAL_NETWORK     | Счетчики синхронизации для политик [ограничения скорости](api-management-access-restriction-policies.md#LimitCallRateByKey) между компьютерами         | Внешний и внутренний  |
 | * / *                        | Входящий трафик            | TCP                | AZURE_LOAD_BALANCER / VIRTUAL_NETWORK | Подсистема балансировки нагрузки инфраструктуры Azure                          | Внешний и внутренний  |
 
 >[!IMPORTANT]
@@ -153,7 +153,7 @@ ms.locfileid: "91539203"
 
 + **Azure Load Balancer**. Разрешение входящего запроса из тега службы `AZURE_LOAD_BALANCER` не является требованием для номера SKU `Developer`, так как за ним развертывается только одна единица вычислений. Но входящие запросы с адреса [168.63.129.16](../virtual-network/what-is-ip-address-168-63-129-16.md) становятся критически важными при масштабировании до более высокого номера SKU, например `Premium`, как так сбой проверки работоспособности из Load Balancer не позволяет выполнить развертывание.
 
-+ **Application Insights**. Если в службе управления API включена функция мониторинга [Application Insights Azure](api-management-howto-app-insights.md) , необходимо разрешить исходящее подключение к [конечной точке телеметрии](/azure/azure-monitor/app/ip-addresses#outgoing-ports) из виртуальной сети. 
++ **Application Insights**. Если в службе управления API включена функция мониторинга [Application Insights Azure](api-management-howto-app-insights.md) , необходимо разрешить исходящее подключение к [конечной точке телеметрии](../azure-monitor/app/ip-addresses.md#outgoing-ports) из виртуальной сети. 
 
 + **Принудительное туннелирование трафика в локальный брандмауэр с помощью Express Route или сетевого виртуального устройства.** Стандартная конфигурация клиента заключается в определении собственного маршрута по умолчанию (0.0.0.0/0), когда весь трафик из делегированной подсети Управления API принудительно проходит через локальный брандмауэр или виртуальное сетевое устройство. Этот поток трафика неизменно прерывает подключение к службе управления API Azure, так как исходящий трафик или блокируется локально, или преобразуется с помощью NAT в нераспознаваемый набор адресов, которые больше не относятся к различным конечным точкам Azure. Для решения проблемы требуется выполнить несколько приведенных ниже действий.
 
@@ -223,6 +223,7 @@ IP-адреса разделены **средой Azure**. При разреше
 | Azure Public| Восточная Канада| 52.139.80.117|
 | Azure Public| Северная часть ОАЭ;| 20.46.144.85|
 | Azure Public| Южная Бразилия| 191.233.24.179|
+| Azure Public| Юго-Восточная Бразилия| 191.232.18.181|
 | Azure Public| Юго-Восточная Азия| 40.90.185.46|
 | Azure Public| Северная часть ЮАР;| 102.133.130.197|
 | Azure Public| Центральная Канада| 52.139.20.34|
@@ -271,7 +272,7 @@ IP-адреса разделены **средой Azure**. При разреше
 * [Подключение виртуальных сетей из различных моделей развертывания с использованием PowerShell](../vpn-gateway/vpn-gateway-connect-different-deployment-models-powershell.md)
 * [Как использовать инспектор API для трассировки вызовов в службе управления API Azure](api-management-howto-api-inspector.md)
 * [Виртуальная сеть: часто задаваемые вопросы](../virtual-network/virtual-networks-faq.md)
-* [Теги служб](../virtual-network/security-overview.md#service-tags)
+* [Теги служб](../virtual-network/network-security-groups-overview.md#service-tags)
 
 [api-management-using-vnet-menu]: ./media/api-management-using-with-vnet/api-management-menu-vnet.png
 [api-management-setup-vpn-select]: ./media/api-management-using-with-vnet/api-management-using-vnet-select.png
@@ -284,6 +285,6 @@ IP-адреса разделены **средой Azure**. При разреше
 [Related content]: #related-content
 
 [UDRs]: ../virtual-network/virtual-networks-udr-overview.md
-[Network Security Group]: ../virtual-network/security-overview.md
+[Network Security Group]: ../virtual-network/network-security-groups-overview.md
 [ServiceEndpoints]: ../virtual-network/virtual-network-service-endpoints-overview.md
-[ServiceTags]: ../virtual-network/security-overview.md#service-tags
+[ServiceTags]: ../virtual-network/network-security-groups-overview.md#service-tags

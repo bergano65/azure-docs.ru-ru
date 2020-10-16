@@ -10,15 +10,15 @@ ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
 ms.openlocfilehash: d876862d8f41ab8df646bef051629fd45c4d4601
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90939623"
 ---
 # <a name="view-logs-and-metrics-using-kibana-and-grafana"></a>Просмотр журналов и метрик с помощью Kibana и Grafana
 
-Веб-панели мониторинга Kibana и Grafana предоставляются для получения сведений и ясности в пространствах имен Kubernetes, используемых службами данных, поддерживающими службу "Дуга Azure".
+Веб-панели мониторинга Kibana и Grafana предоставляются для получения аналитических сведений и ясности в пространствах имен Kubernetes, используемых службами данных с поддержкой Azure Arc.
 
 [!INCLUDE [azure-arc-data-preview](../../../includes/azure-arc-data-preview.md)]
 
@@ -28,7 +28,7 @@ ms.locfileid: "90939623"
 
 ### <a name="azure-virtual-machine"></a>Виртуальная машина Azure
 
-Чтобы получить общедоступный IP-адрес, используйте следующую команду:
+Используйте следующую команду, чтобы получить общедоступный IP-адрес:
 
 ```console
 az network public-ip list -g azurearcvm-rg --query "[].{PublicIP:ipAddress}" -o table
@@ -64,7 +64,7 @@ mgmtproxy-svc-external   LoadBalancer   10.0.186.28   52.152.148.25   30777:3084
 
 Ниже описаны действия по созданию правила NSG для конечных точек Kibana и Grafana.
 
-### <a name="find-the-name-of-the-nsg"></a>Поиск имени NSG
+### <a name="find-the-name-of-the-nsg"></a>Поиск имени модели NSG.
 
 ```console
 az network nsg list -g azurearcvm-rg --query "[].{NSGName:name}" -o table
@@ -117,7 +117,7 @@ https://<external-ip-from-above>:30777/kibana
 * Метрики узла узла
 * "Метрики главных модулей узлов"
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Попробуйте [передать метрики и журналы в Azure Monitor](upload-metrics-and-logs-to-azure-monitor.md)
 - Дополнительные сведения о Grafana:
    - [Начало работы](https://grafana.com/docs/grafana/latest/getting-started/getting-started)

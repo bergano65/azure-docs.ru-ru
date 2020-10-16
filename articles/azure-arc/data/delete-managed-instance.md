@@ -10,10 +10,10 @@ ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
 ms.openlocfilehash: e531349e8f404380d9f0601caa3b66557c297062
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90940847"
 ---
 # <a name="delete-azure-arc-enabled-sql-managed-instance"></a>Удаление SQL Управляемый экземпляр с поддержкой дуги Azure
@@ -52,7 +52,7 @@ Deleted demo-mi from namespace arc
 
 ## <a name="reclaim-the-kubernetes-persistent-volume-claims-pvcs"></a>Освобождение утверждений о постоянном томе Kubernetes (PVC)
 
-При удалении Управляемый экземпляр SQL связанные с ней [постоянные виртуальные каналы](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)не удаляются. Это сделано намеренно. Цель заключается в том, чтобы помочь пользователю получить доступ к файлам базы данных в случае случайного удаления экземпляра. Удаление постоянных виртуальных цепей не является обязательным. Однако рекомендуется использовать. Если вы не освободите эти виртуальные каналы, в итоге будут возникнет ошибка, так как кластеру Kubernetes не хватает места на диске. Чтобы освободить виртуальные каналы, выполните следующие действия.
+При удалении Управляемый экземпляр SQL связанные с ней [постоянные виртуальные каналы](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)не удаляются. Это сделано намеренно. Это необходимо, чтобы помочь пользователю получить доступ к файлам базы данных в случае случайного удаления экземпляра. Удалять утверждения PVC не обязательно, но рекомендуется. Если вы не освободите эти виртуальные каналы, в итоге будут возникнет ошибка, так как кластеру Kubernetes не хватает места на диске. Для освобождения утверждений PVC сделайте следующее.
 
 ### <a name="1-list-the-pvcs-for-the-server-group-you-deleted"></a>1. Выведите список постоянных виртуальных цепей для удаленной группы серверов.
 Чтобы получить список постоянных виртуальных цепей, выполните следующую команду:
@@ -102,6 +102,6 @@ persistentvolumeclaim "logs-demo-mi-0" deleted
 
 Подробнее о [функциях и возможностях Управляемого экземпляра SQL с поддержкой Azure Arc](managed-instance-features.md).
 
-[Начните с создания контроллера данных](create-data-controller.md)
+[Начните работу, создав контроллер данных.](create-data-controller.md)
 
-Контроллер данных уже создан? [Создайте Управляемый экземпляр SQL с поддержкой Azure Arc](create-sql-managed-instance.md)
+Уже создали контроллер данных? [Создайте Управляемый экземпляр SQL с поддержкой Azure Arc](create-sql-managed-instance.md)

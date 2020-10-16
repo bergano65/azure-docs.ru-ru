@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 09/02/2020
 ms.reviewer: sngun
 ms.openlocfilehash: 52885f874f877d9a2fd256d0212ba8693067ea8e
-ms.sourcegitcommit: 23aa0cf152b8f04a294c3fca56f7ae3ba562d272
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91802936"
 ---
 # <a name="time-to-live-ttl-in-azure-cosmos-db"></a>Срок жизни в Azure Cosmos DB
@@ -84,7 +84,7 @@ ms.locfileid: "91802936"
 |TTL =-1   |Срок жизни включен. Срок действия элемента никогда не истечет.|
 |TTL = 2000 |Срок жизни включен. Срок действия элемента истекает через 2000 секунд.|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте, как настроить срок жизни в следующих статьях:
 

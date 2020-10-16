@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 09/22/2020
 ms.author: alsin
-ms.openlocfilehash: d62eaf96354627e0c1e4e0a31bb16fb3265f66ac
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: da17122de8db41b6ba9ae9597d52bc3e1d8d0062
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91279779"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91962400"
 ---
 # <a name="preview-azure-hybrid-benefit--how-it-applies-for-linux-virtual-machines"></a>Предварительный просмотр: Преимущество гибридного использования Azure — как он применяется для Виртуальные машины Linux
 
@@ -126,7 +126,7 @@ az vm get-instance-view -g MyResourceGroup -n MyVm
 
 ### <a name="azure-instance-metadata-service"></a>Служба метаданных экземпляров Azure
 
-В самой виртуальной машине вы можете запросить IMDS метаданные, чтобы определить licenseType виртуальной машины. Значение licenseType, равное "RHEL_BYOS" или "SLES_BYOS", указывает на то, что для виртуальной машины включено преимущество. Дополнительные сведения о аттестации метаданных см. [здесь](https://docs.microsoft.com/azure/virtual-machines/linux/instance-metadata-service#attested-data) .
+В самой виртуальной машине вы можете запросить IMDS метаданные, чтобы определить licenseType виртуальной машины. Значение licenseType, равное "RHEL_BYOS" или "SLES_BYOS", указывает на то, что для виртуальной машины включено преимущество. Дополнительные сведения о аттестации метаданных см. [здесь](./instance-metadata-service.md#attested-data) .
 
 ## <a name="compliance"></a>Соответствие нормативным требованиям
 
@@ -150,7 +150,7 @@ az vm get-instance-view -g MyResourceGroup -n MyVm
 ## <a name="common-errors"></a>Распространенные ошибки
 В этом разделе содержится список распространенных ошибок и действий по их устранению.
 
-| Error | Меры по снижению риска |
+| Ошибка | Меры по снижению риска |
 | ----- | ---------- |
 | "Подписка не зарегистрирована для предварительной версии Linux Преимущество гибридного использования Azure. Пошаговые инструкции см. в https://aka.ms/ahb-linux разделе " | Заполните форму, https://aka.ms/ahb-linux-form чтобы зарегистрироваться для использования предварительной версии Linux преимущество гибридного использования Azure.
 | "Не удалось выполнить действие, так как наши записи показывают, что вы не включили облачный доступ Red Hat к вашей подписке Azure..." | Чтобы использовать преимущество с виртуальными машинами RHEL, необходимо сначала зарегистрировать ваши подписки Azure с помощью облачного доступа Red Hat. Перейдите по этой ссылке, чтобы узнать больше о том, как зарегистрировать подписки Azure для облачного доступа к Red Hat.

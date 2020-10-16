@@ -9,12 +9,12 @@ ms.service: azure-supportability
 ms.topic: how-to
 ms.date: 06/25/2020
 ms.author: mblythe
-ms.openlocfilehash: d8a480481e47995f9f819122a3e8cc0b0a21a254
-ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
+ms.openlocfilehash: 0831cc40c7d6b25e1db78c84a7adfa644497d486
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85851869"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92091446"
 ---
 # <a name="create-an-azure-support-request"></a>Создание запроса на поддержку Azure
 
@@ -39,7 +39,7 @@ Azure предоставляет неограниченную поддержку
 
 На портале Azure выберите **Справка и поддержка**. Этот пункт доступен в меню портала Azure, в глобальном заголовке или в меню ресурсов для службы. Для отправки запрос в службу поддержки необходимы соответствующие разрешения.
 
-### <a name="role-based-access-control"></a>Управление доступом на основе ролей
+### <a name="azure-role-based-access-control"></a>Управление доступом на основе ролей в Azure
 
 Чтобы создать запрос в службу поддержки, необходимо быть [Владельцем](../../role-based-access-control/built-in-roles.md#owner), [Участником](../../role-based-access-control/built-in-roles.md#contributor) или быть назначенным роли [Участник запроса на поддержку](../../role-based-access-control/built-in-roles.md#support-request-contributor) на уровне подписки. Чтобы создать запрос в службу поддержки без подписки, например Azure Active Directory сценарий, необходимо быть [администратором](../../active-directory/users-groups-roles/directory-assign-admin-roles.md).
 
@@ -102,7 +102,7 @@ Azure предоставляет неограниченную поддержку
 Инженер службы поддержки свяжется с вами, используя указанный вами метод. Сведения о начальном времени ответа см. в разделе [область поддержки и скорость реагирования](https://azure.microsoft.com/support/plans/response/).
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о вариантах самостоятельного устранения проблем в Azure см. в этом видео:
 
@@ -114,5 +114,5 @@ Azure предоставляет неограниченную поддержку
 * [REST API запросов в службу поддержки](/rest/api/support)
 * [Отправляйте отзывы и предложения](https://feedback.azure.com/forums/266794-support-feedback)
 * Общайтесь с нами в [Twitter](https://twitter.com/azuresupport)
-* Получайте помощь от других пользователей [Раздела вопросов и ответов на сайте Майкрософт](https://docs.microsoft.com/answers/products/azure)
+* Получайте помощь от других пользователей [Раздела вопросов и ответов на сайте Майкрософт](/answers/products/azure)
 * Дополнительные сведения см. в статье [вопросы и ответы о поддержке Azure](https://azure.microsoft.com/support/faq)

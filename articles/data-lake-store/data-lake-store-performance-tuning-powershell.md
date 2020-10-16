@@ -7,10 +7,10 @@ ms.topic: how-to
 ms.date: 01/09/2018
 ms.author: stewu
 ms.openlocfilehash: f5e6f6601a563a387476e4e2eaf353c8bef384ea
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85504701"
 ---
 # <a name="performance-tuning-guidance-for-using-powershell-with-azure-data-lake-storage-gen1"></a>Рекомендации по настройке производительности для использования PowerShell с Azure Data Lake Storage 1-го поколения
@@ -21,12 +21,12 @@ ms.locfileid: "85504701"
 
 ## <a name="performance-related-properties"></a>Свойства, связанные с производительностью
 
-| Свойство.            | По умолчанию | Описание |
+| Свойство            | По умолчанию | Описание |
 |---------------------|---------|-------------|
 | PerFileThreadCount  | 10      | Этот параметр позволяет выбрать количество параллельных потоков для отправки или скачивания каждого файла. Это количество представляет собой максимальное количество потоков, которые можно выделить для каждого файла. В зависимости от сценария количество потоков может быть меньше (например, при передаче файла размером 1 КБ вы получите один поток, даже если запросите 20 потоков).  |
 | ConcurrentFileCount | 10      | Этот параметр предназначен для отправки или скачивания папок. Он определяет количество одновременно отправляемых или скачиваемых файлов. Это количество представляет собой максимальное количество файлов, которые можно передать или скачать одновременно. В зависимости от сценария количество параллельно передаваемых или скачиваемых файлов может быть меньше (например, при передаче двух файлов одновременно будут передаваться два файла, даже если запрошено 15). |
 
-**Пример.**
+**Пример**.
 
 Эта команда скачивает файлы из Data Lake Storage 1-го поколения на локальный диск пользователя, используя 20 потоков на один файл и 100 одновременно скачиваемых файлов.
 
@@ -48,7 +48,7 @@ Export-AzDataLakeStoreItem -AccountName "Data Lake Storage Gen1 account name" `
 
     `Total thread count = total physical cores * 6`
 
-    **Пример.**
+    **Пример**.
 
     Предположим, что вы выполняете команды PowerShell на виртуальной машине D14 с 16 ядрами.
 
@@ -58,7 +58,7 @@ Export-AzDataLakeStoreItem -AccountName "Data Lake Storage Gen1 account name" `
 
     `PerFileThreadCount = 10 threads for the first 2.5 GB + 1 thread for each additional 256 MB increase in file size`
 
-    **Пример.**
+    **Пример**.
 
     Предположим, что у вас есть 100 файлов размером от 1 до 10 ГБ. Мы используем файл размером 10 ГБ в качестве максимального размера файла в формуле следующего вида.
 
@@ -68,7 +68,7 @@ Export-AzDataLakeStoreItem -AccountName "Data Lake Storage Gen1 account name" `
 
     `Total thread count = PerFileThreadCount * ConcurrentFileCount`
 
-    **Пример.**
+    **Пример**.
 
     На основе использованных примеров значений.
 
@@ -96,7 +96,7 @@ Export-AzDataLakeStoreItem -AccountName "Data Lake Storage Gen1 account name" `
 
 * **Ошибки регулирования.** При слишком высоком уровне параллелизма могут возникнуть ошибки регулирования. При этом необходимо уменьшить уровень параллелизма или обратиться к нам.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Использование Azure Data Lake Storage 1-го поколения для обеспечения соответствия требованиям больших данных](data-lake-store-data-scenarios.md) 
 * [Защита данных в Data Lake Storage Gen1](data-lake-store-secure-data.md)

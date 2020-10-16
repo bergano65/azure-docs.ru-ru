@@ -5,10 +5,10 @@ services: container-service
 ms.topic: conceptual
 ms.date: 02/28/2019
 ms.openlocfilehash: 1a14615e96d5be4fbc8994073d66677997281131
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86499891"
 ---
 # <a name="scaling-options-for-applications-in-azure-kubernetes-service-aks"></a>Возможности масштабирования приложений в Службе Azure Kubernetes (AKS)
@@ -30,7 +30,7 @@ ms.locfileid: "86499891"
 
 Чтобы приступить к масштабированию pod и узлов вручную, ознакомьтесь с разделом [Руководство. Масштабирование приложений в Службе Azure Kubernetes (AKS)][aks-scale].
 
-## <a name="horizontal-pod-autoscaler"></a>Средство горизонтального автомасштабирования pod
+## <a name="horizontal-pod-autoscaler"></a>Средство горизонтального автомасштабирования объектов pod
 
 Kubernetes использует средство горизонтального автомасштабирования pod (HPA) для отслеживания потребности в ресурсах и автоматического масштабирования числа реплик. По умолчанию средство горизонтального автомасштабирования pod проверяет API метрик каждые 30 секунд на наличие изменений, которые необходимо внести в число реплик. При необходимости изменения число реплик увеличивается или уменьшается соответствующим образом. Средство горизонтального автомасштабирования pod с кластерами AKS, на которых развернут сервер метрик для Kubernetes 1.8 или более поздней версии.
 

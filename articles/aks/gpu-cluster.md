@@ -7,10 +7,10 @@ ms.date: 08/21/2020
 ms.author: jpalma
 author: palma21
 ms.openlocfilehash: 4dfaa329dd0472b52de2d3306e6a3b61f660e666
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89443064"
 ---
 # <a name="use-gpus-for-compute-intensive-workloads-on-azure-kubernetes-service-aks"></a>Использование процессоров GPU для интенсивных вычислительных рабочих нагрузок в Службе Azure Kubernetes (AKS)
@@ -32,13 +32,13 @@ ms.locfileid: "89443064"
 
 Если вам нужен кластер AKS, соответствующий минимальным требованиям (узел с поддержкой GPU и Kubernetes 1.10 или более поздней версии), выполните приведенные ниже действия. Если у вас уже есть кластер AKS, соответствующий этим требованиям, [перейдите к следующему разделу](#confirm-that-gpus-are-schedulable).
 
-Сначала создайте группу ресурсов для кластера, выполнив команду [az group create][az-group-create]. В следующем примере создается группа ресурсов *myResourceGroup* в регионе *eastus*.
+Сначала создайте группу ресурсов для кластера с помощью команды [AZ Group Create][az-group-create] . В следующем примере создается группа ресурсов *myResourceGroup* в регионе *eastus*.
 
 ```azurecli-interactive
 az group create --name myResourceGroup --location eastus
 ```
 
-Теперь выполните команду [az aks create][az-aks-create], чтобы создать кластер AKS. В следующем примере создается кластер с одним узлом размером `Standard_NC6` :
+Теперь создайте кластер AKS с помощью команды [AZ AKS Create][az-aks-create] . В следующем примере создается кластер с одним узлом размером `Standard_NC6` :
 
 ```azurecli-interactive
 az aks create \
@@ -48,7 +48,7 @@ az aks create \
     --node-count 1
 ```
 
-Получите учетные данные для кластера AKS с помощью команды [az aks get-credentials][az-aks-get-credentials].
+Получите учетные данные для кластера AKS с помощью команды [AZ AKS Get-Credential][az-aks-get-credentials] :
 
 ```azurecli-interactive
 az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
@@ -152,7 +152,7 @@ az provider register --namespace Microsoft.ContainerService
 az extension add --name aks-preview
 ```
 
-Чтобы обновить расширение CLI AKS-Preview, используйте следующие Azure CLI команды:
+Чтобы обновить расширение aks-preview, выполните следующие команды Azure CLI:
 
 ```azurecli
 az extension update --name aks-preview
@@ -394,7 +394,7 @@ Adding run metadata for 499
 kubectl delete jobs samples-tf-mnist-demo
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Чтобы выполнять задания Apache Spark, ознакомьтесь с разделом [Запуск заданий Apache Spark в AKS][aks-spark].
 

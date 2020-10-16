@@ -115,7 +115,7 @@
               href: partner-center-portal/azure-vm-create-offer.md
             - name: Создание технического ресурса виртуальной машины Azure
               items:
-                - name: "Сертификация виртуальных машин\_— проблемы и решения"
+                - name: Проблемы с сертификацией виртуальных машин
                   href: partner-center-portal/vm-certification-issues-solutions.md
                 - name: Создание технического ресурса виртуальной машины Azure
                   href: partner-center-portal/create-azure-vm-technical-asset.md
@@ -324,17 +324,27 @@
       href: marketplace-faq-publisher-guide.md
     - name: Вопросы и ответы о миграции на Портал Cloud Partner
       href: cloud-partner-portal-migration-faq.md
+    - name: 'Расписание: вопросы, связанные с бизнес-возможностями'
+      href: 'https://aka.ms/marketplaceofficehours'
+    - name: 'Расписание: технические вопросы и вопросы, связанные с публикацией'
+      href: 'https://aka.ms/marketplacepublishingofficehours'
     - name: Варианты поддержки Центра партнеров
       href: partner-center-portal/support.md
+    - name: Объявления Центра партнеров
+      href: /partner-center/announcements
+    - name: Сообщество партнеров корпорации Майкрософт
+      href: 'https://www.microsoftpartnercommunity.com/'
+    - name: Форум сообщества партнеров
+      href: 'https://www.microsoftpartnercommunity.com/t5/Microsoft-AppSource-and-Azure/bd-p/2222'
     - name: Географическая доступность и валюты
       href: marketplace-geo-availability-currencies.md
+    - name: Поиск идентификаторов арендатора и объекта
+      href: find-tenant-object-id.md
     - name: Поддерживаемые страны и регионы
       href: sell-from-countries.md
-    - name: Поддерживаемые теги HTML
-      href: supported-html-tags.md
     - name: Коды стран и регионов для совместной продажи
       href: partner-center-portal/commercial-marketplace-co-sell-countries.md
     - name: Коды состояния для совместной продажи
       href: partner-center-portal/commercial-marketplace-co-sell-states.md
-    - name: 'Форумы, блоги и быстрые ссылки'
-      href: marketplace-roadmap.md
+    - name: Поддерживаемые теги HTML
+      href: supported-html-tags.md

@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 06/22/2020
-ms.openlocfilehash: 149a82526263f5e372db81b5a92a9ee90a2c76f3
-ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
+ms.openlocfilehash: 2177e74bd627e80ea1afbcacaf85baf4e030834c
+ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90089978"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91928985"
 ---
 # <a name="reboot-vms-for-hdinsight-clusters"></a>Перезагрузка виртуальных машин для кластеров HDInsight
 
@@ -31,8 +31,8 @@ ms.locfileid: "90089978"
 - Диск TEMP заполнен на узле.
 - В таблице процессов на виртуальной машине содержится много записей, где процесс был завершен, но он отображается с состоянием "завершено".
 
-> [!WARNING]
-> Будьте внимательны при перезагрузке виртуальных машин для кластеров **HBase** и **Kafka** , так как перезагрузка может привести к потере данных.
+> [!NOTE]
+> Перезагрузка виртуальных машин не поддерживается для кластеров **HBase** и **Kafka** , так как перезагрузка может привести к потере данных.
 
 ## <a name="use-powershell-to-reboot-vms"></a>Перезагрузка виртуальных машин с помощью PowerShell
 

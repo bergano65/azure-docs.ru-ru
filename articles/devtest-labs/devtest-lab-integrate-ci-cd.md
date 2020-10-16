@@ -4,10 +4,10 @@ description: Сведения об интеграции Azure DevTest Labs с к
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: 96f99d41d0a7ea07bf3854292f9c3bd6245414b3
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87288931"
 ---
 # <a name="integrate-azure-devtest-labs-into-your-azure-pipelines-cicd-pipeline"></a>Интеграция Azure DevTest Labs в конвейер Azure Pipelines CI/CD
@@ -109,7 +109,7 @@ ms.locfileid: "87288931"
    
 1. Для каждой переменной выберите **Добавить** и введите имя и значение:
    
-   |Имя|Значение|
+   |name|Значение|
    |---|---|
    |*vmName*|Имя виртуальной машины, назначенное в шаблоне диспетчер ресурсов|
    |*userName*|Имя пользователя для доступа к виртуальной машине|
@@ -150,7 +150,7 @@ ms.locfileid: "87288931"
    |Поле|Значение|
    |---|---|
    |**Тип подключения Azure**|Выберите **Azure Resource Manager**.|
-   |**Подписка Azure**|Выберите подключение службы или подписку.| 
+   |**подписка Azure**;|Выберите подключение службы или подписку.| 
    |**Тип скрипта**|Выберите **путь к файлу скрипта**.|
    |**Путь к сценарию**|Введите полный путь и имя скрипта PowerShell, который вы сохранили в репозитории исходного кода. Для упрощения пути можно использовать встроенные свойства, например:<br /><br />`$(System.DefaultWorkingDirectory/Scripts/GetLabVMParams.ps1`|
    |**Аргументы скрипта**|Введите имя переменной *лабвмид* , которая была заполнена предыдущей задачей, например:<br /><br />`-labVmId '$(labVMId)'`|
@@ -215,7 +215,7 @@ ms.locfileid: "87288931"
 
 Вы можете использовать пользовательский образ для создания виртуальных машин всякий раз, когда они понадобятся.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения см. в статье [Создание сред со множеством виртуальных машин и ресурсов PaaS с помощью шаблонов Azure Resource Manager](devtest-lab-create-environment-from-arm.md).
 - Ознакомьтесь с дополнительными руководствами диспетчер ресурсов шаблонов для автоматизации DevTest Labs из [общедоступного репозитория GitHub DevTest Labs](https://github.com/Azure/azure-quickstart-templates).
 - При необходимости см. страницу [устранения неполадок DevOps в Azure](/azure/devops/pipelines/troubleshooting) .

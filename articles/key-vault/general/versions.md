@@ -8,63 +8,63 @@ ms.topic: conceptual
 ms.date: 06/30/2019
 ms.author: mbaldwin
 ms.openlocfilehash: 58c5fdcfef5e866d0c69d65412582c0ed649f7c6
-ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86230831"
 ---
 # <a name="key-vault-versions"></a>Версии Key Vault
 
-Вот именно новые Azure Key Vault. Новые функции и улучшения также объявляются в [канале обновлений Azure Key Vault](https://azure.microsoft.com/updates/?category=security&query=Key%20vault).
+Ниже описаны новые возможности Azure Key Vault. Объявления о новых функциях и улучшениях также можно найти на [странице обновлений Azure для Key Vault](https://azure.microsoft.com/updates/?category=security&query=Key%20vault).
 
 ## <a name="june-2020"></a>Июнь 2020 г.
 
-Azure Monitor для Key Vault теперь находится на этапе предварительной версии.  Azure Monitor обеспечивает полный мониторинг хранилищ ключей, обеспечивая единое представление запросов Key Vault, производительности, сбоев и задержки. Дополнительные сведения см. в разделе [Azure Monitor for key Vault (Предварительная версия).](../../azure-monitor/insights/key-vault-insights-overview.md)
+Решение Azure Monitor для Key Vault теперь доступно в предварительной версии.  Azure Monitor обеспечивает комплексный мониторинг хранилищ ключей в едином представлении запросов, производительности, сбоев и задержки для Key Vault. Дополнительные сведения см. в статье об [Azure Monitor для Key Vault (предварительная версия)](../../azure-monitor/insights/key-vault-insights-overview.md).
 
 ## <a name="may-2020"></a>Май 2020 г.
 
-Key Vault "использовать собственный ключ" (BYOK) теперь общедоступен. Ознакомьтесь со [спецификацией Azure Key Vault BYOK](../keys/byok-specification.md)и Узнайте, как [импортировать ключи с защитой HSM в Key Vault (BYOK)](../keys/hsm-protected-keys-byok.md).
+Служба создания собственных ключей (BYOK) в Key Vault уже общедоступна. См. [спецификацию по службе создания собственных ключей в Azure Key Vault](../keys/byok-specification.md) и узнайте, как [импортировать защищенные модулем HSM ключи в Key Vault (BYOK)](../keys/hsm-protected-keys-byok.md).
 
 ## <a name="march-2020"></a>Март 2020 г.
 
-Частные конечные точки теперь доступны в предварительной версии. Служба "Частная связь Azure" позволяет получать доступ к Azure Key Vault и службам клиентов и партнеров Azure через закрытую конечную точку в виртуальной сети.  Узнайте, как [интегрировать Key Vault с помощью частной ссылки Azure](private-link-service.md).
+Частные конечные точки доступны в предварительной версии. Приватный канал Azure обеспечивает доступ к Azure Key Vault и к размещенным в Azure службам клиентов или партнеров через частную конечную точку виртуальной сети.  Узнайте, как [интегрировать Key Vault с Приватным каналом Azure](private-link-service.md).
 
 ## <a name="2019"></a>2019
 
-- Выпуск пакетов SDK следующего поколения Azure Key Vault. Примеры использования см. в разделе краткие Azure Key Vault секретов для [Python](../secrets/quick-create-python.md), [.NET](../secrets/quick-create-net.md), [Java](../secrets/quick-create-java.md)и [Node.js](../secrets/quick-create-node.md)
-- Новые политики Azure для управления сертификатами хранилища ключей. См. [встроенные определения политики Azure для Key Vault](../policy-samples.md).
-- Azure Key Vault расширение виртуальной машины теперь общедоступно.  См. раздел [Key Vault расширение виртуальной машины для Linux](../../virtual-machines/extensions/key-vault-linux.md) и [Key Vault расширение виртуальной машины для Windows](../../virtual-machines/extensions/key-vault-windows.md).
-- Управление секретами на основе событий для Azure Key Vault теперь доступно в службе "Сетка событий Azure". Дополнительные сведения см. в разделе [Схема сетки событий для событий в Azure Key Vault] (. /.. /Евент-ГРИД/Евент-счема-Кэй-Ваулт.МД] и Узнайте, как [получать уведомления хранилища ключей и отвечать на них с помощью службы "Сетка событий Azure](event-grid-tutorial.md)".
+- Выпуск пакетов SDK Azure Key Vault нового поколения. Примеры их использования см. в кратких руководствах по секретам Azure Key Vault для [Python](../secrets/quick-create-python.md), [.NET](../secrets/quick-create-net.md), [Java](../secrets/quick-create-java.md) и [Node.js](../secrets/quick-create-node.md).
+- Новые политики Azure для управления сертификатами хранилищ ключей. См. статью [Встроенные определения в Политике Azure для Key Vault](../policy-samples.md).
+- Расширение виртуальной машины в Azure Key Vault теперь общедоступно.  См. статьи [Расширение виртуальной машины в Key Vault для Linux](../../virtual-machines/extensions/key-vault-linux.md) и [Расширение виртуальной машины в Key Vault для Windows](../../virtual-machines/extensions/key-vault-windows.md).
+- Управление секретами с учетом событий для Azure Key Vault теперь доступно в Сетке событий Azure. Дополнительные сведения см. в статье [Схема Сетки событий для событий в Azure Key Vault](../../event-grid/event-schema-key-vault.md], а также узнайте, как [получать оповещения хранилища ключей и реагировать на них с помощью Сетки событий Azure](event-grid-tutorial.md).
 
 ## <a name="2018"></a>2018
 
 Новые функции и интеграции, выпущенные в этом году:
 
-- Интеграция с функциями Azure. Пример сценария использования [функций Azure](../../azure-functions/index.yml) для операций с хранилищем ключей см. [в разделе Автоматизация смены секрета](../secrets/tutorial-rotation.md). 
-- [Интеграция с Azure Databricks](/azure/databricks/scenarios/store-secrets-azure-key-vault). В результате Azure Databricks теперь поддерживает два типа секретных областей: Azure Key Vault и резервные. Дополнительные сведения см. [в разделе Создание области секрета с Azure Key Vault](/azure/databricks/security/secrets/secret-scopes#--create-an-azure-key-vault-backed-secret-scope) .
-- [Конечные точки службы виртуальной сети для Azure Key Vault](overview-vnet-service-endpoints.md).
+- Интеграция с Функциями Azure. Пример сценария с использованием [Функций Azure](../../azure-functions/index.yml) для операций с хранилищами ключей см. в статье [Автоматизация смены секретов](../secrets/tutorial-rotation.md). 
+- [Интеграция с помощью Azure Databricks.](/azure/databricks/scenarios/store-secrets-azure-key-vault) Благодаря ей Azure Databricks теперь поддерживает два типа областей секретов: на основе Azure Key Vault и на основе Databricks. Дополнительные сведения см. в разделе [Создание области секретов на основе Azure Key Vault](/azure/databricks/security/secrets/secret-scopes#--create-an-azure-key-vault-backed-secret-scope).
+- [Конечные точки службы для виртуальной сети для Azure Key Vault](overview-vnet-service-endpoints.md).
 
 ## <a name="2016"></a>2016
 
 Новые функции, выпущенные в этом году:
 
-- Ключи управляемой учетной записи хранения. Функция ключей учетной записи хранения добавила более простую интеграцию с хранилищем Azure. Дополнительные сведения см. в статье [Ключи учетной записи хранения Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-ovw-storage-keys).
-- Обратимое удаление. Функция обратимого удаления улучшает защиту данных в хранилищах ключей и объектах хранилища ключей. Дополнительные сведения см. в статье [Общие сведения об обратимом удалении в Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-ovw-soft-delete).
+- Ключи управляемой учетной записи хранения. Функция "Ключи учетной записи хранения" упрощает интеграцию со службой хранилища Azure. Дополнительные сведения см. в статье [Ключи учетной записи хранения Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-ovw-storage-keys).
+- Обратимое удаление. Функция обратимого удаления улучшает защиту данных для хранилищ ключей и его объектов. Дополнительные сведения см. в статье [Общие сведения об обратимом удалении в Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-ovw-soft-delete).
 
 ## <a name="2015"></a>2015
 
 Новые функции, выпущенные в этом году:
-- Управление сертификатами. Добавлена как функция в общедоступную версию 2015-06-01 от 26 сентября 2016 г.
+- Управление сертификатами. Эта функция добавлена 26 сентября 2016 года для общедоступной версии 2015-06-01.
 
-Общая доступность (версия 2015-06-01) была объявлена 24 июня 2015 г. В этот выпуск внесены следующие изменения. 
-- Удаление поля ключа-"использование" удалено.
-- Получение сведений об удаленном поле "использование" ключа.
-- Импорт ключа в поле "use" хранилища удалено.
-- Восстановить удаленное поле "использование" ключа.     
-- Для алгоритмов RSA изменено "RSA_OAEP" на "RSA-OAEP". См. [раздел о ключах, секретах и сертификатах](about-keys-secrets-certificates.md).    
+О выходе общедоступной версии (2015-06-01) было объявлено 24 июня 2015 г. В этот выпуск внесены следующие изменения. 
+- Удаление ключа: удалено поле use.
+- Получение сведений о ключе: удалено поле use.
+- Импорт ключа в хранилище: удалено поле use.
+- Восстановление ключа: удалено поле use.     
+- В алгоритмах RSA изменено RSA_OAEP на RSA-OAEP. Ознакомьтесь со статьей [About keys, secrets, and certificates](about-keys-secrets-certificates.md) (Сведения о ключах, секретах и сертификатах).    
  
-Вторая Предварительная версия (версия 2015-02-01-Preview) была объявлена 20 апреля 2015. Дополнительные сведения см. в записи блога [REST API Update](https://docs.microsoft.com/archive/blogs/kv/rest-api-update) (Обновление REST API). Были обновлены следующие задачи:
+О выходе второй предварительной версии (2015-02-01-preview) было объявлено 20 апреля 2015 г. Дополнительные сведения см. в записи блога [REST API Update](https://docs.microsoft.com/archive/blogs/kv/rest-api-update) (Обновление REST API). Были обновлены следующие задачи:
  
 - Составление списка ключей в хранилище. Добавлена поддержка разбиения на страницы для выполнения операции.
 - Составление списка версий ключа. Добавлена операция перечисления версий ключа.  
@@ -80,7 +80,7 @@ Key Vault "использовать собственный ключ" (BYOK) те
  
 ## <a name="2014"></a>2014
  
-Первая предварительная версия (версия 2014-12-08-Preview) была объявлена 8 января 2015.  
+О выходе первой предварительной версии (2014-12-08-preview) было объявлено 8 января 2015 г.  
  
 ## <a name="next-steps"></a>Дальнейшие действия
 

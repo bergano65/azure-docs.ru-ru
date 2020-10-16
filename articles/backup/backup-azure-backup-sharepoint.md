@@ -4,10 +4,10 @@ description: В этой статье описывается защита фер
 ms.topic: conceptual
 ms.date: 03/09/2020
 ms.openlocfilehash: 7661d64e487c8b8badca240852d17bcf736ba8cf
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91254437"
 ---
 # <a name="back-up-a-sharepoint-farm-to-azure-with-dpm"></a>Резервное копирование фермы SharePoint в Azure с помощью DPM
@@ -71,9 +71,9 @@ ms.locfileid: "91254437"
 
 ## <a name="switching-the-front-end-web-server"></a>Переключение интерфейсного веб-сервера
 
-Если у вас есть несколько интерфейсных веб-серверов и вы хотите переключить сервер, используемый DPM для защиты фермы, следуйте инструкциям в разделе [Переключение внешнего веб-сервера](/system-center/dpm/back-up-sharepoint#switching-the-front-end-web-server).
+Если у вас есть несколько интерфейсных веб-серверов и вы хотите переключить сервер, используемый DPM для защиты фермы, следуйте инструкциям в разделе [переключение Front-End веб-сервера](/system-center/dpm/back-up-sharepoint#switching-the-front-end-web-server).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Azure Backup Server и DPM — часто задаваемые вопросы](backup-azure-dpm-azure-server-faq.md)
 * [Устранение неполадок при работе с System Center Data Protection Manager](backup-azure-scdpm-troubleshooting.md)

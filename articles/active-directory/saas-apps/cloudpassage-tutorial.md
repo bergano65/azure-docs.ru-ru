@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 10/22/2019
 ms.author: jeedes
-ms.openlocfilehash: 34e36be8ee9444b5612901439aa5dca4771f2dda
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 8fdb59db7e11e3c8b946be940a2f98bd42810b88
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88551690"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91758359"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-cloudpassage"></a>Руководство по Интеграция единого входа Azure Active Directory с CloudPassage
 
@@ -85,7 +85,7 @@ ms.locfileid: "88551690"
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://portal.cloudpassage.com/saml/consume/accountid`. Значение этого атрибута можно получить, щелкнув **SSO Setup documentation** (Документация по настройке единого входа) в разделе **Single Sign-on Settings** на портале CloudPassage.
 
-    ![Настройка единого входа](./media/cloudpassage-tutorial/tutorial_cloudpassage_05.png)
+    ![Снимок экрана, на котором показан портал CloudPassage с выбранной ссылкой на документацию по настройке единого входа](./media/cloudpassage-tutorial/tutorial_cloudpassage_05.png)
 
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения URL-адреса входа и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов CloudPassage](https://www.cloudpassage.com/company/contact/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -146,15 +146,15 @@ ms.locfileid: "88551690"
 
 1. В верхнем меню щелкните **Параметры**, а затем выберите **Администрирование сайта**. 
    
-    ![Настройка единого входа][12]
+    ![Снимок экрана, на котором показан сайт CloudPassage с выбранным элементом "Site Administration" (Администрирование сайта)][12]
 
 1. Выберите вкладку **Параметры проверки подлинности** . 
    
-    ![Настройка единого входа][13]
+    ![Снимок экрана, на котором показан сайт CloudPassage с выбранной вкладкой "Authentication Settings" (Параметры аутентификации)][13]
 
 1. В разделе **Параметры единого входа** сделайте следующее: 
    
-    ![Настройка единого входа][14]
+    ![Снимок экрана, на котором показан раздел "Single Sign-On Settings" (Параметры единого входа), где можно ввести сведения на этом шаге][14]
 
     а. Установите флажок **Enable Single sign-on(SSO)(SSO Setup Documentation)** (Включить единый вход (SSO) (Документация по настройке единого входа)).
     
@@ -178,15 +178,15 @@ ms.locfileid: "88551690"
 
 1. На панели инструментов в верхней части экрана щелкните **Settings** (Параметры), а затем выберите **Site Administration** (Администрирование сайта). 
    
-    ![Создание тестового пользователя CloudPassage][22] 
+    ![Снимок экрана, на котором показан сайт CloudPassage с выбранным элементом "Site Administration" (Администрирование сайта)][22] 
 
 1. Откройте вкладку **Пользователи**, а затем щелкните **Добавить нового пользователя**. 
    
-    ![Создание тестового пользователя CloudPassage][23]
+    ![Снимок экрана, на котором показан раздел "Site Administration" (Администрирование сайта) на сайте CloudPassage, где выбраны вкладка "Users" (Пользователи) и параметр "Add New User" (Добавить нового пользователя)][23]
 
 1. В разделе **Добавить нового пользователя** выполните следующие действия. 
    
-    ![Создание тестового пользователя CloudPassage][24]
+    ![Снимок экрана, на котором показан раздел "Add New User" (Добавление нового пользователя), где можно указать сведения о пользователе][24]
     
     а. В текстовом поле **Имя** введите Britta. 
   

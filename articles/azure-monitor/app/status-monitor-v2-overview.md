@@ -6,10 +6,10 @@ author: TimothyMothra
 ms.author: tilee
 ms.date: 09/16/2019
 ms.openlocfilehash: 0fa0b0d5e3620fc45a104ea31fd3bcbedd673da1
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87318952"
 ---
 # <a name="deploy-azure-monitor-application-insights-agent-for-on-premises-servers"></a>Развертывание агента Application Insights Azure Monitor для локальных серверов
@@ -31,7 +31,7 @@ Application Insights агент расположен здесь: https://www.pow
 ![Коллекция PowerShell](https://img.shields.io/powershellgallery/v/Az.ApplicationMonitor.svg?color=Blue&label=Current%20Version&logo=PowerShell&style=for-the-badge)
 
 
-## <a name="instructions"></a>Инструкции
+## <a name="instructions"></a>Instructions
 - Ознакомьтесь с [инструкциями по началу работы](status-monitor-v2-get-started.md) , чтобы получить краткие примеры кода.
 - [Подробные инструкции](status-monitor-v2-detailed-instructions.md) по началу работы см. здесь.
 
@@ -54,7 +54,7 @@ Application Insights агент расположен здесь: https://www.pow
 
 - Поддерживает ли агент Application Insights установку прокси-серверов?
 
-  *Да.* Существует несколько способов загрузки агента Application Insights. Если компьютер имеет доступ к Интернету, можно подключить коллекция PowerShell с помощью `-Proxy` параметров.
+  *Да*. Существует несколько способов загрузки агента Application Insights. Если компьютер имеет доступ к Интернету, можно подключить коллекция PowerShell с помощью `-Proxy` параметров.
 Можно также вручную скачать модуль и либо установить его на компьютер, либо использовать его напрямую.
 Каждый из этих вариантов описан в [подробных инструкциях](status-monitor-v2-detailed-instructions.md).
 

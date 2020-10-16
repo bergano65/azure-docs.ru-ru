@@ -14,10 +14,10 @@ ms.workload: na
 ms.date: 09/22/2020
 ms.author: memildin
 ms.openlocfilehash: 6d19027cfd406f81d31696c5cd2c1a235574e400
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91577855"
 ---
 # <a name="azure-defender-for-sql-servers-on-machines"></a>Защитник Azure для серверов SQL Server на компьютерах 
@@ -32,8 +32,8 @@ ms.locfileid: "91577855"
 |----|:----|
 |Состояние выпуска:|Предварительный просмотр|
 |Цены|Счета **за использование защитника Azure для серверов SQL Server на компьютерах** выставляются, как показано на [странице с ценами](security-center-pricing.md) .|
-|Защищенные версии SQL:|SQL Server Azure (все версии, охваченные службой поддержки Майкрософт)|
-|Облако.|![Да](./media/icons/yes-icon.png) Коммерческие облака<br>![Да](./media/icons/yes-icon.png) US Gov<br>![Нет](./media/icons/no-icon.png) Gov Китая, другое gov|
+|Защищаемые версии SQL|SQL Server Azure (все версии, охваченные службой поддержки Майкрософт)|
+|Облако.|![Да](./media/icons/yes-icon.png) Коммерческие облака<br>![Да](./media/icons/yes-icon.png) US Gov<br>![Нет](./media/icons/no-icon.png) China Gov и другие правительственные облака|
 |||
 
 ## <a name="set-up-azure-defender-for-sql-servers-on-machines"></a>Настройка защитника Azure для серверов SQL Server на компьютерах
@@ -124,11 +124,11 @@ ms.locfileid: "91577855"
     [Дополнительные сведения об управлении оповещениями и реагировании на них](security-center-managing-and-responding-alerts.md).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Связанные материалы см. в следующей статье:
 
 - [Оповещения системы безопасности для базы данных SQL и Azure синапсе Analytics (ранее — хранилище данных SQL)](alerts-reference.md#alerts-sql-db-and-warehouse)
-- [Настройка уведомлений по электронной почте для оповещений системы безопасности](security-center-provide-security-contact-details.md)
+- [Настройка отправки по электронной почте уведомлений об оповещениях системы безопасности](security-center-provide-security-contact-details.md)
 - [Дополнительные сведения об Azure Sentinel](https://docs.microsoft.com/azure/sentinel/)
 - [Пакет безопасности данных центра безопасности Azure](https://docs.microsoft.com/azure/sql-database/sql-database-advanced-data-security)

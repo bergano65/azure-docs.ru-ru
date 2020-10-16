@@ -14,10 +14,10 @@ ms.date: 07/04/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 8485f3474da18e052bc0eab6c053be084ef884a2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "82192422"
 ---
 # <a name="operating-system-upgrade"></a>Обновление операционной системы
@@ -95,7 +95,7 @@ modinfo fnic
 
 
 *   Выполнить `multipath -ll` команду.
-*   Получите идентификатор LUN, размер которого равен приблизительно 50G, или используйте команду:`fdisk -l | grep mapper`
+*   Получите идентификатор LUN, размер которого равен приблизительно 50G, или используйте команду: `fdisk -l | grep mapper`
 *   Обновить `/etc/default/grub_installdevice` файл строкой `/dev/mapper/<LUN ID>` . Пример:/dev/Mapper/3600a09803830372f483f495242534a56
 >[!NOTE]
 >ИДЕНТИФИКАТОР LUN отличается от сервера к серверу.
@@ -110,7 +110,7 @@ modinfo fnic
 ```
 lsmod | grep -i edac 
 ```
-* Отключите модули, добавив следующие строки в файл`/etc/modprobe.d/blacklist.conf`
+* Отключите модули, добавив следующие строки в файл `/etc/modprobe.d/blacklist.conf`
 ```
 blacklist sb_edac
 blacklist edac_core
@@ -121,8 +121,8 @@ blacklist edac_core
 ### <a name="kernel-parameters"></a>параметры ядра;
    Убедитесь, что применен правильный параметр `transparent_hugepage` для `numa_balancing` , `processor.max_cstate` , `ignore_ce` и `intel_idle.max_cstate` .
 
-* intel_idle. max_cstate = 1
-* процессор. max_cstate = 1
+* intel_idle intel_idle.max_cstate = 1
+* processor.max_cstate = 1
 * transparent_hugepage = Never
 * numa_balancing = Disable
 * MCE = ignore_ce
@@ -130,7 +130,7 @@ blacklist edac_core
 
 #### <a name="execution-steps"></a>Шаги выполнения
 
-* Добавьте эти параметры в `GRB_CMDLINE_LINUX` строку в файле`/etc/default/grub`
+* Добавьте эти параметры в `GRB_CMDLINE_LINUX` строку в файле `/etc/default/grub`
 ```
 intel_idle.max_cstate=1 processor.max_cstate=1 transparent_hugepage=never numa_balancing=disable mce=ignore_ce
 ```

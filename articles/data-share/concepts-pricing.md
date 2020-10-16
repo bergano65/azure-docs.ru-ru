@@ -7,10 +7,10 @@ ms.service: data-share
 ms.topic: conceptual
 ms.date: 08/11/2020
 ms.openlocfilehash: 1c2c58e206a70a3801c712df3b5582409712d3c8
-ms.sourcegitcommit: 1aef4235aec3fd326ded18df7fdb750883809ae8
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88137042"
 ---
 # <a name="understand-azure-data-share-pricing"></a>Общие сведения о ценах на общие ресурсы данных Azure
@@ -57,7 +57,7 @@ ms.locfileid: "88137042"
 
     ![Выполнение моментального снимка](./media/concepts/concepts-pricing/pricing-snapshot-execution.png "Выполнение моментального снимка")
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Получение последних сведений о ценах — общие сведения о ценах на [данные Azure](https://azure.microsoft.com/pricing/details/data-share/)
 - Оценка стоимости — [Калькулятор цен Azure](https://azure.microsoft.com/pricing/calculator/) с помощью калькулятора цен Azure

@@ -6,10 +6,10 @@ ms.subservice: process-automation
 ms.date: 10/06/2020
 ms.topic: conceptual
 ms.openlocfilehash: 8295b6bba9703c276bf60a0360ded6f0e195369e
-ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91776278"
 ---
 # <a name="deploy-a-linux-hybrid-runbook-worker"></a>Развертывание гибридной рабочей роли Runbook для Linux
@@ -18,7 +18,7 @@ ms.locfileid: "91776278"
 
 После успешного развертывания рабочей роли Runbook ознакомьтесь с [запуском модулей runbook в гибридной рабочей роли Runbook](automation-hrw-run-runbooks.md), чтобы узнать, как настроить модули runbook для автоматизации процессов в локальном центре обработки данных или другой облачной среде.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы начать, у вас должны быть следующие компоненты:
 
@@ -90,7 +90,7 @@ ms.locfileid: "91776278"
 
 Гибридные рабочие роли Runbook Linux поддерживают ограниченный набор типов Runbook в службе автоматизации Azure, и они описаны в следующей таблице.
 
-|Тип Runbook | Поддерживаются: |
+|Тип Runbook | Поддерживается |
 |-------------|-----------|
 |Python 2; |Да |
 |PowerShell |Да<sup>1</sup> |

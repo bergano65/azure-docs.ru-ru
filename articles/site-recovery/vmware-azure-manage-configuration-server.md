@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 04/15/2019
 ms.author: ramamill
 ms.openlocfilehash: 5748ff87e94daef80b140e015371eb7a334fffac
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91361489"
 ---
 # <a name="manage-the-configuration-server-for-vmware-vmphysical-server-disaster-recovery"></a>Управление сервером конфигурации для аварийного восстановления виртуальных машин и физических серверов VMware
@@ -287,7 +287,7 @@ ProxyPassword="Password"
     `Remove-AzSiteRecoveryFabric -Fabric $fabric [-Force]`
 
 > [!NOTE]
-> Для принудительного удаления сервера конфигурации можно использовать параметр **-Force** в Remove-азситерековерифабрик.
+> Параметр **-Force** можно использовать в Remove-AzSiteRecoveryFabric для принудительного удаления сервера конфигурации.
 
 ## <a name="generate-configuration-server-passphrase"></a>Создание парольной фразы сервера конфигурации.
 
@@ -309,6 +309,6 @@ ProxyPassword="Password"
 
 Не забывайте регулярно создавать плановые резервные копии конфигурации сервера. Если происходит авария и сервер конфигурации утерян, необходимо сначала восстановить сервер конфигурации из резервной копии и убедиться, что он имеет тот же IP-адрес, с которым он был зарегистрирован в хранилище. Восстановление размещения не будет работать, если для восстановленного сервера конфигурации используется другой IP-адрес.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Ознакомьтесь с руководствами по настройке аварийного восстановления [виртуальных машин VMware](vmware-azure-tutorial.md) в Azure.

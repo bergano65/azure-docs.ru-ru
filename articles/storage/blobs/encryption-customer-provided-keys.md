@@ -11,10 +11,10 @@ ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
 ms.openlocfilehash: abdc83019205fc39e1e85a53da7e49f8a7d4f11c
-ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91618732"
 ---
 # <a name="provide-an-encryption-key-on-a-request-to-blob-storage"></a>Укажите ключ шифрования для запроса к хранилищу BLOB-объектов
@@ -76,7 +76,7 @@ ms.locfileid: "91618732"
 >
 > Обязательно Защитите ключ шифрования, предоставленный в запросе к хранилищу BLOB-объектов, в безопасном хранилище ключей, например Azure Key Vault. Если выполнить операцию записи для контейнера или большого двоичного объекта без ключа шифрования, операция завершится ошибкой, а доступ к объекту будет потерян.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Указание предоставленного клиентом ключа для запроса к хранилищу BLOB-объектов с помощью .NET](storage-blob-customer-provided-key.md)
 - [Шифрование службы хранилища Azure для неактивных данных](../common/storage-service-encryption.md)

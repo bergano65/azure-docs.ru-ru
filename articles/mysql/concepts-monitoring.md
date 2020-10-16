@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.custom: references_regions
 ms.date: 8/13/2020
 ms.openlocfilehash: 9e1bd3f555873503aa1f6ed9c804aced3620fb9e
-ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91627522"
 ---
 # <a name="monitoring-in-azure-database-for-mysql"></a>Мониторинг в базе данных Azure для MySQL
@@ -23,7 +23,7 @@ ms.locfileid: "91627522"
 ### <a name="list-of-metrics"></a>Список метрик
 Для базы данных Azure для MySQL доступны следующие метрики:
 
-|Метрика|Отображаемое имя метрики|Единица измерения|Описание|
+|Метрика|Отображаемое имя метрики|Unit|Описание|
 |---|---|---|---|
 |cpu_percent|Нагрузка ЦП|Процент|Процент используемого ЦП.|
 |memory_percent|Процент памяти|Процент|Процент используемой памяти.|
@@ -78,7 +78,7 @@ ms.locfileid: "91627522"
 > [!Note]
 > Мы сделаем все попытки предоставить **уведомление о плановом обслуживании** 72 часов для всех событий. Однако в случае критических обновлений или исправлений безопасности уведомления могут быть отправлены ближе к событию или пропущены.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - См. рекомендации по созданию оповещений для метрики в статье [Как настраивать оповещения](howto-alert-on-metric.md).
 - Дополнительные сведения о доступе к метрикам и их экспорте с помощью портала Azure, REST API или интерфейса командной строки см. в статье [Обзор метрик в Microsoft Azure](../monitoring-and-diagnostics/monitoring-overview-metrics.md).
 - Читайте наш блог, чтобы ознакомиться с [рекомендациями по мониторингу сервера](https://azure.microsoft.com/blog/best-practices-for-alerting-on-metrics-with-azure-database-for-mysql-monitoring/).

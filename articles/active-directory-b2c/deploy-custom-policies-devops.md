@@ -12,10 +12,10 @@ ms.date: 02/14/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 411fa207323a9bff6cfcc3b17769203c444dd844
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85388686"
 ---
 # <a name="deploy-custom-policies-with-azure-pipelines"></a>Развертывание настраиваемых политик с помощью Azure Pipelines
@@ -31,7 +31,7 @@ ms.locfileid: "85388686"
 > [!IMPORTANT]
 > Управление Azure AD B2C пользовательскими политиками с помощью конвейера Azure в настоящее время использует операции **предварительной версии** , доступные в `/beta` конечной точке API Microsoft Graph. Использование этих API для приложений в рабочей среде не поддерживается. Дополнительные сведения см. в [справочнике по конечной точке бета-версии Microsoft Graph REST API](https://docs.microsoft.com/graph/api/overview?toc=./ref/toc.json&view=graph-rest-beta).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * [Azure AD B2C клиент](tutorial-create-tenant.md)и учетные данные для пользователя в каталоге с ролью [администратора политики B2C инфраструктура процедур идентификации](../active-directory/users-groups-roles/directory-assign-admin-roles.md#b2c-ief-policy-administrator)
 * [Пользовательские политики](custom-policy-get-started.md) , отправленные в клиент
@@ -122,7 +122,7 @@ ms.locfileid: "85388686"
     1. Выберите **ветвь по умолчанию**. Если вы создали новый репозиторий в предыдущем разделе, ветвь по умолчанию — *master*.
     1. Оставьте параметр **версии по умолчанию** *Последняя из ветви по умолчанию*.
     1. Введите **Псевдоним источника** для репозитория. Например, *полицирепо*. Не включайте пробелы в имя псевдонима.
-1. Нажмите **Добавить**
+1. Выберите **Добавить**.
 1. Переименуйте конвейер, чтобы он отражал свое намерение. Например, *разверните пользовательский конвейер политики*.
 1. Нажмите кнопку **сохранить** , чтобы сохранить конфигурацию конвейера.
 

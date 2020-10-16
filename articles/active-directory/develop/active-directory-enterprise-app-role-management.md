@@ -13,10 +13,10 @@ ms.topic: how-to
 ms.date: 04/22/2019
 ms.author: jeedes
 ms.openlocfilehash: 8ec87a8d78f73af48b662c5971dfe1803717f88a
-ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91704554"
 ---
 # <a name="how-to-configure-the-role-claim-issued-in-the-saml-token-for-enterprise-applications"></a>Узнайте как настроить утверждения роли, выдаваемые в токене SAML для корпоративных приложений
@@ -56,7 +56,7 @@ ms.locfileid: "91704554"
 
 6. Откройте [проводник Microsoft Graph](https://developer.microsoft.com/graph/graph-explorer) в другом окне и выполните следующие действия.
 
-    а. Войдите на сайт песочницы Graph с помощью учетных данных глобального администратора или соадминистратора вашего клиента.
+    a. Войдите на сайт песочницы Graph с помощью учетных данных глобального администратора или соадминистратора вашего клиента.
 
     b. У вас должны быть разрешения на создание ролей. Щелкните **Изменить разрешения**, чтобы получить разрешения.
 
@@ -157,7 +157,7 @@ ms.locfileid: "91704554"
     >[!NOTE]
     >Если значение утверждения роли равно null, то Azure AD не будет отсылать это значение в маркере, и это будет по умолчанию для каждого проекта.
 
-    а. Щелкните значок " **изменить** ", чтобы открыть диалоговое окно " **атрибуты пользователя & утверждения** ".
+    a. Щелкните значок " **изменить** ", чтобы открыть диалоговое окно " **атрибуты пользователя & утверждения** ".
 
       ![Снимок экрана, на котором показан значок редактирования, используемый для открытия диалогового окна "атрибуты пользователя & утверждения".](./media/active-directory-enterprise-app-role-management/editattribute.png)
 
@@ -207,7 +207,7 @@ ms.locfileid: "91704554"
 
     ![Текст запроса PATCH, в котором выделены атрибуты description и displayname](./media/active-directory-enterprise-app-role-management/graph-explorer-patchupdate.png)
 
-    а. Измените метод **GET** на **PATCH**.
+    a. Измените метод **GET** на **PATCH**.
 
     b. Скопируйте существующие роли и вставьте их в поле **Текст запроса**.
 
@@ -245,7 +245,7 @@ ms.locfileid: "91704554"
 
     ![Текст запроса PATCH, в котором для IsEnabled задано значение false](./media/active-directory-enterprise-app-role-management/graph-explorer-new8.png)
 
-    а. Измените метод **GET** на **PATCH**.
+    a. Измените метод **GET** на **PATCH**.
 
     b. Скопируйте существующие роли из приложения и вставьте их в поле **Текст запроса**.
 
@@ -263,7 +263,7 @@ ms.locfileid: "91704554"
     > [!NOTE]
     > Прежде чем роль можно будет удалить, ее необходимо отключить.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные инструкции см. в [документации по приложениям](../saas-apps/tutorial-list.md).
 

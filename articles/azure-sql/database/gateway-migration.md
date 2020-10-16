@@ -11,10 +11,10 @@ ms.author: rohitna
 ms.reviewer: vanto
 ms.date: 07/01/2019
 ms.openlocfilehash: ee55e0a66a0487291233713498f6eb541980dbba
-ms.sourcegitcommit: 3c66bfd9c36cd204c299ed43b67de0ec08a7b968
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90004278"
 ---
 # <a name="azure-sql-database-traffic-migration-to-newer-gateways"></a>Перенос трафика базы данных SQL Azure на более новые шлюзы
@@ -95,7 +95,7 @@ ms.locfileid: "90004278"
 - Северная Европа
 - Центрально-северная часть США
 - Западная Япония
-- Восточная Япония
+- Japan East
 - восточная часть США 2
 - Восточная Азия
 
@@ -124,6 +124,6 @@ ms.locfileid: "90004278"
 
 Если описанное выше решение не работает, отправьте запрос в службу поддержки для базы данных SQL или Управляемый экземпляр SQL, используя следующий URL-адрес: https://aka.ms/getazuresupport
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте больше о [архитектуре подключения SQL Azure](connectivity-architecture.md)

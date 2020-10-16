@@ -13,10 +13,10 @@ ms.workload: infrastructure-services
 ms.date: 08/20/2020
 ms.author: vinigam
 ms.openlocfilehash: 05b42024529b8d9de3590488ecafbdf83283e007
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89441822"
 ---
 # <a name="migrate-to-connection-monitor-preview-from-connection-monitor"></a>Миграция в монитор подключения (Предварительная версия) из монитора подключений
@@ -61,7 +61,7 @@ ms.locfileid: "89441822"
 * Перенесенные мониторы соединений больше не отображаются в качестве старого решения монитора подключений. Теперь они доступны только для использования в мониторе подключения (Предварительная версия).
 * Любые внешние интеграции, такие как панели мониторинга в Power BI и Grafana, а также интеграции с системами управления сведениями о безопасности и событиями (SIEM), должны быть перенесены вручную. Это единственный шаг вручную, который необходимо выполнить для переноса установки.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о мониторе подключений (Предварительная версия) см. в следующих статьях:
 * [Миграция из Монитор производительности сети в монитор подключений (Предварительная версия)](migrate-to-connection-monitor-preview-from-network-performance-monitor.md)

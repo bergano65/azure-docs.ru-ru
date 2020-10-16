@@ -8,10 +8,10 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.date: 08/16/2019
 ms.openlocfilehash: 85aeafb2c4461b50d399e40d9abff2ac04b677c0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84707656"
 ---
 # <a name="issues-with-region-servers-in-azure-hdinsight"></a>Проблемы с серверами регионов в Azure HDInsight
@@ -20,7 +20,7 @@ ms.locfileid: "84707656"
 
 ## <a name="scenario-unassigned-regions"></a>Сценарий: неназначенные регионы
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 При выполнении `hbase hbck` команды отображается сообщение об ошибке следующего вида:
 
@@ -30,7 +30,7 @@ multiple regions being unassigned or holes in the chain of regions
 
 В пользовательском интерфейсе Apache HBase Master можно увидеть число регионов, которые не сбалансированы по всем серверам регионов. Затем можно выполнить команду `hbase hbck`, чтобы увидеть пропуски в цепочке регионов.
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Отверстия могут быть результатом автономных регионов.
 
@@ -54,11 +54,11 @@ multiple regions being unassigned or holes in the chain of regions
 
 ## <a name="scenario-dead-region-servers"></a>Сценарий: неработающие серверы регионов
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 Не удается запустить серверы регионов.
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Множественное разделение каталогов WAL.
 

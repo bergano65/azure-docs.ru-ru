@@ -12,10 +12,10 @@ ms.date: 02/18/2020
 ms.author: juliako
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 722db99da3c46a4ea1e31ed329a8e3448cc5626b
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89268831"
 ---
 # <a name="upload-and-index-your-videos"></a>Отправка и индексирование видео  
@@ -99,7 +99,7 @@ API Индексатора видео позволяет загружать ви
 URL-адрес, используемый для уведомления клиента (с помощью запроса POST) о текущих событиях:
 
 - Изменение состояния индексирования: 
-    - Свойства    
+    - Свойства:    
     
         |Имя|Описание|
         |---|---|
@@ -365,6 +365,6 @@ public class AccountContractSlim
 |400|VIDEO_ALREADY_FAILED|Менее 2 часов назад обработка того же самого видео завершилась сбоем. Клиентам API следует подождать не менее 2 часов, прежде чем повторно отправлять видео.|
 |429||Пробные учетные записи разрешены 5 отправок в минуту. Платные учетные записи разрешены 50 отправок в минуту.|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Изучите выходные данные индексатора видео Azure, созданные API](video-indexer-output-json-v2.md)

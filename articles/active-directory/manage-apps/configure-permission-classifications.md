@@ -11,14 +11,14 @@ ms.topic: how-to
 ms.date: 06/01/2020
 ms.author: phsignor
 ms.reviewer: arvindh, luleon, phsignor
-ms.openlocfilehash: 0add5001e2e62e26d448b06927210c14f17729f1
-ms.sourcegitcommit: 23aa0cf152b8f04a294c3fca56f7ae3ba562d272
+ms.openlocfilehash: d5016dbff30eb054e413acc66b1b2dfee62a5873
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91804346"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92070679"
 ---
-# <a name="configure-permission-classifications"></a>Настройка классификаций разрешений
+# <a name="configure-permission-classifications"></a>Настройка классификации разрешений
 
 Классификация разрешений позволяет определить влияние различных разрешений в соответствии с политиками и оценками рисков вашей организации. Например, можно использовать классификацию разрешений в политиках согласия, чтобы определить набор разрешений, на которые пользователи могут предоставлять согласие.
 
@@ -33,7 +33,7 @@ ms.locfileid: "91804346"
 
 Чтобы классифицировать разрешения с помощью портал Azure, выполните следующие действия.
 
-1. Войдите на [портал Azure](https://portal.azure.com) как [глобальный администратор](../users-groups-roles/directory-assign-admin-roles.md#global-administrator--company-administrator).
+1. Войдите в [портал Azure](https://portal.azure.com) в качестве [глобального администратора](../users-groups-roles/directory-assign-admin-roles.md#global-administrator--company-administrator), [администратора приложения](../users-groups-roles/directory-assign-admin-roles.md#application-administrator)или [администратора облачных приложений](../users-groups-roles/directory-assign-admin-roles.md#cloud-application-administrator) .
 1. Выберите **Azure Active Directory** > **Корпоративные приложения** > **Согласия и разрешения** > **Классификация разрешений**.
 1. Выберите **Добавить разрешения**, чтобы отнести разрешение в категорию "Низкое влияние".
 1. Выберите API и делегированные разрешения.

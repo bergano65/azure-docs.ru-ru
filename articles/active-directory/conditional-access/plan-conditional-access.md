@@ -11,12 +11,12 @@ author: BarbaraSelden
 manager: daveba
 ms.reviewer: joflore
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9f1d4c5b55dd2a24c1fb41540fdc5d3ae26849a2
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 3ef10f51f058739b0e545d341b77af4313dd9e97
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91258682"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91992856"
 ---
 # <a name="plan-a-conditional-access-deployment"></a>Планирование развертывания условного доступа
 
@@ -67,7 +67,7 @@ ms.locfileid: "91258682"
 Для изучения условного доступа можно воспользоваться следующими ресурсами:
 
 
-#### <a name="videos"></a>Видеоролики
+#### <a name="videos"></a>Видео
 
 * [Что такое условный доступ?](https://youtu.be/ffMAw2IVO7A)
 * [Как развернуть условный доступ?](https://youtu.be/c_izIRNJNuk)
@@ -89,7 +89,7 @@ ms.locfileid: "91258682"
 
 ### <a name="engage-the-right-stakeholders"></a>Привлечение соответствующих заинтересованных лиц
 
-Причиной неудач технических проектов обычно являются неоправданные ожидания относительно влияния, результатов и обязанностей. Чтобы избежать этих ловушек, [убедитесь, что вы привлекаете соответствующих заинтересованных лиц](https://aka.ms/deploymentplans) и их роли в проекте очевидны.
+Причиной неудач технических проектов обычно являются неоправданные ожидания относительно влияния, результатов и обязанностей. Чтобы избежать этих ловушек, [убедитесь, что вы привлекаете соответствующих заинтересованных лиц](../fundamentals/active-directory-deployment-plans.md) и их роли в проекте очевидны.
 
 ### <a name="plan-communications"></a>Планирование информирования
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/06/2019
 ms.author: jeedes
-ms.openlocfilehash: aababc6ffd84540b99ba68f6bbb449d2aa78ed4b
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 1eb408025a45f09a6bdb854f4379a560842ef2d7
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88551750"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91826277"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-envi-mmis"></a>Руководство. Интеграция Azure Active Directory с Envi MMIS
 
@@ -99,7 +99,7 @@ ms.locfileid: "88551750"
 
 4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа для приложения Envi MMIS](common/idp-intiated.png)
+    ![Снимок экрана, на котором показан раздел "Базовая конфигурация SAML" с выбранными полем "Идентификатор", полем "URL-адрес ответа" и кнопкой "Сохранить"](common/idp-intiated.png)
 
     а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://www.<CUSTOMER DOMAIN>.com/Account`.
 
@@ -134,23 +134,23 @@ ms.locfileid: "88551750"
 
 2. Щелкните вкладку **My Domain** (Мой домен).
 
-    ![Кнопка "Сохранить" в окне настройки единого входа](./media/envimmis-tutorial/configure1.png)
+    ![Снимок экрана, на котором показано меню "User" (Пользователь) с выбранной вкладкой "My Domain" (Мой домен)](./media/envimmis-tutorial/configure1.png)
 
 3. Нажмите кнопку **Изменить**.
 
-    ![Кнопка "Сохранить" в окне настройки единого входа](./media/envimmis-tutorial/configure2.png)
+    ![Снимок экрана, на котором показана выбранная кнопка "Edit" (Изменить)](./media/envimmis-tutorial/configure2.png)
 
 4. Установите флажок **Use remote authentication** (Использовать удаленную проверку подлинности), а затем выберите **HTTP Redirect** (Перенаправление HTTP) из раскрывающегося списка **Authentication Type** (Тип проверки подлинности).
 
-    ![Кнопка "Сохранить" в окне настройки единого входа](./media/envimmis-tutorial/configure3.png)
+    ![Снимок экрана, на котором отображается вкладка "Details" (Сведения) с установленным флажком "Use remote authentication" (Использовать удаленную проверку подлинности) и выбранным пунктом "HTTP Redirect" (Перенаправление HTTP)](./media/envimmis-tutorial/configure3.png)
 
 5. Выберите вкладку **Resources** (Ресурсы) и щелкните **Upload Metadata** (Отправка метаданных).
 
-    ![Кнопка "Сохранить" в окне настройки единого входа](./media/envimmis-tutorial/configure4.png)
+    ![Снимок экрана, на котором показана вкладка "Resources" (Ресурсы) с выбранным действием "Upload Metadata" (Отправка метаданных)](./media/envimmis-tutorial/configure4.png)
 
 6. Во всплывающем меню **Upload Metadata** (Отправка метаданных) сделайте следующее:
 
-    ![Кнопка "Сохранить" в окне настройки единого входа](./media/envimmis-tutorial/configure5.png)
+    ![Снимок экрана, на котором показано всплывающее меню "Upload Metadata" (Отправка метаданных) с выбранными параметром "File" (Файл) и значком "Choose file" (Выбрать файл), а также выбрана кнопка "ОК"](./media/envimmis-tutorial/configure5.png)
 
     а. Выберите вариант **File** (Файл) из раскрывающегося списка **Upload From** (Отправить из).
 
@@ -223,11 +223,11 @@ ms.locfileid: "88551750"
 
 2. Щелкните вкладку **User List** (Список пользователей).
 
-    ![Добавление сотрудника](./media/envimmis-tutorial/user1.png)
+    ![Снимок экрана, на котором показано меню "User" (Пользователь) с выбранной вкладкой "User List" (Список пользователей)](./media/envimmis-tutorial/user1.png)
 
 3. Нажмите кнопку **Add User** (Добавить пользователя).
 
-    ![Добавление сотрудника](./media/envimmis-tutorial/user2.png)
+    ![Снимок экрана, на котором показано меню "User" (Пользователь) с выбранной вкладкой "Add User" (Добавить пользователя)](./media/envimmis-tutorial/user2.png)
 
 4. В разделе **Add User** (Добавление пользователя) выполните следующие действия.
 

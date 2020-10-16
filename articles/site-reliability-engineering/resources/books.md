@@ -5,22 +5,26 @@ author: dnblankedelman
 manager: ScottCa
 ms.service: site-reliability-engineering
 ms.topic: article
-ms.date: 09/14/2020
+ms.date: 10/08/2020
 ms.author: dnb
-ms.openlocfilehash: d1e4738d933b7bd20252f597ae9c0ea27c5e3f5c
-ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
+ms.openlocfilehash: 46956afc0962b9f0c868b491cd198dbdb9e3f30f
+ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90086595"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91873053"
 ---
-# <a name="books-about-site-reliability-engineering"></a>Книги о проектировании надежности сайта
+# <a name="site-reliability-engineering-sre-books"></a>Книги по проектированию надежности сайта (выполняются)
+
+Одним из лучших способов изучения или углубить знания о выполняются является ознакомление с ним. Ниже приведено несколько лучших источников информации, которые мы видели в разделе.
+
+## <a name="core-sre-books"></a>Основные книги выполняются
 
 Более подробные сведения о проектировании надежности сайта (выполняются) — это три книг, опубликованных по теме.
 
-- [_Site Reliability Engineering: How Google Runs Production Systems_](https://shop.oreilly.com/product/0636920041528.do) (Обеспечение надежности информационных систем: организация рабочих систем в Google) (ее также называют "книгой о SRE")
-- [_The Site Reliability Workbook: Practical Ways to Implement SRE_](https://shop.oreilly.com/product/0636920132448.do) (Рабочая книга по обеспечению надежности информационных систем: практический подход к реализации SRE) (ее также называют "рабочей книгой по SRE")
-- [_Seeking SRE: Conversations About Running Production Systems at Scale_](https://shop.oreilly.com/product/0636920063964.do) (В поисках SRE: обсуждение организации рабочих систем на должном уровне)
+- [_Site Reliability Engineering: How Google Runs Production Systems_](https://www.oreilly.com/library/view/site-reliability-engineering/9781491929117/) (Обеспечение надежности информационных систем: организация рабочих систем в Google) (ее также называют "книгой о SRE")
+- [_The Site Reliability Workbook: Practical Ways to Implement SRE_](https://www.oreilly.com/library/view/the-site-reliability/9781492029496/) (Рабочая книга по обеспечению надежности информационных систем: практический подход к реализации SRE) (ее также называют "рабочей книгой по SRE")
+- [_Seeking SRE: Conversations About Running Production Systems at Scale_](https://www.oreilly.com/library/view/seeking-sre/9781491978856/) (В поисках SRE: обсуждение организации рабочих систем на должном уровне)
 
 Каждая из этих книг содержит важный набор сведений:
 
@@ -31,3 +35,13 @@ ms.locfileid: "90086595"
 - "В поисках SRE" — содержит более открытый взгляд на подход SRE без привязки к источнику, включая сведения о том, как он был реализован в других средах.
 
 Поскольку эти книги описывают опыт, среды и язык и региональные параметры организаций, которые могут быть не аналогичны тем, которые вы используете, важно прочитать эти книги с критическим глазом. По мере прочтения, попробуйте определить, какие методы или не должны быть выполнены в Организации. Уделите время тому, чтобы отобрать именно те сведения, которые обязательно принесут пользу. Подумайте, какие ценности и культурные особенности вашей организации способны упростить или затруднить описанную реализацию SRE. С осторожностью, итеративное принятие выполняются практически всегда даст лучшие результаты, чем оптовое дублирование, которое вы прочитали в этих книгах.
+
+## <a name="additional-sre-books"></a>Дополнительные книги выполняются
+
+После ознакомления с упомянутыми выше книгами, если вы хотите более подробно ознакомиться с рекомендациями уровня обслуживания (Слис) свойством/Service (SLO), следующая книга является отличным ресурсом:
+
+[_Реализация целей уровня обслуживания_](https://www.oreilly.com/library/view/implementing-service-level/9781492076803/)
+
+Если вы хотите изучить пересечение системы безопасности и надежности, эта книга предоставляет множество хороших наблюдений по теме:
+
+[_Создание безопасных и надежных систем_](https://www.oreilly.com/library/view/building-secure-and/9781492083115/)

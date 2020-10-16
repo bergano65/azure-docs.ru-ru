@@ -10,10 +10,10 @@ ms.author: keli19
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 01/11/2019
 ms.openlocfilehash: 1c03f52802881bcf4c916ce3ed438e465e574090
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91346839"
 ---
 # <a name="share-and-discover-resources-in-the-azure-ai-gallery"></a>Поиск и публикация ресурсов в коллекции решений ИИ Azure
@@ -161,7 +161,7 @@ ms.locfileid: "91346839"
    > [!TIP]
    > Чтобы убедиться, что документация выглядит надлежащим образом, сначала можно опубликовать эксперимент как **частный**. Позже на странице сведений эксперимента можно изменить параметр видимости на **Public** (Общедоступный). Обратите внимание, что единожды выбрав для эксперимента тип **Public** (Общедоступный), вы не сможете вернуть ему тип **Unlisted** (Частный).
 
-1. Выберите **Создать**.
+1. Нажмите кнопку **создания**.
 
 Теперь ваш ресурс доступен в коллекции решений ИИ Azure. Все предоставленные вами ресурсы отображаются на странице учетной записи на вкладке **Items** (Элементы).
 

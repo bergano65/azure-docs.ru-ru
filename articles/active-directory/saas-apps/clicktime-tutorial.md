@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/21/2019
 ms.author: jeedes
-ms.openlocfilehash: ed39064d4aee07554ce795be73732024e1b47f84
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 98b5c3bd1f41bd3b6a4100fdaebd1d44fb45bf9f
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88549345"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91760265"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-clicktime"></a>Руководство. Интеграция Azure Active Directory с ClickTime
 
@@ -205,9 +205,9 @@ ms.locfileid: "88549345"
 
 1. Войдите в клиент **ClickTime** .
 
-1. На панели инструментов в верхней части экрана щелкните **Company** (Компания), а затем — **People** (Пользователи).
+1. На панели инструментов в верхней части экрана щелкните **Company** (Организация), а затем — **People** (Пользователи).
    
-    ![Пользователи](./media/clicktime-tutorial/tic777282.png "Люди")
+    ![Снимок экрана, на котором показан арендатор ClickTime с последовательно выбранными элементами "Company" (Организация) и "People" (Пользователи)](./media/clicktime-tutorial/tic777282.png "Люди")
 
 1. Нажмите кнопку **Добавить пользователя**.
    
@@ -215,7 +215,7 @@ ms.locfileid: "88549345"
 
 1. В разделе "Новый пользователь" выполните следующие действия.
    
-    ![Пользователи](./media/clicktime-tutorial/tic777284.png "Люди")
+    ![Снимок экрана, на котором показан раздел "Add Person" (Добавление пользователя), где можно добавить сведения на этом шаге](./media/clicktime-tutorial/tic777284.png "Люди")
    
     а.  В текстовом поле **Full Name** (Полное имя) введите полное имя пользователя, например **Britta Simon**. 
   

@@ -8,12 +8,12 @@ ms.service: azure-app-configuration
 ms.custom: devx-track-csharp
 ms.topic: conceptual
 ms.date: 2/25/2020
-ms.openlocfilehash: 02d9407766930f02c70d580112136b50b6036e11
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d71f0396f453ceb7113d724b113fe5aacdc60e21
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90029874"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92078176"
 ---
 # <a name="use-managed-identities-to-access-app-configuration"></a>Использование управляемых удостоверений для получения доступа к службе "Конфигурация приложений"
 
@@ -39,7 +39,7 @@ Azure Active Directory [управляемые удостоверения](../ac
 Для работы с этим руководством требуется:
 
 * [пакет SDK для .NET Core](https://www.microsoft.com/net/download/windows);
-* [Azure Cloud Shell настроены](https://docs.microsoft.com/azure/cloud-shell/quickstart).
+* [Azure Cloud Shell настроены](../cloud-shell/quickstart.md).
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
@@ -73,7 +73,7 @@ Azure Active Directory [управляемые удостоверения](../ac
 
     ![Добавление управляемого удостоверения](./media/add-managed-identity.png)
 
-1. Необязательно. Если вы хотите предоставить доступ к Key Vault, следуйте указаниям [Key Vault](/azure/key-vault/general/assign-access-policy-portal)в этой инструкции.
+1. Необязательно. Если вы хотите предоставить доступ к Key Vault, следуйте указаниям [Key Vault](../key-vault/general/assign-access-policy-portal.md)в этой инструкции.
 
 ## <a name="use-a-managed-identity"></a>Использование управляемого удостоверения
 
@@ -185,7 +185,7 @@ Azure Active Directory [управляемые удостоверения](../ac
     Теперь доступ к Key Vault ссылкам можно получить так же, как и к любому другому ключу конфигурации приложения. Поставщик конфигурации будет использовать `KeyVaultClient` , настроенный для проверки подлинности в Key Vault и получения значения.
 
 > [!NOTE]
-> `ManagedIdentityCredential` поддерживает только проверку подлинности с помощью управляемого удостоверения. Он не работает в локальных средах. Если вы хотите выполнить код локально, рассмотрите возможность использования `DefaultAzureCredential` , который также поддерживает проверку подлинности субъекта-службы. Дополнительные сведения см. в [ссылке](https://docs.microsoft.com/dotnet/api/azure.identity.defaultazurecredential) .
+> `ManagedIdentityCredential` поддерживает только проверку подлинности с помощью управляемого удостоверения. Он не работает в локальных средах. Если вы хотите выполнить код локально, рассмотрите возможность использования `DefaultAzureCredential` , который также поддерживает проверку подлинности субъекта-службы. Дополнительные сведения см. в [ссылке](/dotnet/api/azure.identity.defaultazurecredential) .
 
 [!INCLUDE [Prepare repository](../../includes/app-service-deploy-prepare-repo.md)]
 

@@ -7,10 +7,10 @@ ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 02/28/2020
 ms.openlocfilehash: 207b597bc865c8234d447759ab8b0f53dc35413c
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87090286"
 ---
 # <a name="common-scenarios-examples-tutorials-and-walkthroughs-for-azure-logic-apps"></a>Распространенные сценарии, примеры, учебники и пошаговые руководства для Azure Logic Apps
@@ -43,8 +43,8 @@ ms.locfileid: "87090286"
 
     Дополнительные сведения см. в следующих статьях:<p>
 
-    * [Учебник. Создание рабочих процессов на основе автоматического утверждения с помощью Azure Logic Apps](../logic-apps/tutorial-process-mailing-list-subscriptions-workflow.md)
-    * [Руководство. Автоматизация задач обработки сообщений электронной почты с помощью Azure Logic Apps, функций Azure и службы хранилища Azure](../logic-apps/tutorial-process-email-attachments-workflow.md)
+    * [Руководство по созданию автоматических рабочих процессов на основе утверждений с помощью Azure Logic Apps](../logic-apps/tutorial-process-mailing-list-subscriptions-workflow.md)
+    * [Руководство по Автоматизация задач обработки сообщений электронной почты с помощью Azure Logic Apps, Функций Azure и службы хранилища Azure](../logic-apps/tutorial-process-email-attachments-workflow.md)
 
   * Триггер [ **http** ](../connectors/connectors-native-http.md) может вызывать конечную точку службы по протоколу HTTP или HTTPS. Дополнительные сведения см. в разделе [вызов, активация или вложение рабочих процессов с помощью конечных точек HTTP](../logic-apps/logic-apps-http-endpoint.md).
 
@@ -99,7 +99,7 @@ ms.locfileid: "87090286"
 
 Можно полностью разработать и развернуть приложения логики с помощью Visual Studio, Azure DevOps или любых других инструментов системы управления версиями и автоматической сборки. Для поддержки развертывания рабочих процессов и зависимых подключений в шаблоне ресурсов приложения логики используют шаблоны развертывания ресурсов Azure. Средства Visual Studio автоматически создают эти шаблоны, которые можно записать после изменения в систему управления версиями для управления версиями. Для ведения журналов уведомлений и диагностики состояния рабочего процесса служба Azure Logic Apps обеспечивает средства мониторинга и уведомления.
 
-### <a name="deploy"></a>Развернуть
+### <a name="deploy"></a>Развертывание
 
 * [Краткое руководство. Создание автоматизированных задач, процессов и рабочих процессов с помощью Azure Logic Apps — Visual Studio](../logic-apps/quickstart-create-logic-apps-with-visual-studio.md)
 * [Обзор: Автоматизация развертывания приложений логики](../logic-apps/logic-apps-azure-resource-manager-templates-overview.md)
@@ -128,7 +128,7 @@ ms.locfileid: "87090286"
 
 Можно использовать и преобразовывать различные типы содержимого с помощью многих функций, написанных на [языке определения рабочего процесса](https://aka.ms/logicappsdocs) Azure Logic Apps. Например, можно осуществлять взаимное преобразование строк, JSON и XML с помощью выражений рабочего процесса `@json()` и `@xml()`. Обработчик Logic Apps сохраняет типы содержимого, чтобы обеспечить передачу содержимого между службами без потерь.
 
-* [Обрабатывайте типы содержимого в Azure Logic Apps](../logic-apps/logic-apps-content-type.md), например `application/` ,, `application/octet-stream` и`multipart/formdata`
+* [Обрабатывайте типы содержимого в Azure Logic Apps](../logic-apps/logic-apps-content-type.md), например `application/` ,, `application/octet-stream` и `multipart/formdata`
 * [Справочное руководство по использованию функций в выражениях для Azure Logic Apps и Power Automate](../logic-apps/workflow-definition-language-functions-reference.md)
 * [Схема языка определения рабочих процессов в Azure Logic Apps](../logic-apps/logic-apps-workflow-definition-language.md)
 

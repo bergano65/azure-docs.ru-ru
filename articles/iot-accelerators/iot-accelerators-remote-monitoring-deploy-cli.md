@@ -8,12 +8,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 03/08/2019
 ms.topic: conceptual
-ms.openlocfilehash: 501ca51a9542229a14e98a56679837950a82891e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f9dcf19f5318021df5d9fdde777b8786942e33d8
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80258300"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92072260"
 ---
 # <a name="deploy-the-remote-monitoring-solution-accelerator-using-the-cli"></a>Развертывание акселератора решения для удаленного мониторинга с помощью CLI
 
@@ -45,13 +45,13 @@ pcs login
 
 Для завершения процесса входа следуйте инструкциям на экране.
 
-## <a name="deployment-options"></a>Параметры развертывания
+## <a name="deployment-options"></a>Варианты развертывания
 
 При развертывании акселератора решений существует несколько вариантов для настройки процесса.
 
 | Параметр | Значения | Описание |
 | ------ | ------ | ----------- |
-| Номер SKU    | `basic`, `standard`, `local` | _Базовое_ развертывание предназначено для тестирования и демонстрации. При этом все микрослужбы развертываются на одной виртуальной машине. _Стандартное_ развертывание предназначено для рабочей среды. При этом микрослужбы развертываются на нескольких виртуальных машинах. При _локальном_ развертывании контейнер Docker настраивается для запуска микрослужб на локальном компьютере и использует облачные службы Azure, например, хранилище и Cosmos DB. |
+| номер SKU    | `basic`, `standard`, `local` | _Базовое_ развертывание предназначено для тестирования и демонстрации. При этом все микрослужбы развертываются на одной виртуальной машине. _Стандартное_ развертывание предназначено для рабочей среды. При этом микрослужбы развертываются на нескольких виртуальных машинах. При _локальном_ развертывании контейнер Docker настраивается для запуска микрослужб на локальном компьютере и использует облачные службы Azure, например, хранилище и Cosmos DB. |
 | Среда выполнения | `dotnet`, `java` | Позволяет выбирать языковую реализацию микрослужб. |
 
 Дополнительные сведения об использовании локального развертывания см. в разделе [Локальное развертывание акселератора решения для удаленного мониторинга](iot-accelerators-remote-monitoring-deploy-local.md).
@@ -73,12 +73,12 @@ pcs login
 | 1     | [Виртуальная машина Linux](https://azure.microsoft.com/services/virtual-machines/) | Standard D1 V2  | Размещение микрослужб |
 | 1     | [Центр Интернета вещей Azure](https://azure.microsoft.com/services/iot-hub/)                  | S1 — уровень "Стандартный" | Управление устройствами и обмен данными |
 | 1     | [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/)              | Стандартный        | Хранение данных конфигурации, правил, оповещений и других холодных данных |  
-| 1     | [Учетная запись хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-introduction#types-of-storage-accounts)  | Стандартный        | Хранилище для виртуальных машин и контрольных точек потоковой передачи |
+| 1     | [Учетная запись хранения Azure](../storage/common/storage-introduction.md#types-of-storage-accounts)  | Стандартный        | Хранилище для виртуальных машин и контрольных точек потоковой передачи |
 | 1     | [Веб-приложение](https://azure.microsoft.com/services/app-service/web/)        |                 | Размещение интерфейсных веб-приложений |
 | 1     | [Azure Active Directory](https://azure.microsoft.com/services/active-directory/)        |                 | Управление удостоверениями пользователей и безопасностью |
 | 1     | [Azure Maps](https://azure.microsoft.com/services/azure-maps/)        | Стандартный                | Просмотр расположений ресурса |
 | 1     | [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/)        |   3 единицы              | Поддержка аналитики в режиме реального времени |
-| 1     | [Служба подготовки устройств Azure](https://docs.microsoft.com/azure/iot-dps/)        |       S1          | Подготовка устройств в нужном масштабе |
+| 1     | [Служба подготовки устройств Azure](../iot-dps/index.yml)        |       S1          | Подготовка устройств в нужном масштабе |
 | 1     | [Аналитика временных рядов Azure](https://azure.microsoft.com/services/time-series-insights/)        |   S1 — 1 единица              | Хранилище для данных сообщений и глубокий анализ данных телеметрии |
 
 ### <a name="standard"></a>Стандартный
@@ -91,15 +91,15 @@ pcs login
 
 | Count | Ресурс                                     | Размер (номер SKU)      | Область использования |
 |-------|----------------------------------------------|-----------------|----------|
-| 1     | [Служба Azure Kubernetes (AKS)](https://azure.microsoft.com/services/kubernetes-service)| Используйте полностью управляемую службу оркестрации контейнеров Kubernetes; по умолчанию применяется 3 агента|
+| 1     | [Служба Azure Kubernetes](https://azure.microsoft.com/services/kubernetes-service)| Используйте полностью управляемую службу оркестрации контейнеров Kubernetes; по умолчанию применяется 3 агента|
 | 1     | [Центр Интернета вещей Azure](https://azure.microsoft.com/services/iot-hub/)                     | S2 — уровень "Стандартный" | Команды и средства для управления устройствами |
 | 1     | [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/)                 | Стандартный        | Хранение данных конфигурации и данных телеметрии, например правил, оповещений и сообщений |
-| 5     | [Учетные записи хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-introduction#types-of-storage-accounts)    | Стандартный        | 4 для хранения виртуальных машин и 1 для контрольных точек потоковой передачи |
+| 5     | [Учетные записи хранения Azure](../storage/common/storage-introduction.md#types-of-storage-accounts)    | Стандартный        | 4 для хранения виртуальных машин и 1 для контрольных точек потоковой передачи |
 | 1     | [Служба приложений](https://azure.microsoft.com/services/app-service/web/)             | Стандартный S1     | Шлюз приложений через TLS |
 | 1     | [Azure Active Directory](https://azure.microsoft.com/services/active-directory/)        |                 | Управление удостоверениями пользователей и безопасностью |
 | 1     | [Azure Maps](https://azure.microsoft.com/services/azure-maps/)        | Стандартный                | Просмотр расположений ресурса |
 | 1     | [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/)        |   3 единицы              | Поддержка аналитики в режиме реального времени |
-| 1     | [Служба подготовки устройств Azure](https://docs.microsoft.com/azure/iot-dps/)        |       S1          | Подготовка устройств в нужном масштабе |
+| 1     | [Служба подготовки устройств Azure](../iot-dps/index.yml)        |       S1          | Подготовка устройств в нужном масштабе |
 | 1     | [Аналитика временных рядов Azure](https://azure.microsoft.com/services/time-series-insights/)        |   S1 — 1 единица              | Хранилище для данных сообщений и глубокий анализ данных телеметрии |
 
 > [!NOTE]

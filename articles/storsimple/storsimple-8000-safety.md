@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 04/04/2017
 ms.author: alkohli
 ms.openlocfilehash: 556a84acb3461fb39b3eb0390b54878254bafabf
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85514534"
 ---
 # <a name="safely-install-and-operate-your-storsimple-device"></a>Безопасная установка и эксплуатация устройства StorSimple
@@ -148,11 +148,11 @@ ms.locfileid: "85514534"
 
 ![Значок "Примечание"](./media/storsimple-safety/IC740881.png) **ПРИМЕЧАНИЕ.**
 
-Когда вы подаете или иным образом переносите батареи с помощью Air, следуйте документу с инструкциями по использованию IATAного аккумулятора.[https://www.iata.org/whatwedo/cargo/dgr/Pages/lithium-batteries.aspx](https://www.iata.org/whatwedo/cargo/dgr/Pages/lithium-batteries.aspx)
+Когда вы подаете или иным образом переносите батареи с помощью Air, следуйте документу с инструкциями по использованию IATAного аккумулятора. [https://www.iata.org/whatwedo/cargo/dgr/Pages/lithium-batteries.aspx](https://www.iata.org/whatwedo/cargo/dgr/Pages/lithium-batteries.aspx)
 
 Ознакомившись с этими рекомендациями по безопасности, распакуйте устройство, установите его в стойку и подключите все необходимые кабели.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Для устройства 8100 перейдите к разделу [Установите ваше устройство StorSimple 8100](storsimple-8100-hardware-installation.md).
 * Для устройства 8600 перейдите к разделу [Установите ваше устройство StorSimple 8600](storsimple-8600-hardware-installation.md).

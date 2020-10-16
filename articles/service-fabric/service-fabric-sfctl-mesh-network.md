@@ -6,10 +6,10 @@ ms.topic: reference
 ms.date: 1/16/2020
 ms.author: jejarry
 ms.openlocfilehash: 2b2b2c444bb492fa6c6b945a82090e91963fb1a8
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86245866"
 ---
 # <a name="sfctl-mesh-network"></a>sfctl mesh network
@@ -19,9 +19,9 @@ ms.locfileid: "86245866"
 
 |Команда|Описание|
 | --- | --- |
-| delete | Удаляет сетевой ресурс. |
+| "Удалить" | Удаляет сетевой ресурс. |
 | list | Составляет список всех сетевых ресурсов. |
-| show | Предоставляет сетевой ресурс с заданным именем. |
+| показать | Предоставляет сетевой ресурс с заданным именем. |
 
 ## <a name="sfctl-mesh-network-delete"></a>sfctl mesh network delete
 Удаляет сетевой ресурс.

@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 09/21/2020
 ms.author: jpalma
 author: palma21
-ms.openlocfilehash: 6446e138df1fe744d70be085d0aecac58e2c1c45
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: d93a43a44a9ccff4e7918e556b9d759e270d2f42
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91255304"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92072090"
 ---
 # <a name="configure-an-aks-cluster"></a>Настройка кластера AKS.
 
@@ -176,10 +176,10 @@ az aks nodepool add --name ubuntu1804 --cluster-name myAKSCluster --resource-gro
 
 ## <a name="generation-2-virtual-machines-preview"></a>Виртуальные машины поколения 2 (Предварительная версия)
 
-Azure поддерживает [виртуальные машины версии 2 (Gen2)](../virtual-machines/windows/generation-2.md). Виртуальные машины поколения 2 поддерживают ключевые функции, которые не поддерживаются в виртуальных машинах поколения 1 (GEN1). Эти функции включают увеличенную память, Intel Software Guard Extensions и виртуализированную постоянную память (vPMEM).
+Azure поддерживает [виртуальные машины версии 2 (Gen2)](../virtual-machines/generation-2.md). Виртуальные машины поколения 2 поддерживают ключевые функции, которые не поддерживаются в виртуальных машинах поколения 1 (GEN1). Эти функции включают увеличенную память, Intel Software Guard Extensions и виртуализированную постоянную память (vPMEM).
 
 Виртуальные машины 2-го поколения используют новую архитектуру загрузки на основе UEFI, а не архитектуру на основе BIOS, используемую виртуальными машинами 1-го поколения.
-Виртуальные машины Gen2 поддерживают только определенные номера SKU и размеры. Проверьте [список поддерживаемых размеров](../virtual-machines/windows/generation-2.md#generation-2-vm-sizes), чтобы узнать, поддерживает ли SKU или требует Gen2.
+Виртуальные машины Gen2 поддерживают только определенные номера SKU и размеры. Проверьте [список поддерживаемых размеров](../virtual-machines/generation-2.md#generation-2-vm-sizes), чтобы узнать, поддерживает ли SKU или требует Gen2.
 
 Кроме того, не все образы виртуальных машин поддерживают Gen2, на виртуальных машинах AKS Gen2 будет использоваться новый [образ AKS Ubuntu 18,04](#os-configuration). Этот образ поддерживает все номера SKU и размеры Gen2.
 
@@ -211,7 +211,7 @@ az provider register --namespace Microsoft.ContainerService
 az extension add --name aks-preview
 ```
 
-Чтобы обновить расширение CLI AKS-Preview, используйте следующие Azure CLI команды:
+Чтобы обновить расширение aks-preview, выполните следующие команды Azure CLI:
 
 ```azurecli
 az extension update --name aks-preview
@@ -270,7 +270,7 @@ az provider register --namespace Microsoft.ContainerService
 az extension add --name aks-preview
 ```
 
-Чтобы обновить расширение CLI AKS-Preview, используйте следующие Azure CLI команды:
+Чтобы обновить расширение aks-preview, выполните следующие команды Azure CLI:
 
 ```azurecli
 az extension update --name aks-preview

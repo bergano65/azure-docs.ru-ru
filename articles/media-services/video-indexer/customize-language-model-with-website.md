@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 08/10/2020
 ms.author: kumud
 ms.openlocfilehash: f9eedba6c8aee5c8aab73e2ed598a4511b4c5982
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89020462"
 ---
 # <a name="customize-a-language-model-with-the-video-indexer-website"></a>Настройка языковой модели с помощью веб-сайта Индексатора видео
@@ -152,6 +152,6 @@ ms.locfileid: "89020462"
 
     ![От правки записи — индексатор видео](./media/customize-language-model/from-transcript-edits.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Настройка языковой модели с помощью API](customize-language-model-with-api.md)

@@ -4,10 +4,10 @@ description: В этом разделе объясняется, как упра�
 ms.topic: how-to
 ms.date: 04/27/2020
 ms.openlocfilehash: d3a1be915dc1cc8714e49cc7b2fe68bbe9cad161
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87011487"
 ---
 # <a name="manage-recording-policy"></a>Управление политикой записи

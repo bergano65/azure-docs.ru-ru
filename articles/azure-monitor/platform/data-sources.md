@@ -7,10 +7,10 @@ author: bwren
 ms.author: bwren
 ms.date: 10/06/2020
 ms.openlocfilehash: 8ef498a51f25a6b084a0d048661f3d18a5881644
-ms.sourcegitcommit: 23aa0cf152b8f04a294c3fca56f7ae3ba562d272
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91802075"
 ---
 # <a name="sources-of-monitoring-data-for-azure-monitor"></a>Источники данных мониторинга для Azure Monitor
@@ -205,7 +205,7 @@ Azure Monitor основан на [общей платформе данных м
 | [Azure Sentinel](../../sentinel/index.yml) | Журналы Azure Monitor | Azure Sentinel сохраняет собранные данные из разных источников данных в Log Analytics рабочей области, что позволяет анализировать данные журналов, собираемых Azure Monitor.  | [Подключение источников данных](../../sentinel/quickstart-onboard.md) |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о типах данных мониторинга, собранных Azure Monitor, и о том, как просматривать и анализировать эти данные, см. в статье [Сбор данных мониторинга в Azure](data-platform.md).
 - Список [различных расположений, в которых ресурсы Azure хранят данные](data-locations.md) и способ доступа к ним. 

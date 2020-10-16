@@ -9,10 +9,10 @@ ms.topic: troubleshooting
 ms.date: 09/16/2020
 ms.author: jasteppe
 ms.openlocfilehash: 64056ef2f63331686553c52040af9e10ee0ac468
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90982996"
 ---
 # <a name="azure-iot-connector-for-fhir-preview-troubleshooting-guide"></a>Руководство по устранению неполадок в соединителе Azure IoT для FHIR (Предварительная версия)
@@ -33,12 +33,12 @@ ms.locfileid: "90982996"
 
 |Элемент|Обязательно|
 |:-------|:------|
-|TypeName|Да|
-|типематчекспрессион|Да|
-|девицеидекспрессион|Да|
-|тиместампекспрессион|Да|
-|Values []. ValueName|Да|
-|Values []. ValueExpression|Да|
+|TypeName|True|
+|типематчекспрессион|True|
+|девицеидекспрессион|True|
+|тиместампекспрессион|True|
+|Values []. ValueName|True|
+|Values []. ValueExpression|True|
 
 > [!NOTE]
 > Values []. ValueName и значения []. ValueExpression
@@ -49,7 +49,7 @@ ms.locfileid: "90982996"
 
 |Элемент|Обязательно|
 |:------|:-------|
-|TypeName|Да|
+|TypeName|True|
 
 > [!NOTE]
 > Это единственный обязательный элемент сопоставления FHIR, проверенный в данный момент.
@@ -99,25 +99,25 @@ ms.locfileid: "90982996"
 
 2. Выберите **соединитель** , из которого будет скопировано преобразование JSON сопоставления преобразования.
 
-   :::image type="content" source="media/iot-troubleshoot/map-files-select-connector-with-box.png" alt-text="Connector2 IoT" lightbox="media/iot-troubleshoot/map-files-select-connector-with-box.png":::
+   :::image type="content" source="media/iot-troubleshoot/map-files-select-connector-with-box.png" alt-text="Connector1 IoT" lightbox="media/iot-troubleshoot/map-files-select-connector-with-box.png":::
 
 > [!NOTE]
 > Этот процесс также может использоваться для копирования и сохранения содержимого JSON **"Configure FHIR Mapping"** .
 
 3. Выберите **"настроить сопоставление устройств"**.
 
-    :::image type="content" source="media/iot-troubleshoot/map-files-select-device-with-box.png" alt-text="Connector3 IoT" lightbox="media/iot-troubleshoot/map-files-select-device-with-box.png":::
+    :::image type="content" source="media/iot-troubleshoot/map-files-select-device-with-box.png" alt-text="Connector1 IoT" lightbox="media/iot-troubleshoot/map-files-select-device-with-box.png":::
 
 4. Выберите содержимое JSON и выполните операцию копирования (например, нажмите клавиши Ctrl + c). 
 
-   :::image type="content" source="media/iot-troubleshoot/map-files-select-device-json-with-box.png" alt-text="Connector4 IoT" lightbox="media/iot-troubleshoot/map-files-select-device-json-with-box.png":::
+   :::image type="content" source="media/iot-troubleshoot/map-files-select-device-json-with-box.png" alt-text="Connector1 IoT" lightbox="media/iot-troubleshoot/map-files-select-device-json-with-box.png":::
 
 5. Выполните операцию вставки (например, выберите CTRL + v) в новый файл в редакторе (например, Visual Studio Code, Notepad) и сохраните файл с расширением *. JSON.
 
 > [!TIP]
 > Если вы откроете запрос в службу [технической поддержки Azure](https://azure.microsoft.com/support/create-ticket/) для соединителя Azure IOT для FHIR, обязательно включите копии формата JSON сопоставления преобразования, чтобы помочь в процессе устранения неполадок.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Ознакомьтесь с часто задаваемыми вопросами о соединителе Azure IoT для FHIR.
 

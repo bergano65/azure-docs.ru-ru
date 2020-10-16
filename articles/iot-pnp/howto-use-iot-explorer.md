@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.service: iot-pnp
 services: iot-pnp
 ms.custom: mvc
-ms.openlocfilehash: e64586ced7a619de02ae3a9d6beda35660ca04a9
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.openlocfilehash: bf68bdafbb8b6fde187a2d787bb5464e5ece4cb2
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91577583"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92019160"
 ---
 # <a name="install-and-use-azure-iot-explorer"></a>Установка и использование Azure IoT Explorer
 
@@ -24,7 +24,7 @@ ms.locfileid: "91577583"
 - Установите и настройте средство Azure IoT Explorer.
 - Используйте средство для взаимодействия с устройствами и их тестирования.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Чтобы использовать средство Azure IoT Explorer, вам потребуется:
 
@@ -36,7 +36,7 @@ ms.locfileid: "91577583"
 Перейдите в раздел [Azure IOT Explorer](https://github.com/Azure/azure-iot-explorer/releases) и разверните список ресурсов для последнего выпуска. Скачайте и установите последнюю версию приложения.
 
 >[!Important]
->Из версии 0.11.0 IoT Explorer поддерживает только выпуск Интернета вещей Plug and Play (начиная с сентября 2020). Чтобы использовать функции, доступные в предыдущей предварительной версии, начиная с августа 2019, установите версию 0,10. x.
+> Обновление до версии 0,13. x для разрешения моделей из любого репозитория, основанного на [https://github.com/Azure/iot-plugandplay-models](https://github.com/Azure/iot-plugandplay-models)
 
 ## <a name="use-azure-iot-explorer"></a>Использование Azure IoT Explorer
 
@@ -136,4 +136,4 @@ ms.locfileid: "91577583"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом пошаговом руководстве вы узнали, как установить и использовать Azure IoT Explorer для взаимодействия с устройствами IoT Plug and Play. Предлагаемый следующий шаг — Узнайте, как использовать [команды Azure CLI IoT Plug and Play](./howto-use-iot-pnp-cli.md).
+В этом пошаговом руководстве вы узнали, как установить и использовать Azure IoT Explorer для взаимодействия с устройствами IoT Plug and Play. Предлагаемый следующий шаг — Узнайте, как [установить и использовать средства разработки дтдл](howto-use-dtdl-authoring-tools.md).

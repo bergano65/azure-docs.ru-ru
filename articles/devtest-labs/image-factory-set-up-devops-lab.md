@@ -4,10 +4,10 @@ description: В этой статье рассматриваются все по
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: fa7050bae1ff8681e04b6ab38220be9eaf38a64a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85476144"
 ---
 # <a name="run-an-image-factory-from-azure-devops"></a>Запуск фабрики образов из Azure DevOps
@@ -106,8 +106,8 @@ Azure DevOps позволяет хранить исходный код, запу
 2. Выберите **субъект-службу** , которую вы создали, выбрав **Azure Resource Manager**
 3. Выберите **конечную точку службы**.
 4. В качестве **пути к сценарию**выберите **... (многоточие)** справа.
-5. Перейдите к **MakeGoldenImageVMs.ps1ному** сценарию.
-6. Параметры сценария должны выглядеть следующим образом:`-ConfigurationLocation $(System.DefaultWorkingDirectory)$(ConfigurationLocation) -DevTestLabName $(DevTestLabName) -vmSize $(VMSize) -machineUserName $(MachineUserName) -machinePassword (ConvertTo-SecureString -string '$(MachinePassword)' -AsPlainText -Force) -StandardTimeoutMinutes $(StandardTimeoutMinutes)`
+5. Перейдите к **MakeGoldenImageVMs.ps1ному ** сценарию.
+6. Параметры сценария должны выглядеть следующим образом: `-ConfigurationLocation $(System.DefaultWorkingDirectory)$(ConfigurationLocation) -DevTestLabName $(DevTestLabName) -vmSize $(VMSize) -machineUserName $(MachineUserName) -machinePassword (ConvertTo-SecureString -string '$(MachinePassword)' -AsPlainText -Force) -StandardTimeoutMinutes $(StandardTimeoutMinutes)`
 
     ![Завершение определения сборки](./media/set-up-devops-lab/complete-build-definition.png)
 
@@ -117,5 +117,5 @@ Azure DevOps позволяет хранить исходный код, запу
 
 ![Виртуальные машины в лаборатории](./media/set-up-devops-lab/vms-in-lab.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Первый шаг в настройке фабрики образов на основе Azure DevTest Labs завершен. В следующей статье серии вы получаете обобщенные и сохраненные в пользовательских образах виртуальные машины. После этого они будут распространяться на все остальные лабораторные занятия. См. следующую статью серии: [Сохранение пользовательских образов и распространение в несколько лабораторий](image-factory-save-distribute-custom-images.md).

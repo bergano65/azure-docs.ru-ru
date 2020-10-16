@@ -6,12 +6,12 @@ ms.author: baanders
 ms.topic: troubleshooting
 ms.service: digital-twins
 ms.date: 07/14/2020
-ms.openlocfilehash: e152c0227008dd12088660b2390a8d0a5f54de96
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6f57f801f2270819d4a67a49590f5ba61b32afcb
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89290784"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92047647"
 ---
 # <a name="known-issues-in-azure-digital-twins"></a>Известные проблемы в службе Digital двойников
 
@@ -30,7 +30,7 @@ ms.locfileid: "89290784"
 
 Это можно устранить путем повторного выполнения `az login` команды в Cloud Shell и выполнения последующих шагов входа. После этого вы сможете выполнить команду повторно.
 
-Альтернативным решением является [установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) на компьютере, чтобы можно было выполнять команды Azure CLI локально. В локальной CLI эта проблема не возникает.
+Альтернативным решением является [установка Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) на компьютере, чтобы можно было выполнять команды Azure CLI локально. В локальной CLI эта проблема не возникает.
 
 ### <a name="possible-causes"></a>Возможные причины
 
@@ -60,7 +60,7 @@ ms.locfileid: "89290784"
 
 ## <a name="issue-with-interactive-browser-authentication"></a>Проблемы с интерактивной проверкой подлинности браузера
 
-При написании кода проверки подлинности в приложениях Azure Digital двойников с помощью версии **1.2.0** **библиотеки [Azure. Identity](https://docs.microsoft.com/dotnet/api/azure.identity?view=azure-dotnet) **могут возникнуть проблемы с методом [интерактивебровсеркредентиал](https://docs.microsoft.com/dotnet/api/azure.identity.interactivebrowsercredential?view=azure-dotnet) .
+При написании кода проверки подлинности в приложениях Azure Digital двойников с помощью версии **1.2.0** **библиотеки [Azure. Identity](/dotnet/api/azure.identity?view=azure-dotnet) **могут возникнуть проблемы с методом [интерактивебровсеркредентиал](/dotnet/api/azure.identity.interactivebrowsercredential?view=azure-dotnet) .
 
 Это не последняя версия библиотеки. Последняя версия — **1.2.2**.
 
@@ -81,7 +81,7 @@ ms.locfileid: "89290784"
 
 Эта проблема возникает при использовании версии **1.2.0** в приложении Digital двойников или при добавлении библиотеки в проект без указания версии (так же, как по умолчанию используется последняя версия).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о безопасности и разрешениях для Azure Digital двойников:
 * [*Основные понятия: безопасность решений для цифровых двойников Azure*](concepts-security.md)

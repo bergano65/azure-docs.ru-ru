@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 01/08/2020
 ms.custom: sfrev
 ms.openlocfilehash: aaf8204158f720d8c69c98af758071cd91f6eff0
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86248175"
 ---
 # <a name="service-fabric-application-scenarios"></a>Сценарии приложений Service Fabric
@@ -23,7 +23,7 @@ Azure Service Fabric предлагает надежную и гибкую пл�
 
 * **Сбор данных, обработка и IOT**: Service Fabric обрабатывает большой масштаб и имеет низкую задержку через службы с отслеживанием состояния. Он может помочь обрабатывать данные на миллионах устройств, где данные для устройства и вычисления размещаются одновременно.
 
-    Клиенты, которые создали службы IoT с помощью Service Fabric включают в себя [Honeywell](https://customers.microsoft.com/story/honeywell-builds-microservices-based-thermostats-on-azure), [конструкцию PCL](https://customers.microsoft.com/story/pcl-construction-professional-services-azure), [Крестрон](https://customers.microsoft.com/story/crestron-partner-professional-services-azure), [BMW](https://customers.microsoft.com/story/bmw-enables-driver-mobility-via-azure-service-fabric/), [Schneider Электрический](https://customers.microsoft.com/story/schneider-electric-powers-engergy-solutions-on-azure-service-fabric)и [системы сеток](https://customers.microsoft.com/story/mesh-systems-lights-up-the-market-with-iot-based-azure-solutions).
+    Клиенты, которые создали службы IoT с помощью Service Fabric включают в себя [Honeywell](https://customers.microsoft.com/story/honeywell-builds-microservices-based-thermostats-on-azure), [конструкцию PCL](https://customers.microsoft.com/story/pcl-construction-professional-services-azure), [Крестрон](https://customers.microsoft.com/story/crestron-partner-professional-services-azure),  [BMW](https://customers.microsoft.com/story/bmw-enables-driver-mobility-via-azure-service-fabric/), [Schneider Электрический](https://customers.microsoft.com/story/schneider-electric-powers-engergy-solutions-on-azure-service-fabric)и [системы сеток](https://customers.microsoft.com/story/mesh-systems-lights-up-the-market-with-iot-based-azure-solutions).
 
 * **Игры и интерактивные приложения на основе сеансов**. Service Fabric удобно использовать, если приложению требуются операции чтения и записи с низкой задержкой, например, в Интернет-играх или мгновенных сообщениях. Service Fabric позволяет создавать интерактивные приложения с отслеживанием состояния без необходимости создания отдельного хранилища или кэша. Рекомендации по проектированию для [использования Service Fabric в игровых службах](/gaming/azure/reference-architectures/multiplayer-synchronous-sf)см. в статье [решения для игр Azure](https://azure.microsoft.com/solutions/gaming/) .
 
@@ -71,7 +71,7 @@ Azure Service Fabric предлагает надежную и гибкую пл�
 * Посетите Центр архитектуры Azure, чтобы получить рекомендации по [созданию микрослужб в Azure](/azure/architecture/microservices/).
 * Рекомендации по проектированию приложений см. в статье [Azure Service Fabric приложения и кластеров](service-fabric-best-practices-overview.md) .
 
-* См. также
+* См. также:
   * [Общие сведения о микрослужбах](service-fabric-overview-microservices.md)
   * [Определение состояния службы и управление им](service-fabric-concepts-state.md)
   * [Доступность служб](service-fabric-availability-services.md)

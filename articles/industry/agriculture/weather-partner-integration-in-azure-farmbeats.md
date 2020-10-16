@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 07/09/2020
 ms.author: sunasing
 ms.openlocfilehash: a2677b5343b2d65a39e7c9f6d5006db599c1ac73
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86497001"
 ---
 # <a name="weather-partner-integration"></a>Интеграция с партнерами, предоставляющими данные о погоде
@@ -18,7 +18,7 @@ ms.locfileid: "86497001"
 
  > [!NOTE]
  > В этой документации мы будем использовать эталонную реализацию, созданную с помощью NOAA, из открытых наборов данных Azure и доступные по адресу [https://github.com/azurefarmbeats/noaa_docker](https://github.com/azurefarmbeats/noaa_docker) .
- > Соответствующий образ DOCKER доступен по адресу[https://hub.docker.com/r/azurefarmbeats/farmbeats-noaa](https://hub.docker.com/r/azurefarmbeats/farmbeats-noaa)
+ > Соответствующий образ DOCKER доступен по адресу [https://hub.docker.com/r/azurefarmbeats/farmbeats-noaa](https://hub.docker.com/r/azurefarmbeats/farmbeats-noaa)
 
 Партнеру по погоду потребуется предоставить образ или программу DOCKER (с указанными ниже спецификациями) и разместить образ DOCKER в реестре контейнеров, доступном клиентам. Партнеру по погоду потребуется предоставить следующие сведения своим клиентам:
 
@@ -36,10 +36,10 @@ ms.locfileid: "86497001"
 
 API-интерфейсы Фармбеатс содержат техническую документацию по Swagger. Сведения обо всех API-интерфейсах и соответствующих запросах или ответах см. в разделе [Фармбеатс Swagger](https://aka.ms/farmbeatsswagger). 
 
-Если вы установили Фармбеатс, вы можете получить доступ к Фармбеатс Swagger по адресу`https://yourfarmbeatswebsitename-api.azurewebsites.net/swagger`
+Если вы установили Фармбеатс, вы можете получить доступ к Фармбеатс Swagger по адресу `https://yourfarmbeatswebsitename-api.azurewebsites.net/swagger`
 
 Обратите внимание, что "-API" добавляется в имя веб-сайта Фармбеатс.
-Конечная точка API будет:`https://yourfarmbeatswebsitename-api.azurewebsites.net`
+Конечная точка API будет: `https://yourfarmbeatswebsitename-api.azurewebsites.net`
 
 ### <a name="datahub-lib"></a>Датахуб lib
 
@@ -134,7 +134,7 @@ JSON является стандартным не зависящим от язы
 
 ### <a name="details-of-the-objects"></a>Сведения об объектах
 
-  веасердатамодел | Описание: |
+  веасердатамодел | Описание |
   --- | ---
   Имя  | Имя модели данных Weather |
   Описание  | Информативное описание модели. |
@@ -160,7 +160,7 @@ JSON является стандартным не зависящим от язы
   веасердатамоделид  | Идентификатор соответствующего Веасердатамодел, который был создан во время начальной загрузки|
   location  | представляет широту, долготу и повышение прав |
   Имя | Имя объекта |
-  Описание | Описание |
+  Description | Описание |
   фармид | **необязательно** ИДЕНТИФИКАТОР фермы, предоставляемой клиентом как часть параметра задания. |
   Свойства  | Дополнительные свойства от производителя.
 

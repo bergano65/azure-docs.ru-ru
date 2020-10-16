@@ -15,10 +15,10 @@ manager: mflasko
 ms.custom: seo-lt-2019, devx-track-azurepowershell
 ms.date: 07/20/2020
 ms.openlocfilehash: 901693c512ddfcf5d3c4dafaec71b1606b5dc5f1
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89077855"
 ---
 # <a name="run-an-ssis-package-with-the-execute-ssis-package-activity-in-azure-data-factory"></a>Запуск пакета Integration Services с помощью действия выполнения пакета SSIS в Фабрике данных Azure
@@ -251,7 +251,7 @@ ms.locfileid: "89077855"
 
       Например, без изменения исходного пакета в SSDT можно преобразовать локальные и локальные потоки данных, работающие на SQL Server, в потоки данных из локальной среды в облако, работающие в среде SSIS IR в ADF путем переопределения значений свойств **коннектбипрокси**, **ConnectionString**и **коннектусингманажедидентити** в существующих диспетчерах соединений во время выполнения.
       
-      Эти переопределения времени выполнения могут включать локально размещаемый IR-файл (шир) в качестве прокси для служб SSIS IR при доступе к данным в локальной среде. см. раздел [Настройка Шир в качестве прокси-сервера для служб SSIS IR](https://docs.microsoft.com/azure/data-factory/self-hosted-integration-runtime-proxy-ssis), а также подключения к базе данных SQL Azure и управляемый экземпляр с помощью последнего драйвера мсоледбскл, который, в свою очередь, Azure Active Directory обеспечивает проверку [подлинности AAD с](https://docs.microsoft.com/sql/integration-services/connection-manager/ole-db-connection-manager?view=sql-server-ver15#managed-identities-for-azure-resources-authentication)управляемым удостоверением ADF
+      Эти переопределения времени выполнения могут включать Self-Hosted IR (шир) в качестве прокси для служб SSIS IR при доступе к локальным данным. см. раздел [Настройка Шир в качестве прокси для служб SSIS IR](https://docs.microsoft.com/azure/data-factory/self-hosted-integration-runtime-proxy-ssis), а также подключение базы данных SQL Azure и управляемый экземпляр с помощью последнего драйвера мсоледбскл, который, в свою очередь, Azure Active Directory включает проверку [подлинности AAD с управляемым удостоверением ADF для соединений OLEDB](https://docs.microsoft.com/sql/integration-services/connection-manager/ole-db-connection-manager?view=sql-server-ver15#managed-identities-for-azure-resources-authentication).
 
       ![Задание свойств из SSDT на вкладке Диспетчеры соединений](media/how-to-invoke-ssis-package-ssis-activity/ssis-activity-connection-managers2.png)
    
@@ -720,6 +720,6 @@ while ($True) {
    select * from catalog.executions
    ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 См. в следующей записи блога:
 - [Модернизировать и расширьте рабочие процессы ETL/ELT с помощью действий SSIS в конвейерах фабрики данных Azure](https://techcommunity.microsoft.com/t5/SQL-Server-Integration-Services/Modernize-and-Extend-Your-ETL-ELT-Workflows-with-SSIS-Activities/ba-p/388370)

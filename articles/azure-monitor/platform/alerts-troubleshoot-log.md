@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.subservice: alerts
 ms.date: 10/29/2018
 ms.openlocfilehash: ec2ffe71a32781a855da258f3621738f1a5f6be4
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91294297"
 ---
 # <a name="troubleshoot-log-alerts-in-azure-monitor"></a>Устранение неполадок с оповещениями журнала в Azure Monitor  
@@ -216,7 +216,7 @@ Azure Monitor отключит оповещение журнала через н
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Ознакомьтесь со сведениями об [оповещениях журналов в Azure](./alerts-unified-log.md).
 - Дополнительные сведения о [настройке оповещений журнала](../log-query/log-query-overview.md).

@@ -8,12 +8,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 11/12/2018
 ms.topic: conceptual
-ms.openlocfilehash: c192ba73da0cfaf1832b6a1e572bd71b250a976b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2776b18dc3faded103b49e8ff58a8a0a6dccf144
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "74168370"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92074470"
 ---
 # <a name="add-an-email-action"></a>Добавление действия электронной почты
 
@@ -166,7 +166,7 @@ ms.locfileid: "74168370"
 
 ## <a name="throttling"></a>Регулирование
 
-Акселератор решения для удаленного мониторинга использует Outlook для отправки уведомлений по электронной почте. Outlook ограничивает количество отправляемых электронных сообщений, допуская не более [30 в 1 минуту](https://docs.microsoft.com/office365/servicedescriptions/exchange-online-service-description/exchange-online-limits#receiving-and-sending-limits). Клиенты электронной почты, получающие электронные сообщения, могут также регулировать количество сообщений, получаемых за одну минуту. Проверьте ограничения для определенного клиента электронной почты. При настройке для правила уведомлений по электронной почте правило должно рассчитывать средние значения в течение по крайней мере одной минуты и не использовать мгновенных значений.
+Акселератор решения для удаленного мониторинга использует Outlook для отправки уведомлений по электронной почте. Outlook ограничивает количество отправляемых электронных сообщений, допуская не более [30 в 1 минуту](/office365/servicedescriptions/exchange-online-service-description/exchange-online-limits#receiving-and-sending-limits). Клиенты электронной почты, получающие электронные сообщения, могут также регулировать количество сообщений, получаемых за одну минуту. Проверьте ограничения для определенного клиента электронной почты. При настройке для правила уведомлений по электронной почте правило должно рассчитывать средние значения в течение по крайней мере одной минуты и не использовать мгновенных значений.
 
 ![Расчет среднего значения](./media/iot-accelerators-remote-monitoring-email-actions/calculation-email.png)
 

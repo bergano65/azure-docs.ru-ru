@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 08/18/2017
 ms.author: masnider
 ms.openlocfilehash: 50751c7d23797a597dc5e2d209c1e3eecf6f7a40
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85847850"
 ---
 # <a name="cluster-resource-manager-integration-with-service-fabric-cluster-management"></a>Интеграция диспетчера кластерных ресурсов с управлением кластерами Service Fabric
@@ -199,5 +199,5 @@ ClusterManifest.xml
 ### <a name="buffered-capacity--upgrade"></a>Буферизованная емкость и обновление
 Обычно возникает необходимость завершить обновление, даже если кластер ограничен или почти заполнен. Управление емкостью кластера во время обновлений даже важнее, чем обычно. При развертывании обновления в кластере требуется перенос от 5 до 20 процентов от общей емкости, в зависимости от числа доменов обновления. Эту нагрузку нужно перенаправить. Именно здесь пригодится понятие [буферизованных емкостей](service-fabric-cluster-resource-manager-cluster-description.md#buffered-capacity). Буферизованная емкость учитывается во время обычной работы. При необходимости во время обновлений диспетчер кластерных ресурсов может заполнить узлы вплоть до их общей емкости (использовав буфер).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Начните с самого начала, [изучив общие сведения о диспетчере кластерных ресурсов Service Fabric](service-fabric-cluster-resource-manager-introduction.md)

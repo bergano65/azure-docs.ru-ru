@@ -8,10 +8,10 @@ ms.date: 01/10/2020
 ms.topic: conceptual
 ms.author: sutalasi
 ms.openlocfilehash: de25a3f9df04b09a7337dc889a688a171d98db28
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86129908"
 ---
 # <a name="set-up-disaster-recovery-of-vmware-vms-to-azure-with-powershell"></a>Настройка аварийного восстановления виртуальных машин VMware в Azure с помощью PowerShell
@@ -33,20 +33,20 @@ ms.locfileid: "86129908"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Перед началом работы
+Перед началом:
 
 - Вам должны быть понятны [архитектура и компоненты сценария](vmware-azure-architecture.md).
-- Ознакомьтесь с [требованиями к поддержке](./vmware-physical-azure-support-matrix.md) для всех компонентов.
-- У вас есть `Az` модуль Azure PowerShell. Если вам необходимо установить или обновить Azure PowerShell, ознакомьтесь с этим [руководством по установке и настройке Azure PowerShell](/powershell/azure/install-az-ps).
+- [Ознакомьтесь](./vmware-physical-azure-support-matrix.md) с требованиями поддержки для всех компонентов.
+- У вас есть `Az`  модуль Azure PowerShell. Если вам необходимо установить или обновить Azure PowerShell, ознакомьтесь с этим [руководством по установке и настройке Azure PowerShell](/powershell/azure/install-az-ps).
 
 ## <a name="log-into-azure"></a>Вход на портал Azure
 
-Войдите в подписку Azure с помощью командлета Connect-Азаккаунт:
+Войдите в подписку Azure с помощью командлета Connect-AzAccount:
 
 ```azurepowershell
 Connect-AzAccount
 ```
-Выберите подписку Azure, в которую нужно реплицировать виртуальные машины VMware. Используйте командлет Get-Азсубскриптион, чтобы получить список подписок Azure, к которым у вас есть доступ. Выберите подписку Azure для работы с помощью командлета Select-Азсубскриптион.
+Выберите подписку Azure, в которую нужно реплицировать виртуальные машины VMware. Используйте командлет Get-AzSubscription, чтобы получить список подписок Azure, к которым у вас есть доступ. Выберите подписку Azure для работы с помощью командлета Select-AzSubscription.
 
 ```azurepowershell
 Select-AzSubscription -SubscriptionName "ASR Test Subscription"
@@ -118,7 +118,7 @@ Select-AzSubscription -SubscriptionName "ASR Test Subscription"
    VMwareDRToAzurePs VMwareDRToAzurePs Microsoft.RecoveryServices vaults
    ```
 
-В качестве альтернативы командлету Set-ASRVaultContext можно также использовать командлет Import-Азрековерисервицесасрваултсеттингсфиле для задания контекста хранилища. Укажите путь, по которому файл ключа регистрации хранилища будет располагаться в качестве параметра-Path командлета Import-Азрековерисервицесасрваултсеттингсфиле. Пример:
+В качестве альтернативы командлету Set-ASRVaultContext можно также использовать командлет Import-AzRecoveryServicesAsrVaultSettingsFile, чтобы задать контекст хранилища. Укажите путь, по которому файл ключа регистрации хранилища будет располагаться в качестве параметра-Path для командлета Import-AzRecoveryServicesAsrVaultSettingsFile. Пример:
 
    ```azurepowershell
    Get-AzRecoveryServicesVaultSettingsFile -SiteRecovery -Vault $Vault -Path "C:\Work\"
@@ -353,9 +353,9 @@ $ReplicationStdStorageAccount= New-AzStorageAccount -ResourceGroupName "VMwareDR
 
 |Виртуальная машина  |Сервер обработки        |Учетная запись хранения              |Учетная запись хранения журналов  |Политика           |Учетная запись для установки службы Mobility Service|Целевая группа ресурсов  | Целевая виртуальная сеть  |Целевая подсеть  |
 |-----------------|----------------------|-----------------------------|---------------------|-----------------|-----------------------------------------|-----------------------|-------------------------|---------------|
-|CentOSVM1       |ConfigurationServer   |Н/Д| logstorageaccount1                 |ReplicationPolicy|LinuxAccount                             |VMwareDRToAzurePs      |ASR-vnet                 |Subnet-1       |
+|CentOSVM1       |ConfigurationServer   |Недоступно| logstorageaccount1                 |ReplicationPolicy|LinuxAccount                             |VMwareDRToAzurePs      |ASR-vnet                 |Subnet-1       |
 |Win2K12VM1       |ScaleOut-ProcessServer|premiumstorageaccount1       |logstorageaccount1   |ReplicationPolicy|WindowsAccount                           |VMwareDRToAzurePs      |ASR-vnet                 |Subnet-1       |   
-|CentOSVM2       |ConfigurationServer   |replicationstdstorageaccount1| Н/Д                 |ReplicationPolicy|LinuxAccount                             |VMwareDRToAzurePs      |ASR-vnet                 |Subnet-1       |   
+|CentOSVM2       |ConfigurationServer   |replicationstdstorageaccount1| Недоступно                 |ReplicationPolicy|LinuxAccount                             |VMwareDRToAzurePs      |ASR-vnet                 |Subnet-1       |   
 
 
 ```azurepowershell

@@ -12,10 +12,10 @@ ms.author: danil
 ms.reviewer: jrasnik, sstein
 ms.date: 06/12/2020
 ms.openlocfilehash: 80f5d6033429c40f468d525a088bcc72bdc3375b
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91450302"
 ---
 # <a name="troubleshoot-azure-sql-database-and-azure-sql-managed-instance-performance-issues-with-intelligent-insights"></a>Устранение неполадок с производительностью базы данных SQL Azure и SQL Azure Управляемый экземпляр с Intelligent Insights
@@ -328,7 +328,7 @@ Intelligent Insights автоматически обнаруживает про�
 
 Обычно Intelligent Insights требуется один час для выполнения анализа первопричин проблемы с производительностью. Если проблему не удается найти в Intelligent Insights, но это крайне важно для вас, используйте хранилище запросов, чтобы вручную определить первопричину проблемы производительности. (Как правило, эти проблемы менее одного часа назад.) Дополнительные сведения см. [в статье мониторинг производительности с помощью хранилища запросов](https://docs.microsoft.com/sql/relational-databases/performance/monitoring-performance-by-using-the-query-store).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Изучение [Intelligent Insights](intelligent-insights-overview.md) концепций.
 - Используйте [Журнал диагностики производительности Intelligent Insights](intelligent-insights-use-diagnostics-log.md).

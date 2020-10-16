@@ -9,10 +9,10 @@ ms.topic: troubleshooting
 ms.date: 01/30/2020
 ms.author: jlian
 ms.openlocfilehash: f4949816f516c6a6b60cfda0602f458256370d40
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "76960533"
 ---
 # <a name="400027-connectionforcefullyclosedonnewconnection"></a>400027 ConnectionForcefullyClosedOnNewConnection
@@ -23,7 +23,7 @@ ms.locfileid: "76960533"
 
 Операция двойника для устройства в облако (например, сообщаемые свойства чтения или исправления) или вызов прямого метода завершается с кодом ошибки **400027**.
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 Другой клиент создал новое подключение к центру Интернета вещей, используя те же учетные данные, поэтому центр Интернета вещей закрыл предыдущее подключение. Центр Интернета вещей не допускает подключения нескольких клиентов, используя один и тот же набор учетных данных.
 

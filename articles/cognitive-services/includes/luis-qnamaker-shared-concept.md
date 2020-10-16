@@ -1,5 +1,5 @@
 ---
-title: Включить имя файла
+title: включить файл
 description: включить файл
 services: cognitive-services
 manager: nitinme
@@ -8,10 +8,10 @@ ms.topic: include
 ms.custom: include file
 ms.date: 04/16/2020
 ms.openlocfilehash: ac0192da3afa76c3c21056f218f2b249c44d1c36
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87133906"
 ---
 Cognitive Services предоставляет две службы обработки естественных языков, [Language Understanding](../luis/what-is-luis.md) и [QnA Maker](../qnamaker/overview/overview.md), каждая из которых имеет разные цели. Узнайте, когда следует использовать каждую службу и как они дополняют друг друга.
@@ -33,7 +33,7 @@ Language Understanding (LUIS) и QnA Maker решают различные пр�
 |Служба|Клиентское приложение определяет|
 |--|--|
 |LUIS|**Определяет намерение пользователя** текста. служба не возвращает ответ на вопрос. Например, этот текст классифицируется как совпадение с `FindLocation` намерением.<br>|
-|QnA Maker|**Возвращает ответ на вопрос** из пользовательской базы знаний. Например, этот текст определяется как вопрос с ответом на статический текст `Get on the #9 bus and get off at Franklin street` .|
+|QnA Maker|**Возвращает ответ на вопрос** из пользовательской базы знаний. Например, этот текст определяется как вопрос с ответом на статический текст  `Get on the #9 bus and get off at Franklin street` .|
 |||
 
 > [!div class="mx-imgBorder"]
@@ -82,9 +82,9 @@ Language Understanding (LUIS) и QnA Maker решают различные пр�
 * Рекомендации по [Luis](../luis/luis-concept-best-practices.md)
 * Рекомендации по [QnA Maker](../qnamaker/concepts/best-practices.md)
 
-## <a name="see-also"></a>См. также статью
+## <a name="see-also"></a>См. также
 
-* [Language Understanding (LUIS)](../luis/what-is-luis.md)
+* [Распознавание речи (LUIS)](../luis/what-is-luis.md)
 * [QnA Maker](../qnamaker/overview/overview.md)
 * [Диспетчер CLI](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/Dispatch)
 * [Примеры для платформы Bot](https://github.com/Microsoft/BotBuilder-Samples)

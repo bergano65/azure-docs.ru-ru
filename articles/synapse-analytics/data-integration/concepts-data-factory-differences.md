@@ -1,5 +1,5 @@
 ---
-title: Отличия от фабрики данных Azure
+title: Сравнение с Фабрикой данных Azure
 description: Узнайте, как возможности интеграции данных Azure синапсе Analytics отличаются от функций фабрики данных Azure.
 services: synapse-analytics
 author: djpmsft
@@ -9,10 +9,10 @@ ms.date: 09/23/2020
 ms.author: daperlov
 ms.reviewer: jrasnick
 ms.openlocfilehash: be098977ba51e529aaecfb5dc3b7a03444f55a7e
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91345168"
 ---
 # <a name="data-integration-in-azure-synapse-analytics-versus-azure-data-factory"></a>Интеграция данных в Azure синапсе Analytics и фабрика данных Azure
@@ -49,6 +49,6 @@ ms.locfileid: "91345168"
 * Конфигурация среды выполнения гибридной интеграции в рабочей области синапсе. У пользователя не может быть одновременно управляемый IR-объект виртуальной сети и Azure IR.
 * Совместное использование среды выполнения интеграции между рабочими областями синапсе
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Приступите к работе с интеграцией данных в рабочей области синапсе, изучите прием [данных в учетную запись gen2 Azure Data Lake Storage](data-integration-data-lake.md).

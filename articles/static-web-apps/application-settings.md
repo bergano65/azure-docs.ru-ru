@@ -9,10 +9,10 @@ ms.date: 05/08/2020
 ms.author: buhollan
 ms.custom: devx-track-js
 ms.openlocfilehash: c89ccee430d374d9aee58326627ff800f737324b
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91250034"
 ---
 # <a name="configure-application-settings-for-azure-static-web-apps-preview"></a>Настройка параметров приложения для предварительной версии Статических веб-приложений Azure
@@ -144,7 +144,7 @@ const connectionString = process.env.DATABASE_CONNECTION_STRING;
 2. Имя группы ресурсов
 3. Идентификатор подписки
 
-:::image type="content" source="media/application-settings/overview.png" alt-text="Обзор Статических веб-приложений Azure":::
+:::image type="content" source="media/application-settings/overview.png" alt-text="Представление конфигурации Статических веб-приложений Azure":::
 
 4. В терминале или в командной строке выполните указанную ниже команду. Не забудьте заменить заполнители `<YOUR_STATIC_SITE_NAME>`, `<YOUR_RESOURCE_GROUP_NAME>` и `<YOUR_SUBSCRIPTION_ID>` значениями из окна _Обзор_.
 

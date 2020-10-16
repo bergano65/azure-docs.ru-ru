@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: how-to
 ms.date: 09/22/2020
 ms.openlocfilehash: 952bd6dddf9f276ed1a4a18f03799147f1902198
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90936935"
 ---
 # <a name="restart-azure-database-for-postgresql---flexible-server"></a>Перезапуск базы данных Azure для PostgreSQL-гибкого сервера
@@ -43,11 +43,11 @@ ms.locfileid: "90936935"
 
 4.  Нажмите кнопку **Да** , если хотите продолжить.
    
-     :::image type="content" source="./media/how-to-restart-server-portal/restart-pop-up.png" alt-text="Подтверждение перезапуска":::
+     :::image type="content" source="./media/how-to-restart-server-portal/restart-pop-up.png" alt-text="Перезапустить выделенный фрагмент":::
  
 6.  Будет отображено уведомление о том, что операция перезапуска запущена.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 -   Сведения о [непрерывности бизнес-процессов](./concepts-business-continuity.md)
 -   Сведения о [высокой доступности с избыточностью зоны](./concepts-high-availability.md)

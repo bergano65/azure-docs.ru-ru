@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 04/01/2020
-ms.openlocfilehash: 265179909c8ae4a6fa630b835bc9993f042d6460
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bfa27b0df7febbfb8c97f11f69f87c352810699b
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80585698"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91993179"
 ---
 # <a name="azure-monitor-log-query-language-differences"></a>Различия в языках запросов журнала Azure Monitor
 
@@ -56,5 +56,5 @@ ms.locfileid: "80585698"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Получите ссылки на различные [ресурсы для написания запросов журнала Azure Monitor](query-language.md).
+- Получите ссылки на различные [ресурсы для написания запросов журнала Azure Monitor](/azure/data-explorer/kusto/query/).
 - Ознакомьтесь с полной [справочной документацией по языку запросов Kusto](/azure/kusto/query/).

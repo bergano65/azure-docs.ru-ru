@@ -8,10 +8,10 @@ ms.date: 04/10/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
 ms.openlocfilehash: 34036388ce9243c082cf79eb4be9251957eafc01
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89400472"
 ---
 # <a name="azure-security-baseline-for-key-vault"></a>Базовая конфигурация системы безопасности Azure для Key Vault
@@ -1093,13 +1093,13 @@ https://docs.microsoft.com/azure/key-vault/general/assign-access-policy-portal
 
 **Рекомендации**: регулярное автоматическое резервное копирование сертификатов Key Vault, ключей, управляемых учетных записей хранения и секретов с помощью следующих команд PowerShell:
 
-- Backup-Азкэйваултцертификате
+- Backup-AzKeyVaultCertificate
 
-- Backup-Азкэйваулткэй
+- Backup-AzKeyVaultKey
 
-- Backup-Азкэйваултманажедсторажеаккаунт
+- Backup-AzKeyVaultManagedStorageAccount
 
-- Backup-Азкэйваултсекрет
+- Backup-AzKeyVaultSecret
 
 При необходимости резервные копии Key Vault можно хранить в Azure Backup.
 
@@ -1123,13 +1123,13 @@ https://docs.microsoft.com/azure/key-vault/general/assign-access-policy-portal
 
 **Руководство**. Резервное копирование сертификатов Key Vault, ключей, управляемых учетных записей хранения и секретов с помощью следующих команд PowerShell:
 
-- Backup-Азкэйваултцертификате
+- Backup-AzKeyVaultCertificate
 
-- Backup-Азкэйваулткэй
+- Backup-AzKeyVaultKey
 
-- Backup-Азкэйваултманажедсторажеаккаунт
+- Backup-AzKeyVaultManagedStorageAccount
 
-- Backup-Азкэйваултсекрет
+- Backup-AzKeyVaultSecret
 
 При необходимости резервные копии Key Vault можно хранить в Azure Backup.
 
@@ -1153,13 +1153,13 @@ https://docs.microsoft.com/azure/key-vault/general/assign-access-policy-portal
 
 **Рекомендации**. периодически выполняется восстановление данных сертификатов Key Vault, ключей, управляемых учетных записей хранения и секретов с помощью следующих команд PowerShell:
 
-- Restore-Азкэйваултцертификате
+- Restore-AzKeyVaultCertificate
 
-- Restore-Азкэйваулткэй
+- Restore-AzKeyVaultKey
 
-- Restore-Азкэйваултманажедсторажеаккаунт
+- Restore-AzKeyVaultManagedStorageAccount
 
-- Restore-Азкэйваултсекрет
+- Restore-AzKeyVaultSecret
 
 Восстановление сертификатов Key Vault:  https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyvaultcertificate?view=azurermps-6.13.0
 

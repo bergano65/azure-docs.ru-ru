@@ -4,10 +4,10 @@ description: Узнайте, как Работоспособность ресу�
 ms.topic: conceptual
 ms.date: 05/10/2019
 ms.openlocfilehash: 25425eadfaf54ba56cde3b377a44cd85c2b68959
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90967877"
 ---
 # <a name="resource-health-overview"></a>Обзор Работоспособность ресурсов
@@ -94,7 +94,7 @@ ms.locfileid: "90967877"
 
 ![Открытие службы работоспособности ресурсов из пункта меню "Все службы"](./media/resource-health-overview/FromOtherServices.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Ознакомьтесь со следующими ссылками, чтобы узнать больше о Работоспособность ресурсов.
 -  [Типы ресурсов и проверки работоспособности в Работоспособность ресурсов Azure](resource-health-checks-resource-types.md)

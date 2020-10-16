@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 06/17/2020
 ms.author: absha
 ms.openlocfilehash: 69d388b12e564b307cd117c3a86ae960dabaa937
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91362718"
 ---
 # <a name="create-certificates-to-allow-the-backend-with-azure-application-gateway"></a>Создание сертификатов, разрешающих серверную часть с помощью шлюза приложений Azure
@@ -103,7 +103,7 @@ ms.locfileid: "91362718"
 
 6. На этом этапе вы извлекли сведения о корневом сертификате из серверного сертификата. Вы увидите **Мастер экспорта сертификатов**. Теперь выполните шаги 2-9, упомянутые в разделе **Экспорт сертификата проверки подлинности из серверного сертификата (для номера SKU v1)** выше, чтобы экспортировать доверенный корневой сертификат в Base-64 с кодировкой X. 509 (. CER).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь у вас есть сертификат проверки подлинности или доверенный корневой сертификат в Base-64 с кодировкой X. 509 (. CER). Вы можете добавить его в шлюз приложений, чтобы обеспечить сквозное шифрование TLS внутренних серверов. См. раздел [Настройка сквозного TLS с помощью шлюза приложений с использованием PowerShell](https://docs.microsoft.com/azure/application-gateway/application-gateway-end-to-end-ssl-powershell).
 

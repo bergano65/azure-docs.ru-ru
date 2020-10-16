@@ -14,10 +14,10 @@ ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
 ms.openlocfilehash: 8f755b42249a88a2d37117003d561f79aea6b170
-ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88165997"
 ---
 #  <a name="xamarin-android-system-browser-considerations-for-using-msalnet"></a>Рекомендации по использованию MSAL.NET в браузере системы Xamarin Android
@@ -45,7 +45,7 @@ ms.locfileid: "88165997"
 | Устройство | Браузер     |  Результат  | 
 | ------------- |:-------------:|:-----:|
 | Huawei/один + | Chrome\* | Успех|
-| Huawei/один + | Edge\* | Успех|
+| Huawei/один + | Пограничный случай\* | Успех|
 | Huawei/один + | Firefox\* | Успех|
 | Huawei/один + | Дивный\* | Успех|
 | Один + | екосиа\* | Успех|
@@ -60,7 +60,7 @@ ms.locfileid: "88165997"
 | Один + | Браузер CM | Проверка подлинности отменена пользователем|
 | Huawei/один + | Нет установленных | Исключение Андроидактивитинотфаунд|
 
-\*Поддерживает пользовательские вкладки
+\* Поддерживает пользовательские вкладки
 
 ## <a name="known-issues"></a>Известные проблемы
 
@@ -71,5 +71,5 @@ ms.locfileid: "88165997"
   - **Проблема с корневым каталогом**: браузер, поддерживающий пользовательские вкладки, не включен на устройстве. Проверка подлинности запущена в браузере, который не смог пройти проверку подлинности. 
   - **Устранение**. Попросите пользователя включить браузер на своем устройстве. Рекомендуется браузер, поддерживающий пользовательские вкладки.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения и примеры кода см. [в разделе Выбор между встроенным веб-браузером и системным браузером Xamarin Android](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/MSAL.NET-uses-web-browser#choosing-between-embedded-web-browser-or-system-browser-on-xamarinandroid) и [встроенным и системным веб-интерфейсом](msal-net-web-browsers.md#embedded-vs-system-web-ui).  

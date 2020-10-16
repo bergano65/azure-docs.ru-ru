@@ -6,10 +6,10 @@ ms.topic: how-to
 ms.date: 07/17/2020
 ms.author: peshultz
 ms.openlocfilehash: 35780f915247e88a5de093594b653ddcebdfb06b
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89008885"
 ---
 # <a name="configure-customer-managed-keys-for-your-azure-batch-account-with-azure-key-vault-and-managed-identity"></a>Настройка ключей, управляемых клиентом, для учетной записи пакетной службы Azure с помощью Azure Key Vault и управляемого удостоверения
@@ -110,7 +110,7 @@ az batch account set \
 
 ## <a name="update-the-customer-managed-key-version"></a>Обновление версии ключа, управляемого клиентом
 
-При создании новой версии ключа Обновите учетную запись пакетной службы, чтобы она использовала новую версию. Выполните следующие действия:
+При создании новой версии ключа Обновите учетную запись пакетной службы, чтобы она использовала новую версию. Выполните следующие действия.
 
 1. Перейдите к учетной записи пакетной службы в портал Azure и отобразите параметры шифрования.
 2. Введите универсальный код ресурса (URI) для новой версии ключа. Кроме того, можно выбрать хранилище ключей и ключ еще раз, чтобы обновить версию.

@@ -11,12 +11,12 @@ ms.workload: integration
 ms.topic: article
 ms.date: 04/20/2020
 ms.author: apimpm
-ms.openlocfilehash: 93c686fb2688a7a8ae71d8156e6e5c7915d6c604
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: 626f5b67905e5dd89cf8f12460bc2378451614de
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86205765"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92078312"
 ---
 # <a name="upgrade-and-scale-an-azure-api-management-instance"></a>Обновление и масштабирование экземпляра управления API Azure  
 
@@ -33,7 +33,7 @@ ms.locfileid: "86205765"
 
 Чтобы выполнить шаги из этой статьи, понадобится следующее:
 
-+ Активная подписка Azure.
++ Наличие активной подписки Azure.
 
     [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
@@ -45,7 +45,7 @@ ms.locfileid: "86205765"
 
 ## <a name="upgrade-and-scale"></a>Обновление и масштабирование  
 
-Можно выбрать один из четырех уровней: **Developer**, **Basic**, **Standard**и **Premium**. Уровень **Developer** предназначен только для оценки службы. Не используйте его в рабочей среде. Уровень **Developer** не предусматривает соглашение об уровне обслуживания и не поддерживает масштабирование (не позволяет добавлять или удалять единицы). 
+Можно выбрать один из четырех уровней: **Developer**, **Basic**,  **Standard**и **Premium**. Уровень **Developer** предназначен только для оценки службы. Не используйте его в рабочей среде. Уровень **Developer** не предусматривает соглашение об уровне обслуживания и не поддерживает масштабирование (не позволяет добавлять или удалять единицы). 
 
 " **Базовый**", " **стандартный**" и " **премиум** " — это производственные уровни, которые имеют соглашение об уровне обслуживания и могут масштабироваться. Уровень " **базовый** " — самый дешевый уровень с соглашением об уровне обслуживания. его можно масштабировать до двух единиц, а уровень " **стандартный** " можно масштабировать до четырех единиц. На уровне **Premium** вы можете добавлять неограниченное число единиц.
 
@@ -74,7 +74,7 @@ ms.locfileid: "86205765"
 1. Перейдите к службе управления API в [портал Azure](https://portal.azure.com/).
 2. Щелкните **ценовую** категорию в меню.
 3. Выберите нужный уровень службы из раскрывающегося списка. Используйте ползунок, чтобы указать масштаб службы управления API после изменения.
-4. Нажмите кнопку **Сохранить**.
+4. Выберите команду **Сохранить**.
 
 ## <a name="downtime-during-scaling-up-and-down"></a>Время простоя при масштабировании вверх и вниз
 При масштабировании от или до уровня разработчика будет просто. В противном случае время простоя отсутствует. 
@@ -84,4 +84,4 @@ ms.locfileid: "86205765"
 
 - [Развертывание экземпляра службы управления Azure API в различных регионах Azure](api-management-howto-deploy-multi-region.md)
 - [Автоматическое масштабирование экземпляра службы управления API Azure](api-management-howto-autoscale.md)
-- [Оптимизируйте и сохраняйте расходы на облачные технологии](https://docs.microsoft.com/azure/cost-management-billing/costs/quick-acm-cost-analysis?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)
+- [Оптимизируйте и сохраняйте расходы на облачные технологии](../cost-management-billing/costs/quick-acm-cost-analysis.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)

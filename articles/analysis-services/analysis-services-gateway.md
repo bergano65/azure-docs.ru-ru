@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/29/2020
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: ee332eb7dea86e07c2d8f9b75a0e152dc7482a41
-ms.sourcegitcommit: 14bf4129a73de2b51a575c3a0a7a3b9c86387b2c
+ms.openlocfilehash: fed184c349789dc38f12f62567acc0d0500ca94c
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87438824"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92016099"
 ---
 # <a name="connecting-to-on-premises-data-sources-with-on-premises-data-gateway"></a>Подключение к локальным источникам данных с помощью локального шлюза данных
 
@@ -62,7 +62,7 @@ ms.locfileid: "87438824"
 
 Ниже приведены полные доменные имена, используемые шлюзом.
 
-| Имена доменов | Исходящие порты | Описание |
+| Доменные имена | Исходящие порты | Описание |
 | --- | --- | --- |
 | *.powerbi.com |80 |HTTP для скачивания установщика. |
 | *.powerbi.com |443 |HTTPS |
@@ -91,11 +91,11 @@ ms.locfileid: "87438824"
 
 Следующие статьи включены в общее содержимое локального шлюза данных, которое применяется ко всем службам, которые поддерживает шлюз:
 
-* [Вопросы и ответы о локальном шлюзе данных](https://docs.microsoft.com/data-integration/gateway/service-gateway-onprem-faq)   
-* [Использование приложения локального шлюза данных](https://docs.microsoft.com/data-integration/gateway/service-gateway-app)   
-* [Администрирование на уровне клиента](https://docs.microsoft.com/data-integration/gateway/service-gateway-tenant-level-admin)
-* [Настройка параметров прокси-сервера](https://docs.microsoft.com/data-integration/gateway/service-gateway-proxy)   
-* [Настройка параметров связи](https://docs.microsoft.com/data-integration/gateway/service-gateway-communication)   
-* [Настройка файлов журналов](https://docs.microsoft.com/data-integration/gateway/service-gateway-log-files)   
-* [Устранение проблем](https://docs.microsoft.com/data-integration/gateway/service-gateway-tshoot)
-* [Мониторинг и оптимизация производительности шлюза](https://docs.microsoft.com/data-integration/gateway/service-gateway-performance)
+* [Вопросы и ответы о локальном шлюзе данных](/data-integration/gateway/service-gateway-onprem-faq)   
+* [Использование приложения локального шлюза данных](/data-integration/gateway/service-gateway-app)   
+* [Администрирование на уровне клиента](/data-integration/gateway/service-gateway-tenant-level-admin)
+* [Настройка параметров прокси-сервера](/data-integration/gateway/service-gateway-proxy)   
+* [Настройка параметров связи](/data-integration/gateway/service-gateway-communication)   
+* [Настройка файлов журналов](/data-integration/gateway/service-gateway-log-files)   
+* [Устранение проблем](/data-integration/gateway/service-gateway-tshoot)
+* [Мониторинг и оптимизация производительности шлюза](/data-integration/gateway/service-gateway-performance)

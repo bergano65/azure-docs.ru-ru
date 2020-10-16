@@ -37,6 +37,8 @@
       href: azure-netapp-files-cost-model.md
     - name: Рекомендации по планированию сети Azure NetApp Files
       href: azure-netapp-files-network-topologies.md
+    - name: Управляемый вручную пул емкости QoS
+      href: manual-qos-capacity-pool-introduction.md
     - name: Репликация между регионами
       items:
         - name: Общие сведения о репликации между регионами
@@ -126,7 +128,7 @@
 - name: Справочник
   items:
     - name: REST
-      href: 'https://docs.microsoft.com/rest/api/netapp/'
+      href: /rest/api/netapp/
     - name: Шаблон Resource Manager
       href: /azure/templates/microsoft.netapp/allversions
 - name: Ресурсы

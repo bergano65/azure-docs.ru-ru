@@ -9,12 +9,12 @@ ms.date: 08/17/2020
 ms.topic: conceptual
 ms.service: azure-portal
 manager: mtillman
-ms.openlocfilehash: 3c34fd198164d7e3ae0851749cf51809df31ca19
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 42d9c418ee6feae7a763b1a2cc76d8edb2fec6ce
+ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88522952"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91873716"
 ---
 # <a name="azure-portal-how-to-video-series"></a>Серия видеоинструкций по работе с порталом Azure
 
@@ -22,23 +22,22 @@ ms.locfileid: "88522952"
 
 ## <a name="featured-video"></a>Рекомендованное видео
 
-В этом видеоролике мы покажем, как развернуть статическое веб-приложение Azure.
+В этом видеоролике мы покажем, как создать домен службы приложений и управлять им.
 
-> [!VIDEO https://www.youtube.com/embed/H2MPsgujpNk]
+> [!VIDEO https://www.youtube.com/embed/b1kDT8-6a3g]
 
-[Развертывание статического веб-приложения Azure](https://www.youtube.com/watch?v=H2MPsgujpNk)
+[Создание домена службы приложений и управление им](https://www.youtube.com/watch?v=b1kDT8-6a3g)
 
 Проявляйте последние видеоматериалы, которые могли быть пропущены:
 
-| [Мониторинг функций Azure](https://www.youtube.com/watch?v=eVDZz8h0s00)  | [Как использовать управление версиями BLOB-объектов](https://www.youtube.com/watch?v=b2oyxbSbLPA)  | [Подключение к учетной записи хранения с помощью частной ссылки Azure](https://www.youtube.com/watch?v=m7e9h1gedWQ)  |
+| [Как добавить и защитить пользовательский домен в веб-приложении службы приложений](https://www.youtube.com/watch?v=bXP6IvNYISw)  | [Улучшения в работе виртуальных машин Linux](https://www.youtube.com/watch?v=obg6Fq2T898)  | [Как использовать управление версиями BLOB-объектов](https://www.youtube.com/watch?v=m7e9h1gedWQ)  |
 | ------| ------ | ------ |
-| [![Изображение видео о YouTube о мониторинге функций Azure](https://i.ytimg.com/vi/eVDZz8h0s00/hqdefault.jpg?sqp=-oaymwEYCKgBEF5IVfKriqkDCwgBFQAAiEIYAXAB&rs=AOn4CLAf2gcTSuNBP-DczGeEB7rQLKc4UQ)](http://www.youtube.com/watch?v=eVDZz8h0s00) | [![Изображение видео YouTube о том, как использовать управление версиями BLOB-объектов](https://i.ytimg.com/vi/m7e9h1gedWQ/hqdefault.jpg?sqp=-oaymwEYCKgBEF5IVfKriqkDCwgBFQAAiEIYAXAB&rs=AOn4CLBUZwS_xaZIkYNakpHFvFIiD8i-Tw)](http://www.youtube.com/watch?v=m7e9h1gedWQ) | [![Изображение видео YouTube о подключении к учетной записи хранения с помощью частной ссылки Azure](https://i.ytimg.com/vi/vM7yDwHSc_o/hqdefault.jpg?sqp=-oaymwEYCKgBEF5IVfKriqkDCwgBFQAAiEIYAXAB&rs=AOn4CLAiBhmM0tZo_eV_u_JClkx3SXaWFw)](https://www.youtube.com/watch?v=vM7yDwHSc_o) |
-
+| [![Изображение приложения YouTube видео о том, как добавить и защитить пользовательский домен в веб-приложении службы приложений](https://i.ytimg.com/vi/bXP6IvNYISw/hqdefault.jpg?sqp=-oaymwEYCKgBEF5IVfKriqkDCwgBFQAAiEIYAXAB&rs=AOn4CLAf2gcTSuNBP-DczGeEB7rQLKc4UQ)](http://www.youtube.com/watch?v=bXP6IvNYISw) | [![Видеоролик, посвященный улучшению возможностей виртуальных машин Linux в YouTube](https://i.ytimg.com/vi/obg6Fq2T898/hqdefault.jpg?sqp=-oaymwEYCKgBEF5IVfKriqkDCwgBFQAAiEIYAXAB&rs=AOn4CLAiBhmM0tZo_eV_u_JClkx3SXaWFw)](https://www.youtube.com/watch?obg6Fq2T898) | [![Изображение видео YouTube о том, как использовать управление версиями BLOB-объектов](https://i.ytimg.com/vi/m7e9h1gedWQ/hqdefault.jpg?sqp=-oaymwEYCKgBEF5IVfKriqkDCwgBFQAAiEIYAXAB&rs=AOn4CLBUZwS_xaZIkYNakpHFvFIiD8i-Tw)](http://www.youtube.com/watch?v=m7e9h1gedWQ) |
 
 ## <a name="video-playlist"></a>Список воспроизведения видео
 
 Ознакомьтесь с [пошаговыми руководствами по портал Azure](https://www.youtube.com/playlist?list=PLLasX02E8BPBKgXP4oflOL29TtqTzwhxR) , чтобы получить наиболее полезные советы по созданию большинства из портал Azure. Подпишитесь на канал, чтобы получать уведомления при добавлении новых видеороликов.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Изучите сотни видеороликов по службам Azure в [библиотеке видео](https://azure.microsoft.com/resources/videos/index/?tag=microsoft-azure-portal).

@@ -240,6 +240,8 @@
           href: /rest/api/resources/policyassignments
         - name: Определения политик
           href: /rest/api/resources/policydefinitions
+        - name: Исключения политик
+          href: /rest/api/resources/policyexemptions
         - name: Определения инициатив
           href: /rest/api/resources/policysetdefinitions
         - name: Отслеживаемые политикой ресурсы

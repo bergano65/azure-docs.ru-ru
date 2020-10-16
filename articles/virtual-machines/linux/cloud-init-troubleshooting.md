@@ -9,10 +9,10 @@ ms.date: 07/06/2020
 ms.author: danis
 ms.reviewer: cynthn
 ms.openlocfilehash: 6412036e3f16e2efb3bbf6669f6a31e9dc6e3584
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89434645"
 ---
 # <a name="troubleshooting-vm-provisioning-with-cloud-init"></a>Устранение неполадок при подготовке виртуальной машины с помощью Cloud-init
@@ -131,6 +131,6 @@ Cloud-init имеет несколько зависимостей, они опи
 - Кроме того `customData` , проверьте конфигурацию данных, предоставленную виртуальной машине, которая находится в папке `/var/lib/cloud/instances/<unique-instance-identifier>/user-data.txt` .
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Если вы по-прежнему не можете изолировать, почему Cloud-init не выполнял конфигурацию, необходимо более внимательно ознакомиться с тем, что происходит на каждом этапе Cloud-init, а также при запуске модулей. Дополнительные сведения см. в статье Подробнее о [настройке Cloud-init](./cloud-init-deep-dive.md) . 

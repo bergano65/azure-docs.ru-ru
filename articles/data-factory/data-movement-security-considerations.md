@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 05/26/2020
 ms.openlocfilehash: 458336f27f01cfb0d127b96cd3df6aa40f8db0b3
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89440564"
 ---
 #  <a name="security-considerations-for-data-movement-in-azure-data-factory"></a>Вопросы безопасности при перемещении данных в фабрике данных Azure
@@ -201,7 +201,7 @@ Salesforce поддерживает шифрование Shield Platform Encrypt
 Локальная среда выполнения интеграции устанавливает HTTP-подключения для доступа к Интернету. Для установки этих подключений для локальной среды выполнения интеграции должны быть открыты исходящие порты 443. Откройте входящий порт 8060 только на уровне компьютера (не на уровне корпоративного брандмауэра) для приложения диспетчера учетных данных. Если база данных SQL Azure или Azure синапсе Analytics используется в качестве источника или назначения, необходимо также открыть порт 1433. Дополнительные сведения см. в разделе [конфигурации брандмауэра и Настройка списка разрешений для IP-адресов](#firewall-configurations-and-allow-list-setting-up-for-ip-address-of-gateway) . 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о производительности действия копирования для фабрики данных Azure см. в статье [Руководство по настройке производительности действия копирования](copy-activity-performance.md).
 
  

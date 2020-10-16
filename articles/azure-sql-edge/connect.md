@@ -10,10 +10,10 @@ ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 07/25/2020
 ms.openlocfilehash: 4548d4956b4cd01886fb1be9a530cc1627f76b2c
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90888233"
 ---
 # <a name="connect-and-query-azure-sql-edge"></a>Подключение и запрос SQL Azure
@@ -22,7 +22,7 @@ ms.locfileid: "90888233"
 
 - Внутри контейнера
 - Из другого контейнера DOCKER, работающего на том же узле
-- С главного компьютера
+- С хост-компьютера
 - С любой другой клиентской машины в сети
 
 ## <a name="tools-to-connect-to-azure-sql-edge"></a>Средства для подключения к SQL Azure для пограничных вычислений
@@ -114,7 +114,7 @@ conn = pyodbc.connect(db_connection_string, autocommit=True)
 
 Чтобы подключиться к экземпляру Azure SQL с помощью Azure Data Studio на компьютере под управлением Windows, Mac или Linux, см. раздел [Azure Data Studio](https://docs.microsoft.com/sql/azure-data-studio/quickstart-sql-server).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Подключение и запрос](https://docs.microsoft.com/sql/linux/sql-server-linux-configure-docker#connect-and-query)
 

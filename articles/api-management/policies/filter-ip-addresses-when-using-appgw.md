@@ -12,16 +12,16 @@ ms.topic: article
 ms.date: 01/13/2020
 ms.author: joscot
 ms.custom: fasttrack-new
-ms.openlocfilehash: 45e16c9aa9e4b04e7225320951e9f839fae75ba3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8249cc543c6334841c8e5152d5d1ceb84d4097dc
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75942481"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92076119"
 ---
 # <a name="filter-on-request-ip-address-when-using-an-application-gateway"></a>Фильтровать по IP-адресу запроса при использовании шлюза приложений
 
-В этой статье показан пример политики службы управления API Azure, демонстрирующий фильтрацию по IP-адресу запроса при доступе к экземпляру управления API через шлюз приложений или другую промежуточную подпрограмму. См. дополнительные сведения о [создании и изменении кода политик](../set-edit-policies.md). Также для ознакомления доступны другие [примеры политик](../policy-samples.md).
+В этой статье показан пример политики службы управления API Azure, демонстрирующий фильтрацию по IP-адресу запроса при доступе к экземпляру управления API через шлюз приложений или другую промежуточную подпрограмму. См. дополнительные сведения о [создании и изменении кода политик](../set-edit-policies.md). Также для ознакомления доступны другие [примеры политик](../policy-reference.md).
 
 ## <a name="policy"></a>Политика
 
@@ -29,9 +29,9 @@ ms.locfileid: "75942481"
 
 [!code-xml[Main](../../../api-management-policy-samples/examples/Filter on IP Address when using Application Gateway.policy.xml)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Подробнее о политиках службы управления API:
 
 + [Политики ограничения доступа в службе управления API](../api-management-access-restriction-policies.md)
-+ [Примеры политик](../policy-samples.md).
++ [Примеры политик](../policy-reference.md).

@@ -9,10 +9,10 @@ ms.author: mbaldwin
 ms.date: 03/15/2019
 ms.custom: seodec18
 ms.openlocfilehash: 4b533fa23d3c128b5f9f75737fb88d39aec94905
-ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88950074"
 ---
 # <a name="creating-and-configuring-a-key-vault-for-azure-disk-encryption-with-azure-ad-previous-release-for-linux-vms"></a>Создание и Настройка хранилища ключей для шифрования дисков Azure с помощью Azure AD (предыдущий выпуск) для виртуальных машин Linux
@@ -129,7 +129,7 @@ ms.locfileid: "88950074"
 3. [Получение идентификатора приложения и ключ проверки подлинности](../../active-directory/develop/howto-create-service-principal-portal.md#get-tenant-and-app-id-values-for-signing-in). 
      - Ключ проверки подлинности является секретом клиента и используется в качестве AadClientSecret для Set-Азвмдискенкриптионекстенсион. 
         - Ключ проверки подлинности используется приложением в качестве учетной записи для входа в Azure AD. На портале Azure эти секреты называются ключами, но они не имеют никакого отношения к хранилищам ключей. Защитите этот секрет должным образом. 
-     - Идентификатор приложения будет использоваться позже в качестве Аадклиентид для Set-Азвмдискенкриптионекстенсион и в качестве идентификатора свойства для Set-Азкэйваултакцессполици. 
+     - Идентификатор приложения будет использоваться позже в качестве Аадклиентид для Set-AzVMDiskEncryptionExtension и в качестве идентификатора свойства для Set-Азкэйваултакцессполици. 
 
 ## <a name="set-the-key-vault-access-policy-for-the-azure-ad-app"></a><a name="bkmk_KVAP"></a> Настройка политики доступа к хранилищу ключей для приложения Azure AD
 Для записи секретов шифрования в указанное хранилище ключей, шифрованию дисков Azure требуется идентификатор клиента и секрет клиента приложения Azure Active Directory, которое имеет соответствующие разрешения. 
@@ -460,6 +460,6 @@ az keyvault set-policy --name "MySecureVault" --spn "<spn created with CLI/the A
 ```
 
  
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Включение шифрования дисков Azure с помощью Azure AD на виртуальных машинах Linux (предыдущий выпуск)](disk-encryption-linux-aad.md)

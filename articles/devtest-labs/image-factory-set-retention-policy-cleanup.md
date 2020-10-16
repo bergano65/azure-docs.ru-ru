@@ -4,16 +4,16 @@ description: Узнайте, как настроить политику хран
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: 115fdff215399a9a51171161191ecf5009e8e20e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85476059"
 ---
 # <a name="set-up-retention-policy-in-azure-devtest-labs"></a>Настройка политики хранения в Azure DevTest Labs
 В этой статье описывается настройка политики хранения, очистка фабрики и снятие старых образов из всех других DevTest Labs в Организации. 
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 Прежде чем продолжить, убедитесь, что вы выполнили эти статьи:
 
 - [Создание фабрики образов](image-factory-create.md)
@@ -47,7 +47,7 @@ ms.locfileid: "85476059"
 
 ![Снятие задачи PowerShell с учета старых образов](./media/set-retention-policy-cleanup/retire-old-image-task.png)
 
-Параметры сценария:`-ConfigurationLocation $(System.DefaultWorkingDirectory)$(ConfigurationLocation) -SubscriptionId $(SubscriptionId) -DevTestLabName $(devTestLabName) -ImagesToSave $(ImageRetention)`
+Параметры сценария: `-ConfigurationLocation $(System.DefaultWorkingDirectory)$(ConfigurationLocation) -SubscriptionId $(SubscriptionId) -DevTestLabName $(devTestLabName) -ImagesToSave $(ImageRetention)`
 
 ## <a name="queue-the-build"></a>Поставить сборку в очередь
 Теперь, когда определение сборки завершено, помещает новую сборку в очередь, чтобы убедиться в том, что все работает. После успешного завершения сборки новые пользовательские образы отобразятся в целевой лаборатории. Если вы проверите лабораторию фабрики образов, вы не увидите подготовленных виртуальных машин. Кроме того, если вы помещаете в очередь дальнейшие сборки, вы увидите, что задачи очистки удаляют старые пользовательские образы из DevTest Labs в соответствии со значением срока хранения, заданным в переменных сборки.
@@ -63,7 +63,7 @@ ms.locfileid: "85476059"
 Добавление нового образа в фабрику также является простым. Если вы хотите включить в фабрику новый образ, откройте [портал Azure](https://portal.azure.com), перейдите к фабрике DevTest Labs, нажмите кнопку, чтобы добавить виртуальную машину, и выберите нужный образ и артефакты Marketplace. Вместо нажатия кнопки **создать** для создания новой виртуальной машины выберите **Просмотреть Azure Resource Manager шаблон**и сохраните шаблон в виде JSON-файла в папке **голденимажес** в репозитории. При следующем запуске фабрики образов будет создан пользовательский образ.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 1. [Запланируйте сборку или выпуск](/azure/devops/pipelines/build/triggers?view=azure-devops&tabs=designer) , чтобы периодически запускать фабрику образов. Он регулярно обновляет созданные на основе фабрики образы.
 2. Сделайте более золотой образ для фабрики. Вы также можете [создать артефакты](devtest-lab-artifact-author.md) , чтобы создать скрипты для дополнительных частей задач установки виртуальной машины и включить артефакты в образы фабрики.
 4. Создайте [отдельную сборку или выпуск](/azure/devops/pipelines/overview?view=azure-devops-2019) , чтобы запустить скрипт **дистрибутеимажес** отдельно. Этот скрипт можно выполнить при внесении изменений в Labs.jsи получения образов, скопированных в целевые лаборатории, без необходимости повторного создания всех образов.

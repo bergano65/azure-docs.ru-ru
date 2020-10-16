@@ -6,10 +6,10 @@ ms.author: macolso
 ms.topic: article
 ms.date: 06/02/2020
 ms.openlocfilehash: 1cedfb7464fd97249c5cd3fae73c9290365da6cd
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91818482"
 ---
 # <a name="frequently-asked-questions-about-azure-container-instances"></a>Часто задаваемые вопросы о службе "экземпляры контейнеров Azure"
@@ -43,7 +43,7 @@ ms.locfileid: "91818482"
 * [Windows Server Core](https://hub.docker.com/_/microsoft-windows-servercore): `ltsc2016`  `10.0.14393.3506` или более поздней версии
 
 > [!NOTE]
-> Образы Windows на основе полугодовых каналов выпуска 1709 или 1803 не поддерживаются.
+> Образы Windows на основе Semi-Annualного канала выпуска 1709 или 1803 не поддерживаются.
 
 #### <a name="windows-server-2019-and-client-base-images-preview"></a>Windows Server 2019 и базовые образы клиента (Предварительная версия)
 
@@ -102,7 +102,7 @@ ms.locfileid: "91818482"
 
 Счетчики останавливаются после остановки всей группы контейнеров. Пока контейнер в группе контейнеров работает, мы содержали ресурсы на случай, если вы хотите запустить контейнеры снова. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные [сведения](container-instances-overview.md) о службе "экземпляры контейнеров Azure".
 * [Устранение распространенных](container-instances-troubleshooting.md) неполадок в службе "экземпляры контейнеров Azure".

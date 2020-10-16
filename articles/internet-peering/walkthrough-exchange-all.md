@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 11/27/2019
 ms.author: prmitiki
 ms.openlocfilehash: ec83778d034cfc512582eddf79995412dad405c2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84710734"
 ---
 # <a name="exchange-peering-walkthrough"></a>Пошаговое руководство по пирингу через точку обмена
@@ -50,6 +50,6 @@ ms.locfileid: "84710734"
 > [!NOTE]
 > Если вы запускаете командлет PowerShell для удаления пиринга Exchange, если состояние подключения — Провисионингстартед или Провисионингкомплетед, операция завершится ошибкой.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о [предварительных требованиях для настройки пиринга с корпорацией Майкрософт](prerequisites.md).

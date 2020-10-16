@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 09/21/2020
 ms.openlocfilehash: f29a34fd8916110355c0122fee9db29599a01231
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90937106"
 ---
 # <a name="supported-versions-for-azure-database-for-mysql---flexible-server"></a>Поддерживаемые версии для базы данных Azure для MySQL — гибкий сервер
@@ -40,7 +40,7 @@ MySQL использует схему именования X.Y.Z. X являет
 ## <a name="managing-updates-and-upgrades"></a>Управление обновлениями
 Служба автоматически управляет установкой исправлений для обновления версии исправлений. Например, 5.7.29 в 5.7.30.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 >[Создание приложения PHP в Windows с помощью MySQL](../../app-service/app-service-web-tutorial-php-mysql.md)<br/>

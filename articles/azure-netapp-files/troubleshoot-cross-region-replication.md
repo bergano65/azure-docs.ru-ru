@@ -15,13 +15,13 @@ ms.topic: troubleshooting
 ms.date: 09/16/2020
 ms.author: b-juche
 ms.openlocfilehash: 3aaa5d2bc6fdbda0d1db212539c719aa65cae61b
-ms.sourcegitcommit: 7374b41bb1469f2e3ef119ffaf735f03f5fad484
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90709173"
 ---
-# <a name="troubleshoot-cross-region-replication"></a>Устранение неполадок репликации между регионами
+# <a name="troubleshoot-cross-region-replication"></a>Устранение неполадок с репликацией между регионами
 
 В этой статье описываются сообщения об ошибках и способы их устранения, которые могут помочь при устранении неполадок с репликацией в разных регионах для Azure NetApp Files. 
 
@@ -64,11 +64,11 @@ ms.locfileid: "90709173"
 |     `Snapshot   cannot be deleted, parent volume is a Data Protection volume with a   replication object`    |     Убедитесь, что репликация тома была нарушена, если вы хотите удалить этот моментальный снимок.    |
 |     `Cannot delete   volume replication generated snapshot`    |     Удаление базовых моментальных снимков репликации запрещено.    |
 
-## <a name="next-steps"></a>Дальнейшие действия  
+## <a name="next-steps"></a>Дальнейшие шаги  
 
 * [Репликация между регионами](cross-region-replication-introduction.md)
 * [Требования и рекомендации по использованию репликации между регионами](cross-region-replication-requirements-considerations.md)
 * [Создание пиринга репликации](cross-region-replication-create-peering.md)
 * [Отображение состояния работоспособности отношения репликации](cross-region-replication-display-health-status.md)
 * [Управление аварийным восстановлением](cross-region-replication-manage-disaster-recovery.md)
-* [Устранение неполадок репликации между регионами](troubleshoot-cross-region-replication.md)
+* [Устранение неполадок с репликацией между регионами](troubleshoot-cross-region-replication.md)

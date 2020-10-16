@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 06/09/2020
 ms.author: jeedes
-ms.openlocfilehash: 94b8a26a398ad8604a469486185d805fcbb6a8b2
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 43189d40c57ce6c300904207edc35011b0581ecc
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88545409"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91740481"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-bluejeans-for-azure-ad"></a>Руководство по интеграции единого входа Azure Active Directory с BlueJeans для Azure AD
 
@@ -150,7 +150,7 @@ ms.locfileid: "88545409"
 
 2. Последовательно щелкните **ADMIN \> GROUP SETTINGS \> SECURITY** (Администратор > Параметры группы > Безопасность).
 
-    ![Администратор](./media/bluejeans-tutorial/ic785868.png "Административный")
+    ![Снимок экрана: часть окна браузера с выбранной вкладкой "Администратор" и выбранными пунктами "Параметры группы" и "Безопасность".](./media/bluejeans-tutorial/ic785868.png "Административный")
 
 3. В разделе **SECURITY** (Безопасность) выполните следующие действия:
 
@@ -192,14 +192,14 @@ ms.locfileid: "88545409"
 
 2. Последовательно выберите пункты **ADMIN \> MANAGE USERS \> ADD USER** (Администратор > Управление пользователями > Добавить пользователя).
 
-    ![Администратор](./media/bluejeans-tutorial/ic785877.png "Административный")
+    ![Снимок экрана: часть окна браузера с выбранной вкладкой "Администратор" и выбранными пунктами "Управление пользователями" и "Добавление пользователей".](./media/bluejeans-tutorial/ic785877.png "Административный")
 
     > [!IMPORTANT]
     > Вкладка **ADD USER** (Добавить пользователя) доступна, только если на вкладке **SECURITY** (Безопасность) снят флажок **Enable automatic provisioning** (Включить автоматическую подготовку).
 
 3. В разделе **ADD USER** (Добавление пользователя) выполните следующие действия.
 
-    ![Добавление пользователя](./media/bluejeans-tutorial/ic785886.png "Добавить пользователя")
+    ![Снимок экрана: раздел "Добавление пользователя", где можно ввести сведения, описанные на этом шаге.](./media/bluejeans-tutorial/ic785886.png "Добавить пользователя")
 
     а. В текстовое поле **First Name** (Имя) введите имя пользователя, например **B**.
 
@@ -219,7 +219,7 @@ ms.locfileid: "88545409"
 
     i. Щелкните **CONTINUE** (Продолжить).
 
-    ![Добавление пользователя](./media/bluejeans-tutorial/ic785887.png "Добавить пользователя")
+    ![Снимок экрана: раздел "Добавление пользователя", где можно просмотреть параметры и функции, с выбранной кнопкой "Добавить пользователя".](./media/bluejeans-tutorial/ic785887.png "Добавить пользователя")
 
     К. Нажмите кнопку **Add user** (Добавить пользователя).
 

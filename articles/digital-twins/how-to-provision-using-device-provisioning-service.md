@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 9/1/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: efc507cb69b3368a2102b6de0b905657d5806ef2
-ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
+ms.openlocfilehash: 9a2345dce542f941df0122acd12b4acedd3b49a3
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90561437"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92047240"
 ---
 # <a name="auto-manage-devices-in-azure-digital-twins-using-device-provisioning-service-dps"></a>Автоматическое управление устройствами в цифровом двойников Azure с помощью службы подготовки устройств (DPS)
 
@@ -22,7 +22,7 @@ ms.locfileid: "90561437"
 
 Дополнительные сведения о стадиях _подготовки_ и _снятия с учета_ и ознакомлении с набором общих стадий управления устройствами, общих для всех корпоративных проектов IOT, см. в [разделе *жизненный цикл устройства* ](../iot-hub/iot-hub-device-management-overview.md#device-lifecycle) документации по управлению устройствами в центре Интернета вещей.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед настройкой подготовки необходимо иметь **экземпляр Digital двойников для Azure** , содержащий модели и двойников. Этот экземпляр также должен быть настроен с возможностью обновлять сведения о цифровом двойника на основе данных. 
 
@@ -32,7 +32,7 @@ ms.locfileid: "90561437"
 * **_Имя узла_** экземпляра Azure Digital Twins ([как найти на портале](how-to-set-up-instance-portal.md#verify-success-and-collect-important-values)).
 * **_Строка подключения_** к концентратору событий Azure ([Поиск на портале](../event-hubs/event-hubs-get-connection-string.md#get-connection-string-from-the-portal))
 
-В этом примере также используется **симулятор устройств** , который включает подготовку с помощью службы подготовки устройств. Симулятор устройства расположен здесь: [пример интеграции Azure Digital двойников и центра Интернета вещей](https://docs.microsoft.com/samples/azure-samples/digital-twins-iothub-integration/adt-iothub-provision-sample/). Получите пример проекта на своем компьютере, перейдя по ссылке с образцом и нажав кнопку *скачать ZIP-файл* под заголовком. Распакуйте скачанный каталог.
+В этом примере также используется **симулятор устройств** , который включает подготовку с помощью службы подготовки устройств. Симулятор устройства расположен здесь: [пример интеграции Azure Digital двойников и центра Интернета вещей](/samples/azure-samples/digital-twins-iothub-integration/adt-iothub-provision-sample/). Получите пример проекта на своем компьютере, перейдя по ссылке с образцом и нажав кнопку *скачать ZIP-файл* под заголовком. Распакуйте скачанный каталог.
 
 Симулятор устройства основан на **Node.js**версии 10.0. x или более поздней. [*Подготовка среды разработки*](https://github.com/Azure/azure-iot-sdk-node/blob/master/doc/node-devbox-setup.md) . описывает, как установить Node.js для этого руководства в Windows или Linux.
 
@@ -40,7 +40,7 @@ ms.locfileid: "90561437"
 
 На рисунке ниже показана архитектура этого решения с использованием Azure Digital двойников со службой подготовки устройств. В нем показаны поток инициализации устройства и снятия с учета.
 
-:::image type="content" source="media/how-to-provision-using-dps/flows.png" alt-text="Представление устройства и нескольких служб Azure в комплексном сценарии. Данные передаются между устройством термостата и службой DPS. Данные также передаются из DPS в центр Интернета вещей и в Azure Digital двойников с помощью функции Azure с меткой выделение. Данные из действия Удаление устройства вручную проходят через центр Интернета вещей, > концентраторы событий > функции Azure > Azure Digital двойников.":::
+:::image type="content" source="media/how-to-provision-using-dps/flows.png" alt-text="Представление устройства и нескольких служб Azure в комплексном сценарии. Данные передаются между устройством термостата и службой DPS. Данные также передаются из DPS в центр Интернета вещей и в Azure Digital двойников с помощью функции Azure с меткой &quot;выделение&quot;. Данные из действия &quot;Удаление устройства&quot; вручную проходят через центр Интернета вещей, > концентраторы событий > функции Azure > Azure Digital двойников.":::
 
 Эта статья разделена на две части:
 * [*Автоматическая подготовка устройства с помощью службы подготовки устройств*](#auto-provision-device-using-device-provisioning-service)
@@ -52,7 +52,7 @@ ms.locfileid: "90561437"
 
 В этом разделе вы будете присоединить службу подготовки устройств к Azure Digital двойников для автоматической подготовки устройств по указанному ниже пути. Это выдержка из полной показанной [выше](#solution-architecture)архитектуры.
 
-:::image type="content" source="media/how-to-provision-using-dps/provision.png" alt-text="Поток инициализации — это выдержка из схемы архитектуры решения с числами, обозначенными разделами последовательности. Данные передаются между устройством термостата и DP (1 для устройства > DP и 5 для > диагностики). Данные также передаются из DPS в центр Интернета вещей (4) и в Azure Digital двойников (3) с помощью функции Azure с меткой выделение (2).":::
+:::image type="content" source="media/how-to-provision-using-dps/provision.png" alt-text="Представление устройства и нескольких служб Azure в комплексном сценарии. Данные передаются между устройством термостата и службой DPS. Данные также передаются из DPS в центр Интернета вещей и в Azure Digital двойников с помощью функции Azure с меткой &quot;выделение&quot;. Данные из действия &quot;Удаление устройства&quot; вручную проходят через центр Интернета вещей, > концентраторы событий > функции Azure > Azure Digital двойников.":::
 
 Ниже приведено описание потока процесса.
 1. Устройство обращается к конечной точке DPS, передавая идентификационные данные для подтверждения своей личности.
@@ -69,7 +69,7 @@ ms.locfileid: "90561437"
 
 Создайте экземпляр службы подготовки устройств, который будет использоваться для подготовки устройств IoT. Можно либо использовать приведенные ниже инструкции Azure CLI, либо использовать портал Azure: Краткое руководство по [*настройке службы подготовки устройств для центра Интернета вещей с помощью портал Azure*](../iot-dps/quick-setup-auto-provision.md).
 
-Следующая команда Azure CLI создаст службу подготовки устройств. Необходимо указать имя, группу ресурсов и регион. Команду можно выполнить в [Cloud Shell](https://shell.azure.com)или локально, если [на компьютере установлен](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)Azure CLI.
+Следующая команда Azure CLI создаст службу подготовки устройств. Необходимо указать имя, группу ресурсов и регион. Команду можно выполнить в [Cloud Shell](https://shell.azure.com)или локально, если [на компьютере установлен](/cli/azure/install-azure-cli?view=azure-cli-latest)Azure CLI.
 
 ```azurecli
 az iot dps create --name <Device Provisioning Service name> --resource-group <resource group name> --location <region; for example, eastus>
@@ -258,7 +258,7 @@ az functionapp config appsettings set --settings "AdtAppId=<Application (client)
 
 ### <a name="set-up-the-device-simulator"></a>Настройка симулятора устройств
 
-В этом примере используется симулятор устройства, который включает подготовку с помощью службы подготовки устройств. Симулятор устройства расположен здесь: [пример интеграции Azure Digital двойников и центра Интернета вещей](https://docs.microsoft.com/samples/azure-samples/digital-twins-iothub-integration/adt-iothub-provision-sample/). Если вы еще не скачали пример, получите его сейчас, перейдя по ссылке образца и нажав кнопку *скачать ZIP-файл* под заголовком. Распакуйте скачанный каталог.
+В этом примере используется симулятор устройства, который включает подготовку с помощью службы подготовки устройств. Симулятор устройства расположен здесь: [пример интеграции Azure Digital двойников и центра Интернета вещей](/samples/azure-samples/digital-twins-iothub-integration/adt-iothub-provision-sample/). Если вы еще не скачали пример, получите его сейчас, перейдя по ссылке образца и нажав кнопку *скачать ZIP-файл* под заголовком. Распакуйте скачанный каталог.
 
 Откройте окно командной строки и перейдите в папку downloaded, а затем в каталог *Device-симулятор* . Установите зависимости для проекта с помощью следующей команды:
 
@@ -276,7 +276,7 @@ ADT_MODEL_ID = "dtmi:contosocom:DigitalTwins:Thermostat;1"
 PROVISIONING_SYMMETRIC_KEY = "<Device Provisioning Service enrollment primary or secondary SAS key>"
 ```
 
-Сохраните и закройте файл.
+Сохраните файл и закройте его.
 
 ### <a name="start-running-the-device-simulator"></a>Начало работы симулятора устройства
 
@@ -287,7 +287,7 @@ node .\adt_custom_register.js
 ```
 
 Вы должны увидеть зарегистрированное устройство и подключиться к центру Интернета вещей, а затем начать отправку сообщений.
-:::image type="content" source="media/how-to-provision-using-dps/output.png" alt-text="командное окно отображения регистрации устройства и отправки сообщений":::
+:::image type="content" source="media/how-to-provision-using-dps/output.png" alt-text="Представление устройства и нескольких служб Azure в комплексном сценарии. Данные передаются между устройством термостата и службой DPS. Данные также передаются из DPS в центр Интернета вещей и в Azure Digital двойников с помощью функции Azure с меткой &quot;выделение&quot;. Данные из действия &quot;Удаление устройства&quot; вручную проходят через центр Интернета вещей, > концентраторы событий > функции Azure > Azure Digital двойников.":::
 
 ### <a name="validate"></a>Проверить
 
@@ -298,13 +298,13 @@ az dt twin show -n <Digital Twins instance name> --twin-id <Device Registration 
 ```
 
 Вы должны увидеть двойника устройства в экземпляре цифрового двойников Azure.
-:::image type="content" source="media/how-to-provision-using-dps/show-provisioned-twin.png" alt-text="командное окно, показывающий только что созданный двойника":::
+:::image type="content" source="media/how-to-provision-using-dps/show-provisioned-twin.png" alt-text="Представление устройства и нескольких служб Azure в комплексном сценарии. Данные передаются между устройством термостата и службой DPS. Данные также передаются из DPS в центр Интернета вещей и в Azure Digital двойников с помощью функции Azure с меткой &quot;выделение&quot;. Данные из действия &quot;Удаление устройства&quot; вручную проходят через центр Интернета вещей, > концентраторы событий > функции Azure > Azure Digital двойников.":::
 
 ## <a name="auto-retire-device-using-iot-hub-lifecycle-events"></a>Автоматическое прекращение использования устройства с помощью событий жизненного цикла центра Интернета вещей
 
 В этом разделе вы будете присоединить события жизненного цикла центра Интернета вещей к Azure Digital двойников для автоматического снятия с учета устройств по указанному ниже пути. Это выдержка из полной показанной [выше](#solution-architecture)архитектуры.
 
-:::image type="content" source="media/how-to-provision-using-dps/retire.png" alt-text="Снятие потока устройства с учета — выдержка из схемы архитектуры решения с числами, обозначенными разделами последовательности. Устройство термостата отображается без подключения к службам Azure на схеме. Данные из действия Удаление устройства вручную проходят через центр Интернета вещей (1) > концентраторов событий (2) > функциях Azure > Azure Digital двойников (3).":::
+:::image type="content" source="media/how-to-provision-using-dps/retire.png" alt-text="Представление устройства и нескольких служб Azure в комплексном сценарии. Данные передаются между устройством термостата и службой DPS. Данные также передаются из DPS в центр Интернета вещей и в Azure Digital двойников с помощью функции Azure с меткой &quot;выделение&quot;. Данные из действия &quot;Удаление устройства&quot; вручную проходят через центр Интернета вещей, > концентраторы событий > функции Azure > Azure Digital двойников.":::
 
 Ниже приведено описание потока процесса.
 1. Внешний или ручной процесс инициирует удаление устройства в центре Интернета вещей.
@@ -447,7 +447,7 @@ namespace Samples.AdtIothub
 
 Далее необходимо задать переменные среды в приложении-функции с помощью более ранней версии, содержащей ссылку на созданный вами экземпляр двойников Azure и концентратор событий. Если вы использовали полное руководство ([*руководство по подключению комплексного решения*](./tutorial-end-to-end.md)), первый параметр будет уже настроен.
 
-Добавьте параметр с помощью этой команды Azure CLI. Команду можно выполнить в [Cloud Shell](https://shell.azure.com)или локально, если [на компьютере установлен](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)Azure CLI.
+Добавьте параметр с помощью этой команды Azure CLI. Команду можно выполнить в [Cloud Shell](https://shell.azure.com)или локально, если [на компьютере установлен](/cli/azure/install-azure-cli?view=azure-cli-latest)Azure CLI.
 
 ```azurecli
 az functionapp config appsettings set --settings "ADT_SERVICE_URL=https://<Azure Digital Twins instance _host name_>" -g <resource group> -n <your App Service (function app) name>
@@ -470,7 +470,7 @@ az functionapp config appsettings set --settings "EVENTHUB_CONNECTIONSTRING=<Eve
 Для этой настройки необходимо выполнить следующие действия.
 1. Создайте настраиваемую конечную точку концентратора событий центра Интернета вещей. Эта конечная точка должна ориентироваться на концентратор событий, созданный в разделе [*Создание концентратора событий*](#create-an-event-hub) .
 2. Добавление маршрута *событий жизненного цикла устройства* . Используйте конечную точку, созданную на предыдущем шаге. Можно ограничить события жизненного цикла устройства, чтобы отправлять только события удаления, добавив запрос маршрутизации `opType='deleteDeviceIdentity'` .
-    :::image type="content" source="media/how-to-provision-using-dps/lifecycle-route.png" alt-text="Добавление маршрута":::
+    :::image type="content" source="media/how-to-provision-using-dps/lifecycle-route.png" alt-text="Представление устройства и нескольких служб Azure в комплексном сценарии. Данные передаются между устройством термостата и службой DPS. Данные также передаются из DPS в центр Интернета вещей и в Azure Digital двойников с помощью функции Azure с меткой &quot;выделение&quot;. Данные из действия &quot;Удаление устройства&quot; вручную проходят через центр Интернета вещей, > концентраторы событий > функции Azure > Azure Digital двойников.":::
 
 Когда вы пройдете этот поток, все будет настроено на снятие устройств с учета.
 
@@ -480,7 +480,7 @@ az functionapp config appsettings set --settings "EVENTHUB_CONNECTIONSTRING=<Eve
 
 В [первой половине этой статьи](#auto-provision-device-using-device-provisioning-service)вы создали устройство в центре Интернета вещей и соответствующий цифровой двойника. 
 
-Теперь перейдите в центр Интернета вещей и удалите это устройство (это можно сделать с помощью [команды Azure CLI](https://docs.microsoft.com/cli/azure/ext/azure-cli-iot-ext/iot/hub/device-identity?view=azure-cli-latest#ext-azure-cli-iot-ext-az-iot-hub-device-identity-delete) или в [портал Azure](https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Devices%2FIotHubs)). 
+Теперь перейдите в центр Интернета вещей и удалите это устройство (это можно сделать с помощью [команды Azure CLI](/cli/azure/ext/azure-cli-iot-ext/iot/hub/device-identity?view=azure-cli-latest#ext-azure-cli-iot-ext-az-iot-hub-device-identity-delete) или в [портал Azure](https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Devices%2FIotHubs)). 
 
 Устройство будет автоматически удалено из Azure Digital двойников. 
 
@@ -491,13 +491,13 @@ az dt twin show -n <Digital Twins instance name> --twin-id <Device Registration 
 ```
 
 Вы увидите, что двойника устройства больше не может быть найдено в экземпляре Azure Digital двойников.
-:::image type="content" source="media/how-to-provision-using-dps/show-retired-twin.png" alt-text="командное окно с двойника не найден":::
+:::image type="content" source="media/how-to-provision-using-dps/show-retired-twin.png" alt-text="Представление устройства и нескольких служб Azure в комплексном сценарии. Данные передаются между устройством термостата и службой DPS. Данные также передаются из DPS в центр Интернета вещей и в Azure Digital двойников с помощью функции Azure с меткой &quot;выделение&quot;. Данные из действия &quot;Удаление устройства&quot; вручную проходят через центр Интернета вещей, > концентраторы событий > функции Azure > Azure Digital двойников.":::
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 Если ресурсы, созданные в этой статье, больше не нужны, выполните следующие действия, чтобы удалить их.
 
-С помощью Azure Cloud Shell или локального Azure CLI можно удалить все ресурсы Azure в группе ресурсов с помощью команды [AZ Group Delete](https://docs.microsoft.com/cli/azure/group?view=azure-cli-latest#az-group-delete) . Это приведет к удалению группы ресурсов. экземпляр Azure Digital двойников; центр Интернета вещей и регистрация устройств концентратора; раздел "Сетка событий" и связанные подписки; пространство имен концентраторов событий и оба приложения функций Azure, включая связанные ресурсы, такие как хранилище.
+С помощью Azure Cloud Shell или локального Azure CLI можно удалить все ресурсы Azure в группе ресурсов с помощью команды [AZ Group Delete](/cli/azure/group?view=azure-cli-latest#az-group-delete) . Это приведет к удалению группы ресурсов. экземпляр Azure Digital двойников; центр Интернета вещей и регистрация устройств концентратора; раздел "Сетка событий" и связанные подписки; пространство имен концентраторов событий и оба приложения функций Azure, включая связанные ресурсы, такие как хранилище.
 
 > [!IMPORTANT]
 > Удаление группы ресурсов — процесс необратимый. Группа ресурсов и все содержащиеся в ней ресурсы удаляются без возможности восстановления. Будьте внимательны, чтобы случайно не удалить не ту группу ресурсов или не те ресурсы. 

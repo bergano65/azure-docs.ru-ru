@@ -9,21 +9,21 @@ ms.author: twright
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: d508e2e24ac35171d87cdba9cb79981dfb8764e3
-ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
+ms.openlocfilehash: 69a2bc002b2ccccba90bde5b6c92d162b6e78815
+ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91757475"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91952256"
 ---
 # <a name="upload-usage-data-metrics-and-logs-to-azure-monitor"></a>Передача данных об использовании, метрик и журналов в Azure Monitor
 
 Периодически можно экспортировать сведения об использовании для выставления счетов, метрики мониторинга и журналы, а затем передать их в Azure.  При экспорте и передаче любого из этих трех типов данных также будут созданы и обновлены ресурсы контроллера данных, управляемого экземпляра SQL и PostgreSQL в Azure.
 
 > [!NOTE] 
-В течение периода действия предварительной версии не взимается плата за использование служб данных, включенных в службу Arc Azure.
+> В течение периода действия предварительной версии не взимается плата за использование служб данных, включенных в службу Arc Azure.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Вам потребуются Azure CLI (AZ) и Azure Data CLI (аздата).  [Установите средства](./install-client-tools.md).
 
@@ -77,7 +77,7 @@ az provider register -n Microsoft.AzureData --wait
 
 Если у вас есть несколько сайтов со службами данных Arc Azure, вы можете использовать Azure Monitor в качестве центрального расположения для сбора всех журналов и метрик на сайтах.
 
-### <a name="before-you-begin"></a>Подготовка к работе
+### <a name="before-you-begin"></a>Перед началом
 
 Чтобы включить сценарии отправки журналов и метрик, необходимо выполнить несколько однократных действий по настройке.
 

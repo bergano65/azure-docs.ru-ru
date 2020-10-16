@@ -11,7 +11,7 @@ ms.openlocfilehash: af74392b3368a25e5d238f774292c80de5f91c65
 ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91857747"
 ---
 # <a name="how-to-use-apache-hive-replication-in-azure-hdinsight-clusters"></a>Как использовать репликацию Apache Hive в кластерах Azure HDInsight
@@ -220,7 +220,7 @@ repl dump tpcds_orc from 2925;
    |-|
    |2960|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об элементах, обсуждаемых в этой статье, см. в следующих статьях:
 

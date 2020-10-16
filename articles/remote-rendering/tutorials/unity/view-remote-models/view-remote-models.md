@@ -6,12 +6,12 @@ ms.author: flborn
 ms.date: 06/15/2020
 ms.topic: tutorial
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 7509a17127f04220a8e8450a81627354b28bdacd
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: bcee951dc85d9c317bad481ebdb91ff6c761371c
+ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89006471"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91653678"
 ---
 # <a name="tutorial-viewing-a-remotely-rendered-model"></a>Руководство по Просмотр модели удаленной отрисовки
 
@@ -76,10 +76,10 @@ ms.locfileid: "89006471"
 
 После изменения и сохранения манифеста Unity обновится автоматически. Убедитесь, что пакеты загружены в окне *Project* (Проект):
 
-:::image type="content" source="./media/confirm-packages.png" alt-text="Подтверждение импорта пакетов":::
+:::image type="content" source="./media/confirm-packages.png" alt-text="Создание проекта Unity":::
 
 Если пакеты не загружаются, проверьте наличие ошибок в консоли Unity. Если ошибок нет, но пакеты не отображаются в папке **Packages**, проверьте положение выключателя видимости пакетов.
-![Свойства камеры Unity](./media/unity-package-visibility.png)
+![Снимок экрана со стрелкой, указывающей на выключатель видимости пакетов.](./media/unity-package-visibility.png)
 
 ## <a name="ensure-you-have-the-latest-version-of-the-package"></a>Убедитесь, что у вас установлена последняя версия пакета.
 
@@ -120,7 +120,7 @@ ms.locfileid: "89006471"
 
 1. Выберите в меню со списком слева пункт **Graphics** (Графика).
 1. Измените параметр **Scriptable Rendering Pipeline** (Конвейер отрисовки с поддержкой скриптов), задав значение *HybridRenderingPipeline*.
-    ![Изменение параметров графики проекта](./media/settings-graphics-render-pipeline.png)\
+    ![Снимок экрана, указывающий, где можно изменить параметр Scriptable Rendering Pipeline (Конвейер отрисовки с поддержкой скриптов) на HybridRenderingPipeline.](./media/settings-graphics-render-pipeline.png)\
     Иногда список доступных типов конвейеров в пользовательском интерфейсе не заполняется данными из пакетов. В этом случае необходимо перетащить ресурс *HybridRenderingPipeline* на поле вручную.
     ![Изменение параметров графики проекта](./media/hybrid-rendering-pipeline.png)
 
@@ -597,7 +597,7 @@ public async void InitializeSessionService()
 1. Перетащите компонент на его собственное событие, чтобы он ссылался на себя.
 ![Обход проверки подлинности](./media/bypass-authorization-add-event.png)\
 1. В раскрывающемся списке выберите **RemoteRenderingCoordinator —> BypassAuthorization**.
-![Обход проверки подлинности](./media/bypass-authorization-event.png)
+![Снимок экрана, на котором показан выбранный параметр RemoteRenderingCoordinator.BypassAuthorization.](./media/bypass-authorization-event.png)
 
 ## <a name="create-or-join-a-remote-session"></a>Создание удаленного сеанса или присоединение к нему
 
@@ -724,7 +724,7 @@ private void LateUpdate()
 
 Подготовив необходимые базовые элементы, вы можете загрузить модель в удаленный сеанс и начать получать кадры.
 
-![Стек Удаленной отрисовки Azure 4](./media/remote-render-stack-4.png)
+![Схема потока процесса подготовки к загрузке и просмотру модели.](./media/remote-render-stack-4.png)
 
 Метод **LoadModel** должен принимать путь к модели, обработчик выполнения и родительское преобразование. Эти аргументы будут использоваться для загрузки модели в удаленный сеанс, предоставления пользователю актуальных сведений о ходе загрузки и ориентации удаленно преобразованной для просмотра модели на основе родительского преобразования.
 

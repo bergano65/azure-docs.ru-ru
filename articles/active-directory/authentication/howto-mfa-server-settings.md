@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 06/05/2020
-ms.author: iainfou
-author: iainfoulds
+ms.author: joflore
+author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 69733071c5b43ee9c8e6450e3a9924bc656d5c84
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 70777c80cdee99f13050d7cd342f22d59da13d73
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84485497"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91964116"
 ---
 # <a name="configure-mfa-server-settings"></a>Настройка параметров сервера MFA
 
@@ -27,7 +27,7 @@ ms.locfileid: "84485497"
 
 Доступны следующие параметры сервера MFA:
 
-| Компонент | Описание |
+| Функция | Описание |
 | ------- | ----------- |
 | Параметры сервера | Скачивание сервера MFA и создание учетных данных активации для инициализации среды |
 | [Разовый обход](#one-time-bypass) | Разрешает пользователю проходить проверку подлинности без выполнения многофакторной проверки подлинности в течение ограниченного времени. |
@@ -66,6 +66,6 @@ ms.locfileid: "84485497"
 1. При необходимости выберите тип проверки подлинности и укажите приложение.
 1. Выберите **Добавить**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные параметры конфигурации сервера MFA доступны в веб-консоли сервера MFA. Вы также можете [настроить сервер Azure MFA для обеспечения высокой доступности](howto-mfaserver-deploy-ha.md).

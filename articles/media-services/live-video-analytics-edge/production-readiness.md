@@ -4,10 +4,10 @@ description: В этой статье содержатся инструкции 
 ms.topic: conceptual
 ms.date: 04/27/2020
 ms.openlocfilehash: c34e05e184cfa6f0933701a76177fae3eed70c0a
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87071938"
 ---
 # <a name="production-readiness-and-best-practices"></a>Подготовка рабочей среды и рекомендации
@@ -152,7 +152,7 @@ sudo chown -R edgeuser /var/local/mediaservices
 1. `sudo apt-get autoremove1`
 
     Параметр Автоматическое удаление удаляет пакеты, которые были установлены автоматически, поскольку некоторые другие пакеты требуют их, но при удалении этих пакетов они больше не нужны.
-1. `sudo docker image ls`— Предоставляет список образов DOCKER в пограничной системе.
+1. `sudo docker image ls` — Предоставляет список образов DOCKER в пограничной системе.
 1. `sudo docker system prune `
 
     DOCKER принимает консервативный подход к очистке неиспользуемых объектов (часто называемых "сборкой мусора"), таких как образы, контейнеры, тома и сети. Эти объекты обычно не удаляются, если только вы явно не запрашиваете DOCKER. Это может привести к тому, что DOCKER будет использовать дополнительное место на диске. Для каждого типа объекта DOCKER предоставляет команду очистки. Кроме того, можно использовать очистку системы DOCKER для очистки нескольких типов объектов одновременно. Дополнительные сведения см. в статье об [очистке неиспользуемых объектов DOCKER](https://docs.docker.com/config/pruning/).

@@ -14,10 +14,10 @@ ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
 ms.openlocfilehash: cdd93cf8751ce2e46f06020b1d18d42416f793d4
-ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88166114"
 ---
 # <a name="migrating-applications-to-msalnet"></a>Перенос приложений на MSAL.NET
@@ -59,7 +59,7 @@ ADAL.NET получает маркеры для *ресурсов*, а MSAL.NET�
 
 - ADAL.NET использует [AuthenticationContext](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/wiki/AuthenticationContext:-the-connection-to-Azure-AD) для представления подключения к службе токенов безопасности (STS) или серверу авторизации с помощью объекта Authority. Библиотека MSAL.NET, в свою очередь, основана на концепции [клиентских приложений](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/Client-Applications). Она предоставляет два отдельных класса: `PublicClientApplication` и `ConfidentialClientApplication`.
 
-- Получение маркеров: ADAL.NET и MSAL.NET имеют одинаковые вызовы проверки подлинности ( `AcquireTokenAsync` и `AcquireTokenSilentAsync` для ADAL.NET и `AcquireTokenInteractive` и `AcquireTokenSilent` в MSAL.NET), но с различными параметрами. В числе отличий важно отметить, что в MSAL.NET уже не нужно передавать в приложение `ClientID` при каждом вызове AcquireTokenXX. Теперь `ClientID` задается только один раз при создании `IPublicClientApplication` или `IConfidentialClientApplication`.
+- Получение маркеров: ADAL.NET и MSAL.NET имеют одинаковые вызовы проверки подлинности ( `AcquireTokenAsync` и  `AcquireTokenSilentAsync` для ADAL.NET и `AcquireTokenInteractive` и `AcquireTokenSilent` в MSAL.NET), но с различными параметрами. В числе отличий важно отметить, что в MSAL.NET уже не нужно передавать в приложение `ClientID` при каждом вызове AcquireTokenXX. Теперь `ClientID` задается только один раз при создании `IPublicClientApplication` или `IConfidentialClientApplication`.
 
 ### <a name="iaccount-not-iuser"></a>IAccount вместо IUser
 
@@ -264,6 +264,6 @@ AuthenticationResult result = await appRt.AcquireTokenByRefreshToken(null, rt)
 
 Этот метод можно использовать в разных процессах интеграции, если у вас есть готовый маркер обновления.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об областях можно найти в статье [Permissions and consent in the Microsoft identity platform endpoint](v2-permissions-and-consent.md) (Разрешения и согласие для конечной точки платформы удостоверений Майкрософт).

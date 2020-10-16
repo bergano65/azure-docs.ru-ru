@@ -4,16 +4,16 @@ description: Обзор определенных свойств и их знач
 author: kgremban
 manager: philmea
 ms.author: kgremban
-ms.date: 06/17/2019
+ms.date: 08/31/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: f2d6603c264c9da3f2700f460a8c61b24681fac6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: fa7a56bcad067176d8f9805b418cca45ad144579
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80546191"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91978702"
 ---
 # <a name="properties-of-the-iot-edge-agent-and-iot-edge-hub-module-twins"></a>Свойства двойников модулей агента IoT Edge и центра IoT Edge
 
@@ -33,31 +33,33 @@ ms.locfileid: "80546191"
 
 | Свойство | Описание | Обязательно |
 | -------- | ----------- | -------- |
-| schemaVersion | Должно быть "1.0". | Да |
+| schemaVersion | Значение "1,0" или "1,1". Версия 1,1 была введена в IoT Edge версии 1.0.10, и рекомендуется. | Да |
 | runtime.type | Должно быть "docker". | Да |
 | runtime.settings.minDockerVersion | Задайте минимальную версию Docker, которая требуется для этого манифеста развертывания. | Да |
-| runtime.settings.loggingOptions | Переведенные в строку JSON, содержащую параметры ведения журнала для контейнера агента IoT Edge. [Параметры ведения журнала Docker](https://docs.docker.com/engine/admin/logging/overview/) | Нет |
-| runtime.settings.registryCredentials<br>.{registryId}.username | Имя пользователя для реестра контейнеров. Для Реестра контейнеров Azure именем пользователя обычно является имя реестра.<br><br> Учетные данные реестра необходимы для любых частных образов модулей. | Нет |
-| runtime.settings.registryCredentials<br>.{registryId}.password | Пароль для реестра контейнеров. | Нет |
-| runtime.settings.registryCredentials<br>.{registryId}.address | Адрес для реестра контейнеров. Для Реестра контейнеров Azure адрес обычно имеет вид *{имя реестра}.azurecr.io*. | Нет |  
+| runtime.settings.loggingOptions | Переведенные в строку JSON, содержащую параметры ведения журнала для контейнера агента IoT Edge. [Параметры ведения журнала Docker](https://docs.docker.com/engine/admin/logging/overview/) | нет |
+| runtime.settings.registryCredentials<br>.{registryId}.username | Имя пользователя для реестра контейнеров. Для Реестра контейнеров Azure именем пользователя обычно является имя реестра.<br><br> Учетные данные реестра необходимы для любых частных образов модулей. | нет |
+| runtime.settings.registryCredentials<br>.{registryId}.password | Пароль для реестра контейнеров. | нет |
+| runtime.settings.registryCredentials<br>.{registryId}.address | Адрес для реестра контейнеров. Для Реестра контейнеров Azure адрес обычно имеет вид *{имя реестра}.azurecr.io*. | нет |  
 | systemModules.edgeAgent.type | Должно быть "docker". | Да |
 | systemModules.edgeAgent.settings.image | Универсальный код ресурса (URI) образа агента IoT Edge. В настоящее время агент IoT Edge не может обновить себя. | Да |
-| systemModules.edgeAgent.settings<br>.createOptions | Переведенные в строку JSON, содержащую параметры для создания контейнера агента IoT Edge. [Параметры создания Docker](https://docs.docker.com/engine/api/v1.32/#operation/ContainerCreate) | Нет |
+| systemModules.edgeAgent.settings<br>.createOptions | Переведенные в строку JSON, содержащую параметры для создания контейнера агента IoT Edge. [Параметры создания Docker](https://docs.docker.com/engine/api/v1.32/#operation/ContainerCreate) | нет |
 | systemModules.edgeAgent.configuration.id | Идентификатор развертывания, которое развернуло этот модуль. | Центр Интернета вещей задает свойство при применении этого манифеста с помощью развертывания. Не является частью манифеста развертывания. |
 | systemModules.edgeHub.type | Должно быть "docker". | Да |
 | systemModules.edgeHub.status | Должно быть "running". | Да |
 | systemModules.edgeHub.restartPolicy | Должно быть "always". | Да |
+| Системмодулес. edgeHub. Стартупордер | Целочисленное значение, для которого модуль находится в порядке запуска. 0 — первое и максимальное целое число (4294967295). Если значение не указано, по умолчанию используется максимальное целое число.  | нет |
 | systemModules.edgeHub.settings.image | Универсальный код ресурса (URI) образа центра IoT Edge. | Да |
-| systemModules.edgeHub.settings<br>.createOptions | Переведенные в строку JSON, содержащую параметры для создания контейнера центра IoT Edge. [Параметры создания Docker](https://docs.docker.com/engine/api/v1.32/#operation/ContainerCreate) | Нет |
+| systemModules.edgeHub.settings<br>.createOptions | Переведенные в строку JSON, содержащую параметры для создания контейнера центра IoT Edge. [Параметры создания Docker](https://docs.docker.com/engine/api/v1.32/#operation/ContainerCreate) | нет |
 | systemModules.edgeHub.configuration.id | Идентификатор развертывания, которое развернуло этот модуль. | Центр Интернета вещей задает свойство при применении этого манифеста с помощью развертывания. Не является частью манифеста развертывания. |
 | modules.{ИД_модуля}.version | Определяемая пользователем строка, представляющая версию этого модуля. | Да |
 | modules.{ИД_модуля}.type | Должно быть "docker". | Да |
 | modules.{Ид_модуля}.status | {"running" \| "stopped"} | Да |
 | modules.{ИД_модуля}.restartPolicy | {"никогда" \| "on-Failure" \| — неработоспособное состояние " \| всегда" | Да |
-| модуле. {moduleId}. Имажепуллполици | {"on-Create" \| "Never"} | Нет |
-| модуле. {moduleId}. env | Список переменных среды для передачи в модуль. Принимает формат`"<name>": {"value": "<value>"}` | Нет |
+| модуле. {moduleId}. Стартупордер | Целочисленное значение, для которого модуль находится в порядке запуска. 0 — первое и максимальное целое число (4294967295). Если значение не указано, по умолчанию используется максимальное целое число.  | нет |
+| модуле. {moduleId}. Имажепуллполици | {"on-Create" \| "Never"} | нет |
+| модуле. {moduleId}. env | Список переменных среды для передачи в модуль. Принимает формат `"<name>": {"value": "<value>"}` | нет |
 | modules.{ИД_модуля}.settings.image | Универсальный код ресурса (URI) для образа модуля. | Да |
-| modules.{ИД_модуля}.settings.createOptions | Переведенные в строку JSON, содержащую параметры для создания контейнера модуля. [Параметры создания Docker](https://docs.docker.com/engine/api/v1.32/#operation/ContainerCreate) | Нет |
+| modules.{ИД_модуля}.settings.createOptions | Переведенные в строку JSON, содержащую параметры для создания контейнера модуля. [Параметры создания Docker](https://docs.docker.com/engine/api/v1.32/#operation/ContainerCreate) | нет |
 | modules.{ИД_модуля}.configuration.id | Идентификатор развертывания, которое развернуло этот модуль. | Центр Интернета вещей задает свойство при применении этого манифеста с помощью развертывания. Не является частью манифеста развертывания. |
 
 ## <a name="edgeagent-reported-properties"></a>Отображаемые в отчете свойства EdgeAgent
@@ -107,7 +109,7 @@ ms.locfileid: "80546191"
 
 | Свойство | Описание | Требуется в манифесте развертывания |
 | -------- | ----------- | -------- |
-| schemaVersion | Должно быть "1.0". | Да |
+| schemaVersion | Значение "1,0" или "1,1". Версия 1,1 была введена в IoT Edge версии 1.0.10, и рекомендуется. | Да |
 | routes.{имя_маршрута} | Строка, представляющая маршрут центра IoT Edge. Дополнительные сведения см. в разделе [объявление маршрутов](module-composition.md#declare-routes). | Элемент `routes` может присутствовать, но быть пустым. |
 | storeAndForwardConfiguration.timeToLiveSecs | Время в секундах, в течение которого центр IoT Edge хранит сообщения при отключении от конечных точек маршрутизации, будь то центр Интернета вещей или локальный модуль. Значением может быть любое положительное целое число. | Да |
 

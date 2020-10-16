@@ -12,10 +12,10 @@ ms.date: 03/27/2019
 ms.author: arvinh
 ms.reviewer: celested
 ms.openlocfilehash: 11e0606568fdaad20f996a7ae20a622576acea15
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88549472"
 ---
 # <a name="tutorial-configure-asana-for-automatic-user-provisioning"></a>Руководство по настройке Asana для автоматической подготовки пользователей
@@ -66,7 +66,7 @@ Azure AD использует концепцию, называемую *назн
 
 1. В разделе **Учетные данные администратора** выполните следующие инструкции по созданию токена и введите его в текстовое поле **Секретный токен**.
 
-    а. Войдите в [Asana](https://app.asana.com) с помощью учетной записи администратора.
+    a. Войдите в [Asana](https://app.asana.com) с помощью учетной записи администратора.
 
     b. Щелкните фотографию профиля на верхней панели и выберите текущие параметры для названия организации.
 

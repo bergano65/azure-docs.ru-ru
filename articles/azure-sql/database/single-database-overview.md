@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 04/08/2019
 ms.openlocfilehash: 8f92fe8e4a4ebbc2d970bf28e415859249b9f67c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84343325"
 ---
 # <a name="what-is-a-single-database-in-azure-sql-database"></a>Что такое единственная база данных в базе данных SQL Azure?
@@ -36,7 +36,7 @@ ms.locfileid: "84343325"
 
 ## <a name="monitoring-and-alerting"></a>Мониторинг и оповещения
 
-Вы можете использовать встроенные средства [мониторинга производительности](performance-guidance.md) и [оповещений](alerts-insights-configure-portal.md) в сочетании с рейтингами производительности. Используя эти средства, вы сможете быстро оценить эффект от увеличения и уменьшения масштаба, исходя из текущей или планируемой загрузки. Кроме того, база данных SQL может [создавать метрики и журналы ресурсов](metrics-diagnostic-telemetry-logging-streaming-export-configure.md) для упрощения мониторинга.
+Вы можете использовать встроенные средства [мониторинга производительности](performance-guidance.md) и [оповещений](alerts-insights-configure-portal.md) в сочетании с рейтингами производительности. Используя эти средства, вы сможете быстро оценить эффект от увеличения и уменьшения масштаба, исходя из текущей или планируемой загрузки. Кроме того, База данных SQL может [выдавать значения метрик и журналы ресурсов](metrics-diagnostic-telemetry-logging-streaming-export-configure.md) для упрощения мониторинга.
 
 ## <a name="availability-capabilities"></a>Возможности доступности
 
@@ -52,12 +52,12 @@ ms.locfileid: "84343325"
 
 ## <a name="security"></a>Безопасность
 
-База данных SQL обеспечивает ряд [встроенных функций безопасности и соответствия](security-overview.md), чтобы выполнить различные требования по защите вашего приложения.
+База данных SQL предоставляет ряд [встроенных функций обеспечения безопасности и соответствия требованиям](security-overview.md) , чтобы обеспечить соответствие приложения различным требованиям к безопасности и соответствию.
 
 > [!IMPORTANT]
-> База данных SQL Azure сертифицирована по рядам стандартов соответствия. Дополнительные сведения см. в [центре управления безопасностью Microsoft Azure](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942), где можно найти самый актуальный список сертификации соответствия базы данных SQL.
+> База данных SQL Azure сертифицирована по рядам стандартов соответствия. Дополнительные сведения см. в [центре управления безопасностью Microsoft Azure](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942), где представлен актуальный список сертификатов соответствия Базы данных SQL.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Чтобы быстро приступить к работе с одной базой данных, начните с [краткого руководства по единой базе данных](quickstart-content-reference-guide.md).
 - Чтобы узнать о переносе базы данных SQL Server в Azure, ознакомьтесь с разделом [Миграция базы данных SQL Server в базу данных SQL в облаке](migrate-to-database-from-sql-server.md).

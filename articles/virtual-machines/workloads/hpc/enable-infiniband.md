@@ -1,28 +1,22 @@
 ---
 title: Включение Инифинбанд на виртуальных машинах HPC с помощью виртуальных машин Azure | Документация Майкрософт
 description: Узнайте, как включить InfiniBand на виртуальных машинах Azure HPC.
-services: virtual-machines
-documentationcenter: ''
 author: vermagit
-manager: gwallace
-editor: ''
-tags: azure-resource-manager
 ms.service: virtual-machines
-ms.workload: infrastructure-services
 ms.topic: article
 ms.date: 08/01/2020
 ms.author: amverma
 ms.reviewer: cynthn
-ms.openlocfilehash: 0cbfed307cea1bd98bf864046a8c08edb849226a
-ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
+ms.openlocfilehash: b5f4cbd2fc09b2c42c232eafd63edb1217e4dacb
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87797991"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91996309"
 ---
 # <a name="enable-infiniband"></a>Включение InfiniBand
 
-Виртуальные машины [серии H](../../sizes-hpc.md) и серии [N](../../sizes-gpu.md) , [поддерживающие RDMA](../../sizes-hpc.md#rdma-capable-instances) , обмениваются данными по низкой задержке и сети InfiniBand с высокой пропускной способностью. Возможность RDMA в таком межкомпонентном взаимочастоте очень важна для повышения масштабируемости и производительности рабочих нагрузок распределенного узла HPC и AI. Виртуальные машины серии H и серии N с поддержкой InfiniBand подключены к неблокирующему дереву FAT с низким диаметром для оптимизированной и постоянной производительности RDMA.
+Виртуальные машины серии [H](../../sizes-hpc.md) и [N](../../sizes-gpu.md) [с поддержкой RDMA](../../sizes-hpc.md#rdma-capable-instances) обмениваются данными по сети InfiniBand с низкой задержкой и высокой пропускной способностью. Поддержка RDMA в таком взаимодействии очень важна для повышения масштабируемости и производительности рабочих нагрузок распределенного узла HPC и ИИ. Виртуальные машины серии H и N с InfiniBand соединены в неблокируемое утолщенное дерево с небольшим размером программной архитектуры для оптимизированной и согласованной производительности RDMA.
 
 Существует несколько способов включения InfiniBand на совместимых размерах виртуальных машин.
 
@@ -73,6 +67,6 @@ sudo systemctl restart waagent
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте больше об установке различных [поддерживаемых библиотек MPI](setup-mpi.md) и их оптимальной конфигурации на виртуальных машинах.
-- Ознакомьтесь с обзором [ХБ](hb-series-overview.md) и [описанием серии HC](hc-series-overview.md) , чтобы узнать о оптимальной настройке рабочих нагрузок для повышения производительности и масштабируемости.
-- Ознакомьтесь с последними объявлениями и некоторыми примерами HPC и результатами в [блогах сообщества разработчиков Azure](https://techcommunity.microsoft.com/t5/azure-compute/bg-p/AzureCompute).
-- Для более высокого уровня архитектуры выполнения рабочих нагрузок HPC см. статью [высокопроизводительные вычисления (HPC) в Azure](/azure/architecture/topics/high-performance-computing/).
+- Дополнительные сведения об оптимальной настройке рабочих нагрузок для производительности и масштабируемости см. в статье с обзором виртуальных машин серии [HB](hb-series-overview.md) и [HC](hc-series-overview.md).
+- Ознакомьтесь с последними объявлениями и некоторыми примерами HPC, а также результатами в [блогах технического сообщества службы вычислений](https://techcommunity.microsoft.com/t5/azure-compute/bg-p/AzureCompute).
+- Сведения о более высоком уровне архитектурного представления выполнения рабочих нагрузок HPC см. в статье [Высокопроизводительные вычисления (HPC) в Azure](/azure/architecture/topics/high-performance-computing/).

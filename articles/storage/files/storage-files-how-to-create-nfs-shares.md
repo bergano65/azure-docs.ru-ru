@@ -9,13 +9,13 @@ ms.author: rogarana
 ms.subservice: files
 ms.custom: references_regions
 ms.openlocfilehash: 2a848cb77336fc89172d55a6204d66b9e5be5976
-ms.sourcegitcommit: 7374b41bb1469f2e3ef119ffaf735f03f5fad484
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90705237"
 ---
-# <a name="how-to-create-an-nfs-share"></a>Создание общего ресурса NFS
+# <a name="how-to-create-an-nfs-share"></a>Создание общей папки NFS
 
 Файловые ресурсы Azure — это полностью управляемые общие файловые ресурсы, которые находятся в облаке. Доступ к ним можно получить с помощью протокола SMB или протокола сетевой файловой системы (NFS). В этой статье рассматривается создание общей папки, использующей протокол NFS. Дополнительные сведения об этих протоколах см. в статье [протоколы файловых ресурсов Azure](storage-files-compare-protocols.md).
 
@@ -80,7 +80,7 @@ Get-AzProviderFeature -ProviderNamespace Microsoft.Storage -FeatureName AllowNfs
 az feature show --name AllowNfsFileShares --namespace Microsoft.Storage --subscription <yourSubscriptionIDHere>
 ```
 
-## <a name="create-an-nfs-share"></a>Создание общего ресурса NFS
+## <a name="create-an-nfs-share"></a>Создание общей папки NFS
 
 # <a name="portal"></a>[Портал](#tab/azure-portal)
 
@@ -160,7 +160,7 @@ az storage share-rm create \
 ```
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы создали общий ресурс NFS, для его использования необходимо подключить его к клиенту Linux. Дополнительные сведения см. [в разделе Подключение общего ресурса NFS](storage-files-how-to-mount-nfs-shares.md).
 

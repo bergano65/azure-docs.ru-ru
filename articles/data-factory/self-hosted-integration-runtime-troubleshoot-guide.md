@@ -8,10 +8,10 @@ ms.topic: troubleshooting
 ms.date: 09/14/2020
 ms.author: abnarain
 ms.openlocfilehash: 1a68263598cb2cba8cc0853f5dd1be7c62dc062e
-ms.sourcegitcommit: 1fe5127fb5c3f43761f479078251242ae5688386
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90069481"
 ---
 # <a name="troubleshoot-self-hosted-integration-runtime"></a>Устранение неполадок с локальной средой выполнения интеграции
@@ -32,7 +32,7 @@ ms.locfileid: "90069481"
 
 1. Вы увидите связанные журналы для запуска невыполненного действия. Нажмите кнопку **отправить журналы** , чтобы получить дополнительную помощь.
 
-    ![Отправить журналы](media/self-hosted-integration-runtime-troubleshoot-guide/send-logs.png)
+    ![Отправка журналов](media/self-hosted-integration-runtime-troubleshoot-guide/send-logs.png)
 
 1. Можно выбрать журналы, которые вы хотите отправить. Для *автономных IR*-файлов можно передать журналы, связанные с неудачными действиями, или все журналы на собственном узле IR. Для *общих IR*-файлов можно отправлять только журналы, связанные с неудачными действиями.
 
@@ -636,7 +636,7 @@ ms.locfileid: "90069481"
 *  [Блог о Фабрике данных](https://azure.microsoft.com/blog/tag/azure-data-factory/)
 *  [Запросы на добавление функции в Фабрику данных](https://feedback.azure.com/forums/270578-data-factory)
 *  [Видео по Azure](https://azure.microsoft.com/resources/videos/index/?sort=newest&services=data-factory)
-*  [Раздел вопросов и ответов на сайте Майкрософт](https://docs.microsoft.com/answers/topics/azure-data-factory.html)
+*  [Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)](https://docs.microsoft.com/answers/topics/azure-data-factory.html)
 *  [Форум о переполнении стека для фабрики данных](https://stackoverflow.com/questions/tagged/azure-data-factory)
 *  [Сведения о Фабрике данных в Twitter](https://twitter.com/hashtag/DataFactory)
 *  [Пошаговое руководств по производительности потоков данных сопоставления](concepts-data-flow-performance.md)

@@ -2,20 +2,20 @@
 title: Синхронизация с заданной областью с помощью PowerShell для доменных служб Azure AD | Документация Майкрософт
 description: Узнайте, как использовать Azure AD PowerShell для настройки синхронизации с заданной областью из Azure AD в управляемый домен доменных служб Azure Active Directory.
 services: active-directory-ds
-author: iainfoulds
+author: MicrosoftGuyJFlo
 manager: daveba
 ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: how-to
 ms.date: 07/24/2020
-ms.author: iainfou
-ms.openlocfilehash: 197ae37b0c63b19ebe4dcdf2732169be0f357a07
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.author: joflore
+ms.openlocfilehash: dc6ebb88440ecdccc3ea78d85f0b6186100da01a
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87294484"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91967889"
 ---
 # <a name="configure-scoped-synchronization-from-azure-ad-to-azure-active-directory-domain-services-using-azure-ad-powershell"></a>Настройка синхронизации с заданной областью из Azure AD в Azure Active Directory доменных служб с помощью Azure AD PowerShell
 

@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 11/29/2019
 ms.openlocfilehash: 278fbdf7010fe7b14488bb021ab8a366393ad512
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86087368"
 ---
 # <a name="use-mirrormaker-to-replicate-apache-kafka-topics-with-kafka-on-hdinsight"></a>Репликация разделов Apache Kafka с помощью Kafka в HDInsight и MirrorMaker
@@ -92,7 +92,7 @@ ms.locfileid: "86087368"
 
 1. Перейдите на панель мониторинга Ambari для основного кластера: `https://PRIMARYCLUSTERNAME.azurehdinsight.net` .
 1. Выберите **службы**  >  **Kafka**. Клиселекткк на вкладке **конфигурации** .
-1. Добавьте следующие строки конфигурации в нижнюю часть **шаблона Kafka-env** . Нажмите кнопку **Сохранить**.
+1. Добавьте следующие строки конфигурации в нижнюю часть **шаблона Kafka-env** . Щелкните **Сохранить**.
 
     ```
     # Configure Kafka to advertise IP addresses instead of FQDN
@@ -112,7 +112,7 @@ ms.locfileid: "86087368"
 ### <a name="configure-kafka-to-listen-on-all-network-interfaces"></a>Настройте Kafka для прослушивания всех сетевых интерфейсов.
     
 1. Оставайтесь на вкладке **конфигурации** в разделе **службы**  >  **Kafka**. В разделе **брокера Kafka** задайте для свойства **Listeners** значение `PLAINTEXT://0.0.0.0:9092` .
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 1. Выберите **перезапустить**и **Подтвердите перезапустить все**.
 
 ### <a name="record-broker-ip-addresses-and-zookeeper-addresses-for-primary-cluster"></a>IP-адреса брокера записи и адреса Zookeeper для основного кластера.
@@ -268,7 +268,7 @@ ms.locfileid: "86087368"
 
     В этом примере используются следующие параметры.
 
-    |Параметр |Описание: |
+    |Параметр |Описание |
     |---|---|
     |--consumer.config|указывает файл, который содержит свойства получателя. Эти свойства используются для создания объекта-получателя, считывающего данные из *основного* кластера Kafka.|
     |--producer.config|указывает файл, который содержит свойства производителя. Эти свойства используются для создания производителя, записывающего данные в *дополнительный* кластер Kafka.|
@@ -300,7 +300,7 @@ ms.locfileid: "86087368"
 
 Действия, описанные в этом документе, создали кластеры в разных группах ресурсов Azure. Чтобы удалить все созданные ресурсы, можно удалить две созданные группы ресурсов: **Kafka-PRIMARY-RG** и **Kafka-secondary_rg**. При удалении групп ресурсов удаляются все ресурсы, созданные в следующем документе, включая кластеры, виртуальные сети и учетные записи хранения.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого документа вы узнали, как создать реплику кластера [Apache Kafka](https://kafka.apache.org/) с помощью [MirrorMaker](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=27846330). Другие материалы, посвященные работе с Kafka, доступны по следующим ссылкам:
 

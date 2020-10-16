@@ -8,15 +8,15 @@ ms.date: 10/07/2019
 ms.author: brendm
 ms.custom: devx-track-java, devx-track-azurecli
 ms.openlocfilehash: 9d769cb6e2cc33df259da46a82ad27a8bfd9e74b
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90888522"
 ---
 # <a name="use-persistent-storage-in-azure-spring-cloud"></a>Использование постоянного хранилища в Azure Spring Cloud
 
-**Эта статья относится к:** ✔️ Java ✔️ C #
+**Эта статья применима к:** ✔️ Java ✔️ C#
 
 Azure Веснного облака предоставляет два типа хранилища для вашего приложения: постоянные и временные.
 
@@ -84,7 +84,7 @@ az extension add --name spring-cloud
     > [!WARNING]
     > Если отключить постоянное хранилище приложений, все это хранилище будет освобождено, а все сохраненные данные будут безвозвратно утеряны.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Сведения о [квотах приложений и служб](spring-cloud-quotas.md).
 * Узнайте, как [вручную масштабировать приложение](spring-cloud-tutorial-scale-manual.md).

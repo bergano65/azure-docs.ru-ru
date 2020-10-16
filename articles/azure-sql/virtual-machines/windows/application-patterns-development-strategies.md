@@ -14,10 +14,10 @@ ms.workload: iaas-sql-server
 ms.date: 05/31/2017
 ms.author: mathoma
 ms.openlocfilehash: 758607c37f271657c81d4699b0895f9e997450af
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91299057"
 ---
 # <a name="application-patterns-and-development-strategies-for-sql-server-on-azure-virtual-machines"></a>Шаблоны приложений и стратегии разработки для SQL Server на виртуальных машинах Azure
@@ -274,6 +274,6 @@ ms.locfileid: "91299057"
 
 Дополнительные сведения о том, как выбрать необходимый метод программирования, см. в статье [Сравнение службы приложений Azure, виртуальных машин, Service Fabric и облачных служб ](/azure/architecture/guide/technology-choices/compute-decision-tree).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о запуске SQL Server на виртуальных машинах Azure см. в статье [обзор SQL Server на виртуальных машинах Azure](sql-server-on-azure-vm-iaas-what-is-overview.md).
 

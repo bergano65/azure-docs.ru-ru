@@ -14,10 +14,10 @@ ms.author: curtand
 ms.reviewer: kexia
 metadata ms.custom: contperfq1
 ms.openlocfilehash: 3d95ad4aa100b0a185bde015dfe34d747fc77ec9
-ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89322608"
 ---
 # <a name="common-problems-with-two-factor-verification-and-your-work-or-school-account"></a>Общие проблемы с двухфакторной проверкой рабочей или учебной учетной записи
@@ -109,7 +109,7 @@ ms.locfileid: "89322608"
 
 ## <a name="im-having-problems-signing-in-on-my-mobile-device-while-traveling"></a>Во время поездок возникают проблемы с сигналом на мобильном устройстве
 
-В международных поездках проверка подлинности с использованием мобильного устройства, например с помощью текстовых сообщений, может быть затруднена. Кроме того, использование мобильного устройства может повлечь за собой расходы на роуминг. В этой ситуации рекомендуется использовать приложение Microsoft Authenticator с возможностью подключения к горячей точке Wi-Fi. Дополнительные сведения о настройке Microsoft Authenticator приложения на мобильном устройстве см. в статье [Загрузка и установка Microsoft Authenticator приложения](user-help-auth-app-download-install.md) .
+В международных поездках проверка подлинности с использованием мобильного устройства, например с помощью текстовых сообщений, может быть затруднена. Кроме того, использование мобильного устройства может повлечь за собой расходы на роуминг. В этой ситуации рекомендуется использовать приложение Microsoft Authenticator с возможностью подключения к Wi-Fi горячей точке. Дополнительные сведения о настройке Microsoft Authenticator приложения на мобильном устройстве см. в статье [Загрузка и установка Microsoft Authenticator приложения](user-help-auth-app-download-install.md) .
 
 ## <a name="i-cant-get-my-app-passwords-to-work"></a>Пароли из приложения не работают
 

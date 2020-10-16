@@ -9,10 +9,10 @@ ms.author: kecheung
 author: kcheeeung
 ms.date: 08/12/2020
 ms.openlocfilehash: d0a0df4791492c1c9f0d600630d723024c46c1b8
-ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88227401"
 ---
 # <a name="scale-hiveserver2-on-azure-hdinsight-clusters-for-high-availability"></a>Масштабирование HiveServer2 в кластерах Azure HDInsight для обеспечения высокой доступности
@@ -33,19 +33,23 @@ ms.locfileid: "88227401"
 
 1. Откройте Ambari в браузере и щелкните целевой узел.
 
-:::image type="content" source="media/hdinsight-apps-install-hiveserver2/hdinsight-install-hiveserver2-a.png" alt-text="Меню узлов Ambari.":::
+:::image type="content" source="media/hdinsight-apps-install-hiveserver2/hdinsight-install-hiveserver2-a.png" alt-text="Меню узлов Ambari.&quot;:::
 
-2. Нажмите кнопку "Добавить" и выберите HiveServer2
+2. Нажмите кнопку &quot;Добавить" и выберите HiveServer2
 
-:::image type="content" source="media/hdinsight-apps-install-hiveserver2/hdinsight-install-hiveserver2-b.png" alt-text="Добавьте HiveServer2 панель узла.":::
+:::image type="content" source="media/hdinsight-apps-install-hiveserver2/hdinsight-install-hiveserver2-b.png" alt-text="Меню узлов Ambari.&quot;:::
+
+2. Нажмите кнопку &quot;Добавить":::
 
 3. Подтвердите, и процесс будет выполнен. Повторите 1-3 для всех нужных узлов.
 
 4. После завершения установки перезапустите все службы с устаревшими конфигурациями и запустите HiveServer2.
 
-:::image type="content" source="media/hdinsight-apps-install-hiveserver2/hdinsight-install-hiveserver2-c.png" alt-text="Запустите панель HiveServer2.":::
+:::image type="content" source="media/hdinsight-apps-install-hiveserver2/hdinsight-install-hiveserver2-c.png" alt-text="Меню узлов Ambari.&quot;:::
 
-## <a name="next-steps"></a>Дальнейшие действия
+2. Нажмите кнопку &quot;Добавить":::
+
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье вы узнали, как установить HiveServer2 на кластер. Дополнительные сведения о граничных узлах и приложениях см. в следующих статьях:
 

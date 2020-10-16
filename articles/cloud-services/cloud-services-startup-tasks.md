@@ -7,12 +7,12 @@ ms.service: cloud-services
 ms.topic: article
 ms.date: 07/05/2017
 ms.author: tagore
-ms.openlocfilehash: fa48953e5e86ffa758fe556b7fb1072be9d74647
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f2417389de98f9998c189e7cbbbcdae77fbb8840
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75360316"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92075065"
 ---
 # <a name="how-to-configure-and-run-startup-tasks-for-a-cloud-service"></a>Как настроить и выполнить задачи запуска для облачной службы
 С помощью задач запуска вы можете выполнять различные операции перед запуском роли. Это может быть установка компонента, регистрация компонентов COM, установка разделов реестра или запуск длительного процесса.
@@ -148,19 +148,16 @@ EXIT /B 0
 </Startup>
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте, как выполнять некоторые [стандартные задачи запуска](cloud-services-startup-tasks-common.md) с помощью облачной службы.
 
 [Упакуйте](cloud-services-model-and-package.md) облачную службу.  
 
 [ServiceDefinition. csdef]: cloud-services-model-and-package.md#csdef
-[Задача]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Task
-[Запуск]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Startup
-[Среда выполнения]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Runtime
-[Среда]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Environment
-[Перемен]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Variable
-[RoleInstanceValue]: https://msdn.microsoft.com/library/azure/gg557552.aspx#RoleInstanceValue
-[RoleEnvironment]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.aspx
-
-
-
+[Задача]: /previous-versions/azure/reference/gg557552(v=azure.100)#Task
+[Запуск]: /previous-versions/azure/reference/gg557552(v=azure.100)#Startup
+[Параметры выполнения]: /previous-versions/azure/reference/gg557552(v=azure.100)#Runtime
+[Среда]: /previous-versions/azure/reference/gg557552(v=azure.100)#Environment
+[Переменная]: /previous-versions/azure/reference/gg557552(v=azure.100)#Variable
+[RoleInstanceValue]: /previous-versions/azure/reference/gg557552(v=azure.100)#RoleInstanceValue
+[RoleEnvironment]: /previous-versions/azure/reference/ee773173(v=azure.100)

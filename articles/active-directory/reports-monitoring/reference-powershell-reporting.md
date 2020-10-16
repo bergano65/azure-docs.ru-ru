@@ -19,10 +19,10 @@ ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.custom: devx-track-azurepowershell
 ms.openlocfilehash: 4353ed5413f76b13425a59d31bb6108542e3bd23
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89231135"
 ---
 # <a name="azure-ad-powershell-cmdlets-for-reporting"></a>Командлеты Azure AD PowerShell для создания отчетов
@@ -51,10 +51,10 @@ Install-module AzureADPreview
 
 | Сценарий                      | Команда PowerShell |
 | :--                           | :--                |
-| Отображаемое имя приложения      | Get-Азуреадаудитдиректорилогс — Filter "Инитиатедби/App/displayName EQ" облачная синхронизация Azure AD " |
-| Категория                      | Get-Азуреадаудитдиректорилогс — фильтр "Category EQ" Аппликатионманажемент "" |
-| Дата и время действия            | Get-Азуреадаудитдиректорилогс-Filter "Активитидатетиме gt 2019-04-18" |
-| Все вышеперечисленное              | Get-Азуреадаудитдиректорилогс-Filter "Инитиатедби/App/displayName EQ" облачная синхронизация Azure AD "и Категория EQ" Аппликатионманажемент "и Активитидатетиме gt 2019-04-18"|
+| Отображаемое имя приложения      | Get-AzureADAuditDirectoryLogs-Filter "Инитиатедби/App/displayName EQ" облачная синхронизация Azure AD "" |
+| Категория                      | Get-AzureADAuditDirectoryLogs-фильтровать "Category EQ" Аппликатионманажемент "" |
+| Дата и время действия            | Get-AzureADAuditDirectoryLogs-Filter "Активитидатетиме gt 2019-04-18" |
+| Все вышеперечисленное              | Get-AzureADAuditDirectoryLogs-Filter "Инитиатедби/App/displayName EQ" облачная синхронизация Azure AD "и Категория EQ" Аппликатионманажемент "и Активитидатетиме gt 2019-04-18"|
 
 
 На следующем рисунке показан пример для этой команды. 
@@ -72,11 +72,11 @@ Install-module AzureADPreview
 
 | Сценарий                      | Команда PowerShell |
 | :--                           | :--                |
-| Отображаемое имя пользователя             | Get-Азуреадаудитсигнинлогс-Filter "userDisplayName EQ" Тимоти Перкинс "" |
-| Создать дату и время              | Get-Азуреадаудитсигнинлогс-Filter "Креатеддатетиме gt 2019-04-18T17:30:00.0 Z" (все, начиная с 5:30 PM на 4/18) |
-| Состояние                        | Get-Азуреадаудитсигнинлогс — Filter "Status/errorCode EQ 50105" |
-| Отображаемое имя приложения      | Get-Азуреадаудитсигнинлогс-Filter «appDisplayName EQ ' Сторефронтстудио [WSFED Enabled] '» |
-| Все вышеперечисленное              | Get-Азуреадаудитсигнинлогс-Filter "userDisplayName EQ" Тимоти Перкинс "and Status/errorCode Ne 0 и appDisplayName EQ" Сторефронтстудио [WSFED Enabled] "" |
+| Отображаемое имя пользователя             | Get-AzureADAuditSignInLogs-Filter "userDisplayName EQ" Тимоти Перкинс "" |
+| Создать дату и время              | Get-AzureADAuditSignInLogs-Filter "Креатеддатетиме gt 2019-04-18T17:30:00.0 Z" (все, начиная с 5:30 PM на 4/18) |
+| Состояние                        | Get-AzureADAuditSignInLogs-Filter "Status/errorCode EQ 50105" |
+| Отображаемое имя приложения      | Get-AzureADAuditSignInLogs-Filter "appDisplayName EQ" Сторефронтстудио [WSFED Enabled] " |
+| Все вышеперечисленное              | Get-AzureADAuditSignInLogs-Filter "userDisplayName EQ" Тимоти Перкинс "and Status/errorCode Ne 0 и appDisplayName EQ" Сторефронтстудио [WSFED Enabled] "" |
 
 
 На следующем рисунке показан пример для этой команды. 
@@ -85,7 +85,7 @@ Install-module AzureADPreview
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Что такое отчеты в Azure Active Directory](overview-reports.md).
 - [Отчет о журналах аудита](concept-audit-logs.md). 

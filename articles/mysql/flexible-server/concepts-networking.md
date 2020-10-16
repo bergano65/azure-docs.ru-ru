@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 9/23/2020
 ms.openlocfilehash: 48265856e5e745e05f6625766f9cd0c9b15c90a5
-ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91708668"
 ---
 # <a name="connectivity-and-networking-concepts-for-azure-database-for-mysql---flexible-server-preview"></a>Основные понятия подключения и сети для базы данных Azure для MySQL — гибкий сервер (Предварительная версия)
@@ -122,7 +122,7 @@ ms.locfileid: "91708668"
 База данных Azure для гибкого сервера MySQL поддерживает только зашифрованные подключения с использованием протокола TLS 1,2. Все входящие подключения с TLS 1,0 и TLS 1,1 будут отклонены. Вы не можете отключить или изменить версию TLS для подключения к гибкому серверу базы данных Azure для MySQL.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Узнайте, как включить закрытый доступ (интеграция с виртуальной сетью) с помощью [портала Azure](how-to-manage-virtual-network-portal.md) или [Azure CLI](how-to-manage-virtual-network-cli.md).
 * Узнайте, как включить открытый доступ (разрешенные IP-адреса) с помощью [портала Azure](how-to-manage-firewall-portal.md) или [Azure CLI](how-to-manage-firewall-cli.md).
 * Узнайте, как [использовать TLS](how-to-connect-tls-ssl.md)

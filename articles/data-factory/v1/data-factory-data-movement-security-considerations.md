@@ -12,10 +12,10 @@ ms.date: 01/10/2018
 ms.author: abnarain
 robots: noindex
 ms.openlocfilehash: 9ae4970383802adad755fff4a6ce382db6ce32fe
-ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91619922"
 ---
 # <a name="azure-data-factory---security-considerations-for-data-movement"></a>Вопросы безопасности при перемещении данных в фабрике данных Azure
@@ -60,7 +60,7 @@ ms.locfileid: "91619922"
 ### <a name="data-encryption-at-rest"></a>Шифрование неактивных данных
 Некоторые хранилища данных поддерживают шифрование неактивных данных. Мы советуем включить механизм шифрования данных для этих хранилищ данных. 
 
-#### <a name="azure-synapse-analytics"></a>Azure Synapse Analytics
+#### <a name="azure-synapse-analytics"></a>Azure Synapse Analytics
 Прозрачное шифрование данных (TDE) в Azure синапсе Analytics помогает защититься от угроз вредоносных действий, выполняя шифрование и расшифровку неактивных данных в режиме реального времени. Этот процесс является прозрачным для клиента. Дополнительные сведения см. [в статье Защита базы данных в синапсе Analytics](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-manage-security.md).
 
 #### <a name="azure-sql-database"></a>База данных SQL Azure
@@ -190,5 +190,5 @@ SalesForce поддерживает шифрование Shield Platform Encrypt
 **Вопрос**. Каковы требования сертификата к шлюзу?
 **Ответ**. Текущий шлюз требует сертификат, который будет использоваться диспетчером учетных данных для безопасной настройки учетных данных хранилища данных. Этот сертификат является самозаверяющим, созданным и настроенным во время установки шлюза. Вместо этого можно использовать собственный сертификат TLS/SSL. Дополнительные сведения см. в разделе о [диспетчере учетных данных ClickOnce-приложения](#click-once-credentials-manager-app). 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о производительности действия копирования см. в [руководстве о производительности действия копирования и его настройке](data-factory-copy-activity-performance.md).

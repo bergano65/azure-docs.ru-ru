@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
 ms.openlocfilehash: 4a0e8c6eb87b053c0e3ee524c60435dc45d81ff3
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87902264"
 ---
 # <a name="how-to-authorize-developer-accounts-using-oauth-20-in-azure-api-management"></a>Авторизация учетных записей разработчиков с помощью протокола OAuth 2.0 в службе управления Azure API
@@ -78,8 +78,8 @@ ms.locfileid: "87902264"
 
     На новом портале разработчика суффикс URI имеет вид:
 
-    - `/signin-oauth/code/callback/{authServerName}`для потока предоставления кода авторизации
-    - `/signin-oauth/implicit/callback`для неявного потока предоставления
+    - `/signin-oauth/code/callback/{authServerName}` для потока предоставления кода авторизации
+    - `/signin-oauth/implicit/callback` для неявного потока предоставления
 
     ![Новый сервер OAuth 2.0](./media/api-management-howto-oauth2/oauth-04.png)
 
@@ -123,7 +123,7 @@ ms.locfileid: "87902264"
 > [!NOTE]
 > Если всплывающие окна отключены, то в браузере появится запрос на их включение. Включив всплывающие окна, еще раз выберите пункт **Authorization code** , чтобы открыть форму входа.
 
-![Вход][api-management-oauth2-signin]
+![Войти][api-management-oauth2-signin]
 
 После входа поле **Request headers** (Заголовки запроса) заполняется заголовком `Authorization : Bearer`, используемым для авторизации запроса.
 
@@ -131,7 +131,7 @@ ms.locfileid: "87902264"
 
 Теперь вы можете настроить остальные параметры и отправить запрос.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Для получения дополнительных сведений об использовании OAuth 2.0 и службы управления API см. следующий видеоролик и эту [статью](api-management-howto-protect-backend-with-aad.md).
 

@@ -4,10 +4,10 @@ description: Описывает, как Azure Resource Manager автомати�
 ms.topic: conceptual
 ms.date: 10/01/2020
 ms.openlocfilehash: 13c65f3311e308708034bb5befb7e3c3ee158d38
-ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91652488"
 ---
 # <a name="automatic-deletions-from-deployment-history"></a>Автоматическое удаление из журнала развертывания
@@ -118,6 +118,6 @@ POST https://management.azure.com/subscriptions/{subscriptionId}/providers/Micro
 
 ---
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения о просмотре журнала развертывания см. в статье [Просмотр журнала развертывания с помощью Azure Resource Manager](deployment-history.md).

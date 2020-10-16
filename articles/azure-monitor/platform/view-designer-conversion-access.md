@@ -7,10 +7,10 @@ ms.subservice: ''
 ms.topic: conceptual
 ms.date: 02/07/2020
 ms.openlocfilehash: 7614dd1d60bad5c124269ae2af02d30a5aacfe3e
-ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90564038"
 ---
 # <a name="view-designer-to-workbooks-conversion-summary-and-access"></a>Конструктор представлений — сводка по преобразованию книг и доступ
@@ -45,6 +45,6 @@ ms.locfileid: "90564038"
 
 ![Доступ на основе подписки](media/view-designer-conversion-access/subscription-access.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Стандартные задачи](view-designer-conversion-tasks.md)

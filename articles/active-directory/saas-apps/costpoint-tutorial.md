@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 08/06/2019
 ms.author: jeedes
-ms.openlocfilehash: 1db1589561968cf1e2974edcee2bfe1cccb4a327
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 7b32c5576ef38f07d28777e1a72aafa935042930
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88549256"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91775734"
 ---
 # <a name="tutorial-integrate-costpoint-with-azure-active-directory"></a>Руководство по Интеграция Costpoint с Azure Active Directory
 
@@ -43,7 +43,7 @@ ms.locfileid: "88549256"
 
 Конфигурация единого входа SAML для Costpoint описана в руководстве **DeltekCostpoint711Security.pdf**. Скачайте это пошаговое руководство с сайта поддержки Deltek Costpoint и просмотрите раздел **SAML Single Sign-on Setup** (Настройка единого входа SAML)  > **Configure SAML Single Sign-on between Costpoint and Microsoft Azure** (Настройка единого входа SAML между Costpoint и Microsoft Azure). Согласно инструкциям создайте **файл XML метаданных федерации поставщика услуг с Costpoint**. 
 
-![Служебная программа для настройки Costpoint](./media/costpoint-tutorial/config-utility.png)
+![Снимок экрана, на котором показан раздел "Product Configuration Utility" (Служебная программа настройки продукта) с выбранной вкладкой "Weblogic - Security" (Weblogic — безопасность)](./media/costpoint-tutorial/config-utility.png)
 
 ## <a name="add-costpoint-from-the-gallery"></a>Добавление Costpoint из коллекции
 
@@ -166,7 +166,7 @@ ms.locfileid: "88549256"
 
 ### <a name="create-a-costpoint-test-user"></a>Создание тестового пользователя Costpoint
 
-В этом разделе описано, как создать пользователя в приложении Costpoint. Предположим, что **идентификатор пользователя** имеет значение **B.SIMON**, а имя пользователя — B.Simon Обратитесь к [группе поддержки клиентов Costpoint](https://www.deltek.com/about/contact-us), чтобы добавить пользователей на платформу Costpoint. Перед использованием единого входа необходимо создать и активировать пользователя.
+В этом разделе описано, как создать пользователя в приложении Costpoint. Предположим, что идентификатор пользователя имеет значение **B.SIMON**, а имя пользователя — **B.Simon**. Обратитесь к [группе поддержки клиентов Costpoint](https://www.deltek.com/about/contact-us), чтобы добавить пользователей на платформу Costpoint. Перед использованием единого входа необходимо создать и активировать пользователя.
 
 После создания пользователя **метод проверки подлинности** для пользователя должен иметь значение **Active Directory**, должен быть установлен флажок **Единый вход SAML**, а имя пользователя из Azure Active Directory должно иметь значение **Идентификатор Active Directory или сертификата** (как показано на следующем снимке экрана).
 

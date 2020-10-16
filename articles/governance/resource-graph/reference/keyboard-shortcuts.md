@@ -5,10 +5,10 @@ ms.date: 08/25/2020
 ms.topic: reference
 ms.custom: accessibility
 ms.openlocfilehash: 02471a6efc4ac4d002ca641b792c1c721ffeb3f7
-ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89146442"
 ---
 # <a name="keyboard-shortcuts-for-azure-resource-graph-explorer"></a>Сочетания клавиш для обозревателя графа ресурсов Azure
@@ -19,13 +19,13 @@ ms.locfileid: "89146442"
 
 | Действие | Ярлык Windows | Ярлык Mac |
 |---|---|---|
-|Добавление и удаление комментариев |<kbd>КОМБИНАЦИ</kbd>+<kbd>/</kbd> | <kbd>Процессор</kbd>+<kbd>/</kbd> |
+|Добавление и удаление комментариев |<kbd>CTRL</kbd>+<kbd>/</kbd> | <kbd>Процессор</kbd>+<kbd>/</kbd> |
 |Уменьшить отступ |<kbd>CTRL</kbd> + <kbd>[</kbd> |<kbd>Команда cmd</kbd> + <kbd>[</kbd> |
-|Увеличить отступ |<kbd>CTRL</kbd> + <kbd>]</kbd> |<kbd>Команда cmd</kbd> + <kbd>]</kbd> |
+|Увеличить отступ |<kbd>CTRL</kbd>+<kbd>]</kbd> |<kbd>Команда cmd</kbd> + <kbd>]</kbd> |
 |Переместить строку вниз |<kbd>ALT</kbd> + <kbd>↓</kbd> |<kbd>Параметр</kbd> + <kbd>↓</kbd> |
 |Переместить строку вверх |<kbd>ALT</kbd> + <kbd>↑</kbd> |<kbd>Параметр</kbd> + <kbd>↑</kbd> |
-|Заменить |<kbd>CTRL</kbd> + <kbd>F</kbd> |<kbd>Команда cmd</kbd> + <kbd>ALT</kbd> + <kbd>F</kbd> |
-|Выбрать все |<kbd>CTRL</kbd> + <kbd>Объект</kbd> |<kbd>Команда cmd</kbd> + <kbd>Объект</kbd> |
+|Заменить |<kbd>CTRL</kbd>+<kbd>F</kbd> |<kbd>Команда cmd</kbd> + <kbd>ALT</kbd> + <kbd>F</kbd> |
+|Выбрать все |<kbd>CTRL</kbd>+<kbd>A</kbd> |<kbd>Команда cmd</kbd> + <kbd>Объект</kbd> |
 |Выбрать вниз |<kbd>SHIFT</kbd> + <kbd>↓</kbd> |<kbd>SHIFT</kbd> + <kbd>↓</kbd> |
 |Выбрать право |<kbd>SHIFT</kbd> + <kbd>→</kbd> |<kbd>SHIFT</kbd> + <kbd>→</kbd> |
 |Выбрать слева |<kbd>SHIFT</kbd> + <kbd>←</kbd> |<kbd>SHIFT</kbd> + <kbd>←</kbd> |
@@ -43,8 +43,8 @@ ms.locfileid: "89146442"
 |Отменить выполняющийся запрос |<kbd>ESC</kbd> | <kbd>ESC</kbd> |
 |Открыть вкладку нового запроса |<kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>N</kbd> | <kbd>Команда cmd</kbd> + <kbd>Параметр</kbd> + <kbd>N</kbd> |
 |Закрыть вкладку активных запросов |<kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>Н</kbd> | <kbd>Команда cmd</kbd> + <kbd>Параметр</kbd> + <kbd>Н</kbd> |
-|Сохранить текущий запрос |<kbd>CTRL</kbd> + <kbd>С</kbd> | <kbd>Команда cmd</kbd> + <kbd>С</kbd> |
-|Открытие сохраненного запроса |<kbd>CTRL</kbd> + <kbd>O</kbd> | <kbd>Команда cmd</kbd> + <kbd>O</kbd> |
+|Сохранить текущий запрос |<kbd>CTRL</kbd>+<kbd>S</kbd> | <kbd>Команда cmd</kbd> + <kbd>С</kbd> |
+|Открытие сохраненного запроса |<kbd>CTRL</kbd>+<kbd>O</kbd> | <kbd>Команда cmd</kbd> + <kbd>O</kbd> |
 |Вкладка "переключиться на запрос" (1-9) |<kbd>CTRL</kbd> + <kbd>(1-9)</kbd> | <kbd>Команда cmd</kbd> + <kbd>(1-9)</kbd> |
 |Перейти к следующей вкладке запроса |<kbd>CTRL</kbd> + <kbd>↓</kbd> | <kbd>Команда cmd</kbd> + <kbd>↓</kbd> |
 |Перейти к предыдущей вкладке запроса |<kbd>CTRL</kbd> + <kbd>↑</kbd> | <kbd>Команда cmd</kbd> + <kbd>↑</kbd> |

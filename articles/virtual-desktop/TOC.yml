@@ -36,6 +36,10 @@
           href: connect-ios.md
         - name: Подключение к клиенту Microsoft Store
           href: connect-microsoft-store.md
+        - name: Подключение к устройствам Linux
+          href: linux-overview.md
+    - name: Настройка перенаправления устройств
+      href: configure-device-redirections.md
     - name: Настройка модуля PowerShell
       href: powershell-module.md
     - name: Создание пула узлов и узлов сеансов
@@ -102,6 +106,8 @@
       href: azure-advisor.md
     - name: Разрешение рекомендаций
       href: azure-advisor-recommendations.md
+    - name: Подготовка плана аварийного восстановления
+      href: disaster-recovery.md
 - name: Основные понятия
   items:
     - name: Аутентификация

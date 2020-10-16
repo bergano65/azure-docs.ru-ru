@@ -17,10 +17,10 @@ ms.date: 04/21/2020
 ms.author: juergent
 ms.custom: ''
 ms.openlocfilehash: f78d5f839c5dd7816ae28eeed175503427abb43c
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87035848"
 ---
 # <a name="sap-certifications-and-configurations-running-on-microsoft-azure"></a>Сертификаты и конфигурации SAP на платформе Microsoft Azure
@@ -54,7 +54,7 @@ ms.locfileid: "87035848"
 | --- | --- | --- | --- |
 | ПО SAP Business Suite | Windows, SUSE Linux Enterprise, Red Hat Enterprise Linux, Oracle Linux |SQL Server, Oracle (только Windows и Oracle Linux), DB2, SAP ASE |От A5 до A11, D11 до D14, DS11 в DS14, DS11_v2ся к DS15_v2, GS1 до GS5, D2s_v3 D64s_v3, D2as_v4 D64as_v4, M64s, M64ms, M128s, M128ms, M64ls, M32ls, M32ts, E2s_v3, E64s_v3, E2as_v4, E64as_v4 |
 | SAP Business All-in-One | Windows, SUSE Linux Enterprise, Red Hat Enterprise Linux, Oracle Linux |SQL Server, Oracle (только Windows и Oracle Linux), DB2, SAP ASE |От A5 до A11, D11 до D14, DS11 в DS14, DS11_v2ся к DS15_v2, GS1 до GS5, D2s_v3 D64s_v3, D2as_v4 D64as_v4, M64s, M64ms, M128s, M128ms, M64ls, M32ls, M32ts, E2s_v3, E64s_v3, E2as_v4, E64as_v4 |
-| Бизнес-аналитика SAP BusinessObjects | Windows |Н/Д |От A5 до A11, D11 до D14, DS11 в DS14, DS11_v2ся к DS15_v2, GS1 до GS5, D2s_v3 D64s_v3, D2as_v4 D64as_v4, M64s, M64ms, M128s, M128ms, M64ls, M32ls, M32ts, E2s_v3, E64s_v3, E2as_v4, E64as_v4 |
+| Бизнес-аналитика SAP BusinessObjects | Windows |Недоступно |От A5 до A11, D11 до D14, DS11 в DS14, DS11_v2ся к DS15_v2, GS1 до GS5, D2s_v3 D64s_v3, D2as_v4 D64as_v4, M64s, M64ms, M128s, M128ms, M64ls, M32ls, M32ts, E2s_v3, E64s_v3, E2as_v4, E64as_v4 |
 | SAP NetWeaver | Windows, SUSE Linux Enterprise, Red Hat Enterprise Linux, Oracle Linux |SQL Server, Oracle (только Windows и Oracle Linux), DB2, SAP ASE |От A5 до A11, D11 до D14, DS11 в DS14, DS11_v2ся к DS15_v2, GS1 до GS5, D2s_v3 D64s_v3, D2as_v4 D64as_v4, M64s, M64ms, M128s, M128ms, M64ls, M32ls, M32ts, E2s_v3, E64s_v3, E2as_v4, E64as_v4 |
 
 ## <a name="other-sap-workload-supported-on-azure"></a>Другие рабочие нагрузки SAP, поддерживаемые в Azure

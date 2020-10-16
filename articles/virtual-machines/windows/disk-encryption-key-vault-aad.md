@@ -9,10 +9,10 @@ ms.author: mbaldwin
 ms.date: 03/15/2019
 ms.custom: seodec18
 ms.openlocfilehash: f983c0f5fc951376246fdbed9869211c8b495402
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90977957"
 ---
 # <a name="creating-and-configuring-a-key-vault-for-azure-disk-encryption-with-azure-ad-previous-release"></a>Создание и Настройка хранилища ключей для шифрования дисков Azure с помощью Azure AD (предыдущий выпуск)
@@ -23,7 +23,7 @@ ms.locfileid: "90977957"
 
 Создание и Настройка хранилища ключей для использования с шифрованием дисков Azure в Azure AD (предыдущий выпуск) состоит из трех этапов:
 
-1. Создание хранилища ключей. 
+1. Создать хранилище ключей. 
 2. Настройте приложение Azure AD и субъект-службу.
 3. Настройте политику доступа к хранилищу ключей для приложения Azure AD.
 4. Установите политики расширенного доступа к хранилищу ключей.
@@ -36,7 +36,7 @@ ms.locfileid: "90977957"
 > Описанные в этой статье процессы автоматизируются с помощью скриптов подготовки необходимых компонентов для службы "Шифрование дисков Azure". Скрипты доступны для [интерфейса командной строки](https://github.com/ejarvi/ade-cli-getting-started) и [PowerShell](https://github.com/Azure/azure-powershell/tree/master/src/Compute/Compute/Extension/AzureDiskEncryption/Scripts).
 
 
-## <a name="create-a-key-vault"></a>Создание хранилища ключей 
+## <a name="create-a-key-vault"></a>Создайте хранилище ключей. 
 Шифрование дисков Azure интегрировано с [Azure Key Vault](https://azure.microsoft.com/documentation/services/key-vault/), что позволяет управлять секретами и ключами шифрования дисков в подписке Key Vault и контролировать их. Вы можете создать хранилище ключей или использовать существующее для шифрования дисков Azure. Дополнительные сведения о хранилищах ключей см. в статье [Приступая к работе с Azure Key Vault](../../key-vault/general/overview.md) и [Защита хранилища ключей](../../key-vault/general/secure-your-key-vault.md). Для создания хранилища ключей можно использовать шаблон Resource Manager, Azure PowerShell или Azure CLI. 
 
 
@@ -129,7 +129,7 @@ ms.locfileid: "90977957"
 3. [Получение идентификатора приложения и ключ проверки подлинности](../../active-directory/develop/howto-create-service-principal-portal.md#get-tenant-and-app-id-values-for-signing-in). 
      - Ключ проверки подлинности является секретом клиента и используется в качестве AadClientSecret для Set-Азвмдискенкриптионекстенсион. 
         - Ключ проверки подлинности используется приложением в качестве учетной записи для входа в Azure AD. На портале Azure эти секреты называются ключами, но они не имеют никакого отношения к хранилищам ключей. Защитите этот секрет должным образом. 
-     - Идентификатор приложения будет использоваться позже в качестве Аадклиентид для Set-Азвмдискенкриптионекстенсион и в качестве идентификатора свойства для Set-Азкэйваултакцессполици. 
+     - Идентификатор приложения будет использоваться позже в качестве Аадклиентид для Set-AzVMDiskEncryptionExtension и в качестве идентификатора свойства для Set-Азкэйваултакцессполици. 
 
 ## <a name="set-the-key-vault-access-policy-for-the-azure-ad-app"></a>настроить политику доступа к хранилищу ключей для приложения Azure AD;
 Для записи секретов шифрования в указанное хранилище ключей, шифрованию дисков Azure требуется идентификатор клиента и секрет клиента приложения Azure Active Directory, которое имеет соответствующие разрешения. 
@@ -220,7 +220,7 @@ az keyvault set-policy --name "MySecureVault" --spn "<spn created with CLI/the A
 1. Выберите хранилище ключей, перейдите на вкладку **Политики доступа** и выберите **Щелкните, чтобы показать политики расширенного доступа**.
 2. Установите флажок **Включить доступ к шифрованию дисков Azure для шифрования томов**.
 3. Выберите **Включить доступ к виртуальным машинам Azure для развертывания** или **Включить доступ к Azure Resource Manager для развертывания шаблонов**, если это необходимо. 
-4. Щелкните **Сохранить**.
+4. Выберите команду **Сохранить**.
 
 ![Установка политики расширенного доступа к хранилищу Azure Key Vault](../media/disk-encryption/keyvault-portal-fig4.png)
 
@@ -455,6 +455,6 @@ az keyvault set-policy --name "MySecureVault" --spn "<spn created with CLI/the A
 ```
 
  
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Включение шифрования дисков Azure с помощью Azure AD на виртуальных машинах Windows (предыдущий выпуск)](disk-encryption-windows-aad.md)

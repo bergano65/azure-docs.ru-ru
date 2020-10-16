@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: frasim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4298518dae9afdf197321073846fa1ab9262ec0a
-ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
+ms.openlocfilehash: 84d0731a67ac47b8b0fc73cb485857458b3febbb
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90601390"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92093316"
 ---
 # <a name="understand-secure-azure-managed-workstations"></a>Общие сведения о защищенных рабочих станциях под управлением Azure
 
@@ -64,7 +64,7 @@ ms.locfileid: "90601390"
 * Высокочувствительная Рабочая станция, например терминал платежей SWIFT
 * Коммерческие секреты, обрабатывающие рабочие станции
 
-Чтобы снизить риск, следует реализовать повышенные элементы управления безопасностью для привилегированных рабочих станций, которые используют эти учетные записи. Дополнительные сведения см. в разделе [руководство по развертыванию функций Azure Active Directory](../fundamentals/active-directory-deployment-checklist-p2.md), [стратегия Microsoft 365](https://aka.ms/o365secroadmap)и [Безопасность стратегии привилегированного доступа](https://aka.ms/sparoadmap).
+Чтобы снизить риск, следует реализовать повышенные элементы управления безопасностью для привилегированных рабочих станций, которые используют эти учетные записи. Дополнительные сведения см. в разделе [руководство по развертыванию функций Azure Active Directory](../fundamentals/active-directory-deployment-checklist-p2.md), [стратегия Microsoft 365](/microsoft-365/security/office-365-security/security-roadmap)и [Безопасность стратегии привилегированного доступа](/windows-server/identity/securing-privileged-access/securing-privileged-access).
 
 ## <a name="why-use-dedicated-workstations"></a>Зачем использовать выделенные рабочие станции?
 

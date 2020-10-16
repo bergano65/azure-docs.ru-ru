@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/19/2020
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: d6b737985bc19aa09b26bb0d4a65696a364a903a
-ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
+ms.openlocfilehash: 45ea75b65e75f9bac4d6d4839ffe7fa095e3b25d
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83697592"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92018782"
 ---
 # <a name="deploy-a-model-from-visual-studio"></a>Развертывание модели из Visual Studio
 
@@ -23,7 +23,7 @@ ms.locfileid: "83697592"
 Для начала работы необходимы перечисленные ниже компоненты и данные.
 
 * **Сервер Analysis Services** в Azure. См. дополнительные сведения о [создании сервера Azure Analysis Services](analysis-services-create-server.md).
-* **Проект табличной модели** в Visual Studio или существующая табличная модель на уровне совместимости 1200 и выше. Не создавали такую модель ранее? Обратитесь к [руководству по табличному моделированию продаж в Интернете Adventure Works](https://docs.microsoft.com/analysis-services/tutorial-tabular-1400/as-adventure-works-tutorial).
+* **Проект табличной модели** в Visual Studio или существующая табличная модель на уровне совместимости 1200 и выше. Не создавали такую модель ранее? Обратитесь к [руководству по табличному моделированию продаж в Интернете Adventure Works](/analysis-services/tutorial-tabular-1400/as-adventure-works-tutorial).
 * **Локальный шлюз**. Если один или несколько источников данных находятся в локальной сети вашей организации, необходимо установить [локальный шлюз данных](analysis-services-gateway.md). Этот шлюз необходим для подключения сервера в облаке к локальным источникам данных для обработки и обновления данных в модели.
 
 > [!TIP]
@@ -63,7 +63,4 @@ ms.locfileid: "83697592"
 
 После развертывания табличной модели на сервере к нему можно подключиться. К серверу можно [подключиться к с помощью SQL Server Management Studio (SSMS)](analysis-services-manage.md). Также вы можете [подключиться к серверу с помощью клиентского средства](analysis-services-connect.md), например Power BI, Power BI Desktop или Excel, и начать создавать отчеты.   
 
-Подробнее о дополнительных методах развертывания см. в разделе [Развертывание решений табличной модели](https://docs.microsoft.com/analysis-services/deployment/tabular-model-solution-deployment?view=azure-analysis-services-current).
-
-
-
+Подробнее о дополнительных методах развертывания см. в разделе [Развертывание решений табличной модели](/analysis-services/deployment/tabular-model-solution-deployment?view=azure-analysis-services-current).

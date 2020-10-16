@@ -13,10 +13,10 @@ ms.date: 05/15/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: 1aa8708701af37834ae3b6cdc42de9c691ccacec
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86084296"
 ---
 # <a name="copy-data-to-or-from-oracle-on-premises-by-using-azure-data-factory"></a>Копирование данных в локальную базу данных Oracle и обратно с помощью Фабрики данных Azure
@@ -41,7 +41,7 @@ ms.locfileid: "86084296"
 
 [!INCLUDE [data-factory-supported-sources](../../../includes/data-factory-supported-sources.md)]
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Фабрика данных поддерживает подключение к локальным источникам Oracle с помощью шлюза управления данными. Дополнительные сведения о шлюзе управления данными см. в [этой](data-factory-data-management-gateway.md) статье. Пошаговые инструкции по настройке шлюза для перемещения данных с помощью конвейера см. в статье, посвященной [перемещению данных между локальными источниками и облаком](data-factory-move-data-between-onprem-and-cloud.md).
 
@@ -99,10 +99,10 @@ ms.locfileid: "86084296"
 
 В приведенной ниже таблице описываются элементы JSON, которые относятся к связанной службе Oracle.
 
-| Свойство. | Описание | Обязательно |
+| Свойство | Описание | Обязательно |
 | --- | --- | --- |
 | type |Для свойства **Type** необходимо задать значение **OnPremisesOracle**. |Да |
-| driverType | Укажите, какой драйвер следует использовать для копирования данных в базу данных Oracle и из нее. Допустимые значения: **Майкрософт** или **ODP** (по умолчанию). Дополнительные сведения о драйверах см. в разделе [Поддерживаемые версии и установка](#supported-versions-and-installation). | Нет |
+| driverType | Укажите, какой драйвер следует использовать для копирования данных в базу данных Oracle и из нее. Допустимые значения: **Майкрософт** или **ODP** (по умолчанию). Дополнительные сведения о драйверах см. в разделе [Поддерживаемые версии и установка](#supported-versions-and-installation). | нет |
 | connectionString | В свойстве **connectionString** указываются сведения, необходимые для подключения к экземпляру базы данных Oracle. | Да |
 | gatewayName | Имя шлюза, который используется для подключения к локальному серверу Oracle. |Да |
 
@@ -150,7 +150,7 @@ ms.locfileid: "86084296"
 
 Раздел **typeProperties** отличается для каждого типа набора данных и предоставляет сведения о расположении данных в хранилище данных. Раздел **typeProperties** набора данных типа **OracleTable** имеет следующие свойства.
 
-| Свойство. | Описание: | Обязательное значение |
+| Свойство | Описание | Обязательно |
 | --- | --- | --- |
 | tableName |Имя таблицы в базе данных Oracle, на которое ссылается связанная служба. |Нет (если указан параметр **oracleReaderQuery** объекта **OracleSource**) |
 
@@ -169,20 +169,20 @@ ms.locfileid: "86084296"
 
 Если источник относится к типу **OracleSource**, в разделе **typeProperties** для действия копирования доступны следующие свойства:
 
-| Свойство. | Описание | Допустимые значения | Обязательно |
+| Свойство | Описание | Допустимые значения | Обязательно |
 | --- | --- | --- | --- |
-| oracleReaderQuery |Используйте пользовательский запрос для чтения данных. |Строка запроса SQL. Например, "select \* from **MyTable**". <br/><br/>Если не указано другое, выполняется инструкция SQL: "select \* from **MyTable**" |Нет<br />(если для свойства **tableName** задано значение **dataset**) |
+| oracleReaderQuery |Используйте пользовательский запрос для чтения данных. |Строка запроса SQL. Например, "select \* from **MyTable**". <br/><br/>Если не указано другое, выполняется инструкция SQL: "select \* from **MyTable**" |нет<br />(если для свойства **tableName** задано значение **dataset**) |
 
 ### <a name="oraclesink"></a>OracleSink
 
 **OracleSink** поддерживает следующие свойства:
 
-| Свойство. | Описание | Допустимые значения | Обязательно |
+| Свойство | Описание | Допустимые значения | Обязательно |
 | --- | --- | --- | --- |
-| writeBatchTimeout |Время ожидания до выполнения операции пакетной вставки, пока не завершится срок ее действия. |**Интервал времени**<br/><br/> Пример: 00:30:00 (30 минут). |Нет |
+| writeBatchTimeout |Время ожидания до выполнения операции пакетной вставки, пока не завершится срок ее действия. |**временной**<br/><br/> Пример: 00:30:00 (30 минут). |Нет |
 | writeBatchSize |Вставляет данные в таблицу SQL, когда размер буфера достигает значения **writeBatchSize**. |Целое число (количество строк) |Нет (значение по умолчанию — 100) |
-| sqlWriterCleanupScript |Указывает запрос на выполнение действия копирования, позволяющий убедиться в том, что данные конкретного среза очищены. |Инструкция запроса. |Нет |
-| sliceIdentifierColumnName |Указывает имя столбца, в которое действие копирования добавляет автоматически созданный идентификатор среза. Значение для имени **sliceIdentifierColumnName** используется для очистки данных конкретного среза при повторном запуске. |Имя столбца с типом данных **binary(32)**. |Нет |
+| sqlWriterCleanupScript |Указывает запрос на выполнение действия копирования, позволяющий убедиться в том, что данные конкретного среза очищены. |Инструкция запроса. |нет |
+| sliceIdentifierColumnName |Указывает имя столбца, в которое действие копирования добавляет автоматически созданный идентификатор среза. Значение для имени **sliceIdentifierColumnName** используется для очистки данных конкретного среза при повторном запуске. |Имя столбца с типом данных **binary(32)**. |нет |
 
 ## <a name="json-examples-for-copying-data-to-and-from-the-oracle-database"></a>Примеры JSON для копирования данных в базу данных Oracle и обратно
 
@@ -565,7 +565,7 @@ Copy activity met invalid parameters: 'UnknownParameterName', Detailed message: 
 * Поставщик данных .NET Framework для Oracle не был установлен.
 * Поставщик данных .NET Framework для Oracle был установлен в .NET Framework 2.0 и не найден в папках .NET Framework 4.0.
 
-**Способы устранения:**
+**Решение**
 
 * Если поставщик данных .NET для Oracle не установлен, [установите его](https://www.oracle.com/technetwork/topics/dotnet/downloads/) и повторите сценарий.
 * Если сообщение об ошибке появляется даже после установки поставщика, выполните следующие действия:
@@ -582,7 +582,7 @@ Copy activity met invalid parameters: 'UnknownParameterName', Detailed message: 
 Message=Operation failed in Oracle Database with the following error: 'ORA-01861: literal does not match format string'.,Source=,''Type=Oracle.DataAccess.Client.OracleException,Message=ORA-01861: literal does not match format string,Source=Oracle Data Provider for .NET,'.
 ```
 
-**Способы устранения:**
+**Решение**
 
 Необходимо настроить строку запроса в действии копирования в зависимости от того, как настроены даты в базе данных Oracle. Ниже приведен пример (с использованием функции **to_date**):
 
@@ -622,7 +622,7 @@ Message=Operation failed in Oracle Database with the following error: 'ORA-01861
 | timestamp |Дата и время |
 | TIMESTAMP WITH LOCAL TIME ZONE |Дата и время |
 | TIMESTAMP WITH TIME ZONE |Дата и время |
-| UNSIGNED INTEGER |number |
+| UNSIGNED INTEGER |Число |
 | VARCHAR2 |Строка |
 | XML |Строка |
 

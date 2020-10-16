@@ -4,10 +4,10 @@ description: Узнайте, как обратимое удаление для S
 ms.topic: conceptual
 ms.date: 04/27/2020
 ms.openlocfilehash: 2a442997d426ff0bf4c74b0b45f7657cc0593b82
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91254301"
 ---
 # <a name="soft-delete-for-sql-server-in-azure-vm-and-sap-hana-in-azure-vm-workloads"></a>Обратимое удаление для SQL Server на виртуальной машине Azure и SAP HANA в рабочих нагрузках виртуальных машин Azure
@@ -88,7 +88,7 @@ Undo-AzRecoveryServicesBackupItemDeletion -Item $myBKpItem -VaultId $myVaultID -
 
 Отключение этой функции не рекомендуется. Единственное обстоятельство, когда следует отключать обратимое удаление, — это планирование перемещения защищенных элементов в новое хранилище и не может ждать 14 дней, необходимых перед удалением и повторной защитой (например, в тестовой среде). Инструкции по отключению обратимого удаления см. в разделе [Включение и отключение обратимого удаления](backup-azure-security-feature-cloud.md#enabling-and-disabling-soft-delete).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Ознакомьтесь с [часто задаваемыми вопросами](backup-azure-security-feature-cloud.md#frequently-asked-questions) об обратимом удалении
 - Ознакомьтесь со всеми [функциями безопасности в Azure Backup](security-overview.md)

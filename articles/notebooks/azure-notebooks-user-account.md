@@ -4,10 +4,10 @@ description: Настройка учетной записи пользовате
 ms.topic: conceptual
 ms.date: 04/15/2019
 ms.openlocfilehash: 929a21785b5b48c81c2d2016874feed61021d3c0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85832191"
 ---
 # <a name="your-user-account-for-azure-notebooks-preview"></a>Учетная запись пользователя для предварительной версии Azure Notebooks
@@ -63,7 +63,7 @@ ms.locfileid: "85832191"
 
 Чтобы предоставить согласие от имени администратора, выполните пошаговые инструкции на [странице согласия администратора](https://notebooks.azure.com/account/adminConsent).
 
-## <a name="next-steps"></a>Дальнейшие шаги  
+## <a name="next-steps"></a>Дальнейшие действия  
 
 > [!div class="nextstepaction"]
 > [Изменение профиля и идентификатора пользователя](azure-notebooks-user-profile.md)

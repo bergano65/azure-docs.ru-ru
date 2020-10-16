@@ -10,10 +10,10 @@ ms.date: 09/22/2020
 ms.author: cherylmc
 ms.custom: fasttrack-edit
 ms.openlocfilehash: e1cf9faeab60264d491539256828151e496ade8f
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91267505"
 ---
 # <a name="scenario-route-traffic-through-nvas---custom-preview"></a>Сценарий: маршрутизация трафика через NVA — пользовательский (Предварительная версия)
@@ -33,7 +33,7 @@ ms.locfileid: "91267505"
 
 **Матрица подключения**
 
-| От          | В:|*NVA спицы*|*Виртуальная сеть службы*|*Виртуальная сеть DMZ*|*Статические ветви*|
+| Как получить          | на:|*NVA спицы*|*Виртуальная сеть службы*|*Виртуальная сеть DMZ*|*Статические ветви*|
 |---|---|---|---|---|---|
 | **NVA спицы**| &#8594;|      X |            X |   Пиринг |    Статические    |
 | **Виртуальная сеть службы**| &#8594;|    X |            X |      X    |      X       |
@@ -129,7 +129,7 @@ ms.locfileid: "91267505"
 
 **Рис. 2**
 
-:::image type="content" source="./media/routing-scenarios/nva-custom/figure-2.png" alt-text="Рис. 2" lightbox="./media/routing-scenarios/nva-custom/figure-2.png":::
+:::image type="content" source="./media/routing-scenarios/nva-custom/figure-2.png" alt-text="Рис. 1" lightbox="./media/routing-scenarios/nva-custom/figure-2.png":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

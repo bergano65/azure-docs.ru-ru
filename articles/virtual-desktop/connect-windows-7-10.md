@@ -7,10 +7,10 @@ ms.date: 09/22/2020
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: c9da2acac0957d7fe06d0249775fbed73b5f458d
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91287344"
 ---
 # <a name="connect-with-the-windows-desktop-client"></a>Подключение к клиенту Windows Desktop
@@ -66,6 +66,6 @@ ms.locfileid: "91287344"
 4. При появлении запроса войдите в систему со своей учетной записью.
 5. Ресурсы должны отображаться в центре подключений, сгруппированном по рабочим областям.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об использовании настольного клиента Windows см. в статье Начало [работы с настольным клиентом Windows](/windows-server/remote/remote-desktop-services/clients/windowsdesktop/).

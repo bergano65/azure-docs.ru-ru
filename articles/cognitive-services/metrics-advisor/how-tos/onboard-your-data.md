@@ -3,19 +3,19 @@ title: Подключение канала данных к помощнику п
 titleSuffix: Azure Cognitive Services
 description: Как приступить к подключению каналов данных к помощнику по метрикам.
 services: cognitive-services
-author: aahill
+author: mrbullwinkle
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: metrics-advisor
 ms.topic: conceptual
 ms.date: 09/14/2020
-ms.author: aahi
-ms.openlocfilehash: 83ff710804b43837657ea0da7c8f44c245017c7e
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.author: mbullwin
+ms.openlocfilehash: fe3b87c733f54d8bd52c4d973977e3c8cbfefe19
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90940127"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92043221"
 ---
 # <a name="how-to-onboard-your-metric-data-to-metrics-advisor"></a>Практические советы: подключение данных метрик к помощнику по метрикам
 
@@ -188,7 +188,7 @@ ms.locfileid: "90940127"
 2. Щелкните **состояние** , выберите **сбой** или **Ошибка**.
 3. Наведите указатель мыши на неудачный прием и просмотрите подробное сообщение, которое отображается.
 
-:::image type="content" source="../media/datafeeds/check-failed-ingestion.png" alt-text="Проверка приема с ошибками":::
+:::image type="content" source="../media/datafeeds/check-failed-ingestion.png" alt-text="Индикатор выполнения приема":::
 
 Состояние *сбоя* указывает, что прием для этого источника данных будет повторен позже.
 Состояние *ошибки* указывает, что помощник по метрикам не будет повторять попытку для источника данных. Чтобы перезагрузить данные, необходимо активировать обратную засыпку или перезагрузку вручную.

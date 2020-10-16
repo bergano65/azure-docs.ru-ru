@@ -6,19 +6,19 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 09/24/2020
-ms.openlocfilehash: 5f076f477c36f96d1807ce7071720225a6df8e03
-ms.sourcegitcommit: 23aa0cf152b8f04a294c3fca56f7ae3ba562d272
+ms.openlocfilehash: 0d0e8c4806784cf9b00712ad1bf45bca958a7eb1
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91803812"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91995356"
 ---
 # <a name="azure-monitor-for-networks-preview"></a>Azure Monitor для сетей (Предварительная версия)
-Azure Monitor для сети предоставляет исчерпывающее представление о [работоспособности](https://docs.microsoft.com/azure/service-health/resource-health-checks-resource-types) и [метриках](../platform/metrics-supported.md) для всех развернутых сетевых ресурсов без какой-либо настройки.  Он также предоставляет доступ ко всем возможностям мониторинга сети, таким как [монитор подключения](../../network-watcher/connection-monitor-preview.md), [ведение журнала потоков для групп безопасности сети (группы безопасности сети)](../../network-watcher/network-watcher-nsg-flow-logging-overview.md), [аналитика трафика](../../network-watcher/traffic-analytics.md)и другие функции [диагностики](../../network-watcher/network-watcher-monitoring-overview.md#diagnostics) сети.
+Azure Monitor для сети предоставляет исчерпывающее представление о [работоспособности](../../service-health/resource-health-checks-resource-types.md) и [метриках](../platform/metrics-supported.md) для всех развернутых сетевых ресурсов без какой-либо настройки.  Он также предоставляет доступ ко всем возможностям мониторинга сети, таким как [монитор подключения](../../network-watcher/connection-monitor-preview.md), [ведение журнала потоков для групп безопасности сети (группы безопасности сети)](../../network-watcher/network-watcher-nsg-flow-logging-overview.md), [аналитика трафика](../../network-watcher/traffic-analytics.md)и другие функции [диагностики](../../network-watcher/network-watcher-monitoring-overview.md#diagnostics) сети.
 
 Azure Monitor для сетей организованы по следующим ключевым компонентам мониторинга:
 - [Работоспособность сети и метрики](#networkhealth)
-- [Подключение](#connectivity)
+- [Соединение](#connectivity)
 - [Трафик](#traffic)
 - [Набор средств диагностики](#diagnostictoolkit)
 

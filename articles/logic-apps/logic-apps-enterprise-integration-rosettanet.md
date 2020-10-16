@@ -9,10 +9,10 @@ ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 06/22/2019
 ms.openlocfilehash: f02cbdc7ca8822c5fcc91b106856d7f8f547536b
-ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91565111"
 ---
 # <a name="exchange-rosettanet-messages-for-b2b-enterprise-integration-in-azure-logic-apps"></a>Обмен сообщениями RosettaNet для интеграции B2B Enterprise в Azure Logic Apps
@@ -201,7 +201,7 @@ ms.locfileid: "91565111"
 
    | Свойство | Обязательно | Описание |
    |----------|----------|-------------|
-   | **Сообщение** | Да | Сообщение RosettaNet для декодирования  |
+   | **Message** | Да | Сообщение RosettaNet для декодирования  |
    | **Заголовки** | Да | Заголовки HTTP, которые предоставляют значения для версии, которая является версией РНИФ, и типом ответа, который указывает тип связи между участниками и может быть синхронным или асинхронным. |
    | **Роль** | Да | Роль главного партнера в PIP |
    ||||
@@ -230,7 +230,7 @@ ms.locfileid: "91565111"
 
    | Свойство | Обязательно | Описание |
    |----------|----------|-------------|
-   | **Сообщение** | Да | Сообщение RosettaNet для кодирования  |
+   | **Message** | Да | Сообщение RosettaNet для кодирования  |
    | **Главный партнер** | Да | Имя партнера узла |
    | **Гостевой партнер** | Да | Имя гостевого партнера |
    | **Код PIP** | Да | Код PIP |
@@ -256,7 +256,7 @@ ms.locfileid: "91565111"
 
    ![Цикл Until с действиями RosettaNet](media/logic-apps-enterprise-integration-rosettanet/rosettanet-loop.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Сведения о проверке, преобразовании и других операциях с сообщениями, выполняемых с помощью [пакета интеграции Enterprise](../logic-apps/logic-apps-enterprise-integration-overview.md).
 * См. дополнительные сведения о других [соединителях Logic Apps](../connectors/apis-list.md).

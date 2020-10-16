@@ -76,8 +76,8 @@
           href: configure-local-rbac.md
         - name: Настройка параметров базы данных
           href: configure-database.md
-        - name: Настройка управляемых клиентом ключей
-          href: bring-your-own-key.md
+        - name: 'Настройка ключей, управляемых клиентом'
+          href: customer-managed-key.md
         - name: Настройка CORS
           href: configure-cross-origin-resource-sharing.md
         - name: Настройка экспорта
@@ -87,6 +87,8 @@
       items:
         - name: Экспорт данных
           href: export-data.md
+        - name: Обезличенный экспорт
+          href: de-identified-export.md
     - name: Поиск идентификаторов объектов удостоверений
       href: find-identity-object-ids.md
     - name: Включение ведения журнала диагностики в Azure API для FHIR®
