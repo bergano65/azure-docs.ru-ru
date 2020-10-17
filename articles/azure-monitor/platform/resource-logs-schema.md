@@ -4,12 +4,12 @@ description: Узнайте о поддерживаемых службах и с
 ms.subservice: logs
 ms.topic: reference
 ms.date: 09/01/2020
-ms.openlocfilehash: 17b4b161e76f018d8f669ee7e9b5dd578bb3e035
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b9d3dafdf62bda2d07eb7f9d7c357f61ec913d44
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91278402"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92143997"
 ---
 # <a name="common-and-service-specific-schema-for-azure-resource-logs"></a>Распространенная и зависящая от службы схема для журналов ресурсов Azure
 
@@ -54,9 +54,9 @@ ms.locfileid: "91278402"
 | Шлюзы приложений |[Ведение журнала для шлюза приложений](../../application-gateway/application-gateway-diagnostics.md) |
 | Служба автоматизации Azure |[Log Analytics для службы автоматизации Azure](../../automation/automation-manage-send-joblogs-log-analytics.md) |
 | Пакетная служба Azure |[Ведение журнала пакетной службы Azure](../../batch/batch-diagnostics.md) |
-| Службы Cognitive Services | [Ведение журнала для Cognitive Services Azure](../../cognitive-services/diagnostic-logging.md) |
+| Cognitive Services | [Ведение журнала для Cognitive Services Azure](../../cognitive-services/diagnostic-logging.md) |
 | Реестр контейнеров | [Ведение журнала для реестра контейнеров Azure](../../container-registry/container-registry-diagnostics-audit-logs.md) |
-| Сеть доставки содержимого (CDN) | [Журналы Azure для CDN](../../cdn/cdn-azure-diagnostic-logs.md) |
+| Сеть доставки содержимого | [Журналы Azure для CDN](../../cdn/cdn-azure-diagnostic-logs.md) |
 | Cosmos DB | [Журнал ведения диагностики Azure Cosmos DB](../../cosmos-db/monitor-cosmos-db.md) |
 | Фабрика данных | [Мониторинг фабрик данных с помощью Azure Monitor](../../data-factory/monitor-using-azure-monitor.md) |
 | Data Lake Analytics |[Доступ к журналам для Azure Data Lake Analytics](../../data-lake-analytics/data-lake-analytics-diagnostic-logs.md) |
@@ -64,7 +64,7 @@ ms.locfileid: "91278402"
 | Azure Data Explorer | [Журналы обозреватель данных Azure](/azure/data-explorer/using-diagnostic-logs) |
 | База данных Azure для MySQL | [Журналы сервера в базе данных Azure для MySQL](../../mysql/concepts-server-logs.md#diagnostic-logs) |
 | База данных Azure для PostgreSQL | [Журналы базы данных Azure для PostgreSQL](../../postgresql/concepts-server-logs.md#resource-logs) |
-| Azure Databricks | [Журнал ведения диагностики в Azure Databricks](https://docs.microsoft.com/azure/databricks/administration-guide/account-settings/azure-diagnostic-logs) |
+| Azure Databricks | [Журнал ведения диагностики в Azure Databricks](/azure/databricks/administration-guide/account-settings/azure-diagnostic-logs) |
 | Azure Digital Twins | [Настройка диагностики Azure Digital двойников](../../digital-twins/troubleshoot-diagnostics.md#log-schemas)
 | Центры событий |[Журналы концентраторов событий Azure](../../event-hubs/event-hubs-diagnostic-logs.md) |
 | ExpressRoute | Схема недоступна. |
@@ -96,4 +96,3 @@ ms.locfileid: "91278402"
 * [Потоковая передача журналов ресурсов в **концентраторы событий**](./resource-logs.md#send-to-azure-event-hubs)
 * [Изменение параметров диагностики журнала ресурсов с помощью Azure Monitor REST API](/rest/api/monitor/diagnosticsettings)
 * [Сбор журналов и метрик для служб Azure для использования в Log Analytics](./resource-logs.md#send-to-log-analytics-workspace)
-

@@ -9,12 +9,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 05/06/2020
 ms.author: lagayhar
-ms.openlocfilehash: efa54933ac7d57ec0dcff9ae11b6fb5c2c87a897
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a2411d9257b1083cb2bcbfcad289813a6c062dff
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87081395"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92143576"
 ---
 # <a name="how-to-use-jsonpath-to-transform-json-data-in-workbooks"></a>Как использовать JSONPath для преобразования данных JSON в книги
 
@@ -22,7 +22,7 @@ ms.locfileid: "87081395"
 
 JSONPath — это язык запросов для JSON, похожий на XPath for XML. Как и XPath, JSONPath позволяет извлечь и фильтрация данные из структуры JSON.
 
-С помощью преобразования JSONPath авторы книг могут преобразовать JSON в табличную структуру. Затем таблицу можно использовать для построения [визуализации книг](workbooks-visualizations.md).
+С помощью преобразования JSONPath авторы книг могут преобразовать JSON в табличную структуру. Затем таблицу можно использовать для построения [визуализации книг](./workbooks-overview.md#visualizations).
 
 ## <a name="using-jsonpath"></a>Использование JSONPath
 
@@ -73,8 +73,8 @@ JSONPath — это язык запросов для JSON, похожий на X
 
    | Идентификаторы столбцов | Путь JSON столбца |
    |:-----------|:-----------------|
-   | Заголовок      | `$.title`        |
-   | Автор     | `$.author`       |
+   | Title      | `$.title`        |
+   | Дизайнер     | `$.author`       |
    | Цена      | `$.price`        |
 
     Идентификаторами столбцов будут заголовки столбцов. Поля путей JSON в столбцах представляют путь от корня таблицы к значению столбца.

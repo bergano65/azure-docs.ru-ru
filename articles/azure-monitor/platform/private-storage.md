@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: noakup
 ms.author: noakuper
 ms.date: 09/03/2020
-ms.openlocfilehash: 9d54e6eb84e3269eb95f8d314875474f78536652
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a487e6989792c63aaf5baf9ddb3875df549561a4
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90526431"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92143989"
 ---
 # <a name="using-customer-managed-storage-accounts-in-azure-monitor-log-analytics"></a>Использование управляемых клиентом учетных записей хранения в Azure Monitor Log Analytics
 
@@ -22,7 +22,7 @@ Log Analytics полагается на хранилище Azure в различ
 
 ## <a name="ingesting-azure-diagnostics-extension-logs-wadlad"></a>Прием журналов расширений система диагностики Azure (WAD/LAD)
 Агенты расширения система диагностики Azure (также называемые WAD и LAD для агентов Windows и Linux соответственно) собираются различные журналы операционной системы и сохраняют их в управляемой пользователем учетной записи хранения. Затем эти журналы можно принять в Log Analytics для их анализа и анализа.
-Как получить журналы расширений система диагностики Azure из учетной записи хранения Подключите учетную запись хранения к рабочей области Log Analytics как к источнику данных хранилища с помощью [портал Azure](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostics-extension-logs#collect-logs-from-azure-storage) или путем вызова [API Storage Insights](https://docs.microsoft.com/rest/api/loganalytics/connectedsources/storage%20insights/createorupdate).
+Как получить журналы расширений система диагностики Azure из учетной записи хранения Подключите учетную запись хранения к рабочей области Log Analytics как к источнику данных хранилища с помощью [портал Azure](./diagnostics-extension-logs.md#collect-logs-from-azure-storage) или путем вызова [API Storage Insights](/rest/api/loganalytics/connectedsources/storage%20insights/createorupdate).
 
 Поддерживаемые типы данных:
 * Системный журнал
@@ -40,7 +40,7 @@ Log Analytics полагается на хранилище Azure в различ
 
 ### <a name="how-to-use-a-customer-managed-storage-account-over-a-private-link"></a>Использование управляемой клиентом учетной записи хранения по частной ссылке
 ##### <a name="workspace-requirements"></a>Требования к рабочей области
-При подключении к Azure Monitor через частную связь, Log Analytics агенты могут только отправить журналы в рабочие области, связанные с вашей сетью по частной ссылке. Для этого правила необходимо правильно настроить Azure Monitor объект области закрытых ссылок (АМПЛС), подключить его к рабочим областям, а затем подключить АМПЛС к сети по частной ссылке. Дополнительные сведения о процедуре настройки АМПЛС см. в статье [Использование частной связи Azure для безопасного подключения сетей к Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/private-link-security). 
+При подключении к Azure Monitor через частную связь, Log Analytics агенты могут только отправить журналы в рабочие области, связанные с вашей сетью по частной ссылке. Для этого правила необходимо правильно настроить Azure Monitor объект области закрытых ссылок (АМПЛС), подключить его к рабочим областям, а затем подключить АМПЛС к сети по частной ссылке. Дополнительные сведения о процедуре настройки АМПЛС см. в статье [Использование частной связи Azure для безопасного подключения сетей к Azure Monitor](./private-link-security.md). 
 ##### <a name="storage-account-requirements"></a>Требования к учетной записи хранения
 Чтобы учетная запись хранения была успешно подключена к частной ссылке, она должна:
 * Они должны находиться в виртуальной сети или в одноранговых сетях и подключаться к виртуальной сети по частной ссылке. Это позволяет агентам в виртуальной сети отсылать журналы в учетную запись хранения.
@@ -49,7 +49,7 @@ Log Analytics полагается на хранилище Azure в различ
 * Если Рабочая область обрабатывает трафик из других сетей, необходимо настроить учетную запись хранения, чтобы разрешить входящий трафик, исходящий из соответствующих сетей и Интернета.
 
 ##### <a name="link-your-storage-account-to-a-log-analytics-workspace"></a>Связывание учетной записи хранения с рабочей областью Log Analytics
-Вы можете связать учетную запись хранения с рабочей областью с помощью [Azure CLI](https://docs.microsoft.com/cli/azure/monitor/log-analytics/workspace/linked-storage) или [REST API](https://docs.microsoft.com/rest/api/loganalytics/linkedstorageaccounts). Применимые значения dataSourceType:
+Вы можете связать учетную запись хранения с рабочей областью с помощью [Azure CLI](/cli/azure/monitor/log-analytics/workspace/linked-storage) или [REST API](/rest/api/loganalytics/linkedstorageaccounts). Применимые значения dataSourceType:
 * CustomLogs — используется для хранения пользовательских журналов и журналов IIS во время приема.
 * Азуреватсон — используйте хранилище для файлов дампа программы Watson, отправленных решением ASC (центр безопасности Azure). Дополнительные сведения об управлении хранением, замене связанной учетной записи хранения и мониторинге действий с учетной записью хранения см. в разделе [Управление связанными учетными записями хранения](#managing-linked-storage-accounts). 
 
@@ -61,14 +61,14 @@ Log Analytics полагается на хранилище Azure в различ
 
 ### <a name="how-to-apply-cmk-to-customer-managed-storage-accounts"></a>Как применить CMK к учетным записям хранения, управляемым клиентом
 ##### <a name="storage-account-requirements"></a>Требования к учетной записи хранения
-Учетная запись хранения и Key Vault должны быть расположены в одном регионе, но могут находиться в разных подписках. Дополнительные сведения о шифровании службы хранилища Azure и управлении ключами см. [в статье шифрование службы хранилища Azure для неактивных данных](https://docs.microsoft.com/azure/storage/common/storage-service-encryption).
+Учетная запись хранения и Key Vault должны быть расположены в одном регионе, но могут находиться в разных подписках. Дополнительные сведения о шифровании службы хранилища Azure и управлении ключами см. [в статье шифрование службы хранилища Azure для неактивных данных](../../storage/common/storage-service-encryption.md).
 
 ##### <a name="apply-cmk-to-your-storage-accounts"></a>Применение CMK к учетным записям хранения
-Чтобы настроить учетную запись хранения Azure для использования управляемых клиентом ключей с Azure Key Vault, используйте [портал Azure](https://docs.microsoft.com/azure/storage/common/storage-encryption-keys-portal?toc=/azure/storage/blobs/toc.json), [PowerShell](https://docs.microsoft.com/azure/storage/common/storage-encryption-keys-powershell?toc=/azure/storage/blobs/toc.json) или [CLI](https://docs.microsoft.com/azure/storage/common/storage-encryption-keys-cli?toc=/azure/storage/blobs/toc.json). 
+Чтобы настроить учетную запись хранения Azure для использования управляемых клиентом ключей с Azure Key Vault, используйте [портал Azure](../../storage/common/customer-managed-keys-configure-key-vault.md?toc=%252fazure%252fstorage%252fblobs%252ftoc.json), [PowerShell](../../storage/common/customer-managed-keys-configure-key-vault.md?toc=%252fazure%252fstorage%252fblobs%252ftoc.json) или [CLI](../../storage/common/customer-managed-keys-configure-key-vault.md?toc=%252fazure%252fstorage%252fblobs%252ftoc.json). 
 
 ## <a name="managing-linked-storage-accounts"></a>Управление связанными учетными записями хранения
 
-Чтобы связать или отменить связь учетных записей хранения с рабочей областью, используйте [Azure CLI](https://docs.microsoft.com/cli/azure/monitor/log-analytics/workspace/linked-storage) или [REST API](https://docs.microsoft.com/rest/api/loganalytics/linkedstorageaccounts).
+Чтобы связать или отменить связь учетных записей хранения с рабочей областью, используйте [Azure CLI](/cli/azure/monitor/log-analytics/workspace/linked-storage) или [REST API](/rest/api/loganalytics/linkedstorageaccounts).
 
 ##### <a name="create-or-modify-a-link"></a>Создание или изменение ссылки
 При связывании учетной записи хранения с рабочей областью Log Analytics начнет использовать ее вместо учетной записи хранения, которой владеет служба. Вы можете выполнить следующие действия: 
@@ -88,13 +88,13 @@ Log Analytics полагается на хранилище Azure в различ
 При использовании собственной учетной записи хранения срок хранения не ограничен. Иными словами, Log Analytics не удаляет журналы, хранящиеся в частном хранилище. Вместо этого следует настроить политику для выполнения загрузки в соответствии с вашими предпочтениями.
 
 ##### <a name="consider-load"></a>Рассмотрите возможность загрузки
-Учетные записи хранения могут выполнять определенную нагрузку на запросы на чтение и запись перед началом запросов на регулирование (Дополнительные сведения см. в разделе [целевые показатели масштабируемости и производительности для хранилища BLOB-объектов](https://docs.microsoft.com/azure/storage/common/scalability-targets-standard-account) ). Регулирование влияет на время, необходимое для приема журналов. Если ваша учетная запись хранения перегружена, зарегистрируйте дополнительную учетную запись хранения, чтобы распределить нагрузку между ними. Чтобы отслеживать емкость и производительность учетной записи хранения, проверьте ее [в портал Azure]( https://docs.microsoft.com/azure/azure-monitor/insights/storage-insights-overview).
+Учетные записи хранения могут выполнять определенную нагрузку на запросы на чтение и запись перед началом запросов на регулирование (Дополнительные сведения см. в разделе [целевые показатели масштабируемости и производительности для хранилища BLOB-объектов](../../storage/common/scalability-targets-standard-account.md) ). Регулирование влияет на время, необходимое для приема журналов. Если ваша учетная запись хранения перегружена, зарегистрируйте дополнительную учетную запись хранения, чтобы распределить нагрузку между ними. Чтобы отслеживать емкость и производительность учетной записи хранения, проверьте ее [в портал Azure]( https://docs.microsoft.com/azure/azure-monitor/insights/storage-insights-overview).
 
 ### <a name="related-charges"></a>Связанные расходы
 На учетные записи хранения начисляются объем хранимых данных, тип хранилища и тип избыточности. Дополнительные сведения см. в статьях [Цены на хранение блочных BLOB-объектов](https://azure.microsoft.com/pricing/details/storage/blobs) и [Цены на хранилище таблиц Azure](https://azure.microsoft.com/pricing/details/storage/tables).
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте [, как использовать частную ссылку Azure для безопасного подключения сетей к Azure Monitor](private-link-security.md)
 - Дополнительные сведения о [Azure Monitor управляемых клиентом ключах](customer-managed-keys.md)

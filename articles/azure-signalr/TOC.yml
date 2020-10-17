@@ -105,7 +105,7 @@
     - name: REST API
       href: 'https://github.com/Azure/azure-signalr/blob/dev/docs/rest-api.md'
     - name: SignalR для ASP.NET Core
-      href: 'https://docs.microsoft.com/aspnet/core/signalr'
+      href: /aspnet/core/signalr
     - name: Протокол Службы Azure SignalR
       href: 'https://github.com/Azure/azure-signalr/blob/dev/specs/ServiceProtocol.md'
     - name: Встроенные компоненты Политики Azure
@@ -114,7 +114,7 @@
 - name: Ресурсы
   items:
     - name: Решения
-      href: 'https://docs.microsoft.com/azure/architecture/'
+      href: /azure/architecture/
     - name: Истории клиентов
       href: 'https://customers.microsoft.com/en-us/search?sq=signalr'
     - name: Стратегия развития SignalR
@@ -126,7 +126,7 @@
     - name: Часто задаваемые вопросы
       href: signalr-resource-faq.md
     - name: Ограничения уровней подписки службы SignalR
-      href: 'https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#signalr-service-limits'
+      href: ../azure-resource-manager/management/azure-subscription-service-limits.md#azure-signalr-service-limits
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/signalr-service/'
     - name: Видео

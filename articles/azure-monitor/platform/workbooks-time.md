@@ -7,12 +7,12 @@ ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 10/23/2019
-ms.openlocfilehash: 471b775abfebec646ab3950803622271c0bd559b
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
+ms.openlocfilehash: 37f2219313a0d4c533d587a765dd22d527a5910f
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91932300"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92143438"
 ---
 # <a name="workbook-time-parameters"></a>Параметры времени книги
 
@@ -76,7 +76,7 @@ requests
 | make-series Requests = count() default = 0 on timestamp from {TimeRange:start} to {TimeRange:end} step {TimeRange:grain}
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Узнайте](workbooks-visualizations.md) больше о книгах с множеством разнообразных вариантов визуализации.
+* [Узнайте](./workbooks-overview.md#visualizations) больше о книгах с множеством разнообразных вариантов визуализации.
 * [Управление](workbooks-access-control.md) доступом к ресурсам книги и предоставление общего доступа к ним.

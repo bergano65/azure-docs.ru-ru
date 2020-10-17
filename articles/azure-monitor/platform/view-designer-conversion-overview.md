@@ -6,19 +6,19 @@ ms.author: aul
 ms.subservice: ''
 ms.topic: conceptual
 ms.date: 08/04/2020
-ms.openlocfilehash: 19fd1d064a3f106d7b770481d1e456c51cf1e166
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3179daec361aa287b79c5e9a468908d0ccdd2982
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87759433"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92143957"
 ---
 # <a name="azure-monitor-view-designer-to-workbooks-transition-guide"></a>Azure Monitor конструктора представлений в книгу с руководством по переходу
 [Конструктор представлений](view-designer.md) — это функция Azure Monitor, которая позволяет создавать пользовательские представления, помогающие визуализировать данные в рабочей области log Analytics, с диаграммами, списками и временными шкалами. Они были перенесены в книги, чтобы предоставить гибкий холст для анализа данных и создания визуальных отчетов в портал Azure. Эта статья поможет вам выполнить переход из конструктора представлений в книги. 
 
 
 ## <a name="workbooks-overview"></a>Общие сведения о книгах
-[Книги](../insights/vminsights-workbooks.md) объединяют текст, [заносить в журнал запросы](../log-query/query-language.md), метрики и параметры в расширенные Интерактивные отчеты. Члены группы, имеющие тот же доступ к ресурсам Azure, также могут редактировать книги.
+[Книги](../insights/vminsights-workbooks.md) объединяют текст, [заносить в журнал запросы](/azure/data-explorer/kusto/query/), метрики и параметры в расширенные Интерактивные отчеты. Члены группы, имеющие тот же доступ к ресурсам Azure, также могут редактировать книги.
 
 Книги полезны в следующих сценариях:
 
@@ -65,6 +65,6 @@ ms.locfileid: "87759433"
 
 ![Сохранение книг](media/view-designer-conversion-overview/workbooks-save.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Параметры преобразования](view-designer-conversion-options.md)
