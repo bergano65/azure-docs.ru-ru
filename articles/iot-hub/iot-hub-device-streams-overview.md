@@ -11,12 +11,12 @@ ms.custom:
 - 'Role: Cloud Development'
 - 'Role: IoT Device'
 - 'Role: Technical Support'
-ms.openlocfilehash: 4a13d1ff030a63d3ccf33297f215909f5920e16a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8194f520abf5c8d4e47fa279f6cf82013024e9ec
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87327690"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92152173"
 ---
 # <a name="iot-hub-device-streams-preview"></a>Потоки устройств Центра Интернета вещей (предварительная версия)
 
@@ -103,7 +103,7 @@ az iot hub devicestream show --name <YourIoTHubName>
 ```
 
 > [!NOTE]
-> Убедитесь, что вы установили Azure CLI 2.0.57 или новее. Последнюю версию можно скачать на странице [установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) .
+> Убедитесь, что вы установили Azure CLI 2.0.57 или новее. Последнюю версию можно скачать на странице [установка Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) .
 >
 
 ## <a name="allow-outbound-connectivity-to-the-device-streaming-endpoints"></a>Разрешить исходящие подключения к конечным точкам потоковой передачи устройства
@@ -119,7 +119,7 @@ az iot hub devicestream show --name <YourIoTHubName>
 ```
 
 > [!NOTE]
-> Убедитесь, что вы установили Azure CLI 2.0.57 или новее. Последнюю версию можно скачать на странице [установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) .
+> Убедитесь, что вы установили Azure CLI 2.0.57 или новее. Последнюю версию можно скачать на странице [установка Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) .
 >
 
 ## <a name="troubleshoot-via-device-streams-activity-logs"></a>Устранение неполадок с использованием журналов действий потоков устройств
@@ -156,7 +156,7 @@ az iot hub devicestream show --name <YourIoTHubName>
 
 ## <a name="iot-hub-device-stream-samples"></a>Примеры потоков устройств центра Интернета вещей
 
-На странице центра Интернета вещей доступны два [примера](/azure/iot-hub) быстрого запуска. Они демонстрируют использование потоков устройств приложениями.
+На странице центра Интернета вещей доступны два [примера](./index.yml) быстрого запуска. Они демонстрируют использование потоков устройств приложениями.
 
 * В образце *echo* показано программное использование потоков устройств (путем непосредственного вызова API пакета SDK).
 
@@ -212,7 +212,7 @@ az iot hub devicestream show --name <YourIoTHubName>
 
 * [Программа для устройства C](quickstart-device-streams-proxy-c.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Используйте приведенные ниже ссылки для получения дополнительных сведений о потоках устройств.
 

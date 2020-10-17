@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 02/28/2018
 ms.author: allensu
-ms.openlocfilehash: 3b8ce5b82b7d2022fd7feea1cd9efe8d524ee6a4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ceed62d466627d6a23554229bd6f4b96c674c7e9
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91358293"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92148750"
 ---
 # <a name="improve-performance-by-compressing-files-in-azure-cdn"></a>Повышение производительности за счет сжатия файлов в Azure CDN
 Сжатие файлов — это простой и эффективный способ, который позволяет повысить скорость передачи файлов и увеличить производительность загрузки страницы за счет уменьшения размера файлов перед их отправкой с сервера. Этот способ позволяет снизить потребление пропускной способности и обеспечивает более высокую скорость работы для пользователей.
@@ -112,6 +112,8 @@ ms.locfileid: "91358293"
 Если запрос поддерживает несколько типов сжатия, приоритет имеет сжатие brotli.
 
 Если в запросе ресурса указано сжатие gzip и запрос приводит к сбросу кэша, Azure CDN выполняет сжатие gzip прямо на сервере POP. После этого сжатый файл используется из кэша.
+
+Если источник использует поблочное кодирование передачи (CTE) для отправки сжатых данных в точку подключения CDN, то размеры отклика больше 8 МБ не поддерживаются. 
 
 ### <a name="azure-cdn-from-verizon-profiles"></a>Профили Azure CDN от Verizon
 

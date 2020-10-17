@@ -7,16 +7,16 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 01/30/2019
 ms.author: robinsh
-ms.openlocfilehash: a06583e9aab4b082517d47c1022f7bec5184b9bc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1d824c94a2c5751013b78c69ed5abd048c50856b
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "78673386"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92151729"
 ---
 # <a name="develop-for-android-things-platform-using-azure-iot-sdks"></a>Разработка на платформе Android Things с помощью пакетов SDK для Интернета вещей Azure
 
-[Пакеты SDK для Центра Интернета вещей Azure](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-sdks) обеспечивают поддержку первого уровня для популярных платформ (Windows, Linux, OSX, MBED) и мобильных платформ (Android и iOS).  Как часть наших обязательств по расширению выбора и гибкости развертываний в Центре Интернета вещей пакет SDK для Java также поддерживает платформу [Android Things](https://developer.android.com/things/).  Разработчики могут пользоваться преимуществами операционной системы Android Things на стороне устройства, используя [Центр Интернета вещей Azure](about-iot-hub.md) в качестве центрального концентратора сообщений, который масштабируется до миллионов одновременно подключенных устройств.
+[Пакеты SDK для Центра Интернета вещей Azure](./iot-hub-devguide-sdks.md) обеспечивают поддержку первого уровня для популярных платформ (Windows, Linux, OSX, MBED) и мобильных платформ (Android и iOS).  Как часть наших обязательств по расширению выбора и гибкости развертываний в Центре Интернета вещей пакет SDK для Java также поддерживает платформу [Android Things](https://developer.android.com/things/).  Разработчики могут пользоваться преимуществами операционной системы Android Things на стороне устройства, используя [Центр Интернета вещей Azure](about-iot-hub.md) в качестве центрального концентратора сообщений, который масштабируется до миллионов одновременно подключенных устройств.
 
 В этом руководстве описано, как создать приложение на стороне устройства на платформе Android Things при помощи пакета SDK Java для Центра Интернета вещей Azure.
 

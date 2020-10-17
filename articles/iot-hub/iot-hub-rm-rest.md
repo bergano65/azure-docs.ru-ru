@@ -9,28 +9,28 @@ ms.devlang: csharp
 ms.topic: conceptual
 ms.date: 08/08/2017
 ms.custom: devx-track-csharp
-ms.openlocfilehash: fe143b1c172c5d89a7dba33731a378df988b4a47
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2f393701b97be76acab49a627a195b337018fa29
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89014614"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92144430"
 ---
 # <a name="create-an-iot-hub-using-the-resource-provider-rest-api-net"></a>Создание Центра Интернета вещей с помощью REST API поставщика ресурсов (.NET)
 
 [!INCLUDE [iot-hub-resource-manager-selector](../../includes/iot-hub-resource-manager-selector.md)]
 
-[REST API поставщика ресурсов Центра Интернета вещей](https://docs.microsoft.com/rest/api/iothub/iothubresource) можно использовать для создания центров Интернета вещей Azure и управления ими программными методами. В этом учебнике показано, как использовать REST API поставщика ресурсов Центра Интернета вещей для создания Центра Интернета вещей из программы на C#.
+[REST API поставщика ресурсов Центра Интернета вещей](/rest/api/iothub/iothubresource) можно использовать для создания центров Интернета вещей Azure и управления ими программными методами. В этом учебнике показано, как использовать REST API поставщика ресурсов Центра Интернета вещей для создания Центра Интернета вещей из программы на C#.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Для работы с этим учебником требуется:
+Для работы с этим руководством вам нужно следующее:
 
 * приведенному.
 
 * Активная учетная запись Azure. Если ее нет, можно создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/) всего за несколько минут.
 
-* [Azure PowerShell 1.0](https://docs.microsoft.com/powershell/azure/install-Az-ps) или более поздней версии.
+* [Azure PowerShell 1.0](/powershell/azure/install-Az-ps) или более поздней версии.
 
 [!INCLUDE [iot-hub-prepare-resource-manager](../../includes/iot-hub-prepare-resource-manager.md)]
 
@@ -78,7 +78,7 @@ ms.locfileid: "89014614"
 
 ## <a name="use-the-resource-provider-rest-api-to-create-an-iot-hub"></a>Использование REST API поставщика ресурсов для создания Центра Интернета вещей
 
-Используйте [REST API поставщика ресурсов Центра Интернета вещей](https://docs.microsoft.com/rest/api/iothub/iothubresource) для создания Центра Интернета вещей в группе ресурсов. REST API поставщика ресурсов также можно использовать для изменения имеющегося Центра Интернета вещей.
+Используйте [REST API поставщика ресурсов Центра Интернета вещей](/rest/api/iothub/iothubresource) для создания Центра Интернета вещей в группе ресурсов. REST API поставщика ресурсов также можно использовать для изменения имеющегося Центра Интернета вещей.
 
 1. Добавьте в класс Program.cs следующий метод:
 
@@ -175,7 +175,7 @@ ms.locfileid: "89014614"
 
 После развертывания Центра Интернета вещей с использованием REST API вам могут понадобиться дополнительные сведения:
 
-* Ознакомьтесь с возможностями [REST API поставщика ресурсов Центра Интернета вещей](https://docs.microsoft.com/rest/api/iothub/iothubresource).
+* Ознакомьтесь с возможностями [REST API поставщика ресурсов Центра Интернета вещей](/rest/api/iothub/iothubresource).
 
 * Сведения о возможностях Azure Resource Manager см. в статье [Общие сведения об Azure Resource Manager](../azure-resource-manager/management/overview.md).
 
@@ -187,4 +187,4 @@ ms.locfileid: "89014614"
 
 Для дальнейшего изучения возможностей Центра Интернета вещей см. следующие статьи:
 
-* [Краткое руководство. Развертывание первого модуля IoT Edge на устройстве под управлением 64-разрядной ОС Linux](../iot-edge/tutorial-simulate-device-linux.md)
+* [Краткое руководство. Развертывание первого модуля IoT Edge на устройстве под управлением 64-разрядной ОС Linux](../iot-edge/quickstart-linux.md)

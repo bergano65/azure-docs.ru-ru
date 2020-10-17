@@ -7,12 +7,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 10/08/2019
 ms.author: robinsh
-ms.openlocfilehash: 4081fe8ba97ba2dd27680cf5f0fa60abd59e44a9
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 5df36cdb3c02fd4c813625c4869c21581f009b02
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92072277"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92152214"
 ---
 # <a name="azure-iot-device-sdks-platform-support"></a>Поддержка платформ SDK для устройств Azure IoT
 
@@ -74,7 +74,7 @@ ms.locfileid: "92072277"
 | Linux                                | .NET Core 2.1                                              |
 | SKU для настольных компьютеров и серверов Windows 10   | .NET Core 2,1, .NET Framework 4.5.1 или .NET Framework 4,7 |
 
-Пакет SDK для .NET также можно использовать с Windows IoT Core с [агентом устройства Azure](https://github.com/ms-iot/azure-client-tools/blob/master/docs/device-agent/device-agent.md) или [с пользовательским служба NTService, который может использовать RPC для взаимодействия с приложениями UWP](https://docs.microsoft.com/samples/microsoft/windows-iotcore-samples/ntservice-rpc/).
+Пакет SDK для .NET также можно использовать с Windows IoT Core с [агентом устройства Azure](https://github.com/ms-iot/azure-client-tools/blob/master/docs/device-agent/device-agent.md) или [с пользовательским служба NTService, который может использовать RPC для взаимодействия с приложениями UWP](/samples/microsoft/windows-iotcore-samples/ntservice-rpc/).
 
 ### <a name="nodejs-sdk"></a>Пакет SDK для Node.js
 
@@ -99,7 +99,7 @@ ms.locfileid: "92072277"
 
 Корпорация Майкрософт работает с различными партнерами, предоставляющими наборы средств разработки для нескольких архитектур микропроцессора. Эти партнеры перестроили пакет SDK для Azure IoT C на свою платформу. Партнеры создают и поддерживают уровень абстракции платформы (PAL) пакета SDK. Корпорация Майкрософт работает с этими партнерами для предоставления расширенной поддержки.
 
-| Партнер             | .                            | Ссылка                     | Поддержка |
+| Партнер             | Устройства                            | Ссылка                     | Поддержка |
 |---------------------|------------------------------------|--------------------------|---------|
 | Espressif           | ESP32 <br/> ESP8266                              | [ESP-azure](https://github.com/espressif/esp-azure)                | [GitHub](https://github.com/espressif/esp-azure)  
 | Qualcomm            | Модем Qualcomm MDM9206 LTE IoT     | [Qualcomm LTE для пакета SDK IoT](https://developer.qualcomm.com/software/lte-iot-sdk) | [Форум](https://developer.qualcomm.com/forums/software/lte-iot-sdk)   |
@@ -124,7 +124,7 @@ ms.locfileid: "92072277"
 
 ## <a name="support-and-other-resources"></a>Поддержка и другие ресурсы
 
-При возникновении проблем при использовании пакетов SDK для устройств Azure IoT существует несколько способов поиска и поддержки, приведенных ниже. Дополнительные сведения обо всех вариантах поддержки см. в статье [Поддержка Azure IOT и параметры справки](https://aka.ms/iothelp). 
+При возникновении проблем при использовании пакетов SDK для устройств Azure IoT существует несколько способов поиска и поддержки, приведенных ниже. Дополнительные сведения обо всех вариантах поддержки см. в статье [Поддержка Azure IOT и параметры справки](../iot-fundamentals/iot-support-help.md). 
 
 **Сообщения об ошибках** . ошибки в пакетах SDK для устройств можно сообщить на странице проблем в соответствующем проекте GitHub. Внесенные исправления очень быстро попадают из проекта в обновление продукта.
 
@@ -138,7 +138,7 @@ ms.locfileid: "92072277"
 
 * [Проблемы с пакетом SDK для Python центра Интернета вещей Azure](https://github.com/Azure/azure-iot-sdk-python/issues)
 
-**Технические вопросы** : вы можете задавать технические вопросы как в [Microsoft Q&A](https://docs.microsoft.com/answers/topics/azure-iot-sdk.html) , так [Stack overflow](https://stackoverflow.com/questions/tagged/azure-iot-sdk) с помощью тега *Azure-IOT-SDK*.
+**Технические вопросы** : вы можете задавать технические вопросы как в [Microsoft Q&A](/answers/topics/azure-iot-sdk.html) , так [Stack overflow](https://stackoverflow.com/questions/tagged/azure-iot-sdk) с помощью тега *Azure-IOT-SDK*.
 
 **Группа поддержки пользователей Майкрософт** — пользователи, у которых есть [план поддержки](https://azure.microsoft.com/support/plans/) , могут обратиться в службу поддержки пользователей Майкрософт, создав новый запрос в службу поддержки непосредственно из [портал Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview).
 

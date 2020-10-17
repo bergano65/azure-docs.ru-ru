@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 06/08/2020
+ms.date: 10/16/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jairoc
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c9cdf01c9dac3c37b3af7b07adb8d202761e7640
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5c650c2b828e2742df5dd92657003460bcda66a0
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91258648"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92145105"
 ---
 # <a name="how-to-require-managed-devices-for-cloud-app-access-with-conditional-access"></a>Как потребовать управляемых устройств для доступа к облачным приложениям с помощью условного доступа
 
@@ -124,6 +124,6 @@ Azure Active Directory (AAD) поддерживает единый вход дл
 
 В Windows 7, iOS, Android, macOS и некоторых сторонних веб-браузерах Azure AD определяет устройство с помощью сертификата клиента, подготовленного при регистрации устройства в Azure AD. При первом входе пользователя в систему через браузер пользователю предлагается выбрать сертификат. Конечный пользователь должен выбрать этот сертификат, прежде чем он сможет продолжить работу с браузером.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Перед настройкой политики условного доступа на основе устройств в среде следует ознакомиться с [рекомендациями по условному доступу в Azure Active Directory](best-practices.md).
+[Оцените влияние политик условного доступа, прежде чем включать режим «только отчет](concept-conditional-access-report-only.md)».

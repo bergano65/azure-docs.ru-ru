@@ -13,12 +13,12 @@ ms.custom:
 - mqtt
 - 'Role: Cloud Development'
 - 'Role: Operations'
-ms.openlocfilehash: 725fc422bc11a19bebcbb8895cc0a9bedd58afed
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c82f6eb37d542f80b6cb79ffb1fae6fe0cf0c233
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91577770"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92144272"
 ---
 # <a name="choose-the-right-iot-hub-tier-for-your-solution"></a>Выбор правильного уровня Центра Интернета вещей для решения
 
@@ -77,37 +77,37 @@ ms.locfileid: "91577770"
 
 | API | Уровень Basic | Уровень "Бесплатный"/"Стандартный" |
 | --- | ---------- | ------------- |
-| [Удаление устройства](https://docs.microsoft.com/javascript/api/azure-iot-digitaltwins-service/registrymanager?view=azure-node-latest#deletedevice-string--models-registrymanagerdeletedeviceoptionalparams-) | Да | Да |
-| [Получение устройства](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/iothub-registrymanager-h/iothubregistrymanager-getdevice) | Да | Да |
-| [Удаление модуля](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/iothub-registrymanager-h/iothubregistrymanager-deletemodule) | Да | Да |
-| [Получение модуля](https://docs.microsoft.com/java/api/com.microsoft.azure.sdk.iot.service.registrymanager.getmodule?view=azure-java-stable) | Да | Да |
-| [Получение статистики реестра](https://docs.microsoft.com/javascript/api/azure-iot-digitaltwins-service/registrymanager?view=azure-node-latest#getdevicestatistics-msrest-requestoptionsbase-) | Да | Да |
-| [Получение статистики службы](https://docs.microsoft.com/javascript/api/azure-iot-digitaltwins-service/registrymanager?view=azure-node-latest#getservicestatistics-msrest-requestoptionsbase-) | Да | Да |
-| [Создание или обновление устройства](https://docs.microsoft.com/javascript/api/azure-iot-digitaltwins-service/registrymanager?view=azure-node-latest#createorupdatedevice-string--device--servicecallback-device--) | Да | Да |
-| [Создание или обновление модуля](https://docs.microsoft.com/javascript/api/azure-iot-digitaltwins-service/registrymanager?view=azure-node-latest#createorupdatemodule-string--string--module--models-registrymanagercreateorupdatemoduleoptionalparams-) | Да | Да |
-| [Отправка запроса в Центр Интернета вещей](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.registrymanager?view=azure-dotnet) | Да | Да |
-| [Создание URI SAS отправки файла](https://docs.microsoft.com/rest/api/iothub/device/createfileuploadsasuri) | Да | Да |
-| [Получение связанного с устройством уведомления](https://docs.microsoft.com/rest/api/iothub/device/receivedeviceboundnotification) | Да | Да |
-| [Отправка события устройства](https://docs.microsoft.com/rest/api/iothub/device/senddeviceevent) | Да | Да |
+| [Удаление устройства](/javascript/api/azure-iot-digitaltwins-service/registrymanager?view=azure-node-latest#deletedevice-string--models-registrymanagerdeletedeviceoptionalparams-) | Да | Да |
+| [Получение устройства](/azure/iot-hub/iot-c-sdk-ref/iothub-registrymanager-h/iothubregistrymanager-getdevice) | Да | Да |
+| [Удаление модуля](/azure/iot-hub/iot-c-sdk-ref/iothub-registrymanager-h/iothubregistrymanager-deletemodule) | Да | Да |
+| [Получение модуля](/java/api/com.microsoft.azure.sdk.iot.service.registrymanager.getmodule?view=azure-java-stable) | Да | Да |
+| [Получение статистики реестра](/javascript/api/azure-iot-digitaltwins-service/registrymanager?view=azure-node-latest#getdevicestatistics-msrest-requestoptionsbase-) | Да | Да |
+| [Получение статистики службы](/javascript/api/azure-iot-digitaltwins-service/registrymanager?view=azure-node-latest#getservicestatistics-msrest-requestoptionsbase-) | Да | Да |
+| [Создание или обновление устройства](/javascript/api/azure-iot-digitaltwins-service/registrymanager?view=azure-node-latest#createorupdatedevice-string--device--servicecallback-device--) | Да | Да |
+| [Создание или обновление модуля](/javascript/api/azure-iot-digitaltwins-service/registrymanager?view=azure-node-latest#createorupdatemodule-string--string--module--models-registrymanagercreateorupdatemoduleoptionalparams-) | Да | Да |
+| [Отправка запроса в Центр Интернета вещей](/dotnet/api/microsoft.azure.devices.registrymanager?view=azure-dotnet) | Да | Да |
+| [Создание URI SAS отправки файла](/rest/api/iothub/device/createfileuploadsasuri) | Да | Да |
+| [Получение связанного с устройством уведомления](/rest/api/iothub/device/receivedeviceboundnotification) | Да | Да |
+| [Отправка события устройства](/rest/api/iothub/device/senddeviceevent) | Да | Да |
 | Отправка события модуля | Только AMQP и MQTT | Только AMQP и MQTT |
-| [Обновление состояния отправки устройства](https://docs.microsoft.com/rest/api/iothub/device/updatefileuploadstatus) | Да | Да |
-| [Массовые операции устройств](https://docs.microsoft.com/javascript/api/azure-iot-digitaltwins-service/registrymanager?view=azure-node-latest#bulkdevicecrud-exportimportdevice----msrest-requestoptionsbase-) | Да, за исключением возможностей IoT Edge | Да |
-| [Отмена задания импорта и экспорта](https://docs.microsoft.com/rest/api/iothub/service/jobs/cancelimportexportjob) | Да | Да |
-| [Создание задания импорта и экспорта](https://docs.microsoft.com/rest/api/iothub/service/jobs/createimportexportjob) | Да | Да |
-| [Получение задания импорта и экспорта](https://docs.microsoft.com/rest/api/iothub/service/jobs/getimportexportjob) | Да | Да |
-| [Получение заданий импорта и экспорта](https://docs.microsoft.com/rest/api/iothub/service/jobs/getimportexportjobs) | Да | Да |
-| [Очистка очереди команд](https://docs.microsoft.com/javascript/api/azure-iot-digitaltwins-service/registrymanager?view=azure-node-latest#purgecommandqueue-string--msrest-requestoptionsbase-) |   | Да |
-| [Получение двойника устройства](https://docs.microsoft.com/java/api/com.microsoft.azure.sdk.iot.device.deviceclient.getdevicetwin?view=azure-java-stable) |   | Да |
-| [Получение двойника модуля](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/iothub-devicetwin-h/iothubdevicetwin-getmoduletwin) |   | Да |
-| [Вызов метода устройства](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-direct-methods) |   | Да |
-| [Обновление двойников устройств](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-device-twins) |   | Да |
-| [Обновление двойника модуля](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/iothub-devicetwin-h/iothubdevicetwin-updatemoduletwin) |   | Да |
-| [Отказ от связанного с устройством уведомления](https://docs.microsoft.com/rest/api/iothub/device/abandondeviceboundnotification) |   | Да |
-| [Полное связанное с устройством уведомление](https://docs.microsoft.com/rest/api/iothub/device/completedeviceboundnotification) |   | Да |
-| [Отмена задания](https://docs.microsoft.com/rest/api/media/jobs/canceljob) |   | Да |
-| [Создание задания](https://docs.microsoft.com/rest/api/media/jobs/create) |   | Да |
-| [Получение задания](https://docs.microsoft.com/java/api/com.microsoft.azure.sdk.iot.service.jobs.jobclient.getjob?view=azure-java-stable) |   | Да |
-| [Запрос заданий](https://docs.microsoft.com/javascript/api/azure-iot-digitaltwins-service/jobclient?view=azure-node-latest#queryjobs-jobclientqueryjobsoptionalparams--servicecallback-queryresult--) |   | Да |
+| [Обновление состояния отправки устройства](/rest/api/iothub/device/updatefileuploadstatus) | Да | Да |
+| [Массовые операции устройств](/javascript/api/azure-iot-digitaltwins-service/registrymanager?view=azure-node-latest#bulkdevicecrud-exportimportdevice----msrest-requestoptionsbase-) | Да, за исключением возможностей IoT Edge | Да |
+| [Отмена задания импорта и экспорта](/rest/api/iothub/service/jobs/cancelimportexportjob) | Да | Да |
+| [Создание задания импорта и экспорта](/rest/api/iothub/service/jobs/createimportexportjob) | Да | Да |
+| [Получение задания импорта и экспорта](/rest/api/iothub/service/jobs/getimportexportjob) | Да | Да |
+| [Получение заданий импорта и экспорта](/rest/api/iothub/service/jobs/getimportexportjobs) | Да | Да |
+| [Очистка очереди команд](/javascript/api/azure-iot-digitaltwins-service/registrymanager?view=azure-node-latest#purgecommandqueue-string--msrest-requestoptionsbase-) |   | Да |
+| [Получение двойника устройства](/java/api/com.microsoft.azure.sdk.iot.device.deviceclient.getdevicetwin?view=azure-java-stable) |   | Да |
+| [Получение двойника модуля](/azure/iot-hub/iot-c-sdk-ref/iothub-devicetwin-h/iothubdevicetwin-getmoduletwin) |   | Да |
+| [Вызов метода устройства](./iot-hub-devguide-direct-methods.md) |   | Да |
+| [Обновление двойников устройств](./iot-hub-devguide-device-twins.md) |   | Да |
+| [Обновление двойника модуля](/azure/iot-hub/iot-c-sdk-ref/iothub-devicetwin-h/iothubdevicetwin-updatemoduletwin) |   | Да |
+| [Отказ от связанного с устройством уведомления](/rest/api/iothub/device/abandondeviceboundnotification) |   | Да |
+| [Полное связанное с устройством уведомление](/rest/api/iothub/device/completedeviceboundnotification) |   | Да |
+| [Отмена задания](/rest/api/media/jobs/canceljob) |   | Да |
+| [Создание задания](/rest/api/media/jobs/create) |   | Да |
+| [Получение задания](/java/api/com.microsoft.azure.sdk.iot.service.jobs.jobclient.getjob?view=azure-java-stable) |   | Да |
+| [Запрос заданий](/javascript/api/azure-iot-digitaltwins-service/jobclient?view=azure-node-latest#queryjobs-jobclientqueryjobsoptionalparams--servicecallback-queryresult--) |   | Да |
 
 ## <a name="message-throughput"></a>Пропускная способность сообщений
 

@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: compliance
 ms.topic: how-to
-ms.date: 09/14/2020
+ms.date: 10/16/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jocastel
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 19c6bf058af62f830c825eef900bff712ba07181
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 233645519a6a918e451c425971d2e2e16f788f3a
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90085915"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92145394"
 ---
 # <a name="azure-active-directory-terms-of-use"></a>Azure Active Directory условия использования
 
@@ -389,7 +389,6 @@ A. Да. В настоящее время существует 108 разных 
 **Вопрос. какие конечные точки используют условия использования службы для проверки подлинности?**<br />
 Ответ. Условия использования использует следующие конечные точки для проверки подлинности: https://tokenprovider.termsofuse.identitygovernance.azure.com и https://account.activedirectory.windowsazure.com . Если в вашей организации есть список разрешенных URL-адресов для регистрации, необходимо добавить эти конечные точки в список разрешений вместе с конечными точками Azure AD для входа.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Краткое руководство. Требование принятия условий использования перед доступом к облачным приложениям](require-tou.md)
-- [Рекомендации по условному доступу в Azure Active Directory](best-practices.md)

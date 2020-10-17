@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 11/21/2019
+ms.date: 10/16/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6b2f9a6e13fdc39ab18a2056fab15982aa9fb0e4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ab9d544cc205d2971b2097110d8c36c5d85fa1fd
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88948170"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92144997"
 ---
 # <a name="how-to-require-mfa-for-access-from-untrusted-networks-with-conditional-access"></a>Как запросить MFA для доступа из ненадежных сетей с помощью условного доступа   
 
@@ -26,10 +26,7 @@ Azure Active Directory (Azure AD) обеспечивает единый вход
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-В данной статье предполагается, что вы знакомы с: 
-
-- [основными понятиями](overview.md) условного доступа Azure AD; 
-- [рекомендациями](best-practices.md) по настройке политик условного доступа на портале Azure.
+В этой статье предполагается, что вы знакомы с [основными понятиями](overview.md) условного доступа. 
 
 ## <a name="scenario-description"></a>Описание сценария
 
@@ -65,7 +62,7 @@ Azure Active Directory (Azure AD) обеспечивает единый вход
 
 ## <a name="policy-deployment"></a>Развертывание политики
 
-С помощью подхода, описанного в этой статье, можно настроить политику условного доступа для ненадежных расположений. Чтобы убедиться, что политика работает должным образом, рекомендуется протестировать ее перед развертыванием в рабочей среде. В идеале для проверки правильности работы новой политики следует использовать тестовый клиент. Дополнительные сведения см. в разделе [Как развертывать новую политику?](best-practices.md#how-should-you-deploy-a-new-policy) 
+С помощью подхода, описанного в этой статье, можно настроить политику условного доступа для ненадежных расположений. Чтобы убедиться, что политика работает должным образом, рекомендуется протестировать ее перед развертыванием в рабочей среде. В идеале для проверки правильности работы новой политики следует использовать тестовый клиент.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -3,12 +3,12 @@ title: Базовый план безопасности Azure для Azure DevTe
 description: Базовый план безопасности Azure для Azure DevTest Labs
 ms.topic: conceptual
 ms.date: 07/23/2020
-ms.openlocfilehash: 49b07242068df5d7c46c602140c8b3e1f778e90c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 838501bf4195c99c4d4ef7805fb8f4cba79e05d2
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89398329"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92151868"
 ---
 # <a name="azure-security-baseline-for-azure-devtest-labs"></a>Базовый план безопасности Azure для Azure DevTest Labs
 
@@ -264,7 +264,7 @@ DevTest Labs не имеет концепции паролей по умолча
 ### <a name="41-maintain-an-inventory-of-sensitive-information"></a>4,1: поддержание инвентаризации конфиденциальной информации
 **Руководство.** Используйте теги для отслеживания ресурсов Azure, в которых хранятся или обрабатываются конфиденциальные данные.
 
-- [Создание и использование тегов](../azure-resource-manager/resource-group-using-tags.md)
+- [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
 **Мониторинг центра безопасности Azure:** Неприменимо
 
@@ -273,10 +273,10 @@ DevTest Labs не имеет концепции паролей по умолча
 ### <a name="42-isolate-systems-storing-or-processing-sensitive-information"></a>4.2. Изолирование систем, хранящих или обрабатывающих конфиденциальные данные
 **Руководство.** Реализуйте отдельные подписки или группы управления для разработки, тестирования и производства. Azure DevTest Labs экземпляры должны быть разделены виртуальной сетью или подсетью и соответствующим образом помечаться тегами. 
 
-- [Создание дополнительных подписок Azure](../billing/billing-create-subscription.md)
-- [Создание групп управления](../governance/management-groups/create.md)
+- [Создание дополнительных подписок Azure](../cost-management-billing/manage/create-subscription.md)
+- [Создание групп управления](../governance/management-groups/create-management-group-portal.md)
 - [Настройка виртуальной сети для DevTest Labs](devtest-lab-configure-vnet.md)
-- [Создание и использование тегов](../azure-resource-manager/resource-group-using-tags.md)
+- [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 - [Создание и использование тегов для DevTest Labs](devtest-lab-add-tag.md)
 
 **Мониторинг центра безопасности Azure:** Сейчас недоступно
@@ -380,7 +380,7 @@ DevTest Labs не имеет концепции паролей по умолча
 **Руководство.** Используйте Управление обновлениями Azure, чтобы убедиться, что последние обновления безопасности установлены на виртуальных машинах Windows и Linux, размещенных в DevTest Labs. Для виртуальных машин Windows убедитесь, что Центр обновления Windows включен и настроен на автоматическое обновление. Этот параметр сейчас недоступен для настройки через DevTest Labs, однако администратор лаборатории или администратор подписки может настроить этот параметр на базовых виртуальных машинах, используемых в подписке. 
 
 - [Настройка Управление обновлениями для виртуальных машин в Azure](../automation/update-management/update-mgmt-overview.md)
-- [Общие сведения о политиках безопасности Azure, отслеживаемых центром безопасности](../security-center/security-center-policy-definitions.md)
+- [Общие сведения о политиках безопасности Azure, отслеживаемых центром безопасности](../security-center/policy-reference.md)
 
 **Мониторинг центра безопасности Azure:** Неприменимо
 
@@ -444,7 +444,7 @@ DevTest Labs не имеет концепции паролей по умолча
 **Руководство.** Используйте теги, группы управления и отдельные подписки и отдельные лаборатории, где это необходимо, для Организации и мониторинга лабораторий и ресурсов, связанных с лабораторией. Регулярно выверка складских запасов и обеспечьте быстрое удаление несанкционированных ресурсов из подписки.
 
 - [Создание дополнительных подписок Azure](../cost-management-billing/manage/create-subscription.md)
-- [Создание групп управления](../governance/management-groups/create.md)
+- [Создание групп управления](../governance/management-groups/create-management-group-portal.md)
 - [Создание лаборатории с помощью DevTest Labs](devtest-lab-create-lab.md)
 - [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 - [Настройка тегов для лаборатории](devtest-lab-add-tag.md)
@@ -517,7 +517,7 @@ DevTest Labs не имеет концепции паролей по умолча
 
 Дополнительные сведения см. в следующих статьях: 
 - [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
-- [Как отказаться от определенного типа ресурса с помощью Политики Azure](../governance/policy/samples/not-allowed-resource-types.md)
+- [Как отказаться от определенного типа ресурса с помощью Политики Azure](../governance/policy/samples/index.md)
 
 **Мониторинг центра безопасности Azure:** Да
 
@@ -559,7 +559,7 @@ DevTest Labs не имеет концепции паролей по умолча
 - [Настройка виртуальной сети для DevTest Labs](devtest-lab-configure-vnet.md)
 - [Общие сведения о Брандмауэре Azure](../firewall/overview.md)
 - [Обзор брандмауэра веб-приложения](../web-application-firewall/overview.md)
-- [Общие сведения о защите сети](../virtual-network/security-overview.md)
+- [Общие сведения о защите сети](../virtual-network/network-security-groups-overview.md)
 - [Обзор виртуальной сети Azure]()
 - [Упорядочение ресурсов с помощью групп управления Azure](../governance/management-groups/overview.md)
 - [Руководство по выбору модели подписки](/azure/cloud-adoption-framework/decision-guides/subscriptions/)
@@ -617,7 +617,7 @@ DevTest Labs не имеет концепции паролей по умолча
 
 Кроме того, образы виртуальных машин Azure Marketplace, опубликованные корпорацией Майкрософт, управляются и обслуживаются корпорацией Майкрософт.
 
-- [Реализация рекомендаций по оценке уязвимостей в центре безопасности Azure](../security-center/security-center-vulnerability-assessment-recommendations.md)
+- [Реализация рекомендаций по оценке уязвимостей в центре безопасности Azure](../security-center/deploy-vulnerability-assessment-vm.md)
 - [Обзор службы State Configuration службы автоматизации Azure](../automation/automation-dsc-overview.md)
 - [Пример сценария для отправки VHD в Azure и создания виртуальной машины](../virtual-machines/scripts/virtual-machines-windows-powershell-upload-generalized-script.md)
 - [Создание фабрики изображений в DevTest Labs](image-factory-create.md)
@@ -629,8 +629,8 @@ DevTest Labs не имеет концепции паролей по умолча
 ### <a name="75-securely-store-configuration-of-azure-resources"></a>7.5. Безопасное хранение конфигурации ресурсов Azure
 **Руководство.** Используйте Azure DevOps для безопасного хранения и управления кодом, например пользовательскими политиками Azure, Azure Resource Manager шаблонами и скриптами настройки требуемого состояния. Чтобы получить доступ к ресурсам, которыми вы управляете в Azure DevOps, вы можете предоставить или отклонить разрешения для определенных пользователей, встроенных групп безопасности или групп, определенных в Azure Active Directory (Azure AD), если они интегрированы с Azure DevOps.
 
-- [Учебник по Azure Repos Git](https://docs.microsoft.com/azure/devops/repos/git/gitworkflow)
-- [О разрешениях и группах](https://docs.microsoft.com/azure/devops/organizations/security/about-permissions?view=azure-devops&tabs=preview-page)
+- [Учебник по Azure Repos Git](/azure/devops/repos/git/gitworkflow)
+- [О разрешениях и группах](/azure/devops/organizations/security/about-permissions?tabs=preview-page&view=azure-devops)
 - [Интеграция между Azure DevTest Labs и рабочим процессом DevOps Azure](devtest-lab-dev-ops.md)
 
 **Мониторинг центра безопасности Azure:** Неприменимо
@@ -681,7 +681,7 @@ DevTest Labs не имеет концепции паролей по умолча
 ### <a name="710-implement-automated-configuration-monitoring-for-operating-systems"></a>7.10. Реализация автоматизированного мониторинга конфигурации для операционных систем
 **Руководство.** Используйте центр безопасности Azure для выполнения проверок базовых параметров ОС и DOCKER для контейнеров.
 
-- [Общие сведения о рекомендациях центра безопасности Azure в отношении контейнеров](../security-center/security-center-container-recommendations.md)
+- [Общие сведения о рекомендациях центра безопасности Azure в отношении контейнеров](../security-center/container-security.md)
 
 **Мониторинг центра безопасности Azure:** Неприменимо
 
@@ -692,7 +692,7 @@ DevTest Labs не имеет концепции паролей по умолча
 
 - [Настройка управляемого удостоверения для развертывания сред Azure Resource Manager в DevTest Labs](use-managed-identities-environments.md)
 - [Настройка управляемого удостоверения для развертывания виртуальных машин в DevTest Labs](enable-managed-identities-lab-vms.md)
-- [Создание хранилища ключей](../key-vault/quick-create-portal.md)
+- [Создание хранилища ключей](../key-vault/secrets/quick-create-portal.md)
 - [Проверка подлинности в Key Vault](../key-vault/general/authentication.md)
 - [Назначение политики доступа Key Vault](../key-vault/general/assign-access-policy-portal.md)
 
@@ -886,7 +886,7 @@ DevTest Labs не имеет концепции паролей по умолча
 
 **Ответственность:** Используемый
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 См. следующую статью:
 
 - [Оповещения системы безопасности для сред в Azure DevTest Labs](environment-security-alerts.md)

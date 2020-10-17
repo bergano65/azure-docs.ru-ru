@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 06/09/2020
+ms.date: 10/16/2020
 ms.author: baselden
 author: BarbaraSelden
 manager: daveba
 ms.reviewer: joflore
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3ef10f51f058739b0e545d341b77af4313dd9e97
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.openlocfilehash: b90ca2812651e139fb62d86ba0bf4d181d5e9d76
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91992856"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92145275"
 ---
 # <a name="plan-a-conditional-access-deployment"></a>Планирование развертывания условного доступа
 
@@ -291,11 +291,7 @@ Azure Active Directory позволяет создавать [именованн
 
 ### <a name="plan-your-policy-deployment"></a>Планирование развертывания политик
 
-Когда новые политики будут готовы к работе в среде, обязательно проверьте каждую политику перед ее внедрением, чтобы избежать нежелательных результатов. Ознакомьтесь с приведенной ниже документацией, чтобы узнать важную информацию о применении политик и о том, как избежать проблем.
-
-* [Что нужно знать](best-practices.md)
-
-* [Чего следует избегать](best-practices.md)
+Когда новые политики будут готовы к работе в среде, обязательно проверьте каждую политику перед ее внедрением, чтобы избежать нежелательных результатов.
 
 ## <a name="common-policies"></a>Общие политики
 
@@ -462,10 +458,6 @@ Azure Active Directory позволяет создавать [именованн
 ### <a name="terms-of-use"></a>Условия использования
 
 Прежде чем обращаться к определенным облачным приложениям в существующей среде, можно получить согласие от пользователей в форме принятия условий использования (ToU). Следуйте этому [краткому руководству по созданию условий использования](require-tou.md).
-
-### <a name="classic-policies"></a>Классические политики
-
-На [портале Azure](https://portal.azure.com/) можно найти политики условного доступа, выбрав "Azure Active Directory" > "Безопасность" > "Условный доступ". В организации также могут быть старые политики условного доступа, созданные не с помощью этой страницы. Эти политики называются классическими. Рекомендуется [рассмотреть возможность переноса таких классических политик на портал Azure](best-practices.md).
 
 ## <a name="troubleshoot-conditional-access"></a>Устранение неполадок условного доступа
 

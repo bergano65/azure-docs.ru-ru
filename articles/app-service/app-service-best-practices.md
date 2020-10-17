@@ -7,15 +7,15 @@ ms.topic: article
 ms.date: 07/01/2016
 ms.author: dariac
 ms.custom: seodec18
-ms.openlocfilehash: 0a25ae41a5f4ed73148f629799ca4865d756a769
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 91fd974c730037907258cb4a670f6fa836bfda6c
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88962457"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92144865"
 ---
 # <a name="best-practices-for-azure-app-service"></a>Рекомендации по использованию Службы приложений Azure
-В этой статье собраны рекомендации по использованию [службы приложений Azure](https://go.microsoft.com/fwlink/?LinkId=529714). 
+В этой статье собраны рекомендации по использованию [службы приложений Azure](./overview.md). 
 
 ## <a name="colocation"></a><a name="colocation"></a>Совместное размещение
 Если входящие в решение ресурсы Azure, например веб-приложения и базы данных, находятся в разных регионах, возможны следующие последствия:
@@ -66,7 +66,7 @@ pm2 start /home/site/wwwroot/app.js --no-daemon -i 4
 Конфигурация по умолчанию службы приложений Azure для приложений Node.js предназначена для наиболее распространенных из них. Если в конфигурации для приложения Node.js целесообразно использовать персонализированные настройки, чтобы повысить производительность или оптимизировать использование ресурсов ЦП, памяти и сети, ознакомьтесь со статьей [Рекомендации и руководство по устранению неполадок приложений Node в веб-приложениях Azure](app-service-web-nodejs-best-practices-and-troubleshoot-guide.md). В этой статье описаны параметры IISNode, которые может потребоваться настроить для приложения Node.js. В ней также рассмотрены различные сценарии и проблемы, которые могут возникнуть при работе приложения, и показано, как устранить эти проблемы.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 Дополнительные сведения о рекомендуемых методиках см. в статье [Диагностика службы приложений](./overview-diagnostics.md) .
 
 - Перейдите к веб-приложению в [портал Azure](https://portal.azure.com).

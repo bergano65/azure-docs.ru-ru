@@ -3,12 +3,12 @@ title: Часто задаваемые вопросы об Azure DevTest Labs | 
 description: В этой статье приведены ответы на некоторые из часто задаваемых вопросов об Azure DevTest Labs.
 ms.topic: article
 ms.date: 07/17/2020
-ms.openlocfilehash: 3f36b8238ccb69b3b1f14166b522e47d5debe54e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6f4c0e34242677eca6a32af4731817085be12436
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87289362"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92144577"
 ---
 # <a name="azure-devtest-labs-faq"></a>Часто задаваемые вопросы об Azure DevTest Labs
 В этой статье содержатся ответы на некоторые самые распространенные вопросы об Azure DevTest Labs.
@@ -145,7 +145,7 @@ $policyRoleDef = New-AzRoleDefinition -Role $policyRoleDef
 -   DevTest Labs создает группу ресурсов для компьютеров с общим IP-адресом, если их размеры совпадают.
 
 В случае общей группы ресурсов происходит следующее:
--   Все виртуальные машины развертываются в указанной общей группе ресурсов. Узнайте больше о [выделении групп ресурсов для лаборатории](https://aka.ms/RGControl).
+-   Все виртуальные машины развертываются в указанной общей группе ресурсов. Узнайте больше о [выделении групп ресурсов для лаборатории](./resource-group-control.md).
 
 ### <a name="how-do-i-maintain-a-naming-convention-across-my-devtest-labs-environment"></a>Как правильно поддерживать соглашения об именовании в среде DevTest Labs?
 Вы можете расширить существующие корпоративные соглашения об именовании на операции в среде Azure и поддерживать их единообразие для всей среды DevTest Labs. Мы рекомендуем вам создать четкие начальные политики сразу же при развертывании DevTest Labs. Для обеспечения согласованности эти политики развертываются с помощью централизованного скрипта и шаблонов JSON. Политики наименования также можно реализовать в политиках Azure, применяемых на уровне подписки. Примеры кода JSON для службы "Политика Azure" вы найдете в статье [Примеры для Политики Azure](../governance/policy/samples/index.md).
@@ -200,7 +200,7 @@ $policyRoleDef = New-AzRoleDefinition -Role $policyRoleDef
 Да, такая возможность поддерживается.
 
 ### <a name="are-gen-2-images-supported-by-devtest-labs"></a>Поддерживаются ли образы поколения 2, поддерживаемые DevTest Labs?
-Да. Служба DevTest Labs поддерживает [образы поколения 2](../virtual-machines/windows/generation-2.md). Однако если для образа доступны как поколения 1, так и Gen 2, то в DevTest Labs в процессе создания виртуальной машины отображается только версия образа Gen 1. Изображение отображается, если доступна только версия для поколения 2. 
+Да. Служба DevTest Labs поддерживает [образы поколения 2](../virtual-machines/generation-2.md). Однако если для образа доступны как поколения 1, так и Gen 2, то в DevTest Labs в процессе создания виртуальной машины отображается только версия образа Gen 1. Изображение отображается, если доступна только версия для поколения 2. 
 
 ### <a name="if-i-want-to-use-a-windows-os-image-for-my-testing-do-i-have-to-purchase-an-msdn-subscription"></a>Если требуется использовать образ ОС Windows для тестирования, нужно ли приобретать подписку MSDN?
 Чтобы использовать образы клиентской ОС Windows (Windows 7 или более поздней версии) для разработки или тестирования в Azure, выполните следующие действия.

@@ -4,12 +4,12 @@ description: Узнайте, как Экземпляры контейнеров 
 ms.topic: article
 ms.date: 04/15/2019
 ms.custom: mvc
-ms.openlocfilehash: f3f8693d1a9a12e7c35d126ab3e3ca53448e5e40
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c7faeecfcc3a1d006cc923b48339a1242a0b9e9b
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "74533664"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92148599"
 ---
 # <a name="azure-container-instances-and-container-orchestrators"></a>Экземпляры контейнеров Azure и оркестраторы контейнеров
 
@@ -54,7 +54,7 @@ ms.locfileid: "74533664"
 
 Чтобы быстро масштабировать рабочие нагрузки приложений в кластере [Службы Azure Kubernetes](../aks/intro-kubernetes.md) (AKS), используйте *виртуальные узлы*, созданные динамически в экземплярах контейнеров Azure. Виртуальные узлы обеспечивают взаимодействие контейнеров pod в сети, которые выполняются в кластерах ACI и AKS. 
 
-В настоящее время виртуальные узлы поддерживают экземпляры контейнеров Linux. Начните работать с виртуальными узлами с помощью [Azure CLI](https://go.microsoft.com/fwlink/?linkid=2047538) или [портала Azure](https://go.microsoft.com/fwlink/?linkid=2047545).
+В настоящее время виртуальные узлы поддерживают экземпляры контейнеров Linux. Начните работать с виртуальными узлами с помощью [Azure CLI](../aks/virtual-nodes-cli.md) или [портала Azure](../aks/virtual-nodes-portal.md).
 
 Виртуальные узлы используют открытый код [Virtual Kubelet][aci-connector-k8s], чтобы имитировать Kubernetes [kubelet][kubelet-doc], регистрируя его как узел с неограниченной емкостью. Virtual Kubelet подготавливает создание объектов [pod][pod-doc] в качестве группы контейнеров в Экземплярах контейнеров Azure.
 

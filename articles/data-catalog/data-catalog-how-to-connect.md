@@ -6,12 +6,12 @@ ms.author: jasonh
 ms.service: data-catalog
 ms.topic: how-to
 ms.date: 08/01/2019
-ms.openlocfilehash: 53a861761f819c2127228e7ef688f04d91744d25
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5c8c545f01eb0df53ce9677b7db6f931b4d21af9
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87081259"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92151895"
 ---
 # <a name="how-to-connect-to-data-sources"></a>Подключение к источникам данных
 ## <a name="introduction"></a>Введение
@@ -40,7 +40,7 @@ ms.locfileid: "87081259"
 | Power Query |.xlsx |Excel 2016 или Excel 2010 либо Excel 2013 с установленной надстройкой Power Query для Excel |
 | Power BI Desktop |.pbix |Power BI Desktop, июль 2016 г. или более поздней версии |
 | SQL Server Data Tools |vsweb:// |Visual Studio 2013 с обновлением 4 или более поздней версии с установленным инструментарием SQL Server |
-| Диспетчер отчетов |http:// |Ознакомьтесь с [требованиями к браузеру для SQL Server Reporting Services](https://technet.microsoft.com/library/ms156511.aspx) |
+| Диспетчер отчетов |http:// |Ознакомьтесь с [требованиями к браузеру для SQL Server Reporting Services](/sql/reporting-services/browser-support-for-reporting-services-and-power-view) |
 
 ## <a name="your-data-your-tools"></a>Ваши данные — ваши средства
 Доступные в меню параметры будут зависеть от типа каждого выбранного ресурса данных. Разумеется, в меню «Открыть в...» не будут включены все возможные средства. Но вы все равно сможете легко подключиться к источнику данных с помощью любого клиентского средства. При выборе ресурса данных на панели свойств портала **каталога данных Azure** отображается полный путь к расположению этого ресурса.

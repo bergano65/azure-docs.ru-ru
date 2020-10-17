@@ -11,16 +11,16 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ba1fc856ee9093b628bd86b9847f8fc70b7189c2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 710122ed4e5a02453f6f0c19a145af64f2c69178
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87552906"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92145422"
 ---
 # <a name="conditional-access-users-and-groups"></a>Условный доступ: пользователи и группы
 
-Политика условного доступа должна включать назначение пользователя в качестве одного из сигналов в процессе принятия решений. Пользователи могут быть включены или исключены из политик условного доступа. 
+Политика условного доступа должна включать назначение пользователя в качестве одного из сигналов в процессе принятия решений. Пользователи могут быть включены или исключены из политик условного доступа. Azure Active Directory оценивает все политики и гарантирует, что все требования будут выполнены перед предоставлением доступа пользователю.
 
 ![Пользователь как сигнал в решениях, сделанных с помощью условного доступа](./media/concept-conditional-access-users-groups/conditional-access-users-and-groups.png)
 
@@ -74,7 +74,9 @@ ms.locfileid: "87552906"
 
 ![Внимание! не блокируйте себя!](./media/concept-conditional-access-users-groups/conditional-access-users-and-groups-lockout-warning.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+[Что делать, если вы блокируете портал Azure?](troubleshoot-conditional-access.md#what-to-do-if-you-are-locked-out-of-the-azure-portal)
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Условный доступ. Облачные приложения или действия](concept-conditional-access-cloud-apps.md)
 

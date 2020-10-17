@@ -6,12 +6,12 @@ ms.service: signalr
 ms.topic: article
 ms.date: 06/8/2020
 ms.author: chenyl
-ms.openlocfilehash: cc7082744bc43baad2e26d09a83907540cf6a1df
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 9b6141e6009cb868d63429836f8c8f050c792ee5
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92094081"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92152295"
 ---
 # <a name="managed-identities-for-azure-signalr-service"></a>Управляемые удостоверения для службы Azure SignalR
 
@@ -62,20 +62,20 @@ ms.locfileid: "92094081"
     - Empty
     - Идентификатор приложения (клиента) субъекта-службы
     - URI идентификатора приложения субъекта-службы
-    - [Идентификатор ресурса службы Azure](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/services-support-managed-identities#azure-services-that-support-azure-ad-authentication)
+    - [Идентификатор ресурса службы Azure](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication)
 
     > [!NOTE]
     > При проверке маркера доступа в службе вы можете выбрать любой из форматов ресурсов. Просто убедитесь, что значение **ресурса** в параметрах **проверки подлинности** и проверка являются одинаковыми. При использовании управления доступом на основе ролей Azure (Azure RBAC) для плоскости данных необходимо использовать ресурс, запрашиваемый поставщиком услуг.
 
 ### <a name="validate-access-tokens"></a>Проверка маркеров доступа
 
-Маркер в `Authorization` заголовке — это [маркер доступа платформы удостоверений (Майкрософт](https://docs.microsoft.com/azure/active-directory/develop/access-tokens#validating-tokens)).
+Маркер в `Authorization` заголовке — это [маркер доступа платформы удостоверений (Майкрософт](../active-directory/develop/access-tokens.md#validating-tokens)).
 
 Чтобы проверить маркеры доступа, приложение должно также проверить аудиторию и маркеры подписывания. Они должны проверяться на соответствие значениям в документе обнаружения OpenID. Например, см. [версию документа, не зависящую от клиента](https://login.microsoftonline.com/common/.well-known/openid-configuration).
 
-По промежуточного слоя Azure Active Directory (Azure AD) имеет встроенные возможности проверки маркеров доступа. Вы можете просмотреть наши [примеры](https://docs.microsoft.com/azure/active-directory/develop/sample-v2-code) , чтобы найти их на выбранном языке.
+По промежуточного слоя Azure Active Directory (Azure AD) имеет встроенные возможности проверки маркеров доступа. Вы можете просмотреть наши [примеры](../active-directory/develop/sample-v2-code.md) , чтобы найти их на выбранном языке.
 
-Мы предоставляем библиотеки и примеры кода, демонстрирующие способы проверки маркеров. Кроме того, для проверки JSON Web Token (JWT) доступны несколько библиотек партнеров с открытым кодом. Существует по крайней мере один вариант почти для каждой платформы и языка. Дополнительные сведения о библиотеках проверки подлинности Azure AD и примеры кода см. в [статье библиотеки проверки подлинности платформы Microsoft Identity](https://docs.microsoft.com/azure/active-directory/develop/reference-v2-libraries).
+Мы предоставляем библиотеки и примеры кода, демонстрирующие способы проверки маркеров. Кроме того, для проверки JSON Web Token (JWT) доступны несколько библиотек партнеров с открытым кодом. Существует по крайней мере один вариант почти для каждой платформы и языка. Дополнительные сведения о библиотеках проверки подлинности Azure AD и примеры кода см. в [статье библиотеки проверки подлинности платформы Microsoft Identity](../active-directory/develop/reference-v2-libraries.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

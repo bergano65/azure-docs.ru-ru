@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 02/02/2018
 ms.author: liydu
-ms.openlocfilehash: d75e7e7b4870f46c978fd70039441c8851844082
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a5a69c35e5c7e33443c3810cad9ab4e21b048328
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87337965"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92148821"
 ---
 # <a name="connect-mxchip-iot-devkit-to-azure-iot-remote-monitoring-solution-accelerator"></a>Подключение MXChip IoT DevKit к акселератору решения Azure IoT для удаленного мониторинга
 
@@ -24,7 +24,7 @@ ms.locfileid: "87337965"
 
 ## <a name="what-you-need"></a>Необходимые элементы
 
-Выполните указания в [руководстве по началу работы](https://docs.microsoft.com/azure/iot-hub/iot-hub-arduino-iot-devkit-az3166-get-started), чтобы перейти к таким этапам:
+Выполните указания в [руководстве по началу работы](./iot-hub-arduino-iot-devkit-az3166-get-started.md), чтобы перейти к таким этапам:
 
 * Подключение DevKit к сети Wi-Fi.
 * Подготовка среды разработки
@@ -133,6 +133,6 @@ ms.locfileid: "87337965"
 
 Теперь вы знаете, как подключить устройство DevKit к акселератору решения Azure IoT для удаленного мониторинга и визуализировать данные датчиков. Мы предлагаем вам следующие шаги для дальнейшего обучения:
 
-* [Обзор акселераторов решений для Интернета вещей Azure](https://docs.microsoft.com/azure/iot-suite/)
+* [Обзор акселераторов решений для Интернета вещей Azure](/azure/iot-suite/)
 
-* [Пакет средств разработки Интернета вещей](https://microsoft.github.io/azure-iot-developer-kit/) 
+* [Пакет средств разработки Интернета вещей](https://microsoft.github.io/azure-iot-developer-kit/)

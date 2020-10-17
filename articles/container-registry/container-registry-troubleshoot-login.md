@@ -3,12 +3,12 @@ title: Устранение неполадок при входе в реестр
 description: Симптомы, причины и способы устранения распространенных проблем при входе в реестр контейнеров Azure
 ms.topic: article
 ms.date: 08/11/2020
-ms.openlocfilehash: d5071a1e759d26ce43d2eb5d9b8215781d813d33
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f7bac49a79d32af3a0e533f4c4e3431c62b82172
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91253360"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92148449"
 ---
 # <a name="troubleshoot-registry-login"></a>Устранение неполадок при входе в реестр
 
@@ -56,13 +56,13 @@ ms.locfileid: "91253360"
 
 ### <a name="specify-correct-registry-name"></a>Укажите правильное имя реестра
 
-При использовании `docker login` Укажите полное имя сервера входа в реестр, например *myregistry.azurecr.IO*. Убедитесь, что используются только строчные буквы. Пример.
+При использовании `docker login` Укажите полное имя сервера входа в реестр, например *myregistry.azurecr.IO*. Убедитесь, что используются только строчные буквы. Пример
 
 ```console
 docker login myregistry.azurecr.io
 ```
 
-При использовании команды [AZ контроля учетных записей](/cli/azure/acr#az-acr-login) с удостоверением Azure Active Directory сначала [Войдите в Azure CLI](/cli/azure/authenticate-azure-cli), а затем укажите имя ресурса Azure реестра. Имя ресурса — это имя, указанное при создании реестра, например *myregistry* (без суффикса домена). Пример.
+При использовании команды [AZ контроля учетных записей](/cli/azure/acr#az-acr-login) с удостоверением Azure Active Directory сначала [Войдите в Azure CLI](/cli/azure/authenticate-azure-cli), а затем укажите имя ресурса Azure реестра. Имя ресурса — это имя, указанное при создании реестра, например *myregistry* (без суффикса домена). Пример
 
 ```azurecli
 az acr login --name myregistry
@@ -95,7 +95,7 @@ az acr login --name myregistry
 
 ### <a name="confirm-credentials-are-authorized-to-access-registry"></a>Подтвердите, что учетные данные имеют права доступа к реестру.
 
-Подтвердите разрешения реестра, связанные с учетными данными, например `AcrPull` роль RBAC, чтобы извлечь образы из реестра или `AcrPush` роль для push-изображений. 
+Подтвердите разрешения реестра, связанные с учетными данными, например `AcrPull` роль Azure для извлечения образов из реестра или `AcrPush` роль для push-образов. 
 
 Для доступа к реестру на портале или управлении реестром с помощью Azure CLI требуется по крайней мере `Reader` роль для выполнения Azure Resource Managerных операций.
 
@@ -103,7 +103,7 @@ az acr login --name myregistry
 
 Связанные ссылки
 
-* [Роли и разрешения RBAC — реестр контейнеров Azure](container-registry-roles.md)
+* [Роли и разрешения Azure. Реестр контейнеров Azure](container-registry-roles.md)
 * [Вход с использованием маркера области репозитория](container-registry-repository-scoped-permissions.md)
 * [Добавление и удаление назначений ролей Azure с помощью портала Azure](../role-based-access-control/role-assignments-portal.md)
 * [Создание приложения Azure AD и субъекта-службы, который может получить доступ к ресурсам, с помощью портала](../active-directory/develop/howto-create-service-principal-portal.md)
@@ -134,7 +134,7 @@ az acr login --name myregistry
 * [Реестр контейнеров: вопросы и ответы](container-registry-faq.md)
 * [Рекомендации по использованию реестра контейнеров Azure](container-registry-best-practices.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы не решите проблему здесь, см. следующие параметры.
 
@@ -142,7 +142,5 @@ az acr login --name myregistry
   * [Устранение проблем с сетью с помощью реестра](container-registry-troubleshoot-access.md)
   * [Устранение проблем с производительностью реестра](container-registry-troubleshoot-performance.md)
 * Варианты [поддержки сообщества](https://azure.microsoft.com/support/community/)
-* [Вопросы и ответы от Майкрософт](https://docs.microsoft.com/answers/products/)
+* [Майкрософт: вопросы и ответы](/answers/products/)
 * [Откройте запрос в службу поддержки](https://azure.microsoft.com/support/create-ticket/) . на основе предоставленных сведений можно выполнить быструю диагностику ошибок проверки подлинности в реестре.
-
-

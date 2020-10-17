@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: troubleshooting
 ms.date: 01/30/2020
 ms.author: jlian
-ms.openlocfilehash: 66461b23432a3e8b7ae4ad1fdc078fba9ca05646
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7d48474d88a60c73f6094d3b9e65017c23404d8a
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "76960767"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92144260"
 ---
 # <a name="412002-devicemessagelocklost"></a>412002 DeviceMessageLockLost
 
@@ -25,7 +25,7 @@ ms.locfileid: "76960767"
 
 ## <a name="cause"></a>Причина
 
-Когда устройство получает сообщение, переданное из облака на устройство, из очереди (например, с помощью [`ReceiveAsync()`](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.deviceclient.receiveasync?view=azure-dotnet) ), сообщение блокируется центром Интернета вещей на время ожидания блокировки, равное одной минуте. Если устройство пытается завершить сообщение по истечении времени ожидания блокировки, центр Интернета вещей создает это исключение.
+Когда устройство получает сообщение, переданное из облака на устройство, из очереди (например, с помощью [`ReceiveAsync()`](/dotnet/api/microsoft.azure.devices.client.deviceclient.receiveasync?view=azure-dotnet) ), сообщение блокируется центром Интернета вещей на время ожидания блокировки, равное одной минуте. Если устройство пытается завершить сообщение по истечении времени ожидания блокировки, центр Интернета вещей создает это исключение.
 
 ## <a name="solution"></a>Решение
 
