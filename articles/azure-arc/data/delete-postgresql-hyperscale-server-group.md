@@ -9,12 +9,12 @@ ms.author: jeanyd
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: dcabe4b1520c66b8d5bfa398dc1248972587cd32
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cacef205b614170df210e03ddf3978a64a90ea22
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90940799"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92151931"
 ---
 # <a name="delete-an-azure-arc-enabled-postgresql-hyperscale-server-group"></a>Удаление группы горизонтального масштабирования сервера PostgreSQL в службе "Дуга Azure"
 
@@ -57,7 +57,7 @@ azdata arc postgres server delete -n postgres01
 kubectl get pvc [-n <namespace name>]
 ```
 
-Он возвращает список Пвсс, в частности, PVC для удаленной группы серверов. Пример:
+Он возвращает список постоянных виртуальных цепей, в частности, PVC для удаленной группы серверов. Пример:
 ```console
 kubectl get pvc
 NAME                STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE
