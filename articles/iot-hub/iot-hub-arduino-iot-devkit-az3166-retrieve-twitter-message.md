@@ -10,12 +10,12 @@ ms.tgt_pltfrm: arduino
 ms.date: 03/07/2018
 ms.author: liydu
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 187e44a40228adb62a1d97f4e0df8a7ad3a7e2d3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: af1685f6455c0642800cba7dd604fcc836bcd7a4
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91356073"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92147892"
 ---
 # <a name="shake-shake-for-a-tweet----retrieve-a-twitter-message-with-azure-functions"></a>Shake, Shake: получение сообщений из Twitter с помощью решения "Функции Azure"
 
@@ -23,7 +23,7 @@ ms.locfileid: "91356073"
 
 ## <a name="what-you-need"></a>Необходимые элементы
 
-Выполните указания в [руководстве по началу работы](https://docs.microsoft.com/azure/iot-hub/iot-hub-arduino-iot-devkit-az3166-get-started), чтобы перейти к таким этапам:
+Выполните указания в [руководстве по началу работы](./iot-hub-arduino-iot-devkit-az3166-get-started.md), чтобы перейти к таким этапам:
 
 * Подключение DevKit к сети Wi-Fi.
 * Подготовка среды разработки.
@@ -207,4 +207,4 @@ static const char* iot_event = "{\"topic\":\"iot\"}";
 
 Теперь вы знаете, как подключить устройство DevKit к акселератору решения Azure IoT для удаленного мониторинга и получить твит. Выполните следующие шаги в рамках дальнейшего обучения:
 
-* [Общие сведения об акселераторе решения Azure IoT для удаленного мониторинга](https://docs.microsoft.com/azure/iot-suite/)
+* [Общие сведения об акселераторе решения Azure IoT для удаленного мониторинга](/azure/iot-suite/)

@@ -7,12 +7,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 05/15/2019
 ms.author: asrastog
-ms.openlocfilehash: f77a5b634b035b7cc1142645d355fe6c3756226b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1eed12593168975b1dfda6e51b07b256cbd0c246
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89004074"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92145806"
 ---
 # <a name="query-avro-data-by-using-azure-data-lake-analytics"></a>Запрос данных Avro с помощью Azure Data Lake Analytics
 
@@ -171,7 +171,7 @@ ms.locfileid: "89004074"
 
 Из этого руководства вы узнали, как запросить данные Avro, чтобы повысить эффективность маршрутизации сообщений из Центра Интернета вещей Azure в службы Azure.
 
-Примеры комплексных решений, в которых используется центр Интернета вещей, см. в [документации по акселераторам решений для Интернета вещей Azure](/azure/iot-accelerators).
+Примеры комплексных решений, в которых используется центр Интернета вещей, см. в [документации по акселераторам решений для Интернета вещей Azure](../iot-accelerators/index.yml).
 
 Дополнительные сведения о разработке решений с помощью Центра Интернета вещей см. в [руководстве разработчика для Центра Интернета вещей](iot-hub-devguide.md).
 

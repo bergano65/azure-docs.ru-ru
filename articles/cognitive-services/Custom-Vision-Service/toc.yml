@@ -39,7 +39,7 @@
       href: use-prediction-api.md
     - name: Использование функции Smart Labeler
       href: suggested-tags.md
-    - name: Управление доступом на основе ролей
+    - name: Управление доступом на основе ролей в Azure
       href: role-based-access-control.md
     - name: Экспорт моделей
       items:

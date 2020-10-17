@@ -954,6 +954,8 @@
           href: ./domain-joined/apache-domain-joined-architecture.md
         - name: Архитектура виртуальной сети HDInsight
           href: ./hdinsight-virtual-network-architecture.md
+        - name: Приватный канал
+          href: ./hdinsight-private-link.md
         - name: Протокол TLS
           href: ./transport-layer-security.md
         - name: Планирование виртуальных сетей для HDInsight

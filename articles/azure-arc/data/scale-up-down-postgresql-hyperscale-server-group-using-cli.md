@@ -9,12 +9,12 @@ ms.author: jeanyd
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: dc77b3c8bc357b63047d20afa9493bbaaff77113
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 303a919cc0afc9b5db49918233f3e5718a896646
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91285321"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92148048"
 ---
 # <a name="scale-up-and-down-an-azure-database-for-postgresql-hyperscale-server-group-using-cli-azdata-or-kubectl"></a>Увеличение и уменьшение масштаба для группы горизонтального масштабирования базы данных Azure для PostgreSQL с помощью интерфейса командной строки (аздата или kubectl)
 
@@ -181,9 +181,8 @@ kubectl describe postgresql-12/<server group name>  [-n <namespace name>]
 
 Чтобы уменьшить масштаб группы серверов, выполните ту же команду, но задайте меньшие значения для параметров, которые необходимо масштабировать. Чтобы удалить запросы и (или) ограничения, укажите его значение как пустую строку.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Масштабирование группы серверов с Гипермасштабированием Базы данных Azure для PostgreSQL](scale-out-postgresql-hyperscale-server-group.md)
 - [Основные понятия конфигурации хранилища и хранилища Kubernetes](storage-configuration.md)
-- [Развертывание утверждений Постоянного тома](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#expanding-persistent-volumes-claims)
 - [Модель ресурсов Kubernetes](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/scheduling/resources.md#resource-quantities)

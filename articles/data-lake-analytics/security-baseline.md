@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/22/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 4a02fc8a04da658b3b6cbbb41e57114d6c4a0527
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d01808eac854e0a694608fc963bd97b035d29ac8
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89231492"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92146182"
 ---
 # <a name="azure-security-baseline-for-data-lake-analytics"></a>Базовый план безопасности Azure для Data Lake Analytics
 
@@ -412,7 +412,7 @@ ms.locfileid: "89231492"
 
 * [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
 
-* [Управление доступом Role-Based](https://docs.microsoft.com/azure/data-lake-analytics/data-lake-analytics-manage-use-portal#manage-role-based-access-control)
+* [Управление управлением доступом на основе ролей в Azure](https://docs.microsoft.com/azure/data-lake-analytics/data-lake-analytics-manage-use-portal#manage-azure-role-based-access-control)
 
 * [Правила брандмауэра](https://docs.microsoft.com/rest/api/datalakeanalytics/firewallrules)
 
@@ -460,7 +460,7 @@ ms.locfileid: "89231492"
 
 **Руководство**. Использование управления доступом на основе ролей Azure (Azure RBAC) для управления взаимодействием пользователей со службой.
 
-* [Управление Azure RBAC](https://docs.microsoft.com/azure/data-lake-analytics/data-lake-analytics-manage-use-portal#manage-role-based-access-control)
+* [Управление Azure RBAC](https://docs.microsoft.com/azure/data-lake-analytics/data-lake-analytics-manage-use-portal#manage-azure-role-based-access-control)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 

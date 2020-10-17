@@ -22,6 +22,13 @@
       href: data-lake-store-get-started-powershell.md
     - name: Использование Azure CLI
       href: data-lake-store-get-started-cli-2.0.md
+- name: Основные понятия
+  items:
+    - name: Безопасность
+      items:
+        - name: Элементы управления безопасностью службы "Политика Azure"
+          displayName: 'regulatory, compliance, standards, domains'
+          href: ./security-controls-policy.md
 - name: Практическое руководство
   items:
     - name: Загрузка и перемещение данных

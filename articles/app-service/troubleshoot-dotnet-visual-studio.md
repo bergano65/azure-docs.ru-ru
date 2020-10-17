@@ -6,16 +6,16 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 08/29/2016
 ms.custom: devx-track-csharp, seodec18
-ms.openlocfilehash: 72df946ed35dfdfd2811089a51ab9403d2e0567c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 346b1f83a9c18e35b009e88ae82d6984274fd4e4
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90983012"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92147744"
 ---
 # <a name="troubleshoot-an-app-in-azure-app-service-using-visual-studio"></a>Устранение неполадок приложения в Cлужбе приложений Azure с помощью Visual Studio
 ## <a name="overview"></a>Обзор
-В этом руководстве показано, как использовать инструменты Visual Studio, которые позволяют отлаживать работу приложения в [Cлужбе приложений](https://go.microsoft.com/fwlink/?LinkId=529714) путем запуска приложения удаленно в [режиме отладки](/visualstudio/debugger/) или путем просмотра журналов приложения и журналов веб-сервера.
+В этом руководстве показано, как использовать инструменты Visual Studio, которые позволяют отлаживать работу приложения в [Cлужбе приложений](./overview.md) путем запуска приложения удаленно в [режиме отладки](/visualstudio/debugger/) или путем просмотра журналов приложения и журналов веб-сервера.
 
 Вы узнаете:
 
@@ -49,7 +49,7 @@ Visual Studio обеспечивает доступ к сокращенному 
    >
    >
 
-    Дополнительные сведения о подключении к ресурсам Azure из Visual Studio см. в разделе [Управление учетными записями, подписками и административными ролями](https://go.microsoft.com/fwlink/?LinkId=324796#BKMK_AccountVCert).
+    Дополнительные сведения о подключении к ресурсам Azure из Visual Studio см. в разделе [Управление учетными записями, подписками и административными ролями](../role-based-access-control/role-assignments-portal.md).
 2. В **обозревателе сервера** разверните узел **Azure**, а затем — узел **Служба приложений**.
 3. Разверните группу ресурсов, которая содержит [приложение ASP.NET, созданное в Службе приложений Azure](quickstart-dotnet-framework.md), а затем щелкните узел этого приложения правой кнопкой мыши и выберите **Просмотреть параметры**.
 
@@ -125,7 +125,7 @@ Visual Studio обеспечивает доступ к сокращенному 
     }
     ```
 
-1. [Установите точку останова](https://docs.microsoft.com/visualstudio/debugger/) в `ViewBag.Message` строке.
+1. [Установите точку останова](/visualstudio/debugger/) в `ViewBag.Message` строке.
 
 1. В **Обозреватель решений**щелкните правой кнопкой мыши проект и выберите команду **опубликовать**.
 
@@ -152,7 +152,7 @@ Visual Studio обеспечивает доступ к сокращенному 
 
 2. В проекте ContosoAdsWebJob откройте *Functions.cs*.
 
-3. [Установите точку останова](https://docs.microsoft.com/visualstudio/debugger/) в первом операторе метода `GnerateThumbnail`.
+3. [Установите точку останова](/visualstudio/debugger/) в первом операторе метода `GnerateThumbnail`.
 
     ![Задание точки останова](./media/web-sites-dotnet-troubleshoot-visual-studio/wjbreakpoint.png)
 
@@ -217,7 +217,7 @@ Visual Studio обеспечивает доступ к сокращенному 
       <httpRuntime targetFramework="4.5" />
     </system.web>
     ```
-* Если вы обнаружите, что отладчик не осуществляет пошаговое выполнение кода, который требуется отладить, может потребоваться изменить параметр "Только мой код".  Дополнительные сведения см. в разделе [Укажите, следует ли отладка пользовательского кода, с помощью "только мой код" в Visual Studio](https://docs.microsoft.com/visualstudio/debugger/just-my-code).
+* Если вы обнаружите, что отладчик не осуществляет пошаговое выполнение кода, который требуется отладить, может потребоваться изменить параметр "Только мой код".  Дополнительные сведения см. в разделе [Укажите, следует ли отладка пользовательского кода, с помощью "только мой код" в Visual Studio](/visualstudio/debugger/just-my-code).
 * При активации функции удаленной отладки на сервере запускается таймер, который автоматически отключает эту функцию по истечении 48 часов. Это 48-часовое ограничение установлено в целях повышения безопасности и производительности. Вы можете в любое время снова активировать эту функцию. Если вы не ведете отладку, эту функцию рекомендуется оставить отключенной.
 * Вы можете вручную присоединить отладчик к любому процессу, а не только к процессу приложения (w3wp.exe). Дополнительные сведения о том, как использовать режим отладки в Visual Studio, см. в разделе [Отладка в Visual Studio](/visualstudio/debugger/debugging-in-visual-studio).
 
@@ -306,7 +306,7 @@ Visual Studio обеспечивает доступ к сокращенному 
     ```
 
 `WebPageTraceListener` позволяет просматривать результаты трассировки, открыв `/trace.axd`.
-1. Добавьте <a href="https://msdn.microsoft.com/library/vstudio/6915t83k(v=vs.100).aspx">элемент трассировки</a> под `<system.web>` в файле Web.config, например так:
+1. Добавьте <a href="/previous-versions/dotnet/netframework-4.0/6915t83k(v=vs.100)">элемент трассировки</a> под `<system.web>` в файле Web.config, например так:
 
     ``` xml
     <trace enabled="true" writeToDiagnosticsTrace="true" mostRecent="true" pageOutput="false" />
@@ -481,7 +481,7 @@ Storage accounts offer more storage and longer-lasting retention for logs compar
     This setting specifies which Azure datacenter will host your storage account. For this tutorial your choice won't make a noticeable difference, but for a production web app you want your web server and your storage account to be in the same region to minimize latency and data egress charges. The web app (which you'll create later) should run in a region as close as possible to the browsers accessing your web app in order to minimize latency.
 3. Set the **Replication** drop-down list to **Locally redundant**.
    
-    When geo-replication is enabled for a storage account, the stored content is replicated to a secondary datacenter to enable failover to that location in case of a major disaster in the primary location. Geo-replication can incur additional costs. For test and development accounts, you generally don't want to pay for geo-replication. For more information, see [Create, manage, or delete a storage account](../storage/common/storage-create-storage-account.md).
+    When geo-replication is enabled for a storage account, the stored content is replicated to a secondary datacenter to enable failover to that location in case of a major disaster in the primary location. Geo-replication can incur additional costs. For test and development accounts, you generally don't want to pay for geo-replication. For more information, see [Create, manage, or delete a storage account](../storage/common/storage-account-create.md).
 4. Click **Create**.
 
     ![New storage account](./media/web-sites-dotnet-troubleshoot-visual-studio/newstorage.png)    
@@ -600,7 +600,7 @@ Storage accounts offer more storage and longer-lasting retention for logs compar
 Справочные данные об определенном вопросе, связанном с устранением неполадок, можно получить, начав беседу на одном из следующих форумов:
 
 * [Форум Azure на веб-сайте ASP.NET](https://forums.asp.net/1247.aspx/1?Azure+and+ASP+NET).
-* [Форум Azure в Microsoft Q&а](https://docs.microsoft.com/answers/topics/azure-webapps.html).
+* [Форум Azure в Microsoft Q&а](/answers/topics/azure-webapps.html).
 * [StackOverflow.com](https://www.stackoverflow.com).
 
 ### <a name="debugging-in-visual-studio"></a>Отладка в Visual Studio

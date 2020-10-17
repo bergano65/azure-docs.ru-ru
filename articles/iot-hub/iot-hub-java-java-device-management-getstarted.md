@@ -10,12 +10,12 @@ ms.devlang: java
 ms.topic: conceptual
 ms.date: 08/20/2019
 ms.custom: mqtt, devx-track-java
-ms.openlocfilehash: da108e5f4832b1b72f252803ca0f4bc93c011c9a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 28b82c87442257124f286a5e7c949afe7f001019
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87327639"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92146924"
 ---
 # <a name="get-started-with-device-management-java"></a>Начало работы с управлением устройствами (Java)
 
@@ -54,7 +54,7 @@ ms.locfileid: "87327639"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* [Пакет SDK для Java SE 8](https://docs.microsoft.com/java/azure/jdk/?view=azure-java-stable). Щелкните ссылку **Java 8** в разделе **Долгосрочная поддержка**, чтобы скачать все необходимое для работы с JDK 8.
+* [Пакет SDK для Java SE 8](/java/azure/jdk/?view=azure-java-stable). Щелкните ссылку **Java 8** в разделе **Долгосрочная поддержка**, чтобы скачать все необходимое для работы с JDK 8.
 
 * [Maven 3](https://maven.apache.org/download.cgi)
 

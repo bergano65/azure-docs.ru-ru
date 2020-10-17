@@ -11,12 +11,12 @@ ms.date: 06/01/2020
 ms.custom:
 - amqp
 - 'Role: Cloud Development'
-ms.openlocfilehash: 941953c75c516a9eceff526a0ced0ec0910f1f1e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4bb33721625f4fc752745ce2b43051c90b3aaa74
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87327707"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92147675"
 ---
 # <a name="read-device-to-cloud-messages-from-the-built-in-endpoint"></a>Чтение сообщений, пересылаемых с устройства в облако, из встроенной конечной точки
 
@@ -72,12 +72,12 @@ ms.locfileid: "87327707"
 
 Ниже перечислены некоторые интеграции продуктов, которые можно использовать с предоставленной Центром Интернета вещей встроенной конечной точкой, совместимой с Центрами событий.
 
-* [Функции Azure](https://docs.microsoft.com/azure/azure-functions/). См. раздел [Обработка данных из Центра Интернета вещей с помощью Функций Azure](https://azure.microsoft.com/resources/samples/functions-js-iot-hub-processing/).
-* [Azure Stream Analytics](https://docs.microsoft.com/azure/stream-analytics/). См. раздел [Потоковые данные в качестве входных данных Stream Analytics](../stream-analytics/stream-analytics-define-inputs.md#stream-data-from-iot-hub).
-* [Аналитика временных рядов](https://docs.microsoft.com/azure/time-series-insights/). См. [Добавление источника событий центра Интернета вещей в вашу среду "Аналитика временных рядов"](../time-series-insights/time-series-insights-how-to-add-an-event-source-iothub.md).
+* [Функции Azure](../azure-functions/index.yml). См. раздел [Обработка данных из Центра Интернета вещей с помощью Функций Azure](https://azure.microsoft.com/resources/samples/functions-js-iot-hub-processing/).
+* [Azure Stream Analytics](../stream-analytics/index.yml). См. раздел [Потоковые данные в качестве входных данных Stream Analytics](../stream-analytics/stream-analytics-define-inputs.md#stream-data-from-iot-hub).
+* [Аналитика временных рядов](../time-series-insights/index.yml). См. [Добавление источника событий центра Интернета вещей в вашу среду "Аналитика временных рядов"](../time-series-insights/how-to-ingest-data-iot-hub.md).
 * [Воронка Apache Storm](../hdinsight/storm/apache-storm-develop-csharp-event-hub-topology.md). Вы можете просмотреть [источник воронки](https://github.com/apache/storm/tree/master/external/storm-eventhubs) на портале GitHub.
-* [интеграция Apache Spark.](../hdinsight/spark/apache-spark-eventhub-streaming.md)
-* [Azure Databricks](https://docs.microsoft.com/azure/azure-databricks/).
+* [интеграция Apache Spark.](../hdinsight/spark/apache-spark-ipython-notebook-machine-learning.md)
+* [Azure Databricks](/azure/azure-databricks/).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

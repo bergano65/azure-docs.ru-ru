@@ -16,12 +16,12 @@ ms.date: 11/27/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7616ceed812b21f471609d95f59a0d0270dd7f52
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a4f8987a8daccc012f9d6da53e46fe7c4e8b43ad
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89658508"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92146347"
 ---
 # <a name="topologies-for-azure-ad-connect"></a>Топологии для Azure AD Connect
 В этой статье описываются различные локальные топологии и топологии Active Directory Azure (Azure AD), в которых служба синхронизации Azure AD Connect используется в качестве основного решения интеграции. Здесь описываются и поддерживаемые, и неподдерживаемые конфигурации.
@@ -31,14 +31,14 @@ ms.locfileid: "89658508"
 
 | Описание | Символ |
 | --- | --- |
-| Локальный лес Active Directory |![Локальный лес Active Directory](./media/plan-connect-topologies/LegendAD1.png) |
-| Локальная служба Active Directory с фильтрацией импорта |![Active Directory с фильтрацией импорта](./media/plan-connect-topologies/LegendAD2.png) |
-| Сервер синхронизации Azure AD Connect |![Сервер синхронизации Azure AD Connect](./media/plan-connect-topologies/LegendSync1.png) |
-| Промежуточный режим сервера синхронизации Azure AD Connect |![Промежуточный режим сервера синхронизации Azure AD Connect](./media/plan-connect-topologies/LegendSync2.png) |
-| GALSync с Forefront Identity Manager (FIM) 2010 или Microsoft Identity Manager (MIM) 2016 |![GALSync с FIM 2010 или MIM 2016](./media/plan-connect-topologies/LegendSync3.png) |
-| Сервер синхронизации Azure AD Connect, подробно |![Сервер синхронизации Azure AD Connect, подробно](./media/plan-connect-topologies/LegendSync4.png) |
-| Azure AD |![Azure Active Directory](./media/plan-connect-topologies/LegendAAD.png) |
-| Неподдерживаемый сценарий |![Неподдерживаемый сценарий](./media/plan-connect-topologies/LegendUnsupported.png) |
+| Локальный лес Active Directory |![Локальный лес Active Directory](./media/plan-connect-topologies/legendad1.png) |
+| Локальная служба Active Directory с фильтрацией импорта |![Active Directory с фильтрацией импорта](./media/plan-connect-topologies/legendad2.png) |
+| Сервер синхронизации Azure AD Connect |![Сервер синхронизации Azure AD Connect](./media/plan-connect-topologies/legendsync1.png) |
+| Промежуточный режим сервера синхронизации Azure AD Connect |![Промежуточный режим сервера синхронизации Azure AD Connect](./media/plan-connect-topologies/legendsync2.png) |
+| GALSync с Forefront Identity Manager (FIM) 2010 или Microsoft Identity Manager (MIM) 2016 |![GALSync с FIM 2010 или MIM 2016](./media/plan-connect-topologies/legendsync3.png) |
+| Сервер синхронизации Azure AD Connect, подробно |![Сервер синхронизации Azure AD Connect, подробно](./media/plan-connect-topologies/legendsync4.png) |
+| Azure AD |![Azure Active Directory](./media/plan-connect-topologies/legendaad.png) |
+| Неподдерживаемый сценарий |![Неподдерживаемый сценарий](./media/plan-connect-topologies/legendunsupported.png) |
 
 
 > [!IMPORTANT]
@@ -46,17 +46,17 @@ ms.locfileid: "89658508"
 
 
 ## <a name="single-forest-single-azure-ad-tenant"></a>Один лес, один клиент Azure AD
-![Топология для одного леса и одного клиента](./media/plan-connect-topologies/SingleForestSingleDirectory.png)
+![Топология для одного леса и одного клиента](./media/plan-connect-topologies/singleforestsingledirectory.png)
 
 Стандартная топология — один локальный лес с одним или несколькими доменами и один клиент Azure AD. Для аутентификации Azure AD используется синхронизация хэша паролей. Экспресс-установка Azure AD Connect поддерживает только эту топологию.
 
 ### <a name="single-forest-multiple-sync-servers-to-one-azure-ad-tenant"></a>Один лес, несколько серверов синхронизации в одном клиенте Azure AD
-![Неподдерживаемая отфильтрованная топология для одного леса](./media/plan-connect-topologies/SingleForestFilteredUnsupported.png)
+![Неподдерживаемая отфильтрованная топология для одного леса](./media/plan-connect-topologies/singleforestfilteredunsupported.png)
 
 Подключение нескольких серверов синхронизации Azure AD Connect (за исключением [промежуточного сервера](#staging-server)) к одному клиенту Azure AD не поддерживается. Такая схема не поддерживается, даже если эти серверы настроены для синхронизации с взаимоисключающим набором объектов. Возможно, вы рассматривали такую топологию, если у вас нет доступа ко всем доменам леса с одного сервера или если требуется распределить нагрузку на несколько серверов.
 
 ## <a name="multiple-forests-single-azure-ad-tenant"></a>Несколько лесов, один клиент Azure AD
-![Топология для нескольких лесов и одного клиента](./media/plan-connect-topologies/MultiForestSingleDirectory.png)
+![Топология для нескольких лесов и одного клиента](./media/plan-connect-topologies/multiforestsingledirectory.png)
 
 Во многих организациях есть среды, которые включают несколько локальных лесов Active Directory. Есть разные причины существования нескольких локальных лесов Active Directory. Типичными примерами являются проекты с лесами ресурсов учетных записей и лесами, появившимися в результате слияния или поглощения.
 
@@ -81,16 +81,16 @@ ms.locfileid: "89658508"
 Дополнительные сведения см. в статье [Службы синхронизации Azure AD Connect: рекомендации по изменению конфигурации по умолчанию](concept-azure-ad-connect-sync-default-configuration.md).
 
 ### <a name="multiple-forests-multiple-sync-servers-to-one-azure-ad-tenant"></a>Несколько лесов, несколько серверов синхронизации в одном клиенте Azure AD
-![Неподдерживаемая топология для нескольких лесов и нескольких серверов синхронизации](./media/plan-connect-topologies/MultiForestMultiSyncUnsupported.png)
+![Неподдерживаемая топология для нескольких лесов и нескольких серверов синхронизации](./media/plan-connect-topologies/multiforestmultisyncunsupported.png)
 
 Подключение нескольких серверов синхронизации Azure AD Connect к одному клиенту Azure AD не поддерживается. В порядке исключения можно использовать [промежуточный сервер](#staging-server).
 
 Эта топология отличается от описанной ниже тем, что подключение **нескольких серверов синхронизации** к одному клиенту Azure AD не поддерживается.
 
 ### <a name="multiple-forests-single-sync-server-users-are-represented-in-only-one-directory"></a>Несколько лесов, один сервер синхронизации, пользователи представлены только в одном каталоге
-![Параметр для представления пользователей во всех каталогах только один раз](./media/plan-connect-topologies/MultiForestUsersOnce.png)
+![Параметр для представления пользователей во всех каталогах только один раз](./media/plan-connect-topologies/multiforestusersonce.png)
 
-![Изображение нескольких лесов и отдельных топологий](./media/plan-connect-topologies/MultiForestSeparateTopologies.png)
+![Изображение нескольких лесов и отдельных топологий](./media/plan-connect-topologies/multiforestseparatetopologies.png)
 
 В этой среде все локальные леса рассматриваются как отдельные сущности. В любых других лесах пользователи отсутствуют. У каждого леса есть своя организация Exchange. Синхронизация GALSync между лесами отсутствует. Такая топология может возникать в результате слияний и поглощений, а также в организации, в которой все подразделения функционируют независимо. В Azure AD эти леса будут находиться в одной организации и отображаться в едином глобальном списке адресов. На предыдущем рисунке каждый объект в каждом лесу представлен в метавселенной в единственном экземпляре с объединением в целевом клиенте Azure AD.
 
@@ -98,9 +98,9 @@ ms.locfileid: "89658508"
 Для всех сценариев этого рода характерно то, что группы рассылки и группы безопасности могут состоять из пользователей, контактов и внешних субъектов безопасности. Внешние участники безопасности используются в доменных службах Active Directory (AD DS) для представления элементов из других лесов в группе безопасности. Все внешние субъекты безопасности разрешаются в реальный объект в Azure AD.
 
 ### <a name="multiple-forests-full-mesh-with-optional-galsync"></a>Несколько лесов: полная сетка с дополнительным решением GALSync
-![Параметр для использования атрибута почты для сопоставления в случае, когда удостоверения пользователей присутствуют в нескольких каталогах](./media/plan-connect-topologies/MultiForestUsersMail.png)
+![Параметр для использования атрибута почты для сопоставления в случае, когда удостоверения пользователей присутствуют в нескольких каталогах](./media/plan-connect-topologies/multiforestusersmail.png)
 
-![Топология полной сетки для нескольких лесов](./media/plan-connect-topologies/MultiForestFullMesh.png)
+![Топология полной сетки для нескольких лесов](./media/plan-connect-topologies/multiforestfullmesh.png)
 
 Топология полной сетки позволяет пользователям и ресурсам размещаться в любом лесу. Как правило, между лесами образуются двусторонние отношения доверия.
 
@@ -109,9 +109,9 @@ ms.locfileid: "89658508"
 В этом сценарии объекты удостоверений соединяются с помощью атрибута почты. Пользователь с почтовым ящиком в одном лесу объединяется с контактами в других лесах.
 
 ### <a name="multiple-forests-account-resource-forest"></a>Несколько лесов: лес ресурсов учетной записи
-![Параметр для использования атрибутов ObjectSID и msExchMasterAccountSID для сопоставления, когда удостоверения присутствуют в нескольких каталогах](./media/plan-connect-topologies/MultiForestUsersObjectSID.png)
+![Параметр для использования атрибутов ObjectSID и msExchMasterAccountSID для сопоставления, когда удостоверения присутствуют в нескольких каталогах](./media/plan-connect-topologies/multiforestusersobjectsid.png)
 
-![Топология леса ресурсов учетной записи для нескольких лесов](./media/plan-connect-topologies/MultiForestAccountResource.png)
+![Топология леса ресурсов учетной записи для нескольких лесов](./media/plan-connect-topologies/multiforestaccountresource.png)
 
 В топологии леса ресурсов учетной записи у вас есть один или несколько лесов *учетных* записей с активными учетными записями пользователей. У вас также есть один или несколько лесов *ресурсов* с отключенными учетными записями.
 
@@ -128,7 +128,7 @@ ms.locfileid: "89658508"
 Если вы являетесь более крупной организацией, то следует использовать функцию [Microsoft 365 PreferredDataLocation](how-to-connect-sync-feature-preferreddatalocation.md) . Он позволяет определить, в каком регионе центра обработки данных расположены ресурсы пользователя.
 
 ## <a name="staging-server"></a>промежуточного сервера
-![Промежуточный сервер в топологии](./media/plan-connect-topologies/MultiForestStaging.png)
+![Промежуточный сервер в топологии](./media/plan-connect-topologies/multiforeststaging.png)
 
 Azure AD Connect поддерживает установку второго сервера в *промежуточном режиме*. Сервер в этом режиме считывает данные из всех подключенных каталогов, но не записывает ничего в подключенные каталоги. Он использует обычный цикл синхронизации и поэтому содержит обновленную копию данных удостоверения.
 
@@ -144,12 +144,12 @@ Azure AD Connect поддерживает установку второго се
 Мы рекомендуем использовать один клиент в Azure AD для всей организации.
 Прежде чем использовать несколько клиентов Azure AD, ознакомьтесь со статьей [Управление административными единицами в Azure AD (общедоступной предварительной версии)](../users-groups-roles/directory-administrative-units.md). В ней описываются стандартные сценарии, в которых можно использовать один клиент.
 
-![Топология для нескольких лесов и нескольких клиентов](./media/plan-connect-topologies/MultiForestMultiDirectory.png)
+![Топология для нескольких лесов и нескольких клиентов](./media/plan-connect-topologies/multiforestmultidirectory.png)
 
 Между сервером синхронизации Azure AD Connect и клиентом Azure AD устанавливается отношение 1:1. Для каждого клиента Azure AD потребуется установить отдельный сервер синхронизации Azure AD Connect. Экземпляры клиента Azure AD являются изолированными по своей природе. Это значит, что пользователям в одном клиенте недоступны пользователи в другом клиенте. Если вам необходимо это разделение, это поддерживаемая конфигурация. В противном случае следует использовать модель одного клиента Azure AD.
 
 ### <a name="each-object-only-once-in-an-azure-ad-tenant"></a>Каждый объект, повторяющийся только один раз в клиенте Azure AD
-![Отфильтрованная топология для одного леса](./media/plan-connect-topologies/SingleForestFiltered.png)
+![Отфильтрованная топология для одного леса](./media/plan-connect-topologies/singleforestfiltered.png)
 
 В этой топологии один сервер синхронизации Azure AD Connect подключается к каждому клиенту Azure AD. На серверах синхронизации Azure AD Connect необходимо настроить правила фильтрации, чтобы они обрабатывали взаимоисключающие наборы объектов. Например, каждый сервер может обслуживать определенный домен или подразделение.
 
@@ -161,17 +161,20 @@ Azure AD Connect поддерживает установку второго се
 
 Эта топология налагает следующие ограничения на сценарии, поддерживаемые в других случаях:
 
-* гибридное развертывание Exchange с локальным экземпляром Active Directory можно включить только для одного клиента Azure AD;
+* Не более 5 Azure Active Directory клиентов могут иметь гибридный Exchange с локальным Active Directoryным экземпляром. Этот сценарий описан в [обновлении мастера гибридной конфигурации от сентября 2020](https://techcommunity.microsoft.com/t5/exchange-team-blog/september-2020-hybrid-configuration-wizard-update/ba-p/1687698).
+* Сервер Exchange, на котором работает мастер гибридной конфигурации, должен иметь значение 2016 CU18 или 2019 И НАКОПИТЕЛЬНЫМ или более поздней версии.
+* Каждый экземпляр Azure AD Connect должен выполняться на компьютере, присоединенном к домену.
+* Чтобы отфильтровать пользователей из локального каталога, Azure AD Connect необходимо настроить с помощью параметра "Фильтрация доменов и подразделений". Использование этого параметра гарантирует, что пользователи будут отображаться только в одном интернет-клиенте Exchange.
 * устройство под управлением Windows 10 можно связать только с одним клиентом Azure AD;
 * параметр единого входа для синхронизации хэша паролей и сквозной аутентификации можно использовать только с одним клиентом Azure AD.
 
-Требование относительно взаимоисключающих наборов объектов также применяется и к обратной записи. Эта топология не будет поддерживать некоторые функции обратной записи, так как они предполагают наличие одной локальной конфигурации. Эти функции включают перечисленные ниже.
+Требование относительно взаимоисключающих наборов объектов также применяется и к обратной записи. Эта топология не будет поддерживать некоторые функции обратной записи, так как они предполагают наличие одной локальной конфигурации. К ним относятся:
 
 * групповая обратная запись в конфигурации по умолчанию;
 * обратная запись устройств.
 
 ### <a name="each-object-multiple-times-in-an-azure-ad-tenant"></a>Каждый объект, повторяющийся несколько раз в клиенте Azure AD
-![Неподдерживаемая топология для одного леса и нескольких клиентов](./media/plan-connect-topologies/SingleForestMultiDirectoryUnsupported.png) ![Неподдерживаемая топология для одного леса и нескольких соединителей](./media/plan-connect-topologies/SingleForestMultiConnectorsUnsupported.png)
+![Неподдерживаемая топология для одного леса и нескольких клиентов](./media/plan-connect-topologies/singleforestmultidirectoryunsupported.png) ![Неподдерживаемая топология для одного леса и нескольких соединителей](./media/plan-connect-topologies/singleforestmulticonnectorsunsupported.png)
 
 Следующие задачи не поддерживаются:
 
@@ -180,7 +183,7 @@ Azure AD Connect поддерживает установку второго се
 * изменение настройки службы синхронизации Azure AD Connect для подключения к нескольким клиентам Azure AD.
 
 ### <a name="galsync-by-using-writeback"></a>Синхронизация GALSync с помощью обратной записи
-![Неподдерживаемая топология для нескольких лесов и нескольких каталогов с синхронизацией GALSync, сфокусированной на Azure AD](./media/plan-connect-topologies/MultiForestMultiDirectoryGALSync1Unsupported.png) ![Неподдерживаемая топология для нескольких лесов и нескольких каталогов с синхронизацией GALSync, сфокусированной на локальном каталоге Active Directory](./media/plan-connect-topologies/MultiForestMultiDirectoryGALSync2Unsupported.png)
+![Неподдерживаемая топология для нескольких лесов и нескольких каталогов с синхронизацией GALSync, сфокусированной на Azure AD](./media/plan-connect-topologies/multiforestmultidirectorygalsync1unsupported.png) ![Неподдерживаемая топология для нескольких лесов и нескольких каталогов с синхронизацией GALSync, сфокусированной на локальном каталоге Active Directory](./media/plan-connect-topologies/multiforestmultidirectorygalsync2unsupported.png)
 
 Клиенты Azure AD являются изолированными по своей природе. Следующие задачи не поддерживаются:
 
@@ -188,7 +191,7 @@ Azure AD Connect поддерживает установку второго се
 * экспорт пользователей как контакты в другой локальный экземпляр Active Directory с использованием службы синхронизации Azure AD.
 
 ### <a name="galsync-with-on-premises-sync-server"></a>Синхронизация GALSync с локальным сервером синхронизации
-![Синхронизация GALSync в топологии для нескольких лесов и нескольких каталогов](./media/plan-connect-topologies/MultiForestMultiDirectoryGALSync.png)
+![Синхронизация GALSync в топологии для нескольких лесов и нескольких каталогов](./media/plan-connect-topologies/multiforestmultidirectorygalsync.png)
 
 Для синхронизации пользователей (с помощью GALSync) между двумя организациями Exchange можно локально использовать FIM 2010 или MIM 2016. Пользователи из одной организации будут отображаться в другой организации как внешние пользователи или контакты. Затем эти локальные экземпляры Active Directory можно синхронизировать с их собственными клиентами Azure AD.
 
@@ -197,7 +200,7 @@ Azure AD Connect поддерживает установку второго се
 
 Сервер Azure Active Directory Connect взаимодействует с Azure Active Directory через серверную часть Azure Active Directory Connect. Единственным программным обеспечением, которое можно использовать для взаимодействия с этой серверной частью, является Azure Active Directory Connect. Не поддерживается обмен данными с Azure Active Directory Connect серверной частью с помощью любого другого программного обеспечения или метода. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Больше об установке Azure AD Connect для этих сценариев можно узнать в статье [Выборочная установка Azure AD Connect](how-to-connect-install-custom.md).
 
 Узнайте больше о настройке [службы синхронизации Azure AD Connect](how-to-connect-sync-whatis.md) .

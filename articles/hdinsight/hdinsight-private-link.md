@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 10/15/2020
-ms.openlocfilehash: c51b99ed04357cdebaabbde2b2bd0400adcfef30
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
+ms.openlocfilehash: d0ee9680a6b1b7c3e145137c73dda84d1a755b06
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92134186"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92147915"
 ---
 # <a name="secure-and-isolate-azure-hdinsight-clusters-with-private-link-preview"></a>Защита и изоляция кластеров Azure HDInsight с помощью частной ссылки (Предварительная версия)
 
@@ -56,7 +56,7 @@ ms.locfileid: "92134186"
 
 Если параметр `privateLink` *включен*, создаются внутренние подсистемы [балансировки нагрузки](../load-balancer/load-balancer-overview.md) (SLB), а для каждого SLB подготавливается служба частной связи Azure. Служба частной связи позволяет получить доступ к кластеру HDInsight из частных конечных точек.
 
-Стандартные подсистемы балансировки нагрузки не обеспечивают автоматическое предоставление общедоступного исходящего трафика NAT, такого как базовые подсистемы балансировки нагрузки. Для исходящих зависимостей необходимо предоставить собственное решение NAT, например [NAT виртуальной сети](../virtual-network/nat-overview.md) или [брандмауэр](./hdinsight-restrict-outbound-traffic.md). Кластеру HDInsight по-прежнему требуется доступ к его исходящим зависимостям. Если эти исходящие зависимости не допускаются, создание кластера может завершиться ошибкой.
+Стандартные подсистемы балансировки нагрузки не обеспечивают автоматическое предоставление [общедоступного исходящего трафика NAT](https://docs.microsoft.com/azure/load-balancer/load-balancer-outbound-connections) , такого как базовые подсистемы балансировки нагрузки. Для исходящих зависимостей необходимо предоставить собственное решение NAT, например [NAT виртуальной сети](../virtual-network/nat-overview.md) или [брандмауэр](./hdinsight-restrict-outbound-traffic.md). Кластеру HDInsight по-прежнему требуется доступ к его исходящим зависимостям. Если эти исходящие зависимости не допускаются, создание кластера может завершиться ошибкой.
 
 ### <a name="prepare-your-environment"></a>Подготовка среды
 

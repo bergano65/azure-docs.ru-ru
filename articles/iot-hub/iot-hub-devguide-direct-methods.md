@@ -12,12 +12,12 @@ ms.custom:
 - mqtt
 - 'Role: Cloud Development'
 - 'Role: IoT Device'
-ms.openlocfilehash: f68705309d15548dc9728686e2e0ecd6aaad3fba
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b75e859fc1237bc88bee464cef423b7289810fa8
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91334112"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92147801"
 ---
 # <a name="understand-and-invoke-direct-methods-from-iot-hub"></a>Общие сведения о прямых методах и информация о вызове этих методов из Центра Интернета вещей
 
@@ -55,7 +55,7 @@ ms.locfileid: "91334112"
 
 Вызов прямого метода на устройстве является вызовом HTTPS, который состоит из следующих элементов:
 
-* *URI перенаправления* конкретного устройства вместе с [версией API](https://docs.microsoft.com/rest/api/iothub/service/devices/invokemethod):
+* *URI перенаправления* конкретного устройства вместе с [версией API](/rest/api/iothub/service/devices/invokemethod):
 
     ```http
     https://fully-qualified-iothubname.azure-devices.net/twins/{deviceId}/methods?api-version=2018-06-30
@@ -220,7 +220,7 @@ https://<iothubName>.azure-devices.net/twins/<deviceId>/modules/<moduleName>/met
 
 * Статья [Взаимодействие с Центром Интернета вещей с помощью протокола MQTT](iot-hub-mqtt-support.md) содержит дополнительные сведения о поддержке протокола MQTT в Центре Интернета вещей.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали, как использовать прямые методы, вас может заинтересовать следующая статья в руководстве разработчика для Центра Интернета вещей:
 

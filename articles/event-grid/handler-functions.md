@@ -3,12 +3,12 @@ title: Использование функции Azure как обработчи
 description: Узнайте, как можно использовать функции Azure в качестве обработчиков событий Сетки событий Azure.
 ms.topic: conceptual
 ms.date: 09/18/2020
-ms.openlocfilehash: cd500eed180096388eede96f768f08b896ca6456
-ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
+ms.openlocfilehash: 9e04fd3e04dab7a50940c2a4a799a56d447fbb6e
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91873733"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92145755"
 ---
 # <a name="azure-function-as-an-event-handler-for-event-grid-events"></a>Использование функции Azure как обработчика событий Сетки событий
 
@@ -74,13 +74,13 @@ ms.locfileid: "91873733"
 Вы можете обновить эти значения для существующей подписки на вкладке &quot; **функции** ":::
 
 ### <a name="azure-resource-manager-template"></a>Шаблон Azure Resource Manager
-**Максевентспербатч** и **преферредбатчсизеинкилобитес** можно задать в шаблоне Azure Resource Manager. Дополнительные сведения см. в [справочнике по шаблонам Microsoft. EventGrid eventSubscriptions](https://docs.microsoft.com/azure/templates/microsoft.eventgrid/eventsubscriptions).
+**Максевентспербатч** и **преферредбатчсизеинкилобитес** можно задать в шаблоне Azure Resource Manager. Дополнительные сведения см. в [справочнике по шаблонам Microsoft. EventGrid eventSubscriptions](/azure/templates/microsoft.eventgrid/eventsubscriptions).
 
 ### <a name="azure-cli"></a>Azure CLI
-Для настройки параметров, связанных с пакетной службой, можно использовать команду [AZ eventgrid Event-Subscription Create](https://docs.microsoft.com/cli/azure/eventgrid/event-subscription?view=azure-cli-latest#az_eventgrid_event_subscription_create&preserve-view=true) или [AZ eventgrid Event-Subscription Update](https://docs.microsoft.com/cli/azure/eventgrid/event-subscription?view=azure-cli-latest#az_eventgrid_event_subscription_update&preserve-view=true) . для этого используйте следующие параметры: `--max-events-per-batch` или `--preferred-batch-size-in-kilobytes` .
+Для настройки параметров, связанных с пакетной службой, можно использовать команду [AZ eventgrid Event-Subscription Create](/cli/azure/eventgrid/event-subscription?view=azure-cli-latest#az_eventgrid_event_subscription_create&preserve-view=true) или [AZ eventgrid Event-Subscription Update](/cli/azure/eventgrid/event-subscription?view=azure-cli-latest#az_eventgrid_event_subscription_update&preserve-view=true) . для этого используйте следующие параметры: `--max-events-per-batch` или `--preferred-batch-size-in-kilobytes` .
 
 ### <a name="azure-powershell"></a>Azure PowerShell
-С помощью командлета [New-азевентгридсубскриптион](https://docs.microsoft.com/powershell/module/az.eventgrid/new-azeventgridsubscription) или [Update-азевентгридсубскриптион](https://docs.microsoft.com/powershell/module/az.eventgrid/update-azeventgridsubscription) можно настроить параметры, связанные с пакетной службой, используя следующие параметры: `-MaxEventsPerBatch` или `-PreferredBatchSizeInKiloBytes` .
+С помощью командлета [New-азевентгридсубскриптион](/powershell/module/az.eventgrid/new-azeventgridsubscription) или [Update-азевентгридсубскриптион](/powershell/module/az.eventgrid/update-azeventgridsubscription) можно настроить параметры, связанные с пакетной службой, используя следующие параметры: `-MaxEventsPerBatch` или `-PreferredBatchSizeInKiloBytes` .
 
 ## <a name="next-steps"></a>Дальнейшие действия
-См. список поддерживаемых обработчиков событий в статье [Обработчики событий](event-handlers.md). 
+См. список поддерживаемых обработчиков событий в статье [Обработчики событий](event-handlers.md).

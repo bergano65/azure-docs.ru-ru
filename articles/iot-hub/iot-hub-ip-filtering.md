@@ -7,12 +7,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 05/25/2020
 ms.author: robinsh
-ms.openlocfilehash: 1ba3c89ea4f964f9e6fd5f902aab29a83a058f25
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a9a95c0151ed6dd3a2ad4a9d548723cdff0bcfb8
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87074718"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92147076"
 ---
 # <a name="use-ip-filters"></a>Использование фильтрации IP-адресов
 
@@ -22,7 +22,7 @@ ms.locfileid: "87074718"
 
 Есть два конкретных варианта применения этой функции, когда рекомендуется заблокировать конечные точки Центра Интернета вещей для определенных IP-адресов:
 
-* Центр Интернета вещей должен принимать трафик только из определенного диапазона IP-адресов и отклонять весь остальной трафик. Допустим, что Центр Интернета вещей используется в сочетании с [Azure Express Route](https://azure.microsoft.com/documentation/articles/expressroute-faqs/#supported-services) для создания частных подключений между Центром Интернета вещей и локальной инфраструктурой.
+* Центр Интернета вещей должен принимать трафик только из определенного диапазона IP-адресов и отклонять весь остальной трафик. Допустим, что Центр Интернета вещей используется в сочетании с [Azure Express Route](../expressroute/expressroute-faqs.md#supported-services) для создания частных подключений между Центром Интернета вещей и локальной инфраструктурой.
 
 * В этом случае требуется отклонять трафик с IP-адресов, которые были определены администратором Центра Интернета вещей как подозрительные.
 
@@ -75,7 +75,7 @@ ms.locfileid: "87074718"
 
 ## <a name="retrieve-and-update-ip-filters-using-azure-cli"></a>Получение и обновление фильтров IP-адресов с помощью Azure CLI
 
-Фильтры IP-адресов Центра Интернета вещей можно получать и обновлять с помощью [интерфейса командной строки Azure](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest).
+Фильтры IP-адресов Центра Интернета вещей можно получать и обновлять с помощью [интерфейса командной строки Azure](/cli/azure/?view=azure-cli-latest).
 
 Чтобы получить текущие фильтры IP-адресов Центра Интернета вещей, выполните следующую команду:
 
@@ -149,7 +149,7 @@ $iothubResource | Set-AzResource -Force
 
 ## <a name="update-ip-filter-rules-using-rest"></a>Обновление правил фильтра IP-адреса с помощью REST
 
-Вы также можете получать и изменять фильтры IP-адресов Центра Интернета вещей, используя конечную точку REST поставщика ресурсов Azure. Подробные сведения о `properties.ipFilterRules` см. в статье [Iot Hub Resource — Create Or Update](https://docs.microsoft.com/rest/api/iothub/iothubresource/createorupdate) (Ресурс Центра Интернета вещей. Создание или обновление).
+Вы также можете получать и изменять фильтры IP-адресов Центра Интернета вещей, используя конечную точку REST поставщика ресурсов Azure. Подробные сведения о `properties.ipFilterRules` см. в статье [Iot Hub Resource — Create Or Update](/rest/api/iothub/iothubresource/createorupdate) (Ресурс Центра Интернета вещей. Создание или обновление).
 
 ## <a name="ip-filter-rule-evaluation"></a>Оценка правила фильтрации IP-адресов
 

@@ -7,15 +7,15 @@ ms.assetid: 51cd331a-a3fa-438f-90ef-385e755e50d5
 ms.topic: article
 ms.date: 07/06/2016
 ms.custom: seodec18
-ms.openlocfilehash: 9a41c5912ec285094c1f47540caf3744ddd4d469
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6dd67ff4f7346daf7a590ab4fb45a32d227f1c3e
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88958332"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92147543"
 ---
 # <a name="troubleshoot-http-errors-of-502-bad-gateway-and-503-service-unavailable-in-azure-app-service"></a>Устранение ошибок HTTP "502 — недопустимый шлюз" и "503 — служба недоступна" в Службе приложений Azure
-"502 — недопустимый шлюз" и "503 — служба недоступна" — распространенные ошибки, возникающие при работе приложения, размещенного в [Службе приложений Azure](https://go.microsoft.com/fwlink/?LinkId=529714). Эта статья поможет вам устранить эти ошибки.
+"502 — недопустимый шлюз" и "503 — служба недоступна" — распространенные ошибки, возникающие при работе приложения, размещенного в [Службе приложений Azure](./overview.md). Эта статья поможет вам устранить эти ошибки.
 
 Если вам потребуется дополнительная помощь по любому из вопросов, рассматриваемых в статье, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/forums/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт службы поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните **Поддержка**.
 
