@@ -80,6 +80,10 @@
       href: concepts/event-handling.md
     - name: Уведомления
       href: concepts/notifications.md
+    - name: Ведение журнала и диагностика
+      href: concepts/logging-and-diagnostics.md
+    - name: Метрики
+      href: concepts/metrics.md
 - name: Примеры
   items:
     - name: Главный пример функции группового вызова

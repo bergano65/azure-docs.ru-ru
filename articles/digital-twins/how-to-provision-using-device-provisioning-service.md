@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 9/1/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 9a2345dce542f941df0122acd12b4acedd3b49a3
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 46b764c9fcdb771f0a82fa47c0b1aa9112bb9e94
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92047240"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92150509"
 ---
 # <a name="auto-manage-devices-in-azure-digital-twins-using-device-provisioning-service-dps"></a>Автоматическое управление устройствами в цифровом двойников Azure с помощью службы подготовки устройств (DPS)
 
@@ -69,7 +69,7 @@ ms.locfileid: "92047240"
 
 Создайте экземпляр службы подготовки устройств, который будет использоваться для подготовки устройств IoT. Можно либо использовать приведенные ниже инструкции Azure CLI, либо использовать портал Azure: Краткое руководство по [*настройке службы подготовки устройств для центра Интернета вещей с помощью портал Azure*](../iot-dps/quick-setup-auto-provision.md).
 
-Следующая команда Azure CLI создаст службу подготовки устройств. Необходимо указать имя, группу ресурсов и регион. Команду можно выполнить в [Cloud Shell](https://shell.azure.com)или локально, если [на компьютере установлен](/cli/azure/install-azure-cli?view=azure-cli-latest)Azure CLI.
+Следующая команда Azure CLI создаст службу подготовки устройств. Необходимо указать имя, группу ресурсов и регион. Команду можно выполнить в [Cloud Shell](https://shell.azure.com)или локально, если [на компьютере установлен](/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true)Azure CLI.
 
 ```azurecli
 az iot dps create --name <Device Provisioning Service name> --resource-group <resource group name> --location <region; for example, eastus>
@@ -79,7 +79,7 @@ az iot dps create --name <Device Provisioning Service name> --resource-group <re
 
 Далее вы создадите функцию, активируемую HTTP-запросом, внутри приложения-функции. Вы можете использовать приложение-функцию, созданное в комплексном учебнике ([*руководство по подключению комплексного решения*](tutorial-end-to-end.md)) или к своему собственному интерфейсу.
 
-Эта функция будет использоваться службой подготовки устройств в [пользовательской политике распределения](../iot-dps/how-to-use-custom-allocation-policies.md) , которая подготавливает новое устройство. Дополнительные сведения об использовании HTTP-запросов с помощью функций Azure см. в статье [*триггер HTTP-запросов Azure для функций Azure*](../azure-functions/functions-bindings-http-webhook-trigger.md).
+Эта функция будет использоваться службой подготовки устройств в [пользовательской политике выделения](../iot-dps/how-to-use-custom-allocation-policies.md) для подготовки нового устройства. Дополнительные сведения об использовании HTTP-запросов с помощью функций Azure см. в статье [*триггер HTTP-запросов Azure для функций Azure*](../azure-functions/functions-bindings-http-webhook-trigger.md).
 
 В проекте приложения-функции добавьте новую функцию. Кроме того, добавьте в проект новый пакет NuGet: `Microsoft.Azure.Devices.Provisioning.Service` .
 
@@ -447,7 +447,7 @@ namespace Samples.AdtIothub
 
 Далее необходимо задать переменные среды в приложении-функции с помощью более ранней версии, содержащей ссылку на созданный вами экземпляр двойников Azure и концентратор событий. Если вы использовали полное руководство ([*руководство по подключению комплексного решения*](./tutorial-end-to-end.md)), первый параметр будет уже настроен.
 
-Добавьте параметр с помощью этой команды Azure CLI. Команду можно выполнить в [Cloud Shell](https://shell.azure.com)или локально, если [на компьютере установлен](/cli/azure/install-azure-cli?view=azure-cli-latest)Azure CLI.
+Добавьте параметр с помощью этой команды Azure CLI. Команду можно выполнить в [Cloud Shell](https://shell.azure.com)или локально, если [на компьютере установлен](/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true)Azure CLI.
 
 ```azurecli
 az functionapp config appsettings set --settings "ADT_SERVICE_URL=https://<Azure Digital Twins instance _host name_>" -g <resource group> -n <your App Service (function app) name>
@@ -480,7 +480,7 @@ az functionapp config appsettings set --settings "EVENTHUB_CONNECTIONSTRING=<Eve
 
 В [первой половине этой статьи](#auto-provision-device-using-device-provisioning-service)вы создали устройство в центре Интернета вещей и соответствующий цифровой двойника. 
 
-Теперь перейдите в центр Интернета вещей и удалите это устройство (это можно сделать с помощью [команды Azure CLI](/cli/azure/ext/azure-cli-iot-ext/iot/hub/device-identity?view=azure-cli-latest#ext-azure-cli-iot-ext-az-iot-hub-device-identity-delete) или в [портал Azure](https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Devices%2FIotHubs)). 
+Теперь перейдите в центр Интернета вещей и удалите это устройство (это можно сделать с помощью [команды Azure CLI](/cli/azure/ext/azure-cli-iot-ext/iot/hub/device-identity?view=azure-cli-latest&preserve-view=true#ext-azure-cli-iot-ext-az-iot-hub-device-identity-delete) или в [портал Azure](https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Devices%2FIotHubs)). 
 
 Устройство будет автоматически удалено из Azure Digital двойников. 
 
@@ -497,7 +497,7 @@ az dt twin show -n <Digital Twins instance name> --twin-id <Device Registration 
 
 Если ресурсы, созданные в этой статье, больше не нужны, выполните следующие действия, чтобы удалить их.
 
-С помощью Azure Cloud Shell или локального Azure CLI можно удалить все ресурсы Azure в группе ресурсов с помощью команды [AZ Group Delete](/cli/azure/group?view=azure-cli-latest#az-group-delete) . Это приведет к удалению группы ресурсов. экземпляр Azure Digital двойников; центр Интернета вещей и регистрация устройств концентратора; раздел "Сетка событий" и связанные подписки; пространство имен концентраторов событий и оба приложения функций Azure, включая связанные ресурсы, такие как хранилище.
+С помощью Azure Cloud Shell или локального Azure CLI можно удалить все ресурсы Azure в группе ресурсов с помощью команды [AZ Group Delete](/cli/azure/group?view=azure-cli-latest&preserve-view=true#az-group-delete) . Это приведет к удалению группы ресурсов. экземпляр Azure Digital двойников; центр Интернета вещей и регистрация устройств концентратора; раздел "Сетка событий" и связанные подписки; пространство имен концентраторов событий и оба приложения функций Azure, включая связанные ресурсы, такие как хранилище.
 
 > [!IMPORTANT]
 > Удаление группы ресурсов — процесс необратимый. Группа ресурсов и все содержащиеся в ней ресурсы удаляются без возможности восстановления. Будьте внимательны, чтобы случайно не удалить не ту группу ресурсов или не те ресурсы. 

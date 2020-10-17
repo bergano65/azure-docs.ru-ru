@@ -313,7 +313,7 @@
             - name: Крупные экземпляры SAP HANA
               href: reservations/prepay-hana-large-instances-reserved-capacity.md?toc=/azure/cost-management-billing/toc.json
             - name: База данных SQL
-              href: ../sql-database/sql-database-reserved-capacity.md?toc=/azure/cost-management-billing/toc.json
+              href: ../azure-sql/database/reserved-capacity-overview.md?toc=%252fazure%252fcost-management-billing%252ftoc.json
             - name: Azure Synapse Analytics
               href: reservations/prepay-sql-data-warehouse-charges.md?toc=/azure/cost-management-billing/toc.json
             - name: Виртуальные машины
@@ -365,9 +365,9 @@
 - name: Справочник
   items:
     - name: "REST\_API Управления затратами Azure"
-      href: 'https://docs.microsoft.com/rest/api/cost-management'
+      href: /rest/api/cost-management
     - name: REST API потребления Azure
-      href: 'https://docs.microsoft.com/rest/api/consumption'
+      href: /rest/api/consumption
     - name: Шаблон Resource Manager
       href: /azure/templates/microsoft.consumption/budgets
     - name: "Примеры REST\_API службы \"Управление затратами\""
@@ -377,19 +377,19 @@
     - name: Общие сведения об API выставления счетов Azure
       href: manage/usage-rate-card-overview.md
     - name: REST API выставления счетов Azure
-      href: 'https://docs.microsoft.com/rest/api/billing'
+      href: /rest/api/billing
     - name: Общие сведения об API потребления ресурсов Azure
       href: manage/consumption-api-overview.md
     - name: REST API потребления Azure
-      href: 'https://docs.microsoft.com/rest/api/consumption'
+      href: /rest/api/consumption
     - name: REST API RateCard
-      href: 'https://msdn.microsoft.com/library/azure/mt219005.aspx'
+      href: /previous-versions/azure/reference/mt219005(v=azure.100)
     - name: REST API использования ресурсов
-      href: 'https://msdn.microsoft.com/library/azure/mt219003.aspx'
+      href: /previous-versions/azure/reference/mt219003(v=azure.100)
     - name: Общие сведения о корпоративной отчетности
       href: manage/enterprise-api.md
     - name: REST API для корпоративной отчетности
-      href: 'https://docs.microsoft.com/rest/api/billing/enterprise/billing-enterprise-api-balance-summary'
+      href: /rest/api/billing/enterprise/billing-enterprise-api-balance-summary
     - name: Резервирование
       items:
         - name: "Резервирования\_— REST API"
@@ -493,4 +493,4 @@
         - name: 'Cloudyn: вопросы и ответы'
           href: cloudyn/cost-mgt-faq.md
         - name: Обращение в службу поддержки Cloudyn
-          href: 'https://docs.microsoft.com/azure/cost-management-billing/costs/open-support-request'
+          href: ./costs/open-support-request.md

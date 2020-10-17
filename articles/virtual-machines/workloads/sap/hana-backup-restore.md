@@ -10,15 +10,15 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 10/16/2019
+ms.date: 10/16/2020
 ms.author: saghorpa
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 79ef279423c524f0d409815e7ae163aa699f5428
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7c2b606059f92cafc44e383c2aced0d6bed467c2
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87082211"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92149728"
 ---
 # <a name="backup-and-restore-on-sap-hana-on-azure"></a>Резервное копирование и восстановление на SAP HANA в Azure
 
@@ -399,6 +399,540 @@ SAP HANA регулярно записывает данные на том /hana/
 
 ### <a name="recover-to-another-point-in-time"></a>Восстановление до другой точки во времени
 Чтобы выполнить восстановление до определенной точки во времени, см. раздел "восстановление базы данных до следующего момента времени" раздела [руководство по восстановлению вручную для SAP HANA в Azure из моментального снимка хранилища](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/latest/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20Guide.md). 
+
+
+
+
+
+## <a name="snapcenter-integration-in-sap-hana-large-instances"></a>Интеграция Снапцентер в SAP HANA крупные экземпляры
+
+В этом разделе описано, как клиенты могут использовать программное обеспечение NetApp Снапцентер для создания моментальных снимков, резервного копирования и восстановления SAP HANA баз данных, размещенных на Microsoft Azure крупных экземпляров HANA (ХЛИ). 
+
+Снапцентер предлагает решения для сценариев, в том числе резервное копирование и восстановление, аварийное восстановление (DR) с асинхронной репликацией хранилища, репликацией системы и клонированием системы. После интеграции с SAP HANA (крупные экземпляры) в Azure клиенты теперь могут использовать Снапцентер для операций резервного копирования и восстановления.
+
+Дополнительные справочные материалы см. в разделе NetApp TR-4614 и TR-4646 на Снапцентер.
+
+- [SAP HANA резервного копирования и восстановления с помощью Снапцентер (TR-4614)](https://www.netapp.com/us/media/tr-4614.pdf)
+- [SAP HANA аварийного восстановления с репликацией хранилища (TR-4646)](https://www.netapp.com/us/media/tr-4646.pdf)
+- [SAP HANA HSR с Снапцентер (TR-4719)](https://www.netapp.com/us/media/tr-4719.pdf)
+- [Клонирование SAP из Снапцентер (TR-4667)](https://www.netapp.com/us/media/tr-4667.pdf)
+
+### <a name="system-requirements-and-prerequisites"></a>Требования к системе и необходимые компоненты
+
+Чтобы запустить Снапцентер в Azure ХЛИ, необходимо выполнить следующие требования к системе:
+* Снапцентер Server в Azure Windows 2016 или более поздней версии с 4-виртуальных ЦП ОЗУ, 16 ГБ и минимум 650 ГБ управляемого хранилища SSD уровня "Премиум".
+* SAP HANA (крупные экземпляры)ная система с 1,5 ТБ — 24 ТБ ОЗУ. Для клонирования операций и тестов рекомендуется использовать две SAP HANA крупные системы экземпляров.
+
+Действия по интеграции Снапцентер в SAP HANA: 
+
+1. Создайте запрос в службу поддержки, чтобы передать созданный пользователем открытый ключ группе разработчиков Microsoft Ops. Это необходимо для настройки пользователя Снапцентер для доступа к системе хранения.
+1. Создайте виртуальную машину в виртуальной сети, которая имеет доступ к ХЛИ; Эта виртуальная машина используется для Снапцентер. 
+1. Скачайте и установите Снапцентер. 
+1. Операции резервного копирования и восстановления. 
+
+### <a name="create-a-support-ticket-for-user-role-storage-setup"></a>Создание запроса в службу поддержки для настройки хранилища ролей пользователя
+
+1. Откройте портал Azure и перейдите на страницу **подписки** . На странице "подписки" выберите подписку SAP HANA, выделенную красным цветом.
+
+   :::image type="content" source="./media/snapcenter/create-support-case-for-user-role-storage-setup.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+
+1. На странице SAP HANA подписка выберите вложенную страницу **группы ресурсов** .
+
+   :::image type="content" source="./media/snapcenter/solution-lab-subscription-resource-groups.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей" lightbox="./media/snapcenter/solution-lab-subscription-resource-groups.png":::
+
+1. Выберите подходящую группу ресурсов в регионе.
+
+   :::image type="content" source="./media/snapcenter/select-appropriate-resource-group-in-region.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей" lightbox="./media/snapcenter/select-appropriate-resource-group-in-region.png":::
+
+1. Выберите запись номера SKU, соответствующую SAP HANA в службе хранилища Azure.
+
+   :::image type="content" source="./media/snapcenter/select-sku-entry-corresponding-to-sap-hana.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей" lightbox="./media/snapcenter/select-sku-entry-corresponding-to-sap-hana.png":::
+
+1. Откройте новый запрос в службу **поддержки** , выделенный красным цветом.
+
+   :::image type="content" source="./media/snapcenter/open-new-support-ticket-request.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+
+1. На вкладке **основы** укажите следующие сведения для билета:
+
+   * **Тип вопроса:** Технические требования
+   * **Подписка:** Ваша подписка
+   * **Служба:** SAP HANA крупные экземпляры
+   * **Ресурс:** Ваша группа ресурсов
+   * **Сводка:** Укажите созданный пользователем открытый ключ
+   * **Тип проблемы:** Настройка и настройка
+   * **Подтип проблемы:** Настройка Снапцентер для ХЛИ
+
+
+1. В **описании** запроса в службу поддержки на вкладке **сведения** укажите: 
+   
+   * Настройка Снапцентер для ХЛИ
+   * Открытый ключ для пользователя Снапцентер (снапцентер. PEM). см. пример создания открытого ключа ниже.
+
+     :::image type="content" source="./media/snapcenter/new-support-request-details.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей" lightbox="./media/snapcenter/new-support-request-details.png":::
+
+1. Выберите **проверить и создать** , чтобы проверить свой запрос в службу поддержки. 
+
+1. Создайте сертификат для имени пользователя Снапцентер в крупном экземпляре HANA или на любом сервере Linux.
+
+   Снапцентер требует имя пользователя и пароль для доступа к виртуальной машине хранилища (SVM) и создания моментальных снимков базы данных HANA. Корпорация Майкрософт использует открытый ключ, чтобы позволить вам (клиенту) Задать пароль для доступа к системе хранения.
+
+   ```bash
+   openssl req -x509 -nodes -days 1095 -newkey rsa:2048 -keyout snapcenter.key -out snapcenter.pem -subj "/C=US/ST=WA/L=BEL/O=NetApp/CN=snapcenter"
+   Generating a 2048 bit RSA private key
+   ................................................................................................................................................+++++
+   ...............................+++++
+   writing new private key to 'snapcenter.key'
+   -----
+
+   sollabsjct31:~ # ls -l cl25*
+   -rw-r--r-- 1 root root 1704 Jul 22 09:59 snapcenter.key
+   -rw-r--r-- 1 root root 1253 Jul 22 09:59 snapcenter.pem
+
+   ```
+
+1. Подключите файл снапцентер. pem к запросу в службу поддержки, а затем выберите **создать** .
+
+   После отправки сертификата открытого ключа Корпорация Майкрософт настраивает имя пользователя Снапцентер для своего клиента вместе с IP-адресом SVM.   
+
+1. Получив IP-адрес SVM, задайте пароль для доступа к SVM, который вы управляете.
+
+   Ниже приведен пример вызова (документации) для крупного экземпляра HANA или виртуальной машины в виртуальной сети, который имеет доступ к среде крупных экземпляров HANA и будет использоваться для установки пароля.
+
+   ```bash
+   curl --cert snapcenter.pem --key snapcenter.key -X POST -k "https://10.0.40.11/api/security/authentication/password" -d '{"name":"snapcenter","password":"test1234"}'
+   ```
+
+   Убедитесь, что в системе базы данных HANA не активна ни одна переменная прокси.
+
+   ```bash
+   sollabsjct31:/tmp # unset http_proxy
+   sollabsjct31:/tmp # unset https_proxy
+   ```
+
+### <a name="download-and-install-snapcenter"></a>Скачивание и установка Снапцентер
+Теперь, когда имя пользователя настроено для Снапцентер доступа к системе хранения, вы будете использовать имя пользователя Снапцентер для настройки Снапцентер после его установки. 
+
+Перед установкой Снапцентер ознакомьтесь [с SAP HANA резервного копирования и восстановления с помощью снапцентер](https://www.netapp.com/us/media/tr-4614.pdf) , чтобы определить стратегию резервного копирования. 
+
+1. Войдите в [NetApp](https://mysupport.netapp.com) , чтобы [скачать](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fmysupport.netapp.com%2Fsite%2Fproducts%2Fall%2Fdetails%2Fsnapcenter%2Fdownloads-tab&data=02%7C01%7Cmadhukan%40microsoft.com%7Ca53f5e2f245a4e36933008d816efbb54%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C637284566603265503&sdata=TOANWNYoAr1q5z1opu70%2FUDPHjluvovqR9AKplYpcpk%3D&reserved=0) последнюю версию снапцентер.
+
+1. Установите Снапцентер на виртуальную машину Windows Azure.
+
+   Установщик проверяет необходимые компоненты виртуальной машины. 
+
+   >[!IMPORTANT]
+   >Обратите особое внимание на размер виртуальной машины, особенно в более крупных средах.
+
+1. Настройте учетные данные пользователя для Снапцентер. По умолчанию он заполняет учетные данные пользователя Windows, используемые для установки приложения. 
+
+   :::image type="content" source="media/snapcenter/installation-user-inputs-dialog.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей"::: 
+
+1. При запуске сеанса сохраните исключение безопасности и запустится графический интерфейс пользователя.
+
+1. Войдите в Снапцентер на виртуальной машине ( https://snapcenter-vm:8146) используя учетные данные Windows для настройки среды).
+
+
+### <a name="set-up-the-storage-system"></a>Настройка системы хранения
+
+1. В Снапцентер выберите **система хранения**и щелкните **+ создать**. 
+
+   :::image type="content" source="./media/snapcenter/snapcenter-storage-connections-window.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей" lightbox="./media/snapcenter/snapcenter-storage-connections-window.png":::
+
+   Значение по умолчанию — один SVM для каждого клиента. Если у клиента несколько клиентов или Хлис в нескольких регионах, рекомендуется настроить все SVM в Снапцентер
+
+1. В окне Добавление системы хранения данных укажите сведения о системе хранения, которую требуется добавить, имя пользователя и пароль Снапцентер, а затем нажмите кнопку **Отправить**.
+
+   :::image type="content" source="./media/snapcenter/new-storage-connection.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+
+   >[!NOTE]
+   >Значение по умолчанию — один SVM для каждого клиента.  При наличии нескольких клиентов рекомендуется настроить все SVM здесь в Снапцентер. 
+
+1. В Снапцентер выберите **узлы** и выберите **+ Добавить** , чтобы настроить подключаемый модуль Hana и узлы базы данных Hana.  Последняя версия Снапцентер автоматически обнаруживает базу данных HANA на узле.
+
+   :::image type="content" source="media/snapcenter/managed-hosts-new-host.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей" lightbox="media/snapcenter/managed-hosts-new-host.png":::
+
+1. Укажите сведения для нового узла:
+   1. Выберите операционную систему для типа узла.
+   1. Введите имя узла виртуальной машины Снапцентер.
+   1. Укажите учетные данные, которые вы хотите использовать.
+   1. Выберите параметры **Microsoft Windows** и **SAP HANA** , а затем нажмите кнопку **Отправить**.
+
+   :::image type="content" source="media/snapcenter/add-new-host-operating-system-credentials.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+
+   >[!IMPORTANT]
+   >Перед установкой первого узла Снапцентер позволяет пользователю, не являющемуся корневым, устанавливать подключаемые модули в базе данных.  Сведения о том, как включить пользователя, не являющегося корневым, см. в разделе [Добавление непривилегированного пользователя и настройка привилегий sudo](https://library.netapp.com/ecmdocs/ECMLP2590889/html/GUID-A3EEB5FC-242B-4C2C-B407-510E48A8F131.html).
+
+1. Проверьте сведения об узле и нажмите кнопку **Отправить** , чтобы установить подключаемый модуль на сервере снапцентер.
+
+1. После установки подключаемого модуля в Снапцентер выберите **узлы** и нажмите кнопку **+ Добавить** , чтобы добавить узел Hana.
+
+   :::image type="content" source="media/snapcenter/add-hana-node.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей" lightbox="media/snapcenter/add-hana-node.png":::
+
+1. Укажите сведения для узла HANA:
+   1. Выберите операционную систему для типа узла.
+   1. Введите имя узла или IP-адрес базы данных HANA.
+   1. Выберите, **+** чтобы добавить учетные данные, настроенные в операционной системе узла Hana DB, а затем нажмите кнопку **ОК**.
+   1. Выберите **SAP HANA** и нажмите кнопку **Отправить**.
+
+   :::image type="content" source="media/snapcenter/add-hana-node-details.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+
+1. Подтвердите отпечаток, а затем нажмите кнопку **подтвердить и отправить**.
+
+   :::image type="content" source="media/snapcenter/confirm-submit-fingerprint.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+
+1. В узле Hana в разделе Системная база данных выберите **Безопасность**  >  **Пользователи**  >  **снапцентер** , чтобы создать пользователя снапцентер.
+
+   :::image type="content" source="media/snapcenter/create-snapcenter-user-hana-system-db.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+
+
+
+### <a name="auto-discovery"></a>Автоматическое обнаружение
+Снапцентер 4,3 включает функцию автоматического обнаружения по умолчанию.  Автоматическое обнаружение не поддерживается для экземпляров HANA с настроенной репликацией системы HANA (HSR). Необходимо вручную добавить экземпляр на сервер Снапцентер.
+
+
+### <a name="hana-setup-manual"></a>Установка HANA (вручную)
+Если вы настроили HSR, необходимо настроить систему вручную.  
+
+1. В Снапцентер выберите **ресурсы** и **San Hana** (в верхней части), а затем выберите **+ Добавить SAP HANA базу данных** (справа).
+
+   :::image type="content" source="media/snapcenter/manual-hana-setup.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей" lightbox="media/snapcenter/manual-hana-setup.png":::
+
+1. Укажите сведения о ресурсах пользователя администратора HANA, настроенного на узле Linux, или на узле, где установлены подключаемые модули. Резервная копия будет управляться из подключаемого модуля в системе Linux.
+
+   :::image type="content" source="media/snapcenter/provide-resource-details-sap-hana-database.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+
+1. Выберите том данных, для которого необходимо создать моментальные снимки, выберите **сохранить** и нажмите кнопку **Готово**.
+
+   :::image type="content" source="media/snapcenter/provide-storage-footprint.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+
+### <a name="create-a-snapshot-policy"></a>Создание политики моментальных снимков
+
+Прежде чем использовать Снапцентер для резервного копирования SAP HANA ресурсов базы данных, необходимо создать политику резервного копирования для ресурса или группы ресурсов, для которых требуется создать резервную копию. В процессе создания политики моментальных снимков вам будет предложено настроить команды до и после, а также специальные ключи SSL. Сведения о создании политики моментальных снимков см. в статье [Создание политик резервного копирования для баз данных SAP HANA](http://docs.netapp.com/ocsc-43/index.jsp?topic=%2Fcom.netapp.doc.ocsc-dpg-sap-hana%2FGUID-246C0810-4F0B-4BF7-9A35-B729AD69954A.html).
+
+1. В Снапцентер выберите **ресурсы** , а затем выберите базу данных.
+
+   :::image type="content" source="media/snapcenter/select-database-create-policy.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+
+1. Следуйте указаниям рабочего процесса мастера настройки, чтобы настроить планировщик моментальных снимков.
+
+   :::image type="content" source="media/snapcenter/follow-workflow-configuration-wizard.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей" lightbox="media/snapcenter/follow-workflow-configuration-wizard.png":::
+
+1. Укажите параметры для настройки команд, выполняемых до и после публикации, и специальных ключей SSL.  В этом примере не используются специальные параметры.
+
+   :::image type="content" source="media/snapcenter/configuration-options-pre-post-commands.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей" lightbox="media/snapcenter/configuration-options-pre-post-commands.png":::
+
+1. Выберите **Добавить** , чтобы создать политику моментальных снимков, которая также может использоваться для других баз данных Hana. 
+
+   :::image type="content" source="media/snapcenter/select-one-or-more-policies.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+
+1. Введите имя и описание политики.
+
+   :::image type="content" source="media/snapcenter/new-sap-hana-backup-policy.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+
+
+1. Выберите тип и частоту резервного копирования.
+
+   :::image type="content" source="media/snapcenter/new-sap-hana-backup-policy-settings.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+
+1. Настройте **Параметры хранения резервных копий по запросу**.  В нашем примере мы настраиваете хранение на три копии моментальных снимков для сохранения.
+
+   :::image type="content" source="media/snapcenter/new-sap-hana-backup-policy-retention-settings.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+
+1. Настройте **Параметры ежечасного хранения**. 
+
+   :::image type="content" source="media/snapcenter/new-sap-hana-backup-policy-hourly-retention-settings.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+
+1. Если настройка SnapMirror настроена, выберите **Обновить SnapMirror после создания локальной копии моментального снимка**.
+
+   :::image type="content" source="media/snapcenter/new-sap-hana-backup-policy-snapmirror.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+
+1. Нажмите кнопку **Готово** , чтобы проверить сводку по новой политике резервного копирования. 
+1. В разделе **Настройка расписания**выберите **Добавить**.
+
+   :::image type="content" source="media/snapcenter/configure-schedules-for-selected-policies.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+
+1. Выберите **дату начала**, **истекает** дату и частоту.
+
+   :::image type="content" source="media/snapcenter/add-schedules-for-policy.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+
+1. Укажите сведения об электронной почте для уведомлений.
+
+   :::image type="content" source="media/snapcenter/backup-policy-notification-settings.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+
+1.  Нажмите кнопку **Готово** , чтобы создать политику архивации.
+
+### <a name="disable-ems-message-to-netapp-autosupport"></a>Отключить сообщение EMS для автоподдержки NetApp
+По умолчанию сбор данных EMS включается и запускается каждые семь дней после даты установки.  Сбор данных можно отключить с помощью командлета PowerShell `Disable-SmDataCollectionEms` .
+
+1. В PowerShell установите сеанс с Снапцентер.
+
+   ```powershell
+   Open-SmConnection
+   ```
+
+1. Войдите с помощью своих учетных данных.
+1. Отключение сбора сообщений EMS.
+
+   ```powershell
+   Disable-SmCollectionEms
+   ```
+
+### <a name="restore-database-after-crash"></a>Восстановление базы данных после сбоя
+Для восстановления базы данных можно использовать Снапцентер.  В этом разделе будут рассмотрены общие действия, но дополнительные сведения см. в статье [SAP HANA резервное копирование и восстановление с помощью снапцентер](https://www.netapp.com/us/media/tr-4614.pdf).
+
+
+1. Завершите работу базы данных и удалите все файлы базы данных.
+
+   ```
+   su - h31adm
+   > sapcontrol -nr 00 -function StopSystem
+   StopSystem
+   OK
+   > sapcontrol -nr 00 -function GetProcessList
+   OK
+   name, description, dispstatus, textstatus, starttime, elapsedtime, pid
+   hdbdaemon, HDB Daemon, GRAY, Stopped, , , 35902
+ 
+   ```
+
+1. Отключите том базы данных.
+
+   ```bash
+   unmount /hana/data/H31/mnt00001
+   ```
+
+
+1. Восстановите файлы базы данных с помощью Снапцентер.  Выберите базу данных и нажмите кнопку **восстановить**.  
+
+   :::image type="content" source="media/snapcenter/restore-database-via-snapcenter.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей" lightbox="media/snapcenter/restore-database-via-snapcenter.png":::
+
+1. Выберите тип восстановления.  В нашем примере мы восстанавливаем полный ресурс. 
+
+   :::image type="content" source="media/snapcenter/restore-database-select-restore-type.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+
+   >[!NOTE]
+   >При установке по умолчанию не нужно указывать команды для локального восстановления из моментального снимка на диске. 
+
+   >[!TIP]
+   >Если вы хотите восстановить конкретный LUN в томе, выберите **уровень файла**.
+
+1. Следуйте указаниям рабочего процесса в мастере настройки.
+   
+   Снапцентер восстанавливает данные в исходное расположение, чтобы можно было начать процесс восстановления в HANA. Кроме того, так как Снапцентер не может изменить каталог резервных копий (база данных не работает), выводится предупреждение.
+
+   :::image type="content" source="media/snapcenter/restore-database-job-details-warning.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+
+1. Так как все файлы базы данных восстановлены, запустите процесс восстановления в HANA. В Hana Studio в разделе **системы**щелкните правой кнопкой мыши системную базу данных и выберите **резервное копирование и восстановление**  >  **восстановить системную базу данных**.
+
+   :::image type="content" source="media/snapcenter/hana-studio-backup-recovery.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+
+1. Выберите тип восстановления.
+
+   :::image type="content" source="media/snapcenter/restore-database-select-recovery-type.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+
+1. Выберите расположение каталога резервных копий.
+
+   :::image type="content" source="media/snapcenter/restore-database-select-location-backup-catalog.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+
+1. Выберите резервную копию для восстановления базы данных SAP HANA.
+
+   :::image type="content" source="media/snapcenter/restore-database-select-backup.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+
+   После восстановления базы данных появится сообщение с **восстановленным временем** и **восстановлено до метки расположения журнала** .
+
+1. В разделе **системы**щелкните правой кнопкой мыши системную базу данных и выберите **резервное копирование и восстановление**  >  **восстановить базу данных клиента**.
+1. Следуйте указаниям рабочего процесса мастера, чтобы завершить восстановление базы данных клиента. 
+
+Дополнительные сведения о восстановлении базы данных см. в разделе [SAP HANA резервное копирование и восстановление с помощью снапцентер](https://www.netapp.com/us/media/tr-4614.pdf).
+
+
+### <a name="non-database-backups"></a>Резервные копии, не являющиеся базами данных
+Можно восстановить не относящиеся к данным тома, например сетевую общую папку (/Hana/Shared) или резервную копию операционной системы.  Дополнительные сведения о восстановлении данных, не относящихся к данным, см. в разделе [SAP HANA резервное копирование и восстановление с помощью снапцентер](https://www.netapp.com/us/media/tr-4614.pdf).
+
+### <a name="sap-hana-system-cloning"></a>SAP HANA клонирование системы
+
+Перед клонированием необходимо установить ту же версию HANA, что и исходная база данных. Идентификаторы SID и ID могут отличаться. 
+
+:::image type="content" source="media/snapcenter/system-cloning-diagram.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей" lightbox="media/snapcenter/system-cloning-diagram.png" border="false":::
+
+1. Создание хранилища пользователя базы данных HANA для базы данных H34 из/usr/sap/H34/HDB40.
+
+   ```
+   hdbuserstore set H34KEY sollabsjct34:34013 system manager
+   ```
+ 
+1. Отключите брандмауэр.
+
+   ```bash
+   systemctl disable SuSEfirewall2
+   systemctl stop  SuSEfirewall2
+   ```
+
+1. Установите пакет SDK для Java.
+
+   ```bash
+   zypper in java-1_8_0-openjdk
+   ```
+
+1. В Снапцентер добавьте целевой узел, на котором будет подключен клон. Дополнительные сведения см. [в разделе Добавление узлов и установка подключаемых пакетов на удаленных узлах](http://docs.netapp.com/ocsc-43/index.jsp?topic=%2Fcom.netapp.doc.ocsc-dpg-sap-hana%2FGUID-246C0810-4F0B-4BF7-9A35-B729AD69954A.html).
+   1. Укажите сведения о учетных данных запуска от имени, которые требуется добавить. 
+   1. Выберите операционную систему сервера и введите сведения об узле.
+   1. В разделе **устанавливаемые подключаемые модули**выберите версию, введите путь установки и выберите **SAP HANA**.
+   1. Выберите **проверить** , чтобы выполнить предварительную установку проверок.
+
+1. Отключите HANA и отключите старый том данных.  Клон будет подключен из Снапцентер.  
+
+   ```bash
+   sapcontrol -nr 40 -function StopSystem
+   umount /hana/data/H34/mnt00001
+
+   ```
+ 1. Создайте файлы конфигурации и скриптов оболочки для целевого объекта.
+ 
+    ```bash
+    mkdir /NetApp
+    chmod 777 /NetApp
+    cd NetApp
+    chmod 777 sc-system-refresh-H34.cfg
+    chmod 777 sc-system-refresh.sh
+
+    ```
+
+    >[!TIP]
+    >Скрипты можно скопировать из Снапцентер с помощью [клонирования SAP](https://www.netapp.com/us/media/tr-4667.pdf).
+
+1. Измените файл конфигурации. 
+
+   ```bash
+   vi sc-system-refresh-H34.cfg
+   ```
+
+   * HANA_ARCHITECTURE = "MDC_single_tenant"
+   * KEY = "H34KEY"
+   * TIME_OUT_START = 18
+   * TIME_OUT_STOP = 18
+   * ИНСТАНЦЕНО = "40"
+   * STORAGE = "10.250.101.33"
+
+1. Измените файл сценария оболочки.
+
+   ```bash
+   vi sc-system-refresh.sh
+   ```  
+
+   * VERBOSE = нет
+   * MY_NAME = " `basename $0` "
+   * BASE_SCRIPT_DIR = " `dirname $0` "
+   * MOUNT_OPTIONS = "RW, сторно = 4, Hard, Тимео = 600, rsize = 1048576, всизе = 1048576, иНТР, параметр noatime, NOLOCK"
+
+1. Запустите клонирование из процесса резервного копирования. Выберите узел для создания клона. 
+
+   >[!NOTE]
+   >Дополнительные сведения см. в разделе [клонирование из резервной копии](https://docs.netapp.com/ocsc-43/index.jsp?topic=%2Fcom.netapp.doc.ocsc-dpg-cpi%2FGUID-F6E7FF73-0183-4B9F-8156-8D7DA17A8555.html).
+
+1. В разделе **сценарии**укажите следующее.
+
+   * **Команда подключения:** /Нетапп/СК-систем-РЕФРЕШ.ш Mount H34% hana_data_h31_mnt00001_t250_vol_Clone
+   * **Команда POST Clone:** /нетапп/СК-систем-РЕФРЕШ.ш Recover H34
+
+1. Отключите (заблокируйте) автоматическое подключение в/etc/fstab, так как объем данных предварительно установленной базы данных не требуется. 
+
+   ```bash
+   vi /etc/fstab
+   ```
+
+### <a name="delete-a-clone"></a>Удаление клона
+
+Можно удалить клон, если он больше не нужен. Дополнительные сведения см. в разделе [Удаление клонов](https://docs.netapp.com/ocsc-43/index.jsp?topic=%2Fcom.netapp.doc.ocsc-dpg-cpi%2FGUID-F6E7FF73-0183-4B9F-8156-8D7DA17A8555.html).
+
+Команды, используемые для выполнения перед удалением клонирования,:
+* **Подготовка к удалению клонирования:** /нетапп/СК-систем-РЕФРЕШ.ш завершение работы H34
+* **Отключение:** /Нетапп/СК-систем-РЕФРЕШ.ш umount H34
+
+Эти команды позволяют Снапцентер бомбардирующих базу данных, отключать том и удалять запись fstab.  После этого Флексклоне удаляется. 
+
+### <a name="cloning-database-logfile"></a>Клонирование файла журнала базы данных
+
+```   
+20190502025323###sollabsjct34###sc-system-refresh.sh: Adding entry in /etc/fstab.
+20190502025323###sollabsjct34###sc-system-refresh.sh: 10.250.101.31:/Sc21186309-ee57-41a3-8584-8210297f791d /hana/data/H34/mnt00001 nfs rw,vers=4,hard,timeo=600,rsize=1048576,wsize=1048576,intr,noatime,lock 0 0
+20190502025323###sollabsjct34###sc-system-refresh.sh: Mounting data volume.
+20190502025323###sollabsjct34###sc-system-refresh.sh: mount /hana/data/H34/mnt00001
+20190502025323###sollabsjct34###sc-system-refresh.sh: Data volume mounted successfully.
+20190502025323###sollabsjct34###sc-system-refresh.sh: chown -R h34adm:sapsys /hana/data/H34/mnt00001
+20190502025333###sollabsjct34###sc-system-refresh.sh: Recover system database.
+20190502025333###sollabsjct34###sc-system-refresh.sh: /usr/sap/H34/HDB40/exe/Python/bin/python /usr/sap/H34/HDB40/exe/python_support/recoverSys.py --command "RECOVER DATA USING SNAPSHOT CLEAR LOG"
+[140278542735104, 0.005] >> starting recoverSys (at Thu May  2 02:53:33 2019)
+[140278542735104, 0.005] args: ()
+[140278542735104, 0.005] keys: {'command': 'RECOVER DATA USING SNAPSHOT CLEAR LOG'}
+recoverSys started: ============2019-05-02 02:53:33 ============
+testing master: sollabsjct34
+sollabsjct34 is master
+shutdown database, timeout is 120
+stop system
+stop system: sollabsjct34
+stopping system: 2019-05-02 02:53:33
+stopped system: 2019-05-02 02:53:33
+creating file recoverInstance.sql
+restart database
+restart master nameserver: 2019-05-02 02:53:38
+start system: sollabsjct34
+2019-05-02T02:53:59-07:00  P010976      16a77f6c8a2 INFO    RECOVERY state of service: nameserver, sollabsjct34:34001, volume: 1, RecoveryPrepared
+recoverSys finished successfully: 2019-05-02 02:54:00
+[140278542735104, 26.490] 0
+[140278542735104, 26.490] << ending recoverSys, rc = 0 (RC_TEST_OK), after 26.485 secs
+20190502025400###sollabsjct34###sc-system-refresh.sh: Wait until SAP HANA database is started ....
+20190502025400###sollabsjct34###sc-system-refresh.sh: Status:  YELLOW
+20190502025410###sollabsjct34###sc-system-refresh.sh: Status:  YELLOW
+20190502025420###sollabsjct34###sc-system-refresh.sh: Status:  YELLOW
+20190502025430###sollabsjct34###sc-system-refresh.sh: Status:  YELLOW
+20190502025440###sollabsjct34###sc-system-refresh.sh: Status:  YELLOW
+20190502025451###sollabsjct34###sc-system-refresh.sh: Status:  GREEN
+20190502025451###sollabsjct34###sc-system-refresh.sh: SAP HANA database is started.
+20190502025451###sollabsjct34###sc-system-refresh.sh: Recover tenant database H34.
+20190502025451###sollabsjct34###sc-system-refresh.sh: /usr/sap/H34/SYS/exe/hdb/hdbsql -U H34KEY RECOVER DATA FOR H34 USING SNAPSHOT CLEAR LOG
+0 rows affected (overall time 69.584135 sec; server time 69.582835 sec)
+20190502025600###sollabsjct34###sc-system-refresh.sh: Checking availability of Indexserver for tenant H34.
+20190502025601###sollabsjct34###sc-system-refresh.sh: Recovery of tenant database H34 succesfully finished.
+20190502025601###sollabsjct34###sc-system-refresh.sh: Status: GREEN
+Deleting the DB Clone – Logfile
+20190502030312###sollabsjct34###sc-system-refresh.sh: Stopping HANA database.
+20190502030312###sollabsjct34###sc-system-refresh.sh: sapcontrol -nr 40 -function StopSystem HDB
+
+02.05.2019 03:03:12
+StopSystem
+OK
+20190502030312###sollabsjct34###sc-system-refresh.sh: Wait until SAP HANA database is stopped ....
+20190502030312###sollabsjct34###sc-system-refresh.sh: Status:  GREEN
+20190502030322###sollabsjct34###sc-system-refresh.sh: Status:  GREEN
+20190502030332###sollabsjct34###sc-system-refresh.sh: Status:  GREEN
+20190502030342###sollabsjct34###sc-system-refresh.sh: Status:  GRAY
+20190502030342###sollabsjct34###sc-system-refresh.sh: SAP HANA database is stopped.
+20190502030347###sollabsjct34###sc-system-refresh.sh: Unmounting data volume.
+20190502030347###sollabsjct34###sc-system-refresh.sh: Junction path: Sc21186309-ee57-41a3-8584-8210297f791d
+20190502030347###sollabsjct34###sc-system-refresh.sh: umount /hana/data/H34/mnt00001
+20190502030347###sollabsjct34###sc-system-refresh.sh: Deleting /etc/fstab entry.
+20190502030347###sollabsjct34###sc-system-refresh.sh: Data volume unmounted successfully.
+
+```
+
+### <a name="uninstall-snapcenter-plug-ins-package-for-linux"></a>Удаление пакета подключаемых модулей Снапцентер для Linux
+
+Пакет подключаемых модулей Linux можно удалить из командной строки. Поскольку при автоматическом развертывании требуется новая система, легко удалить подключаемый модуль.  
+
+>[!NOTE]
+>Может потребоваться удалить старую версию подключаемого модуля вручную. 
+
+Удалите подключаемые модули.
+
+```bash
+cd /opt/NetApp/snapcenter/spl/installation/plugins
+./uninstall
+```
+
+Теперь вы можете установить последний подключаемый модуль HANA на новом узле, выбрав **Отправить** в снапцентер. 
+
+
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

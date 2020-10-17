@@ -3,12 +3,12 @@ title: Шифрование учетной записи хранения Azure, 
 description: Узнайте, как настроить шифрование службы хранилища Azure, используемой лабораторией, в Azure DevTest Labs
 ms.topic: how-to
 ms.date: 07/29/2020
-ms.openlocfilehash: 3c1d1531084deeabbe9a8d261e93554a2c691eb6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: dcede89fb23c532742e41121688bcb51a5a73833
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87433596"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92149312"
 ---
 # <a name="encrypt-azure-storage-used-by-a-lab-in-azure-devtest-labs"></a>Шифрование хранилища Azure, используемого лабораторией в Azure DevTest Labs
 Каждая лабораторная работа, созданная в Azure DevTest Labs, создается с соответствующей учетной записью хранения Azure. Учетная запись хранения используется в следующих целях: 
@@ -36,13 +36,13 @@ ms.locfileid: "87433596"
 ## <a name="encrypt-the-lab-storage-account"></a>Шифрование учетной записи хранения лаборатории
 Служба хранилища Azure автоматически шифрует данные при их сохранении в облаке. Шифрование службы хранилища Azure защищает ваши данные и помогает удовлетворить ваши обязательства по обеспечению безопасности и соответствия требованиям Организации. Дополнительные сведения см. в статье [Шифрование службы хранилища Azure для неактивных данных](../storage/common/storage-service-encryption.md).
 
-Данные в учетной записи хранения лаборатории шифруются с помощью **ключа, управляемого корпорацией Майкрософт**. Вы можете использовать ключи, управляемые корпорацией Майкрософт, для шифрования данных, а также управлять шифрованием с помощью собственных ключей. Если вы решили управлять шифрованием с помощью собственных ключей для учетной записи хранения лаборатории, можно указать ключ, **управляемый клиентом** , с помощью Azure Key Vault, который будет использоваться для шифрования и расшифровки данных в хранилище BLOB-объектов и в службе файлов Azure. Дополнительные сведения о ключах, управляемых клиентом, см. [в статье Использование управляемых клиентом ключей с Azure Key Vault для управления шифрованием службы хранилища Azure](../storage/common/encryption-customer-managed-keys.md).
+Данные в учетной записи хранения лаборатории шифруются с помощью **ключа, управляемого корпорацией Майкрософт**. Вы можете использовать ключи, управляемые корпорацией Майкрософт, для шифрования данных, а также управлять шифрованием с помощью собственных ключей. Если вы решили управлять шифрованием с помощью собственных ключей для учетной записи хранения лаборатории, можно указать ключ, **управляемый клиентом** , с помощью Azure Key Vault, который будет использоваться для шифрования и расшифровки данных в хранилище BLOB-объектов и в службе файлов Azure. Дополнительные сведения о ключах, управляемых клиентом, см. [в статье Использование управляемых клиентом ключей с Azure Key Vault для управления шифрованием службы хранилища Azure](../storage/common/customer-managed-keys-overview.md).
 
 Чтобы узнать, как настроить ключи, управляемые клиентом, для шифрования службы хранилища Azure, см. следующие статьи: 
 
-- [Портал Azure](../storage/common/storage-encryption-keys-portal.md)
-- [Azure PowerShell](../storage/common/storage-encryption-keys-powershell.md)
-- [Azure CLI](../storage/common/storage-encryption-keys-cli.md)
+- [Портал Azure](../storage/common/customer-managed-keys-configure-key-vault.md)
+- [Azure PowerShell](../storage/common/customer-managed-keys-configure-key-vault.md)
+- [Azure CLI](../storage/common/customer-managed-keys-configure-key-vault.md)
 
 
 ## <a name="manage-the-azure-blob-storage-life-cycle"></a>Управление жизненным циклом хранилища BLOB-объектов Azure
@@ -98,11 +98,9 @@ ms.locfileid: "87433596"
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Чтобы узнать, как настроить ключи, управляемые клиентом, для шифрования службы хранилища Azure, см. следующие статьи: 
 
-- [Портал Azure](../storage/common/storage-encryption-keys-portal.md)
-- [Azure PowerShell](../storage/common/storage-encryption-keys-powershell.md)
-- [Azure CLI](../storage/common/storage-encryption-keys-cli.md)
-
-
+- [Портал Azure](../storage/common/customer-managed-keys-configure-key-vault.md)
+- [Azure PowerShell](../storage/common/customer-managed-keys-configure-key-vault.md)
+- [Azure CLI](../storage/common/customer-managed-keys-configure-key-vault.md)

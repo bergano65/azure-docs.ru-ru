@@ -6,12 +6,12 @@ ms.service: signalr
 ms.topic: conceptual
 ms.date: 12/17/2019
 ms.author: wanl
-ms.openlocfilehash: 55482457058d01162116494b637661db40010a50
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b0c1a91df30ee6a88f055dc47cfdef339e2ee2b2
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85131986"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92151053"
 ---
 # <a name="resource-logs-for-azure-signalr-service"></a>Журналы ресурсов для службы SignalR Azure
 
@@ -20,8 +20,8 @@ ms.locfileid: "85131986"
 ## <a name="prerequisites"></a>Предварительные требования
 Чтобы включить журналы ресурсов, вам понадобится место для хранения данных журнала. В этом руководстве используется служба хранилища Azure и Log Analytics.
 
-* Служба [хранилища Azure](../azure-monitor/platform/resource-logs-collect-storage.md) — сохранение журналов ресурсов для аудита политики, статического анализа или резервного копирования.
-* [Log Analytics](../azure-monitor/platform/resource-logs-collect-workspace.md) — гибкий инструмент поиска по журналам и анализа, позволяющий анализировать необработанные журналы, созданные ресурсом Azure.
+* Служба [хранилища Azure](../azure-monitor/platform/resource-logs.md#send-to-azure-storage) — сохранение журналов ресурсов для аудита политики, статического анализа или резервного копирования.
+* [Log Analytics](../azure-monitor/platform/resource-logs.md#send-to-log-analytics-workspace) — гибкий инструмент поиска по журналам и анализа, позволяющий анализировать необработанные журналы, созданные ресурсом Azure.
 
 ## <a name="set-up-resource-logs-for-an-azure-signalr-service"></a>Настройка журналов ресурсов для службы Azure SignalR
 
@@ -68,7 +68,7 @@ ms.locfileid: "85131986"
 
 **Формат**
 
-name | Описание
+Имя | Описание
 ------- | -------
 time | Регистрировать время события
 уровень | Уровень событий Log
@@ -81,7 +81,7 @@ properties | Подробные свойства, связанные с этим
 
 **Таблица свойств**
 
-name | Описание
+Имя | Описание
 ------- | -------
 type | Тип события журнала. В настоящее время мы предоставляем сведения о подключении к службе Azure SignalR. `ConnectivityLogs`Доступен только тип
 коллекция | Коллекция событий журнала. Допустимые значения: `Connection` `Authorization` и `Throttling`
@@ -128,7 +128,7 @@ userId | Удостоверение пользователя
 
 Архивные столбцы журнала включают элементы, перечисленные в следующей таблице.
 
-name | Описание
+Имя | Описание
 ------- | ------- 
 TimeGenerated | Регистрировать время события
 Коллекция | Коллекция событий журнала. Допустимые значения: `Connection` `Authorization` и `Throttling`
@@ -184,7 +184,7 @@ TransportType | Тип транспорта соединения. Допусти
 
 Если вы обнаружите, что вы не можете установить клиентские подключения SignalR в службу Azure SignalR, проверьте журналы ресурсов. При возникновении проблем `Connection count reaches limit` в журнале ресурсов устанавливается слишком много подключений к службе SignalR, что достигает предельного числа подключений. Рассмотрите возможность масштабирования службы SignalR. Если вы сталкиваетесь `Message count reaches limit` с журналом ресурсов, это означает, что вы используете бесплатный уровень и используете квоту сообщений. Если вы хотите отправить больше сообщений, рассмотрите возможность изменения службы SignalR на уровень Standard для отправки дополнительных сообщений. Дополнительные сведения см. на странице [цен на службу Azure SignalR](https://azure.microsoft.com/pricing/details/signalr-service/).
 
-### <a name="get-help"></a>Получить помощь
+### <a name="get-help"></a>Получить справку
 
 Мы рекомендуем сначала устранить неполадки. Большинство проблем вызваны неполадками сервера приложений или сети. Выполните инструкции по [устранению неполадок с журналом ресурсов](#troubleshooting-with-resource-logs) и [базовым руководством по решению проблем](https://github.com/Azure/azure-signalr/blob/dev/docs/tsg.md) , чтобы найти основную причину.
 Если проблему по-прежнему не удается устранить, попробуйте открыть проблему в GitHub или создать билет на портале Azure.

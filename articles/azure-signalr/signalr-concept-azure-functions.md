@@ -6,19 +6,19 @@ ms.service: signalr
 ms.topic: conceptual
 ms.date: 11/13/2019
 ms.author: zhshang
-ms.openlocfilehash: cbb1fcf320a78f11045bf9627ffcc438af3e388a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bf0b5f19d1aa224fa4a2e79c20f2900e3400fce0
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "74157625"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92151126"
 ---
 # <a name="build-real-time-apps-with-azure-functions-and-azure-signalr-service"></a>Создавайте приложения в режиме реального времени с помощью функций Azure и службы SignalR Azure.
 
 Так как служба Azure SignalR и функции Azure являются полностью управляемыми, масштабируемыми службами, которые позволяют сосредоточиться на создании приложений, а не на управлении инфраструктурой, обычно эти две службы используются совместно для обеспечения обмена данными в режиме реального времени в [бессерверной](https://azure.microsoft.com/solutions/serverless/) среде.
 
 > [!NOTE]
-> Узнайте, как использовать SignalR и функции Azure вместе в интерактивном учебнике [Включение автоматического обновления в веб-приложении с помощью функций Azure и службы SignalR](https://docs.microsoft.com/learn/modules/automatic-update-of-a-webapp-using-azure-functions-and-signalr).
+> Узнайте, как использовать SignalR и функции Azure вместе в интерактивном учебнике [Включение автоматического обновления в веб-приложении с помощью функций Azure и службы SignalR](/learn/modules/automatic-update-of-a-webapp-using-azure-functions-and-signalr).
 
 ## <a name="integrate-real-time-communications-with-azure-services"></a>Интеграция служб Azure в режиме реального времени
 
@@ -27,7 +27,7 @@ ms.locfileid: "74157625"
 * Запросы HTTP и веб-перехватчика.
 * Периодические таймеры.
 * События из служб Azure, такие как:
-    - Сетка событий
+    - Сетка событий Azure
     - Центры событий
     - Служебная шина
     - канал изменений Cosmos DB;
@@ -69,7 +69,7 @@ ms.locfileid: "74157625"
 Полные сведения об использовании функций Azure и службы SignalR см. в следующих ресурсах:
 
 * [Разработка и Настройка функций Azure с помощью службы SignalR](signalr-concept-serverless-development-config.md)
-* [Обеспечение автоматических обновлений в веб-приложении с помощью Функций Azure и службы SignalR](https://docs.microsoft.com/learn/modules/automatic-update-of-a-webapp-using-azure-functions-and-signalr)
+* [Обеспечение автоматических обновлений в веб-приложении с помощью Функций Azure и службы SignalR](/learn/modules/automatic-update-of-a-webapp-using-azure-functions-and-signalr)
 
 Дополнительные сведения см. в следующих кратких руководствах.
 

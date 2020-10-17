@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/13/2019
 ms.author: zhshang
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: d7b94da2f922e7dba8c165dcf9d1e906855f6dfb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 731e4306575a8bd5f63dd47ca213a0e52a21487b
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91294280"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92151234"
 ---
 # <a name="azure-signalr-service-authentication"></a>Аутентификация в Службе Azure SignalR
 
@@ -48,7 +48,7 @@ ms.locfileid: "91294280"
 * Учетная запись, созданная в [GitHub](https://github.com/)
 * [Git](https://git-scm.com/);
 * [Базовый пакет SDK для .NET](https://www.microsoft.com/net/download/windows)
-* [Настроенный Azure Cloud Shell.](https://docs.microsoft.com/azure/cloud-shell/quickstart)
+* [Настроенный Azure Cloud Shell.](../cloud-shell/quickstart.md)
 * Скачанный или клонированный репозиторий [примеров AzureSignalR](https://github.com/aspnet/AzureSignalR-samples), доступный в репозитории GitHub.
 
 ## <a name="create-an-oauth-app"></a>Создание приложения OAuth
@@ -388,7 +388,7 @@ ms.locfileid: "91294280"
 
 ## <a name="deploy-the-app-to-azure"></a>Развертывание приложения в Azure
 
-Из этого раздела вы узнаете, как использовать интерфейс командной строки Azure (CLI) из Azure Cloud Shell, чтобы создать новое веб-приложение в [Службе приложений Azure](https://docs.microsoft.com/azure/app-service/) для размещения приложения ASP.NET в Azure. Веб-приложение будет настроено на использование развертывания локальной системы Git. Также веб-приложение будет настроено с помощью строки соединения SignalR, секретов приложения OAuth GitHub и пользователя развертывания.
+Из этого раздела вы узнаете, как использовать интерфейс командной строки Azure (CLI) из Azure Cloud Shell, чтобы создать новое веб-приложение в [Службе приложений Azure](../app-service/index.yml) для размещения приложения ASP.NET в Azure. Веб-приложение будет настроено на использование развертывания локальной системы Git. Также веб-приложение будет настроено с помощью строки соединения SignalR, секретов приложения OAuth GitHub и пользователя развертывания.
 
 В этом разделе используется расширение *signalr* для Azure CLI. Выполните следующую команду, чтобы установить расширение *signalr* для Azure:
 

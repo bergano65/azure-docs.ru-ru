@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 12/4/2019
 ms.author: vikancha
-ms.openlocfilehash: 74827e78017ad3540709fa0e671762a985976cda
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ebae7359c7bd593cb2b63bbd69919330c6aa24f9
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86999009"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92150759"
 ---
 # <a name="install-amd-gpu-drivers-on-n-series-vms-running-windows"></a>Установка драйверов GPU AMD на виртуальные машины серии N под управлением Windows
 
@@ -31,7 +31,7 @@ ms.locfileid: "86999009"
 
 | OS | Драйвер |
 | -------- |------------- |
-| Многосеансовый выпуск Windows 10 Корпоративная — сборка 1903 <br/><br/>Windows 10 — сборка 1809<br/><br/>Windows Server 2016<br/><br/>Windows Server 2019 | [20.Q1.1](https://download.microsoft.com/download/3/8/9/3893407b-e8aa-4079-8592-735d7dd1c19a/Radeon-Pro-Software-for-Enterprise-GA.exe) (.exe) |
+| Многосеансовый выпуск Windows 10 Корпоративная — сборка 1903 <br/><br/>Windows 10 — сборка 1809<br/><br/>Windows Server 2016<br/><br/>Windows Server 2019 | [20. Q1. Исправление](https://download.microsoft.com/download/d/e/f/def0fb44-15ab-4b83-959a-8094eb9d0dfe/AMD-Azure-NVv4-Driver-20Q1-Hotfix3.exe) (. exe) |
 
 
 ## <a name="driver-installation"></a>Установка драйвера
@@ -48,11 +48,11 @@ ms.locfileid: "86999009"
 
 Установку драйвера можно проверить в диспетчере устройств. В следующем примере показана успешная настройка карты Radeon Instinct MI25 на виртуальной машине Azure серии NVv4.
 <br />
-![Свойства драйвера GPU](./media/n-series-amd-driver-setup/device-manager.png)
+![Состояние устройства GPU](./media/n-series-amd-driver-setup/device-manager.png)
 
 С помощью средства dxdiag можно проверить свойства GPU, в том числе объем видеопамяти. В следующем примере показаны сведения об одной из двух секций карты Radeon Instinct MI25 на виртуальной машине Azure серии NVv4.
 <br />
-![Свойства драйвера GPU](./media/n-series-amd-driver-setup/dxdiag-output-new.png)
+![Свойства GPU](./media/n-series-amd-driver-setup/dxdiag-output-new.png)
 
 Если вы используете Windows 10 сборки 1903 или более позднюю версию, средство dxdiag не будет отображать сведения на вкладке "Монитор". Используйте действие "Сохранить все сведения" в нижней части окна, чтобы получить сведения о GPU AMD MI25 в выходном файле.
 

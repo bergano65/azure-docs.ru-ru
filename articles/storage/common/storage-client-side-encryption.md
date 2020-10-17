@@ -10,12 +10,12 @@ ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 2cf137eae9e026f4854034efe1565dc8f7f0b35d
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 4e8623ecb351fa99a437de70a9b74a70fb6228cd
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92091667"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92151150"
 ---
 # <a name="client-side-encryption-and-azure-key-vault-for-microsoft-azure-storage"></a>Шифрование на стороне клиента для службы хранилища Microsoft Azure
 [!INCLUDE [storage-selector-client-side-encryption-include](../../../includes/storage-selector-client-side-encryption-include.md)]
@@ -53,7 +53,7 @@ ms.locfileid: "92091667"
 Клиентская библиотека хранилища использует алгоритм [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) для шифрования данных пользователя. Говоря более конкретно, это режим [цепочки цифровых блоков или CBC](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Cipher-block_chaining_.28CBC.29) вместе с AES. Каждая служба работает по-разному, поэтому каждая служба рассматривается отдельно.
 
 ### <a name="blobs"></a>BLOB-объекты
-Клиентская библиотека в настоящий момент полностью поддерживает только шифрование больших двоичных объектов. В частности, шифрование поддерживается, когда пользователи используют методы **UploadFrom** или метод **OpenWrite** . Что касается загрузок, то поддерживаются как полные, так и диапазонные загрузки.
+Клиентская библиотека в настоящий момент полностью поддерживает только шифрование больших двоичных объектов. Что касается загрузок, то поддерживаются как полные, так и диапазонные загрузки.
 
 Во время шифрования клиентская библиотека создает случайный вектор инициализации IV размером 16 байт, случайный ключ шифрования содержимого CEK размером 32 байта и выполняет конвертное шифрование данных большого двоичного объекта, используя полученную информацию. Затем зашифрованный ключ CEK и дополнительные метаданные шифрования сохраняются в службе как метаданные большого двоичного объекта вместе с зашифрованным большим двоичным объектом.
 
@@ -62,9 +62,9 @@ ms.locfileid: "92091667"
 > 
 > 
 
-Загрузка зашифрованного большого двоичного объекта предполагает получение содержимого всего большого двоичного объекта **DownloadTo**с помощью / удобных методов всего**блобреадстреам** . Зашифрованный ключ CEK расшифровывается и используется вместе с ключом IV (который в данном случае хранится как метаданные большого двоичного объекта) для передачи расшифрованных данных обратно пользователям.
+При скачивании всего большого двоичного объекта ключ CEK упаковывается и используется вместе с вектором инициализации (хранимые в этом случае как метаданные BLOB-объектов) для возврата расшифрованных данных пользователям.
 
-Загрузка произвольного диапазона (методов**downloadrange \** ) в зашифрованном большом двоичном объекте включает в себя настройку диапазона, предоставленного пользователями, для получения небольшого объема дополнительных данных, которые можно использовать для успешной расшифровки запрошенного диапазона.
+Загрузка произвольного диапазона в зашифрованном большом двоичном объекте включает в себя настройку диапазона, предоставленного пользователями, чтобы получить небольшой объем дополнительных данных, которые можно использовать для успешной расшифровки запрошенного диапазона.
 
 Все типы больших двоичных объектов (блочные, страничные и инкрементируемые) могут быть зашифрованы и расшифрованы с помощью этой схемы.
 
@@ -77,9 +77,14 @@ ms.locfileid: "92091667"
 <MessageText>{"EncryptedMessageContents":"6kOu8Rq1C3+M1QO4alKLmWthWXSmHV3mEfxBAgP9QGTU++MKn2uPq3t2UjF1DO6w","EncryptionData":{…}}</MessageText>
 ```
 
-Во время расшифровки зашифрованный ключ извлекается из сообщения очереди и расшифровывается. Ключ IV также извлекается из сообщения очереди и используется вместе с расшифрованным ключом для расшифровки данных сообщения очереди. Обратите внимание, что размер метаданных шифрования очень мал (не более 500 байт), поэтому, хотя этот их размер учитывается при подсчете максимального размера в 64 КБ для сообщения очереди, этим размером данных можно пренебречь.
+Во время расшифровки зашифрованный ключ извлекается из сообщения очереди и расшифровывается. Ключ IV также извлекается из сообщения очереди и используется вместе с расшифрованным ключом для расшифровки данных сообщения очереди. Обратите внимание, что размер метаданных шифрования очень мал (не более 500 байт), поэтому, хотя этот их размер учитывается при подсчете максимального размера в 64 КБ для сообщения очереди, этим размером данных можно пренебречь. Обратите внимание, что зашифрованное сообщение будет закодировано в кодировке Base64, как показано в приведенном выше фрагменте, который также расширяет размер отправляемого сообщения.
 
 ### <a name="tables"></a>Таблицы
+> [!NOTE]
+> Служба таблиц поддерживается в клиентской библиотеке службы хранилища Azure только по версии 9. x.
+> 
+> 
+
 Клиентская библиотека поддерживает шифрование свойств сущности для операций вставки и замены.
 
 > [!NOTE]
@@ -111,22 +116,34 @@ ms.locfileid: "92091667"
 ## <a name="azure-key-vault"></a>Azure Key Vault
 Хранилище ключей Azure помогает защитить криптографические ключи и секреты, используемые облачными приложениями и службами. Хранилище ключей Azure позволяет шифровать ключи и секреты (например, ключи проверки подлинности, ключи учетных записей хранения, ключи шифрования данных, PFX-файлы и пароли), используя ключи, защищенные аппаратными модулями безопасности. Дополнительные сведения см. в статье [Что такое хранилище ключей Azure?](../../key-vault/general/overview.md)
 
-Клиентская библиотека хранилища использует основную библиотеку хранилища ключей для обеспечения общей платформы для управления ключами в Azure. Пользователи также получают дополнительное преимущество от использования библиотеки хранилища ключей. Библиотека расширений предоставляет полезные функции для локальных и облачных поставщиков ключей с простым и симметричным алгоритмом (RSA), а также функции агрегирования и кэширования.
+Клиентская библиотека хранилища использует интерфейсы Key Vault в основной библиотеке, чтобы предоставить общую платформу в Azure для управления ключами. Пользователи могут использовать библиотеки Key Vault для всех дополнительных преимуществ, которые они предоставляют, например полезные функциональные возможности простых и безотносительно локальных и облачных поставщиков ключей, а также объединение и кэширование.
 
 ### <a name="interface-and-dependencies"></a>Интерфейс и зависимости
+
+# <a name="net-v12"></a>[Платформа .NET версии 12](#tab/dotnet)
+
+Существует два необходимых пакета для интеграции Key Vault:
+
+* Azure. Core содержит `IKeyEncryptionKey` интерфейсы и `IKeyEncryptionKeyResolver` . Клиентская библиотека хранилища для .NET уже определяет ее как зависимость.
+* Azure. Security. KeyVault. Keys (v4. x) содержит клиент Key Vault RESTFUL, а также криптографические клиенты, используемые при шифровании на стороне клиента.
+
+# <a name="net-v11"></a>[Версии 11 .NET](#tab/dotnet11)
+
 Существует три пакета хранилища ключей:
 
 * Microsoft.Azure.KeyVault.Core содержит IKey и IKeyResolver. Это небольшой пакет без зависимостей. Клиентская библиотека хранилища для .NET определяет это как зависимость.
-* Microsoft.Azure.KeyVault содержит клиентское REST-приложение хранилища ключей.
-* Microsoft.Azure.KeyVault.Extensions содержит код расширения, который включает реализации криптографических алгоритмов, а также ключи RSAKey и SymmetricKey. Пакет зависит от пространств имен Core и KeyVault и обеспечивает функции, которые позволяют определить составной сопоставитель (когда пользователи используют несколько поставщиков ключей) и сопоставитель ключа кэширования. Клиентская библиотека хранилища не зависит напрямую от этого пакета, однако, если пользователь хочет использовать хранилище ключей Azure для хранения ключей или расширения хранилища ключей для работы с локальными и облачными поставщиками служб шифрования, потребуется этот пакет.
+* Microsoft. Azure. KeyVault (v3. x) содержит клиент Key Vault RESTFUL.
+* Microsoft. Azure. KeyVault. Extensions (v3. x) содержит код расширения, включающий реализации алгоритмов шифрования, а также RSAKey и SymmetricKey. Пакет зависит от пространств имен Core и KeyVault и обеспечивает функции, которые позволяют определить составной сопоставитель (когда пользователи используют несколько поставщиков ключей) и сопоставитель ключа кэширования. Клиентская библиотека хранилища не зависит напрямую от этого пакета, однако, если пользователь хочет использовать хранилище ключей Azure для хранения ключей или расширения хранилища ключей для работы с локальными и облачными поставщиками служб шифрования, потребуется этот пакет.
+
+Дополнительные сведения об использовании Key Vault в версии 11 можно найти в [примерах кода шифрования версии 11](https://github.com/Azure/azure-storage-net/tree/master/Samples/GettingStarted/EncryptionSamples).
+
+---
 
 Хранилище ключей разработано для главных ключей, и ограничения регулирования, связанные с хранилищем ключей, учитывают это. При выполнении шифрования на стороне клиента с помощью хранилища ключей предпочтительный способ — использовать симметричные главные ключи, которые хранятся в качестве секретов в хранилище ключей, и кэшировать их локально. Рекомендуется придерживаться следующих правил.
 
 1. Создайте секрет без подключения к сети и загрузите его в хранилище ключей.
 2. Используйте базовый идентификатор секрета в качестве параметра для разрешения текущей версии секрета для шифрования и кэшируйте эту информацию локально. Используйте параметр CachingKeyResolver для кэширования; пользователи не должны реализовывать собственную логику кэширования.
 3. Во время создания политики шифрования используйте кэширующий сопоставитель в качестве входных данных.
-
-Дополнительные сведения об использовании хранилища ключей см. в разделе с [примерами кода шифрования](https://github.com/Azure/azure-storage-net/tree/master/Samples/GettingStarted/EncryptionSamples).
 
 ## <a name="best-practices"></a>Рекомендации
 Шифрование поддерживается только клиентской библиотекой хранилища для .NET. Windows Phone и среда выполнения Windows в настоящее время не поддерживают шифрование.
@@ -138,45 +155,175 @@ ms.locfileid: "92091667"
 > * Для таблиц существуют аналогичные ограничения. Будьте внимательны и не обновляйте зашифрованные свойства без обновления метаданных шифрования.
 > * Если задать метаданные в зашифрованном большом двоичном объекте, могут быть перезаписаны метаданные, относящиеся к шифрованию и необходимые для расшифровки, поскольку настройку метаданных добавить нельзя. Это также касается моментальных снимков. Не указывайте метаданные во время создания моментального снимка зашифрованного большого двоичного объекта. Если необходимо задать метаданные, следует сначала вызвать метод **FetchAttributes** для получения текущих метаданных шифрования и избегать параллельных операций записи во время установки метаданных.
 > * Включите свойство **RequireEncryption** в параметры запроса по умолчанию для пользователей, которые должны работать только с зашифрованными данными. См. дополнительные сведения ниже.
-> 
-> 
+>
+>
 
 ## <a name="client-api--interface"></a>API-интерфейс клиента / интерфейс
-При создании объекта EncryptionPolicy пользователи могут предоставить только ключ (который реализует IKey), только сопоставитель (который реализует IKeyResolver) или оба этих объекта. IKey — это базовый тип ключа, который идентифицируется с помощью идентификатора ключа и который обеспечивает логику для шифрования и расшифровки. IKeyResolver используется для сопоставления ключа во время расшифровки. IKeyResolver определяет метод, который возвращает IKey в зависимости от идентификатора ключа. В результате пользователи могут выбирать между несколькими ключами, которые хранятся в разных местах.
+Пользователи могут предоставлять только ключ, только сопоставитель или и то, и другое. Ключи идентифицируются с помощью идентификатора ключа и обеспечивают логику для упаковки и распаковки. Арбитры конфликтов используются для разрешения ключа в процессе расшифровки. Он определяет метод Resolve, возвращающий ключ по заданному идентификатору ключа. В результате пользователи могут выбирать между несколькими ключами, которые хранятся в разных местах.
 
 * Для шифрования ключ используется всегда, при этом отсутствие ключа приведет к возникновению ошибки.
 * Для расшифровки:
+  * Если ключ указан и его идентификатор соответствует требуемому идентификатору ключа, этот ключ используется для расшифровки. В противном случае предпринимается ошибка распознавателя. Если для этой попытки не существует сопоставителя, выдается ошибка.
   * Сопоставитель ключа вызывается, если он нужен для получения ключа. Если сопоставитель указан, но он не имеет данных, сопоставимых с идентификатором ключа, возникает ошибка.
-  * Если сопоставитель не указан, но указан ключ, ключ используется, если его идентификатор соответствует требуемому идентификатору ключа. Если идентификатор не совпадает, выдается ошибка.
 
-В примерах кода в этой статье показана настройка политики шифрования и работа с зашифрованными данными, а не работа с Azure Key Vault. В статье с [примерами шифрования](https://github.com/Azure/azure-storage-net/tree/master/Samples/GettingStarted/EncryptionSamples) на GitHub показан подробный комплексный сценарий для больших двоичных объектов, очередей, таблиц и интеграции хранилища ключей.
-
-### <a name="requireencryption-mode"></a>Режим RequireEncryption
+### <a name="requireencryption-mode-v11-only"></a>Режим RequireEncryption (только версии 11)
 При необходимости можно включить режим работы, где все передачи и загрузки должны быть зашифрованы. В этом режиме все попытки клиента передать данные без политики шифрования или загрузить данные, которые не зашифрованы в службе, закончатся ошибкой. Это поведение контролирует свойство **RequireEncryption** объекта параметров запроса. Если приложение будет шифровать все объекты из службы хранилища Azure, то можно задать свойство **requireEncryption** в параметрах запроса по умолчанию для объекта клиента службы. Например, задайте для **CloudBlobClient.DefaultRequestOptions.RequireEncryption** значение **true**, чтобы требовать шифрования всех операций с большими двоичными объектами, выполненных посредством этого объекта клиента.
 
 
 ### <a name="blob-service-encryption"></a>Шифрование службы BLOB-объектов
+
+
+# <a name="net-v12"></a>[Платформа .NET версии 12](#tab/dotnet)
+Создайте объект **клиентсидинкриптионоптионс** и настройте его при создании клиента с помощью **спеЦиализедблобклиентоптионс**. Задать параметры шифрования для каждого API нельзя. Все остальные задачи решаются клиентской библиотекой.
+
+```csharp
+// Your key and key resolver instances, either through KeyVault SDK or an external implementation
+IKeyEncryptionKey key;
+IKeyEncryptionKeyResolver keyResolver;
+
+// Create the encryption options to be used for upload and download.
+ClientSideEncryptionOptions encryptionOptions = new ClientSideEncryptionOptions(ClientSideEncryptionVersion.V1_0)
+{
+   KeyEncryptionKey = key,
+   KeyResolver = keyResolver,
+   // string the storage client will use when calling IKeyEncryptionKey.WrapKey()
+   KeyWrapAlgorithm = "some algorithm name"
+};
+
+// Set the encryption options on the client options
+BlobClientOptions options = new SpecializedBlobClientOptions() { ClientSideEncryption = encryptionOptions };
+
+// Get your blob client with client-side encryption enabled.
+// Client-side encryption options are passed from service to container clients, and container to blob clients.
+// Attempting to construct a BlockBlobClient, PageBlobClient, or AppendBlobClient from a BlobContainerClient
+// with client-side encryption options present will throw, as this functionality is only supported with BlobClient.
+BlobClient blob = new BlobServiceClient(connectionString, options).GetBlobContainerClient("myContainer").GetBlobClient("myBlob");
+
+// Upload the encrypted contents to the blob.
+blob.Upload(stream);
+
+// Download and decrypt the encrypted contents from the blob.
+MemoryStream outputStream = new MemoryStream();
+blob.DownloadTo(outputStream);
+```
+
+**Используются службой blobserviceclient** не требуется применять параметры шифрования. Они также могут передаваться в конструкторы **блобконтаинерклиент** / **блобклиент** , которые принимают объекты **блобклиентоптионс** .
+
+Если нужный объект **блобклиент** уже существует, но без параметров шифрования на стороне клиента, существует метод расширения для создания копии этого объекта с заданным **клиентсидинкриптионоптионс**. Этот метод расширения позволяет избежать издержек при создании нового объекта **блобклиент** с нуля.
+
+```csharp
+using Azure.Storage.Blobs.Specialized;
+
+// Your existing BlobClient instance and encryption options
+BlobClient plaintextBlob;
+ClientSideEncryptionOptions encryptionOptions;
+
+// Get a copy of plaintextBlob that uses client-side encryption
+BlobClient clientSideEncryptionBlob = plaintextBlob.WithClientSideEncryptionOptions(encryptionOptions);
+```
+
+# <a name="net-v11"></a>[Версии 11 .NET](#tab/dotnet11)
 Создайте объект **BlobEncryptionPolicy** и задайте его в параметрах запроса (для каждого API или на уровне клиента с помощью параметра **DefaultRequestOptions**). Все остальные задачи решаются клиентской библиотекой.
 
 ```csharp
 // Create the IKey used for encryption.
- RsaKey key = new RsaKey("private:key1" /* key identifier */);
+RsaKey key = new RsaKey("private:key1" /* key identifier */);
 
- // Create the encryption policy to be used for upload and download.
- BlobEncryptionPolicy policy = new BlobEncryptionPolicy(key, null);
+// Create the encryption policy to be used for upload and download.
+BlobEncryptionPolicy policy = new BlobEncryptionPolicy(key, null);
 
- // Set the encryption policy on the request options.
- BlobRequestOptions options = new BlobRequestOptions() { EncryptionPolicy = policy };
+// Set the encryption policy on the request options.
+BlobRequestOptions options = new BlobRequestOptions() { EncryptionPolicy = policy };
 
- // Upload the encrypted contents to the blob.
- blob.UploadFromStream(stream, size, null, options, null);
+// Upload the encrypted contents to the blob.
+blob.UploadFromStream(stream, size, null, options, null);
 
- // Download and decrypt the encrypted contents from the blob.
- MemoryStream outputStream = new MemoryStream();
- blob.DownloadToStream(outputStream, null, options, null);
+// Download and decrypt the encrypted contents from the blob.
+MemoryStream outputStream = new MemoryStream();
+blob.DownloadToStream(outputStream, null, options, null);
 ```
 
+---
+
 ### <a name="queue-service-encryption"></a>Шифрование службы очередей
+# <a name="net-v12"></a>[Платформа .NET версии 12](#tab/dotnet)
+Создайте объект **клиентсидинкриптионоптионс** и настройте его при создании клиента с помощью **спеЦиализедкуеуеклиентоптионс**. Задать параметры шифрования для каждого API нельзя. Все остальные задачи решаются клиентской библиотекой.
+
+```csharp
+// Your key and key resolver instances, either through KeyVault SDK or an external implementation
+IKeyEncryptionKey key;
+IKeyEncryptionKeyResolver keyResolver;
+
+// Create the encryption options to be used for upload and download.
+ClientSideEncryptionOptions encryptionOptions = new ClientSideEncryptionOptions(ClientSideEncryptionVersion.V1_0)
+{
+   KeyEncryptionKey = key,
+   KeyResolver = keyResolver,
+   // string the storage client will use when calling IKeyEncryptionKey.WrapKey()
+   KeyWrapAlgorithm = "some algorithm name"
+};
+
+// Set the encryption options on the client options
+QueueClientOptions options = new SpecializedQueueClientOptions() { ClientSideEncryption = encryptionOptions };
+
+// Get your queue client with client-side encryption enabled.
+// Client-side encryption options are passed from service to queue clients.
+QueueClient queue = new QueueServiceClient(connectionString, options).GetQueueClient("myQueue");
+
+// Send an encrypted queue message.
+queue.SendMessage("Hello, World!");
+
+// Download queue messages, decrypting ones that are detected to be encrypted
+QueueMessage[] queue.ReceiveMessages(); 
+```
+
+**Куеуесервицеклиент** не требуется применять параметры шифрования. Они также могут передаваться в конструкторы **QueueClient** , принимающие объекты **куеуеклиентоптионс** .
+
+Если нужный объект **QueueClient** уже существует, но без параметров шифрования на стороне клиента, существует метод расширения для создания копии этого объекта с заданным **клиентсидинкриптионоптионс**. Этот метод расширения позволяет избежать издержек при создании нового объекта **QueueClient** с нуля.
+
+```csharp
+using Azure.Storage.Queues.Specialized;
+
+// Your existing QueueClient instance and encryption options
+QueueClient plaintextQueue;
+ClientSideEncryptionOptions encryptionOptions;
+
+// Get a copy of plaintextQueue that uses client-side encryption
+QueueClient clientSideEncryptionQueue = plaintextQueue.WithClientSideEncryptionOptions(encryptionOptions);
+```
+
+Некоторые пользователи могут иметь очереди, где не все полученные сообщения могут быть успешно расшифрованы, а ключ или сопоставитель должны создаваться. В этом случае в последней строке приведенного выше примера будет создано исключение, и ни одно из полученных сообщений не будет доступно. В этих сценариях для предоставления параметров шифрования клиентам можно использовать подкласс **куеуеклиентсидинкриптионоптионс** . Он предоставляет **декриптионфаилед** событий, который активируется при каждом сбое расшифровки сообщения очереди, если в событие был добавлен хотя бы один вызов. Отдельные сообщения с ошибками могут обрабатываться таким образом, и они будут отфильтрованы из окончательного **куеуемессаже []** , возвращенного **рецеивемессажес**.
+
+```csharp
+// Create your encryption options using the sub-class.
+QueueClientSideEncryptionOptions encryptionOptions = new QueueClientSideEncryptionOptions(ClientSideEncryptionVersion.V1_0)
+{
+   KeyEncryptionKey = key,
+   KeyResolver = keyResolver,
+   // string the storage client will use when calling IKeyEncryptionKey.WrapKey()
+   KeyWrapAlgorithm = "some algorithm name"
+};
+
+// Add a handler to the DecryptionFailed event.
+encryptionOptions.DecryptionFailed += (source, args) => {
+   QueueMessage failedMessage = (QueueMessage)source;
+   Exception exceptionThrown = args.Exception;
+   // do something
+};
+
+// Use these options with your client objects.
+QueueClient queue = new QueueClient(connectionString, queueName, new SpecializedQueueClientOptions()
+{
+   ClientSideEncryption = encryptionOptions
+});
+
+// Retrieve 5 messages from the queue.
+// Assume 5 messages come back and one throws during decryption.
+QueueMessage[] messages = queue.ReceiveMessages(maxMessages: 5).Value;
+Debug.Assert(messages.Length == 4)
+```
+
+# <a name="net-v11"></a>[Версии 11 .NET](#tab/dotnet11)
 Создайте объект **QueueEncryptionPolicy** и задайте его в параметрах запроса (для каждого API или на уровне клиента с помощью параметра **DefaultRequestOptions**). Все остальные задачи решаются клиентской библиотекой.
 
 ```csharp
@@ -194,7 +341,9 @@ ms.locfileid: "92091667"
  CloudQueueMessage retrMessage = queue.GetMessage(null, options, null);
 ```
 
-### <a name="table-service-encryption"></a>Шифрование службы таблиц
+---
+
+### <a name="table-service-encryption-v11-only"></a>Шифрование службы таблиц (только версии 11)
 Помимо создания политики шифрования и настройки параметров запроса необходимо указать **EncryptionResolver** в параметрах **TableRequestOptions** или задать атрибут [EncryptProperty] для сущности.
 
 #### <a name="using-the-resolver"></a>Использование сопоставителя

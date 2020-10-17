@@ -7,16 +7,16 @@ author: robinsh
 ms.author: robinsh
 ms.service: iot-hub
 ms.custom: subject-policy-reference
-ms.openlocfilehash: bcb7a8e040a8e32a8513e5e0e73d6c124e04563a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 66b74fd8fe326666d3c34b59acba383fd4205e17
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91816272"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92151341"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-iot-hub"></a>Встроенные определения в Политике Azure для Центра Интернета вещей
 
-Пример кода для Центра Интернета вещей, демонстрирующий способы реализации распространенных сценариев Интернета вещей, см. в [этом кратком руководстве](https://docs.microsoft.com/azure/iot-hub/quickstart-send-telemetry-cli). Доступны также пакеты средств разработки для нескольких языков программирования, включая C, Node.js и Python.
+Пример кода для Центра Интернета вещей, демонстрирующий способы реализации распространенных сценариев Интернета вещей, см. в [этом кратком руководстве](./quickstart-send-telemetry-cli.md). Доступны также пакеты средств разработки для нескольких языков программирования, включая C, Node.js и Python.
 
 Эта страница представляет собой индекс встроенных определений политик в [Политике Azure](../governance/policy/overview.md) для Центра Интернета вещей Azure. Дополнительные встроенные компоненты Политики Azure для других служб см. в статье [Встроенные определения Политики Azure](../governance/policy/samples/built-in-policies.md).
 

@@ -12,14 +12,14 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 02/13/2020
+ms.date: 10/16/2020
 ms.author: juergent
-ms.openlocfilehash: 527d9e2e43a4003dd5300c26fc58b1e456186351
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d613da4d9abdfe22fc20f1b74da41e4a65cbff33
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87077396"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92151574"
 ---
 # <a name="high-availability-of-ibm-db2-luw-on-azure-vms-on-red-hat-enterprise-linux-server"></a>Обеспечение высокого уровня доступности IBM DB2 LUW на виртуальных машинах Azure в Red Hat Enterprise Linux Server
 
@@ -403,6 +403,8 @@ Online: [AZ-idb01 AZ-idb02]
 > [!NOTE]
 > Номер SKU Load Balancer (цен. категория "Стандартный") имеет ограничения на доступ к общедоступным IP-адресам с узлов, расположенных под Load Balancer. Сведения о том, как разрешить этим узлам доступ к общедоступным IP-адресам, см. в статье подключение к общедоступной [конечной точке для виртуальных машин с помощью Azure Load Balancer (цен. Категория "Стандартный") в сценариях с высоким уровнем доступности SAP](./high-availability-guide-standard-load-balancer-outbound-connections.md) .
 
+> [!IMPORTANT]
+> Плавающий IP-адрес не поддерживается для вторичной IP-конфигурации NIC в сценариях балансировки нагрузки. Дополнительные сведения см. в статье [ограничения балансировщика нагрузки Azure](https://docs.microsoft.com/azure/load-balancer/load-balancer-multivip-overview#limitations). Если для виртуальной машины требуется дополнительный IP-адрес, разверните вторую сетевую карту.  
 
 
 1. Создайте интерфейсный пул IP-адресов:
@@ -507,7 +509,7 @@ j2ee/dbhost = db-virt-hostname
 
 Рекомендуется настроить общий общий ресурс NFS или Глустерфс, где журналы записываются из обоих узлов. Общий ресурс NFS или Глустерфс должен быть высокодоступным. 
 
-Вы можете использовать существующие общие папки NFS высокой доступности или Глустерфс для транспорта или каталога профиля. Дополнительные сведения см. в разделе:
+Вы можете использовать существующие общие папки NFS высокой доступности или Глустерфс для транспорта или каталога профиля. Дополнительные сведения можно найти в разделе
 
 - [GlusterFS в виртуальных машинах Azure с Red Hat Enterprise Linux для SAP NetWeaver][glusterfs] 
 - [Высокий уровень доступности SAP NetWeaver на виртуальных машинах Azure на Red Hat Enterprise Linux с Azure NetApp Files для приложений SAP][anf-rhel]

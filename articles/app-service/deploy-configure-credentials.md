@@ -5,15 +5,15 @@ ms.topic: article
 ms.date: 08/14/2019
 ms.reviewer: byvinyal
 ms.custom: seodec18
-ms.openlocfilehash: 50b3cae00110a64e4d95171822bf1d2a282d2cc1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 653110b953b6947254d5063a9e389505d45ea4cb
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91715410"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92149022"
 ---
 # <a name="configure-deployment-credentials-for-azure-app-service"></a>Настройка учетных данных развертывания службы приложений Azure
-[Служба приложений Azure](https://go.microsoft.com/fwlink/?LinkId=529714) поддерживает два типа учетных данных для [развертывания локальной системы Git](deploy-local-git.md) и [развертывания FTP(S)](deploy-ftp.md). Эти учетные данные не совпадают с учетными данными подписки Azure.
+[Служба приложений Azure](./overview.md) поддерживает два типа учетных данных для [развертывания локальной системы Git](deploy-local-git.md) и [развертывания FTP(S)](deploy-ftp.md). Эти учетные данные не совпадают с учетными данными подписки Azure.
 
 [!INCLUDE [app-service-deploy-credentials](../../includes/app-service-deploy-credentials.md)]
 
@@ -96,11 +96,11 @@ az resource update --resource-group <resource-group> --name ftp --namespace Micr
 az resource update --resource-group <resource-group> --name scm --namespace Microsoft.Web --resource-type basicPublishingCredentialsPolicies --parent sites/<site-name> --set properties.allow=false
 ```
 
-Чтобы убедиться, что учетные данные профиля публикации заблокированы для WebDeploy, попробуйте [Опубликовать веб-приложение с помощью Visual Studio 2019](https://docs.microsoft.com/visualstudio/deployment/quickstart-deploy-to-azure?view=vs-2019).
+Чтобы убедиться, что учетные данные профиля публикации заблокированы для WebDeploy, попробуйте [Опубликовать веб-приложение с помощью Visual Studio 2019](/visualstudio/deployment/quickstart-deploy-to-azure?view=vs-2019).
 
 ### <a name="disable-access-to-the-api"></a>Отключить доступ к API
 
-API в предыдущем разделе является резервной системой управления доступом на основе ролей Azure (Azure RBAC). Это означает, что вы можете [создать настраиваемую роль](https://docs.microsoft.com/azure/role-based-access-control/custom-roles#steps-to-create-a-custom-role) и назначить ей пользователей с низкими привелджедми, чтобы они не могли включить обычную проверку подлинности на всех сайтах. Чтобы настроить пользовательскую роль, [выполните следующие инструкции](https://azure.github.io/AppService/2020/08/10/securing-data-plane-access.html#create-a-custom-rbac-role).
+API в предыдущем разделе является резервной системой управления доступом на основе ролей Azure (Azure RBAC). Это означает, что вы можете [создать настраиваемую роль](../role-based-access-control/custom-roles.md#steps-to-create-a-custom-role) и назначить ей пользователей с низкими привелджедми, чтобы они не могли включить обычную проверку подлинности на всех сайтах. Чтобы настроить пользовательскую роль, [выполните следующие инструкции](https://azure.github.io/AppService/2020/08/10/securing-data-plane-access.html#create-a-custom-rbac-role).
 
 Можно также использовать [Azure Monitor](https://azure.github.io/AppService/2020/08/10/securing-data-plane-access.html#audit-with-azure-monitor) для аудита любых успешных запросов проверки подлинности и применения [политики Azure](https://azure.github.io/AppService/2020/08/10/securing-data-plane-access.html#enforce-compliance-with-azure-policy) для применения этой конфигурации ко всем сайтам в подписке.
 

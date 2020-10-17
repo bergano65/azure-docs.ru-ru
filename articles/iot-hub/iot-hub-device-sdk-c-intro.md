@@ -13,12 +13,12 @@ ms.custom:
 - mqtt
 - 'Role: Cloud Development'
 - 'Role: IoT Device'
-ms.openlocfilehash: 3acac0c85aa6f3e3725dcf54a646f8ac16250e24
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 24f1332e940929cff6aeb6a0d5d3c43e28d36f22
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87324052"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92149181"
 ---
 # <a name="azure-iot-device-sdk-for-c"></a>Пакет SDK для устройств Azure IoT для C
 
@@ -38,7 +38,7 @@ ms.locfileid: "87324052"
 
 ## <a name="sdk-architecture"></a>Архитектура пакета SDK
 
-[**Пакет SDK для устройств Интернета вещей Azure для C**](https://github.com/Azure/azure-iot-sdk-c) доступен в репозитории на сайте GitHub. Дополнительные сведения об API см. в [справочной документации по API для C](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/).
+[**Пакет SDK для устройств Интернета вещей Azure для C**](https://github.com/Azure/azure-iot-sdk-c) доступен в репозитории на сайте GitHub. Дополнительные сведения об API см. в [справочной документации по API для C](/azure/iot-hub/iot-c-sdk-ref/).
 
 Последнюю версию библиотеки можно найти в ветке **master** этого репозитория.
 
@@ -579,7 +579,7 @@ serializer_deinit();
 
 Каждая из этих трех функций соответствуют трем функциям инициализации, описанным ранее. Вызов этих API позволит освободить выделенные ранее ресурсы.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 В этой статье были рассмотрены основы использования библиотек в **пакете SDK для устройств Azure IOT для C**. Он предоставил достаточно информации, чтобы понять, что входит в пакет SDK, его архитектуру и как приступить к работе с примерами Windows. В следующей статье также рассказывается о пакете SDK и приводятся [дополнительные сведения о библиотеке IoTHubClient](iot-hub-device-sdk-c-iothubclient.md).
 
@@ -587,4 +587,4 @@ serializer_deinit();
 
 Для дальнейшего изучения возможностей Центра Интернета вещей см. следующие статьи:
 
-* [Краткое руководство. Развертывание первого модуля IoT Edge на устройстве под управлением 64-разрядной ОС Linux](../iot-edge/tutorial-simulate-device-linux.md)
+* [Краткое руководство. Развертывание первого модуля IoT Edge на устройстве под управлением 64-разрядной ОС Linux](../iot-edge/quickstart-linux.md)

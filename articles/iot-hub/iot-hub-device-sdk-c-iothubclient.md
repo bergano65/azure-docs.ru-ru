@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 08/29/2017
 ms.author: robinsh
 ms.custom: amqp
-ms.openlocfilehash: 91527b5f2159a336e8339c6a128e8d61965292a6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f33521dd9110d7ba6ee84650345b38c8c6a4950b
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81732606"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92149146"
 ---
 # <a name="azure-iot-device-sdk-for-c--more-about-iothubclient"></a>Пакет SDK для устройств Azure IoT для C — дополнительные сведения о библиотеке IoTHubClient
 
@@ -28,7 +28,7 @@ ms.locfileid: "81732606"
 
 Чтобы раскрыть эти темы на должном уровне, мы будем использовать образцы из пакета SDK для библиотеки **IoTHubClient**. Если вы хотите сразу же проверять все, о чем мы рассказываем, найдите приложения **iothub\_client\_sample\_http** и **iothub\_client\_sample\_amqp**. Они входят в пакет SDK для устройств Azure IoT для C. Все, что описано в следующих разделах, продемонстрировано именно в этих примерах.
 
-[**Пакет SDK для устройств Интернета вещей Azure для C**](https://github.com/Azure/azure-iot-sdk-c) доступен в репозитории на сайте GitHub. Дополнительные сведения об API см. в [справочной документации по API для C](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/).
+[**Пакет SDK для устройств Интернета вещей Azure для C**](https://github.com/Azure/azure-iot-sdk-c) доступен в репозитории на сайте GitHub. Дополнительные сведения об API см. в [справочной документации по API для C](/azure/iot-hub/iot-c-sdk-ref/).
 
 ## <a name="the-lower-level-apis"></a>Интерфейсы API нижнего уровня
 
@@ -157,7 +157,7 @@ Map_AddOrUpdate(propMap, "SequenceNumber", propText);
 
 Сначала мы вызываем функцию **IoTHubMessage\_Properties** и передаем ей дескриптор сообщения. Обратно мы получаем ссылку **MAP\_HANDLE**, которая позволяет добавлять свойства. Для добавления свойств мы вызываем метод **Map\_AddOrUpdate**, который принимает ссылку на MAP\_HANDLE, имя свойства и значение свойства. С помощью этого API мы можем добавить сколько угодно свойств.
 
-Когда событие считывается из **Центров событий**, получатель может перечислить свойства и извлечь их соответствующие значения. Например, в среде .NET это можно реализовать путем обращения к [коллекции свойств в объекте EventData](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventdata.properties.aspx).
+Когда событие считывается из **Центров событий**, получатель может перечислить свойства и извлечь их соответствующие значения. Например, в среде .NET это можно реализовать путем обращения к [коллекции свойств в объекте EventData](/dotnet/api/microsoft.servicebus.messaging.eventdata).
 
 В предыдущем примере мы присоединяем свойства к событию, которое мы отправляем в центр Интернета вещей. Свойства можно также прикреплять к сообщениям, получаемым из Центра Интернета вещей. Чтобы извлечь свойства из сообщения, в функции обратного вызова сообщения используйте код, подобный указанному ниже.
 
@@ -277,4 +277,4 @@ IoTHubClient_LL_SetOption(iotHubClientHandle, "timeout", &timeout);
 
 Дополнительные сведения о разработке для Центра Интернета вещей см. в статье [Понимание и использование пакетов SDK для Центра Интернета вещей Azure](iot-hub-devguide-sdks.md).
 
-Для дальнейшего изучения возможностей Центра Интернета вещей см. в разделе [Краткое руководство. Развертывание первого модуля IoT Edge на устройстве под управлением 64-разрядной ОС Linux](../iot-edge/tutorial-simulate-device-linux.md).
+Для дальнейшего изучения возможностей Центра Интернета вещей см. в разделе [Краткое руководство. Развертывание первого модуля IoT Edge на устройстве под управлением 64-разрядной ОС Linux](../iot-edge/quickstart-linux.md).

@@ -3,12 +3,12 @@ title: Сетевая изоляция в Azure DevTest Labs
 description: Сведения об изоляции сети в Azure DevTest Labs.
 ms.topic: article
 ms.date: 08/25/2020
-ms.openlocfilehash: fbd2725cd3677e03cadbe0ae1f060b141f5d212b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: aafa6bf94c7963d69bfb67a28a520b811c4fbacf
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88875966"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92149165"
 ---
 # <a name="network-isolation-in-devtest-labs"></a>Сетевая изоляция в DevTest Labs
 
@@ -57,7 +57,7 @@ ms.locfileid: "88875966"
  
    > [!div class="mx-imgBorder"]
    > ![Проверка contoso](./media/network-isolation/contoso-test.png)
-1. В учетной записи хранения перейдите в раздел брандмауэры и виртуальные сети и убедитесь, что установлен флажок разрешить доверенным службам Майкрософт доступ к этой учетной записи хранения. Так как [DevTest Labs является доверенной службой Майкрософт](https://docs.microsoft.com/azure/storage/common/storage-network-security#trusted-microsoft-services), этот параметр позволяет лабораторию работать нормально в изолированном от сети режиме. 
+1. В учетной записи хранения перейдите в раздел брандмауэры и виртуальные сети и убедитесь, что установлен флажок разрешить доверенным службам Майкрософт доступ к этой учетной записи хранения. Так как [DevTest Labs является доверенной службой Майкрософт](../storage/common/storage-network-security.md#trusted-microsoft-services), этот параметр позволяет лабораторию работать нормально в изолированном от сети режиме. 
 
    > [!div class="mx-imgBorder"]
    > ![Брандмауэры Contoso Lab](./media/network-isolation/contoso-lab-firewalls-vnets.png)
@@ -74,7 +74,7 @@ ms.locfileid: "88875966"
 
 Вы также можете автоматизировать эти действия, чтобы настроить этот параметр для нескольких лабораторий. 
 
-[Дополнительные сведения об управлении правилами сетевого доступа по умолчанию для службы хранилища Azure с помощью PowerShell и интерфейса командной строки](https://docs.microsoft.com/azure/storage/common/storage-network-security?toc=/azure/virtual-network/toc.json#powershell)
+[Дополнительные сведения об управлении правилами сетевого доступа по умолчанию для службы хранилища Azure с помощью PowerShell и интерфейса командной строки](../storage/common/storage-network-security.md?toc=%252fazure%252fvirtual-network%252ftoc.json#powershell)
 
 ## <a name="things-to-remember-while-using-a-lab-in-a-network-isolated-mode"></a>Что следует помнить при использовании лаборатории в изолированном от сети режиме
 
@@ -82,7 +82,7 @@ ms.locfileid: "88875966"
 
 В лаборатории, изолированной от сети, для таких действий, как отправка виртуального жесткого диска в учетную запись хранения лаборатории для создания пользовательских образов из, владелец лаборатории должен явно включить доступ к учетной записи хранения из разрешенной конечной точки. Это можно сделать, создав виртуальную машину и безопасно обеспечивая доступ к учетной записи хранения лаборатории из этой виртуальной машины. 
 
-[Дополнительные сведения о доступе к учетной записи хранения в частном порядке с помощью виртуальной машины](../private-link/create-private-endpoint-storage-portal.md)
+[Дополнительные сведения о доступе к учетной записи хранения в частном порядке с помощью виртуальной машины](../private-link/tutorial-private-endpoint-storage-portal.md)
 
 ### <a name="exporting-usage-data-from-the-lab"></a>Экспорт данных об использовании из лаборатории 
 

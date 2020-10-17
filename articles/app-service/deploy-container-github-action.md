@@ -7,12 +7,12 @@ ms.date: 10/03/2020
 ms.author: jafreebe
 ms.reviewer: ushan
 ms.custom: github-actions-azure
-ms.openlocfilehash: 3a5e319115c124551c05f2ac5aa393ba19596d0d
-ms.sourcegitcommit: b437bd3b9c9802ec6430d9f078c372c2a411f11f
+ms.openlocfilehash: d6f66993b0fb7f97c551f4fbcb305111cfb2097e
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91893362"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92150277"
 ---
 # <a name="deploy-a-custom-container-to-app-service-using-github-actions"></a>Развертывание пользовательского контейнера в службе приложений с помощью действий GitHub
 
@@ -33,7 +33,7 @@ ms.locfileid: "91893362"
 - Учетная запись Azure с активной подпиской. [Создайте учетную запись бесплатно](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
 - Учетная запись GitHub. Если у вас ее нет, зарегистрируйтесь [бесплатно](https://github.com/join).  
 - Рабочий реестр контейнеров и приложение службы приложений Azure для контейнеров. В этом примере используется реестр контейнеров Azure. 
-    - [Узнайте, как создать контейнерное Node.jsное приложение с помощью DOCKER, отправить образ контейнера в реестр, а затем развернуть образ в службе приложений Azure.](https://docs.microsoft.com/azure/developer/javascript/tutorial-vscode-docker-node-01)
+    - [Узнайте, как создать контейнерное Node.jsное приложение с помощью DOCKER, отправить образ контейнера в реестр, а затем развернуть образ в службе приложений Azure.](/azure/developer/javascript/tutorial-vscode-docker-node-01)
 
 ## <a name="generate-deployment-credentials"></a>Создать учетные данные развертывания
 

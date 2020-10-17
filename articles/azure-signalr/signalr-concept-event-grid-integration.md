@@ -8,20 +8,20 @@ ms.reviewer: zhshang
 ms.date: 11/13/2019
 ms.topic: conceptual
 ms.service: signalr
-ms.openlocfilehash: 105b40da2a612d2a2e9958eff52bfb786c500bc1
-ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
+ms.openlocfilehash: 77c8887ac19c6ce4c7d83734bdd2b44d9213914d
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91876079"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92151120"
 ---
 # <a name="reacting-to-azure-signalr-service-events"></a>Reacting to Azure SignalR Service events (Реагирование на события службы Azure SignalR)
 
 События службы Azure SignalR позволяют приложениям реагировать на подключения клиентов, подключенные или отключенные с помощью современных бессерверных архитектур. При этом не требуется сложный код или дорогостоящие и неэффективные службы опроса.  Вместо этого события отправляются через службу " [Сетка событий Azure](https://azure.microsoft.com/services/event-grid/) " для подписчиков, таких как [функции Azure](https://azure.microsoft.com/services/functions/), [Azure Logic Apps](https://azure.microsoft.com/services/logic-apps/)или даже для настраиваемого прослушивателя HTTP. С помощью Azure SignalR вы платите только за то, что вы использовали.
 
-События службы Azure SignalR надежно отправляются в службу "Сетка событий", которая обеспечивает надежную работу служб доставки для приложений с помощью многофункциональных политик повтора и доставки недоставленных сообщений. Дополнительные сведения см. в разделе [Доставка сообщений в сетке событий и повторная попытка](https://docs.microsoft.com/azure/event-grid/delivery-and-retry).
+События службы Azure SignalR надежно отправляются в службу "Сетка событий", которая обеспечивает надежную работу служб доставки для приложений с помощью многофункциональных политик повтора и доставки недоставленных сообщений. Дополнительные сведения см. в разделе [Доставка сообщений в сетке событий и повторная попытка](../event-grid/delivery-and-retry.md).
 
-![Модель Сетки событий](https://docs.microsoft.com/azure/event-grid/media/overview/functional-model.png)
+![Модель Сетки событий](/azure/event-grid/media/overview/functional-model.png)
 
 ## <a name="serverless-state"></a>Бессерверное состояние
 События службы Azure SignalR активны только в том случае, если клиентские соединения находятся в состоянии без сервера. Если клиент не направляется на основной сервер, он переходит в бессерверное состояние. Классический режим работает, только если концентратор, к которому подключается клиентские подключения, не имеет сервера-концентратора. Рекомендуется использовать бессерверный режим. Дополнительные сведения о режиме обслуживания см. в разделе [как выбрать режим обслуживания](https://github.com/Azure/azure-signalr/blob/dev/docs/faq.md#what-is-the-meaning-of-service-mode-defaultserverlessclassic-how-can-i-choose).
@@ -58,7 +58,7 @@ ms.locfileid: "91876079"
 
 Дополнительные сведения см. в статье [схема событий службы SignalR](../event-grid/event-schema-azure-signalr.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о службе "Сетка событий Azure" и предоставление им событий службы SignalR см. в этой статье.
 

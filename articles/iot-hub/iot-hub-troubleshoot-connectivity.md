@@ -13,12 +13,12 @@ ms.custom:
 - 'Role: Cloud Development'
 - 'Role: IoT Device'
 - 'Role: Technical Support'
-ms.openlocfilehash: b22573fc98d4647c2b05763d9b67c37f6f023f98
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 17fb1bf8aebe1bd114f970aed997e77ce8a07af1
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87322726"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92150778"
 ---
 # <a name="monitor-diagnose-and-troubleshoot-disconnects-with-azure-iot-hub"></a>Мониторинг, диагностика отключений от Центра Интернета вещей и устранение неполадок
 
@@ -109,7 +109,7 @@ Azure Monitor можно использовать, чтобы получать �
 
 * Если устройство использует протокол MQTT, убедитесь, что порт 8883 открыт. Дополнительные сведения см. в разделе [Подключение к Центру Интернета вещей (MQTT)](iot-hub-mqtt-support.md#connecting-to-iot-hub).
 
-* Получите помощь на [странице Майкрософт с вопросами и ответами о Центре Интернета вещей](https://docs.microsoft.com/answers/topics/azure-iot-hub.html), в [Stack Overflow](https://stackoverflow.com/questions/tagged/azure-iot-hub) или в [службе поддержки Azure](https://azure.microsoft.com/support/options/).
+* Получите помощь на [странице Майкрософт с вопросами и ответами о Центре Интернета вещей](/answers/topics/azure-iot-hub.html), в [Stack Overflow](https://stackoverflow.com/questions/tagged/azure-iot-hub) или в [службе поддержки Azure](https://azure.microsoft.com/support/options/).
 
 Чтобы помочь улучшить документацию, оставьте комментарий в разделе отзывов, если сведения в этом руководстве не были полезны.
 

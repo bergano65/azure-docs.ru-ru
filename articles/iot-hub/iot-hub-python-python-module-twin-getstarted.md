@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 04/03/2020
 ms.author: menchi
 ms.custom: devx-track-python
-ms.openlocfilehash: 6ed0290abe91453058589b032fb5ed2dd71fe98a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 665281adc892e6b3655c0b1d0533cb3148e62940
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87872571"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92139395"
 ---
 # <a name="get-started-with-iot-hub-module-identity-and-module-twin-python"></a>Начало работы с удостоверениями модулей центра Интернета вещей и модулем двойника (Python)
 
@@ -264,10 +264,10 @@ ms.locfileid: "87872571"
 
    ![В выходных данных приложения устройства отображается исправление требуемых свойств](./media/iot-hub-python-python-module-twin-getstarted/device-2.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы продолжить знакомство с Центром Интернета вещей и изучить другие сценарии Интернета вещей, см. следующие ресурсы:
 
 * [How to get started with device management (Node)](iot-hub-node-node-device-management-get-started.md) (Начало работы с управлением устройствами (Node))
 
-* [Краткое руководство. Развертывание первого модуля IoT Edge на устройстве под управлением 64-разрядной ОС Linux](../iot-edge/tutorial-simulate-device-linux.md)
+* [Краткое руководство. Развертывание первого модуля IoT Edge на устройстве под управлением 64-разрядной ОС Linux](../iot-edge/quickstart-linux.md)

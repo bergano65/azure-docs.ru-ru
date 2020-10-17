@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: troubleshooting
 ms.date: 05/06/2020
-ms.openlocfilehash: a09989e57729862cb18f148f95eb83f81a775b7d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8eb37b993ee5bc3944228cba72be0557b52e3dc6
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91542229"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92149262"
 ---
 # <a name="language-understanding-frequently-asked-questions-faq"></a>Часто задаваемые вопросы о службе "Распознавание речи"
 
@@ -77,7 +77,7 @@ ms.locfileid: "91542229"
 
 ## <a name="collaborating-and-contributing"></a>Совместная работа и участие
 
-### <a name="how-do-i-give-collaborators-access-to-luis-with-azure-active-directory-azure-ad-or-role-based-access-control-rbac"></a>Как предоставить доступ для участников совместной работы LUIS с Azure Active Directory (Azure AD) или управлять доступом на основе ролей (RBAC)?
+### <a name="how-do-i-give-collaborators-access-to-luis-with-azure-active-directory-azure-ad-or-azure-role-based-access-control-azure-rbac"></a>Разделы справки предоставить совместный доступ к LUIS с помощью Azure Active Directory (Azure AD) или управления доступом на основе ролей Azure (Azure RBAC)?
 
 Дополнительные сведения о том, как предоставить доступ для участников совместной работы, см. в разделах [Ресурсы Azure Active Directory](luis-how-to-collaborate.md#azure-active-directory-resources) и [Пользователь клиента Azure Active Directory](luis-how-to-collaborate.md#azure-active-directory-tenant-user).
 
@@ -330,7 +330,7 @@ Get-AzCognitiveServicesAccountUsage -ResourceGroupName <your-resource-group> -Na
 
 * [Как использовать службу Azure Conversational AI для масштабирования вашего бизнеса для следующего поколения](https://www.youtube.com/watch?v=_k97jd-csuk&feature=youtu.be)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительную информацию о LUIS см. в следующих ресурсах:
 * [Вопросы Stack Overflow, помеченные LUIS](https://stackoverflow.com/questions/tagged/luis)

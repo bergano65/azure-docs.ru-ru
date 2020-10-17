@@ -8,12 +8,12 @@ ms.author: arjagann
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 10/14/2020
-ms.openlocfilehash: ef8b3865b0914c0d06ff69d20396f1ff368642bc
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: bcacd6c2e1353c71d8e4e25c95ee2b563e7b3fba
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92102733"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92150419"
 ---
 # <a name="indexer-connections-through-a-private-endpoint-azure-cognitive-search"></a>Подключение индексатора через частную конечную точку (Azure Когнитивный поиск)
 
@@ -33,7 +33,7 @@ ms.locfileid: "92102733"
 
 Подключения к частным конечным точкам для некоторых ресурсов можно создать только с предварительной версией API управления поиском ( `2020-08-01-Preview` или более поздней версии), обозначенным тегом "Preview" в таблице ниже. Ресурсы без тега "Предварительная версия" можно создавать с помощью предварительной версии или общедоступной версией API ( `2020-08-01` или более поздней).
 
-Ниже приведен список ресурсов Azure, для которых можно создать исходящие частные конечные точки из Когнитивный поиск Azure. `groupId` в приведенной ниже таблице необходимо точно использовать в API (с учетом регистра) создание общего ресурса частной ссылки.
+Ниже приведен список ресурсов Azure, для которых можно создать исходящие частные конечные точки из Когнитивный поиск Azure. `groupId`Значения, перечисленные в таблице ниже, должны использоваться в точности как записанные (с учетом регистра) в API для создания общего ресурса частной ссылки.
 
 | Ресурс Azure | Идентификатор группы. |
 | --- | --- |
@@ -47,7 +47,7 @@ ms.locfileid: "92102733"
 
 Список ресурсов Azure, для которых поддерживаются исходящие подключения к частной конечной точке, также можно запросить с помощью [API List Supported](/rest/api/searchmanagement/privatelinkresources/listsupported).
 
-В этой статье сочетание [ARMClient](https://github.com/projectkudu/ARMClient) и [POST](https://www.postman.com/) используется для демонстрации вызовов REST API.
+В оставшейся части этой статьи для демонстрации REST APIных вызовов используется сочетание [ARMClient](https://github.com/projectkudu/ARMClient) и [POST](https://www.postman.com/) .
 
 > [!NOTE]
 > В этой статье предполагается, что имя службы поиска — __contoso-Search__ , существующий в группе ресурсов __contoso__ подписки с идентификатором __00000000-0000-0000-0000-000000000000__. Идентификатор ресурса этой службы поиска будет `/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/contoso/providers/Microsoft.Search/searchServices/contoso-search`

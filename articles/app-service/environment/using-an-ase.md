@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 5/10/2020
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: ca333115b8a0588f781b93e0d8a9279ab9c7928c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1e6bace9652ff68bb4cc28d482016b7e7510154b
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91255168"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92150197"
 ---
 # <a name="use-an-app-service-environment"></a>Использование среды службы приложений
 
@@ -218,7 +218,7 @@ URL-адрес SCM используется для доступа к консо�
 1. Перейдите по адресу resources.azure.com и войдите с помощью своей учетной записи Azure.
 1. Пройдите по адресу подписки Resources to Subscriptions \/ \[ Name \] \/ resourceGroups имя \/ \[ группы ресурсов \] \/ providers \/ Microsoft. Web \/ hostingEnvironments \/ \[ ASE Name \] .
 1. В верхней части выберите **чтение и запись** .
-1. Выберите команду **Изменить**.
+1. Нажмите кнопку **Изменить**.
 1. Задайте для **упградепреференце** любое из трех значений.
 1. Выберите **исправление**.
 
@@ -292,7 +292,7 @@ For more specific examples, use: az find "az appservice ase"
 [ASENetwork]: ./network-info.md
 [UsingASE]: ./using-an-ase.md
 [UDRs]: ../../virtual-network/virtual-networks-udr-overview.md
-[NSGs]: ../../virtual-network/security-overview.md
+[NSGs]: ../../virtual-network/network-security-groups-overview.md
 [ConfigureASEv1]: app-service-web-configure-an-app-service-environment.md
 [ASEv1Intro]: app-service-app-service-environment-intro.md
 [Functions]: ../../azure-functions/index.yml
