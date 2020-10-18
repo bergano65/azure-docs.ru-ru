@@ -5,14 +5,14 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: estfan, jonfan, logicappspm
 ms.topic: conceptual
-ms.date: 06/06/2020
+ms.date: 10/16/2020
 tags: connectors
-ms.openlocfilehash: a50a171536d7f81de42da415960398d31ec64827
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3a2fb2180acfe8fed5701ae4320ea0d1424ed9e0
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91326785"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92166290"
 ---
 # <a name="automate-workflows-for-a-sql-database-by-using-azure-logic-apps"></a>Автоматизация рабочих процессов для базы данных SQL с помощью Azure Logic Apps
 
@@ -66,6 +66,9 @@ ms.locfileid: "91326785"
 <a name="connect-azure-sql-db"></a>
 
 ### <a name="connect-to-azure-sql-database-or-managed-instance"></a>Подключение к базе данных SQL Azure или Управляемый экземпляр
+
+Чтобы получить доступ к Управляемый экземпляр Azure SQL без использования локального шлюза данных или среды службы интеграции, необходимо [настроить общедоступную конечную точку на управляемый экземпляр SQL Azure](../azure-sql/managed-instance/public-endpoint-configure.md). Общедоступная конечная точка использует порт 3342, поэтому убедитесь, что этот номер порта указан при создании подключения из приложения логики.
+
 
 При первом добавлении [триггера SQL](#add-sql-trigger) или [действия SQL](#add-sql-action), но ранее не было создано подключение к базе данных, вам будет предложено выполнить следующие действия:
 
@@ -248,6 +251,18 @@ ms.locfileid: "91326785"
 
 1. Чтобы создать ссылку на свойства содержимого JSON, щелкните внутри полей редактирования, в которых необходимо создать ссылку на эти свойства, чтобы появился список динамического содержимого. В списке под заголовком [**анализ JSON**](../logic-apps/logic-apps-perform-data-operations.md#parse-json-action) выберите нужные маркеры данных для свойств содержимого JSON.
 
+## <a name="troubleshoot-problems"></a>Устранение неполадок
+
+Очень часто возникают проблемы с подключением. В следующем примере показано сообщение об ошибке:
+
+> `A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections.`
+>
+> `(provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) (Microsoft SQL Server, Error: 53)`
+>
+> `(provider: TCP Provider, error: 0 - No such host is known.) (Microsoft SQL Server, Error: 11001)`
+
+Выполните [Устранение ошибок подключения, чтобы SQL Server](https://support.microsoft.com/help/4009936/solving-connectivity-errors-to-sql-server) для устранения проблемы.
+
 ## <a name="connector-specific-details"></a>Сведения о соединителях
 
 Технические сведения о триггерах, действиях и ограничениях этого соединителя см. на [странице справочника по соединителю](/connectors/sql/), которая создается из описания Swagger.
@@ -255,4 +270,3 @@ ms.locfileid: "91326785"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте больше о других [соединителях для Azure Logic Apps](../connectors/apis-list.md).
-

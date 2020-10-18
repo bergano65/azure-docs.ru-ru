@@ -1,33 +1,34 @@
 ---
 title: Установка кластера Azure Service Fabric на платформе Linux в Windows
-description: В этой статье описывается установка кластеров Service Fabric на платформе Linux на компьютерах разработки Windows. Это особенно удобно для кроссплатформенной разработки.
+description: В этой статье описывается установка кластеров Service Fabric на платформе Linux на компьютерах разработки Windows. Этот подход удобен для межплатформенной разработки.
 ms.topic: conceptual
-ms.date: 11/20/2017
-ms.openlocfilehash: 83d494d777a4a1e1586707c8848056ca8fe9780a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 10/16/2020
+ms.openlocfilehash: e25c6adf5e5f5101025aa883ef2ff9750c113a76
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91537078"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92164114"
 ---
 # <a name="set-up-a-linux-service-fabric-cluster-on-your-windows-developer-machine"></a>Установка кластера Service Fabric на платформе Linux на компьютере разработчики Windows
 
-В этом документе описывается настройка установка локального кластера Service Fabric на платформе Linux на компьютерах разработки Windows. Установка локального кластера Linux удобна для быстрого тестирования приложений, нацеленных на кластеры Linux, но разработанных на компьютере Windows.
+В этом документе описано, как настроить локальный кластер Linux Service Fabric на компьютере с разработкой Windows. Установка локального кластера Linux удобна для быстрого тестирования приложений, нацеленных на кластеры Linux, но разработанных на компьютере Windows.
 
 ## <a name="prerequisites"></a>Предварительные требования
-Изначально кластеры Service Fabric на платформе Linux не поддерживают запуск в среде Windows. Чтобы запустить локальный кластер Service Fabric, предоставляется предварительно настроенный образ контейнера Docker. Перед началом работы вам потребуются:
+Кластеры Service Fabric под управлением Linux не работают в Windows, но для включения межплатформенного создания прототипов мы предоставили в Linux Service Fabric контейнер DOCKER кластера с одним ящиком, который можно развернуть с помощью Docker для Windows.
+
+Перед началом работы вам потребуются:
 
 * не менее 4 ГБ ОЗУ;
-* последняя версия [Docker](https://store.docker.com/editions/community/docker-ce-desktop-windows);
-* Docker должен работать в режиме Linux
+* Последняя версия [DOCKER для Windows](https://store.docker.com/editions/community/docker-ce-desktop-windows)
+* DOCKER должен работать в режиме контейнеров Linux
 
 >[!TIP]
-> * Чтобы установить Docker в среде Windows, можно выполнить инструкции, приведенные в официальной [документации](https://store.docker.com/editions/community/docker-ce-desktop-windows/plans/docker-ce-desktop-windows-tier?tab=instructions) Docker. 
-> * По завершении проверьте правильность установки, выполнив инструкции, приведенные [здесь](https://docs.docker.com/docker-for-windows/#check-versions-of-docker-engine-compose-and-machine).
-
+> Чтобы установить DOCKER на компьютере с Windows, выполните действия, описанные в [документации по DOCKER](https://store.docker.com/editions/community/docker-ce-desktop-windows/plans/docker-ce-desktop-windows-tier?tab=instructions). Затем [проверьте правильность установки](https://docs.docker.com/docker-for-windows/#check-versions-of-docker-engine-compose-and-machine).
+>
 
 ## <a name="create-a-local-container-and-setup-service-fabric"></a>Создание локального контейнера и настройка Service Fabric
-Чтобы настроить локальный контейнер Docker и запустить его в кластере Service Fabric, выполните следующие действия в PowerShell:
+Чтобы настроить локальный контейнер DOCKER и запустить на нем кластер Service Fabric, выполните следующие действия.
 
 
 1. Обновите конфигурацию управляющей программы Docker на узле следующим образом и перезапустите управляющую программу Docker: 
@@ -38,33 +39,47 @@ ms.locfileid: "91537078"
       "fixed-cidr-v6": "2001:db8:1::/64"
     }
     ```
-    Еще один способ обновления (предпочтительный): щелкните значок Docker > "Параметры" > "Управляющая программа" > "Дополнительно". Затем перезапустите управляющую программу Docker, чтобы изменения вступили в силу. 
+    Рекомендуемый способ обновления заключается в переходе по адресу: 
 
-2. В новом каталоге создайте файл с именем `Dockerfile` для создания образа Service Fabric.
+    * Значок DOCKER > параметры > подсистеме DOCKER
+    * Добавить новые поля, перечисленные выше
+    * Применить & перезапустить. Перезапустите управляющую программу DOCKER, чтобы изменения вступили в силу.
 
-    ```Dockerfile
-    FROM mcr.microsoft.com/service-fabric/onebox:latest
-    WORKDIR /home/ClusterDeployer
-    RUN ./setup.sh
-    #Generate the local
-    RUN locale-gen en_US.UTF-8
-    #Set environment variables
-    ENV LANG=en_US.UTF-8
-    ENV LANGUAGE=en_US:en
-    ENV LC_ALL=en_US.UTF-8
-    EXPOSE 19080 19000 80 443
-    #Start SSH before running the cluster
-    CMD /etc/init.d/ssh start && ./run.sh
+2. Запустите кластер с помощью PowerShell.<br/>
+    <b>Ubuntu 18,04 LTS:</b>
+    ```powershell
+    docker run --name sftestcluster -d -v /var/run/docker.sock:/var/run/docker.sock -p 19080:19080 -p 19000:19000 -p 25100-25200:25100-25200 mcr.microsoft.com/service-fabric/onebox:u18
     ```
 
+    <b>Ubuntu 16,04 LTS:</b>
+    ```powershell
+    docker run --name sftestcluster -d -v /var/run/docker.sock:/var/run/docker.sock -p 19080:19080 -p 19000:19000 -p 25100-25200:25100-25200 mcr.microsoft.com/service-fabric/onebox:u16
+    ```
+
+    >[!TIP]
+    > По умолчанию вы получите образ с последней версией Service Fabric. Конкретные редакции см. на странице [центра DOCKER](https://hub.docker.com/r/microsoft/service-fabric-onebox/) .
+
+
+
+3. (Необязательно.) создайте расширенный образ Service Fabric.
+
+    В новом каталоге создайте файл `Dockerfile` с именем для создания настраиваемого образа:
+
     >[!NOTE]
-    >Вы можете адаптировать этот файл для добавления программ или зависимостей в контейнер.
+    >Вы можете адаптировать изображение выше с помощью Dockerfile, чтобы добавить в контейнер дополнительные программы или зависимости.
     >Например, добавленный элемент `RUN apt-get install nodejs -y` разрешает поддержку приложений `nodejs` в качестве гостевых исполняемых файлов.
+    ```Dockerfile
+    FROM mcr.microsoft.com/service-fabric/onebox:u18
+    RUN apt-get install nodejs -y
+    EXPOSE 19080 19000 80 443
+    WORKDIR /home/ClusterDeployer
+    CMD ["./ClusterDeployer.sh"]
+    ```
     
     >[!TIP]
-    > По умолчанию вы получите образ с последней версией Service Fabric. Сведения о конкретной версии см. на странице [Docker Hub](https://hub.docker.com/r/microsoft/service-fabric-onebox/).
+    > По умолчанию вы получите образ с последней версией Service Fabric. Конкретные редакции см. на странице [центра DOCKER](https://hub.docker.com/r/microsoft/service-fabric-onebox/) .
 
-3. Чтобы создать образ для многократного использования на основе файла `Dockerfile`, откройте терминал и с помощью команды `cd` перейдите в каталог, в котором хранится `Dockerfile`. Затем выполните следующий код:
+    Чтобы создать повторно используемое изображение из `Dockerfile` , откройте терминал, а затем запустите его, а `cd` `Dockerfile` затем выполните команду:
 
     ```powershell 
     docker build -t mysfcluster .
@@ -73,10 +88,10 @@ ms.locfileid: "91537078"
     >[!NOTE]
     >Для выполнения этой операции потребуется некоторое время, но она выполняется только один раз.
 
-4. Теперь при необходимости вы можете быстро запустить локальную копию Service Fabric, выполнив следующий код:
+    Теперь можно быстро запустить локальную копию Service Fabric при необходимости, запустив:
 
     ```powershell 
-    docker run --name sftestcluster -d -v //var/run/docker.sock:/var/run/docker.sock -p 19080:19080 -p 19000:19000 -p 25100-25200:25100-25200 mysfcluster
+    docker run --name sftestcluster -d -v /var/run/docker.sock:/var/run/docker.sock -p 19080:19080 -p 19000:19000 -p 25100-25200:25100-25200 mysfcluster
     ```
 
     >[!TIP]
@@ -84,21 +99,22 @@ ms.locfileid: "91537078"
     >
     >Если приложение ожидает передачи данных через определенные порты, их необходимо указать с помощью дополнительных тегов `-p`. Например, если приложение ожидает передачи данных через порт 8080, добавьте следующий тег `-p`:
     >
-    >`docker run -itd -p 19080:19080 -p 8080:8080 --name sfonebox mcr.microsoft.com/service-fabric/onebox:latest`
+    >`docker run -itd -p 19000:19000 -p 19080:19080 -p 8080:8080 --name sfonebox mcr.microsoft.com/service-fabric/onebox:u18`
     >
 
-5. Для запуска кластера потребуется некоторое время. Чтобы просмотреть состояние работоспособности кластера, можно перейти к панели мониторинга кластера `http://localhost:19080` или просмотреть журналы с помощью следующей команды:
+
+4. Для запуска кластера потребуется некоторое время. Чтобы просмотреть состояние работоспособности кластера, можно перейти к панели мониторинга кластера `http://localhost:19080` или просмотреть журналы с помощью следующей команды:
 
     ```powershell 
     docker logs sftestcluster
     ```
 
-6. Выполнив шаг 5, вы можете перейти по адресу ``http://localhost:19080`` на компьютере Windows и просмотреть Service Fabric Explorer. На этом этапе можно подключиться к кластеру с помощью любого инструмента на компьютере разработки Windows и развернуть приложение, нацеленное на кластеры Service Fabric на платформе Linux. 
+5. После успешного развертывания кластера, как показано на шаге 4, можно перейти ``http://localhost:19080`` с компьютера под Windows, чтобы найти панель мониторинга Service Fabric Explorer. На этом этапе можно подключиться к этому кластеру с помощью средств на компьютере разработчика Windows и развернуть приложения, предназначенные для кластеров Linux Service Fabric. 
 
     > [!NOTE]
     > Подключаемый модуль Eclipse сейчас не поддерживается в Windows. 
 
-7. Когда все будет готово, остановите работу контейнера и очистите его с помощью следующей команды:
+6. По завершении закройте и очистите контейнер с помощью следующей команды:
 
     ```powershell 
     docker rm -f sftestcluster
@@ -108,11 +124,14 @@ ms.locfileid: "91537078"
  
  Ниже перечислены известные ограничения для локального кластера, запущенного в контейнере для Mac: 
  
- * Служба DNS не работает и не поддерживается ([проблема № 132](https://github.com/Microsoft/service-fabric/issues/132))
+ * Служба DNS не запускается и в настоящее время не поддерживается в контейнере. [#132 проблемы](https://github.com/Microsoft/service-fabric/issues/132)
+ * Для выполнения приложений на основе контейнеров необходимо запустить на узле Linux. Вложенные приложения контейнера в настоящее время не поддерживаются.
 
 ## <a name="next-steps"></a>Дальнейшие действия
+* [Создание первого приложения Azure Service Fabric](service-fabric-create-your-first-linux-application-with-java.md)
 * Приступите к работе с [Eclipse](./service-fabric-get-started-eclipse.md).
 * Просмотрите другие [примеры Java](https://github.com/Azure-Samples/service-fabric-java-getting-started).
+* Дополнительные сведения о [вариантах поддержки Service Fabric](service-fabric-support.md)
 
 
 <!-- Image references -->

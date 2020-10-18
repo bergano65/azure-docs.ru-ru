@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/02/2020
 ms.author: mathoma
-ms.openlocfilehash: a8bfa91ac9b70c0ff4f461bd9e10899d1170b24d
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 29ab7def6209483ee891dc0d26bf8163cdc39a23
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91272529"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92165264"
 ---
 # <a name="failover-cluster-instances-with-sql-server-on-azure-virtual-machines"></a>Экземпляры отказоустойчивого кластера с SQL Server на Виртуальных машинах Azure
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -140,7 +140,7 @@ SQL Server на Виртуальных машинах Azure предлагает
 
 ## <a name="connectivity"></a>Соединение
 
-Экземпляры отказоустойчивого кластера с SQL Server на Виртуальных машинах Azure используют [имя распределенной сети (DNN)](hadr-distributed-network-name-dnn-configure.md) или [имя виртуальной сети (VNN) с Azure Load Balancer](hadr-vnn-azure-load-balancer-configure.md) для маршрутизации трафика к экземпляру SQL Server независимо от того, какой узел в текущий момент владеет кластерными ресурсами. При использовании определенных функций и DNN с экземплярами отказоустойчивого кластера SQL Server необходимо учитывать дополнительные факторы. Дополнительные сведения см. в статье [Взаимодействие функций с SQL Server FCI и DNN](failover-cluster-instance-dnn-interoperability.md). 
+Экземпляры отказоустойчивого кластера с SQL Server на Виртуальных машинах Azure используют [имя распределенной сети (DNN)](failover-cluster-instance-distributed-network-name-dnn-configure.md) или [имя виртуальной сети (VNN) с Azure Load Balancer](failover-cluster-instance-vnn-azure-load-balancer-configure.md) для маршрутизации трафика к экземпляру SQL Server независимо от того, какой узел в текущий момент владеет кластерными ресурсами. При использовании определенных функций и DNN с экземплярами отказоустойчивого кластера SQL Server необходимо учитывать дополнительные факторы. Дополнительные сведения см. в статье [Взаимодействие функций с SQL Server FCI и DNN](failover-cluster-instance-dnn-interoperability.md). 
 
 Дополнительные сведения о вариантах подключения кластеров см. в статье [Рекомендации по настройке кластера (SQL Server на Виртуальных машинах Azure)](hadr-cluster-best-practices.md#connectivity). 
 

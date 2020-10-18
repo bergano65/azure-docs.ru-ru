@@ -13,15 +13,15 @@ ms.service: virtual-machines-windows
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 08/12/2020
+ms.date: 10/16/2020
 ms.author: radeltch
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: c580e44cc827de46c7464ba5f316e6c515de2940
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: b3dc49e3e2d8492882507918a59edb0b9da41fcf
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91977992"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92167259"
 ---
 # <a name="cluster-an-sap-ascsscs-instance-on-a-windows-failover-cluster-by-using-a-cluster-shared-disk-in-azure"></a>Кластеризация экземпляра SAP ASCS/SCS в отказоустойчивом кластере Windows с помощью общего диска кластера в Azure
 
@@ -49,6 +49,9 @@ ms.locfileid: "91977992"
 Azure Load Balancer выполняет роль *внутренней подсистемы балансировки нагрузки* для Azure. С его помощью клиенты могут обращаться к кластеру через виртуальный IP-адрес кластера. 
 
 Разверните внутреннюю подсистему балансировки нагрузки в группе ресурсов, которая содержит узлы кластера. Затем настройте все необходимые правила перенаправления портов, используя порты проб внутренней подсистемы балансировки нагрузки. Для подключения клиенты могут использовать имя виртуального узла. DNS-сервер разрешает IP-адрес кластера, и внутренний балансировщик нагрузки выполняет перенаправление на активный узел кластера.
+
+> [!IMPORTANT]
+> Плавающий IP-адрес не поддерживается для вторичной IP-конфигурации NIC в сценариях балансировки нагрузки. Дополнительные сведения см. в статье [ограничения балансировщика нагрузки Azure](https://docs.microsoft.com/azure/load-balancer/load-balancer-multivip-overview#limitations). Если для виртуальной машины требуется дополнительный IP-адрес, разверните вторую сетевую карту.  
 
 ![Рис. 1. Конфигурация отказоустойчивого кластера Windows без общего диска в Azure][sap-ha-guide-figure-1001]
 

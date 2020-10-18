@@ -11,12 +11,12 @@ ms.custom: devx-track-csharp
 ms.topic: conceptual
 ms.date: 05/15/2017
 ms.author: tagore
-ms.openlocfilehash: e4598cb1d54fbbeb09e3bc5f58f0cce949b3c848
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 404fc887cf40ee5d88b2824e8d2324d103226973
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92073807"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92164369"
 ---
 # <a name="get-started-with-azure-cloud-services-and-aspnet"></a>Начало работы с облачными службами Azure и ASP.NET
 
@@ -64,7 +64,7 @@ ms.locfileid: "92073807"
 
 Когда пользователь отправляет изображение, внешнее приложение, работающее в веб-роли, сохраняет его в [большой двоичный объект Azure](https://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage), а информацию о рекламе с URL-адресом, который указывает на большой двоичный объект, — в базе данных. В это же время оно записывает сообщение в очередь Azure. Фоновый процесс, работающий в рабочей роли, периодически опрашивает очередь о новых сообщениях. Когда появляется новое сообщение, рабочая роль создает эскиз для изображения и обновляет поле базы данных с URL-адресом эскиза для этой рекламы. На схеме ниже показано, как взаимодействуют части приложения.
 
-![Архитектура Contoso Ads](./media/cloud-services-dotnet-get-started/apparchitecture.png)
+![Схема, показывающая, как взаимодействуют части приложения.](./media/cloud-services-dotnet-get-started/apparchitecture.png)
 
 [!INCLUDE [install-sdk](../../includes/install-sdk-2017-2015-2013.md)]
 
@@ -217,7 +217,7 @@ ms.locfileid: "92073807"
 6. Выберите и скопируйте строку подключения (без знаков кавычек) для использования на следующих шагах настройки проекта с рабочей ролью.
 7. В **обозревателе решений** в разделе **Роли** в проекте облачной службы щелкните правой кнопкой мыши пункт **ContosoAdsWorker** и выберите **Свойства**.
 
-    ![Свойства роли](./media/cloud-services-dotnet-get-started/rolepropertiesworker.png)
+    ![Снимок экрана, посвященный пункту меню "Свойства".](./media/cloud-services-dotnet-get-started/rolepropertiesworker.png)
 8. Перейдите на вкладку **Параметры**.
 9. В раскрывающемся списке **Конфигурация службы** выберите значение **Облако**.
 10. Выберите поле **Значение** для параметра `ContosoAdsDbConnectionString` и вставьте строку подключения, которую скопировали в предыдущем разделе руководства.
@@ -378,7 +378,7 @@ ms.locfileid: "92073807"
 2. Сохраните изменения.
 3. В проекте ContosoAdsCloudService щелкните правой кнопкой мыши ContosoAdsWeb в разделе **Роли**, а затем выберите **Свойства**.
 
-    ![Свойства роли](./media/cloud-services-dotnet-get-started/roleproperties.png)
+    ![Снимок экрана, посвященный пункту меню "Свойства" в разделе "роли".](./media/cloud-services-dotnet-get-started/roleproperties.png)
 4. В окне свойств **ContosoAdsWeb [роль]** щелкните вкладку **Настройки** и затем щелкните **Добавить настройку**.
 
     В раскрывающемся списке **Конфигурация службы** выберите значение **Все конфигурации**.
@@ -740,7 +740,7 @@ private void ProcessQueueMessage(CloudQueueMessage msg)
 >
 >
 
-## <a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a>Устранение неполадок
 У вас что-то не работает, когда вы выполняете инструкции из этого руководства? Вот несколько общих ошибок и способы их устранения.
 
 ### <a name="serviceruntimeroleenvironmentexception"></a>ServiceRuntime.RoleEnvironmentException

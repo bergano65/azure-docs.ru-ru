@@ -8,12 +8,12 @@ ms.service: cloud-services
 ms.topic: article
 ms.date: 05/18/2017
 ms.author: tagore
-ms.openlocfilehash: b42c693943c41176936ac796f4586463e9af917c
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 66938975784f1de2abdc0ac22e62aaca82279f86
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92076697"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92164170"
 ---
 # <a name="how-to-create-and-deploy-a-cloud-service"></a>Создание и развертывание облачной службы
 Портал Azure предоставляет два способа создания и развертывания облачной службы: *быстрое создание* и *настраиваемое создание*.
@@ -56,7 +56,7 @@ ms.locfileid: "92076697"
 1. Войдите на [портал Azure](https://portal.azure.com/).
 2. Щелкните **Создать ресурс > Вычисления**, затем прокрутите вниз и щелкните **Облачная служба**.
 
-    ![Публикация облачной службы](media/cloud-services-how-to-create-deploy-portal/create-cloud-service.png)
+    ![Снимок экрана, посвященный параметру облачной службы в разделе Создание ресурса > вычислений.](media/cloud-services-how-to-create-deploy-portal/create-cloud-service.png)
 3. В новой области **облачной службы** введите **DNS-имя**.
 4. Создайте новую **группу ресурсов** или выберите существующую.
 5. Выберите **расположение**.
@@ -74,7 +74,7 @@ ms.locfileid: "92076697"
 2. Последовательно щелкните **Присоединить сертификат** и нажмите кнопку **ОК** в области **Добавить сертификаты**.
 3. Щелкните **Создать** в области **Облачная служба**. Когда развертывание получит статус **Готово** можно выполнять следующие шаги.
 
-    ![Публикация облачной службы](media/cloud-services-how-to-create-deploy-portal/attach-cert.png)
+    ![Снимок экрана, посвященный процессу отправки сертификата.](media/cloud-services-how-to-create-deploy-portal/attach-cert.png)
 
 ## <a name="verify-your-deployment-completed-successfully"></a>Проверка успешного завершения развертывания
 1. Щелкните экземпляр облачной службы.

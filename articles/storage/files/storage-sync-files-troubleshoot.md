@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.date: 6/12/2020
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: a93c127d0b04667b0f28949f4b384f22769bace4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 41fb34055b9992b83a11bc3e4d47e3a389147860
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90018600"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92164233"
 ---
 # <a name="troubleshoot-azure-file-sync"></a>Устранение неполадок службы "Синхронизация файлов Azure"
 Используйте службу "Синхронизация файлов Azure", чтобы централизованно хранить файловые ресурсы организации в службе файлов Azure, обеспечивая гибкость, производительность и совместимость локального файлового сервера. Это достигается путем преобразования Windows Server в быстрый кэш общего файлового ресурса Azure. Для локального доступа к данным вы можете использовать любой протокол, доступный в Windows Server, в том числе SMB, NFS и FTPS. Кроме того, вы можете создать любое количество кэшей в любом регионе.
@@ -734,7 +734,7 @@ PerItemErrorCount: 1006.
 | **Строка ошибки** | ECS_E_TOO_MANY_PER_ITEM_ERRORS |
 | **Требуются действия по исправлению** | Да |
 
-В случаях, когда много ошибок синхронизации на файл, сеансы синхронизации могут завершаться сбоем. <!-- To troubleshoot this state, see [Troubleshooting per file/directory sync errors]().-->
+Сеансы синхронизации завершаются сбоем с одной из этих ошибок, если существует много файлов, которые не удается синхронизировать с ошибками для каждого элемента. Выполните действия, описанные в [разделы справки проверьте, есть ли в разделе определенные файлы или папки, которые не синхронизируются?](https://docs.microsoft.com/azure/storage/files/storage-sync-files-troubleshoot?tabs=portal1%2Cazure-portal#how-do-i-see-if-there-are-specific-files-or-folders-that-are-not-syncing) для устранения ошибок, связанных с каждым элементом. Для ECS_E_SYNC_METADATA_KNOWLEDGE_LIMIT_REACHED ошибок синхронизации откройте обращение в службу поддержки.
 
 > [!NOTE]
 > Служба "Синхронизация файлов Azure" раз в день создает на сервере временный моментальный снимок VSS для синхронизации файлов с открытыми дескрипторами.

@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 12/12/2017
 ms.author: cshoe
-ms.openlocfilehash: 4d5388f850f47323f6ad79f9f91e617e506546bf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 48614640660da6d85face5ea416d267fa9f59515
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88205442"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92164845"
 ---
 # <a name="azure-functions-c-script-csx-developer-reference"></a>Справочник разработчика скрипта C# (CSX) по решению "Функции Azure"
 
@@ -249,7 +249,17 @@ public static void Run(string myBlob, ILogger log)
 ```
 
 > [!NOTE]
-> Сведения о новой платформе ведения журналов, которую можно использовать вместо `TraceWriter`, см. в разделе [Запись журналов в функциях C#](functions-monitoring.md#write-logs-in-c-functions) статьи **Мониторинг Функций Azure**.
+> Дополнительные сведения о новой платформе ведения журналов, которую можно использовать вместо `TraceWriter` , см. в документации по [ILogger](functions-dotnet-class-library.md#ilogger) в руководстве разработчика библиотеки классов .NET.
+
+### <a name="custom-metrics-logging"></a>Запись в журнал пользовательских метрик
+
+`LogMetric` `ILogger` Для создания пользовательских метрик в Application Insights можно использовать метод расширения. Ниже приведен пример вызова метода.
+
+```csharp
+logger.LogMetric("TestMetric", 1234);
+```
+
+Этот пример кода действует так же, как вызов `TrackMetric` с использованием API Application Insights для .NET.
 
 ## <a name="async"></a>Асинхронный режим
 

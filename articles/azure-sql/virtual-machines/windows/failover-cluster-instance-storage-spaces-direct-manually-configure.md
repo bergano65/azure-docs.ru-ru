@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/18/2020
 ms.author: mathoma
-ms.openlocfilehash: 3cc579615a69b659bc1a4736984f0b3dcd6edb6b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3a0b40b91aad388cb42222ead8da4f2bd91947ee
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91272537"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92165270"
 ---
 # <a name="create-an-fci-with-storage-spaces-direct-sql-server-on-azure-vms"></a>Создание FCI с Локальные дисковые пространства (SQL Server на виртуальных машинах Azure)
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -57,7 +57,7 @@ ms.locfileid: "91272537"
 - Подписка Azure. Начните работу [бесплатно](https://azure.microsoft.com/free/). 
 - [Две или более подготовленные виртуальные машины Windows Azure](failover-cluster-instance-prepare-vm.md) в [группе доступности](../../../virtual-machines/windows/tutorial-availability-sets.md#create-an-availability-set).
 - учетная запись с разрешениями на создание объектов как на виртуальных машинах Azure, так и в Active Directory;
-- Последняя версия [PowerShell](/powershell/azure/install-az-ps?view=azps-4.2.0). 
+- Последняя версия [PowerShell](/powershell/azure/install-az-ps). 
 
 
 ## <a name="add-the-windows-cluster-feature"></a>Добавление компонента кластера Windows
@@ -164,7 +164,7 @@ New-Cluster -Name <FailoverCluster-Name> -Node ("<node1>","<node2>") –StaticAd
 
 1. [Создайте том](https://technet.microsoft.com/windows-server-docs/storage/storage-spaces/hyper-converged-solution-using-storage-spaces-direct#step-36-create-volumes).
 
-   Локальные дисковые пространства автоматически создают пул носителей при включении. Теперь можно создать том. Командлет PowerShell `New-Volume` автоматизирует процесс создания тома. Этот процесс включает форматирование, добавление тома в кластер и создание CSV-файла. В этом примере создается CSV емкостью 800 ГБ:
+   Локальные дисковые пространства автоматически создают пул носителей при включении. Теперь можно создать том. Командлет PowerShell `New-Volume` автоматизирует процесс создания тома. Этот процесс включает форматирование, добавление тома в кластер и создание CSV-файла. В этом примере создается CSV-файл размером 800 гигабайт (ГБ):
 
    ```powershell
    New-Volume -StoragePoolFriendlyName S2D* -FriendlyName VDisk01 -FileSystem CSVFS_REFS -Size 800GB
@@ -233,7 +233,7 @@ New-AzSqlVM -Name $vm.Name -ResourceGroupName $vm.ResourceGroupName -Location $v
 
 ## <a name="configure-connectivity"></a>Настройка подключения 
 
-Чтобы правильно направить трафик на текущий основной узел, настройте параметр подключения, подходящий для вашей среды. Вы можете создать [подсистему балансировки нагрузки Azure](hadr-vnn-azure-load-balancer-configure.md) или, если вы используете SQL Server 2019 и Windows Server 2016 (или более поздней версии), вместо этого можно предварительно просмотреть функцию [имени распределенной сети](hadr-distributed-network-name-dnn-configure.md) . 
+Чтобы правильно направить трафик на текущий основной узел, настройте параметр подключения, подходящий для вашей среды. Вы можете создать [балансировщик нагрузки Azure](failover-cluster-instance-vnn-azure-load-balancer-configure.md) или, если вы используете SQL Server 2019 CU2 (или более поздней версии) и Windows Server 2016 (или более поздней версии), вместо этого можно использовать функцию [имени распределенной сети](failover-cluster-instance-distributed-network-name-dnn-configure.md) . 
 
 ## <a name="limitations"></a>Ограничения
 
@@ -241,14 +241,14 @@ New-AzSqlVM -Name $vm.Name -ResourceGroupName $vm.ResourceGroupName -Location $v
 - Диски, подключенные как диски с файловой системой NTFS, можно использовать с Локальные дисковые пространства только в том случае, если параметр приемлемость диска не установлен или снят при добавлении хранилища в кластер. 
 - Поддерживается только регистрация в поставщике ресурсов виртуальной машины SQL в [режиме упрощенного управления](sql-vm-resource-provider-register.md#management-modes) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Если вы еще не сделали этого, настройте подключение к FCI с [именем виртуальной сети и подсистемой балансировки нагрузки Azure](hadr-vnn-azure-load-balancer-configure.md) или [именем распределенной сети (DNN)](hadr-distributed-network-name-dnn-configure.md). 
+Если вы еще не сделали этого, настройте подключение к FCI с [именем виртуальной сети и подсистемой балансировки нагрузки Azure](failover-cluster-instance-vnn-azure-load-balancer-configure.md) или [именем распределенной сети (DNN)](failover-cluster-instance-distributed-network-name-dnn-configure.md). 
 
 Если Локальные дисковые пространства не является соответствующим решением для хранения FCI, подумайте о создании FCI с помощью [общих дисков Azure](failover-cluster-instance-azure-shared-disks-manually-configure.md) или [общих файловых ресурсов](failover-cluster-instance-premium-file-share-manually-configure.md) уровня "Премиум". 
 
 Дополнительные сведения см. в обзоре [FCI с SQL Server на виртуальных машинах Azure и в](failover-cluster-instance-overview.md) разделе рекомендации по [конфигурации кластера](hadr-cluster-best-practices.md). 
 
-Дополнительные сведения см. в следующих источниках: 
+Дополнительные сведения см. в разделе: 
 - [технологии кластера под управлением Windows](/windows-server/failover-clustering/failover-clustering-overview);   
 - [Экземпляры отказоустойчивого кластера SQL Server](/sql/sql-server/failover-clusters/windows/always-on-failover-cluster-instances-sql-server)

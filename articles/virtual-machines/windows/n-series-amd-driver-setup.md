@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 12/4/2019
 ms.author: vikancha
-ms.openlocfilehash: ebae7359c7bd593cb2b63bbd69919330c6aa24f9
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 6885c28d993b8ddab5fe158ad7b1480259cb8fb0
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92150759"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92163791"
 ---
 # <a name="install-amd-gpu-drivers-on-n-series-vms-running-windows"></a>Установка драйверов GPU AMD на виртуальные машины серии N под управлением Windows
 
@@ -48,11 +48,12 @@ ms.locfileid: "92150759"
 
 Установку драйвера можно проверить в диспетчере устройств. В следующем примере показана успешная настройка карты Radeon Instinct MI25 на виртуальной машине Azure серии NVv4.
 <br />
-![Состояние устройства GPU](./media/n-series-amd-driver-setup/device-manager.png)
+
+![Снимок экрана, на котором показана успешная конфигурация карты Radeon порывом MI25 на виртуальной машине Azure NVv4.](./media/n-series-amd-driver-setup/device-manager.png)
 
 С помощью средства dxdiag можно проверить свойства GPU, в том числе объем видеопамяти. В следующем примере показаны сведения об одной из двух секций карты Radeon Instinct MI25 на виртуальной машине Azure серии NVv4.
 <br />
-![Свойства GPU](./media/n-series-amd-driver-setup/dxdiag-output-new.png)
+![Снимок экрана, на котором показан раздел 1/2 карты Radeon порывом MI25 на виртуальной машине Azure NVv4.](./media/n-series-amd-driver-setup/dxdiag-output-new.png)
 
 Если вы используете Windows 10 сборки 1903 или более позднюю версию, средство dxdiag не будет отображать сведения на вкладке "Монитор". Используйте действие "Сохранить все сведения" в нижней части окна, чтобы получить сведения о GPU AMD MI25 в выходном файле.
 

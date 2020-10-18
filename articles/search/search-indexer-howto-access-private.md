@@ -8,12 +8,12 @@ ms.author: arjagann
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 10/14/2020
-ms.openlocfilehash: bcacd6c2e1353c71d8e4e25c95ee2b563e7b3fba
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: b81d3f74c20f42620ceeae08bec5d484909377a7
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92150419"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92167480"
 ---
 # <a name="indexer-connections-through-a-private-endpoint-azure-cognitive-search"></a>Подключение индексатора через частную конечную точку (Azure Когнитивный поиск)
 
@@ -23,7 +23,7 @@ ms.locfileid: "92150419"
 
 + Ресурс Azure, предоставляющий содержимое или код, должен быть предварительно зарегистрирован в [службе частной связи Azure](https://azure.microsoft.com/services/private-link/).
 
-+ Служба Когнитивный поиск Azure должна быть базовой или более поздней (недоступна на уровне Free). Кроме того, для индексаторов, имеющих набор навыков, служба поиска должна иметь значение S2 или выше. Дополнительные сведения см. в разделе [ограничения службы](search-limits-quotas-capacity.md#shared-private-link-resource-limits).
++ Служба Когнитивный поиск Azure должна быть базовой или более поздней (недоступна на уровне Free). Кроме того, если у индексатора есть набор навыков, уровень должен быть Standard 2 (S2) или выше. Дополнительные сведения см. в разделе [ограничения службы](search-limits-quotas-capacity.md#shared-private-link-resource-limits).
 
 ## <a name="shared-private-link-resources-management-apis"></a>Общие интерфейсы API управления ресурсами частной связи
 

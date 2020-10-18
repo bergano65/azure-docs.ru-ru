@@ -13,15 +13,15 @@ ms.service: virtual-machines-windows
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 08/25/2020
+ms.date: 10/16/2020
 ms.author: radeltch
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 2653742b788ab24fc295ebc156090d1db5f85268
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 1af2e741b2ab8a6a0aa6257272798961f5962c43
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91978498"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92167344"
 ---
 # <a name="prepare-the-azure-infrastructure-for-sap-ha-by-using-a-windows-failover-cluster-and-shared-disk-for-sap-ascsscs"></a>Подготовка инфраструктуры Azure для SAP высокого уровня доступности с помощью отказоустойчивого кластера Windows и общего диска для SAP ASCS/SC
 
@@ -201,6 +201,9 @@ ms.locfileid: "91978498"
 
 SAP ASCS, SAP SCS и New SAP ERS2 используют виртуальное имя узла и виртуальные IP-адреса. В Azure для использования виртуального IP-адреса требуется [балансировщик нагрузки](../../../load-balancer/load-balancer-overview.md) . Настоятельно рекомендуется использовать [стандартный балансировщик нагрузки](../../../load-balancer/quickstart-load-balancer-standard-public-portal.md). 
 
+> [!IMPORTANT]
+> Плавающий IP-адрес не поддерживается для вторичной IP-конфигурации NIC в сценариях балансировки нагрузки. Дополнительные сведения см. в статье [ограничения балансировщика нагрузки Azure](https://docs.microsoft.com/azure/load-balancer/load-balancer-multivip-overview#limitations). Если для виртуальной машины требуется дополнительный IP-адрес, разверните вторую сетевую карту.    
+
 
 В следующем списке показана конфигурация балансировщика нагрузки (A) SCS/ERS. Конфигурация SAP ASCS и ERS2 выполняется в одной и той же подсистеме балансировки нагрузки Azure.  
 
@@ -261,7 +264,7 @@ Azure Load Balancer может закрывать соединения, если
 - KeepAliveTime
 - KeepAliveInterval
 
-| путь| Имя переменной | Тип переменной  | Значение | Документация |
+| Путь| Имя переменной | Тип переменной  | Значение | Документация |
 | --- | --- | --- |---| ---|
 | HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters |KeepAliveTime |REG_DWORD (десятичное) |120000 |[KeepAliveTime](/previous-versions/windows/it-pro/windows-2000-server/cc957549(v=technet.10)) |
 | HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters |KeepAliveInterval |REG_DWORD (десятичное) |120000 |[KeepAliveInterval](/previous-versions/windows/it-pro/windows-2000-server/cc957548(v=technet.10)) |

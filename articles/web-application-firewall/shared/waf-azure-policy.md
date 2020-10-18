@@ -7,12 +7,12 @@ services: web-application-firewall
 ms.topic: conceptual
 ms.date: 07/07/2020
 ms.author: rimansdo
-ms.openlocfilehash: 937f220980d602b755b6329da4d93df0e4b372ab
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 564af59c473d5c3f55bef059905500496adf060c
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86224066"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92165916"
 ---
 # <a name="azure-web-application-firewall-and-azure-policy"></a>Брандмауэр веб-приложения Azure и политика Azure
 
@@ -44,7 +44,7 @@ ms.locfileid: "86224066"
 3.  На странице назначения щелкните значок **назначить политику** вверху.
 
 [!div class="mx-imgBorder"]
-![Брандмауэр веб-приложения Azure](../media/waf-azure-policy/assign-policy.png)
+![Снимок экрана, на котором показана вкладка "основные" на странице "Назначение политики".](../media/waf-azure-policy/assign-policy.png)
 
 4.  На вкладке «Основные сведения о странице назначения политики» обновите следующие поля:
     1.  **Область**: выберите, какие подписки Azure и группы ресурсов будут затронуты политикой Azure.
@@ -52,7 +52,7 @@ ms.locfileid: "86224066"
     3.  **Определение политики**. Выберите политику Azure для применения к области с исключениями. В строке поиска введите "брандмауэр веб-приложения", чтобы выбрать соответствующую политику Azure для брандмауэра веб-приложения.
 
 [!div class="mx-imgBorder"]
-![Брандмауэр веб-приложения Azure](../media/waf-azure-policy/policy-listing.png)
+![Снимок экрана, на котором показаны определения доступных политик.](../media/waf-azure-policy/policy-listing.png)
 
 
 5.  Перейдите на вкладку **Параметры** и обновите параметры политики. Чтобы дополнительно объяснить, что делает параметр, наведите указатель на значок сведений рядом с именем параметра, чтобы получить дополнительные пояснения.

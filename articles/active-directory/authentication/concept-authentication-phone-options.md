@@ -5,17 +5,17 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 09/02/2020
+ms.date: 10/05/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ca6b39852668e1b545ce576ac0d04a208e2058e8
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 25161054a53377b9fbbb12621b95dff9c119fa17
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91965426"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92165521"
 ---
 # <a name="authentication-methods-in-azure-active-directory---phone-options"></a>Методы проверки подлинности в Azure Active Directory параметры телефона
 
@@ -36,7 +36,7 @@ ms.locfileid: "91965426"
 
 Если пользователи не хотят, чтобы номер их мобильного телефона отображался в каталоге, но по-прежнему хотят использовать его для сброса пароля, администраторы не должны указывать этот номер. Вместо этого пользователям нужно заполнить атрибут **Телефон для проверки подлинности** в процессе регистрации объединенной информации безопасности в [https://aka.ms/setupsecurityinfo](https://aka.ms/setupsecurityinfo). Администраторы смогут просматривать эту информацию в профиле пользователя, но она не будет публиковаться в другом месте.
 
-![Снимок экрана портала Azure, отображающий методы проверки подлинности с указанным номером телефона](media/concept-authentication-methods/user-authentication-methods.png)
+:::image type="content" source="media/concept-authentication-methods/user-authentication-methods.png" alt-text="Снимок экрана портала Azure, отображающий методы проверки подлинности с указанным номером телефона":::
 
 Корпорация Майкрософт не гарантирует единообразного запроса многофакторной идентификации с помощью СМС или голосового вызова при вводе одного и того же номера. В интересах наших пользователей корпорация Майкрософт может добавить или удалить короткие коды в любое время, так как мы корректируем маршруты для улучшения доставки СМС. Корпорация Майкрософт не поддерживает короткие коды для каких-либо других стран, кроме США и Канады.
 

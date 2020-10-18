@@ -5,19 +5,19 @@ author: peterpogorski
 ms.topic: conceptual
 ms.date: 06/16/2020
 ms.custom: sfrev, devx-track-azurepowershell
-ms.openlocfilehash: 8665b49aebcb99ef3d3ded17e7e7653027aba21e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 08abd9ff1134415e47923f22e753691225fc23b8
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89651625"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92164726"
 ---
 # <a name="prepare-your-development-environment-on-windows"></a>Настройка среды разработки для Windows
 
 > [!div class="op_single_selector"]
 > * [Windows](service-fabric-get-started.md) 
 > * [Linux](service-fabric-get-started-linux.md)
-> * [OSX](service-fabric-get-started-mac.md)
+> * [Mac OS X](service-fabric-get-started-mac.md)
 >
 >
 
@@ -88,7 +88,7 @@ Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force -Scope CurrentUser
 
 [Service Fabric — это оркестратор контейнеров](service-fabric-containers-overview.md) для развертывания микрослужб в кластере компьютеров. Для запуска приложений контейнера Windows на локальном кластере разработки необходимо сначала установить Docker для Windows. Скачайте [Docker CE для Windows (стабильная версия)](https://store.docker.com/editions/community/docker-ce-desktop-windows?tab=description). После установки и запуска Docker щелкните правой кнопкой мыши значок в области уведомлений и выберите **Switch to Windows containers** (Переключиться на контейнеры Windows). Это необходимо для запуска образов Docker на базе Windows.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Среда разработки настроена, и вы готовы к созданию и запуску собственных приложений.
 
@@ -96,6 +96,7 @@ Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force -Scope CurrentUser
 * [Информация о моделях программирования: Reliable Services и Reliable Actors](service-fabric-choose-framework.md)
 * [Ознакомление с примерами кода Service Fabric на GitHub](https://aka.ms/servicefabricsamples)
 * [Визуализация кластера с помощью обозревателя Service Fabric](service-fabric-visualizing-your-cluster.md)
+* [Подготовка среды разработки Linux в Windows](service-fabric-local-linux-cluster-windows.md)
 * Дополнительные сведения о [вариантах поддержки Service Fabric](service-fabric-support.md)
 
 [1]: https://azure.microsoft.com/campaigns/service-fabric/ "Страница кампании Service Fabric"
