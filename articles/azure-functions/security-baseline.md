@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/04/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 423fdcdf48d90b4c428497f22cb6924900de8931
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: f22473d4a865e2925ecbfe74d68811c12f7c26d7
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92107527"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92168092"
 ---
 # <a name="azure-security-baseline-for-azure-functions"></a>Базовый план безопасности Azure для функций Azure
 
@@ -315,7 +315,7 @@ ms.locfileid: "92107527"
 
 - [Включение параметров диагностики для функций Azure](./functions-monitor-log-analytics.md)
 
-- [Включение Application Insights для функций Azure](./functions-monitoring.md#enable-application-insights-integration)
+- [Включение Application Insights для функций Azure](./configure-monitoring.md#enable-application-insights-integration)
 
 - [Создание оповещений в Azure](../azure-monitor/learn/tutorial-response.md)
 
@@ -369,7 +369,7 @@ ms.locfileid: "92107527"
 
 **Руководство**. Управление доступом к плоскости управления для функций Azure осуществляется с помощью Azure Active Directory (AD). В Azure AD нет концепции паролей по умолчанию.
 
-Доступ к плоскости данных можно контролировать с помощью нескольких средств, включая ключи авторизации, ограничения сети и проверку удостоверения AAD. Ключи авторизации используются клиентами, которые подключаются к конечным точкам HTTP службы "функции Azure" и могут быть повторно созданы в любое время. По умолчанию эти ключи создаются для новых конечных точек HTTP.
+Доступ к плоскости данных можно контролировать с помощью нескольких средств, включая ключи авторизации, ограничения сети и проверку удостоверения Azure AD. Ключи авторизации используются клиентами, которые подключаются к конечным точкам HTTP службы "функции Azure" и могут быть повторно созданы в любое время. По умолчанию эти ключи создаются для новых конечных точек HTTP.
 
 Для приложений-функций доступны несколько методов развертывания, некоторые из которых могут использовать набор созданных учетных данных. Проверьте методы развертывания, которые будут использоваться для приложения.
 

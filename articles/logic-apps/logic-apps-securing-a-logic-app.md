@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: rarayudu, logicappspm
 ms.topic: conceptual
-ms.date: 09/19/2020
-ms.openlocfilehash: 8023f3d7730a617ec502c8f181bad1fc27627694
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 10/16/2020
+ms.openlocfilehash: b25cac502a4e9a0cc5582134cb9601b75672ffd1
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91269171"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92168509"
 ---
 # <a name="secure-access-and-data-in-azure-logic-apps"></a>Безопасный доступ и данные в Azure Logic Apps
 
@@ -316,14 +316,14 @@ POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group
 
 1. В разделе **Конфигурация контроля доступа** > **Разрешенные IP-адреса для входящего трафика** щелкните **Конкретные диапазоны IP-адресов**.
 
-1. В разделе **Диапазоны IP-адресов для триггеров** укажите диапазоны IP-адресов, которые принимает триггер.
+1. При появлении поля **диапазоны IP-адресов для триггеров** укажите диапазоны IP-адреса, принимаемые триггером. Допустимый диапазон IP-адресов имеет формат *x.x.x.x/x* или *x.x.x.x-x.x.x.x*.
 
-   Допустимый диапазон IP-адресов имеет формат *x.x.x.x/x* или *x.x.x.x-x.x.x.x*.
+   Например, чтобы приложение логики было вызываемым только как вложенное приложение логики с помощью действия HTTP, используйте параметр **определенные диапазоны IP-** адресов (не **единственный параметр Logic Apps** ) и введите [Исходящие IP-адреса](../logic-apps/logic-apps-limits-and-config.md#outbound)приложения логики.
 
-Если вы хотите, чтобы приложение логики активировалось только как вложенное приложение, в списке **Разрешенные IP-адреса для входящего трафика** выберите **Только другие приложения Logic Apps**. Этот параметр записывает пустой массив в ресурс приложения логики. Таким образом, только вызовы из службы Logic Apps (родительские приложения логики) могут активировать вложенное приложение логики.
+   Тем не менее, чтобы приложение логики вызываемое только как вложенное приложение логики с помощью встроенного [действия Azure Logic Apps](../logic-apps/logic-apps-http-endpoint.md), выберите **только другие параметры Logic Apps** . Этот параметр записывает пустой массив в ресурс приложения логики и требует, чтобы только вызовы из других "родительских" приложений логики активировали вложенное приложение логики через встроенное **Azure Logic Apps** действие.
 
-> [!NOTE]
-> Независимо от IP-адреса вы по-прежнему можете запускать приложение логики с триггером на основе запроса, используя [Logic Apps REST API: триггеры рабочего процесса —](/rest/api/logic/workflowtriggers/run) запрос на выполнение или с помощью управления API. Однако для этого потребуется [аутентификация](../active-directory/develop/authentication-vs-authorization.md) с помощью Azure REST API. Все события отобразятся в журнале аудита Azure. Убедитесь, что политики управления доступом настроены соответствующим образом.
+   > [!NOTE]
+   > Независимо от указанных IP-адресов, можно по-прежнему запускать приложение логики с триггером на основе запросов с помощью [Logic Apps REST API: триггеры рабочего процесса — запрос на выполнение](/rest/api/logic/workflowtriggers/run) или с помощью управления API. Однако для этого потребуется [аутентификация](../active-directory/develop/authentication-vs-authorization.md) с помощью Azure REST API. Все события отобразятся в журнале аудита Azure. Убедитесь, что политики управления доступом настроены соответствующим образом.
 
 <a name="restrict-inbound-ip-template"></a>
 
@@ -1080,7 +1080,7 @@ Authorization: OAuth realm="Photos",
 * [Изоляция в общедоступном облаке Azure](../security/fundamentals/isolation-choices.md)
 * [Безопасность для приложений IaaS с высоким уровнем безопасности в Azure](/azure/architecture/reference-architectures/n-tier/high-security-iaas)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Базовый план безопасности Azure для Azure Logic Apps](../logic-apps/security-baseline.md)
 * [Автоматизация развертывания для Azure Logic Apps](../logic-apps/logic-apps-azure-resource-manager-templates-overview.md)

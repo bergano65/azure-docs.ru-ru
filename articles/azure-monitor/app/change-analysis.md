@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: cawams
 ms.author: cawa
 ms.date: 05/04/2020
-ms.openlocfilehash: 6a5df4f6a20a9f7061f56dac507a474f7bda6100
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.openlocfilehash: ed29bfc099ce401288c07db863207a1d989a5e0d
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91992886"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92168279"
 ---
 # <a name="use-application-change-analysis-preview-in-azure-monitor"></a>Использование анализа изменений приложений (Предварительная версия) в Azure Monitor
 
@@ -187,7 +187,9 @@ foreach ($webapp in $webapp_list)
 - **Это занимает больше времени, чем ожидалось**. Это сообщение означает, что регистрация занимает больше 2 минут. Это необычное, но не обязательно означает, что что-то пошло не так. Можно переходить к **подпискам | Поставщик ресурсов** для проверки состояния регистрации поставщика ресурсов **Microsoft. чанжеаналисис** . Вы можете попытаться использовать пользовательский интерфейс для отмены регистрации, повторной регистрации или обновления, чтобы узнать, помогает ли он. Если проблема сохраняется, обратитесь changeanalysishelp@microsoft.com за поддержкой.
     ![Диагностика регистрации RP занимает слишком много времени](./media/change-analysis/troubleshoot-registration-taking-too-long.png)
 
+![Снимок экрана средства диагностики и устранения проблем для виртуальной машины с выбранными инструментами устранения неполадок.](./media/change-analysis/vm-dnsp-troubleshootingtools.png)
 
+![Снимок экрана с плиткой для средства анализа устранения недавних изменений для виртуальной машины.](./media/change-analysis/analyze-recent-changes.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

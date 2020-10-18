@@ -7,12 +7,12 @@ ms.custom: devx-track-csharp
 ms.date: 08/15/2020
 ms.author: glenga
 ms.reviewer: jehollan
-ms.openlocfilehash: f535a27e3afadaf8eefc41c5f1a8ab6c02d24c04
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ee2e7dc577e000878884655c0ed5f4bcb1aabab5
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91715928"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92167701"
 ---
 # <a name="use-dependency-injection-in-net-azure-functions"></a>Использование внедрения зависимостей в Функциях Azure .NET
 
@@ -131,8 +131,8 @@ namespace MyNamespace
 Application Insights автоматически добавляется Функциями Azure.
 
 > [!WARNING]
-> - Не добавляйте `AddApplicationInsightsTelemetry()` в коллекцию служб, поскольку он регистрирует службы, конфликтующие со службами, предоставляемыми средой.
-> - Не регистрируйте собственную `TelemetryConfiguration` или `TelemetryClient`, если используются встроенные функции Application Insights. Если необходимо настроить собственный экземпляр `TelemetryClient`, создайте его с помощью внедренного `TelemetryConfiguration`, как показано в [Мониторинг Функций Azure](./functions-monitoring.md#version-2x-and-later-2).
+> - Не добавляйте `AddApplicationInsightsTelemetry()` в коллекцию служб, которая регистрирует службы, конфликтующие со службами, предоставляемыми средой.
+> - Не зарегистрируйте собственный `TelemetryConfiguration` `TelemetryClient` объект или при использовании встроенных функций Application Insights. Если необходимо настроить собственный `TelemetryClient` экземпляр, создайте его с помощью внедренного, `TelemetryConfiguration` как показано в статьи [Регистрация пользовательской телеметрии в функциях C#](functions-dotnet-class-library.md?tabs=v2%2Ccmd#log-custom-telemetry-in-c-functions).
 
 ### <a name="iloggert-and-iloggerfactory"></a>ILogger<T> и ILoggerFactory
 
@@ -287,7 +287,7 @@ namespace MyNamespace
 }
 ```
 
-Добавьте поставщики конфигурации в `ConfigurationBuilder` свойство объекта `IFunctionsConfigurationBuilder` . Дополнительные сведения об использовании поставщиков конфигурации см. [в разделе Configuration in ASP.NET Core](/aspnet/core/fundamentals/configuration/?view=aspnetcore-3.1#configuration-providers).
+Добавьте поставщики конфигурации в `ConfigurationBuilder` свойство объекта `IFunctionsConfigurationBuilder` . Дополнительные сведения об использовании поставщиков конфигурации см. [в разделе Configuration in ASP.NET Core](/aspnet/core/fundamentals/configuration/#configuration-providers).
 
 Объект `FunctionsHostBuilderContext` получен из `IFunctionsConfigurationBuilder.GetContext()` . Используйте этот контекст, чтобы получить имя текущей среды и разрешить расположение файлов конфигурации в папке приложения функции.
 

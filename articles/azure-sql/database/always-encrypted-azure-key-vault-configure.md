@@ -12,12 +12,12 @@ author: VanMSFT
 ms.author: vanto
 ms.reviewer: ''
 ms.date: 04/23/2020
-ms.openlocfilehash: 98ba8c54b1754d6384dfcedb86e6c4889e52cb4f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 26bac8115a64d78ce64bc400f98fb26cb929ba4d
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91444839"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92164505"
 ---
 # <a name="configure-always-encrypted-by-using-azure-key-vault"></a>Настройка Always Encrypted с помощью Azure Key Vault 
 
@@ -149,7 +149,7 @@ GO
 1. Разверните узел **базы данных**  >  **Clinic**  >  **таблицы**курса.
 2. Щелкните правой кнопкой мыши таблицу **Patients** и выберите пункт **Зашифровать столбцы**, чтобы открыть мастер настройки Always Encrypted.
 
-    ![Шифрование столбцов…](./media/always-encrypted-azure-key-vault-configure/encrypt-columns.png)
+    ![Снимок экрана, на котором выделены столбцы шифрования... пункт меню.](./media/always-encrypted-azure-key-vault-configure/encrypt-columns.png)
 
 Мастер настройки Always Encrypted содержит следующие разделы: **Выбор столбца**, **Настройка главного ключа**, **Проверка** и **Сводка**.
 
@@ -179,7 +179,7 @@ GO
 
 Можно зашифровать столбцы сейчас или сохранить сценарий PowerShell и выполнить его позже. Для целей этого руководства выберите **Перейти к завершению** и нажмите кнопку **Далее**.
 
-### <a name="summary"></a>Итоги
+### <a name="summary"></a>Сводка
 
 Убедитесь, что все параметры настроены правильно, и нажмите кнопку **Готово** , чтобы завершить настройку Always Encrypted.
 
@@ -574,7 +574,7 @@ SELECT FirstName, LastName, SSN, BirthDate FROM Patients;
 
 Вы увидите, что в зашифрованных столбцах не содержатся данные в виде открытого текста.
 
-   ![Новое консольное приложение](./media/always-encrypted-azure-key-vault-configure/ssms-encrypted.png)
+   ![Снимок экрана, на котором показано, что зашифрованные столбцы не содержат никаких данных в виде открытого текста.](./media/always-encrypted-azure-key-vault-configure/ssms-encrypted.png)
 
 Чтобы получить доступ к данным в виде открытого текста, сначала убедитесь, что пользователь имеет необходимые разрешения в Azure Key Vault: *get*, *unwrapKey* и *verify*. Дополнительные сведения см. в статье [Создание и хранение главных ключей столбцов (постоянное шифрование)](https://docs.microsoft.com/sql/relational-databases/security/encryption/create-and-store-column-master-keys-always-encrypted).
 
@@ -584,7 +584,7 @@ SELECT FirstName, LastName, SSN, BirthDate FROM Patients;
 2. Нажмите кнопку **подключить**  >  **ядро СУБД** , чтобы открыть окно **Подключение к серверу** , и выберите пункт **Параметры**.
 3. Щелкните **Дополнительные параметры соединения** и введите **Column Encryption Setting=enabled**.
 
-    ![Новое консольное приложение](./media/always-encrypted-azure-key-vault-configure/ssms-connection-parameter.png)
+    ![Снимок экрана, на котором показана вкладка дополнительных параметров исправления.](./media/always-encrypted-azure-key-vault-configure/ssms-connection-parameter.png)
 
 4. Выполните следующий запрос к базе данных Clinic.
 
@@ -596,7 +596,7 @@ SELECT FirstName, LastName, SSN, BirthDate FROM Patients;
    
    ![Новое консольное приложение](./media/always-encrypted-azure-key-vault-configure/ssms-plaintext.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После настройки базы данных для использования Always Encrypted может потребоваться выполнить следующие действия.
 

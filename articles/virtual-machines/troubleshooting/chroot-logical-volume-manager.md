@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 11/24/2019
 ms.author: vilibert
-ms.openlocfilehash: 98514bad6a04e0c3058faf3133fc44333039ce53
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 390443874ea63a8661ef8baea627015fcf679719
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91361472"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92167922"
 ---
 # <a name="troubleshooting-a-linux-vm-when-there-is-no-access-to-the-azure-serial-console-and-the-disk-layout-is-using-lvm-logical-volume-manager"></a>Устранение неполадок в виртуальной машине Linux при отсутствии доступа к последовательной консоли Azure и разметке диска с использованием LVM (Диспетчер логических томов)
 
@@ -71,7 +71,7 @@ ms.locfileid: "91361472"
 
 `lsblk`
 
-![Запустить лсблк](./media/chroot-logical-volume-manager/lsblk-output-mounted.png)
+![Снимок экрана, на котором показаны выходные данные команды лсблк.](./media/chroot-logical-volume-manager/lsblk-output-mounted.png)
 
 
 Проверьте, отображаются ли Лвмс на затронутой виртуальной машине.
@@ -198,11 +198,11 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 
 Все LVs должны быть видимыми в виде подключенных секций.
 
-![Дополнительно](./media/chroot-logical-volume-manager/chroot-all-mounts.png)
+![Снимок экрана, на котором показаны LVs, отображаемые в виде подключенных секций.](./media/chroot-logical-volume-manager/chroot-all-mounts.png)
 
 Запрос установленного **ядра**
 
-![Дополнительно](./media/chroot-logical-volume-manager/rpm-kernel.png)
+![Снимок экрана, показывающий, как выполнить запрос к установленному ядру.](./media/chroot-logical-volume-manager/rpm-kernel.png)
 
 При необходимости удалите или обновите **kernel** 
  ![ расширение ядра.](./media/chroot-logical-volume-manager/rpm-remove-kernel.png)

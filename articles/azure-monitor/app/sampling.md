@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.date: 01/17/2020
 ms.reviewer: vitalyg
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 151bc87bd5674a61b8652adfa70634318c405240
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e4c5000adb2339d3fd0f828781a60f75c75894b5
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91839611"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92168602"
 ---
 # <a name="sampling-in-application-insights"></a>Выборка в Application Insights
 
@@ -212,7 +212,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, Telemetr
 
 ### <a name="configuring-adaptive-sampling-for-azure-functions"></a>Настройка адаптивной выборки для функций Azure
 
-Следуйте инструкциям на [этой странице](../../azure-functions/functions-monitoring.md#configure-sampling) , чтобы настроить адаптивную выборку для приложений, выполняющихся в функциях Azure.
+Следуйте инструкциям на [этой странице](../../azure-functions/configure-monitoring.md#configure-sampling) , чтобы настроить адаптивную выборку для приложений, выполняющихся в функциях Azure.
 
 ## <a name="fixed-rate-sampling"></a>Выборка с фиксированной частотой
 
@@ -586,7 +586,7 @@ union requests,dependencies,pageViews,browserTimings,exceptions,traces
 
 До версии 2.5.0-2 пакета SDK ASP.NET и v 2.2.0-beta3 ASP.NET Core SDK решение выборки было основано на хэш-коде пользователя для приложений, определяющих "User" (то есть наиболее типичных веб-приложений). Для типов приложений, не определяющих пользователей (например, веб-служб), решение выборки было основано на ИДЕНТИФИКАТОРе операции запроса. Последние версии пакетов SDK для ASP.NET и ASP.NET Core используют идентификатор операции для решения выборки.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Фильтрация](./api-filtering-sampling.md) может обеспечивать более строгий контроль над данными, отправляемыми пакетом SDK.
 * Прочтите статью "сеть разработчика", чтобы [оптимизировать телеметрию с помощью Application Insights](/archive/msdn-magazine/2017/may/devops-optimize-telemetry-with-application-insights).

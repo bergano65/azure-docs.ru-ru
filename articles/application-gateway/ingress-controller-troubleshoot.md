@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: troubleshooting
 ms.date: 06/18/2020
 ms.author: caya
-ms.openlocfilehash: 0fdfa6265b81140fa6536082fe7ad4c5fa687fc4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cbb62509472d6f86ba30e13c95ce2c2bfd343765
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86207153"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92168194"
 ---
 # <a name="troubleshoot-common-questions-or-issues-with-ingress-controller"></a>Устранение распространенных вопросов и проблем с контроллером входящего трафика
 
@@ -85,15 +85,15 @@ EOF
 Получите список модулей Pod с [Cloud Shell](https://shell.azure.com/): `kubectl get pods -o wide` .
 Мы планируем создать Pod с именем Test-агик-App-Pod. Он будет иметь IP-адрес. Этот адрес должен находиться в виртуальной сети шлюза приложений, используемом с AKS.
 
-![обыкновен](./media/application-gateway-ingress-controller-troubleshooting/tsg--get-pods.png)
+![Снимок экрана: окно Bash в Azure Cloud Shell показывающее список модулей Pod, включающих Test-агик-App-Tester в списке.](./media/application-gateway-ingress-controller-troubleshooting/tsg--get-pods.png)
 
 Получить список служб: `kubectl get services -o wide` . Мы планируем Просмотреть службу с именем Test-агик-App-Service.
 
-![обыкновен](./media/application-gateway-ingress-controller-troubleshooting/tsg--get-services.png)
+![Снимок экрана: окно Bash в Azure Cloud Shell показывающее список служб, содержащих Test-агик-App-Pod в списке.](./media/application-gateway-ingress-controller-troubleshooting/tsg--get-services.png)
 
 Получите список передает: `kubectl get ingress` . Предполагается, что для входящего ресурса с именем Test-агик-App-Authenticator были созданы. Ресурс будет иметь имя узла "test.agic.contoso.com".
 
-![обыкновен](./media/application-gateway-ingress-controller-troubleshooting/tsg--get-ingress.png)
+![Снимок экрана: окно Bash в Azure Cloud Shell показывающее список передает, включающих в список тест-агик-App-in.](./media/application-gateway-ingress-controller-troubleshooting/tsg--get-ingress.png)
 
 Один из модулей Pod будет АГИК. `kubectl get pods` отобразит список модулей Pod, один из которых будет начинаться с "входящий трафик — Azure". Получите все журналы этого модуля, `kubectl logs <name-of-ingress-controller-pod>` чтобы убедиться в успешном развертывании. Успешное развертывание добавило в журнал следующие строки:
 ```
@@ -120,7 +120,7 @@ I0927 22:34:51.282342       1 process.go:171] END AppGateway deployment
 1. Использование `kubectl get ingress` для получения общедоступного IP-адреса шлюза приложений
 2. Используйте `curl -I -H 'test.agic.contoso.com' <publitc-ip-address-from-previous-command>`.
 
-![обыкновен](./media/application-gateway-ingress-controller-troubleshooting/tsg--curl.png)
+![Снимок экрана: окно Bash в Azure Cloud Shell показывающее команду с фигурным сообщением об успешном подключении к тестовому приложению по протоколу HTTP.](./media/application-gateway-ingress-controller-troubleshooting/tsg--curl.png)
 
 Результат `HTTP/1.1 200 OK` означает, что система "шлюз приложений + AKS + агик" работает должным образом.
 

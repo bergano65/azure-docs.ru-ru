@@ -3,12 +3,12 @@ title: Справочник по файлу host.json для службы "Фу�
 description: Справочная документация по файлу host.json для Функций Azure в среде выполнения версии 1.
 ms.topic: conceptual
 ms.date: 10/19/2018
-ms.openlocfilehash: 36d028d09c94ae28e77404297bd576f5e20404c6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 32848c725d5c99e3814e86447d604839502054c0
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81757517"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92167732"
 ---
 # <a name="hostjson-reference-for-azure-functions-1x"></a>Справочник по файлу host.json для службы "Функции Azure" версии 1.x
 
@@ -230,7 +230,7 @@ ms.locfileid: "81757517"
 
 ## <a name="logger"></a>logger
 
-Управляет фильтрацией журналов, которые создаются [объектом ILogger](functions-monitoring.md#write-logs-in-c-functions) или [context.log](functions-monitoring.md#write-logs-in-javascript-functions).
+Управляет фильтрацией для журналов, записанных объектом [ILogger](functions-dotnet-class-library.md#ilogger) или [context. log](functions-reference-node.md#contextlog-method).
 
 ```json
 {
@@ -340,7 +340,7 @@ ms.locfileid: "81757517"
 
 *Версия 1.x*
 
-Параметры конфигурации для журналов, создаваемых с помощью объекта `TraceWriter`. Ознакомьтесь с разделами, посвященными ведению журналов, для [C#](functions-reference-csharp.md#logging) и [Node.js](functions-reference-node.md#writing-trace-output-to-the-console).
+Параметры конфигурации для журналов, создаваемых с помощью объекта `TraceWriter`. Дополнительные сведения см. в разделе [ведение журнала C#].
 
 ```json
 {

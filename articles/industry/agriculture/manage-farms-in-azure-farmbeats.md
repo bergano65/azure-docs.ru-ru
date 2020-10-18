@@ -5,12 +5,12 @@ author: uhabiba04
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: v-umha
-ms.openlocfilehash: 09144c4c35ab911b60931849807123608f2c3cdd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: dc06f7c75e27d831994b97b97f3d20bb34c3a6c5
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85847483"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92167939"
 ---
 # <a name="manage-farms"></a>Управление фермами
 
@@ -25,7 +25,7 @@ ms.locfileid: "85847483"
 
     Пример изображения:
 
-    ![Проект FarmBeats](./media/create-farms-in-azure-farmbeats/create-farm-main-page-1.png)
+    ![Снимок экрана, на котором показана страница "фермы".](./media/create-farms-in-azure-farmbeats/create-farm-main-page-1.png)
 
 
 2. Выберите **создать ферму** и укажите **имя**, **Кадрирование** и **адрес**.
@@ -33,14 +33,14 @@ ms.locfileid: "85847483"
 
 Ниже приведены два способа определения границы фермы.
 
-1. **Пометить на карте**: используйте средство управления картой для рисования и пометки границы фермы. Чтобы отметить границы,  ![ перебивает ферму проекта ](./media/create-farms-in-azure-farmbeats/pencil-icon-1.png) и помечает точные границы.
+1. **Пометить на карте**: используйте средство управления картой для рисования и пометки границы фермы. Чтобы пометить границы, на  ![ снимке экрана отображается значок карандаша для рисования границ на карте ](./media/create-farms-in-azure-farmbeats/pencil-icon-1.png) и пометка точных границ.
 
-    ![Проект FarmBeats](./media/create-farms-in-azure-farmbeats/create-farm-mark-on-map-1.png)
+    ![Снимок экрана, на котором показаны рисуемые границы на карте.](./media/create-farms-in-azure-farmbeats/create-farm-mark-on-map-1.png)
 
 2. **Вставьте код**географического формата JSON. геообъект JSON представляет собой формат кодирования географических структур данных с помощью НОТАЦИЯ объектов JavaScript (JSON). Этот параметр отображает текстовое поле, в котором можно указать геообъектную строку геоjson для пометки границ фермы. Можно также создать код геоjson из GeoJSON.io.
 С помощью всплывающих подсказок можно ввести сведения.
 
-    ![Проект FarmBeats](./media/create-farms-in-azure-farmbeats/create-new-farm-1.png)
+    ![Снимок экрана, посвященный параметру "вставить геоjson Code" на экране "Создание фермы".](./media/create-farms-in-azure-farmbeats/create-new-farm-1.png)
 
 3.  Нажмите кнопку **Отправить** , чтобы создать ферму. Новая ферма создается и отображается на странице **фермы** .
 
@@ -71,7 +71,7 @@ ms.locfileid: "85847483"
 1.  Выберите ферму из списка, чтобы удалить сведения о ферме.
 2.  Выберите **удалить ферму** , чтобы удалить ферму.
 
-    ![Проект FarmBeats](./media/create-farms-in-azure-farmbeats/delete-farm-1.png)
+    ![Снимок экрана, на котором показан экран "Удаление фермы" и выделение кнопки "Удалить".](./media/create-farms-in-azure-farmbeats/delete-farm-1.png)
 
     > [!NOTE]
     > При удалении фермы устройства и карты, связанные с этой фермой, не удаляются. Любые сведения о ферме, связанные с устройством и картами, будут неактуальными. Вы можете продолжить просматривать устройства, данные телеметрии и карты из службы Фармбеатс.

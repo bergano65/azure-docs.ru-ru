@@ -5,12 +5,12 @@ ms.assetid: 45dedd78-3ff9-411f-bb4b-16d29a11384c
 ms.topic: conceptual
 ms.date: 07/17/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: bd5eea6d97ca5ff20622c651b2c6ee75f9014d55
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 86a512ea0e07f5eb2ce00ff27427139c5221d229
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91317182"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92164828"
 ---
 # <a name="azure-functions-javascript-developer-guide"></a>Руководство разработчика JavaScript для Функций Azure
 
@@ -204,8 +204,8 @@ module.exports = (context) => {
 | Имя свойства  | Тип  | Описание |
 |---------|---------|---------|
 | `invocationId` | Строка | Предоставляет уникальный идентификатор для конкретного вызова функции. |
-| `functionName` | Строковый тип | Предоставляет имя выполняемой функции. |
-| `functionDirectory` | Строковый тип | Предоставляет каталог приложения функций. |
+| `functionName` | Строка | Предоставляет имя выполняемой функции. |
+| `functionDirectory` | Строка | Предоставляет каталог приложения функций. |
 
 В следующем примере показано, как вернуть `invocationId` .
 
@@ -290,49 +290,17 @@ context.done(null, { myOutput: { text: 'hello there, world', noNumber: true }});
 context.log(message)
 ```
 
-Этот метод позволяет делать записи в потоковые журналы функций на уровне трассировки по умолчанию. В `context.log` доступны дополнительные методы ведения журнала, позволяющие выполнять запись в журналы функций на других уровнях трассировки:
+Позволяет записывать данные в журналы функций потоковой передачи на уровне трассировки по умолчанию с другими доступными уровнями ведения журнала. Ведение журнала трассировки подробно описано в следующем разделе. 
 
+## <a name="write-trace-output-to-logs"></a>Запись выходных данных трассировки в журналы
 
-| Метод                 | Описание                                |
-| ---------------------- | ------------------------------------------ |
-| **Ошибка (_сообщение_)**   | Записывает сообщение в журнал на уровне ошибок или более низком.   |
-| **warn(_message_)**    | Записывает сообщение в журнал на уровне предупреждений или более низком. |
-| **info(_message_)**    | Записывает сообщение в журнал на уровне сведений или более низком.    |
-| **verbose(_message_)** | Записывает сообщение в журнал на уровне детализации.           |
+В функциях используются `context.log` методы для записи выходных данных трассировки в журналы и консоль. При вызове `context.log()` сообщение записывается в журналы на уровне трассировки по умолчанию, который является _информационным_ уровнем трассировки. Функции интегрируются с Azure Application Insights для более эффективного захвата журналов приложений функций. Application Insights, часть Azure Monitor, предоставляет средства для сбора, визуального отображения и анализа телеметрии приложений и выходных данных трассировки. Дополнительные сведения см. в статье [мониторинг функций Azure](functions-monitoring.md).
 
-Следующий пример записывает в журнал на уровне трассировки "предупреждения":
+В следующем примере записывается журнал на уровне трассировки info, включая идентификатор вызова:
 
 ```javascript
-context.log.warn("Something has happened."); 
+context.log("Something has happened. " + context.invocationId); 
 ```
-
-Вы можете [настроить пороговое значение уровня трассировки для ведения журнала](#configure-the-trace-level-for-console-logging) в файле host.json. Дополнительные сведения о записи журналов см. в разделе о [записях выходных данных трассировки](#writing-trace-output-to-the-console) ниже.
-
-Дополнительные сведения о просмотре журналов функций и обращении к ним см. в статье [мониторинг Функций Azure](functions-monitoring.md).
-
-## <a name="writing-trace-output-to-the-console"></a>Вывод выходных данных трассировки на консоль 
-
-В Azure Functions воспользуйтесь методами `context.log` для записи выходных данных трассировки в консоль. В Функциях версии 2.x трассировка выходных данных с помощью `console.log` регистрируется на уровне приложения-функции. Это означает, что выходные данные `console.log` не привязаны к конкретному вызову функции и не отображаются в журналах конкретной функции. Тем не менее они распространяются в Application Insights. В Функциях версии 1.x для записи в консоль нельзя использовать метод `console.log`.
-
-При вызове `context.log()` ваше сообщение записывается в консоль на уровне трассировки по умолчанию — уровень _сведений_. Следующий код записывает на консоль на уровне трассировки "сведения":
-
-```javascript
-context.log({hello: 'world'});  
-```
-
-Этот код эквивалентен приведенному выше коду:
-
-```javascript
-context.log.info({hello: 'world'});  
-```
-
-Этот код записывает в консоль на уровне трассировки "ошибки":
-
-```javascript
-context.log.error("An error has occurred.");  
-```
-
-Так как _уровень ошибок_ является наивысшим уровнем трасировки, эта трассировка записывается в выходные данные на всех уровнях трассировки при условии, что ведение журнала включено.
 
 Все методы `context.log` поддерживают тот же формат параметров, что и метод Node.js [util.format](https://nodejs.org/api/util.html#util_util_format_format). Просмотрите следующий код, который выполняет запись в журналы функций, используя уровень трассировки по умолчанию:
 
@@ -348,9 +316,39 @@ context.log('Node.js HTTP trigger function processed a request. RequestUri=%s', 
 context.log('Request Headers = ', JSON.stringify(req.headers));
 ```
 
-### <a name="configure-the-trace-level-for-console-logging"></a>Настройка уровня трассировки для ведения журнала консоли
+> [!NOTE]  
+> Не используйте `console.log` для записи выходных данных трассировки. Поскольку выходные данные из `console.log` перехватываются на уровне приложения-функции, оно не привязано к конкретному вызову функции и не отображается в журналах конкретной функции. Кроме того, версия 1. x среды выполнения функций не поддерживает использование `console.log` для записи в консоль.
 
-В Функциях Azure 1.x можно определить пороговое значение уровня трассировки для записи в консоль, чтобы легко контролировать, как трассировки записываются в консоль из ваших функций. Чтобы задать пороговое значение для всех трассировок, которые записываются в консоль, используйте свойство `tracing.consoleLevel` в файле host.json. Этот параметр применяется ко всем функциям в приложении-функции. В следующем примере задается пороговое значение трассировки, чтобы включить подробное ведение журнала:
+### <a name="trace-levels"></a>Уровни трассировки
+
+Помимо уровня по умолчанию доступны следующие методы ведения журнала, позволяющие создавать журналы функций на конкретных уровнях трассировки.
+
+| Метод                 | Описание                                |
+| ---------------------- | ------------------------------------------ |
+| **Ошибка (_сообщение_)**   | Записывает событие уровня ошибки в журналы.   |
+| **warn(_message_)**    | Записывает событие уровня предупреждения в журналы. |
+| **info(_message_)**    | Записывает сообщение в журнал на уровне сведений или более низком.    |
+| **verbose(_message_)** | Записывает сообщение в журнал на уровне детализации.           |
+
+В следующем примере тот же журнал записывается на уровне трассировки предупреждений, а не на уровне Info:
+
+```javascript
+context.log.warn("Something has happened. " + context.invocationId); 
+```
+
+Так как _уровень ошибок_ является наивысшим уровнем трасировки, эта трассировка записывается в выходные данные на всех уровнях трассировки при условии, что ведение журнала включено.
+
+### <a name="configure-the-trace-level-for-logging"></a>Настройка уровня трассировки для ведения журнала
+
+Функции позволяют определить пороговый уровень трассировки для записи в журналы или консоль. Определенные пороговые значения зависят от версии среды выполнения функций.
+
+# <a name="v2x"></a>[v2. x +](#tab/v2)
+
+Чтобы установить пороговое значение для трассировок, записываемых в журналы, используйте `logging.logLevel` свойство в host.jsдля файла. Этот объект JSON позволяет определить пороговое значение по умолчанию для всех функций в приложении-функции, а также задать определенные пороговые значения для отдельных функций. Дополнительные сведения см. в статье [Настройка мониторинга для функций Azure](configure-monitoring.md).
+
+# <a name="v1x"></a>[Версия 1.x](#tab/v1)
+
+Чтобы задать пороговое значение для всех трассировок, записываемых в журналы и консоль, используйте `tracing.consoleLevel` свойство в host.jsдля файла. Этот параметр применяется ко всем функциям в приложении-функции. В следующем примере задается пороговое значение трассировки, чтобы включить подробное ведение журнала:
 
 ```json
 {
@@ -360,7 +358,65 @@ context.log('Request Headers = ', JSON.stringify(req.headers));
 }  
 ```
 
-Значения **consoleLevel** соответствуют именам методов в `context.log`. Чтобы отключить ведение журнала трассировки в консоли, задайте для параметра **consoleLevel** значение _off_. Дополнительные сведения см. в [справочной статье о host.json](functions-host-json-v1.md).
+Значения **consoleLevel** соответствуют именам методов в `context.log`. Чтобы отключить ведение журнала трассировки в консоли, задайте для параметра **consoleLevel** значение _off_. Дополнительные сведения см. [ в разделеhost.jsпо ссылке на v1. x](functions-host-json-v1.md).
+
+---
+
+### <a name="log-custom-telemetry"></a>Регистрация пользовательской телеметрии
+
+По умолчанию функции записывают выходные данные в виде трассировок в Application Insights. Для большего контроля можно использовать [пакет SDK для Application Insights Node.js](https://github.com/microsoft/applicationinsights-node.js) , чтобы отправить пользовательские данные телеметрии в экземпляр Application Insights. 
+
+# <a name="v2x"></a>[v2. x +](#tab/v2)
+
+```javascript
+const appInsights = require("applicationinsights");
+appInsights.setup();
+const client = appInsights.defaultClient;
+
+module.exports = function (context, req) {
+    context.log('JavaScript HTTP trigger function processed a request.');
+
+    // Use this with 'tagOverrides' to correlate custom telemetry to the parent function invocation.
+    var operationIdOverride = {"ai.operation.id":context.traceContext.traceparent};
+
+    client.trackEvent({name: "my custom event", tagOverrides:operationIdOverride, properties: {customProperty2: "custom property value"}});
+    client.trackException({exception: new Error("handled exceptions can be logged with this method"), tagOverrides:operationIdOverride});
+    client.trackMetric({name: "custom metric", value: 3, tagOverrides:operationIdOverride});
+    client.trackTrace({message: "trace message", tagOverrides:operationIdOverride});
+    client.trackDependency({target:"http://dbname", name:"select customers proc", data:"SELECT * FROM Customers", duration:231, resultCode:0, success: true, dependencyTypeName: "ZSQL", tagOverrides:operationIdOverride});
+    client.trackRequest({name:"GET /customers", url:"http://myserver/customers", duration:309, resultCode:200, success:true, tagOverrides:operationIdOverride});
+
+    context.done();
+};
+```
+
+# <a name="v1x"></a>[Версия 1.x](#tab/v1)
+
+```javascript
+const appInsights = require("applicationinsights");
+appInsights.setup();
+const client = appInsights.defaultClient;
+
+module.exports = function (context, req) {
+    context.log('JavaScript HTTP trigger function processed a request.');
+
+    // Use this with 'tagOverrides' to correlate custom telemetry to the parent function invocation.
+    var operationIdOverride = {"ai.operation.id":context.operationId};
+
+    client.trackEvent({name: "my custom event", tagOverrides:operationIdOverride, properties: {customProperty2: "custom property value"}});
+    client.trackException({exception: new Error("handled exceptions can be logged with this method"), tagOverrides:operationIdOverride});
+    client.trackMetric({name: "custom metric", value: 3, tagOverrides:operationIdOverride});
+    client.trackTrace({message: "trace message", tagOverrides:operationIdOverride});
+    client.trackDependency({target:"http://dbname", name:"select customers proc", data:"SELECT * FROM Customers", duration:231, resultCode:0, success: true, dependencyTypeName: "ZSQL", tagOverrides:operationIdOverride});
+    client.trackRequest({name:"GET /customers", url:"http://myserver/customers", duration:309, resultCode:200, success:true, tagOverrides:operationIdOverride});
+
+    context.done();
+};
+```
+
+---
+
+Параметр `tagOverrides` присваивает параметру `operation_Id` значение идентификатора вызова функции. Этот параметр позволяет сопоставлять все автоматически создаваемые и пользовательские данные телеметрии с конкретным вызовом функции.
 
 ## <a name="http-triggers-and-bindings"></a>Триггеры и привязки HTTP
 

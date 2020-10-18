@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 10/07/2020
+ms.date: 10/16/2020
 ms.author: aahi
-ms.openlocfilehash: f79152dbfa5a0576cd13484f9b3704eaed3901ea
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: a85c129dd11e587a0714e92c850315101df103f0
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92015930"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92166188"
 ---
 # <a name="whats-new-in-the-text-analytics-api"></a>Новые возможности в API "Анализ текста"
 
@@ -25,6 +25,7 @@ API анализа текста обновляется на постоянной
 
 * Поддержка хинди для анализ тональности v3. x, начиная с версии модели `2020-04-01` . 
 * Модель версии `2020-09-01` для конечной точки/лангуажес v3, которая расширяет возможности определения и точности языка.
+* v3 доступность в Центральной Индии и Северной ОАЭ.
 
 ## <a name="september-2020"></a>Сентябрь 2020 г.
 
@@ -177,10 +178,10 @@ API анализа текста v3 теперь общедоступен со с
 
 * Распознавание следующих типов сущностей личных сведений (только на английском языке):
     * Модель Person
-    * Организация
+    * План
     * Возраст в качестве подтипа по количеству
     * Дата в качестве подтипа в разделе DateTime
-    * Email 
+    * Адрес электронной почты 
     * Номер телефона (только США)
     * URL-адрес
     * IP-адрес
