@@ -7,12 +7,12 @@ ms.date: 08/10/2020
 ms.service: key-vault
 ms.subservice: general
 ms.topic: how-to
-ms.openlocfilehash: d77cc4cc65eb73aa85a1d54202627cd18d5747b3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 155837802bd19ec1bb4e41484e229e1f5daef658
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89595994"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92125258"
 ---
 # <a name="troubleshooting-azure-key-vault-access-policy-issues"></a>Устранение проблем с политикой доступа к хранилищу ключей Azure
 
@@ -52,6 +52,8 @@ ms.locfileid: "89595994"
 ### <a name="how-can-i-redeploy-key-vault-with-arm-template-without-deleting-existing-access-policies"></a>Как выполнить повторное развертывание Key Vault с помощью шаблона Resource Manager без удаления существующих политик доступа?
 
 В настоящее время при повторном развертывании Key Vault будет удалена любая политика доступа в Key Vault. Она будет заменена политикой доступа в шаблоне Resource Manager. Для политик доступа Key Vault не существует добавочного параметра. Чтобы сохранить политики доступа в Key Vault, необходимо считать имеющиеся политики доступа в Key Vault и заполнить ими шаблон Resource Manager для избежания сбоев при доступе.
+
+Другой вариант, который может помочь в этом сценарии, — использовать роли RBAC в качестве альтернативы политикам доступа. С помощью RBAC можно повторно развернуть хранилище ключей, не указывая политику еще раз. Дополнительные сведения об этом решении см. [здесь](https://docs.microsoft.com/azure/key-vault/general/rbac-guide).
 
 ### <a name="recommended-troubleshooting-steps-for-following-error-types"></a>Рекомендуемые действия по устранению неполадок для указанных ниже типов ошибок:
 

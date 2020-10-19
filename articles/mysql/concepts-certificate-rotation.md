@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 09/02/2020
-ms.openlocfilehash: d36fe791e34544a4d6132a49fc5ec3f2aa334654
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: cc32a67ab681341fd8320b9445f4e00013f2aa51
+ms.sourcegitcommit: 94ca9e89501e65f4dcccc3789249357c7d5e27e5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92127290"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92170265"
 ---
 # <a name="understanding-the-changes-in-the-root-ca-change-for-azure-database-for-mysql"></a>Основные сведения об изменениях в корневом ЦС для базы данных Azure для MySQL
 
@@ -104,7 +104,7 @@ ms.locfileid: "92127290"
 ### <a name="4-what-is-the-impact-if-using-app-service-with-azure-database-for-mysql"></a>4. Каковы последствия использования службы приложений с базой данных Azure для MySQL?
 Для служб приложений Azure, подключающихся к базе данных Azure для MySQL, возможны два сценария, которые зависят от того, как вы используете SSL с приложением.
 *   Этот новый сертификат добавлен в службу приложений на уровне платформы. Если в приложении используются SSL-сертификаты, включенные в платформу службы приложений, никаких действий не требуется.
-*   Если вы явно включаете путь к файлу SSL-сертификата в коде, необходимо скачать новый сертификат и обновить код для использования нового сертификата.
+*   Если вы явно включаете путь к файлу SSL-сертификата в коде, необходимо скачать новый сертификат и обновить код для использования нового сертификата. Хорошим примером этого сценария является использование пользовательских контейнеров в службе приложений в качестве общих в [документации по службе приложений](/app-service/tutorial-multi-container-app#configure-database-variables-in-wordpress.md) .
 
 ### <a name="5-what-is-the-impact-if-using-azure-kubernetes-services-aks-with-azure-database-for-mysql"></a>5. Каковы последствия использования Azure Kubernetes Services (AKS) с базой данных Azure для MySQL?
 Если вы пытаетесь подключиться к базе данных Azure для MySQL с помощью Azure Kubernetes Services (AKS), она похожа на доступ из выделенной среды размещения клиентов. Инструкции см. [здесь](../aks/ingress-own-tls.md).

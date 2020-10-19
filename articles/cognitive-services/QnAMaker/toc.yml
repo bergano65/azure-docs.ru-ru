@@ -24,26 +24,14 @@
       href: Tutorials/integrate-with-power-virtual-assistant-fallback-topic.md
     - name: Создание бота вопросов и ответов с помощью Службы Azure Bot
       href: Tutorials/create-faq-bot-with-azure-bot-service.md
-    - name: Тестирование с помощью пакетного файла
-      href: Quickstarts/batch-testing.md
 - name: Основные понятия
   items:
     - name: Планирование реализации базы знаний
       href: Concepts/plan.md
     - name: Планирование ресурсов QnA Maker
       href: Concepts/azure-resources.md
-    - name: Разработка базы знаний
-      items:
-        - name: Для языков
-          href: Concepts/design-language-culture.md
-        - name: Для клиентских приложений
-          href: Concepts/integration-with-other-applications.md
     - name: Источники данных и контекст
-      items:
-        - name: Импорт из источников данных
-          href: Concepts/knowledge-base.md
-        - name: Импортированные типы содержимого
-          href: Concepts/content-types.md
+      href: Concepts/data-sources-and-content.md
     - name: Процесс ранжирования
       displayName: 'DefaultAnswer, Default answer'
       href: Concepts/query-knowledge-base.md
@@ -58,22 +46,14 @@
 - name: Практические руководства
   items:
     - name: Управление ресурсами Azure
-      items:
-        - name: Управление ресурсами
-          href: How-To/set-up-qnamaker-service-azure.md
-          displayName: 'azure, resource, key, upgrade, pricing, tier,'
-        - name: Совместная работа
-          href: How-To/collaborate-knowledge-base.md
-        - name: Включение активного обучения
-          href: How-To/use-active-learning.md
-        - name: Изменение ответа по умолчанию
-          href: How-To/change-default-answer.md
+      href: How-To/set-up-qnamaker-service-azure.md
+      displayName: 'azure, resource, key, upgrade, pricing, tier,'
+    - name: Управление приложением QnA Maker
+      href: How-To/manage-qna-maker-app.md
     - name: Управление базой знаний
       items:
         - name: Создание базы знаний
           href: How-To/manage-knowledge-bases.md
-        - name: Выбор языка
-          href: How-To/language-knowledge-base.md
         - name: Добавление беседы
           href: How-to/chit-chat-knowledge-base.md
         - name: Миграция на новую базу знаний
@@ -102,7 +82,7 @@
       href: Overview/language-support.md
     - name: Ограничения
       href: limits.md
-    - name: Управление доступом на основе ролей (RBAC)
+    - name: Управление доступом Azure на основе ролей (Azure RBAC)
       href: Concepts/role-based-access-control.md
     - name: Активное обучение
       href: Concepts/active-learning-suggestions.md
@@ -115,6 +95,8 @@
     - name: Добавление защищенных файлов SharePoint
       href: How-To/add-sharepoint-datasources.md
       displayName: 'Sharepoint, secure, AAD, azure directory, admin, permission, authorization, file, authentication'
+    - name: Изменение ответа по умолчанию
+      href: How-To/change-default-answer.md
     - name: Конфигурация службы
       href: reference-app-service.md
     - name: Форматы содержимого и данных

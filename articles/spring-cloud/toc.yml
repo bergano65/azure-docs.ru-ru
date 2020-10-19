@@ -92,6 +92,8 @@
     - name: Самостоятельная диагностика и устранение проблем
       href: spring-cloud-howto-self-diagnose-solve.md
     - name: Монитор
+    - name: Создание ролей и разрешений
+      href: spring-cloud-howto-permissions.md
       items:
         - name: Распределенная трассировка и App Insights
           href: spring-cloud-tutorial-distributed-tracing.md

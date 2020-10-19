@@ -10,15 +10,15 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 05/18/2020
+ms.date: 07/18/2020
 ms.author: kumud
 ms.reviewer: kumud
-ms.openlocfilehash: fd6894ea90dc6cb3cc721438ba73a94b43c36a5b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 863ab9b600b81006cdeb670811c61ed961e8c623
+ms.sourcegitcommit: 94ca9e89501e65f4dcccc3789249357c7d5e27e5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90983697"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92170262"
 ---
 # <a name="virtual-network-service-tags"></a>Теги службы виртуальной сети
 <a name="network-service-tags"></a>
@@ -46,7 +46,7 @@ ms.locfileid: "90983697"
 | **ApiManagement** | Трафик управления для развертываний, выделенных для управления API Azure. <br/><br/>*Примечание.* Этот тег представляет конечную точку службы управления API Azure для уровня управления для каждого региона. Это позволяет клиентам выполнять операции управления с API-интерфейсами, операциями, политиками, именованными значениями, настроенными в службе управления API.  | Входящий трафик | Да | Да |
 | **ApplicationInsightsAvailability** | Проверка доступности Application Insights. | Входящий трафик | Нет | Нет |
 | **AppConfiguration** | Конфигурация приложений. | Исходящие | Нет | Нет |
-| **AppService**    | служба приложений Azure; Этот тег рекомендуется для правил безопасности для исходящего трафика для внешних интерфейсов веб-приложений. | Исходящие | Да | Да |
+| **AppService**    | служба приложений Azure; Этот тег рекомендуется использовать для исходящих правил безопасности для веб-приложений и приложений функций.  | Исходящие | Да | Да |
 | **AppServiceManagement** | Трафик управления для развертываний, выделенных для Среды службы приложений. | both | Нет | Да |
 | **AzureActiveDirectory** | Azure Active Directory; | Исходящие | Нет | Да |
 | **AzureActiveDirectoryDomainServices** | Трафик управления для развертываний, выделенных для доменных служб Azure Active Directory. | both | Нет | Да |

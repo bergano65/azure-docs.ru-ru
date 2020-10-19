@@ -34,7 +34,11 @@
     - name: Основные понятия
       items:
         - name: Обзор требований
-          href: azure-stack-edge-gpu-system-requirements.md
+          items:
+            - name: Для Azure Stack Edge
+              href: azure-stack-edge-gpu-system-requirements.md
+            - name: Для хранилища BLOB-объектов Azure Stack Edge
+              href: azure-stack-edge-gpu-system-requirements-rest.md
         - name: Изучение ограничений
           href: azure-stack-edge-limits.md
         - name: Общие сведения о безопасности

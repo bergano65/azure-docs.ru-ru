@@ -37,6 +37,8 @@
       href: create-certificate.md
     - name: Создание запроса на подпись сертификата
       href: create-certificate-signing-request.md
+    - name: Управление доступом к сертификату
+      href: certificate-access-control.md
 - name: Практические руководства
   items:
     - name: Интеграция Key Vault с центром сертификации DigiCert

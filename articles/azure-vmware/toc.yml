@@ -6,10 +6,8 @@
       href: introduction.md
 - name: Быстрый запуск
   items:
-    - name: 'Процесс, выполняемый перед развертыванием'
+    - name: 0. Планирование развертывания
       href: production-ready-deployment-steps.md
-    - name: Контрольный список перед развертыванием
-      href: pre-deployment-checklist.md
     - name: 1. Развертывание Решения Azure VMware
       href: deploy-azure-vmware-solution.md
     - name: 2. Подключение к локальному расположению
@@ -104,3 +102,7 @@
           href: fix-deployment-provisioning-failures.md
     - name: ВОПРОСЫ И ОТВЕТЫ
       href: faq.md
+- name: Справочник
+  items:
+    - name: Azure PowerShell
+      href: /powershell/module/az.vmware

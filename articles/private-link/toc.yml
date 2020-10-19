@@ -1,4 +1,4 @@
-- name: Документация по Приватному каналу Azure
+- name: Документация по службе "Приватный канал"
   href: index.yml
 - name: Обзор
   items:
@@ -24,6 +24,7 @@
     - name: Создание экземпляра службы "Приватный канал" с помощью шаблона ARM
       displayName: Resource Manager
       href: create-private-link-service-template.md
+  expanded: true
 - name: Учебники
   items:
     - name: подключение к учетной записи хранения

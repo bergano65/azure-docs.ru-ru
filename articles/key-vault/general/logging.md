@@ -10,18 +10,16 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 08/12/2019
 ms.author: mbaldwin
-ms.openlocfilehash: a51e9a628f67269357d42bd1d3af10c1d86f301a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 162e40555e11dff716b58eec4b1168728257693e
+ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91739788"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92131179"
 ---
 # <a name="azure-key-vault-logging"></a>Ведение журнала Azure Key Vault
 
-[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
-
-Создав одно или несколько хранилищ ключей вы, вероятно, захотите отслеживать, кто, как и когда осуществлял доступ к этим хранилищам. Это можно сделать с помощью функции ведения журнала Azure Key Vault, которая сохраняет информацию в указанной учетной записи хранения Azure. Для указанной вами учетной записи автоматически создается контейнер с именем **insights-logs-auditevent**. Эту же учетную запись можно использовать для сбора журналов нескольких хранилищ ключей.
+Создав одно или несколько хранилищ ключей вы, вероятно, захотите отслеживать, кто, как и когда осуществлял доступ к этим хранилищам. Это можно сделать с помощью функции ведения журнала Azure Key Vault, которая сохраняет информацию в указанной учетной записи хранения Azure. Пошаговые инструкции по настройке этой функции см. в статье [Включение ведения журнала Key Vault](howto-logging.md).
 
 Регистрируемые в журналах сведения становятся доступны не позднее чем через 10 минут после выполнения операции с хранилищем ключей. В большинстве случаев это будет еще быстрее.  Способ управления журналами в своей учетной записи хранения вы выбираете сами.
 
@@ -31,6 +29,8 @@ ms.locfileid: "91739788"
 Общие сведения о Key Vault см. в статье [Что такое хранилище ключей Azure?](overview.md) Сведения о регионах доступности Key Vault можно узнать на [странице цен](https://azure.microsoft.com/pricing/details/key-vault/). Сведения об использовании Azure Monitor для Key Vault см. [здесь](https://docs.microsoft.com/azure/azure-monitor/insights/key-vault-insights-overview).
 
 ## <a name="interpret-your-key-vault-logs"></a>Интерпретация журналов хранилища ключей
+
+При включении ведения журнала для указанной вами учетной записи хранения автоматически создается контейнер с именем **insights-logs-auditevent**. Эту же учетную запись можно использовать для сбора журналов нескольких хранилищ ключей.
 
 Отдельные BLOB-объекты хранятся как текст в формате JSON. Давайте рассмотрим пример записи журнала. 
 
@@ -122,16 +122,15 @@ ms.locfileid: "91739788"
 | **CertificateNearExpiryEventGridNotification** |Опубликованное событие приближения истечения срока действия сертификата |
 | **CertificateExpiredEventGridNotification** |Опубликованное событие истечения срока действия сертификата |
 
-## <a name="use-azure-monitor-logs"></a><a id="loganalytics"></a>Использование журналов Azure Monitor
+## <a name="use-azure-monitor-logs"></a>Использование журналов Azure Monitor
 
 Решение Key Vault в журналах Azure Monitor позволяет просматривать журналы `AuditEvent` для Key Vault. В журналах Azure Monitor запросы по журналам используются для анализа данных и получения необходимых сведений. 
 
 Дополнительные сведения, включая инструкции по настройке, см. в разделе [Мониторинг службы Key Vault с помощью Azure Monitor для Key Vault (предварительная версия)](../../azure-monitor/insights/key-vault-insights-overview.md).
 
-## <a name="next-steps"></a><a id="next"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Руководство по использованию Azure Key Vault в веб-приложении .NET см. в [этой статье](tutorial-net-create-vault-azure-web-app.md).
-
-Справочные материалы по программированию см. в статье [Руководство разработчика хранилища ключей Azure](developers-guide.md).
-
-Полный список командлетов Azure PowerShell 1.0 для хранилища ключей Azure см. в статье [Azure Key Vault cmdlets](/powershell/module/az.keyvault/?view=azps-1.2.0#key_vault) (Командлеты хранилища ключей Azure).
+- [Включение ведения журнала Key Vault](howto-logging.md)
+- Руководство по использованию Azure Key Vault в веб-приложении .NET см. в [этой статье](tutorial-net-create-vault-azure-web-app.md).
+- Справочные материалы по программированию см. в статье [Руководство разработчика хранилища ключей Azure](developers-guide.md).
+- Полный список командлетов Azure PowerShell 1.0 для хранилища ключей Azure см. в статье [Azure Key Vault cmdlets](/powershell/module/az.keyvault/?view=azps-1.2.0#key_vault) (Командлеты хранилища ключей Azure).
