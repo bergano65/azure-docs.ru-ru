@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.subservice: data-lake-storage-gen2
 ms.reviewer: prishet
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 4b0a7dd87caca227f96a0df8ca84634355d18021
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
+ms.openlocfilehash: 7c830641b0e76a7d63229b68a8ab2bf60cab4015
+ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92131587"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92173876"
 ---
 # <a name="use-net-to-manage-directories-files-and-acls-in-azure-data-lake-storage-gen2"></a>Использование .NET для управления каталогами, файлами и списками ACL в Azure Data Lake Storage 2-го поколения
 
@@ -76,7 +76,7 @@ public void GetDataLakeServiceClient(ref DataLakeServiceClient dataLakeServiceCl
 
 ```cs
 public void GetDataLakeServiceClient(ref DataLakeServiceClient dataLakeServiceClient, 
-    String accountName, String clientID, string clientSecret, string tenantID)
+    string accountName, string clientID, string clientSecret, string tenantID)
 {
 
     TokenCredential credential = new ClientSecretCredential(
@@ -375,7 +375,7 @@ public async Task ManageFileACLs(DataLakeFileSystemClient fileSystemClient)
 
 Можно рекурсивно добавлять, обновлять и удалять списки управления доступом для существующих дочерних элементов родительского каталога без необходимости вносить эти изменения отдельно для каждого дочернего элемента. Дополнительные сведения см. в разделе [Настройка списков управления доступом (ACL) рекурсивно для Azure Data Lake Storage 2-го поколения](recursive-access-control-lists.md).
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 * [Справочная документация по API](https://docs.microsoft.com/dotnet/api/azure.storage.files.datalake)
 * [Пакет (NuGet)](https://www.nuget.org/packages/Azure.Storage.Files.DataLake)

@@ -4,12 +4,12 @@ description: В этой статье вы найдете ответы на ча
 ms.reviewer: srinathv
 ms.topic: conceptual
 ms.date: 07/05/2019
-ms.openlocfilehash: d0a5c1b5800bbc626453ba8896dc706a0cd5bfd4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cd974181c78586f915dad6cc6ed39d9255a1456b
+ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91324949"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92172584"
 ---
 # <a name="azure-backup-server-and-dpm---faq"></a>Azure Backup Server и DPM — часто задаваемые вопросы
 
@@ -39,7 +39,7 @@ ms.locfileid: "91324949"
 
 ### <a name="are-there-recommendations-for-configuring-exclusions-for-antivirus-software"></a>Существуют ли рекомендации по настройке исключений для антивирусного по?
 
-Да, рекомендуется настроить исключение антивирусной программы. Сведения об исключениях для DPM см. в статье [Запуск антивирусного по на сервере DPM](https://docs.microsoft.com/system-center/dpm/run-antivirus-server). Сведения об исключениях для MABS см. в статье [Настройка антивирусной программы для сервера MABS](backup-azure-mabs-troubleshoot.md#configure-antivirus-for-mabs-server).
+Да, рекомендуется настроить исключение антивирусной программы. Сведения об исключениях для DPM см. в статье [Запуск антивирусного по на сервере DPM](/system-center/dpm/run-antivirus-server). Сведения об исключениях для MABS см. в статье [Настройка антивирусной программы для сервера MABS](backup-azure-mabs-troubleshoot.md#configure-antivirus-for-mabs-server).
 
 ## <a name="vmware-and-hyper-v-backup"></a>Резервное копирование виртуальных машин VMware и Hyper-V
 
@@ -67,7 +67,7 @@ ms.locfileid: "91324949"
 
 Так как базы данных SharePoint настроены в SQL AlwaysOn, их нельзя изменить, если группа доступности не будет удалена. В результате DPM не может восстановить базу данных в исходное расположение. Вы можете восстановить базу данных SQL Server в другой экземпляр SQL Server.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. другие статьи с вопросами и ответами:
 

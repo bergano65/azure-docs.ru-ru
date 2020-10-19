@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 7/23/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 8157517c0df942c40d93853c8d18ae31e9909d21
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
+ms.openlocfilehash: fd48ff8dd0f4fa44206f6636f869d4ea3f959ae5
+ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92132522"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92174171"
 ---
 # <a name="set-up-an-azure-digital-twins-instance-and-authentication-scripted"></a>Настройка экземпляра Azure Digital двойников и проверки подлинности (с помощью сценария)
 
@@ -59,10 +59,10 @@ ms.locfileid: "92132522"
 
     Перейдите в файл _**deploy.ps1**_ на компьютере (в _Azure_Digital_Twins_end_to_end_samples > сценарии > **deploy.ps1** _) и нажмите кнопку "Открыть". Файл будет отправлен в Cloud Shell, чтобы его можно было запустить в окне Cloud Shell.
 
-4. Запустите сценарий, отправив `./deploy.ps1` команду в окне Cloud Shell. (Напомним, что для вставки в Cloud Shell можно использовать **сочетание клавиш CTRL + SHIFT + v** в Windows и Linux или **CMD + SHIFT + v** в macOS. Также можно использовать контекстное меню.)
+4. Запустите сценарий, отправив `./deploy.ps1` команду в окне Cloud Shell с параметром, который включает настройку регистрации приложения. Вы можете скопировать приведенную ниже команду (Напомним, что для вставки в Cloud Shell можно использовать **сочетание клавиш CTRL + SHIFT + v** в Windows и Linux или **CMD + SHIFT + v** в macOS. Вы также можете использовать контекстное меню.
 
     ```azurecli
-    ./deploy.ps1
+    ./deploy.ps1 -RegisterAadApp
     ```
 
     Так как сценарий выполняется с помощью действий автоматической установки, вам будет предложено передать следующие значения:

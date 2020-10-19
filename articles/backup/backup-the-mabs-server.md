@@ -3,12 +3,12 @@ title: Резервное копирование сервера MABS
 description: Узнайте, как создать резервную копию сервера Microsoft Azure Backup (MABS).
 ms.topic: conceptual
 ms.date: 09/24/2020
-ms.openlocfilehash: de62f0f57273ad7bd77df917d909627819165adb
-ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
+ms.openlocfilehash: 81a6ee005e15b1d7ab7b11a938b8ab14143818f4
+ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91946827"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92172117"
 ---
 # <a name="back-up-the-mabs-server"></a>Резервное копирование сервера MABS
 
@@ -115,13 +115,13 @@ and AG.ServerName like N'%<dpmsqlservername>%' -- <dpmsqlservername> is a placeh
 
 1. Перейдите по пути VHD реплики `\<MABSServer FQDN\>\<PhysicalReplicaId\>\<PhysicalReplicaId\>` .
 2. Подключите **disk0. VHDX** с помощью `mount-vhd disk0.vhdx` команды.
-3. После подключения VHD реплики используйте, `mountvol.exe` чтобы назначить букву диска тому реплики, используя идентификатор физической реплики из выходных данных скрипта SQL. Пример: `mountvol X: \?\Volume{}\`
+3. После подключения VHD реплики используйте, `mountvol.exe` чтобы назначить букву диска тому реплики, используя идентификатор физической реплики из выходных данных скрипта SQL. Например: `mountvol X: \?\Volume{}\`
 
 #### <a name="to-copy-the-database-from-a-previous-recovery-point"></a>Чтобы скопировать базу данных из предыдущей точки восстановления:
 
 1. Перейдите в каталог контейнера DPMDB  `\<MABSServer FQDN\>\<PhysicalReplicaId\>` . Вы увидите несколько каталогов с уникальными идентификаторами GUID в соответствующих точках восстановления, сделанных для MABS DB. Другие каталоги представляют собой точку со СМОЛой или точкой восстановления.
 2. Перейдите к любому соответствующему виртуальному жесткому диску, например, `\<MABSServer FQDN\>\<PhysicalReplicaId\>\<PITId\>` и подключите к нему **disk0. VHDX** с помощью `mount-vhd disk0.vhdx` команды.
-3. После подключения VHD реплики используйте, `mountvol.exe` чтобы назначить букву диска тому реплики, используя идентификатор физической реплики из выходных данных скрипта SQL. Пример: `mountvol X: \?\Volume{}\`
+3. После подключения VHD реплики используйте, `mountvol.exe` чтобы назначить букву диска тому реплики, используя идентификатор физической реплики из выходных данных скрипта SQL. Например: `mountvol X: \?\Volume{}\`
 
    Все термины, отображаемые в угловых скобках на приведенных выше шагах, задают владельцев. Замените их соответствующими значениями следующим образом:
    - **Рефсволуме** — путь доступа из выходных данных СКРИПТа SQL
@@ -168,7 +168,7 @@ and servername like '%dpmsqlservername%' --netbios name of server hosting DPMDB
 
 1. Выберите расположение для восстановления базы данных.
 
-    - Если вы хотите скопировать базу данных из последней резервной копии, полученной непосредственно из тома реплики MABS, используйте **mountvol.exe** , чтобы назначить букву диска тому реплики с помощью идентификатора GUID из выходных данных скрипта SQL. Пример: `C:\Mountvol X: \\?\Volume{d7a4fd76\-a0a8\-11e2\-8fd3\-001c23cb7375}\`
+    - Если вы хотите скопировать базу данных из последней резервной копии, полученной непосредственно из тома реплики MABS, используйте **mountvol.exe** , чтобы назначить букву диска тому реплики с помощью идентификатора GUID из выходных данных скрипта SQL. Например: `C:\Mountvol X: \\?\Volume{d7a4fd76\-a0a8\-11e2\-8fd3\-001c23cb7375}\`
 
     - Если необходимо скопировать базу данных из предыдущей точки восстановления (теневая копия), необходимо перечислить все теневые копии для реплики с помощью GUID тома из выходных данных скрипта SQL. Эта команда выводит список теневых копий для этого тома: `C:\>Vssadmin list shadows /for\=\\?\Volume{d7a4fd76-a0a8-11e2-8fd3-001c23cb7375}\` . Обратите внимание на время создания и идентификатор теневой копии, из которой нужно выполнить восстановление.
 
@@ -184,9 +184,9 @@ and servername like '%dpmsqlservername%' --netbios name of server hosting DPMDB
 
 Вы можете создать резервную копию базы данных MABS на локальном диске с собственной SQL Server резервной копией независимо от MABS.
 
-- Ознакомьтесь с [обзором](https://docs.microsoft.com/sql/relational-databases/backup-restore/back-up-and-restore-of-sql-server-databases) резервного копирования SQL Server.
+- Ознакомьтесь с [обзором](/sql/relational-databases/backup-restore/back-up-and-restore-of-sql-server-databases) резервного копирования SQL Server.
 
-- Получите [дополнительные сведения](https://docs.microsoft.com/sql/relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service) о резервном копировании данных SQL Server в облако.
+- Получите [дополнительные сведения](/sql/relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service) о резервном копировании данных SQL Server в облако.
 
 ## <a name="back-up-to-a-share-protected-by-mabs"></a>Резервное копирование в общую папку, защищенную MABS
 
@@ -238,9 +238,9 @@ and servername like '%dpmsqlservername%' --netbios name of server hosting DPMDB
 
 Можно создать резервную копию базы данных MABS так же, как любую другую базу данных SQL Server, используя SQL Server собственную резервную копию.
 
-- Ознакомьтесь с [обзором](https://docs.microsoft.com/sql/relational-databases/backup-restore/back-up-and-restore-of-sql-server-databases) резервного копирования SQL Server.
+- Ознакомьтесь с [обзором](/sql/relational-databases/backup-restore/back-up-and-restore-of-sql-server-databases) резервного копирования SQL Server.
 
-- Получите [дополнительные сведения](https://docs.microsoft.com/sql/relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service) о резервном копировании данных SQL Server в облако.
+- Получите [дополнительные сведения](/sql/relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service) о резервном копировании данных SQL Server в облако.
 
 ### <a name="recover-the-mabs-database"></a>Восстановление базы данных MABS
 
@@ -329,7 +329,7 @@ DpmSync -Sync
 DpmSync -ReallocateReplica
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Матрица поддержки MABS](backup-support-matrix-mabs-dpm.md)
 - [ВОПРОСЫ И ОТВЕТЫ ПО MABS](backup-azure-dpm-azure-server-faq.md)

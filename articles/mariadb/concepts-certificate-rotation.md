@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 09/02/2020
-ms.openlocfilehash: 73fa10b2170024760fe20d6ed037353b12a0a9e7
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: 2d1122d723058af7b11004589a9ebd14958cc4ef
+ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92127256"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92173101"
 ---
 # <a name="understanding-the-changes-in-the-root-ca-change-for-azure-database-for-mariadb"></a>Основные сведения об изменениях в корневом центре сертификации для базы данных Azure для MariaDB
 
@@ -103,7 +103,7 @@ ms.locfileid: "92127256"
 ### <a name="4-what-is-the-impact-if-using-app-service-with-azure-database-for-mariadb"></a>4. Каковы последствия использования службы приложений с базой данных Azure для MariaDB?
 Для служб приложений Azure, подключающихся к базе данных Azure для MariaDB, можно использовать два возможных сценария, которые зависят от того, как вы используете SSL с приложением.
 *   Этот новый сертификат добавлен в службу приложений на уровне платформы. Если в приложении используются SSL-сертификаты, включенные в платформу службы приложений, никаких действий не требуется.
-*   Если вы явно включаете путь к файлу SSL-сертификата в коде, необходимо скачать новый сертификат и обновить код для использования нового сертификата.
+*   Если вы явно включаете путь к файлу SSL-сертификата в коде, необходимо скачать новый сертификат и обновить код для использования нового сертификата. Хорошим примером этого сценария является использование пользовательских контейнеров в службе приложений в качестве общих в [документации по службе приложений](/app-service/tutorial-multi-container-app#configure-database-variables-in-wordpress.md) .
 
 ### <a name="5-what-is-the-impact-if-using-azure-kubernetes-services-aks-with-azure-database-for-mariadb"></a>5. Каковы последствия использования Azure Kubernetes Services (AKS) с базой данных Azure для MariaDB?
 Если вы пытаетесь подключиться к базе данных Azure для MariaDB с помощью служб Kubernetes Azure (AKS), она аналогична доступу из выделенной среды размещения клиентов. Инструкции см. [здесь](../aks/ingress-own-tls.md).

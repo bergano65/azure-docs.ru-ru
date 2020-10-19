@@ -4,12 +4,12 @@ description: Из этой статьи вы узнаете, как управл
 ms.topic: conceptual
 ms.date: 09/12/2018
 ms.assetid: b8487516-7ac5-4435-9680-674d9ecf5642
-ms.openlocfilehash: ad60436d82ccc8049a4509ba5bf1e244bee150ea
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 260c78af39c46e493ebb79c26ff1c55153a41c1d
+ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89506684"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92174020"
 ---
 # <a name="restore-azure-virtual-machines-using-rest-api"></a>Восстановление виртуальных машин Azure с помощью REST API
 
@@ -122,7 +122,7 @@ X-Powered-By: ASP.NET
 ***Все операции восстановления в элементе Backup выполняются с помощью того же API-интерфейса *POST* . Только изменения текста запроса с помощью сценариев восстановления.***
 
 > [!IMPORTANT]
-> [Здесь](https://docs.microsoft.com/azure/backup/backup-azure-arm-restore-vms#restore-options)приводятся все сведения о различных параметрах восстановления и их зависимостях. Прежде чем приступить к активации этих операций, ознакомьтесь с разработкой.
+> [Здесь](./backup-azure-arm-restore-vms.md#restore-options)приводятся все сведения о различных параметрах восстановления и их зависимостях. Прежде чем приступить к активации этих операций, ознакомьтесь с разработкой.
 
 Активация операций восстановления является запросом *POST* . Дополнительные сведения об API см. в [REST API "триггер Restore"](/rest/api/backup/restores/trigger).
 
@@ -246,7 +246,7 @@ X-Powered-By: ASP.NET
 
 ### <a name="restore-disks-selectively"></a>Выборочное восстановление дисков
 
-Если вы [выборочно создаете резервные копии дисков](backup-azure-arm-userestapi-backupazurevms.md#excluding-disks-in-azure-vm-backup), список резервных дисков, доступных для архивации, приведен в [сводке по точкам восстановления](#select-recovery-point) и [подробному ответу](https://docs.microsoft.com/rest/api/backup/recoverypoints/get). Вы также можете выборочно восстановить диски и дополнительные [сведения.](selective-disk-backup-restore.md#selective-disk-restore) Чтобы выборочно восстановить диск из списка резервных копий дисков, найдите LUN диска в ответе точки восстановления и добавьте свойство **ресторедисклунлист** в [текст запроса выше](#example-request) , как показано ниже.
+Если вы [выборочно создаете резервные копии дисков](backup-azure-arm-userestapi-backupazurevms.md#excluding-disks-in-azure-vm-backup), список резервных дисков, доступных для архивации, приведен в [сводке по точкам восстановления](#select-recovery-point) и [подробному ответу](/rest/api/backup/recoverypoints/get). Вы также можете выборочно восстановить диски и дополнительные [сведения.](selective-disk-backup-restore.md#selective-disk-restore) Чтобы выборочно восстановить диск из списка резервных копий дисков, найдите LUN диска в ответе точки восстановления и добавьте свойство **ресторедисклунлист** в [текст запроса выше](#example-request) , как показано ниже.
 
 ```json
 {
@@ -351,7 +351,7 @@ X-Powered-By: ASP.NET
 
 Для восстановления дисков ответы должны обрабатываться так же, как [описано выше](#responses).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о REST API Azure Backup с использованием API REST см. в следующих документах:
 

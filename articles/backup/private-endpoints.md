@@ -3,12 +3,12 @@ title: Частные конечные точки
 description: Изучите процесс создания частных конечных точек для Azure Backup и сценариев, в которых использование частных конечных точек помогает обеспечить безопасность ресурсов.
 ms.topic: conceptual
 ms.date: 05/07/2020
-ms.openlocfilehash: e1121f1d1217ebd48c744135c976587545323f44
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0ca4e7a83e18ac72e25131d320737ce9578b1cf3
+ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91565175"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92172232"
 ---
 # <a name="private-endpoints-for-azure-backup"></a>Частные конечные точки для Azure Backup
 
@@ -398,9 +398,9 @@ $privateEndpoint = New-AzPrivateEndpoint `
 
 Коды регионов см. в [этом списке](https://download.microsoft.com/download/1/2/6/126a410b-0e06-45ed-b2df-84f353034fa1/AzureRegionCodesList.docx) . См. следующие ссылки на соглашения об именовании URL-адресов в национальных регионах:
 
-- [Китай](https://docs.microsoft.com/azure/china/resources-developer-guide#check-endpoints-in-azure)
-- [Германия](https://docs.microsoft.com/azure/germany/germany-developer-guide#endpoint-mapping)
-- [US Gov](https://docs.microsoft.com/azure/azure-government/documentation-government-developer-guide)
+- [Китай](/azure/china/resources-developer-guide#check-endpoints-in-azure)
+- [Германия](../germany/germany-developer-guide.md#endpoint-mapping)
+- [US Gov](../azure-government/documentation-government-developer-guide.md)
 
 #### <a name="adding-dns-records-for-custom-dns-servers"></a>Добавление записей DNS для пользовательских DNS-серверов
 
@@ -462,6 +462,6 @@ A. Да, можно использовать собственные DNS-серв
 У. Нужно ли выполнять дополнительные действия на моем сервере после выполнения процедуры в этой статье?<br>
 A. После выполнения процесса, описанного в этой статье, вам не нужно выполнять дополнительную работу, чтобы использовать частные конечные точки для резервного копирования и восстановления.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь со всеми [функциями безопасности в Azure Backup](security-overview.md)

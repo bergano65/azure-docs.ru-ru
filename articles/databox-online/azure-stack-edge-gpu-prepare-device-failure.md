@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 10/06/2020
 ms.author: alkohli
-ms.openlocfilehash: 0d36a09b67e110551470f3908800e77c35b1e3be
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f7c7caf6c01c2e7ea9aaf141a2597ef338735d3d
+ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91844016"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92173597"
 ---
 # <a name="prepare-for-an-azure-stack-edge-pro-gpu-device-failure"></a>Подготовка к сбою устройства GPU версии Pro Azure Stack
 
@@ -66,7 +66,8 @@ ms.locfileid: "91844016"
 | Стороннее программное обеспечение           | Ссылка на решение                               |
 |--------------------------------|---------------------------------------------------------|
 | Cohesity                       | https://www.cohesity.com/solution/cloud/azure/ <br> Для получения дополнительных сведений обратитесь к Cohesity.          |
-| Компанию                        | Для получения дополнительных сведений обратитесь в компанию Veritas.   |
+| Commvault                      | https://www.commvault.com/azure <br> Для получения дополнительных сведений обратитесь к Commvault.          |
+| Компанию                        | http://veritas.com/azure <br> Для получения дополнительных сведений обратитесь в компанию Veritas.   |
 
 
 ## <a name="protect-files-and-folders-on-vms"></a>Защита файлов и папок на виртуальных машинах
@@ -78,10 +79,11 @@ Azure Stack ребро работает с Azure Backup и другими реш
 |-------------------------|----------------|--------------------------------------------------------------------------|
 | Агент Службы восстановления Microsoft Azure (MARS) для Azure Backup | Windows        | [Сведения об агенте MARS](/azure/backup/backup-azure-about-mars)    |
 | Cohesity                | Windows, Linux | [Краткое описание решения Microsoft Azure интеграции, резервного копирования и восстановления](https://www.cohesity.com/solution/cloud/azure) <br>Для получения дополнительных сведений обратитесь к Cohesity.                          |
-| Компанию                 | Windows, Linux | Для получения дополнительных сведений обратитесь в компанию Veritas.                    |
+| Commvault               | Windows, Linux | https://www.commvault.com/azure <br>Для получения дополнительных сведений обратитесь к Commvault.                          |
+| Компанию                 | Windows, Linux | http://veritas.com/azure <br> Для получения дополнительных сведений обратитесь в компанию Veritas.                    |
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как [выполнить восстановление после неудачного Azure Stack устройства GPU с пограничными краями](azure-stack-edge-gpu-recover-device-failure.md).

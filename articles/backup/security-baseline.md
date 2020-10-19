@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/23/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 24bdb192ddfe1759cb1d70fff9936979f5e28143
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 09066d9e51f12923772758b3aebcebd347a59380
+ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92093367"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92174128"
 ---
 # <a name="azure-security-baseline-for-backup"></a>Базовые показатели безопасности Azure для резервного копирования
 
@@ -436,7 +436,7 @@ ms.locfileid: "92093367"
 
 - [Создание дополнительных подписок Azure](../cost-management-billing/manage/create-subscription.md)
 
-- [Создание групп управления](../governance/management-groups/create.md)
+- [Создание групп управления](../governance/management-groups/create-management-group-portal.md)
 
 - [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
@@ -612,7 +612,7 @@ Azure Backup предоставляет три встроенных роли д�
 
 - [Создание дополнительных подписок Azure](../cost-management-billing/manage/create-subscription.md)
 
-- [Создание групп управления](../governance/management-groups/create.md)
+- [Создание групп управления](../governance/management-groups/create-management-group-portal.md)
 
 - [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
@@ -818,9 +818,9 @@ Azure Backup предоставляет три встроенных роли д�
 
 - [Создание Key Vault](../key-vault/secrets/quick-create-portal.md)
 
-* [Проверка подлинности в Key Vault](https://docs.microsoft.com/azure/key-vault/general/authentication)
+* [Проверка подлинности в Key Vault](../key-vault/general/authentication.md)
 
-* [Назначение политики доступа Key Vault](https://docs.microsoft.com/azure/key-vault/general/assign-access-policy-portal)
+* [Назначение политики доступа Key Vault](../key-vault/general/assign-access-policy-portal.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -868,7 +868,7 @@ Azure Backup предоставляет три встроенных роли д�
 
 - [Сведения о антивредоносном по Майкрософт для облачных служб и виртуальных машин Azure](../security/fundamentals/antimalware.md)
 
-- [Сведения об обнаружении угроз для служб данных в центре безопасности Azure](../security-center/threat-protection.md)
+- [Сведения об обнаружении угроз для служб данных в центре безопасности Azure](../security-center/azure-defender.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -924,7 +924,7 @@ Azure Backup предоставляет три встроенных роли д�
 
 **Рекомендации**. для локального резервного копирования используется парольная фраза, которую вы указали при резервном копировании в Azure. Для виртуальных машин Azure шифрование выполняется с помощью функции "Шифрование службы хранилища" (SSE). Обратимое удаление можно включить в Key Vault, чтобы защитить ключи от случайного или вредоносного удаления.
 
-- [Включение обратимого удаления в Key Vault](../storage/blobs/soft-delete-overview.md?tabs=azure-portal)
+- [Включение обратимого удаления в Key Vault](../storage/blobs/soft-delete-blob-overview.md?tabs=azure-portal)
 
 **Мониторинг Центра безопасности Azure**: Да
 

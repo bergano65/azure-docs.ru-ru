@@ -5,22 +5,27 @@ services: container-instances
 ms.topic: article
 ms.date: 07/02/2020
 ms.custom: mvc
-ms.openlocfilehash: eeafc58a1f61ed0439fb29fb08e4ce8c5dd4350c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d5ba56271950c2d14c7fbf0b9154afb371bcbabc
+ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89656996"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92173658"
 ---
 # <a name="deploy-to-azure-container-instances-from-azure-container-registry"></a>Развертывание в службе "Экземпляры контейнеров Azure" из реестра контейнеров Azure
 
 [Реестр контейнеров Azure](../container-registry/container-registry-intro.md) — это управляемая служба реестра контейнеров на базе Azure, используемая для хранения частных образов контейнеров Docker. В этой статье описывается, как извлечь образы контейнеров, хранящиеся в реестре контейнеров Azure, при развертывании в службе "экземпляры контейнеров Azure". Для настройки доступа к реестру рекомендуется создать субъект-службу Azure Active Directory и пароль, а также сохранить учетные данные входа в хранилище ключей Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 **Реестр контейнеров Azure**. для выполнения действий, описанных в этой статье, требуется реестр контейнеров Azure, а также по крайней мере один образ контейнера в реестре. Если вам нужен реестр, см. сведения о его создании в статье [Краткое руководство. Создание реестра контейнеров с использованием Azure CLI](../container-registry/container-registry-get-started-azure-cli.md).
 
 **Azure CLI**. Примеры командной строки в этой статье используют [Azure CLI](/cli/azure/) и отформатированы для оболочки Bash. Вы можете [установить Azure CLI](/cli/azure/install-azure-cli) локально или использовать [Azure Cloud Shell][cloud-shell-bash].
+
+## <a name="limitations"></a>Ограничения
+
+* Вы не можете пройти проверку подлинности в реестре контейнеров Azure, чтобы извлечь образы во время развертывания группы контейнеров с помощью [управляемого удостоверения](container-instances-managed-identity.md) , настроенного в той же группе контейнеров.
+* В настоящее время невозможно извлечь образы из [реестра контейнеров Azure](../container-registry/container-registry-vnet.md) , развернутые в виртуальную сеть Azure.
 
 ## <a name="configure-registry-authentication"></a>Настройка проверки подлинности в реестре
 
@@ -28,13 +33,7 @@ ms.locfileid: "89656996"
 
 Реестр контейнеров Azure предоставляет дополнительные [Параметры проверки подлинности](../container-registry/container-registry-authentication.md).
 
-> [!NOTE]
-> Вы не можете пройти проверку подлинности в реестре контейнеров Azure, чтобы извлечь образы во время развертывания группы контейнеров с помощью [управляемого удостоверения](container-instances-managed-identity.md) , настроенного в той же группе контейнеров.
-
-> [!NOTE]
-> В настоящее время невозможно извлечь образы из [реестра контейнеров Azure](../container-registry/container-registry-vnet.md) , развернутые в виртуальную сеть Azure.
-
-В следующем разделе вы создадите субъект-службу и сохраните его учетные данные в хранилище ключей Azure, которое также создается в этом разделе. 
+В следующем разделе вы создадите субъект-службу и сохраните его учетные данные в хранилище ключей Azure, которое также создается в этом разделе.
 
 ### <a name="create-key-vault"></a>Создание хранилища ключей
 
@@ -162,7 +161,7 @@ az container create \
 
     ![Представление сведений для группы контейнеров службы "Экземпляры контейнеров Azure"][aci-detailsview]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Более подробные сведения об аутентификации в реестре контейнеров Azure см. в статье [Аутентификация с помощью частного реестра контейнеров Docker](../container-registry/container-registry-authentication.md).
 

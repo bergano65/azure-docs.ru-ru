@@ -7,12 +7,12 @@ author: markjbrown
 ms.author: mjbrown
 ms.date: 09/22/2020
 ms.custom: devx-track-csharp, contperfq1
-ms.openlocfilehash: 64da8084ec8d40e17a0005f2e70486c7d51bf640
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e846f00388ce21690729f62592c86b73cc42c3f3
+ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91627604"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92173779"
 ---
 # <a name="install-and-use-the-azure-cosmos-emulator-for-local-development-and-testing"></a>Установка и использование эмулятора Cosmos Azure для локальной разработки и тестирования
 
@@ -243,7 +243,7 @@ services:
 1. На виртуальной машине Windows запустите эмулятор Azure Cosmos из командной строки, используя следующие параметры. Дополнительные сведения о параметрах, поддерживаемых командной строкой, см. в [справочнике по программе командной строки эмулятора](emulator-command-line-parameters.md):
 
    ```bash
-   Microsoft.Azure.Cosmos.Emulator.exe /AllowNetworkAccess /Key=C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM +4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==
+   Microsoft.Azure.Cosmos.Emulator.exe /AllowNetworkAccess /Key=C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==
    ```
 
 1. Наконец, необходимо разрешить процесс доверия сертификатов между приложением, работающим в среде Linux или Mac, и эмулятором. Для разрешения сертификата можно использовать один из следующих двух вариантов.
@@ -464,7 +464,7 @@ table.Execute(TableOperation.Insert(new DynamicTableEntity("partitionKey", "rowK
 
 1. В списке приложений перейдите к **эмулятору Azure Cosmos DB**, выберите его, щелкните **Удалить**, затем подтвердите и снова выберите **Удалить** .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы узнали, как использовать локальный эмулятор для бесплатной локальной разработки. Теперь можно перейти к следующим статьям:
 

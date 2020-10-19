@@ -5,12 +5,12 @@ services: container-service
 ms.topic: article
 ms.date: 08/26/2020
 ms.author: thomasge
-ms.openlocfilehash: 32273bbb14e6cee73f03bd83b84be77299186370
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d34505b1f36d6de77e2bb1df9aa98b7a14b5f44d
+ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88937002"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92171942"
 ---
 # <a name="aks-managed-azure-active-directory-integration"></a>Интеграция Azure Active Directory с управляемым AKS
 
@@ -35,7 +35,7 @@ ms.locfileid: "88937002"
 * кластеры, не поддерживающие RBAC, не поддерживаются для интеграции Azure AD, управляемой AKS.
 * Изменение клиента Azure AD, связанного с интеграцией Azure AD, управляемой AKS, не поддерживается
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Azure CLI версии 2.11.0 или более поздней.
 * Kubectl с минимальной версией [1.18.1](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.18.md#v1181) или [кубелогин](https://github.com/Azure/kubelogin)

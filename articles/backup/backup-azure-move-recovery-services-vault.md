@@ -4,12 +4,12 @@ description: Инструкции по перемещению хранилища
 ms.topic: conceptual
 ms.date: 04/08/2019
 ms.custom: references_regions
-ms.openlocfilehash: 55c906585e6f6d4a2ae3f2279b2c3ffbaaccb025
-ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
+ms.openlocfilehash: bd1870e803f5051e2a65a6cddbb72406421d4fc3
+ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92056435"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92171616"
 ---
 # <a name="move-a-recovery-services-vault-across-azure-subscriptions-and-resource-groups"></a>Перемещение хранилища служб восстановления между подписками Azure и группами ресурсов
 
@@ -178,7 +178,7 @@ az resource move --destination-group <destinationResourceGroupName> --ids <Vault
   - Вы сможете восстановить резервные копии данных только для точек восстановления с неистекшим сроком действия в старом хранилище.
   - В новом хранилище потребуется создать новую начальную реплику данных.
 
-- Для виртуальной машины Azure можно [Отключить защиту с помощью сохранения данных](backup-azure-manage-vms.md#stop-protecting-a-vm) для виртуальной машины в старом хранилище, переместить виртуальную машину в другую группу ресурсов, а затем защитить виртуальную машину в новом хранилище. См. [руководство и ограничения](https://docs.microsoft.com/azure/azure-resource-manager/management/move-limitations/virtual-machines-move-limitations) для перемещения виртуальной машины в другую группу ресурсов.
+- Для виртуальной машины Azure можно [Отключить защиту с помощью сохранения данных](backup-azure-manage-vms.md#stop-protecting-a-vm) для виртуальной машины в старом хранилище, переместить виртуальную машину в другую группу ресурсов, а затем защитить виртуальную машину в новом хранилище. См. [руководство и ограничения](../azure-resource-manager/management/move-limitations/virtual-machines-move-limitations.md) для перемещения виртуальной машины в другую группу ресурсов.
 
   Виртуальная машина может быть защищена только в одном хранилище за раз. Однако виртуальную машину в новой группе ресурсов можно защитить в новом хранилище, так как она считается другой виртуальной машиной.
 

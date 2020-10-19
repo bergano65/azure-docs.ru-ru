@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.custom: how-to
 ms.date: 06/27/2020
-ms.openlocfilehash: 5d17fb9bee77aae9945c12d45a5ffff316f9d639
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 94c67be39ddd9f52087fa4632e239a8e85930886
+ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92144247"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92171476"
 ---
 # <a name="how-to-run-jupyter-notebooks-in-your-workspace"></a>Выполнение веб-приложений Jupyter Notebook в рабочей области
 
@@ -224,7 +224,7 @@ ms.locfileid: "92144247"
     ```
 
 > [!NOTE]
-> Для управления пакетами в записной книжке используйте функции " **% PIP** " или " **% conda** Magic" автоматически устанавливайте пакеты в **выполняющийся в настоящее время ядро** , а не в параметре **! PIP** или **! conda** , который ссылается на все пакеты (включая пакеты за пределами выполняющегося в данный момент ядра).
+> Для управления пакетами в записной книжке используйте функции " **% PIP** " или " **% conda** Magic" для автоматической установки пакетов в **выполняющийся в настоящее время ядре**, а не в разделе **! PIP** или **! conda** , который ссылается на все пакеты (включая пакеты вне текущего выполняющегося ядра).
 
 Можно установить любое из [доступных ядер Jupyter](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels).
 

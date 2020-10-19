@@ -10,12 +10,12 @@ ms.reviewer: veyalla
 ms.service: iot-edge
 ms.custom: devx-track-azurecli
 services: iot-edge
-ms.openlocfilehash: f5f2a9800d3796d217294e757076d6ff706281d1
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 64264028706c1493f687f032a7ec39e69188bd45
+ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92044204"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92171911"
 ---
 # <a name="retrieve-logs-from-iot-edge-deployments"></a>Получение журналов из IoT Edge развертываний
 
@@ -63,7 +63,7 @@ ms.locfileid: "92044204"
     }
 ```
 
-| Имя | Type | Описание |
+| Имя | Тип | Описание |
 |-|-|-|
 | schemaVersion | строка | Установите значение `1.0` |
 | items | Массив JSON | Массив с `id` `filter` кортежами и. |
@@ -82,7 +82,7 @@ ms.locfileid: "92044204"
 
 Успешный выбор журналов возвращает **"Status": 200** , за которыми следуют полезные данные, содержащие журналы, полученные из модуля, отфильтрованные по параметрам, указанным в запросе.
 
-Например.
+Пример:
 
 ```azurecli
 az iot hub invoke-module-method --method-name 'GetModuleLogs' -n <hub name> -d <device id> -m '$edgeAgent' --method-payload \
@@ -123,7 +123,7 @@ az iot hub invoke-module-method --method-name 'GetModuleLogs' -n <hub name> -d <
 
 ![Вызов прямого метода "Жетмодулелогс" в портал Azure](./media/how-to-retrieve-iot-edge-logs/invoke-get-module-logs.png)
 
-Вы также можете передать выходные данные CLI в служебные программы Linux, например [gzip](https://en.wikipedia.org/wiki/Gzip), для обработки сжатого ответа. Например.
+Вы также можете передать выходные данные CLI в служебные программы Linux, например [gzip](https://en.wikipedia.org/wiki/Gzip), для обработки сжатого ответа. Пример:
 
 ```azurecli
 az iot hub invoke-module-method \
@@ -164,7 +164,7 @@ az iot hub invoke-module-method \
     }
 ```
 
-| Имя | Type | Описание |
+| Имя | Тип | Описание |
 |-|-|-|
 | sasURL | строка (URI) | [URL-адрес подписи общего доступа с доступом на запись к контейнеру хранилища BLOB-объектов Azure](/archive/blogs/jpsanders/easily-create-a-sas-to-download-a-file-from-azure-storage-using-azure-storage-explorer). |
 
@@ -178,13 +178,13 @@ az iot hub invoke-module-method \
     }
 ```
 
-| Имя | Type | Описание |
+| Имя | Тип | Описание |
 |-|-|-|
 | status | строка | Один из `NotStarted` ,,, `Running` `Completed` `Failed` или `Unknown` . |
 | message | строка | Сообщение, если ошибка, пустая строка в противном случае. |
 | correlationId | строка   | Идентификатор для запроса состояния запроса на отправку. |
 
-Например.
+Пример:
 
 Следующий вызов передает последние строки журнала 100 из всех модулей в сжатом формате JSON:
 
@@ -273,7 +273,7 @@ az iot hub invoke-module-method --method-name UploadModuleLogs -n <hub name> -d 
     }
 ```
 
-| Имя | Type | Описание |
+| Имя | Тип | Описание |
 |-|-|-|
 | schemaVersion | строка | Установите значение `1.0` |
 | sasURL | строка (URI) | [URL-адрес подписи общего доступа с доступом на запись к контейнеру хранилища BLOB-объектов Azure](/archive/blogs/jpsanders/easily-create-a-sas-to-download-a-file-from-azure-storage-using-azure-storage-explorer) |
@@ -294,13 +294,13 @@ az iot hub invoke-module-method --method-name UploadModuleLogs -n <hub name> -d 
     }
 ```
 
-| Имя | Type | Описание |
+| Имя | Тип | Описание |
 |-|-|-|
 | status | строка | Один из `NotStarted` ,,, `Running` `Completed` `Failed` или `Unknown` . |
 | message | строка | Сообщение, если ошибка, пустая строка в противном случае. |
 | correlationId | строка   | Идентификатор для запроса состояния запроса на отправку. |
 
-Например.
+Пример:
 
 ```azurecli
 az iot hub invoke-module-method --method-name 'UploadSupportBundle' -n <hub name> -d <device id> -m '$edgeAgent' --method-payload \
@@ -352,13 +352,13 @@ az iot hub invoke-module-method --method-name 'UploadSupportBundle' -n <hub name
     }
 ```
 
-| Имя | Type | Описание |
+| Имя | Тип | Описание |
 |-|-|-|
 | status | строка | Один из `NotStarted` ,,, `Running` `Completed` `Failed` или `Unknown` . |
 | message | строка | Сообщение, если ошибка, пустая строка в противном случае. |
 | correlationId | строка   | Идентификатор для запроса состояния запроса на отправку. |
 
-Например.
+Пример:
 
 ```azurecli
 az iot hub invoke-module-method --method-name 'GetTaskStatus' -n <hub name> -d <device id> -m '$edgeAgent' --method-payload \
@@ -370,7 +370,7 @@ az iot hub invoke-module-method --method-name 'GetTaskStatus' -n <hub name> -d <
 '
 ```
 
-В портал Azure вызовите метод с именем метода `UploadModuleLogs` и следующими полезными данными JSON после заполнения идентификатора GUID сведениями:
+В портал Azure вызовите метод с именем метода `GetTaskStatus` и следующими полезными данными JSON после заполнения идентификатора GUID сведениями:
 
 ```json
     {

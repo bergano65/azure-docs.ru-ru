@@ -3,12 +3,12 @@ title: Восстановление баз данных SQL Server на вирт
 description: В этой статье описывается, как восстановить SQL Server базы данных, работающие на виртуальной машине Azure и резервные копии которых Azure Backup. Можно также использовать восстановление между регионами для восстановления баз данных в дополнительный регион.
 ms.topic: conceptual
 ms.date: 05/22/2019
-ms.openlocfilehash: 0d6feb512ab4ebcc5b5eaffafe607602fc552984
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bbafd179f4b2f4e91a4bf19da41ffc14e4775e5c
+ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90985440"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92172172"
 ---
 # <a name="restore-sql-server-databases-on-azure-vms"></a>Восстановление баз данных SQL Server на виртуальных машинах Azure
 
@@ -23,14 +23,14 @@ Azure Backup можете восстановить базы данных SQL Ser
 - Восстановление до определенной даты или времени (во второй) с помощью резервных копий журнала транзакций. Azure Backup автоматически определяет соответствующую полную разностную резервную копию и цепочку резервных копий журналов, которые требуются для восстановления в зависимости от выбранного времени.
 - Восстановление определенной полной или разностной резервной копии для восстановления до определенной точки восстановления.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Перед восстановлением базы данных обратите внимание на следующее.
 
 - Можно восстановить базу данных на экземпляре SQL Server, расположенном в том же регионе Azure.
 - Целевой сервер должен быть зарегистрирован в том же хранилище, что и исходный сервер.
 - Чтобы восстановить базу данных, зашифрованную с помощью TDE, на другой SQL Server, необходимо сначала [восстановить сертификат на целевом сервере](/sql/relational-databases/security/encryption/move-a-tde-protected-database-to-another-sql-server).
-- Базы данных с поддержкой [CDC](https://docs.microsoft.com/sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server) следует восстановить с помощью параметра [восстановить как файлы](#restore-as-files) .
+- Базы данных с поддержкой [CDC](/sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server) следует восстановить с помощью параметра [восстановить как файлы](#restore-as-files) .
 - Перед восстановлением базы данных "Master" запустите экземпляр SQL Server в однопользовательском режиме с помощью параметра запуска **-m азуреворклоадбаккуп**.
   - Значение параметра **-m** — это имя клиента.
   - Только указанное имя клиента может открыть соединение.
@@ -214,6 +214,6 @@ Azure Backup можете восстановить базы данных SQL Ser
 
     ![Задания резервного копирования отфильтрованы](./media/backup-azure-sql-database/backup-jobs-secondary-region.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Управление и мониторинг](manage-monitor-sql-database-backup.md) SQL Server базы данных, для которых выполняется резервное копирование Azure Backup.

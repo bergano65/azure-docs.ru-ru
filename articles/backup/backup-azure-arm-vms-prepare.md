@@ -3,12 +3,12 @@ title: Резервное копирование виртуальных маши
 description: Описание резервного копирования виртуальных машин Azure в хранилище Служб восстановления с помощью Azure Backup
 ms.topic: conceptual
 ms.date: 07/28/2020
-ms.openlocfilehash: 28cc995afc131e747314032c1363f73531e6915c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f6fe2f629742e15e62dfc13106e92623a4b45add
+ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90986509"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92172743"
 ---
 # <a name="back-up-azure-vms-in-a-recovery-services-vault"></a>Резервное копирование виртуальных машин Azure в хранилище Служб восстановления
 
@@ -37,6 +37,8 @@ ms.locfileid: "90986509"
 
 * **Установить агент виртуальной машины**. Для создания резервных копий виртуальных машин Azure служба Azure Backup устанавливает на них расширение агента виртуальной машины Azure. Если виртуальная машина создана из образа Azure Marketplace, агент установлен и запущен. Если вы создаете пользовательскую виртуальную машину или выполняете миграцию локального компьютера, может потребоваться [установить агент вручную](#install-the-vm-agent).
 
+[!INCLUDE [backup-center.md](../../includes/backup-center.md)]
+
 [!INCLUDE [How to create a Recovery Services vault](../../includes/backup-create-rs-vault.md)]
 
 ### <a name="modify-storage-replication"></a>Изменение репликации хранилища
@@ -45,7 +47,7 @@ ms.locfileid: "90986509"
 
 * Если хранилище является основным механизмом резервного копирования, рекомендуется использовать GRS.
 * Для более дешевого варианта можно использовать [локально избыточное хранилище (LRS)](../storage/common/storage-redundancy.md#locally-redundant-storage) .
-* [Хранилище, избыточное между зонами (ZRS),](../storage/common/storage-redundancy.md#zone-redundant-storage) реплицирует данные в [зоны доступности](https://docs.microsoft.com/azure/availability-zones/az-overview#availability-zones), гарантируя расположение и устойчивость данных в пределах одного региона.
+* [Хранилище, избыточное между зонами (ZRS),](../storage/common/storage-redundancy.md#zone-redundant-storage) реплицирует данные в [зоны доступности](../availability-zones/az-overview.md#availability-zones), гарантируя расположение и устойчивость данных в пределах одного региона.
 
 Измените тип репликации хранилища следующим образом.
 
