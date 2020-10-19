@@ -31,6 +31,8 @@
       href: tutorial-private-endpoint-storage-portal.md
     - name: "Подключение к учетной записи Cosmos\_DB"
       href: tutorial-private-endpoint-cosmosdb-portal.md
+    - name: Подключение к веб-приложению
+      href: tutorial-private-endpoint-webapp-portal.md
 - name: Основные понятия
   items:
     - name: Частная конечная точка
