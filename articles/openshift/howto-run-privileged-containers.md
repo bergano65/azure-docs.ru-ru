@@ -7,14 +7,20 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 12/05/2019
 keywords: АТО, openshift, акуасек, Twistlock, Red Hat
-ms.openlocfilehash: e1c1dd9f27a207f78dd22e271f6b070c7f92f622
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 914b29410a0f30e5c3d3a893c2e278ecbb83b648
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "78271375"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92218873"
 ---
 # <a name="run-privileged-containers-in-an-azure-red-hat-openshift-cluster"></a>Запуск привилегированных контейнеров в кластере Azure Red Hat OpenShift
+
+> [!IMPORTANT]
+> Azure Red Hat OpenShift 3,11 будет прекращена 30 июня 2022. Поддержка для создания новых кластеров Azure Red Hat OpenShift 3,11 продолжится до 30 ноября 2020. После выхода из эксплуатации оставшиеся кластеры Azure Red Hat OpenShift 3,11 будут закрыты для предотвращения уязвимости системы безопасности.
+> 
+> Следуйте указаниям этого руководством, чтобы [создать кластер Azure Red Hat OpenShift 4](tutorial-create-cluster.md).
+> Если у вас есть определенные вопросы, [свяжитесь с нами](mailto:arofeedback@microsoft.com).
 
 Вы не можете запускать произвольные привилегированные контейнеры в кластерах Azure Red Hat OpenShift.
 В кластерах АТО может выполняться два решения для мониторинга безопасности и соответствия требованиям.
@@ -115,7 +121,7 @@ oc get route aqua-web -n aqua-security
 | -------------- | ------------- |
 | Оркестратор:   | OpenShift     |
 | ServiceAccount | Голубой — учетная запись  |
-| Проект        | Голубой — безопасность |
+| Project        | Голубой — безопасность |
 
 ## <a name="product-specific-steps-for-prisma-cloud--twistlock"></a>Действия, относящиеся к продукту для Присма Cloud/Twistlock
 
@@ -128,7 +134,7 @@ oc get route aqua-web -n aqua-security
 oc new-project twistlock
 ```
 
-Пропустите необязательный раздел "Отправка облачных образов Присма в частный реестр". Он не работает в Azure Red Hat Openshift. Вместо этого используйте оперативный реестр.
+Пропустите необязательный раздел "Отправка облачных образов Присма в частный реестр". Он не работает в Azure Red Hat OpenShift. Вместо этого используйте оперативный реестр.
 
 Вы можете следовать официальной документации, применяя описанные ниже действия.
 Начните с раздела "Установка консоли".

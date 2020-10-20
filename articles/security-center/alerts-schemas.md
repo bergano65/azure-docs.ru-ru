@@ -2,7 +2,6 @@
 title: Схемы для оповещений центра безопасности Azure
 description: В этой статье описываются различные схемы, используемые центром безопасности Azure для оповещений системы безопасности.
 services: security-center
-documentationcenter: na
 author: memildin
 manager: rkarlin
 ms.service: security-center
@@ -12,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/19/2020
 ms.author: memildin
-ms.openlocfilehash: 894fc4066ad408f0749e7a982011d82b205e6fec
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 264cab08fa967af783b758ed1030826d2a179e8a
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90901347"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92220675"
 ---
 # <a name="security-alerts-schemas"></a>Схемы оповещений системы безопасности
 
@@ -173,12 +172,12 @@ ms.locfileid: "90901347"
 
 Microsoft Graph — это шлюз для данных и аналитики в Microsoft 365. Она предоставляет унифицированную модель программирования, которую можно использовать для доступа к огромному объему данных в Microsoft 365, Windows 10 и Enterprise Mobility + Security. Используйте множество данных в Microsoft Graph для создания приложений для организаций и потребителей, взаимодействующих с миллионами пользователей.
 
-Схема и представление JSON для оповещений системы безопасности, отправляемых в MS Graph, доступны в [документации по Microsoft Graph](https://docs.microsoft.com/graph/api/resources/alert?view=graph-rest-1.0).
+Схема и представление JSON для оповещений системы безопасности, отправляемых в MS Graph, доступны в [документации по Microsoft Graph](https://docs.microsoft.com/graph/api/resources/alert?view=graph-rest-1.0&preserve-view=true).
 
 ---
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье описаны схемы, используемые средствами защиты от угроз центра безопасности Azure при отправке сведений об оповещениях системы безопасности.
 

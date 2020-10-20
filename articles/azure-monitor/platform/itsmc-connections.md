@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 05/12/2020
-ms.openlocfilehash: 9d037fa0faa1419e4cd1b600eea1b3b3eb0a29c0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b2b8bed9233073e629ee3bce2630fd373c87663b
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90058773"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92215881"
 ---
 # <a name="connect-itsm-productsservices-with-it-service-management-connector"></a>Подключение продуктов и служб ITSM с помощью соединителя управления ИТ-службами
 В этой статье описывается, как настроить в Log Analytics связь между продуктами или службами ITSM и соединителем управления ИТ-службами (ITSM), чтобы централизованно управлять рабочими элементами ITSM. Дополнительные сведения об ITSMC см. в [этом обзоре](./itsmc-overview.md).
@@ -44,7 +44,8 @@ ms.locfileid: "90058773"
 
 > [!NOTE]
 > 
-> Соединитель ITSM позволяет подключаться только к облачным экземплярам ServiceNow. Локальные экземпляры ServiceNow сейчас не поддерживаются.
+> - Соединитель ITSM позволяет подключаться только к облачным экземплярам ServiceNow. Локальные экземпляры ServiceNow сейчас не поддерживаются.
+> - Чтобы использовать пользовательские шаблоны в составе действий, параметр "Прожектионтипе" в SCSM должен быть сопоставлен с "IncidentManagement! System. WorkItem. инцидент. Прожектионтипе "
 
 ### <a name="connection-procedure"></a>Процедура подключения
 

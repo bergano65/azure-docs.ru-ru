@@ -13,12 +13,12 @@ author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: anandsub
-ms.openlocfilehash: 4df4f7e1db880a38f647e8e384cbfb29b70954ec
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e9647de255b749e064b94f57c9067aaff7dc3cb7
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86187257"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92219468"
 ---
 # <a name="how-to-start-and-stop-azure-ssis-integration-runtime-on-a-schedule"></a>Запуск и остановка Azure-SSIS Integration Runtime по расписанию
 
@@ -30,7 +30,7 @@ ms.locfileid: "86187257"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 Если среда Azure-SSIS IR еще не подготовлена, выполните подготовку по указаниям из [этого руководства](tutorial-create-azure-ssis-runtime-portal.md). 
 
 ## <a name="create-and-schedule-adf-pipelines-that-start-and-or-stop-azure-ssis-ir"></a>Создание и планирование конвейеров ADF для запуска и остановки Azure-SSIS IR
@@ -149,7 +149,7 @@ ms.locfileid: "86187257"
 
 1. На панели инструментов для конвейера выберите **Триггер** и **New/Edit** (Создать или изменить). 
 
-   !["Триггер" > "Создать/изменить"](./media/how-to-schedule-azure-ssis-integration-runtime/trigger-new-menu.png)
+   ![Снимок экрана, посвященный пункту меню триггера-> создать/изменить.](./media/how-to-schedule-azure-ssis-integration-runtime/trigger-new-menu.png)
 
 2. На панели **Add Triggers** (Добавить триггеры) выберите **+ Создать**.
 
@@ -220,7 +220,7 @@ ms.locfileid: "86187257"
 2. Войдите на [портал Azure](https://portal.azure.com/).    
 3. В меню слева выберите **Создать**, **Мониторинг и управление** и **Служба автоматизации**. 
 
-   ![Создать -> Мониторинг и управление -> Служба автоматизации](./media/how-to-schedule-azure-ssis-integration-runtime/new-automation.png)
+   ![Снимок экрана, посвященный параметру автоматизации Мониторинг и управление >.](./media/how-to-schedule-azure-ssis-integration-runtime/new-automation.png)
     
 2. На панели **Добавление учетной записи службы автоматизации** выполните следующие действия:
 
@@ -262,7 +262,7 @@ ms.locfileid: "86187257"
 
 1. Перейдите на вкладку **Модули Runbook** и выберите **+ Добавить Runbook** на панели инструментов. 
 
-   ![Кнопка добавления модуля runbook](./media/how-to-schedule-azure-ssis-integration-runtime/runbooks-window.png)
+   ![Снимок экрана, на котором выделяется кнопка + Добавить Runbook.](./media/how-to-schedule-azure-ssis-integration-runtime/runbooks-window.png)
    
 2. Выберите **Создать новый Runbook** и сделайте следующее: 
 
@@ -345,7 +345,7 @@ ms.locfileid: "86187257"
    
 6. В окне "Задание" выберите плитку **Вывод**. Дождитесь, пока в окне вывода появится сообщение **### Completed ###** (Завершено) после сообщения **### Starting ###** (Запуск). Запуск Azure-SSIS IR занимает приблизительно 20 минут. Закройте окно **Задание** и вернитесь к окну **Runbook**.
 
-   ![IR Azure SSIS запущена](./media/how-to-schedule-azure-ssis-integration-runtime/start-completed.png)
+   ![Снимок экрана, на котором выделена плитка вывода.](./media/how-to-schedule-azure-ssis-integration-runtime/start-completed.png)
     
 7. Повторите предыдущие два шага с действием **STOP** в качестве значения параметра **OPERATION**. Еще раз протестируйте runbook, нажав кнопку **Запуск** на панели инструментов. Введите имена группы ресурсов,ADF и Azure-SSIS IR. Для параметра **OPERATION** введите **STOP**. Дождитесь, пока в окне вывода появится сообщение **### Completed ###** (Завершено) после сообщения **### Stopping ###** (Остановка). Остановка Azure-SSIS IR занимает меньше времени, чем ее запуск. Закройте окно **Задание** и вернитесь к окну **Runbook**.
 
@@ -373,7 +373,7 @@ ms.locfileid: "86187257"
     
 3. Переключитесь на вкладку Параметры **и параметры запуска** . Укажите имя группы ресурсов, ADF и Azure-SSIS IR. Для параметра **OPERATION** введите **START**, затем щелкните **OK**. Снова щелкните **ОК**, чтобы просмотреть расписание на странице **Расписания** для runbook. 
 
-   ![Расписание для запуска IR Azure SSIS](./media/how-to-schedule-azure-ssis-integration-runtime/start-schedule.png)
+   ![Снимок экрана, на котором выделено поле "операция".](./media/how-to-schedule-azure-ssis-integration-runtime/start-schedule.png)
     
 4. Повторите предыдущие два шага, чтобы создать расписание с именем **Останавливать IR ежедневно**. Укажите время как минимум на 30 минут позже времени, указанного для расписания **Start IR daily** (Запускать IR ежедневно). Для параметра **OPERATION** введите значение **STOP**, затем щелкните **OK**. Снова щелкните **ОК**, чтобы просмотреть расписание на странице **Расписания** для runbook. 
 

@@ -1,18 +1,16 @@
 ---
 title: Использование средств Azure Data Lake для Visual Studio Code
 description: Узнайте, как с помощью средств Azure Data Lake для Visual Studio Code создавать, тестировать и выполнять скрипты U-SQL.
-services: data-lake-analytics
 ms.service: data-lake-analytics
 ms.reviewer: jasonh
-ms.assetid: dc9b21d8-c5f4-4f77-bcbc-eff458f48de2
 ms.topic: how-to
 ms.date: 02/09/2018
-ms.openlocfilehash: b554869864ff71fb31b6c4e2b891fd42c4a380b1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e7da5454581e0e414dc832d4fcec50277f3b7f40
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87126488"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92221253"
 ---
 # <a name="use-azure-data-lake-tools-for-visual-studio-code"></a>Использование средств Azure Data Lake для Visual Studio Code
 
@@ -20,7 +18,7 @@ ms.locfileid: "87126488"
 
 [![Проигрыватель видео: средства Azure Data Lake для VS Code](media/data-lake-analytics-data-lake-tools-for-vscode/data-lake-tools-for-vscode-video.png)](https://channel9.msdn.com/Series/AzureDataLake/Azure-Data-Lake-Tools-for-VSCode?term=ADL%20Tools%20for%20VSCode")
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Средства Azure Data Lake для VS Code поддерживают Windows, Linux и MacOS.Локальные запуск и отладка U-SQL работают только в Windows.
 
@@ -146,7 +144,7 @@ ms.locfileid: "87126488"
 
 ## <a name="work-with-assemblies"></a>Работа со сборками
 
-Дополнительные сведения о разработке сборок см. в статье [Разработка сборок U-SQL для заданий Azure Data Lake Analytics](data-lake-analytics-u-sql-develop-assemblies.md).
+Дополнительные сведения о разработке сборок см. в статье [Разработка сборок U-SQL для заданий Azure Data Lake Analytics]().
 
 Средства Data Lake можно использовать для регистрации сборки пользовательского кода в каталоге Data Lake Analytics.
 
@@ -365,7 +363,7 @@ OUTPUT @d1
 
 Вы можете [отслеживать состояние отправки](#check-storage-tasks-status).
 
-### <a name="download-a-file"></a>скачать файл;
+### <a name="download-a-file"></a>Скачивание файла
 
 Скачать файл можно с помощью команды **ADL: Download File** или **ADL: Download File (Advanced)**.
 

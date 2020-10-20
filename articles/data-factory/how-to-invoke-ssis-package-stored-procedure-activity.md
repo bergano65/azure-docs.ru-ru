@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 07/09/2020
 ms.author: sawinark
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 05ec19fd2351b3a9ac1f383ce4747404eeead936
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b2bad99a836da7aab64e8cc0d454423fd56ffce1
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89067830"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92217802"
 ---
 # <a name="run-an-ssis-package-with-the-stored-procedure-activity-in-azure-data-factory"></a>Запуск в Фабрике данных Azure пакета SQL Server Integration Services с помощью действия хранимой процедуры
 
@@ -27,7 +27,7 @@ ms.locfileid: "89067830"
 
 В этой статье описывается, как запустить пакет SQL Server Integration Services (SSIS) в конвейере Фабрики данных Azure с помощью действия хранимой процедуры. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 ### <a name="azure-sql-database"></a>База данных SQL Azure 
 В этом руководстве для размещения каталога служб SSIS используется база данных SQL Azure. Вы также можете использовать Управляемый экземпляр Azure SQL.
@@ -95,10 +95,10 @@ ms.locfileid: "89067830"
     7. Проверьте подключение к базе данных, нажав кнопку **Проверить соединение**.
     8. Сохраните связанную службу, нажав кнопку **Сохранить**. 
 
-        ![Связанная служба "База данных SQL Azure"](./media/how-to-invoke-ssis-package-stored-procedure-activity/azure-sql-database-linked-service-settings.png)
+        ![Снимок экрана, на котором показан процесс добавления новой связанной службы.](./media/how-to-invoke-ssis-package-stored-procedure-activity/azure-sql-database-linked-service-settings.png)
 5. В окне Свойства перейдите на вкладку **хранимая процедура** на вкладке **учетная запись SQL** и выполните следующие действия. 
 
-    1. Выберите команду **Изменить**. 
+    1. Нажмите кнопку **Изменить**. 
     2. В поле **имя хранимой процедуры** введите `sp_executesql` . 
     3. Нажмите кнопку **+ Создать** в разделе **Параметры хранимой процедуры**. 
     4. В поле для **имени** параметра введите **stmt**. 

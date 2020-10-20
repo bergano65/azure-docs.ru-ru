@@ -10,12 +10,12 @@ ms.custom: mvc
 ms.topic: how-to
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: 438d2fec9efc6a1ad3fcdaa2829573e7205820ff
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5473730484240f2c813c9ae279e1516ed93a45c5
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85385966"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92214963"
 ---
 # <a name="add-a-web-api-application-to-your-azure-active-directory-b2c-tenant"></a>Добавление веб-API приложения в клиент Azure Active Directory B2C
 
@@ -34,7 +34,7 @@ ms.locfileid: "85385966"
 1. Выберите **Зарегистрировать**.
 1. Запишите **идентификатор приложения (клиента)** для использования в коде веб-API.
 
-Если у вас есть приложение, которое реализует неявный поток предоставления, например одностраничное приложение на основе JavaScript (SPA), можно включить поток, выполнив следующие действия.
+Если у вас есть приложение, которое реализует неявный поток предоставления, например [одностраничное приложение на основе JavaScript (SPA)](tutorial-register-spa.md), можно включить поток, выполнив следующие действия.
 
 1. В разделе **Управление** выберите **Проверка подлинности**.
 1. В разделе **Неявное предоставление разрешения** установите флажки **Маркеры доступа** и **Токен идентификатора**.

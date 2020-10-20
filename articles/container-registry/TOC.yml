@@ -120,6 +120,7 @@
                   href: container-registry-repository-scoped-permissions.md
             - name: Управление доступом на основе ролей в Azure
               href: container-registry-roles.md
+              displayName: 'permissions, authorization'
             - name: Доверие к содержимому
               href: container-registry-content-trust.md
             - name: Проверка образов с помощью Центра безопасности

@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 01/23/2020
-ms.openlocfilehash: 86367f1dce3cc8040555827935e9ca2f9f9fb4c5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e9d6bbdf325c0da96b81c1f2146da284ea744def
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86045405"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92218261"
 ---
 # <a name="debug-azure-stream-analytics-queries-locally-using-job-diagram-in-visual-studio"></a>Отладка запросов Azure Stream Analytics локально с помощью схемы заданий в Visual Studio
 
@@ -87,7 +87,7 @@ ms.locfileid: "86045405"
   
 #### <a name="output-sinks-live-output"></a>Приемники выходных данных (выходные данные в реальном времени)
 
-![Схема заданий. локальные приемники выходных данных](./media/debug-locally-using-job-diagram/live-output.png)
+![Схема задания, в которой отображаются локальные приемники выходных данных.](./media/debug-locally-using-job-diagram/live-output.png)
 
 |Метрика|Описание|
 |-|-|

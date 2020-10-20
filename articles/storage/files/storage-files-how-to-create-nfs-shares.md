@@ -8,12 +8,12 @@ ms.date: 09/15/2020
 ms.author: rogarana
 ms.subservice: files
 ms.custom: references_regions
-ms.openlocfilehash: 2a848cb77336fc89172d55a6204d66b9e5be5976
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d5b394833dbc920612f521b01f4da88af6c3e015
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90705237"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92220753"
 ---
 # <a name="how-to-create-an-nfs-share"></a>Создание общей папки NFS
 
@@ -58,8 +58,8 @@ Register-AzResourceProvider -ProviderNamespace Microsoft.Storage
 
 ```azurecli
 az login
-az feature register --name AllowNfsFileShares
-                    --namespace Microsoft.Storage
+az feature register --name AllowNfsFileShares \
+                    --namespace Microsoft.Storage \
                     --subscription <yourSubscriptionIDHere>
 az provider register --namespace Microsoft.Storage
 ```
@@ -160,7 +160,7 @@ az storage share-rm create \
 ```
 ---
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы создали общий ресурс NFS, для его использования необходимо подключить его к клиенту Linux. Дополнительные сведения см. [в разделе Подключение общего ресурса NFS](storage-files-how-to-mount-nfs-shares.md).
 
