@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 02/04/2020
 ms.topic: how-to
-ms.openlocfilehash: 5c638b434ceb31b57689b11971f48eb322b94726
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 341d24e73c9e07bb3155535d98a88145643c1692
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87985620"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92201789"
 ---
 # <a name="use-the-model-conversion-rest-api"></a>Использование REST API преобразования модели
 
@@ -54,7 +54,7 @@ ms.locfileid: "87985620"
 #### <a name="request-body"></a>Тело запроса
 
 > [!NOTE]
-> Все, что находится в разделе `input.folderPath` , будет извлечено для выполнения преобразования в Azure. Если `input.folderPath` параметр не указан, будет получено содержимое контейнера целиком. Все получаемые BLOB-объекты и папки должны иметь [Допустимые имена файлов Windows](https://docs.microsoft.com/windows/win32/fileio/naming-a-file#naming-conventions).
+> Все, что находится в разделе `input.folderPath` , будет извлечено для выполнения преобразования в Azure. Если `input.folderPath` параметр не указан, будет получено содержимое контейнера целиком. Все получаемые BLOB-объекты и папки должны иметь [Допустимые имена файлов Windows](/windows/win32/fileio/naming-a-file#naming-conventions).
 
 ```json
 {
@@ -91,7 +91,7 @@ ms.locfileid: "87985620"
 > Эти маркеры URI SAS являются строками запросов, а не полным URI. 
 
 > [!NOTE]
-> Все, что находится в разделе `input.folderPath` , будет извлечено для выполнения преобразования в Azure. Если `input.folderPath` параметр не указан, будет получено содержимое контейнера целиком. Все получаемые BLOB-объекты и папки должны иметь [Допустимые имена файлов Windows](https://docs.microsoft.com/windows/win32/fileio/naming-a-file#naming-conventions).
+> Все, что находится в разделе `input.folderPath` , будет извлечено для выполнения преобразования в Azure. Если `input.folderPath` параметр не указан, будет получено содержимое контейнера целиком. Все получаемые BLOB-объекты и папки должны иметь [Допустимые имена файлов Windows](/windows/win32/fileio/naming-a-file#naming-conventions).
 
 ```json
 {
@@ -131,7 +131,7 @@ ms.locfileid: "87985620"
 
 Если состояние имеет значение "сбой", появится дополнительное поле "ошибка" с вложенным полем "сообщение", содержащим сведения об ошибке. Дополнительные журналы будут отправлены в контейнер выходных данных.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Использование хранилища BLOB-объектов Azure для преобразования модели](blob-storage.md)
 - [Преобразование модели](model-conversion.md)

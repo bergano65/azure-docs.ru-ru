@@ -10,12 +10,12 @@ ms.date: 12/11/2019
 ms.topic: conceptual
 ms.service: azure-remote-rendering
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 332213adf64e17c0935ddf612acac5bbca413a87
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 853c71ed4803f717188568ec051c40c4f73afe95
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91802299"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92202877"
 ---
 # <a name="graphics-binding"></a>Графическая привязка
 
@@ -248,16 +248,16 @@ else
 
 ## <a name="api-documentation"></a>Документирование API
 
-* [C# Ремотеманажерстатик. Стартупремотерендеринг ()](https://docs.microsoft.com/dotnet/api/microsoft.azure.remoterendering.remotemanagerstatic.startupremoterendering)
-* [Класс C# Графиксбиндинг](https://docs.microsoft.com/dotnet/api/microsoft.azure.remoterendering.graphicsbinding)
-* [Класс C# GraphicsBindingWmrD3d11](https://docs.microsoft.com/dotnet/api/microsoft.azure.remoterendering.graphicsbindingwmrd3d11)
-* [Класс C# GraphicsBindingSimD3d11](https://docs.microsoft.com/dotnet/api/microsoft.azure.remoterendering.graphicsbindingsimd3d11)
-* [Структура C++ Ремотерендерингинитиализатион](https://docs.microsoft.com/cpp/api/remote-rendering/remoterenderinginitialization)
-* [Класс C++ Графиксбиндинг](https://docs.microsoft.com/cpp/api/remote-rendering/graphicsbinding)
-* [Класс C++ GraphicsBindingWmrD3d11](https://docs.microsoft.com/cpp/api/remote-rendering/graphicsbindingwmrd3d11)
-* [Класс C++ GraphicsBindingSimD3d11](https://docs.microsoft.com/cpp/api/remote-rendering/graphicsbindingsimd3d11)
+* [C# Ремотеманажерстатик. Стартупремотерендеринг ()](/dotnet/api/microsoft.azure.remoterendering.remotemanagerstatic.startupremoterendering)
+* [Класс C# Графиксбиндинг](/dotnet/api/microsoft.azure.remoterendering.graphicsbinding)
+* [Класс C# GraphicsBindingWmrD3d11](/dotnet/api/microsoft.azure.remoterendering.graphicsbindingwmrd3d11)
+* [Класс C# GraphicsBindingSimD3d11](/dotnet/api/microsoft.azure.remoterendering.graphicsbindingsimd3d11)
+* [Структура C++ Ремотерендерингинитиализатион](/cpp/api/remote-rendering/remoterenderinginitialization)
+* [Класс C++ Графиксбиндинг](/cpp/api/remote-rendering/graphicsbinding)
+* [Класс C++ GraphicsBindingWmrD3d11](/cpp/api/remote-rendering/graphicsbindingwmrd3d11)
+* [Класс C++ GraphicsBindingSimD3d11](/cpp/api/remote-rendering/graphicsbindingsimd3d11)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Камера](../overview/features/camera.md)
 * [Перепроецирование на позднем этапе](../overview/features/late-stage-reprojection.md)

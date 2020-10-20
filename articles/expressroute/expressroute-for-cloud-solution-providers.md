@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 10/10/2016
 ms.author: duau
 ms.custom: seodec18
-ms.openlocfilehash: 18ee64e6866764e250cfa08a1d4721674bb66e5a
-ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
+ms.openlocfilehash: 31660d13fe69d393a19167eaea8a69bfb6260467
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92097343"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92202078"
 ---
 # <a name="expressroute-for-cloud-solution-providers-csp"></a>ExpressRoute для поставщиков облачных решений (CSP)
 Корпорация Майкрософт предоставляет традиционным торговым посредникам и распространителям (CSP) гипермасштабируемые службы, с помощью которых вы сможете быстро подготавливать к работе новые службы и решения для своих клиентов, не вкладывая средства в их разработку. Чтобы разрешить CSP управлять новыми службами напрямую, корпорация Майкрософт предоставляет программы и API, позволяющие CSP управлять ресурсами Microsoft Azure от имени клиентов. Один из этих ресурсов — ExpressRoute. Благодаря ExpressRoute CSP может подключать существующие ресурсы клиента к службам Azure. ExpressRoute — это высокоскоростной частный канал связи со службами в Azure. 
@@ -28,7 +28,7 @@ ExpressRoute состоит из пары каналов для обеспече
 Microsoft Azure предоставляет все больше служб, которые можно предложить клиентам. ExpressRoute помогает вам и вашим клиентам воспользоваться преимуществами этих служб, обеспечивая высокоскоростной доступ к Microsoft Azure среде с низкой задержкой.
 
 ## <a name="microsoft-azure-management"></a>Управление Microsoft Azure
-Корпорация Майкрософт предоставляет CSP с интерфейсами API для управления подписками клиентов Azure, предоставляя программную интеграцию с собственными системами управления службами. Сведения о поддерживаемых возможностях управления см. [здесь](https://msdn.microsoft.com/library/partnercenter/dn974944.aspx).
+Корпорация Майкрософт предоставляет CSP с интерфейсами API для управления подписками клиентов Azure, предоставляя программную интеграцию с собственными системами управления службами. Сведения о поддерживаемых возможностях управления см. [здесь](/previous-versions/windows/mt844538(v=win.10)).
 
 ## <a name="microsoft-azure-resource-management"></a>Управление ресурсами Microsoft Azure
 Управление подпиской зависит от условий контракта с клиентом. CSP может напрямую управлять созданием и обслуживанием ресурсов или клиент может контролировать подписки Microsoft Azure и при необходимости создавать ресурсы Azure. Если клиент управляет созданием ресурсов в своей Microsoft Azure подписке, они будут использовать одну из двух моделей: "*подключение через*" или "*прямое*" моделирование. Эти модели подробно описаны в следующих разделах.  
@@ -129,6 +129,6 @@ ExpressRoute подключается к сети Azure через шлюз ви
 
 Дополнительные сведения см. по ссылкам ниже:
 
-[Azure в программе поставщиков облачных решений](https://docs.microsoft.com/azure/cloud-solution-provider)  
+[Azure в программе поставщиков облачных решений](/azure/cloud-solution-provider)  
 [Готовность к модели Cloud Solution Provider](https://partner.microsoft.com/solutions/cloud-reseller-pre-launch)  
 [Ресурсы по программе Microsoft Cloud Solution Provider](https://partner.microsoft.com/solutions/cloud-reseller-resources)

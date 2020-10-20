@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 09/02/2020
-ms.openlocfilehash: 8ca6794024d3a6327b918eb1c369a627837e0bd0
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
+ms.openlocfilehash: ec7b776f7d573ea07f010eeab81d98222102be41
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92131026"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92202010"
 ---
 # <a name="overview-of-azure-monitor-agents"></a>Общие сведения об агентах Azure Monitor
 
@@ -36,8 +36,8 @@ ms.locfileid: "92131026"
 |:---|:---|:---|:---|:---|
 | **Поддерживаемые среды** | Azure | Azure | Azure<br>Другое облако<br>В локальной среде | Azure<br>Другое облако<br>В локальной среде | 
 | **Требования к агентам**  | None | None | None | Требуется агент Log Analytics |
-| **Собираемые данные** | журналы событий;<br>Производительность | журналы событий;<br>ETW-события<br>Производительность<br>Файловые журналы<br>Журналы IIS<br>Журналы приложений .NET<br>Аварийные дампы<br>Журналы диагностики агента | журналы событий;<br>Производительность<br>Файловые журналы<br>Журналы IIS<br>Полезные сведения и решения<br>другие службы. | зависимости процессов.<br>Метрики сетевого подключения |
-| **Отправленные данные** | Журналы Azure Monitor<br>Метрики Azure Monitor | Хранилище Azure<br>Метрики Azure Monitor<br>Концентратор событий | Журналы Azure Monitor | Журналы Azure Monitor<br>(с помощью агента Log Analytics) |
+| **Собираемые данные** | журналы событий;<br>Производительность | журналы событий;<br>ETW-события<br>Производительность<br>Файловые журналы<br>Журналы IIS<br>Журналы приложений .NET<br>Аварийные дампы<br>Журналы диагностики агента | журналы событий;<br>Производительность<br>Файловые журналы<br>Журналы IIS<br>Полезные сведения и решения<br>Другие службы | зависимости процессов.<br>Метрики сетевого подключения |
+| **Отправленные данные** | Журналы Azure Monitor<br>Метрики Azure Monitor | Служба хранилища Azure<br>Метрики Azure Monitor<br>Концентратор событий | Журналы Azure Monitor | Журналы Azure Monitor<br>(с помощью агента Log Analytics) |
 | **Службы и**<br>**особенностей**<br>**поддерживается** | Log Analytics<br>Обозреватель метрик | Обозреватель метрик | Azure Monitor для виртуальных машин<br>Log Analytics<br>Служба автоматизации Azure<br>Центр безопасности Azure<br>Azure Sentinel | Azure Monitor для виртуальных машин<br>Сопоставление служб |
 
 ### <a name="linux-agents"></a>Агенты Linux
@@ -47,7 +47,7 @@ ms.locfileid: "92131026"
 | **Поддерживаемые среды** | Azure | Azure | Azure<br>Другое облако<br>В локальной среде | Azure<br>Другое облако<br>В локальной среде | Azure<br>Другое облако<br>В локальной среде |
 | **Требования к агентам**  | None | None | None | None | Требуется агент Log Analytics |
 | **Собираемые данные** | Системный журнал<br>Производительность | Системный журнал<br>Производительность | Производительность | Системный журнал<br>Производительность| зависимости процессов.<br>Метрики сетевого подключения |
-| **Отправленные данные** | Журналы Azure Monitor<br>Метрики Azure Monitor | Хранилище Azure<br>Концентратор событий | Метрики Azure Monitor | Журналы Azure Monitor | Журналы Azure Monitor<br>(с помощью агента Log Analytics) |
+| **Отправленные данные** | Журналы Azure Monitor<br>Метрики Azure Monitor | Служба хранилища Azure<br>Концентратор событий | Метрики Azure Monitor | Журналы Azure Monitor | Журналы Azure Monitor<br>(с помощью агента Log Analytics) |
 | **Службы и**<br>**особенностей**<br>**поддерживается** | Log Analytics<br>Обозреватель метрик | | Обозреватель метрик | Azure Monitor для виртуальных машин<br>Log Analytics<br>Служба автоматизации Azure<br>Центр безопасности Azure<br>Azure Sentinel | Azure Monitor для виртуальных машин<br>Сопоставление служб |
 
 
@@ -81,8 +81,8 @@ ms.locfileid: "92131026"
 * Собирайте журналы и данные о производительности виртуальных или физических компьютеров внутри или за пределами Azure. 
 * Отправляйте данные в рабочую область Log Analytics, чтобы воспользоваться преимуществами функций, поддерживаемых [Azure Monitor журналами](data-platform-logs.md) , такими как [запросы журналов](../log-query/log-query-overview.md).
 * Используйте [Azure Monitor для виртуальных машин](../insights/vminsights-overview.md) , которая позволяет отслеживать масштаб виртуальных машин и отслеживает их процессы и зависимости от других ресурсов и внешних процессов.  
-* Управляйте безопасностью виртуальных машин с помощью [центра безопасности Azure](../../security-center/security-center-introduction.md)  или [Sentinel Azure](../../sentinel/overview.md).
-* Использование [управления обновлениями службы автоматизации](../../automation/update-management/update-mgmt-overview.md)Azure, [настройки состояния службы автоматизации](../../automation/automation-dsc-overview.md)Azure или [Отслеживание изменений и инвентаризации Azure Automation](../../automation/change-tracking.md) для предоставления комплексного управления виртуальными машинами Azure
+* Управляйте безопасностью виртуальных машин с помощью [центра безопасности Azure](../../security-center/security-center-intro.md)  или [Sentinel Azure](../../sentinel/overview.md).
+* Использование [управления обновлениями службы автоматизации](../../automation/update-management/update-mgmt-overview.md)Azure, [настройки состояния службы автоматизации](../../automation/automation-dsc-overview.md)Azure или [Отслеживание изменений и инвентаризации Azure Automation](../../automation/change-tracking/overview.md) для предоставления комплексного управления виртуальными машинами Azure
 * Используйте различные [решения](../monitor-reference.md#insights-and-core-solutions) для мониторинга определенной службы или приложения.
 
 К ограничениям агента Log Analytics относятся:

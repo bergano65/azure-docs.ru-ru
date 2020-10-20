@@ -5,12 +5,12 @@ author: jakrams
 ms.author: jakras
 ms.date: 02/11/2020
 ms.topic: article
-ms.openlocfilehash: ad7fc7d9d02cd9a9a6fe74534a7c674fe0ac778d
-ms.sourcegitcommit: b437bd3b9c9802ec6430d9f078c372c2a411f11f
+ms.openlocfilehash: 76e7b3d0b0dd514feb7d16a6bc23d1b908be683f
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91893260"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92207212"
 ---
 # <a name="pbr-materials"></a>Материалы PBR
 
@@ -85,12 +85,12 @@ PBR означает **P**хисикалли **B**АСЕД **R**ендеринг
 
 ## <a name="api-documentation"></a>Документирование API
 
-* [Класс C# Пбрматериал](https://docs.microsoft.com/dotnet/api/microsoft.azure.remoterendering.pbrmaterial)
-* [C# Ремотеманажер. Креатематериал ()](https://docs.microsoft.com/dotnet/api/microsoft.azure.remoterendering.remotemanager.creatematerial)
-* [Класс C++ Пбрматериал](https://docs.microsoft.com/cpp/api/remote-rendering/pbrmaterial)
-* [C++ Ремотеманажер:: Креатематериал ()](https://docs.microsoft.com/cpp/api/remote-rendering/remotemanager#creatematerial)
+* [Класс C# Пбрматериал](/dotnet/api/microsoft.azure.remoterendering.pbrmaterial)
+* [C# Ремотеманажер. Креатематериал ()](/dotnet/api/microsoft.azure.remoterendering.remotemanager.creatematerial)
+* [Класс C++ Пбрматериал](/cpp/api/remote-rendering/pbrmaterial)
+* [C++ Ремотеманажер:: Креатематериал ()](/cpp/api/remote-rendering/remotemanager#creatematerial)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Цветовые материалы](color-materials.md)
 * [Текстуры](../../concepts/textures.md)

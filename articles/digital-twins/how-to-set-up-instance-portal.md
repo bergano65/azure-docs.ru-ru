@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 7/23/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: c67add18dc653cc033d0cf4990f9c44f07633ac2
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: e874e7107af0eac60f16f5494c04905da56f785a
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92047409"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92205506"
 ---
 # <a name="set-up-an-azure-digital-twins-instance-and-authentication-portal"></a>Настройка экземпляра и проверки подлинности Azure Digital двойников (портал)
 
@@ -24,7 +24,8 @@ ms.locfileid: "92047409"
 * Чтобы выполнить эти действия вручную с помощью интерфейса командной строки, см. версию CLI этой статьи: [*инструкции по настройке экземпляра и проверки подлинности (CLI)*](how-to-set-up-instance-cli.md).
 * Чтобы выполнить автоматическую установку с помощью примера скрипта развертывания, см. статью [*как настроить экземпляр и проверку подлинности (в скрипте)*](how-to-set-up-instance-scripted.md).
 
-[!INCLUDE [digital-twins-setup-steps-prereq.md](../../includes/digital-twins-setup-steps-prereq.md)]
+[!INCLUDE [digital-twins-setup-steps.md](../../includes/digital-twins-setup-steps.md)]
+[!INCLUDE [digital-twins-setup-permissions.md](../../includes/digital-twins-setup-permissions.md)]
 
 ## <a name="create-the-azure-digital-twins-instance"></a>Создание экземпляра Digital двойников для Azure
 
@@ -94,72 +95,7 @@ ms.locfileid: "92047409"
 
 :::image type="content" source="media/how-to-set-up-instance/portal/verify-role-assignment.png" alt-text="Выбор пункта &quot;создать ресурс&quot; на домашней странице портал Azure":::
 
-Теперь у вас есть экземпляр Azure Digital двойников, который готов к работе и ему назначены разрешения для управления им. Далее предстоит настроить разрешения для клиентского приложения на доступ к нему.
-
-## <a name="set-up-access-permissions-for-client-applications"></a>Настройка разрешений доступа для клиентских приложений
-
-[!INCLUDE [digital-twins-setup-app-registration.md](../../includes/digital-twins-setup-app-registration.md)]
-
-Начните с перехода к [Azure Active Directory](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview) в портал Azure (вы можете использовать эту ссылку или найти ее с помощью панели поиска портала). Выберите *Регистрация приложений* в меню служба, а затем *+ Новая регистрация*.
-
-:::image type="content" source="media/how-to-set-up-instance/portal/new-registration.png" alt-text="Выбор пункта &quot;создать ресурс&quot; на домашней странице портал Azure":::
-
-На следующей странице *Регистрация приложения* Введите запрошенные значения:
-* **Имя**: отображаемое имя приложения Azure AD, связываемое с регистрацией.
-* **Поддерживаемые типы учетных записей**: выберите *учетные записи только в этом каталоге организации (только каталог по умолчанию — один клиент)* .
-* **URI перенаправления**: *URL-адрес ответа приложения Azure AD* для приложения Azure AD. Добавьте *общедоступный клиент/собственный (мобильный & Desktop)* URI для `http://localhost` .
-
-По завершении нажмите кнопку Register ( *зарегистрировать* ).
-
-:::image type="content" source="media/how-to-set-up-instance/portal/register-an-application.png" alt-text="Выбор пункта &quot;создать ресурс&quot; на домашней странице портал Azure":::
-
-После завершения настройки регистрации портал перенаправит вас на страницу сведений о ней.
-
-### <a name="provide-azure-digital-twins-api-permission"></a>Предоставление разрешения API цифровых двойников Azure
-
-Затем настройте регистрацию приложения, созданную с базовыми разрешениями для API-интерфейсов Azure Digital двойников.
-
-На странице портала для регистрации приложения в меню выберите *разрешения API* . На следующей странице разрешения нажмите кнопку *+ Добавить разрешение* .
-
-:::image type="content" source="media/how-to-set-up-instance/portal/add-permission.png" alt-text="Выбор пункта &quot;создать ресурс&quot; на домашней странице портал Azure":::
-
-На следующей странице *разрешений API запроса* перейдите к *API-интерфейсам, используемым моей организацией* , и выполните поиск по запросу *Azure Digital двойников*. Выберите _**Azure Digital двойников**_ из результатов поиска, чтобы продолжить назначение разрешений для API-интерфейсов цифровой двойников Azure.
-
-:::image type="content" source="media/how-to-set-up-instance/portal/request-api-permissions-1.png" alt-text="Выбор пункта &quot;создать ресурс&quot; на домашней странице портал Azure":::
-
->[!NOTE]
-> Если у вашей подписки по-прежнему есть существующий экземпляр Azure Digital двойников из предыдущего общедоступного предварительной версии службы (до июля 2020), вам потребуется найти и выбрать _**службу "интеллектуальные модули Azure**_ ". Это старое имя для того же набора API-интерфейсов (Обратите внимание, что *идентификатор приложения (клиента)* аналогичен показанному на снимке экрана выше), и ваш опыт не будет изменяться после этого шага.
-> :::image type="content" source="media/how-to-set-up-instance/portal/request-api-permissions-1-smart-spaces.png" alt-text="Выбор пункта &quot;создать ресурс&quot; на домашней странице портал Azure":::
-
-Далее предстоит выбрать разрешения, которые будут предоставлены для этих API. Разверните разрешение **Чтение (1)** и установите флажок *чтение. запись* , чтобы предоставить этому приложению доступ для чтения и записи регистрации приложения.
-
-:::image type="content" source="media/how-to-set-up-instance/portal/request-api-permissions-2.png" alt-text="Выбор пункта &quot;создать ресурс&quot; на домашней странице портал Azure":::
-
-По завершении нажмите кнопку *Добавить разрешения* .
-
-### <a name="verify-success"></a>Проверка успешного выполнения
-
-Вернитесь на страницу *разрешения API* и убедитесь, что теперь есть запись для Azure Digital двойников, отражающая разрешения на чтение и запись:
-
-:::image type="content" source="media/how-to-set-up-instance/portal/verify-api-permissions.png" alt-text="Выбор пункта &quot;создать ресурс&quot; на домашней странице портал Azure":::
-
-Вы также можете проверить подключение к Azure Digital двойников в *manifest.js*регистрации приложения, которое автоматически обновлялось с помощью сведений о цифровой двойников Azure при добавлении разрешений API.
-
-Для этого в меню выберите *Манифест* , чтобы просмотреть код манифеста регистрации приложения. Прокрутите окно кода вниз и найдите эти поля в разделе `requiredResourceAccess` . Значения должны соответствовать приведенным на снимке экрана ниже:
-
-:::image type="content" source="media/how-to-set-up-instance/portal/verify-manifest.png" alt-text="Выбор пункта &quot;создать ресурс&quot; на домашней странице портал Azure":::
-
-### <a name="collect-important-values"></a>Получение важных значений
-
-Затем в строке меню выберите *Обзор* , чтобы просмотреть сведения о регистрации приложения:
-
-:::image type="content" source="media/how-to-set-up-instance/portal/app-important-values.png" alt-text="Выбор пункта &quot;создать ресурс&quot; на домашней странице портал Azure":::
-
-Запишите *идентификатор приложения (клиента)* и *идентификатор каталога (клиента)* , показанные на **странице.** Эти значения потребуются позже для [проверки подлинности клиентского приложения с помощью API цифровых двойников Azure](how-to-authenticate-client.md). Если вы не являетесь пользователем, который будет писать код для таких приложений, вы должны поделиться этими значениями с пользователем, который будет иметь значение.
-
-### <a name="other-possible-steps-for-your-organization"></a>Другие возможные действия для вашей организации
-
-[!INCLUDE [digital-twins-setup-additional-requirements.md](../../includes/digital-twins-setup-additional-requirements.md)]
+Теперь у вас есть экземпляр Azure Digital двойников, который готов к работе и ему назначены разрешения для управления им.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
@@ -167,5 +103,5 @@ ms.locfileid: "92047409"
 * [AZ DT Справочник](/cli/azure/ext/azure-iot/dt?preserve-view=true&view=azure-cli-latest)
 * [*Практическое руководство. Использование CLI для Azure Digital Twins*](how-to-use-cli.md)
 
-Или см. раздел как подключить клиентское приложение к экземпляру, написав код проверки подлинности клиентского приложения:
+Или см. раздел как подключить клиентское приложение к экземпляру с помощью кода проверки подлинности:
 * [*Пошаговое руководство. Написание кода проверки подлинности приложения*](how-to-authenticate-client.md)

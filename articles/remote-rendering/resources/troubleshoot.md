@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 02/25/2020
 ms.topic: troubleshooting
-ms.openlocfilehash: e8de33e7417ab6421792d341474c320a5f63423b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 50abfec19295f80fa79864fedb31eadd31dd4d69
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91803829"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92203676"
 ---
 # <a name="troubleshoot"></a>Диагностика
 
@@ -88,7 +88,7 @@ ms.locfileid: "91803829"
 
 ## <a name="video-recorded-with-mrc-does-not-reflect-the-quality-of-the-live-experience"></a>Видео, записанное в соответствии с помощью съемки смешанной реальности, не похоже на прямой эфир
 
-Видео можно записать в HoloLens с помощью [записи смешанной реальности (нормативная ситуация)](https://docs.microsoft.com/windows/mixed-reality/mixed-reality-capture-for-developers). Однако качество полученного видео хуже, чем прямой эфир:
+Видео можно записать в HoloLens с помощью [записи смешанной реальности (нормативная ситуация)](/windows/mixed-reality/mixed-reality-capture-for-developers). Однако качество полученного видео хуже, чем прямой эфир:
 * Частота видео ограничена 30 Гц, а не 60 Гц.
 * Видеоизображения не проходят этап обработки [репроецирования на поздних этапах](../overview/features/late-stage-reprojection.md), поэтому видео кажется более зернистым.
 

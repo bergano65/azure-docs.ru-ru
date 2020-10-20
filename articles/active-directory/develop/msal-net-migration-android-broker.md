@@ -12,18 +12,18 @@ ms.date: 08/31/2020
 ms.author: aiwang
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: 47902b29da1dfe20fb54d633a0559e6a337fd771
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 01af0e620ecb100839f7b1101e5ff9fcfc874eea
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89183694"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92206675"
 ---
 # <a name="migrate-android-applications-that-use-a-broker-from-adalnet-to-msalnet"></a>Перенос приложений Android, использующих брокер из ADAL.NET, в MSAL.NET
 
-Если у вас уже есть приложение Xamarin Android, использующее библиотеку проверки подлинности Azure Active Directory для .NET (ADAL.NET) и [брокер проверки подлинности](brokered-auth.md), то пора перейти на [библиотеку проверки подлинности Майкрософт для .NET ](msal-overview.md) (MSAL.NET).
+Если у вас уже есть приложение Xamarin Android, использующее библиотеку проверки подлинности Azure Active Directory для .NET (ADAL.NET) и [брокер проверки подлинности](msal-android-single-sign-on.md), то пора перейти на [библиотеку проверки подлинности Майкрософт для .NET ](msal-overview.md) (MSAL.NET).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Приложение Xamarin Android, уже интегрированное с брокером ([Microsoft Authenticator](https://play.google.com/store/apps/details?id=com.azure.authenticator) или [Корпоративный портал Intune](https://play.google.com/store/apps/details?id=com.microsoft.windowsintune.companyportal)) и ADAL.NET, которое необходимо перенести в MSAL.NET.
 
@@ -137,6 +137,6 @@ result = await app.AcquireTokenInteractive(scopes)
 ```
 </table>
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о вопросах, связанных с Android, при использовании MSAL.NET с Xamarin см. в [статье требования к конфигурации и советы по устранению неполадок для Xamarin Android с MSAL.NET](msal-net-xamarin-android-considerations.md).

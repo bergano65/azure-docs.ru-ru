@@ -5,16 +5,16 @@ author: christophermanthei
 ms.author: chmant
 ms.date: 03/23/2020
 ms.topic: how-to
-ms.openlocfilehash: 180af30f57a8123b6e90cc8b11848b92b3c86db1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bd69710b6e4404a76d3cca385b6c07ea7c1f3f5c
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91802180"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92201823"
 ---
 # <a name="use-holographic-remoting-and-remote-rendering-in-unity"></a>Использование голографического удаленного взаимодействия и Удаленной отрисовки в Unity
 
-[Holographic удаленного взаимодействия](https://docs.microsoft.com/windows/mixed-reality/holographic-remoting-player) и удаленная визуализация Azure являются взаимоисключающими в рамках одного приложения. Таким образом, [режим воспроизведения Unity](https://docs.microsoft.com/windows/mixed-reality/unity-play-mode) также недоступен.
+[Holographic удаленного взаимодействия](/windows/mixed-reality/holographic-remoting-player) и удаленная визуализация Azure являются взаимоисключающими в рамках одного приложения. Таким образом, [режим воспроизведения Unity](/windows/mixed-reality/unity-play-mode) также недоступен.
 
 Для каждого запуска редактора Unity можно использовать только одно из двух. Чтобы использовать другой, сначала перезапустите Unity.
 

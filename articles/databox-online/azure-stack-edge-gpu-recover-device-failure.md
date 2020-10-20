@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 10/06/2020
 ms.author: alkohli
-ms.openlocfilehash: ef99ff874376e0d76e45e4b0b2c36a78d938130b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 91efdac9d17e679226f10012bbff9b5b6676ff0e
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91844011"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92205584"
 ---
 # <a name="recover-from-a-failed-azure-stack-edge-pro-gpu-device"></a>Восстановление после неудачного Azure Stack устройства GPU с пограничным Pro 
 
@@ -62,7 +62,8 @@ ms.locfileid: "91844011"
 | Стороннее программное обеспечение           | Ссылка на решение                               |
 |--------------------------------|---------------------------------------------------------|
 | Cohesity                       | [https://www.cohesity.com/solution/cloud/azure/](https://www.cohesity.com/solution/cloud/azure/) <br> Для получения дополнительных сведений обратитесь к Cohesity.          |
-| Компанию                        | Для получения дополнительных сведений обратитесь в компанию Veritas.   |
+| Commvault                      | https://www.commvault.com/azure <br> Для получения дополнительных сведений обратитесь к Commvault. |
+| Компанию                        | http://veritas.com/azure <br> Для получения дополнительных сведений обратитесь в компанию Veritas.   |
 
 После полной настройки устройства замены включите его для локального хранилища. 
 
@@ -82,7 +83,8 @@ ms.locfileid: "91844011"
 |-------------------------|----------------|--------------------------------------------------------------------------|
 | Агент Службы восстановления Microsoft Azure (MARS) для Azure Backup | Windows        | [Сведения об агенте MARS](/azure/backup/backup-azure-about-mars)    |
 | Cohesity                | Windows, Linux | [Краткое описание решения Microsoft Azure интеграции, резервного копирования и восстановления](https://www.cohesity.com/solution/cloud/azure) <br>Для получения дополнительных сведений обратитесь к Cohesity.                          |
-| Компанию                 | Windows, Linux | Для получения дополнительных сведений обратитесь в компанию Veritas.                    |
+| Commvault               | Windows, Linux | https://www.commvault.com/azure <br> Для получения дополнительных сведений обратитесь к Commvault.
+| Компанию                 | Windows, Linux | http://veritas.com/azure <br> Для получения дополнительных сведений обратитесь в компанию Veritas.                    |
 
 После полной настройки устройства замены можно повторно развернуть виртуальные машины с использованием ранее использованного образа виртуальной машины. 
 
@@ -92,6 +94,6 @@ ms.locfileid: "91844011"
 1. Установите решение для защиты данных на виртуальной машине.
 1. Выполните процедуру восстановления, предоставленную решением "Защита данных" по выбору. См. ссылки из предыдущей таблицы.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как [вернуть устройство Pro Azure Stack](azure-stack-edge-return-device.md).
