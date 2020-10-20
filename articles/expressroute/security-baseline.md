@@ -7,24 +7,24 @@ ms.topic: conceptual
 ms.date: 06/22/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 69a47820d2afaf24f413aabf2c59a40c032070c1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 053a64f276a09cfd1e11d51743a557e7a238cbc2
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89231390"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92207909"
 ---
 # <a name="azure-security-baseline-for-expressroute"></a>Базовый план безопасности Azure для ExpressRoute
 
 Базовый план безопасности Azure для ExpressRoute содержит рекомендации, которые помогут повысить уровень безопасности развертывания.
 
-Базовый план безопасности для этой службы взят из [Эталона безопасности Azure версии 1.0](https://docs.microsoft.com/azure/security/benchmarks/overview), содержащего рекомендации по обеспечению безопасности облачных решений в Azure с помощью наших практических рекомендаций.
+Базовый план безопасности для этой службы взят из [Эталона безопасности Azure версии 1.0](../security/benchmarks/overview.md), содержащего рекомендации по обеспечению безопасности облачных решений в Azure с помощью наших практических рекомендаций.
 
-Дополнительные сведения см. в статье [Базовые показатели безопасности для Azure](https://docs.microsoft.com/azure/security/benchmarks/security-baselines-overview).
+Дополнительные сведения см. в статье [Базовые показатели безопасности для Azure](../security/benchmarks/security-baselines-overview.md).
 
 ## <a name="network-security"></a>Безопасность сети
 
-*Дополнительные сведения см. в статье [Управление безопасностью: безопасность сети](https://docs.microsoft.com/azure/security/benchmarks/security-control-network-security).*
+*Дополнительные сведения см. в статье [Управление безопасностью: безопасность сети](../security/benchmarks/security-control-network-security.md).*
 
 ### <a name="11-protect-azure-resources-within-virtual-networks"></a>1,1: защита ресурсов Azure в виртуальных сетях
 
@@ -38,7 +38,7 @@ ms.locfileid: "89231390"
 
 **Руководство**: неприменимо; При работе с подсетями шлюза следует избегать привязки группы безопасности сети (NSG) к подсети шлюза. Связывание группы безопасности сети с этой подсетью может привести к тому, что шлюз виртуальной сети (VPN, шлюз ExpressRoute) перестанет работать должным образом.
 
-* [Общие сведения о требованиях шлюза Azure ExpressRoute](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpn-gateway-settings#requirements)
+* [Общие сведения о требованиях шлюза Azure ExpressRoute](../vpn-gateway/vpn-gateway-about-vpn-gateway-settings.md#requirements)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -56,9 +56,9 @@ ms.locfileid: "89231390"
 
 **Руководство**: неприменимо; Которыми каждого клиента содержатся в собственных доменах маршрутизации и туннели в своей виртуальной сети. Хотя которыми изолированы, для дополнительной защиты других ресурсов, совместно использующих одну и ту же виртуальную сеть, вы можете включить стандарт защиты от атак DDoS, чтобы защититься от атак от атак DDoS.
 
-* [Общие сведения об элементах управления безопасностью для Azure ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-security-controls)
+* [Общие сведения об элементах управления безопасностью для Azure ExpressRoute](./expressroute-security-controls.md)
 
-* [Настройка защиты от атак DDoS](https://docs.microsoft.com/azure/virtual-network/manage-ddos-protection)
+* [Настройка защиты от атак DDoS](../virtual-network/manage-ddos-protection.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -76,7 +76,7 @@ ms.locfileid: "89231390"
 
 **Руководство**: неприменимо; Которыми каждого клиента содержатся в собственных доменах маршрутизации и туннели в своей виртуальной сети.
 
-* [Общие сведения об элементах управления безопасностью для Azure ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-security-controls)
+* [Общие сведения об элементах управления безопасностью для Azure ExpressRoute](./expressroute-security-controls.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -102,7 +102,7 @@ ms.locfileid: "89231390"
 
 **Руководство**. Определение и реализация стандартных конфигураций безопасности для Azure ExpressRoute с помощью политики Azure. Используйте псевдонимы политик Azure в пространстве имен Microsoft. Network, чтобы создать настраиваемые политики для аудита или принудительного применения сетевой конфигурации ExpressRoute.
 
-* [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+* [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -116,7 +116,7 @@ ms.locfileid: "89231390"
 
 Вы можете использовать Azure PowerShell или Azure CLI для поиска или выполнения действий с ресурсами на основе их тегов.
 
-* [Упорядочение ресурсов Azure с помощью тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+* [использование тегов для упорядочения ресурсов в Azure](../azure-resource-manager/management/tag-resources.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -126,11 +126,11 @@ ms.locfileid: "89231390"
 
 **Руководство**. Использование журнала действий Azure для мониторинга конфигураций сетевых ресурсов и обнаружения изменений сетевых ресурсов, связанных с подключениями ExpressRoute. Создавайте оповещения в Azure Monitor, которые будут запускаться при изменении критических ресурсов.
 
-* [Включение аудита в Azure Sentinel](https://docs.microsoft.com/azure/sentinel/resources)
+* [Включение аудита в Azure Sentinel](../sentinel/resources.md)
 
-* [Как просматривать и извлекать события журнала действий Azure](https://docs.microsoft.com/azure/azure-monitor/platform/activity-log-view)
+* [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/platform/activity-log.md#view-the-activity-log)
 
-* [Как создать оповещения в службе Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log)
+* [Как создать оповещения в службе Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -138,7 +138,7 @@ ms.locfileid: "89231390"
 
 ## <a name="logging-and-monitoring"></a>Ведение журналов и мониторинг
 
-*Дополнительные сведения см. в статье [Управление безопасностью: ведение журналов и мониторинг](https://docs.microsoft.com/azure/security/benchmarks/security-control-logging-monitoring).*
+*Дополнительные сведения см. в статье [Управление безопасностью: ведение журналов и мониторинг](../security/benchmarks/security-control-logging-monitoring.md).*
 
 ### <a name="21-use-approved-time-synchronization-sources"></a>2.1. Использование утвержденных источников синхронизации времени
 
@@ -152,7 +152,7 @@ ms.locfileid: "89231390"
 
 **Руководство**. Включите параметры диагностики журнала действий Azure и отправьте журналы в рабочую область Log Analytics, концентратор событий Azure или учетную запись хранения Azure для архивации. Журналы действий позволяют получить представление об операциях, выполненных в ресурсах Azure ExpressRoute на уровне плоскости управления. С помощью данных журнала действий Azure можно определить "что, кто и когда" для любых операций записи (размещение, публикация, удаление), выполненных на уровне плоскости управления для ресурсов ExpressRoute.
 
-* [Как включить параметры диагностики для журнала действий Azure](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings-legacy)
+* [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/platform/activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -162,7 +162,7 @@ ms.locfileid: "89231390"
 
 **Руководство**. Включите параметры диагностики журнала действий Azure и отправьте журналы в рабочую область Log Analytics, концентратор событий Azure или учетную запись хранения Azure для архивации. Журналы действий позволяют получить представление об операциях, выполненных в ресурсах Azure ExpressRoute на уровне плоскости управления. С помощью данных журнала действий Azure можно определить "что, кто и когда" для любых операций записи (размещение, публикация, удаление), выполненных на уровне плоскости управления для ресурсов ExpressRoute.
 
-* [Как включить параметры диагностики для журнала действий Azure](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings-legacy)
+* [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/platform/activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -180,7 +180,7 @@ ms.locfileid: "89231390"
 
 **Рекомендации**. в Azure Monitor задайте срок хранения журнала для log Analytics рабочих областей, связанных с ресурсами Azure ExpressRoute, в соответствии с нормативными требованиями Организации.
 
-* [Настройка параметров хранения журнала](https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period)
+* [Настройка параметров хранения журнала](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -190,9 +190,9 @@ ms.locfileid: "89231390"
 
 **Руководство**. Включение параметров диагностики журнала действий Azure и отправка журналов в рабочую область log Analytics. Выполнение запросов в Log Analytics для поиска терминов, выявления тенденций, анализа закономерностей и предоставления многих других аналитических сведений на основе данных журнала действий, которые могли быть собраны для Azure ExpressRoute.
 
-* [Как включить параметры диагностики для журнала действий Azure](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings-legacy)
+* [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/platform/activity-log.md)
 
-* [Получение и анализ журналов действий Azure в Log Analytics рабочей области в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/activity-log-collect)
+* [Получение и анализ журналов действий Azure в Log Analytics рабочей области в Azure Monitor](../azure-monitor/platform/activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -202,7 +202,7 @@ ms.locfileid: "89231390"
 
 **Руководство**. Вы можете настроить для получения оповещений на основе метрик и журналов действий, связанных с ресурсами Azure ExpressRoute. Azure Monitor позволяет настроить оповещение для отправки уведомлений по электронной почте, вызова веб-перехватчика или вызова приложения логики Azure.
 
-* [Общие сведения о мониторинге и оповещениях в ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-monitoring-metrics-alerts)
+* [Общие сведения о мониторинге и оповещениях в ExpressRoute](./expressroute-monitoring-metrics-alerts.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -234,7 +234,7 @@ ms.locfileid: "89231390"
 
 ## <a name="identity-and-access-control"></a>Идентификаторы и управление доступом
 
-*Дополнительные сведения см. в статье [Управление безопасностью: идентификаторы и управление доступом](https://docs.microsoft.com/azure/security/benchmarks/security-control-identity-access-control).*
+*Дополнительные сведения см. в статье [Управление безопасностью: идентификаторы и управление доступом](../security/benchmarks/security-control-identity-access-control.md).*
 
 ### <a name="31-maintain-an-inventory-of-administrative-accounts"></a>3.1. Инвентаризация учетных записей администраторов
 
@@ -244,9 +244,9 @@ ms.locfileid: "89231390"
 
 Кроме того, партнеры, использующие API партнера ExpressRoute диспетчер ресурсов, могут применить Role-Based управления доступом к ресурсу Експрессраутекроссконнектион. Эти элементы управления могут определять разрешения, для которых учетные записи пользователей могут изменять ресурс Експрессраутекроссконнектион, а также добавлять, обновлять и удалять конфигурации пиринга.
 
-* [Общие сведения об Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/overview)
+* [Общие сведения об Azure RBAC](../role-based-access-control/overview.md)
 
-* [Использование Azure RBAC в диспетчер ресурсов API для партнера ExpressRoute](https://docs.microsoft.com/azure/expressroute/cross-connections-api-development)
+* [Использование Azure RBAC в диспетчер ресурсов API для партнера ExpressRoute](./cross-connections-api-development.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -269,9 +269,9 @@ ms.locfileid: "89231390"
 - Устаревшие учетные записи с разрешениями владельца следует удалять из подписки.
 - Внешние учетные записи с разрешениями владельца следует удалять из подписки.
 
-* [Использование Центра безопасности Azure для мониторинга идентификации и доступа (предварительная версия)](https://docs.microsoft.com/azure/security-center/security-center-identity-access)
+* [Использование Центра безопасности Azure для мониторинга идентификации и доступа (предварительная версия)](../security-center/security-center-identity-access.md)
 
-* [Использование Политики Azure](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+* [Использование Политики Azure](../governance/policy/tutorials/create-and-manage.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -289,9 +289,9 @@ ms.locfileid: "89231390"
 
 **Руководство**. Включение многофакторной идентификации Azure Active Directory и соблюдение рекомендаций по управлению удостоверениями и доступом в центре безопасности Azure.
 
-* [Включение MFA в Azure](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted)
+* [Включение MFA в Azure](../active-directory/authentication/howto-mfa-getstarted.md)
 
-* [Мониторинг идентификации и доступа в Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-identity-access)
+* [Мониторинг идентификации и доступа в Центре безопасности Azure](../security-center/security-center-identity-access.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -301,9 +301,9 @@ ms.locfileid: "89231390"
 
 **Руководство**. Использование рабочей станции привилегированного доступа (привилегированным доступом) с поддержкой многофакторной идентификации Azure (MFA) для входа и настройки ресурсов, связанных с Sentinel Azure.
 
-* [Рабочие станции c привилегированным доступом](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/privileged-access-workstations)
+* [Рабочие станции c привилегированным доступом](/windows-server/identity/securing-privileged-access/privileged-access-workstations)
 
-* [Планирование развертывания облачной службы Многофакторной идентификации Azure](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted)
+* [Планирование развертывания облачной службы Многофакторной идентификации Azure](../active-directory/authentication/howto-mfa-getstarted.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -315,9 +315,9 @@ ms.locfileid: "89231390"
 
 Кроме того, используйте обнаружение рисков Azure AD для просмотра оповещений и отчетов об опасном поведении пользователя.
 
-* [Развертывание Privileged Identity Management (PIM)](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-deployment-plan)
+* [Развертывание Privileged Identity Management (PIM)](../active-directory/privileged-identity-management/pim-deployment-plan.md)
 
-* [Общие сведения об обнаружении рисков в Azure AD](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-risk-events)
+* [Общие сведения об обнаружении рисков в Azure AD](../active-directory/identity-protection/overview-identity-protection.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -327,7 +327,7 @@ ms.locfileid: "89231390"
 
 **Руководство**. Используйте именованные расположения с условным доступом, чтобы разрешить доступ к порталу Azure только из конкретных логических групп диапазонов IP-адресов или стран и регионов.
 
-* [Настройка именованных расположений в Azure](https://docs.microsoft.com/azure/active-directory/reports-monitoring/quickstart-configure-named-locations)
+* [Настройка именованных расположений в Azure](../active-directory/reports-monitoring/quickstart-configure-named-locations.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -337,7 +337,7 @@ ms.locfileid: "89231390"
 
 **Руководство**. Использование Azure Active Directory (AD) в качестве централизованной системы проверки подлинности и авторизации для экземпляров Sentinel Azure. Azure AD защищает данные с помощью надежного шифрования для хранимых и транзитных данных. Кроме того, в Azure AD используются salt-записи, хэши и безопасное хранение учетных данных пользователей.
 
-* [Создание и настройка экземпляра Azure AD](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-access-create-new-tenant)
+* [Создание и настройка экземпляра Azure AD](../active-directory/fundamentals/active-directory-access-create-new-tenant.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -347,9 +347,9 @@ ms.locfileid: "89231390"
 
 **Руководство**. Azure Active Directory (AD) предоставляет журналы для упрощения обнаружения устаревших учетных записей. Кроме того, используйте проверку доступа удостоверений Azure, чтобы эффективно управлять членством в группах, доступом к корпоративным приложениям и назначениями ролей. Доступ пользователей можно проверять на регулярной основе, чтобы только у авторизованных пользователей был постоянный доступ.
 
-* [Общие сведения об отчетах Azure AD](https://docs.microsoft.com/azure/active-directory/reports-monitoring/)
+* [Общие сведения об отчетах Azure AD](../active-directory/reports-monitoring/index.yml)
 
-* [Использование проверок доступа для идентификации Azure](https://docs.microsoft.com/azure/active-directory/governance/access-reviews-overview)
+* [Использование проверок доступа для идентификации Azure](../active-directory/governance/access-reviews-overview.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -363,9 +363,9 @@ ms.locfileid: "89231390"
 
 Этот процесс можно упростить, создав параметры диагностики для учетных записей пользователей Azure AD и отправив журналы аудита и журналы входа в рабочую область Log Analytics. Вы можете настроить нужные оповещения журнала в Log Analytics.
 
-* [Как интегрировать журналы действий Azure в Azure Monitor](https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)
+* [Как интегрировать журналы действий Azure в Azure Monitor](../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
-* [Подключение к Azure Sentinel](https://docs.microsoft.com/azure/sentinel/quickstart-onboard)
+* [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -375,11 +375,11 @@ ms.locfileid: "89231390"
 
 **Руководство**. для учетной записи отклонения в поведении имени входа в плоскости управления (например, портал Azure) используйте функции обнаружения Защита идентификации Azure AD и риска, чтобы настроить автоматические ответы на обнаруженные подозрительные действия, связанные с удостоверениями пользователей. Вы также можете включить данные в Azure Sentinel для дальнейшего изучения.
 
-* [Как просмотреть рискованный вход в Azure AD](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-risky-sign-ins)
+* [Как просмотреть рискованный вход в Azure AD](../active-directory/identity-protection/overview-identity-protection.md)
 
-* [Как настроить и включить политики рисков с помощью защиты идентификации](https://docs.microsoft.com/azure/active-directory/identity-protection/howto-identity-protection-configure-risk-policies)
+* [Как настроить и включить политики рисков с помощью защиты идентификации](../active-directory/identity-protection/howto-identity-protection-configure-risk-policies.md)
 
-* [Подключение к Azure Sentinel](https://docs.microsoft.com/azure/sentinel/quickstart-onboard)
+* [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
 **Мониторинг Центра безопасности Azure**. Сейчас это недоступно.
 
@@ -389,7 +389,7 @@ ms.locfileid: "89231390"
 
 **Руководство**: неприменимо; Защищенное хранилище не поддерживается для Azure ExpressRoute.
 
-* [Список поддерживаемых служб защищенного хранилища](https://docs.microsoft.com/azure/security/fundamentals/customer-lockbox-overview#supported-services-and-scenarios-in-general-availability)
+* [Список поддерживаемых служб защищенного хранилища](../security/fundamentals/customer-lockbox-overview.md#supported-services-and-scenarios-in-general-availability)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -397,13 +397,13 @@ ms.locfileid: "89231390"
 
 ## <a name="data-protection"></a>Защита данных
 
-*Дополнительные сведения см. в статье [Управление безопасностью: защита данных](https://docs.microsoft.com/azure/security/benchmarks/security-control-data-protection).*
+*Дополнительные сведения см. в статье [Управление безопасностью: защита данных](../security/benchmarks/security-control-data-protection.md).*
 
 ### <a name="41-maintain-an-inventory-of-sensitive-information"></a>4.1. Инвентаризация конфиденциальных данных
 
 **Руководство**. Используйте теги для пометки ресурсов Azure, в которых хранятся или обрабатываются конфиденциальные данные.
 
-* [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+* [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -413,9 +413,9 @@ ms.locfileid: "89231390"
 
 **Руководство**. Реализуйте отдельные подписки и группы управления для разработки, тестирования и производства.
 
-* [Создание дополнительных подписок Azure](https://docs.microsoft.com/azure/billing/billing-create-subscription)
+* [Создание дополнительных подписок Azure](../cost-management-billing/manage/create-subscription.md)
 
-* [Создание групп управления](https://docs.microsoft.com/azure/governance/management-groups/create)
+* [Создание групп управления](../governance/management-groups/create-management-group-portal.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -425,7 +425,7 @@ ms.locfileid: "89231390"
 
 **Руководство**. Корпорация Майкрософт управляет базовой инфраструктурой для каналов Azure ExpressRoute и связанных ресурсов, а также реализует четкие элементы управления для предотвращения потери или раскрытия данных клиента.
 
-* [Общие сведения о защите данных клиентов в Azure](https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data)
+* [Общие сведения о защите данных клиентов в Azure](../security/fundamentals/protection-customer-data.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -435,7 +435,7 @@ ms.locfileid: "89231390"
 
 **Руководство**. Протокол IPSec является стандартом IETF. Он шифрует данные на уровне протокола Интернета (IP) или уровня сети 3. Протокол IPsec можно использовать для шифрования сквозного подключения между локальной сетью и виртуальной сетью в Azure.
 
-* [Как настроить IPSEC "сеть — сеть" через ExpressRoute](https://docs.microsoft.com/azure/expressroute/site-to-site-vpn-over-microsoft-peering)
+* [Как настроить IPSEC "сеть — сеть" через ExpressRoute](./site-to-site-vpn-over-microsoft-peering.md)
 
 Как настроить IPSEC "сеть — сеть" через ExpressRoute: https://docs.microsoft.com/azure/expressroute/site-to-site-vpn-over-microsoft-peering
 
@@ -447,7 +447,7 @@ ms.locfileid: "89231390"
 
 **Руководство**: неприменимо; Azure ExpressRoute не хранит данные клиента.
 
-* [Общие сведения об элементах управления безопасностью для Azure ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-security-controls)
+* [Общие сведения об элементах управления безопасностью для Azure ExpressRoute](./expressroute-security-controls.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -461,11 +461,11 @@ Azure ExpressRoute также имеет роли пользователя "вл
 
 Кроме того, партнеры, использующие API партнера ExpressRoute диспетчер ресурсов, могут применить Role-Based управления доступом к ресурсу Експрессраутекроссконнектион. Эти элементы управления могут определять разрешения, для которых учетные записи пользователей могут изменять ресурс Експрессраутекроссконнектион, а также добавлять, обновлять и удалять конфигурации пиринга.
 
-* [Общие сведения об Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/overview)
+* [Общие сведения об Azure RBAC](../role-based-access-control/overview.md)
 
-* [Использование Azure RBAC в диспетчер ресурсов API для партнера ExpressRoute](https://docs.microsoft.com/azure/expressroute/cross-connections-api-development)
+* [Использование Azure RBAC в диспетчер ресурсов API для партнера ExpressRoute](./cross-connections-api-development.md)
 
-* [Общие сведения о ролях администрирования в ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-howto-linkvnet-portal-resource-manager#connect-a-vnet-to-a-circuit---different-subscription)
+* [Общие сведения о ролях администрирования в ExpressRoute](./expressroute-howto-linkvnet-portal-resource-manager.md#connect-a-vnet-to-a-circuit---different-subscription)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -475,7 +475,7 @@ Azure ExpressRoute также имеет роли пользователя "вл
 
 **Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов. Корпорация Майкрософт управляет базовой инфраструктурой для Azure Sentinel и реализовала четкие элементы управления для предотвращения потери или раскрытия данных клиента.
 
-* [Защита данных клиентов в Azure](https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data)
+* [Защита данных клиентов в Azure](../security/fundamentals/protection-customer-data.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -485,11 +485,11 @@ Azure ExpressRoute также имеет роли пользователя "вл
 
 **Руководство**. максек является стандартом IEEE. Он шифрует данные на уровне управления доступом к носителю (MAC) или в сетевом уровне 2. Максек можно использовать для шифрования физических связей между сетевыми устройствами и сетевыми устройствами Майкрософт при подключении к Майкрософт через ExpressRoute Direct. По умолчанию Максек отключен на портах ExpressRoute Direct. Вы перенесете собственный ключ Максек для шифрования и храните его в Azure Key Vault. Вы решаете, когда следует поворачивать ключ.
 
-* [Общие сведения о шифровании "точка — точка" в Azure ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-about-encryption)
+* [Общие сведения о шифровании "точка — точка" в Azure ExpressRoute](./expressroute-about-encryption.md)
 
-* [Настройка Максек для прямого порта ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-howto-macsec)
+* [Настройка Максек для прямого порта ExpressRoute](./expressroute-howto-macsec.md)
 
-* [Базовый план безопасности Azure для Key Vault](https://docs.microsoft.com/azure/key-vault/general/security-baseline)
+* [Базовый план безопасности Azure для Key Vault](../key-vault/general/security-baseline.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -499,7 +499,7 @@ Azure ExpressRoute также имеет роли пользователя "вл
 
 **Руководство**. Использование Azure Monitor с журналом действий Azure для создания оповещений о том, когда изменения выполняются в рабочих экземплярах Azure ExpressRoute и других критических или связанных ресурсах.
 
-* [Создание оповещений для событий журнала действий Azure](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log)
+* [Создание оповещений для событий журнала действий Azure](../azure-monitor/platform/alerts-activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -507,7 +507,7 @@ Azure ExpressRoute также имеет роли пользователя "вл
 
 ## <a name="vulnerability-management"></a>управление уязвимостями;
 
-*Дополнительные сведения см. в статье [Управление безопасностью: управление уязвимостями](https://docs.microsoft.com/azure/security/benchmarks/security-control-vulnerability-management).*
+*Дополнительные сведения см. в статье [Управление безопасностью: управление уязвимостями](../security/benchmarks/security-control-vulnerability-management.md).*
 
 ### <a name="51-run-automated-vulnerability-scanning-tools"></a>5.1. Выполнение автоматизированных средства анализа уязвимостей
 
@@ -551,7 +551,7 @@ Azure ExpressRoute также имеет роли пользователя "вл
 
 ## <a name="inventory-and-asset-management"></a>Инвентаризация и управление ресурсами
 
-*Дополнительные сведения см. в статье [Управление безопасностью: инвентаризация и управление ресурсами](https://docs.microsoft.com/azure/security/benchmarks/security-control-inventory-asset-management).*
+*Дополнительные сведения см. в статье [Управление безопасностью: инвентаризация и управление ресурсами](../security/benchmarks/security-control-inventory-asset-management.md).*
 
 ### <a name="61-use-automated-asset-discovery-solution"></a>6,1. Использование автоматизированного решения для обнаружения ресурсов
 
@@ -559,11 +559,11 @@ Azure ExpressRoute также имеет роли пользователя "вл
 
 Хотя классические ресурсы Azure могут быть обнаружены с помощью графа ресурсов, настоятельно рекомендуется создавать и использовать Azure Resource Manager ресурсы, идущие вперед.
 
-* [Как создавать запросы с помощью Azure Resource Graph](https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal)
+* [Как создавать запросы с помощью Azure Resource Graph](../governance/resource-graph/first-query-portal.md)
 
-* [Как просматривать подписки Azure](https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0)
+* [Как просматривать подписки Azure](/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0)
 
-* [Общие сведения об Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/overview)
+* [Общие сведения об Azure RBAC](../role-based-access-control/overview.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -573,7 +573,7 @@ Azure ExpressRoute также имеет роли пользователя "вл
 
 **Руководство**. Применяйте к ресурсам Azure теги, чтобы логически классифицировать их на основе метаданных.
 
-* [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+* [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -587,11 +587,11 @@ Azure ExpressRoute также имеет роли пользователя "вл
 - Недопустимые типы ресурсов
 - Допустимые типы ресурсов
 
-* [Создание дополнительных подписок Azure](https://docs.microsoft.com/azure/billing/billing-create-subscription)
+* [Создание дополнительных подписок Azure](../cost-management-billing/manage/create-subscription.md)
 
-* [Создание групп управления](https://docs.microsoft.com/azure/governance/management-groups/create)
+* [Создание групп управления](../governance/management-groups/create-management-group-portal.md)
 
-* [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+* [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -611,9 +611,9 @@ Azure ExpressRoute также имеет роли пользователя "вл
 
 Используйте Azure Resource Graph для запроса или обнаружения ресурсов в подписках. Убедитесь в том, что все ресурсы Azure, представленные в среде, утверждены.
 
-* [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+* [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-* [Как создавать запросы с помощью Azure Resource Graph](https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal)
+* [Как создавать запросы с помощью Azure Resource Graph](../governance/resource-graph/first-query-portal.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -649,9 +649,9 @@ Azure ExpressRoute также имеет роли пользователя "вл
 - Недопустимые типы ресурсов
 - Допустимые типы ресурсов
 
-* [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+* [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-* [Как отказаться от определенного типа ресурса с помощью Политики Azure](https://docs.microsoft.com/azure/governance/policy/samples/not-allowed-resource-types)
+* [Как отказаться от определенного типа ресурса с помощью Политики Azure](../governance/policy/samples/index.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -669,7 +669,7 @@ Azure ExpressRoute также имеет роли пользователя "вл
 
 **Руководство**. Настройте условный доступ Azure, чтобы ограничить возможность пользователей взаимодействовать с Azure Resource Manager путем настройки "Блокировать доступ" для приложения "Управление Microsoft Azure".
 
-* [Как настроить условный доступ для блокировки доступа к Azure Resource Manager](https://docs.microsoft.com/azure/role-based-access-control/conditional-access-azure-management)
+* [Как настроить условный доступ для блокировки доступа к Azure Resource Manager](../role-based-access-control/conditional-access-azure-management.md)
 
 **Мониторинг Центра безопасности Azure**. Неприменимо
 
@@ -693,15 +693,15 @@ Azure ExpressRoute также имеет роли пользователя "вл
 
 ## <a name="secure-configuration"></a>Безопасная конфигурация
 
-*Дополнительные сведения см. в статье [Управление безопасностью: безопасная конфигурация](https://docs.microsoft.com/azure/security/benchmarks/security-control-secure-configuration).*
+*Дополнительные сведения см. в статье [Управление безопасностью: безопасная конфигурация](../security/benchmarks/security-control-secure-configuration.md).*
 
 ### <a name="71-establish-secure-configurations-for-all-azure-resources"></a>7.1. Установка безопасных конфигураций для всех ресурсов Azure
 
 **Руководство**. Определение и реализация стандартных конфигураций безопасности для Azure ExpressRoute с помощью политики Azure. Используйте псевдонимы политик Azure в пространстве имен Microsoft. Network, чтобы создать настраиваемые политики для аудита или принудительного применения сетевой конфигурации ExpressRoute.
 
-* [Просмотр доступных псевдонимов политик Azure](https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0)
+* [Просмотр доступных псевдонимов политик Azure](/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0)
 
-* [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+* [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -719,9 +719,9 @@ Azure ExpressRoute также имеет роли пользователя "вл
 
 **Рекомендации**. Используйте Политику Azure [отказывать] и [развернуть, если не существует], чтобы обеспечить безопасность параметров в ресурсах Azure.
 
-* [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+* [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-* [Сведения о действии Политик Azure](https://docs.microsoft.com/azure/governance/policy/concepts/effects)
+* [Сведения о действии Политик Azure](../governance/policy/concepts/effects.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -739,9 +739,9 @@ Azure ExpressRoute также имеет роли пользователя "вл
 
 **Руководство**. Если вы используете пользовательские определения политики Azure, используйте Azure DevOps или Azure Repos для безопасного хранения кода и управления им.
 
-* [Как хранить код в Azure DevOps](https://docs.microsoft.com/azure/devops/repos/git/gitworkflow?view=azure-devops)
+* [Как хранить код в Azure DevOps](/azure/devops/repos/git/gitworkflow?view=azure-devops)
 
-* [Документация по Azure Repos](https://docs.microsoft.com/azure/devops/repos/index?view=azure-devops)
+* [Документация по Azure Repos](/azure/devops/repos/index?view=azure-devops)
 
 **Мониторинг Центра безопасности Azure**. Неприменимо
 
@@ -759,9 +759,9 @@ Azure ExpressRoute также имеет роли пользователя "вл
 
 **Руководство**. Определение и реализация стандартных конфигураций безопасности для Azure ExpressRoute с помощью политики Azure. Используйте псевдонимы политик Azure в пространстве имен Microsoft. Network, чтобы создать настраиваемые политики для аудита или принудительного применения сетевой конфигурации ExpressRoute.
 
-* [Просмотр доступных псевдонимов политик Azure](https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0)
+* [Просмотр доступных псевдонимов политик Azure](/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0)
 
-* [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+* [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -779,7 +779,7 @@ Azure ExpressRoute также имеет роли пользователя "вл
 
 **Руководство**. Использование встроенных определений политик Azure, а также псевдонимов политик Azure в пространстве имен Microsoft. Network для создания настраиваемых политик для оповещения, аудита и принудительного применения конфигураций системы. Используйте политику Azure [аудит], [запретить] и [развернуть, если не существует] для автоматического применения конфигураций для ресурсов Azure.
 
-* [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+* [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -797,7 +797,7 @@ Azure ExpressRoute также имеет роли пользователя "вл
 
 **Руководство**. Вы можете использовать максек для шифрования физических связей между сетевыми устройствами и сетевыми устройствами Майкрософт при подключении к Майкрософт через ExpressRoute Direct. По умолчанию Максек отключен на портах ExpressRoute Direct. Вы перенесете собственный ключ Максек для шифрования и храните его в Azure Key Vault. Вы решаете, когда следует поворачивать ключ.
 
-* [Создание Key Vault экземпляра для хранения секретов Максек в новой группе ресурсов](https://docs.microsoft.com/azure/expressroute/expressroute-howto-macsec)
+* [Создание Key Vault экземпляра для хранения секретов Максек в новой группе ресурсов](./expressroute-howto-macsec.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -807,7 +807,7 @@ Azure ExpressRoute также имеет роли пользователя "вл
 
 **Руководство**: неприменимо; Подключения и ресурсы Azure ExpressRoute не используют управляемые удостоверения.
 
-* [Службы Azure, поддерживающие управляемые удостоверения](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/services-support-managed-identities)
+* [Службы Azure, поддерживающие управляемые удостоверения](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -825,7 +825,7 @@ Azure ExpressRoute также имеет роли пользователя "вл
 
 ## <a name="malware-defense"></a>Защита от вредоносных программ
 
-*Дополнительные сведения см. в статье [Управление безопасностью: защита от вредоносных программ](https://docs.microsoft.com/azure/security/benchmarks/security-control-malware-defense).*
+*Дополнительные сведения см. в статье [Управление безопасностью: защита от вредоносных программ](../security/benchmarks/security-control-malware-defense.md).*
 
 ### <a name="81-use-centrally-managed-anti-malware-software"></a>8.1. Использование централизованно управляемого программного обеспечения для защиты от вредоносных программ
 
@@ -855,13 +855,13 @@ Azure ExpressRoute также имеет роли пользователя "вл
 
 ## <a name="data-recovery"></a>Восстановление данных
 
-*Дополнительные сведения см. в статье [Управление безопасностью: восстановление данных](https://docs.microsoft.com/azure/security/benchmarks/security-control-data-recovery).*
+*Дополнительные сведения см. в статье [Управление безопасностью: восстановление данных](../security/benchmarks/security-control-data-recovery.md).*
 
 ### <a name="91-ensure-regular-automated-back-ups"></a>9.1. Обеспечение регулярного автоматического резервного копирования
 
 **Руководство**: неприменимо; Azure ExpressRoute не хранит данные клиента.
 
-* [Общие сведения об элементах управления безопасностью для Azure ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-security-controls)
+* [Общие сведения об элементах управления безопасностью для Azure ExpressRoute](./expressroute-security-controls.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -871,7 +871,7 @@ Azure ExpressRoute также имеет роли пользователя "вл
 
 **Руководство**. Если вы используете Azure Key Vault для хранения секретов максек, обязательно выполните регулярное автоматическое резервное копирование ключей.
 
-* [Резервное копирование ключей Key Vault](https://docs.microsoft.com/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey)
+* [Резервное копирование ключей Key Vault](/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -881,9 +881,9 @@ Azure ExpressRoute также имеет роли пользователя "вл
 
 **Руководство**. Тестирование восстановления резервных копий ключей, управляемых клиентом.
 
-* [Как восстановить резервную копию ключей хранилища ключей в Azure](https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey?view=azurermps-6.13.0)
+* [Как восстановить резервную копию ключей хранилища ключей в Azure](/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey?view=azurermps-6.13.0)
 
-* [Как проверить подключение каналов ExpressRoute Azure после настройки Максек](https://docs.microsoft.com/azure/expressroute/expressroute-howto-macsec)
+* [Как проверить подключение каналов ExpressRoute Azure после настройки Максек](./expressroute-howto-macsec.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -893,7 +893,7 @@ Azure ExpressRoute также имеет роли пользователя "вл
 
 **Рекомендации**. Включите Soft-Delete в Key Vault, чтобы защитить ключи от случайного или вредоносного удаления.
 
-* [Как включить обратимое удаление в Key Vault](https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal)
+* [Как включить обратимое удаление в Key Vault](../storage/blobs/soft-delete-blob-overview.md?tabs=azure-portal)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -901,13 +901,13 @@ Azure ExpressRoute также имеет роли пользователя "вл
 
 ## <a name="incident-response"></a>Реагирование на инциденты
 
-*Дополнительные сведения см. в статье [Управление безопасностью: реагирование на инциденты](https://docs.microsoft.com/azure/security/benchmarks/security-control-incident-response).*
+*Дополнительные сведения см. в статье [Управление безопасностью: реагирование на инциденты](../security/benchmarks/security-control-incident-response.md).*
 
 ### <a name="101-create-an-incident-response-guide"></a>10.1. Создание руководства по реагированию на инциденты
 
 **Руководство**. Создайте руководство по реагированию на инциденты для вашей организации. Убедитесь в том, что имеются письменные планы реагирования на инциденты, которые определяют все действия персонала, а также этапы обработки инцидентов и управления ими для проверки после инцидента.
 
-* [Настройка автоматизации рабочих процессов в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-planning-and-operations-guide)
+* [Настройка автоматизации рабочих процессов в центре безопасности Azure](../security-center/security-center-planning-and-operations-guide.md)
 
 * [Руководство по созданию собственного процесса реагирования на инциденты безопасности](https://msrc-blog.microsoft.com/2019/07/01/inside-the-msrc-building-your-own-security-incident-response-process/)
 
@@ -943,7 +943,7 @@ Azure ExpressRoute также имеет роли пользователя "вл
 
 **Рекомендации**. Корпорация Майкрософт будет использовать информацию об инциденте безопасности для связи с вами, если центр Microsoft Security Response Center (MSRC) обнаружит, что к вашим пользовательским данным был получен незаконный или несанкционированный доступ. Проверьте инциденты после факта обращения, чтобы убедиться, что проблемы устранены.
 
-* [Как задать контакт безопасности Центра безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-provide-security-contact-details)
+* [Как задать контакт безопасности Центра безопасности Azure](../security-center/security-center-provide-security-contact-details.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -953,9 +953,9 @@ Azure ExpressRoute также имеет роли пользователя "вл
 
 **Рекомендации**. Экспортируйте оповещения и рекомендации центра безопасности Azure с помощью функции непрерывного экспорта. Непрерывный экспорт позволяет экспортировать предупреждения и рекомендации как вручную, так и в постоянном, непрерывном режиме. Можно использовать соединитель данных Центра безопасности Azure для потоковой передачи оповещений Sentinel.
 
-* [Как настроить непрерывный экспорт данных](https://docs.microsoft.com/azure/security-center/continuous-export)
+* [Как настроить непрерывный экспорт данных](../security-center/continuous-export.md)
 
-* [Как выполнить потоковую передачу оповещений в Azure Sentinel](https://docs.microsoft.com/azure/sentinel/connect-azure-security-center)
+* [Как выполнить потоковую передачу оповещений в Azure Sentinel](../sentinel/connect-azure-security-center.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -965,7 +965,7 @@ Azure ExpressRoute также имеет роли пользователя "вл
 
 **Руководство**. Используйте функцию автоматизации рабочих процессов в Центре безопасности Azure для автоматического запуска реагирования с помощью Logic Apps в оповещениях и рекомендациях системы безопасности.
 
-* [Как настроить автоматизацию рабочего процесса и Logic Apps](https://docs.microsoft.com/azure/security-center/workflow-automation)
+* [Как настроить автоматизацию рабочего процесса и Logic Apps](../security-center/workflow-automation.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -973,7 +973,7 @@ Azure ExpressRoute также имеет роли пользователя "вл
 
 ## <a name="penetration-tests-and-red-team-exercises"></a>Тесты на проникновение и попытки нарушения безопасности "красной командой"
 
-*Дополнительные сведения см. в статье [Управление безопасностью: тесты на проникновение и попытки нарушения безопасности "красной командой"](https://docs.microsoft.com/azure/security/benchmarks/security-control-penetration-tests-red-team-exercises).*
+*Дополнительные сведения см. в статье [Управление безопасностью: тесты на проникновение и попытки нарушения безопасности "красной командой"](../security/benchmarks/security-control-penetration-tests-red-team-exercises.md).*
 
 ### <a name="111-conduct-regular-penetration-testing-of-your-azure-resources-and-ensure-remediation-of-all-critical-security-findings"></a>11,1. Проведите регулярное тестирование на проникновение ресурсов Azure и обеспечьте исправление всех критических результатов безопасности.
 
@@ -987,5 +987,5 @@ Azure ExpressRoute также имеет роли пользователя "вл
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Ознакомьтесь со статьей [Тесты производительности системы безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/overview).
-- Дополнительные сведения о [базовой конфигурации безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/security-baselines-overview).
+- Ознакомьтесь со статьей [Тесты производительности системы безопасности Azure](../security/benchmarks/overview.md).
+- Дополнительные сведения о [базовой конфигурации безопасности Azure](../security/benchmarks/security-baselines-overview.md).

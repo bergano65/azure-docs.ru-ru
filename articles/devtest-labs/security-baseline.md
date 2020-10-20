@@ -3,12 +3,12 @@ title: Базовый план безопасности Azure для Azure DevTe
 description: Базовый план безопасности Azure для Azure DevTest Labs
 ms.topic: conceptual
 ms.date: 07/23/2020
-ms.openlocfilehash: 838501bf4195c99c4d4ef7805fb8f4cba79e05d2
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 98f6ce7eee799b1baf29782d7eca11d62cf62353
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92151868"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92207297"
 ---
 # <a name="azure-security-baseline-for-azure-devtest-labs"></a>Базовый план безопасности Azure для Azure DevTest Labs
 
@@ -493,7 +493,7 @@ DevTest Labs не имеет концепции паролей по умолча
 **Руководство.** Служба автоматизации Azure обеспечивает полный контроль во время развертывания, эксплуатации и списания рабочих нагрузок и ресурсов. Администратор подписки может использовать Отслеживание изменений для обнаружения всех программ, установленных на виртуальных машинах, размещенных в DevTest Labs. Вы можете реализовать собственный процесс или использовать конфигурацию состояния службы автоматизации Azure для удаления неавторизованного программного обеспечения.
 
 - [Общие сведения о службе автоматизации Azure](../automation/automation-intro.md)
-- [Отслеживание изменений в среде с помощью решения для отслеживания изменений](../automation/change-tracking.md)
+- [Отслеживание изменений в среде с помощью решения для отслеживания изменений](../automation/change-tracking/overview.md)
 - [Обзор настройки состояния службы автоматизации Azure](../automation/automation-dsc-overview.md)
 
 **Мониторинг центра безопасности Azure:** Недоступно

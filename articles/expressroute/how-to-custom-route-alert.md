@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: how-to
 ms.date: 05/29/2020
 ms.author: duau
-ms.openlocfilehash: 67591e9227ff32e81b973c181da2c1374f0ded47
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b812a727a555f8c4c95389f2ba0cc5ccea2f608a
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91766673"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92205565"
 ---
 # <a name="configure-custom-alerts-to-monitor-advertised-routes"></a>Настройка пользовательских оповещений для отслеживания объявляемых маршрутов
 
@@ -42,7 +42,7 @@ ms.locfileid: "91766673"
 
 * Вы знакомы с [Azure Logic Apps](../logic-apps/logic-apps-overview.md).
 
-* Вы знакомы с использованием Azure PowerShell. Azure PowerShell требуется для получения префиксов сети в шлюзе ExpressRoute. Дополнительные сведения о Azure PowerShell в целом см. в [документации по Azure PowerShell](https://docs.microsoft.com/powershell/azure/?view=azps-4.1.0).
+* Вы знакомы с использованием Azure PowerShell. Azure PowerShell требуется для получения префиксов сети в шлюзе ExpressRoute. Дополнительные сведения о Azure PowerShell в целом см. в [документации по Azure PowerShell](/powershell/azure/?view=azps-4.1.0).
 
 ### <a name="notes-and-limitations"></a><a name="limitations"></a>Примечания и ограничения
 
@@ -257,7 +257,7 @@ Write-Output  $jsonResults
 
 * Предупреждающее сообщение для подробного описания состояния (ОК, предупреждение, предупреждение)
 
-Сценарий PowerShell преобразует собранные данные в выходные данные JSON. Модуль Runbook использует командлет PowerShell [Write-Output](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Utility/Write-Output?)  в качестве потока вывода для передачи информации клиенту.
+Сценарий PowerShell преобразует собранные данные в выходные данные JSON. Модуль Runbook использует командлет PowerShell [Write-Output](/powershell/module/Microsoft.PowerShell.Utility/Write-Output)  в качестве потока вывода для передачи информации клиенту.
 
 ### <a name="4-validate-the-runbook"></a><a name="validate"></a>4. Проверка модуля Runbook
 
@@ -453,6 +453,6 @@ Logic Apps предоставляет много соединителей эле
 
 :::image type="content" source="./media/custom-route-alert-portal/trigger.png" alt-text="Добавить учетную запись службы автоматизации":::
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о настройке рабочего процесса см. в разделе [Azure Logic Apps](../logic-apps/logic-apps-overview.md).

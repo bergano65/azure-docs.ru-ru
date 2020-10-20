@@ -7,12 +7,12 @@ ms.service: iot-fundamentals
 services: iot-fundamentals
 ms.topic: conceptual
 ms.date: 6/10/2020
-ms.openlocfilehash: 23381a45d045e8f96e989bce9f52d627f5a88255
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: b9b3b30592237e1bbe1b08b0ed1d118131b15a26
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91979076"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92206056"
 ---
 # <a name="what-are-the-azure-iot-support-and-help-options"></a>Какие существуют возможности получения поддержки и справки по Интернету вещей Azure?
 
@@ -31,21 +31,21 @@ ms.locfileid: "91979076"
 
 ## <a name="post-a-question-on-microsoft-qa"></a>Публикация вопроса в разделе вопросов и ответов на сайте Майкрософт
 
-Чтобы получить быстрые и заслуживающие доверия ответы на свои технические вопросы по продуктам от инженеров Майкрософт, специалистов Azure Most Valuable Professional (MVP) или нашего сообщества экспертов, воспользуйтесь [разделом вопросов и ответов на сайте Майкрософт](https://aka.ms/azureqa), который является предпочтительной площадкой для получения поддержки от сообщества. 
+Чтобы получить быстрые и заслуживающие доверия ответы на свои технические вопросы по продуктам от инженеров Майкрософт, специалистов Azure Most Valuable Professional (MVP) или нашего сообщества экспертов, воспользуйтесь [разделом вопросов и ответов на сайте Майкрософт](/answers/products/azure), который является предпочтительной площадкой для получения поддержки от сообщества. 
 
 Если вы не нашли решение своей проблемы с помощью функции поиска, опубликуйте свой вопрос в разделе вопросов и ответов на сайте Майкрософт. При формулировании вопроса используйте один из следующих тегов:
 
-- [Azure IoT](https://docs.microsoft.com/answers/topics/azure-iot.html)
-- [Azure IoT Central](https://docs.microsoft.com/answers/topics/azure-iot-central.html)
-- [Azure IoT Edge](https://docs.microsoft.com/answers/topics/azure-iot-edge.html)
-- [Центр Интернета вещей Azure](https://docs.microsoft.com/answers/topics/azure-iot-hub.html)
-- [Служба подготовки устройств (DPS) к добавлению в Центр Интернета вещей](https://docs.microsoft.com/answers/topics/azure-iot-dps.html)
-- [Пакеты SDK для Центра Интернета вещей Azure](https://docs.microsoft.com/answers/topics/azure-iot-sdk.html)
-- [Azure Digital Twins](https://docs.microsoft.com/answers/topics/azure-digital-twins.html)
-- [ОСРВ Azure](https://docs.microsoft.com/answers/topics/azure-rtos.html)
-- [Azure Sphere](https://docs.microsoft.com/answers/topics/azure-sphere.html)
-- [Аналитика временных рядов Azure](https://docs.microsoft.com/answers/topics/azure-time-series-insights.html)
-- [Azure Maps](https://docs.microsoft.com/answers/topics/azure-maps.html)
+- [Azure IoT](/answers/topics/azure-iot.html)
+- [Azure IoT Central](/answers/topics/azure-iot-central.html)
+- [Azure IoT Edge](/answers/topics/azure-iot-edge.html)
+- [Центр Интернета вещей Azure](/answers/topics/azure-iot-hub.html)
+- [Служба подготовки устройств (DPS) к добавлению в Центр Интернета вещей](/answers/topics/azure-iot-dps.html)
+- [Пакеты SDK для Центра Интернета вещей Azure](/answers/topics/azure-iot-sdk.html)
+- [Azure Digital Twins](/answers/topics/azure-digital-twins.html)
+- [ОСРВ Azure](/answers/topics/azure-rtos.html)
+- [Azure Sphere](/answers/topics/azure-sphere.html)
+- [Аналитика временных рядов Azure](/answers/topics/azure-time-series-insights.html)
+- [Azure Maps](/answers/topics/azure-maps.html)
 
 ## <a name="post-a-question-on-stack-overflow"></a>Публикация вопроса на Stack Overflow
 

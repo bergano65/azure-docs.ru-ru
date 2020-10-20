@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 02/11/2020
 ms.topic: how-to
-ms.openlocfilehash: 7a4e6d80d80441a1b94c1fb2bd8f82f247235fe3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fb321aeeae1f0ef5aaadce22e228024895176143
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91318098"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92202656"
 ---
 # <a name="create-an-azure-remote-rendering-account"></a>Создание учетной записи для Удаленной отрисовки Azure
 
@@ -101,7 +101,7 @@ ms.locfileid: "91318098"
 
 Если вы добавили все три роли, у вашей учетной записи удаленной отрисовки Azure будет доступ к вашей учетной записи хранения. Для этого будут использоваться удостоверения управляемой службы, назначенные системой.
 > [!IMPORTANT]
-> Назначения ролей Azure кэшируются службой хранилища Azure, поэтому при предоставлении доступа к учетной записи удаленной подготовки к просмотру и их использовании для доступа к учетной записи хранения возможна задержка до 30 минут. Дополнительные сведения см. в [документации по контролю доступа к базовой роли](https://docs.microsoft.com/azure/role-based-access-control/troubleshooting#role-assignment-changes-are-not-being-detected) .
+> Назначения ролей Azure кэшируются службой хранилища Azure, поэтому при предоставлении доступа к учетной записи удаленной подготовки к просмотру и их использовании для доступа к учетной записи хранения возможна задержка до 30 минут. Дополнительные сведения см. в [документации по контролю доступа к базовой роли](../../role-based-access-control/troubleshooting.md#role-assignment-changes-are-not-being-detected) .
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

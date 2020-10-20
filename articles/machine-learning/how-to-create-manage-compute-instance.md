@@ -11,12 +11,12 @@ ms.author: sgilley
 author: sdgilley
 ms.reviewer: sgilley
 ms.date: 10/02/2020
-ms.openlocfilehash: 3b5698c782b691dd8ae91913115db184fc83a2eb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ca4ed58de030e372f97ebda87d12340a57a584d5
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91756625"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92207093"
 ---
 # <a name="create-and-manage-an-azure-machine-learning-compute-instance"></a>Создание Машинное обучение Azure вычислительного экземпляра и управление им
 
@@ -147,7 +147,7 @@ az ml computetarget create computeinstance  -n instance -s "STANDARD_D3_V2" -v
     instance.stop(wait_for_completion=True, show_output=True)
     ```
 
-* Запуск
+* Начать
 
     ```python
     # start() is used to start the ComputeInstance if it is in stopped state
@@ -180,7 +180,7 @@ az ml computetarget create computeinstance  -n instance -s "STANDARD_D3_V2" -v
 
     Дополнительные сведения см. в разделе [AZ ML computetarget останавливает компутеинстанце](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/computetarget/computeinstance?view=azure-cli-latest&preserve-view=true#ext-azure-cli-ml-az-ml-computetarget-computeinstance-stop).
 
-* Запуск 
+* Начать 
 
     ```azurecli-interactive
     az ml computetarget start computeinstance -n instance -v
@@ -256,6 +256,7 @@ az ml computetarget create computeinstance  -n instance -s "STANDARD_D3_V2" -v
 * Python: Добавление кода установки и выполнение в Jupyter Notebookной ячейке.
 
 Или можно установить из окна терминала. Установите пакеты Python в среду **python 3,6-AzureML** .  Установите пакеты R в среде **R**.
+функции Magic% PIP и% conda автоматически устанавливают пакеты в текущую работающую ядро в сеансе Jupyter Notebook.
 
 ## <a name="add-new-kernels"></a>Добавление новых ядер
 
@@ -289,6 +290,6 @@ az ml computetarget create computeinstance  -n instance -s "STANDARD_D3_V2" -v
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Отправить обучающий запуск](how-to-set-up-training-targets.md) 

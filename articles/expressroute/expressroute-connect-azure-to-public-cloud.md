@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: article
 ms.date: 07/24/2019
 ms.author: duau
-ms.openlocfilehash: f413b6100fb2a7d1c8bc06d787468cc3e79c0169
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fb4c34345ab902e243f22eae06fd5ea174fd2992
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89397480"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92202197"
 ---
 # <a name="connecting-azure-with-public-clouds"></a>Подключение Azure к общедоступным облакам
 
@@ -58,14 +58,11 @@ ExpressRoute позволяет клиентам расширять свои л�
 
 VPN типа "сеть — сеть" не считается высокопроизводительной и низкой задержкой. Однако его можно использовать в качестве резервной копии для физического подключения.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные вопросы об ExpressRoute и подключении к виртуальной сети см. в разделе [вопросы и ответы по expressroute][ER-FAQ] .
 
 См. раздел [Настройка прямого подключения между Azure и облаком Oracle][ER-OCI] для подключения между Azure и Oracle.
 
 <!--Link References-->
-[ER-FAQ]: https://docs.microsoft.com/azure/expressroute/expressroute-faqs
-[ER-OCI]: https://docs.microsoft.com/azure/virtual-machines/workloads/oracle/configure-azure-oci-networking
-
-
-
+[ER-FAQ]: ./expressroute-faqs.md
+[ER-OCI]: ../virtual-machines/workloads/oracle/configure-azure-oci-networking.md

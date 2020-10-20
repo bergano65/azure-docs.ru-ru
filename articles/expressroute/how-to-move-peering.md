@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: how-to
 ms.date: 12/12/2019
 ms.author: duau
-ms.openlocfilehash: 5671be5e54a9bb789e349a4da6d0f1809807d974
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 608d6c87442821e904fde16c6b75841fe792e3f0
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89401424"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92206294"
 ---
 # <a name="move-a-public-peering-to-microsoft-peering"></a>Переход с общедоступного пиринга на пиринг Майкрософт
 
@@ -31,7 +31,7 @@ ms.locfileid: "89401424"
 > [!Warning]
 > Пул IP-адресов для NAT, объявленных для Майкрософт, не должен объявляться в Интернете. Это приведет к разрыву подключения к другим службам Microsoft.
 
-Используйте [асимметричную маршрутизацию с несколькими сетевыми путями](https://docs.microsoft.com/azure/expressroute/expressroute-asymmetric-routing) для предупреждения о асимметричной маршрутизации перед настройкой пиринга Майкрософт.
+Используйте [асимметричную маршрутизацию с несколькими сетевыми путями](./expressroute-asymmetric-routing.md) для предупреждения о асимметричной маршрутизации перед настройкой пиринга Майкрософт.
 
 * Если вы используете общедоступный пиринг и в настоящее время есть правила IP-сети для общедоступных IP-адресов, которые используются для доступа к [службе хранилища Azure](../storage/common/storage-network-security.md) или [базе данных SQL Azure](../azure-sql/database/vnet-service-endpoint-rule-overview.md), необходимо убедиться в том, что пул IP-адресов NAT, настроенный с пирингом Майкрософт, включен в список общедоступного IP-адреса для учетной записи хранения Azure или учетной записи Azure SQL.<br>
 * Чтобы переместить пиринг Майкрософт без простоев, выполните инструкции в этой статье в том порядке, в котором они представлены.

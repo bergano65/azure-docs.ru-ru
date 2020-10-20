@@ -5,21 +5,21 @@ author: florianborn71
 ms.author: flborn
 ms.date: 06/15/2020
 ms.topic: how-to
-ms.openlocfilehash: 8f3b144a7790c3122d59d27183b3037998ddadd1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e61767b9b8d904eae9a247f48d2d781fd0c95192
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85565849"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92202724"
 ---
 # <a name="configure-authentication"></a>Настройка аутентификации
 
-Удаленная визуализация Azure использует тот же механизм проверки подлинности, что и [Пространственные привязки Azure (ASA)](https://docs.microsoft.com/azure/spatial-anchors/concepts/authentication?tabs=csharp). Чтобы успешно вызывать API-интерфейсы, клиентам необходимо установить *одно* из следующих действий.
+Удаленная визуализация Azure использует тот же механизм проверки подлинности, что и [Пространственные привязки Azure (ASA)](../../spatial-anchors/concepts/authentication.md?tabs=csharp). Чтобы успешно вызывать API-интерфейсы, клиентам необходимо установить *одно* из следующих действий.
 
 * **AccountKey**: можно получить на вкладке "ключи" для учетной записи удаленной подготовки к просмотру на портал Azure. Ключи учетной записи рекомендуются только для разработки и создания прототипов.
-    ![Идентификатор учетной записи](./media/azure-account-primary-key.png)
+    ![идентификатор учетной записи](./media/azure-account-primary-key.png);
 
-* **AuthenticationToken**— это маркер Azure AD, который можно получить с помощью [библиотеки MSAL](https://docs.microsoft.com/azure/active-directory/develop/msal-overview). Существует несколько различных потоков, которые принимают учетные данные пользователя и используют эти учетные данные для получения маркера доступа.
+* **AuthenticationToken**— это маркер Azure AD, который можно получить с помощью [библиотеки MSAL](../../active-directory/develop/msal-overview.md). Существует несколько различных потоков, которые принимают учетные данные пользователя и используют эти учетные данные для получения маркера доступа.
 
 * **Мракцесстокен**: — это токен MR, который может быть получен из службы маркеров безопасности (STS) в смешанной реальности Azure. Извлечение из `https://sts.mixedreality.azure.com` конечной точки с помощью вызова RESTful, аналогичного приведенному ниже вызову:
 
@@ -44,7 +44,7 @@ ms.locfileid: "85565849"
 
 Ключи учетной записи рекомендуются для быстрого создания прототипов во время разработки. Не рекомендуется поставлять приложение в рабочую среду, используя внедренный ключ учетной записи. Рекомендуемый подход заключается в использовании метода проверки подлинности Azure AD на основе пользователей или служб.
 
- Проверка подлинности Azure AD описана в разделе [Проверка подлинности пользователя Azure AD](https://docs.microsoft.com/azure/spatial-anchors/concepts/authentication?tabs=csharp#azure-ad-user-authentication) в службе [пространственных привязок Azure (ASA)](https://docs.microsoft.com/azure/spatial-anchors/) .
+ Проверка подлинности Azure AD описана в разделе [Проверка подлинности пользователя Azure AD](../../spatial-anchors/concepts/authentication.md?tabs=csharp#azure-ad-user-authentication) в службе [пространственных привязок Azure (ASA)](../../spatial-anchors/index.yml) .
 
  Дополнительные сведения см [. в руководстве защита удаленной подготовки Azure и хранилища моделей — Azure Active Directory аутентификация.](../tutorials/unity/security/security.md#azure-active-directory-azure-ad-authentication)
 

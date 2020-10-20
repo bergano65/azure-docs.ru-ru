@@ -8,12 +8,12 @@ ms.date: 9/11/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.reviewer: baanders
-ms.openlocfilehash: cbd8c91391cc1e3afe930094f34e5015ea3c3450
-ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
+ms.openlocfilehash: 21e72e63dae2c52d04aca0cd11971fe5cd23fb47
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92097530"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92207552"
 ---
 # <a name="integrate-with-logic-apps-using-a-custom-connector"></a>Интеграция с Logic Apps с помощью настраиваемого соединителя
 
@@ -40,16 +40,15 @@ ms.locfileid: "92097530"
 
 Чтобы подключиться к двойников экземпляру Azure Digital для Logic Apps в этой статье, вам потребуется уже настроенный **экземпляр Azure Digital двойников** . 
 
-Сначала настройте экземпляр Azure Digital Twins и необходимую проверку подлинности, чтобы иметь возможность работать с экземпляром. Для этого выполните инструкции из статьи [ *Настройка экземпляра Azure Digital двойников и проверки подлинности (с помощью сценария)* ](how-to-set-up-instance-portal.md). В зависимости от предпочтительного интерфейса статья по установке доступна для [портала Azure](how-to-set-up-instance-portal.md), [CLI](how-to-set-up-instance-cli.md) или [автоматизированного примера сценария развертывания Cloud Shell](how-to-set-up-instance-scripted.md). Во всех версиях этих инструкций также указано, как проверить, успешно ли завершен каждый шаг и готов ли новый экземпляр к работе.
+Сначала **Настройте экземпляр Azure Digital двойников** и необходимую проверку подлинности, чтобы иметь возможность работать с ним. Для этого выполните инструкции из статьи [ *Настройка экземпляра Azure Digital двойников и проверки подлинности (с помощью сценария)* ](how-to-set-up-instance-portal.md). В зависимости от предпочтительного интерфейса статья по установке доступна для [портала Azure](how-to-set-up-instance-portal.md), [CLI](how-to-set-up-instance-cli.md) или [автоматизированного примера сценария развертывания Cloud Shell](how-to-set-up-instance-scripted.md). Во всех версиях этих инструкций также указано, как проверить, успешно ли завершен каждый шаг и готов ли новый экземпляр к работе.
+* После настройки экземпляра Azure Digital двойников вам потребуется **_имя узла_** экземпляра ([найдите в портал Azure](how-to-set-up-instance-portal.md#verify-success-and-collect-important-values)).
 
-В этом учебнике вам потребуется несколько значений при настройке экземпляра. Если вам нужно снова собрать эти значения, воспользуйтесь приведенными ниже ссылками в соответствующих разделах статьи о настройке, чтобы найти их на [портале Azure](https://portal.azure.com).
-* **_Имя узла_** экземпляра Azure Digital Twins ([как найти на портале](how-to-set-up-instance-portal.md#verify-success-and-collect-important-values)).
-* **_Идентификатор приложения (клиента)_** для регистрации приложения в Azure AD ([как найти на портале](how-to-set-up-instance-portal.md#collect-important-values)).
-* **_Идентификатор каталога (арендатора)_** для регистрации приложения в Azure AD ([как найти на портале](how-to-set-up-instance-portal.md#collect-important-values)).
+Для проверки подлинности приложения ADT Explorer необходимо также настроить **регистрацию приложения**. Следуйте инструкциям в разделе [*как создать регистрацию приложения*](how-to-create-app-registration.md) , чтобы настроить ее. 
+* После регистрации приложения вам потребуется **_идентификатор приложения (клиента)_** регистрации и **_идентификатор каталога (клиента)_** ([найдите в портал Azure](how-to-create-app-registration.md#collect-client-id-and-tenant-id)).
 
 ### <a name="get-app-registration-client-secret"></a>Получение секрета клиента регистрации приложения
 
-Кроме того, вам потребуется создать **_секрет клиента_** для регистрации приложения Azure AD. Для этого перейдите на страницу [Регистрация приложений](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) в портал Azure (эту ссылку можно использовать или найти на панели поиска на портале). Выберите регистрацию из списка, чтобы открыть сведения о ней. 
+Кроме того, вам потребуется создать **_секрет клиента_** для регистрации приложения Azure AD. Для этого перейдите на страницу [Регистрация приложений](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) в портал Azure (эту ссылку можно использовать или найти на панели поиска на портале). Выберите регистрацию, созданную в предыдущем разделе, из списка, чтобы открыть сведения о ней. 
 
 Нажмите *Сертификаты и секреты* в меню регистрации и выберите *+ новый секрет клиента*.
 

@@ -13,12 +13,12 @@ ms.workload: identity
 ms.custom: it-pro
 ms.reviewer: krbain
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 418be35cb7996acaa7f11f37627d065451c9c7c6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 42b86cadefea41bc438c8f2e91c5eaa86af172b0
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90055220"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92204977"
 ---
 # <a name="restrict-guest-access-permissions-preview-in-azure-active-directory"></a>Ограничение разрешений гостевого доступа (Предварительная версия) в Azure Active Directory
 
@@ -105,7 +105,7 @@ GET https://graph.microsoft.com/beta/policies/authorizationPolicy/authorizationP
 
 ### <a name="get-command-get-azureadmsauthorizationpolicy"></a>Get, команда: Get-AzureADMSAuthorizationPolicy
 
-Пример.
+Пример
 
 ````PowerShell
 PS C:\WINDOWS\system32> Get-AzureADMSAuthorizationPolicy
@@ -121,7 +121,7 @@ PermissionGrantPolicyIdsAssignedToDefaultUserRole : {user-default-legacy}
 
 ### <a name="set-command-set-azureadmsauthorizationpolicy"></a>Команда Set: Set-AzureADMSAuthorizationPolicy
 
-Пример.
+Пример
 
 ````PowerShell
 PS C:\WINDOWS\system32> Set-AzureADMSAuthorizationPolicy -GuestUserRoleId '2af84b1e-32c8-42b7-82bc-daa82404023b'
@@ -139,15 +139,16 @@ PS C:\WINDOWS\system32> Set-AzureADMSAuthorizationPolicy -GuestUserRoleId '2af84
 - Teams
 - Outlook (OWA)
 - SharePoint
+- Планировщик в командах
+- Веб-приложение Planner
 
 ### <a name="services-currently-not-supported"></a>Службы в настоящее время не поддерживаются
 
 Служба без текущей поддержки может иметь проблемы совместимости с новым параметром ограничения гостевой системы.
 
 - Формы
-- Планировщик в командах
-- Приложение планировщика
-- Проект
+- Мобильное приложение планировщика
+- Project
 - Yammer
 
 ## <a name="frequently-asked-questions-faq"></a>Вопросы и ответы
@@ -157,12 +158,12 @@ PS C:\WINDOWS\system32> Set-AzureADMSAuthorizationPolicy -GuestUserRoleId '2af84
 Где применяются эти разрешения? | Эти разрешения на уровне каталога применяются к службам и порталам Azure AD, включая Microsoft Graph, PowerShell v2, портал Azure и портале "Мои приложения". Также затрагиваются службы Microsoft 365, использующие группы Microsoft 365 для сценариев совместной работы, в частности Outlook, Microsoft Teams и SharePoint.
 На какие части портала "Мои приложения" будет влиять эта функция? | Функциональные возможности групп на портале "Мои приложения" будут удовлетворять этим новым разрешениям. Сюда входят все пути для просмотра списка групп и членства в группах в "Мои приложения". В доступ к плитке группы не внесены изменения. Доступность плитки группы по-прежнему управляется существующим параметром группы на портале администрирования Azure.
 Переопределяют ли эти разрешения гостевые параметры SharePoint или Microsoft Teams? | Нет. Эти существующие параметры по-прежнему управляют интерфейсом и доступом в этих приложениях. Например, если вы видите проблемы в SharePoint, проверьте параметры внешнего общего доступа.
-Каковы известные проблемы совместимости в планировщике и в Yammer? | <li>Если для разрешений задано значение "ограничено", гости, вошедшие в Приложение планировщика или обращающиеся к планировщику в Microsoft Teams, не смогут получить доступ к своим планам и задачам.<li>Если для разрешений задано значение "ограничено", гости, вошедшие в Yammer, не смогут покинуть группу.
+Каковы известные проблемы совместимости в планировщике и в Yammer? | <li>Если для разрешений задано значение "ограничено", гости, вошедшие в мобильное приложение планировщика, не смогут получить доступ к их планам и задачам.<li>Если для разрешений задано значение "ограничено", гости, вошедшие в Yammer, не смогут покинуть группу.
 Будут ли мои существующие разрешения гостя изменены в моем клиенте? | В текущие параметры не внесены изменения. Мы поддерживаем обратную совместимость с существующими параметрами. Вы решите, когда нужно вносить изменения.
 Будут ли эти разрешения установлены по умолчанию? | Нет. Существующие разрешения по умолчанию остаются без изменений. При необходимости можно задать более ограниченные разрешения.
 Существуют ли требования к лицензиям для этой функции? | Нет, новые требования к лицензированию с этой функцией отсутствуют.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о существующих разрешениях гостя в Azure AD см. [в разделе что такое разрешения пользователя по умолчанию в Azure Active Directory?](../fundamentals/users-default-permissions.md).
 - Дополнительные сведения о методах API Microsoft Graph, позволяющих ограничивать гостевой доступ, см. в разделе [тип ресурса authorizationPolicy](/graph/api/resources/authorizationpolicy).

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 08/19/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 831e72610690753a62c04b51e277110653e0d2c9
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: 3cc8974be9adb81391134790d85336016a7d9f1c
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92107680"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92204339"
 ---
 # <a name="azure-security-baseline-for-azure-machine-learning"></a>Базовый план безопасности Azure для Машинное обучение Azure
 
@@ -721,7 +721,7 @@ ms.locfileid: "92107680"
 
 - [Использование мониторинга целостности файлов](../security-center/security-center-file-integrity-monitoring.md)
 
-- [Общие сведения о Отслеживание изменений и инвентаризации службы автоматизации Azure](../automation/change-tracking.md)
+- [Общие сведения о Отслеживание изменений и инвентаризации службы автоматизации Azure](../automation/change-tracking/overview.md)
 
 - [Включение инвентаризации виртуальных машин Azure](../automation/automation-tutorial-installed-software.md)
 
