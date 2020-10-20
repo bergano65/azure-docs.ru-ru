@@ -8,24 +8,16 @@ ms.date: 10/20/2019
 ms.service: key-vault
 ms.subservice: secrets
 ms.topic: quickstart
-ms.openlocfilehash: 6c29141a2e255588ffa581b84ffeb4ddd7fdb703
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 87d7bbaa40226e02726b92cf7f7705c8028149f7
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87324715"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92019636"
 ---
-# <a name="quickstart-azure-key-vault-client-library-for-java"></a>Краткое руководство. Клиентская библиотека Azure Key Vault для Java
+# <a name="quickstart-azure-key-vault-secret-client-library-for-java"></a>Краткое руководство. Использование клиентской библиотеки секретов Azure Key Vault для Java
 
-Начало работы с клиентской библиотекой Azure Key Vault для Java. Чтобы установить пакет и испробовать пример кода для выполнения базовых задач, выполните описанные ниже шаги.
-
-Хранилище ключей Azure помогает защитить криптографические ключи и секреты, используемые облачными приложениями и службами. Клиентская библиотека Azure Key Vault для Java позволяет выполнять следующие задачи:
-
-- Повысьте уровень безопасности и увеличьте контроль над ключами и паролями.
-- Создавайте и импортируйте ключи шифрования за считаные минуты.
-- Сократите время задержки с помощью масштабирования в облаке и глобального резервирования.
-- Упрощение и автоматизация задач, связанных с TLS- и SSL-сертификатами.
-- Используйте модули HSM, отвечающие стандартам FIPS 140-2 уровня 2.
+Начало работы с клиентской библиотекой секретов Azure Key Vault для Java. Чтобы установить пакет и испробовать пример кода для выполнения базовых задач, выполните описанные ниже шаги.
 
 Дополнительные ресурсы:
 
@@ -37,13 +29,29 @@ ms.locfileid: "87324715"
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- [Пакет разработчиков Java (JDK)](/java/azure/jdk/?view=azure-java-stable) версии 8 или более поздней версии.
+- [Пакет разработчиков Java (JDK)](/java/azure/jdk/) версии 8 или более поздней версии.
 - [Apache Maven](https://maven.apache.org)
-- [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) или [Azure PowerShell](/powershell/azure/).
+- [Azure CLI](/cli/azure/install-azure-cli)
 
-В этом кратком руководстве предполагается, что вы используете [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) и [Apache Maven](https://maven.apache.org) в окне терминала Linux.
+В этом кратком руководстве предполагается, что вы используете [Azure CLI](/cli/azure/install-azure-cli) и [Apache Maven](https://maven.apache.org) в окне терминала Linux.
 
 ## <a name="setting-up"></a>Настройка
+
+В этом кратком руководстве используется библиотека удостоверений Azure и Azure CLI для проверки подлинности пользователя в службах Azure. Разработчики также могут использовать Visual Studio или Visual Studio Code для проверки подлинности своих вызовов. Дополнительные сведения см. в статье [Проверка подлинности клиента с помощью клиентской библиотеки удостоверений Azure](https://docs.microsoft.com/java/api/overview/azure/identity-readme).
+
+### <a name="sign-in-to-azure"></a>Вход в Azure
+
+1. Выполните команду `login`.
+
+    ```azurecli-interactive
+    az login
+    ```
+
+    Если в CLI можно запустить браузер по умолчанию, откроется браузер со страницей входа.
+
+    Если нет, самостоятельно откройте в браузере страницу [https://aka.ms/devicelogin](https://aka.ms/devicelogin) и введите код авторизации, отображаемый в терминале.
+
+2. Выполните вход в браузере с помощью учетных данных.
 
 ### <a name="create-new-java-console-app"></a>Создание консольного приложения Java
 
@@ -109,21 +117,35 @@ cd akv-java
 
 [!INCLUDE [Create a resource group and key vault](../../../includes/key-vault-rg-kv-creation.md)]
 
-### <a name="create-a-service-principal"></a>Создание субъекта-службы
+#### <a name="grant-access-to-your-key-vault"></a>Предоставление доступа к хранилищу ключей
 
-[!INCLUDE [Create a service principal](../../../includes/key-vault-sp-creation.md)]
+Создайте политику доступа для хранилища ключей, которая предоставляет разрешение секрета для учетной записи пользователя
 
-#### <a name="give-the-service-principal-access-to-your-key-vault"></a>Предоставление субъекту-службе доступа к хранилищу ключей
+```console
+az keyvault set-policy --name <YourKeyVaultName> --upn user@domain.com --secret-permissions delete get list set
+```
 
-[!INCLUDE [Give the service principal access to your key vault](../../../includes/key-vault-sp-kv-access.md)]
+#### <a name="set-environment-variables"></a>Настройка переменных среды
 
-#### <a name="set-environmental-variables"></a>Настройка переменных среды
+Это приложение использует имя хранилища ключей в качестве переменной среды с именем `KEY_VAULT_NAME`.
 
-[!INCLUDE [Set environmental variables](../../../includes/key-vault-set-environmental-variables.md)]
+Windows
+```cmd
+set KEY_VAULT_NAME=<your-key-vault-name>
+````
+Windows PowerShell
+```powershell
+$Env:KEY_VAULT_NAME=<your-key-vault-name>
+```
+
+macOS или Linux
+```cmd
+export KEY_VAULT_NAME=<your-key-vault-name>
+```
 
 ## <a name="object-model"></a>Объектная модель
 
-Клиентская библиотека Azure Key Vault для Java позволяет управлять ключами и связанными с ними ресурсами, такими как сертификаты и секреты. В приведенных ниже примерах кода показано, как создать клиент, а также как задать, извлечь и удалить секрет.
+Клиентская библиотека секретов Azure Key Vault для Java позволяет управлять секретами. В разделе [Примеры кода](#code-examples) показано, как создать клиент, задать секрет, получить секрет и удалить секрет.
 
 Полная версия консольного приложения представлена [ниже](#sample-code).
 
@@ -143,7 +165,9 @@ import com.azure.security.keyvault.secrets.models.KeyVaultSecret;
 
 ### <a name="authenticate-and-create-a-client"></a>Аутентификация и создание клиента
 
-Аутентификация в хранилище ключей и создание клиента хранилища ключей зависят от переменных среды, приведенных на шаге [настройки переменные среды](#set-environmental-variables) выше. Имя хранилища ключей расширяется до универсального кода ресурса (URI) хранилища ключей в формате `https://<your-key-vault-name>.vault.azure.net`.
+В этом кратком руководстве пользователь, вошедший в систему, проходит проверку подлинности в хранилище ключей, который является предпочтительным методом при локальной разработке. Для приложений, развернутых в Azure, службе приложений или виртуальной машине должно быть назначено управляемое удостоверение. Дополнительные сведения см. в разделе [Обзор управляемых удостоверений](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview).
+
+В примере ниже имя хранилища ключей расширяется до универсального кода ресурса (URI) хранилища ключей в формате "https://\<your-key-vault-name\>.vault.azure.net". В этом примере показан класс ["DefaultAzureCredential()"](https://docs.microsoft.com/java/api/com.azure.identity.defaultazurecredential), который для предоставления удостоверения позволяет использовать один и тот же код в различных средах с различными параметрами. Дополнительные сведения см. в статье [Проверка подлинности учетных данных Azure по умолчанию](https://docs.microsoft.com/java/api/overview/azure/identity-readme). 
 
 ```java
 String keyVaultName = System.getenv("KEY_VAULT_NAME");
@@ -163,7 +187,7 @@ SecretClient secretClient = new SecretClientBuilder()
 secretClient.setSecret(new KeyVaultSecret(secretName, secretValue));
 ```
 
-Команда [az keyvault secret show](/cli/azure/keyvault/secret?view=azure-cli-latest#az-keyvault-secret-show) позволяет убедиться, что секрет задан успешно:
+Команда [az keyvault secret show](/cli/azure/keyvault/secret?#az-keyvault-secret-show) позволяет убедиться, что секрет задан успешно:
 
 ```azurecli
 az keyvault secret show --vault-name <your-unique-keyvault-name> --name mySecret
@@ -187,7 +211,7 @@ KeyVaultSecret retrievedSecret = secretClient.getSecret(secretName);
 secretClient.beginDeleteSecret(secretName);
 ```
 
-Команда [az keyvault secret show](/cli/azure/keyvault/secret?view=azure-cli-latest#az-keyvault-secret-show) позволяет убедиться, что секрет успешно удален.
+Команда [az keyvault secret show](/cli/azure/keyvault/secret?#az-keyvault-secret-show) позволяет убедиться, что секрет успешно удален.
 
 ```azurecli
 az keyvault secret show --vault-name <your-unique-keyvault-name> --name mySecret
@@ -272,4 +296,5 @@ public class App {
 
 - [Обзор Azure Key Vault](../general/overview.md)
 - [Руководство разработчика Azure Key Vault](../general/developers-guide.md)
+- [Безопасный доступ к хранилищу ключей](../general/secure-your-key-vault.md)
 - [Рекомендации по Azure Key Vault](../general/best-practices.md)

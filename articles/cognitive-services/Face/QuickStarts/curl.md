@@ -10,12 +10,12 @@ ms.subservice: face-api
 ms.topic: quickstart
 ms.date: 08/05/2020
 ms.author: pafarley
-ms.openlocfilehash: 8afb6f018e9c01ee42a9e43cc726a442fa4c8965
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: cd7d1a476f09a2fbfffa687a28616c8faeaae22c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88539344"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91858274"
 ---
 # <a name="quickstart-detect-faces-in-an-image-using-the-face-rest-api-and-curl"></a>Краткое руководство. Обнаружение лиц на изображении с помощью REST API распознавания лиц и cURL
 
@@ -34,9 +34,7 @@ ms.locfileid: "88539344"
  
 Для вызова API Распознавания лиц и получения данных об атрибутах лиц из изображения будет использоваться приведенная ниже команда. Сначала скопируйте код в текстовый редактор. Вам потребуется внести изменения в определенные части команды перед ее запуском.
 
-```shell
-curl -H "Ocp-Apim-Subscription-Key: <Subscription Key>" "https://<My Endpoint String>.com/face/v1.0/detect?returnFaceId=true&returnFaceLandmarks=false&returnFaceAttributes=age,gender,headPose,smile,facialHair,glasses,emotion,hair,makeup,occlusion,accessories,blur,exposure,noise" -H "Content-Type: application/json" --data-ascii "{\"url\":\"https://upload.wikimedia.org/wikipedia/commons/c/c3/RH_Louise_Lillian_Gish.jpg\"}"
-```
+:::code language="shell" source="~/cognitive-services-quickstart-code/curl/face/detect.sh" id="detection_model_2":::
 
 ### <a name="subscription-key"></a>Ключ подписки
 Замените `<Subscription Key>` действительным ключом подписки API распознавания лиц.
@@ -46,14 +44,6 @@ curl -H "Ocp-Apim-Subscription-Key: <Subscription Key>" "https://<My Endpoint St
 URL-адрес `https://<My Endpoint String>.com/face/v1.0/detect` определяет конечную точку API распознавания лиц Azure, которая будет запрашиваться. Первую часть этого URL-адреса нужно будет изменить, указав конечную точку, соответствующую ключу подписки.
 
 [!INCLUDE [subdomains-note](../../../../includes/cognitive-services-custom-subdomains-note.md)]
-
-### <a name="url-query-string"></a>Строка запроса URL-адреса
-
-Строка запроса URL-адреса конечной точки API распознавания лиц указывает атрибуты лица, которые нужно получить. Вы можете изменить эту строку в зависимости от предполагаемого использования.
-
-```
-?returnFaceId=true&returnFaceLandmarks=false&returnFaceAttributes=age,gender,headPose,smile,facialHair,glasses,emotion,hair,makeup,occlusion,accessories,blur,exposure,noise
-```
 
 ### <a name="image-source-url"></a>URL-адрес источника изображения
 URL-адрес источника указывает на изображение, используемое в качестве входных данных. Вы можете изменить значение в этом поле, указав URL-адрес любого изображения, которое нужно проанализировать.
@@ -65,6 +55,28 @@ https://upload.wikimedia.org/wikipedia/commons/c/c3/RH_Louise_Lillian_Gish.jpg
 ## <a name="run-the-command"></a>Выполните команду следующую команду.
 
 После внесения изменений откройте командную строку и введите новую команду. В окне консоли должна появиться информация о лицах в виде данных JSON. Пример:
+
+```json
+[
+  {
+    "faceId": "49d55c17-e018-4a42-ba7b-8cbbdfae7c6f",
+    "faceRectangle": {
+      "top": 131,
+      "left": 177,
+      "width": 162,
+      "height": 162
+    }
+  }
+]  
+```
+
+## <a name="extract-face-attributes"></a>Извлечение атрибутов лиц
+ 
+Чтобы извлечь атрибуты лиц, используйте модель обнаружения 1 и добавьте в запрос параметр `returnFaceAttributes`. Команда должна выглядеть, как представленный ниже пример. Как и ранее, добавьте реальные значения ключа подписки и конечной точки Распознавания лиц.
+
+:::code language="shell" source="~/cognitive-services-quickstart-code/curl/face/detect.sh" id="detection_model_1":::
+
+Теперь возвращаемая информация о лицах содержит атрибуты. Пример:
 
 ```json
 [

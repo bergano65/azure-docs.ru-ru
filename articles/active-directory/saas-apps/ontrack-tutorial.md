@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 03/13/2019
 ms.author: jeedes
-ms.openlocfilehash: 14cb0d70e1c5ce2be0cf810e8a24d9bc596eeb6f
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: b2d244fa6ea42a85483b3067cf58fc9384a86dee
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88544066"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91996585"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-ontrack"></a>Руководство. Интеграция Azure Active Directory с OnTrack
 
@@ -118,7 +118,7 @@ ms.locfileid: "88544066"
 
 5. Приложение OnTrack ожидает проверочные утверждения SAML в определенном формате, поэтому следует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
-    ![image](common/edit-attribute.png)
+    ![Снимок экрана: диалоговое окно "Атрибуты пользователя" с выбранной кнопкой "Изменить".](common/edit-attribute.png)
 
 6. В дополнение к описанному выше приложение OnTrack ожидает несколько дополнительных атрибутов в ответе SAML. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** выполните следующие действия, чтобы добавить атрибут токена SAML, как показано в приведенной ниже таблице.
 
@@ -132,7 +132,7 @@ ms.locfileid: "88544066"
 
     а. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![image](common/new-save-attribute.png)
+    ![Снимок экрана: диалоговое окно "Утверждения пользователя" с выбранными действиями "Добавить новое утверждение" и "Сохранить".](common/new-save-attribute.png)
 
     ![image](common/new-attribute-details.png)
 

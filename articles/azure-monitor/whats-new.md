@@ -6,16 +6,83 @@ ms.topic: overview
 author: bwren
 ms.author: bwren
 ms.date: 07/08/2020
-ms.openlocfilehash: d82e9244152f1ecb78b062b4b1dbf02c45c505a1
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 6722b88947fda8f1a09e540d69c4a8bec74143df
+ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91325663"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91842671"
 ---
 # <a name="whats-new-in-azure-monitor-documentation"></a>Что нового в документации по Azure Monitor?
 
 В этой статье приводятся списки новых или значительно измененных статей об Azure Monitor. Он будет обновляться в первую неделю каждого месяца, чтобы включать в себя обновления статей за предыдущий месяц.
+
+## <a name="september-2020"></a>Сентябрь 2020 г.
+
+### <a name="general"></a>Общие сведения
+- [Часто задаваемые вопросы по Azure Monitor](faq.md) — добавлен раздел по OpenTelemetry.
+
+### <a name="agents"></a>Агенты
+- [Общие сведения об агенте Azure Monitor](platform/azure-monitor-agent-overview.md) — добавлены факторы выбора для подключения к новому агенту.
+- [Обзор агентов мониторинга Azure](platform/agents-overview.md) — добавлена поддержка для Windows 10.
+
+### <a name="alerts"></a>видны узлы
+- [Создание оповещения журнала с помощью шаблона ARM](platform/alerts-log-create-templates.md) — новая статья.
+- [Устранение неполадок с оповещениями о метриках Azure](platform/alerts-troubleshoot-metric.md) — добавлен раздел об экспорте шаблона ARM для правила генерации оповещений о метриках.
+
+### <a name="application-insights"></a>Application Insights
+- [Создание ресурса на основе рабочей области Azure Monitor Application Insights](app/create-workspace-resource.md) — удалено обозначение предварительной версии.
+- [Сохранение и хранение данных в Azure Application Insights](app/data-retention-privacy.md) — добавлены сведения о новой поддержке защиты от потери данных для Mac и Linux.
+- [Счетчики событий в Application Insights](app/eventcounters.md) — добавлена заметка о счетчиках, собранных по умолчанию.
+- [Метрики на основе журнала и предварительно агрегированные метрики в Azure Application Insights](app/pre-aggregated-metrics-log-metrics.md) — удалено обозначение предварительной версии.
+- [Переход с классического ресурса Azure Monitor Application Insights на ресурс на основе рабочей области](app/convert-classic-resource.md) — новая статья.
+- [Отслеживание приложений Java в любой среде — Azure Monitor Application Insights](app/java-in-process-agent.md) — обновление для новой предварительной версии агента.
+- [Настройка аналитики веб-приложений для ASP.NET с помощью Azure Application Insights](app/asp-net.md) — переписана статья.
+- [Каналы телеметрии в Azure Application Insights](app/telemetry-channels.md) — добавлены сведения о новой поддержке защиты от потери данных для Mac и Linux.
+- [Устранение неполадок Azure Application Insights Snapshot Debugger](app/snapshot-debugger-troubleshoot.md) — добавлен раздел SSL для устранения неполадок Snapshot Debugger.
+- [Использование Анализа изменений в приложениях в Azure Monitor для поиска проблем с веб-приложениями](app/change-analysis.md) — добавлены разделы о виртуальной машине и журнале действий.
+
+
+### <a name="containers"></a>Контейнеры
+- [Настройка кластера Kubernetes с поддержкой Azure Arc с помощью Azure Monitor для контейнеров](insights/container-insights-enable-arc-enabled-clusters.md) — добавлено руководство по активации мониторинга с помощью субъекта-службы.
+- [Сбор метрик развертывания и HPA с помощью Azure Monitor для контейнеров](insights/container-insights-deployment-hpa-metrics.md) — новая статья.
+
+### <a name="insights-and-solutions"></a>Полезные сведения и решения
+- [Azure Monitor для Кэша Azure для Redis](insights/redis-cache-insights-overview.md) — удалено обозначение предварительной версии.
+- [Azure Monitor для сетей (предварительная версия)](insights/network-insights-overview.md) — добавлены разделы о возможности подключения и трафике.
+- [Соединитель ITSM — безопасный экспорт в Azure Monitor](platform/it-service-management-connector-secure-webhook-connections.md) — новая статья.
+- [Соединитель ITSM в Azure Monitor](platform/itsmc-connections.md) — добавлены сведения об интеграции Cherwell и Provance ITSM.
+- [Мониторинг Key Vault с помощью Azure Monitor для Key Vault](insights/key-vault-insights-overview.md) — удалено обозначение предварительной версии.
+
+### <a name="logs"></a>Журналы
+- [Запросы на аудит в запросах журнала Azure Monitor](log-query/query-audit.md) — новая статья.
+- [Ключ Azure Monitor, управляемый клиентом](platform/customer-managed-keys.md) — добавлена клиентская блокировка.
+- [Кластеры Журналов Azure Monitor уровня "Выделенный"](log-query/logs-dedicated-clusters.md) — новая статья.
+- [Проектирование развертывания Журналов Azure Monitor](platform/design-logs-deployment.md) — добавлен раздел об ограничении скорости тома для масштабирования и приема.
+- [Область действия запроса журнала в Azure Monitor Log Analytics](log-query/scope.md) — статья обновлена и теперь содержит сведения о приложениях на основе рабочей области.
+- [Журналы в Azure Monitor](platform/data-platform-logs.md) — статья обновлена и теперь содержит сведения о приложениях на основе рабочей области.
+- [Стандартные столбцы в записях журнала Azure Monitor](platform/log-standard-columns.md) — статья обновлена и теперь содержит сведения о приложениях на основе рабочей области.
+- [Ограничения службы Azure Monitor](service-limits.md) — обновлены ограничения для регулирования количества пользовательских запросов.
+- [Использование управляемых клиентом учетных записей хранения в Azure Monitor Log Analytics](platform/private-storage.md) — статья переписана.
+- [Просмотр и анализ данных в Azure Log Analytics](log-query/logs-structure.md) — статья обновлена и теперь содержит сведения о приложениях на основе рабочей области.
+
+
+### <a name="platform-logs"></a>Журналы платформы
+- [Схема событий Журнала действий Azure — Azure Monitor](platform/activity-log-schema.md) — добавлены уровни приоритетности.
+- [Примеры шаблонов Resource Manager для параметров диагностики](samples/resource-manager-diagnostic-settings.md) — добавлен пример для учетной записи хранения Azure.
+
+### <a name="visualizations"></a>Визуализации
+- [Визуализации диаграмм книги Azure Monitor](platform/workbooks-chart-visualizations.md) — новая статья.
+- [Составная панель отрисовщика книги Azure Monitor](platform/workbooks-composite-bar.md) — новая статья.
+- [Визуализации графов книги Azure Monitor](platform/workbooks-graph-visualizations.md) — новая статья.
+- [Визуализации сетки книги Azure Monitor](platform/workbooks-grid-visualizations.md) — новая статья.
+- [Визуализации сотовой конструкции книги Azure Monitor](platform/workbooks-honey-comb.md) — новая статья.
+- [Визуализации текста книги Azure Monitor](platform/workbooks-text-visualizations.md) — новая статья.
+- [Визуализации фрагмента книги Azure Monitor](platform/workbooks-tile-visualizations.md) — новая статья.
+- [Визуализации дерева книги Azure Monitor](platform/workbooks-tree-visualizations.md) — новая статья.
+
+
+
 
 ## <a name="august-2020"></a>Август 2020 г.
 

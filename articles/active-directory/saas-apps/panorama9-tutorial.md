@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
-ms.openlocfilehash: 7bf3afef81c70355326ed9341f2dd8a39d542b54
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 1e2cb00f4b8228b3587930fc5b237d308c532c8c
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88554113"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91996066"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-panorama9"></a>Учебник. Интеграция Azure Active Directory с Panorama9
 
@@ -210,7 +210,7 @@ ms.locfileid: "88554113"
 
 2. На панели инструментов вверху нажмите **Manage** (Управление), а затем **Users** (Пользователи).
    
-    ![Пользователи](./media/panorama9-tutorial/ic790027.png "Пользователи")
+    ![Снимок экрана: выбранные вкладки "Manage" (Управление) и "Users" (Пользователи).](./media/panorama9-tutorial/ic790027.png "Пользователи")
 
 3. В разделе "Users" (Пользователи) щелкните **+** , чтобы добавить нового пользователя.
 

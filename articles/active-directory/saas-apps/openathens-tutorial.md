@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 10/24/2019
 ms.author: jeedes
-ms.openlocfilehash: fc60552fadf10dde88c0e6d8c6f46bd25c68cf2f
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: da8ae35ce85ca9ffb031511e81270afd8529681d
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88543947"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91994193"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-openathens"></a>Руководство по интеграции единого входа Azure Active Directory с OpenAthens
 
@@ -134,15 +134,15 @@ ms.locfileid: "88543947"
 
 1. Выберите **Connections** (Подключения) в списке на вкладке **Management** (Управление).
 
-    ![Настройка единого входа](./media/openathens-tutorial/tutorial_openathens_application1.png)
+    ![Снимок экрана: страница сайта компании OpenAthens с выделенным пунктом Connections (Подключения) на вкладке Management (Управление)](./media/openathens-tutorial/tutorial_openathens_application1.png)
 
 1. Выберите **SAML 1.1/2.0**, а затем нажмите кнопку **Configure** (Настроить).
 
-    ![Настройка единого входа](./media/openathens-tutorial/tutorial_openathens_application2.png)
+    ![Снимок экрана: диалоговое окно Select local authentication system type (Выбор типа системы локальной аутентификации) с параметром SAML 1.1/2.0 и выделенной кнопкой Configure (Настроить)](./media/openathens-tutorial/tutorial_openathens_application2.png)
 
 1. Чтобы добавить конфигурацию, нажмите кнопку **​​Browse** (Обзор), чтобы передать XML-файл метаданных, скачанный на портале Azure, а затем нажмите кнопку **Add** (Добавить).
 
-    ![Настройка единого входа](./media/openathens-tutorial/tutorial_openathens_application3.png)
+    ![Снимок экрана: диалоговое окно Add SAML authentication system (Выбор системы аутентификации SAML) с действием Browse (Обзор) и выделенной кнопкой Add (Добавить)](./media/openathens-tutorial/tutorial_openathens_application3.png)
 
 1. Выполните следующие действия на вкладке **Details** (Сведения).
 
@@ -164,7 +164,7 @@ ms.locfileid: "88543947"
 
     h. Из вкладки **</> Проверяющая сторона** скопируйте **URL-адрес метаданных** и откройте его в браузере, чтобы скачать файл **XML метаданных пакета обновления**. Отправьте этот файл метаданных пакета обновления в раздел **Базовая конфигурация SAML** Azure AD.
 
-    ![Настройка единого входа](./media/openathens-tutorial/tutorial_openathens_application5.png)
+    ![Снимок экрана: выделенная вкладка Relying party (Проверяющая сторона) и пункт Metadata URL (URL-адрес метаданных)](./media/openathens-tutorial/tutorial_openathens_application5.png)
 
 ### <a name="create-openathens-test-user"></a>Создание тестового пользователя OpenAthens
 

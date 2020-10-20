@@ -1,5 +1,5 @@
 ---
-title: Создание пользовательского модуля Python — Azure IoT Edge | Документация Майкрософт
+title: Руководство по созданию пользовательского модуля Python — Azure IoT Edge | Документация Майкрософт
 description: В этом руководстве показано, как создать модуль IoT Edge с кодом Python и его развертывание на пограничном устройстве.
 services: iot-edge
 author: kgremban
@@ -10,12 +10,12 @@ ms.date: 08/04/2020
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: c05124a1f5e5920b94d1925490b6714ba3b33c83
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 1cc3db32650891c5f95be05267541f93ca49218e
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91336774"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92047970"
 ---
 # <a name="tutorial-develop-and-deploy-a-python-iot-edge-module-for-linux-devices"></a>Руководство по разработке модуля IoT Edge на языке Python и его развертыванию на устройствах Linux
 
@@ -51,7 +51,7 @@ ms.locfileid: "91336774"
 
 * [Центр Интернета вещей](../iot-hub/iot-hub-create-through-portal.md) ценовой категории "Бесплатный" или "Стандартный" в Azure.
 * [устройство Linux, на котором выполняется Azure IoT Edge](quickstart-linux.md);
-* реестр контейнеров, например [Реестр контейнеров Azure](https://docs.microsoft.com/azure/container-registry/);
+* реестр контейнеров, например [Реестр контейнеров Azure](../container-registry/index.yml);
 * средство [Visual Studio Code](https://code.visualstudio.com/), настроенное с помощью [Azure IoT Tools](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools);
 * выпуск [Docker CE](https://docs.docker.com/install/), настроенный для выполнения контейнеров Linux.
 
@@ -269,7 +269,7 @@ ms.locfileid: "91336774"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом руководстве вы создали модуль IoT Edge, который содержит код для фильтрации необработанных данных, созданных вашим устройством IoT Edge. Дополнительные сведения см. в статьях о [разработке модулей IoT Edge](module-development.md) и [разработке модулей с помощью Visual Studio Code](how-to-vs-code-develop-module.md). Примеры модулей IoT Edge, включая смоделированный модуль температуры, см. в этой [статье](https://github.com/Azure/iotedge/tree/master/edge-modules) и на [странице примеров пакета SDK Azure IoT для Python](https://github.com/Azure/azure-iot-sdk-python/tree/master/azure-iot-device/samples/async-edge-scenarios).
+В этом руководстве вы создали модуль IoT Edge, который содержит код для фильтрации необработанных данных, созданных вашим устройством IoT Edge.
 
 Перейдите к следующим руководствам, чтобы узнать, как Azure IoT Edge поможет развернуть облачные службы Azure для обработки данных на пограничном устройстве.
 

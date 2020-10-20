@@ -7,12 +7,12 @@ ms.author: pariks
 ms.custom: mvc
 ms.topic: overview
 ms.date: 8/21/2020
-ms.openlocfilehash: d3d58cab6e3b9ed0bf3b8ed409aa736357687f09
-ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
+ms.openlocfilehash: da9b7216908b4a4ba80a421427f473c217f76c28
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91759651"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91993751"
 ---
 # <a name="azure-database-for-mysql---flexible-server-preview"></a>Гибкий сервер Базы данных Azure для MySQL (предварительная версия)
 
@@ -117,8 +117,19 @@ ms.locfileid: "91759651"
 - **Создание резервной копии и восстановление**. Для миграций в автономной среде, где допустим некоторый простой для пользователей, самым быстрым способом миграции будет создание резервной копии с последующим восстановлением, для которой применяются такие средства сообщества, как mysqldump/mydumper. Дополнительные сведения см. в статье "Миграция с использованием дампа и восстановления". 
 - **Azure Database Migration Service**. Чтобы без проблем выполнить простую миграцию на отдельный сервер с минимальным временем простоя, можно применить [Azure Database Migration Service](https://docs.microsoft.com/azure/dms/tutorial-mysql-azure-mysql-online). 
 
+## <a name="azure-regions"></a>Регионы Azure
+
+Одним из преимуществ выполнения рабочей нагрузки в Azure является глобальный доступ. На сегодня гибкий сервер для Базы данных Azure для MySQL доступен в следующих регионах Azure:
+
+- Северная Европа
+- Юго-Восточная Азия
+- восточная часть США 2
+- Западная часть США 2
+
+Скоро будут добавлены и другие регионы.
+
 ## <a name="contacts"></a>Контакты
-Если у вас возникли вопросы или предложения, связанные с использованием Базы данных Azure для MySQL, вы можете отправить электронное сообщение команде разработчиков Базы данных Azure для MySQL ([@AskБазы данных Azure для MySQL](mailto:AskAzureDBforMySQL@service.microsoft.com)). Учтите, что это не электронный адрес службы технической поддержки.
+Если у вас возникли вопросы или предложения, связанные с использованием гибкого сервера Базы данных Azure для MySQL, вы можете отправить сообщение электронной почты команде разработчиков Базы данных Azure для MySQL ([@Ask Базы данных Azure для MySQL](mailto:AskAzureDBforMySQL@service.microsoft.com)). Учтите, что это не электронный адрес службы технической поддержки.
 
 Кроме того, попробуйте обратиться сюда:
 

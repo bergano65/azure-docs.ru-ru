@@ -8,12 +8,12 @@ ms.subservice: heavy
 ms.topic: tutorial
 ms.date: 07/03/2019
 ms.author: alkohli
-ms.openlocfilehash: f9134b57d8a3e76417283e5d863724651b4f6a6f
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: e2fc174147b99b7b952c6d10084cfc969dacf5a6
+ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87921169"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91949145"
 ---
 # <a name="tutorial-copy-data-to-azure-data-box-blob-storage-via-rest-apis"></a>Руководство по Копирование данных в хранилище BLOB-объектов Azure Data Box с помощью REST API  
 
@@ -122,11 +122,11 @@ ms.locfileid: "87921169"
 
 3.  Выберите **Поместить все сертификаты в следующее хранилище**, затем нажмите кнопку **Обзор**. Перейдите в корневое хранилище удаленного узла и нажмите кнопку **Далее**.
 
-    ![Импорт сертификата с помощью PowerShell](media/data-box-deploy-copy-data-via-rest/import-cert-ws-2.png)
+    ![Импорт сертификата с помощью PowerShell (2)](media/data-box-deploy-copy-data-via-rest/import-cert-ws-2.png)
 
 4.  Нажмите кнопку **Готово**. Появится сообщение о том, что импорт успешно выполнен.
 
-    ![Импорт сертификата с помощью PowerShell](media/data-box-deploy-copy-data-via-rest/import-cert-ws-3.png)
+    ![Импорт сертификата с помощью PowerShell (3)](media/data-box-deploy-copy-data-via-rest/import-cert-ws-3.png)
 
 #### <a name="use-a-linux-system"></a>Использование системы Linux
 

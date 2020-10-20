@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 08/13/2020
 ms.author: jeedes
-ms.openlocfilehash: d3bb0ad5305ccba412a403352405711be8f183a2
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 75f2574a656f659dfed12b59d52c9f147527c65d
+ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88555945"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91950038"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-datadog"></a>Руководство по интеграции единого входа Azure Active Directory с Datadog
 
@@ -141,6 +141,22 @@ ms.locfileid: "88555945"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Datadog на панели доступа, вы автоматически войдете в приложение Datadog, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+
+### <a name="enable-all-users-from-your-tenant-to-authenticate-with-the-app"></a>Разрешение пользователям из клиента проходить проверку подлинности в приложении
+
+В этом разделе показано, как предоставить всем пользователям из клиента доступ к Datadog, если у таких пользователей есть учетная запись на стороне Datadog.
+
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
+1. В списке приложений выберите **Datadog**.
+1. На странице обзора приложения в разделе **Управление** выберите **Свойства**.
+
+    ![Ссылка "Свойства"](common/properties.png)
+
+1. Для параметра **Требуется ли назн. польз.?** задайте значение **Нет**.
+
+    ![Назначение пользователя не требуется](common/user-assignment-not-required.png)
+
+1. Щелкните **Сохранить**.
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

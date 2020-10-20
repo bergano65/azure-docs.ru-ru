@@ -68,7 +68,7 @@
             - name: Основы
               href: data-lake-analytics-u-sql-get-started.md
             - name: Справочник по языку
-              href: 'https://docs.microsoft.com/u-sql/'
+              href: /u-sql/
             - name: Каталог
               href: data-lake-analytics-u-sql-catalog.md
             - name: Определяемые пользователем операторы
@@ -152,26 +152,26 @@
     - name: Node.js
       href: 'https://www.npmjs.com/package/azure-arm-datalake-analytics'
     - name: Python
-      href: 'https://docs.microsoft.com/python/api/overview/azure/data-lake-analytics?view=azure-python'
+      href: /python/api/overview/azure/data-lake-analytics
     - name: REST
       href: /rest/api/datalakeanalytics/
     - name: Шаблон Resource Manager
       href: /azure/templates/microsoft.datalakeanalytics/allversions
     - name: Azure CLI
-      href: 'https://docs.microsoft.com/cli/azure/dla'
+      href: /cli/azure/dla
     - name: Встроенные компоненты Политики Azure
       displayName: 'samples, policies, definitions'
       href: ./policy-reference.md
 - name: Ресурсы
   items:
     - name: Блог Azure Data Lake
-      href: 'https://blogs.msdn.microsoft.com/azuredatalake/'
+      href: /archive/blogs/azuredatalake/
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/?category=intelligence-analytics'
     - name: Запрос изменений
       href: 'https://feedback.azure.com/forums/327234-data-lake'
     - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
-      href: 'https://docs.microsoft.com/answers/topics/azure-data-lake-analytics.html'
+      href: /answers/topics/azure-data-lake-analytics.html
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/data-lake-analytics/'
     - name: Калькулятор цен

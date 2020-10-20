@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
-ms.openlocfilehash: 0e7b09c13cd27bd8197f6b65a1213d3154db6ac3
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: f96f7eb358907bc27303735f4d8a111efeb6a3dc
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88553847"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91996658"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-pingboard"></a>Руководство по интеграции Azure Active Directory с Pingboard
 
@@ -101,7 +101,7 @@ ms.locfileid: "88553847"
 
 4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа для приложения Pingboard](common/idp-intiated.png)
+    ![Снимок экрана: раздел "Базовая конфигурация SAML" с выбранными полями "Идентификатор", "URL-адрес ответа" и кнопкой "Сохранить".](common/idp-intiated.png)
 
     а. В текстовом поле **Идентификатор** введите URL-адрес: `http://app.pingboard.com/sp`
 

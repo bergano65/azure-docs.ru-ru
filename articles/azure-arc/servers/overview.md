@@ -2,14 +2,14 @@
 title: Обзор серверов с поддержкой Azure Arc
 description: Сведения о том, как с помощью серверов с поддержкой Azure Arc управлять серверами, размещенными вне Azure, как ресурсами Azure.
 keywords: служба автоматизации Azure, DSC, PowerShell, настройка требуемого состояния, управление обновлениями, отслеживание изменений, инвентаризация, модули runbook, Python, графический, гибридный
-ms.date: 09/16/2020
+ms.date: 10/07/2020
 ms.topic: overview
-ms.openlocfilehash: 9fcac35f943eefb15a200e9b148b22ce67cc3941
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 881445b19baef4e025cf3bd32dc3b55b2d170ec3
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "90887544"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91818750"
 ---
 # <a name="what-is-azure-arc-enabled-servers"></a>Что такое серверы с поддержкой Azure Arc?
 
@@ -21,7 +21,7 @@ ms.locfileid: "90887544"
 
 При подключении компьютера к серверам с поддержкой Azure Arc появляется возможность выполнять следующие задачи мониторинга и управления конфигурацией:
 
-- Назначение [конфигураций гостевых политик Azure](../../governance/policy/concepts/guest-configuration.md) с помощью того же интерфейса, что и для назначения политики для виртуальных машин Azure.
+- Назначение [конфигураций гостевых политик Azure](../../governance/policy/concepts/guest-configuration.md) с помощью того же интерфейса, что и для назначения политики для виртуальных машин Azure. В настоящее время политики гостевой конфигурации не применяют свои конфигурации, а только выполняют аудит параметров на компьютере. Сведения о затратах на использование политик гостевой конфигурации в Политике Azure для серверов с поддержкой Arc см. на [странице цен](https://azure.microsoft.com/pricing/details/azure-policy/) для Политики Azure.
 
 - Отчеты об изменениях конфигурации для установленного программного обеспечения, служб Майкрософт, реестра и файлов в Windows или управляющих программ в Linux на всех наблюдаемых серверах с помощью функции [Отслеживание изменений и инвентаризация](../../automation/change-tracking.md) в Службе автоматизации Azure.
 

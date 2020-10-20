@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
-ms.openlocfilehash: 530ef271091afc3e646d375ea471d8c48f0f8651
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 0d72e6c6a606a199bd8b0ada601479267e0d728d
+ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88544202"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91945181"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-hackerone"></a>Учебник. Интеграция Azure Active Directory с HackerOn
 
@@ -126,11 +126,11 @@ ms.locfileid: "88544202"
 
 2. В верхнем меню щелкните пункт **Параметры**.
 
-    ![Настройка единого входа](./media/hackerone-tutorial/tutorial_hackerone_001.png)
+    ![Снимок экрана, на котором показан выбранный в меню пункт "Параметры".](./media/hackerone-tutorial/tutorial_hackerone_001.png)
 
 3. Перейдите к разделу **Authentication** (Аутентификация) и щелкните **Add SAML settings** (Добавить параметры SAML).
 
-    ![Настройка единого входа](./media/hackerone-tutorial/tutorial_hackerone_003.png)
+    ![Снимок экрана для страницы параметров проверки подлинности, где выбрана кнопка добавления параметров SAML.](./media/hackerone-tutorial/tutorial_hackerone_003.png)
 
 4. В диалоговом окне **SAML Settings** (Параметры SAML) выполните следующие действия.
 
@@ -146,7 +146,7 @@ ms.locfileid: "88544202"
 
 5. В диалоговом окне "Authentication Settings" (Параметры аутентификации) выполните следующие действия.
 
-    ![Настройка единого входа](./media/hackerone-tutorial/tutorial_hackerone_005.png)
+    ![Снимок экрана для диалогового окна с параметрами проверки подлинности, где выбрана кнопка запуска теста.](./media/hackerone-tutorial/tutorial_hackerone_005.png)
 
     а. Щелкните **Run test**(Выполнить проверку).
 

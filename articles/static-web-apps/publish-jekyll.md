@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: tutorial
 ms.date: 06/08/2020
 ms.author: cshoe
-ms.openlocfilehash: bf1664a35562b888f9dd7aacd3b1112058bed664
-ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
+ms.openlocfilehash: e3bad12362358620d0f2dc105bb2820dfb691d00
+ms.sourcegitcommit: 090ea6e8811663941827d1104b4593e29774fa19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88797706"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92000220"
 ---
 # <a name="tutorial-publish-a-jekyll-site-to-azure-static-web-apps-preview"></a>Руководство по Публикация сайта Jekyll в службе "Статические веб-приложения Azure" — предварительный просмотр
 
@@ -118,7 +118,7 @@ ms.locfileid: "88797706"
 
 1. В поле _Ветвь_ выберите **главная**.
 
-    :::image type="content" source="./media/publish-jekyll/completed-github-info.png" alt-text="Поля, заполненные сведениями о GitHub":::
+    :::image type="content" source="./media/publish-jekyll/completed-github-info.png" alt-text="Заполненные сведениями поля":::
 
 ### <a name="build"></a>Сборка
 
@@ -146,12 +146,9 @@ ms.locfileid: "88797706"
 
 1. Откройте приложение Jekyll в текстовом редакторе и откройте файл _.github/workflows/azure-pages-<WORKFLOW_NAME>.yml_.
 
-1. Добавьте строки после блока `- uses: actions/checkout@v2` в следующий блок конфигурации.
+1. После строки `- uses: actions/checkout@v2` добавьте следующий блок параметров.
 
     ```yml
-    - uses: actions/checkout@v2
-      with:
-        submodules: true
     - name: Set up Ruby
       uses: ruby/setup-ruby@ec106b438a1ff6ff109590de34ddc62c540232e0
       with:
@@ -174,7 +171,7 @@ ms.locfileid: "88797706"
 
 1. В окне _Обзор_ портала Azure щелкните ссылку на _URL-адрес_, чтобы открыть развернутое приложение.
 
-   :::image type="content" source="./media/publish-jekyll/deployed-app.png" alt-text="Развернутое приложение":::
+   :::image type="content" source="./media/publish-jekyll/deployed-app.png" alt-text="Заполненные сведениями поля":::
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

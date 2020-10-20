@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/31/2018
 ms.author: jeedes
-ms.openlocfilehash: 45ad613fd250f905dd1cd5e14b5c8aeb42896a51
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: edfd14d979b84061690410f3da9e29ba07899654
+ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88554664"
+ms.lasthandoff: 10/11/2020
+ms.locfileid: "91940986"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-mobileiron"></a>Руководство по интеграции Azure Active Directory с MobileIron
 
@@ -99,7 +99,7 @@ ms.locfileid: "88554664"
 
 4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа для приложения MobileIron](common/idp-intiated.png)
+    ![Снимок экрана, на котором показан раздел "Базовая конфигурация SAML", где можно ввести идентификатор, URL-адрес ответа и нажать кнопку "Сохранить"](common/idp-intiated.png)
 
     а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://www.mobileiron.com/<key>`.
 
@@ -107,7 +107,7 @@ ms.locfileid: "88554664"
 
     c. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа для приложения MobileIron](common/metadata-upload-additional-signon.png)
+    ![Снимок экрана, на котором показан параметр "Задать дополнительные URL-адреса" и поле для ввода URL-адреса входа](common/metadata-upload-additional-signon.png)
 
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://<host>.mobileiron.com/user/login.html`.
 
@@ -124,11 +124,11 @@ ms.locfileid: "88554664"
 
 2. Перейдите в **Администратор** > **Идентификатор** и выберите параметр **AAD** в поле **Info on Cloud IDP Setup** (Информация о настройке IDP в облаке).
 
-    ![Кнопка настройки единого входа для администратора](./media/mobileiron-tutorial/tutorial_mobileiron_admin.png)
+    ![Снимок экрана: вкладка Admin (Администратор) с выбранным параметром Identity (Идентификатор) на сайте MobileIron.](./media/mobileiron-tutorial/tutorial_mobileiron_admin.png)
 
 3. Скопируйте значения **Ключ** и **Узел** и дополните ими URL-адреса в разделе **Базовая настройка SAML** на портале Azure.
 
-    ![Кнопка настройки единого входа для администратора](./media/mobileiron-tutorial/key.png)
+    ![Снимок экрана: параметр настройки SAML с ключом и значением узла.](./media/mobileiron-tutorial/key.png)
 
 4. В разделе **Export metadata file from AAD and import to MobileIron Cloud Field** (Экспорт файла метаданных из AAD и импорт данных в облако MobileIron) и щелкните **Choose File** (Выбрать файл), чтобы отправить метаданные, скачанные с портала Azure. Когда процесс завершится, нажмите кнопку **Done** (Готово).
 

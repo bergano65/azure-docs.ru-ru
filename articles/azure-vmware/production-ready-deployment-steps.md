@@ -3,12 +3,12 @@ title: Планирование развертывания Решения Azure 
 description: В этой статье описывается рабочий процесс развертывания Решения Azure VMware.  Его конечным результатом будет среда, готовая к созданию виртуальной машины и миграции.
 ms.topic: tutorial
 ms.date: 10/02/2020
-ms.openlocfilehash: e279f14406d464171f0879d85cc33f9844d22ec3
-ms.sourcegitcommit: 23aa0cf152b8f04a294c3fca56f7ae3ba562d272
+ms.openlocfilehash: fe1396c8f256ba8374208febad2afe03a453e5f5
+ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91802214"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92055092"
 ---
 # <a name="planning-the-azure-vmware-solution-deployment"></a>Планирование развертывания Решения Azure VMware
 
@@ -104,7 +104,7 @@ ms.locfileid: "91802214"
 Канал ExpressRoute из Решения Azure VMware подключается к шлюзу ExpressRoute в виртуальной сети Azure, которую вы определили на этом шаге.  
 
 >[!IMPORTANT]
->Если будет использоваться существующая виртуальная сеть, необходимо выбрать ту, у которой изначально не было подсети шлюза.  
+>Для подключения к Решению Azure VMware можно использовать существующий шлюз ExpressRoute, если он не превышает ограничение в четыре канала ExpressRoute на виртуальную сеть.  Но для доступа к Решению Azure VMware из локальной среды через ExpressRoute требуется служба ExpressRoute Global Reach, так как шлюз ExpressRoute не обеспечивает транзитивную маршрутизацию между подключенными каналами.  
 
 Если вы хотите подключить канал ExpressRoute из Решения Azure VMware к существующему шлюзу ExpressRoute, это можно сделать после развертывания.  
 

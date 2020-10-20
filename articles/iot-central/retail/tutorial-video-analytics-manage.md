@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.author: nandab
 author: KishorIoT
 ms.date: 07/31/2020
-ms.openlocfilehash: dea009d6d246d68f0686c3dc85f3518ccb13705c
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.openlocfilehash: 1c1ddeb8cafd8aa7584da48a715139c5d12eeb10
+ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91575203"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91874804"
 ---
 # <a name="tutorial-monitor-and-manage-a-video-analytics---object-and-motion-detection-application"></a>Руководство по мониторингу и управлению видео с помощью приложения "Видеоаналитика — распознавание объектов и движения"
 
@@ -26,7 +26,7 @@ ms.locfileid: "91575203"
 
 Перед началом работы необходимо изучить следующие ресурсы:
 
-* [руководство по созданию приложения для аналитики видеотрансляций в Azure IoT Central](./tutorial-video-analytics-create-app.md);
+* Статья [Руководство. Создание приложения видеоаналитики для распознавания объектов и движения в Azure IoT Central (YOLO v3)](./tutorial-video-analytics-create-app-yolo-v3.md) или [Руководство. Создание приложения видеоаналитики для распознавания объектов и движения в Azure IoT Central (OpenVINO)&trade;](tutorial-video-analytics-create-app-openvino.md).
 * [Руководство по созданию экземпляра IoT Edge для видеоаналитики (виртуальная машина Linux)](tutorial-video-analytics-iot-edge-vm.md) или [Руководство по созданию экземпляра IoT Edge для видеоаналитики (Intel NUC)](tutorial-video-analytics-iot-edge-nuc.md).
 
 Чтобы запустить приложение для просмотра видео, на локальном компьютере необходимо установить [Docker](https://www.docker.com/products/docker-desktop).

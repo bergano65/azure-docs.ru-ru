@@ -5,15 +5,15 @@ author: markjbrown
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.topic: sample
-ms.date: 07/29/2020
+ms.date: 10/07/2020
 ms.author: mjbrown
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 954215f04525e850151fdad93af6e7272b41b3df
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 58460dffad3d44090644a544f4082b7727ece3f2
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87498469"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91840342"
 ---
 # <a name="azure-cli-samples-for-azure-cosmos-db"></a>Примеры Azure CLI для Azure Cosmos DB
 
@@ -40,7 +40,7 @@ ms.locfileid: "87498469"
 |---|---|
 | [Создание учетной записи Azure Cosmos, базы данных и контейнера](scripts/cli/sql/create.md?toc=%2fcli%2fazure%2ftoc.json)| Создает учетную запись, базу данных и контейнер Azure Cosmos DB для API Core (SQL). |
 | [Создание учетной записи, базы данных и контейнера Azure Cosmos с автомасштабированием](scripts/cli/sql/autoscale.md?toc=%2fcli%2fazure%2ftoc.json)| Создает учетную запись Azure Cosmos DB, базу данных и контейнер Azure Cosmos DB с автомасштабированием для API Core (SQL). |
-| [Изменение пропускной способности](scripts/cli/sql/throughput.md?toc=%2fcli%2fazure%2ftoc.json) | Обновляет ЕЗ/с в базе данных или контейнере.|
+| [Операции с пропускной способностью](scripts/cli/sql/throughput.md?toc=%2fcli%2fazure%2ftoc.json) | Чтение и обновление значений пропускной способности, а также переход между автомасштабируемой и стандартной пропускной способностью базы данных и контейнера.|
 | [Блокировка ресурсов от удаления](scripts/cli/sql/lock.md?toc=%2fcli%2fazure%2ftoc.json)| Запрет на удаление ресурсов с помощью блокировок ресурсов.|
 |||
 
@@ -50,7 +50,7 @@ ms.locfileid: "87498469"
 |---|---|
 | [Создание учетной записи Azure Cosmos, базы данных и коллекции](scripts/cli/mongodb/create.md?toc=%2fcli%2fazure%2ftoc.json)| Создает учетную запись, базу данных и коллекцию API MongoDB в Azure Cosmos DB. |
 | [Создание учетной записи и базы данных Azure Cosmos с автомасштабированием, а также двух коллекций c общей пропускной способностью](scripts/cli/mongodb/autoscale.md?toc=%2fcli%2fazure%2ftoc.json)| Создает учетную запись и базу данных Azure Cosmos DB с автомасштабированием, а также две коллекции c общей пропускной способностью для API MongoDB. |
-| [Изменение пропускной способности](scripts/cli/mongodb/throughput.md?toc=%2fcli%2fazure%2ftoc.json) | Обновляет ЕЗ/с в базе данных и коллекции.|
+| [Операции с пропускной способностью](scripts/cli/mongodb/throughput.md?toc=%2fcli%2fazure%2ftoc.json) | Чтение и обновление значений пропускной способности, а также переход между автомасштабируемой и стандартной пропускной способностью базы данных и коллекции.|
 | [Блокировка ресурсов от удаления](scripts/cli/mongodb/lock.md?toc=%2fcli%2fazure%2ftoc.json)| Запрет на удаление ресурсов с помощью блокировок ресурсов.|
 |||
 
@@ -60,7 +60,7 @@ ms.locfileid: "87498469"
 |---|---|
 | [Создание учетной записи Azure Cosmos, пространства ключей и таблицы](scripts/cli/cassandra/create.md?toc=%2fcli%2fazure%2ftoc.json)| Создает учетную запись Azure Cosmos DB, пространство ключей и таблицу для API Cassandra. |
 | [Создание учетной записи, пространства ключей и таблицы Azure Cosmos с автомасштабированием](scripts/cli/cassandra/autoscale.md?toc=%2fcli%2fazure%2ftoc.json)| Создает учетную запись, пространство ключей и таблицу Azure Cosmos DB с автомасштабированием для API Cassandra. |
-| [Изменение пропускной способности](scripts/cli/cassandra/throughput.md?toc=%2fcli%2fazure%2ftoc.json) | Обновляет ЕЗ/с для пространства ключей и таблицы.|
+| [Операции с пропускной способностью](scripts/cli/cassandra/throughput.md?toc=%2fcli%2fazure%2ftoc.json) | Чтение и обновление значений пропускной способности, а также переход между автомасштабируемой и стандартной пропускной способностью пространства ключей и таблицы.|
 | [Блокировка ресурсов от удаления](scripts/cli/cassandra/lock.md?toc=%2fcli%2fazure%2ftoc.json)| Запрет на удаление ресурсов с помощью блокировок ресурсов.|
 |||
 
@@ -70,7 +70,7 @@ ms.locfileid: "87498469"
 |---|---|
 | [Создание учетной записи Azure Cosmos, базы данных и графа](scripts/cli/gremlin/create.md?toc=%2fcli%2fazure%2ftoc.json)| Создает учетную запись, базу данных и граф для API Gremlin в Azure Cosmos DB. |
 | [Создание учетной записи, базы данных и графа Azure Cosmos с применением автомасштабирования](scripts/cli/gremlin/autoscale.md?toc=%2fcli%2fazure%2ftoc.json)| Создает учетную запись, базу данных и граф Azure Cosmos DB с применением автомасштабирования для API Gremlin. |
-| [Изменение пропускной способности](scripts/cli/gremlin/throughput.md?toc=%2fcli%2fazure%2ftoc.json) | Обновляет ЕЗ/с в базе данных и графе.|
+| [Операции с пропускной способностью](scripts/cli/gremlin/throughput.md?toc=%2fcli%2fazure%2ftoc.json) | Чтение и обновление значений пропускной способности, а также переход между автомасштабируемой и стандартной пропускной способностью базы данных и графа.|
 | [Блокировка ресурсов от удаления](scripts/cli/gremlin/lock.md?toc=%2fcli%2fazure%2ftoc.json)| Запрет на удаление ресурсов с помощью блокировок ресурсов.|
 |||
 
@@ -80,6 +80,6 @@ ms.locfileid: "87498469"
 |---|---|
 | [Создание учетной записи Azure Cosmos и таблицы](scripts/cli/table/create.md?toc=%2fcli%2fazure%2ftoc.json)| Создает учетную запись Azure Cosmos DB и таблицу для API таблиц. |
 | [Создание учетной записи и таблицы Azure Cosmos с применением автомасштабирования](scripts/cli/table/autoscale.md?toc=%2fcli%2fazure%2ftoc.json)| Создает учетную запись и таблицу Azure Cosmos DB для API таблиц. |
-| [Изменение пропускной способности](scripts/cli/table/throughput.md?toc=%2fcli%2fazure%2ftoc.json) | Обновляет значение ЕЗ/с в таблице.|
+| [Операции с пропускной способностью](scripts/cli/table/throughput.md?toc=%2fcli%2fazure%2ftoc.json) | Чтение и обновление значений пропускной способности, а также переход между автомасштабируемой и стандартной пропускной способностью таблицы.|
 | [Блокировка ресурсов от удаления](scripts/cli/table/lock.md?toc=%2fcli%2fazure%2ftoc.json)| Запрет на удаление ресурсов с помощью блокировок ресурсов.|
 |||

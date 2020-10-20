@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 09/03/2019
 ms.author: jeedes
-ms.openlocfilehash: 245818b60647539c7fff7c45dcecdc6840153fb5
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 536fcab8cdfea4846cc1122fa56c939f525388f4
+ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88549047"
+ms.lasthandoff: 10/11/2020
+ms.locfileid: "91938480"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-netdocuments"></a>Руководство по Интеграция единого входа Azure Active Directory с NetDocuments
 
@@ -136,7 +136,7 @@ ms.locfileid: "88549047"
 
 3. Выберите **Центр безопасности**.
    
-    ![Репозиторий](./media/netdocuments-tutorial/security-center.png "Центр безопасности")
+    ![Снимок экрана: выбор пункта "Центр безопасности" в меню "Юридические документы".](./media/netdocuments-tutorial/security-center.png "Центр безопасности")
 
 4. Выберите **Расширенные политики проверки подлинности**.
     
@@ -166,7 +166,7 @@ ms.locfileid: "88549047"
 
 3. Выберите **Пользователи и группы**.
    
-    ![Репозиторий](./media/netdocuments-tutorial/users-groups.png "Хранилище")
+    ![Снимок экрана: выбор пункта "Пользователи и группы" в меню "Юридические документы".](./media/netdocuments-tutorial/users-groups.png "Хранилище")
 
 4. В текстовом поле **Электронная почта** введите адрес электронной почты действующей учетной записи Azure Active Directory, которую вы хотите подготовить, а затем нажмите кнопку **Добавить пользователя**.
    

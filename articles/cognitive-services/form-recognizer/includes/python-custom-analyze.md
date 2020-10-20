@@ -5,18 +5,18 @@ ms.subservice: forms-recognizer
 ms.topic: include
 ms.date: 11/14/2019
 ms.author: pafarley
-ms.openlocfilehash: 88be632e17912012618ab559f22f97487ad26c9c
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 262774233871a46cf971d95a6cf5d810adf9746a
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88723505"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91961801"
 ---
 ## <a name="analyze-forms-for-key-value-pairs-and-tables"></a>Анализ форм для пар "ключ — значение" и таблиц
 
 Теперь с помощью новой обученной модели нужно проанализировать документ и извлечь из него пары "ключ — значение" и таблицы. Вызовите API **[анализа формы](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeWithCustomForm)** , выполнив следующий код в новом сценарии Python. Перед выполнением сценария внесите следующие изменения:
 
-1. Замените `<file path>` путем к файлу формы (например, C:\temp\file.pdf). Это также может быть URL-адрес удаленного файла. При работе с этим кратким руководством можно использовать файлы в папке **Test** из [примера набора данных](https://go.microsoft.com/fwlink/?linkid=2090451).
+1. Замените `<file path>` путем к файлу формы (например, C:\temp\file.pdf). Это также может быть URL-адрес удаленного файла. При работе с этим кратким руководством можно использовать файлы в папке **Test** из [примера набора данных](https://go.microsoft.com/fwlink/?linkid=2090451) (скачайте и разархивируйте файл *sample_data.zip*).
 1. Замените `<model_id>` идентификатором модели, полученным в предыдущем разделе.
 1. Замените `<endpoint>` конечной точкой, полученной из ключа подписки Распознавателя документов (см. ресурс Распознавателя документов на вкладке **Обзор**).
 1. Замените `<file type>` типом файла Поддерживаемые типы: `application/pdf`, `image/jpeg`, `image/png`, `image/tiff`.

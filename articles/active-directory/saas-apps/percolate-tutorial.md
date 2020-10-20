@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 04/01/2019
 ms.author: jeedes
-ms.openlocfilehash: deb64aa0c344e818b5fd85ca1a161293fd35d6f6
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: be9f2163813d1dc52a593c110fa4cef9b561614e
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88554018"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91995408"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-percolate"></a>Руководство по Интеграция Azure Active Directory с Percolate
 
@@ -103,7 +103,7 @@ ms.locfileid: "88554018"
 
 5. Если вы хотите настроить приложение для работы в режиме, инициируемом поставщиком услуг, выберите **Задать дополнительные URL-адреса**, а затем в поле **URL-адрес входа** введите **https://percolate.com/app/login** .
 
-   ![Сведения о домене и URL-адресах единого входа приложения Percolate](common/metadata-upload-additional-signon.png)
+   ![Снимок экрана: выбранный раздел "Задать дополнительные URL-адреса" с выделенным текстовым полем "URL-адрес входа".](common/metadata-upload-additional-signon.png)
 6. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните значок **Копировать**, чтобы скопировать **URL-адрес метаданных федерации приложений**. Сохраните этот URL-адрес.
 
     ![Копирование URL-адреса метаданных федерации приложений](common/copy-metadataurl.png)
@@ -184,7 +184,7 @@ ms.locfileid: "88554018"
 
 3. В области слева выберите **Пользователи и группы**.
 
-    ![Выбор параметра "Пользователи и группы"](common/users-groups-blade.png)
+    ![Снимок экрана: панель в левой части экрана с выбранным элементом "Пользователи и группы".](common/users-groups-blade.png)
 
 4. Выберите **Добавить пользователя**, а в диалоговом окне **Добавление назначения** — **Пользователи и группы**.
 

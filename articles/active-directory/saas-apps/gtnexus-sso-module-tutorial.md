@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/08/2019
 ms.author: jeedes
-ms.openlocfilehash: e0ea1d3f5c2676176e2f6e15077d13ec43e673af
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: b40a124c9cee05e8d06df3de6539c566bb2ac76a
+ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88544304"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91945155"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-gtnexus-sso-system"></a>Руководство по Интеграция Azure Active Directory с GTNexus SSO System
 
@@ -101,11 +101,11 @@ ms.locfileid: "88544304"
 
     а. Щелкните **Отправить файл метаданных**.
 
-    ![Изображение](common/upload-metadata.png)
+    ![Снимок экрана для страницы базовой конфигурации SAML, где выбрано действие отправки файла метаданных.](common/upload-metadata.png)
 
     b. Щелкните **значок папки**, выберите файл метаданных и нажмите кнопку **Отправить**.
 
-    ![Изображение](common/browse-upload-metadata.png)
+    ![Снимок экрана, на котором показано поле выбора файла с эмблемой "Папка" и выбрана кнопка "Отправить".](common/browse-upload-metadata.png)
 
     c. После успешной передачи файла метаданных значения **Идентификатор** и **URL-адрес ответа** заполняются автоматически в разделе текстового поля "GTNexus SSO System".
 

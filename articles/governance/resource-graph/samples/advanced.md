@@ -1,14 +1,14 @@
 ---
 title: Примеры расширенных запросов
 description: С помощью Azure Resource Graph можно выполнять расширенные запросы, такие как работа со столбцами, вывод списка используемых тегов и сопоставление ресурсов с регулярными выражениями.
-ms.date: 08/13/2020
+ms.date: 10/14/2020
 ms.topic: sample
-ms.openlocfilehash: 8463880189a76f299ce5552fff2b7bccddfa8dec
-ms.sourcegitcommit: ac5cbef0706d9910a76e4c0841fdac3ef8ed2e82
+ms.openlocfilehash: dff4b06cc5cf4385820c7f6251efaae792d9c22d
+ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89425302"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92057150"
 ---
 # <a name="advanced-resource-graph-query-samples"></a>Примеры расширенных запросов к Resource Graph
 
@@ -625,9 +625,7 @@ Search-AzGraph -Query "GuestConfigurationResources | extend vmid = split(propert
 
 ## <a name="query-details-of-guest-configuration-assignment-reports"></a><a name="query-gcreports"></a>Сведения о запросах для отчетов о назначениях гостевой конфигурации
 
-Отображает отчет из сведений о [причине назначения гостевой конфигурации](../../policy/how-to/determine-non-compliance.md#compliance-details-for-guest-configuration).
-В приведенном ниже примере запрос возвращает только результаты, в которых имя гостевого назначения имеет значение `installed_application_linux`, а выходные данные содержат строку `Python` для перечисления всех компьютеров Linux, на которых установлен пакет, включающий имя **Python**.
-Чтобы запросить сведения о соответствии всех компьютеров определенному назначению, удалите второе предложение `where`.
+Отображает отчет из сведений о [причине назначения гостевой конфигурации](../../policy/how-to/determine-non-compliance.md#compliance-details-for-guest-configuration). В следующем примере запрос возвращает только результаты, в которых имя гостевого назначения имеет значение `installed_application_linux`, а выходные данные содержат строку `Python`, то есть перечисляет все компьютеры Linux, на которых установлен пакет, имя которого содержит слово **Python**. Чтобы запросить сведения о соответствии всех компьютеров определенному назначению, удалите второе предложение `where`.
 
 ```kusto
 GuestConfigurationResources
@@ -666,8 +664,7 @@ Search-AzGraph -Query "GuestConfigurationResources | extend vmid = split(propert
 
 ## <a name="find-all-reasons-a-machine-is-non-compliant-for-guest-configuration-assignments"></a><a name="query-gcmachinedetails"></a>Поиск всех причин, по которым компьютер не соответствует требованиям для назначений гостевой конфигурации
 
-Отображает все [причины назначений гостевой конфигурации](../../policy/how-to/determine-non-compliance.md#compliance-details-for-guest-configuration) для определенного компьютера.
-Удалите первое предложение `where`, чтобы также включить проверки, по итогам которых компьютер соответствует требованиям.
+Отображает все [причины назначений гостевой конфигурации](../../policy/how-to/determine-non-compliance.md#compliance-details-for-guest-configuration) для определенного компьютера. Удалите первое предложение `where`, чтобы также включить проверки, по итогам которых компьютер соответствует требованиям.
 
 ```kusto
 GuestConfigurationResources

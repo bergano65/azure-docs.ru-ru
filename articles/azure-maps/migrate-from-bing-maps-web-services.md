@@ -1,6 +1,6 @@
 ---
 title: Руководство по переносу веб-служб из Карт Bing | Microsoft Azure Maps
-description: Как перенести веб-службы из Карт Bing в Microsoft Azure Maps.
+description: В руководстве показано, как перенести веб-службы из Карт Bing в Microsoft Azure Maps.
 author: rbrundritt
 ms.author: richbrun
 ms.date: 9/10/2020
@@ -9,14 +9,14 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: ''
-ms.openlocfilehash: 4520332fbc5040aff682ce52e819fa4a940999cc
-ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
+ms.openlocfilehash: 462befd505333902bd4560f8f1dafeecceffd27f
+ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90108432"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91873784"
 ---
-# <a name="migrate-web-service-from-bing-maps"></a>Перенос веб-службы из Карт Bing
+# <a name="tutorial---migrate-web-service-from-bing-maps"></a>Руководство по переносу веб-службы из Карт Bing
 
 Службы Azure и Карты Bing предоставляют доступ к пространственным API через веб-службы REST. Интерфейсы API для этих платформ выполняют аналогичные функции, но используют разные соглашения об именовании и объекты ответов.
 
@@ -249,7 +249,7 @@ API построения маршрута службы Azure Maps содержи
 
 Существует несколько способов привязать координаты к дорогам в Azure Maps.
 
--   Используйте API направлений маршрута, чтобы привязать координаты из логического маршрута к дорожной сети.
+-   Используйте API направлений маршрута, чтобы привязать координаты к логическому маршруту по дорожной сети.
 -   Используйте веб-пакет SDK для Azure Maps, чтобы привязать отдельные координаты к ближайшей дороге на векторных фрагментах.
 -   Используйте непосредственно векторные фрагменты Azure Maps для привязки отдельных координат.
 

@@ -3,19 +3,19 @@ title: Краткое руководство. Веб-портал Помощни
 titleSuffix: Azure Cognitive Services
 description: Узнайте, как начать работу с веб-порталом Помощника по метрикам.
 services: cognitive-services
-author: aahill
+author: mrbullwinkle
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: metrics-advisor
 ms.topic: quickstart
 ms.date: 09/30/2020
-ms.author: aahi
-ms.openlocfilehash: 004685a50e2413c29528ad3aca08a0150843a8aa
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.author: mbullwin
+ms.openlocfilehash: 0afd8fab6072e1563d2b2f277e8a53b56a8161c2
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91631394"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92048242"
 ---
 # <a name="quickstart-monitor-your-first-metric-using-the-web-portal"></a>Краткое руководство. Мониторинг метрик на веб-портале
 
@@ -41,7 +41,7 @@ ms.locfileid: "91631394"
 
 ## <a name="sign-in-to-your-workspace"></a>Вход в рабочую область
 
-Создав и развернув ресурс, войдите на [портал Помощника по метрикам](https://go.microsoft.com/fwlink/?linkid=2143774). Выберите рабочую область, чтобы начать мониторинг метрик. 
+Создав ресурс, войдите на [портал Помощника по метрикам](https://go.microsoft.com/fwlink/?linkid=2143774). Выберите рабочую область, чтобы начать мониторинг метрик. 
  
 В настоящее время можно создать один ресурс Помощника по метрикам на доступный регион. На портале Помощника по метрикам вы можете в любой момент переключить рабочую область.
 

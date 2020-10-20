@@ -10,16 +10,22 @@ ms.subservice: computer-vision
 ms.topic: overview
 ms.date: 09/11/2020
 ms.author: pafarley
-ms.openlocfilehash: f007ddf2625bf9e8b9d4365902ac1511ea95fa81
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: e4c56700e75eb5bc7e5e7faec073fe7157e5df88
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "90904101"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91976374"
 ---
 # <a name="whats-new-in-computer-vision"></a>Новые возможности Компьютерного зрения
 
 Узнайте о новых возможностях службы. Эти элементы могут включать заметки о выпуске, видео, записи блогов и другие типы информации. Создайте закладку для этой страницы, чтобы получать последние сведения об обновлениях службы.
+
+## <a name="october-2020"></a>Октябрь 2020 г.
+
+### <a name="computer-vision-api-v31-ga"></a>API "Компьютерное зрение" общедоступной версии 3.1
+
+Выпущена общедоступная версия API "Компьютерное зрение" 3.1.
 
 ## <a name="september-2020"></a>Сентябрь 2020 г.
 

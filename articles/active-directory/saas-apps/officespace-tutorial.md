@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 10/23/2019
 ms.author: jeedes
-ms.openlocfilehash: ae8a1fa68e61e160ce08b93bf66776a050b45613
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: e05a2a4ba12d5fc665090d5bf078da520000f43b
+ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88554193"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91945368"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-officespace-software"></a>Руководство по Интеграция единого входа Azure Active Directory с OfficeSpace Software
 
@@ -150,11 +150,11 @@ ms.locfileid: "88554193"
 
 2. Выберите **Settings** (Параметры) и щелкните **Connectors** (Соединители).
 
-    ![Настройка единого входа на стороне приложения](./media/officespace-tutorial/tutorial_officespace_002.png)
+    ![Снимок экрана: меню "Settings" (Параметры) с выбранным пунктом "Connectors" (Соединители).](./media/officespace-tutorial/tutorial_officespace_002.png)
 
 3. Щелкните **SAML Authentication** (Аутентификация SAML).
 
-    ![Настройка единого входа на стороне приложения](./media/officespace-tutorial/tutorial_officespace_003.png)
+    ![Снимок экрана: раздел "Authentication" (Аутентификация) с выбранным действием "SAML Authentication" (Аутентификация SAML).](./media/officespace-tutorial/tutorial_officespace_003.png)
 
 4. В разделе **Проверка подлинности SAML** сделайте следующее:
 

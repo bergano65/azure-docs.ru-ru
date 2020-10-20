@@ -7,18 +7,18 @@ ms.date: 07/14/2020
 ms.topic: quickstart
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: d1deac1c7932a8f3cec06d9c264ba401f7f1341d
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.openlocfilehash: da1ac77ad2716abf964c835634d049895fe88654
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91577039"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92044553"
 ---
 # <a name="quickstart-connect-a-sample-iot-plug-and-play-device-application-running-on-windows-to-iot-hub-c"></a>Краткое руководство. Подключение примера приложения устройства IoT Plug and Play в Windows к Центру Интернета вещей (C#)
 
 [!INCLUDE [iot-pnp-quickstarts-device-selector.md](../../includes/iot-pnp-quickstarts-device-selector.md)]
 
-В этом кратком руководстве показано, как создать пример приложения устройства IoT Plug and Play, подключить его к Центру Интернета вещей и с помощью обозревателя Интернета вещей Azure просмотреть данные телеметрии, которые он отправляет. Пример приложения написан на языке CSharp и включен в пакет SDK для устройств центра Интернета вещей Azure для C#. Разработчик решения может использовать обозреватель Интернета вещей Azure, чтобы ознакомиться с возможностями устройства IoT Plug and Play, не просматривая код устройства.
+В этом кратком руководстве показано, как создать пример приложения устройства IoT Plug and Play, подключить его к Центру Интернета вещей и с помощью обозревателя Интернета вещей Azure просмотреть данные телеметрии, которые он отправляет. Пример приложения написан на языке C# и включен в набор примеров для Центра Интернета вещей Azure для C#. Разработчик решения может использовать обозреватель Интернета вещей Azure, чтобы ознакомиться с возможностями устройства IoT Plug and Play, не просматривая код устройства.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -31,9 +31,9 @@ ms.locfileid: "91577039"
 
 ## <a name="download-the-code"></a>Загрузка кода
 
-С помощью этого краткого руководства вы подготовите среду разработки, которую можно использовать для клонирования и сборки пакета SDK для устройств Центра Интернета вещей Azure для C#.
+С помощью этого краткого руководства вы подготовите среду разработки, которую можно использовать для клонирования и создания репозитория примеров Интернета вещей Azure для C#.
 
-Откройте командную строку в выбранной папке. С помощью следующей команды клонируйте репозиторий [примеров Интернета вещей Microsoft Azure для .NET](https://github.com/Azure-Samples/azure-iot-samples-csharp) с сайта GitHub в указанное расположение:
+Откройте командную строку в выбранной папке. С помощью следующей команды клонируйте репозиторий [примеров Интернета вещей Microsoft Azure для C# (.NET)](https://github.com/Azure-Samples/azure-iot-samples-csharp) с сайта GitHub в указанное расположение:
 
 ```cmd
 git clone  https://github.com/Azure-Samples/azure-iot-samples-csharp.git
@@ -113,4 +113,4 @@ DateTime since = JsonConvert.DeserializeObject<DateTime>(request.DataAsJson);
 Из этого краткого руководства вы узнали, как подключить устройство IoT Plug and Play к Центру Интернета вещей. Дополнительные сведения о создании решения, взаимодействующего с устройствами IoT Plug and Play, см. в следующей статье:
 
 > [!div class="nextstepaction"]
-> [Практическое руководство. Connect to and interact with an IoT Plug and Play Preview device](howto-develop-solution.md) (Подключение к устройству IoT Plug and Play (предварительная версия) и взаимодействие с ним)
+> [Практическое руководство. Connect to and interact with an IoT Plug and Play Preview device](./quickstart-service-node.md) (Подключение к устройству IoT Plug and Play (предварительная версия) и взаимодействие с ним)

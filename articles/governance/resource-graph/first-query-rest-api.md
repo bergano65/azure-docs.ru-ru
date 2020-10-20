@@ -1,14 +1,14 @@
 ---
 title: Краткое руководство. Ваш первый запрос REST API
 description: В этом кратком руководстве показано, как вызвать конечную точку Resource Graph для REST API и выполнить первый запрос.
-ms.date: 06/29/2020
+ms.date: 10/14/2020
 ms.topic: quickstart
-ms.openlocfilehash: 8776a107484691ffab72f2e1622ed5837375b7fb
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 8be0556b6aa2fd234c0f3e25d83c0239c8f674bb
+ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "85802614"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92057235"
 ---
 # <a name="quickstart-run-your-first-resource-graph-query-using-rest-api"></a>Краткое руководство. Выполнение первого запроса к Resource Graph с помощью REST API
 
@@ -49,7 +49,8 @@ $restUri = 'https://management.azure.com/subscriptions/{subscriptionId}?api-vers
 $response = Invoke-RestMethod -Uri $restUri -Method Get -Headers $authHeader
 ```
 
-Замените `{subscriptionId}` в значении приведенной выше переменной **$restUri**, чтобы получить сведения о своей подписке. Переменная $response содержит результат выполнения командлета `Invoke-RestMethod`, который может быть проанализирован с помощью таких командлетов, как [ConvertFrom-Json](/powershell/module/microsoft.powershell.utility/convertfrom-json). Если конечная точка службы REST API требует **текста запроса**, укажите переменную в формате JSON в качестве значения параметра `-Body` командлета `Invoke-RestMethod`.
+Замените `{subscriptionId}` в переменной `$restUri`, чтобы получить сведения о своей подписке.
+Переменная `$response` содержит результат выполнения командлета `Invoke-RestMethod`, который может быть проанализирован с помощью таких командлетов, как [ConvertFrom-Json](/powershell/module/microsoft.powershell.utility/convertfrom-json). Если конечная точка службы REST API требует **текста запроса**, укажите переменную в формате JSON в качестве значения параметра `-Body` командлета `Invoke-RestMethod`.
 
 ## <a name="run-your-first-resource-graph-query"></a>Выполните первый запрос график ресурсов
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 08/28/2019
 ms.author: jeedes
-ms.openlocfilehash: c43a50dbbd2276573a80b866ee673e4391d9736b
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: a503f93895d0e1377f8037818b68ea42178363c2
+ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88551416"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91944994"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-grovo"></a>Руководство по интеграции единого входа Azure Active Directory с Grovo
 
@@ -137,11 +137,11 @@ ms.locfileid: "88551416"
 
 2. Выберите **Администратор** > **Интеграции**.
  
-    ![Конфигурация Grovo](./media/grovo-tutorial/tutorial_grovo_admin.png) 
+    ![Снимок экрана, где представлено меню администрирования и выбран элемент интеграции.](./media/grovo-tutorial/tutorial_grovo_admin.png) 
 
 3. Нажмите кнопку **SET UP** (Настроить) в разделе **SP Initiated SAML 2.0** (SAML 2.0, инициируемый поставщиком услуг).
 
-    ![Конфигурация Grovo](./media/grovo-tutorial/tutorial_grovo_setup.png)
+    ![Снимок экрана для раздела единого входа, инициированного поставщиком службы версии 2.0, где выбрана кнопка настройки.](./media/grovo-tutorial/tutorial_grovo_setup.png)
 
 4. Во всплывающем окне **SP Initiated SAML 2.0** (SAML 2.0, инициируемый поставщиком услуг) выполните следующие действия.
 

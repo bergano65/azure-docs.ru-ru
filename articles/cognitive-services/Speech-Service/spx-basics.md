@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 04/04/2020
 ms.author: trbye
-ms.openlocfilehash: e859ac13c72ed07d3f57da6e61fd6d9f827f0fca
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: bceffe5c53b9cbc863fd9c923ffa4718ebd50436
+ms.sourcegitcommit: b437bd3b9c9802ec6430d9f078c372c2a411f11f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88854898"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91893821"
 ---
 # <a name="learn-the-basics-of-the-speech-cli"></a>Основные сведения об интерфейсе командной строки службы "Речь"
 
@@ -69,6 +69,51 @@ spx translate --microphone --source en-US --target ru-RU --output file C:\some\f
 
 > [!NOTE]
 > Список всех поддерживаемых языков с соответствующими кодами языков см. в [статье о языках и региональных параметрах](language-support.md).
+
+### <a name="configuration-files-in-the-datastore"></a>Файлы конфигурации в хранилище данных
+
+Интерфейс командной строки службы "Речь" может считывать несколько параметров из файлов конфигурации, а также записывать их туда. Такие файлы хранятся в локальном хранилище данных CLI службы "Речь", а в их именах в вызовах CLI службы "Речь" присутствует символ @. Интерфейс командной строки службы "Речь" пытается сохранить новый параметр в новом подкаталоге `./spx/data`, который создается в текущей рабочей папке.
+При поиске значения конфигурации CLI службы "Речь" выполняет поиск в текущей рабочей папке, а затем по пути `./spx/data`.
+Ранее вы использовали хранилище данных для сохранения значений `@key` и `@region`, поэтому не нужно указывать их при каждом вызове командной строки.
+Файлы конфигурации можно также использовать для хранения собственных параметров конфигурации или даже для передачи URL-адресов или другого динамического содержимого, созданного во время выполнения.
+
+В этом разделе показано, как использовать файл конфигурации в локальном хранилище данных для хранения и получения параметров команды с помощью `spx config`, а также сохранения выходных данных из CLI службы "Речь", используя параметр `--output`.
+
+В следующем примере очищается файл конфигурации `@my.defaults`, в файле добавляются пары "ключ-значение" для **key** и **region**, а также используется конфигурация при вызове `spx recognize`.
+
+```shell
+spx config @my.defaults --clear
+spx config @my.defaults --add key 000072626F6E20697320636F6F6C0000
+spx config @my.defaults --add region westus
+
+spx config @my.defaults
+
+spx recognize --nodefaults @my.defaults --file hello.wav
+```
+
+Динамическое содержимое также можно записать в файл конфигурации. Например, следующая команда создает пользовательскую модель речи и сохраняет URL-адрес новой модели в файле конфигурации. Следующая команда ожидает, пока модель по этому URL-адресу не будет готова к использованию, прежде чем вернуться.
+
+```shell
+spx csr model create --name "Example 4" --datasets @my.datasets.txt --output url @my.model.txt
+spx csr model status --model @my.model.txt --wait
+```
+
+В следующем примере два URL-адреса записываются в файл конфигурации `@my.datasets.txt`.
+В этом сценарии `--output` может включать дополнительное ключевое слово **add**, чтобы создать файл конфигурации или добавить к имеющемуся.
+
+
+```shell
+spx csr dataset create --name "LM" --kind Language --content https://crbn.us/data.txt --output url @my.datasets.txt
+spx csr dataset create --name "AM" --kind Acoustic --content https://crbn.us/audio.zip --output add url @my.datasets.txt
+
+spx config @my.datasets.txt
+```
+
+Для получения дополнительных сведений о файлах хранилища данных, включая использование файлов конфигурации по умолчанию (`@spx.default`, `@default.config` и `@*.default.config` для параметров по умолчанию конкретных команд), введите следующую команду:
+
+```shell
+spx help advanced setup
+```
 
 ## <a name="batch-operations"></a>Пакетные операции
 

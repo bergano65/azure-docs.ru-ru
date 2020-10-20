@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 07/28/2020
 ms.author: jeedes
-ms.openlocfilehash: 68869d464df01d3cc89493c64d66511b4a6f369d
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 37b21a5e9e2839fba24b3dcc861fc7c42bdb4547
+ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91300061"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91945215"
 ---
 # <a name="tutorial-azure-active-directory-sso-integration-with-kemp-loadmaster-azure-ad-integration"></a>Руководство по Интеграция единого входа Azure Active Directory с Kemp LoadMaster Azure AD integration
 
@@ -145,7 +145,7 @@ ms.locfileid: "91300061"
 
 1. Укажите параметры для виртуальной службы:
 
-    ![Веб-сервер Kemp LoadMaster Azure AD integration](./media/kemp-tutorial/kemp-1.png)
+    ![Снимок экрана: страница Please Specify the Parameters for the Virtual Service (Укажите параметры для виртуальной службы) с примерами значений в полях.](./media/kemp-tutorial/kemp-1.png)
 
     а. Virtual Address (Виртуальный адрес);
     
@@ -161,7 +161,7 @@ ms.locfileid: "91300061"
 
 1. Укажите параметры для реального сервера.
     
-    ![Веб-сервер Kemp LoadMaster Azure AD integration](./media/kemp-tutorial/kemp-2.png)
+    ![Снимок экрана: страница Please Specify the Parameters for the Real Server (Укажите параметры для реального сервера) с примерами значений в полях.](./media/kemp-tutorial/kemp-2.png)
 
     а. Выберите Allow Remote Addresses (Разрешить удаленные адреса).
     
@@ -203,7 +203,7 @@ ms.locfileid: "91300061"
 
 1. Щелкните элемент SSL Properties (Свойства SSL). Протокол SSL работает на уровне 7.
     
-    ![Веб-сервер Kemp LoadMaster Azure AD integration](./media/kemp-tutorial/kemp-3.png)
+    ![Снимок экрана: раздел SSL Properties (Свойства SSL) с выбранным параметром SSL Acceleration - Enabled (Ускорение SSL — Включено) и выбранным примером сертификата.](./media/kemp-tutorial/kemp-3.png)
     
     а. Установите флажок Enabled (Включено) в разделе SSL Acceleration (Ускорение SSL).
     
@@ -222,7 +222,7 @@ ms.locfileid: "91300061"
 
 1. Щелкните элемент Intermediate Certificates (Промежуточные сертификаты) в разделе Certificates and Authority (Сертификаты и центры сертификации).
 
-    ![Веб-сервер Kemp LoadMaster Azure AD integration](./media/kemp-tutorial/kemp-6.png)
+    ![Снимок экрана: раздел Currently installed Intermediate Certificates (Установленные на данный момент промежуточные сертификаты) с выбранным примером сертификата.](./media/kemp-tutorial/kemp-6.png)
 
     а. Щелкните команду Choose file (Выбрать файл) в разделе Add a new Intermediate Certificate (Добавить новый промежуточный сертификат).
     
@@ -238,7 +238,7 @@ ms.locfileid: "91300061"
  
 Выберите элемент Manage SSO (Управление единым входом) в разделе Virtual Services (Виртуальные службы).
 
-   ![Веб-сервер Kemp LoadMaster Azure AD integration](./media/kemp-tutorial/kemp-7.png)
+   ![Снимок экрана: страница Manage SSO (Управление единым входом).](./media/kemp-tutorial/kemp-7.png)
    
    а. Щелкните команду Add (Добавить) в разделе Add new Client Side Configuration (Добавление новой конфигурации на стороне клиента) (после присвоения ей имени).
 
@@ -268,7 +268,7 @@ ms.locfileid: "91300061"
 
 1. Щелкните команду Modify (Изменить) и перейдите к разделу ESP Options (Параметры ESP).
     
-    ![Веб-сервер Kemp LoadMaster Azure AD integration](./media/kemp-tutorial/kemp-8.png)
+    ![Снимок экрана: страница View/Modify Services (Просмотр и изменение служб) с развернутыми разделами ESP Options (Параметры ESP) и Real Servers (Реальные серверы).](./media/kemp-tutorial/kemp-8.png)
 
     а. Установите флажок Enable ESP (Включить ESP).
     
@@ -286,7 +286,7 @@ ms.locfileid: "91300061"
 
 Вместо страницы, которая ранее отображалась без аутентификации, должна отобразиться страница входа в арендатор. 
 
-![Веб-сервер Kemp LoadMaster Azure AD integration](./media/kemp-tutorial/kemp-9.png)
+![Снимок экрана: страница входа с указанием арендатора](./media/kemp-tutorial/kemp-9.png)
 
 ## <a name="configuring-kerberos-based-authentication"></a>Настройка аутентификации на основе Kerberos 
  
@@ -294,7 +294,7 @@ ms.locfileid: "91300061"
 
 1. Создайте учетную запись пользователя (AppDelegation в нашем примере).
     
-    ![Веб-сервер Kemp LoadMaster Azure AD integration](./media/kemp-tutorial/kemp-10.png)
+    ![Снимок экрана: окно kcd user Properties (Свойства пользователя KCD) с выбранной вкладкой Account (Учетная запись).](./media/kemp-tutorial/kemp-10.png)
 
 
     а. Перейдите на вкладку Attribute Editor (Редактор атрибутов).
@@ -311,7 +311,7 @@ ms.locfileid: "91300061"
 
 1. Откройте вкладку Delegation (Делегирование).
 
-    ![Веб-сервер Kemp LoadMaster Azure AD integration](./media/kemp-tutorial/kemp-11.png)
+    ![Снимок экрана: окно kcd user Properties (Свойства пользователя KCD) с выбранной вкладкой Delegation (Делегирование).](./media/kemp-tutorial/kemp-11.png)
 
     а. Выберите параметр Trust this user for delegation to specified services only (Доверять этому пользователю делегирование только определенных служб).
 
@@ -332,7 +332,7 @@ ms.locfileid: "91300061"
 
 Перейдите к веб-консоли Kemp LoadMaster Azure AD integration и выберите элементы Virtual Services (Виртуальные службы) > Manage SSO (Управление единым входом).
 
-![Веб-сервер Kemp LoadMaster Azure AD integration](./media/kemp-tutorial/kemp-12.png)
+![Снимок экрана: страница Manage SSO - Manage Domain (Управление единым входом — Управление доменом).](./media/kemp-tutorial/kemp-12.png)
 
 а. Перейдите к разделу Server Side Single Sign On Configurations (Конфигурации единого входа на стороне сервера).
 

@@ -14,12 +14,12 @@ ms.author: dbradish
 ms.reviewer: thsomasu
 ms.lastreviewed: 03/18/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 5361931328ed107c7cc130b633a40b1582828aa1
-ms.sourcegitcommit: 70ee014d1706e903b7d1e346ba866f5e08b22761
+ms.openlocfilehash: ebed70a99e8e906db802099e052e69ab2575d737
+ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90024144"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91875039"
 ---
 # <a name="quickstart-create-an-azure-notification-hub-using-the-azure-cli"></a>Создание концентратора уведомлений Azure с помощью Azure CLI
 
@@ -32,17 +32,7 @@ ms.locfileid: "90024144"
 [!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
 > [!IMPORTANT]
-> Для работы с концентраторами уведомлений требуется Azure CLI версии не ниже 2.0.67. Запустите `az --version`, чтобы узнать установленную версию и зависимые библиотеки. Чтобы выполнить установку или обновление, см. сведения в статье [Установка Azure CLI](/cli/azure/install-azure-cli).
-
-## <a name="install-the-azure-cli-extension"></a>Установка расширения Azure CLI
-
-При работе со ссылками на расширения для Azure CLI необходимо сначала установить расширение. Расширения Azure CLI предоставляют доступ к экспериментальным командам и предварительным выпускам команд, которые еще не поставлялись как часть основного CLI. Дополнительные сведения о расширениях, включая обновление и удаление, см. в статье [Использование расширений с Azure CLI](/cli/azure/azure-cli-extensions-overview).
-
-Установите расширение Azure CLI для Центров уведомлений.
-
-```azurecli
-az extension add --name notification-hub
-```
+> Для работы с концентраторами уведомлений требуется Azure CLI версии не ниже 2.0.67. Выполните команду [az version](/cli/azure/reference-index?#az_version), чтобы узнать установленную версию и зависимые библиотеки. Чтобы обновиться до последней версии, выполните команду [az upgrade](/cli/azure/reference-index?#az_upgrade).
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 

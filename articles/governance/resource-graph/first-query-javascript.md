@@ -1,15 +1,15 @@
 ---
 title: Краткое руководство. Первый запрос на JavaScript
 description: В этом кратком руководстве показано, как включить библиотеку Resource Graph для JavaScript и выполнить первый запрос.
-ms.date: 06/23/2020
+ms.date: 10/14/2020
 ms.topic: quickstart
 ms.custom: devx-track-js
-ms.openlocfilehash: cdc0589829f250851212ad990dde99eb6dcc958f
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 194097594340e2f34433c07185c6132f8a13c845
+ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91251972"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92057422"
 ---
 # <a name="quickstart-run-your-first-resource-graph-query-using-javascript"></a>Краткое руководство. Выполнение первого запроса Resource Graph с помощью JavaScript
 
@@ -23,11 +23,11 @@ ms.locfileid: "91251972"
 
 - **Node.js**. [Node.js](https://nodejs.org/) 12 или более поздней версии.
 
-## <a name="application-setup"></a>Настройка приложения
+## <a name="application-initialization"></a>Инициализация приложений
 
 Чтобы обеспечить отправку запросов JavaScript к Azure Resource Graph, необходимо настроить среду. Эта настройка подойдет для всех сред, где можно использовать JavaScript, в том числе [Bash в Windows 10](/windows/wsl/install-win10).
 
-1. Настройте новый проект Node.js, выполнив следующую команду.
+1. Инициализируйте новый проект Node.js, выполнив следующую команду.
 
    ```bash
    npm init -y

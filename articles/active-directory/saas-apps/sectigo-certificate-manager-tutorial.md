@@ -11,16 +11,16 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 04/15/2019
 ms.author: jeedes
-ms.openlocfilehash: d68e5335fff0341d8808e581061519977e1bb517
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 905ca5fd92a09b209bf099bfac0862132ec679a4
+ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88543284"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91875609"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sectigo-certificate-manager"></a>Руководство по Интеграция Azure Active Directory со Sectigo Certificate Manager
 
-В этом руководстве описано, как интегрировать Sectigo Certificate Manager с Azure Active Directory (Azure AD).
+В этом руководстве описано, как интегрировать Sectigo Certificate Manager (сокращенно SCM) с Azure Active Directory (Azure AD).
 
 Интеграция Azure AD с Sectigo Certificate Manager обеспечивает следующие преимущества:
 
@@ -35,7 +35,10 @@ ms.locfileid: "88543284"
 Чтобы настроить интеграцию Azure AD с приложением Sectigo Certificate Manager, вам потребуется следующее:
 
 * Подписка Azure AD. Если у вас еще нет подписки Azure AD, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
-* Подписка Sectigo Certificate Manager с поддержкой единого входа.
+* Учетная запись Sectigo Certificate Manager.
+
+> [!NOTE]
+> Sectigo запускает несколько экземпляров Sectigo Certificate Manager. Основным экземпляром для Sectigo Certificate Manager является **https:\//cert-manager.com** и этот URL-адрес используется в руководстве.  Если ваша учетная запись размещена в другом экземпляре, настройте URL-адрес соответствующим образом.
 
 ## <a name="scenario-description"></a>Описание сценария
 
@@ -99,47 +102,45 @@ Sectigo Certificate Manager поддерживает следующие функ
 
     ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
-1. Чтобы настроить *режим, инициируемый поставщиком удостоверений*, в области **Базовая конфигурация SAML** выполните приведенные ниже действия.
+1. В области **Базовая конфигурация SAML** выполните описанные ниже действия.
 
-    1. В поле **Идентификатор** введите один из следующих URL-адресов:
-       * https:\//cert-manager.com/shibboleth
-       * https:\//hard.cert-manager.com/shibboleth
+    1. В поле **Идентификатор (ИД сущности)** введите **https:\//cert-manager.com/shibboleth** для основного экземпляра Sectigo Certificate Manager.
 
-    1. В поле **URL-адрес ответа** введите один из следующих URL-адресов:
-        * https:\//cert-manager.com/Shibboleth.sso/SAML2/POST
-        * https:\//hard.cert-manager.com/Shibboleth.sso/SAML2/POST
+    1. В поле **URL-адрес ответа** введите **https:\//cert-manager.com/Shibboleth.sso/SAML2/POST** для основного экземпляра Sectigo Certificate Manager.
+        
+    > [!NOTE]
+    > Хотя поле **URL-адрес входа** является обязательным для *режима, инициированного поставщиком услуг*, оно не требуется для входа из Sectigo Certificate Manager.        
+
+1. Дополнительно, для настройки *режима, инициированного поставщиком удостоверений*, и разрешения выполнения **проверки** в разделе **Базовая конфигурация SAML** выполните следующие шаги:
 
     1. Щелкните **Задать дополнительные URL-адреса**.
 
-    1. В поле **Состояние ретранслятора** введите один из следующих URL-адресов:
-       * https:\//cert-manager.com/customer/SSLSupport/idp
-       * https:\//hard.cert-manager.com/customer/SSLSupport/idp
+    1. Введите в поле **Состояние ретранслятора** клиентский URL-адрес вашего Sectigo Certificate Manager. Введите для основой подписки Sectigo Certificate Manager **https:\//cert-manager.com/customer/\<customerURI\>/idp**.
 
     ![Сведения о домене и URL-адресах единого входа для приложения Sectigo Certificate Manager](common/idp-relay.png)
 
-1.  Чтобы настроить приложение в режиме, инициируемом *поставщиком служб*, выполните следующие действия:
+1. В разделе **User Attributes & Claims** (Пользовательские атрибуты и утверждения) выполните следующие шаги.
 
-    * В поле **URL-адрес для входа** введите один из следующих URL-адресов:
-      * https:\//cert-manager.com/Shibboleth.sso/Login
-      * https:\//hard.cert-manager.com/Shibboleth.sso/Login
+    1. Удалите все **дополнительные утверждения**.
+    
+    1. Выберите **Добавить новое утверждение** и добавьте следующие четыре утверждения:
+    
+        | Имя | Пространство имен | Источник | Атрибут источника | Описание |
+        | --- | --- | --- | --- | --- |
+        | eduPersonPrincipalName | пустых | attribute | user.userprincipalname | Для администраторов поле **IdP Person ID** (Идентификатор поставщика удостоверений) должно совпадать в Sectigo Certificate Manager. |
+        | mail | пустых | attribute | user.mail | Обязательно |
+        | givenName | пустых | attribute | user.givenname | Необязательно |
+        | sn | пустых | attribute | user.surname | Необязательно |
 
-      ![Сведения о домене и URL-адресах единого входа для приложения Sectigo Certificate Manager](common/both-signonurl.png)
+       ![Sectigo Certificate Manager — добавление четырех новых утверждений](media/sectigo-certificate-manager-tutorial/additional-claims.png)
 
-1. В области **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** нажмите кнопку **Скачать**, расположенную рядом с элементом **Сертификат (Base64)** . Выберите вариант для скачивания в соответствии с вашими требованиями. Сохраните сертификат на своем компьютере.
+1. В разделе **Сертификат подписи SAML** выберите **Загрузить** рядом с **XML метаданных федерации**. Сохраните XML-файл на вашем компьютере.
 
-    ![Параметр для скачивания сертификата в кодировке Base64](common/certificatebase64.png)
-
-1. Скопируйте требуемые URL-адреса в разделе **Настройка Sectigo Certificate Manager**:
-
-    * URL-адрес входа.
-    * Идентификатор Azure AD
-    * URL-адрес выхода.
-
-    ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
+    ![Элемент для скачивания XML-файла метаданных федерации](common/metadataxml.png)
 
 ### <a name="configure-sectigo-certificate-manager-single-sign-on"></a>Настройка единого входа для Sectigo Certificate Manager
 
-Чтобы настроить единый вход на стороне Sectigo Certificate Manager, нужно отправить скачанный файл сертификата (Base64) и соответствующие URL-адреса, скопированные на портале Azure, [службе поддержки Sectigo Certificate Manager](https://sectigo.com/support). Специалисты службы поддержки Sectigo Certificate Manager на основе полученной информации выполнят все необходимое для правильной настройки единого входа SAML с обеих сторон.
+Чтобы настроить единый вход на стороне Sectigo Certificate Manager, отправьте сохраненный файл XML метаданных федерации в службу поддержки [Sectigo Certificate Manager](https://sectigo.com/support). Специалисты службы поддержки Sectigo Certificate Manager на основе полученной информации выполнят все необходимое для правильной настройки единого входа SAML с обеих сторон.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -159,15 +160,15 @@ Sectigo Certificate Manager поддерживает следующие функ
   
     1. В поле **Имя пользователя** введите **brittasimon\@\<your-company-domain>.\<extension\>** . Например, **brittasimon\@contoso.com**.
 
-    1. Установите флажок **Показать пароль**. Запишите значение, которое отображается в поле **Пароль**.
+    1. Установите флажок **Показать пароль**. Запишите значение, отображаемое в поле **Пароль**.
 
-    1. Нажмите кнопку **создания**.
+    1. Нажмите кнопку **Создать**.
 
     ![Панель "Пользователь"](common/user-properties.png)
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
-В этом разделе вы предоставите Britta Simon доступ к Sectigo Certificate Manager, чтобы разрешить этому пользователю использовать единый вход Azure.
+В этом разделе вы предоставите для Britta Simon доступ к Sectigo Certificate Manager, чтобы пользователь мог использовать единый вход Azure.
 
 1. На портале Azure выберите **Корпоративные приложения** > **Все приложения** > **Sectigo Certificate Manager**.
 
@@ -197,9 +198,19 @@ Sectigo Certificate Manager поддерживает следующие функ
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 
-В этом разделе объясняется, как проверить конфигурацию единого входа Azure AD с помощью портала "Мои приложения".
+В этом разделе описано, как проверить конфигурацию единого входа Azure AD.
 
-После настройки единого входа вы сможете автоматически войти в приложение Sectigo Certificate Manager, выбрав элемент **Sectigo Certificate Manager** на портале "Мои приложения". Дополнительные сведения о портале "Мои приложения" см. в статье [Access and use apps on the My Apps portal](../user-help/my-apps-portal-end-user-access.md) (Доступ к приложениям и их использование на портале "Мои приложения").
+#### <a name="test-from-sectigo-certificate-manager-sp-initiated-single-sign-on"></a>Проверка из Sectigo Certificate Manager (единый вход, инициированный поставщиком услуг)
+
+Перейдите к клиентскому URL-адресу (для основного экземпляра Sectigo Certificate Manager) https:\//cert-manager.com/customer/\<customerURI\> и нажмите кнопку под пунктом **Или войти с помощью**.  При правильной настройке вы автоматически войдете в Sectigo Certificate Manager.
+
+#### <a name="test-from-azure-single-sign-on-configuration-idp-initiated-single-sign-on"></a>Проверка из конфигурации единого входа Azure (единый вход, инициированный поставщиком удостоверений)
+
+На панели интеграции приложения **Sectigo Certificate Manager** выберите **Единый вход** и нажмите кнопку **Проверка**.  При правильной настройке вы автоматически войдете в Sectigo Certificate Manager.
+
+#### <a name="test-by-using-the-my-apps-portal-idp-initiated-single-sign-on"></a>Проверка с помощью портала "Мои приложения" (единый вход, инициированный поставщиком удостоверений)
+
+Выберите **Sectigo Certificate Manager** на портале "Мои приложения".  При правильной настройке вы автоматически войдете в Sectigo Certificate Manager. Дополнительные сведения о портале "Мои приложения" см. в статье [Access and use apps on the My Apps portal](../user-help/my-apps-portal-end-user-access.md) (Доступ к приложениям и их использование на портале "Мои приложения").
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

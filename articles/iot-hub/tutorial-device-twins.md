@@ -14,12 +14,12 @@ ms.custom:
 - 'Role: Cloud Development'
 - 'Role: IoT Device'
 - devx-track-js
-ms.openlocfilehash: 0aee3fef5c2b9e7e1d8cdd8c3d27192b17161351
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: aecf5c8b71f23e3d51c755c86ec0122d6da05f21
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91251887"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91842773"
 ---
 <!-- **TODO** Update publish config with repo paths before publishing! -->
 
@@ -191,11 +191,11 @@ node ServiceClient.js "{your service connection string}"
 
 На следующем снимке экрана отображаются выходные данные приложения имитированного устройства и показано, как обрабатывается обновление требуемого свойства **maxTemperature**. Вы можете посмотреть, как действуют обработчик верхнего уровня и обработчики компонента climate:
 
-![Виртуальное устройство](./media/tutorial-device-twins/SimulatedDevice1.png)
+![Снимок экрана демонстрирует, как действуют обработчик верхнего уровня и обработчики компонента climate.](./media/tutorial-device-twins/SimulatedDevice1.png)
 
 На следующем снимке экрана отображаются выходные данные внутреннего приложения и показано, как отправляется обновление требуемого свойства **maxTemperature**:
 
-![Внутреннее приложение](./media/tutorial-device-twins/BackEnd1.png)
+![Снимок экрана демонстрирует выходные данные из серверного приложения, где выделена отправка обновления.](./media/tutorial-device-twins/BackEnd1.png)
 
 ## <a name="receive-state-information"></a>Получение сведений о состоянии
 

@@ -14,12 +14,12 @@ ms.custom:
 - 'Role: Cloud Development'
 - 'Role: IoT Device'
 - devx-track-js
-ms.openlocfilehash: fe6c7f10ce64e25f46444cd2db8b67aab4ae2135
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 304ded466aeb734388c13b87331eb4813e850e56
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91308322"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91842824"
 ---
 # <a name="tutorial-implement-a-device-firmware-update-process"></a>Руководство по Реализация обновления встроенного ПО устройства
 
@@ -184,7 +184,7 @@ node ServiceClient.js "{your service connection string}"
 
 На следующем снимке экрана отображаются выходные данные внутреннего приложения и показано, как создается конфигурация для обновления требуемых свойств встроенного ПО:
 
-![Внутреннее приложение](./media/tutorial-firmware-update/BackEnd1.png)
+![Снимок экрана: выходные данные внутреннего приложения.](./media/tutorial-firmware-update/BackEnd1.png)
 
 На следующем снимке экрана отображаются выходные данные внутреннего приложения и показано, как отслеживаются метрики обновления встроенного ПО с имитированного устройства:
 

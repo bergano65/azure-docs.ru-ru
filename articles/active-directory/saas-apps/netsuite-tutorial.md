@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 04/28/2020
 ms.author: jeedes
-ms.openlocfilehash: c5be6ef39a3e980852aa3373dbc54da63aa3983e
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: f1845a8371c3b64174b83ce640f91e4ce9221b8e
+ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88554521"
+ms.lasthandoff: 10/11/2020
+ms.locfileid: "91940826"
 ---
 # <a name="tutorial-integrate-azure-ad-single-sign-on-sso-with-netsuite"></a>Руководство по Интеграция единого входа Azure AD с NetSuite
 
@@ -96,7 +96,7 @@ NetSuite поддерживает следующие технологии:
 
     * Вы получите значение **<`Instance ID`>** в разделе конфигурации Netsuite, описанное далее в руководстве на шаге 8 раздела "Конфигурация Netsuite". В этом случае вы обнаружите точный домен (например, system.na0.netsuite.com).
 
-        ![Настройка единого входа](./media/NetSuite-tutorial/domain-value.png)
+        ![Снимок экрана: страница настройки SAML, где можно получить домен.](./media/NetSuite-tutorial/domain-value.png)
 
         > [!NOTE]
         > Приведенные выше URL-адреса используются только для примера. Замените их фактическим URL-адресом ответа. Чтобы получить это значение, обратитесь в [службу поддержки клиентов NetSuite](http://www.netsuite.com/portal/services/support-services/suitesupport.shtml). Кроме того, вы можете изучить допустимые форматы в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -164,31 +164,31 @@ NetSuite поддерживает следующие технологии:
 
 2. На панели навигации вверху выберите **Setup** (Настройка), а затем **Company (Компания)**  > **Enable Features (Включить функции)** .
 
-    ![Настройка единого входа](./media/NetSuite-tutorial/ns-setupsaml.png)
+    ![Снимок экрана: выбранный параметр включения функции раздела Company (Компания).](./media/NetSuite-tutorial/ns-setupsaml.png)
 
 3. На панели инструментов в средней части страницы щелкните **SuiteCloud**.
 
-    ![Настройка единого входа](./media/NetSuite-tutorial/ns-suitecloud.png)
+    ![Снимок экрана: выбранный пункт SuiteCloud.](./media/NetSuite-tutorial/ns-suitecloud.png)
 
 4. В разделе **Manage Authentication** (Управление проверкой подлинности) установите флажок **SAML Single Sign-on** (Единый вход SAML), чтобы включить единый вход SAML для NetSuite.
 
-    ![Настройка единого входа](./media/NetSuite-tutorial/ns-ticksaml.png)
+    ![Снимок экрана: раздел управления проверкой подлинности, где можно установить флажок SAML Single Sign-on (Единый вход SAML).](./media/NetSuite-tutorial/ns-ticksaml.png)
 
 5. Выберите **Setup** (Настройка) на панели навигации вверху.
 
-    ![Настройка единого входа](./media/NetSuite-tutorial/ns-setup.png)
+    ![Снимок экрана: пункт Setup (Настройка), выбранный на панели навигации NETSUITE.](./media/NetSuite-tutorial/ns-setup.png)
 
 6. В списке **Setup Tasks** (Задачи настройки) выберите пункт **Integration** (Интеграция).
 
-    ![Настройка единого входа](./media/NetSuite-tutorial/ns-integration.png)
+    ![Снимок экрана: пункт Integration (Интеграция) в списке задач настройки.](./media/NetSuite-tutorial/ns-integration.png)
 
 7. В области **Manage Authentication** (Управление аутентификацией) выберите вариант **Single sign-on authentication** (Аутентификация единого входа).
 
-    ![Настройка единого входа](./media/NetSuite-tutorial/ns-saml.png)
+    ![Снимок экрана: вариант Single sign-on authentication (Аутентификация единого входа), выбранный из элемента Integration (Интеграция) в списке задач настройки.](./media/NetSuite-tutorial/ns-saml.png)
 
 8. На панели **SAML Setup** (Настройка SAML) в разделе **NetSuite Configuration** (Конфигурация NetSuite) выполните следующие действия:
 
-    ![Настройка единого входа](./media/NetSuite-tutorial/ns-saml-setup.png)
+    ![Снимок экрана: страница настройки SAML для ввода описанных значений.](./media/NetSuite-tutorial/ns-saml-setup.png)
   
     а. Установите флажок **Primary Authentication Method** (Основной метод проверки подлинности).
 
@@ -198,9 +198,9 @@ NetSuite поддерживает следующие технологии:
 
 9. На панели навигации NetSuite вверху выберите **Setup** (Настройка), а затем **Company (Компания)**  > **Company Information (Сведения о компании)** .
 
-    ![Настройка единого входа](./media/NetSuite-tutorial/ns-com.png)
+    ![Снимок экрана: параметр сведений о компании, выбранный в разделе Company (Компания).](./media/NetSuite-tutorial/ns-com.png)
 
-    ![Настройка единого входа](./media/NetSuite-tutorial/ns-account-id.png)
+    ![Снимок экрана: панель для ввода описанных значений.](./media/NetSuite-tutorial/ns-account-id.png)
 
     b. На панели **Company Information** (Сведения о компании) в правом столбце скопируйте **Account ID** (Идентификатор учетной записи).
 
@@ -210,23 +210,23 @@ NetSuite поддерживает следующие технологии:
 
     а. Выберите **Setup** (Настройка) на панели навигации вверху.
 
-    ![Настройка единого входа](./media/NetSuite-tutorial/ns-setup.png)
+    ![Снимок экрана: пункт Setup (Настройка), выбранный на панели навигации NETSUITE.](./media/NetSuite-tutorial/ns-setup.png)
 
     b. На панели слева выберите **Users/Roles** (Пользователи и роли), а затем щелкните **Manage Roles** (Управление ролями).
 
-    ![Настройка единого входа](./media/NetSuite-tutorial/ns-manage-roles.png)
+    ![Снимок экрана: панель управления ролями, где можно выбрать новую роль.](./media/NetSuite-tutorial/ns-manage-roles.png)
 
     c. Выберите **New Role** (Новая роль).
 
     d. Введите **имя** для новой роли.
 
-    ![Настройка единого входа](./media/NetSuite-tutorial/ns-new-role.png)
+    ![Снимок экрана: пункт Setup Manager (Диспетчер настройки), где можно ввести имя для роли.](./media/NetSuite-tutorial/ns-new-role.png)
 
     д) Щелкните **Сохранить**.
 
     е) Выберите **Permissions** (Разрешения) на панели навигации вверху. Затем щелкните **Setup** (Настройка).
 
-    ![Настройка единого входа](./media/NetSuite-tutorial/ns-sso.png)
+    ![Снимок экрана: вкладка Setup (Настройка) для ввода описанных значений.](./media/NetSuite-tutorial/ns-sso.png)
 
     ж. Выберите **SAML Single Sign-on** (Единый вход SAML) и щелкните **Add** (Добавить).
 
@@ -234,19 +234,19 @@ NetSuite поддерживает следующие технологии:
 
     i. На панели навигации вверху выберите **Setup** (Настройка), а затем **Setup Manager** (Диспетчер настройки).
 
-    ![Настройка единого входа](./media/NetSuite-tutorial/ns-setup.png)
+    ![Снимок экрана: пункт Setup (Настройка), выбранный на панели навигации NETSUITE.](./media/NetSuite-tutorial/ns-setup.png)
 
     j. На панели слева выберите **Users/Roles** (Пользователи и роли), а затем щелкните **Manage Users** (Управление пользователями).
 
-    ![Настройка единого входа](./media/NetSuite-tutorial/ns-manage-users.png)
+    ![Снимок экрана: панель управления пользователями, где можно выбрать Suite Demo Team (Команда демонстрации Suite).](./media/NetSuite-tutorial/ns-manage-users.png)
 
     k. Выберите тестового пользователя, а затем щелкните **Edit** (Изменить) и перейдите на вкладку **Access** (Доступ).
 
-    ![Настройка единого входа](./media/NetSuite-tutorial/ns-edit-user.png)
+    ![Снимок экрана: панель управления пользователями, где можно выбрать пункт Edit (Изменить).](./media/NetSuite-tutorial/ns-edit-user.png)
 
     l. В диалоговом окне **Roles** (Роли) назначьте подходящую роль, которую вы создали.
 
-    ![Настройка единого входа](./media/NetSuite-tutorial/ns-add-role.png)
+    ![Снимок экрана: пункт Administrator (Администратор), выбранный в разделе Employee (Сотрудник).](./media/NetSuite-tutorial/ns-add-role.png)
 
     m. Щелкните **Сохранить**.
 

@@ -5,15 +5,15 @@ services: vpn-gateway
 author: yushwang
 ms.service: vpn-gateway
 ms.topic: tutorial
-ms.date: 09/02/2020
+ms.date: 10/13/2020
 ms.author: yushwang
 ms.custom: mvc
-ms.openlocfilehash: 9b712c1b2e8ac33ec189542bf6f60929ac59858d
-ms.sourcegitcommit: 9c262672c388440810464bb7f8bcc9a5c48fa326
+ms.openlocfilehash: 61e03f539f000b55ae00d90afa769ca9c1c30dc1
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89420563"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92048293"
 ---
 # <a name="tutorial-create-and-manage-s2s-vpn-connections-using-powershell"></a>Руководство по Создание и администрирование VPN-подключений S2S с помощью PowerShell
 
@@ -33,7 +33,7 @@ VPN-подключения Azure S2S предоставляют безопасн
 
 [!INCLUDE [working with cloud shell](../../includes/vpn-gateway-cloud-shell-powershell.md)]
 
-## <a name="requirements"></a>Требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Выполните инструкции из первого руководства [Создание VPN-шлюза и управление им с помощью модуля Azure PowerShell](vpn-gateway-tutorial-create-gateway-powershell.md), чтобы создать следующие ресурсы:
 
@@ -242,8 +242,7 @@ Remove-AzResourceGroup -Name $RG1
 > * Добавление дополнительных VPN-подключений.
 > * Удаление VPN-подключения.
 
-Перейдите к следующим руководствам, чтобы узнать о подключениях типа "сеть — сеть", "виртуальная сеть — виртуальная сеть" и "точка — сеть".
+Затем можно добавить подключение "точка — сеть":
 
 > [!div class="nextstepaction"]
-> * [Настройка подключения VPN-шлюза между виртуальными сетями на портале Azure](vpn-gateway-howto-vnet-vnet-resource-manager-portal.md)
 > * [Настройка подключения "точка — сеть" к виртуальной сети с использованием собственной аутентификации Azure на основе сертификата и портала Azure](vpn-gateway-howto-point-to-site-resource-manager-portal.md)

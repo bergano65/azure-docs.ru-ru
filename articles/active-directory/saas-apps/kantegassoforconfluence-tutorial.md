@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
-ms.openlocfilehash: bef0b2d0387b82140e9874f837d9464408d78090
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 05fd1fc23afc72174f5454c805dd59a6eb2e9714
+ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88546973"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91946048"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-kantega-sso-for-confluence"></a>Руководство по Интеграция Azure Active Directory с Kantega SSO for Confluence
 
@@ -99,7 +99,7 @@ ms.locfileid: "88546973"
 
 4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа для приложения Kantega SSO for Confluence](common/idp-intiated.png)
+    ![Снимок экрана: раздел "Базовая конфигурация SAML" с выбранными полями "Идентификатор", "URL-адрес ответа" и кнопкой "Сохранить".](common/idp-intiated.png)
 
     а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<server-base-url>/plugins/servlet/no.kantega.saml/sp/<uniqueid>/login`.
 
@@ -134,47 +134,47 @@ ms.locfileid: "88546973"
 
 1. Наведите указатель мыши на шестеренку и щелкните **Add-ons** (Надстройки).
 
-    ![Настройка единого входа](./media/kantegassoforconfluence-tutorial/addon1.png)
+    ![Снимок экрана: выбранные значок меню шестеренки и пункт "Надстройки".](./media/kantegassoforconfluence-tutorial/addon1.png)
 
 1. В разделе **ATLASSIAN MARKETPLACE** щелкните **Find new add-ons** (Найти новые надстройки).
 
-    ![Настройка единого входа](./media/kantegassoforconfluence-tutorial/addon.png)
+    ![Снимок экрана: вкладка ATTLASSIAN MARKETPLACE с выбранным пунктом Find new add-ons (Найти новые надстройки).](./media/kantegassoforconfluence-tutorial/addon.png)
 
 1. Найдите подключаемый модуль **Kantega SSO for Confluence (SAML & Kerberos)** и нажмите кнопку **Install** (Установить), чтобы установить новый подключаемый модуль SAML.
 
-    ![Настройка единого входа](./media/kantegassoforconfluence-tutorial/addon2.png)
+    ![Снимок экрана: страница Find new add-ons (Найти новые надстройки) с параметром Kantega SSO for Confluence SAML Kerberos в поле поиска и выбранной кнопкой Install (Установить).](./media/kantegassoforconfluence-tutorial/addon2.png)
 
 1. Начнется установка подключаемого модуля.
 
-    ![Настройка единого входа](./media/kantegassoforconfluence-tutorial/addon3.png)
+    ![Снимок экрана: экран установки подключаемого модуля.](./media/kantegassoforconfluence-tutorial/addon3.png)
 
 1. Установка завершится. Щелкните **Закрыть**.
 
-    ![Настройка единого входа](./media/kantegassoforconfluence-tutorial/addon33.png)
+    ![Снимок экрана: экран установки и готовности к использованию с выбранной кнопкой Close (Закрыть).](./media/kantegassoforconfluence-tutorial/addon33.png)
 
 1. Нажмите кнопку **Управление**.
 
-    ![Настройка единого входа](./media/kantegassoforconfluence-tutorial/addon34.png)
+    ![Снимок экрана: подключаемый модуль Kantega Single Sign-on for Kerberos and SAML с выбранной кнопкой управления.](./media/kantegassoforconfluence-tutorial/addon34.png)
 
 1. Щелкните **Configure** (Настройка), чтобы настроить новый подключаемый модуль.
 
-    ![Настройка единого входа](./media/kantegassoforconfluence-tutorial/addon35.png)
+    ![Снимок экрана: страница Kantega Single Sign-on with Kerberos and SAML с выбранной кнопкой Configure (Настройка).](./media/kantegassoforconfluence-tutorial/addon35.png)
 
 1. Этот новый подключаемый модуль можно также найти на вкладке **USERS & SECURITY** (Пользователи и безопасность).
 
-    ![Настройка единого входа](./media/kantegassoforconfluence-tutorial/addon36.png)
+    ![Снимок экрана: вкладка USERS & SECURITY (Пользователи и безопасность) с выбранным действием Kantega Single Sign-on.](./media/kantegassoforconfluence-tutorial/addon36.png)
 
 1. В разделе **SAML** сделайте следующее. Выберите **Azure Active Directory (Azure AD)** из раскрывающегося списка **Добавление поставщика удостоверений**.
 
-    ![Настройка единого входа](./media/kantegassoforconfluence-tutorial/addon4.png)
+    ![Снимок экрана: раздел SAML с выбранным пунктом Azure Active Directory (Azure AD) из раскрывающегося списка добавления поставщика удостоверений.](./media/kantegassoforconfluence-tutorial/addon4.png)
 
 1. Выберите уровень подписки **Базовый**.
 
-    ![Настройка единого входа](./media/kantegassoforconfluence-tutorial/addon5.png)
+    ![Снимок экрана: страница Preparing Azure AD (Подготовка Azure AD) с выбранным параметром Basic (Базовый).](./media/kantegassoforconfluence-tutorial/addon5.png)
 
 1. В разделе **Свойства приложения** выполните следующие действия.
 
-    ![Настройка единого входа](./media/kantegassoforconfluence-tutorial/addon6.png)
+    ![Снимок экрана: раздел App properties (Свойства приложения) с выбранными полем URL-адреса идентификатора приложения, кнопкой копирования и кнопкой Next (Далее).](./media/kantegassoforconfluence-tutorial/addon6.png)
 
     а. Скопируйте значение **App ID URI** (URI кода приложения) и используйте его как **идентификатор, URL-адрес ответа и URL-адрес входа** в разделе **Базовая конфигурация SAML** на портале Azure.
 
@@ -182,7 +182,7 @@ ms.locfileid: "88546973"
 
 1. В разделе **Metadata import** (Импорт метаданных) выполните следующие действия. 
 
-    ![Настройка единого входа](./media/kantegassoforconfluence-tutorial/addon7.png)
+    ![Снимок экрана: раздел импорта метаданных с выбранным параметром Metadata file on my computer (Файл метаданных на моем компьютере).](./media/kantegassoforconfluence-tutorial/addon7.png)
 
     а. Щелкните **Metadata file on my computer** (Файл метаданных на моем компьютере) и передайте файл метаданных, который вы скачали с портала Azure.
 
@@ -190,7 +190,7 @@ ms.locfileid: "88546973"
 
 1. В разделе **Name and SSO location** (Имя и расположение единого входа) выполните следующее.
 
-    ![Настройка единого входа](./media/kantegassoforconfluence-tutorial/addon8.png)
+    ![Снимок экрана: раздел имени и расположения единого входа с выбранными текстовым полем Identity provider name (Имя поставщика удостоверений) и кнопкой Next (Далее).](./media/kantegassoforconfluence-tutorial/addon8.png)
 
     а. В текстовом поле **Provider Name** (Имя поставщика) введите имя поставщика (например, Azure AD).
 
@@ -198,11 +198,11 @@ ms.locfileid: "88546973"
 
 1. Проверьте сертификат для подписи и нажмите кнопку **Next** (Далее).
 
-    ![Настройка единого входа](./media/kantegassoforconfluence-tutorial/addon9.png)
+    ![Снимок экрана: раздел проверки подписи с выбранной кнопкой Next (Далее).](./media/kantegassoforconfluence-tutorial/addon9.png)
 
 1. В разделе **Confluence user accounts** (Учетные записи пользователей Confluence) выполните следующие действия.
 
-    ![Настройка единого входа](./media/kantegassoforconfluence-tutorial/addon10.png)
+    ![Снимок экрана: раздел учетных записей пользователей Confluence с выделенными параметром Create users in Confluence's Internal Directory if needed (При необходимости создать пользователей во внутреннем каталоге Confluence) и кнопкой Next (Далее).](./media/kantegassoforconfluence-tutorial/addon10.png)
 
     а. Щелкните переключатель **Create users in Confluence's internal Directory if needed** (При необходимости создать пользователей во внутреннем каталоге Confluence) и введите соответствующее имя группы пользователей (это может быть несколько групп, разделенных запятой).
 
@@ -210,11 +210,11 @@ ms.locfileid: "88546973"
 
 1. Нажмите кнопку **Готово**.
 
-    ![Настройка единого входа](./media/kantegassoforconfluence-tutorial/addon11.png)
+    ![Снимок экрана: страница сводки с выбранной кнопкой Finish (Готово).](./media/kantegassoforconfluence-tutorial/addon11.png)
 
 1. В разделе **Known domains for Azure AD** (Известные домены для Azure AD) выполните следующие действия. 
 
-    ![Настройка единого входа](./media/kantegassoforconfluence-tutorial/addon12.png)
+    ![Снимок экрана: страница известных доменов для Azure AD с выбранными текстовым полем известных доменов и кнопкой Save (Сохранить).](./media/kantegassoforconfluence-tutorial/addon12.png)
 
     а. Щелкните **Known domains** (Известные домены) на левой панели страницы.
 
@@ -283,7 +283,7 @@ ms.locfileid: "88546973"
 
 1. Наведите указатель мыши на шестеренку и щелкните **User management** (Управление пользователями).
 
-    ![Добавление сотрудника](./media/kantegassoforconfluence-tutorial/user1.png)
+    ![Снимок экрана: выбранные значок шестеренки и пункт User management (Управление пользователями).](./media/kantegassoforconfluence-tutorial/user1.png)
 
 1. В разделе "Users" (Пользователи) выберите вкладку **Add Users** (Добавление пользователей). На диалоговой странице **Add a User** (Добавление пользователя) выполните следующее.
 

@@ -1,18 +1,17 @@
 ---
 title: Выполнение заданий U-SQL в Python, R и C# — Azure Data Lake Analytics
 description: Сведения об использовании кода программной части Python, R и C# для отправки заданий в Azure Data Lake.
-services: data-lake-analytics
 ms.service: data-lake-analytics
 ms.reviewer: jasonh
 ms.topic: how-to
 ms.date: 11/22/2017
 ms.custom: devx-track-python
-ms.openlocfilehash: 673c8db0b7c6d3d8658d2d3b6cfd7e00f3d7d986
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d6066bd6ec2a4c986ae17ad0cce3e7f6f73b21e7
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87876212"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92219978"
 ---
 # <a name="develop-u-sql-with-python-r-and-c-for-azure-data-lake-analytics-in-visual-studio-code"></a>Разработка U-SQL с помощью Python, R, и C# для Azure Data Lake Analytics в Visual Studio Code
 Сведения об использовании Visual Studio Code (VSCode) для записи кода программной части Python, R и C# с помощью U-SQL и отправки заданий в службу Azure Data Lake. Дополнительные сведения об использовании Средств Azure Data Lake для VSCode см. в статье [Использование средств Azure Data Lake для Visual Studio Code](data-lake-analytics-data-lake-tools-for-vscode.md).
@@ -177,10 +176,10 @@ ms.locfileid: "87876212"
     ```
 5. Для выполнения задания щелкните файл **USQL** правой кнопкой мыши и выберите **Compile Script** (Компиляции сценария) или **Отправить задание**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Использование средств Azure Data Lake для Visual Studio Code](data-lake-analytics-data-lake-tools-for-vscode.md)
 * [Локальный запуск и локальная отладка U-SQL в Visual Studio Code](data-lake-tools-for-vscode-local-run-and-debug.md)
 * [Приступая к работе с аналитикой озера данных с помощью PowerShell](data-lake-analytics-get-started-powershell.md)
 * [Приступая к работе с аналитикой озера данных с помощью портала Azure](data-lake-analytics-get-started-portal.md)
 * [Использование инструментов озера данных для Visual Studio для разработки приложений U-SQL](data-lake-analytics-data-lake-tools-get-started.md)
-* [Использование каталога U-SQL Azure Data Lake Analytics](data-lake-analytics-use-u-sql-catalog.md)
+* [Использование каталога U-SQL Azure Data Lake Analytics](./data-lake-analytics-u-sql-get-started.md)

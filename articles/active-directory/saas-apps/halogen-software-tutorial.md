@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/20/2020
 ms.author: jeedes
-ms.openlocfilehash: 1743908652a70667a368dced18b2e808ce590a1b
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 746f60374a4e8f01af119d6e9c604b941e7c4950
+ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88549999"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91944246"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-saba-talentspace"></a>Руководство по интеграции единого входа Azure Active Directory с Saba TalentSpace
 
@@ -131,15 +131,15 @@ ms.locfileid: "88549999"
 
 2. Откройте вкладку **Параметры** .
   
-    ![Что такое Azure AD Connect?](./media/halogen-software-tutorial/tutorial-halogen-12.png)
+    ![Снимок экрана: домашняя страница Saba TalentSpace с выбранной вкладкой Options (Параметры).](./media/halogen-software-tutorial/tutorial-halogen-12.png)
 
 3. На панели навигации слева щелкните **Настройка SAML**.
   
-    ![Что такое Azure AD Connect?](./media/halogen-software-tutorial/tutorial-halogen-13.png)
+    ![Снимок экрана: область навигации User Interface (Пользовательский интерфейс) слева с выбранным элементом SAML Configuration (Настройка SAML).](./media/halogen-software-tutorial/tutorial-halogen-13.png)
 
 4. На странице **Настройка SAML** сделайте следующее:
 
-    ![Что такое Azure AD Connect?](./media/halogen-software-tutorial/tutorial-halogen-14.png)
+    ![Снимок экрана: страница SAML Configuration (Настройка SAML), на которой выделены параметры в соответствующем разделе.](./media/halogen-software-tutorial/tutorial-halogen-14.png)
 
     а. В качестве значения поля **Уникальный идентификатор** выберите **NameID**.
 
@@ -166,7 +166,7 @@ ms.locfileid: "88549999"
 
 2. Щелкните вкладку **Центр пользователей**, затем щелкните **Создать пользователя**.
 
-    ![Что такое Azure AD Connect?](./media/halogen-software-tutorial/tutorial-halogen-300.png)  
+    ![Снимок экрана, на котором показана вкладка User Center (Центр пользователей) и выбран элемент Create User (Создать пользователя).](./media/halogen-software-tutorial/tutorial-halogen-300.png)  
 
 3. На странице диалогового окна **Новый пользователь** выполните следующие действия.
 
