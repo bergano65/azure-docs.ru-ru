@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/21/2019
 ms.author: jeedes
-ms.openlocfilehash: 71aaaeec174611a86b037b693187cc4f49fe1a0c
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 941218f9a35a0a242612ae1d6230c642129c8259
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88528914"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91856897"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-meta-networks-connector"></a>Руководство по интеграции Azure Active Directory с Meta Networks Connector
 
@@ -101,7 +101,7 @@ ms.locfileid: "88528914"
 
 4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа для приложения Meta Networks Connector](common/idp-intiated.png)
+    ![Снимок экрана, на котором показан раздел "Базовая конфигурация SAML", где можно ввести идентификатор, URL-адрес ответа и нажать кнопку "Сохранить"](common/idp-intiated.png)
 
     а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://login.nsof.io/v1/<ORGANIZATION-SHORT-NAME>/saml/metadata`.
 
@@ -109,7 +109,7 @@ ms.locfileid: "88528914"
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа для приложения Meta Networks Connector](common/both-advanced-urls.png)
+    ![Снимок экрана, на котором показан параметр "Задать дополнительные URL-адреса" и поле для ввода URL-адреса входа](common/both-advanced-urls.png)
 
     а. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<ORGANIZATION-SHORT-NAME>.metanetworks.com/login`.
 
@@ -120,7 +120,7 @@ ms.locfileid: "88528914"
 
 6. Приложение Meta Networks Connector ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
-    ![image](common/edit-attribute.png)
+    ![Снимок экрана, на котором показан раздел "Атрибуты пользователя" с выбранным значком "Изменить"](common/edit-attribute.png)
     
 7. В дополнение к описанному выше приложение Meta Networks Connector ожидает несколько дополнительных атрибутов в ответе SAML. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** выполните следующие действия, чтобы добавить атрибут токена SAML, как показано в приведенной ниже таблице.
     
@@ -134,9 +134,9 @@ ms.locfileid: "88528914"
 
     а. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![image](common/new-save-attribute.png)
+    ![Снимок экрана, на котором показан раздел "Утверждения пользователя" с параметром "Добавить новое утверждение".](common/new-save-attribute.png)
 
-    ![image](common/new-attribute-details.png)
+    ![Снимок экрана, на котором показано диалоговое окно "Управление утверждениями пользователя", где можно ввести описанные значения](common/new-attribute-details.png)
 
     b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
@@ -173,19 +173,19 @@ ms.locfileid: "88528914"
     
 2. Выберите **Administrator** (Администратор) и щелкните **Settings** (Параметры).
     
-    ![Настройка единого входа](./media/metanetworksconnector-tutorial/configure3.png)
+    ![Снимок экрана, на котором выбран элемент "Параметры" из меню администрирования.](./media/metanetworksconnector-tutorial/configure3.png)
     
 3. Убедитесь, что параметры **Log Internet Traffic** (Ведение журнала трафика Интернета) и **Force VPN MFA** (Принудительная многофакторная проверка подлинности через VPN) отключены.
     
-    ![Настройка единого входа](./media/metanetworksconnector-tutorial/configure1.png)
+    ![Снимок экрана демонстрирует отключение этих параметров.](./media/metanetworksconnector-tutorial/configure1.png)
     
 4. Выберите **Administrator** (Администратор) и щелкните **SAML**.
     
-    ![Настройка единого входа](./media/metanetworksconnector-tutorial/configure4.png)
+    ![Снимок экрана демонстрирует элемент SAML, выбранный в меню администрирования.](./media/metanetworksconnector-tutorial/configure4.png)
     
 5. Выполните следующие действия на странице **DETAILS** (Сведения).
     
-    ![Настройка единого входа](./media/metanetworksconnector-tutorial/configure2.png)
+    ![Снимок экрана демонстрирует страниц подробных сведений, где вы можете ввести описанные здесь значения.](./media/metanetworksconnector-tutorial/configure2.png)
     
     а. Скопируйте значение **SSO URL** (URL-адрес единого входа) и вставьте его в текстовое поле **URL-адрес входа** в разделе **Домены и URL-адреса приложения Meta Networks Connector**.
     
@@ -197,7 +197,7 @@ ms.locfileid: "88528914"
     
 6. На вкладке **GENERAL** (Общие) выполните следующее.
 
-    ![Настройка единого входа](./media/metanetworksconnector-tutorial/configure5.png)
+    ![Снимок экрана демонстрирует страниц общих сведений, где вы можете ввести описанные здесь значения.](./media/metanetworksconnector-tutorial/configure5.png)
 
     а. В поле **URL-адрес единого входа для поставщика удостоверений** вставьте значение **URL-адреса входа**, скопированное на портале Azure.
 

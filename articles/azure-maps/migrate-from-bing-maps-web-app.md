@@ -1,6 +1,6 @@
 ---
 title: Руководство по Перенос веб-приложения из Карт Bing | Microsoft Azure Maps
-description: Как перенести веб-приложения из Карт Bing в Microsoft Azure Maps.
+description: В руководстве показано, как перенести веб-приложение из Карт Bing в Microsoft Azure Maps.
 author: rbrundritt
 ms.author: richbrun
 ms.date: 9/10/2020
@@ -9,14 +9,14 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: devx-track-js
-ms.openlocfilehash: 469565385ce4b3ee4b1589f105216213d584c8c9
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 42ba92a0134ae1e8da91bbe7513668fa24c4718f
+ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91319747"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91876521"
 ---
-# <a name="migrate-a-web-app-from-bing-maps"></a>Перенос веб-приложения из Карт Bing
+# <a name="tutorial---migrate-a-web-app-from-bing-maps"></a>Руководство по переносу веб-приложения из Карт Bing
 
 Веб-приложения, использующие Карты Bing, часто используют пакет SDK Карт Bing версии 8 для JavaScript. Подходящий пакет SDK на основе Azure для переноса — веб-пакет SDK для Azure Maps. Веб-пакет SDK Azure Maps позволяет настраивать интерактивные карты, используя собственные изображения и содержимое для отображения в веб-приложениях или мобильных приложениях. Этот элемент управления использует WebGL, позволяя вам отображать большие наборы данных с высокой производительностью. Вы можете выполнять разработку с помощью пакета SDK, используя JavaScript или TypeScript.
 

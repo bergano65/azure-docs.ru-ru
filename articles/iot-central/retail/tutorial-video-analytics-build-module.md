@@ -1,5 +1,5 @@
 ---
-title: Руководство. Изменение модулей динамической видеоаналитики IoT Edge
+title: Руководство по изменению модулей динамической видеоаналитики Azure IoT Edge
 description: В этом руководстве показано, как изменять и создавать модули шлюза динамической для видеоаналитики, которые используются в шаблоне приложения видеоаналитики для обнаружения объектов и движения.
 services: iot-central
 ms.service: iot-central
@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.author: nandab
 author: KishorIoT
 ms.date: 07/31/2020
-ms.openlocfilehash: d21eb8d8d79ec04f0f7e766b4eeb370811553e64
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: 4bbc25f98f494660fc4997af1c3a248172ef08d2
+ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88038076"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91873478"
 ---
 # <a name="tutorial-modify-and-build-the-live-video-analytics-gateway-modules"></a>Руководство по изменению и созданию модулей шлюза для динамической видеоаналитики
 
@@ -50,7 +50,7 @@ git clone https://github.com/Azure/live-video-analytics
 1. Измените раздел модуля `LvaEdgeGatewayModule`, добавив в `env:amsAccountName:value` имя образа и имя учетной записи AMS.
 1. Измените раздел модуля `lvaYolov3`, добавив имя образа.
 1. Измените раздел модуля `lvaEdge`, добавив имя образа.
-1. Дополнительные сведения о том, как завершить настройку, см. в статье [Руководство. Создание приложения видеоаналитики для отслеживания объектов и движения в Azure IoT Central](tutorial-video-analytics-create-app.md).
+1. Дополнительные сведения о том, как завершить настройку, см. в статье [Руководство. Создание приложения видеоаналитики для отслеживания объектов и движения в Azure IoT Central](tutorial-video-analytics-create-app-yolo-v3.md).
 
 ## <a name="build-the-code"></a>Сборка кода
 

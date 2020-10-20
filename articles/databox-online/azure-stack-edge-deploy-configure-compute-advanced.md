@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 05/20/2019
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to configure compute on Azure Stack Edge Pro for advanced deployment flow so I can use it to transform the data before sending it to Azure.
-ms.openlocfilehash: f62eec29aebdcc98569134e0c3b75457467bc014
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: bcad165f5d0ba2cf652cff35091e05b4414193c8
+ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90903688"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91951797"
 ---
 # <a name="tutorial-transform-data-with-azure-stack-edge-pro-for-advanced-deployment-flow"></a>Руководство по Преобразование данных с помощью Azure Stack Edge Pro для процесса расширенного развертывания
 
@@ -58,7 +58,7 @@ ms.locfileid: "90903688"
 
 2. На плитке **Настройка вычислений Edge** щелкните **Настройка вычислений**.
 
-    ![Начало работы с вычислениями](./media/azure-stack-edge-deploy-configure-compute-advanced/configure-compute-2.png)
+    ![Начало работы с вычислениями 2](./media/azure-stack-edge-deploy-configure-compute-advanced/configure-compute-2.png)
 
 3. В колонке **Настройка вычислений Edge** введите следующие значения:
 
@@ -68,11 +68,11 @@ ms.locfileid: "90903688"
     |Центр Интернета вещей     | Выберите **Новый** или **Существующий**. <br> По умолчанию для создания ресурса Интернета вещей используется уровень служб "Стандартный" (S1). Чтобы использовать ресурс Интернета вещей уровня служб "Бесплатный", создайте его и выберите существующий ресурс. <br> В любом случае для ресурса Интернета вещей используется та же подписка и группа ресурсов, что и для ресурса Azure Stack Edge.     |
     |Имя     |Введите имя ресурса Центра Интернета вещей.         |
 
-    ![Начало работы с вычислениями](./media/azure-stack-edge-deploy-configure-compute-advanced/configure-compute-3.png)
+    ![Начало работы с вычислениями 3](./media/azure-stack-edge-deploy-configure-compute-advanced/configure-compute-3.png)
 
 4. Нажмите кнопку **создания**. Для создания ресурса Центра Интернета вещей нужно несколько минут. После этого на плитке **Настройка вычислений Edge** появляется конфигурация вычислений. Чтобы подтвердить настройку роли пограничных вычислений, на плитке **Настройка вычислений** щелкните **Просмотреть конфигурацию**.
     
-    ![Начало работы с вычислениями](./media/azure-stack-edge-deploy-configure-compute-advanced/configure-compute-4.png)
+    ![Начало работы с вычислениями 4](./media/azure-stack-edge-deploy-configure-compute-advanced/configure-compute-4.png)
 
     При настройке роли вычислений Edge на устройстве Edge создается два устройства — устройство Интернета вещей и устройство IoT Edge. Оба устройства можно просмотреть в ресурсе Центра Интернета вещей. На этом устройстве IoT Edge также запущена среда выполнения IoT Edge.
 
@@ -136,17 +136,17 @@ ms.locfileid: "90903688"
     |Тип триггера     | Выберите триггер **файла**. Триггер файла срабатывает, когда возникает событие файла, например файл записывается во входную общую папку. С другой стороны, запланированный триггер срабатывает в соответствии с определенным вами расписанием. В этом примере нам нужен триггер файла.    |
     |Входная общая папка     | Выберите входную общую папку. В этом случае входной общей папкой будет локальная общая папка Edge. Используемый здесь модуль позволяет переместить файлы из локальной общей папки Edge в общую папку Edge, из которой они передаются в облако.        |
 
-    ![Добавление триггера](./media/azure-stack-edge-deploy-configure-compute-advanced/add-trigger-2.png)
+    ![Добавление триггера (2)](./media/azure-stack-edge-deploy-configure-compute-advanced/add-trigger-2.png)
 
 3. После создания триггера вы получите уведомление. Список триггеров обновляется, чтобы отобразить только что созданный триггер. Выберите только что созданный триггер.
 
-    ![Добавление триггера](./media/azure-stack-edge-deploy-configure-compute-advanced/add-trigger-3.png)
+    ![Добавление триггера (3)](./media/azure-stack-edge-deploy-configure-compute-advanced/add-trigger-3.png)
 
 4. Скопируйте и сохраните пример маршрута. Вам предстоит изменить этот пример маршрута и использовать его позже в Центре Интернета вещей.
 
     `"sampleroute": "FROM /* WHERE topic = 'mydbesmbedgelocalshare1' INTO BrokeredEndpoint(\"/modules/modulename/inputs/input1\")"`
 
-    ![Добавление триггера](./media/azure-stack-edge-deploy-configure-compute-advanced/add-trigger-4.png)
+    ![Добавление триггера (4)](./media/azure-stack-edge-deploy-configure-compute-advanced/add-trigger-4.png)
 
 ## <a name="add-a-module"></a>Добавление модуля
 
@@ -213,7 +213,7 @@ ms.locfileid: "90903688"
  
     4. При необходимости настройте расширенные параметры Edge, а затем нажмите кнопку **Далее**.
 
-        ![Добавление настраиваемого модуля](./media/azure-stack-edge-deploy-configure-compute-advanced/add-module-6.png)
+        ![Добавление настраиваемого модуля (2)](./media/azure-stack-edge-deploy-configure-compute-advanced/add-module-6.png)
  
 5. В разделе **Укажите маршруты** настройте маршруты между модулями.  
    
@@ -229,11 +229,11 @@ ms.locfileid: "90903688"
 
 6. В разделе **Проверка развертывания** просмотрите все параметры, а затем выберите **Отправить**, чтобы отправить модуль для развертывания.
 
-   ![Страница "Задание модулей"](./media/azure-stack-edge-deploy-configure-compute-advanced/add-module-9.png)
+   ![Страница "Задание модулей" (2)](./media/azure-stack-edge-deploy-configure-compute-advanced/add-module-9.png)
  
     Это действие запускает развертывание модуля. После завершения развертывания **состояние среды выполнения** модуля изменится на **Запущен**.
 
-    ![Добавление настраиваемого модуля](./media/azure-stack-edge-deploy-configure-compute-advanced/add-module-10.png)
+    ![Добавление настраиваемого модуля (3)](./media/azure-stack-edge-deploy-configure-compute-advanced/add-module-10.png)
 
 ## <a name="verify-data-transform-transfer"></a>Проверка преобразования и передачи данных
 
@@ -247,15 +247,15 @@ ms.locfileid: "90903688"
  
 1. Добавьте данные в локальную общую папку.
 
-   ![Проверка преобразования данных](./media/azure-stack-edge-deploy-configure-compute-advanced/verify-data-3.png)
+   ![Проверка преобразования данных (2)](./media/azure-stack-edge-deploy-configure-compute-advanced/verify-data-3.png)
  
     Данные переносятся в облачную общую папку.
 
-    ![Проверка преобразования данных](./media/azure-stack-edge-deploy-configure-compute-advanced/verify-data-4.png)  
+    ![Проверка преобразования данных (3)](./media/azure-stack-edge-deploy-configure-compute-advanced/verify-data-4.png)  
 
     Затем данные переносятся из облачного ресурса в учетную запись хранения. Для просмотра данных перейдите в свою учетную запись хранения и выберите **Обозреватель службы хранилища Azure**. Вы можете просмотреть отправленные данные в своей учетной записи хранения.
 
-    ![Проверка преобразования данных](./media/azure-stack-edge-deploy-configure-compute-advanced/verify-data-5.png)
+    ![Проверка преобразования данных (4)](./media/azure-stack-edge-deploy-configure-compute-advanced/verify-data-5.png)
  
 Вы завершили процесс проверки.
 

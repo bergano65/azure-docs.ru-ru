@@ -6,12 +6,12 @@ ms.devlang: csharp
 ms.topic: tutorial
 ms.date: 06/25/2018
 ms.custom: devx-track-csharp, mvc, devcenter, vs-azure, seodec18
-ms.openlocfilehash: 90becfb79973ba45851b0e30384b0f05a7b887e3
-ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
+ms.openlocfilehash: a427fbc6fad1566ae10e11b61de981aded32e64a
+ms.sourcegitcommit: 090ea6e8811663941827d1104b4593e29774fa19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88962253"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92000402"
 ---
 # <a name="tutorial-deploy-an-aspnet-app-to-azure-with-azure-sql-database"></a>Руководство по развертыванию приложения ASP.NET в Azure со службой "База данных SQL Azure"
 
@@ -65,20 +65,18 @@ ms.locfileid: "88962253"
 
 ![Публикация в обозревателе решений](./media/app-service-web-tutorial-dotnet-sqldatabase/solution-explorer-publish.png)
 
-Выберите **Служба приложений Microsoft Azure** и нажмите кнопку **Опубликовать**.
+Выберите **Azure** в качестве целевого объекта, нажмите "Далее", затем убедитесь, что выбрана **Служба приложений Azure (Windows)** , и нажмите "Далее" еще раз.
 
 ![Публикация с помощью страницы обзора проекта](./media/app-service-web-tutorial-dotnet-sqldatabase/publish-to-app-service.png)
 
-Во время публикации откроется диалоговое окно **Создать службу приложений**, с помощью которого вы можете создать все ресурсы Azure, необходимые для запуска приложения ASP.NET в Azure.
-
 ### <a name="sign-in-to-azure"></a>Вход в Azure
 
-В диалоговом окне **Создать службу приложений** щелкните **Добавить новую учетную запись**, а затем выполните вход в подписку Azure. Если вы уже вошли в учетную запись Майкрософт, проверьте, содержит ли она подписку Azure. Если подписки нет, щелкните ее, чтобы добавить правильную учетную запись.
+В диалоговом окне **Опубликовать** в раскрывающемся списке диспетчера учетных записей щелкните **Добавить учетную запись**, а затем войдите в свою подписку Azure. Если вы уже вошли в учетную запись Майкрософт, проверьте, содержит ли она подписку Azure. Если подписки нет, щелкните ее, чтобы добавить правильную учетную запись.
+
+![Вход в Azure](./media/app-service-web-tutorial-dotnet-sqldatabase/sign-in-azure.png)
 
 > [!NOTE]
 > Если вы уже выполнили вход, пока не нажимайте кнопку **Создать**.
-
-![Вход в Azure](./media/app-service-web-tutorial-dotnet-sqldatabase/sign-in-azure.png)
 
 ### <a name="configure-the-web-app-name"></a>Настройка имени веб-приложения
 
@@ -112,15 +110,20 @@ ms.locfileid: "88962253"
    |**Расположение**| Западная Европа | [Регионы Azure](https://azure.microsoft.com/regions/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) |
    |**Размер**| Бесплатный | [Ценовые категории](https://azure.microsoft.com/pricing/details/app-service/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio)|
 
+3. В диалоговом окне **Опубликовать** отобразятся настроенные ресурсы. Нажмите кнопку **Готово**.
+
+   ![Созданные ресурсы](media/app-service-web-tutorial-dotnet-sqldatabase/app_svc_plan_done.png)
+
+
 ### <a name="create-a-server"></a>Создание сервера
 
 Перед созданием базы данных необходимо создать [логический сервер SQL](../azure-sql/database/logical-servers.md). Логический сервер SQL — это логическая конструкция, которая содержит группу баз данных, которыми можно управлять как группой.
 
-1. Щелкните **Создать базу данных SQL**.
+1. В разделе **Подключенные службы** рядом с базой данных SQL Server щелкните **Настроить**.
 
    ![Создание базы данных SQL](media/app-service-web-tutorial-dotnet-sqldatabase/web-app-name.png)
 
-2. В окне **Настройка базы данных SQL** нажмите кнопку **Создать** рядом с **SQL Server**.
+2. В диалоговом окне **База данных SQL Azure** нажмите кнопку **Создать** рядом с пунктом **Сервер базы данных**.
 
    Создается уникальное имя сервера. Это имя используется как часть URL-адреса по умолчанию для сервера (`<server_name>.database.windows.net`). Оно должно быть уникальным на всех серверах в Azure SQL. Имя сервера можно изменить, но в рамках этого руководства используйте созданное значение.
 
@@ -128,28 +131,31 @@ ms.locfileid: "88962253"
 
    Запомните это имя пользователя и пароль. Они потребуются позже для управления сервером.
 
+   ![Создание сервера](media/app-service-web-tutorial-dotnet-sqldatabase/configure-sql-database-server.png)
+
    > [!IMPORTANT]
    > Хотя пароль в строке подключения скрывается (в Visual Studio и в службе приложений), он все равно где-то сохраняется, что делает приложение уязвимым перед атаками. В таком случае служба приложений может использовать [управляемые удостоверения службы](overview-managed-identity.md), полностью устраняя необходимость хранить секреты в коде или конфигурации приложения. Дополнительные сведения см. в разделе [Дальнейшие действия](#next-steps).
-
-   ![Создание сервера](media/app-service-web-tutorial-dotnet-sqldatabase/configure-sql-database-server.png)
 
 4. Нажмите кнопку **ОК**. Пока не закрывайте диалоговое окно **Настроить базу данных SQL**.
 
 ### <a name="create-a-database-in-azure-sql-database"></a>Создание базы данных в службе "База данных SQL Azure"
 
-1. В диалоговом окне **Настроить базу данных SQL**:
+1. В диалоговом окне **База данных SQL Azure** выполните следующее.
 
    * В поле **Имя базы данных** не изменяйте созданное по умолчанию имя.
-   * В поле **Имя строки подключения** введите *MyDbConnection*. Это имя должно совпадать с именем строки подключения, указанном в *Models\MyDatabaseContext.cs*.
-   * Щелкните **ОК**.
+   * Нажмите кнопку **Создать**.
 
     ![Настройка базы данных](media/app-service-web-tutorial-dotnet-sqldatabase/configure-sql-database.png)
 
-2. В диалоговом окне **Создать службу приложений** отобразятся настроенные ресурсы. Нажмите кнопку **Создать**.
+2. В поле **Имя строки подключения базы данных** введите _MyDbConnection_. Это имя должно совпадать с именем строки подключения, указанном в _Models\MyDatabaseContext.cs_.
 
-   ![Созданные ресурсы](media/app-service-web-tutorial-dotnet-sqldatabase/app_svc_plan_done.png)
+3. В соответствующие поля введите имя пользователя и пароль администратора, которые вы использовали на шаге 3 [Создание сервера](#create-a-server).
 
-Когда мастер завершит создание ресурсов Azure, он опубликует приложение ASP.NET в Azure. Откроется браузер по умолчанию с URL-адресом развернутого приложения.
+    ![Настройка строки подключения к базе данных](media/app-service-web-tutorial-dotnet-sqldatabase/configure-sql-database-connection.png)
+
+4. Нажмите кнопку **Готово**.
+
+Когда мастер завершит создание ресурсов Azure, щелкните **Опубликовать**, чтобы развернуть приложение ASP.NET в Azure. Откроется браузер по умолчанию с URL-адресом развернутого приложения.
 
 Добавьте несколько элементов списка дел.
 

@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.service: iot-pnp
 services: iot-pnp
 ms.custom: mvc
-ms.openlocfilehash: 0f43b667b94e39548d81e6c6258d987f47074cb1
-ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
+ms.openlocfilehash: ce41e6b502aef1c44cf96f3b4a5efe401fba3173
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91761334"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92046491"
 ---
 # <a name="quickstart-interact-with-an-iot-plug-and-play-device-thats-connected-to-your-solution-java"></a>Краткое руководство. Взаимодействие с подключенным к решению устройством IoT Plug and Play с помощью Java
 
@@ -27,7 +27,7 @@ IoT Plug and Play упрощает работу с Интернетом веще
 
 Для работы с этим кратким руководством в Windows необходимо установить следующее программное обеспечение в локальной среде:
 
-* Пакет SDK для Java SE 8. В статье [Долгосрочная поддержка Java для Azure и Azure Stack](https://docs.microsoft.com/java/azure/jdk/?view=azure-java-stable&preserve-view=true) выберите пункт **Java 8** в разделе **Долгосрочная поддержка**.
+* Пакет SDK для Java SE 8. В статье [Долгосрочная поддержка Java для Azure и Azure Stack](/java/azure/jdk/?preserve-view=true&view=azure-java-stable) выберите пункт **Java 8** в разделе **Долгосрочная поддержка**.
 * [Apache Maven 3](https://maven.apache.org/download.cgi).
 
 ### <a name="clone-the-sdk-repository-with-the-sample-code"></a>Клонирование репозитория пакета SDK с помощью примера кода
@@ -76,7 +76,7 @@ git clone https://github.com/Azure/azure-iot-sdk-java.git
 С помощью этого краткого руководства вы примените пример решения Интернета вещей на языке Java для взаимодействия с настроенным примером устройства.
 
 > [!NOTE]
-> В этом образце используется пространство имен **com.microsoft.azure.sdk.iot.service.*;** из **клиента службы Центра Интернета вещей**. Дополнительные сведения об извлечении идентификатора модели см. в [руководстве разработчика](concepts-developer-guide-service.md).
+> В этом образце используется пространство имен **com.microsoft.azure.sdk.iot.service** из **клиента службы Центра Интернета вещей**. Дополнительные сведения об интерфейсах API, включая API цифровых двойников, см. в [руководстве для разработчиков служб](concepts-developer-guide-service.md).
 
 1. Откройте другое окно терминала, которое будет терминалом **службы**.
 
@@ -88,7 +88,7 @@ git clone https://github.com/Azure/azure-iot-sdk-java.git
     mvm exec:java -Dexec.mainClass="samples.com.microsoft.azure.sdk.iot.service.Thermostat"
     ```
 
-### <a name="get-digital-twin"></a>Получение цифрового двойника
+### <a name="get-device-twin"></a>Получение двойника устройства
 
 В следующем фрагменте кода показано, как получить двойник устройства в службе:
 
@@ -99,9 +99,9 @@ twinClient.getTwin(twin);
 System.out.println("Model Id of this Twin is: " + twin.getModelId());
 ```
 
-### <a name="update-a-digital-twin"></a>Обновление цифрового двойника
+### <a name="update-a-device-twin"></a>Обновление двойника устройства
 
-В следующем фрагменте кода показано, как использовать *исправление* для обновления свойств с помощью цифрового двойника:
+В следующем фрагменте кода показано, как использовать *исправление* для обновления свойств с помощью двойника устройства:
 
 ```java
 String propertyName = "targetTemperature";

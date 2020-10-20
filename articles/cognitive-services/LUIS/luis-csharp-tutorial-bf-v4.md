@@ -6,12 +6,12 @@ ms.subservice: language-understanding
 ms.topic: tutorial
 ms.date: 06/22/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 57a9186033b8df71d1972289fe33b0fe654690f6
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: a8d6481bdf3476f8f91c437138f4b6f1ebd1f1de
+ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91316432"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92058205"
 ---
 # <a name="tutorial-use-a-web-app-bot-enabled-with-language-understanding-in-c"></a>Руководство по совместному использованию бота веб-приложения и службы распознавания речи в C#
 
@@ -27,7 +27,7 @@ ms.locfileid: "91316432"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* [Bot Emulator](https://aka.ms/abs/build/emulatordownload)
+* [Эмулятор Bot Framework](https://aka.ms/abs/build/emulatordownload)
 * [Visual Studio](https://visualstudio.microsoft.com/downloads/)
 
 ## <a name="create-a-web-app-bot-resource"></a>Создание ресурса бота веб-приложения
@@ -314,18 +314,18 @@ ms.locfileid: "91316432"
 
 ![Сведения о боте отображаются на домашней странице.](./media/bfv4-csharp/running-bot-web-home-page-success.png)
 
-## <a name="use-the-bot-emulator-to-test-the-bot"></a>Использование эмулятора бота для тестирования бота
+## <a name="use-the-bot-framework-emulator-to-test-the-bot"></a>Тестирование бота с помощью эмулятора Bot Framework
 
-1. Запустите эмулятор бота и выберите **Open Bot** (Открыть бот).
+1. Запустите эмулятор Bot Framework и выберите **Open Bot** (Открыть бота).
 1. Во сплывающем диалоговом окне **Open Bot** (Открыть бот) введите URL-адрес бота, например `http://localhost:3978/api/messages`. Путь `/api/messages` — веб-адрес бота.
 1. Введите **идентификатор приложения Майкрософт** и **пароль приложения Майкрософт**, которые можно найти в файле **appsettings.json** в корне скачанного кода, а затем щелкните **Connect** (Подключить).
 
-1. В эмуляторе бота введите `Book a flight from Seattle to Berlin tomorrow` и получите такой же ответ от основного бота, как и ответ, полученный при **тестировании в Web Chat**.
+1. В эмуляторе Bot Framework введите `Book a flight from Seattle to Berlin tomorrow` и получите такой же ответ от основного бота, как и ответ, полученный при **тестировании в Web Chat**.
 
     [![Снимок экрана: Bot Framework Emulator с ответом от основного бота](./media/bfv4-nodejs/ask-bot-emulator-a-question-and-get-response.png)](./media/bfv4-nodejs/ask-bot-emulator-a-question-and-get-response.png#lightbox)
 
 1. Выберите **Да**. Бот ответит сводкой своих действий.
-1. Из журнала эмулятора бота выберите строку, в которой содержится `<- trace LuisV3 Trace`. Появится ответ в формате JSON, полученный от LUIS, для намерения и сущностей речевого фрагмента.
+1. Из журнала эмулятора Bot Framework выберите строку, в которой содержится `<- trace LuisV3 Trace`. Появится ответ в формате JSON, полученный от LUIS, для намерения и сущностей речевого фрагмента.
 
     [![Снимок экрана: ответ от основного бота с выбранной строкой "LuisV3 Trace" и выделенным ответом JSON](./media/bfv4-nodejs/ask-luis-book-flight-question-get-json-response-in-bot-emulator.png)](./media/bfv4-nodejs/ask-luis-book-flight-question-get-json-response-in-bot-emulator.png#lightbox)
 

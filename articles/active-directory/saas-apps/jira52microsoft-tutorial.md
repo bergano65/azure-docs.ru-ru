@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 04/22/2019
 ms.author: jeedes
-ms.openlocfilehash: e0198fdcfea1656e3aec5179358e69fb6fb55723
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 331d9df6059c8af54857d05d2d6373e48e127eac
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88547576"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91850852"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-jira-saml-sso-by-microsoft-v52"></a>Руководство по интеграции Azure Active Directory с JIRA SAML SSO by Microsoft (V5.2)
 
@@ -146,23 +146,23 @@ ms.locfileid: "88547576"
 
 2. Наведите указатель мыши на шестеренку и щелкните **Add-ons** (Надстройки).
 
-    ![Настройка единого входа](./media/jira52microsoft-tutorial/addon1.png)
+    ![Снимок экрана: меню "Параметры" с выбранным пунктом "Надстройки".](./media/jira52microsoft-tutorial/addon1.png)
 
 3. На вкладке "Надстройки" щелкните **Управление надстройками**.
 
-    ![Настройка единого входа](./media/jira52microsoft-tutorial/addon7.png)
+    ![Снимок экрана, где на вкладке надстроек выбрано действие управления надстройками.](./media/jira52microsoft-tutorial/addon7.png)
 
 4. Скачайте подключаемый модуль из [Центра загрузки Майкрософт](https://www.microsoft.com/download/details.aspx?id=56521). Вручную передайте подключаемый модуль, предоставленный корпорацией Майкрософт, воспользовавшись меню **Upload add-on** (Отправка надстройки). Загрузка подключаемого модуля выполняется в соответствии с [соглашением об обслуживании Майкрософт](https://www.microsoft.com/servicesagreement/).
 
-    ![Настройка единого входа](./media/jira52microsoft-tutorial/addon12.png)
+    ![Снимок экрана: область Manage add-ons (Управление надстройками) с выделенной ссылкой Upload add-on (Отправить надстройку).](./media/jira52microsoft-tutorial/addon12.png)
 
 5. После установки подключаемый модуль появится в разделе **Установлено пользователем**. Щелкните **Configure** (Настройка), чтобы настроить новый подключаемый модуль.
 
-    ![Настройка единого входа](./media/jira52microsoft-tutorial/addon13.png)
+    ![Снимок экрана: раздел Microsoft Azure Active Directory SAML Single Sign-on for JIRA (Единый вход SAML Microsoft Azure Active Directory для JIRA) с выделенной кнопкой "Настроить".](./media/jira52microsoft-tutorial/addon13.png)
 
 6. Выполните следующие действия на странице настройки:
 
-    ![Настройка единого входа](./media/jira52microsoft-tutorial/addon52.png)
+    ![Снимок экрана для страницы конфигурации соединителя единого входа Microsoft JIRA.](./media/jira52microsoft-tutorial/addon52.png)
 
     > [!TIP]
     > Убедитесь, что с приложением сопоставлен только один сертификат, чтобы при разрешении метаданных не возникла ошибка. Если имеется несколько сертификатов, то при разрешении метаданных администратор увидит сообщение об ошибке.
@@ -251,19 +251,19 @@ ms.locfileid: "88547576"
 
 2. Наведите указатель мыши на шестеренку и щелкните **User management** (Управление пользователями).
 
-    ![Добавление сотрудника](./media/jira52microsoft-tutorial/user1.png)
+    ![Снимок экрана: меню "Параметры" с выбранным пунктом User management (Управление пользователями).](./media/jira52microsoft-tutorial/user1.png)
 
 3. Вы будете перенаправлены на страницу доступа с правами администратора. Введите **пароль** и нажмите кнопку **Confirm** (Подтвердить).
 
-    ![Добавление сотрудника](./media/jira52microsoft-tutorial/user2.png)
+    ![Снимок экрана: страница доступа с правами администратора, на которой вводятся учетные данные.](./media/jira52microsoft-tutorial/user2.png)
 
 4. В разделе **User management** (Управление пользователями) щелкните **Create user** (Создать пользователя).
 
-    ![Добавление сотрудника](./media/jira52microsoft-tutorial/user3.png) 
+    ![Снимок экрана: вкладка User management (Управление пользователями), на которой можно создать пользователя.](./media/jira52microsoft-tutorial/user3.png) 
 
 5. На странице **Create New User** (Создание пользователя) выполните следующие действия.
 
-    ![Добавление сотрудника](./media/jira52microsoft-tutorial/user4.png)
+    ![Снимок экрана: страница диалоговое окно Create new user (Создание пользователя), где можно ввести сведения на этом шаге.](./media/jira52microsoft-tutorial/user4.png)
 
     а. В текстовом поле **Email address** (Адрес электронной почты) введите адрес электронной почты пользователя, например Brittasimon@contoso.com.
 

@@ -4,19 +4,19 @@ titleSuffix: Azure Cognitive Services
 description: Сведения о мониторинге аномалий в данных с помощью API Детектора аномалий и Azure Databricks.
 titlesuffix: Azure Cognitive Services
 services: cognitive-services
-author: aahill
+author: mrbullwinkle
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: anomaly-detector
 ms.topic: tutorial
 ms.date: 03/05/2020
-ms.author: aahi
-ms.openlocfilehash: 95ab400d645a2a2761e39c191cdb85e49e1c7a27
-ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
+ms.author: mbullwin
+ms.openlocfilehash: 8ef5d8e049ac4a779d5139945bf1073f38eb434c
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88245610"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92017664"
 ---
 # <a name="tutorial-anomaly-detection-on-streaming-data-using-azure-databricks"></a>Руководство по Обнаружение аномалий при потоковой передаче данных с помощью Azure Databricks
 
@@ -63,7 +63,7 @@ ms.locfileid: "88245610"
 
 1. На портале Azure выберите **Создать ресурс** > **Analytics** > **Azure Databricks**.
 
-    ![Databricks на портале Azure](../media/tutorials/azure-databricks-on-portal.png "Databricks на портале Azure")
+    ![Azure Databricks на портале](../media/tutorials/azure-databricks-on-portal.png "Databricks на портале Azure")
 
 3. В разделе **Служба Azure Databricks** укажите следующие значения, чтобы создать рабочую область Databricks:
 
@@ -115,7 +115,7 @@ ms.locfileid: "88245610"
 
 3. На странице приложения перейдите на вкладку **Keys and Access Tokens** (Ключи и маркеры доступа) и скопируйте значения **ключа потребителя** и **секрета потребителя**. Кроме того, выберите **Create my access token** (Создать маркер доступа), чтобы создать маркеры доступа. Скопируйте значения **маркера доступа** и **секрета маркера доступа**.
 
-    ![Сведения о приложении Twitter](../media/tutorials/twitter-app-key-secret.png "Сведения о приложении Twitter")
+    ![Сведения о приложении Twitter (2)](../media/tutorials/twitter-app-key-secret.png "Сведения о приложении Twitter")
 
 Сохраните значения, полученные для приложения Twitter. Они понадобятся вам позже при работе с этим руководством.
 
@@ -193,7 +193,7 @@ ms.locfileid: "88245610"
 
 2. В диалоговом окне **создания записной книжки** введите имя **SendTweetsToEventHub**, выберите **Scala** в качестве языка, а затем выберите созданный ранее кластер Spark.
 
-    ![Создание записной книжки в Databricks](../media/tutorials/databricks-notebook-details.png "Создание записной книжки в Databricks")
+    ![Сведения о записной книжке](../media/tutorials/databricks-notebook-details.png "Создание записной книжки в Databricks")
 
     Нажмите кнопку **создания**.
 

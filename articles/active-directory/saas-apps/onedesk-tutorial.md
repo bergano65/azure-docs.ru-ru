@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 11/18/2019
 ms.author: jeedes
-ms.openlocfilehash: 4c3eb3706858bd2bfd2160e58698c0f5136c41f3
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 3e8ed59783a6a714434b17a1d1abbb22fbe30939
+ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88547918"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91944060"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-onedesk"></a>Руководство по интеграции единого входа Azure Active Directory с OneDesk
 
@@ -141,7 +141,7 @@ ms.locfileid: "88547918"
 
 1. Щелкните вкладку **Интеграции**.
 
-    ![Вкладка "Параметры"](./media/onedesk-tutorial/img-integration.png)
+    ![Снимок экрана: выбранная вкладка "Интеграции".](./media/onedesk-tutorial/img-integration.png)
 
 1. Щелкните **Единый вход**, выберите **Отправить файл метаданных** и **Выбрать файл**, чтобы отправить файл метаданных, скачанный с портала Azure.
 

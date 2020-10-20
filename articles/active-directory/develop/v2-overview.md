@@ -13,12 +13,12 @@ ms.date: 07/09/2020
 ms.author: ryanwi
 ms.reviewer: agirling, saeeda, benv
 ms.custom: identityplatformtop40
-ms.openlocfilehash: 831af87159b909ca744839d2997aa2b70cbc72e3
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: e63d2cac97a16674c4e2e880f94373b0af1510de
+ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91627131"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92056418"
 ---
 # <a name="what-is-the-microsoft-identity-platform"></a>Что такое платформа удостоверений Майкрософт?
 
@@ -74,8 +74,7 @@ ms.locfileid: "91627131"
 
 [Azure AD B2B.](../external-identities/what-is-b2b.md) Приглашайте внешних пользователей в свой клиент Azure AD в качестве "гостевых" пользователей и назначайте им разрешения для авторизации, предоставив им возможность использовать для проверки подлинности существующие учетные данные.
 
-> [!TIP]
-> Ищете документацию по *платформе для разработчиков Azure Active Directory (версия 1.0)* ? См. [общие сведения об Azure Active Directory (версия 1.0) для разработчиков](../azuread-dev/v1-overview.md).
+[Azure Active Directory для разработчиков (версия 1.0)](../azuread-dev/v1-overview.md). Этот вариант предоставлен для разработчиков, у которых уже существующие приложения используют старую конечную точку версии 1.0. **Не используйте** версию 1.0 для новых проектов.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

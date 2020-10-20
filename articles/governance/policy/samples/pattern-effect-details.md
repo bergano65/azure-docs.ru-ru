@@ -1,14 +1,14 @@
 ---
 title: Шаблон. Действия определения политики
 description: Этот шаблон Политики Azure предоставляет пример использования разных действий с помощью определения политики.
-ms.date: 06/29/2020
+ms.date: 10/14/2020
 ms.topic: sample
-ms.openlocfilehash: 9c7e7689aa837a2dba0992112df3cd36ac9affe6
-ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
+ms.openlocfilehash: f1da9bd153707db35c07ed3c176542797a694d7a
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2020
-ms.locfileid: "85565728"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92073042"
 ---
 # <a name="azure-policy-pattern-effects"></a>Шаблон Политики Azure: действия
 
@@ -24,7 +24,7 @@ ms.locfileid: "85565728"
 
 :::code language="json" source="~/policy-templates/patterns/pattern-effect-details-1.json" range="40-50":::
 
-Действие **modify** требует блока **policyRule.then.details**, который определяет **roleDefinitionIds** и **операции**. Эти параметры информируют Политику Azure о том, какие роли необходимы для добавления тега и исправления ресурса, а также какую операцию **изменения** следует выполнить. В данном примере **операцией** является _добавление_, а параметры используются для установки тега и его значения.
+Действие **modify** требует блока **policyRule.then.details**, который определяет **roleDefinitionIds** и **операции**. Эти параметры информируют Политику Azure о том, какие роли необходимы для добавления тега и исправления ресурса, а также какую операцию **изменения** следует использовать. В нашем примере **операцией** является _добавление_, а ее параметры задают имя и значение тега.
 
 ## <a name="sample-2-complex-effect"></a>Пример 2 Сложное действие
 

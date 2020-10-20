@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 03/18/2019
 ms.author: jeedes
-ms.openlocfilehash: 595977635937ec5dcf4a45a1d57524c1d3f41a6e
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: b3be17c672eb918c715602c7576c7d682badd925
+ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88554385"
+ms.lasthandoff: 10/11/2020
+ms.locfileid: "91941035"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-nimblex"></a>Руководство. Интеграция Azure Active Directory с Nimblex
 
@@ -132,19 +132,19 @@ ms.locfileid: "88554385"
 
 2. В правом верхнем углу страницы щелкните значок **Settings** (Параметры).
 
-    ![Параметры Nimblex](./media/nimblex-tutorial/tutorial_nimblex_settings.png)
+    ![Снимок экрана: значок параметров.](./media/nimblex-tutorial/tutorial_nimblex_settings.png)
 
 3. На странице **Панель управления** в разделе **Безопасность** нажмите **Единый вход**.
 
-    ![Параметры Nimblex](./media/nimblex-tutorial/tutorial_nimblex_single.png)
+    ![Снимок экрана, на котором показан пункт "Single Signon" (Единый входа), выбранный в меню "Security" (Безопасность)](./media/nimblex-tutorial/tutorial_nimblex_single.png)
 
 4. На странице **Управление единым входом** выберите имя экземпляра и щелкните **Изменить**.
 
-    ![Nimblex saml](./media/nimblex-tutorial/tutorial_nimblex_saml.png)
+    ![Снимок экрана для страницы управления единым входом, где можно выбрать действие редактирования.](./media/nimblex-tutorial/tutorial_nimblex_saml.png)
 
 5. На странице **Изменение поставщика SAML** выполните следующие действия:
 
-    ![Nimblex saml](./media/nimblex-tutorial/tutorial_nimblex_sso.png)
+    ![Снимок экрана для страницы редактирования поставщика единого входа, где можно ввести описанные здесь значения.](./media/nimblex-tutorial/tutorial_nimblex_sso.png)
 
     а. В текстовом поле **Описание** введите имя экземпляра.
 

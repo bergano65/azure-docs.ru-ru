@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 1/4/2019
 ms.author: jeedes
-ms.openlocfilehash: 0ff2464705a770e257010347f0f04e9b695bb6e4
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: b462dff45263ba3f5e533cd6bd7c4ce089933f66
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88540139"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91855504"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-lifesize-cloud"></a>Учебник. Интеграция Azure Active Directory с Lifesize Cloud
 
@@ -137,15 +137,15 @@ ms.locfileid: "88540139"
 
 2. В правом верхнем углу страницы щелкните свое имя и выберите **Advance Settings** (Дополнительные параметры).
 
-    ![Настройка единого входа](./media/lifesize-cloud-tutorial/tutorial_lifesizecloud_06.png)
+    ![Снимок экрана демонстрирует пункт дополнительных параметров в меню.](./media/lifesize-cloud-tutorial/tutorial_lifesizecloud_06.png)
 
 3. В меню Advance Settings (Дополнительные параметры) щелкните ссылку **SSO Configuration** (Конфигурация единого входа). Откроется страница "SSO Configuration" (Конфигурация единого входа) для вашего экземпляра.
 
-    ![Настройка единого входа](./media/lifesize-cloud-tutorial/tutorial_lifesizecloud_07.png)
+    ![Снимок экрана демонстрирует раздел дополнительных параметров, где можно выбрать конфигурацию единого входа.](./media/lifesize-cloud-tutorial/tutorial_lifesizecloud_07.png)
 
 4. Теперь настройте следующие значения в пользовательском интерфейсе единого входа.
 
-    ![Настройка единого входа](./media/lifesize-cloud-tutorial/tutorial_lifesizecloud_08.png)
+    ![Снимок экрана демонстрирует страницу конфигурации единого входа, где вы можете ввести описанные здесь значения.](./media/lifesize-cloud-tutorial/tutorial_lifesizecloud_08.png)
 
     а. В текстовое поле **Издатель поставщика удостоверений** вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
 

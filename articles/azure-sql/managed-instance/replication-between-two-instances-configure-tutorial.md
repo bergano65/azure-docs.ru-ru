@@ -12,12 +12,12 @@ author: MashaMSFT
 ms.author: ferno
 ms.reviewer: mathoma
 ms.date: 04/28/2020
-ms.openlocfilehash: b0f2a6fcd888afd7eb99a810fad6e876fe6ff4ac
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8049df552c9754a1674c9e38e6d9b9b2cea3bd85
+ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91617066"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92058222"
 ---
 # <a name="tutorial-configure-replication-between-two-managed-instances"></a>Руководство по Настройка репликации между двумя управляемыми экземплярами
 
@@ -48,7 +48,7 @@ ms.locfileid: "91617066"
 
 Для настройки Управляемого экземпляра в качестве издателя и (или) распространителя должны выполняться следующие требования:
 
-- Управляемый экземпляр издателя должен находиться в той же виртуальной сети, что и распространитель и подписчик, или между [виртуальными сетями](../../virtual-network/tutorial-connect-virtual-networks-powershell.md) всех трех сущностей должен существовать пиринг виртуальных сетей. 
+- Управляемый экземпляр издателя должен находиться в той же виртуальной сети, что и распространитель и подписчик, или между [шлюзами виртуальных сетей](../../vpn-gateway/vpn-gateway-howto-vnet-vnet-resource-manager-portal.md) всех трех сущностей должен быть настроен пиринг. 
 - При подключении используется аутентификация SQL между участниками репликации.
 - Общий ресурс учетной записи хранения Azure для рабочей папки репликации.
 - Открытый порт 445 (исходящее TCP-подключение) в правилах безопасности, настроенных для группы безопасности сети, чтобы управляемые экземпляры могли получить доступ к общей папке Azure.  Если возникает ошибка `failed to connect to azure storage \<storage account name> with os error 53`, значит нужно добавить правило исходящего трафика в NSG подсети соответствующего Управляемого экземпляра SQL.

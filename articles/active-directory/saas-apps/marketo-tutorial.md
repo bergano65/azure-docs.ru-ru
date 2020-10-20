@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/19/2019
 ms.author: jeedes
-ms.openlocfilehash: c1b8874d8813d6200c915778841c26e77b02e434
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 764f01fa5966a6620612405b4df37fc5ff44f33a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88554921"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91857951"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-marketo"></a>Руководство. Интеграция Azure Active Directory с Marketo
 
@@ -130,15 +130,15 @@ ms.locfileid: "88554921"
    
     b. Нажмите кнопку **Администратор** в области навигации вверху.
    
-    ![Настройка единого входа](./media/marketo-tutorial/tutorial_marketo_06.png) 
+    ![Снимок экрана: выделенная кнопка Admin (Администратор) в области навигации.](./media/marketo-tutorial/tutorial_marketo_06.png) 
    
     c. Перейдите в меню "Интеграция" и щелкните **ссылку Munchkin**.
    
-    ![Настройка единого входа](./media/marketo-tutorial/tutorial_marketo_11.png)
+    ![Снимок экрана: пункт Munchkin в меню Integration (Интеграция).](./media/marketo-tutorial/tutorial_marketo_11.png)
    
     d. Скопируйте идентификатор Munchkin, показанный на экране, и введите URL-адрес ответа в мастере настройки Azure AD.
    
-    ![Настройка единого входа](./media/marketo-tutorial/tutorial_marketo_12.png) 
+    ![Снимок экрана: страница Munchkin, на которой можно скопировать идентификатор учетной записи.](./media/marketo-tutorial/tutorial_marketo_12.png) 
 
 2. Для настройки единого входа в приложение выполните следующие действия:
    
@@ -146,15 +146,15 @@ ms.locfileid: "88554921"
    
     b. Нажмите кнопку **Администратор** в области навигации вверху.
    
-    ![Настройка единого входа](./media/marketo-tutorial/tutorial_marketo_06.png) 
+    ![Снимок экрана: выделенная кнопка Admin (Администратор) в области навигации.](./media/marketo-tutorial/tutorial_marketo_06.png) 
    
     c. Перейдите в меню "Интеграция" и щелкните **Единый вход**.
    
-    ![Настройка единого входа](./media/marketo-tutorial/tutorial_marketo_07.png) 
+    ![Снимок экрана: пункт Single Sign-On (Единый вход) в меню Integration (Интеграция).](./media/marketo-tutorial/tutorial_marketo_07.png) 
    
     d. Чтобы включить параметры SAML, нажмите кнопку **Изменить**.
    
-    ![Настройка единого входа](./media/marketo-tutorial/tutorial_marketo_08.png) 
+    ![Снимок экрана: раздел SSO Settings (Параметры единого входа), где можно нажать кнопку Edit (Изменить).](./media/marketo-tutorial/tutorial_marketo_08.png) 
    
     д) **Включите** параметры единого входа.
    
@@ -164,7 +164,7 @@ ms.locfileid: "88554921"
    
     h. Укажите значение **В элементе идентификатора имени** для параметра "Расположение идентификатора пользователя".
    
-    ![Настройка единого входа](./media/marketo-tutorial/tutorial_marketo_09.png)
+    ![Снимок экрана: страница изменения параметров SAML для ввода описанных значений.](./media/marketo-tutorial/tutorial_marketo_09.png)
    
     > [!NOTE]
     > Если идентификатор пользователя имеет значение, отличное от имени участника-пользователя, измените это значение на вкладке Attribute (Атрибут).
@@ -179,7 +179,7 @@ ms.locfileid: "88554921"
    
     m. В поле **URL-адрес ошибки** вставьте **URL-адрес экземпляра Marketo** и нажмите кнопку **Сохранить**, чтобы сохранить параметры.
    
-    ![Настройка единого входа](./media/marketo-tutorial/tutorial_marketo_10.png)
+    ![Снимок экрана: диалоговое окно Edit Redirect Pages (Изменение параметров перенаправления страниц), где можно ввести описанные значения.](./media/marketo-tutorial/tutorial_marketo_10.png)
 
 3. Чтобы включить единый вход для пользователей, выполните следующие действия.
    
@@ -187,15 +187,15 @@ ms.locfileid: "88554921"
    
     b. Нажмите кнопку **Администратор** в области навигации вверху.
    
-    ![Настройка единого входа](./media/marketo-tutorial/tutorial_marketo_06.png) 
+    ![Снимок экрана: выделенная кнопка Admin (Администратор) в области навигации.](./media/marketo-tutorial/tutorial_marketo_06.png) 
    
     c. В меню **Безопасность** щелкните **Параметры входа**.
    
-    ![Настройка единого входа](./media/marketo-tutorial/tutorial_marketo_13.png)
+    ![Снимок экрана: пункт Login Settings (Параметры входа) в меню Security (Безопасность).](./media/marketo-tutorial/tutorial_marketo_13.png)
    
     d. Установите флажок **Требовать единый вход** и **сохраните** параметры.
    
-    ![Настройка единого входа](./media/marketo-tutorial/tutorial_marketo_14.png)
+    ![Снимок экрана: экран Password Strength Settings (Параметры надежности пароля), на котором можно установить флажок Require SSO (Требовать единый вход).](./media/marketo-tutorial/tutorial_marketo_14.png)
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -256,21 +256,21 @@ ms.locfileid: "88554921"
 
 2. Нажмите кнопку **Администратор** в области навигации вверху.
    
-    ![Настройка единого входа](./media/marketo-tutorial/tutorial_marketo_06.png) 
+    ![Снимок экрана: выделенная кнопка Admin (Администратор) в области навигации.](./media/marketo-tutorial/tutorial_marketo_06.png) 
 
 3. Откройте меню **Безопасность** и выберите **Пользователи и роли**.
    
-    ![Настройка единого входа](./media/marketo-tutorial/tutorial_marketo_19.png)  
+    ![Снимок экрана: пункт Users & Roles (Пользователи и роли) в меню Security (Безопасность).](./media/marketo-tutorial/tutorial_marketo_19.png)  
 
 4. На вкладке "Пользователи" щелкните **Пригласить нового пользователя**.
    
-    ![Настройка единого входа](./media/marketo-tutorial/tutorial_marketo_15.png) 
+    ![Снимок экрана: пункт Invite New User (Пригласить нового пользователя) на вкладке Users (Пользователи).](./media/marketo-tutorial/tutorial_marketo_15.png) 
 
 5. Введите следующую информацию в мастере приглашения нового пользователя.
    
     а. Введите адрес **электронной почты** пользователя в соответствующее текстовое поле.
    
-    ![Настройка единого входа](./media/marketo-tutorial/tutorial_marketo_16.png)
+    ![Снимок экрана: первый шаг мастера Invite New User (Приглашение нового пользователя), где вводятся сведения о пользователе.](./media/marketo-tutorial/tutorial_marketo_16.png)
    
     b. Введите **имя** .
    
@@ -280,10 +280,10 @@ ms.locfileid: "88554921"
 
 6. На вкладке **Разрешения** выберите **роли пользователя** и нажмите кнопку **Далее**.
    
-    ![Настройка единого входа](./media/marketo-tutorial/tutorial_marketo_17.png)
+    ![Снимок экрана: первый шаг мастера Invite New User (Приглашение нового пользователя), где указываются разрешения.](./media/marketo-tutorial/tutorial_marketo_17.png)
 7. Нажмите кнопку **Отправить**, чтобы отправить приглашение пользователю.
    
-    ![Настройка единого входа](./media/marketo-tutorial/tutorial_marketo_18.png)
+    ![Снимок экрана: первый шаг мастера Invite New User (Приглашение нового пользователя), где вводится сообщение.](./media/marketo-tutorial/tutorial_marketo_18.png)
 
 8. Пользователь получит уведомление по электронной почте. Ему нужно будет перейти по ссылке, чтобы изменить пароль и активировать учетную запись. 
 

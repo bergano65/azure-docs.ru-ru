@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 01/28/2019
 ms.author: sharrai
 ms.custom: MVC
-ms.openlocfilehash: f33d5ff37cbc9923262963b3e59b9266ea6760a6
-ms.sourcegitcommit: 3c66bfd9c36cd204c299ed43b67de0ec08a7b968
+ms.openlocfilehash: 33d1be493cba9fd9f01ecdbad10afb5330256aa0
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "90006420"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92045352"
 ---
 # <a name="move-vms-to-another-azure-region"></a>Перемещение виртуальных машин в другой регион Azure
 
@@ -100,8 +100,8 @@ ms.locfileid: "90006420"
 1. В поле **Имя** укажите понятное имя **ContosoVMVault**. Если у вас есть несколько подписок, выберите нужную.
 1. Создайте группу ресурсов **ContosoRG**.
 1. Укажите регион Azure. Сведения о поддерживаемых регионах см. в разделе "Географическая доступность" на странице [цен на службу Azure Site Recovery](https://azure.microsoft.com/pricing/details/site-recovery/).
-1. В области **Хранилища Служб восстановления** выберите **Обзор** > **ConsotoVMVault** > **Реплицированные элементы** >  **+Реплицировать**.
-1. В поле **Источник** выберите **Azure**.
+1. В области **хранилища Служб восстановления** выберите **ContosoVMVault** > **Реплицированные элементы** >  **+Реплицировать**.
+1. В раскрывающемся списке выберите **Виртуальные машины Azure**.
 1. В поле **Исходное расположение** выберите исходный регион Azure, в котором сейчас запущены виртуальные машины.
 1. Выберите модель развертывания Resource Manager. Затем выберите настройку **Исходная подписка** и **Исходная группа ресурсов**.
 1. Нажмите кнопку **ОК**, чтобы сохранить настройки.

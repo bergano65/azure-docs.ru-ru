@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
-ms.openlocfilehash: b8bf8ef1affc42027ef0bec149f8e7c9eb9b2b90
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 5b1034454bbdee32b33222321ded2421b83bfd0d
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88546959"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91850784"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-kantega-sso-for-bamboo"></a>Руководство по интеграции Azure Active Directory с Kantega SSO for Bamboo
 
@@ -99,7 +99,7 @@ ms.locfileid: "88546959"
 
 4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа для приложения Kantega SSO for Bamboo](common/idp-intiated.png)
+    ![Снимок экрана, на котором показан раздел "Базовая конфигурация SAML", где можно ввести идентификатор, URL-адрес ответа и нажать кнопку "Сохранить"](common/idp-intiated.png)
 
     а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<server-base-url>/plugins/servlet/no.kantega.saml/sp/<uniqueid>/login`.
 
@@ -107,7 +107,7 @@ ms.locfileid: "88546959"
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа для приложения Kantega SSO for Bamboo](common/metadata-upload-additional-signon.png)
+    ![Снимок экрана, на котором показан параметр "Задать дополнительные URL-адреса" и поле для ввода URL-адреса входа](common/metadata-upload-additional-signon.png)
 
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://<server-base-url>/plugins/servlet/no.kantega.saml/sp/<uniqueid>/login`.
 
@@ -134,39 +134,39 @@ ms.locfileid: "88546959"
 
 1. Наведите указатель мыши на шестеренку и щелкните **Add-ons** (Надстройки).
 
-    ![Настройка единого входа](./media/kantegassoforbamboo-tutorial/addon1.png)
+    ![Снимок экрана: меню "Параметры" с выбранным пунктом "Надстройки".](./media/kantegassoforbamboo-tutorial/addon1.png)
 
 1. На вкладке "Add-ons" (Надстройки) щелкните **Find new add-ons** (Найти новые надстройки). Найдите подключаемый модуль **Kantega SSO for Bamboo (SAML & Kerberos)** и нажмите кнопку **Install** (Установить), чтобы установить новый подключаемый модуль SAML.
 
-    ![Настройка единого входа](./media/kantegassoforbamboo-tutorial/addon2.png)
+    ![Снимок экрана: администрирование Bamboo с выбранным параметром Kantega SSO for Bamboo.](./media/kantegassoforbamboo-tutorial/addon2.png)
 
 1. Начнется установка подключаемого модуля.
 
-    ![Настройка единого входа](./media/kantegassoforbamboo-tutorial/addon21.png)
+    ![Снимок экрана: ход выполнения установки для Kantega SSO for Bamboo.](./media/kantegassoforbamboo-tutorial/addon21.png)
 
 1. Установка завершится. Щелкните **Закрыть**.
 
-    ![Настройка единого входа](./media/kantegassoforbamboo-tutorial/addon33.png)
+    ![Снимок экрана: кнопка Close (Закрыть).](./media/kantegassoforbamboo-tutorial/addon33.png)
 
 1. Нажмите кнопку **Управление**.
 
-    ![Настройка единого входа](./media/kantegassoforbamboo-tutorial/addon34.png)
+    ![Снимок экрана: кнопка Manage (Управление).](./media/kantegassoforbamboo-tutorial/addon34.png)
 
 1. Щелкните **Configure** (Настройка), чтобы настроить новый подключаемый модуль.
 
-    ![Настройка единого входа](./media/kantegassoforbamboo-tutorial/addon3.png)
+    ![Снимок экрана: установленные пользователем надстройки с выбранной кнопкой Configure (Настройка).](./media/kantegassoforbamboo-tutorial/addon3.png)
 
 1. В разделе **SAML** сделайте следующее. Выберите **Azure Active Directory (Azure AD)** из раскрывающегося списка **Добавление поставщика удостоверений**.
 
-    ![Настройка единого входа](./media/kantegassoforbamboo-tutorial/addon4.png)
+    ![Снимок экрана: раздел Kantega Single Sign-On (Единый вход в Kantega) с вариантом Azure AD, выбранным в качестве поставщика удостоверений.](./media/kantegassoforbamboo-tutorial/addon4.png)
 
 1. Выберите уровень подписки **Базовый**.
 
-    ![Настройка единого входа](./media/kantegassoforbamboo-tutorial/addon5.png)
+    ![Снимок экрана: раздел Preparing Azure AD (Подготовка Azure AD) с выбранным вариантом Basic (Базовый).](./media/kantegassoforbamboo-tutorial/addon5.png)
 
 1. В разделе **Свойства приложения** выполните следующие действия.
 
-    ![Настройка единого входа](./media/kantegassoforbamboo-tutorial/addon6.png)
+    ![Снимок экрана: раздел App properties (Свойства приложения), где можно добавить сведения на этом шаге.](./media/kantegassoforbamboo-tutorial/addon6.png)
 
     а. Скопируйте значение **App ID URI** (URI кода приложения) и используйте его как **идентификатор, URL-адрес ответа и URL-адрес входа** в разделе **Базовая конфигурация SAML** на портале Azure.
 
@@ -174,7 +174,7 @@ ms.locfileid: "88546959"
 
 1. В разделе **Metadata import** (Импорт метаданных) выполните следующие действия.
 
-    ![Настройка единого входа](./media/kantegassoforbamboo-tutorial/addon7.png)
+    ![Снимок экрана: раздел Metadata import (Импорт метаданных), где можно перейти к файлу метаданных.](./media/kantegassoforbamboo-tutorial/addon7.png)
 
     а. Щелкните **Metadata file on my computer** (Файл метаданных на моем компьютере) и передайте файл метаданных, который вы скачали с портала Azure.
 
@@ -182,7 +182,7 @@ ms.locfileid: "88546959"
 
 1. В разделе **Name and SSO location** (Имя и расположение единого входа) выполните следующее.
 
-    ![Настройка единого входа](./media/kantegassoforbamboo-tutorial/addon8.png)
+    ![Снимок экрана: раздел Name and SSO location (Имя и расположение единого входа), где Azure AD — имя поставщика удостоверений.](./media/kantegassoforbamboo-tutorial/addon8.png)
 
     а. В текстовом поле **Provider Name** (Имя поставщика) введите имя поставщика (например, Azure AD).
 
@@ -190,11 +190,11 @@ ms.locfileid: "88546959"
 
 1. Проверьте сертификат для подписи и нажмите кнопку **Next** (Далее).
 
-    ![Настройка единого входа](./media/kantegassoforbamboo-tutorial/addon9.png)
+    ![Снимок экрана: раздел Signature Verification (Проверка подписи).](./media/kantegassoforbamboo-tutorial/addon9.png)
 
 1. В разделе **Bamboo user accounts** (Учетные записи пользователей Bamboo) выполните следующие действия.
 
-    ![Настройка единого входа](./media/kantegassoforbamboo-tutorial/addon10.png)
+    ![Снимок экрана: раздел Bamboo user accounts (Учетные записи пользователей Bamboo) с возможностью создания пользователей.](./media/kantegassoforbamboo-tutorial/addon10.png)
 
     а. Щелкните переключатель **Create users in Bamboo's internal Directory if needed** (При необходимости создать пользователей во внутреннем каталоге Bamboo) и введите соответствующее имя группы пользователей (это может быть несколько групп, разделенных запятой).
 
@@ -202,11 +202,11 @@ ms.locfileid: "88546959"
 
 1. Нажмите кнопку **Готово**.
 
-    ![Настройка единого входа](./media/kantegassoforbamboo-tutorial/addon11.png)
+    ![Снимок экрана: страница Summary (Сводка).](./media/kantegassoforbamboo-tutorial/addon11.png)
 
 1. В разделе **Known domains for Azure AD** (Известные домены для Azure AD) выполните следующие действия.
 
-    ![Настройка единого входа](./media/kantegassoforbamboo-tutorial/addon12.png)
+    ![Снимок экрана: раздел Known domains for Azure AD (Известные домены для Azure AD), где можно выполнить эти шаги.](./media/kantegassoforbamboo-tutorial/addon12.png)
 
     а. Щелкните **Known domains** (Известные домены) на левой панели страницы.
 
@@ -275,11 +275,11 @@ ms.locfileid: "88546959"
 
 1. Наведите указатель мыши на шестеренку и щелкните **User management** (Управление пользователями).
 
-    ![Добавление сотрудника](./media/kantegassoforbamboo-tutorial/user1.png)
+    ![Снимок экрана: меню "Параметры" с выбранным пунктом User management (Управление пользователями).](./media/kantegassoforbamboo-tutorial/user1.png)
 
 1. Выберите раздел **Пользователи**. В разделе **Add user** (Добавление пользователя) выполните следующие действия.
 
-    ![Добавление сотрудника](./media/kantegassoforbamboo-tutorial/user2.png)
+    ![Снимок экрана: панель Add user (Добавление пользователя), где выполняются эти действия.](./media/kantegassoforbamboo-tutorial/user2.png)
 
     а. В текстовом поле **Username** (Имя пользователя) введите электронный адрес пользователя, например Brittasimon@contoso.com.
 

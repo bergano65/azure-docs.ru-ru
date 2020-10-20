@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 03/01/2019
 ms.author: jeedes
-ms.openlocfilehash: 6036ff86c430422556ed4f7e1bc80fe122ed0a30
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 9eee16c1ba207eb35633d7ec1a7167300d40d662
+ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88552572"
+ms.lasthandoff: 10/11/2020
+ms.locfileid: "91941047"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-n2f---expense-reports"></a>Руководство по интеграции Azure Active Directory с приложением N2F - Expense reports
 
@@ -99,11 +99,11 @@ ms.locfileid: "88552572"
 
 4. Если нужно настроить приложение в режиме, инициированном **поставщиком удостоверений**, в разделе **Базовые настройки SAML** пользователю для этого не нужно ничего делать, так как это приложение уже предварительно интегрировано в Azure.
 
-    ![Сведения о домене и URL-адресах единого входа для приложения N2F - Expense reports](common/preintegrated.png)
+    ![Снимок экрана: страница "Вход на основе SAML" с разделом "Базовая конфигурация SAML"](common/preintegrated.png)
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа для приложения N2F - Expense reports](common/metadata-upload-additional-signon.png)
+    ![Снимок экрана: страница "Интеграции" с возможностью добавления единого входа Azure AD](common/metadata-upload-additional-signon.png)
 
     В текстовом поле **URL-адрес входа** введите URL-адрес: `https://www.n2f.com/app/`.
 
@@ -127,23 +127,23 @@ ms.locfileid: "88552572"
 
 2. Щелкните **Settings** (Параметры), а затем выберите **Advance Settings** (Дополнительные параметры) из раскрывающегося списка.
 
-    ![Конфигурация N2F - Expense reports](./media/n2f-expensereports-tutorial/configure1.png)
+    ![Снимок экрана: пункт Advance Settings (Дополнительные параметры)](./media/n2f-expensereports-tutorial/configure1.png)
 
 3. Выберите вкладку **Account settings** (Параметры учетной записи).
 
-    ![Конфигурация N2F - Expense reports](./media/n2f-expensereports-tutorial/configure2.png)
+    ![Снимок экрана: пункт Account settings (Параметры учетной записи)](./media/n2f-expensereports-tutorial/configure2.png)
 
 4. Выберите **Authentication** (Проверки подлинности), а затем выберите вкладку **+ Add an authentication method** (Добавить метод проверки подлинности).
 
-    ![Конфигурация N2F - Expense reports](./media/n2f-expensereports-tutorial/configure3.png)
+    ![Снимок экрана: раздел Account settings (Параметры учетной записи) с возможностью добавления метода проверки подлинности](./media/n2f-expensereports-tutorial/configure3.png)
 
 5. Выберите **SAML Microsoft Office 365** как метод проверки подлинности.
 
-    ![Конфигурация N2F - Expense reports](./media/n2f-expensereports-tutorial/configure4.png)
+    ![Снимок экрана: поле Authentication method (Метод проверки подлинности) с выбранным пунктом SAML Microsoft Office 365.](./media/n2f-expensereports-tutorial/configure4.png)
 
 6. В разделе **Authentication method** (Метод проверки подлинности) выполните следующие действия.
 
-    ![Конфигурация N2F - Expense reports](./media/n2f-expensereports-tutorial/configure5.png)
+    ![Снимок экрана: поле Authentication method (Метод проверки подлинности) с возможностью ввода описанных значений](./media/n2f-expensereports-tutorial/configure5.png)
 
     а. В текстовое поле **Entity ID** (Идентификатор сущности) вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
 
@@ -212,19 +212,19 @@ ms.locfileid: "88552572"
 
 2. Щелкните **Settings** (Параметры), а затем выберите **Advance Settings** (Дополнительные параметры) из раскрывающегося списка.
 
-    ![Добавление пользователя в N2F — Expense](./media/n2f-expensereports-tutorial/configure1.png)
+    ![Снимок экрана: пункт Advance Settings (Дополнительные параметры)](./media/n2f-expensereports-tutorial/configure1.png)
 
 3. Выберите вкладку **Users** (Пользователи) на панели навигации слева.
 
-    ![Конфигурация N2F - Expense reports](./media/n2f-expensereports-tutorial/user1.png)
+    ![Снимок экрана: вкладка Users (Пользователи)](./media/n2f-expensereports-tutorial/user1.png)
 
 4. Щелкните **+ New user** (+ Новый пользователь).
 
-    ![Конфигурация N2F - Expense reports](./media/n2f-expensereports-tutorial/user2.png)
+    ![Снимок экрана: пункт +New user (+Новый пользователь)](./media/n2f-expensereports-tutorial/user2.png)
 
 5. В разделе **User** (Пользователь) выполните следующие действия.
 
-    ![Конфигурация N2F - Expense reports](./media/n2f-expensereports-tutorial/user3.png)
+    ![Снимок экрана: раздел для ввода описанных значений](./media/n2f-expensereports-tutorial/user3.png)
 
     а. В текстовом поле **Email address** (Адрес электронной почты) введите адрес электронной почты пользователя, например **brittasimon\@contoso.com**.
 

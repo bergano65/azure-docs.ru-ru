@@ -7,12 +7,12 @@ ms.reviewer: logicappspm
 ms.topic: tutorial
 ms.custom: mvc
 ms.date: 09/30/2020
-ms.openlocfilehash: 3bf4ad12bab3e71675ff35203bf69526b3b8614f
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.openlocfilehash: aad271875abb9024a1ecc7f45018c04d8c79ce95
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91574737"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91842569"
 ---
 # <a name="tutorial-create-schedule-based-and-recurring-automation-workflows-with-azure-logic-apps"></a>Руководство по Создание выполняемых по расписанию повторяющихся рабочих процессов автоматизации с помощью Azure Logic Apps
 
@@ -360,18 +360,18 @@ ms.locfileid: "91574737"
 
 1. В поле поиска портала Azure введите имя созданной группы ресурсов. В результатах в разделе **Группы ресурсов** выберите группу ресурсов.
 
-   В этом примере показано создание группы ресурсов с именем `LA-TravelTime-RG`. 
+   В этом примере показано создание группы ресурсов с именем `LA-TravelTime-RG`.
 
    ![Снимок экрана, на котором показано поле поиска Azure, содержащее текст "la-travel-time-rg" и выбрано значение **LA-TravelTime-RG**.](./media/tutorial-build-scheduled-recurring-logic-app-workflow/find-resource-group.png)
 
    > [!TIP]
    > Если на домашней странице Azure группа ресурсов отображается в разделе **Последние ресурсы**, ее можно выбрать там.
 
-1. В меню группы ресурсов выберите пункт **Обзор**. На панели инструментов **области Обзор** выберите **Удалить группу ресурсов**. 
+1. В меню группы ресурсов выберите пункт **Обзор**. На панели инструментов **области Обзор** выберите **Удалить группу ресурсов**.
 
    ![Снимок экрана, на котором показана область "Обзор" группы ресурсов, а на панели инструментов этой области выбран параметр "Удалить группу ресурсов".](./media/tutorial-build-scheduled-recurring-logic-app-workflow/delete-resource-group.png)
 
-1. На панели подтверждения введите имя группы ресурсов и нажмите **Удалить**.
+1. В отобразившейся области подтверждения введите имя группы ресурсов и выберите **Удалить**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

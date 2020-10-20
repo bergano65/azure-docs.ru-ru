@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 07/16/2019
 ms.author: jeedes
-ms.openlocfilehash: 07ac0ac4d7b86b644ca5d1876b1332fee7358cac
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 826ce780fd9196d67adba5bb148a795d3fe4f0f2
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88552610"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91850360"
 ---
 # <a name="tutorial-integrate-jfrog-artifactory-with-azure-active-directory"></a>Руководство по Интеграция JFrog Artifactory с Azure Active Directory
 
@@ -92,15 +92,15 @@ ms.locfileid: "88552610"
 
 1. Приложение JFrog Artifactory предусматривает использование проверочных утверждений SAML в определенном формате, что предполагает добавление настраиваемых сопоставлений атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Нажмите кнопку **Изменить**, чтобы открыть диалоговое окно "Атрибуты пользователя".
 
-    ![Изображение](common/edit-attribute.png)
+    ![Снимок экрана: раздел "Атрибуты пользователя" с выделенным значком "Изменить".](common/edit-attribute.png)
 
 1. В дополнение к описанному выше приложение JFrog Artifactory ожидает несколько дополнительных атрибутов в ответе SAML. В разделе**Утверждения и атрибуты пользователя** в диалоговом окне **Утверждения групп (предварительная версия)** выполните следующие действия:
 
     а. Щелкните **значок ручки** рядом с параметром **Группы, возвращенные в утверждении**.
 
-    ![Изображение](./media/jfrog-artifactory-tutorial/config04.png)
+    ![Снимок экрана, на котором показан раздел "Атрибуты и утверждения пользователя" с выбранным значком "Изменить"](./media/jfrog-artifactory-tutorial/config04.png)
 
-    ![Изображение](./media/jfrog-artifactory-tutorial/config05.png)
+    ![Снимок экрана: раздел "Утверждения группы" с выделенным переключателем "Все группы".](./media/jfrog-artifactory-tutorial/config05.png)
 
     b. Установите переключатель **Все группы** в списке.
 

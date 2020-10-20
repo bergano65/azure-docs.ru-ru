@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 03/19/2020
 ms.author: brendm
 ms.custom: devx-track-java
-ms.openlocfilehash: 5892fd732a1e66b2b7dd4c1031cabfcbcc768c6d
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 2fc20737ab371135a62d510d9d083e084b592fae
+ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91326156"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91945776"
 ---
 # <a name="map-an-existing-custom-domain-to-azure-spring-cloud"></a>Сопоставление существующего личного домена с Azure Spring Cloud
 
@@ -28,9 +28,53 @@ ms.locfileid: "91326156"
 * Закрытый сертификат (т. е. ваш самозаверяющий сертификат) стороннего поставщика. Этот сертификат должен соответствовать домену.
 * Развернутый экземпляр [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-overview).
 
-## <a name="import-certificate"></a>Импорт сертификата 
-Для импорта сертификата требуется, чтобы на диске существовал файл в кодировке PEM или PFX, и у вас был доступ к закрытому ключу. 
+## <a name="import-certificate"></a>Импорт сертификата
+### <a name="prepare-your-certificate-file-in-pfx-optional"></a>Подготовка файла сертификата в формате PFX (необязательно)
+Azure Key Vault поддерживает импорт частного сертификата в формате PEM и PFX. Если PEM-файл, полученный от поставщика сертификатов, не работает, выполните действия в разделе ниже: [Сохранение сертификата в Key Vault](#save-certificate-in-key-vault), выполните следующие действия, чтобы создать PFX-файл для Azure Key Vault.
 
+#### <a name="merge-intermediate-certificates"></a>Объединение промежуточных сертификатов
+
+Если цепочка сертификатов из центра сертификации содержит несколько сертификатов, их необходимо объединить по порядку.
+
+Чтобы сделать это, откройте каждый полученный сертификат в текстовом редакторе.
+
+Создайте файл для объединенных сертификатов и присвойте ему имя _mergedcertificate.crt_. В текстовом редакторе скопируйте содержимое каждого сертификата в этот файл. Порядок сертификатов должен соответствовать порядку в цепочке сертификатов, начиная вашим сертификатом и заканчивая корневым сертификатом. Это должно выглядеть следующим образом:
+
+```
+-----BEGIN CERTIFICATE-----
+<your entire Base64 encoded SSL certificate>
+-----END CERTIFICATE-----
+
+-----BEGIN CERTIFICATE-----
+<The entire Base64 encoded intermediate certificate 1>
+-----END CERTIFICATE-----
+
+-----BEGIN CERTIFICATE-----
+<The entire Base64 encoded intermediate certificate 2>
+-----END CERTIFICATE-----
+
+-----BEGIN CERTIFICATE-----
+<The entire Base64 encoded root certificate>
+-----END CERTIFICATE-----
+```
+
+#### <a name="export-certificate-to-pfx"></a>Экспорт сертификата в PFX-файл
+
+Экспортируйте объединенный TLS/SSL-сертификат с закрытым ключом, с помощью которого был создан запрос сертификата.
+
+Если запрос сертификата был создан с помощью OpenSSL, то вы создали файл закрытого ключа. Чтобы экспортировать сертификат в PFX-файл, выполните следующую команду. Замените заполнители _&lt;private-key-file>_ и _&lt;merged-certificate-file>_ путями к закрытому ключу и объединенному файлу сертификатов.
+
+```bash
+openssl pkcs12 -export -out myserver.pfx -inkey <private-key-file> -in <merged-certificate-file>
+```
+
+При появлении запроса определите пароль для экспорта. Позже этот пароль потребуется при передаче TLS/SSL-сертификата в Azure Key Vault.
+
+Если вы создали запрос на сертификат с помощью IIS или _Certreq.exe_, установите сертификат на локальный компьютер, а затем [экспортируйте его в PFX](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754329(v=ws.11)).
+
+### <a name="save-certificate-in-key-vault"></a>Сохранение сертификата в Key Vault
+Для импорта сертификата требуется, чтобы на диске существовал файл в кодировке PEM или PFX, и у вас был доступ к закрытому ключу. 
+#### <a name="portal"></a>[Портал](#tab/Azure-portal)
 Чтобы передать сертификат в хранилище ключей, сделайте следующее:
 1. Перейдите к экземпляру хранилища ключей.
 1. В области навигации слева щелкните **Сертификаты**.
@@ -42,7 +86,17 @@ ms.locfileid: "91326156"
 
     ![Импорт сертификата 1](./media/custom-dns-tutorial/import-certificate-a.png)
 
+#### <a name="cli"></a>[CLI](#tab/Azure-CLI)
+
+```azurecli
+az keyvault certificate import --file <path to .pfx file> --name <certificate name> --vault-name <key vault name> --password <export password>
+```
+---
+
+### <a name="grant-azure-spring-cloud-access-to-your-key-vault"></a>Предоставление Azure Spring Cloud доступа к хранилищу ключей
+
 Чтобы предоставить Azure Spring Cloud доступ к хранилищу ключей перед импортом сертификата, сделайте следующее:
+#### <a name="portal"></a>[Портал](#tab/Azure-portal)
 1. Перейдите к экземпляру хранилища ключей.
 1. В области навигации слева щелкните **Политика доступа**.
 1. В меню сверху щелкните **Добавить политику доступа**.
@@ -54,50 +108,41 @@ ms.locfileid: "91326156"
 
 ![Импорт сертификата 2](./media/custom-dns-tutorial/import-certificate-b.png)
 
-Вы также можете использовать Azure CLI, чтобы предоставить Azure Spring Cloud права на доступ к хранилищу ключей.
+#### <a name="cli"></a>[CLI](#tab/Azure-CLI)
 
-Получите идентификатор объекта с помощью следующей команды.
+Предоставьте Azure Spring Cloud доступ на чтение к хранилищу ключей, заменив `<key vault resource group>` и `<key vault name>` в следующей команде.
 ```
-az ad sp show --id <service principal id> --query objectId
-```
-
-Предоставьте Azure Spring Cloud права на доступ на чтение к хранилищу ключей, заменив идентификатор объекта в следующей команде.
-```
-az keyvault set-policy -g <key vault resource group> -n <key vault name>  --object-id <object id> --certificate-permissions get list
+az keyvault set-policy -g <key vault resource group> -n <key vault name>  --object-id 938df8e2-2b9d-40b1-940c-c75c33494239 --certificate-permissions get list --secret-permissions get list
 ``` 
+---
 
-Чтобы импортировать сертификат в Azure Spring Cloud, сделайте следующее:
+### <a name="import-certificate-to-azure-spring-cloud"></a>Импорт сертификата в Azure Spring Cloud
+#### <a name="portal"></a>[Портал](#tab/Azure-portal)
 1. Перейдите к экземпляру службы. 
 1. На странице приложения в области навигации слева выберите **Параметры TLS/SSL**.
 1. Теперь щелкните **Импорт сертификата Key Vault**.
 
     ![Импорт сертификата](./media/custom-dns-tutorial/import-certificate.png)
 
-Вы также можете использовать Azure CLI для импорта сертификата.
+1. После успешного импорта сертификат появится в списке **Сертификаты закрытых ключей**.
+
+    ![Сертификат закрытого ключа](./media/custom-dns-tutorial/key-certificates.png)
+
+#### <a name="cli"></a>[CLI](#tab/Azure-CLI)
 
 ```
 az spring-cloud certificate add --name <cert name> --vault-uri <key vault uri> --vault-certificate-name <key vault cert name>
 ```
 
-> [!IMPORTANT] 
-> Перед выполнением указанной выше команды для импорта сертификата, убедитесь, что вы предоставили Azure Spring Cloud права на доступ к хранилищу ключей. Если права на доступ не предоставлены, вы можете выполнить следующую команду, чтобы сделать это.
-
-```
-az keyvault set-policy -g <key vault resource group> -n <key vault name>  --object-id 938df8e2-2b9d-40b1-940c-c75c33494239 --certificate-permissions get list
-``` 
-
-После успешного импорта сертификат появится в списке **Сертификаты закрытых ключей**.
-
-![Сертификат закрытого ключа](./media/custom-dns-tutorial/key-certificates.png)
-
-Вы также можете использовать Azure CLI для отображения списка сертификатов.
+Чтобы отобразить список импортированных сертификатов, выполните следующее.
 
 ```
 az spring-cloud certificate list --resource-group <resource group name> --service <service name>
 ```
+---
 
 > [!IMPORTANT] 
-> Чтобы защитить личный домен с помощью этого сертификата, необходимо создать привязку сертификата к этому домену. Выполните инструкции из раздела **Добавление привязки SSL** в этой статье.
+> Чтобы защитить личный домен с помощью этого сертификата, необходимо создать привязку сертификата к этому домену. Следуйте инструкциям в этом разделе: [Добавление SSL-привязки](#add-ssl-binding)
 
 ## <a name="add-custom-domain"></a>Добавление личного домена
 Пользовательское DNS-имя можно сопоставить c Azure Spring Cloud с помощью записи CNAME. 
@@ -113,6 +158,7 @@ az spring-cloud certificate list --resource-group <resource group name> --servic
 ## <a name="map-your-custom-domain-to-azure-spring-cloud-app"></a>Сопоставление личного домена с приложением Azure Spring Cloud
 Если у вас нет приложения в Azure Spring Cloud, выполните инструкции, приведенные в статье [Краткое руководство. Запуск существующего приложения Azure Spring Cloud с помощью портала Azure](https://review.docs.microsoft.com/azure/spring-cloud/spring-cloud-quickstart-launch-app-portal?branch=master).
 
+#### <a name="portal"></a>[Портал](#tab/Azure-portal)
 Перейдите к странице приложения.
 
 1. Выберите **Личный домен**.
@@ -126,34 +172,38 @@ az spring-cloud certificate list --resource-group <resource group name> --servic
 
     ![Добавление личного домена](./media/custom-dns-tutorial/add-custom-domain.png)
 
-Вы также можете использовать Azure CLI для добавления личного домена.
-```
-az spring-cloud app custom-domain bind --domain-name <domain name> --app <app name> --resource-group <resource group name> --service <service name>
-```
-
 У одного приложения может быть несколько доменов, но каждый домен может быть сопоставлен только с одним приложением. После успешного сопоставления личного домена с приложением вы увидите его в таблице личных доменов.
 
 ![Таблица личных доменов](./media/custom-dns-tutorial/custom-domain-table.png)
 
-Вы также можете использовать Azure CLI для отображения списка личных доменов.
+#### <a name="cli"></a>[CLI](#tab/Azure-CLI)
+```
+az spring-cloud app custom-domain bind --domain-name <domain name> --app <app name> --resource-group <resource group name> --service <service name>
+```
+
+Чтобы отобразить список личных доменов, выполните приведенные ниже действия.
 ```
 az spring-cloud app custom-domain list --app <app name> --resource-group <resource group name> --service <service name>
 ```
+---
 
 > [!NOTE]
 > Метка **Небезопасно** для личного домена означает, что он еще не привязан к SSL-сертификату. На любой HTTPS-запрос из браузера к такому личному домену возвращается сообщение об ошибке или предупреждение.
 
 ## <a name="add-ssl-binding"></a>Добавление привязки SSL
+
+#### <a name="portal"></a>[Портал](#tab/Azure-portal)
 В таблице личных доменов выберите **Добавить SSL-привязку**, как показано на предыдущем рисунке.  
 1. В поле **Сертификат** выберите или импортируйте сертификат.
 1. Выберите команду **Сохранить**.
 
     ![Добавление SSL-привязки 1](./media/custom-dns-tutorial/add-ssl-binding.png)
 
-Вы также можете использовать Azure CLI, чтобы **добавить привязки SSL**.
+#### <a name="cli"></a>[CLI](#tab/Azure-CLI)
 ```
-az spring-cloud app custom-domain update --domain-name <domain name> --certificate <cert name> --app <app name> 
+az spring-cloud app custom-domain update --domain-name <domain name> --certificate <cert name> --app <app name> --resource-group <resource group name> --service <service name>
 ```
+---
 
 После успешного добавления привязки SSL состояние домена станет "безопасным": **Работоспособно**. 
 
@@ -161,16 +211,16 @@ az spring-cloud app custom-domain update --domain-name <domain name> --certifica
 
 ## <a name="enforce-https"></a>Принудительное использование HTTPS
 По умолчанию любой пользователь по-прежнему может обращаться к приложению по протоколу HTTP, но вы можете перенаправить все HTTP-запросы на порт HTTPS.
-
+#### <a name="portal"></a>[Портал](#tab/Azure-portal)
 Для этого на странице приложения в области навигации слева выберите **Личный домен**. Здесь для параметра **Только HTTPS** установите значение *True*.
 
 ![Добавление SSL-привязки 3](./media/custom-dns-tutorial/enforce-http.png)
 
-Вы также можете использовать Azure CLI для принудительного применения HTTPS.
+#### <a name="cli"></a>[CLI](#tab/Azure-CLI)
 ```
-az spring-cloud app custom-domain update --domain-name <domain name> --certificate <cert name> --app <app name> --resource-group <resource group name> --service <service name>
+az spring-cloud app update -n <app name> --resource-group <resource group name> --service <service name> --https-only
 ```
-
+---
 По завершении операции перейдите по любому из URL-адресов HTTPS, которые указывают на ваше приложение. Обратите внимание, что URL-адреса HTTP теперь не работают.
 
 ## <a name="see-also"></a>См. также раздел

@@ -3,17 +3,17 @@ title: Взаимодействие с устройством IoT Plug and Play,
 description: Подключение к устройству IoT Plug and Play, подключенному к решению Интернета вещей Azure, а также взаимодействие с ним с помощью Node.js.
 author: elhorton
 ms.author: elhorton
-ms.date: 08/11/2020
+ms.date: 10/05/2020
 ms.topic: quickstart
 ms.service: iot-pnp
 services: iot-pnp
 ms.custom: mvc, devx-track-js
-ms.openlocfilehash: 6ad6e48642e7b7df4b93b37b5ef66381833d8bbc
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.openlocfilehash: a6ade8d44e6c751f45849743c66d0a34075943b4
+ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91574999"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91946133"
 ---
 # <a name="quickstart-interact-with-an-iot-plug-and-play-device-thats-connected-to-your-solution-nodejs"></a>Краткое руководство. Взаимодействие с подключенным к решению устройством IoT Plug and Play с помощью Node.js
 
@@ -94,48 +94,103 @@ git clone https://github.com/Azure/azure-iot-sdk-node
 1. Перейдите в окно терминала **службы** и запустите пример с помощью следующей команды для чтения сведений об устройстве:
 
     ```cmd/sh
-    node get_digital_twin.js
+    node twin.js
     ```
 
-1. В выходных данных терминала **службы** найдите ответ цифрового двойника. Вы увидите сведения об идентификаторе модели устройства и его свойствах.
+1. В выходных данных терминала **службы** найдите ответ двойника устройства. Вы увидите сведения об идентификаторе модели устройства и его свойствах.
 
     ```json
-    "$dtId": "mySimpleThermostat",
-    "serialNumber": "123abc",
-    "maxTempSinceLastReboot": 51.96167432818655,
-    "$metadata": {
-      "$model": "dtmi:com:example:Thermostat;1",
-      "serialNumber": { "lastUpdateTime": "2020-07-09T14:04:00.6845182Z" },
-      "maxTempSinceLastReboot": { "lastUpdateTime": "2020-07-09T14:04:00.6845182" }
+    Model Id: dtmi:com:example:Thermostat;1
+    {
+      "deviceId": "my-pnp-device",
+      "etag": "AAAAAAAAAAE=",
+      "deviceEtag": "Njc3MDMxNDcy",
+      "status": "enabled",
+      "statusUpdateTime": "0001-01-01T00:00:00Z",
+      "connectionState": "Connected",
+      "lastActivityTime": "0001-01-01T00:00:00Z",
+      "cloudToDeviceMessageCount": 0,
+      "authenticationType": "sas",
+      "x509Thumbprint": {
+        "primaryThumbprint": null,
+        "secondaryThumbprint": null
+      },
+      "modelId": "dtmi:com:example:Thermostat;1",
+      "version": 4,
+      "properties": {
+        "desired": {
+          "$metadata": {
+            "$lastUpdated": "2020-10-05T11:35:19.4574755Z"
+          },
+          "$version": 1
+        },
+        "reported": {
+          "maxTempSinceLastReboot": 31.343640523762232,
+          "serialNumber": "123abc",
+          "$metadata": {
+            "$lastUpdated": "2020-10-05T11:35:23.7339042Z",
+            "maxTempSinceLastReboot": {
+              "$lastUpdated": "2020-10-05T11:35:23.7339042Z"
+            },
+            "serialNumber": {
+              "$lastUpdated": "2020-10-05T11:35:23.7339042Z"
+            }
+          },
+          "$version": 3
+        }
+      },
+      "capabilities": {
+        "iotEdge": false
+      },
+      "tags": {}
     }
     ```
 
-1. Следующий фрагмент кода из файла *get_digital_twin.js* получает идентификатор модели двойника устройства.
+1. Следующий фрагмент кода из файла *twin.js* получает идентификатор модели двойника устройства.
 
     ```javascript
-    console.log("Model Id: " + inspect(digitalTwin.$metadata.$model))
+    var registry = Registry.fromConnectionString(connectionString);
+    registry.getTwin(deviceId, function(err, twin) {
+      if (err) {
+        console.error(err.message);
+      } else {
+        console.log('Model Id: ' + twin.modelId);
+        //...
+      }
+      //...
+    }
     ```
 
 В нашем примере он выводит значение `Model Id: dtmi:com:example:Thermostat;1`.
 
+> [!NOTE]
+> В этих примерах служб мы используем класс **Registry** из **клиента службы Центра Интернета вещей**. Дополнительные сведения об интерфейсах API, включая API цифровых двойников, см. в [руководстве для разработчиков служб](concepts-developer-guide-service.md).
+
 ### <a name="update-a-writable-property"></a>Обновление доступного для записи свойства
 
-1. Откройте файл *update_digital_twin.js* в любом редакторе кода.
+1. Откройте файл *twin.js* в редакторе кода.
 
-1. Изучите пример кода. Вы увидите, как создать обновление в формате JSON для изменения свойств цифрового двойника устройства. В этом примере код изменяет значение температуры термостата на 42.
+1. Просмотрите пример кода. В нем показаны два способа обновления двойника устройства. Чтобы использовать первый способ, измените переменную `twinPatch`, как показано ниже.
 
     ```javascript
-    const patch = [{
-        op: 'add',
-        path: '/targetTemperature',
-        value: '42'
-      }]
+    var twinPatch = {
+      tags: {
+        city: "Redmond"
+      },
+      properties: {
+        desired: {
+          targetTemperature: 42
+        }
+      }
+    };
     ```
+
+    В модели устройства термостата свойство `targetTemperature` определено как записываемое.
 
 1. В терминале **службы** с помощью следующей команды запустите следующий пример для обновления свойства.
 
     ```cmd/sh
-    node update_digital_twin.js
+    node twin.js
     ```
 
 1. В терминале **устройства** вы увидите, что устройство успешно получило обновление.
@@ -151,44 +206,54 @@ git clone https://github.com/Azure/azure-iot-sdk-node
       }
     }
     updated the property
-    Properties have been reported for component
     ```
 
 1. В терминале **службы** выполните следующую команду, чтобы убедиться, что свойство обновлено.
 
     ```cmd/sh
-    node get_digital_twin.js
+    node twin.js
     ```
 
-1. В терминале **службы** вы увидите ответ от цифрового двойника, где в компоненте `thermostat1` отображается обновленное значение температуры. Устройству может потребоваться некоторое время, чтобы завершить обновление. Повторяйте этот шаг, пока устройство не завершит обновление свойства.
+1. В терминале **службы** в разделе сообщаемых свойств вы увидите обновленное значение температуры. Устройству может потребоваться некоторое время, чтобы завершить обновление. Повторяйте этот шаг, пока устройство не завершит обновление свойства.
 
     ```json
-    targetTemperature: 42,
+    "reported": {
+      //...
+      "targetTemperature": {
+        "value": 42,
+        "ac": 200,
+        "ad": "Successfully executed patch for targetTemperature",
+        "av": 4
+      },
+      //...
+    }
     ```
 
 ### <a name="invoke-a-command"></a>Вызов команды
 
-1. Откройте файл *invoke_command.js* и изучите его код.
+1. Откройте файл *device_method.js* и изучите его код.
 
 1. Перейдите к терминалу **службы**. Чтобы запустить пример для вызова команды, используйте следующую команду:
 
     ```cmd/sh
-    set IOTHUB_COMMAND_NAME=getMaxMinReport
-    set IOTHUB_COMMAND_PAYLOAD=commandpayload
-    node invoke_command.js
+    set IOTHUB_METHOD_NAME=getMaxMinReport
+    set IOTHUB_METHOD_PAYLOAD=commandpayload
+    node device_method.js
     ```
 
 1. В выходных данных в терминале **службы** отобразится следующее подтверждение.
 
     ```cmd/sh
+    getMaxMinReport on my-pnp-device:
     {
-        xMsCommandStatuscode: 200,  
-        xMsRequestId: 'ee9dd3d7-4405-4983-8cee-48b4801fdce2',  
-        connection: 'close',  'content-length': '18',  
-        'content-type': 'application/json; charset=utf-8',  
-        date: 'Thu, 09 Jul 2020 15:05:14 GMT',  
-        server: 'Microsoft-HTTPAPI/2.0',  vary: 'Origin',  
-        body: 'min/max response'
+      "status": 200,
+      "payload": {
+        "maxTemp": 23.460596940801928,
+        "minTemp": 23.460596940801928,
+        "avgTemp": 23.460596940801928,
+        "endTime": "2020-10-05T12:48:08.562Z",
+        "startTime": "2020-10-05T12:47:54.450Z"
+      }
     }
     ```
 

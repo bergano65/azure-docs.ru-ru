@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 10/17/2019
 ms.author: jeedes
-ms.openlocfilehash: 18814d23c634dc58148c26b67c2f669e22a136ee
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 4b84cbe57c40b12ae01952963b324b8bcfdcfd2e
+ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88554300"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91945487"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-nuclino"></a>Руководство по интеграции единого входа Azure Active Directory с Nuclino
 
@@ -155,15 +155,15 @@ ms.locfileid: "88554300"
 
 4. Щелкните **значок меню**.
 
-    ![Настройка Nuclino](./media/nuclino-tutorial/configure1.png)
+    ![Снимок экрана демонстрирует выбранный значок меню рядом с элементов "Единый вход Azure AD".](./media/nuclino-tutorial/configure1.png)
 
 5. Щелкните **Azure AD SSO** (Единый вход в Azure AD) и выберите **Team settings** (Параметры команды) из раскрывающегося списка.
 
-    ![Настройка Nuclino](./media/nuclino-tutorial/configure2.png)
+    ![Снимок экрана демонстрирует раскрывающийся список "Единый вход Azure AD", где выбраны параметры команды.](./media/nuclino-tutorial/configure2.png)
 
 6. Выберите **Authentication** (Проверка подлинности) на левой панели навигации.
 
-    ![Настройка Nuclino](./media/nuclino-tutorial/configure3.png)
+    ![Снимок экрана демонстрирует выбранный элемент "Проверка подлинности".](./media/nuclino-tutorial/configure3.png)
 
 7. В разделе **Authentication** (Проверка подлинности) сделайте следующее:
 

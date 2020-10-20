@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.service: iot-pnp
 services: iot-pnp
 ms.custom: mvc
-ms.openlocfilehash: b35268cd8d36901f750225713407c5392e5c429e
-ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
+ms.openlocfilehash: ec38e0849b7f4c1a0ca98d75d4c6c82908c1e16e
+ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91759175"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91945382"
 ---
 # <a name="quickstart-interact-with-an-iot-plug-and-play-device-thats-connected-to-your-solution-c"></a>Краткое руководство. Взаимодействие с подключенным к решению устройством IoT Plug and Play с помощью C#
 
@@ -34,7 +34,7 @@ IoT Plug and Play упрощает работу с Интернетом веще
 
 Если вы ознакомились с [Кратким руководством по подключению примера приложения устройства IoT Plug and Play в Windows к Центру Интернета вещей (C#)](quickstart-connect-device-csharp.md), значит вы уже клонировали репозиторий.
 
-Клонируйте примеры из репозитория пакета SDK для Интернета вещей Microsoft Azure для .NET на сайте GitHub. Откройте командную строку в выбранной папке. С помощью следующей команды клонируйте репозиторий примеров [Интернета вещей Microsoft Azure для .NET](https://github.com/Azure-Samples/azure-iot-samples-csharp) с сайта GitHub.
+Клонируйте примеры из репозитория GitHub с примерами для Интернета вещей Azure на C#. Откройте командную строку в выбранной папке. С помощью следующей команды клонируйте репозиторий примеров [Интернета вещей Microsoft Azure для .NET](https://github.com/Azure-Samples/azure-iot-samples-csharp) с сайта GitHub.
 
 ```cmd
 git clone https://github.com/Azure-Samples/azure-iot-samples-csharp.git
@@ -55,7 +55,6 @@ git clone https://github.com/Azure-Samples/azure-iot-samples-csharp.git
     | IOTHUB_DEVICE_DPS_ID_SCOPE | Значение, которое записали после завершения [настройки среды](set-up-environment.md). |
     | IOTHUB_DEVICE_DPS_DEVICE_ID | my-pnp-device |
     | IOTHUB_DEVICE_DPS_DEVICE_KEY | Значение, которое записали после завершения [настройки среды](set-up-environment.md). |
-
 
 1. Теперь можно создать пример в Visual Studio и запустить его в режиме отладки.
 
@@ -81,9 +80,9 @@ git clone https://github.com/Azure-Samples/azure-iot-samples-csharp.git
 
 1. Теперь можно создать пример в Visual Studio и запустить его в режиме отладки.
 
-### <a name="get-digital-twin"></a>Получение цифрового двойника
+### <a name="get-device-twin"></a>Получение двойника устройства
 
-В следующем фрагменте кода показано, как приложение службы получает цифровой двойник:
+В следующем фрагменте кода показано, как приложение службы получает двойник устройства:
 
 ```C#
 // Get a Twin and retrieves model Id set by Device client
@@ -92,7 +91,7 @@ s_logger.LogDebug($"Model Id of this Twin is: {twin.ModelId}");
 ```
 
 > [!NOTE]
-> В этом образце используется пространство имен **Microsoft.Azure.Devices.Client;** из **клиента службы Центра Интернета вещей**. Дополнительные сведения об извлечении идентификатора модели см. в [руководстве разработчика](concepts-developer-guide-service.md).
+> В этом примере используется пространство имен **Microsoft.Azure.Devices.Client** из **клиента службы Центра Интернета вещей**. Дополнительные сведения об интерфейсах API, включая API цифровых двойников, см. в [руководстве для разработчиков служб](concepts-developer-guide-service.md).
 
 Этот код создаст следующие выходные данные:
 
@@ -101,7 +100,7 @@ s_logger.LogDebug($"Model Id of this Twin is: {twin.ModelId}");
       Model Id of this Twin is: dtmi:com:example:Thermostat;1
 ```
 
-В следующем фрагменте кода показано, как использовать *исправления* для обновления свойств с помощью цифрового двойника:
+В следующем фрагменте кода показано, как использовать *исправление* для обновления свойств с помощью двойника устройства:
 
 ```C#
 // Update the twin

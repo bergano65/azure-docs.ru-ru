@@ -1,14 +1,14 @@
 ---
 title: Краткое руководство. Создание схемы с помощью REST API
 description: В рамках этого краткого руководства вы создадите, определите и развернете артефакты с помощью REST API.
-ms.date: 06/29/2020
+ms.date: 10/14/2020
 ms.topic: quickstart
-ms.openlocfilehash: e3cdf28cfe523e52aceefe20294042d28b98e1e2
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: aa25a65b20b295045b52a49c8c47fb8849c3cba3
+ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "85971204"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92056997"
 ---
 # <a name="quickstart-define-and-assign-an-azure-blueprint-with-rest-api"></a>Краткое руководство. Определение и назначение схемы Azure с помощью REST API
 

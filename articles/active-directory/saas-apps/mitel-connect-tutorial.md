@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 07/31/2020
 ms.author: jeedes
-ms.openlocfilehash: 63f1d1d40d8aff21641f3fa4ee10a289de40800d
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: dae9db6dd20ef4346050be73250c7a10f7a449ec
+ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88552617"
+ms.lasthandoff: 10/11/2020
+ms.locfileid: "91940693"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-mitel-micloud-connect-or-cloudlink-platform"></a>Руководство по интеграции Azure Active Directory с Mitel MiCloud Connect или платформой CloudLink
 
@@ -112,7 +112,7 @@ ms.locfileid: "88552617"
 
 4. На портале Azure выберите значок **Изменить** в разделе **Базовая конфигурация SAML**.
    
-    ![Изображение](common/edit-urls.png)
+    ![Снимок экрана: страница настройки единого входа с помощью SAML с выделенным значком редактирования.](common/edit-urls.png)
 
     Появится диалоговое окно "Базовая конфигурация SAML".
 
@@ -120,7 +120,7 @@ ms.locfileid: "88552617"
 
 6. На портале Mitel Account скопируйте URL-адрес в поле **Reply URL (Assertion Consumer Service URL)** (URL-адрес ответа (URL-адрес службы обработчика утверждений)) и вставьте его в поле **URL-адрес ответа (URL-адрес службы обработчика утверждений)** на портале Azure.
 
-   ![Изображение](./media/mitel-connect-tutorial/mitel-azure-basic-configuration.png)
+   ![Снимок экрана: раздел базовой конфигурации SAML на портале Azure, а также раздел настройки поставщика удостоверений на портале Mitel Account со строками, указывающими на связь между ними.](./media/mitel-connect-tutorial/mitel-azure-basic-configuration.png)
 
 7. В текстовом поле **URL-адрес входа** введите любой из следующих URL-адресов:
 
@@ -134,11 +134,11 @@ ms.locfileid: "88552617"
 
 9. На портале Azure на странице **Вход на основе SAML** в разделе **Сертификат подписи SAML** выберите **Скачать** рядом с полем **Сертификат (Base64)** , чтобы скачать **сертификат для подписи** и сохранить его на компьютер.
 
-    ![Изображение](./media/mitel-connect-tutorial/azure-signing-certificate.png)
+    ![Снимок экрана: панель "Сертификат подписи SAML" для скачивания сертификата.](./media/mitel-connect-tutorial/azure-signing-certificate.png)
 
 10. Откройте файл сертификата для подписи в текстовом редакторе, скопируйте все данные в файле и вставьте их в поле **Signing Certificate** (Сертификат для подписи) на портале Mitel Account. 
 
-      ![Изображение](./media/mitel-connect-tutorial/mitel-connect-signing-certificate.png)
+      ![Снимок экрана: поле Signing Certificate (Сертификат для подписи).](./media/mitel-connect-tutorial/mitel-connect-signing-certificate.png)
 
 11. На портале Azure на странице **Вход на основе SAML** в разделе **Настройка Mitel Connect** сделайте следующее:
 
@@ -146,7 +146,7 @@ ms.locfileid: "88552617"
 
      1. Скопируйте URL-адрес в поле **Идентификатор Azure AD** и вставьте его в поле **Entity ID** (Идентификатор сущности) на портале Mitel Account.
          
-         ![Изображение](./media/mitel-connect-tutorial/mitel-azure-set-up-connect.png)
+         ![Снимок экрана: связь между страницами настройки единого входа на базе SAML на порталах Azure и Mitel Account.](./media/mitel-connect-tutorial/mitel-azure-set-up-connect.png)
 
 12. Нажмите кнопку **Save** (Сохранить) в диалоговом окне **Connect Single Sign-On Settings** (Параметры подключения единого входа).
 
@@ -241,7 +241,7 @@ ms.locfileid: "88552617"
     
        Откроется страница **Вход на основе SAML**, в которой отобразится раздел **Базовая конфигурация SAML**.
 
-       ![Изображение](./media/mitel-connect-tutorial/mitel-azure-saml-settings.png)
+       ![Снимок экрана: страница "Вход на основе SAML" с разделом "Базовая конфигурация SAML".](./media/mitel-connect-tutorial/mitel-azure-saml-settings.png)
 
 2. Чтобы получить доступ к панели конфигурации **единого входа Azure AD** на портале CloudLink Accounts, сделайте следующее:
 
@@ -251,33 +251,33 @@ ms.locfileid: "88552617"
 
     1. Выберите вкладку **3rd party** (Сторонние). Отобразится список поддерживаемых приложений сторонних производителей. Нажмите кнопку **Add** (Добавить), связанную с **единым входом Azure AD**, затем выберите **Done** (Готово).
 
-       ![Изображение](./media/mitel-connect-tutorial/mitel-cloudlink-integrations.png)
+       ![Снимок экрана: страница "Интеграции" с возможностью добавления единого входа Azure AD](./media/mitel-connect-tutorial/mitel-cloudlink-integrations.png)
 
        **Единый вход Azure AD** включен для учетной записи клиента и добавляется в раздел **интеграции** на странице **сведений об учетной записи**.   
 
    1. Выберите **Complete Setup** (Завершить установку).
     
-      ![Изображение](./media/mitel-connect-tutorial/mitel-cloudlink-complete-setup.png)
+      ![Снимок экрана: параметр Complete Setup (Завершить установку) для единого входа Azure AD.](./media/mitel-connect-tutorial/mitel-cloudlink-complete-setup.png)
       
       Откроется панель конфигурации **единого входа Azure AD**.
       
-       ![Изображение](./media/mitel-connect-tutorial/mitel-cloudlink-sso-setup.png)
+       ![Снимок экрана: конфигурация единого входа Azure AD.](./media/mitel-connect-tutorial/mitel-cloudlink-sso-setup.png)
        
        Mitel рекомендует не устанавливать флажок **Enable Mitel Credentials (Optional)** (Включить учетные данные Mitel (необязательно)) в разделе **Optional Mitel credentials** (Дополнительные учетные данные Mitel). Установите этот флажок в том случае, если вы хотите, чтобы пользователь входил в приложение CloudLink, используя учетные данные Mitel помимо параметра единого входа.
 
 3. На портале Azure на странице **Вход на основе SAML** щелкните значок **Изменить** в разделе **Базовая конфигурация SAML**. Откроется панель **Базовая конфигурация SAML**.
 
-    ![Изображение](./media/mitel-connect-tutorial/mitel-azure-saml-basic.png)
+    ![Снимок экрана: панель "Базовая конфигурация SAML" с выбранным значком редактирования.](./media/mitel-connect-tutorial/mitel-azure-saml-basic.png)
  
  4. На портале CloudLink Accounts скопируйте URL-адрес в поле **Mitel Identifier (Entity ID)** (Идентификатор Mitel (сущности)) и вставьте его в поле **Идентификатор (сущности)** на портале Azure.
 
  5. На портале CloudLink Accounts скопируйте URL-адрес в поле **Reply URL (Assertion Consumer Service URL)** (URL-адрес ответа (URL-адрес службы обработчика утверждений)) и вставьте его в поле **URL-адрес ответа (URL-адрес службы обработчика утверждений)** на портале Azure.  
     
-    ![Изображение](./media/mitel-connect-tutorial/mitel-cloudlink-saml-mapping.png) 
+    ![Снимок экрана: связь между страницами на порталах CloudLink Accounts и Azure.](./media/mitel-connect-tutorial/mitel-cloudlink-saml-mapping.png) 
 
  6. В текстовом поле **URL-адрес входа** введите URL-адрес `https://accounts.mitel.io`, чтобы использовать портал CloudLink Accounts в качестве приложения Mitel по умолчанию.
      
-     ![Изображение](./media/mitel-connect-tutorial/mitel-cloudlink-sign-on-url.png)
+     ![Снимок экрана: текстовое поле "URL-адрес входа".](./media/mitel-connect-tutorial/mitel-cloudlink-sign-on-url.png)
   
      > [!NOTE]
      > Приложение Mitel по умолчанию — это приложение, на которое пользователь переходит, когда выбирает плитку Mitel Connect на Панели доступа. Также это приложение, к которому предоставляется доступ при выполнении пользователем тестовой настройки из Azure AD.
@@ -286,14 +286,14 @@ ms.locfileid: "88552617"
 
 8. На портале Azure на странице **Вход на основе SAML** в разделе **Сертификат подписи SAML** выберите **Скачать** рядом с полем **Сертификат (Base64)** , чтобы скачать **сертификат для подписи**. Сохраните сертификат на своем компьютере.
   
-    ![Изображение](./media/mitel-connect-tutorial/mitel-cloudlink-save-certificate.png)
+    ![Снимок экрана: раздел "Сертификат подписи SAML" для скачивания сертификата в формате Base64.](./media/mitel-connect-tutorial/mitel-cloudlink-save-certificate.png)
 
 9. Откройте файл сертификата для подписи в текстовом редакторе, скопируйте все данные в файле и вставьте их в поле **Signing Certificate** (Сертификат для подписи) на портале CloudLink Accounts.  
 
     > [!NOTE]
     > Если у вас несколько сертификатов, рекомендуется их вставлять один за другим. 
        
-    ![Изображение](./media/mitel-connect-tutorial/mitel-cloudlink-enter-certificate.png)
+    ![Снимок экрана: второй шаг процедуры, в рамках которого необходимо ввести значения из интеграции Azure AD.](./media/mitel-connect-tutorial/mitel-cloudlink-enter-certificate.png)
 
 10. На портале Azure на странице **Вход на основе SAML** в разделе **Настройка Mitel Connect** сделайте следующее:
 
@@ -301,7 +301,7 @@ ms.locfileid: "88552617"
 
      1. Скопируйте URL-адрес в поле **Идентификатор Azure AD** и вставьте его в поле **IDP Identifier (Entity ID)** (Идентификатор поставщика удостоверений (сущности)) на портале CloudLink Accounts.
      
-        ![Изображение](./media/mitel-connect-tutorial/mitel-cloudlink-copy-settings.png)
+        ![Снимок экрана: источник описанных здесь значений в Mintel Connect.](./media/mitel-connect-tutorial/mitel-cloudlink-copy-settings.png)
 
 11. Нажмите кнопку **Сохранить** на панели **единого входа Azure AD** на портале CloudLink Accounts.
 

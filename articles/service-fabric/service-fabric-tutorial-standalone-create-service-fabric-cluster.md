@@ -1,17 +1,15 @@
 ---
 title: Установка изолированного клиента Service Fabric
-description: В этом руководстве показано, как установить изолированный клиент Service Fabric в кластере, созданном в предыдущем руководстве.
-author: dkkapur
+description: Из этого учебника вы узнаете, как установить в кластере автономный клиент Service Fabric.
 ms.topic: tutorial
 ms.date: 07/22/2019
-ms.author: dekapur
 ms.custom: mvc
-ms.openlocfilehash: bbaf7dfc546c739dfb858be7ef8372eccf60111b
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: ae0b343be986f4d8d5176c1f39eef6b23ca81278
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75613947"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91840648"
 ---
 # <a name="tutorial-install-and-create-service-fabric-cluster"></a>Руководство по установке и созданию кластера Service Fabric
 
@@ -19,7 +17,7 @@ ms.locfileid: "75613947"
 
 Это руководство представляет собой вторую часть цикла. В этом руководстве описывается процесс создания изолированного кластера Service Fabric.
 
-Из второй части цикла вы узнаете, как выполнять следующие задачи:
+В этой статье вы узнаете, как выполнять следующие задачи.
 
 > [!div class="checklist"]
 > * скачивание изолированного пакета Service Fabric и его установка;
@@ -38,7 +36,7 @@ Service Fabric предоставляет установочный пакет д
 
 Вы создаете кластер Windows с тремя узлами, поэтому вам нужно изменить файл `ClusterConfig.Unsecure.MultiMachine.json`.
 
-Затем обновите три строки ipAddress, размещенные в файле в строках 8, 15 и 22, IP-адресами каждого из экземпляров.
+Затем внесите в три строки ipAddress, размещенные в файле в строках 8, 15 и 22, IP-адреса каждого из экземпляров.
 
 После обновления узлов они отображаются следующим образом:
 
@@ -77,7 +75,7 @@ cd .\Desktop\Microsoft.Azure.ServiceFabric.WindowsServer.6.2.274.9494\
 .\TestConfiguration.ps1 -ClusterConfigFilePath .\ClusterConfig.Unsecure.MultiMachine.json
 ```
 
-Вы должны увидеть результат следующего вида. Если для нижнего поля "Passed" (Выполнено) возвращено значение `True`, значит, проверка работоспособности пройдена и кластер готов к развертыванию на основе входной конфигурации.
+Вы увидите результат, похожий на этот пример. Если для нижнего поля "Passed" (Выполнено) возвращено значение `True`, значит, проверка работоспособности пройдена и кластер готов к развертыванию на основе входной конфигурации.
 
 ```powershell
 Trace folder already exists. Traces will be written to existing trace folder: C:\Users\Administrator\Desktop\Microsoft.Azure.ServiceFabric.WindowsServer.6.2.274.9494\DeploymentTraces
@@ -101,7 +99,7 @@ Passed                     : True
 
 ## <a name="create-the-cluster"></a>Создайте кластер.
 
-После успешной проверки конфигурации кластера выполните скрипт *CreateServiceFabricCluster.ps1*, чтобы развернуть кластер Service Fabric на виртуальные машины в файле конфигурации.
+После успешной проверки конфигурации кластера выполните скрипт *CreateServiceFabricCluster.ps1*, чтобы развернуть кластер Service Fabric на виртуальные машины, указанные в файле конфигурации.
 
 ```powershell
 .\CreateServiceFabricCluster.ps1 -ClusterConfigFilePath .\ClusterConfig.Unsecure.MultiMachine.json -AcceptEULA
@@ -118,7 +116,7 @@ Your cluster is successfully created! You can connect and manage your cluster us
 >
 >
 
-### <a name="bring-up-service-fabric-explorer"></a>Вызов Service Fabric Explorer
+### <a name="open-service-fabric-explorer"></a>Открытие Service Fabric Explorer
 
 Теперь к кластеру можно подключиться при помощи Service Fabric Explorer непосредственно с одного из компьютеров по адресу http:\//localhost:19080/Explorer/index.html или удаленно по адресу http:\//<*IPAddressofaMachine*>:19080/Explorer/index.html.
 
@@ -128,7 +126,7 @@ Your cluster is successfully created! You can connect and manage your cluster us
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Из второй части в серии вы узнали не только о передаче больших объемов случайных данных в учетную запись хранения в параллельном режиме, но и о том, как выполнять такие задачи:
+Из этой статьи вы узнали о процессе передачи больших объемов произвольных данных в учетную запись хранения в параллельном режиме, который включает такие задачи:
 
 > [!div class="checklist"]
 > * Настройка строки подключения

@@ -7,12 +7,12 @@ ms.topic: overview
 ms.date: 05/26/2020
 ms.custom: cog-serv-seo-aug-2020
 keywords: qna maker, чат-боты с небольшим объемом кода, диалоги с несколькими шагами
-ms.openlocfilehash: fe46fadc6d3f5a74c95faeec6b7759f18e843f7d
-ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
+ms.openlocfilehash: 6a5ea51086e3ab532966c9cea9eb866334494bba
+ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91776788"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91874430"
 ---
 # <a name="what-is-qna-maker"></a>Общие сведения о QnA Maker
 
@@ -83,9 +83,9 @@ QnA Maker обеспечивает возможности разработки, 
 
 Мы предлагаем руководства на большинстве популярных языках программирования, каждый из которых предназначен для изучения основных шаблонов разработки и позволяет получить рабочий код менее чем за 10 минут. См. следующий список, чтобы перейти к краткому руководству для каждой функции.
 
-* [Начало работы с клиентской библиотекой LUIS](../quickstarts/quickstart-sdk.md)
-* [Начало работы с порталом LUIS](../quickstarts/create-publish-knowledge-base.md)
-* [Начало работы с интерфейсами REST API LUIS](../quickstarts/quickstart-rest-curl.md)
+* [Краткое руководство. Клиентская библиотека QnA Maker](../quickstarts/quickstart-sdk.md)
+* [Краткое руководство. Создание, подготовка и публикация базы знаний QnA Maker](../quickstarts/create-publish-knowledge-base.md)
+* [Краткое руководство. Использование cURL и REST для управления базой знаний](../quickstarts/quickstart-rest-curl.md)
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

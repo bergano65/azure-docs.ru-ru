@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 10/21/2019
 ms.author: jeedes
-ms.openlocfilehash: 1f4569a45b9ed0eee7c375e660df97925335313b
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 5dcd705719510cce3a113c5b0fdc46d016313b6d
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88549812"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91856421"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-linkedin-elevate"></a>Руководство по интеграции единого входа Azure Active Directory с LinkedIn Elevate
 
@@ -144,11 +144,11 @@ ms.locfileid: "88549812"
 
 1. В **Account Center** (Центр учетных записей) в разделе **Settings** (Параметры) щелкните **Global Settings** (Глобальные параметры). Кроме того, выберите **Elevate — Elevate AAD Test** (Проверка Azure AD для Elevate) из раскрывающегося списка.
 
-    ![Настройка единого входа](./media/linkedinelevate-tutorial/tutorial_linkedin_admin_01.png)
+    ![Снимок экрана: раздел Global Settings (Глобальные параметры), где можно выбрать параметр "Elevate AAD Test" (Проверка Azure AD для Elevate).](./media/linkedinelevate-tutorial/tutorial_linkedin_admin_01.png)
 
 1. Щелкните **OR Click Here to load and copy individual fields from the form** (Или щелкните здесь, чтобы загрузить и скопировать отдельные поля из формы) и сделайте следующее:
 
-    ![Настройка единого входа](./media/linkedinelevate-tutorial/tutorial_linkedin_admin_03.png)
+    ![Снимок экрана: настройка описанных параметров единого входа.](./media/linkedinelevate-tutorial/tutorial_linkedin_admin_03.png)
 
     а. Скопируйте **идентификатор сущности** и вставьте его в текстовое поле **Идентификатор** в разделе **Базовая конфигурация SAML** на портале Azure.
 
@@ -156,11 +156,11 @@ ms.locfileid: "88549812"
 
 1. Перейдите в раздел **LinkedIn Admin Settings** (Параметры администратора LinkedIn). Передайте XML-файл, скачанный с портала Azure. Для этого нажмите кнопку Upload XML file (Передать XML-файл).
 
-    ![Настройка единого входа](./media/linkedinelevate-tutorial/tutorial_linkedin_metadata_03.png)
+    ![Снимок экрана: настройка параметров единого входа для LinkedIn, где можно передать XML-файл.](./media/linkedinelevate-tutorial/tutorial_linkedin_metadata_03.png)
 
 1. Нажмите кнопку **On** (Включить), чтобы включить единый вход. Состояние единого входа изменится с **Not Connected** (Не подключено) на **Connected** (Подключено.)
 
-    ![Настройка единого входа](./media/linkedinelevate-tutorial/tutorial_linkedin_admin_05.png)
+    ![Снимок экрана: окно настройки единого входа, где доступен параметр "Automatically assign licenses" (Автоматически назначать лицензии).](./media/linkedinelevate-tutorial/tutorial_linkedin_admin_05.png)
 
 ### <a name="create-linkedin-elevate-test-user"></a>Создание тестового пользователя LinkedIn Elevate
 

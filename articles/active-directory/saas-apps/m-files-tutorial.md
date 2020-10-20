@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/19/2019
 ms.author: jeedes
-ms.openlocfilehash: 77c83e82577cb1d6d07c90a0260a5fa006fd8625
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 8cf4df682a5c141e39a3860547a5b6130e2a3002
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88554847"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91856942"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-m-files"></a>Учебник. Интеграция Azure Active Directory с M-Files
 
@@ -133,11 +133,11 @@ ms.locfileid: "88554847"
 
 1. Откройте окно **M-Files Desktop Settings** (Параметры классического приложения M-Files). Нажмите кнопку **Добавить**.
    
-    ![Настройка единого входа](./media/m-files-tutorial/tutorial_m_files_10.png)
+    ![Снимок экрана: окно "M-Files Desktop Settings" (Параметры классического приложения M-Files), где доступно действие "Add" (Добавить).](./media/m-files-tutorial/tutorial_m_files_10.png)
 
 1. В окне **Document Vault Connection Properties** (Свойства подключения хранилища документов) выполните указанные ниже действия.
    
-    ![Настройка единого входа](./media/m-files-tutorial/tutorial_m_files_11.png)  
+    ![Снимок экрана: окно "Document Vault Connection Properties" (Свойства подключения хранилища документов), где можно ввести указанные значения.](./media/m-files-tutorial/tutorial_m_files_11.png)  
 
     В разделе Server (Сервер) введите следующие значения:  
 

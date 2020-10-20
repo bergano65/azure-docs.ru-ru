@@ -11,12 +11,12 @@ ms.topic: include
 ms.date: 09/15/2020
 ms.author: pafarley
 ms.custom: devx-track-dotnet, cog-serv-seo-aug-2020
-ms.openlocfilehash: 125a823acc79143d9d6556e496f7728c718db089
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: cb0d9ff1074ba1a309cf4f5a8cad12f34335e435
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91332595"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91989495"
 ---
 Начало работы с клиентской библиотекой Azure Content Moderator для .NET. Выполните приведенные здесь действия, чтобы установить пакет NuGet и протестировать пример кода для выполнения базовых задач. 
 
@@ -33,19 +33,24 @@ Content Moderator — это служба ИИ, позволяющая упра
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services/).
-* Текущая версия [.NET Core](https://dotnet.microsoft.com/download/dotnet-core).
+* [IDE Visual Studio](https://visualstudio.microsoft.com/vs/) или текущая версия [.NET Core](https://dotnet.microsoft.com/download/dotnet-core).
+* Получив подписку Azure, <a href="https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account"  title="Создание ресурса [название продукта]"  target="_blank">создайте ресурс Content Moderator <span class="docon docon-navigate-external x-hidden-focus"></span></a> на портале Azure, чтобы получить ключ и конечную точку. Дождитесь, пока закончится развертывание, и нажмите кнопку **Перейти к ресурсу**.
+    * Для подключения приложения к Content Moderator потребуется ключ и конечная точка из созданного ресурса. Ключ и конечная точка будут вставлены в приведенный ниже код в кратком руководстве.
+    * Используйте бесплатную ценовую категорию (`F0`), чтобы опробовать службу, а затем выполните обновление до платного уровня для рабочей среды.
 
-## <a name="create-a-content-moderator-resource"></a>Создание ресурса Content Moderator
+## <a name="setting-up"></a>Настройка
 
-Ресурсами Azure, на которые вы подписаны, будет представлено семейство служб Azure Cognitive Services. Создайте ресурс для Content Moderator с помощью [портала Azure](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) или [интерфейса командной строки Azure (CLI)](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account-cli) на локальном компьютере. Кроме того, вы можете сделать следующее:
+### <a name="create-a-new-c-application"></a>Создание нового приложения C#
 
-* Просмотреть этот ресурс на [портале Azure](https://portal.azure.com/).
+#### <a name="visual-studio-ide"></a>[Интегрированная среда разработки Visual Studio](#tab/visual-studio)
 
-После получения ключа из своего ресурса [создайте переменные среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для ключа и URL-адреса конечной точки с именами `CONTENT_MODERATOR_SUBSCRIPTION_KEY` и `CONTENT_MODERATOR_ENDPOINT` соответственно.
+С помощью Visual Studio создайте приложение .NET Core. 
 
-## <a name="create-a-new-c-application"></a>Создание нового приложения C#
+### <a name="install-the-client-library"></a>Установка клиентской библиотеки 
 
-Создайте консольное приложение .NET Core на C# в предпочитаемой интегрированной среде разработки или текстовом редакторе. 
+После создания проекта установите клиентскую библиотеку, щелкнув правой кнопкой мыши решение проекта в **Обозревателе решений** и выбрав пункт **Управление пакетами NuGet**. В открывшемся диспетчере пакетов выберите **Просмотр**, установите флажок **Включить предварительные версии** и выполните поиск по запросу `Microsoft.Azure.CognitiveServices.ContentModerator`. Выберите версию `2.0.0`, а затем **Установить**. 
+
+#### <a name="cli"></a>[CLI](#tab/cli)
 
 В окне консоли (cmd, PowerShell или Bash) выполните команду `dotnet new`, чтобы создать консольное приложение с именем `content-moderator-quickstart`. Эта команда создает простой проект Hello World на языке C# с одним файлом исходного кода: *Program.cs*.
 
@@ -69,18 +74,7 @@ Build succeeded.
 ...
 ```
 
-В каталоге проекта откройте файл *Program.cs* в предпочитаемом редакторе или интегрированной среде разработки. Добавьте следующие операторы `using` :
-
-[!code-csharp[](~/cognitive-services-quickstart-code/dotnet/ContentModerator/Program.cs?name=snippet_using)]
-
-Затем создайте переменные среды для расположения конечной точки ресурса и ключа в классе **Program**.
-
-[!code-csharp[](~/cognitive-services-quickstart-code/dotnet/ContentModerator/Program.cs?name=snippet_creds)]
-
-> [!NOTE]
-> Если вы создали переменные среды после запуска приложения, для доступа к переменным следует закрыть и повторно открыть редактор, интегрированную среду разработки или оболочку, где эти переменные были запущены.
-
-## <a name="install-the-client-library"></a>Установка клиентской библиотеки
+### <a name="install-the-client-library"></a>Установка клиентской библиотеки 
 
 В каталоге приложения установите клиентскую библиотеку Content Moderator для .NET с помощью следующей команды:
 
@@ -88,7 +82,35 @@ Build succeeded.
 dotnet add package Microsoft.Azure.CognitiveServices.ContentModerator --version 2.0.0
 ```
 
-Если вы используете интегрированную среду разработки Visual Studio, клиентская библиотека доступна в виде загружаемого пакета NuGet.
+---
+
+> [!TIP]
+> Хотите просмотреть готовый файл с кодом для этого краткого руководства? Его можно найти [на сайте GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/dotnet/ContentModerator/Program.cs), где размещены примеры кода для этого краткого руководства.
+
+В каталоге проекта откройте файл *Program.cs* в предпочитаемом редакторе или интегрированной среде разработки. Добавьте следующие операторы `using` :
+
+[!code-csharp[](~/cognitive-services-quickstart-code/dotnet/ContentModerator/Program.cs?name=snippet_using)]
+
+В классе **Program** создайте переменные для ключа и конечной точки вашего ресурса.
+
+> [!IMPORTANT]
+> Перейдите на портал Azure. Если ресурс Content Moderator, созданный в соответствии с указаниями в разделе **Предварительные требования**, успешно развернут, нажмите кнопку **Перейти к ресурсу** в разделе **Дальнейшие действия**. Ключ и конечная точка располагаются на странице **ключа и конечной точки** ресурса в разделе **управления ресурсами**. 
+>
+> Не забудьте удалить ключ из кода, когда закончите, и никогда не публикуйте его в открытом доступе. Для рабочей среды рекомендуется использовать безопасный способ хранения и доступа к учетным данным. Дополнительные сведения см. в статье о [безопасности в Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-security).
+
+[!code-csharp[](~/cognitive-services-quickstart-code/dotnet/ContentModerator/Program.cs?name=snippet_creds)]
+
+
+В методе `main()` приложения добавьте вызовы методов, используемых в этом кратком руководстве. Они будут созданы позже.
+
+[!code-csharp[](~/cognitive-services-quickstart-code/dotnet/ContentModerator/Program.cs?name=snippet_client)]
+
+[!code-csharp[](~/cognitive-services-quickstart-code/dotnet/ContentModerator/Program.cs?name=snippet_textmod_call)]
+
+[!code-csharp[](~/cognitive-services-quickstart-code/dotnet/ContentModerator/Program.cs?name=snippet_imagemod_call)]
+
+[!code-csharp[](~/cognitive-services-quickstart-code/dotnet/ContentModerator/Program.cs?name=snippet_review_call)]
+
 
 ## <a name="object-model"></a>Объектная модель
 
@@ -112,9 +134,9 @@ dotnet add package Microsoft.Azure.CognitiveServices.ContentModerator --version 
 
 ## <a name="authenticate-the-client"></a>Аутентификация клиента
 
-В новом методе создайте клиентские объекты с использованием конечной точки и ключа. Вам не нужен другой клиент для каждого сценария, но он поможет поддерживать организацию кода.
+В новом методе создайте клиентские объекты с использованием конечной точки и ключа.
 
-[!code-csharp[](~/cognitive-services-quickstart-code/dotnet/ContentModerator/Program.cs?name=snippet_client)]
+[!code-csharp[](~/cognitive-services-quickstart-code/dotnet/ContentModerator/Program.cs?name=snippet_auth)]
 
 ## <a name="moderate-text"></a>Модерация текста
 
@@ -129,9 +151,6 @@ Is this a grabage email abcdef@abcd.com, phone: 4255550111, IP: 255.255.255.255,
 Crap is the profanity here. Is this information PII? phone 4255550111
 ```
 
-Добавьте следующий вызов метода в метод `Main`:
-
-[!code-csharp[](~/cognitive-services-quickstart-code/dotnet/ContentModerator/Program.cs?name=snippet_textmod_call)]
 
 Затем в любом месте в классе **Program** определите метод модерации текста:
 
@@ -146,7 +165,7 @@ Crap is the profanity here. Is this information PII? phone 4255550111
 
 ### <a name="get-sample-images"></a>Получить образцы изображений
 
-Определите входные и выходные файлы:
+В корне класса **Program** определите входные и выходные файлы:
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/ContentModerator/Program.cs?name=snippet_image_vars)]
 
@@ -156,10 +175,6 @@ Crap is the profanity here. Is this information PII? phone 4255550111
 https://moderatorsampleimages.blob.core.windows.net/samples/sample2.jpg
 https://moderatorsampleimages.blob.core.windows.net/samples/sample5.png
 ```
-
-Передайте входные и выходные файлы в следующий вызов метода в методе `Main`. Этот метод будет определен позднее.
-
-[!code-csharp[](~/cognitive-services-quickstart-code/dotnet/ContentModerator/Program.cs?name=snippet_imagemod_call)]
 
 ### <a name="define-helper-class"></a>Определение вспомогательного класса
 
@@ -189,9 +204,7 @@ https://moderatorsampleimages.blob.core.windows.net/samples/sample5.png
 
 С помощью клиентской библиотеки Content Moderator для .NET можно передать содержимое в [средство проверки](https://contentmoderator.cognitive.microsoft.com) для его проверки человеком. Чтобы узнать больше о средстве проверки, ознакомьтесь с разделом [Средство проверки Content Moderator](../../review-tool-user-guide/human-in-the-loop.md).
 
-В этом разделе метод использует класс [Reviews](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.contentmoderator.reviews?view=azure-dotnet) для создания проверки, получения ее идентификатора и уточнения сведений о ней после выполнения действий пользователем-модератором на веб-портале средства проверки. Все эти сведения записываются в выходной текстовый файл. Вызовите метод из метода `Main`:
-
-[!code-csharp[](~/cognitive-services-quickstart-code/dotnet/ContentModerator/Program.cs?name=snippet_review_call)]
+В этом разделе метод использует класс [Reviews](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.contentmoderator.reviews?view=azure-dotnet) для создания проверки, получения ее идентификатора и уточнения сведений о ней после выполнения действий пользователем-модератором на веб-портале средства проверки. Все эти сведения записываются в выходной текстовый файл. 
 
 ### <a name="get-sample-images"></a>Получить образцы изображений
 
@@ -257,11 +270,19 @@ https://moderatorsampleimages.blob.core.windows.net/samples/sample5.png
 
 ## <a name="run-the-application"></a>Выполнение приложения
 
+#### <a name="visual-studio-ide"></a>[Интегрированная среда разработки Visual Studio](#tab/visual-studio)
+
+Запустите приложение, нажав кнопку **Отладка** в верхней части окна интегрированной среды разработки.
+
+#### <a name="cli"></a>[CLI](#tab/cli)
+
 Запустите приложение из каталога приложения с помощью команды `dotnet run`.
 
 ```dotnet
-dotnet run 
+dotnet run
 ```
+
+---
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

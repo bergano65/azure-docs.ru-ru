@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 07/11/2019
 ms.author: jeedes
-ms.openlocfilehash: ae504a7dcd6f598c13b5fabffaca4ec6ec067e4b
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 7cb6a9691e1b3186e6493b4ae0b62857fb03f38c
+ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88549937"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91944056"
 ---
 # <a name="tutorial-integrate-kiteworks-with-azure-active-directory"></a>Руководство по интеграции Kiteworks с Azure Active Directory
 
@@ -100,11 +100,11 @@ ms.locfileid: "88549937"
 
 1. На панели инструментов в верхней части экрана нажмите **Параметры**.
 
-    ![Настройка единого входа](./media/kiteworks-tutorial/tutorial_kiteworks_06.png)
+    ![Снимок экрана: выбранный значок настроек на панели инструментов.](./media/kiteworks-tutorial/tutorial_kiteworks_06.png)
 
 1. В разделе **Authentication and Authorization** (Проверка подлинности и авторизация) щелкните **SSO Setup** (Настройка единого входа).
 
-    ![Настройка единого входа](./media/kiteworks-tutorial/tutorial_kiteworks_07.png)
+    ![Снимок экрана: меню "SSO Setup" (Настройка единого входа).с выбранным пунктом "Authentication and Authorization" (Проверка подлинности и авторизация).](./media/kiteworks-tutorial/tutorial_kiteworks_07.png)
 
 1. На странице настройки единого входа выполните следующие действия.
 

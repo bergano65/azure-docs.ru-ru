@@ -1,20 +1,20 @@
 ---
 title: Краткое руководство по использованию клиентской библиотеки API "Распознавание лиц" (Python)
-description: Клиентская библиотека API Распознавания лиц для Python позволяет обнаруживать лица, находить похожие лица (поиск лиц по изображению), идентифицировать лица (поиск с распознаванием лиц) и переносить данные о лицах.
+description: Клиентская библиотека API Распознавания лиц для Python позволяет обнаруживать лица, находить похожие лица (поиск лиц по изображению) и идентифицировать лица (поиск с распознаванием лиц).
 services: cognitive-services
 author: PatrickFarley
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: include
-ms.date: 09/17/2020
+ms.date: 10/07/2020
 ms.author: pafarley
-ms.openlocfilehash: f746a61850567014ce216c47df472d035f1ae123
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 587e702f5c74149542e2fffcf7891b7ea41f4202
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91323002"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91859626"
 ---
 В этом руководстве показано, как начать работу с клиентской библиотекой API Распознавания лиц для Python. Выполните приведенные здесь действия, чтобы установить пакет и протестировать пример кода для выполнения базовых задач. В службе "Распознавание лиц" доступны передовые алгоритмы обнаружения и распознавания лиц на изображениях.
 
@@ -25,7 +25,6 @@ ms.locfileid: "91323002"
 * Создание и обучение на основе изображения группы людей
 * опознание лиц;
 * Проверка лиц
-* создание моментального снимка для переноса данных.
 
 [Справочная документация](https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-face/?view=azure-python) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cognitiveservices/azure-cognitiveservices-vision-face) | [Пакет (PiPy)](https://pypi.org/project/azure-cognitiveservices-vision-face/) | [Примеры](https://docs.microsoft.com/samples/browse/?products=azure&term=face)
 
@@ -85,7 +84,6 @@ pip install --upgrade azure-cognitiveservices-vision-face
 * [создание и обучение на основе изображения группы людей](#create-and-train-a-person-group);
 * [опознание лица](#identify-a-face);
 * [Проверка лиц](#verify-faces)
-* [создание моментального снимка для переноса данных](#take-a-snapshot-for-data-migration).
 
 ## <a name="authenticate-the-client"></a>Аутентификация клиента
 
@@ -207,52 +205,6 @@ pip install --upgrade azure-cognitiveservices-vision-face
 
 [!code-python[](~/cognitive-services-quickstart-code/python/Face/FaceQuickstart.py?name=snippet_verify)]
 
-## <a name="take-a-snapshot-for-data-migration"></a>создание моментального снимка для переноса данных.
-
-Функция моментальных снимков позволяет перемещать сохраненные данные о лицах, например обученный объект **PersonGroup**, в другую подписку Azure Cognitive Services. Эту функцию можно использовать, если вы, например, создали объект **PersonGroup** в бесплатной подписке и теперь хотите перенести его в платную подписку. Подробный обзор функции создания моментальных снимков см. в руководстве по [переносу данных о лицах](../../Face-API-How-to-Topics/how-to-migrate-face-data.md).
-
-В этом примере выполняется перенос объекта **PersonGroup**, созданного при выполнении инструкций из раздела [Создание и обучение на основе изображения группы людей](#create-and-train-a-person-group). Вы можете сначала выполнить эти инструкции или использовать собственные конструкции API Распознавания лиц.
-
-### <a name="set-up-target-subscription"></a>Создание целевой подписки
-
-Во-первых, у вас должна быть вторая подписка Azure с ресурсом API Распознавания лиц. Для этого выполните инструкции из раздела [Настройка](#setting-up). 
-
-Затем создайте следующие переменные в верхней части скрипта. Вам также потребуется создать новые переменные среды для идентификатора подписки учетной записи Azure, ключ, конечную точку и идентификатор подписки для новой (целевой) учетной записи. 
-
-[!code-python[](~/cognitive-services-quickstart-code/python/Face/FaceQuickstart.py?name=snippet_snapshotvars)]
-
-### <a name="authenticate-target-client"></a>Проверка подлинности целевого клиента
-
-Далее в скрипте сохраните свой текущий объект клиента в качестве исходного клиента, а затем проверьте подлинность нового объекта клиента для целевой подписки. 
-
-[!code-python[](~/cognitive-services-quickstart-code/python/Face/FaceQuickstart.py?name=snippet_snapshot_auth)]
-
-### <a name="use-a-snapshot"></a>Использование моментального снимка
-
-Остальные операции с моментальным снимком выполняются в асинхронной функции. 
-
-1. Первым шагом является **создание** моментального снимка, который сохраняет данные о лицах из исходной подписки во временном облачном расположении. Этот метод возвращает идентификатор, который используется для запроса состояния операции.
-
-    [!code-python[](~/cognitive-services-quickstart-code/python/Face/FaceQuickstart.py?name=snippet_snapshot_take)]
-
-1. Затем запрашивайте идентификатор, пока операция не завершится.
-
-    [!code-python[](~/cognitive-services-quickstart-code/python/Face/FaceQuickstart.py?name=snippet_snapshot_wait)]
-
-    Этот код использует функцию `wait_for_operation`, которую следует определить отдельно.
-
-    [!code-python[](~/cognitive-services-quickstart-code/python/Face/FaceQuickstart.py?name=snippet_waitforop)]
-
-1. Вернитесь к асинхронной функции. Используйте операцию **apply** для записи данных о лицах в целевую подписку. Этот метод также возвращает идентификатор.
-
-    [!code-python[](~/cognitive-services-quickstart-code/python/Face/FaceQuickstart.py?name=snippet_snapshot_apply)]
-
-1. Снова запрашивайте идентификатор с помощью функции `wait_for_operation`, пока операция не завершится.
-
-    [!code-python[](~/cognitive-services-quickstart-code/python/Face/FaceQuickstart.py?name=snippet_snapshot_wait2)]
-
-После выполнения этих действий вы сможете получить доступ к конструкциям данных о лицах из новой (целевой) подписки.
-
 ## <a name="run-the-application"></a>Выполнение приложения
 
 Запустите приложение распознавания лиц из каталога приложения с помощью команды `python`.
@@ -271,10 +223,6 @@ python quickstart-file.py
 Если при изучении этого краткого руководства вы создали объект **PersonGroup** и хотите его удалить, выполните в скрипте следующий код:
 
 [!code-python[](~/cognitive-services-quickstart-code/python/Face/FaceQuickstart.py?name=snippet_deletegroup)]
-
-Если при изучении этого краткого руководства вы перенесли данные с помощью функции создания моментальных снимков, вам также нужно удалить объект **PersonGroup**, сохраненный в целевой подписке.
-
-[!code-python[](~/cognitive-services-quickstart-code/python/Face/FaceQuickstart.py?name=snippet_deletetargetgroup)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

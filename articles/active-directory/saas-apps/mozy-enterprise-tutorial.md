@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 03/01/2019
 ms.author: jeedes
-ms.openlocfilehash: c9c4cef07bf1de64bcb14bc4487e0f56d2a40dfc
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: bdeec23b6b0a0ef2884fa35bd0a576ef57bb7853
+ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88518648"
+ms.lasthandoff: 10/11/2020
+ms.locfileid: "91938508"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-mozy-enterprise"></a>Учебник. Интеграция Azure Active Directory с Mozy Enterprise
 
@@ -126,11 +126,11 @@ ms.locfileid: "88518648"
 
 2. В разделе **Конфигурация** щелкните **Политика проверки подлинности**.
    
-    ![Политика проверки подлинности](./media/mozy-enterprise-tutorial/ic777314.png "Политика проверки подлинности")
+    ![Снимок экрана: выбранный пункт "Политика проверки подлинности" в разделе "Конфигурация".](./media/mozy-enterprise-tutorial/ic777314.png "Политика проверки подлинности")
 
 3. В разделе **Политика проверки подлинности** сделайте следующее:
    
-    ![Политика проверки подлинности](./media/mozy-enterprise-tutorial/ic777315.png "Политика проверки подлинности")
+    ![Снимок экрана: раздел "Политика проверки подлинности", где можно ввести указанные значения.](./media/mozy-enterprise-tutorial/ic777315.png "Политика проверки подлинности")
    
     а. Для параметра **Поставщик** выберите значение **Служба каталогов**.
    

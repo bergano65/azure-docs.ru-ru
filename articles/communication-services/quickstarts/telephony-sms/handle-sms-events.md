@@ -9,12 +9,12 @@ ms.author: mikben
 ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 072e885ec1c618229141dea477cd598d8db34ce7
-ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
+ms.openlocfilehash: e66d5c4dd4fc1c6c641da975b0ac2254f459642a
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91756770"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91976935"
 ---
 # <a name="quickstart-handle-sms-events"></a>Краткое руководство. Обработка событий SMS
 
@@ -92,13 +92,13 @@ ms.locfileid: "91756770"
 
 ### <a name="receiving-sms-events"></a>Получение событий SMS
 
-После выполнения любого из приведенных выше действий вы увидите, что события `SMS Received` и `SMS Delivery Report Received` отправляются в конечную точку. Эти события будут отображаться в [примере средства просмотра Сетки событий Azure](https://docs.microsoft.com/samples/azure-samples/azure-event-grid-viewer/azure-event-grid-viewer/), который мы настроили в начале. Чтобы просмотреть все полезные данные, можно нажать значок глаза рядом с событием. События будут выглядеть следующим образом:
+После выполнения любого из приведенных выше действий вы увидите, что события `SMS Received` и `SMS Delivery Report Received` отправляются в конечную точку. Эти события будут отображаться в [примере средства просмотра Сетки событий Azure](https://docs.microsoft.com/samples/azure-samples/azure-event-grid-viewer/azure-event-grid-viewer/), который мы настроили в начале. Чтобы просмотреть все полезные данные, можно нажать значок глаза рядом с событием. События будут выглядеть так:
 
 :::image type="content" source="./media/handle-sms-events/sms-received.png" alt-text="Снимок экрана: нажатие кнопки подписки на события на странице событий ресурса.":::
 
 :::image type="content" source="./media/handle-sms-events/sms-delivery-report-received.png" alt-text="Снимок экрана: нажатие кнопки подписки на события на странице событий ресурса.":::
 
-Дополнительные сведения о схемах и других концепциях событий см. [здесь](../../concepts/event-handling.md).
+Дополнительные сведения см. в статье [Обработка событий в Службах коммуникации Azure](../../concepts/event-handling.md).
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

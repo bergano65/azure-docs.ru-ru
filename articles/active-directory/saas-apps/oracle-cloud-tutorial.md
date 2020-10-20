@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/16/2020
 ms.author: jeedes
-ms.openlocfilehash: d4a478c402346e33a4f27ff2a363de75285b435b
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 7a0da85aeba1a9736884a6b8b345efd3f0a8544c
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88543845"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91996556"
 ---
 # <a name="tutorial-integrate-oracle-cloud-infrastructure-console-with-azure-active-directory"></a>Руководство по интеграции консоли Oracle Cloud Infrastructure Console с Azure Active Directory
 
@@ -101,7 +101,7 @@ ms.locfileid: "88543845"
 
 1. Приложение Oracle Cloud Infrastructure Console ожидает проверочные утверждения SAML в определенном формате, который требует добавить сопоставления настраиваемых атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Нажмите кнопку **Изменить**, чтобы открыть диалоговое окно "Атрибуты пользователя".
 
-   ![Изображение](common/edit-attribute.png)
+   ![Снимок экрана: диалоговое окно "Атрибуты пользователя" с выбранной кнопкой "Изменить" в правом верхнем углу.](common/edit-attribute.png)
 
 1. В дополнение к описанному выше приложение Oracle Cloud Infrastructure Console ожидает несколько дополнительных атрибутов в ответе SAML. В разделе**Утверждения и атрибуты пользователя** в диалоговом окне **Утверждения групп (предварительная версия)** выполните следующие действия:
 
@@ -111,9 +111,9 @@ ms.locfileid: "88543845"
  
    1. Выберите команду **Сохранить**.
 
-      ![Изображение](./media/oracle-cloud-tutorial/config07.png)
+      ![Снимок экрана: раздел "Утверждения и атрибуты пользователя" со значком редактирования для выбранных параметров Name identifier value (Значение идентификатора имени) и "Группы, возвращенные в утверждении".](./media/oracle-cloud-tutorial/config07.png)
     
-      ![Изображение](./media/oracle-cloud-tutorial/config11.png)
+      ![Снимок экрана: диалоговое окно управления утверждениями пользователя с нажатыми кнопками "Постоянный" и "Сохранить".](./media/oracle-cloud-tutorial/config11.png)
 
    1. Щелкните **значок ручки** рядом с параметром **Группы, возвращенные в утверждении**.
 
@@ -173,15 +173,15 @@ ms.locfileid: "88543845"
 
 1. Щелкните левую часть меню и выберите **Identity** (Идентификатор), а затем перейдите к разделу **Federation** (Федерация).
 
-   ![Конфигурация](./media/oracle-cloud-tutorial/config01.png)
+   ![Снимок экрана: Oracle Cloud Infrastructure Console с выбранными пунктами Identity (Идентификатор) и Federation (Федерация) в левой части меню.](./media/oracle-cloud-tutorial/config01.png)
 
 1. Сохраните файл метаданных **поставщика услуг**, щелкнув ссылку **Download this document** (Скачать этот документ) и передайте его в раздел **Базовая конфигурация SAML** на портале Azure, а затем щелкните **Add Identity Provider** (Добавить поставщик удостоверений).
 
-   ![Конфигурация](./media/oracle-cloud-tutorial/config02.png)
+   ![Снимок экрана: пункт Federation (Федерация), выбранный в левой части меню, и выбранная кнопка Add Identity Provider (Добавить поставщик удостоверений) с действием Download this document (Скачать этот документ).](./media/oracle-cloud-tutorial/config02.png)
 
 1. Во всплывающем окне **Add Identity Provider** (Добавление поставщика удостоверений) выполните следующие действия:
 
-   ![Конфигурация](./media/oracle-cloud-tutorial/config03.png)
+   ![Снимок экрана: всплывающее окно Add Identity Provider (Добавление поставщика удостоверений).](./media/oracle-cloud-tutorial/config03.png)
 
    1. В текстовом поле **Name** (Имя) введите имя.
 
@@ -193,7 +193,7 @@ ms.locfileid: "88543845"
 
    1. Нажмите кнопку **Продолжить** и в разделе **Edit Identity Provider** (Изменение поставщика удостоверений) выполните следующие действия:
 
-      ![Конфигурация](./media/oracle-cloud-tutorial/config09.png)
+      ![Снимок экрана: раздел изменения поставщика удостоверений с выделенными параметрами Identity provider group (Группа поставщиков удостоверений), OCI Group (Группа OCI), Add mapping (Добавить сопоставление) и кнопкой "Отправить".](./media/oracle-cloud-tutorial/config09.png)
 
    1. В качестве пользовательской группы нужно выбрать **Identity provider group** (Группа поставщиков удостоверений). Для идентификатора группы нужно использовать GUID группы Azure Active Directory. Группу необходимо сопоставить с соответствующей группой в поле **Oci group** (Группа OCI).
 

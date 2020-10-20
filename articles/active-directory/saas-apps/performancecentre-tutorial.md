@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
-ms.openlocfilehash: d0a19a95a0a0d2353070068b2113e11efe471ccc
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 8c7fb3841958ac80431f7cb3d97ddb01bd3661a7
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88553989"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91995245"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-performancecentre"></a>Руководство по интеграции Azure Active Directory с PerformanceCentre
 
@@ -128,19 +128,19 @@ ms.locfileid: "88553989"
 
 2. На вкладке слева щелкните **Configure**(Настройка).
    
-    ![единого входа Azure AD][10]
+    ![Снимок экрана, на котором показано меню PerformanceCenter с выделенным пунктом Configure (Настройка)][10]
 
 3. На вкладке слева щелкните **Miscellaneous** (Разное), а затем — **Single Sign On** (Единый вход).
    
-    ![единого входа Azure AD][11]
+    ![Снимок экрана: вкладка Configure (Настройка) с пунктом Single Sign-On (Единый вход), выбранным в меню Miscellaneous (Разное)][11]
 
 4. В поле **Protocol** (Протокол) выберите **SAML**.
    
-    ![единого входа Azure AD][12]
+    ![Снимок экрана: раздел Single Sign-On Configuration (Конфигурация единого входа) с пунктом SAML, выбранным в меню Protocol (Протокол)][12]
 
 5. Откройте скачанный файл метаданных, скопируйте и вставьте его содержимое в текстовое поле **Identity Provider Metadata** (Метаданные поставщика удостоверений), а затем нажмите кнопку **Save** (Сохранить).
    
-    ![единого входа Azure AD][13]
+    ![Снимок экрана: текстовое поле Identity Provider Metadata (Метаданные поставщика удостоверений)][13]
 
 6. Проверьте правильность значений в полях **Entity Base URL** (Базовый URL-адрес сущности) и **Entity ID URL** (URL-адрес идентификатора сущности).
     
@@ -207,7 +207,7 @@ ms.locfileid: "88553989"
 
 2. В меню слева выберите **Interrelate** (Установить взаимосвязь), а затем нажмите кнопку **Create Participant** (Создать участника).
    
-    ![Создать пользователя][400]
+    ![Снимок экрана: сайт компании PerformanceCenter со страницей Interrelate -Participants (Взаимосвязь — участники) с выделенной кнопкой Create Participant (Создать участника)][400]
 
 3. В диалоговом окне **Interrelate — Create Participant** (Взаимосвязь — создание участника) выполните следующие действия.
    

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/05/2019
 ms.author: jeedes
-ms.openlocfilehash: 7fffe58dfdb63da28edc19c19b56b576f4fbadd3
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 132da93bcb1e8138b63361cdb448c05b985cdf27
+ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88544049"
+ms.lasthandoff: 10/11/2020
+ms.locfileid: "91940911"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-moxtra"></a>Руководство по интеграции единого входа Azure Active Directory с Moxtra
 
@@ -156,11 +156,11 @@ ms.locfileid: "88544049"
 
 2. На панели инструментов слева щелкните **Консоль администрирования > Единый вход SAML**, а затем щелкните **Создать**.
    
-    ![Настройка единого входа](./media/moxtra-tutorial/tutorial_moxtra_06.png) 
+    ![Снимок экрана демонстрирует страницу единого входа SAML, где есть возможность создать новый единый вход SAML.](./media/moxtra-tutorial/tutorial_moxtra_06.png) 
 
 3. На странице **SAML** выполните следующие действия.
    
-    ![Настройка единого входа](./media/moxtra-tutorial/tutorial_moxtra_08.png)   
+    ![Снимок экрана для страницы SAML, где можно ввести описанные здесь значения.](./media/moxtra-tutorial/tutorial_moxtra_08.png)   
  
     а. В текстовом поле **Имя** введите имя конфигурации (например *SAML*). 
   
@@ -191,7 +191,7 @@ ms.locfileid: "88544049"
 
 1. На панели инструментов слева щелкните **Admin Console (Консоль администрирования) > User Management (Управление пользователями)** , а затем нажмите кнопку **Add User** (Добавить пользователя).
    
-    ![Настройка единого входа](./media/moxtra-tutorial/tutorial_moxtra_10.png) 
+    ![Снимок экрана для страницы управления пользователями, где выбрано действие добавления пользователя.](./media/moxtra-tutorial/tutorial_moxtra_10.png) 
 
 1. На странице **Добавление пользователя** выполните следующие действия.
   

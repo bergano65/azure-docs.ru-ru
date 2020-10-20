@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 08/07/2019
 ms.author: jeedes
-ms.openlocfilehash: 3df547307a49de9e50abe8eb655fbe4acd67a8be
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 8221abe3ff726a7f94d49f69ae18368f87925901
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88552685"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91850835"
 ---
 # <a name="tutorial-integrate-iwellnessnow-with-azure-active-directory"></a>Руководство по Интеграции iWellnessNow с Azure Active Directory
 
@@ -87,7 +87,7 @@ ms.locfileid: "88552685"
 
     c. После успешной передачи файла метаданных значения **Идентификатор** и **URL-адрес ответа** в разделе "Базовая конфигурация SAML" заполнятся автоматически.
 
-    ![Изображение](common/idp-intiated.png)
+    ![Снимок экрана: раздел "Базовая конфигурация SAML", где можно ввести URL-адрес ответа и нажать кнопку "Сохранить".](common/idp-intiated.png)
 
     > [!Note]
     > Если поля **Идентификатор** и **URL-адрес ответа** автоматически не заполняются, введите эти значения вручную в соответствии с поставленной задачей.
@@ -102,7 +102,7 @@ ms.locfileid: "88552685"
 
 1. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
-    ![Изображение](common/metadata-upload-additional-signon.png)
+    ![Снимок экрана, на котором показан параметр "Задать дополнительные URL-адреса" и поле для ввода URL-адреса входа](common/metadata-upload-additional-signon.png)
 
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://<CustomerName>.iwellnessnow.com/`.
 

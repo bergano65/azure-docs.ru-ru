@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 02/27/2019
 ms.author: allensu
 ms.custom: seodec18
-ms.openlocfilehash: 940636a5e368a84aaaf0d4490bf874d56d3ddb6e
-ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
+ms.openlocfilehash: a714368fc0508149714eaa42f4741e1042376c52
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "78251907"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92044961"
 ---
 # <a name="tutorial-load-balance-vms-within-an-availability-zone-with-standard-load-balancer-by-using-the-azure-portal"></a>Руководство по Распределение нагрузки на виртуальные машины в пределах зоны доступности с помощью Load Balancer ценовой категории "Стандартный" и портала Azure
 
@@ -38,6 +38,10 @@ ms.locfileid: "78251907"
 Дополнительные сведения о том, как работают зоны доступности с Load Balancer ценовой категории "Стандартный", см. в статье [Azure Load Balancer уровня "Стандартный" и зоны доступности](load-balancer-standard-availability-zones.md).
 
 Также при работе с этим руководством вы можете использовать [Azure CLI](load-balancer-standard-public-zonal-cli.md).
+
+## <a name="prerequisites"></a>Предварительные требования
+
+* Подписка Azure
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
@@ -228,5 +232,6 @@ Load Balancer ценовой категории "Стандартный" под�
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Узнайте больше об [Azure Load Balancer уровня "Стандартный"](load-balancer-standard-overview.md).
-- [Распределение нагрузки на виртуальные машины в пределах зон доступности](tutorial-load-balancer-standard-public-zone-redundant-portal.md).
+Ознакомиться со следующей статьей о балансировке нагрузки для виртуальных машин в разных зонах доступности.
+> [!div class="nextstepaction"]
+> [Распределение нагрузки виртуальных машин в пределах зон доступности](tutorial-load-balancer-standard-public-zone-redundant-portal.md)
