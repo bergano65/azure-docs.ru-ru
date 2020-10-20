@@ -7,12 +7,12 @@ ms.author: jife
 ms.service: data-share
 ms.topic: troubleshooting
 ms.date: 10/15/2020
-ms.openlocfilehash: 1b61b643ea4b195878a1d12fc1ac4bb7fef23027
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: a323dec66a3077784ff85deadd4f12086648fb3a
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92151367"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92220464"
 ---
 # <a name="troubleshoot-common-issues-in-azure-data-share"></a>Устранение распространенных неполадок в Azure Data Share 
 
@@ -34,7 +34,7 @@ ms.locfileid: "92151367"
     1. Выполните поиск **Microsoft.DataShare**.
     1. Щелкните **Зарегистрировать**. 
 
-    Для выполнения этих действий вам потребуется [роль участника Azure](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#contributor) в подписке Azure. 
+    Для выполнения этих действий вам потребуется [роль участника Azure](../role-based-access-control/built-in-roles.md#contributor) в подписке Azure. 
 
 * **Приглашение отправляется в псевдоним электронной почты вместо адреса электронной почты для входа в Azure.** Если вы зарегистрировали службу Azure Data Share или уже создали ресурс Data Share в клиенте Azure, но по-прежнему не видите приглашение, это может быть вызвано тем, что поставщик указал ваш псевдоним электронной почты в качестве получателя вместо адреса электронной почты для входа в Azure. Обратитесь к поставщику данных и убедитесь, что он отправил приглашение на ваш адрес электронной почты для входа в Azure, а не на другой адрес.
 
@@ -81,4 +81,3 @@ ms.locfileid: "92151367"
 Чтобы узнать, как приступить к обмену данными, перейдите к [этому](share-your-data.md) руководству. 
 
 Чтобы узнать, как получать данные, перейдите к руководству по [принятию и получению данных](subscribe-to-data-share.md) .
-

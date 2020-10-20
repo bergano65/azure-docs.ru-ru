@@ -10,12 +10,12 @@ ms.topic: how-to
 ms.date: 05/07/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 49a5ff61e5f7a17005561e0729a9b0fcb0f954d4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 10f86d194c5c70f2de0ab6502893e228800b1bdf
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85389570"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92215473"
 ---
 # <a name="configure-tokens-in-azure-active-directory-b2c"></a>Настройка маркеров в Azure Active Directory B2C
 
@@ -40,6 +40,9 @@ ms.locfileid: "85389570"
     ![Параметры времени существования маркера на портале Azure](./media/configure-tokens/token-lifetime.png)
 
 8. Выберите команду **Сохранить**.
+
+> [!NOTE]
+> Одностраничные приложения, использующие поток кода авторизации с PKCE, всегда имеют время существования маркера обновления 24 часа. [Узнайте больше о влиянии маркеров обновления в браузере на безопасность](../active-directory/develop/reference-third-party-cookies-spas.md#security-implications-of-refresh-tokens-in-the-browser).
 
 ## <a name="configure-jwt-token-compatibility"></a>Настройка совместимости маркеров JWT
 

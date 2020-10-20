@@ -1,20 +1,17 @@
 ---
-title: 'Сценарий PowerShell: список приглашений на общий ресурс Azure, отправленных потребителю | Документация Майкрософт'
+title: 'Сценарий PowerShell: список приглашений на общий ресурс Azure, отправленных потребителю'
 description: Узнайте, как этот сценарий PowerShell получает приглашения, отправляемые потребителю, и просмотрите пример скрипта, который можно использовать.
-services: data-share
 author: joannapea
+ms.author: joanpo
 ms.service: data-share
-ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 07/07/2019
-ms.author: joanpo
-ms.openlocfilehash: 3f0374ba5b98c145359d18143584e23fc543c552
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5f75894094fa2a15dbc9e2809ed6c3631df96c3f
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90985624"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92221219"
 ---
 # <a name="use-powershell-to-get-a-data-share-invitation"></a>Использование PowerShell для получения приглашения для общего доступа к данным
 
@@ -40,11 +37,11 @@ Get-AzDataShareInvitation -location -invitationId
 
 | Get-Help | Примечания |
 |---|---|
-| [Get-Аздаташареинвитатион](/powershell/module/az.datashare/get-azdatashareinvitation?view=azps-2.6.0) | Получение и перечисление отправленных приглашений на обмен данными. |
+| [Get-Аздаташареинвитатион](/powershell/module/az.datashare/get-azdatashareinvitation) | Получение и перечисление отправленных приглашений на обмен данными. |
 |||
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о Azure PowerShell см. в [документации по Azure PowerShell](https://docs.microsoft.com/powershell/).
+Дополнительные сведения о Azure PowerShell см. в [документации по Azure PowerShell](/powershell/).
 
 Дополнительные примеры сценариев PowerShell для общего ресурса Azure Data Share можно найти в [примерах PowerShell для общего доступа к данным Azure](../../samples-powershell.md).

@@ -20,6 +20,12 @@
       items:
         - name: Создание плана выполнения
           href: example-terraform-bash.md
+- name: Основные понятия
+  items:
+    - name: Безопасность
+      items:
+        - name: Базовые средства безопасности
+          href: security-baseline.md
 - name: Практические руководства
   items:
     - name: Использование Cloud Shell для пользователей Windows

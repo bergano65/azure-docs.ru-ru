@@ -1,20 +1,18 @@
 ---
-title: Сценарий PowerShell. Добавление набора данных большого двоичного объекта в общую папку данных Azure | Документация Майкрософт
+title: Сценарий PowerShell. Добавление набора данных большого двоичного объекта в общую папку данных Azure
 description: Этот сценарий PowerShell добавляет набор данных большого двоичного объекта в существующую общую папку.
 services: data-share
 author: joannapea
+ms.author: joanpo
 ms.service: data-share
-ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 07/07/2019
-ms.author: joanpo
-ms.openlocfilehash: 95a10b112c9f6448c437f20ee95f808632a31d2d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7f2a2dded0b9c817e0700f4f93782d3b5c11ac3f
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "70307296"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92221389"
 ---
 # <a name="use-powershell-to-create-a-data-share-in-azure"></a>Создание общей папки данных в Azure с помощью PowerShell
 
@@ -44,11 +42,11 @@ New-AzDataShareDataSet -ResourceGroupName $resourceGroupName -AccountName $dataS
 
 | Get-Help | Примечания |
 |---|---|
-| [New-Аздаташаредатасет](/powershell/module/az.datashare/new-azdatasharedataset?view=azps-2.6.0) | Добавляет набор данных в общую папку данных. |
+| [New-Аздаташаредатасет](/powershell/module/az.datashare/new-azdatasharedataset) | Добавляет набор данных в общую папку данных. |
 |||
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о Azure PowerShell см. в [документации по Azure PowerShell](https://docs.microsoft.com/powershell/).
+Дополнительные сведения о Azure PowerShell см. в [документации по Azure PowerShell](/powershell/).
 
 Дополнительные примеры сценариев PowerShell для общего ресурса Azure Data Share можно найти в [примерах PowerShell для общего доступа к данным Azure](../../samples-powershell.md).

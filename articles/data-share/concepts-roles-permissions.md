@@ -6,12 +6,12 @@ ms.author: jife
 ms.service: data-share
 ms.topic: conceptual
 ms.date: 10/15/2020
-ms.openlocfilehash: ac528d1cfb74221a7398e390cedda08df4ea4508
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: efb86dbcbe7619ff6727c5e7374835dc3fc7d731
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92151399"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92220505"
 ---
 # <a name="roles-and-requirements-for-azure-data-share"></a>Роли и требования для Azure Data Share 
 
@@ -61,9 +61,9 @@ ms.locfileid: "92151399"
 1. Выберите **добавить назначение ролей**.
 1. В разделе *роль*выберите роль в таблице назначение ролей (например, для учетной записи хранения выберите *модуль чтения данных BLOB-объекта хранилища*).
 1. В поле *выбрать*введите имя общего ресурса данных Azure.
-1. Нажмите кнопку *Сохранить*.
+1. Выберите команду *Сохранить*.
 
-Дополнительные сведения о назначении ролей см. в разделе [Добавление или удаление назначений ролей Azure с помощью портал Azure](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal#add-a-role-assignment). При совместном использовании данных с помощью API-интерфейсов RESTFUL можно создать назначение ролей с помощью API-интерфейса, обратившись [к элементу Добавление или удаление назначений ролей Azure с помощью REST API](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-rest). 
+Дополнительные сведения о назначении ролей см. в разделе [Добавление или удаление назначений ролей Azure с помощью портал Azure](../role-based-access-control/role-assignments-portal.md#add-a-role-assignment). При совместном использовании данных с помощью API-интерфейсов RESTFUL можно создать назначение ролей с помощью API-интерфейса, обратившись [к элементу Добавление или удаление назначений ролей Azure с помощью REST API](../role-based-access-control/role-assignments-rest.md). 
 
 Для источников на основе SQL пользователь SQL должен быть создан из внешнего поставщика в базе данных SQL с тем же именем, что и ресурс общего ресурса данных Azure при подключении к базе данных SQL с использованием Azure Active Directory проверки подлинности. Этому пользователю необходимо предоставить разрешение *db_datareader* . Пример скрипта, а также другие необходимые компоненты для общего доступа на основе SQL можно найти в статье Общие сведения о [базе данных SQL Azure или синапсе Analytics](how-to-share-from-sql.md) . 
 
@@ -81,9 +81,9 @@ ms.locfileid: "92151399"
 1. Выберите **добавить назначение ролей**.
 1. В разделе *роль*выберите роль в таблице назначение ролей (например, для учетной записи хранения выберите *модуль чтения данных BLOB-объекта хранилища*).
 1. В поле *выбрать*введите имя общего ресурса данных Azure.
-1. Нажмите кнопку *Сохранить*.
+1. Выберите команду *Сохранить*.
 
-Дополнительные сведения о назначении ролей см. в разделе [Добавление или удаление назначений ролей Azure с помощью портал Azure](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal#add-a-role-assignment). Если вы получаете данные с помощью API-интерфейсов RESTFUL, можно создать назначение ролей с помощью API, обратившись [к элементу Добавление или удаление назначений ролей Azure с помощью REST API](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-rest). 
+Дополнительные сведения о назначении ролей см. в разделе [Добавление или удаление назначений ролей Azure с помощью портал Azure](../role-based-access-control/role-assignments-portal.md#add-a-role-assignment). Если вы получаете данные с помощью API-интерфейсов RESTFUL, можно создать назначение ролей с помощью API, обратившись [к элементу Добавление или удаление назначений ролей Azure с помощью REST API](../role-based-access-control/role-assignments-rest.md). 
 
 Для целевого объекта на основе SQL пользователь SQL должен быть создан из внешнего поставщика в базе данных SQL с тем же именем, что и ресурс общего ресурса данных Azure, при подключении к базе данных SQL с использованием Azure Active Directory проверки подлинности. Этому пользователю необходимо предоставить разрешения *db_datareader, db_datawriter, db_ddladmin* . Пример скрипта, а также другие необходимые компоненты для общего доступа на основе SQL можно найти в статье Общие сведения о [базе данных SQL Azure или синапсе Analytics](how-to-share-from-sql.md) . 
 
@@ -103,7 +103,7 @@ ms.locfileid: "92151399"
 1. Найдите файл Microsoft.
 1. Щелкните **Зарегистрировать**.
  
-Дополнительные сведения о поставщике ресурсов см. в статье [поставщики и типы ресурсов Azure](https://docs.microsoft.com/azure/azure-resource-manager/management/resource-providers-and-types).
+Дополнительные сведения о поставщике ресурсов см. в статье [поставщики и типы ресурсов Azure](../azure-resource-manager/management/resource-providers-and-types.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

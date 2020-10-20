@@ -12,12 +12,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 09/23/2020
 ms.author: damendo
-ms.openlocfilehash: e367c348364d03cec6914c99e7ff112803fc58f6
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
+ms.openlocfilehash: 640b148dc22aa87592a6adcfca99c8ed35731934
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92132437"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92220607"
 ---
 # <a name="update-the-network-watcher-extension-to-the-latest-version"></a>Обновление расширения наблюдателя за сетями до последней версии
 
@@ -25,7 +25,7 @@ ms.locfileid: "92132437"
 
 [Наблюдатель за сетями Azure](../../network-watcher/network-watcher-monitoring-overview.md) — это служба наблюдения за производительностью сети, диагностики и аналитики, которая наблюдает за сетями Azure. Расширение виртуальной машины агента наблюдателя за сетями — это требование для записи сетевого трафика по требованию и использования других расширенных функций на виртуальных машинах Azure. Расширение наблюдателя за сетями используется такими функциями, как монитор подключения, монитор подключения (Предварительная версия), устранение неполадок подключения и запись пакетов.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 В этой статье предполагается, что на виртуальной машине установлено расширение наблюдателя за сетями.
 
@@ -52,20 +52,22 @@ ms.locfileid: "92132437"
 Выполните следующую команду в командной строке Azure CLI:
 
 ```azurecli
-az vm extension list --resource-group  <ResourceGroupName> --vm-name <VMName>
+az vm get-instance-view --resource-group  "SampleRG" --name "Sample-VM"
 ```
+Найдите **"азуренетворкватчерекстенсион"** в выходных данных и выясните номер версии из поля *"TypeHandlerVersion"* в выходных данных.  Примечание. сведения о расширении встречаются в выходных данных JSON несколько раз. Проверьте блок "Extensions", и вы увидите полный номер версии расширения. 
 
-В выходных данных откройте расширение Азуренетворкватчер. Найдите номер версии в поле "TypeHandlerVersion" в выходных данных.  
+Вы должны увидеть нечто вроде: ![ Azure CLI снимке экрана](./media/network-watcher/azure-cli-screenshot.png)
 
 #### <a name="usepowershell"></a>Использование PowerShell
 
 Выполните следующие команды в командной строке PowerShell:
 
 ```powershell
-Get-AzVMExtension -ResourceGroupName <ResourceGroupName> -VMName <VMName>  
+Get-AzVM -ResourceGroupName "SampleRG" -Name "Sample-VM" -Status
 ```
+Найдите в выходных данных расширение наблюдателя за сетями Azure и найдите номер версии из поля *"TypeHandlerVersion"* в выходных данных.   
 
-В выходных данных откройте расширение Азуренетворкватчер. Найдите номер версии в поле "TypeHandlerVersion" в выходных данных.
+Вы должны увидеть нечто вроде: ![ снимок экрана PowerShell](./media/network-watcher/powershell-screenshot.png)
 
 ### <a name="update-your-extension"></a>Обновление расширения
 
@@ -81,6 +83,25 @@ Set-AzVMExtension `  -ResourceGroupName "myResourceGroup1" `  -Location "WestUS"
 
 #Windows command
 Set-AzVMExtension `  -ResourceGroupName "myResourceGroup1" `  -Location "WestUS" `  -VMName "myVM1" `  -Name "AzureNetworkWatcherExtension" `  -Publisher "Microsoft.Azure.NetworkWatcher" -Type "NetworkWatcherAgentWindows"   
+```
+
+Если это не сработает. Удалите и снова установите расширение, выполнив приведенные ниже действия. При этом будет автоматически добавлена последняя версия.
+
+Удаление расширения 
+
+```powershell
+#Same command for Linux and Windows
+Remove-AzVMExtension -ResourceGroupName "SampleRG" -VMName "Sample-VM" -Name "AzureNetworkWatcherExtension"
+``` 
+
+Повторная установка расширения
+
+```powershell
+#Linux command
+Set-AzVMExtension -ResourceGroupName "SampleRG" -Location "centralus" -VMName "Sample-VM" -Name "AzureNetworkWatcherExtension" -Publisher "Microsoft.Azure.NetworkWatcher" -Type "NetworkWatcherAgentLinux" -typeHandlerVersion "1.4"
+
+#Windows command
+Set-AzVMExtension -ResourceGroupName "SampleRG" -Location "centralus" -VMName "Sample-VM" -Name "AzureNetworkWatcherExtension" -Publisher "Microsoft.Azure.NetworkWatcher" -Type "NetworkWatcherAgentWindows" -typeHandlerVersion "1.4"
 ```
 
 #### <a name="option-2-use-the-azure-cli"></a>Вариант 2. Использование Azure CLI
