@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/01/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 306b70fb08622d161ab8f150dc5eec3fdbacaeeb
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 303720cf50b5eabf22319e1eeae7423c4f1d94bb
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92072872"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92201704"
 ---
 # <a name="azure-security-baseline-for-azure-kubernetes-service"></a>Базовый план безопасности Azure для службы Kubernetes Azure
 
@@ -854,7 +854,7 @@ ms.locfileid: "92072872"
 
 - [Использование мониторинга целостности файлов](../security-center/security-center-file-integrity-monitoring.md)
 
-- [Общие сведения об Azure Отслеживание изменений](../automation/change-tracking.md)
+- [Общие сведения об Azure Отслеживание изменений](../automation/change-tracking/overview.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -1235,7 +1235,7 @@ security-hardened-vm-host-image.md
 
 Выполняйте регулярное автоматическое резервное копирование Key Vault сертификатов, ключей, управляемых учетных записей хранения и секретов с помощью команд PowerShell. 
 
-Например.
+Пример:
 
 Backup-AzKeyVaultCertificate Backup-AzKeyVaultKey Backup-AzKeyVaultManagedStorageAccount Backup-AzKeyVaultSecret
 
@@ -1259,7 +1259,7 @@ Backup-AzKeyVaultCertificate Backup-AzKeyVaultKey Backup-AzKeyVaultManagedStorag
 
 Периодически выполняйте восстановление данных Key Vault сертификатов, ключей, управляемых учетных записей хранения и секретов с помощью команд PowerShell. 
 
-Например.
+Пример:
 
 Restore-AzKeyVaultCertificate Restore-AzKeyVaultKey Restore-AzKeyVaultManagedStorageAccount Restore-AzKeyVaultSecret
 

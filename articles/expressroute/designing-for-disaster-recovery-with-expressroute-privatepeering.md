@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: article
 ms.date: 05/25/2019
 ms.author: duau
-ms.openlocfilehash: 0c85272989a362da77b01af7bb1fe968516e53b6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2a5730cd75ccb76d25897e9109555113f7355c2f
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89398008"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92202419"
 ---
 # <a name="designing-for-disaster-recovery-with-expressroute-private-peering"></a>Проектирование аварийного восстановления с помощью частного пиринга ExpressRoute
 
@@ -131,7 +131,7 @@ ExpressRoute обеспечивает высокий уровень доступ
 [![10]][10]
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье мы рассмотрели, как спроектировать аварийное восстановление подключения частного пиринга в канале ExpressRoute. Следующие статьи посвящены аварийному восстановлению приложений и интерфейсных перспектив доступа.
 
@@ -151,13 +151,8 @@ ExpressRoute обеспечивает высокий уровень доступ
 [10]: ./media/designing-for-disaster-recovery-with-expressroute-pvt/multi-region-sol2.png "активных и активных каналов ExpressRoute, решение 2"
 
 <!--Link References-->
-[HA]: https://docs.microsoft.com/azure/expressroute/designing-for-high-availability-with-expressroute
+[HA]: ./designing-for-high-availability-with-expressroute.md
 [Enterprise DR]: https://azure.microsoft.com/solutions/architecture/disaster-recovery-enterprise-scale-dr/
 [SMB DR]: https://azure.microsoft.com/solutions/architecture/disaster-recovery-smb-azure-site-recovery/
-[con wgt]: https://docs.microsoft.com/azure/expressroute/expressroute-optimize-routing#solution-assign-a-high-weight-to-local-connection
-[AS Path Pre]: https://docs.microsoft.com/azure/expressroute/expressroute-optimize-routing#solution-use-as-path-prepending
-
-
-
-
-
+[con wgt]: ./expressroute-optimize-routing.md#solution-assign-a-high-weight-to-local-connection
+[AS Path Pre]: ./expressroute-optimize-routing.md#solution-use-as-path-prepending

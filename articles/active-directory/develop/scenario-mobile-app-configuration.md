@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 06/16/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 52bfd76a12f431576d4fc3cc7a51c6e58c7551ff
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 43cb891ad63a23353437082f7cb1b1e45f146e5b
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89442757"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92204224"
 ---
 # <a name="configure-a-mobile-app-that-calls-web-apis"></a>Настройка мобильного приложения, вызывающего веб-API
 
@@ -160,7 +160,7 @@ var pca = PublicClientApplicationBuilder
 
 ### <a name="enable-the-broker-for-msal-for-android"></a>Включение брокера для MSAL для Android
 
-Сведения о включении брокера в Android см. [в статье Проверка подлинности через посредника в Android](brokered-auth.md).
+Сведения о включении брокера в Android см. [в статье Проверка подлинности через посредника в Android](msal-android-single-sign-on.md).
 
 ### <a name="enable-the-broker-for-msal-for-ios-and-macos"></a>Включение брокера для MSAL для iOS и macOS
 
@@ -365,7 +365,7 @@ MSAL для iOS и macOS использует URL-адреса для вызов
 
 Сведения о включении брокера в Android см. [в статье Проверка подлинности через посредника в Xamarin. Android](msal-net-use-brokers-with-xamarin-apps.md#brokered-authentication-for-android).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Получение маркера](scenario-mobile-acquire-token.md)

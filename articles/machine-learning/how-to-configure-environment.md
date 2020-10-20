@@ -11,12 +11,12 @@ ms.reviewer: larryfr
 ms.date: 09/30/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, contperfq1
-ms.openlocfilehash: b97d36a5773eeb82a60330d0398ea19232f72b1e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 98bc108af22491c6ea0b64bc2e278b6b32f43a5b
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91613719"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92203098"
 ---
 # <a name="set-up-a-development-environment-for-azure-machine-learning"></a>Настройка среды разработки для Машинное обучение Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "91613719"
 
 * Visual Studio Code. при использовании Visual Studio Code [расширение машинное обучение Azure](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.vscode-ai) включает расширенную языковую поддержку для Python, а также функции, позволяющие работать с машинное обучение Azure гораздо более удобной и продуктивной.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Рабочая область Машинное обучение Azure. Если у вас ее нет, можно создать рабочую область Машинное обучение Azure с помощью шаблонов [портал Azure](how-to-manage-workspace.md), [Azure CLI](how-to-manage-workspace-cli.md#create-a-workspace)и [Azure Resource Manager](how-to-create-workspace-template.md).
 
@@ -223,7 +223,7 @@ Azure Databricks — это среда, которая лежит в основ�
 Создание [кластера кирпичей](https://docs.microsoft.com/azure/azure-databricks/quickstart-create-databricks-workspace-portal). Некоторые параметры применяются только в том случае, если пакет SDK устанавливается для автоматического машинного обучения в модулях.
 **Создание кластера занимает несколько минут.**
 
-Используйте следующие параметры.
+Используйте следующие параметры:
 
 | Параметр |Область применения| Значение |
 |----|---|---|
@@ -276,7 +276,7 @@ Azure Databricks — это среда, которая лежит в основ�
 Если кластер был создан с модулями данных, не являющимися средой выполнения ML 7,1 или выше, выполните следующую команду в первой ячейке записной книжки, чтобы установить пакет SDK для AML.
 
 ```
-%pip install -r https://aka.ms/automl_linux_requirements.txt
+%pip install --upgrade --force-reinstall -r https://aka.ms/automl_linux_requirements.txt
 ```
 Для модулями выполнения, не поддерживающими ML Runtime 7,0 и ниже, установите пакет SDK для AML с помощью [скрипта init](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/azure-databricks/automl/README.md).
 
@@ -291,7 +291,7 @@ Azure Databricks — это среда, которая лежит в основ�
 
 + Узнайте, как [создать конвейер с модулями обработки в качестве обучающего вычислений](how-to-create-your-first-pipeline.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Обучение модели](tutorial-train-models-with-aml.md) на машинное обучение Azure с помощью набора данных MNIST
 - Просмотрите статью [What is the Azure Machine Learning SDK for Python?](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py&preserve-view=true) (Что такое пакет SDK для Машинного обучения Azure для Python?)
