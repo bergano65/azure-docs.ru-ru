@@ -94,25 +94,24 @@
     - name: Монитор
     - name: Создание ролей и разрешений
       href: spring-cloud-howto-permissions.md
-      items:
-        - name: Распределенная трассировка и App Insights
-          href: spring-cloud-tutorial-distributed-tracing.md
-        - name: Анализ журналов и метрик
-          href: diagnostic-services.md
-        - name: Потоковая передача журналов в реальном времени
-          href: spring-cloud-howto-log-streaming.md
-    - name: Развертывание DevOps
-      items:
-        - name: CI/CD и Azure DevOps
-          href: spring-cloud-howto-cicd.md
-        - name: CI/CD и GitHub Actions
-          href: spring-cloud-howto-github-actions.md
-        - name: Аутентификация с помощью Key Vault в GitHub Actions
-          href: spring-cloud-github-actions-key-vault.md
-    - name: Диагностика
-      items:
-        - name: Руководство по устранению неполадок
-          href: spring-cloud-troubleshoot.md
+    - name: Распределенная трассировка и App Insights
+      href: spring-cloud-tutorial-distributed-tracing.md
+    - name: Анализ журналов и метрик
+      href: diagnostic-services.md
+    - name: Потоковая передача журналов в реальном времени
+      href: spring-cloud-howto-log-streaming.md
+- name: Развертывание DevOps
+  items:
+    - name: CI/CD и Azure DevOps
+      href: spring-cloud-howto-cicd.md
+    - name: CI/CD и GitHub Actions
+      href: spring-cloud-howto-github-actions.md
+    - name: Аутентификация с помощью Key Vault в GitHub Actions
+      href: spring-cloud-github-actions-key-vault.md
+- name: Диагностика
+  items:
+    - name: Руководство по устранению неполадок
+      href: spring-cloud-troubleshoot.md
 - name: Справочник
   items:
     - name: "Подключаемый модуль Azure\_CLI"

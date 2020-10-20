@@ -1,20 +1,18 @@
 ---
-title: 'Скрипт PowerShell: список существующих общих ресурсов в общей папке данных Azure | Документация Майкрософт'
+title: 'Скрипт PowerShell: список существующих общих ресурсов в общей папке данных Azure'
 description: Этот сценарий PowerShell выводит список и отображает подробные сведения об общих ресурсах.
 services: data-share
 author: joannapea
+ms.author: joanpo
 ms.service: data-share
-ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 07/07/2019
-ms.author: joanpo
-ms.openlocfilehash: 6314bd348c22c901001b88eda6875181a2f69df4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 54b4b6cedc2dc09e4a9d5c4b7b937e80750e17c6
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "70307123"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92220828"
 ---
 # <a name="use-powershell-to-view-the-details-of-a-sent-data-share"></a>Использование PowerShell для просмотра сведений о отправленной общей папке данных
 
@@ -45,11 +43,11 @@ Get-AzDataShare -ResourceGroupName $resourceGroupName -AccountName $dataShareAcc
 
 | Get-Help | Примечания |
 |---|---|
-| [Get-Аздаташаре](/powershell/module/az.datashare/get-azdatashare?view=azps-2.6.0) | Возвращает списки общих ресурсов в учетной записи. |
+| [Get-Аздаташаре](/powershell/module/az.datashare/get-azdatashare) | Возвращает списки общих ресурсов в учетной записи. |
 |||
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о Azure PowerShell см. в [документации по Azure PowerShell](https://docs.microsoft.com/powershell/).
+Дополнительные сведения о Azure PowerShell см. в [документации по Azure PowerShell](/powershell/).
 
 Дополнительные примеры сценариев PowerShell для общего ресурса Azure Data Share можно найти в [примерах PowerShell для общего доступа к данным Azure](../../samples-powershell.md).

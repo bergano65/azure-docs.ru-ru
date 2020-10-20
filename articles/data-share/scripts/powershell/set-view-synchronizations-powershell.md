@@ -1,22 +1,19 @@
 ---
-title: 'Сценарий PowerShell: Настройка и Просмотр параметров синхронизации общего ресурса Azure | Документация Майкрософт'
+title: 'Скрипт PowerShell: Настройка и Просмотр параметров синхронизации общего ресурса данных Azure'
 description: Этот сценарий PowerShell задает и получает общие параметры синхронизации.
-services: data-share
 author: joannapea
 ms.service: data-share
-ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 07/07/2019
 ms.author: joanpo
-ms.openlocfilehash: 0ced66c1d3023b7edb3220b45e24d3eb54098df8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 401754436739e5594c0d7baac6507f9d9984fc31
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86512492"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92221287"
 ---
-# <a name="use-powershell-to-set-azure-data-share-sychronization-settings"></a>Настройка параметров синхронизации общего ресурса данных Azure с помощью PowerShell
+# <a name="use-powershell-to-set-azure-data-share-synchronization-settings"></a>Использование PowerShell для задания параметров синхронизации общего ресурса данных Azure
 
 Этот сценарий PowerShell задает и получает общие параметры синхронизации.
 
@@ -48,12 +45,12 @@ Get-AzDataShareSynchronizationSetting -ResourceGroupName $resourceGroupName -Acc
 
 | Get-Help | Примечания |
 |---|---|
-| [New-Аздаташаресинчронизатионсеттинг](/powershell/module/az.datashare/new-azdatasharesynchronizationsetting?view=azps-2.6.0) | Создайте синхронизацию общего ресурса. |
-| [Get-Аздаташаресинчронизатионсеттинг](/powershell/module/az.datashare/get-azdatasharesynchronizationsetting?view=azps-2.6.0) | Возвращает параметры синхронизации общей папки. |
+| [New-Аздаташаресинчронизатионсеттинг](/powershell/module/az.datashare/new-azdatasharesynchronizationsetting) | Создайте синхронизацию общего ресурса. |
+| [Get-Аздаташаресинчронизатионсеттинг](/powershell/module/az.datashare/get-azdatasharesynchronizationsetting) | Возвращает параметры синхронизации общей папки. |
 |||
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о Azure PowerShell см. в [документации по Azure PowerShell](https://docs.microsoft.com/powershell/).
+Дополнительные сведения о Azure PowerShell см. в [документации по Azure PowerShell](/powershell/).
 
 Дополнительные примеры сценариев PowerShell для общего ресурса Azure Data Share можно найти в [примерах PowerShell для общего доступа к данным Azure](../../samples-powershell.md).

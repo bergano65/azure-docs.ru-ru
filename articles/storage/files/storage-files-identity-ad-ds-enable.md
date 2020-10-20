@@ -7,12 +7,12 @@ ms.subservice: files
 ms.topic: how-to
 ms.date: 09/13/2020
 ms.author: rogarana
-ms.openlocfilehash: 732f143c9cdc0d8fbfdcf1b24f5e73280e036285
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 6251894018ceeb2a99ebb62939b6e446fea825a2
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92042621"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92220726"
 ---
 # <a name="part-one-enable-ad-ds-authentication-for-your-azure-file-shares"></a>Часть 1. Включение проверки подлинности AD DS для файловых ресурсов Azure 
 
@@ -155,6 +155,16 @@ $storageAccount.AzureFilesIdentityBasedAuth.DirectoryServiceOptions
 $storageAccount.AzureFilesIdentityBasedAuth.ActiveDirectoryProperties
 ```
 
+В случае успеха выходные данные должны выглядеть следующим образом:
+
+```PowerShell
+DomainName:<yourDomainHere>
+NetBiosDomainName:<yourNetBiosDomainNameHere>
+ForestName:<yourForestNameHere>
+DomainGuid:<yourGUIDHere>
+DomainSid:<yourSIDHere>
+AzureStorageID:<yourStorageSIDHere>
+```
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Вы успешно включили функцию в учетной записи хранения. Чтобы использовать эту функцию, необходимо назначить разрешения на уровне общего ресурса. Перейдите к следующему разделу.

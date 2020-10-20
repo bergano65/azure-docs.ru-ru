@@ -7,32 +7,32 @@ ms.topic: conceptual
 ms.date: 07/22/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: d01808eac854e0a694608fc963bd97b035d29ac8
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 03d960f95aed4c6843e29dbebd37feec64b6eae2
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92146182"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92221151"
 ---
 # <a name="azure-security-baseline-for-data-lake-analytics"></a>Базовый план безопасности Azure для Data Lake Analytics
 
 Базовый план безопасности Azure для Data Lake Analytics содержит рекомендации, которые помогут повысить уровень безопасности развертывания.
 
-Базовый план безопасности для этой службы взят из [Эталона безопасности Azure версии 1.0](https://docs.microsoft.com/azure/security/benchmarks/overview), содержащего рекомендации по обеспечению безопасности облачных решений в Azure с помощью наших практических рекомендаций.
+Базовый план безопасности для этой службы взят из [Эталона безопасности Azure версии 1.0](../security/benchmarks/overview.md), содержащего рекомендации по обеспечению безопасности облачных решений в Azure с помощью наших практических рекомендаций.
 
-Дополнительные сведения см. в статье [Обзор базовой конфигурации безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/security-baselines-overview).
+Дополнительные сведения см. в статье [Обзор базовой конфигурации безопасности Azure](../security/benchmarks/security-baselines-overview.md).
 
 ## <a name="network-security"></a>Безопасность сети
 
-*Дополнительные сведения см. в статье [Управление безопасностью: безопасность сети](/azure/security/benchmarks/security-control-network-security).*
+*Дополнительные сведения см. в статье [Управление безопасностью: безопасность сети](../security/benchmarks/security-control-network-security.md).*
 
 ### <a name="11-protect-azure-resources-within-virtual-networks"></a>1,1: защита ресурсов Azure в виртуальных сетях
 
 **Руководство**. Используйте параметры брандмауэра для Data Lake Analytics ограничения внешних диапазонов IP-адресов, чтобы разрешить доступ с локальных клиентов и сторонних служб. Настройка параметров брандмауэра доступна через портал, API-интерфейсы или PowerShell.
 
-* [Правила брандмауэра](https://docs.microsoft.com/rest/api/datalakeanalytics/firewallrules)
+* [Правила брандмауэра](/rest/api/datalakeanalytics/firewallrules)
 
-* [Управление аналитикой озера данных Azure с помощью Azure PowerShell](https://docs.microsoft.com/azure/data-lake-analytics/data-lake-analytics-manage-use-powershell)
+* [Управление аналитикой озера данных Azure с помощью Azure PowerShell](./data-lake-analytics-manage-use-powershell.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -58,9 +58,9 @@ ms.locfileid: "92146182"
 
 **Руководство**. Используйте параметры брандмауэра для Data Lake Analytics ограничения внешних диапазонов IP-адресов, чтобы разрешить доступ с локальных клиентов и сторонних служб. Настройка параметров брандмауэра доступна через портал, API-интерфейсы или PowerShell.
 
-* [Правила брандмауэра](https://docs.microsoft.com/rest/api/datalakeanalytics/firewallrules)
+* [Правила брандмауэра](/rest/api/datalakeanalytics/firewallrules)
 
-* [Управление аналитикой озера данных Azure с помощью Azure PowerShell](https://docs.microsoft.com/azure/data-lake-analytics/data-lake-analytics-manage-use-powershell)
+* [Управление аналитикой озера данных Azure с помощью Azure PowerShell](./data-lake-analytics-manage-use-powershell.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -124,7 +124,7 @@ ms.locfileid: "92146182"
 
 ## <a name="logging-and-monitoring"></a>Ведение журналов и мониторинг
 
-*Дополнительные сведения см. в статье [Управление безопасностью: ведение журналов и мониторинг](/azure/security/benchmarks/security-control-logging-monitoring).*
+*Дополнительные сведения см. в статье [Управление безопасностью: ведение журналов и мониторинг](../security/benchmarks/security-control-logging-monitoring.md).*
 
 ### <a name="21-use-approved-time-synchronization-sources"></a>2.1. Использование утвержденных источников синхронизации времени
 
@@ -140,13 +140,13 @@ ms.locfileid: "92146182"
 
 Кроме того, вы можете включить и подключить данные к Azure Sentinel или сторонним SIEM.
 
-* [Доступ к журналам диагностики для Azure Data Lake Analytics](https://docs.microsoft.com/azure/data-lake-analytics/data-lake-analytics-diagnostic-logs)
+* [Доступ к журналам диагностики для Azure Data Lake Analytics](./data-lake-analytics-diagnostic-logs.md)
 
-* [Подключение к Azure Sentinel](https://docs.microsoft.com/azure/sentinel/quickstart-onboard)
+* [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
-* [Как получить журналы и метрики платформы с помощью Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings)
+* [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/platform/diagnostic-settings.md)
 
-* [Как получить журналы внутреннего узла виртуальной машины Azure с помощью Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/learn/quick-collect-azurevm)
+* [Как получить журналы внутреннего узла виртуальной машины Azure с помощью Azure Monitor](../azure-monitor/learn/quick-collect-azurevm.md)
 
 * [Начало работы с Azure Monitor и интеграция SIEM стороннего производителя](https://azure.microsoft.com/blog/use-azure-monitor-to-integrate-with-siem-tools/)
 
@@ -158,9 +158,9 @@ ms.locfileid: "92146182"
 
 **Руководство**. Включение параметров диагностики для Data Lake Analytics доступа к журналам аудита и запросов. К ним относятся такие данные, как источник событий, Дата, пользователь, отметка времени и другие полезные элементы.
 
-* [Как получить журналы и метрики платформы с помощью Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings)
+* [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/platform/diagnostic-settings.md)
 
-* [Общие сведения о ведении журналов и различных типах журналов в Azure](https://docs.microsoft.com/azure/azure-monitor/platform/platform-logs-overview)
+* [Общие сведения о ведении журналов и различных типах журналов в Azure](../azure-monitor/platform/platform-logs-overview.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -178,9 +178,9 @@ ms.locfileid: "92146182"
 
 **Рекомендации**. в Azure Monitor задайте срок хранения log Analytics рабочей области в соответствии с нормативными требованиями Организации. Используйте учетные записи хранения Azure для долгосрочного и архивного хранения.
 
-* [Изменение срока хранения данных в Log Analytics](https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period)
+* [Изменение срока хранения данных в Log Analytics](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
 
-* [Настройка политики хранения для журналов учетных записей хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-monitor-storage-account#configure-logging)
+* [Настройка политики хранения для журналов учетных записей хранения Azure](../storage/common/storage-monitor-storage-account.md#configure-logging)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -190,11 +190,11 @@ ms.locfileid: "92146182"
 
 **Руководство**. анализ и мониторинг журналов для аномального поведения и регулярная проверка результатов для Data Lake Analyticsных ресурсов. Используйте рабочую область Log Analytics Azure Monitor, чтобы просматривать журналы и выполнять запросы к данным журнала. Кроме того, вы можете включить и подключить данные к Azure Sentinel или сторонним SIEM.
 
-* [Подключение к Azure Sentinel](https://docs.microsoft.com/azure/sentinel/quickstart-onboard)
+* [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
-* [Дополнительные сведения о рабочей области Log Analytics](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-portal)
+* [Дополнительные сведения о рабочей области Log Analytics](../azure-monitor/log-query/get-started-portal.md)
 
-* [Выполнение пользовательских запросов в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-queries)
+* [Выполнение пользовательских запросов в Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -204,11 +204,11 @@ ms.locfileid: "92146182"
 
 **Руководство**. Включение параметров диагностики для Data Lake Analytics и отправка журналов в рабочую область log Analytics. Подключите рабочую область Log Analytics к Azure Sentinel, так как она предоставляет решение для оркестрации событий безопасности и автоматического реагирования (SOAR). Это позволяет создавать и использовать сборники схем (автоматизированные решения) для устранения проблем безопасности.
 
-* [Подключение к Azure Sentinel](https://docs.microsoft.com/azure/sentinel/quickstart-onboard)
+* [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
-* [Как оповещать данные журнала Log Analytics](https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-response)
+* [Как оповещать данные журнала Log Analytics](../azure-monitor/learn/tutorial-response.md)
 
-* [Доступ к журналам диагностики для Azure Data Lake Analytics](https://docs.microsoft.com/azure/data-lake-analytics/data-lake-analytics-diagnostic-logs)
+* [Доступ к журналам диагностики для Azure Data Lake Analytics](./data-lake-analytics-diagnostic-logs.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -240,15 +240,15 @@ ms.locfileid: "92146182"
 
 ## <a name="identity-and-access-control"></a>Идентификаторы и управление доступом
 
-*Дополнительные сведения см. в статье [Управление безопасностью: идентификаторы и управление доступом](/azure/security/benchmarks/security-control-identity-access-control).*
+*Дополнительные сведения см. в статье [Управление безопасностью: идентификаторы и управление доступом](../security/benchmarks/security-control-identity-access-control.md).*
 
 ### <a name="31-maintain-an-inventory-of-administrative-accounts"></a>3.1. Инвентаризация учетных записей администраторов
 
 **Руководство**. в Azure AD есть встроенные роли, которые должны быть явно назначены и доступны для запросов. Используйте модуль Azure AD PowerShell для выполнения нерегламентированных запросов для обнаружения учетных записей, входящих в группы администраторов.
 
-* [Как получить роль каталога в Azure AD с помощью PowerShell](https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrole?view=azureadps-2.0)
+* [Как получить роль каталога в Azure AD с помощью PowerShell](/powershell/module/azuread/get-azureaddirectoryrole)
 
-* [Как получить членов роли каталога в Azure AD с помощью PowerShell](https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0)
+* [Как получить членов роли каталога в Azure AD с помощью PowerShell](/powershell/module/azuread/get-azureaddirectoryrolemember)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -258,7 +258,7 @@ ms.locfileid: "92146182"
 
 **Руководство**. Data Lake Analytics не имеет концепции паролей по умолчанию, так как проверка подлинности обеспечивается Azure Active Directory и защищена с помощью управления доступом на основе ролей Azure (Azure RBAC).
 
-* [Обзор Azure Data Lake Analytics](https://docs.microsoft.com/azure/data-lake-analytics/data-lake-analytics-overview)
+* [Обзор Azure Data Lake Analytics](./data-lake-analytics-overview.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -270,7 +270,7 @@ ms.locfileid: "92146182"
 
 Вы также можете включить JIT-доступ с помощью Azure AD Privileged Identity Management и Azure Resource Manager.
 
-* [Дополнительные сведения о управление привилегированными пользователями](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/)
+* [Дополнительные сведения о управление привилегированными пользователями](../active-directory/privileged-identity-management/index.yml)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -280,7 +280,7 @@ ms.locfileid: "92146182"
 
 **Рекомендации**. везде, где это возможно, используйте Azure Active Directory SSO вместо настройки отдельных автономных учетных данных для каждой службы. Использование удостоверений центра безопасности Azure и рекомендаций по доступу.
 
-* [Общие сведения об использовании единого входа в Azure AD](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on)
+* [Общие сведения об использовании единого входа в Azure AD](../active-directory/manage-apps/what-is-single-sign-on.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -290,9 +290,9 @@ ms.locfileid: "92146182"
 
 **Рекомендации**. Включите Azure Active Directory многофакторную идентификацию (MFA) и следуйте рекомендациям по управлению удостоверениями и доступом в центре безопасности Azure, чтобы помочь защитить ресурсы Data Lake Analytics.
 
-* [Включение MFA в Azure](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted)
+* [Включение MFA в Azure](../active-directory/authentication/howto-mfa-getstarted.md)
 
-* [Мониторинг идентификации и доступа в Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-identity-access)
+* [Мониторинг идентификации и доступа в Центре безопасности Azure](../security-center/security-center-identity-access.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -302,9 +302,9 @@ ms.locfileid: "92146182"
 
 **Руководство**. используйте защищенную, управляемую Azure рабочую станцию (также называемую рабочей станцией привилегированного доступа или привилегированным доступом) для административных задач, требующих повышенных привилегий.
 
-* [Общие сведения о защищенных рабочих станциях под управлением Azure](https://docs.microsoft.com/azure/active-directory/devices/concept-azure-managed-workstation)
+* [Общие сведения о защищенных рабочих станциях под управлением Azure](../active-directory/devices/concept-azure-managed-workstation.md)
 
-* [Как включить Azure AD MFA](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted)
+* [Как включить Azure AD MFA](../active-directory/authentication/howto-mfa-getstarted.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -314,9 +314,9 @@ ms.locfileid: "92146182"
 
 **Рекомендации**. Используйте Azure Active Directory отчеты о безопасности для создания журналов и оповещений при возникновении подозрительных или ненадежных действий в среде. Используйте Центр безопасности Azure для мониторинга действий идентификации и доступа.
 
-* [Как определить пользователей Azure AD, помеченных для события риска](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-user-at-risk)
+* [Как определить пользователей Azure AD, помеченных для события риска](../active-directory/identity-protection/overview-identity-protection.md)
 
-* [Мониторинг пользовательских действий идентификации и доступа в Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-identity-access)
+* [Мониторинг пользовательских действий идентификации и доступа в Центре безопасности Azure](../security-center/security-center-identity-access.md)
 
 **Мониторинг Центра безопасности Azure**. Да
 
@@ -326,7 +326,7 @@ ms.locfileid: "92146182"
 
 **Руководство**. Использование именованных расположений Azure AD для разрешения доступа только из конкретных логических групп диапазонов IP-адресов или стран и регионов.
 
-* [Настройка именованных расположений Azure AD](https://docs.microsoft.com/azure/active-directory/reports-monitoring/quickstart-configure-named-locations)
+* [Настройка именованных расположений Azure AD](../active-directory/reports-monitoring/quickstart-configure-named-locations.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -336,7 +336,7 @@ ms.locfileid: "92146182"
 
 **Руководство**. Использование Azure Active Directory (Azure AD) в качестве централизованной системы проверки подлинности и авторизации. Управление доступом на основе ролей в Azure (Azure RBAC) обеспечивает точный контроль доступа клиента к ресурсам Data Lake Analytics.
 
-* [Создание и настройка экземпляра Azure AD](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-access-create-new-tenant)
+* [Создание и настройка экземпляра Azure AD](../active-directory/fundamentals/active-directory-access-create-new-tenant.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -346,9 +346,9 @@ ms.locfileid: "92146182"
 
 **Руководство**. Azure AD предоставляет журналы для облегчения поиска устаревших учетных записей. Кроме того, используйте проверки подлинности и доступа Azure AD для эффективного управления членством в группах, доступом к корпоративным приложениям и назначениями ролей. Доступ пользователей можно проверить регулярно, чтобы убедиться, что доступ к ним имеют только нужные пользователи.
 
-* [Общие сведения об отчетах Azure AD](https://docs.microsoft.com/azure/active-directory/reports-monitoring/)
+* [Общие сведения об отчетах Azure AD](../active-directory/reports-monitoring/index.yml)
 
-* [Как использовать проверки подлинности и доступа Azure AD](https://docs.microsoft.com/azure/active-directory/governance/access-reviews-overview)
+* [Как использовать проверки подлинности и доступа Azure AD](../active-directory/governance/access-reviews-overview.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -358,7 +358,7 @@ ms.locfileid: "92146182"
 
 **Руководство**. Включение параметров диагностики для Data Lake Analytics и Azure Active Directory, отправка всех журналов в log Analytics рабочую область. Настройте нужные оповещения (например, попытки доступа к отключенным секретам) в Log Analytics.
 
-* [Интеграция журналов Azure AD с Azure Monitor журналами](https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)
+* [Интеграция журналов Azure AD с Azure Monitor журналами](../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -368,11 +368,11 @@ ms.locfileid: "92146182"
 
 **Руководство**. Использование функций защиты Azure Active Directory и безопасности удостоверений для настройки автоматических ответов на обнаруженные подозрительные действия, связанные с ресурсами Data Lake Analytics. Вы должны включить автоматические ответы через метку Azure, чтобы реализовать ответы на безопасность вашей организации.
 
-* [Просмотр рискованных входов в Azure AD](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-risky-sign-ins)
+* [Просмотр рискованных входов в Azure AD](../active-directory/identity-protection/overview-identity-protection.md)
 
-* [Как настроить и включить политики рисков с помощью защиты идентификации](https://docs.microsoft.com/azure/active-directory/identity-protection/howto-identity-protection-configure-risk-policies)
+* [Как настроить и включить политики рисков с помощью защиты идентификации](../active-directory/identity-protection/howto-identity-protection-configure-risk-policies.md)
 
-* [Подключение к Azure Sentinel](https://docs.microsoft.com/azure/sentinel/quickstart-onboard)
+* [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -382,7 +382,7 @@ ms.locfileid: "92146182"
 
 **Руководство**: неприменимо; Защищенное хранилище не поддерживается для Azure Data Lake Analytics.
 
-* [Поддерживаемые службы и сценарии в общем доступе](https://docs.microsoft.com/azure/security/fundamentals/customer-lockbox-overview#supported-services-and-scenarios-in-general-availability)
+* [Поддерживаемые службы и сценарии в общем доступе](../security/fundamentals/customer-lockbox-overview.md#supported-services-and-scenarios-in-general-availability)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -390,13 +390,13 @@ ms.locfileid: "92146182"
 
 ## <a name="data-protection"></a>Защита данных
 
-*Дополнительные сведения см. в статье [Управление безопасностью: защита данных](/azure/security/benchmarks/security-control-data-protection).*
+*Дополнительные сведения см. в статье [Управление безопасностью: защита данных](../security/benchmarks/security-control-data-protection.md).*
 
 ### <a name="41-maintain-an-inventory-of-sensitive-information"></a>4.1. Инвентаризация конфиденциальных данных
 
 **Руководство**. Использование тегов для отслеживания Data Lake Analytics ресурсов, в которых хранятся или обрабатываются конфиденциальные данные.
 
-* [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+* [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -406,17 +406,17 @@ ms.locfileid: "92146182"
 
 **Руководство**. Реализация изоляции с помощью отдельных подписок, групп управления для отдельных доменов безопасности, таких как среда, чувствительность данных. Вы можете ограничить Data Lake Analytics, чтобы управлять уровнем доступа к ресурсам Data Lake Analytics, которые требуются приложениям и корпоративным средам. Когда правила брандмауэра настроены, доступ к ресурсам Data Lake Analytics могут получить только приложения, запрашивающие данные через указанный набор сетей. Вы можете управлять доступом к Azure Data Lake Analytics через Azure RBAC.
 
-* [Создание дополнительных подписок Azure](https://docs.microsoft.com/azure/billing/billing-create-subscription)
+* [Создание дополнительных подписок Azure](../cost-management-billing/manage/create-subscription.md)
 
-* [Создание групп управления](https://docs.microsoft.com/azure/governance/management-groups/create)
+* [Создание групп управления](../governance/management-groups/create-management-group-portal.md)
 
-* [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+* [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
-* [Управление управлением доступом на основе ролей в Azure](https://docs.microsoft.com/azure/data-lake-analytics/data-lake-analytics-manage-use-portal#manage-azure-role-based-access-control)
+* [Управление управлением доступом на основе ролей в Azure](./data-lake-analytics-manage-use-portal.md#manage-azure-role-based-access-control)
 
-* [Правила брандмауэра](https://docs.microsoft.com/rest/api/datalakeanalytics/firewallrules)
+* [Правила брандмауэра](/rest/api/datalakeanalytics/firewallrules)
 
-* [Управление аналитикой озера данных Azure с помощью Azure PowerShell](https://docs.microsoft.com/azure/data-lake-analytics/data-lake-analytics-manage-use-powershell)
+* [Управление аналитикой озера данных Azure с помощью Azure PowerShell](./data-lake-analytics-manage-use-powershell.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -428,9 +428,9 @@ ms.locfileid: "92146182"
 
 Для базовой платформы, управляемой корпорацией Майкрософт, корпорация Майкрософт считает все содержимое клиента конфиденциальным и защищенным от потери и доступности данных клиентов. Чтобы обеспечить безопасность данных клиентов в Azure, корпорация Майкрософт реализовала и поддерживает набор надежных элементов управления и возможностей защиты данных.
 
-* [Общие сведения о защите данных клиентов в Azure](https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data)
+* [Общие сведения о защите данных клиентов в Azure](../security/fundamentals/protection-customer-data.md)
 
-* [Как защитить учетные записи хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-security-guide)
+* [Как защитить учетные записи хранения Azure](../storage/blobs/security-recommendations.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -440,7 +440,7 @@ ms.locfileid: "92146182"
 
 **Руководство**. Microsoft Azure ресурсы будут согласовывать TLS 1,2 по умолчанию. Убедитесь, что все клиенты, подключающиеся к Data Lake Analytics, могут согласовываться с помощью TLS 1,2 или более поздней версии.
 
-* [Пример списка операций](https://docs.microsoft.com/rest/api/datalakeanalytics/operations/list)
+* [Пример списка операций](/rest/api/datalakeanalytics/operations/list)
 
 **Мониторинг центра безопасности Azure**: Сейчас это недоступно
 
@@ -450,7 +450,7 @@ ms.locfileid: "92146182"
 
 **Руководство**. функции идентификации данных еще недоступны для Azure Data Lake Analyticsных ресурсов. Установите сторонние решения, если это необходимо для обеспечения соответствия требованиям.
 
-* [Общие сведения о защите данных клиентов в Azure](https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data)
+* [Общие сведения о защите данных клиентов в Azure](../security/fundamentals/protection-customer-data.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -460,7 +460,7 @@ ms.locfileid: "92146182"
 
 **Руководство**. Использование управления доступом на основе ролей Azure (Azure RBAC) для управления взаимодействием пользователей со службой.
 
-* [Управление Azure RBAC](https://docs.microsoft.com/azure/data-lake-analytics/data-lake-analytics-manage-use-portal#manage-azure-role-based-access-control)
+* [Управление Azure RBAC](./data-lake-analytics-manage-use-portal.md#manage-azure-role-based-access-control)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -478,7 +478,7 @@ ms.locfileid: "92146182"
 
 **Руководство**. данные хранятся в учетной записи Data Lake Storage 1-го поколения по умолчанию. Data Lake Storage 1-го поколения поддерживает прозрачное шифрование неактивных данных, включенное по умолчанию.
 
-* [Шифрование данных в Azure Data Lake Storage 1-го поколения](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-encryption)
+* [Шифрование данных в Azure Data Lake Storage 1-го поколения](../data-lake-store/data-lake-store-encryption.md)
 
 **Мониторинг центра безопасности Azure**: Сейчас это недоступно
 
@@ -488,7 +488,7 @@ ms.locfileid: "92146182"
 
 **Руководство**. Использование Azure Monitor с журналом действий Azure для создания оповещений о том, когда изменения выполняются в рабочих экземплярах Azure Data Lake Analyticsных ресурсов.
 
-* [Создание оповещений для событий журнала действий Azure](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log)
+* [Создание оповещений для событий журнала действий Azure](../azure-monitor/platform/alerts-activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -496,7 +496,7 @@ ms.locfileid: "92146182"
 
 ## <a name="vulnerability-management"></a>управление уязвимостями;
 
-*Дополнительные сведения см. в статье [Управление безопасностью: управление уязвимостями](/azure/security/benchmarks/security-control-vulnerability-management).*
+*Дополнительные сведения см. в статье [Управление безопасностью: управление уязвимостями](../security/benchmarks/security-control-vulnerability-management.md).*
 
 ### <a name="51-run-automated-vulnerability-scanning-tools"></a>5.1. Выполнение автоматизированных средства анализа уязвимостей
 
@@ -504,7 +504,7 @@ ms.locfileid: "92146182"
 
 Корпорация Майкрософт выполняет Управление уязвимостью в базовых системах, поддерживающих Azure Data Lake Analytics.
 
-* [Общие сведения о рекомендациях центра безопасности Azure](https://docs.microsoft.com/azure/security-center/recommendations-reference)
+* [Общие сведения о рекомендациях центра безопасности Azure](../security-center/recommendations-reference.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -546,7 +546,7 @@ ms.locfileid: "92146182"
 
 ## <a name="inventory-and-asset-management"></a>Инвентаризация и управление ресурсами
 
-*Дополнительные сведения см. в статье [Управление безопасностью: инвентаризация и управление ресурсами](/azure/security/benchmarks/security-control-inventory-asset-management).*
+*Дополнительные сведения см. в статье [Управление безопасностью: инвентаризация и управление ресурсами](../security/benchmarks/security-control-inventory-asset-management.md).*
 
 ### <a name="61-use-automated-asset-discovery-solution"></a>6,1. Использование автоматизированного решения для обнаружения ресурсов
 
@@ -554,11 +554,11 @@ ms.locfileid: "92146182"
 
 Хотя классические ресурсы Azure могут быть обнаружены с помощью обозревателя графа ресурсов Azure, настоятельно рекомендуется создавать и использовать Azure Resource Manager ресурсов.
 
-* [Создание запросов с помощью обозревателя графа ресурсов Azure](https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal)
+* [Создание запросов с помощью обозревателя графа ресурсов Azure](../governance/resource-graph/first-query-portal.md)
 
-* [Просмотр подписок Azure](https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0)
+* [Просмотр подписок Azure](/powershell/module/az.accounts/get-azsubscription)
 
-* [Общие сведения об Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/overview)
+* [Общие сведения об Azure RBAC](../role-based-access-control/overview.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -568,7 +568,7 @@ ms.locfileid: "92146182"
 
 **Руководство**. Применяйте к ресурсам Azure теги, чтобы логически классифицировать их на основе метаданных.
 
-* [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+* [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -582,11 +582,11 @@ ms.locfileid: "92146182"
 - Недопустимые типы ресурсов
 - Допустимые типы ресурсов
 
-* [Создание дополнительных подписок Azure](https://docs.microsoft.com/azure/billing/billing-create-subscription)
+* [Создание дополнительных подписок Azure](../cost-management-billing/manage/create-subscription.md)
 
-* [Создание групп управления](https://docs.microsoft.com/azure/governance/management-groups/create)
+* [Создание групп управления](../governance/management-groups/create-management-group-portal.md)
 
-* [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+* [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -608,9 +608,9 @@ ms.locfileid: "92146182"
 
 Кроме того, используйте граф ресурсов Azure для запроса или обнаружения ресурсов в подписках.
 
-* [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+* [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-* [Как создавать запросы с помощью Azure Graph](https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal)
+* [Как создавать запросы с помощью Azure Graph](../governance/resource-graph/first-query-portal.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -646,9 +646,9 @@ ms.locfileid: "92146182"
 - Недопустимые типы ресурсов
 - Допустимые типы ресурсов
 
-* [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+* [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-* [Как отказаться от определенного типа ресурса с помощью Политики Azure](https://docs.microsoft.com/azure/governance/policy/samples/not-allowed-resource-types)
+* [Как отказаться от определенного типа ресурса с помощью Политики Azure](../governance/policy/samples/index.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -666,7 +666,7 @@ ms.locfileid: "92146182"
 
 **Руководство**. Настройте условный доступ Azure, чтобы ограничить возможность пользователей взаимодействовать с Azure Resource Manager путем настройки "Блокировать доступ" для приложения "Управление Microsoft Azure".
 
-* [Настройка условного доступа для блокировки доступа к ARM](https://docs.microsoft.com/azure/role-based-access-control/conditional-access-azure-management)
+* [Настройка условного доступа для блокировки доступа к ARM](../role-based-access-control/conditional-access-azure-management.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -690,16 +690,16 @@ ms.locfileid: "92146182"
 
 ## <a name="secure-configuration"></a>Безопасная конфигурация
 
-*Дополнительные сведения см. в статье [Управление безопасностью: безопасная конфигурация](/azure/security/benchmarks/security-control-secure-configuration).*
+*Дополнительные сведения см. в статье [Управление безопасностью: безопасная конфигурация](../security/benchmarks/security-control-secure-configuration.md).*
 
 ### <a name="71-establish-secure-configurations-for-all-azure-resources"></a>7.1. Установка безопасных конфигураций для всех ресурсов Azure
 
 **Руководство**. Использование псевдонимов политик Azure в пространстве имен Microsoft. Data Lake Analytics для создания настраиваемых политик для аудита или принудительного применения конфигурации Azure Data Lake Analytics. Вы также можете использовать встроенные определения политик, связанные с Azure Data Lake Analytics, например:
 - В Data Lake Analytics должны быть включены журналы диагностики.
 
-* [Просмотр доступных псевдонимов политик Azure](https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0)
+* [Просмотр доступных псевдонимов политик Azure](/powershell/module/az.resources/get-azpolicyalias)
 
-* [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+* [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -717,9 +717,9 @@ ms.locfileid: "92146182"
 
 **Руководство**. Использование политики Azure [Deny] и [развертывание если не существует] для обеспечения безопасности параметров в ресурсах Azure.
 
-* [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+* [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-* [Сведения о действии Политик Azure](https://docs.microsoft.com/azure/governance/policy/concepts/effects)
+* [Сведения о действии Политик Azure](../governance/policy/concepts/effects.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -737,9 +737,9 @@ ms.locfileid: "92146182"
 
 **Руководство**. Использование Azure Repos для безопасного хранения и управления кодом, например пользовательскими политиками Azure, Azure Resource Manager шаблонами, сценариями настройки требуемого состояния и т. д. Чтобы получить доступ к ресурсам, которыми вы управляете в Azure DevOps, вы можете предоставить или отклонить разрешения для определенных пользователей, встроенных групп безопасности или групп, определенных в Azure Active Directory (Azure AD), если они интегрированы с Azure DevOps, или Active Directory, если они интегрированы с TFS.
 
-* [Как хранить код в Azure DevOps](https://docs.microsoft.com/azure/devops/repos/git/gitworkflow?view=azure-devops)
+* [Как хранить код в Azure DevOps](/azure/devops/repos/git/gitworkflow?view=azure-devops&preserve-view=true)
 
-* [О разрешениях и группах в Azure DevOps](https://docs.microsoft.com/azure/devops/organizations/security/about-permissions)
+* [О разрешениях и группах в Azure DevOps](/azure/devops/organizations/security/about-permissions)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -773,7 +773,7 @@ ms.locfileid: "92146182"
 
 **Руководство**. Использование псевдонимов политик Azure в пространстве имен Microsoft. Data Lake Analytics для создания настраиваемых политик для оповещения, аудита и принудительного применения конфигураций системы. Используйте политику Azure [аудит], [запретить] и [развернуть, если не существует], чтобы автоматически применять конфигурации для ресурсов Azure Data Lake Analytics.
 
-* [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+* [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -815,7 +815,7 @@ ms.locfileid: "92146182"
 
 ## <a name="malware-defense"></a>Защита от вредоносных программ
 
-*Дополнительные сведения см. в статье [Управление безопасностью: защита от вредоносных программ](/azure/security/benchmarks/security-control-malware-defense).*
+*Дополнительные сведения см. в статье [Управление безопасностью: защита от вредоносных программ](../security/benchmarks/security-control-malware-defense.md).*
 
 ### <a name="81-use-centrally-managed-anti-malware-software"></a>8,1. Использование централизованно управляемого программного обеспечения для защиты от вредоносных программ
 
@@ -845,17 +845,17 @@ ms.locfileid: "92146182"
 
 ## <a name="data-recovery"></a>Восстановление данных
 
-*Дополнительные сведения см. в статье [Управление безопасностью: восстановление данных](/azure/security/benchmarks/security-control-data-recovery).*
+*Дополнительные сведения см. в статье [Управление безопасностью: восстановление данных](../security/benchmarks/security-control-data-recovery.md).*
 
 ### <a name="91-ensure-regular-automated-back-ups"></a>9,1: Обеспечьте регулярное автоматическое резервное копирование
 
 **Руководство**. Data Lake Analytics журналы заданий и выходные данные хранятся в базовой службе Data Lake Storage 1-го поколения. Вы можете использовать различные методы для копирования данных, включая ADLCopy, Azure PowerShell или фабрику данных Azure. Службу автоматизации Azure также можно использовать для автоматической архивации данных на регулярной основе.
 
-* [Управление ресурсами Azure Data Lake Storage 1-го поколения с помощью обозревателя службы хранилища](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-in-storage-explorer)
+* [Управление ресурсами Azure Data Lake Storage 1-го поколения с помощью обозревателя службы хранилища](../data-lake-store/data-lake-store-in-storage-explorer.md)
 
-* [Копирование данных из больших двоичных объектов службы хранилища Azure в Azure Data Lake Storage 1-го поколения](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-copy-data-azure-storage-blob)
+* [Копирование данных из больших двоичных объектов службы хранилища Azure в Azure Data Lake Storage 1-го поколения](../data-lake-store/data-lake-store-copy-data-azure-storage-blob.md)
 
-* [Обзор службы автоматизации Azure](https://docs.microsoft.com/azure/automation/automation-intro)
+* [Обзор службы автоматизации Azure](../automation/automation-intro.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -865,9 +865,9 @@ ms.locfileid: "92146182"
 
 **Руководство**. Data Lake Analytics журналы заданий и выходные данные хранятся в базовой службе Data Lake Storage 1-го поколения. Вы можете использовать различные методы для копирования данных, включая ADLCopy, Azure PowerShell или фабрику данных Azure.
 
-* [Управление ресурсами Azure Data Lake Storage 1-го поколения с помощью обозревателя службы хранилища](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-in-storage-explorer)
+* [Управление ресурсами Azure Data Lake Storage 1-го поколения с помощью обозревателя службы хранилища](../data-lake-store/data-lake-store-in-storage-explorer.md)
 
-* [Копирование данных из больших двоичных объектов службы хранилища Azure в Azure Data Lake Storage 1-го поколения](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-copy-data-azure-storage-blob)
+* [Копирование данных из больших двоичных объектов службы хранилища Azure в Azure Data Lake Storage 1-го поколения](../data-lake-store/data-lake-store-copy-data-azure-storage-blob.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -885,9 +885,9 @@ ms.locfileid: "92146182"
 
 **Руководство**. Data Lake Analytics резервные копии, хранящиеся в Data Lake Storage 1-го поколения или хранилище Azure, поддерживают шифрование по умолчанию и не могут быть отключены. Резервные копии следует рассматривать как конфиденциальные данные и применять соответствующие элементы управления доступом и защиты данных в рамках этого базового плана.
 
-* [Обеспечение безопасности в Azure Data Lake Storage 1-го поколения](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-secure-data)
+* [Обеспечение безопасности в Azure Data Lake Storage 1-го поколения](../data-lake-store/data-lake-store-secure-data.md)
 
-* [Авторизация доступа к данным в службе хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-auth)
+* [Авторизация доступа к данным в службе хранилища Azure](../storage/common/storage-auth.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -895,7 +895,7 @@ ms.locfileid: "92146182"
 
 ## <a name="incident-response"></a>Реагирование на инциденты
 
-*Дополнительные сведения см. в статье [Управление безопасностью: реагирование на инциденты](/azure/security/benchmarks/security-control-incident-response).*
+*Дополнительные сведения см. в статье [Управление безопасностью: реагирование на инциденты](../security/benchmarks/security-control-incident-response.md).*
 
 ### <a name="101-create-an-incident-response-guide"></a>10.1. Создание руководства по реагированию на инциденты
 
@@ -917,9 +917,9 @@ ms.locfileid: "92146182"
 
 Кроме того, четко помечайте подписки тегами (например, рабочие, нерабочие) и создайте систему именования, чтобы четко определить и классифицировать ресурсы Azure, особенно обрабатывающие конфиденциальные данные. Вы несете ответственность за назначение приоритета оповещениям, требующим действий по исправлению, в зависимости от важности ресурсов Azure и среды, в которой произошел инцидент.
 
-* [Оповещения безопасности в Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-alerts-overview)
+* [Оповещения безопасности в Центре безопасности Azure](../security-center/security-center-alerts-overview.md)
 
-* [использование тегов для упорядочения ресурсов в Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+* [использование тегов для упорядочения ресурсов в Azure](../azure-resource-manager/management/tag-resources.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -939,7 +939,7 @@ ms.locfileid: "92146182"
 
 **Руководство**. Корпорация Майкрософт будет использовать информацию об инциденте безопасности для связи с вами, если центр Microsoft Security Response Center (MSRC) обнаружит, что к вашим данным был получен незаконный или несанкционированный доступ. Проверьте инциденты после факта обращения, чтобы убедиться в том, что проблемы устранены.
 
-* [Как задать контакт безопасности Центра безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-provide-security-contact-details)
+* [Как задать контакт безопасности Центра безопасности Azure](../security-center/security-center-provide-security-contact-details.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -949,9 +949,9 @@ ms.locfileid: "92146182"
 
 **Руководство**. Экспортируйте оповещения и рекомендации Центра безопасности Azure с помощью функции непрерывного экспорта с целью выявления рисков для ресурсов Azure. Непрерывный экспорт позволяет экспортировать предупреждения и рекомендации как вручную, так и в постоянном, непрерывном режиме. Вы можете использовать соединитель данных Центра безопасности Azure для потоковой передачи оповещений в Azure Sentinel.
 
-* [Настройка непрерывного экспорта данных](https://docs.microsoft.com/azure/security-center/continuous-export)
+* [Настройка непрерывного экспорта данных](../security-center/continuous-export.md)
 
-* [Как выполнить потоковую передачу оповещений в Azure Sentinel](https://docs.microsoft.com/azure/sentinel/connect-azure-security-center)
+* [Как выполнить потоковую передачу оповещений в Azure Sentinel](../sentinel/connect-azure-security-center.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -961,7 +961,7 @@ ms.locfileid: "92146182"
 
 **Руководство**. Использование функции автоматизации рабочих процессов в центре безопасности Azure для автоматического запуска ответов с помощью "Logic Apps" в оповещениях системы безопасности и рекомендациях по защите ресурсов Azure.
 
-* [Как настроить автоматизацию рабочего процесса и Logic Apps](https://docs.microsoft.com/azure/security-center/workflow-automation)
+* [Как настроить автоматизацию рабочего процесса и Logic Apps](../security-center/workflow-automation.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -969,7 +969,7 @@ ms.locfileid: "92146182"
 
 ## <a name="penetration-tests-and-red-team-exercises"></a>Тесты на проникновение и попытки нарушения безопасности "красной командой"
 
-*Дополнительные сведения см. в статье [Управление безопасностью: тесты на проникновение и попытки нарушения безопасности "красной командой"](/azure/security/benchmarks/security-control-penetration-tests-red-team-exercises).*
+*Дополнительные сведения см. в статье [Управление безопасностью: тесты на проникновение и попытки нарушения безопасности "красной командой"](../security/benchmarks/security-control-penetration-tests-red-team-exercises.md).*
 
 ### <a name="111-conduct-regular-penetration-testing-of-your-azure-resources-and-ensure-remediation-of-all-critical-security-findings"></a>11,1. Проведите регулярное тестирование на проникновение ресурсов Azure и обеспечьте исправление всех критических результатов безопасности.
 
@@ -985,5 +985,5 @@ ms.locfileid: "92146182"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Ознакомьтесь со статьей [Тесты производительности системы безопасности Azure](/azure/security/benchmarks/overview).
-- Дополнительные сведения о [базовой конфигурации безопасности Azure](/azure/security/benchmarks/security-baselines-overview).
+- Ознакомьтесь со статьей [Тесты производительности системы безопасности Azure](../security/benchmarks/overview.md).
+- Дополнительные сведения о [базовой конфигурации безопасности Azure](../security/benchmarks/security-baselines-overview.md).

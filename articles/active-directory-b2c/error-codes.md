@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 10/02/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 0122fa43c9d99c01797e3523748e4f31b4b7469a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f6ae806b7666d83652e6b82bac16d89f2f9ce7aa
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91664857"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92215439"
 ---
 # <a name="error-codes-azure-active-directory-b2c"></a>Коды ошибок: Azure Active Directory B2C
 
@@ -61,6 +61,7 @@ ms.locfileid: "91664857"
 | `AADB2C90055` | Область " {0} ", указанная в запросе, должна указывать ресурс, например " https://example.com/calendar.read ". |
 | `AADB2C90057` | Указанное приложение не настроено для разрешения неявного потока OAuth. |
 | `AADB2C90058` | Указанное приложение не настроено для разрешения открытых клиентов. |
+| `AADB2C99059` | Указанный запрос должен представлять code_challenge. Требуется для одностраничных приложений с помощью потока кода авторизации.| 
 | `AADB2C90067` | URI перенаправления после выхода из системы {0} имеет недопустимый формат. Укажите URL-адрес на основе HTTPS, например " https://example.com/return ", или для собственных клиентов используйте URI собственного клиента IETF "urn: IETF: WG: OAuth: 2.0: OOB". |
 | `AADB2C90068` | Указанное приложение с ИДЕНТИФИКАТОРом " {0} " не является допустимым для этой службы. Используйте приложение, созданное с помощью портала B2C, и повторите попытку. |
 | `AADB2C90075` | Обмен утверждениями " {0} ", указанным на шаге " {1} ", вернул ответ об ошибке HTTP с кодом " {2} " и причиной " {3} ". |
