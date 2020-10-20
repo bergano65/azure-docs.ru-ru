@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/22/2020
 ms.author: memildin
-ms.openlocfilehash: 6d19027cfd406f81d31696c5cd2c1a235574e400
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a532418ebc5cab08b06f8dde87e8126bf8e96ffe
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91577855"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92217173"
 ---
 # <a name="azure-defender-for-sql-servers-on-machines"></a>Защитник Azure для серверов SQL Server на компьютерах 
 
@@ -28,7 +28,7 @@ ms.locfileid: "91577855"
 
 ## <a name="availability"></a>Доступность
 
-|Аспект|Подробнее|
+|Аспект|Сведения|
 |----|:----|
 |Состояние выпуска:|Предварительный просмотр|
 |Цены|Счета **за использование защитника Azure для серверов SQL Server на компьютерах** выставляются, как показано на [странице с ценами](security-center-pricing.md) .|
@@ -118,13 +118,13 @@ ms.locfileid: "91577855"
 
 1. Оповещения предназначены для автономного выполнения с подробными инструкциями по исправлению и анализом информации в каждом из них. Дополнительные сведения см. в более широком обзоре с помощью другого центра безопасности Azure и возможностей Azure Sentinel:
 
-    * Включите функцию аудита SQL Server для дальнейшего исследования. Если вы являетесь пользователем-Sentinel Azure, вы можете отправить журналы аудита SQL из событий журнала безопасности Windows в метку и наслаждаться богатыми возможностями расследования. Дополнительные [сведения об аудите SQL Server](https://docs.microsoft.com/sql/relational-databases/security/auditing/create-a-server-audit-and-server-audit-specification?view=sql-server-ver15).
+    * Включите функцию аудита SQL Server для дальнейшего исследования. Если вы являетесь пользователем-Sentinel Azure, вы можете отправить журналы аудита SQL из событий журнала безопасности Windows в метку и наслаждаться богатыми возможностями расследования. Дополнительные [сведения об аудите SQL Server](https://docs.microsoft.com/sql/relational-databases/security/auditing/create-a-server-audit-and-server-audit-specification?view=sql-server-ver15&preserve-view=true).
     * Чтобы повысить уровень безопасности, используйте рекомендации центра безопасности для главного компьютера, указанного в каждом оповещении. Это снизит риски, возникающие в будущих атаках. 
 
     [Дополнительные сведения об управлении оповещениями и реагировании на них](security-center-managing-and-responding-alerts.md).
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Связанные материалы см. в следующей статье:
 

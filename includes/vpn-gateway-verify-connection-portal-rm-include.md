@@ -5,20 +5,23 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: include
-ms.date: 03/21/2018
+ms.date: 10/19/2020
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: c1793a22c59cda279a9d8c4522bcec2606d25582
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3c825f042bb3e7fee5c00a8b34c12ca2d05f8d2e
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "67673486"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92217961"
 ---
 Чтобы на портале Azure просмотреть состояние подключения для VPN-шлюза в модели Resource Manager, перейдите к нужному подключению. Ниже показано, как перейти к подключению и проверить его.
 
 1. В [портал Azure](https://portal.azure.com)щелкните **все ресурсы** и перейдите к шлюзу виртуальной сети.
-2. В колонке шлюза виртуальной сети щелкните **Подключения**. Вы увидите состояние каждого подключения.
-3. Чтобы открыть вкладку **Основные компоненты**, щелкните имя подключения, которое необходимо проверить. На вкладке "Основные компоненты" можно просмотреть дополнительные сведения о подключении. После успешного подключения **состояние** изменится на "успешно" и "подключено".
+1. В колонке шлюза виртуальной сети щелкните **Подключения**. Вы увидите состояние каждого подключения.
 
-   ![Проверка подключения VPN-шлюза с помощью портала Azure](./media/vpn-gateway-verify-connection-portal-rm-include/connection-succeeded.png)
+   :::image type="content" source="./media/vpn-gateway-verify-connection-portal-rm-include/connections.png" alt-text="Просмотр подключений" lightbox="./media/vpn-gateway-verify-connection-portal-rm-include/connections-expand.png":::
+
+1. Щелкните имя подключения, которое необходимо проверить. В **Essentials**можно просмотреть дополнительные сведения о подключении. При успешном соединении значения **состояния** будут "успешно" и "подключено".
+
+   :::image type="content" source="./media/vpn-gateway-verify-connection-portal-rm-include/essentials.png" alt-text="Просмотр подключений" lightbox="./media/vpn-gateway-verify-connection-portal-rm-include/essentials-expand.png":::

@@ -1,20 +1,17 @@
 ---
-title: Сценарий PowerShell. Создание и просмотр триггеров моментальных снимков общего ресурса Azure | Документация Майкрософт
+title: Сценарий PowerShell. Создание и просмотр триггеров моментальных снимков общих ресурсов Azure
 description: Этот сценарий PowerShell создает и получает триггеры общего доступа к моментальным снимкам.
-services: data-share
 author: joannapea
+ms.author: joanpo
 ms.service: data-share
-ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 07/07/2019
-ms.author: joanpo
-ms.openlocfilehash: 31d9754ddd9e9dfd0cca258901a6c8ab2c4a9cdb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 05b70641873ab352ca92ac199d99c05b2fe0f4e6
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86497171"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92221304"
 ---
 # <a name="use-powershell-to-create-and-share-snapshot-triggers"></a>Создание и совместное использование триггеров моментальных снимков с помощью PowerShell
 
@@ -47,12 +44,12 @@ Get-AzDataShareTrigger -ResourceGroupName $resourceGroupName -AccountName $dataS
 
 | Get-Help | Примечания |
 |---|---|
-| [New-Аздаташаретригжер](/powershell/module/az.datashare/new-azdatasharetrigger?view=azps-2.6.0) | Создайте триггер моментального снимка общего ресурса. |
-| [Get-Аздаташаретригжер](/powershell/module/az.datashare/get-azdatasharesynchronizationsetting?view=azps-2.6.0) | Возвращает параметры синхронизации общей папки. |
+| [New-Аздаташаретригжер](/powershell/module/az.datashare/new-azdatasharetrigger) | Создайте триггер моментального снимка общего ресурса. |
+| [Get-Аздаташаретригжер](/powershell/module/az.datashare/get-azdatasharesynchronizationsetting) | Возвращает параметры синхронизации общей папки. |
 |||
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о Azure PowerShell см. в [документации по Azure PowerShell](https://docs.microsoft.com/powershell/).
+Дополнительные сведения о Azure PowerShell см. в [документации по Azure PowerShell](/powershell/).
 
 Дополнительные примеры сценариев PowerShell для общего ресурса Azure Data Share можно найти в [примерах PowerShell для общего доступа к данным Azure](../../samples-powershell.md).

@@ -1,18 +1,16 @@
 ---
 title: Управление Azure Data Lake Analytics с помощью портала Azure
 description: В этой статье описано, как с помощью портала Azure управлять учетными записями, источниками данных, пользователями и заданиями Data Lake Analytics.
-services: data-lake-analytics
 ms.service: data-lake-analytics
 ms.reviewer: jasonh
-ms.assetid: a0e045f1-73d6-427f-868d-7b55c10f811b
 ms.topic: how-to
 ms.date: 12/05/2016
-ms.openlocfilehash: 3f47e201f0fe6f44eb33916b2b3ed71ef963d5a1
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: c1057478d9ae7d63bef9477a0b1297fa2c507ffa
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92148142"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92218431"
 ---
 # <a name="manage-azure-data-lake-analytics-using-the-azure-portal"></a>Управление Azure Data Lake Analytics с помощью портала Azure
 [!INCLUDE [manage-selector](../../includes/data-lake-analytics-selector-manage.md)]
@@ -54,7 +52,7 @@ ms.locfileid: "92148142"
 Data Lake Analytics в настоящее время поддерживает следующие источники данных:
 
 * Data Lake Storage
-* Хранилище Azure
+* Служба хранилища Azure
 
 Вы можете использовать обозреватель данных для просмотра источников данных и выполнения основных операций управления файлами. 
 

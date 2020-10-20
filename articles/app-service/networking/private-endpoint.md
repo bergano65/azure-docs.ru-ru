@@ -9,12 +9,12 @@ ms.author: ericg
 ms.service: app-service
 ms.workload: web
 ms.custom: fasttrack-edit, references_regions
-ms.openlocfilehash: 2c4b6377d28339b0b4953cd908f4964b64dab4fe
-ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
+ms.openlocfilehash: 880100c3d67dfe10aacf10ed5bb57dec6e2c2a83
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91873104"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92217071"
 ---
 # <a name="using-private-endpoints-for-azure-web-app"></a>Использование частных конечных точек для веб-приложения Azure
 
@@ -91,7 +91,7 @@ ms.locfileid: "91873104"
 
 |Имя |Тип |Значение |Комментарий |
 |-----|-----|------|-------|
-|mywebapp.azurewebsites.net|CNAME|mywebapp.privatelink.azurewebsites.net|
+|mywebapp.azurewebsites.net|CNAME|mywebapp.privatelink.azurewebsites.net|< — Azure создает эту запись в общедоступном DNS-сервере Azure, чтобы указать службе приложений на привателинк, и это управляется нами|
 |mywebapp.privatelink.azurewebsites.net|Объект|10.10.10.8|<--вы управляете этой записью в системе DNS, чтобы указать IP-адрес частной конечной точки.|
 
 После этой конфигурации DNS можно получить доступ к веб-приложению в частном порядке с именем по умолчанию mywebappname.azurewebsites.net. Необходимо использовать это имя, так как сертификат по умолчанию выдается для *. azurewebsites.net.

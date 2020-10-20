@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.custom: how-to
 ms.date: 06/27/2020
-ms.openlocfilehash: 94c67be39ddd9f52087fa4632e239a8e85930886
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.openlocfilehash: 4373618bacad00675d5f639225c435296010949b
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92171476"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92221428"
 ---
 # <a name="how-to-run-jupyter-notebooks-in-your-workspace"></a>Выполнение веб-приложений Jupyter Notebook в рабочей области
 
@@ -108,6 +108,16 @@ ms.locfileid: "92171476"
 При запуске вычислительного экземпляра можно также использовать функцию завершения кода на платформе [IntelliSense](https://code.visualstudio.com/docs/editor/intellisense)в любой записной книжке Python.
 
 Вы также можете запустить Jupyter или JupyterLab на панели инструментов записной книжки.  Машинное обучение Azure не предоставляет обновления и исправления ошибок из Jupyter или JupyterLab, так как они являются продуктами с открытым кодом вне компетенции службы поддержки Майкрософт.
+
+### <a name="focus-mode"></a>Режим фокусировки
+
+Используйте режим фокусировки, чтобы развернуть текущее представление, чтобы вы могли сосредоточиться на активных вкладках. Режим фокусировки скрывает обозреватель файлов записных книжек.
+
+1. На панели инструментов окна терминала выберите **режим фокусировки**,   чтобы включить режим фокусировки. В зависимости от ширины окна это может находиться в элементе меню.. **.** на панели инструментов.
+1. В режиме фокусировки вернитесь к стандартному представлению, выбрав **стандартное представление**.
+
+    :::image type="content" source="media/how-to-run-jupyter-notebooks/focusmode.gif" alt-text="Создание файла":::
+
 
 ### <a name="use-intellisense"></a>Использование IntelliSense
 

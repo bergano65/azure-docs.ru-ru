@@ -3,16 +3,25 @@ title: Как отключить мониторинг кластера Azure Red
 description: В этой статье описывается, как можно отключить мониторинг кластера OpenShift для Azure Red Hat с помощью Azure Monitor для контейнеров.
 ms.topic: conceptual
 ms.date: 04/24/2020
-ms.openlocfilehash: 6ed92cd4cda1f3b5d43cc605d7224236528b94bf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6c21b17fd9faed7b133cd8ecad767ae7bd4aa868
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88815442"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92216544"
 ---
-# <a name="how-to-stop-monitoring-your-azure-red-hat-openshift-v3-cluster"></a>Как отключить мониторинг кластера Azure Red Hat OpenShift v3 
+# <a name="how-to-stop-monitoring-your-azure-red-hat-openshift-v3-cluster"></a>Как отключить мониторинг кластера Azure Red Hat OpenShift v3
 
-После включения мониторинга кластера Azure Red Hat OpenShift версии 3. x можно отключить мониторинг кластера с Azure Monitor для контейнеров, если вы решите, что вы больше не хотите его отслеживать. В этой статье показано, как это сделать с помощью предоставленного шаблона Azure Resource Manager. 
+>[!IMPORTANT]
+> Azure Red Hat OpenShift 3,11 будет снят с учета по 2022 июня.
+>
+> По состоянию на Октябрь 2020 вы больше не сможете создавать новые кластеры 3,11.
+> Существующие кластеры 3,11 продолжат работать до 2022 июня, но больше не будут поддерживаться после этой даты.
+>
+> Следуйте указаниям этого руководством, чтобы [создать кластер Azure Red Hat OpenShift 4](../../openshift/tutorial-create-cluster.md).
+> Если у вас есть определенные вопросы, [свяжитесь с нами](mailto:aro-feedback@microsoft.com).
+
+После включения мониторинга кластера Azure Red Hat OpenShift версии 3. x можно отключить мониторинг кластера с Azure Monitor для контейнеров, если вы решите, что вы больше не хотите его отслеживать. В этой статье показано, как это сделать с помощью предоставленного шаблона Azure Resource Manager.  
 
 ## <a name="azure-resource-manager-template"></a>Шаблон Azure Resource Manager
 

@@ -1,22 +1,20 @@
 ---
 title: Отладка повторяющихся заданий в Azure Data Lake Analytics
 description: Узнайте, как выполнять отладку для неправильных повторяющихся заданий с помощью средств Azure Data Lake для Visual Studio.
-services: data-lake-analytics
 ms.reviewer: jasonh
-ms.assetid: dc9b21d8-c5f4-4f77-bcbc-eff458f48de2
 ms.service: data-lake-analytics
 ms.topic: how-to
 ms.date: 05/20/2018
-ms.openlocfilehash: 86d5134e257d2dae642eceb933a78047773b25a9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b95d4b0a082e8eac191d610c9516e5ce72180b4c
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87129956"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92219179"
 ---
 # <a name="troubleshoot-an-abnormal-recurring-job"></a>Устранение неполадок, связанных с неправильно повторяющимся заданием
 
-В этой статье показано, как использовать [средства Azure Data Lake для Visual Studio](https://aka.ms/adltoolsvs) для устранения неполадок с повторяющимися заданиями. Дополнительные сведения о конвейере и повторяющихся заданиях можно узнать в [блоге об Azure Data Lake и Azure HDInsight](https://blogs.msdn.microsoft.com/azuredatalake/2017/09/19/managing-pipeline-recurring-jobs-in-azure-data-lake-analytics-made-easy/).
+В этой статье показано, как использовать [средства Azure Data Lake для Visual Studio](https://aka.ms/adltoolsvs) для устранения неполадок с повторяющимися заданиями. Дополнительные сведения о конвейере и повторяющихся заданиях можно узнать в [блоге об Azure Data Lake и Azure HDInsight](/archive/blogs/azuredatalake/managing-pipeline-recurring-jobs-in-azure-data-lake-analytics-made-easy).
 
 В повторяющихся заданиях обычно используется одинаковая логика запроса и схожие входные данные. Например, представьте, что вы запускаете повторяющееся задание каждый понедельник в 8:00 для анализа активности пользователя за прошлую неделю. Скрипты для этих заданий создаются на основе единого шаблона, который содержит логику запроса. Входные данные для этих заданий представляют собой данные об использовании за прошлую неделю. Использование единой логики запросов и схожие входные данные обычно означают, что производительность этих заданий аналогична и стабильна. Если одно из повторяющихся заданий внезапно выполняется аномально, завершается с ошибкой или существенно замедляется, вы можете:
 

@@ -5,12 +5,12 @@ services: automation
 ms.date: 10/14/2020
 ms.topic: conceptual
 ms.service: automation
-ms.openlocfilehash: 3d6a87d9b420ea394baaa21c87dff457e4c908d0
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 8818047dd4fef9c495c46b353e68841f83e9677c
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92070339"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92217224"
 ---
 # <a name="troubleshoot-update-management-issues"></a>Устранение неполадок с Управлением обновлениями
 
@@ -45,7 +45,7 @@ Error details: Failed to enable the Update solution
 
 * Дополнительные сведения о том, какие адреса и порты должны быть разрешены, чтобы Управление обновлениями работало, см. в разделе [о конфигурации сети](../automation-hybrid-runbook-worker.md#network-planning).  
 
-* Проверьте наличие проблем с конфигурацией области. [Конфигурация области](../update-management/update-mgmt-scope-configuration.md) определяет, какие компьютеры настроены для Управления обновлениями. Если компьютер отображается в рабочей области, но не в Управление обновлениями, необходимо задать конфигурацию области для целевых компьютеров. Дополнительные сведения о конфигурации области см. в разделе [Включение компьютеров в рабочей области](../update-management/update-mgmt-enable-automation-account.md#enable-machines-in-the-workspace).
+* Проверьте наличие проблем с конфигурацией области. [Конфигурация области](../update-management/scope-configuration.md) определяет, какие компьютеры настроены для Управления обновлениями. Если компьютер отображается в рабочей области, но не в Управление обновлениями, необходимо задать конфигурацию области для целевых компьютеров. Дополнительные сведения о конфигурации области см. в разделе [Включение компьютеров в рабочей области](../update-management/enable-from-automation-account.md#enable-machines-in-the-workspace).
 
 * Удалите конфигурацию рабочей роли, выполнив действия из разделов [Удаление гибридной рабочей роли Runbook с локального компьютера Windows](../automation-windows-hrw-install.md#remove-windows-hybrid-runbook-worker) или [Удаление гибридной рабочей роли Runbook с локального компьютера Linux](../automation-linux-hrw-install.md#remove-linux-hybrid-runbook-worker).
 
@@ -63,13 +63,13 @@ Error details: Failed to enable the Update solution
 
 Если заменяемое обновление преобразуется в 100% неприменимо, следует изменить состояние утверждения этого обновления на `Declined` в службах WSUS. Чтобы изменить состояние утверждения всех обновлений, выполните следующие действия:
 
-1. Выберите **Управление обновлениями** в учетной записи службы автоматизации, чтобы просмотреть состояние компьютера. Ознакомьтесь с разделом [Просмотр оценок обновления](../update-management/update-mgmt-view-update-assessments.md).
+1. Выберите **Управление обновлениями** в учетной записи службы автоматизации, чтобы просмотреть состояние компьютера. Ознакомьтесь с разделом [Просмотр оценок обновления](../update-management/view-update-assessments.md).
 
 2. Проверьте заменяемое обновление, чтобы убедиться в том, что оно на 100 % неприменимо.
 
 3. На сервере WSUS, на котором выявляются компьютеры, [отклоните обновление](/windows-server/administration/windows-server-update-services/manage/updates-operations#declining-updates).
 
-4. Выберите **Компьютеры** и в столбце **Соответствие** выполните повторное сканирование на соответствие. См. раздел [Управление обновлениями для виртуальных машин](../update-management/update-mgmt-manage-updates-for-vm.md).
+4. Выберите **Компьютеры** и в столбце **Соответствие** выполните повторное сканирование на соответствие. См. раздел [Управление обновлениями для виртуальных машин](../update-management/manage-updates-for-vm.md).
 
 5. Повторите предыдущие шаги для других заменяемых обновлений.
 
@@ -112,9 +112,9 @@ Error details: Failed to enable the Update solution
 
 4. Если компьютер не отображается в результатах запроса, он давно не синхронизировался. Вероятно, существует ошибка локальной конфигурации и необходимо [переустановить агент](../../azure-monitor/learn/quick-collect-windows-computer.md#install-the-agent-for-windows).
 
-5. Если компьютер отображается в результатах запроса, проверьте конфигурацию области. [Конфигурация области](../update-management/update-mgmt-scope-configuration.md) определяет, какие компьютеры настроены для Управления обновлениями.
+5. Если компьютер отображается в результатах запроса, проверьте конфигурацию области. [Конфигурация области](../update-management/scope-configuration.md) определяет, какие компьютеры настроены для Управления обновлениями.
 
-6. Если компьютер отображается в рабочей области, но не в Управлении обновлениями, необходимо настроить конфигурацию области для целевого компьютера. Сведения о том, как это сделать, см. в разделе [Включение компьютеров в рабочей области](../update-management/update-mgmt-enable-automation-account.md#enable-machines-in-the-workspace).
+6. Если компьютер отображается в рабочей области, но не в Управлении обновлениями, необходимо настроить конфигурацию области для целевого компьютера. Сведения о том, как это сделать, см. в разделе [Включение компьютеров в рабочей области](../update-management/enable-from-automation-account.md#enable-machines-in-the-workspace).
 
 7. В рабочей области выполните этот запрос.
 
@@ -190,11 +190,11 @@ Error details: Unable to register Automation Resource Provider for subscriptions
 
 #### <a name="machines-not-available-or-not-tagged-correctly-when-schedule-executed"></a>Компьютеры недоступны или неправильно помечены тегами при выполнении расписания
 
-Выполните перечисленные ниже действия, если ваша подписка настроена для поставщика ресурсов службы автоматизации, но при выполнении расписания обновлений с указанными [динамическими группами](../update-management/update-mgmt-groups.md) пропущены некоторые компьютеры.
+Выполните перечисленные ниже действия, если ваша подписка настроена для поставщика ресурсов службы автоматизации, но при выполнении расписания обновлений с указанными [динамическими группами](../update-management/configure-groups.md) пропущены некоторые компьютеры.
 
 1. На портале Azure откройте учетную запись службы автоматизации и выберите **Управление обновлениями**.
 
-2. Проверьте [журнал Управления обновлениями](../update-management/update-mgmt-deploy-updates.md#view-results-of-a-completed-update-deployment), чтобы определить точное время, когда было запущено развертывание обновления.
+2. Проверьте [журнал Управления обновлениями](../update-management/deploy-updates.md#view-results-of-a-completed-update-deployment), чтобы определить точное время, когда было запущено развертывание обновления.
 
 3. Чтобы [найти изменения на компьютерах](../../governance/resource-graph/how-to/get-resource-changes.md#find-detected-change-events-and-view-change-details), которые (как вы подозреваете) были пропущены Управлением обновлениями, используйте Azure Resource Graph (ARG).
 
@@ -230,7 +230,7 @@ Error details: Unable to register Automation Resource Provider for subscriptions
 
 Выполните следующие действия, чтобы выяснить, правильно ли работают запросы.
 
-1. Выполните запрос ARG, чтобы его формат соответствовал показанному ниже в колонке обозревателя Resource Graph на портале Azure. Этот запрос имитирует фильтры, выбранные при создании динамической группы в Управлении обновлениями. Ознакомьтесь со статьей [Использование динамических групп с Управлением обновлениями](../update-management/update-mgmt-groups.md).
+1. Выполните запрос ARG, чтобы его формат соответствовал показанному ниже в колонке обозревателя Resource Graph на портале Azure. Этот запрос имитирует фильтры, выбранные при создании динамической группы в Управлении обновлениями. Ознакомьтесь со статьей [Использование динамических групп с Управлением обновлениями](../update-management/configure-groups.md).
 
     ```kusto
     where (subscriptionId in~ ("<subscriptionId1>", "<subscriptionId2>") and type =~ "microsoft.compute/virtualmachines" and properties.storageProfile.osDisk.osType == "<Windows/Linux>" and resourceGroup in~ ("<resourceGroupName1>","<resourceGroupName2>") and location in~ ("<location1>","<location2>") )
@@ -303,7 +303,7 @@ Update
 
 #### <a name="communication-with-automation-account-blocked"></a>Обмен данными с учетной записью службы автоматизации заблокирован
 
-Дополнительные сведения о том, какие адреса и порты должны быть разрешены, чтобы Управление обновлениями работало, см. в разделе [Планирование сети](../update-management/update-mgmt-overview.md#ports).
+Дополнительные сведения о том, какие адреса и порты должны быть разрешены, чтобы Управление обновлениями работало, см. в разделе [Планирование сети](../update-management/overview.md#ports).
 
 #### <a name="duplicate-computer-name"></a>Повторяющееся имя компьютера
 
@@ -389,9 +389,9 @@ Failed to start the runbook. Check the parameters passed. RunbookName Patch-Micr
 
 ### <a name="resolution"></a>Решение
 
-При возможности используйте [динамические группы](../update-management/update-mgmt-groups.md) для развертываний обновлений. Кроме того, можно выполнить следующие действия.
+При возможности используйте [динамические группы](../update-management/configure-groups.md) для развертываний обновлений. Кроме того, можно выполнить следующие действия.
 
-1. Убедитесь, что компьютер или сервер соответствуют [требованиям](../update-management/update-mgmt-overview.md#client-requirements).
+1. Убедитесь, что компьютер или сервер соответствуют [требованиям](../update-management/overview.md#client-requirements).
 2. Проверьте подключение к гибридной рабочей роли Runbook с помощью средства устранения неполадок агента гибридной рабочей роли Runbook. Для дополнительных сведений о средстве устранения неполадок см. [Общие сведения о результатах проверки агента в службе "Управление обновлениями"](update-agent-issues.md).
 
 ## <a name="scenario-updates-are-installed-without-a-deployment"></a><a name="updates-nodeployment"></a>Сценарий. Обновления устанавливаются без развертывания
@@ -487,11 +487,11 @@ Unable to Register Machine for Patch Management, Registration Failed with Except
 
 ### <a name="resolution"></a>Решение
 
-Чтобы понять, почему это произошло во время выполнения обновления после его успешного запуска, [Проверьте выходные данные задания](../update-management/update-mgmt-deploy-updates.md#view-results-of-a-completed-update-deployment) на затронутом компьютере в ходе выполнения. Просмотрите конкретные сообщения об ошибках ваших компьютеров и примите меры.  
+Чтобы понять, почему это произошло во время выполнения обновления после его успешного запуска, [Проверьте выходные данные задания](../update-management/deploy-updates.md#view-results-of-a-completed-update-deployment) на затронутом компьютере в ходе выполнения. Просмотрите конкретные сообщения об ошибках ваших компьютеров и примите меры.  
 
 Измените все неудачные запланированные развертывания обновлений и увеличьте период обслуживания.
 
-Дополнительные сведения о периодах обслуживания см. в разделе об [установке обновлений](../update-management/update-mgmt-deploy-updates.md#schedule-an-update-deployment).
+Дополнительные сведения о периодах обслуживания см. в разделе об [установке обновлений](../update-management/deploy-updates.md#schedule-an-update-deployment).
 
 ## <a name="scenario-machine-shows-as-not-assessed-and-shows-an-hresult-exception"></a><a name="hresult"></a>Сценарий. Компьютер отображается как "Без оценки" и показывает исключение HRESULT
 
@@ -522,7 +522,7 @@ Unable to Register Machine for Patch Management, Registration Failed with Except
 |Исключение  |Решение или действие  |
 |---------|---------|
 |`Exception from HRESULT: 0x……C`     | Найдите соответствующий код ошибки в [списке кодов ошибок обновления Windows](https://support.microsoft.com/help/938205/windows-update-error-code-list), чтобы найти подробности о причине создания исключения.        |
-|`0x8024402C`</br>`0x8024401C`</br>`0x8024402F`      | Проблемы с сетевым подключением. Убедитесь, что компьютер имеет сетевое подключение для Управления обновлениями. Список обязательных портов и адресов см. в разделе [Планирование сети](../update-management/update-mgmt-overview.md#ports).        |
+|`0x8024402C`</br>`0x8024401C`</br>`0x8024402F`      | Проблемы с сетевым подключением. Убедитесь, что компьютер имеет сетевое подключение для Управления обновлениями. Список обязательных портов и адресов см. в разделе [Планирование сети](../update-management/overview.md#ports).        |
 |`0x8024001E`| Операция обновления не завершена, так как служба или система завершали работу.|
 |`0x8024002E`| Служба Центра обновления Windows отключена.|
 |`0x8024402C`     | Если вы используете сервер WSUS, убедитесь, что значения реестра `WUServer` и `WUStatusServer` в разделе реестра `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate` указывают на правильный сервер WSUS.        |
@@ -556,9 +556,9 @@ Unable to Register Machine for Patch Management, Registration Failed with Except
 
 ### <a name="resolution"></a>Решение
 
-Если сбои происходят во время запуска обновления после того, как он успешно запущен, [проверьте выполнение задания](../update-management/update-mgmt-deploy-updates.md#view-results-of-a-completed-update-deployment) на затронутом компьютере в ходе выполнения. Просмотрите конкретные сообщения об ошибках ваших компьютеров и примите меры. Для успешного обновления развертываний управлению обновлениями необходима работоспособность диспетчера пакетов.
+Если сбои происходят во время запуска обновления после того, как он успешно запущен, [проверьте выполнение задания](../update-management/deploy-updates.md#view-results-of-a-completed-update-deployment) на затронутом компьютере в ходе выполнения. Просмотрите конкретные сообщения об ошибках ваших компьютеров и примите меры. Для успешного обновления развертываний управлению обновлениями необходима работоспособность диспетчера пакетов.
 
-Если конкретные исправления, пакеты или обновления отображаются непосредственно перед сбоем задания, можно попытаться [исключить](../update-management/update-mgmt-deploy-updates.md#schedule-an-update-deployment) эти элементы из следующего развертывания обновлений. Сведения о сборе информации журнала из Центра обновления Windows см. в статье [Файлы журнала Центра обновления Windows](/windows/deployment/update/windows-update-logs).
+Если конкретные исправления, пакеты или обновления отображаются непосредственно перед сбоем задания, можно попытаться [исключить](../update-management/deploy-updates.md#schedule-an-update-deployment) эти элементы из следующего развертывания обновлений. Сведения о сборе информации журнала из Центра обновления Windows см. в статье [Файлы журнала Центра обновления Windows](/windows/deployment/update/windows-update-logs).
 
 Если не удается исправить проблему, создайте копию файла **/var/opt/microsoft/omsagent/run/automationworker/omsupdatemgmt.log** и сохраните его для устранения неполадок перед началом следующего развертывания обновления.
 
@@ -568,7 +568,7 @@ Unable to Register Machine for Patch Management, Registration Failed with Except
 
 Попробуйте выполнить обновление непосредственно на компьютере. Если не удается обновить программное обеспечение на компьютере, см. [список возможных ошибок в руководстве по устранению неполадок](#hresult).
 
-Если обновления выполняются локально, попробуйте удалить и переустановить агент на компьютере, следуя инструкциям из статьи [Удаление виртуальной машины для Управления обновлениями](../update-management/update-mgmt-remove-vms.md).
+Если обновления выполняются локально, попробуйте удалить и переустановить агент на компьютере, следуя инструкциям из статьи [Удаление виртуальной машины для Управления обновлениями](../update-management/remove-vms.md).
 
 ### <a name="i-know-updates-are-available-but-they-dont-show-as-available-on-my-machines"></a>Я знаю, что обновления доступны, но установить их на компьютерах не предлагается
 
@@ -588,7 +588,7 @@ Unable to Register Machine for Patch Management, Registration Failed with Except
 
 ### <a name="installing-updates-by-classification-on-linux"></a>Установка обновлений с учетом классификации на платформе Linux
 
-При развертывании обновлений на Linux с учетом классификации (критические обновления и обновления системы безопасности) следует учитывать некоторые важные ограничения, особенно для CentOS. Эти ограничения описаны на [странице с общими сведениями об Управлении обновлениями](../update-management/update-mgmt-overview.md#linux).
+При развертывании обновлений на Linux с учетом классификации (критические обновления и обновления системы безопасности) следует учитывать некоторые важные ограничения, особенно для CentOS. Эти ограничения описаны на [странице с общими сведениями об Управлении обновлениями](../update-management/overview.md#linux).
 
 ### <a name="kb2267602-is-consistently-missing"></a>Статья базы знаний № 2267602 постоянно отсутствует
 

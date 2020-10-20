@@ -6,12 +6,12 @@ ms.author: jife
 ms.service: data-share
 ms.topic: how-to
 ms.date: 07/30/2020
-ms.openlocfilehash: 61804aaf65a97485e2b2b5bb4869c335a14ce812
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1d7c9935d7e0d6bb2d457aa4c08f9b2b3e5fa910
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87513564"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92218703"
 ---
 # <a name="disaster-recovery-for-azure-data-share"></a>Аварийное восстановление для общей папки данных Azure
 
@@ -29,13 +29,9 @@ ms.locfileid: "87513564"
 
 ## <a name="related-information"></a>Дополнительные сведения
 
-- [Непрерывность бизнес-процессов и аварийное восстановление](https://docs.microsoft.com/azure/best-practices-availability-paired-regions)
-- [Обеспечение высокого уровня доступности в рамках стратегии BCDR](https://docs.microsoft.com/azure/architecture/solution-ideas/articles/build-high-availability-into-your-bcdr-strategy)
+- [Непрерывность бизнес-процессов и аварийное восстановление](../best-practices-availability-paired-regions.md)
+- [Обеспечение высокого уровня доступности в рамках стратегии BCDR](/azure/architecture/solution-ideas/articles/build-high-availability-into-your-bcdr-strategy)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы узнать, как приступить к обмену данными, перейдите к [этому](share-your-data.md) руководству.
-
-
-
-

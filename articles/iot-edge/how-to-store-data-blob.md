@@ -8,12 +8,12 @@ ms.date: 12/13/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 6de96b9913b70dd1b2d423e00c58b95ccb8dcb07
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 22cef5919e597d4cd83ad80f5758a0427c52e2bb
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92048157"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92219740"
 ---
 # <a name="store-data-at-the-edge-with-azure-blob-storage-on-iot-edge"></a>Хранение данных на пограничных устройствах с использованием хранилища BLOB-объектов Azure в IoT Edge
 
@@ -92,7 +92,7 @@ ms.locfileid: "92048157"
 | Свойство | Возможные значения | Объяснение |
 | ----- | ----- | ---- |
 | делетеон | true, false | По умолчанию задано значение `false` . Если вы хотите включить эту функцию, присвойте этому полю значение `true` . <br><br> Переменная среды: `deviceAutoDeleteProperties__deleteOn={false,true}` |
-| делетеафтерминутес | `<minutes>` | Укажите время в минутах. Модуль автоматически удалит BLOB-объекты из локального хранилища, когда это значение истечет. <br><br> Переменная среды: `deviceAutoDeleteProperties__ deleteAfterMinutes=<minutes>` |
+| делетеафтерминутес | `<minutes>` | Укажите время в минутах. Модуль автоматически удалит BLOB-объекты из локального хранилища, когда это значение истечет. Текущая максимальная допустимая минута — 35791. <br><br> Переменная среды: `deviceAutoDeleteProperties__ deleteAfterMinutes=<minutes>` |
 | ретаинвхилеуплоадинг | true, false | По умолчанию он имеет значение `true` , и он будет хранить большой двоичный объект при отправке в облачное хранилище, если делетеафтерминутес истекает. Вы можете задать для него значение `false` , и данные будут удалены сразу после истечения срока действия делетеафтерминутес. Примечание. чтобы это свойство работало Уплоадон, должно быть установлено значение true.  <br><br> **Внимание!** при использовании добавочных больших двоичных объектов этот параметр приведет к удалению дополнительных больших двоичных объектов из локального хранилища, когда срок действия значения истечет, и все последующие операции блокировки на добавление в эти большие двоичные объекты завершатся ошибкой. Может потребоваться, чтобы значение срока действия было достаточно большим для ожидаемой частоты операций добавления, выполняемых приложением.<br><br> Переменная среды: `deviceAutoDeleteProperties__retainWhileUploading={false,true}`|
 
 ## <a name="using-smb-share-as-your-local-storage"></a>Использование общего ресурса SMB в качестве локального хранилища
@@ -110,7 +110,7 @@ $creds = Get-Credential
 New-SmbGlobalMapping -RemotePath <remote SMB path> -Credential $creds -LocalPath <Any available drive letter>
 ```
 
-Например.
+Пример:
 
 ```powershell
 $creds = Get-Credential
@@ -136,7 +136,7 @@ sudo chown -R 11000:11000 <blob-dir>
 sudo chmod -R 700 <blob-dir>
 ```
 
-Например.
+Пример:
 
 ```terminal
 sudo chown -R 11000:11000 /srv/containerdata
@@ -195,7 +195,7 @@ sudo chmod -R 700 <blob-dir>
 
 ## <a name="connect-to-your-local-storage-with-azure-storage-explorer"></a>Подключение к локальному хранилищу с помощью Обозреватель службы хранилища Azure
 
-Для подключения к локальной учетной записи хранения можно использовать [Обозреватель службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/) .
+Для подключения к локальной учетной записи хранения можно использовать [Обозреватель службы хранилища Azure](https://github.com/microsoft/AzureStorageExplorer/releases/tag/v1.14.2) .
 
 1. Загрузка и установка Обозревателя службы хранилища Azure
 
