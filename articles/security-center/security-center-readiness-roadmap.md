@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/03/2018
 ms.author: memildin
-ms.openlocfilehash: 52ea6f862b7ef6190348743a128912131e6a9609
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 38e1fc7f062908f8c4a4b9aa903ca09dd7fb9ea5
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91314493"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92342337"
 ---
 # <a name="azure-security-center-readiness-roadmap"></a>План готовности центра безопасности Azure
 Этот документ содержит план подготовки, который поможет вам приступить к работе с центром безопасности Azure.
@@ -59,9 +59,9 @@ ms.locfileid: "91314493"
 Следующие ресурсы помогут вам управлять предупреждениями безопасности и защищать ресурсы.
 
 Статьи    
-- [Наблюдение за работоспособностью системы безопасности в Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-monitoring)
-- [Защита сети в центре безопасности Azure.](https://docs.microsoft.com/azure/security-center/security-center-network-recommendations)
-- [Защита службы SQL Azure и данных в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-sql-service-recommendations)
+- [Наблюдение за работоспособностью системы безопасности в Центре безопасности Azure](./security-center-monitoring.md)
+- [Защита сети в центре безопасности Azure.](./security-center-network-recommendations.md)
+- [Защита службы SQL Azure и данных в центре безопасности Azure](./security-center-remediate-recommendations.md)
 
 
 Видеоролик    
@@ -77,7 +77,7 @@ ms.locfileid: "91314493"
 * [Respond quickly to threats with next-generation security operation, and investigation](https://youtu.be/e8iFCz5RM4g) (Быстрая реакция на угрозы с помощью современных операций и анализа безопасности)
 
 Статьи    
-* [Использование центра безопасности Azure для реагирования на инциденты](https://docs.microsoft.com/azure/security-center/security-center-incident-response)
+* [Использование центра безопасности Azure для реагирования на инциденты](./tutorial-security-incident.md)
 * [Автоматизация реагирования с помощью автоматизации рабочих процессов](workflow-automation.md)
 
 ## <a name="advanced-cloud-defense"></a>Расширенная защита облака
@@ -91,8 +91,8 @@ ms.locfileid: "91314493"
 * [Центр безопасности Azure — адаптивные элементы управления приложениями](https://youtu.be/wWWekI1Y9ck)
 
 Статьи    
-* [Manage virtual machine access using Just-in-time](https://docs.microsoft.com/azure/security-center/security-center-just-in-time) (Управление доступом к виртуальным машинам с помощью JIT)
-* [Адаптивные элементы управления приложениями в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-adaptive-application)
+* [Manage virtual machine access using Just-in-time](./security-center-just-in-time.md) (Управление доступом к виртуальным машинам с помощью JIT)
+* [Адаптивные элементы управления приложениями в центре безопасности Azure](./security-center-adaptive-application.md)
 
 ## <a name="hands-on-activities"></a>Практические упражнения
 
@@ -101,17 +101,17 @@ ms.locfileid: "91314493"
 * [Azure Security Center Playbook: Security Alerts](https://gallery.technet.microsoft.com/Azure-Security-Center-f621a046) (Сборник схем для центра безопасности Azure: оповещения безопасности)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
-* [Документация по центру безопасности](https://docs.microsoft.com/azure/security-center/)
-* [Security Center REST API Documentation Page](https://msdn.microsoft.com/library/mt704034.aspx) (Документация по REST API центра безопасности)
-* [Azure Security Center frequently asked questions (FAQ)](https://docs.microsoft.com/azure/security-center/security-center-faq) (Центр безопасности Azure: часто задаваемые вопросы)
+* [Документация по центру безопасности](./index.yml)
+* [Security Center REST API Documentation Page](/previous-versions/azure/reference/mt704034(v=azure.100)) (Документация по REST API центра безопасности)
+* [Azure Security Center frequently asked questions (FAQ)](./faq-general.md) (Центр безопасности Azure: часто задаваемые вопросы)
 * [Цены на центр безопасности](https://azure.microsoft.com/pricing/details/security-center/)
-* [Рекомендации по обеспечению безопасности удостоверений](https://docs.microsoft.com/azure/security/fundamentals/identity-management-best-practices)
-* [Рекомендации по обеспечению сетевой безопасности](https://docs.microsoft.com/azure/security/fundamentals/network-best-practices)
-* [Рекомендации для PaaS](https://docs.microsoft.com/azure/security/security-paas-deployments)
+* [Рекомендации по обеспечению безопасности удостоверений](../security/fundamentals/identity-management-best-practices.md)
+* [Рекомендации по обеспечению сетевой безопасности](../security/fundamentals/network-best-practices.md)
+* [Рекомендации для PaaS](../security/fundamentals/paas-deployments.md)
 * [Соответствие](https://www.microsoft.com/trustcenter/compliance/due-diligence-checklist)
-* [Клиенты службы анализа журналов теперь могут использовать центр безопасности Azure для защиты своих рабочих нагрузок в гибридном облаке](https://blogs.technet.microsoft.com/msoms/2017/09/25/oms-customers-can-now-use-azure-security-center-to-protect-their-hybrid-cloud-workloads/)
+* [Клиенты службы анализа журналов теперь могут использовать центр безопасности Azure для защиты своих рабочих нагрузок в гибридном облаке](/archive/blogs/msoms/oms-customers-can-now-use-azure-security-center-to-protect-their-hybrid-cloud-workloads)
 
 ## <a name="community-resources"></a>Ресурсы сообщества
 
 * [UserVoice центра безопасности](https://feedback.azure.com/forums/347535-azure-security-center)
-* [Вопрос.&страницу для центра безопасности](https://docs.microsoft.com/answers/topics/azure-security-center.html)
+* [Вопрос.&страницу для центра безопасности](/answers/topics/azure-security-center.html)

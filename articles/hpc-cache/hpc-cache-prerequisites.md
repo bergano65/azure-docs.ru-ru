@@ -6,12 +6,12 @@ ms.service: hpc-cache
 ms.topic: how-to
 ms.date: 09/03/2020
 ms.author: v-erkel
-ms.openlocfilehash: 39c890e9e6634413947a96b1ddac608ee44bd9a0
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.openlocfilehash: 92c8d860925ebde7d20befbaa708e8530cd1a0eb
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/21/2020
-ms.locfileid: "92327405"
+ms.locfileid: "92344021"
 ---
 # <a name="prerequisites-for-azure-hpc-cache"></a>Необходимые условия для кэша HPC для Azure
 
@@ -65,7 +65,7 @@ ms.locfileid: "92327405"
 
 Простой DNS-сервер также можно использовать для балансировки нагрузки клиентских подключений между всеми доступными точками подключения кэша.
 
-Дополнительные сведения о виртуальных сетях Azure и конфигурациях DNS-серверов см. в [статье разрешение имен для ресурсов в виртуальных сетях Azure](https://docs.microsoft.com/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances).
+Дополнительные сведения о виртуальных сетях Azure и конфигурациях DNS-серверов см. в [статье разрешение имен для ресурсов в виртуальных сетях Azure](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md).
 
 ## <a name="permissions"></a>Разрешения
 
@@ -110,7 +110,7 @@ ms.locfileid: "92327405"
 
 Дополнительные сведения см. в статье [Устранение неполадок конфигурации NAS и целевого объекта хранилища NFS](troubleshoot-nas.md).
 
-* **Сетевое подключение:** Кэш HPC Azure требует доступа к сети с высокой пропускной способностью между подсетью кэша и центром обработки данных системы NFS. Рекомендуется использовать [ExpressRoute](https://docs.microsoft.com/azure/expressroute/) или аналогичный доступ. При использовании VPN может потребоваться настроить его для фиксации TCP-MSS в 1350, чтобы гарантировать, что большие пакеты не блокируются. Дополнительные сведения об устранении неполадок параметров VPN см. в статье [ограничения размера пакетов VPN](troubleshoot-nas.md#adjust-vpn-packet-size-restrictions) .
+* **Сетевое подключение:** Кэш HPC Azure требует доступа к сети с высокой пропускной способностью между подсетью кэша и центром обработки данных системы NFS. Рекомендуется использовать [ExpressRoute](../expressroute/index.yml) или аналогичный доступ. При использовании VPN может потребоваться настроить его для фиксации TCP-MSS в 1350, чтобы гарантировать, что большие пакеты не блокируются. Дополнительные сведения об устранении неполадок параметров VPN см. в статье [ограничения размера пакетов VPN](troubleshoot-nas.md#adjust-vpn-packet-size-restrictions) .
 
 * **Доступ к портам:** Для кэша требуется доступ к конкретным портам TCP/UDP в системе хранения. Различные типы хранилища имеют разные требования к портам.
 

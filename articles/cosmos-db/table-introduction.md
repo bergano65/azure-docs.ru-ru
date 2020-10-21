@@ -7,19 +7,19 @@ ms.subservice: cosmosdb-table
 ms.topic: overview
 ms.date: 07/26/2019
 ms.author: sngun
-ms.openlocfilehash: f56c3bd2d302fc7163fa8c05c595891f191c6a11
-ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
+ms.openlocfilehash: b3219fe3507af1c6020ad3a7d84782847dbb57ae
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91568443"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92275097"
 ---
 # <a name="introduction-to-azure-cosmos-db-table-api"></a>Знакомство с Azure Cosmos DB. API таблиц
 
 [Azure Cosmos DB](introduction.md) предоставляет API таблиц для приложений, созданных для хранилища таблиц Azure и требующих таких возможностей уровня "Премиум", как:
 
 * [комплексные возможности глобального распределения](distribute-data-globally.md);
-* [выделенная пропускная способность](partition-data.md) в любой точке мира;
+* [выделенная пропускная способность](partitioning-overview.md) в любой точке мира;
 * задержка меньше 10 миллисекунд на уровне 99-го процентиля;
 * гарантированно высокий уровень доступности;
 * автоматическое вторичное индексирование.

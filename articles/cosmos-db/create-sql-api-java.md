@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 09/22/2020
 ms.author: anfeldma
 ms.custom: seo-java-august2019, seo-java-september2019, devx-track-java
-ms.openlocfilehash: c8f93548443b043f26bdb3bd7d7d38e6efb39852
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 4678ab34de169a8406f0d73b63906152ef1185f0
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91334503"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92281908"
 ---
 # <a name="quickstart-build-a-java-app-to-manage-azure-cosmos-db-sql-api-data"></a>Краткое руководство. Создание приложения Java для управления данными API SQL для Azure Cosmos DB
 
@@ -45,9 +45,9 @@ ms.locfileid: "91334503"
 
 *Структура учетной записи Cosmos DB.* Независимо от API или языка программирования, *учетная запись* Cosmos DB содержит несколько *баз данных* или не содержит их вовсе. *База данных* содержит несколько *контейнеров* или не содержит их вовсе, а *контейнер* содержит несколько элементов или не содержит их вовсе, как показано на схеме ниже:
 
-:::image type="content" source="./media/databases-containers-items/cosmos-entities.png" alt-text="Сущности учетной записи Azure Cosmos" border="false":::
+:::image type="content" source="./media/account-databases-containers-items/cosmos-entities.png" alt-text="Сущности учетной записи Azure Cosmos" border="false":::
 
-Дополнительные сведения о базах данных, контейнерах и элементах см. [здесь](databases-containers-items.md). На уровне контейнера определены несколько важных свойств, среди которых *подготовленная пропускная способность* и *ключ секции*. 
+Дополнительные сведения о базах данных, контейнерах и элементах см. [здесь](account-databases-containers-items.md). На уровне контейнера определены несколько важных свойств, среди которых *подготовленная пропускная способность* и *ключ секции*. 
 
 Подготовленная пропускная способность измеряется в единицах запроса (*ЕЗ*), которые имеют денежную цену и являются существенным определяющим фактором в операционных расходах учетной записи. Подготовленную пропускную способность можно выбрать с учетом степени детализации для каждого контейнера или для каждой базы данных, но обычно предпочтительной является спецификация пропускной способности на уровне контейнера. Дополнительные сведения о подготовке пропускной способности см. [здесь](set-throughput.md).
 

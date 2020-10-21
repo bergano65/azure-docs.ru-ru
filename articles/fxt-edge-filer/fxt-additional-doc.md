@@ -6,12 +6,12 @@ ms.service: fxt-edge-filer
 ms.topic: conceptual
 ms.date: 06/20/2019
 ms.author: rohogue
-ms.openlocfilehash: f2f40d2ac6652b2b7c968a428961a9bd7f7b4288
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: 6be5e9bda27ddff157eda10bbb695dfacaecda7a
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92217513"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92342269"
 ---
 # <a name="additional-documentation-for-azure-fxt-edge-filer"></a>Дополнительная документация по Azure ФКСТ ребр фильтр
 
@@ -19,7 +19,7 @@ ms.locfileid: "92217513"
 
 ## <a name="avere-vfxt-for-azure-cache-documentation"></a>Документация по авере Вфкст для кэша Azure
 
-[Авере вфкст для Azure](https://docs.microsoft.com/azure/avere-vfxt/) — это аналогичный продукт кэша кластера, который использует виртуальные узлы в Microsoft Azure. Он создается с портал Azure, но использует то же программное обеспечение для настройки панели управления, что и кэш оборудования Azure ФКСТ погранично фильтр.
+[Авере вфкст для Azure](../avere-vfxt/index.yml) — это аналогичный продукт кэша кластера, который использует виртуальные узлы в Microsoft Azure. Он создается с портал Azure, но использует то же программное обеспечение для настройки панели управления, что и кэш оборудования Azure ФКСТ погранично фильтр.
 
 ## <a name="legacy-hardware-documentation"></a>Документация по устаревшему оборудованию
 

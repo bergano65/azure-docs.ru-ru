@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/20/2020
 ms.author: memildin
-ms.openlocfilehash: 026425c78934209a2d258d50a5c7f51feeebd63b
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: 1574810de5b1a2df1b82ea9cc19c88be5c72fec6
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92275332"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92342150"
 ---
 # <a name="protect-your-endpoints-with-security-centers-integrated-edr-solution-microsoft-defender-for-endpoint"></a>Защитите свои конечные точки с помощью интегрированного решения ЕДР центра безопасности: защитник Майкрософт для конечной точки
 
@@ -81,7 +81,7 @@ ms.locfileid: "92275332"
     > [!NOTE]
     > Чтобы защитить компьютеры с поддержкой ARC в Azure, используйте инструкции в разделе [Краткое руководство по подключению гибридного компьютера с серверами с поддержкой Arc](../azure-arc/servers/learn/quick-enable-hybrid-vm.md).
 
-1. Если вы уже лицензированы и развернули защитник Майкрософт для конечных точек на серверах, удалите его, выполнив процедуру, описанную в разделе [Отключение Windows Servers](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/configure-server-endpoints#offboard-windows-servers).
+1. Если вы уже лицензированы и развернули защитник Майкрософт для конечных точек на серверах, удалите его, выполнив процедуру, описанную в разделе [Отключение Windows Servers](/windows/security/threat-protection/microsoft-defender-atp/configure-server-endpoints#offboard-windows-servers).
 1. В главном меню Центра безопасности выберите **Цены и параметры**.
 1. Выберите подписку, которую требуется изменить.
 1. Выберите **Обнаружение угроз**.
@@ -94,11 +94,11 @@ ms.locfileid: "92275332"
 
 ## <a name="access-the-microsoft-defender-for-endpoint-portal"></a>Доступ к Microsoft Defender для портала конечной точки
 
-1. Убедитесь, что учетная запись пользователя имеет необходимые разрешения. [Подробнее](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/assign-portal-access).
+1. Убедитесь, что учетная запись пользователя имеет необходимые разрешения. [Подробнее](/windows/security/threat-protection/microsoft-defender-atp/assign-portal-access).
 
-1. Проверьте наличие прокси-сервера или брандмауэра, блокирующего анонимный трафик. Защитник для датчика конечных точек подключается к системному контексту, поэтому необходимо разрешить анонимный трафик. Чтобы обеспечить неограниченный доступ к защитнику для портала конечной точки, следуйте инструкциям в разделе [Включение доступа к URL-адресам служб на прокси-сервере](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/configure-proxy-internet#enable-access-to-microsoft-defender-atp-service-urls-in-the-proxy-server).
+1. Проверьте наличие прокси-сервера или брандмауэра, блокирующего анонимный трафик. Защитник для датчика конечных точек подключается к системному контексту, поэтому необходимо разрешить анонимный трафик. Чтобы обеспечить неограниченный доступ к защитнику для портала конечной точки, следуйте инструкциям в разделе [Включение доступа к URL-адресам служб на прокси-сервере](/windows/security/threat-protection/microsoft-defender-atp/configure-proxy-internet#enable-access-to-microsoft-defender-atp-service-urls-in-the-proxy-server).
 
-1. Откройте [портал центра безопасности защитника Майкрософт](https://securitycenter.windows.com/). Дополнительные сведения о функциях и значках портала см. в статье [Обзор портала центра безопасности защитника Microsoft](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/portal-overview). 
+1. Откройте [портал центра безопасности защитника Майкрософт](https://securitycenter.windows.com/). Дополнительные сведения о функциях и значках портала см. в статье [Обзор портала центра безопасности защитника Microsoft](/windows/security/threat-protection/microsoft-defender-atp/portal-overview). 
 
 ## <a name="send-a-test-alert"></a>Отправить тестовое оповещение
 
@@ -128,11 +128,11 @@ ms.locfileid: "92275332"
 
 ### <a name="how-do-i-switch-from-a-third-party-edr-tool"></a>Разделы справки переключаться от стороннего средства ЕДР?
 
-Полные инструкции по переключению с решения конечной точки, отличной от Майкрософт, доступны в документации защитника Майкрософт для конечной точки: [Общие сведения о миграции](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/switch-to-microsoft-defender-migration).
+Полные инструкции по переключению с решения конечной точки, отличной от Майкрософт, доступны в документации защитника Майкрософт для конечной точки: [Общие сведения о миграции](/windows/security/threat-protection/microsoft-defender-atp/switch-to-microsoft-defender-migration).
   
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Поддерживаемые платформы и возможности в Центре безопасности Azure](security-center-os-coverage.md)
 - [Управление рекомендациями по безопасности в центре безопасности Azure](security-center-recommendations.md) — сведения об использовании рекомендаций для защиты ресурсов Azure.

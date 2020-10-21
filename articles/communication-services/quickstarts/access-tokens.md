@@ -2,20 +2,20 @@
 title: Краткое руководство. Создание маркеров доступа и управление ими
 titleSuffix: An Azure Communication Services quickstart
 description: Узнайте, как управлять удостоверениями и маркерами доступа с помощью клиентской библиотеки администрирования Служб коммуникации Azure.
-author: matthewrobertson
+author: tomaschladek
 manager: jken
 services: azure-communication-services
-ms.author: marobert
+ms.author: tchladek
 ms.date: 08/20/2020
 ms.topic: quickstart
 ms.service: azure-communication-services
 zone_pivot_groups: acs-js-csharp-java-python
-ms.openlocfilehash: a76000ecacdf78196ec1b80a60940484f6421641
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: e323f1f50fe6c67a841c300fcbec1eed3afc4497
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "90945740"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92074130"
 ---
 # <a name="quickstart-create-and-manage-access-tokens"></a>Краткое руководство. Создание маркеров доступа и управление ими
 

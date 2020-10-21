@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/15/2020
 ms.author: memildin
-ms.openlocfilehash: 5e32aa8491e18a66a3e8b90f065e6b785d1e3bd9
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: 4ec75931a335170a8262cc480f43a0f22db0b79b
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92106269"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92342201"
 ---
 # <a name="customizing-the-set-of-standards-in-your-regulatory-compliance-dashboard"></a>Настройка набора стандартов на панели мониторинга соответствия нормативным требованиям
 
@@ -41,7 +41,7 @@ ms.locfileid: "92106269"
 
 Вы можете добавить такие стандарты, как NIST SP 800-53 R4, SWIFT CSP CSCF-v2020, UK Official и UK NHS, Canada Federal PBMM и Azure CIS 1.1.0 (новый), который содержит более полное представление стандарта Azure CIS 1.1.0. 
 
-Кроме того, вы можете добавить **Тест производительности системы безопасности Azure**. Это руководства с рекомендациями по обеспечению безопасности и соответствия требованиям для Azure, подготовленные корпорацией Майкрософт на основе распространенных платформ соответствия. (См. сведения в статье [Общие сведения о Тесте производительности системы безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/introduction).)
+Кроме того, вы можете добавить **Тест производительности системы безопасности Azure**. Это руководства с рекомендациями по обеспечению безопасности и соответствия требованиям для Azure, подготовленные корпорацией Майкрософт на основе распространенных платформ соответствия. (См. сведения в статье [Общие сведения о Тесте производительности системы безопасности Azure](../security/benchmarks/introduction.md).)
 
 В дальнейшем на панели мониторинга будут поддерживаться и другие доступные стандарты. 
 
@@ -107,7 +107,7 @@ ms.locfileid: "92106269"
 
     :::image type="content" source="./media/update-regulatory-compliance-packages/remove-standard-confirm.png" alt-text="Удаление нормативного стандарта с панели мониторинга соответствия нормативным требованиям в центре безопасности Azure":::
 
-1. Выберите ответ **Да**. Стандартный будет удален. 
+1. Выберите **Да**. Стандартный будет удален. 
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
@@ -116,6 +116,6 @@ ms.locfileid: "92106269"
 
 Другие материалы на эту тему см. в следующих статьях:. 
 
-- [Общие сведения о Тесте производительности системы безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/introduction)
+- [Общие сведения о Тесте производительности системы безопасности Azure](../security/benchmarks/introduction.md)
 - [Руководство по обеспечению соответствия нормативным требованиям на высоком уровне](security-center-compliance-dashboard.md)
 - [Использование политик безопасности](tutorial-security-policy.md)

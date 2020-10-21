@@ -6,12 +6,12 @@ ms.service: avere-vfxt
 ms.topic: how-to
 ms.date: 01/21/2020
 ms.author: rohogue
-ms.openlocfilehash: be5c640ef069690c408460b7374aee82c35b3a67
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d87f57873a4bb84b20df3da3880017d9ef2484a5
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88272422"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92342116"
 ---
 # <a name="prepare-to-create-the-avere-vfxt"></a>Подготовка к созданию Avere vFXT
 
@@ -42,7 +42,7 @@ ms.locfileid: "88272422"
 
 ## <a name="quota-for-the-vfxt-cluster"></a>Квота для кластера vFXT
 
-Убедитесь, что у вас достаточно квоты для следующих компонентов Azure. При необходимости [подайте запрос на увеличение квоты](https://docs.microsoft.com/azure/azure-supportability/resource-manager-core-quotas-request).
+Убедитесь, что у вас достаточно квоты для следующих компонентов Azure. При необходимости [подайте запрос на увеличение квоты](../azure-portal/supportability/resource-manager-core-quotas-request.md).
 
 > [!NOTE]
 > Виртуальные машины и компоненты SSD, перечисленные здесь, предназначены для самого кластера vFXT. Помните, что вам также нужна квота для виртуальных машин и твердотельных накопителей, которые будут использоваться для вашей фермы вычислений.

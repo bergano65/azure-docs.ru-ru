@@ -6,12 +6,12 @@ ms.service: avere-vfxt
 ms.topic: conceptual
 ms.date: 01/21/2020
 ms.author: rohogue
-ms.openlocfilehash: e5c33144dcebe491757dfafb2879fe51545827ce
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9f852ec056f3252005bba0bc142c05a9cfbe6c20
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88272796"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92342405"
 ---
 # <a name="plan-your-avere-vfxt-system"></a>Планирование системы Avere vFXT
 
@@ -109,7 +109,7 @@ ms.locfileid: "88272796"
 
 Кэш диска на каждый узел настраивается и может быть размером от 1000 до 8000 ГБ. Размер кэша, рекомендуемый для Standard_E32s_v3 узлов, составляет 4 ТБ на узел.
 
-Дополнительные сведения об этих виртуальных машинах см. в документации по Microsoft Azure: [размеры виртуальных машин, оптимизированных для памяти](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-memory)
+Дополнительные сведения об этих виртуальных машинах см. в документации по Microsoft Azure: [размеры виртуальных машин, оптимизированных для памяти](../virtual-machines/sizes-memory.md)
 
 ## <a name="account-quota"></a>Квота учетной записи
 

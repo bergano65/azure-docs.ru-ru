@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: how-to
 ms.date: 10/06/2020
 ms.author: memildin
-ms.openlocfilehash: 8b27c3d0982e945fcabc6e7748646ea2ee1a4184
-ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
+ms.openlocfilehash: ffc74e05d6cbe7722b9bf293c1a1e75a7de1b879
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91945301"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92342065"
 ---
 # <a name="continuously-export-security-alerts-and-recommendations"></a>Постоянно экспортировать оповещения и рекомендации по безопасности
 
@@ -80,7 +80,7 @@ ms.locfileid: "91945301"
 
 ### <a name="configure-continuous-export-using-the-rest-api"></a>Настройка непрерывного экспорта с помощью REST API
 
-Непрерывный экспорт можно настроить и управлять ими с помощью API- [интерфейса автоматизации](https://docs.microsoft.com/rest/api/securitycenter/automations)центра безопасности Azure. Этот API используется для создания или обновления правил экспорта в любые из следующих возможных назначений:
+Непрерывный экспорт можно настроить и управлять ими с помощью API- [интерфейса автоматизации](/rest/api/securitycenter/automations)центра безопасности Azure. Этот API используется для создания или обновления правил экспорта в любые из следующих возможных назначений:
 
 - концентратору событий Azure
 - Рабочая область Log Analytics
@@ -97,7 +97,7 @@ API предоставляет дополнительные функции, не
     > [!TIP]
     > Если вы настроили несколько конфигураций экспорта с помощью API или если вы использовали параметры только API, эти дополнительные функции не будут отображаться в пользовательском интерфейсе центра безопасности. Вместо этого появится баннер, информирующее о наличии других конфигураций.
 
-Дополнительные сведения об API автоматизации см. в [документации по REST API](https://docs.microsoft.com/rest/api/securitycenter/automations).
+Дополнительные сведения об API автоматизации см. в [документации по REST API](/rest/api/securitycenter/automations).
 
 
 
@@ -161,7 +161,7 @@ API предоставляет дополнительные функции, не
 
 ##  <a name="view-exported-alerts-and-recommendations-in-azure-monitor"></a>Просмотр экспортированных оповещений и рекомендаций в Azure Monitor
 
-В некоторых случаях вы можете просмотреть экспортированные оповещения системы безопасности и рекомендации в [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-overview). 
+В некоторых случаях вы можете просмотреть экспортированные оповещения системы безопасности и рекомендации в [Azure Monitor](../azure-monitor/platform/alerts-overview.md). 
 
 Azure Monitor предоставляет унифицированный интерфейс оповещений для различных оповещений Azure, включая журнал диагностики, оповещения метрик и пользовательские оповещения на основе запросов к рабочим областям Log Analytics.
 
@@ -171,13 +171,13 @@ Azure Monitor предоставляет унифицированный инте
 
     ![Страница оповещений Azure Monitor](./media/continuous-export/azure-monitor-alerts.png)
 
-1. На странице Создание правила настройте новое правило (так же, как [правило генерации оповещений журнала в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-unified-log)):
+1. На странице Создание правила настройте новое правило (так же, как [правило генерации оповещений журнала в Azure Monitor](../azure-monitor/platform/alerts-unified-log.md)):
 
     * В поле **ресурс**выберите рабочую область log Analytics, в которую были экспортированы оповещения и рекомендации по безопасности.
 
     * В качестве **условия**выберите **Пользовательский поиск по журналам**. На появившейся странице Настройте запрос, лукбакк период и частотный период. В поисковом запросе можно ввести *секуритялерт* или *секуритирекоммендатион* , чтобы запрашивать типы данных, которые постоянно экспортируются центром безопасности при включении непрерывного экспорта в log Analytics функцию. 
     
-    * При необходимости настройте [группу действий](https://docs.microsoft.com/azure/azure-monitor/platform/action-groups) , которую вы хотите активировать. Группы действий могут активировать отправку электронной почты, билеты ITSM, веб-перехватчики и многое другое.
+    * При необходимости настройте [группу действий](../azure-monitor/platform/action-groups.md) , которую вы хотите активировать. Группы действий могут активировать отправку электронной почты, билеты ITSM, веб-перехватчики и многое другое.
     ![Azure Monitor правило оповещения](./media/continuous-export/azure-monitor-alert-rule.png)
 
 Теперь вы увидите новые оповещения или рекомендации центра безопасности Azure (в зависимости от настроенных правил для непрерывного экспорта и условия, определенные в правиле оповещения Azure Monitor) в Azure Monitor оповещениях с автоматическим запуском группы действий (если она указана).
@@ -196,7 +196,7 @@ Azure Monitor предоставляет унифицированный инте
 
 ### <a name="what-are-the-costs-involved-in-exporting-data"></a>Каковы затраты, связанные с экспортом данных?
 
-Включение непрерывного экспорта не дает никаких затрат. Затраты могут быть вызваны приемом и хранением данных в Log Analytics рабочей области в зависимости от конфигурации. 
+Включение непрерывного экспорта не приводит к каким-либо затратам. Затраты могут быть вызваны приемом и хранением данных в Log Analytics рабочей области в зависимости от конфигурации. 
 
 Дополнительные сведения о [ценах на log Analytics рабочей области](https://azure.microsoft.com/pricing/details/monitor/).
 
@@ -212,7 +212,7 @@ Azure Monitor предоставляет унифицированный инте
 Связанные материалы см. в следующей документации: 
 
 - Дополнительные сведения о [шаблонах автоматизации рабочих процессов](https://github.com/Azure/Azure-Security-Center/tree/master/Workflow%20automation).
-- [Документация по Центрам событий Azure](https://docs.microsoft.com/azure/event-hubs/)
-- [Документация Azure Sentinel](https://docs.microsoft.com/azure/sentinel/)
-- [Документация по Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/)
+- [Документация по Центрам событий Azure](../event-hubs/index.yml)
+- [Документация Azure Sentinel](../sentinel/index.yml)
+- [Документация по Azure Monitor](../azure-monitor/index.yml)
 - [Экспорт схем типов данных](https://aka.ms/ASCAutomationSchemas)

@@ -7,12 +7,12 @@ ms.author: pariks
 ms.custom: mvc
 ms.topic: overview
 ms.date: 8/21/2020
-ms.openlocfilehash: da9b7216908b4a4ba80a421427f473c217f76c28
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.openlocfilehash: 951de77f2ef10a06ff03801872cebcef088172b7
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91993751"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92167055"
 ---
 # <a name="azure-database-for-mysql---flexible-server-preview"></a>Гибкий сервер Базы данных Azure для MySQL (предварительная версия)
 
@@ -121,10 +121,18 @@ ms.locfileid: "91993751"
 
 Одним из преимуществ выполнения рабочей нагрузки в Azure является глобальный доступ. На сегодня гибкий сервер для Базы данных Azure для MySQL доступен в следующих регионах Azure:
 
+- Западная Европа
 - Северная Европа
-- Юго-Восточная Азия
+- южная часть Соединенного Королевства
 - восточная часть США 2
 - Западная часть США 2
+- Центральная часть США
+- Восточная часть США
+- Центральная Канада
+- Юго-Восточная Азия
+- Республика Корея, центральный регион
+- Japan East
+- Восточная Австралия
 
 Скоро будут добавлены и другие регионы.
 

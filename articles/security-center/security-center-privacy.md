@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/23/2018
 ms.author: memildin
-ms.openlocfilehash: bf715d872fab421de30ebcb146a1981a7d008738
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4e270185550fac5a06d800d74d5fcd751aceb25d
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80585971"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92342235"
 ---
 # <a name="manage-user-data-in-azure-security-center"></a>Управление данными пользователя в центре безопасности Azure
 В этой статье приводятся сведения об управлении данными пользователя в центре безопасности Azure. Управление данными пользователя включает в себя возможность доступа, удаления и экспорта данных.
@@ -87,7 +87,7 @@ ms.locfileid: "80585971"
   GET https://<endpoint>/subscriptions/{subscriptionId}/providers/microsoft.Security/alerts?api-version={api-version}
   ```
 
-Дополнительные сведения см. в разделе [Получение оповещений системы безопасности (получение коллекции)](https://msdn.microsoft.com/library/mt704050.aspx).
+Дополнительные сведения см. в разделе [Получение оповещений системы безопасности (получение коллекции)](/previous-versions/azure/reference/mt704050(v=azure.100)).
 
 ## <a name="restricting-the-use-of-personal-data-for-profiling-or-marketing-without-consent"></a>Ограничение использования персональных данных для профилирования или маркетинга без согласия
 Пользователь Центра безопасности Azure может отказаться, удалив [данные контактного лица по вопросам безопасности](security-center-provide-security-contact-details.md).

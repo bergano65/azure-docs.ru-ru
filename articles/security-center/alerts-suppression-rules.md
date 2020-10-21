@@ -8,12 +8,12 @@ ms.author: memildin
 ms.date: 09/10/2020
 ms.service: security-center
 ms.topic: how-to
-ms.openlocfilehash: c4eb30df74e2a8d6748ede987df0b1c41cff0ca3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 50426e0b0920e89cf83dc5a81c515b06c06c09c5
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91448484"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92342099"
 ---
 # <a name="suppress-alerts-from-azure-defender"></a>Отключение оповещений от Azure Defender
 
@@ -21,7 +21,7 @@ ms.locfileid: "91448484"
 
 ## <a name="availability"></a>Доступность
 
-|Аспект|Подробнее|
+|Аспект|Сведения|
 |----|:----|
 |Состояние выпуска:|Предварительный просмотр|
 |Цены|Free<br>(Большинство предупреждений системы безопасности доступны только в защитнике Azure)|
@@ -139,7 +139,7 @@ ms.locfileid: "91448484"
 
 - **DELETE**: Удаление существующего правила (без изменения состояния оповещений, которые уже были закрыты).
 
-Дополнительные сведения и примеры использования см. в [документации по API](https://docs.microsoft.com/rest/api/securitycenter/). 
+Дополнительные сведения и примеры использования см. в [документации по API](/rest/api/securitycenter/). 
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

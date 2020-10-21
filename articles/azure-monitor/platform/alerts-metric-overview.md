@@ -4,12 +4,12 @@ description: Ознакомьтесь с обзором действий, при
 ms.date: 09/30/2020
 ms.topic: conceptual
 ms.subservice: alerts
-ms.openlocfilehash: 78ec5ff3fc87ef29d25e439b7d4c69bb3a10f3a7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3581c1f1660527bfbf2ae598349e30001962b1b4
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91578076"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92342184"
 ---
 # <a name="understand-how-metric-alerts-work-in-azure-monitor"></a>Сведения о работе оповещений о метриках в Azure Monitor
 
@@ -179,4 +179,5 @@ ms.locfileid: "91578076"
 - [Сведения о развертывании оповещений о метриках с помощью шаблонов Azure Resource Manager](./alerts-metric-create-templates.md)
 - [Дополнительные сведения о группах действий](action-groups.md)
 - [Оповещения с динамическими пороговыми значениями в Azure Monitor (ограниченная закрытая предварительная версия)](alerts-dynamic-thresholds.md)
+- [Дополнительные сведения об устранении неполадок в оповещениях метрик](alerts-troubleshoot-metric.md)
 
