@@ -6,12 +6,12 @@ author: jifems
 ms.author: jife
 ms.topic: conceptual
 ms.date: 10/15/2020
-ms.openlocfilehash: ddd586bf9a88b1246fcf20fc19493f5003bbb530
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: f3ecf8ef22d3f1d66b7148b809475a830c7e9f13
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92151733"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92318580"
 ---
 # <a name="supported-data-stores-in-azure-data-share"></a>Поддерживаемые хранилища данных в Azure Data Share
 
@@ -28,8 +28,8 @@ ms.locfileid: "92151733"
 | Хранилище BLOB-объектов Azure |✓ | |
 | Хранилище Azure Data Lake Storage 1-го поколения |✓ | |
 | Azure Data Lake Storage 2-го поколения |✓ ||
-| База данных SQL Azure |Общедоступная предварительная версия | |
-| Azure синапсе Analytics (ранее — хранилище данных SQL Azure) |Общедоступная предварительная версия | |
+| База данных SQL Azure |✓ | |
+| Azure синапсе Analytics (ранее — хранилище данных SQL Azure) |✓ | |
 | Azure Data Explorer | |✓ |
 
 ## <a name="data-store-support-matrix"></a>Матрица поддержки хранилища данных

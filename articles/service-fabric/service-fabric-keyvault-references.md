@@ -3,12 +3,12 @@ title: Service Fabric Azure. Использование Service Fabricных с�
 description: В этой статье объясняется, как использовать поддержку Кэйваултреференце Service-Fabric для секретов приложений.
 ms.topic: article
 ms.date: 09/20/2019
-ms.openlocfilehash: c4de6ae17ae728e1dbadbd6d6e2d94c0e1471112
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f2221bb3e8e3ee3181b2cff70107dccc203954cf
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91261147"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92313794"
 ---
 # <a name="keyvaultreference-support-for-service-fabric-applications-preview"></a>Поддержка Кэйваултреференце приложений для Service Fabric (Предварительная версия)
 
@@ -18,9 +18,9 @@ ms.locfileid: "91261147"
 > Использовать эту предварительную версию функции не рекомендуется в рабочих средах.
 
 > [!NOTE]
-> Функция предварительной версии KeyVault Reference поддерживает только секреты с [версиями](https://docs.microsoft.com/azure/key-vault/general/about-keys-secrets-certificates#objects-identifiers-and-versioning) . Секреты без поддержки версий не поддерживаются.
+> Функция предварительной версии KeyVault Reference поддерживает только секреты с [версиями](../key-vault/general/about-keys-secrets-certificates.md#objects-identifiers-and-versioning) . Секреты без поддержки версий не поддерживаются.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Управляемое удостоверение для приложения (MIT)
     
@@ -162,6 +162,6 @@ string eventStorePassword =  Environment.GetEnvironmentVariable("EventStorePassw
 
 - Keyvault должен находиться в той же подписке, что и кластер Service Fabric. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Документация по Azure KeyVault](../key-vault/index.yml)

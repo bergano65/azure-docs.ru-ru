@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: estfan, logicappspm
 ms.topic: conceptual
 ms.date: 09/04/2020
-ms.openlocfilehash: c8bc9e844687c85255be972011eba03e9c38de48
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3910b6ffcce6c5bc4a8d565071c4b07db9e3ff63
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89488309"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92279029"
 ---
 # <a name="reference-guide-to-using-functions-in-expressions-for-azure-logic-apps-and-power-automate"></a>Справочное руководство по использованию функций в выражениях для Azure Logic Apps и Power Automate
 
@@ -1145,8 +1145,8 @@ bool(<value>)
 
 | Входное значение | Тип | Возвращаемое значение |
 | ----------- | ---------- | ---------------------- |
-| `bool(1)` | Целочисленный тип | `true` |
-| `bool(0)` | Целочисленный тип    | `false` |
+| `bool(1)` | Целое число | `true` |
+| `bool(0)` | Целое число    | `false` |
 | `bool(-1)` | Целое число | `true` |
 | `bool('true')` | Строка | `true` |
 | `bool('false')` | Строка | `false` |
@@ -4767,7 +4767,21 @@ xpath('<xml>', '<xpath>')
 
 Предположим, что у вас есть эта `'items'` XML-строка: 
 
-`"<?xml version="1.0"?> <produce> <item> <name>Gala</name> <type>apple</type> <count>20</count> </item> <item> <name>Honeycrisp</name> <type>apple</type> <count>10</count> </item> </produce>"`
+```xml
+<?xml version="1.0"?>
+<produce>
+  <item>
+    <name>Gala</name>
+    <type>apple</type>
+    <count>20</count>
+  </item>
+  <item>
+    <name>Honeycrisp</name>
+    <type>apple</type>
+    <count>10</count>
+  </item>
+</produce>
+```
 
 Этот пример передает выражение XPath, `'/produce/item/name'` ,, чтобы найти узлы, соответствующие `<name></name>` узлу в `'items'` XML-строке, и возвращает массив со значениями этих узлов:
 
@@ -4799,7 +4813,21 @@ xpath('<xml>', '<xpath>')
 
 В этом примере предположим, что `items` XML-строка также содержит атрибуты `expired='true'` и `expired='false'` :
 
-`"<?xml version="1.0"?> <produce> <item> <name expired='true'>Gala</name> <type>apple</type> <count>20</count> </item> <item> <name expired='false'>Honeycrisp</name> <type>apple</type> <count>10</count> </item> </produce>"`
+```xml
+<?xml version="1.0"?>
+<produce>
+  <item>
+    <name expired='true'>Gala</name>
+    <type>apple</type>
+    <count>20</count>
+  </item>
+  <item>
+    <name expired='false'>Honeycrisp</name>
+    <type>apple</type>
+    <count>10</count>
+  </item>
+</produce>
+```
 
 В этом примере выражение XPath передается, `'//name[@expired]'` чтобы найти все `name` элементы, имеющие `expired` атрибут:
 
@@ -4811,7 +4839,21 @@ xpath('<xml>', '<xpath>')
 
 В этом примере предположим, что `items` XML-строка содержит только этот атрибут `expired = 'true'` :
 
-`"<?xml version="1.0"?> <produce> <item> <name expired='true'>Gala</name> <type>apple</type> <count>20</count> </item> <item> <name>Honeycrisp</name> <type>apple</type> <count>10</count> </item> </produce>"`
+```xml
+<?xml version="1.0"?>
+<produce>
+  <item>
+    <name expired='true'>Gala</name>
+    <type>apple</type>
+    <count>20</count>
+  </item>
+  <item>
+    <name>Honeycrisp</name>
+    <type>apple</type>
+    <count>10</count>
+  </item>
+</produce>
+```
 
 В этом примере выражение XPath передается, `'//name[@expired = 'true']'` чтобы найти все `name` элементы, имеющие атрибут `expired = 'true'` :
 
@@ -4819,14 +4861,28 @@ xpath('<xml>', '<xpath>')
 
 Результат: `[ Gala ]`
 
-*Пример 6.*
+*Пример 6*
 
 В этом примере предположим, что `items` XML-строка также содержит следующие атрибуты: 
 
 * `expired='true' price='12'`
 * `expired='false' price='40'`
 
-`"<?xml version="1.0"?> <produce> <item> <name expired='true' price='12'>Gala</name> <type>apple</type> <count>20</count> </item> <item> <name expired='false' price='40'>Honeycrisp</name> <type>apple</type> <count>10</count> </item> </produce>"`
+```xml
+<?xml version="1.0"?>
+<produce>
+  <item>
+    <name expired='true' price='12'>Gala</name>
+    <type>apple</type>
+    <count>20</count>
+  </item>
+  <item>
+    <name expired='false' price='40'>Honeycrisp</name>
+    <type>apple</type>
+    <count>10</count>
+  </item>
+</produce>
+```
 
 В этом примере выражение XPath передается, `'//name[price>35]'` чтобы найти все `name` элементы, имеющие `price > 35` :
 
@@ -4838,7 +4894,21 @@ xpath('<xml>', '<xpath>')
 
 В этом примере предположим, что `items` XML-строка такая же, как в примере 1:
 
-`"<?xml version="1.0"?> <produce> <item> <name>Gala</name> <type>apple</type> <count>20</count> </item> <item> <name>Honeycrisp</name> <type>apple</type> <count>10</count> </item> </produce>"`
+```xml
+<?xml version="1.0"?>
+<produce>
+  <item>
+    <name>Gala</name>
+    <type>apple</type>
+    <count>20</count>
+  </item>
+  <item>
+    <name>Honeycrisp</name>
+    <type>apple</type>
+    <count>10</count>
+  </item>
+</produce>
+```
 
 В этом примере выполняется поиск узлов, соответствующих `<count></count>` узлу, и добавляются значения этих узлов с помощью `sum()` функции:
 
@@ -4850,7 +4920,9 @@ xpath('<xml>', '<xpath>')
 
 В этом примере предположим, что имеется XML-строка, которая включает пространство имен XML-документа `xmlns="http://contoso.com"` :
 
-`"<?xml version="1.0"?> <file xmlns="http://contoso.com"> <location>Paris</location> </file>"`
+```xml
+<?xml version="1.0"?><file xmlns="http://contoso.com"><location>Paris</location></file>
+```
 
 Эти выражения используют либо выражение XPath, `/*[name()="file"]/*[name()="location"]` либо `/*[local-name()="file" and namespace-uri()="http://contoso.com"]/*[local-name()="location"]` , чтобы найти узлы, соответствующие `<location></location>` узлу. В этих примерах показан синтаксис, используемый в конструкторе приложений логики или в редакторе выражений:
 

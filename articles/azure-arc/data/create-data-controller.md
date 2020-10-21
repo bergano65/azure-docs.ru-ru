@@ -9,12 +9,12 @@ ms.author: twright
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: ba2d0acec37d0f59240381cdea04f4d53ded0b1c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 00d8e0d3ba57034bd65dfb7663341e4fcdf586dc
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91273047"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92310916"
 ---
 # <a name="create-the-azure-arc-data-controller"></a>Создание контроллера данных ARC в Azure
 
@@ -58,14 +58,14 @@ ms.locfileid: "91273047"
 - **Имя группы ресурсов Azure** — имя группы ресурсов, в которой должен быть создан ресурс контроллера данных в Azure.
 - **Расположение Azure** — расположение Azure, в котором будут храниться метаданные ресурсов контроллера данных в Azure. Список доступных регионов см. в статье [Глобальная инфраструктура и продукты Azure по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=azure-arc).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Существует несколько вариантов создания контроллера данных Arc Azure.
 
 > **Хотите попробовать?**  
 > Быстро Начните работу с помощью [Azure Arc JumpStart](https://github.com/microsoft/azure_arc#azure-arc-enabled-data-services) в службе Azure Kubernetes Service (AKS), AWS эластичной Kubernetes Service (ЕКС), Google Cloud Kubernetes Engine (гке) или на виртуальной машине Azure.
 > 
-- [Создание контроллера данных с помощью Azure Data CLI (аздата)](create-data-controller-using-azdata.md)
+- [Создание контроллера данных с помощью [!INCLUDE [azure-data-cli-azdata](../../../includes/azure-data-cli-azdata.md)]](create-data-controller-using-azdata.md)
 - [Создание контроллера данных с Azure Data Studio](create-data-controller-azure-data-studio.md)
 - [Создание контроллера данных из портал Azure через записную книжку Jupyter в Azure Data Studio](create-data-controller-resource-in-azure-portal.md)
 - [Создание контроллера данных с помощью таких средств Kubernetes, как kubectl или OC](create-data-controller-using-kubernetes-native-tools.md)

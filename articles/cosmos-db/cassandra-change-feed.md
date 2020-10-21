@@ -7,16 +7,16 @@ ms.subservice: cosmosdb-cassandra
 ms.topic: how-to
 ms.date: 11/25/2019
 ms.author: thvankra
-ms.openlocfilehash: 417a1dbc72c3b3c35c501351dcc8bda9dc95a78d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1b2e94bfe1bef9ecdeaa4b2b84224967bb1c7741
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84431603"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92281586"
 ---
 # <a name="change-feed-in-the-azure-cosmos-db-api-for-cassandra"></a>Веб-канал изменений в Azure Cosmos DB API для Cassandra
 
-Поддержка [веб-канала изменений](change-feed.md) в Azure Cosmos DB API для Cassandra доступна в предикатах запросов на языке запросов Cassandra (CQL). Используя эти условия предиката, можно запросить API веб-канала изменений. Приложения могут получать изменения, внесенные в таблицу с помощью первичного ключа (также известного как ключ секции), как это требуется в CQL. Затем можно выполнить дальнейшие действия на основе результатов. Изменения в строках таблицы фиксируются в порядке их изменения, а порядок сортировки гарантируется по ключу секции.
+Поддержка [веб-канала изменений](change-feed.md) в Azure Cosmos DB API для Cassandra доступна в предикатах запросов на языке запросов Cassandra (CQL). Используя эти условия предиката, можно запросить API веб-канала изменений. Приложения могут получать изменения, внесенные в таблицу с помощью первичного ключа (также известного как ключ секции), как это требуется в CQL. Затем можно выполнить дальнейшие действия на основе результатов. Изменения в строках таблицы фиксируются в порядке их изменения и порядке сортировки по ключу секции.
 
 В следующем примере показано, как получить канал изменений для всех строк в API Cassandra таблице пространства ключей с помощью .NET. Предикат COSMOS_CHANGEFEED_START_TIME () используется непосредственно в CQL для запроса элементов в веб-канале изменений с указанного времени начала (в данном случае это текущая дата и время). Полный пример [для C# можно скачать здесь,](https://docs.microsoft.com/samples/azure-samples/azure-cosmos-db-cassandra-change-feed/cassandra-change-feed/) а для Java — [здесь](https://github.com/Azure-Samples/cosmos-changefeed-cassandra-java).
 

@@ -6,12 +6,12 @@ ms.manager: abhemraj
 ms.author: hamusa
 ms.topic: troubleshooting
 ms.date: 01/02/2020
-ms.openlocfilehash: b2a01e816c0f0569c207aa65e5027b935210e3b9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b6fed24c7de87424bde94b864d4a9db91828a510
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91331783"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92315790"
 ---
 # <a name="troubleshoot-the-azure-migrate-appliance-and-discovery"></a>Устранение неполадок с устройством и обнаружением службы "миграция Azure"
 
@@ -27,7 +27,7 @@ ms.locfileid: "91331783"
 
 Если появится сообщение об ошибке "указанный файл манифеста недопустим: Недопустимая запись манифеста OVF", выполните следующие действия.
 
-1. Проверьте, правильно ли загружен файл OVA устройства для миграции Azure, проверив его хэш-значение. [Подробнее.](./tutorial-prepare-vmware.md) Если хэш-значение не совпадает, скачайте файл OVA еще раз и повторите попытку развертывания.
+1. Проверьте, правильно ли загружен файл OVA устройства для миграции Azure, проверив его хэш-значение. [Подробнее](./tutorial-discover-vmware.md). Если хэш-значение не совпадает, скачайте файл OVA еще раз и повторите попытку развертывания.
 2. Если развертывание по-прежнему завершается сбоем и вы используете VMware vSphere клиент для развертывания файла OVF, попробуйте развернуть его с помощью веб-клиента vSphere. Если развертывание по-прежнему завершается сбоем, попробуйте использовать другой веб-браузер.
 3. Если вы используете веб-клиент vSphere и пытаетесь развернуть его на vCenter Server 6,5 или 6,7, попробуйте развернуть OVA непосредственно на узле ESXi:
    - Подключитесь к узлу ESXi напрямую (вместо vCenter Server) с помощью веб-клиента (IP- *адрес* HTTPS://<узла>/УИ).
@@ -249,5 +249,5 @@ ms.locfileid: "91331783"
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Настройте устройство для [VMware](how-to-set-up-appliance-vmware.md), [Hyper-V](how-to-set-up-appliance-hyper-v.md)или [физических серверов](how-to-set-up-appliance-physical.md).

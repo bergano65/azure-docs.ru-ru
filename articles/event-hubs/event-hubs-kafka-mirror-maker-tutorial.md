@@ -3,12 +3,12 @@ title: Использование Apache Kafka MirrorMaker в службе "Це
 description: В этой статье описано, как с помощью Kafka MirrorMaker настроить зеркальное отображение кластера Kafka в службе "Центры событий Azure".
 ms.topic: how-to
 ms.date: 06/23/2020
-ms.openlocfilehash: aea8ebcfa65d5f4c90aa1908d03f0fcde8906bba
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ab0f78adeeff34334c9800632fc58ab634b4fab6
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85320196"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92308359"
 ---
 # <a name="use-kafka-mirrormaker-with-event-hubs-for-apache-kafka"></a>Использование Apache Kafka MirrorMaker с Центрами событий
 
@@ -39,15 +39,15 @@ ms.locfileid: "85320196"
 
 * Прочтите статью [Центры событий Azure для Apache Kafka](event-hubs-for-kafka-ecosystem-overview.md). 
 * Подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начать работу.
-* [Пакет Java Development Kit (JDK) 1.7 +](https://aka.ms/azure-jdks)
+* [Пакет Java Development Kit (JDK) 1.7 +](/azure/developer/java/fundamentals/java-jdk-long-term-support)
     * В Ubuntu выполните команду `apt-get install default-jdk`, чтобы установить JDK.
     * Обязательно настройте переменную среды JAVA_HOME так, чтобы она указывала на папку, в которой установлен пакет JDK.
 * [Скачивание](https://maven.apache.org/download.cgi) и [Установка](https://maven.apache.org/install.html) двоичного архива Maven
     * В Ubuntu выполните команду `apt-get install maven`, чтобы установить Maven.
-* [Git](https://www.git-scm.com/downloads);
+* [GIT](https://www.git-scm.com/downloads)
     * В Ubuntu выполните команду `sudo apt-get install git`, чтобы установить Git.
 
-## <a name="create-an-event-hubs-namespace"></a>Создание пространства имен в Центрах событий
+## <a name="create-an-event-hubs-namespace"></a>Создание пространства имен Центров событий
 
 Для отправки и получения данных из любой службы Центров событий требуется пространство имен Центров событий. Инструкции по созданию пространства имен и концентратора событий см. в разделе [Создание концентратора событий](event-hubs-create.md) . Скопируйте строку подключения к Центрам событий для дальнейшего использования.
 

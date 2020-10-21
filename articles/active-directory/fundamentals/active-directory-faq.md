@@ -13,12 +13,12 @@ ms.date: 11/12/2018
 ms.author: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: afb6adc38fd44366b837119518622dd8931f9096
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: de7395f42021144eab3dd400bf9a953d57b5a6ee
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89565571"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92312590"
 ---
 # <a name="frequently-asked-questions-about-azure-active-directory"></a>Часто задаваемые вопросы об Azure Active Directory
 Azure Active Directory — это комплексная служба идентификации (IDaaS), охватывающая все аспекты идентификации, управления доступом и безопасности.
@@ -162,7 +162,7 @@ Azure Active Directory — это комплексная служба иден�
 
 Дополнительные сведения см. в разделе:
 
-* [Настройка единого входа для приложений, которых нет в коллекции приложений Azure Active Directory](../manage-apps/configure-federated-single-sign-on-non-gallery-applications.md)
+* [Настройка единого входа для приложений, которых нет в коллекции приложений Azure Active Directory](../manage-apps/configure-saml-single-sign-on.md)
 * [Автоматическая подготовка пользователей и групп из Azure Active Directory в приложениях с использованием SCIM](../app-provisioning/use-scim-to-provision-users-and-groups.md)
 
 ---
