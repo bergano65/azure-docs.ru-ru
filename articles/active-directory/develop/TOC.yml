@@ -36,7 +36,7 @@
       items:
         - name: ASP.NET
           href: quickstart-v2-aspnet-webapp.md
-        - name: ASP.NET Core
+        - name: "ASP.NET\_Core"
           href: quickstart-v2-aspnet-core-webapp.md
         - name: Node.js
           href: quickstart-v2-nodejs-webapp.md
@@ -75,6 +75,8 @@
       items:
         - name: Angular
           href: tutorial-v2-angular.md
+        - name: Blazor WebAssembly
+          href: tutorial-blazor-webassembly.md
         - name: Поток кода проверки подлинности (JavaScript)
           href: tutorial-v2-javascript-auth-code.md
         - name: Поток неявного предоставления разрешения (JavaScript)
@@ -123,6 +125,9 @@
       href: authentication-flows-app-scenarios.md
     - name: Рекомендации по использованию платформы удостоверений
       href: identity-platform-integration-checklist.md
+    - name: Единый вход в мобильные приложения
+      href: mobile-sso-support-overview.md
+      displayName: 'android, ios'
     - name: Сценарии приложений
       displayName: App scenarios
       items:
@@ -291,10 +296,8 @@
           items:
             - name: Учетные записи и профили клиентов
               href: accounts-overview.md
-            - name: Агенты авторизации
-              href: authorization-agents.md
-            - name: Аутентификация с использованием брокера
-              href: brokered-auth.md
+            - name: Единый вход с использованием MSAL в Android
+              href: msal-android-single-sign-on.md
             - name: "Интеграция с Azure\_AD\_B2C"
               href: msal-android-b2c.md
             - name: Переход на MSAL.Android

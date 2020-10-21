@@ -11,12 +11,12 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 07/16/2019
 ms.topic: how-to
-ms.openlocfilehash: b91b7175fa4c7b91fec63a817206fa540813bdb7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c0e62a7d9b9beb8ecdfaabdd44fdd547dd78d38f
+ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91443802"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92328197"
 ---
 # <a name="export-to-a-bacpac-file---azure-sql-database-and-azure-sql-managed-instance"></a>Экспорт в файл BACPAC — база данных SQL Azure и Azure SQL Управляемый экземпляр
 
@@ -48,7 +48,7 @@ ms.locfileid: "91443802"
 
 1. Чтобы экспортировать базу данных с помощью [портала Azure](https://portal.azure.com), откройте страницу для базы данных и щелкните **Экспорт** на панели инструментов.
 
-   ![Экспорт базы данных](./media/database-export/database-export1.png)
+   ![Снимок экрана, на котором наделена кнопка "экспорт".](./media/database-export/database-export1.png)
 
 2. Введите имя BACPAC-файла, выберите учетную запись хранения Azure и контейнер для экспорта, а также соответствующие учетные данные для доступа к базе данных-источнику. Имя для **входа администратора SQL Server** необходимо, даже если вы являетесь администратором Azure, так как администратор Azure не имеет права администратора в базе данных SQL Azure или azure SQL управляемый экземпляр.
 

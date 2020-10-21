@@ -6,14 +6,14 @@ ms.topic: how-to
 ms.date: 09/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: f3441d7c7f42c58928bb97c945e7b1e7673f7afa
-ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
+ms.openlocfilehash: 00a3c1d0a2a905e6435b811d5f2611c16a5de502
+ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91877101"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92328885"
 ---
-# <a name="configure-device-redirections"></a>Настройка перенаправлений устройств
+# <a name="configure-device-redirections"></a>Настройка перенаправления устройств
 
 Настройка перенаправлений устройств для среды виртуальных рабочих столов Windows позволяет использовать принтеры, USB-устройства, микрофоны и другие периферийные устройства в удаленном сеансе. Для некоторых перенаправлений устройств требуется изменить свойства протокол удаленного рабочего стола (RDP) и параметры групповая политика.
 
@@ -50,7 +50,10 @@ ms.locfileid: "91877101"
 - `camerastoredirect:s:*` перенаправляет все камеры.
 - `camerastoredirect:s:` отключает перенаправление камеры.
 
-Можно также перенаправлять определенные камеры, используя разделенный точками с запятой список интерфейсов KSCATEGORY_VIDEO_CAMERA, таких как `camerastoredirect:s:\?\usb#vid_0bda&pid_58b0&mi` .
+>[!NOTE]
+>Даже если `camerastoredirect:s:` свойство отключено, локальные камеры могут перенаправляться через `devicestoredirect:s:` свойство. Чтобы полностью отключить набор перенаправления камеры `camerastoredirect:s:` и задать `devicestoredirect:s:` или определить некоторое подмножество устройств Plug and Play, не содержащих камеры.
+
+Можно также перенаправлять определенные камеры, используя разделенный точками с запятой список интерфейсов KSCATEGORY_VIDEO_CAMERA, таких как `camerastoredirect:s:\?\usb#vid_0bda&pid_58b0&mi` . 
 
 ### <a name="clipboard-redirection"></a>Перенаправление буфера обмена
 

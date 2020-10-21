@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 06/18/2020
 ms.author: sausin
-ms.openlocfilehash: 05b47a786fe845460177b66b5bd54cdb140c246e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d89f9330947d1c5d0146b8531f265d86d0fd5160
+ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87289419"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92329157"
 ---
 # <a name="create-a-voice-assistant-using-custom-commands"></a>Создание голосового помощника с помощью пользовательских команд
 
@@ -123,7 +123,7 @@ ms.locfileid: "87289419"
 1. Запустите **VoiceAssistantClient.exe**.
 1. Создайте новый профиль публикации и введите значение для **профиля подключения**. В разделе **Общие параметры** введите значение **ключ подписки** (это то же самое, что и **ключ ресурса речи** , сохраненный при публикации приложения), **регион ключа подписки** и **идентификатор приложения пользовательских команд**.
     > [!div class="mx-imgBorder"]
-    > ![ВВАК создать профиль](media/custom-commands/create-profile.png)
+    > ![Снимок экрана, посвященный разделу общих параметров для создания профиля ВВАК.](media/custom-commands/create-profile.png)
 1. Выберите **сохранить и применить профиль**.
 1. Теперь попробуйте использовать следующие входные данные через речь или текст
     > [!div class="mx-imgBorder"]
@@ -133,6 +133,6 @@ ms.locfileid: "87289419"
 > [!TIP]
 > Можно щелкнуть записи в **журнале действий** , чтобы проверить необработанные ответы, отправляемые из службы пользовательских команд.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье вы использовали существующее приложение. Далее в разделах с [инструкциями](how-to-custom-commands-create-application-with-simple-commands.md)вы узнаете, как проектировать, разрабатывать, отлаживать, тестировать и интегрировать пользовательские команды с нуля.

@@ -263,6 +263,8 @@
           items:
             - name: Правила брандмауэра для IP-адресов на уровне сервера
               href: database/firewall-create-server-level-portal-quickstart.md
+        - name: Действия GitHub
+          href: database/connect-github-actions-sql-db.md
     - name: Учебники
       items:
         - name: Проектирование базы данных

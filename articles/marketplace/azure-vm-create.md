@@ -1,24 +1,24 @@
 ---
 title: Создайте предложение виртуальной машины в Azure Marketplace.
-description: Узнайте, как создать предложение виртуальной машины в Azure Marketplace.
+description: Узнайте, как создать предложение виртуальной машины в коммерческом магазине Майкрософт.
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 author: mingshen-ms
 ms.author: mingshen
-ms.date: 10/19/2020
-ms.openlocfilehash: 9395b607f235ab606c9013f9273c4162b8c953d7
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.date: 10/20/2020
+ms.openlocfilehash: 5964292d7037465456efe22283a5552a2bfc7ad8
+ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92284795"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92331266"
 ---
 # <a name="how-to-create-a-virtual-machine-offer-on-azure-marketplace"></a>Как создать предложение виртуальной машины в Azure Marketplace
 
-В этой статье описывается, как создать и опубликовать предложение виртуальной машины Azure в [Azure Marketplace](https://azuremarketplace.microsoft.com/). Она подходит для виртуальных машин на базе Windows или Linux, оснащенных операционной системой, виртуальным жестким диском (VHD) и дисками данных в количестве до 16 штук.
+В этой статье описывается, как создать предложение виртуальной машины Azure для [Azure Marketplace](https://azuremarketplace.microsoft.com/). Она подходит для виртуальных машин на базе Windows или Linux, оснащенных операционной системой, виртуальным жестким диском (VHD) и дисками данных в количестве до 16 штук.
 
-Прежде чем начать, изучите статью [Управление учетной записью коммерческого магазина в центре партнеров](partner-center-portal/create-account.md). Убедитесь, что ваша учетная запись зарегистрирована в программе коммерческой платформы.
+Прежде чем начать, [Создайте учетную запись коммерческого магазина в центре партнеров](partner-center-portal/create-account.md). Убедитесь, что ваша учетная запись зарегистрирована в программе коммерческой платформы.
 
 ## <a name="before-you-begin"></a>Перед началом
 
@@ -79,7 +79,7 @@ ms.locfileid: "92284795"
 
 Выберите **Создать**, чтобы создать предложение и продолжить.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Настройка свойств предложения виртуальной машины](azure-vm-create-properties.md)
 - [Рекомендации по размещению предложений](gtm-offer-listing-best-practices.md)

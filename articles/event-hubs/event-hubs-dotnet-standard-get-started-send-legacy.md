@@ -4,12 +4,12 @@ description: В этой статье представлено пошагово�
 ms.topic: conceptual
 ms.date: 06/23/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: d7d33ebcabb728cf2fbf43b393de5eec6cb58af3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8819a95364bf41c6f9837c3db31a9800968d096c
+ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89010704"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92332167"
 ---
 # <a name="send-events-to-or-receive-events-from-azure-event-hubs-using-net-core-microsoftazureeventhubs"></a>Отправка событий или получение событий из концентраторов событий Azure с помощью .NET Core (Microsoft. Azure. EventHubs)
 В этом кратком руководстве показано, как отправлять события и получать события из концентратора событий с помощью библиотеки **Microsoft. Azure. EventHubs** .NET Core.
@@ -362,7 +362,7 @@ ms.locfileid: "89010704"
 ## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь со следующими статьями:
 
-- [Примеры управления доступом на основе ролей (RBAC)](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/Rbac). 
+- [Примеры управления доступом на основе ролей Azure (Azure RBAC)](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/Rbac). 
     
     В этих примерах используется старая библиотека **Microsoft. Azure. EventHubs** , но вы можете легко обновить ее, используя последнюю библиотеку **Azure. Messaging. EventHubs** . Чтобы переместить пример из старой библиотеки в новую, ознакомьтесь с [руководством по миграции из Microsoft. Azure. EventHubs в Azure. Messaging. EventHubs](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/eventhub/Azure.Messaging.EventHubs/MigrationGuide.md).
 - [EventProcessorHost](event-hubs-event-processor-host.md)

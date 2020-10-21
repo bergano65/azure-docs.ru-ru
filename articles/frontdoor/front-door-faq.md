@@ -9,14 +9,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 09/18/2020
+ms.date: 10/20/2020
 ms.author: duau
-ms.openlocfilehash: c7a5a02a063f90953982d42fe9c7d2c6dc199b2a
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: 1b49ac357fd021b23272112a24ae9371d12bc042
+ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92282282"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92331589"
 ---
 # <a name="frequently-asked-questions-for-azure-front-door"></a>Часто задаваемые вопросы о передней дверце Azure
 
@@ -161,6 +161,10 @@ IP-адрес недоступности переднего плана для п
 ### <a name="how-long-does-it-take-for-a-rule-to-take-effect-after-being-added-to-the-front-door-rules-engine"></a>Сколько времени займет действие правила после добавления в обработчик правил передней дверцы?
 
 Для завершения обновления Конфигурация обработчика правил занимает около 10 – 15 минут. Вы можете дождаться, когда правило вступит в силу сразу после завершения обновления. 
+
+### <a name="can-i-configure-azure-cdn-behind-my-front-door-profile-or-vice-versa"></a>Можно ли настроить Azure CDN за профилем передней дверцы или наоборот?
+
+Передняя дверца Azure и Azure CDN не могут быть настроены вместе, так как обе службы используют одни и те же веб-сайты Azure при ответе на запросы. 
 
 ## <a name="performance"></a>Производительность
 

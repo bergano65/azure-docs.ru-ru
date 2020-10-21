@@ -12,12 +12,12 @@ ms.date: 11/13/2018
 ms.author: baselden
 ms.reviewer: plenzke
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cf8ceb308fbcc2156a6df43e0167f4cb544b2d3d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 568a524e9300905a5e70b2cf7481fc7eabfc669e
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91331205"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92311219"
 ---
 # <a name="plan-an-azure-active-directory-reporting-and-monitoring-deployment"></a>Планирование развертывания Azure Active Directory отчетов и мониторинга
 
@@ -73,7 +73,7 @@ ms.locfileid: "91331205"
 
 ### <a name="engage-the-right-stakeholders"></a>Привлечение соответствующих заинтересованных лиц
 
-Причиной неудач технических проектов обычно являются неоправданные ожидания относительно влияния, результатов и обязанностей. Чтобы избежать этих ловушек, [Убедитесь, что вы подрабатываете нужные заинтересованные лица](https://aka.ms/deploymentplans). Также убедитесь, что роли заинтересованных лиц в проекте хорошо понятны, путем документирования заинтересованных лиц, а также их ввода и подотчетности.
+Причиной неудач технических проектов обычно являются неоправданные ожидания относительно влияния, результатов и обязанностей. Чтобы избежать этих ловушек, [Убедитесь, что вы подрабатываете нужные заинтересованные лица](../fundamentals/active-directory-deployment-plans.md). Также убедитесь, что роли заинтересованных лиц в проекте хорошо понятны, путем документирования заинтересованных лиц, а также их ввода и подотчетности.
 
 ### <a name="plan-communications"></a>Планирование информирования
 
@@ -133,7 +133,7 @@ ms.locfileid: "91331205"
 
 Журналы маршрутизации в концентратор событий Azure обеспечивают интеграцию со сторонними инструментами SIEM. Такая интеграция позволяет объединить данные из журнала действий Azure AD с другими данными, управляемыми средствами SIEM, что позволяет получать более подробные аналитические сведения о среде. 
 
-См. сведения о том, как [осуществлять потоковую передачу журналов в концентратор событий](/azure/active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub).
+См. сведения о том, как [осуществлять потоковую передачу журналов в концентратор событий](./tutorial-azure-monitor-stream-logs-to-event-hub.md).
 
 ## <a name="plan-operations-and-security-for-azure-ad-reporting-and-monitoring"></a>Планирование операций и безопасности для отчетов и мониторинга Azure AD
 
@@ -189,7 +189,7 @@ ms.locfileid: "91331205"
 
  
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Попробуйте реализовать [Управление привилегированными пользователями](../privileged-identity-management/pim-configure.md) 
 

@@ -31,6 +31,9 @@
     - name: Защита новых ресурсов с помощью блокировок ресурсов схемы
       displayName: 'read only, do not delete, lock assignment'
       href: ./tutorials/protect-new-resources.md
+    - name: 'Learn: Управление несколькими подписками с помощью Azure Blueprints'
+      displayName: 'governance, module'
+      href: /learn/modules/build-cloud-governance-strategy-azure/10-govern-subscriptions-azure-blueprints
 - name: Примеры
   items:
     - name: Индекс

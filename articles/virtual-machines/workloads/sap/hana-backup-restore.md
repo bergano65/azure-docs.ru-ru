@@ -13,14 +13,14 @@ ms.workload: infrastructure
 ms.date: 10/16/2020
 ms.author: saghorpa
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 7c2b606059f92cafc44e383c2aced0d6bed467c2
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 5fdaa1346e4837b3bf611d964158d132dcdfeeda
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92149728"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92282684"
 ---
-# <a name="backup-and-restore-on-sap-hana-on-azure"></a>Резервное копирование и восстановление на SAP HANA в Azure
+# <a name="backup-and-restore-of-sap-hana-on-hana-large-instances"></a>Резервное копирование и восстановление SAP HANA в крупных экземплярах HANA
 
 >[!IMPORTANT]
 >Эта статья не заменяет документацию по администрированию SAP HANA или примечания SAP. Мы надеемся, что у вас есть четкое понимание и опыт в SAP HANA администрировании и операциях, особенно для резервного копирования, восстановления, обеспечения высокой доступности и аварийного восстановления. В этой статье показаны снимки экрана из SAP HANA Studio. Содержимое, структура и характер экранов инструментов администрирования SAP и сами инструменты могут изменяться в разных выпусках SAP HANA.
