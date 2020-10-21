@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.custom: mvc
 ms.topic: troubleshooting
 ms.date: 07/08/2020
-ms.openlocfilehash: 77c54d6ea463b5a8a4952d243886b80f38312d27
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cc3323a3ae2d604557d7e09b38252d63f17c5470
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91291492"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92319908"
 ---
 # <a name="status-of-migration-scenarios-supported-by-azure-database-migration-service"></a>Состояние сценариев миграции, поддерживаемых Azure Database Migration Service
 
@@ -81,14 +81,13 @@ Azure Database Migration Service предназначен для поддерж�
 | **База данных Azure для MySQL** | MySQL | ✔ | GA |
 |   | RDS MySQL | ✔ | GA |
 | **База данных Azure для PostgreSQL — один сервер** | PostgreSQL | ✔ | GA |
-|   | База данных Azure для PostgreSQL — один сервер * | ✔ | GA |
+|   | База данных Azure для PostgreSQL — один сервер | ✔ | GA |
 |   | RDS PostgreSQL | ✔ | GA |
 |   | Oracle; | ✔ | Общедоступная предварительная версия |
 | **База данных Azure для PostgreSQL — масштабирование (Цитус)** | PostgreSQL | ✔ | GA |
 |   | RDS PostgreSQL | ✔ | GA |
 
-* Поддерживается для PostgreSQL версии 10 и более поздних версий.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Общие сведения о доступности Azure Database Migration Service и региональных стандартов см. в статье [что такое Azure Database Migration Service](dms-overview.md).

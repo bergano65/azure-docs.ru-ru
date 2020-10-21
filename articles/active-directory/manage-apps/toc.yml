@@ -61,6 +61,8 @@
           href: plan-sso-deployment.md
         - name: Варианты реализации единого входа
           href: sso-options.md
+        - name: Единый вход на основе OIDC
+          href: configure-oidc-single-sign-on.md
         - name: Единый вход на основе SAML
           href: configure-saml-single-sign-on.md
         - name: Единый вход на основе пароля

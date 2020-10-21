@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/28/2020
 ms.author: allensu
-ms.openlocfilehash: 4dba170c750a61ea08e4116dc6f2b13ef14c87ed
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: 231b6ffa3730721d4e44ecb15c2fc58591b80178
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92217394"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92314810"
 ---
 # <a name="troubleshoot-azure-load-balancer"></a>Устранение неполадок Azure Load Balancer
 
@@ -157,6 +157,17 @@ ms.locfileid: "92217394"
 - Воспользуйтесь командой Psping с одной из виртуальных машин внутреннего пула в виртуальной сети, чтобы проверить ответ порта пробы (пример: psping 10.0.0.4:3389), и запишите результаты. 
 - Если в результате этих проверок связи ответ не получен, то одновременно с выполнением команды PsPing запустите команду netsh trace на виртуальной машине внутреннего пула и тестовой виртуальной машине в виртуальной сети, а затем остановите команду netsh trace. 
  
+## <a name="symptom-load-balancer-in-failed-state"></a>Симптом: Load Balancer в состоянии сбоя 
+
+**Решение**
+
+- Определив ресурс, который находится в состоянии сбоя, перейдите к [Обозреватель ресурсов Azure](https://resources.azure.com/) и найдите ресурс в этом состоянии. 
+- Обновите переключатель в правом верхнем углу для чтения и записи.
+- Щелкните Edit (изменить) для ресурса в состоянии Failed (сбой).
+- Чтобы убедиться, что состояние подготовки изменено на успешно, нажмите кнопку "поместить", а затем — "получить".
+- После этого можно продолжить работу с другими действиями, так как ресурс не находится в состоянии сбоя.
+
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Если описанные выше шаги не устранят проблему, отправьте [запрос в службу поддержки](https://azure.microsoft.com/support/options/).

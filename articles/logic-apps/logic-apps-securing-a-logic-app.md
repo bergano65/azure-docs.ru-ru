@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: rarayudu, logicappspm
 ms.topic: conceptual
 ms.date: 10/16/2020
-ms.openlocfilehash: b25cac502a4e9a0cc5582134cb9601b75672ffd1
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: 159f4b2ea0cafb0b2c883cde76ddce7ddd3f1fc6
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92168509"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92317575"
 ---
 # <a name="secure-access-and-data-in-azure-logic-apps"></a>Безопасный доступ и данные в Azure Logic Apps
 
@@ -1065,7 +1065,7 @@ Authorization: OAuth realm="Photos",
 
   * [Планы службы приложений Azure](../app-service/overview-hosting-plans.md)
   * [Параметры сети для Функций Azure](../azure-functions/functions-networking-options.md)
-  * [Выделенные узлы Azure для виртуальных машин](../virtual-machines/windows/dedicated-hosts.md)
+  * [Выделенные узлы Azure для виртуальных машин](../virtual-machines/dedicated-hosts.md)
   * [Изоляция виртуальных машин в Azure](../virtual-machines/isolation.md)
   * [Развертывание выделенных служб Azure в виртуальных сетях](../virtual-network/virtual-network-for-azure-services.md)
 

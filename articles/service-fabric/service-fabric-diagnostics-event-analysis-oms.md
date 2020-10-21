@@ -5,12 +5,12 @@ author: srrengar
 ms.topic: conceptual
 ms.date: 02/21/2019
 ms.author: srrengar
-ms.openlocfilehash: bd952449cb088a383f0b9241fb7856522fbeeb10
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f44426103b8f0fce275f33682edbc3b84a08344b
+ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86257664"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92329565"
 ---
 # <a name="event-analysis-and-visualization-with-azure-monitor-logs"></a>Анализ событий и визуализация с помощью журналов Azure Monitor
  Azure Monitor собирает и анализирует данные телеметрии от приложений и служб, размещенных в облаке, и предоставляет средства анализа, с помощью которых вы сможете максимально увеличить их доступность и производительность. В этой статье описано, как выполнять запросы в журналах Azure Monitor, чтобы получить подробные сведения и устранить неполадки, происходящие в кластере. Рассматриваются следующие распространенные вопросы:
@@ -42,7 +42,7 @@ ms.locfileid: "86257664"
 
 На приведенном ниже рисунке показана домашняя страница решения "Аналитика Service Fabric". На этой домашней странице представлена информация, касающаяся работы вашего кластера.
 
-![Решение Service Fabric](media/service-fabric-diagnostics-event-analysis-oms/oms_service_fabric_solution.PNG)
+![Снимок экрана, на котором показана домашняя страница решения Аналитика Service Fabric.](media/service-fabric-diagnostics-event-analysis-oms/oms_service_fabric_solution.PNG)
 
  Если включить диагностику во время создания кластера, можно просмотреть такие события: 
 
@@ -100,10 +100,10 @@ ServiceFabricOperationalEvent
 
 ![События запросов на каждом узле](media/service-fabric-diagnostics-event-analysis-oms/oms_kusto_query.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Чтобы включить мониторинг инфраструктуры (т. е. счетчики производительности), перейдите к разделу о [добавлении агента Log Analytics](service-fabric-diagnostics-oms-agent.md). Агент собирает счетчики производительности и добавляет их в имеющуюся рабочую область.
 * Для локальных кластеров Azure Monitor журналы предлагают шлюз (прокси-сервер HTTP Forward), который можно использовать для отправки данных в журналы Azure Monitor. Дополнительные сведения см. в статье [Подключение компьютеров без доступа к Интернету к журналам Azure Monitor с помощью шлюза log Analytics](../azure-monitor/platform/gateway.md).
 * Настройте [автоматические оповещения](../azure-monitor/platform/alerts-overview.md), которые помогают выполнять обнаружение и диагностику.
-* Ознакомьтесь с функциями поиска по [журналам и запросами](../azure-monitor/log-query/log-query-overview.md) , предлагаемыми в составе журналов Azure Monitor.
+* Ознакомьтесь с функциями [поиска по журналам и запросов к журналам](../azure-monitor/log-query/log-query-overview.md), которые являются частью журналов Azure Monitor.
 * Более подробный обзор журналов Azure Monitor и их предложений см. в статье [что такое Azure Monitor журналов?](../azure-monitor/overview.md).

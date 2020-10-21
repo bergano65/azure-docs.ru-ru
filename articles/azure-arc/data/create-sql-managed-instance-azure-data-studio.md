@@ -9,12 +9,12 @@ ms.author: twright
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 2aed3ea48935a62d68f739594a265649a2e1292d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f4c1d4d83ad3c39bab8058ad29662891fe3678a1
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91311535"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92320302"
 ---
 # <a name="create-sql-managed-instance---azure-arc-using-azure-data-studio"></a>Создание управляемого экземпляра SQL в службе "Дуга Azure" с помощью Azure Data Studio
 
@@ -49,7 +49,7 @@ Logged in successfully to `https://10.0.0.4:30080` in namespace `arc`. Setting a
 - На вкладке подключения щелкните три точки в верхнем левом углу и выберите "создать развертывание".
 - В параметрах развертывания выберите **управляемый экземпляр SQL Azure — Arc Azure** . 
   > [!NOTE]
-  > Вам может быть предложено установить интерфейс командной строки аздата, если он в настоящее время не установлен.
+  > Возможно, вам будет предложено установить этот параметр, [!INCLUDE [azure-data-cli-azdata](../../../includes/azure-data-cli-azdata.md)] если он в настоящее время не установлен.
 - Примите условия соглашения о конфиденциальности и лицензии и нажмите кнопку **выбрать** внизу.
 
 

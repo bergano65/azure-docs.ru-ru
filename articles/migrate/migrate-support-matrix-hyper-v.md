@@ -3,12 +3,12 @@ title: Поддержка оценки Hyper-V в службе "миграция
 description: Дополнительные сведения о поддержке оценки Hyper-V с помощью Azure Migrate Server
 ms.topic: conceptual
 ms.date: 06/14/2020
-ms.openlocfilehash: 36cc96915380a464f02df5806337a06f022ecbbf
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 4c50bd2bdd0e5a0d68b545a914582352d7b34421
+ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/21/2020
-ms.locfileid: "92311329"
+ms.locfileid: "92331980"
 ---
 # <a name="support-matrix-for-hyper-v-assessment"></a>Матрица поддержки для оценки Hyper-V
 
@@ -63,7 +63,7 @@ ms.locfileid: "92311329"
 **Устройство** | **Соединение**
 --- | ---
 **Устройство** | Входящие подключения через TCP-порт 3389 для подключения удаленного рабочего стола к устройству.<br/><br/> Входящие подключения через порт 44368 для удаленного доступа к приложению управления устройством с помощью URL-адреса: ``` https://<appliance-ip-or-name>:44368 ```<br/><br/> Исходящие подключения через порты 443 (HTTPS) для отправки метаданных обнаружения и производительности в службу "миграция Azure".
-**Узел или кластер Hyper-V** | Входящее подключение через порт WinRM 5985 (HTTP) для извлечения метаданных и данных производительности для виртуальных машин Hyper-V с помощью сеанса модель CIM (CIM).
+**Узел или кластер Hyper-V** | Входящее подключение через порт WinRM 5985 (HTTP) или 5986 (HTTPS) для извлечения метаданных и данных производительности для виртуальных машин Hyper-V с помощью сеанса модель CIM (CIM).
 
 ## <a name="agent-based-dependency-analysis-requirements"></a>Требования к анализу зависимостей на основе агента
 

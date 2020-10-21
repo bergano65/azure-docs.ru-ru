@@ -4,12 +4,12 @@ ms.service: azure-functions
 ms.topic: include
 ms.date: 09/04/2018
 ms.author: glenga
-ms.openlocfilehash: 2604a1608f21d7239db755027e15b8198fb3f9f2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8f3a58d3a7470867ab23249bbd645289e010ad89
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81791711"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92223149"
 ---
 ### <a name="functions-2x-and-higher"></a>Функции 2.x и более поздних версий
 
@@ -31,7 +31,7 @@ ms.locfileid: "81791711"
 |Свойство  |По умолчанию | Описание |
 |---------|---------|---------|
 |maxBatchSize|10|Максимальное число событий, получаемых в цикле получения.|
-|prefetchCount|300|Счетчик предварительной выборки по умолчанию, используемый базовым `EventProcessorHost`.|
+|prefetchCount|300|Счетчик предварительной выборки по умолчанию, используемый базовым `EventProcessorHost`. Минимальное допустимое значение — 10.|
 |batchCheckpointFrequency|1|Количество пакетов событий, которые необходимо обработать перед созданием контрольной точки курсора EventHub.|
 
 > [!NOTE]
@@ -57,4 +57,3 @@ ms.locfileid: "81791711"
 
 > [!NOTE]
 > См. сведения о [файле host.json в Функциях Azure версии 1.x](../articles/azure-functions/functions-host-json-v1.md).
-

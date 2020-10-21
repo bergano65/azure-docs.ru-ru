@@ -1,30 +1,31 @@
 ---
-title: Определение расходов в единицах запроса (ЕЗ) в Azure Cosmos DB
-description: Узнайте, как определить расходы в единицах запроса (ЕЗ) для любой операции, выполняемой в контейнере Azure Cosmos.
+title: Найти плату за единицу запроса (RU) для SQL-запроса в Azure Cosmos DB
+description: Узнайте, как найти плату за единицу запроса (RU) для запросов SQL, выполняемых в контейнере Azure Cosmos. Для поиска оплаты за ЕДИНИЦу можно использовать языки портал Azure, .NET, Java, Python и Node.js.
 author: ThomasWeiss
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 ms.topic: how-to
-ms.date: 09/01/2019
+ms.date: 10/14/2020
 ms.author: thweiss
 ms.custom: devx-track-js
-ms.openlocfilehash: 81660bee32cace458424c9975c74ca7980148e29
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 23f334d28ef5045c68bb84fc0bc34e8f847fe0f9
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91316194"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92281847"
 ---
-# <a name="find-the-request-unit-charge-in-azure-cosmos-db"></a>Определение расходов в единицах запроса в Azure Cosmos DB
+# <a name="find-the-request-unit-charge-for-operations-executed-in-azure-cosmos-db-sql-api"></a>Поиск затрат единиц запросов для операций, выполненных в Azure Cosmos DB API SQL
 
-В этой статье описано несколько способов, позволяющих определить потребление [единиц запроса](request-units.md) (ЕЗ) для любой операции, которая выполняется в контейнере Azure Cosmos DB. Сейчас потребление можно оценить только с помощью портала Azure или сведений из ответа, который Azure Cosmos DB возвращает через пакеты SDK.
+Azure Cosmos DB поддерживает многие интерфейсы API, такие как SQL, MongoDB, Cassandra, Gremlin и Таблицы. У каждого API есть собственный набор операций базы данных, начиная от простого считывания и записи точек и заканчивая сложными запросами. Каждая операция базы данных потребляет системные ресурсы. Потребление зависит от сложности операции.
 
-## <a name="sql-core-api"></a>API SQL (Core)
+Стоимость всех операций базы данных нормализуется с помощью Azure Cosmos DB и выражается в единицах запроса (ЕЗ). Можно считать, что в качестве валюты производительности разрабатываются системные ресурсы, такие как ЦП, операции ввода-вывода и память, необходимые для выполнения операций с базой данных, поддерживаемых Azure Cosmos DB. Независимо от того, какие API вы используете для взаимодействия с контейнером Azure Cosmos, затраты всегда измеряются в ЕЗ. Является ли операция базы данных записью, чтением точки или запросом, затраты всегда измеряются в версии-получателей. Дополнительные сведения см. в статье [единицы запросов и рекомендации по ИТ](request-units.md) .
 
-Если вы используете API SQL, оценить потребление ЕЗ для операций в контейнере Azure Cosmos можно несколькими способами.
+В этой статье представлены различные способы, с помощью которых можно найти потребление [единиц запросов](request-units.md) (ru) для любой операции, выполняемой для контейнера в Azure Cosmos DB API SQL. Если вы используете другой API, ознакомьтесь со статьей [API для MongoDB](find-request-unit-charge-mongodb.md), [API Cassandra](find-request-unit-charge-cassandra.md), [Gremlin API](find-request-unit-charge-gremlin.md)и [API ТАБЛИЦ](find-request-unit-charge-table.md) статей, чтобы найти плату за единицу.
 
-### <a name="use-the-azure-portal"></a>Использование портала Azure
+Сейчас потребление можно оценить только с помощью портала Azure или сведений из ответа, который Azure Cosmos DB возвращает через пакеты SDK. Если вы используете API SQL, оценить потребление ЕЗ для операций в контейнере Azure Cosmos можно несколькими способами.
 
-Сейчас на портале Azure можно узнать расходы в ЕЗ только для SQL-запросов.
+## <a name="use-the-azure-portal"></a>Использование портала Azure
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
 
@@ -40,7 +41,7 @@ ms.locfileid: "91316194"
 
 :::image type="content" source="./media/find-request-unit-charge/portal-sql-query.png" alt-text="Снимок экрана со сведениями о расходах в ЕЗ на SQL-запрос на портале Azure":::
 
-### <a name="use-the-net-sdk"></a>Использование пакета SDK для .NET
+## <a name="use-the-net-sdk"></a>Использование пакета SDK для .NET
 
 # <a name="net-sdk-v2"></a>[Пакет SDK для .NET версии 2](#tab/dotnetv2)
 
@@ -87,7 +88,7 @@ while (query.HasMoreResults)
 
 ---
 
-### <a name="use-the-java-sdk"></a>Использование пакета SDK для Java
+## <a name="use-the-java-sdk"></a>Использование пакета SDK для Java
 
 Объекты, возвращаемые из [пакета SDK для Java](https://mvnrepository.com/artifact/com.microsoft.azure/azure-cosmosdb) предоставляют метод `getRequestCharge()`.
 
@@ -117,7 +118,7 @@ feedResponse.forEach(result -> {
 
 Дополнительные сведения см. в разделе [Краткое руководство. Создание приложения Java с помощью учетной записи API Azure Cosmos DB SQL](create-sql-api-java.md).
 
-### <a name="use-the-nodejs-sdk"></a>Использование пакета SDK для Node.js
+## <a name="use-the-nodejs-sdk"></a>Использование пакета SDK для Node.js
 
 Объекты, возвращаемые из [пакета SDK для Node.js](https://www.npmjs.com/package/@azure/cosmos) предоставляют вложенный объект `headers`, который позволяет сопоставить все заголовки, возвращаемые базовым интерфейсом API для HTTP. Сведения о расходах в ЕЗ доступны в ключе `x-ms-request-charge`.
 
@@ -152,7 +153,7 @@ while (query.hasMoreResults()) {
 
 Дополнительные сведения см. в разделе [Краткое руководство. создание Node.js приложения с помощью учетной записи API Azure Cosmos DB SQL](create-sql-api-nodejs.md). 
 
-### <a name="use-the-python-sdk"></a>Использование пакета SDK для Python
+## <a name="use-the-python-sdk"></a>Использование пакета SDK для Python
 
 Объект `CosmosClient`, возвращаемый из [пакета SDK для Python](https://pypi.org/project/azure-cosmos/) предоставляет словарь `last_response_headers`, который позволяет сопоставить все заголовки для последней выполненной операции, возвращаемые базовым API HTTP. Сведения о расходах в ЕЗ доступны в ключе `x-ms-request-charge`.
 
@@ -168,144 +169,7 @@ request_charge = client.last_response_headers['x-ms-request-charge']
 
 Дополнительные сведения см. в разделе [Краткое руководство. Создание приложения Python с помощью учетной записи API Azure Cosmos DB SQL](create-sql-api-python.md). 
 
-## <a name="azure-cosmos-db-api-for-mongodb"></a>API Azure Cosmos DB для MongoDB
-
-Расходы в ЕЗ предоставляются пользовательской [командой базы данных](https://docs.mongodb.com/manual/reference/command/) с именем `getLastRequestStatistics`. Эта команда возвращает документ, содержащий имя последней выполненной операции, ее длительность и количество затраченных ЕЗ. Если вы используете API Azure Cosmos DB для MongoDB, получить данные о расходах в ЕЗ можно несколькими способами.
-
-### <a name="use-the-azure-portal"></a>Использование портала Azure
-
-Сейчас на портале Azure можно узнать расходы в ЕЗ только для запросов.
-
-1. Войдите на [портал Azure](https://portal.azure.com/).
-
-1. [Создайте учетную запись Azure Cosmos](create-mongodb-dotnet.md#create-a-database-account) и заполните ее данными или выберите существующую учетную запись, которая уже содержит данные.
-
-1. Перейдите на панель **обозревателя данных** и выберите контейнер, с которым собираетесь работать.
-
-1. Выберите **Создать запрос**.
-
-1. Введите допустимый запрос и щелкните **Выполнить запрос**.
-
-1. Выберите **Статистика запросов**, чтобы отобразилось количество ЕЗ, фактически затраченных на выполненный запрос.
-
-:::image type="content" source="./media/find-request-unit-charge/portal-mongodb-query.png" alt-text="Снимок экрана со сведениями о расходах в ЕЗ на SQL-запрос на портале Azure":::
-
-### <a name="use-the-mongodb-net-driver"></a>Использование драйвера .NET для MongoDB
-
-При использовании [официального драйвера .NET для MongoDB](https://docs.mongodb.com/ecosystem/drivers/csharp/) можно выполнять команды, вызывая метод `RunCommand` для объекта `IMongoDatabase`. Для работы этого метода необходимо реализовать абстрактный класс `Command<>`.
-
-```csharp
-class GetLastRequestStatisticsCommand : Command<Dictionary<string, object>>
-{
-    public override RenderedCommand<Dictionary<string, object>> Render(IBsonSerializerRegistry serializerRegistry)
-    {
-        return new RenderedCommand<Dictionary<string, object>>(new BsonDocument("getLastRequestStatistics", 1), serializerRegistry.GetSerializer<Dictionary<string, object>>());
-    }
-}
-
-Dictionary<string, object> stats = database.RunCommand(new GetLastRequestStatisticsCommand());
-double requestCharge = (double)stats["RequestCharge"];
-```
-
-Дополнительные сведения см. в разделе [Краткое руководство. Создание веб-приложения .NET с помощью Azure Cosmos DB API для MongoDB](create-mongodb-dotnet.md).
-
-### <a name="use-the-mongodb-java-driver"></a>Использование драйвера Java для MongoDB
-
-
-При использовании [официального драйвера Java для MongoDB](https://mongodb.github.io/mongo-java-driver/) можно выполнять команды, вызывая метод `runCommand` для объекта `MongoDatabase`.
-
-```java
-Document stats = database.runCommand(new Document("getLastRequestStatistics", 1));
-Double requestCharge = stats.getDouble("RequestCharge");
-```
-
-Дополнительные сведения см. [в разделе Краткое руководство. Создание веб-приложения с помощью Azure Cosmos DB API для MongoDB и пакета SDK для Java](create-mongodb-java.md).
-
-### <a name="use-the-mongodb-nodejs-driver"></a>Использование драйвера Node.js для MongoDB
-
-При использовании [официального драйвера Node.js для MongoDB](https://mongodb.github.io/node-mongodb-native/) можно выполнять команды, вызывая метод `command` для объекта `db`.
-
-```javascript
-db.command({ getLastRequestStatistics: 1 }, function(err, result) {
-    assert.equal(err, null);
-    const requestCharge = result['RequestCharge'];
-});
-```
-
-Дополнительные сведения см. [в разделе Краткое руководство. Перенос существующего веб-приложения MongoDB Node.js в Azure Cosmos DB](create-mongodb-nodejs.md).
-
-## <a name="cassandra-api"></a>API Cassandra
-
-Если вы выполняете операции с API Cassandra для Azure Cosmos DB, сведения о расходах в ЕЗ возвращаются во входящих полезных данных в поле с именем `RequestCharge`. Есть несколько способов получения данных о расходах в ЕЗ.
-
-### <a name="use-the-net-sdk"></a>Использование пакета SDK для .NET
-
-При использовании [пакета SDK для .NET](https://www.nuget.org/packages/CassandraCSharpDriver/) вы можете получить входящие полезные данные в свойстве `Info` объекта `RowSet`.
-
-```csharp
-RowSet rowSet = session.Execute("SELECT table_name FROM system_schema.tables;");
-double requestCharge = BitConverter.ToDouble(rowSet.Info.IncomingPayload["RequestCharge"].Reverse().ToArray(), 0);
-```
-
-Дополнительные сведения см. [в разделе Краткое руководство. Создание приложения Cassandra с помощью пакета SDK для .NET и Azure Cosmos DB](create-cassandra-dotnet.md).
-
-### <a name="use-the-java-sdk"></a>Использование пакета SDK для Java
-
-При использовании [пакета SDK для Java](https://mvnrepository.com/artifact/com.datastax.cassandra/cassandra-driver-core) входные полезные данные можно получить, вызвав метод `getExecutionInfo()` для объекта `ResultSet`.
-
-```java
-ResultSet resultSet = session.execute("SELECT table_name FROM system_schema.tables;");
-Double requestCharge = resultSet.getExecutionInfo().getIncomingPayload().get("RequestCharge").getDouble();
-```
-
-Дополнительные сведения см. [в разделе Краткое руководство. Создание приложения Cassandra с помощью пакета SDK для Java и Azure Cosmos DB](create-cassandra-java.md).
-
-## <a name="gremlin-api"></a>API Gremlin
-
-При использовании API Gremlin оценить потребление в ЕЗ для операций в контейнере Azure Cosmos можно несколькими способами. 
-
-### <a name="use-drivers-and-sdk"></a>Использование драйверов и пакетов SDK
-
-Заголовки, возвращаемые API Gremlin, сопоставляются с пользовательскими атрибутами состояния, которые сейчас предоставляются через пакеты SDK Gremlin для .NET и Java. Сведения о стоимости запроса доступны в ключе `x-ms-request-charge`.
-
-### <a name="use-the-net-sdk"></a>Использование пакета SDK для .NET
-
-При использовании [пакета SDK Gremlin для .NET](https://www.nuget.org/packages/Gremlin.Net/) атрибуты состояния доступны в свойстве `StatusAttributes` объекта `ResultSet<>`.
-
-```csharp
-ResultSet<dynamic> results = client.SubmitAsync<dynamic>("g.V().count()").Result;
-double requestCharge = (double)results.StatusAttributes["x-ms-request-charge"];
-```
-
-Дополнительные сведения см. в разделе [Краткое руководство. создание .NET Framework или основного приложения с помощью учетной записи API Azure Cosmos DB Gremlin](create-graph-dotnet.md).
-
-### <a name="use-the-java-sdk"></a>Использование пакета SDK для Java
-
-При использовании [пакета SDK Gremlin для Java](https://mvnrepository.com/artifact/org.apache.tinkerpop/gremlin-driver) атрибуты состояния можно получить, вызвав метод `statusAttributes()` для объекта `ResultSet`.
-
-```java
-ResultSet results = client.submit("g.V().count()");
-Double requestCharge = (Double)results.statusAttributes().get().get("x-ms-request-charge");
-```
-
-Дополнительные сведения см. [в разделе Краткое руководство. Создание базы данных Graph в Azure Cosmos DB с помощью пакета SDK для Java](create-graph-java.md).
-
-## <a name="table-api"></a>API таблиц
-
-Единственный пакет SDK, который сейчас возвращает данные о расходах в ЕЗ для операций с таблицами, — это [пакет SDK для .NET Standard](https://www.nuget.org/packages/Microsoft.Azure.Cosmos.Table). Объект `TableResult` предоставляет свойство `RequestCharge`, которое указывается пакетом SDK, при использовании с API таблиц Azure Cosmos DB.
-
-```csharp
-CloudTable tableReference = client.GetTableReference("table");
-TableResult tableResult = tableReference.Execute(TableOperation.Insert(new DynamicTableEntity("partitionKey", "rowKey")));
-if (tableResult.RequestCharge.HasValue) // would be false when using Azure Storage Tables
-{
-    double requestCharge = tableResult.RequestCharge.Value;
-}
-```
-
-Дополнительные сведения см. [в разделе Краткое руководство. создание API таблиц приложения с помощью пакета SDK для .NET и Azure Cosmos DB](create-table-dotnet.md).
-
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения об оптимизации потребления ЕЗ см. в следующих статьях:
 
