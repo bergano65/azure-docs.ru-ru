@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/11/2020
 ms.author: memildin
-ms.openlocfilehash: aa73fed0af0d6cd7154118d8987f42e55814e25a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6991c222590b52ca4dadb2b9f5a9661bf731c4c4
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91448940"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92340841"
 ---
 # <a name="customize-the-sql-information-protection-policy-in-azure-security-center-preview"></a>Настройка политики защиты информации SQL в центре безопасности Azure (предварительная версия)
  
@@ -78,8 +78,8 @@ Information Protection поставляется со встроенным наб
 
 ## <a name="manage-sql-information-protection-using-azure-powershell"></a>Управление информационной защитой SQL с помощью Azure PowerShell
 
-- [Get-азсклинформатионпротектионполици](https://docs.microsoft.com/powershell/module/az.security/get-azsqlinformationprotectionpolicy): получает действующую политику защиты данных SQL клиента.
-- [Set-азсклинформатионпротектионполици](https://docs.microsoft.com/powershell/module/az.security/set-azsqlinformationprotectionpolicy): задает действующую политику защиты данных SQL клиента.
+- [Get-азсклинформатионпротектионполици](/powershell/module/az.security/get-azsqlinformationprotectionpolicy): получает действующую политику защиты данных SQL клиента.
+- [Set-азсклинформатионпротектионполици](/powershell/module/az.security/set-azsqlinformationprotectionpolicy): задает действующую политику защиты данных SQL клиента.
  
 ## <a name="next-steps"></a>Дальнейшие шаги
  

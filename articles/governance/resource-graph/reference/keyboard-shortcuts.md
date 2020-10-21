@@ -1,15 +1,15 @@
 ---
 title: Сочетания клавиш в портал Azure для обозревателя графа ресурсов Azure
 description: Обозреватель графа ресурсов Azure в портал Azure поддерживает сочетания клавиш, помогающие выполнять действия и переходы.
-ms.date: 08/25/2020
+ms.date: 10/21/2020
 ms.topic: reference
 ms.custom: accessibility
-ms.openlocfilehash: 02471a6efc4ac4d002ca641b792c1c721ffeb3f7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fdb53e079adf2f65180c15ab93da4f8343e3bab5
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89146442"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92340127"
 ---
 # <a name="keyboard-shortcuts-for-azure-resource-graph-explorer"></a>Сочетания клавиш для обозревателя графа ресурсов Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "89146442"
 |Увеличить отступ |<kbd>CTRL</kbd>+<kbd>]</kbd> |<kbd>Команда cmd</kbd> + <kbd>]</kbd> |
 |Переместить строку вниз |<kbd>ALT</kbd> + <kbd>↓</kbd> |<kbd>Параметр</kbd> + <kbd>↓</kbd> |
 |Переместить строку вверх |<kbd>ALT</kbd> + <kbd>↑</kbd> |<kbd>Параметр</kbd> + <kbd>↑</kbd> |
-|Заменить |<kbd>CTRL</kbd>+<kbd>F</kbd> |<kbd>Команда cmd</kbd> + <kbd>ALT</kbd> + <kbd>F</kbd> |
+|Заменить |<kbd>CTRL</kbd>+<kbd>H</kbd> |<kbd>Команда cmd</kbd> + <kbd>З</kbd> |
 |Выбрать все |<kbd>CTRL</kbd>+<kbd>A</kbd> |<kbd>Команда cmd</kbd> + <kbd>Объект</kbd> |
 |Выбрать вниз |<kbd>SHIFT</kbd> + <kbd>↓</kbd> |<kbd>SHIFT</kbd> + <kbd>↓</kbd> |
 |Выбрать право |<kbd>SHIFT</kbd> + <kbd>→</kbd> |<kbd>SHIFT</kbd> + <kbd>→</kbd> |
@@ -62,7 +62,7 @@ ms.locfileid: "89146442"
 |Переключиться на линейчатую диаграмму  |<kbd>ALT</kbd> + <kbd>Б</kbd> | <kbd>Параметр</kbd> + <kbd>Б</kbd> |
 |Перейти к диаграмме соответствия  |<kbd>ALT</kbd> + <kbd>N</kbd> | <kbd>Параметр</kbd> + <kbd>М</kbd> |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Сочетания клавиш на портале Azure](../../../azure-portal/azure-portal-keyboard-shortcuts.md)
 - [Язык запросов для графа ресурсов](../concepts/query-language.md)

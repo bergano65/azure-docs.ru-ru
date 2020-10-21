@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 08/24/2020
 ms.author: robinsh
 ms.custom: mvc, subject-armqs
-ms.openlocfilehash: 4112e8aae485e229beb16d21e90280750e1465e1
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 7c53d720aef029d79d95cacd558c3bf9d35b4af6
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89462672"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92148910"
 ---
 # <a name="quickstart-deploy-an-azure-iot-hub-and-a-storage-account-using-an-arm-template"></a>Краткое руководство. Развертывание Центра Интернета вещей Azure и учетной записи хранения с помощью шаблона ARM
 
@@ -46,7 +46,7 @@ ms.locfileid: "89462672"
 
     [![Развернуть в Azure](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-iothub-auto-route-messages%2Fazuredeploy.json)
 
-1. Скачайте и распакуйте [примеры C# для Интернета вещей](https://docs.microsoft.com/samples/azure-samples/azure-iot-samples-csharp/azure-iot-samples-for-csharp-net/).
+1. Скачайте и распакуйте [примеры C# для Интернета вещей](/samples/azure-samples/azure-iot-samples-csharp/azure-iot-samples-for-csharp-net/).
 
 1. Откройте командное окно и перейдите в папку, в которую вы распаковали примеры C# для Интернета вещей. Найдите папку с файлом arm-read-write.csproj. Переменные среды создаются в этом командном окне. Войдите на портал Azure на странице https://portal.azure.com, чтобы получить ключи. Выберите **Группы ресурсов**, а затем щелкните группу ресурсов, используемую для этого краткого руководства.
 
@@ -134,4 +134,4 @@ ms.locfileid: "89462672"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Руководство. Создание и развертывание первого шаблона ARM](/azure/azure-resource-manager/templates/template-tutorial-create-first-template)
+> [Руководство. Создание и развертывание первого шаблона ARM](../azure-resource-manager/templates/template-tutorial-create-first-template.md)

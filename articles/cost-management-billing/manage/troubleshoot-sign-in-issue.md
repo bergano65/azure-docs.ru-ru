@@ -10,19 +10,19 @@ ms.subservice: billing
 ms.topic: troubleshooting
 ms.date: 08/20/2020
 ms.author: v-miegge
-ms.openlocfilehash: 3ee600cb72d06781f87c8f68640576afa50cea06
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: 2e9b14fa264f3286134913e3c279c4400ce5bcc3
+ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88686502"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92132335"
 ---
 # <a name="troubleshoot-azure-subscription-sign-in-issues"></a>Устранение проблем со входом для подписки Azure
 
 Это руководство поможет вам устранить проблемы со входом на портал Azure или в Центр управления учетной записью Azure.
 
 > [!NOTE]
-> Если у вас возникли проблемы при регистрации для получения новой учетной записи Azure, см. статью [Устранение неполадок при регистрации для получения новой учетной записи на портале Azure или в Центре управления учетной записью Azure](https://docs.microsoft.com/azure/cost-management-billing/manage/troubleshoot-azure-sign-up).
+> Если у вас возникли проблемы при регистрации для получения новой учетной записи Azure, см. статью [Устранение неполадок при регистрации для получения новой учетной записи на портале Azure или в Центре управления учетной записью Azure](./troubleshoot-azure-sign-up.md).
 
 ## <a name="page-hangs-in-the-loading-status"></a>Страница зависает в состоянии загрузки
 
@@ -66,7 +66,7 @@ ms.locfileid: "88686502"
 Чтобы устранить эту проблему:
 
 - Убедитесь, что выбран правильный каталог Azure, щелкнув учетную запись в правом верхнем углу.
-- Если выбран правильный каталог Azure, но вы по-прежнему получаете сообщение об ошибке, [добавьте учетную запись с правами владельца](https://docs.microsoft.com/azure/cost-management-billing/manage/add-change-subscription-administrator).
+- Если выбран правильный каталог Azure, но вы по-прежнему получаете сообщение об ошибке, [добавьте учетную запись с правами владельца](./add-change-subscription-administrator.md).
 
 **Сценарий 2.** Вы получаете сообщение об ошибке входа в [Центр управления учетной записью Azure](https://account.windowsazure.com/Subscriptions)
 
@@ -80,11 +80,11 @@ ms.locfileid: "88686502"
 
 Другие статьи по устранению проблем при выставлении счетов и с подписками Azure
 
-- [Карта не принимается](https://docs.microsoft.com/azure/cost-management-billing/manage/troubleshoot-declined-card)
-- [Проблемы с регистрацией подписки](https://docs.microsoft.com/azure/cost-management-billing/manage/troubleshoot-azure-sign-up)
-- [Подписки не найдены](https://docs.microsoft.com/azure/cost-management-billing/manage/no-subscriptions-found)
-- [Просмотр стоимости Enterprise отключен](https://docs.microsoft.com/azure/cost-management-billing/manage/enterprise-mgmt-grp-troubleshoot-cost-view)
-- [Документация по выставлению счетов в Azure](https://docs.microsoft.com/azure/cost-management-billing/)
+- [Карта не принимается](./troubleshoot-declined-card.md)
+- [Проблемы с регистрацией подписки](./troubleshoot-azure-sign-up.md)
+- [Подписки не найдены](./no-subscriptions-found.md)
+- [Просмотр стоимости Enterprise отключен](./enterprise-mgmt-grp-troubleshoot-cost-view.md)
+- [Документация по выставлению счетов в Azure](../index.yml)
 
 ## <a name="contact-us-for-help"></a>Свяжитесь с нами для получения помощи
 

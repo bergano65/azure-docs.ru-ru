@@ -7,12 +7,12 @@ ms.author: alkarche
 ms.date: 10/12/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 96d759f0f722e332eb25e049fd336c784eb99789
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.openlocfilehash: c6c0ee775ec1405fa76424e6b0ad57436d2d233e
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/21/2020
-ms.locfileid: "92332082"
+ms.locfileid: "92340110"
 ---
 # <a name="manage-endpoints-and-routes-in-azure-digital-twins-apis-and-cli"></a>Управление конечными точками и маршрутами в Azure Digital двойников (API и CLI)
 
@@ -24,7 +24,7 @@ ms.locfileid: "92332082"
 
 Они также могут управляться с помощью [портал Azure](https://portal.azure.com). Версию этой статьи, которая использует портал, см. [*в разделе руководство. Управление конечными точками и маршрутами (портал)*](how-to-manage-routes-portal.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 * Вам потребуется **учетная запись Azure** (вы можете настроить ее [здесь](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)бесплатно).
 * Вам потребуется **экземпляр Azure Digital двойников** в подписке Azure. Если у вас еще нет экземпляра, его можно создать, выполнив действия, описанные в разделе [*инструкции. Настройка экземпляра и проверки подлинности*](how-to-set-up-instance-portal.md). Используйте следующие значения из программы установки, которые можно использовать далее в этой статье:
@@ -223,7 +223,6 @@ catch (RequestFailedException e)
 * Данные телеметрии, созданные [цифровым двойников](concepts-twins-graph.md) с помощью API службы Digital двойников
 * Двойника уведомления об изменении свойств для любых двойника в экземпляре цифрового двойников Azure
 * События жизненного цикла, которые срабатывают при создании или удалении двойников или связей
-* События изменения модели, возникающие при добавлении или удалении [моделей](concepts-models.md) , настроенных в экземпляре Azure Digital двойников
 
 Вы можете ограничить отправляемые события, добавив **Фильтр** для конечной точки в маршруте события.
 

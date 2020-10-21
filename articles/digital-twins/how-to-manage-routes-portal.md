@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 7/22/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 91c767fb031633900434b3aa07ccfae7cf7458cb
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.openlocfilehash: ec23252883f928cfa6c1651afbfe88e413d55571
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/21/2020
-ms.locfileid: "92332099"
+ms.locfileid: "92339600"
 ---
 # <a name="manage-endpoints-and-routes-in-azure-digital-twins-portal"></a>Управление конечными точками и маршрутами в Azure Digital двойников (портал)
 
@@ -24,7 +24,7 @@ ms.locfileid: "92332099"
 
 Вы также можете управлять конечными точками и маршрутами с помощью [API евентраутес](how-to-use-apis-sdks.md), [пакета SDK для .NET (C#)](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/digitaltwins/Azure.DigitalTwins.Core)или [Azure Digital двойников CLI](how-to-use-cli.md). Версию этой статьи, которая использует эти механизмы вместо портала, см. [*в разделе Практические руководства. Управление конечными точками и маршрутами (API и интерфейс командной строки)*](how-to-manage-routes-apis-cli.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 * Вам потребуется **учетная запись Azure** (вы можете настроить ее [здесь](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)бесплатно).
 * Вам потребуется **экземпляр Azure Digital двойников** в подписке Azure. Если у вас еще нет экземпляра, его можно создать, выполнив действия, описанные в разделе [*инструкции. Настройка экземпляра и проверки подлинности*](how-to-set-up-instance-portal.md). Используйте следующие значения из программы установки, которые можно использовать далее в этой статье:
@@ -169,7 +169,6 @@ ms.locfileid: "92332099"
 * Данные телеметрии, созданные [цифровым двойников](concepts-twins-graph.md) с помощью API службы Digital двойников
 * Двойника уведомления об изменении свойств для любых двойника в экземпляре цифрового двойников Azure
 * События жизненного цикла, которые срабатывают при создании или удалении двойников или связей
-* События изменения модели, возникающие при добавлении или удалении [моделей](concepts-models.md) , настроенных в экземпляре Azure Digital двойников
 
 Можно ограничить типы отправляемых событий, определив фильтр более конкретного типа.
 

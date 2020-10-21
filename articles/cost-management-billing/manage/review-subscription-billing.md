@@ -7,12 +7,12 @@ ms.subservice: billing
 ms.topic: article
 ms.date: 08/20/2020
 ms.author: banders
-ms.openlocfilehash: 345535ae52b9a271bcee5ff7a2b651af144624f1
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: b4d6502e49fdd30a68188a1e580a1c137984c89f
+ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88684717"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92132386"
 ---
 # <a name="review-subscription-billing-using-rest-apis"></a>Проверка данных о выставлении счетов по подписке с помощью интерфейсов REST API
 
@@ -32,7 +32,7 @@ Authorization: Bearer
 
 `{subscriptionID}` — это обязательный параметр, который позволяет определить целевую подписку.
 
-`{billingPeriod}` — это обязательный параметр, который позволяет указать текущий [период выставления счетов](https://docs.microsoft.com/rest/api/billing/enterprise/billing-enterprise-api-billing-periods).
+`{billingPeriod}` — это обязательный параметр, который позволяет указать текущий [период выставления счетов](/rest/api/billing/enterprise/billing-enterprise-api-billing-periods).
 
 Параметры `${startDate}` и `${endDate}` являются обязательными в нашем примере, но не для конечной точки. Они позволяют указать диапазон дат в строковом формате ГГГГ-ММ-ДД (например, `'20180501'` и `'20180615'`).
 
@@ -41,7 +41,7 @@ Authorization: Bearer
 |Заголовок запроса|Описание|
 |--------------------|-----------------|
 |*Content-Type:*|Обязательный элемент. Задайте значение `application/json`.|
-|*Authorization:*|Обязательный элемент. Задайте допустимый [маркер доступа](https://docs.microsoft.com/rest/api/azure/#authorization-code-grant-interactive-clients) `Bearer`. |
+|*Authorization:*|Обязательный элемент. Задайте допустимый [маркер доступа](/rest/api/azure/#authorization-code-grant-interactive-clients) `Bearer`. |
 
 ## <a name="response"></a>Ответ
 
@@ -85,7 +85,7 @@ Authorization: Bearer
 |**meterDetails** | Подробные сведения об использовании. |
 |**nextLink**| Если этот параметр задан, в его значении указывается URL-адрес следующей страницы со сведениями. Если страница последняя, значение не указывается. |
 
-Этот пример приведен в сокращенном виде. Полное описание каждого поля ответа см. в разделе [сведений об использовании](https://docs.microsoft.com/rest/api/consumption/usagedetails/list#usagedetailslistforbillingperiod-legacy).
+Этот пример приведен в сокращенном виде. Полное описание каждого поля ответа см. в разделе [сведений об использовании](/rest/api/consumption/usagedetails/list#usagedetailslistforbillingperiod-legacy).
 
 Другие коды состояния означают состояния ошибки. В этих случаях объект ответа содержит описание с объяснением причины сбоя запроса.
 
@@ -101,6 +101,6 @@ Authorization: Bearer
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- Ознакомьтесь со статьей [Обзор API-интерфейсов отчетов для корпоративных клиентов](https://docs.microsoft.com/azure/billing/billing-enterprise-api)
-- Подробнее о [REST API выставления счетов для корпоративных клиентов](https://docs.microsoft.com/rest/api/billing/)
-- [Начало работы с Azure REST API](https://docs.microsoft.com/rest/api/azure/)
+- Ознакомьтесь со статьей [Обзор API-интерфейсов отчетов для корпоративных клиентов](./enterprise-api.md)
+- Подробнее о [REST API выставления счетов для корпоративных клиентов](/rest/api/billing/)
+- [Начало работы с Azure REST API](/rest/api/azure/)

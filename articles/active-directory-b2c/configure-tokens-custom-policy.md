@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 05/07/2020
+ms.date: 10/21/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: a9b2c5b24b88dd51596dfb5bd8b5f397419ca6e4
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: e72bd04bb41537546191b8ceb320c0722bd10146
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92215201"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92340297"
 ---
 # <a name="manage-sso-and-token-customization-using-custom-policies-in-azure-active-directory-b2c"></a>Управление единым входом и настройкой токенов с помощью пользовательских политик в Azure Active Directory B2C
 
@@ -91,7 +91,46 @@ ms.locfileid: "92215201"
 > [!NOTE]
 > Одностраничные приложения, использующие поток кода авторизации с PKCE, всегда имеют время существования маркера обновления 24 часа. [Узнайте больше о влиянии маркеров обновления в браузере на безопасность](../active-directory/develop/reference-third-party-cookies-spas.md#security-implications-of-refresh-tokens-in-the-browser).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="provide-optional-claims-to-your-app"></a>Предоставление приложению дополнительных утверждений
+
+В качестве выходных данных [технического профиля политики проверяющей](relyingparty.md#technicalprofile) стороны используются значения, возвращаемые в приложение. Добавление исходящих утверждений выдает заявки в маркер после успешного пути взаимодействия пользователя и отправляется в приложение. Измените элемент технического профиля в разделе проверяющей стороны, чтобы добавить требуемые утверждения в качестве исходящего утверждения.
+
+1. Откройте файл настраиваемой политики. Например, SignUpOrSignin.xml.
+1. Найдите элемент OutputClaims. Добавьте OutputClaim, который необходимо включить в маркер. 
+1. Задайте атрибуты исходящего утверждения. 
+
+В следующем примере добавляется `accountBalance` утверждение. Утверждение Аккаунтбаланце отправляется в приложение в виде баланса. 
+
+```xml
+<RelyingParty>
+  <DefaultUserJourney ReferenceId="SignUpOrSignIn" />
+  <TechnicalProfile Id="PolicyProfile">
+    <DisplayName>PolicyProfile</DisplayName>
+    <Protocol Name="OpenIdConnect" />
+    <OutputClaims>
+      <OutputClaim ClaimTypeReferenceId="displayName" />
+      <OutputClaim ClaimTypeReferenceId="givenName" />
+      <OutputClaim ClaimTypeReferenceId="surname" />
+      <OutputClaim ClaimTypeReferenceId="email" />
+      <OutputClaim ClaimTypeReferenceId="objectId" PartnerClaimType="sub"/>
+      <OutputClaim ClaimTypeReferenceId="identityProvider" />
+      <OutputClaim ClaimTypeReferenceId="tenantId" AlwaysUseDefaultValue="true" DefaultValue="{Policy:TenantObjectId}" />
+      <!--Add the optional claims here-->
+      <OutputClaim ClaimTypeReferenceId="accountBalance" DefaultValue="" PartnerClaimType="balance" />
+    </OutputClaims>
+    <SubjectNamingInfo ClaimType="sub" />
+  </TechnicalProfile>
+</RelyingParty>
+```
+
+Элемент OutputClaim содержит следующие атрибуты:
+
+  - **Claimtypereferenceid соединяется** — идентификатор типа утверждения, который уже определен в разделе [ClaimsSchema](claimsschema.md) файла политики или родительского файла политики.
+  - **Партнерклаимтипе** — позволяет изменить имя утверждения в токене. 
+  - **DefaultValue** — значение по умолчанию. Можно также задать значение по умолчанию для [сопоставителя заявок](claim-resolver-overview.md), например идентификатор клиента.
+  - **Алвайсуседефаултвалуе** — принудительно использовать значение по умолчанию.
+
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о [Azure AD B2C сеансе](session-overview.md).
 - Узнайте, как [настроить поведение сеанса в пользовательских политиках](session-behavior-custom-policy.md).

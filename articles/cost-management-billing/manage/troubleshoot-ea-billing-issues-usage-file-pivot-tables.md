@@ -9,12 +9,12 @@ ms.subservice: billing
 ms.topic: troubleshooting
 ms.date: 10/09/2020
 ms.author: banders
-ms.openlocfilehash: a30f85ae1b65321a25ee93239374d2a8aae26769
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: b32bb979176af8a8a3751db8edf9c129caf1002e
+ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92026685"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92131995"
 ---
 # <a name="troubleshoot-ea-billing-issues-with-usage-file-pivot-tables"></a>Устранение неполадок с выставлением счетов EA с помощью сводных таблиц файлов использования
 
@@ -33,7 +33,7 @@ ms.locfileid: "92026685"
 
 Так как файлы использования Azure имеют формат CSV, необходимо подготовить данные для использования в Excel. Чтобы представить эти данные в виде таблицы, выполните следующие действия.
 
-1. Скачайте файл "Сведения об использовании версии 2, все расходы (использование и покупки)", следуя инструкциям в разделе [Скачивание сведений об использовании для клиентов EA](https://docs.microsoft.com/azure/cost-management-billing/manage/download-azure-invoice-daily-usage-date#download-usage-for-ea-customers).
+1. Скачайте файл "Сведения об использовании версии 2, все расходы (использование и покупки)", следуя инструкциям в разделе [Скачивание сведений об использовании для клиентов EA](./download-azure-invoice-daily-usage-date.md#download-usage-for-ea-customers).
 1. Откройте файл в Excel.
 1. Неформатированные данные соответствуют приведенным в следующем примере.  
     :::image type="content" source="./media/troubleshoot-ea-billing-issues-usage-file-pivot-tables/raw-csv-data-ea.png" alt-text="Пример неформатированных данных в формате Excel" lightbox="./media/troubleshoot-ea-billing-issues-usage-file-pivot-tables/raw-csv-data-ea.png" :::
