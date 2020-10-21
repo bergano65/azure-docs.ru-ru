@@ -4,12 +4,12 @@ description: В этой статье поясняется, как описат�
 ms.topic: conceptual
 ms.date: 09/16/2020
 ms.custom: contperfq1
-ms.openlocfilehash: 775e554128b9828915ce7dafaf4bccf597911912
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: 5e8f39fe25011d02b989614fdc6538cd92c12d4e
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92017596"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92313573"
 ---
 # <a name="specify-resources-in-a-service-manifest"></a>Указание ресурсов в манифесте службы
 ## <a name="overview"></a>Обзор
@@ -158,7 +158,7 @@ Service Fabric приложения и службы определяются, а
 
 Для кластеров Linux **MY** сохраняет значения по умолчанию в папку **/var/lib/sfcerts**.
 
-Пример полного приложения, использующего конечную точку HTTPS, см. [в разделе Добавление конечной точки HTTPS в интерфейсную службу ASP.NET Core интерфейса веб-API с помощью Kestrel](https://docs.microsoft.com/azure/service-fabric/service-fabric-tutorial-dotnet-app-enable-https-endpoint#define-an-https-endpoint-in-the-service-manifest).
+Пример полного приложения, использующего конечную точку HTTPS, см. [в разделе Добавление конечной точки HTTPS в интерфейсную службу ASP.NET Core интерфейса веб-API с помощью Kestrel](./service-fabric-tutorial-dotnet-app-enable-https-endpoint.md#define-an-https-endpoint-in-the-service-manifest).
 
 ## <a name="port-acling-for-http-endpoints"></a>Порт адресам для конечных точек HTTP
 Service Fabric будет автоматически указывать конечные точки HTTP (S) ACL, указанные по умолчанию. Он **не** будет выполнять автоматическое адресам, если с конечной точкой не связана [SecurityAccessPolicy](service-fabric-assign-policy-to-endpoint.md) , а Service Fabric настроен для запуска с использованием учетной записи с правами администратора.

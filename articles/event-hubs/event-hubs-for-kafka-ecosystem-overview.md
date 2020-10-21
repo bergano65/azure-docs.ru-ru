@@ -3,12 +3,12 @@ title: Использование концентратора событий из
 description: В этой статье содержатся сведения о поддержке Apache Kafka в службе "Центры событий Azure".
 ms.topic: article
 ms.date: 09/25/2020
-ms.openlocfilehash: 5c49f8f87d8d399cda33a332f7464ed340ae3a0f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 95534d32bdf34d44a11b31c2476c153272717941
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91761504"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92319847"
 ---
 # <a name="use-azure-event-hubs-from-apache-kafka-applications"></a>Использование Центров событий Azure из приложений Apache Kafka
 Концентраторы событий предоставляют конечную точку, совместимую с интерфейсами API Apache Kafka® производителя и потребителя, которые могут использоваться большинством существующих Apache Kafka клиентских приложений в качестве альтернативы запуску собственного кластера Apache Kafka. Концентраторы событий поддерживают клиентские API-интерфейсы производителя и потребителя Apache Kafka в версии 1,0 и более поздних.
@@ -128,7 +128,7 @@ Apache Kafka сжатие журнала — это функция, котора
 
 - [Azure Stream Analytics](../stream-analytics/stream-analytics-introduction.md)
 - [Azure синапсе Analytics (через захват концентраторов событий)](../event-grid/event-grid-event-hubs-integration.md)
-- [Azure Databricks](https://docs.microsoft.com/azure/databricks/scenarios/databricks-stream-from-eventhubs)
+- [Azure Databricks](/azure/databricks/scenarios/databricks-stream-from-eventhubs)
 - [Apache Samza](https://samza.apache.org/learn/documentation/latest/connectors/eventhubs)
 - [Apache Storm](event-hubs-storm-getstarted-receive.md)
 - [Apache Spark](event-hubs-kafka-spark-tutorial.md)
@@ -139,5 +139,5 @@ Apache Kafka сжатие журнала — это функция, котора
 
 Если вам необходимо использовать платформу Kafka Streams в Azure, [Apache Kafka в HDInsight](../hdinsight/kafka/apache-kafka-introduction.md) предоставит этот вариант. Apache Kafka в HDInsight предоставляет полный контроль над всеми аспектами настройки Apache Kafka, в то время как полная интеграция с различными аспектами платформы Azure — от сбоя или обновления домена до сетевой изоляции до наблюдения за интеграцией. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В этой статье приведены ознакомительные сведения о Центрах событий для компонента Kafka. См. сведения в [руководстве для разработчиков Apache Kafka по Центрам событий Azure](apache-kafka-developer-guide.md).

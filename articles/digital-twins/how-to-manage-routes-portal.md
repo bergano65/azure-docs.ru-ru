@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 7/22/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 8549fba2071ce98b206b3babe073137817aa3145
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9d60297ba3bf16eac496703635ec8faf647c7f94
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91252839"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92279358"
 ---
 # <a name="manage-endpoints-and-routes-in-azure-digital-twins-portal"></a>Управление конечными точками и маршрутами в Azure Digital двойников (портал)
 
@@ -24,7 +24,7 @@ ms.locfileid: "91252839"
 
 Вы также можете управлять конечными точками и маршрутами с помощью [API евентраутес](how-to-use-apis-sdks.md), [пакета SDK для .NET (C#)](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/digitaltwins/Azure.DigitalTwins.Core)или [Azure Digital двойников CLI](how-to-use-cli.md). Версию этой статьи, которая использует эти механизмы вместо портала, см. [*в разделе Практические руководства. Управление конечными точками и маршрутами (API и интерфейс командной строки)*](how-to-manage-routes-apis-cli.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Вам потребуется **учетная запись Azure** (вы можете настроить ее [здесь](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)бесплатно).
 * Вам потребуется **экземпляр Azure Digital двойников** в подписке Azure. Если у вас еще нет экземпляра, его можно создать, выполнив действия, описанные в разделе [*инструкции. Настройка экземпляра и проверки подлинности*](how-to-set-up-instance-portal.md). Используйте следующие значения из программы установки, которые можно использовать далее в этой статье:
@@ -117,6 +117,14 @@ ms.locfileid: "91252839"
 Если создание конечной точки завершается сбоем, просмотрите сообщение об ошибке и повторите попытку через несколько минут.
 
 Теперь раздел служебной шины доступен в качестве конечной точки в Azure Digital двойников под именем, указанным в поле _имя_ . Обычно это имя используется в качестве цели для **маршрута события**, который будет создан [Далее в этой статье](#event-routes).
+
+### <a name="create-an-endpoint-with-dead-lettering"></a>Создание конечной точки с недоставленным письмом
+
+Если конечная точка не может доставить событие в течение определенного периода времени или после попытки доставить событие определенное количество раз, оно может отправить недоставленное событие в учетную запись хранения. Этот процесс называется **недоставленным**.
+
+Чтобы создать конечную точку с включенной недоставленным письмом, необходимо использовать [API ARM](/rest/api/digital-twins/controlplane/endpoints/digitaltwinsendpoint_createorupdate) для создания конечной точки, а не портал Azure.
+
+Инструкции по выполнению этих действий с помощью API-интерфейсов см. в разделе [*API и версия CLI*](how-to-manage-routes-apis-cli.md#create-an-endpoint-with-dead-lettering) этой статьи.
 
 ## <a name="event-routes"></a>Маршрутизация событий
 
@@ -211,7 +219,7 @@ ms.locfileid: "91252839"
 
 [!INCLUDE [digital-twins-route-metrics](../../includes/digital-twins-route-metrics.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о различных типах сообщений о событиях, которые можно получить:
 * [*Пошаговое руководство. анализ данных события*](how-to-interpret-event-data.md)

@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: anandy
 ms.custom: oldportal;it-pro;
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6ea638124ed81a494231c814962345c028fc12c9
-ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
+ms.openlocfilehash: 00d60d803fb73a0f299b00179e5f598f3189e03e
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2020
-ms.locfileid: "91940860"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92309665"
 ---
 # <a name="assign-scoped-roles-to-an-administrative-unit"></a>Назначение ролей с заданной областью административной единице
 
@@ -60,7 +60,7 @@ ms.locfileid: "91940860"
 
 > [!Note]
 >
-> Чтобы назначить роль административной единицы с помощью PIM, выполните действия, описанные [здесь](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-how-to-add-role-to-user?tabs=new#assign-a-role-with-restricted-scope).
+> Чтобы назначить роль административной единицы с помощью PIM, выполните действия, описанные [здесь](../privileged-identity-management/pim-how-to-add-role-to-user.md?tabs=new#assign-a-role-with-restricted-scope).
 
 ### <a name="powershell"></a>PowerShell
 

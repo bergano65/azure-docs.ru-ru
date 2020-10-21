@@ -1,19 +1,19 @@
 ---
 title: Создание частной конечной точки для безопасного подключения
 titleSuffix: Azure Cognitive Search
-description: Настройка частной конечной точки в виртуальной сети для безопасного подключения к службе Когнитивный поиск Azure
+description: Настройте частную конечную точку в виртуальной сети для безопасного подключения к службе Когнитивный поиск Azure.
 manager: nitinme
 author: mrcarter8
 ms.author: mcarter
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 05/11/2020
-ms.openlocfilehash: 0cfa7b63d1ce9dd4d9b40cd0eedac247f9c56437
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 10/19/2020
+ms.openlocfilehash: bbbc79a129ec3140ea6d286cbdce0165e2f6ae7b
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88935761"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92280399"
 ---
 # <a name="create-a-private-endpoint-for-a-secure-connection-to-azure-cognitive-search"></a>Создание частной конечной точки для безопасного подключения к Azure Когнитивный поиск
 
@@ -152,10 +152,16 @@ ms.locfileid: "88935761"
     | Выбрать входящие порты | Выберите **HTTP** и **RDP**.|
     ||
 
+   > [!NOTE]
+   > IPv4-адреса можно выразить в формате [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) . Не забывайте использовать диапазон IP-адресов, зарезервированный для частных сетей, как описано в [RFC 1918](https://tools.ietf.org/html/rfc1918):
+   >
+   > - `10.0.0.0 - 10.255.255.255  (10/8 prefix)`
+   > - `172.16.0.0 - 172.31.255.255  (172.16/12 prefix)`
+   > - `192.168.0.0 - 192.168.255.255 (192.168/16 prefix)`
+
 1. Выберите **Review + create** (Просмотреть и создать). Вы будете перенаправлены на страницу **Просмотр и создание**, где Azure проверит вашу конфигурацию.
 
 1. При появлении сообщения **Проверка пройдена** нажмите кнопку **Создать**. 
-
 
 ## <a name="connect-to-the-vm"></a>Подключение к виртуальной машине
 
@@ -181,7 +187,6 @@ ms.locfileid: "88935761"
 1. При входе в систему может появиться предупреждение о сертификате. В таком случае выберите **Да** или **Продолжить**.
 
 1. Когда появится рабочий стол виртуальной машины, сверните его, чтобы вернуться на локальный рабочий стол.  
-
 
 ## <a name="test-connections"></a>Проверка подключения
 

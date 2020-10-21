@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 06/11/2020
 ms.author: anfeldma
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: c158bc176c329fb46d0acde64b043b1b3e669e18
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 657d3f84a1dd196733ed23dd3b68db92e4b35e25
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91570682"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92279473"
 ---
 # <a name="manage-conflict-resolution-policies-in-azure-cosmos-db"></a>Управление политиками разрешения конфликтов в Azure Cosmos DB
 
@@ -508,7 +508,7 @@ while conflict:
     conflict = next(conflicts_iterator, None)
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте больше о следующих понятиях Azure Cosmos DB.
 
@@ -517,5 +517,5 @@ while conflict:
 - [Настройка клиентов для поддержки нескольких веб-сайтов](how-to-manage-database-account.md#configure-multiple-write-regions)
 - [Добавление и удаление регионов из учетной записи Azure Cosmos DB](how-to-manage-database-account.md#addremove-regions-from-your-database-account)
 - [Как конфигуремулти запись в приложения](how-to-multi-master.md).
-- [Секционирование и масштабирование в Azure Cosmos DB](partition-data.md)
+- [Секционирование и масштабирование в Azure Cosmos DB](partitioning-overview.md)
 - [Индексирование в Azure Cosmos DB](indexing-policies.md)

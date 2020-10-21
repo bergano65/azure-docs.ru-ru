@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 10/16/2020
 ms.author: normesta
 ms.reviewer: jamesbak
-ms.openlocfilehash: 188c30a79074b819c5785cf5560f5843a3fcf6b4
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
+ms.openlocfilehash: 80c27613ad3956d565b858b02ed32ac13af3a62c
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92131621"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92320471"
 ---
 # <a name="access-control-lists-acls-in-azure-data-lake-storage-gen2"></a>Списки управления доступом (ACL) в Azure Data Lake Storage 2-го поколения
 
@@ -203,7 +203,7 @@ return ( (desired_perms & perms & mask ) == desired_perms)
 |--|--|--|
 |владельца|`rwx`|`r-w`|
 |группы владельцев|`r-x`|`r--`|
-|Другое|`---`|`---`|
+|Другие|`---`|`---`|
 
 Файлы не получают бит X, так как он не имеет значения для файлов в системе, предусматривающей только хранение. 
 
@@ -288,7 +288,7 @@ def set_default_acls_for_new_child(parent, child):
 
 - У вызывающего пользователя есть разрешения "суперпользователя",
 
-Или
+либо
 
 - Для родительского каталога требуются разрешения на запись и выполнение.
 - Чтобы удалить каталог и все вложенные в него каталоги, требуются разрешения на чтение, запись и выполнение.
@@ -326,6 +326,11 @@ az ad sp show --id 18218b12-1895-43e9-ad80-6e8fc1ea88ce --query objectId
 
 Если у субъекта-службы правильный идентификатор объекта, перейдите на страницу Обозреватель службы хранилища **Управление доступом** , чтобы добавить OID и назначить соответствующие разрешения для OID. Убедитесь, что выбран параметр **Сохранить**.
 
+### <a name="can-i-set-the-acl-of-a-container"></a>Можно ли задать список управления доступом для контейнера?
+
+Нет. Контейнер не имеет ACL. Однако можно задать список управления доступом для корневого каталога контейнера. Каждый контейнер имеет корневой каталог и имеет то же имя, что и контейнер. Например, если контейнер называется `my-container` , то корневой каталог будет называться `myContainer/` . 
+
+REST API службы хранилища Azure содержит операцию [Set Container ACL](https://docs.microsoft.com/rest/api/storageservices/set-container-acl), но эту операцию нельзя использовать для задания ACL контейнера или корневого каталога контейнера. Вместо этого эта операция используется, чтобы указать, [можно ли открыть общий доступ](anonymous-read-access-configure.md)к большим двоичным объектам в контейнере. 
 
 ### <a name="where-can-i-learn-more-about-posix-access-control-model"></a>Где можно получить дополнительную информацию о модели контроля доступа POSIX?
 
@@ -338,6 +343,6 @@ az ad sp show --id 18218b12-1895-43e9-ad80-6e8fc1ea88ce --query objectId
 * [POSIX ACL on Ubuntu](https://help.ubuntu.com/community/FilePermissionsACLs) (POSIX ACL для Ubuntu)
 * [ACL с использованием списков управления доступом в Linux](https://bencane.com/2012/05/27/acl-using-access-control-lists-on-linux/)
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 - [Модель контроля доступа в Azure Data Lake Storage 2-го поколения](data-lake-storage-access-control-model.md)

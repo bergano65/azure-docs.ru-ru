@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 3/13/2020
 ms.author: harshacs
-ms.openlocfilehash: 622f0d66f2c8a9f7cf0539d14499897acf7b68e6
-ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
+ms.openlocfilehash: 525ab34bb9edff737686a88d7a8e664500282555
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92096340"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92320529"
 ---
 # <a name="about-networking-in-azure-vm-disaster-recovery"></a>Сведения о сетях в аварийном восстановлении виртуальной машины Azure
 
@@ -41,8 +41,8 @@ ms.locfileid: "92096340"
 > Если для управления сетевым подключением используется прокси-сервер, прошедший аутентификацию, эта функция не поддерживается Site Recovery, а репликацию включить невозможно.
 
 >[!NOTE]
-> Для управления исходящими подключениями не следует выполнять фильтрацию на основе IP-адресов.
-> Azure Site Recovery IP-адреса не следует добавлять в таблицу маршрутизации Azure для управления исходящими подключениями.
+>- Для управления исходящими подключениями не следует выполнять фильтрацию на основе IP-адресов.
+>- Azure Site Recovery IP-адреса не следует добавлять в таблицу маршрутизации Azure для управления исходящими подключениями.
 
 ## <a name="outbound-connectivity-for-urls"></a>Исходящие подключения для URL-адресов
 

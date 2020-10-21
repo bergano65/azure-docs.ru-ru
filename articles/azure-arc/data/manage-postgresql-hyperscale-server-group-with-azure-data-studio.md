@@ -9,12 +9,12 @@ ms.author: jeanyd
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: a073df78adbf0104d81a96eb92ea427f60e53b01
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 7dcc0f916a15598060e034dcf62536ee13e2672e
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92151835"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92320231"
 ---
 # <a name="use-azure-data-studio-to-manage-your-azure-arc-enabled-postgresql-hyperscale-server-group"></a>Использование Azure Data Studio для управления PostgreSQLной группой серверов с поддержкой дуги Azure
 
@@ -25,10 +25,10 @@ ms.locfileid: "92151835"
 
 [!INCLUDE [azure-arc-data-preview](../../../includes/azure-arc-data-preview.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - [Установка аздата, Azure Data Studio и Azure CLI](install-client-tools.md)
-- Установка в Azure Data Studio **Azure Data CLI** и расширения **Azure Arc** и **PostgreSQL**
+- Установка в Azure Data Studio **[!INCLUDE [azure-data-cli-azdata](../../../includes/azure-data-cli-azdata.md)]** расширениях и **Arc Azure** , а также расширений **PostgreSQL**
 - Создание [контроллера данных ARC в Azure](create-data-controller-using-azdata.md)
 - Запустить Azure Data Studio
 

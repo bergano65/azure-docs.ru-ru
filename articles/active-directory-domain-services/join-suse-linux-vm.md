@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: how-to
 ms.date: 08/12/2020
 ms.author: joflore
-ms.openlocfilehash: 5d89f1a3d6028afb3450e0112a6081c9c706775b
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 607d3bc8eca3bd969f0f47ca95923040fb22591e
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91962468"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92275862"
 ---
 # <a name="join-a-suse-linux-enterprise-virtual-machine-to-an-azure-active-directory-domain-services-managed-domain"></a>Присоединение виртуальной машины SUSE Linux Enterprise к управляемому домену доменных служб Azure Active Directory
 
@@ -141,7 +141,7 @@ sudo vi /etc/hosts
 
 1. Укажите значение для расположения домашнего каталога. Чтобы домашняя папка соблюдались в формате */хоме/user_name*, используйте */Хоме/%у*. Дополнительные сведения о возможных переменных см. на справочной странице SSSD. conf ( `man 5 sssd.conf` ) раздела *override_homedir*.
 
-1. Нажмите кнопку **OK**.
+1. Щелкните **ОК**.
 
 1. Чтобы сохранить изменения, нажмите кнопку **ОК**. Затем убедитесь, что значения отображаются правильно. Чтобы выйти из диалогового окна, нажмите **кнопку Отмена**.
 
@@ -165,7 +165,7 @@ sudo vi /etc/hosts
 
 1. Если вы хотите изменить диапазоны UID и GID для пользователей и групп Samba, выберите *параметры эксперта*.
 
-1. Настройте синхронизацию времени NTP для управляемого домена, выбрав *Конфигурация NTP*. Введите IP-адреса управляемого домена. Эти IP-адреса отображаются в окне *Свойства* в портал Azure для управляемого домена, например *10.0.2.4* и *10.0.2.5*.
+1. Настройте синхронизацию времени по протоколу NTP для управляемого домена, выбрав *Конфигурация NTP*. Введите IP-адреса управляемого домена. Эти IP-адреса отображаются в окне *Свойства* в портал Azure для управляемого домена, например *10.0.2.4* и *10.0.2.5*.
 
 1. Нажмите кнопку **ОК** и подтвердите присоединение к домену при появлении соответствующего запроса.
 
@@ -174,6 +174,127 @@ sudo vi /etc/hosts
     ![Пример снимка экрана диалогового окна проверки подлинности при присоединении виртуальной машины SLE к управляемому домену](./media/join-suse-linux-vm/domain-join-authentication-prompt.png)
 
 После присоединения к управляемому домену вы можете войти на него с рабочей станции, используя диспетчер экранов рабочего стола или консоли.
+
+## <a name="join-vm-to-the-managed-domain-using-winbind-from-the-yast-command-line-interface"></a>Присоединение виртуальной машины к управляемому домену с помощью Winbind из интерфейса командной строки YaST
+
+Чтобы присоединиться к управляемому домену с помощью **Winbind** и *интерфейса командной строки YaST*, выполните следующие действия.
+
+* Присоединиться к домену:
+
+  ```console
+  sudo yast samba-client joindomain domain=aaddscontoso.com user=<admin> password=<admin password> machine=<(optional) machine account>
+  ```
+
+## <a name="join-vm-to-the-managed-domain-using-winbind-from-the-terminal"></a>Присоединение виртуальной машины к управляемому домену с помощью Winbind из терминала
+
+Чтобы присоединиться к управляемому домену с помощью **Winbind** и выполните * `samba net` команду*:
+
+1. Установите клиент Kerberos и Samba-winbind:
+
+   ```console
+   sudo zypper in krb5-client samba-winbind
+   ```
+
+2. Измените файлы конфигурации.
+
+   * /етк/самба/смб.конф
+   
+     ```ini
+     [global]
+         workgroup = AADDSCONTOSO
+         usershare allow guests = NO #disallow guests from sharing
+         idmap config * : backend = tdb
+         idmap config * : range = 1000000-1999999
+         idmap config AADDSCONTOSO : backend = rid
+         idmap config AADDSCONTOSO : range = 5000000-5999999
+         kerberos method = secrets and keytab
+         realm = AADDSCONTOSO.COM
+         security = ADS
+         template homedir = /home/%D/%U
+         template shell = /bin/bash
+         winbind offline logon = yes
+         winbind refresh tickets = yes
+     ```
+
+   * /etc/krb5.conf
+   
+     ```ini
+     [libdefaults]
+         default_realm = AADDSCONTOSO.COM
+         clockskew = 300
+     [realms]
+         AADDSCONTOSO.COM = {
+             kdc = PDC.AADDSCONTOSO.COM
+             default_domain = AADDSCONTOSO.COM
+             admin_server = PDC.AADDSCONTOSO.COM
+         }
+     [domain_realm]
+         .aaddscontoso.com = AADDSCONTOSO.COM
+     [appdefaults]
+         pam = {
+             ticket_lifetime = 1d
+             renew_lifetime = 1d
+             forwardable = true
+             proxiable = false
+             minimum_uid = 1
+         }
+     ```
+
+   * /ЕТК/секурити/pam_winbind. conf
+   
+     ```ini
+     [global]
+         cached_login = yes
+         krb5_auth = yes
+         krb5_ccache_type = FILE
+         warn_pwd_expire = 14
+     ```
+
+   * /етк/нссвитч.конф
+   
+     ```ini
+     passwd: compat winbind
+     group: compat winbind
+     ```
+
+3. Убедитесь, что дата и время в Azure AD и Linux синхронизированы. Это можно сделать, добавив сервер Azure AD в службу NTP:
+   
+   1. Добавьте следующую строку в/ЕТК/НТП.конф:
+     
+      ```console
+      server aaddscontoso.com
+      ```
+
+   1. Перезапустите службу NTP:
+     
+      ```console
+      sudo systemctl restart ntpd
+      ```
+
+4. Присоединиться к домену:
+
+   ```console
+   sudo net ads join -U Administrator%Mypassword
+   ```
+
+5. Включите Winbind в качестве источника входа в модули подключаемого модуля проверки подлинности Linux (PAM):
+
+   ```console
+   pam-config --add --winbind
+   ```
+
+6. Включите автоматическое создание домашних каталогов, чтобы пользователи могли входить в систему:
+
+   ```console
+   pam-config -a --mkhomedir
+   ```
+
+7. Запуск и включение службы Winbind:
+
+   ```console
+   sudo systemctl enable winbind
+   sudo systemctl start winbind
+   ```
 
 ## <a name="allow-password-authentication-for-ssh"></a>Разрешить проверку пароля для SSH
 

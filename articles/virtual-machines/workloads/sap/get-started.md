@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 10/19/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: ea5d291f372485da714104eaa7df19ed3a153423
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: b481a1ccf36120a30bf7c923e2d59c5782433567
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92206192"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92282501"
 ---
 # <a name="use-azure-to-host-and-run-sap-workload-scenarios"></a>Использование Azure для размещения и выполнения сценариев рабочей нагрузки SAP
 
@@ -73,16 +73,14 @@ Azure для SAP HANA — это предложение, выделяющее A
 
 
 ## <a name="documentation-on-integration-of-azure-services-into-sap-components"></a>Документация по интеграции служб Azure с компонентами SAP
+В этом разделе вы найдете документы об интеграции PowerBI с источниками данных SAP, а также интеграции фабрики данных Azure в SAP BW.
 
-- [Использование SAP HANA в Power BI Desktop](/power-bi/desktop-sap-hana)
-- [DirectQuery и SAP HANA](/power-bi/desktop-directquery-sap-hana)
-- [Использование соединителя SAP BW в Power BI Desktop](/power-bi/desktop-sap-bw-connector) 
-- [Возможность интеграции данных SAP HANA и Business Warehouse в Фабрике данных Azure](https://azure.microsoft.com/blog/azure-data-factory-offer-sap-hana-and-business-warehouse-data-integration)
 
 
 ## <a name="change-log"></a>Журнал изменений
 
-- 10/16/2020: смените высокий уровень [доступности IBM DB2 LUW на виртуальных машинах Azure в SLES с Pacemaker](./dbms-guide-ha-ibm.md), [HA для SAP NW на виртуальных машинах Azure в RHEL для приложений SAP](./high-availability-guide-rhel.md), [высокой доступности IBM DB2 LUW на](./high-availability-guide-rhel-ibm-db2-luw.md)виртуальных машинах Azure в RHEL, HA для SAP NW на виртуальных машинах Azure в RHEL с [несколькими ИД безопасности](./high-availability-guide-rhel-multi-sid.md), [HA для SAP NW на виртуальных](./high-availability-guide-rhel-netapp-files.md)машинах Azure в RHEL с использовании, [Высокая доступность для SAP NW на виртуальных машинах Azure в SLES для приложений SAP](./high-availability-guide-suse.md), [Высокая доступность для SAP ННВ на ВИРТУАЛЬНЫХ машинах Azure по SLES Multi-SID](./high-availability-guide-suse-multi-sid.md), HA для SAP NW на ВИРТУАЛЬНЫХ машинах Azure в [SLES с использовании для приложений SAP](./high-availability-guide-suse-netapp-files.md), Ha [для NFS на](./high-availability-guide-suse-nfs.md)виртуальных машинах Azure в SLES, [Ha SAP HANA на виртуальных](./sap-hana-high-availability.md)машинах Azure в SLES, Ha [для SAP HANA масштабирования с использовании в RHEL](./sap-hana-high-availability-netapp-files-red-hat.md) , [Высокая доступность SAP HANA на виртуальных машинах Azure в RHEL](./sap-hana-high-availability-rhel.md), [SAP HANA горизонтального масштабирования HSR с Pacemaker на виртуальных машинах Azure на RHEL](./sap-hana-high-availability-scale-out-hsr-rhel.md), [Подготовьте инфраструктуру Azure для SAP ASCS/SCS с WSFC и общим диском](./sap-high-availability-infrastructure-wsfc-shared-disk.md), [руководством по обеспечению доступности с несколькими ИД безопасности для SAP ASCS/SCS с WSFC и общим диском](./sap-ascs-ha-multi-sid-wsfc-azure-shared-disk.md) с [несколькими](./sap-ascs-ha-multi-sid-wsfc-shared-disk.md) ИД безопасности для SAP ASCS  
+- 10/16/2020: смените высокий уровень [доступности IBM DB2 LUW на виртуальных машинах Azure в SLES с Pacemaker](./dbms-guide-ha-ibm.md), [HA для SAP NW на виртуальных машинах Azure в RHEL для приложений SAP](./high-availability-guide-rhel.md), [высокой доступности IBM DB2 LUW на](./high-availability-guide-rhel-ibm-db2-luw.md)виртуальных машинах Azure в RHEL, HA для SAP NW на виртуальных машинах Azure в RHEL с [несколькими ИД безопасности](./high-availability-guide-rhel-multi-sid.md), [HA для SAP NW на виртуальных](./high-availability-guide-rhel-netapp-files.md)машинах Azure в RHEL с использовании, [Высокая доступность для SAP NW на виртуальных машинах Azure в SLES для приложений SAP](./high-availability-guide-suse.md), [Высокая доступность для SAP ННВ на ВИРТУАЛЬНЫХ машинах Azure по SLES Multi-SID](./high-availability-guide-suse-multi-sid.md), HA для SAP NW на ВИРТУАЛЬНЫХ машинах Azure в [SLES с использовании для приложений SAP](./high-availability-guide-suse-netapp-files.md), Ha [для NFS на](./high-availability-guide-suse-nfs.md)виртуальных машинах Azure в SLES, [Ha SAP HANA на виртуальных](./sap-hana-high-availability.md)машинах Azure в SLES, Ha [для SAP HANA масштабирования с использовании в RHEL](./sap-hana-high-availability-netapp-files-red-hat.md) , [Высокая доступность SAP HANA на виртуальных машинах Azure в RHEL](./sap-hana-high-availability-rhel.md), [SAP HANA горизонтального масштабирования HSR с Pacemaker на виртуальных машинах Azure на RHEL](./sap-hana-high-availability-scale-out-hsr-rhel.md), [Подготовьте инфраструктуру Azure для SAP ASCS/SCS с WSFC и общим диском](./sap-high-availability-infrastructure-wsfc-shared-disk.md), [руководством по обеспечению доступности с несколькими ИД безопасности для SAP ASCS/SCS с WSFC и общим диском](./sap-ascs-ha-multi-sid-wsfc-azure-shared-disk.md) с [несколькими](./sap-ascs-ha-multi-sid-wsfc-shared-disk.md) ИД безопасности для SAP ASCS 
+- 10/16/2020: Добавление документации для управления моментальными снимками хранилища крупных экземпляров HANA в [резервном копировании и восстановлении SAP HANA в крупных экземплярах Hana](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-backup-restore)
 - 10/15/2020: выпуск платформы SAP BusinessObjects BI в документации по Azure, [руководство по планированию и внедрению платформы SAP BUSINESSOBJECTS BI на платформе Azure](businessobjects-deployment-guide.md) и [SAP BusinessObjects BI в руководстве по развертыванию платформы для Linux в Azure](businessobjects-deployment-guide-linux.md)
 - 10/05/2020. выпуск [SAP HANA Scale HSR с Pacemaker на виртуальных машинах Azure в](./sap-hana-high-availability-scale-out-hsr-rhel.md) разделе Руководство по настройке RHEL
 - 09/30/2020: измените [высокий уровень доступности SAP HANA на виртуальных машинах Azure в RHEL](./sap-hana-high-availability-rhel.md), [HA для SAP HANA МАСШТАБИРОВАНИЯ с помощью использовании на RHEL](./sap-hana-high-availability-netapp-files-red-hat.md) и [Настройка Pacemaker в RHEL в Azure](./high-availability-guide-rhel-pacemaker.md) для адаптации инструкций для RHEL 8,1
