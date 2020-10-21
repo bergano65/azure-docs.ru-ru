@@ -3,12 +3,12 @@ title: Поддержка оценки Hyper-V в службе "миграция
 description: Дополнительные сведения о поддержке оценки Hyper-V с помощью Azure Migrate Server
 ms.topic: conceptual
 ms.date: 06/14/2020
-ms.openlocfilehash: 16eeb0822a8d598c74ab5118fbd39bda84186db0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 36cc96915380a464f02df5806337a06f022ecbbf
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91318183"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92311329"
 ---
 # <a name="support-matrix-for-hyper-v-assessment"></a>Матрица поддержки для оценки Hyper-V
 
@@ -46,7 +46,7 @@ ms.locfileid: "91318183"
 | :----------------------------- | :------------------- |
 | **Операционная система** | Все операционные системы можно оценить для миграции.  |
 | **Службы интеграции**       | Для записи сведений об операционной системе на виртуальных машинах, которые вы оцениваете, необходимо запустить [Hyper-V Integration Services](/virtualization/hyper-v-on-windows/reference/integration-services) . |
-| **Память** | Локальный диск, DAS, JBOD, дисковые пространства, CSV, SMB. Эти хранилища узлов Hyper-V, на которых хранятся VHD-и VHDX, поддерживаются. <br/> Поддерживаются виртуальные контроллеры IDE и SCSI| 
+| **Хранилище** | Локальный диск, DAS, JBOD, дисковые пространства, CSV, SMB. Эти хранилища узлов Hyper-V, на которых хранятся VHD-и VHDX, поддерживаются. <br/> Поддерживаются виртуальные контроллеры IDE и SCSI| 
 
 ## <a name="azure-migrate-appliance-requirements"></a>Требования к устройству Миграции Azure
 
@@ -83,4 +83,4 @@ ms.locfileid: "91318183"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Подготовка к оценке виртуальных машин Hyper-V](tutorial-prepare-hyper-v.md)
+[Подготовка к оценке виртуальных машин Hyper-V](./tutorial-discover-hyper-v.md)

@@ -4,14 +4,14 @@ description: Управление ресурсами API Azure Cosmos DB Core (S
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: how-to
-ms.date: 10/07/2020
+ms.date: 10/13/2020
 ms.author: mjbrown
-ms.openlocfilehash: dce041a46f173216844322b5a8985acbdfb86f26
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 631dd3242e695a1e7872a4b078ab3f9761591c56
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91840597"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92277773"
 ---
 # <a name="manage-azure-cosmos-core-sql-api-resources-using-azure-cli"></a>Управление ресурсами API Azure Cosmos Core (SQL) с помощью Azure CLI
 
@@ -19,7 +19,9 @@ ms.locfileid: "91840597"
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать CLI локально, для работы с этим разделом требуется Azure CLI версии 2.12.1 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
+Если вы решили установить и использовать интерфейс командной строки локально, то для работы с этим руководством вам понадобится Azure CLI 2.12.1 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
+
+Примеры для Azure CLI для других API см. в статьях [примеры CLI для Cassandra](cli-samples-cassandra.md), [примеры CLI для API MongoDB](cli-samples-mongodb.md), примеры CLI [для Gremlin](cli-samples-gremlin.md), [примеры CLI для таблицы](cli-samples-table.md)
 
 > [!IMPORTANT]
 > Azure Cosmos DB ресурсы не могут быть переименованы, так как это нарушает работу Azure Resource Manager с URI ресурсов.
@@ -39,7 +41,7 @@ ms.locfileid: "91840597"
 * [Вывод строк подключения](#list-connection-strings)
 * [Повторное создание ключей учетных записей](#regenerate-account-key)
 
-### <a name="create-an-azure-cosmos-db-account"></a>создание учетной записи Azure Cosmos DB;
+### <a name="create-an-azure-cosmos-db-account"></a>Создание учетной записи Azure Cosmos DB
 
 Создание учетной записи Azure Cosmos DB с помощью API SQL, согласованности сеансов в Западная часть США 2 и Восточная часть США 2.
 
@@ -538,7 +540,7 @@ lockid=$(az lock show --name $containerLockName \
 az lock delete --ids $lockid
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об Azure CLI см.:
 

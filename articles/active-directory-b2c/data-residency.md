@@ -8,16 +8,16 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 06/06/2020
+ms.date: 10/20/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.custom: references_regions
-ms.openlocfilehash: f8c6f7daecd38babaa4f2961d04a6cd4c3b4dbed
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9cb7a97b3f57ee7ac10babc53ee2263d51838777
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91840563"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92309686"
 ---
 # <a name="azure-active-directory-b2c-region-availability--data-residency"></a>Azure Active Directory B2C: доступность в регионах и местонахождение данных
 
@@ -59,6 +59,14 @@ Azure AD B2C сохраняет данные пользователя в США,
 
 > Аргентина, Австралия, Бразилия, Чили, Колумбия, Эквадор, Ирак, Новая Зеландия, Парагвай, Перу, Уругвай и Венесуэла.
 
+## <a name="remote-profile-solution"></a>Решение для удаленного профиля
+
+С помощью [пользовательских политик](custom-policy-overview.md)Azure AD B2C можно интегрироваться со [службами API RESTful](custom-policy-rest-api-intro.md), которые позволяют хранить и считывать профили пользователей из удаленной базы данных (например, с помощью маркетинговой базы данных, системы CRM или любого бизнес-приложения).  
+- В процессе регистрации и редактирования профиля Azure AD B2C вызывает пользовательскую REST API, чтобы сохранить профиль пользователя в удаленном источнике данных. Учетные данные пользователя хранятся в каталоге Azure AD B2C. 
+- После входа в систему после проверки учетных данных с локальной или социальных учетными записями Azure AD B2C вызывает REST API, который отправляет уникальный идентификатор пользователя в качестве первичного ключа пользователя (адреса электронной почты или пользователя objectId). REST API считывает данные из удаленной базы данных и возвращает профиль пользователя.  
+
+После регистрации, редактирования профиля или входа в систему Azure AD B2C включает профиль пользователя в маркере доступа, который возвращается в приложение. Дополнительные сведения см. в [примере решения Azure AD B2C Remote Profile](https://github.com/azure-ad-b2c/samples/tree/master/policies/remote-profile) в GitHub.
+
 ## <a name="preview-tenant"></a>Предварительная версия клиента
 
 Если вы создали клиент B2C во время предварительной версии Azure AD B2c, скорее всего, ваш **Тип клиента** говорит о **предварительной версии клиента**.
@@ -70,3 +78,7 @@ Azure AD B2C сохраняет данные пользователя в США,
 Существуют известные проблемы при удалении клиента предварительной версии B2C и создании производственно-масштабируемого клиента B2C с тем же именем домена. *Необходимо создать производственный масштабируемый клиент B2C с другим доменным именем*.
 
 ![Снимок экрана типа клиента в качестве предварительной версии клиента.](./media/data-residency/preview-b2c-tenant.png)
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+- [Создание клиента Azure AD B2C](tutorial-create-tenant.md).

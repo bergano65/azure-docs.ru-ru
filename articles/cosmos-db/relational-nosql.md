@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 12/16/2019
 ms.reviewer: sngun
-ms.openlocfilehash: 50d077c1d7c9e4e421a43a4e0379b57608d1192c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 63663d228052934616a59f5d84ff16a6510e46c9
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91361772"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92282078"
 ---
 # <a name="understanding-the-differences-between-nosql-and-relational-databases"></a>Основные сведения о различиях между NoSQL и реляционными базами данных
 
@@ -88,15 +88,15 @@ Azure Cosmos DB — это многомодельная служба базы д
 
 Опять же, Azure Cosmos DB предлагает больше гибкости, чем реляционные базы данных, для различных компромиссов, которые важны здесь, но для небольших реализаций такой подход может добавить дополнительные рекомендации по проектированию. Дополнительные сведения по этой теме см. в нашей статье о [согласованности, доступности и компромиссах производительности](https://docs.microsoft.com/azure/cosmos-db/consistency-levels-tradeoffs) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как управлять учетной записью Azure Cosmos и другими концепциями:
 
 * [Управление учетными записями базы данных в Azure Cosmos DB](how-to-manage-database-account.md)
 * [Глобальное распределение](distribute-data-globally.md)
 * [Уровни согласованности](consistency-levels.md)
-* [Работа с базами данных, контейнерами и элементами Azure Cosmos](databases-containers-items.md)
-* [Безопасный доступ к учетной записи Azure Cosmos DB с использованием конечной точки службы виртуальной сети Azure](vnet-service-endpoint.md)
-* [Поддержка брандмауэра для Azure Cosmos DB](firewall-support.md)
+* [Работа с базами данных, контейнерами и элементами Azure Cosmos](account-databases-containers-items.md)
+* [Безопасный доступ к учетной записи Azure Cosmos DB с использованием конечной точки службы виртуальной сети Azure](how-to-configure-vnet-service-endpoint.md)
+* [Поддержка брандмауэра для Azure Cosmos DB](how-to-configure-firewall.md)
 * [Добавление и удаление регионов из учетной записи базы данных](how-to-manage-database-account.md)
 * [Соглашение об уровне обслуживания для Azure Cosmos DB](https://azure.microsoft.com/support/legal/sla/cosmos-db/v1_2/)

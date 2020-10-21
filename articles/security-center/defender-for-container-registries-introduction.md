@@ -7,12 +7,12 @@ ms.date: 9/22/2020
 ms.topic: overview
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 12264a79ee5428e98d6cf7d37bef6706295e68dc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0c504ebdec524390d9deb22088979199f80e4f13
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91448369"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92275963"
 ---
 # <a name="introduction-to-azure-defender-for-container-registries"></a>Общие сведения об Azure Defender для реестров контейнеров
 
@@ -66,7 +66,7 @@ ms.locfileid: "91448369"
 
 ### <a name="can-i-get-the-scan-results-via-rest-api"></a>Можно ли получить результаты проверки через REST API?
 Да. Результаты предоставляются через [REST API дополнительных оценок](/rest/api/securitycenter/subassessments/list/). Кроме того, вы можете использовать Azure Resource Graph (работающий по принципу Kusto API) для всех ресурсов: запрос может получать данные об определенной проверке.
- 
+
 ### <a name="what-registry-types-are-scanned-what-types-are-billed"></a>Какие типы реестра проверяются? За какие типы взимается плата?
 Список типов реестров контейнеров, поддерживаемых Azure Defender, см. в разделе [Доступность](defender-for-container-registries-usage.md#availability).
 

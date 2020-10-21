@@ -7,12 +7,12 @@ ms.topic: article
 author: mingshen-ms
 ms.author: mingshen
 ms.date: 07/14/2020
-ms.openlocfilehash: cb24ff0f2e09d98bf4a8cc4a502399fd9b38e350
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bda72a72e8ac0adf48fd8981a6eccf40385469d5
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91369915"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92281402"
 ---
 # <a name="frequently-asked-questions-about-transitioning-from-the-cloud-partner-portal-to-partner-center"></a>Часто задаваемые вопросы о переходе от Портал Cloud Partner в центр партнеров
 
@@ -75,10 +75,10 @@ ms.locfileid: "91369915"
 
 Для типов предложений, поддерживаемых в центре партнеров, все предложения были перемещены независимо от их состояния. черновик, отмена в списке и предложения только для предварительного просмотра также перемещены.
 
-| Тип предложения <img src="" width=150px>| Перемещены в центр партнеров? <img src="" width=100px>| Дальнейшие шаги |
+| Тип предложения <img src="" width=150px>| Перемещены в центр партнеров? <img src="" width=100px>| Дальнейшие действия |
 | --- | --- | --- |
 | SaaS | Да | Войдите в центр партнеров, чтобы создать новые предложения и управлять предложениями, созданными в Портал Cloud Partner. Дополнительные сведения см. в статье [Создание нового предложения SaaS в коммерческом магазине](partner-center-portal/create-new-saas-offer.md). |
-| Виртуальная машина | Да | Войдите в центр партнеров, чтобы создать новые предложения и управлять предложениями, созданными в Портал Cloud Partner. Дополнительные сведения см. в статье [Создание предложения виртуальной машины Azure в Azure Marketplace](partner-center-portal/azure-vm-create-offer.md). |
+| Виртуальная машина | Да | Войдите в центр партнеров, чтобы создать новые предложения и управлять предложениями, созданными в Портал Cloud Partner. Дополнительные сведения см. в статье [Создание предложения виртуальной машины Azure в Azure Marketplace](azure-vm-create.md). |
 | Приложение Azure | Да | Войдите в центр партнеров, чтобы создать новые предложения и управлять предложениями, созданными в Портал Cloud Partner. Дополнительные сведения см. в статье [Создание предложения приложения Azure](partner-center-portal/create-new-azure-apps-offer.md). |
 | Dynamics 365 Business Central | Да | Войдите в центр партнеров, чтобы создать новые предложения и управлять предложениями, созданными в Портал Cloud Partner. Дополнительные сведения см. в статье [Создание предложения Dynamics 365 Business Central](partner-center-portal/create-new-business-central-offer.md). |
 | Dynamics 365 для участия клиентов & PowerApps | Да | Войдите в центр партнеров, чтобы создать новые предложения и управлять предложениями, созданными в Портал Cloud Partner. Дополнительные сведения см. в статье [Создание Dynamics 365 для участия клиентов & PowerApps](partner-center-portal/create-new-customer-engagement-offer.md). |
@@ -155,16 +155,16 @@ ms.locfileid: "91369915"
 
 Кроме того, сведения, которые вы ранее указали в **сведениях о** **Marketplace** или витрине (консультационная служба, Power BI приложение) в портал Cloud Partner, теперь собираются на странице **со списком предложений** в центре партнеров:
 
-[![На снимке экрана показана страница со списком предложений центра партнеров.](media/cpp-pc-faq/offer-listing.png "Отображает страницу списка предложений для центра партнеров")](media/cpp-pc-faq/offer-listing.png#lightbox)
+[! [На снимке экрана отображается страница списка предложений для центра партнеров.] (Media/cpp-PC — часто задаваемые вопросы/offer-listing.png](media/cpp-pc-faq/offer-listing.png#lightbox)
 
 Сведения, указанные ранее для номеров SKU на одной странице Портал Cloud Partner, теперь можно собирать на нескольких страницах в центре партнеров:
 
-- на странице настройки планов;
+- Страница «Настройка плана»
 - на странице списка планов;
 - на странице доступности планов;
 - Спланируйте страницу технической конфигурации, как показано ниже:
 
-![! [На снимке экрана показана страница технической настройки центра партнеров] (Media/cpp-PC-FAQ/technical-configuration.png "отображается страница технической настройки центра партнеров")](media/cpp-pc-faq/technical-configuration.png#lightbox)
+[![Отображает страницу технической конфигурации центра партнеров.](media/cpp-pc-faq/technical-configuration.png)](media/cpp-pc-faq/technical-configuration.png#lightbox)
 
 Ваш идентификатор предложения теперь отображается на левой навигационной панели предложения:
 

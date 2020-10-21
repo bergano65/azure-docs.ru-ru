@@ -16,12 +16,12 @@ ms.date: 08/14/2020
 ms.author: barclayn
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 51983e52643d587fc497a1a67fcb0cd29dbb7f17
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b218f4c94e33d4a91b3981c66d3ac052c6caf7e2
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91306571"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92318127"
 ---
 # <a name="planning-azure-active-directory-access-reviews-deployment"></a>Планирование развертывания Azure Active Directoryных проверок доступа
 
@@ -87,7 +87,7 @@ ms.locfileid: "91306571"
 
 ### <a name="engage-the-right-stakeholders"></a>Привлечение соответствующих заинтересованных лиц
 
-Причиной неудач технических проектов обычно являются неоправданные ожидания относительно влияния, результатов и обязанностей. Чтобы избежать этих ловушек, [убедитесь, что вы привлекаете соответствующих заинтересованных лиц](https://aka.ms/deploymentplans) и их роли в проекте очевидны.
+Причиной неудач технических проектов обычно являются неоправданные ожидания относительно влияния, результатов и обязанностей. Чтобы избежать этих ловушек, [убедитесь, что вы привлекаете соответствующих заинтересованных лиц](../fundamentals/active-directory-deployment-plans.md) и их роли в проекте очевидны.
 
 Для проверок доступа вы, вероятно, включаете представителей следующих команд в Организации:
 
@@ -182,7 +182,7 @@ ms.locfileid: "91306571"
 
 * [Членство](../fundamentals/active-directory-manage-groups.md?context=azure%2factive-directory%2fusers-groups-roles%2fcontext%2fugr-context) в группах (синхронизировано с Azure AD или создано в Azure ad или Microsoft 365, включая Microsoft Teams).
 
-* [Доступ к пакету](/azure/active-directory/governance/entitlement-management-overview) , который группирует ресурсы (группы, приложения и сайты) в один пакет для управления доступом.
+* [Доступ к пакету](./entitlement-management-overview.md) , который группирует ресурсы (группы, приложения и сайты) в один пакет для управления доступом.
 
 * [Роли Azure AD и роли ресурсов Azure](../privileged-identity-management/pim-resource-roles-assign-roles.md) , как определено в Управление привилегированными пользователями.
 
@@ -448,7 +448,7 @@ ms.locfileid: "91306571"
 
 ![Снимок экрана, показывающий список ролей Azure A D (членство в проверке).](./media/deploy-access-review/8-review-azure-ad-roles-picker.png)
 
-Следуйте инструкциям по ссылкам ниже:
+Выполните инструкции, приведенные по ссылкам ниже.
 
 | Статьи с инструкциями | Описание |
 | - | - |
@@ -463,7 +463,7 @@ ms.locfileid: "91306571"
 
 ![Проверка ролей Azure AD](./media/deploy-access-review/9-review-azure-roles-picker.png)
 
-Следуйте инструкциям по ссылкам ниже:
+Выполните инструкции, приведенные по ссылкам ниже.
 
 | Статьи с инструкциями| Описание |
 | - | -|
@@ -511,11 +511,10 @@ ms.locfileid: "91306571"
 
 Для более сложных запросов и анализа проверок доступа, а также для наблюдения за изменениями и завершением проверок рекомендуется экспортировать журналы аудита Azure AD в [log Analytics Azure](../reports-monitoring/quickstart-azure-monitor-route-logs-to-storage-account.md) или концентратор событий Azure. При хранении в Azure Log Analytics можно использовать [мощный язык аналитики](../reports-monitoring/howto-analyze-activity-logs-log-analytics.md) и создавать собственные панели мониторинга.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о следующих связанных технологиях.
 
 * [Что такое управление запасами в Azure AD?](entitlement-management-overview.md)
 
 * [Что такое Azure AD Privileged Identity Management?](../privileged-identity-management/pim-configure.md)
-

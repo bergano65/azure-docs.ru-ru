@@ -9,31 +9,31 @@ ms.topic: reference
 ms.date: 08/12/2020
 ms.author: anfeldma
 ms.custom: devx-track-java
-ms.openlocfilehash: 6db0965c0b5e28ac1e70da2cbeea276728f29822
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1061cd7a37cbe9ce5ea360de22594d6eb4c0c2f5
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91569940"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92275296"
 ---
 # <a name="azure-cosmos-db-java-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: Заметки о выпуске и материалы
 > [!div class="op_single_selector"]
 > * [Пакет SDK версии 3 для .NET](sql-api-sdk-dotnet-standard.md)
 > * [Пакет SDK для .NET версии 2](sql-api-sdk-dotnet.md)
 > * [Пакет SDK для .NET Core версии 2](sql-api-sdk-dotnet-core.md)
-> * [Пакет SDK для веб-канала изменений .NET версии 2](sql-api-sdk-dotnet-changefeed.md)
+> * [Пакет SDK для .NET Change Feed версии 2](sql-api-sdk-dotnet-changefeed.md)
 > * [Node.js](sql-api-sdk-node.md)
 > * [Пакет SDK для Java версии 4](sql-api-sdk-java-v4.md)
 > * [Пакет SDK для Async Java версии 2](sql-api-sdk-async-java.md)
 > * [Пакет SDK для Sync Java версии 2](sql-api-sdk-java.md)
-> * [Пружинные данные v2](sql-api-sdk-java-spring-v2.md)
+> * [Spring Data версии 2](sql-api-sdk-java-spring-v2.md)
 > * [Spring Data версии 3](sql-api-sdk-java-spring-v3.md)
 > * [Соединитель Spark](sql-api-sdk-java-spark.md)
 > * [Python](sql-api-sdk-python.md)
 > * [REST](/rest/api/cosmos-db/)
 > * [Поставщик ресурсов REST](/rest/api/cosmos-db-resource-provider/)
 > * [SQL](sql-api-query-reference.md)
-> * [Групповой исполнитель — .NET v2](sql-api-sdk-bulk-executor-dot-net.md)
+> * [Исполнитель массовых операций — .NET версии 2](sql-api-sdk-bulk-executor-dot-net.md)
 > * [Исполнитель массовых операций — Java](sql-api-sdk-bulk-executor-java.md)
 
 Это исходный пакет SDK для Sync Java версии 2 для API SQL Azure Cosmos DB, который поддерживает синхронные операции.
@@ -232,7 +232,7 @@ ms.locfileid: "91569940"
 * Добавлена поддержка срока жизни для документов.
 
 ### <a name="160"></a><a name="1.6.0"></a>1.6.0
-* Реализованы [секционированные коллекции](partition-data.md) и [определяемые пользователем уровни производительности](performance-levels.md).
+* Реализованы [секционированные коллекции](partitioning-overview.md) и [определяемые пользователем уровни производительности](performance-levels.md).
 
 ### <a name="151"></a><a name="1.5.1"></a>1.5.1
 * Исправлена ошибка в HashPartitionResolver, чтобы значения создавались с прямым порядком байтов для согласования с другими пакетами SDK.
@@ -263,7 +263,7 @@ ms.locfileid: "91569940"
 Корпорация Майкрософт отправит уведомление минимум за **12 месяцев** до вывода пакета SDK из эксплуатации, чтобы обеспечить более плавный переход на новую или поддерживаемую версию. Новые функции, возможности и оптимизации добавляются только в текущую версию пакета SDK, поэтому рекомендуется как можно раньше обновлять пакет SDK до последней версии.
 
 > [!WARNING]
-> После 30 мая 2020 г. Azure Cosmos DB больше не будет устранять ошибки, добавить новые функции и предоставить поддержку версий 1. x пакета SDK для Java Azure Cosmos DB для API SQL. Если вы предпочитаете не выполнять обновление, запросы, отправленные с версии 1. x пакета SDK, будут по прежнему обслуживаться службой Azure Cosmos DB.
+> После 30 мая 2020 г. Azure Cosmos DB больше не будет устранять ошибки, добавить новые функции и предоставить поддержку версий 1. x пакета SDK для Java Azure Cosmos DB для API SQL. Даже если вы не выполните обновление, запросы, отправляемые из версий 1.х пакета SDK, будут обрабатываться службой Azure Cosmos DB.
 >
 > После 29 февраля 2016 Azure Cosmos DB больше не будет вносить исправления в ошибки, добавлять новые функции и предоставлять поддержку версий 0. x пакета SDK для Java Azure Cosmos DB для API SQL. Если вы предпочитаете не выполнять обновление, запросы, отправленные с версии 0. x пакета SDK, будут по прежнему обслуживаться службой Azure Cosmos DB.
 

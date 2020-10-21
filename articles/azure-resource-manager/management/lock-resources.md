@@ -2,14 +2,14 @@
 title: Блокировка ресурсов для предотвращения изменений
 description: Запрет на обновление или удаление критических ресурсов Azure для пользователей путем применения блокировки для всех пользователей и ролей.
 ms.topic: conceptual
-ms.date: 06/17/2020
+ms.date: 10/20/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: e76287c4524831a84a22fb23ddf8a5fdee8bc12b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3830c7e78cf3cc607c7abfca63e6ae74f89b7aff
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87827288"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92281735"
 ---
 # <a name="lock-resources-to-prevent-unexpected-changes"></a>Блокировка ресурсов для предотвращения непредвиденных изменений
 
@@ -66,17 +66,19 @@ ms.locfileid: "87827288"
 
 ![Удаление службы](./media/lock-resources/delete-service.png)
 
-## <a name="portal"></a>Портал
+## <a name="configure-locks"></a>Настройка блокировок
+
+### <a name="portal"></a>Портал
 
 [!INCLUDE [resource-manager-lock-resources](../../../includes/resource-manager-lock-resources.md)]
 
-## <a name="template"></a>Шаблон
+### <a name="arm-template"></a>Шаблон ARM
 
 Если для развертывания блокировки используется шаблон Resource Manager, то в зависимости от области блокировки назначаются разные значения имени и типа.
 
 Если блокировка применяется к **ресурсу**, используйте следующие форматы:
 
-* имя — `{resourceName}/Microsoft.Authorization/{lockName}`;
+* имя — `{resourceName}/Microsoft.Authorization/{lockName}`;
 * тип — `{resourceProviderNamespace}/{resourceType}/providers/locks`.
 
 При применении блокировки к **группе ресурсов** или **подписке** используйте следующие форматы:
@@ -143,7 +145,7 @@ ms.locfileid: "87827288"
 
 Пример настройки блокировки для группы ресурсов см. в разделе [Создание и блокировка группы ресурсов](https://github.com/Azure/azure-quickstart-templates/tree/master/subscription-deployments/create-rg-lock-role-assignment).
 
-## <a name="powershell"></a>PowerShell
+### <a name="azure-powershell"></a>Azure PowerShell
 
 Вы можете заблокировать развернутые ресурсы с помощью Azure PowerShell, выполнив команду [New-AzResourceLock](/powershell/module/az.resources/new-azresourcelock).
 
@@ -184,7 +186,7 @@ $lockId = (Get-AzResourceLock -ResourceGroupName exampleresourcegroup -ResourceN
 Remove-AzResourceLock -LockId $lockId
 ```
 
-## <a name="azure-cli"></a>Azure CLI
+### <a name="azure-cli"></a>Azure CLI
 
 Вы можете заблокировать развернутые ресурсы с помощью Azure CLI, выполнив команду [az lock create](/cli/azure/lock#az-lock-create).
 
@@ -225,7 +227,7 @@ lockid=$(az lock show --name LockSite --resource-group exampleresourcegroup --re
 az lock delete --ids $lockid
 ```
 
-## <a name="rest-api"></a>REST API
+### <a name="rest-api"></a>REST API
 
 Вы можете заблокировать развернутые ресурсы с помощью [REST API для блокировок управления](/rest/api/resources/managementlocks). REST API позволяет создавать и удалять блокировки и получать информацию о существующих блокировках.
 

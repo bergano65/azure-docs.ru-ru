@@ -5,23 +5,23 @@ ms.topic: how-to
 author: abhirockzz
 ms.author: abhishgu
 ms.date: 08/11/2020
-ms.openlocfilehash: cac04bed797bb9956125bc1a38fdfa5c8285050e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e4bd6cdf6d3a5dc30b90abc5094202360181ae0b
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90061688"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92318521"
 ---
 # <a name="integrate-apache-kafka-connect-support-on-azure-event-hubs-preview-with-debezium-for-change-data-capture"></a>Интеграция поддержки Apache Kafka Connect в концентраторы событий Azure (Предварительная версия) с Дебезиум для отслеживания измененных данных
 
 Система отслеживания **измененных данных (CDC)** — это метод, используемый для отслеживания изменений на уровне строк в таблицах базы данных в ответ на операции создания, обновления и удаления. [Дебезиум](https://debezium.io/) — это распределенная платформа, построенная на основе функций системы отслеживания измененных данных, доступных в разных базах данных (например, [логическое декодирование в PostgreSQL](https://www.postgresql.org/docs/current/static/logicaldecoding-explanation.html)). Он предоставляет набор [соединителей соединения Kafka](https://debezium.io/documentation/reference/1.2/connectors/index.html) , которые отключают изменения на уровне строк в таблицах базы данных и преобразуют их в потоки событий, которые затем отправляются в [Apache Kafka](https://kafka.apache.org/).
 
-В этом руководстве описано, как настроить систему на основе системы отслеживания измененных данных в Azure с помощью [концентраторов событий Azure](https://docs.microsoft.com/azure/event-hubs/event-hubs-about?WT.mc_id=devto-blog-abhishgu) (для Kafka), [Azure DB для PostgreSQL](../postgresql/overview.md) и дебезиум. Он будет использовать [соединитель Дебезиум PostgreSQL](https://debezium.io/documentation/reference/1.2/connectors/postgresql.html) для потоковой передачи изменений базы данных из PostgreSQL в Kafka статьи в концентраторах событий Azure.
+В этом руководстве описано, как настроить систему на основе системы отслеживания измененных данных в Azure с помощью [концентраторов событий Azure](./event-hubs-about.md?WT.mc_id=devto-blog-abhishgu) (для Kafka), [Azure DB для PostgreSQL](../postgresql/overview.md) и дебезиум. Он будет использовать [соединитель Дебезиум PostgreSQL](https://debezium.io/documentation/reference/1.2/connectors/postgresql.html) для потоковой передачи изменений базы данных из PostgreSQL в Kafka статьи в концентраторах событий Azure.
 
 При работе с этим руководством вы выполните следующие задачи:
 
 > [!div class="checklist"]
-> * Создание пространства имен в Центрах событий
+> * Создание пространства имен Центров событий
 > * Установка и Настройка базы данных Azure для PostgreSQL
 > * Настройка и запуск Kafka Connect с помощью соединителя Дебезиум PostgreSQL
 > * Проверка отслеживания измененных данных
@@ -35,7 +35,7 @@ ms.locfileid: "90061688"
 - Выпуск Kafka (версии 1.1.1, Scala версии 2.11) доступен на сайте [kafka.apache.org](https://kafka.apache.org/downloads#1.1.1)
 - Ознакомьтесь со статьей [Центры событий Azure для Apache Kafka (предварительная версия)](./event-hubs-for-kafka-ecosystem-overview.md).
 
-## <a name="create-an-event-hubs-namespace"></a>Создание пространства имен в Центрах событий
+## <a name="create-an-event-hubs-namespace"></a>Создание пространства имен Центров событий
 Для отправки и получения данных из любой службы Центров событий требуется пространство имен Центров событий. Инструкции по созданию пространства имен и концентратора событий см. в разделе [Создание концентратора событий](event-hubs-create.md) . Получите строку подключения Центров событий и полное доменное имя (FQDN) для последующего использования. Инструкции см. в статье [Get an Event Hubs connection string](event-hubs-get-connection-string.md) (Получение строки подключения для Центров событий). 
 
 ## <a name="setup-and-configure-azure-database-for-postgresql"></a>Установка и Настройка базы данных Azure для PostgreSQL
@@ -275,7 +275,7 @@ tail -f /Users/foo/todos-cdc.txt
 ## <a name="cleanup"></a>Очистка
 Kafka Connect создает разделы Центра событий для хранения конфигураций, смещений и состояния, которые сохраняются даже после завершения работы кластера Connect. Если этого не требуется, рекомендуется удалить эти разделы. Также может потребоваться удалить `my-server.public.todos` концентратор событий, созданный в ходе этого руководства.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о концентраторах событий для Kafka см. в следующих статьях:  
 

@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/01/2020
 ms.author: duau
-ms.openlocfilehash: 7c5e938f985296e0534ca6e2438cf3acedb0fb65
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a5d51a77b1da0ae44c76d0187113105c4e53c9b4
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91626485"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92279221"
 ---
 # <a name="tutorial-quickly-scale-and-protect-a-web-application-by-using-azure-front-door-and-azure-web-application-firewall-waf"></a>Руководство по Быстрое масштабирование и защита веб-приложения с помощью службы Azure Front Door и Брандмауэра веб-приложений Azure (WAF)
 
@@ -36,10 +36,10 @@ ms.locfileid: "91626485"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Описанные в этом руководстве действия выполняются через Azure CLI. Просмотрите это руководство по [началу работы с Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest&preserve-view=true).
+- Описанные в этом руководстве действия выполняются через Azure CLI. Просмотрите это руководство по [началу работы с Azure CLI](/cli/azure/get-started-with-azure-cli?preserve-view=true&view=azure-cli-latest).
 
   > [!TIP] 
-  > Чтобы быстро начать работу с Azure CLI, можно использовать [Bash в Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/quickstart).
+  > Чтобы быстро начать работу с Azure CLI, можно использовать [Bash в Azure Cloud Shell](../cloud-shell/quickstart.md).
 
 - Убедитесь, что в Azure CLI добавлено расширение `front-door`.
 
@@ -48,7 +48,7 @@ ms.locfileid: "91626485"
    ```
 
 > [!NOTE] 
-> Дополнительные сведения о командах, используемых в этом руководстве, см. в [справочных материалах по Azure CLI для Front Door](https://docs.microsoft.com/cli/azure/ext/front-door/?view=azure-cli-latest&preserve-view=true).
+> Дополнительные сведения о командах, используемых в этом руководстве, см. в [справочных материалах по Azure CLI для Front Door](/cli/azure/ext/front-door/?preserve-view=true&view=azure-cli-latest).
 
 ## <a name="create-an-azure-front-door-resource"></a>Создание ресурса Azure Front Door
 
@@ -62,7 +62,7 @@ az network front-door create --backend-address <>  --accepted-protocols <> --nam
 
 `--name`: имя ресурса Azure Front Door.
 
-`--resource-group`: группа ресурсов, в которую нужно поместить ресурс Azure Front Door. Дополнительные сведения о группах ресурсов см. в статье [Управление группами ресурсов в Azure](https://docs.microsoft.com/azure/azure-resource-manager/management/manage-resource-groups-portal).
+`--resource-group`: группа ресурсов, в которую нужно поместить ресурс Azure Front Door. Дополнительные сведения о группах ресурсов см. в статье [Управление группами ресурсов в Azure](../azure-resource-manager/management/manage-resource-groups-portal.md).
 
 В ответе от этой команды найдите ключ `hostName`. Это значение вам потребуется позже. `hostName` — это DNS-имя созданного ресурса Azure Front Door.
 
@@ -130,21 +130,21 @@ az network front-door update --name <> --resource-group <> --set frontendEndpoin
 
 Имя личного домена для веб-приложения выполняет роль адреса приложения, по которому его находят клиенты. Например, www.contoso.com. Изначально это имя личного домена указывало на расположение, настроенное до включения Azure Front Door. После добавления Azure Front Door и WAF перед этим приложением запись DNS для личного домена должна указывать на новый ресурс Azure Front Door. Для этого измените привязку записи на DNS-сервере на имя `hostName` ресурса Azure Front Door, который вы получили ранее при создании этого ресурса.
 
-Шаги по изменению записей DNS будут разными в зависимости от используемого поставщика услуг DNS. Если для размещения доменного имени вы используете службу Azure DNS, см. документацию [по изменению записей DNS](https://docs.microsoft.com/azure/dns/dns-operations-recordsets-cli) и укажите имя узла `hostName` ресурса Azure Front Door. 
+Шаги по изменению записей DNS будут разными в зависимости от используемого поставщика услуг DNS. Если для размещения доменного имени вы используете службу Azure DNS, см. документацию [по изменению записей DNS](../dns/dns-operations-recordsets-cli.md) и укажите имя узла `hostName` ресурса Azure Front Door. 
 
-Если вам нужно, чтобы ваши клиенты могли переходить на веб-сайт с помощью вершины зоны (например, contoso.com), необходимо обратить внимание на одну важную вещь. В этом сценарии необходимо использовать для размещения имени DNS службу Azure DNS и [тип записи "псевдоним" (alias)](https://docs.microsoft.com/azure/dns/dns-alias). 
+Если вам нужно, чтобы ваши клиенты могли переходить на веб-сайт с помощью вершины зоны (например, contoso.com), необходимо обратить внимание на одну важную вещь. В этом сценарии необходимо использовать для размещения имени DNS службу Azure DNS и [тип записи "псевдоним" (alias)](../dns/dns-alias.md). 
 
-Также в конфигурацию Azure Front Door нужно [добавить личный домен](https://docs.microsoft.com/azure/frontdoor/front-door-custom-domain), чтобы служба знала об этом сопоставлении.
+Также в конфигурацию Azure Front Door нужно [добавить личный домен](./front-door-custom-domain.md), чтобы служба знала об этом сопоставлении.
 
-Наконец, если вы используете для доступа к веб-приложению личный домен и хотите включить поддержку протокола HTTPS, вам нужно [настроить сертификаты для личного домена в Azure Front Door](https://docs.microsoft.com/azure/frontdoor/front-door-custom-domain-https). 
+Наконец, если вы используете для доступа к веб-приложению личный домен и хотите включить поддержку протокола HTTPS, вам нужно [настроить сертификаты для личного домена в Azure Front Door](./front-door-custom-domain-https.md). 
 
 ## <a name="lock-down-your-web-application"></a>Блокировка веб-приложения
 
-Мы рекомендуем сделать так, чтобы только граничные узлы Azure Front Door могли обращаться к вашему веб-приложению. Так вы будете уверены, что никто не сможет обойти защиту Azure Front Door и напрямую обращаться к приложению. Для настройки блокировки воспользуйтесь разделом [Как сделать, чтобы к моему серверу имела доступ только служба Azure Front Door?](https://docs.microsoft.com/azure/frontdoor/front-door-faq#how-do-i-lock-down-the-access-to-my-backend-to-only-azure-front-door)
+Мы рекомендуем сделать так, чтобы только граничные узлы Azure Front Door могли обращаться к вашему веб-приложению. Так вы будете уверены, что никто не сможет обойти защиту Azure Front Door и напрямую обращаться к приложению. Для настройки блокировки воспользуйтесь разделом [Как сделать, чтобы к моему серверу имела доступ только служба Azure Front Door?](./front-door-faq.md#how-do-i-lock-down-the-access-to-my-backend-to-only-azure-front-door)
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Если ресурсы, созданные при работе с этим руководством, больше не нужны, выполните команду [az group delete](https://docs.microsoft.com/cli/azure/group?view=azure-cli-latest#az-group-delete&preserve-view=true), чтобы удалить группу ресурсов, Front Door и политику WAF.
+Если ресурсы, созданные при работе с этим руководством, больше не нужны, выполните команду [az group delete](/cli/azure/group?view=azure-cli-latest#az-group-delete&preserve-view=true), чтобы удалить группу ресурсов, Front Door и политику WAF.
 
 ```azurecli-interactive
   az group delete \

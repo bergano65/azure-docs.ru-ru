@@ -7,16 +7,16 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 05/12/2020
+ms.date: 10/19/2020
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: be43b74e7128f9b250d25f8bdb2642c6f7b41d2a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b6adb06f22013e68987f3315d52e3594fba63907
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87115528"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92309013"
 ---
 # <a name="request-an-access-token-in-azure-active-directory-b2c"></a>Запрос маркера доступа в Azure Active Directory B2C
 
@@ -50,10 +50,15 @@ scope=https://contoso.onmicrosoft.com/api/read openid offline_access
 scope=https%3A%2F%2Fcontoso.onmicrosoft.com%2Fapi%2Fread%20openid%20offline_access
 ```
 
-Если число запрашиваемых областей превышает число областей, предоставленных клиентскому приложению, вызов будет выполнен в случае предоставления по меньшей мере одного разрешения. Утверждение **scp** полученного маркера заполняется только успешно предоставленными разрешениями. Стандартное утверждение OpenID Connect определяет несколько специальных значений области. Следующие области представляют разрешение на доступ к профилю пользователя:
+Если число запрашиваемых областей превышает число областей, предоставленных клиентскому приложению, вызов будет выполнен в случае предоставления по меньшей мере одного разрешения. Утверждение **scp** полученного маркера заполняется только успешно предоставленными разрешениями. 
+
+### <a name="openid-connect-scopes"></a>Области OpenId Connect
+
+Стандартное утверждение OpenID Connect определяет несколько специальных значений области. Следующие области представляют разрешение на доступ к профилю пользователя:
 
 - **openid** — запрашивает маркер идентификатора.
 - **offline_access** — запрашивает маркер обновления с помощью [потоков кода аутентификации](authorization-code-flow.md).
+- **00000000-0000-0000-0000-000000000000** — использование идентификатора клиента в качестве области означает, что приложению требуется маркер доступа, который можно использовать для собственной службы или веб-API, представленного одним и тем же идентификатором клиента.
 
 Если параметр **response_type** в запросе `/authorize` включает `token`, параметр **scope** должен содержать хотя бы одну область ресурса (отличную от `openid` и `offline_access`), которая будет предоставлена. В противном случае запрос `/authorize` завершается ошибкой.
 

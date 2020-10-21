@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 09/30/2020
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: a0cba1c3a7a3b713fa5f0603ad9e116068d8df66
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e2c7953ea7b85eca3628329b427f960f9466fd6b
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91618477"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92316045"
 ---
 # <a name="blob-storage-features-available-in-azure-data-lake-storage-gen2"></a>Функции хранилища BLOB-объектов, доступные в Azure Data Lake Storage 2-го поколения
 
@@ -49,7 +49,7 @@ ms.locfileid: "91618477"
 |Обратимое удаление BLOB-объекта|Еще не поддерживается|Еще не поддерживается|[Обратимое удаление для больших двоичных объектов](storage-blob-soft-delete.md)|
 |Blobfuse|Preview (Предварительный просмотр)|Еще не поддерживается|[Как подключить хранилище BLOB-объектов в качестве файловой системы с использованием blobfuse](storage-how-to-mount-container-linux.md)|
 |Отработка отказа учетной записи|Еще не поддерживается|Еще не поддерживается|[Аварийное восстановление и отработка отказа учетной записи](../common/storage-disaster-recovery-guidance.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
-|Список управления доступом для контейнера больших двоичных объектов|Еще не поддерживается<div role="complementary" aria-labelledby="blob-container-ACL"><sup>2</sup></div>|Еще не поддерживается<div role="complementary" aria-labelledby="blob-container-ACL"><sup>2</sup></div>|[Set Container ACL](https://docs.microsoft.com/rest/api/storageservices/set-container-acl)|
+|Список управления доступом для контейнера больших двоичных объектов|Не поддерживается<div role="complementary" aria-labelledby="blob-container-ACL"><sup>2</sup></div>|Не поддерживается<div role="complementary" aria-labelledby="blob-container-ACL"><sup>2</sup></div>|См. Примечание ниже этой таблицы.|
 |Ключи, предоставляемые клиентом|Еще не поддерживается|Еще не поддерживается|[Укажите ключ шифрования для запроса к хранилищу BLOB-объектов](encryption-customer-provided-keys.md)|
 |Личные домены|Еще не поддерживается|Еще не поддерживается|[Сопоставление личного домена с конечной точкой хранилища BLOB-объектов Azure](storage-custom-domain-name.md)|
 |Области шифрования|Еще не поддерживается|Еще не поддерживается|[Создание и управление областями шифрования (Предварительная версия)](encryption-scope-manage.md)|

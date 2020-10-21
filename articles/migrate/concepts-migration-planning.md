@@ -6,12 +6,12 @@ ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 06/21/2020
 ms.author: rajosh
-ms.openlocfilehash: db1de363856fd560fea97f8f9cdf542717c4cca3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ce6f0ff97b1dfa8757b05b13dff653a1d34f4531
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87090099"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92315291"
 ---
 # <a name="build-migration-plan-with-azure-migrate"></a>Создание плана миграции с помощью службы "Миграция Azure"
 
@@ -166,4 +166,4 @@ ms.locfileid: "87090099"
 
 - Проанализируйте процесс [миграции в облако](/azure/architecture/cloud-adoption/getting-started/migrate)   в инфраструктуре внедрения облачных технологий Azure.
 - Приступая к [работе](https://youtu.be/wFfq3YPxYHE) с миграцией Azure.
-- Создайте оценку виртуальных машин [VMware](tutorial-assess-vmware.md) или [виртуальных машин Hyper-V](tutorial-assess-hyper-v.md).
+- Создайте оценку виртуальных машин [VMware](./tutorial-assess-vmware-azure-vm.md) или [виртуальных машин Hyper-V](tutorial-assess-hyper-v.md).
