@@ -7,12 +7,12 @@ ms.subservice: reservations
 ms.topic: how-to
 ms.date: 07/24/2020
 ms.author: banders
-ms.openlocfilehash: 553652832f3f4ce84a0a141455551e4977215184
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: 32db8396a687428c668a9b8a4213b50986614083
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88684428"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92150129"
 ---
 # <a name="self-service-exchanges-and-refunds-for-azure-reservations"></a>Самостоятельный обмен и возмещение средств для резервирований Azure
 
@@ -21,7 +21,7 @@ Azure Reserved Virtual Machine Instances обеспечивают гибкост
 Самостоятельный обмен и возможность отмены недоступны для клиентов с соглашением Enterprise для US Gov организаций. Другие типы подписок для государственных организаций США, включая подписку с оплатой по мере использования и подписку в рамках программы "Поставщик облачных решений" (CSP), поддерживаются.
 
 > [!NOTE]
-> - **Для обмена имеющегося резервирования или возврата денег за него вам понадобятся права владельца в соответствующем заказе на резервирование.** См. также раздел [Добавление или изменение пользователей, которые могут управлять резервированием](https://docs.microsoft.com/azure/cost-management-billing/reservations/manage-reserved-vm-instance#add-or-change-users-who-can-manage-a-reservation).
+> - **Для обмена имеющегося резервирования или возврата денег за него вам понадобятся права владельца в соответствующем заказе на резервирование.** См. также раздел [Добавление или изменение пользователей, которые могут управлять резервированием](./manage-reserved-vm-instance.md#add-or-change-users-who-can-manage-a-reservation).
 > - Сейчас корпорация Майкрософт не взимает плату за досрочную отмену при возмещениях за резервирования. Но мы можем установить такую плату за возмещения в будущем. Пока дата начала применения такой платы не определена.
 
 ## <a name="how-to-exchange-or-refund-an-existing-reservation"></a>Обмен или возмещение по существующему резервированию

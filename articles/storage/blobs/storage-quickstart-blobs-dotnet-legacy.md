@@ -8,12 +8,12 @@ ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
 ms.custom: devx-track-csharp
-ms.openlocfilehash: efec40e4236c00fd4792e9d6aa51943cf43838ca
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 434093df3465e363d95fb79342d1854b99583d08
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89001422"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92091429"
 ---
 # <a name="quickstart-azure-blob-storage-client-library-v11-for-net"></a>Краткое руководство. Использование библиотеки хранилища BLOB-объектов Azure версии 11 для .NET
 
@@ -33,7 +33,7 @@ ms.locfileid: "89001422"
 
 Дополнительные ресурсы:
 
-* [Справочная документация по API](https://docs.microsoft.com/dotnet/api/overview/azure/storage?view=azure-dotnet)
+* [Справочная документация по API](https://docs.microsoft.com/dotnet/api/overview/azure/storage)
 * [Исходный код библиотеки](https://github.com/Azure/azure-storage-net/tree/master/Blob)
 * [Пакет (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.Storage.Blob/)
 * [Примеры](https://azure.microsoft.com/resources/samples/?sort=0&service=storage&platform=dotnet&term=blob)
@@ -205,7 +205,7 @@ export AZURE_STORAGE_CONNECTION_STRING="<yourconnectionstring>"
 
 ### <a name="authenticate-the-client"></a>Аутентификация клиента
 
-В приведенном ниже коде проверяется, содержит ли переменная среды строку подключения, которую можно проанализировать, чтобы создать объект [CloudStorageAccount](/dotnet/api/microsoft.azure.storage.cloudstorageaccount?view=azure-dotnet), указывающий на учетную запись хранения. Чтобы проверить, допустима ли строка подключения, используйте метод [TryParse](/dotnet/api/microsoft.azure.storage.cloudstorageaccount.tryparse?view=azure-dotnet). Если результаты выполнения метода `TryParse` успешны, он инициализирует переменную `storageAccount` и возвращает значение `true`.
+В приведенном ниже коде проверяется, содержит ли переменная среды строку подключения, которую можно проанализировать, чтобы создать объект [CloudStorageAccount](/dotnet/api/microsoft.azure.storage.cloudstorageaccount), указывающий на учетную запись хранения. Чтобы проверить, допустима ли строка подключения, используйте метод [TryParse](/dotnet/api/microsoft.azure.storage.cloudstorageaccount.tryparse). Если результаты выполнения метода `TryParse` успешны, он инициализирует переменную `storageAccount` и возвращает значение `true`.
 
 Добавьте этот код в метод `ProcessAsync`.
 

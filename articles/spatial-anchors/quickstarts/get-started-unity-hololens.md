@@ -8,12 +8,12 @@ ms.author: crtreasu
 ms.date: 09/29/2020
 ms.topic: quickstart
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: c7aa4b90d52ac52a9f879d9e5cc16ec93818b70d
-ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
+ms.openlocfilehash: 143bc89518ff1811ad6789f71fcf7a9267e99f73
+ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2020
-ms.locfileid: "91939738"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92097445"
 ---
 # <a name="quickstart-create-a-unity-hololens-app-that-uses-azure-spatial-anchors"></a>Краткое руководство. Создание приложения HoloLens в Unity с использованием службы "Пространственные привязки Azure"
 
@@ -34,7 +34,7 @@ ms.locfileid: "91939738"
 Для работы с этим кратким руководством сделайте следующее:
 
 - Вам нужен компьютер Windows, на котором установлены <a href="https://unity3d.com/get-unity/download" target="_blank">Unity 2019.4 (LTS)</a> и <a href="https://www.visualstudio.com/downloads/" target="_blank">Visual Studio 2019.2</a> или более поздней версии. Установка Visual Studio должна включать рабочую нагрузку **Разработка приложений для универсальной платформы Windows** и **пакет SDK для Windows 10 (10.0.18362.0 или более поздней версии)** . Необходимо также установить <a href="https://git-scm.com/download/win" target="_blank">Git для Windows</a> и <a href="https://git-lfs.github.com/">Git LFS</a>.
-- Вам нужно устройство HoloLens с включенным [режимом разработчика](https://docs.microsoft.com/windows/mixed-reality/using-visual-studio). На устройстве должно быть установлено [обновление для Windows, выпущенное в мае 2020 г.](https://docs.microsoft.com/windows/mixed-reality/whats-new/release-notes-may-2020) Чтобы обновить HoloLens до последнего выпуска, откройте приложение **Параметры**, перейдите в раздел **Update & Security** (Обновление и безопасность), а затем выберите **Проверить обновления**.
+- Вам нужно устройство HoloLens с включенным [режимом разработчика](/windows/mixed-reality/using-visual-studio). На устройстве должно быть установлено [обновление для Windows, выпущенное в мае 2020 г.](/windows/mixed-reality/whats-new/release-notes-may-2020) Чтобы обновить HoloLens до последнего выпуска, откройте приложение **Параметры**, перейдите в раздел **Update & Security** (Обновление и безопасность), а затем выберите **Проверить обновления**.
 - В приложении необходимо включить функцию **SpatialPerception**. Этот параметр находится в разделе **Build Settings** (Параметры сборки)  > **Player Settings** (Настройка проигрывателя)  > **Publishing Settings** (Параметры публикации)  > **Capabilities** (Возможности).
 - В приложении необходимо включить функцию **Virtual Reality Supported** (Поддержка виртуальной реальности) с помощью **пакета SDK Смешанной реальности Windows**. Этот параметр находится в **Build Settings** (Параметры сборки)  > **Player Settings** (Настройка проигрывателя)  > **XR Settings** (Параметры XR).
 

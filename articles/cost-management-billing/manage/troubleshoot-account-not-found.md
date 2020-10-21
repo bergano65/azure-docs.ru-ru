@@ -9,12 +9,12 @@ ms.subservice: billing
 ms.topic: conceptual
 ms.date: 08/20/2020
 ms.author: banders
-ms.openlocfilehash: f701e41c62336bcd7638360a27a0fb4c3ce3ec7d
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: 71561f6ecdde09f259e54260e7bab4dcc0e85c98
+ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88686672"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92132641"
 ---
 # <a name="troubleshoot-viewing-your-billing-account-in-the-azure-portal"></a>Устранение неполадок при просмотре учетной записи выставления счетов на портале Azure
 
@@ -59,7 +59,7 @@ ms.locfileid: "88686672"
 
 Ознакомьтесь со следующими статьями о выставлении счетов и подписках для устранения неполадок.
 
-- [Карта не принимается](https://docs.microsoft.com/azure/cost-management-billing/manage/troubleshoot-declined-card)
-- [Проблемы при входе в подписку](https://docs.microsoft.com/azure/cost-management-billing/manage/troubleshoot-sign-in-issue)
-- [Подписки не найдены](https://docs.microsoft.com/azure/cost-management-billing/manage/no-subscriptions-found)
-- [Просмотр стоимости Enterprise отключен](https://docs.microsoft.com/azure/cost-management-billing/manage/enterprise-mgmt-grp-troubleshoot-cost-view)
+- [Карта не принимается](./troubleshoot-declined-card.md)
+- [Проблемы при входе в подписку](./troubleshoot-sign-in-issue.md)
+- [Подписки не найдены](./no-subscriptions-found.md)
+- [Просмотр стоимости Enterprise отключен](./enterprise-mgmt-grp-troubleshoot-cost-view.md)

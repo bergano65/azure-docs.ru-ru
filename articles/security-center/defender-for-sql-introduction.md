@@ -8,16 +8,16 @@ ms.topic: overview
 ms.service: security-center
 ms.custom: references_regions
 manager: rkarlin
-ms.openlocfilehash: 328a565dbb22a13c71a7001d43941e7be062dff9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7301f6bbb33c3eedff2e8c41edeaacb3df66d4c2
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91449062"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92342031"
 ---
 # <a name="introduction-to-azure-defender-for-sql"></a>Общие сведения об Azure Defender для SQL
 
-Azure Defender для SQL содержит два плана Azure Defender, которые расширяют [пакет безопасности данных](../azure-sql/database/advanced-data-security.md) Центра безопасности Azure и позволяют защитить сами базы данных и размешенные в них данные в любом расположении. 
+Azure Defender для SQL содержит два плана Azure Defender, которые расширяют [пакет безопасности данных](../azure-sql/database/azure-defender-for-sql.md) Центра безопасности Azure и позволяют защитить сами базы данных и размешенные в них данные в любом расположении. 
 
 ## <a name="availability"></a>Доступность
 
@@ -69,5 +69,5 @@ Azure Defender для SQL содержит два плана Azure Defender, к�
 Связанные материалы см. в следующих статьях: 
 
 - [Как включить Azure Defender для серверов SQL на компьютерах](defender-for-sql-usage.md)
-- [Как включить Azure Defender для серверов баз данных SQL](../azure-sql/database/advanced-data-security.md)
+- [Как включить Azure Defender для серверов баз данных SQL](../azure-sql/database/azure-defender-for-sql.md)
 - [Список оповещений Azure Defender для SQL](alerts-reference.md#alerts-sql-db-and-warehouse)

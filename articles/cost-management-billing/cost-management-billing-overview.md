@@ -9,12 +9,12 @@ ms.topic: overview
 ms.service: cost-management-billing
 ms.subservice: common
 ms.custom: ''
-ms.openlocfilehash: 7f4585d7199b44c82df9a03ea3244885da72d2fa
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: 1e5f49fb48cfc9be9cfb6970641ad7b4b3c06fb5
+ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88685176"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92131060"
 ---
 # <a name="what-is-azure-cost-management--billing"></a>Что собой представляет служба "Управление затратами и выставление счетов Azure"?
 
@@ -112,7 +112,7 @@ ms.locfileid: "88685176"
 Azure включает и другие средства, которые не входят в группу компонентов службы "Управление затратами и выставление счетов Azure". При этом они играют важную роль в процессе управления затратами. Дополнительные сведения об этих средствах см. в следующих статьях:
 
 - [Калькулятор цен Azure](https://azure.microsoft.com/pricing/calculator/): используйте это средство для оценки начальных расходов на облако.
-- [Служба миграции Azure](../migrate/migrate-overview.md): оценивайте текущую нагрузку на центр обработки данных и определяйте, что нужно сделать, с помощью запасного решения Azure.
+- [Служба миграции Azure](/azure/cost-management-billing/migrate-services-overview): оценивайте текущую нагрузку на центр обработки данных и определяйте, что нужно сделать, с помощью запасного решения Azure.
 - [Помощник Azure](../advisor/advisor-overview.md): выявляйте неиспользуемые виртуальные машины и получайте рекомендации по покупкам зарезервированных экземпляров Azure.
 - [Преимущество гибридного использования Azure](https://azure.microsoft.com/pricing/hybrid-benefit/): экономьте, используя действующие лицензии на локальный Windows Server или SQL Server для виртуальных машин в Azure.
 

@@ -8,12 +8,12 @@ ms.topic: overview
 ms.service: iot-central
 services: iot-central
 ms.custom: mvc
-ms.openlocfilehash: 6d95c07e5bec810ce82e98b2291b348fbcc2d8bc
-ms.sourcegitcommit: 5abc3919a6b99547f8077ce86a168524b2aca350
+ms.openlocfilehash: 3952736af9cf7c3b720769cee6a58e3fc52a6111
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91812443"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92127409"
 ---
 # <a name="what-is-azure-iot-central"></a>Сведения об Azure IoT Central
 
@@ -114,7 +114,7 @@ IoT Central — это платформа приложений IoT, котор�
 
 ## <a name="integrate-with-other-services"></a>Интеграция с другими службами
 
-В качестве платформы приложений IoT Central позволяет преобразовывать данные Интернета вещей в бизнес-аналитику, которая обеспечивает ценные сведения. [Правила](./tutorial-create-telemetry-rules.md), [экспорт данных](./howto-export-data.md), а также [открытый интерфейс REST API](https://docs.microsoft.com/learn/modules/manage-iot-central-apps-with-rest-api/) являются примерами интеграции IoT Central с бизнес-приложениями.
+В качестве платформы приложений IoT Central позволяет преобразовывать данные Интернета вещей в бизнес-аналитику, которая обеспечивает ценные сведения. [Правила](./tutorial-create-telemetry-rules.md), [экспорт данных](./howto-export-data.md), а также [открытый интерфейс REST API](/learn/modules/manage-iot-central-apps-with-rest-api/) являются примерами интеграции IoT Central с бизнес-приложениями.
 
 ![Как IoT Central преобразовывает данные Интернета вещей](media/overview-iot-central/transform.png)
 

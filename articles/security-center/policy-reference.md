@@ -7,12 +7,12 @@ author: memildin
 ms.author: memildin
 ms.service: security-center
 ms.custom: subject-policy-reference
-ms.openlocfilehash: 371bbd6919f787401da361339f705fa5edfa4547
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.openlocfilehash: b7478199e4bb6f1e9ad986193370d4ea8610bd7a
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/21/2020
-ms.locfileid: "92328697"
+ms.locfileid: "92340909"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-security-center"></a>Встроенные определения в Политике Azure для Центра безопасности Azure
 
@@ -52,5 +52,5 @@ ms.locfileid: "92328697"
 - [Руководство по планированию и эксплуатации центра безопасности Azure](./security-center-planning-and-operations-guide.md). Узнайте, как планировать и анализировать вопросы проектирования в центре безопасности Azure.
 - [Наблюдение за работоспособностью системы безопасности в Центре безопасности Azure](./security-center-monitoring.md) — узнайте, как отслеживать работоспособность ресурсов Azure.
 - [Управление оповещениями безопасности в Центре безопасности Azure и реагирование на них](./security-center-managing-and-responding-alerts.md) — узнайте, как управлять оповещениями системы безопасности и реагировать на них.
-- [Управление подключенными партнерскими решениями с помощью центра безопасности Azure](./security-center-partner-solutions.md) — узнайте, как отслеживать состояние работоспособности решений партнеров.
+- [Управление подключенными партнерскими решениями с помощью центра безопасности Azure](./security-center-partner-integration.md) — узнайте, как отслеживать состояние работоспособности решений партнеров.
 - [Политика Azure](../governance/policy/overview.md). Узнайте, как проводить аудит и управлять ресурсами Azure.

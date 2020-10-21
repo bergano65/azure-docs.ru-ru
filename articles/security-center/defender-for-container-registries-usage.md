@@ -7,12 +7,12 @@ ms.date: 9/22/2020
 ms.topic: how-to
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 79a0db3b9f81368fbdaace5be3fd94ad29649291
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 57e8b6f47c4166c4f8b9f5de0f3e03a7d757e100
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91532607"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92342082"
 ---
 # <a name="use-azure-defender-for-container-registries-to-scan-your-images-for-vulnerabilities"></a>Использование защитника Azure для реестров контейнеров для проверки образов на наличие уязвимостей
 
@@ -24,12 +24,12 @@ ms.locfileid: "91532607"
 
 ## <a name="availability"></a>Доступность
 
-|Аспект|Подробнее|
+|Аспект|Сведения|
 |----|:----|
 |Состояние выпуска:|Общедоступная версия (GA)|
 |Цены|Счет **за защитником Azure для реестров контейнеров** выставляется, как показано на [странице с ценами](security-center-pricing.md) .|
 |Поддерживаемые реестры и образы:|![Да ](./media/icons/yes-icon.png) , размещенные в Linux реестры записей контроля доступа, доступные из общедоступного Интернета и предоставляющие доступ к оболочке.<br>![Нет ](./media/icons/no-icon.png) реестров записей контроля доступа, размещенных в Windows.<br>![Ни ](./media/icons/no-icon.png) для одного из частных реестров — центр безопасности не требует, чтобы ваши реестры были доступны из общедоступного Интернета. В настоящее время центр безопасности не может подключаться или сканировать реестр с ограниченным доступом с помощью брандмауэра, конечной точки службы или частных конечных точек, таких как частная ссылка Azure.<br>![Нет высокодоступных образов, ](./media/icons/no-icon.png) таких как образы [DOCKER](https://hub.docker.com/_/scratch/) или дистролесс, которые содержат только приложение и его зависимости времени выполнения без диспетчера пакетов, оболочки или ОС.|
-|Требуемые роли и разрешения|**Читатель безопасности** и [роль читателя реестра контейнеров Azure](https://docs.microsoft.com/azure/container-registry/container-registry-roles)|
+|Требуемые роли и разрешения|**Читатель безопасности** и [роль читателя реестра контейнеров Azure](../container-registry/container-registry-roles.md)|
 |Облако.|![Да](./media/icons/yes-icon.png) Коммерческие облака<br>![Нет](./media/icons/no-icon.png) Национальные и независимые (US Gov, China Gov, другие правительственные облака)|
 |||
 

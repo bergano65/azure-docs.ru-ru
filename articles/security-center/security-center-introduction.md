@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/22/2020
 ms.author: memildin
-ms.openlocfilehash: a6f0af188bb999acecad7fee0a90256eff05f902
-ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
+ms.openlocfilehash: e72d1161f80ad92c1e4cfc7fd2c9fde0d46e77b9
+ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91742083"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92332014"
 ---
 # <a name="what-is-azure-security-center"></a>Что такое Центр безопасности Azure?
 
@@ -120,10 +120,6 @@ ms.locfileid: "91742083"
 ### <a name="protect-data-services"></a>Защита службы данных
 
 Центр безопасности включает возможности, которые помогут вам автоматически выполнять классификацию данных в Azure SQL. Вы также можете получить оценки потенциальных уязвимостей в Azure SQL и службе хранилища, а также рекомендации по их устранению.
-
-### <a name="protect-iot-and-hybrid-cloud-workloads"></a>Защита рабочих нагрузок Интернета вещей и гибридных облачных рабочих нагрузок
-
-Служба "Defender для Интернета вещей" упрощает обеспечение защиты гибридной рабочей нагрузки, предоставляя унифицированное представление и контроль, адаптивное предотвращение угроз и интеллектуальную защиту от угроз, а также реагирование на них в рабочих нагрузках, выполняющиеся на периферии, в локальной среде, в Azure и в других облаках. Дополнительные сведения см. в [документации по Defender для Интернета вещей](../defender-for-iot/index.yml).
 
 ## <a name="get-secure-faster"></a>Быстрое получение системы безопасности
 

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/29/2019
 ms.author: memildin
-ms.openlocfilehash: 8cc12ba40b6722f75e4f3f4e8ce7023a0523c278
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: 778feda8d72101d4ae2a0f0c27549701dfb53340
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92219672"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92341419"
 ---
 # <a name="endpoint-protection-assessment-and-recommendations-in-azure-security-center"></a>Оценка и рекомендации по защите конечных точек в центре безопасности Azure
 
@@ -29,9 +29,9 @@ ms.locfileid: "92219672"
 
 ## <a name="windows-defender"></a>Защитник Windows
 
-* Центр безопасности рекомендует **«установить решения Endpoint Protection на виртуальной машине»** при запуске [Get-мпкомпутерстатус](https://docs.microsoft.com/powershell/module/defender/get-mpcomputerstatus?view=win10-ps&preserve-view=true) , а результат — **амсервицеенаблед: false.**
+* Центр безопасности рекомендует **«установить решения Endpoint Protection на виртуальной машине»** при запуске [Get-мпкомпутерстатус](/powershell/module/defender/get-mpcomputerstatus?preserve-view=true&view=win10-ps) , а результат — **амсервицеенаблед: false.**
 
-* Центр безопасности рекомендует **«разрешать проблемы работоспособности Endpoint Protection на ваших компьютерах»** при запуске [Get-мпкомпутерстатус](https://docs.microsoft.com/powershell/module/defender/get-mpcomputerstatus?view=win10-ps&preserve-view=true) и выполнении любого из следующих условий.
+* Центр безопасности рекомендует **«разрешать проблемы работоспособности Endpoint Protection на ваших компьютерах»** при запуске [Get-мпкомпутерстатус](/powershell/module/defender/get-mpcomputerstatus?preserve-view=true&view=win10-ps) и выполнении любого из следующих условий.
 
   * Любое из следующих свойств имеет значение false:
 
@@ -81,7 +81,7 @@ ms.locfileid: "92219672"
 - **HKLM: \ Софтваре\симантек\симантек конечная точка Протектион\куррентверсион\продуктнаме = "Symantec Endpoint Protection"**
 - **HKLM: \ Софтваре\симантек\симантек конечная точка Протектион\куррентверсион\публик-опстате\асруннингстатус = 1**
 
-Или
+либо
 
 - **HKLM: \ Software\Wow6432Node\Symantec\Symantec конечная точка Протектион\куррентверсион\продуктнаме = "Symantec Endpoint Protection"**
 - **HKLM: \ Software\Wow6432Node\Symantec\Symantec конечная точка Протектион\куррентверсион\публик-опстате\асруннингстатус = 1**

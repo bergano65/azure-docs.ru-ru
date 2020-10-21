@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.service: security-center
 manager: rkarlin
 zone_pivot_groups: non-azure-machines
-ms.openlocfilehash: bf31c2d4a90abeec62d785d0294a9c50f3b675ab
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.openlocfilehash: 8fa72dcd857977474cf76eada500214bf8129aca
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91993617"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92340875"
 ---
 #  <a name="connect-your-non-azure-machines-to-security-center"></a>Подключение компьютеров, не связанных с Azure, к Центру безопасности
 
@@ -86,7 +86,7 @@ ms.locfileid: "91993617"
 1. Войдите на портал **Azure Stack** и откройте страницу **Виртуальные машины**.
 1. Выберите виртуальную машину, которую необходимо защитить с помощью Центра безопасности.
     >[!TIP]
-    > Сведения о том, как создать виртуальную машину в Azure Stack, см. в [этом кратком руководстве по виртуальным машинам Windows](https://docs.microsoft.com/azure/azure-stack/user/azure-stack-quick-windows-portal) или [этом кратком руководстве по виртуальным машинам Linux](https://docs.microsoft.com/azure/azure-stack/user/azure-stack-quick-linux-portal).
+    > Сведения о том, как создать виртуальную машину в Azure Stack, см. в [этом кратком руководстве по виртуальным машинам Windows](/azure-stack/user/azure-stack-quick-windows-portal) или [этом кратком руководстве по виртуальным машинам Linux](/azure-stack/user/azure-stack-quick-linux-portal).
 1. Выберите **Расширения**. Появится список расширений виртуальных машин, которые установлены на этой виртуальной машине.
 1. Выберите вкладку **Добавить**. Откроется меню **Новый ресурс** и отобразится список доступных расширений виртуальных машин.
 1. Выберите расширение **Управление конфигурацией и обновлениями Azure Monitor** и нажмите кнопку **Создать**. Откроется страница конфигурации **Установить расширение**.

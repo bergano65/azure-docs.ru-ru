@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.service: cost-management-billing
 ms.subservice: cost-management
 ms.reviewer: benshy
-ms.openlocfilehash: 025b9b7e503f38a111bd158f17b7fbeec5b23579
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: 51baa26cf78846bd0a719b8b86056e2ea8176155
+ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88684989"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92131094"
 ---
 # <a name="create-and-manage-azure-cost-allocation-rules-preview"></a>Создание правил распределения затрат Azure и управление ими (предварительная версия)
 
@@ -58,16 +58,16 @@ ms.locfileid: "88684989"
 
 Если затраты распределяются пропорционально общим затратам, пропорциональная процентная величина определяется суммой или общей стоимостью выбранных целевых объектов для текущего месяца выставления счетов.
 
-:::image type="content" source="./media/allocate-costs/cost-distribution.png" alt-text="Пример процентной величины распределения" lightbox="./media/allocate-costs/cost-distribution.png" :::
+:::image type="content" source="./media/allocate-costs/cost-distribution.png" alt-text="Пример создания имени правила" lightbox="./media/allocate-costs/cost-distribution.png" :::
 
 После установки заданные заранее процентные значения фиксируются. Они используются для всех текущих распределений. Проценты изменяются только при обновлении правила вручную.
 
 1. Выберите один из следующих параметров в списке **Prefill percentage to** (Предварительно заполнить процентной величиной).
     - **Равномерное распределение** — каждый из целевых объектов получит равную процентную пропорцию общей стоимости.
     - **Общая стоимость** — создает коэффициент, пропорциональный целевым объектам, исходя из их общей стоимости. Коэффициент используется для распределения затрат из выбранных источников.
-    - **Стоимость вычислений** — создает коэффициент, пропорциональный целевым объектам на основе их вычислительной стоимости Azure (типы ресурсов в пространстве имен [Microsoft.Compute](https://docs.microsoft.com/azure/templates/microsoft.compute/allversions)). Коэффициент используется для распределения затрат из выбранных источников.
-    - **Стоимость хранилища** — создает коэффициент, пропорциональный целевым объектам, исходя из стоимости их хранилища Azure (типы ресурсов в пространстве имен [Microsoft.Storage](https://docs.microsoft.com/azure/templates/microsoft.storage/allversions)). Коэффициент используется для распределения затрат из выбранных источников.
-    - **Стоимость сети** — создает коэффициент, пропорциональный целевым объектам, исходя из стоимости их сети Azure (типы ресурсов в пространстве имен [Microsoft.Network](https://docs.microsoft.com/azure/templates/microsoft.network/allversions)). Коэффициент используется для распределения затрат из выбранных источников.
+    - **Стоимость вычислений** — создает коэффициент, пропорциональный целевым объектам на основе их вычислительной стоимости Azure (типы ресурсов в пространстве имен [Microsoft.Compute](/azure/templates/microsoft.compute/allversions)). Коэффициент используется для распределения затрат из выбранных источников.
+    - **Стоимость хранилища** — создает коэффициент, пропорциональный целевым объектам, исходя из стоимости их хранилища Azure (типы ресурсов в пространстве имен [Microsoft.Storage](/azure/templates/microsoft.storage/allversions)). Коэффициент используется для распределения затрат из выбранных источников.
+    - **Стоимость сети** — создает коэффициент, пропорциональный целевым объектам, исходя из стоимости их сети Azure (типы ресурсов в пространстве имен [Microsoft.Network](/azure/templates/microsoft.network/allversions)). Коэффициент используется для распределения затрат из выбранных источников.
     - **Настраиваемое** — позволяет вручную указать целое число в процентах. Указанная сумма должна быть равна 100 %.
 1. Когда правило будет настроено, выберите **Создать**.
 
@@ -84,7 +84,7 @@ ms.locfileid: "88684989"
 
 Вы просматриваете влияние правила распределения в анализе затрат. На портале Azure перейдите к разделу [Подписки](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade). Выберите в списке подписку, для которой предназначено активное правило распределения затрат. Затем в меню выберите **Анализ затрат**. В окне "Анализ затрат" выберите **Группировать по**, а затем — **Распределение затрат**. Результирующее представление представляет собой быструю разбивку затрат, созданную подпиской. Затраты, выделенные на подписку, также отображаются, как показано на следующем изображении.
 
-:::image type="content" source="./media/allocate-costs/cost-breakdown.png" alt-text="Пример разбиения затрат" lightbox="./media/allocate-costs/cost-breakdown.png" :::
+:::image type="content" source="./media/allocate-costs/cost-breakdown.png" alt-text="Пример создания имени правила" lightbox="./media/allocate-costs/cost-breakdown.png" :::
 
 ### <a name="view-cost-allocation-for-a-resource-group"></a>Просмотр распределения затрат для группы ресурсов
 
@@ -94,7 +94,7 @@ ms.locfileid: "88684989"
 
 На портале Azure выберите **Управление затратами + выставление счетов** > **Управление затратами** > **Анализ затрат**. В окне "Анализ затрат" выберите **Добавить фильтр**. Выберите **Тег**, а также ключ и значения для тегов, которым назначены затраты.
 
-:::image type="content" source="./media/allocate-costs/tagged-costs.png" alt-text="Пример, в котором показаны затраты для элементов с тегами" lightbox="./media/allocate-costs/tagged-costs.png" :::
+:::image type="content" source="./media/allocate-costs/tagged-costs.png" alt-text="Пример создания имени правила" lightbox="./media/allocate-costs/tagged-costs.png" :::
 
 ## <a name="edit-an-existing-cost-allocation-rule"></a>Изменение имеющегося правила распределения затрат
 
@@ -112,10 +112,10 @@ ms.locfileid: "88684989"
 В настоящее время общедоступная предварительная версия распределения затрат не поддерживает следующие элементы:
 
 - запланированные [экспорты](tutorial-export-acm-data.md);
-- данные, предоставляемые API [сведений об использовании](https://docs.microsoft.com/rest/api/consumption/usagedetails/list);
+- данные, предоставляемые API [сведений об использовании](/rest/api/consumption/usagedetails/list);
 - область подписки для выставления счетов;
 - [приложение Power BI Azure "Управление затратами"](https://appsource.microsoft.com/product/power-bi/costmanagement.azurecostmanagementapp);
-- [соединитель Power BI Desktop](https://docs.microsoft.com/power-bi/connect-data/desktop-connect-azure-cost-management).
+- [соединитель Power BI Desktop](/power-bi/connect-data/desktop-connect-azure-cost-management).
 
 ### <a name="are-costs-factored-into-budgets-and-forecast-views"></a>Учитываются ли расходы при создании представлений бюджетов и прогнозов?
 <a name="budgets-forecast"></a>
@@ -144,5 +144,5 @@ ms.locfileid: "88684989"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Создание или обновление правил распределения с помощью [REST API распределения затрат](https://go.microsoft.com/fwlink/?linkid=2135004)
+- Создание или обновление правил распределения с помощью [REST API распределения затрат](/rest/api/cost-management/costallocationrules)
 - Узнайте больше о том, [как оптимизировать инвестиции в облако с помощью службы "Управление затратами Azure"](cost-mgt-best-practices.md).

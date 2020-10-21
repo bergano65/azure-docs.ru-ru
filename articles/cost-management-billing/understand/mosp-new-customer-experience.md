@@ -8,12 +8,12 @@ ms.subservice: billing
 ms.topic: conceptual
 ms.date: 08/03/2020
 ms.author: banders
-ms.openlocfilehash: fce0ca7df3851aa0e96b6ee630a4a1b0b85eb070
-ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
+ms.openlocfilehash: 0b3cf0c705048d37d422d62b77dc7d94c5ae13bd
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91371748"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92149388"
 ---
 # <a name="get-started-with-your-updated-azure-billing-account"></a>Начало работы с обновленной учетной записью выставления счетов Azure
 
@@ -104,8 +104,8 @@ ms.locfileid: "91371748"
 
 |API | Изменения  |
 |---------|---------|
-|[Список учетных записей выставления счетов](https://docs.microsoft.com/rest/api/billing/2019-10-01-preview/billingaccounts/list) | В API списка выставления счетов параметр agreementType старой учетной записи выставления счетов имеет значение **MicrosoftOnlineServiceProgram**. В новой учетной записи выставления счетов параметр agreementType будет иметь значение **MicrosoftCustomerAgreement**. Если вы допускаете зависимость от agreementType, обновите ее. |
-|[Счета — вывод списка по подписке для выставления счетов](https://docs.microsoft.com/rest/api/billing/2019-10-01-preview/invoices/listbybillingsubscription)     | Этот API будет возвращать только те счета, которые были созданы до обновления учетной записи. Для получения счетов, создаваемых в новой учетной записи выставления счетов, необходимо использовать API [счета — вывод списка по подписке для выставления счетов](https://docs.microsoft.com/rest/api/billing/2019-10-01-preview/invoices/listbybillingaccount). |
+|[Список учетных записей выставления счетов](/rest/api/billing/2019-10-01-preview/billingaccounts/list) | В API списка выставления счетов параметр agreementType старой учетной записи выставления счетов имеет значение **MicrosoftOnlineServiceProgram**. В новой учетной записи выставления счетов параметр agreementType будет иметь значение **MicrosoftCustomerAgreement**. Если вы допускаете зависимость от agreementType, обновите ее. |
+|[Счета — вывод списка по подписке для выставления счетов](/rest/api/billing/2019-10-01-preview/invoices/listbybillingsubscription)     | Этот API будет возвращать только те счета, которые были созданы до обновления учетной записи. Для получения счетов, создаваемых в новой учетной записи выставления счетов, необходимо использовать API [счета — вывод списка по подписке для выставления счетов](/rest/api/billing/2019-10-01-preview/invoices/listbybillingaccount). |
 
 ## <a name="additional-information"></a>Дополнительные сведения
 

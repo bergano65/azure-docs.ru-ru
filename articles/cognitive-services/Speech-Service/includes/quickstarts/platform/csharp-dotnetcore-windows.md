@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: include
-ms.date: 10/10/2019
+ms.date: 10/15/2020
 ms.author: erhopf
-ms.openlocfilehash: 980bfb7fa6295f98ebc43f6793b76eec26d46012
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 4cfbf5ea5de9b8c448af56b186acdc4f3bb6f02e
+ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88926698"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92096952"
 ---
 а также как установить [пакет SDK для службы "Речь"](~/articles/cognitive-services/speech-service/speech-sdk.md) для C# (.NET Core). Если вам нужно только имя пакета, чтобы приступить к работе самостоятельно, выполните `Install-Package Microsoft.CognitiveServices.Speech` в консоли NuGet.
 

@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.reviewer: veyalla
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: b6f4e50cac2f809172c2525ea9136a63e6bd9066
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: 7924b06b9056a53fa9861fcd0df516845662b34b
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92107017"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92341572"
 ---
 # <a name="access-built-in-metrics"></a>Доступ к встроенным метрикам
 
@@ -27,7 +27,7 @@ ms.locfileid: "92107017"
 ```
 {
   "ExposedPorts": {
-    "9600/tcp": {},
+    "9600/tcp": {}
   },
   "HostConfig": {
     "PortBindings": {
@@ -110,7 +110,7 @@ ms.locfileid: "92107017"
 | `edgeAgent_total_disk_write_bytes` | `module_name` | Тип: датчик<br> Число байтов, записанных на диск |
 | `edgeAgent_metadata` | `edge_agent_version`, `experimental_features`, `host_information` | Тип: датчик<br> Общие метаданные об устройстве. Значение всегда равно 0, сведения кодируются в тегах. Обратите внимание `experimental_features` и `host_information` являются объектами JSON. `host_information` выглядит так ```{"OperatingSystemType": "linux", "Architecture": "x86_64", "Version": "1.0.10~dev20200803.4", "Provisioning": {"Type": "dps.tpm", "DynamicReprovisioning": false, "AlwaysReprovisionOnStartup": true}, "ServerVersion": "19.03.6", "KernelVersion": "5.0.0-25-generic", "OperatingSystem": "Ubuntu 18.04.4 LTS", "NumCpus": 6, "Virtualized": "yes"}``` :. Примечание `ServerVersion` . это версия DOCKER, а `Version` — версия управляющей программы безопасности IOT Edge. |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Общие сведения о среде выполнения Azure IoT Edge и ее архитектуре](iot-edge-runtime.md)
 * [Свойства двойников модулей агента IoT Edge и центра IoT Edge](module-edgeagent-edgehub.md)

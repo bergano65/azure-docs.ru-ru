@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 09/23/2020
 ms.author: banders
 ms.custom: contperfq1
-ms.openlocfilehash: 1fedad7dac4c253c68a0f27d0e0470123833a3be
-ms.sourcegitcommit: 67e8e1caa8427c1d78f6426c70bf8339a8b4e01d
+ms.openlocfilehash: d2814a989cb82216081083f3198d52ccd70210ff
+ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91666115"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92131927"
 ---
 # <a name="transfer-billing-ownership-of-an-azure-subscription-to-another-account"></a>Передача прав владения на выставление счетов для подписки Azure другой учетной записи
 
@@ -69,7 +69,7 @@ ms.locfileid: "91666115"
 1. Проверьте и обновите роли администратора службы, cоадминистраторов и назначения ролей Azure. Дополнительные сведения см. в статьях [Добавление или изменение администраторов подписки Azure](add-change-subscription-administrator.md) и [Добавление или удаление назначений ролей Azure с помощью портала Azure](../../role-based-access-control/role-assignments-portal.md).
 1. Обновите учетные данные, связанные со службами этой подписки, включая следующие:
    1. Сертификаты управления, которые предоставляют пользователю доступ к ресурсам подписки с правами администратора. Дополнительные сведения см. в статье [Создание и передача сертификата управления для Azure](../../cloud-services/cloud-services-certs-create.md).
-   1. Ключи доступа для служб, таких как служба хранилища. Дополнительные сведения см. в статье [Об учетных записях хранения Azure](../../storage/common/storage-create-storage-account.md).
+   1. Ключи доступа для служб, таких как служба хранилища. Дополнительные сведения см. в статье [Об учетных записях хранения Azure](../../storage/common/storage-account-create.md).
    1. Учетные данные удаленного доступа для служб, таких как Виртуальные машины Azure.
 1. Если вы работаете с партнером, мы рекомендуем изменить идентификатор партнера для этой подписки. Вы можете обновить идентификатор партнера на [портале Azure](https://portal.azure.com). Дополнительные сведения см. в статье [Link a partner ID to your Azure accounts](link-partner-id.md) (Привязка идентификатора партнера к учетной записи Azure).
 

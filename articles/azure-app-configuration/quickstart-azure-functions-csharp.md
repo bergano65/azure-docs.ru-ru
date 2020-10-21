@@ -8,12 +8,12 @@ ms.custom: devx-track-csharp
 ms.topic: quickstart
 ms.date: 09/28/2020
 ms.author: lcozzens
-ms.openlocfilehash: b62bf900e3e7859437b10b7b45801ee0dc575282
-ms.sourcegitcommit: d9ba60f15aa6eafc3c5ae8d592bacaf21d97a871
+ms.openlocfilehash: 24620351cdd831ec5079e1f37726b2aa65339205
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91767780"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92075864"
 ---
 # <a name="quickstart-create-an-azure-functions-app-with-azure-app-configuration"></a>Краткое руководство. Создание приложения Функций Azure с использованием службы "Конфигурация приложений Azure"
 
@@ -120,7 +120,7 @@ ms.locfileid: "91767780"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом кратком руководстве вы создали хранилище службы "Конфигурация приложений" и использовали его с приложением Функций Azure с помощью [поставщика Конфигурации приложений](https://go.microsoft.com/fwlink/?linkid=2074664). Чтобы узнать, как настроить приложение Функций Azure для динамического обновления параметров конфигурации, перейдите к следующему учебнику.
+В этом кратком руководстве вы создали хранилище службы "Конфигурация приложений" и использовали его с приложением Функций Azure с помощью [поставщика Конфигурации приложений](/dotnet/api/Microsoft.Extensions.Configuration.AzureAppConfiguration). Чтобы узнать, как настроить приложение Функций Azure для динамического обновления параметров конфигурации, перейдите к следующему учебнику.
 
 > [!div class="nextstepaction"]
 > [Включение динамической конфигурации](./enable-dynamic-configuration-azure-functions-csharp.md)
