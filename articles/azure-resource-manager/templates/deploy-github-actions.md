@@ -4,12 +4,12 @@ description: Описывает развертывание шаблонов Azur
 ms.topic: conceptual
 ms.date: 10/13/2020
 ms.custom: github-actions-azure,subject-armqs
-ms.openlocfilehash: b5852a65b4ed3c7cc73352fed37eeff035f8563c
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: f982ecd208dfd30757050df48c783718ed2b917a
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92106796"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92282847"
 ---
 # <a name="deploy-azure-resource-manager-templates-by-using-github-actions"></a>Развертывание шаблонов Resource Manager с помощью действий GitHub
 
@@ -17,7 +17,7 @@ ms.locfileid: "92106796"
 
 Используйте [действие развертывание Azure Resource Manager шаблона](https://github.com/marketplace/actions/deploy-azure-resource-manager-arm-template) для автоматизации развертывания шаблона диспетчер ресурсов в Azure. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) бесплатно.
 - Учетная запись GitHub. Если у вас ее нет, зарегистрируйтесь [бесплатно](https://github.com/join).  
@@ -40,13 +40,19 @@ ms.locfileid: "92106796"
 
 Вы можете создать [субъект-службу](../../active-directory/develop/app-objects-and-service-principals.md#service-principal-object) с помощью команды [AZ AD SP Create/for-RBAC](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac&preserve-view=true) в [Azure CLI](/cli/azure/). Выполните эту команду с [Azure Cloud Shell](https://shell.azure.com/) в портал Azure или нажав кнопку **попробовать** .
 
+Создайте группу ресурсов, если она еще не создана. 
+
+```azurecli-interactive
+    az group create -n {MyResourceGroup}
+```
+
 Замените заполнитель `myApp` именем своего приложения. 
 
 ```azurecli-interactive
-   az ad sp create-for-rbac --name {myApp} --role contributor --scopes /subscriptions/{subscription-id}/resourceGroups/{resource-group} --sdk-auth
+   az ad sp create-for-rbac --name {myApp} --role contributor --scopes /subscriptions/{subscription-id}/resourceGroups/{MyResourceGroup} --sdk-auth
 ```
 
-В приведенном выше примере Замените заполнители ИДЕНТИФИКАТОРом подписки и именем группы ресурсов. Выходные данные — это объект JSON с учетными данными назначения роли, которые предоставляют доступ к приложению службы приложений, как показано ниже. Скопируйте этот объект JSON для последующего использования.
+В приведенном выше примере Замените заполнители ИДЕНТИФИКАТОРом подписки и именем группы ресурсов. Выходные данные — это объект JSON с учетными данными назначения роли, которые предоставляют доступ к приложению службы приложений, как показано ниже. Скопируйте этот объект JSON для последующего использования. Вам понадобятся только разделы со `clientId` значениями,, `clientSecret` `subscriptionId` и `tenantId` . 
 
 ```output 
   {
@@ -73,9 +79,9 @@ ms.locfileid: "92106796"
 
 1. Вставьте все выходные данные JSON из команды Azure CLI в поле значения секрета. Присвойте этому имени секрет `AZURE_CREDENTIALS` .
 
-1. Создайте другой секрет с именем `AZURE_RG` . Добавьте имя группы ресурсов в поле значение секрета. 
+1. Создайте другой секрет с именем `AZURE_RG` . Добавьте имя группы ресурсов в поле значения секрета (пример: `myResourceGroup` ). 
 
-1. Создайте дополнительный секрет с именем `AZURE_SUBSCRIPTION` . Добавьте идентификатор подписки в поле значения секрета. 
+1. Создайте дополнительный секрет с именем `AZURE_SUBSCRIPTION` . Добавьте идентификатор подписки в поле значения секрета (пример: `90fd3f9d-4c61-432d-99ba-1273f236afa2` ). 
 
 ## <a name="add-resource-manager-template"></a>Добавление шаблона Resource Manager
 
@@ -114,17 +120,19 @@ https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-st
             creds: ${{ secrets.AZURE_CREDENTIALS }}
      
           # Deploy ARM template
-        - uses: azure/arm-deploy@v1
         - name: Run ARM deploy
+          uses: azure/arm-deploy@v1
           with:
             subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
             resourceGroupName: ${{ secrets.AZURE_RG }}
             template: ./azuredeploy.json
-            parameters: storageAccountType=Standard_LRS
+            parameters: storageAccountType=Standard_LRS 
         
           # output containerName variable from template
         - run: echo ${{ steps.deploy.outputs.containerName }}
     ```
+    > [!NOTE]
+    > Вместо этого можно указать файл параметров формата JSON в действии развертывания ARM (пример: `.azuredeploy.parameters.json` ).  
 
     Первый раздел файла рабочего процесса включает в себя:
 

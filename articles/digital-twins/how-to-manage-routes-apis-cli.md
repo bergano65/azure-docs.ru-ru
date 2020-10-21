@@ -7,12 +7,12 @@ ms.author: alkarche
 ms.date: 10/12/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 652299ebb98f685a16871cf4e944608a471d8df2
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: 96d759f0f722e332eb25e049fd336c784eb99789
+ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92279093"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92332082"
 ---
 # <a name="manage-endpoints-and-routes-in-azure-digital-twins-apis-and-cli"></a>Управление конечными точками и маршрутами в Azure Digital двойников (API и CLI)
 
@@ -24,7 +24,7 @@ ms.locfileid: "92279093"
 
 Они также могут управляться с помощью [портал Azure](https://portal.azure.com). Версию этой статьи, которая использует портал, см. [*в разделе руководство. Управление конечными точками и маршрутами (портал)*](how-to-manage-routes-portal.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Вам потребуется **учетная запись Azure** (вы можете настроить ее [здесь](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)бесплатно).
 * Вам потребуется **экземпляр Azure Digital двойников** в подписке Azure. Если у вас еще нет экземпляра, его можно создать, выполнив действия, описанные в разделе [*инструкции. Настройка экземпляра и проверки подлинности*](how-to-set-up-instance-portal.md). Используйте следующие значения из программы установки, которые можно использовать далее в этой статье:
@@ -64,7 +64,7 @@ az eventgrid topic create -g <your-resource-group-name> --name <your-topic-name>
 az dt endpoint create eventgrid --endpoint-name <Event-Grid-endpoint-name> --eventgrid-resource-group <Event-Grid-resource-group-name> --eventgrid-topic <your-Event-Grid-topic-name> -n <your-Azure-Digital-Twins-instance-name>
 ```
 
-Теперь раздел "Сетка событий" доступен в качестве конечной точки в Azure Digital двойников с именем, указанным в `--endpoint-name` аргументе. Обычно это имя используется в качестве цели для **маршрута события**, который будет создан [Далее в этой статье](#event-routes-with-apis-and-the-c-sdk) с помощью API службы Digital двойников.
+Теперь раздел "Сетка событий" доступен в качестве конечной точки в Azure Digital двойников с именем, указанным в `--endpoint-name` аргументе. Обычно это имя используется в качестве цели для **маршрута события**, который будет создан [Далее в этой статье](#create-an-event-route) с помощью API службы Digital двойников.
 
 ### <a name="create-an-event-hubs-or-service-bus-endpoint"></a>Создание концентраторов событий или конечной точки служебной шины
 
@@ -150,7 +150,7 @@ az dt endpoint create eventhub --endpoint-name <Event-Hub-endpoint-name> --event
 }
 ```
 
-## <a name="event-routes-with-apis-and-the-c-sdk"></a>Маршруты событий (с API и пакетом SDK для C#)
+## <a name="create-an-event-route"></a>Создание маршрута события
 
 Чтобы фактически передавать данные из Azure Digital двойников в конечную точку, необходимо определить **маршрут события**. **API-интерфейсы** Azure Digital двойников евентраутес позволяют разработчикам связывать потоки событий во всей системе и в подчиненных службах. Дополнительные сведения о маршрутах событий см. в статье [*Маршрутизация событий цифровых двойников Azure*](concepts-route-events.md).
 
@@ -163,7 +163,7 @@ az dt endpoint create eventhub --endpoint-name <Event-Hub-endpoint-name> --event
 >
 > Если вы создаете скрипт для этого потока, это можно сделать, создав период времени ожидания в 2-3 минут до завершения развертывания службы конечной точки перед переходом к настройке маршрута.
 
-### <a name="create-an-event-route"></a>Создание маршрута события
+### <a name="creation-code-with-apis-and-the-c-sdk"></a>Создание кода с помощью API и пакета SDK для C#
 
 Маршруты событий определяются с помощью [API-интерфейсов плоскости данных](how-to-use-apis-sdks.md#overview-data-plane-apis). 
 
@@ -217,7 +217,7 @@ catch (RequestFailedException e)
 }
 ```
 
-### <a name="filter-events"></a>События фильтра
+## <a name="filter-events"></a>События фильтра
 
 Без фильтрации конечные точки получают различные события из Azure Digital двойников:
 * Данные телеметрии, созданные [цифровым двойников](concepts-twins-graph.md) с помощью API службы Digital двойников
@@ -248,7 +248,7 @@ catch (RequestFailedException e)
 
 [!INCLUDE [digital-twins-route-metrics](../../includes/digital-twins-route-metrics.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Сведения о различных типах сообщений о событиях, которые можно получить:
 * [*Пошаговое руководство. анализ данных события*](how-to-interpret-event-data.md)

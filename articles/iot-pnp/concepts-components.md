@@ -7,12 +7,12 @@ ms.date: 07/07/2020
 ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: e7b24dd9cdbd11b56545f85ac233665f8fa4adfe
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7d33811dc056baa3d205d7d86c1bdd7bff74ae54
+ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91574285"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92330008"
 ---
 # <a name="iot-plug-and-play-components-in-models"></a>Компоненты IoT Plug and Play в моделях
 
@@ -69,7 +69,7 @@ ms.locfileid: "91574285"
 Модель ДТДЛ без компонентов является удобным упрощением для устройства или IoT Edge модуля с единым набором телеметрии, свойств и команд. Модель, которая не использует компоненты, упрощает перенос существующего устройства или модуля в центр Интернета вещей Plug and Play устройство или модуль. вы создаете модель ДТДЛ, которая описывает реальное устройство или модуль без необходимости определять какие-либо компоненты.
 
 > [!TIP]
-> Модуль может быть устройством [module] (.. /ИОТ-ХУБ/ИОТ-ХУБ-девгуиде-модуле-Твинс.МД или [модуль IOT Edge](../iot-edge/about-iot-edge.md).
+> Модуль может быть [модулем](../iot-hub/iot-hub-devguide-module-twins.md) устройства или [модулем IOT Edge](../iot-edge/about-iot-edge.md).
 
 ## <a name="multiple-components"></a>Несколько компонентов
 

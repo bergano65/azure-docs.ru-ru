@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: how-to
 ms.date: 05/29/2020
 ms.author: duau
-ms.openlocfilehash: b812a727a555f8c4c95389f2ba0cc5ccea2f608a
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: b1b93110c3dba38dadf7079fc24ba12e81793c02
+ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92205565"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92329855"
 ---
 # <a name="configure-custom-alerts-to-monitor-advertised-routes"></a>Настройка пользовательских оповещений для отслеживания объявляемых маршрутов
 
@@ -58,7 +58,7 @@ ms.locfileid: "92205565"
 
 * Создает учетную запись субъекта-службы для приложения в Azure AD.
 
-* Назначает себе роль участника (RBAC) в используемой подписке Azure. Эта роль управляет ресурсами Azure Resource Manager с помощью модулей Runbook.
+* Назначает себе роль участника (Azure RBAC) в используемой подписке Azure. Эта роль управляет ресурсами Azure Resource Manager с помощью модулей Runbook.
 
 Чтобы создать учетную запись службы автоматизации, необходимы права и разрешения. Дополнительные сведения см. [в разделе разрешения, необходимые для создания учетной записи службы автоматизации](../automation/automation-create-standalone-account.md#permissions-required-to-create-an-automation-account).
 
@@ -453,6 +453,6 @@ Logic Apps предоставляет много соединителей эле
 
 :::image type="content" source="./media/custom-route-alert-portal/trigger.png" alt-text="Добавить учетную запись службы автоматизации":::
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о настройке рабочего процесса см. в разделе [Azure Logic Apps](../logic-apps/logic-apps-overview.md).

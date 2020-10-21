@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 03/25/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: f47e9cb93b90c8a2401d1dfe6c0ff7800b0bcf27
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 007409d755da2d879297b4b898663dcbd9fd6d7f
+ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89401135"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92329633"
 ---
 # <a name="azure-security-baseline-for-event-hubs"></a>Базовый уровень безопасности Azure для концентраторов событий
 
@@ -397,7 +397,7 @@ https://azuremarketplace.microsoft.com/marketplace/?term=Firewall
 
 ### <a name="39-use-azure-active-directory"></a>3.9. Использование Azure Active Directory
 
-**Руководство**. Использование Azure Active Directory (AD) в качестве централизованной системы проверки подлинности и авторизации для ресурсов Azure, таких как концентраторы событий. Это позволяет управлять доступом на основе ролей (RBAC) с учетом административных ресурсов.
+**Руководство**. Использование Azure Active Directory (AD) в качестве централизованной системы проверки подлинности и авторизации для ресурсов Azure, таких как концентраторы событий. Это обеспечивает управление доступом на основе ролей Azure (Azure RBAC) для административных ресурсов.
 
  Как создать и настроить экземпляр Azure AD: https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-access-create-new-tenant
 
@@ -539,9 +539,9 @@ https://azuremarketplace.microsoft.com/marketplace/?term=Firewall
 
 ### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6. Контроль доступа к ресурсам с помощью RBAC
 
-**Руководство**. концентраторы событий Azure поддерживают использование Azure Active Directory (AD) для авторизации запросов к ресурсам концентраторов событий. С помощью Azure AD можно использовать управление доступом на основе ролей (RBAC) для предоставления разрешений субъекту безопасности, который может быть пользователем или субъектом-службой приложения.
+**Руководство**. концентраторы событий Azure поддерживают использование Azure Active Directory (AD) для авторизации запросов к ресурсам концентраторов событий. С помощью Azure AD можно использовать управление доступом на основе ролей Azure (Azure RBAC) для предоставления разрешений субъекту безопасности, который может быть пользователем или субъектом-службой приложения.
 
-Сведения об Azure AD RBAC и доступных ролях для концентраторов событий Azure: https://docs.microsoft.com/azure/event-hubs/authorize-access-azure-active-directory
+Общие сведения об Azure RBAC и доступных ролях для концентраторов событий Azure: https://docs.microsoft.com/azure/event-hubs/authorize-access-azure-active-directory
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 

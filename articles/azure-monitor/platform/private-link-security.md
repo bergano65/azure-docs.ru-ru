@@ -6,12 +6,12 @@ ms.author: nikiest
 ms.topic: conceptual
 ms.date: 10/05/2020
 ms.subservice: ''
-ms.openlocfilehash: 0c7838b291ca5ba1747b08d7e8fcc6d17cc35f7d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9eac64eff8c87046fd1ce76ee71475fda79ac6f7
+ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91802231"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92329259"
 ---
 # <a name="use-azure-private-link-to-securely-connect-networks-to-azure-monitor"></a>Использование Приватного канала Azure для безопасного подключения сетей к Azure Monitor
 
@@ -41,6 +41,9 @@ ms.locfileid: "91802231"
 ## <a name="planning-based-on-your-network"></a>Планирование с учетом сети
 
 Перед настройкой ресурсов AMPLS примите во внимание требования к изоляции сети. Оцените доступ виртуальных сетей к общедоступному Интернету и ограничения доступа для каждого из ресурсов Azure Monitor (то есть компонентов Application Insights и рабочих областей Log Analytics).
+
+> [!NOTE]
+> Сети с центральным и периферийным доступом или любая другая топология одноранговых сетей могут настроить частную связь между внутренней виртуальной сетью (основной) и соответствующими Azure Monitor ресурсами вместо настройки частной связи для каждой виртуальной сети. Это имеет смысл, особенно если Azure Monitor ресурсы, используемые этими сетями, являются общими. Однако если вы хотите разрешить каждой виртуальной сети доступ к отдельному набору ресурсов мониторинга, создайте закрытую ссылку на выделенный АМПЛС для каждой сети.
 
 ### <a name="evaluate-which-virtual-networks-should-connect-to-a-private-link"></a>Оценка того, какие виртуальные сети должны подключаться к Приватному каналу
 

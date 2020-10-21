@@ -229,6 +229,8 @@
   items:
     - name: Документация по распознаванию намерений
       href: index-intent-recognition.yml
+    - name: Основные сведения о распознавании намерений
+      href: intent-recognition.md
     - name: Краткое руководство по распознаванию намерений
       href: quickstarts/intent-recognition.md
     - name: Практические руководства
