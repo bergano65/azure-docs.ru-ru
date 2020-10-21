@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/25/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 0f433c33f50506309e88b7ffa2c8aaf498fb3613
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4e844904f236e9d81404a3481af9349ac8881085
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91761164"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92310437"
 ---
 # <a name="azure-security-baseline-for-service-bus"></a>Базовый план безопасности Azure для служебной шины
 
@@ -62,7 +62,7 @@ ms.locfileid: "91761164"
 
 - [Настройка защиты от атак DDoS](../virtual-network/manage-ddos-protection.md)
 
-- [Интегрированная аналитика угроз центра безопасности Azure](/azure/security-center/security-center-alerts-service-layer)
+- [Интегрированная аналитика угроз центра безопасности Azure](../security-center/azure-defender.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -111,7 +111,7 @@ ms.locfileid: "91761164"
 
 - [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-- [Встроенная политика Azure для пространства имен служебной шины](/azure/service-bus-messaging/policy-samples#azure-service-bus-messaging)
+- [Встроенная политика Azure для пространства имен служебной шины](./policy-reference.md#azure-service-bus-messaging)
 
 - [Примеры политик Azure для работы в сети](../governance/policy/samples/built-in-policies.md#network)
 
@@ -129,7 +129,7 @@ ms.locfileid: "91761164"
 
 Вы можете использовать Azure PowerShell или Azure CLI для поиска или выполнения действий с ресурсами на основе их тегов. 
 
-- [Создание и использование тегов](/azure/azure-resource-manager/resource-group-using-tags) 
+- [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md) 
 
 - [Создание виртуальной сети](../virtual-network/quick-create-portal.md) 
 
@@ -143,7 +143,7 @@ ms.locfileid: "91761164"
 
 **Руководство**. Использование журнала действий Azure для мониторинга конфигураций сетевых ресурсов и обнаружения изменений сетевых ресурсов, связанных с служебной шиной Azure. Создавайте оповещения в Azure Monitor, которые будут запускаться при изменении критических сетевых ресурсов.
 
-- [Как просматривать и извлекать события журнала действий Azure](/azure/azure-monitor/platform/activity-log-view)
+- [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/platform/activity-log.md#view-the-activity-log)
 
 - [Как создать оповещения в службе Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
 
@@ -177,7 +177,7 @@ ms.locfileid: "91761164"
 
 - [Включение параметров диагностики для служебной шины Azure](service-bus-diagnostic-logs.md)
 
-- [Как включить параметры диагностики для журнала действий Azure](/azure/azure-monitor/platform/diagnostic-settings-legacy)
+- [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/platform/activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -231,9 +231,9 @@ ms.locfileid: "91761164"
 
 - [Встроенные роли служебной шины Azure](authenticate-application.md#azure-built-in-roles-for-azure-service-bus)
 
-- [Как получить роль каталога в Azure AD с помощью PowerShell](https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrole?view=azureadps-2.0) 
+- [Как получить роль каталога в Azure AD с помощью PowerShell](/powershell/module/azuread/get-azureaddirectoryrole?view=azureadps-2.0) 
 
-- [Как получить членов роли каталога в Azure AD с помощью PowerShell](https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0)
+- [Как получить членов роли каталога в Azure AD с помощью PowerShell](/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -311,7 +311,7 @@ ms.locfileid: "91761164"
 
 **Руководство**. Использование Azure Active Directory отчетов и мониторинга безопасности для обнаружения подозрительных или ненадежных действий в среде. Используйте Центр безопасности Azure для мониторинга действий идентификации и доступа.
 
-- [Как определить пользователей Azure AD, помеченных для события риска](/azure/active-directory/reports-monitoring/concept-user-at-risk)
+- [Как определить пользователей Azure AD, помеченных для события риска](../active-directory/identity-protection/overview-identity-protection.md)
 
 - [Мониторинг пользовательских действий идентификации и доступа в Центре безопасности Azure](../security-center/security-center-identity-access.md)
 
@@ -347,7 +347,7 @@ ms.locfileid: "91761164"
 
 В дополнительных случаях регулярно вращайте подписанный URL пространства имен служебной шины.
 
-- [Общие сведения об отчетах Azure AD](/azure/active-directory/reports-monitoring/)
+- [Общие сведения об отчетах Azure AD](../active-directory/reports-monitoring/index.yml)
 
 - [Использование проверок доступа для идентификации Azure](../active-directory/governance/access-reviews-overview.md)
 
@@ -363,7 +363,7 @@ ms.locfileid: "91761164"
 
 Этот процесс можно упростить, создав параметры диагностики для учетных записей пользователей Azure AD и отправив журналы аудита и журналы входа в рабочую область Log Analytics. Затем в Azure Monitor можно настроить нужные оповещения журнала для определенных действий, происходящих в журналах.
 
-- [Как интегрировать журналы действий Azure в Azure Monitor](/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)
+- [Как интегрировать журналы действий Azure в Azure Monitor](../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
 - [Авторизация доступа к ресурсам служебной шины с помощью Azure Active Directory](authenticate-application.md)
 
@@ -375,7 +375,7 @@ ms.locfileid: "91761164"
 
 **Руководство**. Использование функций защиты идентификации и обнаружения рисков Azure Active Directory для настройки автоматических ответов на обнаруженные подозрительные действия, связанные с ресурсами, поддерживающими служебную шину. Вы должны включить автоматические ответы через метку Azure, чтобы реализовать ответы на безопасность вашей организации.
 
-- [Просмотр рискованных входов в Azure AD](/azure/active-directory/reports-monitoring/concept-risky-sign-ins)
+- [Просмотр рискованных входов в Azure AD](../active-directory/identity-protection/overview-identity-protection.md)
 
 - [Как настроить и включить политики рисков с помощью защиты идентификации](../active-directory/identity-protection/howto-identity-protection-configure-risk-policies.md)
 
@@ -403,7 +403,7 @@ ms.locfileid: "91761164"
 
 **Руководство**. Используйте теги в ресурсах, связанных с вашей служебной шиной, для помощи в отслеживании ресурсов Azure, в которых хранятся или обрабатываются конфиденциальные данные.
 
-- [Создание и использование тегов](/azure/azure-resource-manager/resource-group-using-tags)
+- [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -413,11 +413,11 @@ ms.locfileid: "91761164"
 
 **Руководство**. Реализация отдельных подписок и групп управления для разработки, тестирования и рабочей среды. Пространства имен служебной шины должны быть разделены виртуальными сетями с настроенными частными конечными точками и соответствующим образом помечаться тегами.
 
-- [Создание дополнительных подписок Azure](/azure/billing/billing-create-subscription)
+- [Создание дополнительных подписок Azure](../cost-management-billing/manage/create-subscription.md)
 
-- [Создание групп управления](/azure/governance/management-groups/create)
+- [Создание групп управления](../governance/management-groups/create-management-group-portal.md)
 
-- [Создание и использование тегов](/azure/azure-resource-manager/resource-group-using-tags)
+- [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
 - [Как создать виртуальную сеть](../virtual-network/quick-create-portal.md)
 
@@ -437,7 +437,7 @@ ms.locfileid: "91761164"
 
 - [Разрешение доступа к пространствам имен служебной шины Azure через частные конечные точки](private-link-service.md)
 
-- [Общие сведения о группах безопасности сети и тегах служб](/azure/virtual-network/security-overview)
+- [Общие сведения о группах безопасности сети и тегах служб](../virtual-network/network-security-groups-overview.md)
 
 - [Общие сведения о защите данных клиентов в Azure](../security/fundamentals/protection-customer-data.md)
 
@@ -507,7 +507,7 @@ ms.locfileid: "91761164"
 
 - [Как создавать запросы с помощью Azure Resource Graph](../governance/resource-graph/first-query-portal.md)
 
-- [Как просматривать подписки Azure](https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0)
+- [Как просматривать подписки Azure](/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0)
 
 - [Общие сведения об Azure RBAC](../role-based-access-control/overview.md)
 
@@ -527,11 +527,11 @@ ms.locfileid: "91761164"
 
 **Руководство**. Использование тегов, групп управления и отдельных подписок (при необходимости) для Организации и мониторинга пространств имен и связанных ресурсов служебной шины Azure. Регулярно сверяйте ресурсы, чтобы своевременно удалять неавторизованные ресурсы из подписки.
 
-- [Создание дополнительных подписок Azure](/azure/billing/billing-create-subscription)
+- [Создание дополнительных подписок Azure](../cost-management-billing/manage/create-subscription.md)
 
-- [Создание групп управления](/azure/governance/management-groups/create)
+- [Создание групп управления](../governance/management-groups/create-management-group-portal.md)
 
-- [Создание и использование тегов](/azure/azure-resource-manager/resource-group-using-tags)
+- [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -574,7 +574,7 @@ ms.locfileid: "91761164"
 
 - [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-- [Как отказаться от определенного типа ресурса с помощью Политики Azure](/azure/governance/policy/samples/not-allowed-resource-types)
+- [Как отказаться от определенного типа ресурса с помощью Политики Azure](../governance/policy/samples/index.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -603,9 +603,9 @@ ms.locfileid: "91761164"
 
 Используйте псевдонимы политик Azure в пространстве имен Microsoft. ServiceBus, чтобы создать настраиваемые политики для аудита или принудительного применения конфигураций.
 
-- [Встроенные политики Azure для служебной шины ](/azure/service-bus-messaging/policy-samples)
+- [Встроенные политики Azure для служебной шины ](./policy-reference.md)
 
-- [Просмотр доступных псевдонимов политик Azure](https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0)
+- [Просмотр доступных псевдонимов политик Azure](/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0)
 
 - [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
@@ -653,7 +653,7 @@ ms.locfileid: "91761164"
 
 - [Настройка ключей, управляемых клиентом, для служебной шины](configure-customer-managed-key.md)
 
-- [Создание Key Vault](/azure/key-vault/quick-create-portal)
+- [Создание Key Vault](../key-vault/secrets/quick-create-portal.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -731,7 +731,7 @@ ms.locfileid: "91761164"
 
 - [Как настроить ключи, управляемые клиентом, для шифрования неактивных данных служебной шины Azure](configure-customer-managed-key.md)
 
-- [Как восстановить резервную копию ключей хранилища ключей в Azure](https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey?view=azurermps-6.13.0)
+- [Как восстановить резервную копию ключей хранилища ключей в Azure](/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey?view=azurermps-6.13.0)
 
 **Мониторинг Центра безопасности Azure**. Неприменимо
 
@@ -741,7 +741,7 @@ ms.locfileid: "91761164"
 
 **Руководство**. Включение обратимого удаления в Key Vault для защиты ключей от случайного или вредоносного удаления. Служебная шина Azure требует, чтобы ключи, управляемые клиентом, имели возможность обратимого удаления и не были очищены.
 
-- [Включение обратимого удаления в Key Vault](https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal)
+- [Включение обратимого удаления в Key Vault](../storage/blobs/soft-delete-blob-overview.md?tabs=azure-portal)
 
 - [Настройка хранилища ключей с ключами](../event-hubs/configure-customer-managed-key.md)
 
@@ -775,7 +775,7 @@ ms.locfileid: "91761164"
 
 - [Оповещения безопасности в Центре безопасности Azure](../security-center/security-center-alerts-overview.md) 
 
-- [использование тегов для упорядочения ресурсов в Azure](/azure/azure-resource-manager/resource-group-using-tags)
+- [использование тегов для упорядочения ресурсов в Azure](../azure-resource-manager/management/tag-resources.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -843,5 +843,5 @@ ms.locfileid: "91761164"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Ознакомьтесь со статьей [Тесты производительности системы безопасности Azure](/azure/security/benchmarks/overview).
-- Дополнительные сведения о [базовой конфигурации безопасности Azure](/azure/security/benchmarks/security-baselines-overview).
+- Ознакомьтесь со статьей [Тесты производительности системы безопасности Azure](../security/benchmarks/overview.md).
+- Дополнительные сведения о [базовой конфигурации безопасности Azure](../security/benchmarks/security-baselines-overview.md).

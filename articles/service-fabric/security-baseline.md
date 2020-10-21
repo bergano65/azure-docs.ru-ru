@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/22/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 9054fa72ee4204d7a09e6ce8de4fe6d4ed4dac81
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 77ea96b1bd1b1d661bb835e7bb48d58ce4c3e118
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89227718"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92309157"
 ---
 # <a name="azure-security-baseline-for-service-fabric"></a>Базовый план безопасности Azure для Service Fabric
 
@@ -78,7 +78,7 @@ ms.locfileid: "89227718"
 
 * [Настройка защиты от атак DDoS](../virtual-network/manage-ddos-protection.md)
 
-* [Общие сведения об интегрированной аналитике угроз в Центре безопасности Azure](../security-center/threat-protection.md)
+* [Общие сведения об интегрированной аналитике угроз в Центре безопасности Azure](../security-center/azure-defender.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -488,7 +488,7 @@ ms.locfileid: "89227718"
 
 * [Создание дополнительных подписок Azure](../cost-management-billing/manage/create-subscription.md)
 
-* [Создание групп управления](../governance/management-groups/create.md)
+* [Создание групп управления](../governance/management-groups/create-management-group-portal.md)
 
 * [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
@@ -572,7 +572,7 @@ ms.locfileid: "89227718"
 
 * [Общие сведения о шифровании неактивных в Azure](../security/fundamentals/encryption-atrest.md)
 
-* [Настройка ключей шифрования, управляемых клиентом](../storage/common/storage-encryption-keys-portal.md)
+* [Настройка ключей шифрования, управляемых клиентом](../storage/common/customer-managed-keys-configure-key-vault.md)
 
 * [Включение шифрования дисков для узлов кластера Azure Service Fabric в Windows](./service-fabric-enable-azure-disk-encryption-windows.md)
 
@@ -608,7 +608,7 @@ ms.locfileid: "89227718"
 
 * [Вызвать контролируемый Chaos в кластерах Service Fabric](./service-fabric-controlled-chaos.md)
 
-* [Реализация рекомендаций по оценке уязвимостей в центре безопасности Azure](../security-center/security-center-vulnerability-assessment-recommendations.md)
+* [Реализация рекомендаций по оценке уязвимостей в центре безопасности Azure](../security-center/deploy-vulnerability-assessment-vm.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -698,7 +698,7 @@ ms.locfileid: "89227718"
 
 * [Создание дополнительных подписок Azure](../cost-management-billing/manage/create-subscription.md)
 
-* [Создание групп управления](../governance/management-groups/create.md)
+* [Создание групп управления](../governance/management-groups/create-management-group-portal.md)
 
 * [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
@@ -1042,7 +1042,7 @@ ms.locfileid: "89227718"
 
 * [Шифрование неактивных данных в службе хранилища Azure](../storage/common/storage-service-encryption.md)
 
-* [Как включить обратимое удаление в Key Vault](../storage/blobs/soft-delete-overview.md?tabs=azure-portal)
+* [Как включить обратимое удаление в Key Vault](../storage/blobs/soft-delete-blob-overview.md?tabs=azure-portal)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 

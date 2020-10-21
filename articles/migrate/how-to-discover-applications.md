@@ -3,12 +3,12 @@ title: Обнаружение приложений, ролей и функций
 description: Узнайте, как обнаруживать приложения, роли и функции на локальных серверах с помощью функции "Миграция серверов Azure".
 ms.topic: article
 ms.date: 06/10/2020
-ms.openlocfilehash: 535c8ae8c2d6e5d9d175e663a58d47dc76aa0529
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6bdc26ac3a27026183e889bf258e2e1a5dadebfb
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86118653"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92315208"
 ---
 # <a name="discover-machine-apps-roles-and-features"></a>Обнаружение приложений, ролей и компонентов компьютера
 
@@ -46,7 +46,7 @@ ms.locfileid: "86118653"
 
 ## <a name="verify-permissions"></a>Проверка разрешений
 
-Вы [создали vCenter Server учетную запись только для чтения](tutorial-prepare-vmware.md#set-up-permissions-for-assessment) для обнаружения и оценки. Учетной записи, доступной только для чтения, **Virtual Machines**требуются права для  >  **гостевых операций**виртуальных машин, чтобы взаимодействовать с виртуальной машиной для обнаружения приложений.
+Вы [создали vCenter Server учетную запись только для чтения](./tutorial-discover-vmware.md#prepare-vmware) для обнаружения и оценки. Учетной записи, доступной только для чтения, **Virtual Machines**требуются права для  >  **гостевых операций**виртуальных машин, чтобы взаимодействовать с виртуальной машиной для обнаружения приложений.
 
 ### <a name="add-the-user-account-to-the-appliance"></a>Добавление учетной записи пользователя в устройство
 

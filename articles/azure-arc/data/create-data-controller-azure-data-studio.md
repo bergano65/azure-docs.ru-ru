@@ -9,12 +9,12 @@ ms.author: twright
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: f6fd8169c587e928da9946d74335ddc758889144
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 208c9b4172719b876766f0c4d07a17caa24bfd63
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91273149"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92310947"
 ---
 # <a name="create-data-controller-in-azure-data-studio"></a>Создание контроллера данных в Azure Data Studio
 
@@ -22,10 +22,10 @@ ms.locfileid: "91273149"
 
 [!INCLUDE [azure-arc-data-preview](../../../includes/azure-arc-data-preview.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Вам потребуется доступ к кластеру Kubernetes и настроить файл kubeconfig, чтобы он указывал на кластер Kubernetes, в который требуется выполнить развертывание.
-- Необходимо [установить клиентские средства](install-client-tools.md) , в том числе **Azure Data Studio** Azure Data Studioные расширения, называемые **Arc Azure** и **Azure Data CLI**.
+- Необходимо [установить клиентские средства](install-client-tools.md) , в том числе **Azure Data Studio** расширения Azure Data Studio, называемые " **дуга" Azure** и **[!INCLUDE [azure-data-cli-azdata](../../../includes/azure-data-cli-azdata.md)]** .
 - Необходимо войти в Azure в Azure Data Studio.  Для этого введите сочетание клавиш CTRL/Command + SHIFT + P, чтобы открыть окно текст команды и ввести **Azure**.  Выберите **Azure: вход**.   На панели щелкните значок + в правом верхнем углу, чтобы добавить учетную запись Azure.
 
 ## <a name="use-the-deployment-wizard-to-create-azure-arc-data-controller"></a>Использование мастера развертывания для создания контроллера данных ARC в Azure

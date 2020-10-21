@@ -9,12 +9,12 @@ ms.author: twright
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: cda123adb667b4c857e05ce53d603e328e995766
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: 869bfcb87aa4846674db233c4268e9269929cd04
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92108173"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92320169"
 ---
 # <a name="upload-usage-data-metrics-and-logs-to-azure-monitor"></a>Передача данных об использовании, метрик и журналов в Azure Monitor
 
@@ -23,9 +23,9 @@ ms.locfileid: "92108173"
 > [!NOTE] 
 > В течение периода действия предварительной версии не взимается плата за использование служб данных, включенных в службу Arc Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
-Вам потребуются Azure CLI (AZ) и Azure Data CLI (аздата).  [Установите средства](./install-client-tools.md).
+Вам потребуется Azure CLI (AZ) и [!INCLUDE [azure-data-cli-azdata](../../../includes/azure-data-cli-azdata.md)] установленный.  [Установите средства](./install-client-tools.md).
 
 Перед отправкой данных в Azure необходимо убедиться, что в подписке Azure зарегистрирован поставщик ресурсов Microsoft. Азуредата.
 
@@ -45,7 +45,7 @@ az provider register -n Microsoft.AzureData --wait
 
 Сведения об использовании, такие как Инвентаризация и использование ресурсов, можно отправить в Azure следующим образом:
 
-1. Экспортируйте данные об использовании с помощью ```azdata export``` команды следующим образом:
+1. Экспортируйте данные об использовании с помощью `azdata export` команды следующим образом:
 
    ```console
    #login to the data controller and enter the values at the prompt
@@ -56,7 +56,7 @@ az provider register -n Microsoft.AzureData --wait
    ```
    Эта команда создает `usage.json` файл со всеми ресурсами данных, включенными в дугу Azure, такими как управляемые экземпляры SQL и PostgreSQL экземпляров для масштабирования и т. д., которые создаются на контроллере данных.
 
-2. Отправка данных об использовании с помощью ```azdata upload``` команды
+2. Отправка данных об использовании с помощью `azdata upload` команды
 
    > [!NOTE]
    > Подождите по крайней мере 24 часа после создания контроллера данных ARC в Azure до запуска отправки.

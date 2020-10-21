@@ -7,12 +7,12 @@ ms.author: alkarche
 ms.date: 10/12/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 5d0956634289713f691feb1a9182233e6795e319
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 652299ebb98f685a16871cf4e944608a471d8df2
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92201739"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92279093"
 ---
 # <a name="manage-endpoints-and-routes-in-azure-digital-twins-apis-and-cli"></a>Управление конечными точками и маршрутами в Azure Digital двойников (API и CLI)
 
@@ -90,13 +90,13 @@ az dt endpoint create eventhub --endpoint-name <Event-Hub-endpoint-name> --event
 
 Если конечная точка не может доставить событие в течение определенного периода времени или после попытки доставить событие определенное количество раз, оно может отправить недоставленное событие в учетную запись хранения. Этот процесс называется **недоставленным**.
 
-Чтобы создать конечную точку с поддержкой недоставленных сообщений, необходимо использовать [API ARM](https://docs.microsoft.com/rest/api/digital-twins/controlplane/endpoints/digitaltwinsendpoint_createorupdate) для создания конечной точки. 
+Чтобы создать конечную точку с поддержкой недоставленных сообщений, необходимо использовать [API ARM](/rest/api/digital-twins/controlplane/endpoints/digitaltwinsendpoint_createorupdate) для создания конечной точки. 
 
 Прежде чем задать параметры расположения недоставленных сообщений, необходимо создать учетную запись хранения с контейнером. При создании конечной точки вы предоставляете URL-адрес для этого контейнера. Недоставленная буква предоставляется как URL-адрес контейнера с маркером SAS. Этот маркер должен иметь только `write` разрешение для целевого контейнера в пределах учетной записи хранения. Полностью сформированный URL-адрес будет иметь формат: `https://<storageAccountname>.blob.core.windows.net/<containerName>?<SASToken>`
 
-Дополнительные сведения о маркерах SAS см. в статье [предоставление ограниченного доступа к ресурсам службы хранилища Azure с помощью подписанных URL-адресов (SAS)](https://docs.microsoft.com/azure/storage/common/storage-sas-overview) .
+Дополнительные сведения о маркерах SAS см. в статье [предоставление ограниченного доступа к ресурсам службы хранилища Azure с помощью подписанных URL-адресов (SAS)](/azure/storage/common/storage-sas-overview) .
 
-Дополнительные сведения о недоставленных сообщениях см. в разделе [Основные понятия: маршруты событий.](./concepts-route-events.md#dead-letter-events)
+Дополнительные сведения о недоставленных сообщениях см. в разделе [*Основные понятия: маршруты событий*](concepts-route-events.md#dead-letter-events).
 
 #### <a name="configuring-the-endpoint"></a>Настройка конечной точки
 
@@ -114,7 +114,7 @@ az dt endpoint create eventhub --endpoint-name <Event-Hub-endpoint-name> --event
 }
 ```
 
-Дополнительные сведения см. в документации по службе Digital двойников REST API: [Endpoints-Дигиталтвинсендпоинт CreateOrUpdate](https://docs.microsoft.com/rest/api/digital-twins/controlplane/endpoints/digitaltwinsendpoint_createorupdate).
+Дополнительные сведения см. в документации по службе Digital двойников REST API: [Endpoints-Дигиталтвинсендпоинт CreateOrUpdate](/rest/api/digital-twins/controlplane/endpoints/digitaltwinsendpoint_createorupdate).
 
 ### <a name="message-storage-schema"></a>Схема хранилища сообщений
 
@@ -124,7 +124,7 @@ az dt endpoint create eventhub --endpoint-name <Event-Hub-endpoint-name> --event
 
 Недоставленные сообщения будут соответствовать схеме исходного события, предназначенного для доставки в исходную конечную точку.
 
-Ниже приведен пример недоставленного сообщения для [уведомления о создании двойника](./how-to-interpret-event-data.md#digital-twin-life-cycle-notifications).
+Ниже приведен пример недоставленного сообщения для [уведомления о создании двойника](how-to-interpret-event-data.md#digital-twin-life-cycle-notifications).
 
 ```json
 {

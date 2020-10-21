@@ -80,6 +80,8 @@
       href: self-hosted-gateway-overview.md
     - name: Наблюдаемость
       href: observability.md
+    - name: Реализация CI/CD с помощью шаблонов ARM
+      href: devops-api-development-templates.md
 - name: Практические руководства
   items:
     - name: Определение интерфейсов API

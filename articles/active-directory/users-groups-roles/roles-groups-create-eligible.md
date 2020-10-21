@@ -13,16 +13,16 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 07dc11877b38e830d90f544f1d7524b378bf5902
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3f14960f98a4257b0c8f920915327661cd8b867c
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90053758"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92310391"
 ---
 # <a name="create-a-role-assignable-group-in-azure-active-directory"></a>Создание назначаемой роли группы в Azure Active Directory
 
-Роль можно назначить только группе, которая была создана со свойством "Исассигнаблетороле", установленным в значение true, или созданным на портале Azure AD с **ролями Azure AD, которые могут быть назначены для** включения в группу. Этот атрибут группы делает группу, которая может быть назначена роли в Azure Active Directory (Azure AD). В этой статье описывается, как создать этот особый тип группы. **Примечание.** Группа со свойством Исассигнаблетороле, имеющим значение true, не может иметь динамический тип членства. Дополнительные сведения см. в разделе [Использование группы для управления назначениями ролей Azure AD](https://docs.microsoft.com/azure/active-directory/users-groups-roles/roles-groups-concept).
+Роль можно назначить только группе, которая была создана со свойством "Исассигнаблетороле", установленным в значение true, или созданным на портале Azure AD с **ролями Azure AD, которые могут быть назначены для** включения в группу. Этот атрибут группы делает группу, которая может быть назначена роли в Azure Active Directory (Azure AD). В этой статье описывается, как создать этот особый тип группы. **Примечание.** Группа со свойством Исассигнаблетороле, имеющим значение true, не может иметь динамический тип членства. Дополнительные сведения см. в разделе [Использование группы для управления назначениями ролей Azure AD](./roles-groups-concept.md).
 
 ## <a name="using-azure-ad-admin-center"></a>Использование центра администрирования Azure AD
 
@@ -46,7 +46,7 @@ ms.locfileid: "90053758"
 
 Группа создается с любыми ролями, которые могли быть назначены ей.
 
-## <a name="using-powershell"></a>Использование PowerShell
+## <a name="using-powershell"></a>Регистрация с помощью PowerShell
 
 ### <a name="install-the-azure-ad-preview-module"></a>Установка модуля предварительной версии Azure AD
 
@@ -124,7 +124,7 @@ POST https://graph.microsoft.com/beta/groups
 
 Для группы этого типа всегда будет `isPublic` иметь значение false и `isSecurityEnabled` всегда будет иметь значение true.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Назначение роли для облачной группы](roles-groups-assign-role.md)
 - [Использование облачных групп для управления назначениями ролей](roles-groups-concept.md)

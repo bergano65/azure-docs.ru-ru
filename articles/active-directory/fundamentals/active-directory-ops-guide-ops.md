@@ -11,12 +11,12 @@ ms.workload: identity
 ms.subservice: fundamentals
 ms.date: 10/31/2019
 ms.author: martinco
-ms.openlocfilehash: 921a56dca8f1cda67e6f32458914fef4ac2d324c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 74ebd25cb48276f76cdf379eaa596f4ec1f3a2b9
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90601318"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92312608"
 ---
 # <a name="azure-active-directory-general-operations-guide-reference"></a>Справочник по общим операциям Azure Active Directory
 
@@ -91,7 +91,7 @@ ms.locfileid: "90601318"
 #### <a name="on-premises-agents-logs-recommended-reading"></a>Рекомендуемые для чтения журналы локальных агентов
 
 - [Устранение неполадок прокси-сервера приложений](../manage-apps/application-proxy-troubleshoot.md)
-- [Azure Active Directory: устранение неполадок с самостоятельным сбросом пароля](../authentication/active-directory-passwords-troubleshoot.md#password-writeback-event-log-error-codes)
+- [Azure Active Directory: устранение неполадок с самостоятельным сбросом пароля](../authentication/troubleshoot-sspr.md)
 - [Сведения о соединителях прокси приложения Azure AD](../manage-apps/application-proxy-connectors.md)
 - [Azure AD Connect: Устранение неполадок сквозной проверки подлинности](../hybrid/tshoot-connect-pass-through-authentication.md#collecting-pass-through-authentication-agent-logs)
 - [Устранение ошибок для расширения NPS Azure MFA](../authentication/howto-mfa-nps-extension-errors.md)
@@ -172,7 +172,7 @@ Azure AD использует два адреса "от": <o365mc@email2.microso
 
 Блокировка доступа к локальным компонентам удостоверений, таким как Azure AD Connect, AD FS и службы SQL, так же, как и для контроллеров домена.
 
-## <a name="summary"></a>Итоги
+## <a name="summary"></a>Сводка
 
 Существует семь аспектов безопасной инфраструктуры идентификации. Этот список поможет найти действия, которые необходимо предпринять, чтобы оптимизировать операции для Azure Active Directory (Azure AD).
 
@@ -184,6 +184,6 @@ Azure AD использует два адреса "от": <o365mc@email2.microso
 - Блокировка AD FS.
 - Блокировка доступа к компьютерам с помощью локальных компонентов удостоверений.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о реализации всех возможностей, которые вы не развернули, см. в статье [планы развертывания Azure AD](active-directory-deployment-plans.md) .

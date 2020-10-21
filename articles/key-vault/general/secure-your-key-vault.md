@@ -9,12 +9,12 @@ ms.subservice: general
 ms.topic: conceptual
 ms.date: 10/07/2020
 ms.author: sudbalas
-ms.openlocfilehash: efbed9ec44bd386a4540c397ca8958fb3ccea807
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: b04bd6975a2ba8824124c769e66da1e4ebe7534a
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92019891"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92309938"
 ---
 # <a name="secure-access-to-a-key-vault"></a>Безопасный доступ к хранилищу ключей
 
@@ -130,7 +130,7 @@ Azure Key Vault — это облачная служба, которая обе
 
 ## <a name="private-endpoint-connection"></a>Подключение к частной конечной точке
 
-В случае необходимости полностью блокировать Key Vault открытости можно использовать закрытую конечную точку Azure. Частная конечная точка Azure — это сетевой интерфейс, который защищенно и надежно подключается к службе через Приватный канал Azure. Частная конечная точка использует частный IP-адрес из виртуальной сети, по сути перемещая службу в виртуальную сеть. Весь трафик к службе может маршрутизироваться через частную конечную точку, поэтому шлюзы, устройства преобразования сетевых адресов (NAT), подключения ExpressRoute и VPN, а также общедоступные IP-адреса не требуются. Трафик между виртуальной сетью и службой проходит через магистральную сеть Майкрософт, что позволяет избежать рисков общедоступного Интернета. Вы можете подключиться к экземпляру ресурса Azure, обеспечивая наивысшую степень детализации в управлении доступом.
+В случае необходимости полностью блокировать Key Vault открытости можно использовать [закрытую конечную точку Azure](https://docs.microsoft.com/azure/private-link/private-endpoint-overview) . Частная конечная точка Azure — это сетевой интерфейс, который защищенно и надежно подключается к службе через Приватный канал Azure. Частная конечная точка использует частный IP-адрес из виртуальной сети, по сути перемещая службу в виртуальную сеть. Весь трафик к службе может маршрутизироваться через частную конечную точку, поэтому шлюзы, устройства преобразования сетевых адресов (NAT), подключения ExpressRoute и VPN, а также общедоступные IP-адреса не требуются. Трафик между виртуальной сетью и службой проходит через магистральную сеть Майкрософт, что позволяет избежать рисков общедоступного Интернета. Вы можете подключиться к экземпляру ресурса Azure, обеспечивая наивысшую степень детализации в управлении доступом.
 
 Распространенные сценарии использования закрытой ссылки для служб Azure:
 
@@ -187,7 +187,7 @@ Azure Key Vault — это облачная служба, которая обе
 | Группа безопасности | [Участник Key Vault](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#key-vault-contributor) | Сертификаты: все операции <br> Ключи: все операции <br> Секреты: все операции | [Администратор Key Vault (Предварительная версия)](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#key-vault-administrator-preview) |
 | Разработчики и&nbsp;операторы | Разрешение на развертывание Key Vault<br><br> **Примечание.** Это разрешение позволяет развернутым виртуальным машинам получать секреты из хранилища ключей. | None | None |
 | Аудиторы | None | Сертификаты: список <br> Ключи: перечисление<br>Секреты: перечисление<br><br> **Примечание.** Это разрешение позволяет аудиторам проверять атрибуты (теги, даты активации, даты истечения срока действия) ключей и секретов, которые не отправляются в журналы. | [Читатель Key Vault (Предварительная версия)]https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#key-vault-reader-preview |
-| Учетная запись хранения Azure | Нет | Ключи: Get, List, wrapKey, unwrapKey <br> | [Key Vault шифрование службы шифрования](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#key-vault-crypto-service-encryption-preview) |
+| Учетная запись хранения Azure | None | Ключи: Get, List, wrapKey, unwrapKey <br> | [Key Vault шифрование службы шифрования](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#key-vault-crypto-service-encryption-preview) |
 | Приложение | None | Секреты: Get, List <br> Сертификаты: Get, List | [Читатель Key Vault (Предварительная версия)](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#key-vault-reader-preview), [Key Vault пользователя секрета (Предварительная версия)](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#key-vault-secrets-user-preview) |
 
 Трем ролям группы требуется доступ к другим ресурсам вместе с разрешениями Key Vault. Для развертывания виртуальных машин (или компонента "веб-приложения" службы приложений Azure) разработчикам и операторам требуется развернуть доступ. Аудиторам требуется доступ на чтение к учетной записи хранения, где хранятся журналы Key Vault.
@@ -199,11 +199,11 @@ Azure Key Vault — это облачная служба, которая обе
 
 ## <a name="resources"></a>Ресурсы
 
-[О Azure Key Vault](overview.md) 
- [Azure Active Directory](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-whatis) 
- [Управление привилегированными пользователями](../../active-directory/privileged-identity-management/pim-configure.md) 
- [Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/overview) 
- [Частная ссылка](https://docs.microsoft.com/azure/private-link/private-link-overview)
+- [Об Azure Key Vault](overview.md)
+- [Azure Active Directory](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-whatis)
+- [Управление привилегированными пользователями](../../active-directory/privileged-identity-management/pim-configure.md)
+- [Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/overview)
+- [Приватный канал](https://docs.microsoft.com/azure/private-link/private-link-overview)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
