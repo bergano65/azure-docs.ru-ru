@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: quickstart
 ms.date: 10/08/2020
 ms.author: memildin
-ms.openlocfilehash: e5c9540bed34de3cad5c74c7041c8d7e06aef9ca
-ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
+ms.openlocfilehash: 68df6d6707ebe4f1a4b75a8005e746e2c1eba864
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91946065"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92341589"
 ---
 # <a name="data-collection-in-azure-security-center"></a>Сбор данных в центре безопасности Azure
 Центр безопасности собирает данные c ваших виртуальных машин Azure, масштабируемых наборов виртуальных машин, контейнеров IaaS и компьютеров, не относящихся к Azure (в том числе локальных), чтобы отслеживать уязвимости и угрозы безопасности. Для сбора данных используется агент Log Analytics, который считывает различные конфигурации, связанные с безопасностью, и журналы событий с компьютера, а также копирует данные в рабочую область для анализа. К примерам таких данных относятся тип и версия операционной системы, журналы операционной системы (журналы событий Windows), выполняющиеся процессы, имя компьютера, IP-адреса и имя вошедшего пользователя.
@@ -133,7 +133,7 @@ ms.locfileid: "91946065"
 
 
 ## <a name="cross-subscription-workspace-selection"></a>Выбор рабочих областей между подписками
-При выборе рабочей области для хранения данных доступны все рабочие области во всех ваших подписках. Выбор рабочих областей между подписками позволяет собирать данные из виртуальных машин, работающих в разных подписках, и сохранять их в выбранной рабочей области. Это полезно, если в организации используется централизованная рабочая область, которую требуется использовать для сбора данных о безопасности. Дополнительные сведения о том, как управлять рабочими областями, см. в статье [Управление рабочими областями](https://docs.microsoft.com/azure/log-analytics/log-analytics-manage-access).
+При выборе рабочей области для хранения данных доступны все рабочие области во всех ваших подписках. Выбор рабочих областей между подписками позволяет собирать данные из виртуальных машин, работающих в разных подписках, и сохранять их в выбранной рабочей области. Это полезно, если в организации используется централизованная рабочая область, которую требуется использовать для сбора данных о безопасности. Дополнительные сведения о том, как управлять рабочими областями, см. в статье [Управление рабочими областями](../azure-monitor/platform/manage-access.md).
 
 
 
@@ -174,9 +174,9 @@ ms.locfileid: "91946065"
 | | 6273,6278,6416,6423,6424,8001,8002,8003,8004,8005,8006,8007,8222,26401,30004 |
 
 > [!NOTE]
-> - При использовании объекта групповой политики (GPO) мы рекомендуем включить событие создания процессов 4688 политик аудита и поле *CommandLine* в этом событии. Дополнительные сведения о событии создания процессов 4688 см. в разделе [часто задаваемых вопросов](faq-data-collection-agents.md#what-happens-when-data-collection-is-enabled) центра безопасности. Дополнительные сведения об этих политиках аудита см. в разделе [Audit Policy Recommendations](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/audit-policy-recommendations) (Рекомендации по политике аудита).
+> - При использовании объекта групповой политики (GPO) мы рекомендуем включить событие создания процессов 4688 политик аудита и поле *CommandLine* в этом событии. Дополнительные сведения о событии создания процессов 4688 см. в разделе [часто задаваемых вопросов](faq-data-collection-agents.md#what-happens-when-data-collection-is-enabled) центра безопасности. Дополнительные сведения об этих политиках аудита см. в разделе [Audit Policy Recommendations](/windows-server/identity/ad-ds/plan/security-best-practices/audit-policy-recommendations) (Рекомендации по политике аудита).
 > -  Чтобы включить сбор данных для [адаптивных элементов управления приложениями](security-center-adaptive-application.md), центр безопасности настраивает локальную политику AppLocker в режиме аудита, что позволяет разрешить все приложения. В результате AppLocker будет генерировать события, которые затем собираются и используются центром безопасности. Важно отметить, что эта политика не настраивается на компьютерах, где уже настроена политика AppLocker. 
-> - Чтобы собирать данные о [событиях с кодом 5156](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventID=5156) на платформе фильтрации Windows, необходимо включить [Аудит подключения платформы фильтрации](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-filtering-platform-connection) (Auditpol /set /subcategory:"Filtering Platform Connection" /Success:Enable)
+> - Чтобы собирать данные о [событиях с кодом 5156](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventID=5156) на платформе фильтрации Windows, необходимо включить [Аудит подключения платформы фильтрации](/windows/security/threat-protection/auditing/audit-filtering-platform-connection) (Auditpol /set /subcategory:"Filtering Platform Connection" /Success:Enable)
 >
 
 Чтобы выбрать политику фильтрации, сделайте следующее:
@@ -204,7 +204,7 @@ ms.locfileid: "91946065"
 
 - Расширение виртуальной машины уже установлено<br>
     - Если агент мониторинга установлен в качестве расширения, конфигурация расширения позволяет создавать отчеты только для одной рабочей области. Центр безопасности не переопределяет установленные подключения к рабочим областям пользователя. Центр безопасности будет хранить данные безопасности с виртуальной машины в уже подключенной рабочей области при условии, что в ней установлено решение "security" или "securityFree". В рамках этого процесса Центр безопасности может обновлять расширение до последней версии.  
-    - Чтобы узнать, в какую рабочую область отправляет данные имеющееся расширение, выполните тест для [проверки соединения с центром безопасности Azure](https://blogs.technet.microsoft.com/yuridiogenes/2017/10/13/validating-connectivity-with-azure-security-center/). Вы также можете открыть рабочие области Log Analytics, выбрать рабочую область и виртуальную машину, а затем проверить подключение агента Log Analytics. 
+    - Чтобы узнать, в какую рабочую область отправляет данные имеющееся расширение, выполните тест для [проверки соединения с центром безопасности Azure](/archive/blogs/yuridiogenes/validating-connectivity-with-azure-security-center). Вы также можете открыть рабочие области Log Analytics, выбрать рабочую область и виртуальную машину, а затем проверить подключение агента Log Analytics. 
     - Если в вашей среде на клиентских рабочих станциях установлен агент Log Analytics, отправляющий отчеты в имеющуюся рабочую область Log Analytics, просмотрите список [операционных систем, поддерживаемых Центром безопасности Azure](security-center-os-coverage.md), чтобы убедиться, что ваша операционная система поддерживается. Дополнительные сведения см. в статье [Существующие клиенты Log Analytics](./faq-azure-monitor-logs.md).
  
 ### <a name="turn-off-automatic-provisioning"></a>Отключение автоматической подготовки <a name="offprovisioning"></a>
@@ -265,8 +265,8 @@ ms.locfileid: "91946065"
 
 1. Чтобы развернуть расширение с помощью PowerShell, следуйте инструкциям из документации по виртуальным машинам:
 
-    - [Для компьютеров Windows](https://docs.microsoft.com/azure/virtual-machines/extensions/oms-windows?toc=%2Fazure%2Fazure-monitor%2Ftoc.json#powershell-deployment)
-    - [Для компьютеров Linux](https://docs.microsoft.com/azure/virtual-machines/extensions/oms-linux?toc=%2Fazure%2Fazure-monitor%2Ftoc.json#azure-cli-deployment)
+    - [Для компьютеров Windows](../virtual-machines/extensions/oms-windows.md?toc=%252fazure%252fazure-monitor%252ftoc.json#powershell-deployment)
+    - [Для компьютеров Linux](../virtual-machines/extensions/oms-linux.md?toc=%252fazure%252fazure-monitor%252ftoc.json#azure-cli-deployment)
 
 
 

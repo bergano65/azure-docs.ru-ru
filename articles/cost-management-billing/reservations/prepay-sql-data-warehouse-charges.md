@@ -8,12 +8,12 @@ ms.subservice: reservations
 ms.topic: how-to
 ms.date: 07/24/2020
 ms.author: banders
-ms.openlocfilehash: ca83760f09ea29ba0b21a0f7177dd3f3188c44cd
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: b82f4252754e79813629e0c792ee0ba35e437714
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88686145"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92151520"
 ---
 # <a name="save-costs-for-azure-synapse-analytics-charges-with-reserved-capacity"></a>Экономия средств при использовании Azure Synapse Analytics благодаря зарезервированной емкости
 
@@ -27,7 +27,7 @@ ms.locfileid: "88686145"
 
 Информацию о ценах см. в разделе о [вариантах зарезервированной емкости Azure Synapse Analytics](https://azure.microsoft.com/pricing/details/synapse-analytics/).
 
-Вы можете приобрести зарезервированную емкость Azure Synapse Analytics на [портале Azure](https://portal.azure.com/#blade/Microsoft_Azure_Reservations/ReservationsBrowseBlade). Платите за резервирование [наперед или ежемесячными платежами](monthly-payments-reservations.md). Требования для приобретения резервной мощности.
+Вы можете приобрести зарезервированную емкость Azure Synapse Analytics на [портале Azure](https://portal.azure.com/#blade/Microsoft_Azure_Reservations/ReservationsBrowseBlade). Платите за резервирование [наперед или ежемесячными платежами](./prepare-buy-reservation.md). Требования для приобретения резервной мощности.
 
 - Необходимо иметь роль "Владелец" по крайней мере для одной подписки с соглашением Enterprise или подписки с оплатой по мере использования.
 - Для подписок с Соглашением Enterprise параметр **Добавить зарезервированные экземпляры** следует включить на [портале EA](https://ea.azure.com/). Если этот параметр отключен, необходимо быть администратором EA.

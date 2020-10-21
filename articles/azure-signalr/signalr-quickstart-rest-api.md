@@ -6,12 +6,12 @@ ms.service: signalr
 ms.topic: quickstart
 ms.date: 11/13/2019
 ms.author: zhshang
-ms.openlocfilehash: 13e11bb6064888ac36a2d2801fee3db1e9e9fcba
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 85cda8458dca4ce24fed9433af1527f49a2393ad
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89050511"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92150981"
 ---
 # <a name="quickstart-broadcast-real-time-messages-from-console-app"></a>Краткое руководство. Широковещательные сообщения в режиме реального времени из консольного приложения
 
@@ -64,7 +64,7 @@ ms.locfileid: "89050511"
 
 ### <a name="build-the-executable-file"></a>Сборка исполняемого файла
 
-В качестве примера мы используем macOS osx.10.13-x64. Можно найти [рекомендации](https://docs.microsoft.com/dotnet/core/rid-catalog) по сборке на других платформах.
+В качестве примера мы используем macOS osx.10.13-x64. Можно найти [рекомендации](/dotnet/core/rid-catalog) по сборке на других платформах.
 
 ```bash
 cd AzureSignalR-samples/samples/Serverless/

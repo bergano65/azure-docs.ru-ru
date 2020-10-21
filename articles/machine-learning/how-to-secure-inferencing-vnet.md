@@ -11,12 +11,12 @@ ms.author: peterlu
 author: peterclu
 ms.date: 10/12/2020
 ms.custom: contperfq4, tracking-python, contperfq1
-ms.openlocfilehash: 806505e5ac9c9b3dcf53624a1151961b0db45ef9
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: e778538efe97266eb73f85e8548a9cd5ca1f53c4
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91972515"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92341317"
 ---
 # <a name="secure-an-azure-machine-learning-inferencing-environment-with-virtual-networks"></a>Обеспечение безопасности Машинное обучение Azure окружения с помощью виртуальных сетей
 
@@ -36,7 +36,7 @@ ms.locfileid: "91972515"
 > - Экземпляры контейнеров Azure (ACI)
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 + Ознакомьтесь со статьей [Обзор сетевой безопасности](how-to-network-security-overview.md) , чтобы ознакомиться с общими сценариями виртуальной сети и общей архитектурой виртуальной сети.
 
@@ -119,11 +119,11 @@ aks_target = ComputeTarget.create(workspace=ws,
 
 Существует два подхода к изоляции трафика от кластера AKS к виртуальной сети.
 
-* __Частный кластер AKS__. Этот подход использует частную связь Azure для создания частной конечной точки для кластера AKS в виртуальной сети.
-* __Внутренняя подсистема балансировки нагрузки AKS__. Этот подход настраивает балансировщик нагрузки для кластера на использование внутреннего IP-адреса в виртуальной сети.
+* __Частный кластер AKS__. Этот подход использует частную связь Azure для защиты обмена данными с кластером для операций развертывания и управления.
+* __Внутренняя подсистема балансировки нагрузки AKS__. Этот подход настраивает конечную точку для развертываний в AKS для использования частного IP-адреса в виртуальной сети.
 
 > [!WARNING]
-> Обе конфигурации — это разные способы достижения одной цели (защита трафика в кластере AKS в виртуальной сети). **Используйте один или другой, но не оба**.
+> **Используйте либо частный AKS, либо внутренний балансировщик нагрузки, но не оба**.
 
 ### <a name="private-aks-cluster"></a>Частный кластер AKS
 
@@ -261,7 +261,7 @@ aks_target.wait_for_completion(show_output = True)
 2. Разверните модель с помощью [AciWebservice.deploy_configuration()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.aci.aciwebservice?view=azure-ml-py&preserve-view=true#deploy-configuration-cpu-cores-none--memory-gb-none--tags-none--properties-none--description-none--location-none--auth-enabled-none--ssl-enabled-none--enable-app-insights-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--ssl-cname-none--dns-name-label-none--primary-key-none--secondary-key-none--collect-model-data-none--cmk-vault-base-url-none--cmk-key-name-none--cmk-key-version-none--vnet-name-none--subnet-name-none-&preserve-view=true), используйте параметры `vnet_name` и `subnet_name`. Задайте для этих параметров имя виртуальной сети и подсеть, в которой включено делегирование.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Эта статья является третьей частью серии виртуальных сетей из четырех частей. Ознакомьтесь с остальными статьями, чтобы узнать, как защитить виртуальную сеть.
 

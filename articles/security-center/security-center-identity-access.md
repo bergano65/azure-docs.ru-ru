@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/08/2020
 ms.author: memildin
-ms.openlocfilehash: 02e78969ce30f109f16309075b040b06c773b0dd
-ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
+ms.openlocfilehash: 88ab04eb69be0f9f765e6f95a0ea1194189d823a
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91946232"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92341268"
 ---
 # <a name="monitor-identity-and-access"></a>Мониторинг идентификации и доступа
 
@@ -30,7 +30,7 @@ ms.locfileid: "91946232"
 
 Центр безопасности Azure имеет два выделенных средства управления безопасностью для обеспечения соответствия требованиям к удостоверениям и безопасности вашей организации. 
 
- - **Управление доступом и разрешениями** . Мы рекомендуем использовать [модель с минимальными правами доступа](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/implementing-least-privilege-administrative-models) и предоставить пользователям доступ только для тех задач, которые необходимы для их работы. Этот элемент управления также включает рекомендации по реализации [управления доступом на основе ролей (RBAC)](../role-based-access-control/overview.md) для управления доступом к ресурсам.
+ - **Управление доступом и разрешениями** . Мы рекомендуем использовать [модель с минимальными правами доступа](/windows-server/identity/ad-ds/plan/security-best-practices/implementing-least-privilege-administrative-models) и предоставить пользователям доступ только для тех задач, которые необходимы для их работы. Этот элемент управления также включает рекомендации по реализации [управления доступом на основе ролей (RBAC)](../role-based-access-control/overview.md) для управления доступом к ресурсам.
  
  - **Включение MFA** . при включенном [MFA](https://www.microsoft.com/security/business/identity/mfa) ваши учетные записи более безопасны, и пользователи по-прежнему могут проходить проверку подлинности практически для любого приложения с помощью единого входа.
 
@@ -84,7 +84,7 @@ ms.locfileid: "91946232"
     > Учетные записи отображаются в виде идентификаторов объектов, а не имен учетных записей для защиты конфиденциальности владельцев учетных записей.
 
 > [!TIP]
-> Кроме того, вы можете использовать оценку метода REST API для центра безопасности [— получить](https://docs.microsoft.com/rest/api/securitycenter/assessments/get).
+> Кроме того, вы можете использовать оценку метода REST API для центра безопасности [— получить](/rest/api/securitycenter/assessments/get).
 
 
 ## <a name="next-steps"></a>Дальнейшие шаги

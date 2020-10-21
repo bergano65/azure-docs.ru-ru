@@ -9,12 +9,12 @@ ms.subservice: billing
 ms.topic: conceptual
 ms.date: 08/20/2020
 ms.author: banders
-ms.openlocfilehash: d113ad7d3de3478fbbdcce32363e048b7a8a75ce
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: 559fe43bbd9b8951a97733ae1250046f65f10404
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88681742"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92149360"
 ---
 # <a name="understand-the-terms-in-your-azure-usage-and-charges-file"></a>Общие сведения об условиях в файле сведений об использовании и расходах Azure
 
@@ -90,8 +90,8 @@ PublisherType | All | Тип издателя (значения: **Azure**, **AW
 Количество | All | Количество приобретенных или израсходованных единиц.
 Идентификатор резервирования | EA, MCA | Уникальный идентификатор для приобретенного экземпляра резервирования.
 ReservationName | EA, MCA | Имя приобретенного экземпляра резервирования.
-ResourceGroup | All | Имя [группы ресурсов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview), в которой находится ресурс. Не все расходы связаны с ресурсами, развернутыми в группах ресурсов. Расходы, для которых нет группы ресурсов, будут отображаться со значением NULL, "Пусто", **Другие** или **Неприменимо**.
-ResourceId<sup>1</sup> | All | Уникальный идентификатор ресурса [Azure Resource Manager](https://docs.microsoft.com/rest/api/resources/resources).
+ResourceGroup | All | Имя [группы ресурсов](../../azure-resource-manager/management/overview.md), в которой находится ресурс. Не все расходы связаны с ресурсами, развернутыми в группах ресурсов. Расходы, для которых нет группы ресурсов, будут отображаться со значением NULL, "Пусто", **Другие** или **Неприменимо**.
+ResourceId<sup>1</sup> | All | Уникальный идентификатор ресурса [Azure Resource Manager](/rest/api/resources/resources).
 ResourceLocation | All | Расположение центра обработки данных, где выполняется ресурс. См. Location.
 ResourceName | EA, PAYG | Имя ресурса. Не все расходы связаны с развернутыми ресурсами. Расходы, для которых не указан тип ресурса, будут отображаться со значением NULL, "Пусто", **Другие** или **Неприменимо**.
 ResourceType | MCA | Тип экземпляра ресурса. Не все расходы связаны с развернутыми ресурсами. Расходы, для которых не указан тип ресурса, будут отображаться со значением NULL, "Пусто", **Другие** или **Неприменимо**.

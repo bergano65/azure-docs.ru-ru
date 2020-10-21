@@ -9,12 +9,12 @@ ms.subservice: billing
 ms.topic: troubleshooting
 ms.date: 10/09/2020
 ms.author: banders
-ms.openlocfilehash: 2ca4affaeae7f19cf3c913b5dfcf89a04e5bc628
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: 32c0779f4086574aeaf8d38ea675f80fbd2c1ec7
+ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92026802"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92132233"
 ---
 # <a name="troubleshoot-mca-billing-issues-with-usage-file-pivot-tables"></a>Устранение неполадок с выставлением счетов MCA с помощью сводных таблиц файлов использования
 
@@ -27,13 +27,13 @@ ms.locfileid: "92026802"
 
 Используя сведения из файлов использования, можно получить более полное представление о проблемах использования и диагностировать их. Файлы использования создаются в формате (CSV) с разделителями-запятыми. Так как файлы использования могут быть большими CSV-файлами, их легче обрабатывать и просматривать как сводные таблицы в приложениях электронных таблиц, таких как Excel. В примерах, приведенных в этой статье, используется Excel, но можно использовать любое приложение для работы с электронными таблицами.
 
-Только владельцы профилей выставления счетов, участники, читатели или менеджеры счетов имеют доступ для скачивания файлов использования. Дополнительные сведения см. в разделе о [скачивании сведений об использовании для Клиентского соглашения Майкрософт](https://docs.microsoft.com/azure/cost-management-billing/manage/download-azure-invoice-daily-usage-date#download-usage-for-your-microsoft-customer-agreement). 
+Только владельцы профилей выставления счетов, участники, читатели или менеджеры счетов имеют доступ для скачивания файлов использования. Дополнительные сведения см. в разделе о [скачивании сведений об использовании для Клиентского соглашения Майкрософт](./download-azure-invoice-daily-usage-date.md#download-usage-for-your-microsoft-customer-agreement). 
 
 ## <a name="get-the-data-and-format-it"></a>Получение данных и их форматирование
 
 Так как файлы использования Azure имеют формат CSV, необходимо подготовить данные для использования в Excel. Чтобы представить эти данные в виде таблицы, выполните следующие действия.
 
-1. Скачайте файл использования, следуя инструкциям, приведенным в разделе [скачивания сведений об использовании на портале Azure](https://docs.microsoft.com/azure/cost-management-billing/manage/download-azure-invoice-daily-usage-date#download-usage-in-azure-portal).
+1. Скачайте файл использования, следуя инструкциям, приведенным в разделе [скачивания сведений об использовании на портале Azure](./download-azure-invoice-daily-usage-date.md#download-usage-in-azure-portal).
 1. Откройте файл в Excel.
 1. Неформатированные данные соответствуют приведенным в следующем примере.  
     :::image type="content" source="./media/troubleshoot-customer-agreement-billing-issues-usage-file-pivot-tables/raw-csv-data-mca.png" alt-text="Пример неформатированных данных" lightbox="./media/troubleshoot-customer-agreement-billing-issues-usage-file-pivot-tables/raw-csv-data-mca.png" :::

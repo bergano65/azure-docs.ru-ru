@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/19/2020
 ms.author: memildin
-ms.openlocfilehash: 264cab08fa967af783b758ed1030826d2a179e8a
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: 082f246437cdd99b844d1ed8010d8dc846fc4d47
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92220675"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92341946"
 ---
 # <a name="security-alerts-schemas"></a>Схемы оповещений системы безопасности
 
@@ -24,9 +24,9 @@ ms.locfileid: "92220675"
 
 Эти оповещения безопасности можно просмотреть на страницах **защиты от угроз** в центре безопасности Azure или с помощью внешних средств, таких как:
 
-- [Sentinel Azure](https://docs.microsoft.com/azure/sentinel/) — собственная облачная SIEM Майкрософт. Соединитель Sentinel получает оповещения из центра безопасности Azure и отправляет их в [рабочую область log Analytics](https://docs.microsoft.com/azure/azure-monitor/learn/quick-create-workspace) для Azure Sentinel.
-- Сторонние решения Siem — использование средств [непрерывного экспорта](continuous-export.md) центра безопасности для отправки данных в [концентраторы событий Azure](https://docs.microsoft.com/azure/event-hubs/). Затем интегрируйте данные концентратора событий со сторонними SIEM.
-- [REST API](https://docs.microsoft.com/rest/api/securitycenter/) . Если вы используете REST API для доступа к оповещениям, см. [документацию по API интерактивных оповещений](https://docs.microsoft.com/rest/api/securitycenter/alerts).
+- [Sentinel Azure](../sentinel/index.yml) — собственная облачная SIEM Майкрософт. Соединитель Sentinel получает оповещения из центра безопасности Azure и отправляет их в [рабочую область log Analytics](../azure-monitor/learn/quick-create-workspace.md) для Azure Sentinel.
+- Сторонние решения Siem — использование средств [непрерывного экспорта](continuous-export.md) центра безопасности для отправки данных в [концентраторы событий Azure](../event-hubs/index.yml). Затем интегрируйте данные концентратора событий со сторонними SIEM.
+- [REST API](/rest/api/securitycenter/) . Если вы используете REST API для доступа к оповещениям, см. [документацию по API интерактивных оповещений](/rest/api/securitycenter/alerts).
 
 Если вы используете любые программные методы для использования оповещений, вам потребуется правильная схема, чтобы найти поля, имеющие отношение к вам. Кроме того, если вы экспортируете в концентратор событий или пытаетесь активировать автоматизацию рабочих процессов с универсальными соединителями HTTP, используйте схемы для правильного анализа объектов JSON.
 
@@ -60,7 +60,7 @@ ms.locfileid: "92220675"
 
 Чтобы создать случай или инцидент с помощью оповещений центра безопасности, вам потребуется схема для этих оповещений, показанных ниже. 
 
-Дополнительные сведения об Azure Sentinel см. [в документации](https://docs.microsoft.com/azure/sentinel/).
+Дополнительные сведения об Azure Sentinel см. [в документации](../sentinel/index.yml).
 
 [!INCLUDE [Sentinel and workspace schema](../../includes/security-center-alerts-schema-log-analytics-workspace.md)]
 
@@ -172,18 +172,18 @@ ms.locfileid: "92220675"
 
 Microsoft Graph — это шлюз для данных и аналитики в Microsoft 365. Она предоставляет унифицированную модель программирования, которую можно использовать для доступа к огромному объему данных в Microsoft 365, Windows 10 и Enterprise Mobility + Security. Используйте множество данных в Microsoft Graph для создания приложений для организаций и потребителей, взаимодействующих с миллионами пользователей.
 
-Схема и представление JSON для оповещений системы безопасности, отправляемых в MS Graph, доступны в [документации по Microsoft Graph](https://docs.microsoft.com/graph/api/resources/alert?view=graph-rest-1.0&preserve-view=true).
+Схема и представление JSON для оповещений системы безопасности, отправляемых в MS Graph, доступны в [документации по Microsoft Graph](/graph/api/resources/alert?preserve-view=true&view=graph-rest-1.0).
 
 ---
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье описаны схемы, используемые средствами защиты от угроз центра безопасности Azure при отправке сведений об оповещениях системы безопасности.
 
 Дополнительные сведения о способах доступа к оповещениям системы безопасности извне центра безопасности см. на следующих страницах:
 
-- [Sentinel Azure](https://docs.microsoft.com/azure/sentinel/) — это облачная служба Microsoft Native SIEM
-- [Концентраторы событий Azure](https://docs.microsoft.com/azure/event-hubs/) — полностью управляемая служба приема данных в режиме реального времени (Майкрософт)
+- [Sentinel Azure](../sentinel/index.yml) — это облачная служба Microsoft Native SIEM
+- [Концентраторы событий Azure](../event-hubs/index.yml) — полностью управляемая служба приема данных в режиме реального времени (Майкрософт)
 - [Функция непрерывного экспорта](continuous-export.md) в центре безопасности
-- [Log Analytics рабочие области](https://docs.microsoft.com/azure/azure-monitor/learn/quick-create-workspace) — Azure Monitor хранят данные журнала в log Analytics рабочей области, контейнере, который содержит данные и сведения о конфигурации.
+- [Log Analytics рабочие области](../azure-monitor/learn/quick-create-workspace.md) — Azure Monitor хранят данные журнала в log Analytics рабочей области, контейнере, который содержит данные и сведения о конфигурации.

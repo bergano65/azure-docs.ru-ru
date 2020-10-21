@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: cost-management-billing
 ms.subservice: enterprise
 ms.reviewer: boalcsva
-ms.openlocfilehash: c277da54e56fcd0ce68444d499b17e84f706ad03
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.openlocfilehash: c4c99142c64278514066efa8925ed8e3f6617235
+ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89442502"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92132590"
 ---
 # <a name="azure-enterprise-rest-apis"></a>REST API Azure Enterprise
 
@@ -25,15 +25,15 @@ ms.locfileid: "89442502"
 
 ### <a name="available-apis"></a>Доступные API
 
-**Баланс и сводка**. [Интерфейс API для управления балансом и просмотра сводки](../../billing/billing-enterprise-api-balance-summary.md) отображает ежемесячную сводку о состоянии баланса, новых покупках, расходах на службу Azure Marketplace, корректировках и оплате за избыток. Дополнительные сведения см. в статье [Reporting APIs for Enterprise customers — Balance and Summary](/rest/api/billing/enterprise/billing-enterprise-api-balance-summary) (API-интерфейсы отчетов для корпоративных клиентов: баланс и сводка).
+**Баланс и сводка**. [Интерфейс API для управления балансом и просмотра сводки](/rest/api/billing/enterprise/billing-enterprise-api-balance-summary) отображает ежемесячную сводку о состоянии баланса, новых покупках, расходах на службу Azure Marketplace, корректировках и оплате за избыток. Дополнительные сведения см. в статье [Reporting APIs for Enterprise customers — Balance and Summary](/rest/api/billing/enterprise/billing-enterprise-api-balance-summary) (API-интерфейсы отчетов для корпоративных клиентов: баланс и сводка).
 
-**Сведения об использовании**. [Интерфейс API сведений об использовании](../../billing/billing-enterprise-api-usage-detail.md) предоставляет сводку об израсходованных объемах и предполагаемых расходах для каждой регистрации с разбивкой по дням. Результаты также содержат сведения об экземплярах, метриках и отделах. Вы можете запросить данные в API по периоду выставления счетов или по дате начала и окончания. Дополнительные сведения см. в статье [Reporting APIs for Enterprise customers — Usage Details](/rest/api/billing/enterprise/billing-enterprise-api-usage-detail) (API-интерфейсы отчетов для корпоративных клиентов: сведения об использовании).
+**Сведения об использовании**. [Интерфейс API сведений об использовании](/rest/api/billing/enterprise/billing-enterprise-api-usage-detail) предоставляет сводку об израсходованных объемах и предполагаемых расходах для каждой регистрации с разбивкой по дням. Результаты также содержат сведения об экземплярах, метриках и отделах. Вы можете запросить данные в API по периоду выставления счетов или по дате начала и окончания. Дополнительные сведения см. в статье [Reporting APIs for Enterprise customers — Usage Details](/rest/api/billing/enterprise/billing-enterprise-api-usage-detail) (API-интерфейсы отчетов для корпоративных клиентов: сведения об использовании).
 
-**Платежи в Marketplace**. [Интерфейс API платежей в Marketplace](../../billing/billing-enterprise-api-marketplace-storecharge.md) отображает сводку о расходах в Marketplace с разбивкой по дням. Данные основаны на фактическом использовании и отображаются для указанного периода выставления счетов или дат начала и окончания. Дополнительные сведения см. в статье [Reporting APIs for Enterprise customers — Marketplace Store Charge](/rest/api/billing/enterprise/billing-enterprise-api-marketplace-storecharge) (API-интерфейсы отчетов для корпоративных клиентов: платежи в Marketplace).
+**Платежи в Marketplace**. [Интерфейс API платежей в Marketplace](/rest/api/billing/enterprise/billing-enterprise-api-marketplace-storecharge) отображает сводку о расходах в Marketplace с разбивкой по дням. Данные основаны на фактическом использовании и отображаются для указанного периода выставления счетов или дат начала и окончания. Дополнительные сведения см. в статье [Reporting APIs for Enterprise customers — Marketplace Store Charge](/rest/api/billing/enterprise/billing-enterprise-api-marketplace-storecharge) (API-интерфейсы отчетов для корпоративных клиентов: платежи в Marketplace).
 
 **Прейскурант**. [API прейскурантов](/rest/api/billing/enterprise/billing-enterprise-api-pricesheet) предоставляет соответствующий тариф для каждой метрики в регистрации и за период выставления счетов. Дополнительные сведения см. в статье [Reporting APIs for Enterprise customers — Price Sheet](/rest/api/billing/enterprise/billing-enterprise-api-pricesheet) (API-интерфейсы отчетов для корпоративных клиентов: прейскурант).
 
-**Периоды выставления счетов**. [API периодов выставления счетов](../../billing/billing-enterprise-api-billing-periods.md) возвращает список периодов выставления счетов, которые содержат данные о потреблении для регистрации, приведенные в обратном хронологическом порядке. Каждый период содержит свойство, указывающее на маршрут API к четырем наборам данных: BalanceSummary, UsageDetails, MarketplaceCharges и PriceSheet. Дополнительные сведения см. в статье [Reporting APIs for Enterprise customers — Billing Periods](/rest/api/billing/enterprise/billing-enterprise-api-billing-periods) (Интерфейсы API отчетов для корпоративных клиентов: периоды выставления счетов).
+**Периоды выставления счетов**. [API периодов выставления счетов](/rest/api/billing/enterprise/billing-enterprise-api-billing-periods) возвращает список периодов выставления счетов, которые содержат данные о потреблении для регистрации, приведенные в обратном хронологическом порядке. Каждый период содержит свойство, указывающее на маршрут API к четырем наборам данных: BalanceSummary, UsageDetails, MarketplaceCharges и PriceSheet. Дополнительные сведения см. в статье [Reporting APIs for Enterprise customers — Billing Periods](/rest/api/billing/enterprise/billing-enterprise-api-billing-periods) (Интерфейсы API отчетов для корпоративных клиентов: периоды выставления счетов).
 
 ### <a name="enable-api-data-access"></a>Разрешение доступа к данным API
 

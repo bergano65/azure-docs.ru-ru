@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/25/2020
 ms.author: memildin
-ms.openlocfilehash: 0a368e54c940ff580b7e8f49dd108fafddde5b17
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 315183040515110a6a21afcd00e12d1b12313170
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91441487"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92341844"
 ---
 # <a name="faq---questions-about-data-collection-agents-and-workspaces"></a>Вопросы и ответы — сбор данных, агенты и рабочие области
 
@@ -43,7 +43,7 @@ ms.locfileid: "91441487"
 
 ## <a name="what-is-the-log-analytics-agent"></a>Что такое агент Log Analytics?
 
-Чтобы отслеживать уязвимости и угрозы безопасности, центр безопасности Azure зависит от [агента log Analytics](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent) — это тот же агент, который используется службой Azure Monitor. 
+Чтобы отслеживать уязвимости и угрозы безопасности, центр безопасности Azure зависит от [агента log Analytics](../azure-monitor/platform/log-analytics-agent.md) — это тот же агент, который используется службой Azure Monitor. 
 
 Агент иногда называют Microsoft Monitoring Agent (или "MMA"). 
 
@@ -66,7 +66,7 @@ ms.locfileid: "91441487"
 
 - Расширение агента Log Analytics в настоящее время не установлено на виртуальной машине.
 - Виртуальная машина находится в состоянии выполнения.
-- Установлен [агент виртуальной машины Azure](https://docs.microsoft.com/azure/virtual-machines/extensions/agent-windows) для Windows или Linux.
+- Установлен [агент виртуальной машины Azure](../virtual-machines/extensions/agent-windows.md) для Windows или Linux.
 - Виртуальная машина не используется в качестве устройства, такого как брандмауэр веб-приложения или брандмауэр следующего поколения.
 
 
@@ -88,7 +88,7 @@ ms.locfileid: "91441487"
 
 ## <a name="what-data-is-collected-by-the-log-analytics-agent"></a>Какие данные собираются агентом Log Analytics?
 
-Полный список приложений и служб, отслеживаемых агентом, см. в разделе [что отслеживается с помощью Azure Monitor?](https://docs.microsoft.com/azure/azure-monitor/monitor-reference#azure-services).
+Полный список приложений и служб, отслеживаемых агентом, см. в разделе [что отслеживается с помощью Azure Monitor?](../azure-monitor/monitor-reference.md#azure-services).
 
 > [!IMPORTANT]
 > Обратите внимание, что для некоторых служб, таких как брандмауэр Azure, если вы включили ведение журнала и выбрали в журнале неактивные ресурсы (например, задавая журналу *подробные*сведения), вы можете столкнуться с значительными последствиями для потребностей в хранилище log Analytics рабочей области. 
