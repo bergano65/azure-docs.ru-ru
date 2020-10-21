@@ -7,12 +7,12 @@ ms.topic: quickstart
 ms.date: 04/18/2020
 ms.author: lcozzens
 ms.custom: devx-track-java
-ms.openlocfilehash: 94f3fd9f9c66082beace47d675539e9f73c21e83
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.openlocfilehash: 9a804bd40635cd039a2c099f98351b2487c554d3
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91824204"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92075541"
 ---
 # <a name="quickstart-add-feature-flags-to-a-spring-boot-app"></a>Краткое руководство. Добавление флагов функций в приложение Spring Boot
 
@@ -23,7 +23,7 @@ ms.locfileid: "91824204"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
-* Поддерживаемый [пакет SDK для комплекта разработчика Java](https://docs.microsoft.com/java/azure/jdk) версии 8.
+* Поддерживаемый [пакет SDK для комплекта разработчика Java](/java/azure/jdk) версии 8.
 * [Apache Maven](https://maven.apache.org/download.cgi) версии 3.0 или более поздней.
 
 ## <a name="create-an-app-configuration-instance"></a>Создание экземпляра Конфигурации приложений
@@ -304,7 +304,7 @@ ms.locfileid: "91824204"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом кратком руководстве вы создали хранилище Конфигурации приложений и использовали его для управления функциями веб-приложения Spring Boot с помощью [библиотек управления функциями](https://go.microsoft.com/fwlink/?linkid=2074664).
+В этом кратком руководстве вы создали хранилище Конфигурации приложений и использовали его для управления функциями веб-приложения Spring Boot с помощью [библиотек управления функциями](/dotnet/api/Microsoft.Extensions.Configuration.AzureAppConfiguration).
 
 * Узнайте больше об [управлении функциями](./concept-feature-management.md).
 * [Управляйте флагами функций](./manage-feature-flags.md).

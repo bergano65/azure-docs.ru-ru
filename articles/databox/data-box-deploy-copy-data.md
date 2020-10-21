@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 09/29/2019
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: 4dbae9d08a4adf250c9317b392d80f8e04c53d56
-ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
+ms.openlocfilehash: 9427ec4530ac249d5b8059d04fc85f1183c0081c
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91951015"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92123897"
 ---
 ::: zone target="docs"
 
@@ -105,7 +105,7 @@ ms.locfileid: "91951015"
 
     **Всегда создавайте отдельную папку для файлов, которые вы собираетесь скопировать в общую папку**. Папка, созданная в общих папках блочных и страничных BLOB-объектов, представляет собой контейнер, куда передаются данные в виде больших двоичных объектов. Вы не можете копировать файлы напрямую в *корневую* папку в учетной записи хранения.
     
-Если вы используете клиент Linux, вставьте общий ресурс SMB с помощью следующей команды. Параметр "vers" указывает версию SMB, которую поддерживает ваш узел Linux. Вставьте необходимую версию в указанную ниже команду. Версии SMB, которые поддерживает Data Box, см. в разделе [Поддерживаемые файловые системы для клиентов Linux](https://docs.microsoft.com/azure/databox/data-box-system-requirements#supported-file-systems-for-linux-clients) 
+Если вы используете клиент Linux, вставьте общий ресурс SMB с помощью следующей команды. Параметр "vers" указывает версию SMB, которую поддерживает ваш узел Linux. Вставьте необходимую версию в указанную ниже команду. Версии SMB, которые поддерживает Data Box, см. в разделе [Поддерживаемые файловые системы для клиентов Linux](./data-box-system-requirements.md#supported-file-transfer-protocols-for-clients) 
 
 ```console
 sudo mount -t nfs -o vers=2.1 10.126.76.138:/utSAC1_202006051000_BlockBlob /home/databoxubuntuhost/databox
@@ -131,7 +131,7 @@ sudo mount -t nfs -o vers=2.1 10.126.76.138:/utSAC1_202006051000_BlockBlob /home
 После подключения к общей папке SMB начните копирование данных. Кроме того, для копирования данных можно использовать любое средство для копирования файлов, совместимое с протоколом SMB, например Robocopy. С помощью средства Robocopy можно запустить несколько заданий копирования. Используйте следующую команду:
 
 ```console
-robocopy <Source> <Target> * /e /r:3 /w:60 /is /nfl /ndl /np /MT:32 or 64 /fft /Log+:<LogFile>
+robocopy <Source> <Target> * /e /r:3 /w:60 /is /nfl /ndl /np /MT:32 or 64 /fft /Log+:<LogFile>
 ```
 
 Атрибуты команды описаны в таблице ниже.

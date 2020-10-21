@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/22/2020
 ms.author: memildin
-ms.openlocfilehash: 764a2263587a477eb506edec1e0f661d0ca7ae31
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 999888b12f10c07f7d42f14289e88030f9542a36
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91971614"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92340824"
 ---
 # <a name="alert-validation-in-azure-security-center"></a>Проверка предупреждений в центре безопасности Azure
 Этот документ содержит информацию о том, как убедиться, что ваша система правильно настроена для оповещений центра безопасности Azure.
@@ -36,7 +36,7 @@ ms.locfileid: "91971614"
 1. Подождите 5–10 минут и откройте оповещения центра безопасности. Должно появиться предупреждение.
 
 > [!NOTE]
-> При просмотре этого тестового оповещения для Windows убедитесь, что **включен аудит аргументов** поля **.** Если значение равно **false**, необходимо включить аудит аргументов командной строки. Чтобы включить его, используйте следующую команду:
+> При просмотре этого тестового оповещения для Windows убедитесь, что **включен аудит аргументов** поля **.** Если значение равно **false**, необходимо включить аудит аргументов командной строки. Чтобы включить его, используйте следующую команду: 
 >
 >```reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\policies\system\Audit" /f /v "ProcessCreationIncludeCmdLine_Enabled"```
 
@@ -62,10 +62,10 @@ ms.locfileid: "91971614"
 
 Дополнительные сведения о защите узлов и кластеров Kubernetes см. [в статье Введение в защитник Azure для Kubernetes](defender-for-kubernetes-introduction.md) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 В этой статье представлен процесс проверки оповещений. Теперь, когда вы знакомы с проверкой, ознакомьтесь с такими статьями:
 
-* [Проверка Azure Key Vault обнаружения угроз в центре безопасности Azure](https://techcommunity.microsoft.com/t5/azure-security-center/validating-azure-key-vault-threat-detection-in-azure-security/ba-p/1220336)
+* [Проверка обнаружения угроз Azure Key Vault в Центре безопасности Azure](https://techcommunity.microsoft.com/t5/azure-security-center/validating-azure-key-vault-threat-detection-in-azure-security/ba-p/1220336)
 * [Управление оповещениями безопасности в центре безопасности Azure и реагирование](security-center-managing-and-responding-alerts.md) на них — Узнайте, как управлять оповещениями и реагировать на инциденты безопасности в центре безопасности.
 * [Наблюдение за работоспособностью системы безопасности в Центре безопасности Azure](security-center-monitoring.md). Узнайте, как отслеживать работоспособность ресурсов Azure.
-* Сведения об [оповещениях системы безопасности в центре безопасности Azure](security-center-alerts-type.md) — сведения о различных типах оповещений системы безопасности.
+* Сведения об [оповещениях системы безопасности в центре безопасности Azure](./security-center-alerts-overview.md) — сведения о различных типах оповещений системы безопасности.

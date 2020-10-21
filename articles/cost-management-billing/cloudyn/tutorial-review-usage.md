@@ -10,12 +10,12 @@ ms.subservice: cloudyn
 ms.custom: seodec18
 ms.reviewer: benshy
 ROBOTS: NOINDEX
-ms.openlocfilehash: 2b151395bccdaa866844e6832db925773e8a6f51
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: afdcd458dbda282a23b7b8f7f1cd8459bc8ec5c5
+ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88687694"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92131281"
 ---
 <!-- Intent: As a cloud-consuming user, I need to view usage and costs for my cloud resources and services.
 -->
@@ -131,4 +131,4 @@ ms.locfileid: "88687694"
 Перейти к следующему руководству, чтобы научиться прогнозировать затраты на использование журналов данных.
 
 > [!div class="nextstepaction"]
-> [Прогнозирование будущих затрат](../../cost-management/tutorial-forecast-spending.md)
+> [Прогнозирование будущих затрат](./tutorial-forecast-spending.md)

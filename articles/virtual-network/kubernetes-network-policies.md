@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 9/25/2018
 ms.author: aanandr
 ms.custom: ''
-ms.openlocfilehash: 0ecf3e5f30ee38c0d60c77df3d6aae3ad90930e9
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.openlocfilehash: 36e5bb33b7d555c3b457b63f94d9032ff390e6cb
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/21/2020
-ms.locfileid: "92332281"
+ms.locfileid: "92342320"
 ---
 # <a name="azure-kubernetes-network-policies-overview"></a>Общие сведения о сетевых политиках Azure Kubernetes
 
@@ -118,9 +118,9 @@ Azure NPM включает информативные метрики Prometheus,
 |`npm_num_iptables_rules`     | число правил IPTables     | Датчик        |-         |         
 |`npm_num_ipsets`     |число Ипсетс         |Датчик            |-         |
 |`npm_num_ipset_entries`     |число записей IP-адресов во всех Ипсетс         |Датчик         |-         |
-|`npm_add_policy_exec_time`     |среда выполнения для добавления сетевой политики         |Сводка         |квантилей (0,5, 0,9 или 0,99)         |
-|`npm_add_iptables_rule_exec_time`     |среда выполнения для добавления правила IPTables         |Сводка         |квантилей (0,5, 0,9 или 0,99)         |
-|`npm_add_ipset_exec_time`     |среда выполнения для добавления Ипсет         |Сводка         |квантилей (0,5, 0,9 или 0,99)         |
+|`npm_add_policy_exec_time`     |среда выполнения для добавления сетевой политики         |Итоги         |квантилей (0,5, 0,9 или 0,99)         |
+|`npm_add_iptables_rule_exec_time`     |среда выполнения для добавления правила IPTables         |Итоги         |квантилей (0,5, 0,9 или 0,99)         |
+|`npm_add_ipset_exec_time`     |среда выполнения для добавления Ипсет         |Итоги         |квантилей (0,5, 0,9 или 0,99)         |
 |`npm_ipset_counts` продвинут     |число записей в каждом отдельном Ипсет         |гаужевек         |задать имя & хэш         |
 
 Различные уровни квантилей в метриках "exec_time" помогают различать общие и наихудшие ситуации.
@@ -154,7 +154,7 @@ integrations: |-
 Помимо просмотра книги (рисунков ниже), можно также напрямую запрашивать метрики Prometheus в разделе "журналы" раздела Insights. Например, этот запрос возвратит все собираемые метрики.
 | где TimeGenerated > назад (5H) | где name содержит "npm_"
 
-Можно также запрашивать Log Analytics непосредственно для метрик. Дополнительные сведения о начало работы с помощью Log Analytics запросов] (https://docs.microsoft.com/azure/azure-monitor/insights/container-insights-log-search) 
+Можно также запрашивать Log Analytics непосредственно для метрик. Дополнительные сведения о [Начало работы с помощью запросов log Analytics](https://docs.microsoft.com/azure/azure-monitor/insights/container-insights-log-search) 
 
 #### <a name="viewing-in-grafana-dashboard"></a>Просмотр на панели мониторинга Grafana
 Настройте сервер Grafana и настройте источник данных Log Analytics, как описано [здесь](https://grafana.com/grafana/plugins/grafana-azure-monitor-datasource). Затем импортируйте [панель мониторинга Grafana с log Analyticsной серверной частью](https://grafana.com/grafana/dashboards/10956) в Grafana Labs.

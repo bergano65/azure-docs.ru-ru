@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 09/03/2019
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: 2ee9d1edefb0e248d0eba13e2d0b9f1c651fdd42
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: 81dee0c63db711b39ff8fd2123623a16b2b9cb91
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87924518"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92122795"
 ---
 # <a name="get-started-with-azure-data-box-to-import-data-into-azure"></a>Начало работы с Azure Data Box для импорта данных в Azure
 
@@ -40,7 +40,7 @@ ms.locfileid: "87924518"
 
 - Убедитесь, что тип подписки, которую вы используете для службы Data Box, является одним из следующих:
     - Соглашение Microsoft Enterprise (EA). См. дополнительные сведения о [подписке EA](https://azure.microsoft.com/pricing/enterprise-agreement/).
-    - Поставщик облачных решений (CSP). Дополнительные сведения см. в статье [Обзор Azure CSP](https://docs.microsoft.com/azure/cloud-solution-provider/overview/azure-csp-overview).
+    - Поставщик облачных решений (CSP). Дополнительные сведения см. в статье [Обзор Azure CSP](/azure/cloud-solution-provider/overview/azure-csp-overview).
     - Спонсорское предложение Microsoft Azure. Дополнительные сведения см. в статье о [спонсорском предложении Microsoft Azure](https://azure.microsoft.com/offers/ms-azr-0036p/). 
 
 - Убедитесь, что у вас есть доступ владельца или участника подписки для заказа Data Box.
@@ -131,7 +131,7 @@ ms.locfileid: "87924518"
 
 Время завершения этой операции зависит от размера данных и скорости сети.
  
-1. При использовании узла Windows используйте средство копирования файлов, совместимое с протоколом SMB, например Robocopy. Для узла NFS используйте команду `cp` или `rsync`, чтобы скопировать данные. Подключите средство к устройству и начните копировать данные в общие ресурсы. Дополнительные сведения о том, как использовать Robocopy для копирования данных, см. в статье [Robocopy](https://technet.microsoft.com/library/ee851678.aspx).
+1. При использовании узла Windows используйте средство копирования файлов, совместимое с протоколом SMB, например Robocopy. Для узла NFS используйте команду `cp` или `rsync`, чтобы скопировать данные. Подключите средство к устройству и начните копировать данные в общие ресурсы. Дополнительные сведения о том, как использовать Robocopy для копирования данных, см. в статье [Robocopy](/previous-versions/technet-magazine/ee851678(v=msdn.10)).
 2. Подключитесь к общим ресурсам, используя путь: `\\<IP address of your device>\ShareName`. Учетные данные для доступа к общему ресурсу можно узнать на странице **Connect & copy** (Подключение и копирование) в локальном пользовательском веб-интерфейсе Data Box.
 3. Убедитесь, что имена общих ресурсов и папок, а также данные соответствуют рекомендациям, приведенным в разделе об [ограничениях Службы хранилища Azure и Data Box](data-box-limits.md).
 
@@ -170,5 +170,3 @@ ms.locfileid: "87924518"
 > [Use Azure portal to administer your Data Box](data-box-portal-admin.md)(Использование портала Azure для управления Data Box)
 
 ::: zone-end
-
-

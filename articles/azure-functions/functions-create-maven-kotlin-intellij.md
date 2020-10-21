@@ -6,12 +6,12 @@ ms.service: azure-functions
 ms.topic: quickstart
 ms.date: 03/25/2020
 ms.author: dglover
-ms.openlocfilehash: fa834e3ac4946c4f617e857342f850445eebfd30
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 09dd868dc9e05241943899654d7c8bb427a8f268
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87055449"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92104841"
 ---
 # <a name="quickstart-create-your-first-http-triggered-function-with-kotlin-and-intellij"></a>Краткое руководство. Создание первой функции, активируемой HTTP-запросом, с помощью Kotlin и IntelliJ
 
@@ -23,7 +23,7 @@ ms.locfileid: "87055449"
 
 Для разработки функции с помощью Kotlin и IntelliJ необходимо установить следующее программное обеспечение:
 
-- [Java Developer Kit (JDK) версии 8](https://aka.ms/azure-jdks)
+- [Java Developer Kit (JDK) версии 8](/azure/developer/java/fundamentals/java-jdk-long-term-support)
 - [Apache Maven 3.0](https://maven.apache.org) или более поздней версии
 - [IntelliJ IDEA](https://www.jetbrains.com/idea/download), версия Community или Ultimate с Maven
 - [Azure CLI](/cli/azure)

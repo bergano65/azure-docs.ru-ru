@@ -8,12 +8,12 @@ ms.topic: overview
 ms.service: iot-central
 services: iot-central
 manager: eliotgra
-ms.openlocfilehash: ffecd09d1084188195da83568ab3fe32ef2cdaac
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 3ef4790f9f7a3b3488dade9312203de41be1ff75
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "90972233"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92122157"
 ---
 # <a name="continuous-patient-monitoring-architecture"></a>Архитектура приложения для непрерывного мониторинга состояния пациентов
 
@@ -33,11 +33,11 @@ ms.locfileid: "90972233"
 
 ### <a name="mobile-phone-gateway"></a>Шлюз через мобильный телефон
 
-Основная функция приложения для мобильного телефона — сбор данных BLE с медицинских устройств и их передача в IoT Central. Кроме того, в приложении содержатся инструкции по настройке устройства и возможности для просмотра личных медицинских данных пациентов. Другие решения могут использовать шлюз планшетного ПК или стационарный шлюз в палате больницы. Пример мобильного приложения с открытым исходным кодом для Android и iOS можно использовать в качестве отправной точки для разработки приложений. Дополнительные сведения см. в статье [IoT Central CPM](https://docs.microsoft.com/samples/iot-for-all/iotc-cpm-sample/iotc-cpm-sample/).
+Основная функция приложения для мобильного телефона — сбор данных BLE с медицинских устройств и их передача в IoT Central. Кроме того, в приложении содержатся инструкции по настройке устройства и возможности для просмотра личных медицинских данных пациентов. Другие решения могут использовать шлюз планшетного ПК или стационарный шлюз в палате больницы. Пример мобильного приложения с открытым исходным кодом для Android и iOS можно использовать в качестве отправной точки для разработки приложений. Дополнительные сведения см. в статье [IoT Central CPM](/samples/iot-for-all/iotc-cpm-sample/iotc-cpm-sample/).
 
 ### <a name="export-to-azure-api-for-fhirreg"></a>Экспорт в Azure API для FHIR&reg;
 
-Azure IoT Central соответствует HIPAA и сертифицирован HITRUST&reg;. Вы также можете отправлять данные о здоровье пациентов в другие службы, используя [Azure API для FHIR](../../healthcare-apis/overview.md). Azure API для FHIR — это стандартизированный API для данных о клиническом здоровье. [Соединитель Azure IoT для FHIR](https://docs.microsoft.com/azure/healthcare-apis/iot-fhir-portal-quickstart) позволяет использовать Azure API для FHIR в качестве пункта назначения для непрерывного экспорта данных из IoT Central.
+Azure IoT Central соответствует HIPAA и сертифицирован HITRUST&reg;. Вы также можете отправлять данные о здоровье пациентов в другие службы, используя [Azure API для FHIR](../../healthcare-apis/overview.md). Azure API для FHIR — это стандартизированный API для данных о клиническом здоровье. [Соединитель Azure IoT для FHIR](../../healthcare-apis/iot-fhir-portal-quickstart.md) позволяет использовать Azure API для FHIR в качестве пункта назначения для непрерывного экспорта данных из IoT Central.
 
 ### <a name="machine-learning"></a>Машинное обучение
 

@@ -9,12 +9,12 @@ ms.date: 10/12/2020
 ms.reviewer: andalmia
 ms.author: banders
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 1ddd471746224c2084fa11a74d8fcee3b5bd3d5b
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: c63733a66a2bb4e320a24649dfe82eac259e79ae
+ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92026855"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92131111"
 ---
 # <a name="programmatically-create-azure-subscriptions-with-preview-apis"></a>Программное создание подписок Azure с помощью предварительных версий API
 
@@ -103,7 +103,7 @@ ObjectId                               | PrincipalName
 
 ### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-Используйте [команду Get-EnrollmentAccount](https://aka.ms/EASubCreationPublicPreviewCLI), чтобы вывести список всех учетных записей регистрации, к которым у вас есть доступ.
+Используйте [команду Get-EnrollmentAccount](/cli/azure/billing), чтобы вывести список всех учетных записей регистрации, к которым у вас есть доступ.
 
 ```azurecli-interactive
 az billing enrollment-account list
