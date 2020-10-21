@@ -13,12 +13,12 @@ ms.date: 09/12/2019
 ms.author: shoatman
 ms.custom: aaddev
 ms.reviewer: shoatman
-ms.openlocfilehash: f5950347fff380fcfbaa89834407ff5f497a9719
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: aa0ce6a5f909e67f0551c8667bb7e5c5e6d7eb04
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88854917"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92275599"
 ---
 # <a name="android-microsoft-authentication-library-configuration-file"></a>Файл конфигурации библиотеки проверки подлинности Майкрософт для Android
 
@@ -34,7 +34,8 @@ ms.locfileid: "88854917"
 |-----------|------------|-------------|-------|
 | `client_id` | Строка | Да | Идентификатор клиента приложения на [странице регистрации приложения](https://ms.portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) |
 | `redirect_uri`   | Строка | Да | URI перенаправления приложения со [страницы регистрации приложения](https://ms.portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) |
-| `authorities` | Список\<Authority> | Нет | Список органов, необходимых для приложения |
+| `broker_redirect_uri_registered` | Логическое | Нет | Возможные значения: `true` , `false` |
+| `authorities` | Числ\<Authority> | Нет | Список органов, необходимых для приложения |
 | `authorization_user_agent` | Аусоризатионажент (enum) | Нет | Возможные значения: `DEFAULT` , `BROWSER` , `WEBVIEW` |
 | `http` | HttpConfiguration | Нет | Настройка `HttpUrlConnection` `connect_timeout` и `read_timeout` |
 | `logging` | логгингконфигуратион | Нет | Задает уровень детализации журнала. К дополнительным конфигурациям относятся: `pii_enabled` , принимающее логическое значение, и `log_level` , принимающее `ERROR` ,, `WARNING` `INFO` или `VERBOSE` . |
@@ -46,6 +47,10 @@ ms.locfileid: "88854917"
 ### <a name="redirect_uri"></a>redirect_uri
 
 URI перенаправления, зарегистрированный при регистрации приложения. Если URI перенаправления относится к приложению брокера, обратитесь к [URI перенаправления для общедоступных клиентских приложений](msal-client-application-configuration.md#redirect-uri-for-public-client-apps) , чтобы убедиться, что вы используете правильный формат URI перенаправления для приложения брокера.
+
+### <a name="broker_redirect_uri_registered"></a>broker_redirect_uri_registered
+
+Если вы хотите использовать проверку подлинности через посредника, `broker_redirect_uri_registered` свойство должно иметь значение `true` . В сценарии проверки подлинности брокера, если приложение имеет неправильный формат для взаимодействия с брокером, как описано в разделе [URI перенаправления для общедоступных клиентских приложений](msal-client-application-configuration.md#redirect-uri-for-public-client-apps), приложение проверяет URI перенаправления и выдает исключение при запуске.
 
 ### <a name="authorities"></a>органы
 
@@ -98,6 +103,7 @@ URI перенаправления, зарегистрированный при 
 > Проверка центра не может быть включена и отключена в MSAL.
 > Центры сертификации должны быть известны как разработчик, как указано в конфигурации, так и корпорацией Майкрософт через метаданные.
 > Если MSAL получает запрос маркера для неизвестного центра сертификации, `MsalClientException` тип `UnknownAuthority` результатов.
+> Проверка подлинности через посредника не работает для Azure AD B2C.
 
 #### <a name="authority-properties"></a>Свойства центра
 

@@ -197,6 +197,8 @@
           href: 'https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/computervision?view=azure-java-stable'
 - name: Ресурсы
   items:
+    - name: Возможности получения поддержки и справки
+      href: ../cognitive-services-support-options.md?context=/azure/cognitive-services/computer-vision/context/context
     - name: Примеры
       items:
         - name: Создание приложения для обработки изображений
@@ -211,10 +213,6 @@
       href: language-support.md
     - name: Цены и ограничения
       href: 'https://azure.microsoft.com/pricing/details/cognitive-services/computer-vision'
-    - name: UserVoice
-      href: 'https://cognitive.uservoice.com/forums/430309-computer-vision-api'
-    - name: Stack Overflow
-      href: 'https://stackoverflow.com/questions/tagged/microsoft-cognitive'
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/updates/?product=cognitive-services'
     - name: Доступность по регионам

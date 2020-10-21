@@ -3,18 +3,18 @@ title: Обновление приложения Service Fabric
 description: Эта статья содержит вводные сведения об обновлении приложения Service Fabric, включая выбор режимов обновления и выполнение проверок работоспособности.
 ms.topic: conceptual
 ms.date: 8/5/2020
-ms.openlocfilehash: cb0c1c0049957244b94b59707b70e47dc53f6c9f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8eecd923b009ecbe9f4e607ad57a99b3f20955b9
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88067517"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92309852"
 ---
 # <a name="service-fabric-application-upgrade"></a>Обновление приложения Service Fabric
 Приложение Azure Service Fabric представляет собой коллекцию служб. Во время обновления структура служб сравнивает новый [манифест приложения](service-fabric-application-and-service-manifests.md) с предыдущей версией и определяет, каким службам в приложении требуется обновление. Service Fabric сравнивает номера версий в манифестах служб с номерами версий для предыдущей версии. Если служба не была изменена, эта служба не обновляется.
 
 > [!NOTE]
-> [Аппликатионпараметер](https://docs.microsoft.com/dotnet/api/system.fabric.description.applicationdescription.applicationparameters?view=azure-dotnet#System_Fabric_Description_ApplicationDescription_ApplicationParameters)s не сохраняются в процессе обновления приложения. Чтобы сохранить текущие параметры приложения, пользователь должен сначала получить параметры и передать их в вызов API обновления, как показано ниже:
+> [Аппликатионпараметер](/dotnet/api/system.fabric.description.applicationdescription.applicationparameters?view=azure-dotnet#System_Fabric_Description_ApplicationDescription_ApplicationParameters)s не сохраняются в процессе обновления приложения. Чтобы сохранить текущие параметры приложения, пользователь должен сначала получить параметры и передать их в вызов API обновления, как показано ниже:
 ```powershell
 $myApplication = Get-ServiceFabricApplication -ApplicationName fabric:/myApplication
 $appParamCollection = $myApplication.ApplicationParameters
@@ -75,7 +75,7 @@ Start-ServiceFabricApplicationUpgrade -ApplicationName fabric:/myApplication -Ap
 
 ![Процесс обновления приложения структуры служб][image]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 [Руководство по обновлению приложений Service Fabric с помощью Visual Studio](service-fabric-application-upgrade-tutorial.md) поможет вам выполнить поэтапное обновление приложения с помощью Visual Studio.
 
 [Руководство по обновлению приложения с помощью PowerShell](service-fabric-application-upgrade-tutorial-powershell.md) поможет вам выполнить обновление приложения с помощью PowerShell.

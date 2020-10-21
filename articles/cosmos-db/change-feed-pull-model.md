@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 09/09/2020
 ms.reviewer: sngun
-ms.openlocfilehash: b056c12f51c6e36a806f2bba0f5efe9ea9498798
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 59f1231e2edf3277898ff57d8e6f8da42ee057ca
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90015642"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92276976"
 ---
 # <a name="change-feed-pull-model-in-azure-cosmos-db"></a>Модель извлечения канала изменений в Azure Cosmos DB
 
@@ -112,7 +112,7 @@ while (iteratorForThePartitionKey.HasMoreResults)
 IReadOnlyList<FeedRange> ranges = await container.GetFeedRangesAsync();
 ```
 
-При получении списка FeedRange для контейнера вы получите один `FeedRange` для каждой [физической секции](partition-data.md#physical-partitions).
+При получении списка FeedRange для контейнера вы получите один `FeedRange` для каждой [физической секции](partitioning-overview.md#physical-partitions).
 
 С помощью `FeedRange` можно создать `FeedIterator` для параллелизации обработки веб-канала изменений на нескольких компьютерах или потоках. В отличие от предыдущего примера, который показал, как получить `FeedIterator` для всего контейнера или одного ключа секции, можно использовать фидранжес для получения нескольких фидитераторс, которые могут обрабатывать веб-канал изменений параллельно.
 

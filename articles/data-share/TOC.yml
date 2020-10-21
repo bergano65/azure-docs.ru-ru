@@ -44,10 +44,6 @@
         - name: Предоставление общего доступа к данным из Azure Data Explorer
           href: /azure/data-explorer/data-share
           maintainContext: true
-    - name: Монитор
-      href: how-to-monitor.md
-    - name: Диагностика
-      href: data-share-troubleshoot.md
     - name: Добавление наборов данных
       href: how-to-add-datasets.md
     - name: Настройка сопоставления наборов данных
@@ -58,10 +54,14 @@
       href: how-to-delete-invitation.md
     - name: Отмена подписки на общую папку
       href: how-to-revoke-share-subscription.md
+    - name: Монитор
+      href: how-to-monitor.md
     - name: Безопасность
       href: security.md
     - name: Аварийное восстановление
       href: disaster-recovery.md
+    - name: Диагностика
+      href: data-share-troubleshoot.md
 - name: Справочник
   items:
     - name: .NET

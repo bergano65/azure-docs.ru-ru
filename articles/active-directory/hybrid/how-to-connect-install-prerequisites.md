@@ -16,12 +16,12 @@ ms.date: 06/25/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1fa96d6bd0032f675ffaeabc58c62c13312039dc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ca2190079cb97e37318bd1c6a32dfb2b9b309a8d
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89662165"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92276954"
 ---
 # <a name="prerequisites-for-azure-ad-connect"></a>Необходимые условия для Azure AD Connect
 В этой статье описаны необходимые условия и требования к оборудованию для Azure Active Directory (Azure AD) Connect.
@@ -46,6 +46,14 @@ ms.locfileid: "89662165"
 * Контроллер домена, используемый Azure AD, должен быть доступен для записи. Использование контроллера домена только для чтения (RODC) *не поддерживается*, и Azure AD Connect не соответствует перенаправлениям записи.
 * Использование локальных лесов или доменов с точками (имя содержит точку ".") NetBIOS-имена *не поддерживаются*.
 * Рекомендуется [Включить корзину Active Directory](how-to-connect-sync-recycle-bin.md).
+
+### <a name="powershell-execution-policy"></a>Политика выполнения PowerShell
+Azure Active Directory Connect выполняет подписанные скрипты PowerShell в процессе установки. Убедитесь, что политика выполнения PowerShell разрешит выполнение скриптов.
+
+Рекомендуемая политика выполнения во время установки — "RemoteSigned".
+
+Дополнительные сведения о настройке политики выполнения PowerShell см. в разделе [Set-ExecutionPolicy](https://docs.microsoft.com/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7).
+
 
 ### <a name="azure-ad-connect-server"></a>Сервер Azure AD Connect
 Сервер Azure AD Connect содержит важные данные удостоверения. Важно, чтобы административный доступ к этому серверу был надежно защищен. Следуйте рекомендациям по [защите привилегированного доступа](/windows-server/identity/securing-privileged-access/securing-privileged-access). 
@@ -91,7 +99,7 @@ Azure AD Connect сервер должен рассматриваться как
 * Если вы используете [быстрые параметры](reference-connect-accounts-permissions.md#express-settings-installation) или обновляете DirSync, у вас должна быть учетная запись администратора предприятия для локального Active Directory.
 * Если вы используете путь установки настраиваемых параметров, у вас есть дополнительные параметры. Дополнительные сведения см. в разделе [Параметры выборочной установки](reference-connect-accounts-permissions.md#custom-installation-settings).
 
-### <a name="connectivity"></a>Соединение
+### <a name="connectivity"></a>Подключение
 * Для серверов Azure AD Connect требуется разрешение DNS как для интрасети, так и для Интернета. DNS-сервер должен иметь возможность разрешения имен как для локальной службы Active Directory, так и для конечных точек Azure AD.
 * Если в интрасети есть брандмауэры и необходимо открыть порты между серверами Azure AD Connect и контроллерами домена, см. Дополнительные сведения в разделе [Azure AD Connect Ports](reference-connect-ports.md) .
 * Если прокси-сервер или брандмауэр ограничивает доступ к URL-адресам, необходимо открыть URL-адреса, описанные в списке URL-адресов [и диапазонов IP-адреса Office 365](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2) .
@@ -132,7 +140,7 @@ Azure AD Connect сервер должен рассматриваться как
 Дополнительные сведения см. в разделе MSDN об [элементе прокси по умолчанию](/dotnet/framework/configure-apps/file-schema/network/defaultproxy-element-network-settings).
 В случае проблем с подключением изучите статью [Устранение неполадок подключения в Azure AD Connect](tshoot-connect-connectivity.md).
 
-### <a name="other"></a>Другое
+### <a name="other"></a>Другие
 Необязательно. Используйте тестовую учетную запись пользователя для проверки синхронизации.
 
 ## <a name="component-prerequisites"></a>Предварительные требования к компонентам

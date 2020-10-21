@@ -5,13 +5,13 @@ ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
-ms.date: 08/16/2018
-ms.openlocfilehash: a394fee7178b2e3e167c8bd905ab175b25d1d813
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 10/19/2020
+ms.openlocfilehash: 7838f9f1febcab073633dbb4af011e99acbe22d3
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75397469"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92310298"
 ---
 # <a name="work-with-strings-in-azure-monitor-log-queries"></a>Работа со строками в запросах журнала Azure Monitor
 
@@ -74,8 +74,8 @@ print @"C:\backslash\not\escaped\with @ prefix"
 `!startswith_cs`  |Правая часть не является начальным вхождением в левую часть|Да        |`"Fabrikam" !startswith_cs "fab"`
 `endswith`     |Правая часть является конечным вхождением в левую часть|Нет             |`"Fabrikam" endswith "Kam"`
 `!endswith`    |Правая часть не является конечным вхождением в левую часть|Нет         |`"Fabrikam" !endswith "brik"`
-`endswith_cs`     |Правая часть является конечным вхождением в левую часть|Да             |`"Fabrikam" endswith "Kam"`
-`!endswith_cs`    |Правая часть не является конечным вхождением в левую часть|Да         |`"Fabrikam" !endswith "brik"`
+`endswith_cs`     |Правая часть является конечным вхождением в левую часть|Да             |`"Fabrikam" endswith_cs "kam"`
+`!endswith_cs`    |Правая часть не является конечным вхождением в левую часть|Да         |`"Fabrikam" !endswith_cs "brik"`
 `matches regex`|Левая часть содержит соответствие для правой части        |Да           |`"Fabrikam" matches regex "b.*k"`
 `in`           |Соответствует одному из элементов       |Да           |`"abc" in ("123", "345", "abc")`
 `!in`          |Не соответствует одному из элементов   |Да           |`"bca" !in ("123", "345", "abc")`
@@ -95,7 +95,7 @@ countof(text, search [, kind])
 - `search` — текстовая строка или регулярное выражение, которое проверяется на вхождение в text.
 - `kind` - _Обычная задача_  |  _Regex_ (по умолчанию — нормальный).
 
-### <a name="returns"></a>Возвращаемое значение
+### <a name="returns"></a>Результаты
 
 Количество совпадений для строки поиска в контейнере. Совпадения для текстовых строк могут перекрывать друг друга, при этом для регулярных выражений — не могут.
 
@@ -137,7 +137,7 @@ extract(regex, captureGroup, text [, typeLiteral])
 - `text` — строка для поиска.
 - `typeLiteral` — необязательный литерал типа (например, typeof(long)). Если указан, то извлеченная подстрока преобразуется в этот тип.
 
-### <a name="returns"></a>Возвращаемое значение
+### <a name="returns"></a>Результаты
 Возвращается подстрока, которая сравнивалась с указанной в группе записи captureGroup, при необходимости преобразованная в тип typeLiteral.
 Если соответствия нет или не удается выполнить преобразование типа, возвращается NULL.
 
@@ -243,7 +243,7 @@ replace(regex, rewrite, input_text)
 - `rewrite` — регулярное выражение, результат которого заменит все соответствия, найденные сопоставлениями регулярного выражения. Используйте \0 для указания полного соответствия, \1 для первой группы записи, \2 и так далее — для следующих групп записи.
 - `input_text` — строка входных данных для поиска.
 
-### <a name="returns"></a>Возвращаемое значение
+### <a name="returns"></a>Результаты
 Текст после замены всех вхождений регулярного выражения результатами вычислений rewrite. Совпадения не перекрываются.
 
 ### <a name="examples"></a>Примеры

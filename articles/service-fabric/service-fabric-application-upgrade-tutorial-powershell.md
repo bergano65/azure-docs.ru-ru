@@ -4,12 +4,12 @@ description: В этой статье рассматривается проце�
 ms.topic: conceptual
 ms.date: 8/5/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 61eba8b7285c2a015ee40d48bc4a73850b412576
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ee040916ae1ce6ac931abc1fc07021b08cdbf895
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89075194"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92309071"
 ---
 # <a name="service-fabric-application-upgrade-using-powershell"></a>Обновление приложения Service Fabric с помощью PowerShell
 > [!div class="op_single_selector"]
@@ -27,7 +27,7 @@ ms.locfileid: "89075194"
 Service Fabric выполняет отслеживаемое последовательное обновление, позволяя администратору приложений настраивать политики оценки работоспособности, которые Service Fabric будет использовать для определения работоспособности приложения. Кроме того, администратор может настроить действие, выполняемое при сбое оценки работоспособности (например, выполнение автоматического отката). В этом разделе рассматривается наблюдаемое обновление одного из примеров пакета SDK, использующего PowerShell. 
 
 > [!NOTE]
-> [Аппликатионпараметер](https://docs.microsoft.com/dotnet/api/system.fabric.description.applicationdescription.applicationparameters?view=azure-dotnet#System_Fabric_Description_ApplicationDescription_ApplicationParameters)s не сохраняются в процессе обновления приложения. Чтобы сохранить текущие параметры приложения, пользователь должен сначала получить параметры и передать их в вызов API обновления, как показано ниже:
+> [Аппликатионпараметер](/dotnet/api/system.fabric.description.applicationdescription.applicationparameters?view=azure-dotnet#System_Fabric_Description_ApplicationDescription_ApplicationParameters)s не сохраняются в процессе обновления приложения. Чтобы сохранить текущие параметры приложения, пользователь должен сначала получить параметры и передать их в вызов API обновления, как показано ниже:
 ```powershell
 $myApplication = Get-ServiceFabricApplication -ApplicationName fabric:/myApplication
 $appParamCollection = $myApplication.ApplicationParameters
@@ -149,4 +149,3 @@ Get-ServiceFabricApplicationUpgrade fabric:/VisualObjects
 [Дополнительные разделы](service-fabric-application-upgrade-advanced.md)содержат сведения о работе с расширенными функциями при обновлении приложения.
 
 Сведения об устранении распространенных проблем при обновлении приложений см. в статье [Устранение неполадок обновления приложения](service-fabric-application-upgrade-troubleshooting.md).
-
