@@ -6,12 +6,12 @@ ms.author: baanders
 ms.topic: troubleshooting
 ms.service: digital-twins
 ms.date: 07/14/2020
-ms.openlocfilehash: 6f57f801f2270819d4a67a49590f5ba61b32afcb
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 8bcbe395f78d3e4e9a6f7f615edc61eaa04347cf
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92047647"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92311679"
 ---
 # <a name="known-issues-in-azure-digital-twins"></a>Известные проблемы в службе Digital двойников
 
@@ -19,7 +19,7 @@ ms.locfileid: "92047647"
 
 ## <a name="400-client-error-bad-request-in-cloud-shell"></a>"ошибка клиента 400: недопустимый запрос" в Cloud Shell
 
-Команды в Cloud Shell могут периодически завершаться с ошибкой "400 ошибка клиента: неправильный запрос URL-адреса http://localhost:50342/oauth2/token ", за которым следует полная трассировка стека.
+Команды в Cloud Shell, выполняемые в *https://shell.azure.com* , могут периодически завершаться ошибкой "400 ошибка клиента: неправильный запрос URL-адреса http://localhost:50342/oauth2/token ", после чего выполняется полная трассировка стека.
 
 В частности, для Azure Digital двойников это влияет на следующие группы команд:
 * `az dt route`
@@ -30,7 +30,11 @@ ms.locfileid: "92047647"
 
 Это можно устранить путем повторного выполнения `az login` команды в Cloud Shell и выполнения последующих шагов входа. После этого вы сможете выполнить команду повторно.
 
-Альтернативным решением является [установка Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) на компьютере, чтобы можно было выполнять команды Azure CLI локально. В локальной CLI эта проблема не возникает.
+Кроме того, можно открыть панель Cloud Shell в портал Azure и завершить Cloud Shellную работу.
+
+:::image type="content" source="media/includes/portal-cloud-shell.png" alt-text="Представление портал Azure с выделенным значком &quot;Cloud Shell&quot;, а Cloud Shell появляется в нижней части окна портала":::
+
+Наконец, еще одним решением является [установка Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) на компьютере, чтобы можно было выполнять команды Azure CLI локально. В локальной CLI эта проблема не возникает.
 
 ### <a name="possible-causes"></a>Возможные причины
 

@@ -1,22 +1,25 @@
 ---
-title: Подготовка автомасштабируемой пропускной способности базы данных в Azure Cosmos DB
-description: Узнайте, как подготавливать автомасштабируемую пропускную способность на уровне контейнера и базы данных в Azure Cosmos DB с помощью портала Azure, CLI, PowerShell и других пакетов SDK.
+title: Подготавливает пропускную способность автомасштабирования в API Azure Cosmos DB SQL
+description: Узнайте, как подготавливать пропускную способность автомасштабирования на уровне контейнера и базы данных в Azure Cosmos DB API SQL с помощью портал Azure, CLI, PowerShell и различных других пакетов SDK.
 author: deborahc
 ms.author: dech
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 ms.topic: how-to
-ms.date: 07/30/2020
+ms.date: 10/15/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 4e7c5f3f4bf84b7a267cb883df5f375f2a8cf981
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 190289165b291edabf31320eee1328c1b0cf6205
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89017147"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92277826"
 ---
-# <a name="provision-autoscale-throughput-on-database-or-container-in-azure-cosmos-db"></a>Узнайте, как подготовить автомасштабируемую пропускную способность для базы данных или контейнера в Azure Cosmos DB
+# <a name="provision-autoscale-throughput-on-database-or-container-in-azure-cosmos-db---sql-api"></a>Подготавливает пропускную способность автомасштабирования для базы данных или контейнера в Azure Cosmos DB API SQL
 
-Узнайте, как подготовить автомасштабируемую пропускную способность для контейнера (коллекции, графа или таблицы) в Azure Cosmos DB. Вы можете включить подготовку пропускной способности для одного контейнера или подготовку автомасштабируемой пропускной способности для целой базы данных, распределив ее между контейнерами в этой базе данных.
+В этой статье объясняется, как подготавливать пропускную способность автомасштабирования для базы данных или контейнера (коллекции, графа или таблицы) в Azure Cosmos DB API SQL. Вы можете включить подготовку пропускной способности для одного контейнера или подготовку автомасштабируемой пропускной способности для целой базы данных, распределив ее между контейнерами в этой базе данных.
+
+Если вы используете другой API, см. статью [API for MongoDB](how-to-provision-throughput-mongodb.md), [API Cassandra](how-to-provision-throughput-cassandra.md), [Gremlin API](how-to-provision-throughput-gremlin.md) для обеспечения пропускной способности.
 
 ## <a name="azure-portal"></a>Портал Azure
 
@@ -52,7 +55,7 @@ ms.locfileid: "89017147"
 > [!NOTE]
 > При включении автомасштабирования для существующей базы данных или контейнера начальное значение максимального числа единиц запросов в секунду определяется системой с учетом текущих параметров пропускной способности и хранилища, подготовленных вручную. По завершении операции при необходимости можно изменить значение максимального числа единиц запросов в секунду. [Подробнее.](autoscale-faq.md#how-does-the-migration-between-autoscale-and-standard-manual-provisioned-throughput-work) 
 
-## <a name="azure-cosmos-db-net-v3-sdk-for-sql-api"></a>Пакет SDK .NET Azure Cosmos DB для API SQL версии 3
+## <a name="azure-cosmos-db-net-v3-sdk"></a>Пакет SDK для .NET v3 Azure Cosmos DB
 
 Для управления ресурсами автомасштабирования используется пакет SDK .NET Azure Cosmos DB для API SQL [версии 3.9 или более поздней](https://www.nuget.org/packages/Microsoft.Azure.Cosmos). 
 
@@ -109,7 +112,7 @@ int? currentThroughput = autoscaleContainerThroughput.Throughput;
 await container.ReplaceThroughputAsync(ThroughputProperties.CreateAutoscaleThroughput(newAutoscaleMaxThroughput));
 ```
 
-## <a name="azure-cosmos-db-java-v4-sdk-for-sql-api"></a>Пакет SDK Azure Cosmos DB Java версии 4 для API SQL
+## <a name="azure-cosmos-db-java-v4-sdk"></a>Пакет SDK для Java версии 4 Azure Cosmos DB
 
 Для управления ресурсами автомасштабирования используется пакет SDK Java Azure Cosmos DB для API SQL [версии 4.0 или более поздней](https://mvnrepository.com/artifact/com.azure/azure-cosmos).
 
@@ -242,14 +245,6 @@ container.replaceThroughput(ThroughputProperties.createAutoscaledThroughput(newA
 ```
 
 ---
-
-## <a name="cassandra-api"></a>API Cassandra
-
-Учетные записи Azure Cosmos DB для API Cassandra можно подготовить для автомасштабирования с помощью [команд CQL](manage-scale-cassandra.md#use-autoscale), [Azure CLI](cli-samples.md), [Azure PowerShell](powershell-samples.md) или [Azure Resource Manager шаблонов](resource-manager-samples.md).
-
-## <a name="azure-cosmos-db-api-for-mongodb"></a>API Azure Cosmos DB для MongoDB
-
-Учетные записи Azure Cosmos DB для API MongoDB можно подготовить для автомасштабирования с помощью [команд расширения MongoDB](mongodb-custom-commands.md), [Azure CLI](cli-samples.md), [Azure PowerShell](powershell-samples.md) или [шаблонов Azure Resource Manager](resource-manager-samples.md).
 
 ## <a name="azure-resource-manager"></a>Azure Resource Manager
 
