@@ -9,12 +9,12 @@ ms.date: 01/23/2020
 ms.author: normesta
 ms.reviewer: dineshm
 ms.subservice: blobs
-ms.openlocfilehash: 903413b6ca00600e15ac3af0a93b98a8d67a1c28
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5e6289fb4e3b5bb695b79589d544d0ae475f9774
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88053632"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92314654"
 ---
 # <a name="map-a-custom-domain-to-an-azure-blob-storage-endpoint"></a>Сопоставьте личный домен с конечной точкой хранилища BLOB-объектов Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "88053632"
 [!INCLUDE [storage-data-lake-gen2-support](../../../includes/storage-data-lake-gen2-support.md)]
 
 > [!NOTE] 
-> Это сопоставление работает только для поддоменов (например `www.contoso.com` ,). Если вы хотите, чтобы конечная точка веб-узла была доступна в корневом домене (например `contoso.com` ,), необходимо использовать Azure CDN. Инструкции см. в разделе о [сопоставлении пользовательского домена с включенным протоколом HTTPS](#enable-https) этой статьи. Так как вы переходите к этому разделу этой статьи, чтобы включить корневой домен личного домена, шаг в этом разделе для включения HTTPS является необязательным. 
+> Это сопоставление работает только для поддоменов (например `www.contoso.com` ,). Если вы хотите, чтобы конечная точка веб-узла была доступна в корневом домене (например `contoso.com` ,), необходимо использовать Azure CDN. Инструкции см. в разделе о [сопоставлении пользовательского домена с включенным протоколом HTTPS](#enable-https) этой статьи. Так как вы собираетесь в этот раздел этой статьи, чтобы включить корневой домен личного домена, шаг в этом разделе для включения HTTPS является необязательным. 
 
 <a id="enable-http"></a>
 
@@ -326,6 +326,6 @@ ms.locfileid: "88053632"
 
    * [Цены и выставление счетов при использовании хранилища BLOB-объектов с Azure CDN](https://docs.microsoft.com/azure/cdn/cdn-storage-custom-domain-https#http-to-https-redirection).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Дополнительные сведения о размещении статических веб-сайтов в хранилище больших двоичных объектов Azure](storage-blob-static-website.md)

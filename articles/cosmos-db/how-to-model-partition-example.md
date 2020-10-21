@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 05/23/2019
 ms.author: thweiss
 ms.custom: devx-track-js
-ms.openlocfilehash: 91589a88712b093acfbb88df146074ad91ba0ea2
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: 8e9d11ed39d6e4dc7ad432659534e7dd14fcf1ec
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92168381"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92277991"
 ---
 # <a name="how-to-model-and-partition-data-on-azure-cosmos-db-using-a-real-world-example"></a>Процесс моделирования и секционирования данных в Azure Cosmos DB на примере реального использования
 
@@ -327,7 +327,7 @@ function createComment(postId, comment) {
 - сохранение новых данных записи;
 - добавление нового комментария.
 
-Хранимые процедуры выполняются как атомарные транзакции. Поэтому значение `commentCount` и фактическое количество комментариев всегда будут синхронизированы.
+Поскольку хранимые процедуры выполняются как атомарные транзакции, значение `commentCount` и фактическое количество комментариев всегда будут синхронизироваться.
 
 Разумеется, мы применим аналогичную хранимую процедуру и для добавления новых отметок "Нравится", чтобы увеличивать значение `likeCount`.
 
@@ -586,6 +586,6 @@ function truncateFeed() {
 
 Изучив эту вводную статью о моделировании и секционировании данных, вы можете перейти к следующим статьям с дополнительными сведениями о рассмотренных здесь понятиях:
 
-- [Работа с базами данных, контейнерами и элементами](databases-containers-items.md)
+- [Работа с базами данных, контейнерами и элементами](account-databases-containers-items.md)
 - [Partitioning in Azure Cosmos DB](partitioning-overview.md) (Секционирование в Azure Cosmos DB)
 - [Веб-канал изменений в Azure Cosmos DB](change-feed.md)

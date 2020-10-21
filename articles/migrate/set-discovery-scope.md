@@ -3,12 +3,12 @@ title: Настройка области для обнаружения вирт�
 description: Описание настройки области обнаружения для оценки виртуальных машин VMware и миграции с помощью службы "миграция Azure".
 ms.topic: how-to
 ms.date: 06/09/2020
-ms.openlocfilehash: dfc9c12edd93fc720ef716fd43b04e0c193d5803
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8c61f544e3222dba83123aa1be5e53a19e671035
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88919732"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92314033"
 ---
 # <a name="set-discovery-scope-for-vmware-vms"></a>Задание области обнаружения для виртуальных машин VMware
 
@@ -21,7 +21,7 @@ ms.locfileid: "88919732"
 
 ## <a name="before-you-start"></a>Перед началом работы
 
-Если вы не настроили учетную запись пользователя vCenter, используемую службой "миграция Azure" для обнаружения, сделайте это сейчас для [оценки](tutorial-prepare-vmware.md#set-up-permissions-for-assessment) или [безагентного переноса](tutorial-prepare-vmware.md#assign-permissions-to-an-account).
+Если вы не настроили учетную запись пользователя vCenter, используемую службой "миграция Azure" для обнаружения, сделайте это сейчас для [оценки](./tutorial-discover-vmware.md#prepare-vmware) или [безагентного переноса](./migrate-support-matrix-vmware-migration.md#agentless-migration).
 
 
 ## <a name="assign-permissions-and-roles"></a>Назначение разрешений и ролей

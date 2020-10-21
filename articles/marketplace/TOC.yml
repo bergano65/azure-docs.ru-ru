@@ -105,30 +105,38 @@
               href: partner-center-portal/create-azure-container-technical-assets.md
             - name: Создание предложения по контейнерам Azure
               href: partner-center-portal/create-azure-container-offer.md
-    - name: Предложения виртуальных машин Azure
+    - name: Предложение виртуальной машины Azure
       items:
         - name: Планирование предложения виртуальной машины
           href: marketplace-virtual-machines.md
         - name: Создание и публикация предложения виртуальной машины
           items:
-            - name: Создание предложения виртуальной машины Azure
-              href: partner-center-portal/azure-vm-create-offer.md
-            - name: Создание технического ресурса виртуальной машины Azure
+            - name: Создание технических ресурсов виртуальной машины
               items:
-                - name: Проблемы с сертификацией виртуальных машин
-                  href: partner-center-portal/vm-certification-issues-solutions.md
-                - name: Создание технического ресурса виртуальной машины Azure
-                  href: partner-center-portal/create-azure-vm-technical-asset.md
-                - name: 'Технические ресурсы виртуальных машин Azure: вопросы и ответы'
-                  href: partner-center-portal/common-issues-during-vhd-creation.md
-                - name: 'Тестирование виртуальной машины, развернутой из VHD'
-                  href: partner-center-portal/azure-vm-image-certification.md
-                - name: Универсальный код ресурса SAS
-                  items:
-                    - name: Получение URI SAS
-                      href: partner-center-portal/get-sas-uri.md
-                    - name: 'Универсальный код ресурса SAS: вопросы и ответы'
-                      href: partner-center-portal/common-sas-uri-issues.md
+                - name: Создание виртуальной машины из утвержденной базы
+                  href: azure-vm-create-using-approved-base.md
+                - name: Создание виртуальной машины с помощью собственного образа
+                  href: azure-vm-create-using-own-image.md
+                - name: Тестирование образа виртуальной машины
+                  href: azure-vm-image-test.md
+                - name: Получение URI SAS
+                  href: azure-vm-get-sas-uri.md
+                - name: Сообщения об ошибках SAS
+                  href: azure-vm-sas-failure-messages.md
+                - name: Вопросы и ответы о создании виртуальных машин
+                  href: azure-vm-create-faq.md
+                - name: Устранение неполадок с сертификацией виртуальной машины
+                  href: azure-vm-create-certification-faq.md
+            - name: Создание предложения виртуальной машины
+              href: azure-vm-create.md
+            - name: Настройка свойств предложения виртуальной машины
+              href: azure-vm-create-properties.md
+            - name: Настройка списка предложений виртуальных машин
+              href: azure-vm-create-listing.md
+            - name: Создание планов виртуальных машин
+              href: azure-vm-create-plans.md
+            - name: Добавление предварительной версии аудитории
+              href: azure-vm-create-preview.md
     - name: Консультационные услуги
       items:
         - name: Планирование предложения консультационных услуг
@@ -329,7 +337,7 @@
     - name: 'Расписание: технические вопросы и вопросы, связанные с публикацией'
       href: 'https://aka.ms/marketplacepublishingofficehours'
     - name: Варианты поддержки Центра партнеров
-      href: partner-center-portal/support.md
+      href: support.md
     - name: Объявления Центра партнеров
       href: /partner-center/announcements
     - name: Сообщество партнеров корпорации Майкрософт

@@ -3,12 +3,12 @@ title: Поддержка оценки физических серверов в 
 description: Сведения о поддержке оценки физических серверов с помощью Azure Migrate Server — Оценка серверов
 ms.topic: conceptual
 ms.date: 06/03/2020
-ms.openlocfilehash: dffa95fe717f8588f56b9dee60ede8bbf44aceb9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d9f7dea69c78bb038c06e5cb276628eba0381bb2
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89660352"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92319307"
 ---
 # <a name="support-matrix-for-physical-server-assessment"></a>Матрица поддержки для оценки физических серверов 
 
@@ -74,4 +74,4 @@ ms.locfileid: "89660352"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Подготовка к оценке физического сервера](tutorial-prepare-physical.md).
+[Подготовка к оценке физического сервера](./tutorial-discover-physical.md).
