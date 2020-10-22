@@ -6,12 +6,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 04/15/2019
 ms.author: ramamill
-ms.openlocfilehash: 5748ff87e94daef80b140e015371eb7a334fffac
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bcd232a3242b0341bfc81fa9785f76b0d3bd90cb
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91361489"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92369460"
 ---
 # <a name="manage-the-configuration-server-for-vmware-vmphysical-server-disaster-recovery"></a>Управление сервером конфигурации для аварийного восстановления виртуальных машин и физических серверов VMware
 
@@ -169,12 +169,12 @@ ms.locfileid: "91361489"
 - Если вы используете версии 9.7, 9.8, 9.9 или 9.10, можно обновить их непосредственно до версии 9.11.
 - Если вы используете версию 9.6 или ниже и хотите обновить ее до версии 9.11, сначала выполните обновление до версии 9.7, а затем — до версии 9.11.
 
-Дополнительные сведения о заявлении о поддержке компонентов Azure Site Recovery см. [здесь](https://aka.ms/asr_support_statement).
-Ссылки на накопительные пакеты обновления для всех версий сервера конфигурации доступны [здесь](https://aka.ms/asr_update_rollups).
+Дополнительные сведения о заявлении о поддержке компонентов Azure Site Recovery см. [здесь](./service-updates-how-to.md#support-statement-for-azure-site-recovery).
+Ссылки на накопительные пакеты обновления для всех версий сервера конфигурации доступны [здесь](./service-updates-how-to.md#links-to-currently-supported-update-rollups).
 
 > [!IMPORTANT]
 > С каждой новой выпускаемой версией N компонента Azure Site Recovery поддержка всех версий ниже N-4 считается прекращенной. Рекомендуется всегда обновляться до последней доступной версии.</br>
-> Дополнительные сведения о заявлении о поддержке компонентов Azure Site Recovery см. [здесь](https://aka.ms/asr_support_statement).
+> Дополнительные сведения о заявлении о поддержке компонентов Azure Site Recovery см. [здесь](./service-updates-how-to.md#support-statement-for-azure-site-recovery).
 
 Инструкции по обновлению сервера:
 
@@ -192,7 +192,7 @@ ms.locfileid: "91361489"
     ![Update](./media/vmware-azure-manage-configuration-server/update3.png)
 
 7. Чтобы закрыть установщик, нажмите кнопку **Готово**.
-8. Сведения об обновлении остальных компонентов Site Recovery см. в [руководстве по обновлению](https://aka.ms/asr_vmware_upgrades).
+8. Сведения об обновлении остальных компонентов Site Recovery см. в [руководстве по обновлению](./service-updates-how-to.md#vmware-vmphysical-server-disaster-recovery-to-azure).
 
 ## <a name="upgrade-configuration-serverprocess-server-from-the-command-line"></a>Обновление сервера конфигурации и сервера обработки из командной строки
 
@@ -212,7 +212,7 @@ ms.locfileid: "91361489"
 
 ### <a name="parameters"></a>Параметры
 
-|Имя параметра| Тип | Описание| Значения|
+|Имя параметра| Type | Описание| Значения|
 |-|-|-|-|
 | /ServerMode|Обязательно|Указывает, нужно ли установить и сервер конфигурации, и сервер обработки или только север обработки.|CS<br>PS|
 |/InstallLocation|Обязательно|Папка для установки компонентов.| Любая папка на компьютере.|

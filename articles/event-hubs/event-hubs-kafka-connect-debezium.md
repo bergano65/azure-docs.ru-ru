@@ -5,12 +5,12 @@ ms.topic: how-to
 author: abhirockzz
 ms.author: abhishgu
 ms.date: 08/11/2020
-ms.openlocfilehash: e4bd6cdf6d3a5dc30b90abc5094202360181ae0b
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: a13713f01a6bdb0ffcd787ef9c1d2f9a0336f63c
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92318521"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92369562"
 ---
 # <a name="integrate-apache-kafka-connect-support-on-azure-event-hubs-preview-with-debezium-for-change-data-capture"></a>Интеграция поддержки Apache Kafka Connect в концентраторы событий Azure (Предварительная версия) с Дебезиум для отслеживания измененных данных
 
@@ -98,6 +98,10 @@ consumer.sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModul
 
 plugin.path={KAFKA.DIRECTORY}/libs # path to the libs directory within the Kafka release
 ```
+
+> [!IMPORTANT]
+> Замените `{YOUR.EVENTHUBS.CONNECTION.STRING}` строками подключения для вашего пространства имен Центров событий. Инструкции по получению строки подключения см. в разделе [Получение строки подключения концентраторов событий](event-hubs-get-connection-string.md). Ниже приведен пример конфигурации. `sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="Endpoint=sb://mynamespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=XXXXXXXXXXXXXXXX";`
+
 
 ### <a name="run-kafka-connect"></a>Выполнение Kafka Connect
 На этом этапе рабочая роль Kafka Connect запускается локально в распределенном режиме с помощью Центров событий для поддержания состояния кластера.
@@ -275,7 +279,7 @@ tail -f /Users/foo/todos-cdc.txt
 ## <a name="cleanup"></a>Очистка
 Kafka Connect создает разделы Центра событий для хранения конфигураций, смещений и состояния, которые сохраняются даже после завершения работы кластера Connect. Если этого не требуется, рекомендуется удалить эти разделы. Также может потребоваться удалить `my-server.public.todos` концентратор событий, созданный в ходе этого руководства.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о концентраторах событий для Kafka см. в следующих статьях:  
 

@@ -1,6 +1,6 @@
 ---
 title: Преобразование данных
-description: Преобразуйте данные или обработайте данные в фабрике данных Azure с помощью Hadoop, Машинное обучение или Azure Data Lake Analytics.
+description: Преобразуйте данные или обработайте данные в фабрике данных Azure с помощью Hadoop, Машинное обучение Azure Studio (классическая модель) или Azure Data Lake Analytics.
 services: data-factory
 ms.service: data-factory
 ms.workload: data-services
@@ -10,12 +10,12 @@ ms.author: abnarain
 manager: shwang
 ms.custom: seo-lt-2019
 ms.date: 07/31/2018
-ms.openlocfilehash: 19b4ee621a3918a49b524c5e4515bddd5962e0f4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 039afdafdccbefe03b5b366a89256409fda482e9
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89442791"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92368865"
 ---
 # <a name="transform-data-in-azure-data-factory"></a>Преобразование данных в фабрике данных Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "89442791"
 > * [MapReduce](transform-data-using-hadoop-map-reduce.md)  
 > * [Потоковая передача HDInsight](transform-data-using-hadoop-streaming.md)
 > * [HDInsight Spark](transform-data-using-spark.md)
-> * [Машинное обучение](transform-data-using-machine-learning.md) 
+> * [Машинное обучение Azure Studio (классическая модель)](transform-data-using-machine-learning.md) 
 > * [Хранимая процедура](transform-data-using-stored-procedure.md)
 > * [Аналитика озера данных U-SQL](transform-data-using-data-lake-analytics.md)
 > * [Записная книжка кирпичей](transform-data-databricks-notebook.md)
@@ -70,12 +70,12 @@ ms.locfileid: "89442791"
 ### <a name="hdinsight-spark-activity"></a>Действие HDInsight Spark
 Действие HDInsight Spark в конвейере фабрики данных выполняет программы Spark в вашем кластере HDInsight. Дополнительные сведения см. в разделе [Вызов программ Spark из фабрики данных](transform-data-using-spark.md). 
 
-### <a name="machine-learning-activities"></a>Действия машинного обучения
-Фабрика данных Azure позволяет легко создавать конвейеры, в которых для прогнозной аналитики используется опубликованная веб-служба Машинного обучения Azure. С помощью [действия выполнения пакета](transform-data-using-machine-learning.md) в конвейере фабрики данных Azure можно вызывать веб-службу Машинного обучения Azure, чтобы создавать прогнозы по данным в пакете.
+### <a name="azure-machine-learning-studio-classic-activities"></a>Действия Машинное обучение Azure Studio (классические)
+Фабрика данных Azure позволяет легко создавать конвейеры, использующие опубликованную веб-службу Машинное обучение Azure Studio (классическая модель) для прогнозной аналитики. С помощью [действия выполнения пакета](transform-data-using-machine-learning.md) в конвейере фабрики данных Azure можно вызвать веб-службу Studio (классическая) для выполнения прогнозов по данным в пакетной службе.
 
-Со временем прогнозные модели в оценивающих экспериментах машинного обучения потребуют повторного обучения с помощью новых входных наборов данных. Когда повторное обучение будет завершено, вам потребуется обновить веб-службу оценки на основании обновленной модели машинного обучения. Чтобы обновить веб-службу с помощью заново обученной модели, можно использовать [действие обновления ресурса](update-machine-learning-models.md).  
+Со временем прогнозные модели в экспериментах по оценке (классическая модель) необходимо переучить с помощью новых входных наборов данных. После завершения повторного обучения необходимо обновить веб-службу оценки с помощью переученной модели машинного обучения. Чтобы обновить веб-службу с помощью заново обученной модели, можно использовать [действие обновления ресурса](update-machine-learning-models.md).  
 
-Дополнительные сведения об этих действиях машинного обучения см. в разделе [Создание прогнозных конвейеров с помощью действий машинного обучения Azure](transform-data-using-machine-learning.md). 
+Дополнительные сведения об этих действиях Studio (классическая модель) см. в статье [Использование действий машинное обучение Azure Studio (классическая модель)](transform-data-using-machine-learning.md) . 
 
 ### <a name="stored-procedure-activity"></a>Действие хранимой процедуры
 Вы можете использовать действие SQL Server хранимой процедуры в конвейере фабрики данных для вызова хранимой процедуры в одном из следующих хранилищ данных: база данных SQL Azure, Azure синапсе Analytics (ранее — хранилище данных SQL), SQL Server базу данных на предприятии или виртуальную машину Azure. Дополнительные сведения см. в статье [Преобразование данных с помощью действия хранимой процедуры SQL Server в фабрике данных Azure](transform-data-using-stored-procedure.md).  
