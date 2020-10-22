@@ -5,12 +5,12 @@ author: FlorianBorn71
 ms.author: flborn
 ms.date: 06/15/2020
 ms.topic: tutorial
-ms.openlocfilehash: 0dad78ad76a870ea9f1db28a3cb5ccace5cd804f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0ff6d064b6bfabbd8a648c23b5648aae9b12a11d
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88510935"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92207501"
 ---
 # <a name="tutorial-creating-a-commercial-ready-azure-remote-rendering-application"></a>Руководство по Создание коммерческого готового приложения в службе "Удаленная отрисовка Azure"
 
@@ -35,8 +35,8 @@ ms.locfileid: "88510935"
 
 Более подробные рекомендации в отношении системной архитектуры см. здесь:
 
-* [Центр архитектуры Azure](https://docs.microsoft.com/azure/architecture/)
-* [Руководство по началу работы для разработчиков Azure](https://docs.microsoft.com/azure/guides/developer/azure-developer-guide)
+* [Центр архитектуры Azure](/azure/architecture/)
+* [Руководство по началу работы для разработчиков Azure](../../../../guides/developer/azure-developer-guide.md)
 
 ## <a name="analytics"></a>Analytics
 
@@ -54,7 +54,7 @@ ms.locfileid: "88510935"
 
 Дополнительные сведения об именовании ресурсов и добавлении тегов см. здесь:
 
-* [Руководство по именованию ресурсов и присвоению тегов](https://docs.microsoft.com/azure/cloud-adoption-framework/decision-guides/resource-tagging/?toc=/azure/azure-resource-manager/management/toc.json)
+* [Руководство по именованию ресурсов и присвоению тегов](/azure/cloud-adoption-framework/decision-guides/resource-tagging/?toc=%252fazure%252fazure-resource-manager%252fmanagement%252ftoc.json)
 
 ### <a name="diagnostics"></a>Диагностика
 
@@ -62,9 +62,9 @@ ms.locfileid: "88510935"
 
 Дополнительные сведения см. на сайте:
 
-* [Создание трассировок производительности на стороне клиента](https://docs.microsoft.com/azure/remote-rendering/how-tos/performance-tracing)
-* [Получение данных трассировки событий Windows (ETW)](https://docs.microsoft.com/visualstudio/profiling/how-to-collect-event-tracing-for-windows-etw-data)
-* [Использование портала устройств Windows: ведение журнала](https://docs.microsoft.com/windows/mixed-reality/using-the-windows-device-portal)
+* [Создание трассировок производительности на стороне клиента](../../../how-tos/performance-tracing.md)
+* [Получение данных трассировки событий Windows (ETW)](/visualstudio/profiling/how-to-collect-event-tracing-for-windows-etw-data)
+* [Использование портала устройств Windows: ведение журнала](/windows/mixed-reality/using-the-windows-device-portal)
 
 ### <a name="usage-analysis"></a>Анализ использования
 
@@ -72,7 +72,7 @@ Azure Application Insights помогает понимать, как польз�
 
 Дополнительные сведения см. на сайте:
 
-* [Анализ использования с помощью Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/usage-overview)
+* [Анализ использования с помощью Application Insights](../../../../azure-monitor/app/usage-overview.md)
 
 ## <a name="fast-startup-time-strategies"></a>Стратегии быстрого запуска
 
@@ -102,7 +102,7 @@ Azure Application Insights помогает понимать, как польз�
 
 Дополнительные сведения о сеансах Удаленной отрисовки Azure см. здесь:
 
-* [Сеансы Удаленной отрисовки](https://docs.microsoft.com/azure/remote-rendering/concepts/sessions)
+* [Сеансы Удаленной отрисовки](../../../concepts/sessions.md)
 
 ## <a name="standard-vs-premium-server-size-routing-strategies"></a>Сравнение стратегий маршрутизации виртуальных машин уровня "Стандартный" и Стратегии маршрутизации по размеру сервера уровня "Премиум"
 
@@ -164,9 +164,9 @@ Azure Application Insights помогает понимать, как польз�
 Дополнительные сведения об аналитике сети см. здесь:
 
 * [Тест скорости загрузки Azure Storage Blob](https://www.azurespeed.com/Azure/Download)
-* [Статистика задержек приема-передачи в сети Azure](https://docs.microsoft.com/azure/networking/azure-network-latency)
-* [Трассировка производительности на стороне сервера](https://docs.microsoft.com/azure/remote-rendering/overview/features/performance-queries)
-* [Трассировка производительности на стороне клиента](https://docs.microsoft.com/azure/remote-rendering/how-tos/performance-tracing)
+* [Статистика задержек приема-передачи в сети Azure](../../../../networking/azure-network-latency.md)
+* [Трассировка производительности на стороне сервера](../../../overview/features/performance-queries.md)
+* [Трассировка производительности на стороне клиента](../../../how-tos/performance-tracing.md)
 
 ## <a name="collaboration-considerations"></a>Рекомендации для совместной работы
 
@@ -192,8 +192,8 @@ Azure Application Insights помогает понимать, как польз�
 
 Дополнительные сведения
 
-* [Общие возможности в смешанной реальности](https://docs.microsoft.com/windows/mixed-reality/shared-experiences-in-mixed-reality)
-* [Избыточность хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-redundancy)
+* [Общие возможности в смешанной реальности](/windows/mixed-reality/shared-experiences-in-mixed-reality)
+* [Избыточность хранилища Azure](../../../../storage/common/storage-redundancy.md)
 
 ## <a name="managing-model-access"></a>Управление доступом к моделям
 
@@ -230,7 +230,7 @@ Azure Application Insights помогает понимать, как польз�
 Дополнительные сведения
 
 * [Шаблон Microsoft Power Automate для репликации из OneDrive в Хранилище Azure](https://flow.microsoft.com/galleries/public/templates/2f90b5d3-029b-4e2e-ad37-1c0fe6d187fe/when-a-file-is-uploaded-to-onedrive-copy-it-to-azure-storage-container/)
-* [Общие сведения об API хранилища файлов OneDrive](https://docs.microsoft.com/graph/onedrive-concept-overview)
+* [Общие сведения об API хранилища файлов OneDrive](/graph/onedrive-concept-overview)
 
 ### <a name="direct-cad-access"></a>Прямой доступ к САПР
 
@@ -255,7 +255,7 @@ Azure Application Insights помогает понимать, как польз�
 Дополнительные сведения
 
 * [Azure Marketplace](https://azure.microsoft.com/marketplace/)
-* [Руководство. Публикация управляемых приложений Azure в Marketplace](https://docs.microsoft.com/azure/azure-resource-manager/managed-applications/publish-marketplace-app)
+* [Руководство. Публикация управляемых приложений Azure в Marketplace](../../../../marketplace/partner-center-portal/create-new-azure-apps-offer.md)
 
 ### <a name="security"></a>Безопасность
 
@@ -277,6 +277,6 @@ Azure Application Insights помогает понимать, как польз�
 
 Дополнительные сведения
 
-* [Аутентификация с помощью AAD на уровне служб](https://docs.microsoft.com/azure/spatial-anchors/concepts/authentication?tabs=csharp#azure-ad-service-authentication)
+* [Аутентификация с помощью AAD на уровне служб](../../../../spatial-anchors/concepts/authentication.md?tabs=csharp#azure-ad-service-authentication)
 * [Усиление безопасности с помощью Azure](https://azure.microsoft.com/overview/security/)
 * [Безопасность облака](https://azure.microsoft.com/product-categories/security/)

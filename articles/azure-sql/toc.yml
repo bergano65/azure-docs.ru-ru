@@ -51,8 +51,6 @@
               href: ./database/security-controls-policy.md
             - name: Базовые средства безопасности
               href: database/security-baseline.md
-            - name: Атрибуты безопасности
-              href: database/security-controls.md
             - name: Azure Defender для SQL
               href: database/azure-defender-for-sql.md
             - name: Расширенная защита от угроз

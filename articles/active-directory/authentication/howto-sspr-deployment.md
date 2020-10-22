@@ -11,12 +11,12 @@ author: barbaraselden
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b9a8f572189afaa726f7e01f5e0bbb73340face8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ee0c5093fc1dab69e0502b8ed1efe42fa63f1eb9
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89657224"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92363731"
 ---
 # <a name="plan-an-azure-active-directory-self-service-password-reset-deployment"></a>Планирование развертывания самостоятельного сброса пароля Azure Active Directory
 
@@ -313,7 +313,7 @@ Azure AD может предоставить дополнительные све
 Для измерения эффективности SSPR можно использовать готовые отчеты на портале Azure. При наличии соответствующей лицензии можно также создавать пользовательские запросы. Дополнительные сведения см. в статье [Создание отчетов об управлении паролями в Azure AD](./howto-sspr-reporting.md).
 
 > [!NOTE]
->  Вы должны иметь права [глобального администратора](../users-groups-roles/directory-assign-admin-roles.md) и указать, что эти данные необходимо собирать для вашей организации. Чтобы дать согласие, необходимо по крайней мере один раз посетить вкладку "Отчеты" или просмотреть журналы аудита на портале Azure. До этого момента данные не будут собираться для вашей организации.
+>  Вы должны иметь права [глобального администратора](../roles/permissions-reference.md) и указать, что эти данные необходимо собирать для вашей организации. Чтобы дать согласие, необходимо по крайней мере один раз посетить вкладку "Отчеты" или просмотреть журналы аудита на портале Azure. До этого момента данные не будут собираться для вашей организации.
 
 Журналы аудита для регистрации и сброса пароля доступны в течение 30 дней. Если сведения об аудите безопасности в вашей организации хранятся более длительный период, необходимо экспортировать и использовать журналы в средстве SIEM, например [Azure Sentinel](../../sentinel/connect-azure-active-directory.md), Splunk или ArcSight.
 
