@@ -5,6 +5,8 @@
   items:
     - name: Что собой представляет подготовка приложения?
       href: user-provisioning.md
+    - name: Новые возможности в Документации Майкрософт
+      href: whats-new-docs.md
 - name: Учебники
   expanded: true
   items:
