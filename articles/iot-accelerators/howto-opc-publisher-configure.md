@@ -9,12 +9,12 @@ ms.service: industrial-iot
 services: iot-industrialiot
 manager: philmea
 ms.custom: devx-track-csharp
-ms.openlocfilehash: b004bb4fbca768d782863f73d83ec5443bc66ae3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 405fa04a3b6af7f0c87888aa48aba9bdffeaf282
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91320615"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92366961"
 ---
 # <a name="configure-opc-publisher"></a>Настройка издателя OPC
 
@@ -144,7 +144,7 @@ ms.locfileid: "91320615"
 - ExitApplication
 - GetInfo
 
-Формат полезных данных JSON для запроса метода и ответов определяется в файле [opcpublisher/HubMethodModel.cs](https://github.com/Azure/iot-edge-opc-publisher/blob/master/opcpublisher/HubMethodModel.cs).
+Формат полезных данных JSON для запроса метода и ответов определяется в файле [opcpublisher/HubMethodModel.cs](https://github.com/Azure/iot-edge-opc-publisher/tree/master/opcpublisher).
 
 При вызове неизвестного метода в модуле в ответ выдается строка о том, что метод не реализован. Неизвестный метод можно вызвать, чтобы проверить связь с модулем.
 

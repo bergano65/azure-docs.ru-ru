@@ -11,12 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: 3ea719a26f47da98e80abd9e3fcd1785ed8efa69
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 97e2be64818888040b7e6ac3bc8861da24ebdbbd
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82185597"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92359957"
 ---
 # <a name="invoke-spark-programs-from-azure-data-factory-pipelines"></a>Вызов программ Spark из конвейеров фабрики данных Azure
 
@@ -26,8 +26,8 @@ ms.locfileid: "82185597"
 > * [Действие MapReduce](data-factory-map-reduce.md)
 > * [Действие потоковой передачи Hadoop](data-factory-hadoop-streaming-activity.md)
 > * [Действие Spark](data-factory-spark.md)
-> * [Создание прогнозирующих конвейеров с помощью машинного обучения Azure и фабрики данных Azure](data-factory-azure-ml-batch-execution-activity.md)
-> * [Действие "обновить ресурс" Машинное обучение](data-factory-azure-ml-update-resource-activity.md)
+> * [Действие выполнения пакета Машинное обучение Azure Studio (классическая модель)](data-factory-azure-ml-batch-execution-activity.md)
+> * [Действие "обновить ресурс" Машинное обучение Azure Studio (классическая модель)](data-factory-azure-ml-update-resource-activity.md)
 > * [Действие хранимой процедуры](data-factory-stored-proc-activity.md)
 > * [Data Lake Analytics действия U-SQL](data-factory-usql-activity.md)
 > * [Настраиваемое действие .NET](data-factory-use-custom-activities.md)
@@ -51,7 +51,7 @@ ms.locfileid: "82185597"
 * Создайте набор данных, который ссылается на связанную службу хранилища. Затем определите выходной набор данных для действия, даже если выходные данные не выдаются.
 * Создайте конвейер с действием Spark, который ссылается на созданную связанную службу HDInsight. Конфигурация действия выполняется на основе набора данных, созданного на предыдущем шаге в качестве выходного набора данных. На основе этого набора настраивается расписание (ежечасно, ежедневно). Исходя из сказанного выше, вы должны определить выходной набор данных, даже если действие не выдает выходные данные.
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Обязательные условия
 1. Создайте учетную запись хранения общего назначения, следуя указаниям в [этом разделе](../../storage/common/storage-account-create.md).
 
 1. Создайте кластер Spark в HDInsight, следуя инструкциям в [этом руководстве](../../hdinsight/spark/apache-spark-jupyter-spark-sql.md). Свяжите учетную запись хранения, созданную на шаге 1, с этим кластером.
@@ -118,7 +118,7 @@ ms.locfileid: "82185597"
 
 1. Вставьте следующий фрагмент в окно Draft-1. В редакторе JSON выполните следующие действия.
 
-    a. Укажите URI для кластера HDInsight Spark. Например: `https://<sparkclustername>.azurehdinsight.net/`.
+    а. Укажите URI для кластера HDInsight Spark. Например: `https://<sparkclustername>.azurehdinsight.net/`.
 
     b. Укажите имя пользователя, имеющего доступ к кластеру Spark.
 
@@ -273,7 +273,7 @@ ms.locfileid: "82185597"
 Для дальнейшего устранения неполадок сделайте следующее:
 
 
-1. Перейдите по адресу `https://<CLUSTERNAME>.azurehdinsight.net/yarnui/hn/cluster`.
+1. Перейдите к `https://<CLUSTERNAME>.azurehdinsight.net/yarnui/hn/cluster`.
 
     ![Приложение пользовательского интерфейса YARN](media/data-factory-spark/yarnui-application.png)
 

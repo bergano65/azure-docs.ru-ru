@@ -6,12 +6,12 @@ ms.service: signalr
 ms.topic: tutorial
 ms.date: 09/09/2020
 ms.author: jixin
-ms.openlocfilehash: 1a75c083015d1f10a3ed3dba15480430747756eb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d1c13c5d4bea8bfdb0f70e67ce8f264a1929b8a2
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90525022"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92150898"
 ---
 # <a name="tutorial-build-a-blazor-server-chat-app"></a>Руководство по Создание приложения чата Blazor Server
 
@@ -361,7 +361,7 @@ ms.locfileid: "90525022"
 
 ## <a name="publish-to-azure"></a>Публикация в Azure
 
-   Пока что приложение Blazor работает в локальном экземпляре SignalR, и при развертывании в Службе приложений Azure рекомендуется использовать [Службу Azure SignalR](https://docs.microsoft.com/aspnet/core/signalr/scale?view=aspnetcore-3.1#azure-signalr-service), что позволит масштабировать приложение Blazor Server для поддержки большого количества одновременных подключений SignalR. Кроме того, глобальный охват службы SignalR и ее высокопроизводительные центры обработки данных обеспечивают низкую задержку благодаря доступности в разных регионах.
+   Пока что приложение Blazor работает в локальном экземпляре SignalR, и при развертывании в Службе приложений Azure рекомендуется использовать [Службу Azure SignalR](/aspnet/core/signalr/scale?view=aspnetcore-3.1#azure-signalr-service), что позволит масштабировать приложение Blazor Server для поддержки большого количества одновременных подключений SignalR. Кроме того, глобальный охват службы SignalR и ее высокопроизводительные центры обработки данных обеспечивают низкую задержку благодаря доступности в разных регионах.
 
 > [!IMPORTANT]
 > В приложении Blazor Server состояния пользовательского интерфейса поддерживаются на стороне сервера. Это означает, что в данном случае необходима привязка сервера. Если используется один сервер приложений, то привязка сервера реализована при разработке. Но если существует несколько серверов приложений, существует вероятность, что при согласовании и подключении клиента могут быть выбраны разные серверы, что приведет к ошибкам пользовательского интерфейса в приложении Blazor. Поэтому необходимо включить привязку сервера, как показано ниже в `appsettings.json`.
@@ -385,7 +385,7 @@ ms.locfileid: "90525022"
 
    Зависимость службы выполнит приведенные ниже действия, чтобы ваше приложение автоматически переключалось на Службу Azure SignalR при запуске в Azure.
 
-   * Обновите [`HostingStartupAssembly`](https://docs.microsoft.com/aspnet/core/fundamentals/host/platform-specific-configuration?view=aspnetcore-3.1), чтобы использовать Службу Azure SignalR.
+   * Обновите [`HostingStartupAssembly`](/aspnet/core/fundamentals/host/platform-specific-configuration?view=aspnetcore-3.1), чтобы использовать Службу Azure SignalR.
    * Добавьте ссылку на пакет NuGet для Службы Azure SignalR.
    * Обновите свойства профиля, чтобы сохранить параметры зависимости.
    * Настройте хранилище секретов на свой выбор.
@@ -423,10 +423,10 @@ ms.locfileid: "90525022"
    }
    ```
 
-1. Настройте `ConnectionString` Службы Azure SignalR в `appsetting.json` или с помощью инструмента [Диспетчер секретов](https://docs.microsoft.com/aspnet/core/security/app-secrets?view=aspnetcore-3.1&tabs=visual-studio#secret-manager).
+1. Настройте `ConnectionString` Службы Azure SignalR в `appsetting.json` или с помощью инструмента [Диспетчер секретов](/aspnet/core/security/app-secrets?tabs=visual-studio&view=aspnetcore-3.1#secret-manager).
 
 > [!NOTE]
-> Шаг 2 можно заменить с помощью [`HostingStartupAssembly`](https://docs.microsoft.com/aspnet/core/fundamentals/host/platform-specific-configuration?view=aspnetcore-3.1) в пакете SDK для SignalR.
+> Шаг 2 можно заменить с помощью [`HostingStartupAssembly`](/aspnet/core/fundamentals/host/platform-specific-configuration?view=aspnetcore-3.1) в пакете SDK для SignalR.
 > 
 > 1. Добавьте конфигурацию для включения Службы Azure SignalR в `appsetting.json`.
 >    ```js
@@ -470,4 +470,4 @@ ms.locfileid: "90525022"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [ASP.NET Core Blazor](https://docs.microsoft.com/aspnet/core/blazor)
+* [ASP.NET Core Blazor](/aspnet/core/blazor)

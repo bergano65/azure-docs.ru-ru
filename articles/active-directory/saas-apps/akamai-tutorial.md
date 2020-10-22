@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/03/2020
 ms.author: jeedes
-ms.openlocfilehash: c8978504244fbf68875ca8cff7a92f042e8e988b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bbea6a0aa31034cd1c04145fb50b72432c9f8520
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91329539"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92319020"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-akamai"></a>Руководство по интеграции единого входа Azure Active Directory с Akamai
 
@@ -26,9 +26,9 @@ ms.locfileid: "91329539"
 * Автоматический вход пользователей в Akamai с учетными записями Azure AD.
 * Централизованное управление учетными записями через портал Azure.
 
-Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-Интеграция Azure Active Directory c Akamai Enterprise Application Access обеспечивает простой доступ к устаревшим приложениям, размещенным в облаке или локально. Для доступа к устаревшим приложениям без их изменения или установки агентов в интегрированном решении используются все преимущества современных возможностей Azure Active Directory, в том числе [условный доступ в Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal), [Защита идентификации Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-identityprotection) и [Azure AD Identity Governance](https://docs.microsoft.com/azure/active-directory/governance/identity-governance-overview).
+Интеграция Azure Active Directory c Akamai Enterprise Application Access обеспечивает простой доступ к устаревшим приложениям, размещенным в облаке или локально. Для доступа к устаревшим приложениям без их изменения или установки агентов в интегрированном решении используются все преимущества современных возможностей Azure Active Directory, в том числе [условный доступ в Azure AD](../conditional-access/overview.md), [Защита идентификации Azure AD](../identity-protection/overview-identity-protection.md) и [Azure AD Identity Governance](../governance/identity-governance-overview.md).
 
 На рисунке ниже показано место, которое Akamai ЕАА занимает в более обширном гибридном сценарии безопасного доступа.
 
@@ -589,14 +589,14 @@ Akamai ЕАА настраивается в Azure AD как единое при
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув плитку Akamai на панели доступа, вы автоматически войдете в приложение Akamai, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+Щелкнув плитку Akamai на панели доступа, вы автоматически войдете в приложение Akamai, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](../user-help/my-apps-portal-end-user-access.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](./tutorial-list.md)
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](../conditional-access/overview.md)
 
 - [Попробуйте использовать Akamai с Azure AD](https://aad.portal.azure.com/)
