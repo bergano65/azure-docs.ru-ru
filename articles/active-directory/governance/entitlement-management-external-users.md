@@ -16,12 +16,12 @@ ms.date: 06/18/2020
 ms.author: barclayn
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9ff683c7c3214be6ae60b5d00d4cd1c2becc32e2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7dd1234e13f77f1ea95327a0a489e9a97cdc0ffd
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91447092"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92362507"
 ---
 # <a name="govern-access-for-external-users-in-azure-ad-entitlement-management"></a>Управление доступом для внешних пользователей в управлении назначениями Azure AD
 
@@ -109,7 +109,7 @@ ms.locfileid: "91447092"
 
 - Если требуется, чтобы внешние пользователи могли получить доступ к сайту SharePoint Online и ресурсам, связанным с группой Microsoft 365, убедитесь, что включен внешний общий доступ SharePoint Online. Дополнительные сведения см. [в разделе Включение или отключение внешнего общего доступа](/sharepoint/turn-external-sharing-on-or-off#change-the-organization-level-external-sharing-setting).
 
-- Сведения о настройке гостевой политики для групп Microsoft 365 на уровне каталога в PowerShell см. в разделе [пример. Настройка гостевой политики для групп на уровне каталога](../users-groups-roles/groups-settings-cmdlets.md#example-configure-guest-policy-for-groups-at-the-directory-level).
+- Сведения о настройке гостевой политики для групп Microsoft 365 на уровне каталога в PowerShell см. в разделе [пример. Настройка гостевой политики для групп на уровне каталога](../enterprise-users/groups-settings-cmdlets.md#example-configure-guest-policy-for-groups-at-the-directory-level).
 
 ### <a name="review-your-teams-sharing-settings"></a>Обзор параметров совместного использования команд
 

@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 03/19/2020
 ms.author: brendm
 ms.custom: devx-track-java
-ms.openlocfilehash: 2fc20737ab371135a62d510d9d083e084b592fae
-ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
+ms.openlocfilehash: ea0887dd1d28bb958b27813df7f4c7a221470bac
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91945776"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92088760"
 ---
 # <a name="map-an-existing-custom-domain-to-azure-spring-cloud"></a>Сопоставление существующего личного домена с Azure Spring Cloud
 
@@ -26,7 +26,7 @@ ms.locfileid: "91945776"
 * Приложение, развернутое в Azure Spring Cloud (можно воспользоваться статьей [Краткое руководство. Запуск существующего приложения Azure Spring Cloud с помощью портала Azure](spring-cloud-quickstart.md) или применить любое существующее приложение).
 * Доменное имя с доступом к реестру DNS для поставщика домена, например GoDaddy.
 * Закрытый сертификат (т. е. ваш самозаверяющий сертификат) стороннего поставщика. Этот сертификат должен соответствовать домену.
-* Развернутый экземпляр [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-overview).
+* Развернутый экземпляр [Azure Key Vault](../key-vault/general/overview.md).
 
 ## <a name="import-certificate"></a>Импорт сертификата
 ### <a name="prepare-your-certificate-file-in-pfx-optional"></a>Подготовка файла сертификата в формате PFX (необязательно)
@@ -224,7 +224,6 @@ az spring-cloud app update -n <app name> --resource-group <resource group name> 
 По завершении операции перейдите по любому из URL-адресов HTTPS, которые указывают на ваше приложение. Обратите внимание, что URL-адреса HTTP теперь не работают.
 
 ## <a name="see-also"></a>См. также раздел
-* [Что такое хранилище ключей Azure?](https://docs.microsoft.com/azure/key-vault/key-vault-overview)
-* [Импорт сертификата](https://docs.microsoft.com/azure/key-vault/certificate-scenarios#import-a-certificate)
-* [Запуск приложения Spring Cloud с помощью Azure CLI](https://docs.microsoft.com/azure/spring-cloud/spring-cloud-quickstart-launch-app-cli)
-
+* [Что такое хранилище ключей Azure?](../key-vault/general/overview.md)
+* [Импорт сертификата](../key-vault/certificates/certificate-scenarios.md#import-a-certificate)
+* [Запуск приложения Spring Cloud с помощью Azure CLI](./spring-cloud-quickstart.md)

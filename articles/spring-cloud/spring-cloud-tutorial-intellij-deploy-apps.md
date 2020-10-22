@@ -7,12 +7,12 @@ ms.service: spring-cloud
 ms.topic: tutorial
 ms.date: 03/26/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: e5b8dc325fa7eaceaa0274029049f546db5b6995
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6aa56eeab59dee3f080895d5f15285a2b2d41591
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90888540"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92088777"
 ---
 # <a name="use-intellij-to-deploy-azure-spring-cloud-applications"></a>Развертывание приложений Azure Spring Cloud с помощью IntelliJ
 
@@ -23,7 +23,7 @@ ms.locfileid: "90888540"
 Перед выполнением этого примера вы можете ознакомиться с [базовым кратким руководством](spring-cloud-quickstart.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
-* [JDK 8 Azul Zulu](https://docs.microsoft.com/java/azure/jdk/java-jdk-install?view=azure-java-stable&preserve-view=true)
+* [JDK 8 Azul Zulu](/java/azure/jdk/java-jdk-install?preserve-view=true&view=azure-java-stable)
 * [Maven 3.5.0+](https://maven.apache.org/download.cgi)
 * [IntelliJ IDEA, выпуск Community или Ultimate, версия 2020.1 или 2019.3](https://www.jetbrains.com/idea/download/#section=windows)
 
@@ -57,7 +57,7 @@ ms.locfileid: "90888540"
     ![Импорт проекта](media/spring-cloud-intellij-howto/import-project-1.png)
 
 ## <a name="deploy-to-azure-spring-cloud"></a>Развертывание в Azure Spring Cloud
-Чтобы выполнить развертывание в Azure, необходимо войти в учетную запись Azure и выбрать подписку.  Дополнительные сведения см. в статье [Установка и вход](https://docs.microsoft.com/azure/developer/java/toolkit-for-intellij/create-hello-world-web-app#installation-and-sign-in).
+Чтобы выполнить развертывание в Azure, необходимо войти в учетную запись Azure и выбрать подписку.  Дополнительные сведения см. в статье [Установка и вход](/azure/developer/java/toolkit-for-intellij/create-hello-world-web-app#installation-and-sign-in).
 
 1. Щелкните правой кнопкой мыши проект в обозревателе проектов IntelliJ и выберите **Azure** -> **Deploy to Azure Spring Cloud** (Развернуть в Azure Spring Cloud).
 
@@ -104,5 +104,5 @@ ms.locfileid: "90888540"
     ![Вывод журнала потоковой передачи](media/spring-cloud-intellij-howto/streaming-log-output.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* [Подготовка приложения Spring для Azure Spring Cloud](https://docs.microsoft.com/azure/spring-cloud/spring-cloud-tutorial-prepare-app-deployment)
-* [Дополнительные сведения об Azure Toolkit for IntelliJ](https://docs.microsoft.com/azure/developer/java/toolkit-for-intellij/)
+* [Подготовка приложения Spring для Azure Spring Cloud](./spring-cloud-tutorial-prepare-app-deployment.md)
+* [Дополнительные сведения об Azure Toolkit for IntelliJ](/azure/developer/java/toolkit-for-intellij/)

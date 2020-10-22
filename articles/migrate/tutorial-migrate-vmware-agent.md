@@ -4,12 +4,12 @@ description: Узнайте, как выполнить миграцию вирт
 ms.topic: tutorial
 ms.date: 06/09/2020
 ms.custom: MVC
-ms.openlocfilehash: f437c0f3b9f786863d3b58f10d1a7384b0f1e8ba
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ffdbdba0aeae33b04195c5a6bf6aeaff5658424b
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91296150"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92314708"
 ---
 # <a name="migrate-vmware-vms-to-azure-agent-based"></a>Миграция виртуальных машин VMware в Azure (на основе агента)
 
@@ -391,7 +391,7 @@ ms.locfileid: "91296150"
     - Обеспечьте непрерывную работу и постоянную доступность рабочих нагрузок за счет репликации виртуальных машин Azure в дополнительный регион с помощью Site Recovery. [Подробнее](../site-recovery/azure-to-azure-tutorial-enable-replication.md).
 - Для повышения уровня безопасности:
     - Заблокируйте и ограничьте доступ входящего трафика с помощью [JIT-администрирования](../security-center/security-center-just-in-time.md) центра безопасности Azure.
-    - Ограничьте сетевой трафик конечными точками с помощью [групп безопасности сети](../virtual-network/security-overview.md).
+    - Ограничьте сетевой трафик конечными точками с помощью [групп безопасности сети](../virtual-network/network-security-groups-overview.md).
     - Разверните [шифрование дисков Azure](../security/fundamentals/azure-disk-encryption-vms-vmss.md), чтобы обеспечить безопасность дисков и защитить данные от кражи и несанкционированного доступа.
     - Ознакомьтесь с дополнительными сведениями о [защите ресурсов IaaS](https://azure.microsoft.com/services/virtual-machines/secure-well-managed-iaas/) и посетите [центр безопасности Azure](https://azure.microsoft.com/services/security-center/).
 - Для мониторинга и управления:

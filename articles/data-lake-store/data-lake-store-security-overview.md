@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 03/11/2020
 ms.author: twooley
 ms.openlocfilehash: 240018381a3139a6378141d78514e43ae469de5d
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
+ms.lasthandoff: 10/22/2020
 ms.locfileid: "92146325"
 ---
 # <a name="security-in-azure-data-lake-storage-gen1"></a>Безопасность в Azure Data Lake Storage 1-го поколения
@@ -111,13 +111,13 @@ Data Lake Storage 1-го поколения предоставляет два р
 
 Дополнительные сведения о работе с журналами диагностики в Data Lake Storage 1-го поколения см. в статье [Доступ к журналам диагностики Azure Data Lake Storage 1-го поколения](data-lake-store-diagnostic-logs.md).
 
-## <a name="summary"></a>Сводка
+## <a name="summary"></a>Итоги
 
 Корпоративным клиентам нужна безопасная и простая в использовании облачная платформа для аналитики данных. Data Lake Storage 1-го поколения полностью отвечает этим требованиям благодаря интеграции с Azure Active Directory. Это позволяет реализовать управление удостоверениями и проверку подлинности, авторизацию с помощью списков управления доступом, сетевую изоляцию, шифрование данных при передаче и хранении, а также аудит.
 
 Если вы хотите увидеть новые функции в Data Lake Storage 1-го поколения, оставьте свой отзыв на [форуме Data Lake Storage 1-го поколения UserVoice](https://feedback.azure.com/forums/327234-data-lake).
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также статью
 
 * [Общие сведения об Azure Data Lake Storage Gen1](data-lake-store-overview.md)
 * [Начало работы с Data Lake Storage 1-го поколения](data-lake-store-get-started-portal.md)

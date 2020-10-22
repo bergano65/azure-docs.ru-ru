@@ -11,12 +11,12 @@ author: MarkusVi
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 643010ef1f6e941a57673a711e1871aafd1e341d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: aaa9fa036f86fc822a4bb2175f404cdff1ca81d7
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91361914"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92362575"
 ---
 # <a name="tutorial-configure-the-log-analytics-wizard"></a>Руководство по настройке мастера Log Analytics
 
@@ -45,7 +45,7 @@ ms.locfileid: "91361914"
 
 - [Интеграция журналов действий с Log Analytics](./howto-integrate-activity-logs-with-log-analytics.md)
 
-- [Управление учетными записями для аварийного доступа в Azure AD](../users-groups-roles/directory-emergency-access.md)
+- [Управление учетными записями для аварийного доступа в Azure AD](../roles/security-emergency-access.md)
 
 - [Краткий справочник по KQL](/azure/data-explorer/kql-quick-reference)
 

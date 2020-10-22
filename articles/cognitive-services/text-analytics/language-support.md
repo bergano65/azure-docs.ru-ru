@@ -10,17 +10,16 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 10/07/2020
 ms.author: aahi
-ms.openlocfilehash: 4a4058cc6317e863fa20406449e64aa877810a54
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: b13d82780a01771c6bb8e87091a7808ea22ca111
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92147479"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92371191"
 ---
 # <a name="text-analytics-api-v3-language-support"></a>Поддержка языков API анализа текста v3 
 
-> [!IMPORTANT]
-> Версия 3. x API анализа текста сейчас недоступна в следующих регионах: Центральная Индия, север в ОАЭ, Северная Северный Китай 2 Восточный Китай.
+[!INCLUDE [v3 region availability](includes/v3-region-availability.md)]
 
 
 #### <a name="sentiment-analysis"></a>[Анализ тональности](#tab/sentiment-analysis).
@@ -222,6 +221,6 @@ API анализа текста может обнаруживать широки
 ---
 
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также статью
 
 * [Что такое API анализа текста?](overview.md)   

@@ -16,12 +16,12 @@ ms.date: 08/14/2020
 ms.author: barclayn
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b218f4c94e33d4a91b3981c66d3ac052c6caf7e2
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 2f3e825f908ffe475b05a5e6748d9505e7283b50
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92318127"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92362705"
 ---
 # <a name="planning-azure-active-directory-access-reviews-deployment"></a>Планирование развертывания Azure Active Directoryных проверок доступа
 
@@ -198,7 +198,7 @@ ms.locfileid: "92318127"
 | Доступ к пакету| глобальный администратор<p>Автор пакета Access| Только глобальный администратор |
 
 
-Дополнительные сведения см. в статье [Разрешения роли администратора в Azure Active Directory](../users-groups-roles/directory-assign-admin-roles.md).
+Дополнительные сведения см. в статье [Разрешения роли администратора в Azure Active Directory](../roles/permissions-reference.md).
 
 ### <a name="who-will-review-the-access-to-the-resource"></a>Кто будет просматривать доступ к ресурсу?
 
@@ -343,7 +343,7 @@ ms.locfileid: "92318127"
 
 ### <a name="review-external-users-group-memberships"></a>Проверка членства в группах внешних пользователей
 
-Чтобы избежать ручной работы и связанных с ними потенциальных ошибок, рассмотрите возможность использования [динамических групп](../users-groups-roles/groups-create-rule.md) для назначения членства в группе на основе атрибутов пользователя. Для внешних пользователей может потребоваться создать одну или несколько динамических групп. Внутренний спонсор может действовать в качестве рецензента для членства в группе. 
+Чтобы избежать ручной работы и связанных с ними потенциальных ошибок, рассмотрите возможность использования [динамических групп](../enterprise-users/groups-create-rule.md) для назначения членства в группе на основе атрибутов пользователя. Для внешних пользователей может потребоваться создать одну или несколько динамических групп. Внутренний спонсор может действовать в качестве рецензента для членства в группе. 
 
 Примечание. внешние пользователи, удаленные из группы в результате проверки доступа, не удаляются из клиента. 
 
@@ -389,7 +389,7 @@ ms.locfileid: "92318127"
 
 ## <a name="plan-review-of-azure-ad-and-azure-resource-roles"></a>Оценка плана ролей ресурсов Azure AD и Azure
 
-[Управление привилегированными пользователями (PIM)](../privileged-identity-management/pim-configure.md) упрощает управление привилегированным доступом к ресурсам в Azure AD предприятиям. Это позволяет значительно сократить список привилегированных ролей в [Azure AD](../users-groups-roles/directory-assign-admin-roles.md) и [ресурсах Azure](../../role-based-access-control/built-in-roles.md) , а также повысить общую безопасность каталога.
+[Управление привилегированными пользователями (PIM)](../privileged-identity-management/pim-configure.md) упрощает управление привилегированным доступом к ресурсам в Azure AD предприятиям. Это позволяет значительно сократить список привилегированных ролей в [Azure AD](../roles/permissions-reference.md) и [ресурсах Azure](../../role-based-access-control/built-in-roles.md) , а также повысить общую безопасность каталога.
 
 Проверки доступа позволяют проверяющим проверить, все ли пользователи должны быть в роли. Так же как и проверки доступа для пакетов Access, проверки ролей и ресурсов Azure AD интегрированы в пользовательский интерфейс PIM администратора. Рекомендуется регулярно просматривать следующие назначения ролей:
 
@@ -511,7 +511,7 @@ ms.locfileid: "92318127"
 
 Для более сложных запросов и анализа проверок доступа, а также для наблюдения за изменениями и завершением проверок рекомендуется экспортировать журналы аудита Azure AD в [log Analytics Azure](../reports-monitoring/quickstart-azure-monitor-route-logs-to-storage-account.md) или концентратор событий Azure. При хранении в Azure Log Analytics можно использовать [мощный язык аналитики](../reports-monitoring/howto-analyze-activity-logs-log-analytics.md) и создавать собственные панели мониторинга.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Сведения о следующих связанных технологиях.
 

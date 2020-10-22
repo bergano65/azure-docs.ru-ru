@@ -16,12 +16,12 @@ ms.date: 09/30/2020
 ms.author: barclayn
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 38edbd9e491d4bea469c6b83ad98df48fbce1d4f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b4030dedfb0d7308bb5a0f7a86bc49ee168e6d0c
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91597503"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92362813"
 ---
 # <a name="tutorial-create-your-first-access-package-in-azure-ad-entitlement-management"></a>Руководство по созданию пакета для доступа в управлении правами Azure AD
 
@@ -42,7 +42,7 @@ ms.locfileid: "91597503"
 
 >[!VIDEO https://www.youtube.com/embed/zaaKvaaYwI4]
 
-Вы также можете создать пакет для доступа программным образом с помощью Microsoft Graph. Учебник, в котором описывается, как создать пакет для доступа программным способом, приведен в статье [Создание пакета для доступа с помощью API-интерфейсов Microsoft Graph](https://docs.microsoft.com/graph/tutorial-access-package-api?view=graph-rest-beta).
+Вы также можете создать пакет для доступа программным образом с помощью Microsoft Graph. Учебник, в котором описывается, как создать пакет для доступа программным способом, приведен в статье [Создание пакета для доступа с помощью API-интерфейсов Microsoft Graph](/graph/tutorial-access-package-api?view=graph-rest-beta).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -118,10 +118,10 @@ ms.locfileid: "91597503"
 
     ![Создание пакета для доступа на вкладке "Роли ресурсов"](./media/entitlement-management-access-package-first/resource-roles.png)
     >[!IMPORTANT]
-    >Группы с назначением ролей, добавленные в пакет для доступа, будут указаны с использованием подтипа **Assignable to roles** (Возможность назначения для ролей). Дополнительные сведения см. в статье [Создание группы с назначением ролей в Azure Active Directory](../users-groups-roles/roles-groups-create-eligible.md). Если группа назначением ролей, которую вы хотите добавить, не отображается или вам не удается добавить ее, убедитесь, что у вас есть необходимая роль Azure AD и роль управления правами для выполнения этой операции. Возможно, вам потребуется попросить пользователя с необходимыми ролями добавить ресурс в каталог. Дополнительные сведения см. в разделе [Роли, требуемые для добавления ресурсов в каталог](entitlement-management-delegate.md#required-roles-to-add-resources-to-a-catalog).
+    >Группы с назначением ролей, добавленные в пакет для доступа, будут указаны с использованием подтипа **Assignable to roles** (Возможность назначения для ролей). Дополнительные сведения см. в статье [Создание группы с назначением ролей в Azure Active Directory](../roles/groups-create-eligible.md). Если группа назначением ролей, которую вы хотите добавить, не отображается или вам не удается добавить ее, убедитесь, что у вас есть необходимая роль Azure AD и роль управления правами для выполнения этой операции. Возможно, вам потребуется попросить пользователя с необходимыми ролями добавить ресурс в каталог. Дополнительные сведения см. в разделе [Роли, требуемые для добавления ресурсов в каталог](entitlement-management-delegate.md#required-roles-to-add-resources-to-a-catalog).
 
     >[!NOTE]
-    > При использовании [динамических групп](../users-groups-roles/groups-create-rule.md) будет отображаться только роль владельца. Это сделано намеренно.
+    > При использовании [динамических групп](../enterprise-users/groups-create-rule.md) будет отображаться только роль владельца. Это сделано намеренно.
     > ![Обзор сценария](./media/entitlement-management-access-package-first/dynamic-group-warning.png)
     
 

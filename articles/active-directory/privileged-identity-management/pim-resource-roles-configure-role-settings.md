@@ -15,12 +15,12 @@ ms.date: 01/01/2020
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a0a38194c46fa1f5bf7a6a0683e85776abb1f93b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d8458fc11f5e836e290c593d3ad4983f44e6abf6
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84743802"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92370378"
 ---
 # <a name="configure-azure-resource-role-settings-in-privileged-identity-management"></a>Настройка параметров роли ресурсов Azure в управление привилегированными пользователями
 
@@ -30,7 +30,7 @@ ms.locfileid: "84743802"
 
 Чтобы открыть параметры роли ресурса Azure, выполните следующие действия.
 
-1. Войдите в систему, [портал Azure](https://portal.azure.com/) с пользователем в роли [администратора привилегированных ролей](../users-groups-roles/directory-assign-admin-roles.md#privileged-role-administrator) .
+1. Войдите в систему, [портал Azure](https://portal.azure.com/) с пользователем в роли [администратора привилегированных ролей](../roles/permissions-reference.md#privileged-role-administrator) .
 
 1. Откройте **Azure AD privileged Identity Management**.
 
@@ -135,7 +135,7 @@ ms.locfileid: "84743802"
 
 1. После указания всех параметров роли выберите **Обновить** , чтобы сохранить изменения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Назначение ролей ресурсов Azure в управление привилегированными пользователями](pim-resource-roles-assign-roles.md)
 - [Настройка оповещений системы безопасности для ролей ресурсов Azure в управление привилегированными пользователями](pim-resource-roles-configure-alerts.md)
