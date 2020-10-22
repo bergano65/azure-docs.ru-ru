@@ -13,12 +13,12 @@ ms.author: ajburnle
 ms.custom: it-pro, seodec18
 ms.reviewer: krbain
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fbb7b7da4ed5268e66260e48d6367bbe02f0845a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: af5a85bad1e7b2a6bf645084d6b78f77e6c0d8b2
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87797582"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92371840"
 ---
 # <a name="add-or-remove-group-members-using-azure-active-directory"></a>Добавление или удаление членов группы с помощью Azure Active Directory
 С помощью Azure Active Directory можно добавлять и удалять участников группы.
@@ -61,6 +61,6 @@ ms.locfileid: "87797582"
 
 - [Управление доступом к ресурсам с помощью групп](active-directory-manage-groups.md)
 
-- [Управление динамическими правилами для пользователей в группе](../users-groups-roles/groups-create-rule.md)
+- [Управление динамическими правилами для пользователей в группе](../enterprise-users/groups-create-rule.md)
 
 - [Связывание подписки Azure с Azure Active Directory или добавление ее в службу](active-directory-how-subscriptions-associated-directory.md)

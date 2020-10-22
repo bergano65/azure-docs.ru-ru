@@ -17,12 +17,12 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
-ms.openlocfilehash: c46d977b6ce4eaa62aefc6874ce2b855a4711670
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: efca190f3dad1c0a323aa56ffd68b8b2597b5862
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91317518"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92370225"
 ---
 # <a name="troubleshoot-azure-ad-connectivity"></a>Устранение неполадок с подключением к Azure AD
 В этой статье рассказывается, как работает подключение между Azure AD Connect и Azure AD и как устранять неполадки подключения. Как правило, проблемы возникают в среде с прокси-сервером.
@@ -93,7 +93,7 @@ Azure AD Connect использует для аутентификации сов
 Если прокси-сервер настроен неправильно, то появляется ошибка: ![proxy200](./media/tshoot-connect-connectivity/invokewebrequest403.png)
 ![proxy407](./media/tshoot-connect-connectivity/invokewebrequest407.png).
 
-| Ошибка | Текст сообщения об ошибке | Комментарий |
+| Error | Текст сообщения об ошибке | Комментировать |
 | --- | --- | --- |
 | 403 |Запрещено |Прокси-сервер не был открыт для запрошенного URL-адреса. Проверьте конфигурацию прокси-сервера и убедитесь, что [URL-адреса](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2) открыты. |
 | 407 |Требуется проверка подлинности прокси-сервера |Для прокси-сервера требуется имя входа, которое не было указано. Если для прокси-сервера требуется проверка подлинности, убедитесь, что этот параметр настроен в machine.config. Также убедитесь, что вы используете учетные записи домена для пользователя, запустившего мастер, и для учетной записи службы. |
@@ -186,7 +186,7 @@ Azure AD Connect использует для аутентификации сов
 </div>
 
 ### <a name="azure-ad-global-admin-role-needed"></a>"Azure AD Global Admin Role Needed" (Требуется роль глобального администратора Azure AD)
-Пользователь успешно прошел аутентификацию. Однако ему не назначена роль глобального администратора. Вот [как можно назначить роль глобального администратора](../users-groups-roles/directory-assign-admin-roles.md) пользователю.
+Пользователь успешно прошел аутентификацию. Однако ему не назначена роль глобального администратора. Вот [как можно назначить роль глобального администратора](../roles/permissions-reference.md) пользователю.
 
 <div id="privileged-identity-management">
 <!--

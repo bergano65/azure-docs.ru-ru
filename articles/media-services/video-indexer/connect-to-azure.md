@@ -10,12 +10,12 @@ ms.subservice: video-indexer
 ms.topic: article
 ms.date: 05/08/2020
 ms.author: juliako
-ms.openlocfilehash: 7e97dc6ad4c6591a470e19050d79230f9ea7fd43
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: 24b41a77985cac13e829d69ff77a4bf14fb40389
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92164811"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92371381"
 ---
 # <a name="create-a-video-indexer-account-connected-to-azure"></a>Создание учетной записи Индексатора видео, подключенной к Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "92164811"
 
 Если вы переходите с *пробной* учетной записи индексатора *видео,* вы можете скопировать все видео и настройку модели в новую учетную запись, как описано в разделе [Импорт содержимого из пробной учетной записи](#import-your-content-from-the-trial-account) .
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 * Подписка Azure.
 
@@ -33,7 +33,7 @@ ms.locfileid: "92164811"
 
 * Домен Azure Active Directory (Azure AD).
 
-    Если у вас нет домена Azure AD, создайте его в своей подписке Azure. Дополнительные сведения см. [в статье Управление пользовательскими доменными именами в Azure AD](../../active-directory/users-groups-roles/domains-manage.md) .
+    Если у вас нет домена Azure AD, создайте его в своей подписке Azure. Дополнительные сведения см. [в статье Управление пользовательскими доменными именами в Azure AD](../../active-directory/enterprise-users/domains-manage.md) .
 
 * Пользователь в домене Azure AD с ролью **администратора приложения** . Этот член будет использоваться при подключении учетной записи Индексатора видео к Azure.
 
@@ -184,7 +184,7 @@ ms.locfileid: "92164811"
 
 * При подключении к существующей учетной записи служб мультимедиа индексатор видео не изменяет конфигурацию конечной точки потоковой передачи по умолчанию. Если нет выполняющейся **конечной точки потоковой передачи**, вы не сможете просматривать видео из этой учетной записи служб мультимедиа или индексатора видео.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Вы можете программно взаимодействовать с пробной учетной записью и (или) с учетными записями индексатора видео, подключенными к Azure, следуя инструкциям в статье [Использование API-интерфейсов](video-indexer-use-apis.md).
 

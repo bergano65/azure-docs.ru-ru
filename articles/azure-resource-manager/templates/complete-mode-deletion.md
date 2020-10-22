@@ -2,13 +2,13 @@
 title: Удаление ресурсов в полном режиме
 description: Здесь показано, как происходит удаление ресурсов в полном режиме в шаблонах Azure Resource Manager по типу ресурса.
 ms.topic: conceptual
-ms.date: 10/06/2020
-ms.openlocfilehash: 72303a7916aec39c05f9b4fa2cbc77de18b7fb3e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 10/21/2020
+ms.openlocfilehash: b1f7623d6eee1ff629412a4cc0d76e59e6c9e847
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91766710"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92370130"
 ---
 # <a name="deletion-of-azure-resources-for-complete-mode-deployments"></a>Удаление ресурсов Azure для развертываний в полном режиме
 
@@ -24,7 +24,6 @@ ms.locfileid: "91766710"
 
 > [!NOTE]
 > Всегда используйте [операцию "что если](template-deploy-what-if.md) " перед развертыванием шаблона в полном режиме. Что если показывает, какие ресурсы будут созданы, удалены или изменены. Используйте действие что если, чтобы избежать непреднамеренного удаления ресурсов.
-
 Переход к пространству имен поставщика ресурсов:
 > [!div class="op_single_selector"]
 > - [Microsoft.AAD](#microsoftaad)
@@ -47,6 +46,7 @@ ms.locfileid: "91766710"
 > - [Microsoft.AzureData](#microsoftazuredata)
 > - [Microsoft.AzureStack](#microsoftazurestack)
 > - [Microsoft.AzureStackHCI](#microsoftazurestackhci)
+> - [Microsoft. Бареметалинфраструктуре](#microsoftbaremetalinfrastructure)
 > - [Microsoft.Batch](#microsoftbatch)
 > - [Microsoft.Billing](#microsoftbilling)
 > - [Microsoft.BingMaps](#microsoftbingmaps)
@@ -176,6 +176,7 @@ ms.locfileid: "91766710"
 > - [Microsoft.ServiceFabricMesh](#microsoftservicefabricmesh)
 > - [Microsoft.Services](#microsoftservices)
 > - [Microsoft.SignalRService](#microsoftsignalrservice)
+> - [Microsoft. Единственное,](#microsoftsingularity)
 > - [Microsoft.SoftwarePlan](#microsoftsoftwareplan)
 > - [Microsoft.Solutions](#microsoftsolutions)
 > - [Microsoft. SQL](#microsoftsql)
@@ -364,6 +365,7 @@ ms.locfileid: "91766710"
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
 > | приватеклаудс | Да |
+> | Приватеклаудс и надстройки | Нет |
 > | Приватеклаудс и авторизация | Нет |
 > | Приватеклаудс и кластеры | Нет |
 > | Приватеклаудс/Глобалреачконнектионс | Нет |
@@ -426,12 +428,21 @@ ms.locfileid: "91766710"
 > | ------------- | ----------- |
 > | clusters | Да |
 
+## <a name="microsoftbaremetalinfrastructure"></a>Microsoft. Бареметалинфраструктуре
+
+> [!div class="mx-tableFixed"]
+> | Тип ресурса | Удаление ресурсов в полном режиме |
+> | ------------- | ----------- |
+> | бареметалинстанцес | Да |
+
 ## <a name="microsoftbatch"></a>Microsoft.Batch
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
 > | batchAccounts | Да |
+> | batchAccounts / certificates | Нет |
+> | batchAccounts / pools | нет |
 
 ## <a name="microsoftbilling"></a>Microsoft.Billing
 
@@ -926,7 +937,7 @@ ms.locfileid: "91766710"
 > | регистрация | нет |
 > | Reportconfigs | Нет |
 > | Отчеты | Нет |
-> | Параметры | Нет |
+> | Настройки | Нет |
 > | шовбаккрулес | Нет |
 > | Представления | нет |
 
@@ -973,7 +984,6 @@ ms.locfileid: "91766710"
 > | ------------- | ----------- |
 > | workspaces | Да |
 > | рабочие области и Дбворкспацес | Нет |
-> | рабочие области и storageEncryption | Нет |
 > | рабочие области и Виртуалнетворкпирингс | нет |
 
 ## <a name="microsoftdatacatalog"></a>Microsoft.DataCatalog
@@ -1129,6 +1139,7 @@ ms.locfileid: "91766710"
 > | applicationgroups / desktops | нет |
 > | applicationgroups / startmenuitems | нет |
 > | hostpools | Да |
+> | хостпулс/мсикспаккажес | Нет |
 > | hostpools / sessionhosts | нет |
 > | hostpools / sessionhosts / usersessions | нет |
 > | hostpools / usersessions | нет |
@@ -1380,11 +1391,13 @@ ms.locfileid: "91766710"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | устройства | Да |
+> | устройств | Да |
+> | нетворкфунктионс | Да |
+> | нетворкфунктионвендорс | Нет |
 > | регистередсубскриптионс | Нет |
 > | разработчиков | Нет |
-> | поставщики и вендорскус | Нет |
-> | поставщики/вендорскус/Превиевсубскриптионс | Нет |
+> | поставщики и Вендорскус | Нет |
+> | поставщики/Вендорскус/Превиевсубскриптионс | Нет |
 > | виртуалнетворкфунктионс | Да |
 > | виртуалнетворкфунктионвендорс | нет |
 
@@ -1507,9 +1520,20 @@ ms.locfileid: "91766710"
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
 > | workspaces | Да |
+> | рабочие области и Батчендпоинтс | Да |
+> | рабочие области, Батчендпоинтси и развертывания | Да |
+> | рабочие области и коды | Нет |
+> | рабочие области, коды и версии | нет |
 > | workspaces / computes | нет |
+> | рабочие области и хранилища данных | Нет |
 > | рабочие области и Евентгридфилтерс | Нет |
-> | рабочие области и linkedServices | нет |
+> | рабочие области и задания | Нет |
+> | рабочие области и Лабелингжобс | Нет |
+> | рабочие области и linkedServices | Нет |
+> | рабочие области и модели | Нет |
+> | рабочие области, модели и версии | Нет |
+> | рабочие области и Онлининдпоинтс | Да |
+> | рабочие области, Онлининдпоинтси и развертывания | Да |
 
 ## <a name="microsoftmaintenance"></a>Microsoft.Maintenance
 
@@ -2155,7 +2179,18 @@ ms.locfileid: "91766710"
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
 > | SignalR | Да |
-> | SignalR/Евентгридфилтерс | нет |
+> | SignalR/Евентгридфилтерс | Нет |
+
+## <a name="microsoftsingularity"></a>Microsoft. Единственное,
+
+> [!div class="mx-tableFixed"]
+> | Тип ресурса | Удаление ресурсов в полном режиме |
+> | ------------- | ----------- |
+> | accounts | Да |
+> | Accounts/АккаунткуотаполиЦиес | Нет |
+> | Accounts/ГраупполиЦиес | Нет |
+> | учетные записи и задания | Нет |
+> | Accounts/Сторажеконтаинерс | нет |
 
 ## <a name="microsoftsoftwareplan"></a>Microsoft.SoftwarePlan
 
@@ -2289,6 +2324,7 @@ ms.locfileid: "91766710"
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
 > | clusters | Да |
+> | кластеры/Приватиндпоинтс | нет |
 > | streamingjobs | Да |
 
 ## <a name="microsoftsubscription"></a>Microsoft.Subscription
@@ -2374,7 +2410,7 @@ ms.locfileid: "91766710"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | устройства | Да |
+> | устройств | Да |
 > | регистередсубскриптионс | Нет |
 > | разработчиков | Нет |
 > | поставщики и номера SKU | Нет |
@@ -2422,7 +2458,9 @@ ms.locfileid: "91766710"
 > | resourceHealthMetadata | нет |
 > | runtimes | нет |
 > | serverFarms | Да |
-> | serverFarms/Евентгридфилтерс | нет |
+> | serverFarms/Евентгридфилтерс | Нет |
+> | serverFarms/Фирстпартяппс | Нет |
+> | serverFarms/Фирстпартяппс/Кэйваултсеттингс | нет |
 > | sites | Да |
 > | сайты и конфигурация  | Нет |
 > | Sites/Евентгридфилтерс | Нет |

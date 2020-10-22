@@ -1,6 +1,6 @@
 ---
 title: 'Преобразование данных: обработка & преобразование данных '
-description: Узнайте, как преобразовать или обработать данные в фабрике данных Azure с помощью Hadoop, Машинного обучения Azure или Azure Data Lake Analytics.
+description: Узнайте, как преобразовать данные или обработать данные в фабрике данных Azure с помощью Hadoop, Машинное обучение Azure Studio (классическая модель) или Azure Data Lake Analytics.
 services: data-factory
 documentationcenter: ''
 author: djpmsft
@@ -11,12 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: eb320cb71de43c40522bf93213fd98247a0d5b59
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 91755dd1b5eea9f72978e09a605fc47d41ff3dee
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89436303"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92371721"
 ---
 # <a name="transform-data-in-azure-data-factory-version-1"></a>Преобразование данных в фабрике данных Azure версии 1
 > [!div class="op_single_selector"]
@@ -24,7 +24,7 @@ ms.locfileid: "89436303"
 > * [Pig](data-factory-pig-activity.md)  
 > * [MapReduce](data-factory-map-reduce.md)  
 > * [Потоковая передача Hadoop](data-factory-hadoop-streaming-activity.md)
-> * [Машинное обучение](data-factory-azure-ml-batch-execution-activity.md) 
+> * [Машинное обучение Azure Studio (классическая модель)](data-factory-azure-ml-batch-execution-activity.md) 
 > * [Хранимая процедура](data-factory-stored-proc-activity.md)
 > * [Аналитика озера данных U-SQL](data-factory-usql-activity.md)
 > * [Пользовательские действия .NET](data-factory-use-custom-activities.md)
@@ -57,12 +57,12 @@ ms.locfileid: "89436303"
 ## <a name="hdinsight-spark-activity"></a>Действие HDInsight Spark
 Действие HDInsight Spark в конвейере фабрики данных выполняет программы Spark в вашем кластере HDInsight. Дополнительные сведения см. в разделе [Вызов программ Spark из фабрики данных](data-factory-spark.md). 
 
-## <a name="machine-learning-activities"></a>Действия машинного обучения
-Фабрика данных Azure позволяет легко создавать конвейеры, в которых для прогнозной аналитики используется опубликованная веб-служба Машинного обучения Azure. С помощью [действия выполнения пакета](data-factory-azure-ml-batch-execution-activity.md#invoking-a-web-service-using-batch-execution-activity) в конвейере фабрики данных Azure можно вызвать веб-службу машинное обучение, чтобы сделать прогнозы по данным в пакетной службе.
+## <a name="azure-machine-learning-studio-classic-activities"></a>Действия Машинное обучение Azure Studio (классические)
+Фабрика данных Azure позволяет легко создавать конвейеры, использующие опубликованную веб-службу Машинное обучение Azure Studio (классическая модель) для прогнозной аналитики. С помощью [действия выполнения пакета](data-factory-azure-ml-batch-execution-activity.md#invoking-a-web-service-using-batch-execution-activity) в конвейере фабрики данных Azure можно вызвать веб-службу Studio (классическая) для выполнения прогнозов по данным в пакетной службе.
 
-Со временем прогнозные модели в оценивающих экспериментах машинного обучения потребуют повторного обучения с помощью новых входных наборов данных. Когда повторное обучение будет завершено, вам потребуется обновить веб-службу оценки на основании обновленной модели машинного обучения. [Действие обновить ресурс](data-factory-azure-ml-batch-execution-activity.md#updating-models-using-update-resource-activity) можно использовать для обновления веб-службы с использованием новой обученной модели.  
+Со временем прогнозные модели в экспериментах по оценке (классическая модель) необходимо переучить с помощью новых входных наборов данных. После завершения повторного обучения необходимо обновить веб-службу оценки с помощью переученной модели машинного обучения. [Действие обновить ресурс](data-factory-azure-ml-batch-execution-activity.md#updating-models-using-update-resource-activity) можно использовать для обновления веб-службы с использованием новой обученной модели.  
 
-Дополнительные сведения об этих действиях машинного обучения см. в разделе [Создание прогнозных конвейеров с помощью действий машинного обучения Azure](data-factory-azure-ml-batch-execution-activity.md). 
+Дополнительные сведения об этих действиях Studio (классическая модель) см. в статье [Использование действий машинное обучение Azure Studio (классическая модель)](data-factory-azure-ml-batch-execution-activity.md) . 
 
 ## <a name="stored-procedure-activity"></a>Действие хранимой процедуры
 Вы можете использовать действие SQL Server хранимой процедуры в конвейере фабрики данных для вызова хранимой процедуры в одном из следующих хранилищ данных: база данных SQL Azure, Azure синапсе Analytics (ранее — хранилище данных SQL), SQL Server базу данных на предприятии или виртуальную машину Azure. Дополнительные сведения см. в статье о [действии хранимой процедуры](data-factory-stored-proc-activity.md) .  
@@ -92,7 +92,7 @@ ms.locfileid: "89436303"
 | [Pig](data-factory-pig-activity.md) |HDInsight [Hadoop] |
 | [MapReduce](data-factory-map-reduce.md) |HDInsight [Hadoop] |
 | [Потоковая передача Hadoop](data-factory-hadoop-streaming-activity.md) |HDInsight [Hadoop] |
-| [Действия машинного обучения: выполнение пакета и обновление ресурса](data-factory-azure-ml-batch-execution-activity.md) |Azure |
+| [Действия Машинное обучение Azure Studio (классическая модель): выполнение пакета и обновление ресурса](data-factory-azure-ml-batch-execution-activity.md) |Azure |
 | [Хранимая процедура](data-factory-stored-proc-activity.md) |Azure SQL, Azure Synapse Analytics или SQL Server |
 | [Аналитика озера данных U-SQL](data-factory-usql-activity.md) |Аналитика озера данных Azure |
 | [DotNet](data-factory-use-custom-activities.md) |HDInsight [Hadoop] или пакетная служба Azure |
