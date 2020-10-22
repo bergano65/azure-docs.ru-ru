@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 05/19/2020
 ms.author: kenwith
 ms.reviewer: arvindh, luleon, phsignor
-ms.openlocfilehash: e590981fabcd20f23f25d12b4176b6730cb0fc3c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c4203c572ed040b37a377e8d4a6b1bc82c883ebd
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91804364"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92368508"
 ---
 # <a name="configure-group-owner-consent-to-apps-accessing-group-data"></a>Настройка согласия владельца группы на приложения, обращающиеся к данным группы
 
@@ -30,7 +30,7 @@ ms.locfileid: "91804364"
 
 Выполните следующие действия, чтобы управлять согласием владельца группы на приложения, обращающиеся к данным группы:
 
-1. Войдите на [портал Azure](https://portal.azure.com) как [глобальный администратор](../users-groups-roles/directory-assign-admin-roles.md#global-administrator--company-administrator).
+1. Войдите на [портал Azure](https://portal.azure.com) как [глобальный администратор](../roles/permissions-reference.md#global-administrator--company-administrator).
 2. Выберите **Azure Active Directory** > **Корпоративные приложения** > **Согласия и разрешения** > **Параметры согласия пользователя**.
 3. В разделе **Согласие владельца группы для приложений, обращающихся к данным** выберите параметр, который вы хотите включить.
 4. Нажмите кнопку **Save** (Сохранить), чтобы сохранить настройки.
@@ -73,7 +73,7 @@ ms.locfileid: "91804364"
 
 1. Изучите значения параметров. Есть два значения параметров, которые определяют, какие пользователи смогут предоставлять приложению доступ к данным своей группы:
 
-    | Параметр       | Тип         | Описание  |
+    | Параметр       | Type         | Описание  |
     | ------------- | ------------ | ------------ |
     | _EnableGroupSpecificConsent_   | Логическое | Флаг, указывающий, разрешено ли владельцам групп предоставлять разрешения для конкретной группы. |
     | _ConstrainGroupSpecificConsentToMembersOfGroupId_ | Guid | Если параметр _EnableGroupSpecificConsent_ имеет значение "true", а для этого значения задан идентификатор объекта группы, члены этой группы будут иметь права на предоставление разрешений, относящихся к их группе. |

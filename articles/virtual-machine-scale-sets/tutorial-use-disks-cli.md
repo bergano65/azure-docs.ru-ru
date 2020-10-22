@@ -9,12 +9,12 @@ ms.subservice: disks
 ms.date: 03/27/2018
 ms.reviewer: mimckitt
 ms.custom: mimckitt, devx-track-azurecli
-ms.openlocfilehash: 5dedee5e9ef4d036305a545201afc03d90750189
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a7e9e1fa567ae282a4472fa728e53e720bf8ff6f
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91568324"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92367930"
 ---
 # <a name="tutorial-create-and-use-disks-with-virtual-machine-scale-set-with-the-azure-cli"></a>Руководство по Создание и использование дисков с масштабируемым набором виртуальных машин с помощью Azure CLI
 В масштабируемых наборах виртуальных машин на дисках хранится операционная система, приложения и данные. Для создания масштабируемого набора и управления им важно выбрать размер диска и конфигурацию в соответствии с ожидаемой рабочей нагрузкой. В этом руководстве объясняется, как создать диски виртуальной машины и управлять ими. Из этого руководства вы узнаете, как выполнить следующие задачи:
@@ -76,7 +76,7 @@ ms.locfileid: "91568324"
 ## <a name="create-and-attach-disks"></a>Создание и подключение дисков
 Диски можно создать и присоединить к создаваемому или существующему масштабируемому набору.
 
-Начиная с версии API `2019-07-01`, можно задать размер диска операционной системы в масштабируемом наборе виртуальных машин с помощью свойства [storageProfile.osDisk.diskSizeGb](https://docs.microsoft.com/rest/api/compute/virtualmachinescalesets/createorupdate#virtualmachinescalesetosdisk). После подготовки может потребоваться расширить или повторно секционировать диск, чтобы использовать все его пространство. Дополнительные сведения см. в разделе [Расширение тома в ОС](https://docs.microsoft.com/azure/virtual-machines/windows/expand-os-disk#expand-the-volume-within-the-os).
+Начиная с версии API `2019-07-01`, можно задать размер диска операционной системы в масштабируемом наборе виртуальных машин с помощью свойства [storageProfile.osDisk.diskSizeGb](/rest/api/compute/virtualmachinescalesets/createorupdate#virtualmachinescalesetosdisk). После подготовки может потребоваться расширить или повторно секционировать диск, чтобы использовать все его пространство. Дополнительные сведения см. в разделе [Расширение тома в ОС](../virtual-machines/windows/expand-os-disk.md#expand-the-volume-within-the-os).
 
 ### <a name="attach-disks-at-scale-set-creation"></a>Присоединение дисков при создании масштабируемого набора
 Сначала создайте группу ресурсов с помощью команды [az group create](/cli/azure/group). В этом примере создается группа ресурсов с именем *myResourceGroup* в регионе *eastus*.

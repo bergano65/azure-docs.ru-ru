@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/20/2020
 ms.author: memildin
-ms.openlocfilehash: 1574810de5b1a2df1b82ea9cc19c88be5c72fec6
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: 372ff1dc53f15a1338cad933fec64746b6736f40
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92342150"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92368097"
 ---
 # <a name="protect-your-endpoints-with-security-centers-integrated-edr-solution-microsoft-defender-for-endpoint"></a>Защитите свои конечные точки с помощью интегрированного решения ЕДР центра безопасности: защитник Майкрософт для конечной точки
 
@@ -85,7 +85,7 @@ ms.locfileid: "92342150"
 1. В главном меню Центра безопасности выберите **Цены и параметры**.
 1. Выберите подписку, которую требуется изменить.
 1. Выберите **Обнаружение угроз**.
-1. Установите флажок **Разрешить ATP в Защитнике Windows доступ к моим данным**и нажмите кнопку **сохранить**.
+1. Выберите **разрешить Microsoft Defender для конечной точки получить доступ к моим данным**, а затем нажмите кнопку **сохранить**.
 
     :::image type="content" source="./media/security-center-wdatp/enable-integration-with-edr.png" alt-text="Защитник Майкрософт для собственного центра безопасности конечной точки":::
 

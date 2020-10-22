@@ -6,19 +6,19 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 12/9/2019
 ms.author: tvoellm
-ms.openlocfilehash: 44a62643c459fb61e7a2a95c2a9dd55ea4f19111
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 869513d5a668544b2aa8afb13bb56e8293788b06
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91570640"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92368729"
 ---
 # <a name="restrict-user-access-to-data-operations-in-azure-cosmos-db"></a>Ограничение доступа пользователей к операциям с данными в Azure Cosmos DB
 
 В Azure Cosmos DB есть два способа проверки подлинности взаимодействия со службой базы данных:
 
 - Использование удостоверения Azure Active Directory при взаимодействии с портал Azure
-- использование [ключей](secure-access-to-data.md#primary-keys) Azure Cosmos DB или [маркеров ресурсов](secure-access-to-data.md#resource-tokens) при выдаче вызовов из API и пакетов SDK.
+- использование [ключей](database-security.md#primary-keys) Azure Cosmos DB или [маркеров ресурсов](secure-access-to-data.md#resource-tokens) при выдаче вызовов из API и пакетов SDK.
 
 Каждый метод проверки подлинности предоставляет доступ к разным наборам операций, при этом некоторые из них перекрываются:
 

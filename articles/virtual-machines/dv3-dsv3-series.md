@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: jushiman
-ms.openlocfilehash: eff3ff3d8fa2ab3025ca8b8d4f974d6944c88433
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3ac90d3cabc179ecd1c1e421fd026a584f7158e3
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91649649"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92368576"
 ---
 # <a name="dv3-and-dsv3-series"></a>Серии Dv3 и Dsv3
 
@@ -22,7 +22,7 @@ ms.locfileid: "91649649"
 
 ## <a name="dv3-series"></a>Серия Dv3
 
-Размеры серии Dv3 работают на процессорах Intel® Xeon® Platinum 8272CL (Cascade Lake), Intel® Xeon® 8171M 2.1 ГГц (Skylake), Intel® Xeon® 3 – 2673 v4 2,3 ГГц (Broadwell) или Intel® Xeon® 2673 v3 2,4 ГГц (Haswell) с технологией Intel Turbo Boost Technology 2,0. Экземпляры серии Dv3 — это сочетание быстрого виртуального ЦП, временного хранилища и увеличенного объема памяти, которые подходят для большинства рабочих нагрузок.
+Размеры серии Dv3 работают на процессорах Intel® Xeon® Platinum 8272CL (Cascade Lake), Intel® Xeon® 8171M 2.1 ГГц (Skylake), Intel® Xeon® 3 – 2673 v4 2,3 ГГц (Broadwell) или Intel® Xeon® 2673 v3 2,4 ГГц (Haswell) с [ &reg; технологией Intel Turbo Boost Technology 2,0](https://www.intel.com/content/www/us/en/architecture-and-technology/turbo-boost/turbo-boost-technology.html). Экземпляры серии Dv3 — это сочетание быстрого виртуального ЦП, временного хранилища и увеличенного объема памяти, которые подходят для большинства рабочих нагрузок.
 
 Хранилище данных диска оплачивается отдельно от виртуальных машин. Используйте экземпляры серии Dsv3 для использования дисков хранилища класса Premium. Счетчики цены и учета стоимости для размеров Dsv3 соответствуют серии Dv3.
 
@@ -48,7 +48,7 @@ ms.locfileid: "91649649"
 
 ## <a name="dsv3-series"></a>Серия Dsv3
 
-Размеры серии Dsv3 работают на процессорах Intel® Xeon® Platinum 8272CL (Cascade Lake), Intel® Xeon® 8171M 2.1 ГГц (Skylake), Intel® Xeon® 3 – 2673 v4 2,3 ГГц (Broadwell) или Intel® Xeon® 2673 v3 2,4 ГГц (Haswell) с 2,0 технологией Intel Turbo Boost и используют хранилище класса Premium. Экземпляры серии Dsv3 — это сочетание быстрого виртуального ЦП, временного хранилища и увеличенного объема памяти, которые подходят для большинства рабочих нагрузок.
+Размеры серии Dsv3 работают на процессорах Intel® Xeon® Platinum 8272CL (Cascade Lake), Intel® Xeon® 8171M 2.1 ГГц (Skylake), Intel® Xeon® 3 – 2673 v4 2,3 ГГц (Broadwell) или Intel® Xeon® 2673 v3 2,4 ГГц (Haswell) с [ &reg; 2,0 технологией Intel Turbo Boost](https://www.intel.com/content/www/us/en/architecture-and-technology/turbo-boost/turbo-boost-technology.html) и используют хранилище класса Premium. Экземпляры серии Dsv3 — это сочетание быстрого виртуального ЦП, временного хранилища и увеличенного объема памяти, которые подходят для большинства рабочих нагрузок.
 
 Виртуальные машины серии Dsv3 имеют технологию Intel® Hyper-Threading.
 

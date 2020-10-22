@@ -10,10 +10,10 @@ ms.workload: infrastructure-services
 ms.date: 09/02/2020
 ms.author: cherylmc
 ms.openlocfilehash: ec2516010768eded939b0ffa44c197f102c7766b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 10/22/2020
 ms.locfileid: "89401203"
 ---
 # <a name="add-a-site-to-site-connection-to-a-vnet-with-an-existing-vpn-gateway-connection"></a>Добавление подключения типа "сеть — сеть" к виртуальной сети с помощью существующего подключения VPN-шлюза
@@ -62,7 +62,7 @@ ms.locfileid: "89401203"
      ![Страница "Добавление подключения"](./media/vpn-gateway-howto-multi-site-to-site-resource-manager-portal/addconnectionblade.png "Страница "Добавление подключения"")<br>
 
 ## <a name="part-2---add-a-local-network-gateway"></a><a name="part2"></a>Часть 2. Добавление шлюза локальной сети
-1. Щелкните **Шлюз локальной сети, а затем ** ***Выберите шлюз локальной сети***. Откроется страница **Выбор шлюза локальной сети**.
+1. Щелкните **шлюз локальной сети** ** _и выберите шлюз локальной сети_*. *Откроется страница _ выбор шлюза локальной сети** .
    
     ![Выбор шлюза локальной сети](./media/vpn-gateway-howto-multi-site-to-site-resource-manager-portal/chooselng.png "Выбор шлюза локальной сети")<br>
 2. Щелкните **Создать**, чтобы открыть страницу **Создание шлюза локальной сети**.

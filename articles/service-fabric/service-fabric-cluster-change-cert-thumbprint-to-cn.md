@@ -1,126 +1,66 @@
 ---
 title: Обновление кластера для использования общего имени сертификата
-description: Сведения о переключении кластера Service Fabric с использования отпечатков сертификатов на общее имя сертификата.
+description: Узнайте, как преобразовать Service Fabric сертификат кластера из объявлений на основе отпечатков в общие имена.
 ms.topic: conceptual
 ms.date: 09/06/2019
-ms.openlocfilehash: a90290430616302dbbe9ab9cf717510070936529
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 224798565921593d3c91dfcc187efa71a71b1fdd
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86247920"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92368066"
 ---
-# <a name="change-cluster-from-certificate-thumbprint-to-common-name"></a>Переход с отпечатка на общее имя сертификата для кластера
-Два сертификата не могут иметь один и тот же отпечаток. Это затрудняет смену сертификатов кластера и управление им. Тем не менее несколько сертификатов могут иметь одно общее имя или тему.  Переключение развернутого кластера с использования отпечатков сертификата на использование общих имен сертификатов упрощает управление им. В этой статье описывается обновление выполняющегося кластера Service Fabric для использования общего имени сертификата вместо отпечатка сертификата.
-
->[!NOTE]
-> При наличии двух отпечаток, объявленных в шаблоне, необходимо выполнить два развертывания.  Первое развертывание выполняется перед выполнением действий, описанных в этой статье.  Первое развертывание задает для свойства **thumbprint** в шаблоне используемый сертификат и удаляет свойство **thumbprintSecondary**.  Для второго развертывания выполните действия, описанные в этой статье.
- 
+# <a name="convert-cluster-certificates-from-thumbprint-based-declarations-to-common-names"></a>Преобразование сертификатов кластера из объявлений на основе отпечатков в общие имена
+Подпись сертификата (разговорной речи, называемая "отпечатком") уникальна, а это означает, что сертификат кластера, объявленный отпечатком, относится к конкретному экземпляру сертификата. Это, в свою очередь, делает возможными смену и управление сертификатами, как правило, в общем и явном виде: каждое изменение требует согласованного обновления кластера и базовых вычислительных узлов. Преобразование объявлений сертификатов Service Fabric кластера из отпечатка в объявления, основанные на общем имени субъекта сертификата, значительно упрощает управление, а переработка сертификата больше не требует обновления кластера. В этой статье описывается преобразование существующего кластера в общие объявления на основе имен без простоев.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="get-a-certificate"></a>Получение сертификата
-Сначала получите сертификат в [центре сертификации (ЦС)](https://wikipedia.org/wiki/Certificate_authority).  Обычное имя сертификата должно соответствовать вашему личному домену, который вы приобрели у регистратора доменов. Например, "azureservicefabricbestpractices.com"; пользователи, которые не являются сотрудниками корпорации Майкрософт, не могут предоставлять сертификаты для доменов MS. Поэтому вы не можете использовать DNS-имена вашего LB или диспетчер трафика в качестве общих имен для сертификата. Вам необходимо подготовить зону Azure DNS к работе, если ваш личный домен разрешен в Azure. Подробнее см. в статье [Tutorial: Host your domain in Azure DNS](../dns/dns-delegate-domain-azure-dns.md) (Руководство. Размещение домена в Azure DNS). Вы захотите объявить личный домен собственным в качестве "managementEndpoint" кластера, если хотите, чтобы портал отражал псевдоним личного домена для вашего кластера.
+## <a name="moving-to-certificate-authority-ca-signed-certificates"></a>Переход к сертификатам, подписанным центром сертификации
+Безопасность кластера, сертификат которого объявлен по отпечатку, на тот факт, что он недоступен, или невозможность подделки сертификата с той же подписью, что и другой. В этом случае проверенное значение сертификата менее важно, поэтому самозаверяющие сертификаты подходят. В отличие от этого, безопасность кластера с сертификатами, объявленными с помощью общих имен, передается из службы инфраструктуры открытых ключей (PKI), которая выдавала этот сертификат, и включает такие аспекты, как рекомендации по сертификации, а также возможность проведения аудита операционной безопасности и многих других. По этой причине важно выбрать PKI, а также знание издателей (центра сертификации или ЦС), а самозаверяющие сертификаты по сути бесполезными. Сертификат, объявленный по общему имени (CN), обычно считается допустимым, если цепочка может быть успешно построена, субъект имеет ожидаемый элемент CN, а его издатель (интерпретация или более поздняя в цепочке) является доверенным для агента, выполняющего проверку. Service Fabric поддерживает объявление сертификатов с помощью CN с "неявным" издателем (цепочка должна заканчиваться якорем доверия) или с издателями, объявленными по отпечатку ("закрепление издателя"); Дополнительные сведения см. в этой  [статье](cluster-security-certificates.md#common-name-based-certificate-validation-declarations) . Чтобы преобразовать кластер с помощью самозаверяющего сертификата, объявленного по отпечатку, на общее имя, целевой сертификат, подписанный ЦС, должен быть впервые введен в кластер по отпечатку. только тогда преобразование из TP в CN возможно.
 
-В целях тестирования можно получить сертификат, подписанный ЦС, из бесплатного или открытого центра сертификации.
-
-> [!NOTE]
-> Самозаверяющие сертификаты, включая созданные при развертывании кластера Service Fabric на портале Azure, не поддерживаются. 
+В целях тестирования самозаверяющий сертификат можно объявить с помощью CN, заменив его на собственный отпечаток. с точки зрения безопасности это почти эквивалентно объявлению того же сертификата с помощью TP. Однако обратите внимание, что успешное преобразование этого типа не гарантирует успешного преобразования из TP в CN с помощью сертификата, подписанного ЦС. Поэтому рекомендуется протестировать преобразование с соответствующим сертификатом, подписанным ЦС (существуют бесплатные варианты).
 
 ## <a name="upload-the-certificate-and-install-it-in-the-scale-set"></a>Отправка сертификата и его установка в масштабируемом наборе
-В Azure кластер Service Fabric развертывается в масштабируемом наборе виртуальных машин.  Отправьте сертификат в хранилище ключей, а затем установите его на масштабируемом наборе виртуальных машин, в котором запускается кластер.
+В Azure рекомендуемым механизмом для получения и подготовки сертификатов является служба Azure Key Vault и ее средства. Сертификат, соответствующий объявлению сертификата кластера, должен быть подготовлен для каждого узла масштабируемых наборов виртуальных машин, составляющих кластер. Дополнительные сведения см. в разделе [секреты в масштабируемых наборах виртуальных машин](../virtual-machine-scale-sets/virtual-machine-scale-sets-faq.md#how-do-i-securely-ship-a-certificate-to-the-vm) . Перед внесением изменений в объявления сертификатов кластера важно, чтобы текущий и целевой сертификаты кластера были установлены на виртуальных машинах каждого типа кластера. Подробные сведения о процессе выдачи сертификата для подготовки к отдаче на узел Service Fabric подробно описаны [здесь](cluster-security-certificate-management.md#the-journey-of-a-certificate).
 
-```powershell
-Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser -Force
+## <a name="bring-cluster-to-an-optimal-starting-state"></a>Перевести кластер в оптимальное начальное состояние
+Преобразование объявления сертификата из отпечатка на основе общего имени влияет на оба:
 
-$SubscriptionId  =  "<subscription ID>"
+- Как каждый узел в кластере находит и представляет свои учетные данные другим узлам
+- Как каждый узел проверяет учетные данные своего аналога при установлении безопасного подключения  
 
-# Sign in to your Azure account and select your subscription
-Login-AzAccount -SubscriptionId $SubscriptionId
+Прежде чем продолжать, проверьте [правила представления и проверки для обеих конфигураций](cluster-security-certificates.md#certificate-configuration-rules) . Наиболее важным моментом при преобразовании отпечатка в распространенное имя является то, что обновленные и еще не обновленные узлы (т. е. узлы, принадлежащие разным доменам обновления) должны иметь возможность успешной взаимной проверки подлинности в любой момент обновления. Чтобы добиться этого, мы рекомендуем объявить целевой сертификат по отпечатку при первоначальном обновлении и завершить переход на общее имя в последующем. Если кластер уже находится в рекомендуемом начальном состоянии, этот раздел можно пропустить.
 
-$region = "southcentralus"
-$KeyVaultResourceGroupName  = "mykeyvaultgroup"
-$VaultName = "mykeyvault"
-$certFilename = "C:\users\sfuser\myclustercert.pfx"
-$certname = "myclustercert"
-$Password  = "P@ssw0rd!123"
-$VmssResourceGroupName     = "myclustergroup"
-$VmssName                  = "prnninnxj"
+Существует несколько допустимых начальных состояний для преобразования. Инвариант заключается в том, что кластер уже использует целевой сертификат (объявленный отпечатком) в начале обновления до общего имени. Мы считаем `GoalCert` , `OldCert1` что `OldCert2` :
 
-# Create new Resource Group 
-New-AzResourceGroup -Name $KeyVaultResourceGroupName -Location $region
+#### <a name="valid-starting-states"></a>Допустимые начальные состояния
+- `Thumbprint: GoalCert, ThumbprintSecondary: None`
+- `Thumbprint: GoalCert, ThumbprintSecondary: OldCert1`, где `GoalCert` имеет более позднюю `NotAfter` дату, чем `OldCert1`
+- `Thumbprint: OldCert1, ThumbprintSecondary: GoalCert`, где `GoalCert` имеет более позднюю `NotAfter` дату, чем `OldCert1`
 
-# Create the new key vault
-$newKeyVault = New-AzKeyVault -VaultName $VaultName -ResourceGroupName $KeyVaultResourceGroupName `
-    -Location $region -EnabledForDeployment 
-$resourceId = $newKeyVault.ResourceId 
+Если кластер не находится в одном из допустимых состояний, описанных выше, ознакомьтесь с разделом о достижении этого состояния в конце этой статьи.
 
-# Add the certificate to the key vault.
-$PasswordSec = ConvertTo-SecureString -String $Password -AsPlainText -Force
-$KVSecret = Import-AzKeyVaultCertificate -VaultName $vaultName -Name $certName `
-    -FilePath $certFilename -Password $PasswordSec
+## <a name="select-the-desired-common-name-based-certificate-validation-scheme"></a>Выберите нужную схему проверки сертификатов на основе общих имен.
+Как было сказано ранее, Service Fabric поддерживает объявление сертификатов с помощью CN с помощью неявного якоря доверия или с явным закреплением отпечатков издателя. Ознакомьтесь с [этой статьей](cluster-security-certificates.md#common-name-based-certificate-validation-declarations) для получения подробной информации и убедитесь, что у вас есть хорошее представление о различиях, и последствия выбора любого из этих механизмов. Синтаксически, это различие и выбор определяется значением `certificateIssuerThumbprintList` параметра: Empty означает использование доверенного корневого ЦС (якоря доверия), в то время как набор отпечатков запрещает разрешенных прямых издателей сертификатов кластера.
 
-$CertificateThumbprint = $KVSecret.Thumbprint
-$CertificateURL = $KVSecret.SecretId
-$SourceVault = $resourceId
-$CommName    = $KVSecret.Certificate.SubjectName.Name
+   > [!NOTE]
+   > Поле "Certificateissuerthumbprint —" позволяет указать ожидаемых прямых издателей сертификатов, объявленных по общему имени субъекта. Допустимые значения — один или несколько отпечатков SHA1 с разделителями-запятыми. Обратите внимание, что это усиление проверки сертификата. Если поставщики не указаны или список пуст, сертификат будет принят для проверки подлинности, если цепочка может быть построена, и в корне, доверенном для проверяющего элемента управления. Если указан один или несколько отпечатков издателя, сертификат будет принят, если отпечаток его прямого издателя, извлеченного из цепочки, соответствует любому значению, указанному в этом поле, независимо от того, является ли корень доверенным. Обратите внимание, что PKI может использовать разные центры сертификации ("Issuer") для подписывания сертификатов с заданной темой, поэтому важно указать все ожидаемые отпечатки поставщика для этой темы. Иными словами, не гарантируется, что обновление сертификата будет подписано тем же издателем, что и обновляемый сертификат.
+   >
+   > Указание издателя является лучшей методикой. Если его пропустить, сертификаты, связанные с доверенным корнем продолжат работу, но это поведение имеет ограничения и может прекратиться в ближайшем будущем. Обратите внимание, что кластеры, развернутые в Azure и защищенные сертификатами X509, которые выданные частной PKI и объявленные субъектом, могут не пройти проверку службой Azure Service Fabric (для обмена данными между кластерами), если политика сертификата PKI не является видимой и доступной. 
 
-Write-Host "CertificateThumbprint    :"  $CertificateThumbprint
-Write-Host "CertificateURL           :"  $CertificateURL
-Write-Host "SourceVault              :"  $SourceVault
-Write-Host "Common Name              :"  $CommName    
+## <a name="update-the-clusters-azure-resource-management-arm-template-and-deploy"></a>Обновление шаблона управления ресурсами Azure (ARM) кластера и развертывание
+Рекомендуется управлять кластерами Service Fabric Azure с помощью шаблонов ARM; альтернативой, также с помощью артефактов JSON, является [Обозреватель ресурсов Azure (Предварительная версия)](https://resources.azure.com). Аналогичный интерфейс в портал Azure в настоящее время недоступен. Если исходный шаблон, соответствующий существующему кластеру, недоступен, можно получить эквивалентный шаблон в портал Azure, перейдя к группе ресурсов, содержащей кластер, выбрав пункт **Экспорт шаблона** **в меню слева,** а затем выбрав нужные ресурсы. необходимо экспортировать как минимум набор масштабирования виртуальных машин и ресурсы кластера соответственно. Созданный шаблон также можно скачать. Примечание. Этот шаблон может потребовать изменений, прежде чем он будет полностью развернут и может не совпадать с исходным. он является отражением текущего состояния ресурса кластера.
 
-Set-StrictMode -Version 3
-$ErrorActionPreference = "Stop"
+Ниже приведены необходимые изменения.
+    - Обновление определения расширения узла Service Fabric (в ресурсе виртуальной машины); Если кластер определяет несколько типов узлов, необходимо будет обновить определение каждого соответствующего масштабируемого набора виртуальных машин.
+    - Обновление определения ресурса кластера
 
-$certConfig = New-AzVmssVaultCertificateConfig -CertificateUrl $CertificateURL -CertificateStore "My"
+Ниже приведены подробные примеры.
 
-# Get current VM scale set 
-$vmss = Get-AzVmss -ResourceGroupName $VmssResourceGroupName -VMScaleSetName $VmssName
-
-# Add new secret to the VM scale set.
-$vmss = Add-AzVmssSecret -VirtualMachineScaleSet $vmss -SourceVaultId $SourceVault `
-    -VaultCertificate $certConfig
-
-# Update the VM scale set 
-Update-AzVmss -ResourceGroupName $VmssResourceGroupName -Verbose `
-    -Name $VmssName -VirtualMachineScaleSet $vmss 
-```
-
->[!NOTE]
-> Так как каждый секрет является уникальным ресурсом с контролем версий, секреты масштабируемого набора не поддерживают один идентификатор ресурса для двух отдельных секретов. 
-
-## <a name="download-and-update-the-template-from-the-portal"></a>Скачивание и обновление шаблона с портала
-Сертификат установлен в базовом масштабируемом наборе, но вам также необходимо обновить кластер Service Fabric для использования этого сертификата и его общего имени.  Теперь загрузите шаблон для развертывания кластера.  Войдите в [портал Azure](https://portal.azure.com) и перейдите к группе ресурсов, в которой размещен кластер.  В разделе **Настройки** выберите **Развертывания**.  Выберите последние развертывания и щелкните **Просмотреть шаблон**.
-
-![Просмотр шаблонов][image1]
-
-Скачайте шаблон и файлы JSON с параметрами на локальный компьютер.
-
-Сначала откройте файл с параметрами в текстовом редакторе и добавьте следующее значение параметра:
+### <a name="updating-the-virtual-machine-scale-set-resources"></a>Идет обновление ресурсов масштабируемого набора виртуальных машин
+От
 ```json
-"certificateCommonName": {
-    "value": "myclustername.southcentralus.cloudapp.azure.com"
-},
-```
-
-Затем откройте файл шаблона в текстовом редакторе и создайте три обновления для поддержки общего имени сертификата.
-
-1. В разделе **параметров** добавьте параметр *certificateCommonName*:
-    ```json
-    "certificateCommonName": {
-        "type": "string",
-        "metadata": {
-            "description": "Certificate Commonname"
-        }
-    },
-    ```
-
-    Также рассмотрите возможность удаления *certificateThumbprint*, но на него больше нельзя ссылаться в шаблоне диспетчер ресурсов.
-
-2. В ресурсе **Microsoft.Compute/virtualMachineScaleSets** обновите расширение виртуальной машины, чтобы использовать общее имя в параметрах сертификата вместо отпечатка.  В **virtualMachineProfile** -> свойствах virtualMachineProfile**extensionProfile** -> **Extensions** -> **properties** -> (**Параметры** -> **сертификата**) добавьте `"commonNames": ["[parameters('certificateCommonName')]"],` и удалите `"thumbprint": "[parameters('certificateThumbprint')]",` .
-    ```json
-        "virtualMachineProfile": {
+"virtualMachineProfile": {
         "extensionProfile": {
             "extensions": [
                 {
@@ -129,17 +69,36 @@ Update-AzVmss -ResourceGroupName $VmssResourceGroupName -Verbose `
                         "type": "ServiceFabricNode",
                         "autoUpgradeMinorVersion": true,
                         "protectedSettings": {
-                            "StorageAccountKey1": "[listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('supportLogStorageAccountName')),'2015-05-01-preview').key1]",
-                            "StorageAccountKey2": "[listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('supportLogStorageAccountName')),'2015-05-01-preview').key2]"
+                            ...
                         },
                         "publisher": "Microsoft.Azure.ServiceFabric",
                         "settings": {
-                            "clusterEndpoint": "[reference(parameters('clusterName')).clusterEndpoint]",
-                            "nodeTypeRef": "[variables('vmNodeType0Name')]",
-                            "dataPath": "D:\\SvcFab",
-                            "durabilityLevel": "Bronze",
-                            "enableParallelJobs": true,
-                            "nicPrefixOverride": "[variables('subnet0Prefix')]",
+                            ...
+                            "certificate": {
+                                "thumbprint": "[parameters('certificateThumbprint')]",
+                                "x509StoreName": "[parameters('certificateStoreValue')]"
+                            }
+                        },
+                        ...
+                    }
+                },
+```
+Кому
+```json
+"virtualMachineProfile": {
+        "extensionProfile": {
+            "extensions": [
+                {
+                    "name": "[concat('ServiceFabricNodeVmExt','_vmNodeType0Name')]",
+                    "properties": {
+                        "type": "ServiceFabricNode",
+                        "autoUpgradeMinorVersion": true,
+                        "protectedSettings": {
+                            ...
+                        },
+                        "publisher": "Microsoft.Azure.ServiceFabric",
+                        "settings": {
+                            ...
                             "certificate": {
                                 "commonNames": [
                                     "[parameters('certificateCommonName')]"
@@ -147,39 +106,61 @@ Update-AzVmss -ResourceGroupName $VmssResourceGroupName -Verbose `
                                 "x509StoreName": "[parameters('certificateStoreValue')]"
                             }
                         },
-                        "typeHandlerVersion": "1.0"
+                        ...
                     }
                 },
-    ```
+```
 
-3.  В ресурсе **Microsoft.ServiceFabric/clusters** обновите версию API до версии "2018-02-01".  Кроме того, добавьте параметр **certificateCommonNames**, свойство **commonNames** и удалите параметр **certificate** (со свойством отпечатка), как в следующем примере:
-    ```json
+### <a name="updating-the-cluster-resource"></a>Обновление ресурса кластера
+В ресурсе **Microsoft. ServiceFabric/Clusters** добавьте свойство **цертификатекоммоннамес** с параметром **коммоннамес** и полностью удалите свойство **сертификата** (все его параметры):
+
+От
+```json
     {
         "apiVersion": "2018-02-01",
         "type": "Microsoft.ServiceFabric/clusters",
         "name": "[parameters('clusterName')]",
         "location": "[parameters('clusterLocation')]",
         "dependsOn": [
-            "[concat('Microsoft.Storage/storageAccounts/', variables('supportLogStorageAccountName'))]"
+            ...
         ],
         "properties": {
             "addonFeatures": [
-                "DnsService",
-                "RepairManager"
+                ...
+            ],
+            "certificate": {
+              "thumbprint": "[parameters('certificateThumbprint')]",
+              "x509StoreName": "[parameters('certificateStoreValue')]"
+            },
+        ...
+```
+Кому
+```json
+    {
+        "apiVersion": "2018-02-01",
+        "type": "Microsoft.ServiceFabric/clusters",
+        "name": "[parameters('clusterName')]",
+        "location": "[parameters('clusterLocation')]",
+        "dependsOn": [
+            ...
+        ],
+        "properties": {
+            "addonFeatures": [
+                ...
             ],
             "certificateCommonNames": {
                 "commonNames": [
                     {
                         "certificateCommonName": "[parameters('certificateCommonName')]",
-                        "certificateIssuerThumbprint": ""
+                        "certificateIssuerThumbprint": "[parameters('certificateIssuerThumbprintList')]"
                     }
                 ],
                 "x509StoreName": "[parameters('certificateStoreValue')]"
             },
         ...
-    ```
+```
 
-Дополнительные сведения см [. в статье развертывание Service Fabric кластера, в котором вместо отпечатка используется общее имя сертификата.](./service-fabric-create-cluster-using-cert-cn.md)
+Дополнительные сведения см [. в статье развертывание Service Fabric кластера, использующего общее имя сертификата вместо отпечатка.](./service-fabric-create-cluster-using-cert-cn.md)
 
 ## <a name="deploy-the-updated-template"></a>Развертывание обновленного шаблона
 Повторно разверните обновленный шаблон после внесения изменений.
@@ -191,9 +172,22 @@ New-AzResourceGroupDeployment -ResourceGroupName $groupname -Verbose `
     -TemplateParameterFile "C:\temp\cluster\parameters.json" -TemplateFile "C:\temp\cluster\template.json" 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="appendix-achieve-a-valid-starting-state-for-converting-a-cluster-to-cn-based-certificate-declarations"></a>Приложение. достижение допустимого начального состояния для преобразования кластера в объявления сертификатов на основе CN
+
+| Начальное состояние | Обновление 1 | Обновление 2 |
+| :--- | :--- | :--- |
+| `Thumbprint: OldCert1, ThumbprintSecondary: None` и `GoalCert` имеет более позднюю `NotAfter` дату, чем `OldCert1` | `Thumbprint: OldCert1, ThumbprintSecondary: GoalCert` | - |
+| `Thumbprint: OldCert1, ThumbprintSecondary: None` и `OldCert1` имеет более позднюю `NotAfter` дату, чем `GoalCert` | `Thumbprint: GoalCert, ThumbprintSecondary: OldCert1` | `Thumbprint: GoalCert, ThumbprintSecondary: None` |
+| `Thumbprint: OldCert1, ThumbprintSecondary: GoalCert`, где `OldCert1` имеет дату позже `NotAfter``GoalCert` | Обновить до `Thumbprint: GoalCert, ThumbprintSecondary: None` | - |
+| `Thumbprint: GoalCert, ThumbprintSecondary: OldCert1`, где `OldCert1` имеет дату позже `NotAfter``GoalCert` | Обновить до `Thumbprint: GoalCert, ThumbprintSecondary: None` | - |
+| `Thumbprint: OldCert1, ThumbprintSecondary: OldCert2` | Удалите одно из `OldCert1` или `OldCert2` , чтобы получить состояние `Thumbprint: OldCertx, ThumbprintSecondary: None` | Продолжить с нового начального состояния |
+
+Инструкции по выполнению любого из этих обновлений см. в [этом документе](service-fabric-cluster-security-update-certs-azure.md).
+
+
+## <a name="next-steps"></a>Дальнейшие шаги
 * Сведения о [безопасности кластера](service-fabric-cluster-security.md).
-* Дополнительные сведения о [выделении сертификата кластера](service-fabric-cluster-rollover-cert-cn.md).
-* [Обновление сертификатов кластера и управление ими](service-fabric-cluster-security-update-certs-azure.md)
+* Сведения о [переключении сертификата кластера по общему имени](service-fabric-cluster-rollover-cert-cn.md)
+* Узнайте, как [настроить кластер для автоматической смены ключей](cluster-security-certificate-management.md) .
 
 [image1]: ./media/service-fabric-cluster-change-cert-thumbprint-to-cn/PortalViewTemplates.png
