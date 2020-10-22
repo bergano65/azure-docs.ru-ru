@@ -5,12 +5,12 @@ ms.date: 09/25/2019
 ms.topic: troubleshooting
 description: Узнайте, как устранять распространенные неполадки при включении и использовании Azure Dev Spaces
 keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s '
-ms.openlocfilehash: 5d8bf69d456bca2a88b8aa2031d5ef0ba20f7c30
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 42551443fb5af1bd3f783c33f708b231eea68907
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91979127"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92364173"
 ---
 # <a name="azure-dev-spaces-troubleshooting"></a>Устранение неполадок с Azure Dev Spaces
 
@@ -278,7 +278,7 @@ Service cannot be started.
 
 Службы, которые Azure Dev Spaces выполняет в кластере, используют управляемое удостоверение кластера для взаимодействия с внутренними службами Azure Dev Spaces, расположенными за пределами кластера. При установке управляемого удостоверения pod на узлах кластера настраиваются сетевые правила для перенаправления всех вызовов учетных данных управляемого удостоверения в [кластерную установку Node Managed Identity (NMI)](https://github.com/Azure/aad-pod-identity#node-managed-identity). Этот контроллер DaemonSet NMI определяет вызывающую группу pod и проверяет, что она отмечена для получения доступа к запрошенному управляемому удостоверению. Azure Dev Spaces не может определить, установлено ли в кластере управляемое удостоверение pod, и не может выполнить необходимую настройку, чтобы разрешить службам Azure Dev Spaces доступ к управляемому удостоверению кластера. Так как службы Azure Dev Spaces не настроены для доступа к управляемому удостоверению кластера, Демон NMI не позволит им получить маркер Azure AD для управляемого удостоверения и не сможет взаимодействовать с Azure Dev Spaces серверными службами.
 
-Чтобы устранить эту проблему, примените [AzurePodIdentityException](https://github.com/Azure/aad-pod-identity/blob/master/docs/readmes/README.app-exception.md) к *azds-injector-webhook* и обновите все группы pod, инструментированные Azure Dev Spaces, предоставив им доступ к управляемому удостоверению.
+Чтобы устранить эту проблему, примените [AzurePodIdentityException](https://azure.github.io/aad-pod-identity/docs/configure/application_exception) к *azds-injector-webhook* и обновите все группы pod, инструментированные Azure Dev Spaces, предоставив им доступ к управляемому удостоверению.
 
 Создайте файл с именем *webhookException.yaml* и скопируйте в него следующее определение YAML.
 

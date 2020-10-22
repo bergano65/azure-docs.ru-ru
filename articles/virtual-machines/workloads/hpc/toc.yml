@@ -22,6 +22,12 @@
               href: hb-series-overview.md
             - name: Производительность
               href: hb-series-performance.md
+        - name: Серия HBv2
+          items:
+            - name: Обзор
+              href: hbv2-series-overview.md
+            - name: Производительность
+              href: hbv2-performance.md
         - name: "Серия\_HC"
           items:
             - name: Обзор

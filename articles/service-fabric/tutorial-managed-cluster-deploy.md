@@ -4,12 +4,12 @@ description: Из этого учебника вы узнаете, как раз
 ms.topic: tutorial
 ms.date: 08/27/2020
 ms.custom: references_regions
-ms.openlocfilehash: c7ed1a8fceeddecb942edb541c6112492a6e5a2d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0265a1393c697cbd767de13df1064a5eea957380
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91410246"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92316166"
 ---
 # <a name="tutorial-deploy-a-service-fabric-managed-cluster-preview"></a>Руководство по развертыванию управляемого кластера Service Fabric (предварительная версия)
 
@@ -37,7 +37,7 @@ ms.locfileid: "91410246"
 
 * Установите [пакет SDK для Service Fabric и модуль PowerShell](service-fabric-get-started.md).
 
-* Установите [Azure PowerShell версии 4.7.0](https://docs.microsoft.com/powershell/azure/release-notes-azureps?view=azps-4.7.0&preserve-view=true#azservicefabric) (или более поздней).
+* Установите [Azure PowerShell версии 4.7.0](/powershell/azure/release-notes-azureps?preserve-view=true&view=azps-4.7.0#azservicefabric) (или более поздней).
 
 ## <a name="connect-to-your-azure-account"></a>Подключение к учетной записи Azure
 
@@ -73,7 +73,7 @@ New-AzResourceGroup -Name $resourceGroup -Location $location
 
 * **Имя кластера**. Введите уникальное имя кластера, например *mysfcluster*.
 * **Пароль администратора**. Введите пароль администратора, который будет использоваться для RDP на базовых виртуальных машинах в кластере.
-* **Отпечаток сертификата клиента**. Укажите отпечаток сертификата клиента, который хотите использовать для доступа к кластеру. Если у вас нет сертификата, выполните действия по [настройке и получению сертификата](https://docs.microsoft.com/azure/key-vault/certificates/quick-create-portal), чтобы создать самозаверяющий сертификат.
+* **Отпечаток сертификата клиента**. Укажите отпечаток сертификата клиента, который хотите использовать для доступа к кластеру. Если у вас нет сертификата, выполните действия по [настройке и получению сертификата](../key-vault/certificates/quick-create-portal.md), чтобы создать самозаверяющий сертификат.
 * **SKU кластера**. Укажите [тип управляемого кластера Service Fabric](overview-managed-cluster.md#service-fabric-managed-cluster-skus) для развертывания. Кластеры с *базовыми* SKU предназначены только для тестовых развертываний, и их нельзя использовать для добавления или удаления типов узлов.
 
 ```powershell
