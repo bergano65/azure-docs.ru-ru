@@ -8,12 +8,12 @@ ms.author: rgarcia
 ms.date: 07/31/2020
 ms.topic: tutorial
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 440d8af17bccaf8d3fcb92f65e5d91ed969aec31
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: b29873e161b64c52abbfdf3f2611714f6b012361
+ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91971416"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92097292"
 ---
 # <a name="tutorial-share-spatial-anchors-across-sessions-and-devices"></a>Руководство по Совместное использование пространственных привязок между сеансами и устройствами
 
@@ -86,7 +86,7 @@ ms.locfileid: "91971416"
 
 Откройте Visual Studio Code, а затем откройте проект в папке *Sharing\SharingServiceSample*. 
 
-Чтобы развернуть службу совместного использования с помощью Visual Studio Code, следуйте инструкциям в статье <a href="https://docs.microsoft.com/aspnet/core/tutorials/publish-to-azure-webapp-using-vscode?view=aspnetcore-2.2#open-it-with-visual-studio-code" target="_blank">Публикация приложения ASP.NET Core в Azure с помощью Visual Studio Code</a>. Начните с раздела "Открытие проекта с помощью Visual Studio Code". Не создавайте еще один проект ASP.NET, как описано на предыдущем шаге, поскольку у вас уже есть проект, который нужно развернуть и опубликовать (SharingServiceSample).
+Чтобы развернуть службу совместного использования с помощью Visual Studio Code, следуйте инструкциям в статье <a href="/aspnet/core/tutorials/publish-to-azure-webapp-using-vscode?view=aspnetcore-2.2#open-it-with-visual-studio-code" target="_blank">Публикация приложения ASP.NET Core в Azure с помощью Visual Studio Code</a>. Начните с раздела "Открытие проекта с помощью Visual Studio Code". Не создавайте еще один проект ASP.NET, как описано на предыдущем шаге, поскольку у вас уже есть проект, который нужно развернуть и опубликовать (SharingServiceSample).
 
 ---
 
@@ -104,4 +104,3 @@ ms.locfileid: "91971416"
 
 > [!div class="nextstepaction"]
 > [Совместное использование привязок между сеансами и устройствами с помощью Пространственных привязок Azure и серверной части службы Azure Cosmos DB](./tutorial-use-cosmos-db-to-store-anchors.md)
-

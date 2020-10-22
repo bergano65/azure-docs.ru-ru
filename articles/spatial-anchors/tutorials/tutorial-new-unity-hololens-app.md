@@ -8,12 +8,12 @@ ms.author: crtreasu
 ms.date: 08/17/2020
 ms.topic: tutorial
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: ee7a0ca1abedd2f80cd8f5fe66e603315a10966f
-ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
+ms.openlocfilehash: e94ced70ad17286612328884d03d4d1253b7818b
+ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2020
-ms.locfileid: "91939534"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92096544"
 ---
 # <a name="tutorial-step-by-step-instructions-to-create-a-new-hololens-unity-app-using-azure-spatial-anchors"></a>Руководство по созданию приложения HoloLens Unity с использованием Пространственных привязок Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "91939534"
 
 1. Компьютер Windows с установленной программой <a href="https://www.visualstudio.com/downloads/" target="_blank">Visual Studio 2017 и более поздних версий</a> с рабочей нагрузкой **Разработка приложений для универсальной платформы Windows** и компонентом **Пакет SDK для Windows 10 (10.0.18362.0 или более поздней версии)** , а также <a href="https://git-scm.com/download/win" target="_blank">Git для Windows</a>.
 2. Установленное [расширение Visual Studio C++/WinRT](https://aka.ms/cppwinrt/vsix) из [Visual Studio Marketplace](https://marketplace.visualstudio.com/).
-3. Устройство HoloLens с включенным [режимом разработчика](https://docs.microsoft.com/windows/mixed-reality/using-visual-studio). Для выполнения инструкций из этой статьи требуется устройство HoloLens с [обновлением Windows 10 за май 2020 г.](https://docs.microsoft.com/windows/mixed-reality/whats-new/release-notes-may-2020 ) Чтобы обновить HoloLens до последней версии, откройте приложение **Параметры**, перейдите в раздел **Обновление и безопасность**, а затем нажмите кнопку **Проверить обновления**.
+3. Устройство HoloLens с включенным [режимом разработчика](/windows/mixed-reality/using-visual-studio). Для выполнения инструкций из этой статьи требуется устройство HoloLens с [обновлением Windows 10 за май 2020 г.](/windows/mixed-reality/whats-new/release-notes-may-2020) Чтобы обновить HoloLens до последней версии, откройте приложение **Параметры**, перейдите в раздел **Обновление и безопасность**, а затем нажмите кнопку **Проверить обновления**.
 
 ## <a name="getting-started"></a>Начало работы
 
@@ -89,7 +89,7 @@ ms.locfileid: "91939534"
 Теперь на панели **Project** (Проект) должен отображаться шаблон сферы.
 
 ## <a name="trying-it-out"></a>Проверка работы
-Чтобы проверить, что все работает, создайте приложение в **Unity** и разверните его из **Visual Studio**. Для этого выполните указания в главе 6 курса [**MR Basics 100: Getting started with Unity**](https://docs.microsoft.com/windows/mixed-reality/holograms-100#chapter-6---build-and-deploy-to-device-from-visual-studio) (Основы смешанной реальности: приступая к работе с Unity). Вы должны увидеть начальный экран Unity, а затем чистый экран.
+Чтобы проверить, что все работает, создайте приложение в **Unity** и разверните его из **Visual Studio**. Для этого выполните указания в главе 6 курса [**MR Basics 100: Getting started with Unity**](/windows/mixed-reality/holograms-100#chapter-6---build-and-deploy-to-device-from-visual-studio) (Основы смешанной реальности: приступая к работе с Unity). Вы должны увидеть начальный экран Unity, а затем чистый экран.
 
 ## <a name="place-an-object-in-the-real-world"></a>Размещение объекта в реальном мире
 Давайте создадим новый объект и разместим его с помощью приложения. Откройте решение Visual Studio, созданное при [развертывании приложения](#trying-it-out).
@@ -208,7 +208,7 @@ ms.locfileid: "91939534"
 
 [!code-csharp[AzureSpatialAnchorsScript](../../../includes/spatial-anchors-new-unity-hololens-app-finished.md?range=320-397&highlight=26-77)]
 
-Запустите приложение из **Visual Studio** еще раз. Покрутите головой, а затем коснитесь, чтобы разместить сферу. Когда будет собрано достаточное количество кадров, цвет сферы станет желтым и начнется передача данных в облако. Когда отправка данных завершится, цвет сферы станет синим. Как вариант, для мониторинга сообщений, которые приложение отправляет в журнал, вы можете воспользоваться [окном вывода](https://docs.microsoft.com/visualstudio/ide/reference/output-window) при отладке в **Visual Studio**. Чтобы просмотреть сообщения журнала, убедитесь, что вы развертываете конфигурацию `Debug` приложения в Visual Studio. Вы можете просмотреть `RecommendedForCreateProgress`, а после завершения передачи — увидеть идентификатор привязки, возвращенный из облака.
+Запустите приложение из **Visual Studio** еще раз. Покрутите головой, а затем коснитесь, чтобы разместить сферу. Когда будет собрано достаточное количество кадров, цвет сферы станет желтым и начнется передача данных в облако. Когда отправка данных завершится, цвет сферы станет синим. Как вариант, для мониторинга сообщений, которые приложение отправляет в журнал, вы можете воспользоваться [окном вывода](/visualstudio/ide/reference/output-window) при отладке в **Visual Studio**. Чтобы просмотреть сообщения журнала, убедитесь, что вы развертываете конфигурацию `Debug` приложения в Visual Studio. Вы можете просмотреть `RecommendedForCreateProgress`, а после завершения передачи — увидеть идентификатор привязки, возвращенный из облака.
 
 > [!NOTE]
 > Если вы получаете сообщение DllNotFoundException: Unable to load DLL 'AzureSpatialAnchors': The specified module could not be found. (DllNotFoundException. Не удается загрузить DLL "AzureSpatialAnchors": не найден указанный модуль.) необходимо **очистить** и снова **создать** решение.

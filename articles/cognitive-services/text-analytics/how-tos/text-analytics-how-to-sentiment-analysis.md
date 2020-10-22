@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: sample
-ms.date: 10/09/2020
+ms.date: 10/16/2020
 ms.author: aahi
-ms.openlocfilehash: 570a21a307d60ab1e2c02d6481746576f5dcf0e3
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
+ms.openlocfilehash: 2b13ac02a8a276b2ef46c8ffd5f13846e394d938
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91930294"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92166936"
 ---
 # <a name="how-to-detect-sentiment-using-the-text-analytics-api"></a>Руководство. Определение тональность с помощью API Анализа текста
 
@@ -36,7 +36,7 @@ ms.locfileid: "91930294"
 | [Контейнер Docker](text-analytics-how-to-install-containers.md) на основе Linux | X  |  |
 | Интеллектуальный анализ данных                            |                       | X                                 |
 
-### <a name="sentiment-scoring-and-labeling"></a>Оценка тональности и маркировка
+## <a name="sentiment-scoring-and-labeling"></a>Оценка тональности и маркировка
 
 Анализ тональности в версии 3 применяет к тексту метки тональности, возвращаемые на уровне предложения и документа, с оценкой достоверности для каждого из них. 
 
@@ -51,7 +51,7 @@ ms.locfileid: "91930294"
 
 Оценки достоверности колеблются в диапазоне от 1 до 0. Оценки, близкие к 1, указывают на более высокую достоверность в классификации метки, а более низкие оценки указывают на более низкую достоверность. Для каждого документа или предложения прогнозируемые оценки, связанные с метками (positive, negative и neutral), в сумме составляют 1.
 
-### <a name="opinion-mining"></a>Интеллектуальный анализ данных
+## <a name="opinion-mining"></a>Интеллектуальный анализ данных
 
 Интеллектуальный анализ данных — это функция анализа тональности (начиная с версии 3.1 — предварительная версия 1). Эта функция также известна как анализ тональности на основе аспекта обработки естественного языка (NLP). Она предоставляет более детализированные сведения о мнениях, связанных с аспектами (например, атрибуты продуктов или услуг) в тексте.
 
