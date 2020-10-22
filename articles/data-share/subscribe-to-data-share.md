@@ -6,12 +6,12 @@ ms.author: jife
 ms.service: data-share
 ms.topic: tutorial
 ms.date: 08/14/2020
-ms.openlocfilehash: ce47bc5e880f15eaa1bbf07477673d2475e5a10a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4d4ef9f1d80604373463450adf597f8202611175
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89489924"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92216578"
 ---
 # <a name="tutorial-accept-and-receive-data-using-azure-data-share"></a>Руководство по Прием и получение данных с помощью Azure Data Share  
 
@@ -34,7 +34,7 @@ ms.locfileid: "89489924"
 
 ### <a name="receive-data-into-a-storage-account"></a>Получение данных в учетную запись хранения 
 
-* Учетная запись хранения Azure. Если у вас еще нет учетной записи хранения Azure, вы можете [создать ее](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account). 
+* Учетная запись хранения Azure. Если у вас еще нет учетной записи хранения Azure, вы можете [создать ее](../storage/common/storage-account-create.md). 
 * Разрешение на запись в учетную запись хранения, которая имеется в *Microsoft.Storage/storageAccounts/write*. Это разрешение назначено роли участника. 
 * Разрешение на добавление назначения ролей в учетную запись хранения, имеющуюся в *Microsoft.Authorization/role assignments/write*. Это разрешение назначено роли владельца.  
 
@@ -62,7 +62,7 @@ ms.locfileid: "89489924"
 
 ### <a name="receive-data-into-an-azure-data-explorer-cluster"></a>Получение данных в кластере Azure Data Explorer: 
 
-* Кластер Azure Data Explorer в том же центре обработки данных Azure, что и кластер Azure Data Explorer поставщика данных: Если у вас еще нет кластера, вы можете создать [кластер Azure Data Explorer](https://docs.microsoft.com/azure/data-explorer/create-cluster-database-portal). Если вы не знакомы с центром обработки данных Azure в кластере поставщика данных, вы можете создать кластер позже.
+* Кластер Azure Data Explorer в том же центре обработки данных Azure, что и кластер Azure Data Explorer поставщика данных: Если у вас еще нет кластера, вы можете создать [кластер Azure Data Explorer](/azure/data-explorer/create-cluster-database-portal). Если вы не знакомы с центром обработки данных Azure в кластере поставщика данных, вы можете создать кластер позже.
 * Разрешение на запись в кластер Azure Data Explorer, имеющийся в *Microsoft.Kusto/clusters/write*. Это разрешение назначено роли участника. 
 * Разрешение на добавление назначения ролей в кластер Azure Data Explorer *Microsoft.Authorization/role assignments/write*. Это разрешение назначено роли владельца. 
 

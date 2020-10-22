@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 07/14/2020
 ms.author: jeedes
-ms.openlocfilehash: d2a3eda97fec03e767425b7f7a126073b2f13ca5
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: fe591c55065372245d95210ab0282a0070c96434
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91713649"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92318789"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-amazon-web-services-aws"></a>Руководство по Интеграция единого входа Azure Active Directory с Amazon Web Services (AWS)
 
@@ -26,7 +26,7 @@ ms.locfileid: "91713649"
 * Вы можете включить автоматический вход пользователей в Amazon Web Services (AWS) с помощью учетных записей Azure AD.
 * Централизованное управление учетными записями через портал Azure.
 
-Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
 ![Схема связи между Azure AD и AWS](./media/amazon-web-service-tutorial/tutorial_amazonwebservices_image.png)
 
@@ -61,7 +61,7 @@ ms.locfileid: "91713649"
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
 * Amazon Web Services (AWS) поддерживает единый вход, инициированный **поставщиком услуг и поставщиком удостоверений**.
-* После настройки Amazon Web Services (AWS) можете применить функцию управления сеансом, которая защищает от хищения и несанкционированного доступа к конфиденциальным данным вашей организации в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).
+* После настройки Amazon Web Services (AWS) можете применить функцию управления сеансом, которая защищает от хищения и несанкционированного доступа к конфиденциальным данным вашей организации в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).
 
 > [!NOTE]
 > Идентификатор этого приложения — фиксированное строковое значение, поэтому в одном клиенте можно настроить только один экземпляр.
@@ -366,17 +366,17 @@ ms.locfileid: "91713649"
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув плитку Amazon Web Services (AWS) на панели доступа, вы автоматически войдете в приложение Amazon Web Services (AWS), для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+Щелкнув плитку Amazon Web Services (AWS) на панели доступа, вы автоматически войдете в приложение Amazon Web Services (AWS), для которого настроили единый вход. См. дополнительные сведения о [панели доступа](../user-help/my-apps-portal-end-user-access.md)
 
 ## <a name="known-issues"></a>Известные проблемы
 
  * В разделе **Подготовка** в подразделе **Сопоставление** отображается сообщение "Идет загрузка...", но никогда не отображаются сопоставления атрибутов. Единственный рабочий процесс подготовки, поддерживаемый сегодня, — импорт ролей из AWS в Azure AD для выбора во время назначения пользователя или группы. Сопоставления атрибутов для этого определены заранее и не настраиваются.
 
- * Раздел **Подготовка** поддерживает ввод только одного набора учетных данных для одного клиента AWS за раз. Все импортированные роли записываются в свойство `appRoles`[объекта `servicePrincipal`](https://docs.microsoft.com/graph/api/resources/serviceprincipal?view=graph-rest-beta) Azure AD для клиента AWS.
+ * Раздел **Подготовка** поддерживает ввод только одного набора учетных данных для одного клиента AWS за раз. Все импортированные роли записываются в свойство `appRoles`[объекта `servicePrincipal`](/graph/api/resources/serviceprincipal?view=graph-rest-beta) Azure AD для клиента AWS.
 
    Вы можете добавить несколько клиентов AWS (представленных как `servicePrincipals`) в Azure AD из коллекции для подготовки. При этом существует известная проблема, когда не удается автоматически записывать все импортированные роли из нескольких `servicePrincipals` AWS, используемых для объединения в `servicePrincipal` и включения возможности единого входа.
 
-   В качестве решения можно использовать [Microsoft Graph API](https://docs.microsoft.com/graph/api/resources/serviceprincipal?view=graph-rest-beta) для извлечения всех `appRoles`, импортируемых во все `servicePrincipal` AWS с настроенной подготовкой. Потом вы сможете добавить эти строки ролей в `servicePrincipal` AWS с настроенным единым входом.
+   В качестве решения можно использовать [Microsoft Graph API](/graph/api/resources/serviceprincipal?view=graph-rest-beta) для извлечения всех `appRoles`, импортируемых во все `servicePrincipal` AWS с настроенной подготовкой. Потом вы сможете добавить эти строки ролей в `servicePrincipal` AWS с настроенным единым входом.
 
 * Роли должны отвечать следующим требованиям, чтобы быть доступными для импорта из AWS в Azure AD:
 
@@ -384,17 +384,17 @@ ms.locfileid: "91713649"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](./tutorial-list.md)
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](../conditional-access/overview.md)
 
 - [Попробуйте Amazon Web Services (AWS) с Azure AD](https://aad.portal.azure.com/)
 
-- [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
+- [Что такое управление сеансами в Microsoft Cloud App Security?](/cloud-app-security/proxy-intro-aad)
 
-- [Как защитить Amazon Web Services (AWS) с улучшенной видимостью и контролем](https://docs.microsoft.com/cloud-app-security/protect-aws)
+- [Как защитить Amazon Web Services (AWS) с улучшенной видимостью и контролем](/cloud-app-security/protect-aws)
 
 [11]: ./media/amazon-web-service-tutorial/ic795031.png
 [12]: ./media/amazon-web-service-tutorial/ic795032.png

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 04/15/2019
 ms.author: jeedes
-ms.openlocfilehash: a2c2e7358c32453daf53c40a9322df4fe30642d8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 991201429bdc09a03ddc46c5beb9d0f4d6744ed5
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88548904"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92108632"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-rackspace-sso"></a>Руководство по Интеграция Azure Active Directory с Rackspace SSO
 
@@ -101,11 +101,11 @@ ms.locfileid: "88548904"
 
     а. Щелкните **Отправить файл метаданных**.
 
-    ![Изображение](common/upload-metadata.png)
+    ![Снимок экрана: раздел "Базовая конфигурация SAML" со ссылкой "Отправить файл метаданных".](common/upload-metadata.png)
 
     b. Щелкните **значок папки**, выберите файл метаданных и нажмите кнопку **Отправить**.
 
-    ![Изображение](common/browse-upload-metadata.png)
+    ![Снимок экрана: диалоговое окно, где можно выбрать и отправить файл.](common/browse-upload-metadata.png)
 
     c. После успешной передачи файла метаданных соответствующее значение URL-адреса будет добавлено автоматически.
 

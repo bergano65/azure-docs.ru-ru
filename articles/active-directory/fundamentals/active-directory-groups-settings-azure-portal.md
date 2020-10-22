@@ -13,12 +13,12 @@ ms.author: ajburnle
 ms.reviewer: krbain
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1e9b38208526ba83e0a0e31e2e139e340a3ee511
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c346877d29c5fef03b45c895cbf8d462f90d0979
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87797531"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92369137"
 ---
 # <a name="edit-your-group-information-using-azure-active-directory"></a>Изменение сведений о группе с помощью Azure Active Directory
 
@@ -53,7 +53,7 @@ ms.locfileid: "87797531"
     
     - **Тип членства.** Измените тип членства. Дополнительные сведения о различных доступных типах членства см. в статьях [Создание базовой группы и добавление членов с помощью портала Azure Active Directory](active-directory-groups-create-azure-portal.md).
     
-    - **Идентификатор объекта.** Невозможно изменить идентификатор объекта, но можно скопировать его и использовать в командах PowerShell для группы. Дополнительные сведения об использовании командлетов PowerShell см. в статье [Настройка параметров групп с помощью командлетов Azure Active Directory](../users-groups-roles/groups-settings-v2-cmdlets.md).
+    - **Идентификатор объекта.** Невозможно изменить идентификатор объекта, но можно скопировать его и использовать в командах PowerShell для группы. Дополнительные сведения об использовании командлетов PowerShell см. в статье [Настройка параметров групп с помощью командлетов Azure Active Directory](../enterprise-users/groups-settings-v2-cmdlets.md).
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 В следующих статьях содержатся дополнительные сведения об Azure Active Directory.
@@ -64,7 +64,7 @@ ms.locfileid: "87797531"
 
 - [Добавление или удаление участников из группы](active-directory-groups-members-azure-portal.md)
 
-- [Управление динамическими правилами для пользователей в группе](../users-groups-roles/groups-create-rule.md)
+- [Управление динамическими правилами для пользователей в группе](../enterprise-users/groups-create-rule.md)
 
 - [Управление членством в группе](active-directory-groups-membership-azure-portal.md)
 

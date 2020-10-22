@@ -1,18 +1,18 @@
 ---
 title: Элементы управления соответствием требованиям Политики Azure для Центров событий Azure
 description: Содержит список элементов управления соответствием Политики Azure, доступных для Центров событий Azure. Эти встроенные определения политик предоставляют популярные подходы к управлению соответствием ресурсов Azure.
-ms.date: 10/07/2020
+ms.date: 10/20/2020
 ms.topic: sample
 author: spelluru
 ms.author: spelluru
 ms.service: event-hubs
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: 6455e4e207a0a0028b97cf93f3572a028331e638
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ab5384793347f22141d36aca70e76284fdc7f26b
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91826014"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92317694"
 ---
 # <a name="azure-policy-regulatory-compliance-controls-for-azure-event-hubs"></a>Элементы управления соответствием требованиям Политики Azure для Центров событий Azure
 
