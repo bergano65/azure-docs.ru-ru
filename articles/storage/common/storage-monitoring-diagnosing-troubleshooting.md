@@ -9,12 +9,12 @@ ms.author: normesta
 ms.reviewer: fryu
 ms.subservice: common
 ms.custom: monitoring, devx-track-csharp
-ms.openlocfilehash: 5f43654b4ff7d0e1f73bd2d83df21d7277c570d1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 70234c9bf6be8b9c2fbb5750fa1dba718ac2690d
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91854563"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92370480"
 ---
 # <a name="monitor-diagnose-and-troubleshoot-microsoft-azure-storage"></a>Мониторинг, диагностика и устранение неисправностей службы хранилища Microsoft Azure
 [!INCLUDE [storage-selector-portal-monitoring-diagnosing-troubleshooting](../../../includes/storage-selector-portal-monitoring-diagnosing-troubleshooting.md)]
@@ -217,7 +217,7 @@ ms.locfileid: "91854563"
 Вы можете фиксировать трафик между клиентом и сервером, чтобы собирать подробные сведения о том, какими данными они обмениваются, и о текущем состоянии сети. Ниже перечислены некоторые полезные инструменты для ведения сетевого журнала.
 
 * [Fiddler](https://www.telerik.com/fiddler) — это бесплатный веб-прокси для отладки, с помощью которого можно проверять заголовки и полезные данные HTTP- и HTTPS-запросов, а также ответных сообщений. Дополнительные сведения см. в [приложении 1 "Отслеживание HTTP- и HTTPS-трафика с помощью Fiddler"](#appendix-1).
-* [Microsoft Network Monitor (Netmon)](https://cnet-downloads.com/network-monitor) и [Wireshark](https://www.wireshark.org/) — бесплатные средства для анализа сетевых протоколов, с помощью которых можно просматривать подробную информацию о пакетах для широкого спектра сетевых протоколов. Дополнительные сведения о Wireshark см. в [приложении 2 "Отслеживание сетевого трафика с помощью Wireshark"](#appendix-2).
+* [Microsoft Network Monitor (Netmon)](https://download.cnet.com/s/network-monitor/) и [Wireshark](https://www.wireshark.org/) — бесплатные средства для анализа сетевых протоколов, с помощью которых можно просматривать подробную информацию о пакетах для широкого спектра сетевых протоколов. Дополнительные сведения о Wireshark см. в [приложении 2 "Отслеживание сетевого трафика с помощью Wireshark"](#appendix-2).
 * Если вы хотите выполнить базовый тест подключения, чтобы проверить, может ли клиентская машина подключиться к службе хранилища Azure по сети, этого не удастся сделать с помощью стандартного инструмента **ping** на клиенте. Однако вы можете воспользоваться для проверки подключения инструментом [**tcping**](https://www.elifulkerson.com/projects/tcping.php).
 
 Во многих случаях данных журналов хранилища и клиентской библиотеки хранилища достаточно для диагностики проблемы, но иногда вам могут потребоваться более подробные сведения, чем способны предоставить эти инструменты. Например, используя Fiddler для просмотра сообщений HTTP и HTTPS, вы можете видеть заголовки и полезные данные, отправленные в службы хранилища и из них. Это позволяет проверить, как работает повтор операций хранилища в клиентском приложении. Средства для анализа протоколов, такие как Wireshark, работают на уровне пакетов, благодаря чему вы можете просматривать данные TCP и выявлять потерянные пакеты и проблемы с подключением. 

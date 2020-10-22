@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 10/06/2020
 ms.author: bwren
 ms.subservice: ''
-ms.openlocfilehash: 3783c3dea67ebb9a77486d18bf80e67b85292744
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 6a14ef6f75d5939501c6bd8ca84620a7a5619a54
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92144176"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92369069"
 ---
 # <a name="manage-usage-and-costs-with-azure-monitor-logs"></a>Управление использованием и затратами с помощью журналов Azure Monitor    
 
@@ -243,7 +243,7 @@ armclient PUT /subscriptions/00000000-0000-0000-0000-00000000000/resourceGroups/
 - Цель: выбор ресурса Log Analytics.
 - Критерии: 
    - "Название сигнала" — "Поиск по пользовательским журналам";
-   - Поисковый запрос: `_LogOperation | where Detail has 'OverQuota'`
+   - Поисковый запрос: `_LogOperation | where Category == "Ingestion" | where Operation == "Ingestion rate" | where Level == "Warning"`
    - "На основе" — Количество результатов
    - "Условие" — Больше
    - "Пороговое значение" — 0
@@ -600,9 +600,9 @@ union *
 - Для параметра **Определение условия оповещения** укажите вашу рабочую область Log Analytics в качестве целевого ресурса.
 - Для **критериев оповещения** укажите следующее:
    - для **названия сигнала** выберите значение **Пользовательский поиск по журналам**;
-   - **Поисковый запрос** к `Usage | where IsBillable | summarize DataGB = sum(Quantity / 1000.) | where DataGB > 50` . Если требуется различных 
+   - **Поисковый запрос** к `Usage | where IsBillable | summarize DataGB = sum(Quantity / 1000.) | where DataGB > 50` . Если требуется другой 
    - **логика оповещений** должна быть **основана на** *числе результатов*, а значение **условия** должно быть *больше* **порогового значения** *0*;
-   - **Период времени** *1440* минут и **частота оповещений** для каждых *1440* минутесто, выполняемых один раз в день.
+   - **Период времени** *1440* минут и **периодичность оповещений** каждые *1440* минут для запуска один раз в день.
 - В разделе **Определение сведений об оповещении** задайте такие значения:
    - **Имя** для *объема оплачиваемых данных, превышающих 50 ГБ за 24 часа*
    - **серьезности** — *предупреждение*;

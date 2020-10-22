@@ -8,12 +8,12 @@ author: mlearned
 ms.author: mlearned
 description: Применение GitOps для настройки кластера с поддержкой Azure Arc (предварительная версия)
 keywords: GitOps, Kubernetes, K8s, Azure, Arc, служба Azure Kubernetes, контейнеры
-ms.openlocfilehash: c00ed30c9a7424d083bf076c64cf008e0480bb2b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1a8839c2463494ba0e165bf9e1a5d22245fac8df
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91714186"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92371262"
 ---
 # <a name="deploy-configurations-using-gitops-on-arc-enabled-kubernetes-cluster-preview"></a>Развертывание конфигураций с помощью Гитопс в кластере Kubernetes с поддержкой ARC (Предварительная версия)
 
@@ -98,17 +98,16 @@ Command group 'k8sconfiguration' is in preview. It may be changed/removed in a f
 
 | Сценарий | Формат | Описание |
 | ------------- | ------------- | ------------- |
-| Частный репозиторий GitHub — SSH | git@github.com:username/repo | Пара ключей SSH, созданная Flux.  Пользователь должен добавить открытый ключ в учетную запись GitHub в качестве ключа развертывания. |
-| Общедоступный репозиторий GitHub | `http://github.com/username/repo` или git://github.com/username/repo   | Общедоступный репозиторий Git  |
+| Общедоступный репозиторий Git | HTTP [s]://сервер/репо.ГИТ или git://server/repo.git   | Общедоступный репозиторий Git  |
+| Закрытый репозиторий Git — ключи, созданные с использованием SSH – Flux | SSH://[user@] сервер/репозиторий. git или [user@] сервер: репозиторий. git | Открытый ключ, созданный Flux, необходимо добавить в учетную запись пользователя или репозиторий в поставщике службы Git. Дополнительные сведения см. [здесь](#apply-configuration-from-a-private-git-repository). |
 
-Эти сценарии поддерживаются Flux, но не sourceControlConfiguration. 
+Эти сценарии поддерживаются Flux, но еще не Саурцеконтролконфигуратион.
 
 | Сценарий | Формат | Описание |
 | ------------- | ------------- | ------------- |
-| Частный репозиторий GitHub — HTTPS | `https://github.com/username/repo` | Flux не создает пару ключей SSH.  [Инструкции](https://docs.fluxcd.io/en/1.17.0/guides/use-git-https.html) |
-| Частный узел Git | user@githost:path/to/repo | [Инструкции](https://docs.fluxcd.io/en/1.18.0/guides/use-private-git-host.html) |
-| Частный репозиторий GitHub — SSH (с собственным ключом) | git@github.com:username/repo | [Использование собственной пары ключей SSH](https://docs.fluxcd.io/en/1.17.0/guides/provide-own-ssh-key.html) |
-
+| Закрытый репозиторий Git — HTTPS | https://server/repo.git | Ожидается в ближайшее время (будет поддерживать имя пользователя и пароль, имя пользователя или маркер, сертификат) |
+| Закрытый репозиторий Git. SSH — предоставляемые пользователем ключи | SSH://[user@] сервер/репозиторий. git или [user@] сервер: репозиторий. git | Скоро выйдет |
+| Частный узел Git — SSH — настраиваемый known_hosts | SSH://[user@] сервер/репозиторий. git или [user@] сервер: репозиторий. git | Скоро выйдет |
 
 #### <a name="additional-parameters"></a>Дополнительные параметры
 
@@ -225,7 +224,7 @@ Command group 'k8sconfiguration' is in preview. It may be changed/removed in a f
 
 **Добавление открытого ключа в репозиторий Git в качестве ключа развертывания**:
 
-1. Откройте GitHub, перейдите к вилке, к разделу **Параметры**, а затем — **Ключи развертывания**.
+1. Откройте GitHub, перейдите к репозиторию, щелкните " **Параметры**" и **разверните "ключи** ".
 2. Щелкните **Добавить ключ развертывания**.
 3. Укажите заголовок.
 4. Поставьте флажок **Разрешить доступ на запись**.

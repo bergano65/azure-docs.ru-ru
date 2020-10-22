@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 3/13/2020
 ms.author: harshacs
-ms.openlocfilehash: 1189324cf0bb2731a100032058c7ba9ae4add758
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.openlocfilehash: b9fdaf8a0791570ecee402442c5faefe2f70a22b
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92332048"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92370446"
 ---
 # <a name="about-networking-in-azure-vm-disaster-recovery"></a>Сведения о сетях в аварийном восстановлении виртуальной машины Azure
 
@@ -62,9 +62,9 @@ login.microsoftonline.com | Требуется для авторизации и 
 При использовании NSG для управления исходящими подключениями эти теги служб должны быть разрешены.
 
 - Для учетных записей хранения в исходном регионе:
-    - Создайте правило NSG на основе [тега службы хранилища](../virtual-network/security-overview.md#service-tags) для исходного региона.
+    - Создайте правило NSG на основе [тега службы хранилища](../virtual-network/network-security-groups-overview.md#service-tags) для исходного региона.
     - Разрешите эти адреса, чтобы данные можно было записать в учетную запись хранения кэша с виртуальной машины.
-- Создайте [тег службы Azure Active Directory (AAD)](../virtual-network/security-overview.md#service-tags) на основе правила NSG, чтобы разрешить доступ ко всем IP-адресам, соответствующим AAD.
+- Создайте [тег службы Azure Active Directory (AAD)](../virtual-network/network-security-groups-overview.md#service-tags) на основе правила NSG, чтобы разрешить доступ ко всем IP-адресам, соответствующим AAD.
 - Создайте правило NSG на основе тега Евентшуб Service для целевого региона, разрешив доступ к Site Recoveryному мониторингу.
 - Создайте правило NSG на основе тега Азуреситерековери Service, чтобы разрешить доступ к Site Recovery службе в любом регионе.
 - Создайте правило NSG на основе тега AzureKeyVault Service. Это необходимо только для включения репликации виртуальных машин с поддержкой ADE через портал.
