@@ -62,8 +62,6 @@
       items:
         - name: Базовые средства безопасности
           href: security-baseline.md
-        - name: Встроенные средства управления безопасностью
-          href: api-management-security-controls.md
     - name: Подписки
       href: api-management-subscriptions.md
     - name: Версии
@@ -160,6 +158,8 @@
       items:
         - name: Знакомство с порталом разработчика
           href: api-management-howto-developer-portal.md
+        - name: Миграция с устаревшего портала разработчика на новый
+          href: developer-portal-deprecated-migration.md
         - name: "Аутентификация с помощью Azure\_AD"
           href: api-management-howto-aad.md
         - name: Аутентификация с помощью Azure AD B2C
@@ -170,13 +170,13 @@
           href: api-management-howto-configure-notifications.md
         - name: Обеспечение поддержки консольного приложения OAuth
           href: api-management-howto-oauth2.md
-        - name: "Классический портал\_— настройка портала"
+        - name: "Устаревший портал\_— настройка портала"
           href: api-management-customize-styles.md
-        - name: "Классический портал\_— изменение страниц и макетов"
+        - name: "Устаревший портал\_— изменение страниц и макетов"
           href: api-management-modify-content-layout.md
-        - name: "Классический портал\_— настройка с помощью шаблонов"
+        - name: "Устаревший портал\_— настройка с помощью шаблонов"
           href: api-management-developer-portal-templates.md
-    - name: Шаблоны классического портала
+    - name: Шаблоны устаревшего портала
       items:
         - name: Справочник по моделям данных
           href: api-management-template-data-model-reference.md

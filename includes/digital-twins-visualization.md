@@ -5,18 +5,18 @@ ms.service: digital-twins
 ms.topic: include
 ms.date: 7/10/2020
 ms.author: baanders
-ms.openlocfilehash: b637ef2be51ef2bbbe9fa7e1a2374927647ca382
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a07c2684856cfe21001f996bb62ce4ea3297e8c2
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87061704"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92379732"
 ---
 ## <a name="visualization"></a>Визуализация
 
 Основным способом взаимодействия с вашим экземпляром Azure Digital двойников является применение [интерфейсов API и пакетов SDK](../articles/digital-twins/how-to-use-apis-sdks.md), поэтому может оказаться полезным увидеть визуализацию двойников и графов, создаваемых в экземпляре.
 
-[**Обозреватель цифровых двойников Azure**](https://docs.microsoft.com/samples/azure-samples/digital-twins-explorer/digital-twins-explorer/) — это пример приложения для визуализации и работы с Azure Digital двойников. Следуйте инструкциям, приведенным в примере, чтобы скачать и запустить код приложения. 
+[**Обозреватель цифровых двойников Azure**](/samples/azure-samples/digital-twins-explorer/digital-twins-explorer/) — это пример приложения для визуализации и работы с Azure Digital двойников. Следуйте инструкциям, приведенным в примере, чтобы скачать и запустить код приложения. 
 
 С помощью этого примера можно увидеть визуальное представление цифрового двойников и созданного им графа, а также других действий по созданию и управлению.
 
