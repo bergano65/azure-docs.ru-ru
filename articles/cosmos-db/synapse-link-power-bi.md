@@ -6,23 +6,20 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 09/22/2020
 ms.author: acomet
-ms.openlocfilehash: 26a6ddf3ea3009c1463f40403c9d1860a7cb81f2
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: 1157ca31a66e5df92ff28f5d7190993e51d7dd65
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92126009"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92367641"
 ---
 # <a name="use-power-bi-and-serverless-synapse-sql-pool-to-analyze-azure-cosmos-db-data-with-synapse-link-preview"></a>Использование Power BI и бессерверного пула SQL синапсе для анализа данных Azure Cosmos DB с помощью ссылки синапсе (Предварительная версия) 
 
 В этой статье вы узнаете, как создать несинапсеный пул SQL Server (который ранее назывался "база данных **SQL по запросу**") и представлениями по ссылке синапсе для Azure Cosmos DB. Вы запрашиваете контейнеры Azure Cosmos, а затем создаете модель с Power BI для этих представлений, чтобы отразить этот запрос.
 
-> [!NOTE]
-> Использование аналитического хранилища Azure Cosmos DB с бессерверным пулом SQL в настоящее время находится в предварительной версии. Чтобы запросить доступ, обратитесь к [группе Azure Cosmos DB](mailto:cosmosdbsynapselink@microsoft.com).
-
 В этом сценарии вы будете использовать фиктивные данные о продажах продуктов в розничном магазине партнера. Вы проанализируете доход на каждый магазин, основываясь на большом семейе и влиянии рекламы на конкретную неделю. В этой статье вы создадите два представления с именами **ретаилсалес** и **сторедемографикс** и запрос между ними. Образец данных по продукту можно получить из репозитория [GitHub](https://github.com/Azure-Samples/Synapse/tree/master/Notebooks/PySpark/Synapse%20Link%20for%20Cosmos%20DB%20samples/Retail/RetailData) .
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 Прежде чем начать, обязательно создайте следующие ресурсы:
 

@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 08/31/2020
 ms.author: rosouz
 ms.custom: references_regions
-ms.openlocfilehash: a634743441866c4f1a9f6d634efe0ff9e368b5e9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: dee5a56f309dab8f09a598219f6302c88f4308e7
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91757849"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92370718"
 ---
 # <a name="configure-and-use-azure-synapse-link-for-azure-cosmos-db-preview"></a>Настройка и использование Azure Synapse Link для Azure Cosmos DB (предварительная версия)
 
@@ -218,9 +218,6 @@ container.replace(containerProperties).block();
 ## <a name="query-the-analytical-store-using-synapse-sql-serverless"></a><a id="query-analytical-store-sql-on-demand"></a> Запрос к аналитическому хранилищу с помощью синапсе SQL Server
 
 Синапсе SQL Server (Предварительная версия), которая ранее называлась **SQL по запросу**, позволяет запрашивать и анализировать данные в контейнерах Azure Cosmos DB, которые включены с помощью ссылки Azure синапсе. Данные можно анализировать практически в реальном времени, не влияя на производительность транзакционных рабочих нагрузок. Он предлагает знакомый синтаксис T-SQL для запроса данных из аналитического хранилища и интегрированного подключения к широкому спектру средств BI и специальных запросов через интерфейс T-SQL. Дополнительные сведения см. в статье [запрос аналитического хранилища с использованием СИНАПСЕ SQL Server](../synapse-analytics/sql/query-cosmos-db-analytical-store.md) .
-
-> [!NOTE]
-> Использование аналитического хранилища Azure Cosmos DB с синапсе SQL Server в настоящее время находится на этапе предварительной версии. Чтобы запросить доступ, обратитесь к [группе Azure Cosmos DB](mailto:cosmosdbsynapselink@microsoft.com).
 
 ## <a name="use-synapse-sql-serverless-to-analyze-and-visualize-data-in-power-bi"></a><a id="analyze-with-powerbi"></a>Использование синапсе SQL Server для анализа и визуализации данных в Power BI
 

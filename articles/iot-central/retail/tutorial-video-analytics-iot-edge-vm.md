@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.author: nandab
 author: KishorIoT
 ms.date: 07/31/2020
-ms.openlocfilehash: db3d4bb7f4b32c07e75487764acc5e7ba7d05915
-ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
+ms.openlocfilehash: aa4ddfc773e2226fe155b563c237f1c533d52311
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91873284"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92127034"
 ---
 # <a name="tutorial-create-an-iot-edge-instance-for-video-analytics-linux-vm"></a>Руководство по созданию экземпляра IoT Edge для видеоаналитики (виртуальная машина Linux)
 
@@ -94,7 +94,7 @@ sudo iotedge list
 
 Развертывание создает пользовательскую среду IoT Edge с необходимыми модулями для динамической видеоаналитики. Развертывание обновляет стандартный файл **config.yaml**, чтобы среда выполнения IoT Edge использовала для подключения к IoT Central службу подготовки устройств IoT. Также развертывание создает файл с именем **state.json** в папке **/data/storage**, который используется для предоставления модулям дополнительных данных конфигурации. Дополнительные сведения см. в статье [Руководство. Создание экземпляра IoT Edge для видеоаналитики (Intel NUC)](./tutorial-video-analytics-iot-edge-nuc.md).
 
-См. статью [Устранение неполадок с устройством IoT Edge](https://docs.microsoft.com/azure/iot-edge/troubleshoot).
+См. статью [Устранение неполадок с устройством IoT Edge](../../iot-edge/troubleshoot.md).
 
 ## <a name="use-the-rtsp-simulator"></a>Использование симулятора RTSP
 

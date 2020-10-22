@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 10/29/2019
 ms.author: mayg
-ms.openlocfilehash: d333972ea5f74d1676e5e4b4e1417c6bf5d87b79
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1a8471305af93194ccae7b0928685e10d4d64726
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86135355"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92366668"
 ---
 # <a name="troubleshoot-vcenter-server-discovery-failures"></a>Устранение ошибок обнаружения vCenter Server
 
@@ -36,7 +36,7 @@ System.FormatException: Input string was not in a correct format.
 
 - Укажите виртуальную машину и присвойте ей числовое значение (параметры изменения виртуальной машины в vCenter).
 
-Или
+либо
 
 - Обновите сервер конфигурации до версии 9,20 или более поздней.
 
@@ -54,7 +54,7 @@ System.FormatException: Input string was not in a correct format.
 
 Чтобы решить эту проблему, выполните указанные ниже действия.
 
-Скачайте средство [PsExec](https://aka.ms/PsExec). 
+Скачайте средство [PsExec](/sysinternals/downloads/psexec). 
 
 Используйте средство PsExec для доступа к контексту пользователя системы и определите, настроен ли адрес прокси-сервера. Затем можно добавить vCenter в список обхода, выполнив следующие процедуры.
 
@@ -79,6 +79,6 @@ System.FormatException: Input string was not in a correct format.
 
 4. Перезапустите службу поставщика DRA.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-[Управление сервером конфигурации для аварийного восстановления виртуальных машин VMware](./vmware-azure-manage-configuration-server.md#refresh-configuration-server) 
+[Управление сервером конфигурации для аварийного восстановления виртуальных машин VMware](./vmware-azure-manage-configuration-server.md#refresh-configuration-server)
