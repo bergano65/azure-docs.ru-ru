@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 10/13/2019
 ms.author: mayg
-ms.openlocfilehash: 68671a98c7703514af11de2f8c505110129fe713
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 12bec5af95e7da595d5af09fe9020992b1cf839d
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91398652"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92367998"
 ---
 # <a name="azure-expressroute-with-azure-site-recovery"></a>Использование Azure ExpressRoute и Azure Site Recovery
 
@@ -37,7 +37,7 @@ Site Recovery реплицирует данные в учетную запись
 
 Если вы используете локальный прокси-сервер и хотите использовать ExpressRoute для трафика репликации, необходимо настроить список обхода прокси-сервера на сервере конфигурации и серверах обработки. Выполните инструкции, описанные ниже.
 
-- Скачайте средство [PsExec отсюда, чтобы получить](https://aka.ms/PsExec) доступ к контексту пользователя системы.
+- Скачайте средство [PsExec отсюда, чтобы получить](/sysinternals/downloads/psexec) доступ к контексту пользователя системы.
 - Откройте Internet Explorer в контексте системного пользователя, выполнив следующую командную строку: PsExec-s-i "%Програмфилес%\интернет Explorer\iexplore.exe"
 - Добавление параметров прокси-сервера в IE
 - В списке обхода добавьте URL-адрес службы хранилища Azure *. blob.core.windows.net.

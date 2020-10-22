@@ -9,12 +9,12 @@ author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto
 ms.date: 08/14/2020
-ms.openlocfilehash: 5a6fb2c1c539c5b8e353f5c3720cb9d001dcbbc9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0f9b6e0250acb53899ab0443a62db7c9cc51f992
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91277960"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92370106"
 ---
 # <a name="directory-readers-role-in-azure-active-directory-for-azure-sql"></a>Роль "Читатели каталогов" в Azure Active Directory для Azure SQL
 
@@ -23,9 +23,9 @@ ms.locfileid: "91277960"
 > [!NOTE]
 > Эта функция в этой статье доступна в **общедоступной предварительной версии**.
 
-Azure Active Directory (Azure AD) предоставила [Использование облачных групп для управления назначениями ролей в Azure Active Directory (Предварительная версия)](../../active-directory/users-groups-roles/roles-groups-concept.md). Это позволяет назначать роли Azure AD группам.
+Azure Active Directory (Azure AD) предоставила [Использование облачных групп для управления назначениями ролей в Azure Active Directory (Предварительная версия)](../../active-directory/roles/groups-concept.md). Это позволяет назначать роли Azure AD группам.
 
-При включении [управляемого удостоверения](../../active-directory/managed-identities-azure-resources/overview.md#managed-identity-types) для базы данных SQL Azure, azure SQL управляемый экземпляр или Azure синапсе Analytics роль " [**читатели каталога**](../../active-directory/users-groups-roles/directory-assign-admin-roles.md#directory-readers) Azure AD" должна быть назначена удостоверению, чтобы разрешить доступ на чтение к [API Graph Azure AD](../../active-directory/develop/active-directory-graph-api.md). Управляемое удостоверение базы данных SQL и Azure синапсе называется удостоверением сервера. Управляемое удостоверение SQL Управляемый экземпляр называется удостоверением управляемого экземпляра и автоматически назначается при создании экземпляра. Дополнительные сведения о назначении удостоверения сервера для базы данных SQL или Azure синапсе см. в статье [Включение субъектов-служб для создания пользователей Azure AD](authentication-aad-service-principal.md#enable-service-principals-to-create-azure-ad-users).
+При включении [управляемого удостоверения](../../active-directory/managed-identities-azure-resources/overview.md#managed-identity-types) для базы данных SQL Azure, azure SQL управляемый экземпляр или Azure синапсе Analytics роль " [**читатели каталога**](../../active-directory/roles/permissions-reference.md#directory-readers) Azure AD" должна быть назначена удостоверению, чтобы разрешить доступ на чтение к [API Graph Azure AD](../../active-directory/develop/active-directory-graph-api.md). Управляемое удостоверение базы данных SQL и Azure синапсе называется удостоверением сервера. Управляемое удостоверение SQL Управляемый экземпляр называется удостоверением управляемого экземпляра и автоматически назначается при создании экземпляра. Дополнительные сведения о назначении удостоверения сервера для базы данных SQL или Azure синапсе см. в статье [Включение субъектов-служб для создания пользователей Azure AD](authentication-aad-service-principal.md#enable-service-principals-to-create-azure-ad-users).
 
 Роль " **читатели каталога** " необходима для:
 
@@ -37,7 +37,7 @@ Azure Active Directory (Azure AD) предоставила [Использова
 
 ## <a name="assigning-the-directory-readers-role"></a>Назначение роли читателей каталога
 
-Чтобы назначить роль " [**читатели каталога**](../../active-directory/users-groups-roles/directory-assign-admin-roles.md#directory-readers) " удостоверению, требуется пользователь с разрешениями администратора [глобального администратора](../../active-directory/users-groups-roles/directory-assign-admin-roles.md#global-administrator--company-administrator) или [привилегированной роли](../../active-directory/users-groups-roles/directory-assign-admin-roles.md#privileged-role-administrator) . Пользователи, которые часто управляют или развертывают базу данных SQL, SQL Управляемый экземпляр или Azure синапсе, могут не иметь доступа к этим ролям с высоким уровнем привилегий. Это часто может привести к осложнениям для пользователей, которые создают незапланированные ресурсы SQL Azure или нуждаются в помощи членов ролей с высоким уровнем привилегий, которые часто недоступны в крупных организациях.
+Чтобы назначить роль " [**читатели каталога**](../../active-directory/roles/permissions-reference.md#directory-readers) " удостоверению, требуется пользователь с разрешениями администратора [глобального администратора](../../active-directory/roles/permissions-reference.md#global-administrator--company-administrator) или [привилегированной роли](../../active-directory/roles/permissions-reference.md#privileged-role-administrator) . Пользователи, которые часто управляют или развертывают базу данных SQL, SQL Управляемый экземпляр или Azure синапсе, могут не иметь доступа к этим ролям с высоким уровнем привилегий. Это часто может привести к осложнениям для пользователей, которые создают незапланированные ресурсы SQL Azure или нуждаются в помощи членов ролей с высоким уровнем привилегий, которые часто недоступны в крупных организациях.
 
 Чтобы [настроить администратора Azure AD для Управляемого экземпляра SQL](authentication-aad-configure.md#provision-azure-ad-admin-sql-managed-instance), удостоверению управляемого экземпляра необходимо назначить роль **Читатели каталогов**. 
 
@@ -45,7 +45,7 @@ Azure Active Directory (Azure AD) предоставила [Использова
 
 ## <a name="granting-the-directory-readers-role-to-an-azure-ad-group"></a>Предоставление роли "читатели каталога" группе Azure AD
 
-Сейчас в **общедоступной предварительной версии**вы можете создать группу Azure AD с правами [глобального администратора](../../active-directory/users-groups-roles/directory-assign-admin-roles.md#global-administrator--company-administrator) или [администратора привилегированных ролей](../../active-directory/users-groups-roles/directory-assign-admin-roles.md#privileged-role-administrator) и назначить ей разрешение [**чтение каталога**](../../active-directory/users-groups-roles/directory-assign-admin-roles.md#directory-readers) . Это позволит получить доступ к API Graph Azure AD для членов этой группы. Кроме того, пользователи Azure AD, являющиеся владельцами этой группы, могут назначать новые члены для этой группы, включая удостоверения логических серверов Azure SQL.
+Сейчас в **общедоступной предварительной версии**вы можете создать группу Azure AD с правами [глобального администратора](../../active-directory/roles/permissions-reference.md#global-administrator--company-administrator) или [администратора привилегированных ролей](../../active-directory/roles/permissions-reference.md#privileged-role-administrator) и назначить ей разрешение [**чтение каталога**](../../active-directory/roles/permissions-reference.md#directory-readers) . Это позволит получить доступ к API Graph Azure AD для членов этой группы. Кроме того, пользователи Azure AD, являющиеся владельцами этой группы, могут назначать новые члены для этой группы, включая удостоверения логических серверов Azure SQL.
 
 Этому решению по-прежнему требуется пользователь с высоким уровнем прав (глобальный администратор или администратор привилегированных ролей) для создания группы и назначения пользователей в качестве однократного действия, но владельцы групп Azure AD смогут назначать дополнительные участники. Это избавляет от необходимости использования пользователя с высоким уровнем привилегий в будущем для настройки всех баз данных SQL, управляемых экземпляров SQL или серверов Azure синапсе в своем клиенте Azure AD.
 

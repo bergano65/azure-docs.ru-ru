@@ -6,12 +6,12 @@ ms.service: fxt-edge-filer
 ms.topic: tutorial
 ms.date: 06/20/2019
 ms.author: rohogue
-ms.openlocfilehash: ea963b143cedf36137d9c36bc57d323353da6786
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fa1f9da2c60aaf4c552916d16c266e984bf08892
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86231358"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92340518"
 ---
 # <a name="tutorial-mount-the-cluster"></a>Руководство по подключению кластера
 
@@ -20,6 +20,7 @@ ms.locfileid: "86231358"
 В этом учебнике описаны:
 
 > [!div class="checklist"]
+>
 > * стратегии для клиентов балансировки нагрузки в диапазоне IP-адресов, ориентированных на клиента;
 > * принципы создания пути подключения из IP-адресов, ориентированных на клиента, и соединению по пространству имен;
 > * аргументы, которые следует использовать в команде подключения.
@@ -108,6 +109,6 @@ IP-адрес представляет собой один из определе
 
 После подключения клиентов вы можете проверить рабочий процесс и приступить к работе с кластером.
 
-Если вам необходимо переместить данные в новое основное облачное файловое хранилище, воспользуйтесь преимуществом структуры кэша, используя параллельный прием данных. Некоторые стратегии описываются в статье [Moving data to the vFXT cluster — Parallel data ingest](https://docs.microsoft.com/azure/avere-vfxt/avere-vfxt-data-ingest) (Перемещение данных в кластер vFXT — параллельный прием данных). (Avere vFXT для Azure — это облачный продукт, который использует технологию кэширования, похожую на Azure FXT Edge Filer.)
+Если вам необходимо переместить данные в новое основное облачное файловое хранилище, воспользуйтесь преимуществом структуры кэша, используя параллельный прием данных. Некоторые стратегии описываются в статье [Moving data to the vFXT cluster — Parallel data ingest](../avere-vfxt/avere-vfxt-data-ingest.md) (Перемещение данных в кластер vFXT — параллельный прием данных). (Avere vFXT для Azure — это облачный продукт, который использует технологию кэширования, похожую на Azure FXT Edge Filer.)
 
 Если вам нужно устранить неполадки с оборудованием, ознакомьтесь со статьей [Monitor Azure FXT Edge Filer hardware status](fxt-monitor.md) (Мониторинг состояния оборудования Azure FXT Edge Filer).

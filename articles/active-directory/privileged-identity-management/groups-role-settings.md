@@ -15,12 +15,12 @@ ms.date: 07/27/2020
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c31897e5dc50815d692be83af5d03ffe58c216c1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8c3cd91fb2a878567dc4b09fbddfcf448ec95edd
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87505943"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92368542"
 ---
 # <a name="configure-privileged-access-group-settings-preview-in-privileged-identity-management"></a>Настройка параметров группы привилегированного доступа (Предварительная версия) в управление привилегированными пользователями
 
@@ -30,7 +30,7 @@ ms.locfileid: "87505943"
 
 Выполните следующие действия, чтобы открыть параметры для роли группы привилегированный доступ Azure.
 
-1. Войдите в систему, [портал Azure](https://portal.azure.com/) с пользователем в роли [администратора привилегированных ролей](../users-groups-roles/directory-assign-admin-roles.md#privileged-role-administrator) .
+1. Войдите в систему, [портал Azure](https://portal.azure.com/) с пользователем в роли [администратора привилегированных ролей](../roles/permissions-reference.md#privileged-role-administrator) .
 
 1. Откройте **Azure AD privileged Identity Management**.
 
@@ -132,6 +132,6 @@ ms.locfileid: "87505943"
 
 1. После указания всех параметров роли выберите **Обновить** , чтобы сохранить изменения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Назначение членства в группе привилегированного доступа или владение в PIM](groups-assign-member-owner.md)

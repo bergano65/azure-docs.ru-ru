@@ -5,12 +5,12 @@ services: container-service
 ms.topic: article
 ms.date: 09/22/2020
 author: jluk
-ms.openlocfilehash: a1fafdf1db29917982bbf136de45237459712bcd
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: b833b45f5243e446ac507ee913abe256a12ac01d
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92073467"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92368474"
 ---
 # <a name="secure-pods-with-azure-policy"></a>Защита групп pod с помощью Политики Azure
 
@@ -76,7 +76,7 @@ ms.locfileid: "92073467"
 
 - Используйте пул системных узлов с `CriticalAddonsOnly` таинт для планирования модулей Pod. Дополнительные сведения см. [в разделе Использование пулов системных узлов](use-system-pools.md#system-and-user-node-pools).
 - Обеспечьте безопасность исходящего трафика из кластеров AKS. Дополнительные сведения см. в разделе Управление исходящим [трафиком для узлов кластера](limit-egress-traffic.md).
-- Если кластер `aad-pod-identity` включен, модули NMI, управляемые узлами, изменяют узлы iptables для перехвата вызовов к конечной точке метаданных экземпляра Azure. Такая конфигурация означает, что любой запрос, сделанный в конечной точке метаданных, перехватывается функцией NMI, даже если Pod не используется `aad-pod-identity` . Азуреподидентитексцептион CRD можно настроить так, чтобы сообщать `aad-pod-identity` о том, что любые запросы к конечной точке метаданных, созданные из Pod, совпадающие с метками, определенными в CRD, должны быть прокси-серверами без обработки в NMI. Системные модули с `kubernetes.azure.com/managedby: aks` меткой в пространстве имен _KUBE-System_ должны быть исключены в `aad-pod-identity` с помощью настройки азуреподидентитексцептион CRD. Дополнительные сведения см. [в разделе Отключение AAD-Pod-Identity для конкретного Pod или приложения](https://github.com/Azure/aad-pod-identity/blob/master/docs/readmes/README.app-exception.md).
+- Если кластер `aad-pod-identity` включен, модули NMI, управляемые узлами, изменяют узлы iptables для перехвата вызовов к конечной точке метаданных экземпляра Azure. Такая конфигурация означает, что любой запрос, сделанный в конечной точке метаданных, перехватывается функцией NMI, даже если Pod не используется `aad-pod-identity` . Азуреподидентитексцептион CRD можно настроить так, чтобы сообщать `aad-pod-identity` о том, что любые запросы к конечной точке метаданных, созданные из Pod, совпадающие с метками, определенными в CRD, должны быть прокси-серверами без обработки в NMI. Системные модули с `kubernetes.azure.com/managedby: aks` меткой в пространстве имен _KUBE-System_ должны быть исключены в `aad-pod-identity` с помощью настройки азуреподидентитексцептион CRD. Дополнительные сведения см. [в разделе Отключение AAD-Pod-Identity для конкретного Pod или приложения](https://azure.github.io/aad-pod-identity/docs/configure/application_exception).
   Чтобы настроить исключение, установите [YAML-исключение MIC](https://github.com/Azure/aad-pod-identity/blob/master/deploy/infra/mic-exception.yaml).
 
 Для работы надстройки политики Azure требуются ресурсы ЦП и памяти. Эти требования увеличиваются по мере увеличения размера кластера. Общие рекомендации по использованию надстройки политики Azure см. в статье [рекомендации по политикам Azure][policy-recommendations] .
@@ -315,7 +315,7 @@ az aks disable-addons --addons azure-policy --name MyAKSCluster --resource-group
 | [Политика безопасности Pod "Стандартный" — "базовый"/"по умолчанию"](https://kubernetes.io/docs/concepts/security/pod-security-standards/#baseline-default) | Пользователь устанавливает базовый ресурс политики безопасности Pod. | Политика Azure предоставляет [встроенную базовую инициативу](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicySetDefinitions%2Fa8640138-9b0a-4a28-b8cb-1666c838647d) , которая сопоставляется с базовой политикой безопасности Pod.
 | [Политика безопасности Pod — ограничена по стандарту](https://kubernetes.io/docs/concepts/security/pod-security-standards/#restricted) | Пользователь устанавливает ресурс с ограничением политики безопасности Pod. | Политика Azure предоставляет [встроенную ограниченную инициативу](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicySetDefinitions%2F42b8ef37-b724-4e24-bbc8-7a7708edfe00) , которая сопоставляется с ограниченной политикой безопасности Pod.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье показано, как применить политику Azure, которая запрещает развертывание привилегированных модулей Pod, чтобы предотвратить использование привилегированного доступа. Существует множество политик, которые можно применять, например политики, ограничивающие использование томов. Дополнительные сведения о доступных параметрах см. в [справочнике по политикам Azure для Kubernetes][kubernetes-policy-reference].
 
@@ -330,7 +330,7 @@ az aks disable-addons --addons azure-policy --name MyAKSCluster --resource-group
 [kubectl-logs]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#logs
 [terms-of-use]: https://azure.microsoft.com/support/legal/preview-supplemental-terms/
 [aad-pod-identity]: https://github.com/Azure/aad-pod-identity
-[aad-pod-identity-exception]: https://github.com/Azure/aad-pod-identity/blob/master/docs/readmes/README.app-exception.md
+[aad-pod-identity-exception]: https://azure.github.io/aad-pod-identity/docs/configure/application_exception
 
 <!-- LINKS - internal -->
 [policy-recommendations]: ../governance/policy/concepts/policy-for-kubernetes.md

@@ -14,12 +14,12 @@ ms.workload: identity
 ms.date: 01/22/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 76b41e25a95f23b66edfbd4715037074537221f9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: dc8a23d8cdb923f86d581d1af2967112d226c847
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87076440"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92370633"
 ---
 # <a name="azure-classic-subscription-administrators"></a>Классические администраторы подписок Azure
 
@@ -71,9 +71,9 @@ ms.locfileid: "87076440"
 
 Можно ожидать, что пользователь В будет управлять всем. Это различие связано с тем, что учетная запись Майкрософт добавляется к подписке в качестве гостевого пользователя вместо пользователя-участника. По сравнению с пользователями-участниками, гостевые пользователи имеют разные разрешения в Azure AD по умолчанию. Например, пользователи-участники могут считывать других пользователей в Azure AD, а гостевые пользователи — не могут. Пользователи-участники могут регистрировать новые субъекты-службы в Azure AD, а гостевые пользователи — не могут.
 
-Если гостевой пользователь должен иметь возможность выполнять эти задачи, можно назначить конкретные роли Azure AD, необходимые гостевому пользователю. Например, в приведенном выше сценарии можно было назначить роли [Читатели каталогов](../active-directory/users-groups-roles/directory-assign-admin-roles.md#directory-readers) считывать других пользователей, а роли [Разработчик приложения](../active-directory/users-groups-roles/directory-assign-admin-roles.md#application-developer) — создавать субъекты-службы. Дополнительные сведения о гостевых пользователях и пользователях-участниках, а также об их разрешениях см. в статье [Разрешения пользователя по умолчанию в Azure Active Directory](../active-directory/fundamentals/users-default-permissions.md). Дополнительные сведения о предоставлении доступа для гостевых пользователей см. [в статье Добавление и удаление назначений ролей Azure для внешних гостевых пользователей с помощью портал Azure](role-assignments-external-users.md).
+Если гостевой пользователь должен иметь возможность выполнять эти задачи, можно назначить конкретные роли Azure AD, необходимые гостевому пользователю. Например, в приведенном выше сценарии можно было назначить роли [Читатели каталогов](../active-directory/roles/permissions-reference.md#directory-readers) считывать других пользователей, а роли [Разработчик приложения](../active-directory/roles/permissions-reference.md#application-developer) — создавать субъекты-службы. Дополнительные сведения о гостевых пользователях и пользователях-участниках, а также об их разрешениях см. в статье [Разрешения пользователя по умолчанию в Azure Active Directory](../active-directory/fundamentals/users-default-permissions.md). Дополнительные сведения о предоставлении доступа для гостевых пользователей см. [в статье Добавление и удаление назначений ролей Azure для внешних гостевых пользователей с помощью портал Azure](role-assignments-external-users.md).
 
-Обратите внимание, что [встроенные роли Azure](../role-based-access-control/built-in-roles.md) отличаются от [ролей Azure AD](../active-directory/users-groups-roles/directory-assign-admin-roles.md). Встроенные роли не предоставляют доступ к Azure AD. Дополнительные сведения см. в статье [Роли классического администратора подписки, роли RBAC Azure и роли администратора Azure AD](../role-based-access-control/rbac-and-directory-admin-roles.md).
+Обратите внимание, что [встроенные роли Azure](../role-based-access-control/built-in-roles.md) отличаются от [ролей Azure AD](../active-directory/roles/permissions-reference.md). Встроенные роли не предоставляют доступ к Azure AD. Дополнительные сведения см. в статье [Роли классического администратора подписки, роли RBAC Azure и роли администратора Azure AD](../role-based-access-control/rbac-and-directory-admin-roles.md).
 
 Сведения о том, как сравнивать пользователей и гостевых пользователей, см. [в разделе что такое разрешения пользователя по умолчанию в Azure Active Directory?](../active-directory/fundamentals/users-default-permissions.md).
 
@@ -148,7 +148,7 @@ ms.locfileid: "87076440"
 
     ![Снимок экрана с отображением администратора учетной записи](./media/classic-administrators/account-admin.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Общие сведения о различных ролях](../role-based-access-control/rbac-and-directory-admin-roles.md)
 * [Добавление и удаление назначений ролей Azure с помощью портала Azure](../role-based-access-control/role-assignments-portal.md)

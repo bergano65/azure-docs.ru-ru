@@ -8,12 +8,12 @@ ms.subservice: fhir
 ms.topic: reference
 ms.date: 02/07/2019
 ms.author: cavoeg
-ms.openlocfilehash: ea9a47676b8294b2541c27d361b0dc2fa1ae3627
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: 609bd01e8dcb0e9202d1d9dbe1d1fc1a01cac550
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92339514"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92368287"
 ---
 # <a name="features"></a>Компоненты
 
@@ -39,7 +39,7 @@ API Azure для FHIR обеспечивает полностью управля
 | Delete (условный)           | Нет        | Нет        | Нет        |                                                     |
 | history                        | Да       | Да       | Да       |                                                     |
 | create                         | Да       | Да       | Да       | Поддержка как POST, так и постановки                               |
-| создать (условный)           | Да       | Да       | Да       |                                                     |
+| создать (условный)           | Да       | Да       | Да       | [#1382](https://github.com/microsoft/fhir-server/issues/1382) проблемы |
 | search                         | Partial   | Partial   | Partial   | См. ниже                                           |
 | цепочка поиска                 | Нет        | Да       | Нет        |                                           |
 | обратный поиск в цепочке         | Нет        | Нет        | Нет        |                                            |
