@@ -8,16 +8,16 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: sample
 ms.workload: identity
-ms.date: 06/01/2020
+ms.date: 10/21/2020
 ms.author: marsma
 ms.reviewer: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 948eea168b071813cf20e03d3a0744a824fd4c8c
-ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
+ms.openlocfilehash: e4327d8426a5dc1668993efd418c3f21624d407d
+ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91773898"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92327660"
 ---
 # <a name="microsoft-identity-platform-code-samples-v20-endpoint"></a>Примеры кода для платформы удостоверений Майкрософт (конечная точка версии 2.0)
 
@@ -27,9 +27,6 @@ ms.locfileid: "91773898"
 - требование маркера доступа для доступа к защищенным веб-API.
 
 В этой статье приведены краткое описание и ссылки на примеры для конечной точки платформы удостоверений Майкрософт. В этих примерах показано, как работает эта платформа, и предложены фрагменты кода для использования в реальных приложениях. На странице примеров кода приведены ссылки на статьи с подробными сведениями о требованиях, установке и настройке. Код содержит комментарии, которые помогают понять наиболее важные разделы.
-
-> [!NOTE]
-> Дополнительные сведения см. в статье [Примеры кода Azure Active Directory (конечная точка версии 1.0)](../azuread-dev/sample-v1-code.md).
 
 Чтобы понять основной сценарий для каждого типа примера, см. статью [Типы приложений для платформы удостоверений Майкрософт](v2-app-types.md).
 
@@ -142,5 +139,4 @@ ms.locfileid: "91773898"
 
 ## <a name="see-also"></a>См. также раздел
 
-- [Руководство разработчика по Azure Active Directory (версии 1.0)](../azuread-dev/v1-overview.md).
-- [Основные понятия и справочные материалы по API Microsoft Graph](/graph/use-the-api?context=graph%2fapi%2fbeta&view=graph-rest-beta)
+[Основные понятия и справочные материалы по API Microsoft Graph](/graph/use-the-api?context=graph%2fapi%2fbeta&view=graph-rest-beta)

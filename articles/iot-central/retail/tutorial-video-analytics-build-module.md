@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.author: nandab
 author: KishorIoT
 ms.date: 07/31/2020
-ms.openlocfilehash: 4bbc25f98f494660fc4997af1c3a248172ef08d2
-ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
+ms.openlocfilehash: c2f6f386f4a8ea062980c0efc97d0cfb4f37f4f2
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91873478"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92124900"
 ---
 # <a name="tutorial-modify-and-build-the-live-video-analytics-gateway-modules"></a>Руководство по изменению и созданию модулей шлюза для динамической видеоаналитики
 
@@ -28,8 +28,8 @@ ms.locfileid: "91873478"
 * [Node.js](https://nodejs.org/en/download/) версии 10 или более поздней;
 * [Visual Studio Code](https://code.visualstudio.com/Download) с установленным расширением [TSLint](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-tslint-plugin);
 * подсистема [Docker](https://www.docker.com/products/docker-desktop);
-* [Реестр контейнеров Azure](https://docs.microsoft.com/azure/container-registry/) для размещения версий модулей;
-* учетная запись [Служб мультимедиа Azure](https://docs.microsoft.com/azure/media-services/). Если вы уже прошли предыдущие руководства, вы можете использовать созданную учетную запись.
+* [Реестр контейнеров Azure](../../container-registry/index.yml) для размещения версий модулей;
+* учетная запись [Служб мультимедиа Azure](../../media-services/index.yml). Если вы уже прошли предыдущие руководства, вы можете использовать созданную учетную запись.
 
 ## <a name="clone-the-repository"></a>Клонирование репозитория
 

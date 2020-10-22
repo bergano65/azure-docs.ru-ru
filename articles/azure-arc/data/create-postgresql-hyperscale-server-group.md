@@ -9,12 +9,12 @@ ms.author: jeanyd
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 7fdc367e3db298b60dc9a15453d58a738c13274a
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: d2eef20b4c5648b1b11f16d8e46b956fc1497181
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92108309"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92364428"
 ---
 # <a name="create-an-azure-arc-enabled-postgresql-hyperscale-server-group"></a>Создание группы сервера с Гипермасштабированием PostgreSQL с поддержкой Azure Arc
 
@@ -138,7 +138,7 @@ azdata arc postgres endpoint list -n <server group name>
 
 При использовании виртуальной машины Azure IP-адрес конечной точки не будет показывать _общедоступный_ IP-адрес. Чтобы узнать общедоступный IP-адрес, используйте следующую команду:
 
-```console
+```azurecli
 az network public-ip list -g azurearcvm-rg --query "[].{PublicIP:ipAddress}" -o table
 ```
 
@@ -148,7 +148,7 @@ az network public-ip list -g azurearcvm-rg --query "[].{PublicIP:ipAddress}" -o 
 
 Чтобы задать правило, необходимо знать имя NSG. Определить NSG можно с помощью следующей команды:
 
-```console
+```azurecli
 az network nsg list -g azurearcvm-rg --query "[].{NSGName:name}" -o table
 ```
 
@@ -156,7 +156,7 @@ az network nsg list -g azurearcvm-rg --query "[].{NSGName:name}" -o table
 
 Замените значение параметра--destination-Port-Ranges на номер порта, полученный в приведенной выше команде "аздата Arc postgres Server List".
 
-```console
+```azurecli
 az network nsg rule create -n db_port --destination-port-ranges 30655 --source-address-prefixes '*' --nsg-name azurearcvmNSG --priority 500 -g azurearcvm-rg --access Allow --description 'Allow port through for db access' --destination-address-prefixes '*' --direction Inbound --protocol Tcp --source-port-ranges '*'
 ```
 
@@ -169,7 +169,7 @@ az network nsg rule create -n db_port --destination-port-ranges 30655 --source-a
 
 Помните, что при использовании виртуальной машины Azure потребуется _общедоступный_ IP-адрес, доступный с помощью следующей команды:
 
-```console
+```azurecli
 az network public-ip list -g azurearcvm-rg --query "[].{PublicIP:ipAddress}" -o table
 ```
 
@@ -183,7 +183,7 @@ az network public-ip list -g azurearcvm-rg --query "[].{PublicIP:ipAddress}" -o 
 psql postgresql://postgres:<EnterYourPassword>@10.0.0.4:30655
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Ознакомьтесь с основными понятиями и руководствами по использованию службы "база данных Azure для PostgreSQL", чтобы распределить данные между несколькими узлами PostgreSQL, а также получить преимущества от всех возможностей службы "база данных Azure для PostgreSQL". :
     * [Узлы и таблицы](../../postgresql/concepts-hyperscale-nodes.md)

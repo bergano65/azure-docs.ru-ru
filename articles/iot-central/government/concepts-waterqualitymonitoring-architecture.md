@@ -7,12 +7,12 @@ ms.date: 10/23/2019
 ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: 0c4b13c56a68205195bd5ad4b696d9e01786a8dd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2afe53ade9106fa5e1ebb9ec43492a86bd9fc213
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "77016550"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92127324"
 ---
 # <a name="water-quality-monitoring-reference-architecture"></a>Эталонная архитектура решения для мониторинга качества воды 
 
@@ -35,7 +35,7 @@ ms.locfileid: "77016550"
 ## <a name="devices-and-connectivity"></a>Устройства и подключение. 
 В этом разделе мы ознакомимся с устройствами (интеллектуальными устройствами для мониторинга воды), используемыми для мониторинга качества воды или мониторинга потребления воды. Интеллектуальными устройствами для мониторинга воды могут быть измерители расхода, мониторы качества воды, интеллектуальные вентили, индикаторы утечек и т. д.
 
-Устройства, используемые в интеллектуальных решениях для мониторинга воды, обычно подключаются по энергоэффективным сетям дальнего радиуса действия (LPWAN) через стороннего сетевого оператора. Для отправки данных устройства такого типа в приложение Интернета вещей в Azure IoT Central можно использовать [мост устройства IoT Central Azure](https://docs.microsoft.com/azure/iot-central/core/howto-build-iotc-device-bridge). Кроме того, у вас могут быть шлюзы устройств, которые поддерживают IP-адреса и могут подключаться непосредственно к IoT Central.
+Устройства, используемые в интеллектуальных решениях для мониторинга воды, обычно подключаются по энергоэффективным сетям дальнего радиуса действия (LPWAN) через стороннего сетевого оператора. Для отправки данных устройства такого типа в приложение Интернета вещей в Azure IoT Central можно использовать [мост устройства IoT Central Azure](../core/howto-build-iotc-device-bridge.md). Кроме того, у вас могут быть шлюзы устройств, которые поддерживают IP-адреса и могут подключаться непосредственно к IoT Central.
 
 ## <a name="iot-central"></a>IoT Central 
 Azure IoT Central — это платформа приложений Интернета вещей, которая позволяет быстро подготовить решение Интернета вещей. Вы можете создать фирменную символику для своего решения, настроить его и интегрировать со сторонними службами.
@@ -54,5 +54,4 @@ Azure IoT Central — это платформа приложений Интер
 ## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте, как [создать приложение IoT Central для мониторинга качества воды](./tutorial-water-quality-monitoring.md).
 * Узнайте больше о [шаблонах IoT Central для государственных организаций](./overview-iot-central-government.md).
-* Чтобы узнать больше об IoT Central, прочитайте [общие сведения об IoT Central](https://docs.microsoft.com/azure/iot-central/core/overview-iot-central).
-
+* Чтобы узнать больше об IoT Central, прочитайте [общие сведения об IoT Central](../core/overview-iot-central.md).

@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 02/14/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 411fa207323a9bff6cfcc3b17769203c444dd844
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0dba5f96d90304418d7ebd297419c1f36244f868
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85388686"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92363935"
 ---
 # <a name="deploy-custom-policies-with-azure-pipelines"></a>Развертывание настраиваемых политик с помощью Azure Pipelines
 
@@ -31,9 +31,9 @@ ms.locfileid: "85388686"
 > [!IMPORTANT]
 > Управление Azure AD B2C пользовательскими политиками с помощью конвейера Azure в настоящее время использует операции **предварительной версии** , доступные в `/beta` конечной точке API Microsoft Graph. Использование этих API для приложений в рабочей среде не поддерживается. Дополнительные сведения см. в [справочнике по конечной точке бета-версии Microsoft Graph REST API](https://docs.microsoft.com/graph/api/overview?toc=./ref/toc.json&view=graph-rest-beta).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
-* [Azure AD B2C клиент](tutorial-create-tenant.md)и учетные данные для пользователя в каталоге с ролью [администратора политики B2C инфраструктура процедур идентификации](../active-directory/users-groups-roles/directory-assign-admin-roles.md#b2c-ief-policy-administrator)
+* [Azure AD B2C клиент](tutorial-create-tenant.md)и учетные данные для пользователя в каталоге с ролью [администратора политики B2C инфраструктура процедур идентификации](../active-directory/roles/permissions-reference.md#b2c-ief-policy-administrator)
 * [Пользовательские политики](custom-policy-get-started.md) , отправленные в клиент
 * [Приложение управления](microsoft-graph-get-started.md) , зарегистрированное в клиенте с помощью политики разрешений Microsoft Graph API *. ReadWrite. TrustFramework*
 * [Конвейер Azure](https://azure.microsoft.com/services/devops/pipelines/)и доступ к [Azure DevOps Services проекту][devops-create-project]
@@ -131,7 +131,7 @@ ms.locfileid: "85388686"
 1. Перейдите на вкладку **переменные** .
 1. Добавьте следующие переменные в **переменные конвейера** и задайте их значения, как указано ниже.
 
-    | name | Значение |
+    | Имя | Значение |
     | ---- | ----- |
     | `clientId` | **Идентификатор приложения (клиента)** приложения, зарегистрированного ранее. |
     | `clientSecret` | Значение **секрета клиента** , созданного ранее. <br /> Измените тип переменной на **секрет** (щелкните значок замка). |
@@ -151,7 +151,7 @@ ms.locfileid: "85388686"
     * **Версия задачи**: 2. *
     * **Отображаемое имя**: имя политики, которую должна передать эта задача. Например, *B2C_1A_TrustFrameworkBase*.
     * **Тип**: путь к файлу
-    * **Путь к сценарию**: нажмите кнопку с многоточием (***...***), перейдите в папку *Scripts* и выберите файл *DeployToB2C.ps1* .
+    * **Путь к сценарию**: нажмите кнопку с многоточием (**_..._* _), перейдите в папку _Scripts *, а затем выберите файл *DeployToB2C.ps1* .
     * **Аргументы:**
 
         Введите следующие значения **аргументов**. Замените на `{alias-name}` псевдоним, указанный в предыдущем разделе.

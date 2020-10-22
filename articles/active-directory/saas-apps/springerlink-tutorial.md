@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 03/13/2019
 ms.author: jeedes
-ms.openlocfilehash: 2e3b2ee35352c2af4ae8196ba7c9699da761f83e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a203bbd65c07d21c7d96b59c57b441748ed5b9a9
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91372533"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92127564"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-springer-link"></a>Руководство: интеграция Azure Active Directory с Springer Link
 
@@ -97,7 +97,7 @@ ms.locfileid: "91372533"
 
 4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа Springer Link](common/idp-relay.png)
+    ![Снимок экрана, на котором показан раздел "Базовая конфигурация SAML", где можно ввести идентификатор, URL-адрес ответа и нажать кнопку "Сохранить"](common/idp-relay.png)
 
     а. В текстовом поле **Идентификатор** введите URL-адрес: `https://fsso.springer.com`
 
@@ -109,7 +109,7 @@ ms.locfileid: "91372533"
 
 5. Если вы хотите настроить приложение в **режиме, инициированном поставщиком услуг**, выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа Springer Link](common/both-signonurl.png)
+    ![Снимок экрана, на котором показан параметр "Задать дополнительные URL-адреса" и поле для ввода URL-адреса входа](common/both-signonurl.png)
 
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://fsso.springer.com/saml/login?idp=<entityID>&targetUrl=https://link.springer.com`.
 
