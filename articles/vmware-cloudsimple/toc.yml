@@ -1,7 +1,7 @@
 - name: Решение VMware от CloudSimple
-  href: /azure/vmware-cloudsimple
+  href: ./index.md
   items:
-    - name: Общие сведения
+    - name: Обзор
       items:
         - name: Решение VMware от CloudSimple
           href: cloudsimple-vmware-solutions-overview.md

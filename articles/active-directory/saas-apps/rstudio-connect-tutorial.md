@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 04/04/2019
 ms.author: jeedes
-ms.openlocfilehash: f71a9fa1151a1df2ae04fe47afd6bf36861aa2e5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6f67d1bb1e4502d918cd7af6d98ce5ed5f76c969
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91273779"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92102295"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-rstudio-connect"></a>Руководство по Интеграция Azure Active Directory с приложением RStudio Connect
 
@@ -101,7 +101,7 @@ ms.locfileid: "91273779"
 
 4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия, заменив `<example.com>` адресом и портом сервера RStudio Connect:
 
-    ![Сведения о домене и URL-адресах единого входа для приложения RStudio Connect](common/idp-intiated.png)
+    ![Снимок экрана, на котором показан раздел "Базовая конфигурация SAML", где можно ввести идентификатор, URL-адрес ответа и нажать кнопку "Сохранить"](common/idp-intiated.png)
 
     а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<example.com>/__login__/saml`.
 
@@ -109,7 +109,7 @@ ms.locfileid: "91273779"
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа для приложения RStudio Connect](common/metadata-upload-additional-signon.png)
+    ![Снимок экрана, на котором показан параметр "Задать дополнительные URL-адреса" и поле для ввода URL-адреса входа](common/metadata-upload-additional-signon.png)
 
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://<example.com>/`.
 

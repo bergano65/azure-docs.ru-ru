@@ -15,12 +15,12 @@ ms.date: 11/08/2019
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 763441d023e4a707c6a1edc09abfb6d8e5525723
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f4e2e18f3bb9d1c972d805a60493897d605921e4
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88782742"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92365533"
 ---
 # <a name="invite-guest-users-and-assign-azure-resource-roles-in-privileged-identity-management"></a>Приглашение гостевых пользователей и назначение ролей ресурсов Azure в управление привилегированными пользователями
 
@@ -67,7 +67,7 @@ ms.locfileid: "88782742"
 
 С помощью управление привилегированными пользователями вы можете пригласить гостя и сделать их доступными для роли ресурсов Azure.
 
-1. Войдите в [портал Azure](https://portal.azure.com/) с помощью пользователя, который является членом роли администратора [привилегированных ролей](../users-groups-roles/directory-assign-admin-roles.md#privileged-role-administrator) или [администратора пользователей](../users-groups-roles/directory-assign-admin-roles.md#user-administrator) .
+1. Войдите в [портал Azure](https://portal.azure.com/) с помощью пользователя, который является членом роли администратора [привилегированных ролей](../roles/permissions-reference.md#privileged-role-administrator) или [администратора пользователей](../roles/permissions-reference.md#user-administrator) .
 
 1. Откройте **Azure AD privileged Identity Management**.
 
@@ -163,7 +163,7 @@ ms.locfileid: "88782742"
 
     ![Журнал аудита каталогов: Дата, цель, инициировано и действие](./media/pim-resource-roles-external-users/audit-directory.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Назначение ролей администратора Azure AD в управление привилегированными пользователями](pim-how-to-add-role-to-user.md)
 - [Что такое доступ гостевых пользователей в службе совместной работы Azure AD B2B?](../external-identities/what-is-b2b.md)

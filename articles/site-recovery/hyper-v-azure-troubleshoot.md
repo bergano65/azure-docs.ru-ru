@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 04/14/2019
 ms.author: sharrai
-ms.openlocfilehash: 9e8a1246a2e48c3c569b82845c713ba25ee2467a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 721e09c2bc0562ba833115361cf33c3daaef380b
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89426128"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92364037"
 ---
 # <a name="troubleshoot-hyper-v-to-azure-replication-and-failover"></a>Устранение неполадок с отработкой отказа и репликацией из Hyper-V в Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "89426128"
 4. Проверьте журнал Hyper-V-VMMS\Admin на наличие проблем при выполнении входа в виртуальную машину. Этот журнал находится в **журналах приложений и служб**  >  **Microsoft**  >  **Windows**.
 5. Включите на гостевой виртуальной машине инструментарий управления Windows (WMI) и проверьте, что он доступен.
    - [Сведения о](https://techcommunity.microsoft.com/t5/ask-the-performance-team/bg-p/AskPerf) базовом тестировании WMI.
-   - [Устранение неполадок](https://aka.ms/WMiTshooting) Интерфейса.
+   - [Устранение неполадок](/windows/win32/wmisdk/wmi-troubleshooting) Интерфейса.
    - [Устранение](/previous-versions/tn-archive/ff406382(v=msdn.10)#H22) неполадок со сценариями и службами WMI.
 6. Проверьте, запущена ли на гостевой виртуальной машине последняя версия служб Integration Services.
     - [Убедитесь](/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services), что у вас установлена последняя версия.
@@ -114,9 +114,9 @@ ms.locfileid: "89426128"
         - Категория: "Виртуальное устройство хранения Hyper-V".
         - Счетчик: "Записанных байтов в секунду".</br>
         - Скорость изменения данных увеличится или останется на высоком уровне. Это зависит от текущей загруженности виртуальной машины или ее приложений.
-        - Для стандартного хранилища в Site Recovery среднее значение скорости изменения данных исходного диска составляет 2 МБ в секунду. [Дополнительные сведения](hyper-v-deployment-planner-analyze-report.md#azure-site-recovery-limits)
+        - Для стандартного хранилища в Site Recovery среднее значение скорости изменения данных исходного диска составляет 2 МБ в секунду. [Подробнее](hyper-v-deployment-planner-analyze-report.md#azure-site-recovery-limits)
     - Кроме того, можно [проверить целевые показатели масштабируемости хранилища](../storage/common/scalability-targets-standard-account.md).
-8. Убедитесь, что если вы используете сервер под управлением Linux, вы включили на нем согласованность приложений. [Дополнительные сведения](./site-recovery-faq.md#replication)
+8. Убедитесь, что если вы используете сервер под управлением Linux, вы включили на нем согласованность приложений. [Подробнее](./site-recovery-faq.md#replication)
 9. Запустите [планировщик развертывания](hyper-v-deployment-planner-run.md).
 10. Просмотрите рекомендации для настройки [сети](hyper-v-deployment-planner-analyze-report.md#recommendations-with-available-bandwidth-as-input) и [хранилища](hyper-v-deployment-planner-analyze-report.md#recommendations-with-available-bandwidth-as-input).
 
@@ -130,7 +130,7 @@ ms.locfileid: "89426128"
 
 2. Чтобы создавать моментальные снимки VSS для виртуальной машины, установите на виртуальной машине службы Integration Services Hyper-V и включите службу интеграции резервного копирования (VSS).
     - Убедитесь, что службы или управляющие программы Integration Services VSS выполняются на гостевой виртуальной машине и находятся в состоянии **ОК**.
-    - Это можно проверить в сеансе PowerShell с повышенными привилегиями на узле Hyper-V с помощью команды **Get-VMIntegrationService-VMName \<VMName> -Name VSS** . Эти сведения можно также получить, войдя на гостевую виртуальную машину. [Подробнее.](/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services)
+    - Это можно проверить в сеансе PowerShell с повышенными привилегиями на узле Hyper-V с помощью команды **Get-VMIntegrationService-VMName \<VMName> -Name VSS** . Эти сведения можно также получить, войдя на гостевую виртуальную машину. [Подробнее](/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services).
     - Убедитесь, что службы интеграции резервного копирования или VSS на виртуальной машине запущены и находятся в работоспособном состоянии. В противном случае перезапустите эти службы и службу запросов на теневое копирование томов Hyper-V на сервере узла Hyper-V.
 
 ### <a name="common-errors"></a>Распространенные ошибки

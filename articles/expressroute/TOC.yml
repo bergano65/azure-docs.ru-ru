@@ -95,6 +95,10 @@
       href: expressroute-connect-azure-to-public-cloud.md
     - name: Возможность подключения нескольких сетей
       href: cross-network-connectivity.md
+    - name: Безопасность
+      items:
+        - name: Базовые средства безопасности
+          href: security-baseline.md
     - name: Атрибуты безопасности
       href: expressroute-security-controls.md
     - name: BFD через ExpressRoute
@@ -269,5 +273,3 @@
           href: expressroute-howto-add-gateway-classic.md
         - name: Создание и изменение общедоступного пиринга
           href: about-public-peering.md
-    - name: Базовые средства безопасности
-      href: security-baseline.md

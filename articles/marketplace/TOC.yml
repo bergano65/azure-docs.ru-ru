@@ -105,12 +105,22 @@
               href: partner-center-portal/create-azure-container-technical-assets.md
             - name: Создание предложения по контейнерам Azure
               href: partner-center-portal/create-azure-container-offer.md
-    - name: Предложение виртуальной машины Azure
+    - name: Предложения виртуальных машин Azure
       items:
         - name: Планирование предложения виртуальной машины
           href: marketplace-virtual-machines.md
         - name: Создание и публикация предложения виртуальной машины
           items:
+            - name: Создание предложения виртуальной машины
+              href: azure-vm-create.md
+            - name: Настройка свойств предложения виртуальной машины
+              href: azure-vm-create-properties.md
+            - name: Настройка списка предложений виртуальных машин
+              href: azure-vm-create-listing.md
+            - name: Создание планов виртуальных машин
+              href: azure-vm-create-plans.md
+            - name: Добавление предварительной версии аудитории
+              href: azure-vm-create-preview.md
             - name: Создание технических ресурсов виртуальной машины
               items:
                 - name: Создание виртуальной машины из утвержденной базы
@@ -127,16 +137,6 @@
                   href: azure-vm-create-faq.md
                 - name: Устранение неполадок с сертификацией виртуальной машины
                   href: azure-vm-create-certification-faq.md
-            - name: Создание предложения виртуальной машины
-              href: azure-vm-create.md
-            - name: Настройка свойств предложения виртуальной машины
-              href: azure-vm-create-properties.md
-            - name: Настройка списка предложений виртуальных машин
-              href: azure-vm-create-listing.md
-            - name: Создание планов виртуальных машин
-              href: azure-vm-create-plans.md
-            - name: Добавление предварительной версии аудитории
-              href: azure-vm-create-preview.md
     - name: Консультационные услуги
       items:
         - name: Планирование предложения консультационных услуг

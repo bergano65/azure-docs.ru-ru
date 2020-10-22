@@ -6,12 +6,12 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 07/13/2017
 ms.author: yegu
-ms.openlocfilehash: 327505dfbaf5f6f35b065f4f3941053c5114aa33
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 478b53b78fb72a01ad028c7fb6b7683b34cbca14
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89019221"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92370803"
 ---
 # <a name="manage-azure-cache-for-redis-with-azure-powershell"></a>Управление кэшем Azure для Redis с использованием Azure PowerShell
 > [!div class="op_single_selector"]
@@ -853,5 +853,5 @@ ms.locfileid: "89019221"
 * [Развертывание ресурсов с использованием шаблонов Resource Manager и портала Azure](../azure-resource-manager/templates/deploy-portal.md) — сведения о создании групп ресурсов и управлении ими на портале Azure.
 * [Блог Azure](https://azure.microsoft.com/blog/) — сведения о новых возможностях в Azure.
 * [Блог Windows PowerShell](https://devblogs.microsoft.com/powershell/) — сведения о новых возможностях в Windows PowerShell.
-* [Блог "Hey, Scripting Guy!"](https://blogs.technet.microsoft.com/heyscriptingguy/author/the-scripting-guys/) — реальные советы и рекомендации от сообщества Windows PowerShell.
+* [Блог "Hey, Scripting Guy!"](https://devblogs.microsoft.com/scripting/tag/hey-scripting-guy/) — реальные советы и рекомендации от сообщества Windows PowerShell.
 

@@ -406,8 +406,6 @@
           href: backup-encryption.md
         - name: Шифрование с использованием управляемых пользователем ключей
           href: encryption-at-rest-with-cmk.md
-        - name: Встроенные средства управления безопасностью
-          href: backup-security-controls.md
         - name: Элементы управления безопасностью службы "Политика Azure"
           displayName: 'regulatory, compliance, standards, domains'
           href: ./security-controls-policy.md

@@ -12,12 +12,12 @@ metadata:
   title: Документация по Персонализатору
   titleSuffix: Azure Cognitive Services
   description: Персонализатор Azure — это облачная служба API, с помощью которой приложение максимально удобный режим работы для своих пользователей, изучая их поведение в реальном времени.
-  ms.openlocfilehash: 28197f7408ea93ed07d09e1ae44e7924f4605a14
-  ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+  ms.openlocfilehash: 51aba4941eb1e1e575e6d33a48a8fe1552eb4d47
+  ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 10/09/2020
-  ms.locfileid: "88506555"
+  ms.lasthandoff: 10/22/2020
+  ms.locfileid: "92371143"
 landingContent:
 - title: Сведения о Персонализаторе
   linkLists:
@@ -123,9 +123,7 @@ landingContent:
   linkLists:
   - linkListType: reference
     links:
+    - text: Возможности получения поддержки и справки
+      url: ../cognitive-services-support-options.md?context=/azure/cognitive-services/personalizer/context/context
     - text: Устранение неполадок
       url: troubleshooting.md
-    - text: Публикация вопросов на сайте Stack Overflow
-      url: https://stackoverflow.com/questions/tagged/personalizer
-    - text: Корректирование службы с помощью UserVoice
-      url: https://cognitive.uservoice.com/forums/921562-personalizer

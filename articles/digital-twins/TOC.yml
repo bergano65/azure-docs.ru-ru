@@ -134,7 +134,7 @@
             - name: Swagger
               href: 'https://github.com/Azure/azure-rest-api-specs/tree/master/specification/digitaltwins/resource-manager/Microsoft.DigitalTwins'
             - name: "Пакет SDK для .NET (C#)\_— NuGet"
-              href: 'https://www.nuget.org/packages/Microsoft.Azure.Management.DigitalTwins/1.0.0-preview.1'
+              href: 'https://www.nuget.org/packages/Microsoft.Azure.Management.DigitalTwins/'
             - name: "Пакет SDK для .NET (C#)\_— справка"
               href: /dotnet/api/overview/azure/digitaltwins/management?view=azure-dotnet-preview
             - name: "Пакет SDK для .NET (C#)\_— источник"
@@ -165,14 +165,16 @@
               href: /dotnet/api/overview/azure/digitaltwins?view=azure-dotnet-preview
             - name: "Пакет SDK для .NET (C#)\_— источник"
               href: 'https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/digitaltwins/Azure.DigitalTwins.Core'
-            - name: Пакет SDK для JavaScript (npm)
-              href: 'https://www.npmjs.com/package/@azure/digital-twins/v/1.0.0-preview.1'
-            - name: Справочник по пакету SDK для JavaScript
-              href: /javascript/api/@azure/digital-twins/?preserve-view=true&view=azure-node-latest
             - name: Пакет SDK для Java (Maven)
               href: 'https://search.maven.org/artifact/com.azure/azure-digitaltwins-core/1.0.0-beta.1/jar'
             - name: "Пакет SDK для Java\_— справочник"
               href: /java/api/overview/azure/digitaltwins/client?preserve-view=true&view=azure-java-preview
+            - name: "Пакет SDK для Java\_— источник"
+              href: 'https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/digitaltwins/azure-digitaltwins-core'
+            - name: Пакет SDK для JavaScript (npm)
+              href: 'https://www.npmjs.com/package/@azure/digital-twins/'
+            - name: Справочник по пакету SDK для JavaScript
+              href: /javascript/api/@azure/digital-twins/?preserve-view=true&view=azure-node-latest
     - name: CLI Digital Twins
       items:
         - name: Справочник по CLI Digital Twins
