@@ -9,12 +9,12 @@ ms.reviewer: klam, estfan
 ms.suite: infrastructure-services
 ms.topic: article
 ms.date: 11/14/2018
-ms.openlocfilehash: b85932bf0d4fd080afadef2bc28d6a218b2d627a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5a74240e3f116121c0aaddd11c186e6e674ea26a
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "78898585"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92368185"
 ---
 # <a name="build-advanced-schedules-and-recurrences-for-jobs-in-azure-scheduler"></a>Сборка расширенных расписаний и повторений заданий в планировщике Azure
 
@@ -54,11 +54,11 @@ ms.locfileid: "78898585"
 
 Чтобы создать простое расписание с помощью [REST API планировщика Azure](/rest/api/scheduler), выполните следующие действия:
 
-1. Зарегистрируйте свою подписку Azure в поставщике ресурсов, используя [операцию регистрации в REST API Resource Manager](https://docs.microsoft.com/rest/api/resources/providers). Имя поставщика службы планировщика Azure — **Microsoft.Scheduler**. 
+1. Зарегистрируйте свою подписку Azure в поставщике ресурсов, используя [операцию регистрации в REST API Resource Manager](/rest/api/resources/providers). Имя поставщика службы планировщика Azure — **Microsoft.Scheduler**. 
 
-1. Создайте коллекцию заданий с помощью [операции создания или обновления коллекций заданий](https://docs.microsoft.com/rest/api/scheduler/jobcollections) в REST API планировщика. 
+1. Создайте коллекцию заданий с помощью [операции создания или обновления коллекций заданий](/rest/api/scheduler/jobcollections) в REST API планировщика. 
 
-1. Создайте задание с помощью [операции создания или обновления заданий](https://docs.microsoft.com/rest/api/scheduler/jobs/createorupdate). 
+1. Создайте задание с помощью [операции создания или обновления заданий](/rest/api/scheduler/jobs/createorupdate). 
 
 ## <a name="job-schema-elements"></a>Элементы схемы задания
 
@@ -165,7 +165,7 @@ ms.locfileid: "78898585"
 | **тезис** |Минуты часа, в которые выполняется задание. |Массив целых чисел. |
 | **суток** |Часы дня, в которые выполняется задание. |Массив целых чисел. |
 | **Рабочие дни** |Дни недели, в которые выполняется задание. Указываются только при выборе еженедельной частоты. |Массив любого из следующих значений (максимальный размер массива — 7):<br />— monday;<br />— tuesday;<br />— wednesday;<br />— thursday;<br />— friday;<br />— saturday;<br />— sunday.<br /><br />Без учета регистра. |
-| **monthlyOccurrences** |Определяет, в какие числа месяца выполняется задание. Указываются только при выборе ежемесячной частоты. |Массив объектов **monthlyOccurrences**:<br /> `{ "day": day, "occurrence": occurrence}`<br /><br /> **day** — это день недели, в который выполняется задание. Например, *{Sunday}* означает каждое воскресенье месяца. Обязательный элемент.<br /><br />**occurrence** — это появление указанного дня в течение месяца. Например, *{Sunday, -1}* означает последнее воскресенье месяца. Необязательный параметр. |
+| **monthlyOccurrences** |Определяет, в какие числа месяца выполняется задание. Указываются только при выборе ежемесячной частоты. |Массив объектов **monthlyOccurrences**:<br /> `{ "day": day, "occurrence": occurrence}`<br /><br /> **day** — это день недели, в который выполняется задание. Например, *{Sunday}* означает каждое воскресенье месяца. Обязательный элемент.<br /><br />**occurrence** — это появление указанного дня в течение месяца. Например, *{Sunday, -1}* означает последнее воскресенье месяца. Необязательный элемент. |
 | **monthDays** |День месяца, в который выполняется задание. Указываются только при выборе ежемесячной частоты. |Массив следующих значений:<br />— любое значение <= -1 и >= -31;<br />— любое значение >= 1 и <= 31.|
 
 ## <a name="examples-recurrence-schedules"></a>Примеры: расписания повторений
@@ -208,7 +208,7 @@ ms.locfileid: "78898585"
 | `{"minutes":[0,15,30,45], "monthlyOccurrences":[{"day":"friday", "occurrence":-1}]}` |Задание выполняется каждые 15 минут в последнюю пятницу месяца. |
 | `{"minutes":[15,45], "hours":[5,17], "monthlyOccurrences":[{"day":"wednesday", "occurrence":3}]}` |Задание выполняется в 05:15, 05:45, 17:15, 17:45 в третью среду каждого месяца. |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Основные понятия, терминология и иерархия сущностей планировщика Azure](scheduler-concepts-terms.md)
 * [Справочник по API REST планировщика Azure](/rest/api/scheduler)

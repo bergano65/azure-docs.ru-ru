@@ -11,10 +11,10 @@ ms.workload: infrastructure-services
 ms.date: 10/18/2018
 ms.author: rambala
 ms.openlocfilehash: 7be326e0f01ed6a00244c0f5b9ed6a960b2b6e0b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 10/22/2020
 ms.locfileid: "86171862"
 ---
 # <a name="interoperability-in-azure-back-end-connectivity-features-test-configuration-details"></a>Взаимодействие между функциями подключения к серверной части в Azure. Сведения о тестовой конфигурации
@@ -36,7 +36,7 @@ ms.locfileid: "86171862"
 Подключение между центральной виртуальной сетью и виртуальными сетями филиалов с использованием VPN типа "сеть — сеть" настраивается с помощью VPN-шлюзов в службе "VPN-шлюз Azure". По умолчанию VPN-шлюзы и шлюзы Azure ExpressRoute используют ASN (номер автономной системы) **65515**. Вы можете изменить значение ASN в службе "VPN-шлюз Azure". В тестовой конфигурации значение ASN для VPN-шлюза виртуальной сети филиала изменено на **65516**, чтобы поддерживать маршрутизацию eBGP между центральной виртуальной сетью и виртуальными сетями филиалов.
 
 
-[![3-5]][3]
+[![3]][3]
 
 
 ## <a name="on-premises-location-1-connectivity-by-using-expressroute-and-a-site-to-site-vpn"></a>Подключение к локальному расположению 1 через ExpressRoute и VPN типа "сеть — сеть"
@@ -194,7 +194,7 @@ ExpressRoute предоставляется в виде пары каналов,
 
 Дополнительные сведения см. в статьях [Сведения о VPN-шлюзе][VPN] и [Развертывание высокодоступных виртуальных сетевых модулей][Deploy-NVA].
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Изучите [сведения об анализе уровня управления ][Control-Analysis] для тестовой системы и представления разных виртуальных сетей или виртуальных локальных сетей в топологии.
 

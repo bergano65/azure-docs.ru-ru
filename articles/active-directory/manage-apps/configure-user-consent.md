@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 06/01/2020
 ms.author: kenwith
 ms.reviewer: arvindh, luleon, phsignor
-ms.openlocfilehash: cff2af745e9b79f573aba02e0a9baefe4a5e45a3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3cfcd758390ff401c786c28d410c4d092a82c37f
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91819266"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92368491"
 ---
 # <a name="configure-how-end-users-consent-to-applications"></a>Настройка согласия конечных пользователей для приложений
 
@@ -47,7 +47,7 @@ ms.locfileid: "91819266"
 
 Настройка параметров согласия пользователя на портале Azure:
 
-1. Войдите на [портал Azure](https://portal.azure.com) как [глобальный администратор](../users-groups-roles/directory-assign-admin-roles.md#global-administrator--company-administrator).
+1. Войдите на [портал Azure](https://portal.azure.com) как [глобальный администратор](../roles/permissions-reference.md#global-administrator--company-administrator).
 1. Выберите **Azure Active Directory** > **Корпоративные приложения** > **Согласия и разрешения** > **Параметры согласия пользователя**.
 1. В разделе **Согласие пользователя для приложений** выберите параметр согласия, который вы хотите настроить для всех пользователей.
 1. Нажмите кнопку **Save** (Сохранить), чтобы сохранить настройки.
@@ -144,7 +144,7 @@ Set-AzureADMSAuthorizationPolicy `
 
 1. Сведения о значении параметров:
 
-    | Параметр       | Тип         | Описание  |
+    | Параметр       | Type         | Описание  |
     | ------------- | ------------ | ------------ |
     | _BlockUserConsentForRiskyApps_   | Логическое |  Флаг, указывающий, будет ли согласие пользователя блокироваться при обнаружении рискованного запроса. |
 

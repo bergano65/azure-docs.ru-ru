@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 710122ed4e5a02453f6f0c19a145af64f2c69178
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: d14c9330977296630ee58bc2b508f4304472044c
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92145422"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92366366"
 ---
 # <a name="conditional-access-users-and-groups"></a>Условный доступ: пользователи и группы
 
@@ -46,13 +46,13 @@ ms.locfileid: "92145422"
 > Если пользователи или группы являются членами более чем 2048 групп, их доступ может быть заблокирован. Это ограничение относится как к прямому, так и к вложенному членству в группе.
 
 > [!WARNING]
-> Политики условного доступа не поддерживают пользователей, которым назначена роль каталога, [ограниченная административной единицей](../users-groups-roles/roles-admin-units-assign-roles.md) или ролью каталога, непосредственно в объект, например с помощью [пользовательских ролей](../users-groups-roles/roles-create-custom.md).
+> Политики условного доступа не поддерживают пользователей, которым назначена роль каталога, [ограниченная административной единицей](../roles/admin-units-assign-roles.md) или ролью каталога, непосредственно в объект, например с помощью [пользовательских ролей](../roles/custom-create.md).
 
 ## <a name="exclude-users"></a>Исключить пользователей
 
 Когда Организации включают и исключают пользователя или группу, которые пользователь или группа исключаются из политики, как действие Exclude переопределяет include в политике. Исключения обычно используются для учетных записей аварийного доступа или непрозрачного стекла. Дополнительные сведения об учетных записях для аварийного доступа и их важность можно найти в следующих статьях: 
 
-* [Управление учетными записями для аварийного доступа в Azure AD](../users-groups-roles/directory-emergency-access.md)
+* [Управление учетными записями для аварийного доступа в Azure AD](../roles/security-emergency-access.md)
 * [Создание устойчивой стратегии управления доступом с помощью Azure Active Directory](../authentication/concept-resilient-controls.md)
 
 При создании политики условного доступа можно исключить следующие параметры.
@@ -76,7 +76,7 @@ ms.locfileid: "92145422"
 
 [Что делать, если вы блокируете портал Azure?](troubleshoot-conditional-access.md#what-to-do-if-you-are-locked-out-of-the-azure-portal)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Условный доступ. Облачные приложения или действия](concept-conditional-access-cloud-apps.md)
 

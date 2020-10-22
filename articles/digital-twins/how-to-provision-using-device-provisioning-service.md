@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 9/1/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 46b764c9fcdb771f0a82fa47c0b1aa9112bb9e94
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: f9dd69c147dff1bf0bd10ca070e023bb6f7692a5
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92150509"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92368440"
 ---
 # <a name="auto-manage-devices-in-azure-digital-twins-using-device-provisioning-service-dps"></a>Автоматическое управление устройствами в цифровом двойников Azure с помощью службы подготовки устройств (DPS)
 
@@ -22,7 +22,7 @@ ms.locfileid: "92150509"
 
 Дополнительные сведения о стадиях _подготовки_ и _снятия с учета_ и ознакомлении с набором общих стадий управления устройствами, общих для всех корпоративных проектов IOT, см. в [разделе *жизненный цикл устройства* ](../iot-hub/iot-hub-device-management-overview.md#device-lifecycle) документации по управлению устройствами в центре Интернета вещей.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Перед настройкой подготовки необходимо иметь **экземпляр Digital двойников для Azure** , содержащий модели и двойников. Этот экземпляр также должен быть настроен с возможностью обновлять сведения о цифровом двойника на основе данных. 
 
@@ -505,16 +505,10 @@ az dt twin show -n <Digital Twins instance name> --twin-id <Device Registration 
 ```azurecli
 az group delete --name <your-resource-group>
 ```
-<!-- 
-Next, delete the Azure AD app registration you created for your client app with this command:
-
-```azurecli
-az ad app delete --id <your-application-ID>
-``` -->
 
 Затем удалите папку примера проекта, скачанную с локального компьютера.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Цифровые двойников, созданные для устройств, хранятся в виде плоской иерархии в Azure Digital двойников, но их можно расширить с помощью информации о модели и многоуровневой иерархии для Организации. Дополнительные сведения об этой концепции см. в следующих статье:
 

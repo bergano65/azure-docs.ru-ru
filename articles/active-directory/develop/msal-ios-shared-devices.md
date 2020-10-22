@@ -13,12 +13,12 @@ ms.date: 03/31/2020
 ms.author: brandwe
 ms.reviewer: brandwe
 ms.custom: aaddev
-ms.openlocfilehash: d5699c1d08df8364f33371f911ea3be892b4b285
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 949ddae903a53957f62b89a01ce477edb92917c1
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90528134"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92365919"
 ---
 # <a name="shared-device-mode-for-ios-devices"></a>Режим совместной работы с устройством iOS
 
@@ -43,7 +43,7 @@ ms.locfileid: "90528134"
 
 1. **Администраторы устройств** подготавливают устройство к совместному использованию с помощью поставщика управления мобильными устройствами (MDM), например Microsoft Intune для управления устройствами в Организации. MDM отправляет Microsoft Authenticator приложение на устройства и включает "общий режим" для каждого устройства через обновление профиля на устройстве. Этот параметр общего режима изменяет поведение поддерживаемых приложений на устройстве. Эта конфигурация от поставщика MDM задает режим общего устройства для устройства и включает [подключаемый модуль единого входа Microsoft Enterprise для устройств Apple](apple-sso-plugin.md) , которые необходимы для режима общего устройства.
 
-1. [**Требуется только во время общедоступной предварительной версии**] Пользователь с ролью " [Администратор облачного устройства](../users-groups-roles/directory-assign-admin-roles.md#cloud-device-administrator) " должен запустить [приложение Microsoft Authenticator](../user-help/user-help-auth-app-overview.md) и присоединить его устройство к Организации.
+1. [**Требуется только во время общедоступной предварительной версии**] Пользователь с ролью " [Администратор облачного устройства](../roles/permissions-reference.md#cloud-device-administrator) " должен запустить [приложение Microsoft Authenticator](../user-help/user-help-auth-app-overview.md) и присоединить его устройство к Организации.
 
     Настройка членства в ролях Организации в портал Azure: **Azure Active Directory**  >  **роли и администраторы**  >  **облачных устройств администратора**
 

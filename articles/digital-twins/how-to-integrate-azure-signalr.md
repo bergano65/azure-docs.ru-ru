@@ -7,12 +7,12 @@ ms.author: aymarqui
 ms.date: 09/02/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: cba67e571370d48a04a4e95198462953acdd4d59
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
+ms.openlocfilehash: dfa8227f319a818efee20f26c1f2bebf72ad7cf9
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92131553"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92367658"
 ---
 # <a name="integrate-azure-digital-twins-with-azure-signalr-service"></a>Интеграция Azure Digital двойников со службой Azure SignalR
 
@@ -20,7 +20,7 @@ ms.locfileid: "92131553"
 
 Решение, описанное в этой статье, позволит отправлять данные телеметрии Digital двойника подключенным клиентам, таким как одна веб-страница или мобильное приложение. В результате клиенты обновляются с учетом метрик реального времени и состояния с устройств Интернета вещей без необходимости опрашивать сервер или отправлять новые HTTP-запросы на обновление.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Ниже приведены предварительные требования, которые необходимо выполнить перед продолжением.
 
@@ -246,15 +246,9 @@ npm start
 az group delete --name <your-resource-group>
 ```
 
-Если вы удаляете экземпляр Azure Digital двойников, вы также можете удалить регистрацию приложения Azure AD, созданную для него, в рамках комплексного руководства, используя следующую команду:
-
-```azurecli
-az ad app delete --id <your-application-ID>
-```
-
 Наконец, удалите образцы папок проекта, скачанные на локальный компьютер (*Azure_Digital_Twins_end_to_end_samples.zip* и *Azure_Digital_Twins_SignalR_integration_web_app_sample.zip*).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье вы настроите функции Azure с SignalR, чтобы транслировать события телеметрии Digital двойников в пример клиентского приложения.
 
