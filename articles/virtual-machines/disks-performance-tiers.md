@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.author: rogarana
 ms.subservice: disks
 ms.custom: references_regions
-ms.openlocfilehash: 6b7d670f5e38968fa6592e323ede075abf687435
-ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
+ms.openlocfilehash: 404f435e321e53694807a627121d84f6cbf6724d
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2020
-ms.locfileid: "91939023"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92359685"
 ---
 # <a name="performance-tiers-for-managed-disks-preview"></a>Уровни производительности для управляемых дисков (Предварительная версия)
 
@@ -52,9 +52,9 @@ ms.locfileid: "91939023"
 ## <a name="restrictions"></a>Ограничения
 
 - В настоящее время эта функция поддерживается только для твердотельных накопителей уровня "Премиум".
-- Для изменения уровня диска необходимо отсоединить диск от работающей виртуальной машины.
+- Прежде чем можно будет изменить уровень диска, необходимо освободить ВИРТУАЛЬную машину или отсоединить диск от работающей виртуальной машины.
 - Использование уровней производительности P60, P70 и P80 ограничено дисками 4 096 гиб и выше.
-- Уровень производительности диска можно изменить каждые 24 часа.
+- Уровень производительности диска можно понизить только один раз каждые 24 часа.
 
 ## <a name="regional-availability"></a>Доступность по регионам
 
@@ -103,7 +103,7 @@ az disk update -n $diskName -g $resourceGroupName --set tier=$performanceTier
 az disk show -n $diskName -g $resourceGroupName --query [tier] -o tsv
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Если необходимо изменить размер диска, чтобы воспользоваться преимуществами более высоких уровней производительности, см. следующие статьи:
 

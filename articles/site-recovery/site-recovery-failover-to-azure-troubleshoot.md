@@ -9,12 +9,12 @@ ms.topic: article
 ms.workload: storage-backup-recovery
 ms.date: 01/08/2020
 ms.author: mayg
-ms.openlocfilehash: e2ab52120e2a5db6648caac61f0228cb0be7e67b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d2a0444483c382da7c54accf7dca49d097671771
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91355046"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92371993"
 ---
 # <a name="troubleshoot-errors-when-failing-over-vmware-vm-or-physical-machine-to-azure"></a>Устранение ошибок при отработке отказа виртуальной машины VMware или физического компьютера в Azure
 
@@ -55,7 +55,7 @@ ms.locfileid: "91355046"
     Если расконсервация требуется, появится следующий результат:
 
     ```output
-    REGISTRY::HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\services\storvsc           start =  3 expected value =  0
+    REGISTRY::HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\services\storvsc           start =  3 expected value =  0
 
     This system doesn't meet no-hydration requirement.
     ```
@@ -168,7 +168,7 @@ RegisterHostStaticInfo encountered exception config/talwrapper.cpp(107)[post] Cu
 
 2. Если выходные данные предыдущих команд показывают, что заданы параметры http_proxy или https_proxy, используйте один из следующих методов для разблокировки подключения главного целевого сервера к серверу конфигурации.
    
-   - Скачайте средство [PsExec](https://aka.ms/PsExec).
+   - Скачайте средство [PsExec](/sysinternals/downloads/psexec).
    - Используйте средство для доступа к контексту пользователя системы и определите, настроен ли адрес прокси-сервера. 
    - Если прокси-сервер настроен, откройте IE в контексте пользователя системы с помощью средства PsExec.
   

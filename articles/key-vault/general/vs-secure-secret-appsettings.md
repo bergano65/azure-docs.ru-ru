@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 07/17/2019
 ms.author: cawa
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 79fa01e53b53f3066e55736c105d6489ccbd96e7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 96b6b262765a361befeadd9b5a42d37ca5e66497
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89019850"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92372061"
 ---
 # <a name="securely-save-secret-application-settings-for-a-web-application"></a>Безопасное хранение секретных параметров веб-приложения
 
@@ -56,14 +56,19 @@ ms.locfileid: "89019850"
     > До Visual Studio 2017 V 15.6 мы использовали, чтобы рекомендовать установить расширение проверки подлинности служб Azure для Visual Studio. Но теперь она устарела, так как функциональные возможности интегрированы в Visual Studio. Поэтому, если вы используете более раннюю версию Visual Studio 2017, мы рекомендуем вам обновить по крайней мере VS 2017 15,6 или выше, чтобы использовать эту функцию в собственном режиме и получить доступ к хранилищу ключей с помощью самой учетной записи входа Visual Studio.
     >
 
-4. Добавьте в проект следующие пакеты NuGet:
+4. Войдите в Azure с помощью интерфейса командной строки, можно ввести:
+
+    ```azurecli
+    az login
+    ```
+
+5. Добавьте в проект следующие пакеты NuGet:
 
     ```
-    Microsoft.Azure.KeyVault
-    Microsoft.Azure.Services.AppAuthentication
-    Microsoft.Extensions.Configuration.AzureKeyVault
+    Azure.Identity
+    Azure.Extensions.AspNetCore.Configuration.Secrets
     ```
-5. Добавьте следующий код в файл Program.cs:
+6. Добавьте следующий код в файл Program.cs:
 
     ```csharp
     public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -73,12 +78,7 @@ ms.locfileid: "89019850"
                     var keyVaultEndpoint = GetKeyVaultEndpoint();
                     if (!string.IsNullOrEmpty(keyVaultEndpoint))
                     {
-                        var azureServiceTokenProvider = new AzureServiceTokenProvider();
-                        var keyVaultClient = new KeyVaultClient(
-                            new KeyVaultClient.AuthenticationCallback(
-                                azureServiceTokenProvider.KeyVaultTokenCallback));
-                        builder.AddAzureKeyVault(
-                        keyVaultEndpoint, keyVaultClient, new DefaultKeyVaultSecretManager());
+                        builder.AddAzureKeyVault(new Uri(keyVaultEndpoint), new DefaultAzureCredential(), new KeyVaultSecretManager());
                     }
                 })
                 .ConfigureWebHostDefaults(webBuilder =>
@@ -88,11 +88,12 @@ ms.locfileid: "89019850"
 
         private static string GetKeyVaultEndpoint() => Environment.GetEnvironmentVariable("KEYVAULT_ENDPOINT");
     ```
-6. Добавьте URL-адрес Key Vault в файл launchsettings.json. Имя переменной среды *KEYVAULT_ENDPOINT* определяется в коде, который вы добавили на шаге 6.
+
+7. Добавьте URL-адрес Key Vault в файл launchsettings.json. Имя переменной среды *KEYVAULT_ENDPOINT* определено в коде, добавленном на шаге 7.
 
     ![Добавление URL-адреса Key Vault в качестве переменной среды проекта](../media/vs-secure-secret-appsettings/add-keyvault-url.png)
 
-7. Начните отладку проекта. Она должна выполниться успешно.
+8. Начните отладку проекта. Она должна выполниться успешно.
 
 ## <a name="aspnet-and-net-applications"></a>Приложения ASP.NET и .NET
 

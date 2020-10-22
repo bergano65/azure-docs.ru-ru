@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/18/2019
 ms.author: glenga
-ms.openlocfilehash: 770c9f7d677f739781db6290fa0c43e410761d17
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.openlocfilehash: 8694c403b14234a70b0a67f9f4defb7817ba3ae3
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92327824"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92372214"
 ---
 # <a name="get-started-guide-for-azure-developers"></a>Руководство по началу работы для разработчиков Azure
 
@@ -281,7 +281,7 @@ Azure предоставляет два способа управления пр
 
 Между каждой подпиской Azure и экземпляром Azure AD установлено отношение доверия. Это означает, что она доверяет каталогу проверять подлинность пользователей, служб и устройств. Несколько подписок могут доверять одному и тому же каталогу, но одна конкретная подписка доверяет только одному каталогу. Дополнительные сведения см. в разделе [Связь между подписками Azure и службой Azure Active Directory](../../active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md).
 
-Кроме того, определение отдельных удостоверений учетной записи Azure, также называемых *пользователями*, позволяет определять *группы* в Azure AD. Создание групп пользователей — хороший способ управления доступом к ресурсам в подписке с помощью управления доступом на основе ролей Azure (Azure RBAC). Чтобы узнать, как создавать группы, ознакомьтесь с разделом [Создание группы и добавление в нее пользователей в Azure Active Directory](../../active-directory/fundamentals/active-directory-groups-create-azure-portal.md). Создавать группы и управлять ими можно также [с помощью PowerShell](../../active-directory/users-groups-roles/groups-settings-v2-cmdlets.md).
+Кроме того, определение отдельных удостоверений учетной записи Azure, также называемых *пользователями*, позволяет определять *группы* в Azure AD. Создание групп пользователей — хороший способ контролировать доступ к ресурсам в подписке с помощью управления доступом на основе ролей (RBAC). Чтобы узнать, как создавать группы, ознакомьтесь с разделом [Создание группы и добавление в нее пользователей в Azure Active Directory](../../active-directory/fundamentals/active-directory-groups-create-azure-portal.md). Создавать группы и управлять ими можно также [с помощью PowerShell](../../active-directory/enterprise-users/groups-settings-v2-cmdlets.md).
 
 ### <a name="manage-your-subscriptions"></a>Управление подписками
 
@@ -315,7 +315,7 @@ Azure Resource Manager дает возможность назначать нас
 * В шаблоне Azure Resource Manager
 * Использование REST API
 * Использование Azure CLI
-* Регистрация с помощью PowerShell
+* Использование PowerShell
 
 Каждому ресурсу можно назначить несколько тегов. Чтобы узнать больше, ознакомьтесь также с разделом [Использование тегов для организации ресурсов в Azure](../../azure-resource-manager/management/tag-resources.md).
 
