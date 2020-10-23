@@ -8,14 +8,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: article
-ms.date: 01/26/2018
+ms.date: 10/21/2020
 ms.author: jeedes
-ms.openlocfilehash: d56f9890396d0381d24676964dabc57e2020ec28
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3a0a69784be3b03b030ef599037b57c2c20ea2c6
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91317435"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92454683"
 ---
 # <a name="tutorial-configure-docusign-for-automatic-user-provisioning"></a>Руководство по настройке DocuSign для автоматической подготовки пользователей
 
@@ -35,7 +35,7 @@ ms.locfileid: "91317435"
 
 Перед настройкой и включением службы подготовки необходимо решить, какие пользователи или группы в Azure AD представляют пользователей, которым требуется доступ к приложению DocuSign. После этого можно назначить этих пользователей для приложения DocuSign, следуя приведенным ниже инструкциям:
 
-[Назначение корпоративному приложению пользователя или группы](https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-assign-user-azure-portal)
+[Назначение корпоративному приложению пользователя или группы](../manage-apps/assign-user-or-group-access-portal.md)
 
 ### <a name="important-tips-for-assigning-users-to-docusign"></a>Важные рекомендации по назначению пользователей в DocuSign
 
@@ -93,6 +93,12 @@ ms.locfileid: "91317435"
 Будет запущена начальная синхронизация всех пользователей, назначенных для DocuSign в разделе "Пользователи и группы". Начальная синхронизация занимает больше времени, чем последующие операции синхронизации. Если служба запущена, они выполняются примерно каждые 40 минут. В разделе **Сведения о синхронизации** можно отслеживать ход выполнения и переходить по ссылкам для просмотра журналов подготовки. В них зафиксированы все действия, выполняемые службой подготовки для приложения DocuSign.
 
 Дополнительные сведения о чтении журналов подготовки Azure AD см. в руководстве по [отчетам об автоматической подготовке учетных записей](../app-provisioning/check-status-user-account-provisioning.md).
+
+## <a name="troubleshooting-tips"></a>Советы по устранению неполадок
+* Подготовка роли или профиля разрешений для пользователя в DocuSign можно выполнить с помощью выражения в сопоставлениях атрибутов с помощью функций [switch](https://docs.microsoft.com/azure/active-directory/app-provisioning/functions-for-customizing-application-data#switch) и [синглеаппролеассигнмент](https://docs.microsoft.com/azure/active-directory/app-provisioning/functions-for-customizing-application-data#singleapproleassignment) . Например, приведенное ниже выражение подготавливает идентификатор "8032066", когда пользователь имеет роль "Администратор DS", назначенную в Azure AD. Если пользователю не назначена роль на стороне Azure AD, то профиль разрешений не будет подготавливаться. Идентификатор можно получить на [портале](https://support.docusign.com/articles/Default-settings-for-out-of-the-box-DocuSign-Permission-Profiles)DocuSign.
+
+Switch (Синглеаппролеассигнмент ([appRoleAssignments]), "", "8032066", "Администратор DS")
+
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
