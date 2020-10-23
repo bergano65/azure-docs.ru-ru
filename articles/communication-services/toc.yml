@@ -90,6 +90,8 @@
       href: samples/calling-hero-sample.md
     - name: Главный пример функции группового чата
       href: samples/chat-hero-sample.md
+    - name: Пример вызова через Интернет
+      href: samples/web-calling-sample.md
 - name: Ссылки
   items:
     - name: Документация по REST API

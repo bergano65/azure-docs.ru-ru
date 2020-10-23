@@ -45,7 +45,7 @@
       href: network-watcher-nsg-flow-logging-overview.md
     - name: Представление группы безопасности сети
       href: network-watcher-security-group-view-overview.md
-    - name: Разрешения на управление доступом на основе ролей
+    - name: Разрешения на управление доступом на основе ролей Azure
       href: required-rbac-permissions.md
     - name: Безопасность
       items:

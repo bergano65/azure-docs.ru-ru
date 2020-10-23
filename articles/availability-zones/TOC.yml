@@ -61,8 +61,10 @@
           href: ../virtual-network/virtual-network-public-ip-address.md#create-a-public-ip-address
         - name: База данных SQL
           items:
-            - name: Использование зон доступности с Базой данных SQL
-              href: ../azure-sql/database/high-availability-sla.md#zone-redundant-configuration
+            - name: Использование зон доступности с Базой данных SQL уровня "Общего назначения"
+              href: ../azure-sql/database/high-availability-sla.md#general-purpose-service-tier-zone-redundant-availability-preview
+            - name: Использование зон доступности с Базой данных SQL уровня "Премиум" или "Критически важный для бизнеса"
+              href: ../azure-sql/database/high-availability-sla.md#premium-and-business-critical-service-tier-zone-redundant-availability
         - name: Память
           items:
             - name: 'Хранилище, избыточное между зонами'

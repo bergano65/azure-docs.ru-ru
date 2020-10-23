@@ -5,12 +5,12 @@ ms.topic: include
 ms.date: 04/13/2020
 ms.custom: devx-track-java
 ms.author: trbye
-ms.openlocfilehash: b40789b64fc2a18523a06f13bfb03374f2d1a549
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9c4528a87a577ba98f60824936141124387d27a0
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91377161"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92470807"
 ---
 Одной из основных функций речевой службы является возможность распознавания речи и перевода их на другие языки. В этом кратком руководстве вы узнаете, как использовать речевой пакет SDK в приложениях и продуктах для выполнения высококачественного перевода речи. В этом кратком руководстве рассматриваются такие темы, как:
 
@@ -73,7 +73,7 @@ public class App {
 * С помощью узла: передайте адрес узла. Ключ или маркер авторизации являются необязательными.
 * С помощью маркера авторизации: передайте маркер авторизации и связанный регион.
 
-Давайте посмотрим, как создается [`SpeechTranslationConfig`][config] с помощью ключа и региона. Идентификатор региона можно узнать в разделе о [поддержке регионов](https://docs.microsoft.com/azure/cognitive-services/speech-service/regions#speech-sdk).
+Давайте посмотрим, как создается [`SpeechTranslationConfig`][config] с помощью ключа и региона. Получите эти учетные данные, выполнив действия, описанные в разделе [пробная служба распознавания речи бесплатно](../../../overview.md#try-the-speech-service-for-free).
 
 ```java
 public class App {

@@ -69,6 +69,8 @@
               href: auth-remote-desktop-gateway.md
             - name: Проверка подлинности SAML
               href: auth-saml.md
+            - name: Аутентификация SSH
+              href: auth-ssh.md
             - name: Проверка подлинности Windows (KCD)
               href: auth-kcd.md
             - name: Синхронизация каталогов

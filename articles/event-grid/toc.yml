@@ -248,13 +248,13 @@
           href: move-partner-namespaces-across-regions.md
     - name: Безопасность
       items:
-        - name: Настройка частных конечных точек
+        - name: Безопасная публикация событий через приватный канал
           href: configure-private-endpoints.md
         - name: Настройка брандмауэра IP-адресов
           href: configure-firewall.md
         - name: Защита веб-перехватчика с помощью Azure Active Directory
           href: secure-webhook-delivery.md
-        - name: Доставка событий с использованием управляемого удостоверения
+        - name: 'Доставка событий, управляемое удостоверение и приватный канал'
           href: managed-service-identity.md
     - name: Диагностика
       items:

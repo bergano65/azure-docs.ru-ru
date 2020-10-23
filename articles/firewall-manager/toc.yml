@@ -14,6 +14,8 @@
   items:
     - name: Защита виртуального концентратора с помощью портала
       href: secure-cloud-network.md
+    - name: Защита виртуального концентратора с помощью PowerShell
+      href: secure-cloud-network-powershell.md
     - name: Защита виртуальной сети с центральной станцией с помощью портала
       href: secure-hybrid-network.md
 - name: Основные понятия
