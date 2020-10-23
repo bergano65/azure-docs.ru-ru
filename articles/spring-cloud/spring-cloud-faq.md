@@ -8,18 +8,18 @@ ms.date: 09/08/2020
 ms.author: brendm
 ms.custom: devx-track-java
 zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: 9562cff9fd9ed37cbd4fd94c42acd54e6be3b47c
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 48a2f7f6587d22c34e240fb3e784eb980c81b6b3
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92094013"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92419852"
 ---
 # <a name="azure-spring-cloud-faq"></a>Вопросы и ответы по Azure весн Cloud
 
 В этой статье содержатся ответы на часто задаваемые вопросы о Microsoft Azure Веснного облака.
 
-## <a name="general"></a>Общие сведения
+## <a name="general"></a>Общее
 
 ### <a name="why-azure-spring-cloud"></a>Вопросы и ответы по Azure Spring Cloud.
 
@@ -106,7 +106,7 @@ Azure Веснного облака поддерживает экспорт жу
 
 ### <a name="which-versions-of-java-runtime-are-supported-in-azure-spring-cloud"></a>Какие версии среды выполнения Java поддерживаются в Azure Веснного облака?
 
-Azure Веснного облака поддерживает версии Java LTS с самыми последними сборками, в настоящее время 2020 июня, Java 8 build 252 и Java 11 Build 7. См. статью [Установка JDK для Azure и Azure Stack](/azure/developer/java/fundamentals/java-jdk-install)
+Azure Веснное облако поддерживает версии Java LTS с самыми последними сборками, в настоящее время 2020 июня, Java 8 и Java 11. См. статью [Установка JDK для Azure и Azure Stack](/azure/developer/java/fundamentals/java-jdk-install)
 
 ### <a name="who-built-these-java-runtimes"></a>Кто создал эти среды выполнения Java?
 
@@ -191,7 +191,7 @@ Azul системы. Сборки JDK корпоративного выпуск�
 ::: zone-end
 
 
-## <a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a>Устранение неполадок
 
 ### <a name="what-are-the-impacts-of-service-registry-rarely-unavailable"></a>Каковы последствия редкого недоступности реестра службы?
 

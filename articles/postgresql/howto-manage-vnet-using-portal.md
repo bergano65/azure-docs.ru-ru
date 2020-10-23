@@ -6,12 +6,12 @@ ms.author: nlarin
 ms.service: postgresql
 ms.topic: how-to
 ms.date: 5/6/2019
-ms.openlocfilehash: 8ff1800bc699a7fb29f64b63a3098225921628df
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c5a0ecfa8d654024c0850ad9a8b1e1246f3ee21a
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91710844"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92427159"
 ---
 # <a name="create-and-manage-vnet-service-endpoints-and-vnet-rules-in-azure-database-for-postgresql---single-server-by-using-the-azure-portal"></a>Создание конечных точек службы виртуальной сети и правил виртуальной сети в базе данных Azure для PostgreSQL-Single Server и управление ими с помощью портал Azure
 Правила и конечные точки служб виртуальной сети расширяют частное адресное пространство виртуальной сети на сервер базы данных Azure для PostgreSQL. Общие сведения о конечных точках службы виртуальной сети базы данных Azure для PostgreSQL, включая ограничения, см. в [этой статье](concepts-data-access-and-security-vnet.md). Конечные точки службы виртуальной сети доступны во всех поддерживаемых регионах базы данных Azure для PostgreSQL.
@@ -43,7 +43,7 @@ ms.locfileid: "91710844"
 
    :::image type="content" source="./media/howto-manage-vnet-using-portal/3-vnet-service-endpoints-enabled-vnet-rule-created.png" alt-text="портал Azure безопасность подключения":::
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Аналогичным образом можно создать сценарий для [включения конечных точек службы виртуальной сети и создания правила виртуальной сети для базы данных Azure для PostgreSQL с помощью Azure CLI](howto-manage-vnet-using-cli.md).
 - Дополнительные сведения о подключении к серверу базы данных Azure для PostgreSQL см. в статье [библиотеки подключений для базы данных Azure для PostgreSQL](./concepts-connection-libraries.md) .
 

@@ -10,23 +10,23 @@ ms.author: kenwith
 author: kenwith
 manager: CelesteDG
 services: active-directory
-ms.openlocfilehash: 14e4cd141094763d37a1309572bb4da4efb3f7ce
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 569c111c392e6bbaf9a54d17dc6e88bc8d851dc6
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/22/2020
-ms.locfileid: "92378110"
+ms.locfileid: "92428016"
 ---
 # <a name="azure-active-directory-application-management-whats-new"></a>Azure Active Directory Управление приложениями: новые возможности
 
-Добро пожаловать в документацию по управлению приложениями Azure Active Directory. В этой статье перечислены новые документы, которые были добавлены, а также важные обновления за последние три месяца.
+Добро пожаловать в документацию по управлению приложениями Azure Active Directory. В этой статье перечислены новые документы, которые были добавлены, а также важные обновления за последние три месяца. Чтобы узнать о новых возможностях службы управления приложениями, см. статью [новые возможности в Azure Active Directory](../fundamentals/whats-new.md).
 
 ## <a name="september-2020"></a>Сентябрь 2020 г.
 
 ### <a name="new-articles"></a>Новые статьи
 - [Краткое руководство. Настройка единого входа на основе OIDC для приложения в арендаторе Azure Active Directory (Azure AD)](add-application-portal-setup-oidc-sso.md)
 - [Краткое руководство. Назначение пользователей приложению, которое использует Azure AD в качестве поставщика удостоверений](add-application-portal-assign-users.md)
-- [Новые возможности](whats-new-docs.md)
+- [Новые возможности в Документации Майкрософт](whats-new-docs.md)
 
 
 ### <a name="updated-articles"></a>Обновленные статьи

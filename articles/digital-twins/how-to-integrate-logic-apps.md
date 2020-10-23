@@ -8,12 +8,12 @@ ms.date: 9/11/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.reviewer: baanders
-ms.openlocfilehash: 292305c3f899ac4156fd84e8edcb0d6e9a3c0b34
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: b23e9a1e344bb0db1399a4f04712815557b8139e
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92280867"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92427987"
 ---
 # <a name="integrate-with-logic-apps-using-a-custom-connector"></a>Интеграция с Logic Apps с помощью настраиваемого соединителя
 
@@ -66,7 +66,7 @@ ms.locfileid: "92280867"
 
 В этой статье для обновления двойника в вашем экземпляре Azure Digital двойников используется Logic Apps. Для продолжения необходимо добавить хотя бы один двойника в экземпляр. 
 
-Вы можете добавить двойников с помощью [API дигиталтвинс](how-to-use-apis-sdks.md), [пакета SDK для .NET (C#)](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/digitaltwins/Azure.DigitalTwins.Core)или [Azure Digital двойников CLI](how-to-use-cli.md). Подробные инструкции по созданию двойников с помощью этих методов см. в разделе « [*практические руководства. Управление цифровыми двойниковми*](how-to-manage-twin.md)».
+Вы можете добавить двойников с помощью [API дигиталтвинс](how-to-use-apis-sdks.md), [пакета SDK для .NET (C#)](https://www.nuget.org/packages/Azure.DigitalTwins.Core)или [Azure Digital двойников CLI](how-to-use-cli.md). Подробные инструкции по созданию двойников с помощью этих методов см. в разделе « [*практические руководства. Управление цифровыми двойниковми*](how-to-manage-twin.md)».
 
 Вам потребуется **_идентификатор двойника_** двойника в созданном вами экземпляре.
 

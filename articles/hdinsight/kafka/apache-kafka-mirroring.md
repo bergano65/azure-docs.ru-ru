@@ -8,16 +8,19 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 11/29/2019
-ms.openlocfilehash: 278fbdf7010fe7b14488bb021ab8a366393ad512
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d4a2be6719fdaaa9dc859df21cc030478e474210
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86087368"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92428242"
 ---
 # <a name="use-mirrormaker-to-replicate-apache-kafka-topics-with-kafka-on-hdinsight"></a>Репликация разделов Apache Kafka с помощью Kafka в HDInsight и MirrorMaker
 
 Узнайте, как реплицировать разделы во вторичный кластер с помощью функции зеркального отображения Apache Kafka. Зеркальное отображение можно запустить как непрерывный процесс или периодически использовать для переноса данных из одного кластера в другой.
+
+> [!NOTE]
+> Эта статья содержит ссылки на термин *список разрешений*— термин, который корпорация Майкрософт больше не использует. При удалении термина из программного обеспечения мы удалим его из этой статьи.
 
 В этом примере зеркальное отображение используется для репликации разделов между двумя кластерами HDInsight. Оба кластера находятся в разных виртуальных сетях в разных центрах обработки данных.
 
@@ -92,7 +95,7 @@ ms.locfileid: "86087368"
 
 1. Перейдите на панель мониторинга Ambari для основного кластера: `https://PRIMARYCLUSTERNAME.azurehdinsight.net` .
 1. Выберите **службы**  >  **Kafka**. Клиселекткк на вкладке **конфигурации** .
-1. Добавьте следующие строки конфигурации в нижнюю часть **шаблона Kafka-env** . Щелкните **Сохранить**.
+1. Добавьте следующие строки конфигурации в нижнюю часть **шаблона Kafka-env** . Нажмите **Сохранить**.
 
     ```
     # Configure Kafka to advertise IP addresses instead of FQDN
@@ -112,7 +115,7 @@ ms.locfileid: "86087368"
 ### <a name="configure-kafka-to-listen-on-all-network-interfaces"></a>Настройте Kafka для прослушивания всех сетевых интерфейсов.
     
 1. Оставайтесь на вкладке **конфигурации** в разделе **службы**  >  **Kafka**. В разделе **брокера Kafka** задайте для свойства **Listeners** значение `PLAINTEXT://0.0.0.0:9092` .
-1. Щелкните **Сохранить**.
+1. Нажмите **Сохранить**.
 1. Выберите **перезапустить**и **Подтвердите перезапустить все**.
 
 ### <a name="record-broker-ip-addresses-and-zookeeper-addresses-for-primary-cluster"></a>IP-адреса брокера записи и адреса Zookeeper для основного кластера.

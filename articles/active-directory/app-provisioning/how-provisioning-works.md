@@ -11,12 +11,13 @@ ms.workload: identity
 ms.date: 05/20/2020
 ms.author: kenwith
 ms.reviewer: arvinh
-ms.openlocfilehash: b990fc7282cd986b0903fb1f33114a164be1c191
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.custom: contperfq2
+ms.openlocfilehash: c9d8bf42d8856ffcf7bb0247172f6c0fd49600e0
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/22/2020
-ms.locfileid: "92366689"
+ms.locfileid: "92424626"
 ---
 # <a name="how-provisioning-works"></a>Описание процесса подготовки
 
@@ -179,6 +180,8 @@ ms.locfileid: "92366689"
 
 Убедитесь, что для приложения установлено сопоставление *активно* . Если вы используете приложение из коллекции приложений, сопоставление может немного отличаться. Убедитесь, что для приложений коллекции используется значение по умолчанию/выход из Box.
 
+:::image type="content" source="./media/how-provisioning-works/disable-user.png" alt-text="Отключение пользователя" lightbox="./media/how-provisioning-works/disable-user.png":::
+
 
 **Настройка приложения для удаления пользователя**
 
@@ -188,7 +191,9 @@ ms.locfileid: "92366689"
 * Пользователь навсегда удаляется или удаляется из корзины в Azure AD.
 * Пользователь не назначен из приложения.
 * Пользователь переходит из области действия в область вне области действия (фильтр области больше не передается).
-    
+
+:::image type="content" source="./media/how-provisioning-works/delete-user.png" alt-text="Отключение пользователя" lightbox="./media/how-provisioning-works/delete-user.png":::
+
 По умолчанию служба подготовки Azure AD обратимо удаляет или отключает пользователей, которые больше не принадлежат области. Если вы хотите переопределить это поведение по умолчанию, можно установить флаг, чтобы [пропустить удаления вне области.](skip-out-of-scope-deletions.md)
 
 Если происходит одно из четырех указанных выше событий, но целевое приложение не поддерживает обратимое удаление, служба подготовки отправит запрос DELETE для окончательного удаления пользователя из приложения.

@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 7/17/2020
-ms.openlocfilehash: 6fc0add55caccd7721f3ee2c72db68fbcf6bc0dc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 15bfeb3860c3a7dd5f9dc11f7fb18473116f5ff4
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89458507"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92425617"
 ---
 # <a name="use-virtual-network-service-endpoints-and-rules-for-azure-database-for-mariadb"></a>Сведения об использовании конечных точек служб и правил виртуальной сети с Базой данных Azure для MariaDB
 
@@ -88,7 +88,7 @@ ms.locfileid: "89458507"
 - **администратор сети:** &nbsp; включение конечной точки;
 - **администратор базы данных:** &nbsp; обновление списка управления доступом (ACL) для добавления данной подсети на сервер базы данных Azure для MariaDB.
 
-*Альтернатива RBAC*
+*Альтернатива Azure RBAC:*
 
 Роли администратора сети и администратора базы данных имеют больше возможностей, чем требуется для управления правилами виртуальной сети. На самом деле для этого требуется только часть их возможностей.
 
@@ -134,11 +134,11 @@ ms.locfileid: "89458507"
 
 Задать параметр **IgnoreMissingServiceEndpoint** можно с помощью Azure CLI или портала.
 
-## <a name="related-articles"></a>Похожие статьи
+## <a name="related-articles"></a>Связанные статьи
 - [Виртуальные сети Azure][vm-virtual-network-overview]
 - [Конечные точки службы виртуальной сети Azure][vm-virtual-network-service-endpoints-overview-649d]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Статьи о создании правил виртуальной сети см. по следующим ссылкам:
 - [Создание правил виртуальной сети базы данных Azure для MariaDB и управление ими на портале Azure](howto-manage-vnet-portal.md)
  
@@ -155,7 +155,7 @@ ms.locfileid: "89458507"
 
 [vm-configure-private-ip-addresses-for-a-virtual-machine-using-the-azure-portal-321w]: ../virtual-network/virtual-networks-static-private-ip-arm-pportal.md
 
-[rbac-what-is-813s]: ../active-directory/role-based-access-control-what-is.md
+[rbac-what-is-813s]: ../role-based-access-control/overview.md
 
 [vpn-gateway-indexmd-608y]: ../vpn-gateway/index.yml
 

@@ -10,12 +10,12 @@ ms.author: vanto
 ms.topic: article
 ms.date: 09/21/2020
 ms.reviewer: ''
-ms.openlocfilehash: e418e64fe9fbe98fbd8da4e75a81c05d5e3d118d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9f1ebbbfed3b3a39e43986a385be87d65d70b175
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90885174"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92427275"
 ---
 # <a name="playbook-for-addressing-common-security-requirements-with-azure-sql-database-and-azure-sql-managed-instance"></a>Сборник тренировочных заданий для решения общих требований к безопасности базы данных SQL Azure и Azure SQL Управляемый экземпляр
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -791,13 +791,15 @@ ms.locfileid: "90885174"
 
 - Azure предлагает встроенные возможности высокого уровня доступности [с базой данных SQL и управляемый экземпляр SQL](high-availability-sla.md) .
 
-- Критически важный для бизнеса уровень включает группы отработки отказа, зоны множественной доступности, полные и разностные резервные копии журналов, а также резервные копии на момент времени, включенные по умолчанию.  
-  - [Высокая доступность — конфигурация с избыточностью зоны](high-availability-sla.md#zone-redundant-configuration)
+- Критически важный для бизнеса уровень включает группы отработки отказа, полные и разностные резервные копии журналов, а также резервные копии на момент времени, включенные по умолчанию.  
   - [Автоматическое резервное копирование](automated-backups-overview.md)
   - [Восстановление базы данных с помощью автоматических резервных копий базы данных — восстановление до точки во времени](recovery-using-backups.md#point-in-time-restore)
 
-- Дополнительные функции обеспечения непрерывности бизнес-процессов, такие как группы автоматической отработки отказа в различных геообъектовах Azure, можно настроить, как описано здесь: [Обзор непрерывности бизнес-процессов](business-continuity-high-availability-disaster-recover-hadr-overview.md)
+- Можно настроить дополнительные функции обеспечения непрерывности бизнес-процессов, такие как конфигурация с избыточностью зоны и группы автоматической отработки отказа в разных геообъектов Azure. 
+    - [Высокая доступность — конфигурация с избыточностью зоны для уровней служб Premium & критически важный для бизнеса](high-availability-sla.md#premium-and-business-critical-service-tier-zone-redundant-availability)
+    - [Высокая доступность — конфигурация с избыточностью зоны для уровня служб общего назначения](high-availability-sla.md#general-purpose-service-tier-zone-redundant-availability-preview)
+    - [Общие сведения о непрерывности бизнес-процессов](business-continuity-high-availability-disaster-recover-hadr-overview.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - См. [Обзор возможностей безопасности базы данных SQL Azure](security-overview.md) .

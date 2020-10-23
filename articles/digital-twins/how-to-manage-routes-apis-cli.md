@@ -7,12 +7,12 @@ ms.author: alkarche
 ms.date: 10/12/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: c6c0ee775ec1405fa76424e6b0ad57436d2d233e
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: 775b2da1b3f07897a566b6e82fa3f6b0de10bd22
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92340110"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92428253"
 ---
 # <a name="manage-endpoints-and-routes-in-azure-digital-twins-apis-and-cli"></a>Управление конечными точками и маршрутами в Azure Digital двойников (API и CLI)
 
@@ -20,11 +20,11 @@ ms.locfileid: "92340110"
 
 В Azure Digital двойников можно маршрутизировать [уведомления о событиях](how-to-interpret-event-data.md) в подчиненные службы или подключенные ресурсы вычислений. Для этого сначала необходимо настроить **конечные точки** , которые могут принимать события. Затем можно создать  [**маршруты событий**](concepts-route-events.md) , указывающие, какие события, создаваемые Azure Digital двойников, доставляются в конечные точки.
 
-Управление конечными точками и маршрутами осуществляется с помощью [API евентраутес](how-to-use-apis-sdks.md), [пакета SDK для .NET (C#)](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/digitaltwins/Azure.DigitalTwins.Core)или [Azure Digital двойников CLI](how-to-use-cli.md). В этой статье описывается процесс создания конечных точек и маршрутов с помощью этих механизмов.
+Управление конечными точками и маршрутами осуществляется с помощью [API евентраутес](how-to-use-apis-sdks.md), [пакета SDK для .NET (C#)](https://www.nuget.org/packages/Azure.DigitalTwins.Core)или [Azure Digital двойников CLI](how-to-use-cli.md). В этой статье описывается процесс создания конечных точек и маршрутов с помощью этих механизмов.
 
 Они также могут управляться с помощью [портал Azure](https://portal.azure.com). Версию этой статьи, которая использует портал, см. [*в разделе руководство. Управление конечными точками и маршрутами (портал)*](how-to-manage-routes-portal.md).
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Вам потребуется **учетная запись Azure** (вы можете настроить ее [здесь](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)бесплатно).
 * Вам потребуется **экземпляр Azure Digital двойников** в подписке Azure. Если у вас еще нет экземпляра, его можно создать, выполнив действия, описанные в разделе [*инструкции. Настройка экземпляра и проверки подлинности*](how-to-set-up-instance-portal.md). Используйте следующие значения из программы установки, которые можно использовать далее в этой статье:
@@ -247,7 +247,7 @@ catch (RequestFailedException e)
 
 [!INCLUDE [digital-twins-route-metrics](../../includes/digital-twins-route-metrics.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о различных типах сообщений о событиях, которые можно получить:
 * [*Пошаговое руководство. анализ данных события*](how-to-interpret-event-data.md)

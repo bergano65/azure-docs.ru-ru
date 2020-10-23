@@ -8,12 +8,12 @@ ms.date: 06/19/2020
 author: sakash279
 ms.author: akshanka
 ms.custom: seodec18, devx-track-csharp
-ms.openlocfilehash: 05a469dbeb093c41b45be278aec42cc930223c72
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: dc140553cbca2347678c376cc9420cfddef22b07
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89002182"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92428057"
 ---
 # <a name="azure-table-storage-table-design-guide-scalable-and-performant-tables"></a>Руководство по проектированию Хранилища таблиц Azure. Масштабируемые и производительные таблицы
 
@@ -492,7 +492,7 @@ ms.locfileid: "89002182"
 
 :::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE09.png" alt-text="Рисунок: сущность отдела и сущность сотрудника&quot;:::
 
-В этом примере демонстрируется явное отношение &quot;один ко многим":::[9]
+В этом примере демонстрируется явное отношение &quot;один ко многим"::: 8
 
 Чтобы найти сущность сотрудника на основе другого свойства (например, адрес электронной почты), необходимо использовать менее эффективную функцию просмотра раздела. Это связано с тем, что Хранилище таблиц не поддерживает вторичные индексы. Кроме того, невозможно запросить список сотрудников, отсортированный в порядке, отличном от `RowKey`.  
 

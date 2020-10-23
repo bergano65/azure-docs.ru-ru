@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 05/20/2020
-ms.openlocfilehash: 47ddad70b4764fedefb50b93de2b7f078cf9fd27
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b91ccb9f11740599ecf060c98f9fcc7a26d5b363
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82732909"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92427797"
 ---
 # <a name="prepay-for-azure-database-for-mariadb-compute-resources-with-reserved-capacity"></a>Предоплата за базу данных Azure для MariaDB. Вычисление ресурсов с зарезервированной емкостью
 
@@ -19,13 +19,13 @@ ms.locfileid: "82732909"
 
 Вам не нужно назначать резервирование конкретным серверам базы данных Azure для MariaDB. Уже запущенная база данных Azure для MariaDB или только что развернутая служба автоматически получит преимущества зарезервированных цен. Приобретая резервирование, вы предварительно оплачиваете стоимость вычислений на один или три года. Как только вы купите резервирование, стоимость вычислений для базы данных Azure для MariaDB, которая соответствует атрибутам резервирования, больше не взимается по тарифам с оплатой по мере использования. Резервирование не охватывает программное обеспечение, сети или расходы на хранение, связанные с сервером базы данных MariaDB. По окончании срока резервирования срок выставления счетов истекает, а база данных Azure для MariaDB оплачивается по цене оплаты по мере использования. Резервирования не возобновляются автоматически. Сведения о ценах см. в [предложении "база данных Azure для зарезервированных ресурсов MariaDB](https://azure.microsoft.com/pricing/details/mariadb/)". </br>
 
-Вы можете купить зарезервированную емкость базы данных Azure для MariaDB в [портал Azure](https://portal.azure.com/). Платите за резервирование [наперед или ежемесячными платежами](../cost-management-billing/reservations/monthly-payments-reservations.md). Чтобы приобрести зарезервированную емкость, сделайте следующее:
+Вы можете купить зарезервированную емкость базы данных Azure для MariaDB в [портал Azure](https://portal.azure.com/). Платите за резервирование [наперед или ежемесячными платежами](../cost-management-billing/reservations/prepare-buy-reservation.md). Чтобы приобрести зарезервированную емкость, сделайте следующее:
 
 * Необходимо быть в роли владельца по крайней мере для одной корпоративной или отдельной подписки с тарифами с оплатой по мере использования.
 * Для подписок с соглашением Enterprise параметр **Добавить зарезервированные экземпляры** следует включить на [портале EA](https://ea.azure.com/). Или, если этот параметр отключен, необходимо быть администратором подписки EA.
 * Для программы поставщика облачных решений (CSP) только агенты администратора или агенты по продажам могут приобрести зарезервированную емкость базы данных Azure для MariaDB. </br>
 
-Сведения о том, как корпоративные клиенты и клиенты с оплатой по мере использования оплачиваются по покупкам резервирования, см. в статье [Использование резервирования Azure для регистрации на предприятии](https://docs.microsoft.com/azure/billing/billing-understand-reserved-instance-usage-ea) и [сведения об использовании резервирования Azure для подписки с оплатой по мере использования](https://docs.microsoft.com/azure/billing/billing-understand-reserved-instance-usage).
+Сведения о том, как корпоративные клиенты и клиенты с оплатой по мере использования оплачиваются по покупкам резервирования, см. в статье [Использование резервирования Azure для регистрации на предприятии](../cost-management-billing/reservations/understand-reserved-instance-usage-ea.md) и [сведения об использовании резервирования Azure для подписки с оплатой по мере использования](../cost-management-billing/reservations/understand-reserved-instance-usage.md).
 
 
 ## <a name="determine-the-right-server-size-before-purchase"></a>Определение правильного размера сервера перед покупкой
@@ -60,7 +60,7 @@ ms.locfileid: "82732909"
 
 ## <a name="cancel-exchange-or-refund-reservations"></a>Отмена, обмен резервирования, возмещение средств за резервирование
 
-Вы можете отменить и обменять резервирования, а также вернуть вложенные в резервирование средства, но при этом применяются определенные ограничения. Дополнительные сведения см. в статье [Self-service exchanges and refunds for Azure Reservations](https://docs.microsoft.com/azure/billing/billing-azure-reservations-self-service-exchange-and-refund) (Самостоятельное выполнение обмена и возмещения средств для резервирований Azure).
+Вы можете отменить и обменять резервирования, а также вернуть вложенные в резервирование средства, но при этом применяются определенные ограничения. Дополнительные сведения см. в статье [Self-service exchanges and refunds for Azure Reservations](../cost-management-billing/reservations/exchange-and-refund-azure-reservations.md) (Самостоятельное выполнение обмена и возмещения средств для резервирований Azure).
 
 ## <a name="vcore-size-flexibility"></a>Гибкость размеров для виртуального ядра
 
@@ -77,9 +77,9 @@ ms.locfileid: "82732909"
 
 Дополнительные сведения о резервировании в Azure см. по следующим ссылкам:
 
-* [Что такое резервирование Azure](https://docs.microsoft.com/azure/billing/billing-save-compute-costs-reservations)?
-* [Управление Azure Reserved VM Instances](https://docs.microsoft.com/azure/billing/billing-manage-reserved-vm-instance)
-* [Сведения о скидках на резервирование Azure](https://docs.microsoft.com/azure/billing/billing-understand-reservation-charges)
-* [Общие сведения об использовании резервирования Azure для подписки с оплатой по мере использования](https://docs.microsoft.com/azure/billing/billing-understand-reservation-charges-mariadb)
-* [Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise](https://docs.microsoft.com/azure/billing/billing-understand-reserved-instance-usage-ea)
-* [Приобретение зарезервированных экземпляров Azure](https://docs.microsoft.com/partner-center/azure-reservations)
+* [Что такое резервирование Azure](../cost-management-billing/reservations/save-compute-costs-reservations.md)?
+* [Управление Azure Reserved VM Instances](../cost-management-billing/reservations/manage-reserved-vm-instance.md)
+* [Сведения о скидках на резервирование Azure](../cost-management-billing/reservations/understand-reservation-charges.md)
+* [Общие сведения об использовании резервирования Azure для подписки с оплатой по мере использования](../cost-management-billing/reservations/understand-reservation-charges-mariadb.md)
+* [Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise](../cost-management-billing/reservations/understand-reserved-instance-usage-ea.md)
+* [Приобретение зарезервированных экземпляров Azure](/partner-center/azure-reservations)

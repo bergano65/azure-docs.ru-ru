@@ -5,14 +5,14 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: conceptual
-ms.date: 09/16/2020
+ms.date: 10/21/2020
 ms.author: cherylmc
-ms.openlocfilehash: 18367ec163511fac2e90cc5dd0dd0ad6b091afc9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 94ad0a05dafe2c405b1b9cb62242675aa54c4432
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90976222"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92424303"
 ---
 # <a name="about-vpn-gateway-configuration-settings"></a>Сведения о параметрах конфигурации VPN-шлюза
 
@@ -39,7 +39,7 @@ VPN-шлюз — это разновидность шлюза виртуаль�
 
 Для VPN-шлюза требуется `-GatewayType` *Vpn*.
 
-Пример.
+Пример
 
 ```azurepowershell-interactive
 New-AzVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg `
@@ -53,11 +53,11 @@ New-AzVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg `
 
 ### <a name="configure-a-gateway-sku"></a>Настройка номера SKU для шлюза
 
-#### <a name="azure-portal"></a>Портал Azure
+**Портал Azure**
 
 Если для создания шлюза виртуальной сети Resource Manager используется портал Azure, выбрать SKU шлюза можно в раскрывающемся списке. Представленные параметры соответствуют выбранным типу шлюза и типу VPN.
 
-#### <a name="powershell"></a>PowerShell
+**PowerShell**
 
 В следующем примере PowerShell используется `-GatewaySku` со значением VpnGw1. Чтобы создать шлюз с помощью PowerShell, сначала создайте IP-конфигурацию, а затем для ссылки на нее используйте переменную. В этом примере переменная конфигурации — $gwipconfig.
 
@@ -67,7 +67,7 @@ New-AzVirtualNetworkGateway -Name VNet1GW -ResourceGroupName TestRG1 `
 -GatewayType Vpn -VpnType RouteBased
 ```
 
-#### <a name="azure-cli"></a>Azure CLI
+**Azure CLI**
 
 ```azurecli
 az network vnet-gateway create --name VNet1GW --public-ip-address VNet1GWPIP --resource-group TestRG1 --vnet VNet1 --gateway-type Vpn --vpn-type RouteBased --sku VpnGw1 --no-wait
@@ -82,6 +82,12 @@ az network vnet-gateway create --name VNet1GW --public-ip-address VNet1GWPIP --r
 3. **Нельзя** изменить размер из номеров SKU Basic/Standard/HighPerformance на VpnGw SKU. Вместо этого нужно [изменить](#change) номера SKU на новые.
 
 #### <a name="to-resize-a-gateway"></a><a name="resizegwsku"></a>Изменение размера шлюза
+
+**Портал Azure**
+
+[!INCLUDE [Resize a SKU - portal](../../includes/vpn-gateway-resize-gw-portal-include.md)]
+
+**PowerShell**
 
 [!INCLUDE [Resize a SKU](../../includes/vpn-gateway-gwsku-resize-include.md)]
 

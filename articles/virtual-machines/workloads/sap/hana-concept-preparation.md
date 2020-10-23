@@ -13,12 +13,12 @@ ms.workload: infrastructure
 ms.date: 09/10/2018
 ms.author: saghorpa
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 33d52f871de75a7f7d34016b040e44d6f1623fd8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 89da6935d85628b5ce4ff762ad31d3f280682921
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "70101261"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92424247"
 ---
 # <a name="disaster-recovery-principles"></a>Принципы аварийного восстановления
 
@@ -68,7 +68,7 @@ ms.locfileid: "70101261"
 - Остановить работу только что установленного экземпляра SAP HANA на единице крупного экземпляра HANA в регионе аварийного восстановления Azure.
 - Отключить эти тома PRD и обратиться в службу поддержки решения SAP HANA для управления службами Azure. Тома не могут оставаться подключенными к единице, так как являются недоступными при использовании в качестве целевого объекта репликации хранилища.  
 
-![Шаг по настройке аварийного восстановления перед установкой репликации](./media/hana-overview-high-availability-disaster-recovery/disaster_recovery_start3.PNG)
+![Схема, показывающая отношение репликации между томами PRD в рабочем регионе Azure и томами PRD в регионе аварийного восстановления Azure.](./media/hana-overview-high-availability-disaster-recovery/disaster_recovery_start3.PNG)
 
 Рабочая группа установит отношение репликации между томами PRD в рабочем регионе Azure и этими томами в регионе аварийного восстановления Azure.
 

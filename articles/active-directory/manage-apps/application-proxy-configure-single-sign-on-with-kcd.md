@@ -1,29 +1,25 @@
 ---
-title: Единый вход с помощью прокси приложения | Документация Майкрософт
-description: Статья описывает, как реализовать единый вход с помощью прокси приложения Azure AD.
+title: Единый вход на основе Kerberos (SSO) в Azure Active Directory с помощью прокси приложения
+description: Описывает, как обеспечить единый вход с помощью Azure Active Directory Application Proxy.
 services: active-directory
-documentationcenter: ''
 author: kenwith
 manager: celestedg
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: how-to
 ms.date: 08/13/2019
 ms.author: kenwith
 ms.reviewer: japere
-ms.custom: it-pro
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8320f5c034eb3a6de8c912ba23a9fb3f69a8a53c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: contperfq2
+ms.openlocfilehash: 860d29d3fff2187e770a5ff00b7145fc188a497c
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91299754"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92426495"
 ---
-# <a name="kerberos-constrained-delegation-for-single-sign-on-to-your-apps-with-application-proxy"></a>Ограниченное делегирование Kerberos для поддержки единого входа в приложения с помощью прокси приложения
+# <a name="kerberos-constrained-delegation-for-single-sign-on-sso-to-your-apps-with-application-proxy"></a>Ограниченное делегирование Kerberos для единого входа (SSO) в приложения с помощью прокси приложения
 
 Вы можете организовать поддержку единого входа для локальных приложений, опубликованных через прокси приложения и защищенных с использованием встроенной проверки подлинности Windows. Для доступа к таким приложениям нужен билет Kerberos. Прокси приложения использует ограниченное делегирование Kerberos (KCD) для поддержки таких приложений. 
 
@@ -153,7 +149,7 @@ ms.locfileid: "91299754"
 Если в процессе единого входа возникает ошибка, она отображается в журнале событий компьютера соединителя, как описано в [статье Устранение неполадок](application-proxy-back-end-kerberos-constrained-delegation-how-to.md).
 Но в некоторых случаях запрос успешно отправляется внутреннему приложению, пока оно обрабатывает другие HTTP-ответы. Устранение подобных неполадок следует начинать с проверки события с номером 24029 в журнале событий сеанса прокси приложения на компьютере соединителя. Удостоверение пользователя, которое использовалось для делегирования, отображается в поле "Пользователь" в сведениях о событии. Чтобы включить журнал сеанса, выберите пункт **Отобразить аналитический и отладочный журналы** в меню "Вид" средства просмотра событий.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Настройка приложения прокси приложения для использования ограниченного делегирования Kerberos](application-proxy-back-end-kerberos-constrained-delegation-how-to.md)
 * [Устранение неполадок с прокси приложения](application-proxy-troubleshoot.md)
