@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 09/21/2020
 ms.reviewer: ''
 ms.openlocfilehash: 9f1ebbbfed3b3a39e43986a385be87d65d70b175
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
+ms.lasthandoff: 10/23/2020
 ms.locfileid: "92427275"
 ---
 # <a name="playbook-for-addressing-common-security-requirements-with-azure-sql-database-and-azure-sql-managed-instance"></a>Сборник тренировочных заданий для решения общих требований к безопасности базы данных SQL Azure и Azure SQL Управляемый экземпляр
@@ -800,6 +800,6 @@ ms.locfileid: "92427275"
     - [Высокая доступность — конфигурация с избыточностью зоны для уровня служб общего назначения](high-availability-sla.md#general-purpose-service-tier-zone-redundant-availability-preview)
     - [Общие сведения о непрерывности бизнес-процессов](business-continuity-high-availability-disaster-recover-hadr-overview.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - См. [Обзор возможностей безопасности базы данных SQL Azure](security-overview.md) .

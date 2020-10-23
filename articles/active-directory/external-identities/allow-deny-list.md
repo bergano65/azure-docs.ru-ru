@@ -12,12 +12,12 @@ manager: celestedg
 ms.reviewer: sasubram
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aa2ac203f92d401095194bb3f1b5f3ef3c52093b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b87650f364f8ccfd3a531d710bfbdc4715f0ac5a
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87910295"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92442190"
 ---
 # <a name="allow-or-block-invitations-to-b2b-users-from-specific-organizations"></a>Предоставление или отзыв приглашений пользователям B2B из отдельных организаций
 
@@ -126,7 +126,7 @@ ms.locfileid: "87910295"
 
 ### <a name="use-the-azureadpolicy-cmdlets-to-configure-the-policy"></a>Настройка политики с помощью командлетов AzureADPolicy
 
-Чтобы создать список разрешенных или запрещенных, выполните командлет [New AzureADPolicy](https://docs.microsoft.com/powershell/module/azuread/new-azureadpolicy?view=azureadps-2.0-preview). В следующем примере показано, как настроить список запрещенных, который блокирует домен live.com.
+Чтобы создать список разрешенных или запрещенных, выполните командлет [New AzureADPolicy](/powershell/module/azuread/new-azureadpolicy?view=azureadps-2.0-preview). В следующем примере показано, как настроить список запрещенных, который блокирует домен live.com.
 
 ```powershell 
 $policyValue = @("{`"B2BManagementPolicy`":{`"InvitationsAllowedAndBlockedDomainsPolicy`":{`"AllowedDomains`": [],`"BlockedDomains`": [`"live.com`"]}}}")
@@ -140,19 +140,19 @@ New-AzureADPolicy -Definition $policyValue -DisplayName B2BManagementPolicy -Typ
 New-AzureADPolicy -Definition @("{`"B2BManagementPolicy`":{`"InvitationsAllowedAndBlockedDomainsPolicy`":{`"AllowedDomains`": [],`"BlockedDomains`": [`"live.com`"]}}}") -DisplayName B2BManagementPolicy -Type B2BManagementPolicy -IsOrganizationDefault $true 
 ```
 
-Чтобы настроить политику разрешенных или запрещенных, выполните командлет [Set-AzureADPolicy](https://docs.microsoft.com/powershell/module/azuread/set-azureadpolicy?view=azureadps-2.0-preview). Пример:
+Чтобы настроить политику разрешенных или запрещенных, выполните командлет [Set-AzureADPolicy](/powershell/module/azuread/set-azureadpolicy?view=azureadps-2.0-preview). Пример:
 
 ```powershell   
 Set-AzureADPolicy -Definition $policyValue -Id $currentpolicy.Id 
 ```
 
-Чтобы получить политику, выполните командлет [Get-AzureADPolicy](https://docs.microsoft.com/powershell/module/azuread/get-azureadpolicy?view=azureadps-2.0-preview). Пример:
+Чтобы получить политику, выполните командлет [Get-AzureADPolicy](/powershell/module/azuread/get-azureadpolicy?view=azureadps-2.0-preview). Пример:
 
 ```powershell
 $currentpolicy = Get-AzureADPolicy | ?{$_.Type -eq 'B2BManagementPolicy'} | select -First 1 
 ```
 
-Чтобы удалить политику, выполните командлет [Remove-AzureADPolicy](https://docs.microsoft.com/powershell/module/azuread/remove-azureadpolicy?view=azureadps-2.0-preview). Пример:
+Чтобы удалить политику, выполните командлет [Remove-AzureADPolicy](/powershell/module/azuread/remove-azureadpolicy?view=azureadps-2.0-preview). Пример:
 
 ```powershell
 Remove-AzureADPolicy -Id $currentpolicy.Id 
@@ -162,6 +162,3 @@ Remove-AzureADPolicy -Id $currentpolicy.Id
 
 - Общие сведения об Azure AD B2B см. в статье [Что такое служба совместной работы Azure AD B2B](what-is-b2b.md).
 - Сведения об условном доступе и службе совместной работы B2B см. в разделе [Условный доступ для пользователей службы совместной работы B2B](conditional-access.md).
-
-
-

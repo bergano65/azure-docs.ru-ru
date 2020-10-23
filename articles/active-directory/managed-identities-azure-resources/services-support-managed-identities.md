@@ -11,12 +11,12 @@ ms.subservice: msi
 manager: daveba
 ms.collection: M365-identity-device-management
 ms.custom: references_regions
-ms.openlocfilehash: d0b9e2301a8bb9990f88db8d4d55ef7f97946174
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 7e971b4afe0719d74c8aa32c5f5103c4be971d9b
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92072175"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92426435"
 ---
 # <a name="services-that-support-managed-identities-for-azure-resources"></a>Службы с поддержкой управляемых удостоверений для ресурсов Azure
 
@@ -41,6 +41,16 @@ ms.locfileid: "92072175"
 
 - [Шаблон Azure Resource Manager](../../api-management/api-management-howto-use-managed-service-identity.md)
 
+### <a name="azure-app-configuration"></a>Конфигурация приложений Azure
+
+| Тип управляемого удостоверения | Все общедоступные версии<br>Глобальные регионы Azure | Azure для государственных организаций | Azure для Германии | Azure China 21Vianet |
+| --- | :-: | :-: | :-: | :-: |
+| Назначено системой | ![Доступно][check] | ![Доступно][check] | Недоступно | Недоступно |
+| Назначено пользователем | ![Доступно][check] | ![Доступно][check]  | Недоступно  | Недоступно |
+
+См. следующий список, чтобы настроить управляемое удостоверение для конфигурации приложения Azure (в регионах, где это возможно):
+
+- [Azure CLI](../../azure-app-configuration/overview-managed-identity.md)
 
 ### <a name="azure-app-service"></a>Служба приложений Azure
 
@@ -185,7 +195,7 @@ ms.locfileid: "92072175"
 
 Тип управляемого удостоверения | Все общедоступные версии<br>Глобальные регионы Azure | Azure для государственных организаций | Azure для Германии | Azure China 21Vianet |
 | --- | --- | --- | --- | --- |
-| Назначено системой | Доступно в регионе, где доступна служба импорта и экспорта Azure | Preview (Предварительный просмотр) | Доступно | Доступно |
+| Назначено системой | Доступно в регионе, где доступна служба импорта и экспорта Azure | Предварительный просмотр | Доступно | Доступно |
 | Назначено пользователем | Недоступно | Недоступно | Недоступно | Недоступно |
 
 ### <a name="azure-kubernetes-service-aks"></a>Служба Azure Kubernetes (AKS)
@@ -216,7 +226,7 @@ ms.locfileid: "92072175"
 
 Тип управляемого удостоверения | Все общедоступные версии<br>Глобальные регионы Azure | Azure для государственных организаций | Azure для Германии | Azure China 21Vianet |
 | --- | :-: | :-: | :-: | :-: |
-| Назначено системой | Preview (Предварительный просмотр) | Недоступно | Недоступно | Недоступно |
+| Назначено системой | Предварительный просмотр | Недоступно | Недоступно | Недоступно |
 | Назначено пользователем | Preview (Предварительный просмотр) | Недоступно | Недоступно | Недоступно |
 
 Дополнительные сведения см. [в статье Использование управляемых удостоверений с машинное обучение Azure](../../machine-learning/how-to-use-managed-identities.md).

@@ -7,18 +7,18 @@ ms.service: mariadb
 ms.topic: how-to
 ms.date: 5/26/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 2d03a67fc8a8172573598662ad9770b28493e9a2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1da49f574ceadf98d0870fdd94b7d86f26d840d1
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87497109"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92426048"
 ---
 # <a name="auto-grow-storage-in-azure-database-for-mariadb-server-using-powershell"></a>Автоматическое увеличение объема хранилища в базе данных Azure для сервера MariaDB с помощью PowerShell
 
 В этой статье описывается, как можно настроить расширение хранилища базы данных Azure для MariaDB, не влияя на рабочую нагрузку.
 
-Автоматическое увеличение хранилища предотвращает [достижение сервером ограничения хранилища](/azure/mariadb/concepts-pricing-tiers#reaching-the-storage-limit) и становится только чтением. Для серверов с 100 ГБ или меньше подготовленного хранилища размер увеличивается на 5 ГБ, когда объем свободного пространства ниже 10%. Для серверов с более чем 100 ГБ подготовленного хранилища размер увеличивается на 5%, если объем свободного пространства меньше 10 ГБ. Максимальные ограничения хранилища применяются, как указано в разделе Storage ценовых категорий [базы данных Azure для MariaDB](/azure/mariadb/concepts-pricing-tiers#storage).
+Автоматическое увеличение хранилища предотвращает [достижение сервером ограничения хранилища](concepts-pricing-tiers.md#reaching-the-storage-limit) и становится только чтением. Для серверов с 100 ГБ или меньше подготовленного хранилища размер увеличивается на 5 ГБ, когда объем свободного пространства ниже 10%. Для серверов с более чем 100 ГБ подготовленного хранилища размер увеличивается на 5%, если объем свободного пространства меньше 10 ГБ. Максимальные ограничения хранилища применяются, как указано в разделе Storage ценовых категорий [базы данных Azure для MariaDB](concepts-pricing-tiers.md#storage).
 
 > [!IMPORTANT]
 > Помните, что хранилище можно масштабировать только вверх, а не вниз.
@@ -27,14 +27,14 @@ ms.locfileid: "87497109"
 
 Вот что вам нужно, чтобы выполнить инструкции, приведенные в этом руководстве:
 
-- [Модуль AZ PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps) , установленный локально или [Azure Cloud Shell](https://shell.azure.com/) в браузере
+- [Модуль AZ PowerShell](/powershell/azure/install-az-ps) , установленный локально или [Azure Cloud Shell](https://shell.azure.com/) в браузере
 - [Сервер базы данных Azure для MariaDB](quickstart-create-mariadb-server-database-using-azure-powershell.md)
 
 > [!IMPORTANT]
 > Так как модуль PowerShell Az.MariaDb предоставляется в предварительной версии, его нужно установить отдельно от модуля Az PowerShell с помощью команды `Install-Module -Name Az.MariaDb -AllowPrerelease`.
 > Как только модуль PowerShell Az.MariaDb станет общедоступным, он будет включен в один из будущих выпусков модуля Az PowerShell и встроен в Azure Cloud Shell.
 
-Если вы решили использовать PowerShell локально, подключитесь к учетной записи Azure с помощью командлета [Connect-азаккаунт](https://docs.microsoft.com/powershell/module/az.accounts/connect-azaccount) .
+Если вы решили использовать PowerShell локально, подключитесь к учетной записи Azure с помощью командлета [Connect-азаккаунт](/powershell/module/az.accounts/connect-azaccount) .
 
 ## <a name="enable-mariadb-server-storage-auto-grow"></a>Включить автоматическое увеличение размера хранилища сервера MariaDB
 

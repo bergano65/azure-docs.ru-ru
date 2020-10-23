@@ -7,16 +7,19 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 05/28/2020
-ms.openlocfilehash: 6ee1c70ec02af2a24f7867a6e6b06593361612b2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bccf2b9a3dfe42ca439a45eb1e35cfaff58d0208
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86083123"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92426947"
 ---
 # <a name="integrate-apache-zeppelin-with-hive-warehouse-connector-in-azure-hdinsight"></a>Интеграция Apache Zeppelin с Hive Warehouse Connector в Azure HDInsight
 
 Кластеры Spark HDInsight включают в себя записные книжки Apache Zeppelin с разными интерпретаторами. В этой статье мы рассмотрим применение интерпретатора Livy для доступа к таблицам Hive из Spark с помощью Hive Warehouse Connector.
+
+> [!NOTE]
+> Эта статья содержит ссылки на термин *список разрешений*— термин, который корпорация Майкрософт больше не использует. При удалении термина из программного обеспечения мы удалим его из этой статьи.
 
 ## <a name="prerequisite"></a>Предварительные требования
 

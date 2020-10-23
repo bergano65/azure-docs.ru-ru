@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 07/12/2017
 ms.author: jeedes
-ms.openlocfilehash: 715e99f07d0fcbc77fd1769e5da1cae6b46ac97e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8dc4087d1a10b4c4af7477a02f397c5a2bc547c2
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91850740"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92459396"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-jobscience"></a>Руководство. Интеграция Azure Active Directory с Jobscience
 
@@ -42,7 +42,7 @@ ms.locfileid: "91850740"
 При проверке действий в этом учебнике соблюдайте следующие рекомендации:
 
 - Не используйте рабочую среду без необходимости.
-- Если у вас нет пробной среды Azure AD, вы можете получить пробную версию на один месяц здесь: [пробное предложение](https://azure.microsoft.com/pricing/free-trial/).
+- Если у вас нет пробной среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
 
 ## <a name="scenario-description"></a>Описание сценария
 В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
@@ -115,7 +115,7 @@ ms.locfileid: "91850740"
  
 1. В разделе **сертификат подписи SAML** щелкните **сертификат (Base64)** , а затем сохраните файл сертификата на компьютере.
 
-    ![На снимке экрана показана область сертификата подписи SAML, где можно скачать сертификат.](./media/jobscience-tutorial/tutorial_jobscience_certificate.png) 
+    ![Снимок экрана: панель "Сертификат подписи SAML" для скачивания сертификата.](./media/jobscience-tutorial/tutorial_jobscience_certificate.png) 
 
 1. Нажмите кнопку **Сохранить** .
 
@@ -163,9 +163,9 @@ ms.locfileid: "91850740"
 
     d. Нажмите **Обзор**, чтобы отправить сертификат Azure AD.
 
-    д) В качестве **типа удостоверения SAML** выберите **Утверждение содержит идентификатор федерации из объекта пользователя**.
+    д. В качестве **типа удостоверения SAML** выберите **Утверждение содержит идентификатор федерации из объекта пользователя**.
 
-    е) В качестве **расположения удостоверения SAML** выберите **Удостоверение — элемент NameIdentfier оператора Subject**.
+    f. В качестве **расположения удостоверения SAML** выберите **Удостоверение — элемент NameIdentfier оператора Subject**.
 
     ж. В текстовое поле **Identity Provider Login URL** (URL-адрес входа IdP) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
 
@@ -259,9 +259,9 @@ ms.locfileid: "91850740"
 
    d. В текстовом поле **Email** (Электронная почта) введите адрес электронной почты пользователя, например Brittasimon@contoso.com.
 
-   д) В текстовом поле **User Name** (Имя пользователя) укажите имя пользователя, например Brittasimon@contoso.com.
+   д. В текстовом поле **User Name** (Имя пользователя) укажите имя пользователя, например Brittasimon@contoso.com.
 
-   е) В текстовом поле **Nick Name** (Псевдоним) укажите псевдоним пользователя, например Simon.
+   f. В текстовом поле **Nick Name** (Псевдоним) укажите псевдоним пользователя, например Simon.
 
    ж. Выберите команду **Сохранить**.
 
@@ -304,7 +304,7 @@ ms.locfileid: "91850740"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "Jobscience" на панели доступа, вы автоматически войдете в приложение Jobscience.
-См. дополнительные сведения о [панели доступа](../user-help/active-directory-saas-access-panel-introduction.md)
+См. дополнительные сведения о [панели доступа](../user-help/my-apps-portal-end-user-access.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
@@ -324,4 +324,3 @@ ms.locfileid: "91850740"
 [201]: ./media/jobscience-tutorial/tutorial_general_201.png
 [202]: ./media/jobscience-tutorial/tutorial_general_202.png
 [203]: ./media/jobscience-tutorial/tutorial_general_203.png
-

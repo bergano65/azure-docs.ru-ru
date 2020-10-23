@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 03/27/2019
 ms.author: jeedes
-ms.openlocfilehash: 1db1ef3a8fa7de557444c25650410b4e84422be4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 33329fc30d1c20b4e20901d06a061accb2aeceb0
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91849317"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92456907"
 ---
 # <a name="tutorial-configure-bonusly-for-automatic-user-provisioning"></a>Руководство по настройке Bonusly для автоматической подготовки пользователей
 
@@ -64,7 +64,7 @@ ms.locfileid: "91849317"
 
 Перед настройкой и включением автоматической подготовки пользователей нужно решить, какие пользователи или группы в Azure AD должны иметь доступ к Bonusly. Когда данный вопрос будет решен, этих пользователей или группы можно будет назначить приложению Bonusly, следуя инструкциям:
 
-* [Назначение корпоративному приложению пользователя или группы](https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-assign-user-azure-portal)
+* [Назначение корпоративному приложению пользователя или группы](../manage-apps/assign-user-or-group-access-portal.md)
 
 ### <a name="important-tips-for-assigning-users-to-bonusly"></a>Важные рекомендации по назначению пользователей в Bonusly
 

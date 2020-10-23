@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 03/27/2019
 ms.author: arvinh
-ms.openlocfilehash: 58b991f5b229d924bc933ff34987db24bc895e10
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d82aca50ce57a09697d389197bf2b102bb5df457
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88529871"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92456342"
 ---
 # <a name="tutorial-configure-cerner-central-for-automatic-user-provisioning"></a>Руководство по настройке Cerner Central для автоматической подготовки пользователей
 
@@ -127,4 +127,4 @@ ms.locfileid: "88529871"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Узнайте, как просматривать журналы и получать отчеты о действиях по подготовке](https://docs.microsoft.com/azure/active-directory/active-directory-saas-provisioning-reporting).
+* [Узнайте, как просматривать журналы и получать отчеты о действиях по подготовке](../app-provisioning/check-status-user-account-provisioning.md).

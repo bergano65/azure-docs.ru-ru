@@ -15,12 +15,12 @@ ms.author: billmath
 search.appverid:
 - MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c16882f35c9ca79644cd2b51ce4cd88bba516ed2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8ee8c7cf2b34d5923f84bf9b9ba3cf5b10034e3e
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89652071"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92458057"
 ---
 # <a name="implement-password-hash-synchronization-with-azure-ad-connect-sync"></a>Реализация синхронизации хэшированных паролей в службе синхронизации Azure AD Connect
 В этой статье содержатся сведения о том, как синхронизировать пароли пользователей локального экземпляра службы Active Directory (AD) и облачного экземпляра службы Azure Active Directory (Azure AD).
@@ -109,7 +109,7 @@ Continue with this operation?
 [Y] Yes [N] No [S] Suspend [?] Help (default is "Y"): y
 ```
 
-После включения Azure AD не перейдет к каждому синхронизированному пользователю, чтобы удалить `DisablePasswordExpiration` значение из атрибута PasswordPolicies. Вместо этого значение устанавливается `None` во время следующей синхронизации паролей для каждого пользователя при следующем изменении пароля в локальной службе AD.  
+После включения Azure AD не перейдет к каждому синхронизированному пользователю, чтобы удалить `DisablePasswordExpiration` значение из атрибута PasswordPolicies. Вместо этого `DisablePasswordExpiration` значение удаляется из PasswordPolicies во время следующей синхронизации хэша паролей для каждого пользователя при следующем изменении пароля в локальной службе AD.
 
 Рекомендуется включить Енфорцеклаудпассвордполицифорпассвордсинцедусерс, прежде чем включать синхронизацию хэша паролей, чтобы начальная синхронизация хэшей паролей не приступила к добавлению `DisablePasswordExpiration` значения в атрибут PasswordPolicies для пользователей.
 
@@ -231,7 +231,7 @@ Azure AD поддерживает отдельную политику срока
 ## <a name="troubleshoot-password-hash-synchronization"></a>Устранение неполадок при синхронизации хэшированных паролей
 Если вы столкнетесь с проблемами при синхронизации хэшированных паролей, воспользуйтесь рекомендациями из статьи [Устранение неполадок синхронизации хэшированных паролей в службе синхронизации Azure AD Connect](tshoot-connect-password-hash-synchronization.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Синхронизация Azure AD Connect: Настройка параметров синхронизации](how-to-connect-sync-whatis.md)
 * [Интеграция локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md)
 * [Получить поэтапный план развертывания для перехода с ADFS на синхронизацию хэша паролей](https://aka.ms/authenticationDeploymentPlan)
