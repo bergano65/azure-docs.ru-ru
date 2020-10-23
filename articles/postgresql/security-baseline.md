@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/02/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: fb27868a06e133f6f90d0a7a18d218b74aafdd69
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 828be8e790803e53b0434a71fb32a29a4a0c17bc
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89420053"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92428073"
 ---
 # <a name="azure-security-baseline-for-azure-database-for-postgresql---single-server"></a>Базовый уровень безопасности Azure для базы данных Azure для PostgreSQL — один сервер
 
@@ -544,7 +544,7 @@ ms.locfileid: "89420053"
 
 **Ответственность**: Совмещаемая блокировка
 
-### <a name="46-use-role-based-access-control-to-control-access-to-resources"></a>4,6. Использование управления доступом на основе ролей для управления доступом к ресурсам
+### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6. Контроль доступа к ресурсам с помощью RBAC
 
 **Руководство**. Использование управления доступом на основе ролей Azure (Azure RBAC) для управления доступом к базе данных Azure для управления PostgreSQL (например, портал Azure). Для доступа к уровню данных (в самой базе данных) используйте SQL-запросы для создания пользователей и настройки разрешений пользователей. Azure RBAC не влияет на разрешения пользователей в базе данных.
 

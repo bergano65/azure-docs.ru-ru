@@ -11,12 +11,12 @@ ms.date: 09/23/2020
 ms.topic: conceptual
 ms.reviewer: larryfr
 ms.custom: deploy
-ms.openlocfilehash: 9a6e2de07921d05e123154f604c3d1b369b3b89d
-ms.sourcegitcommit: 090ea6e8811663941827d1104b4593e29774fa19
+ms.openlocfilehash: 3a3600c4065d331ca1cfc129cd55dd56add21424
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91998749"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92428354"
 ---
 # <a name="high-performance-serving-with-triton-inference-server-preview"></a>Высокопроизводительный обслуживание с помощью сервера вывода Тритон (Предварительная версия) 
 
@@ -30,7 +30,7 @@ ms.locfileid: "91998749"
 > Использование тритон для развертывания из Машинное обучение Azure в настоящее время находится на __этапе предварительной версии__. Функции предварительной версии могут не быть охвачены службой поддержки клиентов. Дополнительные сведения см. в дополнительных [условиях использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)
 
 > [!TIP]
-> Фрагменты кода в этом документе предназначены для наглядных целей и могут не показывать законченное решение. Рабочий пример кода см. в разделе [комплексные примеры Тритон в машинное обучение Azure](https://aka.ms/aml-triton-sample).
+> Фрагменты кода в этом документе предназначены для наглядных целей и могут не показывать законченное решение. Рабочий пример кода см. в разделе [комплексные примеры Тритон в машинное обучение Azure](https://github.com/Azure/azureml-examples/tree/main/tutorials).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
