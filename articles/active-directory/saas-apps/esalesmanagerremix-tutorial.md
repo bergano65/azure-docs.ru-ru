@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 06/12/2018
 ms.author: jeedes
-ms.openlocfilehash: efcf634c9f34fd2b479140af800bb650f66bd821
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: df993aae4e6c572c8f99688fd0053bdd07aefd56
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91826750"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92453935"
 ---
 # <a name="integrate-azure-active-directory-with-e-sales-manager-remix"></a>Интеграция Azure Active Directory с E Sales Manager Remix
 
@@ -127,7 +127,7 @@ ms.locfileid: "91826750"
 
 1. Из раздела **Краткий справочник** скопируйте URL-адрес выхода и URL-адрес службы единого входа SAML.
 
-1. Щелкните **Сохранить**.
+1. Нажмите **Сохранить**.
 
     ![Кнопка "Сохранить"](./media/esalesmanagerremix-tutorial/tutorial_general_400.png)
 
@@ -157,9 +157,9 @@ ms.locfileid: "91826750"
 
     d. В текстовое поле **Issuer (entity ID)** (Издатель или идентификатор сущности) вставьте значение идентификатора, скопированное ранее из раздела **Домены и URL-адреса приложения E Sales Manager Remix** на портале Azure.
 
-    д) Чтобы передать скачанный с портала Azure сертификат, щелкните **File selection** (Выбор файла).
+    д. Чтобы передать скачанный с портала Azure сертификат, щелкните **File selection** (Выбор файла).
 
-    е) В поле **ID provider login URL** (URL-адрес входа поставщика удостоверений) вставьте URL-адрес службы единого входа SAML, скопированный на портале Azure.
+    f. В поле **ID provider login URL** (URL-адрес входа поставщика удостоверений) вставьте URL-адрес службы единого входа SAML, скопированный на портале Azure.
 
     ж. В поле **Identity Provider Logout URL** (URL-адрес выхода поставщика удостоверений) вставьте URL-адрес выхода, скопированный на портале Azure.
 
@@ -199,7 +199,7 @@ ms.locfileid: "91826750"
 
     c. Установите флажок **Показать пароль** и обратите внимание на значение, отображаемое в поле **пароль** .
 
-    d. Нажмите кнопку **создания**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="create-an-e-sales-manager-remix-test-user"></a>Создание тестового пользователя E Sales Manager Remix
 
@@ -263,7 +263,7 @@ ms.locfileid: "91826750"
 
 Выбрав элемент "E Sales Manager Remix" на панели доступа, вы автоматически войдете в приложение E Sales Manager Remix.
 
-См. дополнительные сведения о [панели доступа](../user-help/active-directory-saas-access-panel-introduction.md) 
+См. дополнительные сведения о [панели доступа](../user-help/my-apps-portal-end-user-access.md) 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
@@ -283,4 +283,3 @@ ms.locfileid: "91826750"
 [201]: ./media/esalesmanagerremix-tutorial/tutorial_general_201.png
 [202]: ./media/esalesmanagerremix-tutorial/tutorial_general_202.png
 [203]: ./media/esalesmanagerremix-tutorial/tutorial_general_203.png
-

@@ -13,17 +13,17 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/10/2019
 ms.author: damendo
-ms.openlocfilehash: fd23dff3f60ab52a82633b9876b67c628a8e2dc7
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: 4ba35d91d286cb43a763887d104e21ae0d537c8e
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92123533"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92424131"
 ---
 # <a name="frequently-asked-questions-faq-about-azure-network-watcher"></a>Часто задаваемые вопросы о наблюдателе за сетями Azure
 Служба [наблюдателя за сетями Azure](https://docs.microsoft.com/azure/network-watcher/network-watcher-monitoring-overview) предоставляет набор средств для мониторинга, диагностики, просмотра метрик и включения или отключения журналов для ресурсов в виртуальной сети Azure. В этой статье содержатся ответы на часто задаваемые вопросы о службе.
 
-## <a name="general"></a>Общие сведения
+## <a name="general"></a>Общее
 
 ### <a name="what-is-network-watcher"></a>Что такое Наблюдатель за сетями?
 Наблюдатель за сетями предназначен для отслеживания и восстановления работоспособности сети компонентов IaaS (инфраструктура как услуга), включая виртуальные машины, виртуальные сети, шлюзы приложений, подсистемы балансировки нагрузки и другие ресурсы в виртуальной сети Azure. Это решение не является решением для мониторинга инфраструктуры PaaS (платформа как услуга) или получения веб-или мобильной аналитики.
@@ -55,7 +55,7 @@ ms.locfileid: "92123533"
 Последнюю версию региональной доступности можно просмотреть на [странице доступности службы Azure](https://azure.microsoft.com/global-infrastructure/services/?products=network-watcher) .
 
 ### <a name="which-permissions-are-needed-to-use-network-watcher"></a>Какие разрешения необходимы для использования наблюдателя за сетями?
-См. список [разрешений RBAC, необходимых для использования наблюдателя за сетями](https://docs.microsoft.com/azure/network-watcher/required-rbac-permissions). Для развертывания ресурсов требуются разрешения участника на NetworkWatcherRG (см. ниже).
+См. список [разрешений Azure RBAC, необходимых для использования наблюдателя за сетями](https://docs.microsoft.com/azure/network-watcher/required-rbac-permissions). Для развертывания ресурсов требуются разрешения участника на NetworkWatcherRG (см. ниже).
 
 ### <a name="how-do-i-enable-network-watcher"></a>Как включить Наблюдатель за сетями?
 Служба наблюдателя за сетями [включена автоматически](https://azure.microsoft.com/updates/azure-network-watcher-will-be-enabled-by-default-for-subscriptions-containing-virtual-networks/) для каждой подписки.

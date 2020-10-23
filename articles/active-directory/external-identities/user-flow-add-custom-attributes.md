@@ -11,12 +11,12 @@ ms.date: 06/16/2020
 ms.author: mimart
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a186b682a3a506f0f373776dd66e6592bc6036ad
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e64ab70fed13d4ca907b2bfb3aa448acdedc39e9
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87908937"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92441459"
 ---
 # <a name="define-custom-attributes-for-user-flows-preview"></a>Определение настраиваемых атрибутов для потоков пользователя (предварительная версия)
 
@@ -25,7 +25,7 @@ ms.locfileid: "87908937"
 
 Для каждого приложения могут существовать различные требования к информации, которую необходимо получить во время регистрации. Azure AD поставляется со встроенным набором информации, сохраняемой в атрибутах, например "Given Name", "Surname", "City" и "Postal Code". С помощью Azure AD можно расширить набор атрибутов, хранящихся в гостевой учетной записи, когда внешний пользователь подписывается через пользовательский поток.
 
-Вы можете создать настраиваемые атрибуты на портале Azure и использовать их в потоке самообслуживания пользователей для самостоятельной регистрации. Эти атрибуты можно также считывать и записывать с помощью [Microsoft API Graph](https://docs.microsoft.com/azure/active-directory-b2c/manage-user-accounts-graph-api). Microsoft Graph API поддерживает создание и обновление пользователя с помощью атрибутов расширения. Атрибуты расширений в API Graph именуются по соглашению `extension_<extensions-app-id>_attributename`. Пример:
+Вы можете создать настраиваемые атрибуты на портале Azure и использовать их в потоке самообслуживания пользователей для самостоятельной регистрации. Эти атрибуты можно также считывать и записывать с помощью [Microsoft API Graph](../../active-directory-b2c/manage-user-accounts-graph-api.md). Microsoft Graph API поддерживает создание и обновление пользователя с помощью атрибутов расширения. Атрибуты расширений в API Graph именуются по соглашению `extension_<extensions-app-id>_attributename`. Пример:
 
 ```JSON
 "extension_831374b3bd5041bfaa54263ec9e050fc_loyaltyNumber": "212342"
