@@ -11,12 +11,12 @@ ms.author: peterlu
 author: peterclu
 ms.date: 07/16/2020
 ms.custom: contperfq4, tracking-python, contperfq1
-ms.openlocfilehash: 6e7499d8402bf31d5ecc4d1b212c08b7064d0446
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 59e8c836a796a46cbf5a45c6ad4440e4b80d476d
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91629732"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92425100"
 ---
 # <a name="secure-an-azure-machine-learning-training-environment-with-virtual-networks"></a>Защита Машинное обучение Azureной среды обучения с помощью виртуальных сетей
 
@@ -42,12 +42,12 @@ ms.locfileid: "91629732"
 
 + Существующая виртуальная сеть и подсеть для использования с ресурсами вычислений.
 
-+ Чтобы развернуть ресурсы в виртуальной сети или подсети, учетная запись пользователя должна иметь разрешения на доступ к следующим действиям в элементах управления доступом на основе ролей (RBAC) Azure.
++ Чтобы развернуть ресурсы в виртуальной сети или подсети, учетная запись пользователя должна иметь разрешения на доступ к следующим действиям в управлении доступом на основе ролей в Azure (Azure RBAC):
 
     - "Microsoft. Network/virtualNetworks/соединение/действие" для ресурса виртуальной сети.
     - "Microsoft. Network/virtualNetworks/подсеть/соединение/действие" в ресурсе подсети.
 
-    Дополнительные сведения о сетях RBAC с сетью см. в разделе [встроенные сетевые роли](/azure/role-based-access-control/built-in-roles#networking) .
+    Дополнительные сведения об Azure RBAC с сетью см. в разделе [встроенные сетевые роли](/azure/role-based-access-control/built-in-roles#networking) .
 
 
 ## <a name="compute-clusters--instances"></a><a name="compute-instance"></a>Вычислительные кластеры и экземпляры 

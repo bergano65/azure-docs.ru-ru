@@ -11,12 +11,12 @@ ms.author: aashishb
 author: aashishb
 ms.date: 07/16/2020
 ms.custom: contperfq4, tracking-python
-ms.openlocfilehash: da8dc11212d33627a165dc5e11acc64087fb6c43
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
+ms.openlocfilehash: df45068ff14d8ac08a17719e4e0338308b504cac
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92131825"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92426108"
 ---
 # <a name="use-azure-machine-learning-studio-in-an-azure-virtual-network"></a>Использование Машинное обучение Azure Studio в виртуальной сети Azure
 
@@ -89,7 +89,7 @@ ms.locfileid: "92131825"
 1. В параметрах хранилища данных выберите __Да__ ,  __чтобы разрешить машинное обучение Azure службе доступ к хранилищу с помощью удостоверения, управляемого рабочей областью__.
 
 
-Эти действия позволяют добавить управляемое рабочей областью удостоверение как __читателя__ в службу хранилища с помощью управления доступом на основе ресурсов Azure (RBAC). Доступ для __чтения__ позволяет рабочей области получить параметры брандмауэра и убедиться, что данные не покидают виртуальную сеть.
+Эти действия позволяют добавить управляемое рабочей областью удостоверение как __читателя__ в службу хранилища с помощью управления доступом на основе ресурсов Azure (Azure RBAC). Доступ для __чтения__ позволяет рабочей области получить параметры брандмауэра и убедиться, что данные не покидают виртуальную сеть.
 
 > [!NOTE]
 > Для вступления этих изменений в силу может потребоваться до 10 минут.
@@ -104,9 +104,9 @@ ms.locfileid: "92131825"
 
 ### <a name="azure-data-lake-storage-gen2-access-control"></a>Azure Data Lake Storage 2-го поколения контроля доступа
 
-Для управления доступом к данным в виртуальной сети можно использовать как RBAC, так и списки управления доступом (ACL) в стиле POSIX.
+Для управления доступом к данным в виртуальной сети можно использовать как Azure RBAC, так и списки управления доступом (ACL) в стиле POSIX.
 
-Чтобы использовать RBAC, добавьте удостоверение, управляемое рабочей областью, в роль [читателя данных BLOB-объекта](../role-based-access-control/built-in-roles.md#storage-blob-data-reader) . Дополнительные сведения см. в статье [Управление доступом на основе ролей в Azure](../storage/blobs/data-lake-storage-access-control-model.md#role-based-access-control).
+Чтобы использовать Azure RBAC, добавьте удостоверение, управляемое рабочей областью, в роль [модуля чтения BLOB-объектов](../role-based-access-control/built-in-roles.md#storage-blob-data-reader) . Дополнительные сведения см. в статье [Управление доступом на основе ролей в Azure](../storage/blobs/data-lake-storage-access-control-model.md#role-based-access-control).
 
 Чтобы использовать списки управления доступом, идентификатору, управляемому рабочей областью, можно назначить доступ, как и любой другой принцип безопасности. Дополнительные сведения см. [в разделе списки управления доступом для файлов и каталогов](../storage/blobs/data-lake-storage-access-control.md#access-control-lists-on-files-and-directories).
 

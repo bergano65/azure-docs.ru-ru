@@ -6,12 +6,12 @@ ms.author: nlarin
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 07/17/2020
-ms.openlocfilehash: 170d5eaa4c14c6de54825bc08f3aef0fd0dfa0c5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 37b2414252a7011444617ecc08c9dd7d081b7441
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91708005"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92425509"
 ---
 # <a name="use-virtual-network-service-endpoints-and-rules-for-azure-database-for-postgresql---single-server"></a>Использование конечных точек службы и правил виртуальной сети для базы данных Azure для PostgreSQL — один сервер
 
@@ -82,7 +82,7 @@ ms.locfileid: "91708005"
 - **администратор сети:** &nbsp; включение конечной точки;
 - **администратор базы данных:** &nbsp; обновление списка управления доступом (ACL) для добавления данной подсети на сервер Базы данных Azure для PostgreSQL.
 
-*Альтернатива RBAC*
+*Альтернатива Azure RBAC:*
 
 Роли администратора сети и администратора базы данных имеют больше возможностей, чем требуется для управления правилами виртуальной сети. На самом деле для этого требуется только часть их возможностей.
 
@@ -128,11 +128,11 @@ ms.locfileid: "91708005"
 
 Задать параметр **IgnoreMissingServiceEndpoint** можно с помощью Azure CLI или портала.
 
-## <a name="related-articles"></a>Похожие статьи
+## <a name="related-articles"></a>Связанные статьи
 - [Виртуальные сети Azure][vm-virtual-network-overview]
 - [Конечные точки службы виртуальной сети Azure][vm-virtual-network-service-endpoints-overview-649d]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Статьи о создании правил виртуальной сети см. по следующим ссылкам:
 - [Create and manage Azure Database for PostgreSQL VNet service endpoints and VNet rules by using the Azure portal](howto-manage-vnet-using-portal.md) (Создание конечных точек службы виртуальной сети Базы данных Azure для PostgreSQL и правил виртуальной сети с использованием портала Azure)
 - [Create and manage Azure Database for PostgreSQL VNet service endpoints using Azure CLI](howto-manage-vnet-using-cli.md) (Создание конечных точек службы виртуальной сети Базы данных Azure для PostgreSQL и правил виртуальной сети с использованием интерфейса командной строки Azure)
@@ -147,7 +147,7 @@ ms.locfileid: "91708005"
 
 [vm-configure-private-ip-addresses-for-a-virtual-machine-using-the-azure-portal-321w]: ../virtual-network/virtual-networks-static-private-ip-arm-pportal.md
 
-[rbac-what-is-813s]: ../active-directory/role-based-access-control-what-is.md
+[rbac-what-is-813s]: ../role-based-access-control/overview.md
 
 [vpn-gateway-indexmd-608y]: ../vpn-gateway/index.yml
 

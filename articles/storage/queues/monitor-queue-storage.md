@@ -9,12 +9,12 @@ ms.date: 10/02/2020
 ms.author: normesta
 ms.reviewer: fryu
 ms.custom: monitoring, devx-track-csharp
-ms.openlocfilehash: 3fe99543b821810b1479f1e504098d81fd20c534
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: eb3d29a339911b0ec05b543257974014a1bcbe22
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91711452"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92425491"
 ---
 # <a name="monitoring-azure-queue-storage"></a>Мониторинг хранилища очередей Azure
 
@@ -46,7 +46,7 @@ ms.locfileid: "91711452"
 
 Подробные сведения о метриках и журналах, созданных хранилищем очередей Azure, см. в [справочнике по данным мониторинга хранилища очередей Azure](monitor-queue-storage-reference.md) .
 
-Метрики и журналы в Azure Monitor поддерживают только учетные записи хранения Azure Resource Manager. Azure Monitor не поддерживает классические учетные записи хранения. Если вы хотите использовать метрики или журналы в классической учетной записи хранения, необходимо выполнить миграцию в учетную запись хранения Azure Resource Manager. См. статью [Поддерживаемый платформой перенос ресурсов IaaS из классической модели в модель Azure Resource Manager](https://docs.microsoft.com/azure/virtual-machines/windows/migration-classic-resource-manager-overview).
+Метрики и журналы в Azure Monitor поддерживают только учетные записи хранения Azure Resource Manager. Azure Monitor не поддерживает классические учетные записи хранения. Если вы хотите использовать метрики или журналы в классической учетной записи хранения, необходимо выполнить миграцию в учетную запись хранения Azure Resource Manager. См. статью [Поддерживаемый платформой перенос ресурсов IaaS из классической модели в модель Azure Resource Manager](/azure/virtual-machines/windows/migration-classic-resource-manager-overview).
 
 При необходимости вы можете продолжить использование классических метрик и журналов. На самом деле, классические метрики и журналы доступны параллельно с метриками и журналами в Azure Monitor. Предусмотрена та же поддержка, пока в службе хранилища Azure обслуживаются устаревшие метрики и журналы.
 
@@ -56,7 +56,7 @@ ms.locfileid: "91711452"
 
 Сведения о создании параметра диагностики с помощью портал Azure, Azure CLI или PowerShell см. в статье [Создание параметров диагностики для сбора журналов и метрик платформы в Azure](../../azure-monitor/platform/diagnostic-settings.md). 
 
-Чтобы просмотреть шаблон Azure Resource Manager, который создает параметр диагностики, см. раздел [параметр диагностики для службы хранилища Azure](https://docs.microsoft.com/azure/azure-monitor/samples/resource-manager-diagnostic-settings#diagnostic-setting-for-azure-storage).
+Чтобы просмотреть шаблон Azure Resource Manager, который создает параметр диагностики, см. раздел [параметр диагностики для службы хранилища Azure](/azure/azure-monitor/samples/resource-manager-diagnostic-settings#diagnostic-setting-for-azure-storage).
 
 При создании параметра диагностики выберите тип хранилища, для которого необходимо включить журналы, например большой двоичный объект, очередь, таблица или файл. В качестве хранилища очередей выберите **очередь**. 
 
@@ -89,7 +89,7 @@ ms.locfileid: "91711452"
 - Microsoft.Storage/storageAccounts
 - Microsoft.Storage/storageAccounts/queueServices
 
-Список всех метрик поддержки Azure Monitor, включая хранилище очередей Azure, см. в статье [Azure Monitor поддерживаемые метрики](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-supported).
+Список всех метрик поддержки Azure Monitor, включая хранилище очередей Azure, см. в статье [Azure Monitor поддерживаемые метрики](/azure/azure-monitor/platform/metrics-supported).
 
 
 ### <a name="accessing-metrics"></a>Доступ к метрикам
@@ -101,7 +101,7 @@ ms.locfileid: "91711452"
 
 #### <a name="list-the-metric-definition"></a>Отображение определения метрики
 
-Вы можете составить список определения метрик учетной записи хранения или службы хранилища очередей. Используйте командлет [Get-AzMetricDefinition](https://docs.microsoft.com/powershell/module/az.monitor/get-azmetricdefinition).
+Вы можете составить список определения метрик учетной записи хранения или службы хранилища очередей. Используйте командлет [Get-AzMetricDefinition](/powershell/module/az.monitor/get-azmetricdefinition).
 
 В этом примере замените `<resource-ID>` заполнитель идентификатором ресурса всей учетной записи хранения или идентификатором ресурса службы хранилища очередей.  Эти ИД ресурса можно найти на странице **свойств** учетной записи хранения на портале Azure.
 
@@ -112,7 +112,7 @@ ms.locfileid: "91711452"
 
 #### <a name="reading-metric-values"></a>Считывание значений метрик
 
-Вы можете читать значения метрик уровня учетной записи хранения или службы хранилища очередей. Используйте командлет [Get-AzMetric](https://docs.microsoft.com/powershell/module/Az.Monitor/Get-AzMetric).
+Вы можете читать значения метрик уровня учетной записи хранения или службы хранилища очередей. Используйте командлет [Get-AzMetric](/powershell/module/Az.Monitor/Get-AzMetric).
 
 ```powershell
    $resourceId = "<resource-ID>"
@@ -123,7 +123,7 @@ ms.locfileid: "91711452"
 
 #### <a name="list-the-account-level-metric-definition"></a>Отображение определения метрик на уровне учетной записи
 
-Вы можете составить список определения метрик учетной записи хранения или службы хранилища очередей. Используйте команду [az monitor metrics list-definitions](https://docs.microsoft.com/cli/azure/monitor/metrics#az-monitor-metrics-list-definitions).
+Вы можете составить список определения метрик учетной записи хранения или службы хранилища очередей. Используйте команду [az monitor metrics list-definitions](/cli/azure/monitor/metrics#az-monitor-metrics-list-definitions).
  
 В этом примере замените `<resource-ID>` заполнитель идентификатором ресурса всей учетной записи хранения или идентификатором ресурса службы хранилища очередей. Эти ИД ресурса можно найти на странице **свойств** учетной записи хранения на портале Azure.
 
@@ -133,7 +133,7 @@ ms.locfileid: "91711452"
 
 #### <a name="read-account-level-metric-values"></a>Считывание значений метрик на уровне учетной записи
 
-Вы можете прочитать значения метрик вашей учетной записи хранения или службы хранилища очередей. Используйте команду [az monitor metrics list](https://docs.microsoft.com/cli/azure/monitor/metrics#az-monitor-metrics-list).
+Вы можете прочитать значения метрик вашей учетной записи хранения или службы хранилища очередей. Используйте команду [az monitor metrics list](/cli/azure/monitor/metrics#az-monitor-metrics-list).
 
 ```azurecli-interactive
    az monitor metrics list --resource <resource-ID> --metric "UsedCapacity" --interval PT1H
@@ -330,19 +330,19 @@ Azure Monitor предоставляет [пакет SDK для .NET](https://ww
 
 ![Журналы аудита](media/monitor-queue-storage/event-hub-log.png)
 
-Вы можете получать доступ к данным журнала, отправляемым в концентратор событий, и считывать их, используя сведения о безопасности, а также средства мониторинга и управления событиями. Дополнительные сведения см. на [этой странице](https://docs.microsoft.com/azure/azure-monitor/platform/stream-monitoring-data-event-hubs#what-can-i-do-with-the-monitoring-data-being-sent-to-my-event-hub).
+Вы можете получать доступ к данным журнала, отправляемым в концентратор событий, и считывать их, используя сведения о безопасности, а также средства мониторинга и управления событиями. Дополнительные сведения см. на [этой странице](/azure/azure-monitor/platform/stream-monitoring-data-event-hubs#what-can-i-do-with-the-monitoring-data-being-sent-to-my-event-hub).
 
 ### <a name="accessing-logs-in-a-log-analytics-workspace"></a>Доступ к журналам в рабочей области Log Analytics
 
 Доступ к журналам, отправляемым в рабочую область Log Analytics, можно получить с помощью запросов журналов Azure Monitor.
 
-Дополнительные сведения см. в статье [Начало работы с Log Analytics в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-portal).
+Дополнительные сведения см. в статье [Начало работы с Log Analytics в Azure Monitor](/azure/azure-monitor/log-query/get-started-portal).
 
 Данные хранятся в таблице **сторажекуеуелогс** .  
 
 #### <a name="sample-kusto-queries"></a>Примеры запросов Kusto
 
-Ниже приведены некоторые запросы, которые можно ввести на панели **поиска журналов** , чтобы упростить мониторинг хранилища очередей. Эти запросы поддерживают [новый язык](https://docs.microsoft.com/azure/azure-monitor/log-query/log-query-overview).
+Ниже приведены некоторые запросы, которые можно ввести на панели **поиска журналов** , чтобы упростить мониторинг хранилища очередей. Эти запросы поддерживают [новый язык](/azure/azure-monitor/log-query/log-query-overview).
 
 > [!IMPORTANT]
 > При выборе **журналов** в меню группы ресурсов учетной записи хранения log Analytics открывается с областью запроса, заданной для текущей группы ресурсов. Это означает, что запросы журнала будут содержать только данные из этой группы ресурсов. Если требуется выполнить запрос, который включает данные из других ресурсов или данных из других служб Azure, выберите **журналы** в меню **Azure Monitor** . Подробные сведения см. в статье [Область запросов журнала и временной диапазон в Azure Monitor Log Analytics](/azure/azure-monitor/log-query/scope/).

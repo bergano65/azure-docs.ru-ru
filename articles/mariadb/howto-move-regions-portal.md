@@ -7,12 +7,12 @@ ms.service: mariadb
 ms.topic: how-to
 ms.custom: subject-moving-resources
 ms.date: 06/29/2020
-ms.openlocfilehash: b2e4bc71a0883c6fef6f0115080a79a74ced92b0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 75fabeeb7fa879a0f2843538d34f85e5ccec40e4
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91542433"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92425906"
 ---
 # <a name="move-an-azure-database-for-mariadb-server-to-another-region-by-using-the-azure-portal"></a>Перемещение сервера базы данных Azure для MariaDB в другой регион с помощью портал Azure
 
@@ -21,7 +21,7 @@ ms.locfileid: "91542433"
 Для завершения перемещения в другой регион можно использовать базу данных Azure для [реплики чтения между регионами](concepts-read-replicas.md#cross-region-replication) MariaDB. Для этого сначала создайте реплику чтения в целевом регионе. Затем следует выполнить репликацию на сервер реплики чтения, чтобы сделать его автономным сервером, принимающим трафик как для чтения, так и для записи. 
 
 > [!NOTE]
-> В этой статье рассматривается перемещение сервера в другой регион. Если вы хотите переместить сервер в другую группу ресурсов или подписку, см. статью [Перемещение](https://docs.microsoft.com/azure/azure-resource-manager/management/move-resource-group-and-subscription) . 
+> В этой статье рассматривается перемещение сервера в другой регион. Если вы хотите переместить сервер в другую группу ресурсов или подписку, см. статью [Перемещение](../azure-resource-manager/management/move-resource-group-and-subscription.md) . 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -65,7 +65,7 @@ ms.locfileid: "91542433"
 1. После создания реплики выберите базу данных Azure для исходного сервера MariaDB.
 1. В окне **Обзор** выберите **Удалить**.
 1. Введите имя исходного сервера для подтверждения, которое нужно удалить.
-1. Выберите команду **Удалить**.
+1. Выберите **Удалить**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

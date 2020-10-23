@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: conceptual
-ms.date: 10/12/2020
+ms.date: 10/21/2020
 ms.author: alkohli
-ms.openlocfilehash: 5e3b9b841c8e6ff17a29ac9c6a5e746ed6b687b9
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: f99a3110880626b3a809e6bab5edc02398094547
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92128508"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92426226"
 ---
 # <a name="azure-stack-edge-blob-storage-requirements"></a>Требования к хранилищу BLOB-объектов Azure Stack
 
@@ -21,16 +21,14 @@ ms.locfileid: "92128508"
 
 Рекомендуется внимательно просмотреть сведения перед подключением к Azure Stack пограничному хранилищу BLOB-объектов, а затем при необходимости вернуться к нему.
 
-
 ## <a name="storage-differences"></a>Различия хранилищ
 
-|     Функция                                             |     Хранилище Azure                                     |     Azure Stack пограничное хранилище BLOB-объектов |
+|     Компонент                                             |     Хранилище Azure                                     |     Azure Stack пограничное хранилище BLOB-объектов |
 |---------------------------------------------------------|-------------------------------------------------------|---------------------------|
 |    Хранилище файлов Azure                                   |    Поддерживаются облачные общие папки с файлами SMB              |    Не поддерживается      |
-|    Шифрование службы для неактивных данных                  |    256-битное шифрование AES                             |    256-битное шифрование AES |
 |    Тип учетной записи хранения                                 |    Учетные записи хранения общего назначения и учетные записи хранения BLOB-объектов Azure    |    Только общего назначения версии 1|
 |    Имя большого двоичного объекта                                            |    1024 символов (2048 байт)                     |    880 символов (1760 байт)|
-|    Максимальный размер блока большого двоичного объекта                              |    4,75 ТБ (100 МБ х 50 000 блоков)                   |    4,75 ТБ (100 МБ x 50 000 блоков) для Azure Stack ребра v 2.1.1377.2170|
+|    Максимальный размер блока большого двоичного объекта                              |    4,75 ТБ (100 МБ х 50 000 блоков)                   |    4,75 ТБ (100 МБ x 50 000 блоков) для Azure Stackного периметра|
 |    Максимальный размер страничного BLOB-объекта                               |    8 ТБ                                               |    1 TБ                   |
 |    Размер страницы страничного BLOB-объекта                                  |    512 байт                                          |    4 КБ                   |
 
@@ -44,7 +42,7 @@ ms.locfileid: "92128508"
 
 ## <a name="supported-azure-client-libraries"></a>Поддерживаемые клиентские библиотеки Azure
 
-Для Azure Stackного хранилища BLOB-объектов существуют определенные клиентские библиотеки и конкретные требования к суффиксу конечной точки. Конечные точки хранилища BLOB-объектов Azure Stack пограничных данных не имеют полной четности с последней версией REST API хранилища BLOB-объектов Azure. см. [Поддерживаемые версии API для Azure Stack 2.1.1377.2170 ребра](#supported-api-versions). Для клиентских библиотек хранилища вам необходимо знать версию, совместимую с REST API.
+Для Azure Stackного хранилища BLOB-объектов существуют определенные клиентские библиотеки и конкретные требования к суффиксу конечной точки. Конечные точки хранилища BLOB-объектов Azure Stack пограничных данных не имеют полной четности с последней версией REST API хранилища BLOB-объектов Azure. см. [Поддерживаемые версии API для Azure Stack пограничных](#supported-api-versions)устройств. Для клиентских библиотек хранилища вам необходимо знать версию, совместимую с REST API.
 
 ### <a name="azure-stack-edge-2113772170-onwards"></a>Azure Stack пограничных 2.1.1377.2170 в сторону
 
@@ -52,10 +50,11 @@ ms.locfileid: "92128508"
 
 [!INCLUDE [data-box-rest-supported-azure-client-libraries](../../includes/data-box-rest-supported-azure-client-libraries.md)]
 
-### <a name="install-php-client-via-composer---current"></a>Установка клиента PHP через компоновщик — текущая версия
+### <a name="install-the-php-client-via-composer---current"></a>Установка клиента PHP с помощью компоновщика (Current)
 
-Для установки через компоновщик сделайте следующее (возьмите для примера большой двоичный объект).
-1. Создайте файл с именем composer.json в корневом каталоге проекта со следующим кодом.
+Чтобы установить клиент PHP с помощью Composer, выполните следующие действия.
+
+1. Создайте файл с именем composer.jsв корневом каталоге проекта со следующим кодом (пример использует службу Azure Storage Blob Service).
 
     ```
     {
@@ -68,10 +67,12 @@ ms.locfileid: "92128508"
 
 3. Выполните команду: установка php composer.phar.
 
-### <a name="endpoint-declaration"></a>Объявление конечной точки
+
+## <a name="endpoint-declaration"></a>Объявление конечной точки
 
 В пакете SDK для хранилища BLOB-объектов Azure Stack пограничным суффиксом конечной точки является `<device serial number>.microsoftdatabox.com` определение домена Azure Stack. Дополнительные сведения о конечной точке службы BLOB-объектов см. в подразделах [Перемещение данных с помощью учетных записей хранения с помощью Azure Stack ребра Pro GPU](azure-stack-edge-j-series-deploy-add-storage-accounts.md).
- 
+
+
 ## <a name="examples"></a>Примеры
 
 ### <a name="net"></a>.NET
@@ -147,6 +148,6 @@ AccountKey=mykey;
 EndpointSuffix=<serial no. of the device>.microsoftdatabox.com
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Подготовка к развертыванию Azure Stack пограничных Pro с помощью GPU](azure-stack-edge-gpu-deploy-prep.md)

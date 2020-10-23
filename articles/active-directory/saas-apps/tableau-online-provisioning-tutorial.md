@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 03/27/2019
 ms.author: jeedes
-ms.openlocfilehash: 094a146f8e0e32667986a8e807955be1a5f66e39
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 71d9af57ab85d694cc08f30c19f6ac87796b2c4e
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91613936"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92425562"
 ---
 # <a name="tutorial-configure-tableau-online-for-automatic-user-provisioning"></a>Руководство. Настройка Tableau Online для автоматической подготовки пользователей
 
@@ -98,7 +98,7 @@ ms.locfileid: "91613936"
 
    * В поле **домен** заполните поддомен на основе шага 6.
 
-   * В поле **имя администратора** введите имя пользователя учетной записи администратора в клиенте Clarizen. Например, admin@contoso.com.
+   * В поле **имя администратора** введите имя пользователя учетной записи администратора в клиенте Tableau Online. Например, admin@contoso.com.
 
    * В поле **пароль администратора** введите пароль учетной записи администратора, соответствующий имени пользователя администратора.
 
@@ -125,7 +125,7 @@ ms.locfileid: "91613936"
 
     ![Электронное уведомление Tableau Online](./media/tableau-online-provisioning-tutorial/EmailNotification.png)
 
-9. Щелкните **Сохранить**.
+9. Нажмите **Сохранить**.
 
 10. В разделе **Сопоставления** выберите **Синхронизировать пользователей Azure Active Directory с Tableau Online**.
 

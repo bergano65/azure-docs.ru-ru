@@ -11,12 +11,12 @@ ms.workload: na
 ms.topic: article
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: 87d26e18ff97416ff8cb0eda08f7beb81005c627
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: d18962e097358b8e80ac93b4d8419f7cd4f77ee0
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92015708"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92426809"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Заметки о выпуске Служб мультимедиа Azure версии 3
 
@@ -335,9 +335,9 @@ ms.locfileid: "92015708"
 
 Новый объект **Преобразование** упрощает модель кодирования. Новый объект позволяет легко создавать и совместно использовать кодировку шаблонов Resource Manager и предустановок. 
 
-#### <a name="azure-active-directory-authentication-and-rbac"></a>Аутентификация Azure Active Directory и RBAC
+#### <a name="azure-active-directory-authentication-and-azure-rbac"></a>Проверка подлинности Azure Active Directory и Azure RBAC
 
-Аутентификация Azure AD и управление доступом на основе ролей (RBAC) обеспечивают безопасные преобразования, динамические события, политики ключей содержимого и предоставление ресурсов для ролей или пользователей в Azure AD.
+Аутентификация Azure AD и управление доступом на основе ролей Azure (Azure RBAC) обеспечивают безопасные преобразования, Лививентс, политики ключей содержимого или ресурсы по ролям или пользователям в Azure AD.
 
 #### <a name="client-sdks"></a>Клиентские пакеты SDK  
 

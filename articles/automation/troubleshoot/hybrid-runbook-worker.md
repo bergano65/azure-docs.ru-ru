@@ -9,12 +9,12 @@ ms.author: magoedte
 ms.date: 11/25/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 4fcd3d143cf2dbb529a8c9c78a769165621e2e89
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1386dd820b10b63862ddab38c441f251bea1d83d
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91400423"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92428393"
 ---
 # <a name="troubleshoot-hybrid-runbook-worker-issues"></a>Устранение неполадок с гибридной рабочей ролью runbook
 
@@ -46,7 +46,7 @@ ms.locfileid: "91400423"
 
 #### <a name="resolution"></a>Решение
 
-Проверьте, имеет ли компьютер исходящий доступ к * **.azure-automation.net** через порт 443.
+Убедитесь, что компьютер имеет исходящий доступ к ** \* . Azure-Automation.NET** через порт 443.
 
 Прежде чем настраивать гибридную рабочую роль Runbook для данной функции, необходимо убедиться, что компьютеры, на которых будет выполняться эта рабочая роль, соответствуют минимальным требованиям к оборудованию. Модули runbook и используемый ими фоновый процесс могут привести к слишком интенсивному использованию системы, что вызовет задержки или увеличение времени ожидания при выполнении заданий runbook.
 
@@ -226,7 +226,7 @@ wget https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/inst
 
 #### <a name="cause"></a>Причина
 
-Эта проблема может быть вызвана тем, что прокси-сервер или сетевой брандмауэр блокируют подключение к Microsoft Azure. Проверьте, имеет ли компьютер исходящий доступ к * **.azure-automation.net** через порт 443.
+Эта проблема может быть вызвана тем, что прокси-сервер или сетевой брандмауэр блокируют подключение к Microsoft Azure. Убедитесь, что компьютер имеет исходящий доступ к ** \* . Azure-Automation.NET** через порт 443.
 
 #### <a name="resolution"></a>Решение
 
@@ -293,7 +293,7 @@ Remove-Item -Path 'C:\Program Files\Microsoft Monitoring Agent\Agent\Health Serv
 Start-Service -Name HealthService
 ```
 
-### <a name="scenario-you-cant-add-a-hybrid-runbook-worker"></a><a name="already-registered"></a>Сценарий. Вы не можете добавить гибридную рабочую роль Runbook
+### <a name="scenario-you-cant-add-a-windows-hybrid-runbook-worker"></a><a name="already-registered"></a>Сценарий: невозможно добавить гибридную рабочую роль Runbook Windows
 
 #### <a name="issue"></a>Проблема
 
@@ -312,6 +312,46 @@ Machine is already registered
 Чтобы устранить эту проблему, удалите следующий раздел реестра, перезапустите `HealthService` и выполните командлет `Add-HybridRunbookWorker` еще раз.
 
 `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\HybridRunbookWorker`
+
+### <a name="scenario-you-cant-add-a-linux-hybrid-runbook-worker"></a><a name="already-registered"></a>Сценарий. невозможно добавить гибридную рабочую роль Runbook Linux
+
+#### <a name="issue"></a>Проблема
+
+При попытке добавить гибридную рабочую роль Runbook с помощью скрипта Python появляется следующее сообщение `sudo python /opt/microsoft/omsconfig/.../onboarding.py --register` :
+
+```error
+Unable to register, an existing worker was found. Please deregister any existing worker and try again.
+```
+
+Кроме того, попытка отменить регистрацию гибридной рабочей роли Runbook с помощью `sudo python /opt/microsoft/omsconfig/.../onboarding.py --deregister` скрипта Python:
+
+```error
+Failed to deregister worker. [response_status=404]
+```
+
+#### <a name="cause"></a>Причина
+
+Эта проблема может возникать, если компьютер уже зарегистрирован в другой учетной записи службы автоматизации, если группа гибридных рабочих ролей Azure была удалена, или если вы попытаетесь повторно добавить гибридную рабочую роль Runbook после удаления с компьютера.
+
+#### <a name="resolution"></a>Решение
+
+Для разрешения этой проблемы:
+
+1. Удалите агент `sudo sh onboard_agent.sh --purge` .
+
+1. Выполните следующие команды.
+
+   ```
+   sudo mv -f /home/nxautomation/state/worker.conf /home/nxautomation/state/worker.conf_old
+   sudo mv -f /home/nxautomation/state/worker_diy.crt /home/nxautomation/state/worker_diy.crt_old
+   sudo mv -f /home/nxautomation/state/worker_diy.key /home/nxautomation/state/worker_diy.key_old
+   ```
+
+1. Повторно подключите агент `sudo sh onboard_agent.sh -w <workspace id> -s <workspace key> -d opinsights.azure.com` .
+
+1. Дождитесь `/opt/microsoft/omsconfig/modules/nxOMSAutomationWorker` заполнения папки.
+
+1. Повторите `sudo python /opt/microsoft/omsconfig/.../onboarding.py --register` сценарий Python.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

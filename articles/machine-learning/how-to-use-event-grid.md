@@ -11,12 +11,12 @@ ms.author: shipatel
 author: shivp950
 ms.reviewer: larryfr
 ms.date: 05/11/2020
-ms.openlocfilehash: e033f00f7657f7f4e5e63509672e924979ce03e7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 77d2f600a651f44abddf4a77f2a01486fa0259f2
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91362522"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92428437"
 ---
 # <a name="trigger-applications-processes-or-cicd-workflows-based-on-azure-machine-learning-events-preview"></a>Активация приложений, процессов или процессов CI/CD на основе событий Машинное обучение Azure (Предварительная версия)
 
@@ -62,7 +62,7 @@ ms.locfileid: "91362522"
 
 При настройке событий можно применять фильтры только для запуска на конкретных данных событий. В приведенном ниже примере для событий изменения состояния выполнения можно выполнить фильтрацию по типам выполнения. Это событие активируется только при соблюдении условий. Сведения о данных событий, по которым можно выполнять фильтрацию, см. в статье [Схема сетки событий Машинного обучения Azure](/azure/event-grid/event-schema-machine-learning). 
 
-Подписки на события Машинного обучения Azure событий защищаются с помощью управления доступом на основе ролей (RBAC). Создавать, обновлять и удалять подписки на события могут только [участники или владельцы](how-to-assign-roles.md#default-roles) рабочей области.  Фильтры могут применяться к подпискам на события во время [создания](/cli/azure/eventgrid/event-subscription?view=azure-cli-latest&preserve-view=true) подписки на событие или позже. 
+Подписки для Машинное обучение Azure событий защищаются с помощью управления доступом на основе ролей Azure (Azure RBAC). Создавать, обновлять и удалять подписки на события могут только [участники или владельцы](how-to-assign-roles.md#default-roles) рабочей области.  Фильтры могут применяться к подпискам на события во время [создания](/cli/azure/eventgrid/event-subscription?view=azure-cli-latest&preserve-view=true) подписки на событие или позже. 
 
 
 1. Перейдите к порталу Azure, выберите там новую или существующую подписку. 
