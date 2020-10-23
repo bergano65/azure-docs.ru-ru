@@ -220,6 +220,8 @@
           href: troubleshoot-password-based-sso.md
         - name: Устранение неполадок единого входа на основе SAML
           href: troubleshoot-saml-based-sso.md
+        - name: Отладка единого входа на основе SAML
+          href: debug-saml-sso-issues.md
         - name: Устранение неполадок со входом пользователей
           items:
             - name: Непредусмотренный запрос на продолжение

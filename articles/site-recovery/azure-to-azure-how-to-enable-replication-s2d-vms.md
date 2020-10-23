@@ -5,12 +5,12 @@ author: sideeksh
 manager: rochakm
 ms.topic: how-to
 ms.date: 01/29/2019
-ms.openlocfilehash: 0b4f18c32639ceb2084febe210a8cfd4c423a0cf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f438fadb73f7e3bd25cd7ab9aef0bc46285e30e2
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86135756"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92424821"
 ---
 # <a name="replicate-azure-vms-running-storage-spaces-direct-to-another-region"></a>Репликация виртуальных машин Azure, работающих Локальные дисковые пространства, в другой регион
 
@@ -49,12 +49,12 @@ ms.locfileid: "86135756"
 1. Выберите политику репликации с отключенной согласованностью приложения (доступна только поддержка согласованности при сбое).
 1. Включите репликацию.
 
-   ![Защита storagespacesdirect](./media/azure-to-azure-how-to-enable-replication-s2d-vms/multivmgroup.png)
+   ![Снимок экрана, на котором показано, где можно настроить параметры репликации.](./media/azure-to-azure-how-to-enable-replication-s2d-vms/multivmgroup.png)
 
 2. Перейдите к реплицированным элементам и вы увидите состояние виртуальной машины.
 3. Обе виртуальные машины становятся защищенными и также отображаются как часть группы согласованности нескольких виртуальных машин.
 
-   ![Защита storagespacesdirect](./media/azure-to-azure-how-to-enable-replication-s2d-vms/storagespacesdirectgroup.PNG)
+   ![Снимок экрана, на котором показаны виртуальные машины, защищенные и входящие в группу согласованности нескольких ВИРТУАЛЬНЫХ машин.](./media/azure-to-azure-how-to-enable-replication-s2d-vms/storagespacesdirectgroup.PNG)
 
 ## <a name="creating-a-recovery-plan"></a>Создание плана восстановления
 План восстановления позволяет воссоздать последовательность различных уровней в многоуровневом приложении во время отработки отказа. Благодаря этому обеспечивается целостность на уровне приложения. При создании плана восстановления для многоуровневого веб-приложения выполните действия, описанные в [этой статье](site-recovery-create-recovery-plans.md).

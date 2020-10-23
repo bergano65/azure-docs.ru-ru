@@ -11,12 +11,12 @@ ms.author: peterlu
 author: peterclu
 ms.date: 10/12/2020
 ms.custom: contperfq4, tracking-python, contperfq1
-ms.openlocfilehash: e778538efe97266eb73f85e8548a9cd5ca1f53c4
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: 0eb4f8a7994e7c1d04013e9c9cf92e604ef6a1a7
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92341317"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92424446"
 ---
 # <a name="secure-an-azure-machine-learning-inferencing-environment-with-virtual-networks"></a>Обеспечение безопасности Машинное обучение Azure окружения с помощью виртуальных сетей
 
@@ -36,18 +36,18 @@ ms.locfileid: "92341317"
 > - Экземпляры контейнеров Azure (ACI)
 
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 + Ознакомьтесь со статьей [Обзор сетевой безопасности](how-to-network-security-overview.md) , чтобы ознакомиться с общими сценариями виртуальной сети и общей архитектурой виртуальной сети.
 
 + Существующая виртуальная сеть и подсеть для использования с ресурсами вычислений.
 
-+ Чтобы развернуть ресурсы в виртуальной сети или подсети, учетная запись пользователя должна иметь разрешения на доступ к следующим действиям в элементах управления доступом на основе ролей (RBAC) Azure.
++ Чтобы развернуть ресурсы в виртуальной сети или подсети, учетная запись пользователя должна иметь разрешения на доступ к следующим действиям в управлении доступом на основе ролей в Azure (Azure RBAC):
 
     - "Microsoft. Network/virtualNetworks/соединение/действие" для ресурса виртуальной сети.
     - "Microsoft. Network/virtualNetworks/подсеть/соединение/действие" в ресурсе подсети.
 
-    Дополнительные сведения о сетях RBAC с сетью см. в разделе [встроенные сетевые роли](/azure/role-based-access-control/built-in-roles#networking) .
+    Дополнительные сведения об Azure RBAC с сетью см. в разделе [встроенные сетевые роли](/azure/role-based-access-control/built-in-roles#networking) .
 
 <a id="aksvnet"></a>
 
@@ -261,7 +261,7 @@ aks_target.wait_for_completion(show_output = True)
 2. Разверните модель с помощью [AciWebservice.deploy_configuration()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.aci.aciwebservice?view=azure-ml-py&preserve-view=true#deploy-configuration-cpu-cores-none--memory-gb-none--tags-none--properties-none--description-none--location-none--auth-enabled-none--ssl-enabled-none--enable-app-insights-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--ssl-cname-none--dns-name-label-none--primary-key-none--secondary-key-none--collect-model-data-none--cmk-vault-base-url-none--cmk-key-name-none--cmk-key-version-none--vnet-name-none--subnet-name-none-&preserve-view=true), используйте параметры `vnet_name` и `subnet_name`. Задайте для этих параметров имя виртуальной сети и подсеть, в которой включено делегирование.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Эта статья является третьей частью серии виртуальных сетей из четырех частей. Ознакомьтесь с остальными статьями, чтобы узнать, как защитить виртуальную сеть.
 

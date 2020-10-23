@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/28/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 6d03f0057e657933f4b0f38c48f2a2cdbe1ba2a4
-ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
+ms.openlocfilehash: 2786a45ef779b9c66edda4c765a1cf2140f1bf9f
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2020
-ms.locfileid: "91940333"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92425288"
 ---
 # <a name="azure-security-baseline-for-azure-load-balancer"></a>Базовый план безопасности Azure для Azure Load Balancer
 
@@ -402,7 +402,7 @@ Load Balancer (цен. категория "Стандартный") по умо�
 
 **Руководство**. Использование Azure RBAC для управления доступом к ресурсам Load Balancer.
 
-- [Настройка RBAC в Azure](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal)
+- [Настройка Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal)
 
 **Мониторинг Центра безопасности Azure**: Да
 

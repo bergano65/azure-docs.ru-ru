@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: rboucher
 ms.author: robb
 ms.date: 08/15/2020
-ms.openlocfilehash: d8c4eea10b0c2230e50b5ded710b3455539f6493
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 1681217c9e55b67ee2a6737aeece5303256bc1e6
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92206039"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92461810"
 ---
 # <a name="what-is-monitored-by-azure-monitor"></a>Что отслеживает Azure Monitor?
 В этой статье описаны различные приложения и службы, которые отслеживаются с помощью Azure Monitor. 
@@ -169,6 +169,19 @@ ms.locfileid: "92206039"
 |Виртуальная сеть — журналы потоков NSG | нет | Да | нет |  |
 |VPN-шлюз | Да | Да | нет |  |
 |Виртуальный рабочий стол Windows | нет | Нет | нет |  |
+
+## <a name="virtual-machine-agents"></a>Агенты виртуальных машин
+В следующей таблице перечислены агенты, которые могут получать данные из гостевой операционной системы виртуальных машин и передавать данные для наблюдения. Каждый агент может составлять различные данные и передавать их метрикам или журналам в Azure Monitor. 
+
+Дополнительные сведения о данных, которые могут собираются каждым агентом, см. в разделе [Общие сведения об агентах Azure Monitor](platform/agents-overview.md) .
+
+| Агент |  Метрики | Журналы |
+|:---|:---|:---|:---|
+| [Агент Azure Monitor (Предварительная версия)](platform/azure-monitor-agent-overview.md) | Да | Да |
+| [Агент Log Analytics](platform/log-analytics-agent.md) | Нет | Да|
+| [Диагностическое расширение](platform/diagnostics-extension-overview.md) | Да | Нет |
+| [Агент Telegraf](platform/collect-custom-metrics-linux-telegraf.md) | Да | Нет |
+| [Агент зависимостей](insights/vminsights-enable-overview.md) | Нет | Да |
 
 
 ## <a name="product-integrations"></a>Интеграция продуктов

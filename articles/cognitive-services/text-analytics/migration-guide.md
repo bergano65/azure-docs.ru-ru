@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: article
-ms.date: 06/25/2020
+ms.date: 10/19/2020
 ms.author: aahi
-ms.openlocfilehash: 12c09ad8e1db3914263fcc864c9c2d09069d63a6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 172e684c6edbab4d7d47c8cf78e35ae38de3a0af
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85412589"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92461793"
 ---
 # <a name="migrate-to-version-3x-of-the-text-analytics-api"></a>Переход на версию 3. x API анализа текста
 
@@ -33,7 +33,12 @@ ms.locfileid: "85412589"
 
 ### <a name="rest-api"></a>REST API
 
-Если приложение использует REST API, обновите конечную точку запроса до конечной точки v3 для анализа тональности. Например: `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.0/sentiment` . Кроме того, необходимо обновить приложение, чтобы использовать метки тональности, возвращаемые в [ответе JSON](how-tos/text-analytics-how-to-sentiment-analysis.md#view-the-results). 
+Если приложение использует REST API, обновите конечную точку запроса до конечной точки v3 для анализа тональности. Например: `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.0/sentiment` . Кроме того, необходимо обновить приложение, чтобы использовать метки тональности, возвращаемые в [ответе API](how-tos/text-analytics-how-to-sentiment-analysis.md#view-the-results). 
+
+Примеры ответа JSON см. в справочной документации.
+* [Версия 2.1](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c9)
+* [Версия 3.0](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/Sentiment) 
+* [Версия 3.1 (предварительная версия)](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-preview-1/operations/Sentiment)
 
 ### <a name="client-libraries"></a>Клиентские библиотеки
 
@@ -60,7 +65,12 @@ ms.locfileid: "85412589"
 NER
 * `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.0/entities/recognition/general`
 
-Также потребуется обновить приложение, чтобы использовать [категории сущностей](named-entity-types.md) , возвращенные в [ответе JSON](how-tos/text-analytics-how-to-entity-linking.md#view-results).
+Кроме того, необходимо обновить приложение, чтобы использовать [категории сущностей](named-entity-types.md) , возвращенные в [ответе API](how-tos/text-analytics-how-to-entity-linking.md#view-results).
+
+Примеры ответа JSON см. в справочной документации.
+* [Версия 2.1](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/5ac4251d5b4ccd1554da7634)
+* [Версия 3.0](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/EntitiesRecognitionGeneral) 
+* [Версия 3.1 (предварительная версия)](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-preview-1/operations/EntitiesRecognitionGeneral)
 
 ### <a name="client-libraries"></a>Клиентские библиотеки
 
@@ -77,7 +87,12 @@ NER
 
 ### <a name="rest-api"></a>REST API
 
-Если приложение использует REST API, обновите конечную точку запроса до конечной точки v3 для определения языка. Например: `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.0/languages` . Также потребуется обновить приложение для использования `ConfidenceScore` вместо `score` в [ответе JSON](how-tos/text-analytics-how-to-language-detection.md#step-3-view-the-results). 
+Если приложение использует REST API, обновите конечную точку запроса до конечной точки v3 для определения языка. Например: `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.0/languages` . Также потребуется обновить приложение для использования `ConfidenceScore` вместо `score` в [ответе API](how-tos/text-analytics-how-to-language-detection.md#step-3-view-the-results). 
+
+Примеры ответа JSON см. в справочной документации.
+* [Версия 2.1](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c7)
+* [Версия 3.0](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/Languages) 
+* [Версия 3.1](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-preview-1/operations/Languages)
 
 ### <a name="client-libraries"></a>Клиентские библиотеки
 
@@ -94,7 +109,12 @@ NER
 
 ### <a name="rest-api"></a>REST API
 
-Если приложение использует REST API, обновите конечную точку запроса до конечной точки v3 для извлечения ключевых фраз. Например: `https://<your-custom-subdomain>.api.cognitiveservices.azure.com/text/analytics/v3.0/keyPhrases`
+Если приложение использует REST API, обновите конечную точку запроса до конечной точки v3 для извлечения ключевых фраз. Пример: `https://<your-custom-subdomain>.api.cognitiveservices.azure.com/text/analytics/v3.0/keyPhrases`
+
+Примеры ответа JSON см. в справочной документации.
+* [Версия 2.1](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c6)
+* [Версия 3.0](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/KeyPhrases) 
+* [Версия 3.1](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-preview-1/operations/KeyPhrases)
 
 ### <a name="client-libraries"></a>Клиентские библиотеки
 
@@ -103,9 +123,8 @@ NER
 ---
 
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
-* [Справочник по API анализа текста v2](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/)
 * [Что такое API "Анализ текста"?](overview.md)
 * [Поддержка языков](language-support.md)
 * [управления версиями моделей;](concepts/model-versioning.md)

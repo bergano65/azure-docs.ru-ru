@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
-ms.openlocfilehash: 7e54c89a609b39a88d2a34078aadd6bbe9308e39
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2f9568d175d564547e58bc3584174cb0f239dd49
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89268372"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92425215"
 ---
 # <a name="use-powershell-to-create-an-azure-ad-app-to-use-with-the-azure-media-services-api"></a>Создание приложения Azure AD для работы с API служб мультимедиа Azure с помощью PowerShell
 
@@ -63,9 +63,9 @@ $Retries = 0;While ($NewRole -eq $null -and $Retries -le 6)
 Дополнительные сведения см. в следующих статьях:
 
 - [Использование Azure PowerShell для создания субъекта-службы и доступа к ресурсам](../../active-directory/develop/howto-authenticate-service-principal-powershell.md)
-- [Управление доступом на основе ролей с помощью Azure PowerShell](../../role-based-access-control/role-assignments-powershell.md)
+- [Добавление и удаление назначений ролей Azure с помощью Azure PowerShell](../../role-based-access-control/role-assignments-powershell.md)
 - [Authenticating to Azure AD in daemon apps with certificates - manual configuration steps](https://github.com/azure-samples/active-directory-dotnetcore-daemon-v2) (Ручная настройка аутентификации приложений управляющей программы в Azure AD с помощью сертификатов)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Приступите к [передаче файлов в учетную запись](media-services-portal-upload-files.md).

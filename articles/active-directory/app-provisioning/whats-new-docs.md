@@ -10,22 +10,22 @@ ms.author: kenwith
 author: kenwith
 manager: CelesteDG
 services: active-directory
-ms.openlocfilehash: f2859ddb6ddf7d1041509c47adfe7bf3a1ce99b8
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 885838e1a517ab4713f1753957f8b85f40297fd2
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/22/2020
-ms.locfileid: "92377047"
+ms.locfileid: "92424556"
 ---
 # <a name="azure-active-directory-application-provisioning-whats-new"></a>Azure Active Directory подготовка приложений: новые возможности
 
-Добро пожаловать в Azure Active Directoryную документацию по подготовке приложений. В этой статье перечислены новые документы, которые были добавлены, а также важные обновления за последние три месяца.
+Добро пожаловать в Azure Active Directoryную документацию по подготовке приложений. В этой статье перечислены новые документы, которые были добавлены, а также важные обновления за последние три месяца. Чтобы узнать о новых возможностях службы подготовки, см. статью [новые возможности в Azure Active Directory](../fundamentals/whats-new.md).
 
 ## <a name="september-2020"></a>Сентябрь 2020 г.
 
 ### <a name="new-articles"></a>Новые статьи
 
-- [Новые возможности](whats-new-docs.md)
+- [Новые возможности в Документации Майкрософт](whats-new-docs.md)
 
 ### <a name="updated-articles"></a>Обновленные статьи
 - [Подготовка приложений в карантинном состоянии](application-provisioning-quarantine-status.md)

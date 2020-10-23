@@ -11,12 +11,12 @@ author: peterclu
 ms.date: 10/06/2020
 ms.topic: conceptual
 ms.custom: how-to, contperfq4, tracking-python, contperfq1
-ms.openlocfilehash: 5d34fe403e0af4bc871ba176d0fa755650c26292
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ef1e3c886cfd30db4c6a550d0ecabe7d41fab55c
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91776054"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92424999"
 ---
 # <a name="secure-an-azure-machine-learning-workspace-with-virtual-networks"></a>Защита рабочей области Машинное обучение Azure с помощью виртуальных сетей
 
@@ -34,7 +34,7 @@ ms.locfileid: "91776054"
 > - Рабочая область службы "Машинное обучение Azure"
 > - Учетные записи хранения Azure
 > - Машинное обучение Azure хранилища данных и наборы DataSet
-> - Хранилище ключей Azure;
+> - Azure Key Vault
 > - Реестр контейнеров Azure
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -43,12 +43,12 @@ ms.locfileid: "91776054"
 
 + Существующая виртуальная сеть и подсеть для использования с ресурсами вычислений.
 
-+ Чтобы развернуть ресурсы в виртуальной сети или подсети, учетная запись пользователя должна иметь разрешения на доступ к следующим действиям в элементах управления доступом на основе ролей (RBAC) Azure.
++ Чтобы развернуть ресурсы в виртуальной сети или подсети, учетная запись пользователя должна иметь разрешения на доступ к следующим действиям в управлении доступом на основе ролей в Azure (Azure RBAC):
 
     - "Microsoft. Network/virtualNetworks/соединение/действие" для ресурса виртуальной сети.
     - "Microsoft. Network/virtualNetworks/подсеть/соединение/действие" в ресурсе подсети.
 
-    Дополнительные сведения о сетях RBAC с сетью см. в разделе [встроенные сетевые роли](/azure/role-based-access-control/built-in-roles#networking) .
+    Дополнительные сведения об Azure RBAC с сетью см. в разделе [встроенные сетевые роли](/azure/role-based-access-control/built-in-roles#networking) .
 
 
 ## <a name="secure-the-workspace-with-private-endpoint"></a>Защита рабочей области с помощью частной конечной точки
@@ -282,7 +282,7 @@ validate=False)
     }
     ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Эта статья является частью серии виртуальных сетей из четырех частей. Ознакомьтесь с остальными статьями, чтобы узнать, как защитить виртуальную сеть.
 

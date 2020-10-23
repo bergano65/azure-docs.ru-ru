@@ -11,12 +11,13 @@ ms.topic: reference
 ms.date: 07/23/2020
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: 28c34e97fa340b6fb95877ebece740897ae72e7a
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.custom: contperfq2
+ms.openlocfilehash: 38bff38ebe44d9018299444b89d7743c4cc92b72
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92104569"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92424206"
 ---
 # <a name="active-directory-azure-ad-application-proxy-frequently-asked-questions"></a>Часто задаваемые вопросы о прокси приложения Active Directory (Azure AD)
 
@@ -48,7 +49,7 @@ ms.locfileid: "92104569"
 
 Нет, в настоящее время это невозможно. Попытка регистрации всегда выполняется в домашнем клиенте пользователя.
 
-### <a name="my-back-end-application-is-hosted-on-multiple-web-servers-and-requires-user-session-persistence-stickiness-how-can-i-achieve-session-persistence"></a>Мое серверное приложение размещается на нескольких веб-серверах и требует сохранения пользовательского сеанса («закрепления»). Как можно добиться сохранения сеанса? 
+### <a name="my-back-end-application-is-hosted-on-multiple-web-servers-and-requires-user-session-persistence-stickiness-how-can-i-achieve-session-persistence"></a>Мое серверное приложение размещается на нескольких веб-серверах и требует сохранения пользовательского сеанса («закрепления»). Как можно добиться сохранения сеанса? 
 
 Рекомендации см. в статье [Высокая доступность и балансировка нагрузки соединителей прокси приложения и приложений](application-proxy-high-availability-load-balancing.md).
 
@@ -84,7 +85,7 @@ ms.locfileid: "92104569"
     HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\WinHttp\EnableDefaultHttp2 (DWORD) Value: 0 
     ```
 
-## <a name="application-configuration"></a>Настройка приложения
+## <a name="application-configuration"></a>Конфигурация приложений
 
 ### <a name="i-am-receiving-an-error-about-an-invalid-certificate-or-possible-wrong-password"></a>Я получаю сообщение об ошибке: Недопустимый сертификат или возможный неверный пароль
 

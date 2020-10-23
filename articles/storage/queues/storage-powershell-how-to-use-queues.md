@@ -9,12 +9,12 @@ ms.subservice: queues
 ms.topic: how-to
 ms.reviewer: dineshm
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 8f45a4de2e13f936556f8dd99aa107110edc6e91
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d1f758390a270f072bc08e13d1d542e08e4df553
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89077931"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92425543"
 ---
 # <a name="perform-azure-queue-storage-operations-with-azure-powershell"></a>Выполнение операций хранилища очередей Azure с помощью Azure PowerShell
 
@@ -104,7 +104,7 @@ Get-AzStorageQueue -Context $ctx | Select-Object Name
 
 ## <a name="add-a-message-to-a-queue"></a>Добавление сообщения в очередь
 
-Для операций с фактическими сообщениями в очереди используйте клиентскую библиотеку хранилища .NET, предоставленную в PowerShell. Чтобы добавить сообщение в очередь, создайте новый экземпляр объекта Message, класс [Microsoft. Azure. Storage. Queue. CloudQueueMessage](https://docs.microsoft.com/java/api/com.microsoft.azure.storage.queue.cloudqueuemessage) . Затем вызовите метод [AddMessage](https://docs.microsoft.com/java/api/com.microsoft.azure.storage.queue.cloudqueue.addmessage) . Для создания CloudQueueMessage можно использовать строку (в формате UTF-8) или массив байтов.
+Для операций с фактическими сообщениями в очереди используйте клиентскую библиотеку хранилища .NET, предоставленную в PowerShell. Чтобы добавить сообщение в очередь, создайте новый экземпляр объекта Message, класс [Microsoft. Azure. Storage. Queue. CloudQueueMessage](/java/api/com.microsoft.azure.storage.queue.cloudqueuemessage) . Затем вызовите метод [AddMessage](/java/api/com.microsoft.azure.storage.queue.cloudqueue.addmessage) . Для создания CloudQueueMessage можно использовать строку (в формате UTF-8) или массив байтов.
 
 В следующем примере демонстрируется добавление сообщений в очередь.
 

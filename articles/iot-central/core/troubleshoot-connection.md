@@ -7,12 +7,13 @@ ms.author: dobett
 ms.date: 08/13/2020
 ms.topic: troubleshooting
 ms.service: iot-central
-ms.openlocfilehash: 34a9350f830171a137ca3a63ecae2203edec92b2
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.custom: device-developer
+ms.openlocfilehash: 6438b938dc007e8d157f6549b3ed164cd2a723e8
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92127375"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92424463"
 ---
 # <a name="troubleshoot-why-data-from-your-devices-isnt-showing-up-in-azure-iot-central"></a>Устранение неполадок, при которых данные с устройств не отображаются в Azure IoT Central
 
@@ -156,7 +157,7 @@ https://aka.ms/iotcentral-docs-dps-SAS",
 | 404 | Экземпляр службы подготовки устройств или ресурс, например регистрация, не существует. | Отправьте запрос в службу [поддержки клиентов](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview). |
 | 412 | `ETag`В запросе не совпадает с `ETag` именем существующего ресурса согласно rfc7232). | Отправьте запрос в службу [поддержки клиентов](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview). |
 | 429 | Операции регулируется службой. Конкретные ограничения службы см. в разделе [ограничения службы подготовки устройств](../../azure-resource-manager/management/azure-subscription-service-limits.md#iot-hub-device-provisioning-service-limits)к добавлению в центр Интернета вещей. | Уменьшение частоты сообщений, разделение обязанностей между несколькими устройствами. |
-| 500 | Внутренняя ошибка. | Отправьте запрос в службу [поддержки клиентов](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview) , чтобы узнать, могут ли они помочь вам. |
+| 500 | Произошла внутренняя ошибка. | Отправьте запрос в службу [поддержки клиентов](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview) , чтобы узнать, могут ли они помочь вам. |
 
 ## <a name="payload-shape-issues"></a>Проблемы с фигурами полезных данных
 
@@ -209,7 +210,7 @@ tatype 'double'. Data '56'. All dates/times/datetimes/durations must be ISO 8601
 
 Если вы решили создать новый шаблон, который моделирует данные правильно, перенесите устройства из старого шаблона в новый шаблон. Дополнительные сведения см. в статье [Управление устройствами в приложении IOT Central Azure](howto-manage-devices.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вам нужна дополнительная помощь, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack overflow](https://azure.microsoft.com/support/community/). Кроме того, вы можете отправить запрос в [службу поддержки Azure](https://portal.azure.com/#create/Microsoft.Support).
 
