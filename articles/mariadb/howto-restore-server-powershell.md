@@ -8,12 +8,12 @@ ms.devlang: azurepowershell
 ms.topic: how-to
 ms.date: 05/26/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: a3870ae192955df11107f0ebb5c618b90a0cc799
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 984a5d52dfdd45190cbded5e900d3fcfe2f9ad43
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87833255"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92424505"
 ---
 # <a name="how-to-back-up-and-restore-an-azure-database-for-mariadb-server-using-powershell"></a>Как создать резервную копию сервера Базы данных Azure для MariaDB и восстановить сервер с помощью PowerShell
 
@@ -23,14 +23,14 @@ ms.locfileid: "87833255"
 
 Вот что вам нужно, чтобы выполнить инструкции, приведенные в этом руководстве:
 
-- [Модуль AZ PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps) , установленный локально или [Azure Cloud Shell](https://shell.azure.com/) в браузере
+- [Модуль AZ PowerShell](/powershell/azure/install-az-ps) , установленный локально или [Azure Cloud Shell](https://shell.azure.com/) в браузере
 - [Сервер базы данных Azure для MariaDB](quickstart-create-mariadb-server-database-using-azure-powershell.md)
 
 > [!IMPORTANT]
 > Так как модуль PowerShell Az.MariaDb предоставляется в предварительной версии, его нужно установить отдельно от модуля Az PowerShell с помощью команды `Install-Module -Name Az.MariaDb -AllowPrerelease`.
 > Как только модуль PowerShell Az.MariaDb станет общедоступным, он будет включен в один из будущих выпусков модуля Az PowerShell и встроен в Azure Cloud Shell.
 
-Если вы решили использовать PowerShell локально, подключитесь к учетной записи Azure с помощью командлета [Connect-азаккаунт](https://docs.microsoft.com/powershell/module/az.accounts/connect-azaccount) .
+Если вы решили использовать PowerShell локально, подключитесь к учетной записи Azure с помощью командлета [Connect-азаккаунт](/powershell/module/az.accounts/connect-azaccount) .
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -75,10 +75,10 @@ Get-AzMariaDbServer -Name mydemoserver -ResourceGroupName myresourcegroup |
 
 Набор параметров **поинтинтимересторе** `Restore-AzMariaDbServer` командлета требует наличия следующих параметров:
 
-| Параметр | Рекомендуемое значение | Описание  |
+| Параметр | Рекомендуемое значение | Описание  |
 | --- | --- | --- |
-| ResourceGroupName |  myresourcegroup |  Группа ресурсов, в которой находится исходный сервер.  |
-| Имя | mydemoserver-restored | Имя нового сервера, созданного командой restore. |
+| ResourceGroupName |  myresourcegroup |  Группа ресурсов, в которой находится исходный сервер.  |
+| name | mydemoserver-restored | Имя нового сервера, созданного командой restore. |
 | ресторепоинтинтиме | 2020-03-13T13:59:00Z | Выберите точку во времени для восстановления. Значения даты и времени должны находиться в пределах срока хранения резервной копии исходного сервера. Используйте формат даты и времени ISO8601. Например, можно использовать собственный местный часовой пояс, например **2020-03-13T05:59:00-08:00**. Можно также использовать формат UTC Zulu, например **2018-03-13T13:59:00Z**. |
 | усепоинтинтимересторе | `<SwitchParameter>` | Используйте режим "на момент времени" для восстановления. |
 
@@ -117,10 +117,10 @@ Get-AzMariaDbServer -Name mydemoserver -ResourceGroupName myresourcegroup |
 
 Набор параметров **геовосстановления** для `Restore-AzMariaDbServer` командлета требует наличия следующих параметров:
 
-| Параметр | Рекомендуемое значение | Описание  |
+| Параметр | Рекомендуемое значение | Описание  |
 | --- | --- | --- |
 |ResourceGroupName | myresourcegroup | Имя группы ресурсов, к которой принадлежит новый сервер.|
-|Имя | mydemoserver-georestored | Имя нового сервера. |
+|name | mydemoserver-georestored | Имя нового сервера. |
 |Расположение | eastus | Расположение нового сервера. |
 |усежеоресторе | `<SwitchParameter>` | Используйте географический режим для восстановления. |
 

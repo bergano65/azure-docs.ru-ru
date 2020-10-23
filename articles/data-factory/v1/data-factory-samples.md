@@ -11,12 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: f1e861bf9c6cc2a485ac9f153a0c932ec2e6fbb2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e2b7e96934c96dd944e17a1ef1ffb51a6ee89bf4
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85318915"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92360008"
 ---
 # <a name="azure-data-factory---samples"></a>Фабрика данных Azure — примеры
 > [!NOTE]
@@ -34,7 +34,7 @@ ms.locfileid: "85318915"
 | [Пример действия перекрестного домена приложения .NET](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/CrossAppDomainDotNetActivitySample) |Этот пример позволяет создать настраиваемое действие .NET, не ограниченное версиями сборок, которые используются средством запуска фабрики данных Azure (например, WindowsAzure.Storage версии 4.3.0, Newtonsoft.Json версии 6.0.x и т. д.). |
 | [Запуск скрипта R](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/RunRScriptUsingADFSample) |Этот пример включает пользовательское действие фабрики данных, которое можно использовать для вызова файла RScript.exe. Этот пример работает только с вашим собственным кластером HDInsight (не по требованию), в которое уже установлен R. |
 | [Вызов заданий Spark в кластере HDInsight Hadoop](https://docs.microsoft.com/azure/data-factory/tutorial-transform-data-spark-portal) |В этом примере показано, как использовать действие MapReduce для запуска программы Spark. Программа Spark просто копирует данные из одного контейнера BLOB-объектов Azure в другой. |
-| [Анализ Twitter с использованием действия пакетной оценки показателей машинного обучения Azure](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/TwitterAnalysisSample-AzureMLBatchScoringActivity) |В этом примере показано, как использовать AzureMLBatchScoringActivity для вызова модели машинного обучения Azure, которая выполняет анализ мнений с помощью Twitter, оценку, прогноз и т. д. |
+| [Анализ Twitter с помощью действия пакетной оценки Машинное обучение Azure Studio (классическая модель)](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/TwitterAnalysisSample-AzureMLBatchScoringActivity) |В этом примере показано, как использовать AzureMLBatchScoringActivity для вызова модели машинного обучения Azure, которая выполняет анализ мнений с помощью Twitter, оценку, прогноз и т. д. |
 | [Анализ Twitter с использованием настраиваемого действия](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/TwitterAnalysisSample-CustomC%23Activity) |В этом примере показано, как использовать настраиваемое действие .NET для вызова модели машинного обучения Azure, которая выполняет анализ мнений с помощью Twitter, оценку, прогноз и т. д. |
 | [Параметризованные конвейеры для машинного обучения Azure](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/ParameterizedPipelinesForAzureML) |Пример содержит полный код C# для развертывания N конвейеров для оценки и повторного обучения с различными параметрами регионов (список регионов берется из файла parameters.txt, включенного в этот пример). |
 | [Обновление эталонных данных для заданий в службе Azure Stream Analytics](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/ReferenceDataRefreshForASAJobs) |В этом примере показано, как использовать фабрику данных Azure и службу Azure Stream Analytics для выполнения запросов с эталонными данными и настройки обновления эталонных данных по расписанию. |
@@ -75,7 +75,7 @@ ms.locfileid: "85318915"
     ![Колонка "Фабрика данных"](./media/data-factory-samples/DataFactoryBladeAfter.png)
 
 ## <a name="samples-in-visual-studio"></a>Примеры в Visual Studio
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Обязательные условия
 На вашем компьютере должны быть установлены следующие компоненты:
 
 * Visual Studio 2013 или Visual Studio 2015.

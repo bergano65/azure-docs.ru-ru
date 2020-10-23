@@ -7,13 +7,13 @@ ms.service: azure-resource-manager
 ms.topic: quickstart
 ms.custom: subject-armqs
 ms.author: danlep
-ms.date: 05/26/2020
-ms.openlocfilehash: 2cfce37ff63a8321f40843ced2a7b786bcfc013e
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.date: 10/06/2020
+ms.openlocfilehash: 97b556e0329644b973def8333ddb5e70e370b0bc
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88649625"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91826990"
 ---
 # <a name="quickstart-create-a-geo-replicated-container-registry-by-using-an-arm-template"></a>Краткое руководство. Создание геореплицированного реестра контейнеров с помощью шаблона ARM
 
@@ -48,19 +48,22 @@ ms.locfileid: "88649625"
 
     [![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-container-registry-geo-replication%2Fazuredeploy.json)
 
- 2. Введите или выберите следующие значения.
+ 1. Введите или выберите следующие значения.
 
     * **Подписка**. Выберите нужную подписку Azure.
     * **Группа ресурсов.** Щелкните **Создать**, введите уникальное имя новой группы ресурсов и щелкните **ОК**.
-    * **Расположение**. Выберите расположение группы ресурсов. Пример **Центральная часть США.**
+    * **Регион**. Выберите расположение группы ресурсов. Пример **Центральная часть США.**
     * **Имя записи контроля доступа**. Используйте имя, созданное для реестра, или введите другое имя. Оно должно быть глобально уникальным.
+    * **Пользователь с правами администратора ACR включен**. Сохраните значение по умолчанию.
     * **Местоположение**. Примите созданное для основной реплики реестра местоположение или введите другое местоположение, например **Центральная часть США**. 
+    * **Номер SKU ACR**. Примите значение по умолчанию.
     * **Acr Replica Location** (Местоположение реплики Acr). Введите местоположения реплики реестра, указав короткое имя региона. Оно должно отличаться от местоположения основного реестра. Пример: **westeurope**.
-    * **Я принимаю указанные выше условия**. Установите этот флажок.
 
         :::image type="content" source="media/container-registry-get-started-geo-replication-template/template-properties.png" alt-text="Свойства шаблона":::
 
- 3. Если вы приняли условия, нажмите кнопку **Приобрести**. После успешного создания реестра вы получите уведомление:
+1. Нажмите кнопку **Просмотр и создание**, затем ознакомьтесь с условиями. Если вы принимаете их, нажмите кнопку **Создать**.
+
+1. После успешного создания реестра вы получите уведомление:
 
      :::image type="content" source="media/container-registry-get-started-geo-replication-template/deployment-notification.png" alt-text="Свойства шаблона":::
 
@@ -84,6 +87,8 @@ ms.locfileid: "88649625"
 
 Ставшие ненужными группу ресурсов, реестр и реплику реестра можно удалить. Для этого на портале Azure выберите группу ресурсов, содержащую реестр, и щелкните **Удалить группу ресурсов**.
 
+Удаление группы ресурсов
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве показано, как создать Реестр контейнеров Azure с помощью шаблона ARM и настроить реплику реестра в другом расположении. Чтобы продолжить работу с Реестром контейнеров Azure, перейдите к следующим руководствам.
@@ -94,4 +99,4 @@ ms.locfileid: "88649625"
 Пошаговые инструкции по созданию шаблона см. в следующей статье:
 
 > [!div class="nextstepaction"]
-> [Руководство. Создание и развертывание первого шаблона ARM](../azure-resource-manager/templates/template-tutorial-create-first-template.md)
+> Создание и развертывание первого шаблона ARM[

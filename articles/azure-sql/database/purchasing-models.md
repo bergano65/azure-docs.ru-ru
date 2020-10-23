@@ -12,12 +12,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 05/28/2020
-ms.openlocfilehash: aef29eef7eb53c4cc4ffcc4926f9efe533374178
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a5760d3daaa13a5ed16230e1ffb7fe3691455e09
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91319458"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92427042"
 ---
 # <a name="choose-between-the-vcore-and-dtu-purchasing-models---azure-sql-database-and-sql-managed-instance"></a>Выбор между моделями приобретения Виртуальное ядро и DTU в базе данных SQL Azure и SQL Управляемый экземпляр
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -72,7 +72,7 @@ ms.locfileid: "91319458"
 
 Виртуальное ядро (Виртуальное ядро) представляет собой логический ЦП и предлагает возможность выбора между поколениями оборудования и физическими характеристиками оборудования (например, число ядер, объем памяти и размер хранилища). Модель приобретения на основе виртуальное ядро обеспечивает гибкость, контроль, прозрачность использования отдельных ресурсов и простой способ перевода локальных требований к рабочей нагрузке в облако. Эта модель позволяет выбирать ресурсы вычислений, памяти и хранилища в зависимости от потребностей рабочей нагрузки.
 
-В модели приобретения на основе виртуальное ядро можно выбрать между уровнями служб [общего назначения](high-availability-sla.md#basic-standard-and-general-purpose-service-tier-availability) и [критически важный для бизнеса](high-availability-sla.md#premium-and-business-critical-service-tier-availability) для базы данных SQL и управляемый экземпляр SQL.  Для отдельных баз данных можно также выбрать [уровень службы "масштабирование](service-tier-hyperscale.md)".
+В модели приобретения на основе виртуальное ядро можно выбрать между уровнями служб [общего назначения](high-availability-sla.md#basic-standard-and-general-purpose-service-tier-locally-redundant-availability) и [критически важный для бизнеса](high-availability-sla.md#premium-and-business-critical-service-tier-locally-redundant-availability) для базы данных SQL и управляемый экземпляр SQL.  Для отдельных баз данных можно также выбрать [уровень службы "масштабирование](service-tier-hyperscale.md)".
 
 Модель приобретения на основе виртуальное ядро позволяет независимо выбирать ресурсы вычислений и хранения, сопоставлять локальную производительность и оптимизировать цену. В модели приобретения на основе виртуальное ядро вы платите:
 
@@ -168,7 +168,7 @@ DTU наиболее полезны для понимания относител
 
 Да, можно легко преобразовать базу данных в любую поддерживаемую цель производительности с помощью портал Azure, PowerShell, Azure CLI, T-SQL или REST API. См. раздел [Управление отдельными базами данных](single-database-scale.md) и [Управление пулами эластичных БД](elastic-pool-overview.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о модели приобретения на основе виртуальное ядро см. в разделе [модель приобретения на основе виртуальное ядро](service-tiers-vcore.md).
 - Дополнительные сведения о модели приобретения на основе DTU см. в разделе [модель приобретения на основе DTU](service-tiers-dtu.md).

@@ -11,12 +11,12 @@ ms.author: jlian
 ms.custom:
 - amqp
 - mqtt
-ms.openlocfilehash: fc5029f26e5d615502925c4def4e2973c118f38d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 421066ef30e23a79b26f97939cdfffb5be83afb5
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90029993"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92148244"
 ---
 # <a name="403004-devicemaximumqueuedepthexceeded"></a>403004 DeviceMaximumQueueDepthExceeded
 
@@ -38,4 +38,4 @@ ms.locfileid: "90029993"
 
 Кроме того, можно улучшить логику устройства, чтобы быстро завершить, отклонять или отменять сообщения в очереди, сократить время жизни или отсылать меньше сообщений. См. о [сроке жизни сообщений, отправляемых из облака на устройство](./iot-hub-devguide-messages-c2d.md#message-expiration-time-to-live).
 
-Наконец, рассмотрите возможность использования [API очистки очереди](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/iothub-registrymanager-h/iothubregistrymanager-deletedevice) для периодической очистки ожидающих сообщений до достижения предела.
+Наконец, рассмотрите возможность использования [API очистки очереди](/azure/iot-hub/iot-c-sdk-ref/iothub-registrymanager-h/iothubregistrymanager-deletedevice) для периодической очистки ожидающих сообщений до достижения предела.

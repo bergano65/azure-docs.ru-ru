@@ -6,12 +6,12 @@ ms.service: data-lake-store
 ms.topic: how-to
 ms.date: 12/19/2016
 ms.author: stewu
-ms.openlocfilehash: 71207509f20c80cf85311cba7b647aaca0a49e42
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 68f30079d85e2064b92718c65b38dbb5069d810b
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88192817"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92101653"
 ---
 # <a name="performance-tuning-guidance-for-storm-on-hdinsight-and-azure-data-lake-storage-gen1"></a>Рекомендации по настройке производительности для Storm в HDInsight и Azure Data Lake Storage 1-го поколения
 
@@ -22,8 +22,8 @@ ms.locfileid: "88192817"
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 * **Учетная запись Azure Data Lake Storage 1-го поколения**. За инструкциями по созданию учетной записи обращайтесь к статье [Начало работы с Azure Data Lake Storage 1-го поколения](data-lake-store-get-started-portal.md).
 * **Кластер Azure HDInsight** с доступом к учетной записи Data Lake Storage 1-го поколения. Дополнительные сведения см. в статье [Создание кластеров HDInsight, использующих Data Lake Store, с помощью портала Azure](data-lake-store-hdinsight-hadoop-use-portal.md). Убедитесь, что вы включили удаленный рабочий стол для кластера.
-* **Запущенный кластер Storm в Data Lake Storage 1-го поколения**. Дополнительные сведения см. в разделе о чем больше [в HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-storm-overview).
-* **Рекомендации по настройке производительности для Data Lake Storage 1-го поколения**.  Общие вопросы производительности описаны в [рекомендациях по настройке производительности Data Lake Storage 1-го поколения](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-performance-tuning-guidance).  
+* **Запущенный кластер Storm в Data Lake Storage 1-го поколения**. Дополнительные сведения см. в разделе о чем больше [в HDInsight](../hdinsight/storm/apache-storm-overview.md).
+* **Рекомендации по настройке производительности для Data Lake Storage 1-го поколения**.  Общие вопросы производительности описаны в [рекомендациях по настройке производительности Data Lake Storage 1-го поколения](./data-lake-store-performance-tuning-guidance.md).  
 
 ## <a name="tune-the-parallelism-of-the-topology"></a>Настройка параллелизма топологии
 
@@ -129,7 +129,7 @@ ms.locfileid: "88192817"
 1. В **Ambari**  >  **Storm**  >  **файле config**Ambari  >  **с расширенным набором данных-Worker-log4j**измените значение ** &lt; корневого &gt; уровня = "info"** на ** &lt; root &gt; Level = "Отладка"**. Перезапустите все узлы и службы, чтобы изменения конфигурации вступили в силу.
 2. Отслеживайте журналы топологии на рабочих узлах Storm (в разделе /var/log/storm/worker-artifacts/&lt;TopologyName&gt;/&lt;port&gt;/worker.log) на предмет наличия исключений регулирования Data Lake Storage 1-го поколения.
 
-## <a name="next-steps"></a>Дальнейшие шаги
-В [этом блоге](https://blogs.msdn.microsoft.com/shanyu/2015/05/14/performance-tuning-for-hdinsight-storm-and-microsoft-azure-eventhubs/)можно ссылаться на дополнительную настройку производительности для работы с ними.
+## <a name="next-steps"></a>Дальнейшие действия
+В [этом блоге](/archive/blogs/shanyu/performance-tuning-for-hdinsight-storm-and-microsoft-azure-eventhubs)можно ссылаться на дополнительную настройку производительности для работы с ними.
 
 Дополнительный пример для запуска есть [в этом разделе GitHub](https://github.com/hdinsight/storm-performance-automation).

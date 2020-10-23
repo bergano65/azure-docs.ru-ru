@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6c062b907f1e8a8e0541db0d69c6e24901f3145f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0fe19a1fadd54b7146ccb074d82a68ec259100f2
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89268559"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92093265"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-joined-devices-manually"></a>Руководство по Настройка устройств с гибридным присоединением к Azure Active Directory
 
@@ -564,7 +564,7 @@ Azure AD Connect выполняет следующие функции:
 ### <a name="using-the-azure-portal"></a>Использование портала Azure
 
 1. Перейдите на страницу устройства по [прямой ссылке](https://portal.azure.com/#blade/Microsoft_AAD_IAM/DevicesMenuBlade/Devices).
-2. См. сведения о том, как найти устройство, в статье [Управление удостоверениями устройств с помощью портала Azure](https://docs.microsoft.com/azure/active-directory/devices/device-management-azure-portal#locate-devices).
+2. См. сведения о том, как найти устройство, в статье [Управление удостоверениями устройств с помощью портала Azure](./device-management-azure-portal.md#manage-devices).
 3. Если для столбца **Зарегистрировано** отображается состояние **Ожидается**, это значит, что гибридное присоединение к Azure AD не завершено. В федеративных средах это может произойти, только если не удалось выполнить регистрацию, а для AAD Connect настроена синхронизация устройств.
 4. Если для столбца **Зарегистрировано** отображается **дата и время**, это значит, что гибридное присоединение к Azure AD завершено.
 

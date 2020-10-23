@@ -13,22 +13,23 @@ ms.date: 08/20/2020
 ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 4020f47184e141a69586fc958f641547d7bde94d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8634efa1e8e5ab8a3b962b711ec8dfcdac4e6ced
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89482806"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92164573"
 ---
-# <a name="configure-an-availability-group-for-sql-server-on-azure-vm-azure-portal---preview"></a>Настройка группы доступности для SQL Server на виртуальной машине Azure (портал Azure-Preview)
+# <a name="use-azure-portal-to-configure-an-availability-group-preview-for-sql-server-on-azure-vm"></a>Использование портал Azure для настройки группы доступности (Предварительная версия) для SQL Server на виртуальной машине Azure 
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
 
 В этой статье описывается, как использовать [портал Azure](https://portal.azure.com) для настройки группы доступности для SQL Server на виртуальных машинах Azure. 
 
 Используйте портал Azure для создания нового кластера или подключения существующего кластера, а затем создайте группу доступности, прослушиватель и внутреннюю подсистему балансировки нагрузки. 
 
-   > [!NOTE]
-   > Эта функция в настоящее время находится на этапе предварительной версии и развертывается, поэтому если нужный регион недоступен, проверьте его позже. 
+Эта функция в настоящее время находится на стадии предварительной версии. 
+
+Хотя в этой статье для настройки среды группы доступности используется портал Azure, это можно сделать с помощью [PowerShell или Azure CLI](availability-group-az-commandline-configure.md), шаблонов быстрого запуска [Azure](availability-group-quickstart-template-configure.md)или [вручную](availability-group-manually-configure-tutorial.md) . 
 
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -175,7 +176,7 @@ ms.locfileid: "89482806"
 
 ## <a name="remove-cluster"></a>Удалить кластер
 
-Удалите все SQL Server виртуальные машины из кластера, чтобы уничтожить их, а затем удалите метаданные кластера из поставщика ресурсов виртуальной машины SQL. Это можно сделать с помощью последней версии [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) или PowerShell. 
+Удалите все SQL Server виртуальные машины из кластера, чтобы уничтожить их, а затем удалите метаданные кластера из поставщика ресурсов виртуальной машины SQL. Это можно сделать с помощью последней версии [Azure CLI](/cli/azure/install-azure-cli) или PowerShell. 
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
@@ -259,7 +260,7 @@ Remove-AzSqlVMGroup -ResourceGroupName "<resource group name>" -Name "<cluster n
 - Убедитесь, что учетные данные, указанные на портале, соответствуют службам SQL Server. 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 
 Дополнительные сведения о группах доступности см. в следующих статьях:

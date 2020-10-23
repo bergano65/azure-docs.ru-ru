@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 05/22/2019
 ms.author: jeedes
-ms.openlocfilehash: 507298f323fe14e3b114afebed5f2f258145a76e
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: bc820eb282d08c248b588aa926eb3fd837fe51c3
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88549948"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91858138"
 ---
 # <a name="tutorial-integrate-knowledge-anywhere-lms-with-azure-active-directory"></a>Руководство по Интеграция Knowledge Anywhere LMS с Azure Active Directory
 
@@ -111,19 +111,19 @@ ms.locfileid: "88549948"
 
 4. Выберите вкладку **Сайт**.
 
-    ![Конфигурация Knowledge Anywhere LMS](./media/knowledge-anywhere-lms-tutorial/configure1.png)
+    ![Снимок экрана для вкладки "Сайт".](./media/knowledge-anywhere-lms-tutorial/configure1.png)
 
 5. Выберите вкладку **SAML Settings** (Параметры SAML).
 
-    ![Конфигурация Knowledge Anywhere LMS](./media/knowledge-anywhere-lms-tutorial/configure2.png)
+    ![Снимок экрана для страницы Knowledge Anywhere, где выбраны параметры SAML.](./media/knowledge-anywhere-lms-tutorial/configure2.png)
 
 6. Щелкните **Добавить**.
 
-    ![Конфигурация Knowledge Anywhere LMS](./media/knowledge-anywhere-lms-tutorial/configure3.png)
+    ![Снимок экрана демонстрирует кнопку добавления в разделе параметров поставщика услуг.](./media/knowledge-anywhere-lms-tutorial/configure3.png)
 
 7. На странице **Add/Update SAML Settings** (Добавить/обновить параметры SAML) выполните следующие действия.
 
-    ![Конфигурация Knowledge Anywhere LMS](./media/knowledge-anywhere-lms-tutorial/configure4.png)
+    ![Снимок экрана для страницы добавления или обновления параметров SAML, на которой можно внести описанные здесь изменения.](./media/knowledge-anywhere-lms-tutorial/configure4.png)
 
     а. Введите имя поставщика удостоверений в соответствии с вашей организацией. Например: `Azure`.
 

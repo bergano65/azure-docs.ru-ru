@@ -3,12 +3,12 @@ title: Использование Akka Streams для Apache Kafka с Центр
 description: В этой статье содержатся сведения о подключении потоков Akka Streams к концентратору событий Azure.
 ms.topic: how-to
 ms.date: 06/23/2020
-ms.openlocfilehash: 1fbbeef37c4cbdd52d2127c5242474ac46e42d25
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 92ab927189329493696c70b61ffc7f11cad22a66
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90061705"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92369579"
 ---
 # <a name="using-akka-streams-with-event-hubs-for-apache-kafka"></a>Использование Akka Streams с Центрами событий для Apache Kafka
 
@@ -30,15 +30,15 @@ ms.locfileid: "90061705"
 
 * Прочтите статью [Центры событий Azure для Apache Kafka](event-hubs-for-kafka-ecosystem-overview.md). 
 * Подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начать работу.
-* [Комплект разработчика Java (JDK) 1.8+](https://aka.ms/azure-jdks).
+* [Комплект разработчика Java (JDK) 1.8+](/azure/developer/java/fundamentals/java-jdk-long-term-support).
     * В Ubuntu выполните команду `apt-get install default-jdk`, чтобы установить JDK.
     * Обязательно настройте переменную среды JAVA_HOME так, чтобы она указывала на папку, в которой установлен пакет JDK.
 * [Скачивание](https://maven.apache.org/download.cgi) и [Установка](https://maven.apache.org/install.html) двоичного архива Maven
     * В Ubuntu выполните команду `apt-get install maven`, чтобы установить Maven.
-* [Git](https://www.git-scm.com/downloads);
+* [GIT](https://www.git-scm.com/downloads)
     * В Ubuntu выполните команду `sudo apt-get install git`, чтобы установить Git.
 
-## <a name="create-an-event-hubs-namespace"></a>Создание пространства имен в Центрах событий
+## <a name="create-an-event-hubs-namespace"></a>Создание пространства имен Центров событий
 
 Для отправки и получения данных из любой службы концентраторов событий требуется пространство имен концентраторов событий. Подробные сведения см. [в разделе Создание концентратора событий](event-hubs-create.md) . Скопируйте строку подключения к Центрам событий для дальнейшего использования.
 
@@ -76,6 +76,10 @@ akka.kafka.producer {
     }
 }
 ```
+
+> [!IMPORTANT]
+> Замените `{YOUR.EVENTHUBS.CONNECTION.STRING}` строками подключения для вашего пространства имен Центров событий. Инструкции по получению строки подключения см. в разделе [Получение строки подключения концентраторов событий](event-hubs-get-connection-string.md). Ниже приведен пример конфигурации. `sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="Endpoint=sb://mynamespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=XXXXXXXXXXXXXXXX";`
+
 
 ### <a name="run-producer-from-the-command-line"></a>Запуск производителя из командной строки
 
@@ -116,6 +120,10 @@ akka.kafka.consumer {
     }
 }
 ```
+
+> [!IMPORTANT]
+> Замените `{YOUR.EVENTHUBS.CONNECTION.STRING}` строками подключения для вашего пространства имен Центров событий. Инструкции по получению строки подключения см. в разделе [Получение строки подключения концентраторов событий](event-hubs-get-connection-string.md). Ниже приведен пример конфигурации. `sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="Endpoint=sb://mynamespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=XXXXXXXXXXXXXXXX";`
+
 
 ### <a name="run-consumer-from-the-command-line"></a>Запуск потребителя из командной строки
 

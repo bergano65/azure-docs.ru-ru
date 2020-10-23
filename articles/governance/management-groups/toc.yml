@@ -28,6 +28,11 @@
     - name: Создание группы управления с помощью REST
       displayName: hierarchy
       href: ./create-management-group-rest-api.md
+- name: Учебники
+  items:
+    - name: 'Learn: Создание стратегии управления подписками'
+      displayName: 'governance, module'
+      href: /learn/modules/build-cloud-governance-strategy-azure/3-create-subscription-governance-strategy
 - name: Практические руководства
   expanded: true
   items:

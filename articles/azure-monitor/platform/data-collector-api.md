@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 07/14/2020
-ms.openlocfilehash: 40f688d6acd1714999210e67567d25faa14c5d6e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 530aa17a165092fc9219629180c81014039c3dac
+ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87384860"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92132692"
 ---
 # <a name="send-log-data-to-azure-monitor-with-the-http-data-collector-api-public-preview"></a>Отправка данных журналов в Azure Monitor c помощью API сборщика данных HTTP (общедоступная предварительная версия)
 В этой статье показано, как с помощью API сборщика данных HTTP отправлять данные журналов в Azure Monitor из клиента REST API.  Здесь также описано, как отформатировать данные, собранные скриптом или приложением, добавить их в запрос и авторизовать этот запрос в Azure Monitor.  В этой статье приведены примеры для PowerShell, C# и Python.
@@ -54,7 +54,7 @@ API сборщика данных HTTP можно использовать дл�
 | Авторизация |Подпись авторизации. Далее в этой статье вы найдете сведения о том, как создать заголовок HMAC-SHA256. |
 | Log-Type |Укажите тип записи для отправляемых данных. Может содержать только буквы, цифры и символы подчеркивания (_) и не может превышать 100 символов. |
 | x-ms-date |Дата обработки запроса в формате RFC 1123. |
-| x-MS-Азурересаурцеид | Идентификатор ресурса Azure, с которым должны быть связаны данные. Заполняет свойство [_ResourceId](log-standard-properties.md#_resourceid) и позволяет включать данные в запросы [контекста ресурсов](design-logs-deployment.md#access-mode) . Если это поле не указано, данные не будут включаться в запросы контекста ресурсов. |
+| x-MS-Азурересаурцеид | Идентификатор ресурса Azure, с которым должны быть связаны данные. Заполняет свойство [_ResourceId](./log-standard-columns.md#_resourceid) и позволяет включать данные в запросы [контекста ресурсов](design-logs-deployment.md#access-mode) . Если это поле не указано, данные не будут включаться в запросы контекста ресурсов. |
 | time-generated-field | Имя поля данных, содержащее метку времени элемента данных. Если вы укажете здесь поле, его содержимое будет использоваться как значение параметра **TimeGenerated**. Если это поле не указано, по умолчанию для **TimeGenerated** будет использоваться время приема сообщения. Содержимое поля сообщения должно соответствовать формату ISO 8601: YYYY-MM-DDThh:mm:ssZ. |
 
 ## <a name="authorization"></a>Авторизация
@@ -549,6 +549,98 @@ def post_data(customer_id, shared_key, body, log_type):
         print("Response code: {}".format(response.status_code))
 
 post_data(customer_id, shared_key, body, log_type)
+```
+
+
+### <a name="java-sample"></a>Пример Java
+
+```java
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.springframework.http.MediaType;
+
+import javax.crypto.Mac;
+import javax.crypto.spec.SecretKeySpec;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import java.text.SimpleDateFormat;
+import java.util.Base64;
+import java.util.Calendar;
+import java.util.TimeZone;
+
+import static org.springframework.http.HttpHeaders.CONTENT_TYPE;
+
+public class ApiExample {
+
+  private static final String workspaceId = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx";
+  private static final String sharedKey = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+  private static final String logName = "DemoExample";
+  /*
+  You can use an optional field to specify the timestamp from the data. If the time field is not specified,
+  Azure Monitor assumes the time is the message ingestion time
+   */
+  private static final String timestamp = "";
+  private static final String json = "{\"name\": \"test\",\n" + "  \"id\": 1\n" + "}";
+  private static final String RFC_1123_DATE = "EEE, dd MMM yyyy HH:mm:ss z";
+
+  public static void main(String[] args) throws IOException, NoSuchAlgorithmException, InvalidKeyException {
+    String dateString = getServerTime();
+    String httpMethod = "POST";
+    String contentType = "application/json";
+    String xmsDate = "x-ms-date:" + dateString;
+    String resource = "/api/logs";
+    String stringToHash = String
+        .join("\n", httpMethod, String.valueOf(json.getBytes(StandardCharsets.UTF_8).length), contentType,
+            xmsDate , resource);
+    String hashedString = getHMAC254(stringToHash, sharedKey);
+    String signature = "SharedKey " + workspaceId + ":" + hashedString;
+
+    postData(signature, dateString, json);
+  }
+
+  private static String getServerTime() {
+    Calendar calendar = Calendar.getInstance();
+    SimpleDateFormat dateFormat = new SimpleDateFormat(RFC_1123_DATE);
+    dateFormat.setTimeZone(TimeZone.getTimeZone("GMT"));
+    return dateFormat.format(calendar.getTime());
+  }
+
+  private static void postData(String signature, String dateString, String json) throws IOException {
+    String url = "https://" + workspaceId + ".ods.opinsights.azure.com/api/logs?api-version=2016-04-01";
+    HttpPost httpPost = new HttpPost(url);
+    httpPost.setHeader("Authorization", signature);
+    httpPost.setHeader(CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE);
+    httpPost.setHeader("Log-Type", logName);
+    httpPost.setHeader("x-ms-date", dateString);
+    httpPost.setHeader("time-generated-field", timestamp);
+    httpPost.setEntity(new StringEntity(json));
+    try(CloseableHttpClient httpClient = HttpClients.createDefault()){
+      HttpResponse response = httpClient.execute(httpPost);
+      int statusCode = response.getStatusLine().getStatusCode();
+      System.out.println("Status code: " + statusCode);
+    }
+  }
+
+  private static String getHMAC254(String input, String key) throws InvalidKeyException, NoSuchAlgorithmException {
+    String hash;
+    Mac sha254HMAC = Mac.getInstance("HmacSHA256");
+    Base64.Decoder decoder = Base64.getDecoder();
+    SecretKeySpec secretKey = new SecretKeySpec(decoder.decode(key.getBytes(StandardCharsets.UTF_8)), "HmacSHA256");
+    sha254HMAC.init(secretKey);
+    Base64.Encoder encoder = Base64.getEncoder();
+    hash = new String(encoder.encode(sha254HMAC.doFinal(input.getBytes(StandardCharsets.UTF_8))));
+    return hash;
+  }
+
+}
+
+
 ```
 
 

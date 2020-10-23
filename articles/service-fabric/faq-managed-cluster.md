@@ -6,12 +6,12 @@ ms.author: pepogors
 author: peterpogorski
 ms.date: 09/28/2020
 ms.custom: references_regions
-ms.openlocfilehash: 77d7b3fba62fb9f059df97c4f7fae99db783f3f0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4dc41d2c13c834657534971041440bb744cfca38
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91729004"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92319824"
 ---
 # <a name="service-fabric-managed-clusters-frequently-asked-questions"></a>Распространенные вопросы об управляемых кластерах Service Fabric
 
@@ -41,7 +41,7 @@ Service Fabric управляемые кластеры — это эволюци
 
 ### <a name="what-is-the-difference-between-a-basic-and-standard-sku-cluster"></a>В чем разница между базовым и кластером SKU уровня "Стандартный"?
 
-Базовый кластер SKU означает, что большинство конфигураций предоставляется поставщиком ресурсов Service Fabric. Кластеры уровня "базовый" предназначены для тестирования и подготовки в рабочей среде. Кластер уровня SKU "Стандартный" позволяет пользователям настраивать кластер в соответствии с потребностями. Дополнительные сведения см. в разделе [Service Fabric SKU управляемого кластера](https://docs.microsoft.com/azure/service-fabric/overview-managed-cluster#service-fabric-managed-cluster-skus) .
+Базовый кластер SKU означает, что большинство конфигураций предоставляется поставщиком ресурсов Service Fabric. Кластеры уровня "базовый" предназначены для тестирования и подготовки в рабочей среде. Кластер уровня SKU "Стандартный" позволяет пользователям настраивать кластер в соответствии с потребностями. Дополнительные сведения см. в разделе [Service Fabric SKU управляемого кластера](./overview-managed-cluster.md#service-fabric-managed-cluster-skus) .
 
 ## <a name="cluster-deployment-and-management"></a>Развертывание кластера и управление им
 
@@ -62,11 +62,11 @@ Service Fabric управляемые кластеры — это эволюци
 ### <a name="can-i-select-between-automatic-and-manual-upgrades-for-my-cluster-runtime"></a>Можно ли выбрать между автоматическим и ручным обновлением среду выполнения кластера? 
 В предварительной версии все обновления среды выполнения будут выполняться автоматически.
 
-## <a name="applications"></a>Приложения
+## <a name="applications"></a>приложения;
 
 ### <a name="is-there-a-local-development-experience-for-service-fabric-managed-clusters"></a>Существует ли локальная среда разработки для Service Fabric управляемых кластеров?
 
-Локальная среда разработки остается неизменной по отношению к существующим Service Fabric кластерам. Дополнительные сведения см. в статье [Создание приложения .NET](https://docs.microsoft.com/azure/service-fabric/service-fabric-quickstart-dotnet) для получения дополнительных сведений о локальном интерфейсе разработки.
+Локальная среда разработки остается неизменной по отношению к существующим Service Fabric кластерам. Дополнительные сведения см. в статье [Создание приложения .NET](./service-fabric-quickstart-dotnet.md) для получения дополнительных сведений о локальном интерфейсе разработки.
 
 ### <a name="can-i-deploy-my-applications-as-an-azure-resource-manager-resource"></a>Можно ли развернуть приложения как ресурс Azure Resource Manager?
 

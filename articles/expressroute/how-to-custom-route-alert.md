@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: how-to
 ms.date: 05/29/2020
 ms.author: duau
-ms.openlocfilehash: 67591e9227ff32e81b973c181da2c1374f0ded47
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a960150d68cf2f939e206321a20d98b0e4080313
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91766673"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92371500"
 ---
 # <a name="configure-custom-alerts-to-monitor-advertised-routes"></a>Настройка пользовательских оповещений для отслеживания объявляемых маршрутов
 
@@ -42,7 +42,7 @@ ms.locfileid: "91766673"
 
 * Вы знакомы с [Azure Logic Apps](../logic-apps/logic-apps-overview.md).
 
-* Вы знакомы с использованием Azure PowerShell. Azure PowerShell требуется для получения префиксов сети в шлюзе ExpressRoute. Дополнительные сведения о Azure PowerShell в целом см. в [документации по Azure PowerShell](https://docs.microsoft.com/powershell/azure/?view=azps-4.1.0).
+* Вы знакомы с использованием Azure PowerShell. Azure PowerShell требуется для получения префиксов сети в шлюзе ExpressRoute. Дополнительные сведения о Azure PowerShell в целом см. в [документации по Azure PowerShell](/powershell/azure/?view=azps-4.1.0).
 
 ### <a name="notes-and-limitations"></a><a name="limitations"></a>Примечания и ограничения
 
@@ -58,7 +58,7 @@ ms.locfileid: "91766673"
 
 * Создает учетную запись субъекта-службы для приложения в Azure AD.
 
-* Назначает себе роль участника (RBAC) в используемой подписке Azure. Эта роль управляет ресурсами Azure Resource Manager с помощью модулей Runbook.
+* Назначает себе роль участника (Azure RBAC) в используемой подписке Azure. Эта роль управляет ресурсами Azure Resource Manager с помощью модулей Runbook.
 
 Чтобы создать учетную запись службы автоматизации, необходимы права и разрешения. Дополнительные сведения см. [в разделе разрешения, необходимые для создания учетной записи службы автоматизации](../automation/automation-create-standalone-account.md#permissions-required-to-create-an-automation-account).
 
@@ -70,7 +70,7 @@ ms.locfileid: "91766673"
 
 ### <a name="2-assign-the-run-as-account-a-role"></a><a name="about"></a>2. Назначение роли учетной записи запуска от имени
 
-По умолчанию роль **участника** назначается субъекту-службе, используемому учетной записью **запуска от имени** . Можно защитить роль по умолчанию, назначенную субъекту-службе, или ограничить разрешения, назначив [встроенную роль](../role-based-access-control/built-in-roles.md) (например, читатель) или [настраиваемую роль](../active-directory/users-groups-roles/roles-create-custom.md).
+По умолчанию роль **участника** назначается субъекту-службе, используемому учетной записью **запуска от имени** . Можно защитить роль по умолчанию, назначенную субъекту-службе, или ограничить разрешения, назначив [встроенную роль](../role-based-access-control/built-in-roles.md) (например, читатель) или [настраиваемую роль](../active-directory/roles/custom-create.md).
 
  Чтобы определить роль, назначенную субъекту-службе, используемому учетной записью запуска от имени, выполните следующие действия.
 
@@ -257,7 +257,7 @@ Write-Output  $jsonResults
 
 * Предупреждающее сообщение для подробного описания состояния (ОК, предупреждение, предупреждение)
 
-Сценарий PowerShell преобразует собранные данные в выходные данные JSON. Модуль Runbook использует командлет PowerShell [Write-Output](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Utility/Write-Output?)  в качестве потока вывода для передачи информации клиенту.
+Сценарий PowerShell преобразует собранные данные в выходные данные JSON. Модуль Runbook использует командлет PowerShell [Write-Output](/powershell/module/Microsoft.PowerShell.Utility/Write-Output)  в качестве потока вывода для передачи информации клиенту.
 
 ### <a name="4-validate-the-runbook"></a><a name="validate"></a>4. Проверка модуля Runbook
 

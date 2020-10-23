@@ -5,12 +5,12 @@ author: eamonoreilly
 ms.topic: conceptual
 ms.custom: devx-track-dotnet, devx-track-azurepowershell
 ms.date: 04/22/2019
-ms.openlocfilehash: 1da4154530f823d391aea779011a34a35edfd070
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 796aca02e6f70da8f5b94f6bbdbd2fd1d535bd77
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89071165"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92108479"
 ---
 # <a name="azure-functions-powershell-developer-guide"></a>Руководство разработчика PowerShell для Функций Azure.
 
@@ -143,7 +143,7 @@ Produce-MyOutputValue | Push-OutputBinding -Name myQueue
 * `PipelineVariable`
 * `OutVariable` 
 
-Дополнительные сведения см. в разделе [About общиепараметры](https://go.microsoft.com/fwlink/?LinkID=113216).
+Дополнительные сведения см. в разделе [About общиепараметры](/powershell/module/microsoft.powershell.core/about/about_commonparameters).
 
 #### <a name="push-outputbinding-example-http-responses"></a>Push-OutputBinding пример: HTTP-ответы
 
@@ -560,7 +560,7 @@ Write-Host $env:WEBSITE_SITE_NAME
 
 Эти переменные среды задаются в [параметрах приложения](functions-app-settings.md) для приложения функции.
 
-В зависимости от варианта использования Устойчивые функции может значительно повысить масштабируемость. Дополнительные сведения см. в разделе [шаблоны приложений устойчивые функции](/azure/azure-functions/durable/durable-functions-overview?tabs=powershell#application-patterns).
+В зависимости от варианта использования Устойчивые функции может значительно повысить масштабируемость. Дополнительные сведения см. в разделе [шаблоны приложений устойчивые функции](./durable/durable-functions-overview.md?tabs=powershell#application-patterns).
 
 >[!NOTE]
 > Вы можете получить сообщение "запросы помещаются в очередь из-за отсутствия доступных пространств выполнения". Обратите внимание, что это не ошибка. Сообщение говорит о том, что запросы помещаются в очередь и будут обработаны после завершения предыдущих запросов.

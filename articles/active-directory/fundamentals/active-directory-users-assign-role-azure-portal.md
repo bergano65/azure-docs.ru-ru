@@ -13,25 +13,25 @@ ms.author: ajburnle
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fb7ab83bc9939d2f0b4b0ff0860ea97a0b07f12f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fe0c7eec5c023fcba3152ad6329d318210a0c2ab
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89321248"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92370939"
 ---
 # <a name="assign-administrator-and-non-administrator-roles-to-users-with-azure-active-directory"></a>Назначение ролей администратора и других ролей пользователям с помощью Azure Active Directory
 
 В Azure Active Directory (Azure AD), если одному из пользователей требуется разрешение на управление ресурсами Azure AD, необходимо назначить их роли, предоставляющей необходимые им разрешения. Сведения о том, какие роли управляют ресурсами Azure и какие роли управляют ресурсами Azure AD, см. в статье [роли администратора классической подписки, роли Azure и роли Azure AD](../../role-based-access-control/rbac-and-directory-admin-roles.md).
 
-Дополнительные сведения о доступных ролях Azure AD см. в разделе [назначение ролей администратора в Azure Active Directory](../users-groups-roles/directory-assign-admin-roles.md). Сведения о добавлении пользователей см. в разделе [Добавление новых пользователей в Azure Active Directory](add-users-azure-active-directory.md).
+Дополнительные сведения о доступных ролях Azure AD см. в разделе [назначение ролей администратора в Azure Active Directory](../roles/permissions-reference.md). Сведения о добавлении пользователей см. в разделе [Добавление новых пользователей в Azure Active Directory](add-users-azure-active-directory.md).
 
 ## <a name="assign-roles"></a>Назначение ролей
 
 Распространенным способом назначения ролей Azure AD для пользователя является страница « **назначенные роли** » для пользователя. Кроме того, можно настроить право на повышение прав пользователя в роли с помощью управление привилегированными пользователями (PIM). Дополнительные сведения об использовании PIM см. в разделе [Управление привилегированными пользователями](../privileged-identity-management/index.yml).
 
 > [!Note]
-> Если у вас есть план лицензирования Azure AD Premium P2 и уже используется PIM, все задачи управления ролями выполняются в [Управление привилегированными пользователями](../users-groups-roles/directory-manage-roles-portal.md). В настоящее время эта функция ограничена одновременной назначением одной роли. Сейчас нельзя выбрать несколько ролей и назначить их пользователю одновременно.
+> Если у вас есть план лицензирования Azure AD Premium P2 и уже используется PIM, все задачи управления ролями выполняются в [Управление привилегированными пользователями](../roles/manage-roles-portal.md). В настоящее время эта функция ограничена одновременной назначением одной роли. Сейчас нельзя выбрать несколько ролей и назначить их пользователю одновременно.
 >
 > ![Роли Azure AD, управляемые в PIM для пользователей, которые уже используют PIM и имеют лицензию Premium P2](./media/active-directory-users-assign-role-azure-portal/pim-manages-roles-for-p2.png)
 
@@ -81,4 +81,4 @@ ms.locfileid: "89321248"
 
 - [Добавление гостевых пользователей из другого каталога](../external-identities/what-is-b2b.md)
 
-Другие задачи управления пользователями, которые вы можете извлечь, доступны в [Azure Active Directory документации по управлению пользователями](../users-groups-roles/index.yml).
+Другие задачи управления пользователями, которые вы можете извлечь, доступны в [Azure Active Directory документации по управлению пользователями](../enterprise-users/index.yml).

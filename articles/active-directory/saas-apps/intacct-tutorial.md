@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 08/05/2020
 ms.author: jeedes
-ms.openlocfilehash: 79a77d3c55ee4ac545712329f0054123bec8fcae
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: e01bc36f0f30cec779652a603aaf7bdb496e5190
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88535868"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91850580"
 ---
 # <a name="tutorial-integrate-sage-intacct-with-azure-active-directory"></a>Руководство по интеграции Sage Intacct с Azure Active Directory
 
@@ -189,7 +189,7 @@ ms.locfileid: "88535868"
 
 1. В разделе **Информация о пользователе** сделайте следующее:
 
-    ![Информация о пользователе](./media/intacct-tutorial/ic790043.png "Информация о пользователе")
+    ![Снимок экрана, на котором показан раздел параметров пользователя, где можно ввести описанные здесь значения.](./media/intacct-tutorial/ic790043.png "Информация о пользователе")
 
     а. В разделе **User Information** (Сведения пользователя) введите значения **User ID** (Идентификатор пользователя), **Last Name** (Фамилия), **First name** (Имя), **Email address** (Адрес электронной почты), **Title** (Обращение) и **Phone** (Телефон) учетной записи Azure AD, которую вы хотите подготовить.
 
@@ -204,7 +204,7 @@ ms.locfileid: "88535868"
 
 1. Щелкните вкладку **Единый вход** и убедитесь, что **идентификатор пользователя федеративного единого входа** на приведенном ниже снимке экрана, и **исходный атрибут**, сопоставленный с `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier` в разделе **Атрибуты пользователя** на портале Azure совпадают.
 
-    ![Информация о пользователе](./media/intacct-tutorial/ic790044.png "Информация о пользователе")
+    ![Снимок экрана для раздела сведений о пользователе, где можно ввести идентификатор пользователя для федеративного единого входа.](./media/intacct-tutorial/ic790044.png "Информация о пользователе")
 
 > [!NOTE]
 > Для подготовки учетных записей пользователя Azure AD можно использовать любые другие средства создания учетной записи пользователя Sage Intacct или API, предоставляемые Sage Intacct.

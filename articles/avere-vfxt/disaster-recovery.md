@@ -6,12 +6,12 @@ ms.service: avere-vfxt
 ms.topic: conceptual
 ms.date: 12/10/2019
 ms.author: rohogue
-ms.openlocfilehash: 28278f76497d6e9d0fee221bb4ef32fe6d369db0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5cc4678b082aa5a4a3f90518ff8fac448f414f1a
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75966649"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92342252"
 ---
 # <a name="disaster-recovery-guidance-for-avere-vfxt-for-azure"></a>Руководство по аварийному восстановлению для Авере Вфкст для Azure
 
@@ -112,12 +112,12 @@ ms.locfileid: "75966649"
 
 1. При необходимости обновите клиенты, чтобы они подключались к новому кластеру или новым основным фильтр, а не к исходному. (Если вы добавили замену Core фильтр с тем же именем и путем соединения, что и в исходном контейнере, вам не потребуется обновлять клиентские процессы, если не требуется подключать новый кластер по новому IP-адресу.)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения о настройке параметров для Авере Вфкст для Azure см. в статье [Настройка кластера](avere-vfxt-tuning.md).
 * Дополнительные сведения об аварийном восстановлении и создании устойчивых приложений в Azure:
 
-  * [Техническое руководство по обеспечению устойчивости в Azure](https://docs.microsoft.com/azure/architecture/framework/resiliency/overview)
-  * [Восстановление после прерывания работы служб во всем регионе](https://docs.microsoft.com/azure/architecture/resiliency/recovery-loss-azure-region)
-  * [Аварийное восстановление и высокий уровень доступности для приложений Azure](<https://docs.microsoft.com/azure/resiliency/resiliency-disaster-recovery-high-availability-azure-applications>)
+  * [Техническое руководство по обеспечению устойчивости в Azure](/azure/architecture/framework/resiliency/overview)
+  * [Восстановление после прерывания работы служб во всем регионе](/azure/architecture/resiliency/recovery-loss-azure-region)
+  * [Аварийное восстановление и высокий уровень доступности для приложений Azure](/azure/architecture/framework/resiliency/backup-and-recovery)
   <!-- can't find these in the source tree to use relative links -->

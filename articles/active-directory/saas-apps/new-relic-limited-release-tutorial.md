@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/04/2020
 ms.author: jeedes
-ms.openlocfilehash: a1d74e79f2b375f481c6557c04deb80dcb929b99
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 62732f92d0739018863229da0a05646cfa817006
+ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88554437"
+ms.lasthandoff: 10/11/2020
+ms.locfileid: "91941038"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-new-relic-by-organization"></a>Руководство по интеграции единого входа Azure Active Directory с New Relic (By Organization)
 
@@ -82,15 +82,15 @@ ms.locfileid: "88554437"
 
     а. Щелкните **Отправить файл метаданных**.
 
-    ![Изображение](common/upload-metadata.png)
+    ![Снимок экрана: раздел "Базовая конфигурация SAML" со ссылкой "Отправить файл метаданных".](common/upload-metadata.png)
 
     b. Щелкните **значок папки**, выберите файл метаданных и нажмите кнопку **Отправить**.
 
-    ![Изображение](common/browse-upload-metadata.png)
+    ![Снимок экрана: диалоговое окно, где можно выбрать и отправить файл.](common/browse-upload-metadata.png)
 
     c. После успешной передачи файла метаданных значения **Идентификатор** и **URL-адрес ответа** в разделе "Базовая конфигурация SAML" заполнятся автоматически.
 
-    ![Изображение](common/idp-intiated.png)
+    ![Снимок экрана, на котором показан раздел "Базовая конфигурация SAML", где можно ввести идентификатор, URL-адрес ответа и нажать кнопку "Сохранить"](common/idp-intiated.png)
 
     > [!Note]
     > Если поля **Идентификатор** и **URL-адрес ответа** автоматически не заполняются значениями, введите эти значения вручную в соответствии со своими требованиями.

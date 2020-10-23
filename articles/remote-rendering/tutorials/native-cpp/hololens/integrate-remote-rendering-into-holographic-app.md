@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 05/04/2020
 ms.topic: tutorial
-ms.openlocfilehash: 9457323b2642d0e7c5a623c13ec8440520bd5b8b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 56e889778e3b598dc4ded5f64eef20101c542b6a
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88891782"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92207518"
 ---
 # <a name="tutorial-integrate-remote-rendering-into-a-hololens-holographic-app"></a>Руководство по Интеграция Удаленной отрисовки в голографическом приложении HoloLens
 
@@ -33,7 +33,7 @@ ms.locfileid: "88891782"
 * Данные учетной записи (идентификатор и ключ учетной записи, идентификатор подписки). Если у вас нет учетной записи, [создайте ее](../../../how-tos/create-an-account.md).
 * Windows SDK 10.0.18362.0 [(скачать)](https://developer.microsoft.com/windows/downloads/windows-10-sdk).
 * Последняя версия Visual Studio 2019 [(скачать)](https://visualstudio.microsoft.com/vs/older-downloads/).
-* [Средства Visual Studio для службы "Смешанная реальность"](https://docs.microsoft.com/windows/mixed-reality/install-the-tools). В частности, обязательно установить следующие *рабочие нагрузки*:
+* [Средства Visual Studio для службы "Смешанная реальность"](/windows/mixed-reality/install-the-tools). В частности, обязательно установить следующие *рабочие нагрузки*:
   * **Разработка классических приложений на C++** .
   * **Разработка приложений для универсальной платформы Windows (UWP)** .
 * Шаблоны приложений Смешанной реальности для Windows для Visual Studio [(скачать)](https://marketplace.visualstudio.com/items?itemName=WindowsMixedRealityteam.WindowsMixedRealityAppTemplatesVSIX).

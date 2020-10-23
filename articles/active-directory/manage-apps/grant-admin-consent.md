@@ -12,12 +12,12 @@ ms.date: 11/04/2019
 ms.author: kenwith
 ms.reviewer: phsignor
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 96b4cb6f751a5d2bc4259117007b3abec2e0598d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9680c9bee6d0cf5c9605ce7b6009a500abd81ffb
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90069583"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92369103"
 ---
 # <a name="grant-tenant-wide-admin-consent-to-an-application"></a>Предоставление приложению согласия администратора на уровне арендатора
 
@@ -25,9 +25,9 @@ ms.locfileid: "90069583"
 
 Дополнительные сведения о предоставлении согласия для приложений см. в статье [Платформа предоставления согласия Azure Active Directory](../develop/consent-framework.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
-Для предоставления согласия администратора на уровне клиента необходимо войти как [глобальный администратор](../users-groups-roles/directory-assign-admin-roles.md#global-administrator--company-administrator), [Администратор приложения](../users-groups-roles/directory-assign-admin-roles.md#application-administrator)или [Администратор облачных приложений](../users-groups-roles/directory-assign-admin-roles.md#cloud-application-administrator).
+Для предоставления согласия администратора на уровне клиента необходимо войти как [глобальный администратор](../roles/permissions-reference.md#global-administrator--company-administrator), [Администратор приложения](../roles/permissions-reference.md#application-administrator)или [Администратор облачных приложений](../roles/permissions-reference.md#cloud-application-administrator).
 
 > [!IMPORTANT]
 > Когда приложению было предоставлено согласие администратора на уровне клиента, все пользователи смогут войти в приложение, если оно не настроено для обязательного назначения пользователей. Чтобы ограничить круг пользователей, которые могут входить в приложение, требуется назначение пользователей и назначьте приложению пользователей или группы. Подробнее см. статью [Методы назначения пользователей и групп](methods-for-assigning-users-and-groups.md).
@@ -47,7 +47,7 @@ ms.locfileid: "90069583"
 
 Чтобы предоставить согласие администратора на уровне клиента для приложения, указанного в **корпоративном приложении**:
 
-1. Войдите в [портал Azure](https://portal.azure.com) в качестве [глобального администратора](../users-groups-roles/directory-assign-admin-roles.md#global-administrator--company-administrator), [администратора приложения](../users-groups-roles/directory-assign-admin-roles.md#application-administrator)или [администратора облачных приложений](../users-groups-roles/directory-assign-admin-roles.md#cloud-application-administrator).
+1. Войдите в [портал Azure](https://portal.azure.com) в качестве [глобального администратора](../roles/permissions-reference.md#global-administrator--company-administrator), [администратора приложения](../roles/permissions-reference.md#application-administrator)или [администратора облачных приложений](../roles/permissions-reference.md#cloud-application-administrator).
 2. Выберите **Azure Active Directory** **корпоративные приложения**.
 3. Выберите приложение, которому необходимо предоставить согласие администратора на уровне клиента.
 4. Выберите **разрешения** и щелкните **предоставить согласие администратора**.
@@ -63,7 +63,7 @@ ms.locfileid: "90069583"
 
 Чтобы предоставить согласие администратора на уровне клиента от **Регистрация приложений**:
 
-1. Войдите в [портал Azure](https://portal.azure.com) в качестве [глобального администратора](../users-groups-roles/directory-assign-admin-roles.md#global-administrator--company-administrator), [администратора приложения](../users-groups-roles/directory-assign-admin-roles.md#application-administrator)или [администратора облачных приложений](../users-groups-roles/directory-assign-admin-roles.md#cloud-application-administrator).
+1. Войдите в [портал Azure](https://portal.azure.com) в качестве [глобального администратора](../roles/permissions-reference.md#global-administrator--company-administrator), [администратора приложения](../roles/permissions-reference.md#application-administrator)или [администратора облачных приложений](../roles/permissions-reference.md#cloud-application-administrator).
 2. Выберите **Azure Active Directory** затем **Регистрация приложений**.
 3. Выберите приложение, которому необходимо предоставить согласие администратора на уровне клиента.
 4. Выберите **разрешения API** и щелкните **предоставить согласие администратора**.

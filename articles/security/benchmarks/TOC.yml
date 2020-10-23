@@ -125,6 +125,8 @@
       href: ../../web-application-firewall/security-baseline.md
     - name: Базовый уровень безопасности пакетной службы
       href: ../../batch/security-baseline.md
+    - name: Базовые средства безопасности Cloud Shell
+      href: ../../cloud-shell/security-baseline.md
     - name: Базовые показатели безопасности Cognitive Services
       href: ../../cognitive-services/security-baseline.md
     - name: Базовые показатели системы безопасности для Экземпляров контейнеров

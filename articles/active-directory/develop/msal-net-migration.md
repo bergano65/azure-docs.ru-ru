@@ -13,12 +13,12 @@ ms.date: 04/10/2019
 ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: cdd93cf8751ce2e46f06020b1d18d42416f793d4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 21f29135cc3b94e5b8c2dfc99b0f7be26b37d123
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88166114"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92425265"
 ---
 # <a name="migrating-applications-to-msalnet"></a>Перенос приложений на MSAL.NET
 
@@ -132,7 +132,7 @@ MSAL.NET и конечная точка версии 2.0 пока поддер�
 Тип приложения | Предоставить | ADAL.NET | MSAL.NET
 ----- | ----- | ----- | -----
 Веб-приложение, веб-API, управляющая программа | Учетные данные клиента | [Потоки учетных данных клиента в ADAL.NET](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/wiki/Client-credential-flows) | [Потоки учетных данных клиента в MSAL.NET](msal-authentication-flows.md#client-credentials)
-Веб-API | От имени | [Вызовы между службами от имени пользователя через ADAL.NET](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/wiki/Service-to-service-calls-on-behalf-of-the-user) | [Вызов от имени через MSAL.NET](msal-authentication-flows.md#on-behalf-of)
+Веб-интерфейс API | От имени | [Вызовы между службами от имени пользователя через ADAL.NET](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/wiki/Service-to-service-calls-on-behalf-of-the-user) | [Вызов от имени через MSAL.NET](msal-authentication-flows.md#on-behalf-of)
 Веб-приложение | Код аутентификации | [Получение маркеров с помощью кодов авторизации в веб-приложениях через ADAL.NET](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/wiki/Acquiring-tokens-with-authorization-codes-on-web-apps) | [Получение маркеров с помощью кодов авторизации в веб-приложениях через MSAL.NET](msal-authentication-flows.md#authorization-code)
 
 ### <a name="cache-persistence"></a>Сохраняемость кэша
@@ -176,8 +176,8 @@ var scopes = new [] {  ResourceId+"/user_impersonation"};
 Если вы хотите считывать и записывать с помощью MSAL.NET Azure Active Directory с помощью Microsoft Graph API ( https://graph.microsoft.com/) , создайте список областей, например, в следующем фрагменте кода:
 
 ```csharp
-ResourceId = "https://graph.microsoft.com/";
-var scopes = new [] { ResourceId + "Directory.Read", ResourceID + "Directory.Write"}
+string ResourceId = "https://graph.microsoft.com/"; 
+string[] scopes = { ResourceId + "Directory.Read", ResourceId + "Directory.Write" }
 ```
 
 #### <a name="warning-should-you-have-one-or-two-slashes-in-the-scope-corresponding-to-a-v10-web-api"></a>Предупреждение. должна ли быть одна или две косые черты в области, соответствующей веб-API версии 1.0
@@ -264,6 +264,6 @@ AuthenticationResult result = await appRt.AcquireTokenByRefreshToken(null, rt)
 
 Этот метод можно использовать в разных процессах интеграции, если у вас есть готовый маркер обновления.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об областях можно найти в статье [Permissions and consent in the Microsoft identity platform endpoint](v2-permissions-and-consent.md) (Разрешения и согласие для конечной точки платформы удостоверений Майкрософт).

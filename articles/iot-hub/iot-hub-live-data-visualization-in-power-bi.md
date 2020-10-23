@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 6/08/2020
 ms.author: robinsh
-ms.openlocfilehash: ed429d2f584da20439b0cb0eedcf4742b9ae4599
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6d10d0202e9e4c813cffe6373acfb5200ebb3266
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84634513"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92146784"
 ---
 # <a name="visualize-real-time-sensor-data-from-azure-iot-hub-using-power-bi"></a>Визуализация данных, поступающих от датчиков в реальном времени, из Центра Интернета вещей с помощью Power BI
 
@@ -140,9 +140,9 @@ ms.locfileid: "84634513"
 
 ## <a name="create-and-publish-a-power-bi-report-to-visualize-the-data"></a>Создание отчета Power BI и его публикация для визуализации данных
 
-Ниже описано, как создать и опубликовать отчет с помощью служба Power BI. Если вы хотите использовать "новый вид" в Power BI, можно выполнить эти действия с некоторыми изменениями. Чтобы понять различия и переходить к разделу "новый вид", см. раздел ["новый вид" служба Power BI](https://docs.microsoft.com/power-bi/consumer/service-new-look).
+Ниже описано, как создать и опубликовать отчет с помощью служба Power BI. Если вы хотите использовать "новый вид" в Power BI, можно выполнить эти действия с некоторыми изменениями. Чтобы понять различия и переходить к разделу "новый вид", см. раздел ["новый вид" служба Power BI](/power-bi/consumer/service-new-look).
 
-1. Убедитесь, что пример приложения запущен на устройстве. Если нет, вы можете обратиться к руководствам в статье [Подключение Raspberry Pi к Центру Интернета вещей Azure (Node.js)](https://docs.microsoft.com/azure/iot-hub/iot-hub-raspberry-pi-kit-node-get-started).
+1. Убедитесь, что пример приложения запущен на устройстве. Если нет, вы можете обратиться к руководствам в статье [Подключение Raspberry Pi к Центру Интернета вещей Azure (Node.js)](./iot-hub-raspberry-pi-kit-node-get-started.md).
 
 2. Выполните вход в учетную запись [Power BI](https://powerbi.microsoft.com/en-us/).
 

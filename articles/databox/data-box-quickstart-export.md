@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 07/17/2020
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: 01fdaa95dd396e5545b65bada2a9d6410169230b
-ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
+ms.openlocfilehash: 789bd2f62673e7faf562d3a407bf2f0a4fd861bf
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2020
-ms.locfileid: "90052466"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92125498"
 ---
 # <a name="quickstart-get-started-with-azure-data-box-to-export-data-from-azure"></a>Краткое руководство. Начало работы с Azure Data Box для экспорта данных из Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "90052466"
 
 * Убедитесь, что тип подписки, которую вы используете для службы Data Box, является одним из следующих:
   * Соглашение Microsoft Enterprise (EA). См. дополнительные сведения о [подписке EA](https://azure.microsoft.com/pricing/enterprise-agreement/).
-  * Поставщик облачных решений (CSP). Дополнительные сведения см. в статье [Обзор Azure CSP](https://docs.microsoft.com/azure/cloud-solution-provider/overview/azure-csp-overview).
+  * Поставщик облачных решений (CSP). Дополнительные сведения см. в статье [Обзор Azure CSP](/azure/cloud-solution-provider/overview/azure-csp-overview).
   * Спонсорское предложение Microsoft Azure. Дополнительные сведения см. в статье о [спонсорском предложении Microsoft Azure](https://azure.microsoft.com/offers/ms-azr-0036p/).
 
 * Убедитесь, что у вас есть доступ владельца или участника подписки для заказа Data Box.
@@ -96,7 +96,7 @@ ms.locfileid: "90052466"
 
 Время завершения этой операции зависит от размера данных и скорости сети.
 
-1. При использовании клиента Windows примените инструмент копирования файлов, совместимый с протоколом SMB, например Robocopy. Для узла NFS используйте команду `cp` или `rsync`, чтобы скопировать данные. Дополнительные сведения о том, как использовать Robocopy для копирования данных, см. в статье [Robocopy](https://technet.microsoft.com/library/ee851678.aspx).
+1. При использовании клиента Windows примените инструмент копирования файлов, совместимый с протоколом SMB, например Robocopy. Для узла NFS используйте команду `cp` или `rsync`, чтобы скопировать данные. Дополнительные сведения о том, как использовать Robocopy для копирования данных, см. в статье [Robocopy](/previous-versions/technet-magazine/ee851678(v=msdn.10)).
 2. Подключитесь к общим папкам устройства и начните копирование данных на главный компьютер.
 <!-- 1. Connect to the device shares using the path:`\\<IP address of your device>\ShareName`. To get the share access credentials, go to the **Connect & copy** page in the local web UI of the Data Box. --> 
 

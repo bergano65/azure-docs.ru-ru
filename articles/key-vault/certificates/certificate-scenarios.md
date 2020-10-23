@@ -9,12 +9,12 @@ ms.subservice: certificates
 ms.topic: conceptual
 ms.date: 06/13/2020
 ms.author: mbaldwin
-ms.openlocfilehash: d99d211ec48a507b205c4cef21618054c11aec9b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c4c8d1101bd83b580c010132dd70284b78569392
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86224865"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92124227"
 ---
 # <a name="get-started-with-key-vault-certificates"></a>Начало работы с сертификатами Key Vault
 Следующие сценарии описывают некоторые основные примеры использования службы управления сертификатами Key Vault, включая дополнительные действия, необходимые для создания первого сертификата в хранилище ключей.
@@ -37,7 +37,7 @@ ms.locfileid: "86224865"
 
 **Шаг 1** — поставщики центра сертификации (ЦС)  
 -   Подключение ИТ-администратора, администратора PKI или любого управляющего учетными записями в центрах сертификации для данной компании (например, Contoso) является необходимым условием для использования сертификатов Key Vault.  
-    Следующие центры сертификации являются партнерскими поставщиками Key Vault:  
+    Следующие центры сертификации — это текущие партнерские поставщики с Key Vault. Дополнительные сведения см. [здесь](https://docs.microsoft.com/azure/key-vault/certificates/create-certificate#partnered-ca-providers).   
     -   DigiCert-Key Vault предлагает OV TLS/SSL-сертификаты с DigiCert.  
     -   Глобалсигн-Key Vault предлагает OV TLS/SSL-сертификаты с Глобалсигн.  
 

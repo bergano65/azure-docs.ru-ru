@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 10/14/2019
 ms.author: jeedes
-ms.openlocfilehash: a35fb30ca19e08c68c99c9c9524231706b066e11
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: fc6cb5d992d4c961e23034560a688c7090622359
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88549897"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91858104"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-knowledgeowl"></a>Руководство по интеграции единого входа Azure Active Directory с KnowledgeOwl
 
@@ -167,11 +167,11 @@ ms.locfileid: "88549897"
 
 1. Выберите **Параметры** и затем **Безопасность**.
 
-    ![Конфигурация KnowledgeOwl](./media/knowledgeowl-tutorial/configure1.png)
+    ![Снимок экрана, на котором в меню параметров выбран элемент "Безопасность".](./media/knowledgeowl-tutorial/configure1.png)
 
 1. Прокрутите вниз до раздела **SAML SSO Integration** (Интеграция единого входа SAML) и выполните следующие действия:
 
-    ![Конфигурация KnowledgeOwl](./media/knowledgeowl-tutorial/configure2.png)
+    ![Снимок экрана для раздела интеграции единого входа SAML, где можно выполнить описанные здесь изменения.](./media/knowledgeowl-tutorial/configure2.png)
 
     а. Выберите **Enable SAML SSO** (Включить единый вход SAML).
 
@@ -189,7 +189,7 @@ ms.locfileid: "88549897"
 
     h. Выберите **Map SAML Attributes** (Сопоставить атрибуты SAML), чтобы сопоставить атрибуты, и выполните следующие действия:
 
-    ![Конфигурация KnowledgeOwl](./media/knowledgeowl-tutorial/configure3.png)
+    ![Снимок экрана для раздела сопоставления атрибутов SAML, где можно выполнить описанные здесь изменения.](./media/knowledgeowl-tutorial/configure3.png)
 
     * Введите `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/ssoid` в текстовом поле **SSO ID** (Идентификатор единого входа).
     * Введите `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress` в текстовом поле **Username/Email** (Имя пользователя/электронная почта).
@@ -199,7 +199,7 @@ ms.locfileid: "88549897"
 
     i. В нижней части страницы нажмите кнопку **Сохранить** .
 
-    ![Конфигурация KnowledgeOwl](./media/knowledgeowl-tutorial/configure4.png)
+    ![Снимок экрана, на котором показана кнопка "Save" (Сохранить)](./media/knowledgeowl-tutorial/configure4.png)
 
 ### <a name="create-knowledgeowl-test-user"></a>Создание тестового пользователя KnowledgeOwl
 

@@ -5,12 +5,12 @@ author: sajayantony
 ms.topic: article
 ms.date: 09/18/2020
 ms.author: sajaya
-ms.openlocfilehash: 499ef509fc9f8d9365d8db3f7058d12352db9bb2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4c65ca24b3fa4dccb2bb0060996ade50c90bd02a
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91570510"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92148525"
 ---
 # <a name="frequently-asked-questions-about-azure-container-registry"></a>Часто задаваемые вопросы о Реестре контейнеров Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "91570510"
 
 ### <a name="is-there-security-vulnerability-scanning-for-images-in-acr"></a>Есть ли возможность проверки образов в ACR на уязвимости системы безопасности?
 
-Да. См. документацию из [Центра безопасности Azure](../security-center/azure-container-registry-integration.md), [Twistlock](https://www.twistlock.com/2016/11/07/twistlock-supports-azure-container-registry/) и [Aqua](https://blog.aquasec.com/image-vulnerability-scanning-in-azure-container-registry).
+Да. См. документацию из [Центра безопасности Azure](../security-center/defender-for-container-registries-introduction.md), [Twistlock](https://www.twistlock.com/2016/11/07/twistlock-supports-azure-container-registry/) и [Aqua](https://blog.aquasec.com/image-vulnerability-scanning-in-azure-container-registry).
 
 ### <a name="how-do-i-configure-kubernetes-with-azure-container-registry"></a>Как настроить Kubernetes с помощью Реестра контейнеров Azure?
 
@@ -259,7 +259,7 @@ ACR поддерживает [пользовательские роли](contain
 
 ### <a name="how-do-i-enable-anonymous-pull-access"></a>Как включить анонимный доступ для извлечения?
 
-Настройка анонимного (общего) доступа для извлечения для реестра контейнеров Azure в настоящее время является функцией предварительной версии. Если в реестре есть [ресурсы для сопоставления области (пользователя) или маркера](https://aka.ms/acr/repo-permissions) , удалите их перед вызовом запроса в службу поддержки (сопоставление области системы можно игнорировать). Чтобы включить общий доступ, отправьте запрос в службу поддержки по адресу https://aka.ms/acr/support/create-ticket. Подробные сведения см. на [форуме отзывов и предложений по Azure](https://feedback.azure.com/forums/903958-azure-container-registry/suggestions/32517127-enable-anonymous-access-to-registries).
+Настройка анонимного (общего) доступа для извлечения для реестра контейнеров Azure в настоящее время является функцией предварительной версии. Если в реестре есть [ресурсы для сопоставления области (пользователя) или маркера](./container-registry-repository-scoped-permissions.md) , удалите их перед вызовом запроса в службу поддержки (сопоставление области системы можно игнорировать). Чтобы включить общий доступ, отправьте запрос в службу поддержки по адресу https://aka.ms/acr/support/create-ticket. Подробные сведения см. на [форуме отзывов и предложений по Azure](https://feedback.azure.com/forums/903958-azure-container-registry/suggestions/32517127-enable-anonymous-access-to-registries).
 
 > [!NOTE]
 > Анонимно можно получить доступ только к интерфейсам API, необходимым для извлечения известного образа. Никакие другие API для таких операций, как список тегов или список репозиториев, недоступны анонимно.
@@ -443,7 +443,7 @@ curl $redirect_url
 ### <a name="why-does-my-pull-or-push-request-fail-with-disallowed-operation"></a>Почему не удается выполнить запрос на вытягивание или отправку из-за неразрешенной операции?
 
 Ниже приведены некоторые сценарии, в которых операции могут быть запрещены.
-* Классические реестры больше не поддерживаются. Выполните обновление до поддерживаемого [уровня служб](https://aka.ms/acr/skus) с помощью команды [az acr update](/cli/azure/acr#az-acr-update) или на портале Azure.
+* Классические реестры больше не поддерживаются. Выполните обновление до поддерживаемого [уровня служб](./container-registry-skus.md) с помощью команды [az acr update](/cli/azure/acr#az-acr-update) или на портале Azure.
 * Образ или репозиторий может быть заблокирован, поэтому его нельзя удалить или обновить. Для просмотра текущих атрибутов можно воспользоваться командой [az acr show repository](./container-registry-image-lock.md).
 * Некоторые операции запрещены, если образ находится на карантине. Дополнительные сведения о [карантине](https://github.com/Azure/acr/tree/master/docs/preview/quarantine).
 * Возможно, ваш реестр достиг [предельного размера хранилища](container-registry-skus.md#service-tier-features-and-limits).

@@ -6,15 +6,15 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 09/09/2020
-ms.openlocfilehash: 01c0b6f280b8179760c6ecc55fd7feca3ddf2080
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 695b0b0ac06e63912ca0a471be3d96c148458c29
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90039129"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92104246"
 ---
 # <a name="standard-columns-in-azure-monitor-logs"></a>Стандартные столбцы в журналах Azure Monitor
-Данные в журналах Azure Monitor [хранятся в виде набора записей в log Analytics рабочей области или в Application Insights приложении](../log-query/logs-structure.md), каждый из которых имеет определенный тип данных, имеющий уникальный набор столбцов. Многие типы данных будут иметь стандартные столбцы, которые являются общими для нескольких типов. В этой статье описываются эти столбцы и приводятся примеры их использования в запросах.
+Данные в журналах Azure Monitor [хранятся в виде набора записей в log Analytics рабочей области или в Application Insights приложении](./data-platform-logs.md), каждый из которых имеет определенный тип данных, имеющий уникальный набор столбцов. Многие типы данных будут иметь стандартные столбцы, которые являются общими для нескольких типов. В этой статье описываются эти столбцы и приводятся примеры их использования в запросах.
 
 Приложения на основе рабочей области в Application Insights хранят свои данные в Log Analytics рабочей области и используют те же стандартные столбцы, что и другие таблицы в рабочей области. Классические приложения хранят свои данные отдельно и имеют различные стандартные столбцы, как указано в этой статье.
 
@@ -207,9 +207,8 @@ union withsource = tt *
 | summarize count() by tt | sort by count_ nulls last 
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения см. в статье [Анализ данных журнала в Azure Monitor](../log-query/log-query-overview.md).
 - Изучите статью [Начало работы с запросами журналов Azure Monitor](../log-query/get-started-queries.md).
 - См. статью [Объединения в запросах журнала Azure Monitor](../log-query/joins.md).
-

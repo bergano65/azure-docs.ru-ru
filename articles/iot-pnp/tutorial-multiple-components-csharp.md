@@ -7,12 +7,12 @@ ms.date: 07/14/2020
 ms.topic: tutorial
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: f6f87ed4ba74c3f7750e56d4bb8473cf4b1a4341
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.openlocfilehash: 72b85388bf80a6ed2b9617b606940c243c5711f1
+ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91575390"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91945538"
 ---
 # <a name="tutorial-connect-an-iot-plug-and-play-multiple-component-device-application-running-on-windows-to-iot-hub-c"></a>Руководство по подключению приложения устройства IoT Plug and Play с несколькими компонентами в Windows к Центру Интернета вещей (C#)
 
@@ -33,7 +33,7 @@ ms.locfileid: "91575390"
 
 Если вы ознакомились с [Кратким руководством по подключению примера приложения устройства IoT Plug and Play в Windows к Центру Интернета вещей (C#)](quickstart-connect-device-csharp.md), значит вы уже клонировали репозиторий.
 
-Клонируйте примеры из репозитория пакета SDK для Интернета вещей Microsoft Azure для .NET на сайте GitHub. Откройте командную строку в выбранной папке. С помощью следующей команды клонируйте репозиторий примеров [Интернета вещей Microsoft Azure для .NET](https://github.com/Azure-Samples/azure-iot-samples-csharp) с сайта GitHub.
+Клонируйте примеры из репозитория GitHub с примерами для Интернета вещей Azure на C#. Откройте командную строку в выбранной папке. С помощью следующей команды клонируйте репозиторий примеров [Интернета вещей Microsoft Azure для .NET](https://github.com/Azure-Samples/azure-iot-samples-csharp) с сайта GitHub.
 
 ```cmd
 git clone https://github.com/Azure-Samples/azure-iot-samples-csharp.git

@@ -6,12 +6,12 @@ ms.service: signalr
 ms.topic: conceptual
 ms.date: 06/11/2020
 ms.author: chenyl
-ms.openlocfilehash: c3e317a87ba888fac3c069cc5327bd89c859e9de
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1d51f5e8d2fac1e2b180a608c840d0a322e76271
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89514243"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92143245"
 ---
 # <a name="upstream-settings"></a>Параметры функции отправки данных в вышестоящий ресурс
 
@@ -88,7 +88,7 @@ http://host.com/chat/api/messages/broadcast
 
 ## <a name="create-upstream-settings-via-resource-manager-template"></a>Создание вышестоящего параметра с помощью шаблона диспетчер ресурсов
 
-Чтобы создать вышестоящий параметр с помощью [шаблона Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/templates/overview), задайте `upstream` свойство в `properties` свойстве. В следующем фрагменте кода показано, как задать `upstream` свойство для создания и обновления параметров восходящего потока данных.
+Чтобы создать вышестоящий параметр с помощью [шаблона Azure Resource Manager](../azure-resource-manager/templates/overview.md), задайте `upstream` свойство в `properties` свойстве. В следующем фрагменте кода показано, как задать `upstream` свойство для создания и обновления параметров восходящего потока данных.
 
 ```JSON
 {
@@ -166,7 +166,7 @@ Content-Type: `application/json` или `application/x-msgpack`
 Hex_encoded(HMAC_SHA256(accessKey, connection-id))
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Управляемые удостоверения для службы Azure SignalR](howto-use-managed-identity.md)
 - [Azure Functions development and configuration with Azure SignalR Service](signalr-concept-serverless-development-config.md) (Разработка и настройка функций Azure с помощью Службы Azure SignalR)

@@ -10,12 +10,12 @@ ms.custom: mvc
 ms.topic: sample
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: 76cacbea3f98f65e290cb2722062127d2264e171
-ms.sourcegitcommit: 67e8e1caa8427c1d78f6426c70bf8339a8b4e01d
+ms.openlocfilehash: 63a79df8e540e88d0f1e3f4c5b8d339ff03c877f
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91664840"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91854296"
 ---
 # <a name="azure-active-directory-b2c-code-samples"></a>Примеры кода Azure Active Directory B2C
 
@@ -54,3 +54,15 @@ ms.locfileid: "91664840"
 | Образец | Описание |
 |--------| ----------- |
 | [saml-sp-tester](https://github.com/azure-ad-b2c/saml-sp-tester/tree/master/source-code) | Тестовое приложение SAML для тестирования Azure AD B2C настроено в качестве поставщика удостоверений SAML. |
+
+## <a name="api-connectors"></a>Соединители API
+
+В приведенных ниже таблицах содержатся ссылки на примеры кода для использования веб-API в потоках пользователей с применением [соединителей API](api-connectors-overview.md).
+
+## <a name="api-connector-azure-function-quickstarts"></a>Краткие руководства по соединителям API Функций Azure
+
+| Образец                                                                                                                          | Описание                                                                                                                                               |
+| ------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [.NET Core](https://github.com/Azure-Samples/active-directory-dotnet-external-identities-api-connector-azure-function-validate) | В этом примере функции Azure для .NET Core показано, как ограничить число регистраций для определенных доменов электронной почты и проверить предоставляемые пользователями сведения. |
+| [Node.js](https://github.com/Azure-Samples/active-directory-nodejs-external-identities-api-connector-azure-function-validate)   | В этом примере функции Azure для Node.js показано, как ограничить число регистраций для определенных доменов электронной почты и проверить предоставляемые пользователями сведения.  |
+| [Python](https://github.com/Azure-Samples/active-directory-python-external-identities-api-connector-azure-function-validate)    | В этом примере функции Azure для Python показано, как ограничить число регистраций для определенных доменов электронной почты и проверить предоставляемые пользователями сведения.    |

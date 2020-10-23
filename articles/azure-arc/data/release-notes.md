@@ -9,12 +9,12 @@ ms.service: azure-arc
 ms.subservice: azure-arc-data
 ms.date: 09/22/2020
 ms.topic: conceptual
-ms.openlocfilehash: d22976254cc804ca53060fb284abde8e80a684e6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3c20bbd3ab02cd1eccd00e2d36c14eebf2f63205
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91319737"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92360325"
 ---
 # <a name="release-notes---azure-arc-enabled-data-services-preview"></a>Заметки о выпуске — службы данных с поддержкой ARC в Azure (Предварительная версия)
 
@@ -62,3 +62,8 @@ ms.locfileid: "91319737"
 - Масштабирование количества postgres _рабочих узлов рабочей роли не поддерживается_ .
 - Если вы используете ядро службы Kubernetes Azure (AKS Engine) в центре Azure Stack с контроллером данных Arc и экземплярами базы данных Azure, обновление до более новой версии Kubernetes не поддерживается. Удалите контроллер данных ARC в Azure и все экземпляры базы данных перед обновлением кластера Kubernetes.
 - Предварительный просмотр не поддерживает резервное копирование и восстановление для модуля postgres версии 11. Он поддерживает только резервное копирование и восстановление для postgres версии 12.
+- Служба Azure Kubernetes Service (AKS). в настоящее время кластеры, охватывающие [несколько зон доступности](../../aks/availability-zones.md) , не поддерживаются для служб данных с поддержкой службы "Дуга Azure". Чтобы избежать этой проблемы, при создании кластера AKS в портал Azure при выборе региона, в котором доступны зоны, удалите все зоны из элемента управления выбором. См. следующее изображение:
+
+   :::image type="content" source="media/release-notes/aks-zone-selector.png" alt-text="Снимите флажки для каждой зоны, чтобы указать значение нет.":::
+
+  

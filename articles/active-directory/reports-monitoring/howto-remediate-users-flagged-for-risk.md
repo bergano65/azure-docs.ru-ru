@@ -15,12 +15,12 @@ ms.date: 11/13/2018
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 08305b6aec7dcd5906f4316767c4c512d3a0535e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 23bd7a26bc6215f50a2860ab4aac84f1b46301f5
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90600506"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92308942"
 ---
 # <a name="remediate-users-flagged-for-risk-in-the-azure-active-directory-portal"></a>Применение защитных мер к пользователям, находящимся в группе риска на портале Azure Active Directory
 
@@ -60,10 +60,10 @@ ms.locfileid: "90600506"
 Выполните следующие действия, чтобы устранить проблемы, связанные с затронутыми учетными записями, и защитить среду.
 
 1.  [Проверьте правильность сведений](https://aka.ms/MFAValid) для многофакторной проверки подлинности и самостоятельного сброса пароля. 
-2.  [Включите многофакторную проверку подлинности](https://aka.ms/MFAuth) для всех пользователей. 
+2.  [Включите многофакторную проверку подлинности](/microsoft-365/admin/security-and-compliance/set-up-multi-factor-authentication) для всех пользователей. 
 3.  Используйте этот [сценарий исправления](https://aka.ms/remediate) для каждой затронутой учетной записи, чтобы автоматически выполнить действия ниже: 
 
-    a. Сбросить пароль, чтобы защитить учетную запись и прервать активные сеансы.
+    а. Сбросить пароль, чтобы защитить учетную запись и прервать активные сеансы.
 
     b. Удалить делегаты почтовых ящиков.
 
@@ -85,11 +85,11 @@ ms.locfileid: "90600506"
 
 Кроме этого, вам следует выполнить следующее.
 
-- Ознакомьтесь с этим [руководством по мерам, предпринимаемым в случае обнаружения необычной активности](https://aka.ms/fixaccount), и выполните описанные в нем шаги. 
-- [Включите конвейер аудита](https://aka.ms/improvesecurity) для анализа действий в своем клиенте. После завершения анализа журналы действий в хранилище аудита начнут заполняться соответствующими данными. На этом этапе вы также можете использовать [ресурс поиска и исследования в центре безопасности и соответствия требованиям](https://aka.ms/sccsearch). 
+- Ознакомьтесь с этим [руководством по мерам, предпринимаемым в случае обнаружения необычной активности](/archive/blogs/office365security/how-to-fix-a-compromised-hacked-microsoft-office-365-account), и выполните описанные в нем шаги. 
+- [Включите конвейер аудита](/archive/blogs/office365security/using-office-365-activity-data-to-improve-your-cybersecurity-stance-and-capability) для анализа действий в своем клиенте. После завершения анализа журналы действий в хранилище аудита начнут заполняться соответствующими данными. На этом этапе вы также можете использовать [ресурс поиска и исследования в центре безопасности и соответствия требованиям](https://aka.ms/sccsearch). 
 - Просмотрите делегированные разрешения и правила переадресации сообщений для всех почтовых ящиков. Чтобы выполнить эту задачу, можно использовать этот [сценарий PowerShell](https://aka.ms/delegateforwardrules). 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Защита идентификации Azure Active Directory](../identity-protection/overview-identity-protection.md)
 * [Пользователи, помеченные для события риска](../identity-protection/overview-identity-protection.md)

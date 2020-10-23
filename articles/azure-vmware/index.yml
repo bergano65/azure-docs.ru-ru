@@ -8,13 +8,13 @@ metadata:
   ms.topic: landing-page
   author: dikamath
   ms.author: dikamath
-  ms.date: 09/21/2020
-  ms.openlocfilehash: 197cf8ca3f819a83d13869a43c3685bba916ce4f
-  ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
+  ms.date: 10/19/2020
+  ms.openlocfilehash: 31b3ad9c33ffd07b62067de3aa46333608522f97
+  ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 10/12/2020
-  ms.locfileid: "91949111"
+  ms.lasthandoff: 10/19/2020
+  ms.locfileid: "92172134"
 landingContent:
 - title: О Решении Azure VMware
   linkLists:
@@ -36,14 +36,12 @@ landingContent:
       url: concepts-role-based-access-control.md
     - text: Обновления частного облака
       url: concepts-upgrades.md
-- title: Развертывание Решения Azure VMware
+- title: Начало работы
   linkLists:
-  - linkListType: get-started
+  - linkListType: deploy
     links:
-    - text: Процесс, выполняемый перед развертыванием
+    - text: Планирование развертывания
       url: production-ready-deployment-steps.md
-    - text: Контрольный список перед развертыванием
-      url: pre-deployment-checklist.md
     - text: 1. Развертывание Решения Azure VMware
       url: deploy-azure-vmware-solution.md
     - text: 2. Подключение к локальному расположению
@@ -64,14 +62,16 @@ landingContent:
       url: tutorial-nsx-t-network-segment.md
     - text: Пиринг между локальной средой и частным облаком
       url: tutorial-expressroute-global-reach-private-cloud.md
-    - text: Развертывание и настройка VMware HCX
-      url: tutorial-deploy-vmware-hcx.md
     - text: Масштабирование частного облака
       url: tutorial-scale-private-cloud.md
 - title: Расширение Решения Azure VMware
   linkLists:
   - linkListType: how-to-guide
     links:
+    - text: Включение Решения Azure VMware
+      url: enable-azure-vmware-solution.md
+    - text: Экономия за счет приобретения зарезервированного экземпляра
+      url: reserved-instance.md
     - text: Оценка миграции
       url: ../migrate/how-to-create-azure-vmware-solution-assessment.md?context=/azure/migrate/context/migrate-context.json
     - text: Управление DHCP
@@ -80,5 +80,49 @@ landingContent:
       url: disaster-recovery-for-virtual-machines.md
     - text: Развертывание виртуальной машины с использованием библиотеки содержимого
       url: ./deploy-vm-content-library.md
-    - text: Использование функций общедоступного IP-адреса
+    - text: Настройка сервера GitHub Enterprise
+      url: github-enterprise-server.md
+    - text: Использование общедоступных IP-адресов
       url: public-ip-usage.md
+    - text: Создание туннеля IPSec
+      url: create-ipsec-tunnel.md
+- title: Интеграция платформенной функциональности Azure
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Управление API
+      url: concepts-api-management.md
+    - text: Звездообразная модель
+      url: concepts-hub-and-spoke.md
+    - text: Azure Backup Server
+      url: set-up-backup-server-for-azure-vmware-solution.md
+    - text: Управление жизненным циклом на виртуальных машинах
+      url: lifecycle-management-of-azure-vmware-solution-vms.md
+    - text: Шлюз приложений
+      url: protect-azure-vmware-solution-with-application-gateway.md
+    - text: Диспетчер трафика
+      url: deploy-traffic-manager-balance-workloads.md
+- title: Решения VMware
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Настройка vRealize Operations
+      url: vrealize-operations-for-azure-vmware-solution.md
+    - text: Развертывание VMware Horizon
+      url: azure-vmware-solution-horizon.md
+- title: Экосистема VMware
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Решения для резервного копирования виртуальных машин
+      url: ecosystem-back-up-vms.md
+- title: Ресурсы
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Azure PowerShell
+      url: https://docs.microsoft.com/powershell/module/az.vmware
+    - text: Получение справки по сбоям при развертывании или подготовке
+      url: fix-deployment-provisioning-failures.md
+    - text: ВОПРОСЫ И ОТВЕТЫ
+      url: faq.md

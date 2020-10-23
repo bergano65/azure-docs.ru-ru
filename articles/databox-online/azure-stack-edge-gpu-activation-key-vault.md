@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: conceptual
 ms.date: 10/10/2020
 ms.author: alkohli
-ms.openlocfilehash: c841c96326f636e16f3b4f86fcb88a0962011c0f
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 8957d8982a3bfe1da2811dc10d0c3e77a72fc288
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91976837"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92367607"
 ---
 # <a name="azure-key-vault-integration-with-azure-stack-edge"></a>Интеграция Azure Key Vault с Azure Stackным ребром 
 
@@ -22,7 +22,7 @@ Azure Key Vault интегрирована с Azure Stackным ресурсом
 
 ## <a name="about-key-vault-and-azure-stack-edge"></a>Сведения о хранилище ключей и Azure Stack границе
 
-Azure Key Vault облачная служба используется для безопасного хранения и управления доступом к маркерам, паролям, сертификатам, ключам API и другим секретам. Key Vault также упрощает создание и управление ключами шифрования, используемыми для шифрования данных. 
+Azure Key Vault облачная служба используется для безопасного хранения и управления доступом к маркерам, паролям, сертификатам, ключам API и другим секретам. Key Vault также упрощает создание и управление ключами шифрования, используемыми для шифрования данных. Дополнительные сведения о разрешенных транзакциях и соответствующих расходах см. в разделе [цены на Azure Key Vault](https://azure.microsoft.com/pricing/details/key-vault/).
 
 Для службы Azure Stack ребра используется один из секретов — ключ целостности канала (ЦИК). Этот ключ позволяет шифровать секреты. С интеграцией хранилища ключей ЦИК безопасно хранится в хранилище ключей. Дополнительные сведения см. в статье [безопасное хранение секретов и ключей](../key-vault/general/overview.md#securely-store-secrets-and-keys).
 
@@ -44,6 +44,8 @@ Azure Key Vault облачная служба используется для б
 - Вы можете принять имя ключа по умолчанию или указать пользовательское имя для хранилища ключей. Имя хранилища ключей должно иметь длину от 3 до 24 символов. Вы не можете использовать хранилище ключей, которое уже используется. <!--The MSI is then used to authenticate to key vault to retrieve secrets.--> 
 
     ![MSI создан во время создания ресурса Azure Stack ребра](media/azure-stack-edge-gpu-deploy-prep/create-resource-8.png)
+
+- Чтобы перейти к хранилищу ключей Azure, перейдите к **свойствам** в ресурсе Azure Stack ребра и выберите имя хранилища ключей. 
 
 - Во избежание случайного удаления блокировка ресурса включается в хранилище ключей. Обратимое удаление также включено в хранилище ключей, которое позволяет восстановить хранилище ключей в течение 90 дней при случайном удалении. Дополнительные сведения см. в статье [обзор Azure Key Vault обратимого удаления](../key-vault/general/soft-delete-overview.md) .
 
@@ -68,7 +70,7 @@ When you generate an activation key, the following events occur:
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о [создании ключа активации](azure-stack-edge-gpu-deploy-prep.md#get-the-activation-key).
 

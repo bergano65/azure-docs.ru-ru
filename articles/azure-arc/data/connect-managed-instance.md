@@ -9,12 +9,12 @@ ms.author: vinsonyu
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 3277dc4d9c4485b117bfcfd1d6e130e7370cd8c2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: abd27e15ccf5b421e69e78b2b726d192ffdecacb
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90939198"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92372367"
 ---
 # <a name="connect-to-azure-arc-enabled-sql-managed-instance"></a>Подключение к SQL Управляемый экземпляр с включенной службой Arc
 
@@ -68,7 +68,7 @@ sqlcmd -S 52.229.9.30,30913 -U sa
 
 Если вы используете виртуальную машину Azure, IP-адрес конечной точки не будет показывать общедоступный IP-адрес. Чтобы узнать внешний IP-адрес, используйте следующую команду:
 
-```console
+```azurecli
 az network public-ip list -g azurearcvm-rg --query "[].{PublicIP:ipAddress}" -o table
 ```
 
@@ -78,7 +78,7 @@ az network public-ip list -g azurearcvm-rg --query "[].{PublicIP:ipAddress}" -o 
 
 Чтобы задать правило, необходимо знать имя NSG, которое можно узнать с помощью следующей команды:
 
-```console
+```azurecli
 az network nsg list -g azurearcvm-rg --query "[].{NSGName:name}" -o table
 ```
 
@@ -86,7 +86,7 @@ az network nsg list -g azurearcvm-rg --query "[].{NSGName:name}" -o table
 
 Замените значение `--destination-port-ranges` параметра ниже номером порта, полученным из `azdata sql instance list` команды F выше.
 
-```console
+```azurecli
 az network nsg rule create -n db_port --destination-port-ranges 30913 --source-address-prefixes '*' --nsg-name azurearcvmNSG --priority 500 -g azurearcvm-rg --access Allow --description 'Allow port through for db access' --destination-address-prefixes '*' --direction Inbound --protocol Tcp --source-port-ranges '*'
 ```
 

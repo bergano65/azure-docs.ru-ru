@@ -4,12 +4,12 @@ description: Информация о службе "Миграция Azure"
 ms.topic: overview
 ms.date: 04/15/2020
 ms.custom: mvc
-ms.openlocfilehash: 72f2dfb3e5e05466892d838af4e1c84c855b94a9
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 48447959f0a60baf8802a9939612bf0d536c2557
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "86122087"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92314767"
 ---
 # <a name="about-azure-migrate"></a>Сведения о службе "Миграция Azure"
 
@@ -124,5 +124,5 @@ Movere — это платформа типа "программное обес�
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Перейдите к другим руководствам, где описана оценка [виртуальных машин VMware](tutorial-prepare-vmware.md), [виртуальных машин Hyper-V](tutorial-prepare-hyper-v.md) и [физических серверов](tutorial-prepare-physical.md).
+- Перейдите к другим руководствам, где описана оценка [виртуальных машин VMware](./tutorial-discover-vmware.md), [виртуальных машин Hyper-V](./tutorial-discover-hyper-v.md) и [физических серверов](./tutorial-discover-physical.md).
 - [Просмотрите часто задаваемые вопросы](resources-faq.md) о службе "Миграция Azure".

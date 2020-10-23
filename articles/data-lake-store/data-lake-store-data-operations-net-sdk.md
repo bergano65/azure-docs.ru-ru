@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 01/03/2020
 ms.author: twooley
 ms.custom: devx-track-dotnet
-ms.openlocfilehash: 1044af94df43e61ae8c0032041bc80a356331f1a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cb6d5fafa8d956c296124c5a20f8a087160961da
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89022468"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92109244"
 ---
 # <a name="filesystem-operations-on-data-lake-storage-gen1-using-the-net-sdk"></a>Операции файловой системы на Data Lake Storage 1-го поколения с помощью пакета SDK для .NET
 
@@ -192,7 +192,7 @@ foreach (var entry in client.EnumerateDirectory("/Test"))
 client.DeleteRecursive("/Test");
 ```
 
-## <a name="samples"></a>примеры
+## <a name="samples"></a>Примеры
 
 Ниже приведено несколько примеров, демонстрирующих использование пакета SDK для файловой системы Data Lake Storage 1-го поколения.
 
@@ -202,7 +202,7 @@ client.DeleteRecursive("/Test");
 ## <a name="see-also"></a>См. также раздел
 
 * [Операции управления учетными записями в Data Lake Storage 1-го поколения c использованием пакета SDK для .NET](data-lake-store-get-started-net-sdk.md)
-* [Библиотеки Azure Data Lake Store для .NET](https://docs.microsoft.com/dotnet/api/overview/azure/data-lake-store?view=azure-dotnet)
+* [Библиотеки Azure Data Lake Store для .NET](/dotnet/api/overview/azure/data-lake-store?view=azure-dotnet)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -11,12 +11,12 @@ ms.workload: infrastructure
 ms.date: 05/19/2017
 ms.author: ramankum
 ms.custom: mvc
-ms.openlocfilehash: ce2eaac6189e3b9c0550948eddfddd018deac90b
-ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
+ms.openlocfilehash: 52efdb91328b5d9349eb3724c4a146348e4a975a
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89051846"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91978583"
 ---
 # <a name="copy-snapshot-of-a-managed-disk-to-same-or-different-subscription-with-cli"></a>Копирование моментального снимка управляемого диска в ту же или другую подписку с помощью интерфейса командной строки
 
@@ -25,6 +25,9 @@ ms.locfileid: "89051846"
 1. чтобы перенести моментальный снимок из хранилища класса Premium (Premium_LRS) в стандартное хранилище (Standard_LRS или Standard_ZRS) для сокращения расходов;
 1. чтобы перенести моментальный снимок из локально избыточного хранилища (Premium_LRS, Standard_LRS) в хранилище, избыточное между зонами (Standard_ZRS), для повышения его надежности;
 1. чтобы переместить моментальный снимок в другую подписку в том же регионе на долгосрочное хранение.
+
+> [!NOTE]
+> Обе подписки должны находиться в одном клиенте.
 
 [!INCLUDE [sample-cli-install](../../../includes/sample-cli-install.md)]
 

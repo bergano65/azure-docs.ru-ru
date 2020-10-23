@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/26/2020
 author: mingshen-ms
 ms.author: mingshen
-ms.openlocfilehash: ac48973653e89d43521979a5606a8a3a3c2e1346
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d4c1005d300a5b326ff2f41d9fa3838dbb1c7552
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87319989"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92278023"
 ---
 # <a name="marketplace-metered-billing-apis"></a>API для выставления счетов с оплатой в Marketplace
 
@@ -273,8 +273,8 @@ API событий использования пакетной службы по
 
 ## <a name="get-support"></a>Получение поддержки
 
-Следуйте инструкциям в [технической поддержке программы коммерческого рынка в центре партнеров](./support.md) , чтобы узнать о вариантах поддержки издателя и отправить запрос в службу поддержки корпорации Майкрософт.
+Следуйте инструкциям в [технической поддержке программы коммерческого рынка в центре партнеров](../support.md) , чтобы узнать о вариантах поддержки издателя и отправить запрос в службу поддержки корпорации Майкрософт.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об API-интерфейсах службы измерения см. в статье [вопросы и ответы по API службы измерения Marketplace](./marketplace-metering-service-apis-faq.md).

@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: how-to
 ms.date: 07/12/2020
 ms.author: memildin
-ms.openlocfilehash: 4a709527c0de2e092bcca2bbd9bc596aa0eb4cc0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6091ccbb64ec880224e861e1b8ee2bd39363385c
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91440719"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92342388"
 ---
 # <a name="secure-your-management-ports-with-just-in-time-access"></a>Защита портов управления с помощью JIT-доступа
 
@@ -31,11 +31,11 @@ ms.locfileid: "91440719"
 
 ## <a name="availability"></a>Доступность
 
-|Аспект|Подробнее|
+|Аспект|Сведения|
 |----|:----|
 |Состояние выпуска:|Общедоступная версия (GA)|
 |Цены|Требуется [Azure Defender для серверов](defender-for-servers-introduction.md)|
-|Поддерживаемые виртуальные машины:|![Да ](./media/icons/yes-icon.png) , виртуальные машины развернуты с помощью Azure Resource Manager.<br>![Нет ](./media/icons/no-icon.png) виртуальных машин, развернутых с помощью классических моделей развертывания. Дополнительные [сведения об этих моделях развертывания](../azure-resource-manager/management/deployment-models.md).<br>![Нет ](./media/icons/no-icon.png) виртуальных машин, защищенных брандмауэрами Azure, которыми управляет [Диспетчер брандмауэра Azure](https://docs.microsoft.com/azure/firewall-manager/overview)|
+|Поддерживаемые виртуальные машины:|![Да ](./media/icons/yes-icon.png) , виртуальные машины развернуты с помощью Azure Resource Manager.<br>![Нет ](./media/icons/no-icon.png) виртуальных машин, развернутых с помощью классических моделей развертывания. Дополнительные [сведения об этих моделях развертывания](../azure-resource-manager/management/deployment-models.md).<br>![Нет ](./media/icons/no-icon.png) виртуальных машин, защищенных брандмауэрами Azure, которыми управляет [Диспетчер брандмауэра Azure](../firewall-manager/overview.md)|
 |Требуемые роли и разрешения|Роли **Reader** и **секуритиреадер** могут просматривать состояние JIT и параметры.<br>Сведения о создании настраиваемых ролей, которые могут работать с JIT-компилятором, см. в разделе [какие разрешения необходимы для настройки и использования JIT?](just-in-time-explained.md#what-permissions-are-needed-to-configure-and-use-jit).<br>Чтобы создать роль с минимальными привилегиями для пользователей, которым требуется запросить JIT-доступ к виртуальной машине, и не выполнять другие операции JIT, используйте [Скрипт Set-житлеастпривилежедроле](https://github.com/Azure/Azure-Security-Center/tree/master/Powershell%20scripts/JIT%20Custom%20Role) на страницах сообщества центра безопасности GitHub.|
 |Облако.|![Да](./media/icons/yes-icon.png) Коммерческие облака<br>![Да](./media/icons/yes-icon.png) Национальные и независимые (US Gov, China Gov, другие правительственные облака)|
 |||
@@ -164,7 +164,7 @@ ms.locfileid: "91440719"
 
 ### <a name="powershell"></a>[**PowerShell**](#tab/jit-config-powershell)
 
-### <a name="enable-jit-on-your-vms-using-powershell"></a>Включение JIT на виртуальных машинах с помощью PowerShell
+### <a name="enable-jit-on-your-vms-using-powershell"></a>Включение JIT-доступа на виртуальных машинах с помощью PowerShell
 
 Чтобы включить JIT-доступ к виртуальным машинам из PowerShell, используйте официальный командлет PowerShell центра безопасности Azure `Set-AzJitNetworkAccessPolicy` .
 
@@ -215,7 +215,7 @@ ms.locfileid: "91440719"
 
 Функцию JIT-доступа к виртуальной машине можно использовать через API Центра безопасности Azure. Используйте этот API, чтобы получить сведения о настроенных виртуальных машинах, добавить новые, запросить доступ к виртуальной машине и многое другое. 
 
-Дополнительные сведения см. в статье [политики JIT-доступа к сети](https://docs.microsoft.com/rest/api/securitycenter/jitnetworkaccesspolicies).
+Дополнительные сведения см. в статье [политики JIT-доступа к сети](/rest/api/securitycenter/jitnetworkaccesspolicies).
 
 
 --- 
@@ -319,7 +319,7 @@ ms.locfileid: "91440719"
     Start-AzJitNetworkAccessPolicy -ResourceId "/subscriptions/SUBSCRIPTIONID/resourceGroups/RESOURCEGROUP/providers/Microsoft.Security/locations/LOCATION/jitNetworkAccessPolicies/default" -VirtualMachine $JitPolicyArr
     ```
 
-Дополнительные сведения см. в [документации по командлетам PowerShell](https://docs.microsoft.com/powershell/scripting/developer/cmdlet/cmdlet-overview).
+Дополнительные сведения см. в [документации по командлетам PowerShell](/powershell/scripting/developer/cmdlet/cmdlet-overview).
 
 
 
@@ -329,7 +329,7 @@ ms.locfileid: "91440719"
 
 Функцию JIT-доступа к виртуальной машине можно использовать через API Центра безопасности Azure. Используйте этот API, чтобы получить сведения о настроенных виртуальных машинах, добавить новые, запросить доступ к виртуальной машине и многое другое. 
 
-Дополнительные сведения см. в статье [политики JIT-доступа к сети](https://docs.microsoft.com/rest/api/securitycenter/jitnetworkaccesspolicies).
+Дополнительные сведения см. в статье [политики JIT-доступа к сети](/rest/api/securitycenter/jitnetworkaccesspolicies).
 
 ---
 

@@ -2,20 +2,20 @@
 title: Учебник. подготовка пользователей для GitHub — Azure AD
 description: Узнайте, как настроить Azure Active Directory для автоматической подготовки и отзыва учетных записей пользователей в GitHub.
 services: active-directory
-author: ArvindHarinder1
+author: Zhchia
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: article
-ms.date: 03/27/2019
-ms.author: arvinh
-ms.openlocfilehash: 847c69a18a73d67b9b994e72686a4073ddd6d27f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 10/21/2020
+ms.author: Zhchia
+ms.openlocfilehash: b9b7a82d611743f2ba76e20f47670771e2e38904
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91857543"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92448968"
 ---
 # <a name="tutorial-configure-github-for-automatic-user-provisioning"></a>Руководство по настройке GitHub для автоматической подготовки пользователей
 
@@ -28,7 +28,7 @@ ms.locfileid: "91857543"
 * клиент Azure Active Directory;
 * Организация GitHub, созданная в облаке [GitHub Enterprise](https://help.github.com/articles/github-s-products/#github-enterprise), которой требуется [план выставления счетов GitHub Enterprise](https://help.github.com/articles/github-s-billing-plans/#billing-plans-for-organizations).
 * Учетная запись пользователя в GitHub с разрешениями администратора для Организации.
-* [SAML, настроенный для Организации в облаке GitHub Enterprise](https://docs.microsoft.com/azure/active-directory/saas-apps/github-tutorial)
+* [SAML, настроенный для Организации в облаке GitHub Enterprise](./github-tutorial.md)
 * Убедитесь, что для вашей организации предоставлен доступ OAuth, как описано [здесь](https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/approving-oauth-apps-for-your-organization) .
 * SCIM подготовка для одной организации поддерживается, только если единый вход включен на уровне Организации.
 

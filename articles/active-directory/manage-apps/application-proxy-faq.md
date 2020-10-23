@@ -1,5 +1,5 @@
 ---
-title: Часто задаваемые вопросы об Azure AD Application Proxy | Документация Майкрософт
+title: Azure Active Directory Application Proxy часто задаваемые вопросы
 description: Ознакомьтесь с ответами на часто задаваемые вопросы об использовании AD Application Proxy Azure для публикации внутренних локальных приложений для удаленных пользователей.
 services: active-directory
 author: kenwith
@@ -11,12 +11,13 @@ ms.topic: reference
 ms.date: 07/23/2020
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: edf51dad768e8d8b5ea5dc6c1eff88f43f0f6b70
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: contperfq2
+ms.openlocfilehash: 38bff38ebe44d9018299444b89d7743c4cc92b72
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88589169"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92424206"
 ---
 # <a name="active-directory-azure-ad-application-proxy-frequently-asked-questions"></a>Часто задаваемые вопросы о прокси приложения Active Directory (Azure AD)
 
@@ -48,7 +49,7 @@ ms.locfileid: "88589169"
 
 Нет, в настоящее время это невозможно. Попытка регистрации всегда выполняется в домашнем клиенте пользователя.
 
-### <a name="my-back-end-application-is-hosted-on-multiple-web-servers-and-requires-user-session-persistence-stickiness-how-can-i-achieve-session-persistence"></a>Мое серверное приложение размещается на нескольких веб-серверах и требует сохранения пользовательского сеанса («закрепления»). Как можно добиться сохранения сеанса? 
+### <a name="my-back-end-application-is-hosted-on-multiple-web-servers-and-requires-user-session-persistence-stickiness-how-can-i-achieve-session-persistence"></a>Мое серверное приложение размещается на нескольких веб-серверах и требует сохранения пользовательского сеанса («закрепления»). Как можно добиться сохранения сеанса? 
 
 Рекомендации см. в статье [Высокая доступность и балансировка нагрузки соединителей прокси приложения и приложений](application-proxy-high-availability-load-balancing.md).
 
@@ -83,7 +84,6 @@ ms.locfileid: "88589169"
     ```
     HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\WinHttp\EnableDefaultHttp2 (DWORD) Value: 0 
     ```
-
 
 ## <a name="application-configuration"></a>Конфигурация приложений
 
@@ -124,6 +124,12 @@ ms.locfileid: "88589169"
 ### <a name="does-ntlm-authentication-work-with-azure-ad-application-proxy"></a>Работает ли проверка подлинности NTLM с Azure AD Application Proxy?
 
 Проверку подлинности NTLM нельзя использовать в качестве метода предварительной проверки подлинности или единого входа. Проверка подлинности NTLM может использоваться только в том случае, если ее можно согласовать непосредственно между клиентом и опубликованным веб-приложением. Использование проверки подлинности NTLM обычно приводит к отображению запроса на вход в браузере.
+
+### <a name="can-i-use-the-logon-identity-on-premises-user-principal-name-or-on-premises-sam-account-name-in-a-b2b-iwa-single-sign-on-scenario"></a>Можно ли использовать удостоверение входа "локальный участник пользователя" или "локальное имя учетной записи SAM" в сценарии с единым входом B2B IWA?
+
+Нет, это не сработает, так как гостевой пользователь в Azure AD не имеет атрибута, необходимого для любого из указанных выше удостоверений входа.
+
+В этом случае будет использоваться резервное имя участника-пользователя. Дополнительные сведения о сценарии B2B см. в статье [предоставление пользователям B2B в Azure AD доступа к локальным приложениям](../external-identities/hybrid-cloud-to-on-premises.md).
 
 ## <a name="pass-through-authentication"></a>Сквозная аутентификация
 
@@ -198,5 +204,5 @@ ms.locfileid: "88589169"
 1. Опубликуйте URL-адреса HTTP и HTTPS как отдельные приложения с подстановочным знаком, но присвойте каждому из них другой личный домен. Эта конфигурация будет работать, так как у них разные внешние URL-адреса.
 
 2. Опубликуйте URL-адрес HTTPS с помощью приложения с подстановочными знаками. Опубликуйте приложения HTTP отдельно с помощью этих командлетов PowerShell для прокси приложения:
-   - [Управление приложениями прокси приложения](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0#application_proxy_application_management)
-   - [Управление соединителем прокси приложения](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0#application_proxy_connector_management)
+   - [Управление приложениями прокси приложения](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0#application_proxy_application_management&preserve-view=true)
+   - [Управление соединителем прокси приложения](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0#application_proxy_connector_management&preserve-view=true)

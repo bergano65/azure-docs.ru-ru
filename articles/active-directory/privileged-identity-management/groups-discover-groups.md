@@ -14,12 +14,12 @@ ms.subservice: pim
 ms.date: 08/03/2020
 ms.author: curtand
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 68795033d36ad0bcb36b7cd81cea0d848ecd5113
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2ef27475509c59b3c0caf194fd85530f3fdd6c7c
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89049015"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92367845"
 ---
 # <a name="bring-privileged-access-groups-preview-into-privileged-identity-management"></a>Перенесите привилегированные группы доступа (Предварительная версия) в управление привилегированными пользователями
 
@@ -27,7 +27,7 @@ ms.locfileid: "89049015"
 
 ## <a name="identify-groups-to-manage"></a>Указание групп для управления
 
-Можно создать назначаемую ролью группу в Azure AD, как описано в разделе [Создание группы, назначаемой ролью, в Azure Active Directory](../users-groups-roles/roles-groups-create-eligible.md). Вы должны быть владельцем группы, чтобы она применялись к управлению с помощью управление привилегированными пользователями.
+Можно создать назначаемую ролью группу в Azure AD, как описано в разделе [Создание группы, назначаемой ролью, в Azure Active Directory](../roles/groups-create-eligible.md). Вы должны быть владельцем группы, чтобы она применялись к управлению с помощью управление привилегированными пользователями.
 
 1. [Войдите в Azure AD](https://aad.portal.azure.com) с правами администратора привилегированных ролей.
 1. Выберите **группы** , а затем выберите назначаемую роль группу, которой вы хотите управлять в PIM. Список можно найти и отфильтровать.
@@ -45,7 +45,7 @@ ms.locfileid: "89049015"
 > [!NOTE]
 > После того как группа привилегированного доступа будет управляема, ее нельзя будет использовать для управления. Это предотвращает удаление параметров управление привилегированными пользователями другим администратором ресурсов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Настройка назначений групп привилегированных прав доступа в управление привилегированными пользователями](pim-resource-roles-configure-role-settings.md)
 - [Назначение привилегированных групп доступа в управление привилегированными пользователями](pim-resource-roles-assign-roles.md)

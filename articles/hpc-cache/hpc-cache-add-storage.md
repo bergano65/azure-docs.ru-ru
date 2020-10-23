@@ -6,12 +6,12 @@ ms.service: hpc-cache
 ms.topic: how-to
 ms.date: 09/30/2020
 ms.author: v-erkel
-ms.openlocfilehash: ab9b7fa330964f7db8393334dd8f209efd75573d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c1edbaf394a4abd36e47843a6f419eb9d62f08d7
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91611308"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92340314"
 ---
 # <a name="add-storage-targets"></a>Добавление целевых объектов хранилища
 
@@ -74,9 +74,9 @@ ms.locfileid: "91611308"
 
 ### <a name="add-the-access-control-roles-to-your-account"></a>Добавление ролей контроля доступа в учетную запись
 
-Кэш Azure HPC использует [Управление доступом на основе ролей Azure (Azure RBAC)](https://docs.microsoft.com/azure/role-based-access-control/index) для авторизации службы кэша на доступ к учетной записи хранения для целевых объектов хранилища BLOB-объектов Azure.
+Кэш Azure HPC использует [Управление доступом на основе ролей Azure (Azure RBAC)](../role-based-access-control/index.yml) для авторизации службы кэша на доступ к учетной записи хранения для целевых объектов хранилища BLOB-объектов Azure.
 
-Владелец учетной записи хранения должен явно добавить роли [участника учетной записи хранения](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-account-contributor) ролей и [участника данных большого двоичного объекта хранилища](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor) для пользователя "поставщик ресурсов кэша HPC".
+Владелец учетной записи хранения должен явно добавить роли [участника учетной записи хранения](../role-based-access-control/built-in-roles.md#storage-account-contributor) ролей и [участника данных большого двоичного объекта хранилища](../role-based-access-control/built-in-roles.md#storage-blob-data-contributor) для пользователя "поставщик ресурсов кэша HPC".
 
 Это можно сделать заранее или щелкнув ссылку на странице, где вы добавите целевой объект хранилища BLOB-объектов. Помните, что для распространения параметров роли в среде Azure может потребоваться до пяти минут, поэтому необходимо подождать несколько минут после добавления ролей перед созданием целевого объекта хранилища.
 
@@ -311,7 +311,7 @@ az hpc-cache storage-target list --resource-group "scgroup" --cache-name "sc1"
 
 Чтобы просмотреть сведения о конкретном целевом объекте хранилища, используйте команду [AZ HPC — хранилище кэша — целевое отображение](/cli/azure/ext/hpc-cache/hpc-cache/storage-target#ext-hpc-cache-az-hpc-cache-storage-target-list) . (Укажите целевой объект хранилища по имени.)
 
-Пример.
+Пример
 
 ```azurecli
 $ az hpc-cache storage-target show --cache-name doc-cache0629 --name nfsd1

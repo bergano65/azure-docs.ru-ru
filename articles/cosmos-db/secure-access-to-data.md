@@ -7,12 +7,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 01/21/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 30444523bfc26fc0f4eb410957bcc9ee46aff725
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 574592d4434b9d8c49086b82bab0b8775fb67e03
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91760875"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92371738"
 ---
 # <a name="secure-access-to-data-in-azure-cosmos-db"></a>Защита доступа к данным в Azure Cosmos DB
 
@@ -29,20 +29,7 @@ ms.locfileid: "91760875"
 
 ## <a name="primary-keys"></a>Первичные ключи
 
-Первичные ключи предоставляют доступ ко всем административным ресурсам учетной записи базы данных. Первичные ключи:
-
-- предоставляют доступ к учетным записям, базам данных, пользователям и разрешениям; 
-- не могут использоваться для предоставления детального доступа к контейнерам и документам;
-- создаются в процессе создания учетной записи;
-- можно создать повторно в любое время.
-
-Каждая учетная запись состоит из двух первичных ключей: первичного ключа и вторичного ключа. Двойные ключи позволяют повторно создавать или сменять ключи, обеспечивая постоянный доступ к учетной записи и данным.
-
-Помимо двух первичных ключей для учетной записи Cosmos DB, существуют два ключа только для чтения. Эти ключи разрешают только операции чтения в учетной записи. Ключи только для чтения не предоставляют доступ к ресурсам разрешений на чтение.
-
-Первичные и вторичные ключи, доступные только для чтения и записи на чтение и запись можно получить и повторно создать с помощью портал Azure. Дополнительные сведения см. в разделе [Просмотр, копирование и повторное создание ключей доступа](manage-with-cli.md#regenerate-account-key).
-
-:::image type="content" source="./media/secure-access-to-data/nosql-database-security-master-key-portal.png" alt-text="Управление доступом (IAM) на портале Azure: демонстрация безопасности базы данных NoSQL":::
+Первичные ключи предоставляют доступ ко всем административным ресурсам учетной записи базы данных. Каждая учетная запись состоит из двух первичных ключей: первичного ключа и вторичного ключа. Двойные ключи позволяют повторно создавать или сменять ключи, обеспечивая постоянный доступ к учетной записи и данным. Дополнительные сведения о первичных ключах см. в статье [безопасность базы данных](database-security.md#primary-keys) .
 
 ### <a name="key-rotation"></a>Смена ключа<a id="key-rotation"></a>
 
@@ -54,7 +41,7 @@ ms.locfileid: "91760875"
 4. Проверка того, что новый первичный ключ работает для всех ресурсов. Процесс смены ключа может занять от минуты до нескольких часов в зависимости от размера учетной записи Cosmos DB.
 5. Замените вторичный ключ новым первичным ключом.
 
-:::image type="content" source="./media/secure-access-to-data/nosql-database-security-master-key-rotate-workflow.png" alt-text="Управление доступом (IAM) на портале Azure: демонстрация безопасности базы данных NoSQL" border="false":::
+:::image type="content" source="./media/secure-access-to-data/nosql-database-security-master-key-rotate-workflow.png" alt-text="Смена первичного ключа в портал Azure — демонстрация безопасности базы данных NoSQL" border="false":::
 
 ### <a name="code-sample-to-use-a-primary-key"></a>Пример кода для использования первичного ключа
 
@@ -102,9 +89,9 @@ CosmosClient client = new CosmosClient(endpointUrl, authorizationKey);
 7. Приложение может по-прежнему использовать маркер ресурса для прямого доступа к ресурсам Cosmos DB с разрешениями, определенными маркером, и в течение интервала времени, разрешенного этим маркером.
 8. По истечении срока действия маркера ресурса последующие запросы получают исключение: 401 — не авторизовано.  На этом этапе приложение для телефона повторно установит личность и запросит новый маркер ресурса.
 
-    :::image type="content" source="./media/secure-access-to-data/resourcekeyworkflow.png" alt-text="Управление доступом (IAM) на портале Azure: демонстрация безопасности базы данных NoSQL" border="false":::
+    :::image type="content" source="./media/secure-access-to-data/resourcekeyworkflow.png" alt-text="Смена первичного ключа в портал Azure — демонстрация безопасности базы данных NoSQL" border="false":::
 
-Создание маркеров ресурсов и управление ими осуществляется собственными клиентскими библиотеками Cosmos DB. Однако если используется REST, то необходимо создать заголовки запросов и проверки подлинности. Дополнительные сведения о создании заголовков проверки подлинности для RESTFUL см. в статье [Управление доступом к Cosmos DB ресурсам](/rest/api/cosmos-db/access-control-on-cosmosdb-resources) или исходный код [пакета SDK для .NET](https://github.com/Azure/azure-cosmos-dotnet-v3/blob/master/Microsoft.Azure.Cosmos/src/Authorization/AuthorizationHelper.cs) или [ пакета SDK дляNode.js](https://github.com/Azure/azure-cosmos-js/blob/master/src/auth.ts).
+Создание и управление маркерами ресурсов осуществляется с помощью собственных клиентских библиотек Cosmos DB; Однако при использовании RESTFUL необходимо создать заголовки запросов и аутентификации. Дополнительные сведения о создании заголовков проверки подлинности для RESTFUL см. в статье [Управление доступом к Cosmos DB ресурсам](/rest/api/cosmos-db/access-control-on-cosmosdb-resources) или исходный код [пакета SDK для .NET](https://github.com/Azure/azure-cosmos-dotnet-v3/blob/master/Microsoft.Azure.Cosmos/src/Authorization/AuthorizationHelper.cs) или [ пакета SDK дляNode.js](https://github.com/Azure/azure-cosmos-js/blob/master/src/auth.ts).
 
 Пример службы среднего уровня, используемой для создания маркеров ресурсов или в качестве брокера, см. в [репозитории приложения ResourceTokenBroker](https://github.com/Azure/azure-documentdb-dotnet/tree/master/samples/xamarin/UserItems/ResourceTokenBroker/ResourceTokenBroker/Controllers).
 

@@ -11,12 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 10/14/2020
-ms.openlocfilehash: 371afbd9380ed1ecf28d0b26e2b4c5cd16ae6317
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 66a17b61fef652160dc6d4a02bf330adbf0c7362
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92044077"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92425694"
 ---
 # <a name="lookup-activity-in-azure-data-factory"></a>Действие поиска в фабрике данных Azure
 
@@ -72,7 +72,7 @@ firstRowOnly | Указывает, следует ли возвращать то
 
 Результат поиска возвращается в раздел `output` результатов выполнения действия.
 
-* **Когда для `firstRowOnly` задано значение `true` (по умолчанию)** , формат выходного значения выглядит, как показано в следующем коде. Результат поиска находится в предопределенном ключе `firstRow`. Чтобы использовать результат в последующем действии, используйте шаблон  `@{activity('LookupActivity').output.firstRow.table` .
+* **Когда для `firstRowOnly` задано значение `true` (по умолчанию)** , формат выходного значения выглядит, как показано в следующем коде. Результат поиска находится в предопределенном ключе `firstRow`. Чтобы использовать результат в последующем действии, используйте шаблон  `@{activity('LookupActivity').output.firstRow.table}` .
 
     ```json
     {

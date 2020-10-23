@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/21/2019
 ms.author: jeedes
-ms.openlocfilehash: ca0bfcb0c90142924285215c427a7071297be730
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 7f808cff5bddf6566276df2f707232bde1ecca8a
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88553926"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91995094"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-periscope-data"></a>Руководство по Интеграция Azure Active Directory с Periscope Data
 
@@ -123,7 +123,7 @@ ms.locfileid: "88553926"
 
 2. Откройте меню кнопкой с шестеренкой в нижнем левом углу, затем выберите пункты меню **Billing** (Выставление счетов)  > **Security** (Безопасность) и выполните следующие действия. Только администраторы имеют доступ к этим параметрам.
 
-    ![Сведения о настройке Periscope Data](./media/periscope-data-tutorial/configure01.png)
+    ![Снимок экрана, который демонстрирует диалоговое окно "Безопасность" и выбранные в нем значения.](./media/periscope-data-tutorial/configure01.png)
 
     а. Скопируйте **URL-адрес метаданных федерации приложений** из **сертификата подписи SAML**, полученного на шаге 5, и откройте этот адрес в браузере. Откроется XML-документ.
 
@@ -143,7 +143,7 @@ ms.locfileid: "88553926"
 
     i. Наконец, нажмите кнопку **Save** (Сохранить) и **подтвердите** изменение параметров единого входа, введя команду **Logout**.
 
-    ![Сведения о настройке Periscope Data](./media/periscope-data-tutorial/configure02.png)
+    ![Снимок экрана для диалогового окна обновления конфигурации единого входа, где в текстовом поле введена строка logout и выбрана кнопка подтверждения.](./media/periscope-data-tutorial/configure02.png)
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -206,7 +206,7 @@ ms.locfileid: "88553926"
 
 2. Щелкните значок **Параметры** в левой нижней части меню и перейдите к пункту **Permissions** (Разрешения).
 
-    ![Сведения о настройке Periscope Data](./media/periscope-data-tutorial/configure03.png)
+    ![Снимок экрана, где выбраны меню параметров и элемент "Разрешения".](./media/periscope-data-tutorial/configure03.png)
 
 3. Щелкните **ADD USER** (Добавить пользователя) выполните следующие действия.
 

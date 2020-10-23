@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: rboucher
 ms.author: robb
 ms.date: 08/15/2020
-ms.openlocfilehash: 1841c4eb8975c865c5f15a0e8fe3a6b5f0522820
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1681217c9e55b67ee2a6737aeece5303256bc1e6
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89435411"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92461810"
 ---
 # <a name="what-is-monitored-by-azure-monitor"></a>Что отслеживает Azure Monitor?
 В этой статье описаны различные приложения и службы, которые отслеживаются с помощью Azure Monitor. 
@@ -170,13 +170,26 @@ ms.locfileid: "89435411"
 |VPN-шлюз | Да | Да | нет |  |
 |Виртуальный рабочий стол Windows | нет | Нет | нет |  |
 
+## <a name="virtual-machine-agents"></a>Агенты виртуальных машин
+В следующей таблице перечислены агенты, которые могут получать данные из гостевой операционной системы виртуальных машин и передавать данные для наблюдения. Каждый агент может составлять различные данные и передавать их метрикам или журналам в Azure Monitor. 
+
+Дополнительные сведения о данных, которые могут собираются каждым агентом, см. в разделе [Общие сведения об агентах Azure Monitor](platform/agents-overview.md) .
+
+| Агент |  Метрики | Журналы |
+|:---|:---|:---|:---|
+| [Агент Azure Monitor (Предварительная версия)](platform/azure-monitor-agent-overview.md) | Да | Да |
+| [Агент Log Analytics](platform/log-analytics-agent.md) | Нет | Да|
+| [Диагностическое расширение](platform/diagnostics-extension-overview.md) | Да | Нет |
+| [Агент Telegraf](platform/collect-custom-metrics-linux-telegraf.md) | Да | Нет |
+| [Агент зависимостей](insights/vminsights-enable-overview.md) | Нет | Да |
+
 
 ## <a name="product-integrations"></a>Интеграция продуктов
 Данные служб и решений из следующей таблицы хранятся в рабочей области Log Analytics, поэтому их можно анализировать вместе с другими данными журналов, собираемыми Azure Monitor.
 
 | Продукт или служба | Описание |
 |:---|:---|
-| [Служба автоматизации Azure](../automation/index.yml) | Управление обновлениями операционной системы и отслеживание изменений на компьютерах Windows и Linux. См. статьи [Отслеживание изменений](../automation/change-tracking.md) и [Управление обновлениями](../automation/update-management/update-mgmt-overview.md). |
+| [Служба автоматизации Azure](../automation/index.yml) | Управление обновлениями операционной системы и отслеживание изменений на компьютерах Windows и Linux. См. статьи [Отслеживание изменений](../automation/change-tracking/overview.md) и [Управление обновлениями](../automation/update-management/update-mgmt-overview.md). |
 | [Azure Information Protection](/azure/information-protection/) | Классификация и дополнительная защита документов и сообщений электронной почты. См. [Центр отчетов для Azure Information Protection](/azure/information-protection/reports-aip#configure-a-log-analytics-workspace-for-the-reports). |
 | [Центр безопасности Azure](../security-center/index.yml) | Сбор и анализ событий безопасности и анализ угроз. См. [Сбор данных в Центре безопасности Azure](../security-center/security-center-enable-data-collection.md). |
 | [Azure Sentinel](../sentinel/index.yml) | Подключается к различным источникам, включая Office 365 и Amazon Web Services CloudTrail. См. статью [Подключение источников данных](../sentinel/connect-data-sources.md). |

@@ -7,12 +7,12 @@ ms.service: mysql
 ms.topic: how-to
 ms.date: 01/09/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 8948ed51a9cda3d308046f3b85b6ce338462e82c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 05a3846de1ad4100abec996f8051201882bb7566
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87826200"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92127547"
 ---
 # <a name="create-and-manage-private-link-for-azure-database-for-mysql-using-cli"></a>Создание и управление частной связью для базы данных Azure для MySQL с помощью интерфейса командной строки
 
@@ -21,7 +21,7 @@ ms.locfileid: "87826200"
 > [!NOTE]
 > Функция закрытых ссылок доступна только для серверов базы данных Azure для MySQL в общего назначения или в ценовой категории, оптимизированные для памяти. Убедитесь, что сервер базы данных находится в одной из этих ценовых категорий.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -92,7 +92,7 @@ az network private-endpoint create \
     --resource-group myResourceGroup \  
     --vnet-name myVirtualNetwork  \  
     --subnet mySubnet \  
-    --private-connection-resource-id $(az resource show -g myResourcegroup -n mydemoserver --resource-type "Microsoft.DBforMySQL/servers" --query "id") \    
+    --private-connection-resource-id $(az resource show -g myResourcegroup -n mydemoserver --resource-type "Microsoft.DBforMySQL/servers" --query "id" -o tsv) \    
     --group-id mysqlServer \  
     --connection-name myConnection  
  ```

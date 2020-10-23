@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 12/4/2019
 ms.author: vikancha
-ms.openlocfilehash: 74827e78017ad3540709fa0e671762a985976cda
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6885c28d993b8ddab5fe158ad7b1480259cb8fb0
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86999009"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92163791"
 ---
 # <a name="install-amd-gpu-drivers-on-n-series-vms-running-windows"></a>Установка драйверов GPU AMD на виртуальные машины серии N под управлением Windows
 
@@ -31,7 +31,7 @@ ms.locfileid: "86999009"
 
 | OS | Драйвер |
 | -------- |------------- |
-| Многосеансовый выпуск Windows 10 Корпоративная — сборка 1903 <br/><br/>Windows 10 — сборка 1809<br/><br/>Windows Server 2016<br/><br/>Windows Server 2019 | [20.Q1.1](https://download.microsoft.com/download/3/8/9/3893407b-e8aa-4079-8592-735d7dd1c19a/Radeon-Pro-Software-for-Enterprise-GA.exe) (.exe) |
+| Многосеансовый выпуск Windows 10 Корпоративная — сборка 1903 <br/><br/>Windows 10 — сборка 1809<br/><br/>Windows Server 2016<br/><br/>Windows Server 2019 | [20. Q1. Исправление](https://download.microsoft.com/download/d/e/f/def0fb44-15ab-4b83-959a-8094eb9d0dfe/AMD-Azure-NVv4-Driver-20Q1-Hotfix3.exe) (. exe) |
 
 
 ## <a name="driver-installation"></a>Установка драйвера
@@ -48,11 +48,12 @@ ms.locfileid: "86999009"
 
 Установку драйвера можно проверить в диспетчере устройств. В следующем примере показана успешная настройка карты Radeon Instinct MI25 на виртуальной машине Azure серии NVv4.
 <br />
-![Свойства драйвера GPU](./media/n-series-amd-driver-setup/device-manager.png)
+
+![Снимок экрана, на котором показана успешная конфигурация карты Radeon порывом MI25 на виртуальной машине Azure NVv4.](./media/n-series-amd-driver-setup/device-manager.png)
 
 С помощью средства dxdiag можно проверить свойства GPU, в том числе объем видеопамяти. В следующем примере показаны сведения об одной из двух секций карты Radeon Instinct MI25 на виртуальной машине Azure серии NVv4.
 <br />
-![Свойства драйвера GPU](./media/n-series-amd-driver-setup/dxdiag-output-new.png)
+![Снимок экрана, на котором показан раздел 1/2 карты Radeon порывом MI25 на виртуальной машине Azure NVv4.](./media/n-series-amd-driver-setup/dxdiag-output-new.png)
 
 Если вы используете Windows 10 сборки 1903 или более позднюю версию, средство dxdiag не будет отображать сведения на вкладке "Монитор". Используйте действие "Сохранить все сведения" в нижней части окна, чтобы получить сведения о GPU AMD MI25 в выходном файле.
 

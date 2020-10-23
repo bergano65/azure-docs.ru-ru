@@ -12,12 +12,12 @@ ms.topic: tutorial
 ms.date: 05/30/2019
 ms.author: jeedes
 ms.custom: has-adal-ref
-ms.openlocfilehash: f36c80b9d08f2fde07483c1dde3afe99ec9f92d7
-ms.sourcegitcommit: 7374b41bb1469f2e3ef119ffaf735f03f5fad484
+ms.openlocfilehash: ce4cccba678a934780dc987f1441ea658a70f8eb
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90705628"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91996621"
 ---
 # <a name="configure-an-openidoauth-application-from-the-azure-ad-app-gallery"></a>Настройка приложения OpenID или OAuth из коллекции приложений Azure AD
 
@@ -99,19 +99,19 @@ API Graph также обеспечивает доступ для пользов
 
     а. Щелкните **Регистрация приложений** в левой части меню и откройте приложение, введя его имя в поле поиска.
 
-    ![API Graph](./media/openidoauth-tutorial/application.png)
+    ![Снимок экрана: пункт "Регистрация приложений", выбранные в меню слева, и выделенное поле поиска "Идентификатор приложения"](./media/openidoauth-tutorial/application.png)
 
     b. Щелкните **Просмотреть разрешения API**.
 
-    ![API Graph](./media/openidoauth-tutorial/api-permission.png)
+    ![Снимок экрана: страница "Вызов API" с выделенной кнопкой "Просмотреть разрешения API"](./media/openidoauth-tutorial/api-permission.png)
 
     c. Щелкните **Добавить разрешение**.
 
-    ![API Graph](./media/openidoauth-tutorial/add-permission.png)
+    ![Снимок экрана: раздел "Разрешения API" с выбранной кнопкой "Добавить разрешение"](./media/openidoauth-tutorial/add-permission.png)
 
     d. Щелкните **Microsoft Graph**.
 
-    ![API Graph](./media/openidoauth-tutorial/microsoft-graph.png)
+    ![Снимок экрана: страница "Запрос разрешений API" с выделенной вкладкой "API Microsoft" и плиткой "Microsoft Graph"](./media/openidoauth-tutorial/microsoft-graph.png)
 
     д) Выберите необходимые параметры из списка **Делегированные разрешения** и **Разрешения приложения**.
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 04/06/2020
 ms.author: jeedes
-ms.openlocfilehash: 494a698ac4b6f8262851878cfee4bb91126d9f02
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.openlocfilehash: a050f7a7d86ef8586cab3e90d9c1bac310a7f18b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91823025"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91854585"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-litmus"></a>Руководство по интеграции единого входа Azure Active Directory с Litmus
 
@@ -129,11 +129,11 @@ ms.locfileid: "91823025"
 
 1. Щелкните **Security** (Безопасность) в области навигации слева.
 
-    ![Конфигурация Litmus](./media/litmus-tutorial/security-img.png)
+    ![Снимок экрана с выбранным элементом "Безопасность".](./media/litmus-tutorial/security-img.png)
 
 1. В разделе **Configure SAML Authentication** (Настройка проверки подлинности SAML) выполните следующие действия:
 
-    ![Конфигурация Litmus](./media/litmus-tutorial/configure1.png)
+    ![Снимок экрана: раздел настройки проверки подлинности SAML, где можно ввести указанные значения.](./media/litmus-tutorial/configure1.png)
 
     а. Измените положение выключателя на **Enable SAML** (Включить SAML).
 
@@ -143,7 +143,7 @@ ms.locfileid: "91823025"
 
 1. Выполните следующие действия:
 
-    ![Конфигурация Litmus](./media/litmus-tutorial/configure3.png)
+    ![Снимок экрана: раздел для ввода описанных значений](./media/litmus-tutorial/configure3.png)
 
     а. В текстовое поле **SAML 2.0 Endpoint(HTTP)** (Конечная точка SAML 2.0 (HTTP)) вставьте значение поля **URL-адрес входа**, скопированное на портале Azure.
 
@@ -157,15 +157,15 @@ ms.locfileid: "91823025"
 
 1. Щелкните **Accounts** (Учетные записи) в области навигации слева.
 
-    ![Конфигурация Litmus](./media/litmus-tutorial/accounts-img.png)
+    ![Снимок экрана с выбранным элементом "Учетные записи".](./media/litmus-tutorial/accounts-img.png)
 
 1. Выберите вкладку **Add New User** (Добавить нового пользователя).
 
-    ![Конфигурация Litmus](./media/litmus-tutorial/add-new-user.png)
+    ![Снимок экрана с выбранным элементом "Добавить нового пользователя".](./media/litmus-tutorial/add-new-user.png)
 
 1. В разделе **Add User** (Добавление пользователя) выполните следующие действия:
 
-    ![Конфигурация Litmus](./media/litmus-tutorial/user-profile.png)
+    ![Снимок экрана для раздела добавления пользователя, где можно ввести описанные здесь значения.](./media/litmus-tutorial/user-profile.png)
 
     а. В текстовом поле **Email** (Адрес электронной почты) введите адрес электронной почты пользователя, например **B.Simon\@contoso.com**
 

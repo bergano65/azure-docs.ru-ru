@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 07/10/2018
-ms.openlocfilehash: aa1d8ff0743399d96436f33426ebc4c4ab4a29f6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f016fd37efa2bd821b5ad2286a921bf29bbedfbd
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86045643"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92221270"
 ---
 # <a name="test-stream-analytics-queries-locally-with-visual-studio"></a>Локальное тестирование запросов Stream Analytics с помощью Visual Studio
 
@@ -30,7 +30,7 @@ Azure Stream Analytics инструменты для Visual Studio можно и
 
 Для проверки запроса по локальным статическим данным щелкните правой кнопкой мыши входные данные и выберите функцию **Добавить локальный ввод**.
    
-![Добавление локальных входных данных](./media/stream-analytics-vs-tools-local-run/stream-analytics-tools-for-vs-add-local-input-01.png)
+![Снимок экрана, посвященный параметру "добавить локальный вход в меню".](./media/stream-analytics-vs-tools-local-run/stream-analytics-tools-for-vs-add-local-input-01.png)
    
 Во всплывающем окне выберите демонстрационные данные из локальной папки и нажмите кнопку **Сохранить**
    

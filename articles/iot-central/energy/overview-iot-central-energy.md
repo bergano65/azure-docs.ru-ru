@@ -8,12 +8,12 @@ ms.topic: overview
 ms.service: iot-central
 services: iot-central
 manager: abjork
-ms.openlocfilehash: 1a7502a77f8dca526c95e92302f0ca0a06a1dd32
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 0cc9fd5836371a925be531de773ea9c2e276c0eb
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "90970450"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92127358"
 ---
 # <a name="build-energy-solutions-with-iot-central"></a>Создание решений для энергетики с помощью IoT Central 
 
@@ -66,6 +66,6 @@ ms.locfileid: "90970450"
 ## <a name="next-steps"></a>Дальнейшие действия
 Чтобы приступить к разработке решения для сферы энергетики:
 * Бесплатно создайте шаблоны приложений: [приложение для интеллектуальных расходомеров](https://apps.azureiotcentral.com/build/new/smart-meter-monitoring) и [приложение для солнечных панелей](https://apps.azureiotcentral.com/build/new/solar-panel-monitoring).
-* Узнайте больше о [принципах работы приложения для интеллектуальных расходомеров](https://docs.microsoft.com/azure/iot-central/energy/concept-iot-central-smart-meter-app).
-* Узнайте больше о [принципах работы приложения для солнечных панелей](https://docs.microsoft.com/azure/iot-central/energy/concept-iot-central-solar-panel-app).
-* Узнайте о [платформе IoT Central](https://docs.microsoft.com/azure/iot-central/).
+* Узнайте больше о [принципах работы приложения для интеллектуальных расходомеров](./concept-iot-central-smart-meter-app.md).
+* Узнайте больше о [принципах работы приложения для солнечных панелей](./concept-iot-central-solar-panel-app.md).
+* Узнайте о [платформе IoT Central](../index.yml).

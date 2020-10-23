@@ -9,25 +9,25 @@ ms.topic: conceptual
 ms.reviewer: veyalla
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: df904e183d3f77751d86d0cefab5423d753f146b
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 7924b06b9056a53fa9861fcd0df516845662b34b
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91979793"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92341572"
 ---
-# <a name="access-built-in-metrics"></a>Доступ ко встроенным метрикам
+# <a name="access-built-in-metrics"></a>Доступ к встроенным метрикам
 
 Компоненты среды выполнения IoT Edge, центр IoT Edge и агент IoT Edge создают встроенные метрики в [формате демонстрации Prometheus](https://prometheus.io/docs/instrumenting/exposition_formats/). Удаленный доступ к этим метрикам для отслеживания работоспособности IoT Edge устройства.
 
-Начиная с выпуска 1.0.10, метрики автоматически предоставляются по умолчанию через **порт 9600** модулей **edgeHub** и **edgeAgent** ( `http://edgeHub:9600/metrics` и `http://edgeAgent:9600/metics` ). По умолчанию они не сопоставляются с узлом.
+Начиная с выпуска 1.0.10, метрики автоматически предоставляются по умолчанию через **порт 9600** модулей **edgeHub** и **edgeAgent** ( `http://edgeHub:9600/metrics` и `http://edgeAgent:9600/metrics` ). По умолчанию они не сопоставляются с узлом.
 
 Получите доступ к метрикам с узла, предоставив и сопоставляя порт метрик из модуля `createOptions` . Приведенный ниже пример сопоставляет порт метрик по умолчанию с портом 9601 на узле:
 
 ```
 {
   "ExposedPorts": {
-    "9600/tcp": {},
+    "9600/tcp": {}
   },
   "HostConfig": {
     "PortBindings": {
@@ -110,7 +110,7 @@ ms.locfileid: "91979793"
 | `edgeAgent_total_disk_write_bytes` | `module_name` | Тип: датчик<br> Число байтов, записанных на диск |
 | `edgeAgent_metadata` | `edge_agent_version`, `experimental_features`, `host_information` | Тип: датчик<br> Общие метаданные об устройстве. Значение всегда равно 0, сведения кодируются в тегах. Обратите внимание `experimental_features` и `host_information` являются объектами JSON. `host_information` выглядит так ```{"OperatingSystemType": "linux", "Architecture": "x86_64", "Version": "1.0.10~dev20200803.4", "Provisioning": {"Type": "dps.tpm", "DynamicReprovisioning": false, "AlwaysReprovisionOnStartup": true}, "ServerVersion": "19.03.6", "KernelVersion": "5.0.0-25-generic", "OperatingSystem": "Ubuntu 18.04.4 LTS", "NumCpus": 6, "Virtualized": "yes"}``` :. Примечание `ServerVersion` . это версия DOCKER, а `Version` — версия управляющей программы безопасности IOT Edge. |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Общие сведения о среде выполнения Azure IoT Edge и ее архитектуре](iot-edge-runtime.md)
 * [Свойства двойников модулей агента IoT Edge и центра IoT Edge](module-edgeagent-edgehub.md)

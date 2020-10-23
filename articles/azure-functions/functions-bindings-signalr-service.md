@@ -5,18 +5,18 @@ author: craigshoemaker
 ms.topic: reference
 ms.date: 02/28/2019
 ms.author: cshoe
-ms.openlocfilehash: 863620ce6f0af33b05ef290ae95ccdc99a53a54d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1446808b77e5eea78a9912db4c7a8e2dd783f33a
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "77523042"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92104382"
 ---
 # <a name="signalr-service-bindings-for-azure-functions"></a>Привязки службы SignalR для службы "Функции Azure"
 
 В этом наборе статей объясняется, как выполнять проверку подлинности и отправлять сообщения в режиме реального времени клиентам, подключенным к [службе Azure SignalR](https://azure.microsoft.com/services/signalr-service/) , с помощью привязок службы SignalR в функциях Azure. Служба "Функции Azure" поддерживает входные и выходные привязки для службы SignalR.
 
-| Действие | Type |
+| Действие | Тип |
 |---------|---------|
 | Возврат URL-адреса конечной точки службы и маркера доступа | [Входная привязка](./functions-bindings-signalr-service-input.md) |
 | Отправка сообщений службы SignalR |[Выходная привязка](./functions-bindings-signalr-service-output.md) |
@@ -36,7 +36,7 @@ ms.locfileid: "77523042"
 [Пакет NuGet]: https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.SignalRService
 [core tools]: ./functions-run-local.md
 [Пакет расширений]: ./functions-bindings-register.md#extension-bundles
-[Обновление расширений]: ./install-update-binding-extensions-manual.md
+[Обновление расширений]: ./functions-bindings-register.md
 [Расширение "инструменты Azure"]: https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-node-azure-pack
 
 Дополнительные сведения о настройке и использовании службы SignalR и функций Azure см. в статье [Разработка и Настройка функций Azure с помощью службы Azure SignalR](../azure-signalr/signalr-concept-serverless-development-config.md).
@@ -56,4 +56,4 @@ ms.locfileid: "77523042"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Возврат URL-адреса конечной точки службы и маркера доступа (входная привязка)](./functions-bindings-signalr-service-input.md)
-- [Отправка сообщений службы SignalR (Выходная привязка)](./functions-bindings-signalr-service-output.md) 
+- [Отправка сообщений службы SignalR (Выходная привязка)](./functions-bindings-signalr-service-output.md)

@@ -28,6 +28,7 @@
     - name: Статический HTML-сайт
       href: quickstart-html.md
     - name: Шаблон ARM
+      displayName: Resource Manager
       href: quickstart-arm-template.md
     - name: Пользовательский контейнер
       href: quickstart-custom-container.md

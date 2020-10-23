@@ -1,20 +1,18 @@
 ---
 title: Настройка квот и ограничений в Azure Data Lake Analytics
 description: Узнайте, как настроить и увеличить квоты в учетных записях Azure Data Lake Analytics (ADLA).
-services: data-lake-analytics
 ms.service: data-lake-analytics
 author: omidm1
 ms.author: omidm
 ms.reviewer: jasonh
-ms.assetid: 49416f38-fcc7-476f-a55e-d67f3f9c1d34
 ms.topic: how-to
 ms.date: 03/15/2018
-ms.openlocfilehash: 0025e35f516543c8fe703daa647ca29ed3fb87e6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fd032235f286b5db1930e9c9c6d730b5424aa4eb
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87127593"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92220845"
 ---
 # <a name="adjust-quotas-and-limits-in-azure-data-lake-analytics"></a>Настройка квот и ограничений в Azure Data Lake Analytics
 
@@ -27,8 +25,9 @@ ms.locfileid: "87127593"
 Если вы попытаетесь создать шестую учетную запись Azure Data Lake Analytics, то увидите сообщение о том, что достигнуто максимальное количество учетных записей Data Lake Analytics (5) для текущего региона и подписки.
 
 Если вы хотите выйти за рамки этого ограничения, можно воспользоваться этими вариантами:
-* Выберите другой подходящий регион.
-* [Отправьте запрос в службу поддержки Azure](#increase-maximum-quota-limits) с запросом на увеличение квоты.
+
+- Выберите другой подходящий регион.
+- [Отправьте запрос в службу поддержки Azure](#increase-maximum-quota-limits) с запросом на увеличение квоты.
 
 ## <a name="default-adla-account-limits"></a>Ограничения учетной записи Azure Data Lake Analytics по умолчанию
 
@@ -36,8 +35,8 @@ ms.locfileid: "87127593"
 
 Это максимальное число единиц аналитики, которые могут выполняться параллельно в вашей учетной записи. Если общее количество единиц аналитики по всем выполняемым заданиям превысит это ограничение, новые задания будут автоматически помещаться в очередь. Пример:
 
-* Если выполняется только одно задание на 32 единицы использования аналитики, то при отправке второго задания оно будет помещено в очередь, пока не завершится первое задание.
-* Если выполняются четыре задания, каждое из которых использует по 8 единиц аналитики, то при отправке пятого задания, на которое нужно 8 единиц использования аналитики, оно будет ожидать в очереди заданий, пока не освободятся эти 8 единиц использования аналитики.
+- Если выполняется только одно задание на 32 единицы использования аналитики, то при отправке второго задания оно будет помещено в очередь, пока не завершится первое задание.
+- Если выполняются четыре задания, каждое из которых использует по 8 единиц аналитики, то при отправке пятого задания, на которое нужно 8 единиц использования аналитики, оно будет ожидать в очереди заданий, пока не освободятся эти 8 единиц использования аналитики.
 
     ![Страница "ограничения и квоты Azure Data Lake Analytics"](./media/data-lake-analytics-quota-limits/adjust-quota-limits.png)
 
@@ -62,18 +61,21 @@ ms.locfileid: "87127593"
 
 1. Создайте запрос на поддержку на портале Azure.
 
-    ![Azure Data Lake Analytics: страница на портале](./media/data-lake-analytics-quota-limits/data-lake-analytics-quota-help-support.png)
+   ![Портал Azure Data Lake Analytics — Справка и поддержка](./media/data-lake-analytics-quota-limits/data-lake-analytics-quota-help-support.png)
 
-    ![Azure Data Lake Analytics: страница на портале](./media/data-lake-analytics-quota-limits/data-lake-analytics-quota-support-request.png)
+   ![Новый запрос на поддержку на портале Azure Data Lake Analytics](./media/data-lake-analytics-quota-limits/data-lake-analytics-quota-support-request.png)
+
 2. Для типа проблемы укажите **Квота**.
+
 3. Выберите **подписку** (убедитесь, что она не является пробной подпиской).
+
 4. Выберите тип квоты **Data Lake Analytics**.
 
-    ![Azure Data Lake Analytics: страница на портале](./media/data-lake-analytics-quota-limits/data-lake-analytics-quota-support-request-basics.png)
+   ![Тип квоты запроса поддержки Azure Data Lake Analytics](./media/data-lake-analytics-quota-limits/data-lake-analytics-quota-support-request-basics.png)
 
 5. На странице проблемы опишите необходимое увеличение квоты, а в поле **Сведения** укажите причины для такого увеличения.
 
-    ![Azure Data Lake Analytics: страница на портале](./media/data-lake-analytics-quota-limits/data-lake-analytics-quota-support-request-details.png)
+   ![Сведения о запросе Azure Data Lake Analytics поддержки](./media/data-lake-analytics-quota-limits/data-lake-analytics-quota-support-request-details.png)
 
 6. Проверьте введенные контактные данные и создайте запрос в службу поддержки.
 
@@ -81,6 +83,6 @@ ms.locfileid: "87127593"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Обзор аналитики озера данных Microsoft Azure](data-lake-analytics-overview.md)
-* [Управление аналитикой озера данных Azure с помощью Azure PowerShell](data-lake-analytics-manage-use-powershell.md)
-* [Мониторинг и устранение неполадок Azure Data Lake Analytics заданий с помощью портал Azure](data-lake-analytics-monitor-and-troubleshoot-jobs-tutorial.md)
+- [Обзор аналитики озера данных Microsoft Azure](data-lake-analytics-overview.md)
+- [Управление аналитикой озера данных Azure с помощью Azure PowerShell](data-lake-analytics-manage-use-powershell.md)
+- [Мониторинг и устранение неполадок Azure Data Lake Analytics заданий с помощью портал Azure](data-lake-analytics-monitor-and-troubleshoot-jobs-tutorial.md)

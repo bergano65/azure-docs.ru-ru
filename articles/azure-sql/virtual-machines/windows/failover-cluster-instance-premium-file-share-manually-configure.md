@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/18/2020
 ms.author: mathoma
-ms.openlocfilehash: 1b10489ef74e681eab59694d24c4babc3ce69163
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b6e33f32c6adcea12952474e3f09b45834b85c1e
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91298717"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92164420"
 ---
 # <a name="create-an-fci-with-a-premium-file-share-sql-server-on-azure-vms"></a>Создание FCI с общей папкой Premium (SQL Server на виртуальных машинах Azure)
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -37,7 +37,7 @@ ms.locfileid: "91298717"
 - учетная запись с разрешениями на создание объектов как на виртуальных машинах Azure, так и в Active Directory;
 - [Две или более подготовленные виртуальные машины Windows Azure](failover-cluster-instance-prepare-vm.md) в [группе доступности](../../../virtual-machines/windows/tutorial-availability-sets.md#create-an-availability-set) или разных [зонах доступности](../../../virtual-machines/windows/create-portal-availability-zone.md#confirm-zone-for-managed-disk-and-ip-address).
 - [общая папка уровня "Премиум"](../../../storage/files/storage-how-to-create-premium-fileshare.md), которая будет использоваться в качестве кластеризованного диска, с учетом квоты хранилища для вашей базы с файлами данных.
-- Последняя версия [PowerShell](/powershell/azure/install-az-ps?view=azps-4.2.0). 
+- Последняя версия [PowerShell](/powershell/azure/install-az-ps). 
 
 ## <a name="mount-premium-file-share"></a>Подключить файловый ресурс Premium
 
@@ -227,7 +227,7 @@ New-AzSqlVM -Name $vm.Name -ResourceGroupName $vm.ResourceGroupName -Location $v
 
 ## <a name="configure-connectivity"></a>Настройка подключения 
 
-Чтобы правильно направить трафик на текущий основной узел, настройте параметр подключения, подходящий для вашей среды. Вы можете создать [подсистему балансировки нагрузки Azure](hadr-vnn-azure-load-balancer-configure.md) или, если вы используете SQL Server 2019 и Windows Server 2016 (или более поздней версии), вместо этого можно предварительно просмотреть функцию [имени распределенной сети](hadr-distributed-network-name-dnn-configure.md) . 
+Чтобы правильно направить трафик на текущий основной узел, настройте параметр подключения, подходящий для вашей среды. Вы можете создать [балансировщик нагрузки Azure](failover-cluster-instance-vnn-azure-load-balancer-configure.md) или, если вы используете SQL Server 2019 CU2 (или более поздней версии) и Windows Server 2016 (или более поздней версии), вместо этого можно использовать функцию [имени распределенной сети](failover-cluster-instance-distributed-network-name-dnn-configure.md) . 
 
 ## <a name="limitations"></a>Ограничения
 
@@ -235,9 +235,10 @@ New-AzSqlVM -Name $vm.Name -ResourceGroupName $vm.ResourceGroupName -Location $v
 - Функция файлового потока для отказоустойчивых кластеров с общими папками уровня "Премиум" не поддерживается. Чтобы использовать FILESTREAM, разверните кластер с помощью [Локальные дисковые пространства](failover-cluster-instance-storage-spaces-direct-manually-configure.md) или [общих дисков Azure](failover-cluster-instance-azure-shared-disks-manually-configure.md) .
 - Поддерживается только регистрация в поставщике ресурсов виртуальной машины SQL в [режиме упрощенного управления](sql-vm-resource-provider-register.md#management-modes) . 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Если вы еще не сделали этого, настройте подключение к FCI с [именем виртуальной сети и подсистемой балансировки нагрузки Azure](hadr-vnn-azure-load-balancer-configure.md) или [именем распределенной сети (DNN)](hadr-distributed-network-name-dnn-configure.md). 
+Если вы еще не сделали этого, настройте подключение к FCI с [именем виртуальной сети и подсистемой балансировки нагрузки Azure](failover-cluster-instance-vnn-azure-load-balancer-configure.md) или [именем распределенной сети (DNN)](failover-cluster-instance-distributed-network-name-dnn-configure.md). 
+
 
 Если файловые ресурсы уровня "Премиум" не являются подходящим решением для хранения FCI, рекомендуется создать FCI с помощью [общих дисков Azure](failover-cluster-instance-azure-shared-disks-manually-configure.md) или [Локальные дисковые пространства](failover-cluster-instance-storage-spaces-direct-manually-configure.md) . 
 

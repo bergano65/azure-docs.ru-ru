@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 08/04/2020
 ms.author: jeedes
-ms.openlocfilehash: e0226392ff96c6dc10cbd729135a15c066378f68
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 5486752c8a1e36eba047ffd4d82b10cddfc771a1
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88552735"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91850048"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-isams"></a>Руководство по интеграции единого входа Azure Active Directory с iSAMS
 
@@ -132,16 +132,16 @@ ms.locfileid: "88552735"
 1. Перейдите на панель управления и откройте модуль **Проверка подлинности**.
 1. В меню справа выберите **Поставщики удостоверений**.
 
-    ![Конфигурация](./media/isams-tutorial/click-identity-provider.png)
+    ![Снимок экрана для страницы настройки Active Directory, где выбраны поставщики удостоверений.](./media/isams-tutorial/click-identity-provider.png)
 
 1. Выбор **Добавление поставщика**
 
-    ![Конфигурация](./media/isams-tutorial/add-identity-provider.png)
+    ![Снимок экрана для раздела поставщиков удостоверений, где выбрано действие добавления поставщиков.](./media/isams-tutorial/add-identity-provider.png)
 
 
 1. На следующей странице выполните приведенные ниже шаги.
 
-    ![Конфигурация](./media/isams-tutorial/configure-isams.png)
+    ![Снимок экрана мастера добавления поставщиков удостоверений, где можно выполнить описанные здесь шаги.](./media/isams-tutorial/configure-isams.png)
 
     а. В текстовом поле **Имя** введите допустимое имя, например `Saml2 Azure`. Это имя будет отображаться на странице входа.
 
@@ -159,12 +159,12 @@ ms.locfileid: "88552735"
 
 2.  Последовательно выберите **Панель управления — домашняя страница** -> **Security & Permissions** (Безопасность и разрешения)  -> **Учетные записи пользователей** -> **User Options & Tasks** (Параметры и задачи пользователя)  -> **Modify User Properties** (Изменить свойства пользователя).
 
-    ![Тестовый пользователь](./media/isams-tutorial/modify-user-properties.png)
+    ![Снимок экрана для страницы учетных записей пользователей, где выбрано действие изменения свойств пользователя.](./media/isams-tutorial/modify-user-properties.png)
 
 
 3. В появившемся всплывающем окне выберите вкладку **Сведения об учетной записи** и измените указанную **авторизацию** на авторизацию только что созданного поставщика удостоверений.
 
-    ![Тестовый пользователь](./media/isams-tutorial/account-details.png)
+    ![Снимок экрана с информацией об учетной записи, где введено значение для параметра "Авторизация".](./media/isams-tutorial/account-details.png)
 
 4. Щелкните **Save & Close** (Сохранить и закрыть).
 

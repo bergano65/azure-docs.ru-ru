@@ -11,12 +11,12 @@ author: bonova
 ms.author: bonova
 ms.reviewer: sstein, vanto
 ms.date: 08/14/2020
-ms.openlocfilehash: c98e377ec216bea6c1d4a96b15b3741aa52672e0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e515df0ff8c7cd3794efb4db567ef7146ccb7a03
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91618161"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92424230"
 ---
 # <a name="what-is-azure-sql-managed-instance"></a>Что такое Управляемый экземпляр SQL Azure?
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -96,7 +96,7 @@ ms.locfileid: "91618161"
 
 - Подходит для большинства бизнес-приложений со стандартными требованиями к производительности.
 - Высокопроизводительное хранилище BLOB-объектов Azure (8 ТБ).
-- Встроенный [высокий уровень доступности](../database/high-availability-sla.md#basic-standard-and-general-purpose-service-tier-availability) на основе надежного Хранилища BLOB-объектов Azure и [Azure Service Fabric](../../service-fabric/service-fabric-overview.md).
+- Встроенный [высокий уровень доступности](../database/high-availability-sla.md#basic-standard-and-general-purpose-service-tier-locally-redundant-availability) на основе надежного Хранилища BLOB-объектов Azure и [Azure Service Fabric](../../service-fabric/service-fabric-overview.md).
 
 Дополнительные сведения см. в статье [Storage layer in General Purpose Azure SQL Managed Instance](https://medium.com/azure-sqldb-managed-instance/file-layout-in-general-purpose-azure-sql-managed-instance-cf21fff9c76c) (Уровень хранилища в Управляемом экземпляре базы данных SQL Azure ценовой категории "Общего назначения") и статье с [рекомендациями по оптимизации производительности хранилища и вопросами, касающимися Управляемого экземпляра SQL (общего назначения)](https://blogs.msdn.microsoft.com/sqlcat/2018/07/20/storage-performance-best-practices-and-considerations-for-azure-sql-db-managed-instance-general-purpose/).
 
@@ -110,7 +110,7 @@ ms.locfileid: "91618161"
 
 - Предназначен для бизнес-приложений с наибольшей производительностью и требованиями к высокой доступности
 - поставляется со сверхбыстрым локальным SSD-хранилищем (до 1 ТБ при использовании поколения 4 и до 4 ТБ при использовании поколения 5);
-- встроенный [высокий уровень доступности](../database/high-availability-sla.md#premium-and-business-critical-service-tier-availability) на основе [групп доступности AlwaysOn](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/always-on-availability-groups-sql-server) и [Azure Service Fabric](../../service-fabric/service-fabric-overview.md);
+- встроенный [высокий уровень доступности](../database/high-availability-sla.md#premium-and-business-critical-service-tier-locally-redundant-availability) на основе [групп доступности AlwaysOn](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/always-on-availability-groups-sql-server) и [Azure Service Fabric](../../service-fabric/service-fabric-overview.md);
 - встроенная дополнительная [реплика базы данных только для чтения](../database/read-scale-out.md), которую можно использовать для задач отчетности и других рабочих нагрузок только для чтения;
 - [Выполняющаяся в памяти OLTP](../in-memory-oltp-overview.md), которую можно использовать для рабочей нагрузки с требованиями высокой производительности.  
 

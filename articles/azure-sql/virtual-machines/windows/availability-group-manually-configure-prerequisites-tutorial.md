@@ -14,18 +14,20 @@ ms.workload: iaas-sql-server
 ms.date: 03/29/2018
 ms.author: mathoma
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 812fb35f404092453ad35b2f70c4a5b1697fbfe0
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: ea9c8b91237f4590d1999c99fbb356d78994390d
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92075711"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92166902"
 ---
-# <a name="prerequisites-for-creating-always-on-availability-groups-on-sql-server-on-azure-virtual-machines"></a>Необходимые условия для создания группы доступности Always On на SQL Server на виртуальных машинах Azure
+# <a name="tutorial-prerequisites-for-creating-availability-groups-on-sql-server-on-azure-virtual-machines"></a>Учебник. Предварительные требования для создания групп доступности на SQL Server на виртуальных машинах Azure
 
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
 
 В этом руководстве показано, как выполнить необходимые условия для создания [группы доступности SQL Server Always on на виртуальных машинах Azure](availability-group-manually-configure-tutorial.md). После завершения предварительных требований у вас будет контроллер домена, две SQL Server виртуальные машины и следящий сервер в одной группе ресурсов.
+
+Хотя в этой статье вручную настраивается среда группы доступности, ее также можно выполнить с помощью [портал Azure](availability-group-azure-portal-configure.md), [PowerShell или Azure CLI](availability-group-az-commandline-configure.md), а также шаблонов быстрого запуска [Azure](availability-group-quickstart-template-configure.md) . 
 
 **Оценка времени**. На завершение настройки необходимых компонентов необходимо несколько часов. Большая часть времени уходит на создание виртуальных машин.
 
@@ -35,7 +37,7 @@ ms.locfileid: "92075711"
 
 ## <a name="review-availability-group-documentation"></a>Обзор документации по группам доступности
 
-В этом руководстве предполагается, что у вас имеется базовое представление о группах доступности AlwaysOn SQL Server. Если же данная технология вам незнакома, изучите статью [Обзор групп доступности AlwaysOn (SQL Server)](https://msdn.microsoft.com/library/ff877884.aspx).
+В этом руководстве предполагается, что у вас имеется базовое представление о группах доступности AlwaysOn SQL Server. Если вы не знакомы с этой технологией, см. раздел [обзор группы доступности Always On (SQL Server)](https://msdn.microsoft.com/library/ff877884.aspx).
 
 
 ## <a name="create-an-azure-account"></a>Создание учетной записи Azure
@@ -54,13 +56,13 @@ ms.locfileid: "92075711"
    ![Группа ресурсов](./media/availability-group-manually-configure-prerequisites-tutorial-/01-resourcegroupsymbol.png)
 
 4. Выберите **Группа ресурсов**.
-5. Нажмите кнопку **Создать**.
+5. Нажмите кнопку **создания**.
 6. В разделе **Имя группы ресурсов** введите имя для группы ресурсов. Например, введите **sql-ha-rg**.
 7. При наличии нескольких подписок Azure выберите ту, в которой необходимо создать группу доступности.
 8. Выберите расположение. Расположение — это регион Azure, где необходимо создать группу доступности. В этой статье все ресурсы созданы в одном расположении Azure.
 9. Убедитесь, что флажок **Закрепить на панели мониторинга** установлен. Этот необязательный параметр позволяет разместить ярлык для группы ресурсов на панели мониторинга портала Azure.
 
-   ![Группа ресурсов](./media/availability-group-manually-configure-prerequisites-tutorial-/01-resourcegroup.png)
+   ![Ярлык группы ресурсов для портал Azure](./media/availability-group-manually-configure-prerequisites-tutorial-/01-resourcegroup.png)
 
 10. Выберите **создать** , чтобы создать группу ресурсов.
 
@@ -99,7 +101,7 @@ ms.locfileid: "92075711"
 
    В примере используется имя подсети **admin**. Эта подсеть для контроллеров домена.
 
-5. Нажмите кнопку **Создать**.
+5. Нажмите кнопку **создания**.
 
    ![Настройка виртуальной сети](./media/availability-group-manually-configure-prerequisites-tutorial-/06-configurevirtualnetwork.png)
 
@@ -118,13 +120,13 @@ ms.locfileid: "92075711"
 
     Обратите внимание на созданную подсеть.
 
-   ![Настройка виртуальной сети](./media/availability-group-manually-configure-prerequisites-tutorial-/07-addsubnet.png)
+   ![Обратите внимание на уже созданную подсеть.](./media/availability-group-manually-configure-prerequisites-tutorial-/07-addsubnet.png)
 
 5. Чтобы создать вторую подсеть, выберите **+ Subnet (+ подсеть**).
 6. В колонке **Добавление подсети** настройте подсеть, указав в поле **Имя** значение **sqlsubnet**. Azure автоматически укажет допустимое значение в поле **Диапазон адресов**. Убедитесь, что этот диапазон адресов содержит по крайней мере 10 адресов. Для рабочей среды может потребоваться больше адресов.
 7. Щелкните **ОК**.
 
-    ![Настройка виртуальной сети](./media/availability-group-manually-configure-prerequisites-tutorial-/08-configuresubnet.png)
+    ![Настройка подсети](./media/availability-group-manually-configure-prerequisites-tutorial-/08-configuresubnet.png)
 
 В следующей таблице описаны параметры конфигурации сети.
 

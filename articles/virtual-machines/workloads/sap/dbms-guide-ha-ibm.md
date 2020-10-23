@@ -4,15 +4,15 @@ description: Установите высокий уровень доступно
 author: msjuergent
 ms.service: virtual-machines
 ms.topic: article
-ms.date: 03/06/2020
+ms.date: 10/16/2020
 ms.author: juergent
 ms.reviewer: cynthn
-ms.openlocfilehash: 17df60cd039601d3f8036125c5c0098a8000667c
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.openlocfilehash: 88a84cd90efb42ea096cad647d75f1c3736426f4
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91993310"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92146443"
 ---
 # <a name="high-availability-of-ibm-db2-luw-on-azure-vms-on-suse-linux-enterprise-server-with-pacemaker"></a>Высокий уровень доступности IBM DB2 LUW на виртуальных машинах Azure на SUSE Linux Enterprise Server с Pacemaker
 
@@ -394,9 +394,12 @@ sudo crm configure property maintenance-mode=false</pre></code>
 > [!NOTE]
 > Номер SKU Load Balancer (цен. категория "Стандартный") имеет ограничения на доступ к общедоступным IP-адресам с узлов, расположенных под Load Balancer. Сведения о том, как разрешить этим узлам доступ к общедоступным IP-адресам, см. в статье подключение к общедоступной [конечной точке для виртуальных машин с помощью Azure Load Balancer (цен. Категория "Стандартный") в сценариях с высоким уровнем доступности SAP](./high-availability-guide-standard-load-balancer-outbound-connections.md) .
 
+> [!IMPORTANT]
+> Плавающий IP-адрес не поддерживается для вторичной IP-конфигурации NIC в сценариях балансировки нагрузки. Дополнительные сведения см. в статье [ограничения балансировщика нагрузки Azure](https://docs.microsoft.com/azure/load-balancer/load-balancer-multivip-overview#limitations). Если для виртуальной машины требуется дополнительный IP-адрес, разверните вторую сетевую карту.  
+
 1. Создайте интерфейсный пул IP-адресов:
 
-   а. В портал Azure откройте Azure Load Balancer, выберите **интерфейсный пул IP-адресов**и нажмите кнопку **Добавить**.
+   a. В портал Azure откройте Azure Load Balancer, выберите **интерфейсный пул IP-адресов**и нажмите кнопку **Добавить**.
 
    b. Введите имя нового пула IP-адресов внешнего интерфейса (например, **DB2-Connection**).
 
@@ -408,7 +411,7 @@ sudo crm configure property maintenance-mode=false</pre></code>
 
 1. Создайте пул серверной части:
 
-   а. В портал Azure откройте Azure Load Balancer, выберите **серверные пулы**и нажмите кнопку **Добавить**.
+   a. В портал Azure откройте Azure Load Balancer, выберите **серверные пулы**и нажмите кнопку **Добавить**.
 
    b. Введите имя нового пула серверной части (например, **DB2-Серверная**часть).
 
@@ -422,7 +425,7 @@ sudo crm configure property maintenance-mode=false</pre></code>
 
 1. Создание пробы работоспособности:
 
-   а. В портал Azure откройте Azure Load Balancer, выберите **зонды работоспособности**и нажмите кнопку **Добавить**.
+   a. В портал Azure откройте Azure Load Balancer, выберите **зонды работоспособности**и нажмите кнопку **Добавить**.
 
    b. Введите имя новой проверки работоспособности (например, **DB2-HP**).
 
@@ -432,7 +435,7 @@ sudo crm configure property maintenance-mode=false</pre></code>
 
 1. Создайте правила балансировки нагрузки.
 
-   а. В портал Azure откройте Azure Load Balancer, выберите **правила балансировки нагрузки**, а затем нажмите кнопку **Добавить**.
+   a. В портал Azure откройте Azure Load Balancer, выберите **правила балансировки нагрузки**, а затем нажмите кнопку **Добавить**.
 
    b. Введите имя нового правила Load Balancer (например, **DB2-SID**).
 

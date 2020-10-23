@@ -7,12 +7,12 @@ ms.subservice: enterprise
 ms.topic: article
 ms.date: 08/20/2020
 ms.author: banders
-ms.openlocfilehash: 652348d5feb7e382287c91536f1479f9aec126e1
-ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
+ms.openlocfilehash: 777c8549d79f820c1847e711969919df128cebd3
+ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90031812"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92132420"
 ---
 # <a name="review-enterprise-enrollment-billing-using-rest-apis"></a>Проверка данных для выставления счетов по регистрации учетных записей корпоративных пользователей с помощью REST API
 
@@ -37,9 +37,9 @@ Authorization: Bearer
 |Заголовок запроса|Описание|  
 |--------------------|-----------------|  
 |*Content-Type:*|Обязательный элемент. Задайте значение `application/json`.|  
-|*Authorization:*|Обязательный элемент. Укажите действующий [ключ API](https://docs.microsoft.com/rest/api/billing/enterprise/billing-enterprise-api-usage-detail#asynchronous-call-polling-based) `Bearer`. |  
+|*Authorization:*|Обязательный элемент. Укажите действующий [ключ API](/rest/api/billing/enterprise/billing-enterprise-api-usage-detail#asynchronous-call-polling-based) `Bearer`. |  
 
-В этом примере показан синхронный вызов, который возвращает сведения о текущем цикле выставления счетов. Из соображений производительности синхронные вызовы возвращают сведения только за последний месяц.  Вы также можете обращаться к API [асинхронно](https://docs.microsoft.com/rest/api/billing/enterprise/billing-enterprise-api-usage-detail#asynchronous-call-polling-based), чтобы получить данные за 36 месяцев.
+В этом примере показан синхронный вызов, который возвращает сведения о текущем цикле выставления счетов. Из соображений производительности синхронные вызовы возвращают сведения только за последний месяц.  Вы также можете обращаться к API [асинхронно](/rest/api/billing/enterprise/billing-enterprise-api-usage-detail#asynchronous-call-polling-based), чтобы получить данные за 36 месяцев.
 
 
 ## <a name="response"></a>Ответ  
@@ -90,9 +90,9 @@ Authorization: Bearer
 |Заголовок запроса|Описание|  
 |--------------------|-----------------|  
 |*Content-Type:*|Обязательный элемент. Задайте значение `application/json`.|  
-|*Authorization:*|Обязательный элемент. Укажите действующий [ключ API](https://docs.microsoft.com/rest/api/billing/enterprise/billing-enterprise-api-usage-detail#asynchronous-call-polling-based) `Bearer`. |  
+|*Authorization:*|Обязательный элемент. Укажите действующий [ключ API](/rest/api/billing/enterprise/billing-enterprise-api-usage-detail#asynchronous-call-polling-based) `Bearer`. |  
 
-В этом примере показан синхронный вызов, который возвращает сведения о текущем цикле выставления счетов. Из соображений производительности синхронные вызовы возвращают сведения только за последний месяц.  Вы также можете обращаться к API [асинхронно](https://docs.microsoft.com/rest/api/billing/enterprise/billing-enterprise-api-usage-detail#asynchronous-call-polling-based), чтобы получить данные за 36 месяцев.
+В этом примере показан синхронный вызов, который возвращает сведения о текущем цикле выставления счетов. Из соображений производительности синхронные вызовы возвращают сведения только за последний месяц.  Вы также можете обращаться к API [асинхронно](/rest/api/billing/enterprise/billing-enterprise-api-usage-detail#asynchronous-call-polling-based), чтобы получить данные за 36 месяцев.
 
 ### <a name="response"></a>Ответ  
 
@@ -146,9 +146,9 @@ Authorization: Bearer
 |Заголовок запроса|Описание|  
 |--------------------|-----------------|  
 |*Content-Type:*|Обязательный элемент. Задайте значение `application/json`.|  
-|*Authorization:*|Обязательный элемент. Укажите действующий [ключ API](https://docs.microsoft.com/rest/api/billing/enterprise/billing-enterprise-api-usage-detail#asynchronous-call-polling-based) `Bearer`. |  
+|*Authorization:*|Обязательный элемент. Укажите действующий [ключ API](/rest/api/billing/enterprise/billing-enterprise-api-usage-detail#asynchronous-call-polling-based) `Bearer`. |  
 
-В этом примере показан синхронный вызов, который возвращает сведения о текущем цикле выставления счетов. Из соображений производительности синхронные вызовы возвращают сведения только за последний месяц.  Вы также можете обращаться к API [асинхронно](https://docs.microsoft.com/rest/api/billing/enterprise/billing-enterprise-api-usage-detail#asynchronous-call-polling-based), чтобы получить данные за 36 месяцев.
+В этом примере показан синхронный вызов, который возвращает сведения о текущем цикле выставления счетов. Из соображений производительности синхронные вызовы возвращают сведения только за последний месяц.  Вы также можете обращаться к API [асинхронно](/rest/api/billing/enterprise/billing-enterprise-api-usage-detail#asynchronous-call-polling-based), чтобы получить данные за 36 месяцев.
 
 ### <a name="response"></a>Ответ  
 
@@ -183,6 +183,6 @@ Authorization: Bearer
 Этот пример приведен в сокращенном виде. Полное описание каждого поля ответа и обработки ошибок см. в разделе [Usage Details - List By Enrollment Account](/rest/api/consumption/usagedetails/list#enrollmentaccountusagedetailslist-legacy) (Подробные сведения об использовании, список для учетной записи регистрации).
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- Ознакомьтесь со статьей [Обзор API-интерфейсов отчетов для корпоративных клиентов](https://docs.microsoft.com/azure/billing/billing-enterprise-api)
-- Подробнее о [REST API выставления счетов для корпоративных клиентов](https://docs.microsoft.com/rest/api/billing/)   
-- [Начало работы с Azure REST API](https://docs.microsoft.com/rest/api/azure/)   
+- Ознакомьтесь со статьей [Обзор API-интерфейсов отчетов для корпоративных клиентов](./enterprise-api.md)
+- Подробнее о [REST API выставления счетов для корпоративных клиентов](/rest/api/billing/)   
+- [Начало работы с Azure REST API](/rest/api/azure/)

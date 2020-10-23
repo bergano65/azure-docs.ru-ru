@@ -6,12 +6,12 @@ ms.service: data-lake-store
 ms.topic: how-to
 ms.date: 12/19/2016
 ms.author: stewu
-ms.openlocfilehash: d10b1811257e14238cb04a79ff184cee57aab471
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7b1bbe7f632d8101dbff02a31092f06c7b644ece
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88189955"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92108326"
 ---
 # <a name="performance-tuning-guidance-for-hive-on-hdinsight-and-azure-data-lake-storage-gen1"></a>Рекомендации по настройке производительности для Hive в HDInsight и Azure Data Lake Storage 1-го поколения
 
@@ -22,8 +22,8 @@ ms.locfileid: "88189955"
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 * **Учетная запись Data Lake Storage 1-го поколения**. Инструкции по ее созданию см. в статье [Приступая к работе с Azure Data Lake Storage 1-го поколения](data-lake-store-get-started-portal.md)
 * **Кластер Azure HDInsight** с доступом к учетной записи Data Lake Storage 1-го поколения. Дополнительные сведения см. в статье [Создание кластеров HDInsight, использующих Data Lake Store, с помощью портала Azure](data-lake-store-hdinsight-hadoop-use-portal.md). Убедитесь, что вы включили удаленный рабочий стол для кластера.
-* **Запустите Hive в HDInsight**.  Дополнительные сведения о выполнении заданий Hive в HDInsight см. в статье [Обзор Apache Hive и HiveQL в Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-use-hive).
-* **Рекомендации по настройке производительности для Data Lake Storage 1-го поколения**.  Общие понятия производительности см. в разделе [Data Lake Storage 1-го поколения рекомендации по настройке производительности](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-performance-tuning-guidance) .
+* **Запустите Hive в HDInsight**.  Дополнительные сведения о выполнении заданий Hive в HDInsight см. в статье [Обзор Apache Hive и HiveQL в Azure HDInsight](../hdinsight/hadoop/hdinsight-use-hive.md).
+* **Рекомендации по настройке производительности для Data Lake Storage 1-го поколения**.  Общие понятия производительности см. в разделе [Data Lake Storage 1-го поколения рекомендации по настройке производительности](./data-lake-store-performance-tuning-guidance.md) .
 
 ## <a name="parameters"></a>Параметры
 
@@ -49,7 +49,7 @@ ms.locfileid: "88189955"
 
 **Задайте hive.exec.reducer.bytes.per.reducer** — значение по умолчанию хорошо работает для несжатых данных.  Если используются сжатые данные, попробуйте сократить размер модуля уменьшения редукции.  
 
-**Задайте hive.tez.container.size** — объем памяти для каждого узла, который определяется параметром yarn.nodemanager.resource.memory-mb (должен быть правильно определен для кластера HDI по умолчанию).  Дополнительные сведения о настройке памяти в YARN см. в этой [записи блога](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-hive-out-of-memory-error-oom).
+**Задайте hive.tez.container.size** — объем памяти для каждого узла, который определяется параметром yarn.nodemanager.resource.memory-mb (должен быть правильно определен для кластера HDI по умолчанию).  Дополнительные сведения о настройке памяти в YARN см. в этой [записи блога](../hdinsight/hdinsight-hadoop-hive-out-of-memory-error-oom.md).
 
 Для интенсивных нагрузок ввода-вывода будет полезным увеличить параллелизм, снижая размер контейнера Tez. Это предоставит пользователю дополнительные контейнеры, то есть увеличит параллелизм.  Но некоторые запросы Hive требуют значительного объема памяти (например, MapJoin).  Если задача не получит достаточного объема памяти, во время выполнения возникнет соответствующее исключение.  Если вы заметите такие исключения, увеличьте объем памяти.   
 
@@ -80,6 +80,6 @@ ms.locfileid: "88189955"
 ## <a name="further-information-on-hive-tuning"></a>Дополнительные сведения о настройке Hive
 
 Ниже приведены некоторые блоги, которые помогут в настройке производительности запросов Hive.
-* [Оптимизация запросов Hive для Hadoop в HDInsight](https://azure.microsoft.com/documentation/articles/hdinsight-hadoop-optimize-hive-query/)
-* [Кодирование файла запроса Hive в Azure HDInsight](https://docs.microsoft.com/archive/blogs/bigdatasupport/encoding-the-hive-query-file-in-azure-hdinsight)
+* [Оптимизация запросов Hive для Hadoop в HDInsight](../hdinsight/hdinsight-hadoop-optimize-hive-query.md)
+* [Кодирование файла запроса Hive в Azure HDInsight](/archive/blogs/bigdatasupport/encoding-the-hive-query-file-in-azure-hdinsight)
 * [Примите участие в дискуссии об оптимизации Hive на HDInsight](https://channel9.msdn.com/events/Machine-Learning-and-Data-Sciences-Conference/Data-Science-Summit-2016/MSDSS25)

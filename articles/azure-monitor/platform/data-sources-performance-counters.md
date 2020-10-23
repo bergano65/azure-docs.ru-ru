@@ -1,25 +1,28 @@
 ---
-title: Сбор и анализ данных счетчиков производительности в Azure Monitor | Документация Майкрософт
+title: Собирайте источники данных производительности Windows и Linux с помощью агента Log Analytics в Azure Monitor
 description: Счетчики производительности собираются службой Azure Monitor для анализа производительности в агентах Windows и Linux.  В этой статье описывается настройка коллекции счетчиков производительности для агентов Windows и Linux, сведения об этих счетчиках, которые хранятся в рабочей области, и их анализ на портале Azure.
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
-ms.date: 11/28/2018
-ms.openlocfilehash: 49f944aa98bf0bf8090b10d2feeb50af4a2d42b2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 10/21/2020
+ms.openlocfilehash: 71fc3f457338796289c2f6ac54f3bc713a91cc29
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85955494"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92461368"
 ---
-# <a name="windows-and-linux-performance-data-sources-in-azure-monitor"></a>Источники данных о производительности Windows и Linux в Azure Monitor
-Счетчики производительности в Windows и Linux позволяют получить представление о производительности компонентов оборудования, операционных систем и приложений.  Azure Monitor может собирать счетчики производительности с высокой частотой для анализа данных практически в режиме реального времени, а также данные о производительности для более долгосрочного анализа и формирования отчетов.
+# <a name="collect-windows-and-linux-performance-data-sources-with-log-analytics-agent"></a>Получение источников данных производительности Windows и Linux с помощью агента Log Analytics
+Счетчики производительности в Windows и Linux позволяют получить представление о производительности компонентов оборудования, операционных систем и приложений.  Azure Monitor может получать счетчики производительности от агентов Log Analytics с частыми интервалами для анализа практически в реальном времени (ПРЕВЕНТИВНОЙ), помимо агрегирования данных производительности для более долгосрочного анализа и отчетности.
+
+> [!IMPORTANT]
+> В этой статье рассматривается сбор данных о производительности с помощью [агента log Analytics](log-analytics-agent.md) , который является одним из агентов, используемых Azure Monitor. Другие агенты собираются разные данные и настраиваются по-разному. Список доступных агентов и данных, которые они могут собираются, см. в разделе [Обзор агентов Azure Monitor](agents-overview.md) .
 
 ![Счетчики производительности](media/data-sources-performance-counters/overview.png)
 
 ## <a name="configuring-performance-counters"></a>Настройка счетчиков производительности
-Счетчики производительности настраиваются в [меню "Данные" раздела "Дополнительные параметры"](agent-data-sources.md#configuring-data-sources).
+Настройте счетчики производительности в [меню данные в дополнительных параметрах](agent-data-sources.md#configuring-data-sources) для рабочей области log Analytics.
 
 При первой настройке счетчиков производительности Windows или Linux для новой рабочей области вы можете быстро создать несколько распространенных счетчиков.  Рядом с каждым счетчиком в списке есть флажок.  Отметьте все счетчики, которые нужно создать изначально, и щелкните ссылку **Добавить выбранные счетчики производительности**.
 
@@ -156,7 +159,7 @@ ms.locfileid: "85955494"
 <source>
     type oms_omi
     object_name "Logical Disk"
-    instance_regex ".*
+    instance_regex ".*"
     counter_name_regex ".*"
     interval 5m
 </source>
@@ -164,7 +167,7 @@ ms.locfileid: "85955494"
 <source>
     type oms_omi
     object_name "Processor"
-    instance_regex ".*
+    instance_regex ".*"
     counter_name_regex ".*"
     interval 30s
 </source>
@@ -184,7 +187,7 @@ ms.locfileid: "85955494"
 ## <a name="performance-record-properties"></a>Свойства записи о производительности
 Записи о производительности имеют тип **Perf** и свойства, описанные в приведенной ниже таблице.
 
-| Свойство | Описание |
+| Свойство. | Описание |
 |:--- |:--- |
 | Компьютер |Компьютер, с которого было получено событие. |
 | CounterName |Имя счетчика производительности. |

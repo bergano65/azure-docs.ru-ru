@@ -1,19 +1,19 @@
 ---
-title: 'Виртуальная глобальная сеть Azure: создание подключений типа "сеть — сеть"'
+title: Руководство по созданию подключения "сеть — сеть" с помощью Виртуальной глобальной сети Azure
 description: В руководстве показано, как создать VPN-подключение типа "сеть — сеть" к Azure с помощью Виртуальной глобальной сети Azure.
 services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: tutorial
-ms.date: 07/09/2020
+ms.date: 10/08/2020
 ms.author: cherylmc
 Customer intent: As someone with a networking background, I want to connect my local site to my VNets using Virtual WAN and I don't want to go through a Virtual WAN partner.
-ms.openlocfilehash: 5f39f5a8f758f390536e5d113629b185252c05d9
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.openlocfilehash: 8a25ead5983e56f56ba0daea23c2775b3332fb8b
+ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91439364"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92057915"
 ---
 # <a name="tutorial-create-a-site-to-site-connection-using-azure-virtual-wan"></a>Руководство по Создание подключения "сеть — сеть" с помощью Виртуальной глобальной сети Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "91439364"
 
 ![Схема Виртуальной глобальной сети](./media/virtual-wan-about/virtualwan.png)
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом настройки убедитесь, что удовлетворены следующие требования:
 
@@ -242,6 +242,17 @@ ms.locfileid: "91439364"
 
    :::image type="content" source="media/virtual-wan-site-to-site-portal/view-configuration-2.png" alt-text="Снимок экрана: страница &quot;VPN (сеть-сеть)&quot;, на которой стрелка указывает на действие &quot;Просмотр и настройка&quot;" lightbox="media/virtual-wan-site-to-site-portal/view-configuration-2-expand.png":::
 
+## <a name="clean-up-resources"></a><a name="cleanup"></a>Очистка ресурсов
+
+Вы можете удалить ненужную группу ресурсов и все содержащиеся в ней ресурсы с помощью командлета [Remove-AzureRmResourceGroup](/powershell/module/azurerm.resources/remove-azurermresourcegroup). Замените myResourceGroup на имя вашей группы ресурсов и выполните следующую команду PowerShell:
+
+```azurepowershell-interactive
+Remove-AzResourceGroup -Name myResourceGroup -Force
+```
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о Виртуальной глобальной сети см. в [этой статье](virtual-wan-about.md).
+Дополнительные сведения о Виртуальной глобальной сети см. в следующей статье:
+
+> [!div class="nextstepaction"]
+> * [Вопросы и ответы о Виртуальной глобальной сети](virtual-wan-faq.md)

@@ -9,12 +9,12 @@ ms.subservice: pod
 ms.topic: overview
 ms.date: 07/10/2020
 ms.author: alkohli
-ms.openlocfilehash: 9f559587e1abca7642edfc6278018d760b55e774
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: f946a657b5129f773319d73fb428fe0108bac20f
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "86206232"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92123568"
 ---
 # <a name="what-is-azure-data-box"></a>Что такое Azure Data Box?
 
@@ -144,7 +144,7 @@ Data Box передает данные на основе региона, в ко
 
 - **Доступность служб.** При использовании Data Box для выполнения заказов на импорт или экспорт сведения о доступности по регионам можно просматривать на [этой странице](https://azure.microsoft.com/global-infrastructure/services/?products=databox&regions=all). Функция экспорта в Data Box сейчас доступна в предварительной версии. 
 
-    Для выполнения заказов на импорт Data Box можно также развернуть в облаке Azure для государственных организаций. Дополнительные сведения см. в обзорной статье об [Azure для государственных организаций](https://docs.microsoft.com/azure/azure-government/documentation-government-welcome). 
+    Для выполнения заказов на импорт Data Box можно также развернуть в облаке Azure для государственных организаций. Дополнительные сведения см. в обзорной статье об [Azure для государственных организаций](../azure-government/documentation-government-welcome.md). 
 
 - **Целевые учетные записи хранения.** Учетные записи хранения данных доступны во всех регионах Azure, где предоставляется служба.
 
@@ -154,7 +154,3 @@ Data Box передает данные на основе региона, в ко
 - Ознакомьтесь с [системными требованиями Data Box](data-box-system-requirements.md).
 - Изучите [ограничения Data Box](data-box-limits.md).
 - Оперативно разверните [Azure Data Box](data-box-quickstart-portal.md) на портале Azure.
-
-
-
-

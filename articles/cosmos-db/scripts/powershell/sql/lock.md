@@ -7,12 +7,12 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.topic: sample
 ms.date: 06/12/2020
-ms.openlocfilehash: c495e4135195d05dbb20c993f436cb42bd55fff6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 667d6a6726e6adfa84073c3bbd20ee4dc7c879cd
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87504886"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92282600"
 ---
 # <a name="create-a-resource-lock-for-azure-cosmos-sql-api-database-and-container-using-azure-powershell"></a>Создание блокировки ресурсов для базы данных и контейнера API SQL в Azure Cosmos с помощью Azure PowerShell
 
@@ -50,5 +50,3 @@ Remove-AzResourceGroup -ResourceGroupName "myResourceGroup"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об Azure PowerShell см. в [документации по Azure PowerShell](https://docs.microsoft.com/powershell/).
-
-Дополнительные примеры скриптов PowerShell для базы данных Azure Cosmos DB можно найти [здесь](../../../powershell-samples.md).

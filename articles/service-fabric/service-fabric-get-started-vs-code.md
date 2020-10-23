@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 06/29/2018
 ms.author: pepogors
 ms.custom: devx-track-js
-ms.openlocfilehash: a2ac8a84b4df4a241665e7f4269803908733ca82
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a655199d854462285ca98a2d8f454c483c061f99
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91249915"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92316674"
 ---
 # <a name="service-fabric-for-visual-studio-code"></a>Service Fabric для Visual Studio Code
 
@@ -22,13 +22,13 @@ ms.locfileid: "91249915"
 > [!IMPORTANT]
 > Приложения Java Service Fabric могут разрабатываться на компьютерах Windows, но развернуть их можно только в кластерах Linux в Azure. Отладка приложений Java в ОС Windows не поддерживается.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Необходимо обязательно установить следующие компоненты во всех средах:
 
 * [Visual Studio Code](https://code.visualstudio.com/)
 * [Node.js](https://nodejs.org/)
-* [Git](https://git-scm.com/);
+* [GIT](https://git-scm.com/)
 * [Пакет SDK для Service Fabric](./service-fabric-get-started.md)
 * Генераторы Yeoman (установите соответствующие генераторы для своего приложения)
 
@@ -42,7 +42,7 @@ ms.locfileid: "91249915"
 
 Для разработки на Java необходимо обязательно установить следующие компоненты:
 
-* [Пакет SDK для Java](https://aka.ms/azure-jdks) (версия 1.8)
+* [Пакет SDK для Java](/azure/developer/java/fundamentals/java-jdk-long-term-support) (версия 1.8)
 * [Gradle](https://gradle.org/install/)
 * [Отладчик для расширения Java в VS Code](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-debug). Он необходим для отладки служб Java. Отладка служб Java поддерживается только в ОС Linux. Для установки воспользуйтесь VS Code Marketplace или щелкните значок "Расширения" на **панели действий** в VS Code и выполните поиск расширения.
 
@@ -125,7 +125,7 @@ ms.locfileid: "91249915"
 2.  Выберите команду **Service Fabric: Clean Application** (Service Fabric: очистить приложение).
 3.  Выходные данные процесса очистки пишутся во встроенный терминал.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения см. в разделе [Разработка и отладка приложений Service Fabric на C# с помощью VS Code](./service-fabric-develop-csharp-applications-with-vs-code.md).
 * Дополнительные сведения см. в статье [Develop Java Service Fabric applications with Visual Studio Code](./service-fabric-develop-java-applications-with-vs-code.md) (Разработка и отладка приложений Java Service Fabric в VS Code).

@@ -5,12 +5,12 @@ author: uhabiba04
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: v-umha
-ms.openlocfilehash: a2115e9c1601c86cce8857c10baf12b91cc2b997
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2887e7c5fd875942c3d19391267ddbb9b73ccfec
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75482573"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92165559"
 ---
 # <a name="generate-soil-moisture-heatmap"></a>Создать почвы влажность тепловой карты
 
@@ -54,7 +54,7 @@ ms.locfileid: "75482573"
 2.  Выберите **мифарм**  >  **Add Devices (добавить устройства**).
 3.  Откроется окно **Add Devices (Добавление устройств** ). Выберите любое устройство, связанное с датчиками почвы влажность для фермы.
 
-    ![Проект FarmBeats](./media/get-sensor-data-from-sensor-partner/add-devices-1.png)
+    ![Снимок экрана, на котором показан экран добавления устройств.](./media/get-sensor-data-from-sensor-partner/add-devices-1.png)
 
 4. Выберите **Добавить устройства**.     
 
@@ -70,7 +70,7 @@ ms.locfileid: "75482573"
 6.  В поле **Выбор** **меры датчика**почвы влажность введите меру, которую вы хотите использовать для этой схемы.
     Чтобы найти меру датчика, в окне **датчиков**выберите любой датчик почвы влажность. В **свойствах датчика**используйте значение **имя меры** .
 
-    ![Проект FarmBeats](./media/get-sensor-data-from-sensor-partner/soil-moisture-1.png)
+    ![Снимок экрана, на котором показан экран почвы влажность.](./media/get-sensor-data-from-sensor-partner/soil-moisture-1.png)
 
 
 7.  Выберите **создать карты**.

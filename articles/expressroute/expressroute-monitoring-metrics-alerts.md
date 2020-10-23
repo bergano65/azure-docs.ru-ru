@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: how-to
 ms.date: 08/25/2020
 ms.author: duau
-ms.openlocfilehash: 6f502b8ad8ac268cc937150f4effdf9edf8eef15
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d92b5685722b8a37de3945caa1305a76b3cabb8a
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91252635"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92206243"
 ---
 # <a name="expressroute-monitoring-metrics-and-alerts"></a>Мониторинг, метрики и оповещения в ExpressRoute
 
@@ -35,15 +35,15 @@ ms.locfileid: "91252635"
 |Доступность ARP|Доступность|<ui><li>Одноранговый (основной или дополнительный маршрутизатор ExpressRoute)</ui></li><ui><li> Тип пиринга (частный, общедоступный/Майкрософт)</ui></li>|ExpressRoute|
 |Доступность BGP|Доступность|<ui><li> Одноранговый (основной или дополнительный маршрутизатор ExpressRoute)</ui></li><ui><li> Тип пиринга</ui></li>|ExpressRoute|
 |BitsInPerSecond|Трафик|<ui><li> Тип пиринга (ExpressRoute)</ui></li><ui><li>Ссылка (с ExpressRoute Direct)</ui></li>|<li>ExpressRoute</li><li>ExpressRoute Direct|
-|BitsOutPerSecond|Трафик| <ui><li>Тип пиринга (ExpressRoute)</ui></li><ui><li> Ссылка (с ExpressRoute Direct) |<ui><li>ExpressRoute<ui><li>Непосредственный ExpressRoute</ui></li> |
+|BitsOutPerSecond|Трафик| <ui><li>Тип пиринга (ExpressRoute)</ui></li><ui><li> Ссылка (с ExpressRoute Direct) |<ui><li>ExpressRoute<ui><li>ExpressRoute Direct</ui></li> |
 |Загрузка ЦП|Производительность| <ui><li>Экземпляр</ui></li>|Шлюз виртуальной сети ExpressRoute|
 |Пакетов в секунду|Производительность| <ui><li>Экземпляр</ui></li>|Шлюз виртуальной сети ExpressRoute|
 |GlobalReachBitsInPerSecond|Трафик|<ui><li>Скэйная цепь (ключ службы)</ui></li>|Global Reach|
 |GlobalReachBitsOutPerSecond|Трафик|<ui><li>Скэйная цепь (ключ службы)</ui></li>|Global Reach|
 |AdminState|Физическое подключение|Ссылка|ExpressRoute Direct|
 |LineProtocol|Физическое подключение|Ссылка|ExpressRoute Direct|
-|RxLightLevel|Физическое подключение|<ui><li>Ссылку</ui></li><ui><li>Lane</ui></li>|ExpressRoute Direct|
-|TxLightLevel|Физическое подключение|<ui><li>Ссылку</ui></li><ui><li>Lane</ui></li>|ExpressRoute Direct|
+|RxLightLevel|Физическое подключение|<ui><li>Ссылка</ui></li><ui><li>Lane</ui></li>|ExpressRoute Direct|
+|TxLightLevel|Физическое подключение|<ui><li>Ссылка</ui></li><ui><li>Lane</ui></li>|ExpressRoute Direct|
 >[!NOTE]
 >Использование *глобалглобалреачбитсинперсеконд* и *глобалглобалреачбитсаутперсеконд* будет видимым, только если установлено хотя бы одно Global REACH соединение.
 >
@@ -70,7 +70,7 @@ ms.locfileid: "91252635"
 
 ### <a name="arp-availability---split-by-peering"></a>Доступность ARP — разделение по пиринга  
 
-Вы можете просмотреть сведения о доступности [ARP](https://docs.microsoft.com/azure/expressroute/expressroute-troubleshooting-arp-resource-manager) в режиме реального времени для пиринга и одноранговых узлов (основной и дополнительный маршрутизаторы ExpressRoute). На этой панели мониторинга показан сеанс ARP частного пиринга по обоим одноранговым узлам, но для пиринга Майкрософт между одноранговыми узлами завершается. По умолчанию для обоих узлов использовалась статистическая обработка (среднее значение).  
+Вы можете просмотреть сведения о доступности [ARP](./expressroute-troubleshooting-arp-resource-manager.md) в режиме реального времени для пиринга и одноранговых узлов (основной и дополнительный маршрутизаторы ExpressRoute). На этой панели мониторинга показан сеанс ARP частного пиринга по обоим одноранговым узлам, но для пиринга Майкрософт между одноранговыми узлами завершается. По умолчанию для обоих узлов использовалась статистическая обработка (среднее значение).  
 
 :::image type="content" source="./media/expressroute-monitoring-metrics-alerts/erArpAvailabilityMetrics.jpg" alt-text="метрики канала":::
 
@@ -162,13 +162,13 @@ ms.locfileid: "91252635"
 |**Столбец**|**Тип**|**Описание**|
 | --- | --- | --- |
 |TimeGrain|строка|PT1M (значения метрик отправляются каждую минуту)|
-|Count|real|Обычно равно 2 (каждый MSEE отправляет одно значение метрики каждую минуту).|
+|Счетчик|real|Обычно равно 2 (каждый MSEE отправляет одно значение метрики каждую минуту).|
 |Минимальные|real|Минимальное из двух значений метрик, помещаемых двумя MSEE|
 |Максимум|real|Встраивания двух значений метрик, помещаемых двумя MSEE|
 |Среднее|real|Равно (минимум + максимум)/2|
 |Итог|real|Сумма двух значений метрики из обоих MSEE (основное значение, на которое нужно сосредоточиться для запрошенной метрики)|
   
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Настройте подключение ExpressRoute.
   

@@ -3,12 +3,12 @@ title: Безопасная доставка веб-перехватчика с 
 description: Описание доставки событий в конечные точки HTTPS, защищенные Azure Active Directory с помощью службы "Сетка событий Azure"
 ms.topic: how-to
 ms.date: 10/05/2020
-ms.openlocfilehash: 0320e78e6b436f6ba1c0a6ca1bfec81eb974e106
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: dd898fadf718509504d44df36572ac75050b02d6
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91812205"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92371670"
 ---
 # <a name="publish-events-to-azure-active-directory-protected-endpoints"></a>Публикация событий в конечных точках, защищенных Azure Active Directory
 
@@ -26,7 +26,7 @@ ms.locfileid: "91812205"
 В этом разделе показано, как включить службу "Сетка событий" для использования приложения Azure AD. 
 
 > [!NOTE]
-> Для выполнения этого сценария необходимо быть членом [роли администратора приложения Azure AD](../active-directory/users-groups-roles/directory-assign-admin-roles.md#available-roles).
+> Для выполнения этого сценария необходимо быть членом [роли администратора приложения Azure AD](../active-directory/roles/permissions-reference.md#available-roles).
 
 ### <a name="connect-to-your-azure-tenant"></a>Подключение к клиенту Azure
 Сначала подключитесь к клиенту Azure с помощью `Connect-AzureAD` команды. 

@@ -4,12 +4,12 @@ description: Узнайте, как выполнить миграцию вирт
 ms.topic: tutorial
 ms.date: 06/09/2020
 ms.custom: mvc
-ms.openlocfilehash: 37181246a20044f16414735e2247fa90fc36433b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3e263306cf18dfebe4b73f8d940b8eb5c99ed16f
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90530528"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92310636"
 ---
 # <a name="migrate-vmware-vms-to-azure-agentless"></a>Миграция виртуальных машин VMware в Azure (без агента)
 
@@ -36,8 +36,8 @@ ms.locfileid: "90530528"
 
 Для работы с этим руководством вам потребуется:
 
-1. [Выполните задачи из первого руководства](tutorial-prepare-vmware.md), чтобы подготовить Azure и VMware к миграции.
-2. Мы рекомендуем изучить и второе руководство, чтобы [оценить виртуальные машины VMware](tutorial-assess-vmware.md) перед переносом в Azure. Но это не обязательно. 
+1. [Выполните задачи из первого руководства](./tutorial-discover-vmware.md), чтобы подготовить Azure и VMware к миграции.
+2. Мы рекомендуем изучить и второе руководство, чтобы [оценить виртуальные машины VMware](./tutorial-assess-vmware-azure-vm.md) перед переносом в Azure. Но это не обязательно. 
 
 
 ## <a name="add-the-azure-migrate-server-migration-tool"></a>Добавление средства "Миграция сервера" службы "Миграция Azure"
@@ -59,7 +59,7 @@ ms.locfileid: "90530528"
 
 ## <a name="set-up-the-azure-migrate-appliance"></a>Настройка устройства службы "Миграция Azure"
 
-Средство переноса сервера службы "Миграция Azure" запускает небольшое устройство виртуальной машины VMware, которое используется для обнаружения, оценки виртуальных машин VMware и их переноса без агента. Если вы выполнили инструкции из [руководства по оценке](tutorial-assess-vmware.md), устройство у вас уже есть. Если это не так, настройте его прямо сейчас одним из следующих методов:
+Средство переноса сервера службы "Миграция Azure" запускает небольшое устройство виртуальной машины VMware, которое используется для обнаружения, оценки виртуальных машин VMware и их переноса без агента. Если вы выполнили инструкции из [руководства по оценке](./tutorial-assess-vmware-azure-vm.md), устройство у вас уже есть. Если это не так, настройте его прямо сейчас одним из следующих методов:
 
 - **Шаблон OVA**. [Настройка](how-to-set-up-appliance-vmware.md) на виртуальной машине VMware с помощью скачанного шаблона OVA.
 - **Script**: [Настройте](deploy-appliance-script.md) на виртуальной машине VMware или физическом компьютере с помощью скрипта установщика PowerShell. Этот метод следует использовать, если не удается настроить виртуальную машину с помощью шаблона OVA или если вы используете Azure для государственных организаций.
@@ -210,7 +210,7 @@ ms.locfileid: "90530528"
     - Обеспечьте непрерывную работу и постоянную доступность рабочих нагрузок за счет репликации виртуальных машин Azure в дополнительный регион с помощью Site Recovery. [Подробнее](../site-recovery/azure-to-azure-tutorial-enable-replication.md).
 - Для повышения уровня безопасности:
     - Заблокируйте и ограничьте доступ входящего трафика с помощью [JIT-администрирования](../security-center/security-center-just-in-time.md) центра безопасности Azure.
-    - Ограничьте сетевой трафик конечными точками с помощью [групп безопасности сети](../virtual-network/security-overview.md).
+    - Ограничьте сетевой трафик конечными точками с помощью [групп безопасности сети](../virtual-network/network-security-groups-overview.md).
     - Разверните [шифрование дисков Azure](../security/fundamentals/azure-disk-encryption-vms-vmss.md), чтобы обеспечить безопасность дисков и защитить данные от кражи и несанкционированного доступа.
     - Ознакомьтесь с дополнительными сведениями о [защите ресурсов IaaS](https://azure.microsoft.com/services/virtual-machines/secure-well-managed-iaas/) и посетите [центр безопасности Azure](https://azure.microsoft.com/services/security-center/).
 - Для мониторинга и управления:

@@ -17,12 +17,12 @@ ms.date: 03/24/2020
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 696b295a481d7b986f08f1d758edb8d5adca5717
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 23074dcd7ee888d6d9d8bf288cf0fda66dc0ceec
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91812834"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92319756"
 ---
 # <a name="sign-in-activity-reports-in-the-azure-active-directory-portal"></a>Отчеты о действиях входа на портале Azure Active Directory
 
@@ -31,14 +31,14 @@ ms.locfileid: "91812834"
 - **Действие** 
     - **События входа**. Информация об использовании управляемых приложений и действиях входа пользователей.
     - **Журналы аудита**  -  [Журналы аудита](concept-audit-logs.md) предоставляют сведения о действиях пользователей и управления группами, управляемых приложениях и действиях с каталогами.
-    - **Журналы подготовки**  -  [Журналы подготовки](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-provisioning-logs) позволяют пользователям отслеживать действия службы подготовки, например создание группы в ServiceNow или пользователя, импортированного из Workday. 
+    - **Журналы подготовки**  -  [Журналы подготовки](./concept-provisioning-logs.md) позволяют пользователям отслеживать действия службы подготовки, например создание группы в ServiceNow или пользователя, импортированного из Workday. 
 - **Безопасность** 
     - **Рискованные входы** . [рискованный вход](../identity-protection/overview-identity-protection.md) — это индикатор попытки входа, которая не является законным владельцем учетной записи пользователя.
     - **Пользователи, помеченные для риска** — [рискованный пользователь](../identity-protection/overview-identity-protection.md) является индикатором для учетной записи пользователя, которая могла быть скомпрометирована.
 
 В этой статье приводятся общие сведения о отчете о входе в систему.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 ### <a name="who-can-access-the-data"></a>Кто имеет доступ к данным?
 
@@ -195,7 +195,7 @@ ms.locfileid: "91812834"
 
 Щелкните " **скачать** ", чтобы создать CSV-файл или формат JSON для последних 250 000 записей. Начните с [загрузки данных входа,](quickstart-download-sign-in-report.md) если вы хотите работать с ним за пределами портал Azure.  
 
-![Скачать](./media/concept-sign-ins/71.png "Скачивание")
+![Загрузить](./media/concept-sign-ins/71.png "Скачивание")
 
 > [!IMPORTANT]
 > На число записей, которые можно скачать, влияют особенности [политики хранения отчетов Azure Active Directory](reference-reports-data-retention.md).  
@@ -230,7 +230,7 @@ Azure AD и портал Azure предоставляют дополнитель
 - User ID
 - Пользователь
 - Имя пользователя
-- Идентификатор приложения
+- Идентификатор приложения
 - Приложение
 - Клиент
 - Расположение
@@ -276,7 +276,7 @@ Azure AD и портал Azure предоставляют дополнитель
 
 Можно также программно получить доступ к журналам действий Microsoft 365 с помощью [API-интерфейсов управления Office 365](/office/office-365-management-api/office-365-management-apis-overview).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Коды ошибок в отчете о действиях входа](reference-sign-ins-error-codes.md)
 * [Политики хранения отчетов Azure Active Directory](reference-reports-data-retention.md)

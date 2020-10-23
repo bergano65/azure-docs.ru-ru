@@ -4,12 +4,12 @@ description: Из этой статьи вы узнаете, как настра
 ms.topic: conceptual
 ms.date: 08/03/2018
 ms.assetid: b80b3a41-87bf-49ca-8ef2-68e43c04c1a3
-ms.openlocfilehash: 42af6ae69699be7eefac0aca2bcd22b1e25720b2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9ba22c51c7a6c26a232ed20aec21fc83d2c54b37
+ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89506633"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92171459"
 ---
 # <a name="back-up-an-azure-vm-using-azure-backup-via-rest-api"></a>Резервное копирование виртуальных машин Azure с помощью службы Azure Backup и REST API
 
@@ -437,7 +437,7 @@ X-Powered-By: ASP.NET
 > [!IMPORTANT]
 > Текст запроса выше всегда является окончательной копией дисков данных, которые необходимо исключить или добавить. Это не приводит к *добавлению* в предыдущую конфигурацию. Например, если вы сначала обновляете защиту как "исключить данные с диска 1", а затем повторяйте с параметром "исключить диск данных 2", в последующих резервных копиях будет *исключен только диск данных 2* , а на диск данных 1 будут включены данные. Это всегда окончательный список, который будет включен в последующие резервные копии или исключен из него.
 
-Чтобы получить текущий список дисков, которые исключены или включены, получите защищенные сведения об элементе, как описано [здесь](https://docs.microsoft.com/rest/api/backup/protecteditems/get). Ответ предоставит список LUN диска данных и указывает, включены ли они или исключены из них.
+Чтобы получить текущий список дисков, которые исключены или включены, получите защищенные сведения об элементе, как описано [здесь](/rest/api/backup/protecteditems/get). Ответ предоставит список LUN диска данных и указывает, включены ли они или исключены из них.
 
 ### <a name="stop-protection-but-retain-existing-data"></a>Снятие защиты с сохранением существующих данных
 
@@ -504,7 +504,7 @@ DELETE https://management.azure.com//Subscriptions/00000000-0000-0000-0000-00000
 
 Ответ будет в том же формате, что и при [активации резервного копирования по запросу](#example-responses-for-on-demand-backup). Итоговое задание должно отслеживаться, как описано в [документации по мониторингу заданий для REST API](backup-azure-arm-userestapi-managejobs.md#tracking-the-job).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Восстановление данных из резервной копии виртуальной машины Azure](backup-azure-arm-userestapi-restoreazurevms.md)
 

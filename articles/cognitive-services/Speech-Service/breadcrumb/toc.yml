@@ -2,10 +2,10 @@
   tocHref: /azure/
   topicHref: /azure/index
   items:
-    - name: Службы Cognitive Services
+    - name: Cognitive Services
       tocHref: /azure/cognitive-services/
       topicHref: /azure/cognitive-services/index
       items:
-        - name: Службы "Речь"
-          tocHref: /azure/cognitive-services/translator/
+        - name: Служба "Речь"
+          tocHref: /azure/cognitive-services/
           topicHref: /azure/cognitive-services/speech-service/index

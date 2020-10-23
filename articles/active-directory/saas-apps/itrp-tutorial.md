@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
-ms.openlocfilehash: d7a7c4f7d9a9ba2ef574519a41aae3dd6e28e4fb
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: a49edf738586dce190fa90f7349f2c9b01e2050d
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88552804"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91850393"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-itrp"></a>Руководство по Интеграция Azure Active Directory с ITRP
 
@@ -94,7 +94,7 @@ ms.locfileid: "88552804"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Значок "Изменить"](common/edit-urls.png)
+    ![Снимок экрана: страница настройки единого входа с помощью SAML с выделенным значком редактирования.](common/edit-urls.png)
 
 4. В диалоговом окне **Базовая конфигурация SAML** выполните следующие действия.
 
@@ -113,7 +113,7 @@ ms.locfileid: "88552804"
 
 5. В разделе **Сертификат подписи SAML** щелкните значок **Изменить**, чтобы открыть диалоговое окно **Сертификат подписи SAML**.
 
-    ![Значок "Изменить"](common/edit-certificate.png)
+    ![Снимок экрана для страницы Сертификата подписи SAML, где выделен значок редактирования.](common/edit-certificate.png)
 
 6. В диалоговом окне **Сертификат подписи SAML** скопируйте значение **Отпечаток** и сохраните его.
 
@@ -143,9 +143,9 @@ ms.locfileid: "88552804"
 
 1. В разделе конфигурации **Single Sign-On** (Единый вход) выполните следующие действия.
 
-    ![Раздел Single Sign-On (Единый вход)](./media/itrp-tutorial/ic775572.png "Раздел Single Sign-On (Единый вход)")
+    ![Снимок экрана для раздела единого входа, где выбран вариант "Включено".](./media/itrp-tutorial/ic775572.png "Раздел Single Sign-On (Единый вход)")
 
-    ![Раздел Single Sign-On (Единый вход)](./media/itrp-tutorial/ic775573.png "Раздел Single Sign-On (Единый вход)")
+    ![Снимок экрана для раздела единого входа, где можно ввести описанные на этом шаге сведения.](./media/itrp-tutorial/ic775573.png "Раздел Single Sign-On (Единый вход)")
 
     1. Щелкните **Включено**.
 

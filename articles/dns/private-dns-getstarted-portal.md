@@ -5,14 +5,14 @@ services: dns
 author: rohinkoul
 ms.service: dns
 ms.topic: quickstart
-ms.date: 10/11/2019
+ms.date: 10/20/2020
 ms.author: rohink
-ms.openlocfilehash: 52bf9e061eb57c7ce6ea698b7468b5ba5e11b4e8
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: d298dfd5f3ad0beb56a511c124bab056ca25fd27
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "78244977"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92310046"
 ---
 # <a name="quickstart-create-an-azure-private-dns-zone-using-the-azure-portal"></a>Краткое руководство. Создание частной зоны Azure DNS на портале Azure
 
@@ -20,15 +20,7 @@ ms.locfileid: "78244977"
 
 Зона DNS используется для размещения DNS-записей определенного домена. Чтобы разместить свой домен в Azure DNS, необходимо создать зону DNS для этого доменного имени. Каждая запись DNS для вашего домена создается внутри этой зоны DNS. Чтобы опубликовать частную зону DNS в виртуальной сети, укажите список виртуальных сетей, которые могут разрешать записи в зоне.  Они называются *связанными* виртуальными сетями. Когда автоматическая регистрация включена, Azure DNS также обновляет записи зоны при каждом создании виртуальной машины, изменении ее IP-адреса или удалении.
 
-Из этого краткого руководства вы узнаете, как выполнять следующие задачи:
-
-> [!div class="checklist"]
-> * Создание частной зоны DNS
-> * Создание виртуальной сети
-> * Связывание виртуальной сети
-> * Создание тестовых виртуальных машин
-> * Создание дополнительной записи DNS
-> * Проверка частной зоны
+## <a name="prerequisites"></a>Обязательные условия
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -180,7 +172,7 @@ ms.locfileid: "78244977"
    PS C:\>
    ```
 
-## <a name="delete-all-resources"></a>Удаление всех ресурсов
+## <a name="clean-up-resources"></a>Очистка ресурсов
 
 Удалите группу ресурсов **MyAzureResourceGroup**, если ресурсы, созданные в этом руководстве, больше не нужны.
 

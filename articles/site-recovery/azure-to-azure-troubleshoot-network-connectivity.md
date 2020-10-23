@@ -5,12 +5,12 @@ author: sideeksh
 manager: rochakm
 ms.topic: how-to
 ms.date: 04/06/2020
-ms.openlocfilehash: 59bbca9461ff174ebe2451a6c01d84dee404cf56
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 674ce347f929dd70e32537e9bde3139c5fafc7ea
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91398312"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92368015"
 ---
 # <a name="troubleshoot-azure-to-azure-vm-network-connectivity-issues"></a>Устранение неполадок с сетевым подключением Azure к виртуальной машине Azure
 
@@ -60,7 +60,7 @@ ms.locfileid: "91398312"
 #### <a name="resolution"></a>Решение
 
 - Azure Site Recovery требуется доступ к диапазонам IP-адресов Microsoft 365 для проверки подлинности.
-- Если вы используете правила и прокси-сервер брандмауэра Azure Network Security Group (NSG) для управления исходящими сетевыми подключениями на виртуальной машине, убедитесь, что вы разрешите подключение к диапазонам IP-адресов Microsoft 365. Создайте правило NSG на основе [тега службы Azure Active Directory (Azure AD)](../virtual-network/security-overview.md#service-tags) , которое разрешает доступ ко всем IP-адресам, СООТВЕТСТВУЮЩИМ Azure AD.
+- Если вы используете правила и прокси-сервер брандмауэра Azure Network Security Group (NSG) для управления исходящими сетевыми подключениями на виртуальной машине, убедитесь, что вы разрешите подключение к диапазонам IP-адресов Microsoft 365. Создайте правило NSG на основе [тега службы Azure Active Directory (Azure AD)](../virtual-network/network-security-groups-overview.md#service-tags) , которое разрешает доступ ко всем IP-адресам, СООТВЕТСТВУЮЩИМ Azure AD.
 - Если в будущем в Azure AD добавляются новые адреса, необходимо создать новые правила NSG.
 
 ### <a name="example-nsg-configuration"></a>Конфигурация примера группы безопасности сети
@@ -105,7 +105,7 @@ ms.locfileid: "91398312"
 
 #### <a name="resolution"></a>Решение
 
-Если вы используете правило или прокси-сервер брандмауэра группы безопасности сети Azure (NSG) для управления исходящими сетевыми подключениями на компьютере, необходимо разрешить несколько тегов служб. [Подробнее.](azure-to-azure-about-networking.md#outbound-connectivity-using-service-tags)
+Если вы используете правило или прокси-сервер брандмауэра группы безопасности сети Azure (NSG) для управления исходящими сетевыми подключениями на компьютере, необходимо разрешить несколько тегов служб. [Подробнее](azure-to-azure-about-networking.md#outbound-connectivity-using-service-tags).
 
 ### <a name="issue-4-azure-to-azure-replication-failed-when-the-network-traffic-goes-through-on-premises-proxy-server-151072"></a>Причина 4. сбой репликации из Azure в Azure, если сетевой трафик проходит через локальный прокси-сервер (151072)
 

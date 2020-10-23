@@ -14,12 +14,12 @@ ms.author: ajburnle
 ms.reviewer: krbain
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9bb0c1773a08bc934eebc4f110cec43e4b07e49e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0490334c759da6ef7ba7ff2535f5f561cdb7a9bf
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89565061"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92369817"
 ---
 # <a name="what-is-group-based-licensing-in-azure-active-directory"></a>Что такое лицензии групп в Azure Active Directory?
 
@@ -65,9 +65,9 @@ ms.locfileid: "89565061"
 
 Дополнительные сведения о других сценариях управления лицензиями на основе группы см. в следующих статьях:
 
-* [Назначение лицензий группе в Azure Active Directory](../users-groups-roles/licensing-groups-assign.md)
-* [Поиск и устранение проблем лицензирования группы в Azure Active Directory](../users-groups-roles/licensing-groups-resolve-problems.md)
-* [Как перевести отдельных лицензированных пользователей на групповое лицензирование в Azure Active Directory](../users-groups-roles/licensing-groups-migrate-users.md)
-* [Как безопасно перевести пользователей с отдельных лицензий продуктов с использованием группового лицензирования](../users-groups-roles/licensing-groups-change-licenses.md)
-* [Дополнительные сценарии лицензирования на основе группы в Azure Active Directory](../users-groups-roles/licensing-group-advanced.md)
-* [Примеры PowerShell для группового лицензирования в Azure AD](../users-groups-roles/licensing-ps-examples.md)
+* [Назначение лицензий группе в Azure Active Directory](../enterprise-users/licensing-groups-assign.md)
+* [Поиск и устранение проблем лицензирования группы в Azure Active Directory](../enterprise-users/licensing-groups-resolve-problems.md)
+* [Как перевести отдельных лицензированных пользователей на групповое лицензирование в Azure Active Directory](../enterprise-users/licensing-groups-migrate-users.md)
+* [Как безопасно перевести пользователей с отдельных лицензий продуктов с использованием группового лицензирования](../enterprise-users/licensing-groups-change-licenses.md)
+* [Дополнительные сценарии лицензирования на основе группы в Azure Active Directory](../enterprise-users/licensing-group-advanced.md)
+* [Примеры PowerShell для группового лицензирования в Azure AD](../enterprise-users/licensing-ps-examples.md)

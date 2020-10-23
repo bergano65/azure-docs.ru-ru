@@ -11,12 +11,12 @@ ms.author: sgilley
 author: sdgilley
 ms.reviewer: sgilley
 ms.date: 10/02/2020
-ms.openlocfilehash: 3b5698c782b691dd8ae91913115db184fc83a2eb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f0dfa137e42d60246ce8f5281f002d5ca567c2ae
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91756625"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92427522"
 ---
 # <a name="create-and-manage-an-azure-machine-learning-compute-instance"></a>Создание Машинное обучение Azure вычислительного экземпляра и управление им
 
@@ -40,7 +40,7 @@ ms.locfileid: "91756625"
 
 * [Расширение Azure CLI для службы машинное обучение](reference-azure-machine-learning-cli.md), [машинное обучение Azure пакет SDK для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py&preserve-view=true)или [расширение машинное обучение Azure Visual Studio Code](tutorial-setup-vscode-extension.md).
 
-## <a name="create"></a>Создание
+## <a name="create"></a>Создать
 
 **Оценка времени**: приблизительно 5 минут.
 
@@ -111,7 +111,7 @@ az ml computetarget create computeinstance  -n instance -s "STANDARD_D3_V2" -v
 * [Шаблон Azure Resource Manager](https://github.com/Azure/azure-quickstart-templates/tree/master/101-machine-learning-compute-create-computeinstance).  Дополнительные сведения о том, как найти ИД клиента и идентификатор объекта, необходимые в этом шаблоне, см. в разделе [Поиск кодов объектов удостоверений для конфигурации проверки подлинности](../healthcare-apis/find-identity-object-ids.md).  Эти значения также можно найти на портале Azure Active Directory.
 * REST API
 
-Анализу данных, для которых создается вычислительный экземпляр, должны быть предоставлены следующие разрешения [управления доступом на основе ролей (RBAC) Azure](../role-based-access-control/overview.md) . 
+Анализу данных, для которых создается вычислительный экземпляр, должны быть предоставлены следующие разрешения на [Управление доступом на основе ролей (Azure RBAC)](../role-based-access-control/overview.md) : 
 * *Microsoft. Мачинелеарнингсервицес/рабочие области/вычислений/запуск/действие*
 * *Microsoft. Мачинелеарнингсервицес/рабочие области/вычислений/действие*
 * *Microsoft. Мачинелеарнингсервицес/рабочие области/вычислений/перезагрузка/действие*
@@ -147,7 +147,7 @@ az ml computetarget create computeinstance  -n instance -s "STANDARD_D3_V2" -v
     instance.stop(wait_for_completion=True, show_output=True)
     ```
 
-* Запуск
+* Начать
 
     ```python
     # start() is used to start the ComputeInstance if it is in stopped state
@@ -161,7 +161,7 @@ az ml computetarget create computeinstance  -n instance -s "STANDARD_D3_V2" -v
     instance.restart(wait_for_completion=True, show_output=True)
     ```
 
-* DELETE
+* Удалить
 
     ```python
     # delete() is used to delete the ComputeInstance target. Useful if you want to re-use the compute name 
@@ -180,7 +180,7 @@ az ml computetarget create computeinstance  -n instance -s "STANDARD_D3_V2" -v
 
     Дополнительные сведения см. в разделе [AZ ML computetarget останавливает компутеинстанце](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/computetarget/computeinstance?view=azure-cli-latest&preserve-view=true#ext-azure-cli-ml-az-ml-computetarget-computeinstance-stop).
 
-* Запуск 
+* Начать 
 
     ```azurecli-interactive
     az ml computetarget start computeinstance -n instance -v
@@ -196,7 +196,7 @@ az ml computetarget create computeinstance  -n instance -s "STANDARD_D3_V2" -v
 
     Дополнительные сведения см. в статье [AZ ML computetarget Restart компутеинстанце](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/computetarget/computeinstance?view=azure-cli-latest&preserve-view=true#ext-azure-cli-ml-az-ml-computetarget-computeinstance-restart).
 
-* DELETE
+* Удалить
 
     ```azurecli-interactive
     az ml computetarget delete -n instance -v
@@ -226,9 +226,9 @@ az ml computetarget create computeinstance  -n instance -s "STANDARD_D3_V2" -v
 
 ---
 
-[Управление доступом на основе ролей](/azure/role-based-access-control/overview) позволяет управлять тем, кто из пользователей в рабочей области может создавать, удалять, запускать, останавливать и перезапускать вычислительный экземпляр. Все пользователи с ролью участника или владельца рабочей области могут создавать, удалять, запускать, останавливать и перезапускать вычислительные экземпляры в рабочей области. Однако доступ к Jupyter, JupyterLab и RStudio на этом вычислительном экземпляре разрешен только создателю определенного вычислительного экземпляра или назначенному пользователю, если он был создан от их имени. Вычислительный экземпляр предназначен для одного пользователя с правами root и может проходить через Jupyter/JupyterLab/RStudio. В вычислительном экземпляре будет входить однопользовательский вход, и все действия будут использовать удостоверение этого пользователя для RBAC и атрибутов запуска экспериментов. Доступ по протоколу SSH контролируется с помощью открытого и закрытого ключей.
+[Azure RBAC](/azure/role-based-access-control/overview) позволяет контролировать, какие пользователи в рабочей области могут создавать, удалять, запускать, останавливаться и перезапускать вычислительные экземпляры. Все пользователи с ролью участника или владельца рабочей области могут создавать, удалять, запускать, останавливать и перезапускать вычислительные экземпляры в рабочей области. Однако доступ к Jupyter, JupyterLab и RStudio на этом вычислительном экземпляре разрешен только создателю определенного вычислительного экземпляра или назначенному пользователю, если он был создан от их имени. Вычислительный экземпляр предназначен для одного пользователя с правами root и может проходить через Jupyter/JupyterLab/RStudio. В вычислительном экземпляре будет входить однопользовательский вход, и все действия будут использовать удостоверение этого пользователя для Azure RBAC, а для выполнения экспериментов — идентификаторы. Доступ по протоколу SSH контролируется с помощью открытого и закрытого ключей.
 
-К этим действиям можно управлять с помощью RBAC:
+Эти действия можно контролировать с помощью Azure RBAC:
 * *Microsoft.MachineLearningServices/workspaces/computes/read*
 * *Microsoft.MachineLearningServices/workspaces/computes/write*
 * *Microsoft.MachineLearningServices/workspaces/computes/delete*
@@ -256,6 +256,7 @@ az ml computetarget create computeinstance  -n instance -s "STANDARD_D3_V2" -v
 * Python: Добавление кода установки и выполнение в Jupyter Notebookной ячейке.
 
 Или можно установить из окна терминала. Установите пакеты Python в среду **python 3,6-AzureML** .  Установите пакеты R в среде **R**.
+функции Magic% PIP и% conda автоматически устанавливают пакеты в текущую работающую ядро в сеансе Jupyter Notebook.
 
 ## <a name="add-new-kernels"></a>Добавление новых ядер
 
@@ -289,6 +290,6 @@ az ml computetarget create computeinstance  -n instance -s "STANDARD_D3_V2" -v
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Отправить обучающий запуск](how-to-set-up-training-targets.md) 

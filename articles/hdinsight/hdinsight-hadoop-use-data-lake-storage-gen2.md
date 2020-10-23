@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/24/2020
-ms.openlocfilehash: 4ef53b2249f8ce57255c13126c9310f1c889d64f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0675f77acbdecfe74634a6734b83c5b74019b8ab
+ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91855061"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92332031"
 ---
 # <a name="use-azure-data-lake-storage-gen2-with-azure-hdinsight-clusters"></a>Использование Azure Data Lake Storage 2-го поколения с кластерами Azure HDInsight
 
@@ -42,13 +42,13 @@ Data Lake Storage 2-го поколения доступен в качестве
 
 ### <a name="what-kinds-of-permissions-does-data-lake-storage-gen2-support"></a>Какие типы разрешений поддерживаются в Azure Data Lake Storage 2-го поколения?
 
-Data Lake Storage 2-го поколения использует модель управления доступом, которая поддерживает как управление доступом на основе ролей (RBAC), так и POSIX-подобные списки управления доступом (ACL). Data Lake Storage 1-го поколения поддерживает списки управления доступом только для управления доступом к данным.
+Data Lake Storage 2-го поколения использует модель управления доступом, поддерживающую управление доступом на основе ролей Azure (Azure RBAC) и списки управления доступом (ACL), такие как POSIX. Data Lake Storage 1-го поколения поддерживает списки управления доступом только для управления доступом к данным.
 
-RBAC использует назначения ролей для эффективного применения наборов разрешений для пользователей, групп и субъектов-служб для ресурсов Azure. Как правило, ресурсы Azure ограничены ресурсами верхнего уровня (например, учетными записями хранилища BLOB-объектов Azure). Для хранилища BLOB-объектов Azure, а также Data Lake Storage 2-го поколения этот механизм был расширен до ресурса файловой системы.
+Azure RBAC использует назначения ролей для эффективного применения наборов разрешений для пользователей, групп и субъектов-служб для ресурсов Azure. Как правило, ресурсы Azure ограничены ресурсами верхнего уровня (например, учетными записями хранилища BLOB-объектов Azure). Для хранилища BLOB-объектов Azure, а также Data Lake Storage 2-го поколения этот механизм был расширен до ресурса файловой системы.
 
-Дополнительные сведения о разрешениях для файлов с помощью RBAC см. в статье [Управление доступом на основе ролей в Azure (Azure RBAC)](../storage/blobs/data-lake-storage-access-control.md#azure-role-based-access-control-rbac).
+Дополнительные сведения о разрешениях для файлов с помощью Azure RBAC см. в статье [Управление доступом на основе ролей в Azure (Azure RBAC)](../storage/blobs/data-lake-storage-access-control-model.md#role-based-access-control).
 
-Дополнительные сведения о разрешениях для файлов с помощью ACL см. [в разделе списки управления доступом к файлам и каталогам](../storage/blobs/data-lake-storage-access-control.md#access-control-lists-on-files-and-directories).
+Дополнительные сведения о разрешениях для файлов с помощью ACL см. [в разделе списки управления доступом к файлам и каталогам](../storage/blobs/data-lake-storage-access-control.md).
 
 ### <a name="how-do-i-control-access-to-my-data-in-data-lake-storage-gen2"></a>Разделы справки управлять доступом к моим данным в Data Lake Storage 2-го поколения?
 

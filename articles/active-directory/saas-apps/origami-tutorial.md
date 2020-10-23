@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
-ms.openlocfilehash: 0fe7e0d43050120daa017669a96e90f96b873530
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 39f2f592601f60f060cce8ded2b5303dc6b10e8a
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88543794"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91995817"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-origami"></a>Руководство. Интеграция Azure Active Directory с Origami
 
@@ -126,11 +126,11 @@ ms.locfileid: "88543794"
 
 2. В верхнем меню щелкните **Администратор**.
    
-    ![Настройка единого входа](./media/origami-tutorial/tutorial_origami_51.png)
+    ![Снимок экрана: домашняя страница Origami с выбранным пунктом параметром Admin (Администратор)](./media/origami-tutorial/tutorial_origami_51.png)
 
 3. На странице диалогового окна "Настройка единого входа" сделайте следующее.
    
-    ![Настройка единого входа](./media/origami-tutorial/tutorial_origami_531.png)
+    ![Снимок экрана: страница Single Sign-On Setup (Настройка единого входа) с пунктом Enable Single Sign-on (Включить единый вход) и выделенными текстовыми полями](./media/origami-tutorial/tutorial_origami_531.png)
 
     а. Выберите пункт **Включить единый вход**.
 
@@ -201,19 +201,19 @@ ms.locfileid: "88543794"
 
 2. В верхнем меню щелкните **Администратор**.
    
-    ![Настройка единого входа](./media/origami-tutorial/tutorial_origami_51.png)
+    ![Снимок экрана: домашняя страница учетной записи Origami с выбранным пунктом параметром Admin (Администратор)](./media/origami-tutorial/tutorial_origami_51.png)
 
 3. В диалоговом окне **Users and Security** (Пользователи и безопасность) нажмите кнопку **Users** (Пользователи).
    
-    ![Настройка единого входа](./media/origami-tutorial/tutorial_origami_54.png)
+    ![Снимок экрана: диалоговое окно Users and Security (Пользователи и безопасность) с выбранным пунктом Users (Пользователи)](./media/origami-tutorial/tutorial_origami_54.png)
 
 4. Нажмите кнопку **Add New User**(Добавить нового пользователя).
    
-    ![Настройка единого входа](./media/origami-tutorial/tutorial_origami_55.png)
+    ![Снимок экрана: выделенная кнопка Add New User (Добавить нового пользователя)](./media/origami-tutorial/tutorial_origami_55.png)
 
 5. В диалоговом окне добавления нового пользователя выполните следующие действия.
    
-    ![Настройка единого входа](./media/origami-tutorial/tutorial_origami_56.png)
+    ![Снимок экрана: диалоговое окно Add New User (Добавление нового пользователя) с выделенными текстовыми полями User Name (Имя пользователя), First Name (Имя) и Last Name (Фамилия)](./media/origami-tutorial/tutorial_origami_56.png)
 
     а. В текстовом поле **Имя пользователя** введите адрес электронной почты пользователя, например **brittasimon\@contoso.com**.
 
@@ -227,7 +227,7 @@ ms.locfileid: "88543794"
 
     е) Выберите команду **Сохранить**.
    
-    ![Настройка единого входа](./media/origami-tutorial/tutorial_origami_57.png)
+    ![Снимок экрана: выделенная кнопка Save (Сохранить)](./media/origami-tutorial/tutorial_origami_57.png)
 
 6. Назначьте **роли пользователя** и уровень **клиентского доступа** для пользователя. 
    

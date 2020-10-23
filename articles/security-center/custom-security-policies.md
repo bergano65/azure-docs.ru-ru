@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: how-to
 ms.date: 04/22/2020
 ms.author: memildin
-ms.openlocfilehash: db042a6112944e1c825177506782758d0a96b390
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ab9be4b14ca51b56ec0a52147b409a56f87cf302
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91448388"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92341895"
 ---
 # <a name="using-custom-security-policies"></a>Использование пользовательских политик безопасности
 
@@ -21,7 +21,7 @@ ms.locfileid: "91448388"
 
 С помощью этой функции можно добавить свои собственные *пользовательские* инициативы. В этом случае вы будете получать рекомендации, если среда не будет соответствовать созданным вами политикам. Все созданные вами пользовательские инициативы будут отображаться рядом со встроенными инициативами на панели мониторинга соответствия нормативным требованиям, как описано в руководстве по [обеспечению соответствия нормативным требованиям на высоком уровне](security-center-compliance-dashboard.md).
 
-Как описано в [документации по политикам Azure](https://docs.microsoft.com/azure/governance/policy/concepts/definition-structure#definition-location), при указании расположения для пользовательской инициативы это должна быть группа управления или подписка. 
+Как описано в [документации по политикам Azure](../governance/policy/concepts/definition-structure.md#definition-location), при указании расположения для пользовательской инициативы это должна быть группа управления или подписка. 
 
 ## <a name="to-add-a-custom-initiative-to-your-subscription"></a>Добавление пользовательской инициативы в подписку 
 
@@ -136,7 +136,7 @@ ms.locfileid: "91448388"
 }
   ```
 
-Еще один пример использования свойства securityCenter см. в [этом разделе документации по REST API](https://docs.microsoft.com/rest/api/securitycenter/assessmentsmetadata/createinsubscription#examples).
+Еще один пример использования свойства securityCenter см. в [этом разделе документации по REST API](/rest/api/securitycenter/assessmentsmetadata/createinsubscription#examples).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
@@ -146,4 +146,4 @@ ms.locfileid: "91448388"
 Другие связанные материалы см. в следующих статьях: 
 
 - [Обзор политик безопасности](tutorial-security-policy.md)
-- [Список встроенных политик безопасности](security-center-policy-definitions.md)
+- [Список встроенных политик безопасности](./policy-reference.md)

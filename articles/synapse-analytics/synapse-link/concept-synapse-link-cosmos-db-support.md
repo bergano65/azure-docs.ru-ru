@@ -9,12 +9,12 @@ ms.subservice: synapse-link
 ms.date: 09/15/2020
 ms.author: acomet
 ms.reviewer: jrasnick
-ms.openlocfilehash: 0cdc9e242c2254cafaf0af75bcb8f8879cf3eb58
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d7f1f1f004fb8c9c4d67f409072ce061c6047569
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91287834"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92127017"
 ---
 # <a name="azure-synapse-link-preview-for-azure-cosmos-db-supported-features"></a>Поддерживаемые функции Azure Synapse Link (предварительная версия) для Azure Cosmos DB
 
@@ -33,7 +33,7 @@ ms.locfileid: "91287834"
 
 | Категория              | Описание |[Spark](https://docs.microsoft.com/azure/synapse-analytics/sql/on-demand-workspace-overview) | [Бессерверная среда SQL](https://docs.microsoft.com/azure/synapse-analytics/sql/on-demand-workspace-overview) |
 | -------------------- | ----------------------------------------------------------- |----------------------------------------------------------- | ----------------------------------------------------------- |
-| **Поддержка среды выполнения** |Поддержка среды выполнения Azure синапсе для доступа к Azure Cosmos DB| ✓ | [Связаться с нами](mailto:cosmosdbsynapselink@microsoft.com?subject=[Enable%20Preview%20Feature]%20SQL%20serverless%20for%20Cosmos%20DB) |
+| **Поддержка среды выполнения** |Поддержка среды выполнения Azure синапсе для доступа к Azure Cosmos DB| ✓ | ✓ |
 | **Поддержка API Azure Cosmos DB** | Поддерживаемый тип API Azure Cosmos DB | SQL/MongoDB | SQL/MongoDB |
 | **Объект**  |Такие объекты, как таблица, которую можно создать, указав непосредственно на контейнер Azure Cosmos DB| Кадр данных, представление, таблица | Представление |
 | **Чтение**    | Тип контейнера Azure Cosmos DB, который можно считать | OLTP/HTAP | HTAP  |

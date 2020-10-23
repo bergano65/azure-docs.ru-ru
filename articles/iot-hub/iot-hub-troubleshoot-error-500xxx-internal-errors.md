@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: troubleshooting
 ms.date: 01/30/2020
 ms.author: jlian
-ms.openlocfilehash: 7f3f5177e084693c45bed1088a4e1d091be100ed
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f83ec4d09389d91c2dd427c9840885c0b829eafb
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84688914"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92150308"
 ---
 # <a name="500xxx-internal-errors"></a>Внутренние ошибки 500xxx
 
@@ -37,4 +37,4 @@ ms.locfileid: "84688914"
 
 ## <a name="solution"></a>Решение
 
-Чтобы устранить ошибки 500xxx, выполните повторную попытку с устройства. Чтобы [автоматически управлять повторами](./iot-hub-reliability-features-in-sdks.md#connection-and-retry), используйте последнюю версию [пакетов SDK для Azure IoT](./iot-hub-devguide-sdks.md). Рекомендации по исправлению временных ошибок и повторном подключении см. в [этой статье](https://docs.microsoft.com/azure/architecture/best-practices/transient-faults).  Если проблема будет повторяться, проверьте [работоспособность ресурсов](./iot-hub-monitor-resource-health.md#use-azure-resource-health) и [состояние Azure](https://status.azure.com/) , чтобы узнать, есть ли у центра Интернета вещей известная проблема. Можно также использовать [функцию отработки отказа вручную](./tutorial-manual-failover.md). Если известных проблем нет, и проблема не устранена, [обратитесь в службу поддержки](https://azure.microsoft.com/support/options/) для дальнейшего изучения.
+Чтобы устранить ошибки 500xxx, выполните повторную попытку с устройства. Чтобы [автоматически управлять повторами](./iot-hub-reliability-features-in-sdks.md#connection-and-retry), используйте последнюю версию [пакетов SDK для Azure IoT](./iot-hub-devguide-sdks.md). Рекомендации по исправлению временных ошибок и повторном подключении см. в [этой статье](/azure/architecture/best-practices/transient-faults).  Если проблема будет повторяться, проверьте [работоспособность ресурсов](./iot-hub-monitor-resource-health.md#use-azure-resource-health) и [состояние Azure](https://status.azure.com/) , чтобы узнать, есть ли у центра Интернета вещей известная проблема. Можно также использовать [функцию отработки отказа вручную](./tutorial-manual-failover.md). Если известных проблем нет, и проблема не устранена, [обратитесь в службу поддержки](https://azure.microsoft.com/support/options/) для дальнейшего изучения.

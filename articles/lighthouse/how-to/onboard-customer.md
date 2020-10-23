@@ -3,12 +3,12 @@ title: Подключение клиента к Azure Lighthouse
 description: Узнайте, как подключить клиента к Azure Лигхсаусе, предоставив доступ к ресурсам и управление ими с помощью собственного клиента, используя делегированное управление ресурсами Azure.
 ms.date: 09/24/2020
 ms.topic: how-to
-ms.openlocfilehash: 6902fb787b14c4443e28852b9aaf2533da9b49d3
-ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
+ms.openlocfilehash: b5a6d60d10b2cee7f26ae405ed95b980f423b42e
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91873219"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92426333"
 ---
 # <a name="onboard-a-customer-to-azure-lighthouse"></a>Подключение клиента к Azure Lighthouse
 
@@ -62,7 +62,7 @@ az account show
 
 ## <a name="define-roles-and-permissions"></a>Определение ролей и разрешений
 
-Как поставщик услуг вы можете выполнять для одного клиента несколько задач, требующих разных прав доступа для нескольких областей. Можно определить столько авторизаций, сколько требуется для назначения соответствующих [встроенных ролей управления доступом на основе ролей (RBAC)](../../role-based-access-control/built-in-roles.md) пользователям в клиенте.
+Как поставщик услуг вы можете выполнять для одного клиента несколько задач, требующих разных прав доступа для нескольких областей. Вы можете определить столько авторизаций, сколько требуется, чтобы назначить соответствующие [встроенные роли Azure](../../role-based-access-control/built-in-roles.md) пользователям в клиенте.
 
 Чтобы упростить управление, мы рекомендуем использовать группы пользователей Azure AD для каждой роли. Это дает возможность добавлять или удалять отдельных пользователей в группе, имеющей доступ, чтобы не повторять процесс адаптации для внесения изменений в пользователя. Можно назначить роли субъекту-службе, который может быть полезен для сценариев автоматизации.
 
@@ -242,18 +242,18 @@ New-AzSubscriptionDeployment -Name <deploymentName> `
 # Log in first with az login if you're not using Cloud Shell
 
 # Deploy Azure Resource Manager template using template and parameter file locally
-az deployment create --name <deploymentName> \
-                     --location <AzureRegion> \
-                     --template-file <pathToTemplateFile> \
-                     --parameters <parameters/parameterFile> \
-                     --verbose
+az deployment sub create --name <deploymentName> \
+                         --location <AzureRegion> \
+                         --template-file <pathToTemplateFile> \
+                         --parameters <parameters/parameterFile> \
+                         --verbose
 
 # Deploy external Azure Resource Manager template, with local parameter file
-az deployment create --name <deploymentName> \
-                     --location <AzureRegion> \
-                     --template-uri <templateUri> \
-                     --parameters <parameterFile> \
-                     --verbose
+az deployment sub create --name <deploymentName> \
+                         --location <AzureRegion> \
+                         --template-uri <templateUri> \
+                         --parameters <parameterFile> \
+                         --verbose
 ```
 
 ## <a name="confirm-successful-onboarding"></a>Подтверждение успешного подключения

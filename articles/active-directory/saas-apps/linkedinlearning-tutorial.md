@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/31/2020
 ms.author: jeedes
-ms.openlocfilehash: d598017c8b41dffc486bfef4b9af63c6942cef58
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: fde0bcdb70384e791d7337d212d7353b6ea168bf
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88549803"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91856415"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-linkedin-learning"></a>Руководство по Интеграция единого входа Azure Active Directory с LinkedIn Learning
 
@@ -141,19 +141,19 @@ ms.locfileid: "88549803"
 
 2. В **Account Center** (Центр учетных записей) в разделе **Settings** (Параметры) щелкните **Global Settings** (Глобальные параметры). Также выберите **Learning - Default** в раскрывающемся списке.
 
-    ![Настройка единого входа](./media/linkedinlearning-tutorial/tutorial_linkedin_admin_01.png)
+    ![Снимок экрана: раздел Global Settings (Глобальные параметры), где можно выбрать параметры по умолчанию.](./media/linkedinlearning-tutorial/tutorial_linkedin_admin_01.png)
 
 3. Щелкните **OR Click Here to load and copy individual fields from the form** (Или щелкните здесь, чтобы загрузить и скопировать отдельные поля из формы) и скопируйте значения **идентификатора сущности** и **URL-адреса службы обработчика утверждений (ACS)** , и вставьте их в раздел **Базовая конфигурация SAML** на портале Azure.
 
-    ![Настройка единого входа](./media/linkedinlearning-tutorial/tutorial_linkedin_admin_03.png)
+    ![Снимок экрана: настройка описанных параметров единого входа.](./media/linkedinlearning-tutorial/tutorial_linkedin_admin_03.png)
 
 4. Перейдите в раздел **LinkedIn Admin Settings** (Параметры администратора LinkedIn). Передайте XML-файл, скачанный с портала Azure. Для этого нажмите кнопку **Upload XML file** (Передать XML-файл).
 
-    ![Настройка единого входа](./media/linkedinlearning-tutorial/tutorial_linkedin_metadata_03.png)
+    ![Снимок экрана: настройка параметров единого входа для LinkedIn, где можно передать XML-файл.](./media/linkedinlearning-tutorial/tutorial_linkedin_metadata_03.png)
 
 5. Нажмите кнопку **On** (Включить), чтобы включить единый вход. Состояние единого входа изменяется с **Not Connected** (Не подключено) на **Connected** (Подключено.)
 
-    ![Настройка единого входа](./media/linkedinlearning-tutorial/tutorial_linkedin_admin_05.png)
+    ![Снимок экрана: окно параметров единого входа, где его можно включить для пользователей.](./media/linkedinlearning-tutorial/tutorial_linkedin_admin_05.png)
 
 ### <a name="create-linkedin-learning-test-user"></a>Создание тестового пользователя LinkedIn Learning
 

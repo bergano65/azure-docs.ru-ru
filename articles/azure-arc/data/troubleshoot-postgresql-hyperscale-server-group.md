@@ -9,12 +9,12 @@ ms.author: jeanyd
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 8e91a611084d201e6609f7e203eaa08c81e19a00
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: caaab07200a8631935a2b5d5368a0c16ea9a60c5
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91569997"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92320215"
 ---
 # <a name="troubleshooting-postgresql-hyperscale-server-groups"></a>Устранение неполадок PostgreSQL в масштабируемых группах серверов
 В этой статье описываются некоторые методы, которые можно использовать для устранения неполадок в группе серверов. В дополнение к этой статье вы можете узнать, как использовать [Kibana](monitor-grafana-kibana.md) для поиска в журналах или использовать [Grafana](monitor-grafana-kibana.md) для визуализации метрик по группе серверов. 
@@ -26,7 +26,7 @@ ms.locfileid: "91569997"
 azdata arc postgres server create -n postgres01 -w 2 --debug
 ```
 
-или
+или диспетчер конфигурации служб
 ```console
 azdata arc postgres server edit -n postgres01 --extension SomeExtensionName --debug
 ```
@@ -51,13 +51,13 @@ azdata arc postgres server create --help
 
 ### <a name="install-tools"></a>Средства установки
 
-Установите Azure Data Studio `kubectl` и `azdata` на клиентский компьютер, который используется для запуска записной книжки в Azure Data Studio. Для этого следуйте инструкциям в [статье Установка клиентских средств](install-client-tools.md) .
+Установите Azure Data Studio `kubectl` и [!INCLUDE [azure-data-cli-azdata](../../../includes/azure-data-cli-azdata.md)] на клиентский компьютер, который используется для запуска записной книжки в Azure Data Studio. Для этого следуйте инструкциям в [статье Установка клиентских средств](install-client-tools.md) .
 
 ### <a name="update-the-path-environment-variable"></a>Обновление переменной среды PATH
 
 Убедитесь, что эти средства можно вызывать из любого места на этом клиентском компьютере. Например, на клиентском компьютере Windows обновите переменную системной среды PATH и добавьте папку, в которую вы установили kubectl.
 
-### <a name="sign-in-with-azdata"></a>Войти с помощью `azdata`
+### <a name="sign-in-with-azure-data-cli-azdata"></a>Войти с помощью [!INCLUDE [azure-data-cli-azdata](../../../includes/azure-data-cli-azdata.md)]
 
 Войдите в контроллер данных ARC с этого клиентского компьютера и перед запуском Azure Data Studio. Для этого выполните следующую команду:
 
@@ -95,9 +95,9 @@ kubectl config use-context default/my_kubeuser/ArcDataControllerAdmin
 3. Выберите **панель мониторинга [диагностика и устранение проблем]**
 4. Выберите **ссылку [Устранение неполадок]** .
 
-:::image type="content" source="media/postgres-hyperscale/ads-controller-postgres-troubleshooting-notebook.jpg" alt-text="Azure Data Studio — Открытие записной книжки для устранения неполадок PostgreSQL&quot;":::
+:::image type="content" source="media/postgres-hyperscale/ads-controller-postgres-troubleshooting-notebook.jpg" alt-text="Azure Data Studio — Открытие записной книжки для устранения неполадок PostgreSQL&quot;:::
 
-Откроется **Записная книжка &quot;TSG100&quot; в службе &quot;Дуга Azure с поддержкой PostgreSQL** " Azure Data Studio. Использование записной книжки для устранения :::image type="content" source="media/postgres-hyperscale/ads-controller-postgres-troubleshooting-notebook2.jpg" alt-text="Azure Data Studio — Открытие записной книжки для устранения неполадок PostgreSQL&quot;":::
+Откроется **Записная книжка &quot;TSG100&quot; в службе &quot;Дуга Azure с поддержкой PostgreSQL** " Azure Data Studio. Использование записной книжки для устранения :::image type="content" source="media/postgres-hyperscale/ads-controller-postgres-troubleshooting-notebook2.jpg" alt-text="Azure Data Studio — Открытие записной книжки для устранения неполадок PostgreSQL&quot;:::
 
 Откроется **Записная книжка &quot;TSG100&quot; в службе &quot;Дуга Azure с поддержкой PostgreSQL** ":::
 

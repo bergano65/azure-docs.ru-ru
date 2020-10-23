@@ -12,12 +12,12 @@ ms.date: 05/19/2020
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: jesakowi
-ms.openlocfilehash: 53861bbff9ba328ca97063df59cfedc6e886212d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2a8f9734714f0439383f6242cda3b51690284852
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91258155"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92363425"
 ---
 # <a name="publisher-verification"></a>Проверка издателя
 
@@ -49,7 +49,7 @@ ms.locfileid: "91258155"
 
 -  Пользователь, выполняющий проверку, должен иметь разрешение на внесение изменений как в регистрацию приложения в Azure AD, так и в учетную запись MPN в Центре партнеров. 
 
-    -  В Azure AD этот пользователь должен быть членом одной из следующих [ролей](../users-groups-roles/directory-assign-admin-roles.md): администратор приложения, администратор облачных приложений или глобальный администратор. 
+    -  В Azure AD этот пользователь должен быть членом одной из следующих [ролей](../roles/permissions-reference.md): администратор приложения, администратор облачных приложений или глобальный администратор. 
 
     -  В Центре партнеров этот пользователь должен иметь следующие [роли](/partner-center/permissions-overview): Администратор MPN, администратор учетных записей или глобальный администратор (это общая роль, приобретенная в Azure AD).
     

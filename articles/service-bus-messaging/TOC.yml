@@ -107,8 +107,6 @@
                   href: service-bus-managed-service-identity.md
                 - name: Аутентификация из приложения
                   href: authenticate-application.md
-        - name: Встроенные средства управления безопасностью
-          href: service-bus-messaging-security-controls.md
         - name: Элементы управления безопасностью службы "Политика Azure"
           displayName: 'regulatory, compliance, standards, domains'
           href: ./security-controls-policy.md

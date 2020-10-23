@@ -5,12 +5,12 @@ ms.assetid: 242736be-ec66-4114-924b-31795fd18884
 ms.topic: conceptual
 ms.date: 03/13/2019
 ms.custom: devx-track-csharp, 80e4ff38-5174-43
-ms.openlocfilehash: 8dfc1471955a6d10199a078922151ff3aeda4294
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 17daef18d87c4b5c906694ab1394694b32b6b130
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88929501"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92164875"
 ---
 # <a name="work-with-azure-functions-core-tools"></a>Запуск основных инструментов службы "Функции Azure"
 
@@ -166,7 +166,7 @@ func init MyFunctionProj
 ```
 
 >[!IMPORTANT]
-> Java использует Maven архетипа для создания проекта локальных функций вместе с первой функцией, активируемой HTTP. Для создания проекта Java используйте следующую команду: `mvn archetype:generate -DarchetypeGroupId=com.microsoft.azure -DarchetypeArtifactId=azure-functions-archetype` . Пример использования Maven архетипа см. в [кратком руководстве по использованию командной строки](/azure/azure-functions/functions-create-first-azure-function-azure-cli?pivots=programming-language-java).  
+> Java использует Maven архетипа для создания проекта локальных функций вместе с первой функцией, активируемой HTTP. Для создания проекта Java используйте следующую команду: `mvn archetype:generate -DarchetypeGroupId=com.microsoft.azure -DarchetypeArtifactId=azure-functions-archetype` . Пример использования Maven архетипа см. в [кратком руководстве по использованию командной строки](./functions-create-first-azure-function-azure-cli.md?pivots=programming-language-java).  
 
 Когда вы указываете имя проекта, то создается и инициализируется новая папка с этим именем. В противном случае инициализируется текущая папка.  
 В версии 3. x/2. x при выполнении команды необходимо выбрать среду выполнения для проекта. 
@@ -574,22 +574,18 @@ func deploy
 
 ### <a name="application-insights-integration"></a>Интеграция Application Insights
 
-Интеграция с Application Insights должна быть включена при создании приложения функции в Azure. Если по какой либо причине приложение функции не подключено к Application Insights экземпляру, это легко сделать в портал Azure. 
-
-[!INCLUDE [functions-connect-new-app-insights.md](../../includes/functions-connect-new-app-insights.md)]
+Интеграция с Application Insights должна быть включена при создании приложения функции в Azure. Если по какой либо причине приложение функции не подключено к Application Insights экземпляру, это легко сделать в портал Azure. Дополнительные сведения см. в разделе [Включение интеграции Application Insights](configure-monitoring.md#enable-application-insights-integration).
 
 ### <a name="enable-streaming-logs"></a>Включить журналы потоковой передачи
 
 Вы можете просмотреть поток файлов журнала, создаваемых функциями в сеансе командной строки на локальном компьютере. 
-
-#### <a name="native-streaming-logs"></a>Собственные журналы потоковой передачи
 
 [!INCLUDE [functions-streaming-logs-core-tools](../../includes/functions-streaming-logs-core-tools.md)]
 
 Для этого типа журналов потоковой передачи требуется включить интеграцию Application Insights для приложения функции.   
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как разрабатывать, тестировать и публиковать функции Azure с помощью Azure Functions Core Tools [модуль обучения майкрософт](/learn/modules/develop-test-deploy-azure-functions-with-core-tools/) Azure functions Core Tools является [открытым исходным кодом и размещается на GitHub](https://github.com/azure/azure-functions-cli).  
 Чтобы зарегистрировать ошибку или отправить запрос на функцию, [откройте вопрос на GitHub](https://github.com/azure/azure-functions-cli/issues).

@@ -9,12 +9,12 @@ ms.subservice: reservations
 ms.topic: conceptual
 ms.date: 02/13/2020
 ms.author: banders
-ms.openlocfilehash: 12b20f7556a460506067305401fb2379678ee58e
-ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
+ms.openlocfilehash: f12c1f20e01cb67adff2c83c7262f92daf8da969
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91371700"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92151480"
 ---
 # <a name="apis-for-azure-reservation-automation"></a>API-интерфейсы для автоматизации резервирования Azure
 
@@ -115,4 +115,4 @@ PUT https://management.azure.com/providers/Microsoft.Capacity/reservationOrders/
 - [Общие сведения об использовании резервирования Azure для подписки с оплатой по мере использования](understand-reserved-instance-usage.md)
 - [Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise](understand-reserved-instance-usage-ea.md)
 - [Затраты на программное обеспечение Windows, которые не включены в стоимость зарезервированных экземпляров Azure](reserved-instance-windows-software-costs.md)
-- [Приобретение зарезервированных экземпляров Azure](https://docs.microsoft.com/partner-center/azure-reservations)
+- [Приобретение зарезервированных экземпляров Azure](/partner-center/azure-reservations)

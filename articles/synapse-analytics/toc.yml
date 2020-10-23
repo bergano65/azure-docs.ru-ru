@@ -40,10 +40,10 @@
       href: quickstart-create-workspace.md
     - name: Создание рабочей области Synapse с помощью Azure CLI
       href: quickstart-create-workspace-cli.md
+    - name: Создание рабочей области Synapse с помощью Azure PowerShell
+      href: quickstart-create-workspace-powershell.md
     - name: Развертывание с помощью шаблона
       href: quickstart-deployment-template-workspaces.md
-    - name: Использование Synapse Studio
-      href: quickstart-synapse-studio.md
     - name: "Связывание рабочей области Power\_BI"
       href: quickstart-power-bi.md
     - name: Создание пулов
@@ -388,7 +388,7 @@
           items:
             - name: Мастер оценки моделей для пулов SQL
               href: machine-learning/tutorial-sql-pool-model-scoring-wizard.md
-            - name: Выполнение эксперимента регрессии с помощью Azure AutoML (оценка в DW)
+            - name: Выполнение эксперимента регрессии с помощью Azure AutoML
               href: ./spark/apache-spark-azure-machine-learning-tutorial.md
     - name: 'Интеграция средств (искусственный интеллект; извлечение, преобразование и загрузка; бизнес-аналитика)'
       items:
@@ -482,7 +482,11 @@
               href: ../cosmos-db/configure-synapse-link.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
             - name: "Подключение к Azure Synapse Link для Cosmos\_DB"
               href: ./synapse-link/how-to-connect-synapse-link-cosmos-db.md
-            - name: Отправка запросов к аналитическому хранилищу Azure Cosmos DB с помощью Apache Spark для Azure Synapse Analytics
+            - name: "Использование Power\_BI и бессерверного пула SQL для анализа Azure Cosmos DB"
+              href: ../cosmos-db/synapse-link-power-bi.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+            - name: Запрашивание данных Azure Cosmos DB с помощью бессерверного пула SQL
+              href: ./sql/query-cosmos-db-analytical-store.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+            - name: "Отправка запросов в аналитическое хранилище Azure Cosmos\_DB с помощью Apache Spark"
               href: ./synapse-link/how-to-query-analytical-store-spark.md
             - name: Копирование данных из Synapse Link в пул SQL с помощью Apache Spark
               href: ./synapse-link/how-to-copy-to-sql-pool.md
@@ -921,7 +925,7 @@
       href: 'https://pkg.go.dev/github.com/Azure/azure-sdk-for-go/services/preview/synapse@v43.3.0+incompatible'
     - name: .NET
       href: /dotnet/api/microsoft.azure.management.synapse?view=azure-dotnet-preview
-    - name: PowerShell
+    - name: Azure PowerShell
       href: /powershell/module/az.synapse?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
     - name: Интерфейсы REST API
       href: /rest/api/synapse/

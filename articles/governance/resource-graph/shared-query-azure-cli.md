@@ -1,14 +1,14 @@
 ---
 title: Краткое руководство. Создание общего запроса с помощью Azure CLI
 description: В этом кратком руководстве приведены шаги по включению расширения Resource Graph для Azure CLI и созданию общего запроса.
-ms.date: 06/29/2020
+ms.date: 10/14/2020
 ms.topic: quickstart
-ms.openlocfilehash: c888cee5899c45747db1775ffdfbc0d0c78e00c7
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: daaa0dc4039c37094330148f839fadf7b4013276
+ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91667662"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92057201"
 ---
 # <a name="quickstart-create-a-resource-graph-shared-query-using-azure-cli"></a>Краткое руководство. Создание общего запроса к Resource Graph с помощью Azure CLI
 
@@ -84,7 +84,7 @@ ms.locfileid: "91667662"
    ```
 
 1. Выполните общий запрос в Azure CLI, используя синтаксис `{{shared-query-uri}}` в команде [az graph query](/cli/azure/ext/resource-graph/graph#ext-resource-graph-az-graph-query).
-   Для начала скопируйте поле `id` из результата выполнения приведенной выше команды `show`. Замените в этом примере текст `shared-query-uri` значением из поля `id`, но сохраните обрамляющие его символы `{{` и `}}`.
+   Для начала скопируйте поле `id` из результата выполнения предыдущей команды `show`. Замените в этом примере текст `shared-query-uri` значением из поля `id`, но сохраните обрамляющие его символы `{{` и `}}`.
 
    ```azurecli-interactive
    # Run a Azure Resource Graph shared query

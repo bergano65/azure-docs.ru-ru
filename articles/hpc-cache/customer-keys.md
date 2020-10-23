@@ -6,12 +6,12 @@ ms.service: hpc-cache
 ms.topic: how-to
 ms.date: 07/20/2020
 ms.author: v-erkel
-ms.openlocfilehash: 2cd97e205d88fe7ead02889f5ae9ad9df0985f07
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8bce19e384e600e95b8306dcbba38652b4432bc9
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87092530"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92340535"
 ---
 # <a name="use-customer-managed-encryption-keys-for-azure-hpc-cache"></a>Использование управляемых клиентом ключей шифрования для кэша HPC Azure
 
@@ -58,7 +58,7 @@ ms.locfileid: "87092530"
 
 * Пользователь, который создает кэш HPC Azure, должен иметь разрешения, эквивалентные [роли участника Key Vault](../role-based-access-control/built-in-roles.md#key-vault-contributor). Для настройки Azure Key Vault и управления ими необходимы те же разрешения.
 
-  Дополнительные сведения см. [в статье безопасный доступ к хранилищу ключей](../key-vault/key-vault-secure-your-key-vault.md) .
+  Дополнительные сведения см. [в статье безопасный доступ к хранилищу ключей](../key-vault/general/secure-your-key-vault.md) .
 
 ## <a name="1-set-up-azure-key-vault"></a>1. Настройка Azure Key Vault
 
@@ -66,7 +66,7 @@ ms.locfileid: "87092530"
 
 Во время создания кэша необходимо указать хранилище, ключ и версию ключа, которые будут использоваться для шифрования кэша.
 
-Дополнительные сведения см. в [документации по Azure Key Vault](../key-vault/key-vault-overview.md) .
+Дополнительные сведения см. в [документации по Azure Key Vault](../key-vault/general/overview.md) .
 
 > [!NOTE]
 > Azure Key Vault должны использовать одну и ту же подписку и находиться в том же регионе, что и кэш HPC Azure. Убедитесь, что выбранный регион [поддерживает функцию управляемых клиентом ключей](hpc-cache-overview.md#region-availability).
@@ -92,7 +92,7 @@ ms.locfileid: "87092530"
 
 1. После выбора хранилища выберите отдельный ключ из доступных параметров или создайте новый ключ. Ключ должен быть 2048-битным ключом RSA.
 
-1. Укажите версию для выбранного ключа. Дополнительные сведения об управлении версиями см. в [документации по Azure Key Vault](../key-vault/about-keys-secrets-and-certificates.md#objects-identifiers-and-versioning).
+1. Укажите версию для выбранного ключа. Дополнительные сведения об управлении версиями см. в [документации по Azure Key Vault](../key-vault/general/about-keys-secrets-certificates.md#objects-identifiers-and-versioning).
 
 Продолжайте работу с остальными спецификациями и создавайте кэш, как описано в статье [создание кэша HPC для Azure](hpc-cache-create.md).
 
@@ -146,7 +146,7 @@ ms.locfileid: "87092530"
 * [Общие сведения о шифровании службы хранилища Azure](../storage/common/storage-service-encryption.md)
 * [Шифрование дисков с помощью управляемых клиентом ключей](../virtual-machines/linux/disk-encryption.md#customer-managed-keys) . документация по использованию Azure Key Vault с управляемыми дисками, которые аналогичны сценариям для кэша HPC Azure.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 После создания кэша Azure HPC и полномочного шифрования на основе Key Vault Продолжайте настраивать кэш, предоставляя ему доступ к источникам данных.
 

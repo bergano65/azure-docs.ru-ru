@@ -3,12 +3,12 @@ title: Поддержка оценки VMware в службе "Миграция 
 description: Узнайте о поддержке оценки виртуальных машин VMware с помощью средства оценки сервера службы "Миграция Azure".
 ms.topic: conceptual
 ms.date: 06/08/2020
-ms.openlocfilehash: f672c90f6056cd735d5ddc8dd96de9e7007999ce
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0fd884a7d95edaf6586e7eecd644400c05c15e5a
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91667798"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92315797"
 ---
 # <a name="support-matrix-for-vmware-assessment"></a>Таблица поддержки для оценки виртуальных машин VMware 
 
@@ -40,7 +40,7 @@ ms.locfileid: "91667798"
 **VMware** | **Сведения**
 --- | ---
 **Виртуальные машины VMware** | Все операционные системы можно оценить для миграции. 
-**Память** | Поддерживаются диски, подключенные к контроллерам SCSI, IDE и SATA.
+**Хранилище** | Поддерживаются диски, подключенные к контроллерам SCSI, IDE и SATA.
 
 
 ## <a name="azure-migrate-appliance-requirements"></a>Требования к устройству Миграции Azure
@@ -117,4 +117,4 @@ ms.locfileid: "91667798"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Просмотрите](best-practices-assessment.md) рекомендации для создания оценок.
-- [Подготовьтесь к оценке VMware](tutorial-prepare-vmware.md).
+- [Подготовьтесь к оценке VMware](./tutorial-discover-vmware.md).

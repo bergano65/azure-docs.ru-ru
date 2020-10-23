@@ -13,12 +13,12 @@ ms.author: ajburnle
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9fbdccfa7ff16bd63dda1f7c21c07e6d20e086e1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: de529a8ffb0c72854904717c71dbc322c919f1a8
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89321095"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92370820"
 ---
 # <a name="add-or-delete-users-using-azure-active-directory"></a>Добавление или удаление пользователей с помощью Azure Active Directory
 
@@ -103,6 +103,6 @@ ms.locfileid: "89321095"
 
 - [Создание простой группы и добавление участников](active-directory-groups-create-azure-portal.md)
 
-- [Работа с динамическими группами и пользователями](../users-groups-roles/groups-create-rule.md)
+- [Работа с динамическими группами и пользователями](../enterprise-users/groups-create-rule.md)
 
-Кроме того, можно выполнять другие задачи управления пользователями, например [добавлять гостевых пользователей из другого каталога](../external-identities/what-is-b2b.md) или [восстанавливать удаленных пользователей](active-directory-users-restore.md). Дополнительные сведения о других доступных действиях см. в [документации по управлению пользователями Azure Active Directory](../users-groups-roles/index.yml).
+Кроме того, можно выполнять другие задачи управления пользователями, например [добавлять гостевых пользователей из другого каталога](../external-identities/what-is-b2b.md) или [восстанавливать удаленных пользователей](active-directory-users-restore.md). Дополнительные сведения о других доступных действиях см. в [документации по управлению пользователями Azure Active Directory](../enterprise-users/index.yml).

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 05/17/2019
 ms.author: allensu
-ms.openlocfilehash: cc09c35ba5499c6e911ebd7dd23482ef30f931da
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e90086be18e344e3061b9e683780f4427b3c15a1
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88192544"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92148980"
 ---
 # <a name="purge-an-azure-cdn-endpoint"></a>Очистка конечной точки сети CDN Azure
 ## <a name="overview"></a>Обзор
@@ -69,7 +69,7 @@ ms.locfileid: "88192544"
     ![Кнопка очистки](./media/cdn-purge-endpoint/cdn-purge-button.png)
 
 > [!IMPORTANT]
-> Обработка запросов на очистку занимает около 10 минут с **Azure CDN от корпорации Майкрософт**, примерно через 2 минуты с **Azure CDN от Verizon** (Standard и Premium) и примерно через 10 секунд с **Azure CDN из Akamai**.  Azure CDN может выполнять до 50 одновременных запросов на очистку в любой момент времени на уровне профиля. 
+> Обработка запросов на очистку занимает около 10 минут с **Azure CDN от корпорации Майкрософт**, примерно через 2 минуты с **Azure CDN от Verizon** (Standard и Premium) и примерно через 10 секунд с **Azure CDN из Akamai**.  Azure CDN имеет ограничение в 100 одновременных запросов на очистку в любое заданное время на уровне профиля. 
 > 
 > 
 

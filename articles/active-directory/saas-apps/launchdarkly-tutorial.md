@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/02/2019
 ms.author: jeedes
-ms.openlocfilehash: bae3f4a0d8c793061bb3833b04717d378e86f85f
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 78f9217ea7288bac56b008911f7b39c73bba7771
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88519871"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91856574"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-launchdarkly"></a>Руководство. Интеграция Azure Active Directory с LaunchDarkly
 
@@ -100,7 +100,7 @@ ms.locfileid: "88519871"
 
 4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах для единого входа в приложение LaunchDarkly](common/idp-intiated.png)
+    ![Снимок экрана, на котором показан раздел "Базовая конфигурация SAML", где можно ввести идентификатор, URL-адрес ответа и нажать кнопку "Сохранить"](common/idp-intiated.png)
 
     а. В текстовом поле **Идентификатор** введите URL-адрес: `app.launchdarkly.com`
 
@@ -113,7 +113,7 @@ ms.locfileid: "88519871"
 
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://app.launchdarkly.com`.
 
-    ![Сведения о домене и URL-адресах для единого входа в приложение LaunchDarkly](common/metadata-upload-additional-signon.png)
+    ![Снимок экрана, на котором показан параметр "Задать дополнительные URL-адреса" и поле для ввода URL-адреса входа](common/metadata-upload-additional-signon.png)
 
 6. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (Base64)** из предложенных вариантов, и сохраните его на компьютере.
 
@@ -135,19 +135,19 @@ ms.locfileid: "88519871"
 
 2. Выберите **Параметры учетной записи** в области навигации слева.
 
-    ![Конфигурация LaunchDarkly](./media/launchdarkly-tutorial/configure1.png)
+    ![Снимок экрана для раздела рабочей среды, где выбран элемент параметров учетной записи.](./media/launchdarkly-tutorial/configure1.png)
 
 3. Откройте вкладку **Безопасность**.
 
-    ![Конфигурация LaunchDarkly](./media/launchdarkly-tutorial/configure2.png)
+    ![Снимок экрана для вкладки безопасности в разделе параметров учетной записи.](./media/launchdarkly-tutorial/configure2.png)
 
 4. Щелкните **ENABLE SSO** (Включить единый вход) и затем **EDIT SAML CONFIGURATION** (Изменить конфигурацию SAML).
 
-    ![Конфигурация LaunchDarkly](./media/launchdarkly-tutorial/configure3.png)
+    ![Снимок экрана для страницы единого входа, где можно включить единый вход и изменить конфигурацию SAML.](./media/launchdarkly-tutorial/configure3.png)
 
 5. В разделе **Edit your SAML configuration** (Изменение конфигурации SAML) сделайте следующее:
 
-    ![Конфигурация LaunchDarkly](./media/launchdarkly-tutorial/configure4.png)
+    ![Снимок экрана для раздела изменения конфигурации SAML, где можно внести описанные здесь изменения.](./media/launchdarkly-tutorial/configure4.png)
 
     а. Скопируйте **SAML consumer service URL** (URL-адрес службы объекта-получателя SAML) для своего экземпляра и вставьте его в текстовое поле "URL-адрес ответа" в разделе **Домен и URL-адреса приложения LaunchDarkly** на портале Azure.
 

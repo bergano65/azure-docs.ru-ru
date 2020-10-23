@@ -6,12 +6,12 @@ ms.reviewer: jasonh
 ms.topic: conceptual
 ms.date: 06/18/2017
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: be7f9d66a10f3f0f4a1ae0f9e28e226f268a7f7c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9123ca6a1bfa90737bb1ce83ee365d1ecf514e1f
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87497449"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92220998"
 ---
 # <a name="get-started-with-azure-data-lake-analytics-using-azure-cli"></a>Начало работы с Azure Data Lake Analytics с помощью интерфейса командной строки Azure
 
@@ -19,7 +19,7 @@ ms.locfileid: "87497449"
 
 В этой статье описано, как использовать Azure CLI для создания учетной записи Data Lake Analytics, а также отправки заданий и каталогов U-SQL. Задание, которое считывает файл с разделителями-табуляциями (TSV) и преобразует его в файл с разделителями-запятыми (CSV).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы вам понадобится следующее:
 
@@ -63,7 +63,7 @@ az group create --name "<Resource Group Name>" --location "<Azure Location>"
 ```
 
 * **Имя учетной записи Data Lake Analytics**. Каждой учетной записи Data Lake Analytics присвоено имя.
-* **Расположение**. Используйте один из центров обработки данных Azure, который поддерживает Data Lake Analytics.
+* **Расположение.** Используйте один из центров обработки данных Azure, который поддерживает Data Lake Analytics.
 * **Учетная запись Data Lake Store по умолчанию** — каждая учетная запись Data Lake Analytics содержит учетную запись Data Lake Store по умолчанию.
 
 Чтобы получить список существующих учетных записей Data Lake Store, выполните эту команду:
@@ -104,11 +104,11 @@ az dls fs upload --account "<Data Lake Store Account Name>" --source-path "<Sour
 az dls fs list --account "<Data Lake Store Account Name>" --path "<Path>"
 ```
 
-Из аналитики озера данных также доступно хранилище больших двоичных объектов Azure.  Чтобы передать данные в хранилище BLOB-объектов Azure, см. статью [Использование интерфейса командной строки (CLI) Azure со службой хранилища Azure](../storage/common/storage-azure-cli.md).
+Из аналитики озера данных также доступно хранилище больших двоичных объектов Azure.  Чтобы передать данные в хранилище BLOB-объектов Azure, см. статью [Использование интерфейса командной строки (CLI) Azure со службой хранилища Azure](../storage/blobs/storage-quickstart-blobs-cli.md).
 
 ## <a name="submit-data-lake-analytics-jobs"></a>Отправка заданий аналитики озера данных
 
-Задания аналитики озера данных пишутся на языке U-SQL. Дополнительные сведения о языке U-SQL см. в статье о [начале работы с языком U-SQL](data-lake-analytics-u-sql-get-started.md) и в [справочнике по языку U-SQL](https://docs.microsoft.com/u-sql/).
+Задания аналитики озера данных пишутся на языке U-SQL. Дополнительные сведения о языке U-SQL см. в статье о [начале работы с языком U-SQL](data-lake-analytics-u-sql-get-started.md) и в [справочнике по языку U-SQL](/u-sql/).
 
 ### <a name="to-create-a-data-lake-analytics-job-script"></a>Создание скрипта задания аналитики озера данных
 

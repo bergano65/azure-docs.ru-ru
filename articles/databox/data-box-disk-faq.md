@@ -8,12 +8,12 @@ ms.subservice: disk
 ms.topic: conceptual
 ms.date: 08/29/2019
 ms.author: alkohli
-ms.openlocfilehash: f2231b74034ba6cea672a7bbf68f506fce423d45
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9305ff5904588241ff8319f28eab2ce20ad77876
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88826146"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92125121"
 ---
 # <a name="azure-data-box-disk-frequently-asked-questions"></a>Диск Azure Data Box Часто задаваемые вопросы
 
@@ -66,7 +66,7 @@ A. Диск Data Box поддерживает прием данных тольк
 
 ### <a name="option-1"></a>Вариант 1. 
 
-Отправьте [поддерживаемый диск](https://docs.microsoft.com/azure/storage/common/storage-import-export-requirements?toc=/azure/storage/blobs/toc.json#supported-disks) , содержащий данные, с помощью [службы импорта и экспорта Azure](https://docs.microsoft.com/azure/storage/common/storage-import-export-service) из исходного расположения в Канаде в центр обработки данных Azure WestUS.
+Отправьте [поддерживаемый диск](../storage/common/storage-import-export-requirements.md?toc=%252fazure%252fstorage%252fblobs%252ftoc.json#supported-disks) , содержащий данные, с помощью [службы импорта и экспорта Azure](../storage/common/storage-import-export-service.md) из исходного расположения в Канаде в центр обработки данных Azure WestUS.
 
 ### <a name="option-2"></a>Вариант 2.
 
@@ -77,7 +77,7 @@ A. Диск Data Box поддерживает прием данных тольк
 3. Затем можно использовать такой инструмент, как AzCopy, для копирования данных в учетную запись хранения в WestUS. На этом этапе взимается плата за использование [стандартного хранилища](https://azure.microsoft.com/pricing/details/storage/) и [пропускной способности](https://azure.microsoft.com/pricing/details/bandwidth/) , которая не включается в диск Data Box выставления счетов.
 
 ### <a name="q-whom-should-i-contact-if-i-encounter-any-issues--with-data-box-disks"></a>У. С кем следует связаться при возникновении проблем с дисками Data Box?
-A. При любых проблемах с Data Box Disks обратитесь в [службу поддержки Майкрософт](https://docs.microsoft.com/azure/databox/data-box-disk-contact-microsoft-support).
+A. При любых проблемах с Data Box Disks обратитесь в [службу поддержки Майкрософт](./data-box-disk-contact-microsoft-support.md).
 
 ## <a name="configure-and-connect"></a>Настройка и подключение
  
@@ -147,7 +147,7 @@ A.  Чтобы ускорить процесс копирования:
 - Используйте несколько потоков для копирования данных. Например, с Robocopy используйте многопоточный вариант. Дополнительные сведения об используемой команде см. в статье [Руководство. Копирование данных на диск Microsoft Azure Data Box и проверка](data-box-disk-deploy-copy-data.md#copy-data-to-disks).
 - Используйте несколько сеансов.
 - Вместо копирования из сетевой папки (где вы можете быть ограничены скоростью сети) копируйте данные, которые расположены локально на компьютере, к которому подключены диски.
-- Во время процесса копирования следует использовать USB 3.0 или более поздней версии. Загрузите [средство USBView](https://docs.microsoft.com/windows-hardware/drivers/debugger/usbview) и используйте его для идентификации контроллеров USB и USB-устройств, подключенных к компьютеру.
+- Во время процесса копирования следует использовать USB 3.0 или более поздней версии. Загрузите [средство USBView](/windows-hardware/drivers/debugger/usbview) и используйте его для идентификации контроллеров USB и USB-устройств, подключенных к компьютеру.
 - Оцените производительность компьютера, используемого для копирования данных. Скачайте [средство Bluestop FIO](https://ci.appveyor.com/project/axboe/fio) и используйте его, чтобы измерять производительность оборудования сервера. Выберите последнюю сборку x86 или x64, откройте вкладку **Артефакты** и скачайте MSI.
 
 ### <a name="q-how-to-speed-up-the-data-if-the-source-data-has-small-files-kbs-or-few-mbs"></a>У. Как ускорить данные, если исходные данные состоят из небольших файлов размером от килобайтов до нескольких мегабайтов?

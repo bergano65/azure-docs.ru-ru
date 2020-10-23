@@ -14,18 +14,18 @@ ms.workload: identity
 ms.date: 06/17/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 9819b90ba390e8601cc33a17338ce9b16bf3b3cc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f5421efc96b957f5ae96515bbcf17c8a773397c9
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84982498"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92368253"
 ---
 # <a name="list-azure-role-definitions"></a>Вывод списка определений ролей Azure
 
 Определение роли — это набор разрешений, которые могут быть выполнены, например чтение, запись и удаление. Обычно это называется ролью. [Управление доступом на основе ролей Azure (Azure RBAC)](overview.md) имеет более 120 [встроенных ролей](built-in-roles.md) или можно создавать собственные пользовательские роли. В этой статье описывается, как составить список встроенных и пользовательских ролей, которые можно использовать для предоставления доступа к ресурсам Azure.
 
-Чтобы просмотреть список ролей администратора для Azure Active Directory, ознакомьтесь с [разрешениями роли администратора в Azure Active Directory](../active-directory/users-groups-roles/directory-assign-admin-roles.md).
+Чтобы просмотреть список ролей администратора для Azure Active Directory, ознакомьтесь с [разрешениями роли администратора в Azure Active Directory](../active-directory/roles/permissions-reference.md).
 
 ## <a name="azure-portal"></a>Портал Azure
 
@@ -344,7 +344,7 @@ az role definition list --name "Virtual Machine Contributor" --output json --que
 1. В URI замените *{Scope}* областью, для которой необходимо получить список определений ролей.
 
     > [!div class="mx-tableFixed"]
-    > | Область | Тип |
+    > | Область | Type |
     > | --- | --- |
     > | `providers/Microsoft.Management/managementGroups/{groupId1}` | группа управления; |
     > | `subscriptions/{subscriptionId1}` | Подписка |
@@ -429,7 +429,7 @@ GET https://management.azure.com/subscriptions/{subscriptionId1}/providers/Micro
 1. В URI замените *{Scope}* областью, для которой требуется перечислить определение роли.
 
     > [!div class="mx-tableFixed"]
-    > | Область | Тип |
+    > | Область | Type |
     > | --- | --- |
     > | `providers/Microsoft.Management/managementGroups/{groupId1}` | группа управления; |
     > | `subscriptions/{subscriptionId1}` | Подписка |
@@ -474,7 +474,7 @@ GET https://management.azure.com/providers/Microsoft.Authorization/roleDefinitio
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Встроенные роли Azure](built-in-roles.md)
 - [Настраиваемые роли Azure](custom-roles.md)

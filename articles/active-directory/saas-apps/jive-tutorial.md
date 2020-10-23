@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/16/2020
 ms.author: jeedes
-ms.openlocfilehash: 432ca72a667caa9c2a78b08396884d957b4c650b
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: da0e042664d6ca90c53b83bb38770a97d4e97498
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88547109"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91850759"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-jive"></a>Руководство по Интеграция единого входа Azure Active Directory с Jive
 
@@ -140,7 +140,7 @@ ms.locfileid: "88547109"
 
 1. В меню вверху щелкните **SAML**.
 
-    ![Настройка единого входа на стороне приложения](./media/jive-tutorial/tutorial_jive_002.png)
+    ![Снимок экрана для вкладки SAML, где выбран параметр "Включено".](./media/jive-tutorial/tutorial_jive_002.png)
 
     а. На вкладке **General** (Общие) установите флажок **Enabled** (Включено).
 
@@ -148,7 +148,7 @@ ms.locfileid: "88547109"
 
 1. Перейдите на вкладку **IdP Metadata** (Метаданные поставщика удостоверений).
 
-    ![Настройка единого входа на стороне приложения](./media/jive-tutorial/tutorial_jive_003.png)
+    ![Снимок экран для вкладки SAML, где выбраны метаданные поставщика удостоверений.](./media/jive-tutorial/tutorial_jive_003.png)
 
     а. Скопируйте содержимое скачанного XML-файла с метаданными и вставьте его в текстовое поле **Identity Provider (IDP) Metadata** (Метаданные поставщика удостоверений).
 
@@ -156,7 +156,7 @@ ms.locfileid: "88547109"
 
 1. Выберите вкладку **User Attribute Mapping** (Сопоставление атрибутов пользователей).
 
-    ![Настройка единого входа на стороне приложения](./media/jive-tutorial/tutorial_jive_004.png)
+    ![Снимок экран для вкладки SAML, где выбран элемент сопоставления атрибутов пользователя.](./media/jive-tutorial/tutorial_jive_004.png)
 
     а. В текстовом поле **Email** (Электронная почта) скопируйте и вставьте имя атрибута значения **mail**.
 

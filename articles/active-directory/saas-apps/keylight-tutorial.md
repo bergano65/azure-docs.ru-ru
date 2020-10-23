@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 04/14/2019
 ms.author: jeedes
-ms.openlocfilehash: 82af00c091aedb56e0cad954e554094e75df0013
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 0832fe9ba65ac0df5dbff60b01b7a5eb91a2c3a2
+ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88535869"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91945249"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-lockpath-keylight"></a>Руководство по интеграции Azure Active Directory с LockPath Keylight
 
@@ -133,15 +133,15 @@ ms.locfileid: "88535869"
 
     b. В меню вверху щелкните **Person** (Пользователь) и выберите **Keylight Setup** (Настройка Keylight).
 
-    ![Настройка единого входа](./media/keylight-tutorial/401.png)
+    ![Снимок экрана, на котором выделен значок пользователя и выбрано действие настройки Keylight в раскрывающемся меню.](./media/keylight-tutorial/401.png)
 
     c. В представлении в виде дерева слева щелкните **SAML**.
 
-    ![Настройка единого входа](./media/keylight-tutorial/402.png)
+    ![Снимок экрана для представления в виде дерева, где выбран элемент SAML.](./media/keylight-tutorial/402.png)
 
     d. В диалоговом окне **SAML Settings** (Параметры SAML) нажмите кнопку **Edit** (Изменить).
 
-    ![Настройка единого входа](./media/keylight-tutorial/404.png)
+    ![Снимок экрана, на котором показано диалоговое окно параметров SAML и выбрана кнопка "Изменить".](./media/keylight-tutorial/404.png)
 
 1. На странице диалогового окна **Изменение параметров SAML** выполните следующие действия:
 

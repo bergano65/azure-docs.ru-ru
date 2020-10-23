@@ -9,12 +9,12 @@ ms.service: azure-supportability
 ms.topic: how-to
 ms.date: 06/25/2020
 ms.author: mblythe
-ms.openlocfilehash: 0831cc40c7d6b25e1db78c84a7adfa644497d486
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: f937b03b2f838f69f56a4b132d0ea7a7e298b532
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92091446"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92372129"
 ---
 # <a name="create-an-azure-support-request"></a>Создание запроса на поддержку Azure
 
@@ -41,7 +41,7 @@ Azure предоставляет неограниченную поддержку
 
 ### <a name="azure-role-based-access-control"></a>Управление доступом на основе ролей в Azure
 
-Чтобы создать запрос в службу поддержки, необходимо быть [Владельцем](../../role-based-access-control/built-in-roles.md#owner), [Участником](../../role-based-access-control/built-in-roles.md#contributor) или быть назначенным роли [Участник запроса на поддержку](../../role-based-access-control/built-in-roles.md#support-request-contributor) на уровне подписки. Чтобы создать запрос в службу поддержки без подписки, например Azure Active Directory сценарий, необходимо быть [администратором](../../active-directory/users-groups-roles/directory-assign-admin-roles.md).
+Чтобы создать запрос в службу поддержки, необходимо быть [Владельцем](../../role-based-access-control/built-in-roles.md#owner), [Участником](../../role-based-access-control/built-in-roles.md#contributor) или быть назначенным роли [Участник запроса на поддержку](../../role-based-access-control/built-in-roles.md#support-request-contributor) на уровне подписки. Чтобы создать запрос в службу поддержки без подписки, например Azure Active Directory сценарий, необходимо быть [администратором](../../active-directory/roles/permissions-reference.md).
 
 ### <a name="go-to-help--support-from-the-global-header"></a>Перейдите в раздел "Справка и поддержка" из глобального заголовка
 
@@ -102,7 +102,7 @@ Azure предоставляет неограниченную поддержку
 Инженер службы поддержки свяжется с вами, используя указанный вами метод. Сведения о начальном времени ответа см. в разделе [область поддержки и скорость реагирования](https://azure.microsoft.com/support/plans/response/).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о вариантах самостоятельного устранения проблем в Azure см. в этом видео:
 

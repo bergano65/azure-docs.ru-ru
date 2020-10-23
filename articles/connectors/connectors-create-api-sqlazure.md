@@ -5,14 +5,14 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: estfan, jonfan, logicappspm
 ms.topic: conceptual
-ms.date: 06/06/2020
+ms.date: 10/22/2020
 tags: connectors
-ms.openlocfilehash: a50a171536d7f81de42da415960398d31ec64827
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 674d496485f89bee1904e3588a0fb81c6140945b
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91326785"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92426607"
 ---
 # <a name="automate-workflows-for-a-sql-database-by-using-azure-logic-apps"></a>Автоматизация рабочих процессов для базы данных SQL с помощью Azure Logic Apps
 
@@ -67,6 +67,9 @@ ms.locfileid: "91326785"
 
 ### <a name="connect-to-azure-sql-database-or-managed-instance"></a>Подключение к базе данных SQL Azure или Управляемый экземпляр
 
+Чтобы получить доступ к Управляемый экземпляр Azure SQL без использования локального шлюза данных или среды службы интеграции, необходимо [настроить общедоступную конечную точку на управляемый экземпляр SQL Azure](../azure-sql/managed-instance/public-endpoint-configure.md). Общедоступная конечная точка использует порт 3342, поэтому убедитесь, что этот номер порта указан при создании подключения из приложения логики.
+
+
 При первом добавлении [триггера SQL](#add-sql-trigger) или [действия SQL](#add-sql-action), но ранее не было создано подключение к базе данных, вам будет предложено выполнить следующие действия:
 
 1. В поле **тип проверки подлинности**выберите необходимую проверку подлинности и включите ее в базе данных SQL azure или управляемый экземпляр SQL Azure:
@@ -88,7 +91,7 @@ ms.locfileid: "91326785"
    | Свойство | Обязательно | Описание |
    |----------|----------|-------------|
    | **Имя сервера** | Да | Адрес для SQL Server, например `Fabrikam-Azure-SQL.database.windows.net` |
-   | **Имя базы данных** | Да | Имя базы данных SQL, например `Fabrikam-Azure-SQL-DB` |
+   | **Имя базы данных**. | Да | Имя базы данных SQL, например `Fabrikam-Azure-SQL-DB` |
    | **Имя таблицы** | Да | Таблица, которую необходимо использовать, например `SalesLT.Customer` |
    ||||
 
@@ -211,19 +214,16 @@ ms.locfileid: "91326785"
 
 Иногда требуется оперировать такими большими результирующими наборами, что соединитель не может вернуть все результаты одновременно, либо требуется контролировать размер и структуру результирующих наборов. Ниже приведено несколько способов, помогающих справиться с большими результирующими наборами.
 
-* Чтобы упростить управление результатами в виде небольших наборов, включите *разбиение на страницы*. Дополнительные сведения см. в разделе [Получение дополнительных данных, элементов или записей с помощью разбиения на страницы в Azure Logic Apps](../logic-apps/logic-apps-exceed-default-page-size-with-pagination.md).
+* Чтобы упростить управление результатами в виде небольших наборов, включите *разбиение на страницы*. Дополнительные сведения см. в разделе [Получение дополнительных данных, элементов или записей с помощью разбиения на страницы в Azure Logic Apps](../logic-apps/logic-apps-exceed-default-page-size-with-pagination.md). Дополнительные сведения см. [в разделе разбивка на страницы SQL для многоблочной пересылки данных с помощью Logic Apps](https://social.technet.microsoft.com/wiki/contents/articles/40060.sql-pagination-for-bulk-data-transfer-with-logic-apps.aspx).
 
-* Создайте хранимую процедуру, которая упорядочивает результаты подходящим вам способом.
+* Создайте [*хранимую процедуру*](/sql/relational-databases/stored-procedures/stored-procedures-database-engine) , которая упорядочивает результаты тем способом, который вам нужен. Соединитель SQL предоставляет множество серверных функций, к которым можно получить доступ с помощью Azure Logic Apps, чтобы упростить автоматизацию бизнес-задач, работающих с таблицами базы данных SQL.
 
   При получении или вставке нескольких строк приложение логики может выполнять их итерацию с помощью [*цикла UNTIL*](../logic-apps/logic-apps-control-flow-loops.md#until-loop) с учетом этих [ограничений](../logic-apps/logic-apps-limits-and-config.md). Но иногда приложение логики должно работать с настолько большими наборами данных, например с тысячами или миллионами строк, что целесообразно сократить расходы на вызовы к базе данных.
 
-  Чтобы упорядочить результаты подходящим вам способом, можно создать [*хранимую процедуру*](/sql/relational-databases/stored-procedures/stored-procedures-database-engine), которая выполняется в экземпляре SQL и использует инструкцию **SELECT - ORDER BY**. Это решение позволяет управлять размером и структурой полученных результатов. Приложение логики вызывает хранимую процедуру с помощью действия **выполнения хранимой процедуры** соединителя SQL Server.
+  Чтобы упорядочить результаты подходящим вам способом, можно создать хранимую процедуру, которая выполняется в экземпляре SQL и использует инструкцию **SELECT - ORDER BY**. Это решение позволяет управлять размером и структурой полученных результатов. Приложение логики вызывает хранимую процедуру с помощью действия **выполнения хранимой процедуры** соединителя SQL Server. Дополнительные сведения см. в разделе [SELECT-ORDER BY](/sql/t-sql/queries/select-order-by-clause-transact-sql).
 
-  Дополнительные сведения о решении:
-
-  * [Разбиение на страницы в SQL для массовой передачи данных с помощью Logic Apps](https://social.technet.microsoft.com/wiki/contents/articles/40060.sql-pagination-for-bulk-data-transfer-with-logic-apps.aspx)
-
-  * [Предложение SELECT - ORDER BY](/sql/t-sql/queries/select-order-by-clause-transact-sql)
+  > [!NOTE]
+  > При использовании этого соединителя выполнение хранимой процедуры ограничивается [ограничением времени ожидания, которое меньше 2 минут](/connectors/sql/#known-issues-and-limitations). Некоторые хранимые процедуры могут занять больше времени, чем это ограничение, и полностью завершить процесс, что приведет к `504 TIMEOUT` ошибке. Фактически, для этой цели некоторые долгосрочные процессы кодируются как хранимые процедуры явным образом. Вызов этих процедур из Azure Logic Apps может создать проблемы из-за этого предела времени ожидания. Несмотря на то, что соединитель SQL изначально не поддерживает асинхронный режим, этот режим можно имитировать с помощью триггера завершения SQL, собственного сквозного запроса SQL, таблицы состояний и заданий на стороне сервера с помощью [агента заданий обработки эластичных](../azure-sql/database/elastic-jobs-overview.md)баз данных Azure.
 
 ### <a name="handle-dynamic-bulk-data"></a>Обработка динамических больших данных
 
@@ -248,6 +248,16 @@ ms.locfileid: "91326785"
 
 1. Чтобы создать ссылку на свойства содержимого JSON, щелкните внутри полей редактирования, в которых необходимо создать ссылку на эти свойства, чтобы появился список динамического содержимого. В списке под заголовком [**анализ JSON**](../logic-apps/logic-apps-perform-data-operations.md#parse-json-action) выберите нужные маркеры данных для свойств содержимого JSON.
 
+## <a name="troubleshoot-problems"></a>Устранение неполадок
+
+* Проблемы с подключением часто возникают, поэтому для устранения неполадок и устранения таких проблем ознакомьтесь [с устранением ошибок подключения, чтобы SQL Server](https://support.microsoft.com/help/4009936/solving-connectivity-errors-to-sql-server). Далее приводятся некоторые примеры.
+
+  * `A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections.`
+
+  * `(provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) (Microsoft SQL Server, Error: 53)`
+
+  * `(provider: TCP Provider, error: 0 - No such host is known.) (Microsoft SQL Server, Error: 11001)`
+
 ## <a name="connector-specific-details"></a>Сведения о соединителях
 
 Технические сведения о триггерах, действиях и ограничениях этого соединителя см. на [странице справочника по соединителю](/connectors/sql/), которая создается из описания Swagger.
@@ -255,4 +265,3 @@ ms.locfileid: "91326785"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте больше о других [соединителях для Azure Logic Apps](../connectors/apis-list.md).
-

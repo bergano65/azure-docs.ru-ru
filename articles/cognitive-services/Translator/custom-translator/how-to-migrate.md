@@ -9,12 +9,12 @@ ms.subservice: translator-text
 ms.date: 05/26/2020
 ms.author: swmachan
 ms.topic: conceptual
-ms.openlocfilehash: 5334168081ea18650bd6afd2411e076952e08749
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 449d57579b802191434cda3e63e103e5f3ef4bc5
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86537992"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92220879"
 ---
 # <a name="migrate-hub-workspace-and-projects-to-custom-translator"></a>Перенос рабочей области и проектов центра в Custom Translator
 
@@ -55,7 +55,7 @@ ms.locfileid: "86537992"
 
 3. Щелкните ссылку "Перенос" для соответствующего проекта.
 
-    ![Перенос из центра](media/how-to/how-to-migrate-from-hub.png)
+    ![Снимок экрана, на котором выделена кнопка "миграция" для выбранного проекта.](media/how-to/how-to-migrate-from-hub.png)
 
 4. Щелчок по ссылке "Миграция" открывает форму, в которой вы можете выполнить следующее.
    * Укажите рабочую область, которую вы хотите перенести в Пользовательский переводчик
@@ -76,7 +76,7 @@ ms.locfileid: "86537992"
 
 3. На странице "Параметры" щелкните "Migrate Workspace data to Custom Translator" (Перенести данные рабочей области в Custom Translator).
 
-    ![Перенос из центра](media/how-to/how-to-migrate-workspace-from-hub.png)
+    ![Снимок экрана, посвященный параметру переноса данных рабочей области в пользовательский переводчик.](media/how-to/how-to-migrate-workspace-from-hub.png)
 
 4. На следующей странице выберите любой из этих двух параметров:
 

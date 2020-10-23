@@ -3,12 +3,12 @@ title: Правила доступа брандмауэра
 description: Настройте правила для доступа к реестру контейнеров Azure из-за пределов брандмауэра, разрешив доступ к ("список разрешений") REST API и доменным именам конечных точек данных или диапазонам IP-адресов, зависящим от службы.
 ms.topic: article
 ms.date: 05/18/2020
-ms.openlocfilehash: 679dbcaf30653b855d35825f94e93f87ac68c322
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b9ecd5f802176cdc6881294f5dedefd3dd467244
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86246985"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92148509"
 ---
 # <a name="configure-rules-to-access-an-azure-container-registry-behind-a-firewall"></a>Настройка правил для доступа к реестру контейнеров Azure за брандмауэром
 
@@ -113,7 +113,7 @@ ms.locfileid: "86246985"
 
 ## <a name="allow-access-by-service-tag"></a>Разрешение доступа по тегу службы
 
-В виртуальной сети Azure используйте правила безопасности сети для фильтрации трафика от ресурса, например виртуальной машины, в реестр контейнеров. Чтобы упростить создание правил сети Azure, используйте [тег службы](../virtual-network/security-overview.md#service-tags) **AzureContainerRegistry**. Тег службы представляет группу префиксов IP-адресов для глобального доступа к службе Azure или в определенном регионе Azure. Тег автоматически обновляется при изменении адресов. 
+В виртуальной сети Azure используйте правила безопасности сети для фильтрации трафика от ресурса, например виртуальной машины, в реестр контейнеров. Чтобы упростить создание правил сети Azure, используйте [тег службы](../virtual-network/network-security-groups-overview.md#service-tags) **AzureContainerRegistry**. Тег службы представляет группу префиксов IP-адресов для глобального доступа к службе Azure или в определенном регионе Azure. Тег автоматически обновляется при изменении адресов. 
 
 Например, создайте правило группы безопасности сети для исходящего трафика с назначением **AzureContainerRegistry**, чтобы разрешить трафик в реестр контейнеров Azure. Чтобы разрешить доступ к тегу службы только в определенном регионе, укажите регион в следующем формате: **AzureContainerRegistry**.[*название региона*].
 
@@ -183,7 +183,7 @@ az acr show-endpoints --name myregistry
 
 * Узнайте подробнее о [рекомендациях Azure по обеспечению сетевой безопасности](../security/fundamentals/network-best-practices.md).
 
-* Узнайте подробнее о [группах безопасности](../virtual-network/security-overview.md) в виртуальной сети Azure.
+* Узнайте подробнее о [группах безопасности](../virtual-network/network-security-groups-overview.md) в виртуальной сети Azure.
 
 * Узнайте подробнее о настройке [Приватного канала](container-registry-private-link.md) для реестра контейнеров.
 

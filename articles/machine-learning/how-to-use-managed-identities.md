@@ -9,13 +9,13 @@ ms.service: machine-learning
 ms.subservice: core
 ms.reviewer: larryfr
 ms.topic: conceptual
-ms.date: 10/08/2020
-ms.openlocfilehash: 6bcc4ac5561a8bdb721018aa05bf2376579b627b
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.date: 10/22/2020
+ms.openlocfilehash: c4ea7609c343532f17144e388be7583eab427eee
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92079676"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92440456"
 ---
 # <a name="use-managed-identities-with-azure-machine-learning-preview"></a>Использование управляемых удостоверений с Машинное обучение Azure (Предварительная версия)
 
@@ -29,7 +29,6 @@ ms.locfileid: "92079676"
 
  * Настройте и используйте запись контроля доступа для рабочей области Машинное обучение Azure без включения прав администратора на доступ к записи.
  * Доступ к закрытой записи контроля доступа, внешней для рабочей области, для извлечения базовых образов для обучения или вывода.
- * Доступ к наборам данных для обучения с помощью управляемых удостоверений вместо ключей доступа к хранилищу.
 
 > [!IMPORTANT]
 > Использование управляемых удостоверений для управления доступом к ресурсам с Машинное обучение Azure в настоящее время находится на этапе предварительной версии. Функция предварительной версии предоставляется "как есть", без гарантии поддержки или соглашения об уровне обслуживания. Дополнительные сведения см. в дополнительных [условиях использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
@@ -222,31 +221,6 @@ identity.client_id="<UAI client ID>”
 env.docker.base_image_registry.registry_identity=identity
 env.docker.base_image = "my-acr.azurecr.io/my-repo/my-image:latest"
 ```
-
-## <a name="access-training-data"></a>Доступ к данным обучения
-
-После создания кластерного кластера машинного обучения с управляемым удостоверением, как описано выше, вы можете использовать это удостоверение для доступа к данным для обучения без ключей учетной записи хранения. Для этого сценария можно использовать управляемое системой или пользователем удостоверение.
-
-### <a name="grant-compute-managed-identity-access-to-storage-account"></a>Предоставить управляемому удостоверению для вычислений доступ к учетной записи хранения
-
-[Предоставьте управляемому удостоверению роль читателя](https://docs.microsoft.com/azure/storage/common/storage-auth-aad#assign-azure-roles-for-access-rights) в учетной записи хранения, в которой хранятся обучающие данные.
-
-### <a name="register-data-store-with-workspace"></a>Регистрация хранилища данных в рабочей области
-
-После назначения управляемого удостоверения можно создать хранилище данных без указания учетных данных хранилища.
-
-```python
-from azureml.core import Datastore
-
-blob_dstore = Datastore.register_azure_blob_container(workspace=workspace,
-                                                      datastore_name='my-datastore',
-                                                      container_name='my-container',
-                                                      account_name='my-storage-account')
-```
-
-### <a name="submit-training-run"></a>Выполнение обучающего прогона
-
-При отправке обучающего выполнения с помощью хранилища данных среда вычислений машинного обучения использует управляемое удостоверение для доступа к данным.
 
 ## <a name="use-docker-images-for-inference"></a>Использование образов DOCKER для вывода
 

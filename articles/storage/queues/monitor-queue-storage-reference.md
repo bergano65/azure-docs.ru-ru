@@ -9,12 +9,12 @@ ms.date: 10/02/2020
 ms.author: normesta
 ms.subservice: logs
 ms.custom: monitoring
-ms.openlocfilehash: 52ee08e0cce23aebbac1564a5c3ed894d0e487d7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 396d2785d80ff29212dddcfb97adbff8ba9ce4c8
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91711416"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92425160"
 ---
 # <a name="azure-queue-storage-monitoring-data-reference"></a>Справочник по данным мониторинга хранилища очередей Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "91711416"
 
 #### <a name="queue-storage"></a>Хранилище очередей
 
-В этой таблице показаны [метрики хранилища очередей](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-supported#microsoftstoragestorageaccountsqueueservices).
+В этой таблице показаны [метрики хранилища очередей](/azure/azure-monitor/platform/metrics-supported#microsoftstoragestorageaccountsqueueservices).
 
 | Метрика | Описание |
 | ------------------- | ----------------- |

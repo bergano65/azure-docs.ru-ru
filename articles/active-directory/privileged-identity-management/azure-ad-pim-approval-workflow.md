@@ -16,12 +16,12 @@ ms.date: 02/07/2020
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7e0f74f98adcc8a4e8aabc96f7f35c9c55ae277f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4778ce5efcd6145447c194eaab34bc230bcbe34c
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91536364"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92371551"
 ---
 # <a name="approve-or-deny-requests-for-azure-ad-roles-in-privileged-identity-management"></a>Утверждение или отклонение запросов ролей Azure AD в управление привилегированными пользователями
 
@@ -31,7 +31,7 @@ ms.locfileid: "91536364"
 
 Начиная с ноября 2019, часть управление привилегированными пользователями ролей Azure AD обновляется до новой версии, соответствующей опыту для ролей Azure. При этом создаются дополнительные функции, а также [изменения в СУЩЕСТВУЮЩЕМ API](azure-ad-roles-features.md#api-changes). Пока выполняется развертывание новой версии, процедуры, приведенные в этой статье, зависят от используемой версии управление привилегированными пользователями. Чтобы определить версию управление привилегированными пользователями, выполните действия, описанные в этом разделе. После того как вы узнаете версию управление привилегированными пользователями, вы можете выбрать в этой статье процедуры, соответствующие этой версии.
 
-1. Войдите в [портал Azure](https://portal.azure.com/) с помощью пользователя, который имеет роль [администратора привилегированных ролей](../users-groups-roles/directory-assign-admin-roles.md#privileged-role-administrator) .
+1. Войдите в [портал Azure](https://portal.azure.com/) с помощью пользователя, который имеет роль [администратора привилегированных ролей](../roles/permissions-reference.md#privileged-role-administrator) .
 1. Откройте **Azure AD privileged Identity Management**. Если у вас есть баннер в верхней части страницы обзора, следуйте инструкциям на вкладке **Новая версия** этой статьи. В противном случае следуйте инструкциям на вкладке **Предыдущая версия** .
 
     [![Выберите управление привилегированными пользователями Azure AD >.](media/pim-how-to-add-role-to-user/pim-new-version.png)](media/pim-how-to-add-role-to-user/pim-new-version.png#lightbox)

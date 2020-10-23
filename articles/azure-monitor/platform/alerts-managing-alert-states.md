@@ -5,16 +5,16 @@ ms.subservice: alerts
 ms.topic: conceptual
 author: anantr
 ms.date: 09/24/2018
-ms.openlocfilehash: a53390dee8eb504f92e66bb3573814bd411be0b7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b91c3d59a5a37457d67fdfbc646334fccb331df5
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91358971"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92104807"
 ---
 # <a name="manage-alert-and-smart-group-states"></a>Управление состоянием оповещений и смарт-групп
 
-У оповещений в Azure Monitor теперь есть [состояние предупреждения и условие мониторинга](https://aka.ms/azure-alerts-overview), и аналогично у смарт-групп есть [состояние смарт-группы](https://aka.ms/smart-groups). Изменения в состоянии теперь записываются в журнал, связанный с соответствующим оповещением или смарт-группой. В этой статье описывается процесс изменения состояния как для оповещения, так и для смарт-группы.
+У оповещений в Azure Monitor теперь есть [состояние предупреждения и условие мониторинга](./alerts-overview.md), и аналогично у смарт-групп есть [состояние смарт-группы](./alerts-smartgroups-overview.md?toc=%252fazure%252fazure-monitor%252ftoc.json). Изменения в состоянии теперь записываются в журнал, связанный с соответствующим оповещением или смарт-группой. В этой статье описывается процесс изменения состояния как для оповещения, так и для смарт-группы.
 
 ## <a name="change-the-state-of-an-alert"></a>Изменение состояния оповещения
 
@@ -46,4 +46,3 @@ ms.locfileid: "91358971"
 
 1. После этого изменение состояния записывается в журнал соответствующей смарт-группы. Его можно просмотреть, открыв соответствующую страницу сведений и проверив раздел журнала.     
 ![На снимке экрана показана история изменений для смарт-группы.](./media/alerts-managing-alert-states/state-sg-history.jpg)
-

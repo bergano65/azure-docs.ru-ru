@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: article
 ms.date: 07/10/2020
 ms.author: alkohli
-ms.openlocfilehash: 50dbbe3a6a1af1e73cdf1ee7f5bd3a63cf2f6a50
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a9304936f746b82b59550d62e8b60a9e0035d188
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87498809"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92147934"
 ---
 # <a name="tracking-and-event-logging-for-your-azure-data-box-and-azure-data-box-heavy-import-order"></a>Отслеживание и регистрация событий для Azure Data Box и Azure Data Box Heavy порядок импорта
 
@@ -23,7 +23,7 @@ ms.locfileid: "87498809"
 
 | Стадия порядка импорта Data Box       | Средство для мониторинга и аудита                                                                        |
 |----------------------------|------------------------------------------------------------------------------------------------|
-| Создание заказа               | [Настройка контроля доступа в порядке через RBAC](#set-up-access-control-on-the-order)                                                    |
+| Создание заказа               | [Настройка контроля доступа в порядке с помощью Azure RBAC](#set-up-access-control-on-the-order)                                                    |
 | Порядок обработки            | [Отслеживание порядка](#track-the-order) по <ul><li> Портал Azure </li><li> Веб-сайт перевозчика для доставки </li><li>Уведомления по электронной почте</ul> |
 | Настройка устройства              | [Журналы действий](#query-activity-logs-during-setup) доступа к учетным данным устройства                                              |
 | Копирование данных на устройство        | [Просмотр файлов *error.xml* ](#view-error-log-during-data-copy) для копирования данных                                                             |
@@ -47,7 +47,7 @@ ms.locfileid: "87498809"
 - Назначение роли на уровне заказа. Пользователь обладает только такими разрешениями, которые определены ролями для взаимодействия только с определенным порядком Data Box и ничего другого.
 - Назначение роли на уровне группы ресурсов пользователь имеет доступ ко всем Data Boxным заказам в группе ресурсов.
 
-Дополнительные сведения о предлагаемом использовании RBAC см. в статье рекомендации [по использованию Azure RBAC](../role-based-access-control/best-practices.md).
+Дополнительные сведения о предлагаемом использовании Azure RBAC см. в статье рекомендации [по использованию Azure RBAC](../role-based-access-control/best-practices.md).
 
 ## <a name="track-the-order"></a>Отслеживание заказа
 

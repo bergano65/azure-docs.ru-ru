@@ -9,12 +9,12 @@ ms.author: deli
 ms.reviewer: klam, estfan
 ms.topic: conceptual
 ms.date: 08/18/2016
-ms.openlocfilehash: 100be6a4376883a4f2a91b1efd172242c1d19e19
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 899c64e818896cde18e955d6abd82594734c4b57
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80878397"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92368168"
 ---
 # <a name="concepts-terminology-and-entities-in-azure-scheduler"></a>Основные понятия, терминология и сущности планировщика Azure
 
@@ -40,7 +40,7 @@ REST API планировщика Azure предоставляет и испол
 
 ### <a name="job-management"></a>Управление заданиями
 
-Поддерживает операции для создания и изменения заданий. Все задания должны входить в уже существующую коллекцию, поэтому неявное создание коллекций не предусмотрено. Дополнительные сведения см. в разделе [REST API планировщика — задания](https://docs.microsoft.com/rest/api/scheduler/jobs). Вот адрес URI для этих операций:
+Поддерживает операции для создания и изменения заданий. Все задания должны входить в уже существующую коллекцию, поэтому неявное создание коллекций не предусмотрено. Дополнительные сведения см. в разделе [REST API планировщика — задания](/rest/api/scheduler/jobs). Вот адрес URI для этих операций:
 
 ```
 https://management.azure.com/subscriptions/{subscriptionID}/resourceGroups/{resourceGroupName}/providers/Microsoft.Scheduler/jobCollections/{jobCollectionName}/jobs/{jobName}
@@ -48,7 +48,7 @@ https://management.azure.com/subscriptions/{subscriptionID}/resourceGroups/{reso
 
 ### <a name="job-collection-management"></a>Управление коллекциями заданий
 
-Поддерживает операции создания и изменения заданий и коллекций заданий, которые сопоставляются с квотами и общими настройками. В качестве примеров квот можно привести максимальное число заданий и наименьший интервал повторения. Дополнительные сведения см. в разделе [REST API планировщика — коллекции заданий](https://docs.microsoft.com/rest/api/scheduler/jobcollections). Вот адрес URI для этих операций:
+Поддерживает операции создания и изменения заданий и коллекций заданий, которые сопоставляются с квотами и общими настройками. В качестве примеров квот можно привести максимальное число заданий и наименьший интервал повторения. Дополнительные сведения см. в разделе [REST API планировщика — коллекции заданий](/rest/api/scheduler/jobcollections). Вот адрес URI для этих операций:
 
 ```
 https://management.azure.com/subscriptions/{subscriptionID}/resourceGroups/{resourceGroupName}/providers/Microsoft.Scheduler/jobCollections/{jobCollectionName}
@@ -56,7 +56,7 @@ https://management.azure.com/subscriptions/{subscriptionID}/resourceGroups/{reso
 
 ### <a name="job-history-management"></a>Управление журналами заданий
 
-Поддержка операции GET для извлечения журнала заданий за последние 60 дней, например с указанием времени и результатов выполнения задания. Включает поддержку строкового параметра запроса для фильтрации результатов по состоянию и статусу. Дополнительные сведения см. в разделе [REST API планировщика — журнал выполнения заданий](https://docs.microsoft.com/rest/api/scheduler/jobs/listjobhistory). Вот адрес URI для этой операции:
+Поддержка операции GET для извлечения журнала заданий за последние 60 дней, например с указанием времени и результатов выполнения задания. Включает поддержку строкового параметра запроса для фильтрации результатов по состоянию и статусу. Дополнительные сведения см. в разделе [REST API планировщика — журнал выполнения заданий](/rest/api/scheduler/jobs/listjobhistory). Вот адрес URI для этой операции:
 
 ```
 https://management.azure.com/subscriptions/{subscriptionID}/resourceGroups/{resourceGroupName}/providers/Microsoft.Scheduler/jobCollections/{jobCollectionName}/jobs/{jobName}/history
@@ -214,7 +214,7 @@ https://management.azure.com/subscriptions/{subscriptionID}/resourceGroups/{reso
 },
 ```
 
-Дополнительные сведения о подписанных URL-адресах см. в статье [Авторизация на основе подписанных URL-адресов (SAS)](../storage/common/storage-dotnet-shared-access-signature-part-1.md).
+Дополнительные сведения о подписанных URL-адресах см. в статье [Авторизация на основе подписанных URL-адресов (SAS)](../storage/common/storage-sas-overview.md).
 
 <a name="error-action"></a>
 

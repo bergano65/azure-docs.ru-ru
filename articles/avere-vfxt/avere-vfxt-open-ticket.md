@@ -6,12 +6,12 @@ ms.service: avere-vfxt
 ms.topic: conceptual
 ms.date: 01/13/2020
 ms.author: rohogue
-ms.openlocfilehash: 522d29505d7d10f5f6d97136f270f07a63053d19
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8159d83624cdd474d91030d5376a3db447beffe1
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88271113"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92342354"
 ---
 # <a name="get-help-with-your-system"></a>Получение помощи по работе с системой
 
@@ -57,4 +57,4 @@ ms.locfileid: "88271113"
 
 ## <a name="request-a-quota-increase"></a>Запрос на увеличение квоты
 
-Ознакомьтесь с разделом о [квоте для кластера vFXT](avere-vfxt-prereqs.md#quota-for-the-vfxt-cluster), чтобы узнать, какие компоненты требуются для развертывания кластера Avere vFXT для Azure. Вы можете [запросить увеличение квоты](https://docs.microsoft.com/azure/azure-portal/supportability/resource-manager-core-quotas-request) на портале Azure.
+Ознакомьтесь с разделом о [квоте для кластера vFXT](avere-vfxt-prereqs.md#quota-for-the-vfxt-cluster), чтобы узнать, какие компоненты требуются для развертывания кластера Avere vFXT для Azure. Вы можете [запросить увеличение квоты](../azure-portal/supportability/resource-manager-core-quotas-request.md) на портале Azure.

@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 08/08/2017
 ms.author: robinsh
-ms.openlocfilehash: c8fc0393e0961b46fbb8031d735f27e9ad785031
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: eadc976270888499be1ed01040cc4ff00632e8e4
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "60318466"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92142268"
 ---
 # <a name="configure-iot-hub-file-uploads-using-powershell"></a>Настройка отправки файлов в Центре Интернета вещей с помощью PowerShell
 
@@ -23,15 +23,15 @@ ms.locfileid: "60318466"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Для работы с этим учебником требуется:
+Для работы с этим руководством вам нужно следующее:
 
 * Активная учетная запись Azure. Если ее нет, можно создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/) всего за несколько минут.
 
-* [Azure PowerShell командлетов](https://docs.microsoft.com/powershell/azure/install-Az-ps).
+* [Azure PowerShell командлетов](/powershell/azure/install-Az-ps).
 
-* Центр интернета вещей Azure. Если у вас нет центра Интернета вещей, вы можете создать [центр Интернета вещей](iot-hub-create-through-portal.md)с помощью [командлета New-азиосуб](https://docs.microsoft.com/powershell/module/az.iothub/new-aziothub) или создать его с помощью портала.
+* Центр интернета вещей Azure. Если у вас нет центра Интернета вещей, вы можете создать [центр Интернета вещей](iot-hub-create-through-portal.md)с помощью [командлета New-азиосуб](/powershell/module/az.iothub/new-aziothub) или создать его с помощью портала.
 
-* Учетная запись хранения Azure. [Создать учетную запись хранения Azure](../storage/common/storage-create-storage-account.md) (если у вас ее еще нет) можно с помощью [командлетов PowerShell службы хранилища Azure](https://docs.microsoft.com/powershell/module/az.storage/) или на портале
+* Учетная запись хранения Azure. [Создать учетную запись хранения Azure](../storage/common/storage-account-create.md) (если у вас ее еще нет) можно с помощью [командлетов PowerShell службы хранилища Azure](/powershell/module/az.storage/) или на портале
 
 ## <a name="sign-in-and-set-your-azure-account"></a>Выполнение входа и установка учетной записи Azure
 
@@ -136,5 +136,5 @@ Set-AzIotHub `
 Для дальнейшего изучения возможностей Центра Интернета вещей см. следующие статьи:
 
 * [Руководство разработчика для Центра Интернета вещей](iot-hub-devguide.md)
-* [Краткое руководство. Развертывание первого модуля IoT Edge на устройстве под управлением 64-разрядной ОС Linux](../iot-edge/tutorial-simulate-device-linux.md)
+* [Краткое руководство. Развертывание первого модуля IoT Edge на устройстве под управлением 64-разрядной ОС Linux](../iot-edge/quickstart-linux.md)
 * [Все аспекты безопасности решения Центра Интернета вещей](../iot-fundamentals/iot-security-ground-up.md)

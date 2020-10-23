@@ -3,12 +3,12 @@ title: Использование концентратора событий из
 description: В этой статье содержатся сведения о поддержке Apache Kafka в службе "Центры событий Azure".
 ms.topic: article
 ms.date: 09/25/2020
-ms.openlocfilehash: 5c49f8f87d8d399cda33a332f7464ed340ae3a0f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d9aa8af30d5ef5e1a985e4d73a9d4a8921ac7d45
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91761504"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92369596"
 ---
 # <a name="use-azure-event-hubs-from-apache-kafka-applications"></a>Использование Центров событий Azure из приложений Apache Kafka
 Концентраторы событий предоставляют конечную точку, совместимую с интерфейсами API Apache Kafka® производителя и потребителя, которые могут использоваться большинством существующих Apache Kafka клиентских приложений в качестве альтернативы запуску собственного кластера Apache Kafka. Концентраторы событий поддерживают клиентские API-интерфейсы производителя и потребителя Apache Kafka в версии 1,0 и более поздних.
@@ -60,9 +60,9 @@ ms.locfileid: "91761504"
 - Подписанный URL-адрес (SAS)
 
 #### <a name="oauth-20"></a>OAuth 2.0
-Концентраторы событий интегрируются с Azure Active Directory (Azure AD), который предоставляет сервер централизованной авторизации, совместимый с **OAuth 2,0** . С помощью Azure AD можно использовать управление доступом на основе ролей (RBAC), чтобы предоставить точные разрешения для удостоверений клиентов. Эту функцию можно использовать с клиентами Kafka, указав **SASL_SSL** для протокола и  **оаусбеарер** для механизма. Дополнительные сведения о ролях и уровнях Azure для доступа к области см. [в статье авторизация доступа с помощью Azure AD](authorize-access-azure-active-directory.md).
+Концентраторы событий интегрируются с Azure Active Directory (Azure AD), который предоставляет сервер централизованной авторизации, совместимый с **OAuth 2,0** . С помощью Azure AD вы можете использовать управление доступом на основе ролей Azure (Azure RBAC), чтобы предоставить точные разрешения для удостоверений клиентов. Эту функцию можно использовать с клиентами Kafka, указав **SASL_SSL** для протокола и  **оаусбеарер** для механизма. Дополнительные сведения о ролях и уровнях Azure для доступа к области см. [в статье авторизация доступа с помощью Azure AD](authorize-access-azure-active-directory.md).
 
-```xml
+```properties
 bootstrap.servers=NAMESPACENAME.servicebus.windows.net:9093
 security.protocol=SASL_SSL
 sasl.mechanism=OAUTHBEARER
@@ -73,15 +73,19 @@ sasl.login.callback.handler.class=CustomAuthenticateCallbackHandler;
 #### <a name="shared-access-signature-sas"></a>Подписанный URL-адрес
 Концентраторы событий также предоставляют **подписанные URL-адрес (SAS)** для делегированного доступа к концентраторам событий для ресурсов Kafka. Авторизация доступа с помощью механизма на основе токенов OAuth 2,0 обеспечивает более высокую безопасность и простоту использования SAS. Встроенные роли также могут устранить необходимость авторизации на основе ACL, которая должна поддерживаться и управляться пользователем. Эту функцию можно использовать с клиентами Kafka, указав для него **SASL_SSL** протокола и **простой** для механизма. 
 
-```xml
+```properties
 bootstrap.servers=NAMESPACENAME.servicebus.windows.net:9093
 security.protocol=SASL_SSL
 sasl.mechanism=PLAIN
 sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="{YOUR.EVENTHUBS.CONNECTION.STRING}";
 ```
 
+> [!IMPORTANT]
+> Замените `{YOUR.EVENTHUBS.CONNECTION.STRING}` строками подключения для вашего пространства имен Центров событий. Инструкции по получению строки подключения см. в разделе [Получение строки подключения концентраторов событий](event-hubs-get-connection-string.md). Ниже приведен пример конфигурации. `sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="Endpoint=sb://mynamespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=XXXXXXXXXXXXXXXX";`
+
 > [!NOTE]
 > При использовании проверки подлинности SAS с клиентами Kafka установленные подключения не отключаются при повторном формировании ключа SAS. 
+
 
 #### <a name="samples"></a>Примеры 
 Пошаговые инструкции по созданию концентратора событий и доступу к нему с помощью SAS или OAuth см **. в статье** [Краткое руководство. потоковая передача данных с концентраторами событий с помощью протокола Kafka](event-hubs-quickstart-kafka-enabled-event-hubs.md).
@@ -128,7 +132,7 @@ Apache Kafka сжатие журнала — это функция, котора
 
 - [Azure Stream Analytics](../stream-analytics/stream-analytics-introduction.md)
 - [Azure синапсе Analytics (через захват концентраторов событий)](../event-grid/event-grid-event-hubs-integration.md)
-- [Azure Databricks](https://docs.microsoft.com/azure/databricks/scenarios/databricks-stream-from-eventhubs)
+- [Azure Databricks](/azure/databricks/scenarios/databricks-stream-from-eventhubs)
 - [Apache Samza](https://samza.apache.org/learn/documentation/latest/connectors/eventhubs)
 - [Apache Storm](event-hubs-storm-getstarted-receive.md)
 - [Apache Spark](event-hubs-kafka-spark-tutorial.md)

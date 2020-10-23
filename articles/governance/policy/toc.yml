@@ -43,6 +43,12 @@
     - name: Администрирование системы управления тегами
       displayName: 'modify, append, effects'
       href: ./tutorials/govern-tags.md
+    - name: Реализация Политики Azure как кода с помощью GitHub
+      displayName: 'devops, infrastructure as code, iac, release, continuous, delivery, deploy'
+      href: ./tutorials/policy-as-code-github.md
+    - name: 'Learn: Управление ресурсами и их аудит с помощью Политики Azure'
+      displayName: 'governance, module'
+      href: /learn/modules/build-cloud-governance-strategy-azure/8-control-audit-resources-azure-policy
 - name: Примеры
   items:
     - name: Индекс
@@ -113,7 +119,7 @@
     - name: Соответствие нормативным требованиям
       displayName: 'standards, domains, controls'
       href: ./concepts/regulatory-compliance.md
-    - name: Рабочие процессы политики разработки как кода
+    - name: Разработка Политики Azure как рабочих процессов кода
       displayName: 'devops, infrastructure as code, iac, release, continuous, delivery, deploy'
       href: ./concepts/policy-as-code.md
     - name: Интеграция Kubernetes

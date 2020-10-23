@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 8/27/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: d81d26c4cf975a20f31b4b4546c1477ed1a630e0
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 78addb76e2ce7a2679358e241650cc5cc827791f
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92048327"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92461623"
 ---
 # <a name="connect-azure-functions-apps-for-processing-data"></a>Подключение приложений функций Azure для обработки данных
 
@@ -50,7 +50,7 @@ ms.locfileid: "92048327"
 
 ## <a name="write-an-azure-function-with-an-event-grid-trigger"></a>Запись функции Azure с помощью триггера службы "Сетка событий"
 
-Вы можете написать функцию Azure, добавив пакет SDK в приложение функции. Приложение-функция взаимодействует с Azure Digital двойников, используя [клиентскую библиотеку Azure IOT Digital двойника для .NET (C#)](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/digitaltwins/Azure.DigitalTwins.Core). 
+Вы можете написать функцию Azure, добавив пакет SDK в приложение функции. Приложение-функция взаимодействует с Azure Digital двойников с помощью [пакета SDK Azure Digital двойников для .NET (C#)](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet-preview&preserve-view=true). 
 
 Чтобы использовать пакет SDK, необходимо включить в проект следующие пакеты. Можно либо установить пакеты с помощью диспетчера пакетов NuGet Visual Studio, либо добавить пакеты с помощью `dotnet` программы командной строки. Выберите один из следующих методов. 
 

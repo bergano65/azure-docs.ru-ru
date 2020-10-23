@@ -245,6 +245,12 @@
       href: ../../../site-recovery/site-recovery-workload.md#protect-sap
     - name: Группа размещения близкого взаимодействия Azure для оптимизации сетевой задержки с использованием приложений SAP
       href: sap-proximity-placement-scenarios.md
+- name: Платформа SAP BusinessObjects Business Intelligence в Azure
+  items:
+    - name: Руководство по планированию внедрения и внедрению платформы SAP BusinessObjects BI в Azure
+      href: businessobjects-deployment-guide.md
+    - name: Руководство по развертыванию платформы SAP BusinessObjects BI для Linux в Azure
+      href: businessobjects-deployment-guide-linux.md
 - name: Интеграция Azure AD с приложениями SAP
   items:
     - name: Подготовка пользователей из SAP SuccessFactors в Active Directory

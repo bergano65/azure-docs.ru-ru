@@ -7,12 +7,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 08/29/2018
 ms.author: robinsh
-ms.openlocfilehash: 9c49f7ac744ee516aefc1571d50264132035ba8a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: da021e3ba0fd93a182ea76a1ba4b7042b325aacc
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "73890605"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92142369"
 ---
 # <a name="create-an-iot-hub-using-the-new-aziothub-cmdlet"></a>Создание центра Интернета вещей с помощью командлета New-AzIotHub
 
@@ -41,7 +41,7 @@ Login-AzAccount
 
 Для развертывания Центра Интернета вещей необходима группа ресурсов. Вы можете выбрать существующую группу ресурсов или создать новую.
 
-Чтобы создать группу ресурсов для центра Интернета вещей, используйте команду [New-азресаурцеграуп](https://docs.microsoft.com/powershell/module/az.Resources/New-azResourceGroup) . В этом примере создается группа ресурсов с именем **MyIoTRG1**, размещенная в регионе **Восточная часть США**:
+Чтобы создать группу ресурсов для центра Интернета вещей, используйте команду [New-азресаурцеграуп](/powershell/module/az.Resources/New-azResourceGroup) . В этом примере создается группа ресурсов с именем **MyIoTRG1**, размещенная в регионе **Восточная часть США**:
 
 ```azurepowershell-interactive
 New-AzResourceGroup -Name MyIoTRG1 -Location "East US"
@@ -49,7 +49,7 @@ New-AzResourceGroup -Name MyIoTRG1 -Location "East US"
 
 ## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
 
-Чтобы создать центр Интернета вещей в группе ресурсов, созданной на предыдущем шаге, используйте команду [New-азиосуб](https://docs.microsoft.com/powershell/module/az.IotHub/New-azIotHub) . В этом примере создается центр категории **S1** с именем **MyTestIoTHub**, размещенный в регионе **Восточная часть США**:
+Чтобы создать центр Интернета вещей в группе ресурсов, созданной на предыдущем шаге, используйте команду [New-азиосуб](/powershell/module/az.IotHub/New-azIotHub) . В этом примере создается центр категории **S1** с именем **MyTestIoTHub**, размещенный в регионе **Восточная часть США**:
 
 ```azurepowershell-interactive
 New-AzIotHub `
@@ -63,7 +63,7 @@ New-AzIotHub `
 
 [!INCLUDE [iot-hub-pii-note-naming-hub](../../includes/iot-hub-pii-note-naming-hub.md)]
 
-Список всех центров Интернета вещей в подписке можно получить с помощью команды [Get-азиосуб](https://docs.microsoft.com/powershell/module/az.IotHub/Get-azIotHub) :
+Список всех центров Интернета вещей в подписке можно получить с помощью команды [Get-азиосуб](/powershell/module/az.IotHub/Get-azIotHub) :
 
 ```azurepowershell-interactive
 Get-AzIotHub
@@ -71,7 +71,7 @@ Get-AzIotHub
 
 Это пример стандартного Центра Интернета вещей S1, который вы создали на предыдущем шаге.
 
-Вы можете удалить центр Интернета вещей с помощью команды [Remove-азиосуб](https://docs.microsoft.com/powershell/module/az.iothub/remove-aziothub) :
+Вы можете удалить центр Интернета вещей с помощью команды [Remove-азиосуб](/powershell/module/az.iothub/remove-aziothub) :
 
 ```azurepowershell-interactive
 Remove-AzIotHub `
@@ -79,7 +79,7 @@ Remove-AzIotHub `
     -Name MyTestIoTHub
 ```
 
-Кроме того, можно удалить группу ресурсов и все содержащиеся в ней ресурсы с помощью команды [Remove-азресаурцеграуп](https://docs.microsoft.com/powershell/module/az.Resources/Remove-azResourceGroup) :
+Кроме того, можно удалить группу ресурсов и все содержащиеся в ней ресурсы с помощью команды [Remove-азресаурцеграуп](/powershell/module/az.Resources/Remove-azResourceGroup) :
 
 ```azurepowershell-interactive
 Remove-AzResourceGroup -Name MyIoTRG1
@@ -89,9 +89,9 @@ Remove-AzResourceGroup -Name MyIoTRG1
 
 После развертывания Центра Интернета вещей с помощью командлета PowerShell вам могут понадобиться дополнительные сведения, с которыми можно ознакомиться в следующих статьях:
 
-* [AzureRM.IotHub](https://docs.microsoft.com/powershell/module/az.iothub/).
+* [AzureRM.IotHub](/powershell/module/az.iothub/).
 
-* [REST API поставщика ресурсов центра Интернета вещей](https://docs.microsoft.com/rest/api/iothub/iothubresource).
+* [REST API поставщика ресурсов центра Интернета вещей](/rest/api/iothub/iothubresource).
 
 Дополнительные сведения о разработке для Центра Интернета вещей см. в следующих статьях:
 
@@ -101,4 +101,4 @@ Remove-AzResourceGroup -Name MyIoTRG1
 
 Для дальнейшего изучения возможностей Центра Интернета вещей см. следующие статьи:
 
-* [Краткое руководство. Развертывание первого модуля IoT Edge на устройстве под управлением 64-разрядной ОС Linux](../iot-edge/tutorial-simulate-device-linux.md)
+* [Краткое руководство. Развертывание первого модуля IoT Edge на устройстве под управлением 64-разрядной ОС Linux](../iot-edge/quickstart-linux.md)

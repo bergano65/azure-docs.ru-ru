@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: amqp
-ms.openlocfilehash: d7ff9efcedc1a6a5f92555a62e429be0431f2098
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.openlocfilehash: 2245bd970e93595358e95465bcc815ddaf2ef821
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91448505"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91974555"
 ---
 # <a name="tutorial-configure-an-iot-edge-device"></a>Руководство по Настройка устройства IoT Edge
 
@@ -96,7 +96,7 @@ ms.locfileid: "91448505"
 
 Чтобы подключить устройство Azure IoT Edge к Центру Интернета вещей, сначала следует создать в этом концентраторе удостоверение устройства. Мы извлечем строку подключения из удостоверения устройства в облаке и с ее помощью настроим среду выполнения на устройстве IoT Edge. Когда настроенное устройство подключится к центру, мы сможем развертывать модули и отправлять сообщения. Мы также можем изменить конфигурацию физического устройства IoT Edge, изменив удостоверение устройства в центре Интернета вещей.
 
-В этом руководстве описано, как создать новое удостоверение устройства с помощью Visual Studio Code. Эти действия также можно выполнить с помощью [портала Azure](how-to-register-device.md#register-in-the-azure-portal) или [Azure CLI](how-to-register-device.md#register-with-the-azure-cli).
+В этом руководстве описано, как создать новое удостоверение устройства с помощью Visual Studio Code. Эти действия также можно выполнить с помощью портала Azure или Azure CLI.
 
 1. Откройте Visual Studio Code на компьютере для разработки.
 
@@ -294,12 +294,9 @@ ms.locfileid: "91448505"
     ```bash
     journalctl -u iotedge --no-pager --no-full
     ```
-
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Мы завершили настройку виртуальной машины Azure, которая будет выполнять роль прозрачного шлюза IoT Edge. Мы начали с создания тестовых сертификатов, которые затем отправили в Azure Key Vault. После этого мы применили скрипт и шаблон Resource Manager для развертывания виртуальной машины из образа Ubuntu Server 16.04 LTS + Azure IoT Edge runtime из Azure Marketplace. К запущенной виртуальной машине мы подключились по протоколу SSH, вошли в Azure и скачали сертификаты из Key Vault. Мы внесли несколько изменений в конфигурацию среды выполнения IoT Edge, обновив файл config.yaml.
-
-Дополнительные сведения см. в статьях [об использовании устройства IoT Edge в качестве шлюза](iot-edge-as-gateway.md) и [о настройке устройства IoT Edge в качестве прозрачного шлюза](how-to-create-transparent-gateway.md).
 
 Теперь вы можете перейти к следующей статье, чтобы создать модули IoT Edge.
 

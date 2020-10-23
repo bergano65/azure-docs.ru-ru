@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 04/16/2019
 ms.author: jeedes
-ms.openlocfilehash: 230613cc103cc851d1173f867b551af028ea898b
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 3b22bb16c583c0385b31bde89f30763cd4fb478a
+ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88546871"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91945929"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-kantega-sso-for-jira"></a>Руководство по интеграции Azure Active Directory с Kantega SSO for JIRA
 
@@ -99,7 +99,7 @@ ms.locfileid: "88546871"
 
 4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа для приложения Kantega SSO for JIRA](common/idp-intiated.png)
+    ![Снимок экрана: раздел "Базовая конфигурация SAML" с выбранными полями "Идентификатор", "URL-адрес ответа" и кнопкой "Сохранить".](common/idp-intiated.png)
 
     а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<server-base-url>/plugins/servlet/no.kantega.saml/sp/<uniqueid>/login`.
 
@@ -134,39 +134,39 @@ ms.locfileid: "88546871"
 
 1. Наведите указатель мыши на шестеренку и щелкните **Add-ons** (Надстройки).
 
-    ![Настройка единого входа](./media/kantegassoforjira-tutorial/addon1.png)
+    ![Снимок экрана: выбранные в раскрывающемся меню значок шестеренки и пункт Add-ons (Надстройки).](./media/kantegassoforjira-tutorial/addon1.png)
 
 1. На вкладке "Add-ons" (Надстройки) щелкните **Find new add-ons** (Найти новые надстройки). Найдите подключаемый модуль **Kantega SSO for JIRA (SAML & Kerberos)** и нажмите кнопку **Install** (Установить), чтобы установить новый подключаемый модуль SAML.
 
-    ![Настройка единого входа](./media/kantegassoforjira-tutorial/addon2.png)
+    ![Снимок экрана: раздел Find new Add-ons (Найти новые надстройки) с параметром Kantega SSO for JIRA (SAML & Kerberos) в поле поиска и выбранной кнопкой Install (Установить).](./media/kantegassoforjira-tutorial/addon2.png)
 
 1. Начнется установка подключаемого модуля.
 
-    ![Настройка единого входа](./media/kantegassoforjira-tutorial/addon3.png)
+    ![Снимок экрана: диалоговое окно установки подключаемого модуля.](./media/kantegassoforjira-tutorial/addon3.png)
 
 1. Установка завершится. Щелкните **Закрыть**.
 
-    ![Настройка единого входа](./media/kantegassoforjira-tutorial/addon33.png)
+    ![Снимок экрана: диалоговое окно установки и готовности к использованию с выбранным действием Close (Закрыть).](./media/kantegassoforjira-tutorial/addon33.png)
 
 1.  Нажмите кнопку **Управление**.
 
-    ![Настройка единого входа](./media/kantegassoforjira-tutorial/addon34.png)
+    ![Снимок экрана: страница приложения Kantega SSO с выбранной кнопкой управления.](./media/kantegassoforjira-tutorial/addon34.png)
     
 1. Новая надстройка отображается в разделе **INTEGRATIONS** (Интеграция). Щелкните **Configure** (Настройка), чтобы настроить новый подключаемый модуль.
 
-    ![Настройка единого входа](./media/kantegassoforjira-tutorial/addon35.png)
+    ![Снимок экрана: выбранные раздел INTEGRATIONS (Интеграция) в левом меню навигации и кнопка настройки в разделе Manage add-ons (Управление надстройками).](./media/kantegassoforjira-tutorial/addon35.png)
 
 1. В разделе **SAML** сделайте следующее. Выберите **Azure Active Directory (Azure AD)** из раскрывающегося списка **Добавление поставщика удостоверений**.
 
-    ![Настройка единого входа](./media/kantegassoforjira-tutorial/addon4.png)
+    ![Снимок экрана: выбранный пункт Azure Active Directory (Azure AD) из раскрывающегося списка добавления поставщика удостоверений.](./media/kantegassoforjira-tutorial/addon4.png)
 
 1. Выберите уровень подписки **Базовый**.
 
-    ![Настройка единого входа](./media/kantegassoforjira-tutorial/addon5.png)       
+    ![Снимок экрана: раздел Preparing Azure AD (Подготовка Azure AD) с выбранным параметром Basic (Базовый).](./media/kantegassoforjira-tutorial/addon5.png)     
 
 1. В разделе **Свойства приложения** выполните следующие действия. 
 
-    ![Настройка единого входа](./media/kantegassoforjira-tutorial/addon6.png)
+    ![Снимок экрана: раздел App properties (Свойства приложения) с выбранными текстовым полем URL-адреса идентификатора приложения, кнопкой копирования и кнопкой Next (Далее).](./media/kantegassoforjira-tutorial/addon6.png)
 
     а. Скопируйте значение **App ID URI** (URI кода приложения) и используйте его как **идентификатор, URL-адрес ответа и URL-адрес входа** в разделе **Базовая конфигурация SAML** на портале Azure.
 
@@ -174,7 +174,7 @@ ms.locfileid: "88546871"
 
 1. В разделе **Metadata import** (Импорт метаданных) выполните следующие действия. 
 
-    ![Настройка единого входа](./media/kantegassoforjira-tutorial/addon7.png)
+    ![Снимок экрана: раздел импорта метаданных с выбранным параметром Metadata file on my computer (Файл метаданных на моем компьютере).](./media/kantegassoforjira-tutorial/addon7.png)
 
     а. Щелкните **Metadata file on my computer** (Файл метаданных на моем компьютере) и передайте файл метаданных, который вы скачали с портала Azure.
 
@@ -182,7 +182,7 @@ ms.locfileid: "88546871"
 
 1. В разделе **Name and SSO location** (Имя и расположение единого входа) выполните следующее.
 
-    ![Настройка единого входа](./media/kantegassoforjira-tutorial/addon8.png)
+    ![Снимок экрана: раздел имени и расположения единого входа с выбранными текстовым полем Identity provider name (Имя поставщика удостоверений) и кнопкой Next (Далее).](./media/kantegassoforjira-tutorial/addon8.png)
 
     а. В текстовом поле **Provider Name** (Имя поставщика) введите имя поставщика (например, Azure AD).
 
@@ -190,11 +190,11 @@ ms.locfileid: "88546871"
 
 1. Проверьте сертификат для подписи и нажмите кнопку **Next** (Далее).
 
-    ![Настройка единого входа](./media/kantegassoforjira-tutorial/addon9.png)
+    ![Снимок экрана: раздел проверки подписи с выбранной кнопкой Next (Далее).](./media/kantegassoforjira-tutorial/addon9.png)
 
 1. В разделе **JIRA user accounts** (Учетные записи пользователей JIRA) выполните следующие действия.
 
-    ![Настройка единого входа](./media/kantegassoforjira-tutorial/addon10.png)
+    ![Снимок экрана: раздел учетных записей пользователей JIRA с выделенными параметром Create users in JIRA's Internal Directory if needed (При необходимости создать пользователей во внутреннем каталоге JIRA) и кнопкой Next (Далее).](./media/kantegassoforjira-tutorial/addon10.png)
 
     а. Щелкните переключатель **Create users in JIRA's internal Directory if needed** (При необходимости создать пользователей во внутреннем каталоге JIRA) и введите соответствующее имя группы пользователей (это может быть несколько групп, разделенных запятой).
 
@@ -202,7 +202,7 @@ ms.locfileid: "88546871"
 
 1. Нажмите кнопку **Готово**.
 
-    ![Настройка единого входа](./media/kantegassoforjira-tutorial/addon11.png)
+    ![Снимок экрана: раздел сводки с выбранной кнопкой Finish (Готово).](./media/kantegassoforjira-tutorial/addon11.png)
 
 1. В разделе **Known domains for Azure AD** (Известные домены для Azure AD) выполните следующие действия.
 
@@ -274,11 +274,11 @@ ms.locfileid: "88546871"
 
 1. Наведите указатель мыши на шестеренку и щелкните **User management** (Управление пользователями).
 
-    ![Добавление сотрудника](./media/kantegassoforjira-tutorial/user1.png) 
+    ![Снимок экрана: выбранные значок шестеренки и пункт User management (Управление пользователями) в раскрывающемся меню.](./media/kantegassoforjira-tutorial/user1.png) 
 
 1. В разделе **User management** (Управление пользователями) щелкните **Create user** (Создать пользователя).
 
-    ![Добавление сотрудника](./media/kantegassoforjira-tutorial/user2.png) 
+    ![Снимок экрана: раздел User management (Управление пользователями) с выбранной кнопкой Create user (Создать пользователя).](./media/kantegassoforjira-tutorial/user2.png) 
 
 1. На странице **Create New User** (Создание пользователя) выполните следующие действия.
 

@@ -9,14 +9,14 @@ ms.topic: tutorial
 ms.date: 09/03/2019
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to configure compute on Azure Stack Edge Pro so I can use it to transform the data before sending it to Azure.
-ms.openlocfilehash: b19bac439035da85d542d62f33e813822edc38d9
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: d2961bbf65fe1cf3ddf59c648f506cee85e248a5
+ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90904589"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91951627"
 ---
-# <a name="tutorial-transform-data-with-azure-stack-edge-pro"></a>Руководство по Преобразование данных с помощью Azure Stack Edge Pro
+# <a name="tutorial-transform-the-data-with-azure-stack-edge-pro"></a>Руководство по преобразованию данных с помощью Azure Stack Edge Pro
 
 В этом руководстве описывается, как настроить роль вычислений на устройстве Azure Stack Edge Pro. Когда роль вычислений будет настроена, Azure Stack Edge Pro может преобразовывать данные перед их отправкой в ​​Azure.
 
@@ -55,11 +55,11 @@ ms.locfileid: "90904589"
     |Центр Интернета вещей     | Выберите **Новый** или **Существующий**. <br> По умолчанию для создания ресурса Интернета вещей используется уровень служб "Стандартный" (S1). Чтобы использовать ресурс Интернета вещей уровня служб "Бесплатный", создайте его и выберите существующий ресурс. <br> В любом случае для ресурса Интернета вещей используется та же подписка и группа ресурсов, что и для ресурса Azure Stack Edge.     |
     |Имя     |Введите имя ресурса Центра Интернета вещей.         |
 
-    ![Начало работы с вычислениями](./media/azure-stack-edge-deploy-configure-compute/configure-compute-2.png)
+    ![Начало работы с вычислениями 2](./media/azure-stack-edge-deploy-configure-compute/configure-compute-2.png)
 
 4. Нажмите кнопку **создания**. Для создания ресурса Центра Интернета вещей нужно несколько минут. После этого на плитке **Настройка вычислений** появляется конфигурация вычислений. Чтобы подтвердить настройку роли вычислений Edge, на плитке **Настройка вычислений** щелкните **Просмотреть вычисления**.
     
-    ![Начало работы с вычислениями](./media/azure-stack-edge-deploy-configure-compute/configure-compute-3.png)
+    ![Начало работы с вычислениями 3](./media/azure-stack-edge-deploy-configure-compute/configure-compute-3.png)
 
     > [!NOTE]
     > Если диалоговое окно **Настройка вычислений** закрыть, прежде чем устройство Azure Stack Edge Pro будет связано с Центром Интернета вещей, Центр Интернета вещей будет создан, но не отобразится в настройках вычислений. 
@@ -138,19 +138,19 @@ ms.locfileid: "90904589"
  
 1. С помощью проводника подключитесь к локальным и облачным общим папкам Edge, созданным ранее.
 
-    ![Проверка преобразования данных](./media/azure-stack-edge-deploy-configure-compute/verify-data-2.png) 
+    ![Проверка преобразования данных (2)](./media/azure-stack-edge-deploy-configure-compute/verify-data-2.png) 
  
 1. Добавьте данные в локальную общую папку.
 
-    ![Проверка преобразования данных](./media/azure-stack-edge-deploy-configure-compute/verify-data-3.png) 
+    ![Проверка преобразования данных (3)](./media/azure-stack-edge-deploy-configure-compute/verify-data-3.png) 
  
     Данные переносятся в облачную общую папку.
 
-    ![Проверка преобразования данных](./media/azure-stack-edge-deploy-configure-compute/verify-data-4.png)  
+    ![Проверка преобразования данных (4)](./media/azure-stack-edge-deploy-configure-compute/verify-data-4.png)  
 
     Затем данные переносятся из облачного ресурса в учетную запись хранения. Для просмотра данных перейдите в Обозреватель службы хранилища.
 
-    ![Проверка преобразования данных](./media/azure-stack-edge-deploy-configure-compute/verify-data-5.png) 
+    ![Проверка преобразования данных (5)](./media/azure-stack-edge-deploy-configure-compute/verify-data-5.png) 
  
 Вы завершили процесс проверки.
 

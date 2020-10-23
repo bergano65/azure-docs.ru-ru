@@ -10,12 +10,12 @@ ms.author: robinsh
 ms.custom:
 - 'Role: Cloud Development'
 - 'Role: IoT Device'
-ms.openlocfilehash: 6d3661128008c13e5d4d459f6f8e7925aa18a9a4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e30daa3f81ed5dcae1323e721bf85cfed8fa9614
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87322777"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92147816"
 ---
 # <a name="automatic-iot-device-and-module-management-using-the-azure-portal"></a>Автоматическое управление устройствами и модулями Интернета вещей с помощью портала Azure
 
@@ -242,8 +242,8 @@ SELECT deviceId, moduleId FROM devices.modules
 Для дальнейшего изучения возможностей Центра Интернета вещей см. следующие статьи:
 
 * [Руководство разработчика для Центра Интернета вещей](iot-hub-devguide.md)
-* [Краткое руководство. Развертывание первого модуля IoT Edge на устройстве под управлением 64-разрядной ОС Linux](../iot-edge/tutorial-simulate-device-linux.md)
+* [Краткое руководство. Развертывание первого модуля IoT Edge на устройстве под управлением 64-разрядной ОС Linux](../iot-edge/quickstart-linux.md)
 
 Узнайте, как использовать службу подготовки устройств для Центра Интернета вещей, чтобы включить автоматическую подготовку JIT, из следующей статьи: 
 
-* [Служба подготовки устройств для Центра Интернета вещей Azure](/azure/iot-dps)
+* [Служба подготовки устройств для Центра Интернета вещей Azure](../iot-dps/index.yml)

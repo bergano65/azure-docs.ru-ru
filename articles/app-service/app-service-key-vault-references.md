@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 10/09/2019
 ms.author: mahender
 ms.custom: seodec18
-ms.openlocfilehash: 2806216bff462a673eddd8eba994d38b1c5e1fdc
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
+ms.openlocfilehash: bb220da0b906c9d7a5f45dcc841129e14c7c6c51
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91930498"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92205852"
 ---
 # <a name="use-key-vault-references-for-app-service-and-azure-functions"></a>Использование Key Vault ссылок для службы приложений и функций Azure
 
@@ -30,23 +30,23 @@ ms.locfileid: "91930498"
 
 1. Создайте [политику доступа в Key Vault](../key-vault/general/secure-your-key-vault.md#key-vault-access-policies) для созданного ранее удостоверения приложения. Включите в этой политике разрешения "Get" на получение секретов. Не устанавливайте "авторизованное приложение" или параметр `applicationId`, так как он не совместим с управляемым удостоверением.
 
-    > [!IMPORTANT]
-    > Key Vault ссылки в настоящее время не могут разрешать секреты, хранящиеся в хранилище ключей, с [ограничениями сети](../key-vault/general/overview-vnet-service-endpoints.md).
+   > [!IMPORTANT]
+   > Key Vault ссылки в настоящее время не могут разрешать секреты, хранящиеся в хранилище ключей, с [ограничениями сети](../key-vault/general/overview-vnet-service-endpoints.md) , если только приложение не размещено в [Среда службы приложений](./environment/intro.md).
 
 ## <a name="reference-syntax"></a>Синтаксис ссылок
 
 Ссылка на Key Vault имеет вид `@Microsoft.KeyVault({referenceString})`, где `{referenceString}` заменяется одним из следующих значений.
 
 > [!div class="mx-tdBreakAll"]
-> | Строка ссылки                                                            | Description                                                                                                                                                                                 |
+> | Строка ссылки                                                            | Описание                                                                                                                                                                                 |
 > |-----------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 > | SecretUri=_secretUri_                                                       | Здесь **SecretUri** является полным URI плоскости данных секрета в Key Vault, включая версию, например: https://myvault.vault.azure.net/secrets/mysecret/ec96f02080254f109c51a1f14cdb1931.  |
 > | VaultName=_vaultName_;SecretName=_secretName_;SecretVersion=_secretVersion_ | Здесь **VaultName** — имя ресурса Key Vault. **SecretName** — имя целевого секрета. **SecretVersion** — используемая версия секрета. |
 
 > [!NOTE] 
 > В настоящее время требуются версии. При смене секретов вам придется обновлять версию в конфигурации приложения.
-
 Вот пример допустимой полной ссылки:
+
 
 ```
 @Microsoft.KeyVault(SecretUri=https://myvault.vault.azure.net/secrets/mysecret/ec96f02080254f109c51a1f14cdb1931)

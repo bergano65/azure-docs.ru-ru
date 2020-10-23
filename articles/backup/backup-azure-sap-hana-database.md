@@ -3,12 +3,12 @@ title: Резервное копирование базы данных SAP HANA 
 description: Из этой статьи вы узнаете, как создать резервную копию базы данных SAP HANA на виртуальных машинах Azure с помощью службы Azure Backup.
 ms.topic: conceptual
 ms.date: 11/12/2019
-ms.openlocfilehash: 3e19701abe152e947e87ef624a003538ab7062a9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a0a03a0d126845b1beba6d247f82950b0a9a35ab
+ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91271806"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92172991"
 ---
 # <a name="back-up-sap-hana-databases-in-azure-vms"></a>Резервное копирование баз данных SAP HANA на виртуальных машинах Azure
 
@@ -57,7 +57,7 @@ ms.locfileid: "91271806"
 
 #### <a name="nsg-tags"></a>Теги NSG
 
-Если вы используете группы безопасности сети (NSG), используйте тег службы *AzureBackup*, чтобы разрешить исходящий доступ к Azure Backup. Кроме тегов Azure Backup, вам нужно разрешить подключение для проверки подлинности и передачи данных, создав аналогичные [правила NSG](../virtual-network/security-overview.md#service-tags) для *Azure Active Directory* и *службы хранилища Azure*.  Ниже описан процесс создания правила для тега Azure Backup:
+Если вы используете группы безопасности сети (NSG), используйте тег службы *AzureBackup*, чтобы разрешить исходящий доступ к Azure Backup. Кроме тегов Azure Backup, вам нужно разрешить подключение для проверки подлинности и передачи данных, создав аналогичные [правила NSG](../virtual-network/network-security-groups-overview.md#service-tags) для *Azure Active Directory* и *службы хранилища Azure*.  Ниже описан процесс создания правила для тега Azure Backup:
 
 1. В разделе **Все службы** перейдите к **группам сетевой безопасности** и выберите группу сетевой безопасности.
 

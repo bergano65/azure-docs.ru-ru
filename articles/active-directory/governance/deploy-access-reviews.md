@@ -16,12 +16,12 @@ ms.date: 08/14/2020
 ms.author: barclayn
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 51983e52643d587fc497a1a67fcb0cd29dbb7f17
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2f3e825f908ffe475b05a5e6748d9505e7283b50
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91306571"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92362705"
 ---
 # <a name="planning-azure-active-directory-access-reviews-deployment"></a>Планирование развертывания Azure Active Directoryных проверок доступа
 
@@ -87,7 +87,7 @@ ms.locfileid: "91306571"
 
 ### <a name="engage-the-right-stakeholders"></a>Привлечение соответствующих заинтересованных лиц
 
-Причиной неудач технических проектов обычно являются неоправданные ожидания относительно влияния, результатов и обязанностей. Чтобы избежать этих ловушек, [убедитесь, что вы привлекаете соответствующих заинтересованных лиц](https://aka.ms/deploymentplans) и их роли в проекте очевидны.
+Причиной неудач технических проектов обычно являются неоправданные ожидания относительно влияния, результатов и обязанностей. Чтобы избежать этих ловушек, [убедитесь, что вы привлекаете соответствующих заинтересованных лиц](../fundamentals/active-directory-deployment-plans.md) и их роли в проекте очевидны.
 
 Для проверок доступа вы, вероятно, включаете представителей следующих команд в Организации:
 
@@ -182,7 +182,7 @@ ms.locfileid: "91306571"
 
 * [Членство](../fundamentals/active-directory-manage-groups.md?context=azure%2factive-directory%2fusers-groups-roles%2fcontext%2fugr-context) в группах (синхронизировано с Azure AD или создано в Azure ad или Microsoft 365, включая Microsoft Teams).
 
-* [Доступ к пакету](/azure/active-directory/governance/entitlement-management-overview) , который группирует ресурсы (группы, приложения и сайты) в один пакет для управления доступом.
+* [Доступ к пакету](./entitlement-management-overview.md) , который группирует ресурсы (группы, приложения и сайты) в один пакет для управления доступом.
 
 * [Роли Azure AD и роли ресурсов Azure](../privileged-identity-management/pim-resource-roles-assign-roles.md) , как определено в Управление привилегированными пользователями.
 
@@ -198,7 +198,7 @@ ms.locfileid: "91306571"
 | Доступ к пакету| глобальный администратор<p>Автор пакета Access| Только глобальный администратор |
 
 
-Дополнительные сведения см. в статье [Разрешения роли администратора в Azure Active Directory](../users-groups-roles/directory-assign-admin-roles.md).
+Дополнительные сведения см. в статье [Разрешения роли администратора в Azure Active Directory](../roles/permissions-reference.md).
 
 ### <a name="who-will-review-the-access-to-the-resource"></a>Кто будет просматривать доступ к ресурсу?
 
@@ -343,7 +343,7 @@ ms.locfileid: "91306571"
 
 ### <a name="review-external-users-group-memberships"></a>Проверка членства в группах внешних пользователей
 
-Чтобы избежать ручной работы и связанных с ними потенциальных ошибок, рассмотрите возможность использования [динамических групп](../users-groups-roles/groups-create-rule.md) для назначения членства в группе на основе атрибутов пользователя. Для внешних пользователей может потребоваться создать одну или несколько динамических групп. Внутренний спонсор может действовать в качестве рецензента для членства в группе. 
+Чтобы избежать ручной работы и связанных с ними потенциальных ошибок, рассмотрите возможность использования [динамических групп](../enterprise-users/groups-create-rule.md) для назначения членства в группе на основе атрибутов пользователя. Для внешних пользователей может потребоваться создать одну или несколько динамических групп. Внутренний спонсор может действовать в качестве рецензента для членства в группе. 
 
 Примечание. внешние пользователи, удаленные из группы в результате проверки доступа, не удаляются из клиента. 
 
@@ -389,7 +389,7 @@ ms.locfileid: "91306571"
 
 ## <a name="plan-review-of-azure-ad-and-azure-resource-roles"></a>Оценка плана ролей ресурсов Azure AD и Azure
 
-[Управление привилегированными пользователями (PIM)](../privileged-identity-management/pim-configure.md) упрощает управление привилегированным доступом к ресурсам в Azure AD предприятиям. Это позволяет значительно сократить список привилегированных ролей в [Azure AD](../users-groups-roles/directory-assign-admin-roles.md) и [ресурсах Azure](../../role-based-access-control/built-in-roles.md) , а также повысить общую безопасность каталога.
+[Управление привилегированными пользователями (PIM)](../privileged-identity-management/pim-configure.md) упрощает управление привилегированным доступом к ресурсам в Azure AD предприятиям. Это позволяет значительно сократить список привилегированных ролей в [Azure AD](../roles/permissions-reference.md) и [ресурсах Azure](../../role-based-access-control/built-in-roles.md) , а также повысить общую безопасность каталога.
 
 Проверки доступа позволяют проверяющим проверить, все ли пользователи должны быть в роли. Так же как и проверки доступа для пакетов Access, проверки ролей и ресурсов Azure AD интегрированы в пользовательский интерфейс PIM администратора. Рекомендуется регулярно просматривать следующие назначения ролей:
 
@@ -448,7 +448,7 @@ ms.locfileid: "91306571"
 
 ![Снимок экрана, показывающий список ролей Azure A D (членство в проверке).](./media/deploy-access-review/8-review-azure-ad-roles-picker.png)
 
-Следуйте инструкциям по ссылкам ниже:
+Выполните инструкции, приведенные по ссылкам ниже.
 
 | Статьи с инструкциями | Описание |
 | - | - |
@@ -463,7 +463,7 @@ ms.locfileid: "91306571"
 
 ![Проверка ролей Azure AD](./media/deploy-access-review/9-review-azure-roles-picker.png)
 
-Следуйте инструкциям по ссылкам ниже:
+Выполните инструкции, приведенные по ссылкам ниже.
 
 | Статьи с инструкциями| Описание |
 | - | -|
@@ -518,4 +518,3 @@ ms.locfileid: "91306571"
 * [Что такое управление запасами в Azure AD?](entitlement-management-overview.md)
 
 * [Что такое Azure AD Privileged Identity Management?](../privileged-identity-management/pim-configure.md)
-

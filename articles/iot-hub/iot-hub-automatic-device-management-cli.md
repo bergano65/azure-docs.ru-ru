@@ -7,12 +7,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 12/13/2019
 ms.author: robinsh
-ms.openlocfilehash: 60d0ef30a1c7d948a9e837a8bc37c76ace415545
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 21d8f513ea0f749f0318b9bc5926a746f840505b
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82024971"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92147826"
 ---
 # <a name="automatic-iot-device-and-module-management-using-the-azure-cli"></a>Автоматическое управление устройствами IoT и модулями с помощью Azure CLI
 
@@ -36,7 +36,7 @@ ms.locfileid: "82024971"
 
 * [Центр Интернета вещей](../iot-hub/iot-hub-create-using-cli.md) в подписке Azure. 
 
-* [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli) в вашей среде. Вам понадобится как минимум Azure CLI версии 2.0.70 или более поздней. Для проверки используйте `az –-version`. Эта версия поддерживает команды расширения az и представляет собой платформу команд Knack. 
+* [Интерфейс командной строки Azure](/cli/azure/install-azure-cli) в вашей среде. Вам понадобится как минимум Azure CLI версии 2.0.70 или более поздней. Для проверки используйте `az –-version`. Эта версия поддерживает команды расширения az и представляет собой платформу команд Knack. 
 
 * [Расширение Интернета вещей для Azure CLI](https://github.com/Azure/azure-cli).
 
@@ -235,8 +235,8 @@ az iot hub configuration delete --config-id [configuration id] \
 Для дальнейшего изучения возможностей Центра Интернета вещей см. следующие статьи:
 
 * [Руководство разработчика для Центра Интернета вещей](iot-hub-devguide.md)
-* [Краткое руководство. Развертывание первого модуля IoT Edge на устройстве под управлением 64-разрядной ОС Linux](../iot-edge/tutorial-simulate-device-linux.md)
+* [Краткое руководство. Развертывание первого модуля IoT Edge на устройстве под управлением 64-разрядной ОС Linux](../iot-edge/quickstart-linux.md)
 
 Узнайте, как использовать службу подготовки устройств для Центра Интернета вещей, чтобы включить автоматическую подготовку JIT, из следующей статьи: 
 
-* [Служба подготовки устройств для Центра Интернета вещей Azure](/azure/iot-dps)
+* [Служба подготовки устройств для Центра Интернета вещей Azure](../iot-dps/index.yml)

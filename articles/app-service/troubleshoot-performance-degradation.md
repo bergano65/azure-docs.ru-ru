@@ -7,15 +7,15 @@ ms.assetid: b8783c10-3a4a-4dd6-af8c-856baafbdde5
 ms.topic: article
 ms.date: 08/03/2016
 ms.custom: seodec18
-ms.openlocfilehash: a9d3de5d4a88c782ad541ceb4916ec90a3bdd7b5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 82373dcd9e1d55e0c4a5867ddaff6875ee57da5a
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88958258"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92147508"
 ---
 # <a name="troubleshoot-slow-app-performance-issues-in-azure-app-service"></a>Устранение причин низкой производительности приложения в Службе приложений Azure
-Эта статья поможет устранить причины снижения производительности приложения, размещенного в [Службе приложений Azure](https://go.microsoft.com/fwlink/?LinkId=529714).
+Эта статья поможет устранить причины снижения производительности приложения, размещенного в [Службе приложений Azure](./overview.md).
 
 Если вам потребуется дополнительная помощь по любому из вопросов, рассматриваемых в статье, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/forums/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт службы поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните **Поддержка**.
 

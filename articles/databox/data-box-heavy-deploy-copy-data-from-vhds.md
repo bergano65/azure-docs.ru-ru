@@ -9,12 +9,12 @@ ms.subservice: heavy
 ms.topic: tutorial
 ms.date: 07/03/2019
 ms.author: alkohli
-ms.openlocfilehash: 755d0077abcba71d705a14643f5c2b28001bfa13
-ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
+ms.openlocfilehash: 335b564225bc2b7a4c2217c1d912f952239ecf24
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91951440"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92127205"
 ---
 # <a name="tutorial-use-data-box-heavy-to-import-data-as-managed-disks-in-azure"></a>Руководство по Использование Data Box Heavy для импорта данных в качестве управляемых дисков в Azure.
 
@@ -38,7 +38,7 @@ ms.locfileid: "91951440"
 4. Вы просмотрели:
 
     - поддерживаемые [размеры управляемых дисков в пределах размеров объектов Azure](data-box-heavy-limits.md#azure-object-size-limits);
-    - статью [Общие сведения об управляемых дисках Azure](/azure/virtual-machines/windows/managed-disks-overview). 
+    - статью [Общие сведения об управляемых дисках Azure](../virtual-machines/managed-disks-overview.md). 
 
 ## <a name="connect-to-data-box-heavy"></a>подключение к Azure Data Box Heavy;
 
@@ -182,4 +182,3 @@ ms.locfileid: "91951440"
 
 > [!div class="nextstepaction"]
 > [Отправка Azure Data Box Heavy в Майкрософт](./data-box-heavy-deploy-picked-up.md)
-

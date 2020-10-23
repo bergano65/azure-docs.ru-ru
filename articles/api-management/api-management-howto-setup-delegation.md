@@ -11,14 +11,14 @@ ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 07/30/2020
+ms.date: 10/15/2020
 ms.author: apimpm
-ms.openlocfilehash: e7f2fb966aa323063220bc798706c8401745ba20
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 76b82d3c008ede99e69f3a19a56911fbfecd5642
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87461006"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92148766"
 ---
 # <a name="how-to-delegate-user-registration-and-product-subscription"></a>Делегирование пользователю регистрации и подписки на продукт
 
@@ -61,21 +61,19 @@ ms.locfileid: "87461006"
    * Вычислите хэш HMAC-SHA512 строки на основе параметров запроса **returnUrl** и **salt** ([на приведенном ниже примере кода]).
      
      > HMAC(**salt** + '\n' + **returnUrl**)
-     > 
-     > 
+
    * Сравните вычисленный выше хэш со значением параметра запроса **sig**. Если два хэша совпадают друг с другом, перейдите к следующему шагу. Если нет, отклоните запрос.
 3. Убедитесь, что вы получаете запрос на вход или регистрацию: параметр запроса **operation** должен иметь значение **SignIn**.
 4. Предоставление пользователю интерфейса для входа или регистрации
 5. Если пользователь регистрируется, для него необходимо создать соответствующую учетную запись в API Management. [Создание пользователя] с помощью интерфейса API Management REST API. При этом убедитесь, что вы установили идентификатор пользователя на то же значение, которое указано в вашем хранилище пользователей, или идентификатор, который можно отслеживать.
 6. После успешной проверки подлинности пользователя:
    
-   * [запросите маркер единого входа (SSO)] через API Management REST API
-   * добавьте параметр запроса returnUrl в URL-адреса SSO, который вы получили из вызова API, указанного выше:
+   * [Запрос общего маркера доступа] через службу управления API REST API
+   * Добавьте параметр запроса returnUrl к URL-адресу единого входа, полученному при вызове API выше:
      
-     > Например: `https://customer.portal.azure-api.net/signin-sso?token&returnUrl=/return/url` 
-     > 
-     > 
-   * перенаправьте пользователя на вышеупомянутый URL-адрес
+     > Например: `https://customer.portal.azure-api.net/signin-sso?token=<URL-encoded token>&returnUrl=<URL-encoded URL, for example: %2Freturn%2Furl>` 
+     
+   * Перенаправить пользователя на указанный выше URL-адрес
 
 Помимо использования операции **SignIn**, вы можете управлять учетными записями, выполнив указанные выше действия и одну из следующих операций.
 
@@ -186,7 +184,7 @@ var signature = digest.toString('base64');
 
 [Delegating developer sign in and sign up]: #delegate-signin-up
 [Delegating product subscription]: #delegate-product-subscription
-[запросите маркер единого входа (SSO)]: /rest/api/apimanagement/2019-12-01/user/generatessourl
+[Запрос общего маркера доступа]: /rest/api/apimanagement/2019-12-01/user/getsharedaccesstoken
 [Создание пользователя]: /rest/api/apimanagement/2019-12-01/user/createorupdate
 [Вызов REST API для подписок]: /rest/api/apimanagement/2019-12-01/subscription/createorupdate
 [Next steps]: #next-steps

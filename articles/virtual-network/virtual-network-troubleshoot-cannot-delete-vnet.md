@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: 8942e9180e87552ec64e0e848751f492778c9993
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 83afdf7e9dc50e50d747db99cd8439d75e6f7804
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86131668"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92167820"
 ---
 # <a name="troubleshooting-failed-to-delete-a-virtual-network-in-azure"></a>Устранение неполадок: Не удалось удалить виртуальную сеть в Azure
 
@@ -48,7 +48,7 @@ ms.locfileid: "86131668"
 
 Для виртуальных сетей перейдите на страницу **обзора** виртуальной сети. Проверьте **подключенные устройства** шлюза виртуальной сети.
 
-![Проверка подключенных устройств](media/virtual-network-troubleshoot-cannot-delete-vnet/vnet-gateway.png)
+![Снимок экрана со списком подключенных устройств для виртуальной сети в портал Azure. Шлюз виртуальной сети выделен в списке.](media/virtual-network-troubleshoot-cannot-delete-vnet/vnet-gateway.png)
 
 Прежде чем удалить шлюз, сначала необходимо удалить объекты **подключений** в шлюзе. 
 
@@ -56,7 +56,7 @@ ms.locfileid: "86131668"
 
 Перейдите на страницу **обзора** виртуальной сети. Проверьте **подключенные устройства** шлюза приложений.
 
-![Проверка подключенных устройств](media/virtual-network-troubleshoot-cannot-delete-vnet/app-gateway.png)
+![Снимок экрана со списком подключенных устройств для виртуальной сети в портал Azure. Шлюз приложений выделен в списке.](media/virtual-network-troubleshoot-cannot-delete-vnet/app-gateway.png)
 
 Прежде чем удалить виртуальную сеть, необходимо удалить шлюз приложений (если имеется).
 
@@ -64,7 +64,7 @@ ms.locfileid: "86131668"
 
 Если доменная служба Active Directory включена и подключена к виртуальной сети, вы не сможете удалить эту виртуальную сеть. 
 
-![Проверка подключенных устройств](media/virtual-network-troubleshoot-cannot-delete-vnet/enable-domain-services.png)
+![Снимок экрана: экран доменных служб Azure AD в портал Azure. Поле доступно в виртуальной сети или подсети выделено.](media/virtual-network-troubleshoot-cannot-delete-vnet/enable-domain-services.png)
 
 Чтобы отключить службу, см. статью об [отключении доменных служб Azure Active Directory с помощью портала Azure](../active-directory-domain-services/delete-aadds.md).
 

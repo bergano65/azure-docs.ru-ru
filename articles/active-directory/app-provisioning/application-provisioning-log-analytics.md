@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 10/12/2020
 ms.author: kenwith
 ms.reviewer: arvinh,luleon
-ms.openlocfilehash: 4e14bd6365ce53d98d6e0b0d1f2601ff3b3e59b4
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.openlocfilehash: 68e47fe3cc674542a807ecbabd37cc6b624d5c03
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91997312"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92145579"
 ---
 # <a name="understand-how-provisioning-integrates-with-azure-monitor-logs"></a>Сведения о том, как подготовка интегрируется с журналами Azure Monitor
 
@@ -26,7 +26,7 @@ ms.locfileid: "91997312"
 
 Вы уже должны быть знакомы с мониторингом и Log Analytics Azure. Если нет, перейдите к разделу, чтобы узнать о них, а затем вернитесь к сведениям о журналах подготовки приложений. Дополнительные сведения о мониторинге Azure см. в разделе [Azure Monitor обзор](../../azure-monitor/overview.md). Дополнительные сведения о Azure Monitor журналах и Log Analytics см. [в статье Обзор запросов журналов в Azure Monitor](../../azure-monitor/log-query/log-query-overview.md).
 
-После настройки в Azure Monitor можно включить журналы для подготовки приложений. Параметр находится на странице **параметры диагностики** .
+После настройки мониторинга Azure можно включить журналы для подготовки приложений. Параметр находится на странице **параметры диагностики** .
 
 :::image type="content" source="media/application-provisioning-log-analytics/diagnostic-settings.png" alt-text="Доступ к параметрам диагностики" lightbox="media/application-provisioning-log-analytics/diagnostic-settings.png":::
 

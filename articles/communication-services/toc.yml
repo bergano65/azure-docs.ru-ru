@@ -34,6 +34,8 @@
           href: quickstarts/voice-video-calling/getting-started-with-calling.md
         - name: Использование клиентской библиотеки для вызовов
           href: quickstarts/voice-video-calling/calling-client-samples.md
+        - name: Подключение приложения для звонков к собранию в Teams
+          href: quickstarts/voice-video-calling/get-started-teams-interop.md
 - name: Учебники
   expanded: false
   items:
@@ -62,6 +64,8 @@
           href: concepts/voice-video-calling/calling-sdk-features.md
         - name: Основные понятия голосовой связи и видеосвязи
           href: concepts/voice-video-calling/about-call-types.md
+        - name: Взаимодействие с Teams
+          href: concepts/voice-video-calling/teams-interop.md
     - name: Клиентская и серверная архитектура
       href: concepts/client-and-server-architecture.md
     - name: Потоки вызовов
@@ -76,6 +80,10 @@
       href: concepts/event-handling.md
     - name: Уведомления
       href: concepts/notifications.md
+    - name: Ведение журнала и диагностика
+      href: concepts/logging-and-diagnostics.md
+    - name: Метрики
+      href: concepts/metrics.md
 - name: Примеры
   items:
     - name: Главный пример функции группового вызова
@@ -85,7 +93,7 @@
 - name: Ссылки
   items:
     - name: Документация по REST API
-      href: 'https://docs.microsoft.com/rest/api/azure/'
+      href: 'https://docs.microsoft.com/rest/api/communication/'
     - name: Вызов библиотеки (Android/Java)
       href: 'https://docs.microsoft.com/java/api/com.azure.communication.calling?view=communication-services-java-android'
     - name: Вызов библиотеки (JS)

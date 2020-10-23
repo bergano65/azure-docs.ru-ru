@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/20/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 68fdff9444286a7f304c3a3361ad33a02e87a282
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d6676187f87cecb7f876150d1582cde9051dd251
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91758376"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92367488"
 ---
 # <a name="security-control-v2-privileged-access"></a>Управление безопасностью v2: привилегированный доступ
 
@@ -34,11 +34,11 @@ ms.locfileid: "91758376"
 
 Вы можете включить привилегированный доступ (JIT) для ресурсов Azure и Azure AD с помощью Azure AD Privileged Identity Management (PIM). JIT предоставляет временные разрешения на выполнение привилегированных задач только в том случае, если это требуется пользователям. PIM также может создавать оповещения системы безопасности при наличии подозрительных или ненадежных действий в Организации Azure AD.
 
-- [Разрешения роли администратора в Azure AD](../../active-directory/users-groups-roles/directory-assign-admin-roles.md)
+- [Разрешения роли администратора в Azure AD](../../active-directory/roles/permissions-reference.md)
 
 - [Использование оповещений системы безопасности Azure управление привилегированными пользователями](../../active-directory/privileged-identity-management/pim-how-to-configure-security-alerts.md)
 
-- [Защита привилегированного доступа для гибридных и облачных развертываний в Azure AD](../../active-directory/users-groups-roles/directory-admin-roles-secure.md)
+- [Защита привилегированного доступа для гибридных и облачных развертываний в Azure AD](../../active-directory/roles/security-planning.md)
 
 **Ответственность**: Customer
 
@@ -114,7 +114,7 @@ ms.locfileid: "91758376"
 Чтобы предотвратить случайную блокировку вашей организации Azure AD, настройте учетную запись аварийного доступа для доступа, если обычные административные учетные записи использовать нельзя. Учетные записи аварийного доступа обычно имеют высокий уровень привилегий и не должны назначаться конкретным пользователям. Учетные записи для аварийного доступа используются только в непредвиденных ситуациях, в которых невозможно использовать обычные учетные записи администратора.
 Следует убедиться, что учетные данные (например, пароль, сертификат или смарт-карта) для учетных записей аварийного доступа защищены и известны только тем лицам, которые имеют право использовать их только в экстренной ситуации.
 
-- [Управление учетными записями для аварийного доступа в Azure AD](../../active-directory/users-groups-roles/directory-emergency-access.md)
+- [Управление учетными записями для аварийного доступа в Azure AD](../../active-directory/roles/security-emergency-access.md)
 
 **Ответственность**: Customer
 

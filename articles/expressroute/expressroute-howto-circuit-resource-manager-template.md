@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: how-to
 ms.date: 11/13/2019
 ms.author: duau
-ms.openlocfilehash: 3428f092c4b2356e9ea6afa54d1a03fc8b4f9f05
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2e9b6ddc9da4467590946af12a47f1473a4ea494
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89566183"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92202061"
 ---
 # <a name="create-an-expressroute-circuit-by-using-azure-resource-manager-template"></a>Создание канала ExpressRoute с помощью шаблона Azure Resource Manager
 
@@ -25,7 +25,7 @@ ms.locfileid: "89566183"
 > * [PowerShell (классическая модель)](expressroute-howto-circuit-classic.md)
 >
 
-Узнайте, как создать канал ExpressRoute путем развертывания шаблона Azure Resource Manager с помощью Azure PowerShell. Дополнительные сведения о разработке шаблонов Resource Manager см. в разделе [Документация по Azure Resource Manager](/azure/azure-resource-manager/) и в [справочнике по шаблонам](/azure/templates/microsoft.network/expressroutecircuits).
+Узнайте, как создать канал ExpressRoute путем развертывания шаблона Azure Resource Manager с помощью Azure PowerShell. Дополнительные сведения о разработке шаблонов Resource Manager см. в разделе [Документация по Azure Resource Manager](../azure-resource-manager/index.yml) и в [справочнике по шаблонам](/azure/templates/microsoft.network/expressroutecircuits).
 
 ## <a name="before-you-begin"></a>Перед началом
 
@@ -63,8 +63,8 @@ ms.locfileid: "89566183"
     Write-Host "Press [ENTER] to continue ..."
     ```
 
-   * **Уровень SKU** определяет, является ли канал ExpressRoute [локальным](expressroute-faqs.md#expressroute-local), стандартным или [Premium](expressroute-faqs.md#expressroute-premium). Можно указать *Local*, * Standard или *Premium*. Изменить номер SKU *Стандартный или Премиум* на *Локальный* нельзя.
-   * **Семейство SKU** определяет тип выставления счетов. Вы можете указать *Metereddata* для тарифного тарифного плана и *Unlimiteddata* для неограниченного тарифного плана данных. Тип выставления счетов можно изменить с *Metereddata* на *Unlimiteddata* но не наоборот. *Unlimiteddata* для *Metereddata* *Локальный* канал — только *Unlimiteddata* .
+   * **Уровень SKU** определяет, является ли канал ExpressRoute [локальным](expressroute-faqs.md#expressroute-local), стандартным или [Premium](expressroute-faqs.md#expressroute-premium). Вы можете указать *Локальный*, *"Стандартный" или *Премиум*. Изменить номер SKU *Стандартный или Премиум* на *Локальный* нельзя.
+   * **Семейство SKU** определяет тип выставления счетов. Вы можете указать *Metereddata* для тарифного тарифного плана и *Unlimiteddata* для неограниченного тарифного плана данных. Тип выставления счетов можно изменить с *Metereddata* на *Unlimiteddata*, но нельзя изменить тип с *Unlimiteddata* на *Metereddata*. *Локальный* канал — только *Unlimiteddata* .
    * **Расположение пиринга** — физическое расположение пиринга с корпорацией Майкрософт.
 
      > [!IMPORTANT]

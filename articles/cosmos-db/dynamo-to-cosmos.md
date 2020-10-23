@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 04/29/2020
 ms.author: mansha
-ms.openlocfilehash: cfdeda8ac3957da272ab4c47fb93930c826d55aa
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 167d1f21a2eb7ea4c685b5bbbb5d8d64fcc1367e
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85261874"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92278693"
 ---
 # <a name="migrate-your-application-from-amazon-dynamodb-to-azure-cosmos-db"></a>Перенос приложения из Amazon DynamoDB в Azure Cosmos DB
 
@@ -144,7 +144,7 @@ client_documentDB = new CosmosClient("your connectionstring from the Azure porta
 
 В Azure Cosmos DB можно оптимизировать подключение с помощью следующих параметров.
 
-* **ConnectionMode** — использование режима прямого подключения для подключения к узлам данных в службе Azure Cosmos DB. Используйте режим шлюза только для инициализации и кэширования логических адресов и выполняйте обновление в случае изменений. Подробнее см. в статье о [режимах подключения](performance-tips.md#networking).
+* **ConnectionMode** — использование режима прямого подключения для подключения к узлам данных в службе Azure Cosmos DB. Используйте режим шлюза только для инициализации и кэширования логических адресов и выполняйте обновление в случае изменений. Подробнее см. в статье о [режимах подключения](sql-sdk-connection-modes.md).
 
 * **ApplicationRegion** — этот параметр используется для задания предпочитаемого геореплицированного региона, который используется для взаимодействия с Azure Cosmos DB. Подробнее см. в статье о [глобальном распределении](distribute-data-globally.md).
 

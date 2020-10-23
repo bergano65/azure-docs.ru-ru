@@ -1,30 +1,30 @@
 ---
-title: Обновление показателя ЕЗ/с для пространства ключей или таблицы Cassandra в Azure Cosmos DB
-description: Обновление показателя ЕЗ/с для пространства ключей или таблицы Cassandra в Azure Cosmos DB
+title: Скрипты Azure CLI для операций с пропускной способностью (ЕЗ/с) для ресурсов API Cassandra службы Azure Cosmos DB
+description: Скрипты Azure CLI для операций с пропускной способностью (ЕЗ/с) для ресурсов API Cassandra службы Azure Cosmos DB
 author: markjbrown
 ms.author: mjbrown
 ms.service: cosmos-db
 ms.subservice: cosmosdb-cassandra
 ms.topic: sample
-ms.date: 07/29/2020
-ms.openlocfilehash: c0026202e8f110123a7360a5fda521947ed8e9ee
-ms.sourcegitcommit: 23aa0cf152b8f04a294c3fca56f7ae3ba562d272
+ms.date: 10/07/2020
+ms.openlocfilehash: 09ea092afcfee6223330b1ad887d73ea2f78db59
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91803659"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91843045"
 ---
-# <a name="update-rus-for-a-cassandra-keyspace-and-table-using-azure-cli"></a>Обновление показателя ЕЗ/с для пространства ключей или таблицы Cassandra с помощью Azure CLI
+# <a name="throughput-rus-operations-with-azure-cli-for-a-keyspace-or-table-for-azure-cosmos-db---cassandra-api"></a>Выполнение операций с пропускной способностью (ЕЗ/с) с помощью Azure CLI для пространства ключей или таблицы в Azure Cosmos DB — API Cassandra
 
 [!INCLUDE [cloud-shell-try-it.md](../../../../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать интерфейс командной строки локально, то для работы с этим руководством вам понадобится Azure CLI 2.9.1 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
+Если вы решили установить и использовать интерфейс командной строки локально, то для работы с этим руководством вам понадобится Azure CLI 2.12.1 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
 
 ## <a name="sample-script"></a>Пример скрипта
 
-Этот скрипт создает пространства ключей Cassandra с общей пропускной способностью и таблицу Cassandra с выделенной пропускной способностью, а затем обновляет пропускную способность как для пространства ключей, так и для таблицы.
+Этот скрипт создает пространства ключей Cassandra с общей пропускной способностью и таблицу Cassandra с выделенной пропускной способностью, а затем обновляет пропускную способность как для пространства ключей, так и для таблицы. Затем этот скрипт переключает режим пропускной способности со стандартного на автомасштабирование и считывает значение пропускной способности, установленное после переноса.
 
-[!code-azurecli-interactive[main](../../../../../cli_scripts/cosmosdb/cassandra/throughput.sh "Update RU/s for Cassandra keyspace and table.")]
+[!code-azurecli-interactive[main](../../../../../cli_scripts/cosmosdb/cassandra/throughput.sh "Throughput operations for Cassandra keyspace and table.")]
 
 ## <a name="clean-up-deployment"></a>Очистка развертывания
 
@@ -44,8 +44,10 @@ az group delete --name $resourceGroupName
 | [az cosmosdb create](/cli/azure/cosmosdb#az-cosmosdb-create) | Создает учетную запись Azure Cosmos DB. |
 | [az cosmosdb cassandra keyspace create](/cli/azure/cosmosdb/cassandra/keyspace#az-cosmosdb-cassandra-keyspace-create) | Создает пространство ключей Azure Cosmos Cassandra. |
 | [az cosmosdb cassandra table create](/cli/azure/cosmosdb/cassandra/table#az-cosmosdb-cassandra-table-create) | Создает таблицу Azure Cosmos Cassandra. |
-| [az cosmosdb cassandra keyspace throughput update](/cli/azure/cosmosdb/cassandra/keyspace/throughput?view=azure-cli-latest&preserve-view=true#az-cosmosdb-cassandra-keyspace-throughput-update) | Обновляет ЕЗ/с для пространства ключей Azure Cosmos Cassandra. |
+| [az cosmosdb cassandra keyspace throughput update](/cli/azure/cosmosdb/cassandra/keyspace/throughput#az-cosmosdb-cassandra-keyspace-throughput-update) | Обновляет ЕЗ/с для пространства ключей Azure Cosmos Cassandra. |
 | [az cosmosdb cassandra table throughput update](/cli/azure/cosmosdb/cassandra/table/throughput#az-cosmosdb-cassandra-table-throughput-update) | Обновляет ЕЗ/с для таблицы Azure Cosmos Cassandra. |
+| [az cosmosdb cassandra keyspace throughput migrate](/cli/azure/cosmosdb/cassandra/keyspace/throughput#az_cosmosdb_cassandra_keyspace_throughput_migrate) | Переход с одного режима пропускной способности на другой для пространства ключей Azure Cosmos Cassandra. |
+| [az cosmosdb cassandra table throughput migrate](/cli/azure/cosmosdb/cassandra/table/throughput#az_cosmosdb_cassandra_table_throughput_migrate) | Переход с одного режима пропускной способности на другой для таблицы Azure Cosmos Cassandra. |
 | [az group delete](/cli/azure/resource#az-resource-delete) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 
 ## <a name="next-steps"></a>Дальнейшие действия

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/08/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 654fc453f0b4167ae91afcab811de321925c6bf5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1f9e4fd2f7f55f916743074b57f89788c0d32f7d
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89614674"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92427499"
 ---
 # <a name="azure-security-baseline-for-azure-private-link"></a>Базовый канал безопасности Azure для частной связи Azure
 
@@ -268,7 +268,7 @@ ms.locfileid: "89614674"
 
 Ограничьте уровень доступа к ресурсам Azure с приложениями и корпоративными средами в соответствии с бизнес-требованиями. 
 
-Управление доступом к ресурсам Azure с помощью Azure Active Directory управления доступом на основе ролей.
+Управление доступом к ресурсам Azure с помощью управления доступом на основе ролей Azure (Azure RBAC).
 
 - [Создание дополнительных подписок Azure](/azure/billing/billing-create-subscription)
 
@@ -292,7 +292,7 @@ ms.locfileid: "89614674"
 
 **Ответственность**: Совмещаемая блокировка
 
-### <a name="46-use-role-based-access-control-to-control-access-to-resources"></a>4,6. Использование управления доступом на основе ролей для управления доступом к ресурсам
+### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6. Контроль доступа к ресурсам с помощью RBAC
 
 **Руководство**. Использование управления доступом на основе ролей Azure (Azure RBAC) для управления доступом к данным и ресурсам. в противном случае используйте специальные методы управления доступом к службам.
 

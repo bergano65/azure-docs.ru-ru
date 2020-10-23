@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 09/02/2019
 ms.author: jeedes
-ms.openlocfilehash: cfa81b52e8479851fc22b12cbc96a9507f0b2dc7
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: e49fc29f03269096bfc7d6bb6e905187bb8788ff
+ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88551394"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91944111"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-harness"></a>Руководство по Интеграция единого входа Azure Active Directory с Harness
 
@@ -138,15 +138,15 @@ ms.locfileid: "88551394"
 
 4. В правом верхнем углу страницы выберите**Continuous Security** > **Access Management** > **Authentication Settings** (Непрерывная безопасность > Управление доступом > Параметры аутентификации).
 
-    ![Настройка Harness](./media/harness-tutorial/configure01.png)
+    ![Снимок экрана: меню Continuous Security (Непрерывная безопасность) с выбранными параметрами Access Management (Управление доступом) и Authentication Settings (Параметры аутентификации)](./media/harness-tutorial/configure01.png)
 
 5. В разделе **SSO Providers** (Поставщики единого входа) щелкните **+ Add SSO Providers** > **SAML** (+ Добавить поставщиков единого входа > SAML).
 
-    ![Настройка Harness](./media/harness-tutorial/configure03.png)
+    ![Снимок экрана: раздел SSO Providers (Поставщики единого входа) с выбранным пунктом +Add SSO Providers (+ Добавить поставщиков единого входа) > SAML](./media/harness-tutorial/configure03.png)
 
 6. Во всплывающем элементе **SAML Provider** (Поставщик SAML) выполните следующие шаги:
 
-    ![Настройка Harness](./media/harness-tutorial/configure02.png)
+    ![Снимок экрана: всплывающее окно SAML Provider (Поставщик SAML) с выделенными полями URL (URL-адрес) и Display Name (Отображаемое имя) и выбранными кнопками Choose File (Выбрать файл) и Submit (Отправить)](./media/harness-tutorial/configure02.png)
 
     а. Скопируйте адрес из поля **In your SSO Provider, please enable SAML-based login, then enter the following URL** (В поставщике единого входа включите вход на основе SAML и введите следующий URL-адрес) и вставьте его в текстовое поле для URL-адреса ответа в разделе **Базовая конфигурация SAML** на портале Azure.
 
@@ -166,11 +166,11 @@ ms.locfileid: "88551394"
 
 1. В правом верхнем углу страницы выберите**Continuous Security** > **Access Management** > **Users** (Непрерывная безопасность > Управление доступом > Пользователи).
 
-    ![Настройка Harness](./media/harness-tutorial/configure04.png)
+    ![Снимок экрана: меню Continuous Security (Непрерывная безопасность) с выбранными параметрами Access Management (Управление доступом) и Users (Пользователи)](./media/harness-tutorial/configure04.png)
 
 1. В правой части страницы щелкните **+ Add User** (Добавить пользователя).
 
-    ![Настройка Harness](./media/harness-tutorial/configure05.png)
+    ![Снимок экрана, на котором показана страница "Users" (пользователи) с выбранным действием +Add User (+Добавить пользователя)](./media/harness-tutorial/configure05.png)
 
 1. Во всплывающем элементе **Add User** (Добавление пользователя) выполните следующие действия.
 

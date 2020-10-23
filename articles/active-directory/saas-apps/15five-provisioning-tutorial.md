@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 07/26/2019
 ms.author: zhchia
-ms.openlocfilehash: c26a581df7ac10777687bf268027eb94862605b1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: eaf54b7f7336619d03ce0fb6ea7fa032d0fcdff7
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91850138"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92319173"
 ---
 # <a name="tutorial-configure-15five-for-automatic-user-provisioning"></a>Учебник. Настройка 15Five для автоматической подготовки пользователей
 
@@ -32,21 +32,21 @@ ms.locfileid: "91850138"
 > * Удалить пользователей в 15Five, когда им больше не нужен доступ
 > * Синхронизация атрибутов пользователей между Azure AD и 15Five
 > * Подготавливайте группы и членство в группах в 15Five
-> * [Единый вход](https://docs.microsoft.com/azure/active-directory/saas-apps/15five-tutorial) в 15Five (рекомендуется)
+> * [Единый вход](./15five-tutorial.md) в 15Five (рекомендуется)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
-* [Клиент Azure AD](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant) .
-* Учетная запись пользователя в Azure AD с [разрешением](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) на настройку подготовки (например, администратор приложений, администратор облачных приложений, владелец приложения или глобальный администратор).
+* [Клиент Azure AD](../develop/quickstart-create-new-tenant.md) .
+* Учетная запись пользователя в Azure AD с [разрешением](../users-groups-roles/directory-assign-admin-roles.md) на настройку подготовки (например, администратор приложений, администратор облачных приложений, владелец приложения или глобальный администратор).
 * [Клиент 15Five](https://www.15five.com/pricing/).
 * Учетная запись пользователя в 15Five с разрешениями администратора.
 
 ## <a name="step-1-plan-your-provisioning-deployment"></a>Шаг 1. Планирование развертывания для подготовки
-1. Узнайте, [как работает служба подготовки](https://docs.microsoft.com/azure/active-directory/manage-apps/user-provisioning).
-2. Определите, кто будет находиться в [области подготовки](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts).
-3. Определите, какие данные должны [сопоставляться между Azure AD и 15Five](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes). 
+1. Узнайте, [как работает служба подготовки](../app-provisioning/user-provisioning.md).
+2. Определите, кто будет находиться в [области подготовки](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+3. Определите, какие данные должны [сопоставляться между Azure AD и 15Five](../app-provisioning/customize-application-attributes.md). 
 
 ## <a name="step-2-configure-15five-to-support-provisioning-with-azure-ad"></a>Шаг 2. Настройка 15Five для поддержки подготовки с помощью Azure AD
 
@@ -70,15 +70,15 @@ ms.locfileid: "91850138"
 
 ## <a name="step-3-add-15five-from-the-azure-ad-application-gallery"></a>Шаг 3. Добавление 15Five из коллекции приложений Azure AD
 
-Добавьте 15Five из коллекции приложений Azure AD, чтобы начать управление подготовкой в 15Five. Если вы ранее настроили 15Five для единого входа, вы можете использовать то же приложение. Однако при первоначальном тестировании интеграции рекомендуется создать отдельное приложение. Дополнительные сведения о добавлении приложения из коллекции см. [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/add-gallery-app). 
+Добавьте 15Five из коллекции приложений Azure AD, чтобы начать управление подготовкой в 15Five. Если вы ранее настроили 15Five для единого входа, вы можете использовать то же приложение. Однако при первоначальном тестировании интеграции рекомендуется создать отдельное приложение. Дополнительные сведения о добавлении приложения из коллекции см. [здесь](../manage-apps/add-application-portal.md). 
 
 ## <a name="step-4-define-who-will-be-in-scope-for-provisioning"></a>Шаг 4. Определение пользователей для включения в область подготовки 
 
-Служба подготовки Azure AD позволяет определить пользователей, которые будут подготовлены, на основе назначения приложению и (или) атрибутов пользователя или группы. Если вы решили указать, кто именно будет подготовлен к работе в приложении, на основе назначения, можно выполнить следующие [действия](../manage-apps/assign-user-or-group-access-portal.md), чтобы назначить пользователей и группы приложению. Если вы решили указать, кто именно будет подготовлен, на основе одних только атрибутов пользователя или группы, можете использовать фильтр задания области, как описано [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts). 
+Служба подготовки Azure AD позволяет определить пользователей, которые будут подготовлены, на основе назначения приложению и (или) атрибутов пользователя или группы. Если вы решили указать, кто именно будет подготовлен к работе в приложении, на основе назначения, можно выполнить следующие [действия](../manage-apps/assign-user-or-group-access-portal.md), чтобы назначить пользователей и группы приложению. Если вы решили указать, кто именно будет подготовлен, на основе одних только атрибутов пользователя или группы, можете использовать фильтр задания области, как описано [здесь](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md). 
 
-* При назначении пользователей и групп для 15Five необходимо выбрать роль, отличную от **доступа по умолчанию**. Пользователи с ролью "Доступ по умолчанию" исключаются из подготовки и будут помечены в журналах подготовки как не назначенные явно. Кроме того, если эта роль является единственной, доступной в приложении, можно [изменить манифест приложения](https://docs.microsoft.com/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps), чтобы добавить дополнительные роли. 
+* При назначении пользователей и групп для 15Five необходимо выбрать роль, отличную от **доступа по умолчанию**. Пользователи с ролью "Доступ по умолчанию" исключаются из подготовки и будут помечены в журналах подготовки как не назначенные явно. Кроме того, если эта роль является единственной, доступной в приложении, можно [изменить манифест приложения](../develop/howto-add-app-roles-in-azure-ad-apps.md), чтобы добавить дополнительные роли. 
 
-* Начните с малого. Протестируйте небольшой набор пользователей и групп, прежде чем выполнять развертывание для всех. Если в область подготовки включены назначенные пользователи и группы, проверьте этот механизм, назначив приложению одного или двух пользователей либо одну или две группы. Если в область включены все пользователи и группы, можно указать [фильтр области на основе атрибутов](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts).
+* Начните с малого. Протестируйте небольшой набор пользователей и групп, прежде чем выполнять развертывание для всех. Если в область подготовки включены назначенные пользователи и группы, проверьте этот механизм, назначив приложению одного или двух пользователей либо одну или две группы. Если в область включены все пользователи и группы, можно указать [фильтр области на основе атрибутов](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 ## <a name="step-5-configure-automatic-user-provisioning-to-15five"></a>Шаг 5. Настройка автоматической подготовки пользователей в 15Five 
 
@@ -128,8 +128,8 @@ ms.locfileid: "91850138"
    |externalId|Строка|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Справочник|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber|Строка|
-   |urn: IETF: params: scim: схемы: расширение: 15Five: 2.0: пользователь: расположение|Строковый тип|
-   |urn: IETF: params: scim: схемы: расширение: 15Five: 2.0: User: startDate|Строковый тип|
+   |urn: IETF: params: scim: схемы: расширение: 15Five: 2.0: пользователь: расположение|Строка|
+   |urn: IETF: params: scim: схемы: расширение: 15Five: 2.0: User: startDate|Строка|
 
 10. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory группы с 15Five**.
 
@@ -160,9 +160,9 @@ ms.locfileid: "91850138"
 ## <a name="step-6-monitor-your-deployment"></a>Шаг 6. Мониторинг развертывания
 После настройки подготовки используйте следующие ресурсы для мониторинга развертывания.
 
-1. Используйте [журналы подготовки](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-provisioning-logs), чтобы определить, какие пользователи были подготовлены успешно или неудачно.
-2. Используйте [индикатор выполнения](https://docs.microsoft.com/azure/active-directory/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user), чтобы узнать состояние цикла подготовки и приблизительное время до его завершения.
-3. Если конфигурация подготовки, вероятно, находится в неработоспособном состоянии, приложение перейдет в карантин. Дополнительные сведения о режимах карантина см. [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-quarantine-status).  
+1. Используйте [журналы подготовки](../reports-monitoring/concept-provisioning-logs.md), чтобы определить, какие пользователи были подготовлены успешно или неудачно.
+2. Используйте [индикатор выполнения](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md), чтобы узнать состояние цикла подготовки и приблизительное время до его завершения.
+3. Если конфигурация подготовки, вероятно, находится в неработоспособном состоянии, приложение перейдет в карантин. Дополнительные сведения о режимах карантина см. [здесь](../app-provisioning/application-provisioning-quarantine-status.md).  
     
 ## <a name="connector-limitations"></a>Ограничения соединителя
 

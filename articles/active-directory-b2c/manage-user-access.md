@@ -7,15 +7,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 07/24/2018
+ms.date: 10/15/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 084284037b02ce02d1e46a61a69d6e60cc89a36b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 51a66d74750afa6c46dba7fa442477e85effb2d6
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85387734"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92102057"
 ---
 # <a name="manage-user-access-in-azure-active-directory-b2c"></a>Управление доступом пользователей в Azure Active Directory B2C
 
@@ -114,7 +114,7 @@ ms.locfileid: "85387734"
 
 ![Блок-схема с рекомендуемым потоком подтверждения согласия](./media/manage-user-access/user-flow.png)
 
-В следующем примере реализуется логика согласия с условиями использования, основанная на утверждении и проверке даты и времени:
+Ниже приведен пример условия использования согласия на основе даты в утверждении. Если `extension_termsOfUseConsentDateTime` утверждение старше `2025-01-15T00:00:00` , принудительно выполняет новое принятие, проверяя `termsOfUseConsentRequired` логическое утверждение и отображая экран с автоматическим подтверждением. 
 
 ```xml
 <ClaimsTransformations>
@@ -128,7 +128,7 @@ ms.locfileid: "85387734"
       <InputClaim ClaimTypeReferenceId="extension_termsOfUseConsentDateTime" TransformationClaimType="termsOfUseConsentDateTime" />
     </InputClaims>
     <InputParameters>
-      <InputParameter Id="termsOfUseTextUpdateDateTime" DataType="dateTime" Value="2098-01-30T23:03:45" />
+      <InputParameter Id="termsOfUseTextUpdateDateTime" DataType="dateTime" Value="2025-01-15T00:00:00" />
     </InputParameters>
     <OutputClaims>
       <OutputClaim ClaimTypeReferenceId="termsOfUseConsentRequired" TransformationClaimType="result" />
@@ -137,7 +137,7 @@ ms.locfileid: "85387734"
 </ClaimsTransformations>
 ```
 
-В следующем примере реализуется логика согласия с условиями использования, основанная на утверждении и проверке версии условий:
+Ниже приведен пример условий использования согласия на основе версии в утверждении. Если `extension_termsOfUseConsentVersion` утверждение не равно `V1` , принудительно выполняет новое принятие, проверяя `termsOfUseConsentRequired` логическое утверждение и отображая экран с автоматическим подтверждением.
 
 ```xml
 <ClaimsTransformations>

@@ -3,12 +3,12 @@ title: Настройка лаборатории для использовани
 description: Узнайте, как настроить лабораторию в Azure DevTest Labs с помощью шлюза удаленных рабочих столов, чтобы обеспечить безопасный доступ к виртуальным машинам лаборатории без необходимости предоставлять порт RDP.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: bc45a0c2953f8f84289fa01d4af72bf98544bd7f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b48a0709deb21ca0f8a27d1cf953c7d8d4ba2cc8
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87288077"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92144706"
 ---
 # <a name="configure-your-lab-in-azure-devtest-labs-to-use-a-remote-desktop-gateway"></a>Настройка лаборатории в Azure DevTest Labs для использования шлюза удаленных рабочих столов
 В Azure DevTest Labs можно настроить шлюз удаленных рабочих столов для лаборатории, чтобы обеспечить безопасный доступ к виртуальным машинам лаборатории, не открывая RDP-порт. Лаборатория предоставляет пользователям лабораторий централизованное представление и подключение ко всем виртуальным машинам, к которым у них есть доступ. Кнопка **подключить** на странице **виртуальной машины** создает файл RDP, зависящий от компьютера, который можно открыть для подключения к компьютеру. Вы можете дополнительно настроить и защитить подключение RDP, подключив свою лабораторию к шлюзу удаленных рабочих столов. 
@@ -79,7 +79,7 @@ az resource show --name {lab-name} --resource-type 'Microsoft.DevTestLab/labs' -
 1. **Сохранение** Изменениями.
 
     > [!NOTE] 
-    > Нажимая кнопку " **сохранить**", вы соглашаетесь с [условиями лицензии удаленный рабочий стол шлюза](https://www.microsoft.com/licensing/product-licensing/products). Дополнительные сведения об удаленном шлюзе см. [в статье Добро пожаловать в службы удаленных рабочих столов](https://aka.ms/rds) и [развернуть среду удаленного рабочего стола](/windows-server/remote/remote-desktop-services/rds-deploy-infrastructure).
+    > Нажимая кнопку " **сохранить**", вы соглашаетесь с [условиями лицензии удаленный рабочий стол шлюза](https://www.microsoft.com/licensing/product-licensing/products). Дополнительные сведения об удаленном шлюзе см. [в статье Добро пожаловать в службы удаленных рабочих столов](/windows-server/remote/remote-desktop-services/Welcome-to-rds) и [развернуть среду удаленного рабочего стола](/windows-server/remote/remote-desktop-services/rds-deploy-infrastructure).
 
 
 Если предпочтительнее настроить лабораторию с помощью службы автоматизации, см. [Set-DevTestLabGateway.ps1](https://github.com/Azure/azure-devtestlab/blob/master/samples/DevTestLabs/GatewaySample/tools/Set-DevTestLabGateway.ps1) пример сценария PowerShell для задания параметров **имени узла шлюза** и **секрета маркера шлюза** . [Репозиторий Azure DevTest Labs GitHub](https://github.com/Azure/azure-devtestlab) также предоставляет шаблон Azure Resource Manager, который создает или обновляет лабораторию с **именем узла шлюза** и параметрами **секрета маркера шлюза** .
@@ -94,7 +94,7 @@ az resource show --name {lab-name} --resource-type 'Microsoft.DevTestLab/labs' -
 ## <a name="sample-to-create-a-remote-desktop-gateway"></a>Пример создания шлюза удаленных рабочих столов
 
 > [!NOTE] 
-> Используя примеры шаблонов, вы соглашаетесь с [условиями лицензии удаленный рабочий стол шлюза](https://www.microsoft.com/licensing/product-licensing/products). Дополнительные сведения об удаленном шлюзе см. [в статье Добро пожаловать в службы удаленных рабочих столов](https://aka.ms/rds) и [развернуть среду удаленного рабочего стола](/windows-server/remote/remote-desktop-services/rds-deploy-infrastructure).
+> Используя примеры шаблонов, вы соглашаетесь с [условиями лицензии удаленный рабочий стол шлюза](https://www.microsoft.com/licensing/product-licensing/products). Дополнительные сведения об удаленном шлюзе см. [в статье Добро пожаловать в службы удаленных рабочих столов](/windows-server/remote/remote-desktop-services/Welcome-to-rds) и [развернуть среду удаленного рабочего стола](/windows-server/remote/remote-desktop-services/rds-deploy-infrastructure).
 
 [Репозиторий Azure DevTest Labs GitHub](https://github.com/Azure/azure-devtestlab) содержит несколько примеров, помогающих настроить ресурсы, необходимые для использования проверки подлинности маркеров и шлюза удаленных рабочих столов с DevTest Labs. Эти примеры включают Azure Resource Manager шаблоны для компьютеров шлюзов, параметры лаборатории и приложение функции.
 

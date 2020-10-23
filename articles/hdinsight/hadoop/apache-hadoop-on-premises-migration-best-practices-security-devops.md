@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/19/2019
-ms.openlocfilehash: 99c5ff39820b652a33ab670e63ca709f8747c4cf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7deaca67212146881754f785e6dceaa064bde6e7
+ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88751285"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92329429"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight---security-and-devops-best-practices"></a>Миграция локальных кластеров Apache Hadoop в Azure HDInsight — рекомендации по обеспечению безопасности и операциям DevOps
 
@@ -69,7 +69,7 @@ ms.locfileid: "88751285"
 
 **Аутентификация и авторизация для доступа к данным**
     - Создайте присоединенный к домену кластер HDInsight с помощью доменных служб Azure Active Directory (Корпоративного пакета безопасности).
-    - Предоставьте доступ к кластерным ресурсам на основе ролей для пользователей AD с помощью Ambari.
+    - Используйте Ambari, чтобы предоставить доступ к ресурсам кластера для пользователей AD на основе ролей.
     - Настройте политики контроля доступа для Hive на уровне таблицы, столбца и строк с помощью Apache Ranger.
     - Только администраторы могут получить доступ к кластеру по протоколу SSH.
 
@@ -120,6 +120,6 @@ ms.locfileid: "88751285"
 2. **Выполнение тестов**. Выполните функциональные тесты и тесты производительности в итеративном режиме.
 3. **Оптимизация**. Устраните любые проблемы с производительностью на основе вышеуказанных результатов тестов, а затем выполните повторное тестирование для подтверждения повышения производительности.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Сведения об HDInsight 4.0](https://docs.microsoft.com/azure/hdinsight/hadoop/apache-hadoop-introduction).

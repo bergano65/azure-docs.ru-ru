@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/25/2019
 ms.author: jeedes
-ms.openlocfilehash: db7838224b004d50234586d14e43e77a9c2ce26b
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: a656ec60fd3cb1e6b94da2122d8f493f426cef07
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88552753"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91851311"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-ivanti-service-manager-ism"></a>Руководство по интеграции Azure Active Directory с Ivanti Service Manager (ISM)
 
@@ -100,7 +100,7 @@ ms.locfileid: "88552753"
 
 4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа для приложения Ivanti Service Manager (ISM)](common/idp-intiated.png)
+    ![Снимок экрана: раздел "Базовая конфигурация SAML", где можно ввести URL-адрес ответа и нажать кнопку "Сохранить".](common/idp-intiated.png)
 
     а. В текстовом поле **Идентификатор** введите URL-адрес в таком формате:
     
@@ -114,7 +114,7 @@ ms.locfileid: "88552753"
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа для приложения Ivanti Service Manager (ISM)](common/metadata-upload-additional-signon.png)
+    ![Снимок экрана, на котором показан параметр "Задать дополнительные URL-адреса" и поле для ввода URL-адреса входа](common/metadata-upload-additional-signon.png)
 
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://<customer>.saasit.com/`.
 

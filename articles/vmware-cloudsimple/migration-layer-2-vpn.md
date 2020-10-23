@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: a530a6f656f37657a198af85d93d5404ac88d0e1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f524bf6af66d44bc13b7c0957de7977968cbef28
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "83651025"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92427254"
 ---
 # <a name="migrate-workloads-using-layer-2-stretched-networks"></a>Перенос рабочих нагрузок с помощью растянутых сетей уровня 2
 
@@ -118,7 +118,7 @@ ms.locfileid: "83651025"
 
 3. Откройте сеанс SSH с IP-адресом управления пограничной виртуальной машины. Выполните команду ```get logical-router``` с именем пользователя **admin** и паролем **CloudSimple 123!** .
 
-    ![Получение выходных данных логического маршрутизатора](media/l2vpn-fetch03.png)
+    ![Снимок экрана, на котором показан открытый сеанс SSH.](media/l2vpn-fetch03.png)
 
 4. Если вы не видите запись "DR-Provider-LR", выполните следующие действия.
 
@@ -132,7 +132,7 @@ ms.locfileid: "83651025"
 
 7. Снова выполните команду `get logical-router` в сеансе SSH пограничной виртуальной машины. Отображается UUID логического маршрутизатора DR-Provider-LR. Запишите идентификатор UUID, который требуется при настройке L2VPN.
 
-    ![Получение выходных данных логического маршрутизатора](media/l2vpn-fetch06.png)
+    ![Снимок экрана, показывающий UUID логического маршрутизатора.](media/l2vpn-fetch06.png)
 
 ## <a name="fetch-the-logical-switch-id-needed-for-l2vpn"></a>Получение идентификатора логического коммутатора, необходимого для L2VPN
 
@@ -430,7 +430,7 @@ GET https://192.168.110.201/api/v1/vpn/l2vpn/sessions/<session-id>/peer-codes
 
 2. Перейдите в папку со всеми извлеченными файлами. Выберите все vmdk (NSX-l2t-client-large.mf и NSX-l2t-client-large.ovf для крупных устройств или NSX-l2t-client-Xlarge.mf и NSX-l2t-client-Xlarge.ovf для очень крупных устройств). Щелкните **Далее**.
 
-    ![Выбор шаблона](media/l2vpn-deploy-client02.png) ![Выбор шаблона](media/l2vpn-deploy-client03.png)
+    ![Выберите шаблон ](media/l2vpn-deploy-client02.png) ![ снимок экрана, на котором отображаются выбранные файлы VMDK.](media/l2vpn-deploy-client03.png)
 
 3. Введите имя автономного клиента NSX-T и нажмите **Далее**.
 

@@ -6,13 +6,13 @@ ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
-ms.date: 09/02/2020
-ms.openlocfilehash: ab37fcdb4012394f1c5131a23f7c67063d3d6e37
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 10/20/2020
+ms.openlocfilehash: 66d420a902cbfb56ece75646ee39bbba774b6208
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91825755"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92312411"
 ---
 # <a name="overview-of-azure-monitor-agents"></a>Общие сведения об агентах Azure Monitor
 
@@ -36,7 +36,7 @@ ms.locfileid: "91825755"
 |:---|:---|:---|:---|:---|
 | **Поддерживаемые среды** | Azure | Azure | Azure<br>Другое облако<br>В локальной среде | Azure<br>Другое облако<br>В локальной среде | 
 | **Требования к агентам**  | None | None | None | Требуется агент Log Analytics |
-| **Собираемые данные** | журналы событий;<br>Производительность | журналы событий;<br>ETW-события<br>Производительность<br>Файловые журналы<br>Журналы IIS<br>Журналы приложений .NET<br>Аварийные дампы<br>Журналы диагностики агента | журналы событий;<br>Производительность<br>Файловые журналы<br>Журналы IIS<br>Полезные сведения и решения<br>другие службы. | зависимости процессов.<br>Метрики сетевого подключения |
+| **Собираемые данные** | журналы событий;<br>Производительность | журналы событий;<br>ETW-события<br>Производительность<br>Файловые журналы<br>Журналы IIS<br>Журналы приложений .NET<br>Аварийные дампы<br>Журналы диагностики агента | журналы событий;<br>Производительность<br>Файловые журналы<br>Журналы IIS<br>Полезные сведения и решения<br>Другие службы | зависимости процессов.<br>Метрики сетевого подключения |
 | **Отправленные данные** | Журналы Azure Monitor<br>Метрики Azure Monitor | Хранилище Azure<br>Метрики Azure Monitor<br>Концентратор событий | Журналы Azure Monitor | Журналы Azure Monitor<br>(с помощью агента Log Analytics) |
 | **Службы и**<br>**особенностей**<br>**поддерживается** | Log Analytics<br>Обозреватель метрик | Обозреватель метрик | Azure Monitor для виртуальных машин<br>Log Analytics<br>Служба автоматизации Azure<br>Центр безопасности Azure<br>Azure Sentinel | Azure Monitor для виртуальных машин<br>Сопоставление служб |
 
@@ -60,7 +60,7 @@ ms.locfileid: "91825755"
 - Отправка данных в журналы Azure Monitor и Azure Monitor метрики для анализа с помощью Azure Monitor. 
 - Отправка данных в службу хранилища Azure для архивирования.
 - Отправка данных сторонним средствам с помощью [концентраторов событий Azure](diagnostics-extension-stream-event-hubs.md).
-- Управляйте безопасностью виртуальных машин с помощью [центра безопасности Azure](../../security-center/security-center-intro.md)  или [Sentinel Azure](../../sentinel/overview.md). (Недоступно в предварительной версии.)
+- Управляйте безопасностью виртуальных машин с помощью [центра безопасности Azure](../../security-center/security-center-introduction.md)  или [Sentinel Azure](../../sentinel/overview.md). (Недоступно в предварительной версии.)
 
 К ограничениям агента Azure Monitor относятся:
 
@@ -82,7 +82,7 @@ ms.locfileid: "91825755"
 * Отправляйте данные в рабочую область Log Analytics, чтобы воспользоваться преимуществами функций, поддерживаемых [Azure Monitor журналами](data-platform-logs.md) , такими как [запросы журналов](../log-query/log-query-overview.md).
 * Используйте [Azure Monitor для виртуальных машин](../insights/vminsights-overview.md) , которая позволяет отслеживать масштаб виртуальных машин и отслеживает их процессы и зависимости от других ресурсов и внешних процессов.  
 * Управляйте безопасностью виртуальных машин с помощью [центра безопасности Azure](../../security-center/security-center-intro.md)  или [Sentinel Azure](../../sentinel/overview.md).
-* Использование [управления обновлениями службы автоматизации](../../automation/update-management/update-mgmt-overview.md)Azure, [настройки состояния службы автоматизации](../../automation/automation-dsc-overview.md)Azure или [Отслеживание изменений и инвентаризации Azure Automation](../../automation/change-tracking.md) для предоставления комплексного управления виртуальными машинами Azure
+* Использование [управления обновлениями службы автоматизации](../../automation/update-management/update-mgmt-overview.md)Azure, [настройки состояния службы автоматизации](../../automation/automation-dsc-overview.md)Azure или [Отслеживание изменений и инвентаризации Azure Automation](../../automation/change-tracking/overview.md) для предоставления комплексного управления виртуальными машинами Azure
 * Используйте различные [решения](../monitor-reference.md#insights-and-core-solutions) для мониторинга определенной службы или приложения.
 
 К ограничениям агента Log Analytics относятся:
@@ -148,9 +148,9 @@ ms.locfileid: "91825755"
 | Windows Server 2012 R2                                   | X | X | X | X |
 | Windows Server 2012                                      | X | X | X | X |
 | Windows Server 2008 R2                                   |   | X | X | X |
-| Windows 10 Корпоративная<br>(включая несколько сеансов) и Pro  | X | X | X | X |
-| Windows 8 Корпоративная и Профессиональная                             |   | X | X |   |
-| Windows 7 с пакетом обновления 1 (SP1)                                            |   | X | X |   |
+| Windows 10 Корпоративная<br>(включая несколько сеансов) и Pro<br>(Только серверные сценарии)  | X | X | X | X |
+| Windows 8 Корпоративная и Профессиональная<br>(Только серверные сценарии)  |   | X | X |   |
+| Windows 7 с пакетом обновления 1 (SP1)<br>(Только серверные сценарии)                 |   | X | X |   |
 
 
 ### <a name="linux"></a>Linux
@@ -162,26 +162,26 @@ ms.locfileid: "91825755"
 | CentOS Linux 7                                           | X | X |   | X |
 | CentOS Linux 7,8                                         | X | X | X | X |
 | CentOS Linux 7,6                                         | X | X | X | X |
-| CentOS Linux 6                                           | X | X |   |   |
-| CentOS Linux 6.5 +                                        | X | X |   | X |
+| CentOS Linux 6                                           |   | X |   |   |
+| CentOS Linux 6.5 +                                        |   | X |   | X |
 | Debian 10                                                | X |   |   |   |
-| Debian 9                                                 | X | X | x | X |
+| Debian 9                                                 | X | X | x | X |
 | Debian 8                                                 |   | X | X | X |
 | Debian 7                                                 |   |   |   | X |
 | OpenSUSE 13.1+                                           |   |   |   | X |
 | Oracle Linux 7                                           | X | X |   | X |
-| Oracle Linux 6                                           | X | X |   |   |
-| Oracle Linux 6.4+                                        | X | X |   | X |
+| Oracle Linux 6                                           |   | X |   |   |
+| Oracle Linux 6.4+                                        |   | X |   | X |
 | Red Hat Enterprise Linux Server 8                        |   | X |   |   |
 | Red Hat Enterprise Linux Server 7                        | X | X | X | X |
-| Red Hat Enterprise Linux Server 6                        | X | X | X |   |
-| Red Hat Enterprise Linux Server 6.7 +                     | X | X | X | X |
+| Red Hat Enterprise Linux Server 6                        |   | X | X |   |
+| Red Hat Enterprise Linux Server 6.7 +                     |   | X | X | X |
 | SUSE Linux Enterprise Server 15                          | X | X |   |   |
 | SUSE Linux Enterprise Server 12                          | X | X | X | X |
 | Ubuntu 20.04 LTS                                         |   | X |   |   |
 | Ubuntu 18.04 LTS                                         | X | X | X | X |
 | Ubuntu 16.04 LTS                                         | X | X | X | X |
-| Ubuntu 14,04 LTS                                         | X | X |   | X |
+| Ubuntu 14,04 LTS                                         |   | X |   | X |
 
 
 #### <a name="dependency-agent-linux-kernel-support"></a>Поддержка ядра Linux для агента зависимостей
@@ -205,11 +205,10 @@ ms.locfileid: "91825755"
 | Debian                          | 9      | 4.9  | 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о каждом из агентов см. в следующих статьях:
 
 - [Общие сведения об агенте Log Analytics](log-analytics-agent.md)
 - [Общие сведения о расширении "Диагностика Azure"](diagnostics-extension-overview.md)
 - [Сбор пользовательских метрик для виртуальной машины Linux с помощью агента Telegraf InfluxData](collect-custom-metrics-linux-telegraf.md)
-

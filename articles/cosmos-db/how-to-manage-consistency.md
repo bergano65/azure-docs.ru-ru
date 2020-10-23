@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 06/10/2020
 ms.author: anfeldma
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: 7a07a42e208cb0f6fe91f6a65777fd28155106a1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e43f2e9897293cb4d5bc25b6ef95252a28628401
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91330593"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92279603"
 ---
 # <a name="manage-consistency-levels-in-azure-cosmos-db"></a>Управление уровнями согласованности в Azure Cosmos DB
 
@@ -283,13 +283,14 @@ item = client.ReadItem(doc_link, options)
 
 :::image type="content" source="./media/how-to-manage-consistency/pbs-metric.png" alt-text="Меню согласованности на портале Azure":::
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте больше о том, как управлять конфликтами данных, или перейдите к следующей ключевой концепции в Azure Cosmos DB. Дополнительные сведения см. в следующих статьях:
 
 * [Уровни согласованности в Azure Cosmos DB](consistency-levels.md)
-* [Управление конфликтами между регионами](how-to-manage-conflicts.md)
 * [Секционирование и масштабирование в Azure Cosmos DB](partition-data.md)
+* [Управление конфликтами между регионами](how-to-manage-conflicts.md)
+* [Секционирование и масштабирование в Azure Cosmos DB](partitioning-overview.md)
 * [Компромиссы согласованности в современных распределенных системах баз данных](https://www.computer.org/csdl/magazine/co/2012/02/mco2012020037/13rRUxjyX7k)
 * [Высокая доступность](high-availability.md)
 * [Соглашение об уровне обслуживания для Azure Cosmos DB](https://azure.microsoft.com/support/legal/sla/cosmos-db/v1_2/)

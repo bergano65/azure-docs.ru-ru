@@ -7,12 +7,12 @@ ms.subservice: billing
 ms.topic: conceptual
 ms.date: 08/20/2020
 ms.author: banders
-ms.openlocfilehash: aa8cf0d2a48c75b71895eb75db362c4ec4e291c5
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: 006c995217ced91690798ae68f04e3b6c3148228
+ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88925051"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92131961"
 ---
 # <a name="create-an-additional-azure-subscription"></a>Создание дополнительной подписки Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "88925051"
 |---------|---------|
 |Соглашение Enterprise (EA) |  Роль владельца учетной записи при регистрации на соглашение Enterprise. Дополнительные сведения см. в описании [административных ролей в Azure при использовании Соглашения Azure Enterprise](understand-ea-roles.md).    |
 |Клиентское соглашение Майкрософт (MCA) |  Роль владельца или участника в разделе счетов, профиле выставления счетов или учетной записи выставления счетов. Или роль создателя подписки Azure в разделе счета.  Дополнительные сведения см. в статье [Роли и задачи выставления счетов в подписке](understand-mca-roles.md#subscription-billing-roles-and-tasks).    |
-|Соглашение с партнером Майкрософт (ПСМ) |   Роль глобального администратора и агента администратора в партнерской организации CSP. Дополнительные сведения см. в статье [Назначение пользователям ролей и разрешений](https://docs.microsoft.com/partner-center/permissions-overview).  Пользователь должен войти в клиент партнера для создания подписок Azure.   |
+|Соглашение с партнером Майкрософт (ПСМ) |   Роль глобального администратора и агента администратора в партнерской организации CSP. Дополнительные сведения см. в статье [Назначение пользователям ролей и разрешений](/partner-center/permissions-overview).  Пользователь должен войти в клиент партнера для создания подписок Azure.   |
 
 ## <a name="create-a-subscription-in-the-azure-portal"></a>Создание подписки на портале Azure
 
@@ -79,7 +79,7 @@ ms.locfileid: "88925051"
 
 - [Добавление или изменение администраторов подписки Azure](add-change-subscription-administrator.md)
 - [Перемещение ресурсов в новую группу ресурсов или подписку](../../azure-resource-manager/management/move-resource-group-and-subscription.md)
-- [Создание групп управления для упорядочения ресурсов и управления ими](../../governance/management-groups/create.md)
+- [Создание групп управления для упорядочения ресурсов и управления ими](../../governance/management-groups/create-management-group-portal.md)
 - [Отмена подписки в Azure](cancel-azure-subscription.md)
 
 ## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.

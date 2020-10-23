@@ -95,6 +95,10 @@
       href: expressroute-connect-azure-to-public-cloud.md
     - name: Возможность подключения нескольких сетей
       href: cross-network-connectivity.md
+    - name: Безопасность
+      items:
+        - name: Базовые средства безопасности
+          href: security-baseline.md
     - name: Атрибуты безопасности
       href: expressroute-security-controls.md
     - name: BFD через ExpressRoute
@@ -166,7 +170,7 @@
     - name: Рекомендации
       items:
         - name: Рекомендации по безопасности сети и облачным службам
-          href: ../best-practices-network-security.md
+          href: /azure/cloud-adoption-framework/reference/networking-vdc
         - name: Оптимизация маршрутизации
           href: expressroute-optimize-routing.md
         - name: Асимметричная маршрутизация
@@ -192,9 +196,9 @@
     - name: Azure CLI
       href: /cli/azure/network/express-route
     - name: REST
-      href: 'https://msdn.microsoft.com/library/azure/mt586720'
+      href: /rest/api/expressroute/
     - name: REST (классическая модель)
-      href: 'https://msdn.microsoft.com/library/azure/dn606310'
+      href: /previous-versions/azure/reference/dn606310(v=azure.100)
     - name: Шаблон Resource Manager
       displayName: 'ARM,resource manager template'
       href: /azure/templates/microsoft.network/expressroutecircuits
@@ -269,5 +273,3 @@
           href: expressroute-howto-add-gateway-classic.md
         - name: Создание и изменение общедоступного пиринга
           href: about-public-peering.md
-    - name: Базовые средства безопасности
-      href: security-baseline.md

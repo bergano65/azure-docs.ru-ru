@@ -5,15 +5,15 @@ services: automation
 author: mgoedtel
 ms.service: automation
 ms.topic: include
-ms.date: 10/14/2020
+ms.date: 10/21/2020
 ms.author: magoedte
 ms.custom: include file
-ms.openlocfilehash: f01ca03167c7088c344f72e9943c103d9611bbc6
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 4a6b21d3782931e3bee4a13ff95e7f313dcc1af2
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92082222"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92379814"
 ---
 #### <a name="process-automation"></a>Автоматизация процессов
 
@@ -60,4 +60,4 @@ ms.locfileid: "92082222"
 
 | **Ресурс** | **Ограничение**| **Примечания** |
 |---|---|---|
-|Количество компьютеров на развертывание обновления|500||
+|Количество компьютеров на развертывание обновления|1000||

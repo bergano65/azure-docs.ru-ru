@@ -7,15 +7,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 05/07/2020
+ms.date: 10/15/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 49a5ff61e5f7a17005561e0729a9b0fcb0f954d4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 67bc9d6b35d4841999721a00592a6bbe23bff10f
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85389570"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92340229"
 ---
 # <a name="configure-tokens-in-azure-active-directory-b2c"></a>Настройка маркеров в Azure Active Directory B2C
 
@@ -41,6 +41,9 @@ ms.locfileid: "85389570"
 
 8. Выберите команду **Сохранить**.
 
+> [!NOTE]
+> Одностраничные приложения, использующие поток кода авторизации с PKCE, всегда имеют время существования маркера обновления 24 часа. [Узнайте больше о влиянии маркеров обновления в браузере на безопасность](../active-directory/develop/reference-third-party-cookies-spas.md#security-implications-of-refresh-tokens-in-the-browser).
+
 ## <a name="configure-jwt-token-compatibility"></a>Настройка совместимости маркеров JWT
 
 1. Выберите **Потоки пользователей (политики)** .
@@ -51,6 +54,17 @@ ms.locfileid: "85389570"
     ![Параметры совместимости маркера на портале Azure](./media/configure-tokens/token-compatibility.png)
 
 5. Выберите команду **Сохранить**.
+
+## <a name="provide-optional-claims-to-your-app"></a>Предоставление приложению дополнительных утверждений
+
+Утверждения приложения — это значения, возвращаемые приложению. Обновите поток пользователя, чтобы он содержал нужные утверждения.
+
+1. Выберите **Потоки пользователей (политики)** .
+1. Откройте созданный ранее пользовательский поток.
+1. Выберите элемент **Утверждения приложения**.
+1. Выберите утверждения и атрибуты, которые необходимо отправить обратно в приложение.
+1. Выберите команду **Сохранить**.
+
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

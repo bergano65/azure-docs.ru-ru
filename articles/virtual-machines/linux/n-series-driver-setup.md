@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 01/09/2019
 ms.author: vikancha
-ms.openlocfilehash: 02fbe721f1bf5737ad1d10d656ea75ed1372b484
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c0f05bd9ebd100956cfb7b2b6188e18616368dd0
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87284886"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92168483"
 ---
 # <a name="install-nvidia-gpu-drivers-on-n-series-vms-running-linux"></a>Установка драйверов GPU NVIDIA на виртуальные машины серии N под управлением Linux
 
@@ -310,7 +310,7 @@ sudo reboot
 
 Если драйвер установлен, то отобразятся выходные данные, аналогичные приведенным ниже. Обратите внимание, что **GPU-Util** отобразит 0 %, если в данный момент графический процессор не выполняет рабочую нагрузку на виртуальной машине. Версия драйвера и сведения о GPU могут отличаться от показанных на изображении.
 
-![Состояние устройства NVIDIA](./media/n-series-driver-setup/smi-nv.png)
+![Снимок экрана, на котором показаны выходные данные при запросе состояния устройства GPU.](./media/n-series-driver-setup/smi-nv.png)
  
 
 ### <a name="x11-server"></a>Сервер X11

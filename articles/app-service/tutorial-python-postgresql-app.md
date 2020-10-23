@@ -3,7 +3,7 @@ title: Руководство по развертыванию приложени
 description: Создайте веб-приложение Python с использованием базы данных PostgreSQL и разверните его в Azure. В этом учебнике используется платформа Django, а приложение размещается в Службе приложений Azure в Linux.
 ms.devlang: python
 ms.topic: tutorial
-ms.date: 09/22/2020
+ms.date: 10/09/2020
 ms.custom:
 - mvc
 - seodec18
@@ -11,12 +11,12 @@ ms.custom:
 - cli-validate
 - devx-track-python
 - devx-track-azurecli
-ms.openlocfilehash: a630387a41b6def67141a423249c3347ff034e2e
-ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
+ms.openlocfilehash: e171ce1ab7d2b9d4a78399ee639945bde16b71ca
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91369626"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92019415"
 ---
 # <a name="tutorial-deploy-a-django-web-app-with-postgresql-in-azure-app-service"></a>Руководство по развертыванию веб-приложения Django с PostgreSQL в Службе приложений Azure
 
@@ -114,7 +114,7 @@ cd djangoapp
 - Параметры рабочей среды находятся в файле *azuresite/production.py*. Сведения о разработке хранятся в файле *azuresite/settings.py*.
 - Приложение использует параметры для работы в производственной среде, если для переменной среды `DJANGO_ENV` задано значение production. В учебнике эта переменная среды создается позже вместе с другими переменными, используемыми для настройки базы данных PostgreSQL.
 
-Эти изменения связаны с настройкой Django для запуска в любой рабочей среде и не относятся к Службе приложений. Дополнительные сведения см. в [контрольном списке развертывания Django](https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/).
+Эти изменения связаны с настройкой Django для запуска в любой рабочей среде и не относятся к Службе приложений. Дополнительные сведения см. в [контрольном списке развертывания Django](https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/). Дополнительные сведения о некоторых изменениях см. в разделе [Параметры рабочей среды для Django в Azure](configure-language-python.md#production-settings-for-django-apps).
 
 [Возникли проблемы? Сообщите нам!](https://aka.ms/DjangoCLITutorialHelp)
 
@@ -134,19 +134,19 @@ az extension add --name db-up
 Затем создайте базу данных Postgres в Azure с помощью команды [`az postgres up`](/cli/azure/ext/db-up/postgres#ext-db-up-az-postgres-up):
 
 ```azurecli
-az postgres up --resource-group DjangoPostgres-tutorial-rg --location westus2 --sku-name B_Gen5_1 --server-name <postgre-server-name> --database-name pollsdb --admin-user <admin-username> --admin-password <admin-password> --ssl-enforcement Enabled
+az postgres up --resource-group DjangoPostgres-tutorial-rg --location westus2 --sku-name B_Gen5_1 --server-name <postgres-server-name> --database-name pollsdb --admin-user <admin-username> --admin-password <admin-password> --ssl-enforcement Enabled
 ```
 
-- Замените *\<postgres-server-name>* уникальным именем в Azure (конечная точка сервера — `https://<postgres-server-name>.postgres.database.azure.com`). В качестве хорошего шаблона можно будет использовать сочетание названия компании и другого уникального значения.
+- Замените *\<postgres-server-name>* уникальным именем в Azure (конечная точка сервера станет `https://<postgres-server-name>.postgres.database.azure.com`). В качестве хорошего шаблона можно будет использовать сочетание названия компании и другого уникального значения.
 - Для значений *\<admin-username>* и *\<admin-password>* укажите учетные данные, чтобы создать пользователя с правами администратора для сервера Postgres.
 - [Ценовая категория](../postgresql/concepts-pricing-tiers.md) B_Gen5_1 (Базовый, 5-е поколение, 1 ядро), используемая здесь, является самой дешевой. Для баз данных рабочей среды не указывайте аргумент `--sku-name`, чтобы вместо этого использовать уровень GP_Gen5_2 (общего назначения, 5-е поколение, 2 ядра).
 
 С помощью этой команды выполняются следующие действия (может занять несколько минут):
 
 - Создается [группа ресурсов](../azure-resource-manager/management/overview.md#terminology) с именем `DjangoPostgres-tutorial-rg`, если она еще не существует.
-- Создается сервер Postgres.
-- Создается учетная запись администратора по умолчанию с уникальным именем пользователя и паролем. (Чтобы указать собственные учетные данные, используйте с командой `az postgres up` аргументы `--admin-user` и `--admin-password`.)
-- Создается база данных `pollsdb`.
+- Создается сервер Postgres с именем, указанным в аргументе `--server-name`.
+- Создается учетная запись администратора с помощью аргументов `--admin-user` и `--admin-password`. Эти аргументы можно упустить, чтобы команда могла создавать уникальные учетные данные.
+- Создается база данных `pollsdb` с именем, указанным в аргументе `--database-name`.
 - Разрешается доступ с локального IP-адреса.
 - Разрешается доступ из служб Azure.
 - Создается пользователь базы данных с доступом к базе данных `pollsdb`.
@@ -203,17 +203,19 @@ az webapp up --resource-group DjangoPostgres-tutorial-rg --location westus2 --pl
 
 Теперь, когда код развернут в Службе приложений, необходимо подключить приложение к базе данных Postgres в Azure.
 
-Код приложения должен находить сведения о базе данных в переменных среды. Чтобы задать в Службе приложений переменные среды, вы создаете параметры приложения с помощью команды [az webapp config appsettings set](/cli/azure/webapp/config/appsettings#az-webapp-config-appsettings-set).
+Код приложения должен находить сведения о базе данных в четырех переменных среды с именами `DBHOST`, `DBNAME`, `DBUSER` и `DBPASS`. Чтобы использовать параметры рабочей среды, также требуется для переменной среды `DJANGO_ENV` задать значение `production`.
+
+Чтобы задать в Службе приложений переменные среды, создайте параметры приложения с помощью следующей команды [az webapp config appsettings set](/cli/azure/webapp/config/appsettings#az-webapp-config-appsettings-set).
 
 ```azurecli
-az webapp config appsettings set --settings DJANGO_ENV="production" DBHOST="<postgres-server-name>.postgres.database.azure.com" DBNAME="pollsdb" DBUSER="<username>@<postgres-server-name>" DBPASS="<password>"
+az webapp config appsettings set --settings DJANGO_ENV="production" DBHOST="<postgres-server-name>" DBNAME="pollsdb" DBUSER="<username>" DBPASS="<password>"
 ```
 
-- Замените *\<postgres-server-name>* именем, которое использовали ранее с помощью команды `az postgres up`.
-- Замените *\<username>* и *\<password>* учетными данными, которые также создаются командой. Аргумент `DBUSER` должен быть в формате `<username>@<postgres-server-name>`.
+- Замените *\<postgres-server-name>* именем, которое использовали ранее с помощью команды `az postgres up`. Код в файле *azuresite/production.py* автоматически добавляет `.postgres.database.azure.com` для создания полного URL-адреса сервера Postgres.
+- Замените *\<username>* и *\<password>* учетными данными администратора, которые использовали с предыдущей командой `az postgres up`, или теми, которые были созданы для вас с помощью команды `az postgres up`. Код в файле *azuresite/production.py* автоматически формирует полное имя Postgres для `DBUSER` и `DBHOST`.
 - Имена группы ресурсов и приложения извлекаются из кэшированных значений в файле *.azure/config*.
-- Команда создает параметры с именами `DJANGO_ENV`, `DBHOST`, `DBNAME`, `DBUSER` и `DBPASS`, которые ожидает код приложения.
-- В коде Python можно обращаться к этим параметрам как к переменным среды с помощью таких инструкций, как `os.environ.get('DJANGO_ENV')`. Дополнительную информацию см. в разделе [Доступ к переменным среды](configure-language-python.md#access-environment-variables).
+
+В коде Python можно обращаться к этим параметрам как к переменным среды с помощью таких инструкций, как `os.environ.get('DJANGO_ENV')`. Дополнительную информацию см. в разделе [Доступ к переменным среды](configure-language-python.md#access-environment-variables).
 
 [Возникли проблемы? Сообщите нам!](https://aka.ms/DjangoCLITutorialHelp)
 
@@ -230,6 +232,8 @@ az webapp config appsettings set --settings DJANGO_ENV="production" DBHOST="<pos
     Замените `<app-name>` именем, которое использовали ранее в команде `az webapp up`.
 
     В macOS и Linux можно также подключиться к сеансу SSH с помощью команды [`az webapp ssh`](/cli/azure/webapp?view=azure-cli-latest&preserve-view=true#az_webapp_ssh).
+
+    Если не удается подключиться к сеансу SSH, значит, не запустилось само приложение. [Проверьте журналы диагностики](#stream-diagnostic-logs), чтобы получить подробные сведения. Например, если вы еще не создали необходимые параметры приложения в предыдущем разделе, в журналах будет указано `KeyError: 'DBNAME'`.
 
 1. Выполните следующие команды в сеансе SSH (можно вставить команды с помощью сочетания клавиш **CTRL**+**SHIFT**+**V**):
 
@@ -249,7 +253,7 @@ az webapp config appsettings set --settings DJANGO_ENV="production" DBHOST="<pos
     # Create the super user (follow prompts)
     python manage.py createsuperuser
     ```
-    
+
 1. Команда `createsuperuser` запросит учетные данные суперпользователя. В рамках этого учебника используйте имя пользователя по умолчанию `root`, нажмите **ВВОД**, чтобы адрес электронной почты оставался пустым, а затем введите `Pollsdb1` в качестве пароля.
 
 1. Если отображается сообщение-ошибка о том, что база данных заблокирована, убедитесь, что в предыдущем разделе вы выполнили команду `az webapp settings`. Без этих параметров команда переноса не сможет взаимодействовать с базой данных, что приведет к ошибке.
@@ -259,6 +263,10 @@ az webapp config appsettings set --settings DJANGO_ENV="production" DBHOST="<pos
 ### <a name="create-a-poll-question-in-the-app"></a>Создание вопроса опроса в приложении
 
 1. В браузере откройте URL-адрес `http://<app-name>.azurewebsites.net`. В приложении должно отобразиться сообщение No polls are available (Доступных опросов нет), так как в базе данных нет отдельных опросов.
+
+    Если отображается сообщение об ошибке приложения, скорее всего, вы не создали необходимые параметры на предыдущем шаге [Настройка переменных среды для подключения к базе данных](#configure-environment-variables-to-connect-the-database) или значения этих параметров содержат ошибки. Выполните команду `az webapp config appsettings list`, чтобы проверить параметры. Кроме того, можно [проверить журналы диагностики](#stream-diagnostic-logs), чтобы увидеть конкретные ошибки при запуске приложения. Например, если вы не создали параметры, в журналах отобразится ошибка `KeyError: 'DBNAME'`.
+
+    После обновления параметров для исправления ошибок дайте приложению минуту для перезапуска, а затем обновите страницу браузера.
 
 1. Перейдите по адресу `http://<app-name>.azurewebsites.net/admin`. Выполните вход с использованием учетных данных суперпользователя из предыдущего раздела (`root` и `Pollsdb1`). В разделе **Polls** (Опросы) щелкните **Add** (Добавить) возле поля **Questions** (Вопросы) и создайте вопрос с несколькими вариантами ответа.
 
@@ -403,7 +411,7 @@ python manage.py migrate
 
 ### <a name="review-app-in-production"></a>Проверка приложения в рабочей среде
 
-Перейдите по адресу `http://<app-name>.azurewebsites.net` и снова проверьте приложение в рабочей среде. (Поскольку вы изменили только длину поля базы данных, это изменение заметно только при попытке ввести более длинный ответ при создании вопроса.)
+Перейдите по адресу `http://<app-name>.azurewebsites.net` и снова проверьте приложение в рабочей среде. (Так как вы изменили только длину поля базы данных, это изменение заметно лишь при попытке ввести более длинный ответ при создании вопроса.)
 
 [Возникли проблемы? Сообщите нам!](https://aka.ms/DjangoCLITutorialHelp)
 
@@ -446,7 +454,7 @@ az webapp log tail
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Если вы хотите сохранить приложение или продолжить работу со следующим учебником, перейдите к [дальнейшим действиям](#next-steps). В противном случае, чтобы избежать постоянных расходов, вы можете удалить группу ресурсов, созданную для этого учебника:
+Если вы хотите сохранить приложение или продолжить работу с другими учебниками, перейдите к разделу с [дальнейшими действиями](#next-steps). В противном случае, чтобы избежать постоянных расходов, вы можете удалить группу ресурсов, созданную для этого учебника:
 
 ```azurecli
 az group delete --no-wait

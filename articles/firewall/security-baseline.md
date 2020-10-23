@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 08/05/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 24c9e5137e59fbd14a489b4d41709f39aa448ed8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4794e581dc9855d79cb7cafbc5a6e55f1477f318
+ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89231356"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92329735"
 ---
 # <a name="azure-security-baseline-for-azure-firewall"></a>Базовый уровень безопасности Azure для брандмауэра Azure
 
@@ -370,7 +370,7 @@ ms.locfileid: "89231356"
 
 ### <a name="42-isolate-systems-storing-or-processing-sensitive-information"></a>4.2. Изолирование систем, хранящих или обрабатывающих конфиденциальные данные
 
-**Руководство**. Реализация изоляции с помощью отдельных подписок и групп управления для отдельных доменов безопасности, таких как тип среды и уровень конфиденциальности данных. Вы можете ограничить уровень доступа к ресурсам брандмауэра Azure, которые требуются приложениям и корпоративным средам. Доступ к ресурсам Azure можно контролировать с помощью Azure Active Directory управления доступом на основе ролей. 
+**Руководство**. Реализация изоляции с помощью отдельных подписок и групп управления для отдельных доменов безопасности, таких как тип среды и уровень конфиденциальности данных. Вы можете ограничить уровень доступа к ресурсам брандмауэра Azure, которые требуются приложениям и корпоративным средам. Вы можете управлять доступом к ресурсам Azure с помощью управления доступом на основе ролей Azure. 
 
 - [Создание дополнительных подписок Azure](/azure/billing/billing-create-subscription)
 

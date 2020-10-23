@@ -4,12 +4,12 @@ description: Обзор службы Azure Backup и ее роль в страт
 ms.topic: overview
 ms.date: 04/24/2019
 ms.custom: mvc
-ms.openlocfilehash: 72dee7bbcaa730f12af3ee323157fa92f6694603
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 537605498fe166b24bd4e24673cfa1542bc449ea
+ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "90968329"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92172482"
 ---
 # <a name="what-is-the-azure-backup-service"></a>Часто задаваемые вопросы о службе Azure Backup
 
@@ -46,7 +46,7 @@ Azure Backup предоставляет следующие основные пр
 - **Несколько вариантов хранения** — Azure Backup предлагает два типа репликации для обеспечения высокого уровня доступности хранилища или данных.
   - [Локально избыточное хранилище (LRS)](../storage/common/storage-redundancy.md#locally-redundant-storage) троекратно реплицирует данные (создает три копии) в единице масштабирования хранилища в центре обработки данных. Все копии данных находятся в одном регионе. LRS — это экономный способ защиты данных от сбоев локального оборудования.
   - По умолчанию рекомендуется использовать для репликации [геоизбыточное хранилище (GRS)](../storage/common/storage-redundancy.md#geo-redundant-storage). Геоизбыточное хранилище реплицирует данные в дополнительный регион, который находится в сотнях километров от основного расположения данных. Этот вариант дороже, чем LRS, но GRS обеспечивает высокий уровень устойчивости данных, даже если региональный центр обработки данных выйдет из строя.
-  - [Хранилище, избыточное между зонами (ZRS),](../storage/common/storage-redundancy.md#zone-redundant-storage) реплицирует данные в [зоны доступности](https://docs.microsoft.com/azure/availability-zones/az-overview#availability-zones), гарантируя расположение и устойчивость данных в пределах одного региона. ZRS работает без простоев. Поэтому для критически важных рабочих нагрузок, для которых важно [место расположения данных](https://azure.microsoft.com/resources/achieving-compliant-data-residency-and-security-with-azure/) и отсутствие простоев, резервное копирование можно выполнять в ZRS.
+  - [Хранилище, избыточное между зонами (ZRS),](../storage/common/storage-redundancy.md#zone-redundant-storage) реплицирует данные в [зоны доступности](../availability-zones/az-overview.md#availability-zones), гарантируя расположение и устойчивость данных в пределах одного региона. ZRS работает без простоев. Поэтому для критически важных рабочих нагрузок, для которых важно [место расположения данных](https://azure.microsoft.com/resources/achieving-compliant-data-residency-and-security-with-azure/) и отсутствие простоев, резервное копирование можно выполнять в ZRS.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

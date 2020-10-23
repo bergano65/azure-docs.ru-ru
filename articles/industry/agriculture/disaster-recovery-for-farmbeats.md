@@ -5,12 +5,12 @@ author: uhabiba04
 ms.topic: article
 ms.date: 04/13/2020
 ms.author: v-umha
-ms.openlocfilehash: 1665c535d4b1fb6190ee5736b688b402f8b4a541
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bdd59d078da1df021b7e23ec858ba7305f72cfa1
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81683890"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92164216"
 ---
 # <a name="disaster-recovery-for-farmbeats"></a>Аварийное восстановление для Фармбеатс
 
@@ -45,18 +45,18 @@ ms.locfileid: "81683890"
 Скопируйте ключ доступа восстановленной Cosmos DB и обновите новый Key Vault Фармбеатс Датахуб.
 
 
-  ![Аварийное восстановление](./media/disaster-recovery-for-farmbeats/key-vault-secrets.png)
+  ![Снимок экрана, посвященный месту получения копии ключа доступа.](./media/disaster-recovery-for-farmbeats/key-vault-secrets.png)
 
 > [!NOTE]
 > Скопируйте URL-адрес восстановленной Cosmos DB и обновите его в новой конфигурации службы приложений Фармбеатс Датахуб. Теперь можно удалить учетную запись Cosmos DB в новом развертывании Фармбеатс.
 
-  ![Аварийное восстановление](./media/disaster-recovery-for-farmbeats/configuration.png)
+  ![Снимок экрана, на котором показано, куда копировать URL-адрес восстановленного Cosmos DB.](./media/disaster-recovery-for-farmbeats/configuration.png)
 
 ### <a name="configure-storage-account"></a>Настройка учетной записи хранения
 
 Скопируйте ключ доступа восстановленной учетной записи хранения и обновите его в новом Key Vault Датахуб Фармбеатс.
 
-![Аварийное восстановление](./media/disaster-recovery-for-farmbeats/key-vault-7-secrets.png)
+![Снимок экрана, на котором показано, куда копировать ключ доступа для восстановленной учетной записи хранения.](./media/disaster-recovery-for-farmbeats/key-vault-7-secrets.png)
 
 >[!NOTE]
 > Обязательно обновите имя учетной записи хранения в новом файле конфигурации виртуальной машины Фармбеатс Batch.

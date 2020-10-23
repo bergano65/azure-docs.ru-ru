@@ -1,36 +1,33 @@
 ---
 title: Планирование заданий U-SQL Azure Data Lake Analytics с использованием служб MSSQL Integration Services
 description: Узнайте, как использовать SQL Server Integration Services для планирования заданий U-SQL с помощью встроенного скрипта или файлов запросов U-SQL.
-services: data-lake-analytics
 ms.reviewer: jasonh
-ms.assetid: 66dd58b1-0b28-46d1-aaae-43ee2739ae0a
 ms.service: data-lake-analytics
 ms.topic: how-to
-ms.workload: big-data
 ms.date: 07/17/2018
-ms.openlocfilehash: a5c7b9fb6a3431534d743f1ebd0b21f1da9fab7b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b080b433f5af49e970faba02003fb68e21a08365
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91318710"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92221457"
 ---
 # <a name="schedule-u-sql-jobs-using-sql-server-integration-services-ssis"></a>Планирование заданий U-SQL с использованием служб Integration Services (SSIS)
 
 Этот документ содержит сведения о координации и создании задания U-SQL с помощью службы Integration Service (SSIS). 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
-[Пакет дополнительных компонентов Azure для служб Integration Services](https://docs.microsoft.com/sql/integration-services/azure-feature-pack-for-integration-services-ssis?view=sql-server-2017#scenario-managing-data-in-the-cloud) предоставляет [задачу Azure Data Lake Analytics](https://docs.microsoft.com/sql/integration-services/control-flow/azure-data-lake-analytics-task?view=sql-server-2017) и [диспетчер подключений Azure Data Lake Analytics](https://docs.microsoft.com/sql/integration-services/connection-manager/azure-data-lake-analytics-connection-manager?view=sql-server-2017), что позволяет подключиться к службе Azure Data Lake Analytics. Чтобы использовать эту задачу, убедитесь, что установлено следующее ПО.
+[Пакет дополнительных компонентов Azure для служб Integration Services](/sql/integration-services/azure-feature-pack-for-integration-services-ssis#scenario-managing-data-in-the-cloud) предоставляет [задачу Azure Data Lake Analytics](/sql/integration-services/control-flow/azure-data-lake-analytics-task) и [диспетчер подключений Azure Data Lake Analytics](/sql/integration-services/connection-manager/azure-data-lake-analytics-connection-manager), что позволяет подключиться к службе Azure Data Lake Analytics. Чтобы использовать эту задачу, убедитесь, что установлено следующее ПО.
 
-- [Скачивание и установка SQL Server Data Tools (SSDT) для Visual Studio](https://docs.microsoft.com/sql/ssdt/download-sql-server-data-tools-ssdt?view=sql-server-2017)
-- [Установите пакет дополнительных компонентов Azure для служб Integration Services (SSIS)](https://docs.microsoft.com/sql/integration-services/azure-feature-pack-for-integration-services-ssis?view=sql-server-2017)
+- [Скачивание и установка SQL Server Data Tools (SSDT) для Visual Studio](/sql/ssdt/download-sql-server-data-tools-ssdt)
+- [Установите пакет дополнительных компонентов Azure для служб Integration Services (SSIS)](/sql/integration-services/azure-feature-pack-for-integration-services-ssis)
 
 ## <a name="azure-data-lake-analytics-task"></a>Задача Azure Data Lake Analytics
 
 Задача Azure Data Lake Analytics дает возможность пользователям отправлять задания U-SQL в учетную запись Azure Data Lake Analytics. 
 
-[Дополнительные сведения о настройке задачи Azure Data Lake Analytics](https://docs.microsoft.com/sql/integration-services/control-flow/azure-data-lake-analytics-task?view=sql-server-2017).
+[Дополнительные сведения о настройке задачи Azure Data Lake Analytics](/sql/integration-services/control-flow/azure-data-lake-analytics-task).
 
 ![Задача Azure Data Lake Analytics в службах MSSQL Integration Services](./media/data-lake-analytics-schedule-jobs-ssis/data-lake-analytics-azure-data-lake-analytics-task-in-ssis.png)
 
@@ -61,13 +58,13 @@ ms.locfileid: "91318710"
 ### <a name="configure-azure-data-lake-store-file-system-task"></a>Настройка задачи файловой системы Azure Data Lake Store
 
 1. Установите параметру **Операция** значение **CopyFromADLS**.
-2. Настройте **AzureDataLakeConnection**, дополнительные сведения о [диспетчере подключений Azure Data Lake Store](https://docs.microsoft.com/sql/integration-services/connection-manager/azure-data-lake-store-connection-manager?view=sql-server-2017).
+2. Настройте **AzureDataLakeConnection**, дополнительные сведения о [диспетчере подключений Azure Data Lake Store](/sql/integration-services/connection-manager/azure-data-lake-store-connection-manager).
 3. Установите **AzureDataLakeDirectory**. Укажите папку для хранения сценариев U-SQL. Используйте относительный путь, который связан с корневой папкой учетной записи Azure Data Lake Store.
 4. Установите параметр **Назначение** папке, которая кэширует загруженные сценарии U-SQL. Этот путь к папке будет использоваться в контейнере "Цикл по каждому элементу" для отправки задания U-SQL. 
 
 ![Настройка задачи файловой системы Azure Data Lake Store](./media/data-lake-analytics-schedule-jobs-ssis/configure-azure-data-lake-store-file-system-task.png)
 
-[Дополнительные сведения о задаче файловой системы Azure Data Lake Store](https://docs.microsoft.com/sql/integration-services/control-flow/azure-data-lake-store-file-system-task?view=sql-server-2017).
+[Дополнительные сведения о задаче файловой системы Azure Data Lake Store](/sql/integration-services/control-flow/azure-data-lake-store-file-system-task).
 
 ### <a name="configure-foreach-loop-container"></a>Настройка контейнера "Цикл по каждому элементу"
 
@@ -102,9 +99,9 @@ ms.locfileid: "91318710"
 
        ![Настройка контейнера "Цикл по каждому элементу"](./media/data-lake-analytics-schedule-jobs-ssis/configure-file-connection-property-for-foreach-loop-container.png)
 
-3. Задайте параметру **AzureDataLakeAnalyticsConnection** учетную запись Azure Data Lake Analytics, в которую требуется отправлять задания. Дополнительные сведения о [диспетчере подключений Azure Data Lake Analytics](https://docs.microsoft.com/sql/integration-services/connection-manager/azure-data-lake-analytics-connection-manager?view=sql-server-2017).
+3. Задайте параметру **AzureDataLakeAnalyticsConnection** учетную запись Azure Data Lake Analytics, в которую требуется отправлять задания. Дополнительные сведения о [диспетчере подключений Azure Data Lake Analytics](/sql/integration-services/connection-manager/azure-data-lake-analytics-connection-manager).
 
-4. Задайте другие конфигурации задания. [Подробнее](https://docs.microsoft.com/sql/integration-services/control-flow/azure-data-lake-analytics-task?view=sql-server-2017)
+4. Задайте другие конфигурации задания. [Подробнее](/sql/integration-services/control-flow/azure-data-lake-analytics-task)
 
 5. Используйте **Выражения** для динамической настройки имени задания U-SQL.
 
@@ -117,7 +114,7 @@ ms.locfileid: "91318710"
 
 Можно использовать файлы U-SQL в хранилище BLOB-объектов Azure с помощью **задачи загрузки BLOB-объектов Azure** в пакете дополнительных компонентов Azure. Такой подход позволяет использовать сценарии, хранимые в облаке.
 
-Эти шаги похожи на [Сценарий 2. Используйте файлы U-SQL в Azure Data Lake Store](#scenario-2-use-u-sql-files-in-azure-data-lake-store). Измените задачу файловой системы Azure Data Lake Store на задачу скачивания BLOB-объектов Azure. [Дополнительные сведения о задаче загрузки BLOB-объектов Azure](https://docs.microsoft.com/sql/integration-services/control-flow/azure-blob-download-task?view=sql-server-2017).
+Эти шаги похожи на [Сценарий 2. Используйте файлы U-SQL в Azure Data Lake Store](#scenario-2-use-u-sql-files-in-azure-data-lake-store). Измените задачу файловой системы Azure Data Lake Store на задачу скачивания BLOB-объектов Azure. [Дополнительные сведения о задаче загрузки BLOB-объектов Azure](/sql/integration-services/control-flow/azure-blob-download-task).
 
 Поток управления такой как показано ниже.
 
@@ -162,10 +159,10 @@ ms.locfileid: "91318710"
 - Задать динамические переменные пути ввода и вывода на основе текущей даты и времени.
 - Задать параметр для хранимых процедур.
 
-[Дополнительные сведения о настройке параметров для скрипта U-SQL](https://docs.microsoft.com/sql/integration-services/control-flow/azure-data-lake-analytics-task?view=sql-server-2017#parameter-mapping-page-configuration).
+[Дополнительные сведения о настройке параметров для скрипта U-SQL](/sql/integration-services/control-flow/azure-data-lake-analytics-task#parameter-mapping-page-configuration).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Запуск пакетов служб Integration Services в Azure](https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-ssis-activity)
-- [Пакет дополнительных компонентов Azure для служб Integration Services (SSIS)](https://docs.microsoft.com/sql/integration-services/azure-feature-pack-for-integration-services-ssis?view=sql-server-2017#scenario-managing-data-in-the-cloud)
-- [Преобразование данных с помощью сценариев U-SQL в Azure Data Lake Analytics](https://docs.microsoft.com/azure/data-factory/transform-data-using-data-lake-analytics)
+- [Запуск пакетов служб Integration Services в Azure](../data-factory/how-to-invoke-ssis-package-ssis-activity.md)
+- [Пакет дополнительных компонентов Azure для служб Integration Services (SSIS)](/sql/integration-services/azure-feature-pack-for-integration-services-ssis#scenario-managing-data-in-the-cloud)
+- [Преобразование данных с помощью сценариев U-SQL в Azure Data Lake Analytics](../data-factory/transform-data-using-data-lake-analytics.md)

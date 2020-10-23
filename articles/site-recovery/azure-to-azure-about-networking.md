@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 3/13/2020
 ms.author: harshacs
-ms.openlocfilehash: 622f0d66f2c8a9f7cf0539d14499897acf7b68e6
-ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
+ms.openlocfilehash: b9fdaf8a0791570ecee402442c5faefe2f70a22b
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92096340"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92370446"
 ---
 # <a name="about-networking-in-azure-vm-disaster-recovery"></a>Сведения о сетях в аварийном восстановлении виртуальной машины Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "92096340"
 
 На следующей схеме показана типичная среда Azure для приложения, работающего на виртуальных машинах Azure:
 
-![customer-environment](./media/site-recovery-azure-to-azure-architecture/source-environment.png)
+![Схема, на которой показана типичная среда Azure для приложений, работающих на виртуальных машинах Azure.](./media/site-recovery-azure-to-azure-architecture/source-environment.png)
 
 Если вы используете Azure ExpressRoute или VPN-подключение из локальной сети в Azure, среда выглядит следующим образом.
 
@@ -41,8 +41,8 @@ ms.locfileid: "92096340"
 > Если для управления сетевым подключением используется прокси-сервер, прошедший аутентификацию, эта функция не поддерживается Site Recovery, а репликацию включить невозможно.
 
 >[!NOTE]
-> Для управления исходящими подключениями не следует выполнять фильтрацию на основе IP-адресов.
-> Azure Site Recovery IP-адреса не следует добавлять в таблицу маршрутизации Azure для управления исходящими подключениями.
+>- Для управления исходящими подключениями не следует выполнять фильтрацию на основе IP-адресов.
+>- Azure Site Recovery IP-адреса не следует добавлять в таблицу маршрутизации Azure для управления исходящими подключениями.
 
 ## <a name="outbound-connectivity-for-urls"></a>Исходящие подключения для URL-адресов
 
@@ -62,9 +62,9 @@ login.microsoftonline.com | Требуется для авторизации и 
 При использовании NSG для управления исходящими подключениями эти теги служб должны быть разрешены.
 
 - Для учетных записей хранения в исходном регионе:
-    - Создайте правило NSG на основе [тега службы хранилища](../virtual-network/security-overview.md#service-tags) для исходного региона.
+    - Создайте правило NSG на основе [тега службы хранилища](../virtual-network/network-security-groups-overview.md#service-tags) для исходного региона.
     - Разрешите эти адреса, чтобы данные можно было записать в учетную запись хранения кэша с виртуальной машины.
-- Создайте [тег службы Azure Active Directory (AAD)](../virtual-network/security-overview.md#service-tags) на основе правила NSG, чтобы разрешить доступ ко всем IP-адресам, соответствующим AAD.
+- Создайте [тег службы Azure Active Directory (AAD)](../virtual-network/network-security-groups-overview.md#service-tags) на основе правила NSG, чтобы разрешить доступ ко всем IP-адресам, соответствующим AAD.
 - Создайте правило NSG на основе тега Евентшуб Service для целевого региона, разрешив доступ к Site Recoveryному мониторингу.
 - Создайте правило NSG на основе тега Азуреситерековери Service, чтобы разрешить доступ к Site Recovery службе в любом регионе.
 - Создайте правило NSG на основе тега AzureKeyVault Service. Это необходимо только для включения репликации виртуальных машин с поддержкой ADE через портал.
@@ -125,7 +125,7 @@ login.microsoftonline.com | Требуется для авторизации и 
 
 Вы можете переопределить системный маршрут Azure по умолчанию для префикса адреса 0.0.0.0/0, указав [настраиваемый маршрут](../virtual-network/virtual-networks-udr-overview.md#custom-routes), и перенаправить трафик виртуальных машин на локальный сетевой виртуальный модуль (NVA), но такая конфигурация не рекомендуется для репликации Site Recovery. При использовании настраиваемых маршрутов рекомендуется создать в виртуальной сети для хранилища [конечную точку службы для виртуальной сети](azure-to-azure-about-networking.md#create-network-service-endpoint-for-storage), чтобы трафик репликации не покидал границ Azure.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Включите защиту рабочих нагрузок, [выполнив репликацию виртуальных машин Azure](./azure-to-azure-quickstart.md).
 - Узнайте больше о [сохранении IP-адресов](site-recovery-retain-ip-azure-vm-failover.md) при отработке отказа виртуальных машин Azure.
 - Узнайте больше об аварийном восстановлении [виртуальных машин Azure с помощью ExpressRoute](azure-vm-disaster-recovery-with-expressroute.md).

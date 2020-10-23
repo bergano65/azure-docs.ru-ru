@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 09/03/2019
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: 5a0a040d80911b086561213bd0884ed67545c618
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: 9eda54ad23e06149910fe69ec16588f49829a5a5
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87920795"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92122829"
 ---
 ::: zone target = "docs"
 
@@ -124,7 +124,7 @@ ms.locfileid: "87920795"
  
 1. Скопируйте данные на оба узла устройства с помощью интерфейсов данных с пропускной способностью 40 Гбит/с в параллельном режиме.
 
-    - При использовании узла Windows используйте инструмент копирования файлов, совместимый с протоколом SMB, например [Robocopy](https://technet.microsoft.com/library/ee851678.aspx).
+    - При использовании узла Windows используйте инструмент копирования файлов, совместимый с протоколом SMB, например [Robocopy](/previous-versions/technet-magazine/ee851678(v=msdn.10)).
     - Для узла NFS используйте команду `cp` или `rsync`, чтобы скопировать данные.
 2. Подключитесь к общим ресурсам на устройстве, используя путь: `\\<IP address of your device>\ShareName`. Учетные данные для доступа к общему ресурсу можно узнать на странице **Подключиться и копировать** в локальном пользовательском веб-интерфейсе Data Box Heavy.
 3. Убедитесь, что имена общих ресурсов и папок, а также данные соответствуют рекомендациям, приведенным в разделе об [ограничениях Службы хранилища Azure и Data Box Heavy](data-box-heavy-limits.md).

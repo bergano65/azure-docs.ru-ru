@@ -6,12 +6,12 @@ ms.author: rosouz
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 09/09/2020
-ms.openlocfilehash: 6f34b36d495a2ef326727629d090a0da5260ce10
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: ebd3893f6443edda276bfb3b1e39ae0fe093acb2
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92014568"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92104110"
 ---
 # <a name="frequently-asked-questions-about-azure-synapse-link-for-azure-cosmos-db"></a>Часто задаваемые вопросы об Azure Synapse Link для Azure Cosmos DB
 
@@ -97,6 +97,10 @@ Azure Cosmos DB гарантирует изолированное выполн�
 ### <a name="can-i-customize-or-override-the-way-transactional-data-is-transformed-into-columnar-format-in-the-analytical-store"></a>Можно ли настроить или переопределить способ преобразования данных о транзакциях в формат столбцов в аналитическом хранилище?
 
 В настоящее время элементы данных, которые автоматически распространяются из хранилища транзакций в аналитическое хранилище, преобразовать невозможно. При наличии сценариев, блокируемых этим ограничением, отправьте сообщение электронной почты [команде Azure Cosmos DB](mailto:cosmosdbsynapselink@microsoft.com).
+
+### <a name="is-analytical-store-supported-by-terraform"></a>Поддерживается ли в terraform аналитическое хранилище?
+
+В настоящее время terraform не поддерживает контейнеры аналитических хранилищ. Дополнительные сведения см. в [terraform о проблемах GitHub](https://github.com/hashicorp/terraform/issues) .
 
 ## <a name="analytical-time-to-live-ttl"></a>Аналитический срок жизни
 

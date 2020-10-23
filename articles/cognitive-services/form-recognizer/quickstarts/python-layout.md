@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.date: 10/05/2020
 ms.author: pafarley
 ms.custom: devx-track-python
-ms.openlocfilehash: 9f136248b93283b02824ead7f34886a056ae0a33
-ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
+ms.openlocfilehash: 72420019ead1ae47054ae62197d8cc310063a6b9
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91762065"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91969778"
 ---
 # <a name="quickstart-extract-text-and-layout-information-using-the-form-recognizer-rest-api-with-python"></a>Краткое руководство. Извлечение текста и сведений о макете с использованием Распознавателя документов и Python
 
@@ -27,7 +27,7 @@ ms.locfileid: "91762065"
 
 Для работы с этим кратким руководством требуется следующее:
 - Среда [Python](https://www.python.org/downloads/), если вы хотите выполнить этот пример кода локально.
-- Документ формы. Вы можете скачать образ из [примера набора данных](https://go.microsoft.com/fwlink/?linkid=2090451) для этого краткого руководства.
+- Документ формы. Для выполнения инструкций из этого краткого руководства можно использовать изображение из [образца набора данных](https://go.microsoft.com/fwlink/?linkid=2090451) (скачайте и разархивируйте файл *sample_data.zip*).
 
 > [!NOTE]
 > В этом кратком руководстве используется документ, сохраненный локально. Чтобы узнать, как использовать удаленные файлы, доступ к которым осуществляется по URL-адресу, см. [справочную документацию](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeLayoutAsync).

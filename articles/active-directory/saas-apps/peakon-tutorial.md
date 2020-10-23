@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 03/19/2019
 ms.author: jeedes
-ms.openlocfilehash: a7e385b40911e1adf4e5142de4fb627334baee4a
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 08d9c2f1676c0a04e9cd191b64c41af276521b3d
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88543752"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91996084"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-peakon"></a>Руководство. Интеграция Azure Active Directory с Peakon
 
@@ -110,7 +110,7 @@ ms.locfileid: "88543752"
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа приложения Peakon](common/metadata-upload-additional-signon.png)
+    ![Снимок экрана: выбранный раздел "Задать дополнительные URL-адреса" с выделенным текстовым полем "URL-адрес для входа".](common/metadata-upload-additional-signon.png)
 
     В текстовом поле **URL-адрес входа** введите URL-адрес: `https://app.peakon.com/login`.
 

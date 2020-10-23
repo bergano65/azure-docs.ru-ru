@@ -13,12 +13,12 @@ ms.custom:
 - mqtt
 - 'Role: Cloud Development'
 - 'Role: IoT Device'
-ms.openlocfilehash: 2f811c504f8871b06805d5578ed2d70c651be25d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 709ebacc66382d75b79cd41edf88cad962dfd7c2
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90029840"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92147718"
 ---
 # <a name="understand-the-identity-registry-in-your-iot-hub"></a>Общие сведения о реестре удостоверений в Центре Интернета вещей
 
@@ -84,7 +84,7 @@ ms.locfileid: "90029840"
 
 Дополнительные сведения об интерфейсах API импорта и экспорта см. в статье о [ресурсах Центра Интернета вещей](/rest/api/iothub/iothubresource). Дополнительные сведения о выполнении заданий импорта и экспорта см. в статье [Управление удостоверениями устройств Центра Интернета вещей в пакетном режиме](iot-hub-bulk-identity-mgmt.md).
 
-Удостоверения устройств также можно экспортировать и импортировать из центра Интернета вещей через API службы с помощью [REST API](/rest/api/iothub/service/jobs/createimportexportjob) или одного из [пакетов SDK службы](/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-hub-service-sdks)центра Интернета вещей.
+Удостоверения устройств также можно экспортировать и импортировать из центра Интернета вещей через API службы с помощью [REST API](/rest/api/iothub/service/jobs/createimportexportjob) или одного из [пакетов SDK службы](./iot-hub-devguide-sdks.md#azure-iot-hub-service-sdks)центра Интернета вещей.
 
 ## <a name="device-provisioning"></a>Подготовка устройств
 
@@ -124,7 +124,7 @@ ms.locfileid: "90029840"
 |operationTimestamp | Отметка времени операции по стандарту ISO8601 |
 |iothub-message-schema | deviceLifecycleNotification |
 
-Текст: этот раздел имеет формат JSON и представляет двойник созданного удостоверения устройства. Например,
+Текст: этот раздел имеет формат JSON и представляет двойник созданного удостоверения устройства. Например:
 
 ```json
 {
@@ -160,7 +160,7 @@ moduleId | Идентификатор модуля |
 operationTimestamp | Отметка времени операции по стандарту ISO8601 |
 iothub-message-schema | moduleLifecycleNotification |
 
-Текст: этот раздел имеет формат JSON и представляет двойник созданного удостоверения модуля. Например,
+Текст: этот раздел имеет формат JSON и представляет двойник созданного удостоверения модуля. Например:
 
 ```json
 {
@@ -244,7 +244,7 @@ iothub-message-schema | moduleLifecycleNotification |
 
 * Статья [Взаимодействие с Центром Интернета вещей с помощью протокола MQTT](iot-hub-mqtt-support.md) содержит дополнительные сведения о поддержке протокола MQTT в Центре Интернета вещей.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали, как использовать реестр удостоверений Центра Интернета вещей, вас могут заинтересовать следующие статьи в руководстве разработчика для Центра Интернета вещей:
 

@@ -12,12 +12,12 @@ author: MayMSFT
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 07/31/2020
-ms.openlocfilehash: 18904987d409f526c2bbd6cd917558e8ce6f751c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 72124c7e52afcf68f33a8b8a2295448506b0719f
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91842637"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92165032"
 ---
 # <a name="create-azure-machine-learning-datasets"></a>Создание наборов данных Машинного обучения Azure
 
@@ -173,7 +173,7 @@ titanic_ds.take(3).to_pandas_dataframe()
 -|-----------|--------|------|----|---|---|-----|-----|------|----|-----|--------|
 0|1|False|3|Браунд, Mr. О'мэлли Owen Харрис|Мужской|22,0|1|0|A/5 21171|7,2500||S
 1|2|True|1|Кумингс, Mrs. Джон Кирилл (Флоренция Бриггс TH...|Женский|38,0|1|0|PC 17599|71,2833|C85|C
-2|3|True|3|Хеиккинен, промах. лаина|Женский|26,0|0|0|СТОН/O2. 3101282|7,9250||S
+2|3|Да|3|Хеиккинен, промах. лаина|Женский|26,0|0|0|СТОН/O2. 3101282|7,9250||S
 
 Чтобы повторно использовать наборы данных и обмениваться ими между экспериментами в рабочей области, [зарегистрируйте свой DataSet](#register-datasets).
 
@@ -204,7 +204,7 @@ datastore = workspace.get_default_datastore()
 datastore.upload(src_dir='data', target_path='data')
 
 # create a dataset referencing the cloud location
-dataset = Dataset.Tabular.from_delimited_files(path = [(datastore, ('data/prepared.csv')]
+dataset = Dataset.Tabular.from_delimited_files(path = [(datastore, ('data/prepared.csv'))])
 ```
 
 > [!TIP]
@@ -255,7 +255,7 @@ titanic_ds = titanic_ds.register(workspace = workspace,
                                  create_new_version = True)
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, [как обучаться с помощью наборов данных](how-to-train-with-datasets.md).
 * Используйте автоматическое машинное обучение для [обучения с табулардатасетс](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/forecasting-energy-demand/auto-ml-forecasting-energy-demand.ipynb).

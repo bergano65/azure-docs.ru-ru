@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/08/2020
 author: mingshen-ms
 ms.author: mingshen
-ms.openlocfilehash: d232f7ba1304d76a0ba2db62b9f0f9b4229513f1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8bcea36b99ae51da256d6b4fc49a4e3965a8c82c
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89378612"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92279168"
 ---
 # <a name="metered-billing-for-saas-using-the-commercial-marketplace-metering-service"></a>Выставление счетов за использование SaaS с помощью службы контроля использования коммерческих рынков
 
@@ -153,8 +153,8 @@ ms.locfileid: "89378612"
 - Проблема, которая должна быть передана из-за ошибки или ошибки на стороне пользователя (например, неверное событие использования.)
 - Другие проблемы, связанные с лимитным выставленным счетом.
 
-Чтобы узнать о вариантах поддержки издателя и отправить запрос в службу поддержки корпорации Майкрософт, следуйте инструкциям в статье [Поддержка программы коммерческого рынка в центре партнеров](./support.md).
+Чтобы узнать о вариантах поддержки издателя и отправить запрос в службу поддержки корпорации Майкрософт, следуйте инструкциям в статье [Поддержка программы коммерческого рынка в центре партнеров](../support.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [API-интерфейсы службы из Marketplace для контроля потребления](./marketplace-metering-service-apis.md)

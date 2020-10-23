@@ -8,12 +8,12 @@ ms.service: signalr
 ms.topic: article
 ms.date: 05/06/2020
 ms.author: dayshen
-ms.openlocfilehash: 645b2c643c1c1d4fe82eb5998a35ccc48536603e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 80369883b84ca30cae475235d41addcfba7e52e1
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84302146"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92152341"
 ---
 # <a name="use-private-endpoints-for-azure-signalr-service"></a>Использование частных конечных точек для службы SignalR Azure
 
@@ -60,7 +60,7 @@ ms.locfileid: "84302146"
 | Имя                                                  | Тип  | Значение                                                 |
 | :---------------------------------------------------- | :---: | :---------------------------------------------------- |
 | ``foobar.service.signalr.net``                        | CNAME | ``foobar.privatelink.service.signalr.net``            |
-| ``foobar.privatelink.service.signalr.net``            | Объект     | \<Azure SignalR Service public IP address\>           |
+| ``foobar.privatelink.service.signalr.net``            | A     | \<Azure SignalR Service public IP address\>           |
 
 Как упоминалось ранее, вы можете запретить или контролировать доступ клиентов за пределами виртуальной сети через общедоступную конечную точку, используя контроль доступа к сети.
 
@@ -69,7 +69,7 @@ ms.locfileid: "84302146"
 | Имя                                                  | Тип  | Значение                                                 |
 | :---------------------------------------------------- | :---: | :---------------------------------------------------- |
 | ``foobar.service.signalr.net``                        | CNAME | ``foobar.privatelink.service.signalr.net``            |
-| ``foobar.privatelink.service.signalr.net``            | Объект     | 10.1.1.5                                              |
+| ``foobar.privatelink.service.signalr.net``            | A     | 10.1.1.5                                              |
 
 Такой подход обеспечивает доступ к службе Azure SignalR, **используя ту же строку подключения** для клиентов в виртуальной сети, где размещаются частные конечные точки, а также клиенты за пределами виртуальной сети.
 
@@ -82,8 +82,8 @@ ms.locfileid: "84302146"
 
 Дополнительные сведения о настройке собственного DNS-сервера для поддержки частных конечных точек см. в следующих статьях:
 
-- [Разрешение имен ресурсов в виртуальных сетях Azure](/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances#name-resolution-that-uses-your-own-dns-server)
-- [Конфигурация DNS для частных конечных точек](/azure/private-link/private-endpoint-overview#dns-configuration)
+- [Разрешение имен ресурсов в виртуальных сетях Azure](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md#name-resolution-that-uses-your-own-dns-server)
+- [Конфигурация DNS для частных конечных точек](../private-link/private-endpoint-overview.md#dns-configuration)
 
 ## <a name="create-a-private-endpoint"></a>Создание частной конечной точки
 
@@ -198,7 +198,7 @@ ms.locfileid: "84302146"
 
 ### <a name="network-security-group-rules-for-subnets-with-private-endpoints"></a>Правила групп безопасности сети для сетей с частными конечными точками
 
-Сейчас нельзя настроить правила [группы безопасности сети](../virtual-network/security-overview.md) (NSG) и определяемые пользователем маршруты для частных конечных точек. Правила NSG, применяемые к подсети, в которой размещается частная конечная точка, применяются к частной конечной точке. Для этой проблемы ограниченный обходной путь заключается в реализации правил доступа для частных конечных точек в исходных подсетях, хотя этот подход может потребовать более высоких затрат на управление.
+Сейчас нельзя настроить правила [группы безопасности сети](../virtual-network/network-security-groups-overview.md) (NSG) и определяемые пользователем маршруты для частных конечных точек. Правила NSG, применяемые к подсети, в которой размещается частная конечная точка, применяются к частной конечной точке. Для этой проблемы ограниченный обходной путь заключается в реализации правил доступа для частных конечных точек в исходных подсетях, хотя этот подход может потребовать более высоких затрат на управление.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

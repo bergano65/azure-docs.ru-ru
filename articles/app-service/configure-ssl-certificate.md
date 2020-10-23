@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.date: 10/25/2019
 ms.reviewer: yutlin
 ms.custom: seodec18
-ms.openlocfilehash: c8ede3c4a186b4b24d56651deb8172fdcde8e5ed
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3201870d2d738a867f89166904d668b5596cbcdf
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89420886"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92149068"
 ---
 # <a name="add-a-tlsssl-certificate-in-azure-app-service"></a>Добавление TLS/SSL-сертификата в Службу приложений Azure
 
@@ -145,8 +145,8 @@ ms.locfileid: "89420886"
 | Группа ресурсов | Рекомендуется выбирать группу ресурсов, идентичную сертификату службы приложений. |
 | Расположение | Предназначено для выбора расположения, идентичного тому, где находится приложение службы приложений. |
 | Ценовая категория | Дополнительные сведения см. в статье [Цены на Key Vault ](https://azure.microsoft.com/pricing/details/key-vault/). |
-| Политики доступа| Определяет приложения и разрешает доступ к ресурсам хранилища. Ее можно настроить позднее, выполнив инструкции из статьи [Назначение политики доступа к Key Vault с помощью портала Azure](/azure/key-vault/general/assign-access-policy-portal). |
-| Доступ к виртуальной сети | Ограничьте доступ к хранилищу для определенных виртуальных сетей Azure. Воспользовавшись сведениями из статьи [Настройка брандмауэров и виртуальных сетей Azure Key Vault](/azure/key-vault/general/network-security), его можно настроить потом. |
+| Политики доступа| Определяет приложения и разрешает доступ к ресурсам хранилища. Ее можно настроить позднее, выполнив инструкции из статьи [Назначение политики доступа к Key Vault с помощью портала Azure](../key-vault/general/assign-access-policy-portal.md). |
+| Доступ к виртуальной сети | Ограничьте доступ к хранилищу для определенных виртуальных сетей Azure. Воспользовавшись сведениями из статьи [Настройка брандмауэров и виртуальных сетей Azure Key Vault](../key-vault/general/network-security.md), его можно настроить потом. |
 
 После выбора хранилища закройте страницу **Репозиторий Key Vault**. Возле параметра **Шаг 1. Сохранение** должен отображаться зеленый значок галочки, который оповещает об успехе. На протяжении выполнения следующего шага данная страница должна быть открыта.
 
@@ -189,7 +189,7 @@ ms.locfileid: "89420886"
 Если для управления сертификатами используется Azure Key Vault, то можно импортировать сертификат PKCS12 из Key Vault в Службу приложений, если он [соответствует требованиям](#private-certificate-requirements).
 
 ### <a name="authorize-app-service-to-read-from-the-vault"></a>Авторизация Службы приложений на чтение из хранилища
-По умолчанию поставщик ресурсов Службы приложений не имеет доступ к Key Vault. Чтобы использовать Key Vault для развертывания сертификата, необходимо [авторизовать для поставщика ресурсов доступ на чтение к KeyVault](../key-vault/general/group-permissions-for-apps.md#grant-access-to-your-key-vault). 
+По умолчанию поставщик ресурсов Службы приложений не имеет доступ к Key Vault. Чтобы использовать Key Vault для развертывания сертификата, необходимо [авторизовать для поставщика ресурсов доступ на чтение к KeyVault](../key-vault/general/assign-access-policy-cli.md). 
 
 `abfa0a7c-a6b6-4736-8310-5855508787cd` — это имя субъекта-службы поставщика ресурсов для Службы приложений, одинаковое для всех подписок Azure. Для облачной среды Azure для государственных организаций используйте `6a02c803-dafd-4136-b4c3-5a6f318b4714` вместо имени субъекта-службы поставщика ресурсов.
 
@@ -378,11 +378,11 @@ az keyvault secret download \
 
 ### <a name="azure-cli"></a>Azure CLI
 
-[!code-azurecli[main](../../cli_scripts/app-service/configure-ssl-certificate/configure-ssl-certificate.sh?highlight=3-5 "Bind a custom TLS/SSL certificate to a web app")] 
+[!code-azurecli[main](../../cli_scripts/app-service/configure-ssl-certificate/configure-ssl-certificate.sh?highlight=3-5 "Bind a custom TLS/SSL certificate to a web app")] 
 
 ### <a name="powershell"></a>PowerShell
 
-[!code-powershell[main](../../powershell_scripts/app-service/configure-ssl-certificate/configure-ssl-certificate.ps1?highlight=1-3 "Bind a custom TLS/SSL certificate to a web app")]
+[!code-powershell[main](../../powershell_scripts/app-service/configure-ssl-certificate/configure-ssl-certificate.ps1?highlight=1-3 "Bind a custom TLS/SSL certificate to a web app")]
 
 ## <a name="more-resources"></a>Дополнительные ресурсы
 

@@ -7,12 +7,12 @@ ms.date: 9/22/2020
 ms.topic: overview
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 4677426337a48d4fde74f61b8a4ad6fcb695f420
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9b2855f82927b6f1707fd748f097dd357818ac4b
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91577821"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92341980"
 ---
 # <a name="introduction-to-azure-defender-for-storage"></a>Общие сведения об Azure Defender для службы хранилища
 
@@ -27,7 +27,7 @@ ms.locfileid: "91577821"
 |----|:----|
 |Состояние выпуска:|Общедоступная версия (GA)|
 |Цены|Плата за использование **Azure Defender для службы хранилища** начисляется по тарифам, приведенным на [странице с ценами](security-center-pricing.md).|
-|Типы защищенного хранилища:|[Хранилище BLOB-объектов](https://azure.microsoft.com/services/storage/blobs/)<br>[Файлы Azure](https://docs.microsoft.com/azure/storage/files/storage-files-introduction)<br>[Azure Data Lake Storage 2-го поколения](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-introduction)|
+|Типы защищенного хранилища:|[Хранилище BLOB-объектов](https://azure.microsoft.com/services/storage/blobs/)<br>[Файлы Azure](../storage/files/storage-files-introduction.md)<br>[Azure Data Lake Storage 2-го поколения](../storage/blobs/data-lake-storage-introduction.md)|
 |Облако.|![Да](./media/icons/yes-icon.png) Коммерческие облака<br>![Да](./media/icons/yes-icon.png) US Gov<br>![Нет](./media/icons/no-icon.png) China Gov и другие правительственные облака|
 |||
 
@@ -66,6 +66,6 @@ ms.locfileid: "91577821"
 Связанные материалы см. в следующих статьях: 
 
 - Вы можете экспортировать оповещение, созданное Центром безопасности или полученное им от другого продукта для обеспечения безопасности. Чтобы экспортировать оповещения в Azure Sentinel, любое стороннее средство SIEM или другие внешние средства, следуйте инструкциям в статье [Экспорт оповещений о безопасности и рекомендаций](continuous-export.md).
-- [Настройка Azure Defender для службы хранилища](https://docs.microsoft.com/azure/storage/common/storage-advanced-threat-protection)
+- [Настройка Azure Defender для службы хранилища](../storage/common/azure-defender-storage-configure.md)
 - [Список оповещений Azure Defender для службы хранилища](alerts-reference.md#alerts-azurestorage)
 - [Возможности анализа угроз, предоставляемые Майкрософт](https://go.microsoft.com/fwlink/?linkid=2128684)

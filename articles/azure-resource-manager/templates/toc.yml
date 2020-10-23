@@ -98,6 +98,8 @@
               href: ../../azure-sql/virtual-machines/windows/create-sql-vm-resource-manager-template.md?toc=/azure/azure-resource-manager/templates/toc.json
         - name: DevOps
           items:
+            - name: Конфигурация приложений
+              href: ../../azure-app-configuration/quickstart-resource-manager.md?toc=/azure/azure-resource-manager/templates/toc.json
             - name: DevTest Labs
               href: ../../devtest-labs/create-lab-windows-vm-template.md?toc=/azure/azure-resource-manager/templates/toc.json
             - name: Конвейеры
@@ -164,6 +166,8 @@
               href: ../../web-application-firewall/ag/quick-create-template.md?toc=/azure/azure-resource-manager/templates/toc.json
         - name: Безопасность
           items:
+            - name: Аттестация
+              href: ../../attestation/quickstart-template.md?toc=/azure/azure-resource-manager/templates/toc.json
             - name: Key Vault
               href: ../../key-vault/secrets/quick-create-template.md?toc=/azure/azure-resource-manager/templates/toc.json
         - name: Память
@@ -172,6 +176,8 @@
               href: ../../storage/common/storage-account-create.md?toc=/azure/azure-resource-manager/templates/toc.json
         - name: Интернет
           items:
+            - name: Служба приложений
+              href: ../../app-service/quickstart-arm-template.md?toc=/azure/azure-resource-manager/templates/toc.json
             - name: Центры уведомлений
               href: ../../notification-hubs/create-notification-hub-template.md?toc=/azure/azure-resource-manager/templates/toc.json
 - name: Учебники

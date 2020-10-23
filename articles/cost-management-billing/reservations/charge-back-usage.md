@@ -7,18 +7,18 @@ ms.subservice: reservations
 ms.topic: how-to
 ms.date: 07/24/2020
 ms.author: banders
-ms.openlocfilehash: 4387a1aa5b22c9808f36364b71f89a71736958b8
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: aba6ea467788c51d179ef9377243efb6035b6f98
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88689479"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92148362"
 ---
 # <a name="charge-back-azure-reservation-costs"></a>Возврат средств за резервирование в Azure
 
 Пользователи с Соглашением Enterprise и Клиентским соглашением Майкрософт могут просматривать данные о затратах на резервирования. Они могут использовать данные о затратах для получения денежных средств за подписки, группы ресурсов и ресурсы, а также теги своих партнеров. В амортизированных данных эффективная цена пропорциональна стоимости резервирования по часам. Стоимость — это общая стоимость использования резервирования ресурсом в определенный день.
 
-Пользователи с отдельной подпиской могут получать амортизированные данные о затратах из файла использования. Когда ресурс получает скидку на резервирование, в разделе *AdditionalInfo* в файле использования появляются сведения о резервировании. См. сведения в разделе [Скачивание сведений об использовании на портале Azure (CSV-файл)](https://docs.microsoft.com/azure/cost-management-billing/understand/download-azure-daily-usage#download-usage-from-the-azure-portal-csv).
+Пользователи с отдельной подпиской могут получать амортизированные данные о затратах из файла использования. Когда ресурс получает скидку на резервирование, в разделе *AdditionalInfo* в файле использования появляются сведения о резервировании. См. сведения в разделе [Скачивание сведений об использовании на портале Azure (CSV-файл)](../understand/download-azure-daily-usage.md#download-usage-from-the-azure-portal-csv).
 
 ## <a name="get-reservation-charge-back-data-for-chargeback"></a>Получение данных о резервировании для возвратного платежа
 

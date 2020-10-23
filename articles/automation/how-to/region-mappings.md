@@ -1,16 +1,16 @@
 ---
 title: Регионы, в которых поддерживается связанная рабочая область Log Analytics
 description: В этой статье описываются поддерживаемые сопоставления регионов между учетной записью службы автоматизации и рабочей областью Log Analytics, так как она относится к определенным функциям службы автоматизации Azure.
-ms.date: 09/03/2020
+ms.date: 10/19/2020
 services: automation
 ms.topic: conceptual
 ms.custom: references_regions
-ms.openlocfilehash: dd831789d5f09ca6a20cce13659d6c479845f74e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bffd1cc0ce2a6a827c0bc708321a6bd2839aae2d
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89440666"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92207331"
 ---
 # <a name="supported-regions-for-linked-log-analytics-workspace"></a>Регионы, в которых поддерживается связанная рабочая область Log Analytics
 
@@ -32,6 +32,7 @@ ms.locfileid: "89440666"
 |**США**||
 |EastUS <sup>1</sup>|EastUS2|
 |WestUS2|WestUS2|
+|SouthCentralUS|SouthCentralUS|
 |WestCentralUS|WestCentralUS|
 |**Канада**||
 |CanadaCentral|CanadaCentral|
@@ -44,6 +45,7 @@ ms.locfileid: "89440666"
 |**Европа**||
 |UKSouth|UKSouth|
 |WestEurope|WestEurope|
+|свитзерланднорс|свитзерланднорс|
 |**US Gov**||
 |USGovVirginia|USGovVirginia|
 |Усговаризона<sup>2</sup>|USGov (Аризона)|
@@ -86,5 +88,5 @@ ms.locfileid: "89440666"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения об управлении обновлениями см. в статье [Обзор решения для управления обновлениями](../update-management/update-mgmt-overview.md).
-* Сведения о функции отслеживания и инвентаризации изменений см. в статье [Обзор функции отслеживания и инвентаризации изменений](../change-tracking.md).
+* Сведения о функции отслеживания и инвентаризации изменений см. в статье [Обзор функции отслеживания и инвентаризации изменений](../change-tracking/overview.md).
 * Сведения о функции запуска и остановки виртуальных машин в нерабочее время см. в статье [Обзор функции запуска и остановки виртуальных машин в нерабочее время](../automation-solution-vm-management.md).

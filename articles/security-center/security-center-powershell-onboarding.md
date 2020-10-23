@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/02/2018
 ms.author: memildin
-ms.openlocfilehash: c805b35b2c05600f96983da42ea7206a09e2e3e8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 20fce643defd12897eceb1accc7ade8b10548568
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91447393"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92341171"
 ---
 # <a name="automate-onboarding-of-azure-security-center-using-powershell"></a>Автоматизированное подключение центра безопасности Azure с помощью PowerShell
 
@@ -101,7 +101,7 @@ PowerShell позволяет автоматизировать задачи и �
 ## <a name="see-also"></a>См. также
 Дополнительные сведения об использовании PowerShell для автоматизации подключения к центру безопасности см. в следующей статье:
 
-* [Az.Security](https://docs.microsoft.com/powershell/module/az.security)
+* [Az.Security](/powershell/module/az.security)
 
 Дополнительные сведения о центре безопасности см. в следующих статьях:
 

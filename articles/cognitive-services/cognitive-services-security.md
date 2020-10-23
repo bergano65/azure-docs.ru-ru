@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 08/28/2020
 ms.author: erhopf
 ms.custom: devx-track-python, devx-track-js, devx-track-csharp
-ms.openlocfilehash: 9b90d886923f4bbdab3715130bde15ecb5921636
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ceaa04fdf8776d4fab1db4cfb1b3df4298f28de9
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91326819"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92152278"
 ---
 # <a name="azure-cognitive-services-security"></a>Безопасность Cognitive Services Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "91326819"
 
 ## <a name="authentication"></a>Аутентификация
 
-При обсуждении проверки подлинности существует несколько распространенных заблуждений. Проверка подлинности и авторизация часто путают друг с другом. Удостоверение является также основным компонентом в системе безопасности. Удостоверение — это коллекция сведений об <a href="https://en.wikipedia.org/wiki/Principal_(computer_security)" target="_blank">участнике <span class="docon docon-navigate-external x-hidden-focus"></span> </a>. Поставщики удостоверений (IdP) предоставляют удостоверения для служб проверки подлинности. Проверка подлинности — это процедура проверки удостоверения пользователя. Авторизация — это спецификация прав доступа и привилегий на ресурсы для заданного удостоверения. Некоторые из Cognitive Services предложений включают управление доступом на основе ролей (RBAC). RBAC можно использовать для упрощения некоторых формальностей, участвующих в управлении участниками вручную. Дополнительные сведения см. в статье [Управление доступом на основе ролей для ресурсов Azure](../role-based-access-control/overview.md).
+При обсуждении проверки подлинности существует несколько распространенных заблуждений. Проверка подлинности и авторизация часто путают друг с другом. Удостоверение является также основным компонентом в системе безопасности. Удостоверение — это коллекция сведений об <a href="https://en.wikipedia.org/wiki/Principal_(computer_security)" target="_blank">участнике <span class="docon docon-navigate-external x-hidden-focus"></span> </a>. Поставщики удостоверений (IdP) предоставляют удостоверения для служб проверки подлинности. Проверка подлинности — это процедура проверки удостоверения пользователя. Авторизация — это спецификация прав доступа и привилегий на ресурсы для заданного удостоверения. Некоторые из Cognitive Services предложений включают управление доступом на основе ролей Azure (Azure RBAC). Azure RBAC можно использовать для упрощения некоторых формальностей, участвующих в управлении участниками вручную. Дополнительные сведения см. в статье [Управление доступом на основе ролей Azure для ресурсов Azure](../role-based-access-control/overview.md).
 
 Дополнительные сведения о проверке подлинности с помощью ключей подписки, маркеров доступа и Azure Active Directory (AAD) см. <a href="https://docs.microsoft.com/azure/cognitive-services/authentication" target="_blank">в статье <span class="docon docon-navigate-external x-hidden-focus"></span> Проверка подлинности запросов в Azure Cognitive Services</a>.
 
@@ -201,7 +201,7 @@ NSString* value =
 
 Защищенное хранилище доступна для этой службы:
 
-* API перевода
+* Переводчик
 
 Для следующих служб инженеры Майкрософт не будут получать доступ к данным клиентов на уровне E0: 
 
@@ -220,7 +220,7 @@ NSString* value =
 > [!IMPORTANT]
 > Корпорация Майкрософт **не** использует данные клиентов для улучшения своих речевых моделей. Кроме того, если ведение журнала конечных точек отключено и никакие настройки не используются, данные клиента не сохраняются. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Изучите различные [Cognitive Services](welcome.md)
 * Дополнительные сведения о [Cognitive Services виртуальных сетях](cognitive-services-virtual-networks.md)

@@ -13,12 +13,12 @@ ms.author: ajburnle
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 55df425367cc8295ef6a3899e2edb47669fe57b7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bba8a0898c11cf1af150f4824d9bef5e9e03576e
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91741182"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92370888"
 ---
 # <a name="restore-or-remove-a-recently-deleted-user-using-azure-active-directory"></a>Восстановление или удаление недавно удаленного пользователя с помощью Azure Active Directory
 После удаления пользователя его учетная запись остается в заблокированном состоянии в течение 30 дней. В течение этого времени учетную запись пользователя и все ее свойства можно восстановить. По истечении 30 дней пользователь удаляется автоматически без возможности восстановления.
@@ -90,4 +90,4 @@ ms.locfileid: "91741182"
 
 - [Добавление гостевых пользователей из другой организации](../external-identities/what-is-b2b.md)
 
-Дополнительные сведения о других доступных задачах управления пользователями см. в [документации по управлению пользователями Azure AD](../users-groups-roles/index.yml).
+Дополнительные сведения о других доступных задачах управления пользователями см. в [документации по управлению пользователями Azure AD](../enterprise-users/index.yml).

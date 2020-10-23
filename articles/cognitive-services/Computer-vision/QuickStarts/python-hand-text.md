@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство.  Извлечение печатного и рукописного текста через REST с помощью Компьютерного зрения версии 2.1 и 3.0 (Python)
+title: Краткое руководство.  Извлечение печатного и рукописного текста через REST с помощью Компьютерного зрения версии 2.1 и 3.1 (Python)
 titleSuffix: Azure Cognitive Services
 description: Из этого краткого руководства вы узнаете, как использовать API Компьютерного зрения для извлечения печатного и рукописного текста из изображений с помощью Python.
 services: cognitive-services
@@ -11,19 +11,19 @@ ms.topic: quickstart
 ms.date: 08/05/2020
 ms.author: pafarley
 ms.custom: seodec18, devx-track-python
-ms.openlocfilehash: b1b510ebfcf3622aab79762e447802020781aad3
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 82e0f31e28839fb3a87e0b2a539290b194b3ad77
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88236256"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91960428"
 ---
 # <a name="quickstart-extract-printed-and-handwritten-text-using-the-computer-vision-rest-api-and-python"></a>Краткое руководство. Извлечение печатного и рукописного текста с помощью REST API Компьютерного зрения и Python
 
-Из этого краткого руководства вы узнаете, как извлечь из изображения печатный и рукописный текст с помощью REST API Компьютерного зрения. С помощью методов [Read](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-ga/operations/5d986960601faab4bf452005) и [Get Read Result](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-ga/operations/5d9869604be85dee480c8750) можно обнаружить текст на изображении и извлечь распознанные символы в виде потока машиночитаемых символов. 
+Из этого краткого руководства вы узнаете, как извлечь из изображения печатный и рукописный текст с помощью REST API Компьютерного зрения. С помощью методов [Read](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/5d986960601faab4bf452005) и [Get Read Result](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/5d9869604be85dee480c8750) можно обнаружить текст на изображении и извлечь распознанные символы в виде потока машиночитаемых символов. 
 
 > [!IMPORTANT]
-> Метод [Read](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-ga/operations/5d986960601faab4bf452005) выполняется асинхронно. Этот метод не возвращает никаких данных в текст успешного ответа. Вместо этого метод Batch Read возвращает URI в значение поля заголовка ответа `Operation-Location`. Затем можно вызвать этот URI, представляющий API [Get Read Result](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-ga/operations/5d9869604be85dee480c8750), чтобы проверить состояние и вернуть результаты вызова метода Read.
+> Метод [Read](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/5d986960601faab4bf452005) выполняется асинхронно. Этот метод не возвращает никаких данных в текст успешного ответа. Вместо этого метод Batch Read возвращает URI в значение поля заголовка ответа `Operation-Location`. Затем можно вызвать этот URI, представляющий API [Get Read Result](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/5d9869604be85dee480c8750), чтобы проверить состояние и вернуть результаты вызова метода Read.
 
 ---
 
@@ -83,7 +83,7 @@ if missing_env:
     print("**Restart your shell or IDE for changes to take effect.**")
     sys.exit()
 
-text_recognition_url = endpoint + "/vision/v3.0/read/analyze"
+text_recognition_url = endpoint + "/vision/v3.1/read/analyze"
 
 # Set image_url to the URL of an image that you want to recognize.
 image_url = "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/master/articles/cognitive-services/Computer-vision/Images/readsample.jpg"
@@ -146,7 +146,7 @@ plt.show()
   "createdDateTime": "2020-05-28T05:13:21Z",
   "lastUpdatedDateTime": "2020-05-28T05:13:22Z",
   "analyzeResult": {
-    "version": "3.0.0",
+    "version": "3.1.0",
     "readResults": [
       {
         "page": 1,

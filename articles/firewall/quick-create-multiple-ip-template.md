@@ -8,16 +8,16 @@ ms.topic: quickstart
 ms.custom: subject-armqs
 ms.date: 08/28/2020
 ms.author: victorh
-ms.openlocfilehash: 282ce16c926c61008d0ebd70106b161425a15c9e
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 33d110f327a381241fd9dbf55996a6e3f9fd3a43
+ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89079087"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92057983"
 ---
 # <a name="quickstart-create-an-azure-firewall-with-multiple-public-ip-addresses---arm-template"></a>Краткое руководство. Создание Брандмауэра Azure с несколькими общедоступными IP-адресами с помощью шаблона ARM
 
-В этом кратком руководстве показано, как с помощью шаблона Azure Resource Manager (шаблона ARM) развернуть Брандмауэр Azure с несколькими общедоступными IP-адресами. Развернутый брандмауэр содержит правила преобразования сетевых адресов (NAT), разрешающие подключения по протоколу удаленного рабочего стола к двум виртуальным машинам Windows Server 2019.
+В этом кратком руководстве показано, как с помощью шаблона Azure Resource Manager (шаблона ARM) развернуть Брандмауэр Azure с несколькими общедоступными IP-адресами, полученными из префикса общедоступного IP-адреса. Развернутый брандмауэр содержит правила преобразования сетевых адресов (NAT), разрешающие подключения по протоколу удаленного рабочего стола к двум виртуальным машинам Windows Server 2019.
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
@@ -42,6 +42,7 @@ ms.locfileid: "89079087"
 В шаблоне определено несколько ресурсов Azure:
 
 - [**Microsoft.Network/networkSecurityGroups;** ](/azure/templates/microsoft.network/networksecuritygroups)
+- [**Microsoft.Network/publicIPPrefix**](/azure/templates/microsoft.network/publicipprefixes)
 - [**Microsoft.Network/publicIPAddresses**](/azure/templates/microsoft.network/publicipaddresses)
 - [**Microsoft.Network/virtualNetworks**](/azure/templates/microsoft.network/virtualnetworks);
 - [**Microsoft.Compute/virtualMachines**](/azure/templates/microsoft.compute/virtualmachines)
@@ -65,7 +66,7 @@ ms.locfileid: "89079087"
    - Имя пользователя администратора: введите имя учетной записи пользователя с правами администратора. 
    - Пароль администратора: введите пароль администратора или ключ.
 
-3. Установите флажок **Я принимаю указанные выше условия** и нажмите кнопку **Приобрести**. Развертывание может занять более 10 минут.
+3. Установите флажок **Я принимаю указанные выше условия** и нажмите кнопку **Приобрести**. Для развертывания может потребоваться 10 минут или более.
 
 ## <a name="validate-the-deployment"></a>Проверка развертывания
 

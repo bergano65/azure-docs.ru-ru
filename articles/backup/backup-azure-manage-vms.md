@@ -3,12 +3,12 @@ title: Управление резервными копиями виртуаль
 description: Узнайте, как управлять резервным копированием виртуальных машин Azure и отслеживать их с помощью службы Azure Backup.
 ms.topic: conceptual
 ms.date: 08/02/2020
-ms.openlocfilehash: 5a677221f16d00c19ee7083b72540ac7e1bb9cd0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2052d80428af89862b5348943b446f1b800ab36f
+ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89145439"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92174093"
 ---
 # <a name="manage-azure-vm-backups-with-azure-backup-service"></a>Управление резервными копиями виртуальных машин Azure с помощью службы Azure Backup
 
@@ -24,6 +24,8 @@ ms.locfileid: "89145439"
 Вы можете управлять резервным копированием с помощью панели мониторинга и путем детализации до отдельных виртуальных машин. Чтобы начать создание резервных копий компьютера, откройте хранилище на панели мониторинга.
 
 ![Полное представление панели мониторинга с ползунком](./media/backup-azure-manage-vms/bottom-slider.png)
+
+[!INCLUDE [backup-center.md](../../includes/backup-center.md)]
 
 ## <a name="view-vms-on-the-dashboard"></a>Просмотр виртуальных машин на панели мониторинга
 

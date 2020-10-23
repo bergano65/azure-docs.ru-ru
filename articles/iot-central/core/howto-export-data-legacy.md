@@ -7,12 +7,12 @@ ms.author: viviali
 ms.date: 06/25/2020
 ms.topic: how-to
 ms.service: iot-central
-ms.openlocfilehash: 5d8f3bc0978cc67edbaee29198c78b41d1d08a32
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 812fd0c10b63cfe469a10a99069f201fcc2cc658
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90974412"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92126743"
 ---
 # <a name="export-iot-data-to-cloud-destinations-using-data-export-legacy"></a>Экспорт данных IoT в облачные назначения с помощью экспорта данных (прежние версии)
 
@@ -30,7 +30,7 @@ ms.locfileid: "90974412"
 > [!Note]
 > При включении экспорта данных вы получаете только данные из этого момента. В настоящее время невозможно получить данные за время отключения экспорта данных. Чтобы хранить более исторические данные, включите экспорт данных на раннем этапе.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Необходимо быть администратором в IoT Central приложении или иметь разрешения на экспорт данных.
 
@@ -63,7 +63,7 @@ ms.locfileid: "90974412"
 
 Если у вас нет существующей учетной записи хранения Azure для экспорта, выполните следующие действия.
 
-1. Создайте [учетную запись хранения на портале Azure](https://ms.portal.azure.com/#create/Microsoft.StorageAccount-ARM). Вы можете узнать больше о создании новых [учетных записей хранения BLOB-объектов Azure](https://aka.ms/blobdocscreatestorageaccount) или [учетных записей хранения Azure Data Lake Storage v2](../../storage/blobs/data-lake-storage-quickstart-create-account.md). Экспорт данных может записывать данные только в учетные записи хранения, поддерживающие блочные BLOB-объекты. В следующем списке приведены известные совместимые типы учетных записей хранения.
+1. Создайте [учетную запись хранения на портале Azure](https://ms.portal.azure.com/#create/Microsoft.StorageAccount-ARM). Вы можете узнать больше о создании новых [учетных записей хранения BLOB-объектов Azure](../../storage/blobs/storage-quickstart-blobs-portal.md) или [учетных записей хранения Azure Data Lake Storage v2](../../storage/common/storage-account-create.md). Экспорт данных может записывать данные только в учетные записи хранения, поддерживающие блочные BLOB-объекты. В следующем списке приведены известные совместимые типы учетных записей хранения.
 
     |Уровень производительности|Тип учетной записи|
     |-|-|
@@ -156,7 +156,7 @@ ms.locfileid: "90974412"
 
 Это сообщение не содержит идентификатор устройства отправляющего устройства.
 
-Чтобы получить идентификатор устройства из данных сообщения в Azure Stream Analytics запросе, используйте функцию [жетметадатапропертивалуе](https://docs.microsoft.com/stream-analytics-query/getmetadatapropertyvalue) . Пример см. в статье [расширение возможностей azure IOT Central с помощью настраиваемых правил, использующих Stream Analytics, функции Azure и SendGrid](./howto-create-custom-rules.md).
+Чтобы получить идентификатор устройства из данных сообщения в Azure Stream Analytics запросе, используйте функцию [жетметадатапропертивалуе](/stream-analytics-query/getmetadatapropertyvalue) . Пример см. в статье [расширение возможностей azure IOT Central с помощью настраиваемых правил, использующих Stream Analytics, функции Azure и SendGrid](./howto-create-custom-rules.md).
 
 Чтобы получить идентификатор устройства в Azure Databricks или Apache Spark рабочей области, используйте [системпропертиес](https://github.com/Azure/azure-event-hubs-spark/blob/master/docs/structured-streaming-eventhubs-integration.md). Пример см. в разделе [расширение возможностей Azure IOT Central с настраиваемой аналитикой с помощью Azure Databricks](./howto-create-custom-analytics.md).
 
@@ -184,7 +184,7 @@ ms.locfileid: "90974412"
 }
 ```
 
-## <a name="devices"></a>Устройства
+## <a name="devices"></a>.
 
 Каждое сообщение или запись в моментальном снимке представляет одно или несколько изменений устройства, свойства устройства и облака с момента последнего экспортированного сообщения. Сообщение включает в себя:
 
@@ -557,7 +557,7 @@ ms.locfileid: "90974412"
 
 При наличии в предварительной версии приложения экспорта данных с включенными потоками *устройств* и *шаблонов устройств* обновите экспорт на **30 июня 2020**. Это требование относится к экспорту в хранилище BLOB-объектов Azure, концентраторам событий Azure и служебной шине Azure.
 
-Начиная с 3 февраля 2020, все новые операции экспорта в приложениях с включенными устройствами и шаблонами устройств будут иметь формат данных, описанный выше. Все экспортируемые объекты, созданные до этой даты, остаются в старом формате до 30 июня 2020, при этом экспорт автоматически переносится в новый формат данных. Новый формат данных соответствует [устройству](https://docs.microsoft.com/rest/api/iotcentral/devices/get), [свойству устройства](https://docs.microsoft.com/rest/api/iotcentral/devices/getproperties), [свойству облака устройства](https://docs.microsoft.com/rest/api/iotcentral/devices/getcloudproperties)и объектам [шаблона устройства](https://docs.microsoft.com/rest/api/iotcentral/devicetemplates/get) в общедоступном API IOT Central.
+Начиная с 3 февраля 2020, все новые операции экспорта в приложениях с включенными устройствами и шаблонами устройств будут иметь формат данных, описанный выше. Все экспортируемые объекты, созданные до этой даты, остаются в старом формате до 30 июня 2020, при этом экспорт автоматически переносится в новый формат данных. Новый формат данных соответствует [устройству](/rest/api/iotcentral/devices/get), [свойству устройства](/rest/api/iotcentral/devices/getproperties), [свойству облака устройства](/rest/api/iotcentral/devices/getcloudproperties)и объектам [шаблона устройства](/rest/api/iotcentral/devicetemplates/get) в общедоступном API IOT Central.
 
 Для **устройств**существенными различиями между старым форматом данных и новым форматом данных являются:
 - `@id` для устройства удалено `deviceId` переименовывается в `id` 

@@ -5,28 +5,28 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 05/15/2020
-ms.openlocfilehash: 967fdae49f904f6c1cb450b637a8dbc5c481b135
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c3d6e21b45bccbdaeeee350bac79be680783eb24
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91776890"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92147521"
 ---
 # <a name="collaborate-with-other-authors-and-editors"></a>Совместная работа с другими авторами и редакторами
 
-Работайте совместно с другими авторами и редакторами, используя управление доступом на основе ролей (RBAC), размещенное на QnA Maker ресурсе.
+Работайте совместно с другими авторами и редакторами с помощью управления доступом на основе ролей Azure (Azure RBAC), размещенного на QnA Maker ресурсе.
 
 ## <a name="access-is-provided-on-the-qna-maker-resource"></a>Доступ предоставляется на QnA Maker ресурсе
 
 Все разрешения контролируются разрешениями, размещенными в ресурсе QnA Maker. Эти разрешения согласованы с доступом для чтения, записи, публикации и полного доступа.
 
-Эта функция RBAC включает в себя:
-* Azure Active Directory (AAD) обеспечивает обратную совместимость 100% с проверкой подлинности на основе ключей для владельцев и участников. Клиенты могут использовать проверку подлинности на основе ключей или на основе RBAC в своих запросах.
+Эта функция Azure RBAC включает в себя следующее:
+* Azure Active Directory (AAD) обеспечивает обратную совместимость 100% с проверкой подлинности на основе ключей для владельцев и участников. Клиенты могут использовать проверку подлинности на основе ключей или проверку подлинности на основе Azure RBAC в своих запросах.
 * Быстро добавляйте авторов и редакторы ко всем базам знаний в ресурсе, так как управление осуществляется на уровне ресурсов, а не на уровне базы знаний.
 
 ## <a name="access-is-provided-by-a-defined-role"></a>Доступ предоставляется определенной ролью.
 
-[!INCLUDE [RBAC permissions table](../includes/role-based-access-control.md)]
+[!INCLUDE [Azure RBAC permissions table](../includes/role-based-access-control.md)]
 
 ## <a name="authentication-flow"></a>Поток проверки подлинности
 

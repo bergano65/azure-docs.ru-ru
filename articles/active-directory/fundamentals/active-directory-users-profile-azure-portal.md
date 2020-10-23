@@ -12,12 +12,12 @@ ms.date: 04/11/2019
 ms.author: ajburnle
 ms.reviewer: jeffsta
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 63b716aa22954af51a9eb53a0d04a8299d348c71
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 27896bac6f5436fb6717e4bc1ab0a1f9381904ad
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87797243"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92370922"
 ---
 # <a name="add-or-update-a-users-profile-information-using-azure-active-directory"></a>Добавление или изменение данных профиля пользователя с помощью Azure Active Directory
 Добавьте данные в профиль пользователя, в том числе изображение профиля, сведения о работе и некоторые параметры, с помощью Azure Active Directory (Azure AD). Дополнительные сведения о добавлении новых пользователей см. в статье [Добавление или удаление пользователей в Azure Active Directory](add-users-azure-active-directory.md).
@@ -66,4 +66,4 @@ ms.locfileid: "87797243"
 
 - [Создание простой группы и добавление участников](active-directory-groups-create-azure-portal.md)
 
-Кроме того, можно выполнять другие задачи по управлению пользователями, например назначение делегатов, использование политик и совместное использование учетных записей пользователей. Дополнительные сведения о других доступных действиях см. в [документации по управлению пользователями Azure Active Directory](../users-groups-roles/index.yml).
+Кроме того, можно выполнять другие задачи по управлению пользователями, например назначение делегатов, использование политик и совместное использование учетных записей пользователей. Дополнительные сведения о других доступных действиях см. в [документации по управлению пользователями Azure Active Directory](../enterprise-users/index.yml).

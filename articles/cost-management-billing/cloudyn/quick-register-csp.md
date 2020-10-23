@@ -10,12 +10,12 @@ ms.service: cost-management-billing
 ms.subservice: cloudyn
 ms.reviewer: benshy
 ROBOTS: NOINDEX
-ms.openlocfilehash: 92d4c84cc73ea05f58912549674f76513e3faeb1
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: 1cbdeb09a1f3182aef9dcc6445c5b5e22e2448ff
+ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90985510"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92132352"
 ---
 # <a name="register-with-the-csp-partner-program-and-view-cost-data"></a>Регистрация в партнерской программе CSP и просмотр данных о затратах
 
@@ -29,7 +29,7 @@ ms.locfileid: "90985510"
 > Только прямые партнеры CSP и косвенные поставщики CSP могут зарегистрироваться в Cloudyn.
 >
 > Для аутентификации и доступа к данным необходимо настроить API Центра партнеров. Для подготовки доступа к API необходима учетная запись глобального администратора Центра партнеров.
-> Дополнительные сведения см. в разделе о [подключении к API Центра партнеров](https://msdn.microsoft.com/library/partnercenter/mt709136.aspx).
+> Дополнительные сведения см. в разделе о [подключении к API Центра партнеров](/partner-center/develop/set-up-api-access-in-partner-center).
 >
 > Доступ к Cloudyn можно предоставить торговым представителям косвенного CSP, после того как его косвенные поставщик CSP зарегистрируется в Cloudyn. Торговые представители косвенного CSP могут предоставить доступ к Cloudyn клиентам и подпискам Azure.
 >

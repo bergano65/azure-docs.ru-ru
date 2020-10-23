@@ -7,12 +7,12 @@ ms.service: mariadb
 ms.topic: how-to
 ms.date: 6/10/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: f6b53efdf49538476821ddeaed9bbf4278af0728
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9e48d14fae4f62b92b5a8d08f83fea6d2e2ed3fe
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91542416"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92424939"
 ---
 # <a name="how-to-create-and-manage-read-replicas-in-azure-database-for-mariadb-using-the-azure-cli-and-rest-api"></a>Как создавать реплики чтения и управлять ими в базе данных Azure для MariaDB с помощью Azure CLI и REST API
 
@@ -23,7 +23,7 @@ ms.locfileid: "91542416"
 
 ### <a name="prerequisites"></a>Предварительные требования
 
-- [Установите Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+- [Установите Azure CLI 2.0](/cli/azure/install-azure-cli?view=azure-cli-latest).
 - [Сервер базы данных Azure для MariaDB](quickstart-create-mariadb-server-database-using-azure-portal.md) , который будет использоваться в качестве исходного сервера. 
 
 > [!IMPORTANT]
@@ -42,9 +42,9 @@ az mariadb server replica create --name mydemoreplicaserver --source-server myde
 
 Для команды `az mariadb server replica create` обязательны указанные ниже параметры.
 
-| Параметр | Пример значения | Описание  |
+| Параметр | Пример значения | Описание  |
 | --- | --- | --- |
-| resource-group |  myresourcegroup |  Группа ресурсов, в которой будет создан сервер реплики.  |
+| resource-group |  myresourcegroup |  Группа ресурсов, в которой будет создан сервер реплики.  |
 | name | mydemoreplicaserver | Имя нового сервера реплики, который создается. |
 | source-server | mydemoserver | Имя или идентификатор существующего исходного сервера, с которого выполняется репликация. |
 
@@ -72,9 +72,9 @@ az mariadb server replica list --server-name mydemoserver --resource-group myres
 
 Для команды `az mariadb server replica list` обязательны указанные ниже параметры.
 
-| Параметр | Пример значения | Описание  |
+| Параметр | Пример значения | Описание  |
 | --- | --- | --- |
-| resource-group |  myresourcegroup |  Группа ресурсов, в которой будет создан сервер реплики.  |
+| resource-group |  myresourcegroup |  Группа ресурсов, в которой будет создан сервер реплики.  |
 | server-name | mydemoserver | Имя или идентификатор исходного сервера. |
 
 ### <a name="stop-replication-to-a-replica-server"></a>Остановка репликации на сервер-реплику
@@ -90,9 +90,9 @@ az mariadb server replica stop --name mydemoreplicaserver --resource-group myres
 
 Для команды `az mariadb server replica stop` обязательны указанные ниже параметры.
 
-| Параметр | Пример значения | Описание  |
+| Параметр | Пример значения | Описание  |
 | --- | --- | --- |
-| resource-group |  myresourcegroup |  Группа ресурсов, в которой находится сервер реплики.  |
+| resource-group |  myresourcegroup |  Группа ресурсов, в которой находится сервер реплики.  |
 | name | mydemoreplicaserver | Имя сервера реплики для остановки репликации. |
 
 ### <a name="delete-a-replica-server"></a>Удаление сервера-реплики

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
-ms.openlocfilehash: 36d843e80f024408747c1f94512a3ccc04c6709b
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: e6acb5f30268f0e771d80489dff52f03eb58234a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88546923"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91850767"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-kantega-sso-for-bitbucket"></a>Руководство по интеграции Azure Active Directory с Kantega SSO for Bitbucket
 
@@ -99,7 +99,7 @@ ms.locfileid: "88546923"
 
 4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа для приложения Kantega SSO for Bitbucket](common/idp-intiated.png)
+    ![Снимок экрана, на котором показан раздел "Базовая конфигурация SAML", где можно ввести идентификатор, URL-адрес ответа и нажать кнопку "Сохранить"](common/idp-intiated.png)
 
     а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<server-base-url>/plugins/servlet/no.kantega.saml/sp/<uniqueid>/login`.
 
@@ -107,7 +107,7 @@ ms.locfileid: "88546923"
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа для приложения Kantega SSO for Bitbucket](common/metadata-upload-additional-signon.png)
+    ![Снимок экрана, на котором показан параметр "Задать дополнительные URL-адреса" и поле для ввода URL-адреса входа](common/metadata-upload-additional-signon.png)
 
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://<server-base-url>/plugins/servlet/no.kantega.saml/sp/<uniqueid>/login`.
 
@@ -134,39 +134,39 @@ ms.locfileid: "88546923"
 
 1. Щелкните шестеренку и выберите **Find new add-ons** (Найти новые надстройки).
 
-    ![Настройка единого входа](./media/kantegassoforbitbucket-tutorial/addon1.png)
+    ![Снимок экрана: раздел Administration (Администрирование) в BitBucket с выбранным параметром Find new add-ons (Найти новые надстройки).](./media/kantegassoforbitbucket-tutorial/addon1.png)
 
 1. Найдите подключаемый модуль **Kantega SSO for Bitbucket (SAML & Kerberos)** и нажмите кнопку **Install** (Установить), чтобы установить новый подключаемый модуль SAML.
 
-    ![Настройка единого входа](./media/kantegassoforbitbucket-tutorial/addon2.png)
+    ![Снимок экрана: подключаемый модуль Kantega SSO for Bitbucket (SAML & Kerberos) с кнопкой Install (Установка).](./media/kantegassoforbitbucket-tutorial/addon2.png)
 
 1. Начнется установка подключаемого модуля.
 
-    ![Настройка единого входа](./media/kantegassoforbitbucket-tutorial/addon31.png)
+    ![Снимок экрана: ход установки.](./media/kantegassoforbitbucket-tutorial/addon31.png)
 
 1. Установка завершится. Щелкните **Закрыть**.
 
-    ![Настройка единого входа](./media/kantegassoforbitbucket-tutorial/addon33.png)
+    ![Снимок экрана: кнопка Close (Закрыть).](./media/kantegassoforbitbucket-tutorial/addon33.png)
 
 1. Нажмите кнопку **Управление**.
 
-    ![Настройка единого входа](./media/kantegassoforbitbucket-tutorial/addon34.png)
+    ![Снимок экрана: кнопка Manage (Управление).](./media/kantegassoforbitbucket-tutorial/addon34.png)
 
 1. Щелкните **Configure** (Настройка), чтобы настроить новый подключаемый модуль.
 
-    ![Настройка единого входа](./media/kantegassoforbitbucket-tutorial/addon35.png)
+    ![Снимок экрана: установленные пользователем надстройки с выбранной кнопкой Configure (Настройка).](./media/kantegassoforbitbucket-tutorial/addon35.png)
 
 1. В разделе **SAML** сделайте следующее. Выберите **Azure Active Directory (Azure AD)** из раскрывающегося списка **Добавление поставщика удостоверений**.
 
-    ![Настройка единого входа](./media/kantegassoforbitbucket-tutorial/addon4.png)
+    ![Снимок экрана: раздел Kantega Single Sign-On (Единый вход в Kantega) с вариантом Azure AD, выбранным в качестве поставщика удостоверений.](./media/kantegassoforbitbucket-tutorial/addon4.png)
 
 1. Выберите уровень подписки **Базовый**.
 
-    ![Настройка единого входа](./media/kantegassoforbitbucket-tutorial/addon5.png)
+    ![Снимок экрана: раздел Preparing Azure AD (Подготовка Azure AD) с выбранным вариантом Basic (Базовый).](./media/kantegassoforbitbucket-tutorial/addon5.png)
 
 1. В разделе **Свойства приложения** выполните следующие действия.
 
-    ![Настройка единого входа](./media/kantegassoforbitbucket-tutorial/addon6.png)
+    ![Снимок экрана: раздел App properties (Свойства приложения), где можно добавить сведения на этом шаге.](./media/kantegassoforbitbucket-tutorial/addon6.png)
 
     а. Скопируйте значение **App ID URI** (URI кода приложения) и используйте его как **идентификатор, URL-адрес ответа и URL-адрес входа** в разделе **Базовая конфигурация SAML** на портале Azure.
 
@@ -174,7 +174,7 @@ ms.locfileid: "88546923"
 
 1. В разделе **Metadata import** (Импорт метаданных) выполните следующие действия.
 
-    ![Настройка единого входа](./media/kantegassoforbitbucket-tutorial/addon7.png)
+    ![Снимок экрана: раздел Metadata import (Импорт метаданных), где можно перейти к файлу метаданных.](./media/kantegassoforbitbucket-tutorial/addon7.png)
 
     а. Щелкните **Metadata file on my computer** (Файл метаданных на моем компьютере) и передайте файл метаданных, который вы скачали с портала Azure.
 
@@ -182,7 +182,7 @@ ms.locfileid: "88546923"
 
 1. В разделе **Name and SSO location** (Имя и расположение единого входа) выполните следующее.
 
-    ![Настройка единого входа](./media/kantegassoforbitbucket-tutorial/addon8.png)
+    ![Снимок экрана: раздел Name and SSO location (Имя и расположение единого входа), где Azure AD — имя поставщика удостоверений.](./media/kantegassoforbitbucket-tutorial/addon8.png)
 
     а. В текстовом поле **Provider Name** (Имя поставщика) введите имя поставщика (например, Azure AD).
 
@@ -190,11 +190,11 @@ ms.locfileid: "88546923"
 
 1. Проверьте сертификат для подписи и нажмите кнопку **Next** (Далее).
 
-    ![Настройка единого входа](./media/kantegassoforbitbucket-tutorial/addon9.png)
+    ![Снимок экрана: раздел Signature Verification (Проверка подписи).](./media/kantegassoforbitbucket-tutorial/addon9.png)
 
 1. В разделе **Bitbucket user accounts** (Учетные записи пользователей Bitbucket) выполните следующие действия.
 
-    ![Настройка единого входа](./media/kantegassoforbitbucket-tutorial/addon10.png)
+    ![Снимок экрана: раздел BitBucket user accounts (Учетные записи пользователей BitBucket) с возможностью создания пользователей.](./media/kantegassoforbitbucket-tutorial/addon10.png)
 
     а. Щелкните переключатель **Create users in Bitbucket's internal Directory if needed** (При необходимости создать пользователей во внутреннем каталоге Bitbucket) и введите соответствующее имя группы пользователей (это может быть несколько групп, разделенных запятой).
 
@@ -202,11 +202,11 @@ ms.locfileid: "88546923"
 
 1. Нажмите кнопку **Готово**.
 
-    ![Настройка единого входа](./media/kantegassoforbitbucket-tutorial/addon11.png)
+    ![Снимок экрана: страница Summary (Сводка).](./media/kantegassoforbitbucket-tutorial/addon11.png)
 
 1. В разделе **Known domains for Azure AD** (Известные домены для Azure AD) выполните следующие действия.
 
-    ![Настройка единого входа](./media/kantegassoforbitbucket-tutorial/addon12.png)
+    ![Снимок экрана: раздел Known domains for Azure AD (Известные домены для Azure AD), где можно выполнить эти шаги.](./media/kantegassoforbitbucket-tutorial/addon12.png)
 
     а. Щелкните **Known domains** (Известные домены) на левой панели страницы.
 
@@ -275,19 +275,19 @@ ms.locfileid: "88546923"
 
 1. Щелкните значок параметров.
 
-    ![Добавление сотрудника](./media/kantegassoforbitbucket-tutorial/user1.png) 
+    ![Снимок экрана: значок параметров.](./media/kantegassoforbitbucket-tutorial/user1.png) 
 
 1. В разделе **Administration** (Администрирование) щелкните **Users** (Пользователи).
 
-    ![Добавление сотрудника](./media/kantegassoforbitbucket-tutorial/user2.png)
+    ![Снимок экрана: раздел Administration (Администрирование) в BitBucket с выбранным параметром Users (Пользователи). ](./media/kantegassoforbitbucket-tutorial/user2.png)
 
 1. Щелкните **Create user** (Создать пользователя).
 
-    ![Добавление сотрудника](./media/kantegassoforbitbucket-tutorial/user3.png)   
+    ![Снимок экрана: раздел Administration (Администрирование) в BitBucket с выбранным параметром Create user (Создать пользователя).](./media/kantegassoforbitbucket-tutorial/user3.png)   
 
 1. На странице **Create User** (Создание пользователя) выполните следующие действия.
 
-    ![Добавление сотрудника](./media/kantegassoforbitbucket-tutorial/user4.png) 
+    ![Снимок экрана: диалоговое окно Create User (Создание пользователя), где выполняются эти действия.](./media/kantegassoforbitbucket-tutorial/user4.png) 
 
     а. В текстовом поле **Username** (Имя пользователя) введите электронный адрес пользователя, например Brittasimon@contoso.com.
 

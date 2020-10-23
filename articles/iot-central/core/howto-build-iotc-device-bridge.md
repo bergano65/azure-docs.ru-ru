@@ -8,12 +8,13 @@ ms.author: viviali
 ms.date: 07/09/2019
 ms.topic: how-to
 manager: peterpr
-ms.openlocfilehash: 6499c9c29d10a2056b0af5499b68b5edd67d82cb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: device-developer
+ms.openlocfilehash: fb6029a91714ed0229876bbaf6bb0790565be29c
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80158424"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92427834"
 ---
 # <a name="build-the-iot-central-device-bridge-to-connect-other-iot-clouds-to-iot-central"></a>Создание моста устройства IoT Central для подключения других облаков Интернета вещей к IoT Central
 
@@ -26,7 +27,7 @@ ms.locfileid: "80158424"
 -    Приложение-функция Azure.
 -    Учетная запись хранения Azure
 -    План потребления
--    Хранилище ключей Azure;
+-    Azure Key Vault
 
 Приложение-функция является критической частью моста устройства. Оно получает запросы HTTP POST от других платформ Интернета вещей или любых настраиваемых платформ с помощью простой интеграции веб-перехватчика. Мы представили примеры подключения к облакам Sigfox, Particle и TTN. Вы можете легко расширить это решение, чтобы подключиться к пользовательскому облаку Интернета вещей, если ваша платформа может отправлять запросы HTTP POST в приложение-функцию.
 Приложение-функция преобразует данные в формат, принимаемый IoT Central, и пересылает их с помощью API DPS.

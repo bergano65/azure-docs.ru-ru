@@ -7,12 +7,12 @@ ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 07/10/2019
 ms.author: raynew
-ms.openlocfilehash: c1ae3a9ed8a775161aaf85ab2c91b1e43113d2e2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 393c58334f4a1bead7e089d0a64b2d165b67401d
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "70279440"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92317177"
 ---
 # <a name="assess-large-numbers-of-hyper-v-vms-for-migration-to-azure"></a>Оценка большого количества виртуальных машин Hyper-V для миграции в Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "70279440"
 
 
 > [!NOTE]
-> Если вы хотите испытать эксперимент для оценки нескольких виртуальных машин перед оценкой масштаба, следуйте нашим [сериям руководств](tutorial-prepare-hyper-v.md) .
+> Если вы хотите испытать эксперимент для оценки нескольких виртуальных машин перед оценкой масштаба, следуйте нашим [сериям руководств](./tutorial-discover-hyper-v.md) .
 
 ## <a name="plan-for-assessment"></a>Планирование оценки
 
@@ -66,7 +66,7 @@ ms.locfileid: "70279440"
 2. Настройка разрешений для взаимодействия учетной записи Azure с миграцией Azure
 3. Подготовка узлов и виртуальных машин Hyper-V
 
-Чтобы настроить эти параметры, следуйте инструкциям, приведенным в [этом руководстве](tutorial-prepare-hyper-v.md) .
+Чтобы настроить эти параметры, следуйте инструкциям, приведенным в [этом руководстве](./tutorial-discover-hyper-v.md) .
 
 ## <a name="create-a-project"></a>Создание проекта
 
@@ -75,7 +75,7 @@ ms.locfileid: "70279440"
 1. Создайте проекты службы "миграция Azure".
 2. Добавьте средство Azure Migrate Server для оценки в проекты.
 
-[Дополнительные сведения](how-to-add-tool-first-time.md)
+[Подробнее](how-to-add-tool-first-time.md)
 
 ## <a name="create-and-review-an-assessment"></a>Создание и проверка оценки
 

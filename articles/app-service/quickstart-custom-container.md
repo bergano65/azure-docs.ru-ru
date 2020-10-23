@@ -7,12 +7,12 @@ ms.date: 08/28/2019
 ms.topic: quickstart
 ms.custom: devx-track-csharp
 zone_pivot_groups: app-service-containers-windows-linux
-ms.openlocfilehash: 4c95e345255b28ba43e474087cdb80fcab493394
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.openlocfilehash: 3191552421091bc0a2c4e6855c0271c142af1882
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91356423"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92152374"
 ---
 # <a name="run-a-custom-container-in-azure"></a>Запуск пользовательского контейнера в Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "91356423"
 
 - <a href="https://hub.docker.com/" target="_blank">зарегистрируйте учетную запись центра Docker</a>.
 - <a href="https://docs.docker.com/docker-for-windows/install/" target="_blank">Установите Docker для ОС Windows</a>.
-- <a href="https://docs.microsoft.com/virtualization/windowscontainers/quick-start/quick-start-windows-10" target="_blank">Переключите Docker для запуска контейнеров Windows</a>.
+- <a href="/virtualization/windowscontainers/quick-start/quick-start-windows-10" target="_blank">Переключите Docker для запуска контейнеров Windows</a>.
 - <a href="https://www.visualstudio.com/downloads/" target="_blank">Установите Visual Studio 2019</a>, а также следующие рабочие нагрузки: **ASP.NET и веб-разработка** и **разработка Azure**. Если у вас уже установлена версия Visual Studio 2019, сделайте следующее.
 
     - Установите последние обновления для Visual Studio, выбрав **Справка** > **Проверить обновления**.

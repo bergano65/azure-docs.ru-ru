@@ -8,15 +8,15 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 02/2/2020
 ms.custom: seodec18
-ms.openlocfilehash: 891cd651278906c6ff4b24d91342c612c67604de
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5b28d75e6526f27fd0076244ec32848dbf20e91e
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91596567"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92424772"
 ---
 # <a name="azure-stream-analytics-output-to-azure-cosmos-db"></a>Выходные данные Azure Stream Analytics в Azure Cosmos DB  
-Azure Stream Analytics дает возможность направлять выходные данные в формате JSON в [Azure Cosmos DB](https://azure.microsoft.com/services/documentdb/), позволяя архивировать данные и уменьшать задержки запросов в отношении неструктурированных данных JSON. В этом документе представлены некоторые рекомендации по реализации данной конфигурации.
+Azure Stream Analytics дает возможность направлять выходные данные в формате JSON в [Azure Cosmos DB](https://azure.microsoft.com/services/documentdb/), позволяя архивировать данные и уменьшать задержки запросов в отношении неструктурированных данных JSON. В этом документе представлены некоторые рекомендации по реализации данной конфигурации. Рекомендуется задать для задания уровень совместимости 1,2 при использовании Azure Cosmos DB в качестве выходных данных.
 
 Если вы не знакомы с Azure Cosmos DB, для начала работы обратитесь к [документации Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/). 
 
@@ -137,3 +137,17 @@ C уровнем 1.2 Stream Analytics более интеллектуально 
 - NotFound (код ошибки HTTP 404)
 - Forbidden (код ошибки HTTP 403)
 - BadRequest (код ошибки HTTP 400)
+
+## <a name="common-issues"></a>Распространенные проблемы
+
+1. В коллекцию добавляется уникальное ограничение индекса, а выходные данные из Stream Analytics нарушают это ограничение. Убедитесь, что выходные данные из Stream Analytics не нарушают ограничения UNIQUE или не удаляют ограничения. Дополнительные сведения см. [в разделе ограничения уникального ключа в Azure Cosmos DB](../cosmos-db/unique-keys.md).
+
+2. `PartitionKey`Столбец не существует.
+
+3. `Id`Столбец не существует.
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+* [Описание выходных данных из Azure Stream Analytics](stream-analytics-define-outputs.md) 
+* [Вывод данных Azure Stream Analytics в базу данных SQL Azure](stream-analytics-sql-output-perf.md)
+* [Секционирование выходных данных пользовательского большого двоичного объекта Azure Stream Analytics](stream-analytics-custom-path-patterns-blob-storage-output.md)

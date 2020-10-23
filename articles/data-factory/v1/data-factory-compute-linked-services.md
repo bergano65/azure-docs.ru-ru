@@ -11,12 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: cf7a3ff478100c892e59e98c91e9605c88bdc667
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f584ba1021e9cc66454e3aebd7f51b34e72885f5
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89438829"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92369188"
 ---
 # <a name="compute-environments-supported-by-azure-data-factory-version-1"></a>Вычислительные среды, поддерживаемые фабрикой данных Azure версии 1
 > [!NOTE]
@@ -30,7 +30,7 @@ ms.locfileid: "89438829"
 | ---------------------------------------- | ---------------------------------------- |
 | [Кластер Azure HDInsight по запросу](#azure-hdinsight-on-demand-linked-service) или [собственный кластер HDInsight](#azure-hdinsight-linked-service) | [DotNet](data-factory-use-custom-activities.md), [Hive](data-factory-hive-activity.md), [Pig](data-factory-pig-activity.md), [MapReduce](data-factory-map-reduce.md), [потоковая передача Hadoop](data-factory-hadoop-streaming-activity.md) |
 | [Пакетная служба Azure](#azure-batch-linked-service) | [DotNet](data-factory-use-custom-activities.md) |
-| [Машинное обучение Azure](#azure-machine-learning-linked-service) | [Действия машинного обучения: выполнение пакета и обновление ресурса](data-factory-azure-ml-batch-execution-activity.md) |
+| [Машинное обучение Azure Studio (классическая модель)](#azure-machine-learning-studio-classic-linked-service) | [Действия Studio (классическая модель): выполнение пакета и обновление ресурса](data-factory-azure-ml-batch-execution-activity.md) |
 | [Azure Data Lake Analytics](#azure-data-lake-analytics-linked-service) | [Аналитика озера данных U-SQL](data-factory-usql-activity.md) |
 | [Azure SQL](#azure-sql-linked-service), [azure синапсе Analytics](#azure-synapse-analytics-linked-service) [SQL Server](#sql-server-linked-service) | [Действие хранимой процедуры](data-factory-stored-proc-activity.md) |
 
@@ -230,7 +230,7 @@ Azure HDInsight поддерживает несколько версий кла�
 
 * Azure HDInsight
 * Пакетная служба Azure
-* Машинное обучение Azure
+* Машинное обучение Azure Studio (классическая модель)
 * Аналитика озера данных Azure
 * База данных SQL Azure, Azure синапсе Analytics (ранее — хранилище данных SQL), SQL Server
 
@@ -311,8 +311,8 @@ Azure HDInsight поддерживает несколько версий кла�
 | poolName          | Имя пула виртуальных машин.    | Да      |
 | linkedServiceName | Имя связанной службы хранилища, которая ассоциируется с этой связанной пакетной службой. Эта связанная служба используется для промежуточных файлов, необходимых для выполнения действий и хранения журналов выполнения действий. | Да      |
 
-## <a name="azure-machine-learning-linked-service"></a>Связанная служба Машинного обучения Azure
-Создайте связанную службу Машинного обучения, чтобы зарегистрировать конечную точку пакетной оценки показателей машинного обучения в фабрике данных.
+## <a name="azure-machine-learning-studio-classic-linked-service"></a>Связанная служба Машинное обучение Azure Studio (классическая модель)
+Можно создать связанную службу Машинное обучение Azure Studio (классическая модель), чтобы зарегистрировать конечную точку пакетной оценки Studio (классическая) для фабрики данных.
 
 ### <a name="example"></a>Пример
 

@@ -11,12 +11,13 @@ ms.topic: how-to
 ms.date: 05/19/2020
 ms.author: kenwith
 ms.reviewer: arvindh, luleon, phsignor
-ms.openlocfilehash: e590981fabcd20f23f25d12b4176b6730cb0fc3c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: contperfq2
+ms.openlocfilehash: df50231b03f71008f967c4f09ce09c5b5890802f
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91804364"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92427651"
 ---
 # <a name="configure-group-owner-consent-to-apps-accessing-group-data"></a>Настройка согласия владельца группы на приложения, обращающиеся к данным группы
 
@@ -30,7 +31,7 @@ ms.locfileid: "91804364"
 
 Выполните следующие действия, чтобы управлять согласием владельца группы на приложения, обращающиеся к данным группы:
 
-1. Войдите на [портал Azure](https://portal.azure.com) как [глобальный администратор](../users-groups-roles/directory-assign-admin-roles.md#global-administrator--company-administrator).
+1. Войдите на [портал Azure](https://portal.azure.com) как [глобальный администратор](../roles/permissions-reference.md#global-administrator--company-administrator).
 2. Выберите **Azure Active Directory** > **Корпоративные приложения** > **Согласия и разрешения** > **Параметры согласия пользователя**.
 3. В разделе **Согласие владельца группы для приложений, обращающихся к данным** выберите параметр, который вы хотите включить.
 4. Нажмите кнопку **Save** (Сохранить), чтобы сохранить настройки.

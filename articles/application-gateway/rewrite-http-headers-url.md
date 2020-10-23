@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: conceptual
 ms.date: 07/16/2020
 ms.author: surmb
-ms.openlocfilehash: 2ee34e1a7959aafa5db949b443fd58cca58719c6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 93af3183ae9e969d14a35ce4e365d48895ef4e79
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87281197"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92216680"
 ---
 # <a name="rewrite-http-headers-and-url-with-application-gateway"></a>Перезапись заголовков HTTP и URL-адреса с помощью шлюза приложений
 
@@ -50,7 +50,7 @@ ms.locfileid: "87281197"
 
 Чтобы узнать, как переписать URL-адрес с помощью шлюза приложений, используя портал Azure, см. [здесь](rewrite-url-portal.md).
 
-![img](./media/rewrite-http-headers-url/url-rewrite-overview.png)
+![Схема, описывающая процесс перезаписи URL-адреса с помощью шлюза приложений.](./media/rewrite-http-headers-url/url-rewrite-overview.png)
 
 >[!NOTE]
 > Функция переопределения URL-адресов доступна в предварительной версии и доступна только для Standard_v2 и WAF_v2 SKU шлюза приложений. Не рекомендуется использовать в рабочей среде. Дополнительные сведения о предварительных версиях см. в [статье условия использования](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).

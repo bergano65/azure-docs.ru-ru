@@ -11,18 +11,18 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/28/2020
 ms.author: blehr
-ms.openlocfilehash: 6174d108fd80df9725ca5ef0fb9296dfffaf4a64
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 10de2a4a00b716656626082a24ecbd56d0fcc3a4
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89303519"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92127307"
 ---
 # <a name="quickstart-create-a-public-ip-address-using-azure-powershell"></a>Краткое руководство. Создание общедоступного IP-адреса с помощью Azure PowerShell
 
 В этой статье показано, как создать ресурс общедоступного IP-адреса с помощью Azure PowerShell. Дополнительные сведения о том, к каким ресурсам можно связываться, разница между SKU "базовый" и "Стандартный" и другими связанными сведениями см. в разделе [общедоступные IP-адреса](https://docs.microsoft.com/azure/virtual-network/public-ip-addresses).  В этом примере мы рассмотрим только IPv4-адреса. Дополнительные сведения об IPv6-адресах см. в статье [IPv6 для виртуальной сети Azure](https://docs.microsoft.com/azure/virtual-network/ipv6-overview).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 - Локальная установка Azure PowerShell или Azure Cloud Shell
 
@@ -106,7 +106,7 @@ New-AzPublicIpAddress -ResourceGroupName $rg -Name $pubIP -Location $loc -Alloca
 
 # <a name="basic-sku"></a>[**SKU "Базовый"** ](#tab/option-create-public-ip-basic)
 
-Используйте [New-азпублиЦипаддресс](/powershell/module/az.network/new-azpublicipaddress) , чтобы создать базовый статический общедоступный IP-адрес с именем **мистандардпублиЦип** в **myResourceGroup**.  Основные общедоступные IP-адреса не имеют концепции зон доступности.
+Используйте [New-азпублиЦипаддресс](/powershell/module/az.network/new-azpublicipaddress) , чтобы создать базовый статический общедоступный IP-адрес с именем **мибасикпублиЦип** в **myResourceGroup**.  Основные общедоступные IP-адреса не имеют концепции зон доступности.
 
 ```azurepowershell-interactive
 ## Variables for the command ##

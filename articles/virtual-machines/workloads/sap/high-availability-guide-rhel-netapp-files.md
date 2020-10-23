@@ -12,14 +12,14 @@ ms.service: virtual-machines-windows
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 08/04/2020
+ms.date: 10/16/2020
 ms.author: radeltch
-ms.openlocfilehash: 51da96ab5c42c0b48f53969139bd8b87690b8319
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 14c5cd480f17e137965ae4bbf6700a36eb92cc3e
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91329284"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92167837"
 ---
 # <a name="azure-virtual-machines-high-availability-for-sap-netweaver-on-red-hat-enterprise-linux-with-azure-netapp-files-for-sap-applications"></a>Высокая доступность виртуальных машин Azure для SAP NetWeaver на Red Hat Enterprise Linux с Azure NetApp Files для приложений SAP
 
@@ -249,6 +249,9 @@ SAP NetWeaver требует общее хранилище для каталог
          * Повторите предыдущие шаги в разделе "г", указав порты 36**00**, 39**00**, 81**00**, 5**00**13, 5**00**14, 5**00**16 и TCP в качестве протокола для ASCS.
       1. Дополнительные порты для ASCS ERS
          * Повторите предыдущие шаги, указав порты 32**01**, 33**01**, 5**01**13, 5**01**14, 5**01**16 и TCP в качестве протокола для ASCS ERS.
+
+      > [!IMPORTANT]
+      > Плавающий IP-адрес не поддерживается для вторичной IP-конфигурации NIC в сценариях балансировки нагрузки. Дополнительные сведения см. в статье [ограничения балансировщика нагрузки Azure](https://docs.microsoft.com/azure/load-balancer/load-balancer-multivip-overview#limitations). Если для виртуальной машины требуется дополнительный IP-адрес, разверните вторую сетевую карту.  
 
       > [!Note]
       > Если в серверный пул внутреннего (без общедоступного IP-адреса) Azure Load Balancer ценовой категории "Стандартный" помещаются виртуальные машины без общедоступных IP-адресов, у них не будет исходящего подключения к Интернету без дополнительной настройки, разрешающей маршрутизацию к общедоступным конечным точкам. Подробные сведения о такой настройке см. в статье [Подключение к общедоступной конечной точке для виртуальных машин с помощью Azure Load Balancer (цен. категория "Стандартный") в сценариях обеспечения высокого уровня доступности SAP](./high-availability-guide-standard-load-balancer-outbound-connections.md).  

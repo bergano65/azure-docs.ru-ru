@@ -7,12 +7,12 @@ ms.author: msangapu
 keywords: служба приложений azure, веб-приложение, linux, windows, docker, контейнер
 ms.custom: devx-track-csharp, mvc, seodec18, devx-track-python
 zone_pivot_groups: app-service-containers-windows-linux
-ms.openlocfilehash: f4b2aea0a6782b5484b2f6d15066d71990348596
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0cb1aa2d922db96eff21a128eaa60363b37db9d7
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91312062"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92152104"
 ---
 # <a name="migrate-custom-software-to-azure-app-service-using-a-custom-container"></a>Перенос пользовательского программного обеспечения в Службу приложений Azure с помощью пользовательского контейнера
 
@@ -28,7 +28,7 @@ ms.locfileid: "91312062"
 
 - <a href="https://hub.docker.com/" target="_blank">зарегистрируйте учетную запись центра Docker</a>.
 - <a href="https://docs.docker.com/docker-for-windows/install/" target="_blank">Установите Docker для ОС Windows</a>.
-- <a href="https://docs.microsoft.com/virtualization/windowscontainers/quick-start/quick-start-windows-10" target="_blank">Переключите Docker для запуска контейнеров Windows</a>.
+- <a href="/virtualization/windowscontainers/quick-start/quick-start-windows-10" target="_blank">Переключите Docker для запуска контейнеров Windows</a>.
 - <a href="https://www.visualstudio.com/downloads/" target="_blank">Установите Visual Studio 2019</a>, а также следующие рабочие нагрузки: **ASP.NET и веб-разработка** и **разработка Azure**. Если у вас уже установлена версия Visual Studio 2019, сделайте следующее.
     - Установите последние обновления для Visual Studio, выбрав **Справка** > **Проверить наличие обновлений**.
     - Добавьте рабочие нагрузки в Visual Studio, выбрав **Инструменты** > **Get Tools and Features** (Получить инструменты и компоненты).

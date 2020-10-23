@@ -5,12 +5,12 @@ author: mscurrell
 ms.author: markscu
 ms.date: 08/02/2018
 ms.topic: how-to
-ms.openlocfilehash: 6e34e0ef9035882a32ff46222686db4a948d7997
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 77a6ec54495b394c597f6d6b4ddb5f5fe3285550
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85957466"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92107476"
 ---
 # <a name="azure-batch-rendering-capabilities"></a>Возможности рендеринга в пакетной службе Azure
 
@@ -75,7 +75,7 @@ ms.locfileid: "85957466"
 
 Как в других рабочих нагрузках, требования к системе приложений для рендеринга различаются, как и требования к производительности для заданий и проектов.  В Azure доступны разнообразные семейства виртуальных машин для удовлетворения любых требований — наименьшие затраты, лучшее соотношение цены и производительности и т. д.
 Некоторые приложения для рендеринга, например Arnold, основаны на использовании ресурсов ЦП. Другие, такие как V-Ray и Blender Cycles, могут использовать ЦП и (или) GPU.
-Описание доступных семейств виртуальных машин и их размеры см. [здесь](../virtual-machines/windows/sizes.md).
+Описание доступных семейств виртуальных машин и их размеры см. [здесь](../virtual-machines/sizes.md).
 
 ### <a name="low-priority-vms"></a>Виртуальные машины с низким приоритетом
 

@@ -3,12 +3,12 @@ title: Управление расширениями виртуальных ма
 description: Серверы с поддержкой Arc Azure могут управлять развертыванием расширений виртуальных машин, которые обеспечивают настройку и задачи автоматизации после развертывания с помощью виртуальных машин, не относящихся к Azure.
 ms.date: 09/23/2020
 ms.topic: conceptual
-ms.openlocfilehash: 1c3d50f407f4412a14201dfe669334dbb083d323
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 59772022672781e926e439e9740f8e8a02c8b4d3
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91329080"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92108122"
 ---
 # <a name="virtual-machine-extension-management-with-azure-arc-enabled-servers"></a>Управление расширениями виртуальных машин с помощью серверов с поддержкой дуги Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "91329080"
 
 В этом выпуске поддерживаются следующие расширения виртуальных машин на компьютерах Windows и Linux.
 
-|Расширение |ОС |Издатель |Дополнительные сведения |
+|Расширение |ОС |Publisher |Дополнительные сведения |
 |----------|---|----------|-----------------------|
 |CustomScriptExtension |Windows |Microsoft.Compute; |[Расширение пользовательских сценариев Windows](../../virtual-machines/extensions/custom-script-windows.md)|
 |DSC |Windows |Microsoft. PowerShell|[Расширение DSC Windows PowerShell](../../virtual-machines/extensions/dsc-windows.md)|
@@ -716,10 +716,10 @@ New-AzResourceGroupDeployment -ResourceGroupName "ContosoEngineering" -TemplateF
 
 4. Выберите **Удалить** и при появлении запроса на проверку выберите **Да** для продолжения.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения об устранении неполадок можно найти в разделе [руководство по устранению неполадок РАСШИРЕНИЙ ВМ](troubleshoot-vm-extensions.md).
 
 * Узнайте, как управлять компьютером с помощью [Политики Azure](../../governance/policy/overview.md), например для [гостевой конфигурации](../../governance/policy/concepts/guest-configuration.md) виртуальной машины, проверять отправку отчетов с компьютера в ожидаемую рабочую область Log Analytics, включать мониторинг с помощью [Azure Monitor с виртуальными машинами](../../azure-monitor/insights/vminsights-enable-policy.md) и т. д.
 
-* Узнайте больше об [агенте Log Analytics](../../azure-monitor/platform/log-analytics-agent.md). Агент Log Analytics для Windows и Linux необходим, если требуется получить данные мониторинга операционной системы и рабочей нагрузки, управлять ими с помощью модулей Runbook или функций автоматизации, таких как Управление обновлениями, или использовать другие службы Azure, такие как [Центр безопасности Azure](../../security-center/security-center-intro.md).
+* Узнайте больше об [агенте Log Analytics](../../azure-monitor/platform/log-analytics-agent.md). Агент Log Analytics для Windows и Linux необходим, если требуется получить данные мониторинга операционной системы и рабочей нагрузки, управлять ими с помощью модулей Runbook или функций автоматизации, таких как Управление обновлениями, или использовать другие службы Azure, такие как [Центр безопасности Azure](../../security-center/security-center-introduction.md).

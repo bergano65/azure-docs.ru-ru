@@ -9,61 +9,73 @@ ms.author: twright
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 71c84b35c001be7fafdc2df53014050ae21dec63
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 625092e0557d40051e1ffd538a496c20edc0222f
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90939118"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92320203"
 ---
 # <a name="get-azure-arc-enabled-data-services-logs"></a>Получение журналов служб данных с поддержкой дуги Azure
 
 [!INCLUDE [azure-arc-data-preview](../../../includes/azure-arc-data-preview.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
-Для получения журналов служб данных, включенных в дугу Azure, вам потребуется средство Azure Data CLI. [Инструкции по установке](./install-client-tools.md)
+Прежде чем продолжать:
 
-Необходимо иметь возможность войти в службу контроллера служб данных с включенной службой "Дуга Azure" с правами администратора.
+* [!INCLUDE [azure-data-cli-azdata](../../../includes/azure-data-cli-azdata.md)]. [Инструкции по установке](./install-client-tools.md).
+* Учетная запись администратора для входа в контроллер служб данных с включенной службой "Дуга Azure".
 
 ## <a name="get-azure-arc-enabled-data-services-logs"></a>Получение журналов служб данных с поддержкой дуги Azure
 
-Вы можете получить журналы служб данных для службы "Дуга Azure" во всех модулях Pod или конкретных модулях для устранения неполадок.  Это можно сделать с помощью стандартных средств Kubernetes, таких как `kubectl logs` команда или в этой статье, вы будете использовать средство CLI для данных Azure, которое упрощает получение всех журналов одновременно.
+Вы можете получить журналы служб данных для службы "Дуга Azure" во всех модулях Pod или конкретных модулях для устранения неполадок. Это можно сделать с помощью стандартных средств Kubernetes, таких как `kubectl logs` команда или в этой статье, которые будут использовать [!INCLUDE [azure-data-cli-azdata](../../../includes/azure-data-cli-azdata.md)] средство, что упрощает получение всех журналов одновременно.
 
-Сначала убедитесь, что вы вошли в контроллер данных.
+1. Войдите в контроллер данных с помощью учетной записи администратора.
 
-```console
-azdata login
-```
+   ```console
+   azdata login
+   ```
 
-Затем выполните следующую команду, чтобы создать дамп журналов:
-```console
-azdata arc dc debug copy-logs --namespace <namespace name> --exclude-dumps --skip-compress
+2. Выполните следующую команду, чтобы создать дамп журналов:
 
-#Example:
-#azdata arc dc debug copy-logs --namespace arc --exclude-dumps --skip-compress
-```
+   ```console
+   azdata arc dc debug copy-logs --namespace <namespace name> --exclude-dumps --skip-compress
+   ```
 
-Файлы журнала будут созданы в текущем рабочем каталоге по умолчанию в подкаталоге с именем Logs.  Вы можете вывести файлы журнала в другой каталог с помощью `--target-folder` параметра.
+   Пример:
 
-Можно выбрать сжатие файлов, опустив `--skip-compress` параметр.
+   ```console
+   #azdata arc dc debug copy-logs --namespace arc --exclude-dumps --skip-compress
+   ```
 
-Можно активировать и включить дампы памяти, опустив `--exclude-dumps` , но это не рекомендуется, если только служба поддержки Майкрософт не запросил дампы памяти.  Для создания дампа памяти необходимо, чтобы параметр контроллера данных был установлен в значение, заданное `allowDumps` `true` при создании контроллера данных.
+Контроллер данных создает файлы журнала в текущем рабочем каталоге в подкаталоге с именем `logs` . 
 
-При необходимости можно выбрать фильтр для регистрации журналов только для определенного Pod ( `--pod` ) или контейнера ( `--container` ) по имени.
+## <a name="options"></a>Параметры
 
-Можно также выбрать фильтр для получения журналов для определенного настраиваемого ресурса, передав параметр `--resource-kind` и `--resource-name` .  `resource-kind`Значение параметра должно быть одним из имен настраиваемых определений ресурсов, которые могут быть получены командой `kubectl get customresourcedefinition` .
+`azdata arc dc debug copy-logs` предоставляет следующие возможности для управления выходными данными.
+
+* Выводит файлы журнала в другой каталог с помощью `--target-folder` параметра.
+* Сжатие файлов путем пропуска `--skip-compress` параметра.
+* Активируйте и включите дампы памяти, опустив `--exclude-dumps` . Этот метод не рекомендуется использовать, если только служба поддержки Майкрософт не запросил дампы памяти. Для создания дампа памяти необходимо, чтобы параметр контроллера данных был установлен в значение, заданное `allowDumps` `true` при создании контроллера данных.
+* Фильтр для получения журналов только для определенного Pod ( `--pod` ) или контейнера ( `--container` ) по имени.
+* Фильтр для получения журналов для определенного настраиваемого ресурса путем передачи `--resource-kind` параметра и `--resource-name` . `resource-kind`Значение параметра должно быть одним из имен настраиваемых определений ресурсов, которые могут быть получены командой `kubectl get customresourcedefinition` .
+
+С помощью этих параметров можно заменить `<parameters>` в следующем примере. 
 
 ```console
 azdata arc dc debug copy-logs --target-folder <desired folder> --exclude-dumps --skip-compress -resource-kind <custom resource definition name> --resource-name <resource name> --namespace <namespace name>
+```
 
-#Example
+Например.
+
+```console
 #azdata arc dc debug copy-logs --target-folder C:\temp\logs --exclude-dumps --skip-compress --resource-kind postgresql-12 --resource-name pg1 --namespace arc
 ```
 
-Пример иерархии папок.  Обратите внимание, что иерархия папок упорядочена по имени POD, а затем по контейнеру, а затем по иерархии каталогов в контейнере.
+Пример иерархии папок. Иерархия папок упорядочивается по имени POD, затем контейнеру, а затем по иерархии каталогов в контейнере.
 
-```console
+```output
 <export directory>
 ├───debuglogs-arc-20200827-180403
 │   ├───bootstrapper-vl8j2
@@ -181,3 +193,7 @@ azdata arc dc debug copy-logs --target-folder <desired folder> --exclude-dumps -
             ├───journal
             └───openvpn
 ```
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+[azdata arc dc debug copy-logs](/sql/azdata/reference/reference-azdata-arc-dc-debug#azdata-arc-dc-debug-copy-logs?toc=/azure/azure-arc/data/toc.json&bc=/azure/azure-arc/data/breadcrumb/toc.json)

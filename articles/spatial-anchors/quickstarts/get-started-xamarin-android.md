@@ -8,12 +8,12 @@ ms.author: crtreasu
 ms.date: 07/22/2019
 ms.topic: quickstart
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: b7f9a83a3972ed0a5a635826b40e15c437da16b8
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.openlocfilehash: ab414b877bd2d098c6e340267ff579fb58aec9d9
+ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91540376"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92097326"
 ---
 # <a name="quickstart-create-a-xamarin-android-app-with-azure-spatial-anchors"></a>Краткое руководство. Создание приложения Android в Xamarin с помощью Пространственных привязок Azure
 
@@ -37,10 +37,10 @@ ms.locfileid: "91540376"
     - <a href="https://git-scm.com/download/win" target="_blank">Git для Windows</a>.
     - <a href="https://git-lfs.github.com/">Git LFS</a>.
   - При использовании macOS:
-    - последней версией <a href="https://docs.microsoft.com/visualstudio/mac/installation?view=vsmac-2019" target="_blank">Visual Studio для Mac 8.1+</a>;
+    - последней версией <a href="/visualstudio/mac/installation?view=vsmac-2019" target="_blank">Visual Studio для Mac 8.1+</a>;
     - <a href="https://git-scm.com/download/mac" target="_blank">Git для macOS</a>.
     - <a href="https://git-lfs.github.com/">Git LFS</a>.
-- На выбранной вами платформе установлена и запущена последняя версия Xamarin.Android. Руководство по установке Xamarin.Android см. в руководствах по [ установке Xamarin.Android](https://docs.microsoft.com/xamarin/android/get-started/installation/index).
+- На выбранной вами платформе установлена и запущена последняя версия Xamarin.Android. Руководство по установке Xamarin.Android см. в руководствах по [ установке Xamarin.Android](/xamarin/android/get-started/installation/index).
 - Устройство Android с включенным <a href="https://developer.android.com/studio/debug/dev-options" target="_blank">режимом разработчика</a> и поддержкой <a href="https://developers.google.com/ar/discover/supported-devices" target="_blank">ARCore</a>.
   - Для взаимодействия компьютера с устройством Android могут потребоваться дополнительные драйверы устройств. Дополнительные сведения см. [здесь](https://developer.android.com/studio/run/device.html).
 - Целевой ОС для вашего приложения должна быть ARCore **1.8**.

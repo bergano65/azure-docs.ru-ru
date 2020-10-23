@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 04/09/2020
 ms.author: jeedes
-ms.openlocfilehash: c988168f5d56fd7dcf8142a9f1e68af2defdcfc7
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 2e8f542f8a734f5bd6592ebc743b30676dd61f07
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88552974"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91850560"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-invision"></a>Руководство по интеграции единого входа Azure Active Directory с InVision
 
@@ -133,15 +133,15 @@ ms.locfileid: "88552974"
 
 1. Выберите раздел **Team** (Команда) и щелкните вкладку **Settings** (Параметры).
 
-    ![Конфигурация InVision](./media/invision-tutorial/config1.png)
+    ![Снимок экрана: вкладка Team (Команда) с выбранным пунктом Settings (Параметры)](./media/invision-tutorial/config1.png)
 
 1. Прокрутите содержимое вниз до пункта **Single sign-on** (Единый вход), а затем нажмите кнопку **Change** (Изменить).
 
-    ![Конфигурация InVision](./media/invision-tutorial/config3.png)
+    ![Снимок экрана: раздел Single Sign-On (Единый вход) и кнопка Change (Изменить)](./media/invision-tutorial/config3.png)
 
 1. На странице **Single Sign-On** (Единый вход) выполните следующие действия:
 
-    ![Конфигурация InVision](./media/invision-tutorial/config4.png)
+    ![Снимок экрана: страница Single sign-on (Единый вход), где можно ввести значения для этого шага](./media/invision-tutorial/config4.png)
 
     а. Измените положение переключателя **Require SSO for every member of <Account name>** (Требовать единый вход для каждого члена <имя учетной записи>) на **On** (Вкл.).
 
@@ -169,19 +169,19 @@ ms.locfileid: "88552974"
 
 1. Выберите раздел **Team** (Команда) и щелкните вкладку **People** (Пользователи).
 
-    ![Конфигурация InVision](./media/invision-tutorial/config2.png)
+    ![Снимок экрана: вкладка Team (Команда) с выбранным пунктом People (Пользователи)](./media/invision-tutorial/config2.png)
 
 1. Щелкните значок **+** , чтобы добавить нового пользователя.
 
-    ![Конфигурация InVision](./media/invision-tutorial/user1.png)
+    ![Снимок экрана: значок плюса для добавления пользователя](./media/invision-tutorial/user1.png)
 
 1. Введите адрес электронной почты пользователя и нажмите кнопку **Next** (Далее).
 
-    ![Конфигурация InVision](./media/invision-tutorial/user2.png)
+    ![Снимок экрана: диалоговое окно Invite to (Пригласить), в котором можно ввести адреса](./media/invision-tutorial/user2.png)
 
 1. Подтвердите адрес электронной почты и нажмите кнопку **Invite** (Пригласить).
 
-    ![Конфигурация InVision](./media/invision-tutorial/user3.png)
+    ![Снимок экрана: диалоговое окно Invite (Приглашение), в котором можно нажать кнопку Invite (Пригласить)](./media/invision-tutorial/user3.png)
 
 ## <a name="test-sso"></a>Проверка единого входа
 

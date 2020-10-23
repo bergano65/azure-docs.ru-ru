@@ -3,12 +3,12 @@ title: Настройка устройства "миграция Azure" для H
 description: Узнайте, как настроить устройство миграции Azure для оценки и миграции виртуальных машин Hyper-V.
 ms.topic: article
 ms.date: 03/23/2020
-ms.openlocfilehash: 8841f934ba21fda6cc36b856ea773ed0f53cfe32
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a12785ea3791366badb907498796a73c2c993623
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91448082"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92314165"
 ---
 # <a name="set-up-an-appliance-for-hyper-v-vms"></a>Настройка устройства для виртуальных машин Hyper-V
 
@@ -118,7 +118,7 @@ ms.locfileid: "91448082"
    
    Вход с помощью PIN-кода не поддерживается.
 3. После входа вернитесь к веб-приложению. 
-4. Если учетная запись пользователя Azure, используемая для ведения журнала, имеет необходимые [разрешения](tutorial-prepare-hyper-v.md#prepare-azure) на ресурсы Azure, созданные во время создания ключа, будет инициирована регистрация модуля.
+4. Если учетная запись пользователя Azure, используемая для ведения журнала, имеет необходимые [разрешения](./tutorial-discover-hyper-v.md#prepare-an-azure-user-account) на ресурсы Azure, созданные во время создания ключа, будет инициирована регистрация модуля.
 1. После регистрации модуля вы можете просмотреть сведения о регистрации, щелкнув **Просмотреть подробности**.
 
 

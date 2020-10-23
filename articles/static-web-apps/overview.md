@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: overview
 ms.date: 05/08/2020
 ms.author: cshoe
-ms.openlocfilehash: 086feb3aa7c9a38756fded58538eb22e094a5960
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 9cd5136d69e4b14aa50a96d20f3187ce88db6e96
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "90906798"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92320497"
 ---
 # <a name="what-is-azure-static-web-apps-preview"></a>Что такое Статические веб-приложения Azure (предварительная версия)?
 
@@ -44,7 +44,7 @@ ms.locfileid: "90906798"
 
 ## <a name="what-you-can-do-with-static-web-apps"></a>Возможности использования статических веб-приложений
 
-- **Создание современных веб-приложений** с использованием платформ и библиотек JavaScript, например [Angular](getting-started.md?tabs=angular), [React](getting-started.md?tabs=react), [Svelte](https://docs.microsoft.com/learn/modules/publish-app-service-static-web-app-api/), [Vue](getting-started.md?tabs=react) или [Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor) для разработки приложений WebAssembly с серверной частью [Функций Azure](apis.md).
+- **Создание современных веб-приложений** с использованием платформ и библиотек JavaScript, например [Angular](getting-started.md?tabs=angular), [React](getting-started.md?tabs=react), [Svelte](/learn/modules/publish-app-service-static-web-app-api/), [Vue](getting-started.md?tabs=react) или [Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor) для разработки приложений WebAssembly с серверной частью [Функций Azure](apis.md).
 - **Публикация статических сайтов** с использованием таких платформ, как [Gatsby](publish-gatsby.md), [Hugo](publish-hugo.md), [VuePress](publish-vuepress.md).
 - **Развертывайте веб-приложений** с помощью таких платформ, как [Next.js](deploy-nextjs.md) и [Nuxt.js](deploy-nuxtjs.md).
 

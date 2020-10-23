@@ -13,12 +13,12 @@ author: VanMSFT
 ms.author: vanto
 ms.reviewer: sstein
 ms.date: 03/23/2020
-ms.openlocfilehash: 7be78a0c05942aebb9e3154a79035d71f87becd3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ca458bebf75f8e77774236166704794b817b7c3f
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91334919"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92167140"
 ---
 # <a name="authorize-database-access-to-sql-database-sql-managed-instance-and-azure-synapse-analytics"></a>Авторизация доступа к базе данных SQL, SQL Управляемый экземпляр и Azure синапсе Analytics
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
@@ -42,7 +42,7 @@ ms.locfileid: "91334919"
 - [Проверка подлинности SQL](https://docs.microsoft.com/sql/relational-databases/security/choose-an-authentication-mode#connecting-through-sql-server-authentication).
 
   При использовании этого метода проверки подлинности пользователь отправляет имя учетной записи пользователя и связанный пароль для установления соединения. Этот пароль хранится в базе данных master для учетных записей пользователей, связанных с именем входа, или хранится в базе данных, содержащей учетные записи пользователей, *не* связанные с именем входа.
-- [Проверка подлинности Azure Active Directory](authentication-aad-overview.md)
+- [Аутентификация Azure Active Directory](authentication-aad-overview.md)
 
   При использовании этого метода проверки подлинности пользователь отправляет имя учетной записи пользователя и запрашивает, что служба использует учетные данные, хранящиеся в Azure Active Directory (Azure AD).
 
@@ -65,7 +65,7 @@ ms.locfileid: "91334919"
 
 ![Администраторы SQL Server](./media/logins-create-manage/sql-admins.png)
 
-![Администраторы SQL Server](./media/logins-create-manage/sql-admins2.png)
+![Снимок экрана, посвященный пункту меню "Свойства".](./media/logins-create-manage/sql-admins2.png)
 
 > [!IMPORTANT]
 > Имя для входа администратора нельзя изменить после его создания. Чтобы сбросить пароль администратора сервера, на [портале Azure](https://portal.azure.com) щелкните **Серверы SQL**, выберите в списке сервер и щелкните **Сбросить пароль**. Чтобы сбросить пароль для Управляемый экземпляр SQL, перейдите в портал Azure, щелкните экземпляр и нажмите кнопку **Сброс пароля**. Можно также использовать PowerShell или Azure CLI.
@@ -169,6 +169,6 @@ ms.locfileid: "91334919"
 - [Маскирование данных](dynamic-data-masking-overview.md) позволяет снизить уязвимость конфиденциальных данных.
 - [хранимые процедуры](https://docs.microsoft.com/sql/relational-databases/stored-procedures/stored-procedures-database-engine) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Обзор всех баз данных SQL Azure и функций безопасности SQL Управляемый экземпляр см. в статье [Общие сведения о безопасности](security-overview.md).

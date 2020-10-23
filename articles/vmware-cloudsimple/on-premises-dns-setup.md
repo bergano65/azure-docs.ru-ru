@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: c2d69d21eb46d502a45c9df1dfaaa947d26ef7c4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8d982d06bd100313d643033294b6d14e6383d5df
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "79246114"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92424701"
 ---
 # <a name="configure-dns-for-name-resolution-for-private-cloud-vcenter-access-from-on-premises-workstations"></a>Настройка DNS для разрешения имен для доступа к службе v-Center для частного облака с локальных рабочих станций
 
@@ -58,19 +58,19 @@ zone "az.cloudsimple.io"
 
 1. Щелкните правой кнопкой мыши DNS-сервер и выберите пункт **создать зону**. 
   
-    ![Новая зона](media/DNS01.png)
+    ![Снимок экрана, в котором выделяется пункт меню "создать зону".](media/DNS01.png)
 2. Выберите **зона-заглушка** и нажмите кнопку **Далее**.
 
-    ![Новая зона](media/DNS02.png)
+    ![Снимок экрана, посвященный параметру зоны-заглушки.](media/DNS02.png)
 3. Выберите подходящий вариант в зависимости от среды и нажмите кнопку **Далее**.
 
-    ![Новая зона](media/DNS03.png)
+    ![Снимок экрана, на котором показаны параметры репликации данных зоны.](media/DNS03.png)
 4. Выберите **зону прямого просмотра** и нажмите кнопку **Далее**.
 
-    ![Новая зона](media/DNS01.png)
+    ![Снимок экрана, посвященный параметру зоны прямого просмотра.](media/DNS01.png)
 5. Введите имя зоны и нажмите кнопку **Далее**.
 
-    ![Новая зона](media/DNS05.png)
+    ![Снимок экрана, на котором показано, где можно ввести имя зоны.](media/DNS05.png)
 6. Введите IP-адреса DNS-серверов для частного облака, полученного на портале Клаудсимпле.
 
     ![Новая зона](media/DNS06.png)

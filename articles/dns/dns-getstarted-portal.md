@@ -6,14 +6,14 @@ services: dns
 author: rohinkoul
 ms.service: dns
 ms.topic: quickstart
-ms.date: 3/11/2019
+ms.date: 10/20/2020
 ms.author: rohink
-ms.openlocfilehash: 93d9ce50a451221c86f5336107dba30695af159f
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.openlocfilehash: be76a7902c2747c7a8dc1bfc21d58ae88f3ff343
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91355369"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92282157"
 ---
 # <a name="quickstart-create-an-azure-dns-zone-and-record-using-the-azure-portal"></a>Краткое руководство. Создание зоны и записи Azure DNS с помощью портала Azure
 
@@ -31,6 +31,14 @@ You can also perform these steps using [Azure PowerShell](dns-getstarted-powersh
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 Для выполнения действий на портале войдите на [портал Azure](https://portal.azure.com).
+
+## <a name="prerequisites"></a>Предварительные требования
+
+- Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) бесплатно.
+
+## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
+
+Войдите на [портал Azure](https://portal.azure.com) с помощью своей учетной записи Azure.
 
 ## <a name="create-a-dns-zone"></a>Создание зоны DNS
 

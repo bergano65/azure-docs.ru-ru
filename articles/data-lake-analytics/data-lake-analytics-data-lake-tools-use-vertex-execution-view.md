@@ -1,17 +1,15 @@
 ---
 title: Представление выполнения вершин в средствах Data Lake для Visual Studio
 description: В этой статье описано, как с помощью представления выполнения вершин изучать задания Data Lake Analytics.
-services: data-lake-analytics
 ms.service: data-lake-analytics
-ms.assetid: 5366d852-e7d6-44cf-a88c-e9f52f15f7df
 ms.topic: how-to
 ms.date: 10/13/2016
-ms.openlocfilehash: b8688af24e2b67f0e21de8344188b9a946f3258b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3fba7bdaa5db1d812fbcd479e5f1eab50c8d1032
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91331953"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92215864"
 ---
 # <a name="use-the-vertex-execution-view-in-data-lake-tools-for-visual-studio"></a>Использование представления выполнения вершин в инструментах Data Lake для Visual Studio
 Сведения об использовании представления выполнения вершин для изучения заданий Data Lake Analytics.
@@ -47,7 +45,7 @@ ms.locfileid: "91331953"
 * Время создания версии.
 * Время начала создания процесса/время постановки процесса в очередь/время начала процесса/время завершения процесса — когда процесс вершины начинает создание, когда процесс вершины начинает постановку в очередь, когда начинается определенный процесс вершины, когда завершается определенный процесс вершины.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Сведения о записи диагностических сведений см. в статье [доступ к журналам диагностики для Azure Data Lake Analytics](data-lake-analytics-diagnostic-logs.md)
 * Более сложный запрос можно посмотреть в статье [Анализ журналов веб-сайта с помощью аналитики озера данных Azure](data-lake-analytics-analyze-weblogs.md).
 * Для просмотра сведений о заданиях см. статью [Use Job Browser and Job View for Azure Data Lake Analytics jobs](data-lake-analytics-data-lake-tools-view-jobs.md) (Использование обозревателя заданий и представления заданий для заданий Azure Data Lake Analytics).

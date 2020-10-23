@@ -11,23 +11,20 @@ ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 11/04/2019
+ms.date: 08/14/2020
 ms.author: apimpm
-ms.openlocfilehash: 4a0e8c6eb87b053c0e3ee524c60435dc45d81ff3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7f2673bd181bc24d821b41ae1466c05a9593f154
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87902264"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92315751"
 ---
 # <a name="how-to-authorize-developer-accounts-using-oauth-20-in-azure-api-management"></a>Авторизация учетных записей разработчиков с помощью протокола OAuth 2.0 в службе управления Azure API
 
 Многие интерфейсы API поддерживают протокол [OAuth 2.0](https://oauth.net/2/) , позволяющий защитить API, а также и предоставлять доступ только действительным пользователям и только к ресурсам, на которые эти пользователи имеют право. Чтобы использовать интерактивную  консоль разработчика управления API Azure с такими API, служба позволяет настроить экземпляр службы для работы с API с поддержкой OAuth 2.0.
 
-> [!IMPORTANT]
-> Авторизация OAuth 2,0 пока недоступна в интерактивной консоли нового портала разработчика.
-
-## <a name="prerequisites"></a><a name="prerequisites"> </a>Предварительные требования
+## <a name="prerequisites"></a><a name="prerequisites"> </a>предварительные требования
 
 В этом руководстве описано, как настроить экземпляр службы API Management для авторизации учетных записей разработчиков по протоколу OAuth 2.0. В нем не рассматривается настройка поставщика OAuth 2.0. Настройка каждого поставщика OAuth 2.0 имеет свои особенности, хотя инструкции в целом схожи, а данные, необходимые для настройки этого протокола в экземпляре службы API Management, одинаковы. В примерах в этом разделе в качестве поставщика OAuth 2.0 используется служба Azure Active Directory.
 
@@ -123,7 +120,7 @@ ms.locfileid: "87902264"
 > [!NOTE]
 > Если всплывающие окна отключены, то в браузере появится запрос на их включение. Включив всплывающие окна, еще раз выберите пункт **Authorization code** , чтобы открыть форму входа.
 
-![Войти][api-management-oauth2-signin]
+![Вход][api-management-oauth2-signin]
 
 После входа поле **Request headers** (Заголовки запроса) заполняется заголовком `Authorization : Bearer`, используемым для авторизации запроса.
 
@@ -131,7 +128,7 @@ ms.locfileid: "87902264"
 
 Теперь вы можете настроить остальные параметры и отправить запрос.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Для получения дополнительных сведений об использовании OAuth 2.0 и службы управления API см. следующий видеоролик и эту [статью](api-management-howto-protect-backend-with-aad.md).
 

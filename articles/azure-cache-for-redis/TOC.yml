@@ -59,6 +59,8 @@
       href: cache-best-practices.md
     - name: Безопасность
       items:
+        - name: Варианты сетевой изоляции
+          href: cache-network-isolation.md
         - name: Элементы управления безопасностью службы "Политика Azure"
           displayName: 'regulatory, compliance, standards, domains'
           href: ./security-controls-policy.md

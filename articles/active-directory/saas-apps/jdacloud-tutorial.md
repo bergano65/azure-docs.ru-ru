@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
-ms.openlocfilehash: 98d77af45da5edff935e761fc3be81ff21306ea8
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 365082fa6b0f9788bab5291e4dbf215848223d1f
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88552702"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91849585"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-jda-cloud"></a>Руководство по интеграции Azure Active Directory с JDA Cloud
 
@@ -99,7 +99,7 @@ ms.locfileid: "88552702"
 
 4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа приложения JDA Cloud](common/idp-intiated.png)
+    ![Снимок экрана: раздел "Базовая конфигурация SAML", где можно ввести URL-адрес ответа и нажать кнопку "Сохранить".](common/idp-intiated.png)
 
     а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<SUBDOMAIN>.jdadelivers.com`.
 
@@ -107,7 +107,7 @@ ms.locfileid: "88552702"
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа приложения JDA Cloud](common/metadata-upload-additional-signon.png)
+    ![Снимок экрана, на котором показан параметр "Задать дополнительные URL-адреса" и поле для ввода URL-адреса входа](common/metadata-upload-additional-signon.png)
 
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://ssonp-dl2.jdadelivers.com/sp/startSSO.ping?PartnerIdpId=<Azure AD Identifier>`.
 

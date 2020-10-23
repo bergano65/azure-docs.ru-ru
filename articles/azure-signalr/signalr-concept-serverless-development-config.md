@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 03/01/2019
 ms.author: antchu
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: ca7d28e3f964d486d9f860c355e88132ebb897a2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: acb85a04b8a1ca491058702510079a36b93fc657
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91327652"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92151041"
 ---
 # <a name="azure-functions-development-and-configuration-with-azure-signalr-service"></a>Azure Functions development and configuration with Azure SignalR Service (Разработка и настройка функций Azure с помощью Службы Azure SignalR)
 
@@ -198,9 +198,9 @@ const connection = new signalR.HubConnectionBuilder()
 
 Дополнительные сведения о том, как использовать клиентский пакет SDK для SignalR, см. в документации по вашему языку:
 
-* [.NET Standard](https://docs.microsoft.com/aspnet/core/signalr/dotnet-client)
-* [JavaScript](https://docs.microsoft.com/aspnet/core/signalr/javascript-client)
-* [Java](https://docs.microsoft.com/aspnet/core/signalr/java-client)
+* [.NET Standard](/aspnet/core/signalr/dotnet-client)
+* [JavaScript](/aspnet/core/signalr/javascript-client)
+* [Java](/aspnet/core/signalr/java-client)
 
 ### <a name="sending-messages-from-a-client-to-the-service"></a>Отправка сообщений от клиента службе
 
@@ -227,7 +227,7 @@ connection.send('method1', 'arg1', 'arg2');
 * `CORS` — Введите базовый URL-адрес, который является источником клиентского приложения.
 * `CORSCredentials` -Задайте значение `true` , чтобы разрешить запросы "вискредентиалс"
 
-Пример.
+Пример
 
 ```json
 {
@@ -325,6 +325,6 @@ public static Task SendMessage(
 
 Сведения о других языках см. в справочнике по [привязкам службы Azure SignalR](../azure-functions/functions-bindings-signalr-service.md) для функций Azure.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы узнали, как разрабатывать и настраивать приложения службы SignalR для бессерверных приложений с помощью функций Azure. Попробуйте создать приложение самостоятельно с помощью одного из быстрых запусков или руководств на [странице обзора службы SignalR](index.yml).

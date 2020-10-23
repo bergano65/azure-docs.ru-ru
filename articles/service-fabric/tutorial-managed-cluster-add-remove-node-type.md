@@ -3,12 +3,12 @@ title: Добавление и удаление типов узлов в упр�
 description: В этом учебнике описано, как добавлять и удалять типы узлов управляемого кластера Service Fabric.
 ms.topic: tutorial
 ms.date: 09/28/2020
-ms.openlocfilehash: 860345f5b297edaeea9d099ac392243176dfaca7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 51cc83b4accae5f2791ce378e30f6fa692446b1c
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91410252"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92316211"
 ---
 # <a name="tutorial-add-and-remove-node-types-from-a-service-fabric-managed-cluster-preview"></a>Руководство по добавлению и удалению типов узлов в управляемом кластере Service Fabric (предварительная версия)
 
@@ -29,7 +29,7 @@ ms.locfileid: "91410252"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * [Управляемый кластер Service Fabric (см. статью *Развертывание управляемого кластера*](tutorial-managed-cluster-deploy.md)).
-* [Azure PowerShell версии 4.7.0](https://docs.microsoft.com/powershell/azure/release-notes-azureps?view=azps-4.7.0&preserve-view=true#azservicefabric) или более поздней (см. статью [*Установка Azure PowerShell*](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-4.7.0&preserve-view=true)).
+* [Azure PowerShell версии 4.7.0](/powershell/azure/release-notes-azureps?preserve-view=true&view=azps-4.7.0#azservicefabric) или более поздней (см. статью [*Установка Azure PowerShell*](/powershell/azure/install-az-ps?preserve-view=true&view=azps-4.7.0)).
 
 ## <a name="add-a-node-type-to-a-service-fabric-managed-cluster"></a>Добавление типа узла в управляемый кластер Service Fabric
 

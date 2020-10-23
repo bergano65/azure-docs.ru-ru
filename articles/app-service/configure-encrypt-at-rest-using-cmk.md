@@ -3,12 +3,12 @@ title: Шифрование неактивных источников прило
 description: Узнайте, как зашифровать данные приложения в службе хранилища Azure и развернуть их в виде файла пакета.
 ms.topic: article
 ms.date: 03/06/2020
-ms.openlocfilehash: 62bb1e51bada155b98fe46740662b86b753d44fa
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5524b749b1e15342dd0133920d7190e33ced18ad
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90978476"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92146050"
 ---
 # <a name="encryption-at-rest-using-customer-managed-keys"></a>Шифрование неактивных с помощью управляемых клиентом ключей
 
@@ -22,7 +22,7 @@ ms.locfileid: "90978476"
 
 ### <a name="create-an-azure-storage-account"></a>Создание учетной записи хранения Azure
 
-Сначала [Создайте учетную запись хранения Azure](../storage/common/storage-account-create.md) и [зашифруйте ее с помощью управляемых клиентом ключей](../storage/common/encryption-customer-managed-keys.md). После создания учетной записи хранения используйте [Обозреватель службы хранилища Azure](../vs-azure-tools-storage-manage-with-storage-explorer.md) для отправки файлов пакетов.
+Сначала [Создайте учетную запись хранения Azure](../storage/common/storage-account-create.md) и [зашифруйте ее с помощью управляемых клиентом ключей](../storage/common/customer-managed-keys-overview.md). После создания учетной записи хранения используйте [Обозреватель службы хранилища Azure](../vs-azure-tools-storage-manage-with-storage-explorer.md) для отправки файлов пакетов.
 
 Затем используйте Обозреватель службы хранилища, чтобы [создать SAS](../vs-azure-tools-storage-manage-with-storage-explorer.md?tabs=windows#generate-a-sas-in-storage-explorer). 
 
@@ -99,7 +99,7 @@ az webapp config appsettings set --name <app-name> --resource-group <resource-gr
 
 Вы можете отозвать доступ веб-приложения к данным сайта, отключив доступ веб-приложения к Key Vault. Для этого удалите политику доступа для удостоверения веб-приложения. Это то же удостоверение, которое вы создали ранее при настройке ссылок на хранилище ключей.
 
-## <a name="summary"></a>Итоги
+## <a name="summary"></a>Сводка
 
 Теперь файлы приложения шифруются в вашей учетной записи хранения. При запуске веб-приложения он получает URL-адрес SAS из хранилища ключей. Наконец, веб-приложение загружает файлы приложения из учетной записи хранения. 
 
@@ -117,7 +117,7 @@ az webapp config appsettings set --name <app-name> --resource-group <resource-gr
 - Форматы TAR и GZIP не поддерживаются.
 - Эта функция несовместима с локальным кэшем.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Key Vault ссылки для службы приложений](app-service-key-vault-references.md)
 - [Шифрование службы хранилища Azure для неактивных данных](../storage/common/storage-service-encryption.md)

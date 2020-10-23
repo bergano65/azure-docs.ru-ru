@@ -1,26 +1,24 @@
 ---
 title: Управление Azure Data Lake Analytics с помощью пакета SDK Azure для Java
 description: В этой статье описано, как с помощью пакета SDK Azure для Java создавать приложения, которые управляют источниками данных, пользователями и заданиями Data Lake Analytics.
-services: data-lake-analytics
 ms.service: data-lake-analytics
 ms.reviewer: jasonh
-ms.assetid: 07830b36-2fe3-4809-a846-129cf67b6a9e
 ms.topic: how-to
 ms.date: 08/20/2019
 ms.custom: devx-track-java
-ms.openlocfilehash: bac13f187c99166bc868112792d80833387a84dc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 86e84d825bd1dd3774cfd2774e0b96e540bb3cd2
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87373782"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92218482"
 ---
 # <a name="manage-azure-data-lake-analytics-using-a-java-app"></a>Управление Azure Data Lake Analytics с помощью приложения Java
 [!INCLUDE [manage-selector](../../includes/data-lake-analytics-selector-manage.md)]
 
 Из этой статьи вы узнаете, как управлять учетными записями, источниками данных, пользователями и заданиями Azure Data Lake Analytics, используя приложение, написанное с помощью пакета SDK Azure для Java. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 * **Пакет Java Development Kit (JDK) 8** (с использованием Java версии 1,8).
 * **IntelliJ** или другая подходящая среда разработки Java. В инструкциях в этом документе используется IntelliJ.
 * Создайте приложение Azure Active Directory (AAD) и получите его **идентификатор клиента**, **код клиента** и **ключ**. Дополнительные сведения о приложениях AAD и указания о том, как получить идентификатор клиента, см. в статье [Создание приложения Active Directory и субъекта-службы с помощью портала](../active-directory/develop/howto-create-service-principal-portal.md). Когда будут созданы приложение и ключ, URI ответа и ключ также будут доступны на портале.
@@ -318,6 +316,6 @@ public class Main {
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Сведения о языке U-SQL см. в статье [Учебник. Приступая к работе с языком U-SQL для аналитики озера данных Azure](data-lake-analytics-u-sql-get-started.md) и в [справочнике по языку U-SQL](https://docs.microsoft.com/u-sql/).
+* Сведения о языке U-SQL см. в статье [Учебник. Приступая к работе с языком U-SQL для аналитики озера данных Azure](data-lake-analytics-u-sql-get-started.md) и в [справочнике по языку U-SQL](/u-sql/).
 * Задачи управления описываются в руководстве по [управлению Azure Data Lake Analytics с помощью портала Azure](data-lake-analytics-manage-use-portal.md).
 * Общие сведения об Azure Data Lake Analytics см. в [этой статье](data-lake-analytics-overview.md).

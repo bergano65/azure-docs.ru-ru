@@ -8,12 +8,12 @@ ms.custom: devx-track-csharp
 ms.topic: quickstart
 ms.date: 8/26/2020
 ms.author: alkemper
-ms.openlocfilehash: f57163b3d17877f7f8c66fa57fc8a0736c6affb7
-ms.sourcegitcommit: d9ba60f15aa6eafc3c5ae8d592bacaf21d97a871
+ms.openlocfilehash: d1dc843ff676429f202c0b9077057d067294f738
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91767706"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92076170"
 ---
 # <a name="quickstart-add-feature-flags-to-an-azure-functions-app"></a>Краткое руководство. Добавление флагов функций в приложение "Функции Azure"
 
@@ -149,7 +149,7 @@ ms.locfileid: "91767706"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Используя сведения из этого краткого руководства, вы создали флаг функции и использовали его с приложением "Функции Azure" с помощью [поставщика Конфигурации приложений](https://go.microsoft.com/fwlink/?linkid=2074664).
+Используя сведения из этого краткого руководства, вы создали флаг функции и использовали его с приложением "Функции Azure" с помощью [поставщика Конфигурации приложений](/dotnet/api/Microsoft.Extensions.Configuration.AzureAppConfiguration).
 
 - Узнайте больше об [управлении функциями](./concept-feature-management.md).
 - [Управляйте флагами функций](./manage-feature-flags.md).

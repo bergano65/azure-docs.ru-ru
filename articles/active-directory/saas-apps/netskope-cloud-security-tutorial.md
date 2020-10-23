@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 10/31/2019
 ms.author: jeedes
-ms.openlocfilehash: daef8a91c2f31379ebf50d1e8ec66d0b33ebb2cc
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 081c61610c4134917ffa90cf45fb096f3df4bcbe
+ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88534853"
+ms.lasthandoff: 10/11/2020
+ms.locfileid: "91939296"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-netskope-administrator-console"></a>Руководство по интеграции единого входа Azure Active Directory с консолью администрирования Netskope Administrator Console
 
@@ -148,31 +148,31 @@ ms.locfileid: "88534853"
 
 1. Перейдите на вкладку **Settings** (Параметры) в области навигации слева.
 
-    ![Настройка Netskope Administrator Console](./media/netskope-cloud-security-tutorial/config-settings.png)
+    ![Снимок экрана: выделенная кнопка Settings (Параметры) в области навигации.](./media/netskope-cloud-security-tutorial/config-settings.png)
 
 1. Перейдите на вкладку **Administration** (Администрирование).
 
-    ![Настройка Netskope Administrator Console](./media/netskope-cloud-security-tutorial/config-administration.png)
+    ![Снимок экрана: пункт Administration (Администрирование), выбранный в меню Settings (Параметры).](./media/netskope-cloud-security-tutorial/config-administration.png)
 
 1. Перейдите на вкладку **SSO** (Единый вход).
 
-    ![Настройка Netskope Administrator Console](./media/netskope-cloud-security-tutorial/config-sso.png)
+    ![Снимок экрана: пункт SSO (Единый вход), выбранный в разделе Administration (Администрирование).](./media/netskope-cloud-security-tutorial/config-sso.png)
 
 1. В разделе **Network Settings** (Параметры сети) сделайте следующее:
     
-    ![Настройка Netskope Administrator Console](./media/netskope-cloud-security-tutorial/config-pasteurls.png)
+    ![Снимок экрана: раздел Network Settings (Параметры сети), где можно ввести описанные здесь значения.](./media/netskope-cloud-security-tutorial/config-pasteurls.png)
 
     а. Скопируйте значение **Assertion Consumer Service URL** (URL-адрес службы обработчика утверждений) и вставьте его в поле **URL-адрес ответа** в разделе **Базовая конфигурация SAML** на портале Azure.
 
     b. Скопируйте значение **Service Provider Entity ID** (Идентификатор сущности поставщика услуг) и вставьте его в текстовое поле **Идентификатор** в разделе **Базовая конфигурация SAML** на портале Azure.
 
-1. Нажмите кнопку **EDIT SETTINGS** (ИЗМЕНИТЬ ПАРАМЕТРЫ) в разделе **SSO/SLO Settings** (Параметры единого входа или цели уровня обслуживания).
+1. Нажмите кнопку **EDIT SETTINGS** (ИЗМЕНИТЬ ПАРАМЕТРЫ) в разделе **SSO/SLO Settings** (Параметры единого входа и единого выхода).
 
-    ![Настройка Netskope Administrator Console](./media/netskope-cloud-security-tutorial/config-editsettings.png)
+    ![Снимок экрана: раздел SSO/SLO Settings (Параметры единого входа и единого выхода), где можно нажать кнопку Edit Settings (Изменить параметры).](./media/netskope-cloud-security-tutorial/config-editsettings.png)
 
 1. Во всплывающем окне **Settings** (Параметры) выполните следующие действия:
 
-    ![Настройка Netskope Administrator Console](./media/netskope-cloud-security-tutorial/configuration.png)
+    ![Снимок экрана: диалоговое Settings (Параметры), где можно ввести описанные значения.](./media/netskope-cloud-security-tutorial/configuration.png)
 
     а. Выберите **Enable SSO** (Включить единый вход).
 
@@ -184,7 +184,7 @@ ms.locfileid: "88534853"
 
     д) Выберите **Enable SSO** (Включить единый вход).
 
-    е) В текстовое поле **IDP SLO URL** (URL-адрес целевого уровня обслуживания поставщика удостоверений) вставьте значение **URL-адреса выхода**, скопированное на портале Azure.
+    е) В текстовое поле **IDP SLO URL** (URL-адрес единого выхода поставщика удостоверений) вставьте значение **URL-адреса выхода**, скопированное на портале Azure.
 
     ж. Нажмите кнопку **SUBMIT** (Отправить).
 
@@ -194,23 +194,23 @@ ms.locfileid: "88534853"
 
 1. Перейдите на вкладку **Settings** (Параметры) в области навигации слева.
 
-    ![Создание пользователя в Netskope Administrator Console](./media/netskope-cloud-security-tutorial/config-settings.png)
+    ![Снимок экрана: выбранный пункт "Параметры".](./media/netskope-cloud-security-tutorial/config-settings.png)
 
 1. Перейдите на вкладку **Active Platform** (Активная платформа).
 
-    ![Создание пользователя в Netskope Administrator Console](./media/netskope-cloud-security-tutorial/user1.png)
+    ![Снимок экрана: меню Settings (Параметры) с выбранным пунктом Active Platform (Активная платформа).](./media/netskope-cloud-security-tutorial/user1.png)
 
 1. Откройте вкладку **Пользователи**.
 
-    ![Создание пользователя в Netskope Administrator Console](./media/netskope-cloud-security-tutorial/add-user.png)
+    ![Снимок экрана: в разделе Active Platform (Активная платформа) выбран пункт Users (Пользователи).](./media/netskope-cloud-security-tutorial/add-user.png)
 
 1. Нажмите кнопку **ADD USERS** (ДОБАВИТЬ ПОЛЬЗОВАТЕЛЕЙ).
 
-    ![Создание пользователя в Netskope Administrator Console](./media/netskope-cloud-security-tutorial/user-add.png)
+    ![Снимок экрана: диалоговое окно Users (Пользователи), где можно нажать кнопку ADD USERS (ДОБАВИТЬ ПОЛЬЗОВАТЕЛЕЙ).](./media/netskope-cloud-security-tutorial/user-add.png)
 
 1. Введите адрес электронной почты пользователя, которого требуется добавить, и нажмите кнопку **ADD** (ДОБАВИТЬ).
 
-    ![Создание пользователя в Netskope Administrator Console](./media/netskope-cloud-security-tutorial/add-user-popup.png)
+    ![Снимок экрана: раздел Add Users (Добавление пользователей), где можно ввести список пользователей.](./media/netskope-cloud-security-tutorial/add-user-popup.png)
 
 ## <a name="test-sso"></a>Проверка единого входа
 

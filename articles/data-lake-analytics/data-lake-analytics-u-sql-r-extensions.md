@@ -1,17 +1,16 @@
 ---
 title: Расширение возможностей сценариев U-SQL c R в Azure Data Lake Analytics
 description: Узнайте, как выполнять код R в скриптах U-SQL с помощью Azure Data Lake Analytics. Внедрение встроенного кода R или ссылки из файлов.
-services: data-lake-analytics
 ms.service: data-lake-analytics
 ms.reviewer: jasonh
 ms.topic: how-to
 ms.date: 06/20/2017
-ms.openlocfilehash: 1c054dcfe12ad1d2098fc5352183839704e39330
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ab28ba1bb6185f5f0ab90df99f0abea7895b1bf4
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87127406"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92218006"
 ---
 # <a name="extend-u-sql-scripts-with-r-code-in-azure-data-lake-analytics"></a>Расширение возможностей сценариев U-SQL c кодом R в Azure Data Lake Analytics
 
@@ -212,4 +211,4 @@ OUTPUT @RScriptOutput TO @OutputFileModelSummary USING Outputters.Tsv();
 
 * [Обзор аналитики озера данных Microsoft Azure](data-lake-analytics-overview.md)
 * [Разработка сценариев U-SQL с помощью средств озера данных для Visual Studio.](data-lake-analytics-data-lake-tools-get-started.md)
-* [Использование оконных функций U-SQL для заданий в службе аналитики озера данных Azure](data-lake-analytics-use-window-functions.md)
+* [Использование оконных функций U-SQL для заданий в службе аналитики озера данных Azure](./data-lake-analytics-u-sql-get-started.md)

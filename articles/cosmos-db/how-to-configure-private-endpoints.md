@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 09/18/2020
 ms.author: thweiss
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: dd1a59c2e6b0656233174c53b08ab013ce73d0f1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c9821e53abcdf95c6cf235cb9d39cd310fcfb66f
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91334435"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92279719"
 ---
 # <a name="configure-azure-private-link-for-an-azure-cosmos-account"></a>Настройка Приватного канала Azure для учетной записи Azure Cosmos
 
@@ -684,7 +684,7 @@ foreach ($ipconfig in $networkInterface.properties.ipConfigurations) {
 
 Дополнительные сведения о средствах безопасности Azure Cosmos DB см. в следующих статьях.
 
-* Сведения о настройке брандмауэра для Azure Cosmos DB см. в статье о [поддержке брандмауэра](firewall-support.md).
+* Сведения о настройке брандмауэра для Azure Cosmos DB см. в статье о [поддержке брандмауэра](how-to-configure-firewall.md).
 
 * Сведения о настройке конечной точки службы виртуальной сети для учетной записи Azure Cosmos см. в статье [Настройка доступа из виртуальных сетей](how-to-configure-vnet-service-endpoint.md).
 

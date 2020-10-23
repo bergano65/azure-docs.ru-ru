@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 03/26/2019
 ms.author: jeedes
-ms.openlocfilehash: 2e831fd561b7c8dcf78e9203ec6d38c60c22a5bf
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: e1e966595422f353067d66483defa0b880874415
+ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88535363"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91944367"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-kintone"></a>Руководство по интеграции Azure Active Directory с Kintone
 
@@ -145,7 +145,7 @@ ms.locfileid: "88535363"
 
 1. Установите флажок **Включить проверку подлинности SAML**.
 
-    ![Проверка подлинности SAML](./media/kintone-tutorial/ic785882.png "Проверка подлинности SAML")
+    ![Снимок экрана: выбранный параметр "Users & System Administration" (Администрирование пользователей и системы).](./media/kintone-tutorial/ic785882.png "Проверка подлинности SAML")
 
 1. В разделе «Проверка подлинности SAML» выполните следующие действия.
 
@@ -232,7 +232,7 @@ ms.locfileid: "88535363"
 
 1. Щелкните **Новый пользователь**.
 
-    ![Новые пользователи](./media/kintone-tutorial/ic785889.png "Новые пользователи")
+    ![Снимок экрана: раздел "Users" (Пользователи) с выбранным действием "New User" (Создать пользователя).](./media/kintone-tutorial/ic785889.png "Новые пользователи")
 
 1. В разделе **New User** (Новый пользователь) выполните следующие действия.
 

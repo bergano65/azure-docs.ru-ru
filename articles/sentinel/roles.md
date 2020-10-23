@@ -15,16 +15,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/28/2020
 ms.author: yelevin
-ms.openlocfilehash: b48ff1043ae8128a5cbfdcbba0548d89b5af2624
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3b680dbaead6e94aa955ebc0e0e720281a40389d
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88565848"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92369902"
 ---
 # <a name="permissions-in-azure-sentinel"></a>Разрешения в Azure Sentinel
 
-Azure Sentinel использует [Управление доступом на основе ролей Azure (Azure RBAC)](../role-based-access-control/role-assignments-portal.md) для предоставления [встроенных ролей](../role-based-access-control/built-in-roles.md)   , которые могут быть назначены пользователям, группам и службам в Azure.
+Azure Sentinel использует [Управление доступом на основе ролей Azure (Azure RBAC)](../role-based-access-control/role-assignments-portal.md) для предоставления [встроенных ролей](../role-based-access-control/built-in-roles.md) , которые могут быть назначены пользователям, группам и службам в Azure.
 
 Используйте RBAC для создания и назначения ролей в группе операций безопасности, чтобы предоставить соответствующий доступ к Azure Sentinel. Различные роли обеспечивают точный контроль над тем, что могут видеть пользователи Sentinel. Роли Azure можно назначать в рабочей области Azure Sentinel напрямую (см. Примечание ниже) или в подписке или группе ресурсов, к которой принадлежит Рабочая область, который будет наследоваться в Azure.
 
@@ -62,7 +62,7 @@ Azure Sentinel использует [Управление доступом на
 
 - Гостевые пользователи, назначающий инциденты
 
-    Если гостевой пользователь должен иметь возможность назначать инциденты, то в дополнение к роли респондента-метки Azure пользователю также должна быть назначена роль [модуля чтения каталога](../active-directory/users-groups-roles/directory-assign-admin-roles.md#directory-readers). Обратите внимание, что эта роль *не* является РОЛЬЮ Azure RBAC, но имеет роль **Azure Active Directory** и эта роль назначена по умолчанию для обычных пользователей (не являющихся гостевыми). 
+    Если гостевой пользователь должен иметь возможность назначать инциденты, то в дополнение к роли респондента-метки Azure пользователю также должна быть назначена роль [модуля чтения каталога](../active-directory/roles/permissions-reference.md#directory-readers). Обратите внимание, что эта роль *не* является РОЛЬЮ Azure RBAC, но имеет роль **Azure Active Directory** и эта роль назначена по умолчанию для обычных пользователей (не являющихся гостевыми). 
 
 Параллельное сравнение см. в [таблице ниже](#roles-and-allowed-actions).
 
@@ -91,7 +91,7 @@ Azure Sentinel использует [Управление доступом на
 
 - В дополнение к или вместо использования встроенных ролей Azure можно создать пользовательские роли Azure для Azure Sentinel. Пользовательские роли Azure для маркеров Azure создаются так же, как и другие [пользовательские роли RBAC Azure](../role-based-access-control/custom-roles-rest.md#create-a-custom-role) , основанные на [конкретных разрешениях для Azure Sentinel](../role-based-access-control/resource-provider-operations.md#microsoftsecurityinsights) и [Azure log Analyticsных ресурсах](../role-based-access-control/resource-provider-operations.md#microsoftoperationalinsights).
 
-- Вы можете использовать Log Analytics расширенный контроль доступа на основе ролей для данных в рабочей области Sentinel Azure. Сюда входят и RBAC на основе типов данных, и RBAC, ориентированный на ресурсы. Дополнительные сведения о ролях Log Analytics см. [в статье Управление данными и рабочими областями в Azure Monitor](../azure-monitor/platform/manage-access.md#manage-access-using-workspace-permissions).
+- Вы можете использовать Log Analytics расширенный контроль доступа на основе ролей для данных в рабочей области Sentinel Azure. Сюда входят и RBAC на основе типов данных, и RBAC, ориентированный на ресурсы. Дополнительные сведения о ролях Log Analytics см. [в статье Управление данными и рабочими областями в Azure Monitor](../azure-monitor/platform/manage-access.md#manage-access-using-workspace-permissions).
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 

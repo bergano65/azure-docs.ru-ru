@@ -12,12 +12,12 @@ ms.custom:
 - mqtt
 - devx-track-azurecli
 - devx-track-csharp
-ms.openlocfilehash: b24d9e1cbbcf875d7b4bde3981b28d8999ba8d47
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b070d6600f18b87ec16f1f9894d577f4c0a6c51c
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89019136"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92149192"
 ---
 # <a name="tutorial-set-up-and-use-metrics-and-diagnostic-logs-with-an-iot-hub"></a>Руководство по Настройка и использование метрик и журналов диагностики с Центром Интернета вещей
 
@@ -190,7 +190,7 @@ az iot hub device-identity show --device-id $iotDeviceName \
 
 Перейдите к центру на портале. Щелкните **Группы ресурсов**, а затем щелкните *ContosoResources* и выберите Центр Интернета вещей *ContosoTestHub*. 
 
-Центр Интернета вещей еще не был перенесен в метрики [в Azure Monitor](/azure/azure-monitor/platform/data-collection#metrics). Необходимо использовать [классические оповещения](/azure/azure-monitor/platform/alerts-classic.overview).
+Центр Интернета вещей еще не был перенесен в метрики [в Azure Monitor](../azure-monitor/platform/data-platform.md#metrics). Необходимо использовать [классические оповещения](../azure-monitor/platform/alerts-classic.overview.md).
 
 1. В разделе **Мониторинг** щелкните **Оповещения**, чтобы отобразился главный экран оповещений. 
 
@@ -369,7 +369,7 @@ await Task.Delay(10);
 
 Чтобы удалить все ресурсы, которые были созданы в этом руководстве, удалите группу ресурсов. При этом будут также удалены все ресурсы, содержащиеся в группе. В этом случае происходит удаление центра Интернета вещей, учетной записи хранения и самой группы ресурсов. Если вы закрепили метрики на панели мониторинга, необходимо будет удалить их вручную, щелкнув три точки в верхнем правом углу каждой метрики и выбрав **Удалить**.
 
-Чтобы удалить группу ресурсов, используйте команду [az group delete](https://docs.microsoft.com/cli/azure/group?view=azure-cli-latest#az-group-delete).
+Чтобы удалить группу ресурсов, используйте команду [az group delete](/cli/azure/group?view=azure-cli-latest#az-group-delete).
 
 ```azurecli-interactive
 az group delete --name $resourceGroup

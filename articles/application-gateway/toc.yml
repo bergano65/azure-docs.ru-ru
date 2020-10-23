@@ -80,6 +80,10 @@
           href: redirect-overview.md
         - name: Перезапись заголовков HTTP и URL-адреса
           href: rewrite-http-headers-url.md
+    - name: Безопасность
+      items:
+        - name: Базовые средства безопасности
+          href: security-baseline.md
     - name: SSL
       items:
         - name: Завершение запросов SSL и сквозное шифрование SSL

@@ -8,12 +8,12 @@ ms.service: storage
 ms.subservice: queues
 ms.topic: how-to
 ms.reviewer: dineshm
-ms.openlocfilehash: c29b864fb3a547599f32c00c9e8c27cbdb0e0a92
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bb7619500cc142eca52ca0a1a6e0b670e6b8f51a
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89459612"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92425481"
 ---
 # <a name="how-to-use-queue-storage-from-ruby"></a>Использование хранилища очередей из Ruby
 [!INCLUDE [storage-selector-queue-include](../../../includes/storage-selector-queue-include.md)]
@@ -29,7 +29,7 @@ ms.locfileid: "89459612"
 [!INCLUDE [storage-create-account-include](../../../includes/storage-create-account-include.md)]
 
 ## <a name="create-a-ruby-application"></a>Создание приложения Ruby
-Создайте приложение Ruby. Инструкции см. в статье [Создание приложения Ruby в службе приложений на платформе Linux](https://docs.microsoft.com/azure/app-service/quickstart-ruby).
+Создайте приложение Ruby. Инструкции см. в статье [Создание приложения Ruby в службе приложений на платформе Linux](/azure/app-service/quickstart-ruby).
 
 ## <a name="configure-your-application-to-access-storage"></a>Настройка приложения для доступа к хранилищу
 Для использования хранилища Azure необходимо загрузить и использовать пакет Ruby Azure, который содержит набор библиотек, взаимодействующих со службами REST хранилища.
@@ -151,7 +151,7 @@ azure_queue_service.delete_queue("test-queue")
 ## <a name="next-steps"></a>Next Steps
 Вы изучили основные сведения о хранилище очередей. Дополнительные сведения о более сложных задачах по использованию хранилища можно найти по следующим ссылкам.
 
-* Посетите [блог команды разработчиков хранилища Azure](https://docs.microsoft.com/archive/blogs/windowsazurestorage/)
+* Посетите [блог команды разработчиков хранилища Azure](/archive/blogs/windowsazurestorage/)
 * Посетите репозиторий [Azure SDK для Ruby](https://github.com/WindowsAzure/azure-sdk-for-ruby) в GitHub
 
 Сравнение службы очередей Azure, описанной в этой статье, и очередей служебной шины Azure, описанных в статье [Как использовать очереди служебной шины](https://azure.microsoft.com/develop/ruby/how-to-guides/service-bus-queues/), см. в статье [Очереди Azure и очереди служебной шины: сходства и различия](../../service-bus-messaging/service-bus-azure-and-service-bus-queues-compared-contrasted.md).

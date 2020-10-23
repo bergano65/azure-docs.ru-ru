@@ -7,15 +7,15 @@ manager: mtillman
 ms.service: role-based-access-control
 ms.topic: how-to
 ms.workload: identity
-ms.date: 06/24/2020
+ms.date: 10/16/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: f7d56ecc7fc6bd850fced33c2c1cf20902bb2df4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 280e5012f7c41a906b5b2e266840ea3c0cc315ba
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85361886"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92151687"
 ---
 # <a name="list-azure-role-assignments-using-the-azure-portal"></a>Вывод списка назначений ролей Azure с помощью портал Azure
 
@@ -140,14 +140,9 @@ ms.locfileid: "85361886"
 
 ![Управление доступом — предупреждение о добавлении роли](./media/role-assignments-list-portal/add-role-assignment-warning.png)
 
-## <a name="download-role-assignments-preview"></a>Скачать назначения ролей (Предварительная версия)
+## <a name="download-role-assignments"></a>Скачать назначения ролей
 
 Назначения ролей можно загрузить в области в форматах CSV или JSON. Это может быть полезно, если необходимо проверить список в электронной таблице или выполнить инвентаризацию при переносе подписки.
-
-> [!IMPORTANT]
-> Загрузка назначений ролей сейчас доступна в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
-> Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 При скачивании назначений ролей следует учитывать следующие критерии.
 
@@ -163,7 +158,7 @@ ms.locfileid: "85361886"
 
 1. Щелкните **Управление доступом (IAM)** .
 
-1. Щелкните **скачать назначения ролей (Предварительная версия)** , чтобы открыть область Загрузка назначений ролей.
+1. Нажмите кнопку **скачать назначения ролей** , чтобы открыть область Загрузка назначений ролей.
 
     ![Контроль доступа — Загрузка назначений ролей](./media/role-assignments-list-portal/download-role-assignments.png)
 

@@ -10,12 +10,12 @@ author: Blackmist
 ms.date: 09/30/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: cb6c49ce779fe8b1e764471c31b392e31d6572ce
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fd6fc3ee88d63c1d933d3405437ec1bf49e0432e
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91631211"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92426350"
 ---
 # <a name="create-a-workspace-for-azure-machine-learning-with-azure-cli"></a>Создание рабочей области для Машинного обучения Azure с помощью Azure CLI
 
@@ -150,7 +150,7 @@ az ml workspace create -w <workspace-name> -g <resource-group-name>
 * `--pe-auto-approval`— Следует ли автоматически утверждать подключения частной конечной точки к рабочей области.
 * `--pe-resource-group`: Группа ресурсов для создания частной конечной точки в. Должна быть той же группой, которая содержит виртуальную сеть.
 * `--pe-vnet-name`— Существующая виртуальная сеть для создания частной конечной точки в.
-* `--pe-subnet-name`— Имя подсети, в которой создается частная конечная точка. Значение по умолчанию — `default`.
+* `--pe-subnet-name`— Имя подсети, в которой создается частная конечная точка. Значение по умолчанию — `default`.
 
 Дополнительные сведения об использовании частной конечной точки и виртуальной сети с рабочей областью см. в статье [Общие сведения о изоляции и конфиденциальности виртуальной сети](how-to-network-security-overview.md).
 
@@ -359,7 +359,7 @@ az ml workspace update -w <workspace-name> -g <resource-group-name>
 az ml workspace share -w <workspace-name> -g <resource-group-name> --user <user> --role <role>
 ```
 
-Дополнительные сведения об управлении доступом на основе ролей (RBAC) в Машинном обучении Azure см. в разделе [Управление пользователями и ролями](how-to-assign-roles.md).
+Дополнительные сведения об управлении доступом на основе ролей (Azure RBAC) в Azure с помощью Машинное обучение Azure см. в разделе [Manage Users and Roles](how-to-assign-roles.md).
 
 Дополнительные сведения см. в документации по команде [az ml workspace share](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/workspace?view=azure-cli-latest&preserve-view=true#ext-azure-cli-ml-az-ml-workspace-share).
 

@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 09/03/2019
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: d964efd6d9923190a6fef92c91d357a8a650572d
-ms.sourcegitcommit: d9ba60f15aa6eafc3c5ae8d592bacaf21d97a871
+ms.openlocfilehash: 9186c742f34f1c060b57ffdfbf1bf688607b4c03
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91766837"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92125343"
 ---
 ::: zone target="docs"
 
@@ -273,7 +273,7 @@ ms.locfileid: "91766837"
 
 Если вы не использовали инструмент Split Copy для копирования данных, вам будет необходимо проверить данные. Чтобы проверить данные, выполните описанные ниже действия.
 
-1. Запустите `DataBoxDiskValidation.cmd` для проверки контрольных сумм в папке *DataBoxDiskImport* на диске. Это доступно только для среды Windows. Пользователям Linux необходимо убедиться, что исходные данные, скопированные на диск, соответствуют [предварительным требованиям](https://docs.microsoft.com/azure/databox/data-box-disk-limits).
+1. Запустите `DataBoxDiskValidation.cmd` для проверки контрольных сумм в папке *DataBoxDiskImport* на диске. Это доступно только для среды Windows. Пользователям Linux необходимо убедиться, что исходные данные, скопированные на диск, соответствуют [предварительным требованиям](./data-box-disk-limits.md).
     
     ![Выходные данные инструмента проверки диска Data Box](media/data-box-disk-deploy-copy-data/data-box-disk-validation-tool-output.png)
 
@@ -335,6 +335,6 @@ ms.locfileid: "91766837"
 1. Запустите `DataBoxDiskValidation.cmd` для проверки контрольных сумм в папке *DataBoxDiskImport* на диске.
 2. Используйте параметр 2, чтобы проверить файлы и создать контрольные суммы. В зависимости от размера данных, это действие может занять некоторое время. При возникновении ошибок во время проверки и создания контрольной суммы вы получите уведомление и ссылку на журналы ошибок.
 
-    Дополнительные сведения о проверке данных см. в разделе [Validate data](https://docs.microsoft.com/azure/databox/data-box-disk-deploy-copy-data#validate-data) (Проверка данных). Если вы сталкиваетесь с ошибками при проверке, см. статью [Use logs to troubleshoot validation issues in Azure Data Box Disk](data-box-disk-troubleshoot.md) (Устранение неполадок проверки на Диске Azure Data Box с помощью журналов).
+    Дополнительные сведения о проверке данных см. в разделе [Validate data](#validate-data) (Проверка данных). Если вы сталкиваетесь с ошибками при проверке, см. статью [Use logs to troubleshoot validation issues in Azure Data Box Disk](data-box-disk-troubleshoot.md) (Устранение неполадок проверки на Диске Azure Data Box с помощью журналов).
 
 ::: zone-end

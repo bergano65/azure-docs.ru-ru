@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 05/11/2020
 ms.author: anfeldma
 ms.custom: devx-track-java
-ms.openlocfilehash: ac7879590424fa921425dcd077503733affeb634
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0ef5c0cb0ffca5cc156d64074ebe241cebbcfb8e
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91361753"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92277268"
 ---
 # <a name="performance-tips-for-azure-cosmos-db-sync-java-sdk-v2"></a>Советы по повышению производительности для Azure Cosmos DB с пакетом SDK для Sync Java версии 2
 
@@ -184,4 +184,4 @@ Azure Cosmos DB — быстрая и гибкая распределенная 
     Стоимость запроса (плата за обработку запроса) для каждой операции напрямую зависит от размера документа. За операции с большими документами взимается больше единиц запроса, чем за операции с мелкими документами.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Дополнительные сведения о создании приложения с высокой масштабируемостью и производительностью см. в статье [Partitioning and scaling in Azure Cosmos DB](partition-data.md) (Секционирование и масштабирование в Azure Cosmos DB).
+Дополнительные сведения о создании приложения с высокой масштабируемостью и производительностью см. в статье [Partitioning and scaling in Azure Cosmos DB](partitioning-overview.md) (Секционирование и масштабирование в Azure Cosmos DB).

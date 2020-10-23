@@ -5,25 +5,25 @@ author: peterpogorski
 ms.topic: conceptual
 ms.date: 06/16/2020
 ms.custom: sfrev, devx-track-azurepowershell
-ms.openlocfilehash: 8665b49aebcb99ef3d3ded17e7e7653027aba21e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f32bc444ba753f48955de4a4c16bde8dfb7a05fc
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89651625"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92316648"
 ---
 # <a name="prepare-your-development-environment-on-windows"></a>Настройка среды разработки для Windows
 
 > [!div class="op_single_selector"]
 > * [Windows](service-fabric-get-started.md) 
 > * [Linux](service-fabric-get-started-linux.md)
-> * [OSX](service-fabric-get-started-mac.md)
+> * [Mac OS X](service-fabric-get-started-mac.md)
 >
 >
 
 Чтобы создавать и запускать [приложения Service Fabric][1] на компьютере для разработки Windows, установите среду выполнения Service Fabric, пакет SDK и инструменты. Также необходимо [включить выполнение сценариев Windows PowerShell](#enable-powershell-script-execution) , включенных в пакет SDK.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 ### <a name="supported-operating-system-versions"></a>Поддерживаемые версии операционных систем
 
@@ -88,14 +88,15 @@ Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force -Scope CurrentUser
 
 [Service Fabric — это оркестратор контейнеров](service-fabric-containers-overview.md) для развертывания микрослужб в кластере компьютеров. Для запуска приложений контейнера Windows на локальном кластере разработки необходимо сначала установить Docker для Windows. Скачайте [Docker CE для Windows (стабильная версия)](https://store.docker.com/editions/community/docker-ce-desktop-windows?tab=description). После установки и запуска Docker щелкните правой кнопкой мыши значок в области уведомлений и выберите **Switch to Windows containers** (Переключиться на контейнеры Windows). Это необходимо для запуска образов Docker на базе Windows.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Среда разработки настроена, и вы готовы к созданию и запуску собственных приложений.
 
 * [Узнайте, как создавать, развертывать и администрировать приложения](service-fabric-tutorial-create-dotnet-app.md)
 * [Информация о моделях программирования: Reliable Services и Reliable Actors](service-fabric-choose-framework.md)
-* [Ознакомление с примерами кода Service Fabric на GitHub](https://aka.ms/servicefabricsamples)
+* [Ознакомление с примерами кода Service Fabric на GitHub](/samples/browse/?products=azure)
 * [Визуализация кластера с помощью обозревателя Service Fabric](service-fabric-visualizing-your-cluster.md)
+* [Подготовка среды разработки Linux в Windows](service-fabric-local-linux-cluster-windows.md)
 * Дополнительные сведения о [вариантах поддержки Service Fabric](service-fabric-support.md)
 
 [1]: https://azure.microsoft.com/campaigns/service-fabric/ "Страница кампании Service Fabric"

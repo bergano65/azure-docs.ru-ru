@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 03/26/2019
 ms.author: jeedes
-ms.openlocfilehash: 354aeca01cb2d5244c68e1691642e4d2b41869dc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 559053bba48d559032993d8047931d1fab0d8e33
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88534529"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92105504"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-reviewsnap"></a>Руководство по интеграции Azure Active Directory с Reviewsnap
 
@@ -99,7 +99,7 @@ ms.locfileid: "88534529"
 
 4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа для приложения Reviewsnap](common/idp-intiated.png)
+    ![Снимок экрана, на котором показан раздел "Базовая конфигурация SAML", где можно ввести идентификатор, URL-адрес ответа и нажать кнопку "Сохранить"](common/idp-intiated.png)
 
     а. В текстовом поле **Идентификатор** введите URL-адрес: `https://app.reviewsnap.com`
 
@@ -107,7 +107,7 @@ ms.locfileid: "88534529"
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа для приложения Reviewsnap](common/metadata-upload-additional-signon.png)
+    ![Снимок экрана, на котором показан параметр "Задать дополнительные URL-адреса" и поле для ввода URL-адреса входа](common/metadata-upload-additional-signon.png)
 
     В текстовом поле **URL-адрес входа** введите URL-адрес: `https://app.reviewsnap.com/login`.
 

@@ -4,12 +4,12 @@ description: Рекомендации по защите образов и сек
 ms.topic: article
 ms.date: 01/10/2020
 ms.custom: ''
-ms.openlocfilehash: f49f115e10326887cf4d23406437467256b7df2e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 898bdf77bf4b6636e78f5d735fc8650da4fde2b8
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87922240"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92148664"
 ---
 # <a name="security-considerations-for-azure-container-instances"></a>Вопросы безопасности для экземпляров контейнеров Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "87922240"
 
 Воспользуйтесь преимуществами решений для сканирования образов контейнеров в частном реестре и выявления потенциальных уязвимостей. Важно понимать глубину обнаружения угроз, предоставляемых различными решениями.
 
-Например, реестр контейнеров Azure при необходимости [интегрируется с центром безопасности Azure](../security-center/azure-container-registry-integration.md) для автоматического сканирования всех образов Linux, отправленных в реестр. Встроенный сканер Qualys в центре безопасности Azure обнаруживает уязвимости образа, классифицирует их и предоставляет рекомендации по исправлению.
+Например, реестр контейнеров Azure при необходимости [интегрируется с центром безопасности Azure](../security-center/defender-for-container-registries-introduction.md) для автоматического сканирования всех образов Linux, отправленных в реестр. Встроенный сканер Qualys в центре безопасности Azure обнаруживает уязвимости образа, классифицирует их и предоставляет рекомендации по исправлению.
 
 Решения для мониторинга безопасности и сканирования изображений, такие как [Twistlock](https://azuremarketplace.microsoft.com/marketplace/apps/twistlock.twistlock?tab=Overview) и [голубой уровень безопасности](https://azuremarketplace.microsoft.com/marketplace/apps/aqua-security.aqua-security?tab=Overview) , также доступны в Azure Marketplace.  
 
@@ -138,11 +138,11 @@ ms.locfileid: "87922240"
 
 Поддерживайте точный журнал аудита административного доступа к экосистеме контейнеров, включая кластер Kubernetes, реестр контейнеров и образы контейнеров. Эти журналы могут потребоваться в целях аудита и будут полезны в качестве судебных доказательств после любых инцидентов безопасности. Решения Azure включают:
 
-* [Интеграция службы Azure Kubernetes с центром безопасности Azure](../security-center/azure-kubernetes-service-integration.md) для мониторинга конфигурации безопасности среды кластера и создания рекомендаций по безопасности
+* [Интеграция службы Azure Kubernetes с центром безопасности Azure](../security-center/defender-for-kubernetes-introduction.md) для мониторинга конфигурации безопасности среды кластера и создания рекомендаций по безопасности
 * [Решение для мониторинга контейнеров Azure](../azure-monitor/insights/containers.md)
 * Журналы ресурсов для [экземпляров контейнеров Azure](container-instances-log-analytics.md) и [реестра контейнеров Azure](../container-registry/container-registry-diagnostics-audit-logs.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Подробные рекомендации, которые помогут повысить безопасность развертывания, см. в разделе [основы безопасности Azure для экземпляров контейнеров](security-baseline.md) .
 

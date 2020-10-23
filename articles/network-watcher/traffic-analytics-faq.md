@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/08/2018
 ms.author: damendo
-ms.openlocfilehash: fa1ed25e8c9a80dda2bf0e4625d28a3befaa49c9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ae87771e8a557ad7cb58c9cad9231784606cdd74
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87479852"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92426536"
 ---
 # <a name="traffic-analytics-frequently-asked-questions"></a>Часто задаваемые вопросы по Аналитике трафика Azure
 
@@ -58,7 +58,7 @@ ms.locfileid: "87479852"
 
 3. Чтобы получить список всех ролей, назначенных указанному пользователю, используйте  **Get-азролеассигнмент-SignInName [адрес электронной почты пользователя]-инклудеклассикадминистраторс**. 
 
-Если вы не видите выходные данные, обратитесь к соответствующему администратору подписки, чтобы получить доступ к запуску команд. Дополнительные сведения см. в статье [Управление доступом на основе ролей с помощью Azure PowerShell](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-powershell).
+Если вы не видите выходные данные, обратитесь к соответствующему администратору подписки, чтобы получить доступ к запуску команд. Дополнительные сведения см. в статье [Добавление и удаление назначений ролей Azure с помощью Azure PowerShell](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-powershell).
 
 
 ## <a name="in-which-azure-regions-is-traffic-analytics-available"></a>В каких регионах Azure доступна Аналитика трафика?
@@ -142,7 +142,7 @@ ms.locfileid: "87479852"
 
 ## <a name="what-if-i-am-getting-the-status-failed-to-load-under-the-nsg-flow-logs-page"></a>Что делать, если на странице журналов потоков NSG отображается состояние "Не удалось загрузить"?
 
-Чтобы запись данных о потоках выполнялась правильно, необходимо зарегистрировать поставщика Microsoft.Insights. Если вы не знаете точно, зарегистрирован ли поставщик Microsoft.Insights в вашей подписке, укажите идентификатор вместо заменителя *xxxxx-xxxxx-xxxxxx-xxxx* в команде ниже и выполните такие команды в PowerShell:
+Чтобы запись данных о потоках выполнялась правильно, необходимо зарегистрировать поставщик Microsoft.Insights. Если вы не знаете точно, зарегистрирован ли поставщик Microsoft.Insights в вашей подписке, укажите идентификатор вместо заменителя *xxxxx-xxxxx-xxxxxx-xxxx* в команде ниже и выполните такие команды в PowerShell:
 
 ```powershell-interactive
 **Select-AzSubscription** -SubscriptionId xxxxx-xxxxx-xxxxxx-xxxx

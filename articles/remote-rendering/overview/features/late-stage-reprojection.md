@@ -5,12 +5,12 @@ author: sebastianpick
 ms.author: sepick
 ms.date: 02/04/2020
 ms.topic: article
-ms.openlocfilehash: ad9d135df428c79df745ad24d9e7382e06599168
-ms.sourcegitcommit: b437bd3b9c9802ec6430d9f078c372c2a411f11f
+ms.openlocfilehash: f0951415bba22a226dadb7f2a115cede451399bc
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91893209"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92205648"
 ---
 # <a name="late-stage-reprojection"></a>Перепроецирование на позднем этапе
 
@@ -46,7 +46,7 @@ ms.locfileid: "91893209"
 
 ### <a name="configure-planar-lsr-in-unity"></a>Настройка плоского ЛСР в Unity
 
-Параметры плоскости являются производными от так называемой *фокусной точкой*, которую необходимо предоставить для каждого кадра `UnityEngine.XR.WSA.HolographicSettings.SetFocusPointForFrame` . Дополнительные сведения см. в разделе [API точки фокусировки Unity](https://docs.microsoft.com/windows/mixed-reality/focus-point-in-unity) . Если не задать точку фокусировки, будет выбрана резервная стратегия. Однако автоматическое резервное восстановление часто приводит к неоптимальным результатам.
+Параметры плоскости являются производными от так называемой *фокусной точкой*, которую необходимо предоставить для каждого кадра `UnityEngine.XR.WSA.HolographicSettings.SetFocusPointForFrame` . Дополнительные сведения см. в разделе [API точки фокусировки Unity](/windows/mixed-reality/focus-point-in-unity) . Если не задать точку фокусировки, будет выбрана резервная стратегия. Однако автоматическое резервное восстановление часто приводит к неоптимальным результатам.
 
 Вы можете вычислить фокусную точку самостоятельно, хотя это может иметь смысл основываться на том, который вычисляется узлом удаленной отрисовки. Вызовите метод `RemoteManagerUnity.CurrentSession.GraphicsBinding.GetRemoteFocusPoint` , чтобы получить. Вам будет предложено указать кадр координат, в котором будет выражаться фокусная точка. В большинстве случаев вы просто хотите предоставить результат `UnityEngine.XR.WSA.WorldManager.GetNativeISpatialCoordinateSystemPtr` отсюда.
 
@@ -54,6 +54,6 @@ ms.locfileid: "91893209"
 
 Точки фокусировки, вычисленные в двух последовательных кадрах, могут сильно отличаться. Простое использование их "как есть" может привести к появлению голограмм. Чтобы предотвратить такое поведение, рекомендуется выполнить интерполяцию между предыдущей и текущей точками фокусировки.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Запросы данных производительности на стороне сервера](performance-queries.md)

@@ -5,12 +5,12 @@ author: jakrams
 ms.author: jakras
 ms.date: 02/04/2020
 ms.topic: how-to
-ms.openlocfilehash: 6f0605077bd131c54f27e3bf46240331557fd92e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 96a2fde3e510c6eb7146da9c92d93f69111e8c80
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80681653"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92206549"
 ---
 # <a name="use-azure-blob-storage-for-model-conversion"></a>Использование хранилища BLOB-объектов Azure для преобразования модели
 
@@ -28,7 +28,7 @@ ms.locfileid: "80681653"
 Создание учетной записи хранения и контейнеров больших двоичных объектов можно выполнить с помощью одного из следующих средств:
 
 - [Портал Azure](https://portal.azure.com)
-- [AZ — Командная строка](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)
+- [AZ — Командная строка](/cli/azure/install-azure-cli?view=azure-cli-latest)
 - [Обозреватель службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/)
 - Пакеты SDK (C#, Python...)
 
@@ -46,13 +46,13 @@ ms.locfileid: "80681653"
 
 Сохраненные подписи доступа (SAS) используются для предоставления доступа для чтения входных данных и доступа на запись для выходных данных. Мы советуем создавать новые коды URI при каждом преобразовании модели. Так как URI истекает через некоторое время, сохранение их в течение более длительного времени может привести к неожиданному повреждению приложения.
 
-Сведения о SAS см. в [документации SAS](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1).
+Сведения о SAS см. в [документации SAS](../../../storage/common/storage-sas-overview.md).
 
 URI SAS можно создать с помощью одного из следующих средств:
 
 - AZ PowerShell Module
   - см. [примеры сценариев PowerShell](../../samples/powershell-example-scripts.md) .
-- [AZ — Командная строка](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)
+- [AZ — Командная строка](/cli/azure/install-azure-cli?view=azure-cli-latest)
 - [Обозреватель службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/)
   - Щелкните правой кнопкой мыши контейнер "получить подписанный URL-доступ" (чтение, получение списка доступа для входного контейнера, доступ на запись для контейнера выходных данных).
 - Пакеты SDK (C#, Python...)
@@ -64,11 +64,11 @@ URI SAS можно создать с помощью одного из следу
 Чтобы начать преобразование модели, необходимо передать его с помощью одного из следующих параметров:
 
 - [Обозреватель службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/) — удобный пользовательский интерфейс для отправки, скачивания и управления файлами в хранилище BLOB-объектов Azure.
-- [Командная строка Azure](https://docs.microsoft.com/azure/storage/common/storage-azure-cli)
-- [Overview of Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-2.2.0) (Общие сведения об Azure PowerShell)
+- [Командная строка Azure](../../../storage/blobs/storage-quickstart-blobs-cli.md)
+- [Overview of Azure PowerShell](/powershell/azure/install-az-ps?view=azps-2.2.0) (Общие сведения об Azure PowerShell)
   - см. [примеры сценариев PowerShell](../../samples/powershell-example-scripts.md) .
-- [Использование пакета SDK для хранилища (Python, C#...)](https://docs.microsoft.com/azure/storage/)
-- [Использование API-интерфейсов службы хранилища Azure](https://docs.microsoft.com/rest/api/storageservices/blob-service-rest-api)
+- [Использование пакета SDK для хранилища (Python, C#...)](../../../storage/index.yml)
+- [Использование API-интерфейсов службы хранилища Azure](/rest/api/storageservices/blob-service-rest-api)
 
 Пример передачи данных для преобразования см. в Conversion.ps1 [примеров сценариев PowerShell](../../samples/powershell-example-scripts.md#script-conversionps1).
 

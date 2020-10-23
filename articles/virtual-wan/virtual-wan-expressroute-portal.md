@@ -1,5 +1,5 @@
 ---
-title: Учебник. Создание подключений ExpressRoute с помощью Виртуальной глобальной сети Azure
+title: Руководство по созданию подключений ExpressRoute с помощью Виртуальной глобальной сети Azure
 description: Из этого руководства вы узнаете, как с помощью Виртуальной глобальной сети Azure создать подключение ExpressRoute к Azure и локальным средам.
 services: virtual-wan
 author: cherylmc
@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 10/07/2020
 ms.author: cherylmc
 Customer intent: As someone with a networking background, I want to connect my corporate on-premises network(s) to my VNets using Virtual WAN and ExpressRoute.
-ms.openlocfilehash: 1694c8a602315ab5f0ffa5d4e0bc218f03220c30
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.openlocfilehash: 7d880be6cbc37b273258075e6efc7a98d3478384
+ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91821885"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92054820"
 ---
 # <a name="tutorial-create-an-expressroute-association-using-azure-virtual-wan"></a>Руководство по созданию связи ExpressRoute с помощью Виртуальной глобальной сети Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "91821885"
 > * Изменение размера шлюза.
 > * Объявление маршрута по умолчанию.
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом настройки убедитесь, что удовлетворены следующие требования:
 
@@ -153,6 +153,17 @@ ms.locfileid: "91821885"
 
    ![Распространение маршрута по умолчанию](./media/virtual-wan-expressroute-portal/defaultroute2.png "Распространение маршрута по умолчанию")
 
+## <a name="clean-up-resources"></a><a name="cleanup"></a>Очистка ресурсов
+
+Вы можете удалить ненужную группу ресурсов и все содержащиеся в ней ресурсы с помощью командлета [Remove-AzureRmResourceGroup](/powershell/module/azurerm.resources/remove-azurermresourcegroup). Замените myResourceGroup на имя вашей группы ресурсов и выполните следующую команду PowerShell:
+
+```azurepowershell-interactive
+Remove-AzResourceGroup -Name myResourceGroup -Force
+```
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о Виртуальной глобальной сети см. в [этой статье](virtual-wan-about.md).
+Дополнительные сведения о Виртуальной глобальной сети см. в следующей статье:
+
+> [!div class="nextstepaction"]
+> * [Вопросы и ответы о Виртуальной глобальной сети](virtual-wan-faq.md)

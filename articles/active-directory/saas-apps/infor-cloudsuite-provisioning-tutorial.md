@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 10/14/2019
 ms.author: Zhchia
-ms.openlocfilehash: 7c81c6145aed5f45849f6f08fdd1136862c3b7d8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 171a96f37d4c1e740e23cc766566d3c1756b6d08
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91850912"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92460193"
 ---
 # <a name="tutorial-configure-infor-cloudsuite-for-automatic-user-provisioning"></a>Учебник. Настройка Клаудсуите info для автоматической подготовки пользователей
 
@@ -103,7 +103,7 @@ ms.locfileid: "91850912"
 В этом разделе описано, как настроить службу подготовки Azure AD для создания, обновления и отключения пользователей и (или) групп в info Клаудсуите на основе назначений пользователей и групп в Azure AD.
 
 > [!TIP]
-> Вы также можете включить единый вход на основе SAML для Клаудсуите info, следуя инструкциям, приведенным в [руководстве по единому входу Клаудсуите info](https://docs.microsoft.com/azure/active-directory/saas-apps/infor-cloud-suite-tutorial). Единый вход можно настроить независимо от автоматической подготовки пользователей, хотя эти две возможности дополняют друг друга.
+> Вы также можете включить единый вход на основе SAML для Клаудсуите info, следуя инструкциям, приведенным в [руководстве по единому входу Клаудсуите info](./infor-cloud-suite-tutorial.md). Единый вход можно настроить независимо от автоматической подготовки пользователей, хотя эти две возможности дополняют друг друга.
 
 > [!NOTE]
 > Дополнительные сведения о конечной точке SCIM info Клаудсуите см. [здесь](https://docs.infor.com/mingle/12.0.x/en-us/minceolh/jho1449382121585.html#).

@@ -8,12 +8,12 @@ ms.author: deli
 ms.reviewer: klam, estfan
 ms.topic: article
 ms.date: 08/16/2016
-ms.openlocfilehash: 20c2054e168a9b17d9b4ab159cfefbf607ab6d11
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 98a6672af7e74fdd0732f3ba03264d2f674eb44f
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "78898564"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92368151"
 ---
 # <a name="high-availability-and-reliability-for-azure-scheduler"></a>Высокая доступность и надежность для планировщика Azure
 
@@ -22,7 +22,7 @@ ms.locfileid: "78898564"
 >
 > Планировщик больше не доступен на портале Azure, но [REST API](/rest/api/scheduler) и [командлеты PowerShell Планировщика Azure](scheduler-powershell-reference.md) можно использовать и дальше для управления заданиями и коллекциями заданий.
 
-Планировщик Azure обеспечивает [высокий уровень доступности](https://docs.microsoft.com/azure/architecture/framework/#resiliency) и надежности для заданий. Дополнительные сведения см. в статье [Соглашение об уровне обслуживания для планировщика](https://azure.microsoft.com/support/legal/sla/scheduler).
+Планировщик Azure обеспечивает [высокий уровень доступности](/azure/architecture/framework/#resiliency) и надежности для заданий. Дополнительные сведения см. в статье [Соглашение об уровне обслуживания для планировщика](https://azure.microsoft.com/support/legal/sla/scheduler).
 
 ## <a name="high-availability"></a>Высокий уровень доступности
 
@@ -71,7 +71,7 @@ ms.locfileid: "78898564"
 
 Сведения о настройке альтернативной конечной точки см. в разделе [errorAction](scheduler-concepts-terms.md#error-action).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Основные понятия, терминология и иерархия сущностей](scheduler-concepts-terms.md)
 * [Справочник по API REST планировщика Azure](/rest/api/scheduler)

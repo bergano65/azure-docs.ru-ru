@@ -7,18 +7,18 @@ ms.author: baanders
 ms.date: 9/24/2020
 ms.topic: quickstart
 ms.service: digital-twins
-ms.openlocfilehash: dbe37e8a5cba18254cff1dc5d0fff4d5b9bc783d
-ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
+ms.openlocfilehash: 0d6d543e1f7d68f1312b6531b798cf7f9a0cf3b8
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91372618"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92048514"
 ---
 # <a name="quickstart---explore-a-sample-azure-digital-twins-scenario-using-adt-explorer"></a>Краткое руководство. Изучение примера сценария Azure Digital Twins с помощью ADT Explorer
 
 С помощью Azure Digital Twins можно создавать модели реальных сред и взаимодействовать с ними. Для этого нужно смоделировать отдельные элементы как **цифровые двойников**, а затем подключить их к **графу** набора знаний, который может отвечать на события в реальном времени и запрашивать информацию.
 
-В этом кратком руководстве вы изучите предварительно созданную диаграмму Azure Digital Twins с помощью примера приложения, которое называется [**Azure Digital Twins (ADT) Explorer**](https://docs.microsoft.com/samples/azure-samples/digital-twins-explorer/digital-twins-explorer/). ADT Explorer позволяет отправлять сценарии, просматривать визуальные представления двойников и графа, а также выполнять другие действия по управлению с помощью визуального браузерного интерфейса.
+В этом кратком руководстве вы изучите предварительно созданную диаграмму Azure Digital Twins с помощью примера приложения, которое называется [**Azure Digital Twins (ADT) Explorer**](/samples/azure-samples/digital-twins-explorer/digital-twins-explorer/). ADT Explorer позволяет загружать цифровое представление среды, просматривать визуальные изображения двойников и граф, которые создаются для отображения этой среды в Azure Digital Twins, а также выполнять другие действия по управлению через браузерный визуальный интерфейс.
 
 Краткое руководство содержит следующие основные шаги.
 
@@ -38,8 +38,8 @@ ms.locfileid: "91372618"
 Вам также потребуется **Node.js** на компьютере. Последнюю версию можно скачать по этому адресу: [Node.js](https://nodejs.org/).
 
 Наконец, вам также потребуется загрузить два примера для использования во время прохождения краткого руководства:
-* Пример приложения **ADT Explorer**. Этот пример содержит основное приложение, которое используется в кратком руководстве для загрузки и изучения сценария Azure Digital Twins. Чтобы получить приложение, перейдите по этой ссылке: [Azure Digital Twins (ADT) Explorer](https://docs.microsoft.com/samples/azure-samples/digital-twins-explorer/digital-twins-explorer/). Нажмите кнопку *Download ZIP* (Загрузить ZIP-файл), чтобы загрузить файл *ZIP* этого примера кода с именем _**Azure_Digital_Twins__ADT__explorer.zip**_ на свой компьютер. Распакуйте папку и извлеките файлы.
-* **Пример сценария Azure Digital Twins**. Содержит предварительно созданный граф Azure Digital Twins, который будет загружен в ADT Explorer для работы с ним. Чтобы получить сценарий, перейдите по этой ссылке: [Azure Digital Twins samples](https://docs.microsoft.com/samples/azure-samples/digital-twins-samples/digital-twins-samples). Нажмите кнопку *Download ZIP* (Загрузить ZIP-файл), чтобы загрузить файл *ZIP* этого примера кода на свой компьютер. Загрузится файл с именем **Azure_Digital_Twins_samples.zip**. Распакуйте папку и извлеките файлы.
+* Пример приложения **ADT Explorer**. Этот пример содержит основное приложение, которое используется в кратком руководстве для загрузки и изучения сценария Azure Digital Twins. Чтобы получить приложение, перейдите по этой ссылке: [Azure Digital Twins (ADT) Explorer](/samples/azure-samples/digital-twins-explorer/digital-twins-explorer/). Нажмите кнопку *Download ZIP* (Загрузить ZIP-файл), чтобы загрузить *ZIP*-файл этого примера кода на свой компьютер. Это действие создает на локальном компьютере ZIP-папку с именем _**Azure_Digital_Twins__ADT__explorer.zip**_. Распакуйте папку и извлеките файлы.
+* **Пример сценария Azure Digital Twins**. Содержит предварительно созданный граф Azure Digital Twins, который будет загружен в ADT Explorer для работы с ним. Чтобы получить сценарий, перейдите по этой ссылке: [Azure Digital Twins samples](/samples/azure-samples/digital-twins-samples/digital-twins-samples). Нажмите кнопку *Download ZIP* (Загрузить ZIP-файл), чтобы загрузить *ZIP*-файл этого примера кода на свой компьютер. Это действие создает на локальном компьютере ZIP-папку с именем _**Azure_Digital_Twins_samples.zip**_. Распакуйте папку и извлеките файлы.
 
 ## <a name="set-up-azure-digital-twins-and-adt-explorer"></a>Настройка Azure Digital Twins и ADT Explorer
 
@@ -301,7 +301,7 @@ SELECT * FROM DigitalTwins T WHERE T.Temperature > 75
 Затем вы изучили граф
 1. Используя запрос для ответа на вопрос о сценарии.
 2. Изменяя свойства в цифровом двойнике.
-    * Снова запустите запрос, чтобы увидеть, как изменился ответ в результате обновления.
+3. Снова запустите запрос, чтобы увидеть, как изменился ответ в результате обновления.
 
 Цель этого упражнения — продемонстрировать, как можно использовать граф Azure Digital Twins, чтобы ответить на вопросы о среде, даже если среда продолжит изменяться. 
 

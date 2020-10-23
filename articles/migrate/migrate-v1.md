@@ -7,12 +7,12 @@ ms.topic: overview
 ms.date: 11/19/2019
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: 71fbd56c2566f008a096482755abbcdb174a987e
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 53a10123bf3304ab9c949146d7cad6b904c8323d
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89001643"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92317207"
 ---
 # <a name="work-with-the-previous-version-of-azure-migrate"></a>Работа с предыдущей версией службы "Миграция Azure"
 
@@ -121,7 +121,7 @@ Windows Server 2012 R2 и все пакеты обновления | Azure об
 Windows Server 2012 и все пакеты обновления | Azure обеспечивает полную поддержку. | Готово к работе в Azure
 Windows Server 2008 R2 и все пакеты обновления | Azure обеспечивает полную поддержку.| Готово к работе в Azure
 Windows Server 2008 (32-разрядная и 64-разрядная) | Azure обеспечивает полную поддержку. | Готово к работе в Azure
-Windows Server 2003, 2003 R2 | Больше не поддерживаются. Для их поддержки в Azure требуется [соглашение Custom Support Agreement (CSA)](https://aka.ms/WSosstatement). | Условно готово к работе в Azure. Следует обновить ОС перед миграцией в Azure.
+Windows Server 2003, 2003 R2 | Больше не поддерживаются. Для их поддержки в Azure требуется [соглашение Custom Support Agreement (CSA)](/troubleshoot/azure/virtual-machines/server-software-support). | Условно готово к работе в Azure. Следует обновить ОС перед миграцией в Azure.
 Windows 2000, 98, 95, NT, 3.1, MS-DOS | Не поддерживаются. Компьютер может быть загружен в Azure, но Azure не будет поддерживать ОС. | Условно готово к работе в Azure. Следует обновить ОС перед миграцией в Azure.
 Windows Client 7, 8 и 10 | Azure обеспечивает поддержку [только для подписки Visual Studio](../virtual-machines/windows/client-images.md). | Условно готово к работе в Azure.
 Windows 10 Pro Desktop | Azure обеспечивает поддержку с [правами на мультитенантное размещение.](../virtual-machines/windows/windows-desktop-multitenant-hosting-deployment.md) | Условно готово к работе в Azure.

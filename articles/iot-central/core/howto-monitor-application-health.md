@@ -7,12 +7,12 @@ ms.date: 05/14/2020
 ms.topic: how-to
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: d246adbf8e87d5503bc19bcd497dd00370c0a867
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 66f0846ab8fcfc316c4b40ad9e51b402a37e874d
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87001926"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92122915"
 ---
 # <a name="monitor-the-overall-health-of-the-devices-connected-to-an-iot-central-application"></a>Отслеживание общей работоспособности устройств, подключенных к IoT Centralному приложению
 
@@ -46,7 +46,7 @@ ms.locfileid: "87001926"
 
 ## <a name="iot-central-metrics"></a>Метрики IoT Central
 
-Список метрик, доступных в настоящее время для IoT Central, см. в разделе [Поддерживаемые метрики с Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-supported#microsoftiotcentraliotapps).
+Список метрик, доступных в настоящее время для IoT Central, см. в разделе [Поддерживаемые метрики с Azure Monitor](../../azure-monitor/platform/metrics-supported.md#microsoftiotcentraliotapps).
 
 ### <a name="metrics-and-invoices"></a>Метрики и счета
 
@@ -58,6 +58,6 @@ ms.locfileid: "87001926"
 
 - Хотя метрики могут показывать подмножество обмена данными между устройством и облаком, весь обмен данными между устройством и облаком [считается сообщением для выставления счетов](https://azure.microsoft.com/pricing/details/iot-central/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы узнали, как использовать шаблоны приложений, предлагаем следующий шаг — Узнайте, как [управлять IOT Central из портал Azure](howto-manage-iot-central-from-portal.md)

@@ -2,17 +2,17 @@
 title: Руководство. Использование клиентской библиотеки пакетной службы Azure для Node.js
 description: Изучите основные принципы работы пакетной службы Azure и создайте простое решение с использованием Node.js.
 ms.topic: tutorial
-ms.date: 05/22/2017
-ms.openlocfilehash: 4cecd25346d868dfb27deb9f768342ab2e72ade9
-ms.sourcegitcommit: a9784a3fd208f19c8814fe22da9e70fcf1da9c93
+ms.date: 10/08/2020
+ms.openlocfilehash: 33ca65421802cdbe31497f3a19ba5992961daa12
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83780178"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91850614"
 ---
 # <a name="get-started-with-batch-sdk-for-nodejs"></a>Приступая к работе с пакетом SDK для пакетной службы для Node.js
 
-Изучите основы создания клиента пакетной службы в Node.js с помощью [пакета SDK для пакетной службы Azure для Node.js](/javascript/api/overview/azure/batch). Мы определим ключевые аспекты приложения пакетной службы, а затем настроим его с помощью клиента Node.js.  
+Изучите основы создания клиента пакетной службы в Node.js с помощью [пакета SDK для пакетной службы Azure для Node.js](/javascript/api/overview/azure/batch). Мы определим ключевые аспекты приложения пакетной службы, а затем настроим его с помощью клиента Node.js.
 
 ## <a name="prerequisites"></a>Предварительные требования
 В этой статье предполагается, что вы уже работали с Node.js и знаете, как работать в Linux. Также предполагается, что у вас есть настроенная учетная запись Azure с правами доступа для создания пакетной службы и службы хранилища.
@@ -174,7 +174,7 @@ var cloudPool = batch_client.pool.get(poolid,function(error,result,request,respo
         {
             if(error.statusCode==404)
             {
-                console.log("Pool not found yet returned 404...");    
+                console.log("Pool not found yet returned 404...");
 
             }
             else
@@ -241,7 +241,7 @@ var cloudPool = batch_client.pool.get(poolid,function(error,result,request,respo
   targetDedicated: 4,
   enableAutoScale: false,
   enableInterNodeCommunication: false,
-  maxTasksPerNode: 1,
+  taskSlotsPerNode: 1,
   taskSchedulingPolicy: { nodeFillType: 'Spread' } }
 ```
 
@@ -252,7 +252,7 @@ var cloudPool = batch_client.pool.get(poolid,function(error,result,request,respo
 Эти задачи могут выполняться параллельно и развертываться на нескольких узлах, управляемых пакетной службой Azure.
 
 > [!Tip]
-> Чтобы указать максимальное число задач, которые могут выполняться параллельно на одном узле, используйте свойство [maxTasksPerNode](https://azure.github.io/azure-sdk-for-node/azure-batch/latest/Pool.html#add).
+> Чтобы указать максимальное число задач, которые могут выполняться параллельно на одном узле, используйте свойство [taskSlotsPerNode](https://azure.github.io/azure-sdk-for-node/azure-batch/latest/Pool.html#add).
 >
 >
 
@@ -317,7 +317,7 @@ var job_prep_task_config = {id:"installprereq",commandLine:"sudo sh startup_prer
 ```nodejs
 // storing container names in an array
 var container_list = ["con1","con2","con3","con4"]
-    container_list.forEach(function(val,index){           
+    container_list.forEach(function(val,index){
 
            var container_name = val;
            var taskID = container_name + "_process";
@@ -325,7 +325,7 @@ var container_list = ["con1","con2","con3","con4"]
            var task = batch_client.task.add(poolid,task_config,function(error,result){
                 if(error != null)
                 {
-                    console.log(error.response);     
+                    console.log(error.response);
                 }
                 else
                 {
@@ -339,7 +339,7 @@ var container_list = ["con1","con2","con3","con4"]
     });
 ```
 
-Код добавляет несколько задач в пул. Все задачи выполняются на узле созданного пула виртуальных машин. Если количество задач превышает число виртуальных машин в пуле или значение свойства maxTasksPerNode, задачи ожидают, пока узел станет доступным. Это задание оркестрации пакетная служба Azure обрабатывает автоматически.
+Код добавляет несколько задач в пул. Все задачи выполняются на узле созданного пула виртуальных машин. Если количество задач превышает число виртуальных машин в пуле или значение свойства taskSlotsPerNode, задачи ожидают, пока узел станет доступным. Это задание оркестрации пакетная служба Azure обрабатывает автоматически.
 
 Портал содержит подробные представления задач и состояния заданий. Можно также использовать список, чтобы получить функции в пакете SDK узла Azure. Подробные сведения приведены в документации по [ссылке](https://azure.github.io/azure-sdk-for-node/azure-batch/latest/Job.html).
 

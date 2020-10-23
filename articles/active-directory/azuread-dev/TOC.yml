@@ -97,8 +97,6 @@
               href: howto-v1-enable-sso-android.md
             - name: Включение единого входа в iOS
               href: howto-v1-enable-sso-ios.md
-            - name: Отладка единого входа на основе SAML
-              href: howto-v1-debug-saml-sso-issues.md
         - name: Настройка утверждений
           items:
             - name: Настройка утверждений ролей

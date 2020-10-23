@@ -9,12 +9,12 @@ ms.subservice: pod
 ms.topic: tutorial
 ms.date: 09/03/2019
 ms.author: alkohli
-ms.openlocfilehash: 9af4de51e94a1be118211e2bb4404926656fedf6
-ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
+ms.openlocfilehash: 28232981d007e7be04d520ec46739408d03d90b4
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91739873"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92124019"
 ---
 # <a name="tutorial-use-data-box-to-import-data-as-managed-disks-in-azure"></a>Руководство по Использование Data Box для импорта данных в качестве управляемых дисков в Azure.
 
@@ -38,7 +38,7 @@ ms.locfileid: "91739873"
 4. Вы просмотрели:
 
     - поддерживаемые [размеры управляемых дисков в пределах размеров объектов Azure](data-box-limits.md#azure-object-size-limits);
-    - статью [Общие сведения об управляемых дисках Azure](/azure/virtual-machines/windows/managed-disks-overview). 
+    - статью [Общие сведения об управляемых дисках Azure](../virtual-machines/managed-disks-overview.md). 
 
 5. Вы сохраняете у себя копию исходных данных, пока не убедитесь, что служба Data Box перенесла ваши данные в службу хранилища Azure.
 
@@ -183,4 +183,3 @@ ms.locfileid: "91739873"
 
 > [!div class="nextstepaction"]
 > [Отправка Azure Data Box в корпорацию Майкрософт](./data-box-deploy-picked-up.md)
-

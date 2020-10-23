@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 09/10/2020
 ms.author: jeedes
-ms.openlocfilehash: 9c52050d432701f4af2e166b36e38dc23e0cc002
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 3c08694efafef315b0f5e96d293d883767860fef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91286987"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91855214"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-palo-alto-networks---globalprotect"></a>Руководство по интеграции единого входа Azure Active Directory c Palo Alto Networks (GlobalProtect)
 
@@ -117,7 +117,7 @@ ms.locfileid: "91286987"
 
 ## <a name="configure-palo-alto-networks---globalprotect-sso"></a>Настройка единого входа в Palo Alto Networks (GlobalProtect)
 
-1. В другом окне браузера откройте GlobalProtect для брандмауэров Palo Alto Networks с правами администратора.
+1. В другом окне браузера откройте Palo Alto Networks (GlobalProtect) с правами администратора.
 
 2. Щелкните **Device** (Устройство).
 

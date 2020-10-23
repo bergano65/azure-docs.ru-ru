@@ -11,12 +11,12 @@ ms.author: nigup
 ms.date: 10/13/2020
 ms.topic: conceptual
 ms.custom: troubleshooting,contperfq4, contperfq2
-ms.openlocfilehash: a81af14992c8557c245ab3a1073f031a6c505084
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: 4b072257d49011819fe19d6e2901560df43b26dc
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92019398"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92275559"
 ---
 # <a name="manage--increase-quotas-for-resources-with-azure-machine-learning"></a>Управление квотами на ресурсы для Машинного обучения Azure и их увеличение
 
@@ -48,7 +48,7 @@ Azure использует ограничения и квоты, чтобы пр
 + Вычислительная среда Машинного обучения Azure;
 + Конвейеры Машинное обучение Azure
 + Экземпляры контейнеров
-+ Хранилище
++ Память
 
 > [!IMPORTANT]
 > Границы могут измениться. Последнюю версию всегда можно найти в [документе](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits/) по квотам на уровне службы для всех ресурсов Azure.
@@ -101,7 +101,7 @@ Azure использует ограничения и квоты, чтобы пр
 
 Дополнительные сведения см. в разделе [ограничения экземпляров контейнеров](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#container-instances-limits).
 
-### <a name="storage"></a>Хранилище
+### <a name="storage"></a>Память
 Учетные записи хранения Azure имеют ограничение в 250 учетных записей хранения для каждого региона на подписку. Сюда входят учетные записи хранения уровня "Стандартный" и "Премиум".
 
 Чтобы увеличить это ограничение, выполните запрос через [службу поддержки Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest/). Команда разработчиков службы хранилища Azure просматривает ваш случай и может утвердить до 250 учетных записей хранения для региона.
@@ -177,12 +177,14 @@ Azure использует ограничения и квоты, чтобы пр
     | ----- | ----- |
     | Тип проблемы | Технические |
     | Служба | Мои службы. Выберите __машинное обучение__ в раскрывающемся списке. |
-    | Тип проблемы | Настройка рабочей области, пакет SDK и интерфейс командной строки |
-    | Подтип проблемы | Проблема при подготовке рабочей области или управлении ею |
+    | Тип проблемы | Конфигурация и безопасность рабочей области |
+    | Подтип проблемы | Частная конечная точка и запрос на вычет зоны Частная зона DNS |
 
 2. В разделе __сведения__ введите в поле __Описание__ нужный регион Azure и сценарий, который планируется использовать. Если необходимо запросить увеличение квоты для нескольких подписок, следует также вывести список идентификаторов подписок в этом поле.
 
 3. Выберите __создать__ , чтобы создать запрос.
+
+:::image type="content" source="media/how-to-manage-quotas/quota-increase-private-endpoint.png" alt-text="Снимок экрана закрытой конечной точки и запроса на увеличение квоты частного DNS":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Перенос MySQL Online в базу данных Azure для MySQL
+title: Руководство по Миграция из MySQL в Базу данных Azure для MySQL по сети
 titleSuffix: Azure Database Migration Service
 description: Узнайте, как выполнить интерактивную миграцию из MySQL в локальной среде в Базу данных Azure для MySQL с помощью Azure Database Migration Service.
 services: dms
@@ -13,17 +13,17 @@ ms.custom: seo-lt-2019
 ms.topic: tutorial
 ms.date: 01/08/2020
 ms.openlocfilehash: b7e9491f3ddc49d49cf5301bba9d4f51fc9dd008
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91282346"
 ---
 # <a name="tutorial-migrate-mysql-to-azure-database-for-mysql-online-using-dms"></a>Руководство. Перенос MySQL в Базу данных Azure для MySQL по сети с помощью DMS
 
 Azure Database Migration Service можно использовать для переноса баз данных из локального экземпляра MySQL в [Базу данных Azure для MySQL](https://docs.microsoft.com/azure/mysql/) с минимальным временем простоя. Другими словами, миграцию можно выполнить с минимальным временем простоя для приложения. В этом руководстве описано, как выполнить миграцию примера базы данных **сотрудников** из локального экземпляра MySQL 5.7 в Базу данных Azure для MySQL с помощью интерактивного действия миграции в Azure Database Migration Service.
 
-В этом руководстве вы узнаете, как:
+В этом руководстве описано следующее:
 > [!div class="checklist"]
 >
 > * перенос примера схемы с помощью служебной программы mysqldump;
@@ -41,7 +41,7 @@ Azure Database Migration Service можно использовать для пе
 > [!NOTE]
 > Обмен данными без смещения
 >
-> Корпорация Майкрософт поддерживает различные и включенные среды. Эта статья содержит ссылки на слово _Slave_. В соответствии с [руководством по стилю Майкрософт для обмена данными без](https://github.com/MicrosoftDocs/microsoft-style-guide/blob/master/styleguide/bias-free-communication.md) пересчета этот термин распознается как исключение. Это слово используется в этой статье для обеспечения согласованности, так как в настоящее время это слово, которое отображается в программном обеспечении. При обновлении программного обеспечения для удаления слова эта статья будет обновлена для выравнивания.
+> Корпорация Майкрософт поддерживает принципы инклюзивности, а также этнического и социокультурного многообразия. В версии этой статьи на английском языке используется термин _slave_ (раб, ведомый). В [руководстве по стилю для политкорректной коммуникации](https://github.com/MicrosoftDocs/microsoft-style-guide/blob/master/styleguide/bias-free-communication.md) корпорации Майкрософт это слово указано как недопустимое. Термин приводится в версии этой статьи на английском языке в целях согласования, так как сейчас он используется в программном обеспечении. После обновления программного обеспечения с удалением этого слова статья будет изменена соответствующим образом.
 >
 
 
@@ -51,10 +51,10 @@ Azure Database Migration Service можно использовать для пе
 
 * Скачайте и установите [MySQL Community Edition](https://dev.mysql.com/downloads/mysql/) версии 5.6 или 5.7. Локальная версия MySQL должна соответствовать версии Базы данных Azure для MySQL. Например, MySQL версии 5.6 можно перенести только в Базу данных Azure для MySQL версии 5.6, но не версии 5.7.
 * [Создайте экземпляр в Базе данных Azure для MySQL](https://docs.microsoft.com/azure/mysql/quickstart-create-mysql-server-database-using-azure-portal). Ознакомьтесь со статьей [База данных Azure для MySQL: подключение и запрос данных с помощью MySQL Workbench](https://docs.microsoft.com/azure/mysql/connect-workbench), чтобы узнать, как подключить и создать базу данных с помощью портала Azure.  
-* Создайте виртуальная сеть Microsoft Azure для Azure Database Migration Service с помощью модели развертывания Azure Resource Manager, которая обеспечивает подключение типа "сеть — сеть" к локальным исходным серверам с помощью [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) или [VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways). Дополнительные сведения о создании виртуальной сети см. в [документации по виртуальной сети](https://docs.microsoft.com/azure/virtual-network/), особенно в кратком руководстве, где приведены пошаговые инструкции.
+* Создайте виртуальную сеть Microsoft Azure для Azure Database Migration Service с помощью модели развертывания Azure Resource Manager, которая обеспечивает подключение "сеть — сеть" к локальным исходным серверам с помощью [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) или [VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways). Дополнительные сведения о создании виртуальной сети приведены в [документации по виртуальным сетям](https://docs.microsoft.com/azure/virtual-network/). В частности, уделите внимание кратким руководствам с пошаговыми инструкциями.
 
     > [!NOTE]
-    > Если при установке Virtual Нетворкнет вы используете ExpressRoute с пирингом сети в корпорацию Майкрософт, добавьте следующие [конечные точки](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview) службы в подсеть, в которой будет подготовлена служба:
+    > Если вы используете ExpressRoute с пиринговым подключением к сети, управляемой Майкрософт, во время настройки виртуальной сети добавьте в подсеть, в которой будет подготовлена служба, следующие [конечные точки](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview):
     >
     > * целевую конечную точку базы данных (например, конечная точка SQL, конечная точка Cosmos DB и т. д.);
     > * конечную точку службы хранилища;
@@ -62,11 +62,11 @@ Azure Database Migration Service можно использовать для пе
     >
     > Такая конфигурация вызвана тем, что у Azure Database Migration Service нет подключения к Интернету.
 
-* Убедитесь, что правила группы безопасности сети виртуальной сети не блокируют следующие порты входящих подключений для Azure Database Migration Service: 443, 53, 9354, 445, 12000. Дополнительные сведения о фильтрации трафика NSG в виртуальной сети см. в статье [Фильтрация сетевого трафика с помощью групп безопасности сети](https://docs.microsoft.com/azure/virtual-network/virtual-network-vnet-plan-design-arm).
+* Убедитесь, что правила группы безопасности сети для виртуальной сети не блокируют следующие входящие порты для Azure Database Migration Service: 443, 53, 9354, 445, 12000. См. дополнительные сведения о [фильтрации трафика, предназначенного для виртуальной сети, с помощью групп безопасности сети](https://docs.microsoft.com/azure/virtual-network/virtual-network-vnet-plan-design-arm).
 * Настройте [брандмауэр Windows для доступа к ядру СУБД](https://docs.microsoft.com/sql/database-engine/configure-windows/configure-a-windows-firewall-for-database-engine-access).
 * Откройте брандмауэр Windows, чтобы предоставить Azure Database Migration Service доступ к исходному серверу MySQL Server. По умолчанию это TCP-порт 3306.
 * Если перед исходными базами данных развернуто устройство брандмауэра, вам может понадобиться добавить правила брандмауэра, чтобы позволить службе Azure Database Migration Service обращаться к исходным базам данных для выполнения миграции.
-* Создайте [правило брандмауэра](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure) уровня сервера для Базы данных Azure для MySQL, чтобы предоставить службе Azure Database Migration Service доступ к целевым базам данных. Укажите диапазон подсети виртуальной сети, используемый для Azure Database Migration Service.
+* Создайте [правило брандмауэра](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure) уровня сервера для Базы данных Azure для MySQL, чтобы предоставить службе Azure Database Migration Service доступ к целевым базам данных. Задайте диапазон подсети в виртуальной сети, которая используется для Azure Database Migration Service.
 * Исходный экземпляр MySQL должен находиться в поддерживаемой версии MySQL Community Edition. Чтобы определить версию экземпляра MySQL, в служебной программе MySQL или MySQL Workbench выполните следующую команду:
 
     ```
@@ -78,7 +78,7 @@ Azure Database Migration Service можно использовать для пе
 * Включите ведение двоичных журналов в файле my.ini (Windows) или my.cnf (Unix) в исходной базе данных, используя следующую конфигурацию:
 
   * **server_id** = 1 или больше (применимо только для версии MySQL 5.6)
-  * **log-bin** = \<path> (относится только к MySQL 5,6)    Например: log-bin = E:\ MySQL_logs \Бинлог
+  * **log-bin** =\<path> (применимо только для версии MySQL 5.6)    Пример: log-bin = E:\MySQL_logs\BinLog
   * **binlog_format** = row
   * **Expire_logs_days** = 5 (рекомендуется не использовать ноль; применимо только для версии MySQL 5.6)
   * **Binlog_row_image** = full (применимо только для версии MySQL 5.6)
@@ -94,7 +94,7 @@ Azure Database Migration Service можно использовать для пе
 
 Чтобы подготовить все объекты базы данных, такие как схемы таблицы, индексы и хранимые процедуры, нам нужно извлечь схему из исходной базы данных и применить ее к нужной базе данных. Чтобы извлечь схему, можно использовать mysqldump с параметром `--no-data`.
 
-Предположим, что в локальной системе имеется образец базы данных **Employees** MySQL, команда для миграции схемы с помощью mysqldump:
+Предположим, что вы используете пример базы данных **Сотрудники** MySQL в локальной системе. Тогда команда для переноса схемы с помощью mysqldump будет выглядеть так:
 
 ```
 mysqldump -h [servername] -u [username] -p[password] --databases [db name] --no-data > [schema file path]
@@ -141,8 +141,8 @@ SET group_concat_max_len = 8192;
 Запустите сценарий удаления внешнего ключа (второй столбец) в результате запроса, чтобы удалить внешний ключ.
 
 > [!NOTE]
-> Служба DMS Azure не поддерживает ссылочное действие CASCADE, которое помогает автоматически удалять или обновлять совпадающую строку в дочерней таблице при удалении или обновлении строки в родительской таблице. Дополнительные сведения см. в разделе ссылочные действия статьи [ограничения внешнего ключа](https://dev.mysql.com/doc/refman/8.0/en/create-table-foreign-keys.html).
-> В Azure DMS необходимо удалить ограничения внешнего ключа на целевом сервере базы данных во время начальной загрузки данных, а также нельзя использовать ссылочные действия. Если Рабочая нагрузка зависит от обновления связанной дочерней таблицы через это ссылочное действие, рекомендуется выполнить [дамп и восстановить](https://docs.microsoft.com/azure/mysql/concepts-migrate-dump-restore) его. 
+> Azure Database Migration Service не поддерживает ссылочное действие CASCADE, которое позволяет автоматически удалить или обновить совпадающую строку в дочерней таблице при удалении или обновлении строки в родительской таблице. Дополнительные сведения см. в статье [Ограничения для внешних ключей](https://dev.mysql.com/doc/refman/8.0/en/create-table-foreign-keys.html) в документации по MySQL.
+> В Azure Database Migration Service нужно снять ограничения для внешних ключей на сервере целевой базы данных во время начальной загрузки данных. При этом нельзя использовать ссылочные действия. Если ваша рабочая нагрузка зависит от обновлений связанной дочерней таблицы, выполняемых с помощью ссылочного действия, рекомендуется переносить базу данных с помощью [дампа и восстановления](https://docs.microsoft.com/azure/mysql/concepts-migrate-dump-restore). 
 
 
 > [!IMPORTANT]
@@ -184,13 +184,13 @@ SELECT Concat('DROP TRIGGER ', Trigger_Name, ';') FROM  information_schema.TRIGG
 
 4. Выберите существующую виртуальную сеть или создайте новую.
 
-    Виртуальная сеть предоставляет Azure Database Migration Service с доступом к исходным SQL Server и целевому экземпляру базы данных SQL Azure.
+    Виртуальная сеть предоставляет Azure Database Migration Service доступ к исходному экземпляру SQL Server и целевому экземпляру Базы данных SQL Azure.
 
-    Дополнительные сведения о создании виртуальной сети в портал Azure см. в статье [Создание виртуальной сети с помощью портал Azure](https://aka.ms/DMSVnet).
+    См. статью [Краткое руководство. Создание виртуальной сети с помощью портала Azure](https://aka.ms/DMSVnet).
 
 5. Выберите ценовую категорию.
 
-    Дополнительные сведения о затратах и ценовых категориях см. на [странице с ценами](https://aka.ms/dms-pricing).
+    Дополнительные сведения о ценовых категориях и затратах см. на [странице с описанием цен](https://aka.ms/dms-pricing).
 
     ![Настройка параметров экземпляра Database Migration Service](media/tutorial-mysql-to-azure-mysql-online/dms-settings3.png)
 
@@ -237,7 +237,7 @@ SELECT Concat('DROP TRIGGER ', Trigger_Name, ';') FROM  information_schema.TRIGG
 
     ![Сопоставление с целевыми базами данных](media/tutorial-mysql-to-azure-mysql-online/dms-map-target-details.png)
    > [!NOTE] 
-   > Хотя на этом шаге можно выбрать несколько баз данных, каждый экземпляр Azure Database Migration Service поддерживает до четырех баз данных для параллельной миграции. Кроме того, существует ограничение в двух экземплярах Azure Database Migration Service на регион в подписке. Например, если у вас есть 40 баз данных для миграции, можно одновременно выполнить миграцию только восьми из них и только в том случае, если вы создали два экземпляра Azure Database Migration Service.
+   > Хотя на этом шаге вы можете выбрать несколько баз данных, каждый экземпляр Azure Database Migration Service поддерживает до четырех баз данных для параллельной миграции. Кроме того, в подписке действует ограничение в два экземпляра Azure Database Migration Service на регион. Например, если вы переносите 40 баз данных, вы можете параллельно перенести только 8 из них и только при наличии двух экземпляров Azure Database Migration Service.
 
 3. Нажмите кнопку **Сохранить** в окне **Migration summary** (Сводка по миграции) и в поле **Имя действия** введите имя действия миграции, а затем проверьте соответствие сведениям о целевом и исходном сервере, которые вы указали ранее.
 

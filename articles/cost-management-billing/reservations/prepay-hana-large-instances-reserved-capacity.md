@@ -8,12 +8,12 @@ ms.subservice: reservations
 ms.topic: how-to
 ms.date: 07/24/2020
 ms.author: banders
-ms.openlocfilehash: 44f7ce657ea9341779e15f6e4817e8fae1515e47
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: d6d0d0a4c4b3328fa50777b5106bac202c9972ef
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88685975"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92151496"
 ---
 # <a name="save-on-sap-hana-large-instances-with-an-azure-reservation"></a>Экономия на SAP HANA (крупные экземпляры) благодаря резервированию Azure
 
@@ -32,15 +32,15 @@ ms.locfileid: "88685975"
 - Для зарезервированной емкости HANA нельзя использовать общую область резервирования. Область резервирования нельзя разделить, объединить или обновить.
 - С помощью вызовов API для зарезервированной емкости можно приобрести только одно решение HLI за раз. Для приобретения дополнительных экземпляров воспользуйтесь дополнительными вызовами API.
 
-Зарезервированную емкость можно приобрести на портале Azure или с помощью [REST API](https://docs.microsoft.com/rest/api/reserved-vm-instances/reservationorder/purchase).
+Зарезервированную емкость можно приобрести на портале Azure или с помощью [REST API](/rest/api/reserved-vm-instances/reservationorder/purchase).
 
 ## <a name="buy-a-hana-large-instance-reservation"></a>Приобретение резервирования для HANA (крупные экземпляры)
 
-Используйте следующие сведения для приобретения резервирования HLI с помощью интерфейсов [REST API заказа на резервирование](https://docs.microsoft.com/rest/api/reserved-vm-instances/reservationorder/purchase).
+Используйте следующие сведения для приобретения резервирования HLI с помощью интерфейсов [REST API заказа на резервирование](/rest/api/reserved-vm-instances/reservationorder/purchase).
 
 ### <a name="get-the-reservation-order-and-price"></a>Получение заказа на резервирование и цены
 
-Сначала получите заказ на резервирование и цену для подготовленного решения с номером SKU для HANA (крупные экземпляры) с помощью API [расчета цены](https://docs.microsoft.com/rest/api/reserved-vm-instances/reservationorder/calculate).
+Сначала получите заказ на резервирование и цену для подготовленного решения с номером SKU для HANA (крупные экземпляры) с помощью API [расчета цены](/rest/api/reserved-vm-instances/reservationorder/calculate).
 
 В следующем примере для вызовов REST API с помощью PowerShell используется [armclient](https://github.com/projectkudu/ARMClient). Запрос API заказа на резервирование и расчета цены и его текст должны выглядеть следующим образом:
 
@@ -220,7 +220,7 @@ armclient get /providers/microsoft.capacity/reservationOrders/22222222-2222-2222
 
   **SKU** — имя номера SKU для HLI. Оно выглядит следующим образом: `SAP_HANA_On_Azure_<SKUname>`.
 
-  **Location** (Расположение) — доступные регионы HLI. Сведения о доступных регионах см. в статье [Номера SKU для SAP HANA в Azure (крупные экземпляры)](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-available-skus). Чтобы получить формат строки расположения, используйте [вызов API получения расположений](https://docs.microsoft.com/rest/api/resources/subscriptions/listlocations#locationlistresult).
+  **Location** (Расположение) — доступные регионы HLI. Сведения о доступных регионах см. в статье [Номера SKU для SAP HANA в Azure (крупные экземпляры)](../../virtual-machines/workloads/sap/hana-available-skus.md). Чтобы получить формат строки расположения, используйте [вызов API получения расположений](/rest/api/resources/subscriptions/listlocations#locationlistresult).
 
   **Reserved Resource type** (Зарезервированный тип ресурса) — `SapHana`.
 
@@ -248,5 +248,5 @@ location. You can also go to https://aka.ms/corequotaincrease to learn about quo
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Узнайте, [как вызывать интерфейсы REST API службы Azure для работы с Postman и cURL](https://docs.microsoft.com/rest/api/azure/#how-to-call-azure-rest-apis-with-postman).
-- Список номеров SKU и сведения о доступных регионах см. в статье [Номера SKU для SAP HANA в Azure (крупные экземпляры)](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-available-skus).
+- Узнайте, [как вызывать интерфейсы REST API службы Azure для работы с Postman и cURL](/rest/api/azure/#how-to-call-azure-rest-apis-with-postman).
+- Список номеров SKU и сведения о доступных регионах см. в статье [Номера SKU для SAP HANA в Azure (крупные экземпляры)](../../virtual-machines/workloads/sap/hana-available-skus.md).

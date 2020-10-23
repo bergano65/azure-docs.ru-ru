@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 10/06/2020
 ms.author: cynthn
 ms.reviewer: olayemio
-ms.openlocfilehash: bf4a1feb91a1ac4b0bca0d6afdbac41a8be3aa4f
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 35edcfb4bdb0715245f4a3190fb22638b1162429
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92049879"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92370990"
 ---
 # <a name="create-a-managed-disk-from-an-image-version"></a>Создание управляемого диска из версии образа
 
@@ -23,10 +23,10 @@ ms.locfileid: "92049879"
 
 ## <a name="cli"></a>CLI
 
-Задайте `source` для переменной идентификатор версии образа, а затем выполните команду [AZ Disk Create](/cli/azure/disk.md#az_disk_create) , чтобы создать управляемый диск. 
+Задайте `source` для переменной идентификатор версии образа, а затем выполните команду [AZ Disk Create](/cli/azure/disk#az_disk_create) , чтобы создать управляемый диск. 
 
 
-Просмотреть список версий образа можно с помощью команды [AZ SIG Image-Version List](/cli/azure/sig/image-version.md#az_sig_image_version_list). В этом примере мы ищем все версии изображений, которые являются частью определения образа *мимажедефинитион* в коллекции образов *мигаллери* .
+Просмотреть список версий образа можно с помощью команды [AZ SIG Image-Version List](/cli/azure/sig/image-version#az_sig_image_version_list). В этом примере мы ищем все версии изображений, которые являются частью определения образа *мимажедефинитион* в коллекции образов *мигаллери* .
 
 ```azurecli-interactive
 az sig image-version list \
@@ -94,7 +94,7 @@ New-AzDisk -Disk $diskConfig `
    -DiskName $diskName
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Вы также можете создать версию образа на основе управляемого диска с помощью [Azure CLI](image-version-managed-image-cli.md) или [PowerShell](image-version-managed-image-powershell.md).
 

@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 09/18/2019
 ms.author: duau
-ms.openlocfilehash: 87c8a7523222afd3ae4daeb8fb5824025e693cd1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1fad1bca18d16ac3b6a654a3c289d0a14e3cd2e2
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89569634"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92204798"
 ---
 # <a name="expressroute-prerequisites--checklist"></a>Предварительные требования и контрольный список для ExpressRoute
 Чтобы подключиться к службам Microsoft Cloud через ExpressRoute, вам нужно выполнить условия в следующих разделах.
@@ -34,14 +34,14 @@ ms.locfileid: "89569634"
 * **Маршрутизация**. В зависимости от способа подключения к Microsoft Cloud вам или вашему поставщику необходимо настроить и администрировать сеансы BGP для [доменов маршрутизации](expressroute-circuit-peerings.md). Некоторые поставщики подключений Ethernet или облачных услуг Exchange могут предлагать управление BGP в качестве услуги с добавленной стоимостью.
 * **Преобразование сетевых адресов (NAT).** Майкрософт принимает только общедоступные IP-адреса через пиринг. Если в локальной сети используются частные IP-адреса, вам или вашему поставщику услуг необходимо преобразовать их в общедоступные IP-адреса [с помощью NAT](expressroute-nat.md).
 * **Качество обслуживания.** Skype для бизнеса предоставляет различные услуги (например, передача голоса, видео, текста), которые требуют дифференцированного подхода к качеству обслуживания. Вам и вашему поставщику услуг необходимо соблюдать [требования к качеству обслуживания](expressroute-qos.md).
-* **Сетевая безопасность.** При подключении к Microsoft Cloud через ExpressRoute необходимо помнить о [сетевой безопасности](../best-practices-network-security.md).
+* **Сетевая безопасность.** При подключении к Microsoft Cloud через ExpressRoute необходимо помнить о [сетевой безопасности](/azure/cloud-adoption-framework/reference/networking-vdc).
 
 ## <a name="microsoft-365"></a>Microsoft 365
 Если вы планируете включить Microsoft 365 в ExpressRoute, ознакомьтесь со следующими документами, чтобы получить дополнительные сведения о требованиях к Microsoft 365.
 
 * [Azure ExpressRoute для Microsoft 365](/microsoft-365/enterprise/azure-expressroute)
 * [Маршрутизация с помощью ExpressRoute для Microsoft 365](/microsoft-365/enterprise/routing-with-expressroute)
-* [Высокий уровень доступности и отработка отказов при использовании ExpressRoute](https://aka.ms/erhighavailability)
+* [Высокий уровень доступности и отработка отказов при использовании ExpressRoute](/microsoft-365/enterprise/network-planning-with-expressroute)
 * [URL-адреса Microsoft 365 и диапазоны IP-адресов](/microsoft-365/enterprise/urls-and-ip-address-ranges)
 * [Планирование сети и настройка производительности для Microsoft 365](/microsoft-365/enterprise/network-planning-and-performance)
 * [Планирование сети и миграции для Microsoft 365](/microsoft-365/enterprise/network-and-migration-planning)

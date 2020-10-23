@@ -3,16 +3,15 @@ title: Создание запроса & Azure Data Lake Analytics PowerShell
 description: Создание учетной записи Azure Data Lake Analytics и отправка задания U-SQL с помощью Azure PowerShell.
 ms.service: data-lake-analytics
 ms.reviewer: jasonh
-ms.assetid: 8a4e901e-9656-4a60-90d0-d78ff2f00656
 ms.topic: conceptual
 ms.date: 05/04/2017
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 61177d1338be30ae14ccea3ff94c5e0e554aa331
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 93a05231bc971737a08d74ad04150e5449dfc792
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89077336"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92220947"
 ---
 # <a name="get-started-with-azure-data-lake-analytics-using-azure-powershell"></a>Начало работы с Azure Data Lake Analytics с помощью Azure PowerShell
 
@@ -20,18 +19,18 @@ ms.locfileid: "89077336"
 
 Узнайте, как использовать Azure PowerShell для создания учетных записей Azure Data Lake Analytics, а затем отправлять и выполнять задания U-SQL. Дополнительные сведения о Data Lake Analytics см. в [обзоре Azure Data Lake Analytics](data-lake-analytics-overview.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 Перед началом работы с этим руководством необходимо иметь следующую информацию:
 
-* **Учетная запись Azure Data Lake Analytics**. См. раздел [Начало работы с Data Lake Analytics](https://docs.microsoft.com/azure/data-lake-analytics/data-lake-analytics-get-started-portal).
+* **Учетная запись Azure Data Lake Analytics**. См. раздел [Начало работы с Data Lake Analytics](./data-lake-analytics-get-started-portal.md).
 * **Рабочая станция с Azure PowerShell**. Ознакомьтесь со статьей [Установка и настройка Azure PowerShell](/powershell/azure/).
 
 ## <a name="log-in-to-azure"></a>Вход в Azure
 
-Для работы с руководством необходим опыт работы с Azure PowerShell. В частности вам нужно знать, как выполнить вход в Azure. Если вам нужна помощь, см. раздел [Начало работы с Azure PowerShell](https://docs.microsoft.com/powershell/azure/get-started-azureps).
+Для работы с руководством необходим опыт работы с Azure PowerShell. В частности вам нужно знать, как выполнить вход в Azure. Если вам нужна помощь, см. раздел [Начало работы с Azure PowerShell](/powershell/azure/get-started-azureps).
 
 Вход в систему с использованием имени подписки:
 

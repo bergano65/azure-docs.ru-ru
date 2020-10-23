@@ -4,20 +4,24 @@ ms.service: spatial-anchors
 ms.topic: include
 ms.date: 07/31/2020
 ms.author: rgarcia
-ms.openlocfilehash: c4a03f2701b94821cfc8c1f6d585b1a87ee8bfea
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 9e085c122c196de735cae26a4ea2f04b2da73899
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91358833"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91971438"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
-В рамках этого руководства вам потребуются:
+Для работы с этим учебником необходимо следующее:
 
-* Прочесть статью [Описание службы "Пространственные привязки Azure"](../articles/spatial-anchors/overview.md).
-* Пройдите одно из [5-минутных кратких руководств](../articles/spatial-anchors/index.yml), чтобы обеспечить соблюдение всех перечисленных там предварительных требований. **Примечание.** Краткие руководства по Android/NDK и iOS/Swift сейчас не содержат сведения о возможностях, описанных в этом руководстве.
-* Базовые знания <a href="https://developers.google.com/ar/discover/" target="_blank">ARCore</a>, если вы хотите использовать Android, или <a href="https://developer.apple.com/arkit/" target="_blank">ARKit</a>, если вы хотите использовать iOS.
-* Компьютер Windows с установленным решением <a href="https://www.visualstudio.com/downloads/" target="_blank">Visual Studio 2017 или более поздней версии</a> с рабочей нагрузкой **ASP.NET и разработка веб-приложений**.
+* Знакомство со статьей [Описание службы "Пространственные привязки Azure"](../articles/spatial-anchors/overview.md).
+* Прохождение одного из [5-минутных руководств](../articles/spatial-anchors/index.yml). 
+  > [!NOTE]
+  > Краткие руководства по Android/NDK и iOS/Swift сейчас не содержат сведения о возможностях, описанных в этом руководстве.
+* Базовые знания:
+  *  <a href="https://developers.google.com/ar/discover/" target="_blank">ARCore</a>, если вы используете Android;
+  *  <a href="https://developer.apple.com/arkit/" target="_blank">ARKit</a>, если вы используете iOS.
+* Компьютер Windows с <a href="https://www.visualstudio.com/downloads/" target="_blank">Visual Studio 2019</a> или более поздней версии с рабочей нагрузкой **ASP.NET и разработка веб-приложений**.
 * [Пакет SDK для .NET Core 3.1](https://dotnet.microsoft.com/download).
-* Одно или несколько устройств (HoloLens, HoloLens 2, iOS или Android) для развертывания и запуска приложения.
+* Одно или несколько перечисленных ниже устройств для развертывания и запуска приложения: HoloLens, HoloLens 2, iOS или Android.

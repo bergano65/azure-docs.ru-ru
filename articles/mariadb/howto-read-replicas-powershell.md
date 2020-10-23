@@ -7,12 +7,12 @@ ms.service: mariadb
 ms.topic: how-to
 ms.date: 6/10/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 6e90e9c2ebbc6ba05e5778f618a5c3de02adf3ac
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e2b622372c881997fd77a83feb8f6c393504900b
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91542365"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92428300"
 ---
 # <a name="how-to-create-and-manage-read-replicas-in-azure-database-for-mariadb-using-powershell"></a>Создание реплик чтения и управление ими в базе данных Azure для MariaDB с помощью PowerShell
 
@@ -26,14 +26,14 @@ ms.locfileid: "91542365"
 
 Вот что вам нужно, чтобы выполнить инструкции, приведенные в этом руководстве:
 
-- [Модуль AZ PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps) , установленный локально или [Azure Cloud Shell](https://shell.azure.com/) в браузере
+- [Модуль AZ PowerShell](/powershell/azure/install-az-ps) , установленный локально или [Azure Cloud Shell](https://shell.azure.com/) в браузере
 - [Сервер базы данных Azure для MariaDB](quickstart-create-mariadb-server-database-using-azure-powershell.md)
 
 > [!IMPORTANT]
 > Так как модуль PowerShell Az.MariaDb предоставляется в предварительной версии, его нужно установить отдельно от модуля Az PowerShell с помощью команды `Install-Module -Name Az.MariaDb -AllowPrerelease`.
 > Как только модуль PowerShell Az.MariaDb станет общедоступным, он будет включен в один из будущих выпусков модуля Az PowerShell и встроен в Azure Cloud Shell.
 
-Если вы решили использовать PowerShell локально, подключитесь к учетной записи Azure с помощью командлета [Connect-азаккаунт](https://docs.microsoft.com/powershell/module/az.accounts/connect-azaccount) .
+Если вы решили использовать PowerShell локально, подключитесь к учетной записи Azure с помощью командлета [Connect-азаккаунт](/powershell/module/az.accounts/connect-azaccount) .
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -54,10 +54,10 @@ Get-AzMariaDbServer -Name mydemoserver -ResourceGroupName myresourcegroup |
 
 Для команды `New-AzMariaDbServerReplica` обязательны указанные ниже параметры.
 
-| Параметр | Пример значения | Описание  |
+| Параметр | Пример значения | Описание  |
 | --- | --- | --- |
-| ResourceGroupName |  myresourcegroup |  Группа ресурсов, в которой создается сервер реплики.  |
-| Имя | mydemoreplicaserver | Имя нового сервера реплики, который создается. |
+| ResourceGroupName |  myresourcegroup |  Группа ресурсов, в которой создается сервер реплики.  |
+| name | mydemoreplicaserver | Имя нового сервера реплики, который создается. |
 
 Чтобы создать реплику чтения между регионами, используйте параметр **Location** . В следующем примере создается реплика в регионе " **Западная часть США** ".
 
@@ -83,9 +83,9 @@ Get-AzMariaDReplica -ResourceGroupName myresourcegroup -ServerName mydemoserver
 
 Для команды `Get-AzMariaDReplica` обязательны указанные ниже параметры.
 
-| Параметр | Пример значения | Описание  |
+| Параметр | Пример значения | Описание  |
 | --- | --- | --- |
-| ResourceGroupName |  myresourcegroup |  Группа ресурсов, в которой будет создан сервер реплики.  |
+| ResourceGroupName |  myresourcegroup |  Группа ресурсов, в которой будет создан сервер реплики.  |
 | ServerName | mydemoserver | Имя или идентификатор исходного сервера. |
 
 ### <a name="delete-a-replica-server"></a>Удаление сервера-реплики
@@ -107,7 +107,7 @@ Remove-AzMariaDbServer -Name mydemoreplicaserver -ResourceGroupName myresourcegr
 Remove-AzMariaDbServer -Name mydemoserver -ResourceGroupName myresourcegroup
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Перезапуск базы данных Azure для сервера MariaDB с помощью PowerShell](howto-restart-server-powershell.md)

@@ -686,11 +686,10 @@
           items:
             - name: Рекомендации по обеспечению безопасности
               href: security-recommendations.md
-            - name: Управление доступом (каталоги и файлы)
+            - name: Модель управления доступом
+              href: data-lake-storage-access-control-model.md
+            - name: Доступ к спискам управления
               href: data-lake-storage-access-control.md
-            - name: Элементы управления безопасностью службы "Политика Azure"
-              displayName: 'regulatory, compliance, standards, domains'
-              href: ./security-controls-policy.md
         - name: Совместимость
           items:
             - name: Доступ с использованием нескольких протоколов

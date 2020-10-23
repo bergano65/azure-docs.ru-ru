@@ -12,12 +12,12 @@ author: VanMSFT
 ms.author: vanto
 ms.reviwer: ''
 ms.date: 04/23/2020
-ms.openlocfilehash: d234a121ee8f36389c79228d69a11d9fe999eb5f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a966579e1acc02f1479c41520dcbbc58d420647c
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91444765"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92164522"
 ---
 # <a name="configure-always-encrypted-by-using-the-windows-certificate-store"></a>Настройка Always Encrypted с помощью хранилища сертификатов Windows
 
@@ -97,7 +97,7 @@ Always Encrypted — это технология шифрования данны
 1. Разверните узел **базы данных**  >  **Clinic**  >  **таблицы**курса.
 2. Щелкните правой кнопкой мыши таблицу **Patients** и выберите пункт **Зашифровать столбцы**, чтобы открыть мастер настройки Always Encrypted.
 
-    ![Шифрование столбцов…](./media/always-encrypted-certificate-store-configure/encrypt-columns.png)
+    ![Снимок экрана, на котором показано шифрование столбцы... пункт меню в таблице пациентов.](./media/always-encrypted-certificate-store-configure/encrypt-columns.png)
 
 Мастер настройки Always Encrypted содержит следующие разделы: **Выбор столбца**, **Настройка главного ключа** (CMK), **Проверка** и **Сводка**.
 
@@ -123,7 +123,7 @@ Always Encrypted — это технология шифрования данны
 
 Можно зашифровать столбцы сейчас или сохранить сценарий PowerShell и выполнить его позже. Для целей этого руководства выберите **Перейти к завершению** и нажмите кнопку **Далее**.
 
-### <a name="summary"></a>Итоги
+### <a name="summary"></a>Сводка
 
 Убедитесь, что все параметры настроены правильно, и нажмите кнопку **Готово** , чтобы завершить настройку Always Encrypted.
 
@@ -149,7 +149,7 @@ Always Encrypted — это технология шифрования данны
 1. Откройте Visual Studio и создайте консольное приложение на языке C#. Убедитесь, что для проекта используется платформа **.NET Framework** версии 4.6 или более поздней.
 2. Назовите проект **AlwaysEncryptedConsoleApp** и нажмите кнопку **ОК**.
 
-![Новое консольное приложение](./media/always-encrypted-certificate-store-configure/console-app.png)
+![Снимок экрана, на котором показан недавно названный проект Алвайсенкриптедконсолеапп.](./media/always-encrypted-certificate-store-configure/console-app.png)
 
 ## <a name="modify-your-connection-string-to-enable-always-encrypted"></a>Изменение строки подключения для активации функции постоянного шифрования
 
@@ -510,7 +510,7 @@ SELECT FirstName, LastName, SSN, BirthDate FROM Patients;
 
 Вы увидите, что в зашифрованных столбцах не содержатся данные в виде открытого текста.
 
-   ![Новое консольное приложение](./media/always-encrypted-certificate-store-configure/ssms-encrypted.png)
+   ![Снимок экрана, показывающий зашифрованные данные в зашифрованных столбцах.](./media/always-encrypted-certificate-store-configure/ssms-encrypted.png)
 
 Чтобы получить доступ к данным в виде открытого текста, можно добавить в строку подключения параметр **Column Encryption Setting=enabled** .
 
@@ -518,7 +518,7 @@ SELECT FirstName, LastName, SSN, BirthDate FROM Patients;
 2. Нажмите кнопку **подключить**  >  **ядро СУБД** , чтобы открыть окно **Подключение к серверу** , и выберите пункт **Параметры**.
 3. Щелкните **Дополнительные параметры соединения** и введите **Column Encryption Setting=enabled**.
 
-    ![Новое консольное приложение](./media/always-encrypted-certificate-store-configure/ssms-connection-parameter.png)
+    ![Снимок экрана, на котором показана вкладка "Дополнительные параметры подключения" с параметром шифрования столбца "включен" в поле "включено".](./media/always-encrypted-certificate-store-configure/ssms-connection-parameter.png)
 4. Выполните следующий запрос к базе данных **Clinic** .
 
     ```tsql
@@ -532,7 +532,7 @@ SELECT FirstName, LastName, SSN, BirthDate FROM Patients;
 > [!NOTE]
 > При подключении с другого компьютера SSMS (или любой другой клиент) не сможет получить доступ к ключам шифрования, а значит, и расшифровать данные.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После создания базы данных с функцией Always Encrypted вы можете сделать следующее:
 

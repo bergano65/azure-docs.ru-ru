@@ -8,17 +8,17 @@ ms.topic: quickstart
 ms.date: 08/04/2020
 ms.custom: devx-track-java
 zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: a5b4d0591f58d2ce4d3d2e9055c70fdc7118e123
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: c879b890f9527ea0eee3d702db6f04a38432aa00
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91326258"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92093062"
 ---
 # <a name="quickstart-monitoring-azure-spring-cloud-apps-with-logs-metrics-and-tracing"></a>Краткое руководство. Мониторинг приложений Azure Spring Cloud с помощью журналов, метрик и трассировки
 
 ::: zone pivot="programming-language-csharp"
-Встроенные возможности мониторинга Azure Spring Cloud позволяют легко выполнять отладку и мониторинг при возникновении сложных проблем. Azure Spring Cloud интегрирует [распределенную трассировку](https://steeltoe.io/docs/3/tracing/distributed-tracing) Steeltoe с Azure [Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview). Эта интеграция предоставляет широкие возможности ведения журналов, анализа метрик и распределенной трассировки с помощью портала Azure.
+Встроенные возможности мониторинга Azure Spring Cloud позволяют легко выполнять отладку и мониторинг при возникновении сложных проблем. Azure Spring Cloud интегрирует [распределенную трассировку](https://steeltoe.io/docs/3/tracing/distributed-tracing) Steeltoe с Azure [Application Insights](../azure-monitor/app/app-insights-overview.md). Эта интеграция предоставляет широкие возможности ведения журналов, анализа метрик и распределенной трассировки с помощью портала Azure.
 
 В следующих процедурах объясняется, как использовать потоковую передачу журналов, анализ журналов, метрики и распределенную трассировку с примером приложения, развернутого в предыдущих руководствах.
 
@@ -69,7 +69,7 @@ Executing ObjectResult, writing value of type 'System.Collections.Generic.KeyVal
     
 1. Измените запрос, чтобы удалить предложения WHERE, которые ограничивают отображение предупреждений и журналов ошибок.
 
-1. Затем выберите `Run`, чтобы просмотреть журналы. Дополнительные рекомендации по написанию запросов см. в [документации Azure Log Analytics](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-queries).
+1. Затем выберите `Run`, чтобы просмотреть журналы. Дополнительные рекомендации по написанию запросов см. в [документации Azure Log Analytics](../azure-monitor/log-query/get-started-queries.md).
 
    [ ![Добавление запроса на анализ журналов — Steeltoe](media/spring-cloud-quickstart-logs-metrics-tracing/logs-query-steeltoe.png) ](media/spring-cloud-quickstart-logs-metrics-tracing/logs-query-steeltoe.png#lightbox)
 
@@ -107,7 +107,7 @@ Executing ObjectResult, writing value of type 'System.Collections.Generic.KeyVal
 ::: zone-end
 
 ::: zone pivot="programming-language-java"
-Встроенные возможности мониторинга Azure Spring Cloud позволяют легко выполнять отладку и мониторинг при возникновении сложных проблем. Azure Spring Cloud интегрирует [Spring Cloud Sleuth](https://spring.io/projects/spring-cloud-sleuth) с Azure [Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview). Эта интеграция предоставляет широкие возможности ведения журналов, анализа метрик и распределенной трассировки с помощью портала Azure. В следующих процедурах объясняется, как использовать потоковую передачу журналов, анализ журналов, метрики и распределенную трассировку с развернутыми приложениями PiggyMetrics.
+Встроенные возможности мониторинга Azure Spring Cloud позволяют легко выполнять отладку и мониторинг при возникновении сложных проблем. Azure Spring Cloud интегрирует [Spring Cloud Sleuth](https://spring.io/projects/spring-cloud-sleuth) с Azure [Application Insights](../azure-monitor/app/app-insights-overview.md). Эта интеграция предоставляет широкие возможности ведения журналов, анализа метрик и распределенной трассировки с помощью портала Azure. В следующих процедурах объясняется, как использовать потоковую передачу журналов, анализ журналов, метрики и распределенную трассировку с развернутыми приложениями PiggyMetrics.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -165,7 +165,7 @@ az spring-cloud app logs -s <service instance name> -g <resource group name> -n 
 
    [ ![Запись анализа журналов](media/spring-cloud-quickstart-logs-metrics-tracing/logs-entry.png) ](media/spring-cloud-quickstart-logs-metrics-tracing/logs-entry.png#lightbox)
     
-1. Затем отобразятся отфильтрованные журналы. Дополнительные рекомендации по написанию запросов см. в [документации Azure Log Analytics](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-queries).
+1. Затем отобразятся отфильтрованные журналы. Дополнительные рекомендации по написанию запросов см. в [документации Azure Log Analytics](../azure-monitor/log-query/get-started-queries.md).
 
    [ ![Добавление запроса на анализ журналов](media/spring-cloud-quickstart-logs-metrics-tracing/logs-query.png) ](media/spring-cloud-quickstart-logs-metrics-tracing/logs-query.png#lightbox)
 

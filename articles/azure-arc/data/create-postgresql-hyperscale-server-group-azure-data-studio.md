@@ -9,12 +9,12 @@ ms.author: jeanyd
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 1b1cf90efa14345fa8395f5f62fd80934b922352
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e2007d8f0c558d35c0507b6e12bce6d6777fad52
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91273013"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92310900"
 ---
 # <a name="create-azure-arc-enabled-postgresql-hyperscale-using-azure-data-studio"></a>Создание PostgreSQL с поддержкой дуги Azure с помощью Azure Data Studio
 
@@ -62,7 +62,7 @@ _**Server-Group-Name** — имя группы серверов, которая 
 1. На вкладке подключения щелкните три точки в верхнем левом углу и выберите "создать развертывание".
 1. В параметрах развертывания выберите **PostgreSQL Scale Server Group (Azure ARC)** .
     >[!NOTE]
-    > Возможно, вам будет предложено установить `azdata` CLI, если он в настоящее время не установлен.
+    > Возможно, вам будет предложено установить этот параметр, [!INCLUDE [azure-data-cli-azdata](../../../includes/azure-data-cli-azdata.md)] если он в настоящее время не установлен.
 1. Примите условия соглашения о конфиденциальности и лицензии и нажмите кнопку **выбрать** внизу.
 1. В колонке развернуть PostgreSQL-масштабируемый сервер в группе Azure Arc введите следующие сведения:
    - Введите имя группы серверов
@@ -77,7 +77,7 @@ _**Server-Group-Name** — имя группы серверов, которая 
 
 Через несколько минут создание будет успешно завершено.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Управление группой серверов с помощью Azure Data Studio](manage-postgresql-hyperscale-server-group-with-azure-data-studio.md)
 - [Мониторинг группы серверов](monitor-grafana-kibana.md)
 - Ознакомьтесь с основными понятиями и руководствами по использованию службы "база данных Azure для PostgreSQL", чтобы распределить данные между несколькими узлами PostgreSQL, а также получить преимущества от всех возможностей службы "база данных Azure для postgres". :

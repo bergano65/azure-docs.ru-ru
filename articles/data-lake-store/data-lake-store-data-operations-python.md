@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 05/29/2018
 ms.author: twooley
 ms.custom: devx-track-python
-ms.openlocfilehash: 5cbf75ef2d9f0c1a65179e6a423b59f9763ce72b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8ca455a802b180163579f67104a61f455dd54f94
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87872248"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92109227"
 ---
 # <a name="filesystem-operations-on-azure-data-lake-storage-gen1-using-python"></a>Операции файловой системы в Azure Data Lake Storage 1-го поколения с использованием пакета SDK для Python
 > [!div class="op_single_selector"]
@@ -40,7 +40,7 @@ ms.locfileid: "87872248"
 
 * Модуль `azure-mgmt-resource`, который включает в себя модули Azure для Active Directory и т. д.
 * Модуль `azure-mgmt-datalake-store`, который включает в себя операции по управлению учетной записью Azure Data Lake Storage 1-го поколения. Дополнительные сведения см. в [справочнике по модулю azure-mgmt-datalake-store](/python/api/azure-mgmt-datalake-store/).
-* Модуль `azure-datalake-store`, который включает в себя операции с файловой системой Azure Data Lake Storage 1-го поколения. Дополнительные сведения см. в [справочнике по модулю azure-datalake-store file-system](https://docs.microsoft.com/python/api/azure-datalake-store/azure.datalake.store.core/).
+* Модуль `azure-datalake-store`, который включает в себя операции с файловой системой Azure Data Lake Storage 1-го поколения. Дополнительные сведения см. в [справочнике по модулю azure-datalake-store file-system](/python/api/azure-datalake-store/azure.datalake.store.core/).
 
 Чтобы установить модули, используйте следующие команды.
 
@@ -118,7 +118,7 @@ multithread.ADLUploader(adlsFileSystemClient, lpath='C:\\data\\mysamplefile.txt'
 ```
 
 
-## <a name="download-a-file"></a>скачать файл;
+## <a name="download-a-file"></a>Скачивание файла
 
 ```python
 ## Download a file
@@ -132,10 +132,10 @@ multithread.ADLDownloader(adlsFileSystemClient, lpath='C:\\data\\mysamplefile.tx
 adlsFileSystemClient.rm('/mysampledirectory', recursive=True)
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Операции управления учетными записями в Data Lake Storage 1-го поколения с помощью Python](data-lake-store-get-started-python.md).
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
-* [Справочник по Azure Data Lake Storage 1-го поколения для Python. Файловая система](https://docs.microsoft.com/python/api/azure-datalake-store/azure.datalake.store.core)
+* [Справочник по Azure Data Lake Storage 1-го поколения для Python. Файловая система](/python/api/azure-datalake-store/azure.datalake.store.core)
 * [Приложения больших данных с открытым исходным кодом, которые работают с Azure Data Lake Storage Gen1](data-lake-store-compatible-oss-other-applications.md)

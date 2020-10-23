@@ -1,6 +1,6 @@
 ---
-title: Управление доступом на основе ролей для учетных записей служб мультимедиа в Azure | Документация Майкрософт
-description: В этой статье рассматривается управление доступом на основе ролей (RBAC) для учетных записей служб мультимедиа Azure.
+title: Управление доступом на основе ролей в Azure для учетных записей служб мультимедиа в Azure | Документация Майкрософт
+description: В этой статье рассматривается управление доступом на основе ролей Azure (Azure RBAC) для учетных записей служб мультимедиа Azure.
 services: media-services
 documentationcenter: ''
 author: IngridAtMicrosoft
@@ -12,14 +12,14 @@ ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: seodec18, devx-track-csharp
-ms.openlocfilehash: d6bc37a8aaddfb48e6d06eb46d9c1648e815b5ad
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8fba3db14c2a950dd230a4721841b4baa9f64636
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89289262"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92426794"
 ---
-# <a name="role-based-access-control-rbac-for-media-services-accounts"></a>Управление доступом на основе ролей (RBAC) для учетных записей служб мультимедиа
+# <a name="azure-role-based-access-control-azure-rbac-for-media-services-accounts"></a>Управление доступом на основе ролей Azure (Azure RBAC) для учетных записей служб мультимедиа
 
 [!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
@@ -27,7 +27,7 @@ ms.locfileid: "89289262"
 
 ## <a name="design-principles"></a>Принципы проектирования
 
-Один из ключевых принципов проектирования API версии 3 — сделать API более безопасным. API V3 не возвращают секреты или учетные данные при операциях **Get** или **List** . Ключи всегда являются NULL, пустыми или исключенными из ответа. Пользователю необходимо вызвать отдельный метод действия для получения секретов или учетных данных. Роль **читателя** не может вызывать такие операции, как Asset. Листконтаинерсас, Стреаминглокатор. Листконтенткэйс, КонтенткэйполиЦиес. жетполиципропертиесвиссекретс. Наличие отдельных действий позволяет при необходимости задать более детализированные разрешения безопасности RBAC в пользовательской роли.
+Один из ключевых принципов проектирования API версии 3 — сделать API более безопасным. API V3 не возвращают секреты или учетные данные при операциях **Get** или **List** . Ключи всегда являются NULL, пустыми или исключенными из ответа. Пользователю необходимо вызвать отдельный метод действия для получения секретов или учетных данных. Роль **читателя** не может вызывать такие операции, как Asset. Листконтаинерсас, Стреаминглокатор. Листконтенткэйс, КонтенткэйполиЦиес. жетполиципропертиесвиссекретс. Наличие отдельных действий позволяет при необходимости задать более детализированные разрешения безопасности RBAC Azure в настраиваемой роли.
 
 Чтобы получить список поддерживаемых служб мультимедиа, выполните следующие действия.
 
@@ -42,12 +42,12 @@ foreach (Microsoft.Azure.Management.Media.Models.Operation a in client.Operation
 
 Дополнительные сведения см. в этих статьях:
 
-- [Роли администратора классической подписки, роли Azure и роли администратора Azure AD](../../role-based-access-control/rbac-and-directory-admin-roles.md)
+- [Роли классического администратора подписки, роли Azure и роли Azure AD](../../role-based-access-control/rbac-and-directory-admin-roles.md)
 - [Что такое управление доступом на основе ролей в Azure (RBAC)?](../../role-based-access-control/overview.md)
-- [Использование RBAC для управления доступом](../../role-based-access-control/role-assignments-rest.md)
+- [Добавление и удаление назначений ролей Azure с помощью REST API](../../role-based-access-control/role-assignments-rest.md)
 - [Операции поставщика ресурсов служб мультимедиа](../../role-based-access-control/resource-provider-operations.md#microsoftmedia)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Разработка с помощью API-интерфейсов служб мультимедиа v3](media-services-apis-overview.md)
 - [Получение политики ключей содержимого с помощью служб мультимедиа .NET](get-content-key-policy-dotnet-howto.md)

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/10/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 34036388ce9243c082cf79eb4be9251957eafc01
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fd6a907ce855fbb7c1ef96236766beef9b25b2ac
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89400472"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92428358"
 ---
 # <a name="azure-security-baseline-for-key-vault"></a>Базовая конфигурация системы безопасности Azure для Key Vault
 
@@ -566,7 +566,9 @@ https://docs.microsoft.com/azure/active-directory/governance/access-reviews-over
 
 ### <a name="44-encrypt-all-sensitive-information-in-transit"></a>4.4. Шифрование любой конфиденциальной информации при передаче
 
-**Руководство**. весь трафик, который Azure Key Vault для проверки подлинности, управления и доступа к плоскости данных, шифруется и проходит через HTTPS: порт 443. (Тем не менее, для списка отзыва сертификатов иногда будет использоваться трафик HTTP [порт 80]). 
+**Руководство**. весь трафик, который Azure Key Vault для проверки подлинности, управления и доступа к плоскости данных, шифруется и проходит через HTTPS: порт 443. (Тем не менее, для списка отзыва сертификатов иногда будет использоваться трафик HTTP [порт 80]). Azure Key Vault продолжит принимать данные TLS 1,1 и TLS 1,0. Данные могут быть ограничены TLS 1,2 с помощью конфигурации на стороне клиента.
+
+
 
 Доступ к Azure Key Vault за брандмауэром: https://docs.microsoft.com/azure/key-vault/key-vault-access-behind-firewall
 
@@ -1078,7 +1080,7 @@ https://docs.microsoft.com/azure/key-vault/general/assign-access-policy-portal
 
 ### <a name="83-ensure-anti-malware-software-and-signatures-are-updated"></a>8.3. Своевременное обновление программного обеспечения для защиты от вредоносных программ и подписей
 
-**Рекомендации**. Неприменимо. Эта рекомендация предназначена для вычислительных ресурсов. Корпорация Майкрософт обрабатывает Антивредоносные программы для базовой платформы.
+**Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов. Корпорация Майкрософт обрабатывает Антивредоносные программы для базовой платформы.
 
 
 **Мониторинг Центра безопасности Azure**: Неприменимо

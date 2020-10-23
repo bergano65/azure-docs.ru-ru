@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 10/09/2019
 ms.author: jeedes
-ms.openlocfilehash: 686a186650bfe4066533b0f086c080b5ffb14eb6
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: af68100d0064187931ede43916d1ab3258baea38
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88546840"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91850716"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-kanbanize"></a>Руководство по Интеграция единого входа Azure Active Directory с Kanbanize
 
@@ -153,7 +153,7 @@ ms.locfileid: "88546840"
 
 5. На странице панели администрирования в меню в левой части щелкните **Интеграции**, а затем включите **Единый вход**.
 
-    ![Интеграции Kanbanize](./media/kanbanize-tutorial/tutorial-kanbanize-admin.png)
+    ![Снимок экрана: панель администрирования с выбранным параметром "Интеграции".](./media/kanbanize-tutorial/tutorial-kanbanize-admin.png)
 
 6. В разделе "Интеграция" щелкните **Настроить**, чтобы открыть страницу **Интеграция единого входа**.
 
@@ -161,7 +161,7 @@ ms.locfileid: "88546840"
 
 7. На странице **Интеграция единого входа** в разделе **Настройки** выполните следующие действия.
 
-    ![Интеграции Kanbanize](./media/kanbanize-tutorial/tutorial-kanbanize-save.png)
+    ![Снимок экрана: страница "Изменение интеграции единого входа", где можно ввести значения для этого шага.](./media/kanbanize-tutorial/tutorial-kanbanize-save.png)
 
     а. В текстовом поле **Idp Entity ID** (Идентификатор сущности поставщика удостоверений) вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
 

@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.subservice: data-lake-storage-gen2
 ms.reviewer: prishet
 ms.custom: devx-track-python
-ms.openlocfilehash: fc99bc645b48739d6d6339111780047496c1984d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 98a1fbf30e7b653598aac6b83c0d8155582e2051
+ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90017121"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92131485"
 ---
 # <a name="use-python-to-manage-directories-files-and-acls-in-azure-data-lake-storage-gen2"></a>Использование Python для управления каталогами, файлами и списками ACL в Azure Data Lake Storage 2-го поколения
 
@@ -164,39 +164,6 @@ def delete_directory():
      print(e) 
 ```
 
-## <a name="manage-directory-permissions"></a>Управление разрешениями каталога
-
-Получите список управления доступом (ACL) каталога, вызвав метод **DataLakeDirectoryClient.get_access_control** и ЗАДАВ список ACL, вызвав метод **DataLakeDirectoryClient.set_access_control** .
-
-> [!NOTE]
-> Если приложение разрешает доступ с помощью Azure Active Directory (Azure AD), убедитесь, что участнику безопасности, используемому приложением для авторизации доступа, назначена [роль владельца данных BLOB-объекта хранилища](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-owner). Дополнительные сведения о применении разрешений ACL и последствиях их изменения см. на странице [Контроль доступа в Azure Data Lake Storage 2-го поколения](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control).
-
-Этот пример возвращает и задает список ACL для каталога с именем `my-directory` . Эта строка `rwxr-xrw-` предоставляет владельцам разрешения на чтение, запись и выполнение, предоставляя группе-владельцу только разрешения на чтение и выполнение, а также предоставляет всем остальным разрешение на чтение и запись.
-
-```python
-def manage_directory_permissions():
-    try:
-        file_system_client = service_client.get_file_system_client(file_system="my-file-system")
-
-        directory_client = file_system_client.get_directory_client("my-directory")
-        
-        acl_props = directory_client.get_access_control()
-        
-        print(acl_props['permissions'])
-        
-        new_dir_permissions = "rwxr-xrw-"
-        
-        directory_client.set_access_control(permissions=new_dir_permissions)
-        
-        acl_props = directory_client.get_access_control()
-        
-        print(acl_props['permissions'])
-    
-    except Exception as e:
-     print(e) 
-```
-
-Также можно получить и задать список управления доступом для корневого каталога контейнера. Чтобы получить корневой каталог, вызовите метод **FileSystemClient._get_root_directory_client** .
 
 ## <a name="upload-a-file-to-a-directory"></a>Отправка файла в каталог 
 
@@ -252,40 +219,6 @@ def upload_file_to_directory_bulk():
       print(e) 
 ```
 
-## <a name="manage-file-permissions"></a>Управление разрешениями для файлов
-
-Получите список управления доступом (ACL) файла, вызвав метод **DataLakeFileClient.get_access_control** и ЗАДАВ список ACL, вызвав метод **DataLakeFileClient.set_access_control** .
-
-> [!NOTE]
-> Если приложение разрешает доступ с помощью Azure Active Directory (Azure AD), убедитесь, что участнику безопасности, используемому приложением для авторизации доступа, назначена [роль владельца данных BLOB-объекта хранилища](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-owner). Дополнительные сведения о применении разрешений ACL и последствиях их изменения см. на странице [Контроль доступа в Azure Data Lake Storage 2-го поколения](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control).
-
-Этот пример возвращает и задает список управления доступом для файла с именем `my-file.txt` . Эта строка `rwxr-xrw-` предоставляет владельцам разрешения на чтение, запись и выполнение, предоставляя группе-владельцу только разрешения на чтение и выполнение, а также предоставляет всем остальным разрешение на чтение и запись.
-
-```python
-def manage_file_permissions():
-    try:
-        file_system_client = service_client.get_file_system_client(file_system="my-file-system")
-
-        directory_client = file_system_client.get_directory_client("my-directory")
-        
-        file_client = directory_client.get_file_client("uploaded-file.txt")
-
-        acl_props = file_client.get_access_control()
-        
-        print(acl_props['permissions'])
-        
-        new_file_permissions = "rwxr-xrw-"
-        
-        file_client.set_access_control(permissions=new_file_permissions)
-        
-        acl_props = file_client.get_access_control()
-        
-        print(acl_props['permissions'])
-
-    except Exception as e:
-     print(e) 
-```
-
 ## <a name="download-from-a-directory"></a>Скачивание из каталога 
 
 Откройте локальный файл для записи. Затем создайте экземпляр **даталакефилеклиент** , представляющий файл, который требуется скачать. Вызовите **DataLakeFileClient.read_file** , чтобы прочитать байты из файла, а затем запишите эти байты в локальный файл. 
@@ -333,11 +266,86 @@ def list_directory_contents():
      print(e) 
 ```
 
-## <a name="set-an-acl-recursively-preview"></a>Рекурсивное задание списка ACL (Предварительная версия)
+## <a name="manage-access-control-lists-acls"></a>Управление списками управления доступом (ACL)
+
+Вы можете получать, задавать и обновлять разрешения на доступ к каталогам и файлам.
+
+> [!NOTE]
+> Если вы используете Azure Active Directory (Azure AD) для авторизации доступа, убедитесь, что участнику безопасности назначена [роль владельца данных BLOB-объекта хранилища](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-owner). Дополнительные сведения о применении разрешений ACL и последствиях их изменения см. на странице [Контроль доступа в Azure Data Lake Storage 2-го поколения](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control).
+
+### <a name="manage-directory-acls"></a>Управление списками ACL каталога
+
+Получите список управления доступом (ACL) каталога, вызвав метод **DataLakeDirectoryClient.get_access_control** и ЗАДАВ список ACL, вызвав метод **DataLakeDirectoryClient.set_access_control** .
+
+> [!NOTE]
+> Если приложение разрешает доступ с помощью Azure Active Directory (Azure AD), убедитесь, что участнику безопасности, используемому приложением для авторизации доступа, назначена [роль владельца данных BLOB-объекта хранилища](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-owner). Дополнительные сведения о применении разрешений ACL и последствиях их изменения см. на странице [Контроль доступа в Azure Data Lake Storage 2-го поколения](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control).
+
+Этот пример возвращает и задает список ACL для каталога с именем `my-directory` . Эта строка `rwxr-xrw-` предоставляет владельцам разрешения на чтение, запись и выполнение, предоставляя группе-владельцу только разрешения на чтение и выполнение, а также предоставляет всем остальным разрешение на чтение и запись.
+
+```python
+def manage_directory_permissions():
+    try:
+        file_system_client = service_client.get_file_system_client(file_system="my-file-system")
+
+        directory_client = file_system_client.get_directory_client("my-directory")
+        
+        acl_props = directory_client.get_access_control()
+        
+        print(acl_props['permissions'])
+        
+        new_dir_permissions = "rwxr-xrw-"
+        
+        directory_client.set_access_control(permissions=new_dir_permissions)
+        
+        acl_props = directory_client.get_access_control()
+        
+        print(acl_props['permissions'])
+    
+    except Exception as e:
+     print(e) 
+```
+
+Также можно получить и задать список управления доступом для корневого каталога контейнера. Чтобы получить корневой каталог, вызовите метод **FileSystemClient._get_root_directory_client** .
+
+### <a name="manage-file-permissions"></a>Управление разрешениями для файлов
+
+Получите список управления доступом (ACL) файла, вызвав метод **DataLakeFileClient.get_access_control** и ЗАДАВ список ACL, вызвав метод **DataLakeFileClient.set_access_control** .
+
+> [!NOTE]
+> Если приложение разрешает доступ с помощью Azure Active Directory (Azure AD), убедитесь, что участнику безопасности, используемому приложением для авторизации доступа, назначена [роль владельца данных BLOB-объекта хранилища](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-owner). Дополнительные сведения о применении разрешений ACL и последствиях их изменения см. на странице [Контроль доступа в Azure Data Lake Storage 2-го поколения](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control).
+
+Этот пример возвращает и задает список управления доступом для файла с именем `my-file.txt` . Эта строка `rwxr-xrw-` предоставляет владельцам разрешения на чтение, запись и выполнение, предоставляя группе-владельцу только разрешения на чтение и выполнение, а также предоставляет всем остальным разрешение на чтение и запись.
+
+```python
+def manage_file_permissions():
+    try:
+        file_system_client = service_client.get_file_system_client(file_system="my-file-system")
+
+        directory_client = file_system_client.get_directory_client("my-directory")
+        
+        file_client = directory_client.get_file_client("uploaded-file.txt")
+
+        acl_props = file_client.get_access_control()
+        
+        print(acl_props['permissions'])
+        
+        new_file_permissions = "rwxr-xrw-"
+        
+        file_client.set_access_control(permissions=new_file_permissions)
+        
+        acl_props = file_client.get_access_control()
+        
+        print(acl_props['permissions'])
+
+    except Exception as e:
+     print(e) 
+```
+
+### <a name="set-an-acl-recursively-preview"></a>Рекурсивное задание списка ACL (Предварительная версия)
 
 Можно рекурсивно добавлять, обновлять и удалять списки управления доступом для существующих дочерних элементов родительского каталога без необходимости вносить эти изменения отдельно для каждого дочернего элемента. Дополнительные сведения см. в разделе [Настройка списков управления доступом (ACL) рекурсивно для Azure Data Lake Storage 2-го поколения](recursive-access-control-lists.md).
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 * [Справочная документация по API](/python/api/azure-storage-file-datalake/azure.storage.filedatalake)
 * [Пакет (индекс пакета Python)](https://pypi.org/project/azure-storage-file-datalake/)

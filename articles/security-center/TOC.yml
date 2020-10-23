@@ -44,8 +44,6 @@
         - name: Azure Defender для SQL
           displayName: database
           href: defender-for-sql-introduction.md
-        - name: Azure Defender для Интернета вещей
-          href: defender-for-iot-introduction.md
         - name: Azure Defender для Key Vault
           displayName: 'KV, akv'
           href: defender-for-key-vault-introduction.md
@@ -191,6 +189,9 @@
             - name: Управление JIT-доступом
               displayName: 'jit, management'
               href: security-center-just-in-time.md
+        - name: Использование встроенной лицензии Microsoft Defender для конечной точки
+          displayName: 'ATP, mdatp, wdatp'
+          href: security-center-wdatp.md
         - name: Администрирование адаптивных элементов управления приложениями
           href: security-center-adaptive-application.md
         - name: Использование мониторинга целостности файлов
@@ -201,8 +202,6 @@
               href: security-center-file-integrity-monitoring-baselines.md
         - name: Управление адаптивной защитой сети
           href: security-center-adaptive-network-hardening.md
-        - name: Интеграция ATP в Microsoft Defender
-          href: security-center-wdatp.md
         - name: Защита узлов Docker
           displayName: containers
           href: harden-docker-hosts.md
@@ -254,7 +253,7 @@
 - name: Справочник
   items:
     - name: Интерфейсы REST API
-      href: 'https://docs.microsoft.com/rest/api/securitycenter/'
+      href: /rest/api/securitycenter/
     - name: Вопросы и ответы о Центре безопасности Azure
       items:
         - name: Общие вопросы
@@ -282,9 +281,9 @@
     - name: Управление данными пользователей
       href: security-center-privacy.md
     - name: Документация по Azure Defender для Интернета вещей
-      href: 'https://docs.microsoft.com/azure/asc-for-iot/'
+      href: /azure/asc-for-iot/
     - name: Документация по системе безопасности Azure
-      href: /azure/security/
+      href: ../security/index.yml
     - name: Обновления Azure
       href: 'https://azure.microsoft.com/updates/?category=security-identity'
     - name: План подготовки к работе

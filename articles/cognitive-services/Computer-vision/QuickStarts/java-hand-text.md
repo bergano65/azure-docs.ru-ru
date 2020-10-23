@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство.  Извлечение печатного и рукописного текста через REST с помощью API "Компьютерное зрение" версии 2.1 и 3.0 (Java)
+title: Краткое руководство.  Извлечение печатного и рукописного текста через REST с помощью API "Компьютерное зрение" версии 2.1 и 3.1 (Java)
 titleSuffix: Azure Cognitive Services
 description: Из этого краткого руководства вы узнаете, как использовать API компьютерного зрения для извлечения печатного и рукописного текста из изображения с помощью Java.
 services: cognitive-services
@@ -11,20 +11,19 @@ ms.topic: quickstart
 ms.date: 10/05/2020
 ms.author: pafarley
 ms.custom: seodec18, devx-track-java
-ms.openlocfilehash: e9f31a16434c8b54e13f4d52a412afbc90fb5c6b
-ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
+ms.openlocfilehash: 6a7cc5338a77ece59c625a9b72adcc45bf135f24
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91760892"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91969132"
 ---
 # <a name="quickstart-extract-printed-and-handwritten-text-using-the-computer-vision-rest-api-and-java"></a>Краткое руководство. Извлечение печатного и рукописного текста с помощью REST API "Компьютерное зрение" и Java
 
-Из этого краткого руководства вы узнаете, как извлечь из изображения печатный и рукописный текст с помощью REST API Компьютерного зрения. С помощью методов [Read](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-ga/operations/5d986960601faab4bf452005) и [Get Read Result](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-ga/operations/5d9869604be85dee480c8750) можно обнаружить текст на изображении и извлечь распознанные символы в виде потока машиночитаемых символов.
+Из этого краткого руководства вы узнаете, как извлечь из изображения печатный и рукописный текст с помощью REST API Компьютерного зрения. С помощью методов [Read](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/5d986960601faab4bf452005) и [Get Read Result](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/5d9869604be85dee480c8750) можно обнаружить текст на изображении и извлечь распознанные символы в виде потока машиночитаемых символов.
 
-Метод [Read](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-ga/operations/5d986960601faab4bf452005) выполняется асинхронно. Этот метод не возвращает никаких данных в текст успешного ответа. Вместо этого метод Batch Read возвращает URI в значение поля заголовка ответа `Operation-Location`. Затем можно вызвать этот URI, представляющий API [Get Read Result](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-ga/operations/5d9869604be85dee480c8750), чтобы проверить состояние и вернуть результаты вызова метода Read.
+Метод [Read](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/5d986960601faab4bf452005) выполняется асинхронно. Этот метод не возвращает никаких данных в текст успешного ответа. Вместо этого метод Batch Read возвращает URI в значение поля заголовка ответа `Operation-Location`. Затем можно вызвать этот URI, представляющий API [Get Read Result](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/5d9869604be85dee480c8750), чтобы проверить состояние и вернуть результаты вызова метода Read.
 
----
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -76,7 +75,7 @@ public class Main {
     private static String subscriptionKey = System.getenv("COMPUTER_VISION_SUBSCRIPTION_KEY");
     private static String endpoint = System.getenv("COMPUTER_VISION_ENDPOINT");
 
-    private static String uriBase = endpoint + "/vision/v3.0/read/analyze";
+    private static String uriBase = endpoint + "/vision/v3.1/read/analyze";
 
     private static String imageToAnalyze =
             "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/master/articles/cognitive-services/Computer-vision/Images/readsample.jpg";
@@ -189,7 +188,7 @@ public class Main {
   "createdDateTime": "2020-05-28T05:13:21Z",
   "lastUpdatedDateTime": "2020-05-28T05:13:22Z",
   "analyzeResult": {
-    "version": "3.0.0",
+    "version": "3.1.0",
     "readResults": [
       {
         "page": 1,

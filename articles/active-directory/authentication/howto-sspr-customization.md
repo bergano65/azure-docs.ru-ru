@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: abca66dbe80cecec2320256d8a736408de20b64f
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 4bef201cbd14a4de0c785b5f86d534f27bfedb31
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91968299"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92363714"
 ---
 # <a name="customize-the-user-experience-for-azure-active-directory-self-service-password-reset"></a>Настройка интерфейса пользователя для Azure Active Directory самостоятельного сброса пароля
 
@@ -50,7 +50,7 @@ ms.locfileid: "91968299"
 
 Во всех случаях уведомление будет отправлено не более чем 100 получателям.
 
-Дополнительные сведения о различных ролях администраторов и их назначении см. в статье [Назначение ролей администратора в Azure Active Directory](../users-groups-roles/directory-assign-admin-roles.md).
+Дополнительные сведения о различных ролях администраторов и их назначении см. в статье [Назначение ролей администратора в Azure Active Directory](../roles/permissions-reference.md).
 
 ### <a name="disable-contact-your-administrator-emails"></a>Отключение отправки электронных сообщений при выборе ссылки "Обратитесь к администратору"
 
@@ -87,7 +87,7 @@ ms.locfileid: "91968299"
 Set-ADFSGlobalWebContent -SigninPageDescriptionText "<p><a href='https://passwordreset.microsoftonline.com' target='_blank'>Can't access your account?</a></p>"
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Сведения об использовании SSPR в вашей среде см. в статье [Параметры отчетов для управления паролями в Azure AD](howto-sspr-reporting.md).
 

@@ -8,12 +8,12 @@ ms.topic: sample
 ms.date: 08/23/2019
 ms.author: dech
 ms.custom: devx-track-js
-ms.openlocfilehash: aa0f0878366e7afc51f066502c24c09a9981027b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9644cb51f7575df7dba757da23af33a26ae4201a
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91801364"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92279255"
 ---
 # <a name="nodejs-examples-to-manage-data-in-azure-cosmos-db"></a>Примеры Node.js для управления данными в Azure Cosmos DB
 
@@ -50,7 +50,7 @@ ms.locfileid: "91801364"
 
 ## <a name="database-examples"></a>Примеры баз данных
 
-В файле [DatabaseManagement](https://github.com/Azure/azure-cosmos-js/blob/master/samples/DatabaseManagement.ts) показано, как выполнять операции CRUD с базой данных. Чтобы узнать больше о базах данных Azure Cosmos перед выполнением приведенных ниже примеров, ознакомьтесь с тематической статьей [Работа с базами данных, контейнерами и элементами](databases-containers-items.md). 
+В файле [DatabaseManagement](https://github.com/Azure/azure-cosmos-js/blob/master/samples/DatabaseManagement.ts) показано, как выполнять операции CRUD с базой данных. Чтобы узнать больше о базах данных Azure Cosmos перед выполнением приведенных ниже примеров, ознакомьтесь с тематической статьей [Работа с базами данных, контейнерами и элементами](account-databases-containers-items.md). 
 
 | Задача | Справочник по API |
 | --- | --- |
@@ -61,7 +61,7 @@ ms.locfileid: "91801364"
 
 ## <a name="container-examples"></a>Примеры контейнеров
 
-В файле [ContainerManagement](https://github.com/Azure/azure-cosmos-js/blob/master/samples/ContainerManagement.ts) показано, как выполнять операции CRUD с контейнером. Чтобы узнать больше о коллекциях Azure Cosmos перед выполнением приведенных ниже примеров, ознакомьтесь с тематической статьей [Работа с базами данных, контейнерами и элементами](databases-containers-items.md). 
+В файле [ContainerManagement](https://github.com/Azure/azure-cosmos-js/blob/master/samples/ContainerManagement.ts) показано, как выполнять операции CRUD с контейнером. Чтобы узнать больше о коллекциях Azure Cosmos перед выполнением приведенных ниже примеров, ознакомьтесь с тематической статьей [Работа с базами данных, контейнерами и элементами](account-databases-containers-items.md). 
 
 | Задача | Справочник по API |
 | --- | --- |
@@ -72,7 +72,7 @@ ms.locfileid: "91801364"
 
 ## <a name="item-examples"></a>Примеры элементов
 
-В файле [ItemManagement](https://github.com/Azure/azure-cosmos-js/blob/master/samples/ItemManagement.ts) показано, как выполнять операции CRUD с элементом. Чтобы узнать больше о документах Azure Cosmos перед выполнением приведенных ниже примеров, ознакомьтесь с тематической статьей [Работа с базами данных, контейнерами и элементами](databases-containers-items.md). 
+В файле [ItemManagement](https://github.com/Azure/azure-cosmos-js/blob/master/samples/ItemManagement.ts) показано, как выполнять операции CRUD с элементом. Чтобы узнать больше о документах Azure Cosmos перед выполнением приведенных ниже примеров, ознакомьтесь с тематической статьей [Работа с базами данных, контейнерами и элементами](account-databases-containers-items.md). 
 
 | Задача | Справочник по API |
 | --- | --- |

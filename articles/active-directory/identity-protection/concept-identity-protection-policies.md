@@ -11,16 +11,16 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7587ed6d414a69cff67aca9446aebf6260c99fcd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8776ad915ff215eef143f62aaa9e242ff0354f3e
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "83736506"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92368797"
 ---
 # <a name="identity-protection-policies"></a>Политики Защиты идентификации
 
-Защита идентификации Azure Active Directory содержит три политики по умолчанию, которые администраторы могут включать по своему усмотрению. Эти политики дают мало возможностей для настройки, но применимы для большинства организаций. Все эти политики позволяют исключать пользователей, например [учетные записи администратора для аварийного доступа](../users-groups-roles/directory-emergency-access.md).
+Защита идентификации Azure Active Directory содержит три политики по умолчанию, которые администраторы могут включать по своему усмотрению. Эти политики дают мало возможностей для настройки, но применимы для большинства организаций. Все эти политики позволяют исключать пользователей, например [учетные записи администратора для аварийного доступа](../roles/security-emergency-access.md).
 
 ![Политики Защиты идентификации](./media/concept-identity-protection-policies/identity-protection-policies.png)
 

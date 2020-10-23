@@ -2,13 +2,13 @@
 title: Настройка Azure Monitor для сбора данных агента контейнеров | Документация Майкрософт
 description: В этой статье описывается настройка Azure Monitor для агента контейнеров для управления набором журналов stdout/stderr и переменных среды.
 ms.topic: conceptual
-ms.date: 06/01/2020
-ms.openlocfilehash: 675b9c9c109ee8bb3b0087523bf5af46ce2c5270
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.date: 10/09/2020
+ms.openlocfilehash: 1644e541ee873a5bb058dd9bde2b82a907a400ff
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91994610"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92320414"
 ---
 # <a name="configure-agent-data-collection-for-azure-monitor-for-containers"></a>Настройка сбора данных агента для компонента "Azure Monitor для контейнеров"
 
@@ -29,9 +29,9 @@ Azure Monitor для контейнеров собирает потоки stdout
 
 ### <a name="data-collection-settings"></a>Параметры сбора данных
 
-Ниже приведены параметры, которые можно настроить для управления сбором данных.
+В следующей таблице описаны параметры, которые можно настроить для управления сбором данных.
 
-| Ключ | Тип данных | Значение | Описание |
+| Клавиши | Тип данных | Значение | Описание |
 |--|--|--|--|
 | `schema-version` | Строка (с учетом регистра) | Версия 1 | Это версия схемы, используемая агентом<br> При анализе этого ConfigMap.<br> Текущая поддерживаемая версия схемы — v1.<br> Изменение этого значения не поддерживается и будет<br> отклонено при вычислении ConfigMap. |
 | `config-version` | Строка |  | Поддерживает возможность отслеживания версии этого файла конфигурации в системе управления версиями или в репозитории.<br> Максимально допустимое количество символов равно 10, а все остальные символы усекаются. |
@@ -43,16 +43,24 @@ Azure Monitor для контейнеров собирает потоки stdout
 | `[log_collection_settings.enrich_container_logs] enabled =` | Логическое | true или false | Этот параметр управляет расширением журнала контейнера для заполнения значений свойств Name и Image.<br> для каждой записи журнала, записанной в таблицу Контаинерлог для всех журналов контейнера в кластере.<br> По умолчанию используется значение, `enabled = false` если не указано в ConfigMap. |
 | `[log_collection_settings.collect_all_kube_events]` | Логическое | true или false | Этот параметр позволяет коллекции событий KUBE всех типов.<br> По умолчанию события Kube с типом " *нормальный* " не собираются. Если для этого параметра задано значение `true` , *обычные* события больше не фильтруются, а все события собираются.<br> По умолчанию устанавливается значение `false`. |
 
+### <a name="metric-collection-settings"></a>Параметры сбора метрик
+
+В следующей таблице описаны параметры, которые можно настроить для управления сбором метрик.
+
+| Клавиши | Тип данных | Значение | Описание |
+|--|--|--|--|
+| `[metric_collection_settings.collect_kube_system_pv_metrics] enabled =` | Логическое | true или false | Этот параметр позволяет собирать метрики использования постоянного тома (ПС) в пространстве имен KUBE-System. По умолчанию метрики использования постоянных томов с утверждениями постоянного тома в пространстве имен KUBE-System не собираются. Если этот параметр имеет значение `true` , то собираются метрики использования PV для всех пространств имен. По умолчанию устанавливается значение `false`. |
+
 Конфигмапс является глобальным списком, и к нему может быть применен только один ConfigMap. У вас не может быть другой Конфигмапс.
 
 ## <a name="configure-and-deploy-configmaps"></a>Настройка и развертывание Конфигмапс
 
 Выполните следующие действия, чтобы настроить и развернуть файл конфигурации ConfigMap в кластере.
 
-1. [Скачайте](https://github.com/microsoft/OMS-docker/blob/ci_feature_prod/Kubernetes/container-azm-ms-agentconfig.yaml) файл шаблона ConfigMap YAML и сохраните его как Container-АЗМ-MS-ажентконфиг. YAML. 
+1. Скачайте [файл шаблона CONFIGMAP YAML](https://github.com/microsoft/Docker-Provider/blob/ci_prod/kubernetes/container-azm-ms-agentconfig.yaml) и сохраните его как Container-АЗМ-MS-ажентконфиг. YAML. 
 
-   >[!NOTE]
-   >Этот шаг не требуется при работе с Azure Red Hat OpenShift, так как шаблон ConfigMap уже существует в кластере.
+   > [!NOTE]
+   > Этот шаг не требуется при работе с Azure Red Hat OpenShift, так как шаблон ConfigMap уже существует в кластере.
 
 2. Измените файл YAML ConfigMap, используя настройки для получения переменных среды stdout, stderr и (или). Если вы редактируете файл YAML ConfigMap для Azure Red Hat OpenShift, сначала выполните команду, `oc edit configmaps container-azm-ms-agentconfig -n openshift-azure-logging` чтобы открыть файл в текстовом редакторе.
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 09/13/2019
 ms.author: jeedes
-ms.openlocfilehash: 4ffaad77a34be66d06f8f0033731d0496e444e52
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9e4e45cdefc9342ec5727bae8ea10fe133df1627
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91715877"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92318845"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-alibaba-cloud-service-role-based-sso"></a>Руководство по Интеграция единого входа Azure Active Directory с Alibaba Cloud Service (единый вход на основе ролей)
 
@@ -26,7 +26,7 @@ ms.locfileid: "91715877"
 * Включение автоматического входа пользователей в Alibaba Cloud Service (единый вход на основе ролей) с использованием учетных записей Azure AD.
 * Централизованное управление учетными записями через портал Azure.
 
-Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -94,7 +94,7 @@ ms.locfileid: "91715877"
     > [!Note]
     > Если поля **Идентификатор** и **URL-адрес ответа** автоматически не заполняются, введите эти значения вручную в соответствии с поставленной задачей.
 
-1. Alibaba Cloud Service (единый вход на основе ролей) требует настройки ролей в Azure AD. Утверждение роли уже настроено, поэтому вам не нужно менять настройки, но нужно его создать в AAD по инструкциям из [этой статьи](https://docs.microsoft.com/azure/active-directory/develop/active-directory-enterprise-app-role-management).
+1. Alibaba Cloud Service (единый вход на основе ролей) требует настройки ролей в Azure AD. Утверждение роли уже настроено, поэтому вам не нужно менять настройки, но нужно его создать в AAD по инструкциям из [этой статьи](../develop/active-directory-enterprise-app-role-management.md).
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите элемент **XML метаданных федерации** и выберите **Скачать**, чтобы скачать сертификат и сохранить его на компьютере.
 
@@ -250,11 +250,10 @@ ms.locfileid: "91715877"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](./tutorial-list.md)
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](../conditional-access/overview.md)
 
 - [Попробуйте Alibaba Cloud Service (единый вход на основе ролей) в работе с Azure AD](https://aad.portal.azure.com/)
-

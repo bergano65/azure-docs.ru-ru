@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 08/27/2019
 ms.author: jeedes
-ms.openlocfilehash: 93b418a2bc4e1b03370b1bb86bd7da95255db0b8
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: fb8374802e7ec2596dc5f65a2acaf739b12dc164
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88552396"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91995970"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-people"></a>Руководство по Интеграция единого входа Azure Active Directory с People
 
@@ -142,11 +142,11 @@ ms.locfileid: "88552396"
    
 4. В меню слева выберите **Параметры**.
 
-    ![Настройка единого входа](./media/people-tutorial/tutorial_people_001.png)
+    ![Снимок экрана: меню в левой части экрана с выбранным пунктом "Параметры".](./media/people-tutorial/tutorial_people_001.png)
 
 5. Нажмите **Компания**.
 
-    ![Настройка единого входа](./media/people-tutorial/tutorial_people_002.png)
+    ![Снимок экрана: меню "Параметры" с выбранным пунктом "Компания".](./media/people-tutorial/tutorial_people_002.png)
 
 6. Чтобы отправить скачанный файл метаданных, в разделе **Upload 'Single Sign On' SAML meta-data file** (Отправить файл метаданных SAML для единого входа) нажмите кнопку **Browse** (Обзор).
 

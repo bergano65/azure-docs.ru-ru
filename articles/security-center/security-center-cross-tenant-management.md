@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/11/2019
 ms.author: memildin
-ms.openlocfilehash: 7700e151a49dbfbad452927ba4a308651a0b584a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 68338341d47b8fa15d0bd88ea23e951210105fc4
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84782818"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92340790"
 ---
 # <a name="cross-tenant-management-in-security-center"></a>Управление между клиентами в центре безопасности
 
@@ -52,9 +52,9 @@ ms.locfileid: "84782818"
 
 - **Управление расширенными функциями защиты облака и многое другое**: управление различными службами защиты от угроз, такими как [JIT-доступ к виртуальной машине](security-center-just-in-time.md), [Адаптивное усиление защиты сети](security-center-adaptive-network-hardening.md), [адаптивное управление приложениями](security-center-adaptive-application.md)и многое другое.
  
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 В этой статье объясняется, как работает управление между клиентами в центре безопасности. Дополнительные сведения о Центре безопасности см. в следующих статьях:
 
 * [Усиление безопасности с помощью центра безопасности Azure](security-center-monitoring.md) — Узнайте, как отслеживать работоспособность ресурсов Azure.
 * [Центр безопасности Azure: часто задаваемые вопросы](faq-general.md) . часто задаваемые вопросы об использовании службы.
-* [Узнайте об Azure лигхсаусе в корпоративных сценариях](https://docs.microsoft.com/azure/lighthouse/concepts/enterprise) . Узнайте, как Azure лигхсаусе может упростить управление между клиентами в рамках предприятия, использующего несколько клиентов Azure AD.
+* [Узнайте об Azure лигхсаусе в корпоративных сценариях](../lighthouse/concepts/enterprise.md) . Узнайте, как Azure лигхсаусе может упростить управление между клиентами в рамках предприятия, использующего несколько клиентов Azure AD.

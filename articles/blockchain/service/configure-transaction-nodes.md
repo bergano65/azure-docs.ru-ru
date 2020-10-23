@@ -4,12 +4,12 @@ description: Настройка узлов транзакций службы Azu
 ms.date: 11/20/2019
 ms.topic: how-to
 ms.reviewer: janders
-ms.openlocfilehash: b3a4650977f1ad1a7a6967daa162adc8d2ef7bff
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 50f9b2aa0f5e1a1b1095b6c799ce0706b6e541de
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90530392"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92150880"
 ---
 # <a name="configure-azure-blockchain-service-transaction-nodes"></a>Настройка узлов транзакций службы Azure Блокчейн
 
@@ -75,7 +75,7 @@ ms.locfileid: "90530392"
 
 1. Нажмите кнопку **сохранить** , чтобы добавить назначение ролей.
 
-Дополнительные сведения об управлении доступом Azure AD см. [в статье Управление доступом к ресурсам Azure с помощью RBAC и портал Azure](../../role-based-access-control/role-assignments-portal.md)
+Дополнительные сведения об управлении доступом Azure AD см. [в статье Добавление и удаление назначений ролей Azure с помощью портал Azure](../../role-based-access-control/role-assignments-portal.md)
 
 Дополнительные сведения о подключении с использованием проверки подлинности Azure AD см. в статье [Подключение к узлу с помощью проверки подлинности AAD](configure-aad.md).
 

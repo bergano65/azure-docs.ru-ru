@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 10/7/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: bb35b81a287179900485c7190a57c492cfc39203
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: d4e150eddee947aa4ed6f88c122c0fa6d01a0bae
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92043040"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92460654"
 ---
 # <a name="write-client-app-authentication-code"></a>Запись кода проверки подлинности клиентского приложения
 
@@ -20,7 +20,7 @@ ms.locfileid: "92043040"
 
 Azure Digital двойников выполняет проверку подлинности с помощью [маркеров безопасности Azure AD на основе OAUTH 2,0](../active-directory/develop/security-tokens.md#json-web-tokens-jwts-and-claims). Чтобы проверить подлинность пакета SDK, необходимо получить маркер носителя с нужными разрешениями для Azure Digital двойников и передать его вместе с вызовами API. 
 
-В этой статье описывается, как получить учетные данные с помощью `Azure.Identity` клиентской библиотеки. Хотя в этой статье показаны примеры кода для [пакета SDK для .NET (C#)](https://www.nuget.org/packages/Azure.DigitalTwins.Core), можно использовать версию независимо от того, `Azure.Identity` какой пакет SDK вы используете (Дополнительные сведения см. в разделе с [*инструкциями по использованию интерфейсов API цифровых двойников и пакетов SDK*](how-to-use-apis-sdks.md)для Azure Digital двойников).
+В этой статье описывается, как получить учетные данные с помощью `Azure.Identity` клиентской библиотеки. Хотя в этой статье показаны примеры кода для [пакета SDK для .NET (C#)](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet-preview&preserve-view=true), можно использовать версию независимо от того, `Azure.Identity` какой пакет SDK вы используете (Дополнительные сведения см. в разделе с [*инструкциями по использованию интерфейсов API цифровых двойников и пакетов SDK*](how-to-use-apis-sdks.md)для Azure Digital двойников).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -105,9 +105,9 @@ client = new DigitalTwinsClient(new Uri(adtInstanceUrl), cred, opts);
 
 Метод [интерактивебровсеркредентиал](/dotnet/api/azure.identity.interactivebrowsercredential?preserve-view=true&view=azure-dotnet) предназначен для интерактивных приложений и позволяет открыть веб-браузер для проверки подлинности. Это можно использовать вместо `DefaultAzureCredential` в тех случаях, когда требуется Интерактивная проверка подлинности.
 
-Чтобы использовать интерактивные учетные данные браузера, потребуется **Регистрация приложения** , имеющего разрешения на доступ к API-интерфейсам цифрового двойников Azure. Инструкции по настройке регистрации приложения см. в разделе " [*Настройка разрешений на доступ к клиентским приложениям*](how-to-set-up-instance-portal.md#set-up-access-permissions-for-client-applications) *" статьи как настроить экземпляр и проверку подлинности*. После настройки регистрации приложения вам потребуется...
-* *идентификатор приложения (клиента)* регистрации приложения.
-* *идентификатор каталога (клиента)* регистрации приложения.
+Чтобы использовать интерактивные учетные данные браузера, потребуется **Регистрация приложения** , имеющего разрешения на доступ к API-интерфейсам цифрового двойников Azure. Инструкции по настройке регистрации приложения см. в разделе [*инструкции. Создание регистрации приложения*](how-to-create-app-registration.md). После настройки регистрации приложения вам потребуется...
+* *идентификатор приложения (клиента)* регистрации приложения ([инструкции для поиска](how-to-create-app-registration.md#collect-client-id-and-tenant-id))
+* *идентификатор каталога (клиента)* регистрации приложения ([инструкции для поиска](how-to-create-app-registration.md#collect-client-id-and-tenant-id))
 * URL-адрес экземпляра Azure Digital двойников ([инструкции для поиска](how-to-set-up-instance-portal.md#verify-success-and-collect-important-values))
 
 Ниже приведен пример кода для создания клиента пакета SDK с проверкой подлинности с помощью `InteractiveBrowserCredential` .

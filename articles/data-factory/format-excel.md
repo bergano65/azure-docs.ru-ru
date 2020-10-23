@@ -9,19 +9,21 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 09/14/2020
 ms.author: jingwang
-ms.openlocfilehash: dad1f9f232cb9d713af81f6aea57a4ffe651da19
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 65dc9f556a9b7c257273349c056cf997973e942f
+ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91331970"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92328289"
 ---
 # <a name="excel-format-in-azure-data-factory"></a>Формат Excel в фабрике данных Azure
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 Если вы хотите **проанализировать файлы Excel**, следуйте этой статье. Фабрика данных Azure поддерживает как "xls", так и xlsx.
 
-Формат Excel поддерживается для следующих соединителей: [Amazon S3](connector-amazon-simple-storage-service.md), [большой двоичный объект Azure](connector-azure-blob-storage.md), [Azure Data Lake Storage 1-го поколения](connector-azure-data-lake-store.md), [Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md), [хранилище файлов Azure](connector-azure-file-storage.md), [Файловая система](connector-file-system.md), [FTP](connector-ftp.md), [Google Cloud Storage](connector-google-cloud-storage.md), [HDFS](connector-hdfs.md), [http](connector-http.md)и [SFTP](connector-sftp.md). Он поддерживается в качестве источника, но не для приемника.
+Формат Excel поддерживается для следующих соединителей: [Amazon S3](connector-amazon-simple-storage-service.md), [большой двоичный объект Azure](connector-azure-blob-storage.md), [Azure Data Lake Storage 1-го поколения](connector-azure-data-lake-store.md), [Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md), [хранилище файлов Azure](connector-azure-file-storage.md), [Файловая система](connector-file-system.md), [FTP](connector-ftp.md), [Google Cloud Storage](connector-google-cloud-storage.md), [HDFS](connector-hdfs.md), [http](connector-http.md)и [SFTP](connector-sftp.md). Он поддерживается в качестве источника, но не для приемника. 
+
+**Примечание**. формат ". xls" не поддерживается при использовании [http](connector-http.md). 
 
 ## <a name="dataset-properties"></a>Свойства набора данных
 
@@ -71,7 +73,7 @@ ms.locfileid: "91331970"
 
 ### <a name="excel-as-source"></a>Excel в качестве источника 
 
-В разделе *** \* Источник \* *** действия копирования поддерживаются следующие свойства.
+В разделе действие копирования **_ \_ source \* *** поддерживаются следующие свойства.
 
 | Свойство      | Описание                                                  | Обязательно |
 | ------------- | ------------------------------------------------------------ | -------- |
@@ -109,9 +111,9 @@ ms.locfileid: "91331970"
 | Имя                      | Описание                                                  | Обязательно | Допустимые значения                                            | Свойство сценария потока данных         |
 | ------------------------- | ------------------------------------------------------------ | -------- | --------------------------------------------------------- | --------------------------------- |
 | Подстановочные пути           | Будут обработаны все файлы, соответствующие пути с подстановочными знаками. Переопределяет папку и путь к файлу, заданные в наборе данных. | нет       | String[]                                                  | вилдкардпасс                     |
-| Корневой путь раздела       | Для секционированных файловых данных можно ввести корневой путь к разделу, чтобы считывать секционированные папки в виде столбцов. | нет       | Строковый тип                                                    | партитионрутпас                 |
+| Корневой путь раздела       | Для секционированных файловых данных можно ввести корневой путь к разделу, чтобы считывать секционированные папки в виде столбцов. | нет       | Строка                                                    | партитионрутпас                 |
 | Список файлов             | Указывает, указан ли источник на текстовый файл, в котором перечислены обрабатываемые файлы | нет       | `true` или `false`                                         | fileList                          |
-| Столбец для хранения имени файла | Создать новый столбец с именем и путем к исходному файлу       | нет       | Строковый тип                                                    | ровурлколумн                      |
+| Столбец для хранения имени файла | Создать новый столбец с именем и путем к исходному файлу       | нет       | Строка                                                    | ровурлколумн                      |
 | После завершения          | Удалите или переместите файлы после обработки. Путь к файлу начинается с корня контейнера | нет       | Delete: `true` или `false` <br> Поместить `['<from>', '<to>']` | пуржефилес <br> мовефилес         |
 | Фильтровать по дате последнего изменения   | Выберите фильтр файлов в зависимости от времени последнего изменения | нет       | Отметка времени                                                 | modifiedAfter <br> modifiedBefore |
 | Разрешить не найдены файлы | Если значение — true, ошибка не возникает, если файлы не найдены | нет | `true` или `false` | игноренофилесфаунд |

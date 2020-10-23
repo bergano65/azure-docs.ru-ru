@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 05/25/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 118e137f06a49f2c125b1ca156877514d65af86f
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 34afc732d64a7aa29261989cc790c8a113208d96
+ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92047069"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92331776"
 ---
 # <a name="use-the-azure-digital-twins-cli"></a>Использование CLI для Azure Digital Twins
 
@@ -23,7 +23,7 @@ ms.locfileid: "92047069"
 * Управление связями двойника
 * Настройка конечных точек
 * Управление [маршрутами](concepts-route-events.md)
-* Настройка [безопасности](concepts-security.md) с помощью управления доступом на основе РОЛЕЙ (RBAC)
+* Настройка [безопасности](concepts-security.md) с помощью управления доступом на основе ролей Azure (Azure RBAC)
 
 [!INCLUDE [digital-twins-known-issue-cloud-shell](../../includes/digital-twins-known-issue-cloud-shell.md)]
 
@@ -41,7 +41,7 @@ ms.locfileid: "92047069"
 
 [!INCLUDE [digital-twins-cloud-shell-extensions.md](../../includes/digital-twins-cloud-shell-extensions.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Изучите интерфейс командной строки и полный набор команд, используя справочные документы:
 * [*AZ DT* Справочник по командам](/cli/azure/ext/azure-iot/dt?preserve-view=true&view=azure-cli-latest)

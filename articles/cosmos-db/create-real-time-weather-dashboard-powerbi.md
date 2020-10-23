@@ -7,12 +7,12 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 09/04/2019
 ms.reviewer: sngun
-ms.openlocfilehash: 681929928e6e6b28c7950c8aeeadc8b181491f46
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f44a8d82ea2588abad6855fd8eaf7aed34256d87
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91804135"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92370769"
 ---
 # <a name="create-a-real-time-dashboard-using-azure-cosmos-db-and-power-bi"></a>Создание панели мониторинга в режиме реального времени с помощью Azure Cosmos DB и Power BI
 
@@ -46,7 +46,7 @@ Azure Analysis Services предоставляет полностью управ
 
 ### <a name="ingest-weather-data-into-azure-cosmos-db"></a>Прием данных о погоде в Azure Cosmos DB
 
-Настройте конвейер приема для загрузки [данных погоды](https://catalog.data.gov/dataset/local-weather-archive) в Azure Cosmos DB. Вы можете настроить задание [фабрики данных Azure (ADF)](../data-factory/connector-azure-cosmos-db.md) для периодической загрузки последних данных о погоде в Azure Cosmos DB с помощью источника HTTP и приемника Cosmos DB.
+Настройте конвейер приема для загрузки [данных погоды](https://catalog.data.gov/dataset/local-weather-archive/resource/c28974a2-fc83-4722-8977-9a701323f729) в Azure Cosmos DB. Вы можете настроить задание [фабрики данных Azure (ADF)](../data-factory/connector-azure-cosmos-db.md) для периодической загрузки последних данных о погоде в Azure Cosmos DB с помощью источника HTTP и приемника Cosmos DB.
 
 
 ### <a name="connect-power-bi-to-azure-cosmos-db"></a>Подключение Power BI к Azure Cosmos DB
@@ -63,11 +63,11 @@ Azure Analysis Services предоставляет полностью управ
    В зависимости от того, какой столбец и тип данных есть в исходном наборе данных, можно соответствующим образом изменить поля RangeStart и RangeEnd
 
    
-   |Свойство  |Тип данных  |Фильтр  |
+   |Свойство  |Тип данных  |Filter  |
    |---------|---------|---------|
    |_ts     |   Числовой      |  [_ts] > Duration. Тоталсекондс (RangeStart-#datetime (1970, 1, 1, 0, 0, 0)) и [_ts] < Duration. Тоталсекондс (RangeEnd-#datetime (1970, 1, 1, 0, 0, 0)))       |
-   |Дата (например,-2019-08-19).     |   Строковый тип      | [Document. Date] > DateTime. Тотекст (RangeStart, "гггг-мм-дд") и [Document. Date] < DateTime. Тотекст (RangeEnd, "гггг-мм-дд")        |
-   |Дата (например,-2019-08-11 12:00:00).   |  Строковый тип       |  [Document. Date] > DateTime. Тотекст (RangeStart, "гггг-мм-дд чч: мм: СС") и [Document. Date] < DateTime. Тотекст (RangeEnd, "гггг-мм-дд чч: мм: СС")       |
+   |Дата (например,-2019-08-19).     |   Строка      | [Document. Date] > DateTime. Тотекст (RangeStart, "гггг-мм-дд") и [Document. Date] < DateTime. Тотекст (RangeEnd, "гггг-мм-дд")        |
+   |Дата (например,-2019-08-11 12:00:00).   |  Строка       |  [Document. Date] > DateTime. Тотекст (RangeStart, "гггг-мм-дд чч: мм: СС") и [Document. Date] < DateTime. Тотекст (RangeEnd, "гггг-мм-дд чч: мм: СС")       |
 
 
 1. **Определение политики обновления** . Определите политику обновления, перейдя на вкладку **Добавочное обновление** **контекстного** меню для таблицы. Настройте политику обновления на **ежедневное** обновление и сохраните данные за прошлый месяц.
@@ -87,7 +87,7 @@ Azure Analysis Services предоставляет полностью управ
 
 ### <a name="ingest-weather-data-into-azure-cosmos-db"></a>Прием данных о погоде в Azure Cosmos DB 
 
-Настройте конвейер приема для загрузки [данных погоды](https://catalog.data.gov/dataset/local-weather-archive) в Azure Cosmos DB. Вы можете настроить задание фабрики данных Azure (ADF) для периодической загрузки последних данных о погоде в Azure Cosmos DB с помощью источника HTTP и приемника Cosmos DB.
+Настройте конвейер приема для загрузки [данных погоды](https://catalog.data.gov/dataset/local-weather-archive/resource/c28974a2-fc83-4722-8977-9a701323f729) в Azure Cosmos DB. Вы можете настроить задание фабрики данных Azure (ADF) для периодической загрузки последних данных о погоде в Azure Cosmos DB с помощью источника HTTP и приемника Cosmos DB.
 
 ### <a name="connect-azure-analysis-services-to-azure-cosmos-account"></a>Подключение Azure Analysis Services к учетной записи Azure Cosmos
 

@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: quickstart
 ms.custom: subject-armqs
 ms.date: 03/13/2020
-ms.openlocfilehash: 6b4b4b8bcf5a69fdae9f29284fe965a30d634788
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.openlocfilehash: ad1b08110e91457f1c9031f864ba67086872f22e
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91539730"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91855570"
 ---
 # <a name="quickstart-create-ml-services-cluster-in-azure-hdinsight-using-arm-template"></a>Краткое руководство. Создание кластера служб машинного обучения ML Services в Azure HDInsight с помощью шаблона ARM
 
@@ -59,13 +59,13 @@ ms.locfileid: "91539730"
     |Имя пользователя SSH|Укажите имя пользователя, по умолчанию — sshuser.|
     |Пароль SSH|Укажите пароль.|
 
-    ![Шаблон Resource Manager HBase](./media/quickstart-resource-manager-template/resource-manager-template-rserver.png)
+    ![Развертывание шаблона Resource Manager HBase](./media/quickstart-resource-manager-template/resource-manager-template-rserver.png)
 
 1. Ознакомьтесь с **УСЛОВИЯМИ ИСПОЛЬЗОВАНИЯ**. Затем установите флажок **Я принимаю указанные выше условия** и нажмите кнопку **Приобрести**. Вы получите уведомление о выполнении развертывания. Процесс создания кластера занимает около 20 минут.
 
 ## <a name="review-deployed-resources"></a>Просмотр развернутых ресурсов
 
-После создания кластера вы получите уведомление **Развертывание прошло успешно** со ссылкой **Перейти к ресурсу**. На странице группы ресурсов будет указан новый кластер HDInsight и хранилище по умолчанию, связанное с кластером. У каждого кластера есть зависимость учетной записи [службы хранилища Azure](../hdinsight-hadoop-use-blob-storage.md) или [учетной записи Azure Data Lake Storage](../hdinsight-hadoop-use-data-lake-store.md). Она называется учетной записью хранения по умолчанию. Кластер HDInsight должен находиться в том же регионе Azure, что и его учетная запись хранения, используемая по умолчанию. Удаление кластеров не приведет к удалению учетной записи хранения.
+После создания кластера вы получите уведомление **Развертывание прошло успешно** со ссылкой **Перейти к ресурсу**. На странице группы ресурсов будет указан новый кластер HDInsight и хранилище по умолчанию, связанное с кластером. У каждого кластера есть зависимость учетной записи [службы хранилища Azure](../hdinsight-hadoop-use-blob-storage.md), [Azure Data Lake Storage 1-го поколения](../hdinsight-hadoop-use-data-lake-storage-gen1.md) или [`Azure Data Lake Storage Gen2`](../hdinsight-hadoop-use-data-lake-storage-gen2.md). Она называется учетной записью хранения по умолчанию. Кластер HDInsight должен находиться в том же регионе Azure, что и его учетная запись хранения, используемая по умолчанию. Удаление кластеров не приведет к удалению учетной записи хранения.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -73,7 +73,7 @@ ms.locfileid: "91539730"
 
 На портале Azure перейдите в свой кластер и выберите **Удалить**.
 
-![Снимок экрана: кластер HDInsight с удаляемой группой ресурсов](./media/quickstart-resource-manager-template/azure-portal-delete-rserver.png)
+[Удаление шаблона Resource Manager HBase](./media/quickstart-resource-manager-template/azure-portal-delete-rserver.png)
 
 Кроме того, можно выбрать имя группы ресурсов, чтобы открыть страницу группы ресурсов, а затем щелкнуть **Удалить группу ресурсов**. Вместе с группой ресурсов вы также удалите кластер HDInsight и учетную запись хранения по умолчанию.
 

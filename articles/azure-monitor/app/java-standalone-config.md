@@ -4,12 +4,12 @@ description: Наблюдение за производительностью п
 ms.topic: conceptual
 ms.date: 04/16/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 9b90f8b9336111438b4b832d557d448470959255
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 36f2add41457d1d82b0efd6c6804496018c85225
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91537663"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92215269"
 ---
 # <a name="configuration-options---java-standalone-agent-for-azure-monitor-application-insights"></a>Параметры конфигурации — автономный агент Java для Azure Monitor Application Insights
 
@@ -129,14 +129,14 @@ Application Insights Предварительная версия Java 3,0 авт
 | пороговое значение   | Log4j  | Logback | ИЮЛ     |
 |-------------------|--------|---------|---------|
 | OFF               | OFF    | OFF     | OFF     |
-| АВАРИЙ             | АВАРИЙ  | ошибка   | SEVERE  |
-| Ошибка (или СЕРЬЕЗная) | ошибка  | ошибка   | SEVERE  |
+| АВАРИЙ             | АВАРИЙ  | ОШИБКА   | SEVERE  |
+| Ошибка (или СЕРЬЕЗная) | ОШИБКА  | ОШИБКА   | SEVERE  |
 | ПРЕДУПРЕЖДАть (или ПРЕДУПРЕЖДАть) | ДАТЬ   | ДАТЬ    | ПРЕДУПРЕЖДЕНИЕ |
-| ИНФОРМАЦИЯ              | INFO   | INFO    | INFO    |
+| ИНФОРМАЦИЯ              | ИНФОРМАЦИЯ   | ИНФОРМАЦИЯ    | ИНФОРМАЦИЯ    |
 | CONFIG            | DEBUG  | DEBUG   | CONFIG  |
 | ОТЛАДКа (или Точная)   | DEBUG  | DEBUG   | FINE    |
 | FINER             | DEBUG  | DEBUG   | FINER   |
-| TRACE (или FINEST) | трассировка  | трассировка   | FINEST  |
+| TRACE (или FINEST) | TRACE  | TRACE   | FINEST  |
 | ALL               | ALL    | ALL     | ALL     |
 
 ## <a name="jmx-metrics"></a>Метрики JMX
@@ -164,9 +164,10 @@ Application Insights Предварительная версия Java 3,0 авт
 }
 ```
 
-Метрики JMX также можно задать с помощью переменной среды `APPLICATIONINSIGHTS_JMX_METRICS` .
+Поддерживаются числовые и логические значения метрик JMX. Метрики логического JMX сопоставлены с `0` false, а `1` значение true.
 
-Это содержимое переменной среды должно быть данными JSON, соответствующим приведенной выше структуре, например `[{"objectName": "java.lang:type=Runtime", "attribute": "Uptime", "display": "JVM uptime (millis)"}, {"objectName": "java.lang:type=MemoryPool,name=Metaspace", "attribute": "Usage.used", "display": "MetaSpace Used"}]`
+[//]: # "Примечание. не Задокументируйте APPLICATIONINSIGHTS_JMX_METRICS здесь"
+[//]: # "JSON, внедренный в env, является запутанным, и его следует задокументировать только для сценария подключения с некодированным кодом"
 
 ## <a name="micrometer-including-metrics-from-spring-boot-actuator"></a>Микрометер (включая метрики с пружинного загрузочного выключателя)
 

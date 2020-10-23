@@ -1,25 +1,25 @@
 ---
 title: Отладка & устранение неполадок конвейеров машинного обучения
 titleSuffix: Azure Machine Learning
-description: Отладка конвейеров Машинное обучение Azure в Python. Изучите распространенные ловушки для разработки конвейеров и советы по отладке сценариев до и во время удаленного выполнения. Узнайте, как использовать Visual Studio Code для интерактивной отладки конвейеров машинного обучения.
+description: Отладка конвейеров Машинное обучение Azure в Python. Изучите распространенные ловушки для разработки конвейеров и советы по отладке сценариев до и во время удаленного выполнения.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 author: lobrien
 ms.author: laobri
-ms.date: 08/28/2020
+ms.date: 10/22/2020
 ms.topic: conceptual
 ms.custom: troubleshooting, devx-track-python
-ms.openlocfilehash: be68ad35deca754df70bb51e83929e73ff132ba6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d31dffe6ee4190e72f413444621eb9f10791d4fc
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91315411"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92370276"
 ---
 # <a name="debug-and-troubleshoot-machine-learning-pipelines"></a>Отладка и устранение неполадок в конвейерах машинного обучения
 
-Из этой статьи вы узнаете, как выполнять отладку и устранение неполадок в [конвейерах машинного обучения](concept-ml-pipelines.md) в [машинное обучение Azure SDK](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py&preserve-view=true) и [конструкторе машинное обучение Azure](https://docs.microsoft.com/azure/machine-learning/concept-designer). Сведения приведены в следующих руководствах:
+Из этой статьи вы узнаете, как выполнять отладку и устранение неполадок в [конвейерах машинного обучения](concept-ml-pipelines.md) в [машинное обучение Azure SDK](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py&preserve-view=true) и [конструкторе машинное обучение Azure](https://docs.microsoft.com/azure/machine-learning/concept-designer). 
 
 ## <a name="troubleshooting-tips"></a>Советы по устранению неполадок
 
@@ -33,6 +33,113 @@ ms.locfileid: "91315411"
 | Конвейер не использует повторно шаги | Повторное использование шага включено по умолчанию, но убедитесь, что вы не отключили его на этапе конвейера. Если повторное использование отключено, `allow_reuse` параметр на шаге будет установлен в значение `False` . |
 | Конвейер перезапускается без необходимости | Чтобы обеспечить повторный запуск шагов только при изменении базовых данных или скриптов, следует разделить Каталоги исходного кода на каждый шаг. Если один и тот же исходный каталог используется для нескольких шагов, может возникнуть ненужное повторное использование. Используйте `source_directory` параметр для объекта шага конвейера, чтобы указать на свой изолированный каталог для этого шага, и убедитесь, что вы не используете один и тот же `source_directory` путь для нескольких шагов. |
 | Шаг с замедлением при обучении эпохи обучения или другое поведение цикла | Попробуйте переключить записи файлов, включая ведение журнала, с `as_mount()` на `as_upload()` . Режим **подключения** использует удаленную виртуальную файловую систему и загружает весь файл каждый раз, когда он добавляется к. |
+
+## <a name="troubleshooting-parallelrunstep"></a>Выявлен `ParallelRunStep` 
+
+Скрипт для `ParallelRunStep` *должен содержать* две функции:
+- `init()`: Эта функция применяется для всех затратных или повторяющихся операций подготовки к последующему выводу. Например, в ней можно загружать модель в глобальный объект. Эта функция будет вызываться только один раз в начале процесса.
+-  `run(mini_batch)`: Эта функция будет выполняться для каждого экземпляра `mini_batch`.
+    -  `mini_batch`: `ParallelRunStep` вызывает метод run и передает ему в качестве аргумента список либо Pandas `DataFrame`. Каждая запись в mini_batch содержит одно из следующих значений: путь к файлу для входных данных в формате `FileDataset` или Pandas `DataFrame` для входных данных в формате `TabularDataset`.
+    -  `response`: метод run() должен возвращать Pandas `DataFrame` или массив. Для append_row output_action эти возвращаемые элементы добавляются в общий выходной файл. Для summary_only содержимое элементов игнорируется. Для всех выходных действий каждый возвращаемый элемент обозначает один успешный запуск входного элемента во входном мини-пакете. Убедитесь в том, что в результат выполнения включено достаточно данных, чтобы сопоставить входные данные с результатом вывода. Выходные данные будут записаны в выходной файл, и для них не гарантируется правильный порядок. Для сопоставления со входными данными нужно использовать какой-либо ключ.
+
+```python
+%%writefile digit_identification.py
+# Snippets from a sample script.
+# Refer to the accompanying digit_identification.py
+# (https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/machine-learning-pipelines/parallel-run)
+# for the implementation script.
+
+import os
+import numpy as np
+import tensorflow as tf
+from PIL import Image
+from azureml.core import Model
+
+
+def init():
+    global g_tf_sess
+
+    # Pull down the model from the workspace
+    model_path = Model.get_model_path("mnist")
+
+    # Construct a graph to execute
+    tf.reset_default_graph()
+    saver = tf.train.import_meta_graph(os.path.join(model_path, 'mnist-tf.model.meta'))
+    g_tf_sess = tf.Session()
+    saver.restore(g_tf_sess, os.path.join(model_path, 'mnist-tf.model'))
+
+
+def run(mini_batch):
+    print(f'run method start: {__file__}, run({mini_batch})')
+    resultList = []
+    in_tensor = g_tf_sess.graph.get_tensor_by_name("network/X:0")
+    output = g_tf_sess.graph.get_tensor_by_name("network/output/MatMul:0")
+
+    for image in mini_batch:
+        # Prepare each image
+        data = Image.open(image)
+        np_im = np.array(data).reshape((1, 784))
+        # Perform inference
+        inference_result = output.eval(feed_dict={in_tensor: np_im}, session=g_tf_sess)
+        # Find the best probability, and add it to the result list
+        best_result = np.argmax(inference_result)
+        resultList.append("{}: {}".format(os.path.basename(image), best_result))
+
+    return resultList
+```
+
+Если у вас есть другой файл или папка в том же каталоге, что и скрипт вывода, можно сослаться на него, найдя текущий рабочий каталог.
+
+```python
+script_dir = os.path.realpath(os.path.join(__file__, '..',))
+file_path = os.path.join(script_dir, "<file_name>")
+```
+
+### <a name="parameters-for-parallelrunconfig"></a>Параметры для Параллелрунконфиг
+
+`ParallelRunConfig` — это основная конфигурация для экземпляра `ParallelRunStep` в конвейере Машинного обучения Azure. Он пригодится вам как оболочка скрипта для настройки необходимых параметров, включая перечисленные ниже записи:
+- `entry_script`: Локальный путь к пользовательскому скрипту, который будет выполняться параллельно на нескольких узлах. Если присутствует `source_directory`, используйте относительный путь. В противном случае используйте любой путь, доступный на компьютере.
+- `mini_batch_size`: Размер мини-пакета, который передается в одном вызове `run()`. (Необязательный параметр; по умолчанию заданы `10` файлов для `FileDataset` и `1MB` для `TabularDataset`.)
+    - Для `FileDataset` здесь указывается количество файлов; минимальное допустимое значение — `1`. Несколько файлов можно объединить в один мини-пакет.
+    - Для `TabularDataset` здесь указывается размер данных. Примеры допустимых значений: `1024`, `1024KB`, `10MB` и `1GB`. Мы рекомендуем использовать значение `1MB`. Мини-пакет из `TabularDataset` никогда не пересекает границы файлов. Предположим, что у вас есть CSV-файлы с разными размерами в пределах от 100 КБ до 10 МБ. Если задать `mini_batch_size = 1MB`, все файлы с размером меньше 1 МБ будут рассматриваться как один мини-пакет. Файлы с размером, превышающим 1 МБ, будут разбиты на несколько мини-пакетов.
+- `error_threshold`: Количество ошибок записи для `TabularDataset` и сбоев чтения файлов для `FileDataset`, которые следует игнорировать во время обработки. Если общее количество ошибок для всего объема входных данных превысит это значение, задание будет прервано. Пороговое количество ошибок применяется к общему объему входных данных, а не к отдельному мини-пакету, которые передаются в метод `run()`. Используется диапазон `[-1, int.max]`. Часть `-1` указывает на то, что следует игнорировать все сбои во время обработки.
+- `output_action`: Одно из следующих значений указывает, как будут организованы выходные данные.
+    - `summary_only`: Выходные данные сохраняются в пользовательском скрипте. `ParallelRunStep` использует выходные данные только для вычисления порога ошибок.
+    - `append_row`: Для всех входных данных в выходной папке будет создан только один файл, куда будут добавляться все выходные данные, разделенные пустой строкой.
+- `append_row_file_name`: Чтобы настроить имя выходного файла для append_row output_action (необязательно; значение по умолчанию — `parallel_run_step.txt`).
+- `source_directory`: Пути к папкам, которые содержат все файлы для выполнения в целевом объекте вычислений (необязательно).
+- `compute_target`: Поддерживается только `AmlCompute`.
+- `node_count`: Количество вычислительных узлов, которые будут использоваться для выполнения пользовательского скрипта.
+- `process_count_per_node`: Количество процессов на каждом узле. Рекомендуется устанавливать в значение, равное количеству GPU или ЦП на одном узле (необязательно; значение по умолчанию — `1`).
+- `environment`: Определение среды Python. Вы можете настроить использование существующей среды Python или временной среды. Также это определение может задавать необходимые зависимости приложения (необязательно).
+- `logging_level`: Детализация журнала. Значения уровня детализации в порядке увеличения: `WARNING`, `INFO` и `DEBUG`. (необязательный параметр; по умолчанию используется значение `INFO`.)
+- `run_invocation_timeout`: Время вызова метода `run()` в секундах. (необязательный параметр, значение по умолчанию — `60`)
+- `run_max_try`: Максимальное число попыток `run()` для mini-batch. Сбой `run()` при возникновении исключения или если при достижении `run_invocation_timeout` ничего не возвращается (необязательно; значение по умолчанию — `3`). 
+
+Можно указать `mini_batch_size`, `node_count`, `process_count_per_node`, `logging_level`, `run_invocation_timeout` и `run_max_try` как `PipelineParameter`, чтобы при повторной отправке запуска конвейера можно было точно настроить значения параметров. В этом примере используется `PipelineParameter` для `mini_batch_size` и `Process_count_per_node`, и эти значения будут изменены при повторной отправке позже. 
+
+### <a name="parameters-for-creating-the-parallelrunstep"></a>Параметры для создания Параллелрунстеп
+
+Создайте ParallelRunStep, используя скрипт, конфигурацию среды и параметры. Укажите целевой объект вычислений, который уже подключен к рабочей области, в качестве целевого объекта для выполнения скрипта вывода. Используйте `ParallelRunStep`, чтобы создать шаг конвейера пакетного вывода, который принимает все следующие параметры.
+- `name`: Имя шага со следующими ограничениями на именование: уникальность, от 3 до 32 символов, соответствие регулярному выражению ^\[a-z\]([-a-z0-9]*[a-z0-9])?$.
+- `parallel_run_config`: Объект `ParallelRunConfig`, как определено ранее.
+- `inputs`: Один или несколько однотипных наборов данных Машинного обучения Azure, которые должны быть секционированы для параллельной обработки.
+- `side_inputs`: Один или несколько эталонных данных или наборов данных, используемых в качестве дополнительных входных данных без необходимости секционирования.
+- `output`: Объект `PipelineData`, который соответствует каталогу для выходных данных.
+- `arguments`: Список аргументов, переданных в пользовательский скрипт. Используйте unknown_args, чтобы получить их в начальном сценарии (необязательно).
+- `allow_reuse`: Указывает, должен ли шаг повторно использовать предыдущие результаты при запуске с теми же параметрами и входными данными. Если этот параметр имеет значение `False`, то во время выполнения конвейера для этого шага всегда будет создаваться новый запуск. (необязательный параметр; по умолчанию используется значение `True`.)
+
+```python
+from azureml.pipeline.steps import ParallelRunStep
+
+parallelrun_step = ParallelRunStep(
+    name="predict-digits-mnist",
+    parallel_run_config=parallel_run_config,
+    inputs=[input_mnist_ds_consumption],
+    output=output_dir,
+    allow_reuse=True
+)
+```
 
 ## <a name="debugging-techniques"></a>Методы отладки
 
@@ -148,6 +255,10 @@ logger.error("I am an OpenCensus error statement with custom dimensions", {'step
 В некоторых случаях может потребоваться интерактивно отлаживать код Python, используемый в конвейере машинного обучения. С помощью Visual Studio Code (VS Code) и дебугпи можно присоединяться к коду, как он выполняется в среде обучения. Дополнительные сведения см. в [разделе Интерактивная Отладка в VS Code Guide](how-to-debug-visual-studio-code.md#debug-and-troubleshoot-machine-learning-pipelines).
 
 ## <a name="next-steps"></a>Дальнейшие шаги
+
+* Полный учебник по использованию см `ParallelRunStep` . в разделе [учебник. создание конвейера машинное обучение Azure для пакетной оценки](tutorial-pipeline-batch-scoring-classification.md).
+
+* Полный пример, в котором показано автоматизированное машинное обучение в конвейерах МАШИНного обучения, см. в статье [Использование автоматического ML в конвейере машинное обучение Azure в Python](how-to-use-automlstep-in-pipelines.md).
 
 * Обратитесь к Справочнику по пакету SDK, чтобы получить справку по пакету [azureml-конвейеры-Core](https://docs.microsoft.com/python/api/azureml-pipeline-core/?view=azure-ml-py&preserve-view=true) и пакету [azureml-конвейеры-этапов](https://docs.microsoft.com/python/api/azureml-pipeline-steps/?view=azure-ml-py&preserve-view=true) .
 

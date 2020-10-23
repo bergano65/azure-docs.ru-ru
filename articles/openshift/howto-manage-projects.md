@@ -8,14 +8,20 @@ ms.author: gwallace
 ms.date: 07/19/2019
 ms.topic: conceptual
 ms.service: container-service
-ms.openlocfilehash: 35474df96254b158a39b6d913171c553bf30aea4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0abc086553f5e903a71bcfd0b6322bcee56d2d8b
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88816445"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92216935"
 ---
 # <a name="manage-projects-templates-image-streams-in-an-azure-red-hat-openshift-cluster"></a>Управление проектами, шаблонами, потоками изображений в кластере Azure Red Hat OpenShift
+
+> [!IMPORTANT]
+> Azure Red Hat OpenShift 3,11 будет прекращена 30 июня 2022. Поддержка для создания новых кластеров Azure Red Hat OpenShift 3,11 продолжится до 30 ноября 2020. После выхода из эксплуатации оставшиеся кластеры Azure Red Hat OpenShift 3,11 будут закрыты для предотвращения уязвимости системы безопасности.
+> 
+> Следуйте указаниям этого руководством, чтобы [создать кластер Azure Red Hat OpenShift 4](tutorial-create-cluster.md).
+> Если у вас есть определенные вопросы, [свяжитесь с нами](mailto:arofeedback@microsoft.com).
 
 В платформе контейнера OpenShift проекты используются для группирования и изоляции связанных объектов. Администратор может предоставить разработчикам доступ к конкретным проектам, позволить им создавать собственные проекты и предоставлять им административные права для отдельных проектов.
 
@@ -27,7 +33,7 @@ ms.locfileid: "88816445"
 
 | Параметр               | Описание                                    |
 | ----------------------- | ---------------------------------------------- |
-| PROJECT_NAME            | Имя проекта. Обязательный элемент.             |
+| PROJECT_NAME            | Имя проекта. Обязательный.             |
 | PROJECT_DISPLAYNAME     | Отображаемое имя проекта. Значение может быть пустым. |
 | PROJECT_DESCRIPTION     | Описание проекта. Значение может быть пустым.  |
 | PROJECT_ADMIN_USER      | Имя пользователя для администрирования.       |

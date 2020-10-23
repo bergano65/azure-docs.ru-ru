@@ -4,12 +4,12 @@ description: Узнайте, как включить мониторинг кла
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: d283ac43b466140045c8acaaf7ba7bb1e490b835
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.openlocfilehash: b5f1a4880bba099b00a4f3af87649f3eaa9cb884
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91994518"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92165406"
 ---
 # <a name="enable-monitoring-of-azure-kubernetes-service-aks-cluster-already-deployed"></a>Включение мониторинга уже развернутого кластера Azure Kubernetes Service (AKS)
 
@@ -132,12 +132,10 @@ provisioningState       : Succeeded
 2. В списке ресурсов введите **Контейнеры**.  Как только вы начнете вводить данные, список отфильтруется соответствующим образом.
 
 3. Выберите **Службы Kubernetes**.
+    
+4. В списке служб Kubernetes выберите службу.
 
-    ![Ссылка на Службы Kubernetes](./media/container-insights-onboard/portal-search-containers-01.png)
-
-4. В списке контейнеров выберите нужный контейнер.
-
-5. На странице обзора контейнеров выберите **Контейнеры мониторов**.
+5. На странице Обзор службы Kubernetes выберите **мониторинг-Insights**.
 
 6. Если имеющаяся рабочая область Log Analytics расположена в той же подписке, что и кластер, выберите ее из раскрывающегося списка на странице **Onboarding to Azure Monitor for containers** (Подключение к Azure Monitor для контейнеров).
     В списке предварительно выбрана рабочая область по умолчанию и расположение, в которое контейнер AKS развертывается в подписке.

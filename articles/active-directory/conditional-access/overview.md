@@ -5,19 +5,19 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: overview
-ms.date: 10/12/2020
+ms.date: 10/16/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
 ms.custom: contperfq4, azuread-video-2020
-ms.openlocfilehash: b0dec57a67053c3791e68fb40e28d83d5b97777b
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: d46dfba9d9dedea57b6be872a6853bc522a0bc8c
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91962162"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92145246"
 ---
 # <a name="what-is-conditional-access"></a>Что собой представляет условный доступ
 
@@ -84,13 +84,6 @@ ms.locfileid: "91962162"
 - блокировка или предоставление доступа из конкретных расположений;
 - блокировка рискованного поведения при входе;
 - по требованию управляемых организацией устройств для определенных приложений.
-
-## <a name="customer-case-studies"></a>Примеры реальных клиентов
-
-Узнайте, как другие организации используют условный доступ Azure AD для определения и реализации автоматизированных решений по управлению доступом. В следующих рекомендуемых материалах показано, как выполняются эти потребности клиентов.
-
-* [Компания Wipro обеспечивает эффективность работы на мобильных устройствах с помощью средств безопасности Microsoft Cloud для улучшения взаимодействия с клиентами.](https://customers.microsoft.com/story/wipro-professional-services-enterprise-mobility-security) Благодаря политикам условного доступа в Azure AD сотрудники организации могут совместно использовать документы, ресурсы и приложения с доверенными лицами из других организаций, использующими собственные учетные данные, и при этом сохранять контроль над своими корпоративными данными.
-* [Международная логистическая и транспортная компания Aramex delivery limited создала облачную офисную сеть с помощью решения для управления удостоверениями и доступом](https://customers.microsoft.com/story/aramex-azure-active-directory-travel-transportation-united-arab-emirates-en). Обеспечить безопасный доступ было особенно сложно из-за удаленных сотрудников Aramex. Теперь компания применяет условный доступ, чтобы предоставить этим удаленным сотрудникам доступ к приложениям SaaS за пределами сети. Правило условного доступа определяет, следует ли применять многофакторную проверку подлинности, предоставляя доступ только тем пользователям, у которых есть права.
 
 ## <a name="license-requirements"></a>Требования лицензий
 

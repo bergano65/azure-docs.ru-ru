@@ -9,16 +9,16 @@ ms.author: twright
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: aa13baf7c6fc6d3bb66b97e533da29e4a1a6e73c
-ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
+ms.openlocfilehash: a96be6d4da3d292b2e9881652aad28f318ccee8a
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91876249"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92107578"
 ---
 # <a name="azure-data-studio-dashboards"></a>Панели мониторинга Azure Data Studio
 
-[Azure Data Studio](https://aka.ms/azuredatastudio) предоставляет такие возможности, как портал Azure для просмотра сведений о ресурсах Arc Azure.  Эти представления называются **панелями мониторинга** и имеют макет и параметры, аналогичные тем, что можно увидеть в портал Azure, но вы можете обеспечить гибкость просмотра этой информации в локальной среде в тех случаях, когда у вас нет доступного подключения к Azure.
+[Azure Data Studio](/sql/azure-data-studio/what-is) предоставляет такие возможности, как портал Azure для просмотра сведений о ресурсах Arc Azure.  Эти представления называются **панелями мониторинга** и имеют макет и параметры, аналогичные тем, что можно увидеть в портал Azure, но вы можете обеспечить гибкость просмотра этой информации в локальной среде в тех случаях, когда у вас нет доступного подключения к Azure.
 
 [!INCLUDE [azure-arc-data-preview](../../../includes/azure-arc-data-preview.md)]
 
@@ -26,7 +26,7 @@ ms.locfileid: "91876249"
 
 ### <a name="prerequisites"></a>Предварительные требования
 
-- Скачать [Azure Data Studio](https://aka.ms/getazuredatastudio)
+- Скачать [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio)
 - Расширение ARC для Azure установлено
 
 ### <a name="determine-the-data-controller-server-api-endpoint-url"></a>Определение URL-адреса конечной точки API сервера контроллера данных

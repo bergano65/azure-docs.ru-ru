@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 07/23/2020
 ms.author: magoedte
 ms.custom: mvc,subject-armqs
-ms.openlocfilehash: 441e53123512a9611f9568edccfd40a3e17c981f
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 9315b898e290dc758c300f9b74006b4b08888e9e
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89055436"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92078958"
 ---
 # <a name="quickstart-create-an-automation-account-by-using-arm-template"></a>Краткое руководство. Создание учетной записи автоматизации с помощью шаблона Resource Manager
 
@@ -84,7 +84,7 @@ ms.locfileid: "89055436"
 
 Если вы не знакомы со службами автоматизации Azure и Azure Monitor, важно понимать следующие моменты, относящиеся к конфигурации. Они могут помочь избежать ошибок при создании, настройке и использовании рабочей области Log Analytics, связанной с новой учетной записью службы автоматизации.
 
-* Ознакомьтесь с [дополнительными сведениями](../azure-monitor/platform/template-workspace-configuration.md#create-a-log-analytics-workspace), чтобы полностью понять возможности конфигурации рабочей области, такие как режим управления доступом, ценовая категория, срок хранения и уровень резервирования мощности.
+* Ознакомьтесь с [дополнительными сведениями](../azure-monitor/samples/resource-manager-workspace.md#create-a-log-analytics-workspace), чтобы полностью понять возможности конфигурации рабочей области, такие как режим управления доступом, ценовая категория, срок хранения и уровень резервирования мощности.
 
 * Изучите [сопоставления рабочей области](how-to/region-mappings.md), чтобы указывать поддерживаемые регионы в строке или файле параметров. Только определенные регионы поддерживают связывание рабочей области Log Analytics и учетной записи службы автоматизации в подписке.
 

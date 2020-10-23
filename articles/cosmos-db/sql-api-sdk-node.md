@@ -9,31 +9,31 @@ ms.topic: reference
 ms.date: 08/12/2020
 ms.author: anfeldma
 ms.custom: devx-track-js
-ms.openlocfilehash: 106f446c56377c1211d04e388608cd31e2aeef23
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c3834b1890cb20b717462c4cb8ed1f779570c675
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91804220"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92275210"
 ---
 # <a name="azure-cosmos-db-nodejs-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: Заметки о выпуске и материалы
 > [!div class="op_single_selector"]
 > * [Пакет SDK версии 3 для .NET](sql-api-sdk-dotnet-standard.md)
 > * [Пакет SDK для .NET версии 2](sql-api-sdk-dotnet.md)
 > * [Пакет SDK для .NET Core версии 2](sql-api-sdk-dotnet-core.md)
-> * [Пакет SDK для веб-канала изменений .NET версии 2](sql-api-sdk-dotnet-changefeed.md)
+> * [Пакет SDK для .NET Change Feed версии 2](sql-api-sdk-dotnet-changefeed.md)
 > * [Node.js](sql-api-sdk-node.md)
 > * [Пакет SDK для Java версии 4](sql-api-sdk-java-v4.md)
 > * [Пакет SDK для Async Java версии 2](sql-api-sdk-async-java.md)
 > * [Пакет SDK для Sync Java версии 2](sql-api-sdk-java.md)
-> * [Пружинные данные v2](sql-api-sdk-java-spring-v2.md)
+> * [Spring Data версии 2](sql-api-sdk-java-spring-v2.md)
 > * [Spring Data версии 3](sql-api-sdk-java-spring-v3.md)
 > * [Соединитель Spark](sql-api-sdk-java-spark.md)
 > * [Python](sql-api-sdk-python.md)
 > * [REST](/rest/api/cosmos-db/)
 > * [Поставщик ресурсов REST](/rest/api/cosmos-db-resource-provider/)
 > * [SQL](sql-api-query-reference.md)
-> * [Групповой исполнитель — .NET v2](sql-api-sdk-bulk-executor-dot-net.md)
+> * [Исполнитель массовых операций — .NET версии 2](sql-api-sdk-bulk-executor-dot-net.md)
 > * [Исполнитель массовых операций — Java](sql-api-sdk-bulk-executor-java.md)
 
 |Ресурс  |Ссылка  |
@@ -353,7 +353,7 @@ Add DISTINCT and LIMIT/OFFSET queries (#306)
 * Добавлена поддержка функции срока жизни для документов.
 
 ### <a name="160"></a><a name="1.6.0"></a>1.6.0
-* Реализованы [секционированные коллекции](partition-data.md) и [определяемые пользователем уровни производительности](performance-levels.md).
+* Реализованы [секционированные коллекции](partitioning-overview.md) и [определяемые пользователем уровни производительности](performance-levels.md).
 
 ### <a name="156"></a><a name="1.5.6"></a>1.5.6
 * Исправлена ошибка RangePartitionResolver.resolveForRead, связанная с невозвращением ссылок из-за некорректных результатов сцепки.

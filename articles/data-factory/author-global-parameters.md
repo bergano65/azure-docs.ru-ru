@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: djpmsft
 ms.author: daperlov
 ms.date: 08/31/2020
-ms.openlocfilehash: a936fbec23a38c5b96c678b38b92eed9346b88bf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c20bb77711833a1a17082e25e31d4a2e14db5bf9
+ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91567542"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92328204"
 ---
 # <a name="global-parameters-in-azure-data-factory"></a>Глобальные параметры в фабрике данных Azure
 
@@ -52,7 +52,7 @@ ms.locfileid: "91567542"
 
 ![Включить в шаблон ARM](media/author-global-parameters/include-arm-template.png)
 
-Добавление глобальных параметров в шаблон ARM добавляет параметр уровня фабрики, который может переопределять другие параметры уровня фабрики, такие как управляемый клиентом ключ или Конфигурация Git в других средах. Если эти параметры включены в среде с повышенными привилегиями, например UAT или "Рабочая", лучше развернуть глобальные параметры с помощью сценария PowerShell, выполнив действия, выделенные ниже.
+Добавление глобальных параметров в шаблон ARM добавляет параметр уровня фабрики, который будет переопределять другие параметры уровня фабрики, такие как управляемый клиентом ключ или Конфигурация Git в других средах. Если эти параметры включены в среде с повышенными привилегиями, например UAT или "Рабочая", лучше развернуть глобальные параметры с помощью сценария PowerShell, выполнив действия, выделенные ниже.
 
 ### <a name="deploying-using-powershell"></a>Развертывание с помощью PowerShell
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 09/11/2019
 ms.author: jeedes
-ms.openlocfilehash: 99f29f884997fbdd4761a5aa2d1f3a8bc15aa797
-ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
+ms.openlocfilehash: d55f461205ceecad098319d7b4b41c175390abfd
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88891612"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91850529"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-jira-saml-sso-by-microsoft"></a>Руководство по Интеграция единого входа Azure Active Directory с JIRA SAML SSO by Microsoft
 
@@ -156,11 +156,11 @@ ms.locfileid: "88891612"
 
 2. Наведите указатель мыши на шестеренку и щелкните **Add-ons** (Надстройки).
 
-    ![Настройка единого входа](./media/jiramicrosoft-tutorial/addon1.png)
+    ![Снимок экрана: меню "Параметры" с выбранным пунктом "Надстройки".](./media/jiramicrosoft-tutorial/addon1.png)
 
 3. Скачайте подключаемый модуль из [Центра загрузки Майкрософт](https://www.microsoft.com/download/details.aspx?id=56506). Вручную передайте подключаемый модуль, предоставленный корпорацией Майкрософт, воспользовавшись меню **Upload add-on** (Отправка надстройки). Загрузка подключаемого модуля выполняется в соответствии с [соглашением об обслуживании Майкрософт](https://www.microsoft.com/servicesagreement/).
 
-    ![Настройка единого входа](./media/jiramicrosoft-tutorial/addon12.png)
+    ![Снимок экрана: область Manage add-ons (Управление надстройками) с выделенной ссылкой Upload add-on (Отправить надстройку).](./media/jiramicrosoft-tutorial/addon12.png)
 
 4. Для сценария использования обратного прокси-сервера JIRA или подсистемы балансировки нагрузки выполните приведенные ниже действия.
 
@@ -171,19 +171,19 @@ ms.locfileid: "88891612"
 
     `scheme="https" proxyName="<subdomain.domain.com>" proxyPort="<proxy_port>" secure="true"`
 
-    ![Настройка единого входа](./media/jiramicrosoft-tutorial/reverseproxy1.png)
+    ![Снимок экрана: файл server.xml в редакторе с добавленной новой строкой.](./media/jiramicrosoft-tutorial/reverseproxy1.png)
 
     b. Измените **базовый URL-адрес** в разделе **системных параметров** на соответствующий для подсистемы балансировки нагрузки или прокси-сервера.
 
-    ![Настройка единого входа](./media/jiramicrosoft-tutorial/reverseproxy2.png)
+    ![Снимок экрана: область параметров администрирования, в которой можно изменить базовый URL-адрес.](./media/jiramicrosoft-tutorial/reverseproxy2.png)
 
 5. После установки подключаемый модуль появится в разделе **Управление надстройками**, подраздел **Установленные пользователем**. Щелкните **Configure** (Настройка), чтобы настроить новый подключаемый модуль.
 
-    ![Настройка единого входа](./media/jiramicrosoft-tutorial/addon14.png)
+    ![Снимок экрана: раздел Microsoft Azure Active Directory SAML Single Sign-on for JIRA (Единый вход SAML Microsoft Azure Active Directory для JIRA) с выделенной кнопкой "Настроить".](./media/jiramicrosoft-tutorial/addon14.png)
 
 6. Выполните следующие действия на странице настройки:
 
-    ![Настройка единого входа](./media/jiramicrosoft-tutorial/addon54.png)
+    ![Снимок экрана: страница настройки единого входа Microsoft Azure Active Directory для JIRA.](./media/jiramicrosoft-tutorial/addon54.png)
 
     > [!TIP]
     > Убедитесь, что с приложением сопоставлен только один сертификат, чтобы при разрешении метаданных не возникла ошибка. Если имеется несколько сертификатов, то при разрешении метаданных администратор увидит сообщение об ошибке.
@@ -230,19 +230,19 @@ ms.locfileid: "88891612"
 
 2. Наведите указатель мыши на шестеренку и щелкните **User management** (Управление пользователями).
 
-    ![Добавление сотрудника](./media/jiramicrosoft-tutorial/user1.png)
+    ![Снимок экрана: меню "Параметры" с выбранным пунктом User management (Управление пользователями).](./media/jiramicrosoft-tutorial/user1.png)
 
 3. Вы будете перенаправлены на страницу доступа с правами администратора. Введите **пароль** и нажмите кнопку **Confirm** (Подтвердить).
 
-    ![Добавление сотрудника](./media/jiramicrosoft-tutorial/user2.png)
+    ![Снимок экрана: страница доступа с правами администратора, на которой вводятся учетные данные.](./media/jiramicrosoft-tutorial/user2.png)
 
 4. В разделе **User management** (Управление пользователями) щелкните **Create user** (Создать пользователя).
 
-    ![Добавление сотрудника](./media/jiramicrosoft-tutorial/user3.png) 
+    ![Снимок экрана: вкладка User management (Управление пользователями), на которой можно создать пользователя.](./media/jiramicrosoft-tutorial/user3.png) 
 
 5. На странице **Create New User** (Создание пользователя) выполните следующие действия.
 
-    ![Добавление сотрудника](./media/jiramicrosoft-tutorial/user4.png) 
+    ![Снимок экрана: страница диалоговое окно Create new user (Создание пользователя), где можно ввести сведения на этом шаге.](./media/jiramicrosoft-tutorial/user4.png) 
 
     а. В текстовом поле **Email address** (Адрес электронной почты) введите адрес электронной почты пользователя, например B.simon@contoso.com.
 

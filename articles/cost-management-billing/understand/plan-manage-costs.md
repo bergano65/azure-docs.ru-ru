@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: banders
 ms.custom: contperfq1
-ms.openlocfilehash: c8ab6f51daf18802b83508a3e1bbd5af3ee59799
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 50180984423b7c6d2921234a3502495016c4df5c
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91336964"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92150107"
 ---
 # <a name="plan-to-manage-azure-costs"></a>Планирование управления затратами на Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "91336964"
 - Оцените затраты перед добавлением служб, используя [калькулятор цен](https://azure.microsoft.com/pricing/calculator/), прейскурант Azure или информацию, предоставляемую при добавлении служб на портале Azure.
 - Отслеживайте расходы с помощью [бюджетов](../costs/tutorial-acm-create-budgets.md), [оповещений](../costs/cost-mgt-alerts-monitor-usage-spending.md) и [анализа затрат](../costs/quick-acm-cost-analysis.md).
 - Проверяйте суммы, внесенные в ваш счет, сравнивая их с [файлами подробных сведений о потреблении](../manage/download-azure-invoice-daily-usage-date.md).
-- Интегрируйте сведения о выставлении счетов и расходах в собственную систему отчетности, используя API [выставления счетов](https://docs.microsoft.com/rest/api/billing/) и [потребления](https://docs.microsoft.com/rest/api/consumption/).
+- Интегрируйте сведения о выставлении счетов и расходах в собственную систему отчетности, используя API [выставления счетов](/rest/api/billing/) и [потребления](/rest/api/consumption/).
 - Применяйте дополнительные ресурсы и средства, доступные для подписок с Соглашением Enterprise (EA), поставщика облачных решений (CSP) или клиентов спонсорских предложений Azure.
 - Используйте [бесплатно в течение 12 месяцев некоторые популярные службы Azure](../manage/create-free-services.md), которые предоставляются вместе с [бесплатной учетной записью Azure](https://azure.microsoft.com/free/). Помимо приведенных ниже рекомендаций, ознакомьтесь со статьей о [Avoid getting charged for your Azure free account](../manage/avoid-charges-free-account.md) (Как избежать выставления счетов для бесплатной учетной записи Azure).
 
@@ -125,7 +125,7 @@ ms.locfileid: "91336964"
 
 ## <a name="integrate-with-billing-and-consumption-apis"></a>Интеграция с API выставления счетов и потребления
 
-Примените API [выставления счетов](https://docs.microsoft.com/rest/api/billing/) и [потребления](https://docs.microsoft.com/rest/api/consumption/) Azure, чтобы программным способом получить данные о счетах и затратах. Для получения сведений об использовании, влияющих на сумму счета, воспользуйтесь совместно API RateCard и API использования. Дополнительные сведения см. в статье [Получение ценных сведений о потреблении ресурсов Microsoft Azure](../manage/usage-rate-card-overview.md).
+Примените API [выставления счетов](/rest/api/billing/) и [потребления](/rest/api/consumption/) Azure, чтобы программным способом получить данные о счетах и затратах. Для получения сведений об использовании, влияющих на сумму счета, воспользуйтесь совместно API RateCard и API использования. Дополнительные сведения см. в статье [Получение ценных сведений о потреблении ресурсов Microsoft Azure](../manage/usage-rate-card-overview.md).
 
 ## <a name="additional-resources-and-special-cases"></a><a name="other-offers"></a> Дополнительные ресурсы и особые случаи
 

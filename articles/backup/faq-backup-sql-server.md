@@ -4,12 +4,12 @@ description: Найдите ответы на часто задаваемые в
 ms.reviewer: vijayts
 ms.topic: conceptual
 ms.date: 04/23/2019
-ms.openlocfilehash: 6abfdb09fe16272e870fff517359759968417f79
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 89316770dc137bff031e6268db5ece156edd4f25
+ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91461229"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92172369"
 ---
 # <a name="faq-about-sql-server-databases-that-are-running-on-an-azure-vm-backup"></a>Часто задаваемые вопросы о SQL Server базах данных, работающих в резервной копии виртуальной машины Azure
 
@@ -104,8 +104,8 @@ ms.locfileid: "91461229"
   
 ## <a name="can-i-protect-databases-that-have-tde-transparent-data-encryption-turned-on-and-will-the-database-stay-encrypted-through-the-entire-backup-process"></a>Можно ли защитить базы данных с включенной TDE (прозрачное шифрование данных), и база данных останется зашифрованной по всему процессу резервного копирования?
 
-Да, Azure Backup поддерживает резервное копирование баз данных SQL Server или сервера с включенным TDE. Служба архивации поддерживает [TDE](https://docs.microsoft.com/sql/relational-databases/security/encryption/transparent-data-encryption?view=sql-server-2017) с ключами, управляемыми Azure, или с ключами, управляемыми клиентом (BYOK).  Резервное копирование не выполняет шифрование SQL в рамках процесса резервного копирования, поэтому база данных остается зашифрованной при резервном копировании.
+Да, Azure Backup поддерживает резервное копирование баз данных SQL Server или сервера с включенным TDE. Служба архивации поддерживает [TDE](/sql/relational-databases/security/encryption/transparent-data-encryption?view=sql-server-2017) с ключами, управляемыми Azure, или с ключами, управляемыми клиентом (BYOK).  Резервное копирование не выполняет шифрование SQL в рамках процесса резервного копирования, поэтому база данных остается зашифрованной при резервном копировании.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как [создать резервную копию базы данных SQL Server](backup-azure-sql-database.md) , которая работает на виртуальной машине Azure.

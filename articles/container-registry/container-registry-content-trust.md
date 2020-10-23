@@ -3,12 +3,12 @@ title: Управление подписанными образами
 description: Узнайте, как включить доверие к содержимому в Реестре контейнеров Azure, а также отправлять и извлекать подписанные образы. Отношение доверия содержимого реализует отношение доверия DOCKER и является функцией уровня служб Premium.
 ms.topic: article
 ms.date: 09/18/2020
-ms.openlocfilehash: cfe337a0f46e37ed616664e8e0645e319bcfb519
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f44cea09521dc235ad0d555264b165c9a3842a14
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91409170"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92148580"
 ---
 # <a name="content-trust-in-azure-container-registry"></a>Доверие к содержимому в Реестре контейнеров Azure
 
@@ -115,7 +115,7 @@ az role assignment create --scope $REGISTRY_ID --role AcrImageSigner --assignee 
 В `<service principal ID>` можно указать **appId** или **objectId** субъекта-службы или одно из его имен **servicePrincipalNames**. Дополнительные сведения о работе с субъектами-службами и Реестром контейнеров Azure см. в статье [Аутентификация в реестре контейнеров Azure с помощью субъектов-служб](container-registry-auth-service-principal.md).
 
 > [!IMPORTANT]
-> После изменения роли выполните `az acr login` для обновления локального маркера идентификации для Azure CLI, чтобы новые роли вступили в действие. Сведения о проверке ролей для удостоверения см. в статье [Управление доступом к ресурсам Azure с помощью RBAC и Azure CLI](../role-based-access-control/role-assignments-cli.md) и [Устранение неполадок в Azure RBAC](../role-based-access-control/troubleshooting.md).
+> После изменения роли выполните `az acr login` для обновления локального маркера идентификации для Azure CLI, чтобы новые роли вступили в действие. Сведения о проверке ролей для удостоверения см. в статье [Добавление и удаление назначений ролей Azure с помощью Azure CLI](../role-based-access-control/role-assignments-cli.md) и [Устранение неполадок в Azure RBAC](../role-based-access-control/troubleshooting.md).
 
 ## <a name="push-a-trusted-image"></a>Отправка доверенного образа
 

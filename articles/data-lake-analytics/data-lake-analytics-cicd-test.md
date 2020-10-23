@@ -1,21 +1,18 @@
 ---
 title: Тестирование кода Azure Data Lake Analytics
 description: Сведения о добавлении тестовых случаев в расширенный код C# и U-SQL для Azure Data Lake Analytics.
-services: data-lake-analytics
 author: liudan66
 ms.author: liud
 ms.reviewer: jasonh
-ms.assetid: 66dd58b1-0b28-46d1-aaae-43ee2739ae0a
 ms.service: data-lake-analytics
 ms.topic: how-to
-ms.workload: big-data
 ms.date: 08/30/2019
-ms.openlocfilehash: 44426598daf1808ef0aee233968b04d2dc7c165f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7310c67ef20a4134d4f613ea969c96802958bf62
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87129922"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92219213"
 ---
 # <a name="test-your-azure-data-lake-analytics-code"></a>Тестирование кода Azure Data Lake Analytics
 
@@ -112,7 +109,7 @@ Azure Data Lake предоставляет язык [U-SQL](data-lake-analytics-
 
 ## <a name="run-test-cases-in-azure-pipelines"></a>Выполнение тестовых случаев в Azure Pipelines<a name="run-test-cases-in-azure-devops"></a>
 
-Оба проекта, **тестовые проекты сценария U-SQL** и **тестовые проекты UDO C#**, наследуют проекты модульного теста C#. Тестовая [задача Visual Studio](https://docs.microsoft.com/azure/devops/pipelines/test/getting-started-with-continuous-testing?view=vsts) в Azure pipelines может выполнять эти тестовые случаи.
+Оба проекта, **тестовые проекты сценария U-SQL** и **тестовые проекты UDO C#**, наследуют проекты модульного теста C#. Тестовая [задача Visual Studio](/azure/devops/pipelines/test/getting-started-with-continuous-testing) в Azure pipelines может выполнять эти тестовые случаи.
 
 ### <a name="run-u-sql-test-cases-in-azure-pipelines"></a>Выполнение тестовых случаев U-SQL в Azure Pipelines
 

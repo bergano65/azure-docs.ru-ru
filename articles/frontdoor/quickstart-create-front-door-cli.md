@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/21/2020
 ms.author: duau
-ms.openlocfilehash: 6aa960837a3bfc7f8a04ca1f554fb10d635c2ea2
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: a24c0fdb244f87dbf281bcf59b5e1986a215142a
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91348361"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92275630"
 ---
 # <a name="quickstart-create-a-front-door-for-a-highly-available-global-web-application-using-azure-cli"></a>Краткое руководство. Создание Front Door для глобального веб-приложения высокой доступности с помощью Azure CLI
 
@@ -46,7 +46,7 @@ az extension add --name front-door
 
 Для целей этого краткого руководства необходимы две группы ресурсов. Один в *центральной части США* и второй — в *центрально-южной части США*.
 
-Создайте группу ресурсов с помощью команды [az group create](https://docs.microsoft.com/cli/azure/group?view=azure-cli-latest#az-group-create&preserve-view=true):
+Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group?view=azure-cli-latest#az-group-create&preserve-view=true):
 
 ```azurecli-interactive
 az group create \
@@ -68,7 +68,7 @@ az group create \
 
 Прежде чем создавать веб-приложения, вам потребуется два плана службы приложений: один в *центральной части США*, а второй — в *центрально-южной части США*.
 
-Для этого выполните команду [az appservice plan create](https://docs.microsoft.com/cli/azure/appservice/plan?view=azure-cli-latest#az_appservice_plan_create&preserve-view=true).
+Для этого выполните команду [az appservice plan create](/cli/azure/appservice/plan?view=azure-cli-latest#az_appservice_plan_create&preserve-view=true).
 
 ```azurecli-interactive
 az appservice plan create \
@@ -84,7 +84,7 @@ az appservice plan create \
 
 При выполнении следующих команд в каждом из планов службы приложений, упомянутых на предыдущем шаге, будет создано веб-приложение. Имена веб-приложений должны быть глобально уникальными.
 
-Создайте веб-приложение с помощью команды [az webapp create](https://docs.microsoft.com/cli/azure/webapp?view=azure-cli-latest#az_webapp_create&preserve-view=true):
+Создайте веб-приложение с помощью команды [az webapp create](/cli/azure/webapp?view=azure-cli-latest#az_webapp_create&preserve-view=true):
 
 ```azurecli-interactive
 az webapp create \
@@ -104,7 +104,7 @@ az webapp create \
 
 Создайте базовый экземпляр Front Door с параметрами балансировки нагрузки, проверкой работоспособности и правилами маршрутизации по умолчанию, выполнив следующую команду:
 
-Создайте Front Door с помощью команды [az network front-door create](https://docs.microsoft.com/cli/azure/ext/front-door/network/front-door?view=azure-cli-latest#ext_front_door_az_network_front_door_create&preserve-view=true):
+Создайте Front Door с помощью команды [az network front-door create](/cli/azure/ext/front-door/network/front-door?view=azure-cli-latest#ext_front_door_az_network_front_door_create&preserve-view=true):
 
 ```azurecli-interactive
 az network front-door create \
@@ -134,7 +134,7 @@ az network front-door create \
 
 Если вам уже не нужны ресурсы, созданные с помощью Front Door, удалите обе группы ресурсов. Удалив ее, вы также удалите Front Door и все связанные с ним ресурсы. 
 
-Чтобы удалить группу ресурсов, выполните команду [az group delete](https://docs.microsoft.com/cli/azure/group?view=azure-cli-latest#az_group_delete&preserve-view=true).
+Чтобы удалить группу ресурсов, выполните команду [az group delete](/cli/azure/group?view=azure-cli-latest#az_group_delete&preserve-view=true).
 
 ```azurecli-interactive
 az group delete \

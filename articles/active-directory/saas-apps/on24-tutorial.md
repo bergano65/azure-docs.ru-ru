@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 03/13/2019
 ms.author: jeedes
-ms.openlocfilehash: 3977aee84b1281e7918987c63185069892b5909e
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 163a0c9a7e728ee9cd08c4a154ea499c059cf2f6
+ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88554283"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91944474"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-on24-virtual-environment-saml-connection"></a>Руководство по интеграции Azure Active Directory с ON24 Virtual Environment SAML Connection
 
@@ -147,7 +147,7 @@ ms.locfileid: "88554283"
 
 5.  Если вы хотите настроить приложение в **режиме, инициированном поставщиком услуг**, выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа ON24 Virtual Environment SAML Connection](common/both-signonurl.png)
+    ![Снимок экрана: раздел "Задать дополнительные URL-адреса" с выделенным текстовым полем "URL-адрес для входа".](common/both-signonurl.png)
 
     В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://vshow.on24.com/vshow/<INSTANCENAME>`.
 

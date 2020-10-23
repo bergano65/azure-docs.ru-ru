@@ -1,20 +1,17 @@
 ---
-title: 'Сценарий PowerShell: создание приглашения к общему ресурсу данных Azure | Документация Майкрософт'
+title: Сценарий PowerShell. Создание приглашения к общему ресурсу данных Azure
 description: Этот сценарий PowerShell отправляет приглашение для общего доступа к данным.
-services: data-share
 author: joannapea
 ms.service: data-share
-ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 07/07/2019
 ms.author: joanpo
-ms.openlocfilehash: 220677df3bd0c221f61efd28a80b05cfd76e2734
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5f65d081e724206c1c64ad08189d1b620bbb4f2c
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87086648"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92221338"
 ---
 # <a name="use-a-powershell-script-to-monitor-the-usage-of-a-sent-data-share"></a>Использование сценария PowerShell для отслеживания использования отправленных общих ресурсов данных
 
@@ -42,11 +39,11 @@ New-AzDataShareInvitation -ResourceGroupName $resourceGroupName -AccountName $da
 
 | Get-Help | Примечания |
 |---|---|
-| [New-Аздаташареинвитатион](/powershell/module/az.datashare/new-azdatashareinvitation?view=azps-2.6.0) | Создайте приглашение для общего доступа к данным. |
+| [New-Аздаташареинвитатион](/powershell/module/az.datashare/new-azdatashareinvitation) | Создайте приглашение для общего доступа к данным. |
 |||
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о Azure PowerShell см. в [документации по Azure PowerShell](https://docs.microsoft.com/powershell/).
+Дополнительные сведения о Azure PowerShell см. в [документации по Azure PowerShell](/powershell/).
 
 Дополнительные примеры сценариев PowerShell для общего ресурса Azure Data Share можно найти в [примерах PowerShell для общего доступа к данным Azure](../../samples-powershell.md).

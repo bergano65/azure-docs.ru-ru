@@ -8,12 +8,12 @@ ms.author: sandeepu
 author: sandeeppujar
 ms.date: 04/30/2020
 ms.custom: device-developer
-ms.openlocfilehash: 34b767a2cc48c94fdb5c2db032321b9254bf4ce2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 770f6e56a669ab2d9b425a7a2879eeef5d37377b
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90017699"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92123429"
 ---
 # <a name="connect-an-azure-sphere-device-to-your-azure-iot-central-application"></a>Подключение устройства Azure Sphere к приложению IoT Central Azure
 
@@ -21,7 +21,7 @@ ms.locfileid: "90017699"
 
 Из этой статьи вы узнаете, как подключить устройство Azure Sphere (DevKit) к приложению IoT Central Azure.
 
-Azure Sphere — это защищенная платформа приложений высокого уровня со встроенными функциями взаимодействия и обеспечения безопасности, предназначенная для устройств, подключенных к Интернету. Она состоит из защищенного подключенного перекрестного микроконтроллера (MCU), специализированной высокоуровневой операционной системы на базе Linux и облачной службы безопасности, которая обеспечивает непрерывную возобновляемую безопасность. Дополнительные сведения см. в статье [Что такое Azure Sphere?](https://docs.microsoft.com/azure-sphere/product-overview/what-is-azure-sphere).
+Azure Sphere — это защищенная платформа приложений высокого уровня со встроенными функциями взаимодействия и обеспечения безопасности, предназначенная для устройств, подключенных к Интернету. Она состоит из защищенного подключенного перекрестного микроконтроллера (MCU), специализированной высокоуровневой операционной системы на базе Linux и облачной службы безопасности, которая обеспечивает непрерывную возобновляемую безопасность. Дополнительные сведения см. в статье [Что такое Azure Sphere?](/azure-sphere/product-overview/what-is-azure-sphere).
 
 [Комплекты SDK Azure Sphere](https://azure.microsoft.com/services/azure-sphere/get-started/) предоставляют все необходимое для начала создания прототипов и разработки приложений Azure Sphere. Использование Azure IoT Central с Azure Sphere предоставляет сквозной стек для решения IoT. Azure Sphere обеспечивает поддержку устройств и IoT Central в качестве платформы управляемых приложений IoT без кода.
 
@@ -38,7 +38,7 @@ Azure Sphere — это защищенная платформа приложен
 
 - Приложение Azure IoT Central.
 - Visual Studio 2019 версии 16.4 (или более новая версия).
-- [Пакет средств разработки Azure Sphere MT3620 из Seeed Studios](https://docs.microsoft.com/azure-sphere/hardware/mt3620-reference-board-design).
+- [Пакет средств разработки Azure Sphere MT3620 из Seeed Studios](/azure-sphere/hardware/mt3620-reference-board-design).
 
 > [!NOTE]
 > Если у вас нет физического устройства, перейдите после первого шага к последнему разделу, чтобы использовать имитированное устройство.

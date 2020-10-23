@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 09/03/2020
 ms.author: allensu
 ms.custom: fasttrack-edit, references_regions
-ms.openlocfilehash: 7c647ba9a89fedf0d43bd8b10460fed101d166b9
-ms.sourcegitcommit: 23aa0cf152b8f04a294c3fca56f7ae3ba562d272
+ms.openlocfilehash: 1ce0368bb86134bd52473b80eabbfaf87e36148d
+ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91801401"
+ms.lasthandoff: 10/11/2020
+ms.locfileid: "91939653"
 ---
 # <a name="what-is-azure-private-link"></a>Что собой представляет Приватный канал Azure? 
 Приватный канал Azure обеспечивает доступ к службам Azure PaaS (например, к службе хранилища Azure и Базе данных SQL), а также размещенным в Azure службам, которые принадлежат клиенту или партнеру, через [частную конечную точку](private-endpoint-overview.md) виртуальной сети.
@@ -62,7 +62,7 @@ ms.locfileid: "91801401"
 |Служебная шина Azure | Все общедоступные регионы<br/>Регионы для государственных организаций  | Поддерживается на уровне "Премиум" Служебной шины Azure. [Выбор уровней](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-premium-messaging) | GA   <br/> [Создание частной конечной точки для Служебной шины Azure](https://docs.microsoft.com/azure/service-bus-messaging/private-link-service).    |
 |Ретранслятор Azure | Все общедоступные регионы      |  | Preview (Предварительный просмотр) <br/> [Создание частной конечной точки для Azure Relay](https://docs.microsoft.com/azure/azure-relay/private-link-service).  |
 |Сетка событий Azure| Все общедоступные регионы<br/> Регионы для государственных организаций       |  | GA   <br/> [Создание частной конечной точки для Сетки событий Azure](https://docs.microsoft.com/azure/event-grid/network-security). |
-|Веб-приложения Azure | Все общедоступные регионы      | Поддерживается для приложений-функций эластичной базы данных (цен. категория "Премиум") Windows и Linux PremiumV2.  | Preview (Предварительный просмотр)   <br/> [Создание частной конечной точки для веб-приложений Azure](https://docs.microsoft.com/azure/private-link/create-private-endpoint-webapp-portal).   |
+|Веб-приложения Azure | Все общедоступные регионы      | Поддерживается в планах "Премиум" версий 2 и 3, а также "Премиум " для Функций Azure  | GA   <br/> [Создание частной конечной точки для веб-приложений Azure](https://docs.microsoft.com/azure/private-link/create-private-endpoint-webapp-portal).   |
 |Машинное обучение Azure | Все общедоступные регионы    |  | GA   <br/> [Создание частной конечной точки для Машинного обучения Azure](https://docs.microsoft.com/azure/machine-learning/how-to-configure-private-link).   |
 | Служба автоматизации Azure  | Все общедоступные регионы |  | Preview (Предварительный просмотр) </br> [Создание частной конечной точки для службы автоматизации Azure](https://docs.microsoft.com/azure/automation/how-to/private-link-security).| |
 | Центр Интернета вещей Azure | Все общедоступные регионы    |  | GA   <br/> [Создание частной конечной точки для Центра Интернета вещей Azure](https://docs.microsoft.com/azure/iot-hub/virtual-network-support ). |

@@ -7,12 +7,13 @@ ms.date: 08/12/2020
 ms.topic: how-to
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: 9a93602327b5c5294d6c17c1804c04c6603dcf37
-ms.sourcegitcommit: 090ea6e8811663941827d1104b4593e29774fa19
+ms.custom: device-developer
+ms.openlocfilehash: c2af331304decd7955892ef4911d1644518f57b8
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91999874"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92427887"
 ---
 # <a name="how-to-connect-devices-with-x509-certificates-using-nodejs-device-sdk-for-iot-central-application"></a>Как подключить устройства с сертификатами X. 509 с помощью пакета SDK для Node.js устройств для IoT Central приложения
 
@@ -20,7 +21,7 @@ IoT Central поддерживает подписанные URL-адрес (SAS)
 
 В этой статье описаны два способа использования [регистраций](how-to-connect-devices-x509.md#use-a-group-enrollment) X. 509-Group, обычно используемых в рабочей среде, и [индивидуальных регистраций](how-to-connect-devices-x509.md#use-an-individual-enrollment) , которые можно использовать для тестирования.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Завершение [создания и подключения клиентского приложения к учебнику по IOT Central приложения Azure (Node.js)](./tutorial-connect-device-nodejs.md) .
 - [Git](https://git-scm.com/download/).
@@ -50,12 +51,15 @@ IoT Central поддерживает подписанные URL-адрес (SAS)
     npm install
     ```
 
-1. Создайте корневой сертификат, а затем выберете сертификат устройства, выполнив сценарий. Используйте для имени сертификата только буквы в нижнем регистре и дефисы:
+1. Создайте корневой сертификат, а затем выберете сертификат устройства, выполнив следующий сценарий:
 
     ```cmd/sh
     node create_test_cert.js root mytestrootcert
     node create_test_cert.js device mytestdevice mytestrootcert
     ```
+
+    > [!TIP]
+    > ИДЕНТИФИКАТОР устройства может содержать буквы, цифры и `-` символ.
 
 Эти команды создают по три файла для корня и сертификата устройства.
 

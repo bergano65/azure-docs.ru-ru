@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 06/06/2019
-ms.openlocfilehash: 2e96ac5052221475d9aec11d4ed96e8f9c308d70
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 024fa2f86890c6e8e791b5cf66a4e67328f62f63
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91710113"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92143880"
 ---
 # <a name="troubleshooting-the-log-analytics-vm-extension-in-azure-monitor"></a>Troubleshooting the Log Analytics VM extension in Azure Monitor (Устранение неполадок с расширением Log Analytics для виртуальной машины в Azure Monitor)
 В этой статье содержатся сведения об устранении ошибок, которые могут возникнуть с расширением "Виртуальная машина Log Analytics" для виртуальных машин Windows и Linux, работающих на платформе Microsoft Azure, и предлагаются возможные решения для их устранения.
@@ -52,13 +52,12 @@ ms.locfileid: "91710113"
 
 1. Если состояние расширения *неизвестно*, убедитесь, что агент виртуальной машины Azure установлен и работает правильно, просмотрев файл журнала агента ВМ `/var/log/waagent.log`.
    * Если журнал не создан, значит агент виртуальной машины не установлен.
-   * [Установите агент виртуальной машины Azure на виртуальной машине Linux](https://docs.microsoft.com/azure/virtual-machines/extensions/agent-linux#installation).
+   * [Установите агент виртуальной машины Azure на виртуальной машине Linux](../../virtual-machines/extensions/agent-linux.md#installation).
 2. В случае возникновения других неполадок просмотрите файлы журналов расширения агента Log Analytics для Linux в папке `/var/log/azure/Microsoft.EnterpriseCloud.Monitoring.OmsAgentForLinux/*/extension.log` и `/var/log/azure/Microsoft.EnterpriseCloud.Monitoring.OmsAgentForLinux/*/CommandExecution.log`.
 3. Если расширение работает нормально, но данные не отправляются, просмотрите файлы журнала агента Log Analytics для Linux в папке `/var/opt/microsoft/omsagent/log/omsagent.log`.
 
 Подробные сведения см. в статье [Устранение неполадок расширения виртуальной машины Linux](../../virtual-machines/extensions/oms-linux.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные рекомендации по устранению неполадок, связанных с агентом Log Analytics для Linux, размещенном на компьютерах за пределами Azure, см. в статье об [устранении неполадок агента Azure Log Analytics для Linux](agent-linux-troubleshoot.md).  
-
+Дополнительные рекомендации по устранению неполадок, связанных с агентом Log Analytics для Linux, размещенном на компьютерах за пределами Azure, см. в статье об [устранении неполадок агента Azure Log Analytics для Linux](agent-linux-troubleshoot.md).

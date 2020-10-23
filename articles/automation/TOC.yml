@@ -193,29 +193,33 @@
         - name: Отслеживание изменений и инвентаризация
           items:
             - name: Обзор
-              href: change-tracking.md
+              href: change-tracking/overview.md
             - name: 'Регионы, в которых поддерживается связанная рабочая область Log Analytics'
               href: how-to/region-mappings.md
             - name: Включить
               items:
-                - name: Включение Отслеживания изменений и инвентаризации на портале Azure
-                  href: automation-enable-changes-from-browse.md
-                - name: Включение Отслеживания изменений и инвентаризации на виртуальной машине Azure
-                  href: automation-enable-changes-from-vm.md
-                - name: Включение Отслеживания изменений и инвентаризации в учетной записи службы автоматизации
-                  href: automation-enable-changes-from-auto-acct.md
-                - name: Включение Отслеживания изменений и инвентаризации в последовательности runbook
-                  href: automation-enable-changes-from-runbook.md
+                - name: Включение на портале Azure
+                  href: change-tracking/enable-from-portal.md
+                - name: Включение из виртуальной машины Azure
+                  href: change-tracking/enable-from-vm.md
+                - name: Включение из учетной записи службы автоматизации
+                  href: change-tracking/enable-from-automation-account.md
+                - name: Включение из runbook
+                  href: change-tracking/enable-from-runbook.md
             - name: Управление решением для отслеживания изменений и инвентаризации
-              href: change-tracking-file-contents.md
+              href: change-tracking/manage-change-tracking.md
             - name: Управление сбором данных инвентаризации из виртуальных машин
-              href: automation-vm-inventory.md
+              href: change-tracking/manage-inventory-vms.md
             - name: Работа с конфигурациями областей
-              href: automation-scope-configurations-change-tracking.md
-            - name: Отмена связи рабочей области с учетной записью службы автоматизации
-              href: automation-unlink-workspace-change-tracking.md
-            - name: Исключение виртуальных машин из Отслеживания изменений и инвентаризации
-              href: automation-remove-vms-from-change-tracking.md
+              href: change-tracking/manage-scope-configurations.md
+            - name: Настройка оповещений
+              href: change-tracking/configure-alerts.md
+            - name: Отключить
+              items:
+                - name: Удаление компонента "Отслеживание изменений и инвентаризация"
+                  href: change-tracking/remove-feature.md
+                - name: Исключение виртуальных машин из Отслеживания изменений и инвентаризации
+                  href: change-tracking/remove-vms-from-change-tracking.md
             - name: Диагностика
               items:
                 - name: Устранение неполадок с развертыванием компонентов
@@ -239,49 +243,49 @@
     - name: Управление обновлениями
       items:
         - name: Обзор
-          href: update-management/update-mgmt-overview.md
+          href: update-management/overview.md
         - name: 'Регионы, в которых поддерживается связанная рабочая область Log Analytics'
           href: how-to/region-mappings.md
         - name: Включить
           items:
-            - name: Включение Управления обновлениями с помощью шаблона Azure Resource Manager
-              href: update-management/update-mgmt-enable-template.md
-            - name: Включение Управления обновлениями на портале Azure
-              href: update-management/update-mgmt-enable-portal.md
-            - name: Включение Управления обновлениями на виртуальных машинах Azure
-              href: update-management/update-mgmt-enable-vm.md
-            - name: Включение Управления обновлениями в учетной записи службы автоматизации
-              href: update-management/update-mgmt-enable-automation-account.md
-            - name: Включение Управления обновлениями в последовательности runbook
-              href: update-management/update-mgmt-enable-runbook.md
+            - name: Использование шаблона Azure Resource Manager
+              href: update-management/enable-from-template.md
+            - name: Включение на портале Azure
+              href: update-management/enable-from-portal.md
+            - name: Включение из виртуальной машины Azure
+              href: update-management/enable-from-vm.md
+            - name: Включение из учетной записи службы автоматизации
+              href: update-management/enable-from-automation-account.md
+            - name: Включение из runbook
+              href: update-management/enable-from-runbook.md
         - name: Управление обновлениями для виртуальный машин
           items:
             - name: Начало работы
-              href: update-management/update-mgmt-manage-updates-for-vm.md
+              href: update-management/manage-updates-for-vm.md
             - name: Оценка соответствия
-              href: update-management/update-mgmt-view-update-assessments.md
+              href: update-management/view-update-assessments.md
             - name: Развертывание обновлений и проверка состояния
-              href: update-management/update-mgmt-deploy-updates.md
+              href: update-management/deploy-updates.md
             - name: Использование скриптов предварительного и последующего выполнения
-              href: update-management/update-mgmt-pre-post-scripts.md
+              href: update-management/pre-post-scripts.md
             - name: Настройка оповещений
-              href: update-management/update-mgmt-configure-alerts.md
+              href: update-management/configure-alerts.md
         - name: Интеграция с Configuration Manager
-          href: update-management/update-mgmt-mecmintegration.md
+          href: update-management/mecmintegration.md
         - name: Настройка клиента Центра обновления Windows
-          href: update-management/update-mgmt-configure-wuagent.md
+          href: update-management/configure-wuagent.md
         - name: Использование динамических группы
-          href: update-management/update-mgmt-groups.md
+          href: update-management/configure-groups.md
         - name: Запрос на получение журналов Управления обновлениями
-          href: update-management/update-mgmt-query-logs.md
+          href: update-management/query-logs.md
         - name: Работа с конфигурациями областей
-          href: update-management/update-mgmt-scope-configuration.md
+          href: update-management/scope-configuration.md
         - name: Отключить
           items:
             - name: Удаление решения "Управление обновлениями"
-              href: update-management/update-mgmt-remove-feature.md
+              href: update-management/remove-feature.md
             - name: Исключение виртуальных машин из Управления обновлениями
-              href: update-management/update-mgmt-remove-vms.md
+              href: update-management/remove-vms.md
         - name: Диагностика
           items:
             - name: Устранение неполадок с развертыванием компонентов

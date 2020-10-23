@@ -3,17 +3,17 @@ title: Краткое руководство. Библиотека хранил�
 description: Из этого краткого руководства вы узнаете, как использовать клиентскую библиотеку службы хранилища BLOB-объектов Azure версии 12 для Xamarin для создания контейнера и большого двоичного объекта в хранилище BLOB-объектов. Далее вы узнаете, как скачать большой двоичный объект на мобильное устройство и как получить список всех больших двоичных объектов в контейнере.
 author: codemillmatt
 ms.author: masoucou
-ms.date: 05/08/2020
+ms.date: 10/09/2020
 ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 4fa7ebc71f2bbe6abe6956ad36daaf983e011a94
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 434f112e78938c94d887423316fccea270059b6b
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89001333"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92109023"
 ---
 # <a name="quickstart-azure-blob-storage-client-library-v12-with-xamarin"></a>Краткое руководство. Использование клиентской библиотеки хранилища BLOB-объектов Azure версии 12 для Xamarin
 
@@ -157,7 +157,7 @@ protected async override void OnAppearing()
 Приведенный ниже фрагмент кода:
 
 1. Создает `MemoryStream` с текстом.
-1. Передает этот текст в большой двоичный объект, вызывая функцию [UploadAsync](/dotnet/api/azure.storage.blobs.blobcontainerclient.uploadblobasync?view=azure-dotnet#Azure_Storage_Blobs_BlobContainerClient_UploadBlobAsync_System_String_System_IO_Stream_System_Threading_CancellationToken_) из класса [BlobContainerClient](/dotnet/api/azure.storage.blobs.blobcontainerclient) и передавая ей имя файла, определенное в переменной уровня класса, и `MemoryStream` с текстом. С помощью этого метода создается большой двоичный объект, если он не был создан ранее, или же, если он имеется, происходит его замещение.
+1. Передает этот текст в большой двоичный объект, вызывая функцию [UploadAsync](/dotnet/api/azure.storage.blobs.blobcontainerclient.uploadblobasync#Azure_Storage_Blobs_BlobContainerClient_UploadBlobAsync_System_String_System_IO_Stream_System_Threading_CancellationToken_) из класса [BlobContainerClient](/dotnet/api/azure.storage.blobs.blobcontainerclient) и передавая ей имя файла, определенное в переменной уровня класса, и `MemoryStream` с текстом. С помощью этого метода создается большой двоичный объект, если он не был создан ранее, или же, если он имеется, происходит его замещение.
 
 Добавьте следующий код в файл *MainPage.xaml.cs*.
 

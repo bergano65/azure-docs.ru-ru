@@ -7,18 +7,18 @@ ms.topic: overview
 ms.date: 09/08/2020
 ms.author: brendm
 ms.custom: devx-track-java
-ms.openlocfilehash: b03bedd9abbe59ed3bc1b0ec1439aa27af57e6da
-ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
+ms.openlocfilehash: 159851f5b1ca38cc34da785b39229a6a91e1e4dd
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91758903"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92090698"
 ---
 # <a name="what-is-azure-spring-cloud"></a>Что представляет собой Azure Spring Cloud?
 
 Azure Spring Cloud позволяет легко развертывать в Azure приложения для микрослужб на основе Spring Boot без внесения изменений в код.  Azure Spring Cloud управляет инфраструктурой приложений Spring Cloud, благодаря чему разработчики могут сосредоточиться на коде.  Spring Cloud обеспечивает управление жизненным циклом за счет комплексного мониторинга и диагностики, управления конфигурацией, обнаружения служб, интеграции CI/CD, выполнения развертываний по схеме Blue-Green и прочего.
 
-Azure Spring Cloud поддерживает приложения Java [Spring Boot](https://spring.io/projects/spring-boot) и ASP.NET Core [Steeltoe](https://steeltoe.io/). Поддержка Steeltoe в настоящее время предлагается в общедоступной предварительной версии. Предложения в общедоступной предварительной версии позволяют экспериментировать с новыми функциями до официального выпуска.  Общедоступные предварительные версии функций и служб не предназначены для использования в рабочей среде.  Дополнительные сведения см. на странице [Часто задаваемые вопросы о поддержке Azure](https://azure.microsoft.com/support/faq/) или отправьте [запрос на поддержку](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request).
+Azure Spring Cloud поддерживает приложения Java [Spring Boot](https://spring.io/projects/spring-boot) и ASP.NET Core [Steeltoe](https://steeltoe.io/). Поддержка Steeltoe в настоящее время предлагается в общедоступной предварительной версии. Предложения в общедоступной предварительной версии позволяют экспериментировать с новыми функциями до официального выпуска.  Общедоступные предварительные версии функций и служб не предназначены для использования в рабочей среде.  Дополнительные сведения см. на странице [Часто задаваемые вопросы о поддержке Azure](https://azure.microsoft.com/support/faq/) или отправьте [запрос на поддержку](../azure-portal/supportability/how-to-create-azure-support-request.md).
 
 Azure Spring Cloud, как часть экосистемы Azure, позволяет легко добавлять привязки к другим службам Azure, включая хранилище, базы данных, службы мониторинга и многое другое.
 

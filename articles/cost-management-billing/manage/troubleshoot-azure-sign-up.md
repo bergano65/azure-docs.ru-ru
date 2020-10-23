@@ -10,19 +10,19 @@ ms.subservice: billing
 ms.topic: troubleshooting
 ms.date: 08/20/2020
 ms.author: v-miegge
-ms.openlocfilehash: 3e611e25288d52b0be93c76e8a3a28ce6d7d5088
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 91b3b7b71524c76006ad4d431774e05e47fd0266
+ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91326612"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92131077"
 ---
 # <a name="troubleshoot-issues-when-you-sign-up-for-a-new-account-in-azure-portal-or-azure-account-center"></a>Устранение неполадок при регистрации для получения новой учетной записи на портале Azure или в Центре управления учетной записью Azure
 
 Вы можете столкнуться с проблемой при регистрации для создания учетной записи на портале Microsoft Azure или в Центре управления учетной записью Azure. В этом кратком руководстве рассматривается процесс регистрации и обсуждаются некоторые распространенные проблемы на каждом шаге.
 
 > [!NOTE]
-> Если у вас уже есть учетная запись Azure и вам нужны рекомендации по устранению неполадок при входе в систему, см. [эту статью](https://docs.microsoft.com/azure/cost-management-billing/manage/troubleshoot-sign-in-issue).
+> Если у вас уже есть учетная запись Azure и вам нужны рекомендации по устранению неполадок при входе в систему, см. [эту статью](./troubleshoot-sign-in-issue.md).
 
 ## <a name="before-you-begin"></a>Перед началом
 
@@ -76,8 +76,8 @@ ms.locfileid: "91326612"
 
 #### <a name="you-see-the-message-your-current-account-type-is-not-supported"></a>Отображается сообщение: "Текущий тип учетной записи не поддерживается"
 
-Эта проблема может возникнуть, если учетная запись зарегистрирована в [неуправляемом каталоге Azure AD](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-self-service-signup), а не в каталоге Azure AD вашей организации.
-Чтобы устранить эту проблему, зарегистрируйте учетную запись Azure с помощью другой учетной записи или получите контроль над неуправляемым каталогом Azure AD. Дополнительные сведения см. в [Смена неуправляемого каталога от имени администратора в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/users-groups-roles/domains-admin-takeover).
+Эта проблема может возникнуть, если учетная запись зарегистрирована в [неуправляемом каталоге Azure AD](../../active-directory/users-groups-roles/directory-self-service-signup.md), а не в каталоге Azure AD вашей организации.
+Чтобы устранить эту проблему, зарегистрируйте учетную запись Azure с помощью другой учетной записи или получите контроль над неуправляемым каталогом Azure AD. Дополнительные сведения см. в [Смена неуправляемого каталога от имени администратора в Azure Active Directory](../../active-directory/users-groups-roles/domains-admin-takeover.md).
 
 ## <a name="identity-verification-by-phone"></a>Проверка личности по телефону
 
@@ -107,7 +107,7 @@ ms.locfileid: "91326612"
 
 #### <a name="credit-card-declined-or-not-accepted"></a>Кредитная карта отклонена или не принята
 
-Оплата с использованием виртуальных, предварительно оплаченных или банковских карт не поддерживается для подписок Azure. Другие причины, по которым карта может отклоняться, приведены в статье [Устранение неполадок при отклонении карты во время регистрации в Azure](https://docs.microsoft.com/azure/cost-management-billing/manage/troubleshoot-declined-card).
+Оплата с использованием виртуальных, предварительно оплаченных или банковских карт не поддерживается для подписок Azure. Другие причины, по которым карта может отклоняться, приведены в статье [Устранение неполадок при отклонении карты во время регистрации в Azure](./troubleshoot-declined-card.md).
 
 #### <a name="credit-card-form-doesnt-support-my-billing-address"></a>Форма кредитной карты не поддерживает мой адрес для выставления счетов
 
@@ -144,7 +144,7 @@ ms.locfileid: "91326612"
 Убедитесь, что используются правильные учетные данные для входа. Затем проверьте, имеете ли вы право на участие в программе вознаграждений.
 - MSDN
   - Проверьте свой статус соответствия требованиям на своей [странице учетной записи MSDN](https://msdn.microsoft.com/subscriptions/manage/default.aspx).
-  - Если вам не удается проверить свой статус, обратитесь в [центры обслуживания клиентов с подписками MSDN](https://msdn.microsoft.com/library/aa493452.aspx).
+  - Если вам не удается проверить свой статус, обратитесь в [центры обслуживания клиентов с подписками MSDN](/previous-versions/mappoint/aa493452(v=msdn.10)).
 - Майкрософт для стартапов
   - Войдите на портал [Майкрософт для стартапов](https://startups.microsoft.com/#start-two), чтобы проверить, имеете ли вы право на участие в программе "Майкрософт для стартапов".
   - Если вы не можете проверить свой статус, вы можете получить помощь на [Форумах Майкрософт для стартапов](https://www.microsoftpartnercommunity.com/t5/Microsoft-for-Startups/ct-p/Microsoft_Startups).
@@ -161,10 +161,10 @@ ms.locfileid: "91326612"
 
 Другие статьи по устранению проблем при выставлении счетов и с подписками Azure
 
-- [Карта не принимается](https://docs.microsoft.com/azure/cost-management-billing/manage/troubleshoot-declined-card)
-- [Проблемы со входом в подписку](https://docs.microsoft.com/azure/cost-management-billing/manage/troubleshoot-sign-in-issue)
-- [Подписки не найдены](https://docs.microsoft.com/azure/cost-management-billing/manage/no-subscriptions-found)
-- [Просмотр стоимости Enterprise отключен](https://docs.microsoft.com/azure/cost-management-billing/manage/enterprise-mgmt-grp-troubleshoot-cost-view)
+- [Карта не принимается](./troubleshoot-declined-card.md)
+- [Проблемы со входом в подписку](./troubleshoot-sign-in-issue.md)
+- [Подписки не найдены](./no-subscriptions-found.md)
+- [Просмотр стоимости Enterprise отключен](./enterprise-mgmt-grp-troubleshoot-cost-view.md)
 
 ## <a name="contact-us-for-help"></a>Свяжитесь с нами для получения помощи
 
@@ -172,4 +172,4 @@ ms.locfileid: "91326612"
 
 ## <a name="find-out-more-about-azure-cost-management"></a>Узнайте больше об Управлении затратами Azure
 
-- [Документация по службе Управления затратами и выставления счетов Azure](https://docs.microsoft.com/azure/cost-management-billing)
+- [Документация по службе Управления затратами и выставления счетов Azure](../index.yml)

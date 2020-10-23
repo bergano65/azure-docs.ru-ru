@@ -7,12 +7,12 @@ ms.prod: kinect-dk
 ms.date: 06/26/2019
 ms.topic: conceptual
 keywords: Azure, Kinect, датчик, средство просмотра, визуализация, глубина, RGB, цвет, иму, аудио, микрофон, точка облака
-ms.openlocfilehash: 57cf7df831e97da4143a7f196b69a3a10609a017
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f411de5854d516586dc64701cca729c692ce40e0
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85276932"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92166111"
 ---
 # <a name="azure-kinect-viewer"></a>Средство просмотра Kinect Azure
 
@@ -36,7 +36,7 @@ Azure Kinect Viewer — это [открытый исходный код](https:
 
 Запустите приложение, выполнив `k4aviewer.exe` .
 
-![Проверка версии встроенного по устройства с помощью средства просмотра](./media/how-to-guides/open-viewer.png)
+![Снимок экрана, на котором показано запущенное приложение просмотра.](./media/how-to-guides/open-viewer.png)
 
 ### <a name="use-the-viewer-with-live-data"></a>Использование средства просмотра с динамическими данными
 

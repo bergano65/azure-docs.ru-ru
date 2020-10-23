@@ -8,12 +8,12 @@ ms.topic: troubleshooting
 ms.date: 12/20/2017
 ms.author: duau
 ms.custom: seodec18
-ms.openlocfilehash: 6b9a951787df6775b5159433c7172e767ff955b2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a021d658711e77c3e3be0df722223cefe506abba
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89566081"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92204594"
 ---
 # <a name="troubleshooting-network-performance"></a>Устранение проблем с производительностью сети
 ## <a name="overview"></a>Обзор
@@ -179,7 +179,7 @@ Azure предоставляет стабильные и быстрые спос
 
 | ExpressRoute<br/>Расположение|Azure<br/>Регион | Приблизительно<br/>Расстояние (км) | Задержка|Сеанс 1<br/>Пропускная способность | Максимум<br/>Пропускная способность |
 | ------------------------------------------ | --------------------------- |  - | - | - | - |
-| Seattle | западная часть США 2        |    191 км |   5 мс | 262 Мбит/с |  3,74 Гбит/с |
+| Seattle | Западная часть США 2        |    191 км |   5 мс | 262 Мбит/с |  3,74 Гбит/с |
 | Seattle | западная часть США          |  1,094 км |  18 мс |  82,3 Мбит/с |  3,70 Гбит/с |
 | Seattle | Центральная часть США       |  2,357 км |  40 мс |  38,8 Мбит/с |  2,55 Гбит/с |
 | Seattle | Центрально-южная часть США |  2,877 км |  51 мс |  30,6 Мбит/с |  2,49 Гбит/с |
@@ -190,13 +190,13 @@ Azure предоставляет стабильные и быстрые спос
 | Seattle | южная часть Соединенного Королевства         |  7,708 км | 146 мс |  10,6 Мбит/с |   896 Мбит/с |
 | Seattle | Западная Европа      |  7,834 км | 153 мс |  10,2 Мбит/с |   761 Мбит/с |
 | Seattle | Восточная Австралия   | 12,484 км | 165 мс |   9,4 Мбит/с |   794 Мбит/с |
-| Seattle | Юго-Восточная Азия   | 12,989 км | 170 мс |   9,2 Мбит/с |   756 Мбит/с |
+| Seattle | Southeast Asia   | 12,989 км | 170 мс |   9,2 Мбит/с |   756 Мбит/с |
 | Seattle | Южная Бразилия*   | 10,930 км | 189 мс |   8,2 Мбит/с |   699 Мбит/с |
 | Seattle | Южная Индия      | 12,918 км | 202 мс |   7,7 Мбит/с |   634 Мбит/с |
 
 \* Задержка передачи данных в Бразилию является хорошим примером того, что прямолинейное расстояние значительно отличается от расстояния протяженности оптоволоконной линии. Я ожидал, что задержка будет примерно 160 мс, а на самом деле она составляет 189 мс. Это отличие может указывать на проблему с сетью, но, скорее всего, сетевая магистраль от Сиэтла до Бразилии не проложена по прямой линии и длиннее прямого расстояния на 1000 км.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 1. Скачайте набор средств подключения Azure из GitHub по адресу [https://aka.ms/AzCT][ACT]
 2. Следуйте указаниям по [тестированию производительности сетевого соединения][Performance Doc].
 
@@ -209,6 +209,6 @@ Azure предоставляет стабильные и быстрые спос
 <!--Link References-->
 [Performance Doc]: https://github.com/Azure/NetworkMonitoring/blob/master/AzureCT/PerformanceTesting.md
 [Availability Doc]: https://github.com/Azure/NetworkMonitoring/blob/master/AzureCT/AvailabilityTesting.md
-[Network Docs]: https://docs.microsoft.com/azure/index
+[Network Docs]: ../index.yml
 [Ticket Link]: https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview
 [ACT]: https://aka.ms/AzCT

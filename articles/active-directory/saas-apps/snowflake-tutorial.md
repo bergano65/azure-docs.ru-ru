@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/27/2018
 ms.author: jeedes
-ms.openlocfilehash: 485e55d7a17027fa8b8ec1f313a326ddbc5f40eb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c0051deeef467fda93ca5e13221d391a15133403
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88545216"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92123034"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-snowflake"></a>Руководство по интеграции Azure Active Directory со Snowflake
 
@@ -100,7 +100,7 @@ ms.locfileid: "88545216"
 
 4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа приложения Snowflake](common/idp-intiated.png)
+    ![Снимок экрана, на котором показан раздел "Базовая конфигурация SAML", где можно ввести идентификатор, URL-адрес ответа и нажать кнопку "Сохранить"](common/idp-intiated.png)
 
     а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<SNOWFLAKE-URL>.snowflakecomputing.com`.
 
@@ -108,7 +108,7 @@ ms.locfileid: "88545216"
 
     c. Чтобы настроить приложение для работы в режиме, инициируемом пакетом обновления, щелкните **Задать дополнительные URL-адреса** и выполните следующее действие.
 
-    ![Сведения о домене и URL-адресах единого входа приложения Snowflake](common/metadata-upload-additional-signon.png)
+    ![Снимок экрана, на котором показан параметр "Задать дополнительные URL-адреса" и поле для ввода URL-адреса входа](common/metadata-upload-additional-signon.png)
 
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://<SNOWFLAKE-URL>.snowflakecomputing.com`.
     

@@ -8,12 +8,12 @@ ms.topic: sample
 ms.date: 10/07/2019
 ms.author: sngun
 ms.custom: devx-track-dotnet
-ms.openlocfilehash: 66cf408799b37de1160ec3a76ee11ff1ffbb770b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fe31e67168c4eaf6fe94c056a96fdf695ea94fe4
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91801432"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92279996"
 ---
 # <a name="azure-cosmos-dbnet-v3-sdk-microsoftazurecosmos-examples-for-the-sql-api"></a>Azure Cosmos DB: примеры SDK .NET V3 (Microsoft.Azure.Cosmos) для API SQL
 
@@ -54,7 +54,7 @@ Visual Studio 2019 с установленной рабочей нагрузк�
 
 ## <a name="database-examples"></a>Примеры баз данных
 
-Метод [RunDatabaseDemo](https://github.com/Azure/azure-cosmos-dotnet-v3/blob/master/Microsoft.Azure.Cosmos.Samples/Usage/DatabaseManagement/Program.cs#L65-L91) из примера проекта *DatabaseManagement* демонстрирует, как выполнять следующие задачи. Чтобы узнать больше о базах данных Azure Cosmos перед выполнением приведенных ниже примеров, ознакомьтесь со статьей о [работе с базами данных, контейнерами и элементами](databases-containers-items.md).
+Метод [RunDatabaseDemo](https://github.com/Azure/azure-cosmos-dotnet-v3/blob/master/Microsoft.Azure.Cosmos.Samples/Usage/DatabaseManagement/Program.cs#L65-L91) из примера проекта *DatabaseManagement* демонстрирует, как выполнять следующие задачи. Чтобы узнать больше о базах данных Azure Cosmos перед выполнением приведенных ниже примеров, ознакомьтесь со статьей о [работе с базами данных, контейнерами и элементами](account-databases-containers-items.md).
 
 | Задача | Справочник по API |
 | --- | --- |
@@ -65,7 +65,7 @@ Visual Studio 2019 с установленной рабочей нагрузк�
 
 ## <a name="container-examples"></a>Примеры контейнеров
 
-Метод [RunContainerDemo](https://github.com/Azure/azure-cosmos-dotnet-v3/blob/master/Microsoft.Azure.Cosmos.Samples/Usage/ContainerManagement/Program.cs#L69-L89) в примере проекта *ContainerManagement* показывает, как выполнять следующие задачи. Чтобы узнать больше о контейнерах Azure Cosmos перед выполнением приведенных ниже примеров, ознакомьтесь со статьей о [работе с базами данных, контейнерами и элементами](databases-containers-items.md).
+Метод [RunContainerDemo](https://github.com/Azure/azure-cosmos-dotnet-v3/blob/master/Microsoft.Azure.Cosmos.Samples/Usage/ContainerManagement/Program.cs#L69-L89) в примере проекта *ContainerManagement* показывает, как выполнять следующие задачи. Чтобы узнать больше о контейнерах Azure Cosmos перед выполнением приведенных ниже примеров, ознакомьтесь со статьей о [работе с базами данных, контейнерами и элементами](account-databases-containers-items.md).
 
 | Задача | Справочник по API |
 | --- | --- |
@@ -78,7 +78,7 @@ Visual Studio 2019 с установленной рабочей нагрузк�
 
 ## <a name="item-examples"></a>Примеры элементов
 
-Метод [RunItemsDemo](https://github.com/Azure/azure-cosmos-dotnet-v3/blob/master/Microsoft.Azure.Cosmos.Samples/Usage/ItemManagement/Program.cs#L119-L130) из примера проекта *ItemManagement* демонстрирует, как выполнять следующие задачи. Чтобы узнать больше об элементах Azure Cosmos перед выполнением приведенных ниже примеров, ознакомьтесь со статьей о [работе с базами данных, контейнерами и элементами](databases-containers-items.md).
+Метод [RunItemsDemo](https://github.com/Azure/azure-cosmos-dotnet-v3/blob/master/Microsoft.Azure.Cosmos.Samples/Usage/ItemManagement/Program.cs#L119-L130) из примера проекта *ItemManagement* демонстрирует, как выполнять следующие задачи. Чтобы узнать больше об элементах Azure Cosmos перед выполнением приведенных ниже примеров, ознакомьтесь со статьей о [работе с базами данных, контейнерами и элементами](account-databases-containers-items.md).
 
 | Задача | Справочник по API |
 | --- | --- |

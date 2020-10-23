@@ -7,12 +7,12 @@ ms.topic: quickstart
 ms.custom: devx-track-azurepowershell
 ms.author: mblythe
 ms.date: 07/24/2020
-ms.openlocfilehash: 6b7a4f6d4ad7f5e94d19b9d531992f54ff13fec0
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: de0394f9b3254931537441d9f44606d16392a62d
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87440727"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92073892"
 ---
 # <a name="quickstart-create-an-azure-portal-dashboard-with-powershell"></a>Краткое руководство. Создание панели мониторинга портала Azure с помощью PowerShell
 
@@ -23,7 +23,7 @@ ms.locfileid: "87440727"
 
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
-Если вы решили использовать PowerShell локально, для работы с этой статьей установите модуль PowerShell Az и подключитесь к учетной записи Azure с помощью командлета [Connect-AzAccount](https://docs.microsoft.com/powershell/module/az.accounts/connect-azaccount). См. сведения об [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps).
+Если вы решили использовать PowerShell локально, для работы с этой статьей установите модуль PowerShell Az и подключитесь к учетной записи Azure с помощью командлета [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount). См. сведения об [установке модуля Azure PowerShell](/powershell/azure/install-az-ps).
 
 > [!IMPORTANT]
 > Так как модуль PowerShell **Az.Portal** предоставляется в режиме предварительной версии, его нужно установить отдельно от модуля Az с помощью командлета `Install-Module`. Как только этот модуль PowerShell станет общедоступным, он будет включен в один из будущих выпусков Az PowerShell и встроен в Azure Cloud Shell.
@@ -36,7 +36,7 @@ Install-Module -Name Az.Portal
 
 ## <a name="choose-a-specific-azure-subscription"></a>Выбор требуемой подписки Azure
 
-Если вы используете несколько подписок Azure, выберите ту, за ресурсы в которой будут выставляться счета. Выберите требуемую подписку с помощью командлета [Set-AzContext](https://docs.microsoft.com/powershell/module/az.accounts/set-azcontext).
+Если вы используете несколько подписок Azure, выберите ту, за ресурсы в которой будут выставляться счета. Выберите требуемую подписку с помощью командлета [Set-AzContext](/powershell/module/az.accounts/set-azcontext).
 
 ```azurepowershell-interactive
 Set-AzContext -SubscriptionId 00000000-0000-0000-0000-000000000000
@@ -68,7 +68,7 @@ $vmName = 'SimpleWinVM'
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Создайте [группу ресурсов Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview) с помощью командлета [New-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup). Группа ресурсов — это логический контейнер, в котором ресурсы Azure развертываются и администрируются как группа.
+Создайте [группу ресурсов Azure](../azure-resource-manager/management/overview.md) с помощью командлета [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup). Группа ресурсов — это логический контейнер, в котором ресурсы Azure развертываются и администрируются как группа.
 
 В следующем примере создается группа ресурсов на основе имени в переменной `$resourceGroupName` в регионе, указанном в переменной `$location`.
 
@@ -102,7 +102,7 @@ New-AzVm @AzVmParams
 
 ## <a name="download-the-dashboard-template"></a>Скачивание шаблона панели мониторинга
 
-Так как панели мониторинга Azure являются ресурсами, то их можно представить в виде кода JSON. Следующий код скачивает JSON-представление примера панели мониторинга. Дополнительные сведения см. в статье [Структура панелей мониторинга Azure](/azure/azure-portal/azure-portal-dashboards-structure).
+Так как панели мониторинга Azure являются ресурсами, то их можно представить в виде кода JSON. Следующий код скачивает JSON-представление примера панели мониторинга. Дополнительные сведения см. в статье [Структура панелей мониторинга Azure](./azure-portal-dashboards-structure.md).
 
 ```azurepowershell-interactive
 $myPortalDashboardTemplateUrl = 'https://raw.githubusercontent.com/Azure/azure-docs-powershell-samples/master/azure-portal/portal-dashboard-template-testvm.json'
@@ -180,4 +180,4 @@ Remove-AzResourceGroup -Name $resourceGroupName
 Дополнительные сведения о командлетах модуля PowerShell Az.Portal см. в следующей статье:
 
 > [!div class="nextstepaction"]
-> [Microsoft Azure PowerShell. Командлеты панели мониторинга портала](https://docs.microsoft.com/powershell/module/Az.Portal/)
+> [Microsoft Azure PowerShell. Командлеты панели мониторинга портала](/powershell/module/Az.Portal/)

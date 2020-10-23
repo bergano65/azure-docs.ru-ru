@@ -1,6 +1,6 @@
 ---
-title: Работа с имеющимися локальными прокси-серверами в Azure AD | Документация Майкрософт
-description: В этой статье описывается, как работать с существующими локальными прокси-серверами.
+title: Работа с существующими локальными прокси-серверами и Azure Active Directory
+description: Описание работы с существующими локальными прокси-серверами с Azure Active Directory.
 services: active-directory
 author: kenwith
 manager: celestedg
@@ -11,13 +11,12 @@ ms.topic: how-to
 ms.date: 04/07/2020
 ms.author: kenwith
 ms.reviewer: japere
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: d177dce250d65b4f9d825c9d70916f70c4076d4b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4c50e881fd6b7dda5c609a4ac6492d77fff1b537
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88077515"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92208011"
 ---
 # <a name="work-with-existing-on-premises-proxy-servers"></a>Работа с имеющимися локальными прокси-серверами
 
@@ -114,15 +113,15 @@ ms.locfileid: "88077515"
 | URL-адрес | Как он используется |
 | --- | --- |
 | \*.msappproxy.net;<br>\*.servicebus.windows.net. | Связь между соединителем и облачной службой прокси приложения |
-| mscrl.microsoft.com:80<br>crl.microsoft.com:80<br>ocsp.msocsp.com:80<br>www.microsoft.com:80 | Соединитель использует эти URL-адреса для проверки сертификатов. |
+| crl3.digicert.com<br>crl4.digicert.com<br>ocsp.digicert.com<br>www.d-trust.net<br>root-c3-ca2-2009.ocsp.d-trust.net<br>crl.microsoft.com<br>oneocsp.microsoft.com<br>ocsp.msocsp.com<br> | Соединитель использует эти URL-адреса для проверки сертификатов. |
 | login.windows.net<br>secure.aadcdn.microsoftonline-p.com<br>*.microsoftonline.com<br>* .microsoftonline-p.com<br>*.msauth.net<br>* .msauthimages.net<br>*.msecnd.net<br>* .msftauth.net<br>*.msftauthimages.net<br>* .phonefactor.net<br>enterpriseregistration.windows.net<br>management.azure.com<br>policykeyservice.dc.ad.msft.net<br>ctldl.windowsupdate.com:80 | Соединитель использует эти URL-адреса во время регистрации. |
 
-Если брандмауэр или прокси-сервер позволяет настроить списки разрешенных DNS, можно разрешить подключения к \*.msappproxy.net и \*.servicebus.windows.net. В противном случае необходимо разрешить доступ к [диапазонам IP-адресов центра обработки данных Azure](https://www.microsoft.com/download/details.aspx?id=41653). Список диапазонов IP-адресов обновляется еженедельно.
+Если брандмауэр или прокси-сервер позволяет настроить списки разрешенных DNS, можно разрешить подключения к \*.msappproxy.net и \*.servicebus.windows.net.
 
 Невозможно разрешить подключения по полному доменному имени. Вместо этого укажите диапазоны IP-адресов. Используйте следующие параметры:
 
 * разрешите соединителю исходящий доступ к любым адресам назначения;
-* разрешите соединителю исходящий доступ ко всем [диапазонам IP-адресов центров обработки данных Azure](https://www.microsoft.com//download/details.aspx?id=41653). Если вы предпочитаете использовать диапазоны IP-адресов центров обработки данных Azure, вас ждет одна сложность — эти списки обновляются еженедельно. Необходимо организовать процесс соответствующего обновления правил доступа. Использование только подмножества IP-адресов может привести к прерыванию работы конфигурации.
+* разрешите соединителю исходящий доступ ко всем диапазонам IP-адресов центров обработки данных Azure. Если вы предпочитаете использовать диапазоны IP-адресов центров обработки данных Azure, вас ждет одна сложность — эти списки обновляются еженедельно. Необходимо организовать процесс соответствующего обновления правил доступа. Использование только подмножества IP-адресов может привести к прерыванию работы конфигурации. Чтобы скачать последние диапазоны IP-адресов центра обработки данных Azure, перейдите на страницу [https://download.microsoft.com](https://download.microsoft.com) и выполните поиск по запросу "диапазоны IP-адресов Azure и теги службы". Обязательно выберите соответствующее облако. Например, диапазоны IP-адресов общедоступного облака можно найти в области "диапазоны IP-адресов Azure" и "Теги службы — общедоступное облако". Облако Говермент для США можно найти, выполнив поиск по слову "диапазоны IP-адресов Azure" и "Теги службы — US Говермент Cloud".
 
 #### <a name="proxy-authentication"></a>проверка подлинности прокси-сервера;
 

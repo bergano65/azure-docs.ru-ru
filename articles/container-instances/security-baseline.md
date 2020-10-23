@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/27/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: a26581b61a4b99bd11f48a3d431a1bb85148d66b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f3248085a0719628bcf7fe42253156d9652b86cd
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89393434"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92148633"
 ---
 # <a name="azure-security-baseline-for-container-instances"></a>Базовые показатели безопасности Azure для экземпляров контейнеров
 
@@ -73,7 +73,7 @@ ms.locfileid: "89393434"
 
 * [Развертывание брандмауэра Azure](../firewall/tutorial-firewall-deploy-portal.md)
 
-* [Общие сведения об интегрированной аналитике угроз в Центре безопасности Azure](../security-center/threat-protection.md)
+* [Общие сведения об интегрированной аналитике угроз в Центре безопасности Azure](../security-center/azure-defender.md)
 
 * [Общие сведения о адаптивной защите сети в центре безопасности Azure](../security-center/security-center-adaptive-network-hardening.md)
 
@@ -143,7 +143,7 @@ ms.locfileid: "89393434"
 
 * [Общие сведения и использование тегов служб](../virtual-network/service-tags-overview.md) 
 
-* [Общие сведения и использование групп безопасности приложений](../virtual-network/security-overview.md#application-security-groups)
+* [Общие сведения и использование групп безопасности приложений](../virtual-network/network-security-groups-overview.md#application-security-groups)
 
 * [Развертывание в виртуальной сети с помощью экземпляров контейнеров Azure](./container-instances-vnet.md)
 
@@ -159,7 +159,7 @@ ms.locfileid: "89393434"
 
 * [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-* [Примеры политик Azure для работы в сети](/azure/governance/policy/samples/#network)
+* [Примеры политик Azure для работы в сети](../governance/policy/samples/built-in-policies.md#network)
 
 * [Создание схемы Azure](../governance/blueprints/create-blueprint-portal.md)
 
@@ -498,7 +498,7 @@ ms.locfileid: "89393434"
 
 * [Создание дополнительных подписок Azure](../cost-management-billing/manage/create-subscription.md)
 
-* [Создание групп управления](../governance/management-groups/create.md)
+* [Создание групп управления](../governance/management-groups/create-management-group-portal.md)
 
 * [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
@@ -613,7 +613,7 @@ ms.locfileid: "89393434"
 
 * [Вопросы безопасности для экземпляров контейнеров Azure](./container-instances-image-security.md)
 
-* [Интеграция реестра контейнеров Azure с центром безопасности](../security-center/azure-container-registry-integration.md)
+* [Интеграция реестра контейнеров Azure с центром безопасности](../security-center/defender-for-container-registries-introduction.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -652,7 +652,7 @@ ms.locfileid: "89393434"
 
 * [Вопросы безопасности для экземпляров контейнеров Azure](./container-instances-image-security.md)
 
-* [Интеграция реестра контейнеров Azure с центром безопасности](../security-center/azure-container-registry-integration.md)
+* [Интеграция реестра контейнеров Azure с центром безопасности](../security-center/defender-for-container-registries-introduction.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -664,7 +664,7 @@ ms.locfileid: "89393434"
 
 * [Вопросы безопасности для экземпляров контейнеров Azure](./container-instances-image-security.md)
 
-* [Интеграция реестра контейнеров Azure с центром безопасности](../security-center/azure-container-registry-integration.md)
+* [Интеграция реестра контейнеров Azure с центром безопасности](../security-center/defender-for-container-registries-introduction.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -707,7 +707,7 @@ ms.locfileid: "89393434"
 
 * [Создание дополнительных подписок Azure](../cost-management-billing/manage/create-subscription.md)
 
-* [Создание групп управления](../governance/management-groups/create.md)
+* [Создание групп управления](../governance/management-groups/create-management-group-portal.md)
 
 * [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
@@ -755,7 +755,7 @@ ms.locfileid: "89393434"
 * [Выполнение пользовательских запросов в Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
 
 * [Вопросы безопасности для экземпляров контейнеров Azure](./container-instances-image-security.md)
-* [Интеграция реестра контейнеров Azure с центром безопасности](../security-center/azure-container-registry-integration.md)
+* [Интеграция реестра контейнеров Azure с центром безопасности](../security-center/defender-for-container-registries-introduction.md)
 
 
 
@@ -789,7 +789,7 @@ ms.locfileid: "89393434"
 
 * [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-* [Как отказаться от определенного типа ресурса с помощью Политики Azure](/azure/governance/policy/samples/not-allowed-resource-types)
+* [Как отказаться от определенного типа ресурса с помощью Политики Azure](../governance/policy/samples/index.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -825,7 +825,7 @@ ms.locfileid: "89393434"
 
 * [Создание дополнительных подписок Azure](../cost-management-billing/manage/create-subscription.md)
 
-* [Создание групп управления](../governance/management-groups/create.md)
+* [Создание групп управления](../governance/management-groups/create-management-group-portal.md)
 
 * [Развертывание в виртуальной сети с помощью экземпляров контейнеров Azure](./container-instances-vnet.md)
 
@@ -900,7 +900,7 @@ ms.locfileid: "89393434"
 
 * [Мониторинг и проверка рекомендаций по безопасности для экземпляров контейнеров Azure](./container-instances-image-security.md)
 
-* [Интеграция реестра контейнеров Azure с центром безопасности](../security-center/azure-container-registry-integration.md)
+* [Интеграция реестра контейнеров Azure с центром безопасности](../security-center/defender-for-container-registries-introduction.md)
 * [Сведения об обновлениях базовых образов для задач реестра контейнеров Azure](../container-registry/container-registry-tasks-base-images.md)
 
 
@@ -1105,7 +1105,7 @@ ms.locfileid: "89393434"
 
 **Рекомендации**. Вы можете включить Soft-Delete в Azure Key Vault, чтобы защитить ключи от случайного или вредоносного удаления.
 
-* [Как включить обратимое удаление в Key Vault](../storage/blobs/soft-delete-overview.md?tabs=azure-portal)
+* [Как включить обратимое удаление в Key Vault](../storage/blobs/soft-delete-blob-overview.md?tabs=azure-portal)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 

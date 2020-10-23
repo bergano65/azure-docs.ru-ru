@@ -7,12 +7,12 @@ ms.service: spring-cloud
 ms.topic: tutorial
 ms.date: 07/21/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 979ecf77fe53238dfd377c5fd2baf394de985c2f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f1a6a99285e54338b0020aad63fef2944ce3469d
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90892892"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92088675"
 ---
 # <a name="tutorial-deploy-azure-spring-cloud-in-azure-virtual-network-vnet-injection"></a>Руководство по развертыванию Azure Spring Cloud в виртуальной сети (внедрение виртуальной сети)
 
@@ -27,7 +27,7 @@ ms.locfileid: "90892892"
 * предоставление клиентам возможности контролировать входящие и исходящие сетевые подключения для Azure Spring Cloud.
 
 ## <a name="prerequisites"></a>Предварительные требования
-Необходимо зарегистрировать поставщика ресурсов Azure Spring Cloud `Microsoft.AppPlatform` в соответствии с инструкциями [регистрации поставщика ресурсов на портале Azure](https://docs.microsoft.com/azure/azure-resource-manager/management/resource-providers-and-types#azure-portal) или путем выполнения следующей команды az CLI:
+Необходимо зарегистрировать поставщика ресурсов Azure Spring Cloud `Microsoft.AppPlatform` в соответствии с инструкциями [регистрации поставщика ресурсов на портале Azure](../azure-resource-manager/management/resource-providers-and-types.md#azure-portal) или путем выполнения следующей команды az CLI:
 
 ```azurecli
 az provider register --namespace Microsoft.AppPlatform

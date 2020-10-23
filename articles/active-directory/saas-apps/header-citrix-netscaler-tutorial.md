@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/13/2019
 ms.author: jeedes
-ms.openlocfilehash: 48fedf7f3a73ce7fde60a1df80d971a5d7f88dd7
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 73eb6938f4b43c204ab8bc91217e4828454e222d
+ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88540632"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91944234"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-integration-with-citrix-netscaler-header-based-authentication"></a>Учебник. Интеграция единого входа Azure Active Directory с Citrix NetScaler (проверка подлинности на основе заголовков)
 
@@ -392,7 +392,7 @@ ms.locfileid: "88540632"
 
 1. В области **Load Balancing Virtual Server** (Виртуальный сервер балансировки нагрузки) в разделе **Advanced Settings** (Расширенные параметры) выберите **Policies** (Политики). Все политики, настроенные для экземпляра NetScaler, отображаются в списке.
  
-    ![Конфигурация Citrix NetScaler — панель виртуального сервера балансировки нагрузки](./media/header-citrix-netscaler-tutorial/header05.png)
+    ![Снимок экрана: вкладка настроек с выделенными полями "Name" (Имя), "Action" (Действие) и "Expression" (Выражение) и выбранной кнопкой "Create" (Создать).](./media/header-citrix-netscaler-tutorial/header05.png)
 
     ![Конфигурация Citrix NetScaler — панель виртуального сервера балансировки нагрузки](./media/header-citrix-netscaler-tutorial/header06.png)
 

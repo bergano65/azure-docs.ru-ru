@@ -13,19 +13,19 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/25/2020
 ms.author: memildin
-ms.openlocfilehash: 0b7817539a26b7ebfa24efd086edf8b0ef82eae3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1d91f8242e31aa1efdf9301101307d5bad39a459
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80436009"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92342218"
 ---
 # <a name="faq---questions-about-virtual-machines"></a>Часто задаваемые вопросы о виртуальных машинах
 
 
 ## <a name="what-types-of-virtual-machines-are-supported"></a>Какие типы виртуальных машин поддерживаются?
 
-Наблюдение и рекомендации поддерживаются для виртуальных машин, созданных посредством [классической модели развертывания и модели развертывания с помощью Resource Manager](../azure-classic-rm.md).
+Наблюдение и рекомендации поддерживаются для виртуальных машин, созданных посредством [классической модели развертывания и модели развертывания с помощью Resource Manager](/azure/security-center/./azure-resource-manager/management/deployment-models).
 
 Список поддерживаемых платформ см. в статье [Поддерживаемые платформы в центре безопасности Azure](security-center-os-coverage.md).
 
@@ -51,7 +51,7 @@ ms.locfileid: "80436009"
 Обычно центр безопасности проверяет наличие новых данных каждый час и обновляет рекомендации соответствующим образом. 
 
 > [!NOTE]
-> Центр безопасности использует агент Log Analytics для получения и хранения данных. Дополнительные сведения см. в статье [Миграция платформы центра безопасности Azure](security-center-platform-migration.md).
+> Центр безопасности использует агент Log Analytics для получения и хранения данных. Дополнительные сведения см. в статье [Миграция платформы центра безопасности Azure](./security-center-enable-data-collection.md).
 
 
 ## <a name="why-do-i-get-the-message-vm-agent-is-missing"></a>Почему я получаю сообщение "Агент виртуальной машины отсутствует"?

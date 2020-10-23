@@ -8,12 +8,12 @@ ms.subservice: reservations
 ms.topic: how-to
 ms.date: 07/24/2020
 ms.author: banders
-ms.openlocfilehash: ec91d0997717d536c3b47ce7b276f75b21d1baa1
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: 926e0c8bc0fdff580b4d1e84be5940e0945d52ae
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88681657"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92146284"
 ---
 # <a name="view-azure-reservations"></a>Просмотр резервирований Azure
 
@@ -55,7 +55,7 @@ ms.locfileid: "88681657"
 - [Управление резервированиями для ресурсов Azure](manage-reserved-vm-instance.md).
 - [Общие сведения об использовании резервирования Azure для подписки с оплатой по мере использования](understand-reserved-instance-usage.md)
 - [Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise](understand-reserved-instance-usage-ea.md)
-- [Продажа Microsoft Azure Reserved VM Instances](https://docs.microsoft.com/partner-center/azure-reservations)
+- [Продажа Microsoft Azure Reserved VM Instances](/partner-center/azure-reservations)
 
 ## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами
 

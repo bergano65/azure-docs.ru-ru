@@ -12,12 +12,12 @@ ms.date: 05/19/2020
 ms.author: ryanwi
 ms.reviewer: saeeda, jmprieur
 ms.custom: aaddev, fasttrack-edit
-ms.openlocfilehash: c468ecb390a3ad321f9fe0619204994dfbf3fbb4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d04dd0ec7c6d3166e2170001d6ff341d203c0d6b
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91256762"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92103158"
 ---
 # <a name="application-types-for-microsoft-identity-platform"></a>Типы приложений для платформы удостоверений Microsoft
 
@@ -46,7 +46,7 @@ https://login.microsoftonline.com/common/oauth2/v2.0/token
 
 На приведенной ниже схеме последовательности показан код авторизации OAuth 2,0 (с подробными сведениями о PKCE опущен), где приложение получает код от конечной точки платформы идентификации Майкрософт `authorize` и активирует его для токенов и обновляет маркеры с помощью межсайтовых веб-запросов. Срок действия маркера обновления истекает каждые 24 часа, и приложение должно запросить другой код. В дополнение к маркеру доступа, `id_token` который представляет пользователя, выполнившего вход, в клиентское приложение, как правило, запрашивается в том же потоке и (или) отдельном запросе OpenID Connect Connect (не показано здесь).
 
-![Поток кода для приложений SPA](media/v2-oauth-auth-code-spa/active-directory-oauth-code-spa.png)
+:::image type="content" source="media/v2-oauth-auth-code-spa/active-directory-oauth-code-spa.svg" alt-text="Схема, показывающая поток кода авторизации OAuth 2 между одностраничным приложением и конечной точкой службы маркеров безопасности." border="false":::
 
 Увидеть этот сценарий в действии можно в нашем [учебнике по входу пользователей и вызову API Microsoft Graph из одностраничного приложения JavaScript с помощью потока кода авторизации](tutorial-v2-javascript-auth-code.md).
 

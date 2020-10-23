@@ -4,12 +4,12 @@ description: В этой статье показано, как проверит�
 ms.topic: conceptual
 ms.date: 06/23/2020
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: f0cdf37963e40d871ad1079e9ccd5d0eb61fa2c0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e5d52b82ad6bbcb8dc7c028d3eba25a584590840
+ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91270106"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92332439"
 ---
 # <a name="authenticate-access-to-event-hubs-resources-using-shared-access-signatures-sas"></a>Проверка подлинности доступа к ресурсам концентраторов событий с помощью подписанных URL-адресов (SAS)
 Подписанный URL-адрес (SAS) обеспечивает детальный контроль над типом предоставляемого доступа для клиентов, имеющих подписанный общий доступ. Ниже приведены некоторые элементы управления, которые можно задать в SAS: 
@@ -222,7 +222,7 @@ private static string createToken(string resourceUri, string keyName, string key
 См. следующие статьи:
 
 - [Авторизация с помощью SAS](authenticate-shared-access-signature.md)
-- [Авторизация с помощью управления доступом на основе ролей (RBAC)](authenticate-shared-access-signature.md)
+- [Авторизация с помощью управления доступом на основе ролей Azure (Azure RBAC)](authenticate-shared-access-signature.md)
 - [Дополнительные сведения о концентраторах событий](event-hubs-about.md)
 
 См. следующие статьи:

@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 04/20/2020
-ms.openlocfilehash: 058300dca3e7eae41b7d8010e1ca5ee7d4cdcf3a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 23811f379f8738e3fe9f162e23627d0c3c457621
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82598476"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92367505"
 ---
 # <a name="migrate-to-granular-role-based-access-for-cluster-configurations"></a>Переход на детализированный доступ на основе ролей для конфигураций кластера
 
@@ -20,7 +20,7 @@ ms.locfileid: "82598476"
 
 ## <a name="what-is-changing"></a>Что изменяется?
 
-Ранее секретные данные можно было получить через API HDInsight для пользователей кластера, имеющих роли "владелец", "участник" или "читатель" ( [RBAC](https://docs.microsoft.com/azure/role-based-access-control/rbac-and-directory-admin-roles)), так как они были доступны любому пользователю с `*/read` разрешением. Секреты определяются как значения, которые можно использовать для получения более повышения уровня доступа, чем разрешено для роли пользователя. К ним относятся такие значения, как учетные данные HTTP для шлюза кластера, ключи учетной записи хранения и учетные данные базы данных.
+Ранее секреты можно было получить через API HDInsight, используя для этого пользователи кластера, обладающие [ролями](https://docs.microsoft.com/azure/role-based-access-control/rbac-and-directory-admin-roles)владельца, участника или читателя, так как они были доступны любому пользователю с `*/read` разрешением. Секреты определяются как значения, которые можно использовать для получения более повышения уровня доступа, чем разрешено для роли пользователя. К ним относятся такие значения, как учетные данные HTTP для шлюза кластера, ключи учетной записи хранения и учетные данные базы данных.
 
 Начиная с 3 сентября 2019, доступ к этим секретам потребует `Microsoft.HDInsight/clusters/configurations/action` разрешения, то есть пользователи с ролью читателя больше не могут получить к ним доступ. Роли, имеющие это разрешение, — участник, владелец и новая роль оператора кластера HDInsight (подробнее см. ниже).
 
@@ -136,12 +136,12 @@ ms.locfileid: "82598476"
 
 ### <a name="sdk-for-go"></a>Пакет SDK для Go
 
-Обновление до [версии 27.1.0](https://github.com/Azure/azure-sdk-for-go/tree/master/services/preview/hdinsight/mgmt/2018-06-01-preview/hdinsight) или более поздней версии пакета SDK HDInsight для Go. При использовании метода, затрагиваемого этими изменениями, могут потребоваться минимальные изменения в коде:
+Обновление до [версии 27.1.0](https://github.com/Azure/azure-sdk-for-go/tree/master/services/preview/hdinsight/mgmt/2015-03-01-preview/hdinsight) или более поздней версии пакета SDK HDInsight для Go. При использовании метода, затрагиваемого этими изменениями, могут потребоваться минимальные изменения в коде:
 
-- [`ConfigurationsClient.get`](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/preview/hdinsight/mgmt/2018-06-01-preview/hdinsight#ConfigurationsClient.Get)**больше не будет возвращать конфиденциальные параметры** , такие как ключи хранилища (основной сайт) или учетные данные HTTP (шлюз).
-    - Для получения всех конфигураций, включая конфиденциальные параметры, используйте [`ConfigurationsClient.list`](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/preview/hdinsight/mgmt/2018-06-01-preview/hdinsight#ConfigurationsClient.List) Переход вперед.Обратите внимание, что пользователи с ролью "читатель" не смогут использовать этот метод. Это позволяет детально контролировать, какие пользователи могут получать доступ к конфиденциальной информации для кластера. 
-    - Чтобы получить только учетные данные шлюза HTTP, используйте [`ClustersClient.get_gateway_settings`](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/preview/hdinsight/mgmt/2018-06-01-preview/hdinsight#ClustersClient.GetGatewaySettings) .
-- [`ConfigurationsClient.update`](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/preview/hdinsight/mgmt/2018-06-01-preview/hdinsight#ConfigurationsClient.Update) теперь является нерекомендуемым и заменено на [`ClustersClient.update_gateway_settings`](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/preview/hdinsight/mgmt/2018-06-01-preview/hdinsight#ClustersClient.UpdateGatewaySettings) .
+- [`ConfigurationsClient.get`](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/preview/hdinsight/mgmt/2015-03-01-preview/hdinsight#ConfigurationsClient.Get)**больше не будет возвращать конфиденциальные параметры** , такие как ключи хранилища (основной сайт) или учетные данные HTTP (шлюз).
+    - Для получения всех конфигураций, включая конфиденциальные параметры, используйте [`ConfigurationsClient.list`](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/preview/hdinsight/mgmt/2015-03-01-preview/hdinsight#ConfigurationsClient.List) Переход вперед.Обратите внимание, что пользователи с ролью "читатель" не смогут использовать этот метод. Это позволяет детально контролировать, какие пользователи могут получать доступ к конфиденциальной информации для кластера. 
+    - Чтобы получить только учетные данные шлюза HTTP, используйте [`ClustersClient.get_gateway_settings`](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/preview/hdinsight/mgmt/2015-03-01-preview/hdinsight#ClustersClient.GetGatewaySettings) .
+- [`ConfigurationsClient.update`](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/preview/hdinsight/mgmt/2015-03-01-preview/hdinsight#ConfigurationsClient.Update) теперь является нерекомендуемым и заменено на [`ClustersClient.update_gateway_settings`](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/preview/hdinsight/mgmt/2015-03-01-preview/hdinsight#ClustersClient.UpdateGatewaySettings) .
 
 ### <a name="azhdinsight-powershell"></a>AZ. HDInsight PowerShell
 Обновите команду [AZ PowerShell версии 2.0.0](https://www.powershellgallery.com/packages/Az) или более поздней, чтобы избежать перерывов.  При использовании метода, затрагиваемого этими изменениями, могут потребоваться минимальные изменения в коде.
@@ -183,7 +183,7 @@ az role assignment create --role "HDInsight Cluster Operator" --assignee user@do
 
 ### <a name="using-the-azure-portal"></a>Использование портала Azure
 
-Можно также использовать портал Azure для добавления назначения роли оператора кластера HDInsight пользователю. См. документацию, [Управление доступом к ресурсам Azure с помощью RBAC и портал Azure — Добавление назначения ролей](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal#add-a-role-assignment).
+Можно также использовать портал Azure для добавления назначения роли оператора кластера HDInsight пользователю. См. документацию, [Добавление или удаление назначений ролей Azure с помощью портал Azure — Добавление назначения роли](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal#add-a-role-assignment).
 
 ## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
 

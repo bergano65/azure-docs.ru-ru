@@ -1,20 +1,17 @@
 ---
-title: Сценарий PowerShell. Мониторинг использования общей папки данных Azure | Документация Майкрософт
+title: Сценарий PowerShell. Мониторинг использования общей папки данных Azure
 description: Этот сценарий PowerShell получает метрики использования отправленной общей папки данных.
-services: data-share
 author: joannapea
 ms.service: data-share
-ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 07/07/2019
 ms.author: joanpo
-ms.openlocfilehash: 0a4084d309dd0160970f1c03540705b310eb8e75
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e9ff7a29cba9b8e9ca058bfe742f484c5b495cd7
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "70307206"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92221321"
 ---
 # <a name="use-powershell-to-monitor-the-usage-of-a-sent-data-share"></a>Использование PowerShell для отслеживания использования отправленных общих ресурсов данных
 
@@ -44,12 +41,12 @@ Get-AzDataShareSynchronizationDetails -ResourceGroupName $resourceGroupName -Acc
 
 | Get-Help | Примечания |
 |---|---|
-| [Get-Аздаташаресинчронизатион](/powershell/module/az.datashare/get-azdatasharesynchronization?view=azps-2.6.0) | Вывод списка синхронизаций в общей папке. |
-| [Get-Аздаташаресинчронизатиондетаилс](/powershell/module/az.datashare/get-azdatasharesynchronizationdetail?view=azps-2.6.0) | Возвращает сведения о синхронизации общей папки. |
+| [Get-Аздаташаресинчронизатион](/powershell/module/az.datashare/get-azdatasharesynchronization) | Вывод списка синхронизаций в общей папке. |
+| [Get-Аздаташаресинчронизатиондетаилс](/powershell/module/az.datashare/get-azdatasharesynchronizationdetail) | Возвращает сведения о синхронизации общей папки. |
 |||
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о Azure PowerShell см. в [документации по Azure PowerShell](https://docs.microsoft.com/powershell/).
+Дополнительные сведения о Azure PowerShell см. в [документации по Azure PowerShell](/powershell/).
 
 Дополнительные примеры сценариев PowerShell для общего ресурса Azure Data Share можно найти в [примерах PowerShell для общего доступа к данным Azure](../../samples-powershell.md).

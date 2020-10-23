@@ -7,12 +7,12 @@ ms.service: firewall
 ms.topic: how-to
 ms.date: 09/11/2020
 ms.author: victorh
-ms.openlocfilehash: 5acbc1f3b8c5519c22105f05219ab2cef5c15892
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2d4ed76e849385c4edecb7bd97d58087c8e5b4b3
+ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90023879"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92132794"
 ---
 # <a name="azure-monitor-logs-for-azure-firewall"></a>Журналы Azure Monitor для брандмауэра Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "90023879"
 2. Откройте **Конструктор представлений** под разделом **Общие**.
 3. Щелкните **Импорт**.
 4. Найдите и выберите файл **AzureFirewall.omsview**, который вы скачали ранее.
-5. Выберите команду **Сохранить**.
+5. Нажмите кнопку **Сохранить**.
 
 Вот как выглядит представление данных из журнала правил приложений:
 
@@ -170,11 +170,11 @@ AzureDiagnostics
 
 В следующих примерах журнала показаны данные, содержащиеся в записи журнала.
 
-![запись журнала One](media/log-analytics-samples/log1.png)
+:::image type="content" source="media/log-analytics-samples/log1.png" alt-text="Снимок экрана записи журнала. Отображается несколько значений, например метка времени, протокол, номер порта, действие, коллекция правил и правило." border="false":::
 
-![запись журнала 2 ](media/log-analytics-samples/log2.png)
+:::image type="content" source="media/log-analytics-samples/log2.png" alt-text="Снимок экрана записи журнала. Отображается несколько значений, например метка времени, протокол, номер порта, действие, коллекция правил и правило." border="false":::
 
-![запись журнала 3](media/log-analytics-samples/log3.png)
-## <a name="next-steps"></a>Дальнейшие шаги
+:::image type="content" source="media/log-analytics-samples/log3.png" alt-text="Снимок экрана записи журнала. Отображается несколько значений, например метка времени, протокол, номер порта, действие, коллекция правил и правило." border="false":::
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в [руководстве по мониторингу журналов и метрик Брандмауэра Azure](tutorial-diagnostics.md).

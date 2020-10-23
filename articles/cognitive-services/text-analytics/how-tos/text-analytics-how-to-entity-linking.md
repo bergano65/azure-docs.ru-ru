@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: article
-ms.date: 10/09/2020
+ms.date: 10/16/2020
 ms.author: aahi
-ms.openlocfilehash: f37828d5561ef382f572c1fdd4917a71f8a00407
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
+ms.openlocfilehash: 94f863bd4f016ed1117fa236323b43515fd53797
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91930175"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92165614"
 ---
 # <a name="how-to-use-named-entity-recognition-in-text-analytics"></a>Как использовать распознавание именованных сущностей в Анализ текста
 
@@ -43,7 +43,7 @@ API анализа текста позволяет получить нестру
 
 Дополнительные сведения см. в разделе [Поддержка языков](../language-support.md) .
 
-### <a name="entity-types"></a>Типы сущностей
+## <a name="entity-types"></a>Типы сущностей
 
 Распознавание именованных сущностей v3 обеспечивает Расширенное обнаружение для нескольких типов. В настоящее время NER v 3.0 может распознавать сущности в [категории общих сущностей](../named-entity-types.md).
 
@@ -299,7 +299,7 @@ API Анализа текста не учитывает состояние. Ни
 * Запросы POST отправляются на одну или несколько конечных точек, используя персонализированный [ключ доступа и конечную точку](../../cognitive-services-apis-create-account.md#get-the-keys-for-your-resource) , допустимую для вашей подписки.
 * Ответ будет содержать выходные данные, содержащие связанные сущности (включая оценки уверенности, смещения и веб-ссылки для каждого идентификатора документа), которые можно использовать в любом приложении
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Text Analytics overview](../overview.md) (Общие сведения об анализе текста)
 * [Использование клиентской библиотеки Анализа текста](../quickstarts/text-analytics-sdk.md)

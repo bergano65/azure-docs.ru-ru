@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 09/10/2020
 ms.author: jeedes
-ms.openlocfilehash: e75369a82ccedb50e542dd43db9639ea4cba5c6d
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 8f2603ce055d18e1ad7e202e0c662e042a1d1d48
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91304699"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91996113"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-palo-alto-networks---aperture"></a>Руководство по интеграции Azure Active Directory с Palo Alto Networks - Aperture
 
@@ -69,7 +69,7 @@ ms.locfileid: "91304699"
 
 Выполните следующие действия, чтобы включить единый вход Azure AD на портале Azure.
 
-1. На портале Azure на странице интеграции с приложением **Salesforce** найдите раздел **Управление** и выберите **Единый вход**.
+1. На портале Azure на странице интеграции с приложением **Palo Alto Networks — Aperture** найдите раздел **Управление** и щелкните **Единый вход**.
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
@@ -77,7 +77,7 @@ ms.locfileid: "91304699"
 
 4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа для приложения Palo Alto Networks — Aperture для поставщика удостоверений](common/idp-intiated.png)
+    ![Снимок экрана: раздел "Базовая конфигурация SAML" с выбранными полями "Идентификатор", "URL-адрес ответа" и кнопкой "Сохранить".](common/idp-intiated.png)
 
     а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<subdomain>.aperture.paloaltonetworks.com/d/users/saml/metadata`.
 

@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 07/11/2017
 ms.author: kenwith
 ms.reviewer: japere,asteen
-ms.openlocfilehash: 0cd20d7a11bcffe9937537e3681199757a52bee5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d99f0021ee53e972dacfdadb3e488498a3fc4ad0
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89181720"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92372469"
 ---
 # <a name="how-to-use-self-service-application-access"></a>Использование самостоятельного доступа к приложениям
 
@@ -66,5 +66,5 @@ ms.locfileid: "89181720"
 -   Убедитесь, что пользователь использует правильный ресурс для самостоятельного доступа к приложению. Пользователи могут перейти к странице [Мои приложения](https://myapps.microsoft.com/) и нажать кнопку **+ Добавить** , чтобы найти приложения, к которым вы включили самостоятельный доступ.
 -   Если вы недавно настроили самостоятельный доступ к приложениям, попробуйте снова войти в мои приложения пользователя через несколько минут, чтобы увидеть, появились ли изменения в доступе к самообслуживанию.
 
-## <a name="next-steps"></a>Дальнейшие действия
-[Настройка Azure Active Directory для самостоятельного управления группами](../users-groups-roles/groups-self-service-management.md)
+## <a name="next-steps"></a>Дальнейшие шаги
+[Настройка Azure Active Directory для самостоятельного управления группами](../enterprise-users/groups-self-service-management.md)

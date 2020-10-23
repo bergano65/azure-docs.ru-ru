@@ -9,12 +9,12 @@ author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto
 ms.date: 08/17/2020
-ms.openlocfilehash: d8268ebf89bed6b67919e77576118343b58edb6c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 57d24c824782bdc6530b78450fc55a879a511ddc
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88516628"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92367692"
 ---
 # <a name="azure-active-directory-service-principal-with-azure-sql"></a>Субъект-служба Azure Active Directory с SQL Azure
 
@@ -74,12 +74,12 @@ ms.locfileid: "88516628"
     > [!NOTE]
     > Удостоверение сервера можно также назначить с помощью команд интерфейса командной строки. Дополнительные сведения см. в разделе [AZ SQL Server Create](https://docs.microsoft.com/cli/azure/sql/server?view=azure-cli-latest#az-sql-server-create) и [AZ SQL Server Update](https://docs.microsoft.com/cli/azure/sql/server?view=azure-cli-latest#az-sql-server-update).
 
-2. Предоставьте службе " [**читатели каталога**](../../active-directory/users-groups-roles/directory-assign-admin-roles.md#directory-readers) Azure AD" разрешение на доступ к удостоверению сервера, созданному или назначенному серверу.
+2. Предоставьте службе " [**читатели каталога**](../../active-directory/roles/permissions-reference.md#directory-readers) Azure AD" разрешение на доступ к удостоверению сервера, созданному или назначенному серверу.
     - Чтобы предоставить это разрешение, следуйте описанию, используемому для SQL Управляемый экземпляр, которое доступно в следующей статье: [предоставление администратора Azure AD (SQL управляемый экземпляр)](authentication-aad-configure.md?tabs=azure-powershell#provision-azure-ad-admin-sql-managed-instance)
     - Пользователь Azure AD, предоставляющий это разрешение, должен входить в роль администратора **глобального администратора** Azure AD или **привилегированных ролей** .
 
 > [!IMPORTANT]
-> Шаги 1 и 2 должны выполняться в указанном порядке. Сначала создайте или назначьте удостоверение сервера, а затем предоставьте разрешение на [**чтение каталога**](../../active-directory/users-groups-roles/directory-assign-admin-roles.md#directory-readers) . Пропуск одного из этих шагов или и того и другого приведет к ошибке выполнения во время создания объекта Azure AD в Azure SQL от имени приложения Azure AD. Пошаговые инструкции по созданию пользователя Azure AD от имени приложения Azure AD см. в статье [учебник. Создание пользователей Azure AD с помощью приложений Azure AD](authentication-aad-service-principal-tutorial.md).
+> Шаги 1 и 2 должны выполняться в указанном порядке. Сначала создайте или назначьте удостоверение сервера, а затем предоставьте разрешение на [**чтение каталога**](../../active-directory/roles/permissions-reference.md#directory-readers) . Пропуск одного из этих шагов или и того и другого приведет к ошибке выполнения во время создания объекта Azure AD в Azure SQL от имени приложения Azure AD. Пошаговые инструкции по созданию пользователя Azure AD от имени приложения Azure AD см. в статье [учебник. Создание пользователей Azure AD с помощью приложений Azure AD](authentication-aad-service-principal-tutorial.md).
 >
 > В **общедоступной предварительной версии**роль " **читатели каталога** " можно назначить группе в Azure AD. Владельцы групп могут добавить управляемое удостоверение в качестве члена этой группы, что позволит пользователям без прав администратора **глобального администратора** или **привилегированных ролей** предоставить роль **читателей каталога** . Дополнительные сведения об этой функции см. в статье [Роль "Читатели каталогов" в Azure Active Directory для Azure SQL](authentication-aad-directory-readers-role.md).
 

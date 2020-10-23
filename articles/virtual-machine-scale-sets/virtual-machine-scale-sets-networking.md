@@ -9,12 +9,12 @@ ms.subservice: networking
 ms.date: 06/25/2020
 ms.reviewer: mimckitt
 ms.custom: mimckitt
-ms.openlocfilehash: 91157f625b328dfc03927cf0036aea1b6040cdbf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c93f8e50b0437f9ac1569b8abe19bd0b5174ea8d
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88783728"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92363969"
 ---
 # <a name="networking-for-azure-virtual-machine-scale-sets"></a>Сеть для масштабируемых наборов виртуальных машин Azure
 
@@ -43,7 +43,7 @@ ms.locfileid: "88783728"
 ```
 
 ## <a name="azure-virtual-machine-scale-sets-with-azure-load-balancer"></a>Масштабируемые наборы виртуальных машин Azure с Azure Load Balancer
-Дополнительные сведения о настройке Load Balancer (цен. категория "Стандартный") с помощью масштабируемых наборов виртуальных машин на основе вашего сценария см. в разделе [Azure Load Balancer и масштабируемые наборы виртуальных машин](https://docs.microsoft.com/azure/load-balancer/load-balancer-standard-virtual-machine-scale-sets) .
+Дополнительные сведения о настройке Load Balancer (цен. категория "Стандартный") с помощью масштабируемых наборов виртуальных машин на основе вашего сценария см. в разделе [Azure Load Balancer и масштабируемые наборы виртуальных машин](../load-balancer/load-balancer-standard-virtual-machine-scale-sets.md) .
 
 ## <a name="create-a-scale-set-that-references-an-application-gateway"></a>Создание масштабируемого набора, который ссылается на шлюз приложений
 Чтобы создать масштабируемый набор, который использует шлюз приложений, создайте ссылку на серверный пул адресов шлюза приложений в разделе ipConfigurations в масштабируемом наборе, как в этой конфигурации шаблона ARM:
@@ -299,7 +299,7 @@ GET https://management.azure.com/subscriptions/{your sub ID}/resourceGroups/{RG 
 ```
 
 ## <a name="nsg--asgs-per-scale-set"></a>Группа безопасности сети и группы безопасности приложений на масштабируемый набор
-[Группы безопасности сети](../virtual-network/security-overview.md) позволяют отфильтровать входящий и исходящий трафик ресурсов Azure в виртуальной сети Azure с помощью правил безопасности. [Группы безопасности приложений](../virtual-network/security-overview.md#application-security-groups) позволяют обеспечить сетевую безопасность ресурсов Azure и сгруппировать их как расширение в структуре приложения.
+[Группы безопасности сети](../virtual-network/network-security-groups-overview.md) позволяют отфильтровать входящий и исходящий трафик ресурсов Azure в виртуальной сети Azure с помощью правил безопасности. [Группы безопасности приложений](../virtual-network/network-security-groups-overview.md#application-security-groups) позволяют обеспечить сетевую безопасность ресурсов Azure и сгруппировать их как расширение в структуре приложения.
 
 Группы безопасности сети можно применить непосредственно к масштабируемому набору, добавив ссылку в раздел конфигурации сетевого интерфейса свойств виртуальной машины в масштабируемом наборе.
 
@@ -384,5 +384,5 @@ az vmss show \
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о виртуальных сетях Azure см. в [этой статье](../virtual-network/virtual-networks-overview.md).

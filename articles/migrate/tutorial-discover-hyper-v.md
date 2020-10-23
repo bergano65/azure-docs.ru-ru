@@ -4,12 +4,12 @@ description: Узнайте, как обнаружить локальные ви
 ms.topic: tutorial
 ms.date: 09/14/2020
 ms.custom: mvc
-ms.openlocfilehash: e62effc31ab5dbc687e0509617b89561c5f2a3b6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0643a13a07572dc24ef895062593e00188a0752f
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91442330"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92317156"
 ---
 # <a name="tutorial-discover-hyper-v-vms-with-server-assessment"></a>Руководство по обнаружению виртуальных машин Hyper-V с помощью средства оценки серверов
 
@@ -204,7 +204,7 @@ ms.locfileid: "91442330"
    
    Вход с помощью PIN-кода не поддерживается.
 3. После входа вернитесь к веб-приложению. 
-4. Если учетная запись пользователя Azure, используемая для ведения журнала, имеет необходимые [разрешения](tutorial-prepare-hyper-v.md#prepare-azure) на ресурсы Azure, созданные во время создания ключа, будет инициирована регистрация модуля.
+4. Если учетная запись пользователя Azure, используемая для ведения журнала, имеет необходимые разрешения на ресурсы Azure, созданные во время создания ключа, будет инициирована регистрация модуля.
 1. После регистрации модуля вы можете просмотреть сведения о регистрации, щелкнув **Просмотреть подробности**.
 
 

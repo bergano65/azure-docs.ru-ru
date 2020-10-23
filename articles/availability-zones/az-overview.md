@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 08/27/2020
 ms.author: cynthn
 ms.custom: fasttrack-edit, mvc
-ms.openlocfilehash: 5178bf6955203c6a5625b941dd0102f2f4458abc
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 771635baa3c49c07d0d796cf6ef3be7b870de3e1
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92078380"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92425442"
 ---
 # <a name="regions-and-availability-zones-in-azure"></a>Регионы и зоны доступности в Azure
 
@@ -78,7 +78,7 @@ ms.locfileid: "92078380"
 
 | Тип области | Не региональный | Основное | Основной | Специализированный | Зоны доступности | Местонахождение данных |
 | --- | --- | --- | --- | --- | --- | --- |
-| Рекомендуемая | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | На основе спроса | :heavy_check_mark: | :heavy_check_mark: |
+| Рекомендуется | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | На основе спроса | :heavy_check_mark: | :heavy_check_mark: |
 | Альтернативный | :heavy_check_mark: | :heavy_check_mark: | На основе спроса | На основе спроса | Н/Д | :heavy_check_mark: |
 
 ### <a name="services-by-category"></a>Службы по категориям
@@ -92,9 +92,9 @@ ms.locfileid: "92078380"
 > | Основное | Основной | Специализированный |
 > | --- | --- | --- |
 > | Хранилище учетных записей | Управление API | Azure API для FHIR |
-> | Шлюз приложений | Конфигурация приложений | Azure Analysis Services |
+> | Шлюз приложений | Конфигурация приложений | Службы Azure Analysis Services |
 > | Azure Backup | Служба приложений | Служба Блокчейн Azure |
-> | Azure Cosmos DB | Служба автоматизации | Azure Blueprints |
+> | Azure Cosmos DB | Автоматизация | Azure Blueprints |
 > | Azure Data Lake Storage 2-го поколения | Доменные службы Azure Active Directory | База данных Azure для MariaDB |
 > | Azure ExpressRoute | Бастион Azure | Выделенное устройство HSM Azure |
 > | База данных SQL Azure | Кэш Redis для Azure | Azure Dev Spaces |
@@ -109,7 +109,7 @@ ms.locfileid: "92078380"
 > | Центры событий | Azure DevTest Labs | Облачные службы: Серия H |
 > | Key Vault | Брандмауэр Azure | Cognitive Services: Пользовательское визуальное распознавание |
 > | Подсистема балансировки нагрузки | Диспетчер брандмауэра Azure | Cognitive Services: Распознавание говорящего |
-> | Cлужебная шина | Функции Azure | Data Box Heavy |
+> | Служебная шина | Функции Azure | Data Box Heavy |
 > | Service Fabric | Azure HPC Cache | Каталог данных |
 > | Масштабируемые наборы виртуальных машин | Центр Интернета вещей Azure | Фабрика данных: фабрика данных v1 |
 > | Виртуальные машины | Служба Azure Kubernetes (AKS) | Data Lake Analytics |
@@ -123,7 +123,7 @@ ms.locfileid: "92078380"
 > | Виртуальные машины: Ev3-Series | Azure Synapse Analytics | Виртуальные машины: DAv4-Series |
 > | Виртуальные машины: серии F | Пакетная служба | Виртуальные машины: серия DCsv2 |
 > | Виртуальные машины: FS-Series | Облачные службы: серия M | Виртуальные машины: EASv4-Series |
-> | Виртуальные машины: IP-адреса уровня экземпляра | Службы Cognitive Services | Виртуальные машины: EAv4-Series |
+> | Виртуальные машины: IP-адреса уровня экземпляра | Cognitive Services | Виртуальные машины: EAv4-Series |
 > | Виртуальные машины: зарезервированный IP-адрес | Cognitive Services: Компьютерное зрение | Виртуальные машины: серия G |
 > | Виртуальная сеть | Cognitive Services: Content Moderator | Виртуальные машины: GS-Series |
 > | VPN-шлюз | Cognitive Services: лицо | Виртуальные машины: HBv1-Series |
@@ -134,7 +134,7 @@ ms.locfileid: "92078380"
 > |  | Экземпляры контейнеров | Виртуальные машины: LSv2-Series |
 > |  | Реестр контейнеров | Виртуальные машины: Mv2-Series |
 > |  | Фабрика данных | Виртуальные машины: NC-Series |
-> |  | Сетка событий | Виртуальные машины: NCv2-Series |
+> |  | Сетка событий Azure | Виртуальные машины: NCv2-Series |
 > |  | HDInsight | Виртуальные машины: NCv3-Series |
 > |  | Logic Apps | Виртуальные машины: NDs-Series |
 > |  | Службы мультимедиа | Виртуальные машины: NDv2-Series |
@@ -170,10 +170,10 @@ ms.locfileid: "92078380"
 - [Создание виртуальной машины](../virtual-machines/windows/create-portal-availability-zone.md)
 - [Добавление управляемого диска с помощью PowerShell](../virtual-machines/windows/attach-disk-ps.md#add-an-empty-data-disk-to-a-virtual-machine)
 - [Создание избыточного между зонами масштабируемого набора виртуальных машин](../virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones.md)
-- [Распределение нагрузки виртуальных машин по зонам с помощью службы Load Balancer уровня "Стандартный" с избыточным между зонами внешним интерфейсом](../load-balancer/quickstart-load-balancer-standard-public-cli.md).
-- [Распределение нагрузки виртуальных машин в пределах зоны с помощью Load Balancer уровня "Стандартный" с зональным внешним интерфейсом](../load-balancer/quickstart-load-balancer-standard-public-cli.md).
-- [Хранилище, избыточное между зонами](../storage/common/storage-redundancy.md)
-- [База данных SQL](../azure-sql/database/high-availability-sla.md#zone-redundant-configuration)
+- [Распределение нагрузки виртуальных машин по зонам с помощью службы Load Balancer уровня "Стандартный" с избыточным между зонами внешним интерфейсом](../load-balancer/load-balancer-standard-public-zone-redundant-cli.md).
+- [Распределение нагрузки виртуальных машин в пределах зоны с помощью Load Balancer уровня "Стандартный" с зональным внешним интерфейсом](../load-balancer/load-balancer-standard-public-zonal-cli.md).
+- [Хранилище, избыточное между зонами](../storage/common/storage-redundancy-zrs.md)
+- [Уровень общего назначения базы данных SQL](../azure-sql/database/high-availability-sla.md#general-purpose-service-tier-zone-redundant-availability-preview)
 - [Географическое аварийное восстановление в Центрах событий](../event-hubs/event-hubs-geo-dr.md#availability-zones)
 - [Географическое аварийное восстановление в служебной шине](../service-bus-messaging/service-bus-geo-dr.md#availability-zones)
 - [Создание шлюза виртуальной сети, избыточного между зонами](../vpn-gateway/create-zone-redundant-vnet-gateway.md)

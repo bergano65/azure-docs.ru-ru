@@ -9,12 +9,12 @@ ms.author: vinsonyu
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: f687923f1185d848c2c4f2f40d949c71a7743d65
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6e2443014f6788504a11784945078187a5a72de4
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90940631"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92311123"
 ---
 # <a name="configure-azure-arc-enabled-sql-managed-instance"></a>Настройка управляемого экземпляра SQL с поддержкой ARC в Azure
 
@@ -22,11 +22,11 @@ ms.locfileid: "90940631"
 
 [!INCLUDE [azure-arc-data-preview](../../../includes/azure-arc-data-preview.md)]
 
-## <a name="configure-resources-for-azure-arc-enabled-sql-managed-instance"></a>Настройка ресурсов для SQL Управляемый экземпляр с поддержкой дуги Azure
+## <a name="configure-resources"></a>Настройка ресурсов
 
-### <a name="configure-using-azdata"></a>Настройка с помощью аздата
+### <a name="configure-using-azure-data-cli-azdata"></a>Настройка с помощью [!INCLUDE [azure-data-cli-azdata](../../../includes/azure-data-cli-azdata.md)]
 
-Вы можете изменить конфигурацию управляемых экземпляров SQL для службы "Дуга Azure" с помощью `azdata` интерфейса командной строки. Выполните следующую команду, чтобы просмотреть параметры конфигурации. 
+Вы можете изменить конфигурацию управляемых экземпляров SQL, включенных в службу "Дуга Azure", с помощью [!INCLUDE [azure-data-cli-azdata](../../../includes/azure-data-cli-azdata.md)] . Выполните следующую команду, чтобы просмотреть параметры конфигурации. 
 
 ```
 azdata arc sql mi edit --help

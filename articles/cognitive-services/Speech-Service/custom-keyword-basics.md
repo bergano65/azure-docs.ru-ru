@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 10/02/2020
 ms.author: trbye
 ms.custom: devx-track-csharp
-ms.openlocfilehash: f2f333cd01057ff5f6f904924880f88b0685c72f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2ed5c554e6307b08c412de16d1bb92b458c5f15f
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91667699"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92166460"
 ---
 # <a name="get-started-with-custom-keyword"></a>Начало работы с Пользовательскими ключевыми словами
 
@@ -54,7 +54,7 @@ ms.locfileid: "91667699"
 
 1. На портале создаются произношение кандидата для ключевого слова. Прослушивать каждый кандидат, нажимая кнопки воспроизведения и удаляя проверки рядом со всеми неправильными произношениями. Если проверяются только хорошие произношение, нажмите кнопку **обучение** , чтобы начать создание модели ключевых слов. 
 
-    ![Проверка ключевого слова](media/custom-keyword/custom-kws-portal-choose-prons.png)
+    ![Снимок экрана, на котором показано, где вы выбираете правильный пронаунЦиатионс.](media/custom-keyword/custom-kws-portal-choose-prons.png)
 
 1. Создание модели может занять до тридцати минут. После завершения работы с моделью список ключевых слов будет изменен с " **Обработка** выполнена" на " **выполнено** ". Затем можно скачать файл.
 
@@ -84,6 +84,6 @@ KeywordRecognitionResult result = await keywordRecognizer.RecognizeOnceAsync(key
 > [!NOTE]
 > В приведенном здесь примере используется распознавание локального ключевого слова, так как `SpeechConfig` для контекста проверки подлинности не требуется объект и не выполняется обращение к серверной части. Тем не менее можно выполнить как распознавание ключевых слов, так и проверку [с помощью непрерывного подключения к внутреннему серверной](https://docs.microsoft.com/azure/cognitive-services/speech-service/tutorial-voice-enable-your-bot-speech-sdk#view-the-source-code-that-enables-keyword)части.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Протестируйте пользовательское ключевое слово в [кратком руководстве по пакету SDK для речевых устройств](https://aka.ms/sdsdk-quickstart).

@@ -6,12 +6,12 @@ ms.author: kirillg
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 06/04/2020
-ms.openlocfilehash: 87112af870100859ae008f77eefc4b58eac1b0fb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b9d645a16a59e34d1915cf9febde6b1f8a789355
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91570732"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92282100"
 ---
 # <a name="create-azure-cosmos-containers-and-databases-with-autoscale-throughput"></a>Создание контейнеров и баз данных Azure Cosmos с автомасштабируемой пропускной способностью
 
@@ -85,6 +85,6 @@ Azure Cosmos DB дает возможность настроить подгот
 * Изучите [часто задаваемые вопросы об автомасштабировании](autoscale-faq.md).
 * Узнайте, как [выбрать автомасштабируемую или масштабируемую вручную пропускную способность](how-to-choose-offer.md).
 * Узнайте, как [подготовить автомасштабируемую пропускную способность для базы данных или контейнера Azure Cosmos](how-to-provision-autoscale-throughput.md).
-* Дополнительные сведения о [секционировании](partition-data.md) в Azure Cosmos DB.
+* Дополнительные сведения о [секционировании](partitioning-overview.md) в Azure Cosmos DB.
 
 

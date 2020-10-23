@@ -7,12 +7,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 12/09/2019
 ms.author: robinsh
-ms.openlocfilehash: c54853717f7e0b234df013e5aee575682d0d3d97
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 370ea2f16632ae18142f0770742e5a52d3cabae0
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75429153"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92151664"
 ---
 # <a name="how-to-clone-an-azure-iot-hub-to-another-region"></a>Клонирование центра Интернета вещей Azure в другой регион
 
@@ -385,7 +385,7 @@ ms.locfileid: "75429153"
 
 Теперь, когда клонирование выполняется, необходимо скопировать все устройства из исходного концентратора в клон. 
 
-Это можно сделать несколькими способами. Вы изначально использовали [службу подготовки устройств (DPS)](/azure/iot-dps/about-iot-dps)для подготовки устройств, или это не так. Если вы сделали это, это не сложно. Если это не так, это может быть очень сложно. 
+Это можно сделать несколькими способами. Вы изначально использовали [службу подготовки устройств (DPS)](../iot-dps/about-iot-dps.md)для подготовки устройств, или это не так. Если вы сделали это, это не сложно. Если это не так, это может быть очень сложно. 
 
 Если вы не использовали службу DPS для подготовки устройств, можно пропустить следующий раздел и начать с [использования функции импорта и экспорта для перемещения устройств в новый центр](#using-import-export-to-move-the-devices-to-the-new-hub).
 
@@ -601,4 +601,4 @@ ms.locfileid: "75429153"
 
 * [Общие сведения об управлении устройствами в центре Интернета вещей](iot-hub-device-management-overview.md)
 
-* Если вы хотите развернуть пример приложения, ознакомьтесь с [развернутым приложением .NET Core](https://docs.microsoft.com/dotnet/core/deploying/index).
+* Если вы хотите развернуть пример приложения, ознакомьтесь с [развернутым приложением .NET Core](/dotnet/core/deploying/index).

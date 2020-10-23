@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 09/06/2016
 ms.author: rclaus
 ms.subservice: disks
-ms.openlocfilehash: eff512c9d050eb293391233848fcece83e845680
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fceef1fa9f79ead0ffbbfd7de17b21b750659fc9
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88654197"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92370242"
 ---
 # <a name="optimize-your-linux-vm-on-azure"></a>Оптимизация виртуальной машины Linux в Azure
 Вы можете легко создать виртуальную машину (VM) Linux с помощью портала или командной строки. В этом руководстве показано, как при помощи настроек оптимизировать производительность VM на платформе Microsoft Azure. В этой статье описывается виртуальная машина Ubuntu Server, но вы можете также создавать виртуальные машины Linux, используя [собственные образы в качестве шаблонов](create-upload-generic.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).  
@@ -47,7 +47,38 @@ ms.locfileid: "88654197"
 ## <a name="linux-swap-partition"></a>Раздел подкачки Linux
 Если виртуальная машина Azure создана из образа Ubuntu или CoreOS, то с помощью CustomData вы можете отправить файл cloud-config в пакет cloud-init. Если вы [передали пользовательский образ Linux](upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json), использующий cloud-init, разделы подкачки также нужно настраивать с помощью cloud-init.
 
-В облачных образах Ubuntu разделы подкачки настраиваются только с помощью cloud-init. Дополнительные сведения см. в статье [AzureSwapPartitions](https://wiki.ubuntu.com/AzureSwapPartitions).
+Вы не можете использовать файл **/etc/waagent.conf** для управления переключением для всех образов, которые подготовлены и поддерживаются Cloud-init. Полный список образов см. в разделе [Использование Cloud-init](using-cloud-init.md). 
+
+Самый простой способ управления перестановкой этих образов — выполнить следующие действия:
+
+1. В папке **/Вар/либ/Клауд/скриптс/пер-Бут** создайте файл с именем **create_swapfile. sh**:
+
+   **$ sudo Touch/Вар/либ/Клауд/скриптс/пер-Бут/create_swapfile. sh**
+
+1. Добавьте в файл следующие строки:
+
+   **$ sudo VI/Вар/либ/Клауд/скриптс/пер-Бут/create_swapfile. sh**
+
+   ```
+   #!/bin/sh
+   if [ ! -f '/mnt/swapfile' ]; then
+   fallocate --length 2GiB /mnt/swapfile
+   chmod 600 /mnt/swapfile
+   mkswap /mnt/swapfile
+   swapon /mnt/swapfile
+   swapon -a ; fi
+   ```
+
+   > [!NOTE]
+   > Это значение можно изменить в соответствии с вашими требованиями и на основе доступного пространства на диске ресурсов, которое зависит от используемого размера виртуальной машины.
+
+1. Сделайте файл исполняемым:
+
+   **$ sudo chmod + x/Вар/либ/Клауд/скриптс/пер-Бут/create_swapfile. sh**
+
+1. Чтобы создать файл подкачки, выполните сценарий сразу после последнего шага:
+
+   **$ sudo/Вар/либ/Клауд/скриптс/пер-бут/./create_swapfile. sh**
 
 Образы виртуальных машин, которые развернуты из каталога Azure Marketplace и в которых cloud-init не поддерживается, содержат интегрированный в ОС агент виртуальных машин Linux. Этот агент позволяет виртуальной машине взаимодействовать с различными службами Azure. Предположим, что вы развернули стандартный образ из Azure Marketplace. Теперь вам необходимо выполнить указанные ниже действия, чтобы правильно настроить параметры файла подкачки Linux.
 

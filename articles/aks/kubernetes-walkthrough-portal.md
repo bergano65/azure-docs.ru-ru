@@ -4,14 +4,14 @@ titleSuffix: Azure Kubernetes Service
 description: Узнайте, как быстро создать кластер Kubernetes, развертывать приложение и отслеживать производительность в Службе Azure Kubernetes (AKS) с помощью портала Azure.
 services: container-service
 ms.topic: quickstart
-ms.date: 09/11/2020
+ms.date: 10/06/2020
 ms.custom: mvc, seo-javascript-october2019
-ms.openlocfilehash: 2331f2a9dc4ca0e94b251a03e7917547f360af4a
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 9a666f257cf2616d540a70d145647fbc73350cbd
+ms.sourcegitcommit: efaf52fb860b744b458295a4009c017e5317be50
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91459801"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91850451"
 ---
 # <a name="quickstart-deploy-an-azure-kubernetes-service-aks-cluster-using-the-azure-portal"></a>Краткое руководство. Развертывание кластера Службы Azure Kubernetes (AKS) с помощью портала Azure
 
@@ -37,15 +37,15 @@ ms.locfileid: "91459801"
 
 3. На странице **Основные** настройте следующие параметры:
     - **Сведения о проекте**. Выберите **подписку** Azure, а затем выберите или создайте **группу ресурсов** Azure, например *myResourceGroup*.
-    - **Сведения о кластере**. Введите **Имя кластера Kubernetes**, например *myAKSCluster*. Выберите **регион**, **версию Kubernetes** и **префикс DNS-имени** для кластера AKS.
-    - **Пул первичных узлов**: Выберите **Размер узла** виртуальной машины для узлов AKS. Размер виртуальной машины *невозможно* изменить после развертывания кластера с AKS. 
+    - **Сведения о кластере**. Введите **Имя кластера Kubernetes**, например *myAKSCluster*. Выберите **регион** и **версию Kubernetes** для кластера AKS.
+    - **Пул первичных узлов**: Выберите **Размер узла** виртуальной машины для узлов AKS. Размер виртуальной машины *невозможно* изменить после развертывания кластера с AKS.
             Выберите количество узлов для развертывания в кластере. В этом кратком руководстве задайте параметру **Число узлов** значение *1*. Количество узлов *можно* изменить после развертывания кластера.
     
     ![Создание кластера AKS — предоставление основных сведений](media/kubernetes-walkthrough-portal/create-cluster-basics.png)
 
-    По завершении выберите **Next: Scale** (Далее: масштаб).
+    По завершении выберите **Next: Пулы узлов**.
 
-4. На странице **Масштаб** оставьте значения по умолчанию. В нижней части экрана щелкните **Next: Authentication** (Далее: аутентификация).
+4. На странице **Пулы узлов** оставьте значения по умолчанию. В нижней части экрана щелкните **Next: Authentication** (Далее: аутентификация).
     > [!CAUTION]
     > При создании новых субъектов-служб AAD может потребоваться несколько минут на их распространение и запуск, а также поиск субъектом-службой ошибок и сбоев проверки на портале Azure. Если таковые будут обнаружены, см.[эту статью](troubleshooting.md#received-an-error-saying-my-service-principal-wasnt-found-or-is-invalid-when-i-try-to-create-a-new-cluster) для их устранения.
 

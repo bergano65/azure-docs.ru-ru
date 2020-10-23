@@ -13,12 +13,12 @@ ms.author: ajburnle
 ms.custom: it-pro, seodec18
 ms.reviewer: krbain
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6f3918016e35029ea6cc1b60d407ad475b35895b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cbd7eecd80b528b1d20d016d51c985bc24d1301d
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89565470"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92371806"
 ---
 # <a name="add-or-remove-a-group-from-another-group-using-azure-active-directory"></a>Добавление группы в другую группу или удаление из нее с помощью Azure Active Directory
 В этой статье описано, как добавить или удалить группу из другой группы в Azure Active Directory.
@@ -78,6 +78,6 @@ ms.locfileid: "89565470"
 
 - [Изменение параметров группы](active-directory-groups-settings-azure-portal.md)
 
-- [Использование группы для управления доступом к приложениям SaaS](../users-groups-roles/groups-saasapps.md)
+- [Использование группы для управления доступом к приложениям SaaS](../enterprise-users/groups-saasapps.md)
 
-- [Сценарии, ограничения и известные проблемы при использовании групп для управления лицензированием в Azure Active Directory](../users-groups-roles/licensing-group-advanced.md#limitations-and-known-issues)
+- [Сценарии, ограничения и известные проблемы при использовании групп для управления лицензированием в Azure Active Directory](../enterprise-users/licensing-group-advanced.md#limitations-and-known-issues)

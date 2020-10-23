@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 04/14/2019
 ms.author: jeedes
-ms.openlocfilehash: 9541f2c5f8ee1aac45b6f659547a3ee34c093181
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 47ecf00b608121271e98ca5abbbd5e69ca811fd2
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88535175"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91858240"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-learnupon"></a>Руководство. Интеграция Azure Active Directory с LearnUpon
 
@@ -130,15 +130,15 @@ ms.locfileid: "88535175"
 
 1. Перейдите на вкладку **Settings** (Параметры).
 
-    ![Настройка единого входа](./media/learnupon-tutorial/tutorial_learnupon_06.png)
+    ![Снимок экрана для вкладки параметров.](./media/learnupon-tutorial/tutorial_learnupon_06.png)
 
 1. Щелкните **Single Sign On - SAML** (Единый вход — SAML), а затем нажмите кнопку **General Settings** (Общие параметры) для настройки SAML.
    
-    ![Настройка единого входа](./media/learnupon-tutorial/tutorial_learnupon_07.png) 
+    ![Снимок экрана, где выбраны элементы "Единый вход — SAML" и "Общие параметры".](./media/learnupon-tutorial/tutorial_learnupon_07.png) 
 
 1. В разделе **General Settings** (Общие параметры) выполните следующие действия.
    
-    ![Настройка единого входа](./media/learnupon-tutorial/tutorial_learnupon_08.png)  
+    ![Снимок экрана для раздела общих параметров, где можно ввести описанные значения.](./media/learnupon-tutorial/tutorial_learnupon_08.png)  
   
     а. Щелкните **Включено**.
 
@@ -158,7 +158,7 @@ ms.locfileid: "88535175"
 
 1. Перейдите в раздел **User Settings**(Параметры пользователя) и выполните следующее.
 
-     ![Настройка единого входа](./media/learnupon-tutorial/tutorial_learnupon_11.png)  
+     ![Снимок экрана для раздела параметров пользователя, где можно ввести описанные здесь значения.](./media/learnupon-tutorial/tutorial_learnupon_11.png)  
 
     а. В текстовое поле **First Name Identifier Format** (Формат идентификатора имени) введите значение, которое обозначает расположение имени пользователя в утверждении SAML, например: `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`.
   

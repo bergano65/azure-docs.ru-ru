@@ -5,12 +5,12 @@ author: cgillum
 ms.topic: conceptual
 ms.date: 08/20/2020
 ms.author: azfuncdf
-ms.openlocfilehash: f91cdaa81e18105eb39af442ab6152bfd2888ba9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4714b9330c4a9d9cd390a58f814e3cdb4b591038
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91319713"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92168147"
 ---
 # <a name="diagnostics-in-durable-functions-in-azure"></a>Диагностика в Устойчивых функциях в Azure
 
@@ -99,7 +99,7 @@ ms.locfileid: "91319713"
 ```
 
 > [!NOTE]
-> По умолчанию телеметрия Application Insights осуществляется средой выполнения Функций Azure, чтобы избежать частой передачи данных. Это может привести к потере сведений об отслеживании, если много событий жизненного цикла происходят за короткий период времени. Сведения о настройке этого поведения см. в разделе [Настройка выборки](../functions-monitoring.md#configure-sampling).
+> По умолчанию телеметрия Application Insights осуществляется средой выполнения Функций Azure, чтобы избежать частой передачи данных. Это может привести к потере сведений об отслеживании, если много событий жизненного цикла происходят за короткий период времени. Сведения о настройке этого поведения см. в разделе [Настройка выборки](../configure-monitoring.md#configure-sampling).
 
 ### <a name="single-instance-query"></a>Одноэкземплярный запрос
 
@@ -472,7 +472,7 @@ GET /runtime/webhooks/durabletask/instances/instance123?code=XYZ
 > [!WARNING]
 > Хотя просматривать журнал выполнения в службе таблиц более удобно, избегайте использования зависимостей в таблице. Они могут измениться при развитии расширения устойчивых функций.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Дополнительные сведения о мониторинге в функциях Azure](../functions-monitoring.md)

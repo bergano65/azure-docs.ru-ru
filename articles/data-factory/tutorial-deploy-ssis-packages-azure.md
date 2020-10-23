@@ -9,17 +9,17 @@ ms.tgt_pltfrm: ''
 ms.devlang: ''
 ms.topic: tutorial
 ms.custom: seo-lt-2019
-ms.date: 08/11/2020
+ms.date: 10/13/2020
 author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: mflasko
-ms.openlocfilehash: 840ccb00fdc91cc44fee46500bbc7237fe55ff2a
-ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
+ms.openlocfilehash: 24ae71206188dc6d60f6a37629ad55ae4d4c1567
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88185525"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92015368"
 ---
 # <a name="provision-the-azure-ssis-integration-runtime-in-azure-data-factory"></a>Подготовка среды выполнения интеграции Azure–SSIS в Фабрике данных Azure
 
@@ -176,6 +176,9 @@ ms.locfileid: "88185525"
    1. В поле **Имя хранилища пакетов** введите имя своего хранилища пакетов. 
 
    1. Для параметра **Связанная служба хранилища пакетов** выберите имеющуюся связанную службу, в которой хранятся сведения о доступе к файловой системе, службе "Файлы Azure" и Управляемому экземпляру Azure SQL, где развернуты ваши пакеты, или создайте новую, выбрав **Создать**. На панели **Новая связанная служба** выполните описанные ниже действия. 
+
+      > [!NOTE]
+      > Для доступа к Файлам Azure можно использовать связанные службы **хранилища файлов Azure** или **файловой системы**. Если вы используете связанную службу **хранилища файлов Azure**, хранилище пакетов Azure-SSIS IR будет поддерживать только **базовый** способ проверки подлинности (не **ключ учетной записи** и не **URI SAS**). Чтобы использовать **базовый** способ проверки подлинности в связанной службе **хранилища файлов Azure**, можно добавить `?feature.upgradeAzureFileStorage=false` в URL-адрес портала ADF в браузере. Также для доступа к Файлам Azure можно использовать связанные службы **файловой системы**. 
 
       ![Параметры развертывания для связанных служб](./media/tutorial-create-azure-ssis-runtime-portal/deployment-settings-linked-service.png)
 

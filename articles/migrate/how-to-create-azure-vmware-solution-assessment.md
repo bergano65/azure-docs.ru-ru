@@ -6,12 +6,12 @@ ms.service: azure-migrate
 ms.topic: article
 ms.date: 06/26/2020
 ms.author: rajosh
-ms.openlocfilehash: 89dc962c73a6446afc79eec2a0fcfd5c0e32e84e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 834fd32d17c4a5ff112dd11a331a59336d7cbcb7
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91576716"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92315258"
 ---
 # <a name="create-an-azure-vmware-solution-avs-assessment"></a>Создание оценки решения Azure VMware (AVS)
 
@@ -23,8 +23,8 @@ ms.locfileid: "91576716"
 
 - Убедитесь, что вы [создали](how-to-add-tool-first-time.md) проект "миграция Azure".
 - Если вы уже создали проект, убедитесь, что вы [добавили](how-to-assess.md) средство Azure Migrate: Server для оценки серверов.
-- Чтобы создать оценку, необходимо настроить устройство "миграция Azure" для [VMware](how-to-set-up-appliance-vmware.md), которое обнаруживает локальные компьютеры и отправляет метаданные и данные производительности в службу "миграция Azure": Оценка сервера. [Подробнее.](migrate-appliance.md)
-- Кроме того, можно [импортировать метаданные сервера](tutorial-assess-import.md) в формате значений с разделителями-запятыми (CSV).
+- Чтобы создать оценку, необходимо настроить устройство "миграция Azure" для [VMware](how-to-set-up-appliance-vmware.md), которое обнаруживает локальные компьютеры и отправляет метаданные и данные производительности в службу "миграция Azure": Оценка сервера. [Подробнее](migrate-appliance.md).
+- Кроме того, можно [импортировать метаданные сервера](./tutorial-discover-import.md) в формате значений с разделителями-запятыми (CSV).
 
 
 ## <a name="azure-vmware-solution-avs-assessment-overview"></a>Обзор оценки решения Azure VMware (AVS)
@@ -158,7 +158,7 @@ ms.locfileid: "91576716"
 Дополнительные [сведения](concepts-azure-vmware-solution-assessment-calculation.md) о данных производительности 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как использовать [сопоставление зависимостей](how-to-create-group-machine-dependencies.md) для создания групп с высокой степенью достоверности.
 - [Узнайте больше](concepts-azure-vmware-solution-assessment-calculation.md) о том, как рассчитываются оценки AVS.

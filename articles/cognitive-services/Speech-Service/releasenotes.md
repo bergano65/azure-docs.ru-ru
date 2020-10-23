@@ -11,20 +11,20 @@ ms.topic: conceptual
 ms.date: 08/17/2020
 ms.author: oliversc
 ms.custom: seodec18
-ms.openlocfilehash: 94947499452c7f1b8515fee56996b13120232f34
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 89a87cd881689f58bbc4d2b4bf2a63a992e8dae9
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89462383"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92461640"
 ---
 # <a name="speech-service-release-notes"></a>Заметки о выпуске
 
 ## <a name="text-to-speech-2020-august-release"></a>Преобразование текста в речь 2020-выпуск за Август
 
-### <a name="new-features"></a>Новые функции
+### <a name="new-features"></a>новые функции;
 
-* **Нейронный TTS: новый стиль речи для `en-US` Aria Voice**. При чтении новостей Арианеурал может показаться невскастер. Стиль "невскаст-formal" звучит более серьезным, а стиль "невскаст-необычный" является более нестрогим и неформальным. См. раздел [Использование стилей произнесений в SSML](speech-synthesis-markup.md).
+* **Нейронный TTS: новый стиль речи для `en-US` Aria Voice**. При чтении новостей Арианеурал может показаться новостной. Стиль "невскаст-formal" звучит более серьезным, а стиль "невскаст-необычный" является более нестрогим и неформальным. См. раздел [Использование стилей произнесений в SSML](speech-synthesis-markup.md).
 
 * **Настраиваемый Voice: новая функция выпущена для автоматической проверки качества данных для обучения**. При передаче данных система проверяет различные аспекты данных аудио и транскрипции и автоматически устраняет или отфильтровывает проблемы, чтобы улучшить качество голосовой модели. Это касается громкости звука, уровня шума, точности произношения речи, выравнивания речи с нормализованным текстом, тишины в аудио, а также формата аудио и сценария. 
 
@@ -38,7 +38,7 @@ ms.locfileid: "89462383"
 
     * Документация по SSML: связанная с документом SSML, помогающая проверить правила использования всех функций настройки.
 
-* **API списка голосов обновляется, чтобы включить понятное отображаемое имя пользователя и стили речи, поддерживаемые для нейронных голосов**.
+* **API списка голосов обновляется для включения понятного отображаемого имени и стилей речи, поддерживаемых для нейронных голосов**.
 
 ### <a name="general-tts-voice-quality-improvements"></a>Усовершенствования общего качества голоса TTS
 
@@ -64,10 +64,10 @@ ms.locfileid: "89462383"
 * Исправлен ряд ошибок с помощью средства создания звукового содержимого. 
     * Исправлена проблема с автоматическое обновлением. 
     * Исправлены проблемы со стилями голоса в параметре zh-CN в Южной Восточная Азия регионе.
-    * Исправлена проблема стабильности, включая ошибку экспорта с тегом break и ошибки в пунктуации.    
+    * Исправлена проблема стабильности, включая ошибку экспорта с тегом break и ошибки в пунктуации.
 
 ## <a name="new-speech-to-text-locales-2020-august-release"></a>Новые языки перевода речи в текст: 2020 — выпуск от августа
-Преобразование речи в текст 26 новых национальных стандартов в августе: 2 европейских языка `cs-CZ` и `hu-HU` , 5 национальных стандартов и 19 испанских языков, охватывающие большинство стран Южной Америки. Ниже приведен список новых языковых стандартов. См. [полный список языков](https://docs.microsoft.com/azure/cognitive-services/speech-service/language-support).
+Преобразование речи в текст 26 новых национальных стандартов в августе: 2 европейских языка `cs-CZ` и `hu-HU` , 5 национальных стандартов и 19 испанских языков, охватывающие большинство стран Южной Америки. Ниже приведен список новых языковых стандартов. См [. полный](https://docs.microsoft.com/azure/cognitive-services/speech-service/language-support)список языков.
 
 | Локаль  | Язык                          |
 |---------|-----------------------------------|
@@ -130,7 +130,7 @@ ms.locfileid: "89462383"
 
 ## <a name="text-to-speech-2020-july-release"></a>Выпуски преобразования текста в речь 2020 — Июль
 
-### <a name="new-features"></a>Новые функции
+### <a name="new-features"></a>новые функции;
 
 * **Нейронный TTS, 15 новых нейронных голосов**. новые голоса, добавленные в портфель НЕЙРОНного TTS, Салма на `ar-EG` арабском языке (Египет), зарийах на `ar-SA` арабском языке (Саудовская Аравия), Алба в `ca-ES` каталанского (Испания), Чристел в `da-DK` датском (Дания), ниржа на `es-IN` английском языке (Индия), Нура в `fi-FI` Финляндии (Финляндия), свара в `hi-IN` хинди (Индия), колетте в нидерландском (Нидерланды), зофиа в польском (Польша), Фернанда на португальском языке (Португалия), дарийа в России (Россия), Хиллеви в `nl-NL` Швеции ( `pl-PL` Швеция), Ачара `pt-PT` `ru-RU` `sv-SE` в `th-TH` тайском (Таиланд), HiuGaai в `zh-HK` китайском (кантонский, традиционном) и HsiaoYu в `zh-TW` китайском (тайваньский мандаринский диалект). Проверьте все [Поддерживаемые языки](https://docs.microsoft.com/azure/cognitive-services/speech-service/language-support#neural-voices).  
 
@@ -162,7 +162,7 @@ ms.locfileid: "89462383"
     * Обновленный Катжа в `de-DE` с последним методом моделирования Prosody, МОС (среднее мнение) получает значение + 0,13. 
     * Обновленная Нанами в `ja-JP` с новым Prosody моделью с акцентом на шаг, МОС (среднее мнение) — + 0,19;  
 
-* Улучшена точность произношения на уровне слов на 5 языках.
+* Улучшена точность произношения на уровне слов на пяти языках.
 
     | Язык | Сокращение ошибок произношения |
     |---|---|
@@ -205,18 +205,18 @@ ms.locfileid: "89462383"
     -   `spx help csr examples`
 
 **Новые функции**
--   **C \# , C++**: распознавание говорящего Preview: Эта функция включает идентификацию докладчика (кто говорит?) и верификацию докладчика (это именно то, что они заявляют?). Начните с [обзора](https://docs.microsoft.com/azure/cognitive-services/Speech-Service/speaker-recognition-overview), ознакомьтесь со [статьей распознавание говорящего основы](https://docs.microsoft.com/azure/cognitive-services/speech-service/speaker-recognition-basics)или [справочной документацией по API](https://docs.microsoft.com/rest/api/speakerrecognition/).
+-   **C \# , C++**: распознавание говорящего Preview: Эта функция включает идентификацию докладчика (кто говорит?) и верификацию докладчика (является докладчиком, которому они заявляют?). Начните с [обзора](https://docs.microsoft.com/azure/cognitive-services/Speech-Service/speaker-recognition-overview), ознакомьтесь со [статьей распознавание говорящего основы](https://docs.microsoft.com/azure/cognitive-services/speech-service/speaker-recognition-basics)или [справочной документацией по API](https://docs.microsoft.com/rest/api/speakerrecognition/).
 
 **Исправления ошибок**
 -   **C \# , C++**: фиксированная запись с микрофона не работала в 1,12 при распознавании речи.
 -   **JavaScript**: исправления для преобразования текста в речь в Firefox и Safari в MacOS и iOS.
--   Устранение ошибки нарушения прав доступа для средства проверки приложений Windows при записи разговора при использовании потока с 8 каналами.
+-   Устранение ошибки нарушения прав доступа для средства проверки приложений Windows при записи разговора при использовании потока с восемью каналами.
 -   Устранение ошибки нарушения прав доступа для средства проверки приложений Windows при преобразовании бесед на нескольких устройствах.
 
 **Примеры**
 -   **C#**: [пример кода](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/csharp/dotnet/speaker-recognition) для распознавания докладчика.
 -   **C++**: [пример кода](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/cpp/windows/speaker-recognition) для распознавания докладчика.
--   **Java**: [пример кода](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/java/android/intent-recognition) для распознавания намерения в Android. 
+-   **Java**: [пример кода](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/java/android/intent-recognition) для распознавания намерения в Android. 
 
 **Ковид-19 краткие тестирование:** Благодаря удаленной работе за последние несколько недель мы не смогли выполнить проверку вручную, как и обычно. Мы не внесли изменения, которые могли бы привести к нарушению, и наши автоматические тесты прошли успешно. В маловероятном случае, если мы пропустили что-нибудь, сообщите нам об этом на [GitHub](https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues?q=is%3Aissue+is%3Aopen).<br>
 Оставайтесь в курсе событий!
@@ -234,9 +234,9 @@ ms.locfileid: "89462383"
 
 **Улучшения & оптимизации**
 - **JavaScript**. Оптимизированная реализация микрофона браузера улучшает точность распознавания речи.
-- **Java**: рефакторингы привязок с использованием прямой реализации JNI без Свиг. Это сокращается путем 10 раз размер привязок для всех пакетов Java, используемых для Windows, Android, Linux и Mac, и упрощает разработку реализации Java в речевом пакете SDK.
+- **Java**: рефакторингы привязок с использованием прямой реализации JNI без Свиг. Это изменение сокращает размер привязок для всех пакетов Java, используемых для Windows, Android, Linux и Mac, а также упрощает разработку реализации Java для речевого пакета SDK.
 - **Linux**: обновленная [Документация](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk?tabs=linux) по технической поддержке с последними заметками RHEL 7.
-- Улучшена логика подключения для многократной попытки подключения в случае ошибок службы и сети.
+- Улучшена логика подключения для многократной попытки подключения при возникновении ошибок в службе и сети.
 - Обновлена страница "Быстрый запуск [Portal.Azure.com](https://portal.azure.com) Speech", которая поможет разработчикам перейти к следующему этапу в пути распознавания речи Azure.
 
 **Исправления ошибок**
@@ -251,34 +251,34 @@ ms.locfileid: "89462383"
 **Примеры**
 - **Go**: добавлены краткие руководства для [распознавания речи](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstarts/speech-to-text-from-microphone?pivots=programming-language-go) и [пользовательского голосового помощника](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstarts/voice-assistants?pivots=programming-language-go). Найдите пример кода [здесь](https://github.com/microsoft/cognitive-services-speech-sdk-go/tree/master/samples). 
 - **JavaScript**: добавлены краткие руководства для преобразования [текста в речь](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstarts/text-to-speech?pivots=programming-language-javascript), [перевода](https://docs.microsoft.com/azure/cognitive-services/speech-service/get-started-speech-translation?tabs=script&pivots=programming-language-csharp)и [Распознавание намерений](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstarts/intent-recognition?pivots=programming-language-javascript).
-- Примеры распознавания ключевых слов [для \# C](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/csharp/uwp/keyword-recognizer) и [Java](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/java/android/keyword-recognizer) (Android).  
+- Примеры распознавания ключевых слов [для \# C](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/csharp/uwp/keyword-recognizer) и [Java](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/java/android/keyword-recognizer) (Android).  
 
-**Ковид-19 краткие тестирование:** Благодаря удаленной работе за последние несколько недель мы не смогли выполнить проверку вручную, как и обычно. Мы не внесли изменения, которые могли бы привести к нарушению, и наши автоматические тесты прошли успешно. В маловероятном случае, если мы пропустили что-нибудь, сообщите нам об этом на [GitHub](https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues?q=is%3Aissue+is%3Aopen).<br>
+**Ковид-19 краткие тестирование:** Благодаря удаленной работе за последние несколько недель мы не смогли выполнить проверку вручную, как и обычно. Мы не внесли изменения, которые могли бы привести к нарушению, и наши автоматические тесты прошли успешно. Если мы пропустили что-нибудь, сообщите нам об этом на [GitHub](https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues?q=is%3Aissue+is%3Aopen).<br>
 Оставайтесь в курсе событий!
 
 ## <a name="speech-sdk-1110-2020-march-release"></a>Пакет SDK для распознавания речи 1.11.0:2020 — выпуск, Март
 **Новые функции**
 - Linux: добавлена поддержка Red Hat Enterprise Linux (RHEL)/Центос 7 x64 с [инструкциями](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-configure-rhel-centos-7) по настройке системы для работы с ГОЛОСОВыми пакетами SDK.
 - Linux: добавлена поддержка .NET Core C# в Linux ARM32 и ARM64. Дополнительные сведения см. [здесь](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk?tabs=linux). 
-- C#, C++: добавлен `UtteranceId` в `ConversationTranscriptionResult` , согласованный идентификатор для всех промежуточных и конечных результатов распознавания речи. Сведения для [C#](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.transcription.conversationtranscriptionresult?view=azure-dotnet), [C++](https://docs.microsoft.com/cpp/cognitive-services/speech/transcription-conversationtranscriptionresult).
-- Python: добавлена поддержка `Language ID` . См. статью speech_sample. корректировка в [репозитории GitHub](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/samples/python/console).
+- C#, C++: добавлен `UtteranceId` в `ConversationTranscriptionResult` , согласованный идентификатор для всех промежуточных и конечных результатов распознавания речи. Сведения для [C#](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.transcription.conversationtranscriptionresult?view=azure-dotnet&preserve-view=true), [C++](https://docs.microsoft.com/cpp/cognitive-services/speech/transcription-conversationtranscriptionresult).
+- Python: добавлена поддержка `Language ID` . См. раздел speech_sample. корректировка в [репозитории GitHub](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/samples/python/console).
 - Windows: добавлена поддержка сжатого звукового входного формата на платформе Windows для всех консольных приложений Win32. Подробные сведения см. [здесь](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-use-codec-compressed-audio-input-streams). 
 - JavaScript: поддержка синтеза речи (преобразование текста в речь) в NodeJS. Дополнительные сведения см. [здесь](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/javascript/node/text-to-speech). 
 - JavaScript. Добавьте новый API, чтобы включить проверку всех сообщений об отправке и полученных сообщениях. Дополнительные сведения см. [здесь](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/javascript). 
         
 **Исправления ошибок**
 - C#, C++: Исправлена проблема, поэтому `SendMessageAsync` теперь отправляет двоичное сообщение как двоичный тип. Сведения для [C#](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.connection.sendmessageasync?view=azure-dotnet#Microsoft_CognitiveServices_Speech_Connection_SendMessageAsync_System_String_System_Byte___System_UInt32_), [C++](https://docs.microsoft.com/cpp/cognitive-services/speech/connection).
-- C#, C++: Исправлена проблема, из-за которой использование `Connection MessageReceived` события может вызвать сбой `Recognizer` , если удаляется перед `Connection` объектом. Сведения для [C#](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.connection.messagereceived?view=azure-dotnet), [C++](https://docs.microsoft.com/cpp/cognitive-services/speech/connection#messagereceived).
+- C#, C++: Исправлена проблема, из-за которой использование `Connection MessageReceived` события может вызвать сбой `Recognizer` , если удаляется перед `Connection` объектом. Сведения для [C#](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.connection.messagereceived?view=azure-dotnet&preserve-view=true), [C++](https://docs.microsoft.com/cpp/cognitive-services/speech/connection#messagereceived).
 - Android: размер звукового буфера с микрофона уменьшился с 800ms до 100 мс для улучшения задержки.
 - Android: Исправлена [проблема](https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues/563) с эмулятором Android для платформы x86 в Android Studio.
-- JavaScript: добавлена поддержка регионов в Китае с помощью `fromSubscription` API. Подробные сведения см. [здесь](https://docs.microsoft.com/javascript/api/microsoft-cognitiveservices-speech-sdk/speechconfig?view=azure-node-latest#fromsubscription-string--string-). 
+- JavaScript: добавлена поддержка регионов в Китае с помощью `fromSubscription` API. Подробные сведения см. [здесь](https://docs.microsoft.com/javascript/api/microsoft-cognitiveservices-speech-sdk/speechconfig?view=azure-node-latest&preserve-view=true#fromsubscription-string--string-). 
 - JavaScript: Добавление дополнительных сведений об ошибках для ошибок подключения из NodeJS.
         
 **Примеры**
 - Unity: Открытый пример распознавания намерения является фиксированным, где не удалось импортировать LUIS JSON. Подробные сведения см. [здесь](https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues/369).
 - Python: Добавлен пример для `Language ID` . Подробные сведения см. [здесь](https://github.com/Azure-Samples/cognitive-services-speech-sdk/blob/master/samples/python/console/speech_sample.py).
     
-**Тестирование Covid19 краткие:** Из-за последних нескольких недель мы не смогли выполнить тестирование проверки устройств вручную, как обычно. Примером этого является тестирование входных данных с микрофона и динамика в Linux, iOS и macOS. Мы не внесли изменения, которые могли бы привести к нарушению данных на этих платформах, а также выполнению всех автоматических тестов. В маловероятном случае, если мы пропустили что-нибудь, сообщите нам об этом на [GitHub](https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues?q=is%3Aissue+is%3Aopen).<br> Благодарим вас за продолжающуюся поддержку. Вы всегда можете отправить вопросы или отзывы на [GitHub](https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues?q=is%3Aissue+is%3Aopen) или [Stack overflow](https://stackoverflow.microsoft.com/questions/tagged/731).<br>
+**Тестирование Covid19 краткие:** Из-за последних нескольких недель мы не смогли выполнить тестирование проверки устройств вручную, как обычно. Например, нам не удалось протестировать входные данные с микрофона и динамика в Linux, iOS и macOS. Мы не внесли изменения, которые могли бы привести к нарушению данных на этих платформах, а также выполнению всех автоматических тестов. В маловероятном случае, если мы пропустили что-нибудь, сообщите нам об этом на [GitHub](https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues?q=is%3Aissue+is%3Aopen).<br> Благодарим вас за продолжающуюся поддержку. Вы всегда можете отправить вопросы или отзывы на [GitHub](https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues?q=is%3Aissue+is%3Aopen) или [Stack overflow](https://stackoverflow.microsoft.com/questions/tagged/731).<br>
 Оставайтесь в курсе событий!
 
 ## <a name="speech-sdk-1100-2020-february-release"></a>Пакет SDK для распознавания речи 1.10.0:2020 — выпуск, Февраль
@@ -329,7 +329,7 @@ ms.locfileid: "89462383"
 
 - `OpenSSL` был обновлен до версии 1.1.1 b и статически связан с основной библиотекой пакета SDK для обработки речи для Linux. Это может привести к сбою, если папка "Входящие" `OpenSSL` не была установлена в `/usr/lib/ssl` каталог в системе. Чтобы решить эту задачу, обратитесь [к документации по](how-to-configure-openssl-linux.md) РЕЧЕВому пакету SDK.
 - Мы изменили тип данных, возвращаемый для C#, с на, чтобы `WordLevelTimingResult.Offset` `int` `long` Разрешить доступ, `WordLevelTimingResults` когда речевые данные больше 2 минут.
-- `PushAudioInputStream``PullAudioInputStream`теперь отправляйте данные заголовка WAV в службу распознавания речи на основе `AudioStreamFormat` , при необходимости заданной при их создании. Теперь клиенты должны использовать [поддерживаемый входной формат аудио](how-to-use-audio-input-streams.md). Любые другие форматы получат неоптимальные результаты распознавания или могут вызвать другие проблемы. 
+- `PushAudioInputStream``PullAudioInputStream`теперь отправляйте данные заголовка WAV в службу распознавания речи на основе `AudioStreamFormat` , при необходимости заданной при их создании. Теперь клиенты должны использовать [поддерживаемый входной формат аудио](how-to-use-audio-input-streams.md). Любые другие форматы будут получать неоптимальные результаты распознавания или могут вызвать другие проблемы. 
 
 **Исправления ошибок**
 
@@ -369,7 +369,7 @@ ms.locfileid: "89462383"
 **Критические изменения**
 
 - Функции диалога Транскрибер перемещены в пространстве имен `Microsoft.CognitiveServices.Speech.Transcription` .
-- Часть методов диалога Транскрибер перемещается в новый `Conversation` класс.
+- Части методов диалога Транскрибер перемещаются в новый `Conversation` класс.
 - Удалена поддержка 32-bit (ARMv7 и x86) iOS
 
 **Исправления ошибок**
@@ -442,7 +442,7 @@ ms.locfileid: "89462383"
 - Исправление проблемы с приложением .NET Core для загрузки основной библиотеки с помощью net461 Target Framework в примерах
 - Устранение редких проблем при развертывании собственных библиотек в выходной папке в примерах
 - Надежное исправление для закрытия веб-сокета
-- Устранение возможных сбоев при очень высокой нагрузке на Linux
+- Устранение возможных сбоев при загрузке подключения при высокой нагрузке в Linux
 - Исправление отсутствующих метаданных в пакете платформы для macOS
 - Устранение неполадок `pip install --user` в Windows
 
@@ -657,7 +657,7 @@ ms.locfileid: "89462383"
 Повышение надежности и устранение ошибок:
 
 - Исправлена потенциальная неустранимая ошибка из-за состояния гонки в удаленном распознавателе
-- Исправлена потенциальная неустранимая ошибка в случае незаданных свойств.
+- Исправлена потенциальная Неустранимая ошибка при возникновении незавершенных свойств.
 - Добавлены дополнительные ошибки и проверки параметров.
 - Objective-C: исправлена потенциальная неустранимая ошибка, возникающая из-за переопределения имени в NSString.
 - Objective-C: скорректирована видимость API

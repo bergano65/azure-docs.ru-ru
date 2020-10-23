@@ -1,6 +1,6 @@
 ---
-title: Azure Guide. Создание хранилища ключей Azure и политики доступа к хранилищу с помощью шаблона Azure Resource Manager | Документация Майкрософт
-description: Здесь показано, как создать хранилища ключей Azure и политики доступа к хранилищу с помощью шаблона Azure Resource Manager.
+title: Создание хранилища ключей Azure и политики доступа к хранилищу с помощью шаблона ARM
+description: В этой статье показано, как создать хранилища ключей Azure и политики доступа к хранилищу с помощью шаблона Azure Resource Manager.
 services: key-vault
 author: msmbaldwin
 manager: rkarlin
@@ -10,27 +10,27 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 10/5/2020
 ms.author: mbaldwin
-ms.openlocfilehash: cf19561005fe2e98b7b5cf6812ff9224fd9474dc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1f62e0b3a40382c911cd07c777c521adb3649c4d
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91804399"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92282321"
 ---
-# <a name="how-to-create-azure-key-vault-and-vault-access-policy-using-a-resource-manager-template"></a>Создание политики Azure Key Vault и доступа к хранилищу с помощью шаблона диспетчер ресурсов
+# <a name="how-to-create-an-azure-key-vault-and-vault-access-policy-by-using-a-resource-manager-template"></a>Как создать хранилище ключей Azure и политику доступа к хранилищу с помощью шаблона диспетчер ресурсов
 
-[Azure Key Vault](../general/overview.md) — это облачная служба, которая обеспечивает безопасное хранение секретов, таких как ключи, пароли, сертификаты, и другой секретной информации. В этом руководством рассматривается процесс развертывания шаблона Azure Resource Manager (шаблон ARM) для создания хранилища ключей.
+[Azure Key Vault](../general/overview.md) — это облачная служба, которая обеспечивает безопасное хранение секретов, таких как ключи, пароли и сертификаты. В этой статье описывается процесс развертывания шаблона Azure Resource Manager (шаблон ARM) для создания хранилища ключей.
 
 [!INCLUDE [About Azure Resource Manager](../../../includes/resource-manager-quickstart-introduction.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
-Для работы с этой статьей необходимо сделать следующее:
+Чтобы выполнить действия, описанные в этой статье, сделайте следующее:
 
-* Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+* Если у вас нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) перед началом работы.
 
 
-## <a name="create-key-vault-resource-manager-template"></a>Создание шаблона диспетчер ресурсов Key Vault
+## <a name="create-a-key-vault-resource-manager-template"></a>Создание шаблона диспетчер ресурсов Key Vault
 
 В следующем шаблоне показан базовый способ создания хранилища ключей. Некоторые значения указываются в шаблоне.
 
@@ -87,9 +87,9 @@ ms.locfileid: "91804399"
 Дополнительные сведения о параметрах шаблонов Key Vault см. в разделе [Справочник по шаблонам ARM Key Vault](https://docs.microsoft.com/azure/templates/microsoft.keyvault/vaults).
 
 > [!IMPORTANT]
-> При повторном развертывании шаблона будут переопределены все существующие политики доступа в хранилище ключей. Рекомендуется заполнить `accessPolicies` свойство существующими политиками доступа, чтобы избежать разрыва доступа к хранилищу ключей. 
+> При повторном развертывании шаблона все существующие политики доступа в хранилище ключей будут переопределены. Рекомендуется заполнять `accessPolicies` свойство существующими политиками доступа, чтобы избежать потери доступа к хранилищу ключей. 
 
-## <a name="add-access-policy-to-key-vault-resource-manager-template"></a>Добавление политики доступа в шаблон Key Vault диспетчер ресурсов
+## <a name="add-an-access-policy-to-a-key-vault-resource-manager-template"></a>Добавление политики доступа в шаблон диспетчер ресурсов Key Vault
 
 Политики доступа можно развернуть в существующем хранилище ключей без повторного развертывания всего шаблона хранилища ключей. В следующем шаблоне показан базовый способ создания политик доступа.
 
@@ -162,21 +162,21 @@ ms.locfileid: "91804399"
 ```
 Дополнительные сведения о параметрах шаблонов Key Vault см. в разделе [Справочник по шаблонам ARM Key Vault](https://docs.microsoft.com/azure/templates/microsoft.keyvault/vaults/accesspolicies).
 
-## <a name="other-available-key-vault-resource-manager-templates"></a>Другие доступные шаблоны Key Vault диспетчер ресурсов
+## <a name="more-key-vault-resource-manager-templates"></a>Дополнительные Key Vault диспетчер ресурсов шаблонов
 
 Существуют другие шаблоны диспетчер ресурсов, доступные для Key Vault объектов.
 
 | Секреты | Ключи | Сертификаты |
 |--|--|--|
-|[Краткое руководство](https://docs.microsoft.com/azure/key-vault/secrets/quick-create-template)<br>[Ссылки](https://docs.microsoft.com/azure/templates/microsoft.keyvault/vaults/secrets)|Недоступно|Недоступно|
+|<ul><li>[Краткое руководство](https://docs.microsoft.com/azure/key-vault/secrets/quick-create-template)<li>[Ссылки](https://docs.microsoft.com/azure/templates/microsoft.keyvault/vaults/secrets)|Недоступно|Недоступно|
 
-Дополнительные Key Vault шаблоны, которые можно найти здесь: [Справочник по Key Vault диспетчер ресурсов](https://docs.microsoft.com/azure/templates/microsoft.keyvault/allversions)
+Дополнительные Key Vault шаблоны можно найти здесь: [Key Vault диспетчер ресурсов Reference](https://docs.microsoft.com/azure/templates/microsoft.keyvault/allversions).
 
 ## <a name="deploy-the-templates"></a>Развертывание шаблонов.
 
-Вы можете использовать портал Azure для развертывания выше шаблонов с помощью команды "создать собственный шаблон в редакторе" в разделе "руководство" ниже: [развертывание ресурсов из пользовательского шаблона](https://docs.microsoft.com/azure/azure-resource-manager/templates/deploy-portal#deploy-resources-from-custom-template) .
+Вы можете использовать портал Azure для развертывания описанных выше шаблонов с помощью параметра **создать собственный шаблон в редакторе** , как описано здесь: [развертывание ресурсов из пользовательского шаблона](https://docs.microsoft.com/azure/azure-resource-manager/templates/deploy-portal#deploy-resources-from-custom-template).
 
-Можно также сохранить приведенные выше шаблоны в файлы и использовать следующие команды:  [New-азресаурцеграупдеплоймент](/powershell/module/az.resources/new-azresourcegroupdeployment) и [AZ Group Deployment Create](/cli/azure/group/deployment#az-group-deployment-create):
+Вы также можете сохранить приведенные выше шаблоны в файлы и использовать следующие команды:  [New-азресаурцеграупдеплоймент](/powershell/module/az.resources/new-azresourcegroupdeployment) и [AZ Group Deployment Create](/cli/azure/group/deployment#az-group-deployment-create):
 
 ```azurepowershell
 New-AzResourceGroupDeployment -ResourceGroupName ExampleGroup -TemplateFile key-vault-template.json
@@ -188,7 +188,7 @@ az group deployment create --resource-group ExampleGroup --template-file key-vau
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Если вы планируете продолжить работу с последующими краткими руководствами и учебниками, вы можете оставить эти ресурсы на месте. Когда ресурсы больше не нужны, удалите группу ресурсов, которая удаляет хранилище ключей и связанные с ним ресурсы. Чтобы удалить группу ресурсов с помощью Azure CLI или Azure PowerShell, выполните следующие действия.
+Если вы планируете продолжить работу с последующими краткими руководствами и учебниками, эти ресурсы можно оставить на месте. Если ресурсы больше не нужны, удалите группу ресурсов. При удалении группы хранилище ключей и связанные с ним ресурсы также будут удалены. Чтобы удалить группу ресурсов с помощью Azure CLI или Azure PowerShell, выполните следующие действия.
 
 # <a name="cli"></a>[CLI](#tab/CLI)
 
@@ -211,11 +211,11 @@ Write-Host "Press [ENTER] to continue..."
 
 ## <a name="resources"></a>Ресурсы
 
-- [Обзор Azure Key Vault](../general/overview.md)
-- Сведения об [Azure Resource Manager](../../azure-resource-manager/management/overview.md)
-- [Рекомендации по Azure Key Vault](../general/best-practices.md)
+- Ознакомьтесь с [обзором Azure Key Vault](../general/overview.md).
+- Дополнительные сведения о [Azure Resource Manager](../../azure-resource-manager/management/overview.md).
+- Ознакомьтесь [Azure Key Vault](../general/best-practices.md)рекомендациями.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Безопасный доступ к хранилищу ключей](secure-your-key-vault.md)
 - [Аутентификация в хранилище ключей](authentication.md)

@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 9/22/2020
 ms.author: amgowda
 ms.service: container-service
-ms.openlocfilehash: 528b843e24e1d63e4822c253b3636ef490e8fe8e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 35518a90ff3db2b951e0310970afd6d78dd25807
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90997808"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92122209"
 ---
 # <a name="confidential-containers"></a>Конфиденциальные контейнеры
 
@@ -67,7 +67,7 @@ ms.locfileid: "90997808"
 
 ### <a name="anjuna"></a>анжуна
 
-[Анжуна](https://www.anjuna.io/) предоставляет программное обеспечение для платформы SGX, которое позволяет выполнять неизмененные контейнеры в AKS. Дополнительные сведения о **предстоящих** функциях и потоке пользователей см. [здесь](https://www.anjuna.io/microsoft-azure-confidential-computing-aks-lp).
+[Анжуна](https://www.anjuna.io/) предоставляет программное обеспечение для платформы SGX, которое позволяет выполнять неизмененные контейнеры в AKS. Узнайте больше о функциях и ознакомьтесь с примерами приложений [здесь](https://www.anjuna.io/microsoft-azure-confidential-computing-aks-lp).
 
 Приступая к работе с примером кэша Redis и настраиваемым приложением Python [здесь](https://www.anjuna.io/microsoft-azure-confidential-computing-aks-lp)
 

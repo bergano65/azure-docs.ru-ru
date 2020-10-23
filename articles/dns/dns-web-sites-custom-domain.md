@@ -5,14 +5,14 @@ services: dns
 author: rohinkoul
 ms.service: dns
 ms.topic: tutorial
-ms.date: 3/11/2019
+ms.date: 10/20/2020
 ms.author: rohink
-ms.openlocfilehash: cc36eca0b39db5188be7a63ffb148cc0f4cf30bf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 151d5f083fe0e945b330d65095c908be93e3330f
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91252890"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92316393"
 ---
 # <a name="tutorial-create-dns-records-in-a-custom-domain-for-a-web-app"></a>Руководство. Создание записей DNS для веб-приложения в личном домене 
 
@@ -38,12 +38,9 @@ ms.locfileid: "91252890"
 > * Добавление пользовательских имен узлов для веб-приложения
 > * Проверка пользовательских имен узлов
 
+## <a name="prerequisites"></a>Обязательные условия
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
-
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
-
-## <a name="prerequisites"></a>предварительные требования
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -56,6 +53,8 @@ ms.locfileid: "91252890"
    2. Для делегирования зоны в Azure DNS выполните действия, описанные в статье [Делегирование зон DNS с помощью Azure DNS](dns-delegate-domain-azure-dns.md).
 
 После создания зоны и ее делегирования в Azure DNS можно создать записи для личного домена.
+
+[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
 ## <a name="create-an-a-record-and-txt-record"></a>Создание записи A и TXT
 

@@ -11,12 +11,12 @@ author: msmimart
 manager: celestedg
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 969294f264e6744e893322864eed85e02c615126
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b503c7494d1b5e1821718fab5577bca88be65169
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87910325"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92442292"
 ---
 # <a name="add-azure-active-directory-b2b-collaboration-users-in-the-azure-portal"></a>Добавление пользователей службы совместной работы B2B на портале Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "87910325"
 После добавления гостевого пользователя в каталог вы можете отправить ему прямую ссылку на общее приложение или он может щелкнуть URL-адрес активации в электронном письме с приглашением. Дополнительные сведения о процессе активации приглашений см. в статье [Azure Active Directory B2B collaboration invitation redemption](redemption-experience.md) (Активация приглашения службы совместной работы Azure Active Directory B2B).
 
 > [!IMPORTANT]
-> Выполните инструкции, описанные в [Практическое руководство. Добавление сведений о конфиденциальности организации в Azure Active Directory](https://aka.ms/adprivacystatement), чтобы добавить URL-адрес заявления о конфиденциальности вашей организации. В рамках процесса первой активации приглашения приглашенный пользователь должен согласиться на ваши условия конфиденциальности, чтобы продолжить. 
+> Выполните инструкции, описанные в [Практическое руководство. Добавление сведений о конфиденциальности организации в Azure Active Directory](../fundamentals/active-directory-properties-area.md), чтобы добавить URL-адрес заявления о конфиденциальности вашей организации. В рамках процесса первой активации приглашения приглашенный пользователь должен согласиться на ваши условия конфиденциальности, чтобы продолжить. 
 
 ## <a name="before-you-begin"></a>Перед началом
 
@@ -124,4 +124,3 @@ ms.locfileid: "87910325"
 
 - Дополнительные сведения о том, как обычный пользователь, а не администратор Azure AD, может добавить гостевых пользователей B2B, см. в статье [Как информационные работники могут добавить пользователей службы совместной работы B2B в Azure Active Directory?](add-users-information-worker.md)
 - Дополнительные сведения о сообщениях электронной почты с приглашением см. в статье [Элементы сообщения с приглашением службы совместной работы B2B Azure Active Directory](invitation-email-elements.md).
-

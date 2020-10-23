@@ -7,22 +7,22 @@ ms.topic: conceptual
 ms.custom: devx-track-dotnet
 ms.date: 03/01/2019
 ms.author: zhshang
-ms.openlocfilehash: d104e0f1f2c6a978a5fce2c046a36e50a7056970
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 90853b5ff769b710c6c95e4f6e62b3a4aa19fadf
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88928506"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92151070"
 ---
 # <a name="scale-aspnet-core-signalr-applications-with-azure-signalr-service"></a>Масштабирование приложений ASP.NET Core SignalR с помощью службы Azure SignalR.
 
 ## <a name="developing-signalr-apps"></a>Разработка приложений SignalR
 
-Сейчас доступны [две версии](https://docs.microsoft.com/aspnet/core/signalr/version-differences) SignalR, которые вы можете использовать со своими веб-приложениями: SignalR для ASP.NET и SignalR для ASP.NET Core (самая новая версия). Служба Azure SignalR — это служба, управляемая Azure и созданная на основе Core SignalR ASP.NET.
+Сейчас доступны [две версии](/aspnet/core/signalr/version-differences) SignalR, которые вы можете использовать со своими веб-приложениями: SignalR для ASP.NET и SignalR для ASP.NET Core (самая новая версия). Служба Azure SignalR — это служба, управляемая Azure и созданная на основе Core SignalR ASP.NET.
 
 ASP.NET Core SignalR — это переписанная предыдущая версия. В результате решение Core SignalR ASP.NET не является обратно совместимым с более ранней версией SignalR. Их API-интерфейсы и поведение отличаются. Пакет SDK для ASP.NET Core SignalR предназначен для .NET Standard, но вы можете использовать его с .NET Framework. Однако вы должны использовать новые API, а не старые. Если вы используете SignalR и хотите перейти на ASP.NET Core SignalR или службу Azure SignalR, вам нужно будет изменить код, чтобы обрабатывать различия в API-интерфейсах.
 
-В службе Azure SignalR серверный компонент ASP.NET Core SignalR размещен в Azure. Однако, так как технология создана поверх ASP.NET Core, у вас есть возможность запускать свое фактическое веб-приложение на нескольких платформах (Windows, Linux и MacOS) при размещении с помощью [службы приложений Azure](../app-service/overview.md), [IIS](https://docs.microsoft.com/aspnet/core/host-and-deploy/iis/index), [Nginx](https://docs.microsoft.com/aspnet/core/host-and-deploy/linux-nginx), [Apache](https://docs.microsoft.com/aspnet/core/host-and-deploy/linux-apache) и [Docker](https://docs.microsoft.com/aspnet/core/host-and-deploy/docker/index). Вы также можете использовать самостоятельное размещение в собственном процессе.
+В службе Azure SignalR серверный компонент ASP.NET Core SignalR размещен в Azure. Однако, так как технология создана поверх ASP.NET Core, у вас есть возможность запускать свое фактическое веб-приложение на нескольких платформах (Windows, Linux и MacOS) при размещении с помощью [службы приложений Azure](../app-service/overview.md), [IIS](/aspnet/core/host-and-deploy/iis/index), [Nginx](/aspnet/core/host-and-deploy/linux-nginx), [Apache](/aspnet/core/host-and-deploy/linux-apache) и [Docker](/aspnet/core/host-and-deploy/docker/index). Вы также можете использовать самостоятельное размещение в собственном процессе.
 
 Если задачей вашего приложения является поддержка новейших функций для обновления веб-клиентов с обновлением содержимого в режиме реального времени, работа на нескольких платформах (Azure, Windows, Linux и MacOS) и размещение в разных средах, использование службы Azure SignalR будет лучшим выбором.
 
@@ -34,12 +34,12 @@ ASP.NET Core SignalR — это переписанная предыдущая в
 
 Кроме того, WebSocket — обычно предпочтительный метод поддержки обновлений содержимого в реальном времени. Однако балансировка нагрузки большого количества постоянных соединений WebSocket становится серьезной проблемой для решения по мере масштабирования. Использование общих решений: балансировка нагрузки DNS, аппаратные и программные подсистемы балансировки нагрузки. Служба Azure SignalR автоматически устраняет эти проблемы.
 
-Другая причина может заключаться в том, что у вас нет требований к фактическому размещению веб-приложения. Логика вашего веб-приложения может использовать [независимые от сервера вычисления](https://azure.microsoft.com/overview/serverless-computing/). Например, возможно, ваш код размещается и выполняется только по запросу с помощью [триггеров функций Azure](https://docs.microsoft.com/azure/azure-functions/). Этот сценарий может быть сложным, потому что ваш код работает только по требованию и не поддерживает длительные соединения с клиентами. Служба Azure SignalR может справиться с этой ситуацией, так как она автоматически управляет подключениями. См. дополнительные сведения об [использовании службы SignalR с помощью Функций Azure](signalr-concept-azure-functions.md).
+Другая причина может заключаться в том, что у вас нет требований к фактическому размещению веб-приложения. Логика вашего веб-приложения может использовать [независимые от сервера вычисления](https://azure.microsoft.com/overview/serverless-computing/). Например, возможно, ваш код размещается и выполняется только по запросу с помощью [триггеров функций Azure](../azure-functions/index.yml). Этот сценарий может быть сложным, потому что ваш код работает только по требованию и не поддерживает длительные соединения с клиентами. Служба Azure SignalR может справиться с этой ситуацией, так как она автоматически управляет подключениями. См. дополнительные сведения об [использовании службы SignalR с помощью Функций Azure](signalr-concept-azure-functions.md).
 
 ## <a name="how-does-it-scale"></a>Как выполняется масштабирование?
 
 Как правило, масштабирование SignalR выполняется с помощью SQL Server, Служебной шины Azure или кэша Azure для Redis. Служба Azure SignalR автоматически выбирает метод масштабирования. Производительность и стоимость сопоставимы с этими подходами без сложной работы с этими службами. Вам нужно только обновить количество единиц для своей службы. Каждая единица поддерживает до 1000 клиентских подключений.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Краткое руководство по созданию чата с помощью службы SignalR](signalr-quickstart-dotnet-core.md)

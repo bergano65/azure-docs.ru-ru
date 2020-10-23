@@ -7,14 +7,20 @@ ms.author: b-trconn
 ms.service: container-service
 ms.topic: article
 ms.date: 09/25/2019
-ms.openlocfilehash: 24163adcec889e9eedc2362ff1f01f00257a98f3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: eb5c568f056a99187a0e7a78a6f89b206f2d8dec
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80063177"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92220250"
 ---
-# <a name="manage-security-context-constraints-in-azure-red-hat-openshift"></a>Управление ограничениями контекста безопасности в Azure Red Hat OpenShift 
+# <a name="manage-security-context-constraints-in-azure-red-hat-openshift"></a>Управление ограничениями контекста безопасности в Azure Red Hat OpenShift
+
+> [!IMPORTANT]
+> Azure Red Hat OpenShift 3,11 будет прекращена 30 июня 2022. Поддержка для создания новых кластеров Azure Red Hat OpenShift 3,11 продолжится до 30 ноября 2020. После выхода из эксплуатации оставшиеся кластеры Azure Red Hat OpenShift 3,11 будут закрыты для предотвращения уязвимости системы безопасности.
+> 
+> Следуйте указаниям этого руководством, чтобы [создать кластер Azure Red Hat OpenShift 4](tutorial-create-cluster.md).
+> Если у вас есть определенные вопросы, [свяжитесь с нами](mailto:arofeedback@microsoft.com).
 
 Ограничения контекста безопасности (SCC) позволяют администраторам кластера управлять разрешениями для модулей Pod. Дополнительные сведения об этом типе API см. в [документации по архитектуре для SCC](https://docs.openshift.com/container-platform/3.11/architecture/additional_concepts/authorization.html). Вы можете управлять SCC в экземпляре как обычные объекты API с помощью интерфейса командной строки.
 

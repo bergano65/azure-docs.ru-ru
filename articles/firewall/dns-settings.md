@@ -7,12 +7,12 @@ ms.service: firewall
 ms.topic: how-to
 ms.date: 06/30/2020
 ms.author: victorh
-ms.openlocfilehash: 9c7182205df8d276bece4758d6d4430864883d32
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 09ffac4f19d50d9a386110e1b89f8f147652a2cd
+ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85610648"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92132012"
 ---
 # <a name="azure-firewall-dns-settings-preview"></a>Параметры DNS брандмауэра Azure (Предварительная версия)
 
@@ -57,6 +57,7 @@ DNS-сервер поддерживает и разрешает доменные
 3. В разделе **DNS-серверы**выберите **Настраиваемый** .
 4. Введите частный IP-адрес брандмауэра.
 5. Щелкните **Сохранить**.
+6. Перезапустите виртуальные машины, подключенные к виртуальной сети, чтобы назначить им новые параметры DNS-сервера. Виртуальные машины продолжают использовать свои текущие параметры DNS, пока они не будут перезагружены.
 
 #### <a name="enable-dns-proxy-preview"></a>Включение DNS-прокси (Предварительная версия)
 

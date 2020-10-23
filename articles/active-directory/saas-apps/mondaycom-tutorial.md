@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/17/2019
 ms.author: jeedes
-ms.openlocfilehash: 2128559d8074281c1019d99e1316da34c7ec6797
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: ed3d5de27a2d9ce5060ff4bfe71c595512658e58
+ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88554610"
+ms.lasthandoff: 10/11/2020
+ms.locfileid: "91940622"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-mondaycom"></a>Руководство по Интеграция единого входа Azure Active Directory с monday.com
 
@@ -88,14 +88,14 @@ ms.locfileid: "88554610"
 
     c. После успешной передачи файла метаданных значения **Идентификатор** и **URL-адрес ответа** в разделе "Базовая конфигурация SAML" заполнятся автоматически.
 
-    ![Изображение](common/idp-intiated.png)
+    ![Снимок экрана, на котором показан раздел "Базовая конфигурация SAML", где можно ввести идентификатор, URL-адрес ответа и нажать кнопку "Сохранить"](common/idp-intiated.png)
 
     > [!Note]
     > Если поля **Идентификатор** и **URL-адрес ответа** не заполняются автоматически, введите эти значения вручную. **Идентификатор** и **URL-адрес ответа** являются одинаковыми, а значение имеет следующий формат: `https://<your-domain>.monday.com/saml/saml_callback`
 
 1. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
-    ![Изображение](common/metadata-upload-additional-signon.png)
+    ![Снимок экрана, на котором показан параметр "Задать дополнительные URL-адреса" и поле для ввода URL-адреса входа](common/metadata-upload-additional-signon.png)
 
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://<YOUR_DOMAIN>.monday.com`.
 
@@ -104,7 +104,7 @@ ms.locfileid: "88554610"
 
 1. Приложение monday.com предусматривает использование проверочных утверждений SAML в определенном формате, что предполагает добавление пользовательских сопоставлений атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию.
 
-    ![Изображение](common/default-attributes.png)
+    ![На снимке экрана показаны раздел "Атрибуты и утверждения пользователя" со значениями по умолчанию, такими как "Givenname: user.givenname" и "Emailaddress: user.mail"](common/default-attributes.png)
 
 1. В дополнение к описанному выше приложение monday.com ожидает несколько дополнительных атрибутов в ответе SAML, как показано ниже. Эти атрибуты также заранее заполнены, но вы можете изменить их в соответствии со своими требованиями.
 
@@ -166,15 +166,15 @@ ms.locfileid: "88554610"
 
 1. В правом верхнем углу страницы выберите **Profile** (Профиль) и щелкните **Admin** (Администратор).
 
-    ![monday.com настройка](./media/mondaycom-tutorial/configuration01.png)
+    ![Снимок экрана демонстрирует выбранный профиль администратора.](./media/mondaycom-tutorial/configuration01.png)
 
 1. Выберите **Security** (Безопасность) и не забудьте щелкнуть **Open** (открыть) рядом с SAML.
 
-    ![monday.com настройка](./media/mondaycom-tutorial/configuration02.png)
+    ![На снимке экрана показана вкладка "Безопасность" и действие открытия рядом с элементом SAML.](./media/mondaycom-tutorial/configuration02.png)
 
 1. Введите ниже необходимые сведения, предоставленные IDP.
 
-    ![monday.com настройка](./media/mondaycom-tutorial/configuration03.png)
+    ![Снимок экрана демонстрирует страницу поставщика SAML, где можно ввести полученные от поставщика удостоверений значения.](./media/mondaycom-tutorial/configuration03.png)
 
     > [!NOTE]
     > Дополнительные сведения см. в [этой](https://support.monday.com/hc/articles/360000460605-SAML-Single-Sign-on?abcb=34642) статье

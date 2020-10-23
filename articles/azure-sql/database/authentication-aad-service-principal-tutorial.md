@@ -9,12 +9,12 @@ author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto
 ms.date: 08/17/2020
-ms.openlocfilehash: 453821e99f53a90a076ff13f010f2031a055cbf6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4e7da02f7dd7e8fb19e031b814624b289730b3ee
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91444181"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92367726"
 ---
 # <a name="tutorial-create-azure-ad-users-using-azure-ad-applications"></a>Руководство по созданию пользователей Azure AD с помощью приложений Azure AD
 
@@ -65,7 +65,7 @@ ms.locfileid: "91444181"
     Дополнительные сведения см. в описании команды [Set-AzSqlServer](https://docs.microsoft.com/powershell/module/az.sql/set-azsqlserver).
 
     > [!IMPORTANT]
-    > Если удостоверение Azure AD настроено для логического сервера SQL Azure, то ему должно быть предоставлено разрешение [**читателей каталога**](../../active-directory/users-groups-roles/directory-assign-admin-roles.md#directory-readers). Этот шаг будет рассмотрен в следующем разделе. **Не** пропустите этот шаг, так как проверка подлинности Azure AD перестанет работать.
+    > Если удостоверение Azure AD настроено для логического сервера SQL Azure, то ему должно быть предоставлено разрешение [**читателей каталога**](../../active-directory/roles/permissions-reference.md#directory-readers). Этот шаг будет рассмотрен в следующем разделе. **Не** пропустите этот шаг, так как проверка подлинности Azure AD перестанет работать.
 
     - Если вы ранее использовали команду [New-AzSqlServer](https://docs.microsoft.com/powershell/module/az.sql/new-azsqlserver) с параметром `AssignIdentity` для создания SQL Server, вам потребуется выполнить команду [Set-AzSqlServer](https://docs.microsoft.com/powershell/module/az.sql/set-azsqlserver) в качестве отдельной команды, чтобы включить это свойство в структуре Azure.
 

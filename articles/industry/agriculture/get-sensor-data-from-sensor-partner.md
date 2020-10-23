@@ -5,12 +5,12 @@ author: uhabiba04
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: v-umha
-ms.openlocfilehash: 3452641b336308ddf46349064345b154e55aa53c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 57baa00f7f9b64212d0aee8b0a2efeca814abeb3
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88649165"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92168534"
 ---
 # <a name="get-sensor-data-from-sensor-partners"></a>Получение данных датчика от партнеров датчиков
 
@@ -178,7 +178,7 @@ Azure Фармбеатс помогает перенести потоковые 
 1. На домашней странице в меню выберите **датчики** , чтобы открыть страницу **датчиков** .
 2. Выберите устройство, которое нужно удалить, и в окне подтверждения выберите **Удалить** .
 
-    ![Кнопка "Удалить"](./media/get-sensor-data-from-sensor-partner/delete-sensors-1.png)
+    ![Снимок экрана, посвященный страницам удаления датчиков и кнопке "Удалить".](./media/get-sensor-data-from-sensor-partner/delete-sensors-1.png)
 
 Появится сообщение с подтверждением об успешном удалении датчика.
 

@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 07/27/2020
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: d8cd8bf2e1a29b122fb4bac7a12454f102183fe3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6cc0855d3a4540de780a566a4613b4dbc647cfc5
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87845567"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92369494"
 ---
 # <a name="migrate-servers-running-windows-server-2008-to-azure"></a>Перенос серверов под управлением Windows Server 2008 в Azure
 
@@ -61,7 +61,7 @@ ms.locfileid: "87845567"
 
 В этом руководстве описано, как можно переносить локальные виртуальные машины VMware и физические серверы под управлением Windows Server 2008 или 2008 R2.
 > [!TIP]
-> Если вы ищете способ перенести виртуальные машины VMware в Azure, не используя агент, [щелкните здесь](https://aka.ms/migrateVMs-signup).
+> Если вы ищете способ перенести виртуальные машины VMware в Azure, не используя агент, [щелкните здесь](../migrate/tutorial-migrate-vmware.md).
 
 
 ### <a name="limitations-and-known-issues"></a>Ограничения и известные проблемы

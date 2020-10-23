@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/04/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 21e2b197c31a30ab8a249e2e8e398072a624154c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f22473d4a865e2925ecbfe74d68811c12f7c26d7
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89394097"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92168092"
 ---
 # <a name="azure-security-baseline-for-azure-functions"></a>Базовый план безопасности Azure для функций Azure
 
@@ -90,7 +90,7 @@ ms.locfileid: "89394097"
 
 - [Развертывание брандмауэра Azure](../firewall/tutorial-firewall-deploy-portal.md)
 
-- [Общие сведения об интегрированной аналитике угроз в Центре безопасности Azure](../security-center/threat-protection.md)
+- [Общие сведения об интегрированной аналитике угроз в Центре безопасности Azure](../security-center/azure-defender.md)
 
 - [Общие сведения о адаптивной защите сети в центре безопасности Azure](../security-center/security-center-adaptive-network-hardening.md)
 
@@ -315,7 +315,7 @@ ms.locfileid: "89394097"
 
 - [Включение параметров диагностики для функций Azure](./functions-monitor-log-analytics.md)
 
-- [Включение Application Insights для функций Azure](./functions-monitoring.md#enable-application-insights-integration)
+- [Включение Application Insights для функций Azure](./configure-monitoring.md#enable-application-insights-integration)
 
 - [Создание оповещений в Azure](../azure-monitor/learn/tutorial-response.md)
 
@@ -369,7 +369,7 @@ ms.locfileid: "89394097"
 
 **Руководство**. Управление доступом к плоскости управления для функций Azure осуществляется с помощью Azure Active Directory (AD). В Azure AD нет концепции паролей по умолчанию.
 
-Доступ к плоскости данных можно контролировать с помощью нескольких средств, включая ключи авторизации, ограничения сети и проверку удостоверения AAD. Ключи авторизации используются клиентами, которые подключаются к конечным точкам HTTP службы "функции Azure" и могут быть повторно созданы в любое время. По умолчанию эти ключи создаются для новых конечных точек HTTP.
+Доступ к плоскости данных можно контролировать с помощью нескольких средств, включая ключи авторизации, ограничения сети и проверку удостоверения Azure AD. Ключи авторизации используются клиентами, которые подключаются к конечным точкам HTTP службы "функции Azure" и могут быть повторно созданы в любое время. По умолчанию эти ключи создаются для новых конечных точек HTTP.
 
 Для приложений-функций доступны несколько методов развертывания, некоторые из которых могут использовать набор созданных учетных данных. Проверьте методы развертывания, которые будут использоваться для приложения.
 
@@ -545,7 +545,7 @@ ms.locfileid: "89394097"
 
 - [Создание дополнительных подписок Azure](../cost-management-billing/manage/create-subscription.md)
 
-- [Создание групп управления](../governance/management-groups/create.md)
+- [Создание групп управления](../governance/management-groups/create-management-group-portal.md)
 
 - [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
@@ -649,7 +649,7 @@ ms.locfileid: "89394097"
 
 - [Как добавить постоянную проверку безопасности в конвейер CI/CD](/azure/devops/migrate/security-validation-cicd-pipeline?view=azure-devops)
 
-- [Реализация рекомендаций по оценке уязвимостей в центре безопасности Azure](../security-center/security-center-vulnerability-assessment-recommendations.md)
+- [Реализация рекомендаций по оценке уязвимостей в центре безопасности Azure](../security-center/deploy-vulnerability-assessment-vm.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -727,7 +727,7 @@ ms.locfileid: "89394097"
 
 - [Создание дополнительных подписок Azure](../cost-management-billing/manage/create-subscription.md)
 
-- [Создание групп управления](../governance/management-groups/create.md)
+- [Создание групп управления](../governance/management-groups/create-management-group-portal.md)
 
 - [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
@@ -1087,7 +1087,7 @@ ms.locfileid: "89394097"
 
 - [Шифрование неактивных данных в службе хранилища Azure](../storage/common/storage-service-encryption.md)
 
-- [Как включить обратимое удаление в Key Vault](../storage/blobs/soft-delete-overview.md?tabs=azure-portal)
+- [Как включить обратимое удаление в Key Vault](../storage/blobs/soft-delete-blob-overview.md?tabs=azure-portal)
 
 **Мониторинг Центра безопасности Azure**: Да
 

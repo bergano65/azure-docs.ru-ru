@@ -8,12 +8,12 @@ ms.service: virtual-machines-windows
 ms.topic: article
 ms.date: 12/02/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 2595c79c024ea7583f6c6a263dcf4f6034ba6df9
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 741f1ba60a5824654737558d9d977333d3911f45
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92072294"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92201687"
 ---
 # <a name="key-vault-virtual-machine-extension-for-windows"></a>Расширение виртуальной машины Key Vault для Windows
 
@@ -222,6 +222,11 @@ Azure PowerShell можно использовать для развертыва
 ### <a name="troubleshoot"></a>Диагностика
 
 Данные о состоянии развертываний расширения можно получить на портале Azure, а также с помощью Azure PowerShell. Чтобы просмотреть состояние развертывания расширений для определенной виртуальной машины, выполните следующую команду в Azure PowerShell.
+
+### <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
+
+* Существует ли ограничение на количество Обсерведцертификатес, которые можно настроить?
+  Нет, Key Vaultное расширение виртуальной машины не ограничивает число Обсерведцертификатес.
 
 ## <a name="azure-powershell"></a>Azure PowerShell
 ```powershell

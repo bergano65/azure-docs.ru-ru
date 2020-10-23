@@ -10,12 +10,12 @@ ms.devlang: csharp
 ms.topic: conceptual
 ms.date: 08/20/2019
 ms.custom: amqp, devx-track-csharp
-ms.openlocfilehash: a10c8b21da1e4dc08a186ccb6ba6528b7a655943
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0d16d7a6dbf903ae790015c12e3d34e4a2a553d3
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89022077"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92139344"
 ---
 # <a name="get-started-with-iot-hub-module-identity-and-module-twin-using-the-portal-and-net-device"></a>Начало работы с удостоверением модуля Центра Интернета вещей и двойником модуля с использованием портала и устройства .NET
 
@@ -190,4 +190,4 @@ ms.locfileid: "89022077"
 
 * [Приступая к работе с удостоверением Центра Интернета вещей и двойником модуля с использованием резервной копии и устройства .NET](iot-hub-csharp-csharp-module-twin-getstarted.md)
 
-* [Краткое руководство. Развертывание первого модуля IoT Edge на устройстве под управлением 64-разрядной ОС Linux](../iot-edge/tutorial-simulate-device-linux.md)
+* [Краткое руководство. Развертывание первого модуля IoT Edge на устройстве под управлением 64-разрядной ОС Linux](../iot-edge/quickstart-linux.md)

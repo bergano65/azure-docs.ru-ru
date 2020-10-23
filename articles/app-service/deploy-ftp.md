@@ -6,16 +6,16 @@ ms.topic: article
 ms.date: 09/18/2019
 ms.reviewer: dariac
 ms.custom: seodec18
-ms.openlocfilehash: fcc7c5b8fa182cace6e3dae0b1cae4cd41c5dcb9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9884b109db3f3a34ceb323bef9fba1d5bfc23147
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81532601"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92150259"
 ---
 # <a name="deploy-your-app-to-azure-app-service-using-ftps"></a>Развертывание приложения в службе приложений Azure с помощью FTP или FTPS
 
-В этой статье показано, как с помощью FTP или FTPS развернуть веб-приложение, серверную частью мобильного приложения или приложение API в [службе приложений Azure](https://go.microsoft.com/fwlink/?LinkId=529714).
+В этой статье показано, как с помощью FTP или FTPS развернуть веб-приложение, серверную частью мобильного приложения или приложение API в [службе приложений Azure](./overview.md).
 
 Конечная точка FTP или FTPS для приложения уже активна. Чтобы обеспечить развертывание через FTP или FTPS, не требуется никаких настроек.
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 11/19/2019
 ms.author: jeedes
-ms.openlocfilehash: 9db53e36dee318d39d34d26a548d1d32cbbec3b2
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: fe0f2b0efa3f089398493cf30012e34097e065ec
+ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91266077"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91944302"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-f5"></a>Руководство по Интеграция единого входа Azure Active Directory с F5
 
@@ -72,15 +72,15 @@ ms.locfileid: "91266077"
 
 2. На странице **Guided Configuration** (Интерактивная конфигурация) щелкните **Upgrade Guided Configuration** (Обновить интерактивную конфигурацию) в верхнем левом углу.
 
-    ![Настройка F5 (Kerberos)](./media/kerbf5-tutorial/configure14.png) 
+    ![Снимок экрана, на котором показана страница Guided Configuration (Интерактивная конфигурация) с выбранным действием Upgrade Guided Configuration (Обновить интерактивную конфигурацию).](./media/kerbf5-tutorial/configure14.png) 
 
 3. Во всплывающем окне Upgrade Guided Configuration (Обновить интерактивную конфигурацию) щелкните **Choose File** (Выбрать файл), чтобы отправить скачанный пакет вариантов использования, и нажмите кнопку **Upload and Install** (Отправить и установить).
 
-    ![Настройка F5 (Kerberos)](./media/kerbf5-tutorial/configure15.png) 
+    ![Снимок экрана, на котором показано всплывающее окно Upgrade Guided Configuration (Обновить интерактивную конфигурацию) с выбранными параметрами Choose File (Выбрать файл) и Upload and Install (Отправить и установить).](./media/kerbf5-tutorial/configure15.png) 
 
 4. После завершения обновления нажмите кнопку **Continue** (Продолжить).
 
-    ![Настройка F5 (Kerberos)](./media/kerbf5-tutorial/configure16.png)
+    ![Снимок экрана, на котором показано диалоговое окно Guided Configuration update is complete (Обновление интерактивной конфигурации завершено) и выделена кнопка Continue (Продолжить).](./media/kerbf5-tutorial/configure16.png)
 
 ## <a name="scenario-description"></a>Описание сценария
 
@@ -213,60 +213,60 @@ ms.locfileid: "91266077"
 
 1. Выберите **System > Certificate Management > Traffic Certificate Management > SSL Certificate List** (Система > Управление сертификатами > Управление сертификатами трафика > Список SSL-сертификатов). В правом верхнем углу нажмите кнопку **Import** (Импортировать). Укажите **имя сертификата** (понадобится позднее в конфигурации). В поле **Certificate Source** (Источник сертификата) выберите Upload File (Отправить файл) и укажите сертификат, скачанный из Azure при настройке единого входа SAML. Щелкните **Импорт**.
 
-    ![Настройка F5 (Kerberos)](./media/kerbf5-tutorial/configure01.png) 
+    ![Снимок экрана, на котором показана страница S S L Certificate/Key Source (Источник SSL-сертификата или ключа) с выделенным элементом Upload File (Отправить файл) и кнопкой Import (Импорт).](./media/kerbf5-tutorial/configure01.png) 
 
 1. Кроме того, **для имени узла приложения потребуется SSL-сертификат. Выберите System > Certificate Management > Traffic Certificate Management > SSL Certificate List** (Система > Управление сертификатами > Управление сертификатами трафика > Список SSL-сертификатов). В правом верхнем углу нажмите кнопку **Import** (Импортировать). Выберите в качестве **типа импорта** **PKCS 12(IIS)** . Укажите **имя ключа** (понадобится позднее в конфигурации) и PFX-файл. Введите **пароль** для PFX-файла. Щелкните **Импорт**.
 
     >[!NOTE]
     >В примере имя нашего приложения — `Kerbapp.superdemo.live`. Мы используем групповой сертификат с именем ключа `WildCard-SuperDemo.live`.
 
-    ![Настройка F5 (Kerberos)](./media/kerbf5-tutorial/configure02.png) 
+    ![Снимок экрана, на котором показана страница S S L Certificate/Key Source (Источник SSL-сертификата или ключа) с указанными значениями и выделенной кнопкой Import (Импорт).](./media/kerbf5-tutorial/configure02.png) 
  
 1. Мы используем интерактивный интерфейс для настройки федерации Azure AD и доступа к приложениям. Перейдите в раздел F5 BIG-IP **Main** (Основные) и выберите **Access > Guided Configuration > Federation > SAML Service Provider** (Доступ > Интерактивная конфигурация > Федерация > Поставщик службы SAML). Нажмите кнопку **Next** (Далее) **дважды**, чтобы начать настройку.
 
-    ![Настройка F5 (Kerberos)](./media/kerbf5-tutorial/configure03.png) 
+    ![Снимок экрана, на котором показана страница Guided Configuration (Интерактивная конфигурация) с выделенным значком Federation (Федерация) и выбранным элементом S A M L Service Provider (Поставщик услуг SAML).](./media/kerbf5-tutorial/configure03.png) 
 
-    ![Настройка F5 (Kerberos)](./media/kerbf5-tutorial/configure04.png)
+    ![Снимок экрана, на котором показана страница Guided Configuration — S A M L Service Provider (Интерактивная конфигурация — поставщик услуг SAML) с выделенной кнопкой Next (Далее).](./media/kerbf5-tutorial/configure04.png)
 
 1. Укажите **имя конфигурации**. Укажите **идентификатор сущности** (тот же, который вы настроили в конфигурации приложения Azure AD). Укажите **имя узла**. Добавьте **описание** для справки. Примите остальные записи по умолчанию, а затем нажмите кнопку **Save & Next** (Сохранить и продолжить).
 
-    ![Настройка F5 (Kerberos)](./media/kerbf5-tutorial/configure05.png) 
+    ![Снимок экрана, на котором показана страница Service Provider Properties (Свойства поставщика услуг) с выделенными текстовыми полями Host name (Имя узла) и Description (Описание) и выбрана кнопка Save & Next (Сохранить и продолжить).](./media/kerbf5-tutorial/configure05.png) 
 
 1. В этом примере мы создаем виртуальный сервер с адресом 192.168.30.200 и портом 443. Укажите IP-адрес виртуального сервера в поле **Destination Address** (Адрес назначения). В разделе **Client SSL Profile** (Профиль SSL клиента) выберите Create new (Создать). Укажите ранее переданный сертификат приложения (в этом примере — групповой сертификат) и связанный с ним ключ, а затем нажмите кнопку **Save & Next** (Сохранить и продолжить).
 
     >[!NOTE]
     >В этом примере наш внутренний сервер работает на порту 80, а мы хотим опубликовать его с помощью порта 443.
 
-    ![Настройка F5 (Kerberos)](./media/kerbf5-tutorial/configure06.png)
+    ![Снимок экрана, на котором показана страница Virtual Server Properties (Свойства виртуального сервера) с выделенным текстовым полем Destination Address (Адрес назначения) и кнопкой Save & Next (Сохранить и продолжить).](./media/kerbf5-tutorial/configure06.png)
 
 1. В разделе **Select method to configure your IdP connector** (Выбрать метод настройки соединителя IdP) укажите метаданные, щелкните Choose File (Выбрать файл) и отправьте XML-файл метаданных, скачанный ранее из Azure AD. Укажите уникальное **имя** для соединителя поставщика удостоверений SAML. Выберите **Metadata Signing Certificate** (Сертификат для подписи метаданных) который был отправлен ранее. Нажмите кнопку **Save & Next** (Сохранить и продолжить).
 
-    ![Настройка F5 (Kerberos)](./media/kerbf5-tutorial/configure07.png)  
+    ![Снимок экрана, на котором показана страница External Identity Provider Connector Settings (Параметры соединителя внешних поставщиков удостоверений) с выделенным текстовым полем Name (Имя) и кнопкой Save & Next (Сохранить и продолжить).](./media/kerbf5-tutorial/configure07.png)  
 
 1. В разделе **Select a Pool** (Выбор пула) выберите **Create New** (Создать) (можно также выбрать пул, который уже существует). Оставьте для другого параметра значение по умолчанию.    В разделе серверов пула введите IP-адрес в поле **IP Address/Node Name** (IP-адрес или имя узла). Укажите **порт**. Нажмите кнопку **Save & Next** (Сохранить и продолжить).
  
-    ![Настройка F5 (Kerberos)](./media/kerbf5-tutorial/configure08.png)
+    ![Снимок экрана, на котором показана страница Pool Properties (Свойства пула) с выделенными текстовыми полями IP Address/Node Name (IP-адрес или имя узла) и Port (Порт) и кнопкой Save & Next (Сохранить и продолжить).](./media/kerbf5-tutorial/configure08.png)
 
 1. На экране единого входа выберите **Enable Single Sign-On** (Включить единый вход). В разделе **Selected Single Sign-On Type** (Выбранный тип единого входа) выберите **Kerberos**. Замените **session.saml.last.Identity** на **session.saml.last.attr.name.Identity** в разделе **Username Source** (Источник имени пользователя) (эта переменная задается с помощью сопоставления утверждений в Azure AD). Выберите **Show Advanced Setting** (Показать дополнительный параметр). В разделе **Kerberos Realm** (Область Kerberos) введите имя домена. В разделе **Account Name/ Account Password** (Имя учетной записи или пароль учетной записи) укажите учетную запись и пароль для делегирования APM. Укажите IP-адрес контроллера домена в поле **KDC**. Нажмите кнопку **Save & Next** (Сохранить и продолжить).
 
-    ![Настройка F5 (Kerberos)](./media/kerbf5-tutorial/configure09.png)   
+    ![Снимок экрана, на котором показана страница Single Sign-On Settings (Параметры единого входа) с выделенными текстовыми полями и кнопкой Save & Next (Сохранить и продолжить).](./media/kerbf5-tutorial/configure09.png)   
 
 1. В этом руководстве мы пропустим проверку конечных точек.  Дополнительные сведения см. в документации по F5.  На экране выберите **Save & Next** (Сохранить и продолжить).
 
-    ![Настройка F5 (Kerberos)](./media/kerbf5-tutorial/configure10.png) 
+    ![Снимок экрана, на котором показана страница Endpoint Checks Properties (Свойства проверки конечных точек) и выбрана кнопка Save & Next (Сохранить и продолжить).](./media/kerbf5-tutorial/configure10.png) 
 
 1. Примите значения по умолчанию и нажмите кнопку **Save & Next** (Сохранить и продолжить). Дополнительные сведения о параметрах управления сеансами SAML см. в документации по F5.
 
 
-    ![Настройка F5 (Kerberos)](./media/kerbf5-tutorial/configure11.png) 
+    ![Снимок экрана, на котором показана страница Timeout Settings (Параметры времени ожидания) с выбранной кнопкой Save & Next (Сохранить и продолжить).](./media/kerbf5-tutorial/configure11.png) 
  
 1. Проверьте экран сводки и нажмите кнопку **Deploy** (Развернуть), чтобы настроить BIG-IP.
  
-    ![Настройка F5 (Kerberos)](./media/kerbf5-tutorial/configure12.png)
+    ![Снимок экрана, на котором показана страница Your application is ready to be deployed (Приложение готово к развертыванию) с выделенным разделом Summary (Сводка) и выбранной кнопкой Deploy (Развернуть).](./media/kerbf5-tutorial/configure12.png)
 
 1. После развертывания приложения щелкните **Finish** (Готово).
 
-    ![Настройка F5 (Kerberos)](./media/kerbf5-tutorial/configure13.png)
+    ![Снимок экрана, на котором показана страница Your application is deployed (Приложение развернуто) с выбранной кнопкой Finish (Готово).](./media/kerbf5-tutorial/configure13.png)
 
 ## <a name="advanced-configuration"></a>Расширенная настройка
 
@@ -317,27 +317,27 @@ ms.locfileid: "91266077"
 
 15. Нажмите кнопку **Finished** (Готово). Новый сервер отобразится в списке. Он будет добавлен в список серверов Active Directory.
 
-    ![Настройка F5 (Kerberos)](./media/kerbf5-tutorial/configure17.png)
+    ![Снимок экрана, на котором показаны разделы General Properties (Общие свойства) и Configuration (Конфигурация).](./media/kerbf5-tutorial/configure17.png)
 
 ### <a name="saml-configuration"></a>Настройка SAML
 
 1. Понадобится импортировать в F5 сертификат метаданных, который будет использоваться позже в процессе настройки. Выберите **System > Certificate Management > Traffic Certificate Management > SSL Certificate List** (Система > Управление сертификатами > Управление сертификатами трафика > Список SSL-сертификатов). В правом верхнем углу нажмите кнопку **Import** (Импортировать).
 
-    ![Настройка F5 (Kerberos)](./media/kerbf5-tutorial/configure18.png)
+    ![Снимок экрана, на котором показана страница Import S S L Certificate/Key Source (Импорт источника SSL-сертификата или ключа) с выделенной кнопкой Import (Импорт).](./media/kerbf5-tutorial/configure18.png)
 
 2. Чтобы настроить поставщик удостоверений SAML, выберите **Access > Federation > SAML: Service Provider > External Idp Connectors** (Доступ > Федерация > SAML: поставщик служб > Внешние соединители поставщика удостоверений) и щелкните **Create > From Metadata** (Создать > Из метаданных).
 
-    ![Настройка F5 (Kerberos)](./media/kerbf5-tutorial/configure19.png)
+    ![Снимок экрана, на котором показана страница S A M L Service Provider (Поставщик услуг SAML) с выбранным пунктом From Metadata (Из метаданных) в раскрывающемся списке Create (Создать).](./media/kerbf5-tutorial/configure19.png)
 
-    ![Настройка F5 (Kerberos)](./media/kerbf5-tutorial/configure20.png)
+    ![Снимок экрана с диалоговым окном Create New S A M L I d P Connector (Создание нового соединителя IdP SAML).](./media/kerbf5-tutorial/configure20.png)
 
-    ![Настройка F5 (Kerberos)](./media/kerbf5-tutorial/configure21.png)
+    ![Снимок экрана, на котором показано диалоговое окно Edit S A M L I d P Connector (Изменение соединителя IdP SAML) с выбранным пунктом General Settings (Общие параметры).](./media/kerbf5-tutorial/configure21.png)
 
-    ![Настройка F5 (Kerberos)](./media/kerbf5-tutorial/configure22.png)
+    ![Снимок экрана, на котором показано диалоговое окно Edit S A M L I d P Connector (Изменение соединителя IdP SAML) с выбранным пунктом Single Sign On Service Settings (Параметры службы единого входа).](./media/kerbf5-tutorial/configure22.png)
 
-    ![Настройка F5 (Kerberos)](./media/kerbf5-tutorial/configure23.png)
+    ![Снимок экрана, на котором показано диалоговое окно Edit S A M L I d P Connector (Изменение соединителя IdP SAML) с выбранным пунктом Security Settings (Параметры безопасности).](./media/kerbf5-tutorial/configure23.png)
 
-    ![Настройка F5 (Kerberos)](./media/kerbf5-tutorial/configure24.png)
+    ![Снимок экрана, на котором показано диалоговое окно Edit S A M L I d P Connector (Изменение соединителя IdP SAML) с выбранным пунктом S L O Service Settings (Параметры службы SLO).](./media/kerbf5-tutorial/configure24.png)
 
 1. Чтобы настроить поставщик служб (SP) SAML, выберите **Access > Federation > SAML Service Provider > Local SP Services** (Доступ > Федерация > Поставщик служб SAML > Локальные службы SP) и щелкните **Create** (Создать). Введите следующие сведения и нажмите кнопку **ОК**.
 
@@ -348,17 +348,17 @@ ms.locfileid: "91266077"
     * Узел: kerbapp200.superdemo.live.
     * Описание: kerbapp200.superdemo.live.
 
-     ![Настройка F5 (Kerberos)](./media/kerbf5-tutorial/configure25.png)
+     ![Снимок экрана, на котором показано диалоговое окно Edit S A M L S P Service (Изменение службы поставщика услуг SAML) с выбранным пунктом General Settings (Общие параметры).](./media/kerbf5-tutorial/configure25.png)
 
      b. Выберите конфигурацию поставщика служб, KerbApp200SAML, и щелкните **Bind/UnBind IdP Connectors** (Привязать/отменить привязку соединителей IdP).
 
-     ![Настройка F5 (Kerberos)](./media/kerbf5-tutorial/configure26.png)
+     ![Снимок экрана, на котором показана страница S A M L Service Provider — Local S P Services (Поставщик услуг SAML — локальные службы SP) с выбранным параметром KerbAPP200 S A M L.](./media/kerbf5-tutorial/configure26.png)
 
-     ![Настройка F5 (Kerberos)](./media/kerbf5-tutorial/configure27.png)
+     ![Снимок экрана, на котором выделена кнопка Bind/Unbind I d P Connectors (Привязать соединители IdP или отменить их привязку).](./media/kerbf5-tutorial/configure27.png)
 
      c. Щелкните **Add New Row** (Добавить новую строку) и выберите **External IdP connector** (Внешний соединитель IdP), созданный на предыдущем шаге, щелкните **Update** (Обновить), а затем нажмите кнопку **ОК**.
 
-     ![Настройка F5 (Kerberos)](./media/kerbf5-tutorial/configure28.png)
+     ![Снимок экрана, на котором показано окно Edit S A M L I d Ps that use this S P (Изменить IdP SAML, использующие этот поставщик услуг) с выбранной кнопкой Add New Row (Добавить новую строку).](./media/kerbf5-tutorial/configure28.png)
 
 1. Для настройки единого входа Kerberos выберите **Access > Single Sign-on > Kerberos** (Доступ > Единый вход > Kerberos), введите сведения и щелкните **Finished** (Завершено).
 
@@ -369,7 +369,7 @@ ms.locfileid: "91266077"
 
     * **Источник области пользователя**: session.logon.last.domain.
 
-        ![Настройка F5 (Kerberos)](./media/kerbf5-tutorial/configure29.png)
+        ![Снимок экрана, на котором показана страница Single Sign-On — Properties (Единый вход — свойства) с выделенными текстовыми полями Username Source (Источник имени пользователя) и User Realm Source (Источник области пользователя).](./media/kerbf5-tutorial/configure29.png)
 
 1. Чтобы настроить профиль доступа, выберите **Access > Profile/Policies > Access Profile (per session policies)** (Доступ > Профиль/политики > Профиль доступа (политики для каждого сеанса)), щелкните **Create** (Создать), введите следующие сведения и щелкните **Finished** (Завершено).
 
@@ -378,38 +378,38 @@ ms.locfileid: "91266077"
     * Область профиля: Профиль
     * Языки: Английский
 
-        ![Настройка F5 (Kerberos)](./media/kerbf5-tutorial/configure30.png)
+        ![Снимок экрана, на котором показана страница Profiles/Policies — Properties (Профили и политики — свойства) с выделенными текстовыми полями Name (Имя), Profile Type (Тип профиля) и Langauges (Языки).](./media/kerbf5-tutorial/configure30.png)
 
 1. Щелкните имя, KerbApp200, введите следующие сведения и нажмите кнопку **Update** (Обновить).
 
     * Файл cookie домена: superdemo.live.
     * Настройка единого входа: KerAppSSO_sso.
 
-        ![Настройка F5 (Kerberos)](./media/kerbf5-tutorial/configure31.png)
+        ![Снимок экрана, на котором показана страница S S O/Auth Domains (SSD или домены проверки подлинности) с текстовым полем Domain Cookie (Файл cookie домена), выделенным раскрывающимся списком S S O Configuration (Конфигурация SSO) и выбранной кнопкой Update (Обновить).](./media/kerbf5-tutorial/configure31.png)
 
 1. Щелкните **Access Policy** (Политика доступа), а затем выберите **Edit Access Policy** (Изменить политику доступа) для профиля KerbApp200.
 
-    ![Настройка F5 (Kerberos)](./media/kerbf5-tutorial/configure32.png)
+    ![Снимок экрана, на котором показана страница Access Policy (Политика доступа) с выбранным действием Edit Access Policy for Profile KerbApp200 (Изменить политику доступа для профиля KerbApp200).](./media/kerbf5-tutorial/configure32.png)
 
-    ![Настройка F5 (Kerberos)](./media/kerbf5-tutorial/configure33.png)
+    ![Снимок экрана, на котором показана страница Access Policy (Политика доступа) и диалоговое окно S A M L Authentication S P (Поставщик услуг проверки подлинности SAML).](./media/kerbf5-tutorial/configure33.png)
 
-    ![Настройка F5 (Kerberos)](./media/kerbf5-tutorial/configure34.png)
+    ![Снимок экрана, на котором показана страница Access Policy (Политика доступа) и диалоговое окно Variable Assign (Назначение переменной) с выделенными текстовыми полями Assignment (Назначение).](./media/kerbf5-tutorial/configure34.png)
 
     * **session.logon.last.usernameUPN   expr {[mcget {session.saml.last.identity}]}**
 
     * **session.ad.lastactualdomain  TEXT superdemo.live**
 
-        ![Настройка F5 (Kerberos)](./media/kerbf5-tutorial/configure35.png)
+        ![Снимок экрана, на котором показана страница Access Policy (Политика доступа) и диалоговое окно Active Directory с выделенным текстовым полем SearchFilter (Фильтр поиска).](./media/kerbf5-tutorial/configure35.png)
 
     * **(userPrincipalName=%{session.logon.last.usernameUPN})**
 
-        ![Настройка F5 (Kerberos)](./media/kerbf5-tutorial/configure36.png)
+        ![Снимок экрана, на котором показана страница Access Policy (Политика доступа) с диалоговым окном A D Query — Branch Rules (Запрос AD — правила ветви).](./media/kerbf5-tutorial/configure36.png)
 
-        ![Настройка F5 (Kerberos)](./media/kerbf5-tutorial/configure37.png)
+        ![Снимок экрана, на котором выделены текстовые поля Custom Variable (Настраиваемая переменная) и Custom Expression (Настраиваемое выражение).](./media/kerbf5-tutorial/configure37.png)
 
     * **session.logon.last.username  expr { "[mcget {session.ad.last.attr.sAMAccountName}]" }**
 
-        ![Настройка F5 (Kerberos)](./media/kerbf5-tutorial/configure38.png)
+        ![Снимок экрана, на котором выделено текстовое поле Username from Logon Page (Имя пользователя на странице входа).](./media/kerbf5-tutorial/configure38.png)
 
     * **mcget {session.logon.last.username}**
     * **mcget {session.logon.last.password}**
@@ -420,7 +420,7 @@ ms.locfileid: "91266077"
     * Описание. KerbApp200.
     * Адрес: 192.168.20.200.
 
-        ![Настройка F5 (Kerberos)](./media/kerbf5-tutorial/configure39.png)
+        ![Снимок экрана, на котором показана страница New Node (Новый узел) с выделенными текстовыми полями Name (Имя), Description (Описание) и Address (Адрес) и выбранной кнопкой Finished (Готово).](./media/kerbf5-tutorial/configure39.png)
 
 1. Для создания пула выберите **Local Traffic > Pools > Pool List (Локальный трафик > Пулы > Список пулов), щелкните Create (Создать)** , введите следующие сведения и щелкните **Finished** (Завершено).
 
@@ -430,7 +430,7 @@ ms.locfileid: "91266077"
     * Адрес: 192.168.20.200.
     * Порт службы: 81
 
-        ![Настройка F5 (Kerberos)](./media/kerbf5-tutorial/configure40.png)
+        ![Снимок экрана, на котором показана страница New Pool (Новый пул) с введенными значениями и выбранной кнопкой Finished (Готово).](./media/kerbf5-tutorial/configure40.png)
 
 1. Для создания виртуального сервера выберите **Local Traffic > Virtual Servers > Virtual Server List > + (Локальный трафик > Виртуальные серверы > Список виртуальных серверов > +)** , введите следующие сведения и щелкните **Finished** (Завершено).
 
@@ -440,9 +440,9 @@ ms.locfileid: "91266077"
     * Профиль доступа: KerbApp200.
     * Укажите профиль доступа, созданный на предыдущем шаге
 
-        ![Настройка F5 (Kerberos)](./media/kerbf5-tutorial/configure41.png)
+        ![Снимок экрана, на котором показана страница Virtual Server List (Список виртуальных серверов) с выделенными текстовыми полями Name (Имя), Destination Address/Mask (Адрес или маска назначения) и Service Port (Порт службы).](./media/kerbf5-tutorial/configure41.png)
 
-        ![Настройка F5 (Kerberos)](./media/kerbf5-tutorial/configure42.png)
+        ![Снимок экрана, на котором показана страница Virtual Server List (Список виртуальных серверов) с выделенным раскрывающимся списком Access Profile (Профиль доступа).](./media/kerbf5-tutorial/configure42.png)
 
 ### <a name="setting-up-kerberos-delegation"></a>Настройка делегирования Kerberos 
 

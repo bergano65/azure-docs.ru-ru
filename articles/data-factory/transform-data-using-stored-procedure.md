@@ -11,12 +11,12 @@ ms.author: abnarain
 manager: shwang
 ms.custom: seo-lt-2019
 ms.date: 11/27/2018
-ms.openlocfilehash: bdab4f33852be6bfc2621e2cbecff76778567b1a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4d62619fe2641ec1aded39650b47b53cf4269d8b
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89484737"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92368882"
 ---
 # <a name="transform-data-by-using-the-sql-server-stored-procedure-activity-in-azure-data-factory"></a>Преобразование данных с помощью действия хранимой процедуры SQL Server в фабрике данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -80,7 +80,7 @@ C его помощью можно вызвать хранимую процед�
 ## <a name="parameter-data-type-mapping"></a>Сопоставление типов данных параметров
 Тип данных, указанный для параметра, — это тип фабрики данных Azure, который сопоставляется с типом данных в используемом источнике данных. Сопоставления типов данных для источника данных можно найти в области Соединители. Некоторые примеры
 
-| источника данных          | Сопоставление типов данных |
+| Источник данных          | Сопоставление типов данных |
 | ---------------------|-------------------|
 | Azure Synapse Analytics | https://docs.microsoft.com/azure/data-factory/connector-azure-sql-data-warehouse#data-type-mapping-for-azure-sql-data-warehouse |
 | База данных SQL Azure   | https://docs.microsoft.com/azure/data-factory/connector-azure-sql-database#data-type-mapping-for-azure-sql-database | 
@@ -102,5 +102,5 @@ C его помощью можно вызвать хранимую процед�
 * [Действие потоковой передачи Hadoop](transform-data-using-hadoop-streaming.md)
 * [Действие Spark](transform-data-using-spark.md)
 * [Настраиваемое действие .NET](transform-data-using-dotnet-custom-activity.md)
-* [Создание прогнозирующих конвейеров с помощью службы "Машинное обучение Azure" и фабрики данных Azure](transform-data-using-machine-learning.md)
+* [Действие выполнения пакета Машинное обучение Azure Studio (классическая модель)](transform-data-using-machine-learning.md)
 * [Действие хранимой процедуры](transform-data-using-stored-procedure.md)

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 1/14/2020
 ms.author: allensu
-ms.openlocfilehash: 602a36964d4a6d5f3660499570327db3479c980e
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 4a397a67c0e40de8be1d42ee56618357cf36c55f
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89299207"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92017732"
 ---
 # <a name="what-is-azure-load-balancer"></a>Что такое Azure Load Balancer?
 
@@ -80,10 +80,8 @@ Load Balancer уровня "Базовый" предоставляется бе�
 Подпишитесь на RSS-канал и просматривайте последние обновления компонентов для Azure Load Balancer на странице [Обновления Azure](https://azure.microsoft.com/updates/?category=networking&query=load%20balancer).
 
 ## <a name="next-steps"></a>Дальнейшие действия
-См. сведения об [обновлении Load Balancer ценовой категории "Базовый" до ценовой категории "Стандартный"](upgrade-basic-standard.md).
 
-Чтобы приступить к работе с Load Balancer, см. [Create a public Standard Load Balancer](quickstart-load-balancer-standard-public-portal.md) (Создание общедоступного Load Balancer (цен. категория "Стандартный")).
+Сведения о том, как приступить к работе с Load Balancer, см. в статье [Краткое руководство. Создание общедоступной подсистемы балансировки нагрузки с помощью портала Azure для распределения нагрузки между виртуальными машинами](quickstart-load-balancer-standard-public-portal.md).
 
 Дополнительные сведения об ограничениях и компонентах Azure Load Balancer см. в статьях [Компоненты Azure Load Balancer](./components.md) и [Концепции Azure Load Balancer](./concepts.md).
 
-Сравнение параметров балансировки нагрузки Azure см. в статье [Общие сведения о параметрах балансировки нагрузки в Azure](https://docs.microsoft.com/azure/architecture/guide/technology-choices/load-balancing-overview).

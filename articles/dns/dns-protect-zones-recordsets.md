@@ -7,12 +7,12 @@ ms.service: dns
 ms.topic: how-to
 ms.date: 2/20/2020
 ms.author: allensu
-ms.openlocfilehash: b06ae396ae15c8572cf8160ce576651f47001add
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 52cb1f144608202739dc46f2053950b38d810631
+ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87920506"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92330161"
 ---
 # <a name="how-to-protect-dns-zones-and-records"></a>Как защитить зоны и записи DNS
 
@@ -22,9 +22,9 @@ ms.locfileid: "87920506"
 
 В этой статье объясняется, как Azure DNS позволяет защищать частные зоны и записи DNS для таких изменений.  Мы применяем две эффективные функции для ценных бумаг, предоставляемые Azure Resource Manager: [Управление доступом на основе ролей Azure (Azure RBAC)](../role-based-access-control/overview.md) и [блокировки ресурсов](../azure-resource-manager/management/lock-resources.md).
 
-## <a name="role-based-access-control"></a>Управление доступом на основе ролей
+## <a name="azure-role-based-access-control"></a>Управление доступом на основе ролей в Azure
 
-Управление доступом на основе ролей Azure (Azure RBAC) обеспечивает точное управление доступом для пользователей, групп и ресурсов Azure. С помощью RBAC можно предоставить пользователям необходимый уровень доступа. Дополнительные сведения о том, как RBAC помогает управлять доступом, см. в статье [что такое управление доступом на основе ролей в Azure (Azure RBAC)](../role-based-access-control/overview.md).
+Управление доступом на основе ролей Azure (Azure RBAC) обеспечивает точное управление доступом для пользователей, групп и ресурсов Azure. С помощью Azure RBAC можно предоставить пользователям необходимый уровень доступа. Дополнительные сведения об управлении доступом с помощью Azure RBAC см. в статье [что такое управление доступом на основе ролей в Azure (Azure RBAC)](../role-based-access-control/overview.md).
 
 ### <a name="the-dns-zone-contributor-role"></a>Роль "Участник зоны DNS"
 
@@ -32,11 +32,11 @@ ms.locfileid: "87920506"
 
 Группа ресурсов *myResourceGroup* содержит пять зон для Contoso Corporation. Если предоставить администратору DNS разрешения "Участник зоны DNS" для этой группы ресурсов, то он получит полный контроль над этими зонами DNS. Это позволяет избежать предоставления ненужных разрешений. Администратор DNS не может создавать или прекращать работу виртуальных машин.
 
-Самый простой способ назначения разрешений RBAC — [через портал Azure](../role-based-access-control/role-assignments-portal.md).  
+Самый простой способ назначения разрешений Azure RBAC — [с помощью портал Azure](../role-based-access-control/role-assignments-portal.md).  
 
 Откройте **элемент управления доступом (IAM)** для группы ресурсов, затем выберите **Добавить**, а затем роль **участник зоны DNS** . Выберите необходимых пользователей или группы для предоставления разрешений.
 
-![Назначение разрешений RBAC на уровне группы ресурсов через портал Azure](./media/dns-protect-zones-recordsets/rbac1.png)
+![Azure RBAC уровня группы ресурсов через портал Azure](./media/dns-protect-zones-recordsets/rbac1.png)
 
 Разрешения также можно [предоставить с помощью Azure PowerShell](../role-based-access-control/role-assignments-powershell.md):
 
@@ -61,15 +61,15 @@ az role assignment create \
 --resource-group "<resource group name>"
 ```
 
-### <a name="zone-level-rbac"></a>RBAC на уровне зоны
+### <a name="zone-level-azure-rbac"></a>Azure RBAC уровня зоны
 
 Правила RBAC Azure могут применяться к подписке, группе ресурсов или к отдельному ресурсу. Этот ресурс может быть отдельной зоной DNS или отдельным набором записей.
 
 Например, Группа ресурсов *myResourceGroup* содержит зону *contoso.com* и подзону *Customers.contoso.com*. Записи CNAME создаются для каждой учетной записи клиента. Учетной записи администратора, используемой для управления записями CNAME, присваиваются разрешения на создание записей в зоне *Customers.contoso.com* . Учетная запись может управлять только *Customers.contoso.com* .
 
-Разрешения RBAC на уровне зоны можно предоставлять через портал Azure.  Откройте **элемент управления доступом (IAM)** для зоны, выберите **Добавить**, а затем роль **участника зоны DNS** и выберите пользователей или группы, которым требуется предоставить разрешения.
+Разрешения RBAC уровня зоны Azure можно предоставить с помощью портал Azure.  Откройте **элемент управления доступом (IAM)** для зоны, выберите **Добавить**, а затем роль **участника зоны DNS** и выберите пользователей или группы, которым требуется предоставить разрешения.
 
-![Назначение разрешений RBAC на уровне зоны DNS через портал Azure](./media/dns-protect-zones-recordsets/rbac2.png)
+![Azure RBAC уровня зоны DNS через портал Azure](./media/dns-protect-zones-recordsets/rbac2.png)
 
 Разрешения также можно [предоставить с помощью Azure PowerShell](../role-based-access-control/role-assignments-powershell.md):
 
@@ -96,15 +96,15 @@ az role assignment create \
 --scope "/subscriptions/<subscription id>/resourceGroups/<resource group name>/providers/Microsoft.Network/DnsZones/<zone name>/"
 ```
 
-### <a name="record-set-level-rbac"></a>RBAC на уровне набора записей
+### <a name="record-set-level-azure-rbac"></a>Azure RBAC на уровне набора записей
 
 Разрешения применяются на уровне набора записей.  Пользователю предоставляется доступ к записям, которые им нужны, и не могут вносить какие-либо другие изменения.
 
 Разрешения RBAC на уровне набора записей можно настроить с помощью портал Azure, используя кнопку **управления доступом (IAM)** на странице "набор записей":
 
-![Назначение разрешений RBAC на уровне набора записей через портал Azure](./media/dns-protect-zones-recordsets/rbac3.png)
+![На уровне набора записей Azure RBAC через портал Azure](./media/dns-protect-zones-recordsets/rbac3.png)
 
-Разрешения RBAC на уровне набора записей также можно [предоставить с помощью Azure PowerShell](../role-based-access-control/role-assignments-powershell.md):
+Разрешения RBAC на уровне набора записей также можно [предоставлять с помощью Azure PowerShell](../role-based-access-control/role-assignments-powershell.md):
 
 ```azurepowershell
 # Grant permissions to a specific record set
@@ -186,7 +186,7 @@ az role create -inputfile <file path>
 
 Затем роль можно назначить таким же образом, как и встроенные роли. Этот процесс описан ранее в этой статье.
 
-Дополнительные сведения о создании и назначении пользовательских ролей, а также об управлении ими см. в статье [Пользовательские роли в Azure RBAC](../role-based-access-control/custom-roles.md).
+Дополнительные сведения о создании настраиваемых ролей, управлении ими и их назначении см. в статье [пользовательские роли Azure](../role-based-access-control/custom-roles.md).
 
 ## <a name="resource-locks"></a>Блокировки ресурсов
 
@@ -286,5 +286,5 @@ New-AzResourceLock -LockLevel $lvl -LockName $lnm -ResourceName $rsc -ResourceTy
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 
-* Дополнительные сведения о работе с RBAC см. в статье [Начало работы с управлением доступом на портале Azure](../role-based-access-control/overview.md).
+* Дополнительные сведения о работе с Azure RBAC см. в статье [что такое управление доступом на основе ролей в Azure (Azure RBAC)](../role-based-access-control/overview.md).
 * Дополнительные сведения о работе с блокировками ресурсов см. в статье [Блокировка ресурсов с помощью диспетчера ресурсов Azure](../azure-resource-manager/management/lock-resources.md).

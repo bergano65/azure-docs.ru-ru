@@ -11,19 +11,19 @@ author: msmimart
 manager: celestedg
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6adf7e6c5abbba3c018f9a03b5167aec7537c704
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5b820b8b9606795709d03414fa14ec29a1b5c519
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87908966"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92441561"
 ---
 # <a name="dynamic-groups-and-azure-active-directory-b2b-collaboration"></a>Динамические группы и служба совместной работы Azure Active Directory B2B
 
 ## <a name="what-are-dynamic-groups"></a>Что такое динамические группы?
-Динамическая конфигурация членства в группе безопасности для Azure Active Directory (Azure AD) доступна на [портале Azure](https://portal.azure.com). Администраторы могут устанавливать правила для заполнения групп, созданных в Azure AD на основе атрибутов пользователя (например, userType, отдела или страны или региона). Участников можно автоматически добавлять в группу безопасности или удалять их из нее в зависимости от атрибутов. Эти группы могут предоставлять доступ к приложениям или облачным ресурсам, таким как сайты и документы SharePoint. Их также можно использовать для назначения лицензий участникам. Дополнительные сведения о динамических групп см. в статье [Выделенные группы в Azure Active Directory](../active-directory-accessmanagement-dedicated-groups.md).
+Динамическая конфигурация членства в группе безопасности для Azure Active Directory (Azure AD) доступна на [портале Azure](https://portal.azure.com). Администраторы могут устанавливать правила для заполнения групп, созданных в Azure AD на основе атрибутов пользователя (например, userType, отдела или страны или региона). Участников можно автоматически добавлять в группу безопасности или удалять их из нее в зависимости от атрибутов. Эти группы могут предоставлять доступ к приложениям или облачным ресурсам, таким как сайты и документы SharePoint. Их также можно использовать для назначения лицензий участникам. Дополнительные сведения о динамических групп см. в статье [Выделенные группы в Azure Active Directory](../fundamentals/active-directory-groups-create-azure-portal.md).
 
-Для создания и использования динамических групп требуется соответствующее [лицензирование Azure AD Premium P1 или P2](https://azure.microsoft.com/pricing/details/active-directory/). Дополнительные сведения см. в статье [Создание правил на основе атрибутов для динамического членства в группах в Azure Active Directory](../users-groups-roles/groups-dynamic-membership.md).
+Для создания и использования динамических групп требуется соответствующее [лицензирование Azure AD Premium P1 или P2](https://azure.microsoft.com/pricing/details/active-directory/). Дополнительные сведения см. в статье [Создание правил на основе атрибутов для динамического членства в группах в Azure Active Directory](../enterprise-users/groups-dynamic-membership.md).
 
 ## <a name="creating-an-all-users-dynamic-group"></a>Создание динамической группы "все пользователи"
 С помощью правила членства вы можете создать группу, содержащую всех пользователей в клиенте. Если в будущем пользователи будут добавлены в клиент или удалены из него, членство в группе скорректируется автоматически.
@@ -42,7 +42,7 @@ ms.locfileid: "87908966"
 
    ![Синтаксис правил для динамической группы "все пользователи"](media/use-dynamic-groups/all-user-rule-syntax.png)
 
-1.  Щелкните **Сохранить**. Теперь новая динамическая группа будет включать гостевых пользователей B2B и пользователей.
+1.  Нажмите **Сохранить**. Теперь новая динамическая группа будет включать гостевых пользователей B2B и пользователей.
 
 
 1. Выберите **создать** на странице **Новая группа** , чтобы создать группу.
@@ -76,4 +76,3 @@ ms.locfileid: "87908966"
 - [Свойства пользователя службы совместной работы Azure Active Directory B2B](user-properties.md)
 - [Добавление пользователя службы совместной работы Azure Active Directory B2B в роль](add-guest-to-role.md)
 - [Условный доступ для пользователей службы совместной работы B2B](conditional-access.md)
-

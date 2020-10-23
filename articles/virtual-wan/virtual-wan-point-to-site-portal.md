@@ -1,5 +1,5 @@
 ---
-title: Создание подключения типа "точка — сеть" с помощью Виртуальной глобальной сети Azure | Документация Майкрософт
+title: Руководство по созданию подключения типа "точка — сеть" с помощью Виртуальной глобальной сети Azure
 description: В руководстве показано, как создать VPN-подключение типа "точка — сеть" в Azure с помощью Виртуальной глобальной сети Azure.
 services: virtual-wan
 author: cherylmc
@@ -7,12 +7,12 @@ ms.service: virtual-wan
 ms.topic: tutorial
 ms.date: 10/06/2020
 ms.author: cherylmc
-ms.openlocfilehash: 84f8563a6b03f10f4cbc647426c350d9fac52780
-ms.sourcegitcommit: 5abc3919a6b99547f8077ce86a168524b2aca350
+ms.openlocfilehash: 3d03d0267ff4fb16042d5cc2016e87139b88281a
+ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91812690"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92056588"
 ---
 # <a name="tutorial-create-a-user-vpn-connection-using-azure-virtual-wan"></a>Руководство по созданию пользовательского соединения VPN с помощью Виртуальной глобальной сети Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "91812690"
 
 ![Схема Виртуальной глобальной сети](./media/virtual-wan-about/virtualwanp2s.png)
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [Before beginning](../../includes/virtual-wan-before-include.md)]
 
@@ -82,4 +82,7 @@ Remove-AzResourceGroup -Name myResourceGroup -Force
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о Виртуальной глобальной сети см. в [этой статье](virtual-wan-about.md).
+Дополнительные сведения о Виртуальной глобальной сети см. в следующей статье:
+
+> [!div class="nextstepaction"]
+> * [Вопросы и ответы о Виртуальной глобальной сети](virtual-wan-faq.md)

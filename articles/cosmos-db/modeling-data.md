@@ -7,12 +7,12 @@ ms.author: mjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 07/23/2019
-ms.openlocfilehash: a34544eb29f0a1417d10955bba755fb4f9965320
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ae0bf6836fd08e20d97f1cfd85627b25e31bf380
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88136045"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92278419"
 ---
 # <a name="data-modeling-in-azure-cosmos-db"></a>Моделирование данных в Azure Cosmos DB
 
@@ -432,7 +432,7 @@ Review documents:
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Основная идея этой статьи заключается в том, что моделирование данных без фиксированных схем не теряет своей актуальности.
 
@@ -440,6 +440,6 @@ Review documents:
 
 Дополнительные сведения об Azure Cosmos DB см. на странице [документации](https://azure.microsoft.com/documentation/services/cosmos-db/) по этой службе.
 
-Чтобы понять, как сегментировать данные по нескольким разделам, ознакомьтесь со статьей [Секционирование, ключи секции и масштабирование в DocumentDB](sql-api-partition-data.md).
+Чтобы понять, как сегментировать данные по нескольким разделам, ознакомьтесь со статьей [Секционирование, ключи секции и масштабирование в DocumentDB](partitioning-overview.md).
 
 Чтобы научиться моделировать и секционировать данные на Azure Cosmos DB с помощью практического примера, ознакомьтесь с [ разделом моделирование данных и секционирование — Real-World пример](how-to-model-partition-example.md).

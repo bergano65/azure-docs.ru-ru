@@ -7,12 +7,12 @@ ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 01/19/2020
 ms.author: hamusa
-ms.openlocfilehash: b84a7b88f700e2ba8e9fbe29099dfcbce8dbf3b7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 227e27d25ad5d0c61ed4f36c234222a079315619
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85081071"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92317143"
 ---
 # <a name="assess-large-numbers-of-physical-servers-for-migration-to-azure"></a>Оценка большого количества физических серверов для миграции в Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "85081071"
 
 
 > [!NOTE]
-> Если вы хотите испытать эксперимент для оценки нескольких серверов перед оценкой масштаба, следуйте нашим [сериям руководств](tutorial-prepare-physical.md).
+> Если вы хотите испытать эксперимент для оценки нескольких серверов перед оценкой масштаба, следуйте нашим [сериям руководств](./tutorial-discover-physical.md).
 
 ## <a name="plan-for-assessment"></a>Планирование оценки
 
@@ -64,7 +64,7 @@ ms.locfileid: "85081071"
 2. Настройте разрешения для взаимодействия учетной записи Azure с миграцией Azure.
 3. Подготовьте физические серверы.
 
-Чтобы настроить эти параметры, следуйте инструкциям, приведенным в [этом руководстве](tutorial-prepare-physical.md) .
+Чтобы настроить эти параметры, следуйте инструкциям, приведенным в [этом руководстве](./tutorial-discover-physical.md) .
 
 ## <a name="create-a-project"></a>Создание проекта
 
@@ -73,7 +73,7 @@ ms.locfileid: "85081071"
 1. Создайте проект службы "Миграция Azure".
 2. Добавьте средство Azure Migrate Server для оценки в проекты.
 
-[Дополнительные сведения](how-to-add-tool-first-time.md)
+[Подробнее](how-to-add-tool-first-time.md)
 
 ## <a name="create-and-review-an-assessment"></a>Создание и проверка оценки
 

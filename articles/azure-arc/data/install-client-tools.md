@@ -9,19 +9,19 @@ ms.author: twright
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 3eb41b868aba7e7350f54594fa43f01eeeabebc4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ecf0f54913f980d879b562eb4aa8063acf6c4772
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90940678"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92320256"
 ---
 # <a name="install-client-tools-for-deploying-and-managing-azure-arc-enabled-data-services"></a>Установка клиентских средств для развертывания служб данных с поддержкой Azure Arc и управления ими
 
 > [!IMPORTANT]
-> При обновлении до нового ежемесячного выпуска необходимо также выполнить обновление до последней версии Azure Data Studio, средства CLI данных Azure (аздата) и интерфейса командной строки Azure Data CLI и расширений Azure ARC для Azure Data Studio.
+> При обновлении до нового ежемесячного выпуска необходимо также выполнить обновление до последней версии Azure Data Studio, [!INCLUDE [azure-data-cli-azdata](../../../includes/azure-data-cli-azdata.md)] средства, а также [!INCLUDE [azure-data-cli-azdata](../../../includes/azure-data-cli-azdata.md)] расширений и расширения Azure Arc для Azure Data Studio.
 
-В этом документе описано, как установить интерфейс командной строки Azure Data CLI (аздата), Azure Data Studio, Azure CLI (AZ) и средство CLI Kubernetes (kubectl) на клиентском компьютере.
+В этом документе описано, как установить [!INCLUDE [azure-data-cli-azdata](../../../includes/azure-data-cli-azdata.md)] , Azure Data Studio, Azure CLI (AZ) и средство CLI Kubernetes (kubectl) на клиентском компьютере.
 
 [!INCLUDE [azure-arc-data-preview](../../../includes/azure-arc-data-preview.md)]
 
@@ -31,10 +31,10 @@ ms.locfileid: "90940678"
 
 | Инструмент | Обязательно | Описание | Установка |
 |---|---|---|---|
-| CLI данных Azure (аздата) | Да | Программа командной строки для установки кластера больших данных и управления им. Интерфейс командной строки Azure также включает служебную программу для подключения и выполнения запросов к SQL Azure и SQL Server экземпляров и серверов Postgres с помощью команд `azdata sql query` (выполнение одного запроса из командной строки), `azdata sql shell` (интерактивная оболочка) `azdata postgres query` и `azdata postgres shell` . | [Установка](/sql/azdata/install/deploy-install-azdata?toc=/azure/azure-arc/data/toc.json&bc=/azure/azure-arc/data/breadcrumb/toc.json) |
-| Azure Data Studio | Да | Полнофункциональное средство для подключения к различным базам данных, включая Azure SQL, SQL Server, Постргрескл и MySQL, а также запросы к ним. Расширения для Azure Data Studio предоставляют возможности администрирования для служб данных, поддерживающих службу "Дуга Azure". | [Установка](https://aka.ms/getazuredatastudio) |
-| Расширение Azure Data CLI для Azure Data Studio | Да | Расширение для Azure Data Studio, которое будет устанавливать Azure Data CLI, если у вас ее еще нет.| Установка из коллекции расширений в Azure Data Studio.|
-| Расширение дуги Azure для Azure Data Studio | Да | Расширение для Azure Data Studio, которое предоставляет возможности управления для служб данных, поддерживающих службу "Дуга Azure". Существует зависимость от расширения Azure Data CLI для Azure Data Studio. | Установка из коллекции расширений в Azure Data Studio.|
+| [!INCLUDE [azure-data-cli-azdata](../../../includes/azure-data-cli-azdata.md)] | Да | Программа командной строки для установки кластера больших данных и управления им. [!INCLUDE [azure-data-cli-azdata](../../../includes/azure-data-cli-azdata.md)] также включает служебную программу командной строки для подключения и запроса экземпляров Azure SQL и SQL Server, а также серверов Postgres с помощью команд `azdata sql query` (выполнение одного запроса из командной строки), `azdata sql shell` (интерактивной оболочки) `azdata postgres query` и `azdata postgres shell` . | [Установка](/sql/azdata/install/deploy-install-azdata?toc=/azure/azure-arc/data/toc.json&bc=/azure/azure-arc/data/breadcrumb/toc.json) |
+| Azure Data Studio | Да | Полнофункциональное средство для подключения к различным базам данных, включая Azure SQL, SQL Server, Постргрескл и MySQL, а также запросы к ним. Расширения для Azure Data Studio предоставляют возможности администрирования для служб данных, поддерживающих службу "Дуга Azure". | [Установка](/sql/azure-data-studio/download-azure-data-studio) |
+| [!INCLUDE [azure-data-cli-azdata](../../../includes/azure-data-cli-azdata.md)] расширение для Azure Data Studio | Да | Расширение для Azure Data Studio, которое будет установлено, [!INCLUDE [azure-data-cli-azdata](../../../includes/azure-data-cli-azdata.md)] Если у вас его еще нет.| Установка из коллекции расширений в Azure Data Studio.|
+| Расширение дуги Azure для Azure Data Studio | Да | Расширение для Azure Data Studio, которое предоставляет возможности управления для служб данных, поддерживающих службу "Дуга Azure". Существует зависимость от [!INCLUDE [azure-data-cli-azdata](../../../includes/azure-data-cli-azdata.md)] расширения для Azure Data Studio. | Установка из коллекции расширений в Azure Data Studio.|
 | Расширение PostgreSQL в Azure Data Studio | Нет | Расширение PostgreSQL для Azure Data Studio, предоставляющее возможности управления для PostgreSQL. | <!--{need link} [Install](../azure-data-studio/data-virtualization-extension.md) --> Установка из коллекции расширений в Azure Data Studio.|
 | Azure CLI (AZ)<sup>1</sup> | Да | Современный интерфейс командной строки для управления службами Azure. Используется с развертываниями AKS и для передачи данных инвентаризации и выставления счетов в Azure с включенной службой ARC. ([Дополнительные сведения](/cli/azure/?view=azure-cli-latest&preserve-view=true)). | [Установка](/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true) |
 | Kubernetes CLI (kubectl)<sup>2</sup> | Да | Программа командной строки для управления кластером Kubernetes ([Дополнительные сведения](https://kubernetes.io/docs/tasks/tools/install-kubectl/)). | [Windows](https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-with-powershell-from-psgallery) \| [Linux](https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-using-native-package-management) |
@@ -49,6 +49,6 @@ ms.locfileid: "90940678"
 
 <sup>3</sup> если вы используете PowerShell, то фигурный псевдоним для командлета Invoke-WebRequest.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Создание контроллера данных ARC в Azure](create-data-controller.md)

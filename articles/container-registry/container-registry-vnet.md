@@ -3,12 +3,12 @@ title: Ограничение доступа с помощью конечной 
 description: Ограничьте доступ к реестру контейнеров Azure, используя конечную точку службы в виртуальной сети Azure. Доступ к конечной точке службы является компонентом уровня служб Premium.
 ms.topic: article
 ms.date: 05/04/2020
-ms.openlocfilehash: 1fc8d54d677112a9c934f9079e953a7389939bde
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3472549827781c6ed2f6be0417866747c81edd93
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89488679"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92215507"
 ---
 # <a name="restrict-access-to-a-container-registry-using-a-service-endpoint-in-an-azure-virtual-network"></a>Ограничение доступа к реестру контейнеров с использованием конечной точки службы в виртуальной сети Azure
 
@@ -49,13 +49,11 @@ ms.locfileid: "89488679"
 
 ## <a name="configure-network-access-for-registry"></a>Настройка сетевого доступа к реестру
 
-В этом разделе вы настроите для реестра контейнеров доступ из подсети, расположенной в виртуальной сети Azure. Приводятся аналогичные инструкции для портала Azure и Azure CLI.
+В этом разделе вы настроите для реестра контейнеров доступ из подсети, расположенной в виртуальной сети Azure. Действия предоставляются с помощью Azure CLI.
 
-### <a name="allow-access-from-a-virtual-network---cli"></a>Предоставление доступа из виртуальной сети с помощью CLI
+### <a name="add-a-service-endpoint-to-a-subnet"></a>Добавление конечной точки службы в подсеть
 
-#### <a name="add-a-service-endpoint-to-a-subnet"></a>Добавление конечной точки службы в подсеть
-
-При создании виртуальной машины Azure по умолчанию создает в той же группе ресурсов виртуальную сеть. Имя для этой виртуальной сети создается автоматически на основе имени виртуальной машины. Например, если вы присвоите виртуальной машине имя *myDockerVM*, то созданная по умолчанию виртуальная сеть будет называться *myDockerVMVNET*, а подсеть в ней — *myDockerVMSubnet*. Вы можете проверить этот механизм на портале Azure или с помощью команды [az network vnet list][az-network-vnet-list].
+При создании виртуальной машины Azure по умолчанию создает в той же группе ресурсов виртуальную сеть. Имя для этой виртуальной сети создается автоматически на основе имени виртуальной машины. Например, если вы присвоите виртуальной машине имя *myDockerVM*, то созданная по умолчанию виртуальная сеть будет называться *myDockerVMVNET*, а подсеть в ней — *myDockerVMSubnet*. Проверьте это с помощью команды [AZ Network vnet List][az-network-vnet-list] :
 
 ```azurecli
 az network vnet list \
@@ -101,7 +99,7 @@ az network vnet subnet show \
 /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/myResourceGroup/providers/Microsoft.Network/virtualNetworks/myDockerVMVNET/subnets/myDockerVMSubnet
 ```
 
-#### <a name="change-default-network-access-to-registry"></a>Изменение сетевого доступа по умолчанию для реестра
+### <a name="change-default-network-access-to-registry"></a>Изменение сетевого доступа по умолчанию для реестра
 
 По умолчанию реестр контейнеров Azure разрешает подключения от узлов в любой сети. Чтобы разрешить доступ только из выбранной сети, установите режим запрета доступа по умолчанию. Подставьте нужное имя реестра в следующей команде [az acr update][az-acr-update]:
 
@@ -109,7 +107,7 @@ az network vnet subnet show \
 az acr update --name myContainerRegistry --default-action Deny
 ```
 
-#### <a name="add-network-rule-to-registry"></a>Добавление сетевого правила для реестра
+### <a name="add-network-rule-to-registry"></a>Добавление сетевого правила для реестра
 
 Выполните команду [az acr network-rule add][az-acr-network-rule-add], чтобы добавить в реестр правило сетевого доступа, которое разрешает доступ из подсети, в которой расположена виртуальная машина. Подставьте имя реестра контейнеров и идентификатор ресурса подсети в следующую команду: 
 
@@ -143,11 +141,9 @@ Error response from daemon: login attempt to https://xxxxxxx.azurecr.io/v2/ fail
 
 ## <a name="restore-default-registry-access"></a>Восстановление доступа к реестру по умолчанию
 
-Чтобы восстановить стандартный режим доступа к реестру, удалите все настроенные сетевые правила. Затем установите режим разрешения доступа по умолчанию. Приводятся аналогичные инструкции для портала Azure и Azure CLI.
+Чтобы восстановить стандартный режим доступа к реестру, удалите все настроенные сетевые правила. Затем установите режим разрешения доступа по умолчанию. 
 
-### <a name="restore-default-registry-access---cli"></a>Восстановление стандартного доступа к реестру с помощью CLI
-
-#### <a name="remove-network-rules"></a>Удаление сетевых правил
+### <a name="remove-network-rules"></a>Удаление сетевых правил
 
 Чтобы просмотреть список сетевых правил, настроенных для реестра, выполните следующую команду [az acr network-rule list][az-acr-network-rule-list]:
 
@@ -166,7 +162,7 @@ az acr network-rule remove \
   xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/myResourceGroup/providers/Microsoft.Network/virtualNetworks/myDockerVMVNET/subnets/myDockerVMSubnet
 ```
 
-#### <a name="allow-access"></a>Разрешить доступ
+### <a name="allow-access"></a>Разрешить доступ
 
 Подставьте нужное имя реестра в следующей команде [az acr update][az-acr-update]:
 ```azurecli
@@ -180,8 +176,6 @@ az acr update --name myContainerRegistry --default-action Allow
 ```azurecli
 az group delete --name myResourceGroup
 ```
-
-Чтобы очистить ресурсы с помощью портала, перейдите к группе ресурсов myResourceGroup. Когда загрузится группа ресурсов, щелкните действие **Удалить группу ресурсов**, чтобы удалить эту группу ресурсов вместе со всем содержимым.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -9,12 +9,12 @@ ms.date: 08/10/2020
 ms.topic: tutorial
 ms.service: azure-spatial-anchors
 ms.custom: devx-track-csharp
-ms.openlocfilehash: caa343b0715e3e4b33c45fcc9ba6441533c3d056
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 42598b6471ea29c779b1863852169c4a1025e229
+ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91858512"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92097462"
 ---
 # <a name="how-to-create-and-locate-anchors-using-azure-spatial-anchors-in-unity"></a>Создание и поиск привязок с помощью Пространственных привязок Azure в Unity
 
@@ -44,7 +44,7 @@ ms.locfileid: "91858512"
 
 [!INCLUDE [Start](../../../includes/spatial-anchors-create-locate-anchors-start.md)]
 
-Дополнительные сведения см. в статье о классе [CloudSpatialAnchorSession](https://docs.microsoft.com/dotnet/api/microsoft.azure.spatialanchors.cloudspatialanchorsession).
+Дополнительные сведения см. в статье о классе [CloudSpatialAnchorSession](/dotnet/api/microsoft.azure.spatialanchors.cloudspatialanchorsession).
 
 ```csharp
     CloudSpatialAnchorSession cloudSession;
@@ -54,7 +54,7 @@ ms.locfileid: "91858512"
 
 [!INCLUDE [Account Keys](../../../includes/spatial-anchors-create-locate-anchors-account-keys.md)]
 
-Дополнительные сведения см. в статье о классе [SessionConfiguration](https://docs.microsoft.com/dotnet/api/microsoft.azure.spatialanchors.sessionconfiguration).
+Дополнительные сведения см. в статье о классе [SessionConfiguration](/dotnet/api/microsoft.azure.spatialanchors.sessionconfiguration).
 
 ```csharp
     this.cloudSession.Configuration.AccountKey = @"MyAccountKey";
@@ -68,7 +68,7 @@ ms.locfileid: "91858512"
 
 [!INCLUDE [Access Tokens Event](../../../includes/spatial-anchors-create-locate-anchors-access-tokens-event.md)]
 
-Дополнительные сведения см. в статье о делегате [TokenRequiredDelegate](https://docs.microsoft.com/dotnet/api/microsoft.azure.spatialanchors.tokenrequireddelegate).
+Дополнительные сведения см. в статье о делегате [TokenRequiredDelegate](/dotnet/api/microsoft.azure.spatialanchors.tokenrequireddelegate).
 
 ```csharp
     this.cloudSession.TokenRequired += (object sender, TokenRequiredEventArgs args) =>
@@ -118,7 +118,7 @@ ms.locfileid: "91858512"
 
 [!INCLUDE [Setup](../../../includes/spatial-anchors-create-locate-anchors-setup-non-ios.md)]
 
-Дополнительные сведения см. в статье о методе [Start](https://docs.microsoft.com/dotnet/api/microsoft.azure.spatialanchors.cloudspatialanchorsession.start).
+Дополнительные сведения см. в статье о методе [Start](/dotnet/api/microsoft.azure.spatialanchors.cloudspatialanchorsession.start).
 
 ```csharp
 #if UNITY_ANDROID || UNITY_IOS
@@ -134,7 +134,7 @@ ms.locfileid: "91858512"
 
 [!INCLUDE [Frames](../../../includes/spatial-anchors-create-locate-anchors-frames.md)]
 
-Дополнительные сведения см. в статье о методе [ProcessFrame](https://docs.microsoft.com/dotnet/api/microsoft.azure.spatialanchors.cloudspatialanchorsession.processframe).
+Дополнительные сведения см. в статье о методе [ProcessFrame](/dotnet/api/microsoft.azure.spatialanchors.cloudspatialanchorsession.processframe).
 
 ```csharp
 #if UNITY_ANDROID || UNITY_IOS
@@ -156,7 +156,7 @@ ms.locfileid: "91858512"
 
 [!INCLUDE [Feedback](../../../includes/spatial-anchors-create-locate-anchors-feedback.md)]
 
-Дополнительные сведения см. в статье о делегате [SessionUpdatedDelegate](https://docs.microsoft.com/dotnet/api/microsoft.azure.spatialanchors.sessionupdateddelegate).
+Дополнительные сведения см. в статье о делегате [SessionUpdatedDelegate](/dotnet/api/microsoft.azure.spatialanchors.sessionupdateddelegate).
 
 ```csharp
     this.cloudSession.SessionUpdated += (object sender, SessionUpdatedEventArgs args) =>
@@ -170,7 +170,7 @@ ms.locfileid: "91858512"
 
 [!INCLUDE [Creating](../../../includes/spatial-anchors-create-locate-anchors-creating.md)]
 
-Дополнительные сведения см. в статье о классе [CloudSpatialAnchor](https://docs.microsoft.com/dotnet/api/microsoft.azure.spatialanchors.cloudspatialanchor).
+Дополнительные сведения см. в статье о классе [CloudSpatialAnchor](/dotnet/api/microsoft.azure.spatialanchors.cloudspatialanchor).
 
 ```csharp
     // Create a local anchor, perhaps by hit-testing and spawning an object within the scene
@@ -206,7 +206,7 @@ ms.locfileid: "91858512"
 
 [!INCLUDE [Session Status](../../../includes/spatial-anchors-create-locate-anchors-session-status.md)]
 
-Дополнительные сведения см. в статье о методе [GetSessionStatusAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.spatialanchors.cloudspatialanchorsession.getsessionstatusasync).
+Дополнительные сведения см. в статье о методе [GetSessionStatusAsync](/dotnet/api/microsoft.azure.spatialanchors.cloudspatialanchorsession.getsessionstatusasync).
 
 ```csharp
     SessionStatus value = await this.cloudSession.GetSessionStatusAsync();
@@ -216,7 +216,7 @@ ms.locfileid: "91858512"
 
 [!INCLUDE [Setting Properties](../../../includes/spatial-anchors-create-locate-anchors-setting-properties.md)]
 
-Дополнительные сведения см. в статье о свойстве [AppProperties](https://docs.microsoft.com/dotnet/api/microsoft.azure.spatialanchors.cloudspatialanchor.appproperties).
+Дополнительные сведения см. в статье о свойстве [AppProperties](/dotnet/api/microsoft.azure.spatialanchors.cloudspatialanchor.appproperties).
 
 ```csharp
     CloudSpatialAnchor cloudAnchor = new CloudSpatialAnchor() { LocalAnchor = localAnchor };
@@ -227,7 +227,7 @@ ms.locfileid: "91858512"
 
 [!INCLUDE [Update Anchor Properties](../../../includes/spatial-anchors-create-locate-anchors-updating-properties.md)]
 
-Дополнительные сведения см. в статье о методе [UpdateAnchorPropertiesAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.spatialanchors.cloudspatialanchorsession.updateanchorpropertiesasync).
+Дополнительные сведения см. в статье о методе [UpdateAnchorPropertiesAsync](/dotnet/api/microsoft.azure.spatialanchors.cloudspatialanchorsession.updateanchorpropertiesasync).
 
 ```csharp
     CloudSpatialAnchor anchor = /* locate your anchor */;
@@ -237,7 +237,7 @@ ms.locfileid: "91858512"
 
 [!INCLUDE [Getting Properties](../../../includes/spatial-anchors-create-locate-anchors-getting-properties.md)]
 
-Дополнительные сведения см. в статье о методе [GetAnchorPropertiesAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.spatialanchors.cloudspatialanchorsession.getanchorpropertiesasync).
+Дополнительные сведения см. в статье о методе [GetAnchorPropertiesAsync](/dotnet/api/microsoft.azure.spatialanchors.cloudspatialanchorsession.getanchorpropertiesasync).
 
 ```csharp
     var anchor = await cloudSession.GetAnchorPropertiesAsync(@"anchorId");
@@ -250,7 +250,7 @@ ms.locfileid: "91858512"
 
 [!INCLUDE [Expiration](../../../includes/spatial-anchors-create-locate-anchors-expiration.md)]
 
-Дополнительные сведения см. в статье о свойстве [Expiration](https://docs.microsoft.com/dotnet/api/microsoft.azure.spatialanchors.cloudspatialanchor.expiration).
+Дополнительные сведения см. в статье о свойстве [Expiration](/dotnet/api/microsoft.azure.spatialanchors.cloudspatialanchor.expiration).
 
 ```csharp
     cloudAnchor.Expiration = DateTimeOffset.Now.AddDays(7);
@@ -258,7 +258,7 @@ ms.locfileid: "91858512"
 
 [!INCLUDE [Locate](../../../includes/spatial-anchors-create-locate-anchors-locating.md)]
 
-Дополнительные сведения см. в статье о методе [CreateWatcher](https://docs.microsoft.com/dotnet/api/microsoft.azure.spatialanchors.cloudspatialanchorsession.createwatcher).
+Дополнительные сведения см. в статье о методе [CreateWatcher](/dotnet/api/microsoft.azure.spatialanchors.cloudspatialanchorsession.createwatcher).
 
 ```csharp
     AnchorLocateCriteria criteria = new AnchorLocateCriteria();
@@ -268,7 +268,7 @@ ms.locfileid: "91858512"
 
 [!INCLUDE [Locate Events](../../../includes/spatial-anchors-create-locate-anchors-locating-events.md)]
 
-Дополнительные сведения см. в статье о делегате [AnchorLocatedDelegate](https://docs.microsoft.com/dotnet/api/microsoft.azure.spatialanchors.anchorlocateddelegate).
+Дополнительные сведения см. в статье о делегате [AnchorLocatedDelegate](/dotnet/api/microsoft.azure.spatialanchors.anchorlocateddelegate).
 
 ```csharp
     this.cloudSession.AnchorLocated += (object sender, AnchorLocatedEventArgs args) =>
@@ -297,7 +297,7 @@ ms.locfileid: "91858512"
 
 [!INCLUDE [Deleting](../../../includes/spatial-anchors-create-locate-anchors-deleting.md)]
 
-Дополнительные сведения см. в статье о методе [DeleteAnchorAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.spatialanchors.cloudspatialanchorsession.deleteanchorasync).
+Дополнительные сведения см. в статье о методе [DeleteAnchorAsync](/dotnet/api/microsoft.azure.spatialanchors.cloudspatialanchorsession.deleteanchorasync).
 
 ```csharp
     await this.cloudSession.DeleteAnchorAsync(cloudAnchor);
@@ -306,7 +306,7 @@ ms.locfileid: "91858512"
 
 [!INCLUDE [Stopping](../../../includes/spatial-anchors-create-locate-anchors-stopping.md)]
 
-Дополнительные сведения см. в статье о методе [Stop](https://docs.microsoft.com/dotnet/api/microsoft.azure.spatialanchors.cloudspatialanchorsession.stop).
+Дополнительные сведения см. в статье о методе [Stop](/dotnet/api/microsoft.azure.spatialanchors.cloudspatialanchorsession.stop).
 
 ```csharp
     this.cloudSession.Stop();
@@ -314,7 +314,7 @@ ms.locfileid: "91858512"
 
 [!INCLUDE [Resetting](../../../includes/spatial-anchors-create-locate-anchors-resetting.md)]
 
-Дополнительные сведения см. в статье о методе [Reset](https://docs.microsoft.com/dotnet/api/microsoft.azure.spatialanchors.cloudspatialanchorsession.reset).
+Дополнительные сведения см. в статье о методе [Reset](/dotnet/api/microsoft.azure.spatialanchors.cloudspatialanchorsession.reset).
 
 ```csharp
     this.cloudSession.Reset();
@@ -322,7 +322,7 @@ ms.locfileid: "91858512"
 
 [!INCLUDE [Cleanup](../../../includes/spatial-anchors-create-locate-anchors-cleanup-unity.md)]
 
-Дополнительные сведения см. в статье о методе [Dispose](https://docs.microsoft.com/dotnet/api/microsoft.azure.spatialanchors.cloudspatialanchorsession.dispose).
+Дополнительные сведения см. в статье о методе [Dispose](/dotnet/api/microsoft.azure.spatialanchors.cloudspatialanchorsession.dispose).
 
 ```csharp
     this.cloudSession.Dispose();

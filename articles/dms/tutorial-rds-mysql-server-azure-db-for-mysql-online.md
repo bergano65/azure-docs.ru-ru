@@ -1,5 +1,5 @@
 ---
-title: Руководство. Перенос RDS MySQL Online в базу данных Azure для MySQL
+title: Руководство по сетевой миграции из RDS MySQL в Базу данных Azure для MySQL
 titleSuffix: Azure Database Migration Service
 description: Узнайте, как выполнить интерактивную миграцию из RDS MySQL в Базу данных Azure для MySQL с помощью Azure Database Migration Service.
 services: dms
@@ -12,18 +12,18 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: tutorial
 ms.date: 06/09/2020
-ms.openlocfilehash: 916d5ee49838c1e8564b24432b9d5876ed619ab5
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: f8948bdeb2f8b82fbabacdbbb73c7b43741c75df
+ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91291407"
+ms.lasthandoff: 10/11/2020
+ms.locfileid: "91938446"
 ---
 # <a name="tutorial-migrate-rds-mysql-to-azure-database-for-mysql-online-using-dms"></a>Руководство. Миграция из MySQL RDS в Базу данных Azure для MySQL через Интернет
 
 С помощью службы Azure Database Migration Service базы данных из экземпляра RDS MySQL можно перенести в [Базу данных Azure для MySQL](https://docs.microsoft.com/azure/mysql/), не отключая базу данных-источник от сети. Другими словами, миграцию можно выполнить с минимальным временем простоя для приложения. В этом руководстве выполняется перенос примера базы данных **сотрудников** из экземпляра RDS MySQL в Базу данных Azure для MySQL с помощью интерактивного действия миграции в Azure Database Migration Service.
 
-В этом руководстве вы узнаете, как:
+В этом руководстве описано следующее:
 > [!div class="checklist"]
 >
 > * Перенос примера схемы с помощью служебных программ mysqldump и mysql.
@@ -33,7 +33,7 @@ ms.locfileid: "91291407"
 > * Мониторинг миграции.
 
 > [!NOTE]
-> Чтобы выполнить сетевую миграцию с помощью Azure Database Migration Service, требуется создать экземпляр ценовой категории "Премиум". Дополнительные сведения см. на странице [цен](https://azure.microsoft.com/pricing/details/database-migration/) на Azure Database Migration Service.
+> Чтобы выполнить сетевую миграцию с помощью Azure Database Migration Service, требуется создать экземпляр ценовой категории "Премиум". Дополнительные сведения см. на странице с [ценами](https://azure.microsoft.com/pricing/details/database-migration/) на Azure Database Migration Service.
 
 > [!IMPORTANT]
 > Чтобы оптимизировать процесс миграции, Майкрософт рекомендует создать экземпляр Azure Database Migration Service в том же регионе Azure, в котором размещена целевая база данных. Перемещение данных между регионами и географическими областями может замедлить процесс миграции и привести к ошибкам.
@@ -56,8 +56,8 @@ ms.locfileid: "91291407"
 
 * Скачайте и установите пример базы данных [MySQL **Сотрудники**](https://dev.mysql.com/doc/employee/en/employees-installation.html).
 * Создайте экземпляр [Базы данных Azure для MySQL](https://docs.microsoft.com/azure/mysql/quickstart-create-mysql-server-database-using-azure-portal).
-* Создайте виртуальная сеть Microsoft Azure для Azure Database Migration Service с помощью модели развертывания Azure Resource Manager, которая обеспечивает подключение типа "сеть — сеть" к локальным исходным серверам с помощью [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) или [VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways). Дополнительные сведения о создании виртуальной сети см. в [документации по виртуальной сети](https://docs.microsoft.com/azure/virtual-network/), особенно в кратком руководстве, где приведены пошаговые инструкции.
-* Убедитесь, что правила группы безопасности сети виртуальной сети не блокируют следующие порты входящих подключений для Azure Database Migration Service: 443, 53, 9354, 445 и 12000. Дополнительные сведения о фильтрации трафика NSG в виртуальной сети см. в статье [Фильтрация сетевого трафика с помощью групп безопасности сети](https://docs.microsoft.com/azure/virtual-network/virtual-networks-nsg).
+* Создайте виртуальную сеть Microsoft Azure для Azure Database Migration Service с помощью модели развертывания Azure Resource Manager, которая обеспечивает подключение "сеть — сеть" к локальным исходным серверам с помощью [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) или [VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways). Дополнительные сведения о создании виртуальной сети приведены в [документации по виртуальным сетям](https://docs.microsoft.com/azure/virtual-network/). В частности, уделите внимание кратким руководствам с пошаговыми инструкциями.
+* Убедитесь, что правила группы безопасности сети для виртуальной сети не блокируют следующие входящие порты для Azure Database Migration Service: 443, 53, 9354, 445 и 12000. Дополнительные сведения о фильтрации трафика, предназначенного для виртуальной сети, с помощью NSG см. в статье [Планирование виртуальных сетей](https://docs.microsoft.com/azure/virtual-network/virtual-networks-nsg).
 * Настройте [брандмауэр Windows](https://docs.microsoft.com/sql/database-engine/configure-windows/configure-a-windows-firewall-for-database-engine-access) (или Linux) для доступа к ядру СУБД. Для сервера MySQL разрешите подключение через порт 3306.
 
 > [!NOTE]
@@ -67,11 +67,15 @@ ms.locfileid: "91291407"
 
 1. Чтобы создать группу параметров, выполните инструкции, предоставленные AWS в статье о [файлах журнала Базы данных MySQL](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.Concepts.MySQL.html) в разделе о **формате ведения двоичного журнала**.
 2. Создайте группу параметров со следующей конфигурацией:
-    * log_bin = вкл.
+    * log_bin = ON
     * binlog_format = row
     * binlog_checksum = NONE
 3. Сохраните новую группу параметров.
 4. Свяжите новую группу параметров с экземпляром MySQL RDS. Может потребоваться перезагрузка.
+5. Создав группу параметров, подключитесь к экземпляру MySQL и [задайте для параметра хранения двоичных файлов журналов](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/mysql_rds_set_configuration.html#mysql_rds_set_configuration-usage-notes.binlog-retention-hours) значение, равное не менее 5 дням.
+```
+call mysql.rds_set_configuration('binlog retention hours', 120);
+```
 
 ## <a name="migrate-the-schema"></a>Перенос схемы
 
@@ -124,8 +128,8 @@ ms.locfileid: "91291407"
 4. Запустите команду drop foreign key в результате запроса, чтобы удалить внешний ключ (второй столбец).
 
 > [!NOTE]
-> Служба DMS Azure не поддерживает ссылочное действие CASCADE, которое помогает автоматически удалять или обновлять совпадающую строку в дочерней таблице при удалении или обновлении строки в родительской таблице. Дополнительные сведения см. в разделе ссылочные действия статьи [ограничения внешнего ключа](https://dev.mysql.com/doc/refman/8.0/en/create-table-foreign-keys.html).
-> В Azure DMS необходимо удалить ограничения внешнего ключа на целевом сервере базы данных во время начальной загрузки данных, а также нельзя использовать ссылочные действия. Если Рабочая нагрузка зависит от обновления связанной дочерней таблицы через это ссылочное действие, рекомендуется выполнить [дамп и восстановить](https://docs.microsoft.com/azure/mysql/concepts-migrate-dump-restore) его. 
+> Azure Database Migration Service не поддерживает ссылочное действие CASCADE, которое позволяет автоматически удалить или обновить совпадающую строку в дочерней таблице при удалении или обновлении строки в родительской таблице. Дополнительные сведения см. в разделе об [ограничениях для внешних ключей](https://dev.mysql.com/doc/refman/8.0/en/create-table-foreign-keys.html) в документации по MySQL.
+> В Azure Database Migration Service нужно снять ограничения для внешних ключей на сервере целевой базы данных во время начальной загрузки данных. При этом нельзя использовать ссылочные действия. Если ваша рабочая нагрузка зависит от обновлений связанной дочерней таблицы, выполняемых с помощью ссылочного действия, рекомендуется переносить базу данных с помощью [дампа и восстановления](https://docs.microsoft.com/azure/mysql/concepts-migrate-dump-restore). 
 
 5. Если у вас есть триггеры (триггер вставки или обновления), они будут обеспечивать целостность данных в целевом объекте перед реплицированием данных из источника. Рекомендуется отключить триггеры во всех таблицах *целевого объекта* на время миграции, а затем включить их после завершения миграции.
 
@@ -168,11 +172,11 @@ ms.locfileid: "91291407"
 
 5. Выберите существующую виртуальную сеть или создайте новую.
 
-    Виртуальная сеть предоставляет Azure Database Migration Service с доступом к исходному экземпляру MySQL и целевому экземпляру базы данных Azure для MySQL.
+    Виртуальная сеть предоставляет Azure Database Migration Service доступ к исходному экземпляру MySQL и целевому экземпляру Базы данных Azure для MySQL.
 
-    Дополнительные сведения о создании виртуальной сети в портал Azure см. в статье [Создание виртуальной сети с помощью портал Azure](https://aka.ms/DMSVnet).
+    См. статью [Краткое руководство. Создание виртуальной сети с помощью портала Azure](https://aka.ms/DMSVnet).
 
-6. Выберите ценовую категорию. для этой оперативной миграции не забудьте выбрать ценовую категорию Premium: 4vCores.
+6. Выберите ценовую категорию. Для этой миграции по сети необходимо выбрать ценовую категорию "Премиум: 4 виртуальных ядра".
 
     ![Настройка параметров экземпляра Database Migration Service](media/tutorial-rds-mysql-server-azure-db-for-mysql-online/dms-settings3.png)
 
@@ -192,7 +196,7 @@ ms.locfileid: "91291407"
 
 3. Выберите **+ Новый проект миграции**.
 4. В окне **New migration project** (Новый проект миграции) задайте имя для проекта, в текстовом поле **Source server type** (Тип исходного сервера) выберите **MySQL**, а затем в текстовом поле **Target server type** (Тип целевого сервера) выберите **AzureDbForMySQL**.
-5. В разделе **Выбор типа действия** выберите **Перенос данных в сети**.
+5. В разделе **Выберите тип действия** выберите **Миграция данных по сети**.
 
     > [!IMPORTANT]
     > Не забудьте выбрать режим **миграции данных по сети**, так как автономная миграция не поддерживается для этого сценария.
@@ -235,7 +239,7 @@ ms.locfileid: "91291407"
 
 * Выберите **Запустить миграцию**.
 
-    Откроется окно действие миграции, в котором будет **инициализировано** **состояние** действия.
+    Появится окно действия миграции и в поле **Состояние** будет указано **Инициализация**.
 
 ## <a name="monitor-the-migration"></a>Мониторинг миграции
 
@@ -253,7 +257,7 @@ ms.locfileid: "91291407"
 
 ## <a name="perform-migration-cutover"></a>Выполнение прямой миграции
 
-После завершения начальной полной загрузки базы данных помечаются как **готовые к прямую миграцию**.
+После завершения начальной полной загрузки базы данных помечаются как **готовые к прямой миграции**.
 
 1. Когда вы будете готовы выполнить миграцию базы данных, щелкните **Запустить прямую миграцию**.
 
@@ -265,7 +269,7 @@ ms.locfileid: "91291407"
 
 Интерактивный перенос локального экземпляра MySQL в Базу данных Azure для MySQL выполнен.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * См. дополнительные сведения о [службе Azure Database Migration Service](https://docs.microsoft.com/azure/dms/dms-overview).
 * Общие сведения о Базе данных Azure для MySQL см. в [этой статье](https://docs.microsoft.com/azure/mysql/overview).

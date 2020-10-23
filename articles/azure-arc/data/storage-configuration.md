@@ -9,12 +9,12 @@ ms.author: umajay
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: conceptual
-ms.openlocfilehash: c1560325f21fd60e6bdb2a64eb987359a7246ff2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c420652a6385be2cade9723c20cff7c32a4a60b0
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91317333"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92127239"
 ---
 # <a name="storage-configuration"></a>Конфигурация хранилища
 
@@ -48,7 +48,7 @@ managed-premium     kubernetes.io/azure-disk   4d3h
 kubectl describe storageclass\<storage class name>
 ```
 
-Пример.
+Пример
 
 ``` terminal
 kubectl describe storageclass/azurefile
@@ -166,7 +166,7 @@ sqldemo11-logs-claim   Bound    pvc-41b33bbd-debb-4153-9a41-02ce2bf9c665   10Gi 
 > [!NOTE]
 > Некоторые из этих параметров находятся в разработке и станут доступны в `azdata arc sql mi create` `azdata arc postgres server create` будущих выпусках.
 
-|Имя параметра, короткое имя|Назначение|
+|Имя параметра, короткое имя|Используется для|
 |---|---|
 |`--storage-class-data`, `-scd`|Используется для указания класса хранения для всех файлов данных, включая файлы журнала транзакций|
 |`--storage-class-logs`, `-scl`|Используется для указания класса хранения для всех файлов журнала|
@@ -238,6 +238,6 @@ sqldemo11-logs-claim   Bound    pvc-41b33bbd-debb-4153-9a41-02ce2bf9c665   10Gi 
 
 |Общедоступная облачная служба|Рекомендация|
 |---|---|
-|**Служба Azure Kubernetes (AKS)**|Служба Azure Kubernetes Service (AKS) имеет два типа хранилища: файлы Azure и диски Azure. Каждый тип хранилища имеет две цены/уровни производительности — Standard (HDD) и Premium (SSD). Таким же, четыре класса хранения в AKS — `azurefile` (уровень "Стандартный" файлов Azure), (уровень "Премиум" файлов Azure), (уровень "Стандартный" дисков Azure) `azurefile-premium` `default` и `managed-premium` (уровень "Премиум" дисков Azure). Класс хранения по умолчанию — `default` (уровень "Стандартный" дисков Azure). Между типами и уровнями, которые следует учитывать при принятии решения, связаны существенные **[различия в ценах](https://azure.microsoft.com/en-us/pricing/details/storage/)** . Для рабочих нагрузок с высокими требованиями к производительности рекомендуется использовать `managed-premium` для всех классов хранения. Для рабочих нагрузок разработки и тестирования, проверки концепции и т. д., где стоимость является важным фактором, `azurefile` это наименее дорогостоящий вариант. Все четыре варианта можно использовать в ситуациях, требующих удаленного общего хранилища, так как это все устройства хранения, подключенные к сети в Azure. Подробнее о [хранилище AKS](../../aks/concepts-storage.md).|
+|**Служба Azure Kubernetes (AKS)**|Служба Azure Kubernetes Service (AKS) имеет два типа хранилища: файлы Azure и управляемые диски Azure. Каждый тип хранилища имеет две цены/уровни производительности — Standard (HDD) и Premium (SSD). Таким же, четыре класса хранения в AKS — `azurefile` (уровень "Стандартный" файлов Azure), (уровень "Премиум" файлов Azure), (уровень "Стандартный" дисков Azure) `azurefile-premium` `default` и `managed-premium` (уровень "Премиум" дисков Azure). Класс хранения по умолчанию — `default` (уровень "Стандартный" дисков Azure). Между типами и уровнями, которые следует учитывать при принятии решения, связаны существенные **[различия в ценах](https://azure.microsoft.com/en-us/pricing/details/storage/)** . Для рабочих нагрузок с высокими требованиями к производительности рекомендуется использовать `managed-premium` для всех классов хранения. Для рабочих нагрузок разработки и тестирования, проверки концепции и т. д., где стоимость является важным фактором, `azurefile` это наименее дорогостоящий вариант. Все четыре варианта можно использовать в ситуациях, требующих удаленного общего хранилища, так как это все устройства хранения, подключенные к сети в Azure. Подробнее о [хранилище AKS](../../aks/concepts-storage.md).|
 |**AWS Elastic Kubernetes Service (EKS)**| Служба эластичных Kubernetes в Amazon имеет один основной класс хранения на основе [драйвера хранилища EBS CSI](https://docs.aws.amazon.com/eks/latest/userguide/ebs-csi.html). Это рекомендуется для рабочих нагрузок в рабочей среде. Существует новый драйвер хранилища — [драйвер хранилища EFS CSI](https://docs.aws.amazon.com/eks/latest/userguide/efs-csi.html) , который можно добавить в кластер ЕКС, но сейчас он находится на стадии бета-тестирования и может быть изменен. Хотя AWS говорит, что этот драйвер хранилища поддерживается для рабочей среды, мы не рекомендуем использовать его, так как он по-прежнему находится в бета-версии и может быть изменен. Класс хранения EBS используется по умолчанию и называется `gp2` . Подробнее о [хранилище ЕКС](https://docs.aws.amazon.com/eks/latest/userguide/storage-classes.html).|
 |**Google Kubernetes Engine (GKE)**|В Google Kubernetes Engine (ГКЕ) имеется только один класс хранения `standard` , который используется для [GCE постоянных дисков](https://kubernetes.io/docs/concepts/storage/volumes/#gcepersistentdisk). Только в качестве единственного, он также используется по умолчанию. Несмотря на то, что для ГКЕ существует [локальный статический том](https://cloud.google.com/kubernetes-engine/docs/how-to/persistent-volumes/local-ssd#run-local-volume-static-provisioner) , который можно использовать с прямым подключением твердотельных накопителей, мы не рекомендуем использовать его, так как он не поддерживается Google. Подробнее о [хранилище гке](https://cloud.google.com/kubernetes-engine/docs/concepts/persistent-volumes).

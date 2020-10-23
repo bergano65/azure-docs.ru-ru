@@ -6,12 +6,12 @@ ms.author: robb
 ms.topic: conceptual
 ms.date: 03/09/2020
 ms.subservice: alerts
-ms.openlocfilehash: d7d9f55bbd3d8060670008f321a77b2a28376e47
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4bb44b7133e5644991d7413f4f824a8b55ffdd75
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87849025"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92108377"
 ---
 # <a name="create-a-classic-metric-alert-with-a-resource-manager-template"></a>Создание классического оповещения метрики с помощью шаблона Resource Manager
 
@@ -400,6 +400,5 @@ ms.locfileid: "87849025"
 
 ## <a name="next-steps"></a>Next Steps
 * [Узнайте больше об оповещениях](alerts-overview.md)
-* [Добавьте параметры диагностики](./diagnostic-settings-template.md) в шаблон Resource Manager.
+* [Добавьте параметры диагностики](../samples/resource-manager-diagnostic-settings.md) в шаблон Resource Manager.
 * Синтаксис и свойства JSON см. в справочнике по шаблонам [Microsoft.Insights/metricAlerts](/azure/templates/microsoft.insights/alertrules).
-

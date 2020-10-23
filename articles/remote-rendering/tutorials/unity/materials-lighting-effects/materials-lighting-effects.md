@@ -6,12 +6,12 @@ ms.author: flborn
 ms.date: 06/15/2020
 ms.topic: tutorial
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 0580614468d4003b3640fd4df08ff02f3a1c8476
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 04cb48a3ff84a67995c1a920a323fa568a67cdf3
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89021074"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92203251"
 ---
 # <a name="tutorial-refining-materials-lighting-and-effects"></a>Руководство по Детализация материалов, освещения и эффектов
 
@@ -32,7 +32,7 @@ ms.locfileid: "89021074"
 
 Предоставление визуальной обратной связи — это важная часть взаимодействия с пользователем в любом приложении. Удаленная отрисовка Azure предоставляет механизмы визуальной обратной связи с помощью [иерархических переопределений состояний](../../../overview/features/override-hierarchical-state.md). Иерархические переопределения состояния реализуются с помощью компонентов, присоединенных к локальным экземплярам моделей. Процесс создания этих локальных экземпляров описан в разделе [Синхронизация удаленного графа объектов в иерархии Unity](../manipulate-models/manipulate-models.md#synchronizing-the-remote-object-graph-into-the-unity-hierarchy).
 
-Сначала мы создадим оболочку вокруг компонента [**HierarchicalStateOverrideComponent**](https://docs.microsoft.com/dotnet/api/microsoft.azure.remoterendering.hierarchicalstateoverridecomponent). **HierarchicalStateOverrideComponent** — это локальный скрипт, который управляет переопределениями удаленной сущности. [**Учебные ресурсы**](../custom-models/custom-models.md#import-assets-used-by-this-tutorial) включают в себя абстрактный базовый класс с именем **BaseEntityOverrideController**, который мы расширим для создания оболочки.
+Сначала мы создадим оболочку вокруг компонента [**HierarchicalStateOverrideComponent**](/dotnet/api/microsoft.azure.remoterendering.hierarchicalstateoverridecomponent). **HierarchicalStateOverrideComponent** — это локальный скрипт, который управляет переопределениями удаленной сущности. [**Учебные ресурсы**](../custom-models/custom-models.md#import-assets-used-by-this-tutorial) включают в себя абстрактный базовый класс с именем **BaseEntityOverrideController**, который мы расширим для создания оболочки.
 
 1. Создайте скрипт с именем **EntityOverrideController** и замените все его содержимое следующим кодом:
 

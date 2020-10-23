@@ -6,19 +6,19 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 01/19/2018
-ms.openlocfilehash: bd30a840327eaf338aec89c12ff8eb5d87c60c56
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 26943971eeee96ed831c5d524868a2342891d594
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87322403"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92108411"
 ---
 # <a name="alert-management-solution-in-azure-log-analytics"></a>Решение "Управление оповещениями" в Azure Log Analytics
 
 ![Значок "Управление оповещениями"](media/alert-management-solution/icon.png)
 
 > [!NOTE]
->  Azure Monitor теперь поддерживает расширенные возможности для [управления оповещениями в масштабе](https://aka.ms/azure-alerts-overview), включая созданные такими [средствами мониторинга, как System Center Operations Manager, Zabbix или Nagios](https://aka.ms/managing-alerts-other-monitoring-services).
+>  Azure Monitor теперь поддерживает расширенные возможности для [управления оповещениями в масштабе](./alerts-overview.md), включая созданные такими [средствами мониторинга, как System Center Operations Manager, Zabbix или Nagios](./alerts-managing-nagios-zabbix-scom.md?toc=%252fazure%252fazure-monitor%252ftoc.json).
 >  
 
 
@@ -41,7 +41,7 @@ ms.locfileid: "87322403"
 
 Дополнительные сведения об обновлении пакетов управления для решений см. в статье [Подключение Operations Manager к Log Analytics](./om-agents.md).
 
-## <a name="data-collection"></a>сбор данных
+## <a name="data-collection"></a>Сбор данных
 ### <a name="agents"></a>Агенты
 В следующей таблице описаны подключенные источники, которые поддерживаются этим решением.
 
@@ -120,4 +120,3 @@ ms.locfileid: "87322403"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения о генерации оповещений из Log Analytics см. в статье [Оповещения в Log Analytics](./alerts-overview.md).
-

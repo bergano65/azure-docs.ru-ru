@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/14/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 2df534842c6f6a922579e1128757ee4b7f46e006
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7d8ca0b0fa632321b6aa075ab5ca2bdf6632ab51
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90058603"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92216510"
 ---
 # <a name="security-control-identity-and-access-control"></a>Управление безопасностью: идентификация и управление доступом
 
@@ -26,9 +26,9 @@ ms.locfileid: "90058603"
 
 В Azure AD есть встроенные роли, которые должны быть явно назначены и доступны для запросов. Используйте модуль Azure AD PowerShell для выполнения нерегламентированных запросов для обнаружения учетных записей, входящих в группы администраторов.
 
-- [Как получить роль каталога в Azure AD с помощью PowerShell](https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrole?view=azureadps-2.0)
+- [Как получить роль каталога в Azure AD с помощью PowerShell](https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrole?view=azureadps-2.0&preserve-view=true)
 
-- [Как получить членов роли каталога в Azure AD с помощью PowerShell](https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0)
+- [Как получить членов роли каталога в Azure AD с помощью PowerShell](https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0&preserve-view=true)
 
 ## <a name="32-change-default-passwords-where-applicable"></a>3.2. Изменение паролей по умолчанию, где применимо
 
@@ -64,7 +64,7 @@ ms.locfileid: "90058603"
 
 | Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
-| 3,5 | 4,5, 11,5, 12,11, 16,3 | Customer |
+| 3.5 | 4,5, 11,5, 12,11, 16,3 | Customer |
 
 Включите Azure AD MFA и следуйте рекомендациям по управлению удостоверениями и доступом в центре безопасности Azure.
 
@@ -165,6 +165,6 @@ Azure AD предоставляет журналы для облегчения �
 - [Общие сведения о защищенное хранилище](https://docs.microsoft.com/azure/security/fundamentals/customer-lockbox-overview)
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - См. следующий контроль безопасности: [Защита данных](security-control-data-protection.md)

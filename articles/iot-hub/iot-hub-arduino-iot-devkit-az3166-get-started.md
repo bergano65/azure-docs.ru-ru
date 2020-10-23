@@ -11,12 +11,12 @@ ms.author: wesmc
 ms.custom:
 - mqtt
 - 'Role: Cloud Development'
-ms.openlocfilehash: 0d3afc8d24b95f170bd22b3dc2cf29e7f97e77c3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d5147d6d7f1bd1fcd43835f6a66196c7642ad4ff
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91839560"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92151937"
 ---
 # <a name="connect-iot-devkit-az3166-to-azure-iot-hub"></a>Подключение платы IoT DevKit AZ3166 к Центру Интернета вещей Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "91839560"
 
 У вас еще нет платы DevKit? Воспользуйтесь [симулятором платы DevKit](https://azure-samples.github.io/iot-devkit-web-simulator/) или [приобретите ее](https://aka.ms/iot-devkit-purchase).
 
-Исходный код для всех руководств DevKit можно найти в [коллекции примеров кода](https://docs.microsoft.com/samples/browse/?term=mxchip).
+Исходный код для всех руководств DevKit можно найти в [коллекции примеров кода](/samples/browse/?term=mxchip).
 
 ## <a name="what-you-need"></a>Необходимые элементы
 
@@ -267,7 +267,7 @@ DevKit Интернета вещей содержит обширную колл�
 
     ![Выбор подписки](media/iot-hub-arduino-devkit-az3166-get-started/getting-started/select-subscription.png)
 
-1. Выберите или создайте [группу ресурсов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview#terminology).
+1. Выберите или создайте [группу ресурсов](../azure-resource-manager/management/overview.md#terminology).
 
     ![Выбор группы ресурсов](media/iot-hub-arduino-devkit-az3166-get-started/getting-started/select-resource-group.png)
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 10/21/2019
 ms.author: jeedes
-ms.openlocfilehash: cc64e36e5fa65a8d6eca117f33be8cac89514177
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2fd7425169ddc3ebed11ddaf513f0182dd397703
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88538184"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92313545"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-academy-attendance"></a>Руководство по интеграции единого входа Azure Active Directory с Academy Attendance
 
@@ -26,7 +26,7 @@ ms.locfileid: "88538184"
 * Вы можете включить автоматический вход пользователей в Academy Attendance с использованием учетных записей Azure AD.
 * Централизованное управление учетными записями через портал Azure.
 
-Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -94,7 +94,7 @@ ms.locfileid: "88538184"
     ![Изображение](common/edit-attribute.png)
 
     > [!NOTE]
-    > Academy Attendance поддерживает две роли для пользователей: **Учитель** и **Учащийся**. Настройте эти роли в Azure AD, чтобы пользователям можно было назначить соответствующие роли. Подробные сведения о создании пользовательских ролей в Azure AD см. в [этом](https://docs.microsoft.com/azure/active-directory/develop/active-directory-enterprise-app-role-management) документе.
+    > Academy Attendance поддерживает две роли для пользователей: **Учитель** и **Учащийся**. Настройте эти роли в Azure AD, чтобы пользователям можно было назначить соответствующие роли. Подробные сведения о создании пользовательских ролей в Azure AD см. в [этом](../develop/active-directory-enterprise-app-role-management.md) документе.
 
 1. В дополнение к описанному выше приложение Academy Attendance ожидает несколько дополнительных атрибутов в ответе SAML, как показано ниже. Эти атрибуты также заранее заполнены, но вы можете изменить их в соответствии со своими требованиями.
 
@@ -152,15 +152,14 @@ ms.locfileid: "88538184"
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув плитку Academy Attendance на Панели доступа, вы автоматически войдете в приложение Academy Attendance, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+Щелкнув плитку Academy Attendance на Панели доступа, вы автоматически войдете в приложение Academy Attendance, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](../user-help/my-apps-portal-end-user-access.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](./tutorial-list.md)
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](../conditional-access/overview.md)
 
 - [Пробное использование Academy Attendance с Azure AD](https://aad.portal.azure.com/)
-

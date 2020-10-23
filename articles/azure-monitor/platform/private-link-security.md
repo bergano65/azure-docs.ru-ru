@@ -6,12 +6,12 @@ ms.author: nikiest
 ms.topic: conceptual
 ms.date: 10/05/2020
 ms.subservice: ''
-ms.openlocfilehash: 0c7838b291ca5ba1747b08d7e8fcc6d17cc35f7d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 42419247de537f9a166c3cdca2fd5a832ade6a5f
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91802231"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92461436"
 ---
 # <a name="use-azure-private-link-to-securely-connect-networks-to-azure-monitor"></a>Использование Приватного канала Azure для безопасного подключения сетей к Azure Monitor
 
@@ -41,6 +41,9 @@ ms.locfileid: "91802231"
 ## <a name="planning-based-on-your-network"></a>Планирование с учетом сети
 
 Перед настройкой ресурсов AMPLS примите во внимание требования к изоляции сети. Оцените доступ виртуальных сетей к общедоступному Интернету и ограничения доступа для каждого из ресурсов Azure Monitor (то есть компонентов Application Insights и рабочих областей Log Analytics).
+
+> [!NOTE]
+> Сети с центральным и периферийным доступом или любая другая топология одноранговых сетей могут настроить частную связь между внутренней виртуальной сетью (основной) и соответствующими Azure Monitor ресурсами вместо настройки частной связи для каждой виртуальной сети. Это имеет смысл, особенно если Azure Monitor ресурсы, используемые этими сетями, являются общими. Однако если вы хотите разрешить каждой виртуальной сети доступ к отдельному набору ресурсов мониторинга, создайте закрытую ссылку на выделенный АМПЛС для каждой сети.
 
 ### <a name="evaluate-which-virtual-networks-should-connect-to-a-private-link"></a>Оценка того, какие виртуальные сети должны подключаться к Приватному каналу
 
@@ -232,7 +235,7 @@ $ sudo /opt/microsoft/omsagent/bin/omsadmin.sh -w <workspace id> -s <workspace k
 
 ### <a name="azure-portal"></a>Портал Azure
 
-Чтобы использовать такие функции на портале Azure Monitor, как Application Insights и Log Analytics, необходимо разрешить доступ к порталу Azure и расширениям Azure Monitor в частных сетях. Добавьте в брандмауэр теги **AzureActiveDirectory**, **AzureResourceManager**, **азурефронтдур. фирстпарти**и **азурефронтдур. интерфейсной** [службы](../../firewall/service-tags.md) .
+Чтобы использовать такие функции на портале Azure Monitor, как Application Insights и Log Analytics, необходимо разрешить доступ к порталу Azure и расширениям Azure Monitor в частных сетях. Добавьте теги **AzureActiveDirectory**, **AzureResourceManager**, **азурефронтдур. фирстпарти**и **Азурефронтдур. интерфейсной** [службы](../../firewall/service-tags.md) в группу безопасности сети.
 
 ### <a name="programmatic-access"></a>Программный доступ
 
@@ -248,6 +251,6 @@ $ sudo /opt/microsoft/omsagent/bin/omsadmin.sh -w <workspace id> -s <workspace k
 
 Если вы подключаетесь к ресурсам Azure Monitor по частной ссылке, трафик к этому ресурсу должен пройти через закрытую конечную точку, настроенную в сети. Чтобы включить частную конечную точку, обновите параметры DNS, как описано в [подсоединении к частной конечной точке](#connect-to-a-private-endpoint). Некоторые браузеры используют собственные параметры DNS вместо заданных. Браузер может попытаться подключиться к Azure Monitor общедоступным конечным точкам и полностью обойти частную ссылку. Убедитесь, что параметры браузера не переопределяют или кэшируют старые параметры DNS. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о [закрытом хранилище](private-storage.md)

@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 07/20/2020
 ms.author: jeedes
-ms.openlocfilehash: 44f2195fb68b5a17eab3980f72cbc5374e1c033a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: dde22fe9997e41d6d17fba94e6b9523d82c7b910
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91312912"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92456829"
 ---
 # <a name="tutorial-configure-box-for-automatic-user-provisioning"></a>Руководство по настройке Box для автоматической подготовки пользователей
 
@@ -48,7 +48,7 @@ ms.locfileid: "91312912"
 
 Перед настройкой и включением службы подготовки необходимо решить, какие пользователи или группы в Azure AD представляют пользователей, которым требуется доступ к приложению Box. После этого можно назначить этих пользователей для приложения Box, выполнив следующие действия:
 
-[Назначение корпоративному приложению пользователя или группы](https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-assign-user-azure-portal)
+[Назначение корпоративному приложению пользователя или группы](../manage-apps/assign-user-or-group-access-portal.md)
 
 ## <a name="assign-users-and-groups"></a>Назначение пользователей и групп
 В портале Azure на вкладке **Box > Пользователи и группы** можно указать, каким пользователям и группам следует предоставить доступ к Box. Назначение пользователей или группы приводит к указанным далее результатам.

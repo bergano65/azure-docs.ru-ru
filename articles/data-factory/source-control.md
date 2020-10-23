@@ -11,12 +11,12 @@ ms.reviewer: ''
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 09/08/2020
-ms.openlocfilehash: 2f4e0728a863521f772f4d1c9531b07f427bfb3e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5888f2c432757b3139306df12711353859ead9e1
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89595102"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92101908"
 ---
 # <a name="source-control-in-azure-data-factory"></a>Система управления версиями в Фабрике данных Azure
 [!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
@@ -162,6 +162,8 @@ ms.locfileid: "89595102"
 - GitHub Enterprise версии ниже 2.14.0 не работает в браузере Microsoft Edge.
 
 - Интеграция GitHub с визуальными средствами разработки Фабрики данных работает только в общедоступной версии Фабрики данных.
+
+- Фабрика данных Azure не поддерживает учетные записи организации GitHub
 
 - Из одной ветви GitHub можно получить не более 1000 сущностей на каждый тип ресурса (например, конвейеры и наборы данных). Если это ограничение достигнуто, рекомендуется разделить ресурсы на отдельные фабрики. У Azure DevOps Git такого ограничения нет.
 

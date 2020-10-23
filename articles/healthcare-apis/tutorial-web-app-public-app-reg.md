@@ -9,19 +9,20 @@ ms.reviewer: matjazl
 ms.author: cavoeg
 author: caitlinv39
 ms.date: 01/03/2020
-ms.openlocfilehash: 483ca63abbabaabd3b25446c9267a1b0540f60dd
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: c4f6124227f5dd5c7735d300f71d5ae7d0c06b3a
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87852979"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91975779"
 ---
 # <a name="client-application-registration"></a>Регистрация клиентского приложения
 В рамках предыдущего руководства вы развернули и настроили Azure API для FHIR. Теперь, когда настройка Azure API для FHIR завершена, мы зарегистрируем общедоступное клиентское приложение. Вы можете изучить полное практическое руководство по [регистрации общедоступного клиентского приложения](register-public-azure-ad-client-app.md), где более подробно описаны действия по устранению неполадок. Но основные шаги из этого руководства мы перечислим ниже.
 
 1. Перейдите в Azure Active Directory.
 1. Выберите элементы **Регистрация приложения** --> **Новая регистрация**.
-1. Присвойте приложению имя и укажите значение https://www.getpostman.com/oauth2/callback для URI перенаправления.
+1. Укажите имя для приложения.
+1. Выберите **Общедоступный/собственный клиент (мобильный и классический)** и введите универсальный код ресурса (URI) для https://www.getpostman.com/oauth2/callback.
 
    :::image type="content" source="media/tutorial-web-app/register-public-app.png" alt-text="Снимок экрана с областью регистрации приложения, где заполнены примеры значений для имени приложения и URL-адреса перенаправления.":::
 
@@ -29,7 +30,7 @@ ms.locfileid: "87852979"
 
 Завершив регистрацию клиентского приложения, скопируйте идентификатор приложения (клиента) и идентификатор арендатора на странице обзора. Эти два значения вам потребуются позже при обращении к клиенту.
 
-:::image type="content" source="media/tutorial-web-app/client-id-tenant-id.png" alt-text="Снимок экрана с панелью параметров клиентского приложения, где выделены идентификаторы приложения и каталога.":::
+:::image type="content" source="media/tutorial-web-app/client-id-tenant-id.png" alt-text="Снимок экрана с областью регистрации приложения, где заполнены примеры значений для имени приложения и URL-адреса перенаправления.":::
 
 ### <a name="connect-with-web-app"></a>Подключение к веб-приложению
 
@@ -43,7 +44,7 @@ ms.locfileid: "87852979"
 
 1. Установите флажки **Маркер доступа** и **Маркер идентификатора**.
 
-   :::image type="content" source="media/tutorial-web-app/web-app-authentication.png" alt-text="Снимок экрана с колонкой параметров проверки подлинности для приложения, где выделены шаги по добавлению платформы.":::
+   :::image type="content" source="media/tutorial-web-app/web-app-authentication.png" alt-text="Снимок экрана с областью регистрации приложения, где заполнены примеры значений для имени приложения и URL-адреса перенаправления.":::
 
 ## <a name="add-api-permissions"></a>Добавление разрешений API
 
@@ -53,7 +54,7 @@ ms.locfileid: "87852979"
 1. В разделе **Интерфейсы API, используемые моей организацией** найдите API-интерфейсы здравоохранения Azure.
 1. Выберите пункт **user_impersonation** и щелкните команду **Добавить разрешения**.
 
-:::image type="content" source="media/tutorial-web-app/api-permissions.png" alt-text="Снимок экрана с колонкой добавления разрешений API, где выделены шаги по добавлению разрешений API.":::
+:::image type="content" source="media/tutorial-web-app/api-permissions.png" alt-text="Снимок экрана с областью регистрации приложения, где заполнены примеры значений для имени приложения и URL-адреса перенаправления.":::
 
 ## <a name="next-steps"></a>Next Steps
 Теперь у вас есть общедоступное клиентское приложение. В рамках следующего руководства мы займемся его тестированием и организацией доступа через средство Postman.

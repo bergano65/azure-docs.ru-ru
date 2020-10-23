@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 04/04/2018
 ms.author: liydu
-ms.openlocfilehash: 0d8e10a18436b0b52820dd0bf15ad0b2de969b79
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8c43c8a0b9fdf30b5ce5ae6ecbf123b563099ff6
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87337948"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92148778"
 ---
 # <a name="mxchip-iot-devkit"></a>MXChip IoT DevKit
 
@@ -28,7 +28,7 @@ ms.locfileid: "87337948"
 
 ## <a name="what-you-need"></a>Что нужно
 
-- Настройте среду разработки согласно инструкциям в статье [Подключение платы IoT DevKit AZ3166 к Центру Интернета вещей Azure в облаке](https://docs.microsoft.com/azure/iot-hub/iot-hub-arduino-iot-devkit-az3166-get-started).
+- Настройте среду разработки согласно инструкциям в статье [Подключение платы IoT DevKit AZ3166 к Центру Интернета вещей Azure в облаке](./iot-hub-arduino-iot-devkit-az3166-get-started.md).
 
 - В окне терминала GitBash (или в другом интерфейсе командной строки Git) выполните следующие команды.
 
@@ -114,4 +114,4 @@ ms.locfileid: "87337948"
 - Подключение устройства MXChip IoT DevKit к акселератору решения Azure IoT для удаленного мониторинга.
 - Определение состояния системы и управление цветом светодиодного индикатора RGB DevKit с помощью функции двойников устройств Интернета вещей Azure.
 
-Ниже приведен предлагаемый следующий шаг: [Обзор акселератора решений для удаленного мониторинга Интернета вещей Azure](https://docs.microsoft.com/azure/iot-suite/)
+Ниже приведен предлагаемый следующий шаг: [Обзор акселератора решений для удаленного мониторинга Интернета вещей Azure](/azure/iot-suite/)

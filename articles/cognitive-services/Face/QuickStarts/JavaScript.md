@@ -11,12 +11,12 @@ ms.subservice: face-api
 ms.topic: quickstart
 ms.date: 08/05/2020
 ms.author: pafarley
-ms.openlocfilehash: 6992b6abb8ab54d5f08903f1b1393111bbd78c09
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 06aa840c3cf33c9d1b70b800d45b9b455c4d61ed
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91323011"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91858342"
 ---
 # <a name="quickstart-detect-faces-in-an-image-using-the-rest-api-and-javascript"></a>Краткое руководство. Обнаружение лиц на изображении с помощью REST API и JavaScript
 
@@ -47,86 +47,13 @@ ms.locfileid: "91323011"
 
 Добавьте следующий код в элемент `body` документа. Этот код позволяет создать основной пользовательский интерфейс с полем URL-адреса, кнопкой **анализа лиц**, областями ответа и отображения изображения.
 
-```html
-<h1>Detect Faces:</h1>
-Enter the URL to an image that includes a face or faces, then click
-the <strong>Analyze face</strong> button.<br><br>
-Image to analyze: <input type="text" name="inputImage" id="inputImage"
-    value="https://upload.wikimedia.org/wikipedia/commons/c/c3/RH_Louise_Lillian_Gish.jpg" />
-<button onclick="processImage()">Analyze face</button><br><br>
-<div id="wrapper" style="width:1020px; display:table;">
-    <div id="jsonOutput" style="width:600px; display:table-cell;">
-        Response:<br><br>
-        <textarea id="responseTextArea" class="UIInput"
-            style="width:580px; height:400px;"></textarea>
-    </div>
-    <div id="imageDiv" style="width:420px; display:table-cell;">
-        Source image:<br><br>
-        <img id="sourceImage" width="400" />
-    </div>
-</div>
-```
+:::code language="html" source="~/cognitive-services-quickstart-code/javascript/web/face/rest/detect.html" id="html_include":::
 
 ## <a name="write-the-javascript-script"></a>Написание скрипта JavaScript
 
 Добавьте следующий код непосредственно перед элементом `h1` документа. Этот код JavaScript предназначен для вызова API распознавания лиц.
 
-```html
-<script type="text/javascript">
-    function processImage() {
-        // Replace <Subscription Key> with your valid subscription key.
-        var subscriptionKey = "<Subscription Key>";
-    
-        var uriBase =
-            "https://<My Endpoint String>.com/face/v1.0/detect";
-    
-        // Request parameters.
-        var params = {
-            "returnFaceId": "true",
-            "returnFaceLandmarks": "false",
-            "returnFaceAttributes":
-                "age,gender,headPose,smile,facialHair,glasses,emotion," +
-                "hair,makeup,occlusion,accessories,blur,exposure,noise"
-        };
-    
-        // Display the image.
-        var sourceImageUrl = document.getElementById("inputImage").value;
-        document.querySelector("#sourceImage").src = sourceImageUrl;
-    
-        // Perform the REST API call.
-        $.ajax({
-            url: uriBase + "?" + $.param(params),
-    
-            // Request headers.
-            beforeSend: function(xhrObj){
-                xhrObj.setRequestHeader("Content-Type","application/json");
-                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
-            },
-    
-            type: "POST",
-    
-            // Request body.
-            data: '{"url": ' + '"' + sourceImageUrl + '"}',
-        })
-    
-        .done(function(data) {
-            // Show formatted JSON on webpage.
-            $("#responseTextArea").val(JSON.stringify(data, null, 2));
-        })
-    
-        .fail(function(jqXHR, textStatus, errorThrown) {
-            // Display error message.
-            var errorString = (errorThrown === "") ?
-                "Error. " : errorThrown + " (" + jqXHR.status + "): ";
-            errorString += (jqXHR.responseText === "") ?
-                "" : (jQuery.parseJSON(jqXHR.responseText).message) ?
-                    jQuery.parseJSON(jqXHR.responseText).message :
-                        jQuery.parseJSON(jqXHR.responseText).error.message;
-            alert(errorString);
-        });
-    };
-</script>
-```
+:::code language="html" source="~/cognitive-services-quickstart-code/javascript/web/face/rest/detect.html" id="script_include":::
 
 Вам нужно будет обновить поле `subscriptionKey`, указав значение вашего ключа подписки, и изменить строку `uriBase`, добавив в нее требуемую строку конечной точки. Поле `returnFaceAttributes` определяет извлекаемые атрибуты лица. Эту строку вы можете изменить в зависимости от предполагаемого применения.
 
@@ -139,6 +66,35 @@ Image to analyze: <input type="text" name="inputImage" id="inputImage"
 ![GettingStartCSharpScreenshot](../Images/face-detect-javascript.png)
 
 Ниже приведен пример ответа в формате JSON при успешном выполнении операции.
+
+```json
+[
+  {
+    "faceId": "49d55c17-e018-4a42-ba7b-8cbbdfae7c6f",
+    "faceRectangle": {
+      "top": 131,
+      "left": 177,
+      "width": 162,
+      "height": 162
+    }
+  }
+]
+```
+
+## <a name="extract-face-attributes"></a>Извлечение атрибутов лиц
+ 
+Чтобы извлечь атрибуты лиц, используйте модель обнаружения 1 и добавьте в запрос параметр `returnFaceAttributes`.
+
+```javascript
+// Request parameters.
+var params = {
+    "detectionModel": "detection_01",
+    "returnFaceAttributes": "age,gender,headPose,smile,facialHair,glasses,emotion,hair,makeup,occlusion,accessories,blur,exposure,noise",
+    "returnFaceId": "true"
+};
+```
+
+Теперь в ответе будут указаны атрибуты лиц. Пример:
 
 ```json
 [

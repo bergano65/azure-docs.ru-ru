@@ -1,22 +1,20 @@
 ---
 title: Отладка кода C# для заданий U-SQL Azure Data Lake
 description: В этой статье описано, как выполнять отладку вершин U-SQL с ошибками с помощью Средств Azure Data Lake для Visual Studio.
-services: data-lake-analytics
 ms.service: data-lake-analytics
 ms.reviewer: jasonh
-ms.assetid: bcd0b01e-1755-4112-8e8a-a5cabdca4df2
 ms.topic: how-to
 ms.date: 11/30/2017
-ms.openlocfilehash: ca6fe4ad35e59472e8cf8f3b8476417e01c2668f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: db1d57e3904087bc5cb3711b23cfe6bcf18c3455
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87131877"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92218023"
 ---
 # <a name="debug-user-defined-c-code-for-failed-u-sql-jobs"></a>Отладка определяемого пользователем кода C# для заданий U-SQL, завершившихся сбоем
 
-U-SQL поддерживает для C# модель расширяемости. В скриптах U-SQL можно легко вызывать функции C# и выполнять аналитические функции, которые не поддерживаются в декларативных языках, близких к SQL. Дополнительные сведения о расширяемости U-SQL см. в [руководстве по программированию U-SQL](https://docs.microsoft.com/azure/data-lake-analytics/data-lake-analytics-u-sql-programmability-guide#use-user-defined-functions-udf). 
+U-SQL поддерживает для C# модель расширяемости. В скриптах U-SQL можно легко вызывать функции C# и выполнять аналитические функции, которые не поддерживаются в декларативных языках, близких к SQL. Дополнительные сведения о расширяемости U-SQL см. в [руководстве по программированию U-SQL](./data-lake-analytics-u-sql-programmability-guide.md#use-user-defined-functions-udf). 
 
 Как подтверждает практика, отладка может потребоваться для любого кода. Эта задача усложняется, если вы используете распределенное задание, для которого в облаке размещен пользовательский код и доступно лишь ограниченное количество файлов журнала. [Средства Azure Data Lake для Visual Studio](https://aka.ms/adltoolsvs) поддерживают **отладку вершины с ошибками**, которая помогает отлаживать ошибки, возникающие в пользовательском коде. Когда происходит сбой задания U-SQL, служба сохраняет состояние сбоя и позволяет с помощью специального средства скачать облачную среду на момент сбоя, чтобы выполнить отладку на локальном компьютере. В пакете для скачивания содержится вся облачная среда, включая все входные данные и пользовательский код.
 

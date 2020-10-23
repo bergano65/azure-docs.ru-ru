@@ -1,21 +1,18 @@
 ---
 title: Запуск скриптов U-SQL из Azure Data Lake на локальном компьютере
 description: Узнайте, как запускать задания U-SQL с помощью Средств Azure Data Lake для Visual Studio.
-services: data-lake-analytics
 author: liudan66
 ms.author: liud
 ms.reviewer: jasonh
-ms.assetid: 66dd58b1-0b28-46d1-aaae-43ee2739ae0a
 ms.service: data-lake-analytics
 ms.topic: how-to
-ms.workload: big-data
 ms.date: 07/03/2018
-ms.openlocfilehash: 24f1156fa4a97adb500033034bc7396fd1badbeb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5f9410cc91174420662bb5efc67c8904b5d5e647
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87125740"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92219689"
 ---
 # <a name="run-u-sql-scripts-on-your-local-machine"></a>Запуск скриптов U-SQL на локальном компьютере
 
@@ -28,7 +25,7 @@ ms.locfileid: "87125740"
 |Компонент|Локальный запуск|Запуск в облачной среде|
 |---------|---------|---------|
 |Память|Корневая локальная папка данных|Учетная запись Azure Data Lake Storage по умолчанию|
-|Службы вычислений|Модуль запуска U-SQL в локальной среде|Служба Azure Data Lake Analytics|
+|Вычисления|Модуль запуска U-SQL в локальной среде|Служба Azure Data Lake Analytics|
 |Среда запуска|Рабочая папка на локальном компьютере|Кластер Azure Data Lake Analytics|
 
 В последующих разделах содержатся дополнительные сведения о компонентах локального запуска.
@@ -106,7 +103,7 @@ ms.locfileid: "87125740"
 
 Подробнее о [пакете SDK Azure Data Lake для U-SQL](data-lake-analytics-u-sql-sdk.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Настройка конвейера CI/CD для Azure Data Lake Analytics](data-lake-analytics-cicd-overview.md).
 - [Тестирование кода Azure Data Lake Analytics](data-lake-analytics-cicd-test.md).

@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.date: 10/03/2018
 ms.topic: article
-ms.openlocfilehash: 1ee8c7eabd33ad2d8773d55041fcdf54a7dd489b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 95b5cc191ac6857bf8e1b09e70b22d928473fe03
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91575016"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92314842"
 ---
 # <a name="run-actions-based-on-group-status-by-using-scopes-in-azure-logic-apps"></a>Вы можете выполнять действия рабочего процесса на основе состояния группы с помощью областей в Azure Logic Apps.
 
@@ -31,7 +31,7 @@ ms.locfileid: "91575016"
 
 * Учетная запись электронной почты любого поставщика электронной почты, поддерживаемого Logic Apps. В этом примере используется Outlook.com. Если вы используете другой поставщик, то общий поток остается прежним, но отображается другой пользовательский интерфейс.
 
-* Ключ карт Bing. Чтобы получить этот ключ, ознакомьтесь со статьей <a href="https://msdn.microsoft.com/library/ff428642.aspx" target="_blank">Getting a Bing Maps Key</a> (Получение ключа Карт Bing).
+* Ключ карт Bing. Чтобы получить этот ключ, ознакомьтесь со статьей <a href="/bingmaps/getting-started/bing-maps-dev-center-help/getting-a-bing-maps-key" target="_blank">Getting a Bing Maps Key</a> (Получение ключа Карт Bing).
 
 * Базовые знания [создания приложений логики](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 

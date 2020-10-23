@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 02/25/2020
 ms.author: trbye
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 3b0c85f2c9ba04ac999911e534b906c634d457b8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 073fab4aee084513db4ca05af6c12087c0a8f911
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91360962"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92206379"
 ---
 # <a name="tutorial-voice-enable-your-bot-using-the-speech-sdk"></a>Учебник. Включение программы-робота с помощью речевого пакета SDK
 
@@ -54,7 +54,7 @@ ms.locfileid: "91360962"
 > * Добавить активацию настраиваемого ключевого слова
 > * Узнайте, как изменить язык распознанной и речевой речи
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим руководством необходимо выполнить следующие действия.
 
@@ -65,7 +65,7 @@ ms.locfileid: "91360962"
 - Учетная запись [GitHub](https://github.com/)
 - [Git для Windows](https://git-scm.com/download/win)
 
-## <a name="create-a-resource-group"></a>Создание группы ресурсов
+## <a name="create-a-resource-group"></a>Создание группы ресурсов.
 
 В клиентском приложении, которое вы создадите в этом руководстве, используется несколько служб Azure. Чтобы сократить время приема-передачи для ответов от программы-робота, необходимо убедиться, что эти службы расположены в одном регионе Azure. В этом разделе вы создадите группу ресурсов в регионе " **Западная часть США** ". Эта группа ресурсов будет использоваться при создании отдельных ресурсов для Bot Framework, канала речевого перевода строки и службы распознавания речи.
 
@@ -109,7 +109,7 @@ ms.locfileid: "91360962"
 
 | Имя | Тип  | Расположение |
 |------|-------|----------|
-| SpeechEchoBotTutorial-Speech | Службы Cognitive Services | западная часть США |
+| SpeechEchoBotTutorial-Speech | Cognitive Services | западная часть США |
 
 ### <a name="create-an-azure-app-service-plan"></a>Создание плана службы приложений Azure
 
@@ -131,7 +131,7 @@ ms.locfileid: "91360962"
 | Имя | Тип  | Расположение |
 |------|-------|----------|
 | SpeechEchoBotTutorial-AppServicePlan | План службы приложений | западная часть США |
-| SpeechEchoBotTutorial-Speech | Службы Cognitive Services | западная часть США |
+| SpeechEchoBotTutorial-Speech | Cognitive Services | западная часть США |
 
 ## <a name="build-an-echo-bot"></a>Создание эхо-робота
 
@@ -217,7 +217,7 @@ ms.locfileid: "91360962"
 |------|-------|----------|
 | EchoBot20190805125647 | Служба приложений | западная часть США |
 | SpeechEchoBotTutorial-AppServicePlan | План службы приложений | западная часть США |
-| SpeechEchoBotTutorial-Speech | Службы Cognitive Services | западная часть США |
+| SpeechEchoBotTutorial-Speech | Cognitive Services | западная часть США |
 
 ## <a name="enable-web-sockets"></a>Включение протокола WebSocket
 
@@ -254,8 +254,8 @@ ms.locfileid: "91360962"
 |------|-------|----------|
 | EchoBot20190805125647 | Служба приложений | западная часть США |
 | SpeechEchoBotTutorial-AppServicePlan | План службы приложений | западная часть США |
-| Спичечоботтуториал-Ботрегистратион-8726 | Регистрация каналов Bot | Global |
-| SpeechEchoBotTutorial-Speech | Службы Cognitive Services | западная часть США |
+| Спичечоботтуториал-Ботрегистратион-8726 | Регистрация каналов Bot | Глобальный |
+| SpeechEchoBotTutorial-Speech | Cognitive Services | западная часть США |
 
 > [!IMPORTANT]
 > В ресурсе регистрации каналов Bot будет показан глобальный регион, даже если вы выбрали "Западная часть США". Это ожидаемое поведение.
@@ -412,7 +412,7 @@ ms.locfileid: "91360962"
 
 В исходном коде клиента помощника Windows Voice просмотрите эти файлы, чтобы просмотреть код, используемый для включения обнаружения ключевых слов:
 
-1. [`VoiceAssistantClient\Models.cs`](https://github.com/Azure-Samples/Cognitive-Services-Voice-Assistant/blob/master/clients/csharp-wpf/VoiceAssistantClient/Models.cs) включает вызов метода Speech SDK [`KeywordRecognitionModel.fromFile()`](https://docs.microsoft.com/javascript/api/microsoft-cognitiveservices-speech-sdk/keywordrecognitionmodel?view=azure-node-latest#fromfile-string-) , который используется для создания экземпляра модели из локального файла на диске.
+1. [`VoiceAssistantClient\Models.cs`](https://github.com/Azure-Samples/Cognitive-Services-Voice-Assistant/blob/master/clients/csharp-wpf/VoiceAssistantClient/Models.cs) включает вызов метода Speech SDK [`KeywordRecognitionModel.fromFile()`](https://docs.microsoft.com/javascript/api/microsoft-cognitiveservices-speech-sdk/keywordrecognitionmodel?view=azure-node-latest&preserve-view=true#fromfile-string-) , который используется для создания экземпляра модели из локального файла на диске.
 1. [`VoiceAssistantClient\MainWindow.xaml.cs`](https://github.com/Azure-Samples/Cognitive-Services-Voice-Assistant/blob/master/clients/csharp-wpf/VoiceAssistantClient/MainWindow.xaml.cs) включает в себя вызов метода Speech SDK [`DialogServiceConnector.StartKeywordRecognitionAsync()`](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.dialog.dialogserviceconnector.startkeywordrecognitionasync) , который активирует непрерывное обнаружение ключевых слов.
 
 ## <a name="optional-change-the-language-and-bot-voice"></a>Используемых Изменение языка и Bot-голоса
@@ -467,12 +467,12 @@ ms.locfileid: "91360962"
 2. Найдите группу ресурсов с именем: **спичечоботтуториал-ResourceGroup**. Щелкните три точки (...).
 3. Выберите **Удалить группу ресурсов**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Создание собственного клиентского приложения с помощью пакета SDK для распознавания речи](quickstart-voice-assistant-csharp-uwp.md)
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 * Развертывание в [регионе Azure рядом с вами](https://azure.microsoft.com/global-infrastructure/locations/) , чтобы увидеть улучшение времени ответа Bot
 * Развертывание в [регионе Azure, поддерживающем высококачественные голосовые нейроны TTS](https://docs.microsoft.com/azure/cognitive-services/speech-service/regions#standard-and-neural-voices)

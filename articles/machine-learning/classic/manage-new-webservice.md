@@ -9,12 +9,12 @@ author: likebupt
 ms.author: keli19
 ms.custom: previous-ms.author=yahajiza, previous-author=YasinMSFT
 ms.date: 02/28/2017
-ms.openlocfilehash: caaf8e25cdf43602fda8fc72caf7d16b7b56c06a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fc9da659e7e55e8b15071f957d6a51e3b4673244
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91361897"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92427572"
 ---
 # <a name="manage-a-web-service-using-the-azure-machine-learning-studio-classic-web-services-portal"></a>Управление веб-службой с помощью портала веб-служб Машинное обучение Azure Studio (классическая модель)
 
@@ -44,7 +44,7 @@ ms.locfileid: "91361897"
 
 Дополнительные сведения о создании рабочей области см. в статье [Создание и совместное использование рабочей области машинное обучение Azure Studio (классическая модель)](create-workspace.md).
 
-Дополнительные сведения о настройке разрешений на доступ см. в статье [Управление доступом с помощью RBAC и портала Azure](../../role-based-access-control/role-assignments-portal.md).
+Дополнительные сведения о настройке разрешений доступа см. [в разделе Добавление или удаление назначений ролей Azure с помощью портал Azure](../../role-based-access-control/role-assignments-portal.md).
 
 
 ## <a name="manage-new-web-services"></a>Управление новыми веб-службами

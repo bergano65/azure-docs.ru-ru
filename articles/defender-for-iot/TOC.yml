@@ -23,6 +23,10 @@
 - name: Краткие руководства
   expanded: true
   items:
+    - name: Подготовка сети
+      href: quickstart-prepare-network-for-defender-for-iot.md
+    - name: Подключение датчиков
+      href: quickstart-onboard-sensors.md
     - name: Настройка модуля безопасности для ОСРВ Azure
       href: quickstart-azure-rtos-security-module.md
     - name: Подключение Azure Defender для Интернета вещей в Центре Интернета вещей
@@ -63,6 +67,10 @@
       href: concept-pricing.md
 - name: Практические руководства
   items:
+    - name: Просмотр сведений о датчиках и управление ими
+      href: how-to-deploy-view-sensors.md
+    - name: Развертывание консоли управления в локальной среде
+      href: how-to-deploy-management-console-appliance.md
     - name: Работа с модулем безопасности для ОСРВ Azure
       href: how-to-azure-rtos-security-module.md
     - name: Какой агент нужно развернуть?
@@ -95,14 +103,16 @@
       href: how-to-investigate-device.md
     - name: Подключение к Azure Sentinel
       href: how-to-configure-with-sentinel.md
-    - name: Настройка решения
+    - name: Настройка агента
       href: how-to-customize-solution.md
 - name: Ссылки
   items:
     - name: API модуля безопасности для ОСРВ Azure
       href: azure-rtos-security-module-api.md
-    - name: Часто задаваемые вопросы
+    - name: Часто задаваемые вопросы о службе
       href: resources-frequently-asked-questions.md
+    - name: Часто задаваемые вопросы об агенте
+      href: resources-agent-frequently-asked-questions.md
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/?category=security-identity'
 - name: Ресурсы

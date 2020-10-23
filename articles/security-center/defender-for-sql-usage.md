@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/22/2020
 ms.author: memildin
-ms.openlocfilehash: 6d19027cfd406f81d31696c5cd2c1a235574e400
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fa7d252246ed37160ba2a5cfcd90557df1375bc3
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91577855"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92461538"
 ---
 # <a name="azure-defender-for-sql-servers-on-machines"></a>Защитник Azure для серверов SQL Server на компьютерах 
 
@@ -28,7 +28,7 @@ ms.locfileid: "91577855"
 
 ## <a name="availability"></a>Доступность
 
-|Аспект|Подробнее|
+|Аспект|Сведения|
 |----|:----|
 |Состояние выпуска:|Предварительный просмотр|
 |Цены|Счета **за использование защитника Azure для серверов SQL Server на компьютерах** выставляются, как показано на [странице с ценами](security-center-pricing.md) .|
@@ -49,13 +49,13 @@ ms.locfileid: "91577855"
 ### <a name="step-1-provision-the-log-analytics-agent-on-your-sql-servers-host"></a>Шаг 1. Подготавливаете агент Log Analytics на узле SQL Server:
 
 - **SQL Server на виртуальной машине Azure** . Если компьютер SQL размещается на виртуальной машине Azure, можно выполнить [автоматическую инициализацию агента log Analytics](security-center-enable-data-collection.md#workspace-configuration). Кроме того, вы можете выполнить процедуру вручную, чтобы подключить [Azure Stack виртуальные машины](quickstart-onboard-machines.md#onboard-your-azure-stack-vms).
-- **SQL Server в службе "Дуга Azure** ". если ваша SQL Server размещена на компьютере [Arc Azure](https://docs.microsoft.com/azure/azure-arc/) , можно развернуть агент log Analytics с помощью рекомендации центра безопасности "log Analytics должен быть установлен на компьютерах Arc Azure на базе Windows (Предварительная версия)". Кроме того, можно выполнить процедуру вручную в [документации по службе Arc Azure](https://docs.microsoft.com/azure/azure-arc/servers/manage-vm-extensions#enable-extensions-from-the-portal).
+- **SQL Server в службе** "Дуга Azure". если ваша SQL Server управляется серверами с поддержкой [Arc](../azure-arc/index.yml) , вы можете развернуть агент log Analytics с помощью рекомендации центра безопасности "log Analytics должен быть установлен на компьютерах Arc Azure на базе Windows (Предварительная версия)". Кроме того, можно следовать методам установки, описанным в [документации по службе Arc Azure](../azure-arc/servers/manage-vm-extensions.md).
 
 - **SQL Server локального** компьютера. если ваша SQL Server размещена на локальном компьютере Windows без дуги Azure, у вас есть два варианта подключения его к Azure:
     
-    - **Развертывание Arc Azure** . Вы можете подключить любой компьютер Windows к центру безопасности. Тем не менее Azure Arc обеспечивает более глубокую интеграцию во *всей* среде Azure. Если вы настроили дугу Azure, вы увидите страницу **SQL Server — Azure Arc** на портале, и ваши оповещения системы безопасности будут отображаться на выделенной вкладке **безопасности** на этой странице. Поэтому первым и рекомендуемым вариантом является [Настройка дуги Azure на узле](https://docs.microsoft.com/azure/azure-arc/servers/onboard-portal#install-and-validate-the-agent-on-windows) и следуйте инструкциям по **SQL Server в Azure**, приведенном выше.
+    - **Развертывание Arc Azure** . Вы можете подключить любой компьютер Windows к центру безопасности. Тем не менее Azure Arc обеспечивает более глубокую интеграцию во *всей* среде Azure. Если вы настроили дугу Azure, вы увидите страницу **SQL Server — Azure Arc** на портале, и ваши оповещения системы безопасности будут отображаться на выделенной вкладке **безопасности** на этой странице. Поэтому первым и рекомендуемым вариантом является [Настройка дуги Azure на узле](../azure-arc/servers/onboard-portal.md#install-and-validate-the-agent-on-windows) и следуйте инструкциям по **SQL Server в Azure**, приведенном выше.
         
-    - **Подключение компьютера Windows без дуги Azure** . Если вы решили подключить SQL Server, работающую на компьютере Windows, без использования дуги Azure, следуйте инструкциям в статье [Подключение компьютеров Windows к Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/agent-windows).
+    - **Подключение компьютера Windows без дуги Azure** . Если вы решили подключить SQL Server, работающую на компьютере Windows, без использования дуги Azure, следуйте инструкциям в статье [Подключение компьютеров Windows к Azure Monitor](../azure-monitor/platform/agent-windows.md).
 
 
 ### <a name="step-2-enable-the-optional-plan-in-security-centers-pricing-and-settings-page"></a>Шаг 2. Включите необязательный план на странице цен и настроек центра безопасности:
@@ -75,7 +75,7 @@ ms.locfileid: "91577855"
     Этот план будет включен на всех серверах SQL Server, подключенных к выбранной рабочей области. Защита будет полностью активна после первого перезапуска экземпляра SQL Server.
 
     >[!TIP] 
-    > Чтобы создать новую рабочую область, следуйте инструкциям в разделе [создание log Analytics рабочей области](https://docs.microsoft.com/azure/azure-monitor/learn/quick-create-workspace).
+    > Чтобы создать новую рабочую область, следуйте инструкциям в разделе [создание log Analytics рабочей области](../azure-monitor/learn/quick-create-workspace.md).
 
 
 1. При необходимости настройте уведомления по электронной почте для оповещений системы безопасности. 
@@ -118,17 +118,17 @@ ms.locfileid: "91577855"
 
 1. Оповещения предназначены для автономного выполнения с подробными инструкциями по исправлению и анализом информации в каждом из них. Дополнительные сведения см. в более широком обзоре с помощью другого центра безопасности Azure и возможностей Azure Sentinel:
 
-    * Включите функцию аудита SQL Server для дальнейшего исследования. Если вы являетесь пользователем-Sentinel Azure, вы можете отправить журналы аудита SQL из событий журнала безопасности Windows в метку и наслаждаться богатыми возможностями расследования. Дополнительные [сведения об аудите SQL Server](https://docs.microsoft.com/sql/relational-databases/security/auditing/create-a-server-audit-and-server-audit-specification?view=sql-server-ver15).
+    * Включите функцию аудита SQL Server для дальнейшего исследования. Если вы являетесь пользователем-Sentinel Azure, вы можете отправить журналы аудита SQL из событий журнала безопасности Windows в метку и наслаждаться богатыми возможностями расследования. Дополнительные [сведения об аудите SQL Server](/sql/relational-databases/security/auditing/create-a-server-audit-and-server-audit-specification?preserve-view=true&view=sql-server-ver15).
     * Чтобы повысить уровень безопасности, используйте рекомендации центра безопасности для главного компьютера, указанного в каждом оповещении. Это снизит риски, возникающие в будущих атаках. 
 
     [Дополнительные сведения об управлении оповещениями и реагировании на них](security-center-managing-and-responding-alerts.md).
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Связанные материалы см. в следующей статье:
 
 - [Оповещения системы безопасности для базы данных SQL и Azure синапсе Analytics (ранее — хранилище данных SQL)](alerts-reference.md#alerts-sql-db-and-warehouse)
 - [Настройка отправки по электронной почте уведомлений об оповещениях системы безопасности](security-center-provide-security-contact-details.md)
-- [Дополнительные сведения об Azure Sentinel](https://docs.microsoft.com/azure/sentinel/)
-- [Пакет безопасности данных центра безопасности Azure](https://docs.microsoft.com/azure/sql-database/sql-database-advanced-data-security)
+- [Дополнительные сведения об Azure Sentinel](../sentinel/index.yml)
+- [Пакет безопасности данных центра безопасности Azure](../azure-sql/database/azure-defender-for-sql.md)

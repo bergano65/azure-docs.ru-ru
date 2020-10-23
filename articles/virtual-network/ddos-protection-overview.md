@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/22/2020
 ms.author: kumud
-ms.openlocfilehash: 50b0324be8da8024dcbda140eff062f3ff712225
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 087964ab64c94d5dfe223ce4e47355784003b627
+ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91371190"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92173350"
 ---
 # <a name="azure-ddos-protection-standard-overview"></a>Общие сведения о защите от атак DDoS Azure уровня "Стандартный"
 
@@ -26,7 +26,7 @@ ms.locfileid: "91371190"
 
 Службу "Защита от атак DDoS" уровня "Стандартный" легко включить, и для ее использования не требуется изменять приложение. Политики защиты корректируются на основе мониторинга выделенного трафика и алгоритмов машинного обучения. Они применяются к общедоступным IP-адресам, связанным с ресурсами, развернутыми в виртуальных сетях, такими как Azure Load Balancer, Шлюз приложений Azure и экземпляры Azure Service Fabric, но эта защита не применяется к Средам службы приложений.Данные телеметрии доступны в представлениях Azure Monitor в режиме реального времени во время атаки и после ее окончания. Широкие возможности для анализа устранения рисков атак доступны с помощью параметров диагностики. Можно также включить защиту на прикладном уровне с помощью [брандмауэра веб-приложения в шлюзе приложений Azure](../application-gateway//application-gateway-web-application-firewall-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) или установки брандмауэра стороннего производителя из Azure Marketplace. Защита обеспечивается для [общедоступных IP-адресов](virtual-network-public-ip-address.md) Azure IPv4 и IPv6.
 
-![Базовая защита от атак DDoS Basic VS Standard](./media/ddos-protection-overview/ddoscomparison.png)
+![Базовая защита от атак DDoS Basic VS Standard](./media/ddos-protection-overview/ddosfeatures.png)
 
 Служба защиты от атак DDoS Azure не хранит данные клиента.
 
@@ -41,8 +41,6 @@ ms.locfileid: "91371190"
 Защита от атак DDoS уровня "Стандартный" распространяется на ресурсы в виртуальной сети, включая общедоступные IP-адреса, связанные с виртуальными машинами, подсистемами балансировки нагрузки и шлюзами приложений. В сочетании с брандмауэром веб-приложения шлюза приложений или брандмауэром веб-приложения стороннего производителя, развернутым в виртуальной сети с общедоступным IP-адресом, стандарт защиты от атак DDoS может предоставить полный уровень 3 для возможности устранения рисков уровня 7.
 
 ## <a name="ddos-protection-standard-features"></a>Возможности защиты от атак DDoS уровня "Стандартный"
-
-![Возможности защиты от атак DDoS](./media/ddos-protection-overview/ddosfeatures.png)
 
 Возможности защиты от атак DDoS ценовой категории "Стандартный" включают в себя:
 
@@ -78,7 +76,7 @@ ms.locfileid: "91371190"
 - Обеспечить соответствие документации по защите от атак DDoS.
 - Обучить команды безопасности сети.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Настройка службы "Защита от атак DDoS" уровня "Стандартный"](manage-ddos-protection.md)
 - [Цены на службу защиты Azure от атак DDoS](https://azure.microsoft.com/pricing/details/ddos-protection/)

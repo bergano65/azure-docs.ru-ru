@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 08/27/2020
 ms.author: allensu
 ms:custom: seodec18
-ms.openlocfilehash: 15609435c7bc099d0ffe40759ea0f323b58a4545
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: ee7c1c57c271a6173f4ee978a10ff37526c04c33
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89087580"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92047857"
 ---
 # <a name="quickstart-create-an-internal-load-balancer-to-load-balance-vms-using-azure-powershell"></a>Краткое руководство. Создание внутренней подсистемы балансировки нагрузки с помощью Azure PowerShell для распределения нагрузки между виртуальными машинами
 
@@ -1066,8 +1066,8 @@ Remove-AzResourceGroup -Name $rg
 * настроить правило трафика подсистемы балансировки нагрузки и пробу работоспособности;
 * тестировать подсистему балансировки нагрузки.
 
-Дополнительные сведения об Azure Load Balancer см. в статье [Что такое Azure Load Balancer?](load-balancer-overview.md) и на странице [часто задаваемых вопросов о Load Balancer](load-balancer-faqs.md).
-
-* Дополнительные сведения см. в статье [Standard Load Balancer and Availability Zones](load-balancer-standard-availability-zones.md) (Azure Load Balancer ценовой категории "Стандартный" и зоны доступности).
+Чтобы узнать больше об Azure Load Balancer, ознакомьтесь со следующей статьей:
+> [!div class="nextstepaction"]
+> [Что такое Azure Load Balancer](load-balancer-overview.md)
 
 

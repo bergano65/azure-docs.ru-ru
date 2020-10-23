@@ -9,12 +9,12 @@ ms.subservice: reservations
 ms.topic: conceptual
 ms.date: 02/13/2020
 ms.author: banders
-ms.openlocfilehash: 20a9fb6a158134ffc18dc5bbb7eddd34d2b79562
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: 6e51363ff2f3782b77288f9dc1fcb8e59e9ffe0c
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88682014"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92151784"
 ---
 # <a name="get-enterprise-agreement-reservation-costs-and-usage"></a>Получение сведений о затратах на резервирование и использовании по Соглашениям Enterprise
 
@@ -55,7 +55,7 @@ ms.locfileid: "88682014"
 - Term (Срок) — 12 или 36 месяцев.
 - RINormalizationRatio — значение доступно в поле AdditionalInfo. Это доля резервирования, примененная к записи об использовании. Если для резервирования включена гибкость размера экземпляра, этот параметра может применяться и к другим размерам. Это значение обозначает, какая доля резервирования была применена к записи об использовании.
 
-[См. определение поля](https://docs.microsoft.com/rest/api/consumption/usagedetails/list#definitions)
+[См. определение поля](/rest/api/consumption/usagedetails/list#definitions)
 
 ## <a name="get-azure-consumption-and-reservation-usage-data-using-api"></a>Получение данных об использовании и резервированиях Azure с помощью API
 
@@ -71,7 +71,7 @@ ms.locfileid: "88682014"
 https://management.azure.com/providers/Microsoft.Billing/billingAccounts/{enrollmentId}/providers/Microsoft.Billing/billingPeriods/{billingPeriodId}/providers/Microsoft.Consumption/usagedetails?metric={metric}&amp;api-version=2019-05-01&amp;$filter={filter}
 ```
 
-Дополнительные сведения о параметрах {enrollmentId} (идентификатор Соглашения о регистрации) и {billingPeriodId} (идентификатор периода выставления счетов) см. в [списке параметров использования](https://docs.microsoft.com/rest/api/consumption/usagedetails/list) из статьи об этом API.
+Дополнительные сведения о параметрах {enrollmentId} (идентификатор Соглашения о регистрации) и {billingPeriodId} (идентификатор периода выставления счетов) см. в [списке параметров использования](/rest/api/consumption/usagedetails/list) из статьи об этом API.
 
 Сведения о метрике и фильтре, приведенные в следующей таблице, помогут вам решить некоторые распространенные проблемы с резервированием.
 

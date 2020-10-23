@@ -12,23 +12,23 @@ ms.subservice: hybrid
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.date: 09/24/2020
+ms.date: 10/20/2020
 ms.topic: how-to
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 51f9043dcf329e4f3f23ddb930e53cfdfa2f107a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 78871441fe7f9b0f6d02cdf6f05b97933abfca54
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91631653"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92275648"
 ---
 # <a name="azure-ad-connect-health-agent-installation"></a>Установка агента Azure AD Connect Health
 
 В этом документе описываются этапы установки и настройки агентов Azure AD Connect Health. Загрузить агенты можно [отсюда](how-to-connect-install-roadmap.md#download-and-install-azure-ad-connect-health-agent):
 
-## <a name="requirements"></a>Требования
+## <a name="requirements"></a>Requirements (Требования)
 
 В таблице ниже приведен список предварительных требований для использования Azure AD Connect Health.
 
@@ -42,7 +42,7 @@ ms.locfileid: "91631653"
 | Проверка TLS для исходящего трафика фильтруется или отключается. | Выполнение этапа регистрации агента или операции передачи данных может завершиться ошибкой, если для исходящего трафика на сетевом уровне имеется проверка TLS или прерывание. Подробнее о [настройке проверки TLS](/previous-versions/tn-archive/ee796230(v=technet.10)) |
 | Порты брандмауэра на сервере с агентом |Агент требует открытия следующих портов брандмауэра для обмена данными с конечными точками службы Azure AD Health.<br /><br /><li>TCP-порт 443</li><li>TCP-порт 5671</li> <br />Обратите внимание на то, что для последней версии агента больше не нужен порт 5671. Для обновления до последней версии требуется только порт 443. Ознакомьтесь с дополнительными сведениями о [включении портов брандмауэра](/previous-versions/sql/sql-server-2008/ms345310(v=sql.100)). |
 | Внесите следующие веб-сайты в список разрешенных, если включена политика усиленной безопасности IE |Если на сервере, на котором будет установлен агент, включена конфигурация усиленной безопасности, потребуется открыть доступ для следующих веб-сайтов:<br /><br /><li>https:\//login.microsoftonline.com</li><li>https:\//secure.aadcdn.microsoftonline-p.com</li><li>https:\//login.windows.net</li><li>HTTPS: \/ /aadcdn.msftauth.NET</li><li>Сервер федерации вашей организации должен быть доверенным для Azure Active Directory. Например: https:\//sts.contoso.com.</li> Дополнительные сведения о [настройке IE см. в](https://support.microsoft.com/help/815141/internet-explorer-enhanced-security-configuration-changes-the-browsing)этой статье. Если у вас есть прокси-сервер в вашей сети, см. Примечание ниже.|
-| Установлена служба PowerShell 4.0 или более поздней версии | <li>Windows Server 2008 R2 поставляется вместе с PowerShell версии 2.0, что недостаточно для агента. Обновите PowerShell, как описано ниже в разделе [Установка агента на серверах Windows Server 2008 R2](#agent-installation-on-windows-server-2008-r2-servers).</li><li>Windows Server 2012 поставляется вместе с PowerShell версии 3.0, что недостаточно для агента.</li><li>Windows Server 2012 R2 и более поздней версии поставляется с последней версией PowerShell.</li>|
+| Установлена служба PowerShell 4.0 или более поздней версии | <li>Windows Server 2012 поставляется вместе с PowerShell версии 3.0, что недостаточно для агента.</li><li>Windows Server 2012 R2 и более поздней версии поставляется с последней версией PowerShell.</li>|
 |Отключение FIPS|FIPS не поддерживается агентами Azure Active Directory Connect Health.|
 
 > [!IMPORTANT]
@@ -111,17 +111,6 @@ ms.locfileid: "91631653"
 
 ![Службы AD FS Azure AD Connect Health](./media/how-to-connect-health-agent-install/install5.png)
 
-### <a name="agent-installation-on-windows-server-2008-r2-servers"></a>Установка агента на серверах Windows Server 2008 R2
-
-Для серверов Windows Server 2008 R2 сделайте следующее:
-
-1. Убедитесь, что сервер работает с пакетом обновления 1 или более поздней версии.
-2. Отключите IE ESC для установки агента.
-3. Установите Windows PowerShell 4.0 на каждом из серверов перед установкой агента AD Health. Чтобы установить Windows PowerShell 4.0, выполните следующие действия.
-   * Загрузите автономный установщик по ссылке и установите [Microsoft .NET Framework 4.5](https://www.microsoft.com/download/details.aspx?id=40779) .
-   * Установите интегрированную среду сценариев PowerShell (из компонентов Windows).
-   * Установите на сервере Internet Explorer версии 10 или более поздней версии. (Это необходимо службе работоспособности для аутентификации пользователя с учетными данными администратора Azure.)
-4. Дополнительные сведения об установке Windows PowerShell 4.0 на Windows Server 2008 R2 см. в вики-статье [здесь](https://social.technet.microsoft.com/wiki/contents/articles/20623.step-by-step-upgrading-the-powershell-version-4-on-2008-r2.aspx).
 
 ### <a name="enable-auditing-for-ad-fs"></a>Включение аудита для AD FS
 
@@ -130,20 +119,6 @@ ms.locfileid: "91631653"
 >
 
 Чтобы функция аналитики по использованию могла осуществлять сбор и анализ данных, агенту Azure AD Connect Health нужна информация из журналов аудита AD FS. По умолчанию эти журналы не включены. Используйте следующие процедуры для включения аудита AD FS и поиска журналов аудита AD FS на серверах AD FS.
-
-#### <a name="to-enable-auditing-for-ad-fs-on-windows-server-2008-r2"></a>Включение аудита для AD FS на Windows Server 2008 R2
-
-1. Нажмите кнопку **Пуск**, перейдите в раздел **Программы**, **Администрирование** и щелкните пункт **Локальная политика безопасности**.
-2. Перейдите к папке **Параметры безопасности\Локальные политики\Назначение прав пользователей**, а затем дважды щелкните **Создание аудитов безопасности**.
-3. На вкладке **Параметр локальной безопасности** убедитесь, что в списке указана учетная запись службы AD FS 2.0. Если она отсутствует, щелкните ссылку **Добавление пользователя или группы**, добавьте запись в список и нажмите кнопку **ОК**.
-4. Чтобы включить аудит, откройте командную строку с более высоким уровнем привилегий и выполните следующую команду: <code>auditpol.exe /set /subcategory:{0CCE9222-69AE-11D9-BED3-505054503030} /failure:enable /success:enable</code>.
-5. Закройте вкладку **Параметры локальной безопасности**.
-<br />   -- **Следующие шаги требуются только для основных серверов AD FS.** -- <br />
-6. Откройте оснастку **Управление AD FS**. Чтобы открыть оснастку управления AD FS, нажмите кнопку **Пуск**, наведите указатель мыши на пункт **Программы**, а затем — на **Администрирование** и выберите пункт **AD FS 2.0 Management** (Управление AD FS 2.0).
-7. В области **Действия** щелкните ссылку **Изменить свойства службы федерации**.
-8. В диалоговом окне **Свойства службы федерации** перейдите на вкладку **События**.
-9. Установите флажки **Успешные события аудита** и **Неудачные события аудита**.
-10. Нажмите кнопку **ОК**.
 
 #### <a name="to-enable-auditing-for-ad-fs-on-windows-server-2012-r2"></a>Включение аудита для AD FS на Windows Server 2012 R2
 

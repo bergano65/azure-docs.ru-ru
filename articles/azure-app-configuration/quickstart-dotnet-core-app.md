@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.custom: devx-track-csharp
 ms.date: 09/28/2020
 ms.author: lcozzens
-ms.openlocfilehash: f133572b0c3163f5c5fe0a5c2e48ce5e6d53adcc
-ms.sourcegitcommit: d9ba60f15aa6eafc3c5ae8d592bacaf21d97a871
+ms.openlocfilehash: bb12224fd29d50765bc56a531787b7a0849cd06e
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91767746"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92075796"
 ---
 # <a name="quickstart-create-a-net-core-app-with-app-configuration"></a>Краткое руководство. Создание приложения .NET Core с помощью службы "Конфигурация приложений"
 
@@ -40,7 +40,7 @@ ms.locfileid: "91767746"
 
 ## <a name="create-a-net-core-console-app"></a>Создание консольного приложения .NET Core
 
-Чтобы создать проект консольного приложения .NET Core, вы будете использовать [интерфейс командной строки .NET Core](https://docs.microsoft.com/dotnet/core/tools/). Преимущество использования .NET Core CLI по сравнению с Visual Studio заключается в том, что он доступен на платформах Windows, macOS и Linux.  Кроме того, можно использовать предварительно установленные средства, доступные в [Azure Cloud Shell](https://shell.azure.com).
+Чтобы создать проект консольного приложения .NET Core, вы будете использовать [интерфейс командной строки .NET Core](/dotnet/core/tools/). Преимущество использования .NET Core CLI по сравнению с Visual Studio заключается в том, что он доступен на платформах Windows, macOS и Linux.  Кроме того, можно использовать предварительно установленные средства, доступные в [Azure Cloud Shell](https://shell.azure.com).
 
 1. Создайте новый каталог для своего проекта
 
@@ -124,7 +124,7 @@ ms.locfileid: "91767746"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В рамках этого краткого руководства вы создали хранилище Конфигурации приложений и использовали его с консольным приложением .NET Core с помощью [поставщика Конфигурации приложений](https://go.microsoft.com/fwlink/?linkid=2074664). Чтобы узнать, как настроить приложение .NET Core для динамического обновления параметров конфигурации, перейдите к следующему учебнику.
+В рамках этого краткого руководства вы создали хранилище Конфигурации приложений и использовали его с консольным приложением .NET Core с помощью [поставщика Конфигурации приложений](/dotnet/api/Microsoft.Extensions.Configuration.AzureAppConfiguration). Чтобы узнать, как настроить приложение .NET Core для динамического обновления параметров конфигурации, перейдите к следующему учебнику.
 
 > [!div class="nextstepaction"]
 > [Включение динамической конфигурации](./enable-dynamic-configuration-dotnet-core.md)

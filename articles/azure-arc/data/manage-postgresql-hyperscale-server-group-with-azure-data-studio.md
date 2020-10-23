@@ -9,12 +9,12 @@ ms.author: jeanyd
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: fc0ad45f575f9190f15b61acdf476c716b7f1638
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7dcc0f916a15598060e034dcf62536ee13e2672e
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90940786"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92320231"
 ---
 # <a name="use-azure-data-studio-to-manage-your-azure-arc-enabled-postgresql-hyperscale-server-group"></a>Использование Azure Data Studio для управления PostgreSQLной группой серверов с поддержкой дуги Azure
 
@@ -25,10 +25,10 @@ ms.locfileid: "90940786"
 
 [!INCLUDE [azure-arc-data-preview](../../../includes/azure-arc-data-preview.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - [Установка аздата, Azure Data Studio и Azure CLI](install-client-tools.md)
-- Установка в Azure Data Studio **Azure Data CLI** и расширения **Azure Arc** и **PostgreSQL**
+- Установка в Azure Data Studio **[!INCLUDE [azure-data-cli-azdata](../../../includes/azure-data-cli-azdata.md)]** расширениях и **Arc Azure** , а также расширений **PostgreSQL**
 - Создание [контроллера данных ARC в Azure](create-data-controller-using-azdata.md)
 - Запустить Azure Data Studio
 
@@ -61,9 +61,8 @@ ms.locfileid: "90940786"
 
 В левой части этой панели перечислены несколько панелей мониторинга:
 
-- **Обзор:** Отображаются сводные данные об экземпляре, такие как имя, идентификатор подписки Azure, конфигурация, версия ядра СУБД, конечные точки для Grafana и Kibana...
+- **Обзор:** Отображаются сводные данные об экземпляре, такие как имя, имя пользователя администратора PostgreSQL, идентификатор подписки Azure, конфигурация, версия ядра СУБД, конечные точки для Grafana и Kibana...
 - **Строки подключения:** Отображает различные строки подключения, которые могут потребоваться для подключения к экземпляру PostgreSQL, например PSQL, Node.js, PHP, Ruby...
-- **Свойства:** Отображает различные свойства, такие как имя пользователя администратора PostgreSQL, связанная группа ресурсов для теневого ресурса...
 - **Диагностика и устранение проблем.** — Это целевая страница, на которой вы найдете различные ресурсы, которые помогут вам устранить неполадки с экземпляром по мере расширения записных книжек по устранению неполадок.
 - **Новый запрос в службу поддержки:** — Это целевая страница, с которой вы сможете запросить помощь в наших службах поддержки, начав объявление об общедоступной предварительной версии.
 

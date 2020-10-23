@@ -37,6 +37,8 @@
       href: concepts-route-events.md
     - name: Безопасность для решений Azure Digital Twins
       href: concepts-security.md
+    - name: Высокая доступность и аварийное восстановление
+      href: concepts-high-availability-disaster-recovery.md
 - name: Практические руководства
   items:
     - name: Развертывание
@@ -53,6 +55,8 @@
               href: how-to-set-up-instance-portal.md
         - name: Написание кода проверки подлинности приложения
           href: how-to-authenticate-client.md
+        - name: Регистрация приложения
+          href: how-to-create-app-registration.md
         - name: Перемещение экземпляра в другой регион
           href: how-to-move-regions.md
     - name: Проектирование моделей
@@ -130,7 +134,7 @@
             - name: Swagger
               href: 'https://github.com/Azure/azure-rest-api-specs/tree/master/specification/digitaltwins/resource-manager/Microsoft.DigitalTwins'
             - name: "Пакет SDK для .NET (C#)\_— NuGet"
-              href: 'https://www.nuget.org/packages/Microsoft.Azure.Management.DigitalTwins/1.0.0-preview.1'
+              href: 'https://www.nuget.org/packages/Microsoft.Azure.Management.DigitalTwins/'
             - name: "Пакет SDK для .NET (C#)\_— справка"
               href: /dotnet/api/overview/azure/digitaltwins/management?view=azure-dotnet-preview
             - name: "Пакет SDK для .NET (C#)\_— источник"
@@ -161,14 +165,16 @@
               href: /dotnet/api/overview/azure/digitaltwins?view=azure-dotnet-preview
             - name: "Пакет SDK для .NET (C#)\_— источник"
               href: 'https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/digitaltwins/Azure.DigitalTwins.Core'
-            - name: Пакет SDK для JavaScript (npm)
-              href: 'https://www.npmjs.com/package/@azure/digital-twins/v/1.0.0-preview.1'
-            - name: Справочник по пакету SDK для JavaScript
-              href: /javascript/api/@azure/digital-twins/?preserve-view=true&view=azure-node-latest
             - name: Пакет SDK для Java (Maven)
               href: 'https://search.maven.org/artifact/com.azure/azure-digitaltwins-core/1.0.0-beta.1/jar'
             - name: "Пакет SDK для Java\_— справочник"
               href: /java/api/overview/azure/digitaltwins/client?preserve-view=true&view=azure-java-preview
+            - name: "Пакет SDK для Java\_— источник"
+              href: 'https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/digitaltwins/azure-digitaltwins-core'
+            - name: Пакет SDK для JavaScript (npm)
+              href: 'https://www.npmjs.com/package/@azure/digital-twins/'
+            - name: Справочник по пакету SDK для JavaScript
+              href: /javascript/api/@azure/digital-twins/?preserve-view=true&view=azure-node-latest
     - name: CLI Digital Twins
       items:
         - name: Справочник по CLI Digital Twins
@@ -191,7 +197,7 @@
       items:
         - name: Служба симуляторов устройств
           href: 'https://github.com/Azure/device-simulation-dotnet/tree/master'
-        - name: Примеры Azure Digital Twins
+        - name: Комплексные примеры для Azure Digital Twins
           href: /samples/azure-samples/digital-twins-samples/digital-twins-samples/
         - name: Обозреватель Azure Digital Twins (примеры)
           href: /samples/azure-samples/digital-twins-explorer/digital-twins-explorer/
@@ -199,10 +205,10 @@
           href: /samples/azure-samples/dtdl-validator/dtdl-validator/
         - name: Пример интеграции DPS и Центра Интернета вещей
           href: /samples/azure-samples/digital-twins-iothub-integration/adt-iothub-provision-sample/
-        - name: Пользовательские операции Swagger в Azure Digital Twins
-          href: /samples/azure-samples/digital-twins-custom-swaggers/azure-digital-twins-custom-swaggers/
         - name: Пример интеграции с SignalR
           href: /samples/azure-samples/digitaltwins-signalr-webapp-sample/digital-twins-samples/
+        - name: Пользовательские объекты Swagger в Azure Digital Twins для соединителя Logic Apps
+          href: /samples/azure-samples/digital-twins-custom-swaggers/azure-digital-twins-custom-swaggers/
     - name: Инструменты Azure
       items:
         - name: Azure Cloud Shell

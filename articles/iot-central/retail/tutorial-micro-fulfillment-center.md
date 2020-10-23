@@ -7,12 +7,12 @@ ms.service: iot-central
 ms.subservice: iot-central-retail
 ms.topic: tutorial
 ms.date: 01/09/2020
-ms.openlocfilehash: 28afa98313ef1c9577e90ed161a1d20cbf5faf75
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.openlocfilehash: 4bb50b513a9b09db4a8d59d32816b702bff250f2
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91440205"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92125975"
 ---
 # <a name="tutorial-deploy-and-walk-through-a-micro-fulfillment-center-application-template"></a>Руководство по Развертывание и использование шаблона приложения микроцентра исполнения заказов
 
@@ -47,7 +47,7 @@ ms.locfileid: "91440205"
 
 1. Если у вас есть подписка Azure, укажите каталог, подписку Azure и регион. Если у вас нет подписки, вы можете включить семидневную бесплатную пробную версию и заполнить необходимые контактные данные.  
 
-    Дополнительные сведения о каталогах и подписках см. в кратком руководстве по [созданию приложения Azure IoT Central](../preview/quick-deploy-iot-central.md).
+    Дополнительные сведения о каталогах и подписках см. в кратком руководстве по [созданию приложения Azure IoT Central](../core/quick-deploy-iot-central.md).
 
 1. Нажмите кнопку **создания**.
 
@@ -96,4 +96,4 @@ ms.locfileid: "91440205"
 > [!div class="nextstepaction"]
 > [архитектура решения для микроцентра исполнения заказов](./architecture-micro-fulfillment-center.md).
 * Дополнительные сведения о шаблонах Azure IoT Central для розничной торговли см. [здесь](./overview-iot-central-retail.md).
-* Дополнительные сведения об Azure IoT Central см. в [этой статье](../preview/overview-iot-central.md).
+* Статья [Сведения об Azure IoT Central](../core/overview-iot-central.md).

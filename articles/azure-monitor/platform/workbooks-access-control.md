@@ -6,12 +6,12 @@ ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 10/23/2019
-ms.openlocfilehash: 9c0b5dd72cf82649e7f659d23606d23aea62ac82
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
+ms.openlocfilehash: 92ac1887aca8f30c551419ef9149073d79f333a5
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91932555"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92143837"
 ---
 # <a name="access-control"></a>Управление доступом
 
@@ -36,6 +36,6 @@ ms.locfileid: "91932555"
 
 Добавить `microsoft.insights/workbooks/write` для сохранения общих книг. Дополнительные сведения см. в разделе роль [участника книги](../../role-based-access-control/built-in-roles.md#monitoring-contributor) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Узнайте](workbooks-visualizations.md) больше о книгах с множеством разнообразных вариантов визуализации.
+* [Узнайте](./workbooks-overview.md#visualizations) больше о книгах с множеством разнообразных вариантов визуализации.

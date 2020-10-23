@@ -3,12 +3,12 @@ title: Сведения о политике Azure для Kubernetes
 description: Узнайте, как Политика Azure использует Rego и Open Policy Agent для управления кластерами, работающими под управлением Kubernetes в Azure или в локальной среде.
 ms.date: 09/29/2020
 ms.topic: conceptual
-ms.openlocfilehash: 3478a98ef98001ee8a2e3bb502bf289ed52285e7
-ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
+ms.openlocfilehash: 1747e770da420a3448e97628806733459fe07a49
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91951542"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92366995"
 ---
 # <a name="understand-azure-policy-for-kubernetes-clusters"></a>Общие сведения о политике Azure для кластеров Kubernetes
 
@@ -80,7 +80,7 @@ ms.locfileid: "91951542"
 
 - Используйте пул системных узлов с `CriticalAddonsOnly` таинт для планирования модулей Pod. Дополнительные сведения см. [в разделе Использование пулов системных узлов](../../../aks/use-system-pools.md#system-and-user-node-pools).
 - Обеспечьте безопасность исходящего трафика из кластеров AKS. Дополнительные сведения см. в разделе Управление исходящим [трафиком для узлов кластера](../../../aks/limit-egress-traffic.md).
-- Если кластер `aad-pod-identity` включен, модули NMI, управляемые узлами, изменяют узлы iptables для перехвата вызовов к конечной точке метаданных экземпляра Azure. Такая конфигурация означает, что любой запрос, сделанный в конечной точке метаданных, перехватывается функцией NMI, даже если Pod не используется `aad-pod-identity` . Азуреподидентитексцептион CRD можно настроить так, чтобы сообщать `aad-pod-identity` о том, что любые запросы к конечной точке метаданных, созданные из Pod, совпадающие с метками, определенными в CRD, должны быть прокси-серверами без обработки в NMI. Системные модули с `kubernetes.azure.com/managedby: aks` меткой в пространстве имен _KUBE-System_ должны быть исключены в `aad-pod-identity` с помощью настройки азуреподидентитексцептион CRD. Дополнительные сведения см. [в разделе Отключение AAD-Pod-Identity для конкретного Pod или приложения](https://github.com/Azure/aad-pod-identity/blob/master/docs/readmes/README.app-exception.md).
+- Если кластер `aad-pod-identity` включен, модули NMI, управляемые узлами, изменяют узлы iptables для перехвата вызовов к конечной точке метаданных экземпляра Azure. Такая конфигурация означает, что любой запрос, сделанный в конечной точке метаданных, перехватывается функцией NMI, даже если Pod не используется `aad-pod-identity` . Азуреподидентитексцептион CRD можно настроить так, чтобы сообщать `aad-pod-identity` о том, что любые запросы к конечной точке метаданных, созданные из Pod, совпадающие с метками, определенными в CRD, должны быть прокси-серверами без обработки в NMI. Системные модули с `kubernetes.azure.com/managedby: aks` меткой в пространстве имен _KUBE-System_ должны быть исключены в `aad-pod-identity` с помощью настройки азуреподидентитексцептион CRD. Дополнительные сведения см. [в разделе Отключение AAD-Pod-Identity для конкретного Pod или приложения](https://azure.github.io/aad-pod-identity/docs/configure/application_exception).
   Чтобы настроить исключение, установите [YAML-исключение MIC](https://github.com/Azure/aad-pod-identity/blob/master/deploy/infra/mic-exception.yaml).
 
 ## <a name="install-azure-policy-add-on-for-aks"></a>Установка надстройки Политики Azure для AKS

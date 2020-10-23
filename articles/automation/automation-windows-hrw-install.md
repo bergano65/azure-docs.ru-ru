@@ -3,14 +3,14 @@ title: Развертывание гибридной рабочей роли Run
 description: В этой статье рассказывается, как развернуть гибридную рабочую роль Runbook, которую можно использовать для запуска модулей Runbook на компьютерах под управлением Windows в локальном центре обработки данных или в облачной среде.
 services: automation
 ms.subservice: process-automation
-ms.date: 08/20/2020
+ms.date: 10/14/2020
 ms.topic: conceptual
-ms.openlocfilehash: 74657743d14b9365f66ed3373592b708a07e11dc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a03d14fa272f5f86af1caf0ce9537bbb186d13cc
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88660518"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92204525"
 ---
 # <a name="deploy-a-windows-hybrid-runbook-worker"></a>Развертывание гибридной рабочей роли Runbook для Windows
 
@@ -18,7 +18,7 @@ ms.locfileid: "88660518"
 
 После успешного развертывания рабочей роли Runbook ознакомьтесь с [запуском модулей runbook в гибридной рабочей роли Runbook](automation-hrw-run-runbooks.md), чтобы узнать, как настроить модули runbook для автоматизации процессов в локальном центре обработки данных или другой облачной среде.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Прежде чем начать, убедитесь, что у вас есть следующее.
 
@@ -28,7 +28,7 @@ ms.locfileid: "88660518"
 
 Если у вас нет рабочей области Log Analytics Azure Monitor, ознакомьтесь с [руководством по проектированию журналов Azure Monitor](../azure-monitor/platform/design-logs-deployment.md) перед созданием рабочей области.
 
-Если у вас есть рабочая область, но она не связана с учетной записью службы автоматизации, включение функции автоматизации расширяет возможности службы автоматизации Azure, включая поддержку гибридной рабочей роли Runbook. При включении одной из функций службы автоматизации Azure в рабочей области Log Analytics, в частности [Управление обновлениями](update-management/update-mgmt-overview.md) или [Отслеживание изменений и инвентаризации](change-tracking.md), рабочие компоненты автоматически отправляются на компьютер агента.
+Если у вас есть рабочая область, но она не связана с учетной записью службы автоматизации, включение функции автоматизации расширяет возможности службы автоматизации Azure, включая поддержку гибридной рабочей роли Runbook. При включении одной из функций службы автоматизации Azure в рабочей области Log Analytics, в частности [Управление обновлениями](update-management/update-mgmt-overview.md) или [Отслеживание изменений и инвентаризации](change-tracking/overview.md), рабочие компоненты автоматически отправляются на компьютер агента.
 
 > [!NOTE]
 > При включении Управление обновлениями или Отслеживание изменений и функции инвентаризации служба автоматизации Azure поддерживает только определенные регионы для связывания рабочей области Log Analytics и учетной записи службы автоматизации. Список поддерживаемых пар сопоставлений см. в статье о [сопоставлении региона для учетной записи службы автоматизации и рабочей области Log Analytics](how-to/region-mappings.md). Перед включением любой из этих функций ознакомьтесь со сведениями о [ценах Azure](https://azure.microsoft.com/pricing/details/automation/) для службы автоматизации Azure.
@@ -175,7 +175,7 @@ Heartbeat
 
 В результатах поиска должны отобразиться записи пульса для компьютера, указывающие, что он подключен и сообщает службе. По умолчанию каждый агент перенаправляет запись пульса в назначенную ему рабочую область. Выполните следующие шаги, чтобы завершить установку и настройку агента.
 
-1. Включите возможность, чтобы добавить компьютер агента. Сведения о Управление обновлениями и виртуальных машинах Azure см. в статьях [включение Управление обновлениями из учетной записи службы автоматизации](update-management/update-mgmt-enable-automation-account.md), [Включение Управление обновлениями путем просмотра портал Azure](update-management/update-mgmt-enable-portal.md), [Включение Управление обновлениями из модуля Runbook](update-management/update-mgmt-enable-runbook.md)или [Включение Управление обновлениями с виртуальной машины Azure](update-management/update-mgmt-enable-vm.md). Сведения о Отслеживание изменений и виртуальных машинах Azure см. [в](automation-enable-changes-from-auto-acct.md#enable-machines-in-the-workspace)разделе Включение [виртуальных машин Azure](automation-enable-changes-from-auto-acct.md#enable-azure-vms)и для виртуальных машин, не относящихся к Azure.
+1. Включите возможность, чтобы добавить компьютер агента. Сведения о Управление обновлениями и виртуальных машинах Azure см. в статьях [включение Управление обновлениями из учетной записи службы автоматизации](update-management/update-mgmt-enable-automation-account.md), [Включение Управление обновлениями путем просмотра портал Azure](update-management/update-mgmt-enable-portal.md), [Включение Управление обновлениями из модуля Runbook](update-management/update-mgmt-enable-runbook.md)или [Включение Управление обновлениями с виртуальной машины Azure](update-management/update-mgmt-enable-vm.md). Сведения о Отслеживание изменений и виртуальных машинах Azure см. [в](change-tracking/enable-from-automation-account.md#enable-machines-in-the-workspace)разделе Включение [виртуальных машин Azure](change-tracking/enable-from-automation-account.md#enable-azure-vms)и для виртуальных машин, не относящихся к Azure.
 
 2. Чтобы подтвердить версию гибридной рабочей роли Runbook, перейдите к `C:\Program Files\Microsoft Monitoring Agent\Agent\AzureAutomation\` вложенной папке **версии** и запишите ее.
 
@@ -214,7 +214,7 @@ Add-HybridRunbookWorker –GroupName <String> -Url <Url> -Key <String>
 
 Так как главной целью гибридной рабочей роли Runbook является управление локальными ресурсами, вам с большой вероятностью потребуются модули, которые поддерживают эти ресурсы (в частности, модуль `PowerShellGet`). Сведения об установке модулей Windows PowerShell см. в [этой статье](/powershell/scripting/developer/windows-powershell).
 
-Устанавливаемые модули должны находиться в расположении, указанном в переменной среды `PSModulePath`, чтобы гибридная рабочая роль автоматически импортировала их. Дополнительные сведения см. в разделе [Установка модулей в PSModulePath](/powershell/scripting/developer/module/installing-a-powershell-module?view=powershell-7).
+Устанавливаемые модули должны находиться в расположении, указанном в переменной среды `PSModulePath`, чтобы гибридная рабочая роль автоматически импортировала их. Дополнительные сведения см. в разделе [Установка модулей в PSModulePath](/powershell/scripting/developer/module/installing-a-powershell-module).
 
 ## <a name="remove-the-hybrid-runbook-worker-from-an-on-premises-windows-machine"></a><a name="remove-windows-hybrid-runbook-worker"></a>Удаление гибридной рабочей роли Runbook с локального компьютера Windows
 

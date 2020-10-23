@@ -79,7 +79,7 @@
           href: ../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md
         - name: ВОПРОСЫ И ОТВЕТЫ
           href: dns-faq-private.md
-- name: Практическое руководство
+- name: Практические руководства
   items:
     - name: Общедоступное имя DNS
       items:

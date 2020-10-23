@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 06/15/2020
 ms.author: jeedes
-ms.openlocfilehash: 5956623876646d976c2c93b4953adab33e8231b2
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 429820f41025eda262742ac9aec1de3b646b141f
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88535617"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91850559"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-intelligencebank"></a>Руководство по интеграции единого входа Azure Active Directory с приложением IntelligenceBank
 
@@ -137,11 +137,11 @@ ms.locfileid: "88535617"
 
 1. Щелкните **Структура проверки подлинности** и выберите **Добавить**.
 
-    ![Конфигурация IntelligenceBank](./media/intelligencebank-tutorial/authenticator.PNG)
+    ![Снимок экрана, на котором выбрана вкладка администрирования и значок добавления элемента.](./media/intelligencebank-tutorial/authenticator.PNG)
 
 1. Выполните следующие действия:
 
-    ![Конфигурация IntelligenceBank](./media/intelligencebank-tutorial/urls.PNG)
+    ![Снимок экрана с полями, где можно ввести описанные на этом шаге сведения.](./media/intelligencebank-tutorial/urls.PNG)
 
     а. В текстовом поле **Name** (Имя) введите имя, например `azureadsso`.
 
@@ -165,11 +165,11 @@ ms.locfileid: "88535617"
 
 1. Перейдите в раздел **Администратор** -> **Пользователи** и выберите **Add New User Icon** (Добавить значок нового пользователя), чтобы добавить **пользователя**.
 
-    ![Конфигурация IntelligenceBank](./media/intelligencebank-tutorial/creating-user.PNG)
+    ![Снимок экрана для вкладки пользователей, где выбран значок "Пользователи".](./media/intelligencebank-tutorial/creating-user.PNG)
 
 1. Заполните необходимые поля в соответствии с требованиями вашей организации и щелкните **Сохранить**.
 
-    ![Конфигурация IntelligenceBank](./media/intelligencebank-tutorial/creating-user-1.PNG)
+    ![Снимок экрана: страница добавления пользователя, где можно ввести сведения о пользователе.](./media/intelligencebank-tutorial/creating-user-1.PNG)
 
 ## <a name="test-sso"></a>Проверка единого входа 
 

@@ -92,8 +92,6 @@
       href: terms-of-use.md
     - name: Элементы управления сохраняемости браузера и частотой входов
       href: howto-conditional-access-session-lifetime.md
-    - name: Рекомендации
-      href: best-practices.md
     - name: Устранение неполадок
       items:
         - name: Устранение проблем со входом

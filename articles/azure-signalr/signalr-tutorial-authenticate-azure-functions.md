@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 03/01/2019
 ms.author: zhshang
 ms.custom: devx-track-js
-ms.openlocfilehash: e0bb4df611c6a9cfecf0aadbdfc3a577243856ba
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6df47d3fd62083a5d0940a1d6da50ac5d7d955f4
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91327624"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92150913"
 ---
 # <a name="tutorial-azure-signalr-service-authentication-with-azure-functions"></a>Руководство по аутентификации в службе Azure SignalR с помощью Функций Azure
 
@@ -356,13 +356,13 @@ ms.locfileid: "91327624"
 
 ### <a name="configure-function-app-for-authentication"></a>Настройка аутентификации для приложения-функции
 
-Сейчас приложение чата работает анонимно. В Azure для аутентификации пользователя вы будете применять [проверку подлинности службы приложений](https://docs.microsoft.com/azure/app-service/overview-authentication-authorization). Идентификатор или имя аутентифицированного пользователя можно передать в привязку *SignalRConnectionInfo*, чтобы сформировать сведения о подключении для аутентификации от имени пользователя.
+Сейчас приложение чата работает анонимно. В Azure для аутентификации пользователя вы будете применять [проверку подлинности службы приложений](../app-service/overview-authentication-authorization.md). Идентификатор или имя аутентифицированного пользователя можно передать в привязку *SignalRConnectionInfo*, чтобы сформировать сведения о подключении для аутентификации от имени пользователя.
 
 При отправке сообщения приложение будет определять, нужно ли отправить его всем подключенным клиентам или только тем, которые прошли аутентификацию от имени определенного пользователя.
 
 1. В VS Code откройте файл **negotiate/function.json**.
 
-1. Вставьте [выражение привязки](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings) в свойство *userId* для привязки *SignalRConnectionInfo*: `{headers.x-ms-client-principal-name}`. Так мы сохраним в этом значении имя пользователя, прошедшего аутентификацию. Теперь этот атрибут будет выглядеть следующим образом:
+1. Вставьте [выражение привязки](../azure-functions/functions-triggers-bindings.md) в свойство *userId* для привязки *SignalRConnectionInfo*: `{headers.x-ms-client-principal-name}`. Так мы сохраним в этом значении имя пользователя, прошедшего аутентификацию. Теперь этот атрибут будет выглядеть следующим образом:
 
     ```json
     {
@@ -431,11 +431,11 @@ ms.locfileid: "91327624"
 
 1. Выполните инструкции из документации выбранного поставщика входа, чтобы завершить настройку.
 
-    - [Azure Active Directory](https://docs.microsoft.com/azure/app-service/configure-authentication-provider-aad)
-    - [Facebook](https://docs.microsoft.com/azure/app-service/configure-authentication-provider-facebook)
-    - [Twitter](https://docs.microsoft.com/azure/app-service/configure-authentication-provider-twitter)
-    - [Учетная запись Майкрософт](https://docs.microsoft.com/azure/app-service/configure-authentication-provider-microsoft)
-    - [Google](https://docs.microsoft.com/azure/app-service/configure-authentication-provider-google)
+    - [Azure Active Directory](../app-service/configure-authentication-provider-aad.md)
+    - [Facebook](../app-service/configure-authentication-provider-facebook.md)
+    - [Twitter](../app-service/configure-authentication-provider-twitter.md)
+    - [Учетная запись Майкрософт](../app-service/configure-authentication-provider-microsoft.md)
+    - [Google](../app-service/configure-authentication-provider-google.md)
 
 ### <a name="update-the-web-app"></a>Обновление веб-приложения
 
@@ -517,4 +517,3 @@ ms.locfileid: "91327624"
 > [Создание приложений в реальном времени с помощью решения "Функции Azure"](signalr-concept-azure-functions.md)
 
 [Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsauth)
-

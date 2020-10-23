@@ -7,12 +7,12 @@ ms.subservice: reservations
 ms.topic: how-to
 ms.date: 07/24/2020
 ms.author: banders
-ms.openlocfilehash: d9e5269468f7cd4571e7ae686af7f1ef159b4ef3
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: b986aa2bfce203be85adbcde8e2966c167bf7ca1
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88681708"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92151781"
 ---
 # <a name="view-reservation-purchase-and-refund-transactions"></a>Просмотр данных о покупках резервирования и транзакциях возврата
 
@@ -39,11 +39,11 @@ ms.locfileid: "88681708"
 
 [![Пример транзакций резервирования](./media/view-purchase-refunds/power-bi-reservation-transactions.png)](./media/view-purchase-refunds/power-bi-reservation-transactions.png#lightbox)
 
-Чтобы получить дополнительные сведения, см. статью [Анализ затрат с помощью приложения Power BI Azure Cost Management для Соглашений Enterprise (EA)](https://docs.microsoft.com/azure/cost-management-billing/costs/analyze-cost-data-azure-cost-management-power-bi-template-app).
+Чтобы получить дополнительные сведения, см. статью [Анализ затрат с помощью приложения Power BI Azure Cost Management для Соглашений Enterprise (EA)](../costs/analyze-cost-data-azure-cost-management-power-bi-template-app.md).
 
 ## <a name="use-apis-to-get-reservation-transactions"></a>Использование API для получения транзакций резервирования
 
-Пользователи, использующие Соглашение Enterprise и Клиентское соглашение Майкрософт, могут получить данные о транзакциях резервирования, воспользовавшись [API списка транзакций резервирования](https://docs.microsoft.com/rest/api/consumption/reservationtransactions/list).
+Пользователи, использующие Соглашение Enterprise и Клиентское соглашение Майкрософт, могут получить данные о транзакциях резервирования, воспользовавшись [API списка транзакций резервирования](/rest/api/consumption/reservationtransactions/list).
 
 ## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 

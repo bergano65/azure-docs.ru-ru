@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 05/26/2020
+ms.date: 10/05/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: rateller
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 849057ab1ccde2e0771f0c1cd52ea399ffe4cea7
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: cdc0dea825cb32275a2ada3a49d7d622180aa468
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91964695"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92166643"
 ---
 # <a name="configure-and-enable-users-for-sms-based-authentication-using-azure-active-directory-preview"></a>Настройка и подключение пользователей для аутентификации на основе SMS с помощью Azure Active Directory (предварительная версия)
 
@@ -96,13 +96,17 @@ ms.locfileid: "91964695"
 1. Найдите и выберите **Azure Active Directory**.
 1. В меню навигации в левой части окна Azure Active Directory выберите **Пользователи**.
 1. Выберите пользователя, для которого вы включили аутентификацию через SMS в предыдущем разделе, например *Contoso User*, а затем выберите **Методы аутентификации**.
-1. Введите номер телефона пользователя вместе с кодом страны, например *+ 1 XXXXXXXXX*. Портал Azure проверяет, правильный ли формат номера телефона.
+1. Выберите **+ Добавить метод проверки подлинности**, а затем в раскрывающемся меню *выберите метод* выберите **номер телефона**.
 
-    ![Задайте номер телефона пользователя на портале Azure, чтобы использовать его в аутентификации через SMS](./media/howto-authentication-sms-signin/set-user-phone-number.png)
+    Введите номер телефона пользователя вместе с кодом страны, например *+ 1 XXXXXXXXX*. Портал Azure проверяет, правильный ли формат номера телефона.
+
+    Затем в раскрывающемся меню *тип телефона* выберите *мобильный*, *альтернативный мобильный*или *другой* при необходимости.
+
+    :::image type="content" source="media/howto-authentication-sms-signin/set-user-phone-number.png" alt-text="Задайте номер телефона пользователя на портале Azure, чтобы использовать его в аутентификации через SMS":::
 
     Номер телефона клиента должен быть уникальным. При попытке использовать один и тот же номер телефона для нескольких пользователей отображается сообщение об ошибке.
 
-1. Чтобы прикрепить номер телефона к учетной записи пользователя, выберите **Сохранить**.
+1. Чтобы применить номер телефона к учетной записи пользователя, нажмите кнопку **Добавить**.
 
 После успешного внесения номера появится галочка *Включен вход через SMS*.
 

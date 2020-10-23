@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 03/13/2019
 ms.author: jeedes
-ms.openlocfilehash: e6a9560cfe0daf158dad03a3171047669a19eade
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 13dd930842cb724d12711ac9e7704fd9af4e29d8
+ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88547970"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91944493"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-oneteam"></a>Руководство по Интеграция Azure Active Directory с Oneteam
 
@@ -101,7 +101,7 @@ ms.locfileid: "88547970"
 
 4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа для приложения Oneteam](common/idp-intiated.png)
+    ![Снимок экрана: раздел "Базовая конфигурация SAML" с выбранными полями "Идентификатор", "URL-адрес ответа" и кнопкой "Сохранить".](common/idp-intiated.png)
 
     а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://api.one-team.io/teams/<team name>`.
 

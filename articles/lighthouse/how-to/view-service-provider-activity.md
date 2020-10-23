@@ -3,19 +3,19 @@ title: Просмотр действий поставщика служб
 description: Клиенты могут просматривать зарегистрированные в журнале действия, чтобы просмотреть действия, выполняемые поставщиками услуг через делегированное управление ресурсами Azure.
 ms.date: 10/12/2020
 ms.topic: how-to
-ms.openlocfilehash: 8ec9d49de953a0fed3a5afc669e9297148aadf32
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 56c8b88274909aa55e19a4b364aaa3ace2a0c26d
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91974317"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92371092"
 ---
 # <a name="view-service-provider-activity"></a>Просмотр действий поставщика служб
 
 Клиенты, у которых есть делегированные подписки на [Azure лигхсаусе](../overview.md) , могут [просматривать данные журнала действий Azure](../../azure-monitor/platform/platform-logs-overview.md) для просмотра всех выполненных действий. Это позволяет клиентам полностью видеть операции, выполняемые поставщиками служб через [делегированное управление ресурсами Azure](../concepts/azure-delegated-resource-management.md), а также операции, выполняемые пользователями в собственном клиенте Azure Active Directory (Azure AD) клиента.
 
 > [!TIP]
-> Мы также предоставим встроенные определения политик Azure, чтобы [ограничить делегирование определенными клиентами](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Azure%20Lighthouse/AllowCertainManagingTenantIds_Deny.json) и [Аудит делегирования областей для управления клиентом](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Lighthouse/Lighthouse_Delegations_Audit.json). Дополнительные сведения см. [в разделе Аудит делегирования в вашей среде](view-manage-service-providers.md#audit-delegations-in-your-environment).
+> Мы также предоставим встроенные определения политик Azure, чтобы [ограничить делегирование определенными клиентами](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Lighthouse/AllowCertainManagingTenantIds_Deny.json) и [Аудит делегирования областей для управления клиентом](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Lighthouse/Lighthouse_Delegations_Audit.json). Дополнительные сведения см. [в разделе Аудит делегирования в вашей среде](view-manage-service-providers.md#audit-delegations-in-your-environment).
 
 ## <a name="view-activity-log-data"></a>Просмотр данных журнала действий
 
@@ -43,7 +43,7 @@ ms.locfileid: "91974317"
 
 Дополнительные сведения см. в разделе Общие сведения о [запросах журналов в Azure Monitor](../../azure-monitor/log-query/log-query-overview.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте подробнее о службе [Azure Monitor](../../azure-monitor/index.yml).
 - Узнайте, как [просматривать предложения поставщиков услуг и управлять ими](view-manage-service-providers.md) в портал Azure.

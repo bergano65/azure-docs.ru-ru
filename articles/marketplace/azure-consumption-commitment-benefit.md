@@ -4,15 +4,15 @@ description: Набор предложений Microsoft для коммерче
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: article
-author: anbene
+author: emuench
 ms.author: mingshen
-ms.date: 07/21/2020
-ms.openlocfilehash: 8a8b64bc0ed2702066a1ba280f1b40aabbcdb11b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 10/15/2020
+ms.openlocfilehash: e5f1a70182d4b31a1bcd0a811be32bdfc55129d9
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87098400"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92168458"
 ---
 # <a name="azure-consumption-commitment-benefit"></a>Преимущество обязательства потребления Azure
 
@@ -27,3 +27,33 @@ ms.locfileid: "87098400"
 
 > [!IMPORTANT]
 > Исключения могут применяться к соглашениям CtC, подписанным до этого преимущества Marketplace. Если у вас есть вопросы о правах, обратитесь к руководству по учетная запись Майкрософт.
+
+## <a name="determine-if-your-organization-has-an-azure-consumption-commitment-maccctc"></a>Определение, имеет ли ваша организация обязательство по потреблению Azure (МАКК/CtC)
+
+Если вы не уверены, имеет ли ваша организация квалифицированное соглашение, войдите в систему Marketplace в [портал Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_Marketplace/MarketplaceOffersBlade/selectedMenuItemId/home) в рамках клиента, связанного с вашей организацией. Если вы видите параметр " **преимущества Azure** " в рамках фильтра цен, вы получите соответствующее обязательство по потреблению Azure. Если вы приобрели их напрямую через Azure Marketplace, вы получите подходящие покупки в Azure Marketplace.
+
+[![Пункт меню "преимущества Azure".](media/azure-benefit/azure-benefit-eligible.png)](media/azure-benefit/azure-benefit-eligible.png#lightbox)
+
+## <a name="determine-which-offers-are-eligible-for-azure-consumption-commitments-maccctc"></a>Определение предложений, соответствующих обязательствам по потреблению Azure (МАКК/CtC)
+
+1. Войдите в рабочую среду Marketplace в [портал Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_Marketplace/MarketplaceOffersBlade/selectedMenuItemId/home) в рамках клиента, связанного с вашей организацией.
+2. Примените фильтр по программе " **преимущества Azure** " (см. рисунок выше), чтобы найти предложения, которые могут участвовать в обязательстве по потреблению Azure в вашей организации.
+
+   > [!NOTE]
+   > Если у вас нет этого фильтра, ваша организация не будет иметь подходящих обязательств. Если вы считаете, что это неверно, обратитесь к руководителю учетная запись Майкрософт.
+ 
+3. Предложения, предоставляемые с помощью **Azure** , могут указывать на то, что затраты на программное обеспечение и IP-адреса, связанные с этим предложением, будут влиять на использование Azure на основе всех служб Azure, выставленных в вашей организации.
+
+    :::image type="content" source="media/azure-benefit/azure-benefit-eligible-badge.png" alt-text="Эмблема, соответствующая преимуществам Azure.&quot;:::
+
+   > [!NOTE]
+   > Microsoft Azureные службы, выставляемые в Организации с помощью развертывания Azure Marketplace, по своей природе будут участвовать в отношении обязательства вашей организации. Дополнительным преимуществом для предложений Azure &quot;льготный доступ" является то, что стоимость программного обеспечения/IP-адреса, передаваемая сторонним поставщиком, также будет участвовать в 100% счета Azure Marketplace.
+
+4. Приобретите или создайте предложение непосредственно через Azure Marketplace. Корпорация Майкрософт будет участвовать в 100% предложений по обеспечению соответствия требованиям вашей организации к обязательству по потреблению Azure в каждом расчетном периоде, включая затраты на программное обеспечение/IP-адрес.
+
+> [!IMPORTANT]
+> Предложения должны быть приобретены непосредственно через Azure Marketplace с регистрацией, связанной с обязательством по потреблению Azure вашей организации на приобретение в соответствии с вашими обязательствами. Предложения, приобретенные по поставщику облачных решений (CSP), любой другой канал торгового посредника или за пределами Marketplace, не влияют на ваши обязательства.
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+- Чтобы узнать больше о том, как ваша организация может использовать Azure Marketplace, заполните наш модуль Microsoft Learn: [Упростите облачную закупку и управление с помощью Azure Marketplace](https://aka.ms/cm.marketplaceprocurement).

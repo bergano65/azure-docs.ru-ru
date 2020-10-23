@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/25/2019
 ms.author: jeedes
-ms.openlocfilehash: d2355b26fc6a946e47a3d2c135b7c23729b186c7
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 1f7ff20dbdd0dac5b56d0f746733b14dfe44803e
+ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88554674"
+ms.lasthandoff: 10/11/2020
+ms.locfileid: "91940651"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-moconavi"></a>Руководство по интеграции Azure Active Directory с moconavi
 
@@ -191,15 +191,15 @@ ms.locfileid: "88554674"
 
 3. Нажмите кнопку **Connect setting** (Настроить подключение).
 
-    ![Проверка единого входа](./media/moconavi-tutorial/testing1.png)
+    ![Снимок экрана для moconavi с кнопкой параметров подключения.](./media/moconavi-tutorial/testing1.png)
 
 4. Введите `https://mcs-admin.moconavi.biz/gateway` в текстовое поле **Connect to URL** (Подключение по URL-адресу) и нажмите кнопку **Done** (Готово).
 
-    ![Проверка единого входа](./media/moconavi-tutorial/testing2.png)
+    ![Снимок экрана с полем подключения к URL и кнопкой завершения.](./media/moconavi-tutorial/testing2.png)
 
 5. Выполните действия, как показано на снимке экрана ниже.
 
-    ![Проверка единого входа](./media/moconavi-tutorial/testing3.png)
+    ![Снимок экрана для страницы moconavi, где можно ввести описанные здесь значения.](./media/moconavi-tutorial/testing3.png)
 
     а. Введите **ключ аутентификации**`azureAD` в текстовое поле **Input Authentication Key** (Ввод ключа аутентификации).
 
@@ -209,11 +209,11 @@ ms.locfileid: "88554674"
 
 6. В текстовое поле **Password** (Пароль) введите свой пароль Azure AD и нажмите кнопку **Login** (Войти).
 
-    ![Проверка единого входа](./media/moconavi-tutorial/testing4.png)
+    ![Снимок экрана, где демонстрируется ввод пароля Azure AD.](./media/moconavi-tutorial/testing4.png)
 
 7. Если появится меню, значит аутентификация Azure AD выполнена успешно.
 
-    ![Проверка единого входа](./media/moconavi-tutorial/testing5.png)
+    ![Снимок экрана, где демонстрируется значок телефона в moconavi.](./media/moconavi-tutorial/testing5.png)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

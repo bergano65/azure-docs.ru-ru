@@ -15,12 +15,12 @@ ms.custom:
 - mqtt
 - devx-track-java
 ms.date: 05/26/2020
-ms.openlocfilehash: 757e0892469e52b1f2716d837d8423c5940322e2
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 53f20f5f909e8b24ba7279dabfb421053d5c5449
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87317932"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92150635"
 ---
 # <a name="quickstart-send-telemetry-to-an-azure-iot-hub-and-read-it-with-a-java-application"></a>Краткое руководство. Отправка данных телеметрии в Центр Интернета вещей и их чтение с помощью приложения Java
 
@@ -32,7 +32,7 @@ ms.locfileid: "87317932"
 
 * Учетная запись Azure с активной подпиской. [Создайте бесплатно](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
 
-* Пакет SDK для Java SE 8. В статье [Долгосрочная поддержка Java для Azure и Azure Stack](https://docs.microsoft.com/java/azure/jdk/?view=azure-java-stable) выберите пункт **Java 8** в разделе **Долгосрочная поддержка**.
+* Пакет SDK для Java SE 8. В статье [Долгосрочная поддержка Java для Azure и Azure Stack](/java/azure/jdk/?view=azure-java-stable) выберите пункт **Java 8** в разделе **Долгосрочная поддержка**.
 
 * [Apache Maven 3](https://maven.apache.org/download.cgi).
 

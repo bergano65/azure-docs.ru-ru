@@ -9,12 +9,12 @@ ms.author: jeanyd
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 2b69eb076c727a4383b7459ef914ac79dca31c84
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1fc768890e932d1f17ad111b4681b75721ae1e06
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91628423"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92148095"
 ---
 # <a name="azure-arc-enabled-postgresql-hyperscale-server-group-placement"></a>Размещение группы серверов PostgreSQL в службе "Дуга Azure" с поддержкой масштабирования
 
@@ -22,7 +22,7 @@ ms.locfileid: "91628423"
 
 [!INCLUDE [azure-arc-data-preview](../../../includes/azure-arc-data-preview.md)]
 
-## <a name="configuration"></a>Конфигурация
+## <a name="configuration"></a>Параметр Configuration
 
 В этом примере мы используем кластер Azure Kubernetes Service (AKS) с четырьмя физическими узлами. 
 
@@ -67,8 +67,8 @@ postgres01-2         3/3     Running   0          9h
 Каждый из этих модулей Pod размещает экземпляр PostgreSQL. Вместе они формируют группу серверов PostgreSQL в службе "Дуга Azure Enabled".
 
 ```output
-Pod name    Role in the server group
-postgres01-0            Coordinator
+Pod name        Role in the server group
+postgres01-0  Coordinator
 postgres01-1    Worker
 postgres01-2    Worker
 ```
@@ -361,6 +361,6 @@ Kubernetes запланировал новый модуль PostgreSQL на на
 - Масштабирование дуги Azure с включенной функцией масштабирования postgres без масштабирования Kubernetes: путем установки правильных ограничений ресурсов (запросов и ограничений в памяти и виртуальное ядро) на рабочих нагрузках, размещенных в Kubernetes (включенная в состав Azure Arc PostgreSQL Scale), вы сможете совместно использовать рабочие нагрузки на Kubernetes и снизить риск конфликтов ресурсов. Необходимо убедиться, что физические характеристики физических узлов кластера Kubernetes могут учитывать определенные вами ограничения ресурсов. Также следует убедиться, что равновесия остается в процессе развития рабочих нагрузок со временем или при добавлении дополнительных рабочих нагрузок в кластер Kubernetes.
 - Используйте механизмы Kubernetes (селектор Pod, сходство, сглаживание), чтобы повлиять на размещение модулей.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Масштабирование группы масштабируемых серверов PostgreSQL в службе "Дуга Azure" путем добавления дополнительных рабочих узлов](scale-out-postgresql-hyperscale-server-group.md)

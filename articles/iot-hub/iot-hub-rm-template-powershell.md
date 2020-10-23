@@ -8,18 +8,18 @@ ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 04/02/2019
-ms.openlocfilehash: a1f878361a96c5584f43b31135d79ff799f66efa
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1fedadfa7e5b4ec3d7de30d0ad3ef1b1bfa0e0ec
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75976621"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92144404"
 ---
 # <a name="create-an-iot-hub-using-azure-resource-manager-template-powershell"></a>Создание Центра Интернета вещей с помощью шаблона Azure Resource Manager (PowerShell)
 
 [!INCLUDE [iot-hub-resource-manager-selector](../../includes/iot-hub-resource-manager-selector.md)]
 
-Узнайте, как использовать шаблон Azure Resource Manager для создания центра Интернета вещей и группы потребителей. Шаблоны Resource Manager — это JSON-файлы, которые определяют ресурсы, необходимые для развертывания решения. Дополнительные сведения о разработке шаблонов диспетчер ресурсов см. в [документации по Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/).
+Узнайте, как использовать шаблон Azure Resource Manager для создания центра Интернета вещей и группы потребителей. Шаблоны Resource Manager — это JSON-файлы, которые определяют ресурсы, необходимые для развертывания решения. Дополнительные сведения о разработке шаблонов диспетчер ресурсов см. в [документации по Azure Resource Manager](../azure-resource-manager/index.yml).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
@@ -29,7 +29,7 @@ ms.locfileid: "75976621"
 
 [!code-json[iothub-creation](~/quickstart-templates/101-iothub-with-consumergroup-create/azuredeploy.json)]
 
-Шаблон создает центр Интернета вещей Azure с тремя конечными точками (eventhub, Облако-устройство и обмен сообщениями) и группой потребителей. Дополнительные примеры шаблонов см. в статье шаблоны быстрого запуска [Azure](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Devices&pageNumber=1&sort=Popular). Схему шаблона центра Интернета вещей можно найти  [здесь](https://docs.microsoft.com/azure/templates/microsoft.devices/iothub-allversions).
+Шаблон создает центр Интернета вещей Azure с тремя конечными точками (eventhub, Облако-устройство и обмен сообщениями) и группой потребителей. Дополнительные примеры шаблонов см. в статье шаблоны быстрого запуска [Azure](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Devices&pageNumber=1&sort=Popular). Схему шаблона центра Интернета вещей можно найти  [здесь](/azure/templates/microsoft.devices/iothub-allversions).
 
 Существует несколько способов развертывания шаблона.  В этом руководстве используется Azure PowerShell.
 
@@ -71,11 +71,11 @@ New-AzResourceGroupDeployment `
 [lnk-azure-portal]: https://portal.azure.com/
 [lnk-status]: https://azure.microsoft.com/status/
 [lnk-powershell-install]: /powershell/azure/install-Az-ps
-[lnk-rest-api]: https://docs.microsoft.com/rest/api/iothub/iothubresource
+[lnk-rest-api]: /rest/api/iothub/iothubresource
 [lnk-azure-rm-overview]: ../azure-resource-manager/management/overview.md
 [lnk-powershell-arm]: ../azure-resource-manager/management/manage-resources-powershell.md
 
 [lnk-c-sdk]: iot-hub-device-sdk-c-intro.md
 [lnk-sdks]: iot-hub-devguide-sdks.md
 
-[lnk-iotedge]: ../iot-edge/tutorial-simulate-device-linux.md
+[lnk-iotedge]: ../iot-edge/quickstart-linux.md

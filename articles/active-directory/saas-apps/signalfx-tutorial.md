@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/24/2020
 ms.author: jeedes
-ms.openlocfilehash: 3eae423763d2d4a05b33e4e1d4b6e9e087a47ba3
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 989b41d4fc55241a5fa75a0eed9ea8f4ebaeee67
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88521575"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91856829"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-signalfx"></a>Руководство по Интеграция единого входа Azure Active Directory с SignalFx
 
@@ -159,7 +159,7 @@ ms.locfileid: "88521575"
         * См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 * Доступ к приложению SignalFx можно получить с Панели доступа или с помощью настраиваемой страницы входа, назначенной организации. Тестовый пользователь должен проверить интеграцию, начиная с любого из этих расположений.
-    * Тестовый пользователь может использовать учетные данные, созданные ранее в рамках этого процесса для **b.simon@contoso.com** .
+    * Тестовый пользователь может использовать учетные данные, созданные ранее в рамках этого процесса для **b.simon\@contoso.com**.
 
 ### <a name="first-time-logins"></a>Первый вход
 

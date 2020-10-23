@@ -16,12 +16,12 @@ ms.date: 07/22/2020
 ms.author: barclayn
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c761be04c7d31567e727e93b84c98a1b3510e3d9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 75965fc9719c9ba16ee7fe24a23dfd4693f8afe0
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90979877"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92362558"
 ---
 # <a name="delegation-and-roles-in-azure-ad-entitlement-management"></a>Делегирование и роли в управлении назначениями Azure AD
 
@@ -92,7 +92,7 @@ ms.locfileid: "90979877"
 
 В следующей таблице перечислены задачи, которые могут выполнять роли управления обслуживанием.
 
-| Задача | Администратор | Создатель каталога | Владелец каталога | Доступ к диспетчеру пакетов | Доступ к диспетчеру назначения пакетов |
+| Задача | Административный | Создатель каталога | Владелец каталога | Доступ к диспетчеру пакетов | Доступ к диспетчеру назначения пакетов |
 | --- | :---: | :---: | :---: | :---: | :---: |
 | [Делегирование автору каталога](entitlement-management-delegate-catalog.md) | :heavy_check_mark: |  |  |  |  |
 | [Добавление подключенной организации](entitlement-management-organization.md) | :heavy_check_mark: |  |  |  |  |
@@ -124,20 +124,20 @@ ms.locfileid: "90979877"
 
 | Роль каталога Azure AD | Роль управления назначениями | Можно добавить группу безопасности | Можно добавить группу Microsoft 365 | Можно добавить приложение | Можно добавить сайт SharePoint Online |
 | --- | :---: | :---: | :---: | :---: | :---: |
-| [Глобальный администратор](../users-groups-roles/directory-assign-admin-roles.md) | Недоступно |  :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Администратор пользователей](../users-groups-roles/directory-assign-admin-roles.md) | Недоступно |  :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |  |
-| [Администратор Intune](../users-groups-roles/directory-assign-admin-roles.md) | Владелец каталога | :heavy_check_mark: | :heavy_check_mark: |  |  |
-| [Администратор Exchange](../users-groups-roles/directory-assign-admin-roles.md) | Владелец каталога |  | :heavy_check_mark: |  |  |
-| [Администратор служб Team Services](../users-groups-roles/directory-assign-admin-roles.md) | Владелец каталога |  | :heavy_check_mark: |  |  |
-| [Администратор SharePoint](../users-groups-roles/directory-assign-admin-roles.md) | Владелец каталога |  | :heavy_check_mark: |  | :heavy_check_mark: |
-| [администратор приложений;](../users-groups-roles/directory-assign-admin-roles.md) | Владелец каталога |  |  | :heavy_check_mark: |  |
-| [Администратор облачных приложений](../users-groups-roles/directory-assign-admin-roles.md) | Владелец каталога |  |  | :heavy_check_mark: |  |
+| [Глобальный администратор](../roles/permissions-reference.md) | Недоступно |  :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| [Администратор пользователей](../roles/permissions-reference.md) | Недоступно |  :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |  |
+| [Администратор Intune](../roles/permissions-reference.md) | Владелец каталога | :heavy_check_mark: | :heavy_check_mark: |  |  |
+| [Администратор Exchange](../roles/permissions-reference.md) | Владелец каталога |  | :heavy_check_mark: |  |  |
+| [Администратор служб Team Services](../roles/permissions-reference.md) | Владелец каталога |  | :heavy_check_mark: |  |  |
+| [Администратор SharePoint](../roles/permissions-reference.md) | Владелец каталога |  | :heavy_check_mark: |  | :heavy_check_mark: |
+| [администратор приложений;](../roles/permissions-reference.md) | Владелец каталога |  |  | :heavy_check_mark: |  |
+| [Администратор облачных приложений](../roles/permissions-reference.md) | Владелец каталога |  |  | :heavy_check_mark: |  |
 | Пользователь | Владелец каталога | Только если владелец группы | Только если владелец группы | Только если владелец приложения |  |
 
 > [!NOTE]
-> Если пользователь добавляет группу безопасности или группу Microsoft 365, эта группа не может быть назначена ролью. Если пользователь добавляет группу, которая является назначаемой с помощью роли при создании пакета доступа, они также должны быть владельцами этой группы, назначаемой ролью. Дополнительные сведения см. [в статье Создание назначаемой роли группы в Azure Active Directory](../users-groups-roles/roles-groups-create-eligible.md).
+> Если пользователь добавляет группу безопасности или группу Microsoft 365, эта группа не может быть назначена ролью. Если пользователь добавляет группу, которая является назначаемой с помощью роли при создании пакета доступа, они также должны быть владельцами этой группы, назначаемой ролью. Дополнительные сведения см. [в статье Создание назначаемой роли группы в Azure Active Directory](../roles/groups-create-eligible.md).
 
-Чтобы определить минимально привилегированную роль для задачи, можно также ссылаться на [роли администратора по задаче администрирования в Azure Active Directory](../users-groups-roles/roles-delegate-by-task.md#entitlement-management).
+Чтобы определить минимально привилегированную роль для задачи, можно также ссылаться на [роли администратора по задаче администрирования в Azure Active Directory](../roles/delegate-by-task.md#entitlement-management).
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 

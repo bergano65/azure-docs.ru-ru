@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 12/13/2018
+ms.date: 10/16/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 6faf9fb3d15709d3897db9a77bf14ebf238e8fbf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1c942d52bbcdad711115d81a78395979c507784b
+ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87116373"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92131757"
 ---
 # <a name="configure-password-change-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка смены пароля в настраиваемых политиках в Azure Active Directory B2C
 
@@ -38,7 +38,7 @@ ms.locfileid: "87116373"
         <ClaimType Id="oldPassword">
           <DisplayName>Old Password</DisplayName>
           <DataType>string</DataType>
-          <UserHelpText>Enter password</UserHelpText>
+          <UserHelpText>Enter your old password</UserHelpText>
           <UserInputType>Password</UserInputType>
         </ClaimType>
       </ClaimsSchema>
@@ -179,7 +179,7 @@ ms.locfileid: "87116373"
 
 1. Откройте измененную политику. Например, *B2C_1A_profile_edit_password_change*.
 2. В разделе **Приложение** выберите зарегистрированное ранее приложение. Чтобы маркер отображался, **URL-адрес ответа** должен быть следующим: `https://jwt.ms`.
-3. Щелкните **Запустить сейчас**. Выполните вход с помощью ранее созданной учетной записи. Теперь вы сможете изменять пароль.
+3. Щелкните **Запустить сейчас**. Войдите, используя созданную ранее учетную запись. Теперь вы сможете изменять пароль.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

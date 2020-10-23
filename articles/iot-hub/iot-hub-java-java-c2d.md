@@ -13,12 +13,12 @@ ms.custom:
 - amqp
 - mqtt
 - devx-track-java
-ms.openlocfilehash: f4e5880a39d6ad299fd6e7f29bd0e3aefadc3bcd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 763b9e05adc07c02265dbb511c073b42df44ea95
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91446890"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92146862"
 ---
 # <a name="send-cloud-to-device-messages-with-iot-hub-java"></a>Отправка сообщений из облака на устройство с помощью Центра Интернета вещей (Java)
 
@@ -51,7 +51,7 @@ ms.locfileid: "91446890"
 
 * Полная рабочая версия краткого руководства [Отправка данных телеметрии с устройства в центр Интернета вещей](quickstart-send-telemetry-java.md) или руководства [Настройка маршрутизации сообщений с Центром Интернета вещей](tutorial-routing.md).
 
-* [Пакет SDK для Java SE 8](https://docs.microsoft.com/java/azure/jdk/?view=azure-java-stable). Щелкните ссылку **Java 8** в разделе **Долгосрочная поддержка**, чтобы скачать все необходимое для работы с JDK 8.
+* [Пакет SDK для Java SE 8](/java/azure/jdk/?view=azure-java-stable). Щелкните ссылку **Java 8** в разделе **Долгосрочная поддержка**, чтобы скачать все необходимое для работы с JDK 8.
 
 * [Maven 3](https://maven.apache.org/download.cgi)
 

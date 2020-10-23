@@ -9,12 +9,12 @@ ms.date: 10/02/2020
 ms.author: rogarana
 ms.subservice: files
 ms.custom: devx-track-csharp
-ms.openlocfilehash: fbfc347e1b514f9f59e2f238d2b1bfbaf59f2172
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 21b407002adce01155b37321c068fb10d2c003f6
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91710708"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92319802"
 ---
 # <a name="develop-for-azure-files-with-net"></a>Разработка для службы файлов Azure с помощью .NET
 
@@ -67,7 +67,7 @@ API | Назначение | Примечания
 - [Клиентская библиотека файлов службы хранилища Azure для .NET](https://www.nuget.org/packages/Azure.Storage.Files.Shares/): Этот пакет обеспечивает программный доступ к файловым ресурсам в вашей учетной записи хранения.
 - [Библиотека системных Configuration Manager для .NET](https://www.nuget.org/packages/System.Configuration.ConfigurationManager/): Этот пакет предоставляет класс для хранения и извлечения значений в файле конфигурации.
 
-Для получения пакетов можно использовать NuGet. Выполните следующие действия.
+Для получения пакетов можно использовать NuGet. Выполните следующие действия:
 
 1. В **Обозреватель решений**щелкните правой кнопкой мыши проект и выберите **Управление пакетами NuGet**.
 1. В разделе **Диспетчер пакетов NuGet** выберите **Обзор**. Затем найдите и выберите **Azure. Core**, а затем нажмите кнопку **установить**.
@@ -87,7 +87,7 @@ API | Назначение | Примечания
 - [Библиотека файлов служба хранилища Microsoft Azure для .NET](https://www.nuget.org/packages/Microsoft.Azure.Storage.File/): Этот пакет обеспечивает программный доступ к файловым ресурсам в вашей учетной записи хранения.
 - [Библиотека Microsoft Azure Configuration Manager для .NET](https://www.nuget.org/packages/Microsoft.Azure.ConfigurationManager/): Этот пакет предоставляет класс для синтаксического анализа строки подключения в файле конфигурации во всех случаях, когда приложение выполняется.
 
-Для получения пакетов можно использовать NuGet. Выполните следующие действия.
+Для получения пакетов можно использовать NuGet. Выполните следующие действия:
 
 1. В **Обозреватель решений**щелкните правой кнопкой мыши проект и выберите **Управление пакетами NuGet**.
 1. В разделе **Диспетчер пакетов NuGet** выберите **Обзор**. Затем найдите и выберите **Microsoft. Azure. Storage. BLOB**, а затем нажмите кнопку **установить**.
@@ -613,7 +613,7 @@ Console.WriteLine(serviceProperties.MinuteMetrics.Version);
 
 Если возникнут проблемы, см. статью [Устранение неполадок с файлами Azure в Windows](storage-troubleshoot-windows-file-connection-problems.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о службе файлов Azure см. в следующих ресурсах:
 
@@ -624,7 +624,7 @@ Console.WriteLine(serviceProperties.MinuteMetrics.Version);
 
 ### <a name="tooling-support-for-file-storage"></a>Средства для работы с хранилищем файлов
 
-- [Начало работы с AzCopy](../common/storage-use-azcopy.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json)
+- [Get started with AzCopy](../common/storage-use-azcopy.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json) (Начало работы с AzCopy)
 - [Устранение неполадок службы файлов Azure в Windows](https://docs.microsoft.com/azure/storage/storage-troubleshoot-file-connection-problems)
 
 ### <a name="reference"></a>Справочник

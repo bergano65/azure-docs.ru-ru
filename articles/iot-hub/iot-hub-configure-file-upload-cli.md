@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 08/08/2017
 ms.author: robinsh
-ms.openlocfilehash: df3c8d2abf59de6c9f685ad8d93e6689738df8e6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 830e72a8de047b0219cfa0be264fad2e1f83beb2
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "78302531"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92142604"
 ---
 # <a name="configure-iot-hub-file-uploads-using-azure-cli"></a>Настройка отправки файлов в Центре Интернета вещей с помощью Azure CLI
 
@@ -21,21 +21,21 @@ ms.locfileid: "78302531"
 
 Чтобы [передать файлы с устройства](iot-hub-devguide-file-upload.md), сначала необходимо связать учетную запись хранения Azure с Центром Интернета вещей. Можно использовать существующую учетную запись хранения или создать новую.
 
-Для работы с этим учебником требуется:
+Для работы с этим руководством вам нужно следующее:
 
 * Активная учетная запись Azure. Если ее нет, можно создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/) всего за несколько минут.
 
-* [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+* [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest).
 
-* Центр интернета вещей Azure. Если у вас нет центра Интернета вещей, можно использовать [ `az iot hub create` команду](https://docs.microsoft.com/cli/azure/iot/hub#az-iot-hub-create) , чтобы создать [центр Интернета вещей или создать его с помощью портала](iot-hub-create-through-portal.md).
+* Центр интернета вещей Azure. Если у вас нет центра Интернета вещей, можно использовать [ `az iot hub create` команду](/cli/azure/iot/hub#az-iot-hub-create) , чтобы создать [центр Интернета вещей или создать его с помощью портала](iot-hub-create-through-portal.md).
 
-* Учетная запись хранения Azure. Если у вас нет учетной записи хранения Azure, можно использовать Azure CLI, чтобы создать ее. Дополнительные сведения см. в разделе [Создание учетной записи хранения](../storage/common/storage-create-storage-account.md).
+* Учетная запись хранения Azure. Если у вас нет учетной записи хранения Azure, можно использовать Azure CLI, чтобы создать ее. Дополнительные сведения см. в разделе [Создание учетной записи хранения](../storage/common/storage-account-create.md).
 
 ## <a name="sign-in-and-set-your-azure-account"></a>Выполнение входа и установка учетной записи Azure
 
 Войдите в учетную запись Azure и выберите подписку.
 
-1. В командной строке запустите [команду login](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest):
+1. В командной строке запустите [команду login](/cli/azure/get-started-with-azure-cli?view=azure-cli-latest):
 
     ```azurecli
     az login
@@ -43,7 +43,7 @@ ms.locfileid: "78302531"
 
     Следуйте инструкциям, чтобы выполнить аутентификацию с использованием кода и войти в учетную запись Azure через веб-браузер.
 
-2. Если у вас есть несколько подписок Azure, то при выполнении входа в Azure вы получаете доступ ко всем учетным записям Azure, связанным с вашими учетными данными. Используйте следующую [команду для вывода учетных записей Azure](https://docs.microsoft.com/cli/azure/account), доступных для использования:
+2. Если у вас есть несколько подписок Azure, то при выполнении входа в Azure вы получаете доступ ко всем учетным записям Azure, связанным с вашими учетными данными. Используйте следующую [команду для вывода учетных записей Azure](/cli/azure/account), доступных для использования:
 
     ```azurecli
     az account list
@@ -144,5 +144,5 @@ az iot hub show --name {your iot hub name}
 Для дальнейшего изучения возможностей Центра Интернета вещей см. следующие статьи:
 
 * [Руководство разработчика для Центра Интернета вещей](iot-hub-devguide.md)
-* [Краткое руководство. Развертывание первого модуля IoT Edge на устройстве под управлением 64-разрядной ОС Linux](../iot-edge/tutorial-simulate-device-linux.md)
+* [Краткое руководство. Развертывание первого модуля IoT Edge на устройстве под управлением 64-разрядной ОС Linux](../iot-edge/quickstart-linux.md)
 * [Все аспекты безопасности решения Центра Интернета вещей](../iot-fundamentals/iot-security-ground-up.md)

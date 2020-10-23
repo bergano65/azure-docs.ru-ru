@@ -1,30 +1,30 @@
 ---
-title: Обновление ЕЗ/с для базы данных или коллекции для API MongoDB в Azure Cosmos DB
-description: Обновление ЕЗ/с для базы данных или коллекции для API MongoDB в Azure Cosmos DB
+title: Скрипты Azure CLI для операций с пропускной способностью (ЕЗ/с) с использованием API службы Azure Cosmos DB для ресурсов MongoDB
+description: Скрипты Azure CLI для операций с пропускной способностью (ЕЗ/с) с использованием API службы Azure Cosmos DB для ресурсов MongoDB
 author: markjbrown
 ms.author: mjbrown
 ms.service: cosmos-db
 ms.subservice: cosmosdb-mongo
 ms.topic: sample
-ms.date: 07/29/2020
-ms.openlocfilehash: 6f3bd23f11abf0e72dc4b7affe54ada42e0cf712
-ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
+ms.date: 10/07/2020
+ms.openlocfilehash: 785f77df117b8072f6b8970287f4051795d07167
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87432175"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91838637"
 ---
-# <a name="update-rus-for-a-database-and-collection-for-mongodb-api-for-azure-cosmos-db-using-azure-cli"></a>Обновление ЕЗ/с для базы данных или коллекции для API MongoDB в Azure Cosmos DB с использованием Azure CLI
+# <a name="throughput-rus-operations-with-azure-cli-for-a-database-or-graph-for-azure-cosmos-db-api-for-mongodb"></a>Выполнение операций с пропускной способностью (ЕЗ/с) через Azure CLI для базы данных или графа с использованием API Azure Cosmos DB для MongoDB
 
 [!INCLUDE [cloud-shell-try-it.md](../../../../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать интерфейс командной строки локально, то для работы с этим руководством вам понадобится Azure CLI 2.9.1 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
+Если вы решили установить и использовать интерфейс командной строки локально, то для работы с этим руководством вам понадобится Azure CLI 2.12.1 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
 
 ## <a name="sample-script"></a>Пример скрипта
 
-Этот скрипт создает базу данных с общей пропускной способностью и коллекцию с выделенной пропускной способностью для API MongoDB в Azure Cosmos DB, а затем обновляет пропускную способность как для базы данных, так и для коллекции.
+Этот скрипт создает базу данных MongoDB с общей пропускной способностью и коллекцию с выделенной пропускной способностью, а затем обновляет пропускную способность для обоих элементов. Затем этот скрипт переключает режим пропускной способности со стандартного на автомасштабирование и считывает значение пропускной способности, установленное после переноса.
 
-[!code-azurecli-interactive[main](../../../../../cli_scripts/cosmosdb/mongodb/throughput.sh "Update RU/s for an Azure Cosmos DB MongoDB API database and collection.")]
+[!code-azurecli-interactive[main](../../../../../cli_scripts/cosmosdb/mongodb/throughput.sh "Throughput operations for Azure Cosmos DB API for MongoDB.")]
 
 ## <a name="clean-up-deployment"></a>Очистка развертывания
 
@@ -46,6 +46,8 @@ az group delete --name $resourceGroupName
 | [az cosmosdb mongodb collection create](/cli/azure/cosmosdb/mongodb/collection#az-cosmosdb-mongodb-collection-create) | Создает коллекцию API MongoDB в Azure Cosmos DB. |
 | [az cosmosdb mongodb database throughput update](/cli/azure/cosmosdb/mongodb/database/throughput#az-cosmosdb-mongodb-database-throughput-update) | Обновляет ЕЗ/с для базы данных API MongoDB в Azure Cosmos DB. |
 | [az cosmosdb mongodb collection throughput update](/cli/azure/cosmosdb/mongodb/collection/throughput#az-cosmosdb-mongodb-collection-throughput-update) | Обновляет ЕЗ/с для коллекции API MongoDB в Azure Cosmos DB. |
+| [az cosmosdb mongodb database throughput migrate](/cli/azure/cosmosdb/mongodb/database/throughput#az-cosmosdb-mongodb-database-throughput-migrate) | Миграция пропускной способности для базы данных. |
+| [az cosmosdb mongodb collection throughput migrate](/cli/azure/cosmosdb/mongodb/collection/throughput#az-cosmosdb-mongodb-collection-throughput-migrate) | Миграция пропускной способности для коллекции. |
 | [az group delete](/cli/azure/resource#az-resource-delete) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 
 ## <a name="next-steps"></a>Дальнейшие действия

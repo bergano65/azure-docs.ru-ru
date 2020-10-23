@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: conceptual
 ms.date: 05/08/2020
 ms.author: buhollan
-ms.openlocfilehash: 61ec96a35fac6a033fe6c8b65cff156ba63e5e58
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 578860883a108bba4b4bcd8cd04e8c08f484d474
+ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87563353"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92173679"
 ---
 # <a name="setup-a-custom-domain-in-azure-static-web-apps-preview"></a>Настройка личного домена в предварительной версии Статических веб-приложений Azure
 
@@ -29,11 +29,11 @@ ms.locfileid: "87563353"
 
 Существует несколько различных типов конфигураций DNS, доступных для приложения.
 
-| Если требуется                                 | То                                                |
-| -----------------------------------------------| --------------------------------------------------- |
-| Поддержка `www.example.com` или `blog.example.net`| [Сопоставьте запись CNAME](#map-a-cname-record).           |
-| Включена поддержка `example.com`.                          | [Настройте корневой домен](#configure-a-root-domain) |
-| Направить все поддомены по адресу `www.example.com`      | [Сопоставьте подстановочный знак](#map-a-wildcard-domain)            |
+| Если требуется | То |
+|--|--|
+| Поддержка `www.example.com` или `blog.example.net` | [Сопоставьте запись CNAME](#map-a-cname-record). |
+| Включена поддержка `example.com`. | [Настройте корневой домен](#configure-a-root-domain) |
+| Направить все поддомены по адресу `www.example.com` | [Сопоставьте подстановочный знак](#map-a-wildcard-domain) |
 
 ## <a name="map-a-cname-record"></a>Сопоставление записи CNAME
 
@@ -46,6 +46,8 @@ ms.locfileid: "87563353"
 1. На странице _Статистические веб-приложения_ выберите имя приложения.
 
 1. В меню выберите **Личные домены**.
+
+1. Нажмите кнопку " **Добавить** ".
 
 1. В окне _Личные домены_ скопируйте URL-адрес в поле **Значение**.
 

@@ -9,12 +9,12 @@ ms.author: dademath
 ms.date: 07/20/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 51b985cd67e1b540e2f24f2f37b19f9bff4223db
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: d244ed92cceb385f9f80690ae630e617e952c481
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91962995"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92124591"
 ---
 # <a name="get-started-with-the-group-chat-hero-sample"></a>Начало работы с главным примером функции чата
 
@@ -30,7 +30,7 @@ ms.locfileid: "91962995"
 Из краткого руководства мы узнаем, как работает пример и запустим его на локальном компьютере. Затем мы развернем пример в Azure с помощью собственных ресурсов Служб коммуникации Azure.
 
 > [!IMPORTANT]
-> [Скачайте пример с GitHub.](https://github.com/Azure/Communication/tree/master/samples/Group%20Chat%20Hero%20Sample/Web/Chat)
+> [Скачайте пример с GitHub.](https://github.com/Azure-Samples/communication-services-web-chat-hero)
 
 ## <a name="overview"></a>Обзор
 
@@ -102,7 +102,7 @@ ms.locfileid: "91962995"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 >[!div class="nextstepaction"] 
->[Скачайте пример с GitHub.](https://github.com/Azure/Communication/tree/master/samples/Group%20Chat%20Hero%20Sample/Web/Chat)
+>[Скачайте пример с GitHub.](https://github.com/Azure-Samples/communication-services-web-chat-hero)
 
 Дополнительные сведения см. в следующих статьях:
 

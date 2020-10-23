@@ -1,22 +1,22 @@
 ---
-title: Переход с Google Карт на Azure Maps | Microsoft Azure Maps
-description: Как перейти с Google Карт на Microsoft Azure Maps. Это руководство содержит инструкции по переходу на API-интерфейсы и пакеты средств разработки Azure Maps.
+title: Руководство по переходу с Google Карт на Azure Maps | Microsoft Azure Maps
+description: В руководстве показано, как перейти с использования Google Карт на Microsoft Azure Maps. Это руководство содержит инструкции по переходу на API-интерфейсы и пакеты средств разработки Azure Maps.
 author: rbrundritt
 ms.author: richbrun
 ms.date: 09/23/2020
-ms.topic: conceptual
+ms.topic: tutorial
 ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: ''
-ms.openlocfilehash: c60890b301ba650c95584e33b5326217086c08c4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ee7eda58c211ca570b052d55c813999e62b95fde
+ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/09/2020
-ms.locfileid: "91264173"
+ms.locfileid: "91876317"
 ---
-# <a name="migrate-from-google-maps-to-azure-maps"></a>Переход с Google Карт на Azure Maps
+# <a name="tutorial---migrate-from-google-maps-to-azure-maps"></a>Руководство по переходу с Google Карт на Azure Maps
 
 В этой статье содержатся сведения о переносе веб-приложений, мобильных и серверных программ из Google Карт на платформу Microsoft Azure Maps. Руководство предоставляет примеры кода для сравнения, а также предложения и рекомендации по переходу на Azure Maps.
 

@@ -4,12 +4,12 @@ description: Узнайте, как обнаружить локальные фи
 ms.topic: tutorial
 ms.date: 09/14/2020
 ms.custom: mvc
-ms.openlocfilehash: 00fb4073bc8a7b1375f92202b5a6bd0a59a23816
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e7cbd7939248686a251fdf56bf1a5f1acc952a3a
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91442294"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92314087"
 ---
 # <a name="tutorial-discover-physical-servers-with-server-assessment"></a>Руководство по обнаружению физических серверов с помощью средства оценки серверов
 
@@ -208,7 +208,7 @@ ms.locfileid: "91442294"
    
    Вход с помощью PIN-кода не поддерживается.
 3. После входа вернитесь к веб-приложению. 
-4. Если учетная запись пользователя Azure, используемая для ведения журнала, имеет необходимые [разрешения](tutorial-prepare-physical.md) на ресурсы Azure, созданные во время создания ключа, будет инициирована регистрация модуля.
+4. Если учетная запись пользователя Azure, используемая для ведения журнала, имеет необходимые [разрешения]() на ресурсы Azure, созданные во время создания ключа, будет инициирована регистрация модуля.
 1. После регистрации модуля вы можете просмотреть сведения о регистрации, щелкнув **Просмотреть подробности**.
 
 
@@ -245,5 +245,3 @@ ms.locfileid: "91442294"
 
 - [Оцените готовность физических серверов](tutorial-assess-physical.md) к переносу на виртуальные машины Azure.
 - [Просмотрите данные](migrate-appliance.md#collected-data---physical), собранные устройством во время обнаружения.
-
-

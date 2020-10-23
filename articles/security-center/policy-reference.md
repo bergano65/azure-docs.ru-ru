@@ -1,18 +1,18 @@
 ---
 title: Встроенные определения политик для Центра безопасности Azure
 description: Здесь приведены встроенные определения политик в Политике Azure для Центра безопасности Azure. Эти встроенные определения политик предоставляют популярные подходы к управлению ресурсами Azure.
-ms.date: 10/07/2020
+ms.date: 10/20/2020
 ms.topic: reference
 author: memildin
 ms.author: memildin
 ms.service: security-center
 ms.custom: subject-policy-reference
-ms.openlocfilehash: 0c445dc882c40724c20c773b3a5e191fb06970a6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b7478199e4bb6f1e9ad986193370d4ea8610bd7a
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91823141"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92340909"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-security-center"></a>Встроенные определения в Политике Azure для Центра безопасности Azure
 
@@ -52,5 +52,5 @@ ms.locfileid: "91823141"
 - [Руководство по планированию и эксплуатации центра безопасности Azure](./security-center-planning-and-operations-guide.md). Узнайте, как планировать и анализировать вопросы проектирования в центре безопасности Azure.
 - [Наблюдение за работоспособностью системы безопасности в Центре безопасности Azure](./security-center-monitoring.md) — узнайте, как отслеживать работоспособность ресурсов Azure.
 - [Управление оповещениями безопасности в Центре безопасности Azure и реагирование на них](./security-center-managing-and-responding-alerts.md) — узнайте, как управлять оповещениями системы безопасности и реагировать на них.
-- [Управление подключенными партнерскими решениями с помощью центра безопасности Azure](./security-center-partner-solutions.md) — узнайте, как отслеживать состояние работоспособности решений партнеров.
+- [Управление подключенными партнерскими решениями с помощью центра безопасности Azure](./security-center-partner-integration.md) — узнайте, как отслеживать состояние работоспособности решений партнеров.
 - [Политика Azure](../governance/policy/overview.md). Узнайте, как проводить аудит и управлять ресурсами Azure.

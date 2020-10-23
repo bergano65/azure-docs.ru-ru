@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/17/2019
 ms.author: jeedes
-ms.openlocfilehash: cab4cd34458e6107c653859c97dfda12486a38a1
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 32b856a80209c015c9fc96029bdf8d540b340c25
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88549751"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91858189"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-linkedin-sales-navigator"></a>Руководство по Интеграция единого входа Azure Active Directory с LinkedIn Sales Navigator
 
@@ -145,11 +145,11 @@ ms.locfileid: "88549751"
 
 1. В **Account Center** (Центр учетных записей) в разделе **Settings** (Параметры) щелкните **Global Settings** (Глобальные параметры). Также выберите **Sales Navigator** в раскрывающемся списке.
 
-    ![Настройка единого входа](./media/linkedinsalesnavigator-tutorial/tutorial_linkedin_admin_01.png)
+    ![Снимок экрана, на котором показана область параметров приложения, где можно выбрать элемент Sales Navigator.](./media/linkedinsalesnavigator-tutorial/tutorial_linkedin_admin_01.png)
 
 1. Щелкните **OR Click Here to load and copy individual fields from the form** (Или щелкните здесь, чтобы загрузить и скопировать отдельные поля из формы) и сделайте следующее:
 
-    ![Настройка единого входа](./media/linkedinsalesnavigator-tutorial/tutorial_linkedin_admin_031.png)
+    ![Снимок экрана: настройка описанных параметров единого входа.](./media/linkedinsalesnavigator-tutorial/tutorial_linkedin_admin_031.png)
 
     а. Скопируйте **идентификатор сущности** и вставьте его в текстовое поле **Идентификатор** в разделе **Базовая конфигурация SAML** на портале Azure.
 
@@ -157,11 +157,11 @@ ms.locfileid: "88549751"
 
 1. Перейдите в раздел **LinkedIn Admin Settings** (Параметры администратора LinkedIn). Передайте XML-файл, скачанный с портала Azure. Для этого нажмите кнопку **Upload XML file** (Передать XML-файл).
 
-    ![Настройка единого входа](./media/linkedinsalesnavigator-tutorial/tutorial_linkedin_metadata_03.png)
+    ![Снимок экрана: настройка параметров единого входа для LinkedIn, где можно передать XML-файл.](./media/linkedinsalesnavigator-tutorial/tutorial_linkedin_metadata_03.png)
 
 1. Нажмите кнопку **On** (Включить), чтобы включить единый вход. Состояние единого входа изменяется с **Not Connected** (Не подключено) на **Connected** (Подключено.)
 
-    ![Настройка единого входа](./media/linkedinsalesnavigator-tutorial/tutorial_linkedin_admin_05.png)
+    ![Снимок экрана: окно параметров единого входа, где его можно включить для пользователей.](./media/linkedinsalesnavigator-tutorial/tutorial_linkedin_admin_05.png)
 
 ### <a name="create-linkedin-sales-navigator-test-user"></a>Создание тестового пользователя LinkedIn Sales Navigator
 

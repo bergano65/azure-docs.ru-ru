@@ -11,12 +11,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 06/17/2020
 ms.author: sstein
-ms.openlocfilehash: 027a816e846996aa7c61a1747327128f9a0feed0
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 01126a1ca8590d02d0cd0aa1c8554b34161dbac5
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92079213"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92426280"
 ---
 # <a name="whats-new-in-azure-sql-database--sql-managed-instance"></a>Что нового в базе данных SQL Azure & Управляемый экземпляр SQL?
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -67,7 +67,7 @@ ms.locfileid: "92079213"
 | <a href="/azure/azure-sql/database/elastic-transactions-overview">Распределенные транзакции</a> | Распределенные транзакции между управляемыми экземплярами. |
 | <a href="/azure/sql-database/sql-database-instance-pools">Пулы экземпляров</a> | Удобный и экономичный способ переноса небольших экземпляров SQL в облако. |
 | <a href="https://aka.ms/managed-instance-aadlogins">Участники сервера Azure AD уровня экземпляра (имена для входа)</a> | Создайте имена для входа на уровне экземпляра, используя инструкцию <a href="https://docs.microsoft.com/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current">создания имени входа из внешнего поставщика</a> . |
-| [Репликация транзакций](../managed-instance/replication-transactional-overview.md) | Репликация изменений из таблиц в другие базы данных в SQL Управляемый экземпляр, базе данных SQL или SQL Server. Или обновлять таблицы при изменении некоторых строк в других экземплярах SQL Управляемый экземпляр или SQL Server. Дополнительные сведения см. [в статье Настройка репликации в Azure SQL управляемый экземпляр](../managed-instance/replication-between-two-instances-configure-tutorial.md). |
+| [репликация транзакций](../managed-instance/replication-transactional-overview.md) | Репликация изменений из таблиц в другие базы данных в SQL Управляемый экземпляр, базе данных SQL или SQL Server. Или обновлять таблицы при изменении некоторых строк в других экземплярах SQL Управляемый экземпляр или SQL Server. Дополнительные сведения см. [в статье Настройка репликации в Azure SQL управляемый экземпляр](../managed-instance/replication-between-two-instances-configure-tutorial.md). |
 | Обнаружение угроз |Дополнительные сведения см. [в статье Настройка обнаружения угроз в Azure SQL управляемый экземпляр](../managed-instance/threat-detection-configure.md).|
 | Долгосрочное хранение резервных копий | Дополнительные сведения см. в статье [Настройка долгосрочного резервного копирования в Azure SQL управляемый экземпляр](../managed-instance/long-term-backup-retention-configure.md), которая в настоящее время ограничена общедоступной предварительной версией. | 
 
@@ -100,7 +100,7 @@ ms.locfileid: "92079213"
 |---------|---------|---------|---------|
 |[Распределенные транзакции могут выполняться после удаления Управляемый экземпляр из группы доверия сервера](#distributed-transactions-can-be-executed-after-removing-managed-instance-from-server-trust-group)|Октябрь 2020|Есть обходной путь||
 |[Распределенные транзакции не могут быть выполнены после Управляемый экземпляр операции масштабирования](#distributed-transactions-cannot-be-executed-after-managed-instance-scaling-operation)|Октябрь 2020|Есть обходной путь||
-|[BULK INSERT](https://docs.microsoft.com/sql/t-sql/statements/bulk-insert-transact-sql) в Azure SQL и `BACKUP` / `RESTORE` инструкции в управляемый экземпляр не могут использовать удостоверение управления Azure AD для проверки подлинности в службе хранилища Azure|Sep 2020|Есть обходной путь||
+|[BULK INSERT](https://docs.microsoft.com/sql/t-sql/statements/bulk-insert-transact-sql) / [Функция OPENROWSET](https://docs.microsoft.com/sql/t-sql/functions/openrowset-transact-sql?view=sql-server-ver15) в Azure SQL и `BACKUP` / `RESTORE` инструкция в управляемый экземпляр не может использовать удостоверение управления Azure AD для проверки подлинности в службе хранилища Azure|Sep 2020|Есть обходной путь||
 |[Субъект-служба не может получить доступ к Azure AD и AKV](#service-principal-cannot-access-azure-ad-and-akv)|Авг 2020|Есть обходной путь||
 |[Восстановление резервной копии вручную без КОНТРОЛЬной суммы может завершиться ошибкой](#restoring-manual-backup-without-checksum-might-fail)|Май 2020 г.|"Разрешено"|Июнь 2020 г.|
 |[Агент перестает отвечать при изменении, отключении или включении существующих заданий](#agent-becomes-unresponsive-upon-modifying-disabling-or-enabling-existing-jobs)|Май 2020 г.|"Разрешено"|Июнь 2020 г.|
@@ -139,7 +139,7 @@ ms.locfileid: "92079213"
 
 ### <a name="bulk-insert-and-backuprestore-statements-cannot-use-managed-identity-to-access-azure-storage"></a>Инструкции BULK INSERT и BACKUP/Restore не могут использовать управляемое удостоверение для доступа к службе хранилища Azure
 
-Инструкция инструкции reinsert не может использовать `DATABASE SCOPED CREDENTIAL` с управляемым удостоверением для проверки подлинности в службе хранилища Azure. В качестве обходного решения переключитесь на проверку подлинности ПОДПИСАНного URL-доступа. Следующий пример не будет работать в Azure SQL (база данных и Управляемый экземпляр):
+Инструкции BULK INSERT, BACKUP и RESTORE и функция OPENROWSET не могут использовать `DATABASE SCOPED CREDENTIAL` с управляемым удостоверением для проверки подлинности в службе хранилища Azure. В качестве обходного решения переключитесь на проверку подлинности ПОДПИСАНного URL-доступа. Следующий пример не будет работать в Azure SQL (база данных и Управляемый экземпляр):
 
 ```sql
 CREATE DATABASE SCOPED CREDENTIAL msi_cred WITH IDENTITY = 'Managed Identity';

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: big-data
 ms.date: 10/09/2018
 ms.author: elsung
-ms.openlocfilehash: 9066c53fce750b1c8402c5a0ccbd10debd5ec431
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 716e3766fdd7c1999efa12456346862a9902d7a0
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85855708"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92108717"
 ---
 # <a name="virtual-network-integration-for-azure-data-lake-storage-gen1"></a>Интеграция с виртуальной сетью для Azure Data Lake Storage 1-го поколения
 
@@ -33,7 +33,7 @@ ms.locfileid: "85855708"
 
 ## <a name="scenarios-for-virtual-network-integration-for-data-lake-storage-gen1"></a>Сценарии для интеграции с виртуальной сетью для ADLS 1-го поколения
 
-Функция интеграции с виртуальной сетью службы ADLS 1-го поколения позволяет предоставить доступ к учетной записи ADLS 1-го поколения только из указанных виртуальных сетей и подсетей. Другие виртуальные сети и виртуальные машины не смогут подключиться к вашей учетной записи, после того как она будет привязана к указанной подсети виртуальной сети. С функциональной точки зрения интеграция с виртуальной сетью службы ADLS 1-го поколения реализует тот же сценарий, что и [конечные точки служб для виртуальной сети](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview). Несколько ключевых отличий подробно описаны в следующих разделах. 
+Функция интеграции с виртуальной сетью службы ADLS 1-го поколения позволяет предоставить доступ к учетной записи ADLS 1-го поколения только из указанных виртуальных сетей и подсетей. Другие виртуальные сети и виртуальные машины не смогут подключиться к вашей учетной записи, после того как она будет привязана к указанной подсети виртуальной сети. С функциональной точки зрения интеграция с виртуальной сетью службы ADLS 1-го поколения реализует тот же сценарий, что и [конечные точки служб для виртуальной сети](../virtual-network/virtual-network-service-endpoints-overview.md). Несколько ключевых отличий подробно описаны в следующих разделах. 
 
 ![Диаграмма сценария для интеграции с виртуальной сетью для ADLS 1-го поколения](media/data-lake-store-network-security/scenario-diagram.png)
 
@@ -42,9 +42,9 @@ ms.locfileid: "85855708"
 
 ## <a name="optimal-routing-with-data-lake-storage-gen1-virtual-network-integration"></a>Оптимальная маршрутизация для интеграции с виртуальной сетью для ADLS 1-го поколения
 
-Ключевым преимуществом конечных точек служб для виртуальной сети является [оптимальная маршрутизация](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview#key-benefits) из виртуальной сети. Вы можете достичь той же оптимизации маршрутизации для учетных записей ADLS 1-го поколения. Для этого используйте следующие [определяемые пользователем маршруты](https://docs.microsoft.com/azure/virtual-network/virtual-networks-udr-overview#user-defined) из виртуальной сети к учетным записям ADLS 1-го поколения.
+Ключевым преимуществом конечных точек служб для виртуальной сети является [оптимальная маршрутизация](../virtual-network/virtual-network-service-endpoints-overview.md#key-benefits) из виртуальной сети. Вы можете достичь той же оптимизации маршрутизации для учетных записей ADLS 1-го поколения. Для этого используйте следующие [определяемые пользователем маршруты](../virtual-network/virtual-networks-udr-overview.md#user-defined) из виртуальной сети к учетным записям ADLS 1-го поколения.
 
-**Общедоступный IP-адрес ADLS**. Используйте общедоступный IP-адрес для целевых учетных записей ADLS 1-го поколения. IP-адреса для учетных записей Azure Data Lake Storage 1-го поколения можно определить, [разрешая DNS-имена](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-connectivity-from-vnets#enabling-connectivity-to-azure-data-lake-storage-gen1-from-vms-with-restricted-connectivity) учетных записей. Создайте отдельную запись для каждого адреса.
+**Общедоступный IP-адрес ADLS**. Используйте общедоступный IP-адрес для целевых учетных записей ADLS 1-го поколения. IP-адреса для учетных записей Azure Data Lake Storage 1-го поколения можно определить, [разрешая DNS-имена](./data-lake-store-connectivity-from-vnets.md#enabling-connectivity-to-azure-data-lake-storage-gen1-from-vms-with-restricted-connectivity) учетных записей. Создайте отдельную запись для каждого адреса.
 
 ```azurecli
 # Create a route table for your resource group.
@@ -65,7 +65,7 @@ az network vnet subnet update --vnet-name $VnetName --name $SubnetName --resourc
 Рекомендуется использовать в виртуальной сети брандмауэр, чтобы фильтровать исходящий трафик на основе URL-адреса учетной записи назначения. Разрешать доступ следует только авторизованным учетным записям ADLS 1-го поколения.
 
 Ниже приведены некоторые доступные варианты.
-- [Брандмауэр Azure.](https://docs.microsoft.com/azure/firewall/overview) Вы можете [развернуть и настроить службу "Брандмауэр Azure"](https://docs.microsoft.com/azure/firewall/tutorial-firewall-deploy-portal) для виртуальной сети. Чтобы защитить исходящий трафик ADLS и ограничить его URL-адресом известной авторизованной учетной записи.
+- [Брандмауэр Azure.](../firewall/overview.md) Вы можете [развернуть и настроить службу "Брандмауэр Azure"](../firewall/tutorial-firewall-deploy-portal.md) для виртуальной сети. Чтобы защитить исходящий трафик ADLS и ограничить его URL-адресом известной авторизованной учетной записи.
 - [Брандмауэр сетевого виртуального модуля.](https://azure.microsoft.com/solutions/network-appliances/) Администратор может разрешить использовать только определенных поставщиков коммерческих брандмауэров. Решение брандмауэра сетевого виртуального модуля, доступное в Azure Marketplace, можно использовать для выполнения той же функции.
 
 > [!NOTE]
@@ -77,7 +77,7 @@ az network vnet subnet update --vnet-name $VnetName --name $SubnetName --resourc
  
 - При создании кластера HDInsight выбор учетной записи ADLS 1-го поколения со включенной интеграцией с виртуальной сетью вызовет сбой процесса. Сначала необходимо отключить правило виртуальной сети. Кроме того, можно в колонке **Брандмауэр и виртуальные сети** учетной записи Data Lake Storage выбрать **Allow access from all networks and services** (Разрешить доступ из всех сетей и служб). Затем создайте кластер HDInsight, прежде чем повторно включать правило виртуальной сети или отменять выбор параметра **Allow access from all networks and services** (Разрешить доступ из всех сетей и служб). Дополнительные сведения см. в разделе [Исключения](#exceptions).
 
-- Интеграция Data Lake Storage 1-го поколения с виртуальной сетью не поддерживает [управляемые удостоверения ресурсов Azure](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview).
+- Интеграция Data Lake Storage 1-го поколения с виртуальной сетью не поддерживает [управляемые удостоверения ресурсов Azure](../active-directory/managed-identities-azure-resources/overview.md).
   
 - Данные файлов и папок в учетной записи ADLS 1-го поколения с поддержкой интеграции с виртуальной сетью недоступны на портале. Это включает доступ из виртуальной машины, которая находится в пределах виртуальной сети, и такие действия, как использование обозревателя данных. Действия по управлению учетными записями будут работать. Данные файлов и папок в учетной записи ADLS с интеграцией с виртуальной сетью доступны через все ресурсы вне портала. Это пакет SDK для доступа, скрипты PowerShell, другие службы Azure (когда поступают не с портала) и т. д. 
 
@@ -87,7 +87,7 @@ az network vnet subnet update --vnet-name $VnetName --name $SubnetName --resourc
 
 1.  Перейдите на портал Azure и войдите, используя свою учетную запись Azure.
  
-2.  [Создайте виртуальную сеть](https://docs.microsoft.com/azure/virtual-network/quick-create-portal) в подписке. Вы можете использовать имеющуюся. Виртуальная сеть должна находиться в том же регионе, что и учетная запись ADLS 1-го поколения.
+2.  [Создайте виртуальную сеть](../virtual-network/quick-create-portal.md) в подписке. Вы можете использовать имеющуюся. Виртуальная сеть должна находиться в том же регионе, что и учетная запись ADLS 1-го поколения.
  
 3.  В колонке **Виртуальная сеть** выберите **Конечные точки службы**.
  

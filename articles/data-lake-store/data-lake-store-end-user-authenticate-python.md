@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 05/29/2018
 ms.author: twooley
 ms.custom: has-adal-ref, devx-track-python
-ms.openlocfilehash: c3262a2802da8dbd50fc05f7aa2fea71623c9b42
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c7ee58dec4e8bc04eb07695378e0d4dc973b6705
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87872197"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92109091"
 ---
 # <a name="end-user-authentication-with-azure-data-lake-storage-gen1-using-python"></a>Проверка подлинности пользователей в Azure Data Lake Storage 1-го поколения с помощью Python
 > [!div class="op_single_selector"]
@@ -44,7 +44,7 @@ ms.locfileid: "87872197"
 
 * Модуль `azure-mgmt-resource`, который включает в себя модули Azure для Active Directory и т. д.
 * Модуль `azure-mgmt-datalake-store`, который включает в себя операции по управлению учетной записью Azure Data Lake Storage 1-го поколения. Дополнительные сведения см. в [справочнике по модулю управления Azure Data Lake Storage 1-го поколения](/python/api/azure-mgmt-datalake-store/).
-* Модуль `azure-datalake-store`, который включает в себя операции с файловой системой Azure Data Lake Storage 1-го поколения. Дополнительные сведения об этом модуле см. в статье [Справочник по модулю файловой системы Azure-Lake-Store](https://docs.microsoft.com/python/api/azure-datalake-store/azure.datalake.store.core/).
+* Модуль `azure-datalake-store`, который включает в себя операции с файловой системой Azure Data Lake Storage 1-го поколения. Дополнительные сведения об этом модуле см. в статье [Справочник по модулю файловой системы Azure-Lake-Store](/python/api/azure-datalake-store/azure.datalake.store.core/).
 
 Чтобы установить модули, используйте следующие команды.
 
@@ -115,7 +115,7 @@ adlCreds = lib.auth(tenant_id='FILL-IN-HERE', resource = 'https://datalake.azure
 
 Мы не рекомендуем использовать этот метод. Дополнительные сведения см. в руководстве по [аутентификации в Azure с помощью пакета SDK для Python](/azure/python/python-sdk-azure-authenticate).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В этой статье вы узнали, как использовать проверку подлинности пользователей, чтобы реализовать проверку подлинности в Data Lake Storage 1-го поколения с помощью Python. Дополнительные сведения об использовании Python для работы с Azure Data Lake Storage 1-го поколения см. в следующих статьях.
 
 * [Операции управления учетными записями в Data Lake Storage 1-го поколения c использованием Python](data-lake-store-get-started-python.md)

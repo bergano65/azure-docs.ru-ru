@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
 manager: eliotgra
-ms.openlocfilehash: ed06aef4d494fbdce5a07c5bc50bad9737ba5433
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 957cea854b9894b3149a0e292b8072b73875cae5
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86497052"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92127086"
 ---
 # <a name="tutorial-build-a-power-bi-provider-dashboard"></a>Руководство по Создание панели мониторинга для поставщика Power BI
 
@@ -44,14 +44,14 @@ ms.locfileid: "86497052"
 
 * Шаблон приложения Azure IoT Central для непрерывного мониторинга состояния пациентов. Если у вас его еще нет, вы можно выполнить [процедуру развертывания шаблона приложения](overview-iot-central-healthcare.md).
 
-* [Пространство имен Центров событий и Центр событий](https://docs.microsoft.com/azure/event-hubs/event-hubs-create) в Azure.
+* [Пространство имен Центров событий и Центр событий](../../event-hubs/event-hubs-create.md) в Azure.
 
-* Приложение логики, из которого нужен доступ к Центру событий. Чтобы запускать приложение логики с помощью триггера Центров событий Azure, требуется [пустое приложение логики](https://docs.microsoft.com/azure/logic-apps/quickstart-create-first-logic-app-workflow).
+* Приложение логики, из которого нужен доступ к Центру событий. Чтобы запускать приложение логики с помощью триггера Центров событий Azure, требуется [пустое приложение логики](../../logic-apps/quickstart-create-first-logic-app-workflow.md).
 
-* Учетная запись службы Power BI. Если у вас ее еще нет, можно [создать бесплатную пробную учетную запись для службы Power BI](https://app.powerbi.com/). Если вы еще не работали с Power BI, вам может пригодиться руководство [Начало работы с Power BI](https://docs.microsoft.com/power-bi/service-get-started).
+* Учетная запись службы Power BI. Если у вас ее еще нет, можно [создать бесплатную пробную учетную запись для службы Power BI](https://app.powerbi.com/). Если вы еще не работали с Power BI, вам может пригодиться руководство [Начало работы с Power BI](/power-bi/service-get-started).
 
 ## <a name="set-up-a-continuous-data-export-to-azure-event-hubs"></a>Настройка непрерывного экспорта данных в Центры событий Azure
-Для начала необходимо настроить непрерывный экспорт данных из шаблона приложения Azure IoT Central в Центр событий Azure, размещенный в вашей подписке. Для этого можно выполнить действия, описанные в руководстве по [экспорту в Центры событий](https://docs.microsoft.com/azure/iot-central/core/howto-export-data) для Azure IoT Central. Экспортировать придется только те данные телеметрии, которые нужны для работы с этим руководством.
+Для начала необходимо настроить непрерывный экспорт данных из шаблона приложения Azure IoT Central в Центр событий Azure, размещенный в вашей подписке. Для этого можно выполнить действия, описанные в руководстве по [экспорту в Центры событий](../core/howto-export-data.md) для Azure IoT Central. Экспортировать придется только те данные телеметрии, которые нужны для работы с этим руководством.
 
 ## <a name="create-a-power-bi-streaming-dataset"></a>Создание набора данных для потоковой передачи в Power BI
 
@@ -72,10 +72,10 @@ ms.locfileid: "86497052"
     >[!div class="mx-imgBorder"] 
     >![Ввод значений для набора данных](media/enter-dataset-values.png)
 
-Дополнительные сведения о наборах данных для потоковой передачи в Power BI см. в документе [о потоковой передаче в реальном времени в Power BI](https://docs.microsoft.com/power-bi/service-real-time-streaming).
+Дополнительные сведения о наборах данных для потоковой передачи в Power BI см. в документе [о потоковой передаче в реальном времени в Power BI](/power-bi/service-real-time-streaming).
 
 ## <a name="connect-your-logic-app-to-azure-event-hubs"></a>Подключение приложения логики к Центрам событий Azure
-Чтобы подключить приложение логики к Центрам событий Azure, выполните инструкции из документа [об отправке событий с помощью Центров событий Azure и Azure Logic Apps](https://docs.microsoft.com/azure/connectors/connectors-create-api-azure-event-hubs#add-event-hubs-action). Ниже перечислены некоторые рекомендуемые параметры.
+Чтобы подключить приложение логики к Центрам событий Azure, выполните инструкции из документа [об отправке событий с помощью Центров событий Azure и Azure Logic Apps](../../connectors/connectors-create-api-azure-event-hubs.md#add-event-hubs-action). Ниже перечислены некоторые рекомендуемые параметры.
 
 |Параметр|Значение|
 |---|---|
@@ -91,7 +91,7 @@ ms.locfileid: "86497052"
 ## <a name="stream-data-to-power-bi-from-your-logic-app"></a>Потоковая передача данных в Power BI из приложения логики
 Следующим шагом будет анализ данных, поступающих из Центра событий, для последующей потоковой передачи в созданные ранее наборы данных Power BI.
 
-1. Чтобы это выполнить, вам нужно разобраться в формате полезных данных JSON, которые передаются с устройства в Центр событий. Для этого изучите [этот пример схемы](https://docs.microsoft.com/azure/iot-central/core/howto-export-data#telemetry) и измените его в соответствии со своем схемой или изучите сообщения с помощью [обозревателя служебной шины](https://github.com/paolosalvatori/ServiceBusExplorer). Если вы используете приложения для непрерывного мониторинга состояния пациентов, сообщения будут выглядеть следующим образом:
+1. Чтобы это выполнить, вам нужно разобраться в формате полезных данных JSON, которые передаются с устройства в Центр событий. Для этого изучите [этот пример схемы](../core/howto-export-data.md#telemetry-format) и измените его в соответствии со своем схемой или изучите сообщения с помощью [обозревателя служебной шины](https://github.com/paolosalvatori/ServiceBusExplorer). Если вы используете приложения для непрерывного мониторинга состояния пациентов, сообщения будут выглядеть следующим образом:
 
 **Данные телеметрии Smart Vitals Patch**
 

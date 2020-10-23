@@ -16,12 +16,12 @@ ms.date: 06/18/2020
 ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0126c5348a2acaebea0400a94ca0a1d14a1bf6ff
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9c1734af799ee473d6ba75fe2e8ab8429afa51d0
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90707549"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92318193"
 ---
 # <a name="create-a-new-access-package-in-azure-ad-entitlement-management"></a>Создание нового пакета Access в управлении назначением Azure AD
 
@@ -135,13 +135,13 @@ ms.locfileid: "90707549"
 
 Пакет Access также можно создать с помощью Microsoft Graph.  Пользователь в соответствующей роли с приложением с делегированным `EntitlementManagement.ReadWrite.All` разрешением может вызывать API для
 
-1. [Перечислите акцесспаккажересаурцес в каталоге](https://docs.microsoft.com/graph/api/accesspackagecatalog-list?view=graph-rest-beta&tabs=http) и [Создайте акцесспаккажересаурцерекуест](https://docs.microsoft.com/graph/api/accesspackageresourcerequest-post?view=graph-rest-beta&tabs=http) для всех ресурсов, которые еще не находятся в каталоге.
-1. [Перечислите акцесспаккажересаурцеролес](https://docs.microsoft.com/graph/api/accesspackage-list-accesspackageresourcerolescopes?view=graph-rest-beta&tabs=http) каждого Акцесспаккажересаурце в акцесспаккажекаталог. Этот список ролей будет использоваться для выбора роли при последующем создании Акцесспаккажересаурцеролескопе.
-1. [Создайте акцесспаккаже](https://docs.microsoft.com/graph/tutorial-access-package-api?view=graph-rest-beta).
-1. [Создайте акцесспаккажеассигнментполици](https://docs.microsoft.com/graph/api/accesspackageassignmentpolicy-post?view=graph-rest-beta&tabs=http).
-1. [Создайте акцесспаккажересаурцеролескопе](https://docs.microsoft.com/graph/api/accesspackage-post-accesspackageresourcerolescopes?view=graph-rest-beta&tabs=http) для каждой роли ресурса, необходимой для пакета доступа.
+1. [Перечислите акцесспаккажересаурцес в каталоге](/graph/api/accesspackagecatalog-list?tabs=http&view=graph-rest-beta) и [Создайте акцесспаккажересаурцерекуест](/graph/api/accesspackageresourcerequest-post?tabs=http&view=graph-rest-beta) для всех ресурсов, которые еще не находятся в каталоге.
+1. [Перечислите акцесспаккажересаурцеролес](/graph/api/accesspackage-list-accesspackageresourcerolescopes?tabs=http&view=graph-rest-beta) каждого Акцесспаккажересаурце в акцесспаккажекаталог. Этот список ролей будет использоваться для выбора роли при последующем создании Акцесспаккажересаурцеролескопе.
+1. [Создайте акцесспаккаже](/graph/tutorial-access-package-api?view=graph-rest-beta).
+1. [Создайте акцесспаккажеассигнментполици](/graph/api/accesspackageassignmentpolicy-post?tabs=http&view=graph-rest-beta).
+1. [Создайте акцесспаккажересаурцеролескопе](/graph/api/accesspackage-post-accesspackageresourcerolescopes?tabs=http&view=graph-rest-beta) для каждой роли ресурса, необходимой для пакета доступа.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Ссылка на общий доступ для запроса пакета Access](entitlement-management-access-package-settings.md)
 - [Изменение ролей ресурсов для пакета Access](entitlement-management-access-package-resources.md)

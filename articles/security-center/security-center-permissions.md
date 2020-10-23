@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: overview
 ms.date: 07/02/2020
 ms.author: memildin
-ms.openlocfilehash: 2a66873d558495049c97b987dfb69bbf83b4e1d8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2edaf6dd139ed4612b91d3a19c3d1398d5afdec1
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91439481"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92340365"
 ---
 # <a name="permissions-in-azure-security-center"></a>Разрешения в центре безопасности Azure
 
@@ -62,4 +62,4 @@ ms.locfileid: "91439481"
 - [Управление рекомендациями по безопасности в Центре безопасности](security-center-recommendations.md)
 - [Отслеживание работоспособности защиты ресурсов Azure](security-center-monitoring.md)
 - [Управление оповещениями системы безопасности и управление ими в центре безопасности](security-center-managing-and-responding-alerts.md)
-- [Мониторинг партнерских решений безопасности](security-center-partner-solutions.md)
+- [Мониторинг партнерских решений безопасности](./security-center-partner-integration.md)

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/28/2019
 ms.author: jeedes
-ms.openlocfilehash: eecd7281c925fa26ade3aa140df310e69f3385c8
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 123b85905a5c56949a0c1d35bb1e37215ed8097c
+ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88554738"
+ms.lasthandoff: 10/11/2020
+ms.locfileid: "91940724"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-mixpanel"></a>Руководство. Интеграция Azure Active Directory с Mixpanel
 
@@ -130,15 +130,15 @@ ms.locfileid: "88554738"
 
 3. Откройте вкладку **Access security** (Безопасность доступа) и щелкните **Change settings** (Изменить параметры).
    
-    ![Параметры Mixpanel](./media/mixpanel-tutorial/tutorial_mixpanel_08.png) 
+    ![Снимок экрана: вкладка Access security (Безопасность доступа), на которой можно изменить параметры.](./media/mixpanel-tutorial/tutorial_mixpanel_08.png) 
 
 4. На странице диалогового окна **Change your certificate** (Изменение сертификата) щелкните **Choose file** (Выбрать файл), чтобы передать скачанный сертификат, а затем щелкните **Next** (Далее).
    
-    ![Параметры Mixpanel](./media/mixpanel-tutorial/tutorial_mixpanel_09.png) 
+    ![Снимок экрана: диалоговое окно изменения сертификата, в котором можно выбрать файл сертификата.](./media/mixpanel-tutorial/tutorial_mixpanel_09.png) 
 
 5.  В текстовом поле URL-адреса аутентификации диалоговой страницы **Change your authentication URL** (Изменение URL-адреса аутентификации) вставьте значение **URL-адрес входа**, скопированное с портала Azure, и щелкните **NEXT** (Далее).
    
-    ![Параметры Mixpanel](./media/mixpanel-tutorial/tutorial_mixpanel_10.png) 
+    ![Снимок экрана: панель для изменения URL-адреса аутентификации, где можно скопировать этот URL-адрес.](./media/mixpanel-tutorial/tutorial_mixpanel_10.png) 
 
 6. Нажмите кнопку **Done**(Готово).
 
@@ -205,7 +205,7 @@ ms.locfileid: "88554738"
 
 4. В текстовое поле **член команды** введите электронный адрес пользователя Britta Simon на портале Azure.
    
-    ![Параметры Mixpanel](./media/mixpanel-tutorial/tutorial_mixpanel_11.png) 
+    ![Снимок экрана: вкладка Team (Команда), на которой добавляется адрес для приглашения.](./media/mixpanel-tutorial/tutorial_mixpanel_11.png) 
 
 5. Нажмите кнопку **Пригласить**. 
 

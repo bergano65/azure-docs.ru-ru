@@ -7,18 +7,18 @@ ms.topic: overview
 ms.custom: devx-track-dotnet
 ms.date: 11/13/2019
 ms.author: zhshang
-ms.openlocfilehash: 5d6b46e288007bc0bbac53a97b1bdd5e727b8ac8
-ms.sourcegitcommit: ada9a4a0f9d5dbb71fc397b60dc66c22cf94a08d
+ms.openlocfilehash: 910de9efbd132fb98a0c4bd596867800f65f5ad5
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91405128"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92150956"
 ---
 # <a name="azure-signalr-service-faq"></a>Вопросы и ответы о Службе SignalR Azure
 
 ## <a name="is-azure-signalr-service-ready-for-production-use"></a>Готова ли Служба Azure SignalR для использования в рабочей среде?
 
-Да, поддержка SignalR для [ASP.NET Core](https://dotnet.microsoft.com/apps/aspnet/signalr) и [ASP.NET](https://docs.microsoft.com/aspnet/signalr/overview/getting-started/introduction-to-signalr) является общедоступной.
+Да, поддержка SignalR для [ASP.NET Core](https://dotnet.microsoft.com/apps/aspnet/signalr) и [ASP.NET](/aspnet/signalr/overview/getting-started/introduction-to-signalr) является общедоступной.
 
 ## <a name="when-there-are-multiple-application-servers-are-client-messages-sent-to-all-servers-or-just-one-of-them"></a>При наличии нескольких серверов приложений клиентские сообщения отправляются на все серверы или только на один из них?
 
@@ -48,7 +48,7 @@ ms.locfileid: "91405128"
 
 Служба Azure SignalR предоставляет все три типа транспортировки, которые поддерживает ASP.NET Core SignalR по умолчанию. Этот параметр не настраивается. Служба Azure SignalR будет обрабатывать подключения и транспортировки для всех клиентских подключений.
 
-Настройка транспортировок на стороне клиента описана в статье [Конфигурация SignalR для ASP.NET Core](https://docs.microsoft.com/aspnet/core/signalr/configuration#configure-allowed-transports-1).
+Настройка транспортировок на стороне клиента описана в статье [Конфигурация SignalR для ASP.NET Core](/aspnet/core/signalr/configuration#configure-allowed-transports-1).
 
 ## <a name="what-is-the-meaning-of-metrics-like-message-count-or-connection-count-shown-in-the-azure-portal-which-kind-of-aggregation-type-should-i-choose"></a>Что означают такие метрики, как количество сообщений или количество подключений, отображаемые на портале Azure? Какой тип агрегирования мне выбрать?
 

@@ -1,22 +1,22 @@
 ---
-title: Перенос приложения Android | Microsoft Azure Maps
-description: Как перенести приложение Android из Google Карт в Microsoft Azure Maps
+title: Руководство по переносу приложения Android | Microsoft Azure Maps
+description: В руководстве показано, как перенести приложение Android из Google Карт в Microsoft Azure Maps.
 author: rbrundritt
 ms.author: richbrun
 ms.date: 08/19/2020
-ms.topic: how-to
+ms.topic: tutorial
 ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: ''
-ms.openlocfilehash: 96f68bdf58d9cc98815e4ae76ae01da87c38dc88
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b493b78971b7e802d82e8f61203abdaaca527016
+ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/09/2020
-ms.locfileid: "91319645"
+ms.locfileid: "91873886"
 ---
-# <a name="migrate-an-android-app-from-google-maps"></a>Перенос приложения Android из Google Карт
+# <a name="tutorial---migrate-an-android-app-from-google-maps"></a>Руководство по переносу приложения Android из Google Карт
 
 Пакет SDK Azure Maps для Android содержит интерфейс API, который похож на веб-пакет SDK. Если вы использовали один из таких пакетов SDK для разработки, большинство основных понятий, рекомендаций и архитектур будут аналогичными.
 

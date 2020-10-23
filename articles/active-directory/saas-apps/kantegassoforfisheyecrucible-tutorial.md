@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 04/16/2019
 ms.author: jeedes
-ms.openlocfilehash: ce5572c4c5aca6f48496250c942d50b90551f36f
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 6742253ad815ab8058a9c05d82200e77d9d18a43
+ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88546949"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91946007"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-kantega-sso-for-fisheyecrucible"></a>Руководство по интеграции Azure Active Directory с Kantega SSO for FishEye/Crucible
 
@@ -99,7 +99,7 @@ ms.locfileid: "88546949"
 
 4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа для приложения Kantega SSO for FishEye/Crucible](common/idp-intiated.png)
+    ![Снимок экрана: раздел "Базовая конфигурация SAML" с выбранными полями "Идентификатор", "URL-адрес ответа" и кнопкой "Сохранить".](common/idp-intiated.png)
 
     а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<server-base-url>/plugins/servlet/no.kantega.saml/sp/<uniqueid>/login`.
 
@@ -134,43 +134,43 @@ ms.locfileid: "88546949"
 
 1. Наведите указатель мыши на шестеренку и щелкните **Add-ons** (Надстройки).
 
-    ![Настройка единого входа](./media/kantegassoforfisheyecrucible-tutorial/addon1.png)
+    ![Снимок экрана: выбранные значок шестеренки и пункт "Надстройки".](./media/kantegassoforfisheyecrucible-tutorial/addon1.png)
 
 1. В разделе "System Settings" (Параметры системы) щелкните **Find new add-ons** (Найти новые надстройки). 
 
-    ![Настройка единого входа](./media/kantegassoforfisheyecrucible-tutorial/add-on2.png)
+    ![Снимок экрана: выбранный раздел System Settings (Параметры системы) с пунктом Find new add-ons (Найти новые надстройки).](./media/kantegassoforfisheyecrucible-tutorial/add-on2.png)
 
 1. Найдите подключаемый модуль **Kantega SSO for Crucible (SAML & Kerberos)** и нажмите кнопку **Install** (Установить), чтобы установить новый подключаемый модуль SAML.
 
-    ![Настройка единого входа](./media/kantegassoforfisheyecrucible-tutorial/addon2.png)
+    ![Снимок экрана: страница Attlasian Marketplace for FishEye с модулем Kantega SSO for Crucible в поле поиска и выбранной кнопкой Install (Установить).](./media/kantegassoforfisheyecrucible-tutorial/addon2.png)
 
 1. Начнется установка подключаемого модуля. 
 
-    ![Настройка единого входа](./media/kantegassoforfisheyecrucible-tutorial/addon33.png)
+    ![Снимок экрана: диалоговое окно установки для подключаемого модуля.](./media/kantegassoforfisheyecrucible-tutorial/addon33.png)
 
 1. Установка завершится. Щелкните **Закрыть**.
 
-    ![Настройка единого входа](./media/kantegassoforfisheyecrucible-tutorial/addon34.png)
+    ![Снимок экрана: диалоговое окно установки и готовности к использованию и выбранная кнопка Close (Закрыть).](./media/kantegassoforfisheyecrucible-tutorial/addon34.png)
 
 1.  Нажмите кнопку **Управление**.
 
-    ![Настройка единого входа](./media/kantegassoforfisheyecrucible-tutorial/addon35.png)
+    ![Снимок экрана: страница приложения Kantega SSO for Crucible SAML & Kerberos с выбранной кнопкой управления.](./media/kantegassoforfisheyecrucible-tutorial/addon35.png)
 
 1. Щелкните **Configure** (Настройка), чтобы настроить новый подключаемый модуль. 
 
-    ![Настройка единого входа](./media/kantegassoforfisheyecrucible-tutorial/addon3.png)
+    ![Снимок экрана: страница установленных пользователем надстроек с выбранной кнопкой Configure (Настроить).](./media/kantegassoforfisheyecrucible-tutorial/addon3.png)
 
 1. В разделе **SAML** сделайте следующее. Выберите **Azure Active Directory (Azure AD)** из раскрывающегося списка **Добавление поставщика удостоверений**.
 
-    ![Настройка единого входа](./media/kantegassoforfisheyecrucible-tutorial/addon4.png)
+    ![Снимок экрана: страница надстроек Kantega Single Sign-on с выбранным пунктом Azure Active Directory (Azure AD) из раскрывающегося списка добавления поставщика удостоверений. ](./media/kantegassoforfisheyecrucible-tutorial/addon4.png)
 
 1. Выберите уровень подписки **Базовый**.
 
-    ![Настройка единого входа](./media/kantegassoforfisheyecrucible-tutorial/addon5.png)
+    ![Снимок экрана: раздел Preparing Azure AD (Подготовка Azure AD) с выбранным параметром Basic (Базовый).](./media/kantegassoforfisheyecrucible-tutorial/addon5.png)
 
 1. В разделе **Свойства приложения** выполните следующие действия.
 
-    ![Настройка единого входа](./media/kantegassoforfisheyecrucible-tutorial/addon6.png)
+    ![Снимок экрана: раздел App properties (Свойства приложения) с выбранными текстовым полем URL-адреса идентификатора приложения и кнопкой копирования.](./media/kantegassoforfisheyecrucible-tutorial/addon6.png)
 
     а. Скопируйте значение **App ID URI** (URI кода приложения) и используйте его как **идентификатор, URL-адрес ответа и URL-адрес входа** в разделе **Базовая конфигурация SAML** на портале Azure.
 
@@ -178,7 +178,7 @@ ms.locfileid: "88546949"
 
 1. В разделе **Metadata import** (Импорт метаданных) выполните следующие действия.
 
-    ![Настройка единого входа](./media/kantegassoforfisheyecrucible-tutorial/addon7.png)
+    ![Снимок экрана: раздел импорта метаданных с выбранным параметром Metadata file on my computer (Файл метаданных на моем компьютере).](./media/kantegassoforfisheyecrucible-tutorial/addon7.png)
 
     а. Щелкните **Metadata file on my computer** (Файл метаданных на моем компьютере) и передайте файл метаданных, который вы скачали с портала Azure.
 
@@ -186,7 +186,7 @@ ms.locfileid: "88546949"
 
 1. В разделе **Name and SSO location** (Имя и расположение единого входа) выполните следующее.
 
-    ![Настройка единого входа](./media/kantegassoforfisheyecrucible-tutorial/addon8.png)
+    ![Снимок экрана: раздел имени и расположения единого входа с выбранными текстовым полем Identity provider name (Имя поставщика удостоверений) и кнопкой Next (Далее).](./media/kantegassoforfisheyecrucible-tutorial/addon8.png)
 
     а. В текстовом поле **Provider Name** (Имя поставщика) введите имя поставщика (например, Azure AD).
 
@@ -194,11 +194,11 @@ ms.locfileid: "88546949"
 
 1. Проверьте сертификат для подписи и нажмите кнопку **Next** (Далее).   
 
-    ![Настройка единого входа](./media/kantegassoforfisheyecrucible-tutorial/addon9.png)
+    ![Снимок экрана: сведения раздела проверки подписи с выбранной кнопкой Next (Далее).](./media/kantegassoforfisheyecrucible-tutorial/addon9.png)
 
 1. В разделе **FishEye user accounts** (Учетные записи пользователей FishEye) выполните следующие действия.
 
-    ![Настройка единого входа](./media/kantegassoforfisheyecrucible-tutorial/addon10.png)
+    ![Снимок экрана: раздел учетных записей пользователей FishEye с выделенными параметром Create users in FishEye's Internal Directory if needed (При необходимости создать пользователей во внутреннем каталоге FishEye) и кнопкой Next (Далее).](./media/kantegassoforfisheyecrucible-tutorial/addon10.png)
 
     а. Щелкните переключатель **Create users in FishEye's internal Directory if needed** (При необходимости создать пользователей во внутреннем каталоге FishEye) и введите соответствующее имя группы пользователей (это может быть несколько групп, разделенных запятой).
 
@@ -206,11 +206,11 @@ ms.locfileid: "88546949"
 
 1. Нажмите кнопку **Готово**.
 
-    ![Настройка единого входа](./media/kantegassoforfisheyecrucible-tutorial/addon11.png)
+    ![Снимок экрана: раздел сводки с выбранной кнопкой Finish (Готово).](./media/kantegassoforfisheyecrucible-tutorial/addon11.png)
 
 1. В разделе **Known domains for Azure AD** (Известные домены для Azure AD) выполните следующие действия.  
 
-    ![Настройка единого входа](./media/kantegassoforfisheyecrucible-tutorial/addon12.png)
+    ![Снимок экрана: раздел известных доменов для Azure AD с выбранной кнопкой Save (Сохранить).](./media/kantegassoforfisheyecrucible-tutorial/addon12.png)
 
     а. Щелкните **Known domains** (Известные домены) на левой панели страницы.
 
@@ -278,11 +278,11 @@ ms.locfileid: "88546949"
 
 1. Наведите указатель мыши на шестеренку и щелкните **Users** (Пользователи).
 
-    ![Добавление сотрудника](./media/kantegassoforfisheyecrucible-tutorial/user1.png)
+    ![Снимок экрана: выбранные в раскрывающемся меню значок шестеренки и пункт Users (Пользователи).](./media/kantegassoforfisheyecrucible-tutorial/user1.png)
 
 1. В разделе **Users** (Пользователи) щелкните **Add user** (Добавить пользователя).
 
-    ![Добавление сотрудника](./media/kantegassoforfisheyecrucible-tutorial/user2.png)
+    ![Снимок экрана: раздел Users (Пользователи) с выбранной кнопкой Add user (Добавить пользователя).](./media/kantegassoforfisheyecrucible-tutorial/user2.png)
 
 1. На странице диалогового окна **Add New User** (Добавление нового пользователя) выполните следующие действия.
 

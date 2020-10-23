@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 08/20/2019
 ms.author: robinsh
 ms.custom: mqtt, devx-track-csharp
-ms.openlocfilehash: d99cc571394ad7a9c85fb7367c672f96a7302362
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0391afe5562238f488fde7e50d914c46a5c32944
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89018507"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92142453"
 ---
 # <a name="schedule-and-broadcast-jobs-net"></a>Планирование и трансляция заданий (.NET)
 
@@ -261,7 +261,7 @@ ms.locfileid: "89018507"
     ```
 
     > [!NOTE]
-    > Дополнительные сведения о синтаксисе запросов см. в статье [Язык запросов Центра Интернета вещей для двойников устройств и двойников модулей, заданий и маршрутизации сообщений](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-query-language).
+    > Дополнительные сведения о синтаксисе запросов см. в статье [Язык запросов Центра Интернета вещей для двойников устройств и двойников модулей, заданий и маршрутизации сообщений](./iot-hub-devguide-query-language.md).
     >
 
 1. Наконец, добавьте следующие строки в метод **Main** :
@@ -311,4 +311,4 @@ ms.locfileid: "89018507"
 
 * Чтобы продолжить знакомство с Центром Интернета вещей и шаблонами управления устройствами, такими как удаленное обновление встроенного ПО, см. [Руководство по реализации процесса обновления встроенного ПО](tutorial-firmware-update.md).
 
-* Сведения о развертывании решений на базе искусственного интеллекта на пограничных устройствах с помощью Azure IoT Edge см. в руководстве [Развертывание первого модуля IoT Edge на устройстве под управлением 64-разрядной ОС Linux](../iot-edge/tutorial-simulate-device-linux.md).
+* Сведения о развертывании решений на базе искусственного интеллекта на пограничных устройствах с помощью Azure IoT Edge см. в руководстве [Развертывание первого модуля IoT Edge на устройстве под управлением 64-разрядной ОС Linux](../iot-edge/quickstart-linux.md).

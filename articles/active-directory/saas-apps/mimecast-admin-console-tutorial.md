@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 05/21/2020
 ms.author: jeedes
-ms.openlocfilehash: f3029acd791e7c45eb5943d298189430ac308e99
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 6a9599c20905168b425675d0b028545143c7d19f
+ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88528477"
+ms.lasthandoff: 10/11/2020
+ms.locfileid: "91941081"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-mimecast-admin-console"></a>Руководство по интеграции единого входа Azure Active Directory с консолью администрирования Mimecast
 
@@ -155,23 +155,23 @@ ms.locfileid: "88528477"
 
 1. Перейдите в раздел **Administration** > **Services** > **Applications** (Администрирование — Службы — Приложения).
 
-    ![Настройка консоли администрирования Mimecast](./media/mimecast-admin-console-tutorial/services.png)
+    ![Снимок экрана: окно Mimecast с выбранным пунктом Applications (Приложения)](./media/mimecast-admin-console-tutorial/services.png)
 
 1. Выберите вкладку **Authentication Profiles** (Профили проверки подлинности).
     
-    ![Настройка консоли администрирования Mimecast](./media/mimecast-admin-console-tutorial/authentication-profiles.png)
+    ![Снимок экрана: вкладка Authentication (Аутентификация) с выбранным параметром Authentication Profiles (Профили аутентификации)](./media/mimecast-admin-console-tutorial/authentication-profiles.png)
 
 1. Выберите вкладку **New Authentication Profile** (Новый профиль проверки подлинности).
 
-    ![Настройка консоли администрирования Mimecast](./media/mimecast-admin-console-tutorial/new-authenticatio-profile.png)
+    ![Снимок экрана: вкладка New Authentication Profile (Новый профиль аутентификации)](./media/mimecast-admin-console-tutorial/new-authenticatio-profile.png)
 
 1. Укажите допустимое описание в текстовом поле **Description** (Описание) и установите флажок **Enforce SAML Authentication for Administration Console** (Принудительная проверка подлинности SAML для консоли администрирования).
 
-    ![Настройка консоли администрирования Mimecast](./media/mimecast-admin-console-tutorial/selecting-admin-consle.png)
+    ![Снимок экрана: флажок Enforce SAML Authentication for Administration Console (Принудительная проверка подлинности SAML для консоли администрирования)](./media/mimecast-admin-console-tutorial/selecting-admin-consle.png)
 
 1. На странице **SAML Configuration for Administration Console** (Настройка SAML для консоли администрирования) сделайте следующее:
 
-    ![Настройка консоли администрирования Mimecast](./media/mimecast-admin-console-tutorial/sso-settings.png)
+    ![Снимок экрана: страница SAML Configuration for Administration Console (Настройка SAML для консоли администрирования)](./media/mimecast-admin-console-tutorial/sso-settings.png)
 
     а. Для **Provider** (Поставщик) выберите **Azure Active Directory**.
 
@@ -189,19 +189,19 @@ ms.locfileid: "88528477"
 
 1. Перейдите к разделу **Administration** > **Directories** > **Internal Directories** (Администрирование — Каталоги — Внутренние каталоги).
 
-    ![Настройка консоли администрирования Mimecast](./media/mimecast-admin-console-tutorial/internal-directories.png)
+    ![Снимок экрана: окно Mimecast с выбранным пунктом Internal Directories (Внутренние каталоги)](./media/mimecast-admin-console-tutorial/internal-directories.png)
 
 1. Если ниже указаны домены, выберите нужный, иначе создайте новый с помощью ссылки **New Domain**.
 
-    ![Настройка консоли администрирования Mimecast](./media/mimecast-admin-console-tutorial/domain-name.png)
+    ![Снимок экрана: выбранный домен](./media/mimecast-admin-console-tutorial/domain-name.png)
 
 1. Щелкните вкладку **New Address** (Новый адрес).
 
-    ![Настройка консоли администрирования Mimecast](./media/mimecast-admin-console-tutorial/new-address.png)
+    ![Снимок экрана: вкладка New Address (Новый адрес)](./media/mimecast-admin-console-tutorial/new-address.png)
 
 1. Введите обязательные сведения о пользователе на следующей странице.
 
-    ![Настройка консоли администрирования Mimecast](./media/mimecast-admin-console-tutorial/user-information.png)
+    ![Снимок экрана: страница для ввода описанных значений](./media/mimecast-admin-console-tutorial/user-information.png)
 
     а. В текстовом поле **Email address** (Адрес электронной почты) введите адрес электронной почты пользователя, например `B.Simon@yourdomainname.com`.
 
@@ -215,7 +215,7 @@ ms.locfileid: "88528477"
 
     е) Чтобы назначить пользователю роли, щелкните **Role Edit** (Изменить роли) и выберите роль, которая лучше всего соответствует требованиям вашей организации.
 
-    ![Настройка консоли администрирования Mimecast](./media/mimecast-admin-console-tutorial/assign-role.png)
+    ![Снимок экрана: раздел Address Settings (Параметры адреса) с пунктом Role Edit (Изменить роли)](./media/mimecast-admin-console-tutorial/assign-role.png)
 
 ## <a name="test-sso"></a>Проверка единого входа 
 

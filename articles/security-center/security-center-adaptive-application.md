@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/06/2020
 ms.author: memildin
-ms.openlocfilehash: c580dd26c64a27b88b4416e85da101b78782013e
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: ee5a88dfcc3b4ab29cd3ad8c5ff7c4701d1fced6
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92076986"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92339719"
 ---
 # <a name="use-adaptive-application-controls-to-reduce-your-machines-attack-surfaces"></a>Использование адаптивных элементов управления приложениями для сокращения поверхностей атак на компьютерах
 
@@ -52,7 +52,7 @@ ms.locfileid: "92076986"
 |----|:----|
 |Состояние выпуска:|Общедоступная версия (GA)|
 |Цены|Требуется [Azure Defender для серверов](defender-for-servers-introduction.md)|
-|Поддерживаемые компьютеры:|![Да ](./media/icons/yes-icon.png) , Azure и не-Azure компьютеры под управлением Windows и Linux<br>![Да ](./media/icons/yes-icon.png) машины в [Azure Arc](https://docs.microsoft.com/azure/azure-arc/)|
+|Поддерживаемые компьютеры:|![Да ](./media/icons/yes-icon.png) , Azure и не-Azure компьютеры под управлением Windows и Linux<br>![Да ](./media/icons/yes-icon.png) машины в [Azure Arc](../azure-arc/index.yml)|
 |Требуемые роли и разрешения|Роли " **читатель безопасности** " и " **читатель** " могут просматривать группы и списки известных приложений.<br>Роли администраторов **участников** и **безопасности** могут изменять группы и списки известных приложений.|
 |Облако.|![Да](./media/icons/yes-icon.png) Коммерческие облака<br>![Да](./media/icons/yes-icon.png) Национальные и независимые (US Gov, China Gov, другие правительственные облака)|
 |||
@@ -85,7 +85,7 @@ ms.locfileid: "92076986"
     - **Нет рекомендаций** — компьютеры без определенного списка разрешенных приложений, которые не поддерживают эту функцию. Компьютер может находиться на этой вкладке по следующим причинам:
       - Отсутствует агент Log Analytics
       - Агент Log Analytics не отправляет события
-      - Это компьютер Windows с предварительно существующей политикой [AppLocker](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) , включенной либо объектом групповой политики, либо локальной политикой безопасности.
+      - Это компьютер Windows с предварительно существующей политикой [AppLocker](/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) , включенной либо объектом групповой политики, либо локальной политикой безопасности.
 
       > [!TIP]
       > Чтобы определить уникальные рекомендации для каждой группы компьютеров, в центре безопасности требуется по крайней мере две недели данных. Компьютеры, которые были недавно созданы или принадлежат к подпискам, которые недавно были включены с помощью защитника Azure, будут отображаться на вкладке **без рекомендаций** .
@@ -224,7 +224,7 @@ ms.locfileid: "92076986"
 
 Чтобы программно управлять адаптивными элементами управления приложениями, используйте нашу REST API. 
 
-Полная документация по API приведена [здесь](https://docs.microsoft.com/rest/api/securitycenter/adaptiveapplicationcontrols).
+Полная документация по API приведена [здесь](/rest/api/securitycenter/adaptiveapplicationcontrols).
 
 Некоторые функции, доступные из REST API:
 
@@ -242,7 +242,7 @@ ms.locfileid: "92076986"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 В этом документе вы узнали, как использовать адаптивное управление приложениями в центре безопасности Azure для определения списков разрешенных приложений, выполняющихся на компьютерах с Azure и без Azure. Дополнительные сведения о других функциях защиты облачной рабочей нагрузки центра безопасности см. в следующих статьях:
 
 * [Основные сведения о JIT-доступе к виртуальной машине](just-in-time-explained.md)

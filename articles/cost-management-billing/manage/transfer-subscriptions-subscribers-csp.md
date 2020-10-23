@@ -8,12 +8,12 @@ ms.subservice: billing
 ms.topic: how-to
 ms.date: 09/24/2020
 ms.author: banders
-ms.openlocfilehash: d2d098c3a80bbbdb8c9fb64b25cc5967ee693046
-ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
+ms.openlocfilehash: ae504072e2a2cc481217933478ccbfb7bc3372b3
+ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91371411"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92132369"
 ---
 # <a name="transfer-azure-subscriptions-between-subscribers-and-csps"></a>Перенос подписок Azure между подписчиками и CSP
 
@@ -26,7 +26,7 @@ ms.locfileid: "91371411"
 После утверждения запроса CSP может предоставить своим клиентам объединенный счет. Дополнительные сведения о передаче подписок с помощью CSP см. в разделе [Get billing ownership of Azure subscriptions to your MPA account](mpa-request-ownership.md) (Получение права владения на выставление счетов в подписках Azure).
 
 >[!IMPORTANT]
-> После передачи подписки EA партнеру CSP все увеличения квоты, ранее сделанные в подписке EA, будут приведены к значениям по умолчанию. Если после передачи подписки требуется увеличить квоту, вашему поставщику CSP нужно отправить запрос на [увеличение квоты](https://docs.microsoft.com/azure/azure-portal/supportability/regional-quota-requests). 
+> После передачи подписки EA партнеру CSP все увеличения квоты, ранее сделанные в подписке EA, будут приведены к значениям по умолчанию. Если после передачи подписки требуется увеличить квоту, вашему поставщику CSP нужно отправить запрос на [увеличение квоты](../../azure-portal/supportability/regional-quota-requests.md). 
 
 ## <a name="other-subscription-transfers-to-a-csp-partner"></a>Передача другой подписки партнеру CSP
 
@@ -42,7 +42,7 @@ ms.locfileid: "91371411"
 1. Прежде чем начать, [проверьте](/rest/api/resources/resources/validatemoveresources), могут ли перемещаться ресурсы Azure из исходной подписки в целевую.  
     Некоторые ресурсы Azure не могут перемещаться между подписками. Полный список ресурсов Azure, которые можно переместить, см. в статье [Move operation support for resources](../../azure-resource-manager/management/move-support-resources.md) (Поддержка операции перемещения для ресурсов).
     > [!IMPORTANT]
-    >  - Azure CSP поддерживает только ресурсы Azure Resource Manager. Если какие бы то ни было ресурсы Azure в исходной подписке созданы с помощью классической модели развертывания Azure, перед миграцией их необходимо перенести в [Azure Resource Manager](https://docs.microsoft.com/azure/cloud-solution-provider/migration/ea-payg-to-azure-csp/ea-open-direct-asm-to-arm). Для просмотра веб-страницы необходимо быть партнером.
+    >  - Azure CSP поддерживает только ресурсы Azure Resource Manager. Если какие бы то ни было ресурсы Azure в исходной подписке созданы с помощью классической модели развертывания Azure, перед миграцией их необходимо перенести в [Azure Resource Manager](/azure/cloud-solution-provider/migration/ea-payg-to-azure-csp/ea-open-direct-asm-to-arm). Для просмотра веб-страницы необходимо быть партнером.
 
 1. Убедитесь, что все службы исходной подписки используют модель Azure Resource Manager. Затем перенесите ресурсы из исходной подписки в целевую с помощью [Перемещения ресурсов Azure](../../azure-resource-manager/management/move-resource-group-and-subscription.md).
     > [!IMPORTANT]

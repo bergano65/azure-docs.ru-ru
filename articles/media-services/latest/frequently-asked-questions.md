@@ -11,12 +11,12 @@ ms.workload: ''
 ms.topic: article
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: aa33319f146ac57ab4d253696c94308a43b5db2e
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: 50a0fe0fa5dece41ac9e343d5a8939e8d9dc634e
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92019619"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92426890"
 ---
 # <a name="media-services-v3-frequently-asked-questions"></a>Часто задаваемые вопросы о службах мультимедиа v3
 
@@ -24,7 +24,7 @@ ms.locfileid: "92019619"
 
 В этой статье приводятся ответы на часто задаваемые вопросы о службах мультимедиа Azure v3.
 
-## <a name="general"></a>Общие сведения
+## <a name="general"></a>Общее
 
 ### <a name="what-are-the-azure-portal-limitations-for-media-services-v3"></a>Каковы ограничения портал Azure для служб мультимедиа v3?
 
@@ -34,7 +34,7 @@ ms.locfileid: "92019619"
 
 ### <a name="what-azure-roles-can-perform-actions-on-azure-media-services-resources"></a>Какие роли Azure могут выполнять действия с ресурсами служб мультимедиа Azure? 
 
-См. раздел [Управление доступом на основе ролей (RBAC) для учетных записей служб мультимедиа](rbac-overview.md).
+[Учетные записи служб мультимедиа см. в статье Управление доступом на основе ролей Azure (Azure RBAC)](rbac-overview.md).
 
 ### <a name="how-do-i-stream-to-apple-ios-devices"></a>Разделы справки поток на устройства Apple iOS?
 
@@ -121,7 +121,7 @@ ms.locfileid: "92019619"
 
 Используйте API служб мультимедиа Azure для настройки доставки лицензий и ключей и шифрования ресурсов (как показано в [этом примере](https://github.com/Azure-Samples/media-services-v3-dotnet-tutorials/blob/master/AMSV3Tutorials/EncryptWithAES/Program.cs)).
 
-Дополнительные сведения можно найти в разделе
+Дополнительные сведения см. в разделе:
 
 - [Обзор системы защиты содержимого](content-protection-overview.md)
 - [Проектирование системы для защиты содержимого с несколькими подсистемами DRM и управлением доступом](design-multi-drm-system-with-access-control.md)

@@ -9,12 +9,12 @@ ms.author: twright
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: ba2d0acec37d0f59240381cdea04f4d53ded0b1c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a78c67892e2bccb7c98d680539a84c2cc1f49a95
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91273047"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92372299"
 ---
 # <a name="create-the-azure-arc-data-controller"></a>Создание контроллера данных ARC в Azure
 
@@ -39,7 +39,7 @@ ms.locfileid: "91273047"
 > * Минимальная поддерживаемая версия Kubernetes — v 1.14.
 > * Ознакомьтесь с [требованиями к подключению](connectivity.md) , чтобы узнать, какое подключение требуется для вашей среды и Azure.
 > * Сведения о настройке постоянного хранилища см. в [руководстве по настройке хранилища](storage-configuration.md) .
-> * Если вы используете службу Azure Kubernetes, размер виртуальной машины рабочего узла кластера должен быть не менее **Standard_D8s_v3** и использовать диски уровня " **Премиум".** 
+> * Если вы используете службу Azure Kubernetes, размер виртуальной машины рабочего узла кластера должен быть не менее **Standard_D8s_v3** и использовать диски уровня " **Премиум".** Кластер не должен охватывать несколько зон доступности. 
 > * Если вы используете другое Kubernetesное распространение или службу, следует убедиться в наличии минимального размера узла (8 ГБ ОЗУ и 4 ядер) и общей емкости 32 ГБ ОЗУ для всех узлов Kubernetes. Например, у вас может быть 1 узел с объемом ОЗУ 32 ГБ и 4 ядрами или иметь 2 узла с 16 ГБ ОЗУ и 4 ядрами.
 
 > [!NOTE]
@@ -65,7 +65,7 @@ ms.locfileid: "91273047"
 > **Хотите попробовать?**  
 > Быстро Начните работу с помощью [Azure Arc JumpStart](https://github.com/microsoft/azure_arc#azure-arc-enabled-data-services) в службе Azure Kubernetes Service (AKS), AWS эластичной Kubernetes Service (ЕКС), Google Cloud Kubernetes Engine (гке) или на виртуальной машине Azure.
 > 
-- [Создание контроллера данных с помощью Azure Data CLI (аздата)](create-data-controller-using-azdata.md)
+- [Создание контроллера данных с помощью [!INCLUDE [azure-data-cli-azdata](../../../includes/azure-data-cli-azdata.md)]](create-data-controller-using-azdata.md)
 - [Создание контроллера данных с Azure Data Studio](create-data-controller-azure-data-studio.md)
 - [Создание контроллера данных из портал Azure через записную книжку Jupyter в Azure Data Studio](create-data-controller-resource-in-azure-portal.md)
 - [Создание контроллера данных с помощью таких средств Kubernetes, как kubectl или OC](create-data-controller-using-kubernetes-native-tools.md)

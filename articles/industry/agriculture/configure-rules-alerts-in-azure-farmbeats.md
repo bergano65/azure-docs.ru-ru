@@ -5,12 +5,12 @@ author: uhabiba04
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: v-umha
-ms.openlocfilehash: 02373da114b6dc4663cd3ffc9a0780ac6a7a9e23
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5e6a5d414c341f482c3fddf95a2f8bb8e55a3ca2
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75482989"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92168551"
 ---
 # <a name="configure-rules-and-manage-alerts"></a>Настройка правил и управление оповещениями
 
@@ -21,12 +21,12 @@ Azure Фармбеатс позволяет создавать правила н
 1. На домашней странице перейдите к разделу **правила**.
 2. Выберите **новое правило**. Откроется окно Новое правило.
 
-    ![Проект FarmBeats](./media/configure-rules-and-alerts-in-azure-farmbeats/new-rule-1.png)
+    ![Снимок экрана, на котором выделена кнопка "создать правило" и раздел "новое правило".](./media/configure-rules-and-alerts-in-azure-farmbeats/new-rule-1.png)
 
 3. Введите **имя правила** и **Описание правила** , а затем выберите ферму из раскрывающегося меню **Выбор фермы** .
 4. Введите имя фермы, чтобы выбрать раздел "ферма и **условия** " в том же окне.  
 
-    ![Проект FarmBeats](./media/configure-rules-and-alerts-in-azure-farmbeats/new-rule-condition-1.png)
+    ![Снимок экрана, посвященный разделу условий.](./media/configure-rules-and-alerts-in-azure-farmbeats/new-rule-condition-1.png)
 
 5. В поле **условия**введите значения для **меры**, **operator** и **value**.
 6. В раскрывающемся меню **мера** введите имя меры.
@@ -34,7 +34,7 @@ Azure Фармбеатс позволяет создавать правила н
 8. Выберите **уровень серьезности**.
 9. В меню **действие**включите переключатель с **включенной электронной почтой** , чтобы включить оповещения по электронной почте.
 
-    ![Проект FarmBeats](./media/configure-rules-and-alerts-in-azure-farmbeats/new-rule-email-1.png)
+    ![Снимок экрана, на котором показан параметр "Электронная почта включена".](./media/configure-rules-and-alerts-in-azure-farmbeats/new-rule-email-1.png)
 
 10. Введите **адреса электронной почты** , на которые вы хотите отправить оповещение по электронной почте, а также **тему сообщения электронной** почты и **Дополнительные примечания**.  
 11. В поле **состояние правила**установите переключатель в положение **включено** , чтобы включить или отключить правило.
@@ -53,7 +53,7 @@ Azure Фармбеатс позволяет создавать правила н
  - Список условий  
  - Число устройств, затронутых правилом
 
-    ![Проект FarmBeats](./media/configure-rules-and-alerts-in-azure-farmbeats/view-rule-1.png)
+    ![Снимок экрана, на котором отображается экран сведений о правиле.](./media/configure-rules-and-alerts-in-azure-farmbeats/view-rule-1.png)
 
 ## <a name="edit-rule"></a>Изменение правила
 
@@ -63,11 +63,11 @@ Azure Фармбеатс позволяет создавать правила н
    Откроется окно правила.
 2. Выберите правило, для которого необходимо изменить значение.
 
-    ![Проект FarmBeats](./media/configure-rules-and-alerts-in-azure-farmbeats/edit-rule-action-bar-1.png)
+    ![Снимок экрана, на котором отображается выбранное правило.](./media/configure-rules-and-alerts-in-azure-farmbeats/edit-rule-action-bar-1.png)
 
 3. Выберите **изменить** на панели действий, откроется окно **Изменение правила** .
 
-    ![Проект FarmBeats](./media/configure-rules-and-alerts-in-azure-farmbeats/edit-rule-one-1.png)
+    ![Снимок экрана, на котором показан экран изменения правила.](./media/configure-rules-and-alerts-in-azure-farmbeats/edit-rule-one-1.png)
 
 4. Измените **имя правила**и **Описание правила** , а затем выберите ферму в раскрывающемся меню **Выбрать ферму** .
 5. Введите имя фермы, чтобы выбрать ферму, и **условия** отображаются в том же окне.  
@@ -75,7 +75,7 @@ Azure Фармбеатс позволяет создавать правила н
 7. В раскрывающемся меню **мера** введите имя меры.
 8. Выберите **+ Добавить условие** , чтобы добавить или изменить условия правил.
 
-    ![Проект FarmBeats](./media/configure-rules-and-alerts-in-azure-farmbeats/edit-rule-two-1.png)
+    ![Снимок экрана, на котором выделяется кнопка "добавить условие".](./media/configure-rules-and-alerts-in-azure-farmbeats/edit-rule-two-1.png)
 
 9.  Выберите **уровень серьезности**.  
 10. В меню **действие**включите переключатель с **включенной электронной почтой** , чтобы включить оповещения по электронной почте.
@@ -91,11 +91,11 @@ Azure Фармбеатс позволяет создавать правила н
 1. На домашней странице в меню навигации слева выберите **правила** . Откроется окно правила.
 2. Выберите правило, состояние которого необходимо изменить.
 
-    ![Проект FarmBeats](./media/configure-rules-and-alerts-in-azure-farmbeats/change-status-rule-action-bar-1.png)
+    ![Снимок экрана, на котором показана кнопка "изменить состояние".](./media/configure-rules-and-alerts-in-azure-farmbeats/change-status-rule-action-bar-1.png)
 
 3. Выберите **изменить состояние** на панели действий. Отобразится окно **состояние изменения** .
 
-    ![Проект FarmBeats](./media/configure-rules-and-alerts-in-azure-farmbeats/rule-change-status-1.png)
+    ![Снимок экрана, на котором отображается экран состояния изменения.](./media/configure-rules-and-alerts-in-azure-farmbeats/rule-change-status-1.png)
 
 3. Измените состояние правила с помощью переключателя **изменить состояние** .
    Вы можете просмотреть число устройств, на которые будет повлиять данное правило.
@@ -108,7 +108,7 @@ Azure Фармбеатс позволяет создавать правила н
 1. На домашней странице в меню навигации слева выберите **правила** . Откроется окно правила.
 2. Выберите правило, для которого необходимо удалить.
 
-    ![Проект FarmBeats](./media/configure-rules-and-alerts-in-azure-farmbeats/delete-rule-action-bar-1.png)
+    ![Снимок экрана, на котором выделена кнопка "Удалить".](./media/configure-rules-and-alerts-in-azure-farmbeats/delete-rule-action-bar-1.png)
 
 3. Выберите **Удалить** на панели действий.
 

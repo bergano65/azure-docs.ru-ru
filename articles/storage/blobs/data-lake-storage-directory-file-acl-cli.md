@@ -10,16 +10,16 @@ ms.date: 05/18/2020
 ms.author: normesta
 ms.reviewer: prishet
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 6140260b75580270b365e59358d97e0a54c7b4a7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 22d048b15cc097cd8a24e5ed57bbe4d5a6183e2f
+ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87503945"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92131604"
 ---
 # <a name="use-azure-cli-to-manage-directories-files-and-acls-in-azure-data-lake-storage-gen2"></a>Использование Azure CLI для управления каталогами, файлами и списками ACL в Azure Data Lake Storage 2-го поколения
 
-В этой статье показано, как использовать [интерфейс командной строки Azure (CLI)](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest) для создания каталогов, файлов и разрешений в учетных записях хранения с иерархическим пространством имен, а также управления ими. 
+В этой статье показано, как использовать [интерфейс командной строки Azure (CLI)](https://docs.microsoft.com/cli/azure/) для создания каталогов, файлов и разрешений в учетных записях хранения с иерархическим пространством имен, а также управления ими. 
 
 [Примеры](https://github.com/Azure/azure-cli/blob/dev/src/azure-cli/azure/cli/command_modules/storage/docs/ADLS%20Gen2.md)  |  [Отправить отзыв](https://github.com/Azure/azure-cli-extensions/issues)
 
@@ -32,14 +32,14 @@ ms.locfileid: "87503945"
 
 ## <a name="ensure-that-you-have-the-correct-version-of-azure-cli-installed"></a>Убедитесь, что у вас установлена правильная версия Azure CLI
 
-1. Откройте [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview?view=azure-cli-latest) или, если вы [установили](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) Azure CLI локально, командное консольное приложение (например, Windows PowerShell).
+1. Откройте [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview) или, если вы [установили](https://docs.microsoft.com/cli/azure/install-azure-cli) Azure CLI локально, командное консольное приложение (например, Windows PowerShell).
 
 2. Убедитесь, что установлена версия Azure CLI`2.6.0` или выше, выполнив следующую команду.
 
    ```azurecli
     az --version
    ```
-   Если ваша версия Azure CLI ниже чем `2.6.0`, установите более позднюю версию. Подробнее см. статью [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+   Если ваша версия Azure CLI ниже чем `2.6.0`, установите более позднюю версию. Подробнее см. статью [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
 
 ## <a name="connect-to-the-account"></a>Подключение к учетной записи
 
@@ -216,7 +216,7 @@ az storage fs file move -p my-file.txt -f my-file-system --new-path my-file-syst
 az storage fs file delete -p my-directory/my-file.txt -f my-file-system  --account-name mystorageaccount --auth-mode login 
 ```
 
-## <a name="manage-permissions"></a>Управление разрешениями
+## <a name="manage-access-control-lists-acls"></a>Управление списками управления доступом (ACL)
 
 Вы можете получать, задавать и обновлять разрешения на доступ к каталогам и файлам.
 
@@ -273,7 +273,7 @@ az storage fs access set --acl "user::rw-,group::rw-,other::-wx" -p my-directory
 
 На следующем изображении показаны выходные данные после установки списка ACL для файла.
 
-![Получение выходных данных ACL](./media/data-lake-storage-directory-file-acl-cli/set-acl-file.png)
+![Получить выходные данные ACL 2](./media/data-lake-storage-directory-file-acl-cli/set-acl-file.png)
 
 В этом примере владелец и группа-владелец имеют разрешения только на чтение и запись. У всех остальных пользователей есть разрешения на запись и выполнение. Дополнительные сведения о списках управления доступом в Azure Data Lake Storage 2-го поколения см. на [этой странице](data-lake-storage-access-control.md).
 

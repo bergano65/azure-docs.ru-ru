@@ -2,17 +2,17 @@
 title: Устранение неполадок с локальной средой выполнения интеграции в Фабрике данных Azure
 description: Узнайте, как устранять неполадки с локальной средой выполнения интеграции в Фабрике данных Azure.
 services: data-factory
-author: nabhishek
+author: lrtoyou1223
 ms.service: data-factory
 ms.topic: troubleshooting
-ms.date: 09/14/2020
-ms.author: abnarain
-ms.openlocfilehash: 1a68263598cb2cba8cc0853f5dd1be7c62dc062e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 10/22/2020
+ms.author: lle
+ms.openlocfilehash: d35dd94c8aa264c9b4dd679d3b50f3783acb2fde
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90069481"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92427237"
 ---
 # <a name="troubleshoot-self-hosted-integration-runtime"></a>Устранение неполадок с локальной средой выполнения интеграции
 
@@ -616,6 +616,40 @@ ms.locfileid: "90069481"
     ![Рабочий процесс подтверждения TCP 4](media/self-hosted-integration-runtime-troubleshoot-guide/tcp-4-handshake-workflow.png) 
 
 
+### <a name="receiving-email-to-update-the-network-configuration-to-allow-communication-with-new-ip-addresses"></a>Получение сообщения электронной почты для обновления конфигурации сети, позволяющей обмениваться данными с новыми IP-адресами
+
+#### <a name="email-notification-from-microsoft"></a>Уведомление от Майкрософт по электронной почте
+
+Вы можете получить уведомление по электронной почте, которое рекомендует обновить конфигурацию сети, чтобы разрешить обмен данными с новыми IP-адресами для фабрики данных Azure на 8 ноября 2020:
+
+   ![Уведомление по электронной почте](media/self-hosted-integration-runtime-troubleshoot-guide/email-notification.png)
+
+#### <a name="how-to-determine-if-you-are-impacted-by-this-notification"></a>Как определить, затронут ли это уведомление
+
+Это уведомление влияет на следующие сценарии:
+##### <a name="scenario-1-outbound-communication-from-self-hosted-integration-runtime-running-on-premises-behind-the-corporate-firewall"></a>Сценарий 1. исходящая связь с локальными Integration Runtime, работающими локально за корпоративным брандмауэром.
+Как определить, на что повлияет:
+- Вы не затронем правила брандмауэра на основе имен FQDN, используя описанный в этом документе подход: [Конфигурация брандмауэра и список разрешений для IP-адреса](data-movement-security-considerations.md#firewall-configurations-and-allow-list-setting-up-for-ip-address-of-gateway).
+- Если вы явно список разрешенийе исходящие IP-адреса в корпоративном брандмауэре, вы затронет их.
+
+Действие, которое будет выполнено, если вы затронули: Сообщите команде сетевой инфраструктуры, чтобы обновить конфигурацию сети для использования последних IP-адресов фабрики данных 8 ноября 2020.  Чтобы скачать последние IP-адреса, перейдите в раздел [Сервис Теги диапазон IP-адресов ссылка для скачивания](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#discover-service-tags-by-using-downloadable-json-files).
+
+##### <a name="scenario-2-outbound-communication-from-self-hosted-integration-runtime-running-on-an-azure-vm-inside-customer-managed-azure-virtual-network"></a>Сценарий 2. исходящий трафик из автономной Integration Runtime, работающей на виртуальной машине Azure, в виртуальной сети Azure, управляемой клиентом
+Как определить, на что повлияет:
+- Проверьте, есть ли в частной сети правила исходящего трафика NSG, которые содержат автономные Integration Runtime. Если ограничения для исходящего трафика отсутствуют, это не повлияет на.
+- Если у вас есть ограничения на исходящие правила, проверьте, не используется ли тег службы. Если вы используете тег службы, не нужно изменять или добавлять ничего, так как новые диапазоны IP-адресов находятся под существующим тегом службы. 
+ ![Проверка назначений](media/self-hosted-integration-runtime-troubleshoot-guide/destination-check.png)
+- Вы затронули, что если вы явно список разрешенийе исходящие IP-адреса в параметре правил NSG в виртуальной сети Azure.
+
+Действие, которое будет выполнено, если вы затронули: уведомите группу сетевой инфраструктуры, чтобы обновить правила NSG в конфигурации виртуальной сети Azure, чтобы использовать последние IP-адреса фабрики данных 8 ноября 2020.  Чтобы скачать последние IP-адреса, перейдите в раздел [Сервис Теги диапазон IP-адресов ссылка для скачивания](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#discover-service-tags-by-using-downloadable-json-files).
+
+##### <a name="scenario-3-outbound-communication-from-ssis-integration-runtime-in-customer-managed-azure-virtual-network"></a>Сценарий 3. исходящий трафик из служб SSIS Integration Runtime в виртуальной сети Azure, управляемой клиентом
+- Проверьте, есть ли в частной сети правила исходящего NSG, которые содержат Integration Runtime SSIS. Если ограничения для исходящего трафика отсутствуют, это не повлияет на.
+- Если у вас есть ограничения на исходящие правила, проверьте, не используется ли тег службы. Если вы используете тег службы, не нужно изменять или добавлять ничего, так как новые диапазоны IP-адресов находятся под существующим тегом службы.
+- Вы затронем, что если вы явно список разрешенийе исходящий IP-адрес в параметре правил NSG в виртуальной сети Azure.
+
+Действие, которое будет выполнено, если вы затронули: уведомите группу сетевой инфраструктуры, чтобы обновить правила NSG в конфигурации виртуальной сети Azure, чтобы использовать последние IP-адреса фабрики данных 8 ноября 2020.  Чтобы скачать последние IP-адреса, перейдите в раздел [Сервис Теги диапазон IP-адресов ссылка для скачивания](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#discover-service-tags-by-using-downloadable-json-files).
+
 ## <a name="self-hosted-ir-sharing"></a>Предоставление общего доступа к локальной среде IR
 
 ### <a name="share-self-hosted-ir-from-a-different-tenant-is-not-supported"></a>Совместное использование автономных IR-файлов из другого клиента не поддерживается 
@@ -629,7 +663,7 @@ ms.locfileid: "90069481"
 Локальная среда IR не может быть общей для перекрестных клиентов.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Для получения дополнительных сведений об устранении неполадок воспользуйтесь следующими ресурсами:
 

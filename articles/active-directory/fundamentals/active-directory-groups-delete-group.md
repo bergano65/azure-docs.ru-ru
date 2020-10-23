@@ -13,12 +13,12 @@ ms.author: ajburnle
 ms.reviewer: krbain
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 800c1742b49fce7e1adf8c3ca22181cfb7d0a085
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9aed5f282ff7b5d573a6f8511f2fc4dbfd27135d
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89565513"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92371823"
 ---
 # <a name="delete-a-group-using-azure-active-directory"></a>Удаление группы с помощью Azure Active Directory
 Удаление группы в Azure Active Directory (Azure AD) может потребоваться по разным причинам. Вот наиболее распространенные из них:
@@ -48,4 +48,4 @@ ms.locfileid: "89565513"
 
 - Если вы по ошибке удалили группу, ее можно создать заново. Дополнительные сведения см. в статье [Как создать простую группу и добавить в нее участников](active-directory-groups-create-azure-portal.md).
 
-- Если удалить группу Microsoft 365 по ошибке, возможно, ее удастся восстановить. Дополнительные сведения см. в статье [Восстановление удаленной группы Office 365](../users-groups-roles/groups-restore-deleted.md).
+- Если удалить группу Microsoft 365 по ошибке, возможно, ее удастся восстановить. Дополнительные сведения см. в статье [Восстановление удаленной группы Office 365](../enterprise-users/groups-restore-deleted.md).

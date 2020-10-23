@@ -11,12 +11,12 @@ ms.topic: sample
 ms.date: 03/01/2018
 ms.author: sbowles
 ms.custom: devx-track-csharp
-ms.openlocfilehash: f9d9fa461291b2fe72e9d69928163bb54e9e1be0
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 730946a0c581be4697c0f45c8bdeb1d38f0ca23d
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91303817"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91856394"
 ---
 # <a name="example-how-to-analyze-videos-in-real-time"></a>Пример Анализ видео в реальном времени
 
@@ -70,7 +70,7 @@ while (true)
 }
 ```
 
-С помощью этого кода каждый анализ запускается в рамках отдельной задачи, которая может выполняться в фоновом режиме, пока продолжается захват новых кадров. С помощью этого метода мы избегаем блокирования основного потока при ожидании возврата вызова API, но теряем некоторые гарантии, предоставляемые простой версией. Несколько вызовов API могут выполняться параллельно, а полученные результаты могут быть в неверном порядке. Это также может привести к тому, что несколько потоков одновременно введут функцию ConsumeResult(), что может представлять опасность, если функция не является потокобезопасной. Наконец, этот простой код не позволяет отслеживать создаваемые задачи, поэтому исключения будут исчезать без уведомления. Таким образом, последний шаг — добавить "поток-получатель", который будет отслеживать задачи анализа, вызывать исключения, завершать долго выполняющиеся задачи и обеспечивать использование результатов в правильном порядке.
+С помощью этого кода каждый анализ запускается в рамках отдельной задачи, которая может выполняться в фоновом режиме, пока продолжается захват новых кадров. С помощью этого метода мы избегаем блокирования основного потока при ожидании возврата вызова API, но теряем некоторые гарантии, предоставляемые простой версией. Несколько вызовов API могут выполняться параллельно, а полученные результаты могут быть в неверном порядке. Также при этом несколько потоков могут одновременно использовать в функцию ConsumeResult(), что может представлять опасность, если эта функция не является потокобезопасной. Наконец, этот простой код не позволяет отслеживать создаваемые задачи, поэтому исключения будут исчезать без уведомления. Таким образом, последний шаг — добавить "поток-получатель", который будет отслеживать задачи анализа, вызывать исключения, завершать долго выполняющиеся задачи и обеспечивать использование результатов в правильном порядке.
 
 ### <a name="a-producer-consumer-design"></a>Конструкция "производитель-получатель"
 
@@ -79,13 +79,13 @@ while (true)
 ```csharp
 // Queue that will contain the API call tasks. 
 var taskQueue = new BlockingCollection<Task<ResultWrapper>>();
-     
+     
 // Producer thread. 
 while (true)
 {
     // Grab a frame. 
     Frame f = GrabFrame();
- 
+ 
     // Decide whether to analyze the frame. 
     if (ShouldAnalyze(f))
     {
@@ -119,10 +119,10 @@ while (true)
 {
     // Get the oldest task. 
     Task<ResultWrapper> analysisTask = taskQueue.Take();
- 
+ 
     // Await until the task is completed. 
     var output = await analysisTask;
-     
+     
     // Consume the exception or result. 
     if (output.Exception != null)
     {
@@ -145,52 +145,7 @@ while (true)
 
 Для иллюстрации некоторых возможностей есть два примера приложений, использующих библиотеку. Первый — это простое консольное приложение, упрощенная версия которого воспроизведена ниже. Приложение захватывает кадры с установленной по умолчанию веб-камеры и отправляет их службе "Распознавание лиц" для обработки.
 
-```csharp
-using System;
-using VideoFrameAnalyzer;
-using Microsoft.ProjectOxford.Face;
-using Microsoft.ProjectOxford.Face.Contract;
-     
-namespace VideoFrameConsoleApplication
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            // Create grabber, with analysis type Face[]. 
-            FrameGrabber<Face[]> grabber = new FrameGrabber<Face[]>();
-            
-            // Create Face Client. Insert your Face API key here.
-            private readonly IFaceClient faceClient = new FaceClient(
-            new ApiKeyServiceClientCredentials("<subscription key>"),
-            new System.Net.Http.DelegatingHandler[] { });
-
-            // Set up our Face API call.
-            grabber.AnalysisFunction = async frame => return await faceClient.DetectAsync(frame.Image.ToMemoryStream(".jpg"));
-
-            // Set up a listener for when we receive a new result from an API call. 
-            grabber.NewResultAvailable += (s, e) =>
-            {
-                if (e.Analysis != null)
-                    Console.WriteLine("New result received for frame acquired at {0}. {1} faces detected", e.Frame.Metadata.Timestamp, e.Analysis.Length);
-            };
-            
-            // Tell grabber to call the Face API every 3 seconds.
-            grabber.TriggerAnalysisOnInterval(TimeSpan.FromMilliseconds(3000));
-
-            // Start running.
-            grabber.StartProcessingCameraAsync().Wait();
-
-            // Wait for keypress to stop
-            Console.WriteLine("Press any key to stop...");
-            Console.ReadKey();
-            
-            // Stop, blocking until done.
-            grabber.StopProcessingAsync().Wait();
-        }
-    }
-}
-```
+:::code language="csharp" source="~/cognitive-services-quickstart-code/dotnet/Face/sdk/analyze.cs":::
 
 Второй пример приложения более интересный. Он позволяет выбрать, какой API вызывать для видеокадров. Слева в приложении отображается видео в реальном времени для предварительного просмотра, справа — последний результат API, наложенный на соответствующий кадр.
 
@@ -208,7 +163,7 @@ namespace VideoFrameConsoleApplication
    - [Распознавание лиц.](https://portal.azure.com/#create/Microsoft.CognitiveServicesFace) После развертывания ресурсов щелкните **Перейти к ресурсу**, чтобы получить ключ и конечную точку для каждого ресурса. 
 3. Клонируйте репозиторий GitHub [Cognitive-Samples-VideoFrameAnalysis](https://github.com/Microsoft/Cognitive-Samples-VideoFrameAnalysis/).
 4. Откройте пример в Visual Studio, выполните сборку и запуск примеров приложений.
-    - Для примера BasicConsoleSample ключ Распознавания лиц содержится непосредственно в коде [BasicConsoleSample/Program.cs](https://github.com/Microsoft/Cognitive-Samples-VideoFrameAnalysis/blob/master/Windows/BasicConsoleSample/Program.cs).
+    - Для примера BasicConsoleSample ключ распознавания лиц содержится непосредственно в коде [BasicConsoleSample/Program.cs](https://github.com/Microsoft/Cognitive-Samples-VideoFrameAnalysis/blob/master/Windows/BasicConsoleSample/Program.cs).
     - Для LiveCameraSample ключи следует ввести в области "Параметры" приложения. Они будут сохраняться во всех сеансах как пользовательские данные.
         
 
@@ -218,7 +173,7 @@ namespace VideoFrameConsoleApplication
 
 С помощью этого руководства вы научились запускать анализ потоков видео в реальном времени с использованием API распознавания лиц, API компьютерного зрения и API распознавания эмоций, а также научились приступить к работе с использованием наших примеров кода.
 
-Отправляйте отзывы и предложения в [репозиторий GitHub](https://github.com/Microsoft/Cognitive-Samples-VideoFrameAnalysis/) или более подробные отзывы об API — на наш [сайт UserVoice](https://cognitive.uservoice.com/).
+Отправляйте отзывы и предложения в [репозиторий GitHub](https://github.com/Microsoft/Cognitive-Samples-VideoFrameAnalysis/) или более подробные отзывы об API — на наш [сайт UserVoice](https://cognitive.uservoice.com/).
 
 ## <a name="related-topics"></a>См. также
 - [Практическое руководство по обнаружению лиц на изображении](HowtoDetectFacesinImage.md)

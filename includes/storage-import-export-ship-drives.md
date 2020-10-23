@@ -1,6 +1,6 @@
 ---
-title: включить файл
-description: включить файл
+title: Включить имя файла
+description: Включить файл
 author: alkohli
 services: storage
 ms.service: storage
@@ -9,10 +9,10 @@ ms.date: 04/08/2019
 ms.author: alkohli
 ms.custom: include file
 ms.openlocfilehash: 7ecc36218df23d81c4646612b5474a1465f428eb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 10/23/2020
 ms.locfileid: "80282483"
 ---
 Для отправки пакета в центр обработки данных Azure можно использовать службу FedEx, UPS или DHL. Если вы хотите использовать перевозчика, отличный от FedEx/DHL, обратитесь в службу технической поддержки Azure Data Box по адресу `adbops@microsoft.com`

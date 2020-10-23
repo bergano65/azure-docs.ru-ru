@@ -3,12 +3,12 @@ title: Учебник по резервному копированию баз д
 description: Из этого учебника вы узнаете, как выполнять резервное копирование баз данных SAP HANA, запущенных на виртуальной машине Azure, в хранилище Служб восстановления для Azure Backup.
 ms.topic: tutorial
 ms.date: 02/24/2020
-ms.openlocfilehash: 0e0f6ff89f59b862ea15148124f44abc3ed196bf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8de567b9f895ea0b3fa4a0f85a8bbad8bf82588f
+ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91254353"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92173768"
 ---
 # <a name="tutorial-back-up-sap-hana-databases-in-an-azure-vm"></a>Руководство по резервному копированию баз данных SAP HANA на виртуальной машине Azure
 
@@ -65,7 +65,7 @@ ms.locfileid: "91254353"
 
 ### <a name="nsg-tags"></a>Теги NSG
 
-Если вы используете группы безопасности сети (NSG), используйте тег службы *AzureBackup*, чтобы разрешить исходящий доступ к Azure Backup. Кроме тегов Azure Backup, вам нужно разрешить подключение для проверки подлинности и передачи данных, создав аналогичные [правила NSG](../virtual-network/security-overview.md#service-tags) для *Azure Active Directory* и *службы хранилища Azure*. Ниже описан процесс создания правила для тега Azure Backup:
+Если вы используете группы безопасности сети (NSG), используйте тег службы *AzureBackup*, чтобы разрешить исходящий доступ к Azure Backup. Кроме тегов Azure Backup, вам нужно разрешить подключение для проверки подлинности и передачи данных, создав аналогичные [правила NSG](../virtual-network/network-security-groups-overview.md#service-tags) для *Azure Active Directory* и *службы хранилища Azure*. Ниже описан процесс создания правила для тега Azure Backup:
 
 1. В разделе **Все службы** перейдите к **группам сетевой безопасности** и выберите группу сетевой безопасности.
 
@@ -75,7 +75,7 @@ ms.locfileid: "91254353"
 
 1. Щелкните **Добавить**, чтобы сохранить только что созданное исходящее правило безопасности.
 
-Аналогичным образом можно создавать [правила безопасности для исходящего трафика NSG](https://docs.microsoft.com/azure/virtual-network/network-security-groups-overview#service-tags) для службы хранилища Azure и Azure Active Directory. Дополнительные сведения о тегах служб см. в [этой статье](../virtual-network/service-tags-overview.md).
+Аналогичным образом можно создавать [правила безопасности для исходящего трафика NSG](../virtual-network/network-security-groups-overview.md#service-tags) для службы хранилища Azure и Azure Active Directory. Дополнительные сведения о тегах служб см. в [этой статье](../virtual-network/service-tags-overview.md).
 
 ### <a name="azure-firewall-tags"></a>Теги Брандмауэра Azure
 

@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 03/11/2020
 ms.author: tamram
 ms.custom: security-recommendations
-ms.openlocfilehash: 44dac73f4e51214dbc41e8663dd44550dc9549f4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e97f5bd1718c7612ce330ee27ee64f9ad885591b
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91715387"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92425827"
 ---
 # <a name="security-recommendations-for-queue-storage"></a>Рекомендации по безопасности для хранилища очередей
 
@@ -63,7 +63,7 @@ ms.locfileid: "91715387"
 |-|----|--|
 | Контроль авторизации запросов | Включите ведение журнала службы хранилища Azure, чтобы отслеживание авторизации каждого запроса к службе хранилища Azure. Журналы указывают, был ли запрос анонимно, с помощью маркера OAuth 2,0, с помощью общего ключа или подписанного URL-адрес (SAS). Дополнительные сведения см. в статье [ведение журнала аналитики хранилища Azure](../common/storage-analytics-logging.md). | - |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Документация по безопасности Azure](https://docs.microsoft.com//azure/security/)
-- [Документация по разработке безопасности](https://docs.microsoft.com/azure/security/develop/).
+- [Документация по безопасности Azure](/azure/security/)
+- [Документация по разработке безопасности](/azure/security/develop/).

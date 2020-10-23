@@ -8,12 +8,12 @@ services: iot-accelerators
 ms.topic: conceptual
 ms.date: 12/13/2018
 ms.author: dobett
-ms.openlocfilehash: 87f6b9cef50e4b8c388be835b2aa7bed8177ac4b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f5d816b3d44a6fadd8dd462a14e62de4cdac2a00
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "61447460"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92370616"
 ---
 # <a name="use-the-azureiotsolutionscom-site-to-deploy-your-solution-accelerator"></a>Использование сайта azureiotsolutions.com для развертывания акселератора решений
 
@@ -38,7 +38,7 @@ ms.locfileid: "61447460"
 
 Ваши разрешения на развертывание акселераторов решений, управление пользователями и управление службами Azure зависят от вашей роли в выбранном каталоге. Вот типичные роли Azure AD, связанные с акселераторами решений.
 
-* **Глобальный администратор**: для каждого клиента Azure AD может существовать множество [глобальных администраторов](../active-directory/users-groups-roles/directory-assign-admin-roles.md) :
+* **Глобальный администратор**: для каждого клиента Azure AD может существовать множество [глобальных администраторов](../active-directory/roles/permissions-reference.md) :
 
   * Создавая клиент AAD, вы по умолчанию становитесь его глобальным администратором.
   * Глобальный администратор может развертывать базовые и стандартные акселераторы решений.

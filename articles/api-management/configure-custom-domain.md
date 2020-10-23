@@ -12,12 +12,12 @@ ms.workload: integration
 ms.topic: article
 ms.date: 01/13/2020
 ms.author: apimpm
-ms.openlocfilehash: 53442f0727544221f28bfdb58d8069163eb374e5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a7032c64efa486c65830e013373239647a368540
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87024866"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92311139"
 ---
 # <a name="configure-a-custom-domain-name-for-your-azure-api-management-instance"></a>Настройка пользовательского доменного имени для экземпляра службы управления API Azure
 
@@ -50,10 +50,10 @@ ms.locfileid: "87024866"
     Существует несколько конечных точек, которым можно назначить пользовательское доменное имя. Сейчас доступны следующие конечные точки:
 
     - **Шлюз** (по умолчанию: `<apim-service-name>.azure-api.net` ),
-    - **Portal** (по умолчанию: `<apim-service-name>.portal.azure-api.net`),
+    - **Портал разработчика (прежний)** (по умолчанию: `<apim-service-name>.portal.azure-api.net` ),
+    - **Портал разработчика** (по умолчанию: `<apim-service-name>.developer.azure-api.net` ).
     - **Management** (по умолчанию: `<apim-service-name>.management.azure-api.net`),
     - **SCM** (по умолчанию: `<apim-service-name>.scm.azure-api.net` ),
-    - **Невпортал** (по умолчанию: `<apim-service-name>.developer.azure-api.net` ).
 
     > [!NOTE]
     > Для конфигурации в уровне потребления доступна только конечная точка **шлюза** .

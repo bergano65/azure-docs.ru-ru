@@ -1,6 +1,6 @@
 ---
-title: Создание внутренней подсистемы балансировки нагрузки с помощью шаблона Azure Resource Manager (шаблона ARM)
-description: Узнайте, как создать внутреннюю подсистему балансировки нагрузки Azure с помощью шаблона Azure Resource Manager (шаблона ARM).
+title: Краткое руководство. Создание внутреннего балансировщика нагрузки с помощью шаблона
+description: В этом кратком руководстве показано, как создать внутреннюю подсистему балансировки нагрузки Azure с помощью шаблона Azure Resource Manager (шаблона ARM).
 services: load-balancer
 author: asudbring
 ms.service: load-balancer
@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.custom: subject-armqs
 ms.author: allensu
 ms.date: 09/14/2020
-ms.openlocfilehash: 287afc51aa15ed4cadba7e2d6cd389e4869d7d61
-ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
+ms.openlocfilehash: aa68dad2f8f018a9f3f70f2f02fd5e989ccbad4e
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90532837"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92047766"
 ---
 # <a name="quickstart-create-an-internal-load-balancer-to-load-balance-vms-by-using-an-arm-template"></a>Краткое руководство. Создание внутренней подсистемы балансировки нагрузки для распределения нагрузки между виртуальными машинами с помощью шаблона ARM
 

@@ -4,12 +4,12 @@ description: Запись и анализ событий журнала диаг
 ms.topic: how-to
 ms.date: 10/08/2020
 ms.custom: seodec18
-ms.openlocfilehash: 265149e8d3cd775974ec690ebffbce92a1b82b2e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fe2697c73f2a5f3f0b33cfb598f11f39420ed723
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91848693"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92108105"
 ---
 # <a name="batch-metrics-alerts-and-logs-for-diagnostic-evaluation-and-monitoring"></a>Метрики, оповещения и журналы пакетной службы для диагностики и мониторинга
 
@@ -105,7 +105,7 @@ ms.locfileid: "91848693"
 6. Выберите **сервицелог**, **аллметрикс**или оба.
 7. Выберите **сохранить** , чтобы создать параметр диагностики.
 
-Можно также [включить сбор с помощью Azure Monitor в портал Azure](../azure-monitor/platform/diagnostic-settings.md) для настройки параметров диагностики с помощью [шаблона диспетчер ресурсов](../azure-monitor/platform/diagnostic-settings-template.md)или с Azure PowerShell или Azure CLI. Дополнительные сведения см. в статье Общие сведения о [журналах платформы Azure](../azure-monitor/platform/platform-logs-overview.md).
+Можно также [включить сбор с помощью Azure Monitor в портал Azure](../azure-monitor/platform/diagnostic-settings.md) для настройки параметров диагностики с помощью [шаблона диспетчер ресурсов](../azure-monitor/samples/resource-manager-diagnostic-settings.md)или с Azure PowerShell или Azure CLI. Дополнительные сведения см. в статье Общие сведения о [журналах платформы Azure](../azure-monitor/platform/platform-logs-overview.md).
 
 ### <a name="access-diagnostics-logs-in-storage"></a>Доступ к журналам диагностики в хранилище
 

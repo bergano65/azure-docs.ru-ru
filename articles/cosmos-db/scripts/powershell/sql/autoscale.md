@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-sql
 ms.topic: sample
 ms.date: 07/30/2020
 ms.author: mjbrown
-ms.openlocfilehash: 32ebbb43fc02a3aa3d5129ea66ebe8640d11b0cd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2f49f2541ea150719f4145708f1811c8ceed42a4
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87504798"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92282687"
 ---
 # <a name="create-a-database-and-container-with-autoscale-for-azure-cosmos-db---sql-api"></a>Создание базы данных и контейнера с автомасштабированием в Azure Cosmos DB — API SQL
 
@@ -51,5 +51,3 @@ Remove-AzResourceGroup -ResourceGroupName "myResourceGroup"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Azure PowerShell см. в [документации по Azure PowerShell](/powershell/).
-
-Дополнительные примеры скриптов PowerShell для базы данных Azure Cosmos DB можно найти [здесь](../../../powershell-samples.md).

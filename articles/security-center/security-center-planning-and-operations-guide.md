@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: tutorial
 ms.date: 09/10/2019
 ms.author: memildin
-ms.openlocfilehash: 0de41941fa5907b7d33e24de331571015510e7bf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: de6a416666866a4089d22f2fa047dc860c922d3c
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91713799"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92341249"
 ---
 # <a name="planning-and-operations-guide"></a>Руководство по планированию и эксплуатации
 Это руководство предназначено для ИТ-специалистов, ИТ-архитекторов, аналитиков в сфере информационной безопасности и администраторов облака, которые планируют использовать Центр безопасности Azure.
@@ -135,7 +135,7 @@ ms.locfileid: "91713799"
 
 ### <a name="agent"></a>Агент
 
-После включения автоматической подготовки в политике безопасности агент Log Analytics (для [Windows](https://docs.microsoft.com/azure/log-analytics/log-analytics-windows-agents) или [Linux](https://docs.microsoft.com/azure/log-analytics/log-analytics-linux-agents)) будет установлен на всех имеющихся и создаваемых поддерживаемых виртуальных машинах Azure. Если на виртуальной машине или компьютере уже установлен агент Log Analytics, Центр безопасности Azure будет использовать установленный агент. Агент не мешает работе и минимально влияет на производительность виртуальной машины.
+После включения автоматической подготовки в политике безопасности агент Log Analytics (для [Windows](../azure-monitor/platform/agent-windows.md) или [Linux](../azure-monitor/learn/quick-collect-linux-computer.md)) будет установлен на всех имеющихся и создаваемых поддерживаемых виртуальных машинах Azure. Если на виртуальной машине или компьютере уже установлен агент Log Analytics, Центр безопасности Azure будет использовать установленный агент. Агент не мешает работе и минимально влияет на производительность виртуальной машины.
 
 Агенту Log Analytics для Windows требуется TCP-порт 443. Дополнительные сведения см. в статье [Руководство по устранению неполадок в центре безопасности Azure](security-center-troubleshooting-guide.md).
 
@@ -217,7 +217,7 @@ ms.locfileid: "91713799"
 
 ![Подозрительные действия](./media/security-center-planning-and-operations-guide/security-center-planning-and-operations-guide-fig5-ga.png)
 
-На этой странице показаны сведения о времени атаки, имени узла источника, целевой виртуальной машине, а также указаны рекомендации. В некоторых случаях сведения об источнике атаки могут отсутствовать. Дополнительные сведения о таком поведении см. в записи блога [Missing Source Information in Azure Security Center Alerts](https://blogs.msdn.microsoft.com/azuresecurity/2016/03/25/missing-source-information-in-azure-security-center-alerts/) (Отсутствие сведений об источнике в оповещениях центра безопасности Azure).
+На этой странице показаны сведения о времени атаки, имени узла источника, целевой виртуальной машине, а также указаны рекомендации. В некоторых случаях сведения об источнике атаки могут отсутствовать. Дополнительные сведения о таком поведении см. в записи блога [Missing Source Information in Azure Security Center Alerts](/archive/blogs/azuresecurity/missing-source-information-in-azure-security-center-alerts) (Отсутствие сведений об источнике в оповещениях центра безопасности Azure).
 
 Как только вы обнаружите скомпрометированную систему, вы можете запустить ранее созданные [автоматизированные рабочие процессы](workflow-automation.md). Это набор процедур, который можно выполнить из Центра безопасности после активации предупреждения.
 
@@ -233,6 +233,6 @@ ms.locfileid: "91713799"
 
 * [Управление оповещениями безопасности в Центре безопасности Azure и реагирование на них](security-center-managing-and-responding-alerts.md)
 * [Наблюдение за работоспособностью системы безопасности в Центре безопасности Azure](security-center-monitoring.md) — узнайте, как отслеживать работоспособность ресурсов Azure.
-* [Мониторинг решений партнеров с помощью центра безопасности Azure](security-center-partner-solutions.md) — узнайте, как отслеживать состояние работоспособности решений партнеров.
+* [Мониторинг решений партнеров с помощью центра безопасности Azure](./security-center-partner-integration.md) — узнайте, как отслеживать состояние работоспособности решений партнеров.
 * [Центр безопасности Azure: часто задаваемые вопросы](faq-general.md) — часто задаваемые вопросы об использовании этой службы.
-* [Блог по безопасности Azure](https://docs.microsoft.com/archive/blogs/azuresecurity/) — публикации блога, посвященные безопасности и соответствию требованиям в Azure.
+* [Блог по безопасности Azure](/archive/blogs/azuresecurity/) — публикации блога, посвященные безопасности и соответствию требованиям в Azure.

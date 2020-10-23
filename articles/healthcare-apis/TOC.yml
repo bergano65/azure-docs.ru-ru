@@ -9,21 +9,17 @@
 - name: Краткие руководства
   expanded: true
   items:
-    - name: "Развертывание Azure API для FHIR\_— портал"
-      href: fhir-paas-portal-quickstart.md
-    - name: "Развертывание Azure API для FHIR\_— PowerShell"
-      href: fhir-paas-powershell-quickstart.md
-    - name: "Развертывание Azure API для FHIR\_— CLI"
-      href: fhir-paas-cli-quickstart.md
-    - name: "Развертывание Azure API для FHIR\_— шаблон ARM"
-      href: fhir-paas-arm-template-quickstart.md
-      displayName: deploy azure resource manager template
-    - name: "Развертывание FHIR Server для Azure\_— портал"
-      href: fhir-oss-portal-quickstart.md
-    - name: "Развертывание FHIR Server для Azure\_— PowerShell"
-      href: fhir-oss-powershell-quickstart.md
-    - name: "Развертывание FHIR Server для Azure\_— CLI"
-      href: fhir-oss-cli-quickstart.md
+    - name: Развертывание Azure API для FHIR
+      expanded: false
+      items:
+        - name: Использование портала
+          href: fhir-paas-portal-quickstart.md
+        - name: Регистрация с помощью PowerShell
+          href: fhir-paas-powershell-quickstart.md
+        - name: Использование синтаксиса командной строки
+          href: fhir-paas-cli-quickstart.md
+        - name: Использование шаблона ARM
+          href: fhir-paas-arm-template-quickstart.md
     - name: "Развертывание соединителя \"Azure IoT для FHIR\" (предварительная версия)\_— портал"
       href: iot-fhir-portal-quickstart.md
 - name: Учебники
@@ -93,6 +89,8 @@
       href: find-identity-object-ids.md
     - name: Включение ведения журнала диагностики в Azure API для FHIR®
       href: enable-diagnostic-logging.md
+    - name: Экспорт сведений о соединителе "Azure IoT для FHIR" (предварительная версия) с помощью параметров диагностики
+      href: iot-metrics-diagnostics-export.md
     - name: "Получение маркера для Azure API для FHIR\_— CLI"
       href: get-healthcare-apis-access-token-cli.md
     - name: Устранение неполадок с соединителем "Azure IoT для FHIR" (предварительная версия)

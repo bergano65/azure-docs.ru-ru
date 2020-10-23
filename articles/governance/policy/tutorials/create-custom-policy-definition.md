@@ -1,14 +1,14 @@
 ---
 title: Руководство по Создание определения пользовательской политики
 description: В рамках этого учебника вы создадите определение пользовательской политики для Политики Azure, чтобы применять пользовательские бизнес-правила для ресурсов Azure.
-ms.date: 06/16/2020
+ms.date: 10/05/2020
 ms.topic: tutorial
-ms.openlocfilehash: 72282cbc5ed1877cf3f61b792235e8dc2f72fffe
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.openlocfilehash: 24058a2c8428d306c5e53a73393b0d98785831cf
+ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89649835"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91876300"
 ---
 # <a name="tutorial-create-a-custom-policy-definition"></a>Руководство по Создание определения пользовательской политики
 
@@ -66,14 +66,17 @@ ms.locfileid: "89649835"
 
 ### <a name="arm-templates"></a>Шаблоны ARM
 
-Существует несколько способов просмотреть [шаблон Resource Manager](../../../azure-resource-manager/templates/template-tutorial-use-template-reference.md), чтобы узнать свойство, которым мы хотим управлять.
+Существует несколько способов просмотреть [Azure Resource Manager](../../../azure-resource-manager/templates/template-tutorial-use-template-reference.md), который содержит нужное нам свойство.
 
 #### <a name="existing-resource-in-the-portal"></a>Существующий ресурс на портале
 
 Простейший способ узнать свойства ресурса — изучить существующий ресурс аналогичного типа. Ресурсы, которые уже настроены на соответствие политике, также подойдут для этой цели.
 Откроем страницу **Экспорт шаблона** такого ресурса (раздел **Параметры** на портале Azure).
 
-:::image type="content" source="../media/create-custom-policy-definition/export-template.png" alt-text="Снимок экрана: страница Экспорт шаблона для существующего ресурса на портале Azure." border="false":::
+> [!WARNING]
+> Шаблон Resource Manager, экспортированный на портал Azure, невозможно напрямую присвоить свойству `deployment` для шаблона Resource Manager в определении политики [deployIfNotExists](../concepts/effects.md#deployifnotexists).
+
+:::image type="content" source="../media/create-custom-policy-definition/export-template.png" alt-text="Снимок экрана: страница &quot;Экспорт шаблона&quot; для существующего ресурса на портале Azure." border="false":::
 
 Если открыть эту страницу для учетной записи хранения, отобразится примерно такой шаблон:
 

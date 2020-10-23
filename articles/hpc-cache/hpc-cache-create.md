@@ -6,12 +6,12 @@ ms.service: hpc-cache
 ms.topic: how-to
 ms.date: 09/30/2020
 ms.author: v-erkel
-ms.openlocfilehash: bed158fb99654bd48184073b1266ae630255558b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 867cfa1321106c24354b29ea803a4fb914a6778d
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91613175"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92341386"
 ---
 # <a name="create-an-azure-hpc-cache"></a>Создание Azure HPC Cache
 
@@ -81,7 +81,7 @@ Azure HPC Cache определяет, какие файлы необходимо
 
 ## <a name="add-resource-tags-optional"></a>Добавление тегов ресурсов (необязательно)
 
-На странице **Теги** можно добавлять [теги ресурсов](https://go.microsoft.com/fwlink/?linkid=873112) в экземпляр Azure HPC Cache.
+На странице **Теги** можно добавлять [теги ресурсов](../azure-resource-manager/management/tag-resources.md) в экземпляр Azure HPC Cache.
 
 ## <a name="finish-creating-the-cache"></a>Завершение создания кэша
 
@@ -132,10 +132,10 @@ nets/<cache_subnet_name>"``
 
   | Объем кэша | Standard_2G | Standard_4G | Standard_8G |
   |------------|-------------|-------------|-------------|
-  | 3072 ГБ    | да         | нет          | нет          |
-  | 6144 ГБ    | да         | да         | нет          |
-  | 12288 ГБ   | да         | да         | да         |
-  | 24576 ГБ   | нет          | да         | да         |
+  | 3072 ГБ    | Да         | нет          | нет          |
+  | 6144 ГБ    | Да         | да         | нет          |
+  | 12288 ГБ   | да         | да         | Да         |
+  | 24576 ГБ   | нет          | да         | Да         |
   | 49152 ГБ   | нет          | нет          | да         |
 
   Ознакомьтесь с разделом **Установка емкости кэша** на вкладке инструкции портала, чтобы получить важные сведения о ценах, пропускной способности и том, как правильно установить размер кэша для рабочего процесса.
@@ -196,7 +196,7 @@ az hpc-cache create --resource-group doc-demo-rg --name my-cache-0619 \
 
 ## <a name="requirements"></a>Требования
 
-Если вы решили использовать PowerShell локально, для работы с этой статьей установите модуль PowerShell Az и подключитесь к учетной записи Azure с помощью командлета [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount). См. сведения об [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если вы решили использовать Cloud Shell, дополнительные сведения см. в статье [Обзор Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview).
+Если вы решили использовать PowerShell локально, для работы с этой статьей установите модуль PowerShell Az и подключитесь к учетной записи Azure с помощью командлета [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount). См. сведения об [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если вы решили использовать Cloud Shell, дополнительные сведения см. в статье [Обзор Azure Cloud Shell](../cloud-shell/overview.md).
 
 > [!IMPORTANT]
 > Пока модуль PowerShell **AZ. хпккаче** находится на этапе предварительной версии, его необходимо установить отдельно с помощью `Install-Module` командлета. После того как этот модуль PowerShell станет общедоступным, он будет частью будущих выпусков AZ PowerShell, доступных в Azure Cloud Shell.
@@ -235,9 +235,9 @@ nets/<cache_subnet_name>"`
 
   | Объем кэша | Standard_2G | Standard_4G | Standard_8G |
   |------------|-------------|-------------|-------------|
-  | 3072 ГБ    | да         | нет          | нет          |
-  | 6144 ГБ    | да         | да         | нет          |
-  | 12 288 ГБ   | да         | да         | да         |
+  | 3072 ГБ    | Да         | нет          | нет          |
+  | 6144 ГБ    | Да         | да         | нет          |
+  | 12 288 ГБ   | Да         | да         | да         |
   | 24 576 ГБ   | нет          | да         | да         |
   | 49 152 ГБ   | нет          | нет          | да         |
 

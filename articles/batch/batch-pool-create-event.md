@@ -3,12 +3,12 @@ title: Событие создания пула пакетной службы Az
 description: Ссылка на событие создания пула пакетной службы, которая формируется после создания пула. Содержимое журнала предоставляет общие сведения о пуле.
 ms.topic: reference
 ms.date: 10/08/2020
-ms.openlocfilehash: dea0e04fa506274e645ba7a578039a0d6f021043
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: db7440df4303857d4c4a6533bc06b5f248c75da3
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91850954"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92102954"
 ---
 # <a name="pool-create-event"></a>Событие создания пула
 
@@ -53,7 +53,7 @@ ms.locfileid: "91850954"
 |-------------|----------|-----------|
 |`id`|Строка|Идентификатор пула.|
 |`displayName`|Строка|Отображаемое имя пула.|
-|`vmSize`|Строка|Размер виртуальных машин в пуле. Все виртуальные машины в пуле имеют одинаковый размер. <br/><br/> Сведения о доступных размерах виртуальных машин для пулов облачных служб (пулы, созданные с помощью cloudServiceConfiguration), см. в статье [Размеры для облачных служб](../cloud-services/cloud-services-sizes-specs.md). Пакетная служба поддерживает все размеры виртуальных машин для облачных служб, кроме `ExtraSmall`.<br/><br/> Сведения о доступных размерах виртуальных машин для пулов при использовании образов из магазина виртуальных машин (пулы, созданные с помощью virtualMachineConfiguration) см. в статье [Размеры виртуальных машин](../virtual-machines/linux/sizes.md?toc=%2Fazure%2Fvirtual-machines%2Flinux%2Ftoc.json) (Linux) или [Размеры виртуальных машин](../virtual-machines/windows/sizes.md?toc=%2Fazure%2Fvirtual-machines%2Fwindows%2Ftoc.json) (Windows). Пакетная служба поддерживает все размеры виртуальных машин Azure, кроме `STANDARD_A0`. Для хранилища класса Premium также не поддерживаются размеры таких серий: `STANDARD_GS`, `STANDARD_DS` и `STANDARD_DSV2`.|
+|`vmSize`|Строка|Размер виртуальных машин в пуле. Все виртуальные машины в пуле имеют одинаковый размер. <br/><br/> Сведения о доступных размерах виртуальных машин для пулов облачных служб (пулы, созданные с помощью cloudServiceConfiguration), см. в статье [Размеры для облачных служб](../cloud-services/cloud-services-sizes-specs.md). Пакетная служба поддерживает все размеры виртуальных машин для облачных служб, кроме `ExtraSmall`.<br/><br/> Сведения о доступных размерах виртуальных машин для пулов при использовании образов из магазина виртуальных машин (пулы, созданные с помощью virtualMachineConfiguration) см. в статье [Размеры виртуальных машин](../virtual-machines/sizes.md?toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json) (Linux) или [Размеры виртуальных машин](../virtual-machines/sizes.md?toc=%252fazure%252fvirtual-machines%252fwindows%252ftoc.json) (Windows). Пакетная служба поддерживает все размеры виртуальных машин Azure, кроме `STANDARD_A0`. Для хранилища класса Premium также не поддерживаются размеры таких серий: `STANDARD_GS`, `STANDARD_DS` и `STANDARD_DSV2`.|
 |`imageType`|Строка|Метод развертывания для образа. Поддерживаются такие значения: `virtualMachineConfiguration` или `cloudServiceConfiguration`.|
 |[`cloudServiceConfiguration`](#bk_csconf)|Сложный тип|Конфигурация облачной службы для пула.|
 |[`virtualMachineConfiguration`](#bk_vmconf)|Сложный тип|Конфигурация виртуальной машины для пула.|

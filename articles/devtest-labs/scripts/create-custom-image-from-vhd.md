@@ -1,14 +1,14 @@
 ---
-title: PowerShell. Создание пользовательского образа из VHD-файла в службах лаборатории Azure
+title: PowerShell — создание пользовательского образа из VHD-файла в Службах лабораторий Azure
 description: Этот сценарий PowerShell создает пользовательский образ из VHD-файла в службе "Службы лабораторий Azure".
 ms.devlang: azurecli
 ms.topic: sample
 ms.date: 08/11/2020
 ms.openlocfilehash: d22e6e1d226e826bf114a0fdb378879b828d9b4a
-ms.sourcegitcommit: 1aef4235aec3fd326ded18df7fdb750883809ae8
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88136190"
 ---
 # <a name="use-powershell-to-create-a-custom-image-from-a-vhd-file-in-azure-lab-services"></a>Создание пользовательского образа из VHD-файла в службе "Службы лабораторий Azure" с помощью PowerShell
@@ -19,7 +19,7 @@ ms.locfileid: "88136190"
 
 [!INCLUDE [sample-powershell-install](../../../includes/sample-powershell-install-no-ssh-az.md)]
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 * **Лаборатория.** Этот сценарий требует наличия лаборатории. 
 
 ## <a name="sample-script"></a>Пример скрипта
@@ -33,8 +33,8 @@ ms.locfileid: "88136190"
 | Get-Help | Примечания |
 |---|---|
 | [Get-AzResource](/powershell/module/az.resources/get-azresource) | Получает ресурсы. |
-| [Get-Азсторажеаккаунткэй](/powershell/module/az.storage/get-azstorageaccountkey) | Выводит список ключей доступа для учетной записи хранения Azure. |
-| [New-Азресаурцеграупдеплоймент](/powershell/module/az.resources/new-azresourcegroupdeployment) | Добавляет развертывание Azure в группу ресурсов. |
+| [Get-AzStorageAccountKey](/powershell/module/az.storage/get-azstorageaccountkey) | Выводит список ключей доступа для учетной записи хранения Azure. |
+| [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment) | Добавляет развертывание Azure в группу ресурсов. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

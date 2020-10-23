@@ -4,16 +4,17 @@ description: Сведения о моделях потребления ресу�
 services: synapse analytics
 author: vvasic-msft
 ms.service: synapse-analytics
+ms.subservice: sql
 ms.topic: overview
 ms.date: 04/15/2020
 ms.author: vvasic
 ms.reviewer: jrasnick
-ms.openlocfilehash: 4d00abdd3caf6c77b2227d9edfea3cc23d13e392
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 394521156d6192d25c3a4d254ac2c9b94c6231f5
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91288228"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92093554"
 ---
 # <a name="synapse-sql-resource-consumption"></a>Потребление ресурсов Synapse SQL
 

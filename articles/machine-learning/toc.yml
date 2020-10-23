@@ -89,6 +89,9 @@
     - name: Jupyter Notebook
       displayName: 'example, examples, server, jupyter, azure notebooks, python, notebook, github'
       href: samples-notebooks.md
+    - name: Пример репозитория
+      displayName: 'example, examples, jupyter, python, notebook, github'
+      href: 'https://github.com/Azure/azureml-examples'
     - name: Примеры и наборы данных для конструктора
       displayName: 'example, examples, studio, pipelines, data sets, modules'
       href: samples-designer.md
@@ -152,13 +155,31 @@
       href: concept-onnx.md
     - name: Конвейеры Машинного обучения
       href: concept-ml-pipelines.md
-    - name: Готовность к работе и безопасность в масштабах предприятия
+    - name: Безопасность
       items:
         - name: Общие сведения об обеспечении безопасности на уровне предприятия
           displayName: authorization authentication encryption aad azure active directory
           href: concept-enterprise-security.md
         - name: Базовые средства безопасности
           href: security-baseline.md
+    - name: Ответственный подход к машинному обучению
+      items:
+        - name: Общие сведения об ответственном подходе к машинному обучению
+          displayName: 'responsible,ml'
+          href: concept-responsible-ml.md
+        - name: Интерпретируемость модели
+          displayName: explainability
+          href: how-to-machine-learning-interpretability.md
+        - name: Объективность в машинном обучении
+          displayName: fairness
+          href: concept-fairness-ml.md
+        - name: Дифференциальная конфиденциальность
+          displayName: 'differential,privacy'
+          href: concept-differential-privacy.md
+- name: Практические руководства
+  items:
+    - name: Безопасность
+      items:
         - name: управление удостоверениями и доступом;
           items:
             - name: Настройка проверки подлинности
@@ -212,22 +233,6 @@
         - name: Аудит соответствия и управление им
           href: how-to-integrate-azure-policy.md
           displayName: policy
-    - name: Ответственный подход к машинному обучению
-      items:
-        - name: Общие сведения об ответственном подходе к машинному обучению
-          displayName: 'responsible,ml'
-          href: concept-responsible-ml.md
-        - name: Интерпретируемость модели
-          displayName: explainability
-          href: how-to-machine-learning-interpretability.md
-        - name: Объективность в машинном обучении
-          displayName: fairness
-          href: concept-fairness-ml.md
-        - name: Дифференциальная конфиденциальность
-          displayName: 'differential,privacy'
-          href: concept-differential-privacy.md
-- name: Практические руководства
-  items:
     - name: Создание рабочих областей и управление ими
       items:
         - name: Использование портала Azure
@@ -515,9 +520,6 @@
           href: how-to-debug-pipelines.md
         - name: Запись данных конвейера в журнал в Application Insights
           href: how-to-log-pipelines-application-insights.md
-        - name: Параллельное выполнение шагов
-          displayName: score scoring batch consume pipeline parallelrunstep inference
-          href: how-to-use-parallel-run-step.md
         - name: Отладка и устранение неполадок с параллельным выполнением шагов
           displayName: debug_batch consume pipeline parallelrunstep inference
           href: how-to-debug-parallel-run-step.md

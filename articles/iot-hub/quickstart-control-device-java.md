@@ -15,12 +15,12 @@ ms.custom:
 - mqtt
 - devx-track-java
 ms.date: 06/21/2019
-ms.openlocfilehash: 3c6a8285c672e6683a259b2a65be4e6ecbd4aafa
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 2865d0fc082244e1b135275ecda58edc5649d82b
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87322284"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92150721"
 ---
 # <a name="quickstart-control-a-device-connected-to-an-azure-iot-hub-with-java"></a>Краткое руководство. Управление подключенным к центру Интернета вещей устройством с использованием Java
 
@@ -32,7 +32,7 @@ ms.locfileid: "87322284"
 
 * Учетная запись Azure с активной подпиской. [Создайте бесплатно](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
 
-* Пакет SDK для Java SE 8. В статье [Долгосрочная поддержка Java для Azure и Azure Stack](https://docs.microsoft.com/java/azure/jdk/?view=azure-java-stable) выберите пункт **Java 8** в разделе **Долгосрочная поддержка**.
+* Пакет SDK для Java SE 8. В статье [Долгосрочная поддержка Java для Azure и Azure Stack](/java/azure/jdk/?view=azure-java-stable) выберите пункт **Java 8** в разделе **Долгосрочная поддержка**.
 
 * [Apache Maven 3](https://maven.apache.org/download.cgi).
 

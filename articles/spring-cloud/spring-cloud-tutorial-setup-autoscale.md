@@ -7,12 +7,12 @@ ms.service: spring-cloud
 ms.topic: tutorial
 ms.date: 07/22/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 5ca0c498e9fd03ce6397824465f9e1e006eeccc1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4effdbf5fb924b59a540ce16e769633c484c641a
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90905383"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92091072"
 ---
 # <a name="tutorial-set-up-autoscale-for-microservice-applications"></a>Руководство по Настройка автомасштабирования для приложений, состоящих из микрослужб
 
@@ -25,7 +25,7 @@ ms.locfileid: "90905383"
 Для выполнения этих процедур требуется:
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
-* Развернутый экземпляр службы Azure Spring Cloud. Чтобы приступить к работе, следуйте инструкциям из статьи [Краткое руководство. Запуск приложения Java Spring с помощью Azure CLI](https://docs.microsoft.com/azure/spring-cloud/spring-cloud-quickstart-launch-app-cli).
+* Развернутый экземпляр службы Azure Spring Cloud. Чтобы приступить к работе, следуйте инструкциям из статьи [Краткое руководство. Запуск приложения Java Spring с помощью Azure CLI](./spring-cloud-quickstart.md).
 * По крайней мере одно приложение, ранее созданное в этом экземпляре службы.
 
 ## <a name="navigate-to-the-autoscale-page-in-the-azure-portal"></a>Переход на страницу масштабирования на портале Azure
@@ -70,5 +70,5 @@ ms.locfileid: "90905383"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Общие сведения об автомасштабировании в Microsoft Azure](https://docs.microsoft.com/azure/azure-monitor/platform/autoscale-overview)
-* [Автомасштабирование Azure Monitor](https://docs.microsoft.com/cli/azure/monitor/autoscale?view=azure-cli-latest&preserve-view=true)
+* [Общие сведения об автомасштабировании в Microsoft Azure](../azure-monitor/platform/autoscale-overview.md)
+* [Автомасштабирование Azure Monitor](/cli/azure/monitor/autoscale?preserve-view=true&view=azure-cli-latest)

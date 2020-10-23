@@ -5,12 +5,12 @@ author: aagup
 ms.topic: conceptual
 ms.date: 10/30/2018
 ms.author: aagup
-ms.openlocfilehash: f98bf4f4518abd5f1b1a826e355c851acc055852
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3d881033b8dde6cc55a9720ec94084bd876116f1
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86246696"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92207399"
 ---
 # <a name="restoring-backup-in-azure-service-fabric"></a>Восстановление резервной копии в Azure Service Fabric
 
@@ -23,7 +23,7 @@ ms.locfileid: "86246696"
 - **Случай потери данных**: случайное удаление или повреждение службы. Например, администратор ошибочно удаляет службу.
 - **Повреждение данных**: ошибки в службе приводят к повреждению данных. Например, повреждение данных может произойти, когда после обновления кода служба записывает содержащие ошибки данные в надежную коллекцию. В этом случае может потребоваться восстановить код и данные до предыдущего состояния.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Чтобы активировать восстановление, для кластера должна быть включена _служба анализа сбоев (FAS)_.
 - _Служба резервного копирования и восстановления (BRS)_ создает резервную копию.
@@ -190,6 +190,10 @@ Invoke-WebRequest -Uri $url -Method Post -Body $body -ContentType 'application/j
 
 Можно отслеживать ход восстановления с помощью TrackRestoreProgress.
 
+> [!NOTE]
+> При использовании PowerShell для восстановления секции, если BackupLocation имеет "$", экранирование его с помощью "~"
+>
+
 ### <a name="using-service-fabric-explorer"></a>Использование Service Fabric Explorer
 Можно запустить восстановление из Service Fabric Explorer. Убедитесь, что в параметрах Service Fabric Explorer включен расширенный режим.
 1. Выберите нужные секции и щелкните действия. 
@@ -250,6 +254,10 @@ Invoke-WebRequest -Uri $url -Method Post -Body $body -ContentType 'application/j
 ```
 
 Можно отслеживать ход восстановления с помощью TrackRestoreProgress.
+
+> [!NOTE]
+> При использовании PowerShell для восстановления секции, если BackupLocation имеет "$", экранирование его с помощью "~"
+>
 
 ## <a name="track-restore-progress"></a>Отслеживание хода восстановления
 

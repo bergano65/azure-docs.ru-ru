@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 5/8/2020
 ms.topic: tutorial
 ms.service: digital-twins
-ms.openlocfilehash: b6f2e8ff6689a3817ecf9eb43c7cea4a0632fc25
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 8ffdcac61a3ab0d27fec7602e8625c0367f6c33b
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91297676"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92048497"
 ---
 # <a name="tutorial-explore-azure-digital-twins-with-a-sample-client-app"></a>Руководство по Изучение Azure Digital Twins с помощью примера клиентского приложения
 
@@ -79,7 +79,7 @@ ms.locfileid: "91297676"
 > Если вы хотите попробовать создать свою собственную модель, можно вставить код модели *Room* в новый файл и сохранить его с расширением *JSON* в папке *AdtSampleApp\SampleClientApp\Models*. Затем поэкспериментируйте с добавлением свойств и отношений, представляющих ваши замыслы. Можно также поискать какие-нибудь идеи в других примерах моделей в этой папке.
 
 > [!TIP] 
-> Существует не зависящий от языка [пример проверяющего элемента управления DTDL](https://docs.microsoft.com/samples/azure-samples/dtdl-validator/dtdl-validator), который можно использовать для проверки документов модели, чтобы убедиться в правильности DTDL. Он создан на основе библиотеки средства синтаксического анализа DTDL, о которой вы можете подробнее узнать в разделе [*Практическое руководство. Анализ и проверка моделей*](how-to-parse-models.md).
+> Существует не зависящий от языка [пример проверяющего элемента управления DTDL](/samples/azure-samples/dtdl-validator/dtdl-validator), который можно использовать для проверки документов модели, чтобы убедиться в правильности DTDL. Он создан на основе библиотеки средства синтаксического анализа DTDL, о которой вы можете подробнее узнать в разделе [*Практическое руководство. Анализ и проверка моделей*](how-to-parse-models.md).
 
 ### <a name="get-started-with-the-command-line-app"></a>Начало работы с приложением командной строки
 
@@ -171,7 +171,7 @@ CreateDigitalTwin dtmi:example:Floor;1 floor1
 
 #### <a name="modify-a-digital-twin"></a>Изменение цифровых двойников
 
-Вы можете изменить свойства созданного вами двойника. Попробуйте выполнить следующую команду, чтобы изменить значение свойства RoomName двойника *room0* с *Room0* на *PresidentialSuite*.
+Вы также можете изменить свойства созданного вами двойника. Попробуйте выполнить следующую команду, чтобы изменить значение свойства RoomName двойника *room0* с *Room0* на *PresidentialSuite*.
 
 ```cmd/sh
 UpdateDigitalTwin room0 add /RoomName string PresidentialSuite

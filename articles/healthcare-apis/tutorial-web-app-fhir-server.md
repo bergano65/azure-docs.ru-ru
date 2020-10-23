@@ -10,12 +10,12 @@ ms.author: cavoeg
 author: caitlinv39
 ms.date: 01/03/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 9b1dc7d7eee263b781d39c4beccf9388efbaa3d8
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: cb183b5c8aff018d4dc73819b938b24ad0daa934
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91334143"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91975796"
 ---
 # <a name="deploy-javascript-app-to-read-data-from-fhir-service"></a>Развертывание приложения JavaScript для чтения данных из службы FHIR
 В этом руководстве показано, как развернуть небольшое приложение JavaScript, которое считывает данные из службы FHIR. Последовательность действий будет следующей:
@@ -36,7 +36,7 @@ ms.locfileid: "91334143"
 ## <a name="deploy-azure-api-for-fhir"></a>Развертывание Azure API для FHIR
 Первым шагом в этом руководстве является правильная настройка Azure API для FHIR.
 
-1. Развертывание [Azure API для FHIR](fhir-paas-portal-quickstart.md)
+1. Разверните [Azure API для FHIR](fhir-paas-portal-quickstart.md).
 1. Развернув Azure API для FHIR, настройте параметры [CORS](configure-cross-origin-resource-sharing.md). Для этого перейдите в Azure API для FHIR и выберите CORS. 
     1. Задайте для параметра **Origins** (Источники) значение *.
     1. Задайте для параметра **Headers** (Заголовки) значение *.

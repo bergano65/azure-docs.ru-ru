@@ -5,14 +5,14 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: how-to
-ms.date: 10/07/2020
-ms.author: cherylmc
-ms.openlocfilehash: 9ee5959c124636e64ef73b901fbc461f36cd27f9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 10/15/2020
+ms.author: alzam
+ms.openlocfilehash: 451323b8ea4006ba6e2b63d12cc54b2b7c0b60c6
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91817298"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92109040"
 ---
 # <a name="create-an-azure-active-directory-tenant-for-p2s-openvpn-protocol-connections"></a>Создание клиента Azure Active Directory для подключений "точка — сеть" по протоколу OpenVPN
 
@@ -75,6 +75,9 @@ ms.locfileid: "91817298"
     ```
     https://login.chinacloudapi.cn/common/oauth2/authorize?client_id=49f817b6-84ae-4cc0-928c-73f27289b3aa&response_type=code&redirect_uri=https://portal.azure.cn&nonce=1234&prompt=admin_consent
     ```
+> [!NOTE]
+> Если вы используете учетную запись глобального администратора, которая не является собственной для клиента Azure AD для предоставления согласия, замените "Common" идентификатором каталога Azure AD в URL-адресе. Также может потребоваться заменить «Common» идентификатором каталога в некоторых других случаях.
+>
 
 5. При появлении запроса выберите учетную запись **Глобальный администратор**.
 
@@ -109,6 +112,6 @@ ms.locfileid: "91817298"
 
 13. Запишите расположение файла "azurevpnconfig.xml". azurevpnconfig.xml содержит параметр для VPN-подключения и может быть импортирован непосредственно в клиентское приложение VPN Azure. Этот файл также можно передать всем пользователям, которым требуется подключение по электронной почте или другим средствам. Для успешного подключения пользователю понадобятся действительные учетные данные Azure AD.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы подключиться к виртуальной сети, необходимо создать и настроить профиль клиента VPN. См. раздел [Настройка VPN-клиента для P2S VPN-подключений](openvpn-azure-ad-client.md).

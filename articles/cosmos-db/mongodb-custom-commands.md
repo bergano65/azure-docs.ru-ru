@@ -7,16 +7,16 @@ ms.topic: how-to
 ms.date: 05/28/2020
 ms.author: jasonh
 ms.custom: devx-track-js
-ms.openlocfilehash: a40be5212fb1335482ec5011d24c8eaf5f3d9a00
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 39f116139d68f2382085dbbab5e862d0c621ad2e
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91409686"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92282454"
 ---
 # <a name="use-mongodb-extension-commands-to-manage-data-stored-in-azure-cosmos-dbs-api-for-mongodb"></a>Используйте команды расширения MongoDB для управления данными, хранящимися в API-интерфейсе Azure Cosmos DB для MongoDB 
 
-Следующий документ содержит команды настраиваемого действия, относящиеся к API Azure Cosmos DB для MongoDB. Эти команды можно использовать для создания и получения ресурсов базы данных, относящихся к [модели Azure Cosmos DB емкости](databases-containers-items.md).
+Следующий документ содержит команды настраиваемого действия, относящиеся к API Azure Cosmos DB для MongoDB. Эти команды можно использовать для создания и получения ресурсов базы данных, относящихся к [модели Azure Cosmos DB емкости](account-databases-containers-items.md).
 
 Используя API Azure Cosmos DB для MongoDB, вы можете воспользоваться преимуществами Cosmos DB таких, как глобальное распространение, автоматическое сегментирование, высокая доступность, гарантия задержки, автоматическое шифрование при хранении, резервное копирование и многое другое, сохраняя инвестиции в приложение MongoDB. Вы можете взаимодействовать с API Azure Cosmos DB для MongoDB с помощью любого из [драйверов клиента](https://docs.mongodb.org/ecosystem/drivers)с открытым кодом MongoDB. API Azure Cosmos DB для MongoDB позволяет использовать существующие клиентские драйверы, применяя [протокол MongoDB Wire](https://docs.mongodb.org/manual/reference/mongodb-wire-protocol).
 
@@ -40,7 +40,7 @@ API Azure Cosmos DB для MongoDB совместим с MongoDB Server верс
 |**Поле**|**Тип** |**Описание** |
 |---------|---------|---------|
 | `customAction`   |  `string`  |   Имя пользовательской команды должно быть "CreateDatabase".      |
-| `offerThroughput` | `int`  | Подготовленная пропускная способность, заданная для базы данных. Этот параметр является необязательным. |
+| `offerThroughput` | `int`  | Подготовленная пропускная способность, заданная для базы данных. Это необязательный параметр. |
 | `autoScaleSettings` | `Object` | Требуется для [режима автомасштабирования](provision-throughput-autoscale.md). Этот объект содержит параметры, связанные с режимом автомасштабирования емкость. Можно настроить `maxThroughput` значение, которое описывает наибольшее количество единиц запросов, которое будет динамически увеличиваться в коллекции. |
 
 ### <a name="output"></a>Выходные данные

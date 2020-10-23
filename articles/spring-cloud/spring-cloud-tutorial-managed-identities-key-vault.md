@@ -7,12 +7,12 @@ ms.service: spring-cloud
 ms.topic: tutorial
 ms.date: 07/08/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 646b95e7e106b8657f8aeec2426b88cd6da20357
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3f54139bc22ef85b016aabd2512bdf030efee91c
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90885646"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92088590"
 ---
 # <a name="tutorial-use-a-managed-identity-to-connect-key-vault-to-an-azure-spring-cloud-app"></a>Руководство по использованию управляемого удостоверения для подключения Key Vault к приложению Azure Spring Cloud
 
@@ -25,7 +25,7 @@ ms.locfileid: "90885646"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * [Регистрация для получения подписки Azure](https://azure.microsoft.com/free/)
-* [установите Azure CLI (версии 2.0.67 или выше)](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true);
+* [установите Azure CLI (версии 2.0.67 или выше)](/cli/azure/install-azure-cli?preserve-view=true&view=azure-cli-latest);
 * [установите Maven 3.0 или более поздней версии](https://maven.apache.org/download.cgi);
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
@@ -167,7 +167,7 @@ az keyvault set-policy --name "<your-keyvault-name>" --object-id ${SERVICE_IDENT
 
 ## <a name="build-sample-spring-boot-app-with-java-sdk"></a>Создание примера приложения Spring Boot с помощью пакета SDK для Java
 
-Этот пример может определять и получать секреты из Azure Key Vault. [Клиентская библиотека секретов Azure Key Vault для Java](https://docs.microsoft.com/java/api/overview/azure/security-keyvault-secrets-readme?view=azure-java-stablelibrary&preserve-view=true) поддерживает проверку подлинности Azure Active Directory на основе токенов в пакете SDK Azure. Она предоставляет набор реализаций **TokenCredential**, которые можно использовать для создания клиентов пакета SDK Azure и включения поддержки проверки подлинности AAD на основе токенов.
+Этот пример может определять и получать секреты из Azure Key Vault. [Клиентская библиотека секретов Azure Key Vault для Java](/java/api/overview/azure/security-keyvault-secrets-readme?preserve-view=true&view=azure-java-stablelibrary) поддерживает проверку подлинности Azure Active Directory на основе токенов в пакете SDK Azure. Она предоставляет набор реализаций **TokenCredential**, которые можно использовать для создания клиентов пакета SDK Azure и включения поддержки проверки подлинности AAD на основе токенов.
 
 Эта библиотека позволяет безопасно хранить токены, пароли, ключи API и другие секреты, а также контролировать доступ к этой информации. Библиотека предоставляет операции для создания, извлечения, обновления, удаления, очистки, резервного копирования, восстановления и перечисления секретов и их версий.
 
@@ -191,7 +191,7 @@ az keyvault set-policy --name "<your-keyvault-name>" --object-id ${SERVICE_IDENT
     azure.keyvault.uri=https://<your-keyvault-name>.vault.azure.net
     ```
 
-3. Включите [ManagedIdentityCredentialBuilder](https://docs.microsoft.com/java/api/com.azure.identity.managedidentitycredentialbuilder?view=azure-java-stable&preserve-view=true), чтобы получить токен из Azure Active Directory и [SecretClientBuilder](https://docs.microsoft.com/java/api/com.azure.security.keyvault.secrets.secretclientbuilder?view=azure-java-stable&preserve-view=true), чтобы определить или получить секреты из Key Vault в коде.
+3. Включите [ManagedIdentityCredentialBuilder](/java/api/com.azure.identity.managedidentitycredentialbuilder?preserve-view=true&view=azure-java-stable), чтобы получить токен из Azure Active Directory и [SecretClientBuilder](/java/api/com.azure.security.keyvault.secrets.secretclientbuilder?preserve-view=true&view=azure-java-stable), чтобы определить или получить секреты из Key Vault в коде.
 
     Получите пример из [MainController.java](https://github.com/Azure-Samples/Azure-Spring-Cloud-Samples/blob/master/managed-identity-keyvault/src/main/java/com/microsoft/azure/MainController.java#L28) клонированного примера проекта.
 
@@ -230,7 +230,6 @@ az keyvault set-policy --name "<your-keyvault-name>" --object-id ${SERVICE_IDENT
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Как получить доступ к большому двоичному объекту службы хранилища с помощью управляемого удостоверения в Azure Spring Cloud](https://github.com/Azure-Samples/Azure-Spring-Cloud-Samples/tree/master/managed-identity-storage-blob)
-* [Как включить управляемое удостоверение, назначенное системой, для приложения Azure Spring Cloud](https://docs.microsoft.com/azure/spring-cloud/spring-cloud-howto-enable-system-assigned-managed-identity)
+* [Как включить управляемое удостоверение, назначенное системой, для приложения Azure Spring Cloud](./spring-cloud-howto-enable-system-assigned-managed-identity.md)
 * [Дополнительные сведения об управляемых удостоверениях для ресурсов Azure](https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/active-directory/managed-identities-azure-resources/overview.md)
-* [Проверка подлинности Azure Spring Cloud с использованием Key Vault в GitHub Actions](https://docs.microsoft.com/azure/spring-cloud/spring-cloud-github-actions-key-vault)
-
+* [Проверка подлинности Azure Spring Cloud с использованием Key Vault в GitHub Actions](./spring-cloud-github-actions-key-vault.md)

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/22/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 796ef0b82c15940ce9200e0b50916ca657f10b99
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0837184528582a84d93ab92cde4662b352666f53
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89393899"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92150346"
 ---
 # <a name="azure-security-baseline-for-cognitive-services"></a>Базовый план безопасности Azure для Cognitive Services
 
@@ -992,7 +992,7 @@ ms.locfileid: "89393899"
 
 ### <a name="94-ensure-protection-of-backups-and-customer-managed-keys"></a>9,4: Обеспечьте защиту резервных копий и ключей, управляемых клиентом
 
-**Руководство**. Использование Azure DevOps для безопасного хранения шаблонов Azure Resource Manager и управления ими. Чтобы защитить ресурсы, которыми вы управляете в Azure DevOps, вы можете предоставить или отклонить разрешения для определенных пользователей, встроенных групп безопасности или групп, определенных в Azure Active Directory (Azure AD), если они интегрированы с Azure DevOps, или Active Directory, если они интегрированы с TFS.  Используйте управление доступом на основе ролей для защиты управляемых клиентом ключей. Включите Soft-Delete и очистите защиту в Key Vault, чтобы защитить ключи от случайного или вредоносного удаления. 
+**Руководство**. Использование Azure DevOps для безопасного хранения шаблонов Azure Resource Manager и управления ими. Чтобы защитить ресурсы, которыми вы управляете в Azure DevOps, вы можете предоставить или отклонить разрешения для определенных пользователей, встроенных групп безопасности или групп, определенных в Azure Active Directory (Azure AD), если они интегрированы с Azure DevOps, или Active Directory, если они интегрированы с TFS.  Используйте управление доступом на основе ролей Azure для защиты управляемых клиентом ключей. Включите Soft-Delete и очистите защиту в Key Vault, чтобы защитить ключи от случайного или вредоносного удаления. 
 
 * [Как хранить код в Azure DevOps](https://docs.microsoft.com/azure/devops/repos/git/gitworkflow?view=azure-devops)
 

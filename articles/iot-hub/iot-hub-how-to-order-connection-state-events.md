@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 04/11/2019
 ms.author: asrastog
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 815dc0a90d79323fb88c98867b5540105a6fa8cc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 90b7b6aebfce1c37bef76d371d829048d755e39e
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91356202"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92147274"
 ---
 # <a name="order-device-connection-events-from-azure-iot-hub-using-azure-cosmos-db"></a>Упорядочение событий изменения состояния подключения устройства из Центра Интернета вещей Azure с использованием Azure Cosmos DB
 
@@ -29,7 +29,7 @@ ms.locfileid: "91356202"
 
 * Коллекция в базе данных. Пошаговое руководство см. в разделе [Добавление коллекции](../cosmos-db/create-sql-api-java.md#add-a-container). При создании коллекции используйте `/id` для ключа секции.
 
-* Центр Интернета вещей в Azure. Если вы его еще не создали, ознакомьтесь с соответствующими инструкциями в статье [Подключение устройства к Центру Интернета вещей с помощью .NET](iot-hub-csharp-csharp-getstarted.md).
+* Центр Интернета вещей в Azure. Если вы его еще не создали, ознакомьтесь с соответствующими инструкциями в статье [Подключение устройства к Центру Интернета вещей с помощью .NET](./quickstart-send-telemetry-dotnet.md).
 
 ## <a name="create-a-stored-procedure"></a>Создание хранимой процедуры
 
@@ -335,7 +335,7 @@ ms.locfileid: "91356202"
 
 ## <a name="use-the-azure-cli"></a>Использование Azure CLI
 
-Вместо того чтобы использовать [портал Azure](https://portal.azure.com), шаги для работы с Центром Интернета вещей можно выполнить с помощью Azure CLI. С дополнительными сведениями можно ознакомиться в статьях, посвященных созданию [подписки на события](https://docs.microsoft.com/cli/azure/eventgrid/event-subscription) и [устройств Интернета вещей](/cli/azure/ext/azure-iot/iot/hub/device-identity#ext-azure-iot-az-iot-hub-device-identity-create) с использованием Azure CLI.
+Вместо того чтобы использовать [портал Azure](https://portal.azure.com), шаги для работы с Центром Интернета вещей можно выполнить с помощью Azure CLI. С дополнительными сведениями можно ознакомиться в статьях, посвященных созданию [подписки на события](/cli/azure/eventgrid/event-subscription) и [устройств Интернета вещей](/cli/azure/ext/azure-iot/iot/hub/device-identity#ext-azure-iot-az-iot-hub-device-identity-create) с использованием Azure CLI.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -361,7 +361,7 @@ ms.locfileid: "91356202"
 
 7. Выберите команду **Удалить**.
 
-Чтобы удалить учетную запись Azure Cosmos DB на портале Azure, щелкните правой кнопкой мыши имя учетной записи и выберите **Удалить учетную запись**. Подробные инструкции см. в разделе [Удаление учетной записи Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/manage-account).
+Чтобы удалить учетную запись Azure Cosmos DB на портале Azure, щелкните правой кнопкой мыши имя учетной записи и выберите **Удалить учетную запись**. Подробные инструкции см. в разделе [Удаление учетной записи Azure Cosmos DB](../cosmos-db/how-to-manage-database-account.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -9,12 +9,12 @@ ms.author: dademath
 ms.date: 07/20/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: d4c3c8e2f8470d187156f0dd98fab2bd74eb33bc
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: cfb6a7ba10c388cadb19268ee1431fe523a0cfa4
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91963114"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92126332"
 ---
 # <a name="get-started-with-the-group-calling-hero-sample"></a>Начало работы с примером функции группового вызова
 
@@ -30,7 +30,7 @@ ms.locfileid: "91963114"
 Из краткого руководства мы узнаем, как работает пример и запустим его на локальном компьютере. Затем мы развернем пример в Azure с помощью собственных ресурсов Служб коммуникации Azure.
 
 > [!IMPORTANT]
-> [Скачайте пример с GitHub.](https://github.com/Azure/Communication/tree/master/samples/Group%20Calling%20Hero%20Sample/Web/Calling)
+> [Скачайте пример с GitHub.](https://github.com/Azure-Samples/communication-services-web-calling-hero)
 
 ## <a name="overview"></a>Обзор
 
@@ -101,7 +101,7 @@ ms.locfileid: "91963114"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 >[!div class="nextstepaction"] 
->[Скачайте пример с GitHub.](https://github.com/Azure/Communication/tree/master/samples/Group%20Calling%20Hero%20Sample/Web/Calling)
+>[Скачайте пример с GitHub.](https://github.com/Azure-Samples/communication-services-web-calling-hero)
 
 Дополнительные сведения см. в следующих статьях:
 

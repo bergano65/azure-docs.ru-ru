@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/28/2018
 ms.author: memildin
-ms.openlocfilehash: 893b2eefc2c4c81e66bf86a1c999a3c4198a3c71
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7d7ecf4751e9f3fe2051feb64a94e828e00bf106
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90883829"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92339499"
 ---
 # <a name="strengthen-your-security-posture-with-azure-security-center"></a>Укрепление системы безопасности с помощью центра безопасности Azure
 Эта статья поможет вам укрепить систему безопасности. В этой статье описываются возможности мониторинга, доступные в центре безопасности Azure, которые позволяют обеспечить максимальную безопасность ресурсов и отслеживать соответствие политикам.
@@ -38,4 +38,4 @@ ms.locfileid: "90883829"
 
 * [Настройка политик безопасности в центре безопасности Azure](tutorial-security-policy.md) — узнайте, как настроить параметры безопасности в центре безопасности Azure.
 * [Управление оповещениями безопасности в центре безопасности Azure и реагирование на них](security-center-managing-and-responding-alerts.md) — узнайте, как управлять оповещениями системы безопасности и реагировать на них.
-* [Мониторинг решений партнеров с помощью центра безопасности Azure](security-center-partner-solutions.md) — узнайте, как отслеживать состояние работоспособности решений партнеров.
+* [Мониторинг решений партнеров с помощью центра безопасности Azure](./security-center-partner-integration.md) — узнайте, как отслеживать состояние работоспособности решений партнеров.

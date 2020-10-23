@@ -1,14 +1,14 @@
 ---
-title: PowerShell. Добавление образа Marketplace в лабораторию в Azure DevTest Labs
+title: PowerShell — добавление образа marketplace в лабораторию в Azure DevTest Labs
 description: В этом сценарии PowerShell показано добавление образа marketplace в лабораторию в Azure DevTest Labs.
 ms.devlang: azurecli
 ms.topic: sample
 ms.date: 08/11/2020
 ms.openlocfilehash: 543f20af270769dd16e4a1ecf6ee93e9259cdfd1
-ms.sourcegitcommit: 1aef4235aec3fd326ded18df7fdb750883809ae8
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88136241"
 ---
 # <a name="use-powershell-to-add-a-marketplace-image-to-a-lab-in-azure-devtest-labs"></a>Добавление образа marketplace в лабораторию в Azure DevTest Labs с помощью PowerShell
@@ -19,7 +19,7 @@ ms.locfileid: "88136241"
 
 [!INCLUDE [sample-powershell-install](../../../includes/sample-powershell-install-no-ssh.md)]
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 * **Лаборатория.** Этот сценарий требует наличия лаборатории. 
 
 ## <a name="sample-script"></a>Пример скрипта
@@ -32,7 +32,7 @@ ms.locfileid: "88136241"
 
 | Get-Help | Примечания |
 |---|---|
-| Find-Азресаурце | Выполняет поиск ресурсов на основе указанных параметров. |
+| Find-AzResource | Выполняет поиск ресурсов на основе указанных параметров. |
 | [Get-AzResource](/powershell/module/az.resources/get-azresource) | Получает ресурсы. |
 | [Set-AzResource](/powershell/module/az.resources/set-azresource) | Изменяет ресурс. |
 | [New-AzResource](/powershell/module/az.resources/new-azresource) | Создание ресурса. |

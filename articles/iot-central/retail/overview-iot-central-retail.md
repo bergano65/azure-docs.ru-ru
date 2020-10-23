@@ -8,12 +8,12 @@ ms.topic: overview
 ms.service: iot-central
 ms.subservice: iot-central-retail
 services: iot-central
-ms.openlocfilehash: 517344e0bae0a48dbee04da33d28c8777d7c142d
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.openlocfilehash: 43bf91c83f66b05c448e52286b34c51a9fd30a2b
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91440245"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92124968"
 ---
 # <a name="building-retail-solutions-with-azure-iot-central"></a>Создание решений для розничной торговли с помощью Azure IoT Central
 
@@ -185,4 +185,4 @@ Azure IoT Central — это платформа приложений IoT, ко�
 * [Развертывание и использование шаблона приложения для интеллектуального управления запасами](./tutorial-iot-central-smart-inventory-management.md).
 * [Развертывание и использование шаблона приложения микроцентра исполнения заказов](./tutorial-micro-fulfillment-center.md).
 * [Развертывание приложения IoT Central с помощью шаблона приложения аналитики видео для обнаружения объектов и движения](./tutorial-video-analytics-deploy.md).
-* Дополнительные сведения об IoT Central см. в разделе [Общие сведения об IoT Central](../preview/overview-iot-central.md).
+* Дополнительные сведения об IoT Central см. в разделе [Общие сведения об IoT Central](../core/overview-iot-central.md).

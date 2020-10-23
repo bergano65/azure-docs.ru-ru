@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 03/31/2020
 ms.author: robinsh
 ms.custom: mqtt, devx-track-python
-ms.openlocfilehash: 988077a8a14339dea51bc36fdf6405b0f2f549ff
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1112df382fb10051ac06c4461a9e4328e1663388
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90019467"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92139310"
 ---
 # <a name="upload-files-from-your-device-to-the-cloud-with-iot-hub-python"></a>Передача файлов с устройства в облако с помощью центра Интернета вещей (Python)
 
@@ -109,7 +109,7 @@ ms.locfileid: "90019467"
             return (False, ex)
     ```
 
-    Эта функция анализирует структуру *blob_info* , переданную в нее, чтобы создать URL-адрес, используемый для инициализации объекта [Azure. Storage. BLOB. блобклиент](https://docs.microsoft.com/python/api/azure-storage-blob/azure.storage.blob.blobclient?view=azure-python). Затем он отправляет файл в хранилище BLOB-объектов Azure с помощью этого клиента.
+    Эта функция анализирует структуру *blob_info* , переданную в нее, чтобы создать URL-адрес, используемый для инициализации объекта [Azure. Storage. BLOB. блобклиент](/python/api/azure-storage-blob/azure.storage.blob.blobclient?view=azure-python). Затем он отправляет файл в хранилище BLOB-объектов Azure с помощью этого клиента.
 
 1. Добавьте следующий код, чтобы подключить клиент и передать файл:
 
@@ -179,7 +179,7 @@ ms.locfileid: "90019467"
 
 1. Сохраните и закройте файл **UploadFile.py**.
 
-## <a name="run-the-application"></a>Выполнение приложения
+## <a name="run-the-application"></a>Запуск приложения
 
 Теперь все готово для запуска приложения.
 
@@ -209,6 +209,6 @@ ms.locfileid: "90019467"
 
 Дополнительные сведения о хранилище BLOB-объектов Azure см. по следующим ссылкам:
 
-* [Документация по хранилищу BLOB-объектов Azure](https://docs.microsoft.com/azure/storage/blobs/)
+* [Документация по хранилищу BLOB-объектов Azure](../storage/blobs/index.yml)
 
-* [Документация по службе хранилища BLOB-объектов Azure для API Python](https://docs.microsoft.com/python/api/overview/azure/storage-blob-readme?view=azure-python)
+* [Документация по службе хранилища BLOB-объектов Azure для API Python](/python/api/overview/azure/storage-blob-readme?view=azure-python)

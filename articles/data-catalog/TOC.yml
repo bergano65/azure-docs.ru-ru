@@ -68,7 +68,7 @@
     - name: Сочетания клавиш для Каталога данных Azure
       href: data-catalog-keyboard-shortcuts.md
     - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
-      href: 'https://docs.microsoft.com/answers/topics/azure-data-catalog.html'
+      href: /answers/topics/azure-data-catalog.html
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/data-catalog/'
     - name: Калькулятор цен

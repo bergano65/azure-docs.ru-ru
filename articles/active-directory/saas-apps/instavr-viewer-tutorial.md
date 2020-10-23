@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
-ms.openlocfilehash: ba3c504819eb30da8d21aa47aafc313d16eec51d
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 5271dbc5e571fdc624c6861c8919e11950320507
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88550379"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91850648"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-instavr-viewer"></a>Руководство по Интеграция Azure Active Directory с InstaVR Viewer
 
@@ -132,11 +132,11 @@ ms.locfileid: "88550379"
 
 2. Щелкните **Значок пользователя** и выберите **Учетная запись**.
 
-    ![Панель конфигурации InstaVR Viewer](media/instavr-viewer-tutorial/tutorial-instavr-viewer-account.png)
+    ![Снимок экрана для сайта со средством просмотра InstaVR, где выбран пользователь.](media/instavr-viewer-tutorial/tutorial-instavr-viewer-account.png)
 
 3. Прокрутите вниз до раздела **SAML Auth** (Проверка подлинности SAML) и выполните следующие шаги.
 
-    ![Панель конфигурации InstaVR Viewer](media/instavr-viewer-tutorial/tutorial-instavr-viewer-configure.png)
+    ![Снимок экрана для страницы проверки подлинности SAML, где можно ввести значения, описанные на этом шаге](media/instavr-viewer-tutorial/tutorial-instavr-viewer-configure.png)
 
     а. В текстовое поле **SSO URL** (URL-адрес единого входа) вставьте **URL-адрес входа**, скопированный на портале Azure.
 
@@ -211,15 +211,15 @@ ms.locfileid: "88550379"
 
 2. На левой навигационной панели выберите **Пакет**, а затем — **Make package for Web** (Создание пакета для сети).
 
-    ![Панель конфигурации InstaVR Viewer](media/instavr-viewer-tutorial/tutorial-instavr-viewer-testing1.png)
+    ![Снимок экрана для корпоративного сайта средства просмотра InstaVR, где выбраны элементы для выбора пакета и подготовки пакета для Интернета.](media/instavr-viewer-tutorial/tutorial-instavr-viewer-testing1.png)
 
 3. Выберите **Скачать**.
 
-    ![Панель конфигурации InstaVR Viewer](media/instavr-viewer-tutorial/tutorial-instavr-viewer-testing2.png)
+    ![Снимок экрана, на котором выбран значок скачивания.](media/instavr-viewer-tutorial/tutorial-instavr-viewer-testing2.png)
 
 4. Выберите **Open Hosted Page** (Открыть страницу размещения) и вы будете перенаправлены на страницу входа в Azure Active Directory.
 
-    ![Панель конфигурации InstaVR Viewer](media/instavr-viewer-tutorial/tutorial-instavr-viewer-testing3.png)
+    ![Снимок экрана с выбранным действием открытия размещенной страницы.](media/instavr-viewer-tutorial/tutorial-instavr-viewer-testing3.png)
 
 5. Введите свои учетные данные Azure Active Directory, чтобы войти в Azure Active Directory с помощью единого входа.
 

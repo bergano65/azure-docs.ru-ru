@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/22/2020
 ms.author: memildin
-ms.openlocfilehash: b583e3d86ba193a92080f2da9cc0b16d07c5a993
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 46bb3b1e450312a2c02fec3f98e2b3d7381b53d2
+ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91447171"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91946021"
 ---
 # <a name="quickstart-setting-up-azure-security-center"></a>Краткое руководство. Настройка Центра безопасности Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "91447171"
 Чтобы включить Azure Defender в подписке, требуется роль владельца подписки, участника подписки или администратора безопасности.
 
 
-## <a name="open-security-center-for-the-first-time"></a>Первое открытие Центра безопасности
+## <a name="enable-security-center-on-your-azure-subscription"></a>Включение Центра безопасности Azure в подписке
 
 1. Войдите на [портал Azure](https://azure.microsoft.com/features/azure-portal/).
 
@@ -54,6 +54,8 @@ ms.locfileid: "91447171"
 
 Чтобы воспользоваться всеми преимуществами Центра безопасности, выполните приведенные ниже действия для включения Azure Defender и установки агента Log Analytics.
 
+> [!TIP]
+> Инструкции см. в статье [Включение Центра безопасности в нескольких подписках Azure](onboard-management-group.md).
 
 ## <a name="enable-azure-defender"></a>Включение Azure Defender
 
@@ -78,7 +80,7 @@ ms.locfileid: "91447171"
 Чтобы включить автоматическую подготовку агента Log Analytics, сделайте следующее:
 
 1. В главном меню Центра безопасности выберите **Цены и параметры**.
-1. Выберите нужную подписку.
+1. Выберите соответствующую подписку.
 1. На странице **Сбор данных** выберите для параметра **Автоматическая подготовка** значение **Вкл.**
 1. Нажмите **Сохранить**.
 

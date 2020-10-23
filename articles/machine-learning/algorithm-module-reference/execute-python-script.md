@@ -9,13 +9,13 @@ ms.topic: reference
 ms.custom: devx-track-python
 author: likebupt
 ms.author: keli19
-ms.date: 09/29/2020
-ms.openlocfilehash: de372b9800f4b76b42624b30f05848bc570ae6e7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 10/21/2020
+ms.openlocfilehash: d4934d784e871988b5bc30f7b7cf8c09651576e2
+ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91450128"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92330378"
 ---
 # <a name="execute-python-script-module"></a>Выполнить модуль скрипта Python
 
@@ -120,9 +120,47 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
 
     ![Схема ввода для выполнения сценария Python](media/module/python-module.png)
 
-4. Чтобы включить новые пакеты или код Python, добавьте сжатый ZIP-файл, содержащий эти настраиваемые ресурсы, в **пакет сценариев**. Вход в **пакет сценариев** должен быть ZIP-файлом, переданным в рабочую область в виде набора данных типа файлов. Набор данных можно загрузить на странице ресурсов « **наборы параметров** ». Вы можете перетащить модуль набора данных из списка My DataSets ( **Мои DataSets** ) в левой части дерева модулей на странице Создание конструктора. 
+4. Чтобы включить новые пакеты или код Python, подключите сжатый ZIP-файл, содержащий эти настраиваемые ресурсы, в порт **пакета сценариев** . Если размер скрипта превышает 16 КБ, используйте порт **пакета сценариев** , чтобы избежать ошибок, таких как *Командная строка, превышает ограничение в 16597 символов*. 
 
-    Любой файл, содержащийся в загруженном ZIP-архиве, можно использовать во время выполнения конвейера. Если архив содержит структуру каталогов, структура сохраняется, но необходимо добавить в путь каталог с именем **src** .
+    
+    1. Упакуйте скрипт и другие настраиваемые ресурсы в ZIP-файл.
+    1. Отправьте ZIP-файл в качестве **файлового набора данных** в студию. 
+    1. Перетащите модуль DataSet из списка *наборы* данных на панели слева модуль на странице Создание конструктора. 
+    1. Подключите модуль набора данных к порту **пакета скрипта** модуля **выполнение скрипта R** .
+    
+    Любой файл, содержащийся в загруженном ZIP-архиве, можно использовать во время выполнения конвейера. Если архив содержит структуру каталогов, структура сохраняется.
+    
+    Ниже приведен пример пакета сценариев, который содержит файл скрипта Python и txt-файл:
+      
+    > [!div class="mx-imgBorder"]
+    > ![Пример пакета сценариев](media/module/python-script-bundle.png)  
+
+    Ниже приведено содержимое `my_script.py` :
+
+    ```python
+    def my_func(dataframe1):
+    return dataframe1
+    ```
+    Ниже приведен пример кода, демонстрирующий использование файлов в пакете скриптов.    
+
+    ```python
+    import pandas as pd
+    from my_script import my_func
+ 
+    def azureml_main(dataframe1 = None, dataframe2 = None):
+ 
+        # Execution logic goes here
+        print(f'Input pandas.DataFrame #1: {dataframe1}')
+ 
+        # Test the custom defined python function
+        dataframe1 = my_func(dataframe1)
+ 
+        # Test to read custom uploaded files by relative path
+        with open('./Script Bundle/my_sample.txt', 'r') as text_file:
+            sample = text_file.read()
+    
+        return dataframe1, pd.DataFrame(columns=["Sample"], data=[[sample]])
+    ```
 
 5. В текстовом поле **скрипт Python** введите или вставьте допустимый скрипт Python.
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 05/15/2019
 ms.author: jeedes
-ms.openlocfilehash: d99d11f6cffa42aa706a863c3061583eab3f98f6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4cb4e23a9d5334af5ebdaab2ef15a5c39f232095
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88552260"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92108598"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-quantum-workplace"></a>Руководство по Интеграция Azure Active Directory с Quantum Workplace
 
@@ -99,11 +99,11 @@ ms.locfileid: "88552260"
 
 4. В разделе **Базовая конфигурация SAML** приложение предварительно настроено и ему заданы требуемые URL-адреса. Пользователь должен сохранить конфигурацию, нажав кнопку **Сохранить**.
 
-    ![Сведения о домене и URL-адресах для приложения для Quantum Workplace](common/preintegrated.png)
+    ![Снимок экрана, на котором показана базовая конфигурация SAML](common/preintegrated.png)
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах для приложения для Quantum Workplace](common/metadata-upload-additional-signon.png)
+    ![Снимок экрана, на котором показан параметр "Задать дополнительные URL-адреса" и поле для ввода URL-адреса входа](common/metadata-upload-additional-signon.png)
 
     В текстовом поле **URL-адрес входа** введите URL-адрес: `https://auth.quantumworkplace.com/Account/Login`.
 

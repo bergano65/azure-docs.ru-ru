@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 01/26/2018
 ms.author: jeedes
-ms.openlocfilehash: ae8bc3ce5822b8d49db0fdc6e611badd75b0d27b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 38fac23b3fdc5820a7a407a4a7d89d0064cf8e93
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91273319"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92101789"
 ---
 # <a name="tutorial-configure-salesforce-sandbox-for-automatic-user-provisioning"></a>Руководство по настройке Salesforce Sandbox для автоматической подготовки пользователей
 
@@ -67,21 +67,21 @@ ms.locfileid: "91273319"
 
 1. В разделе **Учетные данные администратора** укажите следующие параметры конфигурации.
    
-    a. В текстовом поле **Имя администратора** введите имя учетной записи Salesforce Sandbox с профилем **системного администратора** в Salesforce.com.
+    а. В текстовом поле **Имя администратора** введите имя учетной записи Salesforce Sandbox с профилем **системного администратора** в Salesforce.com.
    
     b. В текстовом поле **Пароль администратора** введите пароль для этой учетной записи.
 
 1. Для получения маркера безопасности песочницы Salesforce откройте новую вкладку и выполните вход с этой учетной записью администратора песочницы Salesforce. В правом верхнем углу страницы щелкните свое имя и выберите **Параметры**.
 
-     ![Включить автоматическую подготовку пользователей](./media/salesforce-sandbox-provisioning-tutorial/sf-my-settings.png "Включить автоматическую подготовку пользователей")
+     ![На снимке экрана показана выбранная ссылка на параметры.](./media/salesforce-sandbox-provisioning-tutorial/sf-my-settings.png "Включить автоматическую подготовку пользователей")
 
 1. В области навигации слева щелкните **My Personal Information** (Моя личная информация), чтобы развернуть соответствующий раздел, и щелкните **Reset My Security Token** (Сбросить мой маркер безопасности).
   
-    ![Включить автоматическую подготовку пользователей](./media/salesforce-sandbox-provisioning-tutorial/sf-personal-reset.png "Включить автоматическую подготовку пользователей")
+    ![На снимке экрана показана очистка маркера безопасности, выбранного в моей личной информации.](./media/salesforce-sandbox-provisioning-tutorial/sf-personal-reset.png "Включить автоматическую подготовку пользователей")
 
 1. На странице **Reset Security Token** (Сброс маркера безопасности) нажмите кнопку **Reset Security Token** (Сбросить маркер безопасности).
 
-    ![Включить автоматическую подготовку пользователей](./media/salesforce-sandbox-provisioning-tutorial/sf-reset-token.png "Включить автоматическую подготовку пользователей")
+    ![На снимке экрана показана страница маркера безопасности, с пояснительным текстом и параметром сброса маркера безопасности.](./media/salesforce-sandbox-provisioning-tutorial/sf-reset-token.png "Включить автоматическую подготовку пользователей")
 
 1. Проверьте входящие сообщения в почтовом ящике, связанном с этой учетной записью администратора. Найдите сообщение от Salesforce Sandbox.com с новым маркером безопасности.
 

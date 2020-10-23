@@ -101,8 +101,10 @@
   items:
     - name: Интеграция приложений
       items:
-        - name: Регистрация приложения
+        - name: Регистрация веб-приложения
           href: tutorial-register-applications.md
+        - name: Регистрация одностраничного приложения (SPA)
+          href: tutorial-register-spa.md
         - name: Регистрация поставщика служб SAML
           href: connect-with-saml-service-providers.md
           displayName: 'SP, RP, service provider, connect'
@@ -180,7 +182,7 @@
           href: basic-age-gating.md
         - name: Определение настраиваемых атрибутов
           href: user-flow-custom-attributes.md
-        - name: Соединители API
+        - name: Соединители API (предварительная версия)
           items:
             - name: Обзор
               href: api-connectors-overview.md

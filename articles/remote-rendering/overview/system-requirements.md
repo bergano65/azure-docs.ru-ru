@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 02/03/2020
 ms.topic: article
-ms.openlocfilehash: 31fde0c7af652bc50eb5f06743c5dd5807a1762e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 536f5e7d2fa12d1f9a9f09a31b463d2096dcad37
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91323731"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92207416"
 ---
 # <a name="system-requirements"></a>Требования к системе
 
@@ -71,7 +71,7 @@ ms.locfileid: "91323731"
 | Порт              | Протокол | Allow    | Описание |
 |-------------------|----------|----------|-------------|
 | 50051             | TCP      | Исходящий | Начальное соединение (подтверждение HTTP) |
-| 8266              | Протокол UDP      | Исходящий | Передача данных |
+| 8266              | UDP      | Исходящий | Передача данных |
 | 5000, 5433, 8443  | TCP      | Исходящий | Требуется для [средства арринспектор](../resources/tools/arr-inspector.md)|
 
 
@@ -80,7 +80,7 @@ ms.locfileid: "91323731"
 Необходимо установить следующее программное обеспечение:
 
 * Последняя версия **Visual Studio 2019** [(Загрузка)](https://visualstudio.microsoft.com/vs/older-downloads/)
-* [Средства Visual Studio для службы "Смешанная реальность"](https://docs.microsoft.com/windows/mixed-reality/install-the-tools). В частности, обязательно установить следующие *рабочие нагрузки*:
+* [Средства Visual Studio для службы "Смешанная реальность"](/windows/mixed-reality/install-the-tools). В частности, обязательно установить следующие *рабочие нагрузки*:
   * **Разработка классических приложений на C++** .
   * **Разработка приложений для универсальной платформы Windows (UWP)** .
 * **Windows SDK 10.0.18362.0** [(Загрузка)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)

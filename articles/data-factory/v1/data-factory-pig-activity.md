@@ -12,12 +12,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: 9e20b7a92d054a6664a00064fa7263b1150c3df9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 35990312658492e1e41b47096a43748c3a4e653e
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91282584"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92359906"
 ---
 # <a name="transform-data-using-pig-activity-in-azure-data-factory"></a>Преобразование данных с помощью действия Pig в фабрике данных Azure
 > [!div class="op_single_selector" title1="Действия преобразования"]
@@ -26,8 +26,8 @@ ms.locfileid: "91282584"
 > * [Действие MapReduce](data-factory-map-reduce.md)
 > * [Действие потоковой передачи Hadoop](data-factory-hadoop-streaming-activity.md)
 > * [Действие Spark](data-factory-spark.md)
-> * [Действие выполнения пакета в службе Машинного обучения](data-factory-azure-ml-batch-execution-activity.md)
-> * [Действие обновления ресурса в службе Машинного обучения](data-factory-azure-ml-update-resource-activity.md)
+> * [Действие выполнения пакета Машинное обучение Azure Studio (классическая модель)](data-factory-azure-ml-batch-execution-activity.md)
+> * [Действие "обновить ресурс" Машинное обучение Azure Studio (классическая модель)](data-factory-azure-ml-update-resource-activity.md)
 > * [Действие хранимой процедуры](data-factory-stored-proc-activity.md)
 > * [Действие U-SQL в Data Lake Analytics](data-factory-usql-activity.md)
 > * [Настраиваемое действие .NET](data-factory-use-custom-activities.md)
@@ -219,7 +219,7 @@ Store PigSampleOut into 'wasb://adfwalkthrough@anandsub14.blob.core.windows.net/
     Store PigSampleOut into '$Output' USING PigStorage (','); 
     ```
 
-## <a name="see-also"></a>См. также:
+## <a name="see-also"></a>См. также
 * [Действие Hive](data-factory-hive-activity.md)
 * [Действие MapReduce](data-factory-map-reduce.md)
 * [Действие потоковой передачи Hadoop](data-factory-hadoop-streaming-activity.md)

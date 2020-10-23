@@ -8,58 +8,95 @@ ms.service: key-vault
 ms.subservice: certificates
 ms.topic: quickstart
 ms.custom: devx-track-python
-ms.openlocfilehash: b9ff7397ad29ac681e21c32608ade9c6ce557c37
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: d06d7b328525f9d6329f17a10dea9c89a753d533
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89488632"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92017273"
 ---
-# <a name="quickstart-azure-key-vault-certificates-client-library-for-python"></a>Краткое руководство. Использование клиентской библиотеки сертификатов Azure Key Vault для Python
+# <a name="quickstart-azure-key-vault-certificate-client-library-for-python"></a>Краткое руководство. Использование клиентской библиотеки сертификатов Azure Key Vault для Python
 
-Приступите к работе с клиентской библиотекой Azure Key Vault для Python. Чтобы установить пакет и испробовать пример кода для выполнения базовых задач, выполните описанные ниже шаги. Используя Key Vault для хранения сертификатов, вам не надо сохранять их в коде. Это повышает безопасность приложения.
+Приступите к работе с клиентской библиотекой сертификатов Azure Key Vault для Python. Чтобы установить пакет и испробовать пример кода для выполнения базовых задач, выполните описанные ниже шаги. Используя Key Vault для хранения сертификатов, вам не надо сохранять их в коде. Это повышает безопасность приложения.
 
-[Справочная документация по API](/python/api/overview/azure/keyvault-certificates-readme?view=azure-python) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/keyvault/azure-keyvault-certificates) | [Пакет (Python Package Index)](https://pypi.org/project/azure-keyvault-certificates)
+[Справочная документация по API](/python/api/overview/azure/keyvault-certificates-readme) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/keyvault/azure-keyvault-certificates) | [Пакет (Python Package Index)](https://pypi.org/project/azure-keyvault-certificates)
+
+## <a name="prerequisites"></a>Предварительные требования
+
+- Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- [Python 2.7+ или 3.5.3+](https://docs.microsoft.com/azure/developer/python/configure-local-development-environment)
+- [Azure CLI](/cli/azure/install-azure-cli)
+
+В этом кратком руководстве предполагается, что вы используете [Azure CLI](/cli/azure/install-azure-cli) в окне терминала Linux.
 
 ## <a name="set-up-your-local-environment"></a>Настройка локальной среды
 
-[!INCLUDE [Set up your local environment](../../../includes/key-vault-python-qs-setup.md)]
+В этом кратком руководстве используется библиотека удостоверений Azure и Azure CLI для проверки подлинности пользователя в службах Azure. Разработчики также могут использовать Visual Studio или Visual Studio Code для проверки подлинности своих вызовов. Дополнительные сведения см. в статье [Проверка подлинности клиента с помощью клиентской библиотеки удостоверений Azure](https://docs.microsoft.com/java/api/overview/azure/identity-readme).
 
-7. Установите библиотеку сертификатов Azure Key Vault:
+### <a name="sign-in-to-azure"></a>Вход в Azure
+
+1. Выполните команду `login`.
+
+    ```azurecli-interactive
+    az login
+    ```
+
+    Если в CLI можно запустить браузер по умолчанию, откроется браузер со страницей входа.
+
+    Если нет, самостоятельно откройте в браузере страницу [https://aka.ms/devicelogin](https://aka.ms/devicelogin) и введите код авторизации, отображаемый в терминале.
+
+2. Выполните вход в браузере с помощью учетных данных.
+
+### <a name="install-the-packages"></a>Установка пакетов
+
+1. В терминале или в командной строке создайте подходящую папку проекта, а затем создайте и активируйте виртуальную среду Python, как описано в разделе [Использование виртуальных окружений Python](/azure/developer/python/configure-local-development-environment?tabs=cmd#use-python-virtual-environments).
+
+1. Установите библиотеку удостоверений Azure Active Directory:
+
+    ```terminal
+    pip install azure.identity
+    ```
+
+
+1. Установите клиентскую библиотеку сертификатов Key Vault:
 
     ```terminal
     pip install azure-keyvault-certificates
     ```
 
-## <a name="create-a-resource-group-and-key-vault"></a>Создание группы ресурсов и хранилища ключей
+### <a name="create-a-resource-group-and-key-vault"></a>Создание группы ресурсов и хранилища ключей
 
 [!INCLUDE [Create a resource group and key vault](../../../includes/key-vault-python-qs-rg-kv-creation.md)]
 
-## <a name="give-the-service-principal-access-to-your-key-vault"></a>Предоставление субъекту-службе доступа к хранилищу ключей
+### <a name="grant-access-to-your-key-vault"></a>Предоставление доступа к хранилищу ключей
 
-Выполните следующую команду [az keyvault set-policy](/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-set-policy), чтобы авторизовать субъект-службу для получения, перечисления и создания операций с сертификатами.
+Создайте политику доступа для хранилища ключей, которая предоставляет разрешение секрета для учетной записи пользователя
 
-# <a name="cmd"></a>[cmd](#tab/cmd)
-
-```azurecli
-az keyvault set-policy --name %KEY_VAULT_NAME% --spn %AZURE_CLIENT_ID% --resource-group KeyVault-PythonQS-rg --certificate-permissions delete get list create
+```console
+az keyvault set-policy --name <YourKeyVaultName> --upn user@domain.com --secret-permissions delete get list set
 ```
 
-# <a name="bash"></a>[bash](#tab/bash)
+#### <a name="set-environment-variables"></a>Настройка переменных среды
 
-```azurecli
-az keyvault set-policy --name $KEY_VAULT_NAME --spn $AZURE_CLIENT_ID --resource-group KeyVault-PythonQS-rg --certificate-permissions delete get list create 
+Это приложение использует имя хранилища ключей в качестве переменной среды с именем `KEY_VAULT_NAME`.
+
+Windows
+```cmd
+set KEY_VAULT_NAME=<your-key-vault-name>
+````
+Windows PowerShell
+```powershell
+$Env:KEY_VAULT_NAME=<your-key-vault-name>
 ```
 
----
-
-Эта команда зависит от переменных среды `KEY_VAULT_NAME` и `AZURE_CLIENT_ID`, созданных на предыдущих шагах.
-
-Дополнительные сведения см. в статье [Назначение политики доступа к Key Vault](../general/assign-access-policy-cli.md).
+macOS или Linux
+```cmd
+export KEY_VAULT_NAME=<your-key-vault-name>
+```
 
 ## <a name="create-the-sample-code"></a>Создание примера кода
 
-Клиентская библиотека Azure Key Vault для Python позволяет управлять сертификатами и связанными с ними ресурсами, такими как секреты и криптографические ключи. В приведенном примере кода показано, как создать клиент, а также как задать, извлечь и удалить секрет.
+Клиентская библиотека сертификатов Azure Key Vault для Python позволяет управлять сертификатами. В приведенном ниже примере кода показано, как создать клиент, а также как указать, получить и удалить сертификат.
 
 Создайте файл с именем *kv_certificates.py*, который содержит этот код.
 
@@ -105,14 +142,16 @@ print(" done.")
 python kv_certificates.py
 ```
 
-- Если происходят ошибки разрешений, убедитесь, что вы [выполнили команду `az keyvault set-policy`](#give-the-service-principal-access-to-your-key-vault).
+- Если происходят ошибки разрешений, убедитесь, что вы [выполнили команду `az keyvault set-policy`](#grant-access-to-your-key-vault).
 - Повторное выполнение кода с тем же именем ключа может вызвать ошибку (Conflict) Certificate <name> is currently in a deleted but recoverable state. ((Конфликт) Сертификат <name> в настоящее время находится в удаленном состоянии, но допускающем восстановление). Используйте другое имя ключа.
 
 ## <a name="code-details"></a>Сведения о коде
 
 ### <a name="authenticate-and-create-a-client"></a>Аутентификация и создание клиента
 
-В приведенном выше коде объект [`DefaultAzureCredential`](/python/api/azure-identity/azure.identity.defaultazurecredential?view=azure-python) использует переменные среды, созданные вами для субъекта-службы. Вы предоставляете эти учетные данные при каждом создании клиентского объекта из библиотеки Azure, например [`CertificateClient`](/python/api/azure-keyvault-certificates/azure.keyvault.certificates.certificateclient?view=azure-python), а также универсальный код ресурса (URI), с которым вы хотите работать через этот клиент:
+В этом кратком руководстве пользователь, вошедший в систему, проходит проверку подлинности в хранилище ключей, который является предпочтительным методом при локальной разработке. Для приложений, развернутых в Azure, службе приложений или виртуальной машине должно быть назначено управляемое удостоверение. Дополнительные сведения см. в разделе [Обзор управляемых удостоверений](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview).
+
+В примере ниже имя хранилища ключей расширяется до универсального кода ресурса (URI) хранилища ключей в формате "https://\<your-key-vault-name\>.vault.azure.net". В этом примере показан класс ["DefaultAzureCredential()"](/python/api/azure-identity/azure.identity.defaultazurecredential), который для предоставления удостоверения позволяет использовать один и тот же код в различных средах с различными параметрами. Дополнительные сведения см. в статье [Проверка подлинности учетных данных Azure по умолчанию](https://docs.microsoft.com/python/api/overview/azure/identity-readme). 
 
 ```python
 credential = DefaultAzureCredential()
@@ -121,7 +160,7 @@ client = CertificateClient(vault_url=KVUri, credential=credential)
 
 ### <a name="save-a-certificate"></a>Сохранение сертификата
 
-После получения клиентского объекта для хранилища ключей можно создать сертификат с помощью метода [begin_create_certificate](/python/api/azure-keyvault-certificates/azure.keyvault.certificates.certificateclient?view=azure-python#begin-create-certificate-certificate-name--policy----kwargs-): 
+После получения клиентского объекта для хранилища ключей можно создать сертификат с помощью метода [begin_create_certificate](/python/api/azure-keyvault-certificates/azure.keyvault.certificates.certificateclient?#begin-create-certificate-certificate-name--policy----kwargs-): 
 
 ```python
 policy = CertificatePolicy.get_default()
@@ -129,27 +168,26 @@ poller = client.begin_create_certificate(certificate_name=certificateName, polic
 certificate = poller.result()
 ```
 
-В этом случае для сертификата требуется политика, которая получена с помощью метода [CertificatePolicy.get_default](/python/api/azure-keyvault-certificates/azure.keyvault.certificates.certificatepolicy?view=azure-python#get-default--).
+В этом случае для сертификата требуется политика, которая получена с помощью метода [CertificatePolicy.get_default](/python/api/azure-keyvault-certificates/azure.keyvault.certificates.certificatepolicy?#get-default--).
 
 Вызов метода `begin_create_certificate` создает асинхронный вызов REST API Azure для хранилища ключей. Асинхронный вызов возвращает объект модуля опроса. Чтобы дождаться результата операции, вызовите метод `result` модуля опроса.
 
 При обработке запроса Azure проверяет подлинность удостоверения вызывающего объекта (субъекта-службы) с помощью объекта учетных данных, предоставленных клиенту.
 
-Azure также проверяет, авторизован ли вызывающий объект для выполнения запрошенного действия. Вы предоставили эту авторизацию субъекту-службе ранее с помощью [команды `az keyvault set-policy` ](#give-the-service-principal-access-to-your-key-vault).
 
 ### <a name="retrieve-a-certificate"></a>Получение сертификата
 
-Чтобы прочитать сертификат из Key Vault, используйте метод [get_certificate](/python/api/azure-keyvault-certificates/azure.keyvault.certificates.certificateclient?view=azure-python#get-certificate-certificate-name----kwargs-):
+Чтобы прочитать сертификат из Key Vault, используйте метод [get_certificate](/python/api/azure-keyvault-certificates/azure.keyvault.certificates.certificateclient?#get-certificate-certificate-name----kwargs-):
 
 ```python
 retrieved_certificate = client.get_certificate(certificateName)
  ```
 
-Команда Azure CLI [az keyvault certificate show](/cli/azure/keyvault/certificate?view=azure-cli-latest#az-keyvault-certificate-show) позволяет также убедиться, что сертификат задан успешно.
+Команда Azure CLI [az keyvault certificate show](/cli/azure/keyvault/certificate?#az-keyvault-certificate-show) позволяет также убедиться, что сертификат задан успешно.
 
 ### <a name="delete-a-certificate"></a>Удаление сертификата
 
-Чтобы удалить сертификат, используйте метод [begin_delete_certificate](/python/api/azure-keyvault-certificates/azure.keyvault.certificates.certificateclient?view=azure-python#begin-delete-certificate-certificate-name----kwargs-):
+Чтобы удалить сертификат, используйте метод [begin_delete_certificate](/python/api/azure-keyvault-certificates/azure.keyvault.certificates.certificateclient?#begin-delete-certificate-certificate-name----kwargs-):
 
 ```python
 poller = client.begin_delete_certificate(certificateName)
@@ -158,7 +196,7 @@ deleted_certificate = poller.result()
 
 Метод `begin_delete_certificate` является асинхронным и возвращает объект модуля опроса. При вызове `result` модуля опроса метод ожидает его завершения.
 
-Команда Azure CLI [az keyvault certificate show](/cli/azure/keyvault/certificate?view=azure-cli-latest#az-keyvault-certificate-show) позволяет убедиться, что сертификат удален.
+Команда Azure CLI [az keyvault certificate show](/cli/azure/keyvault/certificate?#az-keyvault-certificate-show) позволяет убедиться, что сертификат удален.
 
 После удаления сертификат остается в удаленном, но восстанавливаемом состоянии в течение некоторого времени. При повторном выполнении кода используйте другое имя сертификата.
 
@@ -175,6 +213,7 @@ az group delete --resource-group KeyVault-PythonQS-rg
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Обзор хранилища ключей Azure](../general/overview.md)
+- [Безопасный доступ к хранилищу ключей](../general/secure-your-key-vault.md)
 - [Руководство разработчика Azure Key Vault](../general/developers-guide.md)
 - [Рекомендации по использованию Key Vault](../general/best-practices.md)
 - [Проверка подлинности с помощью Key Vault](../general/authentication.md)

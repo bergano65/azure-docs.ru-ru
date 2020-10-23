@@ -647,6 +647,8 @@
               href: ./kafka/apache-kafka-auto-create-topics.md
             - name: Использование Apache Kafka с Центром Интернета вещей
               href: ./kafka/apache-kafka-connector-iot-hub.md
+            - name: Реестр схем Confluent
+              href: ./kafka/schema-registry.md
             - name: Создание конвейеров потоковой передачи
               items:
                 - name: "Apache Spark, Apache Kafka и Azure Cosmos\_DB"
@@ -845,6 +847,8 @@
               href: ./hdinsight-troubleshoot-hive.md
             - name: Журналы Apache Hive занимают все дисковое пространство на головном узле
               href: ./interactive-query/interactive-query-troubleshoot-hive-logs-diskspace-full-headnodes.md
+            - name: Параметры безопасности для Hive
+              href: ./interactive-query/hdinsight-security-options-for-hive.md
 - name: Службы машинного обучения
   items:
     - name: Обзор
@@ -954,6 +958,8 @@
           href: ./domain-joined/apache-domain-joined-architecture.md
         - name: Архитектура виртуальной сети HDInsight
           href: ./hdinsight-virtual-network-architecture.md
+        - name: Приватный канал
+          href: ./hdinsight-private-link.md
         - name: Протокол TLS
           href: ./transport-layer-security.md
         - name: Планирование виртуальных сетей для HDInsight

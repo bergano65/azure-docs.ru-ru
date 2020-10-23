@@ -9,12 +9,12 @@ ms.date: 08/05/2020
 ms.topic: how-to
 ms.service: azure-portal
 manager: mtillman
-ms.openlocfilehash: 20ed84a87486f1095a90e012368b1f56d6426c8e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 34750bcc2e9913b23daa3682d4fdea736f9c7a9a
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88205628"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92367437"
 ---
 # <a name="manage-azure-portal-settings-and-preferences"></a>Управление параметрами и предпочтениями портала Azure
 
@@ -96,7 +96,7 @@ ms.locfileid: "88205628"
 
 ### <a name="change-the-directory-timeout-setting-admin"></a>Изменение параметра времени ожидания в каталоге (администратор)
 
-Администраторы в [роли глобального администратора](../active-directory/users-groups-roles/directory-assign-admin-roles.md#global-administrator--company-administrator) могут принудительно применить максимальное время простоя до выхода из сеанса. Параметр времени ожидания неактивности применяется на уровне каталога. Параметр вступает в силу для новых сеансов. Он не будет немедленно применяться к пользователям, которые уже вошли в. Дополнительные сведения о каталогах см. в разделе Общие сведения о [службах домен Active Directory Services](/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview).
+Администраторы в [роли глобального администратора](../active-directory/roles/permissions-reference.md#global-administrator--company-administrator) могут принудительно применить максимальное время простоя до выхода из сеанса. Параметр времени ожидания неактивности применяется на уровне каталога. Параметр вступает в силу для новых сеансов. Он не будет немедленно применяться к пользователям, которые уже вошли в. Дополнительные сведения о каталогах см. в разделе Общие сведения о [службах домен Active Directory Services](/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview).
 
 Если вы являетесь глобальным администратором и хотите применить параметр времени ожидания простоя для всех пользователей портал Azure, выполните следующие действия.
 

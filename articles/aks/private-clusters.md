@@ -4,12 +4,12 @@ description: Узнайте, как создать частный кластер
 services: container-service
 ms.topic: article
 ms.date: 7/17/2020
-ms.openlocfilehash: 825e97bfc80695180195fde07eaa1a25ac74b49b
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 4ebc5e44f491b5ff5950a13771fe3d7179b6fc9f
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92078159"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92143083"
 ---
 # <a name="create-a-private-azure-kubernetes-service-cluster"></a>Создание частного кластера Службы Azure Kubernetes
 
@@ -21,7 +21,8 @@ ms.locfileid: "92078159"
 
 Частный кластер доступен в общедоступных регионах, где [поддерживается AKS](https://azure.microsoft.com/global-infrastructure/services/?products=kubernetes-service).
 
-US Gov (Техас) в настоящее время не поддерживается из-за отсутствия поддержки закрытых ссылок.
+> [!NOTE]
+> Сайты Azure для государственных организаций поддерживаются, однако US Gov (Техас) в настоящее время не поддерживается из-за отсутствия поддержки закрытых ссылок.
 
 ## <a name="prerequisites"></a>Предварительные требования
 

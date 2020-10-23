@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 07/17/2020
 ms.author: hahamil
 ms.custom: aaddev, devx-track-js
-ms.openlocfilehash: 3caf12e13b5999c40843f1203ac8ce7f2f21ef6b
-ms.sourcegitcommit: 67e8e1caa8427c1d78f6426c70bf8339a8b4e01d
+ms.openlocfilehash: 01169f3e73fb1d6ddf0ecaf4958c6121cb21c295
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91665877"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92216136"
 ---
 # <a name="tutorial-sign-in-users-and-call-the-microsoft-graph-api-from-a-javascript-single-page-app-spa-using-auth-code-flow"></a>Руководство по входу пользователей и вызову API Microsoft Graph из одностраничного приложения JavaScript с помощью потока кода авторизации
 
@@ -30,8 +30,6 @@ ms.locfileid: "91665877"
 > * Вызов API Microsoft Graph и собственного API-интерфейса, которым требуются маркеры доступа, полученные от конечной точки платформы удостоверений Майкрософт
 
 MSAL.js 2.0 — это расширенная версия MSAL.js 1.0, поддерживающая поток кода авторизации в браузере вместо потока неявного предоставления разрешения. MSAL.js 2.0 **НЕ** поддерживает неявный поток.
-
-[!INCLUDE [MSAL.js 2.0 and Azure AD B2C temporary incompatibility notice](../../../includes/msal-b2c-cors-compatibility-notice.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -120,13 +118,13 @@ MSAL.js 2.0 — это расширенная версия MSAL.js 1.0, по�
 ```
 msal-spa-tutorial/
 ├── app
-│   ├── authConfig.js
-│   ├── authPopup.js
-│   ├── authRedirect.js
-│   ├── graphConfig.js
-│   ├── graph.js
-│   ├── index.html
-│   └── ui.js
+│   ├── authConfig.js
+│   ├── authPopup.js
+│   ├── authRedirect.js
+│   ├── graphConfig.js
+│   ├── graph.js
+│   ├── index.html
+│   └── ui.js
 └── server.js
 ```
 

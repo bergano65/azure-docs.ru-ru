@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 04/18/2020
 ms.custom: devx-track-java
 ms.author: lcozzens
-ms.openlocfilehash: e3bc26b8f4d66c95f6f777af06d71172a4b882b9
-ms.sourcegitcommit: d9ba60f15aa6eafc3c5ae8d592bacaf21d97a871
+ms.openlocfilehash: dd2305e13322540e9e30223f200baed9919d1840
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91767634"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92075405"
 ---
 # <a name="quickstart-create-a-java-spring-app-with-azure-app-configuration"></a>Краткое руководство. Создание приложения Java Spring с помощью службы "Конфигурация приложений Azure"
 
@@ -25,7 +25,7 @@ ms.locfileid: "91767634"
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
-- Поддерживаемый [комплект разработчика Java (JDK)](https://docs.microsoft.com/java/azure/jdk) версии 8.
+- Поддерживаемый [комплект разработчика Java (JDK)](/java/azure/jdk) версии 8.
 - [Apache Maven](https://maven.apache.org/download.cgi) версии 3.0 или более поздней.
 
 ## <a name="create-an-app-configuration-store"></a>Создание хранилища Конфигурации приложений
@@ -188,7 +188,7 @@ ms.locfileid: "91767634"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом кратком руководстве описано, как создать хранилище конфигураций приложений и использовать его с приложением Java Spring. Дополнительные сведения см. в статье [Spring в Azure](https://docs.microsoft.com/java/azure/spring-framework/). Чтобы узнать, как включить в приложении Java Spring динамическое обновление параметров конфигурации, перейдите к следующему руководству.
+В этом кратком руководстве описано, как создать хранилище конфигураций приложений и использовать его с приложением Java Spring. Дополнительные сведения см. в статье [Spring в Azure](/java/azure/spring-framework/). Чтобы узнать, как включить в приложении Java Spring динамическое обновление параметров конфигурации, перейдите к следующему руководству.
 
 > [!div class="nextstepaction"]
 > [Включение динамической конфигурации](./enable-dynamic-configuration-java-spring-app.md)

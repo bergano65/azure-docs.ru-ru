@@ -9,3 +9,14 @@
         - name: Пространственный анализ с использованием Компьютерного зрения
           tocHref: /legal/cognitive-services/computer-vision/
           topicHref: /azure/cognitive-services/Computer-vision/index
+- name: Azure
+  tocHref: /azure/
+  topicHref: /azure/index
+  items:
+    - name: Службы Cognitive Services
+      tocHref: /azure/cognitive-services/
+      topicHref: /azure/cognitive-services/index
+      items:
+        - name: Компьютерное зрение
+          tocHref: /azure/cognitive-services/
+          topicHref: /azure/cognitive-services/computer-vision/index

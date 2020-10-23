@@ -7,12 +7,12 @@ ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 10/23/2019
-ms.openlocfilehash: ad1e09a0f9d1e0f9e4a748220edf5eced96123f8
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
+ms.openlocfilehash: 07a8ece76bffe0fbbcbc211e83730433cdeda2c4
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91932572"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92143794"
 ---
 # <a name="workbook-drop-down-parameters"></a>Параметры раскрывающегося списка книги
 
@@ -152,7 +152,7 @@ dependencies
 
 ![Изображение, отображающее раскрывающийся список множественного выбора](./media/workbook-dropdowns/dropdown-multiselect.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Узнайте](workbooks-visualizations.md) больше о книгах с множеством разнообразных вариантов визуализации.
+* [Узнайте](./workbooks-overview.md#visualizations) больше о книгах с множеством разнообразных вариантов визуализации.
 * [Управление](workbooks-access-control.md) доступом к ресурсам книги и предоставление общего доступа к ним.

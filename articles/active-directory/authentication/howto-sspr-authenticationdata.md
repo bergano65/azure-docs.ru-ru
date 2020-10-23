@@ -5,19 +5,19 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 07/17/2020
+ms.date: 10/05/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: cba2517f536c9044ad15c628c793529f93b988ce
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: ed2366884f53eafe89800e7ae60a6a560dc292b4
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91966497"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92165011"
 ---
 # <a name="pre-populate-user-authentication-contact-information-for-azure-active-directory-self-service-password-reset-sspr"></a>Предварительное заполнение контактных данных для проверки подлинности пользователя для Azure Active Directory самостоятельного сброса пароля (SSPR)
 
@@ -48,16 +48,14 @@ ms.locfileid: "91966497"
 
 ## <a name="authentication-contact-info"></a>Контактная информация для проверки подлинности
 
-На странице **методы проверки подлинности** для пользователя Azure AD в портал Azure глобальный администратор может вручную задать контактную информацию для проверки подлинности, как показано на следующем примере снимка экрана:
+На странице **методы проверки подлинности** для пользователя Azure AD в портал Azure глобальный администратор может вручную задать контактную информацию для проверки подлинности. Вы можете просмотреть существующие методы в разделе *использование методов проверки подлинности* или **добавить методы проверки подлинности**, как показано на следующем примере снимка экрана:
 
-![Контактная информация для проверки подлинности пользователя в Azure AD][Contact]
+:::image type="content" source="media/howto-sspr-authenticationdata/user-authentication-contact-info.png" alt-text="Управление методами проверки подлинности из портал Azure&quot;:::
 
 Следующие рекомендации относятся к контактным сведениям для проверки подлинности:
 
-* Если поле " *Телефон* " заполнено и в политике SSPR включен *мобильный телефон* , он увидит это число на странице регистрации сброса пароля и в ходе рабочего процесса сброса пароля.
-* Поле *дополнительного телефона* не используется для сброса пароля.
+* Если поле &quot; *Телефон* " заполнено и в политике SSPR включен *мобильный телефон* , он увидит это число на странице регистрации сброса пароля и в ходе рабочего процесса сброса пароля.
 * Если поле *электронной почты* заполнено и в политике SSPR включена *Электронная почта* , пользователь увидит это сообщение на странице регистрации сброса пароля и в ходе рабочего процесса сброса пароля.
-* Если поле " *дополнительный адрес электронной почты* " заполнено и в политике SSPR включена *Электронная почта* , пользователь не увидит это сообщение на странице регистрации сброса пароля, но он увидит его во время рабочего процесса сброса пароля.
 
 ## <a name="security-questions-and-answers"></a>Контрольные вопросы и ответы на них
 
@@ -169,5 +167,3 @@ Get-AzureADUser | select DisplayName,UserPrincipalName,otherMails,Mobile,Telepho
 
 > [!div class="nextstepaction"]
 > [Включение самостоятельного сброса пароля Azure AD](tutorial-enable-sspr.md)
-
-[Contact]: ./media/howto-sspr-authenticationdata/user-authentication-contact-info.png "Глобальные администраторы могут изменять контактные данные для аутентификации пользователя"

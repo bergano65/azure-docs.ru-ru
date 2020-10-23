@@ -3,17 +3,17 @@ title: Взаимодействие с устройством IoT Plug and Play,
 description: Подключение к устройству IoT Plug and Play, подключенному к решению Azure IoT, а также взаимодействие с ним с помощью Python.
 author: elhorton
 ms.author: elhorton
-ms.date: 7/13/2020
+ms.date: 10/05/2020
 ms.topic: quickstart
 ms.service: iot-pnp
 services: iot-pnp
 ms.custom: mvc
-ms.openlocfilehash: be5ff3e863752dfc187bd91257425af5e8de85c4
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.openlocfilehash: d04a1eda7dc414233075f5d70e29c967c8bdfc35
+ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91574978"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91946082"
 ---
 # <a name="quickstart-interact-with-an-iot-plug-and-play-device-thats-connected-to-your-solution-python"></a>Краткое руководство. Взаимодействие с подключенным к решению устройством IoT Plug and Play с помощью Python
 
@@ -73,13 +73,16 @@ pip install azure-iot-hub
 
 В рамках этого краткого руководства вы примените пример решения Интернета вещей на Python для взаимодействия с только что настроенным примером устройства.
 
-1. Откройте другое окно терминала, которое будет терминалом **службы**. 
+1. Откройте другое окно терминала, которое будет терминалом **службы**.
 
 1. Перейдите в папку */azure-iot-sdk-python/azure-iot-hub/samples* в клонированном репозитории SDK Python.
 
-1. В папке samples есть четыре примера файлов, демонстрирующих операции с помощью класса Digital Twin Manager: *get_digital_twin_sample.py, update_digitial_twin_sample.py, invoke_command_sample.py и invoke_component_command_sample-.py*.  В этих примерах показано, как применять каждый API для взаимодействия с устройствами IoT Plug and Play.
+1. Откройте файл *registry_manager_pnp_sample.py* и проверьте код. В этом примере показано, как использовать класс **IoTHubRegistryManager** для взаимодействия с устройством IoT Plug and Play.
 
-### <a name="get-digital-twin"></a>Получение цифрового двойника
+> [!NOTE]
+> В этих примерах служб мы используем класс **IoTHubRegistryManager** из **клиента службы Центра Интернета вещей**. Дополнительные сведения об интерфейсах API, включая API цифровых двойников, см. в [руководстве для разработчиков служб](concepts-developer-guide-service.md).
+
+### <a name="get-the-device-twin"></a>Получение двойника устройства
 
 Во время прохождения статьи [Настройка среды для кратких руководств и учебников IoT Plug and Play](set-up-environment.md) вы создали две переменные среды, чтобы настроить пример для подключения к центру Интернета вещей и устройству:
 
@@ -89,79 +92,77 @@ pip install azure-iot-hub
 Чтобы запустить этот пример, используйте следующую команду в терминале **службы**:
 
 ```cmd/sh
-python get_digital_twin_sample.py
+set IOTHUB_METHOD_NAME="getMaxMinReport"
+set IOTHUB_METHOD_PAYLOAD="hello world"
+python registry_manager_pnp_sample.py
 ```
 
-В выходных данных отобразится цифровой двойник устройства и соответствующий идентификатор модели:
+> [!NOTE]
+> Если вы выполняете этот пример в Linux, используйте `export` вместо `set`.
+
+В выходных данных отобразится двойник устройства и соответствующий идентификатор модели:
 
 ```cmd/sh
-{'$dtId': 'mySimpleThermostat', '$metadata': {'$model': 'dtmi:com:example:Thermostat;1'}}
-Model Id: dtmi:com:example:Thermostat;1
+The Model ID for this device is:
+dtmi:com:example:Thermostat;1
 ```
 
-В следующем фрагменте показан пример кода из файла *get_digital_twin_sample.py*:
+В следующем фрагменте показан пример кода из файла *registry_manager_pnp_sample.py*:
 
 ```python
-    # Get digital twin and retrieve the modelId from it
-    digital_twin = iothub_digital_twin_manager.get_digital_twin(device_id)
-    if digital_twin:
-        print(digital_twin)
-        print("Model Id: " + digital_twin["$metadata"]["$model"])
-    else:
-        print("No digital_twin found")
+    # Create IoTHubRegistryManager
+    iothub_registry_manager = IoTHubRegistryManager(iothub_connection_str)
+
+    # Get device twin
+    twin = iothub_registry_manager.get_twin(device_id)
+    print("The device twin is: ")
+    print("")
+    print(twin)
+    print("")
+
+    # Print the device's model ID
+    additional_props = twin.additional_properties
+    if "modelId" in additional_props:
+        print("The Model ID for this device is:")
+        print(additional_props["modelId"])
+        print("")
 ```
 
-### <a name="update-a-digital-twin"></a>Обновление цифрового двойника
+### <a name="update-a-device-twin"></a>Обновление двойника устройства
 
-В этом примере показано, как с помощью *обновления* изменить свойства цифрового двойника устройства. В следующем фрагменте кода из файла *update_digital_twin_sample.py* показано, как создать исправление:
+В этом примере показано, как обновить доступное для записи свойство `targetTemperature` на устройстве.
 
 ```python
-# If you already have a component thermostat1:
-# patch = [{"op": "replace", "path": "/thermostat1/targetTemperature", "value": 42}]
-patch = [{"op": "add", "path": "/targetTemperature", "value": 42}]
-iothub_digital_twin_manager.update_digital_twin(device_id, patch)
-print("Patch has been succesfully applied")
-```
-
-Чтобы запустить этот пример, используйте следующую команду в терминале **службы**:
-
-```cmd/sh
-python update_digital_twin_sample.py
+    # Update twin
+    twin_patch = Twin()
+    twin_patch.properties = TwinProperties(
+        desired={"targetTemperature": 42}
+    )  # this is relevant for the thermostat device sample
+    updated_twin = iothub_registry_manager.update_twin(device_id, twin_patch, twin.etag)
+    print("The twin patch has been successfully applied")
+    print("")
 ```
 
 Вы можете убедиться, что обновление успешно применено, в терминале **устройства**, где отображаются следующие выходные данные:
 
 ```cmd/sh
 the data in the desired properties patch was: {'targetTemperature': 42, '$version': 2}
-previous values
-42
 ```
 
 В терминале **службы** подтверждается, что обновление применено успешно:
 
 ```cmd/sh
-Patch has been successfully applied
+The twin patch has been successfully applied
 ```
 
 ### <a name="invoke-a-command"></a>Вызов команды
 
-Чтобы вызвать команду, запустите пример *invoke_command_sample.py*. В этом примере показано, как вызвать команду на простом устройстве термостата. Перед запуском этого примера задайте переменные среды `IOTHUB_COMMAND_NAME` и `IOTHUB_COMMAND_PAYLOAD` в терминале **службы**:
-
-```cmd/sh
-set IOTHUB_COMMAND_NAME="getMaxMinReport" # this is the relevant command for the thermostat sample
-set IOTHUB_COMMAND_PAYLOAD="hello world" # this payload doesn't matter for this sample
-```
-
-Чтобы запустить этот пример, используйте следующую команду в терминале **службы**:
-  
-```cmd/sh
-python invoke_command_sample.py
-```
+Затем в примере вызывается команда.
 
 В терминале **службы** отобразится сообщение с подтверждением, полученное от устройства:
 
 ```cmd/sh
-{"tempReport": {"avgTemp": 34.5, "endTime": "13/07/2020 16:03:38", "maxTemp": 49, "minTemp": 11, "startTime": "13/07/2020 16:02:18"}}
+The device method has been successfully invoked
 ```
 
 В терминале **устройства** вы увидите, что устройство успешно получило команду:
@@ -172,7 +173,6 @@ hello world
 Will return the max, min and average temperature from the specified time hello to the current time
 Done generating
 {"tempReport": {"avgTemp": 34.2, "endTime": "09/07/2020 09:58:11", "maxTemp": 49, "minTemp": 10, "startTime": "09/07/2020 09:56:51"}}
-Sent message
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия

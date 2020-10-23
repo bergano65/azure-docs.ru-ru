@@ -7,12 +7,12 @@ ms.service: data-lake-store
 ms.topic: how-to
 ms.date: 07/30/2019
 ms.author: twooley
-ms.openlocfilehash: c61862ccc7bac839627e9e7a9fbff9859155c6a2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9bb787138267fd8a9fab4dea233c1c828b457d67
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87323083"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92109193"
 ---
 # <a name="copy-data-between-data-lake-storage-gen1-and-azure-sql-database-using-sqoop"></a>Копирование данных между Data Lake Storage 1-го поколения и базой данных SQL Azure с помощью Sqoop
 
@@ -31,7 +31,7 @@ ms.locfileid: "87323083"
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 * **Учетная запись Azure Data Lake Storage 1-го поколения**. Инструкции по созданию учетной записи см. в статье [Приступая к работе с Azure Data Lake Storage 1-го поколения](data-lake-store-get-started-portal.md)
 * **Кластер Azure HDInsight** с доступом к учетной записи Data Lake Storage 1-го поколения. Дополнительные сведения см. в статье [Создание кластеров HDInsight, использующих Data Lake Store, с помощью портала Azure](data-lake-store-hdinsight-hadoop-use-portal.md). В этой статье предполагается, что у вас есть кластер HDInsight на платформе Linux с доступом к Data Lake Storage 1-го поколения.
-* **База данных SQL Azure**. Инструкции по созданию базы данных в базе данных SQL Azure см. в статье [Создание базы данных в базе данных SQL Azure](../sql-database/sql-database-get-started.md) .
+* **База данных SQL Azure**. Инструкции по созданию базы данных в базе данных SQL Azure см. в статье [Создание базы данных в базе данных SQL Azure](../azure-sql/database/single-database-create-quickstart.md) .
 
 ## <a name="create-sample-tables-in-the-database"></a>Создание образцов таблиц в базе данных
 
@@ -99,7 +99,7 @@ ms.locfileid: "87323083"
 
    Заполнитель **SQL-Database-Server-Name** представляет имя сервера, на котором запущена база данных. **sql-database-name** представляет реальное имя базы данных.
 
-   Например,
+   Например:
 
     ```console
     sqoop-import --connect "jdbc:sqlserver://mysqoopserver.database.windows.net:1433;username=user1@mysqoopserver;password=<password>;database=mysqoopdatabase" --table Table1 --target-dir adl://myadlsg1store.azuredatalakestore.net/Sqoop/SqoopImportTable1
@@ -131,7 +131,7 @@ ms.locfileid: "87323083"
     sqoop-export --connect "jdbc:sqlserver://<sql-database-server-name>.database.windows.net:1433;username=<username>@<sql-database-server-name>;password=<password>;database=<sql-database-name>" --table Table2 --export-dir adl://<data-lake-storage-gen1-name>.azuredatalakestore.net/Sqoop/SqoopImportTable1 --input-fields-terminated-by ","
     ```
 
-   Например,
+   Например:
 
     ```console
     sqoop-export --connect "jdbc:sqlserver://mysqoopserver.database.windows.net:1433;username=user1@mysqoopserver;password=<password>;database=mysqoopdatabase" --table Table2 --export-dir adl://myadlsg1store.azuredatalakestore.net/Sqoop/SqoopImportTable1 --input-fields-terminated-by ","
@@ -156,7 +156,7 @@ ms.locfileid: "87323083"
 
 ## <a name="performance-considerations-while-using-sqoop"></a>Рекомендации по производительности при использовании Sqoop
 
-Сведения о настройке производительности задания Sqoop для копирования данных в Data Lake Storage 1-го поколения см. в записи [блога о производительности Sqoop](https://docs.microsoft.com/archive/blogs/shanyu/performance-tuning-for-hdinsight-storm-and-microsoft-azure-eventhubs).
+Сведения о настройке производительности задания Sqoop для копирования данных в Data Lake Storage 1-го поколения см. в записи [блога о производительности Sqoop](/archive/blogs/shanyu/performance-tuning-for-hdinsight-storm-and-microsoft-azure-eventhubs).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

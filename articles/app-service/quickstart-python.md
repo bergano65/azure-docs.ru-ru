@@ -5,19 +5,19 @@ ms.topic: quickstart
 ms.date: 09/22/2020
 ms.custom: seo-python-october2019, cli-validate, devx-track-python
 zone_pivot_groups: python-frameworks-01
-ms.openlocfilehash: 0ce995bddb89ce6aa1a550971fbcd92c6515d58e
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 8a0cce6dd68513380759319c378d15aeb0e029c3
+ms.sourcegitcommit: 5abc3919a6b99547f8077ce86a168524b2aca350
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91264560"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91813191"
 ---
 # <a name="quickstart-create-a-python-app-in-azure-app-service-on-linux"></a>Краткое руководство. Создание приложения Python в Службе приложений Azure в Linux
 
 В этом кратком руководстве описывается процесс развертывания веб-приложения Python для [службы приложений на платформе Linux](overview.md#app-service-on-linux), высокомасштабируемой службы веб-размещения Azure с самостоятельной установкой исправлений. Для развертывания примера с помощью платформ Flask или Django на компьютерах Mac, Linux или Windows используется [интерфейс командной строки Azure (CLI)](/cli/azure/install-azure-cli). Веб-приложение, которое вы настраиваете, использует бесплатный уровень Службы приложений, поэтому в процессе выполнения этого руководства затраты на ресурсы Azure не изменяются.
 
 > [!TIP]
-> Если вы предпочитаете развертывать приложения с помощью интегрированной среды разработки, см. статью **[Развертывание приложений Python в Службе приложений из Visual Studio Code](/azure/developer/python/tutorial-deploy-app-service-on-linux-01)** .
+> Если вы привыкли работать с Visual Studio Code, ознакомьтесь со статьей **[Руководство по развертыванию приложений Python в Службе приложений Azure в Linux с помощью Visual Studio Code](/azure/developer/python/tutorial-deploy-app-service-on-linux-01)** .
 
 ## <a name="set-up-your-initial-environment"></a>Настройка начальной среды
 
@@ -134,25 +134,9 @@ cd python-docs-hello-django
     
 1. Запустите сервер разработки.
 
-    # <a name="bash"></a>[Bash](#tab/bash)
-
-    ```bash
-    python3 manage.py runserver
+    ```terminal
+    python manage.py runserver
     ```
-
-    # <a name="powershell"></a>[PowerShell](#tab/powershell)
-
-    ```powershell
-    py -3 manage.py runserver
-    ```
-
-    # <a name="cmd"></a>[Cmd](#tab/cmd)
-
-    ```cmd
-    py -3 manage.py runserver
-    ```
-
-    ---    
 
 1. Откройте веб-браузер и перейдите к примеру приложения по адресу `http://localhost:8000/`. Приложение отображает сообщение **Hello World!** .
 

@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 09/24/2020
 ms.author: duau
-ms.openlocfilehash: a161bc14e8f7628e04673700ca6d90ebc3e8f648
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e153edd807dcb119c34f60dc34e33fed510916bb
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91729174"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92277616"
 ---
 # <a name="tutorial-add-a-custom-domain-to-your-front-door"></a>Руководство по Добавление личного домена в службу Front Door
 В этом руководстве показано, как добавить личный домен в службу Front Door. При использовании службы Azure Front Door для доставки приложения, если вы хотите обеспечить видимость своего доменного имени в запросе пользователя, требуется личный домен. Видимое доменное имя удобно для клиентов и эффективно используется для популяризации бренда.
@@ -39,9 +39,9 @@ ms.locfileid: "91729174"
 
 * Прежде чем перейти к выполнению шагов в этом руководстве, создайте службу Front Door. Дополнительные сведения см. в [кратком руководстве Создание профиля Front Door для высокодоступного глобального веб-приложения](quickstart-create-front-door.md).
 
-* Если у вас еще нет личного домена, сначала нужно приобрести его у поставщика доменов. Например, ознакомьтесь с руководством [Приобретение имени личного домена для веб-приложений Azure](https://docs.microsoft.com/azure/app-service/manage-custom-dns-buy-domain).
+* Если у вас еще нет личного домена, сначала нужно приобрести его у поставщика доменов. Например, ознакомьтесь с руководством [Приобретение имени личного домена для веб-приложений Azure](../app-service/manage-custom-dns-buy-domain.md).
 
-* Если вы используете Azure для размещения [доменов DNS](https://docs.microsoft.com/azure/dns/dns-overview), вам следует делегировать систему доменного имени поставщика домена (DNS) в Azure DNS. Дополнительные сведения см. в статье [Делегирование домена в Azure DNS](https://docs.microsoft.com/azure/dns/dns-delegate-domain-azure-dns). В противном случае при использовании поставщика доменов для обработки домена DNS перейдите к разделу [создания записей CNAME DNS](#create-a-cname-dns-record).
+* Если вы используете Azure для размещения [доменов DNS](../dns/dns-overview.md), вам следует делегировать систему доменного имени поставщика домена (DNS) в Azure DNS. Дополнительные сведения см. в статье [Делегирование домена в Azure DNS](../dns/dns-delegate-domain-azure-dns.md). В противном случае при использовании поставщика доменов для обработки домена DNS перейдите к разделу [создания записей CNAME DNS](#create-a-cname-dns-record).
 
 
 ## <a name="create-a-cname-dns-record"></a>Создание записи CNAME DNS

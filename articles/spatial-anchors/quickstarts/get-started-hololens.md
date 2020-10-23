@@ -8,12 +8,12 @@ ms.author: crtreasu
 ms.date: 02/24/2019
 ms.topic: quickstart
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: e6d728647bb654ee2645bb1e3eb5968dcab337a8
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 66b8008312c1cf81d4fca7fb8ee5f26fc4c98f60
+ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87810359"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92096169"
 ---
 # <a name="quickstart-create-a-hololens-app-with-azure-spatial-anchors-in-cwinrt-and-directx"></a>Краткое руководство. Создание приложения HoloLens с использованием Пространственных привязок Azure в C++/WinRT и DirectX
 
@@ -33,7 +33,7 @@ ms.locfileid: "87810359"
 В рамках этого краткого руководства вам потребуются:
 - Компьютер Windows с установленной программой <a href="https://www.visualstudio.com/downloads/" target="_blank">Visual Studio 2019</a> или более поздней версии с рабочей нагрузкой **Разработка приложений для универсальной платформы Windows** и компонентом **Пакет SDK для Windows 10 (10.0.18362.0 или более поздняя версия)** . Необходимо также установить <a href="https://git-scm.com/download/win" target="_blank">Git для Windows</a> и <a href="https://git-lfs.github.com/">Git LFS</a>.
 - Установленное [расширение Visual Studio C++/WinRT](https://aka.ms/cppwinrt/vsix) из [Visual Studio Marketplace](https://marketplace.visualstudio.com/).
-- Устройство HoloLens с включенным [режимом разработчика](https://docs.microsoft.com/windows/mixed-reality/using-visual-studio). Для этой статьи требуется устройство HoloLens с [обновлением Windows 10 за октябрь 2018 г.](https://docs.microsoft.com/windows/mixed-reality/release-notes-october-2018 ) (также известным как RS5). Чтобы обновить HoloLens до последней версии, откройте приложение **Параметры**, перейдите в раздел **Обновление и безопасность**, а затем нажмите кнопку **Проверить обновления**.
+- Устройство HoloLens с включенным [режимом разработчика](/windows/mixed-reality/using-visual-studio). Для выполнения инструкций из этой статьи требуется устройство HoloLens с [обновлением Windows 10 за май 2020 г.](/windows/mixed-reality/whats-new/release-notes-may-2020) Чтобы обновить HoloLens до последней версии, откройте приложение **Параметры**, перейдите в раздел **Обновление и безопасность**, а затем нажмите кнопку **Проверить обновления**.
 - В манифесте AppX приложения необходимо настроить возможность **spatialPerception**.
 
 [!INCLUDE [Create Spatial Anchors resource](../../../includes/spatial-anchors-get-started-create-resource.md)]

@@ -5,13 +5,13 @@ ms.service: data-share
 author: jifems
 ms.author: jife
 ms.topic: conceptual
-ms.date: 08/14/2020
-ms.openlocfilehash: bb8b13e1141a8cb4610e15ed693e28042dd20d72
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 10/15/2020
+ms.openlocfilehash: f3ecf8ef22d3f1d66b7148b809475a830c7e9f13
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89259019"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92318580"
 ---
 # <a name="supported-data-stores-in-azure-data-share"></a>Поддерживаемые хранилища данных в Azure Data Share
 
@@ -28,8 +28,8 @@ ms.locfileid: "89259019"
 | Хранилище BLOB-объектов Azure |✓ | |
 | Хранилище Azure Data Lake Storage 1-го поколения |✓ | |
 | Azure Data Lake Storage 2-го поколения |✓ ||
-| База данных SQL Azure |Общедоступная предварительная версия | |
-| Azure синапсе Analytics (ранее — хранилище данных SQL Azure) |Общедоступная предварительная версия | |
+| База данных SQL Azure |✓ | |
+| Azure синапсе Analytics (ранее — хранилище данных SQL Azure) |✓ | |
 | Azure Data Explorer | |✓ |
 
 ## <a name="data-store-support-matrix"></a>Матрица поддержки хранилища данных
@@ -67,6 +67,6 @@ ms.locfileid: "89259019"
 
 Дополнительные сведения см. в разделе [общий доступ и получение данных из обозреватель данных Azure](/azure/data-explorer/data-share) . 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы узнать, как начать совместное использование данных, перейдите к руководству по [совместному использованию данных](share-your-data.md) .

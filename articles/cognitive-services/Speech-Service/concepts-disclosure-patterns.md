@@ -9,13 +9,13 @@ ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 12/03/2019
-ms.author: angle
-ms.openlocfilehash: 3e7d8ee2b156a30b11cda79798a8af8a8ecf4f64
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.author: shlo
+ms.openlocfilehash: 7df082cd5044f142d8d5900ec1fff6c182262bd9
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "74776628"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92425110"
 ---
 # <a name="disclosure-design-patterns"></a>Конструктивные шаблоны для раскрытия информации
 Теперь, когда вы&#39;, определили верный [уровень разглашения](concepts-disclosure-guidelines.md#disclosure-assessment) искусственного голоса, он&#39;, чтобы исследовать потенциальные конструктивные шаблоны.
@@ -184,7 +184,7 @@ ms.locfileid: "74776628"
 
 Раскрытие можно получить неявным образом, задав точные ожидаемые значения для цифрового помощника. Предоставьте примеры команд, чтобы пользователи могли научиться взаимодействовать с цифровым помощником и предлагать контекстную помощь, чтобы узнать больше о искусственном голосовом процессе на ранних этапах работы.
 
-![Визуальные подсказки и отзывы](media/responsible-ai/disclosure-patterns/capability-disclosure.png)<br/>
+![Пример ответов по умолчанию на диалог, который можно создавать.](media/responsible-ai/disclosure-patterns/capability-disclosure.png)<br/>
 
 ### <a name="conversational-transparency"></a>Прозрачность общения
 

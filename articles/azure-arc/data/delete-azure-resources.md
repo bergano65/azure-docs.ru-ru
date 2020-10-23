@@ -9,12 +9,12 @@ ms.author: twright
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 46c1df8a175657e20dce984d0c8825ae99170246
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4c76b2c0109637ce34681d2fa5c8b29e1ff800a1
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91761657"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92364377"
 ---
 # <a name="delete-resources-from-azure"></a>Удаление ресурсов из Azure
 
@@ -63,7 +63,7 @@ ms.locfileid: "91761657"
 
 Чтобы удалить ресурсы управляемого экземпляра SQL из Azure с помощью Azure CLI замените значения заполнителей в приведенной ниже команде и запустите ее.
 
-```console
+```azurecli
 az resource delete --name <sql instance name> --resource-type Microsoft.AzureData/sqlManagedInstances --resource-group <resource group name>
 
 #Example
@@ -74,7 +74,7 @@ az resource delete --name <sql instance name> --resource-type Microsoft.AzureDat
 
 Чтобы удалить ресурс группы серверов PostgreSQL Scale из Azure с помощью Azure CLI замените значения заполнителей в приведенной ниже команде и запустите ее.
 
-```console
+```azurecli
 az resource delete --name <postgresql instance name> --resource-type Microsoft.AzureData/postgresInstances --resource-group <resource group name>
 
 #Example
@@ -88,7 +88,7 @@ az resource delete --name <postgresql instance name> --resource-type Microsoft.A
 
 Чтобы удалить контроллер данных Arc Azure из Azure с помощью Azure CLI замените значения заполнителей в приведенной ниже команде и запустите ее.
 
-```console
+```azurecli
 az resource delete --name <data controller name> --resource-type Microsoft.AzureData/dataControllers --resource-group <resource group name>
 
 #Example
@@ -97,4 +97,4 @@ az resource delete --name <data controller name> --resource-type Microsoft.Azure
 
 ### <a name="delete-a-resource-group-using-the-azure-cli"></a>Удаление группы ресурсов с помощью Azure CLI
 
-Можно также использовать Azure CLI для [удаления группы ресурсов](/azure/azure-resource-manager/management/delete-resource-group).
+Можно также использовать Azure CLI для [удаления группы ресурсов](../../azure-resource-manager/management/delete-resource-group.md).

@@ -8,15 +8,15 @@ ms.subservice: core
 ms.reviewer: sgilley
 ms.author: nilsp
 author: NilsPohlmann
-ms.date: 8/14/2020
+ms.date: 10/21/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, contperfq1
-ms.openlocfilehash: 9bfec8c1da0581fa7f17dd671358218f22c877c6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e6cbda4067e98c16ea26f3436b5f65e696549462
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91708481"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92370310"
 ---
 # <a name="create-and-run-machine-learning-pipelines-with-azure-machine-learning-sdk"></a>Создание и запуск конвейеров машинного обучения с помощью пакета SDK для Машинное обучение Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "91708481"
 
 Если у вас еще нет подписки Azure, создайте бесплатную учетную запись, прежде чем начинать работу. Попробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 * Создайте [рабочую область Машинного обучения Azure](how-to-manage-workspace.md) для хранения всех ресурсов конвейера.
 
@@ -251,6 +251,18 @@ from azureml.pipeline.core import Pipeline
 pipeline1 = Pipeline(workspace=ws, steps=[compare_models])
 ```
 
+### <a name="how-python-environments-work-with-pipeline-parameters"></a>Как среды Python работают с параметрами конвейера
+
+Как обсуждалось ранее в разделе [Настройка среды обучающего выполнения](#configure-the-training-runs-environment), зависимости состояния среды и библиотеки Python указываются с помощью `Environment` объекта. Как правило, можно указать существующий объект `Environment` , обратившись к его имени и (необязательно) версию:
+
+```python
+aml_run_config = RunConfiguration()
+aml_run_config.environment.name = 'MyEnvironment'
+aml_run_config.environment.version = '1.0'
+```
+
+Однако, если вы решили использовать `PipelineParameter` объекты для динамического задания переменных в среде выполнения для шагов конвейера, этот метод нельзя использовать для ссылки на существующий объект `Environment` . Вместо этого, если необходимо использовать `PipelineParameter` объекты, необходимо задать `environment` `RunConfiguration` для поля объекта значение `Environment` . Ответственность за то, чтобы такой объект получил свои `Environment` зависимости от внешних пакетов Python, должен быть установлен правильно.
+
 ### <a name="use-a-dataset"></a>Использование набора данных 
 
 Наборы данных, созданные из хранилища BLOB-объектов Azure, службы "файлы Azure", Azure Data Lake Storage 1-го поколения, Azure Data Lake Storage 2-го поколения, базу Azure SQL и базу данных Azure для PostgreSQL, можно использовать в качестве входных данных для любого этапа конвейера. Вы можете записывать выходные данные в [дататрансферстеп](https://docs.microsoft.com/python/api/azureml-pipeline-steps/azureml.pipeline.steps.datatransferstep?view=azure-ml-py&preserve-view=true), [датабрикксстеп](https://docs.microsoft.com/python/api/azureml-pipeline-steps/azureml.pipeline.steps.databricks_step.databricksstep?view=azure-ml-py&preserve-view=true)или, если вы хотите записать данные в определенное хранилище данных, используя [пипелинедата](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata?view=azure-ml-py&preserve-view=true). 
@@ -337,6 +349,8 @@ pipeline_run1.wait_for_completion()
 ![Схема запуска эксперимента в виде конвейера](./media/how-to-create-your-first-pipeline/run_an_experiment_as_a_pipeline.png)
 
 Дополнительные сведения см. в справочнике по [классу эксперимента](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment?view=azure-ml-py&preserve-view=true) .
+
+## <a name="use-pipeline-parameters-for-arguments-that-change-at-inference-time"></a>Использовать параметры конвейера для аргументов, которые изменяются во время вывода
 
 ## <a name="view-results-of-a-pipeline"></a>Просмотр результатов конвейера
 

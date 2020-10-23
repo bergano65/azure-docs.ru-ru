@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 01/31/2018
 ms.author: elsung
-ms.openlocfilehash: 0fa836ea31793d9177ad6e838ddea1516bf51733
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e319cf9dfc01546607e20572c5bf4930fd974c75
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88191403"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92104042"
 ---
 # <a name="access-azure-data-lake-storage-gen1-from-vms-within-an-azure-vnet"></a>Доступ к Azure Data Lake Storage 1-го поколения с виртуальных машин в виртуальной сети Azure
 Azure Data Lake Storage 1-го поколения — это служба PaaS, которая использует общедоступные IP-адреса в Интернете. Любой сервер с доступом к общедоступному Интернету, как правило, может подключаться к конечным точкам Azure Data Lake Storage 1-го поколения. По умолчанию все виртуальные машины, которые находятся в виртуальных сетях Azure, могут подключиться к Интернету, а значит и получить доступ к Azure Data Lake Storage 1-го поколения. Тем не менее для виртуальных машин в виртуальной сети можно настроить ограничение доступа к Интернету. Такие виртуальные машины также не смогут подключаться к Azure Data Lake Storage 1-го поколения. Блокировать доступ к общедоступному Интернету для виртуальных машин в виртуальных сетях Azure можно с помощью одного из следующих методов.
@@ -46,7 +46,7 @@ Aliases:  mydatastore.azuredatalakestore.net
 
 
 ### <a name="enabling-connectivity-from-vms-restricted-by-using-nsg"></a>Настройка подключения из виртуальных машин, ограниченных с помощью NSG
-При использовании правила NSG для блокировки доступа к Интернету можно создать другую группу безопасности сети, обеспечивающую доступ к IP-адресу Azure Data Lake Storage 1-го поколения. Дополнительные сведения о правилах NSG см. в статье [Безопасность сети](../virtual-network/security-overview.md). Инструкции по созданию NSG см. в статье [Создание групп безопасности сети](../virtual-network/tutorial-filter-network-traffic.md).
+При использовании правила NSG для блокировки доступа к Интернету можно создать другую группу безопасности сети, обеспечивающую доступ к IP-адресу Azure Data Lake Storage 1-го поколения. Дополнительные сведения о правилах NSG см. в статье [Безопасность сети](../virtual-network/network-security-groups-overview.md). Инструкции по созданию NSG см. в статье [Создание групп безопасности сети](../virtual-network/tutorial-filter-network-traffic.md).
 
 ### <a name="enabling-connectivity-from-vms-restricted-by-using-udr-or-expressroute"></a>Настройка подключения из виртуальных машин, ограниченных с помощью UDR или ExpressRoute
 При использовании маршрутов UDR или маршрутов, обмениваемых через BGP, для блокирования доступа к Интернету необходимо настроить специальный маршрут, с помощью которого виртуальные машины в таких подсетях смогут получать доступ к конечным точкам Data Lake Storage 1-го поколения. Дополнительные сведения см. в статье [Маршрутизация трафика в виртуальной сети](../virtual-network/virtual-networks-udr-overview.md). Инструкции по созданию определяемых пользователем маршрутов см. в статье [Создание определяемых пользователем маршрутов (UDR) в Resource Manager с помощью PowerShell](../virtual-network/tutorial-create-route-table-powershell.md).
@@ -54,7 +54,6 @@ Aliases:  mydatastore.azuredatalakestore.net
 ### <a name="enabling-connectivity-from-vms-restricted-by-using-expressroute"></a>Настройка подключения из виртуальных машин, ограниченных с помощью ExpressRoute
 Если настроен канал ExpressRoute, локальные серверы могут получать доступ к Data Lake Storage 1-го поколения через общедоступный пиринг. Дополнительные сведения о настройке ExpressRoute для общедоступного пиринга см. в статье [Вопросы и ответы по ExpressRoute](../expressroute/expressroute-faqs.md).
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 * [Общие сведения об Azure Data Lake Storage Gen1](data-lake-store-overview.md)
 * [Обеспечение безопасности в Azure Data Lake Storage 1-го поколения](data-lake-store-security-overview.md)
-

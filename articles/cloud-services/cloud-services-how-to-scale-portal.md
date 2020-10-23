@@ -7,12 +7,12 @@ ms.service: cloud-services
 ms.topic: article
 ms.date: 05/18/2017
 ms.author: tagore
-ms.openlocfilehash: 5e457742d8a940ff3a1602cc3dcf1b1d77126ac3
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 06a0209c2bbd0982054d33c199685d016f405b0c
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92076680"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92165491"
 ---
 # <a name="how-to-configure-auto-scaling-for-a-cloud-service-in-the-portal"></a>Как настроить автомасштабирование для облачной службы на портале
 
@@ -53,7 +53,7 @@ ms.locfileid: "92076680"
 
 Для параметра **Режим масштабирования** выберите значение **Правила расписания и производительности**.
 
-![Параметры масштабирования облачных служб с профилем и правилом](./media/cloud-services-how-to-scale-portal/schedule-basics.png)
+![Снимок экрана, показывающий параметр "Расписание" и "правила производительности".](./media/cloud-services-how-to-scale-portal/schedule-basics.png)
 
 1. Существующий профиль.
 2. Добавьте правило для родительского профиля.

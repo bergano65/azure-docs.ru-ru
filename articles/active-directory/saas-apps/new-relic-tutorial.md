@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 04/16/2020
 ms.author: jeedes
-ms.openlocfilehash: 19a471b9339828250baa190b1de57c86eb22b30c
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: c8d24d0b71ce537b81ee729109b398042c3b60c5
+ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88554470"
+ms.lasthandoff: 10/11/2020
+ms.locfileid: "91940963"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-new-relic-by-account"></a>Руководство по Интеграция единого входа Azure Active Directory с New Relic by Account
 
@@ -134,7 +134,7 @@ ms.locfileid: "88554470"
 
 2. В меню в верхней части страницы щелкните **Параметры учетной записи**.
    
-    ![Параметры учетной записи](./media/new-relic-tutorial/ic797036.png "Параметры учетной записи")
+    ![Снимок экрана для страницы приветствия, где выбраны параметры учетной записи.](./media/new-relic-tutorial/ic797036.png "Параметры учетной записи")
 
 3. Щелкните вкладку **Security and authentication** (Безопасность и аутентификация), а затем выберите вкладку **Single sign on** (Единый вход).
    
@@ -158,11 +158,11 @@ ms.locfileid: "88554470"
 
 2. В меню в верхней части страницы щелкните **Параметры учетной записи**.
    
-    ![Параметры учетной записи](./media/new-relic-tutorial/ic797040.png "Параметры учетной записи")
+    ![Снимок экрана демонстрирует выбор параметров учетной записи на странице приветствия.](./media/new-relic-tutorial/ic797040.png "Параметры учетной записи")
 
 3. В области **Account** (Учетная запись) слева щелкните **Summary** (Сводка) и нажмите кнопку **Add user** (Добавить пользователя).
    
-    ![Параметры учетной записи](./media/new-relic-tutorial/ic797041.png "Параметры учетной записи")
+    ![Снимок экрана для панели общих сведений, где можно выбрать действие добавления пользователя.](./media/new-relic-tutorial/ic797041.png "Параметры учетной записи")
 
 4. В диалоговом окне **Активные пользователи** сделайте следующее:
    

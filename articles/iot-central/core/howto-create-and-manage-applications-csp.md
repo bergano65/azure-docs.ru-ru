@@ -8,12 +8,12 @@ ms.author: dobett
 ms.date: 08/23/2019
 ms.topic: how-to
 manager: philmea
-ms.openlocfilehash: e000e2979436605b9274792ad3dde8eb1fa80976
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 43c201150ab0b2d5d350aa228a4ade5e2faf3461
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91653355"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92123119"
 ---
 # <a name="create-and-manage-an-azure-iot-central-application-from-the-csp-portal"></a>Создание приложения IoT Central Azure и управление им на портале CSP
 
@@ -63,7 +63,7 @@ URL-адрес приложения будет создан автоматиче
 
 Клиент Azure Active Directory содержит удостоверения пользователей, учетные данные и другие сведения об организации. Несколько подписок Azure можно связать с одним клиентом Azure Active Directory.
 
-Дополнительные сведения см. в [документации по Azure Active Directory](https://docs.microsoft.com/azure/active-directory/).
+Дополнительные сведения см. в [документации по Azure Active Directory](../../active-directory/index.yml).
 
 ## <a name="azure-subscription"></a>Подписка Azure.
 
@@ -71,7 +71,7 @@ URL-адрес приложения будет создан автоматиче
 
 Если у вас нет подписки Azure, вы можете создать ее в центре партнеров Майкрософт. После создания подписки Azure перейдите на страницу **Создание приложения**. В раскрывающемся списке **Подписка Azure** отобразится новая подписка.
 
-Дополнительные сведения см. в разделе о [подписках Azure](https://docs.microsoft.com/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing).
+Дополнительные сведения см. в разделе о [подписках Azure](../../guides/developer/azure-developer-guide.md#understanding-accounts-subscriptions-and-billing).
 
 ## <a name="location"></a>Расположение
 

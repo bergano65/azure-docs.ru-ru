@@ -1,6 +1,6 @@
 ---
 title: Настройка репликации транзакций между Управляемым экземпляром SQL Azure и SQL Server
-description: В этом руководстве показано, как настроить репликацию между управляемым экземпляром издателя, управляемым экземпляром распространителя и подписчиком SQL Server на виртуальной машине Azure. Также здесь описаны необходимые сетевые компоненты, такие как частная зона DNS и пиринг VPN.
+description: В этом руководстве показано, как настроить репликацию между управляемым экземпляром издателя, управляемым экземпляром распространителя и подписчиком SQL Server на виртуальной машине Azure. Также здесь описаны необходимые сетевые компоненты, такие как частная зона DNS и пиринг виртуальных сетей.
 services: sql-database
 ms.service: sql-managed-instance
 ms.subservice: security
@@ -10,12 +10,12 @@ author: MashaMSFT
 ms.author: mathoma
 ms.reviewer: sstein
 ms.date: 11/21/2019
-ms.openlocfilehash: 9d6592ccfb3ba5236a660d689d8b5d2cd1600c48
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: ff29e93149c618bb7d6df6b4477cc79fcf4b53d2
+ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91283196"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92058562"
 ---
 # <a name="tutorial-configure-transactional-replication-between-azure-sql-managed-instance-and-sql-server"></a>Руководство по Настройка репликации транзакций между Управляемым экземпляром SQL Azure и SQL Server
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -38,7 +38,7 @@ ms.locfileid: "91283196"
 
 
 > [!NOTE]
-> В этой статье описывается использование [репликации транзакций](https://docs.microsoft.com/sql/relational-databases/replication/transactional/transactional-replication) в Управляемом экземпляре SQL Azure. Она не связана с [группами отработки отказа](https://docs.microsoft.com/azure/sql-database/sql-database-auto-failover-group), которые представляют собой функцию Управляемого экземпляра SQL Azure, позволяющую создавать полные, доступные для чтения реплики отдельных экземпляров. При настройке [репликации транзакций с группами отработки отказа](replication-transactional-overview.md#with-failover-groups) следует учитывать дополнительные факторы.
+> В этой статье описывается использование [репликации транзакций](/sql/relational-databases/replication/transactional/transactional-replication) в Управляемом экземпляре SQL Azure. Она не связана с [группами отработки отказа](https://docs.microsoft.com/azure/sql-database/sql-database-auto-failover-group), которые представляют собой функцию Управляемого экземпляра SQL Azure, позволяющую создавать полные, доступные для чтения реплики отдельных экземпляров. При настройке [репликации транзакций с группами отработки отказа](replication-transactional-overview.md#with-failover-groups) следует учитывать дополнительные факторы.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -48,10 +48,10 @@ ms.locfileid: "91283196"
 - Опыт развертывания двух управляемых экземпляров в одной виртуальной сети.
 - Подписчик SQL Server, развернутый локально или на виртуальной машине Azure. В этом руководстве используется виртуальная машина Azure.  
 - [SQL Server Management Studio (SSMS) версии не ниже 18.0](/sql/ssms/download-sql-server-management-studio-ssms).
-- Последняя версия [Azure PowerShell](/powershell/azure/install-az-ps?view=azps-1.7.0).
+- Последняя версия [Azure PowerShell](/powershell/azure/install-az-ps).
 - Открытые порты 445 и 1433 для трафика SQL на брандмауэре Azure и брандмауэре Windows.
 
-## <a name="1---create-the-resource-group"></a>1\. Создание группы ресурсов
+## <a name="create-the-resource-group"></a>Создание группы ресурсов
 
 Чтобы создать группу ресурсов, используйте следующий фрагмент кода PowerShell.
 
@@ -64,7 +64,7 @@ $Location = "East US 2"
 New-AzResourceGroup -Name  $ResourceGroupName -Location $Location
 ```
 
-## <a name="2---create-two-managed-instances"></a>2\. Создание двух управляемых экземпляров
+## <a name="create-two-managed-instances"></a>Создание двух управляемых экземпляров
 
 Создайте в новой группе ресурсов два управляемых экземпляра с помощью [портала Azure](https://portal.azure.com).
 
@@ -76,9 +76,9 @@ New-AzResourceGroup -Name  $ResourceGroupName -Location $Location
 См. сведения о том, как [создать управляемый экземпляр](instance-create-quickstart.md).
 
   > [!NOTE]
-  > Для простоты в этом руководстве используется самая распространенная конфигурация с размещением управляемого экземпляра распространителя в той же виртуальной сети, где расположен издатель. Но вы можете создать распространитель в отдельной виртуальной сети. Для этого потребуется настроить пиринг VPN между виртуальными сетями издателя и распространителя, а также пиринг VPN между виртуальными сетями распространителя и подписчика.
+  > Для простоты в этом руководстве используется самая распространенная конфигурация с размещением управляемого экземпляра распространителя в той же виртуальной сети, где расположен издатель. Но вы можете создать распространитель в отдельной виртуальной сети. Для этого потребуется настроить пиринг между виртуальными сетями издателя и распространителя, а также пиринг между виртуальными сетями распространителя и подписчика.
 
-## <a name="3---create-a-sql-server-vm"></a>3\. Создание виртуальной машины SQL Server
+## <a name="create-a-sql-server-vm"></a>Создание виртуальной машины SQL Server
 
 Создайте виртуальную машину SQL Server с помощью [портала Azure](https://portal.azure.com). Виртуальная машина SQL Server должна иметь следующие характеристики.
 
@@ -89,9 +89,9 @@ New-AzResourceGroup -Name  $ResourceGroupName -Location $Location
 
 См. сведения о развертывании виртуальной машины SQL Server в Azure в [кратком руководстве по созданию виртуальной машины SQL Server](../virtual-machines/windows/sql-vm-create-portal-quickstart.md).
 
-## <a name="4---configure-vpn-peering"></a>4\. Настройка пиринга VPN
+## <a name="configure-vnet-peering"></a>Настройка пиринга виртуальных сетей
 
-Настройте пиринг VPN для взаимодействия между виртуальной сетью с двумя управляемыми экземплярами и виртуальной сетью SQL Server. Для этого используйте следующий фрагмент кода PowerShell.
+Настройте пиринг виртуальных сетей для взаимодействия между виртуальной сетью с двумя управляемыми экземплярами и виртуальной сетью SQL Server. Для этого используйте следующий фрагмент кода PowerShell.
 
 ```powershell-interactive
 # Set variables
@@ -110,13 +110,13 @@ $virtualNetwork1 = Get-AzVirtualNetwork `
   -ResourceGroupName $resourceGroup `
   -Name $subvNet  
 
-# Configure VPN peering from publisher to subscriber
+# Configure VNet peering from publisher to subscriber
 Add-AzVirtualNetworkPeering `
   -Name $pubsubName `
   -VirtualNetwork $virtualNetwork1 `
   -RemoteVirtualNetworkId $virtualNetwork2.Id
 
-# Configure VPN peering from subscriber to publisher
+# Configure VNet peering from subscriber to publisher
 Add-AzVirtualNetworkPeering `
   -Name $subpubName `
   -VirtualNetwork $virtualNetwork2 `
@@ -136,11 +136,11 @@ Get-AzVirtualNetworkPeering `
 
 ```
 
-Настроив пиринг VPN, проверьте подключение, запустив SQL Server Management Studio (SSMS) на SQL Server и подключившись к обоим управляемым экземплярам. См. сведения о том, как [создать подключение к управляемому экземпляру SQL с использованием SSMS](point-to-site-p2s-configure.md#connect-with-ssms).
+Настроив пиринг виртуальных сетей, проверьте подключение, запустив SQL Server Management Studio (SSMS) на сервере SQL Server и подключившись к обоим управляемым экземплярам. См. сведения о том, как [создать подключение к управляемому экземпляру SQL с использованием SSMS](point-to-site-p2s-configure.md#connect-with-ssms).
 
 ![Проверка возможности подключения к управляемым экземплярам](./media/replication-two-instances-and-sql-server-configure-tutorial/test-connectivity-to-mi.png)
 
-## <a name="5---create-a-private-dns-zone"></a>5\. Создание частной зоны DNS
+## <a name="create-a-private-dns-zone"></a>Создание частной зоны DNS
 
 Частная зона DNS позволяет организовать маршрутизацию DNS между управляемыми экземплярами и SQL Server.
 
@@ -180,7 +180,7 @@ Get-AzVirtualNetworkPeering `
 1. Щелкните **ОК**, чтобы установить связь с виртуальной сетью.
 1. Повторите эти шаги, чтобы добавить ссылку на виртуальную сеть подписчика, указав для нее имя `Sub-link`.
 
-## <a name="6---create-an-azure-storage-account"></a>6\. Создание учетной записи хранения Azure
+## <a name="create-an-azure-storage-account"></a>Создание учетной записи хранения Azure
 
 [Создайте учетную запись хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-create-storage-account#create-a-storage-account) для рабочей папки, а затем создайте в этой учетной записи [общую папку](../../storage/files/storage-how-to-create-file-share.md).
 
@@ -194,7 +194,7 @@ Get-AzVirtualNetworkPeering `
 
 См. сведения о том, как [управлять ключами доступа к учетной записи хранения](../../storage/common/storage-account-keys-manage.md).
 
-## <a name="7---create-a-database"></a>7\. Создание базы данных
+## <a name="create-a-database"></a>Создание базы данных
 
 Создайте новую базу данных в управляемом экземпляре издателя. Для этого выполните следующие действия.
 
@@ -242,7 +242,7 @@ SELECT * FROM ReplTest
 GO
 ```
 
-## <a name="8---configure-distribution"></a>8\. Настройка распространения
+## <a name="configure-distribution"></a>Настройка распространения
 
 Итак, подключение установлено и у вас есть пример базы данных. Теперь вы можете настроить распространение в управляемом экземпляре `sql-mi-distributor`. Для этого выполните следующие действия.
 
@@ -277,7 +277,7 @@ GO
    EXEC sys.sp_adddistributor @distributor = 'sql-mi-distributor.b6bf57.database.windows.net', @password = '<distributor_admin_password>'
    ```
 
-## <a name="9---create-the-publication"></a>9\. Создание публикации
+## <a name="create-the-publication"></a>Создание публикации
 
 Настроив распространение, можно создать публикацию. Для этого выполните следующие действия.
 
@@ -298,7 +298,7 @@ GO
 1. На странице **Завершение работы мастера** присвойте публикации имя `ReplTest` и щелкните **Далее**, чтобы создать эту публикацию.
 1. Создав публикацию, обновите узел **Репликация** в **обозревателе объектов** и разверните узел **Локальные публикации**, чтобы увидеть новую публикацию.
 
-## <a name="10---create-the-subscription"></a>10. Создание подписки
+## <a name="create-the-subscription"></a>Создание подписки
 
 После создания публикации можно создать подписку. Для этого выполните следующие действия.
 
@@ -331,7 +331,7 @@ exec sp_addpushsubscription_agent
 GO
 ```
 
-## <a name="11---test-replication"></a>11. Тестовая репликация
+## <a name="test-replication"></a>Проверка репликации
 
 Настроенную репликацию можно протестировать, добавив новые элементы в издатель и убедившись, что изменения распространяются на подписчик.
 
@@ -393,7 +393,7 @@ INSERT INTO ReplTest (ID, c1) VALUES (15, 'pub')
 - Убедитесь, что при создании подписчика использовалось имя DNS.
 - Убедитесь, что виртуальные сети правильно связаны в частной зоне DNS.
 - Убедитесь, что запись A настроена правильно.
-- Убедитесь, что пиринг VPN настроен правильно.
+- Убедитесь, что пиринг виртуальных сетей настроен правильно.
 
 ### <a name="no-publications-to-which-you-can-subscribe"></a>Отсутствие публикаций, на которые можно подписаться
 

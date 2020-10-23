@@ -2,14 +2,14 @@
 author: glecaros
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 03/30/2020
+ms.date: 10/15/2020
 ms.author: gelecaro
-ms.openlocfilehash: a1bc980f8334ca815a1805f33f3572cded4ba0ef
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 29433e7ecaa4135c790f7cafb36d56c4c07ac684
+ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "86156476"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92097003"
 ---
 а также как установить [пакет SDK для службы "Речь"](~/articles/cognitive-services/speech-service/speech-sdk.md) для Linux.
 

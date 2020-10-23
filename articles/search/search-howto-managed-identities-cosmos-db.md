@@ -9,18 +9,19 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 09/22/2020
-ms.openlocfilehash: fc12978e59ecc3ebcc58d4070fa057f9a53fda58
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1d2185509631bf03717e418e485cfcaad1e21c63
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91275291"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92102699"
 ---
 # <a name="set-up-an-indexer-connection-to-a-cosmos-db-database-using-a-managed-identity"></a>Настройка подключения индексатора к базе данных Cosmos DB с помощью управляемого удостоверения
 
 На этой странице описывается, как настроить подключение индексатора к базе данных Cosmos DB с использованием управляемого удостоверения вместо того, чтобы включать учетные данные в строку подключения к объекту источника данных.
 
 Перед изучением этой функции желательно иметь представление о том, что такое индексатор и как настроить индексатор для источника данных. См. подробнее в следующих статьях:
+
 * [Обзор индексатора](search-indexer-overview.md)
 * [Индексатор Azure Cosmos DB](search-howto-index-cosmosdb.md)
 
@@ -143,9 +144,8 @@ api-key: [admin key]
 
 1. Если вы недавно поменяли Cosmos DB ключи учетной записи, потребуется подождать до 15 минут, чтобы строка подключения управляемого удостоверения работала.
 
-1. Проверьте, ограничен ли доступ к учетной записи Cosmos DB для выбора сетей. В этом случае обратитесь к [источникам данных с помощью функций безопасности сети Azure](search-indexer-securing-resources.md).
+1. Проверьте, ограничен ли доступ к учетной записи Cosmos DB для выбора сетей. Если это так, обратитесь к [индексатору доступ к содержимому, защищенному с помощью функций безопасности сети Azure](search-indexer-securing-resources.md).
 
-## <a name="see-also"></a>См. также раздел
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об индексаторах Cosmos DB:
 * [Индексатор Azure Cosmos DB](search-howto-index-cosmosdb.md)

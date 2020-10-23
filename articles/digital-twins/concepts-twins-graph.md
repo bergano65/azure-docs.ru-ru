@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 3/12/2020
 ms.topic: conceptual
 ms.service: digital-twins
-ms.openlocfilehash: 5821a1d1f6713ef39d7475fb004164e7c0fd71ec
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c41ffcd552cddf981c2ed54d1d78c7cb2e8698c5
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87062052"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92440844"
 ---
 # <a name="understand-digital-twins-and-their-twin-graph"></a>Знакомство с цифровыми двойников и двойника диаграммой
 
@@ -39,45 +39,21 @@ ms.locfileid: "87062052"
 
 ## <a name="create-with-the-apis"></a>Создание с помощью API
 
-В этом разделе показано, как создать цифровые двойников и связи из клиентского приложения. Он содержит примеры кода .NET, использующие [API-интерфейсы дигиталтвинс](how-to-use-apis-sdks.md), для предоставления дополнительного контекста на то, что происходит внутри каждого из этих концепций.
+В этом разделе показано, как создать цифровые двойников и связи из клиентского приложения. Он содержит примеры кода .NET, использующие [API-интерфейсы дигиталтвинс](/rest/api/digital-twins/dataplane/twins), для предоставления дополнительного контекста на то, что происходит внутри каждого из этих концепций.
 
 ### <a name="create-digital-twins"></a>Создание цифровых двойников
 
-Ниже приведен фрагмент кода клиента, который использует [API дигиталтвинс](how-to-use-apis-sdks.md) для создания экземпляра двойника типа *Room*.
+Ниже приведен фрагмент кода клиента, который использует [API дигиталтвинс](/rest/api/digital-twins/dataplane/twins) для создания экземпляра двойника типа *Room*.
 
 В текущей предварительной версии Azure Digital двойников все свойства двойника должны быть инициализированы, прежде чем можно будет создать двойника. Это делается путем создания документа JSON, который предоставляет необходимые значения инициализации.
 
-```csharp
-public Task<boolean> CreateRoom(string id, double temperature, double humidity) 
-{
-    // Define the model for the twin to be created
-    Dictionary<string, object> meta = new Dictionary<string, object>()
-    {
-      { "$model", "dtmi:com:contoso:Room;2" }
-    };
-    // Initialize the twin properties
-    Dictionary<string, object> initData = new Dictionary<string, object>()
-    {
-      { "$metadata", meta },
-      { "Temperature", temperature},
-      { "Humidity", humidity},
-    };
-    try
-    {
-      await client.DigitalTwins.AddAsync(id, initData);
-      return true;
-    }
-    catch (ErrorResponseException e)
-    {
-      Console.WriteLine($"*** Error creating twin {id}: {e.Response.StatusCode}");
-      return false;
-    }
-}
-```
+[!INCLUDE [Azure Digital Twins code: create twin](../../includes/digital-twins-code-create-twin.md)]
+
+Кроме того, можно использовать вспомогательный класс, вызываемый `BasicDigitalTwin` для хранения полей свойств в объекте "двойника", в качестве альтернативы использованию словаря. Дополнительные сведения о вспомогательном классе и примеры его использования см. в разделе [*Создание цифрового двойникаа*](how-to-manage-twin.md#create-a-digital-twin) *руководства по управлению цифровыми двойниковми*.
 
 ### <a name="create-relationships"></a>Создавать связи
 
-Ниже приведен пример клиентского кода, использующего [API дигиталтвинс](how-to-use-apis-sdks.md) для создания связи между цифровым типом *пола*двойника, именуемым *граундфлур* , и типом *комнаты*Digital двойника, именуемым *кафе*.
+Ниже приведен пример клиентского кода, использующего [API дигиталтвинс](/rest/api/digital-twins/dataplane/twins) для создания связи между цифровым типом *пола*двойника, именуемым *граундфлур* , и типом *комнаты*Digital двойника, именуемым *кафе*.
 
 ```csharp
 // Create Twins, using functions similar to the previous sample

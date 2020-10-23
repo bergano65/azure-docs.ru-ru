@@ -3,12 +3,12 @@ title: Общие сведения об агенте Connected Machine для Wi
 description: В этой статье представлен подробный обзор доступного агента серверов с поддержкой Arc Azure, который поддерживает мониторинг виртуальных машин, размещенных в гибридных средах.
 ms.date: 09/30/2020
 ms.topic: conceptual
-ms.openlocfilehash: 248604884cf1b7592b382a3490aab60102e12faf
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: f1f74ff12d007553c0c0c9b16f56a27371618bbb
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91979161"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92370174"
 ---
 # <a name="overview-of-azure-arc-enabled-servers-agent"></a>Обзор агента серверов с поддержкой ARC в Azure
 
@@ -105,7 +105,7 @@ URL-адреса:
 |`agentserviceapi.azure-automation.net`|Гостевая конфигурация|
 |`*-agentservice-prod-1.azure-automation.net`|Гостевая конфигурация|
 
-Список IP-адресов для каждого тега или региона службы см. в файле JSON [Azure IP Ranges and Service Tags – Public Cloud](https://www.microsoft.com/download/details.aspx?id=56519) (Диапазоны IP-адресов и теги служб Azure — общедоступное облако). Корпорация Майкрософт публикует еженедельные обновления, содержащие каждую службу Azure и диапазоны IP-адресов, которые она использует. Дополнительные сведения см. в разделе [Теги служб](../../virtual-network/security-overview.md#service-tags).
+Список IP-адресов для каждого тега или региона службы см. в файле JSON [Azure IP Ranges and Service Tags – Public Cloud](https://www.microsoft.com/download/details.aspx?id=56519) (Диапазоны IP-адресов и теги служб Azure — общедоступное облако). Корпорация Майкрософт публикует еженедельные обновления, содержащие каждую службу Azure и диапазоны IP-адресов, которые она использует. Дополнительные сведения см. в разделе [Теги служб](../../virtual-network/network-security-groups-overview.md#service-tags).
 
 URL-адреса в предыдущей таблице необходимы в дополнение к сведениям о диапазоне IP-адресов для тега службы, так как в большинстве служб сейчас нет регистрации тега службы. В связи с этим IP-адреса могут изменяться. Если для настройки брандмауэра требуются диапазоны IP-адресов, то для предоставления доступа ко всем службам Azure следует использовать тег службы **AzureCloud**. Не отключайте мониторинг безопасности или проверку URL-адресов, но предоставьте такие же разрешения, как для интернет-трафика.
 
@@ -118,21 +118,21 @@ URL-адреса в предыдущей таблице необходимы в 
 
 Если поставщики не зарегистрированы, их можно зарегистрировать с помощью таких команд:
 
-Azure PowerShell:
+Azure PowerShell:
 
 ```azurepowershell-interactive
 Login-AzAccount
-Set-AzContext -SubscriptionId [subscription you want to onboard]
-Register-AzResourceProvider -ProviderNamespace Microsoft.HybridCompute
-Register-AzResourceProvider -ProviderNamespace Microsoft.GuestConfiguration
+Set-AzContext -SubscriptionId [subscription you want to onboard]
+Register-AzResourceProvider -ProviderNamespace Microsoft.HybridCompute
+Register-AzResourceProvider -ProviderNamespace Microsoft.GuestConfiguration
 ```
 
-Azure CLI:
+Azure CLI:
 
 ```azurecli-interactive
-az account set --subscription "{Your Subscription Name}"
-az provider register --namespace 'Microsoft.HybridCompute'
-az provider register --namespace 'Microsoft.GuestConfiguration'
+az account set --subscription "{Your Subscription Name}"
+az provider register --namespace 'Microsoft.HybridCompute'
+az provider register --namespace 'Microsoft.GuestConfiguration'
 ```
 
 Вы также можете зарегистрировать поставщики ресурсов с помощью портала Azure, выполнив действия, описанные в [этом разделе](../../azure-resource-manager/management/resource-providers-and-types.md#azure-portal).
@@ -203,7 +203,7 @@ az provider register --namespace 'Microsoft.GuestConfiguration'
 
 * Во время удаления агента указанные ниже артефакты не удаляются.
 
-    * %програмфилес%\азуреконнектедмачинеажент\логс
+    * *%Програмдата%\азуреконнектедмачинеажент\лог
     * %ProgramData%\AzureConnectedMachineAgent и подкаталоги
     * %ProgramData%\GuestConfig
 
@@ -255,7 +255,7 @@ az provider register --namespace 'Microsoft.GuestConfiguration'
     * /var/opt/azcmagent
     * /opt/logs
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Чтобы начать оценку серверов с поддержкой Arc Azure, следуйте указаниям в статье [подключение гибридных компьютеров к Azure из портал Azure](onboard-portal.md).
 

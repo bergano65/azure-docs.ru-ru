@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 07/17/2020
 ms.author: allensu
 ms.custom: mvc
-ms.openlocfilehash: 262c12b1fb1d5c768b178d6e56c2964527f34495
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: c8ead035b9ac47325b2237ebd4d248f09d2d22f5
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88607208"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92047749"
 ---
 # <a name="quickstart-create-a-public-load-balancer-to-load-balance-vms-using-the-azure-portal"></a>Краткое руководство. Создание общедоступной подсистемы балансировки нагрузки с помощью портала Azure для распределения нагрузки между виртуальными машинами
 
@@ -626,6 +626,6 @@ ms.locfileid: "88607208"
 * подключить три виртуальных машины к подсистеме балансировки нагрузки;
 * настроить правило для трафика подсистемы балансировки нагрузки и пробу работоспособности, а затем протестировать подсистему балансировки нагрузки. 
 
-Дополнительные сведения об Azure Load Balancer см. в статье [Что такое Azure Load Balancer?](load-balancer-overview.md) и на странице [часто задаваемых вопросов о Load Balancer](load-balancer-faqs.md).
-
-Дополнительные сведения см. в статье [Standard Load Balancer and Availability Zones](load-balancer-standard-availability-zones.md) (Azure Load Balancer ценовой категории "Стандартный" и зоны доступности).
+Чтобы узнать больше об Azure Load Balancer, ознакомьтесь со следующей статьей:
+> [!div class="nextstepaction"]
+> [Что такое Azure Load Balancer](load-balancer-overview.md)

@@ -16,18 +16,18 @@ ms.date: 11/25/2019
 ms.author: rolyon
 ms.reviewer: skwan
 ms.custom: it-pro
-ms.openlocfilehash: 870c9c91e285988cdc1fb294b3fc9b3270de7483
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a891830d876bfa99d29087278dd5b870ae7e2866
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85361910"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92368389"
 ---
 # <a name="add-or-remove-azure-role-assignments-for-external-guest-users-using-the-azure-portal"></a>Добавление или удаление назначений ролей Azure для внешних гостевых пользователей с помощью портал Azure
 
 [Управление доступом на основе ролей в Azure (Azure RBAC)](overview.md) позволяет улучшить управление безопасностью для крупных организаций, а также для малых и средних предприятий, работающих с внешними участниками совместной работы, поставщиками или в сети, которым требуется доступ к конкретным ресурсам в вашей среде, но не обязательно ко всей инфраструктуре или всем областям, связанным с выставлением счетов. Вы можете использовать возможности [Azure Active Directory B2B](../active-directory/b2b/what-is-b2b.md) для совместной работы с внешними гостевыми пользователями. Вы можете использовать Azure RBAC, чтобы предоставить только те разрешения, которые требуются гостевым пользователям в вашей среде.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Для добавления или удаления назначений ролей необходимо иметь следующее:
 
@@ -183,7 +183,7 @@ ms.locfileid: "85361910"
 
 ![Гостевой пользователь не может просматривать пользователей в каталоге](./media/role-assignments-external-users/directory-no-users.png)
 
-Если гостевой пользователю требуются дополнительные привилегии в каталоге, можно назначить роль каталога пользователю guest. Если вы действительно хотите, чтобы гостевой пользователь имел полный доступ на чтение каталога, вы можете добавить гостевой пользователь в роль " [читатели каталога](../active-directory/users-groups-roles/directory-assign-admin-roles.md) " в Azure AD. Дополнительные сведения см. [в статье предоставление разрешений пользователям из партнерских организаций в клиенте Azure Active Directory](../active-directory/b2b/add-guest-to-role.md).
+Если гостевой пользователю требуются дополнительные привилегии в каталоге, можно назначить роль каталога пользователю guest. Если вы действительно хотите, чтобы гостевой пользователь имел полный доступ на чтение каталога, вы можете добавить гостевой пользователь в роль " [читатели каталога](../active-directory/roles/permissions-reference.md) " в Azure AD. Дополнительные сведения см. [в статье предоставление разрешений пользователям из партнерских организаций в клиенте Azure Active Directory](../active-directory/b2b/add-guest-to-role.md).
 
 ![Назначение роли читателей каталога](./media/role-assignments-external-users/directory-roles.png)
 
@@ -193,11 +193,11 @@ ms.locfileid: "85361910"
 
 ![Гостевой пользователь не может просматривать субъекты безопасности для назначения ролей](./media/role-assignments-external-users/directory-no-browse.png)
 
-Если гостевой пользователь знает точное имя входа в каталог, он может предоставить доступ. Если вы действительно хотите, чтобы гостевой пользователь имел полный доступ на чтение каталога, вы можете добавить гостевой пользователь в роль " [читатели каталога](../active-directory/users-groups-roles/directory-assign-admin-roles.md) " в Azure AD. Дополнительные сведения см. [в статье предоставление разрешений пользователям из партнерских организаций в клиенте Azure Active Directory](../active-directory/b2b/add-guest-to-role.md).
+Если гостевой пользователь знает точное имя входа в каталог, он может предоставить доступ. Если вы действительно хотите, чтобы гостевой пользователь имел полный доступ на чтение каталога, вы можете добавить гостевой пользователь в роль " [читатели каталога](../active-directory/roles/permissions-reference.md) " в Azure AD. Дополнительные сведения см. [в статье предоставление разрешений пользователям из партнерских организаций в клиенте Azure Active Directory](../active-directory/b2b/add-guest-to-role.md).
 
 ### <a name="guest-user-cannot-register-applications-or-create-service-principals"></a>Гостевой пользователь не может зарегистрировать приложения или создать субъект-службу
 
-Гостевые пользователи имеют ограниченные разрешения каталога. Если гостевой пользователь должен иметь возможность регистрировать приложения или создавать субъекты-службы, вы можете добавить гостевого пользователя в роль [разработчика приложения](../active-directory/users-groups-roles/directory-assign-admin-roles.md) в Azure AD. Дополнительные сведения см. [в статье предоставление разрешений пользователям из партнерских организаций в клиенте Azure Active Directory](../active-directory/b2b/add-guest-to-role.md).
+Гостевые пользователи имеют ограниченные разрешения каталога. Если гостевой пользователь должен иметь возможность регистрировать приложения или создавать субъекты-службы, вы можете добавить гостевого пользователя в роль [разработчика приложения](../active-directory/roles/permissions-reference.md) в Azure AD. Дополнительные сведения см. [в статье предоставление разрешений пользователям из партнерских организаций в клиенте Azure Active Directory](../active-directory/b2b/add-guest-to-role.md).
 
 ![Гостевой пользователь не может зарегистрировать приложения](./media/role-assignments-external-users/directory-access-denied.png)
 
@@ -211,7 +211,7 @@ ms.locfileid: "85361910"
 
 ![Панель "каталоги и подписки" в портал Azure](./media/role-assignments-external-users/directory-subscription.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Add Azure Active Directory B2B collaboration users in the Azure portal](../active-directory/b2b/add-users-administrator.md) (Добавление пользователей службы совместной работы Azure Active Directory B2B на портале Azure)
 - [Свойства пользователя службы совместной работы Azure Active Directory B2B](../active-directory/b2b/user-properties.md)

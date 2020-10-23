@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 03/04/2019
 ms.author: jeedes
-ms.openlocfilehash: 00ddd61209af6e0d16b7f7579a6e8729cde0cdf0
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: be48e4bb4f8364e9fafff69e2dc9eb6aa8db223c
+ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88552481"
+ms.lasthandoff: 10/11/2020
+ms.locfileid: "91941014"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-namely"></a>Руководство по интеграции Azure Active Directory с Namely
 
@@ -128,19 +128,19 @@ ms.locfileid: "88552481"
 
 2. На панели инструментов в верхней части экрана щелкните **Компания**.
    
-    ![Настройка единого входа](./media/namely-tutorial/tutorial_namely_06.png) 
+    ![Снимок экрана демонстрирует выбранное значение компании.](./media/namely-tutorial/tutorial_namely_06.png) 
 
 3. Перейдите на вкладку **Параметры** .
    
-    ![Настройка единого входа](./media/namely-tutorial/tutorial_namely_07.png) 
+    ![Снимок экрана демонстрирует выбранную вкладку параметров компании.](./media/namely-tutorial/tutorial_namely_07.png) 
 
 4. Нажмите кнопку **SAML**.
    
-    ![Настройка единого входа](./media/namely-tutorial/tutorial_namely_08.png) 
+    ![Снимок экрана демонстрирует выбранный элемент SAML.](./media/namely-tutorial/tutorial_namely_08.png) 
 
 5. На странице **Параметры SAML** выполните следующие действия.
    
-    ![Настройка единого входа](./media/namely-tutorial/tutorial_namely_09.png)
+    ![Снимок экрана: страница параметров SAML для ввода описанных значений.](./media/namely-tutorial/tutorial_namely_09.png)
  
     а. Выберите команду **Enable SAML**(Включить SAML). 
 
@@ -211,15 +211,15 @@ ms.locfileid: "88552481"
 
 2. На панели инструментов в верхней части экрана щелкните **People**(Пользователи).
    
-    ![Настройка единого входа](./media/namely-tutorial/tutorial_namely_10.png) 
+    ![Снимок экрана, на котором выбрано значение "Пользователи".](./media/namely-tutorial/tutorial_namely_10.png) 
 
 3. Щелкните вкладку **Directory** (Каталог).
    
-    ![Настройка единого входа](./media/namely-tutorial/tutorial_namely_11.png) 
+    ![Снимок экрана, где выбрана вкладка "Пользователи" — "Каталог".](./media/namely-tutorial/tutorial_namely_11.png) 
 
 4. Щелкните **Add New Person**(Добавить нового пользователя).
 
-    ![Настройка единого входа](./media/namely-tutorial/tutorial_namely_12.png)
+    ![Снимок экрана демонстрирует действие для добавления пользователя.](./media/namely-tutorial/tutorial_namely_12.png)
 
 5. В диалоговом окне **Add New Person** (Добавление пользователя) выполните следующие действия.
 

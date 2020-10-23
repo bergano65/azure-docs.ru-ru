@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: article
 ms.date: 07/10/2020
 ms.author: alkohli
-ms.openlocfilehash: 1d924e96cfc287060107f541e44980295eb24745
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 01eb35a60a6d51b5742d8fedd2ee0631aa86c924
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87494491"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92147946"
 ---
 # <a name="tracking-and-event-logging-for-your-azure-data-box-and-azure-data-box-heavy-export-orders"></a>Отслеживание и ведение журнала событий для Azure Data Box и Azure Data Box Heavy экспорт заказов
 
@@ -25,7 +25,7 @@ ms.locfileid: "87494491"
 
 | Стадия порядка экспорта Data Box       | Средство для мониторинга и аудита                                                                        |
 |----------------------------|------------------------------------------------------------------------------------------------|
-| Создание заказа               | [Настройка контроля доступа в порядке через RBAC](#set-up-access-control-on-the-order) <br> [Включить подробный журнал в указанном порядке](#enable-verbose-log-in-the-order)                                                    |
+| Создание заказа               | [Настройка контроля доступа в порядке с помощью Azure RBAC](#set-up-access-control-on-the-order) <br> [Включить подробный журнал в указанном порядке](#enable-verbose-log-in-the-order)                                                    |
 | Порядок обработки            | [Отслеживание порядка](#track-the-order) по <ul><li> Портал Azure </li><li> Веб-сайт перевозчика для доставки </li><li>Уведомления по электронной почте</ul> |
 | Настройка устройства              | [Журналы действий](#query-activity-logs-during-setup) доступа к учетным данным устройства              |
 | Копирование данных с устройства        | [Проверка журналов копирования](#copy-log) <br> [Ознакомьтесь с подробными журналами](#verbose-log) перед копированием данных            |
@@ -46,7 +46,7 @@ ms.locfileid: "87494491"
 - Назначение роли на уровне заказа. Пользователь обладает только такими разрешениями, которые определены ролями для взаимодействия только с определенным порядком Data Box и ничего другого.
 - Назначение роли на уровне группы ресурсов пользователь имеет доступ ко всем Data Boxным заказам в группе ресурсов.
 
-Дополнительные сведения о предлагаемом использовании RBAC см. в статье рекомендации [по использованию Azure RBAC](../role-based-access-control/best-practices.md).
+Дополнительные сведения о предлагаемом использовании Azure RBAC см. в статье рекомендации [по использованию Azure RBAC](../role-based-access-control/best-practices.md).
 
 ## <a name="enable-verbose-log-in-the-order"></a>Включить подробный журнал в указанном порядке
 

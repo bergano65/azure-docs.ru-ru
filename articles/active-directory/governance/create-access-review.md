@@ -15,12 +15,12 @@ ms.date: 09/15/2020
 ms.author: barclayn
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 02d1c40c26dd6b6992d8df85a986b4157a22226a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b87af4a08c5a796d96d853ca63e50e335b9731fb
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90602937"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92362779"
 ---
 # <a name="create-an-access-review-of-groups-and-applications-in-azure-ad-access-reviews"></a>Создание проверки доступа для групп и приложений в проверках доступа Azure AD
 
@@ -32,7 +32,7 @@ ms.locfileid: "90602937"
 
 В этой статье описывается, как создать одну или несколько проверок доступа для членов группы или доступа к приложениям.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 - Azure AD Premium P2
 - глобальный администратор или администратор пользователей.
@@ -164,6 +164,7 @@ ms.locfileid: "90602937"
 |Автоматическое рецензирование | Решения были зарегистрированы системой для всех пользователей, которые не были проверены. Проверка готова к **применению** , если включено автоматическое применение. |
 |Развертывание | Пользователи, которые были утверждены, не будут изменять доступ. |
 |Применено | Запрещенные пользователи, если они есть, были удалены из ресурса или каталога. |
+|Failed | Не удалось выполнить проверку. Эта ошибка может быть связана с удалением клиента, изменением лицензий или другими внутренними изменениями клиента. |
 
 ## <a name="create-reviews-via-apis"></a>Создание проверок через API
 

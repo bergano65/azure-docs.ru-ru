@@ -1,5 +1,5 @@
 ---
-title: Руководство. Изменение модулей динамической видеоаналитики IoT Edge
+title: Руководство по изменению модулей динамической видеоаналитики Azure IoT Edge
 description: В этом руководстве показано, как изменять и создавать модули шлюза динамической для видеоаналитики, которые используются в шаблоне приложения видеоаналитики для обнаружения объектов и движения.
 services: iot-central
 ms.service: iot-central
@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.author: nandab
 author: KishorIoT
 ms.date: 07/31/2020
-ms.openlocfilehash: d21eb8d8d79ec04f0f7e766b4eeb370811553e64
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: c2f6f386f4a8ea062980c0efc97d0cfb4f37f4f2
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88038076"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92124900"
 ---
 # <a name="tutorial-modify-and-build-the-live-video-analytics-gateway-modules"></a>Руководство по изменению и созданию модулей шлюза для динамической видеоаналитики
 
@@ -28,8 +28,8 @@ ms.locfileid: "88038076"
 * [Node.js](https://nodejs.org/en/download/) версии 10 или более поздней;
 * [Visual Studio Code](https://code.visualstudio.com/Download) с установленным расширением [TSLint](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-tslint-plugin);
 * подсистема [Docker](https://www.docker.com/products/docker-desktop);
-* [Реестр контейнеров Azure](https://docs.microsoft.com/azure/container-registry/) для размещения версий модулей;
-* учетная запись [Служб мультимедиа Azure](https://docs.microsoft.com/azure/media-services/). Если вы уже прошли предыдущие руководства, вы можете использовать созданную учетную запись.
+* [Реестр контейнеров Azure](../../container-registry/index.yml) для размещения версий модулей;
+* учетная запись [Служб мультимедиа Azure](../../media-services/index.yml). Если вы уже прошли предыдущие руководства, вы можете использовать созданную учетную запись.
 
 ## <a name="clone-the-repository"></a>Клонирование репозитория
 
@@ -50,7 +50,7 @@ git clone https://github.com/Azure/live-video-analytics
 1. Измените раздел модуля `LvaEdgeGatewayModule`, добавив в `env:amsAccountName:value` имя образа и имя учетной записи AMS.
 1. Измените раздел модуля `lvaYolov3`, добавив имя образа.
 1. Измените раздел модуля `lvaEdge`, добавив имя образа.
-1. Дополнительные сведения о том, как завершить настройку, см. в статье [Руководство. Создание приложения видеоаналитики для отслеживания объектов и движения в Azure IoT Central](tutorial-video-analytics-create-app.md).
+1. Дополнительные сведения о том, как завершить настройку, см. в статье [Руководство. Создание приложения видеоаналитики для отслеживания объектов и движения в Azure IoT Central](tutorial-video-analytics-create-app-yolo-v3.md).
 
 ## <a name="build-the-code"></a>Сборка кода
 

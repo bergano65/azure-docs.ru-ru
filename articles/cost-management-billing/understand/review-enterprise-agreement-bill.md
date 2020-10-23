@@ -9,12 +9,12 @@ ms.subservice: enterprise
 ms.topic: tutorial
 ms.date: 08/20/2020
 ms.author: banders
-ms.openlocfilehash: 5340d6124ae4fdc669a30458b9e58cf4c86d6746
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: d707051e20b4ce9d1289557aec6f8256c2e6bfba
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88684666"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92150071"
 ---
 # <a name="understand-your-azure-enterprise-agreement-bill"></a>Общие сведения о счете по соглашению Azure Enterprise
 
@@ -436,7 +436,7 @@ See [Power BI self-service sign up](https://powerbi.microsoft.com/documentation/
 
 ### <a name="why-dont-my-resource-tags-show-on-my-reports"></a>Почему теги ресурсов не отображаются в моих отчетах
 
-Управление тегами ресурсов осуществляется на портале Azure. Вы можете обратиться в службу техподдержки подписки Azure на [портале Azure](https://portal.azure.com). Выполните действия, описанные в разделе [How to create an Azure support request](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request) (Создание запроса на поддержку Azure).
+Управление тегами ресурсов осуществляется на портале Azure. Вы можете обратиться в службу техподдержки подписки Azure на [портале Azure](https://portal.azure.com). Выполните действия, описанные в разделе [How to create an Azure support request](../../azure-portal/supportability/how-to-create-azure-support-request.md) (Создание запроса на поддержку Azure).
 
 ### <a name="why-does-my-resource-rate-change-every-day"></a>Почему расценки ресурсов меняются каждый день?
 

@@ -7,18 +7,18 @@ ms.author: bwren
 ms.topic: conceptual
 ms.date: 07/15/2020
 ms.subservice: ''
-ms.openlocfilehash: f6272e3d976c7c3b04d5b1332e2d7b3410c3045c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 784ecd5c0539ee0dc84c8afd6b85dbc10a154982
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87318884"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92206889"
 ---
 # <a name="stream-azure-monitoring-data-to-an-event-hub-or-external-partner"></a>Потоковая передача данных мониторинга Azure в концентратор событий или внешний партнер
 
 Azure Monitor предоставляет полное решение для мониторинга стека для приложений и служб в Azure, в других облаках и в локальной среде. В дополнение к использованию Azure Monitor для анализа этих данных и использования их в различных сценариях мониторинга, может потребоваться отправить его другим средствам мониторинга в вашей среде. В большинстве случаев наиболее эффективным способом потоковой передачи данных мониторинга на внешние средства является использование [концентраторов событий Azure](../../event-hubs/index.yml). В этой статье содержится краткое описание того, как это сделать, а затем перечисляются некоторые участники, которые могут отправить данные. Некоторые имеют специальную интеграцию с Azure Monitor и могут размещаться в Azure.  
 
-## <a name="create-an-event-hubs-namespace"></a>Создание пространства имен в Центрах событий
+## <a name="create-an-event-hubs-namespace"></a>Создание пространства имен Центров событий
 
 Перед настройкой потоковой передачи для любого источника данных необходимо [создать пространство имен концентраторов событий и концентратор событий](../../event-hubs/event-hubs-create.md). Они являются местом назначения всех ваших данных мониторинга. Пространство имен Центров событий — это логическое объединение концентраторов событий, которые совместно используют одну политику доступа. Применяется тот же принцип, что и для отдельных больших двоичных объектов в рамках одной учетной записи хранения. Примите во внимание следующие сведения о пространстве имен концентраторов событий и концентраторах событий, используемых для потоковой передачи данных мониторинга.
 
@@ -48,10 +48,10 @@ Azure Monitor предоставляет полное решение для мо
 
 Маршрутизация данных мониторинга в концентратор событий с помощью Azure Monitor позволяет легко интегрироваться с внешними средствами SIEM и мониторинга. Примерами средств интеграции Azure Monitor являются следующие:
 
-| Инструмент | Размещено в Azure | Описание |
+| Средство | Размещено в Azure | Описание |
 |:---|:---| :---|
 |  IBM QRadar | Нет | Модуль устройства (DSM) Microsoft Azure и протокол концентратора событий Microsoft Azure доступны для загрузки на [веб-сайте поддержки IBM](https://www.ibm.com/support). Дополнительные сведения об интеграции с Azure можно узнать в [конфигурации DSM QRadar](https://www.ibm.com/support/knowledgecenter/SS42VS_DSM/c_dsm_guide_microsoft_azure_overview.html?cp=SS42VS_7.3.0). |
-| Splunk | Нет | [Azure Monitor Add-On для Splunk](https://splunkbase.splunk.com/app/3534/) — это проект с открытым исходным кодом, доступный в Splunkbase. Документация доступна по адресу [Azure Monitor надстройки для Splunk](https://github.com/Microsoft/AzureMonitorAddonForSplunk/wiki/Azure-Monitor-Addon-For-Splunk).<br><br> Если вы не можете установить надстройку в экземпляре Splunk, например, вы используете прокси-сервер или работаете в облаке Splunk, вы можете перенаправить эти события в сборщик событий Splunk HTTP с помощью [функции Azure для Splunk](https://github.com/Microsoft/AzureFunctionforSplunkVS), которая активируется новыми сообщениями в концентраторе событий. |
+| Splunk | Нет | [Microsoft Azure Add-On для Splunk](https://splunkbase.splunk.com/app/3757/) — это проект с открытым кодом, доступный в Splunkbase. <br><br> Если вы не можете установить надстройку в экземпляре Splunk, например, вы используете прокси-сервер или работаете в облаке Splunk, вы можете перенаправить эти события в сборщик событий Splunk HTTP с помощью [функции Azure для Splunk](https://github.com/Microsoft/AzureFunctionforSplunkVS), которая активируется новыми сообщениями в концентраторе событий. |
 | sumologic | Нет | Инструкции по настройке SumoLogic для использования данных из концентратора событий доступны в статье [Получение журналов для приложения аудита Azure из концентратора событий](https://help.sumologic.com/Send-Data/Applications-and-Other-Data-Sources/Azure-Audit/02Collect-Logs-for-Azure-Audit-from-Event-Hub). |
 | ArcSight | Нет | Смарт-соединитель концентратора событий Azure ArcSight доступен в составе [коллекции смарт-соединителей ArcSight](https://community.softwaregrp.com/t5/Discussions/Announcing-General-Availability-of-ArcSight-Smart-Connectors-7/m-p/1671852). |
 | Сервер системного журнала | Нет | Если вы хотите передавать данные Azure Monitor непосредственно на сервер syslog, можно использовать [решение, основанное на функции Azure](https://github.com/miguelangelopereira/azuremonitor2syslog/).
@@ -60,7 +60,7 @@ Azure Monitor предоставляет полное решение для мо
 
 Также могут быть доступны другие партнеры. Более полный список всех Azure Monitor партнеров и их возможностей см. в статье [Интеграция с Azure Monitor партнерами](partners.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 * [Архивация журнала действий в учетную запись хранения](./activity-log.md#legacy-collection-methods)
 * [Ознакомьтесь с обзором журнала действий Azure.](./platform-logs-overview.md)
 * [Настройка оповещения на основе события журнала действий](./alerts-log-webhook.md)

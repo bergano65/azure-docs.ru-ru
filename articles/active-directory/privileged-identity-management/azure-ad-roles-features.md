@@ -14,12 +14,12 @@ ms.date: 07/10/2020
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c039842a04923bc02aa288576570d51c39156c40
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e4478c9c286c06d5d6c5593195a0e93abd286b8c
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88784017"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92371517"
 ---
 # <a name="management-capabilities-for-azure-ad-roles-in-privileged-identity-management"></a>Возможности управления для ролей Azure AD в управление привилегированными пользователями
 
@@ -64,9 +64,9 @@ ms.locfileid: "88784017"
 
 Для клиентов, использующих модуль управление привилегированными пользователями PowerShell для ролей Azure AD, PowerShell перестанет работать с этим обновлением. Вместо предыдущих командлетов необходимо использовать командлеты управление привилегированными пользователями в модуле PowerShell предварительной версии Azure AD. Установите модуль Azure AD PowerShell из [коллекция PowerShell](https://www.powershellgallery.com/packages/AzureADPreview/2.0.0.17). Теперь вы можете [ознакомиться с документацией и примерами операций PIM в этом модуле PowerShell](powershell-for-azure-ad-roles.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Назначение настраиваемой роли Azure AD](azure-ad-custom-roles-assign.md)
 - [Update or remove an assigned Azure AD custom role in Privileged Identity Management](azure-ad-custom-roles-update-remove.md) (Обновление или удаление назначенной настраиваемой роли AAD в Privileged Identity Management)
 - [Настройка назначения настраиваемой роли Azure AD](azure-ad-custom-roles-configure.md)
-- [Administrator role permissions in Azure Active Directory](../users-groups-roles/directory-assign-admin-roles.md) (Разрешения роли администратора в Azure Active Directory)
+- [Administrator role permissions in Azure Active Directory](../roles/permissions-reference.md) (Разрешения роли администратора в Azure Active Directory)

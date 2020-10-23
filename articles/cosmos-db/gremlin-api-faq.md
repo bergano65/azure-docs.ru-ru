@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 04/28/2020
 ms.author: sngun
-ms.openlocfilehash: 416cf4f027b6f1e72641324be39ba0304301db37
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b43bd0a076a21429a5f6fe05ef0c20d62674acdf
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82614503"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92281560"
 ---
 # <a name="frequently-asked-questions-about-the-gremlin-api-in-azure-cosmos-db"></a>Часто задаваемые вопросы об API Gremlin в Azure Cosmos DB
 
@@ -99,7 +99,7 @@ g.V('mary').out('knows').executionProfile()
 
 ### <a name="whats-the-maximum-scale-that-a-graph-database-can-have-in-azure-cosmos-db-gremlin-api"></a>Каков максимальный масштаб, который может иметь база данных Graph в Azure Cosmos DB API Gremlin?
 
-Azure Cosmos DB выполняет [горизонтальное секционирование](partition-data.md), чтобы автоматически увеличивать объем хранилища и пропускную способность в соответствии с требованиями. Максимальная пропускная способность и емкость хранилища рабочей нагрузки определяются числом секций, связанных с заданным контейнером. Однако контейнер API Gremlin имеет специальный набор руководств, обеспечивающих правильную работу в масштабе. Дополнительные сведения о секционировании данных и рекомендации см. в статье о [секционировании и масштабировании в Azure Cosmos DB](partition-data.md).
+Azure Cosmos DB выполняет [горизонтальное секционирование](partitioning-overview.md), чтобы автоматически увеличивать объем хранилища и пропускную способность в соответствии с требованиями. Максимальная пропускная способность и емкость хранилища рабочей нагрузки определяются числом секций, связанных с заданным контейнером. Однако контейнер API Gremlin имеет специальный набор руководств, обеспечивающих правильную работу в масштабе. Дополнительные сведения о секционировании данных и рекомендации см. в статье о [секционировании и масштабировании в Azure Cosmos DB](partitioning-overview.md).
 
 ### <a name="for-cnet-development-should-i-use-the-microsoftazuregraphs-package-or-gremlinnet"></a>Можно ли использовать для разработки на C# или .NET пакет Microsoft.Azure.Graphs или Gremlin.NET?
 

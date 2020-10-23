@@ -7,14 +7,14 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 10/14/2019
 ms.author: duau
-ms.openlocfilehash: 65e44acd1fe6ecb389f81cbd0ed88d1c161dfcdb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b721a9b8d8bdff3f3aaf05f15857c00347e7abb4
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89397871"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92202384"
 ---
-# <a name="about-expressroute-virtual-network-gateways"></a>Сведения о шлюзах виртуальной сети ExpressRoute
+# <a name="about-expressroute-virtual-network-gateways"></a>Сведения о шлюзах виртуальных сетей ExpressRoute
 
 Чтобы подключить виртуальную сеть Azure и локальную сеть через ExpressRoute, сначала необходимо создать шлюз виртуальной сети. Шлюз виртуальной сети служит двум целям: Обмен IP-маршрутами между сетями и маршрутизация сетевого трафика. В этой статье описываются типы шлюзов, номера SKU шлюзов и предполагаемая производительность по SKU. В этой статье также описана функция ExpressRoute [фастпас](#fastpath), которая позволяет сетевому трафику из локальной сети обходить шлюз виртуальной сети, чтобы повысить производительность.
 
@@ -77,7 +77,7 @@ Add-AzVirtualNetworkSubnetConfig -Name 'GatewaySubnet' -AddressPrefix 10.0.3.0/2
 
 Новые номера SKU шлюза также поддерживают другие варианты развертывания в соответствии с вашими потребностями. При создании шлюза виртуальной сети с использованием новых номеров SKU вы также можете развернуть шлюз в определенной зоне. Такой шлюз называется зональным. При развертывании зонального шлюза все его экземпляры развертываются в одной зоне доступности.
 
-## <a name="fastpath"></a><a name="fastpath"></a>FastPath
+## <a name="fastpath"></a><a name="fastpath"></a>фастпас
 
 Шлюз виртуальной сети ExpressRoute предназначен для обмена сетевыми маршрутами и маршрутизации сетевого трафика. Фастпас предназначен для повышения производительности пути к данным между локальной сетью и виртуальной сетью. Если этот параметр включен, Фастпас отправляет сетевой трафик непосредственно на виртуальные машины в виртуальной сети, минуя шлюз.
 
@@ -88,8 +88,8 @@ Add-AzVirtualNetworkSubnetConfig -Name 'GatewaySubnet' -AddressPrefix 10.0.3.0/2
 
 | **Классический** | **Resource Manager** |
 | --- | --- |
-| [PowerShell](/powershell/module/servicemanagement/azure.service/?view=azuresmps-4.0.0#azure) |[PowerShell](https://docs.microsoft.com/powershell/module/az.network#networking) |
-| [REST API](https://msdn.microsoft.com/library/jj154113.aspx) |[REST API](https://msdn.microsoft.com/library/mt163859.aspx) |
+| [PowerShell](/powershell/module/servicemanagement/azure.service/?view=azuresmps-4.0.0#azure) |[PowerShell](/powershell/module/az.network#networking) |
+| [REST API](/previous-versions/azure/reference/jj154113(v=azure.100)) |[REST API](/rest/api/virtual-network/) |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

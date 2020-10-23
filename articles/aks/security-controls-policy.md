@@ -1,18 +1,18 @@
 ---
 title: Элементы управления соответствием Политики Azure для Службы Azure Kubernetes (AKS)
 description: Содержит список элементов управления соответствием Политики Azure, доступных для Службы Azure Kubernetes (AKS). Эти встроенные определения политик предоставляют популярные подходы к управлению соответствием ресурсов Azure.
-ms.date: 10/07/2020
+ms.date: 10/20/2020
 ms.topic: sample
 author: laurenhughes
 ms.author: lahugh
 ms.service: container-service
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: 525da36618c5280374e3e3fadb8ef98510fd2e2e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: be806a7f7811133bbdd4f45d65c2a9cf191374f1
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91821742"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92320442"
 ---
 # <a name="azure-policy-regulatory-compliance-controls-for-azure-kubernetes-service-aks"></a>Элементы управления соответствием Политики Azure для Службы Azure Kubernetes (AKS)
 

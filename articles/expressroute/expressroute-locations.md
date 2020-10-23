@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 09/29/2020
 ms.author: duau
-ms.openlocfilehash: d9bf37a132b4af0e6a17c0ab850a7b82c56c5f6d
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 09bd46f3265656a1f8ea28279ce1a9ebea5e83f5
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92093163"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92368644"
 ---
 # <a name="expressroute-connectivity-partners-and-peering-locations"></a>Партнеры по подключению и одноранговые расположения ExpressRoute
 
@@ -114,7 +114,7 @@ ms.locfileid: "92093163"
 | **гтт** |Поддерживается |Поддерживается |Лондон 2 |
 | **[Global Cloud Xchange (GCX)](https://globalcloudxchange.com/cloud-platform/cloud-x-fusion/)** | Поддерживается| Поддерживается | Ченнаи, Мумбаи |
 | **Intelsat** | Поддерживается | Поддерживается | Вашингтон (округ Колумбия) 2 |
-| **[InterCloud](https://www.intercloud.com/)** |Поддерживается |Поддерживается |Амстердам, Чикаго, Гонконг, Лондон, Нью-Йорк, Париж, Кремниевая долина, Сингапур, Вашингтон (округ Колумбия), Цюрих |
+| **[InterCloud](https://www.intercloud.com/)** |Поддерживается |Поддерживается |Амстердам, Чикаго, Франкфурт, Гонконг, Лондон, Нью Йорк, Париж, Silicon впадина, Сингапур, Вашингтон, округ Колумбия, Цюрих |
 | **[Internet2](https://www.internet2.edu/products-services/cloud-services-applications/microsoft-azure/#service-cloud-connect)** |Поддерживается |Поддерживается |Чикаго, Даллас, Кремниевая долина, Вашингтон (округ Колумбия) |
 | **[Internet Initiative Japan Inc. - IIJ](https://www.iij.ad.jp/en/news/pressrelease/2015/1216-2.html)** |Поддерживается |Поддерживается |Осака, Токио |
 | **[Internet Solutions - Cloud Connect](https://www.is.co.za/solution/cloud-connect/)** |Поддерживается |Поддерживается |Кейптаун, Йоханнесбург, Лондон |
@@ -130,7 +130,7 @@ ms.locfileid: "92093163"
 | **LG CNS** |Поддерживается |Поддерживается |Пусан, Сеул |
 | **[Liquid Telecom](https://www.liquidtelecom.com/products-and-services/cloud.html)** |Поддерживается |Поддерживается |Кейптаун, Йоханнесбург |
 | **[Megaport](https://www.megaport.com/services/microsoft-expressroute/)** |Поддерживается |Поддерживается |Амстердам, Атланта, то есть, Чикаго, Далласе, Денвер, Dubai2, Дублин, Франкфурт, Geneva, Гонконг, САР, Лас-деньги, Лондон, London2, Лос-Анджелес, Мельбурн, Майами, Монреаль, Нью-Йорк, Москва, Перт, Квебек, штат San Сан Антонио, Сиэтл, Silicon впадина, Сингапур, Сингапур 2, ставанжер, Стокгольм, Сидней, Sydney2, Токио, Tokyo2 |
-| **[MTN](https://www.mtnbusiness.com/en/enterprise/Pages/microsoft-express-route.aspx)** |Поддерживается |Поддерживается |London |
+| **[MTN](https://www.mtnbusiness.co.za/en/Cloud-Solutions/Pages/microsoft-express-route.aspx)** |Поддерживается |Поддерживается |London |
 | **[Neutrona Networks](https://www.neutrona.com/index.php/azure-expressroute/)** |Поддерживается |Поддерживается |Даллас, Лос-Анджелес, Майами, Сан-Паулу, Вашингтон (округ Колумбия) |
 | **[Next Generation Data](https://www.nextgenerationdata.co.uk/ngd-cloud-gateway/)** |Поддерживается |Поддерживается |Ньюпорт (Уэльс) |
 | **[NEXTDC](https://www.nextdc.com/services/axon-ethernet/microsoft-expressroute)** |Поддерживается |Поддерживается |Мельбурн, Перт, Сидней, Сидней 2 |
@@ -280,7 +280,7 @@ ms.locfileid: "92093163"
 | **[Macquarie Telecom Group](https://macquariegovernment.com/secure-cloud/secure-cloud-exchange/)** | Megaport | Сидней |
 | **[MainOne](https://www.mainone.net/services/connectivity/cloud-connect/)** |Equinix | Амстердам |
 | **[Masergy](https://www.masergy.com/solutions/hybrid-networking/cloud-marketplace/microsoft-azure)** | Equinix | Вашингтон, округ Колумбия |
-| **[MTN](https://www.mtnbusiness.com/en/enterprise/Pages/microsoft-express-route.aspx)** | Teraco | Кейптаун, Йоханнесбург |
+| **[MTN](https://www.mtnbusiness.co.za/en/Cloud-Solutions/Pages/microsoft-express-route.aspx)** | Teraco | Кейптаун, Йоханнесбург |
 | **[NexGen Networks](https://www.nexgen-net.com/nexgen-networks-direct-connect-microsoft-azure-expressroute.html)** | Interxion | London |
 | **[Nianet](https://nianet.dk/produkter/internet/microsoft-expressroute)** |Equinix | Амстердам, Франкфурт |
 | **[POST Telecom Luxembourg](https://www.teralinksolutions.com/cloud-connectivity/cloudbridge-to-azure-expressroute/)**|Equinix | Амстердам |

@@ -6,12 +6,12 @@ author: mlearned
 ms.topic: article
 ms.date: 06/03/2020
 ms.author: mlearned
-ms.openlocfilehash: 8fda67bea75e973b42aa7f1a9f32be906b1d3e83
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8df913234be1f3e07677520e41b699fe6d503204
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91570811"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92314506"
 ---
 # <a name="access-the-kubernetes-web-dashboard-in-azure-kubernetes-service-aks"></a>Подключение веб-панели мониторинга Kubernetes в Службе Azure Kubernetes (AKS)
 
@@ -102,7 +102,7 @@ After you choose a method to sign in, the Kubernetes dashboard is displayed. If 
 ## <a name="sign-in-to-the-dashboard-kubernetes-116"></a>Вход на панель мониторинга (kubernetes 1.16 +)
 
 > [!IMPORTANT]
-> Начиная с [v 1.10.1 панели мониторинга Kubernetes](https://github.com/kubernetes/dashboard/releases/tag/v1.10.1) или Kubernetes v 1.16 + учетная запись службы "Kubernetes-Dashboard" больше не может использоваться для получения ресурсов из-за [исправления безопасности в этом выпуске](https://github.com/kubernetes/dashboard/pull/3400). В результате запросы без сведений о проверке подлинности возвращают ошибку 401. Токен носителя, полученный из учетной записи службы, по-прежнему можно использовать как в этом [примере панели мониторинга Kubernetes](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/#accessing-the-dashboard-ui), но это влияет на поток входа надстройки панели мониторинга по сравнению с более старыми версиями.
+> Начиная с [v 1.10.1 панели мониторинга Kubernetes](https://github.com/kubernetes/dashboard/releases/tag/v1.10.1) или Kubernetes v 1.16 + учетная запись службы "Kubernetes-Dashboard" больше не может использоваться для получения ресурсов из-за [исправления безопасности в этом выпуске](https://github.com/kubernetes/dashboard/pull/3400). В результате запросы без сведений о проверке подлинности возвращают [ошибку 401](https://github.com/Azure/AKS/issues/1573#issuecomment-703040998). Токен носителя, полученный из учетной записи службы, по-прежнему можно использовать как в этом [примере панели мониторинга Kubernetes](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/#accessing-the-dashboard-ui), но это влияет на поток входа надстройки панели мониторинга по сравнению с более старыми версиями.
 >
 >Если вы по-прежнему запускаете версию до 1,16, вы по-прежнему можете предоставить разрешения учетной записи службы kubernetes-Dashboard, но это **не рекомендуется**:
 > ```console
@@ -190,7 +190,7 @@ kubectl config view -o jsonpath='{.users[?(@.name == "clusterUser_<RESOURCE GROU
 
 ![Просмотр сведений о наборе реплик](./media/kubernetes-dashboard/view-replica-set.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о веб-панели мониторинга Kubernetes см. в [этой статье][kubernetes-dashboard].
 

@@ -7,12 +7,12 @@ ms.service: spring-cloud
 ms.topic: tutorial
 ms.date: 12/29/2019
 ms.custom: devx-track-java
-ms.openlocfilehash: dc8dffb12dcd205671e2219dbef45ac14f9f7df7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c706f38dabbe21e5bafb096bf406e70af0855aa3
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90892532"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92089984"
 ---
 # <a name="tutorial-how-to-monitor-spring-cloud-resources-using-alerts-and-action-groups"></a>Руководство по Мониторинг ресурсов Spring Cloud с помощью оповещений и групп действий
 
@@ -113,7 +113,7 @@ ms.locfileid: "90892532"
 В этом руководстве описывается, как настроить оповещения и группы действий для приложения Azure Spring Cloud. Чтобы узнать больше о группах действий, см. следующие статьи:
 
 > [!div class="nextstepaction"]
-> [Create and manage action groups in the Azure portal](https://docs.microsoft.com/azure/azure-monitor/platform/action-groups) (Создание групп действий и управление ими на портале Azure)
+> [Create and manage action groups in the Azure portal](../azure-monitor/platform/action-groups.md) (Создание групп действий и управление ими на портале Azure)
 
 > [!div class="nextstepaction"]
-> [SMS Alert Behavior in Action Groups](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-sms-behavior) (Поведение SMS-оповещений в группе действий)
+> [SMS Alert Behavior in Action Groups](../azure-monitor/platform/alerts-sms-behavior.md) (Поведение SMS-оповещений в группе действий)

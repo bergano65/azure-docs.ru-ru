@@ -6,12 +6,12 @@ ms.service: data-lake-store
 ms.topic: how-to
 ms.date: 05/29/2018
 ms.author: twooley
-ms.openlocfilehash: fc3f3fb0b6bb67239d6c1952d3e128076ce45aaf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 13467a51b2a06dbc0ca0ec5eadd139fde8b82ad0
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85857184"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92103498"
 ---
 # <a name="account-management-operations-on-azure-data-lake-storage-gen1-using-rest-api"></a>Операции управления учетными записями в Azure Data Lake Storage 1-го поколения c использованием REST API
 > [!div class="op_single_selector"]
@@ -36,7 +36,7 @@ ms.locfileid: "85857184"
 
 
 ## <a name="create-a-data-lake-storage-gen1-account"></a>Создание учетной записи Data Lake Storage 1-го поколения
-Эта операция основана на вызове REST API, определенном [здесь](https://docs.microsoft.com/rest/api/datalakestore/accounts/create).
+Эта операция основана на вызове REST API, определенном [здесь](/rest/api/datalakestore/accounts/create).
 
 Используйте следующую команду cURL: Замените на **\<yourstoragegen1name>** имя Data Lake Storage 1-го поколения.
 
@@ -57,7 +57,7 @@ curl -i -X PUT -H "Authorization: Bearer <REDACTED>" -H "Content-Type: applicati
 ```
 
 ## <a name="delete-a-data-lake-storage-gen1-account"></a>Удаление учетной записи Data Lake Storage 1-го поколения
-Эта операция основана на вызове REST API, определенном [здесь](https://docs.microsoft.com/rest/api/datalakestore/accounts/delete).
+Эта операция основана на вызове REST API, определенном [здесь](/rest/api/datalakestore/accounts/delete).
 
 Чтобы удалить учетную запись Data Lake Storage 1-го поколения, используйте следующую команду cURL. Замените на **\<yourstoragegen1name>** имя учетной записи Data Lake Storage 1-го поколения.
 
@@ -77,6 +77,5 @@ HTTP/1.1 200 OK
 * [Операции файловой системы в Data Lake Storage 1-го поколения c использованием REST API](data-lake-store-data-operations-rest-api.md).
 
 ## <a name="see-also"></a>См. также раздел
-* [Справочник по REST API для Azure Data Lake Storage 1-го поколения](https://docs.microsoft.com/rest/api/datalakestore/)
+* [Справочник по REST API для Azure Data Lake Storage 1-го поколения](/rest/api/datalakestore/)
 * [Приложения больших данных с открытым исходным кодом, которые работают с Azure Data Lake Storage Gen1](data-lake-store-compatible-oss-other-applications.md)
-

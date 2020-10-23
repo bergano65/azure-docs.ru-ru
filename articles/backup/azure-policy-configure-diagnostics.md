@@ -3,12 +3,12 @@ title: Настройка параметров диагностики храни
 description: Настройка параметров диагностики Log Analytics для всех хранилищ в заданной области с помощью политики Azure
 ms.topic: conceptual
 ms.date: 02/14/2020
-ms.openlocfilehash: 33956fe7ce2e162d58ef3aa09feaea2882dccb36
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 55461937381f7551c42714c835d4755ab65f175b
+ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91293090"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92171532"
 ---
 # <a name="configure-vault-diagnostics-settings-at-scale"></a>Настройка параметров диагностики хранилища в масштабе
 
@@ -27,6 +27,8 @@ ms.locfileid: "91293090"
 * Область группы управления в настоящее время не поддерживается.
 
 * Встроенная политика в настоящее время недоступна в национальных облаках.
+
+[!INCLUDE [backup-center.md](../../includes/backup-center.md)]
 
 ## <a name="assigning-the-built-in-policy-to-a-scope"></a>Назначение встроенной политики области
 

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/08/2020
 ms.author: memildin
-ms.openlocfilehash: 02e78969ce30f109f16309075b040b06c773b0dd
-ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
+ms.openlocfilehash: 575c139a3b417eb9429695d3ea6be26bf5625de5
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91946232"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92371075"
 ---
 # <a name="monitor-identity-and-access"></a>Мониторинг идентификации и доступа
 
@@ -30,7 +30,7 @@ ms.locfileid: "91946232"
 
 Центр безопасности Azure имеет два выделенных средства управления безопасностью для обеспечения соответствия требованиям к удостоверениям и безопасности вашей организации. 
 
- - **Управление доступом и разрешениями** . Мы рекомендуем использовать [модель с минимальными правами доступа](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/implementing-least-privilege-administrative-models) и предоставить пользователям доступ только для тех задач, которые необходимы для их работы. Этот элемент управления также включает рекомендации по реализации [управления доступом на основе ролей (RBAC)](../role-based-access-control/overview.md) для управления доступом к ресурсам.
+ - **Управление доступом и разрешениями** . Мы рекомендуем использовать [модель с минимальными правами доступа](/windows-server/identity/ad-ds/plan/security-best-practices/implementing-least-privilege-administrative-models) и предоставить пользователям доступ только для тех задач, которые необходимы для их работы. Этот элемент управления также включает рекомендации по реализации [управления доступом на основе ролей (RBAC)](../role-based-access-control/overview.md) для управления доступом к ресурсам.
  
  - **Включение MFA** . при включенном [MFA](https://www.microsoft.com/security/business/identity/mfa) ваши учетные записи более безопасны, и пользователи по-прежнему могут проходить проверку подлинности практически для любого приложения с помощью единого входа.
 
@@ -56,7 +56,7 @@ ms.locfileid: "91946232"
 
 ## <a name="multi-factor-authentication-mfa-and-azure-active-directory"></a>Многофакторная идентификация (MFA) и Azure Active Directory 
 
-Для включения MFA требуются [разрешения клиента Azure Active Directory (AD)](../active-directory/users-groups-roles/directory-assign-admin-roles.md).
+Для включения MFA требуются [разрешения клиента Azure Active Directory (AD)](../active-directory/roles/permissions-reference.md).
 
 - Если вы пользуетесь выпуском AD Premium, включите MFA, используя [Условный доступ](../active-directory/conditional-access/concept-conditional-access-policy-common.md).
 - Если вы используете бесплатную версию AD, включите **Параметры безопасности по умолчанию** , как описано в [документации Azure Active Directory](../active-directory/fundamentals/concept-fundamentals-security-defaults.md).
@@ -84,7 +84,7 @@ ms.locfileid: "91946232"
     > Учетные записи отображаются в виде идентификаторов объектов, а не имен учетных записей для защиты конфиденциальности владельцев учетных записей.
 
 > [!TIP]
-> Кроме того, вы можете использовать оценку метода REST API для центра безопасности [— получить](https://docs.microsoft.com/rest/api/securitycenter/assessments/get).
+> Кроме того, вы можете использовать оценку метода REST API для центра безопасности [— получить](/rest/api/securitycenter/assessments/get).
 
 
 ## <a name="next-steps"></a>Дальнейшие шаги

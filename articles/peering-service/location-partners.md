@@ -8,14 +8,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: Infrastructure-services
-ms.date: 09/24/2020
+ms.date: 10/19/2020
 ms.author: derekol
-ms.openlocfilehash: d6318fc4fc0dc9ded093bdf9d19b9079208556de
-ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
+ms.openlocfilehash: 02135b7e1f2086e430411c31f59ddeb55b2978e7
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2020
-ms.locfileid: "91939942"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92201075"
 ---
 # <a name="peering-service-partners"></a>Партнеры по службам пиринга
 
@@ -34,20 +34,21 @@ ms.locfileid: "91939942"
 | [BBIX](https://www.bbix.net/en/service/) |Япония |
 | [ккл](https://concepts.co.nz/news/general-news/) |Океания |
 | [Colt](https://www.colt.net/why-colt/strategic-alliances/microsoft-partnership/)|Европа, Азия|
-| [DE-CIX](https://www.de-cix.net/microsoft)|Европа |
+| [DE-CIX](https://www.de-cix.net/microsoft)|Европа, Северная Америка |
 | [IIJ](https://www.iij.ad.jp/en/) | Япония |
 | [Intercloud](https://intercloud.com/microsoft-saas-applications/)|Европа  |
 | [Kordia](https://www.kordia.co.nz/cloudconnect) |Океания  |
-| [Liquid Telecom](https://liquidcloud.africa/) | Африка  |
+| [Liquid Telecom](https://liquidcloud.africa/keep-expanding-365-direct/) | Африка  |
 | [NTT Communications](https://www.ntt.com/en/services/network/software-defined-network.html) | Япония |
 | [PCCW](https://www.pccwglobal.com/en/enterprise/products/network/ep-global-internet-access) |Азия |
 | [SingTel](https://www.singtel.com/business/campaign/singnet-cloud-connect-microsoft-direct) |Азия |
+| [Африка NAP](https://www.napafrica.net/technical/microsoft-azure-peering-service/) |Африка|
 
 > [!NOTE]
 >Дополнительные сведения о прикреплении к партнерской программе службы пиринга см. в статье peeringservice@microsoft.com .
 >
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о службе пиринга см. в статье [Общие сведения о службе пиринга](about.md).
 - Дополнительные сведения о вопросах пиринга см. в статье [часто задаваемые вопросы о службе пиринга](faq.md).

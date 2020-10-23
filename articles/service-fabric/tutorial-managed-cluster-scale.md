@@ -3,12 +3,12 @@ title: Масштабирование управляемого кластера 
 description: В этом учебнике описано, как масштабировать тип узла управляемого кластера Service Fabric.
 ms.topic: tutorial
 ms.date: 09/28/2020
-ms.openlocfilehash: a6777743932f3cc73db973c4d9935d4b5827700b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 01b299744d462496296884211eff08b7a9c64687
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91410240"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92316142"
 ---
 # <a name="tutorial-scale-out-a-service-fabric-managed-cluster-preview"></a>Руководство по масштабированию управляемого кластера Service Fabric (предварительная версия)
 
@@ -28,7 +28,7 @@ ms.locfileid: "91410240"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * [Управляемый кластер Service Fabric (см. статью *Развертывание управляемого кластера*](tutorial-managed-cluster-deploy.md)).
-* [Azure PowerShell версии 4.7.0](https://docs.microsoft.com/powershell/azure/release-notes-azureps?view=azps-4.7.0&preserve-view=true#azservicefabric) или более поздней (см. статью [*Установка Azure PowerShell*](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-4.7.0&preserve-view=true)).
+* [Azure PowerShell версии 4.7.0](/powershell/azure/release-notes-azureps?preserve-view=true&view=azps-4.7.0#azservicefabric) или более поздней (см. статью [*Установка Azure PowerShell*](/powershell/azure/install-az-ps?preserve-view=true&view=azps-4.7.0)).
 
 ## <a name="scale-a-service-fabric-managed-cluster"></a>Масштабирование управляемого кластера Service Fabric
 Измените число экземпляров, чтобы увеличить или уменьшить количество узлов в типе узла, который необходимо масштабировать. Имена типов узлов можно найти в шаблоне Azure Resource Manager (шаблон ARM) из развертывания кластера или в Service Fabric Explorer.  

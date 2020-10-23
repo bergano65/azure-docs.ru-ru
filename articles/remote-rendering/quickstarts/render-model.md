@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 01/23/2020
 ms.topic: quickstart
-ms.openlocfilehash: b5865f2fd76c1159f7f72633362a96335af8a059
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 74bad563de60abc0c1eb7623a81c83fea03f5ee6
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88509371"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92207229"
 ---
 # <a name="quickstart-render-a-model-with-unity"></a>Краткое руководство. Отрисовка модели с помощью Unity
 
@@ -33,7 +33,7 @@ ms.locfileid: "88509371"
 
 * Windows SDK 10.0.18362.0 [(скачать)](https://developer.microsoft.com/windows/downloads/windows-10-sdk).
 * Последняя версия Visual Studio 2019 [(скачать)](https://visualstudio.microsoft.com/vs/older-downloads/).
-* [Средства Visual Studio для службы "Смешанная реальность"](https://docs.microsoft.com/windows/mixed-reality/install-the-tools). В частности, обязательно установить следующие *рабочие нагрузки*:
+* [Средства Visual Studio для службы "Смешанная реальность"](/windows/mixed-reality/install-the-tools). В частности, обязательно установить следующие *рабочие нагрузки*:
   * **Разработка классических приложений на C++** .
   * **Разработка приложений для универсальной платформы Windows (UWP)** .
 * GIT [(скачать)](https://git-scm.com/downloads).

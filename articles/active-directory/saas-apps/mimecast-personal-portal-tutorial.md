@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 05/21/2020
 ms.author: jeedes
-ms.openlocfilehash: c14a519be112e61ed7055debe7a1a454e465bd9b
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: c006e38d30e4e32645024a8c307a18767e8a1090
+ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88549098"
+ms.lasthandoff: 10/11/2020
+ms.locfileid: "91941064"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-mimecast-personal-portal"></a>Руководство по интеграции единого входа Azure Active Directory с Mimecast Personal Portal
 
@@ -155,23 +155,23 @@ ms.locfileid: "88549098"
 
 1. Перейдите в раздел **Administration** > **Services** > **Applications** (Администрирование > Службы > Приложения).
 
-    ![Конфигурация Mimecast Personal Portal](./media/mimecast-personal-portal-tutorial/services.png)
+    ![Снимок экрана: окно Mimecast с выбранным пунктом Applications (Приложения)](./media/mimecast-personal-portal-tutorial/services.png)
 
 1. Выберите вкладку **Authentication Profiles** (Профили проверки подлинности).
     
-    ![Конфигурация Mimecast Personal Portal](./media/mimecast-personal-portal-tutorial/authentication-profiles.png)
+    ![Снимок экрана: вкладка Authentication (Аутентификация) с выбранным параметром Authentication Profiles (Профили аутентификации)](./media/mimecast-personal-portal-tutorial/authentication-profiles.png)
 
 1. Выберите вкладку **New Authentication Profile** (Новый профиль проверки подлинности).
 
-    ![Конфигурация Mimecast Personal Portal](./media/mimecast-personal-portal-tutorial/new-authenticatio-profile.png)
+    ![Снимок экрана: вкладка New Authentication Profile (Новый профиль аутентификации)](./media/mimecast-personal-portal-tutorial/new-authenticatio-profile.png)
 
 1. Укажите допустимое описание в текстовом поле **Description** (Описание) и установите флажок **Enforce SAML Authentication for Mimecast Personal Portal** (Принудительная проверка подлинности SAML для Mimecast Personal Portal).
 
-    ![Конфигурация Mimecast Personal Portal](./media/mimecast-personal-portal-tutorial/selecting-personal-portal.png)
+    ![Снимок экрана: вкладка New Authentication Profile (Новый профиль аутентификации)](./media/mimecast-personal-portal-tutorial/selecting-personal-portal.png)
 
 1. На странице **SAML Configuration for Administration Console** (Настройка SAML для Mimecast Personal Portal) сделайте следующее:
 
-    ![Конфигурация Mimecast Personal Portal](./media/mimecast-personal-portal-tutorial/sso-settings.png)
+    ![Снимок экрана: флажок Enforce SAML Authentication for Administration Console (Принудительная проверка подлинности SAML для консоли администрирования)](./media/mimecast-personal-portal-tutorial/sso-settings.png)
 
     а. Для **Provider** (Поставщик) выберите **Azure Active Directory**.
 
@@ -189,19 +189,19 @@ ms.locfileid: "88549098"
 
 1. Перейдите к разделу **Administration** > **Directories** > **Internal Directories** (Администрирование > Каталоги > Внутренние каталоги).
 
-    ![Конфигурация Mimecast Personal Portal](./media/mimecast-personal-portal-tutorial/internal-directories.png)
+    ![Снимок экрана: страница SAML Configuration for Mimecast Personal Portal (Настройка SAML для персонального портала Mimecast), где можно ввести описанные здесь значения](./media/mimecast-personal-portal-tutorial/internal-directories.png)
 
 1. Выберите домен, если он указан ниже. В противном случае создайте новый домен с помощью ссылки **New Domain** (Новый домен).
 
-    ![Конфигурация Mimecast Personal Portal](./media/mimecast-personal-portal-tutorial/domain-name.png)
+    ![Снимок экрана: окно Mimecast с выбранным пунктом Internal Directories (Внутренние каталоги)](./media/mimecast-personal-portal-tutorial/domain-name.png)
 
 1. Щелкните вкладку **New Address** (Новый адрес).
 
-    ![Конфигурация Mimecast Personal Portal](./media/mimecast-personal-portal-tutorial/new-address.png)
+    ![Снимок экрана: выбранный домен](./media/mimecast-personal-portal-tutorial/new-address.png)
 
 1. Введите обязательные сведения о пользователе на следующей странице:
 
-    ![Конфигурация Mimecast Personal Portal](./media/mimecast-personal-portal-tutorial/user-information.png)
+    ![Снимок экрана: страница для ввода описанных значений](./media/mimecast-personal-portal-tutorial/user-information.png)
 
     а. В текстовом поле **Email address** (Адрес электронной почты) введите адрес электронной почты пользователя, например `B.Simon@yourdomainname.com`.
 
@@ -215,7 +215,7 @@ ms.locfileid: "88549098"
 
     е) Чтобы назначить пользователю роли, щелкните **Role Edit** (Изменить роли) и выберите роль, которая лучше всего соответствует требованиям вашей организации.
 
-    ![Конфигурация Mimecast Personal Portal](./media/mimecast-personal-portal-tutorial/assign-role.png)
+    ![Снимок экрана: раздел Address Settings (Параметры адреса) с пунктом Role Edit (Изменить роли)](./media/mimecast-personal-portal-tutorial/assign-role.png)
 
 
 ## <a name="test-sso"></a>Проверка единого входа 

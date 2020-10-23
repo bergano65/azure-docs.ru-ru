@@ -6,12 +6,12 @@ ms.service: data-lake-store
 ms.topic: how-to
 ms.date: 06/27/2018
 ms.author: twooley
-ms.openlocfilehash: 92fd681d05b8e5bd7cf07ecd735acd87698935ef
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: de98e25cf5703a43282e551a0eda20d7767c6ce8
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85985795"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92103634"
 ---
 # <a name="get-started-with-azure-data-lake-storage-gen1-using-the-azure-cli"></a>Приступая к работе с Azure Data Lake Storage 1-го поколения с помощью Azure CLI
 
@@ -26,7 +26,7 @@ ms.locfileid: "85985795"
 
 Узнайте, как использовать Azure CLI для создания учетной записи Azure Data Lake Storage 1-го поколения и выполнения основных операций, таких как создание папок, отправка и скачивание файлов данных, удаление учетной записи и т. д. Дополнительные сведения о Data Lake Storage 1-го поколения см. в разделе [обзор Data Lake Storage 1-го поколения](data-lake-store-overview.md).
 
-Azure CLI — это интерфейс командной строки Azure для управления ресурсами Azure. Его можно использовать в Windows, Linux и macOS. Дополнительные сведения см. в статье [Инфраструктура Azure CLI](https://docs.microsoft.com/cli/azure). Полный список команд и синтаксис см. в [справочнике интерфейса командной строки Azure Data Lake Storage 1-го поколения](https://docs.microsoft.com/cli/azure/dls).
+Azure CLI — это интерфейс командной строки Azure для управления ресурсами Azure. Его можно использовать в Windows, Linux и macOS. Дополнительные сведения см. в статье [Инфраструктура Azure CLI](/cli/azure). Полный список команд и синтаксис см. в [справочнике интерфейса командной строки Azure Data Lake Storage 1-го поколения](/cli/azure/dls).
 
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -34,11 +34,11 @@ Azure CLI — это интерфейс командной строки Azure д
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 
-* **Azure CLI**. См. инструкции в статье об [установке Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
+* **Azure CLI**. См. инструкции в статье об [установке Azure CLI](/cli/azure/install-azure-cli).
 
 ## <a name="authentication"></a>Аутентификация
 
-В этой статье используется более простой подход к аутентификации в службе Data Lake Storage 1-го поколения, в которую выполняется вход от имени пользователя. Уровень доступа к учетной записи Data Lake Storage 1-го поколения и файловой системе зависит от уровня доступа пользователя, который вошел в систему. Существуют разные способы аутентификации в Data Lake Storage 1-го поколения, включая **аутентификацию пользователей** и **аутентификацию между службами**. Инструкции и дополнительные сведения об аутентификации см. в разделах [Аутентификация пользователей](data-lake-store-end-user-authenticate-using-active-directory.md) и [Аутентификация между службами](data-lake-store-authenticate-using-active-directory.md).
+В этой статье используется более простой подход к аутентификации в службе Data Lake Storage 1-го поколения, в которую выполняется вход от имени пользователя. Уровень доступа к учетной записи Data Lake Storage 1-го поколения и файловой системе зависит от уровня доступа пользователя, который вошел в систему. Существуют разные способы аутентификации в Data Lake Storage 1-го поколения, включая **аутентификацию пользователей** и **аутентификацию между службами**. Инструкции и дополнительные сведения об аутентификации см. в разделах [Аутентификация пользователей](data-lake-store-end-user-authenticate-using-active-directory.md) и [Аутентификация между службами](./data-lake-store-service-to-service-authenticate-using-active-directory.md).
 
 
 ## <a name="log-in-to-your-azure-subscription"></a>Вход в подписку Azure

@@ -9,12 +9,12 @@ ms.author: deli
 ms.reviewer: klam, estfan
 ms.topic: article
 ms.date: 02/29/2020
-ms.openlocfilehash: 5d161b287f9706473c96d25684fa23a2c94b8c3e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0e9ca2c7b5d15fcc6be451bbe215c8b85d5309eb
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91532159"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92368270"
 ---
 # <a name="migrate-azure-scheduler-jobs-to-azure-logic-apps"></a>Перемещение заданий из планировщика Azure в Azure Logic Apps
 
@@ -133,7 +133,7 @@ ms.locfileid: "91532159"
 
 ## <a name="cancel-a-one-time-job"></a>Отмена одноразового задания
 
-В Logic Apps каждое одноразовое задание выполняется как отдельный экземпляр запуска приложения логики. Чтобы отменить одноразовое задание, можно использовать команды [отмены выполнений рабочего процесса](https://docs.microsoft.com/rest/api/logic/workflowruns/cancel) в REST API Logic Apps. Когда вы отправляете вызов триггеру, укажите [идентификатор выполнения рабочего процесса](#workflow-run-id).
+В Logic Apps каждое одноразовое задание выполняется как отдельный экземпляр запуска приложения логики. Чтобы отменить одноразовое задание, можно использовать команды [отмены выполнений рабочего процесса](/rest/api/logic/workflowruns/cancel) в REST API Logic Apps. Когда вы отправляете вызов триггеру, укажите [идентификатор выполнения рабочего процесса](#workflow-run-id).
 
 ## <a name="schedule-recurring-jobs"></a>Планирование повторяющихся заданий
 
@@ -239,7 +239,7 @@ ms.locfileid: "91532159"
 
 **Сообщество**
 
-* [Страница Майкрософт с вопросами и ответами об Azure Logic Apps](https://docs.microsoft.com/answers/topics/azure-logic-apps.html)
+* [Страница Майкрософт с вопросами и ответами об Azure Logic Apps](/answers/topics/azure-logic-apps.html)
 * [Stack Overflow](https://stackoverflow.com/questions/tagged/azure-scheduler)
 
 ## <a name="next-steps"></a>Дальнейшие действия

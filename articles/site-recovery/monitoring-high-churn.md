@@ -6,12 +6,12 @@ manager: gaggupta
 ms.topic: how-to
 ms.date: 09/09/2020
 ms.author: sharrai
-ms.openlocfilehash: 51f45b5c0b8a2729f64eb376e06875719474cbfc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: aeb89a9d18e4550fa1d6162920d60507fd50c208
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89664687"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92359872"
 ---
 # <a name="monitoring-churn-patterns-on-virtual-machines"></a>Мониторинг шаблонов обновлений на виртуальных машинах
 
@@ -19,9 +19,9 @@ ms.locfileid: "89664687"
 
 ## <a name="for-azure-virtual-machines-windows-or-linux"></a>Для виртуальных машин Azure (Windows или Linux)
 
-Если компьютер размещается в Azure и использует управляемый или неуправляемый диск для хранилища, можно легко отслеживать производительность, отслеживая метрики диска. Это позволяет точно отслеживать и делать правильный выбор диска в соответствии с шаблоном использования приложения. Его также можно использовать для создания оповещений, диагностики и автоматизации сборки. [Подробнее.](https://azure.microsoft.com/blog/per-disk-metrics-managed-disks/)
+Если компьютер размещается в Azure и использует управляемый или неуправляемый диск для хранилища, можно легко отслеживать производительность, отслеживая метрики диска. Это позволяет точно отслеживать и делать правильный выбор диска в соответствии с шаблоном использования приложения. Его также можно использовать для создания оповещений, диагностики и автоматизации сборки. [Подробнее](https://azure.microsoft.com/blog/per-disk-metrics-managed-disks/).
 
-После защиты компьютеров с Azure Site Recovery можно отслеживать компьютеры с помощью журналов Azure Monitor и Log Analytics. [Подробнее.](https://docs.microsoft.com/azure/site-recovery/monitor-log-analytics)
+После защиты компьютеров с Azure Site Recovery можно отслеживать компьютеры с помощью журналов Azure Monitor и Log Analytics. [Подробнее](./monitor-log-analytics.md).
 
 Кроме того, можно использовать некоторые специальные средства операционной системы.
 
@@ -62,7 +62,7 @@ ms.locfileid: "89664687"
 
     ![Монитор производительности шаг 3](./media/monitoring-high-churn/perfmon-step3.png)
 
-Дополнительные сведения о мониторинге производительности см. [здесь](https://docs.microsoft.com/dynamics365/business-central/dev-itpro/administration/monitor-use-performance-monitor-collect-event-trace-data).
+Дополнительные сведения о мониторинге производительности см. [здесь](/dynamics365/business-central/dev-itpro/administration/monitor-use-performance-monitor-collect-event-trace-data).
 
 ## <a name="for-linux-machines"></a>Для компьютеров Linux
 

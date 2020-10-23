@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
-ms.openlocfilehash: 6282e159a537eb3b9bf5d9a44c7498f3f1db0019
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 032f35fcf5ff661f5a0bfb59be191ffae93272a0
+ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88550730"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91944496"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-happyfox"></a>Руководство. Интеграция Azure Active Directory с HappyFox
 
@@ -132,19 +132,19 @@ ms.locfileid: "88550730"
 
 2. Перейдите в разделе **Manage** (Управление) и щелкните вкладку **Integrations** (Интеграция).
 
-    ![Настройка единого входа](./media/happyfox-tutorial/header.png) 
+    ![Снимок экрана, на котором показа страница Manage (Управление) с выбранной вкладкой Integrations (Интеграции).](./media/happyfox-tutorial/header.png) 
 
 3. На вкладке Integrations (Интеграция) щелкните **Configure** (Настройка) в разделе **SAML Integration** (Интеграция SAML), чтобы открыть параметры единого входа.
 
-    ![Настройка единого входа](./media/happyfox-tutorial/configure.png)
+    ![Снимок экрана, на котором показан параметр SAML Integration (Интеграция SAML) с выбранным действием configure (настроить).](./media/happyfox-tutorial/configure.png)
 
 4. В разделе конфигурации SAML вставьте **URL-адрес для входа**, скопированный на портале Azure, в текстовое поле **SSO Target URL** (Целевой URL-адрес единого входа).
 
-    ![Настройка единого входа](./media/happyfox-tutorial/targeturl.png)
+    ![Снимок экрана, на котором показан раздел SAML Integration (Интеграция SAML) выделенным текстовым полем SSO Target URL (Целевой URL-адрес единого входа).](./media/happyfox-tutorial/targeturl.png)
 
 5. Откройте в Блокноте сертификат, загруженный с портала Azure, и вставьте его содержимое в раздел **IdP Signature** (Подпись поставщика удостоверений).
 
-    ![Настройка единого входа](./media/happyfox-tutorial/cert.png)
+    ![Снимок экрана, на котором показан выделенный раздел IdP Signature (Подпись поставщика удостоверений).](./media/happyfox-tutorial/cert.png)
 
 6. Нажмите кнопку **Save Settings** (Сохранить параметры).
 

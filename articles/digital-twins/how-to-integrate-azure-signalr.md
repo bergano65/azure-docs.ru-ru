@@ -7,12 +7,12 @@ ms.author: aymarqui
 ms.date: 09/02/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 0c3d3a050c0b929a3f1042b42006c289ddeb9acb
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: dfa8227f319a818efee20f26c1f2bebf72ad7cf9
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92048123"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92367658"
 ---
 # <a name="integrate-azure-digital-twins-with-azure-signalr-service"></a>Интеграция Azure Digital двойников со службой Azure SignalR
 
@@ -20,7 +20,7 @@ ms.locfileid: "92048123"
 
 Решение, описанное в этой статье, позволит отправлять данные телеметрии Digital двойника подключенным клиентам, таким как одна веб-страница или мобильное приложение. В результате клиенты обновляются с учетом метрик реального времени и состояния с устройств Интернета вещей без необходимости опрашивать сервер или отправлять новые HTTP-запросы на обновление.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Ниже приведены предварительные требования, которые необходимо выполнить перед продолжением.
 
@@ -39,8 +39,8 @@ ms.locfileid: "92048123"
 ## <a name="download-the-sample-applications"></a>Загрузка примеров приложений
 
 Сначала скачайте необходимые примеры приложений. Потребуется следующее:
-* [**Примеры цифровых двойников Azure**](/samples/azure-samples/digital-twins-samples/digital-twins-samples/). Этот пример содержит *адтсамплеапп* с двумя функциями Azure для перемещения данных по экземпляру цифрового двойников Azure (Дополнительные сведения об этом сценарии см. в [*руководстве по подключению комплексного решения*](tutorial-end-to-end.md)). Он также содержит пример приложения *девицесимулатор* , которое имитирует устройство IOT, создавая новое значение температуры каждую секунду. 
-    - Перейдите к образцу ссылки и нажмите кнопку *скачать ZIP-файл* , чтобы загрузить копию примера на компьютер, как _**Azure_Digital_Twins_samples.zip**_. Распакуйте папку.
+* [**Комплексные примеры для цифровых двойников Azure**](/samples/azure-samples/digital-twins-samples/digital-twins-samples/). в этом примере содержится *адтсамплеапп* с двумя функциями Azure для перемещения данных по экземпляру цифрового двойников Azure (Дополнительные сведения об этом сценарии см. в [*руководстве по подключению комплексного решения*](tutorial-end-to-end.md)). Он также содержит пример приложения *девицесимулатор* , которое имитирует устройство IOT, создавая новое значение температуры каждую секунду. 
+    - Перейдите к образцу ссылки и нажмите кнопку *скачать ZIP-файл* , чтобы загрузить копию примера на компьютер, как _**Azure_Digital_Twins_end_to_end_samples.zip**_. Распакуйте папку.
 * [**Пример веб-приложения для интеграции SignalR**](/samples/azure-samples/digitaltwins-signalr-webapp-sample/digital-twins-samples/): это пример веб-приложения, которое будет использовать данные телеметрии Azure Digital двойников из службы Azure SignalR.
     -  Перейдите к образцу ссылки и нажмите кнопку *скачать ZIP-файл* , чтобы загрузить копию примера на компьютер, как _**Azure_Digital_Twins_SignalR_integration_web_app_sample.zip**_. Распакуйте папку.
 
@@ -63,7 +63,7 @@ ms.locfileid: "92048123"
 
     :::image type="content" source="media/how-to-integrate-azure-signalr/signalr-keys.png" alt-text="Обзор служб Azure в комплексном сценарии. Описание данных, передаваемых из устройства в центр Интернета вещей, с помощью функции Azure (стрелка б) в экземпляре Azure Digital двойников (раздел A), а затем из службы &quot;Сетка событий&quot; в другую функцию Azure для обработки (стрелка C). Раздел г показывает данные, передаваемые из одной и той же сетки событий с помощью стрелки C в функцию Azure с меткой &quot;вещание&quot;. &quot;Broadcast&quot; обменивается данными с другой функцией Azure, обозначенной как &quot;Negotiate&quot;, и &quot;Broadcast&quot; и &quot;Negotiate&quot; обмениваются данными с устройствами компьютера." lightbox="media/how-to-integrate-azure-signalr/signalr-keys.png":::
 
-Затем запустите Visual Studio (или другой редактор кода по своему усмотрению) и откройте решение Code в папке *Azure_Digital_Twins_samples > адтсамплеапп* . Затем выполните следующие действия, чтобы создать функции.
+Затем запустите Visual Studio (или другой редактор кода по своему усмотрению) и откройте решение Code в папке *Azure_Digital_Twins_end_to_end_samples > адтсамплеапп* . Затем выполните следующие действия, чтобы создать функции.
 
 1. Создайте новый яркий класс C# с именем **SignalRFunctions.CS** в проекте *самплефунктионсапп* .
 
@@ -129,7 +129,7 @@ ms.locfileid: "92048123"
     }
     ```
 
-1. В окне *консоли диспетчера пакетов* Visual Studio или в любом окне командной строки на компьютере в папке *Azure_Digital_Twins_samples \адтсамплеапп\самплефунктионсапп* выполните следующую команду, чтобы установить `SignalRService` пакет NuGet в проект:
+1. В окне *консоли диспетчера пакетов* Visual Studio или в любом окне командной строки на компьютере в папке *Azure_Digital_Twins_end_to_end_samples \адтсамплеапп\самплефунктионсапп* выполните следующую команду, чтобы установить `SignalRService` пакет NuGet в проект:
     ```cmd
     dotnet add package Microsoft.Azure.WebJobs.Extensions.SignalRService --version 1.2.0
     ```
@@ -145,7 +145,7 @@ ms.locfileid: "92048123"
 
     :::image type="content" source="media/how-to-integrate-azure-signalr/get-function-url.png" alt-text="Обзор служб Azure в комплексном сценарии. Описание данных, передаваемых из устройства в центр Интернета вещей, с помощью функции Azure (стрелка б) в экземпляре Azure Digital двойников (раздел A), а затем из службы &quot;Сетка событий&quot; в другую функцию Azure для обработки (стрелка C). Раздел г показывает данные, передаваемые из одной и той же сетки событий с помощью стрелки C в функцию Azure с меткой &quot;вещание&quot;. &quot;Broadcast&quot; обменивается данными с другой функцией Azure, обозначенной как &quot;Negotiate&quot;, и &quot;Broadcast&quot; и &quot;Negotiate&quot; обмениваются данными с устройствами компьютера.":::
 
-1. Наконец, добавьте **строку подключения** Azure SignalR из ранее в параметры приложения функции, используя следующую команду Azure CLI. Команду можно выполнить в [Azure Cloud Shell](https://shell.azure.com)или локально, если [на компьютере установлен](/cli/azure/install-azure-cli?view=azure-cli-latest)Azure CLI.
+1. Наконец, добавьте **строку подключения** Azure SignalR из ранее в параметры приложения функции, используя следующую команду Azure CLI. Команду можно выполнить в [Azure Cloud Shell](https://shell.azure.com)или локально, если [на компьютере установлен](/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true)Azure CLI.
  
     ```azurecli
     az functionapp config appsettings set -g <your-resource-group> -n <your-App-Service-(function-app)-name> --settings "AzureSignalRConnectionString=<your-Azure-SignalR-ConnectionString>"
@@ -184,7 +184,7 @@ ms.locfileid: "92048123"
 
 Во время комплексного требования к учебнику вы [настроили симулятор устройств](tutorial-end-to-end.md#configure-and-run-the-simulation) для отправки данных через центр Интернета вещей и ваш экземпляр Azure Digital двойников.
 
-Теперь все, что нужно сделать, — это запустить проект симулятора, расположенный в *Azure_Digital_Twins_samples > девицесимулатор > девицесимулатор. sln*. Если вы используете Visual Studio, вы можете открыть проект, а затем запустить его с помощью этой кнопки на панели инструментов:
+Теперь все, что нужно сделать, — это запустить проект симулятора, расположенный в *Azure_Digital_Twins_end_to_end_samples > девицесимулатор > девицесимулатор. sln*. Если вы используете Visual Studio, вы можете открыть проект, а затем запустить его с помощью этой кнопки на панели инструментов:
 
 :::image type="content" source="media/how-to-integrate-azure-signalr/start-button-simulator.png" alt-text="Обзор служб Azure в комплексном сценарии. Описание данных, передаваемых из устройства в центр Интернета вещей, с помощью функции Azure (стрелка б) в экземпляре Azure Digital двойников (раздел A), а затем из службы &quot;Сетка событий&quot; в другую функцию Azure для обработки (стрелка C). Раздел г показывает данные, передаваемые из одной и той же сетки событий с помощью стрелки C в функцию Azure с меткой &quot;вещание&quot;. &quot;Broadcast&quot; обменивается данными с другой функцией Azure, обозначенной как &quot;Negotiate&quot;, и &quot;Broadcast&quot; и &quot;Negotiate&quot; обмениваются данными с устройствами компьютера.":::
 
@@ -195,7 +195,7 @@ ms.locfileid: "92048123"
 ### <a name="configure-the-sample-client-web-app"></a>Настройка примера клиентского веб-приложения
 
 Затем настройте **Пример веб-приложения интеграции SignalR** , выполнив следующие действия:
-1. С помощью Visual Studio или любого редактора кода откройте распакованную папку _**Azure_Digital_Twins_SignalR_integration_web_app_sample**_ , скачанную в разделе [*Предварительные требования*](#prerequisites) .
+1. Используя Visual Studio или любой другой редактор кода, откройте распакованную папку _**Azure_Digital_Twins_SignalR_integration_web_app_sample**_ , скачанную в разделе [*Загрузка примеров приложений*](#download-the-sample-applications) .
 
 1. Откройте файл *src/App.js* и замените URL-адрес `HubConnectionBuilder` конечной точкой HTTP для функции **Negotiate** , сохраненной ранее:
 
@@ -232,7 +232,7 @@ npm start
 
 Если ресурсы, созданные в этой статье, больше не нужны, выполните следующие действия, чтобы удалить их. 
 
-С помощью Azure Cloud Shell или локального Azure CLI можно удалить все ресурсы Azure в группе ресурсов с помощью команды [AZ Group Delete](/cli/azure/group?view=azure-cli-latest#az-group-delete) . Удаление группы ресурсов также приведет к удалению...
+С помощью Azure Cloud Shell или локального Azure CLI можно удалить все ресурсы Azure в группе ресурсов с помощью команды [AZ Group Delete](/cli/azure/group?view=azure-cli-latest&preserve-view=true#az-group-delete) . Удаление группы ресурсов также приведет к удалению...
 * экземпляр Azure Digital двойников (из комплексного руководства)
 * центр Интернета вещей и регистрация устройств концентратора (из комплексного руководства)
 * раздел "Сетка событий" и связанные подписки
@@ -246,15 +246,9 @@ npm start
 az group delete --name <your-resource-group>
 ```
 
-Если вы удаляете экземпляр Azure Digital двойников, вы также можете удалить регистрацию приложения Azure AD, созданную для него, в рамках комплексного руководства, используя следующую команду:
+Наконец, удалите образцы папок проекта, скачанные на локальный компьютер (*Azure_Digital_Twins_end_to_end_samples.zip* и *Azure_Digital_Twins_SignalR_integration_web_app_sample.zip*).
 
-```azurecli
-az ad app delete --id <your-application-ID>
-```
-
-Наконец, удалите образцы папок проекта, скачанные на локальный компьютер (*Azure_Digital_Twins_samples.zip* и *Azure_Digital_Twins_SignalR_integration_web_app_sample.zip*).
-
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье вы настроите функции Azure с SignalR, чтобы транслировать события телеметрии Digital двойников в пример клиентского приложения.
 

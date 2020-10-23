@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 08/03/2020
 ms.custom: devx-track-java
 zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: d368c938e805164b70c7d3a22f9229b5efd89dde
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 29eb99d9e009d58c44be8f9d2e5d9fa01d117092
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92045409"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92092959"
 ---
 # <a name="quickstart-build-and-deploy-apps-to-azure-spring-cloud"></a>Краткое руководство. Сборка и развертывание приложений в Azure Spring Cloud
 
@@ -187,10 +187,10 @@ https://servicename-solar-system-weather.azuremicroservices.io/weatherforecast
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* [установите JDK версии 8](https://docs.microsoft.com/java/azure/jdk/?view=azure-java-stable&preserve-view=true);
+* [установите JDK версии 8](/java/azure/jdk/?preserve-view=true&view=azure-java-stable);
 * [Регистрация для получения подписки Azure](https://azure.microsoft.com/free/)
-* (Необязательно.) [Установите Azure CLI версии 2.0.67 или более поздней](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true) и расширение Azure Spring Cloud с помощью команды `az extension add --name spring-cloud`.
-* (Необязательно) [Установите Azure Toolkit for IntelliJ](https://plugins.jetbrains.com/plugin/8053-azure-toolkit-for-intellij/) и [войдите](https://docs.microsoft.com/azure/developer/java/toolkit-for-intellij/create-hello-world-web-app#installation-and-sign-in)
+* (Необязательно.) [Установите Azure CLI версии 2.0.67 или более поздней](/cli/azure/install-azure-cli?preserve-view=true&view=azure-cli-latest) и расширение Azure Spring Cloud с помощью команды `az extension add --name spring-cloud`.
+* (Необязательно) [Установите Azure Toolkit for IntelliJ](https://plugins.jetbrains.com/plugin/8053-azure-toolkit-for-intellij/) и [войдите](/azure/developer/java/toolkit-for-intellij/create-hello-world-web-app#installation-and-sign-in)
 
 ## <a name="deployment-procedures"></a>Процедуры развертывания
 
@@ -304,7 +304,7 @@ https://servicename-solar-system-weather.azuremicroservices.io/weatherforecast
     ![Импорт проекта](media/spring-cloud-intellij-howto/revision-import-project-1.png)
 
 ### <a name="deploy-gateway-app-to-azure-spring-cloud"></a>Развертывание приложения gateway в Azure Spring Cloud
-Чтобы выполнить развертывание в Azure, необходимо войти в учетную запись Azure с помощью Azure Toolkit for IntelliJ и выбрать подписку. Дополнительные сведения см. в статье [Установка и вход](https://docs.microsoft.com/azure/developer/java/toolkit-for-intellij/create-hello-world-web-app#installation-and-sign-in).
+Чтобы выполнить развертывание в Azure, необходимо войти в учетную запись Azure с помощью Azure Toolkit for IntelliJ и выбрать подписку. Дополнительные сведения см. в статье [Установка и вход](/azure/developer/java/toolkit-for-intellij/create-hello-world-web-app#installation-and-sign-in).
 
 1. Щелкните правой кнопкой мыши проект в обозревателе проектов IntelliJ и выберите **Azure** -> **Deploy to Azure Spring Cloud** (Развернуть в Azure Spring Cloud).
 
@@ -313,7 +313,7 @@ https://servicename-solar-system-weather.azuremicroservices.io/weatherforecast
 1. В поле **Имя** добавьте *:gateway* к имеющемуся **имени**.
 1. В текстовом поле **Artifact** (Артефакт) выберите *com.piggymetrics:gateway:1.0-SNAPSHOT*.
 1. В текстовом поле **Subscription** (Подписка) проверьте свою подписку.
-1. В текстовом поле **Spring Cloud** выберите экземпляр Azure Spring Cloud, который вы создали при [подготовке к работе экземпляра Azure Spring Cloud](https://docs.microsoft.com/azure/spring-cloud/spring-cloud-quickstart-provision-service-instance).
+1. В текстовом поле **Spring Cloud** выберите экземпляр Azure Spring Cloud, который вы создали при [подготовке к работе экземпляра Azure Spring Cloud](./spring-cloud-quickstart-provision-service-instance.md).
 1. Задайте для параметра **Public Endpoint** (Общедоступная конечная точка) значение *Enable* (Включить).
 1. В текстовом поле **App:** (Приложение:) выберите **Create app...** (Создать приложение...).
 1. Введите *gateway*, а затем нажмите кнопку **ОК**.

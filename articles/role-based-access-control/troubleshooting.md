@@ -15,12 +15,12 @@ ms.date: 09/18/2020
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: seohack1
-ms.openlocfilehash: 415af4d71365a88a5998f6a9356d5240bc5e2518
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 069c290de0278202b2e20d67f0ce792a0a79c345
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91665998"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92368236"
 ---
 # <a name="troubleshoot-azure-rbac"></a>Устранение неполадок в Azure RBAC
 
@@ -61,7 +61,7 @@ $ras.Count
 
     Если появляется сообщение об ошибке "недостаточно прав для выполнения операции", вероятно, Azure CLI пытается найти удостоверение уполномоченного пользователя в Azure AD, а субъект-служба не может прочитать Azure AD по умолчанию.
 
-    Существует два способа устранения этой ошибки. Первый способ — назначить роль " [читатели каталога](../active-directory/users-groups-roles/directory-assign-admin-roles.md#directory-readers) " субъекту-службе, чтобы она могла считывать данные в каталоге.
+    Существует два способа устранения этой ошибки. Первый способ — назначить роль " [читатели каталога](../active-directory/roles/permissions-reference.md#directory-readers) " субъекту-службе, чтобы она могла считывать данные в каталоге.
 
     Второй способ устранения этой ошибки — создание назначения роли с помощью `--assignee-object-id` параметра, а не `--assignee` . С помощью `--assignee-object-id` Azure CLI пропустит Поиск Azure AD. Необходимо получить идентификатор объекта пользователя, группы или приложения, которым требуется назначить роль. Дополнительные сведения см. в статье [Добавление и удаление назначений ролей Azure с помощью Azure CLI](role-assignments-cli.md#add-role-assignment-for-a-new-service-principal-at-a-resource-group-scope).
 

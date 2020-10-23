@@ -16,12 +16,12 @@ ms.date: 09/15/2020
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e8d9740e05bf4236f1b2b722c9a91b3644533fce
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e7d04a2941888592ffa37acfe6cba52a33fda528
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90707906"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92365516"
 ---
 # <a name="powershell-for-azure-ad-roles-in-privileged-identity-management"></a>PowerShell для ролей Azure AD в управление привилегированными пользователями
 
@@ -54,7 +54,7 @@ ms.locfileid: "90707906"
     ![Найдите идентификатор организации в свойствах для Организации Azure AD.](./media/powershell-for-azure-ad-roles/tenant-id-for-Azure-ad-org.png)
 
 > [!Note]
-> В следующих разделах приведены простые примеры, которые помогут вам приступить к работе. Более подробную документацию по следующим командлетам можно найти по адресу [https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0-preview#privileged_role_management&preserve-view=true](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0-preview#privileged_role_management&preserve-view=true) . Однако необходимо заменить "Азурересаурцес" в параметре providerID на "Аадролес". Кроме того, необходимо забывать об использовании идентификатора клиента для вашей организации Azure AD в качестве параметра resourceId.
+> В следующих разделах приведены простые примеры, которые помогут вам приступить к работе. Более подробную документацию по следующим командлетам можно найти по адресу [https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0-preview#privileged_role_management&preserve-view=true](/powershell/module/azuread/?view=azureadps-2.0-preview#privileged_role_management&preserve-view=true) . Однако необходимо заменить "Азурересаурцес" в параметре providerID на "Аадролес". Кроме того, необходимо забывать об использовании идентификатора клиента для вашей организации Azure AD в качестве параметра resourceId.
 
 ## <a name="retrieving-role-definitions"></a>Получение определений ролей
 
@@ -162,4 +162,4 @@ Set-AzureADMSPrivilegedRoleSetting -ProviderId 'aadRoles' -Id 'ff518d09-47f5-45a
 - [Назначение настраиваемой роли Azure AD](azure-ad-custom-roles-assign.md)
 - [Update or remove an assigned Azure AD custom role in Privileged Identity Management](azure-ad-custom-roles-update-remove.md) (Обновление или удаление назначенной настраиваемой роли AAD в Privileged Identity Management)
 - [Настройка назначения настраиваемой роли Azure AD](azure-ad-custom-roles-configure.md)
-- [Administrator role permissions in Azure Active Directory](../users-groups-roles/directory-assign-admin-roles.md) (Разрешения роли администратора в Azure Active Directory)
+- [Administrator role permissions in Azure Active Directory](../roles/permissions-reference.md) (Разрешения роли администратора в Azure Active Directory)

@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: banders
 ms.custom: contperfq1
-ms.openlocfilehash: 2e0b9f10a321fce0b8ccc31bf914fe4f2995c49a
-ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
+ms.openlocfilehash: b2340e5b220936c1333cf842251b669b3e034042
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91651910"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92151214"
 ---
 # <a name="analyze-unexpected-charges"></a>Анализ непредвиденных расходов
 
@@ -76,7 +76,7 @@ ms.locfileid: "91651910"
 
 ### <a name="analyze-the-audit-logs-for-the-resource"></a>Анализ журналов аудита ресурса
 
-Если у вас есть разрешения на просмотр ресурса, вы сможете получить доступ к его журналам аудита. Проверьте журналы, чтобы найти пользователя, ответственного за последние изменения ресурса. Дополнительные сведения см. в статье [Просмотр и извлечение событий журнала действий Azure](../../azure-monitor/platform/activity-log-view.md).
+Если у вас есть разрешения на просмотр ресурса, вы сможете получить доступ к его журналам аудита. Проверьте журналы, чтобы найти пользователя, ответственного за последние изменения ресурса. Дополнительные сведения см. в статье [Просмотр и извлечение событий журнала действий Azure](../../azure-monitor/platform/activity-log.md#view-the-activity-log).
 
 ### <a name="analyze-user-permissions-to-the-resources-parent-scope"></a>Анализ разрешений пользователя для родительской области ресурса
 

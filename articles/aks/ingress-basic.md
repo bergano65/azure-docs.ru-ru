@@ -5,12 +5,12 @@ description: Узнайте, как установить и настроить �
 services: container-service
 ms.topic: article
 ms.date: 08/17/2020
-ms.openlocfilehash: 9ab177e2756227f3893d13c97d12ad67cfb1ff62
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b7a741a8193271fe8a297f7b2d13f6317b35f87c
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88855834"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92461487"
 ---
 # <a name="create-an-ingress-controller-in-azure-kubernetes-service-aks"></a>Создание контроллера входящего трафика в Службе Azure Kubernetes (AKS)
 
@@ -55,7 +55,8 @@ helm install nginx-ingress ingress-nginx/ingress-nginx \
     --namespace ingress-basic \
     --set controller.replicaCount=2 \
     --set controller.nodeSelector."beta\.kubernetes\.io/os"=linux \
-    --set defaultBackend.nodeSelector."beta\.kubernetes\.io/os"=linux
+    --set defaultBackend.nodeSelector."beta\.kubernetes\.io/os"=linux \
+    --set controller.admissionWebhooks.patch.nodeSelector."beta\.kubernetes\.io/os"=linux
 ```
 
 При создании службы распределения нагрузки Kubernetes входящего контроллера NGINX назначается динамический общедоступный IP-адрес, как показано в следующем примере выходных данных:

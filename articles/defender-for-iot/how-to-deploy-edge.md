@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 1/30/2020
 ms.author: mlottner
-ms.openlocfilehash: 06836673f1a567f64217d49cf8e0ca82e132111f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: dd68fd79d25e839876180ff25cacfa1ddf64eb2b
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90938349"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92368814"
 ---
 # <a name="deploy-a-security-module-on-your-iot-edge-device"></a>Развертывание модуля безопасности на устройстве IoT Edge
 
@@ -32,9 +32,9 @@ ms.locfileid: "90938349"
 
 Выполните следующие действия, чтобы развернуть модуль безопасности защитника для IoT для IoT Edge.
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Обязательные условия
 
-1. В центре Интернета вещей убедитесь, что устройство [зарегистрировано как устройство IOT Edge](https://docs.microsoft.com/azure/iot-edge/how-to-register-device-portal).
+1. В центре Интернета вещей убедитесь, что устройство [зарегистрировано как устройство IOT Edge](https://docs.microsoft.com/azure/iot-edge/how-to-manual-provision-symmetric-key#register-a-new-device).
 
 1. Для модуля "защитник для IoT Edge" требуется, чтобы на устройстве IoT Edge была установлена [платформа для аудита](https://linux.die.net/man/8/auditd) .
 
@@ -175,7 +175,7 @@ ms.locfileid: "90938349"
 
 1. Убедитесь, что выполняются следующие контейнеры:
 
-   | Имя | ИЗОБРАЖЕНИЕ |
+   | Имя | IMAGE |
    | --- | --- |
    | азуреиотсекурити | mcr.microsoft.com/ascforiot/azureiotsecurity:1.0.2 |
    | edgeHub; | mcr.microsoft.com/azureiotedge-hub:1.0.8.3 |

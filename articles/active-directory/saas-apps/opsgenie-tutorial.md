@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 03/19/2020
 ms.author: jeedes
-ms.openlocfilehash: 0ebcb746e10ae910c695e52fb053fc5d0b316e70
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 8958e16ef4b1b7033fa0757e2a70eb053896b143
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88543913"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91996566"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-opsgenie"></a>Руководство по интеграции единого входа Azure Active Directory с OpsGenie
 
@@ -133,15 +133,15 @@ ms.locfileid: "88543913"
 
 3. Чтобы включить единый вход, установите флажок **Включено**.
    
-    ![Параметры OpsGenie](./media/opsgenie-tutorial/tutorial-opsgenie-07.png) 
+    ![Снимок экрана: установленный флажок Enabled (Включено)](./media/opsgenie-tutorial/tutorial-opsgenie-07.png) 
 
 4. В разделе **Поставщик** откройте вкладку **Azure Active Directory**.
    
-    ![Параметры OpsGenie](./media/opsgenie-tutorial/tutorial-opsgenie-08.png) 
+    ![Снимок экрана: раздел Provider (Поставщик) с выбранной вкладкой Azure Active Directory](./media/opsgenie-tutorial/tutorial-opsgenie-08.png) 
 
 5. На странице диалогового окна Azure Active Directory выполните следующие действия:
    
-    ![Параметры OpsGenie](./media/opsgenie-tutorial/tutorial-opsgenie-09.png)
+    ![Снимок экрана: раздел Single sign-on (Единый вход) с переключателем Enable single sign-on (Включить единый вход) и пунктами SAML 2.0 Endpoint (Конечная точка SAML 2.0) и Metadata URL (URL-адрес метаданных)](./media/opsgenie-tutorial/tutorial-opsgenie-09.png)
     
     а. Скопируйте значение **URI кода приложения** и вставьте его в текстовое поле **Идентификатор (Идентификатор сущности)** в разделе **Базовая конфигурация SAML** на портале Azure.
 
@@ -169,7 +169,7 @@ ms.locfileid: "88543913"
 
 4. На странице **Добавление пользователя** выполните следующие действия.
    
-    ![Параметры OpsGenie](./media/opsgenie-tutorial/tutorial-opsgenie-11.png)
+    ![Снимок экрана: диалоговое окно Add User (Добавление пользователя) с выделенными текстовыми полями Email (Электронная почта) и Full name (Полное имя), а также кнопкой Save (Сохранить)](./media/opsgenie-tutorial/tutorial-opsgenie-11.png)
    
     а. В текстовом поле **Адрес электронной почты** введите адрес электронной почты пользователя B.Simon в Azure Active Directory.
    

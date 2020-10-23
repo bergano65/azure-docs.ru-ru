@@ -6,12 +6,12 @@ ms.service: data-lake-analytics
 ms.topic: how-to
 ms.custom: Understand-apache-spark-code-concepts
 ms.date: 10/15/2019
-ms.openlocfilehash: 7b5be20bb8b5eb1d56c1214104037d5d824445b3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2abd5882e310b17c633a82009f44624fad156f14
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87132353"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92221134"
 ---
 # <a name="understand-apache-spark-code-for-u-sql-developers"></a>Знакомство с Apache Spark кодом для разработчиков U-SQL
 
@@ -126,7 +126,7 @@ Spark предлагает собственные возможности инт�
 |`SQL.MAP<K,V>`   |`MapType(keyType, valueType, valueContainsNull)` |`scala.collection.Map` | `MapType(keyType, valueType, valueContainsNull=True)`|
 |`SQL.ARRAY<T>`   |`ArrayType(elementType, containsNull)` |`scala.collection.Seq` | `ArrayType(elementType, containsNull=True)`|
 
-Дополнительные сведения см. в разделе:
+Дополнительные сведения можно найти в разделе
 
 - [org. Apache. Spark. SQL. types](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.sql.types.package)
 - [Spark SQL и типы кадров данных](https://spark.apache.org/docs/latest/sql-ref-datatypes.html)
@@ -214,8 +214,8 @@ U-SQL предлагает несколько синтаксических сп�
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Общие сведения о форматах данных Spark для разработчиков U-SQL](understand-spark-data-formats.md)
-- [.NET для Apache Spark](https://docs.microsoft.com/dotnet/spark/what-is-apache-spark-dotnet)
-- [Обновление решений для аналитики больших данных с Azure Data Lake Storage 1-го поколения до Azure Data Lake Storage 2-го поколения](../storage/blobs/data-lake-storage-upgrade.md)
+- [.NET для Apache Spark](/dotnet/spark/what-is-apache-spark-dotnet)
+- [Обновление решений для аналитики больших данных с Azure Data Lake Storage 1-го поколения до Azure Data Lake Storage 2-го поколения](../storage/blobs/data-lake-storage-migrate-gen1-to-gen2.md)
 - [Преобразование данных с помощью действия Spark в фабрике данных Azure](../data-factory/transform-data-using-spark.md)
 - [Преобразование данных с помощью действия Hadoop Hive в фабрике данных Azure](../data-factory/transform-data-using-hadoop-hive.md)
 - [Apache Spark в Azure HDInsight](../hdinsight/spark/apache-spark-overview.md)

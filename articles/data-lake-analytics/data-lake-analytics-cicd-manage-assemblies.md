@@ -6,12 +6,12 @@ ms.author: liud
 ms.service: data-lake-analytics
 ms.topic: how-to
 ms.date: 10/30/2018
-ms.openlocfilehash: 4bb6ee60df291c1939d3bb0d72a9b3992be9b3c0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e88616f45c69d33234aa35333e0d82ad8cc59bb6
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87132149"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92219366"
 ---
 # <a name="best-practices-for-managing-u-sql-assemblies-in-a-cicd-pipeline"></a>Рекомендации по управлению сборками U-SQL в конвейере CI/CD
 
@@ -19,40 +19,43 @@ ms.locfileid: "87132149"
 
 ## <a name="use-the-u-sql-database-project-to-manage-assembly-source-code"></a>Использование проекта базы данных U-SQL для управления исходным кодом сборки
 
-[Проект базы данных U-SQL](data-lake-analytics-data-lake-tools-develop-usql-database.md) — это тип проекта в Visual Studio, который помогает разработчикам быстро и легко разрабатывать, развертывать и администрировать свои базы данных U-SQL. Всеми объектами базы данных U-SQL (за исключением учетных данных) можно управлять с помощью проекта базы данных U-SQL. 
+[Проект базы данных U-SQL](data-lake-analytics-data-lake-tools-develop-usql-database.md) — это тип проекта в Visual Studio, который помогает разработчикам быстро и легко разрабатывать, развертывать и администрировать свои базы данных U-SQL. Всеми объектами базы данных U-SQL (за исключением учетных данных) можно управлять с помощью проекта базы данных U-SQL.
 
 Для управления исходным кодом сборки C# и сценариями U-SQL на языке DDL для регистрации сборки используйте следующие компоненты:
 
-* проект базы данных U-SQL — для управления сценариями U-SQL регистрации сборки;
-* библиотека классов (для приложения U-SQL) — для управления исходным кодом C# и зависимостями для операторов, функций и агрегаторов, определяемых пользователем (UDO/UDF/UDAG);
-* проект базы данных U-SQL — для ссылки на проект библиотеки классов. 
+- проект базы данных U-SQL — для управления сценариями U-SQL регистрации сборки;
+- библиотека классов (для приложения U-SQL) — для управления исходным кодом C# и зависимостями для операторов, функций и агрегаторов, определяемых пользователем (UDO/UDF/UDAG);
+- проект базы данных U-SQL — для ссылки на проект библиотеки классов.
 
 Проект базы данных U-SQL может ссылаться на проект библиотеки классов (для приложения U-SQL). Сборки, зарегистрированные в базе данных U-SQL, можно создать с помощью исходного кода C#, на который есть ссылка, из этого проекта библиотеки классов (для приложения U-SQL).
 
 Чтобы создать проекты и добавить ссылки, выполните следующие действия.
+
 1. Создайте проект библиотеки классов (для приложения U-SQL), выбрав **файл**  >  **создать**  >  **проект**. Проект находится в узле **Azure Data Lake > U-SQL**.
 
    ![Создание проекта библиотеки классов C# с помощью средств Azure Data Lake для Visual Studio](./media/data-lake-analytics-cicd-manage-assemblies/create-c-sharp-class-library-project.png)
+
 1. Добавьте свой код C#, определяемый пользователем, в проект библиотеки классов (для приложения U-SQL).
 
 1. Создайте проект U-SQL, выбрав **файл**  >  **создать**  >  **проект**. Проект находится в **Azure Data Lake**  >  узле**U-SQL** .
 
    ![Создание проекта базы данных U-SQL с помощью средств Azure Data Lake для Visual Studio](media/data-lake-analytics-cicd-manage-assemblies/create-u-sql-database-project.png)
+
 1. Добавьте ссылку на проект библиотеки классов C# для проекта базы данных U-SQL.
 
-    ![Добавьте ссылки на проект базы данных U-SQL с помощью Средств Data Lake для Visual Studio.](./media/data-lake-analytics-cicd-manage-assemblies/data-lake-tools-add-project-reference.png) 
+   ![Средства Data Lake для Visual Studio — Добавление ссылки](./media/data-lake-analytics-cicd-manage-assemblies/data-lake-tools-add-project-reference.png)
 
-    ![Добавьте ссылки на проект базы данных U-SQL с помощью Средств Data Lake для Visual Studio.](./media/data-lake-analytics-cicd-manage-assemblies/data-lake-tools-add-project-reference-wizard.png)
+   ![Средства Data Lake для Visual Studio. Добавление ссылки на проект базы данных U-SQL](./media/data-lake-analytics-cicd-manage-assemblies/data-lake-tools-add-project-reference-wizard.png)
 
-5. Создайте сценарий сборки в проекте базы данных U-SQL. Для этого щелкните проект правой кнопкой мыши, а затем выберите пункт **Добавить новый элемент**.
+1. Создайте сценарий сборки в проекте базы данных U-SQL. Для этого щелкните проект правой кнопкой мыши, а затем выберите пункт **Добавить новый элемент**.
 
    ![Добавление сценария сборки с помощью средств Azure Data Lake для Visual Studio](media/data-lake-analytics-cicd-manage-assemblies/add-assembly-script.png)
 
 1. Откройте сценарий сборки в представлении конструктора сборки. В раскрывающемся меню **Создать сборку из ссылки** выберите сборку, на которую указывает ссылка.
 
-    ![Создание сборки из ссылки с помощью Средств Data Lake для Visual Studio](./media/data-lake-analytics-cicd-manage-assemblies/data-lake-tools-create-assembly-from-reference.png)
+   ![Создание сборки из ссылки с помощью Средств Data Lake для Visual Studio](./media/data-lake-analytics-cicd-manage-assemblies/data-lake-tools-create-assembly-from-reference.png)
 
-7. При необходимости добавьте **Управляемые зависимости** и **Дополнительные файлы**. При добавлении дополнительных файлов средство будет использовать относительный путь, чтобы позже обеспечить возможность определения сборок на локальном компьютере и компьютере сборки.
+1. При необходимости добавьте **Управляемые зависимости** и **Дополнительные файлы**. При добавлении дополнительных файлов средство будет использовать относительный путь, чтобы позже обеспечить возможность определения сборок на локальном компьютере и компьютере сборки.
 
 ** \@ _DeployTempDirectory** в окне редактора внизу представляет собой стандартную переменную, которая указывает инструменту на выходную папку построения. В выходной папке сборки каждая сборка имеет вложенную папку с именем сборки. Все библиотеки DLL, а также дополнительные файлы, находятся в этой вложенной папке.
 
@@ -62,7 +65,7 @@ ms.locfileid: "87132149"
 
 ## <a name="deploy-a-u-sql-database"></a>Развертывание базы данных U-SQL
 
-Пакет `.usqldbpack` можно развернуть для локальной учетной записи или учетной записи Azure Data Lake Analytics. Используйте Visual Studio или пакет SDK для развертывания. 
+Пакет `.usqldbpack` можно развернуть для локальной учетной записи или учетной записи Azure Data Lake Analytics. Используйте Visual Studio или пакет SDK для развертывания.
 
 ### <a name="deploy-a-u-sql-database-in-visual-studio"></a>Развертывание базы данных U-SQL в Visual Studio
 
@@ -70,15 +73,19 @@ ms.locfileid: "87132149"
 
 #### <a name="deploy-by-using-a-u-sql-database-project"></a>Развертывание с помощью проекта базы данных U-SQL
 
-1.  Щелкните правой кнопкой мыши проект базы данных U-SQL и выберите **Развернуть**.
-2.  В **мастере развертывания баз данных U-SQL** выберите **учетную запись ADLA**, для которой требуется развернуть базу данных. Поддерживаются оба типа учетных записей — локальные и ADLA.
-3.  Поле **Источник базы данных** будет заполнено автоматически. Значение указывает на пакет .usqldbpack в выходной папке сборки проекта.
-4.  Введите имя в раздел **Имя базы данных**, чтобы создать базу данных. Если база данных с этим именем уже существует в целевой учетной записи Azure Data Lake Analytics, все объекты, указанные в проекте базы данных, создаются без ее повторного создания.
-5.  Щелкните **Отправить** для развертывания базы данных U-SQL. Загружаются все ресурсы (сборки и дополнительные файлы). Отправляется задание U-SQL, которое включает все инструкции DDL.
+1. Щелкните правой кнопкой мыши проект базы данных U-SQL и выберите **Развернуть**.
 
-    ![Развертывание проекта базы данных U-SQL с помощью Средств Data Lake для Visual Studio](./media/data-lake-analytics-cicd-manage-assemblies/data-lake-tools-deploy-usql-database-project.png)
+1. В **мастере развертывания баз данных U-SQL** выберите **учетную запись ADLA**, для которой требуется развернуть базу данных. Поддерживаются оба типа учетных записей — локальные и ADLA.
 
-    ![Мастер развертывания проекта базы данных U-SQL с помощью Средств Data Lake для Visual Studio](./media/data-lake-analytics-cicd-manage-assemblies/data-lake-tools-deploy-usql-database-project-wizard.png)
+1. Поле **Источник базы данных** будет заполнено автоматически. Значение указывает на пакет .usqldbpack в выходной папке сборки проекта.
+
+1. Введите имя в раздел **Имя базы данных**, чтобы создать базу данных. Если база данных с этим именем уже существует в целевой учетной записи Azure Data Lake Analytics, все объекты, указанные в проекте базы данных, создаются без ее повторного создания.
+
+1. Щелкните **Отправить** для развертывания базы данных U-SQL. Загружаются все ресурсы (сборки и дополнительные файлы). Отправляется задание U-SQL, которое включает все инструкции DDL.
+
+   ![Развертывание проекта базы данных U-SQL с помощью Средств Data Lake для Visual Studio](./media/data-lake-analytics-cicd-manage-assemblies/data-lake-tools-deploy-usql-database-project.png)
+
+   ![Мастер развертывания проекта базы данных U-SQL с помощью Средств Data Lake для Visual Studio](./media/data-lake-analytics-cicd-manage-assemblies/data-lake-tools-deploy-usql-database-project-wizard.png)
 
 ### <a name="deploy-a-u-sql-database-in-azure-devops"></a>Развертывание базы данных U-SQL в Azure DevOps
 
@@ -86,8 +93,8 @@ ms.locfileid: "87132149"
 
 В Azure DevOps вы можете использовать задачу командной строки и этот пакет SDK, чтобы настроить конвейер автоматизации для обновления базы данных U-SQL. См. дополнительные сведения об [использовании пакета SDK и настройке конвейера CI/CD для развертывания базы данных U-SQL](data-lake-analytics-cicd-overview.md#deploy-u-sql-database-through-azure-pipelines).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Настройка конвейера CI/CD для Azure Data Lake Analytics](data-lake-analytics-cicd-overview.md)
-* [Тестирование кода Azure Data Lake Analytics](data-lake-analytics-cicd-test.md)
-* [Запуск скриптов U-SQL на локальном компьютере](data-lake-analytics-data-lake-tools-local-run.md)
+- [Настройка конвейера CI/CD для Azure Data Lake Analytics](data-lake-analytics-cicd-overview.md)
+- [Тестирование кода Azure Data Lake Analytics](data-lake-analytics-cicd-test.md)
+- [Запуск скриптов U-SQL на локальном компьютере](data-lake-analytics-data-lake-tools-local-run.md)

@@ -6,12 +6,12 @@ services: azure-monitor
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 07/23/2020
-ms.openlocfilehash: dd0c08fa968f9d029f1b89be1183ab374f1b5348
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
+ms.openlocfilehash: 5dd553f0a41f82991c467ab256a87beabbff25ee
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91932402"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92143629"
 ---
 # <a name="azure-monitor-workbooks"></a>Изучение и предоставление общего доступа к данным об использовании c интерактивными книгами в Application Insights
 
@@ -97,7 +97,7 @@ ms.locfileid: "91932402"
 
 ![Снимок экрана с базовым запросом Kusto](./media/workbooks-overview/kusto.png)
 
-При нажатии других кнопок " **изменить** " справа будут раскрыты некоторые основные компоненты, которые составляют книги, такие как [текстовые поля](workbooks-visualizations.md#text)на основе Markdown, элементы пользовательского интерфейса [выбора параметров](workbooks-parameters.md) и другие [типы диаграмм и визуализаций](workbooks-visualizations.md). 
+При нажатии других кнопок " **изменить** " справа будут раскрыты некоторые основные компоненты, которые составляют книги, такие как [текстовые поля](workbooks-text-visualizations.md)на основе Markdown, элементы пользовательского интерфейса [выбора параметров](workbooks-parameters.md) и другие [типы диаграмм и визуализаций](#visualizations). 
 
 Изучение готовых шаблонов в режиме правки и последующее изменение их в соответствии с вашими потребностями и сохранение пользовательской книги — отличный способ узнать о возможностях Azure Monitor книг.
 
@@ -129,5 +129,5 @@ ms.locfileid: "91932402"
 
 ## <a name="next-step"></a>Следующий шаг
 
-* [Узнайте](workbooks-visualizations.md) больше о книгах с множеством разнообразных вариантов визуализации.
+* [Узнайте](#visualizations) больше о книгах с множеством разнообразных вариантов визуализации.
 * [Управление](workbooks-access-control.md) доступом к ресурсам книги и предоставление общего доступа к ним.

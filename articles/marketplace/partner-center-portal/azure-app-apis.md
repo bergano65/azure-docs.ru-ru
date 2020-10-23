@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 12/10/2019
 ms.author: mingshen
 author: mingshen-ms
-ms.openlocfilehash: fec52caa3cb7565a86a6c50d300fe448b6518457
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 51de1ab26318a02381ed95f00eadcc4e892f2f57
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87320074"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92371636"
 ---
 # <a name="partner-center-submission-api-to-onboard-azure-apps-in-partner-center"></a>API отправки Центра партнеров для подключения приложений Azure в Центре партнеров
 
@@ -29,7 +29,7 @@ ms.locfileid: "87320074"
 
 Прежде чем приступить к написанию кода для вызова API отправки Центра партнеров, убедитесь, что выполнены следующие предварительные требования.
 
-- У вас (или вашей организации) должен иметься каталог Azure AD, а также у вас должен быть доступ уровня [глобального администратора](../../active-directory/users-groups-roles/directory-assign-admin-roles.md) к этому каталогу. Если вы уже используете Microsoft 365 или другие бизнес-службы Майкрософт, у вас уже есть каталог Azure AD. В противном случае можно [создать новую службу Azure AD в Центре партнеров](https://docs.microsoft.com/windows/uwp/publish/associate-azure-ad-with-partner-center#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) совершенно бесплатно.
+- У вас (или вашей организации) должен иметься каталог Azure AD, а также у вас должен быть доступ уровня [глобального администратора](../../active-directory/roles/permissions-reference.md) к этому каталогу. Если вы уже используете Microsoft 365 или другие бизнес-службы Майкрософт, у вас уже есть каталог Azure AD. В противном случае можно [создать новую службу Azure AD в Центре партнеров](https://docs.microsoft.com/windows/uwp/publish/associate-azure-ad-with-partner-center#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) совершенно бесплатно.
 
 - Необходимо [связать приложение Azure AD с учетной записью Центра партнеров](https://docs.microsoft.com/windows/uwp/monetize/create-and-manage-submissions-using-windows-store-services#associate-an-azure-ad-application-with-your-windows-partner-center-account) и получить идентификатор арендатора, идентификатор и ключ клиента. Эти значения необходимы для получения маркера доступа Azure AD, который будет использоваться в вызовах к API отправки Microsoft Store.
 

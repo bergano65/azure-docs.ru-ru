@@ -5,12 +5,12 @@ author: anthonychu
 ms.author: antchu
 ms.date: 8/18/2020
 ms.topic: article
-ms.openlocfilehash: f3106553def982eb90ccc90822206e75a11ce354
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 402ce1e9e92ab87689abe9c18a503a479d7421f9
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89294600"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92164556"
 ---
 # <a name="azure-functions-custom-handlers-preview"></a>Пользовательские обработчики функций Azure (Предварительная версия)
 
@@ -58,7 +58,7 @@ ms.locfileid: "89294600"
 | handler.exe
 ```
 
-### <a name="configuration"></a>Конфигурация
+### <a name="configuration"></a>Параметр Configuration
 
 Приложение настраивается с помощью *host.jsв* файлах и *local.settings.js* .
 
@@ -187,7 +187,7 @@ ms.locfileid: "89294600"
 
 По соглашению ответы функций форматируются как пары "ключ-значение". Поддерживаются следующие ключи:
 
-| <nobr>Ключ полезных данных</nobr>   | Тип данных | Remarks                                                      |
+| <nobr>Ключ полезных данных</nobr>   | Тип данных | Комментарии                                                      |
 | ------------- | --------- | ------------------------------------------------------------ |
 | `Outputs`     | object    | Содержит значения ответа, определенные `bindings` массивом в *function.json*.<br /><br />Например, если для функции настроена выходная привязка очереди с именем "Микуеуеаутпут", то `Outputs` содержит ключ с именем `myQueueOutput` , который задается настраиваемым обработчиком для сообщений, отправляемых в очередь. |
 | `Logs`        | массиве     | Сообщения отображаются в журналах вызова функций.<br /><br />При работе в Azure сообщения отображаются в Application Insights. |
@@ -566,7 +566,7 @@ func azure functionapp publish $functionAppName
 
 В локальной среде журналы выводятся на консоль.
 
-В Azure [запросите Application Insights трассировки](functions-monitoring.md#query-telemetry-data) , чтобы просмотреть сообщения журнала. Если приложение создает большой объем журналов, в Application Insights отправляется только подмножество сообщений журнала. [Отключите выборку](functions-monitoring.md#configure-sampling) , чтобы убедиться в записи всех сообщений.
+В Azure [запросите Application Insights трассировки](analyze-telemetry-data.md#query-telemetry-data) , чтобы просмотреть сообщения журнала. Если приложение создает большой объем журналов, в Application Insights отправляется только подмножество сообщений журнала. [Отключите выборку](configure-monitoring.md#configure-sampling) , чтобы убедиться в записи всех сообщений.
 
 ### <a name="test-custom-handler-in-isolation"></a>Тестирование пользовательского обработчика в изоляции
 

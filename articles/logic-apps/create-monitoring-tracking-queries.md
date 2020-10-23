@@ -6,16 +6,16 @@ ms.suite: integration
 ms.reviewer: divswa, logicappspm
 ms.topic: article
 ms.date: 01/30/2020
-ms.openlocfilehash: cb1af437fc663fcb95c768ec295862209a26064e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d1f575d9d588ccd99523c6b6d5d2ceba6369dc3d
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87090405"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92309914"
 ---
 # <a name="view-and-create-queries-for-monitoring-and-tracking-in-azure-monitor-logs-for-azure-logic-apps"></a>Просмотр и создание запросов для мониторинга и отслеживания в журналах Azure Monitor для Azure Logic Apps
 
-Можно просматривать базовые запросы, которые формируют результаты из [журналов Azure Monitor](../azure-monitor/log-query/log-query-overview.md) , и создавать запросы, которые фильтруют результаты по конкретным критериям. Например, можно найти сообщения с определенным контрольным номером обмена. Запросы используют [язык запросов Kusto](https://aka.ms/LogAnalyticsLanguageReference), который можно изменить, если нужно просмотреть различные результаты. Дополнительные сведения см. в разделе [Azure Monitor запросы журналов](../azure-monitor/log-query/query-language.md).
+Можно просматривать базовые запросы, которые формируют результаты из [журналов Azure Monitor](../azure-monitor/log-query/log-query-overview.md) , и создавать запросы, которые фильтруют результаты по конкретным критериям. Например, можно найти сообщения с определенным контрольным номером обмена. Запросы используют [язык запросов Kusto](/azure/data-explorer/kusto/query/), который можно изменить, если нужно просмотреть различные результаты. Дополнительные сведения см. в разделе [Azure Monitor запросы журналов](/azure/data-explorer/kusto/query/).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -59,7 +59,7 @@ ms.locfileid: "87090405"
 
      ![Начните с предварительно подготовленных запросов решения "Logic Apps B2B"](./media/create-monitoring-tracking-queries/b2b-prebuilt-queries.png)
 
-   * Чтобы начать с пустого запроса, в редакторе запросов начните вводить [язык запросов Kusto](../azure-monitor/log-query/query-language.md) для запроса.
+   * Чтобы начать с пустого запроса, в редакторе запросов начните вводить [язык запросов Kusto](/azure/data-explorer/kusto/query/) для запроса.
 
      ![Начать с пустого запроса](./media/create-monitoring-tracking-queries/create-query-from-blank.png)
 

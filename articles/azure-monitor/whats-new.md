@@ -6,16 +6,83 @@ ms.topic: overview
 author: bwren
 ms.author: bwren
 ms.date: 07/08/2020
-ms.openlocfilehash: d82e9244152f1ecb78b062b4b1dbf02c45c505a1
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: c9679fec1d9c5d501ead03bcfbf28132d9e3b90a
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91325663"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92151807"
 ---
 # <a name="whats-new-in-azure-monitor-documentation"></a>Что нового в документации по Azure Monitor?
 
 В этой статье приводятся списки новых или значительно измененных статей об Azure Monitor. Он будет обновляться в первую неделю каждого месяца, чтобы включать в себя обновления статей за предыдущий месяц.
+
+## <a name="september-2020"></a>Сентябрь 2020 г.
+
+### <a name="general"></a>Общие сведения
+- [Часто задаваемые вопросы по Azure Monitor](faq.md) — добавлен раздел по OpenTelemetry.
+
+### <a name="agents"></a>Агенты
+- [Общие сведения об агенте Azure Monitor](platform/azure-monitor-agent-overview.md) — добавлены факторы выбора для подключения к новому агенту.
+- [Обзор агентов мониторинга Azure](platform/agents-overview.md) — добавлена поддержка для Windows 10.
+
+### <a name="alerts"></a>видны узлы
+- [Создание оповещения журнала с помощью шаблона ARM](platform/alerts-log-create-templates.md) — новая статья.
+- [Устранение неполадок с оповещениями о метриках Azure](platform/alerts-troubleshoot-metric.md) — добавлен раздел об экспорте шаблона ARM для правила генерации оповещений о метриках.
+
+### <a name="application-insights"></a>Application Insights
+- [Создание ресурса на основе рабочей области Azure Monitor Application Insights](app/create-workspace-resource.md) — удалено обозначение предварительной версии.
+- [Сохранение и хранение данных в Azure Application Insights](app/data-retention-privacy.md) — добавлены сведения о новой поддержке защиты от потери данных для Mac и Linux.
+- [Счетчики событий в Application Insights](app/eventcounters.md) — добавлена заметка о счетчиках, собранных по умолчанию.
+- [Метрики на основе журнала и предварительно агрегированные метрики в Azure Application Insights](app/pre-aggregated-metrics-log-metrics.md) — удалено обозначение предварительной версии.
+- [Переход с классического ресурса Azure Monitor Application Insights на ресурс на основе рабочей области](app/convert-classic-resource.md) — новая статья.
+- [Отслеживание приложений Java в любой среде — Azure Monitor Application Insights](app/java-in-process-agent.md) — обновление для новой предварительной версии агента.
+- [Настройка аналитики веб-приложений для ASP.NET с помощью Azure Application Insights](app/asp-net.md) — переписана статья.
+- [Каналы телеметрии в Azure Application Insights](app/telemetry-channels.md) — добавлены сведения о новой поддержке защиты от потери данных для Mac и Linux.
+- [Устранение неполадок Azure Application Insights Snapshot Debugger](app/snapshot-debugger-troubleshoot.md) — добавлен раздел SSL для устранения неполадок Snapshot Debugger.
+- [Использование Анализа изменений в приложениях в Azure Monitor для поиска проблем с веб-приложениями](app/change-analysis.md) — добавлены разделы о виртуальной машине и журнале действий.
+
+
+### <a name="containers"></a>Контейнеры
+- [Настройка кластера Kubernetes с поддержкой Azure Arc с помощью Azure Monitor для контейнеров](insights/container-insights-enable-arc-enabled-clusters.md) — добавлено руководство по активации мониторинга с помощью субъекта-службы.
+- [Сбор метрик развертывания и HPA с помощью Azure Monitor для контейнеров](insights/container-insights-deployment-hpa-metrics.md) — новая статья.
+
+### <a name="insights-and-solutions"></a>Полезные сведения и решения
+- [Azure Monitor для Кэша Azure для Redis](insights/redis-cache-insights-overview.md) — удалено обозначение предварительной версии.
+- [Azure Monitor для сетей (предварительная версия)](insights/network-insights-overview.md) — добавлены разделы о возможности подключения и трафике.
+- [Соединитель ITSM — безопасный экспорт в Azure Monitor](platform/it-service-management-connector-secure-webhook-connections.md) — новая статья.
+- [Соединитель ITSM в Azure Monitor](platform/itsmc-connections.md) — добавлены сведения об интеграции Cherwell и Provance ITSM.
+- [Мониторинг Key Vault с помощью Azure Monitor для Key Vault](insights/key-vault-insights-overview.md) — удалено обозначение предварительной версии.
+
+### <a name="logs"></a>Журналы
+- [Запросы на аудит в запросах журнала Azure Monitor](log-query/query-audit.md) — новая статья.
+- [Ключ Azure Monitor, управляемый клиентом](platform/customer-managed-keys.md) — добавлена клиентская блокировка.
+- [Кластеры Журналов Azure Monitor уровня "Выделенный"](log-query/logs-dedicated-clusters.md) — новая статья.
+- [Проектирование развертывания Журналов Azure Monitor](platform/design-logs-deployment.md) — добавлен раздел об ограничении скорости тома для масштабирования и приема.
+- [Область действия запроса журнала в Azure Monitor Log Analytics](log-query/scope.md) — статья обновлена и теперь содержит сведения о приложениях на основе рабочей области.
+- [Журналы в Azure Monitor](platform/data-platform-logs.md) — статья обновлена и теперь содержит сведения о приложениях на основе рабочей области.
+- [Стандартные столбцы в записях журнала Azure Monitor](platform/log-standard-columns.md) — статья обновлена и теперь содержит сведения о приложениях на основе рабочей области.
+- [Ограничения службы Azure Monitor](service-limits.md) — обновлены ограничения для регулирования количества пользовательских запросов.
+- [Использование управляемых клиентом учетных записей хранения в Azure Monitor Log Analytics](platform/private-storage.md) — статья переписана.
+- [Просмотр и анализ данных в Azure Log Analytics](./platform/data-platform-logs.md) — статья обновлена и теперь содержит сведения о приложениях на основе рабочей области.
+
+
+### <a name="platform-logs"></a>Журналы платформы
+- [Схема событий Журнала действий Azure — Azure Monitor](platform/activity-log-schema.md) — добавлены уровни приоритетности.
+- [Примеры шаблонов Resource Manager для параметров диагностики](samples/resource-manager-diagnostic-settings.md) — добавлен пример для учетной записи хранения Azure.
+
+### <a name="visualizations"></a>Визуализации
+- [Визуализации диаграмм книги Azure Monitor](platform/workbooks-chart-visualizations.md) — новая статья.
+- [Составная панель отрисовщика книги Azure Monitor](platform/workbooks-composite-bar.md) — новая статья.
+- [Визуализации графов книги Azure Monitor](platform/workbooks-graph-visualizations.md) — новая статья.
+- [Визуализации сетки книги Azure Monitor](platform/workbooks-grid-visualizations.md) — новая статья.
+- [Визуализации сотовой конструкции книги Azure Monitor](platform/workbooks-honey-comb.md) — новая статья.
+- [Визуализации текста книги Azure Monitor](platform/workbooks-text-visualizations.md) — новая статья.
+- [Визуализации фрагмента книги Azure Monitor](platform/workbooks-tile-visualizations.md) — новая статья.
+- [Визуализации дерева книги Azure Monitor](platform/workbooks-tree-visualizations.md) — новая статья.
+
+
+
 
 ## <a name="august-2020"></a>Август 2020 г.
 
@@ -127,11 +194,11 @@ ms.locfileid: "91325663"
 - [Подключение компьютеров Linux к Azure Monitor](platform/agent-linux.md)
 - [Включение Azure Monitor для гибридной среды](insights/vminsights-enable-hybrid.md)
 - [Включение Azure Monitor для одной виртуальной машины или масштабируемого набора виртуальных машин на портале Azure](insights/vminsights-enable-portal.md)
-- [Включение Azure Monitor для виртуальных машин с помощью Политики Azure](insights/vminsights-enable-at-scale-policy.md)
+- [Включение Azure Monitor для виртуальных машин с помощью Политики Azure](./insights/vminsights-enable-policy.md)
 - [Общие сведения о включении Azure Monitor для виртуальных машин](insights/vminsights-enable-overview.md)
 - [Включение Azure Monitor для виртуальных машин с помощью PowerShell](insights/vminsights-enable-powershell.md)
 - [Включение Azure Monitor для виртуальных машин с помощью шаблонов Resource Manager](insights/vminsights-enable-resource-manager.md)
-- [Включение Azure Monitor для виртуальных машин с помощью PowerShell или шаблонов](insights/vminsights-enable-at-scale-powershell.md)
+- [Включение Azure Monitor для виртуальных машин с помощью PowerShell или шаблонов](./insights/vminsights-enable-powershell.md)
 
 
 ### <a name="visualizations"></a>Визуализации
@@ -225,7 +292,7 @@ ms.locfileid: "91325663"
 
 - [Часто задаваемые вопросы по Azure Monitor](faq.md) — добавлен раздел для метрик.
 - [Управляемый клиентом ключ Azure Monitor](platform/customer-managed-keys.md) — различные изменения в подготовке к общедоступной версии.
-- [Встроенные определения политик для Azure Monitor](samples/policy-samples.md) — новая статья.
+- [Встроенные определения политик для Azure Monitor](./samples/policy-reference.md) — новая статья.
 - [Учетные записи хранения, принадлежащие клиенту, для приема данных журнала](platform/private-storage.md) — новая статья.
 - [Управление потреблением и затратами для журналов Azure Monitor](platform/manage-cost-storage.md) — добавлено выставление счетов пропорционально кластеру.
 - [Использование Приватного канала Azure для безопасного подключения сетей к Azure Monitor](platform/private-link-security.md) — новая статья.
@@ -263,8 +330,8 @@ ms.locfileid: "91325663"
 - [Выражение app() в запросах журнала Azure Monitor](log-query/app-expression.md)
 - [Область запросов журнала в Azure Monitor Log Analytics](log-query/scope.md)
 - [Запрос ресурсов с помощью Azure Monitor](log-query/cross-workspace-query.md)
-- [Стандартные свойства в записях журнала Azure Monitor](platform/log-standard-properties.md)
-- [Структура журналов Azure Monitor](log-query/logs-structure.md)
+- [Стандартные свойства в записях журнала Azure Monitor](./platform/log-standard-columns.md)
+- [Структура журналов Azure Monitor](./platform/data-platform-logs.md)
 
 
 
@@ -286,7 +353,7 @@ ms.locfileid: "91325663"
 - [Создание рабочей области Log Analytics с помощью Azure CLI](learn/quick-create-workspace-cli.md) — добавлен раздел "Устранение неполадок".
 - [Удаление и восстановление рабочей области Azure Log Analytics](platform/delete-workspace.md) — обновлены сведения о восстановлении удаленной рабочей области.
 - [Функции в запросах журнала Azure Monitor](log-query/functions.md) — удалено примечание о функциях, не содержащих другие функции.
-- [Структура журналов Azure Monitor](log-query/logs-structure.md) — уточнены описания свойств для таблицы Application Insights.
+- [Структура журналов Azure Monitor](./platform/data-platform-logs.md) — уточнены описания свойств для таблицы Application Insights.
 - [Использование журналов Azure Monitor с Azure Logic Apps и Power Automate](platform/logicapp-flow-connector.md) — добавлен раздел об ограничениях.
 - [Использование PowerShell для создания и настройки рабочей области Log Analytics](platform/powershell-workspace-configuration.md) — добавлен раздел "Устранение неполадок".
 
@@ -511,7 +578,7 @@ ms.locfileid: "91325663"
 #### <a name="azure-monitor-for-containers"></a>Azure Monitor для контейнеров
 
 - [Настройка Azure Monitor для сбора данных агента контейнеров](insights/container-insights-agent-config.md) — добавлены сведения об обновлении агента в Azure Red Hat OpenShift и дополнительные сведения о различиях методов обновления агента.
-- [Создание оповещений о производительности для контейнеров Azure Monitor](insights/container-insights-alerts.md) — пересмотрены сведения и обновлены инструкции для создания оповещения на основе данных о производительности, хранящихся в рабочей области, с помощью функции контекстных оповещений рабочей области.
+- [Создание оповещений о производительности для контейнеров Azure Monitor](./insights/container-insights-log-alerts.md) — пересмотрены сведения и обновлены инструкции для создания оповещения на основе данных о производительности, хранящихся в рабочей области, с помощью функции контекстных оповещений рабочей области.
 - [Использование мониторинга Kubernetes с Azure Monitor для контейнеров](insights/container-insights-analyze.md) — обновлены статьи с общими сведениями и анализом, посвященные поддержке кластеров Kubernetes Windows.
 - [Настройка кластеров Azure Red Hat OpenShift с Azure Monitor для контейнеров](insights/container-insights-azure-redhat-setup.md) — добавлены сведения об обновлении агента в Azure Red Hat OpenShift и дополнительные сведения о различиях методов обновления агента.
 - [Настройка гибридных кластеров Kubernetes с Azure Monitor для контейнеров](insights/container-insights-hybrid-setup.md) — в статью добавлено описание дополнительной поддержки защищенного порта 10250 с помощью Kubelet cAdvisor.
@@ -531,7 +598,7 @@ ms.locfileid: "91325663"
 
 - [Управление рабочими областями Log Analytics в Azure Monitor](platform/manage-access.md) — обновлено описание Not Action.
 - [Управление использованием и затратами на основе журналов Azure Monitor](platform/manage-cost-storage.md) — добавлено уточнение о вычислении объема данных в разделе "Модель ценообразования".
-- [Использование шаблонов Azure Resource Manager для создания и настройки рабочей области Log Analytics](platform/template-workspace-configuration.md) — в шаблон добавлены новые ценовые категории.
+- [Использование шаблонов Azure Resource Manager для создания и настройки рабочей области Log Analytics](./samples/resource-manager-workspace.md) — в шаблон добавлены новые ценовые категории.
 
 ### <a name="platform-logs"></a>Журналы платформы
 
@@ -601,9 +668,9 @@ ms.locfileid: "91325663"
 - [Ограничения службы Azure Monitor](service-limits.md)
 - [Сбор и анализ журналов действий Azure в рабочей области Log Analytics](./platform/activity-log.md)
 - [Сбор данных журнала действий Azure с помощью параметров диагностики в Azure Monitor (предварительная версия)](./platform/activity-log.md)
-- [Передача журналов действий Azure в рабочую область Log Analytics для нескольких арендаторов](platform/activity-log-collect-tenants.md)
+- [Передача журналов действий Azure в рабочую область Log Analytics для нескольких арендаторов](./platform/activity-log.md)
 - [Передача журналов ресурсов Azure в рабочую область Log Analytics](./platform/resource-logs.md#send-to-log-analytics-workspace)
-- [Создание параметра диагностики в Azure с помощью шаблона Resource Manager](platform/diagnostic-settings-template.md)
+- [Создание параметра диагностики в Azure с помощью шаблона Resource Manager](./samples/resource-manager-diagnostic-settings.md)
 - [Создание параметра диагностики для сбора журналов и метрик в Azure](platform/diagnostic-settings.md)
 - [Экспорт журнала действий Windows Azure](./platform/activity-log.md#legacy-collection-methods)
 - [Общие сведения о журналах платформы Azure](platform/platform-logs-overview.md)

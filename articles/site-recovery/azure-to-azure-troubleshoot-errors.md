@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 04/07/2020
 ms.author: rochakm
-ms.openlocfilehash: ab3597ddba3e41e88c8b2b575ed5857aca01e610
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b71c6b834a6217007134b3be961a0ffa103e2706
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91397969"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92368049"
 ---
 # <a name="troubleshoot-azure-to-azure-vm-replication-errors"></a>Устранение ошибок репликации виртуальных машин из Azure в Azure
 
@@ -202,7 +202,7 @@ Site Recovery configuration failed.
 #### <a name="fix-the-problem"></a>Устранение проблемы
 
 Azure Site Recovery требуется доступ к Microsoft 365 диапазонам IP-адресов для проверки подлинности.
-Если вы используете правила и прокси-сервер брандмауэра Azure Network Security Group (NSG) для управления исходящими сетевыми подключениями на виртуальной машине, убедитесь, что вы используете правило NSG на основе [тегов службы Azure Active Directory (AAD)](../virtual-network/security-overview.md#service-tags) для разрешения доступа к AAD. Мы больше не поддерживаем правила NSG на основе IP-адресов.
+Если вы используете правила и прокси-сервер брандмауэра Azure Network Security Group (NSG) для управления исходящими сетевыми подключениями на виртуальной машине, убедитесь, что вы используете правило NSG на основе [тегов службы Azure Active Directory (AAD)](../virtual-network/network-security-groups-overview.md#service-tags) для разрешения доступа к AAD. Мы больше не поддерживаем правила NSG на основе IP-адресов.
 
 ### <a name="issue-3-site-recovery-configuration-failed-151197"></a>Проблема 3. Сбой при выполнении настройки Site Recovery (151197)
 
