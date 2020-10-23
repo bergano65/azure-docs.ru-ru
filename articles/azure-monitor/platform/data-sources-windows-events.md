@@ -1,25 +1,28 @@
 ---
-title: Сбор и анализ журналов событий Windows в Azure Monitor | Документация Майкрософт
+title: Получение источников данных журнала событий Windows с помощью агента Log Analytics в Azure Monitor
 description: Описывается, как с помощью Azure Monitor настроить сбор журналов событий Windows и сведений о создаваемых ими записях.
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
-ms.date: 11/28/2018
-ms.openlocfilehash: aa34196233ce4037ef6fa49b782b9aa958f7632d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 10/21/2020
+ms.openlocfilehash: 109e96f862ec2f3ddf879bccba114c44aecfe3c8
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87075250"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92440609"
 ---
-# <a name="windows-event-log-data-sources-in-azure-monitor"></a>Источники данных для журнала событий Windows в Azure Monitor
-Журналы событий Windows — это один из самых распространенных [источников данных](agent-data-sources.md), используемый для сбора данных агентами Windows, так как он применяется большинством приложений для записи сведений.  События можно собирать из стандартных журналов, таких как журналы системы и приложений, а также указывать пользовательские журналы приложений, которые необходимо отслеживать.
+# <a name="collect-windows-event-log-data-sources-with-log-analytics-agent"></a>Получение источников данных журнала событий Windows с помощью агента Log Analytics
+Журналы событий Windows — это один из наиболее распространенных [источников данных](agent-data-sources.md) для агентов log Analytics на виртуальных машинах Windows, так как многие приложения записывают в журнал событий Windows.  События можно собирать из стандартных журналов, таких как журналы системы и приложений, а также указывать пользовательские журналы приложений, которые необходимо отслеживать.
+
+> [!IMPORTANT]
+> В этой статье рассматривается сбор событий Windows с помощью [агента log Analytics](log-analytics-agent.md) , который является одним из агентов, используемых Azure Monitor. Другие агенты собираются разные данные и настраиваются по-разному. Список доступных агентов и данных, которые они могут собираются, см. в разделе [Обзор агентов Azure Monitor](agents-overview.md) .
 
 ![События Windows](media/data-sources-windows-events/overview.png)     
 
 ## <a name="configuring-windows-event-logs"></a>Настройка журналов событий Windows
-Журналы событий Windows настраиваются в меню ["Данные" в расширенных параметрах](agent-data-sources.md#configuring-data-sources).
+Настройте журналы событий Windows [в меню данные в дополнительных параметрах](agent-data-sources.md#configuring-data-sources) для рабочей области log Analytics.
 
 Azure Monitor собирает события только из журналов событий Windows, указанных в параметрах.  Чтобы добавить журнал событий, введите имя журнала и нажмите кнопку **+** .  Из каждого журнала собираются только события с заданной степенью серьезности.  Укажите степени серьезности событий, которые хотите получать из соответствующего журнала.  Дополнительные критерии для фильтрации событий задавать нельзя.
 
@@ -40,7 +43,7 @@ Azure Monitor собирает события только из журналов
 ## <a name="windows-event-records-properties"></a>Свойства записей о событиях Windows
 Записи о событиях Windows имеют тип **Событие** и свойства, описанные в приведенной ниже таблице.
 
-| Свойство | Описание |
+| Свойство. | Описание |
 |:--- |:--- |
 | Компьютер |Имя компьютера, с которого было получено событие. |
 | EventCategory |Категория события. |

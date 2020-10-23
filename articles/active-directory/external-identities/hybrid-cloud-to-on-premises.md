@@ -11,12 +11,12 @@ author: msmimart
 manager: celestedg
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7eeafe41888163c27f583529bed1998f067e107f
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: 84169daa28fc394254ddce211a96d4a462f78cbd
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92107629"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92441867"
 ---
 # <a name="grant-b2b-users-in-azure-ad-access-to-your-on-premises-applications"></a>Предоставление пользователям B2B в Azure AD доступа к локальным приложениям
 
@@ -29,7 +29,7 @@ ms.locfileid: "92107629"
 Выполните два следующих действия.
 
 - Интегрируйте приложение с помощью SAML, как описано в разделе [Настройка единого входа на основе SAML](../manage-apps/configure-saml-single-sign-on.md). Обязательно запишите значение, которое вы используете для параметра **URL-адрес входа**.
--  С помощью AD Application Proxy опубликуйте локальное приложение и укажите для него источник аутентификации **Azure Active Directory**. Этот процесс описан в статье [Публикация приложений с помощью Azure Active Directory Application Proxy](../manage-apps/application-proxy-publish-azure-portal.md). 
+-  С помощью AD Application Proxy опубликуйте локальное приложение и укажите для него источник аутентификации **Azure Active Directory**. Этот процесс описан в статье [Публикация приложений с помощью Azure Active Directory Application Proxy](../manage-apps/application-proxy-add-on-premises-application.md). 
 
    При настройке **внутреннего URL-адреса** введите URL-адрес входа, указанный ранее в шаблоне приложения, не включенного в коллекцию. Это позволит сторонним пользователям обращаться к этому приложению. Прокси приложения реализует функции единого входа SAML для локального приложения.
  
@@ -39,7 +39,7 @@ ms.locfileid: "92107629"
 
 Чтобы предоставить пользователям B2B доступ к локальным приложениям, защищенным с помощью встроенной проверки подлинности Windows и ограниченного делегирования Kerberos, требуются следующие компоненты:
 
-- **Аутентификация через Azure Active Directory Application Proxy**. Возможность аутентификации пользователей B2B в локальном приложении. Чтобы предоставить эту возможность, локальное приложение следует опубликовать через AD Application Proxy. Дополнительные сведения см. в статье [Начало работы с прокси приложения и установка соединителя](../manage-apps/application-proxy-enable.md) и [Публикация приложений с помощью Azure Active Directory Application Proxy](../manage-apps/application-proxy-publish-azure-portal.md).
+- **Аутентификация через Azure Active Directory Application Proxy**. Возможность аутентификации пользователей B2B в локальном приложении. Чтобы предоставить эту возможность, локальное приложение следует опубликовать через AD Application Proxy. Дополнительные сведения см. в статье [Начало работы с прокси приложения и установка соединителя](../manage-apps/application-proxy-add-on-premises-application.md) и [Публикация приложений с помощью Azure Active Directory Application Proxy](../manage-apps/application-proxy-add-on-premises-application.md).
 - **Авторизация через объект пользователя B2B в локальном каталоге**. Приложение должно иметь возможность проверять права пользователей и правильно предоставлять им доступ к ресурсам. Встроенная проверка подлинности Windows и ограниченное делегирование Kerberos требуют наличия объекта пользователя в локальном каталоге Active Directory на Windows Server. Как описано в разделе [Принцип работы единого входа с применением KCD](../manage-apps/application-proxy-configure-single-sign-on-with-kcd.md#how-single-sign-on-with-kcd-works), прокси приложения использует этот объект пользователя для олицетворения пользователя и получения маркера Kerberos для приложения. 
 
    > [!NOTE]
@@ -71,7 +71,7 @@ ms.locfileid: "92107629"
 
 ### <a name="create-b2b-guest-user-objects-through-mim"></a>Создание объектов гостевых пользователей B2B через MIM
 
-Сведения о том, как с помощью пакета обновления 1 для MIM 2016 и агента управления MIM для Microsoft Graph создавать объекты гостевых пользователей в локальном каталоге, см. в статье [Совместная работа Azure Active Directory B2B с Microsoft Identity Manager (MIM) 2016 с пакетом обновления 1 (SP1) и Azure Active Directory Application Proxy](https://docs.microsoft.com/microsoft-identity-manager/microsoft-identity-manager-2016-graph-b2b-scenario).
+Сведения о том, как с помощью пакета обновления 1 для MIM 2016 и агента управления MIM для Microsoft Graph создавать объекты гостевых пользователей в локальном каталоге, см. в статье [Совместная работа Azure Active Directory B2B с Microsoft Identity Manager (MIM) 2016 с пакетом обновления 1 (SP1) и Azure Active Directory Application Proxy](/microsoft-identity-manager/microsoft-identity-manager-2016-graph-b2b-scenario).
 
 ### <a name="create-b2b-guest-user-objects-through-a-script-preview"></a>Создание объектов гостевых пользователей B2B через скрипт (предварительная версия)
 
@@ -90,4 +90,3 @@ ms.locfileid: "92107629"
 - [Служба совместной работы Azure Active Directory B2B для гибридных организаций](hybrid-organizations.md)
 
 - Общие сведения об Azure AD Connect см. в статье [Интеграция локальных каталогов с Azure Active Directory](../hybrid/whatis-hybrid-identity.md).
-

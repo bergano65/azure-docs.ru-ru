@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 09/19/2019
 ms.author: Zhchia
-ms.openlocfilehash: 33433587f0617382cc5f05550577594d7e3f9f7f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: eb04b17db94a2abf0ab11d9b9baff65e764e472a
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91322031"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92457050"
 ---
 # <a name="tutorial-configure-blink-for-automatic-user-provisioning"></a>Учебник. Настройка мерцания для автоматической подготовки пользователей
 
@@ -81,7 +81,7 @@ ms.locfileid: "91322031"
 В этом разделе описано, как настроить службу подготовки Azure AD для создания, обновления и отключения пользователей в соответствии с назначениями пользователей и групп в Azure AD.
 
 > [!TIP]
-> Вы также можете включить единый вход на основе SAML для мигания, следуя инструкциям, приведенным в [руководстве по мерцанию единого входа](https://docs.microsoft.com/azure/active-directory/saas-apps/blink-tutorial). Единый вход можно настроить независимо от автоматической подготовки пользователей, хотя эти две функции дополняют друг друга.
+> Вы также можете включить единый вход на основе SAML для мигания, следуя инструкциям, приведенным в [руководстве по мерцанию единого входа](./blink-tutorial.md). Единый вход можно настроить независимо от автоматической подготовки пользователей, хотя эти две функции дополняют друг друга.
 
 ### <a name="to-configure-automatic-user-provisioning-for-blink-in-azure-ad"></a>Чтобы настроить автоматическую подготовку пользователей для мигания в Azure AD, сделайте следующее:
 
@@ -145,4 +145,3 @@ ms.locfileid: "91322031"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../app-provisioning/check-status-user-account-provisioning.md)
-

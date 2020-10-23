@@ -3,12 +3,12 @@ title: Создание настраиваемой роли Azure Resource Manag
 description: В этой статье содержатся инструкции по созданию настраиваемой роли Azure Resource Manager и назначению субъекту-службе для службы Live Video Analytics на IoT Edge с помощью Azure CLI.
 ms.topic: how-to
 ms.date: 05/27/2020
-ms.openlocfilehash: a780ecbbf2530b15984c596281c4aa7e4f5dd520
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 40bf0f60a718d512e02481d977b8208112ed1a55
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90526584"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92425723"
 ---
 # <a name="create-custom-azure-resource-manager-role-and-assign-to-service-principal"></a>Создание настраиваемой роли Azure Resource Manager и назначение ее субъекту-службе
 
@@ -230,7 +230,7 @@ az role assignment list  --assignee < objectId>
 
 Это подтверждает, что мы связали пользовательскую роль пользователя с субъектом-службой, который используется для нашего приложения.
 
-### <a name="test-the-service-principal-rbac"></a>Тестирование RBAC субъекта-службы  
+### <a name="test-the-service-principal-access-control"></a>Тестирование контроля доступа субъекта-службы
 
 1. Вход с использованием субъекта-службы. Для этого нам потребуется 3 части информации для Azure Active Directory предоставить нам соответствующий маркер доступа, который можно получить из выходных данных шага [создания субъекта-службы](#create-service-principal) :
     1. аадклиентид 
@@ -253,7 +253,7 @@ az role assignment list  --assignee < objectId>
     The client '<AadClientId>' with object id '<AadClientId>' does not have authorization to perform action 'Microsoft.Resources/subscriptions/resourcegroups/write' over scope '/subscriptions/<yourSubscriptionId>/resourcegroups/testresourcegroup' or the scope is invalid. If access was recently granted, please refresh your credentials.
     ```
 
-## <a name="next-steps"></a>Дальнейшие шаги  
+## <a name="next-steps"></a>Дальнейшие действия  
 
 Обратите внимание на следующие значения из этой статьи. Эти значения будут необходимы для настройки свойств двойника в модуле Live Video Analytics для IoT Edge модуля. см. раздел [ДВОЙНИКА JSON Schema](module-twin-configuration-schema.md).
 

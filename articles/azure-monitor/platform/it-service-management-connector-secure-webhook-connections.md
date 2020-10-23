@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 09/08/2020
-ms.openlocfilehash: 447b781ec83a01a58e6af9e9e43f75b3fc56b10f
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 64d45861f37e2015b747a4db0feb2d32e68fe893
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/22/2020
-ms.locfileid: "92370786"
+ms.locfileid: "92427321"
 ---
 # <a name="connect-azure-to-itsm-tools-by-using-secure-export"></a>Подключение Azure к средствам ITSM с помощью безопасного экспорта
 
@@ -57,7 +57,10 @@ ITSMC использует учетные данные пользователя 
 
 1. Зарегистрировать приложения в Azure AD.
 2. Создайте безопасную группу действий веб-перехватчика.
-3. Настройте среду партнера. Сегодня мы поддерживаем одного поставщика, который является контроллером BMC Хеликс.
+3. Настройте среду партнера. 
+
+Безопасный экспорт поддерживает подключения со следующими инструментами ITSM:
+* [Хеликс BMC](https://docs.microsoft.com/azure/azure-monitor/platform/it-service-management-connector-secure-webhook-connections#connect-bmc-helix-to-azure-monitor)
 
 ## <a name="register-with-azure-active-directory"></a>Регистрация в Azure Active Directory
 
@@ -68,7 +71,7 @@ ITSMC использует учетные данные пользователя 
 3. Выберите **задать** для **URI идентификатора приложения**.
 
    [![Снимок экрана с параметром для задания U R I для приложения I D.](media/it-service-management-connector-secure-webhook-connections/azure-ad.png)](media/it-service-management-connector-secure-webhook-connections/azure-ad-expand.png#lightbox)
-4. Щелкните **Сохранить**.
+4. Нажмите **Сохранить**.
 
 ## <a name="create-a-secure-webhook-action-group"></a>Создание безопасной группы действий веб-перехватчика
 
@@ -86,24 +89,24 @@ ITSMC использует учетные данные пользователя 
 5. Выберите **безопасный веб-перехватчик**.
 6. Выберите следующие сведения:
    1. Выберите идентификатор объекта Azure Active Directory зарегистрированного экземпляра.
-   2. Для универсального кода ресурса вставьте URL-адрес обработчика, скопированный из среды поставщика.
+   2. Для универсального кода ресурса вставьте URL-адрес обработчика, скопированный из [среды средства ITSM](https://docs.microsoft.com/azure/azure-monitor/platform/it-service-management-connector-secure-webhook-connections#configure-the-partner-environment).
    3. Установите для **параметра включить общую схему предупреждений** значение **Да**. 
 
    На следующем рисунке показана конфигурация примера безопасного действия веб-перехватчика.
 
    ![Снимок экрана, на котором показана защита действия веб-перехватчика.](media/it-service-management-connector-secure-webhook-connections/secure-webhook.png)
 
-## <a name="configure-the-partner-environment"></a>Настройка среды партнера
+## <a name="configure-the-itsm-tool-environment"></a>Настройка среды средства ITSM
 
 Конфигурация содержит 2 шага:
 1. Получите универсальный код ресурса (URI) для определения безопасного экспорта.
-2. Определения, соответствующие потоку поставщика.
+2. Определения в соответствии с потоком средства ITSM.
 
 ### <a name="connect-bmc-helix-to-azure-monitor"></a>Подключение BMC Хеликс к Azure Monitor
 
 В следующих разделах содержатся сведения о подключении продукта Хеликс BMC и безопасном экспорте в Azure.
 
-### <a name="prerequisites"></a>Обязательные условия
+### <a name="prerequisites"></a>Предварительные требования
 
 Убедитесь, что выполнены следующие предварительные требования:
 

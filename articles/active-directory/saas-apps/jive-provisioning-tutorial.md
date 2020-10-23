@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 01/26/2018
 ms.author: jeedes
-ms.openlocfilehash: fa45ece76499b50694d366ed2dcdd57cc1e0c7dc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: caeff5be83e02948baab4ecbcf05630eacff74df
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91312102"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92459379"
 ---
 # <a name="tutorial-configure-jive-for-automatic-user-provisioning"></a>Руководство по настройке Jive для автоматической подготовки пользователей
 
@@ -35,7 +35,7 @@ ms.locfileid: "91312102"
 
 Перед настройкой и включением службы подготовки необходимо решить, какие пользователи или группы в Azure AD представляют пользователей, которым требуется доступ к приложению Jive. Когда данное решение будет принято, можно будет назначить этих пользователей приложению Jive, следуя указаниям ниже.
 
-[Назначение корпоративному приложению пользователя или группы](https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-assign-user-azure-portal)
+[Назначение корпоративному приложению пользователя или группы](../manage-apps/assign-user-or-group-access-portal.md)
 
 ### <a name="important-tips-for-assigning-users-to-jive"></a>Важные рекомендации по назначению пользователей в Jive
 

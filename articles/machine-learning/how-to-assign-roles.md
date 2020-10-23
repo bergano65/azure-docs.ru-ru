@@ -1,7 +1,7 @@
 ---
 title: Управление ролями в рабочей области
 titleSuffix: Azure Machine Learning
-description: Узнайте, как получить доступ к рабочей области Машинное обучение Azure с помощью управления доступом на основе ролей (RBAC).
+description: Узнайте, как получить доступ к рабочей области Машинное обучение Azure с помощью управления доступом на основе ролей Azure (Azure RBAC).
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,12 +11,12 @@ ms.author: nigup
 author: nishankgu
 ms.date: 07/24/2020
 ms.custom: how-to, seodec18
-ms.openlocfilehash: a9259e287c75a3a39ad1d4e701638f38b4512ee0
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: e15092ee767e6840f190027b0a35af3ce07e8ba9
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91966412"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92425640"
 ---
 # <a name="manage-access-to-an-azure-machine-learning-workspace"></a>Управление доступом к рабочей области Машинного обучения Azure
 
@@ -34,9 +34,9 @@ ms.locfileid: "91966412"
 | **Настраиваемая роль** | Позволяет настраивать доступ к конкретным операциям управления или плоскости данных в рабочей области. Например, отправка запуска, создание вычислений, развертывание модели или регистрация набора данных. |
 
 > [!IMPORTANT]
-> Доступ к роли можно ограничить несколькими уровнями в Azure. Например, пользователь с доступом владельца к рабочей области может не иметь права владельца на группу ресурсов, содержащую рабочую область. Дополнительные сведения см. в разделе принцип [работы RBAC](/azure/role-based-access-control/overview#how-rbac-works).
+> Доступ к роли можно ограничить несколькими уровнями в Azure. Например, пользователь с доступом владельца к рабочей области может не иметь права владельца на группу ресурсов, содержащую рабочую область. Дополнительные сведения см. в статье [работа Azure RBAC](/azure/role-based-access-control/overview#how-azure-rbac-works).
 
-Дополнительные сведения о конкретных встроенных ролях см. в статье [встроенные роли для Azure](/azure/role-based-access-control/built-in-roles).
+Дополнительные сведения о конкретных встроенных ролях см. в статье [встроенные роли Azure](/azure/role-based-access-control/built-in-roles).
 
 ## <a name="manage-workspace-access"></a>Управление доступом к рабочей области
 
@@ -432,13 +432,13 @@ az provider operation show –n Microsoft.MachineLearningServices
     - "Microsoft. Network/virtualNetworks/соединение/действие" для ресурса виртуальной сети.
     - "Microsoft. Network/virtualNetworks/подсеть/соединение/действие" в ресурсе подсети.
     
-    Дополнительные сведения о сетях RBAC с сетью см. в разделе [встроенные сетевые роли](/azure/role-based-access-control/built-in-roles#networking).
+    Дополнительные сведения об Azure RBAC с сетью см. в разделе [встроенные сетевые роли](/azure/role-based-access-control/built-in-roles#networking).
 
 - Для того чтобы новые назначения ролей вступили в силу по кэшированным разрешениям в стеке, иногда может потребоваться 1 час.
 
 ### <a name="q-what-permissions-do-i-need-to-use-a-user-assigned-managed-identity-with-my-amlcompute-clusters"></a>У. Какие разрешения требуются для использования назначенного пользователем управляемого удостоверения с моими кластерами Амлкомпуте?
 
-Чтобы назначить удостоверение, назначенное пользователем в кластерах Амлкомпуте, оно должно иметь разрешения на запись для создания вычислений и предоставления [роли управляемого оператора идентификации](/azure/role-based-access-control/built-in-roles#managed-identity-operator). Дополнительные сведения об управляемых удостоверениях RBAC см. [в статье управление назначенными пользователями удостоверениями](/azure/active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal) .
+Чтобы назначить удостоверение, назначенное пользователем в кластерах Амлкомпуте, оно должно иметь разрешения на запись для создания вычислений и предоставления [роли управляемого оператора идентификации](/azure/role-based-access-control/built-in-roles#managed-identity-operator). Дополнительные сведения об Azure RBAC с управляемыми удостоверениями см. [в статье управление назначенными пользователями удостоверениями](/azure/active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal) .
 
 
 ### <a name="q-do-we-support-role-based-access-control-on-the-studio-portal"></a>У. Поддерживает ли мы управление доступом на основе ролей на портале студии?
