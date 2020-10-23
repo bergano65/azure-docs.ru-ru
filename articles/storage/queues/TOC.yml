@@ -267,7 +267,7 @@
         - name: Специальные возможности Обозревателя службы хранилища
           href: ../../vs-azure-tools-storage-explorer-accessibility.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json
     - name: Хранилище очередей на сайте Microsoft Q&A
-      href: 'https://docs.microsoft.com/answers/topics/azure-queue-storage.html'
+      href: /answers/topics/azure-queue-storage.html
     - name: Хранилище очередей на форуме Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-queues'
     - name: Цены на Хранилище очередей
@@ -309,7 +309,7 @@
             - name: "Клиентская библиотека службы хранилища Azure версии\_12.x"
               href: 'https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/storage'
             - name: "Большие двоичные объекты, очереди и файлы (версия\_8)"
-              href: 'https://docs.microsoft.com/java/api/overview/azure/storage?view=azure-java-legacy'
+              href: /java/api/overview/azure/storage?view=azure-java-legacy
             - name: "Клиентская библиотека службы хранилища Azure версии\_8.x и более ранних версий"
               href: 'https://github.com/Azure/azure-storage-java'
         - name: Node.js

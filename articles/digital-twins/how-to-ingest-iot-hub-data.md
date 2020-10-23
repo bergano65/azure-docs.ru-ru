@@ -7,18 +7,18 @@ ms.author: alkarche
 ms.date: 9/15/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: ba19b7255be5ae24b3c4475f4195b84441b6c777
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
+ms.openlocfilehash: 0123a89c4ec1c2c70326de1a2f685b08278333ab
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92131502"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92461555"
 ---
 # <a name="ingest-iot-hub-telemetry-into-azure-digital-twins"></a>Прием данных телеметрии центра Интернета вещей в Azure Digital двойников
 
 Azure Digital двойников управляет данными из устройств IoT и других источников. Общий источник данных устройства для использования в цифровом двойников Azure — это [центр Интернета вещей](../iot-hub/about-iot-hub.md).
 
-Процесс приема данных в Azure Digital двойников заключается в настройке внешнего ресурса вычислений, например [функции Azure](../azure-functions/functions-overview.md), которая получает данные и использует [API дигиталтвинс](how-to-use-apis-sdks.md) для установки свойств или запуска событий телеметрии в [цифровом двойников](concepts-twins-graph.md) соответственно. 
+Процесс приема данных в Azure Digital двойников заключается в настройке внешнего ресурса вычислений, например [функции Azure](../azure-functions/functions-overview.md), которая получает данные и использует [API дигиталтвинс](/rest/api/digital-twins/dataplane/twins) для установки свойств или запуска событий телеметрии в [цифровом двойников](concepts-twins-graph.md) соответственно. 
 
 В этом документе описывается процесс создания функции Azure, которая может принимать данные телеметрии из центра Интернета вещей.
 
@@ -228,7 +228,7 @@ namespace IotHubtoTwins
 :::image type="content" source="media/how-to-ingest-iot-hub-data/create-event-subscription.png" alt-text="Схема, показывающая блок-диаграмму. На диаграмме устройство центра Интернета вещей отправляет данные телеметрии температуры через центр Интернета вещей в функцию Azure, которая обновляет свойство температуры двойника в Azure Digital двойников.":::
 
 На открывшейся странице _Выбор функции Azure_ проверьте следующие сведения.
- 1. **Подписка**: Подписка Azure
+ 1. **Подписка**. Ваша подписка Azure
  2. **Группа ресурсов**. Ваша группа ресурсов
  3. **Приложение функции**: имя приложения функции
  4. **Слот**: _Рабочая_

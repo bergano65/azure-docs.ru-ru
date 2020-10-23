@@ -11,16 +11,16 @@ author: msmimart
 manager: celestedg
 ms.workload: identity
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d281b0ecd38ebbb76e093fd4f85213da4fc7d713
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 983a803245467145a0b1161a4495e8045759e7ab
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91265801"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92442071"
 ---
 # <a name="billing-model-for-azure-ad-external-identities"></a>Модель выставления счетов для внешних удостоверений Azure AD
 
-Цены на внешние удостоверения Azure Active Directory (Azure AD) основаны на месячных активных пользователях (MAU). это число уникальных пользователей с действиями проверки подлинности в календарном месяце. Эта модель выставления счетов применяется к клиентам службы совместной работы Azure AD Guest (B2B) и [Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/billing). MAU Billing помогает сократить расходы, предлагая бесплатный уровень и гибкие, прогнозируемые цены. В этой статье вы узнаете о MAU выставлении счетов и связывании клиентов Azure AD с подпиской.
+Цены на внешние удостоверения Azure Active Directory (Azure AD) основаны на месячных активных пользователях (MAU). это число уникальных пользователей с действиями проверки подлинности в календарном месяце. Эта модель выставления счетов применяется к клиентам службы совместной работы Azure AD Guest (B2B) и [Azure AD B2C](../../active-directory-b2c/billing.md). MAU Billing помогает сократить расходы, предлагая бесплатный уровень и гибкие, прогнозируемые цены. В этой статье вы узнаете о MAU выставлении счетов и связывании клиентов Azure AD с подпиской.
 
 > [!IMPORTANT]
 > В этой статье не содержатся сведения о ценах. Последние сведения о выставлении счетов и ценах на использование см. в разделе [цены на Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory/).
@@ -45,7 +45,7 @@ ms.locfileid: "91265801"
 
 Клиент Azure AD должен быть связан с подпиской Azure для правильного выставления счетов и доступа к функциям. Если у каталога еще нет подписки, которую можно связать, вы сможете добавить ее во время этого процесса.
 
-1. Войдите в [портал Azure](https://portal.azure.com/) с помощью учетной записи Azure, которой назначена по крайней мере роль [участника](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles) в подписке или группе ресурсов в подписке.
+1. Войдите в [портал Azure](https://portal.azure.com/) с помощью учетной записи Azure, которой назначена по крайней мере роль [участника](../../role-based-access-control/built-in-roles.md) в подписке или группе ресурсов в подписке.
 
 2. Выберите каталог, который необходимо связать: на панели инструментов портал Azure выберите значок каталог и **Подписка** , а затем выберите каталог.
 
@@ -70,6 +70,6 @@ ms.locfileid: "91265801"
 
 После выполнения этих действий плата за использование подписки Azure будет взиматься на основе данных Azure Direct или Соглашение Enterprise, если это применимо.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Последние сведения о ценах см. на странице [цен на Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory/).

@@ -131,10 +131,6 @@
           href: security-center-monitoring.md
         - name: Справочный список рекомендаций
           href: recommendations-reference.md
-        - name: Защита сетевых ресурсов
-          href: security-center-network-recommendations.md
-        - name: Защита идентификации и доступа
-          href: security-center-identity-access.md
         - name: Управление рекомендациями по обеспечению безопасности
           items:
             - name: Автоматизация ответов рекомендации
@@ -142,6 +138,10 @@
               href: workflow-automation.md
             - name: Исключение ресурса из рекомендации
               href: exempt-resource.md
+        - name: Защита сетевых ресурсов
+          href: security-center-network-recommendations.md
+        - name: Защита идентификации и доступа
+          href: security-center-identity-access.md
     - name: Оповещения в Azure Defender
       items:
         - name: Обзор оповещений Azure Defender
@@ -170,7 +170,7 @@
         - name: Сканирование уязвимостей
           items:
             - name: Встроенное средство проверки VA для компьютеров
-              displayName: 'qualys, vulnerability, arc'
+              displayName: 'qualys, vulnerability, arc, hybrid'
               href: deploy-vulnerability-assessment-vm.md
             - name: Проверка виртуальных машин с помощью решения VA с использованием собственной лицензии
               displayName: 'qualys, rapid7, vulnerability'
@@ -179,7 +179,7 @@
               displayName: 'qualys, rapid7, vulnerability'
               href: remediate-vulnerability-findings-vm.md
             - name: Отключение результатов оценки для определенных уязвимостей
-              displayName: 'qualys, rapid7, vulnerability'
+              displayName: 'qualys, rapid7'
               href: remediate-vulnerability-findings-vm.md#disable-specific-findings-preview
         - name: Защита портов управления с помощью JIT-доступа к виртуальной машине
           items:
@@ -187,20 +187,24 @@
               displayName: 'jit, management'
               href: just-in-time-explained.md
             - name: Управление JIT-доступом
-              displayName: 'jit, management'
+              displayName: 'jit, management, ports'
               href: security-center-just-in-time.md
         - name: Использование встроенной лицензии Microsoft Defender для конечной точки
           displayName: 'ATP, mdatp, wdatp'
           href: security-center-wdatp.md
         - name: Администрирование адаптивных элементов управления приложениями
+          displayName: 'aac, whitelist, allowlist, reviewgroup'
           href: security-center-adaptive-application.md
         - name: Использование мониторинга целостности файлов
           items:
             - name: Общие сведения о мониторинге целостности файлов
+              displayName: 'fim, change'
               href: security-center-file-integrity-monitoring.md
             - name: Сравнение базовых показателей с помощью мониторинга целостности файлов
+              displayName: 'fim, change'
               href: security-center-file-integrity-monitoring-baselines.md
         - name: Управление адаптивной защитой сети
+          displayName: anh
           href: security-center-adaptive-network-hardening.md
         - name: Защита узлов Docker
           displayName: containers

@@ -12,12 +12,12 @@ metadata:
   author: msmimart
   ms.author: mimart
   manager: celested
-  ms.openlocfilehash: bad40c34db9f597320a05f46be92baae6632d93e
-  ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+  ms.openlocfilehash: ecc69f8e2e281b4456861397bdd5af4ba41448e8
+  ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 10/09/2020
-  ms.locfileid: "91265618"
+  ms.lasthandoff: 10/23/2020
+  ms.locfileid: "92441765"
 landingContent:
 - title: Сведения о внешних удостоверениях
   linkLists:
@@ -28,7 +28,7 @@ landingContent:
     - text: Что такое служба совместной работы Azure AD B2B
       url: what-is-b2b.md
     - text: Что такое удостоверение Azure AD B2C (категория "бизнес — потребитель")?
-      url: https://docs.microsoft.com/azure/active-directory-b2c/overview
+      url: ../../active-directory-b2c/overview.md
 - title: Совместная работа с пользователями за пределами организации (совместная работа B2B)
   linkLists:
   - linkListType: concept
@@ -54,21 +54,21 @@ landingContent:
   - linkListType: overview
     links:
     - text: Общие сведения об Azure AD B2C
-      url: https://docs.microsoft.com/azure/active-directory-b2c/overview
+      url: ../../active-directory-b2c/overview.md
     - text: Обзор технических возможностей и компонентов
-      url: https://docs.microsoft.com/azure/active-directory-b2c/technical-overview
+      url: ../../active-directory-b2c/technical-overview.md
     - text: Просмотреть всю документацию по Azure AD B2C
-      url: https://docs.microsoft.com/azure/active-directory-b2c/
+      url: ../../active-directory-b2c/index.yml
   - linkListType: concept
     links:
     - text: Потоки пользователей Azure AD B2C
-      url: https://docs.microsoft.com/azure/active-directory-b2c/user-flow-overview
+      url: ../../active-directory-b2c/user-flow-overview.md
     - text: Пользовательские политики Azure AD B2C
-      url: https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-overview
+      url: ../../active-directory-b2c/custom-policy-overview.md
   - linkListType: tutorial
     links:
     - text: Создание потоков пользователей в Azure AD B2C
-      url: https://docs.microsoft.com/azure/active-directory-b2c/tutorial-create-user-flows
+      url: ../../active-directory-b2c/tutorial-create-user-flows.md
 - title: Потоки самостоятельной регистрации для гостевых пользователей B2B (предварительная версия)
   linkLists:
   - linkListType: overview

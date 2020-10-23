@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 10/29/2019
 ms.author: Zhchia
-ms.openlocfilehash: b78de4769f49954c4d4e860e75818f6485247a17
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2f8cafc0ec94e9254d42bf6718e796a256d128d4
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91305679"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92445706"
 ---
 # <a name="tutorial-configure-harness-for-automatic-user-provisioning"></a>Учебник. Настройка программы для автоматической подготовки пользователей
 
@@ -99,7 +99,7 @@ ms.locfileid: "91305679"
 В этом разделе описано, как настроить службу подготовки Azure AD для создания, обновления и отключения пользователей или групп в службе в соответствии с назначениями пользователей или групп в Azure AD.
 
 > [!TIP]
-> Вы также можете включить единый вход на основе SAML для работы, следуя инструкциям в [руководстве по единому входу](https://docs.microsoft.com/azure/active-directory/saas-apps/harness-tutorial)в программу. Вы можете настроить единый вход независимо от автоматической подготовки пользователей, хотя эти две функции дополняют друг друга.
+> Вы также можете включить единый вход на основе SAML для работы, следуя инструкциям в [руководстве по единому входу](./harness-tutorial.md)в программу. Вы можете настроить единый вход независимо от автоматической подготовки пользователей, хотя эти две функции дополняют друг друга.
 
 > [!NOTE]
 > Дополнительные сведения о конечной точке SCIM см. в статье о [ключах API программ](https://docs.harness.io/article/smloyragsm-api-keys) .
@@ -134,7 +134,7 @@ ms.locfileid: "91305679"
 
     ![Поле "E-mail Notification"](common/provisioning-notification-email.png)
 
-1. Щелкните **Сохранить**.
+1. Нажмите **Сохранить**.
 
 1. В разделе **сопоставления**выберите **синхронизировать Azure Active Directory пользователей с**ними.
 

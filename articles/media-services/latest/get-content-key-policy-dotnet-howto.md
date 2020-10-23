@@ -12,22 +12,22 @@ ms.topic: how-to
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: seodec18
-ms.openlocfilehash: 7f46c77d463873a5cdd5d8c4ac1b28f1b7d0b9eb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7107a2acdc0ca430797245125ca903f7414908da
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89299003"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92427073"
 ---
 # <a name="get-a-signing-key-from-the-existing-policy"></a>Получение ключа подписи из существующей политики
 
 [!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
-Один из ключевых принципов проектирования API версии 3 — сделать API более безопасным. API V3 не возвращают секреты или учетные данные при операциях **Get** или **List** . См. подробное описание этой статье. Дополнительные сведения см. в разделе [учетные записи RBAC и служб мультимедиа](rbac-overview.md) .
+Один из ключевых принципов проектирования API версии 3 — сделать API более безопасным. API V3 не возвращают секреты или учетные данные при операциях **Get** или **List** . См. подробное описание здесь: Дополнительные сведения см. в статье [учетные записи Azure RBAC и службы мультимедиа](rbac-overview.md) .
 
 В примере этой статьи показано, как использовать .NET для получения ключа подписи из существующей политики. 
  
-## <a name="download"></a>Скачивание 
+## <a name="download"></a>Скачать 
 
 Клонируйте репозиторий GitHub, содержащий пример .NET, на компьютер с помощью следующей команды.  
 
@@ -43,6 +43,6 @@ ms.locfileid: "89299003"
 
 [!code-csharp[Main](../../../media-services-v3-dotnet-tutorials/AMSV3Tutorials/EncryptWithDRM/Program.cs#GetOrCreateContentKeyPolicy)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Проектирование системы для защиты содержимого с несколькими подсистемами DRM и управлением доступом](design-multi-drm-system-with-access-control.md) 

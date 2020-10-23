@@ -7,16 +7,16 @@ ms.author: baanders
 ms.date: 3/12/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: dbe1c368a730fcd09cf5e5f6435ca247150b5c3c
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: f2bc7082f00ca9ca2dff0500755a0839a0ccdf08
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92426185"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92461385"
 ---
 # <a name="manage-azure-digital-twins-models"></a>Управление моделями цифровых двойников Azure
 
-Вы можете управлять [моделями](concepts-models.md) , известными экземпляру Azure Digital двойников, с помощью [**интерфейсов API дигиталтвинсмоделс**](how-to-use-apis-sdks.md), [пакета SDK для .NET (C#)](https://www.nuget.org/packages/Azure.DigitalTwins.Core)или [Azure Digital двойников CLI](how-to-use-cli.md). 
+Вы можете управлять [моделями](concepts-models.md) , известными экземпляру Azure Digital двойников, с помощью [**интерфейсов API дигиталтвинмоделс**](/rest/api/digital-twins/dataplane/models), [пакета SDK для .NET (C#)](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet-preview&preserve-view=true)или [Azure Digital двойников CLI](how-to-use-cli.md). 
 
 К операциям управления относятся передача, проверка, извлечение и удаление моделей. 
 

@@ -65,7 +65,6 @@
       href: load-balancer-multivip-overview.md
     - name: Исходящий прокси-сервер
       href: load-balancer-outbound-connections.md
-    - name: Сброс подключений TCP и время ожидания TCP в режиме простоя
     - name: Правила для исходящего трафика
       href: outbound-rules.md
     - name: Сброс подключений TCP во время ожидания в режиме простоя

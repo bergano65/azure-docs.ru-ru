@@ -215,7 +215,7 @@
           displayName: 'accessing, long-running, sdk, invalid character, name, naming, file name'
         - name: 'Разбиение на страницы, фильтрация и упорядочение сущностей'
           href: entities-overview.md
-        - name: RBAC
+        - name: "Azure\_RBAC"
           href: rbac-overview.md
         - name: Коды ошибок
           items:

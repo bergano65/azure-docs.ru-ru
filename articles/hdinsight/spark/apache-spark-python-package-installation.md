@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: seoapr2020, devx-track-python
 ms.date: 04/29/2020
-ms.openlocfilehash: 6ef4a4f422bb787b3ead33ed1047d26d5e3c9c1f
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: b29e4411a104bbcd1d6d5b3320df47a742e2ca84
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91978077"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92461249"
 ---
 # <a name="safely-manage-python-environment-on-azure-hdinsight-using-script-action"></a>Безопасное управление средой Python в Azure HDInsight с помощью действия скрипта
 
@@ -46,8 +46,8 @@ ms.locfileid: "91978077"
 |Параметр |Python 2,7|Python 3.5|
 |----|----|----|
 |путь|/usr/bin/anaconda/bin|/usr/bin/anaconda/envs/py35/bin|
-|Версия Spark|По умолчанию 2.7|Недоступно|
-|Версия Livy|По умолчанию 2.7|Недоступно|
+|Версия Spark|По умолчанию 2.7|Может изменить конфигурацию на 3,5|
+|Версия Livy|По умолчанию 2.7|Может изменить конфигурацию на 3,5|
 |Jupyter|Ядро PySpark|Ядро PySpark3|
 
 ## <a name="safely-install-external-python-packages"></a>Безопасная установка внешних пакетов Python

@@ -3,13 +3,13 @@ title: Обновление кластера службы Azure Kubernetes (AKS)
 description: Узнайте, как обновить кластер Azure Kubernetes Service (AKS), чтобы получить новейшие функции и обновления для системы безопасности.
 services: container-service
 ms.topic: article
-ms.date: 05/28/2020
-ms.openlocfilehash: da46c44dc9cc16dfa44aacb15b35b652c0c912a9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 10/21/2020
+ms.openlocfilehash: 046c010cdd811b53ef8ef35624ed41a673af43d3
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87050618"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92461453"
 ---
 # <a name="upgrade-an-azure-kubernetes-service-aks-cluster"></a>Обновление кластера службы Azure Kubernetes (AKS)
 
@@ -107,7 +107,7 @@ az aks nodepool update -n mynodepool -g MyResourceGroup --cluster-name MyManaged
 
 ## <a name="upgrade-an-aks-cluster"></a>Обновление кластера AKS
 
-С помощью команды [az aks upgrade][az-aks-upgrade] обновите кластер AKS, используя список доступных версий. В процессе обновления AKS добавляет в кластер новый узел, который запускает указанную версию Kubernetes, а затем аккуратно [Cordon и][kubernetes-drain] настраивает один из старых узлов, чтобы минимизировать перерывы в работе приложений. Когда новый узел будет подтвержден как работающий модули приложения, старый узел удаляется. Этот процесс повторяется до тех пор, пока не будут обновлены все узлы в кластере.
+С помощью команды [az aks upgrade][az-aks-upgrade] обновите кластер AKS, используя список доступных версий. В процессе обновления AKS добавляет новый узел буфера (или количество узлов, настроенных в параметре [Max всплеска](#customize-node-surge-upgrade-preview)) к кластеру, на котором запущена указанная версия Kubernetes. Затем он будет [Cordon и стокировать][kubernetes-drain] один из старых узлов, чтобы минимизировать перебои в работе приложений (если вы используете параметр max всплеска, он будет [Cordon и стокировать][kubernetes-drain] как количество узлов в то же время, сколько указано в буфере). Если старый узел полностью остановлен, он будет создан повторно, чтобы получить новую версию, и он станет узлом буфера для обновления следующего узла. Этот процесс повторяется до тех пор, пока не будут обновлены все узлы в кластере. В конце процесса последний сток будет удален, сохраняя количество узлов существующего агента.
 
 ```azurecli-interactive
 az aks upgrade \
