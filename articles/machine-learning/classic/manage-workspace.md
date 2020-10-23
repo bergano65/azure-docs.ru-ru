@@ -9,12 +9,12 @@ author: likebupt
 ms.author: keli19
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 02/27/2017
-ms.openlocfilehash: 50607093dd71184740e972a3c8572630df609453
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6f136d0818daca1585de3896305a080ddbabfbe2
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91361146"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92426915"
 ---
 # <a name="manage-an-azure-machine-learning-studio-classic-workspace"></a>Управление рабочей областью Машинное обучение Azure Studio (классическая модель)
 
@@ -48,7 +48,7 @@ ms.locfileid: "91361146"
 > [!NOTE]
 > Для развертывания новых веб-служб или управления ими необходимо назначить роль участника или администратора той подписке, в которую развертывается веб-служба. Если пригласить другого пользователя в рабочую область студии машинного обучения (классическая модель), необходимо назначить ее роли участника или администратора в подписке, прежде чем они смогут развертывать веб-службы или управлять ими. 
 > 
->Дополнительные сведения о настройке разрешений на доступ см. в статье [Управление доступом с помощью RBAC и портала Azure](../../role-based-access-control/role-assignments-portal.md).
+>Дополнительные сведения о настройке разрешений доступа см. [в разделе Добавление или удаление назначений ролей Azure с помощью портал Azure](../../role-based-access-control/role-assignments-portal.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * См. дополнительные сведения о [развертывании машинного обучения с использованием шаблонов Azure Resource Manager](deploy-with-resource-manager-template.md). 

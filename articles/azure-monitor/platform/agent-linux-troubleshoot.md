@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/21/2019
-ms.openlocfilehash: c28a3b0f445ca905a882a7ede3fcfed2c1e673a4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e87331cb2bbfb11a9d49888462b8be3b55e18118
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91531196"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92460875"
 ---
 # <a name="how-to-troubleshoot-issues-with-the-log-analytics-agent-for-linux"></a>Устранение неполадок с агентом Log Analytics для Linux 
 
@@ -23,7 +23,37 @@ ms.locfileid: "91531196"
 * Клиенты с соглашением на поддержку Azure могут открыть запрос на поддержку на [портале Azure](https://manage.windowsazure.com/?getsupport=true).
 * Для диагностики проблем с OMI можно применить инструкции в [руководстве по устранению неполадок OMI](https://github.com/Microsoft/omi/blob/master/Unix/doc/diagnose-omi-problems.md).
 * Можно [сообщить о проблеме в GitHub](https://github.com/Microsoft/OMS-Agent-for-Linux/issues).
-* Посетите страницу Log Analytics отзывы, чтобы просмотреть отправленные идеи и ошибки [https://aka.ms/opinsightsfeedback](https://aka.ms/opinsightsfeedback) или создать новый файл.  
+* Посетите страницу Log Analytics отзывы, чтобы просмотреть отправленные идеи и ошибки [https://aka.ms/opinsightsfeedback](https://aka.ms/opinsightsfeedback) или создать новый файл. 
+
+## <a name="log-analytics-troubleshooting-tool"></a>Средство устранения неполадок Log Analytics
+
+Средство устранения неполадок Log Analytics Agent Linux — это сценарий, предназначенный для поиска и диагностики проблем с агентом Log Analytics. Он автоматически включается в агент при установке. Запуск этого средства должен быть первым шагом в диагностике проблемы.
+
+### <a name="how-to-use"></a>Использование
+Средство устранения неполадок можно выполнить, вставляя следующую команду в окно терминала на компьютере с агентом Log Analytics: `sudo /opt/microsoft/omsagent/bin/troubleshooter`
+
+### <a name="manual-installation"></a>Установка вручную
+Средство устранения неполадок автоматически включается при установке агента Log Analytics. Однако если установка завершается неудачно, ее также можно установить вручную, выполнив приведенные ниже действия.
+
+1. Скопируйте пакет средств устранения неполадок на компьютер: `wget https://raw.github.com/microsoft/OMS-Agent-for-Linux/master/source/code/troubleshooter/omsagent_tst.tar.gz`
+2. Распаковать пакет: `tar -xzvf omsagent_tst.tar.gz`
+3. Выполните установку вручную: `sudo ./install_tst`
+
+### <a name="scenarios-covered"></a>Поддерживаемые сценарии
+Ниже приведен список сценариев, проверенных средством устранения неполадок.
+
+1. Агент неработоспособен, пульс не работает должным образом
+2. Агент не запускается, не удается подключиться к службам аналитики журнала
+3. Системный журнал агента не работает
+4. Высокая загрузка ЦП и памяти агентом
+5. Агент имеет проблемы с установкой
+6. Пользовательские журналы агента не работают
+7. Получить журналы агента
+
+Дополнительные сведения см. в [документации по GitHub](https://github.com/microsoft/OMS-Agent-for-Linux/blob/master/docs/Troubleshooting-Tool.md).
+
+ >[!NOTE]
+ >При возникновении проблемы запустите средство сбора журналов. Первоначальное использование журналов значительно поможет нашей группе поддержки быстрее устранить проблему.
 
 ## <a name="important-log-locations-and-log-collector-tool"></a>Расположение важных журналов и сборщик журналируемых данных
 
@@ -405,7 +435,7 @@ Success sending oms.syslog.authpriv.info x 1 in 0.91s
 ```
 sudo sh ./omsagent-*.universal.x64.sh --purge
 ```
-Или
+либо
 
 ```
 sudo sh ./onboard_agent.sh --purge

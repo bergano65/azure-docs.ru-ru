@@ -11,12 +11,12 @@ author: msmimart
 manager: celestedg
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d664d7cd169593924917bb02a0220e4047eb0cdb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4d2ff176d7569f6f67c8f0dd37e0073314a07289
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88165258"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92441629"
 ---
 # <a name="add-a-custom-approval-workflow-to-self-service-sign-up"></a>Добавление пользовательского рабочего процесса утверждения для самостоятельной регистрации
 
@@ -29,7 +29,7 @@ ms.locfileid: "88165258"
 
 ## <a name="register-an-application-for-your-approval-system"></a>Регистрация приложения для системы утверждения
 
-Необходимо зарегистрировать систему утверждения в качестве приложения в клиенте Azure AD, чтобы она могла проходить проверку подлинности в Azure AD и иметь разрешение на создание пользователей. Узнайте больше об [основах проверки подлинности и авторизации для Microsoft Graph](https://docs.microsoft.com/graph/auth/auth-concepts).
+Необходимо зарегистрировать систему утверждения в качестве приложения в клиенте Azure AD, чтобы она могла проходить проверку подлинности в Azure AD и иметь разрешение на создание пользователей. Узнайте больше об [основах проверки подлинности и авторизации для Microsoft Graph](/graph/auth/auth-concepts).
 
 1. Войдите на [портал Azure](https://portal.azure.com) с учетной записью администратора Azure AD.
 2. В разделе **Службы Azure** щелкните **Azure Active Directory**.
@@ -86,7 +86,7 @@ ms.locfileid: "88165258"
 
    ![Добавление API в поток пользователя](./media/self-service-sign-up-add-approvals/api-connectors-user-flow-api.png)
 
-6. Щелкните **Сохранить**.
+6. Нажмите **Сохранить**.
 
 ## <a name="control-the-sign-up-flow-with-api-responses"></a>Управление потоком регистрации с помощью ответов API
 
@@ -263,14 +263,14 @@ Content-type: application/json
 
 ## <a name="user-account-creation-after-manual-approval"></a>Создание учетной записи пользователя после утверждения вручную
 
-После получения утверждения вручную система пользовательского утверждения создает учетную запись [пользователя](https://docs.microsoft.com/graph/azuread-users-concept-overview) с помощью [Microsoft Graph](https://docs.microsoft.com/graph/use-the-api). Способ, которым система утверждения подготавливает учетную запись пользователя, зависит от поставщика удостоверений, который использовался этим пользователем.
+После получения утверждения вручную система пользовательского утверждения создает учетную запись [пользователя](/graph/azuread-users-concept-overview) с помощью [Microsoft Graph](/graph/use-the-api). Способ, которым система утверждения подготавливает учетную запись пользователя, зависит от поставщика удостоверений, который использовался этим пользователем.
 
 ### <a name="for-a-federated-google-or-facebook-user"></a>Для федеративного пользователя Google или Facebook
 
 > [!IMPORTANT]
 > Для использования этого метода система утверждения должна явным образом проверить наличие и наличие, `identities` `identities[0]` а также `identities[0].issuer` `identities[0].issuer` "Facebook" или "Google".
 
-Если пользователь вошел в учетную запись Google или Facebook, вы можете использовать [API создания пользователей](https://docs.microsoft.com/graph/api/user-post-users?view=graph-rest-1.0&tabs=http).
+Если пользователь вошел в учетную запись Google или Facebook, вы можете использовать [API создания пользователей](/graph/api/user-post-users?tabs=http&view=graph-rest-1.0).
 
 1. Система утверждения использует получение HTTP-запроса от потока пользователя.
 
@@ -330,7 +330,7 @@ Content-type: application/json
 
 ### <a name="for-a-federated-azure-active-directory-user"></a>Для федеративного Azure Active Directory пользователя
 
-Если пользователь выполняет вход с помощью федеративной учетной записи Azure Active Directory, необходимо использовать [API приглашения](https://docs.microsoft.com/graph/api/invitation-post?view=graph-rest-1.0) для создания пользователя, а затем, при необходимости, [API пользовательского обновления](https://docs.microsoft.com/graph/api/user-update?view=graph-rest-1.0) , чтобы назначить пользователю дополнительные атрибуты.
+Если пользователь выполняет вход с помощью федеративной учетной записи Azure Active Directory, необходимо использовать [API приглашения](/graph/api/invitation-post?view=graph-rest-1.0) для создания пользователя, а затем, при необходимости, [API пользовательского обновления](/graph/api/user-update?view=graph-rest-1.0) , чтобы назначить пользователю дополнительные атрибуты.
 
 1. Система утверждения получает HTTP-запрос от потока пользователя.
 
@@ -386,7 +386,7 @@ Content-type: application/json
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Приступая к работе с [примерами краткого руководства по функциям Azure](code-samples-self-service-sign-up.md#api-connector-azure-function-quickstarts).
-- Извлечение [самообслуживания для гостевых пользователей с примером утверждения вручную](code-samples-self-service-sign-up.md#custom-approval-workflows). 
+- Извлечение [самообслуживания для гостевых пользователей с примером утверждения вручную](code-samples-self-service-sign-up.md#custom-approval-workflows).

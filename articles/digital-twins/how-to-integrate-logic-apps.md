@@ -8,12 +8,12 @@ ms.date: 9/11/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.reviewer: baanders
-ms.openlocfilehash: b23e9a1e344bb0db1399a4f04712815557b8139e
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 54a96d1f3227cd4a66e344b63b2ecb337df31aba
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92427987"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92461079"
 ---
 # <a name="integrate-with-logic-apps-using-a-custom-connector"></a>Интеграция с Logic Apps с помощью настраиваемого соединителя
 
@@ -43,7 +43,7 @@ ms.locfileid: "92427987"
 Сначала **Настройте экземпляр Azure Digital двойников** и необходимую проверку подлинности, чтобы иметь возможность работать с ним. Для этого выполните инструкции из статьи [ *Настройка экземпляра Azure Digital двойников и проверки подлинности (с помощью сценария)* ](how-to-set-up-instance-portal.md). В зависимости от предпочтительного интерфейса статья по установке доступна для [портала Azure](how-to-set-up-instance-portal.md), [CLI](how-to-set-up-instance-cli.md) или [автоматизированного примера сценария развертывания Cloud Shell](how-to-set-up-instance-scripted.md). Во всех версиях этих инструкций также указано, как проверить, успешно ли завершен каждый шаг и готов ли новый экземпляр к работе.
 * После настройки экземпляра Azure Digital двойников вам потребуется **_имя узла_** экземпляра ([найдите в портал Azure](how-to-set-up-instance-portal.md#verify-success-and-collect-important-values)).
 
-Для проверки подлинности приложения ADT Explorer необходимо также настроить **регистрацию приложения**. Следуйте инструкциям в разделе [*как создать регистрацию приложения*](how-to-create-app-registration.md) , чтобы настроить ее. 
+Чтобы проверить подлинность соединителя, вам также потребуется настроить **регистрацию приложения**. Следуйте инструкциям в разделе [*как создать регистрацию приложения*](how-to-create-app-registration.md) , чтобы настроить ее. 
 * После регистрации приложения вам потребуется **_идентификатор приложения (клиента)_** регистрации и **_идентификатор каталога (клиента)_** ([найдите в портал Azure](how-to-create-app-registration.md#collect-client-id-and-tenant-id)).
 
 ### <a name="get-app-registration-client-secret"></a>Получение секрета клиента регистрации приложения
@@ -66,7 +66,7 @@ ms.locfileid: "92427987"
 
 В этой статье для обновления двойника в вашем экземпляре Azure Digital двойников используется Logic Apps. Для продолжения необходимо добавить хотя бы один двойника в экземпляр. 
 
-Вы можете добавить двойников с помощью [API дигиталтвинс](how-to-use-apis-sdks.md), [пакета SDK для .NET (C#)](https://www.nuget.org/packages/Azure.DigitalTwins.Core)или [Azure Digital двойников CLI](how-to-use-cli.md). Подробные инструкции по созданию двойников с помощью этих методов см. в разделе « [*практические руководства. Управление цифровыми двойниковми*](how-to-manage-twin.md)».
+Вы можете добавить двойников с помощью [API дигиталтвинс](/rest/api/digital-twins/dataplane/twins), [пакета SDK для .NET (C#)](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet-preview&preserve-view=true)или [Azure Digital двойников CLI](how-to-use-cli.md). Подробные инструкции по созданию двойников с помощью этих методов см. в разделе « [*практические руководства. Управление цифровыми двойниковми*](how-to-manage-twin.md)».
 
 Вам потребуется **_идентификатор двойника_** двойника в созданном вами экземпляре.
 

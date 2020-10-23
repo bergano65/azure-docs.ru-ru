@@ -1,6 +1,6 @@
 ---
 title: Проверка подлинности SAML с Azure Active Directory
-description: Руководство по архитектуре при достижении этого шаблона проверки подлинности
+description: Руководство по архитектуре для обеспечения проверки подлинности SAML с помощью Azure Active Directory
 services: active-directory
 author: BarbaraSelden
 manager: daveba
@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 05b13e04db8e83a8a10c2d7fe0aea202dfa3b69c
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: 1ab14413de1f999747e5b3fb58b505e0a9258a55
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92114505"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92441221"
 ---
 # <a name="saml-authentication-with-azure-active-directory"></a>Проверка подлинности SAML с Azure Active Directory
 
@@ -37,7 +37,7 @@ ms.locfileid: "92114505"
 
 Хотя одним из наиболее важных вариантов использования SAML является единый вход, особенно путем расширения единого входа в разных доменах безопасности, существуют и другие варианты использования (называемые профилями). 
 
-![Схема архитектуры](./media/authentication-patterns/saml-auth.png)
+![Схема архитектуры для SAML](./media/authentication-patterns/saml-auth.png)
 
 ## <a name="components-of-system"></a>Компоненты системы
 

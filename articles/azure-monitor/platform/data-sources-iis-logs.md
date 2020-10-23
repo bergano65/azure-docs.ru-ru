@@ -1,20 +1,23 @@
 ---
-title: Журналы IIS в Azure Monitor | Документация Майкрософт
+title: Получение журналов IIS с помощью агента Log Analytics в Azure Monitor
 description: Службы IIS (Internet Information Services) хранят данные об активности пользователей в файлах журналов, собираемых службой Azure Monitor.  В этой статье описано, как настроить сбор журналов IIS и сведения о записях, созданных ими в службе Azure Monitor.
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
-ms.date: 11/28/2018
-ms.openlocfilehash: 0bca809d6c25594c1c614f694e71e39a4f61e2a4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 10/21/2020
+ms.openlocfilehash: ca3cf93329ea84183ef11eec8f8fac52cd84d445
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87008189"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92461198"
 ---
-# <a name="collect-iis-logs-in-azure-monitor"></a>Сбор журналов IIS в Azure Monitor
-Службы IIS (Internet Information Services) хранят данные об активности пользователей в файлах журналов, собираемых службой Azure Monitor и сохраняемых как [данные журнала](data-platform.md).
+# <a name="collect-iis-logs-with-log-analytics-agent-in-azure-monitor"></a>Получение журналов IIS с помощью агента Log Analytics в Azure Monitor
+Службы IIS (IIS) хранит данные о действиях пользователей в файлах журнала, которые могут собираться агентом Log Analytics и храниться в [Azure Monitor журналах](data-platform.md).
+
+> [!IMPORTANT]
+> В этой статье рассматривается сбор журналов IIS с помощью [агента log Analytics](log-analytics-agent.md) , который является одним из агентов, используемых Azure Monitor. Другие агенты собираются разные данные и настраиваются по-разному. Список доступных агентов и данных, которые они могут собираются, см. в разделе [Обзор агентов Azure Monitor](agents-overview.md) .
 
 ![Журналы IIS](media/data-sources-iis-logs/overview.png)
 
@@ -23,7 +26,7 @@ ms.locfileid: "87008189"
 
 Служба Azure Monitor поддерживает только те файлы журналов IIS, которые хранятся в формате W3C, и не поддерживает настраиваемые поля или расширенное ведение журналов IIS. Она не собирает журналы в формате NCSA или в собственном формате IIS.
 
-Журналы IIS настраиваются в Azure Monitor в меню [Дополнительные параметры](agent-data-sources.md#configuring-data-sources).  Никакие настройки, кроме выбора параметра **Сбор файлов журналов IIS в формате W3C**, не требуются.
+Настройте журналы IIS в Azure Monitor из [меню дополнительных параметров](agent-data-sources.md#configuring-data-sources) для агента log Analytics.  Никакие настройки, кроме выбора параметра **Сбор файлов журналов IIS в формате W3C**, не требуются.
 
 
 ## <a name="data-collection"></a>сбор данных
@@ -33,7 +36,7 @@ Azure Monitor собирает записи журнала IIS из каждог
 ## <a name="iis-log-record-properties"></a>Свойства записей в журналах IIS
 Записи в журналах IIS относятся к типу **W3CIISLog** и обладают свойствами, описанными в таблице ниже.
 
-| Свойство | Описание |
+| Свойство. | Описание |
 |:--- |:--- |
 | Компьютер |Имя компьютера, с которого было получено событие. |
 | cIP |IP-адрес клиента. |

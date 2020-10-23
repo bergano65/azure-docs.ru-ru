@@ -5,15 +5,15 @@ author: alkohli
 services: storage
 ms.service: storage
 ms.topic: how-to
-ms.date: 03/12/2020
+ms.date: 10/20/2020
 ms.author: alkohli
 ms.subservice: common
-ms.openlocfilehash: 6d12c0ce0df44c37f4e7df49df2c11301513917c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c3be13dade9cae45994b5f7a9d6f7479e2de6256
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85514217"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92460739"
 ---
 # <a name="use-the-azure-importexport-service-to-import-data-to-azure-blob-storage"></a>Использование службы "Импорт и экспорт Azure" для импорта данных в хранилище BLOB-объектов Azure
 
@@ -39,7 +39,7 @@ ms.locfileid: "85514217"
   * Создайте номер отслеживания для задания экспорта.
   * Каждое задание должно иметь отдельный номер отслеживания. Несколько заданий с одним и тем же номером отслеживания не поддерживаются.
   * Если у вас нет учетной записи оператора, перейдите по ссылке:
-    * [Создать учетную запись FedEX](https://www.fedex.com/en-us/create-account.html) или
+    * [Создайте учетную запись FedEx](https://www.fedex.com/en-us/create-account.html)или
     * [Создать учетную запись DHL](http://www.dhl-usa.com/en/express/shipping/open_account.html).
 
 ## <a name="step-1-prepare-the-drives"></a>Шаг 1. Подготовка дисков
@@ -95,6 +95,8 @@ ms.locfileid: "85514217"
 
 ## <a name="step-2-create-an-import-job"></a>Шаг 2. Создание задания импорта
 
+### <a name="portal"></a>[Портал](#tab/azure-portal)
+
 Чтобы создать задание импорта на портале Azure, выполните следующие шаги.
 
 1. Войдите в систему по адресу https://portal.azure.com/.
@@ -142,6 +144,85 @@ ms.locfileid: "85514217"
    * Нажмите кнопку **ОК**, чтобы создать задание импорта.
 
      ![Создание задания импорта — шаг 4](./media/storage-import-export-data-to-blobs/import-to-blob6.png)
+
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+Чтобы создать задание импорта в Azure CLI, выполните следующие действия.
+
+[!INCLUDE [azure-cli-prepare-your-environment-h3.md](../../../includes/azure-cli-prepare-your-environment-h3.md)]
+
+### <a name="create-a-job"></a>Создание задания
+
+1. Чтобы добавить расширение " [AZ Import-Export](/cli/azure/ext/import-export/import-export) ", используйте команду [AZ Extension Add](/cli/azure/extension#az_extension_add) .
+
+    ```azurecli
+    az extension add --name import-export
+    ```
+
+1. Можно использовать существующую группу ресурсов или создать ее. Чтобы создать группу ресурсов, выполните команду [AZ Group Create](/cli/azure/group#az_group_create) :
+
+    ```azurecli
+    az group create --name myierg --location "West US"
+    ```
+
+1. Можно использовать существующую учетную запись хранения или создать ее. Чтобы создать учетную запись хранения, выполните команду [AZ Storage Account Create](/cli/azure/storage/account#az_storage_account_create) :
+
+    ```azurecli
+    az storage account create --resource-group myierg --name myssdocsstorage --https-only
+    ```
+
+1. Чтобы получить список расположений, в которые можно поставлять диски, используйте команду [AZ Import-Export Location List](/cli/azure/ext/import-export/import-export/location#ext_import_export_az_import_export_location_list) :
+
+    ```azurecli
+    az import-export location list
+    ```
+
+1. Чтобы получить расположения для вашего региона, используйте команду [AZ Import-Export Location](/cli/azure/ext/import-export/import-export/location#ext_import_export_az_import_export_location_show) .
+
+    ```azurecli
+    az import-export location show --location "West US"
+    ```
+
+1. Выполните следующую команду [AZ Import-Export Create](/cli/azure/ext/import-export/import-export#ext_import_export_az_import_export_create) , чтобы создать задание импорта:
+
+    ```azurecli
+    az import-export create \
+        --resource-group myierg \
+        --name MyIEjob1 \
+        --location "West US" \
+        --backup-drive-manifest true \
+        --diagnostics-path waimportexport \
+        --drive-list bit-locker-key=439675-460165-128202-905124-487224-524332-851649-442187 \
+            drive-header-hash= drive-id=AZ31BGB1 manifest-file=\\DriveManifest.xml \
+            manifest-hash=69512026C1E8D4401816A2E5B8D7420D \
+        --type Import \
+        --log-level Verbose \
+        --shipping-information recipient-name="Microsoft Azure Import/Export Service" \
+            street-address1="3020 Coronado" city="Santa Clara" state-or-province=CA postal-code=98054 \
+            country-or-region=USA phone=4083527600 \
+        --return-address recipient-name="Gus Poland" street-address1="1020 Enterprise way" \
+            city=Sunnyvale country-or-region=USA state-or-province=CA postal-code=94089 \
+            email=gus@contoso.com phone=4085555555" \
+        --return-shipping carrier-name=FedEx carrier-account-number=123456789 \
+        --storage-account myssdocsstorage
+    ```
+
+   > [!TIP]
+   > Вместо указания адреса электронной почты для отдельного пользователя укажите электронную почту группы. Это гарантирует, что вы получите уведомления, даже если администратор уйдет.
+
+1. Используйте команду [AZ Import-Export List](/cli/azure/ext/import-export/import-export#ext_import_export_az_import_export_list) , чтобы просмотреть все задания для группы ресурсов миерг:
+
+    ```azurecli
+    az import-export list --resource-group myierg
+    ```
+
+1. Чтобы обновить задание или отменить задание, выполните команду [AZ Import-Export Update](/cli/azure/ext/import-export/import-export#ext_import_export_az_import_export_update) :
+
+    ```azurecli
+    az import-export update --resource-group myierg --name MyIEjob1 --cancel-requested true
+    ```
+
+---
 
 ## <a name="step-3-optional-configure-customer-managed-key"></a>Шаг 3 (необязательно): Настройка управляемого клиентом ключа
 

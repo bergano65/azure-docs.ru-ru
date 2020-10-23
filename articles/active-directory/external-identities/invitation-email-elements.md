@@ -12,12 +12,12 @@ manager: celestedg
 ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 90c70dd626ea093b9dfe2fd71e39b53c81ac5d5f
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: e1e1bbdfe1cb83f9b479861840081cd0bb138957
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92340641"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92441884"
 ---
 # <a name="the-elements-of-the-b2b-collaboration-invitation-email---azure-active-directory"></a>Элементы сообщения с приглашением службы совместной работы B2B Azure Active Directory
 
@@ -63,7 +63,7 @@ ms.locfileid: "92340641"
 
 ### <a name="footer-section"></a>Нижний колонтитул
 
-Нижний колонтитул содержит дополнительные сведения о отправляемом приглашении. Всегда существует возможность блокировать будущие приглашения. Если в организации [задано заявление о конфиденциальности](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-properties-area), здесь отображается ссылка на эту инструкцию.  В противном случае заметка указывает, что Организация не установила заявление о конфиденциальности.
+Нижний колонтитул содержит дополнительные сведения о отправляемом приглашении. Всегда существует возможность блокировать будущие приглашения. Если в организации [задано заявление о конфиденциальности](../fundamentals/active-directory-properties-area.md), здесь отображается ссылка на эту инструкцию.  В противном случае заметка указывает, что Организация не установила заявление о конфиденциальности.
 
 ![Изображение раздела нижнего колонтитула в сообщении электронной почты](media/invitation-email-elements/footer-section.png)
 
@@ -85,8 +85,8 @@ ms.locfileid: "92340641"
 
 Язык, представляемый гостю в электронном письме с приглашением, определяется следующими параметрами. Эти параметры перечислены в порядке приоритета. Если параметр не настроен, язык определит следующий в списке параметр.
 
-- Свойство **messageLanguage** объекта [InviteUserMessageInfo](https://docs.microsoft.com/graph/api/resources/invitedusermessageinfo?view=graph-rest-1.0), если используется API создания приглашений.
--   Свойство **preferredLanguage**, указанное в [объекте user](https://docs.microsoft.com/graph/api/resources/user?view=graph-rest-1.0) гостя.
+- Свойство **messageLanguage** объекта [InviteUserMessageInfo](/graph/api/resources/invitedusermessageinfo?view=graph-rest-1.0), если используется API создания приглашений.
+-   Свойство **preferredLanguage**, указанное в [объекте user](/graph/api/resources/user?view=graph-rest-1.0) гостя.
 -   **Язык уведомлений** устанавливается в свойствах домашнего клиента гостевого пользователя (только для клиентов Azure AD).
 -   **Язык уведомлений** задается в свойствах ресурса клиента.
 

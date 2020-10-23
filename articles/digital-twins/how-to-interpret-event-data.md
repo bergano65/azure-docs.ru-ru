@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 6/23/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 10b74f7b795df2cf8c19d044fce44da3f798af7a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 22bedcf7921e3c8d4f2566a70515eef3e3b136b6
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88587639"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92461028"
 ---
 # <a name="understand-event-data"></a>Общие сведения о событиях
 
@@ -103,11 +103,11 @@ ms.locfileid: "88587639"
 
 Ниже приведены поля в тексте уведомления о жизненном цикле.
 
-| Имя | Значение |
+| name | Значение |
 | --- | --- |
 | `id` | Идентификатор уведомления, например UUID или счетчик, поддерживаемый службой. `source` + `id` уникален для каждого отдельного события. |
 | `source` | Имя центра Интернета вещей или экземпляра Azure Digital двойников, например *myhub.Azure-Devices.NET* или *mydigitaltwins.westus2.azuredigitaltwins.NET* |
-| `specversion` | *1,0*<br>Сообщение соответствует данной версии [спецификации клаудевентс](https://github.com/cloudevents/spec). |
+| `specversion` | *1.0*<br>Сообщение соответствует данной версии [спецификации клаудевентс](https://github.com/cloudevents/spec). |
 | `type` | `Microsoft.DigitalTwins.Twin.Create`<br>`Microsoft.DigitalTwins.Twin.Delete` |
 | `datacontenttype` | `application/json` |
 | `subject` | Идентификатор цифрового двойника |
@@ -189,11 +189,11 @@ ms.locfileid: "88587639"
 
 Ниже приведены поля в тексте уведомления об изменении ребра.
 
-| Имя    | Значение |
+| name    | Значение |
 | --- | --- |
 | `id` | Идентификатор уведомления, например UUID или счетчик, поддерживаемый службой. `source` + `id` уникален для каждого отдельного события |
 | `source` | Имя экземпляра Azure Digital двойников, например *mydigitaltwins.westus2.azuredigitaltwins.NET* |
-| `specversion` | *1,0*<br>Сообщение соответствует данной версии [спецификации клаудевентс](https://github.com/cloudevents/spec). |
+| `specversion` | *1.0*<br>Сообщение соответствует данной версии [спецификации клаудевентс](https://github.com/cloudevents/spec). |
 | `type` | `Microsoft.DigitalTwins.Relationship.Create`<br>`Microsoft.DigitalTwins.Relationship.Update`<br>`Microsoft.DigitalTwins.Relationship.Delete`
 |`datacontenttype`| `application/json` |
 | `subject` | ИДЕНТИФИКАТОР связи, например `<twinID>/relationships/<relationshipID>` |
@@ -202,7 +202,7 @@ ms.locfileid: "88587639"
 
 #### <a name="body-details"></a>Сведения о тексте
 
-Текст — это полезная нагрузка связи, также в формате JSON. Он использует тот же формат, что и `GET` запрос связи через [API дигиталтвинс](how-to-use-apis-sdks.md). 
+Текст — это полезная нагрузка связи, также в формате JSON. Он использует тот же формат, что и `GET` запрос связи через [API дигиталтвинс](/rest/api/digital-twins/dataplane/twins). 
 
 "Обновление связи" означает, что свойства связи изменились. 
 
@@ -245,11 +245,11 @@ ms.locfileid: "88587639"
 
 Ниже приведены поля в тексте уведомления об изменении цифрового двойника.
 
-| Имя    | Значение |
+| name    | Значение |
 | --- | --- |
 | `id` | Идентификатор уведомления, например UUID или счетчик, поддерживаемый службой. `source` + `id` уникален для каждого отдельного события |
 | `source` | Имя центра Интернета вещей или экземпляра Azure Digital двойников, например *myhub.Azure-Devices.NET* или *mydigitaltwins.westus2.azuredigitaltwins.NET*
-| `specversion` | *1,0*<br>Сообщение соответствует данной версии [спецификации клаудевентс](https://github.com/cloudevents/spec). |
+| `specversion` | *1.0*<br>Сообщение соответствует данной версии [спецификации клаудевентс](https://github.com/cloudevents/spec). |
 | `type` | `Microsoft.DigitalTwins.Twin.Update` |
 | `datacontenttype` | `application/json` |
 | `subject` | Идентификатор цифрового двойника |
@@ -297,7 +297,7 @@ ms.locfileid: "88587639"
   }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. раздел Создание конечных точек и маршрутов для доставки событий.
 * [*Руководство. Управление конечными точками и маршрутами*](how-to-manage-routes-apis-cli.md)

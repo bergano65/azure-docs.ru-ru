@@ -6,16 +6,16 @@ documentationcenter: ''
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 10/16/2020
+ms.date: 10/22/2020
 author: djpmsft
 ms.author: daperlov
 manager: anandsub
-ms.openlocfilehash: 1bb523c1b5aa595a714930962bbbe4e7e04de517
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
+ms.openlocfilehash: e6c00a0d2b6ff8bbb4ba9e51110e995e93d6b558
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92131400"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92426972"
 ---
 # <a name="parameterize-linked-services-in-azure-data-factory"></a>Параметризация связанных служб в Фабрике данных Azure
 
@@ -32,16 +32,18 @@ ms.locfileid: "92131400"
 
 > [!VIDEO https://channel9.msdn.com/shows/azure-friday/Parameterize-connections-to-your-data-stores-in-Azure-Data-Factory/player]
 
-## <a name="supported-data-stores"></a>Поддерживаемые хранилища данных
+## <a name="supported-linked-service-types"></a>Поддерживаемые типы связанных служб
 
 Можно параметризовать любой тип связанной службы.
-При создании связанной службы в пользовательском интерфейсе фабрика данных предоставляет встроенные возможности параметризации для соединителей следующих типов. В колонке создание и изменение связанной службы можно найти параметры для новых параметров и добавить динамическое содержимое.
+При создании связанной службы на пользовательском интерфейсе фабрика данных предоставляет встроенные возможности параметризации для следующих типов связанных служб. В колонке создание и изменение связанной службы можно найти параметры для новых параметров и добавить динамическое содержимое.
 
 - Amazon Redshift
 - Amazon S3
 - Azure Cosmos DB (API SQL)
 - База данных Azure для MySQL
+- Azure Databricks
 - База данных SQL Azure
+- Управляемый экземпляр SQL Azure
 - Azure Synapse Analytics (ранее — Хранилище данных SQL)
 - MySQL
 - Oracle;
@@ -49,7 +51,7 @@ ms.locfileid: "92131400"
 - Базовый протокол HTTP
 - Базовый протокол REST
 
-Для других типов можно параметризовать связанную службу, отредактировав JSON в пользовательском интерфейсе:
+Для других типов связанных служб, которых нет в приведенном выше списке, можно параметризовать связанную службу, отредактировав JSON в пользовательском интерфейсе:
 
 - В колонке создание и изменение связанной службы > разверните узел "Дополнительно" в нижней > установите флажок "указать динамическое содержимое в формате JSON"-> укажите полезные данные JSON связанной службы. 
 - Кроме того, после создания связанной службы без параметризации в [концентраторе управления](author-visually.md#management-hub) — > связанные службы — > найти конкретную связанную службу > нажмите кнопку "код" (кнопка " {} "), чтобы изменить JSON. 

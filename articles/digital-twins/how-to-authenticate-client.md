@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 10/7/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: d71a7535c40d240b6c9bf53cff906f12b4b8b5df
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: d4e150eddee947aa4ed6f88c122c0fa6d01a0bae
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92204305"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92460654"
 ---
 # <a name="write-client-app-authentication-code"></a>Запись кода проверки подлинности клиентского приложения
 
@@ -20,9 +20,9 @@ ms.locfileid: "92204305"
 
 Azure Digital двойников выполняет проверку подлинности с помощью [маркеров безопасности Azure AD на основе OAUTH 2,0](../active-directory/develop/security-tokens.md#json-web-tokens-jwts-and-claims). Чтобы проверить подлинность пакета SDK, необходимо получить маркер носителя с нужными разрешениями для Azure Digital двойников и передать его вместе с вызовами API. 
 
-В этой статье описывается, как получить учетные данные с помощью `Azure.Identity` клиентской библиотеки. Хотя в этой статье показаны примеры кода для [пакета SDK для .NET (C#)](https://www.nuget.org/packages/Azure.DigitalTwins.Core), можно использовать версию независимо от того, `Azure.Identity` какой пакет SDK вы используете (Дополнительные сведения см. в разделе с [*инструкциями по использованию интерфейсов API цифровых двойников и пакетов SDK*](how-to-use-apis-sdks.md)для Azure Digital двойников).
+В этой статье описывается, как получить учетные данные с помощью `Azure.Identity` клиентской библиотеки. Хотя в этой статье показаны примеры кода для [пакета SDK для .NET (C#)](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet-preview&preserve-view=true), можно использовать версию независимо от того, `Azure.Identity` какой пакет SDK вы используете (Дополнительные сведения см. в разделе с [*инструкциями по использованию интерфейсов API цифровых двойников и пакетов SDK*](how-to-use-apis-sdks.md)для Azure Digital двойников).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Сначала выполните действия по настройке, описанные в разделе [*инструкции. Настройка экземпляра и аутентификации*](how-to-set-up-instance-portal.md). Это обеспечит наличие экземпляра Azure Digital двойников, у пользователя есть разрешения на доступ, и вы настроили разрешения для клиентских приложений. После выполнения всех этих настроек вы сможете писать код клиентского приложения.
 

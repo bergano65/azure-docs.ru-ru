@@ -11,16 +11,16 @@ ms.workload: identity
 ms.topic: article
 ms.date: 04/16/2020
 ms.author: Zhchia
-ms.openlocfilehash: cb4dd6646eceaa6028dca4e04e9cddced487de3e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9880834cf722b1898316ef1dfcfe89ad945ffadf
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91361676"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92459266"
 ---
 # <a name="tutorial-configure-juno-journey-for-automatic-user-provisioning"></a>Руководство по Настройка Juno Journey для автоматической подготовки пользователей
 
-Это руководство описывает действия, которые необходимо выполнить в Juno Journey и Azure Active Directory (Azure AD) для настройки автоматической подготовки пользователей. После настройки Azure AD автоматически осуществляет подготовку пользователей и групп и ее отмену для [Juno Journey](https://www.junojourney.com/) с помощью службы подготовки Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../manage-apps/user-provisioning.md). 
+Это руководство описывает действия, которые необходимо выполнить в Juno Journey и Azure Active Directory (Azure AD) для настройки автоматической подготовки пользователей. После настройки Azure AD автоматически осуществляет подготовку пользователей и групп и ее отмену для [Juno Journey](https://www.junojourney.com/) с помощью службы подготовки Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../app-provisioning/user-provisioning.md). 
 
 
 ## <a name="capabilities-supported"></a>Поддерживаемые возможности
@@ -28,21 +28,21 @@ ms.locfileid: "91361676"
 > * Создание пользователей в Juno Journey.
 > * Удаление пользователей в Juno Journey, когда им больше не нужен доступ.
 > * Синхронизация атрибутов пользователей между Azure AD и Juno Journey.
-> * [Единый вход](https://docs.microsoft.com/azure/active-directory/saas-apps/juno-journey-tutorial) в Juno Journey (рекомендуется).
+> * [Единый вход](./juno-journey-tutorial.md) в Juno Journey (рекомендуется).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
-* [Клиент Azure AD.](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant) 
-* Учетная запись пользователя в Azure AD с [разрешением](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) на настройку подготовки (например, администратор приложений, администратор облачных приложений, владелец приложения или глобальный администратор). 
+* [Клиент Azure AD.](../develop/quickstart-create-new-tenant.md) 
+* Учетная запись пользователя в Azure AD с [разрешением](../users-groups-roles/directory-assign-admin-roles.md) на настройку подготовки (например, администратор приложений, администратор облачных приложений, владелец приложения или глобальный администратор). 
 *  [Арендатор Juno Journey.](https://www.junojourney.com/getstarted)
 *  Учетная запись пользователя в Juno Journey с разрешениями администратора.
 
 ## <a name="step-1-plan-your-provisioning-deployment"></a>Шаг 1. Планирование развертывания для подготовки
-1. Узнайте, [как работает служба подготовки](https://docs.microsoft.com/azure/active-directory/manage-apps/user-provisioning).
-2. Определите, кто будет находиться в [области подготовки](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts).
-3. Определите, какие данные следует [сопоставлять между Azure AD и Juno Journey](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes). 
+1. Узнайте, [как работает служба подготовки](../app-provisioning/user-provisioning.md).
+2. Определите, кто будет находиться в [области подготовки](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+3. Определите, какие данные следует [сопоставлять между Azure AD и Juno Journey](../app-provisioning/customize-application-attributes.md). 
 
 ## <a name="step-2-configure-juno-journey-to-support-provisioning-with-azure-ad"></a>Шаг 2. Настройка Juno Journey для поддержки подготовки с помощью Azure AD
 
@@ -50,15 +50,15 @@ ms.locfileid: "91361676"
 
 ## <a name="step-3-add-juno-journey-from-the-azure-ad-application-gallery"></a>Шаг 3. Добавление Juno Journey из коллекции приложений Azure AD
 
-Добавьте Juno Journey из коллекции приложений Azure AD, чтобы начать управление подготовкой в Juno Journey. Если вы ранее настроили Juno Journey для единого входа, можете использовать это же приложение. Но мы рекомендуем создать отдельное приложение для исходной проверки интеграции. Дополнительные сведения о добавлении приложения из коллекции см. [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/add-gallery-app). 
+Добавьте Juno Journey из коллекции приложений Azure AD, чтобы начать управление подготовкой в Juno Journey. Если вы ранее настроили Juno Journey для единого входа, можете использовать это же приложение. Но мы рекомендуем создать отдельное приложение для исходной проверки интеграции. Дополнительные сведения о добавлении приложения из коллекции см. [здесь](../manage-apps/add-application-portal.md). 
 
 ## <a name="step-4-define-who-will-be-in-scope-for-provisioning"></a>Шаг 4. Определение пользователей для включения в область подготовки 
 
-Служба подготовки Azure AD позволяет определить пользователей, которые будут подготовлены, на основе назначения приложению и (или) атрибутов пользователя или группы. Если вы решили определить пользователей на основе назначения, выполните следующие [действия](../manage-apps/assign-user-or-group-access-portal.md), чтобы назначить пользователей и группы приложению. Если вы решили определить пользователей только на основе атрибутов пользователя или группы, примените фильтр области, как описано [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts). 
+Служба подготовки Azure AD позволяет определить пользователей, которые будут подготовлены, на основе назначения приложению и (или) атрибутов пользователя или группы. Если вы решили определить пользователей на основе назначения, выполните следующие [действия](../manage-apps/assign-user-or-group-access-portal.md), чтобы назначить пользователей и группы приложению. Если вы решили определить пользователей только на основе атрибутов пользователя или группы, примените фильтр области, как описано [здесь](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md). 
 
-* При назначении пользователей и групп для Juno Journey необходимо выбрать роль, отличающуюся от роли **Доступ по умолчанию**. Пользователи с такой ролью исключаются из подготовки и будут помечены в журналах подготовки как не имеющие разрешений. Кроме того, если эта роль является единственной, доступной в приложении, можно [изменить манифест приложения](https://docs.microsoft.com/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps), чтобы добавить дополнительные роли. 
+* При назначении пользователей и групп для Juno Journey необходимо выбрать роль, отличающуюся от роли **Доступ по умолчанию**. Пользователи с такой ролью исключаются из подготовки и будут помечены в журналах подготовки как не имеющие разрешений. Кроме того, если эта роль является единственной, доступной в приложении, можно [изменить манифест приложения](../develop/howto-add-app-roles-in-azure-ad-apps.md), чтобы добавить дополнительные роли. 
 
-* Начните с малого. Протестируйте небольшой набор пользователей и групп, прежде чем выполнять развертывание для всех. Если в область подготовки включены назначенные пользователи и группы, проверьте этот механизм, назначив приложению одного или двух пользователей либо одну или две группы. Если в область включены все пользователи и группы, можно указать [фильтр области на основе атрибутов](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts). 
+* Начните с малого. Протестируйте небольшой набор пользователей и групп, прежде чем выполнять развертывание для всех. Если в область подготовки включены назначенные пользователи и группы, проверьте этот механизм, назначив приложению одного или двух пользователей либо одну или две группы. Если в область включены все пользователи и группы, можно указать [фильтр области на основе атрибутов](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md). 
 
 
 ## <a name="step-5-configure-automatic-user-provisioning-to-juno-journey"></a>Шаг 5. Настройка автоматической подготовки пользователей в Juno Journey 
@@ -95,7 +95,7 @@ ms.locfileid: "91361676"
 
 8. В разделе **Сопоставления** выберите **Синхронизировать пользователей Azure Active Directory с Juno Journey**.
 
-9. В разделе **Сопоставление атрибутов** просмотрите пользовательские атрибуты, которые синхронизированы из Azure AD в Juno Journey. Атрибуты, выбранные как свойства **сопоставления**, используются для сопоставления учетных записей пользователей в Juno Journey в операциях обновления. Если вы решили изменить [целевой атрибут сопоставления](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes), сначала убедитесь, что API Juno Journey поддерживает фильтрацию пользователей по этому атрибуту. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+9. В разделе **Сопоставление атрибутов** просмотрите пользовательские атрибуты, которые синхронизированы из Azure AD в Juno Journey. Атрибуты, выбранные как свойства **сопоставления**, используются для сопоставления учетных записей пользователей в Juno Journey в операциях обновления. Если вы решили изменить [целевой атрибут сопоставления](../app-provisioning/customize-application-attributes.md), сначала убедитесь, что API Juno Journey поддерживает фильтрацию пользователей по этому атрибуту. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
    |Переменная|Тип|
    |---|---|
@@ -127,7 +127,7 @@ ms.locfileid: "91361676"
    urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|Строка|
 
 
-10. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../manage-apps/define-conditional-rules-for-provisioning-user-accounts.md).
+10. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 11. Чтобы включить службу подготовки Azure AD для Juno Journey, в разделе **Параметры** измените значение параметра **Состояние подготовки** на **Включено**.
 
@@ -146,15 +146,15 @@ ms.locfileid: "91361676"
 ## <a name="step-6-monitor-your-deployment"></a>Шаг 6. Мониторинг развертывания
 Настроив подготовку, используйте следующие ресурсы для мониторинга развертывания:
 
-* Используйте [журналы подготовки](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-provisioning-logs), чтобы определить, какие пользователи были подготовлены успешно или неудачно.
-* Используйте [индикатор выполнения](https://docs.microsoft.com/azure/active-directory/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user), чтобы узнать состояние цикла подготовки и приблизительное время до его завершения.
-* Если конфигурация подготовки находится в неработоспособном состоянии, приложение перейдет в режим карантина. Дополнительные сведения о режимах карантина см. [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-quarantine-status).
+* Используйте [журналы подготовки](../reports-monitoring/concept-provisioning-logs.md), чтобы определить, какие пользователи были подготовлены успешно или неудачно.
+* Используйте [индикатор выполнения](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md), чтобы узнать состояние цикла подготовки и приблизительное время до его завершения.
+* Если конфигурация подготовки находится в неработоспособном состоянии, приложение перейдет в режим карантина. Дополнительные сведения о режимах карантина см. [здесь](../app-provisioning/application-provisioning-quarantine-status.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Управление подготовкой учетных записей пользователей для корпоративных приложений](../manage-apps/configure-automatic-user-provisioning-portal.md)
+* [Управление подготовкой учетных записей пользователей для корпоративных приложений](../app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)
+* [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../app-provisioning/check-status-user-account-provisioning.md)

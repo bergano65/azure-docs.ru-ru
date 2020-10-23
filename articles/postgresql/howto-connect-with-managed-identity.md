@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.topic: how-to
 ms.date: 05/19/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 1b9603e43541ec1a364e4653caeeafc751f7e4f0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2d801499360bd05cee4c01aefd873337303017f3
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89012098"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92427515"
 ---
 # <a name="connect-with-managed-identity-to-azure-database-for-postgresql"></a>Подключение к базе данных Azure для PostgreSQL с помощью управляемого удостоверения
 
@@ -27,7 +27,7 @@ ms.locfileid: "89012098"
 ## <a name="prerequisites"></a>Предварительные требования
 
 - См. дополнительные сведения об [управляемых удостоверениях для ресурсов Azure](../../articles/active-directory/managed-identities-azure-resources/overview.md). Если у вас нет учетной записи Azure, [зарегистрируйтесь для получения бесплатной учетной записи](https://azure.microsoft.com/free/), прежде чем продолжить.
-- Для выполнения требуемых операций создания ресурсов и управления ролями учетной записи нужно предоставить разрешения роли "Владелец" в соответствующей области (подписка или группа ресурсов). Прочитайте раздел [Использование управления доступом на основе ролей для контроля доступа к ресурсам в подписке Azure](../../articles/role-based-access-control/role-assignments-portal.md), если нуждаетесь в помощи с назначением ролей.
+- Для выполнения требуемых операций создания ресурсов и управления ролями учетной записи нужно предоставить разрешения роли "Владелец" в соответствующей области (подписка или группа ресурсов). Если вам нужна помощь с назначением ролей, см. статью [Использование управления доступом на основе ролей Azure (Azure RBAC) для управления доступом к ресурсам подписки Azure](../../articles/role-based-access-control/role-assignments-portal.md).
 - Вам потребуется виртуальная машина Azure (например, на базе Ubuntu Linux), которую вы хотите использовать для доступа к базе данных с помощью управляемого удостоверения.
 - Вам нужен сервер базы данных Azure для PostgreSQL, на котором настроена [проверка подлинности Azure AD](howto-configure-sign-in-aad-authentication.md)
 - Для выполнения примера C# сначала завершите руководство по [подключению к C#](connect-csharp.md)

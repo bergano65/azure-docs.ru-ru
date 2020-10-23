@@ -12,12 +12,12 @@ manager: celestedg
 ms.reviewer: mal
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0b7350d793ea42a46d52d881f1399174a3bb5d0e
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 7cb0223b338457ad5eeea0b0bb40593f57a0d3aa
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92362898"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92442088"
 ---
 # <a name="direct-federation-with-ad-fs-and-third-party-providers-for-guest-users-preview"></a>Прямая федерация с AD FS и сторонними поставщиками для гостевых пользователей (предварительная версия)
 
@@ -66,7 +66,7 @@ ms.locfileid: "92362898"
 Если указать URL-адрес метаданных в параметрах поставщика удостоверений, Azure AD автоматически возобновит сертификат для подписи по истечении срока его действия. Тем не менее, в случае смены сертификата по какой-либо причине до истечения срока действия, а также при отсутствии URL-адреса метаданных Azure AD не сможет возобновить его действие. В этом случае вам потребуется обновить сертификат для подписи вручную.
 
 ### <a name="limit-on-federation-relationships"></a>Ограничение отношения федерации
-В настоящее время поддерживается не более 1 000 отношений федерации. Это ограничение охватывает как [внутренние ](https://docs.microsoft.com/powershell/module/msonline/set-msoldomainfederationsettings?view=azureadps-1.0), так и прямые федерации.
+В настоящее время поддерживается не более 1 000 отношений федерации. Это ограничение охватывает как [внутренние ](/powershell/module/msonline/set-msoldomainfederationsettings?view=azureadps-1.0), так и прямые федерации.
 
 ### <a name="limit-on-multiple-domains"></a>Ограничение для нескольких доменов
 На данный момент прямая федерация с несколькими доменами из одного и того же клиента не поддерживается.
@@ -87,7 +87,7 @@ ms.locfileid: "92362898"
 
 ### <a name="saml-20-configuration"></a>Конфигурация SAML 2.0
 
-B2B в Azure AD можно настроить для федерации с поставщиками удостоверений, использующими протокол SAML, в соответствии с определенными требованиями, которые приведены ниже. Дополнительные сведения о настройке отношения доверия между поставщиком удостоверений SAML и Azure AD см. в статье [Использование поставщика удостоверений SAML 2.0 для единого входа](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-fed-saml-idp).  
+B2B в Azure AD можно настроить для федерации с поставщиками удостоверений, использующими протокол SAML, в соответствии с определенными требованиями, которые приведены ниже. Дополнительные сведения о настройке отношения доверия между поставщиком удостоверений SAML и Azure AD см. в статье [Использование поставщика удостоверений SAML 2.0 для единого входа](../hybrid/how-to-connect-fed-saml-idp.md).  
 
 > [!NOTE]
 > Целевой домен для прямой федерации не должен проверяться DNS в Azure AD. Домен URL-адреса проверки подлинности должен совпадать с целевым доменом или быть доменом разрешенного поставщика удостоверений. Дополнительные сведения см. в разделе [Ограничения](#limitations). 
@@ -221,6 +221,6 @@ B2B в Azure AD можно настроить для федерации с по
    Remove-AzureADExternalDomainFederation -ExternalDomainName  $domainName
    ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте больше о процессе [активации приглашения](redemption-experience.md) , когда внешние пользователи входят с различными поставщиками удостоверений.

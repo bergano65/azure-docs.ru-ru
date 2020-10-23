@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 7/22/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: a2164afef3807a345819a18274eb01f2116de9fd
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 6b1f53226b82a5342efda8665b6a366a3a7fd310
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92427963"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92461419"
 ---
 # <a name="manage-endpoints-and-routes-in-azure-digital-twins-portal"></a>Управление конечными точками и маршрутами в Azure Digital двойников (портал)
 
@@ -22,7 +22,7 @@ ms.locfileid: "92427963"
 
 В этой статье описывается процесс создания конечных точек и маршрутов с помощью [портал Azure](https://portal.azure.com).
 
-Вы также можете управлять конечными точками и маршрутами с помощью [API евентраутес](how-to-use-apis-sdks.md), [пакета SDK для .NET (C#)](https://www.nuget.org/packages/Azure.DigitalTwins.Core)или [Azure Digital двойников CLI](how-to-use-cli.md). Версию этой статьи, которая использует эти механизмы вместо портала, см. [*в разделе Практические руководства. Управление конечными точками и маршрутами (API и интерфейс командной строки)*](how-to-manage-routes-apis-cli.md).
+Вы также можете управлять конечными точками и маршрутами с помощью [API маршрутов событий](/rest/api/digital-twins/dataplane/eventroutes), [пакета SDK для .NET (C#)](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet-preview&preserve-view=true)или [интерфейса командной строки Azure Digital двойников](how-to-use-cli.md). Версию этой статьи, которая использует эти механизмы вместо портала, см. [*в разделе Практические руководства. Управление конечными точками и маршрутами (API и интерфейс командной строки)*](how-to-manage-routes-apis-cli.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 

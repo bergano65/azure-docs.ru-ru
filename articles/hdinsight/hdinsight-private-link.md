@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 10/15/2020
-ms.openlocfilehash: d0ee9680a6b1b7c3e145137c73dda84d1a755b06
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: a5e4b8bbae67e32a5a0c951de583688836eb014b
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92147915"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92426384"
 ---
 # <a name="secure-and-isolate-azure-hdinsight-clusters-with-private-link-preview"></a>Защита и изоляция кластеров Azure HDInsight с помощью частной ссылки (Предварительная версия)
 
@@ -59,6 +59,8 @@ ms.locfileid: "92147915"
 Стандартные подсистемы балансировки нагрузки не обеспечивают автоматическое предоставление [общедоступного исходящего трафика NAT](https://docs.microsoft.com/azure/load-balancer/load-balancer-outbound-connections) , такого как базовые подсистемы балансировки нагрузки. Для исходящих зависимостей необходимо предоставить собственное решение NAT, например [NAT виртуальной сети](../virtual-network/nat-overview.md) или [брандмауэр](./hdinsight-restrict-outbound-traffic.md). Кластеру HDInsight по-прежнему требуется доступ к его исходящим зависимостям. Если эти исходящие зависимости не допускаются, создание кластера может завершиться ошибкой.
 
 ### <a name="prepare-your-environment"></a>Подготовка среды
+
+Для сукцессгфулл создания служб частной связи необходимо явно [отключить сетевые политики для службы частных ссылок](https://docs.microsoft.com/azure/private-link/disable-private-link-service-network-policy).
 
 На следующей схеме показан пример конфигурации сети, необходимой перед созданием кластера. В этом примере весь исходящий трафик [принудительно](../firewall/forced-tunneling.md) передается в брандмауэр Azure с помощью UDR, а необходимые Исходящие зависимости должны быть разрешены в брандмауэре перед созданием кластера. Для кластеров Корпоративный пакет безопасности сетевое подключение к Azure Active Directoryным службам домена может предоставляться через пиринг виртуальных сетей.
 

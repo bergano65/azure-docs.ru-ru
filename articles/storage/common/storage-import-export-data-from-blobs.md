@@ -5,15 +5,15 @@ author: alkohli
 services: storage
 ms.service: storage
 ms.topic: how-to
-ms.date: 09/17/2020
+ms.date: 10/20/2020
 ms.author: alkohli
 ms.subservice: common
-ms.openlocfilehash: d9f7778d1dda159f3ab0c4548912370c85f94eff
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bfbef5ce3ba7675aff88df654a5ba6572c38adbe
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91441870"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92440742"
 ---
 # <a name="use-the-azure-importexport-service-to-export-data-from-azure-blob-storage"></a>Использование службы "Импорт и экспорт Azure" для экспорта данных из хранилища BLOB-объектов Azure
 
@@ -37,6 +37,8 @@ ms.locfileid: "91441870"
 
 ## <a name="step-1-create-an-export-job"></a>Шаг 1. Создание задания экспорта
 
+### <a name="portal"></a>[Портал](#tab/azure-portal)
+
 Чтобы создать задание экспорта, на портале Azure сделайте следующее.
 
 1. Войдите в систему по адресу <https://portal.azure.com/>.
@@ -57,7 +59,7 @@ ms.locfileid: "91441870"
     - Выберите подписку.
     - Укажите или выберите группу ресурсов.
 
-        ![Основы](./media/storage-import-export-data-from-blobs/export-from-blob3.png)
+        ![Основные](./media/storage-import-export-data-from-blobs/export-from-blob3.png)
 
 5. В разделе **Сведения о задании** сделайте следующее:
 
@@ -99,6 +101,83 @@ ms.locfileid: "91441870"
         > Всегда отправляйте диски в центр обработки данных, указанный на портале Azure. В случае отправки в неправильный центр обработки данных, задание не будет обрабатываться.
 
     - Нажмите кнопку **ОК**, чтобы завершить создание задания экспорта.
+
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+Чтобы создать задание экспорта в портал Azure, выполните следующие действия.
+
+[!INCLUDE [azure-cli-prepare-your-environment-h3.md](../../../includes/azure-cli-prepare-your-environment-h3.md)]
+
+### <a name="create-a-job"></a>Создание задания
+
+1. Чтобы добавить расширение " [AZ Import-Export](/cli/azure/ext/import-export/import-export) ", используйте команду [AZ Extension Add](/cli/azure/extension#az_extension_add) .
+
+    ```azurecli
+    az extension add --name import-export
+    ```
+
+1. Чтобы получить список расположений, из которых можно получить диски, используйте команду [AZ Import-Export Location List](/cli/azure/ext/import-export/import-export/location#ext_import_export_az_import_export_location_list) :
+
+    ```azurecli
+    az import-export location list
+    ```
+
+1. Чтобы создать задание экспорта, которое использует имеющуюся учетную запись хранения, выполните следующую команду [AZ Import-Export Create](/cli/azure/ext/import-export/import-export#ext_import_export_az_import_export_create) .
+
+    ```azurecli
+    az import-export create \
+        --resource-group myierg \
+        --name Myexportjob1 \
+        --location "West US" \
+        --backup-drive-manifest true \
+        --diagnostics-path waimportexport \
+        --export blob-path=/ \
+        --type Export \
+        --log-level Verbose \
+        --shipping-information recipient-name="Microsoft Azure Import/Export Service" \
+            street-address1="3020 Coronado" city="Santa Clara" state-or-province=CA postal-code=98054 \
+            country-or-region=USA phone=4083527600 \
+        --return-address recipient-name="Gus Poland" street-address1="1020 Enterprise way" \
+            city=Sunnyvale country-or-region=USA state-or-province=CA postal-code=94089 \
+            email=gus@contoso.com phone=4085555555" \
+        --storage-account myssdocsstorage
+    ```
+
+    > [!TIP]
+    > Вместо указания адреса электронной почты для отдельного пользователя укажите электронную почту группы. Это гарантирует, что вы получите уведомления, даже если администратор уйдет.
+
+   Это задание экспортирует все большие двоичные объекты в учетной записи хранения. Вы можете указать большой двоичный объект для экспорта, заменив это значение параметром **--Export**:
+
+    ```azurecli
+    --export blob-path=$root/logo.bmp
+    ```
+
+   Это значение параметра экспортирует большой двоичный объект с именем *logo.bmp* в корневом контейнере.
+
+   Вы также можете выбрать все большие двоичные объекты в контейнере с помощью префикса. Замените это значение для **--Export**:
+
+    ```azurecli
+    blob-path-prefix=/myiecontainer
+    ```
+
+   Дополнительные сведения см. в разделе с [примерами допустимых путей к большим двоичным объектам](#examples-of-valid-blob-paths).
+
+   > [!NOTE]
+   > Если большой двоичный объект для экспорта используется во время копирования данных, служба "Импорт и экспорт Azure" делает снимок большого двоичного объекта и копирует моментальный снимок.
+
+1. Используйте команду [AZ Import-Export List](/cli/azure/ext/import-export/import-export#ext_import_export_az_import_export_list) , чтобы просмотреть все задания для группы ресурсов миерг:
+
+    ```azurecli
+    az import-export list --resource-group myierg
+    ```
+
+1. Чтобы обновить задание или отменить задание, выполните команду [AZ Import-Export Update](/cli/azure/ext/import-export/import-export#ext_import_export_az_import_export_update) :
+
+    ```azurecli
+    az import-export update --resource-group myierg --name MyIEjob1 --cancel-requested true
+    ```
+
+---
 
 <!--## (Optional) Step 2: -->
 
@@ -155,12 +234,12 @@ ms.locfileid: "91441870"
 
     |Параметр командной строки|Описание|  
     |--------------------------|-----------------|  
-    |**/logdir**|Необязательный параметр. Каталог журналов. В этот каталог записываются файлы подробного журнала. Если каталог не указан, вместо него используется текущий каталог.|  
-    |**/SN**|Обязательный элемент. Имя учетной записи хранения для задания экспорта.|  
+    |**/logdir**|Необязательный элемент. Каталог журналов. В этот каталог записываются файлы подробного журнала. Если каталог не указан, вместо него используется текущий каталог.|  
+    |**/SN**|Обязательный. Имя учетной записи хранения для задания экспорта.|  
     |**/SK**|Требуется, только если не указан SAS контейнера. Ключ учетной записи хранения для задания экспорта.|  
     |**/csas:**|Требуется, только если не указан ключ учетной записи хранения. SAS контейнера для получения списка экспортируемых в рамках задания экспорта больших двоичных объектов.|  
-    |**/ExportBlobListFile:**|Обязательный элемент. Путь к XML-файлу, содержащему список путей к большим двоичным объектам или префиксов путей экспортируемых больших двоичных объектов. Формат файла, используемый в элементе `BlobListBlobPath` в операции [Put Job](/rest/api/storageimportexport/jobs) интерфейса REST API службы импорта и экспорта.|  
-    |**/DriveSize:**|Обязательный элемент. Размер дисков, используемых для задания экспорта, *например* 500 ГБ, 1,5 ТБ.|  
+    |**/ExportBlobListFile:**|Обязательный. Путь к XML-файлу, содержащему список путей к большим двоичным объектам или префиксов путей экспортируемых больших двоичных объектов. Формат файла, используемый в элементе `BlobListBlobPath` в операции [Put Job](/rest/api/storageimportexport/jobs) интерфейса REST API службы импорта и экспорта.|  
+    |**/DriveSize:**|Обязательный. Размер дисков, используемых для задания экспорта, *например* 500 ГБ, 1,5 ТБ.|  
 
     Дополнительные сведения см. в разделе с [примером команды PreviewExport](#example-of-previewexport-command).
 
@@ -217,7 +296,7 @@ Number of drives needed:        3
    | Равно |$root/logo.bmp |Экспортирует blob-объект **logo.bmp** в корневом контейнере |
    | Равно |videos/story.mp4 |Экспортирует большой двоичный объект **story.mp4** в контейнере **videos** |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Просмотр состояния задания и диска](storage-import-export-view-drive-status.md)
 - [Сведения о требованиях службы "Импорт и экспорт"](storage-import-export-requirements.md)

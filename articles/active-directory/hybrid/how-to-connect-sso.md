@@ -16,12 +16,12 @@ ms.date: 08/13/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1708b3b8777b32aac7c160a1084235ba1b2eda13
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d7baa851943db3e8c691b50c2cb5446a2adbbccc
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89658350"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92457997"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on"></a>Простой единый вход Azure Active Directory
 
@@ -64,18 +64,20 @@ ms.locfileid: "89658350"
 | Операционная система и браузер |Internet Explorer|Microsoft Edge|Google Chrome|Mozilla Firefox|Safari|
 | --- | --- |--- | --- | --- | -- 
 |Windows 10|Да\*|Да|Да|Да\*\*\*|Недоступно
-|Windows 8.1|Да\*|Недоступно|Да|Да\*\*\*|Недоступно
+|Windows 8.1|Да\*|Да\*\*\*|Да|Да\*\*\*|Недоступно
 |Windows 8|Да\*|Недоступно|Да|Да\*\*\*|Недоступно
 |Windows 7|Да\*|Недоступно|Да|Да\*\*\*|Недоступно
 |Windows Server 2012 R2 или более поздней версии|Да\*\*|Недоступно|Да|Да\*\*\*|Недоступно
 |Mac OS X|Недоступно|Недоступно|Да\*\*\*|Да\*\*\*|Да\*\*\*
 
 
-\*Требуется Internet Explorer версии 10 или более поздней.
+\*Требуется Internet Explorer 10 или более поздней версии.
 
-\*\*Требуется Internet Explorer версии 10 или более поздней. Отключение расширенного защищенного режима
+\*\*Требуется Internet Explorer 10 или более поздней версии. Отключить усиленный защищенный режим.
 
-\*\*\*Требуется [дополнительная настройка](how-to-connect-sso-quick-start.md#browser-considerations).
+\*\*\*Требуется [Дополнительная настройка](how-to-connect-sso-quick-start.md#browser-considerations).
+
+\*\*\*\*Требуется Microsoft ребра версии 77 или более поздней.
 
 >[!NOTE]
 >Чтобы обеспечить максимальное удобство единого входа в Azure AD, мы рекомендуем использовать в Windows 10 функцию [присоединения к Azure AD](../devices/concept-azure-ad-join.md).

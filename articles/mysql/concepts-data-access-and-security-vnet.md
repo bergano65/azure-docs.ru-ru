@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 7/17/2020
-ms.openlocfilehash: f114dd4d4f0a9a26a8aab1f8aeecd4d29678a8d2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: dba6b3f2137230ebe95f1bc89156cf6b127c8f52
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90896299"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92428148"
 ---
 # <a name="use-virtual-network-service-endpoints-and-rules-for-azure-database-for-mysql"></a>Использование конечных точек служб и правил виртуальной сети с базой данных Azure для MySQL
 
@@ -88,7 +88,7 @@ ms.locfileid: "90896299"
 - **администратор сети:** &nbsp; включение конечной точки;
 - **администратор базы данных:** &nbsp; обновление списка управления доступом (ACL) для добавления данной подсети на сервер базы данных Azure для MySQL.
 
-*Альтернатива RBAC*
+*Альтернатива Azure RBAC:*
 
 Роли администратора сети и администратора базы данных имеют больше возможностей, чем требуется для управления правилами виртуальной сети. На самом деле для этого требуется только часть их возможностей.
 
@@ -134,11 +134,11 @@ ms.locfileid: "90896299"
 
 Задать параметр **IgnoreMissingServiceEndpoint** можно с помощью Azure CLI или портала.
 
-## <a name="related-articles"></a>Похожие статьи
+## <a name="related-articles"></a>Связанные статьи
 - [Виртуальные сети Azure][vm-virtual-network-overview]
 - [Конечные точки службы виртуальной сети Azure][vm-virtual-network-service-endpoints-overview-649d]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Статьи о создании правил виртуальной сети см. по следующим ссылкам:
 - [Создание правил виртуальной сети базы данных Azure для MySQL и управление ими на портале Azure](howto-manage-vnet-using-portal.md)
 - [Создание правил виртуальной сети базы данных Azure для MySQL и управление ими с помощью Azure CLI](howto-manage-vnet-using-cli.md)
@@ -152,7 +152,7 @@ ms.locfileid: "90896299"
 
 [vm-configure-private-ip-addresses-for-a-virtual-machine-using-the-azure-portal-321w]: ../virtual-network/virtual-networks-static-private-ip-arm-pportal.md
 
-[rbac-what-is-813s]: ../active-directory/role-based-access-control-what-is.md
+[rbac-what-is-813s]: ../role-based-access-control/overview.md
 
 [vpn-gateway-indexmd-608y]: ../vpn-gateway/index.yml
 
