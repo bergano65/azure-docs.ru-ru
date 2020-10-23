@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 07/07/2020
+ms.date: 10/22/2020
 ms.author: aahi
-ms.openlocfilehash: 3cd6febfc774b214a8c1ae8553e6c127c4f452fa
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a3b2a9db688104c168017863910745427a3a68f9
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91319084"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92425804"
 ---
 # <a name="batch-processing-kit-for-speech-containers"></a>Набор пакетной обработки для речевых контейнеров
 
@@ -75,9 +75,8 @@ MyContainer3:
 > [!NOTE] 
 > * В этом примере используется тот же каталог ( `/my_nfs` ) для файла конфигурации, а также каталоги входов, выходов и журналов. Для этих папок можно использовать размещенные или подключенные к NFS каталоги.
 > * При запуске клиента с `–h` будет отображаться список доступных параметров командной строки и их значения по умолчанию. 
+> * Контейнер пакетной обработки поддерживается только в Linux.
 
-
-#### <a name="linux"></a>[Linux](#tab/linux)
 `run`Чтобы запустить контейнер, используйте команду DOCKER. Это приведет к запуску интерактивной оболочки внутри контейнера.
 
 ```Docker
@@ -95,17 +94,6 @@ run-batch-client -config /my_nfs/config.yaml -input_folder /my_nfs/audio
 ```Docker
 docker run --rm -ti -v  /mnt/my_nfs:/my_nfs docker.io/batchkit/speech-batch-kit:latest  -config /my_nfs/config.yaml -input_folder /my_nfs/audio_files -output_folder /my_nfs/transcriptions -log_folder  /my_nfs/logs -log_level DEBUG -nbest 1 -m ONESHOT -diarization  None -language en-US -strict_config   
 ```
-
-#### <a name="windows"></a>[Windows](#tab/windows)
-
-Чтобы запустить клиент и контейнер пакетной службы, выполните одну команду:
-
-```Docker
-docker run --rm -ti -v   c:\my_nfs:/my_nfs docker.io/batchkit/speech-batch-kit:latest  -config  /my_nfs/config.yaml -input_folder /my_nfs/audio_files -output_folder /my_nfs/transcriptions -log_folder  /my_nfs/logs -nbest 1 -m ONESHOT -diarization  None -language en-US -strict_config
-
-```
-
----
 
 
 Клиент начнет работать. Если звуковой файл уже был расшифрованной в предыдущем запуске, клиент будет автоматически пропускать этот файл. При возникновении временных ошибок файлы отправляются с автоматическим повторным выполнением, и вы можете различать ошибки, которые необходимо повторить для клиента. При ошибке транскрипции клиент продолжит запись и может повторить попытку без потери хода выполнения.  
@@ -126,7 +114,7 @@ docker run --rm -ti -v   c:\my_nfs:/my_nfs docker.io/batchkit/speech-batch
 4. Файлы отправляются в конечные точки контейнера из шага 1.
 5. Журналы и выходные данные контейнера речи возвращаются в указанный выходной каталог. 
 
-#### <a name="daemon"></a>[Управляющей программы](#tab/daemon)
+#### <a name="daemon"></a>[Управляющая программа](#tab/daemon)
 
 > [!TIP]
 > Если одновременно к входному каталогу одновременно добавляется несколько файлов, можно повысить производительность, добавив их в обычное время.
@@ -172,6 +160,6 @@ docker run --rm -ti -v   c:\my_nfs:/my_nfs docker.io/batchkit/speech-batch
 
 Выходной каталог, заданный параметром, `-output_folder` будет содержать *run_summary.jsв*   файле, который периодически перезаписывается каждые 30 секунд или каждый раз, когда завершается новая транскрипция. Этот файл можно использовать для проверки хода выполнения пакета. Он также будет содержать окончательную статистику выполнения и окончательное состояние каждого файла по завершении выполнения пакета. Выполнение пакета завершается, когда процесс завершается с помощью чистого выхода. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Как устанавливать и запускать контейнеры](speech-container-howto.md)

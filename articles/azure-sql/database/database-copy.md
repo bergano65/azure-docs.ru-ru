@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sashan
 ms.reviewer: ''
 ms.date: 07/29/2020
-ms.openlocfilehash: 67f123472a5fd6060bc4e2de36fb7ac1ea46d356
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: a38816f00c0e05c3bde1760e39ba00d745f12a44
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92124401"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92460960"
 ---
 # <a name="copy-a-transactionally-consistent-copy-of-a-database-in-azure-sql-database"></a>Копирование транзакционно согласованной копии базы данных в базе данных SQL Azure
 
@@ -82,7 +82,7 @@ az sql db copy --dest-name "CopyOfMySampleDatabase" --dest-resource-group "myRes
 
 Войдите в базу данных master с помощью имени входа администратора сервера или имени входа, создавшего базу данных, которую необходимо скопировать. Для успешности копирования базы данных имена входа, не являющиеся администраторами сервера, должны быть членами `dbmanager` роли. Дополнительные сведения об именах для входа и подключении к серверу см. в статье [Проверка подлинности и авторизация в базе данных SQL: предоставление доступа](logins-create-manage.md).
 
-Начало копирования базы данных источника с помощью [создания базы данных... В качестве копии](https://docs.microsoft.com/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-current#copy-a-database) инструкции. Инструкция T-SQL продолжит выполнение до тех пор, пока не будет завершена операция копирования базы данных.
+Начало копирования базы данных источника с помощью [создания базы данных... В качестве копии](https://docs.microsoft.com/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-current&preserve-view=true#copy-a-database) инструкции. Инструкция T-SQL продолжит выполнение до тех пор, пока не будет завершена операция копирования базы данных.
 
 > [!NOTE]
 > Завершение выполнения инструкции T-SQL не приводит к завершению операции копирования базы данных. Чтобы завершить операцию, удалите целевую базу данных.
@@ -100,6 +100,21 @@ az sql db copy --dest-name "CopyOfMySampleDatabase" --dest-resource-group "myRes
    ```sql
    -- execute on the master database to start copying
    CREATE DATABASE Database2 AS COPY OF Database1;
+   ```
+
+### <a name="copy-to-an-elastic-pool"></a>Копирование в эластичный пул
+
+Войдите в базу данных master с помощью имени входа администратора сервера или имени входа, создавшего базу данных, которую необходимо скопировать. Для успешности копирования базы данных имена входа, не являющиеся администраторами сервера, должны быть членами `dbmanager` роли.
+
+Эта команда копирует Database1 в новую базу данных с именем Database2 в эластичном пуле с именем pool1. Операция копирования может занять некоторое время в зависимости от размера базы данных.
+
+Database1 может быть отдельной базой данных или в составе пула, но pool1 должен быть тем же уровнем служб, что и Database1. 
+
+   ```sql
+   -- execute on the master database to start copying
+   CREATE DATABASE "Database2"
+   AS COPY OF "Database1"
+   (SERVICE_OBJECTIVE = ELASTIC_POOL( name = "pool1" ) ) ;
    ```
 
 ### <a name="copy-to-a-different-server"></a>Копирование на другой сервер
@@ -167,7 +182,7 @@ CREATE DATABASE Database2 AS COPY OF server1.Database1;
 
 ## <a name="resolve-logins"></a>Разрешение имен для входа
 
-После того, как новая база данных будет подключена к сети на целевом сервере, используйте инструкцию [ALTER USER](https://docs.microsoft.com/sql/t-sql/statements/alter-user-transact-sql?view=azuresqldb-current) для повторного сопоставления пользователей из новой базы данных с именами входа на целевом сервере. Сведения о разрешении потерянных пользователей см. в разделе [Диагностика пользователей, утративших связь с учетной записью](https://docs.microsoft.com/sql/sql-server/failover-clusters/troubleshoot-orphaned-users-sql-server). См. также [руководство по управлению безопасностью базы данных SQL Azure после аварийного восстановления](active-geo-replication-security-configure.md).
+После того, как новая база данных будет подключена к сети на целевом сервере, используйте инструкцию [ALTER USER](https://docs.microsoft.com/sql/t-sql/statements/alter-user-transact-sql?view=azuresqldb-current&preserve-view=true) для повторного сопоставления пользователей из новой базы данных с именами входа на целевом сервере. Сведения о разрешении потерянных пользователей см. в разделе [Диагностика пользователей, утративших связь с учетной записью](https://docs.microsoft.com/sql/sql-server/failover-clusters/troubleshoot-orphaned-users-sql-server). См. также [руководство по управлению безопасностью базы данных SQL Azure после аварийного восстановления](active-geo-replication-security-configure.md).
 
 Все пользователи в новой базе данных получают такие же разрешения, как и в исходной базе данных. Пользователь, инициировавший копирование базы данных, станет владельцем новой базы данных. После завершения копирования и повторного сопоставления других пользователей только владелец базы данных может войти в новую базу данных.
 
@@ -193,7 +208,7 @@ CREATE DATABASE Database2 AS COPY OF server1.Database1;
 | 40570 |16 |Произошел сбой при копировании базы данных из-за внутренней ошибки. Удалите целевую базу данных и повторите попытку позднее. |
 | 40571 |16 |Произошел сбой при копировании базы данных из-за внутренней ошибки. Удалите целевую базу данных и повторите попытку позднее. |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения об именах входа см. в статьях [Управление именами входа](logins-create-manage.md) и [Управление безопасностью базы данных SQL Azure после аварийного восстановления](active-geo-replication-security-configure.md).
 * Сведения о том, как экспортировать базу данных, см. в разделе [Экспорт базы данных в BACPAC-](database-export.md)файл.

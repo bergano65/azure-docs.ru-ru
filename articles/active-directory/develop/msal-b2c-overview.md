@@ -13,12 +13,12 @@ ms.date: 06/05/2020
 ms.author: negoe
 ms.reviewer: nacanuma
 ms.custom: aaddev
-ms.openlocfilehash: 13b478e85278827258ea2fc25a0ee4298039fb1c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ab072fa53d3ecc3f856b6765acfb8c19da3ff298
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88119796"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92442258"
 ---
 # <a name="use-microsoft-authentication-library-for-javascript-to-work-with-azure-ad-b2c"></a>Использование библиотеки проверки подлинности Майкрософт для JavaScript для работы с Azure AD B2C
 
@@ -56,16 +56,22 @@ git clone https://github.com/Azure-Samples/active-directory-b2c-javascript-nodej
 
 ### <a name="step-3-configure-authentication"></a>Шаг 3. Настройка проверки подлинности
 
-1. Откройте файл `config.js` в примере.
+1. Откройте файл `config.json` в примере.
 
-2. Настройте пример с учетными данными приложения, полученными ранее при регистрации приложения. Измените следующие строки кода, заменив значения именами clientID, Host, tenantId и именем политики.
+2. Настройте пример с учетными данными приложения, полученными ранее при регистрации приложения. Измените следующие строки кода, заменив значения именем клиента, ИДЕНТИФИКАТОРом клиента и именем политики.
 
-```JavaScript
-const clientID = "<Application ID for your Node.js web API - found on Properties page in Azure portal e.g. 93733604-cc77-4a3c-a604-87084dd55348>";
-const b2cDomainHost = "<Domain of your B2C host eg. fabrikamb2c.b2clogin.com>";
-const tenantId = "<your-tenant-ID>.onmicrosoft.com"; // Alternatively, you can use your Directory (tenant) ID (GUID)
-const policyName = "<Name of your sign in / sign up policy, e.g. B2C_1_signupsignin1>";
-```
+    ```json
+         "credentials": {
+             "tenantName": "<your-tenant-name>",
+             "clientID": "<your-webapi-application-ID>"
+         },
+         "policies": {
+             "policyName": "B2C_1_signupsignin1"
+         },
+         "resource": {
+             "scope": ["demo.read"] 
+         },
+    ```
 
 Дополнительные сведения см. в этом [Node.js примере веб-API B2C](https://github.com/Azure-Samples/active-directory-b2c-javascript-nodejs-webapi).
 
@@ -205,10 +211,10 @@ git clone https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-
 
     Дополнительные сведения о кодах ошибок и обработке исключений см. в разделе [MSAL Error and Exception Codes](msal-handling-exceptions.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об этих Azure AD B2C концепциях:
 
-- [Маршруты пользователей](../../active-directory-b2c/tutorial-create-user-flows.md)
+- [Потоки пользователей](../../active-directory-b2c/tutorial-create-user-flows.md)
 - [Пользовательские политики](../../active-directory-b2c/custom-policy-get-started.md)
 - [Настройка UX](../../active-directory-b2c/custom-policy-configure-user-input.md)

@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/01/2019
 ms.author: juliako
-ms.openlocfilehash: c0d3ece75d15ae07091f613348389f845ec74ef7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9dae3b1adc1f7fecf6a34fc51d2a35bf4c98ea65
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89262521"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92425921"
 ---
 # <a name="access-the-azure-media-services-api-with-azure-ad-authentication"></a>Доступ к API служб мультимедиа Azure с помощью аутентификации Azure AD 
 
@@ -29,7 +29,7 @@ ms.locfileid: "89262521"
 
 API служб мультимедиа Azure — это REST API. Его можно использовать для выполнения операций с ресурсами мультимедиа с помощью REST API или доступных клиентских пакетов SDK. Службы мультимедиа Azure предлагают клиентский пакет SDK служб мультимедиа для Microsoft .NET. Чтобы получить разрешение для доступа к ресурсам служб мультимедиа и API служб мультимедиа, вы должны пройти аутентификацию. 
 
-Службы мультимедиа поддерживают [проверку подлинности на основе Azure Active Directory (Azure AD)](../../active-directory/fundamentals/active-directory-whatis.md). Служба REST служб мультимедиа Azure требует, чтобы у пользователя или приложения, выполняющего запросы REST API, была роль **участника** или **владельца** для доступа к ресурсам. Дополнительные сведения см. в статье [Начало работы с управлением доступом на основе ролей на портале Azure](../../role-based-access-control/overview.md).  
+Службы мультимедиа поддерживают [проверку подлинности на основе Azure Active Directory (Azure AD)](../../active-directory/fundamentals/active-directory-whatis.md). Служба REST служб мультимедиа Azure требует, чтобы у пользователя или приложения, выполняющего запросы REST API, была роль **участника** или **владельца** для доступа к ресурсам. Дополнительные сведения см. в статье [что такое управление доступом на основе ролей в Azure (Azure RBAC)](../../role-based-access-control/overview.md).  
 
 В этом документе приводятся общие сведения о том, как получить доступ к API служб мультимедиа с помощью интерфейсов REST API или API .NET.
 
@@ -153,9 +153,9 @@ API служб мультимедиа Azure — это REST API. Его можн
 
 - [Основы проверки подлинности в Azure AD](../../active-directory/develop/authentication-vs-authorization.md)
 - [Интеграция приложений с Azure Active Directory](../../active-directory/develop/quickstart-register-app.md)
-- [Управление доступом на основе ролей с помощью Azure PowerShell](../../role-based-access-control/role-assignments-powershell.md)
+- [Добавление и удаление назначений ролей Azure с помощью Azure PowerShell](../../role-based-access-control/role-assignments-powershell.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, как использовать [аутентификацию Azure AD для работы с API служб мультимедиа Azure](media-services-portal-get-started-with-aad.md) с помощью портала Azure.
 * Используйте аутентификацию Azure AD для [доступа к API служб мультимедиа Azure с помощью .NET](media-services-dotnet-get-started-with-aad.md).

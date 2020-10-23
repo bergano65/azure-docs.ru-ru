@@ -11,12 +11,12 @@ author: peterclu
 ms.date: 10/06/2020
 ms.topic: conceptual
 ms.custom: how-to, contperfq4, tracking-python, contperfq1
-ms.openlocfilehash: ef1e3c886cfd30db4c6a550d0ecabe7d41fab55c
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 3001b8829660f2891cb051269026bf7100a8f938
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92424999"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92461007"
 ---
 # <a name="secure-an-azure-machine-learning-workspace-with-virtual-networks"></a>Защита рабочей области Машинное обучение Azure с помощью виртуальных сетей
 
@@ -281,6 +281,13 @@ validate=False)
     ]
     }
     ```
+
+    Этот шаблон создает _закрытую конечную точку_ для доступа к сети из рабочей области в вашу учетную запись. На снимке экрана ниже показан пример этой частной конечной точки.
+
+    :::image type="content" source="media/how-to-secure-workspace-vnet/acr-private-endpoint.png" alt-text="Реестр контейнеров Azure для рабочей области":::
+
+    > [!IMPORTANT]
+    > Не удаляйте эту конечную точку. Если вы случайно удалите его, можно повторно применить шаблон на этом шаге, чтобы создать новый.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

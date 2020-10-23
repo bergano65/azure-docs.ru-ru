@@ -12,12 +12,12 @@ author: jaszymas
 ms.author: jaszymas
 ms.reviewer: vanto
 ms.date: 10/12/2020
-ms.openlocfilehash: 10728a5500d8ad36c006bac9176422c6afb9bf1a
-ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
+ms.openlocfilehash: 878fa9f576e50fb53e648d3bf39f98558d6e880a
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91945998"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92441119"
 ---
 # <a name="transparent-data-encryption-for-sql-database-sql-managed-instance-and-azure-synapse-analytics"></a>Прозрачное шифрование данных для базы данных SQL, SQL Управляемый экземпляр и Azure синапсе Analytics
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
@@ -32,7 +32,7 @@ ms.locfileid: "91945998"
 > Все вновь созданные базы данных SQL шифруются по умолчанию с помощью прозрачного шифрования данных, управляемого службой. Существующие базы данных SQL, созданные до 2017 мая, а базы данных SQL, созданные с помощью инструкции RESTORE, Георепликация и копия базы данных, по умолчанию не шифруются. Существующие базы данных SQL Управляемый экземпляр, созданные до февраля 2019, по умолчанию не шифруются. Базы данных SQL Управляемый экземпляр, созданные с помощью инструкции RESTORE, наследуют состояние шифрования от источника.
 
 > [!NOTE]
-> TDE нельзя использовать для шифрования базы данных **master** в базе данных SQL Azure и azure SQL управляемый экземпляр. База данных **master** содержит объекты, которые необходимы для выполнения операций TDE для пользовательских баз данных.
+> TDE нельзя использовать для шифрования системных баз данных, таких как база данных **master** , в базе данных SQL Azure и azure SQL управляемый экземпляр. База данных **master** содержит объекты, которые необходимы для выполнения операций TDE для пользовательских баз данных.
 
 ## <a name="service-managed-transparent-data-encryption"></a>Управляемое службой прозрачное шифрование данных
 
@@ -150,7 +150,7 @@ ms.locfileid: "91945998"
 |[Получение конфигурации TDE](https://docs.microsoft.com/rest/api/sql/transparentdataencryptions/get)|Получает конфигурацию прозрачного шифрования данных для базы данных.|
 |[Список результатов TDE, упорядоченный по конфигурации](https://docs.microsoft.com/rest/api/sql/transparentdataencryptionactivities/listbyconfiguration)|Получает результат шифрования для базы данных.|
 
-## <a name="see-also"></a>См. также:
+## <a name="see-also"></a>См. также
 
 - SQL Server на виртуальной машине Azure также может использовать асимметричный ключ из Key Vault. Этапы настройки в этом случае будут отличаться от настройки асимметричного ключа, сохраненного в Базе данных SQL и Управляемом экземпляре Базы данных SQL. Дополнительные сведения см. в статье о [расширенном управлении ключами с помощью Azure Key Vault (SQL Server)](/sql/relational-databases/security/encryption/extensible-key-management-using-azure-key-vault-sql-server).
 - Общее описание TDE см. в разделе [прозрачное шифрование данных](/sql/relational-databases/security/encryption/transparent-data-encryption).

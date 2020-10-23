@@ -6,15 +6,15 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/04/2017
-ms.openlocfilehash: 10851754bda73fc769e613153582e491265ebb71
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: db83e24931ec91449ac8c08bf4ce476e0f527b26
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85963246"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92461351"
 ---
 # <a name="collect-performance-counters-for-linux-applications-in-azure-monitor"></a>Сбор данных счетчиков производительности приложений Linux в Azure Monitor 
-[!INCLUDE [log-analytics-agent-note](../../../includes/log-analytics-agent-note.md)]
+
 В этой статье приведены подробные сведения о том, как в [агенте Log Analytics для Linux](https://github.com/Microsoft/OMS-Agent-for-Linux) настроить сбор данных о производительности определенных приложений в Azure Monitor.  В статье используются следующие приложения:  
 
 - [MySQL](#mysql)
@@ -41,7 +41,7 @@ ms.locfileid: "85963246"
 
 Параметры файла проверки подлинности описаны в следующей таблице.
 
-| Свойство | Описание |
+| Свойство. | Описание |
 |:--|:--|
 | Порт | Представляет текущий порт, который прослушивает экземпляр MySQL. Порт 0 означает, что для экземпляра по умолчанию используются следующие свойства. |
 | адрес привязки;| Текущий адрес привязки MySQL. |
