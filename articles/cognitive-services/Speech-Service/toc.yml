@@ -401,6 +401,8 @@
                       href: how-to-custom-commands-send-activity-to-client.md
                     - name: Настройка конечных веб-точек
                       href: how-to-custom-commands-setup-web-endpoints.md
+                    - name: Экспорт приложения Пользовательских голосовых команд в виде навыка
+                      href: how-to-custom-commands-integrate-remote-skills.md
                 - name: Развертывание
                   items:
                     - name: Непрерывное развертывание с помощью Azure DevOps

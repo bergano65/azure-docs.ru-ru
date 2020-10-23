@@ -1,35 +1,37 @@
 ### YamlMime:Landing
-title: Документация по Azure DevOps Starter
-summary: Azure DevOps Starter представляет собой упрощенный интерфейс, к которому вы подключаете существующий код и репозиторий Git. Либо можно выбрать один из примеров приложений, чтобы создать конвейер непрерывной интеграции (CI) и непрерывной поставки (CD) в Azure.
+title: Документация по развертыванию DevOps Starter в Azure
+summary: DevOps Starter представляет собой упрощенный интерфейс, к которому вы подключаете существующий код и репозиторий Git. Вы также можете выбрать один из примеров приложений, чтобы создать рабочий процесс или конвейер непрерывной интеграции (CI) и непрерывной поставки (CD) в Azure. DevOps Starter теперь поддерживает создание рабочих процессов GitHub Actions.
 metadata:
-  title: Документация по Azure DevOps Starter
+  title: Документация по DevOps Starter
   description: Добавьте существующий код и репозиторий Git либо выберите пример приложения, чтобы создать конвейер непрерывной интеграции (CI) и непрерывной поставки (CD) в Azure.
   ms.service: devops-project
   ms.topic: landing-page
   author: 
   ms.author: 
   ms.date: 03/24/2020
-  ms.openlocfilehash: 62e95192f25487be60ed0334054f200447fc64cb
-  ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+  ms.openlocfilehash: 7521a5a57b6dd1c090fbc880033fc5fc0707419b
+  ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 10/09/2020
-  ms.locfileid: "91855945"
+  ms.lasthandoff: 10/21/2020
+  ms.locfileid: "92330688"
 landingContent:
-- title: Сведения об Azure DevOps Starter
+- title: Сведения о DevOps Starter
   linkLists:
   - linkListType: overview
     links:
-    - text: Что собой представляет Azure DevOps Starter?
+    - text: Что собой представляет DevOps Starter?
       url: overview.md
   - linkListType: video
     links:
-    - text: Видео о создании конвейера CI/CD с использованием Azure DevOps Starter (8:53)
+    - text: Видео о создании конвейера CI/CD с помощью DevOps Starter и Azure DevOps(8:53)
       url: https://channel9.msdn.com/Events/Connect/2017/T174/player/
-- title: Создание конвейера CI/CD
+- title: Настройка CI/CD
   linkLists:
   - linkListType: quickstart
     links:
+    - text: Использование Node.js с GitHub Actions
+      url: /azure/devops-project/devops-starter-gh-nodejs
     - text: .NET
       url: ./azure-devops-project-aspnet-core.md
     - text: Node.js
@@ -44,10 +46,12 @@ landingContent:
       url: ./azure-devops-project-ruby.md
     - text: Go
       url: ./azure-devops-project-go.md
-- title: Создание конвейеров выпуска
+- title: Развернуть в Azure
   linkLists:
   - linkListType: tutorial
     links:
+    - text: Развертывание приложения в решении "Веб-приложения Azure" с помощью GitHub Actions
+      url: devops-starter-gh-web-app.md
     - text: Использование собственного кода с помощью GitHub
       url: azure-devops-project-vms.md
     - text: Развертывание приложения ASP.NET на Виртуальных машинах Azure

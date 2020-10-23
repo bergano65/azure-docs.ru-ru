@@ -1,0 +1,71 @@
+### YamlMime:Landing
+title: Документация по управлению корпоративными пользователями — Azure AD
+summary: Azure AD предоставляет службы управления пользователями, например для создания групп и лицензий, которые помогают быстро справляться с основными задачами управления пользователями. Назначайте лицензии, назначайте группам или отдельным пользователям доступ к приложениям, а также добавляйте доменные имена и управляйте ими.
+metadata:
+  title: Документация по пользователям, группам, лицензиям и доменам Azure Active Directory
+  description: Узнайте, как использовать группы, доменные имена и лицензии для управления аутентификацией пользователей в организации Azure AD.
+  services: active-directory
+  ms.service: active-directory
+  ms.subservice: enterprise-users
+  manager: daveba
+  ms.topic: landing-page
+  ms.date: 10/19/2020
+  author: curtand
+  ms.author: curtand
+  ms.openlocfilehash: 3918c28d9657b077eefd5226be656ab6ad5a7dbf
+  ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 10/22/2020
+  ms.locfileid: "92372795"
+landingContent:
+- title: Сведения об управлении корпоративными пользователями
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Пользователи, группы, домены и лицензии
+      url: directory-overview-user-model.md
+    - text: Обзор настраиваемых ролей
+      url: ../roles/custom-overview.md?context=azure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
+  - linkListType: concept
+    links:
+    - text: Независимость организации в Azure AD
+      url: licensing-directory-independence.md
+    - text: Управление доступом с помощью групп
+      url: ../fundamentals/active-directory-manage-groups.md?context=azure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
+- title: Начало работы
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Добавление пользователей
+      url: ../fundamentals/add-users-azure-active-directory.md?context=azure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
+    - text: Настройка политики истечения срока действия для групп
+      url: groups-quickstart-expiration.md
+    - text: Назначение лицензий пользователям
+      url: ../fundamentals/license-users-groups.md?context=azure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
+- title: Управление доменными именами в Azure AD
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Добавление имени личного домена
+      url: ../fundamentals/add-custom-domain.md?context=azure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
+    - text: Управление именами личных доменов
+      url: domains-manage.md
+- title: Управление группами
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Создание динамической группы
+      url: groups-create-rule.md
+    - text: Параметры групп в PowerShell
+      url: groups-settings-v2-cmdlets.md
+    - text: Настройка политики именования для групп
+      url: groups-naming-policy.md
+- title: Добавление доменов
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Добавление имени личного домена
+      url: ../fundamentals/add-custom-domain.md?context=azure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
+    - text: Управление именами личных доменов
+      url: domains-manage.md

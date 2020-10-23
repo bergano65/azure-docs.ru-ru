@@ -1,0 +1,128 @@
+- name: "Документация по ролям Azure\_AD"
+  href: index.yml
+- name: Обзор
+  items:
+    - name: Роли Azure AD
+      href: custom-overview.md
+- name: Краткие руководства
+  items:
+    - name: Создание неограниченного количества регистраций приложений
+      href: quickstart-app-registration-limits.md
+- name: Учебники
+  items:
+    - name: Создание динамической группы
+      href: /azure/active-directory/enterprise-users/users-revoke-access.md?context=azure%2factive-directory%2froles%2fcontext%2fugr-context
+- name: Основные понятия
+  expanded: true
+  items:
+    - name: "Делегирование ролей администратора Azure\_AD"
+      href: concept-delegation.md
+    - name: Сравнение разрешений пользователей по умолчанию
+      href: /azure/active-directory/fundamentals/users-default-permissions.md?context=azure%2factive-directory%2froles%2fcontext%2fugr-context
+    - name: "Сравнение ролей в Azure и Azure\_AD"
+      href: ../../role-based-access-control/rbac-and-directory-admin-roles.md?context=azure%2factive-directory%2froles%2fcontext%2fugr-context
+    - name: "Общие сведения об административных единицах в Azure\_AD"
+      href: administrative-units.md
+- name: Практические руководства
+  expanded: true
+  items:
+    - name: Пользователи и роли
+      items:
+        - name: Назначение пользователям ролей администратора
+          href: /azure/active-directory/fundamentals/active-directory-users-assign-role-azure-portal.md?context=azure%2factive-directory%2froles%2fcontext%2fugr-context
+        - name: Отзыв доступа пользователя
+          href: /azure/active-directory/enterprise-users/users-revoke-access.md?context=azure%2factive-directory%2froles%2fcontext%2fugr-context
+        - name: Назначение роли гостевому пользователю
+          href: /azure/active-directory/b2b/add-guest-to-role?context=azure/active-directory/roles/context/ugr-context
+        - name: Ограничение доступа гостевых пользователей
+          href: /azure/active-directory/enterprise-users/users-restrict-guest-permissions.md?context=azure%2factive-directory%2froles%2fcontext%2fugr-context
+        - name: Динамические группы и гости
+          href: /azure/active-directory/b2b/use-dynamic-groups?context=azure/active-directory/roles/context/ugr-context
+    - name: Роли и разрешения
+      expanded: true
+      items:
+        - name: Роли и разрешения
+          href: permissions-reference.md
+        - name: Просмотр и назначение ролей
+          href: manage-roles-portal.md
+        - name: "Делегирование\_— Мой персонал"
+          href: my-staff-configure.md
+    - name: Пользовательские роли
+      expanded: true
+      items:
+        - name: Обзор настраиваемых ролей
+          href: custom-overview.md
+        - name: Создание настраиваемой роли
+          href: custom-create.md
+        - name: Просмотр назначений пользовательских ролей
+          href: custom-view-assignments.md
+        - name: Назначение настраиваемых ролей на портале Azure
+          href: /azure/active-directory/fundamentals/active-directory-users-assign-role-azure-portal.md?context=azure%2factive-directory%2froles%2fcontext%2fugr-context
+        - name: Назначение настраиваемых ролей в PowerShell
+          href: custom-assign-powershell.md
+        - name: Назначение настраиваемых ролей для корпоративных приложений
+          href: custom-enterprise-apps.md
+        - name: Разрешения настраиваемых ролей
+          items:
+            - name: Разрешения для регистрации приложений
+              href: custom-available-permissions.md
+            - name: Разрешения корпоративных приложений
+              href: custom-enterprise-app-permissions.md
+            - name: Разрешения на предоставление согласия для приложения
+              href: custom-consent-permissions.md
+        - name: Делегирование роли администратора приложений
+          href: delegate-app-roles.md
+    - name: Назначение ролей группам
+      items:
+        - name: Назначение ролей на основе групп (предварительная версия)
+          href: groups-concept.md
+        - name: Создание группы с назначением роли
+          href: groups-create-eligible.md
+        - name: Назначение ролей группе
+          href: groups-assign-role.md
+        - name: Удаление назначений ролей из группы
+          href: groups-remove-assignment.md
+        - name: Просмотр назначений ролей в группе
+          href: groups-view-assignments.md
+        - name: Назначение группы как соответствующей для роли в PIM
+          href: groups-pim-eligible.md
+        - name: Часто задаваемые вопросы и устранение неполадок
+          href: groups-faq-troubleshooting.md
+    - name: Защита ролей
+      items:
+        - name: Планирование безопасности ролей
+          href: security-planning.md
+        - name: Создание учетных записей для экстренных ситуаций
+          href: security-emergency-access.md
+    - name: Административные единицы
+      items:
+        - name: Общие сведения об административных единицах
+          href: administrative-units.md
+        - name: Добавление и управление
+          href: admin-units-manage.md
+        - name: Добавление пользователей и управление ими
+          href: admin-units-add-manage-users.md
+        - name: Добавление групп и управление ими
+          href: admin-units-add-manage-groups.md
+        - name: Назначение роли с областью действия
+          href: admin-units-assign-roles.md
+        - name: Часто задаваемые вопросы и устранение неполадок
+          href: admin-units-faq-troubleshoot.md
+    - name: Диагностика
+      items:
+        - name: "Получение поддержки для Azure\_AD"
+          href: /azure/active-directory/fundamentals/active-directory-troubleshooting-support-howto.md?context=azure%2factive-directory%2froles%2fcontext%2fugr-context
+- name: Справочник
+  items:
+    - name: Минимальные привилегии ролей для выполнения заданий
+      href: delegate-by-task.md
+    - name: "Документация по ролям Microsoft\_365"
+      href: m365-workload-docs.md
+    - name: API Graph
+      href: /graph/api/resources/azure-ad-overview?view=graph-rest-1.0
+    - name: "Интерфейс командной строки Azure\_AD"
+      href: /cli/azure/ad
+    - name: "Azure\_AD PowerShell для Graph"
+      href: /powershell/azure/active-directory/install-adv2?view=azureadps-2.0
+    - name: "Ограничения службы Azure\_AD"
+      href: /azure/active-directory/fundamentals/directory-service-limits-restrictions.md?context=azure%2factive-directory%2froles%2fcontext%2fugr-context

@@ -66,8 +66,16 @@
       items:
         - name: Мониторинг с помощью Grafana и Kibana
           href: monitor-grafana-kibana.md
-        - name: Отправка метрик и журналов
-          href: upload-metrics-and-logs-to-azure-monitor.md
+        - name: Отправка в Azure Monitor
+          items:
+            - name: Необходимые условия для отправки данных
+              href: upload-metrics-and-logs-to-azure-monitor.md
+            - name: Отправка журналов
+              href: upload-logs.md
+            - name: Отправка метрик
+              href: upload-metrics.md
+            - name: Отправка данных об использовании
+              href: upload-usage-data.md
         - name: Экземпляры базы данных инвентаризации
           href: view-arc-data-services-inventory-in-azure-portal.md
         - name: Получение имени пользователя и пароля контроллера данных

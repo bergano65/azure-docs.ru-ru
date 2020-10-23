@@ -139,9 +139,9 @@
           href: data-factory-hadoop-streaming-activity.md
         - name: Действие HDInsight Spark
           href: data-factory-spark.md
-        - name: Действие выполнения пакета в службе Машинного обучения
+        - name: Действие выполнения пакета в Студии машинного обучения Azure (классическая)
           href: data-factory-azure-ml-batch-execution-activity.md
-        - name: Действие обновления ресурса в службе Машинного обучения
+        - name: Действие обновления ресурса в Студии машинного обучения Azure (классическая)
           href: data-factory-azure-ml-update-resource-activity.md
         - name: Действие хранимой процедуры
           href: data-factory-stored-proc-activity.md

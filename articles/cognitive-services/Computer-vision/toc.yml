@@ -173,14 +173,14 @@
       href: 'https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest#az_cognitiveservices_list'
     - name: Azure PowerShell
       href: 'https://aka.ms/azure-powershell-cognitiveservices'
+    - name: "API \"Компьютерное зрение\" версии\_3.2 (предварительная версия)"
+      href: 'https://westus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2-preview-1/operations/5d986960601faab4bf452005'
     - name: "API \"Компьютерное зрение\" версии\_3.1"
       href: 'https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/5d986960601faab4bf452005'
     - name: "API \"Компьютерное зрение\" версии\_3.0"
       href: 'https://aka.ms/computer-vision-v3-ref'
     - name: "API \"Компьютерное зрение\" версии\_2.1"
       href: 'https://westus.dev.cognitive.microsoft.com/docs/services/5cd27ec07268f6c679a3e641'
-    - name: "API Компьютерного зрения версии\_2.0"
-      href: 'https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44'
     - name: "API Компьютерного зрения версии\_1.0"
       href: 'https://westus.dev.cognitive.microsoft.com/docs/services/56f91f2d778daf23d8ec6739'
     - name: Пакеты SDK
@@ -219,5 +219,5 @@
       href: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
     - name: Соответствие нормативным требованиям
       href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
-    - name: Обновление с версии 2.0 или 2.1 до версии 3.0
+    - name: "Обновление Read версии\_2.x до версии\_3.x"
       href: upgrade-api-versions.md

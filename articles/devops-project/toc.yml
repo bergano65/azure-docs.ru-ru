@@ -1,53 +1,63 @@
-- name: Документация по Azure DevOps Starter
+- name: Документация по DevOps Starter
   href: index.yml
 - name: Обзор
   items:
-    - name: Что собой представляет Azure DevOps Starter?
+    - name: Что собой представляет DevOps Starter?
       href: overview.md
 - name: Краткие руководства
   expanded: true
   items:
-    - name: .NET
-      href: ./azure-devops-project-aspnet-core.md
-      maintainContext: true
-    - name: Node.js
-      href: ./azure-devops-project-nodejs.md
-      maintainContext: true
-    - name: Java
-      href: ./azure-devops-project-java.md
-      maintainContext: true
-    - name: Python
-      href: ./azure-devops-project-python.md
-      maintainContext: true
-    - name: PHP
-      href: ./azure-devops-project-php.md
-      maintainContext: true
-    - name: Ruby
-      href: ./azure-devops-project-ruby.md
-      maintainContext: true
-    - name: Go
-      href: ./azure-devops-project-go.md
-      maintainContext: true
+    - name: Действия GitHub
+      items:
+        - name: Node.js
+          href: ./devops-starter-gh-nodejs.md
+          maintainContext: true
+    - name: Azure DevOps
+      items:
+        - name: .NET
+          href: ./azure-devops-project-aspnet-core.md
+          maintainContext: true
+        - name: Node.js
+          href: ./azure-devops-project-nodejs.md
+          maintainContext: true
+        - name: Java
+          href: ./azure-devops-project-java.md
+          maintainContext: true
+        - name: Python
+          href: ./azure-devops-project-python.md
+          maintainContext: true
+        - name: PHP
+          href: ./azure-devops-project-php.md
+          maintainContext: true
+        - name: Ruby
+          href: ./azure-devops-project-ruby.md
+          maintainContext: true
+        - name: Go
+          href: ./azure-devops-project-go.md
+          maintainContext: true
 - name: Учебники
   items:
-    - name: "1.\_GitHub и DevOps Starter"
+    - name: Развертывание в решении "Веб-приложения Azure" с помощью GitHub Actions
+      href: devops-starter-gh-web-app.md
+      maintainContext: true
+    - name: Использование BYOC с GitHub
       href: azure-devops-project-github.md
       maintainContext: true
-    - name: "2.\_Развертывание на виртуальных машинах."
+    - name: "Развертывание на виртуальных машинах с помощью Azure\_DevOps"
       href: azure-devops-project-vms.md
       maintainContext: true
-    - name: "3.\_Развертывание в Базе данных SQL Azure"
+    - name: Развертывание в Базе данных SQL Azure с помощью Azure DevOps
       href: azure-devops-project-sql-database.md
       maintainContext: true
-    - name: "4.\_Развертывание в AKS"
+    - name: "Развертывание в AKS с помощью Azure\_DevOps"
       href: azure-devops-project-aks.md
       maintainContext: true
-    - name: "5.\_Развертывание в Azure Service Fabric"
+    - name: Развертывание в Azure Service Fabric с помощью Azure DevOps
       href: azure-devops-project-service-fabric.md
       maintainContext: true
-    - name: "6.\_Развертывание в Azure Cosmos\_DB"
+    - name: Развертывание в Azure Cosmos DB с помощью Azure DevOps
       href: azure-devops-project-cosmos-db.md
       maintainContext: true
-    - name: "7.\_Развертывание в решении \"Функции Azure\""
+    - name: Развертывание в решении "Функции Azure" с помощью Azure DevOps
       href: azure-devops-project-functions.md
       maintainContext: true
