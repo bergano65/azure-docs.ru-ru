@@ -10,12 +10,12 @@ ms.date: 09/21/2020
 ms.author: tamram
 ms.subservice: common
 ms.custom: devx-track-csharp
-ms.openlocfilehash: a0ce2c17586e5437047ff27cb67577b0480a83af
-ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
+ms.openlocfilehash: 20ebfc571d72b79b61a61fb633feb63c4cc58fdd
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2020
-ms.locfileid: "91939347"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92488815"
 ---
 # <a name="acquire-a-token-from-azure-ad-for-authorizing-requests-from-a-client-application"></a>Получение маркера из Azure AD для авторизации запросов из клиентского приложения
 
@@ -81,7 +81,7 @@ ms.locfileid: "91939347"
 
 ### <a name="enable-implicit-grant-flow"></a>Включить неявный поток предоставления разрешений
 
-Затем настройте неявный поток предоставления для приложения. Выполните следующие действия.
+Затем настройте неявный поток предоставления для приложения. Выполните указанные ниже действия:
 
 1. Перейдите к регистрации приложения в портал Azure.
 1. В разделе **Управление** выберите параметр **Проверка подлинности** .
@@ -288,8 +288,8 @@ public async Task<IActionResult> Blob()
 https://<storage-account>.blob.core.windows.net/<container>/Blob1.txt
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Платформа удостоверений Майкрософт](https://docs.microsoft.com/azure/active-directory/develop/)
+- [Платформа удостоверений Майкрософт](/azure/active-directory/develop/)
 - [Управление правами доступа к данным хранилища с помощью Azure RBAC](storage-auth-aad-rbac.md)
 - [Проверка подлинности доступа к BLOB-объектам и очередям с Azure Active Directory и управляемыми удостоверениями для ресурсов Azure](storage-auth-aad-msi.md)

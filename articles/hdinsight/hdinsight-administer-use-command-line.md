@@ -8,24 +8,24 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 02/26/2020
-ms.openlocfilehash: 2c6495454e5ba2449d4b3c74a096681f74610813
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 38bf49ba39420aa1edffa13540d61292e23d654b
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84699368"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92490379"
 ---
 # <a name="manage-azure-hdinsight-clusters-using-azure-cli"></a>Управление кластерами Azure HDInsight с помощью Azure CLI
 
 [!INCLUDE [selector](../../includes/hdinsight-portal-management-selector.md)]
 
-Узнайте, как использовать [Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest) для управления кластерами Azure HDInsight. Azure CLI — это кроссплатформенный интерфейс командной строки от Майкрософт для управления ресурсами Azure.
+Узнайте, как использовать [Azure CLI](/cli/azure/) для управления кластерами Azure HDInsight. Azure CLI — это кроссплатформенный интерфейс командной строки от Майкрософт для управления ресурсами Azure.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Azure CLI. Если вы еще не установили Azure CLI, обратитесь к статье [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli).
+* Azure CLI. Если вы еще не установили Azure CLI, обратитесь к статье [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
 
 * Кластер Apache Hadoop в HDInsight. Ознакомьтесь со статьей [Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](hadoop/apache-hadoop-linux-tutorial-get-started.md).
 
@@ -42,7 +42,7 @@ az login
 
 ## <a name="list-clusters"></a>список кластеров
 
-Список кластеров можно получить с помощью команды [AZ hdinsight List](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-list) . Измените приведенные ниже команды, заменив `RESOURCE_GROUP_NAME` именем своей группы ресурсов, а затем введите команды:
+Список кластеров можно получить с помощью команды [AZ hdinsight List](/cli/azure/hdinsight#az-hdinsight-list) . Измените приведенные ниже команды, заменив `RESOURCE_GROUP_NAME` именем своей группы ресурсов, а затем введите команды:
 
 ```azurecli-interactive
 # List all clusters in the current subscription
@@ -60,7 +60,7 @@ az hdinsight list --resource-group RESOURCE_GROUP_NAME --query "[].{clusterName:
 
 ## <a name="show-cluster"></a>Отображение кластеров
 
-Чтобы отобразить сведения об указанном кластере, используйте команду [AZ hdinsight демонстрация](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-show) . Измените приведенную ниже команду, заменив `RESOURCE_GROUP_NAME` и `CLUSTER_NAME` соответствующей информацией, а затем введите команду:
+Чтобы отобразить сведения об указанном кластере, используйте команду [AZ hdinsight демонстрация](/cli/azure/hdinsight#az-hdinsight-show) . Измените приведенную ниже команду, заменив `RESOURCE_GROUP_NAME` и `CLUSTER_NAME` соответствующей информацией, а затем введите команду:
 
 ```azurecli-interactive
 az hdinsight show --resource-group RESOURCE_GROUP_NAME --name CLUSTER_NAME
@@ -68,7 +68,7 @@ az hdinsight show --resource-group RESOURCE_GROUP_NAME --name CLUSTER_NAME
 
 ## <a name="delete-clusters"></a>Удаление кластеров
 
-Чтобы удалить указанный кластер, используйте команду [AZ hdinsight Delete](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-delete) . Измените приведенную ниже команду, заменив `RESOURCE_GROUP_NAME` и `CLUSTER_NAME` соответствующей информацией, а затем введите команду:
+Чтобы удалить указанный кластер, используйте команду [AZ hdinsight Delete](/cli/azure/hdinsight#az-hdinsight-delete) . Измените приведенную ниже команду, заменив `RESOURCE_GROUP_NAME` и `CLUSTER_NAME` соответствующей информацией, а затем введите команду:
 
 ```azurecli-interactive
 az hdinsight delete --resource-group RESOURCE_GROUP_NAME --name CLUSTER_NAME
@@ -82,7 +82,7 @@ az group delete --name RESOURCE_GROUP_NAME
 
 ## <a name="scale-clusters"></a>Масштабирование кластеров
 
-Чтобы изменить размер указанного кластера HDInsight до указанного размера, используйте команду [AZ hdinsight изменить](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-resize) размер. Измените приведенную ниже команду, заменив `RESOURCE_GROUP_NAME` и `CLUSTER_NAME` соответствующими данными. Замените `WORKERNODE_COUNT` требуемым числом рабочих узлов для кластера. Дополнительные сведения о масштабировании кластеров см. в статье [масштабирование кластеров HDInsight](./hdinsight-scaling-best-practices.md). Введите команду:
+Чтобы изменить размер указанного кластера HDInsight до указанного размера, используйте команду [AZ hdinsight изменить](/cli/azure/hdinsight#az-hdinsight-resize) размер. Измените приведенную ниже команду, заменив `RESOURCE_GROUP_NAME` и `CLUSTER_NAME` соответствующими данными. Замените `WORKERNODE_COUNT` требуемым числом рабочих узлов для кластера. Дополнительные сведения о масштабировании кластеров см. в статье [масштабирование кластеров HDInsight](./hdinsight-scaling-best-practices.md). Введите команду:
 
 ```azurecli-interactive
 az hdinsight resize --resource-group RESOURCE_GROUP_NAME --name CLUSTER_NAME --workernode-count WORKERNODE_COUNT
@@ -95,4 +95,4 @@ az hdinsight resize --resource-group RESOURCE_GROUP_NAME --name CLUSTER_NAME --w
 * [Управление кластерами Apache Hadoop в HDInsight с помощью портала Azure](hdinsight-administer-use-portal-linux.md)
 * [Управление кластерами Hadoop в HDInsight с помощью Azure PowerShell](hdinsight-administer-use-powershell.md)
 * [Приступая к работе с Azure HDInsight](hadoop/apache-hadoop-linux-tutorial-get-started.md)
-* [Приступая к работе с Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest)
+* [Приступая к работе с Azure CLI](/cli/azure/get-started-with-azure-cli)

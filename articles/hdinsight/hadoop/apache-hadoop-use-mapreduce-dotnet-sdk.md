@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive, devx-track-csharp
 ms.date: 01/15/2020
-ms.openlocfilehash: 3de7101eb998d0f9b3b57afba6d19595738cbb63
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ddb14c321962c65d09be420d8da15f1e547aa282
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89020411"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92489546"
 ---
 # <a name="run-mapreduce-jobs-using-hdinsight-net-sdk"></a>Выполнение заданий MapReduce с использованием пакета SDK для HDInsight .NET
 
@@ -174,5 +174,5 @@ ms.locfileid: "89020411"
 * Сведения об отправке задания Hive см. в статье [Выполнение запросов Apache Hive с использованием пакета SDK .NET для HDInsight](apache-hadoop-use-hive-dotnet-sdk.md).
 * Сведения о создании кластеров HDInsight см. в статье [Установка кластеров в HDInsight с использованием Hadoop, Spark, Kafka и других технологий](../hdinsight-hadoop-provision-linux-clusters.md).
 * Сведения об управлении кластерами в HDInsight см. в статье [Управление кластерами Apache Hadoop в HDInsight с помощью портала Azure](../hdinsight-administer-use-portal-linux.md).
-* Подробные сведения о пакете SDK для HDInsight .NET см. в [соответствующей справке](https://docs.microsoft.com/dotnet/api/overview/azure/hdinsight).
+* Подробные сведения о пакете SDK для HDInsight .NET см. в [соответствующей справке](/dotnet/api/overview/azure/hdinsight).
 * Сведения о неинтерактивной проверке подлинности в Azure см. в статье [Создание приложений .NET HDInsight с неинтерактивной проверкой подлинности](../hdinsight-create-non-interactive-authentication-dotnet-applications.md).

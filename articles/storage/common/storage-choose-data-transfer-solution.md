@@ -8,12 +8,12 @@ ms.subservice: blobs
 ms.topic: conceptual
 ms.date: 09/25/2020
 ms.author: alkohli
-ms.openlocfilehash: 0e0bcde44ba28751761b7db3f6d6fcae8f7bd49c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 08f677c23cce6eb840a1caee15dcddf6c8311517
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91400556"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92488696"
 ---
 # <a name="choose-an-azure-solution-for-data-transfer"></a>Выбор решения Azure для передачи данных
 
@@ -71,15 +71,15 @@ ms.locfileid: "91400556"
 ## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Introduction to Microsoft Azure Storage Explorer](https://azure.microsoft.com/resources/videos/introduction-to-microsoft-azure-storage-explorer/) (Общие сведения об Обозревателе службы хранилища Azure).
-- [Общие сведения об AzCopy](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-v10).
+- [Общие сведения об AzCopy](/azure/storage/common/storage-use-azcopy-v10).
 - [Краткое руководство. Отправка, скачивание и составление списка больших двоичных объектов с помощью PowerShell](../blobs/storage-quickstart-blobs-powershell.md)
 - [Краткое руководство. Создание, скачивание и составление списка больших двоичных объектов с помощью Azure CLI](../blobs/storage-quickstart-blobs-cli.md)
 - Кроме того, вы узнаете о таких возможностях, как:
 
-    - [Azure Data Box, Диск Azure Data Box и Azure Data Box Heavy для передачи данных вне сети](https://docs.microsoft.com/azure/databox/);
-    - [Шлюз Azure Data Box и Azure Stack границы для передачи в сети](https://docs.microsoft.com/azure/databox-online/).
-- [Сведения о Фабрике данных Azure](https://docs.microsoft.com/azure/data-factory/copy-activity-overview).
+    - [Azure Data Box, Диск Azure Data Box и Azure Data Box Heavy для передачи данных вне сети](/azure/databox/);
+    - [Шлюз Azure Data Box и Azure Stack границы для передачи в сети](/azure/databox-online/).
+- [Сведения о Фабрике данных Azure](/azure/data-factory/copy-activity-overview).
 - Использование интерфейсов REST API для передачи данных:
 
-    - [в .NET](https://docs.microsoft.com/dotnet/api/overview/azure/storage);
-    - [В Java](https://docs.microsoft.com/java/api/overview/azure/storage)
+    - [в .NET](/dotnet/api/overview/azure/storage);
+    - [В Java](/java/api/overview/azure/storage)

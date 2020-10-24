@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,seoapr2020
 ms.topic: conceptual
 ms.date: 04/29/2020
-ms.openlocfilehash: c8862398d5c79335e4ed59f4ca42df9abd58965e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1b3c694b4d6134f30d04ba8bafee9a6ffabdd959
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91856591"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92488118"
 ---
 # <a name="information-about-using-hdinsight-on-linux"></a>Сведения об использовании HDInsight в Linux
 
@@ -25,7 +25,7 @@ ms.locfileid: "91856591"
 
 * [cURL](https://curl.haxx.se/) — используется для взаимодействия с веб-службами.
 * **jq** — обработчик командной строки JSON.  См. раздел [https://stedolan.github.io/jq/](https://stedolan.github.io/jq/).
-* [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) используется для удаленного управления службами Azure.
+* [Azure CLI](/cli/azure/install-azure-cli) используется для удаленного управления службами Azure.
 * **Клиент SSH**. Дополнительные сведения см. в руководстве по [подключению к HDInsight (Apache Hadoop) с помощью SSH](hdinsight-hadoop-linux-use-ssh-unix.md).
 
 ## <a name="users"></a>Пользователи
@@ -191,7 +191,7 @@ curl -u admin -G "https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTER
 
 Если вы используете __хранилище BLOB-объектов Azure__, ознакомьтесь со следующими ссылками, чтобы получить доступ к данным.
 
-* [Azure CLI.](https://docs.microsoft.com/cli/azure/install-az-cli2) это набор команд интерфейса командной строки для работы с Azure. После установки используйте команду `az storage` для получения информации по использованию хранилища, а команду `az storage blob` — для получения информации о больших двоичных объектах.
+* [Azure CLI.](/cli/azure/install-az-cli2) это набор команд интерфейса командной строки для работы с Azure. После установки используйте команду `az storage` для получения информации по использованию хранилища, а команду `az storage blob` — для получения информации о больших двоичных объектах.
 * [blobxfer.py](https://github.com/Azure/blobxfer): сценарий Python для работы с большими двоичными объектами в службе хранилища Azure.
 * Различные пакеты SDK:
 

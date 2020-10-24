@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 10/13/2020
 ms.author: mjbrown
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 1c1d96c373103e0a89a9553ce8dab6ce5cce23c7
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: d18cf248aa94e23abfa6e2b9467bb1167a32a6f1
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92279698"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92490532"
 ---
 # <a name="configure-access-to-azure-cosmos-db-from-virtual-networks-vnet"></a>Настройка доступа к Azure Cosmos DB из виртуальных сетей (VNet)
 
@@ -93,7 +93,7 @@ ms.locfileid: "92279698"
 
 Для настройки конечной точки службы для учетной записи Azure Cosmos DB с помощью Azure PowerShell выполните следующие действия:  
 
-1. Установите [Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-Az-ps) и [выполните вход](https://docs.microsoft.com/powershell/azure/authenticate-azureps).  
+1. Установите [Azure PowerShell](/powershell/azure/install-Az-ps) и [выполните вход](/powershell/azure/authenticate-azureps).  
 
 1. Включите конечную точку службы для существующей подсети виртуальной сети.  
 
@@ -317,7 +317,7 @@ az network vnet subnet update \
 
 ### <a name="are-notebooks-and-mongocassandra-shell-currently-compatible-with-virtual-network-enabled-accounts"></a>Совместимы ли записные книжки и оболочка Mongo/Cassandra с учетными записями с поддержкой виртуальной сети?
 
-В настоящее время интеграция [оболочки Mongo](https://devblogs.microsoft.com/cosmosdb/preview-native-mongo-shell/) и [оболочки Cassandra](https://devblogs.microsoft.com/cosmosdb/announcing-native-cassandra-shell-preview/) в обозреватель данных Cosmos DB и [Служба записных книжек Jupyter](https://docs.microsoft.com/azure/cosmos-db/cosmosdb-jupyter-notebooks)не поддерживаются при доступе к виртуальной сети. В настоящее время эта возможность находится на стадии активной разработки.
+В настоящее время интеграция [оболочки Mongo](https://devblogs.microsoft.com/cosmosdb/preview-native-mongo-shell/) и [оболочки Cassandra](https://devblogs.microsoft.com/cosmosdb/announcing-native-cassandra-shell-preview/) в обозреватель данных Cosmos DB и [Служба записных книжек Jupyter](./cosmosdb-jupyter-notebooks.md)не поддерживаются при доступе к виртуальной сети. В настоящее время эта возможность находится на стадии активной разработки.
 
 ### <a name="can-i-specify-both-virtual-network-service-endpoint-and-ip-access-control-policy-on-an-azure-cosmos-account"></a>Можно ли указать политику конечной точки службы для виртуальной сети и политику контроля доступа к IP-адресу в учетной записи Azure Cosmos? 
 

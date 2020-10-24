@@ -6,12 +6,12 @@ ms.author: lufittl
 ms.service: postgresql
 ms.topic: how-to
 ms.date: 5/6/2019
-ms.openlocfilehash: fba5c868a146529a981e23cd88b413f2eb441896
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a221e3c32d458135111583885a0b9f97743d36ce
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91708940"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92490039"
 ---
 # <a name="use-the-azure-portal-to-set-up-alerts-on-metrics-for-azure-database-for-postgresql---single-server"></a>Используйте портал Azure, чтобы настроить оповещения о метриках для базы данных Azure для PostgreSQL — один сервер.
 
@@ -27,7 +27,7 @@ ms.locfileid: "91708940"
 Для настройки правил генерации оповещений и получения сведений о них можно использовать:
 * [Портал Azure](../azure-monitor/platform/alerts-metric.md#create-with-azure-portal)
 * [Azure CLI](../azure-monitor/platform/alerts-metric.md#with-azure-cli)
-* [REST API Azure Monitor](https://docs.microsoft.com/rest/api/monitor/metricalerts)
+* [REST API Azure Monitor](/rest/api/monitor/metricalerts)
 
 ## <a name="create-an-alert-rule-on-a-metric-from-the-azure-portal"></a>Создание правила генерации оповещений на основе метрики на портале Azure
 1. На [портале Azure](https://portal.azure.com/) выберите сервер базы данных Azure для PostgreSQL, который нужно отследить.
@@ -83,6 +83,6 @@ ms.locfileid: "91708940"
 * **изменить** или **удалить** правило генерации оповещений;
 * **отключить** или **включить** его, если нужно временно остановить или возобновить получение уведомлений.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте больше о [настройке веб-перехватчиков webhook в оповещениях](../azure-monitor/platform/alerts-webhooks.md).
-* Прочитайте [обзор сбора метрики](../monitoring-and-diagnostics/insights-how-to-customize-monitoring.md) и узнайте, как можно обеспечить, чтобы служба была доступна и отвечала на запросы.
+* Прочитайте [обзор сбора метрики](../azure-monitor/platform/data-platform.md) и узнайте, как можно обеспечить, чтобы служба была доступна и отвечала на запросы.

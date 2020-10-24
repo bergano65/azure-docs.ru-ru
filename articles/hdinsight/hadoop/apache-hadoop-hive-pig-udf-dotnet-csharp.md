@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive, devx-track-csharp
 ms.date: 12/06/2019
-ms.openlocfilehash: 5e32e269a36196d774bb1163a1c70c5d818ddcbb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e99d68d31f1da4dcb3ef1086a2bbd90f0ab30410
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89000623"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92489002"
 ---
 # <a name="use-c-user-defined-functions-with-apache-hive-and-apache-pig-on-apache-hadoop-in-hdinsight"></a>Использование определяемых пользователем функций C# с Apache Hive и Apache Pig на Apache Hadoop в HDInsight
 
@@ -24,13 +24,13 @@ ms.locfileid: "89000623"
 
 Hive и Pig могут передавать данные во внешние приложения для обработки. Этот процесс называется _потоковой передачей_. При использовании приложения .NET данные передаются в него через поток STDIN, после чего приложение возвращает результаты через поток STDOUT. Для чтения и записи с помощью потоков STDIN и STDOUT можно использовать `Console.ReadLine()` и `Console.WriteLine()` из консольного приложения.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 * Опыт написания и выполнения сборки кода C#, предназначенного для платформы .NET Framework 4.5.
 
     Используйте любую интегрированную среду разработки. Рекомендуется использовать [Visual Studio](https://www.visualstudio.com/vs) или [Visual Studio Code](https://code.visualstudio.com/). В действиях, описанных в этом документе, используется Visual Studio 2019.
 
-* Способ передачи EXE-файлов в кластер и выполнения заданий Pig и Hive. Рекомендуется [Data Lake средства для Visual Studio](../../data-lake-analytics/data-lake-analytics-data-lake-tools-install.md), [Azure PowerShell](/powershell/azure)и [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest). В этом документе для передачи файлов и выполнения примера запроса Hive используются средства Data Lake для Visual Studio.
+* Способ передачи EXE-файлов в кластер и выполнения заданий Pig и Hive. Рекомендуется [Data Lake средства для Visual Studio](../../data-lake-analytics/data-lake-analytics-data-lake-tools-install.md), [Azure PowerShell](/powershell/azure)и [Azure CLI](/cli/azure/install-azure-cli). В этом документе для передачи файлов и выполнения примера запроса Hive используются средства Data Lake для Visual Studio.
 
     Дополнительные сведения о других способах выполнения запросов Hive см. [в статье что такое Apache Hive и HiveQL в Azure HDInsight?](hdinsight-use-hive.md).
 

@@ -8,12 +8,12 @@ ms.reviewer: hrasheed
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 08/10/2020
-ms.openlocfilehash: 97d899d73359cc45daf88940b815ed262c3b4766
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d37f1c52157d2038d216873150b1d68e669e3392
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89290843"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92487319"
 ---
 # <a name="azure-hdinsight-double-encryption-for-data-at-rest"></a>Двойное шифрование Azure HDInsight для неактивных данных
 
@@ -127,7 +127,7 @@ HDInsight поддерживает только Azure Key Vault. Если у в�
 
 #### <a name="using-azure-cli"></a>Использование Azure CLI
 
-В следующем примере показано, как использовать Azure CLI для создания нового кластера Apache Spark с включенным шифрованием дисков. Дополнительные сведения см. в разделе [Azure CLI AZ hdinsight Create](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-create).
+В следующем примере показано, как использовать Azure CLI для создания нового кластера Apache Spark с включенным шифрованием дисков. Дополнительные сведения см. в разделе [Azure CLI AZ hdinsight Create](/cli/azure/hdinsight#az-hdinsight-create).
 
 ```azurecli
 az hdinsight create -t spark -g MyResourceGroup -n MyCluster \
@@ -365,7 +365,7 @@ New-AzResourceGroupDeployment `
 
 #### <a name="using-azure-cli"></a>Использование Azure CLI
 
-В следующем примере показано, как поворачивать ключ шифрования диска для существующего кластера HDInsight. Дополнительные сведения см. в разделе [Azure CLI AZ hdinsight сдвиг-диск — ключ шифрования](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-rotate-disk-encryption-key).
+В следующем примере показано, как поворачивать ключ шифрования диска для существующего кластера HDInsight. Дополнительные сведения см. в разделе [Azure CLI AZ hdinsight сдвиг-диск — ключ шифрования](/cli/azure/hdinsight#az-hdinsight-rotate-disk-encryption-key).
 
 ```azurecli
 az hdinsight rotate-disk-encryption-key \
@@ -398,7 +398,7 @@ HDInsight обращается к вашему экземпляру Azure Key Va
 
 **Как восстановить кластер, если ключи удалены?**
 
-Так как поддерживаются только ключи с поддержкой обратимого удаления, если ключи восстановлены в хранилище ключей, кластер должен восстановить доступ к ключам. Чтобы восстановить ключ Azure Key Vault, см. раздел [Undo-азкэйваулткэйремовал](/powershell/module/az.keyvault/Undo-AzKeyVaultKeyRemoval) или [AZ-keyvault-Key-Recover](/cli/azure/keyvault/key?view=azure-cli-latest#az-keyvault-key-recover).
+Так как поддерживаются только ключи с поддержкой обратимого удаления, если ключи восстановлены в хранилище ключей, кластер должен восстановить доступ к ключам. Чтобы восстановить ключ Azure Key Vault, см. раздел [Undo-азкэйваулткэйремовал](/powershell/module/az.keyvault/Undo-AzKeyVaultKeyRemoval) или [AZ-keyvault-Key-Recover](/cli/azure/keyvault/key#az-keyvault-key-recover).
 
 
 **Если кластер масштабируется, будут ли новые узлы поддерживать ключи, управляемые клиентом, без проблем?**

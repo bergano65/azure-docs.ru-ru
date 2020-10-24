@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.topic: how-to
 ms.custom: subject-moving-resources
 ms.date: 06/29/2020
-ms.openlocfilehash: 0eaac8ac65b490e1b8de716d79bd36d2f7a7567c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d237d5709f8d2bb47de3e89b0b7103b195376e11
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91707665"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92489750"
 ---
 # <a name="move-an-azure-database-for-azure-database-for-postgresql---single-server-to-another-region-by-using-the-azure-portal"></a>Перемещение базы данных Azure для PostgreSQL — Single Server в другой регион с помощью портал Azure
 
@@ -21,9 +21,9 @@ ms.locfileid: "91707665"
 Для завершения перемещения в другой регион можно использовать базу данных Azure для [реплики чтения между регионами](concepts-read-replicas.md#cross-region-replication) PostgreSQL. Для этого сначала создайте реплику чтения в целевом регионе. Затем следует выполнить репликацию на сервер реплики чтения, чтобы сделать его автономным сервером, принимающим трафик как для чтения, так и для записи. 
 
 > [!NOTE]
-> В этой статье рассматривается перемещение сервера в другой регион. Если вы хотите переместить сервер в другую группу ресурсов или подписку, см. статью [Перемещение](https://docs.microsoft.com/azure/azure-resource-manager/management/move-resource-group-and-subscription) . 
+> В этой статье рассматривается перемещение сервера в другой регион. Если вы хотите переместить сервер в другую группу ресурсов или подписку, см. статью [Перемещение](../azure-resource-manager/management/move-resource-group-and-subscription.md) . 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 - Реплика чтения между регионами доступна только для базы данных Azure для PostgreSQL-Single Server в общего назначения или ценовой категории, оптимизированные для памяти. Убедитесь, что исходный сервер находится в одной из этих ценовых категорий.
 
@@ -74,7 +74,7 @@ ms.locfileid: "91707665"
 1. После создания реплики выберите базу данных Azure для исходного сервера PostgreSQL.
 1. В окне **Обзор** выберите **Удалить**.
 1. Введите имя исходного сервера для подтверждения, которое нужно удалить.
-1. Выберите команду **Удалить**.
+1. Выберите **Удалить**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

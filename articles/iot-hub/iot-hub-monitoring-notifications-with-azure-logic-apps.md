@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 07/18/2019
 ms.author: robinsh
-ms.openlocfilehash: 37f8016e087642ae0a7455e35f3ce18d7229e169
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: cd14ff0688f4230aeedac748ca4b32609bdd2938
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92146634"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92490328"
 ---
 # <a name="iot-remote-monitoring-and-notifications-with-azure-logic-apps-connecting-your-iot-hub-and-mailbox"></a>Удаленный мониторинг и отправка уведомлений в Центре Интернета вещей с помощью службы Azure Logic Apps, обеспечивающей подключение между Центром Интернета вещей и почтовым ящиком
 
@@ -84,7 +84,7 @@ ms.locfileid: "92146634"
 
    ![Создание пространства имен служебной шины с помощью портала Azure](media/iot-hub-monitoring-notifications-with-azure-logic-apps/1-create-service-bus-namespace-azure-portal.png)
 
-1. Нажмите кнопку **создания**. Дождитесь завершения развертывания, прежде чем переходить к следующему шагу.
+1. Нажмите кнопку **Создать**. Дождитесь завершения развертывания, прежде чем переходить к следующему шагу.
 
 ### <a name="add-a-service-bus-queue-to-the-namespace"></a>Добавление очереди служебной шины в пространство имен
 
@@ -112,7 +112,7 @@ ms.locfileid: "92146634"
 
 1. В разделе **Обмен сообщениями**выберите **Маршрутизация сообщений**. На панели **Маршрутизация сообщений** перейдите на вкладку **пользовательские конечные точки** и выберите **+ добавить**. В раскрывающемся списке выберите **очередь служебной шины**.
 
-   ![Добавление конечной точки в Центр Интернета вещей на портале Azure](media/iot-hub-monitoring-notifications-with-azure-logic-apps/select-iot-hub-custom-endpoint.png)
+   ![Снимок экрана, посвященный параметру очереди служебной шины.](media/iot-hub-monitoring-notifications-with-azure-logic-apps/select-iot-hub-custom-endpoint.png)
 
 1. На панели **Добавить конечную точку служебной шины** введите следующие сведения.
 
@@ -124,7 +124,7 @@ ms.locfileid: "92146634"
 
    ![Добавление конечной точки в Центр Интернета вещей на портале Azure](media/iot-hub-monitoring-notifications-with-azure-logic-apps/3-add-iot-hub-endpoint-azure-portal.png)
 
-1. Нажмите кнопку **создания**. После успешного создания конечной точки перейдите к следующему шагу.
+1. Нажмите кнопку **Создать**. После успешного создания конечной точки перейдите к следующему шагу.
 
 ### <a name="add-a-routing-rule"></a>Добавление правила маршрутизации
 
@@ -152,7 +152,7 @@ ms.locfileid: "92146634"
 
 1. Выберите **создать ресурс**  >  **Интеграция**  >  **приложения логики**.
 
-1. Введите следующие сведения.
+1. Введите следующие сведения:
 
    **Имя**. Имя приложения логики.
 
@@ -162,7 +162,7 @@ ms.locfileid: "92146634"
 
    ![Создание приложения логики в портал Azure](media/iot-hub-monitoring-notifications-with-azure-logic-apps/create-a-logic-app.png)
 
-1. Нажмите кнопку **создания**.
+1. Нажмите кнопку **Создать**.
 
 ### <a name="configure-the-logic-app-trigger"></a>Настройка триггера приложения логики
 
@@ -183,7 +183,7 @@ ms.locfileid: "92146634"
 1. Создайте подключение к служебной шине.
    1. Введите имя подключения и выберите пространство имен служебной шины из списка. Откроется следующий экран.
 
-      ![Создание подключения к служебной шине для приложения логики на портале Azure](media/iot-hub-monitoring-notifications-with-azure-logic-apps/create-service-bus-connection-1.png)
+      ![Снимок экрана, который выделяет, когда одно или несколько сообщений поступают в очередь (автозавершение).](media/iot-hub-monitoring-notifications-with-azure-logic-apps/create-service-bus-connection-1.png)
 
    1. Выберите политику служебной шины (RootManageSharedAccessKey). Затем выберите  **создать**.
 

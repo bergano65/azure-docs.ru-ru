@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.topic: how-to
 ms.date: 07/10/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 20bedf7e48b2e40cd67e33ea024a3ae0a9d305a6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9fd828baed5a03cbce5d5327248eb34045ffd6bc
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91707546"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92489716"
 ---
 # <a name="create-and-manage-read-replicas-from-the-azure-cli-rest-api"></a>Создание реплик чтения и управление ими из Azure CLI REST API
 
@@ -32,9 +32,9 @@ ms.locfileid: "91707546"
 ## <a name="azure-cli"></a>Azure CLI
 Вы можете создавать реплики чтения и управлять ими с помощью Azure CLI.
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Обязательные условия
 
-- [Установите Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+- [Установите Azure CLI 2.0](/cli/azure/install-azure-cli).
 - [Сервер базы данных Azure для PostgreSQL](quickstart-create-server-up-azure-cli.md) , который будет основным сервером.
 
 
@@ -60,7 +60,7 @@ ms.locfileid: "91707546"
 
 ### <a name="create-a-read-replica"></a>Создание реплики чтения
 
-Команда [AZ postgres Server Replica Create](/cli/azure/postgres/server/replica?view=azure-cli-latest#az-postgres-server-replica-create) требует наличия следующих параметров:
+Команда [AZ postgres Server Replica Create](/cli/azure/postgres/server/replica#az-postgres-server-replica-create) требует наличия следующих параметров:
 
 | Параметр | Пример значения | Описание  |
 | --- | --- | --- |
@@ -91,14 +91,14 @@ az postgres server replica create --name mydemoserver-replica --source-server my
 > Перед обновлением параметра сервера-источника до нового значения измените значение параметра реплики на равное или большее. Это действие помогает реплике справиться с изменениями, внесенными в главную базу.
 
 ### <a name="list-replicas"></a>Список реплик
-Список реплик сервера-источника можно просмотреть с помощью команды [AZ postgres Server Replica List](/cli/azure/postgres/server/replica?view=azure-cli-latest#az-postgres-server-replica-list) .
+Список реплик сервера-источника можно просмотреть с помощью команды [AZ postgres Server Replica List](/cli/azure/postgres/server/replica#az-postgres-server-replica-list) .
 
 ```azurecli-interactive
 az postgres server replica list --server-name mydemoserver --resource-group myresourcegroup 
 ```
 
 ### <a name="stop-replication-to-a-replica-server"></a>Остановка репликации на сервер-реплику
-Вы можете отключить репликацию между сервером-источником и репликой чтения, выполнив команду [AZ postgres Server Replica](/cli/azure/postgres/server/replica?view=azure-cli-latest#az-postgres-server-replica-stop) .
+Вы можете отключить репликацию между сервером-источником и репликой чтения, выполнив команду [AZ postgres Server Replica](/cli/azure/postgres/server/replica#az-postgres-server-replica-stop) .
 
 После того как репликация будет прервана на сервере-источнике и реплике чтения, ее нельзя будет отменить. Реплика чтения становится отдельным сервером, который поддерживает операции чтения и записи. Это сервер нельзя снова преобразовать в реплику.
 
@@ -107,7 +107,7 @@ az postgres server replica stop --name mydemoserver-replica --resource-group myr
 ```
 
 ### <a name="delete-a-primary-or-replica-server"></a>Удаление основного или сервер-реплики
-Чтобы удалить основной или сервер-реплику, используйте команду [AZ postgres Server DELETE](/cli/azure/postgres/server?view=azure-cli-latest#az-postgres-server-delete) .
+Чтобы удалить основной или сервер-реплику, используйте команду [AZ postgres Server DELETE](/cli/azure/postgres/server#az-postgres-server-delete) .
 
 При удалении сервера-источника репликация на все реплики чтения останавливается. Реплики чтения становятся автономными серверами, которые начинают поддерживать операции чтения и записи.
 
@@ -207,6 +207,6 @@ PATCH https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups
 DELETE https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforPostgreSQL/servers/{serverName}?api-version=2017-12-01
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * См. дополнительные сведения о [репликах чтения в Базе данных Azure для PostgreSQL](concepts-read-replicas.md).
 * Дополнительные сведения см. в статье [Создание реплик чтения и управление ими с помощью портала Azure](howto-read-replicas-portal.md).

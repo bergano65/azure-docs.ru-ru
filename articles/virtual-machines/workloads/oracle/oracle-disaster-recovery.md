@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 08/02/2018
 ms.author: kegorman
 ms.reviewer: cynthn
-ms.openlocfilehash: fe93ada343e83d61526b6b899429d9e2b7b745d3
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.openlocfilehash: 9736c4d2b048aa18f283689247f5597d7526f1df
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91996182"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92480366"
 ---
 # <a name="disaster-recovery-for-an-oracle-database-12c-database-in-an-azure-environment"></a>Аварийное восстановление базы данных Oracle Database 12c в среде Azure.
 
@@ -42,7 +42,7 @@ ms.locfileid: "91996182"
 - среда Jumpbox, служба приложения, база данных и VPN-шлюз в отдельных подсетях;
 - группа безопасности сети, применяющаяся в подсетях приложения и базы данных;
 
-![Снимок экрана страницы топологии аварийного восстановления](./media/oracle-disaster-recovery/oracle_topology_01.png)
+![Схема, в которой показаны основной сайт и сайты аварийного восстановления в Azure.](./media/oracle-disaster-recovery/oracle_topology_01.png)
 
 ## <a name="scenario-2-primary-site-on-premises-and-dr-site-on-azure"></a>Сценарий 2. Основной локальный сайт и сайт аварийного восстановления в Azure
 
@@ -68,7 +68,7 @@ ms.locfileid: "91996182"
 - политика или правило NSG, разрешающие использовать входящий TCP-порт 1521 (или порт, определенный пользователем);
 - политика или правило NSG, разрешающие доступ к виртуальной сети только IP-адресам или локальным адресам (для базы данных или приложения).
 
-![Снимок экрана страницы топологии аварийного восстановления](./media/oracle-disaster-recovery/oracle_topology_02.png)
+![Схема, на которой показаны прямые подключения между локальной средой и Azure, в брандмауэре которого требуются открытые TCP-порты.](./media/oracle-disaster-recovery/oracle_topology_02.png)
 
 ### <a name="approach-2-site-to-site-vpn"></a>Способ 2. VPN-подключение типа "сеть — сеть"
 Оптимальным способом является использование VPN-подключения типа "сеть — сеть". Дополнительные сведения о настройке VPN см. в статье [Создание виртуальной сети с VPN типа "сеть — сеть" с помощью интерфейса командной строки](../../../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-cli.md).

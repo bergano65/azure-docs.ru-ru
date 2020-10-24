@@ -8,12 +8,12 @@ ms.subservice: blobs
 ms.topic: conceptual
 ms.date: 04/01/2019
 ms.author: alkohli
-ms.openlocfilehash: 6514b149b057d690d37551bd0489c63852addb1e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 60b322cc0c1a50df7f8946fa1047bdc58ea92d77
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86207493"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92488543"
 ---
 # <a name="data-transfer-for-large-datasets-with-low-or-no-network-bandwidth"></a>Передача данных для больших наборов данных с низкой или отсутствующей пропускной способностью сети
  
@@ -50,9 +50,9 @@ ms.locfileid: "86207493"
 |    **Размер данных**                    |    До 35 ТБ                 |    До 80 ТБ на устройство                       |    До 800 ТБ на устройство               |    Переменная                            |
 |    **Data type**                    |    Большие двоичные объекты Azure                  |    Большие двоичные объекты Azure<br>Файлы Azure                    |    Большие двоичные объекты Azure<br>Файлы Azure            |    Большие двоичные объекты Azure<br>Файлы Azure          |
 |    **Форм-фактор**                  |    Не более 5 SSD в одном заказе             |    1 x 23 кг одно устройство в заказе размером с настольный компьютер    |    1 X ~227 кг большое устройство в заказе    |    До 10 жестких дисков или твердотельных накопителей в одном заказе        |
-|    **Время начальной настройки**           |    Низкий <br>(15 мин)            |    От низкой до умеренной сложности <br> (менее 30 мин)               |    Средняя<br>(1–2 ч)               |    От умеренной до высокой сложности<br>(переменная) |
+|    **Время начальной настройки**           |    Низкая <br>(15 мин)            |    От низкой до умеренной сложности <br> (менее 30 мин)               |    Средняя<br>(1–2 ч)               |    От умеренной до высокой сложности<br>(переменная) |
 |    **Отправка данных в Azure**           |    Да                          |    Да                                           |    Да                                   |    Да                                 |
-|    **Экспорт данных из Azure**       |    нет                           |    нет                                            |    нет                                    |    Да                                 |
+|    **Экспорт данных из Azure**       |    Нет                           |    Нет                                            |    Нет                                    |    Да                                 |
 |    **Шифрование**                   |    AES, 128-битное                  |    AES, 256-битное                                   |    AES, 256-битное                           |    AES, 128-битное                         |
 |    **Оборудование**                     |     Предоставляется корпорацией Майкрософт          |    Предоставляется корпорацией Майкрософт                            |    Предоставляется корпорацией Майкрософт                    |    Предоставляется пользователем                   |
 |    **Сетевой интерфейс**            |    USB 3.1 или SATA                 |    RJ 45, SFP+                                   |    RJ45, QSFP+                           |    SATA II или SATA III                    |
@@ -62,10 +62,10 @@ ms.locfileid: "86207493"
 |    **Цены**                      |    [Цены](https://azure.microsoft.com/pricing/details/databox/disk/)                    |   [Цены](https://azure.microsoft.com/pricing/details/storage/databox/)                                      |  [Цены](https://azure.microsoft.com/pricing/details/storage/databox/heavy/)                               |   [Цены](https://azure.microsoft.com/pricing/details/storage-import-export/)                            |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Практические руководства по:
 
-    - [передаче данных с помощью Диска Data Box](https://docs.microsoft.com/azure/databox/data-box-disk-quickstart-portal);
-    - [передаче данных с помощью Data Box](https://docs.microsoft.com/azure/databox/data-box-quickstart-portal).
+    - [передаче данных с помощью Диска Data Box](/azure/databox/data-box-disk-quickstart-portal);
+    - [передаче данных с помощью Data Box](/azure/databox/data-box-quickstart-portal).
     - [Использование службы "Импорт и экспорт Azure" для импорта данных в хранилище BLOB-объектов Azure](/azure/storage/common/storage-import-export-data-to-blobs).

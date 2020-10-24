@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 04/01/2020
-ms.openlocfilehash: eaddae04c198742007947831046139d80828534b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cd81a15853f1c3b0eb1b1cdd40cc4c7ebf713308
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87006591"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92490311"
 ---
 # <a name="customize-hdinsight-clusters-using-bootstrap"></a>Настройка кластеров HDInsight с помощью начальной загрузки
 
@@ -21,7 +21,7 @@ ms.locfileid: "87006591"
 
 Существует три подхода к установке параметров файла конфигурации при создании кластера HDInsight:
 
-* Использование Azure PowerShell
+* Использование Azure Powershell
 * Использование пакета SDK для .NET
 * Использование шаблона Azure Resource Manager
 
@@ -46,11 +46,11 @@ ms.locfileid: "87006591"
 
 Сведения об установке дополнительных компонентов в кластере HDInsight во время создания см. в статье [Настройка кластеров hdinsight с помощью действия сценария (Linux)](hdinsight-hadoop-customize-cluster-linux.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 * При использовании PowerShell вам потребуется [модуль Az](https://docs.microsoft.com/powershell/azure/).
 
-## <a name="use-azure-powershell"></a>Использование Azure PowerShell
+## <a name="use-azure-powershell"></a>Использование Azure Powershell
 
 Следующий код PowerShell настраивает конфигурацию [Apache Hive](https://hive.apache.org/).
 
@@ -108,7 +108,7 @@ $OozieConfigValues = @{ "oozie.service.coord.normal.default.timeout"="150" }  # 
 
 ## <a name="use-net-sdk"></a>Использование пакета SDK для .NET
 
-См. раздел [Azure HDINSIGHT SDK для .NET](https://docs.microsoft.com/dotnet/api/overview/azure/hdinsight?view=azure-dotnet).
+См. раздел [Azure HDINSIGHT SDK для .NET](/dotnet/api/overview/azure/hdinsight?view=azure-dotnet&preserve-view=true).
 
 ## <a name="use-resource-manager-template"></a>Использование шаблона Resource Manager
 

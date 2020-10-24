@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.subservice: hyperscale-citus
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 9a6d8843acf27a53e261d9c7180906b15d05cc33
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 30be9cbba7fe702d12285fe13794290c4820fd53
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91314816"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92487999"
 ---
 # <a name="monitor-and-tune-azure-database-for-postgresql---hyperscale-citus"></a>Мониторинг и Настройка базы данных Azure для PostgreSQL — масштабирование (Цитус)
 
@@ -22,7 +22,7 @@ ms.locfileid: "91314816"
 
 Масштабирование (Цитус) предоставляет метрики для каждого узла в группе серверов. Метрики дают представление о поведении вспомогательных ресурсов. Каждая метрика создается с частотой раз в минуту. В журнале содержится история о метриках за период в 30 дней.
 
-В дополнение к отображению графов метрик можно настроить оповещения. Пошаговые инструкции см. в статье [Использование портала Azure для настройки оповещений на основе метрик для базы данных Azure для MySQL](howto-hyperscale-alert-on-metric.md).  К другим задачам относятся Настройка автоматизированных действий, выполнение расширенной аналитики и журнал архивации. Дополнительные сведения см. в статье [Обзор метрик в Microsoft Azure](../monitoring-and-diagnostics/monitoring-overview-metrics.md).
+В дополнение к отображению графов метрик можно настроить оповещения. Пошаговые инструкции см. в статье [Использование портала Azure для настройки оповещений на основе метрик для базы данных Azure для MySQL](howto-hyperscale-alert-on-metric.md).  К другим задачам относятся Настройка автоматизированных действий, выполнение расширенной аналитики и журнал архивации. Дополнительные сведения см. в статье [Обзор метрик в Microsoft Azure](../azure-monitor/platform/data-platform.md).
 
 ### <a name="list-of-metrics"></a>Список метрик
 

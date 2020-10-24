@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 08/05/2020
 ms.author: thweiss
-ms.openlocfilehash: 9fa899e0f0de3b263baad7e44ed24d32d735b001
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f3a5106fcc7f1b55db22ee13ced34328cc38096d
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87836517"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92486214"
 ---
 # <a name="configure-customer-managed-keys-for-your-azure-cosmos-account-with-azure-key-vault"></a>Настройка управляемых клиентом ключей для учетной записи Azure Cosmos с Azure Key Vault
 
@@ -277,7 +277,7 @@ az cosmosdb show \
 
 С помощью управляемых клиентом ключей шифруются все данные, хранящиеся в учетной записи Azure Cosmos, за исключением следующих метаданных:
 
-- имена [учетных записей, баз данных и контейнеров](./account-overview.md#elements-in-an-azure-cosmos-account) Azure Cosmos DB;
+- имена [учетных записей, баз данных и контейнеров](./account-databases-containers-items.md#elements-in-an-azure-cosmos-account) Azure Cosmos DB;
 
 - имена [хранимых процедур](./stored-procedures-triggers-udfs.md);
 

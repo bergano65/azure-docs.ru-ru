@@ -6,12 +6,12 @@ ms.author: ambhatna
 ms.service: postgresql
 ms.topic: how-to
 ms.date: 09/22/2020
-ms.openlocfilehash: 727eb4cd7e7c3de090e1573cb5358ef23118385e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 830a97db562820853efcd88b1ab8c0b729a5dc9a
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90936962"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92490141"
 ---
 # <a name="create-and-manage-virtual-networks-for-azure-database-for-postgresql---flexible-server-using-the-azure-cli"></a>Создание виртуальных сетей для базы данных Azure для PostgreSQL-гибкого сервера и управление ими с помощью Azure CLI
 
@@ -33,17 +33,17 @@ ms.locfileid: "90936962"
 
 Чтобы открыть Cloud Shell, просто выберите **Попробовать** в правом верхнем углу блока кода. Кроме того, Cloud Shell можно открыть в отдельной вкладке браузера. Для этого перейдите на страницу [https://shell.azure.com/bash](https://shell.azure.com/bash). Нажмите кнопку **Копировать**, чтобы скопировать блоки кода. Вставьте код в Cloud Shell и нажмите клавишу **ВВОД**, чтобы выполнить его.
 
-Если вы решили установить и использовать CLI локально, для выполнения инструкций, приведенных в этом кратком руководстве, вам потребуется Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+Если вы решили установить и использовать CLI локально, для выполнения инструкций, приведенных в этом кратком руководстве, вам потребуется Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Вам потребуется войти в учетную запись с помощью команды [az login](https://docs.microsoft.com/cli/azure/reference-index?view=azure-cli-latest#az-login). Обратите внимание на свойство **ID** , которое ОТНОСИТСЯ к **идентификатору подписки** для учетной записи Azure.
+Вам потребуется войти в учетную запись с помощью команды [az login](/cli/azure/reference-index#az-login). Обратите внимание на свойство **ID** , которое ОТНОСИТСЯ к **идентификатору подписки** для учетной записи Azure.
 
 ```azurecli-interactive
 az login
 ```
 
-Выберите конкретную подписку вашей учетной записи, выполнив команду [az account set](https://docs.microsoft.com/cli/azure/account?view=azure-cli-latest#az-account-set). Запишите значение **идентификатора** из выходных данных **имени входа AZ** , чтобы использовать его в качестве значения аргумента **Subscription** в команде. Если вы используете несколько подписок, выберите соответствующую, в которой за ресурс будет взиматься плата. Чтобы отобразить все ваши подписки, выполните команду [az account list](https://docs.microsoft.com/cli/azure/account?view=azure-cli-latest#az-account-list).
+Выберите конкретную подписку вашей учетной записи, выполнив команду [az account set](/cli/azure/account#az-account-set). Запишите значение **идентификатора** из выходных данных **имени входа AZ** , чтобы использовать его в качестве значения аргумента **Subscription** в команде. Если вы используете несколько подписок, выберите соответствующую, в которой за ресурс будет взиматься плата. Чтобы отобразить все ваши подписки, выполните команду [az account list](/cli/azure/account#az-account-list).
 
 ```azurecli
 az account set --subscription <subscription id>
@@ -78,7 +78,7 @@ az account set --subscription <subscription id>
     ```-->
 См. справочную документацию по Azure CLI <!--FIXME --> где описаны все настраиваемые параметры для интерфейса командной строки.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о работе [в сети в базе данных Azure для PostgreSQL-гибкого сервера](./concepts-networking.md).
 - [Создание базы данных Azure для PostgreSQL-гибкой виртуальной сети сервера и управление ею с помощью портал Azure](./how-to-manage-virtual-network-portal.md).
 - Узнайте больше о [базе данных Azure для PostgreSQL-гибкой виртуальной сети сервера](./concepts-networking.md#private-access-vnet-integration).

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 05/06/2020
 ms.author: alkohli
 ms.subservice: common
-ms.openlocfilehash: 08c105bd8ae9b5e0667ef5279e6c9484c631bd48
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d2e50502c8c3e37c5d48359079e2e72c13feea4a
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91399046"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92487880"
 ---
 # <a name="azure-importexport-service-frequently-asked-questions"></a>Служба "Импорт и экспорт Azure". Часто задаваемые вопросы
 
@@ -132,7 +132,7 @@ ms.locfileid: "91399046"
 
 ### <a name="how-can-i-access-data-that-is-imported-by-this-service"></a>Каким образом можно получить доступ к импортируемым службой данным?
 
-Используйте портал Azure или [Обозреватель службы хранилища](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer) для доступа к данным в учетной записи хранения Azure.  
+Используйте портал Azure или [Обозреватель службы хранилища](/azure/vs-azure-tools-storage-manage-with-storage-explorer) для доступа к данным в учетной записи хранения Azure.  
 
 ### <a name="after-the-import-is-complete-what-does-my-data-look-like-in-the-storage-account-is-my-directory-hierarchy-preserved"></a>Как будут выглядеть мои данные в учетной записи хранения после завершения импорта? Сохранится ли иерархия моих каталогов?
 
@@ -144,7 +144,7 @@ ms.locfileid: "91399046"
 
 ### <a name="is-the-waimportexport-tool-compatible-with-32-bit-operating-systems"></a>Совместимо ли средство WAImportExport с 32-разрядной операционной системой?
 
-Нет. Средство WAImportExport совместимо только с 64-разрядной операционной системой Windows. Полный список поддерживаемых операционных систем см. в [этой статье](https://docs.microsoft.com/azure/storage/common/storage-import-export-requirements).
+Нет. Средство WAImportExport совместимо только с 64-разрядной операционной системой Windows. Полный список поддерживаемых операционных систем см. в [этой статье](/azure/storage/common/storage-import-export-requirements).
 
 ### <a name="what-is-the-maximum-block-blob-and-page-blob-size-supported-by-azure-importexport"></a>Какой максимальный размер блочного и страничного BLOB-объектов, поддерживаемый службой "Импорт и экспорт Azure"?
 
@@ -155,6 +155,6 @@ ms.locfileid: "91399046"
 
 Да. Служба импорта и экспорта Azure использует шифрование BitLocker AES-256.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Что такое служба "Импорт и экспорт Azure"?](storage-import-export-service.md)

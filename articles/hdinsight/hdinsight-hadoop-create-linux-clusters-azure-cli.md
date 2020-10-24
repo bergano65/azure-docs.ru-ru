@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 02/03/2020
-ms.openlocfilehash: 04def98108bf996a8f8cabe0ad36c022011aa533
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bf292ccd185ad2c6a85cb6d2f097bb8a7fa9e173
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86080726"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92489665"
 ---
 # <a name="create-hdinsight-clusters-using-the-azure-cli"></a>Создание кластеров HDInsight с помощью интерфейса командной строки Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "86080726"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Azure CLI. Если вы еще не установили Azure CLI, обратитесь к статье [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli).
+Azure CLI. Если вы еще не установили Azure CLI, обратитесь к статье [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -42,7 +42,7 @@ Azure CLI. Если вы еще не установили Azure CLI, обрат�
     # az account set --subscription "SUBSCRIPTIONID"
     ```
 
-2. Задайте переменные среды. Использование переменных в этой статье основано на bash. В случае других сред потребуются минимальные изменения. Полный список возможных параметров для создания кластера см. в разделе [AZ-hdinsight-Create](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-create) .
+2. Задайте переменные среды. Использование переменных в этой статье основано на bash. В случае других сред потребуются минимальные изменения. Полный список возможных параметров для создания кластера см. в разделе [AZ-hdinsight-Create](/cli/azure/hdinsight#az-hdinsight-create) .
 
     |Параметр | Описание |
     |---|---|
@@ -68,7 +68,7 @@ Azure CLI. Если вы еще не установили Azure CLI, обрат�
     export componentVersion=Hadoop=2.7
     ```
 
-3. [Создайте группу ресурсов](https://docs.microsoft.com/cli/azure/group?view=azure-cli-latest#az-group-create) , введя следующую команду:
+3. [Создайте группу ресурсов](/cli/azure/group#az-group-create) , введя следующую команду:
 
     ```azurecli-interactive
     az group create \
@@ -78,7 +78,7 @@ Azure CLI. Если вы еще не установили Azure CLI, обрат�
 
     Чтобы получить список допустимых расположений, используйте `az account list-locations` команду, а затем используйте одно из расположений из `name` значения.
 
-4. [Создайте учетную запись хранения Azure](https://docs.microsoft.com/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-create) , введя следующую команду:
+4. [Создайте учетную запись хранения Azure](/cli/azure/storage/account#az-storage-account-create) , введя следующую команду:
 
     ```azurecli-interactive
     # Note: kind BlobStorage is not available as the default storage account.
@@ -91,7 +91,7 @@ Azure CLI. Если вы еще не установили Azure CLI, обрат�
         --sku Standard_LRS
     ```
 
-5. [Извлеките первичный ключ из учетной записи хранения Azure](https://docs.microsoft.com/cli/azure/storage/account/keys?view=azure-cli-latest#az-storage-account-keys-list) и сохраните его в переменной, введя следующую команду:
+5. [Извлеките первичный ключ из учетной записи хранения Azure](/cli/azure/storage/account/keys#az-storage-account-keys-list) и сохраните его в переменной, введя следующую команду:
 
     ```azurecli-interactive
     export AZURE_STORAGE_KEY=$(az storage account keys list \
@@ -100,7 +100,7 @@ Azure CLI. Если вы еще не установили Azure CLI, обрат�
         --query [0].value -o tsv)
     ```
 
-6. [Создайте контейнер службы хранилища Azure](https://docs.microsoft.com/cli/azure/storage/container?view=azure-cli-latest#az-storage-container-create) , введя следующую команду:
+6. [Создайте контейнер службы хранилища Azure](/cli/azure/storage/container#az-storage-container-create) , введя следующую команду:
 
     ```azurecli-interactive
     az storage container create \
@@ -109,7 +109,7 @@ Azure CLI. Если вы еще не установили Azure CLI, обрат�
         --account-name $AZURE_STORAGE_ACCOUNT
     ```
 
-7. [Создайте кластер HDInsight](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-create) , введя следующую команду:
+7. [Создайте кластер HDInsight](/cli/azure/hdinsight#az-hdinsight-create) , введя следующую команду:
 
     ```azurecli-interactive
     az hdinsight create \

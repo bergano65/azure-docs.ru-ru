@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/01/2019
 ms.author: sngun
 ms.custom: seodec18
-ms.openlocfilehash: 4bd29ce3bf2cc7cd69f86dbf172d3cd9a2044e79
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 26794f0d743bc701879a161f69e374340206e5d8
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91570357"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92488475"
 ---
 # <a name="frequently-asked-questions-about-different-apis-in-azure-cosmos-db"></a>Часто задаваемые вопросы о различных API в службе Azure Cosmos DB
 
@@ -70,7 +70,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Технические вопросы можно разместить на одном из форумов вопросов и ответов ниже:
 
-* [Раздел вопросов и ответов на сайте Майкрософт](https://docs.microsoft.com/answers/topics/azure-cosmos-db.html)
+* [Раздел вопросов и ответов на сайте Майкрософт](/answers/topics/azure-cosmos-db.html)
 * [Stack Overflow](https://stackoverflow.com/questions/tagged/azure-cosmosdb). Stack Overflow лучше всего подходит, чтобы задать вопросы о программировании. Ваш вопрос должен быть [по теме](https://stackoverflow.com/help/on-topic) и [максимально точным и подробным, чтобы на него можно было ответить по существу](https://stackoverflow.com/help/how-to-ask).
 
 Чтобы запросить новые функции, создайте запрос на форуме [UserVoice](https://feedback.azure.com/forums/263030-azure-cosmos-db).
@@ -179,7 +179,7 @@ API SQL поддерживает агрегирование с низкой за
 
 API SQL поддерживает оптимистическое параллельное управление (OCC) через теги сущностей HTTP или ETag. У каждого ресурса API SQL есть тег ETag, значение которого определяется на сервере при каждом обновлении документа. Заголовок и текущее значение ETag добавляются во все сообщения ответа. Чтобы сервер мог определить, нужно ли обновлять ресурс, можно использовать теги ETag с заголовком If-Match. Значением If-Match является значение ETag, используемое для проверки. Если это значение ETag совпадает со значением ETag сервера, ресурс будет обновлен. Если тег ETag больше не актуален, сервер отклоняет операцию с кодом ответа "HTTP 412: ошибка в предусловии". После этого клиенту нужно повторно извлечь ресурс, чтобы получить его текущее значение ETag. Кроме того, теги ETag можно использовать с заголовком If-None-Match, чтобы определить, требуется ли повторное извлечение ресурса.
 
-Чтобы применить оптимистичный параллелизм в .NET, используйте класс [AccessCondition](https://msdn.microsoft.com/library/azure/microsoft.azure.documents.client.accesscondition.aspx) . Пример для .NET см. в файле [Program.cs](https://github.com/Azure/azure-documentdb-dotnet/blob/master/samples/code-samples/DocumentManagement/Program.cs) примера DocumentManagement на сайте GitHub.
+Чтобы применить оптимистичный параллелизм в .NET, используйте класс [AccessCondition](/dotnet/api/microsoft.azure.documents.client.accesscondition) . Пример для .NET см. в файле [Program.cs](https://github.com/Azure/azure-documentdb-dotnet/blob/master/samples/code-samples/DocumentManagement/Program.cs) примера DocumentManagement на сайте GitHub.
 
 ### <a name="how-do-i-perform-transactions-in-the-sql-api"></a>Как выполнять транзакции в API SQL?
 
@@ -210,7 +210,7 @@ API SQL поддерживает транзакции LINQ через храни
 Создание разрешений с помощью ResourceTokens разрешено на уровне контейнера и его потомков (например, документов и вложений). Это означает, что возможность создать разрешение в базе данных или на уровне учетной записи сейчас не поддерживается.
 
 [azure-portal]: https://portal.azure.com
-[query]: sql-api-sql-query.md
+[query]: ./sql-query-getting-started.md
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

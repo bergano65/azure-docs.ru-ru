@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: has-adal-ref, devx-track-python
 ms.date: 04/03/2020
-ms.openlocfilehash: 97bd71dd5a70a867f45915a5a5f95f6513f2a824
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7d8d2c7d48dc0b77d3be0b9019d4bbf1da8a40c4
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91541736"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92490277"
 ---
 # <a name="interact-with-apache-kafka-clusters-in-azure-hdinsight-using-a-rest-proxy"></a>Взаимодействие с кластерами Apache Kafka в Azure HDInsight через прокси-сервер REST
 
@@ -97,7 +97,7 @@ ms.locfileid: "91541736"
 1. Получает токен OAuth из Azure AD.
 1. Демонстрирует выполнение запроса к прокси-серверу REST для Kafka.
 
-Дополнительные сведения о получении токенов OAuth в Python см. в [описании класса AuthenticationContext в Python](https://docs.microsoft.com/python/api/adal/adal.authentication_context.authenticationcontext?view=azure-python). Вы можете заметить некоторую задержку в отображении состояния `topics` при создании или удалении не через прокси-сервер REST для Kafka. Она обусловлена обновлением кэша.
+Дополнительные сведения о получении токенов OAuth в Python см. в [описании класса AuthenticationContext в Python](/python/api/adal/adal.authentication_context.authenticationcontext). Вы можете заметить некоторую задержку в отображении состояния `topics` при создании или удалении не через прокси-сервер REST для Kafka. Она обусловлена обновлением кэша.
 
 ```python
 #Required python packages

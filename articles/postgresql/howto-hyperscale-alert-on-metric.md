@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.subservice: hyperscale-citus
 ms.topic: how-to
 ms.date: 3/16/2020
-ms.openlocfilehash: b5ccd1281e50ca10b8edd7d7567a000b97107901
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8b59bcf3f25921a348e9c5f25e83619d8596ebd5
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90907420"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92489869"
 ---
 # <a name="use-the-azure-portal-to-set-up-alerts-on-metrics-for-azure-database-for-postgresql---hyperscale-citus"></a>Использование портал Azure для настройки оповещений в метриках для базы данных Azure для PostgreSQL-Scale (Цитус)
 
@@ -28,7 +28,7 @@ ms.locfileid: "90907420"
 Для настройки правил генерации оповещений и получения сведений о них можно использовать:
 * [Портал Azure](../azure-monitor/platform/alerts-metric.md#create-with-azure-portal)
 * [Azure CLI](../azure-monitor/platform/alerts-metric.md#with-azure-cli)
-* [REST API Azure Monitor](https://docs.microsoft.com/rest/api/monitor/metricalerts)
+* [REST API Azure Monitor](/rest/api/monitor/metricalerts)
 
 ## <a name="create-an-alert-rule-on-a-metric-from-the-azure-portal"></a>Создание правила генерации оповещений на основе метрики на портале Azure
 1. На [портале Azure](https://portal.azure.com/) выберите сервер базы данных Azure для PostgreSQL, который нужно отследить.
@@ -92,7 +92,7 @@ ms.locfileid: "90907420"
 
 ## <a name="suggested-alerts"></a>Предлагаемые оповещения
 
-### <a name="disk-space"></a>Место на диске
+### <a name="disk-space"></a>Пространство на диске
 
 Мониторинг и оповещения важны для каждой группы серверов рабочей среды Цитус. Для правильной работы базовой базы данных PostgreSQL требуется свободное место на диске. Если диск заполнен, узел сервера базы данных переходит в режим «вне сети» и отклоняется, пока не появится свободное место. На этом этапе для решения этой проблемы требуется запрос в службу поддержки Майкрософт.
 
@@ -108,6 +108,6 @@ ms.locfileid: "90907420"
 
 Наблюдение за использованием ЦП полезно для создания базовых показателей производительности. Например, вы можете заметить, что загрузка ЦП обычно составляет около 40-60%. Если загрузка ЦП внезапно начинает навести указатель на 95%, можно распознать аномалию. Использование ЦП может отражать приростства, но может также обнаружить недопустимый запрос. При создании предупреждения о ЦП задайте большую степень гранулярности статистической обработки для перехвата длительных увеличений и пропуска пиковых скачков.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте больше о [настройке веб-перехватчиков webhook в оповещениях](../azure-monitor/platform/alerts-webhooks.md).
-* Прочитайте [обзор сбора метрики](../monitoring-and-diagnostics/insights-how-to-customize-monitoring.md) и узнайте, как можно обеспечить, чтобы служба была доступна и отвечала на запросы.
+* Прочитайте [обзор сбора метрики](../azure-monitor/platform/data-platform.md) и узнайте, как можно обеспечить, чтобы служба была доступна и отвечала на запросы.

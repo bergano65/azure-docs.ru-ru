@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/02/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 828be8e790803e53b0434a71fb32a29a4a0c17bc
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: f8aa38cf5d1667e2413f30025b554e379bd76b07
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92428073"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92478581"
 ---
 # <a name="azure-security-baseline-for-azure-database-for-postgresql---single-server"></a>Базовый уровень безопасности Azure для базы данных Azure для PostgreSQL — один сервер
 
@@ -134,7 +134,7 @@ ms.locfileid: "92428073"
 
 - [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-- [Примеры политик Azure для работы в сети](/azure/governance/policy/samples)
+- [Примеры политик Azure для работы в сети](../governance/policy/samples/index.md)
 
 - [Создание схемы Azure](../governance/blueprints/create-blueprint-portal.md)
 
@@ -150,7 +150,7 @@ ms.locfileid: "92428073"
 
 Вы можете использовать Azure PowerShell или Azure CLI для поиска или выполнения действий с ресурсами на основе их тегов.
 
-- [Создание и использование тегов](/azure/azure-resource-manager/resource-group-using-tags)
+- [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -160,7 +160,7 @@ ms.locfileid: "92428073"
 
 **Руководство**: Используйте журнал действий Azure для мониторинга конфигураций сетевых ресурсов и обнаружения изменений для сетевых ресурсов, связанных с экземплярами базы данных Azure для PostgreSQL. Создавайте оповещения в Azure Monitor, которые будут запускаться при изменении критических сетевых ресурсов.
 
-- [Как просматривать и извлекать события журнала действий Azure](/azure/azure-monitor/platform/activity-log-view)
+- [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/platform/activity-log.md#view-the-activity-log)
 
 - [Как создать оповещения в службе Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
 
@@ -202,7 +202,7 @@ ms.locfileid: "92428073"
 
 - [Как настроить и получить доступ к журналам аудита для базы данных Azure для PostgreSQL](concepts-audit.md)
 
-- [Настройка параметров диагностики для журнала действий Azure](/azure/azure-monitor/platform/diagnostic-settings-legacy)
+- [Настройка параметров диагностики для журнала действий Azure](../azure-monitor/platform/activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -222,7 +222,7 @@ ms.locfileid: "92428073"
 
 - [Задание параметров хранения журналов для рабочих областей Log Analytics](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
 
-- [Хранение журналов ресурсов в учетной записи хранения Azure](/azure/azure-monitor/platform/resource-logs-collect-storage)
+- [Хранение журналов ресурсов в учетной записи хранения Azure](../azure-monitor/platform/resource-logs.md#send-to-azure-storage)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -254,7 +254,7 @@ ms.locfileid: "92428073"
 
 - [Как настроить и получить доступ к журналам аудита для базы данных Azure для PostgreSQL](concepts-audit.md)
 
-- [Настройка параметров диагностики для журнала действий Azure](/azure/azure-monitor/platform/diagnostic-settings-legacy)
+- [Настройка параметров диагностики для журнала действий Azure](../azure-monitor/platform/activity-log.md)
 
 - [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
@@ -386,7 +386,7 @@ ms.locfileid: "92428073"
 
 - [Развертывание Privileged Identity Management (PIM)](../active-directory/privileged-identity-management/pim-deployment-plan.md)
 
-- [Общие сведения об обнаружении рисков в Azure AD](/azure/active-directory/reports-monitoring/concept-risk-events)
+- [Общие сведения об обнаружении рисков в Azure AD](../active-directory/identity-protection/overview-identity-protection.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -420,7 +420,7 @@ ms.locfileid: "92428073"
 
 **Руководство**: Проверьте журналы Azure Active Directory, чтобы обнаружить устаревшие учетные записи, которые могут включать в себя роли администраторов базы данных Azure для PostgreSQL. Кроме того, используйте проверку доступа удостоверений Azure для эффективного управления членством в группах, доступа к корпоративным приложениям, которые могут использоваться для доступа к базе данных Azure для PostgreSQL и назначения ролей. Доступ пользователей следует проверять регулярно, например раз в 90 дней, чтобы только у авторизованных пользователей был постоянный доступ.
 
-- [Общие сведения об отчетах Azure AD](/azure/active-directory/reports-monitoring/)
+- [Общие сведения об отчетах Azure AD](../active-directory/reports-monitoring/index.yml)
 
 - [Использование проверок доступа для идентификации Azure](../active-directory/governance/access-reviews-overview.md)
 
@@ -438,7 +438,7 @@ ms.locfileid: "92428073"
 
 - [Как настроить и получить доступ к журналам аудита для базы данных Azure для PostgreSQL](concepts-audit.md)
 
-- [Как интегрировать журналы действий Azure в Azure Monitor](/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)
+- [Как интегрировать журналы действий Azure в Azure Monitor](../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -456,7 +456,7 @@ ms.locfileid: "92428073"
 
 - [Общие сведения о Защите идентификации Azure AD](../active-directory/identity-protection/overview-identity-protection.md)
 
-- [Просмотр рискованных входов в Azure AD](/azure/active-directory/reports-monitoring/concept-risk-events)
+- [Просмотр рискованных входов в Azure AD](../active-directory/identity-protection/overview-identity-protection.md)
 
 - [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
@@ -482,7 +482,7 @@ ms.locfileid: "92428073"
 
 **Руководство**: Используйте теги для пометки экземпляров базы данных Azure для PostgreSQL или связанных ресурсов, в которых хранятся или обрабатываются конфиденциальные данные.
 
-- [Создание и использование тегов](/azure/azure-resource-manager/resource-group-using-tags)
+- [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -492,9 +492,9 @@ ms.locfileid: "92428073"
 
 **Руководство**: Реализуйте отдельные подписки и группы управления для разработки, тестирования и производства. Используйте сочетание приватного канала, конечных точек службы и (или) правил брандмауэра, чтобы изолировать и ограничить сетевой доступ к экземплярам базы данных Azure для PostgreSQL.
 
-- [Создание дополнительных подписок Azure](/azure/billing/billing-create-subscription)
+- [Создание дополнительных подписок Azure](../cost-management-billing/manage/create-subscription.md)
 
-- [Создание групп управления](/azure/governance/management-groups/create)
+- [Создание групп управления](../governance/management-groups/create-management-group-portal.md)
 
 - [Настройка закрытой ссылки для базы данных Azure для PostgreSQL](howto-configure-privatelink-portal.md)
 
@@ -654,7 +654,7 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 - [Как создавать запросы с помощью Azure Resource Graph](../governance/resource-graph/first-query-portal.md)
 
-- [Как просматривать подписки Azure](https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0)
+- [Как просматривать подписки Azure](/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0)
 
 - [Общие сведения об Azure RBAC](../role-based-access-control/overview.md)
 
@@ -666,7 +666,7 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 **Руководство**: Примените теги к базе данных Azure для экземпляров PostgreSQL и другим связанным ресурсам, предоставив метаданные для логической организации их в таксономию.
 
-- [Создание и использование тегов](/azure/azure-resource-manager/resource-group-using-tags)
+- [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -676,11 +676,11 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 **Руководство**: При необходимости используйте теги, группы управления и отдельные подписки, чтобы упорядочить и отслеживать экземпляры базы данных Azure для PostgreSQL и связанные ресурсы. Регулярно сверяйте ресурсы, чтобы своевременно удалять неавторизованные ресурсы из подписки.
 
-- [Создание дополнительных подписок Azure](/azure/billing/billing-create-subscription)
+- [Создание дополнительных подписок Azure](../cost-management-billing/manage/create-subscription.md)
 
-- [Создание групп управления](/azure/governance/management-groups/create)
+- [Создание групп управления](../governance/management-groups/create-management-group-portal.md)
 
-- [Создание и использование тегов](/azure/azure-resource-manager/resource-group-using-tags)
+- [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -746,7 +746,7 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 - [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-- [Как отказаться от определенного типа ресурса с помощью Политики Azure](/azure/governance/policy/samples/not-allowed-resource-types)
+- [Как отказаться от определенного типа ресурса с помощью Политики Azure](../governance/policy/samples/index.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -798,7 +798,7 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 - На серверах баз данных PostgreSQL должны быть включены журналы подключений
 
-- [Просмотр доступных псевдонимов политик Azure](https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0)
+- [Просмотр доступных псевдонимов политик Azure](/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0)
 
 - [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
@@ -838,9 +838,9 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 **Руководство**: Если вы используете пользовательские определения политики Azure для экземпляров базы данных Azure для PostgreSQL и связанных ресурсов, используйте Azure Repos для безопасного хранения кода и управления им.
 
-- [Как хранить код в Azure DevOps](https://docs.microsoft.com/azure/devops/repos/git/gitworkflow?view=azure-devops)
+- [Как хранить код в Azure DevOps](/azure/devops/repos/git/gitworkflow?view=azure-devops)
 
-- [Документация по Azure Repos](https://docs.microsoft.com/azure/devops/repos/index?view=azure-devops)
+- [Документация по Azure Repos](/azure/devops/repos/index?view=azure-devops)
 
 **Мониторинг Центра безопасности Azure**. Неприменимо
 
@@ -898,7 +898,7 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 - [Создание Key Vault](../key-vault/general/quick-create-portal.md)
 
-- [Как обеспечить проверку подлинности Key Vault с помощью управляемого удостоверения](/azure/key-vault/general/managed-identity)
+- [Как обеспечить проверку подлинности Key Vault с помощью управляемого удостоверения](../key-vault/general/assign-access-policy-portal.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -1106,5 +1106,5 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Ознакомьтесь со статьей [Тесты производительности системы безопасности Azure](/azure/security/benchmarks/overview).
-- Дополнительные сведения о [базовой конфигурации безопасности Azure](/azure/security/benchmarks/security-baselines-overview).
+- Ознакомьтесь со статьей [Тесты производительности системы безопасности Azure](../security/benchmarks/overview.md).
+- Дополнительные сведения о [базовой конфигурации безопасности Azure](../security/benchmarks/security-baselines-overview.md).

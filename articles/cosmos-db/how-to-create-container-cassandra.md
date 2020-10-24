@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 10/16/2020
 ms.author: mjbrown
 ms.custom: devx-track-azurecli, devx-track-csharp
-ms.openlocfilehash: d485e90036f03c13ad8c9d52781486151009e14c
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: 54b58a07e3d6d4b330b6f97ef0f4a7bdd10293da
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92284652"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92490464"
 ---
 # <a name="create-a-container-in-azure-cosmos-db-cassandra-api"></a>Создание контейнера в Azure Cosmos DB API Cassandra
 
@@ -36,7 +36,7 @@ ms.locfileid: "92284652"
    * Введите имя таблицы.
    * Укажите свойства и первичный ключ.
    * Укажите подготавливаемую пропускную способность (например, 1000 ЕЗ/с).
-   * Щелкните **ОК**.
+   * Нажмите кнопку **ОК**.
 
     :::image type="content" source="./media/how-to-create-container/partitioned-collection-create-cassandra.png" alt-text="Снимок экрана API Cassandra, диалоговое окно добавления таблицы":::
 
@@ -68,5 +68,4 @@ session.Execute(CREATE TABLE myKeySpace.myTable(
 * [Partitioning in Azure Cosmos DB](partitioning-overview.md) (Секционирование в Azure Cosmos DB)
 * [Единицы запросов в Azure Cosmos DB](request-units.md)
 * [Обеспечение необходимой пропускной способности для контейнеров и баз данных](set-throughput.md)
-* [Работа с учетной записью Azure Cosmos](account-overview.md)
-
+* [Работа с учетной записью Azure Cosmos](./account-databases-containers-items.md)

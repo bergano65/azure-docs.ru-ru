@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 11/26/2019
-ms.openlocfilehash: ea7aa7758b5ccf7be02fa8d450ce710dcbef86a4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b4f390e6d362895d58be0e8695e72d058a021b34
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86087390"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92485551"
 ---
 # <a name="use-apache-kafka-on-hdinsight-with-azure-iot-hub"></a>Использование Apache Kafka в HDInsight с Центром Интернета вещей
 
@@ -29,7 +29,7 @@ API Kafka Connect позволяет реализовать соединител
 
 Дополнительные сведения об API подключения см. в разделе [https://kafka.apache.org/documentation/#connect](https://kafka.apache.org/documentation/#connect) .
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 * Кластер Apache Kafka в HDInsight. Дополнительные сведения см. в документе [Приступая к работе с Apache Kafka в HDInsight](apache-kafka-get-started.md).
 
@@ -118,7 +118,7 @@ API Kafka Connect позволяет реализовать соединител
 
 1. Внесите следующие изменения:
 
-    |Текущее значение |Новое значение | Комментарий |
+    |Текущее значение |Новое значение | Комментировать |
     |---|---|---|
     |`bootstrap.servers=localhost:9092`|Замените `localhost:9092` значение на узлы брокера из предыдущего шага.|Настраивает изолированную конфигурацию для пограничных узлов, чтобы найти брокеры Kafka.|
     |`key.converter=org.apache.kafka.connect.json.JsonConverter`|`key.converter=org.apache.kafka.connect.storage.StringConverter`|Это изменение можно проверить с помощью отправителя консоли, входящего в состав Kafka. Для различных отправителей и потребителей вам могут понадобиться различные преобразователи. Сведения об использовании других значений преобразователей см. в разделе [https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Sink.md](https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Sink.md) .|
@@ -162,7 +162,7 @@ API Kafka Connect позволяет реализовать соединител
         > [!IMPORTANT]  
         > Значение конечной точки на портале может содержать лишний текст, который не требуется в этом примере. Извлеките текст, который соответствует этому шаблону: `sb://<randomnamespace>.servicebus.windows.net/`.
 
-   * __В [интерфейсе командной строки Azure](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli)__ введите следующую команду:
+   * __В [интерфейсе командной строки Azure](/cli/azure/get-started-with-azure-cli)__ введите следующую команду:
 
        ```azurecli
        az iot hub show --name myhubname --query "{EventHubCompatibleName:properties.eventHubEndpoints.events.path,EventHubCompatibleEndpoint:properties.eventHubEndpoints.events.endpoint,Partitions:properties.eventHubEndpoints.events.partitionCount}"
@@ -184,7 +184,7 @@ API Kafka Connect позволяет реализовать соединител
         2. Скопируйте значение __первичного ключа__ .
         3. Скопируйте значение поля __Строка подключения — первичный ключ__.
 
-    * __В [интерфейсе командной строки Azure](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli)__ введите следующую команду:
+    * __В [интерфейсе командной строки Azure](/cli/azure/get-started-with-azure-cli)__ введите следующую команду:
 
         1. Чтобы получить значение первичного ключа, используйте следующую команду:
 

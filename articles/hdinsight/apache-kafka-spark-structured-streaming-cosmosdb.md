@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 11/18/2019
-ms.openlocfilehash: 0a2e69a220f6752e5f0392c345b02967e2e76beb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 20045ce914a340ac36e4df8cbd0df38e872a1d38
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86203474"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92487336"
 ---
 # <a name="use-apache-spark-structured-streaming-with-apache-kafka-and-azure-cosmos-db"></a>Использование структурированной потоковой передачи Apache Spark с Apache Kafka в Azure Cosmos DB
 
@@ -86,7 +86,7 @@ Apache Kafka в HDInsight не предоставляет доступ к бро
 
 В этом документе данные проекта сохраняются в Cosmos DB. Перед выполнением кода необходимо сначала создать _базу данных_ и _коллекцию_ в вашем экземпляре Cosmos DB. Также необходимо получить конечную точку документа и _ключ_, используемый для аутентификации запросов к Cosmos DB.
 
-Один из способов сделать это — воспользоваться [Azure CLI 2.0](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest). Следующий скрипт создаст базу данных с именем `kafkadata` и коллекцию с именем `kafkacollection`. Затем он возвращает первичный ключ.
+Один из способов сделать это — воспользоваться [Azure CLI 2.0](/cli/azure/). Следующий скрипт создаст базу данных с именем `kafkadata` и коллекцию с именем `kafkacollection`. Затем он возвращает первичный ключ.
 
 ```azurecli
 #!/bin/bash
@@ -156,7 +156,7 @@ az cosmosdb keys list --name $name --resource-group $resourceGroupName --type ke
 
 На домашней странице [Jupyter Notebook](https://jupyter.org/) выберите запись __Stream-data-from-Kafka-to-Cosmos-DB.ipynb__. Следуйте инструкциям в записной книжке, чтобы выполнить потоковую передачу данных из Kafka в Azure Cosmos DB с помощью структурированной потоковой передачи Spark.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы узнали, как использовать Apache Spark структурированной потоковой передачи, ознакомьтесь со следующими документами, чтобы узнать больше о работе с Apache Spark, Apache Kafka и Azure Cosmos DB.
 

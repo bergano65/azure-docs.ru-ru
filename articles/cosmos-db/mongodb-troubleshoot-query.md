@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.date: 10/12/2020
 ms.author: tisande
 ms.reviewer: sngun
-ms.openlocfilehash: 615bd423296fb9ed2ee28cab9e362873a30ee7b9
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: 7a34b4a3a0f9fe75b5e252f20a8b0924b0ce01d7
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92284679"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92488390"
 ---
 # <a name="troubleshoot-query-issues-when-using-the-azure-cosmos-db-api-for-mongodb"></a>Устранение проблем с запросами при использовании Azure Cosmos DB API для MongoDB
 
@@ -116,7 +116,7 @@ db.coll.find({foodGroup: "Baby Foods"}).explain({"executionStatistics": true })
 | `timeInclusiveMS` | Задержка запросов в серверной части |
 | `pathsIndexed` | Показывает индексы, используемые запросом | 
 | `pathsNotIndexed` | Показывает индексы, которые мог бы использовать запрос, если он доступен | 
-| `shardInformation` | Сводка по производительности запросов для определенной [физической секции](partition-data.md#physical-partitions) | 
+| `shardInformation` | Сводка по производительности запросов для определенной [физической секции](./partitioning-overview.md#physical-partitions) | 
 | `retrievedDocumentCount` | Число документов, загруженных обработчиком запросов | 
 | `outputDocumentCount` | Число документов, возвращенных в результатах запроса | 
 | `estimatedDelayFromRateLimitingInMilliseconds` | Оценка дополнительной задержки запросов из-за ограничения скорости | 
@@ -256,13 +256,13 @@ db.coll.find(
 
 [Индексы с подстановочными знаками](mongodb-indexing.md#wildcard-indexes) могут упростить индексирование. В отличие от MongoDB, индексы с подстановочными знаками могут поддерживать несколько полей в предикатах запросов. При использовании одного индекса вместо создания отдельного индекса для каждого свойства различие в производительности запросов не будет. Добавление индекса с подстановочными знаками для всех свойств — самый простой способ оптимизации всех запросов.
 
-Новые индексы можно добавлять в любое время без влияния на доступность для записи или чтения. Можно [отслеживать ход преобразования индекса](https://docs.microsoft.com/azure/cosmos-db/how-to-manage-indexing-policy#use-the-net-sdk-v3).
+Новые индексы можно добавлять в любое время без влияния на доступность для записи или чтения. Можно [отслеживать ход преобразования индекса](./how-to-manage-indexing-policy.md#dotnet-sdk).
 
 ### <a name="understand-which-aggregation-operations-use-the-index"></a>Сведения об операциях агрегирования, использующих индекс
 
 В большинстве случаев операции агрегирования в API Azure Cosmos DB для MongoDB будут частично использовать индексы. Как правило, обработчик запросов будет применять фильтры по равенству и диапазонам первыми и использовать индексы. После применения этих фильтров обработчик запросов может оценить дополнительные фильтры и прибегнуть к загрузке оставшихся документов для выполнения статистического вычисления, если это необходимо. 
 
-Ниже приведен пример.
+Ниже приведен пример:
 
 ```
 db.coll.aggregate( [
