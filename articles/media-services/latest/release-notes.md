@@ -9,14 +9,14 @@ editor: ''
 ms.service: media-services
 ms.workload: na
 ms.topic: article
-ms.date: 08/31/2020
+ms.date: 10/21/2020
 ms.author: inhenkel
-ms.openlocfilehash: d18962e097358b8e80ac93b4d8419f7cd4f77ee0
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 4a741834637900ec0c78105790bac2453d759e2f
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92426809"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92514492"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Заметки о выпуске Служб мультимедиа Azure версии 3
 
@@ -37,6 +37,15 @@ ms.locfileid: "92426809"
 > Вы можете использовать [портал Azure](https://portal.azure.com/) для управления [динамическими событиями](live-events-outputs-concept.md)v3, просмотреть v3 [Assets](assets-concept.md) and Jobs, получить сведения о доступе к API-интерфейсам, шифровать содержимое. Для всех других задач управления (например, для управления преобразованиями и заданиями) используйте [REST API](/rest/api/media/accountfilters), [CLI](/cli/azure/ams)или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
 >
 > Дополнительные сведения см. [в разделе ограничения портал Azure для служб мультимедиа v3](frequently-asked-questions.md#what-are-the-azure-portal-limitations-for-media-services-v3).
+
+## <a name="october-2020"></a>Октябрь 2020 г.
+
+### <a name="basic-audio-analysis"></a>Базовый анализ звука
+Предустановка "анализ звука" теперь включает ценовую категорию Basic mode. Новый базовый режим анализатора звука — это недорогой вариант для извлечения речевых заголовков и форматирования выходных субтитров и субтитров. В этом режиме выполняется расшифровка речи в текст и создание файла подзаголовка и подписи ВТТ. Выходные данные этого режима включают в себя JSON файл Insights, включающий только ключевые слова, транскрипцию и сведения о времени. Автоматическое определение языка и диаризатион динамика не включены в этот режим. См [. список поддерживаемых языков.](analyzing-video-audio-files-concept.md#built-in-presets)
+
+Клиенты, использующие индексатор версии 1 и индексатор v2, должны перейти на базовую предустановку анализа звука.
+
+Дополнительные сведения о режиме базового анализатора звука см. в разделе [Анализ видео и звуковых файлов](analyzing-video-audio-files-concept.md).  Чтобы узнать, как использовать базовый режим анализатора звука с REST API, см. статью [Создание базового аудио-преобразования](how-to-create-basic-audio-transform.md).
 
 ## <a name="august-2020"></a>Август 2020 г.
 

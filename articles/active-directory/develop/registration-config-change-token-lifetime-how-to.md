@@ -8,19 +8,23 @@ ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 09/30/2020
+ms.date: 10/23/2020
 ms.author: ryanwi
 ms.custom: aaddev, seoapril2019
-ms.openlocfilehash: 7eb01ccda3c3e13827a8977b8ee0e244aef6b0be
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9483fe972cf1a4dce4fb285ced3cb390d0bda725
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91613244"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92516789"
 ---
 # <a name="how-to-change-the-token-lifetime-defaults-for-a-custom-developed-application"></a>Как изменить стандартное время существования токена для специально разработанного приложения
 
 В этой статье показано, как настроить политику времени жизни маркера с помощью Azure AD PowerShell. Azure AD Premium позволяет разработчикам приложений и администраторам клиентов настраивать время существования токенов, выпущенных для клиентов, не входящих в число конфиденциальных. Политики времени существования токенов настраиваются на уровне клиента или ресурсов, к которым осуществляется доступ.
+
+> [!IMPORTANT]
+> После 30 января 2021 клиенты больше не смогут настраивать время существования маркера обновления и сеанса, а Azure Active Directory прекращает учитывать существующую конфигурацию маркера обновления и сеанса в политиках после этой даты. Вы по-прежнему можете настроить время существования маркера доступа после его устаревания. Дополнительные сведения см. [в статье настраиваемые времена жизни маркеров в Azure AD](./active-directory-configurable-token-lifetimes.md).
+> Мы реализовали [возможности управления сеансом проверки подлинности](../conditional-access/howto-conditional-access-session-lifetime.md)   в условном доступе Azure AD. С помощью этой новой функции можно настроить время существования маркера обновления, установив частоту входа.  
 
 Чтобы задать политику времени существования токена, нужно скачать [модуль Azure AD PowerShell](https://www.powershellgallery.com/packages/AzureADPreview).
 Выполните команду **Connect-AzureAD-Confirm**.
@@ -35,7 +39,7 @@ $sp = Get-AzureADServicePrincipal -Filter "DisplayName eq '<service principal di
 Add-AzureADServicePrincipalPolicy -Id $sp.ObjectId -RefObjectId $policy.Id
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * См. в разделе [Настройка времени существования маркеров в Azure AD](./active-directory-configurable-token-lifetimes.md) чтобы узнать, как настроить время существования маркера, выданного Azure AD, включая то, как задать время существования маркеров для всех приложений в вашей организации, для многопользовательского приложения или для конкретной службы. 
 * [Справочник по маркерам Azure AD](./id-tokens.md)

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 10/14/2019
 ms.author: Zhchia
-ms.openlocfilehash: aa9ed0954cbfa2d83eeed1c70f40beedcf4f44cd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6ab23183fa42b87dad68da1d7ef9b1a2f6145750
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91285973"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92514798"
 ---
 # <a name="tutorial-configure-soloinsight-cloudgate-sso-for-automatic-user-provisioning"></a>Учебник. Настройка единого входа Soloinsight-CloudGate для автоматической подготовки пользователей
 
@@ -89,7 +89,7 @@ ms.locfileid: "91285973"
 В этом разделе описано, как настроить службу подготовки Azure AD для создания, обновления и отключения пользователей и групп в Soloinsight-CloudGate SSO на основе назначений пользователей и групп в Azure AD.
 
 > [!TIP]
-> Вы также можете включить единый вход на основе SAML для Soloinsight-CloudGate единого входа, следуя инструкциям, приведенным в [руководстве по единому входу в солоинсигхт-КЛАУДГАТЕ SSO](https://docs.microsoft.com/azure/active-directory/saas-apps/soloinsight-cloudgate-sso-tutorial). Единый вход можно настроить независимо от автоматической подготовки пользователей, хотя эти две функции дополняют друг друга.
+> Вы также можете включить единый вход на основе SAML для Soloinsight-CloudGate единого входа, следуя инструкциям, приведенным в [руководстве по единому входу в солоинсигхт-КЛАУДГАТЕ SSO](./soloinsight-cloudgate-sso-tutorial.md). Единый вход можно настроить независимо от автоматической подготовки пользователей, хотя эти две функции дополняют друг друга.
 
 ### <a name="to-configure-automatic-user-provisioning-for-soloinsight-cloudgate-sso-in-azure-ad"></a>Чтобы настроить автоматическую подготовку учетных записей пользователей для Soloinsight-CloudGate SSO в Azure AD, сделайте следующее:
 
@@ -161,4 +161,3 @@ ms.locfileid: "91285973"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../app-provisioning/check-status-user-account-provisioning.md)
-

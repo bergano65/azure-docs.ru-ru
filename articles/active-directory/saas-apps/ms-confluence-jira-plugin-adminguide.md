@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 11/19/2018
 ms.author: jeedes
-ms.openlocfilehash: 07bd9353f08e9440e495dfa92c608b4d6f70f5cf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4b0d2c6c3d70e73be25038c763f05ef572b56ebe
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88543988"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92515685"
 ---
 # <a name="atlassian-jira-and-confluence-admin-guide-for-azure-active-directory"></a>Atlassian JIRA и Confluence в руководстве администратора для Azure Active Directory
 
@@ -50,7 +50,7 @@ ms.locfileid: "88543988"
 * Приложения Jira или Confluence также доступны вне сети компании.
 * Подключаемый модуль работает только с локальными версиями Jira и Confluence.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Прежде чем начать установку подключаемого модуля, убедитесь в выполнении следующих требований.
 
@@ -67,7 +67,7 @@ ms.locfileid: "88543988"
 
 * Jira Core и Jira Software: версии 6.0–7.12;
 * Jira Service Desk: версии 3.0.0–3.5.0.
-* JIRA поддерживает также 5.2. Дополнительные сведения см. в статье об [использовании единого входа Microsoft Azure Active Directory для JIRA 5.2](https://docs.microsoft.com/azure/active-directory/saas-apps/jira52microsoft-tutorial).
+* JIRA поддерживает также 5.2. Дополнительные сведения см. в статье об [использовании единого входа Microsoft Azure Active Directory для JIRA 5.2](./jira52microsoft-tutorial.md).
 * Confluence: От 5.0 до 5.10
 * Confluence: версия 6.0.1;
 * Confluence: версия 6.1.1;
@@ -185,7 +185,7 @@ ms.locfileid: "88543988"
 
 * Jira Core и Jira Software: версии 6.0–7.12;
 * Jira Service Desk: версии 3.0.0–3.5.0.
-* JIRA поддерживает также 5.2. Дополнительные сведения см. в статье об [использовании единого входа Microsoft Azure Active Directory для JIRA 5.2](https://docs.microsoft.com/azure/active-directory/saas-apps/jira52microsoft-tutorial).
+* JIRA поддерживает также 5.2. Дополнительные сведения см. в статье об [использовании единого входа Microsoft Azure Active Directory для JIRA 5.2](./jira52microsoft-tutorial.md).
 * Confluence: От 5.0 до 5.10
 * Confluence: версия 6.0.1;
 * Confluence: версия 6.1.1;

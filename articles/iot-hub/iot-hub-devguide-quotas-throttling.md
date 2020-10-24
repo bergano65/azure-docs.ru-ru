@@ -11,12 +11,12 @@ ms.custom:
 - 'Role: Cloud Development'
 - 'Role: Operations'
 - 'Role: Technical Support'
-ms.openlocfilehash: ec8d277de177942386d9f3becdf329cdff1ca812
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2f2ab3c55c5532b76c45a18054fd653dd8fe8137
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88797808"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92504080"
 ---
 # <a name="reference---iot-hub-quotas-and-throttling"></a>Руководство. Квоты и регулирование в Центре Интернета вещей
 
@@ -59,7 +59,7 @@ ms.locfileid: "88797808"
 | Максимальное число параллельно подключенных потоков устройств<sup>1</sup> | 50 | 50 | 50 |
 | Максимальный объем передачи данных в потоке устройства<sup>1</sup> (совокупная частота в день) | 300 МБ | 300 МБ | 300 МБ |
 
-<sup>1</sup>Эта функция недоступна на базовом уровне Центра Интернета вещей. Дополнительные сведения см. в статье [Масштабирование решения для Центра Интернета вещей](iot-hub-scaling.md). <br/><sup>2</sup> Размер счетчика регулирования составляет 4 КБ.
+<sup>1</sup>Эта функция недоступна на базовом уровне Центра Интернета вещей. Дополнительные сведения см. в статье [Масштабирование решения для Центра Интернета вещей](iot-hub-scaling.md). <br/><sup>2</sup> Размер счетчика регулирования составляет 4 КБ. Регулирование основывается только на размере полезных данных запроса.
 
 ### <a name="throttling-details"></a>Сведения о регулировании
 

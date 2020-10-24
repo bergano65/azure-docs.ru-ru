@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 9/28/2020
 ms.topic: conceptual
 ms.service: digital-twins
-ms.openlocfilehash: bf39bd0c787ed64d573cc2a257442b4d3bb8ab7d
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: 2d30410cf201475b69adce39eb6a66a7831cad8d
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92015120"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92503255"
 ---
 # <a name="convert-industry-standard-models-to-dtdl-for-azure-digital-twins"></a>Преобразование стандартных отраслевых моделей в ДТДЛ для Azure Digital двойников
 
@@ -32,7 +32,8 @@ ms.locfileid: "92015120"
 | --- | --- | 
 | Здания и управление ссудами | [реалестатекоре](https://www.realestatecore.io/)<br>[Схема модуля](https://brickschema.org/ontology/1.1/)<br>[Создание топологии Онтологи (BOT)](https://w3c-lbd-cg.github.io/bot/)<br>[Сеть семантического датчика](https://www.w3.org/TR/vocab-ssn/)<br>[Классы Буилдингсмарт Industry Foundation (ИФК)](https://technical.buildingsmart.org/standards/ifc/ifc-schema-specifications/) |
 | Интеллектуальные города | [ЕТСИ НГСИ-LD](https://www.etsi.org/deliver/etsi_gr/CIM/001_099/008/01.01.01_60/gr_CIM008v010101p.pdf)<br>[Справочник по интеллектуальным приложениям (САРЕФ)](https://saref.etsi.org/)<br>[фиваре](https://www.fiware.org/)<br>[Открытие & гибких смарт-городов (ОАСК)](https://oascities.org/) |
-| Сетка энергии | [Модель CIM](https://cimug.ucaiug.org/) / [IEC 61968](https://en.wikipedia.org/wiki/IEC_61968)<br>[Модели адрм](http://www.adrm.com/) для торговли энергии и товара | 
+| Сетка энергии | [Модель CIM](https://cimug.ucaiug.org/) / [IEC 61968](https://en.wikipedia.org/wiki/IEC_61968)<br>[Модели адрм](http://www.adrm.com/) для торговли энергии и товара |
+| Автомобилестроение | [Спецификация сигнала автомобиля](https://github.com/GENIVI/vehicle_signal_specification/tree/master/spec) |
 
 В зависимости от потребностей можно также использовать ДТДЛ для настройки или расширения отраслевых моделей или разработки собственной настраиваемой модели с нуля. 
 

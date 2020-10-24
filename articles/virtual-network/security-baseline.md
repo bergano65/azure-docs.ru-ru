@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/01/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: c34ace92fffee3c135cb05e07f06d885751bbce5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 36be61fd65db7ea02a3baec4b519a13231c420ec
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91629749"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92514447"
 ---
 # <a name="azure-security-baseline-for-virtual-network"></a>Базовый уровень безопасности Azure для виртуальной сети
 
@@ -118,7 +118,7 @@ ms.locfileid: "91629749"
 
 См. политику по умолчанию для центра безопасности, которая содержит доступные рекомендации по обеспечению безопасности, связанные с виртуальными сетями.
 
-Используйте схемы Azure для упрощения крупномасштабных развертываний Azure с помощью ключевых артефактов, таких как шаблоны Azure Resource Manager, назначения управления доступом на основе ролей (Azure RBAC) и политики, в одном определении схемы. Azure Blueprint можно применять к новым подпискам для точной настройки управления и управления с помощью управления версиями. 
+Используйте схемы Azure для упрощения крупномасштабных развертываний Azure с помощью ключевых артефактов, таких как шаблоны Azure Resource Manager, назначения управления доступом на основе ролей Azure (Azure RBAC) и политики, в одном определении схемы. Azure Blueprint можно применять к новым подпискам для точной настройки управления и управления с помощью управления версиями. 
 
 - [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
@@ -408,13 +408,13 @@ ms.locfileid: "91629749"
 
 **Ответственность**: Совмещаемая блокировка
 
-### <a name="46-use-role-based-access-control-to-manage-access-to-resources"></a>4,6. Использование управления доступом на основе ролей для управления доступом к ресурсам 
+### <a name="46-use-azure-rbac-to-manage-access-to-resources"></a>4,6. Использование Azure RBAC для управления доступом к ресурсам 
 
 **Руководство**. Использование управления доступом на основе ролей Azure (Azure RBAC) для управления доступом к данным и ресурсам. В противном случае используйте зависящие от службы методы управления доступом. 
 
 Выберите Встроенные роли, такие как владелец, участник или участник сети, и назначьте роль соответствующей области. Например, можно назначить подмножество возможностей виртуальной сети с определенными разрешениями, необходимыми для виртуальных сетей с любой из этих ролей. 
 
-- [Настройка RBAC в Azure](../role-based-access-control/role-assignments-portal.md)
+- [Настройка Azure RBAC](../role-based-access-control/role-assignments-portal.md)
 
 - [Планирование виртуальных сетей](virtual-network-vnet-plan-design-arm.md#permissions)
 

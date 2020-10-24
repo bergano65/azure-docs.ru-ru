@@ -5,19 +5,22 @@ services: active-directory-b2c
 ms.service: active-directory
 ms.subservice: B2C
 ms.topic: how-to
-ms.date: 09/30/2020
+ms.date: 10/15/2020
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.custom: it-pro
-ms.openlocfilehash: a9e300a0e6f1b847c49ced7ded94db8e24016b32
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: 857429ab5fd2e2ea9a0cb0173015ceba4bb0bacb
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92102278"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92504117"
 ---
 # <a name="add-an-api-connector-to-a-sign-up-user-flow-preview"></a>Добавление соединителя API в пользовательский поток регистрации (Предварительная версия)
+
+> [!IMPORTANT]
+> Соединители API для регистрации — это общедоступная Предварительная версия функции Azure AD B2C. См. подробные сведения о [дополнительных условиях использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 Чтобы использовать [соединитель API](api-connectors-overview.md), сначала создайте соединитель API, а затем включите его в потоке пользователя.
 
@@ -48,7 +51,7 @@ Content-type: application/json
 
 {
  "email": "johnsmith@fabrikam.onmicrosoft.com",
- "identities": [ //Sent for Google and Facebook identity providers
+ "identities": [
      {
      "signInType":"federated",
      "issuer":"facebook.com",
@@ -80,7 +83,7 @@ Content-type: application/json
 > Если у утверждения нет значения во время вызова конечной точки API, утверждение не будет отправлено в API. Ваш API должен быть спроектирован таким образом, чтобы явно проверять и обрабатывать случай, когда утверждение не находится в запросе.
 
 > [!TIP] 
-> [**идентификаторы ("удостоверения")**](https://docs.microsoft.com/graph/api/resources/objectidentity) и **адреса электронной почты ("Электронная почта")** могут использоваться API для идентификации пользователя, прежде чем они будут иметь учетную запись в клиенте. Утверждение "удостоверения" отправляется, когда пользователь проходит проверку подлинности с помощью поставщика удостоверений, например Google или Facebook. "Электронная почта" всегда отправляется.
+> [**идентификаторы ("удостоверения")**](https://docs.microsoft.com/graph/api/resources/objectidentity) и **адреса электронной почты ("Электронная почта")** могут использоваться API для идентификации пользователя, прежде чем они будут иметь учетную запись в клиенте. 
 
 ## <a name="enable-the-api-connector-in-a-user-flow"></a>Включение соединителя API в потоке пользователя
 
@@ -100,7 +103,7 @@ Content-type: application/json
 
 ## <a name="after-signing-in-with-an-identity-provider"></a>После входа с помощью поставщика удостоверений
 
-Соединитель API на этом этапе в процессе регистрации вызывается сразу после проверки подлинности пользователя с помощью поставщика удостоверений (например, Google, Facebook, & Azure AD). Этот шаг предшествует ***странице Коллекция атрибутов***, которая является формой, представленной пользователю для сбора атрибутов пользователя. Этот шаг не вызывается, если пользователь регистрируется с помощью локальной учетной записи.
+Соединитель API на этом этапе в процессе регистрации вызывается сразу после проверки подлинности пользователя с помощью поставщика удостоверений (например, Google, Facebook, & Azure AD). На этом шаге перед*_страницей "Коллекция атрибутов_*" указана форма _, которая представляется пользователю для сбора атрибутов пользователя. Этот шаг не вызывается, если пользователь регистрируется с помощью локальной учетной записи.
 
 ### <a name="example-request-sent-to-the-api-at-this-step"></a>Пример запроса, отправленного в API на этом шаге
 ```http
@@ -109,7 +112,7 @@ Content-type: application/json
 
 {
  "email": "johnsmith@fabrikam.onmicrosoft.com",
- "identities": [ //Sent for Google and Facebook identity providers
+ "identities": [ 
      {
      "signInType":"federated",
      "issuer":"facebook.com",
@@ -167,7 +170,7 @@ Content-type: application/json
 
 {
  "email": "johnsmith@fabrikam.onmicrosoft.com",
- "identities": [ //Sent for Google and Facebook identity providers
+ "identities": [
      {
      "signInType":"federated",
      "issuer":"facebook.com",
@@ -238,7 +241,7 @@ Content-type: application/json
 | -------------------------------------------------- | ----------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | version                                            | Строка            | Да      | Версия API.                                                                                                                                                                                                                                                                |
 | action                                             | Строка            | Да      | Необходимое значение: `Continue`.                                                                                                                                                                                                                                                              |
-| \<builtInUserAttribute>                            | \<attribute-type> | Нет       | Возвращаемые значения могут перезаписывать значения, собранные от пользователя. Они также могут возвращаться в токене, если выбрано в качестве **утверждения приложения**.                                              |
+| \<builtInUserAttribute>                            | \<attribute-type> | Нет       | Возвращаемые значения могут перезаписывать значения, собранные от пользователя. Они также могут возвращаться в токене, если выбрано в качестве _ * утверждения приложения * *.                                              |
 | \<extension\_{extensions-app-id}\_CustomAttribute> | \<attribute-type> | Нет       | Утверждение не обязательно должно содержать `_<extensions-app-id>_` . Возвращаемые значения могут перезаписывать значения, собранные от пользователя. Они также могут возвращаться в токене, если выбрано в качестве **утверждения приложения**.  |
 
 ### <a name="example-of-a-blocking-response"></a>Пример блокирующего ответа
@@ -288,7 +291,8 @@ Content-type: application/json
 | status      | Целое число | Да      | `400`Для ответа ValidationError должно быть значение.                        |
 | userMessage | Строка  | Да      | Сообщение, отображаемое для пользователя.                                            |
 
-*Примечание.* Код состояния HTTP должен быть "400" в дополнение к значению "Status" в тексте ответа.
+> [!NOTE]
+> Код состояния HTTP должен быть "400" в дополнение к значению "Status" в тексте ответа.
 
 **Взаимодействие с пользователем при проверке — ошибка проверки**
 
@@ -300,7 +304,7 @@ Content-type: application/json
 ### <a name="using-serverless-cloud-functions"></a>Использование безсерверных облачных функций
 Бессерверные функции, такие как триггеры HTTP в функциях Azure, предоставляют простой способ создания конечных точек API для использования с соединителем API. Вы можете использовать бессерверную облачную функцию, [например](code-samples.md#api-connectors), выполнить логику проверки и ограничить число входов конкретными доменами электронной почты. Бессерверная облачная функция также может вызывать и вызывать другие веб-API, хранилища пользователей и другие облачные службы для более сложных сценариев.
 
-### <a name="best-practices"></a>Рекомендации
+### <a name="best-practices"></a>Советы и рекомендации
 Убедитесь в следующем:
 * API-интерфейс следует за контрактами запросов и ответов API, как описано выше. 
 * **URL-адрес конечной точки** соединителя API указывает на правильную конечную точку API.
@@ -318,4 +322,4 @@ Content-type: application/json
 
 ## <a name="next-steps"></a>Дальнейшие действия
 <!-- - Learn how to [add a custom approval workflow to sign-up](add-approvals.md) -->
-- Приступая к работе с [примерами краткого руководства по функциям Azure](code-samples.md#api-connectors).
+- Начните работу с нашими [примерами](code-samples.md#api-connectors).

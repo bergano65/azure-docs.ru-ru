@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 11/07/2019
 ms.author: Zhchia
-ms.openlocfilehash: 173ca296689bbdb8d574930ec2549e82839c47e9
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 5e71566ea7cd2e8953c84d58128e3380a782ba40
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92428462"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92516721"
 ---
 # <a name="tutorial-configure-netskope-user-authentication-for-automatic-user-provisioning"></a>Учебник. Настройка проверки подлинности пользователя Нетскопе для автоматической подготовки пользователей
 
@@ -97,7 +97,7 @@ ms.locfileid: "92428462"
 В этом разделе описано, как настроить службу подготовки Azure AD для создания, обновления и отключения пользователей и (или) групп в Нетскопе проверки подлинности пользователей на основе назначений пользователей и групп в Azure AD.
 
 > [!TIP]
-> Вы также можете включить единый вход на основе SAML для проверки подлинности пользователя Нетскопе, следуя инструкциям в [руководстве по проверке подлинности пользователя нетскопе с помощью единого входа](https://docs.microsoft.com/azure/active-directory/saas-apps/netskope-cloud-security-tutorial). Единый вход можно настроить независимо от автоматической подготовки пользователей, хотя эти две функции дополняют друг друга.
+> Вы также можете включить единый вход на основе SAML для проверки подлинности пользователя Нетскопе, следуя инструкциям в [руководстве по проверке подлинности пользователя нетскопе с помощью единого входа](./netskope-cloud-security-tutorial.md). Единый вход можно настроить независимо от автоматической подготовки пользователей, хотя эти две функции дополняют друг друга.
 
 > [!NOTE]
 > Дополнительные сведения о конечной точке SCIM для проверки подлинности Нетскопе пользователя см. [здесь](https://docs.google.com/document/d/1n9P_TL98_kd1sx5PAvZL2HS6MQAqkQqd-OSkWAAU6ck/edit#heading=h.prxq74iwdpon).
@@ -172,4 +172,3 @@ ms.locfileid: "92428462"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../app-provisioning/check-status-user-account-provisioning.md)
-

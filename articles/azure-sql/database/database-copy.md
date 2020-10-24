@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sashan
 ms.reviewer: ''
 ms.date: 07/29/2020
-ms.openlocfilehash: a38816f00c0e05c3bde1760e39ba00d745f12a44
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 3aaa666ac6b7ddffcf5e0d2f5b62d26bd0f96004
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92460960"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92516211"
 ---
 # <a name="copy-a-transactionally-consistent-copy-of-a-database-in-azure-sql-database"></a>Копирование транзакционно согласованной копии базы данных в базе данных SQL Azure
 
@@ -67,7 +67,7 @@ New-AzSqlDatabaseCopy -ResourceGroupName "<resourceGroup>" -ServerName $sourcese
 
 Полный пример скрипта PowerShell см. в разделе [копирование базы данных на новый сервер](scripts/copy-database-to-new-server-powershell.md).
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 
 ```azurecli
 az sql db copy --dest-name "CopyOfMySampleDatabase" --dest-resource-group "myResourceGroup" --dest-server $targetserver `
@@ -108,7 +108,7 @@ az sql db copy --dest-name "CopyOfMySampleDatabase" --dest-resource-group "myRes
 
 Эта команда копирует Database1 в новую базу данных с именем Database2 в эластичном пуле с именем pool1. Операция копирования может занять некоторое время в зависимости от размера базы данных.
 
-Database1 может быть отдельной базой данных или в составе пула, но pool1 должен быть тем же уровнем служб, что и Database1. 
+Database1 может быть отдельной базой данных или в составе пула. Поддерживается копирование между разными пулами уровней, но некоторые межуровневые копии не будут выполнены. Например, можно скопировать одну или эластичную базу данных Standard в пул общего назначения, но нельзя скопировать стандартную эластичную базу данных в пул уровня "Премиум". 
 
    ```sql
    -- execute on the master database to start copying

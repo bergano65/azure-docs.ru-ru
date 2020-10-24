@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 01/26/2018
 ms.author: jeedes
-ms.openlocfilehash: bdee884990dfadec444fae919a715c7dc3428f77
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: faf66b9a261fd4e8f63779b3d254de4c44d1d731
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92428415"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92513908"
 ---
 # <a name="tutorial-configuring-netsuite-for-automatic-user-provisioning"></a>Руководство по настройке Netsuite для автоматической подготовки пользователей
 
@@ -36,7 +36,7 @@ ms.locfileid: "92428415"
 
 Перед настройкой и включением службы подготовки необходимо решить, какие пользователи или группы в Azure AD представляют пользователей, которым требуется доступ к приложению Netsuite. Когда данное решение будет принято, можно будет назначить этих пользователей приложению Netsuite, следуя указаниям ниже.
 
-[Назначение корпоративному приложению пользователя или группы](https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-assign-user-azure-portal)
+[Назначение корпоративному приложению пользователя или группы](../manage-apps/assign-user-or-group-access-portal.md)
 
 ### <a name="important-tips-for-assigning-users-to-netsuite-oneworld"></a>Важные советы по назначению пользователей в Netsuite OneWorld:
 
