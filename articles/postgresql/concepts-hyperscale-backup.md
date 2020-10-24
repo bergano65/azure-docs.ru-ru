@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.subservice: hyperscale-citus
 ms.topic: conceptual
 ms.date: 04/28/2020
-ms.openlocfilehash: 2d781ca7293d4bd95ae62eadc50295ca14c2d381
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9656e6ab608665e325ac5f772e06df9ac296c521
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91314936"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92485381"
 ---
 # <a name="backup-and-restore-in-azure-database-for-postgresql---hyperscale-citus"></a>Резервное копирование и восстановление в базе данных Azure для PostgreSQL — масштабирование (Цитус)
 
@@ -39,7 +39,7 @@ ms.locfileid: "91314936"
 
 
 > [!IMPORTANT]
-> Невозможно восстановить удаленные кластеры с масштабированием (Цитус). При удалении кластера все узлы, принадлежащие к кластеру, удаляются и не могут быть восстановлены. Для защиты ресурсов кластера, после случайного удаления или непредвиденных изменений администраторы могут использовать [блокировки управления](/azure/azure-resource-manager/management/lock-resources).
+> Невозможно восстановить удаленные кластеры с масштабированием (Цитус). При удалении кластера все узлы, принадлежащие к кластеру, удаляются и не могут быть восстановлены. Для защиты ресурсов кластера, после случайного удаления или непредвиденных изменений администраторы могут использовать [блокировки управления](../azure-resource-manager/management/lock-resources.md).
 
 ### <a name="point-in-time-restore-pitr"></a>Восстановление до точки во времени (PITR)
 
@@ -65,5 +65,5 @@ ms.locfileid: "91314936"
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 
-* Сведения о [зонах доступности Azure](/azure/availability-zones/az-overview).
-* Установка [рекомендуемых оповещений](/azure/postgresql/howto-hyperscale-alert-on-metric#suggested-alerts) для групп серверов с горизонтальным масштабированием (Цитус).
+* Сведения о [зонах доступности Azure](../availability-zones/az-overview.md).
+* Установка [рекомендуемых оповещений](./howto-hyperscale-alert-on-metric.md#suggested-alerts) для групп серверов с горизонтальным масштабированием (Цитус).

@@ -6,18 +6,18 @@ ms.author: manishku
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 03/10/2020
-ms.openlocfilehash: 84c68125ab7e8256b8ca949a0f4b49c5ccd5162f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9b93e3f42c6b635ced7fdca61cb2ffe4f74d19bc
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90884645"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92489512"
 ---
 # <a name="private-link-for-azure-database-for-postgresql-single-server"></a>Частная ссылка на сервер базы данных Azure для PostgreSQL-Single
 
 Частная ссылка позволяет создавать частные конечные точки для базы данных Azure для PostgreSQL-Single Server и, таким образом, предоставляет службы Azure в частной виртуальной сети (VNet). Частная конечная точка предоставляет частный IP-адрес, который можно использовать для подключения к серверу базы данных, как и любой другой ресурс в виртуальной сети.
 
-Чтобы получить список служб PaaS, поддерживающих функции закрытых ссылок, ознакомьтесь с [документацией по](https://docs.microsoft.com/azure/private-link/index)частному каналу. Частная конечная точка — это частный IP-адрес в определенной [виртуальной сети](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview) и подсети.
+Чтобы получить список служб PaaS, поддерживающих функции закрытых ссылок, ознакомьтесь с [документацией по](../private-link/index.yml)частному каналу. Частная конечная точка — это частный IP-адрес в определенной [виртуальной сети](../virtual-network/virtual-networks-overview.md) и подсети.
 
 > [!NOTE]
 > Функция "Частная связь" доступна только для серверов базы данных Azure для PostgreSQL в общего назначения или ценовых категориях, оптимизированных для памяти. Убедитесь, что сервер базы данных находится в одной из этих ценовых категорий.
@@ -28,7 +28,7 @@ Data ex-фильтрация в базе данных Azure для PostgreSQL Si
 
 Рассмотрим ситуацию с пользователем, работающим с PGAdmin, в виртуальной машине Azure, которая подключается к базе данных Azure для PostgreSQL с помощью одного сервера, подготовленного в западной части США. В приведенном ниже примере показано, как ограничить доступ с помощью общедоступных конечных точек в базе данных Azure для PostgreSQL на одном сервере с использованием средств управления доступом к сети.
 
-* Отключите весь трафик службы Azure к базе данных Azure для PostgreSQL с помощью общедоступной конечной точки, установив флажок *Разрешить службам Azure* отключать. Убедитесь, что IP-адреса или диапазоны не разрешены для доступа к серверу через [правила брандмауэра](https://docs.microsoft.com/azure/postgresql/concepts-firewall-rules) или [конечные точки службы виртуальной сети](https://docs.microsoft.com/azure/postgresql/concepts-data-access-and-security-vnet).
+* Отключите весь трафик службы Azure к базе данных Azure для PostgreSQL с помощью общедоступной конечной точки, установив флажок *Разрешить службам Azure* отключать. Убедитесь, что IP-адреса или диапазоны не разрешены для доступа к серверу через [правила брандмауэра](./concepts-firewall-rules.md) или [конечные точки службы виртуальной сети](./concepts-data-access-and-security-vnet.md).
 
 * Разрешите трафик только для одного сервера базы данных Azure для PostgreSQL с использованием частного IP-адреса виртуальной машины. Дополнительные сведения см. в статьях по правилам [конечной точки службы](concepts-data-access-and-security-vnet.md) и [брандмауэра виртуальной сети.](howto-manage-vnet-using-portal.md)
 
@@ -45,7 +45,7 @@ Data ex-фильтрация в базе данных Azure для PostgreSQL Si
 
 При подключении к общедоступной конечной точке из локальных компьютеров необходимо добавить IP-адрес в брандмауэр на основе IP-адресов, используя правило брандмауэра уровня сервера. Хотя эта модель отлично подходит для предоставления доступа к отдельным компьютерам для рабочих нагрузок разработки или тестирования, управлять ею в рабочей среде сложно.
 
-С помощью закрытой ссылки можно включить локальный доступ к частной конечной точке с помощью [Express Route](https://azure.microsoft.com/services/expressroute/) (ER), частного пиринга или [VPN-туннеля](https://docs.microsoft.com/azure/vpn-gateway/). Затем они могут отключить доступ через общедоступную конечную точку и не использовать брандмауэр на основе IP-адресов.
+С помощью закрытой ссылки можно включить локальный доступ к частной конечной точке с помощью [Express Route](https://azure.microsoft.com/services/expressroute/) (ER), частного пиринга или [VPN-туннеля](../vpn-gateway/index.yml). Затем они могут отключить доступ через общедоступную конечную точку и не использовать брандмауэр на основе IP-адресов.
 
 > [!NOTE]
 > Иногда База данных Azure для PostgreSQL и подсеть виртуальной сети относятся к разным подпискам. В этих случаях необходимо обеспечить следующую конфигурацию:
@@ -57,8 +57,8 @@ Data ex-фильтрация в базе данных Azure для PostgreSQL Si
 
 Для включения закрытой ссылки требуются частные конечные точки. Это можно сделать с помощью следующих руководств.
 
-* [Портал Azure](https://docs.microsoft.com/azure/postgresql/howto-configure-privatelink-portal)
-* [CLI](https://docs.microsoft.com/azure/postgresql/howto-configure-privatelink-cli)
+* [Портал Azure](./howto-configure-privatelink-portal.md)
+* [CLI](./howto-configure-privatelink-cli.md)
 
 ### <a name="approval-process"></a>Процесс утверждения
 После того как администратор сети создаст частную конечную точку (PE), администратор PostgreSQL может управлять подключением к частной конечной точке (PEC) к базе данных Azure для PostgreSQL. Такое разделение обязанностей между администратором сети и АДМИНИСТРАТОРом базы данных полезно для управления подключением к службе "служба Azure для PostgreSQL". 
@@ -89,17 +89,17 @@ Data ex-фильтрация в базе данных Azure для PostgreSQL Si
 :::image type="content" source="media/concepts-data-access-and-security-private-link/show-private-link-overview.png" alt-text="Выбор закрытого портала конечной точки":::
 
 ### <a name="connecting-from-an-azure-vm-in-peered-virtual-network-vnet"></a>Подключение из виртуальной машины Azure в одноранговой виртуальной сети (VNet)
-Настройте [пиринг виртуальных сетей](https://docs.microsoft.com/azure/virtual-network/tutorial-connect-virtual-networks-powershell) , чтобы установить подключение к базе данных Azure для PostgreSQL-Single Server из виртуальной машины Azure в одноранговой виртуальной сети.
+Настройте [пиринг виртуальных сетей](../virtual-network/tutorial-connect-virtual-networks-powershell.md) , чтобы установить подключение к базе данных Azure для PostgreSQL-Single Server из виртуальной машины Azure в одноранговой виртуальной сети.
 
 ### <a name="connecting-from-an-azure-vm-in-vnet-to-vnet-environment"></a>Подключение из виртуальной машины Azure в среде виртуальных сетей
-Настройте [подключение VPN-шлюза](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-vnet-vnet-resource-manager-portal) между виртуальными сетями, чтобы установить подключение к базе данных Azure для PostgreSQL-Single Server из виртуальной машины Azure в другом регионе или подписке.
+Настройте [подключение VPN-шлюза](../vpn-gateway/vpn-gateway-howto-vnet-vnet-resource-manager-portal.md) между виртуальными сетями, чтобы установить подключение к базе данных Azure для PostgreSQL-Single Server из виртуальной машины Azure в другом регионе или подписке.
 
 ### <a name="connecting-from-an-on-premises-environment-over-vpn"></a>Подключение из локальной среды через VPN
 Чтобы установить подключение из локальной среды к базе данных Azure для PostgreSQL-Single Server, выберите и реализуйте один из следующих вариантов:
 
-* [Подключение "точка — сеть"](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-point-to-site-rm-ps)
-* [VPN-подключение типа "сеть —сеть"](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-create-site-to-site-rm-powershell)
-* [Канал ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-howto-linkvnet-portal-resource-manager)
+* [Подключение "точка — сеть"](../vpn-gateway/vpn-gateway-howto-point-to-site-rm-ps.md)
+* [VPN-подключение типа "сеть —сеть"](../vpn-gateway/vpn-gateway-create-site-to-site-rm-powershell.md)
+* [Канал ExpressRoute](../expressroute/expressroute-howto-linkvnet-portal-resource-manager.md)
 
 ## <a name="private-link-combined-with-firewall-rules"></a>Использование Приватного канала совместно с правилами брандмауэра
 
@@ -124,15 +124,15 @@ Data ex-фильтрация в базе данных Azure для PostgreSQL Si
 
 Чтобы узнать, как настроить доступ к общедоступной **сети** для сервера базы данных Azure для PostgreSQL от портал Azure, см. [инструкции по настройке запрета доступа к общедоступной сети](howto-deny-public-network-access.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о функциях безопасности для одного сервера базы данных Azure для PostgreSQL см. в следующих статьях:
 
-* Сведения о настройке брандмауэра для одного сервера базы данных Azure для PostgreSQL см. в разделе [Поддержка брандмауэра](https://docs.microsoft.com/azure/postgresql/concepts-firewall-rules).
+* Сведения о настройке брандмауэра для одного сервера базы данных Azure для PostgreSQL см. в разделе [Поддержка брандмауэра](./concepts-firewall-rules.md).
 
-* Чтобы узнать, как настроить конечную точку службы виртуальной сети для базы данных Azure для PostgreSQL на одном сервере, см. раздел [Настройка доступа из виртуальных сетей](https://docs.microsoft.com/azure/postgresql/concepts-data-access-and-security-vnet).
+* Чтобы узнать, как настроить конечную точку службы виртуальной сети для базы данных Azure для PostgreSQL на одном сервере, см. раздел [Настройка доступа из виртуальных сетей](./concepts-data-access-and-security-vnet.md).
 
-* Общие сведения о подключении к базе данных Azure для PostgreSQL с одним сервером см. в статье [архитектура службы "база данных Azure для PostgreSQL](https://docs.microsoft.com/azure/postgresql/concepts-connectivity-architecture) ".
+* Общие сведения о подключении к базе данных Azure для PostgreSQL с одним сервером см. в статье [архитектура службы "база данных Azure для PostgreSQL](./concepts-connectivity-architecture.md) ".
 
 <!-- Link references, to text, Within this same GitHub repo. -->
 [resource-manager-portal]: ../azure-resource-manager/management/resource-providers-and-types.md

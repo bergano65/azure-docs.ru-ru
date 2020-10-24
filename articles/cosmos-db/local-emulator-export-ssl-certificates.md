@@ -7,12 +7,12 @@ ms.date: 09/17/2020
 author: deborahc
 ms.author: dech
 ms.custom: devx-track-python, devx-track-java, contperfq1
-ms.openlocfilehash: 068b316eaa92a1e781df0b9945133a26fa0b88a2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f747cc6405cef07510766bcfa4c826aec9d9857b
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91445284"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92490413"
 ---
 # <a name="export-the-azure-cosmos-db-emulator-certificates-for-use-with-java-python-and-nodejs-apps"></a>Экспорт Azure Cosmos DB сертификатов эмулятора для использования с приложениями Java, Python и Node.js
 
@@ -66,7 +66,7 @@ ms.locfileid: "91445284"
 
 При запуске приложений Java или приложений MongoDB, использующих клиент на основе Java, проще установить сертификат в хранилище сертификатов Java по умолчанию, чем при передаче `-Djavax.net.ssl.trustStore=<keystore> -Djavax.net.ssl.trustStorePassword="<password>"` флагов. Например, включенное демонстрационное приложение Java ( `https://localhost:8081/_explorer/index.html` ) зависит от хранилища сертификатов по умолчанию.
 
-Следуйте инструкциям в разделе [Добавление сертификата в хранилище сертификатов Java](https://docs.microsoft.com/azure/java-add-certificate-ca-store) , чтобы импортировать сертификат X. 509 в хранилище сертификатов Java по умолчанию. Помните, что при запуске keytool вы будете работать в каталоге *% JAVA_HOME%* . После импорта сертификата в хранилище сертификатов клиенты для SQL и API Azure Cosmos DB для MongoDB смогут подключаться к эмулятору Cosmos Azure.
+Следуйте инструкциям в разделе [Добавление сертификата в хранилище сертификатов Java](/azure/developer/java/sdk/java-sdk-add-certificate-ca-store) , чтобы импортировать сертификат X. 509 в хранилище сертификатов Java по умолчанию. Помните, что при запуске keytool вы будете работать в каталоге *% JAVA_HOME%* . После импорта сертификата в хранилище сертификатов клиенты для SQL и API Azure Cosmos DB для MongoDB смогут подключаться к эмулятору Cosmos Azure.
 
 Кроме того, для импорта сертификата можно выполнить следующий скрипт Bash:
 
@@ -102,8 +102,7 @@ sudo $JAVA_HOME/bin/keytool -cacerts -importcert -alias cosmos_emulator -file $E
 
 Если вы установили сертификат в хранилище сертификатов Java или использовали его в других местах, необходимо повторно импортировать их с использованием текущих сертификатов. Приложение не может подключиться к локальному эмулятору, пока не будут обновлены сертификаты.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Использование параметров командной строки и команд PowerShell для управления эмулятором](emulator-command-line-parameters.md)
 * [Отладка проблем с эмулятором](troubleshoot-local-emulator.md)
-

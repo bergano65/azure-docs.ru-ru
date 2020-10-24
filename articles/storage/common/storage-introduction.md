@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 04/08/2020
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 337a4c1ba3e355c2ba1dd7ea6e34645112d1c7b1
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 73b48f8bcb4ec6facfebfc62d03ee5cd8237f504
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92091310"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92490804"
 ---
 # <a name="introduction-to-the-core-azure-storage-services"></a>Общие сведения о базовых службах хранилища Azure
 
@@ -46,7 +46,7 @@ ms.locfileid: "92091310"
 | **Файлы Azure** |Предоставляет полностью управляемые облачные файловые ресурсы, к которым можно получить доступ из любого места через стандартный промышленный протокол SMB.<br><br>Вы можете подключать файловые ресурсы Azure из облачных или локальных развертываний Windows, Linux и macOS. | Вы хотите "претянуть и сдвинуть" приложение в облако, которое уже использует собственные API файловой системы для обмена данными между ИТ и другими приложениями, работающими в Azure.<br/><br/>Вы хотите заменить или дополнить локальные файловые серверы или устройства NAS.<br><br> Вы хотите сохранить инструменты разработки и отладки, к которым нужен доступ со множества виртуальных машин. |
 | **Большие двоичные объекты Azure** | Позволяет хранить неструктурированные данные и обращаться к ним в большом масштабе в блочных BLOB-объектах.<br/><br/>Хранилище BLOB-объектов также поддерживает [Azure Data Lake Storage 2-го поколения](../blobs/data-lake-storage-introduction.md) для корпоративных решений аналитики больших данных. | Вам нужно, чтобы приложение поддерживало потоковую передачу и произвольный доступ.<br/><br/>Вам нужен доступ к приложению откуда угодно.<br/><br/>Вам нужно создать корпоративное хранилище Data Lake на платформе Azure и выполнять анализ больших данных. |
 | **Диски Azure** | Позволяет постоянно хранить данные и обращаться к ним с подключенного виртуального жесткого диска. | Для приложений, которые используют собственные API файловой системы для чтения и записи данных на постоянные диски, необходимо выполнить "поднятие и сдвиги".<br/><br/>Вы хотите сохранить данные, к которым не требуется доступ извне виртуальной машины, к которой подключен диск. |
-| **Очереди Azure** | Разрешает асинхронную очередь сообщений между компонентами приложения. | Необходимо отделить компоненты приложения и использовать асинхронный обмен сообщениями для обмена данными между ними.<br><br>Рекомендации по использованию хранилища очередей и очередей служебной шины см. в разделе [очереди хранилища и очереди служебной шины — сравнение и отличие](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-azure-and-service-bus-queues-compared-contrasted). |
+| **Очереди Azure** | Разрешает асинхронную очередь сообщений между компонентами приложения. | Необходимо отделить компоненты приложения и использовать асинхронный обмен сообщениями для обмена данными между ними.<br><br>Рекомендации по использованию хранилища очередей и очередей служебной шины см. в разделе [очереди хранилища и очереди служебной шины — сравнение и отличие](/azure/service-bus-messaging/service-bus-azure-and-service-bus-queues-compared-contrasted). |
 | **Таблицы Azure** | Позволяет хранить структурированные данные NoSQL в облаке, предоставляя хранилище ключей и атрибутов с несхемной конструкцией. | Вы хотите хранить гибкие наборы данных, такие как пользовательские данные для веб-приложений, адресные книги, сведения об устройстве или другие типы метаданных, которые требуются службе. <br/><br/>Рекомендации по использованию хранилища таблиц и API таблиц Azure Cosmos DB см. в статье [Разработка с помощью Azure Cosmos DB API таблиц и хранилища таблиц Azure](../../cosmos-db/table-support.md). |
 
 ## <a name="blob-storage"></a>Хранилище BLOB-объектов
@@ -61,7 +61,7 @@ ms.locfileid: "92091310"
 - Хранение резервных копий и восстановление данных, аварийное восстановление и архивация.
 - Хранение данных для анализа локальной службой или службой, размещенной в Azure.
 
-Доступ к объектам в хранилище BLOB-объектов можно получить в любой точке мира по протоколу HTTP или HTTPS. Пользователи и клиентские приложения могут обращаться к большим двоичным объектам с помощью URL-адресов, [REST API службы хранилища Azure](https://docs.microsoft.com/rest/api/storageservices/blob-service-rest-api), [Azure PowerShell](https://docs.microsoft.com/powershell/module/azure.storage), [Azure CLI](https://docs.microsoft.com/cli/azure/storage) или клиентской библиотеки службы хранилища Azure. Клиентские библиотеки службы хранилища доступны для различных языков, в том числе [.NET](/dotnet/api/overview/azure/storage), [Java](https://docs.microsoft.com/java/api/overview/azure/storage), [Node.js](https://azure.github.io/azure-storage-node), [Python](https://azure-storage.readthedocs.io/), [PHP](https://azure.github.io/azure-storage-php/) и [Ruby](https://azure.github.io/azure-storage-ruby).
+Доступ к объектам в хранилище BLOB-объектов можно получить в любой точке мира по протоколу HTTP или HTTPS. Пользователи и клиентские приложения могут обращаться к большим двоичным объектам с помощью URL-адресов, [REST API службы хранилища Azure](/rest/api/storageservices/blob-service-rest-api), [Azure PowerShell](/powershell/module/azure.storage), [Azure CLI](/cli/azure/storage) или клиентской библиотеки службы хранилища Azure. Клиентские библиотеки службы хранилища доступны для различных языков, в том числе [.NET](/dotnet/api/overview/azure/storage), [Java](/java/api/overview/azure/storage), [Node.js](https://azure.github.io/azure-storage-node), [Python](https://azure-storage.readthedocs.io/), [PHP](https://azure.github.io/azure-storage-php/) и [Ruby](https://azure.github.io/azure-storage-ruby).
 
 Дополнительные сведения о хранилище BLOB-объектов см. в статье [Общие сведения о хранилище объектов в Azure](../blobs/storage-blobs-introduction.md).
 
@@ -113,7 +113,7 @@ ms.locfileid: "92091310"
 
 - **Интеграция Azure Active Directory (Azure AD) для данных большого двоичного объекта и очереди.** Служба хранилища Azure поддерживает проверку подлинности и авторизацию в Azure AD для служб BLOB-объектов и очередей с помощью управления доступом на основе ролей Azure (Azure RBAC). Авторизация запросов с помощью Azure AD рекомендуется для обеспечения высокого уровня безопасности и простоты использования. Дополнительные сведения см. [в статье авторизация доступа к BLOB-объектам и очередям Azure с помощью Azure Active Directory](storage-auth-aad.md).
 - **Авторизация Azure AD по протоколу SMB для службы файлов Azure.** Служба файлов Azure поддерживает авторизацию на основе удостоверений по протоколу SMB (блок сообщений сервера) с помощью Azure Active Directory доменных служб (Azure AD DS) или локальных домен Active Directory служб (Предварительная версия). Присоединенные к домену виртуальные машины Windows могут получать доступ к файловым ресурсам Azure с помощью учетных данных Azure AD. Дополнительные сведения см. в статье [Поддержка проверки подлинности на основе удостоверений в службе файлов Azure для доступа к SMB](../files/storage-files-active-directory-overview.md) и [планирования для развертывания файлов Azure](../files/storage-files-planning.md#identity).
-- **Авторизация с общим ключом.** Службы Azure Storage Blob, файлов, очередей и таблиц поддерживают авторизацию с помощью общего ключа. Клиент, использующий авторизацию с общим ключом, передает заголовок с каждым запросом, подписанным с помощью ключа доступа учетной записи хранения. Дополнительные сведения см. в статье [Авторизация с помощью общего ключа](https://docs.microsoft.com/rest/api/storageservices/authorize-with-shared-key).
+- **Авторизация с общим ключом.** Службы Azure Storage Blob, файлов, очередей и таблиц поддерживают авторизацию с помощью общего ключа. Клиент, использующий авторизацию с общим ключом, передает заголовок с каждым запросом, подписанным с помощью ключа доступа учетной записи хранения. Дополнительные сведения см. в статье [Авторизация с помощью общего ключа](/rest/api/storageservices/authorize-with-shared-key).
 - **Авторизация с помощью подписанных URL-адрес (SAS).** Подписанный URL-адрес (SAS) — это строка, содержащая маркер безопасности, который можно добавить к URI ресурса хранилища. Маркер безопасности инкапсулирует такие ограничения, как разрешения и интервал доступа. Дополнительные сведения см. [в разделе использование подписанных URL-адресов (SAS)](storage-sas-overview.md).
 - **Анонимный доступ к контейнерам и BLOB-объектам.** Контейнер и его большие двоичные объекты могут быть общедоступными. Если указать, что контейнер или большой двоичный объект является общедоступным, любой пользователь может анонимно прочитать его; Проверка подлинности не требуется. Дополнительные сведения см. в статье [Управление анонимным доступом на чтение к контейнерам и большим двоичным объектам](../blobs/storage-manage-access-to-resources.md).
 
@@ -147,10 +147,10 @@ ms.locfileid: "92091310"
 
 ### <a name="azure-storage-data-api-and-library-references"></a>Ссылки на API и библиотеки данных службы хранилища Azure
 
-- [REST API службы хранилища Azure](https://docs.microsoft.com/rest/api/storageservices/)
-- [Клиентская библиотека хранилища Azure для .NET](https://docs.microsoft.com/dotnet/api/overview/azure/storage)
-- [Клиентская библиотека службы хранилища Azure для Java/Android](https://docs.microsoft.com/java/api/overview/azure/storage)
-- [Клиентская библиотека службы хранилища Azure для Node.js](https://docs.microsoft.com/javascript/api/overview/azure/storage-overview)
+- [REST API службы хранилища Azure](/rest/api/storageservices/)
+- [Клиентская библиотека хранилища Azure для .NET](/dotnet/api/overview/azure/storage)
+- [Клиентская библиотека службы хранилища Azure для Java/Android](/java/api/overview/azure/storage)
+- [Клиентская библиотека службы хранилища Azure для Node.js](/javascript/api/overview/azure/storage-overview)
 - [Клиентская библиотека службы хранилища Azure для Python](https://github.com/Azure/azure-storage-python)
 - [Клиентская библиотека службы хранилища Azure для PHP](https://github.com/Azure/azure-storage-php)
 - [Клиентская библиотека службы хранилища Azure для Ruby](https://github.com/Azure/azure-storage-ruby)
@@ -158,19 +158,19 @@ ms.locfileid: "92091310"
 
 ### <a name="azure-storage-management-api-and-library-references"></a>Ссылки на API и библиотеки управления службы хранилища Azure
 
-- [REST API поставщика ресурсов хранилища](https://docs.microsoft.com/rest/api/storagerp/)
-- [Клиентская библиотека поставщика ресурсов хранилища для .NET](https://docs.microsoft.com/dotnet/api/overview/azure/storage/management)
+- [REST API поставщика ресурсов хранилища](/rest/api/storagerp/)
+- [Клиентская библиотека поставщика ресурсов хранилища для .NET](/dotnet/api/overview/azure/storage/management)
 - [Интерфейс API REST управления службой хранилища (классический)](https://msdn.microsoft.com/library/azure/ee460790.aspx)
 
 ### <a name="azure-storage-data-movement-api-and-library-references"></a>Ссылки на API и библиотеки перемещения данных службы хранилища Azure
 
-- [Интерфейсы API REST службы импорта и экспорта хранилища](https://docs.microsoft.com/rest/api/storageimportexport/)
+- [Интерфейсы API REST службы импорта и экспорта хранилища](/rest/api/storageimportexport/)
 - [Клиентская библиотека перемещения хранилища данных для .NET](/dotnet/api/microsoft.azure.storage.datamovement)
 
 ### <a name="tools-and-utilities"></a>Средства и служебные программы
 
-- [Командлеты Azure PowerShell для службы хранилища](https://docs.microsoft.com/powershell/module/az.storage)
-- [Командлеты Azure CLI для службы хранилища](https://docs.microsoft.com/cli/azure/storage)
+- [Командлеты Azure PowerShell для службы хранилища](/powershell/module/az.storage)
+- [Командлеты Azure CLI для службы хранилища](/cli/azure/storage)
 - [Служебная программа командной строки AzCopy](https://aka.ms/downloadazcopy)
 - [Обозреватель службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/) — это бесплатное автономное приложение от корпорации Майкрософт, позволяющее визуализировать данные из службы хранилища Azure на платформе Windows, macOS и Linux.
 - [Шаблоны Azure Resource Manager для службы хранилища Azure](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Storage)

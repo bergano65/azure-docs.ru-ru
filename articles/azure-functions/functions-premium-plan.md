@@ -8,12 +8,12 @@ ms.author: jehollan
 ms.custom:
 - references_regions
 - fasttrack-edit
-ms.openlocfilehash: a037c903a72ba79b79c7e6b011fe025aefd7b51d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: aaf5cb70e3099d84a54a22fa291f8f3ab9e0daa6
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91578042"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92490753"
 ---
 # <a name="azure-functions-premium-plan"></a>План функций Azure Premium
 
@@ -104,7 +104,7 @@ az resource update -g <resource_group> -n <function_app_name>/config/web --set p
 Кроме того, можно увеличить максимальное число пакетов от Azure CLI:
 
 ```azurecli-interactive
-az resource update -g <resource_group> -n <premium_plan_name> --set properties.maximumElasticWorkerCount=<desired_max_burst> --resource-type Microsoft.Web/serverfarms 
+az functionapp plan update -g <resource_group> -n <premium_plan_name> --max-burst <desired_max_burst>
 ```
 
 Минимум для каждого плана будет по крайней мере один экземпляр.  Фактическое минимальное количество экземпляров будет настроено на основе всегда готовых экземпляров, запрошенных приложениями в плане.  Например, если приложение а запрашивает пять готовых экземпляров, а приложение б запрашивает два всегда готовых экземпляра в одном плане, минимальный размер плана будет вычисляться как пять.  Приложение а будет выполняться на всех 5, а приложение б будет работать только на 2.
@@ -117,14 +117,14 @@ az resource update -g <resource_group> -n <premium_plan_name> --set properties.m
 Увеличение вычисленного минимума для плана можно выполнить с помощью Azure CLI.
 
 ```azurecli-interactive
-az resource update -g <resource_group> -n <premium_plan_name> --set sku.capacity=<desired_min_instances> --resource-type Microsoft.Web/serverfarms 
+az functionapp plan update -g <resource_group> -n <premium_plan_name> --min-instances <desired_min_instances>
 ```
 
 ### <a name="available-instance-skus"></a>Номера SKU доступных экземпляров
 
 При создании или масштабировании плана можно выбрать один из трех размеров экземпляра.  Вам будет выставлен счет за общее количество ядер и подготовленной памяти в секунду, когда каждый экземпляр выделяется вам.  Приложение может автоматически масштабироваться на несколько экземпляров по мере необходимости.  
 
-|номер SKU|Ядра|Память|Память|
+|SKU|Ядра|Память|Память|
 |--|--|--|--|
 |EP1|1|3,5 ГБ|Гбайт|
 |EP2|2|7 ГБ|Гбайт|
@@ -146,8 +146,8 @@ az resource update -g <resource_group> -n <premium_plan_name> --set sku.capacity
 |Центральная Австралия| 100 | Недоступно |
 |Центральная Австралия 2| 100 | Недоступно |
 |Восточная Австралия| 100 | 20 |
-|Australia Southeast | 100 | 20 |
-|Южная Бразилия| 100 | 20 |
+|Юго-Восточная часть Австралии | 100 | 20 |
+|Brazil South| 100 | 20 |
 |Центральная Канада| 100 | 20 |
 |Центральная часть США| 100 | 20 |
 |Восточный Китай 2| 100 | 20 |
@@ -157,7 +157,7 @@ az resource update -g <resource_group> -n <premium_plan_name> --set sku.capacity
 |восточная часть США 2| 100 | 20 |
 |Центральная Франция| 100 | 20 |
 |Центрально-Западная Германия| 100 | Недоступно |
-|Japan East| 100 | 20 |
+|Восточная Япония| 100 | 20 |
 |Западная Япония| 100 | 20 |
 |Республика Корея, центральный регион| 100 | 20 |
 |Республика Корея, южный регион| Недоступно | 20 |
@@ -179,7 +179,7 @@ az resource update -g <resource_group> -n <premium_plan_name> --set sku.capacity
 |Западная Индия| 100 | 20 |
 |центрально-западная часть США| 100 | 20 |
 |западная часть США| 100 | 20 |
-|западная часть США 2| 100 | 20 |
+|Западная часть США 2| 100 | 20 |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

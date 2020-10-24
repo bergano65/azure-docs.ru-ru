@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 06/16/2020
-ms.openlocfilehash: 81180cc0d9cc7754e5a3e935c09441995f16c56a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ca2e988067add1513036e2f314e84a7ba6908cdd
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90907572"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92488067"
 ---
 # <a name="prepay-for-azure-database-for-postgresql---single-server-compute-resources-with-reserved-capacity"></a>Предоплата за базу данных Azure для PostgreSQL — расчетные ресурсы с одним сервером с зарезервированной емкостью
 
@@ -20,15 +20,15 @@ ms.locfileid: "90907572"
 Вам не нужно назначать резервирование конкретным серверам базы данных Azure для PostgreSQL. Уже запущенная база данных Azure для PostgreSQL (или недавно развернутых) автоматически получит преимущества зарезервированных цен. Приобретая резервирование, вы заранее оплачиваете затраты на вычисление за период, состоящие из одного или трех лет. Как только вы купите резервирование, стоимость вычислений для базы данных Azure для PostgreSQL, которая соответствует атрибутам резервирования, больше не взимается по тарифам с оплатой по мере использования. Резервирование не охватывает программное обеспечение, сети или расходы на хранение, связанные с серверами базы данных PostgreSQL. По окончании срока резервирования срок выставления счетов истекает, а база данных Azure для PostgreSQL оплачивается по цене оплаты по мере использования. Резервирования не возобновляются автоматически. Сведения о ценах см. в [предложении "база данных Azure для зарезервированных ресурсов PostgreSQL](https://azure.microsoft.com/pricing/details/postgresql/)". </br>
 
 > [!IMPORTANT]
-> Цены на зарезервированные ресурсы доступны для базы данных Azure для PostgreSQL в вариантах развертывания на [одном сервере](https://docs.microsoft.com/azure/postgresql/overview#azure-database-for-postgresql---single-server) и в [Цитус](https://docs.microsoft.com/azure/postgresql/overview#azure-database-for-postgresql---hyperscale-citus) . Сведения о ценах на использование Цитус для масштабирования см. на [этой странице](concepts-hyperscale-reserved-pricing.md).
+> Цены на зарезервированные ресурсы доступны для базы данных Azure для PostgreSQL в вариантах развертывания на [одном сервере](./overview.md#azure-database-for-postgresql---single-server) и в [Цитус](./overview.md#azure-database-for-postgresql--hyperscale-citus) . Сведения о ценах на использование Цитус для масштабирования см. на [этой странице](concepts-hyperscale-reserved-pricing.md).
 
-Вы можете купить зарезервированную емкость базы данных Azure для PostgreSQL в [портал Azure](https://portal.azure.com/). Платите за резервирование [наперед или ежемесячными платежами](../cost-management-billing/reservations/monthly-payments-reservations.md). Чтобы приобрести зарезервированную емкость, сделайте следующее:
+Вы можете купить зарезервированную емкость базы данных Azure для PostgreSQL в [портал Azure](https://portal.azure.com/). Платите за резервирование [наперед или ежемесячными платежами](../cost-management-billing/reservations/prepare-buy-reservation.md). Чтобы приобрести зарезервированную емкость, сделайте следующее:
 
 * Необходимо быть в роли владельца по крайней мере для одной корпоративной или отдельной подписки с тарифами с оплатой по мере использования.
 * Для подписок с соглашением Enterprise параметр **Добавить зарезервированные экземпляры** следует включить на [портале EA](https://ea.azure.com/). Или, если этот параметр отключен, необходимо быть администратором подписки EA.
 * Для программы поставщика облачных решений (CSP) только агенты администратора или агенты по продажам могут приобрести зарезервированную емкость базы данных Azure для PostgreSQL. </br>
 
-Сведения о том, как корпоративные клиенты и клиенты с оплатой по мере использования оплачиваются по покупкам резервирования, см. в статье [Использование резервирования Azure для регистрации на предприятии](https://docs.microsoft.com/azure/billing/billing-understand-reserved-instance-usage-ea) и [сведения об использовании резервирования Azure для подписки с оплатой по мере использования](https://docs.microsoft.com/azure/billing/billing-understand-reserved-instance-usage).
+Сведения о том, как корпоративные клиенты и клиенты с оплатой по мере использования оплачиваются по покупкам резервирования, см. в статье [Использование резервирования Azure для регистрации на предприятии](../cost-management-billing/reservations/understand-reserved-instance-usage-ea.md) и [сведения об использовании резервирования Azure для подписки с оплатой по мере использования](../cost-management-billing/reservations/understand-reserved-instance-usage.md).
 
 
 ## <a name="determine-the-right-server-size-before-purchase"></a>Определение правильного размера сервера перед покупкой
@@ -63,7 +63,7 @@ ms.locfileid: "90907572"
 
 ## <a name="cancel-exchange-or-refund-reservations"></a>Отмена, обмен резервирования, возмещение средств за резервирование
 
-Вы можете отменить и обменять резервирования, а также вернуть вложенные в резервирование средства, но при этом применяются определенные ограничения. Дополнительные сведения см. в статье [Self-service exchanges and refunds for Azure Reservations](https://docs.microsoft.com/azure/billing/billing-azure-reservations-self-service-exchange-and-refund) (Самостоятельное выполнение обмена и возмещения средств для резервирований Azure).
+Вы можете отменить и обменять резервирования, а также вернуть вложенные в резервирование средства, но при этом применяются определенные ограничения. Дополнительные сведения см. в статье [Self-service exchanges and refunds for Azure Reservations](../cost-management-billing/reservations/exchange-and-refund-azure-reservations.md) (Самостоятельное выполнение обмена и возмещения средств для резервирований Azure).
 
 ## <a name="vcore-size-flexibility"></a>Гибкость размеров для виртуального ядра
 
@@ -79,9 +79,9 @@ ms.locfileid: "90907572"
 
 Дополнительные сведения о резервировании в Azure см. по следующим ссылкам:
 
-* [Что такое резервирование Azure](https://docs.microsoft.com/azure/billing/billing-save-compute-costs-reservations)?
-* [Управление Azure Reserved VM Instances](https://docs.microsoft.com/azure/billing/billing-manage-reserved-vm-instance)
-* [Сведения о скидках на резервирование Azure](https://docs.microsoft.com/azure/billing/billing-understand-reservation-charges)
-* [Общие сведения об использовании резервирования Azure для подписки с оплатой по мере использования](https://docs.microsoft.com/azure/billing/billing-understand-reservation-charges-postgresql)
-* [Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise](https://docs.microsoft.com/azure/billing/billing-understand-reserved-instance-usage-ea)
-* [Приобретение зарезервированных экземпляров Azure](https://docs.microsoft.com/partner-center/azure-reservations)
+* [Что такое резервирование Azure](../cost-management-billing/reservations/save-compute-costs-reservations.md)?
+* [Управление Azure Reserved VM Instances](../cost-management-billing/reservations/manage-reserved-vm-instance.md)
+* [Сведения о скидках на резервирование Azure](../cost-management-billing/reservations/understand-reservation-charges.md)
+* [Общие сведения об использовании резервирования Azure для подписки с оплатой по мере использования](../cost-management-billing/reservations/understand-reservation-charges-postgresql.md)
+* [Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise](../cost-management-billing/reservations/understand-reserved-instance-usage-ea.md)
+* [Приобретение зарезервированных экземпляров Azure](/partner-center/azure-reservations)

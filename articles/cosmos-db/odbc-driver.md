@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 10/02/2019
 ms.author: sngun
-ms.openlocfilehash: 1bda235e5f3f867762457d0dc8214bbadc88059e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a7f9573769beb5bf1f6ebe47e6e0a277185ac42b
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87084829"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92488424"
 ---
 # <a name="connect-to-azure-cosmos-db-using-bi-analytics-tools-with-the-odbc-driver"></a>Подключение к Azure Cosmos DB с помощью драйвера ODBC с использованием инструментов бизнес-аналитики
 
@@ -112,7 +112,7 @@ Azure Cosmos DB является базой данных без схемы, ко
 
     Например, если добавить значение "Город" для **атрибута** и при этом нужно, чтобы таблица содержала только строки со значением города Нью-Йорк и Дубаи, в поле "Атрибуты" следует ввести "Город", а "Нью-Йорк" и "Дубаи" — в поле **Значения**.
 
-1. Нажмите кнопку **ОК**. 
+1. Нажмите кнопку **OK**. 
 
 1. После завершения определения сопоставления для контейнеров, которые необходимо выбрать, в окне **Редактор схемы** щелкните **Пример**.
      Вы можете изменить имя, тип и длину SQL (если применимо), масштаб (если применимо), точность (если применимо) и параметр, допускающий значение null, для каждого столбца.
@@ -129,7 +129,7 @@ Azure Cosmos DB является базой данных без схемы, ко
 
 1. Создайте системный источник данных, как описано на [шаге 2](#connect), например, с именем `SDS Name`.
 
-1. [Установите SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) и подключитесь к первому серверу SQL Server. 
+1. [Установите SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) и подключитесь к первому серверу SQL Server. 
 
 1. В редакторе запросов SSMS создайте объект связанного сервера `DEMOCOSMOS` для источника данных с помощью следующих команд. Замените `DEMOCOSMOS` именем связанного сервера, а `SDS Name` — именем системного источника данных.
 
@@ -187,7 +187,7 @@ Invalid use of schema or catalog for OLE DB provider "MSDASQL" for linked server
 
 1. Щелкните **Создать**, введите имя представления, например EmployeesfromSeattleView, и нажмите кнопку **ОК**.
 
-1. В окне **Изменить представление** введите запрос Azure Cosmos DB. Это должен быть [SQL-запрос Azure Cosmos DB](how-to-sql-query.md), например `SELECT c.City, c.EmployeeName, c.Level, c.Age, c.Manager FROM c WHERE c.City = "Seattle"`. Затем нажмите кнопку **ОК**.
+1. В окне **Изменить представление** введите запрос Azure Cosmos DB. Это должен быть [SQL-запрос Azure Cosmos DB](./sql-query-getting-started.md), например `SELECT c.City, c.EmployeeName, c.Level, c.Age, c.Manager FROM c WHERE c.City = "Seattle"`. Затем нажмите кнопку **ОК**.
 
     :::image type="content" source="./media/odbc-driver/odbc-driver-create-view-2.png" alt-text="Администратор источников данных ODBC для Azure Cosmos DB":::
 

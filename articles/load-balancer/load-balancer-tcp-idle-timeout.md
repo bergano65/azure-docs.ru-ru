@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/09/2020
 ms.author: allensu
-ms.openlocfilehash: 26c4c01aaf6abe6b9c9ac6daf6836d7b660ba21e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b507fbad4d9089d918ae7a85c07f30efcb118476
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91649870"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92487251"
 ---
 # <a name="configure-tcp-idle-timeout-for-azure-load-balancer"></a>Настройка времени ожидания простоя TCP для Azure Load Balancer
 
@@ -28,7 +28,11 @@ ms.locfileid: "91649870"
 
 Чтобы установить и использовать PowerShell локально, для работы с этой статьей вам понадобится модуль Azure PowerShell 5.4.1 или более поздней версии. Выполните командлет `Get-Module -ListAvailable Az`, чтобы узнать установленную версию. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-Az-ps). При использовании PowerShell на локальном компьютере также нужно запустить `Connect-AzAccount`, чтобы создать подключение к Azure.
 
-Azure Load Balancer имеет значение времени ожидания простоя от 4 минут до 120 минут. По умолчанию установлено значение 4 минуты. Если период бездействия превышает значение времени ожидания, нет никакой гарантии, что сеанс TCP или HTTP между клиентом и облачной службой возобновится. Дополнительные сведения о [времени ожидания простоя TCP](load-balancer-tcp-reset.md).
+Azure Load Balancer имеет следующий диапазон времени ожидания простоя:
+
+от 4 минут до 100 минут для исходящих правил с 4 минуты до 30 минут для правил Load Balancer и правил NAT для входящего трафика
+
+По умолчанию установлено значение 4 минуты. Если период бездействия превышает значение времени ожидания, нет никакой гарантии, что сеанс TCP или HTTP между клиентом и облачной службой возобновится. Дополнительные сведения о [времени ожидания простоя TCP](load-balancer-tcp-reset.md).
 
 В следующих разделах показано, как изменить параметры времени ожидания простоя для ресурсов общедоступного IP-адреса и подсистемы балансировки нагрузки.
 
@@ -41,7 +45,7 @@ $publicIP.IdleTimeoutInMinutes = "15"
 Set-AzPublicIpAddress -PublicIpAddress $publicIP
 ```
 
-Аргумент `IdleTimeoutInMinutes` является необязательным. Если он не задан, время ожидания по умолчанию будет составлять 4 минуты. Допустимый диапазон времени ожидания составляет от 4 до 120 минут.
+Аргумент `IdleTimeoutInMinutes` является необязательным. Если он не задан, время ожидания по умолчанию будет составлять 4 минуты. 
 
 ## <a name="set-the-tcp-idle-timeout-on-rules"></a>Установка времени ожидания простоя TCP для правил
 

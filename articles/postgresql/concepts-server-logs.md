@@ -6,12 +6,12 @@ ms.author: lufittl
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 06/25/2020
-ms.openlocfilehash: 8d249cdabcbfd82fc555c486f29bbdba200e1da1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2ae3c538c78be8af0fa4569592ac60547e7f5912
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91710504"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92481301"
 ---
 # <a name="logs-in-azure-database-for-postgresql---single-server"></a>Журналы в базе данных Azure для PostgreSQL — один сервер
 
@@ -72,7 +72,7 @@ ms.locfileid: "91710504"
 
 ### <a name="access-resource-logs"></a>Доступ к журналам ресурсов
 
-Способ доступа к журналам зависит от выбранной конечной точки. Сведения о службе хранилища Azure см. в статье [учетная запись хранения журналов](../azure-monitor/platform/resource-logs-collect-storage.md) . Сведения о концентраторах событий см. в статье [Streaming Azure Logs](../azure-monitor/platform/resource-logs-stream-event-hubs.md) .
+Способ доступа к журналам зависит от выбранной конечной точки. Сведения о службе хранилища Azure см. в статье [учетная запись хранения журналов](../azure-monitor/platform/resource-logs.md#send-to-azure-storage) . Сведения о концентраторах событий см. в статье [Streaming Azure Logs](../azure-monitor/platform/resource-logs.md#send-to-azure-event-hubs) .
 
 Для журналов Azure Monitor журналы отправляются в выбранную рабочую область. Журналы postgres используют режим сбора **AzureDiagnostics** , поэтому их можно запрашивать из таблицы AzureDiagnostics. Поля в таблице описаны ниже. Дополнительные сведения о запросах и предупреждениях см. в статье о [запросах Azure Monitor журналов](../azure-monitor/log-query/log-query-overview.md) .
 
@@ -124,7 +124,7 @@ AzureDiagnostics
 | Prefix | Префикс строки журнала |
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о доступе к журналам см. в статье [Настройка журналов сервера и получение к ним доступа с помощью портала Azure](howto-configure-server-logs-in-portal.md) или [Настройка журналов сервера и получение к ним доступа с помощью Azure CLI](howto-configure-server-logs-using-cli.md).
 - Дополнительные сведения о [ценах на Azure Monitor](https://azure.microsoft.com/pricing/details/monitor/).
 - Дополнительные сведения о [журналах аудита](concepts-audit.md)

@@ -9,12 +9,12 @@ ms.date: 10/21/2020
 author: timsander1
 ms.author: tisande
 ms.custom: devx-track-js
-ms.openlocfilehash: 6f7114188a7a996ee80346ec48a51f0cce8bba54
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 6e084a890dd5c772fbf576ddc50fd26b2d1774f0
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92425036"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92487387"
 ---
 # <a name="manage-indexing-in-azure-cosmos-dbs-api-for-mongodb"></a>Управление индексированием в API Azure Cosmos DB для MongoDB
 
@@ -78,7 +78,7 @@ Azure Cosmos DB создает индексы многоключевые для 
 
 ### <a name="text-indexes"></a>Текстовые индексы
 
-API Azure Cosmos DB для MongoDB в настоящее время не поддерживает текстовые индексы. Для запросов текстового поиска в строках следует использовать интеграцию [Azure когнитивный Поиск](https://docs.microsoft.com/azure/search/search-howto-index-cosmosdb) с Azure Cosmos DB. 
+API Azure Cosmos DB для MongoDB в настоящее время не поддерживает текстовые индексы. Для запросов текстового поиска в строках следует использовать интеграцию [Azure когнитивный Поиск](../search/search-howto-index-cosmosdb.md) с Azure Cosmos DB. 
 
 ## <a name="wildcard-indexes"></a>Подстановочные индексы
 
@@ -228,7 +228,7 @@ globaldb:PRIMARY> db.coll.createIndex( { "student_id" : 1, "university" : 1 }, {
 
 Чтобы включить истечение срока действия документа в определенной коллекции, необходимо создать индекс срока [жизни (TTL)](../cosmos-db/time-to-live.md). Индекс TTL — это индекс `_ts` поля со `expireAfterSeconds` значением.
 
-Пример
+Пример.
 
 ```JavaScript
 globaldb:PRIMARY> db.coll.createIndex({"_ts":1}, {expireAfterSeconds: 10})
@@ -364,7 +364,7 @@ globaldb:PRIMARY> db.coll.createIndex({"_ts":1}, {expireAfterSeconds: 10})
 
 Если вы хотите создать индекс с подстановочными знаками, [выполните обновление до версии 3,6](mongodb-version-upgrade.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Индексирование в Azure Cosmos DB](../cosmos-db/index-policy.md)
 * [Срок жизни для данных Azure Cosmos DB](../cosmos-db/time-to-live.md)

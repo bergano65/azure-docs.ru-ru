@@ -6,18 +6,18 @@ ms.author: lufittl
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 10/21/2020
-ms.openlocfilehash: 9424a56eeda5750afc00dd996be957e67850c30c
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 4d4287b877f5327b7fd485358b26148686b9515b
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92426673"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92487931"
 ---
 # <a name="monitor-and-tune-azure-database-for-postgresql---single-server"></a>мониторингу и настройке отдельного сервера Базы данных Azure для PostgreSQL
 Мониторинг данных о серверах помогает устранять неполадки и оптимизировать рабочую нагрузку. База данных Azure для PostgreSQL предоставляет различные параметры мониторинга, дающие возможность получить полезные сведения о поведении сервера.
 
 ## <a name="metrics"></a>Метрики
-База данных Azure для PostgreSQL предоставляет различные метрики, позволяющие понять действия ресурсов, поддерживающих сервер PostgreSQL. Каждая метрика создается с частотой в одну минуту и имеет объем [истории до 93 дней](https://docs.microsoft.com/azure/azure-monitor/platform/data-platform-metrics#retention-of-metrics). Вы можете настроить оповещения на основе метрик. Пошаговые инструкции см. в статье [Использование портала Azure для настройки оповещений на основе метрик для базы данных Azure для MySQL](howto-alert-on-metric.md). Другие задачи включают настройку автоматических действий, выполнение расширенной аналитики и архивирование журнала. Дополнительные сведения см. в статье [Обзор метрик в Microsoft Azure](../monitoring-and-diagnostics/monitoring-overview-metrics.md).
+База данных Azure для PostgreSQL предоставляет различные метрики, позволяющие понять действия ресурсов, поддерживающих сервер PostgreSQL. Каждая метрика создается с частотой в одну минуту и имеет объем [истории до 93 дней](../azure-monitor/platform/data-platform-metrics.md#retention-of-metrics). Вы можете настроить оповещения на основе метрик. Пошаговые инструкции см. в статье [Использование портала Azure для настройки оповещений на основе метрик для базы данных Azure для MySQL](howto-alert-on-metric.md). Другие задачи включают настройку автоматических действий, выполнение расширенной аналитики и архивирование журнала. Дополнительные сведения см. в статье [Обзор метрик в Microsoft Azure](../azure-monitor/platform/data-platform.md).
 
 ### <a name="list-of-metrics"></a>Список метрик
 Для базы данных Azure для PostgreSQL доступны следующие метрики:
@@ -59,8 +59,8 @@ ms.locfileid: "92426673"
 
 Дополнительные сведения о настройке уведомлений см. в документе [уведомления о запланированном обслуживании](./concepts-planned-maintenance-notification.md) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - См. раздел [Настройка оповещений](howto-alert-on-metric.md) для получения рекомендаций по созданию оповещения для метрики.
-- Дополнительные сведения о том, как получить доступ к метрикам и экспортировать их с помощью портал Azure, REST API или интерфейса командной строки, см. в [обзоре метрик Azure](../monitoring-and-diagnostics/monitoring-overview-metrics.md) .
+- Дополнительные сведения о том, как получить доступ к метрикам и экспортировать их с помощью портал Azure, REST API или интерфейса командной строки, см. в [обзоре метрик Azure](../azure-monitor/platform/data-platform.md) .
 - Читайте наш блог, чтобы ознакомиться с [рекомендациями по мониторингу сервера](https://azure.microsoft.com/blog/best-practices-for-alerting-on-metrics-with-azure-database-for-postgresql-monitoring/).
 - Узнайте больше о [запланированных уведомлениях об обслуживании](./concepts-planned-maintenance-notification.md) в базе данных Azure для PostgreSQL-Single Server.

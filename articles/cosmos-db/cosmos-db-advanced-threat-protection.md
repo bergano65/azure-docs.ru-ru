@@ -8,12 +8,12 @@ ms.custom: seodec18
 ms.author: memildin
 author: memildin
 manager: rkarlin
-ms.openlocfilehash: 0affd1660a88421f6df24bc5ef2e00497dae32a5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 57d319d54d15b72747da029d365137f5b5bb384c
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85119276"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92489257"
 ---
 # <a name="advanced-threat-protection-for-azure-cosmos-db-preview"></a>Расширенная защита от угроз для Azure Cosmos DB (предварительная версия)
 
@@ -26,7 +26,7 @@ ms.locfileid: "85119276"
 > * Расширенная защита от угроз для Azure Cosmos DB в настоящее время доступна только для интерфейса API SQL.
 > * Расширенная защита от угроз для Azure Cosmos DB в настоящее время недоступна в регионах Azure для национальных облаков и облаков для государственных организаций.
 
-Для полного исследования оповещений системы безопасности рекомендуется включить [ведение журнала диагностики в Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/logging), в котором регистрируются операции с самой базой данных, включая операции CRUD со всеми документами, контейнерами и базами данных.
+Для полного исследования оповещений системы безопасности рекомендуется включить [ведение журнала диагностики в Azure Cosmos DB](./monitor-cosmos-db.md), в котором регистрируются операции с самой базой данных, включая операции CRUD со всеми документами, контейнерами и базами данных.
 
 ## <a name="threat-types"></a>Типы угроз
 
@@ -59,16 +59,16 @@ ms.locfileid: "85119276"
 
 Используйте команды интерфейса REST API для создания, изменения или получения параметра "Расширенная защита от угроз" для определенной учетной записи Azure Cosmos DB.
 
-* [Расширенная защита от угроз — создание](https://go.microsoft.com/fwlink/?linkid=2099745)
-* [Расширенная защита от угроз — получение](https://go.microsoft.com/fwlink/?linkid=2099643)
+* [Расширенная защита от угроз — создание](/rest/api/securitycenter/advancedthreatprotection/create)
+* [Расширенная защита от угроз — получение](/rest/api/securitycenter/advancedthreatprotection/get)
 
 ### <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 Используйте следующие командлеты PowerShell:
 
-* [Включение Расширенной защиты от угроз](https://go.microsoft.com/fwlink/?linkid=2099607&clcid=0x409)
-* [Получение Расширенной защиты от угроз](https://go.microsoft.com/fwlink/?linkid=2099608&clcid=0x409)
-* [Отключение Расширенной защиты от угроз](https://go.microsoft.com/fwlink/?linkid=2099709&clcid=0x409)
+* [Включение Расширенной защиты от угроз](/powershell/module/az.security/enable-azsecurityadvancedthreatprotection?viewFallbackFrom=azps-2.4.0)
+* [Получение Расширенной защиты от угроз](/powershell/module/az.security/get-azsecurityadvancedthreatprotection?viewFallbackFrom=azps-2.4.0)
+* [Отключение Расширенной защиты от угроз](/powershell/module/az.security/disable-azsecurityadvancedthreatprotection?viewFallbackFrom=azps-2.4.0)
 
 ### <a name="arm-template"></a>[Шаблон ARM](#tab/arm-template)
 
@@ -112,9 +112,9 @@ ms.locfileid: "85119276"
 
 ## <a name="cosmos-db-atp-alerts"></a>Оповещения ATP для Cosmos DB
 
- Список оповещений, создаваемых при наблюдении за учетными записями Azure Cosmos DB, см. в разделе [Оповещения Cosmos DB](https://docs.microsoft.com/azure/security-center/alerts-reference#alerts-azurecosmos) в документации по Центру безопасности Azure.
+ Список оповещений, создаваемых при наблюдении за учетными записями Azure Cosmos DB, см. в разделе [Оповещения Cosmos DB](../security-center/alerts-reference.md#alerts-azurecosmos) в документации по Центру безопасности Azure.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте больше о [журнале ведения диагностики в Azure Cosmos DB](cosmosdb-monitor-resource-logs.md).
-* Узнайте больше о [центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-intro).
+* Узнайте больше о [центре безопасности Azure](../security-center/security-center-introduction.md).

@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/28/2019
 ms.author: sngun
-ms.openlocfilehash: fb080858ff6be98846c542844810cf976eb3f264
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d5683fb64c9b5df027ff8b0f50cec49e9bce5808
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85117987"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92475130"
 ---
 # <a name="azure-cosmos-db-query-cheat-sheets"></a>Памятка по запросам Azure Cosmos DB
 
@@ -30,9 +30,9 @@ ms.locfileid: "85117987"
 
 :::image type="content" source="./media/query-cheat-sheet/azure-cosmos-db-cheat-sheet-a3.png" alt-text="Памятка по запросам Azure Cosmos DB формата Letter с описанием запросов и функций API-интерфейсов SQL, JavaScript, MongoDB, Gremlin и API таблиц." border="false":::
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о написании запросов см. в следующих статьях.
-* См. дополнительные сведения о [создании запросов с помощью API SQL](tutorial-query-sql-api.md), [SQL-запросах для Azure Cosmos DB](how-to-sql-query.md); также доступен [справочник по SQL-синтаксису](sql-api-query-reference.md)
+* См. дополнительные сведения о [создании запросов с помощью API SQL](tutorial-query-sql-api.md), [SQL-запросах для Azure Cosmos DB](./sql-query-getting-started.md); также доступен [справочник по SQL-синтаксису](./sql-query-getting-started.md)
 * Сведения о запросах MongoDB см. в статьях, посвященных [запросам с использованием API Azure Cosmos DB для MongoDB](tutorial-query-mongodb.md) и [поддержке и синтаксису функции API Azure Cosmos DB для MongoDB](mongodb-feature-support.md).
 * См. дополнительные сведения о [создании запросов с помощью API Gremlin](tutorial-query-graph.md) и [поддержке графа Gremlin в базе данных Azure Cosmos DB](gremlin-support.md).
 * См. дополнительные сведения о [создании запросов с помощью API таблиц](tutorial-query-table.md)

@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 04/30/2020
 ms.author: vitrinh
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 787c39681d0e9aff25d205c7b195be00b8c0bc9c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ff66c2cb355e2070cdf30444c52d1accacac8964
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89020020"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92490447"
 ---
 # <a name="convert-session-token-formats-in-net-sdk"></a>Преобразование форматов токенов сеанса в пакет SDK для .NET
 
@@ -111,6 +111,6 @@ else
 Ознакомьтесь со следующими статьями:
 
 * [Использование маркеров сеанса](how-to-manage-consistency.md#utilize-session-tokens)
-* [Choose the right consistency level](consistency-levels-choosing.md) (Выбор правильного уровня согласованности)
-* [Недостатки согласованности, доступности и производительности в Azure Cosmos DB](consistency-levels-tradeoffs.md)
-* [Достижение компромисса между доступностью и быстродействием для разных уровней согласованности](consistency-levels-tradeoffs.md)
+* [Choose the right consistency level](./consistency-levels.md) (Выбор правильного уровня согласованности)
+* [Недостатки согласованности, доступности и производительности в Azure Cosmos DB](./consistency-levels.md)
+* [Достижение компромисса между доступностью и быстродействием для разных уровней согласованности](./consistency-levels.md)

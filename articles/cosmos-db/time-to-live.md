@@ -7,12 +7,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 09/02/2020
 ms.reviewer: sngun
-ms.openlocfilehash: 52885f874f877d9a2fd256d0212ba8693067ea8e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2700b18797db3805a081b549605369e73889867b
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91802936"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92476983"
 ---
 # <a name="time-to-live-ttl-in-azure-cosmos-db"></a>Срок жизни в Azure Cosmos DB
 
@@ -20,7 +20,7 @@ ms.locfileid: "91802936"
 
 Удаление элементов с истекшим сроком действия — это фоновая задача, использующая [единицы запроса](request-units.md)слева, которые являются единицами запросов, которые не использовались запросами пользователей. Даже после истечения срока жизни, если контейнер перегружен с запросами и в случае нехватки доступных единиц запроса, удаление данных откладывается. Данные удаляются, если для выполнения операции удаления достаточно свободного места. Несмотря на то, что удаление данных отложено, данные не возвращаются любыми запросами (любыми API) после истечения срока жизни.
 
-> Это содержимое связано с Azure Cosmos DB сроком жизни хранилища транзакций. Если вы ищете срок жизни хранилища аналитикал, который включает сценарии Ноетл HTAP с помощью [ссылки Azure синапсе](https://docs.microsoft.com/azure/cosmos-db/synapse-link), щелкните [здесь](https://docs.microsoft.com/azure/cosmos-db/analytical-store-introduction#analytical-ttl).
+> Это содержимое связано с Azure Cosmos DB сроком жизни хранилища транзакций. Если вы ищете срок жизни хранилища аналитикал, который включает сценарии Ноетл HTAP с помощью [ссылки Azure синапсе](./synapse-link.md), щелкните [здесь](./analytical-store-introduction.md#analytical-ttl).
 
 ## <a name="time-to-live-for-containers-and-items"></a>Срок жизни для контейнеров и элементов
 
@@ -84,7 +84,7 @@ ms.locfileid: "91802936"
 |TTL =-1   |Срок жизни включен. Срок действия элемента никогда не истечет.|
 |TTL = 2000 |Срок жизни включен. Срок действия элемента истекает через 2000 секунд.|
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как настроить срок жизни в следующих статьях:
 

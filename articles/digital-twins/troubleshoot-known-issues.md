@@ -6,12 +6,12 @@ ms.author: baanders
 ms.topic: troubleshooting
 ms.service: digital-twins
 ms.date: 07/14/2020
-ms.openlocfilehash: 8bcbe395f78d3e4e9a6f7f615edc61eaa04347cf
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 8f56538470b8a52697e2d5c4154a6a6807a0cfde
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92311679"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92489019"
 ---
 # <a name="known-issues-in-azure-digital-twins"></a>Известные проблемы в службе Digital двойников
 
@@ -34,7 +34,7 @@ ms.locfileid: "92311679"
 
 :::image type="content" source="media/includes/portal-cloud-shell.png" alt-text="Представление портал Azure с выделенным значком &quot;Cloud Shell&quot;, а Cloud Shell появляется в нижней части окна портала":::
 
-Наконец, еще одним решением является [установка Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) на компьютере, чтобы можно было выполнять команды Azure CLI локально. В локальной CLI эта проблема не возникает.
+Наконец, еще одним решением является [установка Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true) на компьютере, чтобы можно было выполнять команды Azure CLI локально. В локальной CLI эта проблема не возникает.
 
 ### <a name="possible-causes"></a>Возможные причины
 
@@ -46,7 +46,9 @@ ms.locfileid: "92311679"
 
 ## <a name="missing-role-assignment-after-scripted-setup"></a>Отсутствует назначение роли после установки в скрипте
 
-Некоторые пользователи могут столкнуться с проблемами, описанными в разделе "назначение ролей" раздела [*как настроить экземпляр и выполнить проверку подлинности (в сценариях)*](how-to-set-up-instance-scripted.md). Сценарий не указывает на сбой, но роль *владельца Azure Digital двойников (Предварительная версия)* не назначена пользователю, и эта проблема повлияет на возможность создания других ресурсов в дороге.
+Некоторые пользователи могут столкнуться с проблемами, описанными в разделе "назначение ролей" раздела [*как настроить экземпляр и выполнить проверку подлинности (в сценариях)*](how-to-set-up-instance-scripted.md). Сценарий не указывает на сбой, но роль *владельца данных Digital двойников* не назначена пользователю, и эта проблема повлияет на возможность создания других ресурсов в дороге.
+
+[!INCLUDE [digital-twins-role-rename-note.md](../../includes/digital-twins-role-rename-note.md)]
 
 Чтобы определить, успешно ли настроено назначение роли после выполнения сценария, следуйте инструкциям в разделе [*Проверка назначения роли пользователя*](how-to-set-up-instance-scripted.md#verify-user-role-assignment) статьи Установка. Если пользователь не отображается в этой роли, эта проблема повлияет на вас.
 
@@ -64,7 +66,7 @@ ms.locfileid: "92311679"
 
 ## <a name="issue-with-interactive-browser-authentication"></a>Проблемы с интерактивной проверкой подлинности браузера
 
-При написании кода проверки подлинности в приложениях Azure Digital двойников с помощью версии **1.2.0** **библиотеки [Azure. Identity](/dotnet/api/azure.identity?view=azure-dotnet) **могут возникнуть проблемы с методом [интерактивебровсеркредентиал](/dotnet/api/azure.identity.interactivebrowsercredential?view=azure-dotnet) .
+При написании кода проверки подлинности в приложениях Azure Digital двойников с помощью версии **1.2.0** **библиотеки [Azure. Identity](/dotnet/api/azure.identity?view=azure-dotnet&preserve-view=true) **могут возникнуть проблемы с методом [интерактивебровсеркредентиал](/dotnet/api/azure.identity.interactivebrowsercredential?view=azure-dotnet&preserve-view=true) .
 
 Это не последняя версия библиотеки. Последняя версия — **1.2.2**.
 

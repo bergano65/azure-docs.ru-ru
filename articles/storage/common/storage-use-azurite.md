@@ -8,12 +8,12 @@ ms.service: storage
 ms.subservice: common
 ms.topic: how-to
 ms.custom: devx-track-csharp
-ms.openlocfilehash: f18746242ef9f680f44be1fd614c6c769289aadb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b5051a5e29f9e34c43963a9a264ee47e2ad7b04a
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91331579"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92490787"
 ---
 # <a name="use-the-azurite-emulator-for-local-azure-storage-development"></a>Использование эмулятора Азурите для разработки локальных хранилищ Azure
 
@@ -282,7 +282,7 @@ azurite --version
 
 ### <a name="certificate-configuration-https"></a>Конфигурация сертификата (HTTPS)
 
-**Необязательно** . по умолчанию азурите использует протокол HTTP. Включите режим HTTPS, указав путь к файлу сертификата Privacy Enhanced Mail (PEM) или [обмена личной информацией (PFX)](https://docs.microsoft.com/windows-hardware/drivers/install/personal-information-exchange---pfx--files) для `--cert` коммутатора.
+**Необязательно** . по умолчанию азурите использует протокол HTTP. Включите режим HTTPS, указав путь к файлу сертификата Privacy Enhanced Mail (PEM) или [обмена личной информацией (PFX)](/windows-hardware/drivers/install/personal-information-exchange---pfx--files) для `--cert` коммутатора.
 
 Если `--cert` для PEM-файла указано значение, необходимо указать соответствующий `--key` параметр.
 
@@ -566,7 +566,7 @@ var client = new QueueClient(
 
 Публикации и предложения для Азурите — Добро пожаловать. Перейдите на страницу [проекта Азурите GitHub](https://github.com/Azure/Azurite/projects) или [проблемы GitHub](https://github.com/Azure/Azurite/issues) для вех и рабочих элементов, которые отслеживаются для предстоящих компонентов и исправлений ошибок. Подробные рабочие элементы также отправляются в GitHub.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Используйте эмулятор хранения Azure для разработки и тестирования](storage-use-emulator.md) документов в старом эмуляторе хранения Azure, который заменяется азурите.
 - [Настройка строк подключения службы хранилища Azure](storage-configure-connection-string.md) содержит сведения о том, как собрать допустимую строку подключения к службе хранилища Azure.

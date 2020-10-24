@@ -6,12 +6,12 @@ ms.author: nlarin
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 09/23/2020
-ms.openlocfilehash: 38dd103189446e287f3d62d93344ed89a364d238
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4280932787cfb2220dab1da84dca41ca0c40e302
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91708787"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92485262"
 ---
 # <a name="networking-overview---azure-database-for-postgresql---flexible-server"></a>Обзор сети: база данных Azure для PostgreSQL — гибкий сервер
 
@@ -72,6 +72,9 @@ ms.locfileid: "91708787"
 * Пиринг виртуальных сетей между регионами не поддерживается
 
 Узнайте, как создать гибкий сервер с частным доступом (интеграция с виртуальной сетью) в [портал Azure](how-to-manage-virtual-network-portal.md) или [в Azure CLI](how-to-manage-virtual-network-cli.md).
+
+> [!NOTE]
+> При использовании настраиваемого DNS-сервера необходимо использовать DNS-сервер пересылки для разрешения полного доменного имени базы данных Azure для MySQL — гибкого сервера. Дополнительные сведения см. в разделе [разрешение имен, которое использует собственный DNS-сервер](../../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md#name-resolution-that-uses-your-own-dns-server) .
 
 ## <a name="public-access-allowed-ip-addresses"></a>Открытый доступ (разрешенные IP-адреса)
 Характеристики общедоступного метода доступа включают:

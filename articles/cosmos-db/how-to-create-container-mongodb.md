@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 10/16/2020
 ms.author: mjbrown
 ms.custom: devx-track-azurecli, devx-track-csharp
-ms.openlocfilehash: 1a8d375519ed4c7d252afe60d71aad4c5244cd1c
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: 0fa7f122c5a9957db0800d2ccf4e5c1f8effd574
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92284647"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92491178"
 ---
 # <a name="create-a-container-in-azure-cosmos-db-api-for-mongodb"></a>Создание контейнера в Azure Cosmos DB API для MongoDB
 
@@ -36,7 +36,7 @@ ms.locfileid: "92284647"
    * Введите идентификатор контейнера.
    * Введите ключ сегмента.
    * Укажите подготавливаемую пропускную способность (например, 1000 ЕЗ/с).
-   * Щелкните **ОК**.
+   * Нажмите кнопку **ОК**.
 
     :::image type="content" source="./media/how-to-create-container/partitioned-collection-create-mongodb.png" alt-text="Снимок экрана: Azure Cosmos DB API для MongoDB, диалоговое окно &quot;Добавление контейнера&quot;":::
 
@@ -62,12 +62,11 @@ db.runCommand( { shardCollection: "myDatabase.myCollection", key: { myShardKey: 
 
 ## <a name="create-a-container-using-azure-resource-manager-templates"></a>Создание контейнера с помощью шаблонов Azure Resource Manager
 
-[Создайте коллекцию для Azure Cosmos DB для API-интерфейса MongoDB с помощью шаблона диспетчер ресурсов](manage-sql-with-resource-manager.md#azure-cosmos-account-with-standard-provisioned-throughput).
+[Создайте коллекцию для Azure Cosmos DB для API-интерфейса MongoDB с помощью шаблона диспетчер ресурсов](./manage-with-templates.md#azure-cosmos-account-with-standard-provisioned-throughput).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Partitioning in Azure Cosmos DB](partitioning-overview.md) (Секционирование в Azure Cosmos DB)
 * [Единицы запросов в Azure Cosmos DB](request-units.md)
 * [Обеспечение необходимой пропускной способности для контейнеров и баз данных](set-throughput.md)
-* [Работа с учетной записью Azure Cosmos](account-overview.md)
-
+* [Работа с учетной записью Azure Cosmos](./account-databases-containers-items.md)

@@ -6,12 +6,12 @@ ms.author: mjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 07/23/2019
-ms.openlocfilehash: 5ea5ee2dfe89b36fce78c369100224718eb5864f
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: ddb6bc297a32be856172707a220fe1dfaefb9f6d
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92278765"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92487455"
 ---
 # <a name="distribute-your-data-globally-with-azure-cosmos-db"></a>Глобальное распределение данных с помощью Azure Cosmos DB
 
@@ -55,7 +55,6 @@ Azure Cosmos DB — это глобально распределенная сл
 * [Добавление и удаление регионов из учетной записи Azure Cosmos DB](how-to-manage-database-account.md#addremove-regions-from-your-database-account)
 * [Создание настраиваемой политики разрешения конфликтов для учетных записей API SQL](how-to-manage-conflicts.md#create-a-custom-conflict-resolution-policy)
 * [Программируемые модели согласованности в Cosmos DB](consistency-levels.md)
-* [Выбор правильного уровня согласованности для приложения](consistency-levels-choosing.md)
-* [Уровни согласованности и API для Azure Cosmos DB](consistency-levels-across-apis.md)
-* [Достижение компромисса между доступностью и быстродействием для разных уровней согласованности](consistency-levels-tradeoffs.md)
-
+* [Выбор правильного уровня согласованности для приложения](./consistency-levels.md)
+* [Уровни согласованности и API для Azure Cosmos DB](./consistency-levels.md)
+* [Достижение компромисса между доступностью и быстродействием для разных уровней согласованности](./consistency-levels.md)

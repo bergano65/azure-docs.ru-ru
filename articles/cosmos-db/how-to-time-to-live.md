@@ -7,18 +7,18 @@ ms.topic: how-to
 ms.date: 10/11/2020
 ms.author: anfeldma
 ms.custom: devx-track-js, devx-track-azurecli, devx-track-csharp
-ms.openlocfilehash: 56cf360dd8d015d797b4974aab667bb89edcce4b
-ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
+ms.openlocfilehash: 340ec7c16c5ed3e477cc2c4505c8b018d2d39a06
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91951933"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92486010"
 ---
 # <a name="configure-time-to-live-in-azure-cosmos-db"></a>Настройка срока жизни в Azure Cosmos DB
 
 В Azure Cosmos DB вы можете настроить срок жизни (TTL) на уровне контейнера или переопределить его на уровне элемента, когда он будет настроен для контейнера. Срок жизни для контейнера можно настроить с помощью портала Azure или пакетов SDK для конкретных языков. Переопределение срока жизни на уровне элемента можно настроить с использованием пакетов SDK.
 
-> Это содержимое связано с Azure Cosmos DB сроком жизни хранилища транзакций. Если вы ищете срок жизни хранилища аналитикал, который включает сценарии Ноетл HTAP с помощью [ссылки Azure синапсе](https://docs.microsoft.com/azure/cosmos-db/synapse-link), щелкните [здесь](https://docs.microsoft.com/azure/cosmos-db/analytical-store-introduction#analytical-ttl).
+> Это содержимое связано с Azure Cosmos DB сроком жизни хранилища транзакций. Если вы ищете срок жизни хранилища аналитикал, который включает сценарии Ноетл HTAP с помощью [ссылки Azure синапсе](./synapse-link.md), щелкните [здесь](./analytical-store-introduction.md#analytical-ttl).
 
 ## <a name="enable-time-to-live-on-a-container-using-azure-portal"></a>Включение срока жизни для контейнера с помощью портала Azure
 
@@ -558,7 +558,7 @@ container = database.createContainerIfNotExists(containerProperties, 400).block(
 ```
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о сроке жизни см. в следующей статье:
 

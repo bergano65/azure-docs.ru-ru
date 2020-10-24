@@ -10,12 +10,12 @@ ms.date: 08/26/2020
 ms.author: ramkris
 ms.reviewer: sngun
 ms.custom: devx-track-java
-ms.openlocfilehash: a9501df45d598c85f8c694c5d07db4f959615c00
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 03ef816632b73f46acaf1efdf2ddec28459fc9b8
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90968186"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92489342"
 ---
 # <a name="use-bulk-executor-java-library-to-perform-bulk-operations-on-azure-cosmos-db-data"></a>Выполнение массовых операций с данными Azure Cosmos DB с помощью библиотеки Java массового исполнителя
 
@@ -27,7 +27,7 @@ ms.locfileid: "90968186"
 
 * Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу.  
 
-* Вы можете [попробовать Azure Cosmos DB бесплатно](https://azure.microsoft.com/try/cosmosdb/) без подписки Azure, бесплатной оплаты и обязательств. Или вы можете применить [эмулятор Azure Cosmos DB](/azure/cosmos-db/local-emulator) с конечной точкой `https://localhost:8081`. Первичный ключ предоставляется в разделе [Выполнение проверки подлинности запросов](local-emulator.md#authenticate-requests).  
+* Вы можете [попробовать Azure Cosmos DB бесплатно](https://azure.microsoft.com/try/cosmosdb/) без подписки Azure, бесплатной оплаты и обязательств. Или вы можете применить [эмулятор Azure Cosmos DB](./local-emulator.md) с конечной точкой `https://localhost:8081`. Первичный ключ предоставляется в разделе [Выполнение проверки подлинности запросов](local-emulator.md#authenticate-requests).  
 
 * [Пакет Java Development Kit (JDK) 1.7 +](/java/azure/jdk/?view=azure-java-stable&preserve-view=true)  
   - В Ubuntu выполните команду `apt-get install default-jdk`, чтобы установить JDK.  
@@ -213,7 +213,5 @@ ms.locfileid: "90968186"
 * Это полезно, так как однократное выполнение API массовой операции потребляет большую часть ресурсов ЦП и операций ввода-вывода сети клиентского компьютера. Это происходит при порождении нескольких задач изнутри. Избегайте появления в процессе приложения нескольких параллельных задач, каждая из которых выполняет вызовы API массовой операции. Если один вызов API массовой операции, который выполняется на одной виртуальной машине, не может использовать всю пропускную способность вашего контейнера (если пропускная способность контейнера > 1 млн ЕЗ/с), предпочтительнее создавать отдельные виртуальные машины для одновременного выполнения вызовов API.
 
     
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения о пакете Maven и заметки о выпуске библиотеки Java массового исполнителя см. в статье [со сведениями о пакете SDK массового исполнителя](sql-api-sdk-bulk-executor-java.md).
-
-

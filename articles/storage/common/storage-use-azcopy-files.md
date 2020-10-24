@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 07/27/2020
 ms.author: normesta
 ms.subservice: common
-ms.openlocfilehash: 793f3869a9534c71d860cc8dea7a1995f5ee278d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6d0dcecf6a0da1fbd3561dadcbe001c0ef8d4ebc
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88871247"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92479465"
 ---
 # <a name="transfer-data-with-azcopy-and-file-storage"></a>Перенос данных с помощью AzCopy и хранилища файлов 
 
@@ -147,7 +147,7 @@ AzCopy — это служебная программа командной ст
 Этот раздел содержит следующие примеры.
 
 > [!div class="checklist"]
-> * скачать файл;
+> * Скачивание файла
 > * Загрузка каталога
 > * Загрузка содержимого каталога
 > * Загрузка конкретных файлов
@@ -166,7 +166,7 @@ AzCopy — это служебная программа командной ст
 > [!NOTE]
 > Если `Content-md5` значение свойства файла содержит хэш, AzCopy вычисляет хэш MD5 для скачанных данных и проверяет, соответствует ли хэш MD5, хранящийся в `Content-md5` свойстве файла, вычисляемому хэшу. Если эти значения не совпадают, загрузка завершается ошибкой, если это поведение не переопределено путем добавления `--check-md5=NoCheck` или `--check-md5=LogOnly` к команде Copy.
 
-### <a name="download-a-file"></a>скачать файл;
+### <a name="download-a-file"></a>Скачивание файла
 
 |    |     |
 |--------|-----------|
@@ -240,7 +240,7 @@ AzCopy — это служебная программа командной ст
 
 AzCopy можно использовать для копирования файлов в другие учетные записи хранения. Операция копирования является синхронной, поэтому когда команда возвращает результат, это означает, что все файлы скопированы.
 
-AzCopy использует [API](https://docs.microsoft.com/rest/api/storageservices/put-page-from-url)" [сервер-сервер](https://docs.microsoft.com/rest/api/storageservices/put-block-from-url) ", поэтому данные копируются непосредственно между серверами хранилища. Эти операции копирования не используют пропускную способность сети компьютера. Вы можете увеличить пропускную способность этих операций, задав значение `AZCOPY_CONCURRENCY_VALUE` переменной среды. Дополнительные сведения см. в разделе [Оптимизация пропускной способности](storage-use-azcopy-configure.md#optimize-throughput).
+AzCopy использует [API](/rest/api/storageservices/put-page-from-url)" [сервер-сервер](/rest/api/storageservices/put-block-from-url) ", поэтому данные копируются непосредственно между серверами хранилища. Эти операции копирования не используют пропускную способность сети компьютера. Вы можете увеличить пропускную способность этих операций, задав значение `AZCOPY_CONCURRENCY_VALUE` переменной среды. Дополнительные сведения см. в разделе [Оптимизация пропускной способности](storage-use-azcopy-configure.md#optimize-throughput).
 
 Этот раздел содержит следующие примеры.
 
@@ -340,13 +340,13 @@ AzCopy использует [API](https://docs.microsoft.com/rest/api/storageser
 | **Синтаксис** | `azcopy sync 'https://<source-storage-account-name>.file.core.windows.net/<file-share-name><SAS-token>&sharesnapsot<snapshot-ID>' 'https://<destination-storage-account-name>.file.core.windows.net/<file-share-name><SAS-token>' --recursive` |
 | **Пример** | `azcopy sync 'https://mysourceaccount.file.core.windows.net/myfileShare?sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-07-04T05:30:08Z&st=2019-07-03T21:30:08Z&spr=https&sig=CAfhgnc9gdGktvB=ska7bAiqIddM845yiyFwdMH481QA8%3D&sharesnapshot=2020-03-03T20%3A24%3A13.0000000Z' 'https://mydestinationaccount.file.core.windows.net/myfileshare?sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-07-04T05:30:08Z&st=2019-07-03T21:30:08Z&spr=https&sig=CAfhgnc9gdGktvB=ska7bAiqIddM845yiyFwdMH481QA8%3D' --recursive` |
 
-Дополнительные сведения о моментальных снимках общих ресурсов см. в статье [Обзор моментальных снимков общих ресурсов для службы файлов Azure](https://docs.microsoft.com/azure/storage/files/storage-snapshots-files).
+Дополнительные сведения о моментальных снимках общих ресурсов см. в статье [Обзор моментальных снимков общих ресурсов для службы файлов Azure](/azure/storage/files/storage-snapshots-files).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные примеры приведены в любой из следующих статей:
 
-- [Начало работы с AzCopy](storage-use-azcopy-v10.md)
+- [Get started with AzCopy](storage-use-azcopy-v10.md) (Начало работы с AzCopy)
 
 - [Transfer data with AzCopy and blob storage](storage-use-azcopy-blobs.md) (Передача данных с помощью AzCopy и хранилища BLOB-объектов)
 

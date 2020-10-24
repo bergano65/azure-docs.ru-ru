@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: seoapr2020, devx-track-azurecli, devx-track-azurepowershell
 ms.date: 05/13/2020
-ms.openlocfilehash: 9781369e862c74afe5a8a94cafafff7ef35e68e1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5524c7625678d3bacc5fdbe3c295d8392da2280f
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89078356"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92491008"
 ---
 # <a name="use-azure-monitor-logs-to-monitor-hdinsight-clusters"></a>Мониторинг кластеров HDInsight с помощью журналов Azure Monitor
 
@@ -42,7 +42,7 @@ ms.locfileid: "89078356"
 
 * При использовании PowerShell вам потребуется [модуль Az](https://docs.microsoft.com/powershell/azure/). Убедитесь, что у вас установлена последняя версия. При необходимости выполните командлет `Update-Module -Name Az`.
 
-* Если вы хотите использовать Azure CLI и еще не установили его, обратитесь к разделу [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
+* Если вы хотите использовать Azure CLI и еще не установили его, обратитесь к разделу [Установка Azure CLI](/cli/azure/install-azure-cli).
 
 > [!NOTE]  
 > Для повышения производительности рекомендуется разместить кластер HDInsight и рабочую область Log Analytics в одном регионе. Журналы Azure Monitor доступны не во всех регионах Azure.
@@ -105,7 +105,7 @@ Disable-AzHDInsightMonitoring -Name "<your-cluster>"
 
 ## <a name="enable-azure-monitor-using-azure-cli"></a>Включение Azure Monitor с помощью Azure CLI
 
-Журналы Azure Monitor можно включить с помощью команды Azure CLI `[az hdinsight monitor enable`](https://docs.microsoft.com/cli/azure/hdinsight/monitor?view=azure-cli-latest#az-hdinsight-monitor-enable).
+Вы можете включить журналы Azure Monitor с помощью `[az hdinsight monitor enable` команды Azure CLI] (/кли/Азуре/хдинсигхт/монитор # AZ-hdinsight-Monitor-Enable).
 
 ```azurecli
 # set variables
@@ -120,7 +120,7 @@ az hdinsight monitor enable --name $cluster --resource-group $resourceGroup --wo
 az hdinsight monitor show --name $cluster --resource-group $resourceGroup
 ```
 
-Для отключения используйте команду [`az hdinsight monitor disable`](https://docs.microsoft.com/cli/azure/hdinsight/monitor?view=azure-cli-latest#az-hdinsight-monitor-disable).
+Для отключения используйте команду [`az hdinsight monitor disable`](/cli/azure/hdinsight/monitor#az-hdinsight-monitor-disable).
 
 ```azurecli
 az hdinsight monitor disable --name $cluster --resource-group $resourceGroup

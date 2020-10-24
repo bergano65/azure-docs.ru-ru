@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 09/17/2019
 ms.author: maquaran
 ms.custom: devx-track-dotnet
-ms.openlocfilehash: 7a15e5135cd89d7360a1357e3518b1253e80ee65
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b1c54c2e486f935b3c3ba1b13207caaa67099459
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89019527"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92490991"
 ---
 # <a name="migrate-from-the-change-feed-processor-library-to-the-azure-cosmos-db-net-v3-sdk"></a>Миграция из библиотеки обработчика веб-канала изменений в пакет SDK для .NET v3 Azure Cosmos DB
 
@@ -23,7 +23,7 @@ ms.locfileid: "89019527"
 Пакет SDK для .NET v3 имеет несколько критических изменений, поэтому ниже приведены основные этапы миграции приложения.
 
 1. Преобразуйте `DocumentCollectionInfo` экземпляры в `Container` ссылки для контейнеров отслеживаемых и арендных адресов.
-1. Настройки, использующие, `WithProcessorOptions` должны обновляться для использования `WithLeaseConfiguration` и `WithPollInterval` для интервалов `WithStartTime` [времени начала](how-to-configure-change-feed-start-time.md), а также для `WithMaxItems` определения максимального числа элементов.
+1. Настройки, использующие, `WithProcessorOptions` должны обновляться для использования `WithLeaseConfiguration` и `WithPollInterval` для интервалов `WithStartTime` [времени начала](./change-feed-processor.md#starting-time), а также для `WithMaxItems` определения максимального числа элементов.
 1. Установите значение ON в параметре `processorName` `GetChangeFeedProcessorBuilder` , совпадающее со значением, настроенным в `ChangeFeedProcessorOptions.LeasePrefix` , или используйте `string.Empty` в противном случае.
 1. Изменения больше не доставляются в виде `IReadOnlyList<Document>` , а именно, где — это тип, который необходимо `IReadOnlyCollection<T>` `T` определить, но класс базового элемента больше не существует.
 1. Чтобы обрабатывал изменения, больше не требуется реализация, вместо этого необходимо [определить делегат](change-feed-processor.md#implementing-the-change-feed-processor). Делегат может быть статической функцией или, если необходимо поддерживать состояние между выполнениями, можно создать собственный класс и передать метод экземпляра в качестве делегата.
@@ -60,4 +60,4 @@ ms.locfileid: "89019527"
 
 * [Обработчик канала изменений в Azure Cosmos DB](change-feed-processor.md)
 * [Использование оценщика канала изменений](how-to-use-change-feed-estimator.md)
-* [Настройка времени запуска обработчика канала изменений](how-to-configure-change-feed-start-time.md)
+* [Настройка времени запуска обработчика канала изменений](./change-feed-processor.md#starting-time)

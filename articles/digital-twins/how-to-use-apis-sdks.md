@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 06/04/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 0fe56a8173a4cfe8836a078a62c7bc9015c83324
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 1d524e34623d5fde3d6f22afbdd63ce95699fe6f
+ms.sourcegitcommit: d6a739ff99b2ba9f7705993cf23d4c668235719f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92461266"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92494471"
 ---
 # <a name="use-the-azure-digital-twins-apis-and-sdks"></a>Использование интерфейсов API и пакетов SDK для Azure Digital Twins
 
@@ -32,10 +32,10 @@ API-интерфейсы плоскости управления — это ин
 * Интерфейсы API можно вызывать напрямую, ссылаясь на последнюю версию Swagger в [папке контрольной плоскости Swagger](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/digitaltwins/resource-manager/Microsoft.DigitalTwins). Этот репозиторий также содержит папку примеров, демонстрирующих использование.
 * В настоящее время вы можете получить доступ к пакетам SDK для API управления в...
   - [.NET (C#)](https://www.nuget.org/packages/Microsoft.Azure.Management.DigitalTwins/) ([Исходный код](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/digitaltwins/Microsoft.Azure.Management.DigitalTwins)) ([ссылка [автоматически созданная]](/dotnet/api/overview/azure/digitaltwins/management?preserve-view=true&view=azure-dotnet-preview))
-  - [Java](https://search.maven.org/artifact/com.microsoft.azure.digitaltwins.v2020_03_01_preview/azure-mgmt-digitaltwins) ([источник](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/digitaltwins)) ([ссылка [автоматически созданная]](/java/api/overview/azure/digitaltwins/management?preserve-view=true&view=azure-java-preview))
+  - [Java](https://search.maven.org/artifact/com.microsoft.azure.digitaltwins.v2020_10_31/azure-mgmt-digitaltwins/1.0.0/jar) ([источник](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/digitaltwins)) ([ссылка [автоматически созданная]](/java/api/overview/azure/digitaltwins/management?preserve-view=true&view=azure-java-preview))
   - [JavaScript](https://www.npmjs.com/package/@azure/arm-digitaltwins) ([Исходный](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/digitaltwins/arm-digitaltwins)код)
   - [Python](https://pypi.org/project/azure-mgmt-digitaltwins/) ([источник](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/digitaltwins/azure-mgmt-digitaltwins))
-  - [Go-Source](https://github.com/Azure/azure-sdk-for-go/tree/master/services/preview/digitaltwins/mgmt/2020-03-01-preview/digitaltwins)
+  - [GO](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/digitaltwins/mgmt/2020-10-31/digitaltwins)
 
 Вы также можете использовать API-интерфейсы плоскости управления, взаимодействуя с Azure Digital двойников через [портал Azure](https://portal.azure.com) и [CLI](how-to-use-cli.md).
 
@@ -56,7 +56,7 @@ API-интерфейсы плоскости данных — это API-инте
 * Вы можете использовать пакет SDK для **.NET (C#)** . Для использования пакета SDK для .NET...
    - Вы можете просмотреть и добавить пакет из NuGet: [Azure. дигиталтвинс. Core](https://www.nuget.org/packages/Azure.DigitalTwins.Core). 
    - Вы можете найти источник SDK, включая папку примеров, в GitHub: [клиентскую библиотеку Azure IOT Digital двойников для .NET](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/digitaltwins/Azure.DigitalTwins.Core). 
-   - Вы можете просмотреть [справочную документацию по пакету SDK](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet-preview).
+   - Вы можете просмотреть [справочную документацию по пакету SDK](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet-preview&preserve-view=true).
    - подробные сведения и примеры использования можно просмотреть, перейдя к разделу [SDK .NET (C#) (панель данных)](#net-c-sdk-data-plane) этой статьи.
 * Вы можете использовать пакет SDK для **Java** . Чтобы использовать пакет SDK для Java...
    - Вы можете просмотреть и установить пакет из Maven: [`com.azure:azure-digitaltwins-core`](https://search.maven.org/artifact/com.azure/azure-digitaltwins-core/1.0.0-beta.1/jar)
@@ -65,6 +65,8 @@ API-интерфейсы плоскости данных — это API-инте
 * Вы можете использовать пакет SDK для **JavaScript** . Для использования пакета SDK для JavaScript...
    - Вы можете просмотреть и установить пакет из NPM: [Клиентская библиотека Azure Azure Digital двойников для JavaScript](https://www.npmjs.com/package/@azure/digital-twins).
    - Вы можете просмотреть [справочную документацию по пакету SDK](/javascript/api/@azure/digital-twins/?preserve-view=true&view=azure-node-latest).
+* Вы можете использовать пакет SDK для **Python** . Чтобы использовать пакет SDK для Python...
+   - Вы можете просмотреть и установить пакет: [Клиентская библиотека Azure Digital двойников Core для Python](https://pypi.org/project/azure-digitaltwins-core/1.0.0b1/).
 * Вы можете создать пакет SDK для другого языка с помощью функции автоотдыха. Следуйте инструкциям в разделе [*инструкции по созданию настраиваемых пакетов SDK для Azure Digital двойников с помощью автоrestful*](how-to-create-custom-sdks.md).
 
 Вы также можете использовать API-интерфейсы плоскости с датами, взаимодействуя с Azure Digital двойников через интерфейс [командной строки](how-to-use-cli.md).
@@ -100,6 +102,8 @@ string adtInstanceUrl = "https://<your-Azure-Digital-Twins-instance-hostName>";
 var credential = new DefaultAzureCredential();
 DigitalTwinsClient client = new DigitalTwinsClient(new Uri(adtInstanceUrl), credential);
 ```
+
+[!INCLUDE [Azure Digital Twins: local credentials note](../../includes/digital-twins-local-credentials-note.md)] 
 
 Передать модели и список моделей:
 

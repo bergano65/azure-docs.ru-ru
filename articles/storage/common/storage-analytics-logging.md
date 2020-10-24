@@ -9,18 +9,18 @@ ms.date: 07/23/2020
 ms.author: normesta
 ms.reviewer: fryu
 ms.custom: monitoring, devx-track-csharp
-ms.openlocfilehash: 5b4e2fa95b9a5eebf393d7c64feecd3997b7ecfd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 37e56caa8242709214265af0e1fc03c3853300f1
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91280034"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92488798"
 ---
 # <a name="azure-storage-analytics-logging"></a>Ведение журнала Аналитики Службы хранилища Azure
 
 В аналитике хранилища регистрируется подробная информация об успешных и неудачных запросах к службе хранилища. Эта информация может использоваться для мониторинга отдельных запросов и диагностики неполадок в службе хранилища. Запросы вносятся в журнал наилучшим возможным образом.
 
- Ведение журнала "Аналитики Службы хранилища" по умолчанию для учетной записи хранения не предусмотрено. Это можно сделать на [портале Azure](https://portal.azure.com/). Дополнительные сведения см. в статье [Мониторинг учетной записи хранения на портале Azure](/azure/storage/storage-monitor-storage-account). Аналитику хранилища также можно включить программно через REST API или клиентскую библиотеку. Чтобы включить Аналитику Службы хранилища для каждой службы, можно использовать операции [Получить свойства службы BLOB-объектов](https://docs.microsoft.com/rest/api/storageservices/Blob-Service-REST-API), [Получить свойства службы очередей](https://docs.microsoft.com/rest/api/storageservices/Get-Queue-Service-Properties) [Получить свойства службы таблиц](https://docs.microsoft.com/rest/api/storageservices/Get-Table-Service-Properties).
+ Ведение журнала "Аналитики Службы хранилища" по умолчанию для учетной записи хранения не предусмотрено. Это можно сделать на [портале Azure](https://portal.azure.com/). Дополнительные сведения см. в статье [Мониторинг учетной записи хранения на портале Azure](/azure/storage/storage-monitor-storage-account). Аналитику хранилища также можно включить программно через REST API или клиентскую библиотеку. Чтобы включить Аналитику Службы хранилища для каждой службы, можно использовать операции [Получить свойства службы BLOB-объектов](/rest/api/storageservices/Blob-Service-REST-API), [Получить свойства службы очередей](/rest/api/storageservices/Get-Queue-Service-Properties) [Получить свойства службы таблиц](/rest/api/storageservices/Get-Table-Service-Properties).
 
  Записи журнала создаются только при получении запроса к конечной точке службы. Например, если обнаруживается действие учетной записи хранения в конечной точке службы BLOB-объектов, но не в ее конечных точках служб таблиц или очередей, то будут созданы журналы, которые относятся только к службе BLOB-объектов.
 
@@ -204,7 +204,7 @@ queueClient.SetServiceProperties(serviceProperties);
 azcopy copy 'https://mystorageaccount.blob.core.windows.net/$logs/queue' 'C:\Logs\Storage' --include-path '2014/05/20/09;2014/05/20/10;2014/05/20/11' --recursive
 ```
 
-Дополнительные сведения о скачивании конкретных файлов см. в [этом разделе](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-blobs?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#download-specific-files).
+Дополнительные сведения о скачивании конкретных файлов см. в [этом разделе](/azure/storage/common/storage-use-azcopy-blobs?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#download-specific-files).
 
 После скачивания данных журнала можно просматривать записи журнала в файлах. В этих файлах журнала используется текстовый формат с разделителями, в котором могут анализироваться многие средства чтения журнала (Дополнительные сведения см. в разделе Руководство по [мониторингу, диагностике и устранению неполадок служба хранилища Microsoft Azure](storage-monitoring-diagnosing-troubleshooting.md)). Такие средства предоставляют различные возможности форматирования, фильтрации, сортировки и поиска содержимого файлов журнала. Дополнительные сведения о формате и содержимом файлов журнала службы хранилища см. в статьях [Формат журнала Аналитики Службы хранилища](/rest/api/storageservices/storage-analytics-log-format) и [Операции и сообщения о состоянии, заносимые в журнал Аналитики Службы хранилища](/rest/api/storageservices/storage-analytics-logged-operations-and-status-messages).
 

@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 08/24/2020
 ms.author: bwren
 ms.custom: subject-monitoring
-ms.openlocfilehash: 12bf87e16bf4506f2015dd75fb360f8de8399902
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6bfedc7d14c234f88e8140281a01ffcc330ba532
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88797825"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92488373"
 ---
 # <a name="monitoring-azure-cosmos-db"></a>Мониторинг Azure Cosmos DB
 
@@ -66,7 +66,7 @@ Azure Cosmos DB собирает данные мониторинга тех же
 
 ## <a name="analyzing-metric-data"></a><a id="analyze-metric-data"></a> Анализ данных метрик
 
-Azure Cosmos DB предоставляет пользовательский интерфейс для работы с метриками. Подробные сведения об использовании этого интерфейса и анализе различных сценариев Azure Cosmos DB см. в статье о [мониторинге и отладке метрик Azure Cosmos DB в Azure Monitor](cosmos-db-azure-monitor-metrics.md).
+Azure Cosmos DB предоставляет пользовательский интерфейс для работы с метриками. Подробные сведения об использовании этого интерфейса и анализе различных сценариев Azure Cosmos DB см. в статье о [мониторинге и отладке метрик Azure Cosmos DB в Azure Monitor]().
 
 Вы можете анализировать метрики Azure Cosmos DB вместе с метриками из других служб Azure с помощью обозревателя метрик. Для этого выберите пункт **Метрики** в меню **Azure Monitor**. Подробные сведения об использовании этого средства см. в статье [Начало работы с обозревателем метрик Azure](../azure-monitor/platform/metrics-getting-started.md). Все метрики Azure Cosmos DB находятся в пространстве имен **Стандартные метрики Cosmos DB**. При добавлении фильтра к диаграмме можно использовать следующие измерения с метриками.
 
@@ -118,7 +118,7 @@ Azure Cosmos DB предоставляет пользовательский ин
 
 ### <a name="azure-cosmos-db-log-analytics-queries-in-azure-monitor"></a>Запросы Log Analytics для Azure Cosmos DB в Azure Monitor
 
-Ниже приведены некоторые запросы, которые можно ввести в поле **поиска по журналам**, чтобы выполнить мониторинг контейнеров Azure Cosmos. Эти запросы поддерживают [новый язык](../log-analytics/log-analytics-log-search-upgrade.md).
+Ниже приведены некоторые запросы, которые можно ввести в поле **поиска по журналам**, чтобы выполнить мониторинг контейнеров Azure Cosmos. Эти запросы поддерживают [новый язык](../azure-monitor/log-query/log-query-overview.md).
 
 Ниже приведены запросы, которые можно использовать для мониторинга баз данных Azure Cosmos.
 
@@ -151,9 +151,9 @@ Azure Cosmos DB предоставляет пользовательский ин
 
 Доступные на портале метрики уровня учетной записи, такие как данные об использовании хранилища учетной записи и общее число запросов, недоступны через API-интерфейсы SQL. Тем не менее, можно получить данные об использовании на уровне коллекции с помощью API SQL. Чтобы получить данных на уровне коллекции, выполните следующие действия:
 
-* Чтобы использовать REST API, [выполните запрос GET к коллекции](https://msdn.microsoft.com/library/mt489073.aspx). Квота и данные об использовании коллекции возвращаются в заголовке ответа x-ms-resource-quota и x-ms-resource-usage headers.
+* Чтобы использовать REST API, [выполните запрос GET к коллекции](/rest/api/cosmos-db/get-a-collection). Квота и данные об использовании коллекции возвращаются в заголовке ответа x-ms-resource-quota и x-ms-resource-usage headers.
 
-* Чтобы использовать пакет SDK для .NET, воспользуйтесь методом [DocumentClient.ReadDocumentCollectionAsync](https://msdn.microsoft.com/library/microsoft.azure.documents.client.documentclient.readdocumentcollectionasync.aspx), возвращающим объект [ResourceResponse](https://msdn.microsoft.com/library/dn799209.aspx), который содержит ряд свойств использования, например **CollectionSizeUsage**, **DatabaseUsage**, **DocumentUsage** и прочие.
+* Чтобы использовать пакет SDK для .NET, воспользуйтесь методом [DocumentClient.ReadDocumentCollectionAsync](/dotnet/api/microsoft.azure.documents.client.documentclient.readdocumentcollectionasync), возвращающим объект [ResourceResponse](/dotnet/api/microsoft.azure.documents.client.resourceresponse-1), который содержит ряд свойств использования, например **CollectionSizeUsage**, **DatabaseUsage**, **DocumentUsage** и прочие.
 
 Чтобы получить дополнительные метрики, используйте [пакет SDK для Azure Monitor](https://www.nuget.org/packages/Microsoft.Azure.Insights). Доступные определения метрик можно получить с помощью следующего вызова.
 

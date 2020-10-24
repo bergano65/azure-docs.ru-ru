@@ -7,12 +7,12 @@ ms.topic: how-to
 author: mksuni
 ms.author: sumuth
 ms.date: 09/21/2020
-ms.openlocfilehash: 924dbadc07f57e5928ecc63a24bf5e57d6213670
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5c6d6a51887d2912da8d6b4e357a1036596d63d5
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90938809"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92490022"
 ---
 # <a name="connect-and-query-overview-for-azure-database-for-postgresql--single-server"></a>Общие сведения о подключении и запросах для базы данных Azure для PostgreSQL — один сервер
 
@@ -23,7 +23,7 @@ ms.locfileid: "90938809"
 | Краткое руководство | Описание |
 |---|---|
 |[PgAdmin](https://www.pgadmin.org/)|PgAdmin можно использовать для подключения к серверу, что упрощает создание, Обслуживание и использование объектов базы данных.|
-|[psql в Azure Cloud Shell](quickstart-create-server-database-azure-cli.md#connect-to-the-azure-database-for-postgresql-server-by-using-psql)|В этой статье показано, как запустить [**psql**](https://www.postgresql.org/docs/current/static/app-psql.html) в [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview) для подключения к серверу, а затем выполнить инструкции для запроса, вставки, обновления и удаления данных в базе данных. Вы можете запустить **psql** , если он установлен в среде разработки.|
+|[psql в Azure Cloud Shell](quickstart-create-server-database-azure-cli.md#connect-to-the-azure-database-for-postgresql-server-by-using-psql)|В этой статье показано, как запустить [**psql**](https://www.postgresql.org/docs/current/static/app-psql.html) в [Azure Cloud Shell](../cloud-shell/overview.md) для подключения к серверу, а затем выполнить инструкции для запроса, вставки, обновления и удаления данных в базе данных. Вы можете запустить **psql** , если он установлен в среде разработки.|
 |[PostgreSQL с VS Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb)|Расширение баз данных Azure для VS Code (Предварительная версия) позволяет просматривать и запрашивать сервер PostgreSQL как локально, так и в облаке с помощью скрапбукс с богатыми функциями IntelliSense. |
 |[PHP](connect-php.md)|В этом кратком руководстве показано, как использовать PHP для создания программы для подключения к базе данных и использования работы с объектами базы данных для запроса данных.|
 |[Java](connect-java.md)|В этом кратком руководстве показано, как использовать Java для подключения к базе данных, а затем использовать работу с объектами базы данных для запроса данных.|
@@ -42,10 +42,10 @@ ms.locfileid: "90938809"
 ## <a name="postgresql-extensions"></a>Расширения PostgreSQL
 PostgreSQL предоставляет возможность расширить функциональность базы данных с помощью расширений. Расширения позволяют объединить несколько связанных объектов SQL в один пакет, чтобы загружать и удалять их из базы данных одной командой. После загрузки в базу данных расширения действуют как встроенные функции.
 
-- [Расширения postgres 11](https://docs.microsoft.com/azure/postgresql/concepts-extensions#postgres-11-extensions)
-- [Расширения postgres 10](https://docs.microsoft.com/azure/postgresql/concepts-extensions#postgres-10-extensions)
-- [Расширения postgres 9,6](https://docs.microsoft.com/azure/postgresql/concepts-extensions#postgres-96-extensions)
-- [Расширения postgres 9,5](https://docs.microsoft.com/azure/postgresql/concepts-extensions#postgres-95-extensions)
+- [Расширения postgres 11](./concepts-extensions.md#postgres-11-extensions)
+- [Расширения postgres 10](./concepts-extensions.md#postgres-10-extensions)
+- [Расширения postgres 9,6](./concepts-extensions.md#postgres-96-extensions)
+- [Расширения postgres 9,5](./concepts-extensions.md#postgres-95-extensions)
 
 Дополнительные сведения см. [в разделе Использование расширений PostgreSQL на одном сервере](concepts-extensions.md).
 

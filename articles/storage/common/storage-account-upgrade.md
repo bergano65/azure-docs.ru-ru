@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 02/25/2019
 ms.author: tamram
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 0054b6e9bb73ef2918a8e5c52c59a272bae5da26
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 34b486dc4ccfb116b49cf57217c5b7e5aedbd992
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91612512"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92488849"
 ---
 # <a name="upgrade-to-a-general-purpose-v2-storage-account"></a>Обновление до учетной записи хранения общего назначения версии 2
 
@@ -40,16 +40,16 @@ ms.locfileid: "91612512"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-Для обновления учетной записи общего назначения версии 1 до учетной записи версии 2 с помощью PowerShell сначала обновите PowerShell, чтобы использовать последнюю версию модуля **Az.Storage**. Дополнительные сведения об установке PowerShell см. [здесь](https://docs.microsoft.com/powershell/azure/install-Az-ps).
+Для обновления учетной записи общего назначения версии 1 до учетной записи версии 2 с помощью PowerShell сначала обновите PowerShell, чтобы использовать последнюю версию модуля **Az.Storage**. Дополнительные сведения об установке PowerShell см. [здесь](/powershell/azure/install-Az-ps).
 
 Затем вызовите следующую команду, чтобы обновить учетную запись, подставив имя группы ресурсов, имя учетной записи хранения и уровень доступа требуемой учетной записи.
 
 ```powershell
 Set-AzStorageAccount -ResourceGroupName <resource-group> -AccountName <storage-account> -UpgradeToStorageV2 -AccessTier <Hot/Cool>
 ```
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 
-Чтобы обновить учетную запись общего назначения версии 1 до версии 2 с помощью Azure CLI, сначала установите последнюю версию Azure CLI. Сведения об установке Azure CLI см. [здесь](https://docs.microsoft.com/cli/azure/install-azure-cli).
+Чтобы обновить учетную запись общего назначения версии 1 до версии 2 с помощью Azure CLI, сначала установите последнюю версию Azure CLI. Сведения об установке Azure CLI см. [здесь](/cli/azure/install-azure-cli).
 
 Затем вызовите следующую команду, чтобы обновить учетную запись, подставив имя группы ресурсов, имя учетной записи хранения и уровень доступа требуемой учетной записи.
 

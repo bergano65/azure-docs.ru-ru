@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 09/18/2020
 ms.author: mjbrown
-ms.openlocfilehash: 98210f26072504c129ba32f765cf6bab74fef604
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5a8351b8c74f9219cf14575cc326fa8049264ed7
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91570713"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92491127"
 ---
 # <a name="manage-an-azure-cosmos-account"></a>Управление учетной записью Azure Cosmos
 
@@ -33,7 +33,7 @@ ms.locfileid: "91570713"
 
 ### <a name="azure-resource-manager-template"></a><a id="create-database-account-via-arm-template"></a>Шаблон Azure Resource Manager
 
-См. раздел [Создание учетной записи Azure Cosmos DB с помощью шаблонов Azure Resource Manager](manage-sql-with-resource-manager.md)
+См. раздел [Создание учетной записи Azure Cosmos DB с помощью шаблонов Azure Resource Manager](./manage-with-templates.md)
 
 ## <a name="addremove-regions-from-your-database-account"></a>Добавление и удаление регионов из учетной записи базы данных
 
@@ -228,7 +228,7 @@ ms.locfileid: "91570713"
 
 См. раздел [Активация перехода на другой ресурс вручную с помощью PowerShell](manage-with-powershell.md#trigger-manual-failover) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения и примеры по управлению учетной записью Azure Cosmos, а также базами данных и контейнерами см. в следующих статьях:
 

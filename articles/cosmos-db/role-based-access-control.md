@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 09/23/2020
 ms.author: mjbrown
-ms.openlocfilehash: 10713b264429b5588826421231e45194ebed33f0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c9a29a34b25b6834c2c343bd568f3dd3548ceff3
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91569180"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92474943"
 ---
 # <a name="role-based-access-control-in-azure-cosmos-db"></a>Управление доступом на основе ролей в Azure Cosmos DB
 
@@ -67,7 +67,7 @@ Azure Cosmos DB предоставляет встроенные возможно
 
 - Изменение хранимых процедур, триггеров или определяемых пользователем функций.
 
-Если приложения (или пользователи с помощью портал Azure) выполняют любое из этих действий, их необходимо перенести для выполнения с помощью [шаблонов ARM](manage-sql-with-resource-manager.md), [PowerShell](manage-with-powershell.md), [Azure CLI](manage-with-cli.md), службы "оставшаяся" или [библиотеки управления Azure](https://github.com/Azure-Samples/cosmos-management-net). Обратите внимание, что Управление Azure доступно на [нескольких языках](https://docs.microsoft.com/azure/?product=featured#languages-and-tools).
+Если приложения (или пользователи с помощью портал Azure) выполняют любое из этих действий, их необходимо перенести для выполнения с помощью [шаблонов ARM](./manage-with-templates.md), [PowerShell](manage-with-powershell.md), [Azure CLI](manage-with-cli.md), службы "оставшаяся" или [библиотеки управления Azure](https://github.com/Azure-Samples/cosmos-management-net). Обратите внимание, что Управление Azure доступно на [нескольких языках](/azure/?product=featured#languages-and-tools).
 
 ### <a name="set-via-arm-template"></a>Задать с помощью шаблона ARM
 

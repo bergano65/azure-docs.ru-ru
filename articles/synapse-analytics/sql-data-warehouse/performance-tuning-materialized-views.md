@@ -10,12 +10,12 @@ ms.subservice: sql-dw
 ms.date: 09/05/2019
 ms.author: xiaoyul
 ms.reviewer: nibruno; jrasnick
-ms.openlocfilehash: 7c7109999d478121ba0251de8e7470bc0f38d64c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0e807a01f575615967a039d360505a4f090cd1fd
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90984114"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92478326"
 ---
 # <a name="performance-tune-with-materialized-views"></a>Настройка производительности с материализованными представлениями
 
@@ -79,7 +79,7 @@ ms.locfileid: "90984114"
 
 **Требуется другая стратегия распределения данных для повышения производительности запросов**
 
-Пул SQL является распределенной системой с массовой параллельной обработкой (MPP).   Данные в таблице пула SQL распределяются между 60 узлами, используя одну из трех [стратегий распределения](sql-data-warehouse-tables-distribute.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) (хэширование, циклический перебор или репликация).  
+Синапсе SQL — это система обработки распределенных запросов.  Данные в таблице SQL распределяются между 60 узлами с помощью одной из трех [стратегий распределения](sql-data-warehouse-tables-distribute.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) (хэширования, round_robin или репликации).   
 
 Распределение данных задается в момент создания таблицы и остается неизменным до ее удаления. Материализованные представления, будучи виртуальными таблицами на диске, поддерживают распределение данных хэшированием и циклическим перебором.  Пользователи могут выбрать распределение данных, отличное от базовых таблиц, но оптимально подходящее для производительности запросов, которые часто используют представления.  
 

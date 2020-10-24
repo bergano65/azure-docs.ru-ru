@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 09/28/2019
 ms.author: mjbrown
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 59781f9b86764d0982e1612f9671e8f0919ed490
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1de6aa5450a42bbc8fe35b220e810726f7dd2cda
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89009514"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92488441"
 ---
 # <a name="create-containers-with-large-partition-key"></a>Создание контейнеров с большим ключом секции
 
@@ -78,9 +78,9 @@ database,
 
 В настоящее время нельзя использовать контейнеры с большим ключом секции в в Power BI и Azure Logic Apps. В этих приложениях можно использовать контейнеры без большого ключа секции.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Partitioning in Azure Cosmos DB](partitioning-overview.md) (Секционирование в Azure Cosmos DB)
 * [Единицы запросов в Azure Cosmos DB](request-units.md)
 * [Обеспечение необходимой пропускной способности для контейнеров и баз данных](set-throughput.md)
-* [Работа с учетной записью Azure Cosmos](account-overview.md)
+* [Работа с учетной записью Azure Cosmos](./account-databases-containers-items.md)
