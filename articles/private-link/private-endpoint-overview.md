@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: conceptual
 ms.date: 06/18/2020
 ms.author: allensu
-ms.openlocfilehash: def394369ebcb8b457d78ad6537830487e8049f7
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: 6fd20cd9e3172d6ce80d2c18c2cfa41fcc044929
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92277509"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92508035"
 ---
 # <a name="what-is-azure-private-endpoint"></a>Что такое частная конечная точка Azure?
 
@@ -133,15 +133,16 @@ ms.locfileid: "92277509"
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- [Создание частной конечной точки для базы данных SQL с помощью портала ](create-private-endpoint-portal.md)
-- [Создание частной конечной точки для базы данных SQL с помощью PowerShell ](create-private-endpoint-powershell.md)
-- [Создание частной конечной точки для базы данных SQL с помощью интерфейса командной строки ](create-private-endpoint-cli.md)
-- [Создание частной конечной точки для учетной записи хранения, используя портал ](create-private-endpoint-storage-portal.md)
+- [Создание частной конечной точки для базы данных SQL с помощью портала](create-private-endpoint-portal.md)
+- [Создание частной конечной точки для базы данных SQL с помощью PowerShell](create-private-endpoint-powershell.md)
+- [Создание частной конечной точки для базы данных SQL с помощью интерфейса командной строки](create-private-endpoint-cli.md)
+- [Создание частной конечной точки для учетной записи хранения с помощью портала](create-private-endpoint-storage-portal.md)
 - [Создание частной конечной точки для учетной записи Azure Cosmos с помощью портала](../cosmos-db/how-to-configure-private-endpoints.md)
 - [Create your own Private Link service using Azure PowerShel](create-private-link-service-powershell.md) (Создание собственного Приватного канала с помощью Azure PowerShell)
-- [Создание Приватного канала для службы "База данных Azure для PostgreSQL — отдельный сервер" с помощью портала Azure](../postgresql/howto-configure-privatelink-portal.md)
+- [Создание собственной частной ссылки для базы данных Azure для PostgreSQL-Single Server с помощью портала](../postgresql/howto-configure-privatelink-portal.md)
 - [Создание Приватного канала для службы "База данных Azure для PostgreSQL — отдельный сервер" с помощью CLI](../postgresql/howto-configure-privatelink-cli.md)
-- [Создание Приватного канала для службы "База данных Azure для MySQL" с помощью портала Azure](../mysql/howto-configure-privatelink-portal.md)
+- [Создание собственной частной ссылки для базы данных Azure для MySQL с помощью портала](../mysql/howto-configure-privatelink-portal.md)
 - [Создание Приватного канала для службы "База данных Azure для MySQL" с помощью CLI](../mysql/howto-configure-privatelink-cli.md)
-- [Создание Приватного канала для службы "База данных Azure для MariaDB" с помощью портала Azure](../mariadb/howto-configure-privatelink-portal.md)
+- [Создание собственной частной ссылки для базы данных Azure для MariaDB с помощью портала](../mariadb/howto-configure-privatelink-portal.md)
 - [Создание Приватного канала для службы "База данных Azure для MariaDB" с помощью CLI](../mariadb/howto-configure-privatelink-cli.md)
+- [Создание собственной частной ссылки для Azure Key Vault с помощью портала и интерфейса командной строки](../key-vault/general/private-link-service.md)

@@ -11,23 +11,23 @@ ms.workload: identity
 ms.topic: article
 ms.date: 03/27/2019
 ms.author: jeedes
-ms.openlocfilehash: 71b40fe903e5a837046b9b29f62ef4875e3139e5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 001d139e7fc140f41fa94ea0c6f32d0b08036a9a
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88545924"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92519783"
 ---
 # <a name="tutorial-configure-zscaler-beta-for-automatic-user-provisioning"></a>Руководство. Настройка бета-версии Zscaler для автоматической подготовки пользователей
 
 Цель этого руководства — продемонстрировать шаги, которые необходимо выполнить в Zscaler Beta и Azure Active Directory (Azure AD), чтобы настроить Azure AD для автоматической инициализации и отзыва пользователей и/или групп в Zscaler Beta.
 
 > [!NOTE]
-> В этом руководстве рассматривается соединитель, созданный на базе службы подготовки пользователей Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../active-directory-saas-app-provisioning.md).
+> В этом руководстве рассматривается соединитель, созданный на базе службы подготовки пользователей Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../app-provisioning/user-provisioning.md).
 >
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Сценарий, описанный в этом руководстве, предполагает, что у вас уже имеется:
 
@@ -66,7 +66,7 @@ ms.locfileid: "88545924"
 
 Перед настройкой и включением автоматической подготовки пользователей следует решить, каким пользователям и (или) группам в Azure AD требуется доступ к Zscaler Beta. После принятия решения вы можете назначить этих пользователей и (или) группы для Zscaler бета-версии, следуя приведенным ниже инструкциям.
 
-* [Назначение корпоративному приложению пользователя или группы](https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-assign-user-azure-portal)
+* [Назначение корпоративному приложению пользователя или группы](../manage-apps/assign-user-or-group-access-portal.md)
 
 ### <a name="important-tips-for-assigning-users-to-zscaler-beta"></a>Важные советы по назначению пользователей в Zscaler Beta
 
@@ -119,7 +119,7 @@ ms.locfileid: "88545924"
 
     ![Подготовка бета-версии Zscaler](./media/zscaler-beta-provisioning-tutorial/notification.png)
 
-9. Выберите команду **Сохранить**.
+9. Нажмите кнопку **Сохранить**.
 
 10. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с Zscaler Beta**.
 
@@ -137,7 +137,7 @@ ms.locfileid: "88545924"
 
     ![Подготовка бета-версии Zscaler](./media/zscaler-beta-provisioning-tutorial/group-attribute-mappings.png)
 
-14. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](./../active-directory-saas-scoping-filters.md).
+14. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 15. Чтобы включить службу подготовки Azure AD для Zscaler Beta, измените значение параметра **состояние подготовки** на **включено** в разделе **Параметры** .
 
@@ -153,7 +153,7 @@ ms.locfileid: "88545924"
 
 После этого начнется начальная синхронизация пользователей и (или) групп, определенных в поле **Область** раздела **Параметры**. Начальная синхронизация занимает больше времени, чем последующие операции синхронизации. Если служба запущена, они выполняются примерно каждые 40 минут. В разделе **сведения о синхронизации** можно отслеживать ход выполнения и переходить по ссылкам для просмотра отчетов по подготовке, в которых описаны все действия, выполняемые службой подготовки Azure AD в Zscaler Beta.
 
-Дополнительные сведения о чтении журналов подготовки Azure AD см. в руководстве по [отчетам об автоматической подготовке учетных записей](../active-directory-saas-provisioning-reporting.md).
+Дополнительные сведения о чтении журналов подготовки Azure AD см. в руководстве по [отчетам об автоматической подготовке учетных записей](../app-provisioning/check-status-user-account-provisioning.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
@@ -162,7 +162,7 @@ ms.locfileid: "88545924"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../active-directory-saas-provisioning-reporting.md)
+* [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../app-provisioning/check-status-user-account-provisioning.md)
 
 <!--Image references-->
 [1]: ./media/zscaler-beta-provisioning-tutorial/tutorial-general-01.png

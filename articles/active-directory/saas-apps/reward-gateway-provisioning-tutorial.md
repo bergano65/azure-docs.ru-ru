@@ -11,19 +11,19 @@ ms.workload: identity
 ms.topic: article
 ms.date: 07/26/2019
 ms.author: zhchia
-ms.openlocfilehash: f908e37c7785744c2f26b6a9cd542ccde228eb38
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 881be102a00badf1e03188b26514ad0eb1a9bd90
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91255748"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92520784"
 ---
 # <a name="tutorial-configure-reward-gateway-for-automatic-user-provisioning"></a>Учебник. Настройка шлюза наград для автоматической подготовки пользователей
 
 Цель этого учебника — продемонстрировать шаги, которые необходимо выполнить в наградном шлюзе и Azure Active Directory (Azure AD), чтобы настроить Azure AD для автоматической инициализации и отзыва пользователей и (или) групп на вознаграждение.
 
 > [!NOTE]
-> В этом руководстве рассматривается соединитель, созданный на базе службы подготовки пользователей Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/manage-apps/user-provisioning).
+> В этом руководстве рассматривается соединитель, созданный на базе службы подготовки пользователей Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../app-provisioning/user-provisioning.md).
 >
 > Сейчас этот соединитель находится в общедоступной предварительной версии. Дополнительные сведения об общих условиях использования продуктов в предварительной версии см. в документе [Дополнительные условия использования Предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 

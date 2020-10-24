@@ -1,5 +1,5 @@
 ---
-title: Использование управления доступом на основе ролей для StorSimple | Документация Майкрософт
+title: Использование управления доступом на основе ролей Azure для StorSimple | Документация Майкрософт
 description: В этой статье описывается, как использовать управление доступом на основе ролей Azure (Azure RBAC) в контексте StorSimple.
 services: storsimple
 documentationcenter: ''
@@ -14,16 +14,16 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/11/2017
 ms.author: alkohli
-ms.openlocfilehash: 38500edeca2241bfa9ab093e037af18159994b02
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 49c38e23ddbbfe983ff82ad25363c744292d4d69
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87920421"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92518982"
 ---
-# <a name="role-based-access-control-for-storsimple"></a>Управление доступом на основе ролей для StorSimple
+# <a name="azure-role-based-access-control-for-storsimple"></a>Управление доступом на основе ролей в Azure для StorSimple
 
-В этой статье приводится краткое описание использования управления доступом на основе ролей Azure (Azure RBAC) для устройства StorSimple. RBAC предлагает точное управление доступом для Azure. Вместо предоставления всем неограниченного доступа используйте RBAC, чтобы назначить пользователям StorSimple только те права доступа, которые необходимы им для выполнения заданий. Общие сведения об управлении доступом в Azure см. в статье [Начало работы с управлением доступом на основе ролей на портале Azure](../role-based-access-control/overview.md).
+В этой статье приводится краткое описание использования управления доступом на основе ролей Azure (Azure RBAC) для устройства StorSimple. Azure RBAC обеспечивает детальное управление доступом для Azure. Используйте Azure RBAC, чтобы предоставить доступ к пользователям StorSimple только для выполнения своих заданий, вместо того чтобы предоставлять всем неограниченный доступ. Дополнительные сведения об основах управления доступом в Azure см. в статье [что такое управление доступом на основе ролей в Azure (Azure RBAC)](../role-based-access-control/overview.md).
 
 Эта статья относится к устройствам StorSimple серии 8000 с обновлением 3.0 или более поздней версии на портале Azure.
 
@@ -31,7 +31,7 @@ ms.locfileid: "87920421"
 
 ## <a name="azure-roles-for-storsimple"></a>Роли Azure для StorSimple
 
-RBAC можно назначить на основе ролей. Роли предоставляют определенные уровни разрешений, исходя из доступных ресурсов в среде. Существует два типа ролей, которые пользователи StorSimple могут выбрать: встроенная и пользовательская.
+Azure RBAC можно назначить на основе ролей. Роли предоставляют определенные уровни разрешений, исходя из доступных ресурсов в среде. Существует два типа ролей, которые пользователи StorSimple могут выбрать: встроенная и пользовательская.
 
 * **Встроенные роли**. Доступны такие встроенные роли, как владелец, участник, читатель или администратор доступа пользователей. Дополнительные сведения см. [в статье встроенные роли для управления доступом на основе ролей в Azure](../role-based-access-control/built-in-roles.md).
 
@@ -194,6 +194,6 @@ AssignableScopes : {/subscriptions/<subscription_ID>/}
     ![Просмотр пользователей в роли администратора инфраструктуры StorSimple](./media/storsimple-8000-role-based-access-control/rbac-infra-admin-permissions1.png)
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в статье [Общие сведения об управлении доступом на основе ролей](../role-based-access-control/role-assignments-external-users.md).

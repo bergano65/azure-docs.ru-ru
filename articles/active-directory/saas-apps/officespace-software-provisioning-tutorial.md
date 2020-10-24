@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 10/02/2019
 ms.author: Zhchia
-ms.openlocfilehash: 123f35154c3b87ff1ed479084f5e9dfa35043b9a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fe48cef0fb235d217f95012e81d7daf501928300
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91287242"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92518574"
 ---
 # <a name="tutorial-configure-officespace-software-for-automatic-user-provisioning"></a>Учебник. Настройка программного обеспечения Officespace Software для автоматической подготовки пользователей
 
@@ -89,7 +89,7 @@ ms.locfileid: "91287242"
 В этом разделе описано, как настроить службу подготовки Azure AD для создания, обновления и отключения пользователей и (или) групп в Officespace Software Software на основе назначений пользователей и групп в Azure AD.
 
 > [!TIP]
-> Вы также можете включить единый вход на основе SAML для Officespace Software Software, следуя инструкциям в [руководстве по единому входу в Officespace Software Software](https://docs.microsoft.com/azure/active-directory/saas-apps/officespace-tutorial). Единый вход можно настроить независимо от автоматической подготовки пользователей, хотя эти две функции дополняют друг друга.
+> Вы также можете включить единый вход на основе SAML для Officespace Software Software, следуя инструкциям в [руководстве по единому входу в Officespace Software Software](./officespace-tutorial.md). Единый вход можно настроить независимо от автоматической подготовки пользователей, хотя эти две функции дополняют друг друга.
 
 ### <a name="to-configure-automatic-user-provisioning-for-officespace-software-in-azure-ad"></a>Чтобы настроить автоматическую подготовку пользователей для программного обеспечения Officespace Software в Azure AD, сделайте следующее:
 
@@ -153,4 +153,3 @@ ms.locfileid: "91287242"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../app-provisioning/check-status-user-account-provisioning.md)
-

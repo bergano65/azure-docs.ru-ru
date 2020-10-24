@@ -13,12 +13,12 @@ ms.date: 05/22/2020
 ms.author: ryanwi
 ms.reviewer: jmprieur, saeeda, sureshja, hirsin
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started
-ms.openlocfilehash: 095bc5594cf9b6eaf0df7929ea83c25a401793e2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 320debcf2b744e949faf7b29dd72ed334fe0feea
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86252119"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92503731"
 ---
 # <a name="authentication-vs-authorization"></a>Проверка подлинности и авторизация
 
@@ -35,6 +35,8 @@ ms.locfileid: "86252119"
 ## <a name="authentication-and-authorization-using-microsoft-identity-platform"></a>Проверка подлинности и авторизация с помощью платформы удостоверений Майкрософт
 
 Вместо создания приложений, каждое из которых хранит свои собственные сведения об имени пользователя и пароле, что повышает административную нагрузку при необходимости добавить или удалить пользователей в нескольких приложениях, приложения могут делегировать это централизованному поставщику удостоверений.
+
+> [!VIDEO https://www.youtube.com/embed/tkQJSHFsduY]
 
 Azure Active Directory (Azure AD) — это централизованный поставщик удостоверений в облаке. Делегирование ему проверки подлинности и авторизации позволяет выполнять такие сценарии, как применение политик условного доступа, которые требуют, чтобы пользователь находился в определенном месте, использование [многофакторной проверки подлинности](../authentication/concept-mfa-howitworks.md) (иногда называемой двухфакторной проверкой подлинности или 2FA), а также предоставление пользователю возможности выполнить вход один раз, а затем автоматически входить во все веб-приложения, использующие один и тот же централизованный каталог. Такая возможность называется **единым входом**.
 

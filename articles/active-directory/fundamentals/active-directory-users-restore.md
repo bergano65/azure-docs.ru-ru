@@ -8,20 +8,20 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 04/01/2018
+ms.date: 10/23/2020
 ms.author: ajburnle
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bba8a0898c11cf1af150f4824d9bef5e9e03576e
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: bd4d42e1cafa58aaf6a47188c9e86c24ac175047
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92370888"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92514395"
 ---
 # <a name="restore-or-remove-a-recently-deleted-user-using-azure-active-directory"></a>Восстановление или удаление недавно удаленного пользователя с помощью Azure Active Directory
-После удаления пользователя его учетная запись остается в заблокированном состоянии в течение 30 дней. В течение этого времени учетную запись пользователя и все ее свойства можно восстановить. По истечении 30 дней пользователь удаляется автоматически без возможности восстановления.
+После удаления пользователя его учетная запись остается в заблокированном состоянии в течение 30 дней. В течение этого времени учетную запись пользователя и все ее свойства можно восстановить. По истечении 30-дневного периода автоматически запускается процесс постоянного удаления.
 
 Вы можете просмотреть подходящих для восстановления пользователей, восстановить удаленного пользователя или окончательно удалить пользователя с помощью Azure Active Directory (Azure AD) на портале Azure.
 
@@ -79,8 +79,8 @@ ms.locfileid: "92370888"
 
     ![Пользователи — страница «удаленные пользователи» с выделенным параметром «удалить пользователя»](media/active-directory-users-restore/users-deleted-users-permanent-delete-user.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
-После восстановления или удаления пользователей можно выполнить следующие основные операции:
+## <a name="next-steps"></a>Дальнейшие действия
+После восстановления или удаления пользователей можно выполнить следующие действия.
 
 - [Добавление или удаление пользователей](add-users-azure-active-directory.md)
 

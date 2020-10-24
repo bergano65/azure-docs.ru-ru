@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 09/12/2019
 ms.author: Zhchia
-ms.openlocfilehash: e69b6aa5518f83dbbeba34d70b459c781b50dc9f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1a7c2634f4dc06e3c988a48c7ca15294160759e2
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91300007"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92520733"
 ---
 # <a name="tutorial-configure-robin-for-automatic-user-provisioning"></a>Учебник. Настройка перебора для автоматической подготовки пользователей
 
@@ -89,7 +89,7 @@ ms.locfileid: "91300007"
 В этом разделе описано, как настроить службу подготовки Azure AD для создания, обновления и отключения пользователей и (или) групп в зависимости от назначения пользователей и групп в Azure AD.
 
 > [!TIP]
-> Вы также можете включить единый вход на основе SAML для перебора, следуя инструкциям, приведенным в [руководстве по использованию единого входа](https://docs.microsoft.com/azure/active-directory/saas-apps/robin-tutorial). Единый вход можно настроить независимо от автоматической подготовки пользователей, хотя эти две функции дополняют друг друга.
+> Вы также можете включить единый вход на основе SAML для перебора, следуя инструкциям, приведенным в [руководстве по использованию единого входа](./robin-tutorial.md). Единый вход можно настроить независимо от автоматической подготовки пользователей, хотя эти две функции дополняют друг друга.
 
 ### <a name="to-configure-automatic-user-provisioning-for-robin-in-azure-ad"></a>Чтобы настроить автоматическую подготовку пользователей для перебора в Azure AD, сделайте следующее:
 
@@ -163,4 +163,3 @@ ms.locfileid: "91300007"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../app-provisioning/check-status-user-account-provisioning.md)
-

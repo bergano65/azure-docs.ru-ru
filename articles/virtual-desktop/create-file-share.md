@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 06/05/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 583384d6f0ec71dc724868db61ee07ead7269607
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: aad5ebaf7eef5b404f7849b79694facf1efd01b4
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91287327"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92519445"
 ---
 # <a name="create-a-profile-container-with-azure-files-and-ad-ds"></a>Создание контейнера профиля с помощью файлов и AD DS Azure
 
@@ -19,7 +19,7 @@ ms.locfileid: "91287327"
 
 В этом процессе используются службы домен Active Directory Services (AD DS), которые являются локальными службами каталогов. Дополнительные сведения о создании контейнера Фслогикс Profile с помощью Azure AD DS см. в статье [Создание контейнера профиля фслогикс с помощью службы файлов Azure](create-profile-container-adds.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Прежде чем приступить к работе, убедитесь, что контроллер домена синхронизирован с Azure и разрешается из виртуальной сети Azure, к которой подключены узлы сеансов.
 
@@ -48,7 +48,7 @@ ms.locfileid: "91287327"
 
 Если вам нужны более подробные инструкции по настройке, см. сведения о [региональной доступности](../storage/files/storage-files-identity-auth-active-directory-enable.md#regional-availability).
 
-## <a name="create-an-azure-file-share"></a>создать файловый ресурс Azure;
+## <a name="create-an-azure-file-share"></a>Создание файлового ресурса Azure
 
 Далее необходимо создать файловый ресурс Azure.
 
@@ -60,7 +60,7 @@ ms.locfileid: "91287327"
 
 3. Выберите **+ Общие файловые ресурсы**, создайте новый файловый ресурс с именем **Profiles**, а затем введите соответствующую квоту или оставьте поле пустым, чтобы квоты не применялись.
 
-4. Нажмите кнопку **создания**.
+4. Нажмите кнопку **Создать**.
 
 ## <a name="enable-active-directory-authentication"></a>Включение проверки подлинности Active Directory
 
@@ -86,7 +86,7 @@ ms.locfileid: "91287327"
 >[!NOTE]
 >Учетные записи или группы, которым назначаются разрешения, должны быть созданы в домене и синхронизированы с Azure AD. Учетные записи, созданные в Azure AD, работать не будут.
 
-Чтобы назначить разрешения управления доступом на основе ролей (RBAC), сделайте следующее:
+Чтобы назначить разрешения управления доступом на основе ролей Azure (Azure RBAC), сделайте следующее:
 
 1. Перейдите на портал Azure.
 
@@ -106,7 +106,7 @@ ms.locfileid: "91287327"
 
 ## <a name="assign-users-permissions-on-the-azure-file-share"></a>Назначение пользователям разрешений для файлового ресурса Azure
 
-После назначения разрешений RBAC пользователям необходимо будет настроить разрешения NTFS.
+После назначения разрешений Azure RBAC пользователям необходимо будет настроить разрешения NTFS.
 
 Чтобы приступить к работе, необходимо знать две вещи из портал Azure:
 
@@ -131,7 +131,7 @@ ms.locfileid: "91287327"
     - Замените косую черту `/` обратной косой чертой `\` .
     - Добавьте имя общего файлового ресурса, созданного при [создании файлового ресурса Azure](#create-an-azure-file-share) , в конце UNC.
 
-        Например: `\\customdomain.file.core.windows.net\<fileshare-name>`
+        Пример: `\\customdomain.file.core.windows.net\<fileshare-name>`
 
 ### <a name="get-the-storage-account-key"></a>Получение ключа учетной записи хранения
 
@@ -179,7 +179,7 @@ ms.locfileid: "91287327"
      - Замените <подключенного диска> буквой диска, который использовался для подключения накопителя.
      - Замените <пользовательский адрес электронной почты> именем участника-пользователя или группы Active Directory, содержащей пользователей, которым потребуется доступ к общей папке.
 
-     Пример:
+     Например:
 
      ```cmd
      icacls <mounted-drive-letter>: /grant john.doe@contoso.com:(M)
@@ -232,6 +232,6 @@ ms.locfileid: "91287327"
 
 Для дополнительного тестирования следуйте инструкциям в разделе Проверка [работоспособности профиля](create-profile-container-adds.md#make-sure-your-profile-works).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения об устранении неполадок Фслогикс см. в [этом руководство по устранению неполадок](/fslogix/fslogix-trouble-shooting-ht).

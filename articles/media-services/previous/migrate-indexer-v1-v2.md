@@ -3,7 +3,7 @@ title: Миграция из индексаторов версии 1 и v2 в и
 description: В этом разделе описано, как выполнить миграцию из Azure Media Indexer v1 и v2 в индексатор видео служб мультимедиа Azure.
 services: media-services
 documentationcenter: ''
-author: juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
@@ -11,31 +11,32 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/20/2019
-ms.author: juliako
-ms.openlocfilehash: e6b7c8cbcf6685ca2e781789fc508d005bcb5f88
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.date: 10/21/2020
+ms.author: inhenkel
+ms.openlocfilehash: 330bffebb870635fd473e88a8eadb300eed40b9b
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92018905"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92518302"
 ---
 # <a name="migrate-from-media-indexer-and-media-indexer-2-to-video-indexer"></a>Миграция из индексатора мультимедиа и индексатора мультимедиа 2 в индексатор видео
 
 [!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
-Процессор [Azure Media indexer](media-services-index-content.md) media и [Azure Media indexer 2 Preview](./legacy-components.md) обработчики мультимедиа выводятся из эксплуатации. Даты прекращения поддержки см. в разделе, посвященном [устаревшим компонентам](legacy-components.md). Вместо этих устаревших компонентов теперь используется [Индексатор видео Служб мультимедиа Azure](../video-indexer/index.yml).
+> [!IMPORTANT]
+> Пользователям рекомендуется выполнять миграцию из индексатора версии 1 и индексатора v2 в режим " [службы мультимедиа v3 Аудиоанализерпресет Basic](../latest/analyzing-video-audio-files-concept.md)". Процессор [Azure Media indexer](media-services-index-content.md) media и [Azure Media indexer 2 Preview](./legacy-components.md) обработчики мультимедиа выводятся из эксплуатации. Даты прекращения поддержки см. в разделе, посвященном [устаревшим компонентам](legacy-components.md).
 
 Индексатор видео служб мультимедиа Azure создан на основе Аналитика мультимедиа Azure, Когнитивный поиск Azure Cognitive Services (например, API распознавания лиц, Microsoft Translator, API компьютерного зрения и службы Пользовательское распознавание речи). Индексатор видео позволяет извлекать аналитические сведения из видеоматериалов с помощью видео- и аудиомоделей. Чтобы узнать, в каких сценариях можно использовать индексатор видео, какие функции он предлагает и как приступить к работе, см. статью [видео и звуковые модели индексатора видео](../video-indexer/video-indexer-overview.md). 
 
 Вы можете извлекать аналитические данные из видео-и звуковых файлов с помощью [предварительных установок анализатора служб мультимедиа Azure v3](../latest/analyzing-video-audio-files-concept.md) или напрямую с помощью [API-интерфейсов индексатора видео](https://api-portal.videoindexer.ai/). В настоящее время существует перекрытие функций, предоставляемых API индексатора видео и API-интерфейсов служб мультимедиа v3.
 
 > [!NOTE]
-> Чтобы определить, в каких случаях вам лучше использовать Индексатор видео, а в каких — предустановки анализатора Служб мультимедиа, ознакомьтесь со статьей, в которой приводится [сравнение](../video-indexer/compare-video-indexer-with-media-services-presets.md) этих инструментов. 
+> Чтобы понять различия между наборами средств индексирования видео и анализатора служб мультимедиа, ознакомьтесь с [документом сравнения](../video-indexer/compare-video-indexer-with-media-services-presets.md).
 
 В этой статье рассматриваются действия по миграции из Azure Media Indexer и Azure Media Indexer 2 в индексатор видео служб мультимедиа Azure.  
 
-## <a name="migration-options"></a>Варианты переноса 
+## <a name="migration-options"></a>Варианты переноса
 
 |Если требуется  |а затем — |
 |---|---|
@@ -48,7 +49,7 @@ ms.locfileid: "92018905"
 
 ## <a name="getting-started-with-media-services-v3-apis"></a>Начало работы с API-интерфейсами служб мультимедиа v3
 
-API служб мультимедиа Azure v3 позволяет извлекать аналитические данные из видео и звуковых файлов с помощью [предустановок анализатора служб мультимедиа Azure v3](../latest/analyzing-video-audio-files-concept.md). 
+API служб мультимедиа Azure v3 позволяет извлекать аналитические данные из видео и звуковых файлов с помощью [предустановок анализатора служб мультимедиа Azure v3](../latest/analyzing-video-audio-files-concept.md).
 
 **AudioAnalyzerPreset** позволяет извлекать множество звуковых аналитических сведений из аудио- или видеофайла. Выходные данные включают файл ВТТ или TTML для записи звука и JSON-файл (со всеми дополнительными сведениями о Audio Insights). В данные аудио Insights входят ключевые слова, индексирование докладчика и анализ тональности речи. Аудиоанализерпресет также поддерживает определение языка для конкретных языков. Подробные сведения см. в разделе [преобразования](/rest/api/media/transforms/createorupdate#audioanalyzerpreset).
 
@@ -69,15 +70,15 @@ API служб мультимедиа Azure v3 позволяет извлека
 
 Дополнительные сведения о службе преобразования текста в речь и о том, как приступить к работе, см. в разделе [что такое преобразование речи в текст?](../../cognitive-services/speech-service/speech-to-text.md)
 
-## <a name="known-differences-from-deprecated-services"></a>Известные отличия от устаревших служб 
+## <a name="known-differences-from-deprecated-services"></a>Известные отличия от устаревших служб
 
 Вы обнаружите, что индексатор видео, службы мультимедиа Azure v3 Аудиоанализерпресет и службы Cognitive Services Speech Services более надежны и получают более качественные выходные данные, чем выпущенные Azure Media Indexer 1 и Azure Media Indexer 2 процессора.  
 
-Ниже перечислены некоторые известные отличия. 
+Ниже перечислены некоторые известные отличия.
 
-* Cognitive Services службы речи не поддерживают извлечение ключевых слов. Однако индексатор видео и службы мультимедиа v3 Аудиоанализерпресет оба предлагают более надежный набор ключевых слов в формате JSON. 
+* Cognitive Services службы речи не поддерживают извлечение ключевых слов. Однако индексатор видео и службы мультимедиа v3 Аудиоанализерпресет оба предлагают более надежный набор ключевых слов в формате JSON.
 
-## <a name="need-help"></a>Требуется помощь?
+## <a name="support"></a>Поддержка
 
 Вы можете открыть запрос в службу поддержки, перейдя к разделу [нового запроса на техническую поддержку](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest)
 

@@ -11,16 +11,16 @@ ms.workload: identity
 ms.topic: article
 ms.date: 06/07/2019
 ms.author: jeedes
-ms.openlocfilehash: 623ec6999add175e85f117e547fba61734d2b892
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a3c2567cf1799bca5750e90fbe5d89f6da952ff5
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91286018"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92514898"
 ---
 # <a name="tutorial-configure-smartsheet-for-automatic-user-provisioning"></a>Учебник. Настройка Smartsheet для автоматической подготовки пользователей
 
-Цель этого руководства — продемонстрировать шаги, которые необходимо выполнить в Smartsheet и Azure Active Directory (Azure AD), чтобы настроить Azure AD для автоматической инициализации и отзыва пользователей и групп в [Smartsheet](https://www.smartsheet.com/pricing). Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../manage-apps/user-provisioning.md). 
+Цель этого руководства — продемонстрировать шаги, которые необходимо выполнить в Smartsheet и Azure Active Directory (Azure AD), чтобы настроить Azure AD для автоматической инициализации и отзыва пользователей и групп в [Smartsheet](https://www.smartsheet.com/pricing). Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../app-provisioning/user-provisioning.md). 
 
 
 ## <a name="capabilities-supported"></a>Поддерживаемые возможности
@@ -37,15 +37,15 @@ ms.locfileid: "91286018"
 
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
-* [Клиент Azure AD.](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant)
-* Учетная запись пользователя в Azure AD с [разрешением](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) на настройку подготовки (например, администратор приложений, администратор облачных приложений, владелец приложения или глобальный администратор).
+* [Клиент Azure AD.](../develop/quickstart-create-new-tenant.md)
+* Учетная запись пользователя в Azure AD с [разрешением](../users-groups-roles/directory-assign-admin-roles.md) на настройку подготовки (например, администратор приложений, администратор облачных приложений, владелец приложения или глобальный администратор).
 * [Клиент Smartsheet](https://www.smartsheet.com/pricing).
 * Учетная запись пользователя на корпоративном плане Smartsheet Enterprise или Enterprise с разрешениями системного администратора.
 
 ## <a name="step-1-plan-your-provisioning-deployment"></a>Шаг 1. Планирование развертывания для подготовки
-1. Узнайте, [как работает служба подготовки](https://docs.microsoft.com/azure/active-directory/manage-apps/user-provisioning).
-2. Определите, кто будет находиться в [области подготовки](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts).
-3. Определите, какие данные должны [сопоставляться между Azure AD и Smartsheet](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes). 
+1. Узнайте, [как работает служба подготовки](../app-provisioning/user-provisioning.md).
+2. Определите, кто будет находиться в [области подготовки](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+3. Определите, какие данные должны [сопоставляться между Azure AD и Smartsheet](../app-provisioning/customize-application-attributes.md). 
 
 ## <a name="step-2-configure-smartsheet-to-support-provisioning-with-azure-ad"></a>Шаг 2. Настройка Smartsheet для поддержки подготовки с помощью Azure AD
 
@@ -75,7 +75,7 @@ ms.locfileid: "91286018"
 
     ![Снимок экрана с диалоговым окном "личные настройки" с доступом к API и созданием новых параметров маркера доступа, вызываемых.](media/smartsheet-provisioning-tutorial/Smartsheet06.png)
 
-7. Определите имя маркера доступа API. Нажмите кнопку **ОК**.
+7. Определите имя маркера доступа API. Нажмите кнопку **OK**.
 
     ![Снимок экрана шага 1 из 2: создание маркера доступа API с параметром "ОК", вызываемым "out".](media/smartsheet-provisioning-tutorial/Smartsheet07.png)
 
@@ -85,13 +85,13 @@ ms.locfileid: "91286018"
 
 ## <a name="step-3-add-smartsheet-from-the-azure-ad-application-gallery"></a>Шаг 3. Добавление Smartsheet из коллекции приложений Azure AD
 
-Добавьте Smartsheet из коллекции приложений Azure AD, чтобы начать управление подготовкой в Smartsheet. Если вы ранее настроили Smartsheet для единого входа, вы можете использовать то же приложение. Однако при первоначальном тестировании интеграции рекомендуется создать отдельное приложение. Дополнительные сведения о добавлении приложения из коллекции см. [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/add-gallery-app). 
+Добавьте Smartsheet из коллекции приложений Azure AD, чтобы начать управление подготовкой в Smartsheet. Если вы ранее настроили Smartsheet для единого входа, вы можете использовать то же приложение. Однако при первоначальном тестировании интеграции рекомендуется создать отдельное приложение. Дополнительные сведения о добавлении приложения из коллекции см. [здесь](../manage-apps/add-application-portal.md). 
 
 ## <a name="step-4-define-who-will-be-in-scope-for-provisioning"></a>Шаг 4. Определение пользователей для включения в область подготовки 
 
-Служба подготовки Azure AD позволяет определить пользователей, которые будут подготовлены, на основе назначения приложению и (или) атрибутов пользователя или группы. Если вы решили указать, кто именно будет подготовлен к работе в приложении, на основе назначения, можно выполнить следующие [действия](../manage-apps/assign-user-or-group-access-portal.md), чтобы назначить пользователей и группы приложению. Если вы решили указать, кто именно будет подготовлен, на основе одних только атрибутов пользователя или группы, можете использовать фильтр задания области, как описано [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts). 
+Служба подготовки Azure AD позволяет определить пользователей, которые будут подготовлены, на основе назначения приложению и (или) атрибутов пользователя или группы. Если вы решили указать, кто именно будет подготовлен к работе в приложении, на основе назначения, можно выполнить следующие [действия](../manage-apps/assign-user-or-group-access-portal.md), чтобы назначить пользователей и группы приложению. Если вы решили указать, кто именно будет подготовлен, на основе одних только атрибутов пользователя или группы, можете использовать фильтр задания области, как описано [здесь](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md). 
 
-* При назначении пользователей и групп для Smartsheet необходимо выбрать роль, отличную от **доступа по умолчанию**. Пользователи с ролью "Доступ по умолчанию" исключаются из подготовки и будут помечены в журналах подготовки как не назначенные явно. Кроме того, если эта роль является единственной, доступной в приложении, можно [изменить манифест приложения](https://docs.microsoft.com/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps), чтобы добавить дополнительные роли. 
+* При назначении пользователей и групп для Smartsheet необходимо выбрать роль, отличную от **доступа по умолчанию**. Пользователи с ролью "Доступ по умолчанию" исключаются из подготовки и будут помечены в журналах подготовки как не назначенные явно. Кроме того, если эта роль является единственной, доступной в приложении, можно [изменить манифест приложения](../develop/howto-add-app-roles-in-azure-ad-apps.md), чтобы добавить дополнительные роли. 
 
 * Чтобы обеспечить четность в назначениях ролей пользователей между Smartsheet и Azure AD, рекомендуется использовать те же назначения ролей, заполненные в списке пользователей Full Smartsheet. Чтобы получить этот список пользователей из Smartsheet, перейдите к **администратору учетной записи > Управление пользователями > другие действия > скачать список пользователей (CSV)**.
 
@@ -99,7 +99,7 @@ ms.locfileid: "91286018"
 
 *  Если у пользователя есть несколько ролей, назначенных в Smartsheet, **необходимо** убедиться, что эти назначения ролей реплицируются в Azure AD, чтобы избежать ситуации, когда пользователи могут навсегда потерять доступ к объектам Smartsheet. Каждая уникальная роль в Smartsheet **должна** быть назначена другой группе в Azure AD. После этого пользователь **должен** быть добавлен в каждую из групп, соответствующих нужным ролям. 
 
-* Начните с малого. Протестируйте небольшой набор пользователей и групп, прежде чем выполнять развертывание для всех. Если в область подготовки включены назначенные пользователи и группы, проверьте этот механизм, назначив приложению одного или двух пользователей либо одну или две группы. Если в область включены все пользователи и группы, можно указать [фильтр области на основе атрибутов](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts). 
+* Начните с малого. Протестируйте небольшой набор пользователей и групп, прежде чем выполнять развертывание для всех. Если в область подготовки включены назначенные пользователи и группы, проверьте этот механизм, назначив приложению одного или двух пользователей либо одну или две группы. Если в область включены все пользователи и группы, можно указать [фильтр области на основе атрибутов](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md). 
 
 ## <a name="step-5-configure-automatic-user-provisioning-to-smartsheet"></a>Шаг 5. Настройка автоматической подготовки пользователей в Smartsheet 
 
@@ -148,7 +148,7 @@ ms.locfileid: "91286018"
    |phoneNumbers[type eq "mobile"].value|Строка|
    |phoneNumbers[type eq "fax"].value|Строка|
    |externalId|Строка|
-   |роли [основной EQ "true"]. Отображение|Строковый тип|
+   |роли [основной EQ "true"]. Отображение|Строка|
    |роли [основной EQ "true"]. Type|Строка|
    |roles[primary eq "True"].value|Строка|
    |Роли|Строка|
@@ -177,9 +177,9 @@ ms.locfileid: "91286018"
 ## <a name="step-6-monitor-your-deployment"></a>Шаг 6. Мониторинг развертывания
 После настройки подготовки используйте следующие ресурсы для мониторинга развертывания.
 
-1. Используйте [журналы подготовки](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-provisioning-logs), чтобы определить, какие пользователи были подготовлены успешно или неудачно.
-2. Используйте [индикатор выполнения](https://docs.microsoft.com/azure/active-directory/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user), чтобы узнать состояние цикла подготовки и приблизительное время до его завершения.
-3. Если конфигурация подготовки, вероятно, находится в неработоспособном состоянии, приложение перейдет в карантин. Дополнительные сведения о режимах карантина см. [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-quarantine-status).  
+1. Используйте [журналы подготовки](../reports-monitoring/concept-provisioning-logs.md), чтобы определить, какие пользователи были подготовлены успешно или неудачно.
+2. Используйте [индикатор выполнения](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md), чтобы узнать состояние цикла подготовки и приблизительное время до его завершения.
+3. Если конфигурация подготовки, вероятно, находится в неработоспособном состоянии, приложение перейдет в карантин. Дополнительные сведения о режимах карантина см. [здесь](../app-provisioning/application-provisioning-quarantine-status.md).  
 
 ## <a name="connector-limitations"></a>Ограничения соединителя
 

@@ -12,12 +12,12 @@ ms.date: 10/10/2019
 ms.author: jeedes
 ms.custom: it-pro
 ms.reviewer: celested
-ms.openlocfilehash: 14a25559b1eddd4adb58ae2106e8c9e92873ea48
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8eeddecbec31ec1bfa73cf956deb4c50809c50e7
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88751169"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92521952"
 ---
 # <a name="tutorials-for-integrating-saas-applications-with-azure-active-directory"></a>Руководства по интеграции приложений SaaS с Azure Active Directory
 
@@ -25,7 +25,7 @@ ms.locfileid: "88751169"
 
 Список предварительно интегрированных с Azure AD приложений SaaS доступен в разделе [Active Directory Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/category/azure-active-directory-apps).
 
-Используйте [портал сети приложений](https://docs.microsoft.com/azure/active-directory/develop/howto-app-gallery-listing) , чтобы запросить Добавление приложения с поддержкой [scim](https://docs.microsoft.com/azure/active-directory/manage-apps/use-scim-to-provision-users-and-groups) в коллекцию для автоматической подготовки или приложения с поддержкой SAML или OIDC, которое будет добавлено в коллекцию для единого входа.
+Используйте [портал сети приложений](../azuread-dev/howto-app-gallery-listing.md) , чтобы запросить Добавление приложения с поддержкой [scim](../app-provisioning/use-scim-to-provision-users-and-groups.md) в коллекцию для автоматической подготовки или приложения с поддержкой SAML или OIDC, которое будет добавлено в коллекцию для единого входа.
 
 ## <a name="quick-links"></a>Быстрые ссылки
 
@@ -34,7 +34,7 @@ ms.locfileid: "88751169"
 | ![Logo — Atlassian Cloud](./media/tutorial-list/active-directory-saas-atlassian-cloud-tutorial.png)| [Atlassian Cloud](atlassian-cloud-tutorial.md)| [Atlassian Cloud-подготовка пользователей](atlassian-cloud-provisioning-tutorial.md)|
 | ![логотип — ServiceNow](./media/tutorial-list/active-directory-saas-servicenow-tutorial.png)| [ServiceNow](servicenow-tutorial.md)|[ServiceNow — подготовка пользователей](servicenow-provisioning-tutorial.md)|
 | ![Временной резерв для логотипа](./media/tutorial-list/active-directory-saas-slack-tutorial.png)| [Slack](slack-tutorial.md)|[Учебник. Настройка Slack для автоматической подготовки пользователей](slack-provisioning-tutorial.md)|
-| ![Logo — SuccessFactors](./media/tutorial-list/active-directory-saas-successfactors-tutorial.png)| [SuccessFactors](successfactors-tutorial.md)| [SuccessFactors — подготовка пользователей](https://docs.microsoft.com/azure/active-directory/saas-apps/sap-successfactors-inbound-provisioning-tutorial) |
+| ![Logo — SuccessFactors](./media/tutorial-list/active-directory-saas-successfactors-tutorial.png)| [SuccessFactors](successfactors-tutorial.md)| [SuccessFactors — подготовка пользователей](./sap-successfactors-inbound-provisioning-tutorial.md) |
 | ![Logo — Workday](./media/tutorial-list/active-directory-saas-workday-tutorial.png)| [Workday](workday-tutorial.md)| [Руководство по настройке Workday для автоматической подготовки пользователей с помощью локальной службы Active Directory и Azure Active Directory](workday-inbound-tutorial.md)|
 
 Чтобы найти другие руководства, используйте оглавление слева.
@@ -47,7 +47,7 @@ ms.locfileid: "88751169"
 | ![Logo — Алибаба облачная служба (единый вход ролей)](./media/tutorial-list/active-directory-saas-alibaba-tutorial.png)| [Облачная служба Алибаба (единый вход ролей)](alibaba-cloud-service-role-based-sso-tutorial.md)| |
 | ![Эмблема-Google Cloud Platform](./media/tutorial-list/active-directory-saas-google-apps-tutorial.png)| [Google Cloud Platform](google-apps-tutorial.md)| [Подготовка учетных записей пользователей Google Cloud Platform](google-apps-provisioning-tutorial.md) |
 | ![Эмблема — Salesforce](./media/tutorial-list/active-directory-saas-salesforce-tutorial.png)| [Salesforce](salesforce-tutorial.md)| [Руководство по настройке Salesforce для автоматической подготовки пользователей](salesforce-provisioning-tutorial.md) |
-| ![Логотип — Платформа SAP Cloud Identity](./media/tutorial-list/active-directory-saas-sapboc-tutorial.png)| [Платформа SAP Cloud Identity](saphana-tutorial.md)|[Платформа SAP Cloud Identity — подготовка](https://docs.microsoft.com/azure/active-directory/saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial) |
+| ![Логотип — Платформа SAP Cloud Identity](./media/tutorial-list/active-directory-saas-sapboc-tutorial.png)| [Платформа SAP Cloud Identity](saphana-tutorial.md)|[Платформа SAP Cloud Identity — подготовка](./sap-cloud-platform-identity-authentication-provisioning-tutorial.md) |
 
 ## <a name="oneclick-sso"></a>Единый вход Онекликк
 
@@ -83,7 +83,7 @@ ms.locfileid: "88751169"
 | ![Logo — Help Scout](./media/tutorial-list/active-directory-saas-helpscout-tutorial.png)| [Help Scout](helpscout-tutorial.md)|
 | ![Logo — Hightail](./media/tutorial-list/active-directory-saas-hightail-tutorial.png)| [Hightail](hightail-tutorial.md)|
 | ![Logo — Хрворкс Single Sign-On](./media/tutorial-list/active-directory-saas-hrworks-single-sign-on-tutorial.png)| [HRworks Single Sign-On](hrworks-single-sign-on-tutorial.md)|
-| ![Logo — Jamf Pro](./media/tutorial-list/active-directory-saas-jamfprosamlconnector-tutorial.png)| [Jamf Pro.](jamfprosamlconnector-tutorial.md)|
+| ![Logo — Jamf Pro](./media/tutorial-list/active-directory-saas-jamfprosamlconnector-tutorial.png)| [Jamf Pro](jamfprosamlconnector-tutorial.md)|
 | ![Logo — Канбанизе](./media/tutorial-list/active-directory-saas-kanbanize-tutorial.png)| [Kanbanize](kanbanize-tutorial.md)|
 | ![логотип — информация в любом месте LMS](./media/tutorial-list/active-directory-saas-knowlwdge-anywhere-lms-tutorial.png)| [Knowledge Anywhere LMS](knowledge-anywhere-lms-tutorial.md)|
 | ![logo-monday.com](./media/tutorial-list/active-directory-saas-mondaycom-tutorial.png)| [monday.com](mondaycom-tutorial.md)|
@@ -119,6 +119,6 @@ ms.locfileid: "88751169"
 | ![Logo — Zscaler два](./media/tutorial-list/active-directory-saas-zscaler-two-tutorial.png)| [Zscaler Two](zscaler-two-tutorial.md)|  
 | ![Logo — Zscaler ZSCloud](./media/tutorial-list/active-directory-saas-zscaler-zscloud-tutorial.png)| [Zscaler ZSCloud](zscaler-zscloud-tutorial.md)|
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об управлении приложениями см. в статье [Управление приложениями с помощью Azure Active Directory](../manage-apps/what-is-application-management.md).

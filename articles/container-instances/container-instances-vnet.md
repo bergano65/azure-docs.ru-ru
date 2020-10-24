@@ -4,12 +4,12 @@ description: Узнайте, как развернуть группу конте
 ms.topic: article
 ms.date: 07/02/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: e5a31742956c2ba9bd15026f7667c971c20694a3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f8f61bc74f79c1712c3c662be66384c5ef689eb7
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91303014"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92518132"
 ---
 # <a name="deploy-container-instances-into-an-azure-virtual-network"></a>Развертывание экземпляров контейнеров в виртуальной сети Azure
 
@@ -40,7 +40,7 @@ ms.locfileid: "91303014"
 
 ### <a name="example"></a>Пример
 
-Следующая команда [AZ Container Create][az-container-create] задает параметры для новой виртуальной сети и подсети. Укажите имя группы ресурсов, созданной в регионе, где [доступны](container-instances-region-availability.md#availability---virtual-network-deployment)развертывания группы контейнеров в виртуальной сети. Эта команда развертывает общедоступный контейнер Microsoft [ACI-HelloWorld][aci-helloworld] , который работает с небольшим Node.js веб-сервером, обслуживающим статическую страницу. В следующем разделе вы развернете вторую группу контейнеров в той же подсети и протестируете связь между двумя экземплярами контейнеров.
+Следующая команда [AZ Container Create][az-container-create] задает параметры для новой виртуальной сети и подсети. Укажите имя группы ресурсов, созданной в регионе, где [доступны](container-instances-region-availability.md)развертывания группы контейнеров в виртуальной сети. Эта команда развертывает общедоступный контейнер Microsoft [ACI-HelloWorld][aci-helloworld] , который работает с небольшим Node.js веб-сервером, обслуживающим статическую страницу. В следующем разделе вы развернете вторую группу контейнеров в той же подсети и протестируете связь между двумя экземплярами контейнеров.
 
 ```azurecli
 az container create \
@@ -77,7 +77,7 @@ az container show --resource-group myResourceGroup \
   --query ipAddress.ip --output tsv
 ```
 
-В выходных данных отображается IP-адрес группы контейнеров в частной подсети. Пример:
+В выходных данных отображается IP-адрес группы контейнеров в частной подсети. Например:
 
 ```console
 10.0.0.4
@@ -133,7 +133,7 @@ az network profile list --resource-group myResourceGroup \
   --query [0].id --output tsv
 ```
 
-Образец вывода:
+Пример результатов выполнения:
 
 ```console
 /subscriptions/<Subscription ID>/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkProfiles/aci-network-profile-aci-vnet-aci-subnet
@@ -222,7 +222,7 @@ az network profile delete --id $NETWORK_PROFILE_ID -y
 az network vnet delete --resource-group $RES_GROUP --name aci-vnet
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы развернуть новую виртуальную сеть, подсеть, сетевой профиль и группу контейнеров с помощью шаблона Resource Manager, см. страницу [создания группы контейнеров Azure с виртуальной сетью](https://github.com/Azure/azure-quickstart-templates/tree/master/101-aci-vnet
 ).

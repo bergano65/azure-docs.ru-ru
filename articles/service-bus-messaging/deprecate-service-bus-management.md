@@ -3,18 +3,18 @@ title: Службы обмена сообщениями Azure — Service Manage
 description: Эта статья содержит сведения о нерекомендуемых Service Manager Azure REST API & командлетах PowerShell для диспетчер ресурсов REST API командлетов PowerShell.
 ms.topic: article
 ms.date: 09/25/2020
-ms.openlocfilehash: 84335d534c229f40381b913dfca54f42e2da250b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b82772b364bbc44a898197e7fafd11b33e2e6320
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91761181"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92518795"
 ---
 # <a name="deprecation-of-azure-service-manager-support-for-azure-service-bus-relay-and-event-hubs"></a>Нерекомендуемая поддержка Azure Service Manager для служебной шины, ретранслятора и концентраторов событий Azure
 
 Диспетчер ресурсов, наш новый стек облачной инфраструктуры нового поколения полностью заменяет «классическую» модель управления службами Azure (классическая модель развертывания). В результате этого классическая модель развертывания API-интерфейсы RESTFUL и поддержка служебной шины, ретранслятора и концентраторов событий будут прекращены 1 ноября 2021 г. Эта устаревшая версия была впервые объявлена на [Конференции сообщества Майкрософт](https://techcommunity.microsoft.com/t5/Service-Bus-blog/Deprecating-Service-Management-support-for-Azure-Service-Bus/ba-p/370909), но мы недавно решили продлить период устаревания еще на два года с момента первоначального объявления. Для простоты идентификации эти API-интерфейсы имеют `management.core.windows.net` свой универсальный код ресурса (URI). В следующей таблице приведен список устаревших API-интерфейсов и их Azure Resource Manager версии API, которые теперь следует использовать.
 
-Чтобы продолжить использование служебной шины, ретранслятора и концентраторов событий, перейдите на диспетчер ресурсов 31 октября 2021. Мы рекомендуем всем клиентам, которые по-прежнему пользуются старыми API, сделать так, чтобы вы могли воспользоваться преимуществами дополнительных преимуществ диспетчер ресурсов, включая группирование ресурсов, теги, упрощенный процесс развертывания и управления, а также детализированный контроль доступа с помощью управления доступом на основе ролей (RBAC).
+Чтобы продолжить использование служебной шины, ретранслятора и концентраторов событий, перейдите на диспетчер ресурсов 31 октября 2021. Мы рекомендуем всем клиентам, которые по-прежнему пользуются старыми API, сделать так, чтобы вы могли воспользоваться преимуществами дополнительных преимуществ диспетчер ресурсов, включая группирование ресурсов, теги, упрощенный процесс развертывания и управления, а также детализированный контроль доступа с помощью управления доступом на основе ролей Azure (Azure RBAC).
 
 Дополнительные сведения о Azure Resource Manager и Service Manager Azure см. в [блоге TechNet](https://blogs.technet.microsoft.com/meamcs/2016/12/22/difference-between-azure-service-manager-and-azure-resource-manager/).
 
@@ -63,7 +63,7 @@ ms.locfileid: "91761181"
 | [Remove-AzureSBNamespace](/powershell/module/servicemanagement/azure.service/remove-azuresbnamespace) | [Remove-AzureRmServiceBusNamespace](/powershell/module/azurerm.servicebus/remove-azurermservicebusnamespace) | [Remove-Азсервицебуснамеспаце](/powershell/module/az.servicebus/remove-azservicebusnamespace) |
 | [Set-AzureSBAuthorizationRule](/powershell/module/servicemanagement/azure.service/set-azuresbauthorizationrule) | [Set-AzureRmServiceBusAuthorizationRule.](/powershell/module/azurerm.servicebus/set-azurermservicebusauthorizationrule) | [Set-Азсервицебусаусоризатионруле](/powershell/module/az.servicebus/set-azservicebusauthorizationrule) |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Обратитесь к следующей документации. 
 
 - Последняя документация по REST API

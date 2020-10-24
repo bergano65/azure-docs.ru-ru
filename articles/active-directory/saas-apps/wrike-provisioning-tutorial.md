@@ -11,19 +11,19 @@ ms.workload: identity
 ms.topic: article
 ms.date: 08/26/2019
 ms.author: Zhchia
-ms.openlocfilehash: e3ec25504decca0747c8a853bb88ab3e7a10966a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 76b5f279294dda0d2b1c01bf8cdd803390b04cec
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88546327"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92520036"
 ---
 # <a name="tutorial-configure-wrike-for-automatic-user-provisioning"></a>Учебник. Настройка Врике для автоматической подготовки пользователей
 
 Цель этого руководства — продемонстрировать шаги, выполняемые в Врике и Azure Active Directory (Azure AD), чтобы настроить Azure AD для автоматической инициализации и отмены наполнения пользователей или групп для Врике.
 
 > [!NOTE]
-> В этом руководстве описывается соединитель, созданный на основе службы подготовки пользователей Azure AD. Важные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. [в разделе Автоматизация подготовки пользователей и ее отмене в приложениях программного обеспечения как услуги (SaaS) с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/manage-apps/user-provisioning).
+> В этом руководстве описывается соединитель, созданный на основе службы подготовки пользователей Azure AD. Важные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. [в разделе Автоматизация подготовки пользователей и ее отмене в приложениях программного обеспечения как услуги (SaaS) с Azure Active Directory](../app-provisioning/user-provisioning.md).
 >
 > Сейчас этот соединитель предоставляется в общедоступной предварительной версии. Дополнительные сведения об общих Microsoft Azure условиях использования предварительных версий функций см. в разделе Дополнительные [условия использования для предварительного просмотра Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 

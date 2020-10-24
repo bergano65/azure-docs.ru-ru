@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 09/11/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 74527f57340f850b60dd00dcd054992c423a49c7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fd292fa6b4f613e0a5f5a80e0cd87675f529baf5
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90039119"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92516177"
 ---
 # <a name="migrate-manually-from-windows-virtual-desktop-classic"></a>Перенос вручную из виртуальных рабочих столов Windows (классическая модель)
 
@@ -35,7 +35,7 @@ ms.locfileid: "90039119"
 - Управление виртуальными рабочими столами Windows с помощью портал Azure.
 - Назначение групп пользователей Azure Active Directory (AD) группам приложений.
 - Используйте улучшенную функцию Log Analytics для устранения неполадок развертывания.
-- Используйте собственные Role-Based управления доступом Azure для управления административным доступом.
+- Используйте управление доступом на основе ролей Azure (Azure RBAC) в собственном режиме для управления административным доступом.
 
 ## <a name="when-should-i-migrate"></a>Когда следует выполнять миграцию?
 
@@ -78,7 +78,7 @@ ms.locfileid: "90039119"
 
 Во избежание простоя сначала следует зарегистрировать существующие узлы сеансов в пулах узлов, интегрированных в Azure Resource Manager, в небольших группах за раз. После этого вы постепенно понесете пользователей в новые группы приложений, интегрированные с Azure Resource Manager.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После переноса ознакомьтесь с [нашими руководствами](create-host-pools-azure-marketplace.md), чтобы узнать, как работает виртуальный рабочий стол Windows. Дополнительные сведения о возможностях расширенного управления см. в статье [расширение существующего пула узлов](expand-existing-host-pool.md) и [Настройка свойств RDP](customize-rdp-properties.md).
 
