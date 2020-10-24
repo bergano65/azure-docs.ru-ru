@@ -8,16 +8,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 10/07/2020
+ms.date: 10/23/2020
 ms.author: aahi
 ms.custom: cog-serv-seo-aug-2020
 keywords: локальная среда, Docker, контейнер
-ms.openlocfilehash: c26c69a0f6cbf0f9f658d3b7a32cce99319767b4
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
+ms.openlocfilehash: 6f04e40b0b2baa496faf8001684304c5df78ec20
+ms.sourcegitcommit: d6a739ff99b2ba9f7705993cf23d4c668235719f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91930447"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92496142"
 ---
 # <a name="install-and-run-docker-containers-for-the-speech-service-apis"></a>Установка и запуск контейнеров DOCKER для API-интерфейсов речевой службы 
 
@@ -80,7 +80,7 @@ grep -q avx2 /proc/cpuinfo && echo AVX2 supported || echo No AVX2 support detect
 
 В следующей таблице описаны минимальное и рекомендуемое выделение ресурсов для каждого контейнера речи.
 
-| Контейнер | Минимальные | Рекомендуется |
+| Контейнер | Минимальные | Рекомендуемая |
 |-----------|---------|-------------|
 | Преобразование речи в текст | 2 ядра, 2 ГБ памяти | 4 ядра, 4 ГБ памяти |
 | Пользовательское распознавание речи к тексту | 2 ядра, 2 ГБ памяти | 4 ядра, 4 ГБ памяти |
@@ -316,7 +316,7 @@ ApiKey={API_KEY}
 
 #### <a name="analyze-sentiment-on-the-speech-to-text-output"></a>Анализ тональности на выходе из речи в текст 
 
-Начиная с версии v 2.2.0 контейнера для преобразования речи в текст можно вызвать [API тональности Analysis v3](../text-analytics/how-tos/text-analytics-how-to-sentiment-analysis.md) на выходе. Для вызова анализа тональности требуется конечная точка ресурса API анализа текста. Пример: 
+Начиная с версии v 2.2.0 контейнера для преобразования речи в текст можно вызвать [API тональности Analysis v3](../text-analytics/how-tos/text-analytics-how-to-sentiment-analysis.md) на выходе. Для вызова анализа тональности требуется конечная точка ресурса API анализа текста. Например: 
 * `https://westus2.api.cognitive.microsoft.com/text/analytics/v3.0-preview.1/sentiment`
 * `https://localhost:5000/text/analytics/v3.0-preview.1/sentiment`
 
@@ -363,7 +363,7 @@ CloudAI:SentimentAnalysisSettings:SentimentAnalysisApiKey={SENTIMENT_APIKEY}
 
 В следующей таблице представлены различные `docker run` Параметры и соответствующие им описания.
 
-| Параметр | Description |
+| Параметр | Описание |
 |---------|---------|
 | `{VOLUME_MOUNT}` | Узел [тома](https://docs.docker.com/storage/volumes/)главного компьютера, который DOCKER использует для сохранения настраиваемой модели. Например, *к:\кустомспич* , где *диск C* находится на хост-компьютере. |
 | `{MODEL_ID}` | **Идентификатор модели** пользовательское распознавание речи на странице **обучения** пользовательского речевого портала. |
@@ -444,7 +444,7 @@ ApiKey={API_KEY}
 
 В следующей таблице представлены различные `docker run` Параметры и соответствующие им описания.
 
-| Параметр | Description |
+| Параметр | Описание |
 |---------|---------|
 | `{VOLUME_MOUNT}` | Узел [тома](https://docs.docker.com/storage/volumes/)главного компьютера, который DOCKER использует для сохранения настраиваемой модели. Например, *к:\кустомспич* , где *диск C* находится на хост-компьютере. |
 | `{MODEL_ID}` | **Идентификатор модели** пользовательское распознавание речи на странице " **обучение** " настраиваемого голоса Portal. |
@@ -491,6 +491,16 @@ ApiKey={API_KEY}
 * Выделяет 1 ядро ЦП и 1 гигабайт (ГБ) памяти.
 * Предоставляет TCP-порт 5003 и выделяет псевдо-TTY для контейнера.
 * автоматически удаляет контейнер после завершения его работы. Образ контейнера остается доступным на главном компьютере.
+
+Если вы отправляете только голосовые распознавание языка запросы, необходимо задать для речевого клиента `phraseDetection` значение `None` .  
+
+```python
+speech_config.set_service_property(
+      name='speechcontext-phraseDetection.Mode',
+      value='None',
+      channel=speechsdk.ServicePropertyChannel.UriQueryParameter
+   )
+```
 
 Если вы хотите запустить этот контейнер с контейнером преобразования речи в текст, можно использовать этот [образ DOCKER](https://hub.docker.com/r/antsu/on-prem-client). После запуска обоих контейнеров используйте команду DOCKER Run для выполнения `speech-to-text-with-languagedetection-client` .
 
@@ -692,7 +702,7 @@ speech_config.set_service_property(
 > [!IMPORTANT]
 >  Контейнеры Cognitive Services не лицензируются для запуска без подключения к Azure для отслеживания использования. Клиенты должны разрешить контейнерам непрерывную передачу данных для выставления счетов в службу контроля потребления. Контейнеры Cognitive Services не отправляют в корпорацию Майкрософт данные клиента (например, анализируемые изображения или тексты).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Проверьте настройки [контейнеров](speech-container-configuration.md) на наличие параметров конфигурации.
 * Узнайте, как [использовать контейнеры службы речи с Kubernetes и Helm](speech-container-howto-on-premises.md)

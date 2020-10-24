@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: conceptual
 ms.date: 06/10/2020
 ms.author: aahi
-ms.openlocfilehash: 8032c3607dd74cddbaa5fd6690a95ebdf218809a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3bc03cf03f8a8e0f2a222ca1089618eaade9485d
+ms.sourcegitcommit: d6a739ff99b2ba9f7705993cf23d4c668235719f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91628200"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92496079"
 ---
 # <a name="how-to-deploy-a-people-counting-web-application"></a>Руководство. Развертывание веб-приложения для инвентаризации людей
 
@@ -63,14 +63,14 @@ az iot hub device-identity create --hub-name "<IoT Hub Name>" --device-id "<Edge
 
 ### <a name="deploy-the-container-on-azure-iot-edge-on-the-host-computer"></a>Развертывание контейнера на Azure IoT Edge на главном компьютере
 
-Разверните контейнер пространственного анализа как модуль IoT на главном компьютере с помощью Azure CLI. Для процесса развертывания требуется файл манифеста развертывания, который описывает необходимые контейнеры, переменные и конфигурации для развертывания. Пример [манифеста развертывания](https://github.com/Azure-Samples/cognitive-services-rest-api-samples/) можно найти на сайте GitHub, который включает базовую конфигурацию развертывания для контейнера *пространственного анализа* . 
+Разверните контейнер пространственного анализа как модуль IoT на главном компьютере с помощью Azure CLI. Для процесса развертывания требуется файл манифеста развертывания, который описывает необходимые контейнеры, переменные и конфигурации для развертывания. Вы можете найти пример [манифеста развертывания с пограничным Azure Stack](https://github.com/Azure-Samples/cognitive-services-rest-api-samples/) , а также [манифест развертывания](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/ComputerVision/spatial-analysis/DeploymentManifest_for_non_ASE_devices.json) на сайте GitHub, не относящийся к Azure Stack, который включает базовую конфигурацию развертывания для контейнера *пространственного анализа* . 
 
 > [!NOTE] 
-> Контейнеры *spatial-Analysis-Telegraf* и *пространственный-Analysis-Diagnostics* являются необязательными. Вы можете удалить их из *DeploymentManifest.js* файла. Дополнительные сведения см. в статье [телеметрии и устранении неполадок](./spatial-analysis-logging.md) . Пример *DeploymentManifest.jsдля* файла можно найти на сайте [GitHub](https://go.microsoft.com/fwlink/?linkid=2142179) 
+> Контейнеры *spatial-Analysis-Telegraf* и *пространственный-Analysis-Diagnostics* являются необязательными. Вы можете удалить их из *DeploymentManifest.js* файла. Дополнительные сведения см. в статье [телеметрии и устранении неполадок](./spatial-analysis-logging.md) . Вы можете найти два примера *DeploymentManifest.js* файлов на сайте GitHub, для устройств с [Azure Stack пограничным](https://go.microsoft.com/fwlink/?linkid=2142179) или для другого [настольного компьютера](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/ComputerVision/spatial-analysis/DeploymentManifest_for_non_ASE_devices.json) .
 
 ### <a name="set-environment-variables"></a>Настройка переменных среды
 
-Большая часть **переменных среды** для модуля IOT EDGE уже задана в образце *DeploymentManifest.jsдля* файла, связанного выше. В файле найдите `BILLING_ENDPOINT` `API_KEY` переменные среды и, показанные ниже. Замените значения на URI конечной точки и созданный ранее ключ API. Убедитесь, что для параметра лицензионное соглашение установлено значение "принять". 
+Большая часть **переменных среды** для модуля IOT EDGE уже заданы в образце *DeploymentManifest.jsдля* файлов, связанных выше. В файле найдите `BILLING_ENDPOINT` `API_KEY` переменные среды и, показанные ниже. Замените значения на URI конечной точки и созданный ранее ключ API. Убедитесь, что для параметра лицензионное соглашение установлено значение "принять". 
 
 ```json
 "EULA": { 
@@ -89,7 +89,7 @@ az iot hub device-identity create --hub-name "<IoT Hub Name>" --device-id "<Edge
 
 Теперь, когда начальная конфигурация контейнера *пространственного анализа* завершена, следующим шагом является настройка параметров операций и их добавление в развертывание. 
 
-Первым делом необходимо обновить пример [манифеста развертывания](https://go.microsoft.com/fwlink/?linkid=2142179) и настроить для него значение, `cognitiveservices.vision.spatialanalysis-personcount` как показано ниже:
+Первым шагом является обновление примера манифеста развертывания, связанного выше, и настройка инструкции для, `cognitiveservices.vision.spatialanalysis-personcount` как показано ниже:
 
 
 ```json
@@ -107,7 +107,7 @@ az iot hub device-identity create --hub-name "<IoT Hub Name>" --device-id "<Edge
 },
 ```
 
-После обновления [манифеста развертывания](https://go.microsoft.com/fwlink/?linkid=2142179) следуйте инструкциям производителя камеры по установке камеры, настройке URL-адреса камеры и настройке имени пользователя и пароля. 
+После обновления манифеста развертывания следуйте инструкциям производителя камеры по установке камеры, настройке URL-адреса камеры и настройке имени пользователя и пароля. 
 
 Затем укажите `VIDEO_URL` URL-адрес RTSP камеры и учетные данные для подключения к камере.
 
@@ -122,7 +122,7 @@ az iot hub device-identity create --hub-name "<IoT Hub Name>" --device-id "<Edge
 
 ### <a name="execute-the-deployment"></a>Выполнение развертывания
 
-Теперь, когда [манифест развертывания](https://go.microsoft.com/fwlink/?linkid=2142179) завершен, используйте эту команду в Azure CLI для развертывания контейнера на главном компьютере в качестве модуля IOT Edge.
+Теперь, когда манифест развертывания завершен, используйте эту команду в Azure CLI для развертывания контейнера на главном компьютере в качестве модуля IoT Edge.
 
 ```azurecli
 az login
@@ -145,7 +145,7 @@ az iot edge set-modules --hub-name "<IoT Hub name>" --device-id "<IoT Edge devic
 
 ![Пример проверки развертывания](./media/spatial-analysis/deployment-verification.png)
 
-На этом этапе контейнер пространственного анализа выполняет операцию. Он выдает сведения об искусственном интеллекте для `cognitiveservices.vision.spatialanalysis-personcount` операции и направляет эти данные в качестве телеметрии в экземпляр центра Интернета вещей Azure. Чтобы настроить дополнительные камеры, можно обновить файл [манифеста развертывания](https://go.microsoft.com/fwlink/?linkid=2142179) и выполнить развертывание еще раз.
+На этом этапе контейнер пространственного анализа выполняет операцию. Он выдает сведения об искусственном интеллекте для `cognitiveservices.vision.spatialanalysis-personcount` операции и направляет эти данные в качестве телеметрии в экземпляр центра Интернета вещей Azure. Чтобы настроить дополнительные камеры, можно обновить файл манифеста развертывания и выполнить развертывание еще раз.
 
 ## <a name="person-counting-web-application"></a>Веб-приложение для инвентаризации лиц
 
@@ -156,7 +156,7 @@ az iot edge set-modules --hub-name "<IoT Hub name>" --device-id "<IoT Edge devic
 Форма контейнера этого приложения, доступная в реестре контейнеров Azure. Чтобы скачать его, используйте следующую команду docker pull. Обратитесь в корпорацию Майкрософт по адресу projectarchon@microsoft.com для получения маркера доступа.
 
 ```bash
-docker login rtvsofficial.azurecr.io -u <token name> -p <password>
+docker login rtvsofficial.azurecr.io -u <token name> -p <password>
 docker pull rtvsofficial.azurecr.io/acceleratorapp.personcount:1.0
 ```
 
@@ -191,7 +191,7 @@ docker push [desired local image name]
 
 ![тестирование развертывания](./media/spatial-analysis/solution-app-output.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Настройка операций пространственного анализа](./spatial-analysis-operations.md)
 * [Ведение журнала и устранение неполадок](spatial-analysis-logging.md)

@@ -11,12 +11,12 @@ ms.reviewer: larryfr
 ms.date: 09/30/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, contperfq1
-ms.openlocfilehash: 98bc108af22491c6ea0b64bc2e278b6b32f43a5b
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 66008012dd9b3eb6000e96f251d18cf14a9c8dc1
+ms.sourcegitcommit: d6a739ff99b2ba9f7705993cf23d4c668235719f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92203098"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92495243"
 ---
 # <a name="set-up-a-development-environment-for-azure-machine-learning"></a>Настройка среды разработки для Машинное обучение Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "92203098"
 
 * Visual Studio Code. при использовании Visual Studio Code [расширение машинное обучение Azure](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.vscode-ai) включает расширенную языковую поддержку для Python, а также функции, позволяющие работать с машинное обучение Azure гораздо более удобной и продуктивной.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 * Рабочая область Машинное обучение Azure. Если у вас ее нет, можно создать рабочую область Машинное обучение Azure с помощью шаблонов [портал Azure](how-to-manage-workspace.md), [Azure CLI](how-to-manage-workspace-cli.md#create-a-workspace)и [Azure Resource Manager](how-to-create-workspace-template.md).
 
@@ -139,10 +139,10 @@ ms.locfileid: "92203098"
 
 Создайте его в рабочей области Машинное обучение Azure в любое время. Укажите только имя и укажите тип виртуальной машины Azure. Попробуйте сейчас с помощью этого [учебника: Настройка среды и рабочей области](tutorial-1st-experiment-sdk-setup.md).
 
-Дополнительные сведения об экземплярах вычислений, включая установку пакетов, см. в разделе [COMPUTE Instances](concept-compute-instance.md).
+Дополнительные сведения о вычислительных экземплярах, включая установку пакетов, см. в разделе [создание машинное обучение Azure вычислительного экземпляра и управление им](how-to-create-manage-compute-instance.md).
 
 > [!TIP]
-> Чтобы избежать расходов на неиспользуемый вычислительный экземпляр, следует [прерывать работу вычислительного экземпляра](tutorial-1st-experiment-bring-data.md#clean-up-resources).
+> Чтобы избежать расходов на неиспользуемый вычислительный экземпляр, следует [прерывать работу вычислительного экземпляра](how-to-create-manage-compute-instance.md#manage).
 
 Помимо Jupyter Notebook Server и JupyterLab, можно использовать функции COMPUTE Instances в [интегрированной записной книжке в машинное обучение Azure Studio](how-to-run-jupyter-notebooks.md).
 

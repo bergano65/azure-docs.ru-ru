@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 3/12/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: f2bc7082f00ca9ca2dff0500755a0839a0ccdf08
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 399ae682028479f801b82b6273f7d1429cfa1b97
+ms.sourcegitcommit: d6a739ff99b2ba9f7705993cf23d4c668235719f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92461385"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92494854"
 ---
 # <a name="manage-azure-digital-twins-models"></a>Управление моделями цифровых двойников Azure
 
@@ -113,7 +113,7 @@ foreach (string fileName in dtdlFiles)
 client.CreateModels(dtdlStrings);
 ```
 
-Файлы модели могут содержать более одной модели. В этом случае модели необходимо разместить в массиве JSON. Пример:
+Файлы модели могут содержать более одной модели. В этом случае модели необходимо разместить в массиве JSON. Например:
 
 ```json
 [
@@ -285,8 +285,6 @@ Azure Digital двойников не препятствует этому сос
 ## <a name="manage-models-with-cli"></a>Управление моделями с помощью интерфейса командной строки
 
 Для управления моделями можно также использовать интерфейс командной строки Azure Digital двойников. Команды можно найти в [*этом пошаговом окне. Используйте интерфейс командной строки Azure Digital двойников*](how-to-use-cli.md).
-
-[!INCLUDE [digital-twins-known-issue-cloud-shell](../../includes/digital-twins-known-issue-cloud-shell.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

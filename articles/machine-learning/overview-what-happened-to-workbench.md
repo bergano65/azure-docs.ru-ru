@@ -11,12 +11,12 @@ ms.reviewer: jmartens
 author: j-martens
 ms.author: jmartens
 ms.date: 03/05/2020
-ms.openlocfilehash: 6d62c9aa7be1511cdac6404ac7c42200677e56fb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 62351f341d03873afc59ff7748fa03da0a202d35
+ms.sourcegitcommit: d6a739ff99b2ba9f7705993cf23d4c668235719f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89651612"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92495581"
 ---
 # <a name="what-happened-to-azure-machine-learning-workbench"></a>Что случилось с Azure Machine Learning Workbench?
 
@@ -68,7 +68,7 @@ ms.locfileid: "89651612"
 
 Никакой код и никакие наработки не будут потеряны. В более ранней версии проекты являются объектами облака с локальным каталогом. В последней версии локальные каталоги связываются с рабочей областью Машинного обучения Azure с помощью локального файла конфигурации. См. [схему последней архитектуры](concept-azure-machine-learning-architecture.md).
 
-Большая часть содержимого проекта уже находится на локальном компьютере. Это означает, что для подключения к рабочей области осталось создать в этом каталоге файл конфигурации добавить в код ссылку для подключения к рабочей области. Чтобы продолжить использовать локальный каталог, содержащий файлы и скрипты, укажите имя каталога в команде Python ["experiment.submit"](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment?view=azure-ml-py&preserve-view=true) или с помощью команды интерфейса командной строки `az ml project attach`.  Пример:
+Большая часть содержимого проекта уже находится на локальном компьютере. Это означает, что для подключения к рабочей области осталось создать в этом каталоге файл конфигурации добавить в код ссылку для подключения к рабочей области. Чтобы продолжить использовать локальный каталог, содержащий файлы и скрипты, укажите имя каталога в команде Python ["experiment.submit"](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment?view=azure-ml-py&preserve-view=true) или с помощью команды интерфейса командной строки `az ml project attach`.  Например:
 ```python
 run = exp.submit(source_directory=script_folder,
                  script='train.py', run_config=run_config_system_managed)
@@ -92,13 +92,15 @@ run = exp.submit(source_directory=script_folder,
 + [Развертывание моделей с помощью Службы машинного обучения Azure](how-to-deploy-and-where.md)
 + [Учебник. Развертывание моделей с помощью Машинное обучение Azure](tutorial-deploy-models-with-aml.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте об [актуальной архитектуре Машинного обучения Azure](concept-azure-machine-learning-architecture.md).
 
 См. сведения о [Машинном обучении Azure](overview-what-is-azure-ml.md).
 
 Создайте свой первый эксперимент предпочитаемым способом.
+
+  + [Использование собственной среды](tutorial-1st-experiment-sdk-setup-local.md)
   + [Использование записных книжек Python](tutorial-1st-experiment-sdk-setup.md)
   + [Использование R Markdown](tutorial-1st-r-experiment.md) 
   + [Использование автоматического машинного обучения](tutorial-designer-automobile-price-train-score.md) 

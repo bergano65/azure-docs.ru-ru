@@ -11,18 +11,18 @@ ms.date: 05/13/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: fecdd65ae0dbf9faeb0e74e6446a9deaf8273106
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 2f3433075a1fddf116aae28666feb62473c6dbfb
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92075031"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92476099"
 ---
 # <a name="data-loading-strategies-for-synapse-sql-pool"></a>Стратегии загрузки данных для пула Synapse SQL
 
-Традиционные пулы SQL SMP используют процесс извлечения, преобразования и загрузки (ETL) для загрузки данных. Пул Synapse SQL в Azure Synapse Analytics — это архитектура массовой параллельной обработки (MPP), использующая преимущество масштабируемости и гибкости ресурсов вычислений и хранения.
+Традиционные пулы SQL SMP используют процесс извлечения, преобразования и загрузки (ETL) для загрузки данных. Синапсе SQL, в Azure синапсе Analytics, использует архитектуру обработки распределенных запросов, использующую преимущества масштабируемости и гибкости ресурсов вычислений и хранилища.
 
-Применение процесса извлечения, загрузки и преобразования (ELT) использует MPP и исключает ресурсы, необходимые для преобразования данных перед загрузкой.
+Использование процесса извлечения, загрузки и преобразования (ELT) использует встроенные возможности обработки распределенных запросов и устраняет ресурсы, необходимые для преобразования данных до загрузки.
 
 Хотя пул SQL поддерживает множество методов загрузки, включая популярные параметры SQL Server, такие как [bcp](/sql/tools/bcp-utility?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) и [API SqlBulkCopy](/dotnet/api/system.data.sqlclient.sqlbulkcopy?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json), самый быстрый и наиболее масштабируемый способ загрузки данных — с помощью внешних таблиц polybase и [инструкции Copy](/sql/t-sql/statements/copy-into-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).
 

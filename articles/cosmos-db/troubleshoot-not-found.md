@@ -7,12 +7,12 @@ ms.date: 07/13/2020
 ms.author: jawilley
 ms.topic: troubleshooting
 ms.reviewer: sngun
-ms.openlocfilehash: f32a37d5d08e8b20e59455393c70e4e4d288eb11
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 83b28c562dca0c20b6f78058f1c7f7def60416ee
+ms.sourcegitcommit: d6a739ff99b2ba9f7705993cf23d4c668235719f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91802402"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92496094"
 ---
 # <a name="diagnose-and-troubleshoot-azure-cosmos-db-not-found-exceptions"></a>Диагностика и устранение неполадок Azure Cosmos DB не найденных исключений
 Код состояния HTTP 404 означает, что ресурс больше не существует.
@@ -28,7 +28,7 @@ ms.locfileid: "91802402"
 
 #### <a name="solution"></a>Решение.
 1. Согласованность учетной записи по умолчанию для Azure Cosmos DB — согласованность сеанса. При создании или обновлении элемента ответ возвращает маркер сеанса, который может быть передан между экземплярами пакета SDK, чтобы гарантировать чтение запроса чтения из реплики с таким изменением.
-1. Измените [уровень согласованности](consistency-levels-choosing.md) на [более высокий уровень](consistency-levels-tradeoffs.md).
+1. Измените [уровень согласованности](./consistency-levels.md) на [более высокий уровень](./consistency-levels.md).
 
 ### <a name="invalid-partition-key-and-id-combination"></a>Недопустимая комбинация ключа секции и идентификатора
 Сочетание ключа и идентификатора секции не является допустимым.
@@ -37,7 +37,7 @@ ms.locfileid: "91802402"
 Исправьте логику приложения, которая вызывает неверное сочетание. 
 
 ### <a name="invalid-character-in-an-item-id"></a>Недопустимый символ в ИДЕНТИФИКАТОРе элемента
-Элемент вставляется в Azure Cosmos DB с [недопустимым символом](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.resource.id?view=azure-dotnet&preserve-view=true#remarks) в идентификаторе элемента.
+Элемент вставляется в Azure Cosmos DB с [недопустимым символом](/dotnet/api/microsoft.azure.documents.resource.id?preserve-view=true&view=azure-dotnet#remarks) в идентификаторе элемента.
 
 #### <a name="solution"></a>Решение.
 Измените идентификатор на другое значение, которое не содержит специальных символов. Если изменить идентификатор не удается, можно закодировать идентификатор с помощью Base64 для экранирования специальных символов.
@@ -79,7 +79,7 @@ while (invalidItemsIterator.HasMoreResults)
 ```
 
 ### <a name="time-to-live-purge"></a>Очистка времени на динамическую очистку
-Для элемента было задано свойство [срока жизни (TTL)](https://docs.microsoft.com/azure/cosmos-db/time-to-live) . Элемент очищен из-за истечения срока действия свойства TTL.
+Для элемента было задано свойство [срока жизни (TTL)](./time-to-live.md) . Элемент очищен из-за истечения срока действия свойства TTL.
 
 #### <a name="solution"></a>Решение.
 Измените свойство TTL, чтобы запретить очистку элемента.
@@ -94,15 +94,15 @@ while (invalidItemsIterator.HasMoreResults)
 База данных или контейнер, в котором находится элемент, удалена.
 
 #### <a name="solution"></a>Решение.
-1. [Восстановите](https://docs.microsoft.com/azure/cosmos-db/online-backup-and-restore#backup-retention-period) родительский ресурс или повторно создайте ресурсы.
+1. [Восстановите](./online-backup-and-restore.md#request-data-restore-from-a-backup) родительский ресурс или повторно создайте ресурсы.
 1. Создайте новый ресурс для замены удаленного ресурса.
 
 ### <a name="7-containercollection-names-are-case-sensitive"></a>7. в именах контейнеров и коллекций учитывается регистр.
-В Cosmos DB имена контейнеров и коллекций имеют регистр-сеснситиве.
+В Cosmos DB имена контейнеров и коллекций чувствительны к регистру.
 
 #### <a name="solution"></a>Решение.
 Обязательно используйте точное имя при подключении к Cosmos DB.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Диагностика и устранение неполадок](troubleshoot-dot-net-sdk.md) при использовании пакета SDK для Azure Cosmos DB .NET.
 * Ознакомьтесь с рекомендациями по производительности для [.NET v3](performance-tips-dotnet-sdk-v3-sql.md) и [.NET v2](performance-tips.md).

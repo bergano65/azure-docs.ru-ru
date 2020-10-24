@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: tamram
 ms.reviewer: ozgun
-ms.openlocfilehash: c7e0c9aee1ce6b4a2524ac756673784b63be3b31
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: eb71c5eda66d3d11385577da7142970f4fbcbad2
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91289775"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92474858"
 ---
 # <a name="configure-azure-defender-for-storage"></a>Настройка защитника Azure для хранилища
 
@@ -37,7 +37,7 @@ ms.locfileid: "91289775"
 
 - Состояние выпуска:
   - [Хранилище BLOB-объектов](https://azure.microsoft.com/services/storage/blobs/) (общая доступность)
-  - Службы [файлов Azure](https://docs.microsoft.com/azure/storage/files/storage-files-introduction) (общая доступность)
+  - Службы [файлов Azure](/azure/storage/files/storage-files-introduction) (общая доступность)
   - Azure Data Lake Storage 2-го поколения (общая доступность)
 - Облако.<br>
     ✔ коммерческие облака;<br>
@@ -98,16 +98,16 @@ ms.locfileid: "91289775"
 
 Используйте команды API-интерфейса для создания, обновления или получения параметра защитника Azure для конкретной учетной записи хранения.
 
-- [Расширенная защита от угроз — создание](https://docs.microsoft.com/rest/api/securitycenter/advancedthreatprotection/create)
-- [Расширенная защита от угроз — получение](https://docs.microsoft.com/rest/api/securitycenter/advancedthreatprotection/get)
+- [Расширенная защита от угроз — создание](/rest/api/securitycenter/advancedthreatprotection/create)
+- [Расширенная защита от угроз — получение](/rest/api/securitycenter/advancedthreatprotection/get)
 
 ### <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 Используйте следующие командлеты PowerShell:
 
-- [Включить расширенную защиту от угроз](https://docs.microsoft.com/powershell/module/az.security/enable-azsecurityadvancedthreatprotection)
-- [Получить расширенную защиту от угроз](https://docs.microsoft.com/powershell/module/az.security/get-azsecurityadvancedthreatprotection)
-- [Отключить Advanced Threat protection](https://docs.microsoft.com/powershell/module/az.security/disable-azsecurityadvancedthreatprotection)
+- [Включить расширенную защиту от угроз](/powershell/module/az.security/enable-azsecurityadvancedthreatprotection)
+- [Получить расширенную защиту от угроз](/powershell/module/az.security/get-azsecurityadvancedthreatprotection)
+- [Отключить Advanced Threat protection](/powershell/module/az.security/disable-azsecurityadvancedthreatprotection)
 
 ---
 

@@ -7,12 +7,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 08/19/2020
 ms.reviewer: sngun
-ms.openlocfilehash: 0161c1599402fff25337549819f94b833142ba06
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d1b03417b81299ca959670287e252402e994f15a
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91567865"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92476405"
 ---
 # <a name="understand-your-azure-cosmos-db-bill"></a>Расшифровка счета за использование Azure Cosmos DB
 
@@ -307,5 +307,5 @@ ms.locfileid: "91567865"
 * Дополнительные сведения об [оптимизации расходов на пропускную способность](optimize-cost-throughput.md)
 * Дополнительные сведения об [оптимизации расходов на хранилище](optimize-cost-storage.md)
 * Дополнительные сведения об [оптимизации расходов на операции чтения и записи](optimize-cost-reads-writes.md)
-* Дополнительные сведения об [оптимизации затрат на запросы](optimize-cost-queries.md).
+* Дополнительные сведения об [оптимизации затрат на запросы](./optimize-cost-reads-writes.md).
 * Дополнительные сведения об [оптимизации расходов на учетные записи Cosmos Azure с поддержкой нескольких регионов](optimize-cost-regions.md)

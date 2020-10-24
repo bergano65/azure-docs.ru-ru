@@ -8,12 +8,12 @@ ms.date: 10/12/2020
 ms.author: tisande
 ms.subservice: cosmosdb-sql
 ms.reviewer: sngun
-ms.openlocfilehash: 9d17ce5b3409d8b6bb24d42c2857ba22699e1364
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: b7e57656a6749f600d07b679aad6b8c77ac96551
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92277163"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92476711"
 ---
 # <a name="troubleshoot-query-issues-when-using-azure-cosmos-db"></a>Диагностика и устранение проблем с запросами при использовании Azure Cosmos DB
 
@@ -191,7 +191,7 @@ WHERE c.description = "Malabar spinach, cooked"
 
 **Стоимость в ЕЗ:** 2,98 ЕЗ
 
-Вы можете в любое время добавить свойства в политику индексирования без влияния на доступность записи или чтения. Можно [отслеживать ход преобразования индекса](https://docs.microsoft.com/azure/cosmos-db/how-to-manage-indexing-policy#use-the-net-sdk-v3).
+Вы можете в любое время добавить свойства в политику индексирования без влияния на доступность записи или чтения. Можно [отслеживать ход преобразования индекса](./how-to-manage-indexing-policy.md#dotnet-sdk).
 
 ### <a name="understand-which-system-functions-use-the-index"></a>Узнайте, какие системные функции используют индекс.
 
@@ -491,5 +491,5 @@ WHERE c.foodGroup = "Vegetables and Vegetable Products" AND c._ts > 1575503264
 Ознакомьтесь со следующими статьями, чтобы получить сведения о том, как измерять единицы запроса для каждого запроса, получать статистику исполнения для настройки запросов и многом другом.
 
 * [Получение метрик выполнения SQL-запросов с помощью пакета SDK для .NET](profile-sql-api-query.md)
-* [Настройка производительности запросов в Azure Cosmos DB](sql-api-sql-query-metrics.md)
+* [Настройка производительности запросов в Azure Cosmos DB](./sql-api-query-metrics.md)
 * [Советы по повышению производительности при использовании пакета SDK для .NET](performance-tips.md)

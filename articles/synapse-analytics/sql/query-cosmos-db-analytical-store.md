@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 09/15/2020
 ms.author: jovanpop
 ms.reviewer: jrasnick
-ms.openlocfilehash: 3367a20ca5e2dc59880ed66939413606ff83963b
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: 99fcdd0232e2991acaceb6838bff0b00c6824dfb
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92122727"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92474909"
 ---
 # <a name="query-azure-cosmos-db-data-with-serverless-sql-pool-in-azure-synapse-link-preview"></a>Запрос Azure Cosmos DB данных с помощью несвязанного с сервером пула SQL в Azure синапсе Link (Предварительная версия)
 
@@ -262,7 +262,7 @@ FROM
 
 Возможные ошибки и действия по устранению неполадок перечислены в следующей таблице.
 
-| Ошибка | Первопричина |
+| Error | Первопричина |
 | --- | --- |
 | Синтаксические ошибки:<br/> — Неправильный синтаксис рядом с "OPENROWSET"<br/> - `...` не является распознаваемым параметром поставщика BULK OPENROWSET.<br/> — Неправильный синтаксис рядом с `...` | Возможные основные причины<br/> -Не использовать "CosmosDB" в качестве первого параметра,<br/> — Использование строкового литерала вместо идентификатора в третьем параметре;<br/> -Не указывать третий параметр (имя контейнера) |
 | Ошибка в строке подключения CosmosDB | -Account, база данных, ключ не указан <br/> -В строке подключения есть несколько параметров, которые не распознаются.<br/> -Точка с запятой `;` размещается в конце строки соединения |
@@ -277,5 +277,6 @@ FROM
 
 Дополнительные сведения см. в следующих статьях:
 
+- [Использование Power BI и бессерверного пула SQL синапсе с помощью ссылки Azure синапсе](../../cosmos-db/synapse-link-power-bi.md)
 - [Инструкции по созданию и использованию представлений в SQL по запросу](create-use-views.md) 
 - [Руководство по созданию представлений SQL по запросу Azure Cosmos DB и их подключению к Power BIным моделям через DirectQuery](./tutorial-data-analyst.md)

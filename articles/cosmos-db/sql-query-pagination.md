@@ -6,12 +6,12 @@ ms.author: tisande
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 07/29/2020
-ms.openlocfilehash: 4de3ec79b94969e45553857f1179a1104e090347
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: 2e899e76a1e68e120e0419926f8169785146bbfc
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92276094"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92485041"
 ---
 # <a name="pagination-in-azure-cosmos-db"></a>Разбиение на страницы в Azure Cosmos DB
 
@@ -56,7 +56,7 @@ ms.locfileid: "92276094"
 
 В REST API Azure Cosmos DB можно управлять маркерами продолжения с помощью `x-ms-continuation` заголовка. Как и при выполнении запросов к пакету SDK для .NET или Java, если `x-ms-continuation` заголовок ответа не пуст, это означает, что запрос содержит дополнительные результаты.
 
-Пока используется одна и та же версия пакета SDK, срок действия маркеров продолжения никогда не истекает. При необходимости можно [ограничить размер токена продолжения](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.feedoptions.responsecontinuationtokenlimitinkb?view=azure-dotnet&preserve-view=true#Microsoft_Azure_Documents_Client_FeedOptions_ResponseContinuationTokenLimitInKb). Независимо от объема данных или числа физических секций в контейнере, запросы возвращают один маркер продолжения.
+Пока используется одна и та же версия пакета SDK, срок действия маркеров продолжения никогда не истекает. При необходимости можно [ограничить размер токена продолжения](/dotnet/api/microsoft.azure.documents.client.feedoptions.responsecontinuationtokenlimitinkb?preserve-view=true&view=azure-dotnet#Microsoft_Azure_Documents_Client_FeedOptions_ResponseContinuationTokenLimitInKb). Независимо от объема данных или числа физических секций в контейнере, запросы возвращают один маркер продолжения.
 
 Маркеры продолжения нельзя использовать для запросов с [ключевым словом](sql-query-keywords.md#distinct) [Group By](sql-query-group-by.md) или DISTINCT, поскольку для этих запросов требуется хранить значительный объем состояний. Для запросов с `DISTINCT` можно использовать маркеры продолжения при добавлении `ORDER BY` в запрос.
 

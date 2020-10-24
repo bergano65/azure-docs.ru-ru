@@ -3,12 +3,12 @@ title: Вопросы и ответы о Службе Azure Kubernetes (AKS)
 description: найдите ответы на некоторые распространенные вопросы о Службе Azure Kubernetes (AKS).
 ms.topic: conceptual
 ms.date: 08/06/2020
-ms.openlocfilehash: 8f50475d7ba9117fd32951b401b24b63d192fcd8
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: c68810e0fd9ee3593aa014243c3f75fb8a63a7fd
+ms.sourcegitcommit: d6a739ff99b2ba9f7705993cf23d4c668235719f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92372384"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92494527"
 ---
 # <a name="frequently-asked-questions-about-azure-kubernetes-service-aks"></a>Вопросы и ответы о Службе Azure Kubernetes (AKS)
 
@@ -193,7 +193,7 @@ AKS предоставляет гарантии в рамках соглашен
 
 ## <a name="can-i-use-custom-vm-extensions"></a>Можно ли использовать пользовательские расширения виртуальных машин?
 
-Нет, AKS является управляемой службой, и управление ресурсами IaaS не поддерживается. Для установки пользовательских и тому подобных компонентов используйте интерфейсы API и механизмы Kubernetes. Например, используйте контроллеры DaemonSet для установки необходимых компонентов.
+Агент Log Analytics поддерживается, так как это расширение, управляемое корпорацией Майкрософт. В противном случае AKS является управляемой службой, и управление ресурсами IaaS не поддерживается. Чтобы установить пользовательские компоненты и т. д., используйте интерфейсы API и механизмы Kubernetes. Например, используйте Daemonset для установки необходимых компонентов.
 
 ## <a name="does-aks-store-any-customer-data-outside-of-the-clusters-region"></a>Сохраняет ли AKS данные клиентов за пределами региона кластера?
 

@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 10/12/2020
 ms.reviewer: sngun
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 2da6fcb82b1ec14d6f57931709321871fa575d38
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: 377165c94303a4a44d481009700cdef9169b3d78
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92277040"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92475810"
 ---
 # <a name="change-feed-processor-in-azure-cosmos-db"></a>Обработчик канала изменений в Azure Cosmos DB
 
@@ -125,10 +125,10 @@ ms.locfileid: "92277040"
 
 Обработчик веб-канала изменений может размещаться на любой платформе, поддерживающей длительные процессы или задачи:
 
-* Непрерывно выполняющееся [веб-задание Azure](https://docs.microsoft.com/learn/modules/run-web-app-background-task-with-webjobs/).
-* Процесс на [виртуальной машине Azure](https://docs.microsoft.com/azure/architecture/best-practices/background-jobs#azure-virtual-machines).
-* Фоновое задание в [службе Azure Kubernetes](https://docs.microsoft.com/azure/architecture/best-practices/background-jobs#azure-kubernetes-service).
-* [Размещенная служба ASP.NET](https://docs.microsoft.com/aspnet/core/fundamentals/host/hosted-services).
+* Непрерывно выполняющееся [веб-задание Azure](/learn/modules/run-web-app-background-task-with-webjobs/).
+* Процесс на [виртуальной машине Azure](/azure/architecture/best-practices/background-jobs#azure-virtual-machines).
+* Фоновое задание в [службе Azure Kubernetes](/azure/architecture/best-practices/background-jobs#azure-kubernetes-service).
+* [Размещенная служба ASP.NET](/aspnet/core/fundamentals/host/hosted-services).
 
 Хотя обработчик веб-канала изменений может работать в средах с кратковременным временем существования, так как контейнер аренды сохраняет состояние, цикл запуска этих сред будет добавлять задержку к получению уведомлений (из-за издержек при запуске процессора при каждом запуске среды).
 
@@ -147,4 +147,4 @@ ms.locfileid: "92277040"
 * [Модель извлечения данных канала изменений](change-feed-pull-model.md)
 * [Миграция из библиотеки обработчика канала изменений](how-to-migrate-from-change-feed-library.md)
 * [Использование оценщика канала изменений](how-to-use-change-feed-estimator.md)
-* [Настройка времени запуска обработчика канала изменений](how-to-configure-change-feed-start-time.md)
+* [Настройка времени запуска обработчика канала изменений](#starting-time)

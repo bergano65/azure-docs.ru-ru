@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 10/14/2020
 ms.author: thweiss
 ms.custom: devx-track-js
-ms.openlocfilehash: a0451e76ad8ce65486534bfbc68ae1b71adc9098
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: 38027f651623b16fed259cbf099bc274457723eb
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92284970"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92482559"
 ---
 # <a name="find-the-request-unit-charge-for-operations-executed-in-azure-cosmos-db-cassandra-api"></a>Найдите плату за единицу запросов для операций, выполненных в Azure Cosmos DB API Cassandra
 
@@ -47,10 +47,10 @@ Double requestCharge = resultSet.getExecutionInfo().getIncomingPayload().get("Re
 
 Дополнительные сведения см. [в разделе Краткое руководство. Создание приложения Cassandra с помощью пакета SDK для Java и Azure Cosmos DB](create-cassandra-java.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Сведения об оптимизации потребления ЕЗ см. в следующих статьях:
 
 * [Пропускная способность и единицы запросов в Azure Cosmos DB](request-units.md)
 * [Optimize provisioned throughput cost in Azure Cosmos DB](optimize-cost-throughput.md) (Оптимизация стоимости подготовленной пропускной способности в Azure Cosmos DB)
-* [Optimize query cost in Azure Cosmos DB](optimize-cost-queries.md) (Оптимизация затрат на отправку запросов в Azure Cosmos DB)
+* [Optimize query cost in Azure Cosmos DB](./optimize-cost-reads-writes.md) (Оптимизация затрат на отправку запросов в Azure Cosmos DB)

@@ -9,14 +9,14 @@ ms.topic: how-to
 ms.reviewer: larryfr
 ms.author: peterlu
 author: peterclu
-ms.date: 10/12/2020
+ms.date: 10/23/2020
 ms.custom: contperfq4, tracking-python, contperfq1
-ms.openlocfilehash: 0eb4f8a7994e7c1d04013e9c9cf92e604ef6a1a7
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: eb7439bc84eaa4bfba58be1059a19ddadfc6a93e
+ms.sourcegitcommit: d6a739ff99b2ba9f7705993cf23d4c668235719f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92424446"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92496026"
 ---
 # <a name="secure-an-azure-machine-learning-inferencing-environment-with-virtual-networks"></a>Обеспечение безопасности Машинное обучение Azure окружения с помощью виртуальных сетей
 
@@ -36,7 +36,7 @@ ms.locfileid: "92424446"
 > - Экземпляры контейнеров Azure (ACI)
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 + Ознакомьтесь со статьей [Обзор сетевой безопасности](how-to-network-security-overview.md) , чтобы ознакомиться с общими сценариями виртуальной сети и общей архитектурой виртуальной сети.
 
@@ -123,7 +123,7 @@ aks_target = ComputeTarget.create(workspace=ws,
 * __Внутренняя подсистема балансировки нагрузки AKS__. Этот подход настраивает конечную точку для развертываний в AKS для использования частного IP-адреса в виртуальной сети.
 
 > [!WARNING]
-> **Используйте либо частный AKS, либо внутренний балансировщик нагрузки, но не оба**.
+> Внутренняя подсистема балансировки нагрузки не работает с кластером AKS, использующим кубенет. Если вы хотите одновременно использовать внутреннюю подсистему балансировки нагрузки и частный кластер AKS, настройте частный кластер AKS с сетевым интерфейсом контейнера Azure (CNI). Дополнительные сведения см. [в статье configure Azure CNI Networking in Azure Kubernetes Service](../aks/configure-azure-cni.md).
 
 ### <a name="private-aks-cluster"></a>Частный кластер AKS
 
@@ -134,7 +134,7 @@ aks_target = ComputeTarget.create(workspace=ws,
 > [!IMPORTANT]
 > Прежде чем использовать AKS кластер с включенной частной связью с Машинное обучение Azure, необходимо открыть обращение в службу поддержки, чтобы включить эту функцию. Дополнительные сведения см. в статье [Управление квотами и их увеличение](how-to-manage-quotas.md#private-endpoint-and-private-dns-quota-increases).
 
-## <a name="internal-aks-load-balancer"></a>Внутренняя подсистема балансировки нагрузки AKS
+### <a name="internal-aks-load-balancer"></a>Внутренняя подсистема балансировки нагрузки AKS
 
 По умолчанию в развертываниях AKS используется [общедоступная подсистема балансировки нагрузки](../aks/load-balancer-standard.md). В этом разделе вы узнаете, как настроить AKS для использования внутренней подсистемы балансировки нагрузки. Используется внутренняя подсистема балансировки нагрузки (или частная), где только частные IP-адреса разрешены в качестве внешнего интерфейса. Внутренние подсистемы балансировки нагрузки используются для балансировки нагрузки трафика внутри виртуальной сети.
 
@@ -211,7 +211,7 @@ except:
     aks_target.wait_for_completion(show_output = True)
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 
 ```azurecli
 az ml computetarget create aks -n myaks --load-balancer-type InternalLoadBalancer

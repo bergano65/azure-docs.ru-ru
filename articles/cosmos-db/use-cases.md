@@ -6,12 +6,12 @@ author: SnehaGunda
 ms.author: sngun
 ms.topic: conceptual
 ms.date: 05/21/2019
-ms.openlocfilehash: af49a7bec68c30e4ded576a8d84eac850eb745f8
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.openlocfilehash: b8d74f9da62b0f5a596c811efa9f93b55c99f1d7
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92331368"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92476354"
 ---
 # <a name="common-azure-cosmos-db-use-cases"></a>Распространенные примеры использования Azure Cosmos DB
 
@@ -28,7 +28,7 @@ ms.locfileid: "92331368"
 
 [Azure Cosmos DB](../cosmos-db/introduction.md) база данных Microsoft FAST NoSQL с открытыми API для любого масштаба. Она позволяет эластично (и независимо) масштабировать пропускную способность и ресурсы хранилища в любых географических регионах. Azure Cosmos DB — это первая глобально распределенная служба базы данных на современном рынке, предлагающая исчерпывающие [соглашения об уровне обслуживания](https://azure.microsoft.com/support/legal/sla/cosmos-db/), включающие пропускную способность, задержку, доступность и согласованность.
 
-Azure Cosmos DB — это глобально распределенная многомодельная база данных, которая используется для самых разных приложений и вариантов использования. Она хорошо подходит для любого [бессерверного](https://azure.com/serverless) приложения, которому требуется время ответа, измеряемое в миллисекундах, и возможность быстрого и глобального масштабирования. Она изначально поддерживает несколько моделей данных (модели данных пар "ключ — значение", документы, графы и модели данных столбцов) и множество интерфейсов API для доступа к данным, таких как [API Azure Cosmos DB для MongoDB](mongodb-introduction.md), [API SQL](documentdb-introduction.md), [API Gremlin](graph-introduction.md) и [API таблиц](table-introduction.md), включая возможность расширения. 
+Azure Cosmos DB — это глобально распределенная многомодельная база данных, которая используется для самых разных приложений и вариантов использования. Она хорошо подходит для любого [бессерверного](https://azure.com/serverless) приложения, которому требуется время ответа, измеряемое в миллисекундах, и возможность быстрого и глобального масштабирования. Она изначально поддерживает несколько моделей данных (модели данных пар "ключ — значение", документы, графы и модели данных столбцов) и множество интерфейсов API для доступа к данным, таких как [API Azure Cosmos DB для MongoDB](mongodb-introduction.md), [API SQL](./introduction.md), [API Gremlin](graph-introduction.md) и [API таблиц](table-introduction.md), включая возможность расширения. 
 
 Ниже приведены некоторые особенности Azure Cosmos DB, благодаря которым эта система отлично подходит для высокопроизводительных глобальных приложений.
 
@@ -100,7 +100,7 @@ JSON — это эффективный формат, поддерживаемы
 
 :::image type="content" source="./media/use-cases/personalization.png" alt-text="Эталонная архитектура Центра Интернета вещей на основе Azure Cosmos DB" border="false":::
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Чтобы приступить к работе с Azure Cosmos DB, ознакомьтесь с нашими [краткими руководствами](create-sql-api-dotnet.md) по созданию учетной записи и работе со службой Cosmos DB.
 
