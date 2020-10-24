@@ -11,12 +11,12 @@ ms.date: 03/24/2020
 ms.author: rortloff
 ms.reviewer: igorstan
 ms.custom: synapse-analytics
-ms.openlocfilehash: 9eb1006bdba6c69136c972359bb13420a04f4180
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 70ce0d6aada2b03646500720b0eba980a1f2d8f8
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89048030"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92515735"
 ---
 # <a name="monitor-your-azure-synapse-analytics-sql-pool-workload-using-dmvs"></a>Мониторинг рабочей нагрузки пула SQL Azure синапсе Analytics с помощью динамических административных представлений
 
@@ -139,7 +139,7 @@ WHERE request_id = 'QID####' AND step_index = 2;
 ```
 
 * Перейдите к столбцу *total_elapsed_time*, чтобы просмотреть, есть ли какая-то операция распространения, перемещение данных для которой значительно больше времени по сравнению с другими операциями.
-* Для длительной операции распространения обратитесь к столбцу *rows_processed* и проверьте, является ли количество перемещаемых строк для этой операции значительно большим по сравнению с другими операциями. Если это так, такой результат может означать отклонение базовых данных.
+* Для длительной операции распространения обратитесь к столбцу *rows_processed* и проверьте, является ли количество перемещаемых строк для этой операции значительно большим по сравнению с другими операциями. Если это так, такой результат может означать отклонение базовых данных. Одна из причин неравномерного распределения данных — распространение по столбцу с большим количеством значений NULL (строки которых будут находиться в одном распределении). Предотвращение снижения производительности запросов за счет предотвращения распространения для этих типов столбцов или Фильтрация запроса, чтобы исключить значения NULL, если это возможно. 
 
 Если запрос выполняется, можно использовать [инструкцию DBCC PDW_SHOWEXECUTIONPLAN](/sql/t-sql/database-console-commands/dbcc-pdw-showexecutionplan-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) , чтобы получить SQL Server предполагаемый план из кэша планов SQL Server для текущего этапа SQL в определенном распределении.
 
@@ -307,6 +307,6 @@ ORDER BY
     gb_processed desc;
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о динамических административных представлениях см. в статье о [системных представлениях](../sql/reference-tsql-system-views.md).

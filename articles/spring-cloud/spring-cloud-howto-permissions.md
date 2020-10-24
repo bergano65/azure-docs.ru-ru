@@ -7,12 +7,12 @@ ms.service: spring-cloud
 ms.topic: how-to
 ms.date: 09/04/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 635f1e03596d55101b6158353ed8cdc278212ceb
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: edd9898580c60199b761b24b172a366069f09cb2
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92155488"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92516194"
 ---
 # <a name="how-to-use-permissions-in-azure-spring-cloud"></a>Как использовать разрешения в Azure Веснного облака
 В этой статье показано, как создать настраиваемые роли, которые делегируют разрешения для облачных ресурсов Azure весны. Пользовательские роли расширяют [встроенные роли Azure](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles) с различными разрешениями на хранение.
@@ -21,7 +21,7 @@ ms.locfileid: "92155488"
 
 * **Роль разработчика**: 
     * Развертывание
-    * Проверка
+    * Тест
     * Перезапустить приложения
     * Можно применять и вносить изменения в конфигурации приложений в репозитории Git.
     * Может получить поток журнала

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/13/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: edb184fa286eb6212f714c18830540e105ea3305
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: 5ecfd5e5ff29b2eade4391976947062d6e8f186f
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92021186"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92516160"
 ---
 # <a name="azure-security-baseline-for-azure-web-application-firewall"></a>Базовые показатели безопасности Azure для брандмауэра веб-приложения Azure
 
@@ -355,7 +355,7 @@ Azure WAF обеспечивает централизованную защиту
 
 **Руководство**. Реализация изоляции с помощью отдельных подписок и групп управления для отдельных доменов безопасности, таких как тип среды и уровень чувствительности данных, например для сред разработки, тестирования и рабочей среды. 
 
-Контролируйте доступ к ресурсам Azure с помощью управления доступом на основе ролей Azure Active Directory (Azure AD) (Azure RBAC).
+Управление доступом к ресурсам Azure с помощью управления доступом на основе ролей Azure (Azure RBAC).
 
 - [Создание дополнительных подписок Azure](/azure/billing/billing-create-subscription)
 
@@ -379,10 +379,10 @@ Azure WAF обеспечивает централизованную защиту
 
 **Ответственность**: Совмещаемая блокировка
 
-### <a name="46-use-role-based-access-control-to-control-access-to-resources"></a>4,6. Использование управления доступом на основе ролей для управления доступом к ресурсам
+### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6. Контроль доступа к ресурсам с помощью RBAC
 
-**Руководство**. Управление доступом к ресурсам Azure с помощью управления доступом на основе ролей Azure Active Directory (Azure AD) (Azure RBAC).
-- [Настройка RBAC в Azure](../role-based-access-control/role-assignments-portal.md)
+**Руководство**. Управление доступом к ресурсам Azure с помощью управления доступом на основе ролей Azure (Azure RBAC).
+- [Настройка Azure RBAC](../role-based-access-control/role-assignments-portal.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 

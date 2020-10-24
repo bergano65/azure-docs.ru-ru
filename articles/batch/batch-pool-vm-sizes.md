@@ -2,14 +2,14 @@
 title: Выбор размеров виртуальных машин для пулов
 description: Выбор доступных размеров виртуальной машины для вычислительных узлов в пулах пакетной службы Azure
 ms.topic: conceptual
-ms.date: 09/22/2020
+ms.date: 10/23/2020
 ms.custom: seodec18
-ms.openlocfilehash: 6dc1b3cf708a6dbaacc87e6c9fc00ae6f0ff3440
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: fd093006a9eb0c9746a19cb5f91b280145ddfb7e
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92107510"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92517061"
 ---
 # <a name="choose-a-vm-size-for-compute-nodes-in-an-azure-batch-pool"></a>Выбор размера виртуальной машины для вычислительных узлов в пуле пакетной службы Azure
 
@@ -31,17 +31,19 @@ ms.locfileid: "92107510"
 | Basic A | Все размеры *за исключением* Basic_A0 (A0) |
 | Объект | Все размеры *за исключением* Standard_A0 |
 | Av2 | Все размеры |
-| B | None |
-| DC | None |
+| B | Не поддерживается |
+| DC | Не поддерживается |
 | Dv2, DSv2 | Все размеры |
 | Dv3, Dsv3 | Все размеры |
 | Dav4<sup>1</sup> | Все размеры |
 | Dasv4<sup>1</sup> | Все размеры |
 | Ddv4, Ddsv4 |  Все размеры |
+| Dv4, Dsv4 | Не поддерживается |
 | Ev3, Esv3 | Все размеры, кроме E64is_v3 |
 | Eav4<sup>1</sup> | Все размеры |
 | Easv4<sup>1</sup> | Все размеры |
 | Edv4, Edsv4 |  Все размеры |
+| Ev4, Esv4 | Не поддерживается |
 | F, Fs | Все размеры |
 | Fsv2 | Все размеры |
 | G, Gs | Все размеры |
@@ -56,12 +58,13 @@ ms.locfileid: "92107510"
 | NC | Все размеры |
 | NCv2<sup>1</sup> | Все размеры |
 | NCv3<sup>1</sup> | Все размеры |
+| NCasT4_v3 | Нет. Пока недоступно |
 | ND<sup>1</sup> | Все размеры |
 | NDv2<sup>1</sup> | Нет. Пока недоступно |
 | NV | Все размеры |
 | NVv3<sup>1</sup> | Все размеры |
-| NVv4 | Нет. Пока недоступно |
-| SAP HANA | None |
+| NVv4<sup>1</sup> | Все размеры |
+| SAP HANA | Не поддерживается |
 
 <sup>1</sup> эта серия виртуальных машин может быть выделена в пулах пакетной службы в конфигурации виртуальной машины, но необходимо создать новую учетную запись пакета и запросить определенное [увеличение квоты](batch-quota-limit.md#increase-a-quota). Это ограничение будет удалено, когда для учетных записей пакетной службы будет полностью поддерживаться квота виртуальных ЦП на серию виртуальных машин.
 

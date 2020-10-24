@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 11/11/2019
 ms.author: Zhchia
-ms.openlocfilehash: b3677b16921c6954f5f99e55af9afeae9c337cce
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 00adf8f1559d01d6ba17692e1166c93c93fcbf8f
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91255832"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92516653"
 ---
 # <a name="tutorial-configure-promapp-for-automatic-user-provisioning"></a>Учебник. Настройка Promapp для автоматической подготовки пользователей
 
@@ -93,7 +93,7 @@ ms.locfileid: "91255832"
 В этом разделе описано, как настроить службу подготовки Azure AD для создания, обновления и отключения пользователей и (или) групп в Promapp на основе назначений пользователей и групп в Azure AD.
 
 > [!TIP]
-> Вы также можете включить единый вход на основе SAML для Promapp, следуя инструкциям, приведенным в [руководстве по единому входу Promapp](https://docs.microsoft.com/azure/active-directory/saas-apps/promapp-tutorial). Единый вход можно настроить независимо от автоматической подготовки пользователей, хотя эти две функции дополняют друг друга.
+> Вы также можете включить единый вход на основе SAML для Promapp, следуя инструкциям, приведенным в [руководстве по единому входу Promapp](./promapp-tutorial.md). Единый вход можно настроить независимо от автоматической подготовки пользователей, хотя эти две функции дополняют друг друга.
 
 ### <a name="to-configure-automatic-user-provisioning-for-promapp-in-azure-ad"></a>Чтобы настроить автоматическую подготовку учетных записей пользователей для Promapp в Azure AD, сделайте следующее:
 
@@ -157,4 +157,3 @@ ms.locfileid: "91255832"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../app-provisioning/check-status-user-account-provisioning.md)
-

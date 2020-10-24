@@ -11,12 +11,12 @@ ms.author: jrasnick
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
 tags: azure-synapse
-ms.openlocfilehash: 06f62fd656357e16396a0458a9afee12dcfa507f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c94924c973a1095a4bebf6231d9853968facc1b2
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91629375"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92516889"
 ---
 # <a name="secure-a-database-in-azure-synapse"></a>Защита базы данных в Azure синапсе
 
@@ -92,7 +92,7 @@ EXEC sp_addrolemember 'db_datawriter', 'ApplicationUser'; -- allows ApplicationU
 GRANT SELECT ON SCHEMA::Test to ApplicationUser
 ```
 
-Управление базами данных и серверами из портал Azure или использование API Azure Resource Manager управляется назначением ролей учетной записи пользователя портала. Дополнительные сведения см. в статье [Использование управления доступом на основе ролей для контроля доступа к ресурсам в подписке Azure](../../role-based-access-control/role-assignments-portal.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
+Управление базами данных и серверами из портал Azure или использование API Azure Resource Manager управляется назначением ролей учетной записи пользователя портала. Дополнительные сведения см. в статье о [добавлении и удалении назначений ролей Azure с помощью портала Azure](../../role-based-access-control/role-assignments-portal.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
 
 ## <a name="encryption"></a>Шифрование
 
@@ -102,6 +102,6 @@ GRANT SELECT ON SCHEMA::Test to ApplicationUser
 
 Базу данных можно зашифровать с помощью [портала Azure](sql-data-warehouse-encryption-tde.md) или [T-SQL](sql-data-warehouse-encryption-tde-tsql.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения и примеры подключения к хранилищу с различными протоколами см. в разделе [Подключение к пулу SQL](../sql/connect-overview.md).

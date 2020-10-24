@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/05/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 72a2b24ad8e05943f975f0819d8b2a872b0ab829
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b5a7f27ff20a4770caea44e73d91001d9785c015
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89229010"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92517231"
 ---
 # <a name="azure-security-baseline-for-stream-analytics"></a>Базовый план безопасности Azure для Stream Analytics
 
@@ -248,7 +248,7 @@ ms.locfileid: "89229010"
 
 ### <a name="32-change-default-passwords-where-applicable"></a>3.2. Изменение паролей по умолчанию, где применимо
 
-**Руководство**. Stream Analytics не имеет концепции паролей по умолчанию, так как проверка подлинности предоставляется Azure Active Directory и защищена с помощью управления доступом на основе РОЛЕЙ (RBAC) для управления службой. В зависимости от служб и выходных данных внедрения, необходимо повернуть учетные данные, настроенные в заданиях.
+**Руководство**. Stream Analytics не имеет концепции паролей по умолчанию, так как проверка подлинности предоставляется с Azure Active Directory и защищена с помощью управления доступом на основе ролей Azure (Azure RBAC) для управления службой. В зависимости от служб и выходных данных внедрения, необходимо повернуть учетные данные, настроенные в заданиях.
 
 * [Смена учетных данных входа для ввода и вывода задания Stream Analytics](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-login-credentials-inputs-outputs)
 
@@ -260,7 +260,7 @@ ms.locfileid: "89229010"
 
 **Руководство**. Создание плана безопасности для управления удостоверениями и ролей, соблюдение рекомендаций, включая принцип минимального привилегированного доступа для ролей администратора. Используйте Azure управление привилегированными пользователями (PIM), чтобы предоставить доступ к ресурсам Azure AD и Azure только в режиме доступа. Используйте оповещения и журнал аудита PIM Azure для отслеживания активности административных учетных записей. Используйте отчеты безопасности Azure AD, чтобы определить учетные записи администратора, которые могли быть скомпрометированы.
 
-* [Дополнительные сведения](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/)
+* [Подробнее](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -324,7 +324,7 @@ ms.locfileid: "89229010"
 
 ### <a name="39-use-azure-active-directory"></a>3.9. Использование Azure Active Directory
 
-**Руководство**. Использование Azure Active Directory (Azure AD) в качестве централизованной системы проверки подлинности и авторизации. Azure AD предоставляет управление доступом на основе ролей (RBAC) для точного управления доступом клиента к ресурсам Stream Analytics.
+**Руководство**. Использование Azure Active Directory (Azure AD) в качестве централизованной системы проверки подлинности и авторизации. Azure AD предоставляет управление доступом на основе ролей Azure (Azure RBAC) для точного управления доступом клиента к ресурсам Stream Analytics.
 
 * [Создание и настройка экземпляра Azure AD](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-access-create-new-tenant)
 

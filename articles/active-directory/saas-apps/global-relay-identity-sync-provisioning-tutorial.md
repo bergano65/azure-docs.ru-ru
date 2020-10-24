@@ -13,14 +13,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/16/2020
+ms.date: 10/22/2020
 ms.author: Zhchia
-ms.openlocfilehash: f0e34c8a331c475b103922789a9d1983f1c84cac
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: c1e2d64bb30b6451e232c85a5892771157d32928
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92492216"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92514407"
 ---
 # <a name="tutorial-configure-global-relay-identity-sync-for-automatic-user-provisioning"></a>Руководство по настройке глобальной синхронизации удостоверений ретранслятора для автоматической подготовки пользователей
 
@@ -52,7 +52,7 @@ ms.locfileid: "92492216"
 
 ## <a name="step-3-add-global-relay-identity-sync-from-the-azure-ad-application-gallery"></a>Шаг 3. Добавление синхронизации удостоверений глобального ретранслятора из коллекции приложений Azure AD
 
-Добавьте синхронизацию удостоверений глобального ретранслятора из коллекции приложений Azure AD, чтобы начать управление подготовкой к синхронизации удостоверений глобальной ретрансляции. Если вы ранее настроили синхронизацию удостоверений глобального ретранслятора для единого входа, можно использовать то же приложение. Однако при первоначальном тестировании интеграции рекомендуется создать отдельное приложение. Дополнительные сведения о добавлении приложения из коллекции см. [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/add-gallery-app). 
+Добавьте синхронизацию удостоверений глобального ретранслятора из коллекции приложений Azure AD, чтобы начать управление подготовкой к синхронизации удостоверений глобальной ретрансляции. Дополнительные сведения о добавлении приложения из коллекции см. [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/add-gallery-app). 
 
 ## <a name="step-4-define-who-will-be-in-scope-for-provisioning"></a>Шаг 4. Определение пользователей для включения в область подготовки 
 
@@ -63,7 +63,7 @@ ms.locfileid: "92492216"
 
 ## <a name="step-5-configure-automatic-user-provisioning-to-global-relay-identity-sync"></a>Шаг 5. Настройка автоматической подготовки пользователей для синхронизации удостоверений глобальной ретрансляции 
 
-В этом разделе описывается, как настроить службу подготовки Azure AD для создания, обновления и отключения пользователей и (или) групп в TestApp на основе их назначений в Azure AD.
+В этом разделе описано, как настроить службу подготовки Azure AD для создания, обновления и отключения пользователей и групп в приложении синхронизации удостоверений глобального ретранслятора на основе назначений пользователей и групп в Azure AD.
 
 ### <a name="to-configure-automatic-user-provisioning-for-global-relay-identity-sync-in-azure-ad"></a>Чтобы настроить автоматическую подготовку пользователей для синхронизации удостоверений глобального ретранслятора в Azure AD, сделайте следующее:
 

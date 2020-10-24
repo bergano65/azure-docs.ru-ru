@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 3/18/2020
 ms.topic: conceptual
 ms.service: digital-twins
-ms.openlocfilehash: f438f4393538478f2960e709d8e23beb6106510d
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 6784ca9dbc32811a02f4454be94d220c634318f5
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92485755"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92503323"
 ---
 # <a name="secure-azure-digital-twins"></a>Защита цифровых двойников Azure
 
@@ -20,7 +20,7 @@ ms.locfileid: "92485755"
 
 Azure Digital двойников также поддерживает шифрование неактивных данных.
 
-## <a name="granting-permissions-with-azure-rbac"></a>Предоставление разрешений с помощью Azure RBAC
+## <a name="roles-and-permissions-with-azure-rbac"></a>Роли и разрешения с помощью Azure RBAC
 
 Azure RBAC предоставляется в Azure Digital двойников через интеграцию с [Azure Active Directory](../active-directory/fundamentals/active-directory-whatis.md) (Azure AD).
 
@@ -47,22 +47,32 @@ Azure RBAC предоставляется в Azure Digital двойников ч
 
 #### <a name="authorization-azure-roles-for-azure-digital-twins"></a>Авторизация: роли Azure для цифрового двойников Azure
 
-Azure предоставляет следующие встроенные роли Azure для авторизации доступа к ресурсу Digital двойников Azure:
-* *Владелец данных Azure Digital двойников* . Используйте эту роль, чтобы предоставить полный доступ через цифровые двойников ресурсы Azure.
-* *Модуль чтения цифровых двойников данных Azure* — используйте эту роль, чтобы предоставить доступ только для чтения к ресурсам Digital двойников.
+Azure предоставляет **две встроенные роли Azure** для авторизации доступа к [API-интерфейсам плоскости данных](how-to-use-apis-sdks.md#overview-data-plane-apis)Digital двойников. Вы можете ссылаться на роли по имени или по ИДЕНТИФИКАТОРу:
+
+| Встроенные роли | Описание | ID | 
+| --- | --- | --- |
+| Владелец данных Azure Digital двойников | Предоставляет полный доступ к ресурсам Azure Digital двойников | bcd981a7-7f74-457b-83e1-cceb9e632ffe |
+| Модуль чтения данных Azure Digital двойников | Предоставляет доступ только для чтения к ресурсам Azure Digital двойников | d57506d4-4c8d-48b1-8587-93c323f6a5a3 |
 
 >[!NOTE]
 > Эти роли были недавно переименованы из предыдущих имен в предварительной версии:
 > * *Владелец данных Azure Digital двойников* ранее был *владельцем Azure Digital двойников (Предварительная версия)*.
 > * *Модуль чтения данных Digital двойников* был ранее *Azure Digital двойников Reader (Предварительная версия)*.
 
-Дополнительные сведения о том, как определяются встроенные роли, см. в разделе Описание [*определений ролей*](../role-based-access-control/role-definitions.md) в документации по методу RBAC Azure. Дополнительные сведения о создании пользовательских ролей Azure см. в статье [*пользовательские роли Azure*](../role-based-access-control/custom-roles.md).
-
 Назначить роли можно двумя способами.
 * с помощью панели управления доступом (IAM) для Azure Digital двойников в портал Azure (см. статью [*Добавление и удаление назначений ролей Azure с помощью портал Azure*](../role-based-access-control/role-assignments-portal.md)).
 * Добавление или удаление роли с помощью команд интерфейса командной строки
 
 Дополнительные сведения о том, как это сделать, см. в учебнике по цифровым двойников Azure [*: подключение комплексного решения*](tutorial-end-to-end.md).
+
+Дополнительные сведения о том, как определяются встроенные роли, см. в разделе Описание [*определений ролей*](../role-based-access-control/role-definitions.md) в документации по методу RBAC Azure. Дополнительные сведения о создании пользовательских ролей Azure см. в статье [*пользовательские роли Azure*](../role-based-access-control/custom-roles.md).
+
+##### <a name="automating-roles"></a>Автоматизация ролей
+
+При ссылке на роли в автоматизированных сценариях рекомендуется ссылаться на них по **идентификаторам** , а не по именам. Имена могут изменяться между выпусками, но идентификаторы не будут, сделав их более стабильной ссылкой в службе автоматизации.
+
+> [!TIP]
+> Если вы ассигинг роли с помощью командлета, например `New-AzRoleAssignment` ([Reference](/powershell/module/az.resources/new-azroleassignment?view=azps-4.8.0)), можно использовать `-RoleDefinitionId` параметр вместо `-RoleDefinitionName` для передачи идентификатора, а не имени роли.
 
 ### <a name="permission-scopes"></a>Области разрешений
 
@@ -91,7 +101,7 @@ Azure Digital двойников сейчас не поддерживает **о
 * Удалить Заголовок CORS `Access-Control-Allow-Origin` из сообщения. Этот заголовок указывает, можно ли предоставить общий доступ к ответу. 
 * Кроме того, можно создать прокси-сервер CORS и сделать REST API Azure Digital двойников. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения об этих концепциях см. в разделе [*как настроить экземпляр и проверку подлинности*](how-to-set-up-instance-portal.md).
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 10/07/2019
 ms.author: Zhchia
-ms.openlocfilehash: cd1e9431d7125b405f31cb1ed329e6e264cd247e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 135b780f547ddd8e979899898b9971c4dcf89cee
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91285958"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92514713"
 ---
 # <a name="tutorial-configure-spaceiq-for-automatic-user-provisioning"></a>Учебник. Настройка SpaceIQ для автоматической подготовки пользователей
 
@@ -95,7 +95,7 @@ ms.locfileid: "91285958"
 В этом разделе описано, как настроить службу подготовки Azure AD для создания, обновления и отключения пользователей и (или) групп в SpaceIQ на основе назначений пользователей и групп в Azure AD.
 
 > [!TIP]
-> Вы также можете включить единый вход на основе SAML для SpaceIQ, следуя инструкциям, приведенным в [руководстве по единому входу SpaceIQ](https://docs.microsoft.com/azure/active-directory/saas-apps/spaceiq-tutorial). Единый вход можно настроить независимо от автоматической подготовки пользователей, хотя эти две функции дополняют друг друга.
+> Вы также можете включить единый вход на основе SAML для SpaceIQ, следуя инструкциям, приведенным в [руководстве по единому входу SpaceIQ](./spaceiq-tutorial.md). Единый вход можно настроить независимо от автоматической подготовки пользователей, хотя эти две функции дополняют друг друга.
 
 ### <a name="to-configure-automatic-user-provisioning-for-spaceiq-in-azure-ad"></a>Чтобы настроить автоматическую подготовку учетных записей пользователей для SpaceIQ в Azure AD, сделайте следующее:
 
