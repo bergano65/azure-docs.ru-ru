@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/25/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 4e844904f236e9d81404a3481af9349ac8881085
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 3604a2efb4d6f8c08a19d832c8523e44df352444
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92310437"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92518778"
 ---
 # <a name="azure-security-baseline-for-service-bus"></a>Базовый план безопасности Azure для служебной шины
 
@@ -227,7 +227,7 @@ ms.locfileid: "92310437"
 
 ### <a name="31-maintain-an-inventory-of-administrative-accounts"></a>3.1. Инвентаризация учетных записей администраторов
 
-**Руководство**. Управление доступом на основе РОЛЕЙ (RBAC) в Azure позволяет управлять доступом к ресурсам Azure с помощью назначений ролей. Эти роли можно назначить пользователям, группам субъектов-служб и управляемым удостоверениям. Существуют предварительно определенные встроенные роли для служебной шины. Эти роли могут быть учтены или запрошены с помощью таких средств, как Azure CLI, Azure PowerShell или портал Azure.
+**Руководство**. Управление доступом на основе ролей в Azure (Azure RBAC) позволяет управлять доступом к ресурсам Azure с помощью назначений ролей. Эти роли можно назначить пользователям, группам субъектов-служб и управляемым удостоверениям. Существуют предварительно определенные встроенные роли для служебной шины. Эти роли могут быть учтены или запрошены с помощью таких средств, как Azure CLI, Azure PowerShell или портал Azure.
 
 - [Встроенные роли служебной шины Azure](authenticate-application.md#azure-built-in-roles-for-azure-service-bus)
 

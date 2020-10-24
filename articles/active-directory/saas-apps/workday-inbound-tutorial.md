@@ -10,12 +10,12 @@ ms.topic: article
 ms.workload: identity
 ms.date: 05/26/2020
 ms.author: chmutali
-ms.openlocfilehash: 53132cc21b8298f951f2daa979ed433103ad0ac0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e22252ea3e132aee39075d986d7f5a979e14c0a3
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91541294"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92520240"
 ---
 # <a name="tutorial-configure-workday-for-automatic-user-provisioning"></a>Руководство по Настройка Workday для автоматической подготовки пользователей
 
@@ -311,7 +311,7 @@ ms.locfileid: "91541294"
 Чтобы подготовить локальную службу Active Directory, необходимо установить агент подготовки на сервере с .NET 4.7.1+ Framework и сетевым доступом к нужным доменам Active Directory.
 
 > [!TIP]
-> Вы можете проверить версию платформы .NET на вашем сервере, воспользовавшись представленными [здесь](https://docs.microsoft.com/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed) инструкциями.
+> Вы можете проверить версию платформы .NET на вашем сервере, воспользовавшись представленными [здесь](/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed) инструкциями.
 > Если на сервере не установлена платформа .NET 4.7.1 или более поздней версии, вы можете скачать ее [здесь](https://support.microsoft.com/help/4033342/the-net-framework-4-7-1-offline-installer-for-windows).  
 
 Перенесите скачанный установщик агента на узел сервера и следуйте инструкции ниже, чтобы завершить настройку агента.
@@ -410,7 +410,7 @@ ms.locfileid: "91541294"
    * **Адрес электронной почты для уведомлений —** введите адрес электронной почты и установите флажок "send email if failure occurs" (Отправлять по электронной почте в случае сбоя).
 
      > [!NOTE]
-     > Служба подготовки Azure AD отправляет уведомление по электронной почте, если задание подготовки переходит в состояние [Карантин](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-quarantine-status).
+     > Служба подготовки Azure AD отправляет уведомление по электронной почте, если задание подготовки переходит в состояние [Карантин](../app-provisioning/application-provisioning-quarantine-status.md).
 
    * Нажмите кнопку **Проверить подключение**. Если проверка подключения выполнена успешно, нажмите кнопку **Сохранить** в верхней части. В случае неудачи убедитесь, что учетные данные Workday и AD, заданные в настройках агента, действительны.
 
@@ -594,7 +594,7 @@ ms.locfileid: "91541294"
 
 #### <a name="does-the-solution-support-assigning-on-premises-ad-groups-to-the-user"></a>Поддерживает ли решение назначение локальных групп AD пользователю?
 
-Сейчас такая возможность не поддерживается. Рекомендуется развернуть сценарий PowerShell, запрашивающий конечную точку API Microsoft Graph для получения [данных журнала аудита](https://docs.microsoft.com/graph/api/resources/azure-ad-auditlog-overview?view=graph-rest-beta), и использовать его для запуска сценариев, таких как назначение групп. Этот сценарий PowerShell можно присоединить к планировщику задач и развернуть в том же окне, где запущен агент подготовки.  
+Сейчас такая возможность не поддерживается. Рекомендуется развернуть сценарий PowerShell, запрашивающий конечную точку API Microsoft Graph для получения [данных журнала аудита](/graph/api/resources/azure-ad-auditlog-overview?view=graph-rest-beta), и использовать его для запуска сценариев, таких как назначение групп. Этот сценарий PowerShell можно присоединить к планировщику задач и развернуть в том же окне, где запущен агент подготовки.  
 
 #### <a name="which-workday-apis-does-the-solution-use-to-query-and-update-workday-worker-profiles"></a>Какие API-интерфейсы Workday решение использует для запроса и обновления профилей работников Workday?
 
@@ -679,7 +679,7 @@ ms.locfileid: "91541294"
 
 #### <a name="how-do-i-ensure-that-the-provisioning-agent-is-able-to-communicate-with-the-azure-ad-tenant-and-no-firewalls-are-blocking-ports-required-by-the-agent"></a>Как убедиться, что агент подготовки может взаимодействовать с клиентом Azure AD и никакие брандмауэры не блокируют порты, необходимые агенту?
 
-Также можно проверить, открыты ли все [необходимые порты](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-add-on-premises-application#open-ports) .
+Также можно проверить, открыты ли все [необходимые порты](../manage-apps/application-proxy-add-on-premises-application.md#open-ports) .
 
 #### <a name="can-one-provisioning-agent-be-configured-to-provision-multiple-ad-domains"></a>Можно ли настроить один агент подготовки для подготовки нескольких доменов AD?
 
@@ -1157,4 +1157,4 @@ SelectUniqueValue(
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../app-provisioning/check-status-user-account-provisioning.md)
 * [Узнайте, как настроить единый вход Azure Active Directory в Workday](workday-tutorial.md).
 * [Узнайте, как интегрировать другие приложения SaaS с Azure Active Directory](tutorial-list.md).
-* [Сведения об использовании API Microsoft Graph для управления конфигурациями подготовки](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/synchronization-overview)
+* [Сведения об использовании API Microsoft Graph для управления конфигурациями подготовки](/graph/api/resources/synchronization-overview)

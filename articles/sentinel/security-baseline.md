@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 09/10/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 25571db967608c238bccb1ab44f75a0a163803d5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f4c6bf8b203f9721436ab3dde1f80837df92234d
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90020375"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92518268"
 ---
 # <a name="azure-security-baseline-for-azure-sentinel"></a>Базовый план безопасности Azure для Azure Sentinel
 
@@ -325,7 +325,7 @@ Log Analytics роли включают Log Analytics участника и ср
 
 Кроме того, каждая книга-метка является ресурсом Azure, и вы можете назначать роли пользователям для управления доступом.
 
-- [Настройка RBAC в Azure](../role-based-access-control/role-assignments-portal.md)
+- [Настройка Azure RBAC](../role-based-access-control/role-assignments-portal.md)
 
 - [Общие сведения о пользовательских ролях](../role-based-access-control/custom-roles.md)
 

@@ -9,12 +9,12 @@ ms.author: normesta
 ms.reviewer: fryu
 ms.subservice: common
 ms.custom: monitoring, devx-track-csharp
-ms.openlocfilehash: 2f3fa755f61d398ce7f0965fba86262c3e3ec863
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ef38e36ce1d2c7968e3eb7079270626629523334
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89021159"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92518741"
 ---
 # <a name="azure-storage-analytics-metrics-classic"></a>Метрики Аналитики Службы хранилища Azure (классические)
 
@@ -176,7 +176,10 @@ queueClient.SetServiceProperties(serviceProperties);
 >
 
 ## <a name="access-metrics-data-programmatically"></a>Программный доступ к данным метрик  
-В следующем списке показан пример кода C#, в котором реализован доступ к минутным метрикам для диапазона минут с отображением результатов в окне консоли. В этом примере кода используется клиентская библиотека службы хранилища Azure версии 4, включающая в себя класс **CloudAnalyticsClient**, упрощающий доступ к таблицам метрик в хранилище.  
+В следующем списке показан пример кода C#, в котором реализован доступ к минутным метрикам для диапазона минут с отображением результатов в окне консоли. В этом примере кода используется клиентская библиотека службы хранилища Azure версии 4, включающая в себя класс **CloudAnalyticsClient**, упрощающий доступ к таблицам метрик в хранилище. 
+
+> [!NOTE]
+> Класс **CloudAnalyticsClient** не включен в клиентскую библиотеку хранилища BLOB-объектов Azure версии 12 для .NET. С **31 августа 2023** аналитика службы хранилища метрики, также называемые *классическими метриками* , будут прекращены. Дополнительные сведения см. в [официальном объявлении](https://azure.microsoft.com/updates/azure-storage-classic-metrics-will-be-retired-on-31-august-2023/). Если вы используете классические метрики, рекомендуется перейти к метрикам в Azure Monitor до этой даты. 
 
 ```csharp
 private static void PrintMinuteMetrics(CloudAnalyticsClient analyticsClient, DateTimeOffset startDateTime, DateTimeOffset endDateTime)  

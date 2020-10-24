@@ -9,12 +9,12 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 09/22/2020
-ms.openlocfilehash: 787c7d7df5f013dd4477e466c02a2b323b4b59df
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 95f1c4bf9b599da8285ac69e299549e5aa73c2f9
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91275104"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92519594"
 ---
 # <a name="set-up-an-indexer-connection-to-a-data-source-using-a-managed-identity"></a>Настройка соединения индексатора с источником данных с помощью управляемого удостоверения
 
@@ -31,7 +31,7 @@ ms.locfileid: "91275104"
 
 ## <a name="using-managed-identities"></a>Использование управляемых удостоверений
 
-Функция [управляемых удостоверений](../active-directory/managed-identities-azure-resources/overview.md) предоставляет службам Azure удостоверения, автоматически управляемые в Azure Active Directory (Azure AD). Она позволяет создать в Когнитивном поиске Azure объект источника данных со строкой подключения, которая не содержит никаких учетных данных. Для доступа к источнику служба поиска использует механизм управления доступом на основе ролей.
+Функция [управляемых удостоверений](../active-directory/managed-identities-azure-resources/overview.md) предоставляет службам Azure удостоверения, автоматически управляемые в Azure Active Directory (Azure AD). Она позволяет создать в Когнитивном поиске Azure объект источника данных со строкой подключения, которая не содержит никаких учетных данных. Вместо этого службе поиска будет предоставлен доступ к источнику данных через Управление доступом на основе ролей Azure (Azure RBAC).
 
 Если для источника данных настроено управляемое удостоверение, вы можете изменить учетные данные источника, и при этом возможность подключаться к нему у индексаторов сохранится. Вы также можете создавать объекты источников данных прямо в коде, не указывая ключ учетной записи и не обращаясь к Key Vault для получения ключа учетной записи.
 

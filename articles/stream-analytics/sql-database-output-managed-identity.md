@@ -6,12 +6,12 @@ ms.author: mamccrea
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 05/08/2020
-ms.openlocfilehash: 26644d42e0e51d59c6c28daaba5447a65a43b6a5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8b5c106c1464ec6d77305b1985cc8dbd51e2b4db
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91460647"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92519483"
 ---
 # <a name="use-managed-identities-to-access-azure-sql-database-from-an-azure-stream-analytics-job-preview"></a>Использование управляемых удостоверений для доступа к Базе данных SQL Azure из задания Azure Stream Analytics (предварительная версия)
 
@@ -60,7 +60,7 @@ Azure Stream Analytics поддерживает [проверку подлинн
 
    ![Добавление администратора Active Directory](./media/sql-db-output-managed-identity/add-admin.png)
 
-   На странице "Администратор Active Directory" отобразятся все участники и группы Active Directory. Пользователи или группы, которые недоступны, не могут быть выбраны, так как они не поддерживаются как администраторы Azure Active Directory. Список поддерживаемых администраторов см. в разделе **Azure Active Directory функции и ограничения**   статьи [использование проверки подлинности Azure Active Directory для проверки подлинности с помощью базы данных SQL или Azure синапсе](../sql-database/sql-database-aad-authentication.md#azure-ad-features-and-limitations). Управление доступом на основе ролей (RBAC) применяется только к порталу и не распространяется на SQL Server. Кроме того, выбранный пользователь или выбранная группа могут создать **пользователя автономной базы данных** в следующем разделе.
+   На странице "Администратор Active Directory" отобразятся все участники и группы Active Directory. Пользователи или группы, которые недоступны, не могут быть выбраны, так как они не поддерживаются как администраторы Azure Active Directory. Список поддерживаемых администраторов см. в разделе **Azure Active Directory функции и ограничения**   статьи [использование проверки подлинности Azure Active Directory для проверки подлинности с помощью базы данных SQL или Azure синапсе](../sql-database/sql-database-aad-authentication.md#azure-ad-features-and-limitations). Управление доступом на основе ролей Azure (Azure RBAC) применяется только к порталу и не распространяется на SQL Server. Кроме того, выбранный пользователь или выбранная группа могут создать **пользователя автономной базы данных** в следующем разделе.
 
 1. На странице **Администратор Active Directory** нажмите кнопку **Сохранить**. Процесс смены администратора занимает несколько минут.
 

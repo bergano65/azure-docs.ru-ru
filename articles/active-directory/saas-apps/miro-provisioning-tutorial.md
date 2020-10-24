@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 10/21/2019
 ms.author: Zhchia
-ms.openlocfilehash: 164b2915d3085ff765635b10e97f7552df1bf4c8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 786e99cec4999eef0af92fe2be18bcf0e48ed379
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91256364"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92518999"
 ---
 # <a name="tutorial-configure-miro-for-automatic-user-provisioning"></a>Учебник. Настройка Миро для автоматической подготовки пользователей
 
@@ -79,7 +79,7 @@ ms.locfileid: "91256364"
 В этом разделе описано, как настроить службу подготовки Azure AD для создания, обновления и отключения пользователей и (или) групп в Миро на основе назначений пользователей и групп в Azure AD.
 
 > [!TIP]
-> Вы также можете включить единый вход на основе SAML для Миро, следуя инструкциям, приведенным в [руководстве по единому входу Миро](https://docs.microsoft.com/azure/active-directory/saas-apps/miro-tutorial). Единый вход можно настроить независимо от автоматической подготовки пользователей, хотя эти две возможности дополняют друг друга.
+> Вы также можете включить единый вход на основе SAML для Миро, следуя инструкциям, приведенным в [руководстве по единому входу Миро](./miro-tutorial.md). Единый вход можно настроить независимо от автоматической подготовки пользователей, хотя эти две возможности дополняют друг друга.
 
 > [!NOTE]
 > Дополнительные сведения о конечной точке SCIM Миро см. [здесь](https://help.miro.com/hc/en-us/articles/360036777814).
@@ -158,4 +158,3 @@ ms.locfileid: "91256364"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../app-provisioning/check-status-user-account-provisioning.md)
-

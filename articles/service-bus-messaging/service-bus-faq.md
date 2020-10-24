@@ -3,12 +3,12 @@ title: Часто задаваемые вопросы о служебной ши
 description: В этой статье содержатся ответы на некоторые часто задаваемые вопросы о служебной шине Azure.
 ms.topic: article
 ms.date: 09/16/2020
-ms.openlocfilehash: addd629f137c5f638cd32a639f79cdbbafc4a94d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ec79b6988fdbc78dc4f45e504f84179e617589cc
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90894530"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92518761"
 ---
 # <a name="azure-service-bus---frequently-asked-questions-faq"></a>Служебная шина Azure — часто задаваемые вопросы
 
@@ -83,11 +83,11 @@ ms.locfileid: "90894530"
     > IP-адрес, возвращенный `nslookup` командой, не является статическим IP-адресом. Однако он остается постоянным до тех пор, пока базовое развертывание не будет удалено или перемещено в другой кластер.
 
 ### <a name="where-can-i-find-the-ip-address-of-the-client-sendingreceiving-messages-tofrom-a-namespace"></a>Где можно найти IP-адрес клиента, отправляющего и принимающего сообщения в пространство имен? 
-Мы не будем регистрировать IP-адреса клиентов, отправляющих или получающих сообщения в пространство имен. Повторно создайте ключи, чтобы все существующие клиенты не могли пройти проверку подлинности и проверить параметры управления доступом на основе ролей ([RBAC](authenticate-application.md#azure-built-in-roles-for-azure-service-bus)), чтобы обеспечить доступ к пространству имен только пользователям или приложениям. 
+Мы не будем регистрировать IP-адреса клиентов, отправляющих или получающих сообщения в пространство имен. Повторное создание ключей для того, чтобы все существующие клиенты не могли пройти проверку подлинности и проверить параметры [управления доступом на основе ролей Azure (Azure RBAC)](authenticate-application.md#azure-built-in-roles-for-azure-service-bus), чтобы разрешить доступ к пространству имен только пользователям или приложениям. 
 
 Если вы используете пространство имен уровня " **премиум** ", используйте [IP-фильтрацию](service-bus-ip-filtering.md), [конечные точки службы виртуальной сети](service-bus-service-endpoints.md)и [частные конечные точки](private-link-service.md) , чтобы ограничить доступ к пространству имен. 
 
-## <a name="best-practices"></a>Рекомендации
+## <a name="best-practices"></a>Советы и рекомендации
 ### <a name="what-are-some-azure-service-bus-best-practices"></a>Рекомендации по работе со служебной шиной Azure
 См. [рекомендации по повышению производительности с помощью обмена сообщениями через служебную шину][Best practices for performance improvements using Service Bus]. В этой статье описывается, как оптимизировать производительность обмена сообщениями.
 
@@ -163,7 +163,7 @@ $res = Find-AzResource -ResourceNameContains mynamespace -ResourceType 'Microsof
 Move-AzResource -DestinationResourceGroupName 'targetRG' -DestinationSubscriptionId 'ffffffff-ffff-ffff-ffff-ffffffffffff' -ResourceId $res.ResourceId
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о служебной шине см. в следующих статьях:
 
 * [Introducing Azure Service Bus Premium Messaging](https://azure.microsoft.com/blog/introducing-azure-service-bus-premium-messaging/) (Общие сведения об обмене сообщениями через служебную шину Azure уровня "Премиум") (запись блога)

@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: vamahtan
 ms.author: vamahtan
 ms.date: 10/19/2020
-ms.openlocfilehash: 96df9610f0da94cfe7d3a82fc8ef72aeb539b2d0
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 343a6c92c9d77b5ef589477802015c6346a95ea9
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92207719"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92521001"
 ---
 # <a name="co-sell-partner-engagement"></a>Участие партнеров в совместных продажах
 
@@ -71,11 +71,13 @@ ms.locfileid: "92207719"
 
     :::image type="content" source="media/co-sell/co-sell-documents-section.png" alt-text="На этом рисунке показано расположение совместной продажи на вкладке Майкрософт." **Контакты** ". Microsoft продавцов может обратиться к этим контактам, чтобы запросить дополнительные сведения о предложении. (*Обязательно. контакт для каждого географического региона, в котором предоставляется ваше предложение.*)
 
-    :::image type="content" source="media/co-sell/co-sell-contacts-section.png" alt-text="На этом рисунке показано расположение совместной продажи на вкладке Майкрософт.":::
+    :::image type="content" source="media/co-sell/co-sell-contacts-section.png" alt-text="На этом рисунке показано расположение совместной продажи на вкладке Майкрософт." в раскрывающемся списке "требуемые службы ЦЕД Services":
+<ul><ul>
 
-1. Сохраните черновик, прежде чем продолжить.
-1. После того как все необходимые разделы предложения будут настроены, вы сможете отправить его для проверки и публикации. В правом верхнем углу выберите **проверить и опубликовать**. Просмотрите сведения о предложении, а затем выберите **опубликовать**.
-1. Мы продемонстрируем загруженные материалы и сможем определить, подходит ли ваше предложение для программы совместной продажи.
+:::image type="content" source="media/co-sell/co-sell-request-review.png" alt-text="На этом рисунке показано расположение совместной продажи на вкладке Майкрософт.":::
+
+ЦЕД будет обращаться к вам для завершения процесса.
+</ul></ul>
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

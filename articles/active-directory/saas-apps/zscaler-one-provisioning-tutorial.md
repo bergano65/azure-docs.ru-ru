@@ -11,19 +11,19 @@ ms.workload: identity
 ms.topic: article
 ms.date: 03/27/2019
 ms.author: jeedes
-ms.openlocfilehash: 978f8ff5e57a5a9a1df10152713c8c42901b3b6f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e306c65735d8a5682cd90a1ce28fceec7d045c4d
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88545868"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92519764"
 ---
 # <a name="tutorial-configure-zscaler-one-for-automatic-user-provisioning"></a>Руководство. Настройка Zscaler для автоматической подготовки пользователей
 
 В этом руководстве показано, как выполнить действия в Zscaler One и Azure Active Directory (Azure AD), чтобы настроить Azure AD для автоматической инициализации и отмены наполнения пользователей и групп, Zscaler их.
 
 > [!NOTE]
-> В этом руководстве рассматривается соединитель, созданный на основе службы подготовки пользователей Azure AD. Сведения о том, что делает эта служба, как она работает, а также часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и их отзыв для приложений SaaS в Azure Active Directory](../active-directory-saas-app-provisioning.md).
+> В этом руководстве рассматривается соединитель, созданный на основе службы подготовки пользователей Azure AD. Сведения о том, что делает эта служба, как она работает, а также часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и их отзыв для приложений SaaS в Azure Active Directory](../app-provisioning/user-provisioning.md).
 
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -63,7 +63,7 @@ ms.locfileid: "88545868"
 
 В Azure Active Directory для определения того, какие пользователи должны получать доступ к выбранным приложениям, используется концепция, называемая *назначением*. В контексте автоматической подготовки синхронизируются только те пользователи и группы, которые были назначены приложению в Azure AD.
 
-Перед настройкой и включением автоматической подготовки пользователей решите, какие пользователи или группы в Azure AD должны иметь доступ к Zscaler. Чтобы назначить этих пользователей или группы, Zscaler их, следуйте инструкциям в статье [Назначение пользователя или группы корпоративному приложению](https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-assign-user-azure-portal).
+Перед настройкой и включением автоматической подготовки пользователей решите, какие пользователи или группы в Azure AD должны иметь доступ к Zscaler. Чтобы назначить этих пользователей или группы, Zscaler их, следуйте инструкциям в статье [Назначение пользователя или группы корпоративному приложению](../manage-apps/assign-user-or-group-access-portal.md).
 
 ### <a name="important-tips-for-assigning-users-to-zscaler-one"></a>Важные советы по назначению пользователей Zscaler
 
@@ -134,7 +134,7 @@ ms.locfileid: "88545868"
 
     ![Zscaler один соответствующий атрибут группы](./media/zscaler-one-provisioning-tutorial/group-attribute-mappings.png)
 
-14. Чтобы настроить фильтры области, ознакомьтесь с инструкциями в статье [Подготовка приложений на основе атрибутов с использованием фильтров области](./../active-directory-saas-scoping-filters.md).
+14. Чтобы настроить фильтры области, ознакомьтесь с инструкциями в статье [Подготовка приложений на основе атрибутов с использованием фильтров области](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 15. Чтобы включить службу подготовки Azure AD для Zscaler, в разделе **Параметры** измените значение параметра **состояние подготовки** на **включено**.
 
@@ -152,7 +152,7 @@ ms.locfileid: "88545868"
 
 В разделе **Сведения о синхронизации** можно отслеживать ход выполнения и переходить по ссылкам для просмотра отчета о подготовке. В отчете описаны все действия, выполняемые службой подготовки Azure AD на Zscaler.
 
-Сведения о журналах подготовки Azure AD см. в руководстве [по отчетам об автоматической подготовке учетных записей пользователей](../active-directory-saas-provisioning-reporting.md).
+Сведения о журналах подготовки Azure AD см. в руководстве [по отчетам об автоматической подготовке учетных записей пользователей](../app-provisioning/check-status-user-account-provisioning.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
@@ -161,7 +161,7 @@ ms.locfileid: "88545868"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../active-directory-saas-provisioning-reporting.md)
+* [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../app-provisioning/check-status-user-account-provisioning.md)
 
 <!--Image references-->
 [1]: ./media/zscaler-one-provisioning-tutorial/tutorial-general-01.png

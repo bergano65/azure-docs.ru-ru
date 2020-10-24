@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 03/27/2019
 ms.author: jeedes
-ms.openlocfilehash: 71d9af57ab85d694cc08f30c19f6ac87796b2c4e
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: fa28b299a33f5386edc6ce14c523d2c332b0767b
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92425562"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92520512"
 ---
 # <a name="tutorial-configure-tableau-online-for-automatic-user-provisioning"></a>Руководство. Настройка Tableau Online для автоматической подготовки пользователей
 
@@ -61,7 +61,7 @@ ms.locfileid: "92425562"
 
 В Azure Active Directory для определения того, какие пользователи должны получать доступ к выбранным приложениям, используется концепция, называемая *назначением*. В контексте автоматической подготовки синхронизируются только те пользователи и группы, которые были назначены приложению в Azure AD.
 
-Перед настройкой и включением автоматической подготовки пользователей решите, каким пользователям или группам в Azure AD нужен доступ к Tableau Online. Чтобы назначить этих пользователей или группы в Tableau Online, следуйте инструкциям в статье [Назначение пользователя или группы корпоративному приложению](https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-assign-user-azure-portal).
+Перед настройкой и включением автоматической подготовки пользователей решите, каким пользователям или группам в Azure AD нужен доступ к Tableau Online. Чтобы назначить этих пользователей или группы в Tableau Online, следуйте инструкциям в статье [Назначение пользователя или группы корпоративному приложению](../manage-apps/assign-user-or-group-access-portal.md).
 
 ### <a name="important-tips-for-assigning-users-to-tableau-online"></a>Важные советы по назначению пользователей в приложении Tableau Online
 
@@ -125,7 +125,7 @@ ms.locfileid: "92425562"
 
     ![Электронное уведомление Tableau Online](./media/tableau-online-provisioning-tutorial/EmailNotification.png)
 
-9. Нажмите **Сохранить**.
+9. Щелкните **Сохранить**.
 
 10. В разделе **Сопоставления** выберите **Синхронизировать пользователей Azure Active Directory с Tableau Online**.
 

@@ -1024,8 +1024,6 @@
               href: disks-benchmarks.md
             - name: Оптимизация производительности
               href: optimization.md
-            - name: Настройка программного RAID-массива
-              href: configure-raid.md
             - name: Настройка диспетчера логических томов
               href: configure-lvm.md
         - name: "Обнаружение неприсоединенных дисков\_— CLI"

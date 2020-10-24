@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 10/07/2019
 ms.author: Zhchia
-ms.openlocfilehash: 19767503769fe1a1e64d6ab137b811899adb29c3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5ecb4d249c8c2167ec61740eb9515fd1937230b0
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91312344"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92519747"
 ---
 # <a name="tutorial-configure-zscaler-private-access-zpa-for-automatic-user-provisioning"></a>Руководство. Настройка частного доступа Zscaler (ZPA) для автоматической подготовки пользователей
 
@@ -114,7 +114,7 @@ ms.locfileid: "91312344"
 В этом разделе описано, как настроить службу подготовки Azure AD для создания, обновления и отключения пользователей и (или) групп в Zscaler Private Access (ZPA) на основе назначений пользователей и групп в Azure AD.
 
 > [!TIP]
-> Вы также можете включить единый вход на основе SAML для Zscaler Private Access (ZPA), следуя инструкциям, приведенным в [руководстве по единому входу в Zscaler Private Access (ZPA)](https://docs.microsoft.com/azure/active-directory/saas-apps/zscalerprivateaccess-tutorial). Единый вход можно настроить независимо от автоматической подготовки пользователей, хотя эти две функции дополняют друг друга.
+> Вы также можете включить единый вход на основе SAML для Zscaler Private Access (ZPA), следуя инструкциям, приведенным в [руководстве по единому входу в Zscaler Private Access (ZPA)](./zscalerprivateaccess-tutorial.md). Единый вход можно настроить независимо от автоматической подготовки пользователей, хотя эти две функции дополняют друг друга.
 
 > [!NOTE]
 > Дополнительные сведения о конечной точке SCIM для закрытого доступа Zscaler см. [здесь](https://www.zscaler.com/partners/microsoft).
@@ -189,4 +189,3 @@ ms.locfileid: "91312344"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../app-provisioning/check-status-user-account-provisioning.md)
-
