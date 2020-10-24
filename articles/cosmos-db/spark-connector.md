@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 05/21/2019
 ms.author: ramkris
-ms.openlocfilehash: 633baafa7f6cb1bc134f07ce64ba98ebd4cb626c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 50884a45e60826f09fffcc9f86992563e473424d
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90603056"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92478054"
 ---
 # <a name="accelerate-big-data-analytics-by-using-the-apache-spark-to-azure-cosmos-db-connector"></a>Ускорение аналитики больших данных с помощью соединителя Apache Spark для Azure Cosmos DB
 
@@ -33,8 +33,8 @@ ms.locfileid: "90603056"
 
 ## <a name="quickstart"></a>Краткое руководство
 
-* Выполните действия, описанные в статье Начало [работы с пакетом SDK для Java](sql-api-async-java-get-started.md) , чтобы настроить учетную запись Cosmos DB и заполнить некоторые данные.
-* Выполните действия, описанные в разделе [Azure Databricks Приступая к работе](/azure/azure-databricks/quickstart-create-databricks-workspace-portal) , чтобы настроить Azure Databricks рабочую область и кластер.
+* Выполните действия, описанные в статье Начало [работы с пакетом SDK для Java](./create-sql-api-java.md) , чтобы настроить учетную запись Cosmos DB и заполнить некоторые данные.
+* Выполните действия, описанные в разделе [Azure Databricks Приступая к работе](/azure/databricks/scenarios/quickstart-create-databricks-workspace-portal) , чтобы настроить Azure Databricks рабочую область и кластер.
 * Теперь можно создавать новые записные книжки и импортировать библиотеку соединителей Cosmos DB. Для получения дополнительных сведений о настройке рабочей области перейдите к разделу [Работа с соединителем Cosmos DB](#bk_working_with_connector) .
 * В следующем разделе приведены фрагменты кода, посвященные чтению и записи с помощью соединителя.
 
@@ -309,7 +309,7 @@ mvn clean package
 * [Демонстрации веб-канала изменений](https://github.com/Azure/azure-cosmosdb-spark/wiki/Change-Feed-demos)
 * [Демонстрации структурированного потока](https://github.com/Azure/azure-cosmosdb-spark/wiki/Structured-Stream-demos)
 
-### <a name="monitoring"></a>Наблюдение
+### <a name="monitoring"></a>Мониторинг
 
 * [Мониторинг заданий Spark с помощью Application Insights](https://github.com/Azure/azure-cosmosdb-spark/tree/2.3/samples/monitoring)
 

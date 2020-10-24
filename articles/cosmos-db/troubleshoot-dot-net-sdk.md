@@ -9,12 +9,12 @@ ms.subservice: cosmosdb-sql
 ms.topic: troubleshooting
 ms.reviewer: sngun
 ms.custom: devx-track-dotnet
-ms.openlocfilehash: 581c8fcad62c40555a90b7455a260259f3a09212
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e941c941c7b406be8d6931fd7af4108137220d56
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91802419"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92476915"
 ---
 # <a name="diagnose-and-troubleshoot-issues-when-using-azure-cosmos-db-net-sdk"></a>Diagnose and troubleshoot issues when using Azure Cosmos DB .NET SDK (Диагностика и устранение неполадок при использовании пакета SDK Azure Cosmos DB для .NET)
 
@@ -34,8 +34,8 @@ ms.locfileid: "91802419"
 *    Используйте последнюю версию [пакета SDK](sql-api-sdk-dotnet-standard.md). Предварительные версии пакетов SDK не следует использовать для рабочей среды. Это предотвратит Устранение известных проблем, которые уже исправлены.
 *    Просмотрите [советы по повышению производительности](performance-tips.md) и следуйте рекомендациям. Это поможет предотвратить масштабирование, задержку и другие проблемы с производительностью.
 *    Включите ведение журнала пакета SDK, чтобы помочь устранить проблему. Включение ведения журнала может повлиять на производительность, поэтому рекомендуется включать его только при устранении неполадок. Можно включить следующие журналы:
-*    [Метрики журнала](monitor-accounts.md) с помощью портал Azure. Метрики портала отображают данные телеметрии Azure Cosmos DB, что позволяет определить, соответствует ли эта ошибка Azure Cosmos DB или если она находится на стороне клиента.
-*    Заносить [строку диагностики](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.resourceresponsebase.requestdiagnosticsstring) в пакет SDK v2 или [ДИАГНОСТИКУ](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.responsemessage.diagnostics) в пакете SDK версии 3 из ответов операции Point.
+*    [Метрики журнала](./monitor-cosmos-db.md) с помощью портал Azure. Метрики портала отображают данные телеметрии Azure Cosmos DB, что позволяет определить, соответствует ли эта ошибка Azure Cosmos DB или если она находится на стороне клиента.
+*    Заносить [строку диагностики](/dotnet/api/microsoft.azure.documents.client.resourceresponsebase.requestdiagnosticsstring) в пакет SDK v2 или [ДИАГНОСТИКУ](/dotnet/api/microsoft.azure.cosmos.responsemessage.diagnostics) в пакете SDK версии 3 из ответов операции Point.
 *    Регистрировать [метрики запросов SQL](sql-api-query-metrics.md) из всех ответов на запросы 
 *    Следуйте указаниям по настройке [ведения журнала пакета SDK]( https://github.com/Azure/azure-cosmos-dotnet-v2/blob/master/docs/documentdb-sdk_capture_etl.md)
 
@@ -51,7 +51,7 @@ ms.locfileid: "91802419"
 * Вы можете столкнуться с проблемами подключения или доступности из-за недостатка ресурсов на клиентском компьютере. Мы рекомендуем отслеживать использование ЦП на узлах, на которых работает клиент Azure Cosmos DB, и масштабировать их, если они работают при высокой нагрузке.
 
 ### <a name="check-the-portal-metrics"></a>Проверка метрик портала
-Проверка [метрик портала](monitor-accounts.md) поможет определить, является ли это проблемой на стороне клиента, или возникли проблемы со службой. Например, если метрики содержат высокую частоту запросов с ограниченным количеством записей (код состояния HTTP 429), то есть запрос регулируется, а затем проверяется [слишком большое значение частоты запросов](troubleshoot-request-rate-too-large.md) . 
+Проверка [метрик портала](./monitor-cosmos-db.md) поможет определить, является ли это проблемой на стороне клиента, или возникли проблемы со службой. Например, если метрики содержат высокую частоту запросов с ограниченным количеством записей (код состояния HTTP 429), то есть запрос регулируется, а затем проверяется [слишком большое значение частоты запросов](troubleshoot-request-rate-too-large.md) . 
 
 ## <a name="common-error-status-codes"></a>Коды распространенных состояний ошибок <a id="error-codes"></a>
 
@@ -78,11 +78,11 @@ ms.locfileid: "91802419"
 
 * Добавьте конечную точку службы Azure Cosmos DB к подсети виртуальной сети для службы "Виртуальные машины Azure". Дополнительные сведения см. в статье [Конечные точки служб для виртуальной сети Azure](../virtual-network/virtual-network-service-endpoints-overview.md). 
 
-    При включении конечной точки службы запросы больше не отправляются с общедоступного IP-адреса в Azure Cosmos DB. Вместо этого отправляются идентификаторы виртуальной сети и подсети. Это изменение может привести к сбою брандмауэра, если разрешены только общедоступные IP-адреса. Если вы используете брандмауэр, при включении конечной точки службы добавьте подсеть в брандмауэре с помощью [списков управления доступом для виртуальных сетей](../virtual-network/virtual-networks-acl.md).
+    При включении конечной точки службы запросы больше не отправляются с общедоступного IP-адреса в Azure Cosmos DB. Вместо этого отправляются идентификаторы виртуальной сети и подсети. Это изменение может привести к сбою брандмауэра, если разрешены только общедоступные IP-адреса. Если вы используете брандмауэр, при включении конечной точки службы добавьте подсеть в брандмауэре с помощью [списков управления доступом для виртуальных сетей](/previous-versions/azure/virtual-network/virtual-networks-acl).
 * Назначьте [общедоступный IP-адрес виртуальной машине Azure](../load-balancer/troubleshoot-outbound-connection.md#assignilpip).
 
 ### <a name="high-network-latency"></a><a name="high-network-latency"></a>Высокая задержка сети
-Высокую задержку сети можно определить с помощью [строки диагностики](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.resourceresponsebase.requestdiagnosticsstring?view=azure-dotnet&preserve-view=true) в пакете SDK v2 или [диагностики](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.responsemessage.diagnostics?view=azure-dotnet&preserve-view=true#Microsoft_Azure_Cosmos_ResponseMessage_Diagnostics) в пакете SDK v3.
+Высокую задержку сети можно определить с помощью [строки диагностики](/dotnet/api/microsoft.azure.documents.client.resourceresponsebase.requestdiagnosticsstring?preserve-view=true&view=azure-dotnet) в пакете SDK v2 или [диагностики](/dotnet/api/microsoft.azure.cosmos.responsemessage.diagnostics?preserve-view=true&view=azure-dotnet#Microsoft_Azure_Cosmos_ResponseMessage_Diagnostics) в пакете SDK v3.
 
 Если [время ожидания](troubleshoot-dot-net-sdk-request-timeout.md) отсутствует, и диагностика отображают отдельные запросы, где большая задержка очевидна по разности между `ResponseTime` и `RequestStartTime` , например (>300 миллисекунд в этом примере):
 
@@ -94,11 +94,11 @@ ResponseTime: 2020-03-09T22:44:49.9279906Z, StoreResult: StorePhysicalAddress: r
 Эта задержка может быть вызвана несколькими причинами:
 
 * Приложение не работает в том же регионе, что и учетная запись Azure Cosmos DB.
-* Конфигурация [PreferredLocations](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.connectionpolicy.preferredlocations) или [аппликатионрегион](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.cosmosclientoptions.applicationregion) неверна и пытается подключиться к другому региону, на котором выполняется приложение.
+* Конфигурация [PreferredLocations](/dotnet/api/microsoft.azure.documents.client.connectionpolicy.preferredlocations) или [аппликатионрегион](/dotnet/api/microsoft.azure.cosmos.cosmosclientoptions.applicationregion) неверна и пытается подключиться к другому региону, на котором выполняется приложение.
 * В связи с высоким трафиком сетевой интерфейс может быть узким местом. Если приложение выполняется на виртуальных машинах Azure, возможны следующие обходные пути:
     * Рассмотрите возможность использования [виртуальной машины с включенной функцией ускорения сети](../virtual-network/create-vm-accelerated-networking-powershell.md).
     * Включить [ускоренную сеть на существующей виртуальной машине](../virtual-network/create-vm-accelerated-networking-powershell.md#enable-accelerated-networking-on-existing-vms).
-    * Рассмотрите возможность использования [виртуальной машины более высокого уровня](../virtual-machines/windows/sizes.md).
+    * Рассмотрите возможность использования [виртуальной машины более высокого уровня](../virtual-machines/sizes.md).
 
 ### <a name="common-query-issues"></a>Распространенные проблемы с запросами
 
@@ -112,7 +112,7 @@ ResponseTime: 2020-03-09T22:44:49.9279906Z, StoreResult: StorePhysicalAddress: r
 
 Если возникла следующая ошибка: `Unable to load DLL 'Microsoft.Azure.Cosmos.ServiceInterop.dll' or one of its dependencies:` и используют Windows, следует выполнить обновление до последней версии Windows.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения о рекомендациях по производительности для [.NET v3](performance-tips-dotnet-sdk-v3-sql.md) и [.NET v2](performance-tips.md)
 * Узнайте о [пакетах средств разработки Java на основе Reactor](https://github.com/Azure-Samples/azure-cosmos-java-sql-api-samples/blob/master/reactor-pattern-guide.md).

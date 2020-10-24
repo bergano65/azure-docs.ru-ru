@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 12/20/2019
-ms.openlocfilehash: 3ec50acc693452fe73d929effcea98b12fc5ff8b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a663eb65bcd85a1b2e91e6f2ad90dc64b61273ce
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75933933"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92484769"
 ---
 # <a name="work-in-the-apache-hadoop-ecosystem-on-hdinsight-from-a-windows-pc"></a>Работа в экосистеме Apache Hadoop в HDInsight на компьютере с Windows
 
@@ -58,7 +58,7 @@ Azure PowerShell — это среда сценариев, которая по�
 Visual Studio с пакетом SDK для .NET позволяет управлять кластерами и разрабатывать приложения больших данных. Ниже приведены примеры задач, которые можно выполнять в Visual Studio. Но их также можно выполнять и с помощью других интерфейсов IDE.
 
 При помощи пакета SDK для .NET в Visual Studio можно выполнять следующие задачи:
-* [Пакет SDK Azure HDInsight для .NET](https://docs.microsoft.com/dotnet/api/overview/azure/hdinsight?view=azure-dotnet).
+* [Пакет SDK Azure HDInsight для .NET](/dotnet/api/overview/azure/hdinsight?view=azure-dotnet&preserve-view=true).
 * [Выполнение запросов Apache Hive с помощью пакета SDK для .NET](hadoop/apache-hadoop-use-hive-dotnet-sdk.md).
 * [Используйте определяемые пользователем функции C# с Apache Hive и потоковой передачей Apache Pig на Apache Hadoop](hadoop/apache-hadoop-hive-pig-udf-dotnet-csharp.md).
 
@@ -90,7 +90,7 @@ Visual Studio с пакетом SDK для .NET позволяет управл�
 
 ## <a name="cross-platform-tools"></a>Кросс-платформенные средства
 
-Azure CLI — это кроссплатформенный интерфейс командной строки от Майкрософт для управления ресурсами Azure.  Дополнительные сведения см. в статье [Azure Command-Line Interface (CLI)](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest).
+Azure CLI — это кроссплатформенный интерфейс командной строки от Майкрософт для управления ресурсами Azure.  Дополнительные сведения см. в статье [Azure Command-Line Interface (CLI)](/cli/azure/).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

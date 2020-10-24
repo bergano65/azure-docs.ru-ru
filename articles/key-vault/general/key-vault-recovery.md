@@ -8,14 +8,14 @@ author: ShaneBala-keyvault
 ms.author: sudbalas
 manager: ravijan
 ms.date: 09/30/2020
-ms.openlocfilehash: bea4a5d92309710645dd63e611cd0a5e3b742c34
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a0fe5c2af42e8d8095963e29149e1338cc064c90
+ms.sourcegitcommit: d6a739ff99b2ba9f7705993cf23d4c668235719f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91604353"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92495184"
 ---
-# <a name="azure-key-vault-recovery-overview"></a>Общие сведения о восстановлении Azure Key Vault
+# <a name="how-to-enable-soft-delete-and-purge-protection"></a>Включение защиты от обратимого удаления и очистки
 
 В этой статье рассматриваются две функции восстановления Azure Key Vault, обратимого удаления и защиты от вирусов. В этом документе представлен обзор этих функций и показано, как управлять ими с помощью портал Azure, Azure CLI и Azure PowerShell.
 
@@ -89,7 +89,7 @@ ms.locfileid: "91604353"
 
 :::image type="content" source="../media/key-vault-recovery-5.png" alt-text="<снимок экрана портал Azure>":::
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 
 ## <a name="key-vault-cli"></a>Key Vault (CLI)
 

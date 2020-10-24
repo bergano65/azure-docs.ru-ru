@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 7/23/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: e874e7107af0eac60f16f5494c04905da56f785a
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 0dfc93987fb2ca25b9e397e4aa91adcaaafd8a38
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92205506"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92478864"
 ---
 # <a name="set-up-an-azure-digital-twins-instance-and-authentication-portal"></a>Настройка экземпляра и проверки подлинности Azure Digital двойников (портал)
 
@@ -75,7 +75,7 @@ ms.locfileid: "92205506"
 :::image type="content" source="media/how-to-set-up-instance/portal/add-role-assignment-1.png" alt-text="Выбор пункта &quot;создать ресурс&quot; на домашней странице портал Azure":::
 
 На следующей странице *Добавление назначения ролей* введите значения (они должны быть выполнены пользователем с [достаточными разрешениями](#prerequisites-permission-requirements) в подписке Azure):
-* **Роль**: в раскрывающемся меню выберите *Azure Digital двойников Owner (Предварительная версия)* .
+* **Роль**: выберите *Azure Digital двойников Data Owner* в раскрывающемся меню.
 * **Назначение доступа к**: выберите *пользователя Azure AD, группу или субъект-службу* в раскрывающемся меню
 * **Выберите**: найдите имя или адрес электронной почты пользователя, которого нужно назначить. При выборе результата пользователь будет отображаться в разделе *Выбранные элементы* .
 
@@ -91,13 +91,13 @@ ms.locfileid: "92205506"
 
 ### <a name="verify-success"></a>Проверка успешного выполнения
 
-Вы можете просмотреть назначение ролей, настроенное в разделе *Управление доступом (IAM) > назначения ролей*. Пользователь должен отображаться в списке с ролью *владельца Azure Digital двойников (Предварительная версия)*. 
+Вы можете просмотреть назначение ролей, настроенное в разделе *Управление доступом (IAM) > назначения ролей*. Пользователь должен отображаться в списке с ролью *владельца данных Azure Digital двойников*. 
 
 :::image type="content" source="media/how-to-set-up-instance/portal/verify-role-assignment.png" alt-text="Выбор пункта &quot;создать ресурс&quot; на домашней странице портал Azure":::
 
 Теперь у вас есть экземпляр Azure Digital двойников, который готов к работе и ему назначены разрешения для управления им.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Вытестируйте отдельные REST API вызовы в экземпляре с помощью команд CLI Azure Digital двойников: 
 * [AZ DT Справочник](/cli/azure/ext/azure-iot/dt?preserve-view=true&view=azure-cli-latest)

@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 10/13/2020
 ms.author: jawilley
 ms.custom: devx-track-dotnet
-ms.openlocfilehash: c869f80eba5a6bdff4b952c62b0d964401f904d2
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: 05fe22ed0dc7d03148f66fd02aa648e1b63ab319
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92277306"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92475334"
 ---
 # <a name="performance-tips-for-azure-cosmos-db-and-net"></a>Советы по повышению производительности для .NET в Azure Cosmos DB
 
@@ -39,7 +39,7 @@ Azure Cosmos DB — это быстрая, гибкая распределенн
 
 Четыре типа приложений, перечисленные здесь, по умолчанию используют 32-разрядную обработку узла. Чтобы изменить обработку узла до 64-разрядной обработки для типа приложения, выполните следующие действия.
 
-- **Для исполняемых приложений**: в окне **Свойства проекта** на панели **Сборка** задайте для параметра [Целевая платформа](https://docs.microsoft.com/visualstudio/ide/how-to-configure-projects-to-target-platforms?view=vs-2019&preserve-view=true) значение **x64**.
+- **Для исполняемых приложений**: в окне **Свойства проекта** на панели **Сборка** задайте для параметра [Целевая платформа](/visualstudio/ide/how-to-configure-projects-to-target-platforms?preserve-view=true&view=vs-2019) значение **x64**.
 
 - **Для тестовых проектов на основе VSTest**: в меню **тест** Visual **Studio выберите пункт**  >  **Параметры**тестирования, а затем задайте для параметра **архитектура процессора по умолчанию** значение **x64**.
 
@@ -53,7 +53,7 @@ Azure Cosmos DB — это быстрая, гибкая распределенн
     
 **Включить сбор мусора на стороне сервера**
 
-Уменьшение частоты сборки мусора может помочь в некоторых случаях. В .NET задайте для [gcServer](https://docs.microsoft.com/dotnet/core/run-time-config/garbage-collector#flavors-of-garbage-collection) значение `true` .
+Уменьшение частоты сборки мусора может помочь в некоторых случаях. В .NET задайте для [gcServer](/dotnet/core/run-time-config/garbage-collector#flavors-of-garbage-collection) значение `true` .
 
 **Масштабирование рабочей нагрузки клиента**
 
@@ -62,7 +62,7 @@ Azure Cosmos DB — это быстрая, гибкая распределенн
 > [!NOTE] 
 > Высокая загрузка ЦП может привести к увеличению задержки и исключениям времени ожидания запроса.
 
-## <a name="networking"></a>сеть;
+## <a name="networking"></a>Сеть
 <a id="direct-connection"></a>
 
 **Политика подключения: использование режима прямого подключения**
@@ -86,8 +86,8 @@ new CosmosClientOptions
 
 В сценариях, где имеется разреженный доступ, и если при сравнении с доступом к режиму шлюза вы заметили большее число подключений, вы можете:
 
-* Настройте свойство [космосклиентоптионс. портреусемоде](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.cosmosclientoptions.portreusemode) в значение `PrivatePortPool` (действующее с версиями платформы 4.6.1 и более поздних версий и .net Core версии 2,0 и более поздних). Это свойство позволяет пакету SDK использовать небольшой пул временных портов для различных конечных точек назначения Azure Cosmos DB.
-* Задайте для свойства [космосклиентоптионс. IdleConnectionTimeout](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.cosmosclientoptions.idletcpconnectiontimeout) значение больше или равное 10 минутам. Рекомендуемые значения — от 20 минут до 24 часов.
+* Настройте свойство [космосклиентоптионс. портреусемоде](/dotnet/api/microsoft.azure.cosmos.cosmosclientoptions.portreusemode) в значение `PrivatePortPool` (действующее с версиями платформы 4.6.1 и более поздних версий и .net Core версии 2,0 и более поздних). Это свойство позволяет пакету SDK использовать небольшой пул временных портов для различных конечных точек назначения Azure Cosmos DB.
+* Задайте для свойства [космосклиентоптионс. IdleConnectionTimeout](/dotnet/api/microsoft.azure.cosmos.cosmosclientoptions.idletcpconnectiontimeout) значение больше или равное 10 минутам. Рекомендуемые значения — от 20 минут до 24 часов.
 
 <a id="same-region"></a>
 
@@ -103,7 +103,7 @@ new CosmosClientOptions
 
 **Увеличение числа потоков и задач**
 
-Поскольку вызовы Azure Cosmos DB выполняются по сети, может потребоваться изменить степень параллелизма запросов, чтобы клиентское приложение тратило минимальное время ожидания между запросами. Например, если вы используете [библиотеку параллельных задач](https://msdn.microsoft.com//library/dd460717.aspx).NET, создайте в порядке сотни задач, считывающих или записывающих Azure Cosmos DB.
+Поскольку вызовы Azure Cosmos DB выполняются по сети, может потребоваться изменить степень параллелизма запросов, чтобы клиентское приложение тратило минимальное время ожидания между запросами. Например, если вы используете [библиотеку параллельных задач](/dotnet/standard/parallel-programming/task-parallel-library-tpl).NET, создайте в порядке сотни задач, считывающих или записывающих Azure Cosmos DB.
 
 **Включить ускоренную сеть**
  
@@ -146,7 +146,7 @@ itemResponse.Resource
 
 **Увеличение System.Net MaxConnections на узле при использовании режима шлюза**
 
-При использовании режима шлюза запросы Azure Cosmos DB выполняются по протоколу HTTPS/RESTFUL. К ним применяются ограничения на количество подключений по умолчанию для каждого имени узла или IP-адреса. Может потребоваться задать `MaxConnections` более высокое значение (от 100 до 1 000), чтобы клиентская библиотека могла использовать несколько одновременных подключений к Azure Cosmos DB. В пакете SDK для .NET 1.8.0 и более поздних версиях значение по умолчанию для [ServicePointManager. DefaultConnectionLimit](https://msdn.microsoft.com/library/system.net.servicepointmanager.defaultconnectionlimit.aspx) равно 50. Чтобы изменить значение, можно задать [`Documents.Client.ConnectionPolicy.MaxConnectionLimit`](https://msdn.microsoft.com/library/azure/microsoft.azure.documents.client.connectionpolicy.maxconnectionlimit.aspx) более высокое значение.
+При использовании режима шлюза запросы Azure Cosmos DB выполняются по протоколу HTTPS/RESTFUL. К ним применяются ограничения на количество подключений по умолчанию для каждого имени узла или IP-адреса. Может потребоваться задать `MaxConnections` более высокое значение (от 100 до 1 000), чтобы клиентская библиотека могла использовать несколько одновременных подключений к Azure Cosmos DB. В пакете SDK для .NET 1.8.0 и более поздних версиях значение по умолчанию для [ServicePointManager. DefaultConnectionLimit](/dotnet/api/system.net.servicepointmanager.defaultconnectionlimit) равно 50. Чтобы изменить значение, можно задать [`Documents.Client.ConnectionPolicy.MaxConnectionLimit`](/dotnet/api/microsoft.azure.documents.client.connectionpolicy.maxconnectionlimit) более высокое значение.
 
 **Настройка параллельных запросов для секционированных коллекций**
 
@@ -170,7 +170,7 @@ itemResponse.Resource
 
 Во время тестирования производительности следует увеличить нагрузку до тех пор, пока не будет отрегулировано небольшое количество запросов. Если запросы регулируемы, клиентское приложение должно отменить регулирование для указанного сервером интервала повторных попыток. В связи с этим переходом гарантируется минимальное количество времени, затрачиваемого на ожидание между повторными попытками. 
 
-Дополнительные сведения см. в разделе [RetryAfter](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.cosmosexception.retryafter?view=azure-dotnet&preserve-view=true#Microsoft_Azure_Cosmos_CosmosException_RetryAfter).
+Дополнительные сведения см. в разделе [RetryAfter](/dotnet/api/microsoft.azure.cosmos.cosmosexception.retryafter?preserve-view=true&view=azure-dotnet#Microsoft_Azure_Cosmos_CosmosException_RetryAfter).
     
 Существует механизм записи дополнительных диагностических сведений и устранения проблем задержки, как показано в следующем примере. Можно зарегистрировать строку диагностики для запросов с более высокой задержкой чтения. Захваченная строка диагностики поможет понять, сколько раз была получена ошибка *429* для данного запроса.
 
@@ -255,7 +255,7 @@ while (queryable.HasMoreResults)
 
 Плата за запрос (т. е. затраты на обработку запросов) указанной операции напрямую соотносится с размером документа. Операции с большими документами изменяют больше операций с малыми документами.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Пример приложения, который используется для оценки Azure Cosmos DB для высокопроизводительных сценариев на нескольких клиентских компьютерах, см. в статье [Тестирование производительности и масштабирования с помощью Azure Cosmos DB](performance-testing.md).
 
 Дополнительные сведения о создании приложения с высокой масштабируемостью и производительностью см. в статье [Partitioning and scaling in Azure Cosmos DB](partitioning-overview.md) (Секционирование и масштабирование в Azure Cosmos DB).

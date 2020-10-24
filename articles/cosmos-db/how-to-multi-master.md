@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 09/10/2020
 ms.author: mjbrown
 ms.custom: devx-track-python, devx-track-js, devx-track-csharp
-ms.openlocfilehash: 8079fb3ab04d5f613566816735491203d7df951a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 95337f88133c9493250e9197654288dc0af59ed1
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91570658"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92486146"
 ---
 # <a name="configure-multi-region-writes-in-your-applications-that-use-azure-cosmos-db"></a>Настройка операций записи в несколько регионов в приложениях, использующих Azure Cosmos DB
 
@@ -129,8 +129,8 @@ client = cosmos_client.CosmosClient(self.account_endpoint, {
 * [Типы конфликтов и политики их устранения](conflict-resolution-policies.md)
 * [Высокий уровень доступности в Azure Cosmos DB](high-availability.md)
 * [Уровни согласованности для Azure Cosmos DB](consistency-levels.md)
-* [Choose the right consistency level](consistency-levels-choosing.md) (Выбор правильного уровня согласованности)
-* [Недостатки согласованности, доступности и производительности в Azure Cosmos DB](consistency-levels-tradeoffs.md)
-* [Достижение компромисса между доступностью и быстродействием для разных уровней согласованности](consistency-levels-tradeoffs.md)
-* [Глобальное масштабирование подготовленной пропускной способности](scaling-throughput.md)
+* [Choose the right consistency level](./consistency-levels.md) (Выбор правильного уровня согласованности)
+* [Недостатки согласованности, доступности и производительности в Azure Cosmos DB](./consistency-levels.md)
+* [Достижение компромисса между доступностью и быстродействием для разных уровней согласованности](./consistency-levels.md)
+* [Глобальное масштабирование подготовленной пропускной способности](./request-units.md)
 * [Глобальное распределение. внутри](global-dist-under-the-hood.md)

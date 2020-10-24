@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 8/27/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 78addb76e2ce7a2679358e241650cc5cc827791f
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 0cc3a335e5fbe037742767a3b59243e366f094ee
+ms.sourcegitcommit: d6a739ff99b2ba9f7705993cf23d4c668235719f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92461623"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92495926"
 ---
 # <a name="connect-azure-functions-apps-for-processing-data"></a>Подключение приложений функций Azure для обработки данных
 
@@ -186,26 +186,28 @@ namespace adtIngestFunctionSample
 
 В схеме функций Azure из предыдущих примеров требуется передать в него токен носителя, чтобы иметь возможность проходить проверку подлинности в Azure Digital двойников. Чтобы убедиться, что этот токен носителя передан, необходимо настроить [управляемое удостоверение службы (MSI)](../active-directory/managed-identities-azure-resources/overview.md) для приложения-функции. Это необходимо сделать только один раз для каждого приложения функции.
 
-Вы можете создать управляемое системой удостоверение и назначить удостоверение приложения-функции для роли _владельца Azure Digital двойников (Предварительная версия)_ для своего экземпляра Azure Digital двойников. Это предоставит приложению функции в экземпляре разрешение на выполнение действий плоскости данных. Затем сделайте URL-адрес экземпляра Azure Digital двойников доступным для вашей функции, задав переменную среды.
+Вы можете создать управляемое системой удостоверение и назначить удостоверение приложения-функции для роли _**владельца данных Azure Digital двойников**_ для своего экземпляра Azure Digital двойников. Это предоставит приложению функции в экземпляре разрешение на выполнение действий плоскости данных. Затем сделайте URL-адрес экземпляра Azure Digital двойников доступным для вашей функции, задав переменную среды.
 
- Используйте [Azure Cloud Shell](https://shell.azure.com) для выполнения команд.
+[!INCLUDE [digital-twins-role-rename-note.md](../../includes/digital-twins-role-rename-note.md)]
+
+Используйте [Azure Cloud Shell](https://shell.azure.com) для выполнения команд.
 
 С помощью следующей команды создайте управляемое системой удостоверение. Запишите значение поля _principalId_ в выходных данных команды.
 
-```azurecli 
+```azurecli-interactive 
 az functionapp identity assign -g <your-resource-group> -n <your-App-Service-(function-app)-name>   
 ```
-Используйте значение _principalId_ в следующей команде, чтобы назначить удостоверение приложения-функции для роли _владельца Azure Digital двойников (Предварительная версия)_ для вашего экземпляра Digital двойников Azure.
+Используйте значение _principalId_ в следующей команде, чтобы назначить удостоверение приложения функции для роли _владельца данных Azure Digital двойников_ для вашего экземпляра цифрового двойников Azure.
 
-```azurecli 
-az dt role-assignment create --dt-name <your-Azure-Digital-Twins-instance> --assignee "<principal-ID>" --role "Azure Digital Twins Owner (Preview)"
+```azurecli-interactive 
+az dt role-assignment create --dt-name <your-Azure-Digital-Twins-instance> --assignee "<principal-ID>" --role "Azure Digital Twins Data Owner"
 ```
 Наконец, можно сделать так, чтобы URL-адрес вашего экземпляра Azure Digital двойников был доступен для вашей функции, задав переменную среды. Дополнительные сведения о настройке переменных среды см. в разделе [*переменные среды*](/sandbox/functions-recipes/environment-variables). 
 
 > [!TIP]
 > URL-адрес экземпляра Azure Digital двойников создается путем добавления *https://* в начало *имени узла*для цифрового двойникова Azure. Чтобы просмотреть имя узла, а также все свойства экземпляра, можно запустить `az dt show --dt-name <your-Azure-Digital-Twins-instance>` .
 
-```azurecli 
+```azurecli-interactive 
 az functionapp config appsettings set -g <your-resource-group> -n <your-App-Service-(function-app)-name> --settings "ADT_SERVICE_URL=https://<your-Azure-Digital-Twins-instance-hostname>"
 ```
 ### <a name="option-2-set-up-security-access-for-the-azure-function-app-using-azure-portal"></a>Вариант 2. Настройка безопасного доступа для приложения функции Azure с помощью портал Azure
@@ -241,7 +243,7 @@ az functionapp config appsettings set -g <your-resource-group> -n <your-App-Serv
 * _Область_ — группа ресурсов.
 * _Подписка_: выберите подписку Azure.
 * _Группа ресурсов_. Выберите группу ресурсов из раскрывающегося списка.
-* _Роль_: выберите _Azure Digital двойников Owner (Предварительная версия)_ в раскрывающемся списке.
+* _Роль_: выберите _Azure Digital двойников Data Owner_ в раскрывающемся списке.
 
 Затем сохраните сведения, нажав кнопку Save ( _сохранить_ ).
 

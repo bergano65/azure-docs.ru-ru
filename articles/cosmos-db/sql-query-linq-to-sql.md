@@ -6,16 +6,16 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 7/29/2020
 ms.author: tisande
-ms.openlocfilehash: f2a7570b7ebed26a06e1bd075c2904bc29061c21
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4f5e88e7201c4097e2f8d654b8780ea12816b15d
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87498860"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92485109"
 ---
 # <a name="linq-to-sql-translation"></a>Трансляция из LINQ в SQL
 
-Поставщик запросов Azure Cosmos DB выполняет наилучшее сопоставление запроса LINQ с запросом на Cosmos DB SQL. Если требуется получить SQL-запрос, преобразованный из LINQ, используйте `ToString()` метод для созданного `IQueryable` объекта. Следующее описание предполагает базовое знание [LINQ](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/linq/introduction-to-linq-queries).
+Поставщик запросов Azure Cosmos DB выполняет наилучшее сопоставление запроса LINQ с запросом на Cosmos DB SQL. Если требуется получить SQL-запрос, преобразованный из LINQ, используйте `ToString()` метод для созданного `IQueryable` объекта. Следующее описание предполагает базовое знание [LINQ](/dotnet/csharp/programming-guide/concepts/linq/introduction-to-linq-queries).
 
 Система типов поставщиков запросов поддерживает только типы-примитивы JSON: numeric, Boolean, String и NULL.
 
@@ -23,7 +23,7 @@ ms.locfileid: "87498860"
 
 - Постоянные значения, включая постоянные значения типов данных-примитивов во время оценки запроса.
   
-- Выражения индекса свойства или массива, которые ссылаются на свойство объекта или элемента массива. Пример:
+- Выражения индекса свойства или массива, которые ссылаются на свойство объекта или элемента массива. Например:
   
   ```
     family.Id;

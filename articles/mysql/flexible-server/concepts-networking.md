@@ -6,12 +6,12 @@ ms.author: ambhatna
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 9/23/2020
-ms.openlocfilehash: 48265856e5e745e05f6625766f9cd0c9b15c90a5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: eaccd0559439ce228325205f5845151f0e76bcae
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91708668"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92484531"
 ---
 # <a name="connectivity-and-networking-concepts-for-azure-database-for-mysql---flexible-server-preview"></a>Основные понятия подключения и сети для базы данных Azure для MySQL — гибкий сервер (Предварительная версия)
 
@@ -73,6 +73,8 @@ ms.locfileid: "91708668"
 
 Узнайте, как включить частный доступ (интеграция с виртуальной сетью) с помощью [портал Azure](how-to-manage-virtual-network-portal.md) или [Azure CLI](how-to-manage-virtual-network-cli.md).
 
+> [!NOTE]
+> При использовании настраиваемого DNS-сервера необходимо использовать DNS-сервер пересылки для разрешения полного доменного имени базы данных Azure для MySQL — гибкого сервера. Дополнительные сведения см. в разделе [разрешение имен, которое использует собственный DNS-сервер](../../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md#name-resolution-that-uses-your-own-dns-server) .
 
 ## <a name="public-access-allowed-ip-addresses"></a>Открытый доступ (разрешенные IP-адреса)
 Характеристики общедоступного метода доступа включают:
@@ -122,7 +124,7 @@ ms.locfileid: "91708668"
 База данных Azure для гибкого сервера MySQL поддерживает только зашифрованные подключения с использованием протокола TLS 1,2. Все входящие подключения с TLS 1,0 и TLS 1,1 будут отклонены. Вы не можете отключить или изменить версию TLS для подключения к гибкому серверу базы данных Azure для MySQL.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте, как включить закрытый доступ (интеграция с виртуальной сетью) с помощью [портала Azure](how-to-manage-virtual-network-portal.md) или [Azure CLI](how-to-manage-virtual-network-cli.md).
 * Узнайте, как включить открытый доступ (разрешенные IP-адреса) с помощью [портала Azure](how-to-manage-firewall-portal.md) или [Azure CLI](how-to-manage-firewall-cli.md).
 * Узнайте, как [использовать TLS](how-to-connect-tls-ssl.md)

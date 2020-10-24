@@ -8,12 +8,12 @@ ms.author: jawilley
 ms.topic: troubleshooting
 ms.reviewer: sngun
 ms.custom: devx-track-dotnet
-ms.openlocfilehash: 0c760a3a2f6300108c1739f18ef9fa97a40dd833
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 211121e21502e9cd4929169053a8ad58a9d7b21b
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89021941"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92476932"
 ---
 # <a name="diagnose-and-troubleshoot-azure-cosmos-db-net-sdk-request-timeout-exceptions"></a>Диагностика и устранение неполадок с Azure Cosmos DB исключениями времени ожидания запроса пакета SDK для .NET
 Ошибка HTTP 408 возникает, если пакету SDK не удалось выполнить запрос до наступления предельного времени ожидания.
@@ -28,7 +28,7 @@ ms.locfileid: "89021941"
 
 ### <a name="cancellationtoken"></a>CancellationToken
 
-Все асинхронные операции в пакете SDK имеют необязательный параметр CancellationToken. Этот параметр [CancellationToken](https://docs.microsoft.com/dotnet/standard/threading/how-to-listen-for-cancellation-requests-by-polling) используется во всей операции во всех сетевых запросах. В между сетевыми запросами может быть установлен маркер отмены, и операция отменяется, если истек срок действия связанного маркера. Токен отмены следует использовать для определения приблизительного ожидаемого времени ожидания в области действия операции.
+Все асинхронные операции в пакете SDK имеют необязательный параметр CancellationToken. Этот параметр [CancellationToken](/dotnet/standard/threading/how-to-listen-for-cancellation-requests-by-polling) используется во всей операции во всех сетевых запросах. В между сетевыми запросами может быть установлен маркер отмены, и операция отменяется, если истек срок действия связанного маркера. Токен отмены следует использовать для определения приблизительного ожидаемого времени ожидания в области действия операции.
 
 > [!NOTE]
 > `CancellationToken`Параметр — это механизм, при котором библиотека проверяет отмену, когда она [не вызывает недопустимого состояния](https://devblogs.microsoft.com/premier-developer/recommended-patterns-for-cancellationtoken/). Операция может не отменяться в точности, если время, определенное в отмене, истекло. В противном случае она отменяется, когда это надежно.

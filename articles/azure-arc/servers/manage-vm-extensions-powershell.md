@@ -1,20 +1,20 @@
 ---
 title: Включение расширения виртуальной машины с помощью Azure PowerShell
 description: В этой статье описывается, как развернуть расширения виртуальной машины на серверах с поддержкой дуги Azure, работающих в гибридных облачных средах, с помощью Azure PowerShell.
-ms.date: 10/19/2020
+ms.date: 10/23/2020
 ms.topic: conceptual
-ms.openlocfilehash: 631aa323fee8db712acc975336bdbf9436833240
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: d2408f75c7b6d81ba297de6dcdb85a712cd8908f
+ms.sourcegitcommit: d6a739ff99b2ba9f7705993cf23d4c668235719f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92462988"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92495443"
 ---
 # <a name="enable-azure-vm-extensions-using-azure-powershell"></a>Включение расширений виртуальной машины Azure с помощью Azure PowerShell
 
 В этой статье показано, как развертывать и удалять расширения виртуальной машины Azure, поддерживаемые серверами с поддержкой ARC в Azure, на гибридный компьютер под управлением Linux или Windows с помощью Azure PowerShell.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 - Компьютер с Azure PowerShell. Инструкции см. в статье [Установка и настройка Azure PowerShell](/powershell/azure/).
 
@@ -35,21 +35,21 @@ ms.locfileid: "92462988"
 ```powershell
 PS C:\> $Setting = @{ "workspaceId" = "workspaceId" }
 PS C:\> $protectedSetting = @{ "workspaceKey" = "workspaceKey" }
-PS C:\> New-AzConnectedMachine -Name OMSLinuxAgent -ResourceGroupName "myResourceGroup" -MachineName "myMachine" -Location "eastus" -Publisher "Microsoft.EnterpriseCloud.Monitoring" -TypeHandlerVersion "1.10" -Settings $Setting -ProtectedSetting $protectedSetting -ExtensionType OmsAgentforLinux"
+PS C:\> New-AzConnectedMachineExtension -Name OMSLinuxAgent -ResourceGroupName "myResourceGroup" -MachineName "myMachine" -Location "eastus" -Publisher "Microsoft.EnterpriseCloud.Monitoring" -TypeHandlerVersion "1.10" -Settings $Setting -ProtectedSetting $protectedSetting -ExtensionType OmsAgentforLinux"
 ```
 
 В следующем примере активируется расширение пользовательского скрипта на сервере с поддержкой ARC:
 
 ```powershell
 PS C:\> $Setting = @{ "commandToExecute" = "powershell.exe -c Get-Process" }
-PS C:\> New-AzConnectedMachine -Name custom -ResourceGroupName myResourceGroup -MachineName myMachineName -Location eastus -Publisher "Microsoft.Compute" -TypeHandlerVersion 1.10 -Settings $Setting -ExtensionType CustomScriptExtension
+PS C:\> New-AzConnectedMachineExtension -Name custom -ResourceGroupName myResourceGroup -MachineName myMachineName -Location eastus -Publisher "Microsoft.Compute" -TypeHandlerVersion 1.10 -Settings $Setting -ExtensionType CustomScriptExtension
 ```
 
 ## <a name="list-extensions-installed"></a>Список установленных расширений
 
 Чтобы получить список расширений виртуальной машины на сервере с поддержкой Arc, используйте [Get-азконнектедмачиникстенсион](/powershell/module/az.connectedmachine/get-azconnectedmachineextension) с `-MachineName` `-ResourceGroupName` параметрами и.
 
-Пример
+Пример.
 
 ```powershell
 Get-AzConnectedMachineExtension -ResourceGroupName myResourceGroup -MachineName myMachineName

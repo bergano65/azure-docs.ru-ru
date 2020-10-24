@@ -8,25 +8,25 @@ ms.topic: how-to
 ms.date: 05/17/2019
 ms.author: girobins
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 71ebc90834083def5b82e16dc387a6e61943206d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0d47bd90f7704cd3c55f9e5d64fe6b58946d4568
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89021754"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92475096"
 ---
 # <a name="get-sql-query-execution-metrics-and-analyze-query-performance-using-net-sdk"></a>Получение метрик выполнения запросов SQL и анализ производительности запросов с помощью пакета SDK для .NET
 
-В этой статье описывается, как профилировать производительность запросов SQL на Azure Cosmos DB. Это профилирование можно выполнить с помощью команды, `QueryMetrics` полученной из пакета SDK для .NET, и подробно описано здесь. [Куериметрикс](https://msdn.microsoft.com/library/microsoft.azure.documents.querymetrics.aspx) — это строго типизированный объект со сведениями о выполнении внутреннего запроса. Эти метрики более подробно описаны в статье [Настройка производительности запросов](https://docs.microsoft.com/azure/cosmos-db/documentdb-sql-query-metrics) .
+В этой статье описывается, как профилировать производительность запросов SQL на Azure Cosmos DB. Это профилирование можно выполнить с помощью команды, `QueryMetrics` полученной из пакета SDK для .NET, и подробно описано здесь. [Куериметрикс](/dotnet/api/microsoft.azure.documents.querymetrics) — это строго типизированный объект со сведениями о выполнении внутреннего запроса. Эти метрики более подробно описаны в статье [Настройка производительности запросов](./sql-api-query-metrics.md) .
 
 ## <a name="set-the-feedoptions-parameter"></a>Задание параметра FeedOptions
 
-Все перегрузки для [DocumentClient. CreateDocumentQuery](https://msdn.microsoft.com/library/microsoft.azure.documents.client.documentclient.createdocumentquery.aspx) принимают необязательный параметр [FeedOptions](https://msdn.microsoft.com/library/microsoft.azure.documents.client.feedoptions.aspx) . Этот параметр позволяет настроить и параметризованное выполнение запроса. 
+Все перегрузки для [DocumentClient. CreateDocumentQuery](/dotnet/api/microsoft.azure.documents.client.documentclient.createdocumentquery) принимают необязательный параметр [FeedOptions](/dotnet/api/microsoft.azure.documents.client.feedoptions) . Этот параметр позволяет настроить и параметризованное выполнение запроса. 
 
-Для сбора метрик выполнения запросов SQL необходимо задать параметру [популатекуериметрикс](https://msdn.microsoft.com/library/microsoft.azure.documents.client.feedoptions.populatequerymetrics.aspx#P:Microsoft.Azure.Documents.Client.FeedOptions.PopulateQueryMetrics) в [FeedOptions](https://msdn.microsoft.com/library/microsoft.azure.documents.client.feedoptions.aspx) значение `true` . Если задано `PopulateQueryMetrics` значение true, то будет `FeedResponse` содержать соответствующий объект `QueryMetrics` . 
+Для сбора метрик выполнения запросов SQL необходимо задать параметру [популатекуериметрикс](/dotnet/api/microsoft.azure.documents.client.feedoptions.populatequerymetrics#P:Microsoft.Azure.Documents.Client.FeedOptions.PopulateQueryMetrics) в [FeedOptions](/dotnet/api/microsoft.azure.documents.client.feedoptions) значение `true` . Если задано `PopulateQueryMetrics` значение true, то будет `FeedResponse` содержать соответствующий объект `QueryMetrics` . 
 
 ## <a name="get-query-metrics-with-asdocumentquery"></a>Получение метрик запроса с помощью Асдокументкуери ()
-В следующем примере кода показано, как получить метрики при использовании метода [асдокументкуери ()](https://msdn.microsoft.com/library/microsoft.azure.documents.linq.documentqueryable.asdocumentquery.aspx) :
+В следующем примере кода показано, как получить метрики при использовании метода [асдокументкуери ()](/dotnet/api/microsoft.azure.documents.linq.documentqueryable.asdocumentquery) :
 
 ```csharp
 // Initialize this DocumentClient and Collection
@@ -63,7 +63,7 @@ while (documentQuery.HasMoreResults)
 ```
 ## <a name="aggregating-querymetrics"></a>Статистическая обработка Куериметрикс
 
-В предыдущем разделе Обратите внимание, что существовало несколько вызовов метода [ексекутенекстасинк](https://msdn.microsoft.com/library/azure/dn850294.aspx) . Каждый вызов вернул `FeedResponse` объект с словарем `QueryMetrics` ; по одному для каждого продолжения запроса. В следующем примере показано, как выполнить статистическую обработку `QueryMetrics` с помощью LINQ:
+В предыдущем разделе Обратите внимание, что существовало несколько вызовов метода [ексекутенекстасинк](/dotnet/api/microsoft.azure.documents.linq.idocumentquery-1.executenextasync) . Каждый вызов вернул `FeedResponse` объект с словарем `QueryMetrics` ; по одному для каждого продолжения запроса. В следующем примере показано, как выполнить статистическую обработку `QueryMetrics` с помощью LINQ:
 
 ```csharp
 List<QueryMetrics> queryMetricsList = new List<QueryMetrics>();
@@ -130,7 +130,7 @@ IReadOnlyDictionary<string, QueryMetrics> queryMetrics = feedResponse.QueryMetri
 
 ## <a name="expensive-queries"></a>Ресурсоемкие запросы
 
-Можно записать единицы запросов, потребляемые каждым запросом, чтобы исследовать ресурсоемкие запросы или запросы, использующие высокую пропускную способность. Плату за запрос можно получить с помощью свойства [RequestCharge](https://msdn.microsoft.com/library/azure/dn948712.aspx) в `FeedResponse` . Дополнительные сведения о том, как получить оплату запросов с помощью портал Azure и различных пакетов SDK, см. в статье найти статью о [расходах единиц запросов](find-request-unit-charge.md) .
+Можно записать единицы запросов, потребляемые каждым запросом, чтобы исследовать ресурсоемкие запросы или запросы, использующие высокую пропускную способность. Плату за запрос можно получить с помощью свойства [RequestCharge](/dotnet/api/microsoft.azure.documents.client.feedresponse-1.requestcharge) в `FeedResponse` . Дополнительные сведения о том, как получить оплату запросов с помощью портал Azure и различных пакетов SDK, см. в статье найти статью о [расходах единиц запросов](find-request-unit-charge.md) .
 
 ```csharp
 string query = "SELECT * FROM c";
@@ -232,11 +232,11 @@ WHERE c.description = "BABYFOOD, DESSERT, FRUIT DESSERT, WITHOUT ASCORBIC ACID, 
 
 Теперь этот запрос может быть обслужен из индекса.
 
-Дополнительные сведения о настройке производительности запросов см. в статье [Настройка производительности запросов](https://docs.microsoft.com/azure/cosmos-db/documentdb-sql-query-metrics) .
+Дополнительные сведения о настройке производительности запросов см. в статье [Настройка производительности запросов](./sql-api-query-metrics.md) .
 
 ## <a name="references"></a><a id="References"></a>Ссылки
 
-- [DocumentDB SQL Syntax](https://go.microsoft.com/fwlink/p/?LinkID=510612) (Синтаксис SQL в DocumentDB)
+- [DocumentDB SQL Syntax](./sql-query-getting-started.md) (Синтаксис SQL в DocumentDB)
 - [ANSI SQL 2011](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=53681)
 - [JSON](https://json.org/)
 - [LINQ](/previous-versions/dotnet/articles/bb308959(v=msdn.10)) 

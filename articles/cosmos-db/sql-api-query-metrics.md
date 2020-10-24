@@ -8,16 +8,16 @@ ms.topic: how-to
 ms.date: 05/23/2019
 ms.author: sngun
 ms.custom: devx-track-csharp
-ms.openlocfilehash: f43a335e6490858828fb2efcaa8436dcb6f3d250
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: 38f21ec32d14261c7f1bb5e285180d9721b9dca7
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92280527"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92477833"
 ---
 # <a name="tuning-query-performance-with-azure-cosmos-db"></a>Настройка производительности запросов в Azure Cosmos DB
 
-Azure Cosmos DB предоставляет [API SQL для запроса данных](how-to-sql-query.md) без использования схемы или вторичных индексов. В этой статье содержатся следующие сведения для разработчиков:
+Azure Cosmos DB предоставляет [API SQL для запроса данных](./sql-query-getting-started.md) без использования схемы или вторичных индексов. В этой статье содержатся следующие сведения для разработчиков:
 
 * общие сведения о выполнении SQL-запросов в Azure Cosmos DB;
 * сведения о заголовках запросов и ответов и параметры клиентского пакета SDK;
@@ -275,6 +275,4 @@ IReadOnlyDictionary<string, QueryMetrics> metrics = result.QueryMetrics;
 ## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения о поддерживаемых ключевых словах и операторах SQL-запросов см. в статье [SQL-запросы для API DocumentDB в Azure Cosmos DB](sql-query-getting-started.md). 
 * Дополнительные сведения о единицах запроса см. в статье [Единицы запросов в базе данных Azure Cosmos DB](request-units.md).
-* Дополнительные сведения о политике индексирования см. в статье [Как работает индексирование данных в Azure Cosmos DB?](index-policy.md) 
-
-
+* Дополнительные сведения о политике индексирования см. в статье [Как работает индексирование данных в Azure Cosmos DB?](index-policy.md)

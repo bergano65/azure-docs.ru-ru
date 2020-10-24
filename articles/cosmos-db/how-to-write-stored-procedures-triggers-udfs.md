@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 06/16/2020
 ms.author: tisande
 ms.custom: devx-track-js
-ms.openlocfilehash: bc7bc677fb44600721b580ac9efc42feea4d98da
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 87d33308932ecd7c523c6fbe287648d4afc21ef0
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91252958"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92485806"
 ---
 # <a name="how-to-write-stored-procedures-triggers-and-user-defined-functions-in-azure-cosmos-db"></a>Как писать хранимые процедуры, триггеры и определяемые пользователем функции в Azure Cosmos DB
 
@@ -23,7 +23,7 @@ Azure Cosmos DB обеспечивает встроенное в язык тра
 > [!NOTE]
 > Для секционированных контейнеров при выполнении хранимой процедуры в параметрах запроса необходимо указать значение ключа секции. Хранимые процедуры всегда ограничиваются ключом секции. Элементы с другим значением ключа секции не будут видны хранимой процедуре. Это также применяется к триггерам.
 > [!Tip]
-> Cosmos поддерживает развертывание контейнеров с хранимыми процедурами, триггерами и определяемыми пользователем функциями. Дополнительные сведения см. в статье [Создание контейнера Azure Cosmos DB с функциональностью на стороне сервера.](manage-sql-with-resource-manager.md#create-sproc)
+> Cosmos поддерживает развертывание контейнеров с хранимыми процедурами, триггерами и определяемыми пользователем функциями. Дополнительные сведения см. в статье [Создание контейнера Azure Cosmos DB с функциональностью на стороне сервера.](./manage-with-templates.md#create-sproc)
 
 ## <a name="how-to-write-stored-procedures"></a><a id="stored-procedures"></a>Как написать хранимые процедуры
 
