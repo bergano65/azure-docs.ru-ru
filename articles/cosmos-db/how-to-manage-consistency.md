@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 06/10/2020
 ms.author: anfeldma
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: e43f2e9897293cb4d5bc25b6ef95252a28628401
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: 2b3433d969611fabe1b12a8dcabfe6e50066a8c1
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92279603"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92491195"
 ---
 # <a name="manage-consistency-levels-in-azure-cosmos-db"></a>Управление уровнями согласованности в Azure Cosmos DB
 
@@ -65,7 +65,7 @@ Update-AzCosmosDBAccount -ResourceGroupName $resourceGroupName `
 > [!TIP]
 > Согласованность может быть **ослаблена** только на уровне запроса. Чтобы перейти от более слабого к более надежному согласованию, обновите согласованность по умолчанию для учетной записи Cosmos.
 
-### <a name="net-sdk"></a><a id="override-default-consistency-dotnet"></a>Пакет SDK для .NET
+### <a name="net-sdk"></a><a id="override-default-consistency-dotnet"></a>ПАКЕТ SDK ДЛЯ .NET
 
 # <a name="net-sdk-v2"></a>[Пакет SDK для .NET версии 2](#tab/dotnetv2)
 
@@ -166,7 +166,7 @@ client = cosmos_client.CosmosClient(self.account_endpoint, {
 
 Чтобы управлять токенами сеанса вручную, получите токен сеанса из ответа и установите их для каждого запроса. Если у вас нет необходимости управлять токенами сеанса вручную, то вам не нужно использовать эти примеры. Пакет SDK отслеживает токены сеанса автоматически. Если токен сеанса не задан вручную, по умолчанию в пакете SDK используется последний.
 
-### <a name="net-sdk"></a><a id="utilize-session-tokens-dotnet"></a>Пакет SDK для .NET
+### <a name="net-sdk"></a><a id="utilize-session-tokens-dotnet"></a>ПАКЕТ SDK ДЛЯ .NET
 
 # <a name="net-sdk-v2"></a>[Пакет SDK для .NET версии 2](#tab/dotnetv2)
 
@@ -288,7 +288,7 @@ item = client.ReadItem(doc_link, options)
 Узнайте больше о том, как управлять конфликтами данных, или перейдите к следующей ключевой концепции в Azure Cosmos DB. Дополнительные сведения см. в следующих статьях:
 
 * [Уровни согласованности в Azure Cosmos DB](consistency-levels.md)
-* [Секционирование и масштабирование в Azure Cosmos DB](partition-data.md)
+* [Секционирование и масштабирование в Azure Cosmos DB](./partitioning-overview.md)
 * [Управление конфликтами между регионами](how-to-manage-conflicts.md)
 * [Секционирование и масштабирование в Azure Cosmos DB](partitioning-overview.md)
 * [Компромиссы согласованности в современных распределенных системах баз данных](https://www.computer.org/csdl/magazine/co/2012/02/mco2012020037/13rRUxjyX7k)

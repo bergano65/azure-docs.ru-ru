@@ -9,16 +9,16 @@ ms.author: normesta
 ms.reviewer: fryu
 ms.subservice: common
 ms.custom: monitoring
-ms.openlocfilehash: c6a5f69a5a32ed1279b367c93b5246eb77ef0208
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c1dc0c7f37dc848ecd361848934cbcc5640afc66
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91802843"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92490770"
 ---
 # <a name="transition-to-metrics-in-azure-monitor"></a>Переход к метрикам в Azure Monitor
 
-С **31 августа 2023** аналитика службы хранилища метрики, также называемые *классическими метриками* , будут прекращены. Дополнительные сведения см. в [официальном объявлении](https://azure.microsoft.com/updates/azure-storage-classic-metrics-will-be-retired-on-31-august-2023/). Если вы используете классические метрики, обязательно переходите к метрикам в Azure Monitor до этой даты. Эта статья поможет вам выполнить переход. 
+С **31 августа 2023** аналитика службы хранилища метрики, также называемые *классическими метриками* , будут прекращены. Дополнительные сведения см. в [официальном объявлении](https://azure.microsoft.com/updates/azure-storage-classic-metrics-will-be-retired-on-31-august-2023/). Если вы используете классические метрики, обязательно перейдите на использование метрик в Azure Monitor до этой даты. Эта статья поможет вам выполнить переход. 
 
 ## <a name="steps-to-complete-the-transition"></a>Шаги для завершения перехода
 
@@ -30,12 +30,12 @@ ms.locfileid: "91802843"
 
 3. Укажите, [какие метрики в Azure Monitor](#metrics-mapping-between-old-metrics-and-new-metrics) предоставляют те же данные, что и используемые в настоящее время метрики. 
    
-4. Создайте [диаграммы](https://docs.microsoft.com/learn/modules/gather-metrics-blob-storage/2-viewing-blob-metrics-in-azure-portal) или [панели мониторинга](https://docs.microsoft.com/learn/modules/gather-metrics-blob-storage/4-using-dashboards-in-the-azure-portal) для просмотра данных метрик.
+4. Создайте [диаграммы](/learn/modules/gather-metrics-blob-storage/2-viewing-blob-metrics-in-azure-portal) или [панели мониторинга](/learn/modules/gather-metrics-blob-storage/4-using-dashboards-in-the-azure-portal) для просмотра данных метрик.
 
    > [!NOTE]
    > Метрики в Azure Monitor включены по умолчанию, поэтому вам не нужно предпринимать никаких действий, чтобы начать сбор метрик. Однако для просмотра этих метрик необходимо создать диаграммы или панели мониторинга. 
  
-5. Если вы создали правила генерации оповещений, основанные на классических метриках хранилища, [Создайте правила генерации оповещений](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-overview) , основанные на метриках в Azure Monitor. 
+5. Если вы создали правила генерации оповещений, основанные на классических метриках хранилища, [Создайте правила генерации оповещений](/azure/azure-monitor/platform/alerts-overview) , основанные на метриках в Azure Monitor. 
 
 6. После того как вы сможете увидеть все метрики в Azure Monitor, вы можете отключить классическое ведение журнала. 
 
@@ -53,7 +53,7 @@ ms.locfileid: "91802843"
 
 Если действие в учетной записи не запускает метрику, для этой метрики в классической метрике будет отображаться нулевое значение (0). Метрики в Azure Monitor будут полностью опускать данные, что ведет к очистке отчетов. Например, при использовании классической метрики, если ошибки времени ожидания сервера не выводятся, `ServerTimeoutError` значение в таблице метрик задается равным 0. Azure Monitor не возвращает никаких данных при запросе значения метрики `Transactions` с измерением, `ResponseType` равным `ServerTimeoutError` . 
 
-Дополнительные сведения о метриках в Azure Monitor см. в разделе [метрики в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/data-platform-metrics).
+Дополнительные сведения о метриках в Azure Monitor см. в разделе [метрики в Azure Monitor](/azure/azure-monitor/platform/data-platform-metrics).
 
 <a id="metrics-mapping-between-old-metrics-and-new-metrics"></a>
 

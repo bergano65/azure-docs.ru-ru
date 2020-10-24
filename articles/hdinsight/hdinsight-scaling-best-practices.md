@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: seoapr2020
 ms.date: 04/29/2020
-ms.openlocfilehash: 44cfc5b651bdd5dc0d7abee575bd964ad0b603d0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 874cea2377d3c0a128894bb67278e8ec2cbe7edc
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89505018"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92490974"
 ---
 # <a name="scale-azure-hdinsight-clusters"></a>Масштабирование кластеров Azure HDInsight
 
@@ -34,7 +34,7 @@ HDInsight обеспечивает эластичность с помощью п
 |---|---|
 |[PowerShell Az](https://docs.microsoft.com/powershell/azure)|[`Set-AzHDInsightClusterSize`](https://docs.microsoft.com/powershell/module/az.hdinsight/set-azhdinsightclustersize) `-ClusterName CLUSTERNAME -TargetInstanceCount NEWSIZE`|
 |[PowerShell AzureRM](https://docs.microsoft.com/powershell/azure/azurerm) |[`Set-AzureRmHDInsightClusterSize`](https://docs.microsoft.com/powershell/module/azurerm.hdinsight/set-azurermhdinsightclustersize) `-ClusterName CLUSTERNAME -TargetInstanceCount NEWSIZE`|
-|[Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest) | [`az hdinsight resize`](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-resize) `--resource-group RESOURCEGROUP --name CLUSTERNAME --workernode-count NEWSIZE`|
+|[Azure CLI](/cli/azure/); | [`az hdinsight resize`](/cli/azure/hdinsight#az-hdinsight-resize) `--resource-group RESOURCEGROUP --name CLUSTERNAME --workernode-count NEWSIZE`|
 |[Классический Azure CLI](hdinsight-administer-use-command-line.md)|`azure hdinsight cluster resize CLUSTERNAME NEWSIZE` |
 |[Портал Azure](https://portal.azure.com)|Откройте панель кластера HDInsight, выберите **Размер кластера** в меню слева, затем на панели размер кластера введите число рабочих узлов и нажмите кнопку Сохранить.|  
 
@@ -43,8 +43,8 @@ HDInsight обеспечивает эластичность с помощью п
 С помощью любого из этих методов можно увеличивать или уменьшать масштаб кластера HDInsight за считанные минуты.
 
 > [!IMPORTANT]  
-> * Классический интерфейс командной строки Azure является устаревшим и должен использоваться только с классической моделью развертывания. Для всех остальных развертываний используйте [Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest).
-> * Модуль PowerShell AzureRM является устаревшим.  При возможности используйте [модуль AZ](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-1.4.0) .
+> * Классический интерфейс командной строки Azure является устаревшим и должен использоваться только с классической моделью развертывания. Для всех остальных развертываний используйте [Azure CLI](/cli/azure/).
+> * Модуль PowerShell AzureRM является устаревшим.  При возможности используйте [модуль AZ](https://docs.microsoft.com/powershell/azure/new-azureps-module-az) .
 
 ## <a name="impact-of-scaling-operations"></a>Влияние операций масштабирования
 
@@ -146,7 +146,7 @@ HDInsight обеспечивает эластичность с помощью п
 yarn application -kill <application_id>
 ```
 
-Пример:
+Например:
 
 ```bash
 yarn application -kill "application_1499348398273_0003"
@@ -268,7 +268,7 @@ hdfs dfsadmin -D 'fs.default.name=hdfs://mycluster/' -safemode leave
     balancer
     ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Автоматическое масштабирование кластеров Azure HDInsight](hdinsight-autoscale-clusters.md)
 

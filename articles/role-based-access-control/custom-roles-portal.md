@@ -12,18 +12,18 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 07/13/2020
 ms.author: rolyon
-ms.openlocfilehash: 91d2605dddd6107d09e635969f5e5d98c2a02d60
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9ab6561b1dc0e8b977fc69d259c5f26366f355ce
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86511727"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92481335"
 ---
 # <a name="create-or-update-azure-custom-roles-using-the-azure-portal"></a>Создание или обновление пользовательских ролей Azure с помощью портала Azure
 
 Если [встроенные роли Azure](built-in-roles.md) не соответствуют конкретным потребностям Организации, можно создать собственные пользовательские роли Azure. Так же, как и встроенные роли, можно назначать пользовательские роли пользователям, группам и субъектам-службам в областях подписок и групп ресурсов. Настраиваемые роли хранятся в каталоге Azure Active Directory (Azure AD) и могут использоваться несколькими подписками. Каждый каталог может иметь до 5000 пользовательских ролей. Пользовательские роли можно создавать с помощью портал Azure, Azure PowerShell, Azure CLI или REST API. В этой статье описывается создание пользовательских ролей с помощью портал Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Для создания пользовательских ролей в Azure требуются:
 
@@ -331,7 +331,7 @@ Microsoft.CostManagement/exports/delete
 
 1. Нажмите кнопку с многоточием (**...**) для настраиваемой роли, которую необходимо удалить, и нажмите кнопку **Удалить**.
 
-    ![Меню настраиваемой роли](./media/custom-roles-portal/delete-menu.png)
+    ![Снимок экрана, на котором показан список пользовательских ролей, которые можно выбрать для удаления.](./media/custom-roles-portal/delete-menu.png)
 
     Для полного удаления пользовательской роли может потребоваться несколько минут.
 

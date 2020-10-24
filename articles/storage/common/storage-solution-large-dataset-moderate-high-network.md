@@ -8,12 +8,12 @@ ms.subservice: blobs
 ms.topic: conceptual
 ms.date: 04/01/2019
 ms.author: alkohli
-ms.openlocfilehash: 900221bd27fe4020a927b3155c91aa8e494ca890
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c88da1c7fba5d7cb51863a580ae420eb6b3298a2
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86203843"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92491280"
 ---
 # <a name="data-transfer-for-large-datasets-with-moderate-to-high-network-bandwidth"></a>Передача больших наборов данных со средней или высокой пропускной способностью сети
  
@@ -67,9 +67,9 @@ ms.locfileid: "86203843"
 |    **Размер данных**                    |    До 35 ТБ                 |    До 80 ТБ на устройство                       |    До 800 ТБ на устройство               |    Переменная                            |
 |    **Data type**                    |    Большие двоичные объекты Azure                  |    Большие двоичные объекты Azure<br>Файлы Azure                    |    Большие двоичные объекты Azure<br>Файлы Azure            |    Большие двоичные объекты Azure<br>Файлы Azure          |
 |    **Форм-фактор**                  |    Не более 5 SSD в одном заказе             |    1 x 23 кг одно устройство в заказе размером с настольный компьютер    |    1 X ~227 кг большое устройство в заказе    |    До 10 жестких дисков или твердотельных накопителей в одном заказе        |
-|    **Время начальной настройки**               |    Низкий <br>(15 мин)            |    От низкой до умеренной сложности <br> (менее 30 мин)               |    Средняя<br>(1–2 ч)               |    От умеренной до высокой сложности<br>(переменная) |
+|    **Время начальной настройки**               |    Низкая <br>(15 мин)            |    От низкой до умеренной сложности <br> (менее 30 мин)               |    Средняя<br>(1–2 ч)               |    От умеренной до высокой сложности<br>(переменная) |
 |    **Отправка данных в Azure**           |    Да                          |    Да                                           |    Да                                   |    Да                                 |
-|    **Экспорт данных из Azure**           |    нет                           |    нет                                            |    нет                                    |    Да                                 |
+|    **Экспорт данных из Azure**           |    Нет                           |    Нет                                            |    Нет                                    |    Да                                 |
 |    **Шифрование**                   |    AES, 128-битное                  |    AES, 256-битное                                   |    AES, 256-битное                           |    AES, 128-битное                         |
 |    **Оборудование**                     |     Предоставляется корпорацией Майкрософт          |    Предоставляется корпорацией Майкрософт                            |    Предоставляется корпорацией Майкрософт                    |    Предоставляется пользователем                   |
 |    **Сетевой интерфейс**            |    USB 3.1 или SATA                 |    RJ 45, SFP+                                   |    RJ45, QSFP+                           |    SATA II или SATA III                    |
@@ -88,8 +88,8 @@ ms.locfileid: "86203843"
 |    **Data type**              |    Большие двоичные объекты Azure, Файлы Azure, Таблицы Azure    |    Большие двоичные объекты Azure, Файлы Azure, Таблицы Azure    |    Большие двоичные объекты Azure, Файлы Azure                           |   Поддерживает более 70 соединителей данных для разных хранилищ и форматов    |
 |    **Форм-фактор**            |    Программы командной строки                        |    Программный интерфейс                    |    Корпорация Майкрософт предоставляет виртуальное <br>или физическое устройство     |    Служба на портале Azure                                            |
 |    **Начальная однократная настройка** |    Низкий уровень сложности               |    Средняя                       |    От низкого (менее 30 мин) до среднего (1–2 часа) уровня сложности            |    Значительный уровень сложности                                                          |
-|    **Предварительная обработка данных**          |    нет                                        |    нет                                        |    Да (с пограничными вычислениями)                               |    Да                                                                |
-|    **Перенос из других облаков**   |    нет                                        |    нет                                        |    нет                                                    |    Да                                                                |
+|    **Предварительная обработка данных**          |    Нет                                        |    Нет                                        |    Да (с пограничными вычислениями)                               |    Да                                                                |
+|    **Перенос из других облаков**   |    Нет                                        |    Нет                                        |    Нет                                                    |    Да                                                                |
 |    **Тип пользователя**                    |    ИТ-специалист или разработчик                                       |    Разработка                                       |    ИТ-специалистам                                                |    ИТ-специалистам                                                             |
 |    **Цены**                      |    Бесплатно, с обычной оплатой исходящего трафика         |    Бесплатно, с обычной оплатой исходящего трафика         |    [Цены](https://azure.microsoft.com/pricing/details/storage/databox/edge/)                                               |    [Цены](https://azure.microsoft.com/pricing/details/data-factory/)                                                            |
 
@@ -98,14 +98,14 @@ ms.locfileid: "86203843"
 - [Сведения о передаче данных с помощью службы "Импорт и экспорт"](/azure/storage/common/storage-import-export-data-to-blobs).
 - Практические руководства по:
 
-    - [передаче данных с помощью Диска Data Box](https://docs.microsoft.com/azure/databox/data-box-disk-quickstart-portal);
-    - [передаче данных с помощью Data Box](https://docs.microsoft.com/azure/databox/data-box-quickstart-portal).
+    - [передаче данных с помощью Диска Data Box](/azure/databox/data-box-disk-quickstart-portal);
+    - [передаче данных с помощью Data Box](/azure/databox/data-box-quickstart-portal).
 - [Перенесите данные с помощью AzCopy](/azure/storage/common/storage-use-azcopy-v10).
 - Практические руководства по:
-    - [Руководство по передаче данных с помощью Шлюза Data Box (предварительная версия)](https://docs.microsoft.com/azure/databox-online/data-box-gateway-deploy-add-shares).
-    - [преобразованию данных с помощью Data Box Edge перед отправкой в Azure](https://docs.microsoft.com/azure/databox-online/data-box-edge-deploy-configure-compute).
-- [Сведения о передаче данных с помощью службы "Фабрика данных Azure"](https://docs.microsoft.com/azure/data-factory/quickstart-create-data-factory-portal).
+    - [Руководство по передаче данных с помощью Шлюза Data Box (предварительная версия)](/azure/databox-online/data-box-gateway-deploy-add-shares).
+    - [преобразованию данных с помощью Data Box Edge перед отправкой в Azure](/azure/databox-online/data-box-edge-deploy-configure-compute).
+- [Сведения о передаче данных с помощью службы "Фабрика данных Azure"](/azure/data-factory/quickstart-create-data-factory-portal).
 - Использование интерфейсов REST API для передачи данных:
 
-    - [в .NET](https://docs.microsoft.com/dotnet/api/overview/azure/storage);
-    - [В Java](https://docs.microsoft.com/java/api/overview/azure/storage)
+    - [в .NET](/dotnet/api/overview/azure/storage);
+    - [В Java](/java/api/overview/azure/storage)

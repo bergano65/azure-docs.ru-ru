@@ -9,31 +9,31 @@ ms.topic: reference
 ms.date: 08/12/2020
 ms.author: anfeldma
 ms.custom: devx-track-java
-ms.openlocfilehash: afee95f6a8776c3506e10c29cfd8e776734a915a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4ee7e180094c1584995e5d734adbe589a112754b
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91326683"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92477578"
 ---
 # <a name="azure-cosmos-db-apache-spark-connector-for-core-sql-api-release-notes-and-resources"></a>Azure Cosmos DB Apache Spark соединителя для API Core (SQL): заметки о выпуске и ресурсы
 > [!div class="op_single_selector"]
 > * [Пакет SDK версии 3 для .NET](sql-api-sdk-dotnet-standard.md)
 > * [Пакет SDK для .NET версии 2](sql-api-sdk-dotnet.md)
 > * [Пакет SDK для .NET Core версии 2](sql-api-sdk-dotnet-core.md)
-> * [Пакет SDK для веб-канала изменений .NET версии 2](sql-api-sdk-dotnet-changefeed.md)
+> * [Пакет SDK для .NET Change Feed версии 2](sql-api-sdk-dotnet-changefeed.md)
 > * [Node.js](sql-api-sdk-node.md)
 > * [Пакет SDK для Java версии 4](sql-api-sdk-java-v4.md)
 > * [Пакет SDK для Async Java версии 2](sql-api-sdk-async-java.md)
 > * [Пакет SDK для Sync Java версии 2](sql-api-sdk-java.md)
-> * [Пружинные данные v2](sql-api-sdk-java-spring-v2.md)
+> * [Spring Data версии 2](sql-api-sdk-java-spring-v2.md)
 > * [Spring Data версии 3](sql-api-sdk-java-spring-v3.md)
 > * [Соединитель Spark](sql-api-sdk-java-spark.md)
 > * [Python](sql-api-sdk-python.md)
 > * [REST](/rest/api/cosmos-db/)
 > * [Поставщик ресурсов REST](/rest/api/cosmos-db-resource-provider/)
-> * [SQL](sql-api-query-reference.md)
-> * [Групповой исполнитель — .NET v2](sql-api-sdk-bulk-executor-dot-net.md)
+> * [SQL](./sql-query-getting-started.md)
+> * [Исполнитель массовых операций — .NET версии 2](sql-api-sdk-bulk-executor-dot-net.md)
 > * [Исполнитель массовых операций — Java](sql-api-sdk-bulk-executor-java.md)
 
 Можно ускорить анализ больших данных с помощью соединителя Azure Cosmos DB Apache Spark для Core (SQL). Соединитель Spark позволяет выполнять задания [Spark](https://spark.apache.org/) для данных, хранящихся в Azure Cosmos DB. Поддерживаются Пакетная и Потоковая обработка.
@@ -59,12 +59,12 @@ ms.locfileid: "91326683"
 | **Скачивание пакета SDK** | [Скачайте последнюю версию jar-файла](https://aka.ms/CosmosDB_OLTP_Spark_2.4_LKG), [Maven](https://search.maven.org/search?q=a:azure-cosmosdb-spark_2.4.0_2.11) |
 |**Документация по API** | [Справочник по соединителю Spark]() |
 |**Участие в пакете SDK** | [Соединитель Azure Cosmos DB для Apache Spark на GitHub](https://github.com/Azure/azure-cosmosdb-spark) | 
-|**Начало работы** | [Ускорение аналитики больших данных с помощью соединителя Apache Spark для Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/spark-connector#bk_working_with_connector) <br> [Использование структурированной потоковой передачи Apache Spark с Apache Kafka в Azure Cosmos DB](https://docs.microsoft.com/azure/hdinsight/apache-kafka-spark-structured-streaming-cosmosdb?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json) | 
+|**Начало работы** | [Ускорение аналитики больших данных с помощью соединителя Apache Spark для Azure Cosmos DB](./spark-connector.md#bk_working_with_connector) <br> [Использование структурированной потоковой передачи Apache Spark с Apache Kafka в Azure Cosmos DB](../hdinsight/apache-kafka-spark-structured-streaming-cosmosdb.md?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json) | 
 
 ## <a name="release-history"></a>История выпусков
 
 ### <a name="330"></a>3.3.0
-#### <a name="new-features"></a>Новые функции
+#### <a name="new-features"></a>новые функции;
 - Добавляет новый параметр конфигурации, `changefeedstartfromdatetime` который можно использовать для указания времени начала обработки пр. Дополнительные сведения см. в разделе [Параметры конфигурации](https://github.com/Azure/azure-cosmosdb-spark/wiki/Configuration-references).
 
 ### <a name="320"></a>3.2.0
@@ -76,7 +76,7 @@ ms.locfileid: "91326683"
 * Исправляет промежуточный вариант контрольной точки потоковой передачи, в котором параметр `ID` содержит символ вертикальной черты (|) с `ChangeFeedMaxPagesPerBatch` примененной конфигурацией.
 
 ### <a name="310"></a>3.1.0
-#### <a name="new-features"></a>Новые функции
+#### <a name="new-features"></a>новые функции;
 * Добавляет поддержку для выполнения массовых обновлений при использовании вложенных ключей секционирования.
 * Добавляет поддержку типов данных Decimal и float во время операций записи в Azure Cosmos DB.
 * Добавляет поддержку типов меток времени, если в качестве значения используется Long (эпоха UNIX).
@@ -86,7 +86,7 @@ ms.locfileid: "91326683"
 * Исправляет исключение приведения, возникающее при `WriteThroughputBudget` использовании конфигурации.
 
 ### <a name="307"></a>3.0.7
-#### <a name="new-features"></a>Новые функции
+#### <a name="new-features"></a>новые функции;
 * Добавляет сведения об ошибке для массовых сбоев в исключения и журнал.
 
 ### <a name="306"></a>3.0.6
@@ -114,7 +114,7 @@ ms.locfileid: "91326683"
 * Устраняет проблему зависимости, которая приводит к сбою прямого транспорта по протоколу TCP с Рекуесттимеаутексцептион.
 
 ### <a name="300"></a>3.0.0
-#### <a name="new-features"></a>Новые функции
+#### <a name="new-features"></a>новые функции;
 * Улучшает управление подключениями и объединение соединений, чтобы сократить количество вызовов метаданных.
 
 ## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ

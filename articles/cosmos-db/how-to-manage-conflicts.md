@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 06/11/2020
 ms.author: anfeldma
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: 657d3f84a1dd196733ed23dd3b68db92e4b35e25
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: 3edaf55c8acb4def4f074c0d8f96eb399d98b6ce
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92279473"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92491093"
 ---
 # <a name="manage-conflict-resolution-policies-in-azure-cosmos-db"></a>Управление политиками разрешения конфликтов в Azure Cosmos DB
 
@@ -22,7 +22,7 @@ ms.locfileid: "92279473"
 
 В этих примерах показано, как настроить контейнер с политикой разрешения конфликтов, реализующей подход "Сохраняются изменения, внесенные последними". В пути по умолчанию для политики "Сохраняются изменения, внесенные последними" указывается поле метки времени или свойство `_ts`. Для API SQL также можно указать определяемый пользователем путь с использованием числового типа. При возникновении конфликта сохраняется самое большое значение. Если путь не задан или является недопустимым, по умолчанию используется значение `_ts`. Сведения о конфликтах, устраненных с помощью этой политики, не будут отображаться в веб-канале конфликтов. Эту политику поддерживают все API.
 
-### <a name="net-sdk"></a><a id="create-custom-conflict-resolution-policy-lww-dotnet"></a>Пакет SDK для .NET
+### <a name="net-sdk"></a><a id="create-custom-conflict-resolution-policy-lww-dotnet"></a>ПАКЕТ SDK ДЛЯ .NET
 
 # <a name="net-sdk-v2"></a>[Пакет SDK для .NET версии 2](#tab/dotnetv2)
 
@@ -74,7 +74,7 @@ Container container = await createClient.GetDatabase(this.databaseName)
 
 # <a name="async-java-v2-sdk"></a>[Асинхронный пакет SDK для Java v2](#tab/async)
 
-[Асинхронный пакет SDK](sql-api-sdk-async-java.md)   для Java v2 (Maven [com. Microsoft. Azure:: Azure-cosmosdb](https://mvnrepository.com/artifact/com.microsoft.azure/azure-cosmosdb))
+[Асинхронный пакет SDK для Java v2](sql-api-sdk-async-java.md) (Maven [com. Microsoft. Azure:: Azure-cosmosdb](https://mvnrepository.com/artifact/com.microsoft.azure/azure-cosmosdb))
 
 ```java
 DocumentCollection collection = new DocumentCollection();
@@ -86,7 +86,7 @@ DocumentCollection createdCollection = client.createCollection(databaseUri, coll
 
 # <a name="sync-java-v2-sdk"></a>[Синхронизация пакета SDK для Java v2](#tab/sync)
 
-[Синхронизация пакета SDK](sql-api-sdk-java.md)   для Java v2 (Maven [com. Microsoft. Azure:: Azure-documentdb](https://mvnrepository.com/artifact/com.microsoft.azure/azure-documentdb))
+[Синхронизация пакета SDK для Java v2](sql-api-sdk-java.md) (Maven [com. Microsoft. Azure:: Azure-documentdb](https://mvnrepository.com/artifact/com.microsoft.azure/azure-documentdb))
 
 ```java
 DocumentCollection lwwCollection = new DocumentCollection();
@@ -198,7 +198,7 @@ function resolver(incomingItem, existingItem, isTombstone, conflictingItems) {
 }
 ```
 
-### <a name="net-sdk"></a><a id="create-custom-conflict-resolution-policy-stored-proc-dotnet"></a>Пакет SDK для .NET
+### <a name="net-sdk"></a><a id="create-custom-conflict-resolution-policy-stored-proc-dotnet"></a>ПАКЕТ SDK ДЛЯ .NET
 
 # <a name="net-sdk-v2"></a>[Пакет SDK для .NET версии 2](#tab/dotnetv2)
 
@@ -262,7 +262,7 @@ await container.Scripts.CreateStoredProcedureAsync(
 
 # <a name="async-java-v2-sdk"></a>[Асинхронный пакет SDK для Java v2](#tab/async)
 
-[Асинхронный пакет SDK](sql-api-sdk-async-java.md)   для Java v2 (Maven [com. Microsoft. Azure:: Azure-cosmosdb](https://mvnrepository.com/artifact/com.microsoft.azure/azure-cosmosdb))
+[Асинхронный пакет SDK для Java v2](sql-api-sdk-async-java.md) (Maven [com. Microsoft. Azure:: Azure-cosmosdb](https://mvnrepository.com/artifact/com.microsoft.azure/azure-cosmosdb))
 
 ```java
 DocumentCollection collection = new DocumentCollection();
@@ -274,7 +274,7 @@ DocumentCollection createdCollection = client.createCollection(databaseUri, coll
 
 # <a name="sync-java-v2-sdk"></a>[Синхронизация пакета SDK для Java v2](#tab/sync)
 
-[Синхронизация пакета SDK](sql-api-sdk-java.md)   для Java v2 (Maven [com. Microsoft. Azure:: Azure-documentdb](https://mvnrepository.com/artifact/com.microsoft.azure/azure-documentdb))
+[Синхронизация пакета SDK для Java v2](sql-api-sdk-java.md) (Maven [com. Microsoft. Azure:: Azure-documentdb](https://mvnrepository.com/artifact/com.microsoft.azure/azure-documentdb))
 
 ```java
 DocumentCollection udpCollection = new DocumentCollection();
@@ -327,7 +327,7 @@ udp_collection = self.try_create_document_collection(
 
 В этих примерах показано, как настроить контейнер с пользовательской политикой разрешения конфликтов. Эти конфликты отображаются в веб-канале конфликтов.
 
-### <a name="net-sdk"></a><a id="create-custom-conflict-resolution-policy-dotnet"></a>Пакет SDK для .NET
+### <a name="net-sdk"></a><a id="create-custom-conflict-resolution-policy-dotnet"></a>ПАКЕТ SDK ДЛЯ .NET
 
 # <a name="net-sdk-v2"></a>[Пакет SDK для .NET версии 2](#tab/dotnetv2)
 
@@ -377,7 +377,7 @@ Container container = await createClient.GetDatabase(this.databaseName)
 
 # <a name="async-java-v2-sdk"></a>[Асинхронный пакет SDK для Java v2](#tab/async)
 
-[Асинхронный пакет SDK](sql-api-sdk-async-java.md)   для Java v2 (Maven [com. Microsoft. Azure:: Azure-cosmosdb](https://mvnrepository.com/artifact/com.microsoft.azure/azure-cosmosdb))
+[Асинхронный пакет SDK для Java v2](sql-api-sdk-async-java.md) (Maven [com. Microsoft. Azure:: Azure-cosmosdb](https://mvnrepository.com/artifact/com.microsoft.azure/azure-cosmosdb))
 
 ```java
 DocumentCollection collection = new DocumentCollection();
@@ -389,7 +389,7 @@ DocumentCollection createdCollection = client.createCollection(databaseUri, coll
 
 # <a name="sync-java-v2-sdk"></a>[Синхронизация пакета SDK для Java v2](#tab/sync)
 
-[Синхронизация пакета SDK](sql-api-sdk-java.md)   для Java v2 (Maven [com. Microsoft. Azure:: Azure-documentdb](https://mvnrepository.com/artifact/com.microsoft.azure/azure-documentdb))
+[Синхронизация пакета SDK для Java v2](sql-api-sdk-java.md) (Maven [com. Microsoft. Azure:: Azure-documentdb](https://mvnrepository.com/artifact/com.microsoft.azure/azure-documentdb))
 
 ```java
 DocumentCollection manualCollection = new DocumentCollection();
@@ -431,7 +431,7 @@ manual_collection = client.CreateContainer(database['_self'], collection)
 
 В этих примерах показано, как выполнять чтение из веб-канала конфликтов контейнера. Сведения о конфликтах отображаются в веб-каналах конфликтов, только если они не устранены автоматически или если используется пользовательская политика устранения конфликтов.
 
-### <a name="net-sdk"></a><a id="read-from-conflict-feed-dotnet"></a>Пакет SDK для .NET
+### <a name="net-sdk"></a><a id="read-from-conflict-feed-dotnet"></a>ПАКЕТ SDK ДЛЯ .NET
 
 # <a name="net-sdk-v2"></a>[Пакет SDK для .NET версии 2](#tab/dotnetv2)
 
@@ -466,7 +466,7 @@ while (conflictFeed.HasMoreResults)
 
 # <a name="async-java-v2-sdk"></a>[Асинхронный пакет SDK для Java v2](#tab/async)
 
-[Асинхронный пакет SDK](sql-api-sdk-async-java.md)   для Java v2 (Maven [com. Microsoft. Azure:: Azure-cosmosdb](https://mvnrepository.com/artifact/com.microsoft.azure/azure-cosmosdb))
+[Асинхронный пакет SDK для Java v2](sql-api-sdk-async-java.md) (Maven [com. Microsoft. Azure:: Azure-cosmosdb](https://mvnrepository.com/artifact/com.microsoft.azure/azure-cosmosdb))
 
 ```java
 FeedResponse<Conflict> response = client.readConflicts(this.manualCollectionUri, null)
@@ -477,7 +477,7 @@ for (Conflict conflict : response.getResults()) {
 ```
 # <a name="sync-java-v2-sdk"></a>[Синхронизация пакета SDK для Java v2](#tab/sync)
 
-[Синхронизация пакета SDK](sql-api-sdk-java.md)   для Java v2 (Maven [com. Microsoft. Azure:: Azure-documentdb](https://mvnrepository.com/artifact/com.microsoft.azure/azure-documentdb))
+[Синхронизация пакета SDK для Java v2](sql-api-sdk-java.md) (Maven [com. Microsoft. Azure:: Azure-documentdb](https://mvnrepository.com/artifact/com.microsoft.azure/azure-documentdb))
 
 ```java
 Iterator<Conflict> conflictsIterator = client.readConflicts(this.collectionLink, null).getQueryIterator();
@@ -518,4 +518,4 @@ while conflict:
 - [Добавление и удаление регионов из учетной записи Azure Cosmos DB](how-to-manage-database-account.md#addremove-regions-from-your-database-account)
 - [Как конфигуремулти запись в приложения](how-to-multi-master.md).
 - [Секционирование и масштабирование в Azure Cosmos DB](partitioning-overview.md)
-- [Индексирование в Azure Cosmos DB](indexing-policies.md)
+- [Индексирование в Azure Cosmos DB](index-policy.md)

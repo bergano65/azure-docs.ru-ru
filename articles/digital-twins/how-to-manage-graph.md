@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 10/21/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: a3c37143154a6e701c4308903c46f4e68ac1b604
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 3b8dafd6d2347cf7cca4100f577476b8dfdf6c81
+ms.sourcegitcommit: d6a739ff99b2ba9f7705993cf23d4c668235719f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92458117"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92495766"
 ---
 # <a name="manage-a-graph-of-digital-twins-using-relationships"></a>Управление графиком цифровых двойников с помощью связей
 
@@ -221,6 +221,8 @@ await DeleteRelationship(client, srcId, relId);
 
 Следующий готовый к запуску фрагмент кода использует операции связи из этой статьи для создания графа двойника из цифровых двойников и связей.
 
+### <a name="set-up-the-runnable-sample"></a>Настройка готового к запуску примера
+
 В фрагменте кода используется [*Room.jsна*](https://github.com/Azure-Samples/digital-twins-samples/blob/master/AdtSampleApp/SampleClientApp/Models/Room.json) определениях моделей и [*Floor.js*](https://github.com/azure-Samples/digital-twins-samples/blob/master/AdtSampleApp/SampleClientApp/Models/Floor.json) из [*учебника: изучение Azure Digital двойников с примером клиентского приложения*](tutorial-command-line-app.md). Вы можете использовать эти ссылки, чтобы перейти непосредственно к файлам или загрузить их как часть полного [примера проекта.](/samples/azure-samples/digital-twins-samples/digital-twins-samples/) 
 
 Перед запуском образца выполните следующие действия.
@@ -232,7 +234,12 @@ await DeleteRelationship(client, srcId, relId);
     dotnet add package Azure.identity
     ```
 
-Затем запустите пример.
+Кроме того, необходимо настроить локальные учетные данные, если вы хотите выполнить пример напрямую. В следующем разделе приведено пошаговое руководство.
+[!INCLUDE [Azure Digital Twins: local credentials prereq (outer)](../../includes/digital-twins-local-credentials-outer.md)]
+
+### <a name="run-the-sample"></a>Запуск примера
+
+После выполнения описанных выше действий можно запустить следующий пример кода.
 
 ```csharp 
 using System;

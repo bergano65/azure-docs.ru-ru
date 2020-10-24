@@ -8,12 +8,12 @@ ms.subservice: blobs
 ms.topic: conceptual
 ms.date: 06/24/2019
 ms.author: alkohli
-ms.openlocfilehash: 9ffa35e158d34a1fc6945ee2730dcf136d13edb5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 09498587ad65a8de0935a3a4455bb3b66ed6c3ec
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85504344"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92491263"
 ---
 # <a name="solutions-for-periodic-data-transfer"></a>Решения для периодической передачи данных
  
@@ -52,22 +52,22 @@ ms.locfileid: "85504344"
 
 ### <a name="continuous-data-ingestion-over-network"></a>Непрерывный прием данных по сети
 
-| Компонент                                       | Шлюз Data Box | Data Box Edge   | Фабрика данных Azure        |
+| Функция                                       | Шлюз Data Box | Data Box Edge   | Фабрика данных Azure        |
 |----------------------------------|-----------------------------------------|--------------------------|---------------------------|
 | Форм-фактор                                   | Виртуальное устройство             | Физическое устройство          | Служба размещена на портале Azure, агент размещен локально                                                            |
 | Оборудование                                      | Ваша низкоуровневая оболочка            | Предоставляет Майкрософт    | Н/Д                                                            |
 | Трудозатраты на начальную настройку                          | Низкие (< 30 мин)            | Средние (~ несколько часов) | Высокие (~ несколько дней)                                                 |
-| Формат данных                                   | Большие двоичные объекты Azure, Файлы Azure   | Большие двоичные объекты Azure, Файлы Azure | [Поддерживает более 70 соединителей данных для разных хранилищ и форматов](https://docs.microsoft.com/azure/data-factory/copy-activity-overview#supported-data-stores-and-formats)|
-| Предварительная обработка данных                           | нет                         | Да, с помощью пограничных вычислений    | Да                                                           |
-| Локальный кэш<br>(хранение локальных данных)    | Да                        | Да                      | нет                                                            |
-| Перенос из других облаков                    | нет                         | нет                       | Да                                                           |
+| Формат данных                                   | Большие двоичные объекты Azure, Файлы Azure   | Большие двоичные объекты Azure, Файлы Azure | [Поддерживает более 70 соединителей данных для разных хранилищ и форматов](/azure/data-factory/copy-activity-overview#supported-data-stores-and-formats)|
+| Предварительная обработка данных                           | Нет                         | Да, с помощью пограничных вычислений    | Да                                                           |
+| Локальный кэш<br>(хранение локальных данных)    | Да                        | Да                      | Нет                                                            |
+| Перенос из других облаков                    | Нет                         | Нет                       | Да                                                           |
 | Цены                                       | [Цены](https://azure.microsoft.com/pricing/details/storage/databox/gateway/)                    | [Цены](https://azure.microsoft.com/pricing/details/storage/databox/edge/)                  | [Цены](https://azure.microsoft.com/pricing/details/data-factory/)                                                       |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Перенесите данные с помощью AzCopy](/azure/storage/common/storage-use-azcopy-v10?toc=%2fazure%2fstorage%2ftables%2ftoc.json).
-- [Дополнительные сведения о передаче данных с помощью REST API службы хранилища](https://docs.microsoft.com/dotnet/api/overview/azure/storage?view=azure-dotnet)
+- [Дополнительные сведения о передаче данных с помощью REST API службы хранилища](/dotnet/api/overview/azure/storage)
 - Практические руководства по:
-    - [Руководство по передаче данных с помощью Шлюза Data Box (предварительная версия)](https://docs.microsoft.com/azure/databox-online/data-box-gateway-deploy-add-shares).
-    - [преобразованию данных с помощью Data Box Edge перед отправкой в Azure](https://docs.microsoft.com/azure/databox-online/data-box-edge-deploy-configure-compute).
-- [Сведения о передаче данных с помощью службы "Фабрика данных Azure"](https://docs.microsoft.com/azure/data-factory/tutorial-bulk-copy-portal).
+    - [Руководство по передаче данных с помощью Шлюза Data Box (предварительная версия)](/azure/databox-online/data-box-gateway-deploy-add-shares).
+    - [преобразованию данных с помощью Data Box Edge перед отправкой в Azure](/azure/databox-online/data-box-edge-deploy-configure-compute).
+- [Сведения о передаче данных с помощью службы "Фабрика данных Azure"](/azure/data-factory/tutorial-bulk-copy-portal).

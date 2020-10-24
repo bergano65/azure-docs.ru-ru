@@ -7,12 +7,12 @@ ms.author: alkarche
 ms.date: 9/15/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 0123a89c4ec1c2c70326de1a2f685b08278333ab
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 1fa14c4341c449c32fd6a5f6b3274b057478c01c
+ms.sourcegitcommit: d6a739ff99b2ba9f7705993cf23d4c668235719f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92461555"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92495814"
 ---
 # <a name="ingest-iot-hub-telemetry-into-azure-digital-twins"></a>Прием данных телеметрии центра Интернета вещей в Azure Digital двойников
 
@@ -22,7 +22,7 @@ Azure Digital двойников управляет данными из устр
 
 В этом документе описывается процесс создания функции Azure, которая может принимать данные телеметрии из центра Интернета вещей.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Прежде чем продолжить работу с этим примером, необходимо настроить следующие ресурсы в качестве необходимых компонентов:
 * **Центр Интернета вещей**. Инструкции см. в разделе " *Создание центра Интернета вещей* " [этого руководства центра Интернета вещей](../iot-hub/quickstart-send-telemetry-cli.md).
@@ -64,19 +64,15 @@ Azure Digital двойников управляет данными из устр
 
 Чтобы **передать эту модель в экземпляр двойников**, откройте Azure CLI и выполните следующую команду:
 
-```azurecli
+```azurecli-interactive
 az dt model create --models '{  "@id": "dtmi:contosocom:DigitalTwins:Thermostat;1",  "@type": "Interface",  "@context": "dtmi:dtdl:context;2",  "contents": [    {      "@type": "Property",      "name": "Temperature",      "schema": "double"    }  ]}' -n {digital_twins_instance_name}
 ```
 
-[!INCLUDE [digital-twins-known-issue-cloud-shell](../../includes/digital-twins-known-issue-cloud-shell.md)]
-
 Затем необходимо **создать один двойника с помощью этой модели**. Используйте следующую команду, чтобы создать двойника и установить 0,0 в качестве начального значения температуры.
 
-```azurecli
+```azurecli-interactive
 az dt twin create --dtmi "dtmi:contosocom:DigitalTwins:Thermostat;1" --twin-id thermostat67 --properties '{"Temperature": 0.0,}' --dt-name {digital_twins_instance_name}
 ```
-
-[!INCLUDE [digital-twins-known-issue-cloud-shell](../../includes/digital-twins-known-issue-cloud-shell.md)]
 
 Выходные данные успешной команды двойника Create должны выглядеть следующим образом:
 ```json
@@ -252,9 +248,7 @@ namespace IotHubtoTwins
 
 При выполнении приведенного выше симулятора устройства значение температуры цифрового двойника будет изменено. В Azure CLI выполните следующую команду, чтобы увидеть значение температуры.
 
-[!INCLUDE [digital-twins-known-issue-cloud-shell](../../includes/digital-twins-known-issue-cloud-shell.md)]
-
-```azurecli
+```azurecli-interactive
 az dt twin query -q "select * from digitaltwins" -n {digital_twins_instance_name}
 ```
 

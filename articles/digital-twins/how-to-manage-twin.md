@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 10/21/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: ede358cdbe533a32ff99fbd736e171463472e45c
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 4945e89232ee9a15b2700dac49ccd829b7a52dac
+ms.sourcegitcommit: d6a739ff99b2ba9f7705993cf23d4c668235719f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92461330"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92494778"
 ---
 # <a name="manage-digital-twins"></a>Управление цифровыми двойниками
 
@@ -78,7 +78,7 @@ Console.WriteLine("The twin is created successfully");
 ```
 
 >[!NOTE]
-> `BasicDigitalTwin` объекты поступают с `Id` полем. Это поле можно оставить пустым, но если добавить значение идентификатора, оно должно соответствовать параметру идентификатора, переданному в `CreateDigitalTwin()` вызов. Пример:
+> `BasicDigitalTwin` объекты поступают с `Id` полем. Это поле можно оставить пустым, но если добавить значение идентификатора, оно должно соответствовать параметру идентификатора, переданному в `CreateDigitalTwin()` вызов. Например:
 >
 >```csharp
 >twin.Id = "myRoomId";
@@ -381,6 +381,8 @@ async Task FindAndDeleteIncomingRelationshipsAsync(string dtId)
 
 Вы можете использовать приведенный ниже пример готового к запуску кода, чтобы создать двойника, обновить сведения о нем и удалить двойника. 
 
+### <a name="set-up-the-runnable-sample"></a>Настройка готового к запуску примера
+
 В фрагменте кода используется [Room.jsв](https://github.com/Azure-Samples/digital-twins-samples/blob/master/AdtSampleApp/SampleClientApp/Models/Room.json) определении модели из [*учебника: изучение Azure Digital двойников с примером клиентского приложения*](tutorial-command-line-app.md). С помощью этой ссылки можно перейти непосредственно к файлу или загрузить его в составе полного [примера проекта.](/samples/azure-samples/digital-twins-samples/digital-twins-samples/)
 
 Перед запуском образца выполните следующие действия.
@@ -392,7 +394,12 @@ async Task FindAndDeleteIncomingRelationshipsAsync(string dtId)
     dotnet add package Azure.identity
     ```
 
-Затем запустите пример.
+Кроме того, необходимо настроить локальные учетные данные, если вы хотите выполнить пример напрямую. В следующем разделе приведено пошаговое руководство.
+[!INCLUDE [Azure Digital Twins: local credentials prereq (outer)](../../includes/digital-twins-local-credentials-outer.md)]
+
+### <a name="run-the-sample"></a>Запуск примера
+
+После выполнения описанных выше действий можно запустить следующий пример кода.
 
 ```csharp
 using System;
@@ -555,8 +562,6 @@ namespace minimal
 ## <a name="manage-twins-with-cli"></a>Управление двойников с помощью интерфейса командной строки
 
 Двойников также можно управлять с помощью цифрового интерфейса командной строки Azure двойников. Команды можно найти в [_How: используйте интерфейс командной строки Azure Digital двойников](how-to-use-cli.md).
-
-[!INCLUDE [digital-twins-known-issue-cloud-shell](../../includes/digital-twins-known-issue-cloud-shell.md)]
 
 ## <a name="view-all-digital-twins"></a>Просмотреть все цифровые двойников
 

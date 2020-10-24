@@ -6,18 +6,18 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 01/13/2020
 ms.author: mjbrown
-ms.openlocfilehash: ec5c98d90facf9458769f235880f17d14708e425
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 56fa87cfec7f50253dfce7d7c296ff7cb980aebe
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87923661"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92482015"
 ---
 # <a name="scale-azure-cosmos-db-throughput-by-using-azure-functions-timer-trigger"></a>Масштабирование Azure Cosmos DB пропускной способности с помощью триггера таймера для функций Azure
 
 Производительность учетной записи Azure Cosmos основана на объеме подготовленной пропускной способности, выраженной в единицах запросов в секунду (штук/с). Подготовка выполняется с второй гранулярностью и оплачивается на основе максимального количества единиц запросов в час. Данная модель подготовленной емкости позволяет службе обеспечивать предсказуемую и согласованную пропускную способность, гарантированную низкую задержку и высокий уровень доступности. Большинство рабочих нагрузок этих функций. Однако в средах разработки и тестирования, в которых Azure Cosmos DB используется только в рабочее время, вы можете увеличить пропускную способность в утром и уменьшить масштаб до вечером в конце рабочего времени.
 
-Пропускную способность можно задать с помощью [шаблонов Azure Resource Manager](resource-manager-samples.md), [Azure CLI](cli-samples.md)и [PowerShell](powershell-samples.md), для учетных записей API Core (SQL) или с помощью языковых пакетов Azure Cosmos DB для конкретного языка. Преимущество использования шаблонов диспетчер ресурсов, Azure CLI или PowerShell заключается в том, что они поддерживают все API-интерфейсы модели Azure Cosmos DB.
+Пропускную способность можно задать с помощью [шаблонов Azure Resource Manager](./templates-samples-sql.md), [Azure CLI](cli-samples.md)и [PowerShell](powershell-samples.md), для учетных записей API Core (SQL) или с помощью языковых пакетов Azure Cosmos DB для конкретного языка. Преимущество использования шаблонов диспетчер ресурсов, Azure CLI или PowerShell заключается в том, что они поддерживают все API-интерфейсы модели Azure Cosmos DB.
 
 ## <a name="throughput-scheduler-sample-project"></a>Пример проекта планировщика пропускной способности
 

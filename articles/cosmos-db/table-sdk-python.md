@@ -8,12 +8,12 @@ ms.topic: reference
 ms.date: 11/20/2018
 author: sakash279
 ms.author: akshanka
-ms.openlocfilehash: 5832214b5b0a98249f951915e867db8542c28a71
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 23e70d8ed17846100d82a5545e9215bce4eee30f
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91803965"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92491348"
 ---
 # <a name="azure-cosmos-db-table-api-sdk-for-python-release-notes-and-resources"></a>Пакет SDK для API таблиц Azure Cosmos DB на Python: заметки о выпуске и ресурсы
 > [!div class="op_single_selector"]
@@ -27,7 +27,7 @@ ms.locfileid: "91803965"
 |   |   |
 |---|---|
 |**Скачивание пакета SDK**|[PyPI](https://pypi.python.org/pypi/azure-cosmosdb-table/)|
-|**Документация по API**|[Справочная документация по API Python](https://docs.microsoft.com/python/api/overview/azure/cosmosdb?view=azure-python&preserve-view=true)|
+|**Документация по API**|[Справочная документация по API Python](/python/api/overview/azure/cosmosdb?preserve-view=true&view=azure-python)|
 |**Инструкции по установке пакета SDK**|[Инструкции по установке пакета SDK для Python](https://github.com/Azure/azure-cosmosdb-python/tree/master/azure-cosmosdb-table)|
 |**Участие в разработке пакета SDK**|[GitHub](https://github.com/Azure/azure-cosmosdb-python/tree/master/azure-cosmosdb-table)|
 |**Текущая поддерживаемая платформа**|[Python 2.7](https://www.python.org/downloads/) либо [Python 3.3, 3.4, 3.5 или 3.6](https://www.python.org/downloads/)|
@@ -61,5 +61,4 @@ ms.locfileid: "91803965"
 [!INCLUDE [cosmos-db-sdk-faq](../../includes/cosmos-db-sdk-faq.md)]
 
 ## <a name="see-also"></a>См. также раздел
-Дополнительные сведения о Cosmos DB см. на странице службы [Microsoft Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/). 
-
+Дополнительные сведения о Cosmos DB см. на странице службы [Microsoft Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/).

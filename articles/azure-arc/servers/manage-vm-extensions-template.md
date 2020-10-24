@@ -1,14 +1,14 @@
 ---
 title: Включение расширения виртуальной машины с помощью шаблона Azure Resource Manager
 description: В этой статье описывается, как развернуть расширения виртуальной машины на серверах с поддержкой дуги Azure, работающих в гибридных облачных средах, с помощью шаблона Azure Resource Manager.
-ms.date: 10/15/2020
+ms.date: 10/22/2020
 ms.topic: conceptual
-ms.openlocfilehash: 23cb1e85b9560b7033dc5bdce672ee8718ed326b
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 935fa38fbb98622f2da7d2ce9e1d166b12a32e44
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/23/2020
-ms.locfileid: "92462989"
+ms.locfileid: "92491212"
 ---
 # <a name="enable-azure-vm-extensions-by-using-arm-template"></a>Включение расширений виртуальной машины Azure с помощью шаблона ARM
 
@@ -145,7 +145,7 @@ New-AzResourceGroupDeployment -ResourceGroupName "ContosoEngineering" -TemplateF
 
 * Если компьютерам требуется загрузить скрипт извне и он может взаимодействовать только через прокси-сервер, необходимо [настроить агент подключенного компьютера](manage-agent.md#update-or-remove-proxy-settings) , чтобы задать переменную среды прокси-сервера.
 
-В конфигурации расширения пользовательских сценариев указываются такие параметры, как расположение сценария и команда для его выполнения. Эта конфигурация указывается в шаблоне Azure Resource Manager, приведенном ниже для гибридных компьютеров Linux и Windows.
+В конфигурации расширения пользовательских сценариев указываются такие параметры, как расположение скрипта и выполняемая команда. Эта конфигурация указывается в шаблоне Azure Resource Manager, приведенном ниже для гибридных компьютеров Linux и Windows.
 
 ### <a name="template-file-for-linux"></a>Файл шаблона для Linux
 
@@ -543,7 +543,7 @@ New-AzResourceGroupDeployment -ResourceGroupName "ContosoEngineering" -TemplateF
 }
 ```
 
-## <a name="deploy-the-dependency-agent"></a>Развертывание агента зависимостей
+## <a name="deploy-the-dependency-agent-extension"></a>Развертывание расширения агента зависимостей
 
 Чтобы использовать расширение агента зависимостей Azure Monitor, для работы в Windows и Linux предоставляется следующий пример. Если вы не знакомы с агентом зависимостей, см. раздел [Обзор агентов Azure Monitor](../../azure-monitor/platform/agents-overview.md#dependency-agent).
 

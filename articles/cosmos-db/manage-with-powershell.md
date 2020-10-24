@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 10/13/2020
 ms.author: mjbrown
 ms.custom: seodec18
-ms.openlocfilehash: b4147b9a3a5f0a249366431a4e43f924e89f9075
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: c56f3b561dbced9f00bb2616f5709a51fa02fbcb
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92281496"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92481012"
 ---
 # <a name="manage-azure-cosmos-db-core-sql-api-resources-using-powershell"></a>Управление ресурсами API Azure Cosmos DB Core (SQL) с помощью PowerShell
 
@@ -21,7 +21,7 @@ ms.locfileid: "92281496"
 > [!NOTE]
 > В примерах этой статьи используются командлеты управления [Az.CosmosDB](/powershell/module/az.cosmosdb). Сведения о последних изменениях см. на странице справочника по API [Az.CosmosDB](/powershell/module/az.cosmosdb).
 
-Для управления ресурсами Azure Cosmos DB на нескольких платформах можно использовать командлеты `Az` и `Az.CosmosDB` в [кроссплатформенном средстве PowerShell](https://docs.microsoft.com/powershell/scripting/install/installing-powershell), а также [Azure CLI](manage-with-cli.md), [REST API][rp-rest-api] или [портал Azure](create-sql-api-dotnet.md#create-account).
+Для управления ресурсами Azure Cosmos DB на нескольких платформах можно использовать командлеты `Az` и `Az.CosmosDB` в [кроссплатформенном средстве PowerShell](/powershell/scripting/install/installing-powershell), а также [Azure CLI](manage-with-cli.md), [REST API][rp-rest-api] или [портал Azure](create-sql-api-dotnet.md#create-account).
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -830,9 +830,9 @@ Remove-AzResourceLock `
 
 <!--Reference style links - using these makes the source content way more readable than using inline links-->
 
-[powershell-install-configure]: https://docs.microsoft.com/azure/powershell-install-configure
+[powershell-install-configure]: /powershell/azure/
 [scaling-globally]: distribute-data-globally.md#EnableGlobalDistribution
 [distribute-data-globally]: distribute-data-globally.md
-[azure-resource-groups]: https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview#resource-groups
-[azure-resource-tags]: https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
+[azure-resource-groups]: ../azure-resource-manager/management/overview.md#resource-groups
+[azure-resource-tags]: ../azure-resource-manager/management/tag-resources.md
 [rp-rest-api]: /rest/api/cosmos-db-resource-provider/

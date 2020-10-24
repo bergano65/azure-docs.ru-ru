@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 07/27/2020
 ms.author: normesta
 ms.subservice: common
-ms.openlocfilehash: ac093f707167160e916c15b935cb3d8ff6bbc748
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 022b6eb6595f25af4189d783a6a91031f95c7216
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88037122"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92479363"
 ---
 # <a name="copy-data-from-amazon-s3-to-azure-storage-by-using-azcopy"></a>Копирование данных из Amazon S3 в службу хранилища Azure с помощью AzCopy
 
@@ -34,13 +34,13 @@ AzCopy — это служебная программа командной ст
 >
 > Если вы предпочитаете использовать маркер SAS для авторизации доступа к данным большого двоичного объекта, можно добавить этот маркер к URL-адресу ресурса в каждой команде AzCopy.
 >
-> Например: `https://mystorageaccount.blob.core.windows.net/mycontainer?<SAS-token>`.
+> Например, `https://mystorageaccount.blob.core.windows.net/mycontainer?<SAS-token>`.
 
 ### <a name="authorize-with-aws-s3"></a>Авторизация с помощью AWS S3
 
 Соберите ключ доступа AWS и секретный ключ доступа, а затем задайте следующие переменные среды:
 
-| Операционная система | Get-Help  |
+| Операционная система | Команда  |
 |--------|-----------|
 | **Windows** | `set AWS_ACCESS_KEY_ID=<access-key>`<br>`set AWS_SECRET_ACCESS_KEY=<secret-access-key>` |
 | **Linux** | `export AWS_ACCESS_KEY_ID=<access-key>`<br>`export AWS_SECRET_ACCESS_KEY=<secret-access-key>` |
@@ -48,7 +48,7 @@ AzCopy — это служебная программа командной ст
 
 ## <a name="copy-objects-directories-and-buckets"></a>Копирование объектов, каталогов и контейнеров
 
-AzCopy использует [блок размещения из API URL-адреса](https://docs.microsoft.com/rest/api/storageservices/put-block-from-url) , поэтому данные копируются непосредственно между AWS S3 и серверами хранилища. Эти операции копирования не используют пропускную способность сети компьютера.
+AzCopy использует [блок размещения из API URL-адреса](/rest/api/storageservices/put-block-from-url) , поэтому данные копируются непосредственно между AWS S3 и серверами хранилища. Эти операции копирования не используют пропускную способность сети компьютера.
 
 > [!TIP]
 > В примерах этого раздела аргументы пути заключаются в одинарные кавычки (' '). Используйте одинарные кавычки во всех командных оболочках, кроме командной оболочки Windows (cmd.exe). Если вы используете командную оболочку Windows (cmd.exe), заключите аргументы пути в двойные кавычки ("") вместо одинарных кавычек ("").
@@ -135,7 +135,7 @@ AzCopy обрабатывает две наиболее распростране
 
 ## <a name="handle-differences-in-object-metadata"></a>Обработку различий в метаданных объекта
 
-AWS S3 и Azure позволяют использовать разные наборы символов в именах объектных ключей. Вы можете ознакомиться с символами, [которые использует AWS](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys)S3. На стороне Azure ключи объектов больших двоичных объектов соответствуют правилам именования [идентификаторов C#](https://docs.microsoft.com/dotnet/csharp/language-reference/).
+AWS S3 и Azure позволяют использовать разные наборы символов в именах объектных ключей. Вы можете ознакомиться с символами, [которые использует AWS](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys)S3. На стороне Azure ключи объектов больших двоичных объектов соответствуют правилам именования [идентификаторов C#](/dotnet/csharp/language-reference/).
 
 В составе команды AzCopy `copy` можно указать необязательный `s2s-handle-invalid-metadata` флаг, указывающий, как вы хотите управлять файлами, в которых метаданные файла содержат несовместимые имена ключей. В следующей таблице описывается каждое значение флага.
 
@@ -165,10 +165,10 @@ AzCopy выполняет следующие действия:
 
 Дополнительные примеры приведены в любой из следующих статей:
 
-- [Начало работы с AzCopy](storage-use-azcopy-v10.md)
+- [Get started with AzCopy](storage-use-azcopy-v10.md) (Начало работы с AzCopy)
 
 - [Transfer data with AzCopy and blob storage](storage-use-azcopy-blobs.md) (Передача данных с помощью AzCopy и хранилища BLOB-объектов)
 
-- [Перенос данных с помощью AzCopy и хранилища файлов](storage-use-azcopy-files.md)
+- [Transfer data with AzCopy and file storage](storage-use-azcopy-files.md) (Передача данных с помощью AzCopy и хранилища файлов)
 
 - [Configure, optimize, and troubleshoot AzCopy](storage-use-azcopy-configure.md) (Настройка, оптимизация и устранение неполадок с AzCopy)

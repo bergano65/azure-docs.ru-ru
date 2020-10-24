@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 08/24/2020
 ms.author: dech
 ms.custom: seodec18, has-adal-ref
-ms.openlocfilehash: 938968599f1824416666818a46cc73a1d33c5341
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3b5886984d6e3830549e86a7c1ee46cd2483e4b4
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90987745"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92480604"
 ---
 # <a name="manage-azure-cosmos-db-resources-by-using-azure-storage-explorer"></a>Управление ресурсами Azure Cosmos DB с помощью Обозреватель службы хранилища Azure
 
@@ -20,9 +20,9 @@ ms.locfileid: "90987745"
 
 Используйте то же средство для управления различными сущностями Azure в одном месте. Вы можете управлять сущностями Azure Cosmos DB, управлять данными, обновлять хранимые процедуры и триггеры вместе с другими сущностями Azure, такими как BLOB-объекты и очереди хранилища.
 
-Обозреватель службы хранилища Azure поддерживает учетные записи Cosmos, настроенные для API-интерфейсов SQL, MongoDB, Graph и Table. Для получения дополнительных сведений перейдите в [Azure Cosmos DB в обозреватель службы хранилища Azure](https://docs.microsoft.com/azure/cosmos-db/storage-explorer) .
+Обозреватель службы хранилища Azure поддерживает учетные записи Cosmos, настроенные для API-интерфейсов SQL, MongoDB, Graph и Table. Для получения дополнительных сведений перейдите в [Azure Cosmos DB в обозреватель службы хранилища Azure]() .
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Учетная запись Cosmos с API SQL или API Azure Cosmos DB для MongoDB. Если у вас нет учетной записи, вы можете создать ее на портал Azure. Дополнительные сведения см. [в разделе Azure Cosmos DB: создание веб-приложения API SQL с помощью .NET и портал Azure](create-sql-api-dotnet.md) .
 
@@ -74,7 +74,7 @@ ms.locfileid: "90987745"
 
 Выполните следующие действия, чтобы подключиться к Azure Cosmos DB с помощью эмулятора. Этот метод поддерживает только учетные записи SQL.
 
-1. Установите эмулятор Cosmos DB, а затем откройте его. Сведения об установке эмулятора см. в разделе [эмулятор Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/local-emulator).
+1. Установите эмулятор Cosmos DB, а затем откройте его. Сведения об установке эмулятора см. в разделе [эмулятор Cosmos DB](./local-emulator.md).
 
 1. Найдите **локальные и** присоединитесь к левому дереву, щелкните правой кнопкой мыши **Cosmos DB учетные записи**, а затем выберите **подключиться к эмулятору Cosmos DB**.
 
@@ -173,7 +173,7 @@ ms.locfileid: "90987745"
 
 #### <a name="query-for-documents"></a>Запросы для документов
 
-* Чтобы изменить фильтр документа, введите SQL- [запрос](how-to-sql-query.md)и нажмите кнопку **Применить**.
+* Чтобы изменить фильтр документа, введите SQL- [запрос](./sql-query-getting-started.md)и нажмите кнопку **Применить**.
 
   :::image type="content" source="./media/storage-explorer/document-filter.png" alt-text="Снимок экрана, показывающий значок подключаемого модуля на левой панели.":::
 
@@ -353,4 +353,4 @@ ms.locfileid: "90987745"
 ## <a name="next-steps"></a>Дальнейшие шаги
 
 * Просмотрите это видео, чтобы узнать, как использовать Azure Cosmos DB в Обозреватель службы хранилища Azure: [используйте Azure Cosmos DB в обозреватель службы хранилища Azure](https://www.youtube.com/watch?v=iNIbg1DLgWo&feature=youtu.be).
-* Дополнительные сведения об Обозревателе службы хранилища и подключении дополнительных служб см. в статье о [начале работы с Обозревателем службы хранилища](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer).
+* Дополнительные сведения об Обозревателе службы хранилища и подключении дополнительных служб см. в статье о [начале работы с Обозревателем службы хранилища](../vs-azure-tools-storage-manage-with-storage-explorer.md).

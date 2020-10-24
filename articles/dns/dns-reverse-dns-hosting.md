@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 05/29/2017
 ms.author: rohink
-ms.openlocfilehash: d6fabd58baf8fb3dc30c2468efd5bdc8179d5f95
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6a0aebc727233cdd838f3e1bf8eeb5cd247b9836
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84709204"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92489682"
 ---
 # <a name="host-reverse-dns-lookup-zones-in-azure-dns"></a>Размещение зон обратного просмотра DNS в Azure DNS
 
@@ -48,7 +48,7 @@ ms.locfileid: "84709204"
 
 В примере ниже показано, как создать зону обратного просмотра DNS класса C с именем `2.0.192.in-addr.arpa` в Azure DNS при помощи портала Azure:
 
- ![Панель "Создание зоны DNS" с заполненными полями](./media/dns-reverse-dns-hosting/figure2.png)
+ ![Снимок экрана, показывающий, как создать обратную зону DNS класса C с именем 2.0.192.in-addr. arpa в Azure DNS через портал Azure.](./media/dns-reverse-dns-hosting/figure2.png)
 
 Значение поля **Расположение группы ресурсов** определяет расположение группы ресурсов. Оно не влияет на зону DNS. Расположение зоны DNS всегда является глобальным и не отображается.
 
@@ -117,7 +117,7 @@ az network dns zone create -g MyResourceGroup -n 0.0.0.0.d.c.b.a.8.b.d.0.1.0.0.2
 
 1. В верхней части панели **Зона DNS** щелкните **+ Набор записей**, чтобы открыть панель **Добавление набора записей**.
 
-   ![Кнопка для создания набора записей](./media/dns-reverse-dns-hosting/figure4.png)
+   ![Снимок экрана: область зоны DNS со стрелкой, указывающей на кнопку + набор записей.](./media/dns-reverse-dns-hosting/figure4.png)
 
 1. Имя набора записей для записи типа PTR должно представлять собой оставшуюся часть адреса IPv4 в обратном порядке. 
 
@@ -162,7 +162,7 @@ az network dns record-set ptr add-record -g MyResourceGroup -z 2.0.192.in-addr.a
 4. В поле **Доменное имя** введите полное доменное имя ресурса, использующего IP-адрес.
 5. Чтобы создать запись DNS, нажмите кнопку **ОК** в нижней части панели.
 
-![Панель "Добавление набора записей" с заполненными полями](./media/dns-reverse-dns-hosting/figure7.png)
+![Снимок экрана, на котором показана панель "Добавление набора записей" со стрелкой, указывающей на значение в поле "тип".](./media/dns-reverse-dns-hosting/figure7.png)
 
 Ниже приведены примеры выполнения этой задачи с помощью PowerShell или Azure CLI.
 

@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 08/04/2020
 ms.author: tisande
 ms.custom: devx-track-python, devx-track-js, devx-track-azurecli, devx-track-csharp
-ms.openlocfilehash: f006f249fce56171f8bbf471de013e015b5c4f92
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 67d542ffe0279abe72bc74ab207cd5fddd1a4362
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92207781"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92491042"
 ---
 # <a name="manage-indexing-policies-in-azure-cosmos-db"></a>Управление политиками индексирования в Azure Cosmos DB
 
@@ -347,7 +347,7 @@ WHERE c.name = "Tim" AND c.age > 18
 [Обновление политики индексирования](index-policy.md#modifying-the-indexing-policy) приводит к преобразованию индекса. Ход выполнения этого преобразования можно отслеживать с помощью пакетов SDK.
 
 > [!NOTE]
-> При обновлении политики индексации операции записи в Azure Cosmos DB будут непрерывными. Дополнительные сведения о [преобразованиях индексирования](indexing-policy.md#modifying-the-indexing-policy)
+> При обновлении политики индексации операции записи в Azure Cosmos DB будут непрерывными. Дополнительные сведения о [преобразованиях индексирования](index-policy.md#modifying-the-indexing-policy)
 
 ## <a name="use-the-azure-portal"></a>Использование портала Azure
 

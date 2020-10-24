@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 05/06/2020
 ms.author: alkohli
 ms.subservice: common
-ms.openlocfilehash: d0a1826dafd1e6ce6202dc4f29417a1ce100e54f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 345fd486788cfbb69454be488d771d9b4ea394ab
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "83195255"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92488645"
 ---
 # <a name="use-customer-managed-keys-in-azure-key-vault-for-importexport-service"></a>Использование управляемых клиентом ключей в Azure Key Vault для службы импорта и экспорта
 
@@ -101,9 +101,9 @@ ms.locfileid: "83195255"
 |----------------|------------|-----------------|
 | CmkErrorAccessRevoked | Доступ к управляемому клиентом ключу отозван.                                                       | Да, убедитесь, что: <ol><li>В Key Vault по-прежнему есть MSI в политике доступа.</li><li>Политика доступа включает разрешения на получение, упаковку и распаковку.</li><li>Если Key Vault находится в виртуальной сети за брандмауэром, проверьте, включен ли параметр **Разрешить доверенные службы Майкрософт**.</li><li>Проверьте, установлено ли для MSI ресурса задания значение `None` с помощью интерфейсов API.<br>Если да, то снова установите значение `Identity = SystemAssigned`. Это повторно создаст удостоверение для ресурса задания.<br>После создания удостоверения включите для него разрешения `Get`, `Wrap` и `Unwrap` в политике доступа Key Vault.</li></ol>                                                                                            |
 | CmkErrorKeyDisabled      | Управляемый клиентом ключ отключен.                                         | Да, включив версию ключа.     |
-| CmkErrorKeyNotFound      | Не удается найти управляемый клиентом ключ. | Да, если ключ был удален, но все еще находится в пределах периода очистки, отмените [удаление ключа Key vault](https://docs.microsoft.com/powershell/module/az.keyvault/undo-azkeyvaultkeyremoval).<br>Или: <ol><li>Да, если пользователь имеет резервную копию ключа и восстанавливает его.</li><li>Нет, в противном случае.</li></ol>
-| CmkErrorVaultNotFound |Не удается найти Key Vault для управляемого клиентом ключа. |   Если Key Vault удалено:<ol><li>Да, если срок действия защиты от очистки не истек, выполните шаги, описанные в разделе [Восстановление хранилища ключей](https://docs.microsoft.com/azure/key-vault/general/soft-delete-powershell#recovering-a-key-vault).</li><li>Нет, если истек срок действия защиты от очистки.</li></ol><br>В противном случае, если Key Vault было перенесено на другой клиент, его можно восстановить, выполнив одно из следующих действий:<ol><li>Верните Key Vault обратно на старый клиент.</li><li>Установите значение `Identity = None`, а затем верните обратно значение `Identity = SystemAssigned`. Это приведет к удалению и повторному созданию удостоверения сразу же после создания удостоверения. Включите для нового удостоверения разрешения `Get`, `Wrap` и `Unwrap` в политике доступа Key Vault.</li></ol>|
+| CmkErrorKeyNotFound      | Не удается найти управляемый клиентом ключ. | Да, если ключ был удален, но все еще находится в пределах периода очистки, отмените [удаление ключа Key vault](/powershell/module/az.keyvault/undo-azkeyvaultkeyremoval).<br>Или: <ol><li>Да, если пользователь имеет резервную копию ключа и восстанавливает его.</li><li>Нет, в противном случае.</li></ol>
+| CmkErrorVaultNotFound |Не удается найти Key Vault для управляемого клиентом ключа. |   Если Key Vault удалено:<ol><li>Да, если срок действия защиты от очистки не истек, выполните шаги, описанные в разделе [Восстановление хранилища ключей](/azure/key-vault/general/soft-delete-powershell#recovering-a-key-vault).</li><li>Нет, если истек срок действия защиты от очистки.</li></ol><br>В противном случае, если Key Vault было перенесено на другой клиент, его можно восстановить, выполнив одно из следующих действий:<ol><li>Верните Key Vault обратно на старый клиент.</li><li>Установите значение `Identity = None`, а затем верните обратно значение `Identity = SystemAssigned`. Это приведет к удалению и повторному созданию удостоверения сразу же после создания удостоверения. Включите для нового удостоверения разрешения `Get`, `Wrap` и `Unwrap` в политике доступа Key Vault.</li></ol>|
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Об Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-overview)
+- [Об Azure Key Vault](/azure/key-vault/key-vault-overview)

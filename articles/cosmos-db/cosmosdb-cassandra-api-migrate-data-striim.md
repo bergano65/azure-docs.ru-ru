@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 07/22/2019
 ms.author: sngun
 ms.reviewer: sngun
-ms.openlocfilehash: 5c9ec20ffe52c23c2dec5a624fc157da7ebd4a41
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.openlocfilehash: 749e0f7c2d79c03be052869d7d1d9539976a09c5
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92330943"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92489308"
 ---
 # <a name="migrate-data-to-azure-cosmos-db-cassandra-api-account-using-striim"></a>Перенос данных в учетную запись Azure Cosmos DB API Cassandra с помощью Стриим
 
@@ -20,9 +20,9 @@ ms.locfileid: "92330943"
 
 В этой статье показано, как использовать Стриим для переноса данных из **базы данных Oracle** в **учетную запись API Cassandra Azure Cosmos DB**.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
-* Если у вас еще нет [подписки Azure](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing), создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начать работу.
+* Если у вас еще нет [подписки Azure](../guides/developer/azure-developer-guide.md#understanding-accounts-subscriptions-and-billing), создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начать работу.
 
 * База данных Oracle, работающая в локальной среде, с некоторыми данными.
 
@@ -185,7 +185,7 @@ ms.locfileid: "92330943"
 
 С помощью решения Стриим в Azure можно непрерывно переносить данные в Azure Cosmos DB из различных источников, таких как Oracle, Cassandra, MongoDB и других, для Azure Cosmos DB. Дополнительные сведения см. на [веб-сайте Стриим](https://www.striim.com/), [Загрузите бесплатную 30-дневную пробную версию Стриим](https://go2.striim.com/download-free-trial)и в случае возникновения проблем при настройке пути миграции с помощью Стриим отправьте [запрос в службу поддержки.](https://go2.striim.com/request-support-striim)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения о переносе данных в Azure Cosmos DB API SQL см. в статье [Перенос данных в учетную запись API Cassandra с помощью Стриим](cosmosdb-sql-api-migrate-data-striim.md) .
 

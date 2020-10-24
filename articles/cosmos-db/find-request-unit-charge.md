@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 10/14/2020
 ms.author: thweiss
 ms.custom: devx-track-js
-ms.openlocfilehash: 23f334d28ef5045c68bb84fc0bc34e8f847fe0f9
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: d8c1237b1bf4fac743ad5e70fee857337d9624c4
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92281847"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92490668"
 ---
 # <a name="find-the-request-unit-charge-for-operations-executed-in-azure-cosmos-db-sql-api"></a>Поиск затрат единиц запросов для операций, выполненных в Azure Cosmos DB API SQL
 
@@ -175,8 +175,8 @@ request_charge = client.last_response_headers['x-ms-request-charge']
 
 * [Пропускная способность и единицы запросов в Azure Cosmos DB](request-units.md)
 * [Optimize provisioned throughput cost in Azure Cosmos DB](optimize-cost-throughput.md) (Оптимизация стоимости подготовленной пропускной способности в Azure Cosmos DB)
-* [Optimize query cost in Azure Cosmos DB](optimize-cost-queries.md) (Оптимизация затрат на отправку запросов в Azure Cosmos DB)
-* [Globally scale provisioned throughput](scaling-throughput.md) (Глобальное масштабирование подготовленной пропускной способности)
+* [Optimize query cost in Azure Cosmos DB](./optimize-cost-reads-writes.md) (Оптимизация затрат на отправку запросов в Azure Cosmos DB)
+* [Globally scale provisioned throughput](./request-units.md) (Глобальное масштабирование подготовленной пропускной способности)
 * [Обеспечение необходимой пропускной способности для контейнеров и баз данных](set-throughput.md)
 * [Подготовка пропускной способности для контейнера](how-to-provision-container-throughput.md)
 * [Monitor and debug with metrics in Azure Cosmos DB](use-metrics.md) (Мониторинг и отладка с помощью метрик в Azure Cosmos DB)

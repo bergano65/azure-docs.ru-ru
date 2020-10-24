@@ -7,30 +7,30 @@ ms.topic: conceptual
 ms.date: 08/04/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: c82451ca9f1f974aba7578b0dfc4f6f0eb99ac16
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cef787cbf8ae38b5b80b63594710fcc21e124c5a
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91318132"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92481080"
 ---
 # <a name="azure-security-baseline-for-azure-database-for-postgresql---hyperscale-citus"></a>Базовый план безопасности Azure для базы данных Azure для PostgreSQL — масштабирование (Цитус)
 
 Базовый план безопасности Azure для базы данных Azure для PostgreSQL-Scale (Цитус) содержит рекомендации, которые помогут повысить уровень безопасности развертывания.
 
-Базовая конфигурация безопасности для этой службы взята из [теста производительности системы Azure версии 1.0](https://docs.microsoft.com/azure/security/benchmarks/overview), содержащего рекомендации по обеспечению безопасности облачных решений в Azure с помощью наших практических рекомендаций.
+Базовая конфигурация безопасности для этой службы взята из [теста производительности системы Azure версии 1.0](../security/benchmarks/overview.md), содержащего рекомендации по обеспечению безопасности облачных решений в Azure с помощью наших практических рекомендаций.
 
-Дополнительные сведения см. в статье [Обзор базовой конфигурации безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/security-baselines-overview).
+Дополнительные сведения см. в статье [Обзор базовой конфигурации безопасности Azure](../security/benchmarks/security-baselines-overview.md).
 
 ## <a name="network-security"></a>Безопасность сети
 
-*Дополнительные сведения см. в статье [Управление безопасностью: безопасность сети](/azure/security/benchmarks/security-control-network-security).*
+*Дополнительные сведения см. в статье [Управление безопасностью: безопасность сети](../security/benchmarks/security-control-network-security.md).*
 
 ### <a name="11-protect-azure-resources-within-virtual-networks"></a>1,1: защита ресурсов Azure в виртуальных сетях
 
 **Руководство**. брандмауэр сервера базы данных Azure для PostgreSQL предотвращает доступ к узлу координатора масштабирования (Цитус), пока вы не укажете, какие компьютеры имеют разрешение. Брандмауэр предоставляет доступ к серверу на основе исходного IP-адреса каждого запроса. Для настройки брандмауэра можно создать правила брандмауэра, которые указывают диапазон допустимых IP-адресов. Правила брандмауэра можно создавать на уровне сервера.
 
-- [Настройка правил брандмауэра в базе данных Azure для PostgreSQL — изменение масштаба (Цитус)](https://docs.microsoft.com/azure/postgresql/concepts-hyperscale-firewall-rules)
+- [Настройка правил брандмауэра в базе данных Azure для PostgreSQL — изменение масштаба (Цитус)](./concepts-hyperscale-firewall-rules.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -40,11 +40,11 @@ ms.locfileid: "91318132"
 
 **Руководство**: Определите и реализуйте стандартные конфигурации безопасности для сетевых настроек и сетевых ресурсов, связанных с вашей базой данных Azure для экземпляров PostgreSQL, с помощью политики Azure. Используйте псевдонимы политик Azure в пространстве имен Microsoft. Network, чтобы создать настраиваемые политики для аудита или принудительно применить конфигурацию сети для экземпляров базы данных Azure для PostgreSQL.
 
-- [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+- [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-- [Примеры политик Azure для работы в сети](https://docs.microsoft.com/azure/governance/policy/samples/#network)
+- [Примеры политик Azure для работы в сети](../governance/policy/samples/built-in-policies.md#network)
 
-- [Создание схемы Azure](https://docs.microsoft.com/azure/governance/blueprints/create-blueprint-portal)
+- [Создание схемы Azure](../governance/blueprints/create-blueprint-portal.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -52,7 +52,7 @@ ms.locfileid: "91318132"
 
 ## <a name="logging-and-monitoring"></a>Ведение журналов и мониторинг
 
-*Дополнительные сведения см. в статье [Управление безопасностью: ведение журналов и мониторинг](/azure/security/benchmarks/security-control-logging-monitoring).*
+*Дополнительные сведения см. в статье [Управление безопасностью: ведение журналов и мониторинг](../security/benchmarks/security-control-logging-monitoring.md).*
 
 ### <a name="22-configure-central-security-log-management"></a>2.2. Настройка централизованного управления журналами безопасности
 
@@ -60,11 +60,11 @@ ms.locfileid: "91318132"
 
 Кроме того, прием журналов осуществляется с помощью Azure Monitor для агрегирования данных безопасности, формируемых функцией масштабирования (Цитус). В Azure Monitor использовать рабочие области Log Analytics для запроса и выполнения анализа, а также использовать учетные записи хранения для долгосрочного и архивного хранения. Кроме того, вы можете включить и подключить данные к Azure Sentinel или сторонним системам управления информационной безопасностью и событиями безопасности (SIEM). 
 
-- [Как включить параметры диагностики для журнала действий Azure](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings-legacy)
+- [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/platform/activity-log.md)
 
-- [Метрики в масштабировании (Цитус)](https://docs.microsoft.com/azure/postgresql/concepts-hyperscale-monitoring)
+- [Метрики в масштабировании (Цитус)](./concepts-hyperscale-monitoring.md)
 
-- [Подключение к Azure Sentinel](https://docs.microsoft.com/azure/sentinel/quickstart-onboard)
+- [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
 **Мониторинг Центра безопасности Azure**. Сейчас это недоступно.
 
@@ -78,11 +78,11 @@ ms.locfileid: "91318132"
 
 Кроме того, прием журналов осуществляется с помощью Azure Monitor для агрегирования данных безопасности, формируемых функцией масштабирования (Цитус). В Azure Monitor использовать рабочие области Log Analytics для запроса и выполнения анализа, а также использовать учетные записи хранения для долгосрочного и архивного хранения. Кроме того, вы можете включить и подключить данные к Azure Sentinel или сторонним системам управления информационной безопасностью и событиями безопасности (SIEM). 
 
-- [Метрики в масштабировании (Цитус)](https://docs.microsoft.com/azure/postgresql/concepts-hyperscale-monitoring)
+- [Метрики в масштабировании (Цитус)](./concepts-hyperscale-monitoring.md)
 
-- [Как включить параметры диагностики для журнала действий Azure](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings-legacy)
+- [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/platform/activity-log.md)
 
-- [Подключение к Azure Sentinel](https://docs.microsoft.com/azure/sentinel/quickstart-onboard)
+- [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
 **Мониторинг Центра безопасности Azure**. Сейчас это недоступно.
 
@@ -92,9 +92,9 @@ ms.locfileid: "91318132"
 
 **Руководство**. в Azure Monitor для рабочей области log Analytics, используемой для хранения журналов Цитус, задайте срок хранения согласно нормативным требованиям Организации. Используйте учетные записи хранения Azure для долгосрочного и архивного хранения.
 
-- [Задание параметров хранения журналов для рабочих областей Log Analytics](https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period)
+- [Задание параметров хранения журналов для рабочих областей Log Analytics](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
 
-- [Хранение журналов ресурсов в учетной записи хранения Azure](https://docs.microsoft.com/azure/azure-monitor/platform/resource-logs-collect-storage)
+- [Хранение журналов ресурсов в учетной записи хранения Azure](../azure-monitor/platform/resource-logs.md#send-to-azure-storage)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -104,11 +104,11 @@ ms.locfileid: "91318132"
 
 **Руководство**. анализ и мониторинг журналов из экземпляров Цитус для аномального поведения. Используйте аналитику журналов Azure Monitor для просмотра журналов и выполнения запросов к данным журнала. Кроме того, вы можете включить и подключить данные к Azure Sentinel или сторонним SIEM.
 
-- [Подключение к Azure Sentinel](https://docs.microsoft.com/azure/sentinel/quickstart-onboard)
+- [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
-- [Дополнительные сведения о Log Analytics](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-portal)
+- [Дополнительные сведения о Log Analytics](../azure-monitor/log-query/get-started-portal.md)
 
-- [Выполнение пользовательских запросов в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-queries)
+- [Выполнение пользовательских запросов в Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -120,11 +120,11 @@ ms.locfileid: "91318132"
 
 Подключите рабочую область Log Analytics к Azure Sentinel, так как она предоставляет решение для оркестрации событий безопасности и автоматического реагирования (SOAR). Это позволяет создавать и использовать сборники схем (автоматизированные решения) для устранения проблем безопасности.
 
-- [Метрики в масштабировании (Цитус)](https://docs.microsoft.com/azure/postgresql/howto-hyperscale-alert-on-metric)
+- [Метрики в масштабировании (Цитус)](./howto-hyperscale-alert-on-metric.md)
 
-- [Настройка параметров диагностики для журнала действий Azure](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings-legacy)
+- [Настройка параметров диагностики для журнала действий Azure](../azure-monitor/platform/activity-log.md)
 
-- [Подключение к Azure Sentinel](https://docs.microsoft.com/azure/sentinel/quickstart-onboard)
+- [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
 **Мониторинг Центра безопасности Azure**. Сейчас это недоступно.
 
@@ -132,7 +132,7 @@ ms.locfileid: "91318132"
 
 ## <a name="identity-and-access-control"></a>Идентификаторы и управление доступом
 
-*Дополнительные сведения см. в статье [Управление безопасностью: идентификаторы и управление доступом](/azure/security/benchmarks/security-control-identity-access-control).*
+*Дополнительные сведения см. в статье [Управление безопасностью: идентификаторы и управление доступом](../security/benchmarks/security-control-identity-access-control.md).*
 
 ### <a name="31-maintain-an-inventory-of-administrative-accounts"></a>3.1. Инвентаризация учетных записей администраторов
 
@@ -142,15 +142,15 @@ ms.locfileid: "91318132"
 
 Кроме того, подсистема PostgreSQL использует роли для управления доступом к объектам базы данных, а вновь созданная группа серверов с горизонтальным масштабированием (Цитус) поставляется с несколькими предварительно определенными ролями. Чтобы изменить привилегии пользователя, используйте стандартные команды PostgreSQL, используя такие средства, как PgAdmin или psql.
 
-- [Общие сведения о пользовательских ролях для подписки Azure](https://docs.microsoft.com/azure/role-based-access-control/custom-roles) 
+- [Общие сведения о пользовательских ролях для подписки Azure](../role-based-access-control/custom-roles.md) 
 
-- [Общие сведения об операциях поставщика ресурсов базы данных Azure для PostgreSQL](https://docs.microsoft.com/azure/role-based-access-control/resource-provider-operations#microsoftdbforpostgresql) 
+- [Общие сведения об операциях поставщика ресурсов базы данных Azure для PostgreSQL](../role-based-access-control/resource-provider-operations.md#microsoftdbforpostgresql) 
 
-- [Общие сведения об управлении доступом для базы данных Azure для PostgreSQL](https://docs.microsoft.com/azure/postgresql/concepts-security#access-management])
+- [Общие сведения об управлении доступом для базы данных Azure для PostgreSQL](./concepts-security.md#access-management)
 
-- [Создание пользователей в базе данных Azure для PostgreSQL — масштабирование (Цитус)](https://docs.microsoft.com/azure/postgresql/howto-hyperscale-create-users)
+- [Создание пользователей в базе данных Azure для PostgreSQL — масштабирование (Цитус)](./howto-hyperscale-create-users.md)
 
-- [Подключение к PostgreSQL-Scale (Цитус) с помощью psql](https://docs.microsoft.com/azure/postgresql/quickstart-create-hyperscale-portal#connect-to-the-database-using-psql)
+- [Подключение к PostgreSQL-Scale (Цитус) с помощью psql](./quickstart-create-hyperscale-portal.md#connect-to-the-database-using-psql)
 
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
@@ -169,9 +169,9 @@ ms.locfileid: "91318132"
 
 **Руководство**. Создание стандартных рабочих процедур для использования выделенных административных учетных записей, которые используются для доступа к экземплярам Цитус. Учетные записи администратора для управления ресурсом Azure привязаны к Azure Active Directory. также существуют учетные записи администратора локального сервера, которые существуют в группе серверов Цитус для управления разрешениями на доступ к базе данных. Используйте управление удостоверениями и доступом центра безопасности Azure, чтобы отслеживать количество административных учетных записей в Azure Active Directory.
 
-- [Общие сведения об удостоверениях и доступе центра безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-identity-access) 
+- [Общие сведения об удостоверениях и доступе центра безопасности Azure](../security-center/security-center-identity-access.md) 
 
-- [Создание пользователей в базе данных Azure для PostgreSQL — масштабирование (Цитус)](https://docs.microsoft.com/azure/postgresql/howto-hyperscale-create-users)
+- [Создание пользователей в базе данных Azure для PostgreSQL — масштабирование (Цитус)](./howto-hyperscale-create-users.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -181,9 +181,9 @@ ms.locfileid: "91318132"
 
 **Руководство**. для доступа к портал Azure включите Azure Active Directory многофакторную идентификацию (MFA) и следуйте рекомендациям по управлению удостоверениями и доступом в центре безопасности Azure.
 
-- [Включение MFA в Azure](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted)
+- [Включение MFA в Azure](../active-directory/authentication/howto-mfa-getstarted.md)
 
-- [Мониторинг идентификации и доступа в Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-identity-access)
+- [Мониторинг идентификации и доступа в Центре безопасности Azure](../security-center/security-center-identity-access.md)
 
 
 **Мониторинг Центра безопасности Azure**: Да
@@ -194,9 +194,9 @@ ms.locfileid: "91318132"
 
 **Руководство**: Используйте рабочие станции привилегированного доступа (PAW) с настроенной многофакторной проверкой подлинности (MFA) для входа в ресурсы Azure и их настройки.
 
-- [Использование рабочих станций с привилегированным доступом](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/privileged-access-workstations)
+- [Использование рабочих станций с привилегированным доступом](/windows-server/identity/securing-privileged-access/privileged-access-workstations)
 
-- [Включение MFA в Azure](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted)
+- [Включение MFA в Azure](../active-directory/authentication/howto-mfa-getstarted.md)
 
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
@@ -209,9 +209,9 @@ ms.locfileid: "91318132"
 
 Используйте обнаружение рисков Azure AD для просмотра предупреждений и отчетов об опасном поведении пользователя.
 
-- [Развертывание Privileged Identity Management (PIM)](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-deployment-plan)
+- [Развертывание Privileged Identity Management (PIM)](../active-directory/privileged-identity-management/pim-deployment-plan.md)
 
-- [Общие сведения об обнаружении рисков в Azure AD](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-risk-events)
+- [Общие сведения об обнаружении рисков в Azure AD](../active-directory/identity-protection/overview-identity-protection.md)
 
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
@@ -222,7 +222,7 @@ ms.locfileid: "91318132"
 
 **Рекомендации**. Используйте именованные расположения с условным доступом, чтобы разрешить порталу и Azure Resource Manager доступ только из конкретных логических групп диапазонов IP-адресов или стран и регионов.
 
-- [Настройка именованных расположений в Azure](https://docs.microsoft.com/azure/active-directory/reports-monitoring/quickstart-configure-named-locations)
+- [Настройка именованных расположений в Azure](../active-directory/reports-monitoring/quickstart-configure-named-locations.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -234,9 +234,9 @@ ms.locfileid: "91318132"
 
 Пользователи из группы серверов Цитус не могут напрямую привязываться к учетным записям Azure Active Directory. Чтобы изменить привилегии пользователя для доступа к объектам базы данных, используйте стандартные команды PostgreSQL с такими инструментами, как PgAdmin или psql.
 
-- [Изменение привилегий для ролей пользователей](https://docs.microsoft.com/azure/postgresql/howto-hyperscale-create-users#how-to-modify-privileges-for-user-role)
+- [Изменение привилегий для ролей пользователей](./howto-hyperscale-create-users.md#how-to-modify-privileges-for-user-role)
 
-- [Создание и настройка экземпляра Azure AD](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-access-create-new-tenant)
+- [Создание и настройка экземпляра Azure AD](../active-directory/fundamentals/active-directory-access-create-new-tenant.md)
 
 
 
@@ -252,9 +252,9 @@ ms.locfileid: "91318132"
 
 - [Проверка пользователей PostgreSQL и назначенных ролей](https://www.postgresql.org/docs/current/database-roles.html)
 
-- [Общие сведения об отчетах Azure AD](https://docs.microsoft.com/azure/active-directory/reports-monitoring/)
+- [Общие сведения об отчетах Azure AD](../active-directory/reports-monitoring/index.yml)
 
-- [Использование проверок доступа для идентификации Azure](https://docs.microsoft.com/azure/active-directory/governance/access-reviews-overview)
+- [Использование проверок доступа для идентификации Azure](../active-directory/governance/access-reviews-overview.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -266,7 +266,7 @@ ms.locfileid: "91318132"
 
 Этот процесс можно упростить, создав параметры диагностики для учетных записей пользователей Azure Active Directory и отправив журналы аудита и журналы входа в рабочую область Log Analytics. Вы можете настроить необходимые оповещения в рабочей области Log Analytics. 
 
-- [Как интегрировать журналы действий Azure в Azure Monitor](https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)
+- [Как интегрировать журналы действий Azure в Azure Monitor](../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
 
 **Мониторинг Центра безопасности Azure**. Неприменимо
@@ -279,11 +279,11 @@ ms.locfileid: "91318132"
 
 Вы также можете включить журналы в Azure Sentinel для дальнейшего изучения.
 
-- [Общие сведения о Защите идентификации Azure AD](https://docs.microsoft.com/azure/active-directory/identity-protection/overview-identity-protection)
+- [Общие сведения о Защите идентификации Azure AD](../active-directory/identity-protection/overview-identity-protection.md)
 
-- [Просмотр рискованных входов в Azure AD](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-risk-events)
+- [Просмотр рискованных входов в Azure AD](../active-directory/identity-protection/overview-identity-protection.md)
 
-- [Подключение к Azure Sentinel](https://docs.microsoft.com/azure/sentinel/quickstart-onboard)
+- [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -293,7 +293,7 @@ ms.locfileid: "91318132"
 
 **Руководство**: Сейчас недоступно; Защищенное хранилище еще не поддерживается для масштабирования (Цитус).
 
-- [Список поддерживаемых защищенное хранилище служб](https://docs.microsoft.com/azure/security/fundamentals/customer-lockbox-overview#supported-services-and-scenarios-in-general-availability)
+- [Список поддерживаемых защищенное хранилище служб](../security/fundamentals/customer-lockbox-overview.md#supported-services-and-scenarios-in-general-availability)
 
 **Мониторинг Центра безопасности Azure**. Сейчас это недоступно.
 
@@ -301,13 +301,13 @@ ms.locfileid: "91318132"
 
 ## <a name="data-protection"></a>Защита данных
 
-*Дополнительные сведения см. в статье [Управление безопасностью: защита данных](/azure/security/benchmarks/security-control-data-protection).*
+*Дополнительные сведения см. в статье [Управление безопасностью: защита данных](../security/benchmarks/security-control-data-protection.md).*
 
 ### <a name="41-maintain-an-inventory-of-sensitive-information"></a>4.1. Инвентаризация конфиденциальных данных
 
 **Руководство**. Использование тегов для отслеживания экземпляров Цитус или связанных ресурсов, в которых хранятся или обрабатываются конфиденциальные данные.
 
-- [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+- [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -317,13 +317,13 @@ ms.locfileid: "91318132"
 
 **Руководство**. Реализуйте отдельные подписки и группы управления для разработки, тестирования и производства. Используйте сочетание административных ролей и правил брандмауэра, чтобы изолировать и ограничить сетевой доступ к базе данных Azure для экземпляров PostgreSQL.
 
-- [Создание дополнительных подписок Azure](https://docs.microsoft.com/azure/billing/billing-create-subscription)
+- [Создание дополнительных подписок Azure](../cost-management-billing/manage/create-subscription.md)
 
-- [Создание групп управления](https://docs.microsoft.com/azure/governance/management-groups/create)
+- [Создание групп управления](../governance/management-groups/create-management-group-portal.md)
 
-- [Общие сведения о правилах брандмауэра в базе данных Azure для PostgreSQL — масштабирование (Цитус)](https://docs.microsoft.com/azure/postgresql/concepts-hyperscale-firewall-rules)
+- [Общие сведения о правилах брандмауэра в базе данных Azure для PostgreSQL — масштабирование (Цитус)](./concepts-hyperscale-firewall-rules.md)
 
-- [Общие сведения о ролях в подмасштабировании (Цитус)](https://docs.microsoft.com/azure/postgresql/howto-hyperscale-create-users)
+- [Общие сведения о ролях в подмасштабировании (Цитус)](./howto-hyperscale-create-users.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -337,9 +337,9 @@ ms.locfileid: "91318132"
 
 В некоторых случаях сторонние приложения должны иметь локальный файл сертификата, созданный из файла сертификата доверенного центра сертификации (CA) для безопасного подключения.
 
-- [Настройка TLS в базе данных Azure для PostgreSQL — масштабирование (Цитус)](https://docs.microsoft.com/azure/postgresql/concepts-hyperscale-ssl-connection-security)
+- [Настройка TLS в базе данных Azure для PostgreSQL — масштабирование (Цитус)](./concepts-hyperscale-ssl-connection-security.md)
 
-- [Приложения, для которых требуется проверка сертификата для подключения TLS](https://docs.microsoft.com/azure/postgresql/concepts-hyperscale-ssl-connection-security)
+- [Приложения, для которых требуется проверка сертификата для подключения TLS](./concepts-hyperscale-ssl-connection-security.md)
 
 
 
@@ -353,9 +353,9 @@ ms.locfileid: "91318132"
 
 Чтобы изменить привилегии пользователя на уровне базы данных, используйте стандартные команды PostgreSQL, используя такие средства, как PgAdmin или psql.
 
-- [Настройка Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal)
+- [Настройка Azure RBAC](../role-based-access-control/role-assignments-portal.md)
 
-- [Как настроить доступ пользователей с помощью SQL для базы данных Azure для PostgreSQL](https://docs.microsoft.com/azure/postgresql/howto-hyperscale-create-users)
+- [Как настроить доступ пользователей с помощью SQL для базы данных Azure для PostgreSQL](./howto-hyperscale-create-users.md)
 
 
 **Мониторинг Центра безопасности Azure**: Да
@@ -367,7 +367,7 @@ ms.locfileid: "91318132"
 **Руководство**.  
 По крайней мере один раз в день база данных Azure для PostgreSQL (Цитус) выполняет резервное копирование моментальных снимков файлов данных и журнала транзакций базы данных. Резервные копии позволяют восстановить сервер до любой точки во времени в течение срока хранения. (Срок хранения в настоящее время составляет 35 дней для всех кластеров.) Все резервные копии шифруются с использованием алгоритма шифрования AES 256-bit. Предложение PostgreSQL Scale (Цитус) использует ключи, управляемые корпорацией Майкрософт, для шифрования.
 
-- [Общие сведения о шифровании резервных копий Azure PostgreSQL-Scale (Цитус)](https://docs.microsoft.com/azure/postgresql/concepts-hyperscale-backup)
+- [Общие сведения о шифровании резервных копий Azure PostgreSQL-Scale (Цитус)](./concepts-hyperscale-backup.md)
 
 
 
@@ -379,7 +379,7 @@ ms.locfileid: "91318132"
 
 **Руководство**. Использование Azure Monitor с журналом действий Azure для создания оповещений о том, когда изменения выполняются в рабочих экземплярах Цитус и других важных или связанных ресурсах.
 
-- [Создание оповещений для событий журнала действий Azure](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log)
+- [Создание оповещений для событий журнала действий Azure](../azure-monitor/platform/alerts-activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -387,13 +387,13 @@ ms.locfileid: "91318132"
 
 ## <a name="vulnerability-management"></a>управление уязвимостями;
 
-*Дополнительные сведения см. в статье [Управление безопасностью: управление уязвимостями](/azure/security/benchmarks/security-control-vulnerability-management).*
+*Дополнительные сведения см. в статье [Управление безопасностью: управление уязвимостями](../security/benchmarks/security-control-vulnerability-management.md).*
 
 ### <a name="51-run-automated-vulnerability-scanning-tools"></a>5.1. Выполнение автоматизированных средства анализа уязвимостей
 
 **Руководство**: Сейчас недоступно; Центр безопасности Azure пока не поддерживает оценку уязвимостей для базы данных Azure для PostgreSQL-Scale (Цитус).
 
-- [Покрытие компонентов для служб Azure PaaS в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/features-paas)
+- [Покрытие компонентов для служб Azure PaaS в центре безопасности Azure](../security-center/features-paas.md)
 
 **Мониторинг Центра безопасности Azure**. Сейчас это недоступно.
 
@@ -401,17 +401,17 @@ ms.locfileid: "91318132"
 
 ## <a name="inventory-and-asset-management"></a>Инвентаризация и управление ресурсами
 
-*Дополнительные сведения см. в статье [Управление безопасностью: инвентаризация и управление ресурсами](/azure/security/benchmarks/security-control-inventory-asset-management).*
+*Дополнительные сведения см. в статье [Управление безопасностью: инвентаризация и управление ресурсами](../security/benchmarks/security-control-inventory-asset-management.md).*
 
 ### <a name="61-use-automated-asset-discovery-solution"></a>6,1. Использование автоматизированного решения для обнаружения ресурсов
 
 **Руководство**. Использование графа ресурсов Azure для запроса и обнаружения всех ресурсов (включая экземпляры Цитус) в ваших подписках. Убедитесь, что у вас есть соответствующие разрешения (на чтение) в клиенте и вы можете перечислить все подписки Azure, а также ресурсы в ваших подписках.
 
-- [Как создавать запросы с помощью Azure Graph](https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal)
+- [Как создавать запросы с помощью Azure Graph](../governance/resource-graph/first-query-portal.md)
 
-- [Как просматривать подписки Azure](https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0)
+- [Как просматривать подписки Azure](/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0)
 
-- [Общие сведения об Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/overview)
+- [Общие сведения об Azure RBAC](../role-based-access-control/overview.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -421,7 +421,7 @@ ms.locfileid: "91318132"
 
 **Руководство**. применение тегов для экземпляров Цитус и других связанных ресурсов, предоставляя метаданные для логической организации их в таксономию.
 
-- [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+- [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -431,11 +431,11 @@ ms.locfileid: "91318132"
 
 **Руководство**. Использование тегов, групп управления и отдельных подписок (при необходимости) для Организации и отслеживания экземпляров Цитус и связанных ресурсов. Регулярно сверяйте ресурсы, чтобы своевременно удалять неавторизованные ресурсы из подписки.
 
-- [Создание дополнительных подписок Azure](https://docs.microsoft.com/azure/billing/billing-create-subscription)
+- [Создание дополнительных подписок Azure](../cost-management-billing/manage/create-subscription.md)
 
-- [Создание групп управления](https://docs.microsoft.com/azure/governance/management-groups/create)
+- [Создание групп управления](../governance/management-groups/create-management-group-portal.md)
 
-- [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+- [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -451,9 +451,9 @@ ms.locfileid: "91318132"
 
 Кроме того, используйте Azure Resource Graph для запроса или обнаружения ресурсов в подписках.
 
-- [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+- [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-- [Как создавать запросы с помощью Azure Graph](https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal)
+- [Как создавать запросы с помощью Azure Graph](../governance/resource-graph/first-query-portal.md)
 
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
@@ -469,9 +469,9 @@ ms.locfileid: "91318132"
 
 Кроме того, используйте Azure Resource Graph для запроса или обнаружения ресурсов в подписках.
 
-- [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+- [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-- [Как создавать запросы с помощью Azure Graph](https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal)
+- [Как создавать запросы с помощью Azure Graph](../governance/resource-graph/first-query-portal.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -484,9 +484,9 @@ ms.locfileid: "91318132"
 - Недопустимые типы ресурсов
 - Допустимые типы ресурсов
 
-- [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+- [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-- [Как отказаться от определенного типа ресурса с помощью Политики Azure](https://docs.microsoft.com/azure/governance/policy/samples/not-allowed-resource-types)
+- [Как отказаться от определенного типа ресурса с помощью Политики Azure](../governance/policy/samples/index.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -496,7 +496,7 @@ ms.locfileid: "91318132"
 
 **Рекомендации**. Используйте условный доступ Azure, чтобы ограничить возможность пользователей взаимодействовать с Azure Resource Manager путем настройки "Блокировать доступ" для приложения "Управление Microsoft Azure". Это может препятствовать созданию и изменению ресурсов в среде с высоким уровнем безопасности, например в экземплярах Цитус, содержащих конфиденциальные сведения.
 
-- [Как настроить условный доступ для блокировки доступа к Azure Resource Manager](https://docs.microsoft.com/azure/role-based-access-control/conditional-access-azure-management)
+- [Как настроить условный доступ для блокировки доступа к Azure Resource Manager](../role-based-access-control/conditional-access-azure-management.md)
 
 **Мониторинг Центра безопасности Azure**. Неприменимо
 
@@ -504,7 +504,7 @@ ms.locfileid: "91318132"
 
 ## <a name="secure-configuration"></a>Безопасная конфигурация
 
-*Дополнительные сведения см. в статье [Управление безопасностью: безопасная конфигурация](/azure/security/benchmarks/security-control-secure-configuration).*
+*Дополнительные сведения см. в статье [Управление безопасностью: безопасная конфигурация](../security/benchmarks/security-control-secure-configuration.md).*
 
 ### <a name="71-establish-secure-configurations-for-all-azure-resources"></a>7.1. Установка безопасных конфигураций для всех ресурсов Azure
 
@@ -512,11 +512,11 @@ ms.locfileid: "91318132"
 
 Кроме того, Azure Resource Manager может экспортировать шаблон в нотация объектов JavaScript (JSON), который следует проверить, чтобы убедиться, что конфигурации соответствуют требованиям безопасности Организации или превышают их. 
 
-- [Просмотр доступных псевдонимов политик Azure](https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0)
+- [Просмотр доступных псевдонимов политик Azure](/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0)
 
-- [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+- [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-- [Экспорт одного и нескольких ресурсов в шаблон в портал Azure](https://docs.microsoft.com/azure/azure-resource-manager/templates/export-template-portal) 
+- [Экспорт одного и нескольких ресурсов в шаблон в портал Azure](../azure-resource-manager/templates/export-template-portal.md) 
 
 
 
@@ -528,11 +528,11 @@ ms.locfileid: "91318132"
 
 **Руководство**. Использование политики Azure [Deny] и [развертывание если не существует] для обеспечения безопасности параметров в ресурсах Azure.  Кроме того, вы можете использовать шаблоны Azure Resource Manager для поддержания конфигурации безопасности ресурсов Azure, необходимых вашей организации. 
 
-- [Общие сведения о влиянии политики Azure](https://docs.microsoft.com/azure/governance/policy/concepts/effects)
+- [Общие сведения о влиянии политики Azure](../governance/policy/concepts/effects.md)
 
-- [Создание политик и управление ими для обеспечения соответствия](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+- [Создание политик и управление ими для обеспечения соответствия](../governance/policy/tutorials/create-and-manage.md)
 
-- [Общие сведения о шаблонах Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/templates/overview)
+- [Общие сведения о шаблонах Azure Resource Manager](../azure-resource-manager/templates/overview.md)
 
 
 
@@ -544,9 +544,9 @@ ms.locfileid: "91318132"
 
 **Руководство**. Если вы используете пользовательские определения политики Azure для экземпляров Цитус и связанных ресурсов, используйте Azure Repos для безопасного хранения кода и управления им.
 
-- [Как хранить код в Azure DevOps](https://docs.microsoft.com/azure/devops/repos/git/gitworkflow?view=azure-devops)
+- [Как хранить код в Azure DevOps](/azure/devops/repos/git/gitworkflow?view=azure-devops)
 
-- [Документация по Azure Repos](https://docs.microsoft.com/azure/devops/repos/index?view=azure-devops)
+- [Документация по Azure Repos](/azure/devops/repos/index?view=azure-devops)
 
 **Мониторинг Центра безопасности Azure**. Неприменимо
 
@@ -556,11 +556,11 @@ ms.locfileid: "91318132"
 
 **Руководство**. Использование политики Azure [Deny] и [развертывание если не существует] для обеспечения безопасности параметров в ресурсах Azure.  Кроме того, вы можете использовать шаблоны Azure Resource Manager для поддержания конфигурации безопасности ресурсов Azure, необходимых вашей организации. 
 
-- [Общие сведения о влиянии политики Azure](https://docs.microsoft.com/azure/governance/policy/concepts/effects)
+- [Общие сведения о влиянии политики Azure](../governance/policy/concepts/effects.md)
 
-- [Создание политик и управление ими для обеспечения соответствия](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+- [Создание политик и управление ими для обеспечения соответствия](../governance/policy/tutorials/create-and-manage.md)
 
-- [Общие сведения о шаблонах Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/templates/overview)
+- [Общие сведения о шаблонах Azure Resource Manager](../azure-resource-manager/templates/overview.md)
 
 
 
@@ -572,7 +572,7 @@ ms.locfileid: "91318132"
 
 **Руководство**: Используйте псевдонимы политик Azure в пространстве имен "Microsoft.DBforPostgreSQL" для создания настраиваемых политик для оповещения, аудита и принудительного применения конфигураций системы. Используйте политику Azure [аудит], [запретить] и [развернуть, если не существует], чтобы автоматически применять конфигурации для экземпляров базы данных Azure для PostgreSQL и связанных ресурсов.
 
-- [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+- [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -582,9 +582,9 @@ ms.locfileid: "91318132"
 
 **Руководство**. в настоящее время база данных Azure для PostgreSQL-Scale (Цитус) не поддерживает управляемые удостоверения напрямую. При создании сервера базы данных Azure для PostgreSQL необходимо предоставить учетные данные для администратора. В интерфейсе портал Azure можно создавать дополнительные роли пользователей.
 
-- [Создание базы данных Azure для PostgreSQL. Гипермасштабирование (Citus)](https://docs.microsoft.com/azure/postgresql/quickstart-create-hyperscale-portal#create-an-azure-database-for-postgresql---hyperscale-citus)
+- [Создание базы данных Azure для PostgreSQL. Гипермасштабирование (Citus)](./quickstart-create-hyperscale-portal.md#create-an-azure-database-for-postgresql---hyperscale-citus)
 
-- [Создание дополнительных ролей пользователей](https://docs.microsoft.com/azure/postgresql/howto-hyperscale-create-users#how-to-create-additional-user-roles)
+- [Создание дополнительных ролей пользователей](./howto-hyperscale-create-users.md#how-to-create-additional-user-roles)
 
 
 **Мониторинг Центра безопасности Azure**. Сейчас это недоступно.
@@ -603,7 +603,7 @@ ms.locfileid: "91318132"
 
 ## <a name="malware-defense"></a>Защита от вредоносных программ
 
-*Дополнительные сведения см. в статье [Управление безопасностью: защита от вредоносных программ](/azure/security/benchmarks/security-control-malware-defense).*
+*Дополнительные сведения см. в статье [Управление безопасностью: защита от вредоносных программ](../security/benchmarks/security-control-malware-defense.md).*
 
 ### <a name="82-pre-scan-files-to-be-uploaded-to-non-compute-azure-resources"></a>8.2. Предварительная проверка файлов для отправки в ресурсы Azure, не являющиеся вычислительными
 
@@ -617,13 +617,13 @@ ms.locfileid: "91318132"
 
 ## <a name="data-recovery"></a>Восстановление данных
 
-*Дополнительные сведения см. в статье [Управление безопасностью: восстановление данных](/azure/security/benchmarks/security-control-data-recovery).*
+*Дополнительные сведения см. в статье [Управление безопасностью: восстановление данных](../security/benchmarks/security-control-data-recovery.md).*
 
 ### <a name="91-ensure-regular-automated-back-ups"></a>9.1. Обеспечение регулярного автоматического резервного копирования
 
 **Руководство**. база данных Azure для PostgreSQL — служба масштабирования (Цитус) автоматически создает резервные копии каждого узла и сохраняет их в локально избыточном хранилище. Резервные копии можно использовать для восстановления кластера Цитус в указанное время.
 
-- [Резервное копирование и восстановление в базе данных Azure для PostgreSQL — масштабирование (Цитус)](https://docs.microsoft.com/azure/postgresql/concepts-hyperscale-backup)
+- [Резервное копирование и восстановление в базе данных Azure для PostgreSQL — масштабирование (Цитус)](./concepts-hyperscale-backup.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -635,7 +635,7 @@ ms.locfileid: "91318132"
 
 В регионах Azure, поддерживающих зоны доступности, моментальные снимки резервных копий хранятся в трех зонах доступности. Если по крайней мере одна зона доступности находится в сети, кластер Цитус (масштабирование) restorable.
 
-- [Резервное копирование и восстановление в базе данных Azure для PostgreSQL — масштабирование (Цитус)](https://docs.microsoft.com/azure/postgresql/concepts-hyperscale-backup)
+- [Резервное копирование и восстановление в базе данных Azure для PostgreSQL — масштабирование (Цитус)](./concepts-hyperscale-backup.md)
 
 
 **Мониторинг Центра безопасности Azure**: Да
@@ -648,7 +648,7 @@ ms.locfileid: "91318132"
 
 Параметры брандмауэра и параметры сервера PostgreSQL не сохраняются в исходной группе серверов. они сбрасываются в значения по умолчанию. Брандмауэр блокирует все подключения. Эти параметры необходимо будет настроить вручную после восстановления.
 
-- [Резервное копирование и восстановление в базе данных Azure для PostgreSQL — масштабирование (Цитус)](https://docs.microsoft.com/azure/postgresql/concepts-hyperscale-backup)
+- [Резервное копирование и восстановление в базе данных Azure для PostgreSQL — масштабирование (Цитус)](./concepts-hyperscale-backup.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -658,7 +658,7 @@ ms.locfileid: "91318132"
 
 **Руководство**. не удается восстановить удаленные кластеры с масштабированием (Цитус). При удалении кластера все узлы, принадлежащие к кластеру, удаляются и не могут быть восстановлены. Для защиты ресурсов кластера после случайного удаления или непредвиденных изменений администраторы могут использовать блокировки управления.
 
-- [Резервное копирование и восстановление в базе данных Azure для PostgreSQL — масштабирование (Цитус)](https://docs.microsoft.com/azure/postgresql/concepts-hyperscale-backup)
+- [Резервное копирование и восстановление в базе данных Azure для PostgreSQL — масштабирование (Цитус)](./concepts-hyperscale-backup.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -666,13 +666,13 @@ ms.locfileid: "91318132"
 
 ## <a name="incident-response"></a>Реагирование на инциденты
 
-*Дополнительные сведения см. в статье [Управление безопасностью: реагирование на инциденты](/azure/security/benchmarks/security-control-incident-response).*
+*Дополнительные сведения см. в статье [Управление безопасностью: реагирование на инциденты](../security/benchmarks/security-control-incident-response.md).*
 
 ### <a name="101-create-an-incident-response-guide"></a>10.1. Создание руководства по реагированию на инциденты
 
 **Руководство**. Создайте руководство по реагированию на инциденты для вашей организации. Убедитесь, что имеются письменные планы реагирования на инциденты, которые определяют все действия персонала, а также этапы обработки инцидентов и управления ими для проверки после инцидента. 
 
-- [Как настроить автоматизацию рабочих процессов в Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-planning-and-operations-guide) 
+- [Как настроить автоматизацию рабочих процессов в Центре безопасности Azure](../security-center/security-center-planning-and-operations-guide.md) 
 
 - [Руководство по созданию собственного процесса реагирования на инциденты безопасности](https://msrc-blog.microsoft.com/2019/07/01/inside-the-msrc-building-your-own-security-incident-response-process/) 
 
@@ -708,7 +708,7 @@ ms.locfileid: "91318132"
 
 **Рекомендации**. Корпорация Майкрософт будет использовать информацию об инциденте безопасности для связи с вами, если центр Microsoft Security Response Center (MSRC) обнаружит, что к вашим пользовательским данным был получен незаконный или несанкционированный доступ.  Проверьте инциденты после факта обращения, чтобы убедиться, что проблемы устранены. 
 
-- [Как задать контакт безопасности Центра безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-provide-security-contact-details)
+- [Как задать контакт безопасности Центра безопасности Azure](../security-center/security-center-provide-security-contact-details.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -718,9 +718,9 @@ ms.locfileid: "91318132"
 
 **Рекомендации**. Экспортируйте оповещения и рекомендации центра безопасности Azure с помощью функции непрерывного экспорта. Непрерывный экспорт позволяет экспортировать предупреждения и рекомендации как вручную, так и в постоянном, непрерывном режиме. Можно использовать соединитель данных Центра безопасности Azure для потоковой передачи оповещений Sentinel. 
 
-- [Как настроить непрерывный экспорт данных](https://docs.microsoft.com/azure/security-center/continuous-export) 
+- [Как настроить непрерывный экспорт данных](../security-center/continuous-export.md) 
 
-- [Как выполнить потоковую передачу оповещений в Azure Sentinel](https://docs.microsoft.com/azure/sentinel/connect-azure-security-center)
+- [Как выполнить потоковую передачу оповещений в Azure Sentinel](../sentinel/connect-azure-security-center.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -730,7 +730,7 @@ ms.locfileid: "91318132"
 
 **Руководство**. Используйте функцию автоматизации рабочих процессов в Центре безопасности Azure для автоматического запуска реагирования с помощью Logic Apps в оповещениях и рекомендациях системы безопасности. 
 
-- [Как настроить автоматизацию рабочего процесса и Logic Apps](https://docs.microsoft.com/azure/security-center/workflow-automation)
+- [Как настроить автоматизацию рабочего процесса и Logic Apps](../security-center/workflow-automation.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -738,7 +738,7 @@ ms.locfileid: "91318132"
 
 ## <a name="penetration-tests-and-red-team-exercises"></a>Тесты на проникновение и попытки нарушения безопасности "красной командой"
 
-*Дополнительные сведения см. в статье [Управление безопасностью: тесты на проникновение и попытки нарушения безопасности "красной командой"](/azure/security/benchmarks/security-control-penetration-tests-red-team-exercises).*
+*Дополнительные сведения см. в статье [Управление безопасностью: тесты на проникновение и попытки нарушения безопасности "красной командой"](../security/benchmarks/security-control-penetration-tests-red-team-exercises.md).*
 
 ### <a name="111-conduct-regular-penetration-testing-of-your-azure-resources-and-ensure-remediation-of-all-critical-security-findings"></a>11,1. Проведите регулярное тестирование на проникновение ресурсов Azure и обеспечьте исправление всех критических результатов безопасности.
 
@@ -752,5 +752,5 @@ ms.locfileid: "91318132"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Ознакомьтесь со статьей [Тесты производительности системы безопасности Azure](/azure/security/benchmarks/overview).
-- Дополнительные сведения о [базовой конфигурации безопасности Azure](/azure/security/benchmarks/security-baselines-overview).
+- Ознакомьтесь со статьей [Тесты производительности системы безопасности Azure](../security/benchmarks/overview.md).
+- Дополнительные сведения о [базовой конфигурации безопасности Azure](../security/benchmarks/security-baselines-overview.md).
