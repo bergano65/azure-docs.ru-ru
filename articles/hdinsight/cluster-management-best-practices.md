@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 12/02/2019
-ms.openlocfilehash: fd79568944d81e267a45287104bd0fa9698df2fb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fbfb2aef838dbef6e7403e635f5bce42bf9ec901
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89648685"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92487268"
 ---
 # <a name="hdinsight-cluster-management-best-practices"></a>Рекомендации по управлению кластерами HDInsight
 
@@ -31,7 +31,7 @@ ms.locfileid: "89648685"
 | Azure CLI | [Создание кластеров HDInsight с помощью интерфейса командной строки Azure](./hdinsight-hadoop-create-linux-clusters-azure-cli.md) |
 | Azure PowerShell | [Создание кластеров под управлением Linux в HDInsight с помощью Azure PowerShell](./hdinsight-hadoop-create-linux-clusters-azure-powershell.md) |
 | cURL | [Создание кластеров Apache Hadoop с помощью REST API Azure](./hdinsight-hadoop-create-linux-clusters-curl-rest.md) |
-| Пакеты SDK (.NET, Python, Java) | [.NET](https://docs.microsoft.com/dotnet/api/overview/azure/hdinsight?view=azure-dotnet), [Python](https://docs.microsoft.com/python/api/overview/azure/hdinsight?view=azure-python), [Java](https://docs.microsoft.com/java/api/overview/azure/hdinsight?view=azure-java-stable), [Go](https://docs.microsoft.com/azure/hdinsight/hdinsight-go-sdk-overview) |
+| Пакеты SDK (.NET, Python, Java) | [.NET](/dotnet/api/overview/azure/hdinsight?view=azure-dotnet&preserve-view=true), [Python](https://docs.microsoft.com/python/api/overview/azure/hdinsight?view=azure-python&preserve-view=true), [Java](https://docs.microsoft.com/java/api/overview/azure/hdinsight?view=azure-java-stable&preserve-view=true), [Go](https://docs.microsoft.com/azure/hdinsight/hdinsight-go-sdk-overview) |
 
 > [!Note]
 > Если вы создаете кластер и повторно используете имя кластера из ранее созданного кластера, перед созданием кластера дождитесь завершения предыдущего удаления кластера.
@@ -47,7 +47,7 @@ ms.locfileid: "89648685"
 
 ## <a name="what-are-some-errors-i-might-face-when-creating-clusters"></a>Какие ошибки я могу столкнуться при создании кластеров?
 
-| Ошибка | Дополнительные сведения |
+| Error | Дополнительные сведения |
 |---|---|
 | Нет квоты | Существуют квоты на количество квот, которые можно создать для подписки в каждом регионе. Дополнительные сведения см. в разделе [планирование емкости: квоты](./hdinsight-capacity-planning.md). |
 | Больше нет доступных IP-адресов | Каждая виртуальная сеть имеет ограниченное количество IP-адресов. При создании кластера HDInsight каждый узел (включая узлы Zookeeper и шлюза) использует некоторые из этих выделенных IP-адресов. Если все IP-адреса используются, возникнет эта ошибка.  |
@@ -76,7 +76,7 @@ AzureActivity
 | where ResourceProvider == "Microsoft.HDInsight" and (OperationName == "Create or Update Cluster" or OperationName == "Delete Cluster") and ActivityStatus == "Succeeded"
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Планирование загрузки кластеров HDInsight](./hdinsight-capacity-planning.md)
 * [Каковы используемые по умолчанию и рекомендуемые конфигурации узлов для Azure HDInsight?](./hdinsight-supported-node-configuration.md)

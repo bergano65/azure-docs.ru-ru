@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: troubleshooting
 ms.date: 07/28/2020
 ms.author: delhan
-ms.openlocfilehash: f24fb6c4d83da0d443702afaf673079363a9ffb0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 83b71d46c3d6b1612728b2bd81c6acede6d0559b
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91714457"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92488628"
 ---
 # <a name="azure-storage-explorer-troubleshooting-guide"></a>Руководство по устранению неполадок в обозревателе хранилищ Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "91714457"
 
 ## <a name="azure-rbac-permissions-issues"></a>Проблемы с разрешениями RBAC в Azure
 
-Управление доступом на основе ролей Azure с помощью [Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/overview) обеспечивает строгое управление доступом к ресурсам Azure, объединяя наборы разрешений в _роли_. Ниже приведены некоторые стратегии, позволяющие обеспечить оптимальную работу Azure RBAC в Обозреватель службы хранилища.
+Управление доступом на основе ролей Azure с помощью [Azure RBAC](/azure/role-based-access-control/overview) обеспечивает строгое управление доступом к ресурсам Azure, объединяя наборы разрешений в _роли_. Ниже приведены некоторые стратегии, позволяющие обеспечить оптимальную работу Azure RBAC в Обозреватель службы хранилища.
 
 ### <a name="how-do-i-access-my-resources-in-storage-explorer"></a>Разделы справки получить доступ к моим ресурсам в Обозреватель службы хранилища?
 
@@ -65,7 +65,7 @@ ms.locfileid: "91714457"
 3. Выберите учетную запись пользователя и клиента, связанные с ресурсом, к которому вы подключаетесь. Нажмите кнопку "Далее".
 4. Выберите тип ресурса, введите URL-адрес ресурса и введите уникальное отображаемое имя для соединения. Нажмите кнопку "Далее". Нажмите кнопку "Подключить".
 
-Для других типов ресурсов в настоящее время нет решения, связанного с Azure RBAC. В качестве обходного решения можно запросить URI SAS для [подключения к ресурсу](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer?tabs=linux#use-a-shared-access-signature-uri).
+Для других типов ресурсов в настоящее время нет решения, связанного с Azure RBAC. В качестве обходного решения можно запросить URI SAS для [подключения к ресурсу](/azure/vs-azure-tools-storage-manage-with-storage-explorer?tabs=linux#use-a-shared-access-signature-uri).
 
 ### <a name="recommended-azure-built-in-roles"></a>Рекомендуемые встроенные роли Azure
 
@@ -100,7 +100,7 @@ ms.locfileid: "91714457"
 2. Выполните команду OpenSSL.
     * Windows: Откройте каталог установки, выберите **/bin/**, а затем дважды щелкните **openssl.exe**.
     * Mac и Linux: запустите `openssl` из терминала.
-3. Запустите `s_client -showcerts -connect microsoft.com:443`.
+3. Выполните команду `s_client -showcerts -connect microsoft.com:443`.
 4. Найдите самозаверяющие сертификаты. Если вы не знаете, какие сертификаты являются самозаверяющими, обратите внимание, что в любом месте субъект `("s:")` и издатель совпадают `("i:")` .
 5. При обнаружении самозаверяющих сертификатов для каждого из них скопируйте и вставьте все из (и включая) `-----BEGIN CERTIFICATE-----` `-----END CERTIFICATE-----` в новый CER-файл.
 6. Откройте обозреватель службы хранилища и перейдите к разделу **изменение**  >  **SSL-сертификатов**  >  **Импорт сертификатов**. Затем с помощью средства выбора файлов найдите, выберите и откройте созданные CER файлы.
@@ -332,7 +332,7 @@ snap connect storage-explorer:password-manager-service :password-manager-service
 # <a name="ubuntu-2004"></a>[Ubuntu 20.04](#tab/2004)
 
 1. Скачайте файл Обозреватель службы хранилища. tar. gz.
-2. Установите [среду выполнения .NET Core](https://docs.microsoft.com/dotnet/core/install/linux):
+2. Установите [среду выполнения .NET Core](/dotnet/core/install/linux):
    ```bash
    wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb; \
      sudo dpkg -i packages-microsoft-prod.deb; \
@@ -345,7 +345,7 @@ snap connect storage-explorer:password-manager-service :password-manager-service
 # <a name="ubuntu-1804"></a>[Ubuntu 18.04](#tab/1804)
 
 1. Скачайте файл Обозреватель службы хранилища. tar. gz.
-2. Установите [среду выполнения .NET Core](https://docs.microsoft.com/dotnet/core/install/linux):
+2. Установите [среду выполнения .NET Core](/dotnet/core/install/linux):
    ```bash
    wget https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb; \
      sudo dpkg -i packages-microsoft-prod.deb; \
@@ -358,7 +358,7 @@ snap connect storage-explorer:password-manager-service :password-manager-service
 # <a name="ubuntu-1604"></a>[Ubuntu 16.04](#tab/1604)
 
 1. Скачайте файл Обозреватель службы хранилища. tar. gz.
-2. Установите [среду выполнения .NET Core](https://docs.microsoft.com/dotnet/core/install/linux):
+2. Установите [среду выполнения .NET Core](/dotnet/core/install/linux):
    ```bash
    wget https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb; \
      sudo dpkg -i packages-microsoft-prod.deb; \
@@ -405,7 +405,7 @@ snap connect storage-explorer:password-manager-service :password-manager-service
 * Google Chrome;
 * Microsoft Internet Explorer
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если ни одно из этих решений не работает, [откройте вопрос в GitHub](https://github.com/Microsoft/AzureStorageExplorer/issues). Это можно также сделать, нажав кнопку **сообщить об ошибке в GitHub** в левом нижнем углу.
 

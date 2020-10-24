@@ -6,12 +6,12 @@ ms.author: nlarin
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 01/28/2020
-ms.openlocfilehash: efd4cb7c0c5db50729539373938ebccd689dee42
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 615297a4bf47d80c9313f011b90d343b7ae680e3
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91708991"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92488050"
 ---
 # <a name="audit-logging-in-azure-database-for-postgresql---single-server"></a>Ведение журнала аудита в базе данных Azure для PostgreSQL — один сервер
 
@@ -88,7 +88,7 @@ t=%m u=%u db=%d pid=[%p]:
 ## <a name="viewing-audit-logs"></a>Просмотр журналов аудита
 Если вы используете файлы. log, журналы аудита будут включены в тот же файл, что и журналы ошибок PostgreSQL. Файлы журнала можно загрузить с [портала](howto-configure-server-logs-in-portal.md) Azure или с помощью [интерфейса командной строки](howto-configure-server-logs-using-cli.md). 
 
-Если вы используете ведение журнала ресурсов Azure, то способ доступа к журналам зависит от выбранной конечной точки. Сведения о службе хранилища Azure см. в статье [учетная запись хранения журналов](../azure-monitor/platform/resource-logs-collect-storage.md) . Сведения о концентраторах событий см. в статье [Streaming Azure Logs](../azure-monitor/platform/resource-logs-stream-event-hubs.md) .
+Если вы используете ведение журнала ресурсов Azure, то способ доступа к журналам зависит от выбранной конечной точки. Сведения о службе хранилища Azure см. в статье [учетная запись хранения журналов](../azure-monitor/platform/resource-logs.md#send-to-azure-storage) . Сведения о концентраторах событий см. в статье [Streaming Azure Logs](../azure-monitor/platform/resource-logs.md#send-to-azure-event-hubs) .
 
 Для журналов Azure Monitor журналы отправляются в выбранную рабочую область. Журналы postgres используют режим сбора **AzureDiagnostics** , поэтому их можно запрашивать из таблицы AzureDiagnostics. Поля в таблице описаны ниже. Дополнительные сведения о запросах и предупреждениях см. в статье о [запросах Azure Monitor журналов](../azure-monitor/log-query/log-query-overview.md) .
 
@@ -102,6 +102,6 @@ AzureDiagnostics
 | where Message contains "AUDIT:"
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Сведения о ведении журнала в базе данных Azure для PostgreSQL](concepts-server-logs.md)
 - Узнайте, как задать параметры с помощью [портал Azure](howto-configure-server-parameters-using-portal.md), [Azure CLI](howto-configure-server-parameters-using-cli.md)или [REST API](/rest/api/postgresql/configurations/createorupdate).

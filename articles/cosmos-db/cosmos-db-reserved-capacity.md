@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 02/18/2020
 ms.author: tisande
 ms.reviewer: sngun
-ms.openlocfilehash: 90a4e86360916ba4b3dace0861fd1c6f7cd9b459
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 90717f329cc366dbb951b24da0ffc1b65881a865
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91567117"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92487523"
 ---
 # <a name="optimize-cost-with-reserved-capacity-in-azure-cosmos-db"></a>Оптимизация затрат на резервную мощностью в Azure Cosmos DB
 
@@ -22,7 +22,7 @@ ms.locfileid: "91567117"
 
 Резервная мощность Azure Cosmos DB покрывает расходы на пропускную способность, подготовленную для ресурсов. Но она не распространяется на расходы хранилища и сети. После того как вы купите резервирование, при начислении платы за пропускную способность, соответствующей атрибутам резервирования, не будут применяться ставки оплаты по мере использования. Дополнительные сведения о резервировании см. в статье [Общие сведения об Azure Reserved VM Instances](../cost-management-billing/reservations/save-compute-costs-reservations.md).
 
-Вы можете приобрести резервную мощность Azure Cosmos DB на [портале Azure](https://portal.azure.com). Платите за резервирование [наперед или ежемесячными платежами](../cost-management-billing/reservations/monthly-payments-reservations.md). Требования для приобретения резервной мощности.
+Вы можете приобрести резервную мощность Azure Cosmos DB на [портале Azure](https://portal.azure.com). Платите за резервирование [наперед или ежемесячными платежами](../cost-management-billing/reservations/prepare-buy-reservation.md). Требования для приобретения резервной мощности.
 
 * Необходимо быть в роли владельца по крайней мере для одной корпоративной или отдельной подписки с тарифами с оплатой по мере использования.  
 * Для подписок с соглашением Enterprise параметр **Добавить зарезервированные экземпляры** следует включить на [портале EA](https://ea.azure.com). Или, если этот параметр отключен, необходимо быть администратором подписки EA.
@@ -106,7 +106,7 @@ ms.locfileid: "91567117"
    * [Управление резервированиями Azure](../cost-management-billing/reservations/manage-reserved-vm-instance.md)  
    * [Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise](../cost-management-billing/reservations/understand-reserved-instance-usage-ea.md)  
    * [Общие сведения об использовании резервирования Azure для подписки с оплатой по мере использования](../cost-management-billing/reservations/understand-reserved-instance-usage.md)
-   * [Sell Microsoft Azure Reserved Instances](https://docs.microsoft.com/partner-center/azure-reservations) (Продажа зарезервированных экземпляров Microsoft Azure)
+   * [Sell Microsoft Azure Reserved Instances](/partner-center/azure-reservations) (Продажа зарезервированных экземпляров Microsoft Azure)
 
 ## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 

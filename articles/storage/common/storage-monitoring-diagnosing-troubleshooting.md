@@ -9,12 +9,12 @@ ms.author: normesta
 ms.reviewer: fryu
 ms.subservice: common
 ms.custom: monitoring, devx-track-csharp
-ms.openlocfilehash: 70234c9bf6be8b9c2fbb5750fa1dba718ac2690d
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 43c8f3dc0df41d9322edbe2e0c763de12b787ed6
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92370480"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92479805"
 ---
 # <a name="monitor-diagnose-and-troubleshoot-microsoft-azure-storage"></a>Мониторинг, диагностика и устранение неисправностей службы хранилища Microsoft Azure
 [!INCLUDE [storage-selector-portal-monitoring-diagnosing-troubleshooting](../../../includes/storage-selector-portal-monitoring-diagnosing-troubleshooting.md)]
@@ -131,7 +131,7 @@ ms.locfileid: "92370480"
 >
 >
 
-Чтобы узнать, как оценить размер различных объектов для хранения данных, например больших двоичных объектов, прочтите запись блога [Общая информация о плате за использование хранилища Azure: пропускная способность, транзакции и емкость](https://docs.microsoft.com/archive/blogs/patrick_butler_monterde/azure-storage-understanding-windows-azure-storage-billing-bandwidth-transactions-and-capacity).
+Чтобы узнать, как оценить размер различных объектов для хранения данных, например больших двоичных объектов, прочтите запись блога [Общая информация о плате за использование хранилища Azure: пропускная способность, транзакции и емкость](/archive/blogs/patrick_butler_monterde/azure-storage-understanding-windows-azure-storage-billing-bandwidth-transactions-and-capacity).
 
 ### <a name="monitoring-availability"></a><a name="monitoring-availability"></a>Мониторинг доступности
 Вы должны отслеживать доступность служб хранилища в своей учетной записи хранения путем мониторинга значения в столбце **Доступность** таблиц, содержащих метрики, которые фиксируются каждую минуту или каждый час: **$MetricsHourPrimaryTransactionsBlob**, **$MetricsHourPrimaryTransactionsTable**, **$MetricsHourPrimaryTransactionsQueue**, **$MetricsMinutePrimaryTransactionsBlob**, **$MetricsMinutePrimaryTransactionsTable**, **$MetricsMinutePrimaryTransactionsQueue** и **$MetricsCapacityBlob**. Столбец **Доступность** содержит процентное значение, которое отражает доступность службы или операции API, указанной в соответствующей строке (**Ключ строки** показывает, содержит ли строка метрики для службы в целом или только для конкретной операции API).
@@ -362,7 +362,7 @@ catch (StorageException storageException)
 #### <a name="investigating-client-performance-issues"></a>Изучение проблем с производительностью клиента
 К возможным причинам медленного ответа клиента относится ограниченное количество доступных подключений или потоков, а также нехватка ресурсов, таких как ЦП, память и пропускная способность сети. Чтобы решить эту проблему, можно изменить код клиента, повысив его эффективность (например, с помощью асинхронных вызовов службы хранилища), или использовать виртуальную машину большего размера (с большим числом ядер или объемом памяти).
 
-Для служб таблиц и очередей алгоритм Нейгла также может приводить к высокому значению метрики **AverageE2ELatency** по сравнению с метрикой **AverageServerLatency**. Дополнительные сведения см. в записи блога [Nagle’s Algorithm is Not Friendly towards Small Requests](https://docs.microsoft.com/archive/blogs/windowsazurestorage/nagles-algorithm-is-not-friendly-towards-small-requests) (Алгоритм Нейгла не ориентирован на мелкие запросы). Вы можете отключить алгоритм Нейгла в коде с помощью класса **ServicePointManager** в пространстве имен **System.Net**. Это следует сделать до выполнения вызовов к службам таблиц или очередей в приложении, так как на открытые подключения это не распространяется. Приведенный ниже пример взят из метода **Application_Start** в рабочей роли.
+Для служб таблиц и очередей алгоритм Нейгла также может приводить к высокому значению метрики **AverageE2ELatency** по сравнению с метрикой **AverageServerLatency**. Дополнительные сведения см. в записи блога [Nagle’s Algorithm is Not Friendly towards Small Requests](/archive/blogs/windowsazurestorage/nagles-algorithm-is-not-friendly-towards-small-requests) (Алгоритм Нейгла не ориентирован на мелкие запросы). Вы можете отключить алгоритм Нейгла в коде с помощью класса **ServicePointManager** в пространстве имен **System.Net**. Это следует сделать до выполнения вызовов к службам таблиц или очередей в приложении, так как на открытые подключения это не распространяется. Приведенный ниже пример взят из метода **Application_Start** в рабочей роли.
 
 # <a name="net-v12"></a>[Платформа .NET версии 12](#tab/dotnet)
 

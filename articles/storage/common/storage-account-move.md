@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 05/11/2020
 ms.author: normesta
 ms.reviewer: dineshm
-ms.openlocfilehash: a5b9b4c7d3bdd0c68d3a91a39972389e48ed910d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c372dafdbfa5e9cafb208673128038dc23b30f5a
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85515008"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92488832"
 ---
 # <a name="move-an-azure-storage-account-to-another-region"></a>Перемещение учетной записи хранения Azure в другой регион
 
@@ -31,7 +31,7 @@ ms.locfileid: "85515008"
 > * Перемещение данных в новую учетную запись хранения.
 > * Удалите ресурсы из исходного региона.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 - Убедитесь, что службы и функции, используемые вашей учетной записью, поддерживаются в целевом регионе.
 
@@ -67,7 +67,7 @@ ms.locfileid: "85515008"
 
 Чтобы экспортировать шаблон с помощью PowerShell, выполните следующие действия.
 
-1. С помощью команды [Connect-AzAccount](https://docs.microsoft.com/powershell/module/az.accounts/connect-azaccount?view=azps-2.5.0) войдите в подписку Azure и следуйте инструкциям на экране:
+1. С помощью команды [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) войдите в подписку Azure и следуйте инструкциям на экране:
 
    ```azurepowershell-interactive
    Connect-AzAccount
@@ -109,7 +109,7 @@ ms.locfileid: "85515008"
 
     ![Библиотека шаблонов Azure Resource Manager](./media/storage-account-move/azure-resource-manager-template-library.png)
 
-4. Нажмите кнопку **создания**.
+4. Нажмите кнопку **Создать**.
 
 5. Выберите **Создать собственный шаблон в редакторе**.
 
@@ -167,7 +167,7 @@ ms.locfileid: "85515008"
          }]          
     ```
 
-    Коды регионов можно получить, выполнив команду [Get-азлокатион](https://docs.microsoft.com/powershell/module/az.resources/get-azlocation?view=azps-1.8.0) .
+    Коды регионов можно получить, выполнив команду [Get-азлокатион](/powershell/module/az.resources/get-azlocation) .
 
     ```azurepowershell-interactive
     Get-AzLocation | format-table 
@@ -196,7 +196,7 @@ ms.locfileid: "85515008"
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-1. Получите идентификатор подписки, в которой вы хотите развернуть целевой общедоступный IP-адрес с помощью [Get-азсубскриптион](https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-2.5.0):
+1. Получите идентификатор подписки, в которой вы хотите развернуть целевой общедоступный IP-адрес с помощью [Get-азсубскриптион](/powershell/module/az.accounts/get-azsubscription):
 
    ```azurepowershell-interactive
    Get-AzSubscription
@@ -219,7 +219,7 @@ ms.locfileid: "85515008"
 
 В следующей таблице перечислены такие функции и приведены рекомендации по их добавлению в новую учетную запись хранения.
 
-| Компонент    | Руководство    |
+| Функция    | Руководство    |
 |--------|-----------|
 | **Политики управления жизненным циклом** | [Управление жизненным циклом хранилища BLOB-объектов Azure (предварительная версия)](../blobs/storage-lifecycle-management-concepts.md) |
 | **Статические веб-сайты** | [Размещение статического веб-сайта в службе хранилища Azure](../blobs/storage-blob-static-website-how-to.md) |
@@ -232,14 +232,14 @@ ms.locfileid: "85515008"
 
 ### <a name="move-data-to-the-new-storage-account"></a>Перемещение данных в новую учетную запись хранения
 
-AzCopy — это предпочтительное средство для перемещения данных. Он оптимизирован для производительности.  Одним из способов ускорения является копирование данных непосредственно между серверами хранилища, поэтому AzCopy не использует пропускную способность сети компьютера. Используйте AzCopy в командной строке или в составе пользовательского сценария. См. подробнее о [начале работы с AzCopy](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-v10?toc=%2fazure%2fstorage%2fblobs%2ftoc.json).
+AzCopy — это предпочтительное средство для перемещения данных. Он оптимизирован для производительности.  Одним из способов ускорения является копирование данных непосредственно между серверами хранилища, поэтому AzCopy не использует пропускную способность сети компьютера. Используйте AzCopy в командной строке или в составе пользовательского сценария. См. подробнее о [начале работы с AzCopy](/azure/storage/common/storage-use-azcopy-v10?toc=%2fazure%2fstorage%2fblobs%2ftoc.json).
 
 Вы также можете использовать фабрику данных Azure для перемещения данных. Он предоставляет интуитивно понятный пользовательский интерфейс. Чтобы использовать фабрику данных Azure, ознакомьтесь со следующими ссылками:. 
 
-  - [Копирование данных в хранилище BLOB-объектов Azure и обратно с помощью фабрики данных Azure](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage)
-  - [Копирование данных в хранилище Azure Data Lake Storage 2-го поколения и из него с помощью Фабрики данных Azure](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage)
-  - [Копирование данных из хранилища файлов Azure и обратно с помощью фабрики данных Azure](https://docs.microsoft.com/azure/data-factory/connector-azure-file-storage)
-  - [Копирование данных в службу "Хранилище таблиц Azure" и обратно с помощью фабрики данных Azure](https://docs.microsoft.com/azure/data-factory/connector-azure-table-storage)
+  - [Копирование данных в хранилище BLOB-объектов Azure и обратно с помощью фабрики данных Azure](/azure/data-factory/connector-azure-blob-storage)
+  - [Копирование данных в хранилище Azure Data Lake Storage 2-го поколения и из него с помощью Фабрики данных Azure](/azure/data-factory/connector-azure-data-lake-storage)
+  - [Копирование данных из хранилища файлов Azure и обратно с помощью фабрики данных Azure](/azure/data-factory/connector-azure-file-storage)
+  - [Копирование данных в службу "Хранилище таблиц Azure" и обратно с помощью фабрики данных Azure](/azure/data-factory/connector-azure-table-storage)
 
 ---
 
@@ -273,5 +273,5 @@ Remove-AzStorageAccount -ResourceGroupName  $resourceGroup -AccountName $storage
 В этом руководстве вы переместили учетную запись хранения Azure из одного региона в другой и очистили исходные ресурсы.  Дополнительные сведения о перемещении ресурсов между регионами и аварийном восстановлении в Azure см. по следующей ссылке:
 
 
-- [Перемещение ресурсов в новую группу ресурсов или подписку](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-move-resources)
-- [Перенос виртуальных машин Azure в другой регион](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-tutorial-migrate)
+- [Перемещение ресурсов в новую группу ресурсов или подписку](/azure/azure-resource-manager/resource-group-move-resources)
+- [Перенос виртуальных машин Azure в другой регион](/azure/site-recovery/azure-to-azure-tutorial-migrate)

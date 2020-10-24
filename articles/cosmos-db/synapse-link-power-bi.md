@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 09/22/2020
 ms.author: acomet
-ms.openlocfilehash: 1157ca31a66e5df92ff28f5d7190993e51d7dd65
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 6e77746d21d63cf1460b9e460e470a3bd12ce656
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92367641"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92480043"
 ---
 # <a name="use-power-bi-and-serverless-synapse-sql-pool-to-analyze-azure-cosmos-db-data-with-synapse-link-preview"></a>Использование Power BI и бессерверного пула SQL синапсе для анализа данных Azure Cosmos DB с помощью ссылки синапсе (Предварительная версия) 
 
@@ -141,5 +141,7 @@ GROUP BY p.[advertising], p.[storeId], p.[weekStarting], q.[largeHH]
 :::image type="content" source="./media/synapse-link-power-bi/household-size-average-revenue-report.png" alt-text="Добавление скрипта SQL в рабочую область синапсе Analytics":::
 
 ## <a name="next-steps"></a>Дальнейшие шаги
+
+[Использование T-SQL для запроса Azure Cosmos DB данных с помощью ссылки Azure синапсе](../synapse-analytics/sql/query-cosmos-db-analytical-store.md)
 
 Использование пула синапсе SQL Server для [анализа открытых наборов данных Azure и визуализации результатов в Azure синапсе Studio](../synapse-analytics/sql/tutorial-data-analyst.md)

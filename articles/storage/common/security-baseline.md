@@ -7,24 +7,24 @@ ms.topic: conceptual
 ms.date: 04/23/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: f4687add8fdd55c8084a7180a6e0a3bffd9751b1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 746deae725e9e1ca4274b2132f7c09e2548a6629
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91715157"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92488883"
 ---
 # <a name="azure-security-baseline-for-azure-storage"></a>Базовые показатели безопасности Azure для службы хранилища Azure
 
 Базовый план безопасности Azure для службы хранилища Azure содержит рекомендации, которые помогут повысить уровень безопасности развертывания.
 
-Базовый план безопасности для этой службы взят из [Эталона безопасности Azure версии 1.0](https://docs.microsoft.com/azure/security/benchmarks/overview), содержащего рекомендации по обеспечению безопасности облачных решений в Azure с помощью наших практических рекомендаций.
+Базовый план безопасности для этой службы взят из [Эталона безопасности Azure версии 1.0](/azure/security/benchmarks/overview), содержащего рекомендации по обеспечению безопасности облачных решений в Azure с помощью наших практических рекомендаций.
 
-Дополнительные сведения см. в статье [Обзор базовой конфигурации безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/security-baselines-overview).
+Дополнительные сведения см. в статье [Обзор базовой конфигурации безопасности Azure](/azure/security/benchmarks/security-baselines-overview).
 
 ## <a name="network-security"></a>Безопасность сети
 
-*Дополнительные сведения см. в статье [Управление безопасностью: безопасность сети](https://docs.microsoft.com/azure/security/benchmarks/security-control-network-security).*
+*Дополнительные сведения см. в статье [Управление безопасностью: безопасность сети](/azure/security/benchmarks/security-control-network-security).*
 
 ### <a name="11-protect-resources-using-network-security-groups-or-azure-firewall-on-your-virtual-network"></a>1.1. Защита ресурсов в виртуальной сети с помощью групп безопасности сети или Брандмауэра Azure
 
@@ -32,9 +32,9 @@ ms.locfileid: "91715157"
 
 Примечание. Классические учетные записи хранения не поддерживают брандмауэры и виртуальные сети.
 
-- [Настройка брандмауэра службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-network-security#change-the-default-network-access-rule)
+- [Настройка брандмауэра службы хранилища Azure](/azure/storage/common/storage-network-security#change-the-default-network-access-rule)
 
-- [Настройка частных конечных точек для службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-private-endpoints)
+- [Настройка частных конечных точек для службы хранилища Azure](/azure/storage/common/storage-private-endpoints)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -46,13 +46,13 @@ ms.locfileid: "91715157"
 
 Обратите внимание, что при наличии частных конечных точек, присоединенных к учетной записи хранения, нельзя настроить правила группы безопасности сети (NSG) для подсетей. 
 
-- [Настройка брандмауэров службы хранилища Azure и виртуальных сетей](https://docs.microsoft.com/azure/storage/common/storage-network-security)
+- [Настройка брандмауэров службы хранилища Azure и виртуальных сетей](/azure/storage/common/storage-network-security)
 
-- [Как включить журналы потоков NSG](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-portal)
+- [Как включить журналы потоков NSG](/azure/network-watcher/network-watcher-nsg-flow-logging-portal)
 
-- [Общие сведения о безопасности сети, предоставляемой центром безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-network-recommendations)
+- [Общие сведения о безопасности сети, предоставляемой центром безопасности Azure](/azure/security-center/security-center-network-recommendations)
 
-- [Основные сведения о частных конечных точках для службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-private-endpoints#known-issues)
+- [Основные сведения о частных конечных точках для службы хранилища Azure](/azure/storage/common/storage-private-endpoints#known-issues)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -70,9 +70,9 @@ ms.locfileid: "91715157"
 
 **Руководство**. Включение расширенной защиты от угроз для учетной записи хранения Azure. Расширенная защита от угроз для службы хранилища Azure предоставляет дополнительный уровень логики безопасности, который обнаруживает необычные и потенциально опасные попытки доступа или использования учетных записей хранения. Интегрированные оповещения центра безопасности Azure основаны на действиях, для которых сетевое взаимодействие связано с IP-адресом, который был успешно разрешен, независимо от того, является ли IP-адрес известным рискованным IP-адресом (например, известным криптоминер) или IP-адресом, который не распознается ранее как рискованный. Оповещения системы безопасности активируются при возникновении аномальных действий. 
 
-- [Включение расширенной защиты от угроз](https://docs.microsoft.com/azure/storage/common/storage-advanced-threat-protection?tabs=azure-portal)
+- [Включение расширенной защиты от угроз](/azure/storage/common/storage-advanced-threat-protection?tabs=azure-portal)
 
-- [Общие сведения об интегрированной аналитике угроз в Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-alerts-service-layer)
+- [Общие сведения об интегрированной аналитике угроз в Центре безопасности Azure](/azure/security-center/security-center-alerts-service-layer)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -82,7 +82,7 @@ ms.locfileid: "91715157"
 
 **Руководство**. запись пакетов наблюдателя за сетями позволяет создавать сеансы записи для отслеживания трафика между учетной записью хранения и виртуальной машиной. Для сеанса записи предоставляются фильтры, которые позволяют убедиться, что записывается только требуемый трафик. Запись пакетов позволяет выявлять аномалии в работе сети в случае их возникновения или заранее. Также она помогают выполнять сбор сетевой статистики, получать сведения о сетевых вторжениях, выполнять отладку обмена данных между клиентом и сервером и многое другое. Так как запись пакетов активируется удаленно, ее не нужно запускать вручную на требуемой виртуальной машине, что также позволяет сэкономить ценное время. 
 
-- [Управление записью пакетов с помощью Наблюдателя за сетями Azure на портале Azure](https://docs.microsoft.com/azure/network-watcher/network-watcher-packet-capture-manage-portal)
+- [Управление записью пакетов с помощью Наблюдателя за сетями Azure на портале Azure](/azure/network-watcher/network-watcher-packet-capture-manage-portal)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -92,7 +92,7 @@ ms.locfileid: "91715157"
 
 **Руководство**. Расширенная защита от угроз для службы хранилища Azure предоставляет дополнительный уровень логики безопасности, который обнаруживает необычные и потенциально опасные попытки доступа или использования учетных записей хранения. Оповещения системы безопасности активируются при возникновении аномальных действий. Эти оповещения безопасности интегрируются с центром безопасности Azure, а также отправляются по электронной почте администраторам подписки с подробными сведениями о подозрительных действиях и рекомендациями по исследованию и устранению угроз. 
 
-- [Настройка расширенной защиты от угроз для службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-advanced-threat-protection)
+- [Настройка расширенной защиты от угроз для службы хранилища Azure](/azure/storage/common/storage-advanced-threat-protection)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -112,9 +112,9 @@ ms.locfileid: "91715157"
 
 Если доступ к сети должен быть ограничен конкретными учетными записями хранения, используйте политики конечной точки службы виртуальной сети.
 
-- [Дополнительные сведения об использовании тегов служб](https://docs.microsoft.com/azure/virtual-network/service-tags-overview)
+- [Дополнительные сведения об использовании тегов служб](/azure/virtual-network/service-tags-overview)
 
-- [Дополнительные сведения о политиках конечной точки службы виртуальной сети в службе хранилища Azure](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoint-policies-overview)
+- [Дополнительные сведения о политиках конечной точки службы виртуальной сети в службе хранилища Azure](/azure/virtual-network/virtual-network-service-endpoint-policies-overview)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -126,13 +126,13 @@ ms.locfileid: "91715157"
 
 Вы также можете использовать встроенные определения политик, связанные с учетной записью хранения, например: учетные записи хранения должны использовать конечную точку службы виртуальной сети. 
 
-- [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+- [Настройка Политики Azure и управление ею](/azure/governance/policy/tutorials/create-and-manage)
 
-- [Примеры политик Azure для хранилища](https://docs.microsoft.com/azure/governance/policy/samples/built-in-policies#storage)
+- [Примеры политик Azure для хранилища](/azure/governance/policy/samples/built-in-policies#storage)
 
-- [Примеры политики Azure для сети](https://docs.microsoft.com/azure/governance/policy/samples/built-in-policies#network)
+- [Примеры политики Azure для сети](/azure/governance/policy/samples/built-in-policies#network)
 
-- [Создание схемы Azure](https://docs.microsoft.com/azure/governance/blueprints/create-blueprint-portal)
+- [Создание схемы Azure](/azure/governance/blueprints/create-blueprint-portal)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -142,11 +142,11 @@ ms.locfileid: "91715157"
 
 **Руководство**. Использование тегов для групп безопасности сети (NSG) и других ресурсов, относящихся к сетевой безопасности и потоку трафика. Для отдельных правил NSG используйте поле "Описание", чтобы указать бизнес-потребности и длительность (и т. д.) любых правил, которые разрешают трафик в сеть и из нее. Используйте любое из встроенных определений политик Azure, связанных с тегами, например "требовать тег и его значение", чтобы убедиться, что все ресурсы созданы с помощью тегов и уведомлять вас о существующих ресурсах без тегов. Вы можете использовать Azure PowerShell или Azure CLI для поиска или выполнения действий с ресурсами на основе их тегов. 
 
-- [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+- [Создание и использование тегов](/azure/azure-resource-manager/resource-group-using-tags)
 
-- [Создание виртуальной сети](https://docs.microsoft.com/azure/virtual-network/quick-create-portal)
+- [Создание виртуальной сети](/azure/virtual-network/quick-create-portal)
 
-- [Создание группы безопасности сети с конфигурацией безопасности](https://docs.microsoft.com/azure/virtual-network/tutorial-filter-network-traffic)
+- [Создание группы безопасности сети с конфигурацией безопасности](/azure/virtual-network/tutorial-filter-network-traffic)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -156,9 +156,9 @@ ms.locfileid: "91715157"
 
 **Руководство**. Использование политики Azure для регистрации изменений конфигурации сетевых ресурсов. Создавайте оповещения в Azure Monitor, которые будут запускаться при изменении критических сетевых ресурсов. 
 
-- [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+- [Настройка Политики Azure и управление ею](/azure/governance/policy/tutorials/create-and-manage)
 
-- [Как создать оповещения в службе Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log)
+- [Как создать оповещения в службе Azure Monitor](/azure/azure-monitor/platform/alerts-activity-log)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -166,7 +166,7 @@ ms.locfileid: "91715157"
 
 ## <a name="logging-and-monitoring"></a>Ведение журналов и мониторинг
 
-*Дополнительные сведения см. в статье [Управление безопасностью: ведение журналов и мониторинг](https://docs.microsoft.com/azure/security/benchmarks/security-control-logging-monitoring).*
+*Дополнительные сведения см. в статье [Управление безопасностью: ведение журналов и мониторинг](/azure/security/benchmarks/security-control-logging-monitoring).*
 
 ### <a name="21-use-approved-time-synchronization-resource"></a>2,1: использование ресурса синхронизации утвержденного времени
 
@@ -180,7 +180,7 @@ ms.locfileid: "91715157"
 
 **Рекомендации**. прием журналов с помощью Azure Monitor для агрегирования данных безопасности, создаваемых конечными точками, сетевыми ресурсами и другими системами безопасности. В Azure Monitor используйте рабочие области Log Analytics для запроса и выполнения анализа и используйте учетные записи хранения Azure для долгосрочного и архивного хранения, при необходимости используя такие функции безопасности, как неизменяемое хранилище и принудительное хранение.
 
-- [Как получить журналы и метрики платформы с помощью Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings)
+- [Как получить журналы и метрики платформы с помощью Azure Monitor](/azure/azure-monitor/platform/diagnostic-settings)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -190,7 +190,7 @@ ms.locfileid: "91715157"
 
 **Руководство**. аналитика службы хранилища Azure предоставляет журналы для больших двоичных объектов, очередей и таблиц. Вы можете использовать портал Azure, чтобы настроить, какие журналы записываются для вашей учетной записи. 
 
-- [Настройка мониторинга для учетной записи хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-monitor-storage-account#configure-monitoring-for-a-storage-account)
+- [Настройка мониторинга для учетной записи хранения Azure](/azure/storage/common/storage-monitor-storage-account#configure-monitoring-for-a-storage-account)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -208,9 +208,9 @@ ms.locfileid: "91715157"
 
 **Рекомендации**. при хранении журналов событий безопасности в учетной записи хранения Azure или log Analytics рабочей области вы можете настроить политику хранения в соответствии с требованиями вашей организации. 
 
-- [Настройка политики хранения для журналов учетных записей хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-monitor-storage-account#configure-logging)
+- [Настройка политики хранения для журналов учетных записей хранения Azure](/azure/storage/common/storage-monitor-storage-account#configure-logging)
 
-- [Изменение срока хранения данных в Log Analytics](https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period)
+- [Изменение срока хранения данных в Log Analytics](/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -222,9 +222,9 @@ ms.locfileid: "91715157"
 
 Кроме того, включите расширенную защиту от угроз для учетной записи хранения Azure. Расширенная защита от угроз для службы хранилища Azure предоставляет дополнительный уровень логики безопасности, который обнаруживает необычные и потенциально опасные попытки доступа или использования учетных записей хранения. Оповещения системы безопасности активируются при возникновении аномальных действий. Эти оповещения безопасности интегрируются с центром безопасности Azure, а также отправляются по электронной почте администраторам подписки с подробными сведениями о подозрительных действиях и рекомендациями по исследованию и устранению угроз. 
 
-- [Ведение журнала и проверка данных](https://docs.microsoft.com/azure/storage/common/storage-analytics-logging#how-logs-are-stored)
+- [Ведение журнала и проверка данных](/azure/storage/common/storage-analytics-logging#how-logs-are-stored)
 
-- [Включение расширенной защиты от угроз](https://docs.microsoft.com/azure/storage/common/storage-advanced-threat-protection?tabs=azure-portal)
+- [Включение расширенной защиты от угроз](/azure/storage/common/storage-advanced-threat-protection?tabs=azure-portal)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -234,13 +234,13 @@ ms.locfileid: "91715157"
 
 **Руководство**. в центре безопасности Azure включите Advanced Threat Protection для учетной записи хранения. Включите параметры диагностики для учетной записи хранения и отправьте журналы в рабочую область Log Analytics. Подключите рабочую область Log Analytics к Azure Sentinel, так как она предоставляет решение для оркестрации событий безопасности и автоматического реагирования (SOAR). Это позволяет создавать и использовать сборники схем (автоматизированные решения) для устранения проблем безопасности. 
 
-- [Подключение к Azure Sentinel](https://docs.microsoft.com/azure/sentinel/quickstart-onboard)
+- [Подключение к Azure Sentinel](/azure/sentinel/quickstart-onboard)
 
-- [Управление оповещениями в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-managing-and-responding-alerts)
+- [Управление оповещениями в центре безопасности Azure](/azure/security-center/security-center-managing-and-responding-alerts)
 
-- [Как оповещать данные журнала Log Analytics](https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-response)
+- [Как оповещать данные журнала Log Analytics](/azure/azure-monitor/learn/tutorial-response)
 
-- [Ведение журнала Аналитики Службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-analytics-logging)
+- [Ведение журнала Аналитики Службы хранилища Azure](/azure/storage/common/storage-analytics-logging)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -250,7 +250,7 @@ ms.locfileid: "91715157"
 
 **Руководство**. Использование центра безопасности Azure и включение защиты от угроз для службы хранилища Azure для обнаружения загрузок вредоносных программ в службу хранилища Azure с помощью анализа репутации хэша и подозрительного доступа из активного узла выхода Tor (прокси-сервер анонимизирующие). 
 
-- [Настройка расширенной защиты от угроз для службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-advanced-threat-protection?tabs=azure-portal)
+- [Настройка расширенной защиты от угроз для службы хранилища Azure](/azure/storage/common/storage-advanced-threat-protection?tabs=azure-portal)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -260,7 +260,7 @@ ms.locfileid: "91715157"
 
 **Руководство**. решение Azure DNS Analytics (Preview) в Azure Monitor собирает информацию о инфраструктуре DNS в области безопасности, производительности и эксплуатации. В настоящее время учетные записи хранения Azure не поддерживаются, однако вы можете использовать стороннее решение для ведения журнала DNS. 
 
-- [Сбор подробных сведений о инфраструктуре DNS с помощью предварительной версии решения Аналитика DNS](https://docs.microsoft.com/azure/azure-monitor/insights/dns-analytics)
+- [Сбор подробных сведений о инфраструктуре DNS с помощью предварительной версии решения Аналитика DNS](/azure/azure-monitor/insights/dns-analytics)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -276,15 +276,15 @@ ms.locfileid: "91715157"
 
 ## <a name="identity-and-access-control"></a>Идентификатор и управление доступом
 
-*Дополнительные сведения см. в статье [Управление безопасностью: идентификаторы и управление доступом](https://docs.microsoft.com/azure/security/benchmarks/security-control-identity-access-control).*
+*Дополнительные сведения см. в статье [Управление безопасностью: идентификаторы и управление доступом](/azure/security/benchmarks/security-control-identity-access-control).*
 
 ### <a name="31-maintain-inventory-of-administrative-accounts"></a>3,1: ведение инвентаризации учетных записей администраторов
 
 **Руководство**. в Azure AD есть встроенные роли, которые должны быть явно назначены и доступны для запросов. Используйте модуль Azure AD PowerShell для выполнения нерегламентированных запросов для обнаружения учетных записей, входящих в группы администраторов. 
 
-- [Как получить роль каталога в Azure AD с помощью PowerShell](https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrole?view=azureadps-2.0)
+- [Как получить роль каталога в Azure AD с помощью PowerShell](/powershell/module/azuread/get-azureaddirectoryrole)
 
-- [Как получить членов роли каталога в Azure AD с помощью PowerShell](https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0)
+- [Как получить членов роли каталога в Azure AD с помощью PowerShell](/powershell/module/azuread/get-azureaddirectoryrolemember)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -294,9 +294,9 @@ ms.locfileid: "91715157"
 
 **Руководство**. учетные записи хранения Azure и Azure Active Directory имеют концепцию по умолчанию или пустым паролям. Служба хранилища Azure реализует модель управления доступом, поддерживающую управление доступом на основе ролей Azure (Azure RBAC), а также общий ключ и подписанный URL-адрес (SAS). Характеристикой общего ключа и проверки подлинности SAS является отсутствие связи с вызывающим объектом, поэтому не удается выполнить авторизацию на основе разрешений субъекта безопасности. 
 
-- [Авторизация доступа к данным в службе хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-auth)
+- [Авторизация доступа к данным в службе хранилища Azure](/azure/storage/common/storage-auth)
 
-- [Основные сведения об участниках безопасности и контроле доступа для учетной записи хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-introduction)
+- [Основные сведения об участниках безопасности и контроле доступа для учетной записи хранения Azure](/azure/storage/common/storage-introduction)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -308,9 +308,9 @@ ms.locfileid: "91715157"
 
 Вы также можете включить JIT-доступ с помощью Azure AD Privileged Identity Management привилегированных ролей для служб Майкрософт и Azure ARM. 
 
-- [Общие сведения об удостоверениях и доступе центра безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-identity-access)
+- [Общие сведения об удостоверениях и доступе центра безопасности Azure](/azure/security-center/security-center-identity-access)
 
-- [Обзор управление привилегированными пользователями](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/)
+- [Обзор управление привилегированными пользователями](/azure/active-directory/privileged-identity-management/)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -320,11 +320,11 @@ ms.locfileid: "91715157"
 
 **Рекомендации**. везде, где это возможно, используйте Azure Active Directory SSO вместо настройки отдельных автономных учетных данных для каждой службы. Используйте рекомендации по управлению удостоверениями и доступом в центре безопасности Azure. 
 
-- [Общие сведения об использовании единого входа в Azure AD](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on)
+- [Общие сведения об использовании единого входа в Azure AD](/azure/active-directory/manage-apps/what-is-single-sign-on)
 
-- [Авторизация доступа к данным в службе хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-auth)
+- [Авторизация доступа к данным в службе хранилища Azure](/azure/storage/common/storage-auth)
 
-- [Авторизация доступа к BLOB-объектам и очередям с помощью Azure Active Directory](https://docs.microsoft.com/azure/storage/common/storage-auth-aad)
+- [Авторизация доступа к BLOB-объектам и очередям с помощью Azure Active Directory](/azure/storage/common/storage-auth-aad)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -334,9 +334,9 @@ ms.locfileid: "91715157"
 
 **Рекомендации**. Включите многофакторную проверку подлинности Azure Active Directory и следуйте рекомендациям по управлению удостоверениями и доступом в центре безопасности Azure, чтобы помочь защитить ресурсы учетной записи хранения. 
 
-- [Включение MFA в Azure](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted)
+- [Включение MFA в Azure](/azure/active-directory/authentication/howto-mfa-getstarted)
 
-- [Мониторинг идентификации и доступа в Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-identity-access)
+- [Мониторинг идентификации и доступа в Центре безопасности Azure](/azure/security-center/security-center-identity-access)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -346,9 +346,9 @@ ms.locfileid: "91715157"
 
 **Руководство**. Используйте лапы (рабочие станции с привилегированным доступом) с MFA, настроенным для входа в систему и настройки ресурсов учетной записи хранения. 
 
-- [Использование рабочих станций с привилегированным доступом](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/privileged-access-workstations)
+- [Использование рабочих станций с привилегированным доступом](/windows-server/identity/securing-privileged-access/privileged-access-workstations)
 
-- [Включение MFA в Azure](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted)
+- [Включение MFA в Azure](/azure/active-directory/authentication/howto-mfa-getstarted)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -358,11 +358,11 @@ ms.locfileid: "91715157"
 
 **Руководство**. Отправка оповещений центра безопасности Azure об обнаружении рисков в Azure Monitor и настройка пользовательских оповещений и уведомлений с помощью групп действий. Включите расширенную защиту от угроз для учетной записи хранения Azure, чтобы создавать оповещения для подозрительных действий. Кроме того, с помощью обнаружения рисков Azure AD можно просматривать предупреждения и отчеты о поведении опасного пользователя. 
 
-- [Как настроить расширенную защиту от угроз для учетной записи хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-advanced-threat-protection)
+- [Как настроить расширенную защиту от угроз для учетной записи хранения Azure](/azure/storage/common/storage-advanced-threat-protection)
 
-- [Общие сведения об обнаружении рисков в Azure AD](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-risk-events)
+- [Общие сведения об обнаружении рисков в Azure AD](/azure/active-directory/reports-monitoring/concept-risk-events)
 
-- [Настройка групп действий для настраиваемых оповещений и уведомлений](https://docs.microsoft.com/azure/azure-monitor/platform/action-groups)
+- [Настройка групп действий для настраиваемых оповещений и уведомлений](/azure/azure-monitor/platform/action-groups)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -372,7 +372,7 @@ ms.locfileid: "91715157"
 
 **Руководство**. Используйте условный доступ с именованными расположениями, чтобы разрешить доступ только из конкретных логических групп диапазонов IP-адресов или стран и регионов. 
 
-- [Настройка именованных расположений в Azure](https://docs.microsoft.com/azure/active-directory/reports-monitoring/quickstart-configure-named-locations)
+- [Настройка именованных расположений в Azure](/azure/active-directory/reports-monitoring/quickstart-configure-named-locations)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -382,15 +382,15 @@ ms.locfileid: "91715157"
 
 **Руководство**. Использование Azure Active Directory (Azure AD) в качестве централизованной системы проверки подлинности и авторизации. Azure предоставляет управление доступом на основе ролей Azure (Azure RBAC) для точного управления доступом клиента к ресурсам в учетной записи хранения.  Используйте учетные данные Azure AD, если это возможно в целях безопасности, вместо использования ключа учетной записи, что может быть более легко скомпрометировано. Если для разработки приложения требуются подписанные URL-адрес для доступа к хранилищу больших двоичных объектов, используйте учетные данные Azure AD, чтобы создать подписанные на пользователя подписи общего доступа (SAS), если это возможно для обеспечения высокого уровня безопасности.
 
-- [Создание и настройка экземпляра Azure AD](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-access-create-new-tenant)
+- [Создание и настройка экземпляра Azure AD](/azure/active-directory/fundamentals/active-directory-access-create-new-tenant)
 
-- [Использование поставщика ресурсов службы хранилища Azure для доступа к ресурсам управления](https://docs.microsoft.com/azure/storage/common/authorization-resource-provider)
+- [Использование поставщика ресурсов службы хранилища Azure для доступа к ресурсам управления](/azure/storage/common/authorization-resource-provider)
 
-- [Настройка доступа к данным большого двоичного объекта и очереди Azure с помощью Azure RBAC в портал Azure](https://docs.microsoft.com/azure/storage/common/storage-auth-aad-rbac-portal)
+- [Настройка доступа к данным большого двоичного объекта и очереди Azure с помощью Azure RBAC в портал Azure](/azure/storage/common/storage-auth-aad-rbac-portal)
 
-- [Авторизация доступа к данным в службе хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-auth)
+- [Авторизация доступа к данным в службе хранилища Azure](/azure/storage/common/storage-auth)
 
-- [Предоставление ограниченного доступа к ресурсам службы хранилища Azure с помощью подписанных URL-адресов (SAS)](https://docs.microsoft.com/azure/storage/common/storage-sas-overview)
+- [Предоставление ограниченного доступа к ресурсам службы хранилища Azure с помощью подписанных URL-адресов (SAS)](/azure/storage/common/storage-sas-overview)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -406,17 +406,17 @@ ms.locfileid: "91715157"
 
 Одним из эффективных способов снижения риска подозрительного доступа к учетной записи пользователя является ограничение продолжительности доступа, предоставляемого пользователям. URI SAS с ограниченным временем — это один эффективный способ автоматического истечения срока действия доступа пользователей к учетной записи хранения. Кроме того, одновременное вращение ключей учетной записи хранения — это способ гарантировать, что непредвиденный доступ через ключи учетной записи хранения ограничен длительностью.
 
-- [Общие сведения об отчетах Azure AD](https://docs.microsoft.com/azure/active-directory/reports-monitoring/)
+- [Общие сведения об отчетах Azure AD](/azure/active-directory/reports-monitoring/)
 
-- [Просмотр и изменение доступа на уровне учетной записи хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-auth-aad-rbac-portal)
+- [Просмотр и изменение доступа на уровне учетной записи хранения Azure](/azure/storage/common/storage-auth-aad-rbac-portal)
 
-- [Предоставление ограниченного доступа к ресурсам службы хранилища Azure с помощью подписанных URL-адресов (SAS)](https://docs.microsoft.com/azure/storage/common/storage-sas-overview)
+- [Предоставление ограниченного доступа к ресурсам службы хранилища Azure с помощью подписанных URL-адресов (SAS)](/azure/storage/common/storage-sas-overview)
 
-- [Управление анонимным доступом на чтение к контейнерам и большим двоичным объектам](https://docs.microsoft.com/azure/storage/blobs/storage-manage-access-to-resources)
+- [Управление анонимным доступом на чтение к контейнерам и большим двоичным объектам](/azure/storage/blobs/storage-manage-access-to-resources)
 
-- [Мониторинг учетной записи хранения на портале Azure](https://docs.microsoft.com/azure/storage/common/storage-monitor-storage-account)
+- [Мониторинг учетной записи хранения на портале Azure](/azure/storage/common/storage-monitor-storage-account)
 
-- [Управление ключами доступа к учетной записи хранения](https://docs.microsoft.com/azure/storage/common/storage-account-keys-manage)
+- [Управление ключами доступа к учетной записи хранения](/azure/storage/common/storage-account-keys-manage)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -428,11 +428,11 @@ ms.locfileid: "91715157"
 
 Создайте параметры диагностики для Azure Active Directory учетных записей пользователей, отправив журналы аудита и журналы входа в рабочую область Log Analytics. Вы можете настроить необходимые оповещения в рабочей области Log Analytics. Чтобы отслеживать ошибки проверки подлинности в учетных записях хранения Azure, можно создавать оповещения, уведомляющие вас о достижении определенных пороговых значений для метрик ресурсов хранилища. Кроме того, используйте Azure Monitor, чтобы оповещать об анонимном доступе учетных записей хранения, используя условия анонимной проверки подлинности.
 
-- [Ведение журнала Аналитики Службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-analytics-logging)
+- [Ведение журнала Аналитики Службы хранилища Azure](/azure/storage/common/storage-analytics-logging)
 
-- [Как интегрировать журналы действий Azure в Azure Monitor](https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)
+- [Как интегрировать журналы действий Azure в Azure Monitor](/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)
 
-- [Настройка оповещений метрик для учетных записей хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-monitor-storage-account)
+- [Настройка оповещений метрик для учетных записей хранения Azure](/azure/storage/common/storage-monitor-storage-account)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -442,11 +442,11 @@ ms.locfileid: "91715157"
 
 **Руководство**. Использование функций защиты учетных записей и рисков Azure Active Directory для настройки автоматических ответов на обнаруженные подозрительные действия, связанные с вашими ресурсами. Вы должны включить автоматические ответы через метку Azure, чтобы реализовать ответы на безопасность вашей организации. 
 
-- [Просмотр рискованных входов в Azure AD](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-risky-sign-ins)
+- [Просмотр рискованных входов в Azure AD](/azure/active-directory/reports-monitoring/concept-risky-sign-ins)
 
-- [Как настроить и включить политики рисков с помощью защиты идентификации](https://docs.microsoft.com/azure/active-directory/identity-protection/howto-identity-protection-configure-risk-policies)
+- [Как настроить и включить политики рисков с помощью защиты идентификации](/azure/active-directory/identity-protection/howto-identity-protection-configure-risk-policies)
 
-- [Подключение к Azure Sentinel](https://docs.microsoft.com/azure/sentinel/quickstart-onboard)
+- [Подключение к Azure Sentinel](/azure/sentinel/quickstart-onboard)
 
 **Мониторинг Центра безопасности Azure**. Сейчас это недоступно.
 
@@ -456,7 +456,7 @@ ms.locfileid: "91715157"
 
 **Руководство**. в сценариях поддержки, в которых корпорации Майкрософт требуется доступ к данным клиентов, защищенное хранилище (Предварительная версия учетной записи хранения) предоставляет пользователям интерфейс для просмотра и утверждения или отклонения запросов на доступ к данным клиентов. Корпорация Майкрософт не будет требовать и не запрашивать доступ к секретам вашей организации, хранящимся в учетной записи хранения.
 
-- [Общие сведения о защищенное хранилище](https://docs.microsoft.com/azure/security/fundamentals/customer-lockbox-overview)
+- [Общие сведения о защищенное хранилище](/azure/security/fundamentals/customer-lockbox-overview)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -464,13 +464,13 @@ ms.locfileid: "91715157"
 
 ## <a name="data-protection"></a>Защита данных
 
-*Дополнительные сведения см. в статье [Управление безопасностью: защита данных](https://docs.microsoft.com/azure/security/benchmarks/security-control-data-protection).*
+*Дополнительные сведения см. в статье [Управление безопасностью: защита данных](/azure/security/benchmarks/security-control-data-protection).*
 
 ### <a name="41-maintain-an-inventory-of-sensitive-information"></a>4.1. Инвентаризация конфиденциальных данных
 
 **Руководство**. Использование тегов для отслеживания ресурсов учетной записи хранения, в которых хранятся или обрабатываются конфиденциальные данные. 
 
-- [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+- [Создание и использование тегов](/azure/azure-resource-manager/resource-group-using-tags)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -480,15 +480,15 @@ ms.locfileid: "91715157"
 
 **Руководство**. Реализация изоляции с помощью отдельных подписок, групп управления и учетных записей хранения для отдельных доменов безопасности, таких как среда, чувствительность данных.  Вы можете ограничить учетную запись хранения, чтобы управлять уровнем доступа к учетным записям хранения, которые требуются приложениям и корпоративным средам, в зависимости от типа и подмножества используемых сетей. После настройки сетевых правил доступ к учетной записи хранения могут получать только приложения, запрашивающие данные через этот определенный набор сетей. Вы можете управлять доступом к службе хранилища Azure с помощью Azure RBAC. Кроме того, можно настроить частные конечные точки для повышения безопасности, так как трафик между виртуальной сетью и службой проходит через магистральную сеть Майкрософт, что устраняет уязвимость в общедоступном Интернете. 
 
-- [Создание дополнительных подписок Azure](https://docs.microsoft.com/azure/billing/billing-create-subscription)
+- [Создание дополнительных подписок Azure](/azure/billing/billing-create-subscription)
 
-- [Создание групп управления](https://docs.microsoft.com/azure/governance/management-groups/create)
+- [Создание групп управления](/azure/governance/management-groups/create)
 
-- [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+- [Создание и использование тегов](/azure/azure-resource-manager/resource-group-using-tags)
 
-- [Настройка брандмауэров службы хранилища Azure и виртуальных сетей](https://docs.microsoft.com/azure/storage/common/storage-network-security)
+- [Настройка брандмауэров службы хранилища Azure и виртуальных сетей](/azure/storage/common/storage-network-security)
 
-- [Конечные точки службы виртуальной сети](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview)
+- [Конечные точки службы виртуальной сети](/azure/virtual-network/virtual-network-service-endpoints-overview)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -500,11 +500,11 @@ ms.locfileid: "91715157"
 
 Кроме того, используйте политики конечной точки службы виртуальной сети для фильтрации входящего трафика виртуальной сети в учетные записи хранения Azure через конечную точку службы и разрешите утечка данных только для конкретных учетных записей хранения Azure.
 
-- [Настройка брандмауэров службы хранилища Azure и виртуальных сетей](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoint-policies-overview)
+- [Настройка брандмауэров службы хранилища Azure и виртуальных сетей](/azure/virtual-network/virtual-network-service-endpoint-policies-overview)
 
-- [Политики конечных точек службы виртуальной сети для службы хранилища Azure](https://docs.microsoft.com/azure/private-link/create-private-endpoint-storage-portal)
+- [Политики конечных точек службы виртуальной сети для службы хранилища Azure](/azure/private-link/create-private-endpoint-storage-portal)
 
-- [Общие сведения о защите данных клиентов в Azure](https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data)
+- [Общие сведения о защите данных клиентов в Azure](/azure/security/fundamentals/protection-customer-data)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -514,9 +514,9 @@ ms.locfileid: "91715157"
 
 **Руководство**. Вы можете принудительно использовать протокол HTTPS, включив для учетной записи хранения безопасное перемещение. После этого подключения по протоколу HTTP будут отклоняться. Кроме того, используйте центр безопасности Azure и политику Azure, чтобы обеспечить безопасную пересылку учетной записи хранения.
 
-- [Как требовать безопасной пересылки в службе хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-require-secure-transfer)
+- [Как требовать безопасной пересылки в службе хранилища Azure](/azure/storage/common/storage-require-secure-transfer)
 
-- [Политики безопасности Azure, отслеживаемые центром безопасности](https://docs.microsoft.com/azure/security-center/security-center-policy-definitions)
+- [Политики безопасности Azure, отслеживаемые центром безопасности](/azure/security-center/security-center-policy-definitions)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -526,7 +526,7 @@ ms.locfileid: "91715157"
 
 **Руководство**. функции идентификации данных пока недоступны для учетной записи хранения Azure и связанных с ней ресурсов. Установите сторонние решения, если это необходимо для обеспечения соответствия требованиям. 
 
-- [Общие сведения о защите данных клиентов в Azure](https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data)
+- [Общие сведения о защите данных клиентов в Azure](/azure/security/fundamentals/protection-customer-data)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -536,15 +536,15 @@ ms.locfileid: "91715157"
 
 **Руководство**. Azure Active Directory (Azure AD) разрешает права доступа к защищенным ресурсам через Управление доступом на основе ролей Azure (Azure RBAC). Служба хранилища Azure определяет набор встроенных ролей Azure, охватывающих общие наборы разрешений, используемых для доступа к данным BLOB-объектов или очередей. 
 
-- [Как назначить роли Azure для учетной записи хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-auth-aad-rbac-portal#assign-azure-roles-using-the-azure-portal)
+- [Как назначить роли Azure для учетной записи хранения Azure](/azure/storage/common/storage-auth-aad-rbac-portal#assign-azure-roles-using-the-azure-portal)
 
-- [Использование поставщика ресурсов службы хранилища Azure для доступа к ресурсам управления](https://docs.microsoft.com/azure/storage/common/authorization-resource-provider)
+- [Использование поставщика ресурсов службы хранилища Azure для доступа к ресурсам управления](/azure/storage/common/authorization-resource-provider)
 
-- [Настройка доступа к данным большого двоичного объекта и очереди Azure с помощью Azure RBAC в портал Azure](https://docs.microsoft.com/azure/storage/common/storage-auth-aad-rbac-portal)
+- [Настройка доступа к данным большого двоичного объекта и очереди Azure с помощью Azure RBAC в портал Azure](/azure/storage/common/storage-auth-aad-rbac-portal)
 
-- [Создание и настройка экземпляра Azure AD](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-access-create-new-tenant)
+- [Создание и настройка экземпляра Azure AD](/azure/active-directory/fundamentals/active-directory-access-create-new-tenant)
 
-- [Авторизация доступа к данным в службе хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-auth)
+- [Авторизация доступа к данным в службе хранилища Azure](/azure/storage/common/storage-auth)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -562,7 +562,7 @@ ms.locfileid: "91715157"
 
 **Руководство**. шифрование службы хранилища Azure включено для всех учетных записей хранения и не может быть отключено. Служба хранилища Azure автоматически шифрует данные при их сохранении в облаке. При считывании данных из службы хранилища Azure она расшифровывает их перед возвратом. Шифрование службы хранилища Azure позволяет защищать неактивных данных без необходимости изменять код или добавлять код в приложения. 
 
-- [Общие сведения о шифровании службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-service-encryption)
+- [Общие сведения о шифровании службы хранилища Azure](/azure/storage/common/storage-service-encryption)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -572,11 +572,11 @@ ms.locfileid: "91715157"
 
 **Руководство**. Использование Azure Monitor с журналом действий Azure для создания оповещений о том, когда изменения выполняются в ресурсах учетной записи хранения. Вы также можете включить ведение журнала службы хранилища Azure, чтобы отслеживание авторизации каждого запроса к службе хранилища Azure. Журналы указывают, был ли запрос анонимно, с помощью маркера OAuth 2,0, с помощью общего ключа или подписанного URL-адрес (SAS). Кроме того, используйте Azure Monitor, чтобы оповещать об анонимном доступе учетных записей хранения, используя условия анонимной проверки подлинности.
 
-- [Создание оповещений для событий журнала действий Azure](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log)
+- [Создание оповещений для событий журнала действий Azure](/azure/azure-monitor/platform/alerts-activity-log)
 
-- [Ведение журнала Аналитики Службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-analytics-logging)
+- [Ведение журнала Аналитики Службы хранилища Azure](/azure/storage/common/storage-analytics-logging)
 
-- [Настройка оповещений метрик для учетных записей хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-monitor-storage-account)
+- [Настройка оповещений метрик для учетных записей хранения Azure](/azure/storage/common/storage-monitor-storage-account)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -584,13 +584,13 @@ ms.locfileid: "91715157"
 
 ## <a name="vulnerability-management"></a>Управление уязвимостями
 
-*Дополнительные сведения см. в статье [Управление безопасностью: управление уязвимостями](https://docs.microsoft.com/azure/security/benchmarks/security-control-vulnerability-management).*
+*Дополнительные сведения см. в статье [Управление безопасностью: управление уязвимостями](/azure/security/benchmarks/security-control-vulnerability-management).*
 
 ### <a name="51-run-automated-vulnerability-scanning-tools"></a>5,1: Запуск автоматизированных средств проверки уязвимостей
 
 **Рекомендации**. Следуйте рекомендациям центра безопасности Azure, чтобы постоянно выполнять аудит и мониторинг конфигурации учетных записей хранения. 
 
-- [Рекомендации по безопасности — справочное руководство](https://docs.microsoft.com/azure/security-center/recommendations-reference)
+- [Рекомендации по безопасности — справочное руководство](/azure/security-center/recommendations-reference)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -624,7 +624,7 @@ ms.locfileid: "91715157"
 
 **Руководство**. Используйте оценки рисков по умолчанию (Оценка безопасности), предоставляемые центром безопасности Azure. 
 
-- [Оценка безопасности центра безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-secure-score)
+- [Оценка безопасности центра безопасности Azure](/azure/security-center/security-center-secure-score)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -632,17 +632,17 @@ ms.locfileid: "91715157"
 
 ## <a name="inventory-and-asset-management"></a>Инвентаризация и управление ресурсами
 
-*Дополнительные сведения см. в статье [Управление безопасностью: инвентаризация и управление ресурсами](https://docs.microsoft.com/azure/security/benchmarks/security-control-inventory-asset-management).*
+*Дополнительные сведения см. в статье [Управление безопасностью: инвентаризация и управление ресурсами](/azure/security/benchmarks/security-control-inventory-asset-management).*
 
 ### <a name="61-use-azure-asset-discovery"></a>6.1. Использование обнаружения ресурсов Azure
 
 **Руководство**. Использование графа ресурсов Azure для запроса и обнаружения всех ресурсов (включая учетные записи хранения) в ваших подписках. Убедитесь, что у вас есть соответствующие разрешения (на чтение) в клиенте и вы можете перечислить все подписки Azure, а также ресурсы в ваших подписках. 
 
-- [Как создавать запросы с помощью Azure Graph](https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal)
+- [Как создавать запросы с помощью Azure Graph](/azure/governance/resource-graph/first-query-portal)
 
-- [Как просматривать подписки Azure](https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0)
+- [Как просматривать подписки Azure](/powershell/module/az.accounts/get-azsubscription)
 
-- [Общие сведения об Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/overview)
+- [Общие сведения об Azure RBAC](/azure/role-based-access-control/overview)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -652,7 +652,7 @@ ms.locfileid: "91715157"
 
 **Руководство**. применение тегов к ресурсам учетной записи хранения предоставление метаданных для логической организации их в таксономию. 
 
-- [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+- [Создание и использование тегов](/azure/azure-resource-manager/resource-group-using-tags)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -664,13 +664,13 @@ ms.locfileid: "91715157"
 
 Кроме того, для обнаружения неавторизованных ресурсов Azure используйте расширенную защиту от угроз в службе хранилища Azure. 
 
-- [Создание дополнительных подписок Azure](https://docs.microsoft.com/azure/billing/billing-create-subscription)
+- [Создание дополнительных подписок Azure](/azure/billing/billing-create-subscription)
 
-- [Создание групп управления](https://docs.microsoft.com/azure/governance/management-groups/create)
+- [Создание групп управления](/azure/governance/management-groups/create)
 
-- [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+- [Создание и использование тегов](/azure/azure-resource-manager/resource-group-using-tags)
 
-- [Настройка расширенной защиты от угроз для службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-advanced-threat-protection?tabs=azure-portal)
+- [Настройка расширенной защиты от угроз для службы хранилища Azure](/azure/storage/common/storage-advanced-threat-protection?tabs=azure-portal)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -694,9 +694,9 @@ ms.locfileid: "91715157"
 
 Кроме того, используйте Azure Resource Graph для запроса или обнаружения ресурсов в подписках. Это может помочь в средах с высоким уровнем безопасности, например с учетными записями хранения. 
 
-- [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+- [Настройка Политики Azure и управление ею](/azure/governance/policy/tutorials/create-and-manage)
 
-- [Как создавать запросы с помощью Azure Graph](https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal)
+- [Как создавать запросы с помощью Azure Graph](/azure/governance/resource-graph/first-query-portal)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -714,7 +714,7 @@ ms.locfileid: "91715157"
 
 **Руководство**. Клиент может препятствовать созданию или использованию ресурсов политикой Azure согласно требованиям политик компании клиента. 
 
-- [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+- [Настройка Политики Azure и управление ею](/azure/governance/policy/tutorials/create-and-manage)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -735,9 +735,9 @@ ms.locfileid: "91715157"
 - Недопустимые типы ресурсов 
 - Допустимые типы ресурсов 
 
-- [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+- [Настройка Политики Azure и управление ею](/azure/governance/policy/tutorials/create-and-manage)
 
-- [Как отказаться от определенного типа ресурса с помощью Политики Azure](https://docs.microsoft.com/azure/governance/policy/samples/not-allowed-resource-types)
+- [Как отказаться от определенного типа ресурса с помощью Политики Azure](/azure/governance/policy/samples/not-allowed-resource-types)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -755,7 +755,7 @@ ms.locfileid: "91715157"
 
 **Рекомендации**. Используйте условный доступ Azure, чтобы ограничить возможность пользователей взаимодействовать с Azure Resource Manager путем настройки "Блокировать доступ" для приложения "Управление Microsoft Azure". Это может препятствовать созданию и изменению ресурсов в среде с высоким уровнем безопасности, например с учетными записями хранения. 
 
-- [Настройка условного доступа для блокировки доступа к ARM](https://docs.microsoft.com/azure/role-based-access-control/conditional-access-azure-management)
+- [Настройка условного доступа для блокировки доступа к ARM](/azure/role-based-access-control/conditional-access-azure-management)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -779,7 +779,7 @@ ms.locfileid: "91715157"
 
 ## <a name="secure-configuration"></a>Настройка безопасности
 
-*Дополнительные сведения см. в статье [Управление безопасностью: безопасная конфигурация](https://docs.microsoft.com/azure/security/benchmarks/security-control-secure-configuration).*
+*Дополнительные сведения см. в статье [Управление безопасностью: безопасная конфигурация](/azure/security/benchmarks/security-control-secure-configuration).*
 
 ### <a name="71-establish-secure-configurations-for-all-azure-resources"></a>7,1: Установите безопасные конфигурации для всех ресурсов Azure.
 
@@ -792,9 +792,9 @@ ms.locfileid: "91715157"
 
 Используйте рекомендации из центра безопасности Azure в качестве защищенного шаблона базовой конфигурации для учетных записей хранения. 
 
-- [Просмотр доступных псевдонимов политик Azure](https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0)
+- [Просмотр доступных псевдонимов политик Azure](/powershell/module/az.resources/get-azpolicyalias)
 
-- [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+- [Настройка Политики Azure и управление ею](/azure/governance/policy/tutorials/create-and-manage)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -812,9 +812,9 @@ ms.locfileid: "91715157"
 
 **Рекомендации**. Используйте политику Azure [Deny] и [развертывание, если не существует], чтобы обеспечить безопасность параметров в ресурсах учетной записи хранения. 
 
-- [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+- [Настройка Политики Azure и управление ею](/azure/governance/policy/tutorials/create-and-manage)
 
-- [Действия политик Azure](https://docs.microsoft.com/azure/governance/policy/concepts/effects)
+- [Действия политик Azure](/azure/governance/policy/concepts/effects)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -832,9 +832,9 @@ ms.locfileid: "91715157"
 
 **Руководство**. Использование Azure Repos для безопасного хранения и управления кодом, например пользовательскими политиками Azure, Azure Resource Manager шаблонами, сценариями настройки требуемого состояния и т. д. Чтобы получить доступ к ресурсам, которыми вы управляете в Azure DevOps, вы можете предоставить или отклонить разрешения для определенных пользователей, встроенных групп безопасности или групп, определенных в Azure Active Directory (Azure AD), если они интегрированы с Azure DevOps, или Active Directory, если они интегрированы с TFS.
 
-- [Как хранить код в Azure DevOps](https://docs.microsoft.com/azure/devops/repos/git/gitworkflow?view=azure-devops)
+- [Как хранить код в Azure DevOps](/azure/devops/repos/git/gitworkflow)
 
-- [О разрешениях и группах в Azure DevOps](https://docs.microsoft.com/azure/devops/organizations/security/about-permissions)
+- [О разрешениях и группах в Azure DevOps](/azure/devops/organizations/security/about-permissions)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -852,7 +852,7 @@ ms.locfileid: "91715157"
 
 **Руководство**. Использование политики Azure для оповещения, аудита и принудительного применения конфигураций системы для учетной записи хранения. Кроме того, разрабатывайте процесс и конвейер для управления исключениями политик. 
 
-- [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+- [Настройка Политики Azure и управление ею](/azure/governance/policy/tutorials/create-and-manage)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -870,7 +870,7 @@ ms.locfileid: "91715157"
 
 **Руководство**. Использование центра безопасности Azure для выполнения проверок базовых показателей для ресурсов учетной записи хранения Azure. 
 
-- [Как исправить рекомендации в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-remediate-recommendations)
+- [Как исправить рекомендации в центре безопасности Azure](/azure/security-center/security-center-remediate-recommendations)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -890,9 +890,9 @@ ms.locfileid: "91715157"
 
 Кроме того, можно периодически менять ключи учетной записи хранения, чтобы ограничить влияние потери или раскрытия ключей учетной записи хранения.
 
-- [Шифрование службы хранилища Azure для неактивных данных](https://docs.microsoft.com/azure/storage/common/storage-service-encryption)
+- [Шифрование службы хранилища Azure для неактивных данных](/azure/storage/common/storage-service-encryption)
 
-- [Управление ключами доступа к учетной записи хранения](https://docs.microsoft.com/azure/storage/common/storage-account-keys-manage)
+- [Управление ключами доступа к учетной записи хранения](/azure/storage/common/storage-account-keys-manage)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -902,7 +902,7 @@ ms.locfileid: "91715157"
 
 **Руководство**. Авторизация доступа к BLOB-объектам и очередям в учетных записях хранения Azure с помощью Azure Active Directory и управляемых удостоверений. Хранилище BLOB-объектов и очередей поддерживают проверку подлинности Azure Active Directory (Azure AD) с использованием управляемых удостоверений для ресурсов Azure. Управляемые удостоверения для ресурсов Azure могут авторизовать доступ к данным большого двоичного объекта и очереди с помощью учетных данных Azure AD из приложений, работающих на виртуальных машинах Azure, приложений-функций, масштабируемых наборов виртуальных машин и других служб. Используя управляемые удостоверения для ресурсов Azure вместе с проверкой подлинности Azure AD, можно избежать хранения учетных данных в приложениях, выполняемых в облаке. 
 
-- [Как предоставить доступ к данным большого двоичного объекта и очереди Azure с помощью управляемого удостоверения](https://docs.microsoft.com/azure/storage/common/storage-auth-aad-rbac-portal)
+- [Как предоставить доступ к данным большого двоичного объекта и очереди Azure с помощью управляемого удостоверения](/azure/storage/common/storage-auth-aad-rbac-portal)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -920,7 +920,7 @@ ms.locfileid: "91715157"
 
 ## <a name="malware-defense"></a>Защита от вредоносных программ
 
-*Дополнительные сведения см. в статье [Управление безопасностью: защита от вредоносных программ](https://docs.microsoft.com/azure/security/benchmarks/security-control-malware-defense).*
+*Дополнительные сведения см. в статье [Управление безопасностью: защита от вредоносных программ](/azure/security/benchmarks/security-control-malware-defense).*
 
 ### <a name="81-use-centrally-managed-anti-malware-software"></a>8,1. Использование централизованно управляемого программного обеспечения для защиты от вредоносных программ
 
@@ -936,7 +936,7 @@ ms.locfileid: "91715157"
 
 Вы также можете предварительно проверить содержимое вредоносных программ перед отправкой в Нерасчетные ресурсы Azure, такие как служба приложений, Data Lake Storage, хранилище BLOB-объектов и т. д., чтобы удовлетворить требования Организации.
 
-- [Настройка расширенной защиты от угроз для службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-advanced-threat-protection?tabs=azure-portal)
+- [Настройка расширенной защиты от угроз для службы хранилища Azure](/azure/storage/common/storage-advanced-threat-protection?tabs=azure-portal)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -952,7 +952,7 @@ ms.locfileid: "91715157"
 
 ## <a name="data-recovery"></a>Восстановление данных
 
-*Дополнительные сведения см. в статье [Управление безопасностью: восстановление данных](https://docs.microsoft.com/azure/security/benchmarks/security-control-data-recovery).*
+*Дополнительные сведения см. в статье [Управление безопасностью: восстановление данных](/azure/security/benchmarks/security-control-data-recovery).*
 
 ### <a name="91-ensure-regular-automated-back-ups"></a>9,1: Обеспечьте регулярную автоматическую архивацию
 
@@ -960,11 +960,11 @@ ms.locfileid: "91715157"
 
 Кроме того, службу автоматизации Azure можно использовать для создания регулярных снимков больших двоичных объектов.
 
-- [Общие сведения о избыточности службы хранилища Azure и Service-Level соглашениях](https://docs.microsoft.com/azure/storage/common/storage-redundancy)
+- [Общие сведения о избыточности службы хранилища Azure и Service-Level соглашениях](/azure/storage/common/storage-redundancy)
 
-- [Создание моментального снимка большого двоичного объекта](https://docs.microsoft.com/rest/api/storageservices/creating-a-snapshot-of-a-blob)
+- [Создание моментального снимка большого двоичного объекта](/rest/api/storageservices/creating-a-snapshot-of-a-blob)
 
-- [Обзор службы автоматизации Azure](https://docs.microsoft.com/azure/automation/automation-intro)
+- [Обзор службы автоматизации Azure](/azure/automation/automation-intro)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -974,13 +974,13 @@ ms.locfileid: "91715157"
 
 **Руководство**. для резервного копирования данных из поддерживаемых служб учетной записи хранения доступны несколько методов, включая использование azcopy или сторонних средств. Функция хранения данных в неизменяемом виде хранилища BLOB-объектов Azure дает пользователям возможность хранить критически важные для бизнеса объекты данных в состоянии WORM. Это состояние делает их нестираемыми и неизменяемыми в течение определенного пользователем интервала времени.
 
-- [Начало работы с AzCopy](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-v10)
+- [Начало работы с AzCopy](/azure/storage/common/storage-use-azcopy-v10)
 
-- [Настройка и администрирование политик неизменяемости для хранилища BLOB-объектов](https://docs.microsoft.com/azure/storage/blobs/storage-blob-immutability-policies-manage?tabs=azure-portal)
+- [Настройка и администрирование политик неизменяемости для хранилища BLOB-объектов](/azure/storage/blobs/storage-blob-immutability-policies-manage?tabs=azure-portal)
 
 Управляемые и предоставленные клиентом ключи можно использовать в Azure Key Vault с помощью Azure CLI или PowerShell. 
 
-- [Как создать резервную копию ключей хранилища ключей в Azure](https://docs.microsoft.com/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey?view=azurermps-6.13.0)
+- [Как создать резервную копию ключей хранилища ключей в Azure](/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -992,15 +992,15 @@ ms.locfileid: "91715157"
 
 Restore-AzKeyVaultCertificate Restore-AzKeyVaultKey Restore-AzKeyVaultManagedStorageAccount Restore-AzKeyVaultSecret 
 
-- [Восстановление сертификатов Key Vault](https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyvaultcertificate?view=azurermps-6.13.0)
+- [Восстановление сертификатов Key Vault](/powershell/module/azurerm.keyvault/restore-azurekeyvaultcertificate)
 
-- [Восстановление ключей Key Vault](https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey?view=azurermps-6.13.0)
+- [Восстановление ключей Key Vault](/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey)
 
-- [Восстановление Key Vault управляемых учетных записей хранения](https://docs.microsoft.com/powershell/module/az.keyvault/backup-azkeyvaultmanagedstorageaccount)
+- [Восстановление Key Vault управляемых учетных записей хранения](/powershell/module/az.keyvault/backup-azkeyvaultmanagedstorageaccount)
 
-- [Восстановление секретов Key Vault](https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyvaultsecret?view=azurermps-6.13.0)
+- [Восстановление секретов Key Vault](/powershell/module/azurerm.keyvault/restore-azurekeyvaultsecret)
 
-- [AzCopy — это служебная программа командной строки, которую можно использовать для копирования больших двоичных объектов, файлов и табличных данных в учетную запись хранения или из нее.](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-v10)
+- [AzCopy — это служебная программа командной строки, которую можно использовать для копирования больших двоичных объектов, файлов и табличных данных в учетную запись хранения или из нее.](/azure/storage/common/storage-use-azcopy-v10)
 
 Примечание. Если вы хотите скопировать данные в службу хранилища таблиц Azure и из нее, установите AzCopy версии 7,3.
 
@@ -1013,11 +1013,11 @@ Restore-AzKeyVaultCertificate Restore-AzKeyVaultKey Restore-AzKeyVaultManagedSto
 
 **Руководство**. чтобы включить управляемые клиентом ключи в учетной записи хранения, необходимо использовать Azure Key Vault для хранения ключей. Необходимо включить как обратимое удаление, так и не очищать свойства в хранилище ключей. Функция обратимого удаления Key Vault позволяет восстанавливать удаленные хранилища и объекты хранилища, такие как ключи, секреты и сертификаты. При резервном копировании данных учетной записи хранения в большие двоичные объекты службы хранилища Azure включите обратимое удаление для сохранения и восстановления данных при удалении больших двоичных объектов или моментальных снимков BLOB-объектов. Резервные копии следует рассматривать как конфиденциальные данные и применять соответствующие элементы управления доступом и защиты данных в рамках этого базового плана. Кроме того, для повышения уровня защиты вы можете хранить критически важные для бизнеса объекты данных в ЧЕРВе (запись один раз, читать много).
 
-- [Использование обратимого удаления Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-soft-delete-powershell)
+- [Использование обратимого удаления Azure Key Vault](/azure/key-vault/key-vault-soft-delete-powershell)
 
-- [Soft delete for Azure Storage blobs](https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal) (Обратимое удаление больших двоичных объектов службы хранилища Azure)
+- [Soft delete for Azure Storage blobs](/azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal) (Обратимое удаление больших двоичных объектов службы хранилища Azure)
 
-- [Хранение критически важных для бизнеса данных большого двоичного объекта с помощью неизменяемого хранилища](https://docs.microsoft.com/azure/storage/blobs/storage-blob-immutable-storage)
+- [Хранение критически важных для бизнеса данных большого двоичного объекта с помощью неизменяемого хранилища](/azure/storage/blobs/storage-blob-immutable-storage)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -1025,7 +1025,7 @@ Restore-AzKeyVaultCertificate Restore-AzKeyVaultKey Restore-AzKeyVaultManagedSto
 
 ## <a name="incident-response"></a>реагирование на инциденты.
 
-*Дополнительные сведения см. в статье [Управление безопасностью: реагирование на инциденты](https://docs.microsoft.com/azure/security/benchmarks/security-control-incident-response).*
+*Дополнительные сведения см. в статье [Управление безопасностью: реагирование на инциденты](/azure/security/benchmarks/security-control-incident-response).*
 
 ### <a name="101-create-incident-response-guide"></a>10,1: руководство по созданию реагирования на инциденты
 
@@ -1047,9 +1047,9 @@ Restore-AzKeyVaultCertificate Restore-AzKeyVaultKey Restore-AzKeyVaultManagedSto
 
 Кроме того, четко помечайте подписки тегами (например, рабочие, нерабочие) и создайте систему именования, чтобы четко определить и классифицировать ресурсы Azure, особенно обрабатывающие конфиденциальные данные. Вы несете ответственность за назначение приоритета оповещениям, требующим действий по исправлению, в зависимости от важности ресурсов Azure и среды, в которой произошел инцидент.
 
-- [Оповещения безопасности в Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-alerts-overview)
+- [Оповещения безопасности в Центре безопасности Azure](/azure/security-center/security-center-alerts-overview)
 
-- [использование тегов для упорядочения ресурсов в Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+- [использование тегов для упорядочения ресурсов в Azure](/azure/azure-resource-manager/resource-group-using-tags)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -1069,7 +1069,7 @@ Restore-AzKeyVaultCertificate Restore-AzKeyVaultKey Restore-AzKeyVaultManagedSto
 
 **Руководство**. Корпорация Майкрософт будет использовать информацию об инциденте безопасности для связи с вами, если центр Microsoft Security Response Center (MSRC) обнаружит, что к вашим данным был получен незаконный или несанкционированный доступ. Проверьте инциденты после факта обращения, чтобы убедиться в том, что проблемы устранены.
 
-- [Как задать контакт безопасности Центра безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-provide-security-contact-details)
+- [Как задать контакт безопасности Центра безопасности Azure](/azure/security-center/security-center-provide-security-contact-details)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -1079,9 +1079,9 @@ Restore-AzKeyVaultCertificate Restore-AzKeyVaultKey Restore-AzKeyVaultManagedSto
 
 **Руководство**. Экспортируйте оповещения и рекомендации Центра безопасности Azure с помощью функции непрерывного экспорта с целью выявления рисков для ресурсов Azure. Непрерывный экспорт позволяет экспортировать предупреждения и рекомендации как вручную, так и в постоянном, непрерывном режиме. Вы можете использовать соединитель данных Центра безопасности Azure для потоковой передачи оповещений в Azure Sentinel.
 
-- [Настройка непрерывного экспорта данных](https://docs.microsoft.com/azure/security-center/continuous-export)
+- [Настройка непрерывного экспорта данных](/azure/security-center/continuous-export)
 
-- [Как выполнить потоковую передачу оповещений в Azure Sentinel](https://docs.microsoft.com/azure/sentinel/connect-azure-security-center)
+- [Как выполнить потоковую передачу оповещений в Azure Sentinel](/azure/sentinel/connect-azure-security-center)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -1091,7 +1091,7 @@ Restore-AzKeyVaultCertificate Restore-AzKeyVaultKey Restore-AzKeyVaultManagedSto
 
 **Руководство**. Использование функции автоматизации рабочих процессов в центре безопасности Azure для автоматического запуска ответов с помощью "Logic Apps" в оповещениях системы безопасности и рекомендациях по защите ресурсов Azure.
 
-- [Как настроить автоматизацию рабочего процесса и Logic Apps](https://docs.microsoft.com/azure/security-center/workflow-automation)
+- [Как настроить автоматизацию рабочего процесса и Logic Apps](/azure/security-center/workflow-automation)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -1099,7 +1099,7 @@ Restore-AzKeyVaultCertificate Restore-AzKeyVaultKey Restore-AzKeyVaultManagedSto
 
 ## <a name="penetration-tests-and-red-team-exercises"></a>Тесты на проникновение и попытки нарушения безопасности "красной командой"
 
-*Дополнительные сведения см. в статье [Управление безопасностью: тесты на проникновение и попытки нарушения безопасности "красной командой"](https://docs.microsoft.com/azure/security/benchmarks/security-control-penetration-tests-red-team-exercises).*
+*Дополнительные сведения см. в статье [Управление безопасностью: тесты на проникновение и попытки нарушения безопасности "красной командой"](/azure/security/benchmarks/security-control-penetration-tests-red-team-exercises).*
 
 ### <a name="111-conduct-regular-penetration-testing-of-your-azure-resources"></a>11,1. проведение регулярного тестирования на проникновение ресурсов Azure
 
@@ -1115,5 +1115,5 @@ Restore-AzKeyVaultCertificate Restore-AzKeyVaultKey Restore-AzKeyVaultManagedSto
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- См. [Тесты производительности системы безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/overview).
-- Узнайте больше о [Базовой конфигурации безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/security-baselines-overview).
+- См. [Тесты производительности системы безопасности Azure](/azure/security/benchmarks/overview).
+- Узнайте больше о [Базовой конфигурации безопасности Azure](/azure/security/benchmarks/security-baselines-overview).

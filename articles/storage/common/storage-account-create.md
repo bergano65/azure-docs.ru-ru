@@ -10,18 +10,18 @@ ms.date: 09/24/2020
 ms.author: tamram
 ms.subservice: common
 ms.custom: devx-track-azurecli, devx-track-azurepowershell
-ms.openlocfilehash: 9b993e5a7c5b3ee2327fe26437414d8ce74f7369
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f1cdd04be4b5774944f70e551221a08261aef22d
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91333585"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92488900"
 ---
 # <a name="create-a-storage-account"></a>Создание учетной записи хранения
 
 Учетная запись хранения Azure содержит все объекты данных службы хранилища Azure: большие двоичные объекты, файлы, очереди, таблицы и диски. Учетная запись хранения предоставляет уникальное пространство имен для данных службы хранилища Azure, доступное из любой точки мира по протоколу HTTP или HTTPS. Данные в учетной записи хранения Azure являются устойчивыми и высокодоступными, безопасными и масштабируемыми.
 
-В этом пошаговом руководстве вы узнаете, как создать учетную запись хранения с помощью [портал Azure](https://portal.azure.com/), [Azure PowerShell](https://docs.microsoft.com/powershell/azure/), [Azure CLI](https://docs.microsoft.com/cli/azure)или [шаблона Azure Resource Manager](../../azure-resource-manager/management/overview.md).  
+В этом пошаговом руководстве вы узнаете, как создать учетную запись хранения с помощью [портал Azure](https://portal.azure.com/), [Azure PowerShell](/powershell/azure/), [Azure CLI](/cli/azure)или [шаблона Azure Resource Manager](../../azure-resource-manager/management/overview.md).  
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
@@ -31,7 +31,7 @@ ms.locfileid: "91333585"
 
 # <a name="portal"></a>[Портал](#tab/azure-portal)
 
-Нет.
+Отсутствует.
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -45,7 +45,7 @@ Get-InstalledModule -Name "Az"
 
 Сведения об установке или обновлении Azure PowerShell см. в разделе [install Azure PowerShell Module](/powershell/azure/install-Az-ps).
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 
 Вы можете войти в Azure и выполнить команды Azure CLI одним из двух способов:
 
@@ -86,7 +86,7 @@ Azure CLI также можно установить и применять ло�
 Connect-AzAccount
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 
 Чтобы запустить Azure Cloud Shell, войдите в [портал Azure](https://portal.azure.com).
 
@@ -154,7 +154,7 @@ New-AzStorageAccount -ResourceGroupName $resourceGroup `
 |Хранилище, геоизбыточное между зонами (GZRS)    |Standard_GZRS         |
 |Хранилище, геоизбыточное между зонами, с доступом на чтение (RA-GZRS)    |Standard_RAGZRS         |
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 
 Сначала создайте новую группу ресурсов с помощью Azure CLI, используя команду [az group create](/cli/azure/group#az_group_create).
 
@@ -246,7 +246,7 @@ az group deployment create --resource-group $resourceGroupName --template-file "
 Remove-AzStorageAccount -Name <storage-account> -ResourceGroupName <resource-group>
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 
 Чтобы удалить учетную запись хранения, используйте команду [AZ Storage Account Delete](/cli/azure/storage/account#az-storage-account-delete) :
 
@@ -281,7 +281,7 @@ az storage account delete --name storageAccountName --resource-group resourceGro
 >
 > Если вы попытаетесь удалить учетную запись хранения, связанную с виртуальной машиной Azure, может появиться сообщение об ошибке, уведомляющее, что учетная запись хранения используется. Сведения об устранении этой ошибки см. в разделе [Устранение ошибок при удалении учетных записей хранения](../common/storage-resource-manager-cannot-delete-storage-account-container-vhd.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Общие сведения об учетной записи хранения](storage-account-overview.md)
 - [Обновление до учетной записи хранения общего назначения версии 2](storage-account-upgrade.md)

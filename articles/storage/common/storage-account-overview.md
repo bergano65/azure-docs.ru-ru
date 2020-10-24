@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 01/17/2020
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: c93508bebdcfce35a89b3d5e2a8abecc7ac84722
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 429883a1bd9bc4df270e6a9f2965087fa3fba2dc
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91280153"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92488866"
 ---
 # <a name="storage-account-overview"></a>Общие сведения об учетной записи хранения
 
@@ -133,7 +133,7 @@ ms.locfileid: "91280153"
 - Хранилище таблиц: `https://*mystorageaccount*.table.core.windows.net`
 - Хранилище очередей: `https://*mystorageaccount*.queue.core.windows.net`
 - Файлы Azure: `https://*mystorageaccount*.file.core.windows.net`
-- Azure Data Lake Storage 2-го поколения: `https://*mystorageaccount*.dfs.core.windows.net` (использует [драйвер абфс, оптимизированный специально для больших данных](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-introduction#key-features-of-data-lake-storage-gen2).)
+- Azure Data Lake Storage 2-го поколения: `https://*mystorageaccount*.dfs.core.windows.net` (использует [драйвер абфс, оптимизированный специально для больших данных](/azure/storage/blobs/data-lake-storage-introduction#key-features-of-data-lake-storage-gen2).)
 
 > [!NOTE]
 > Учетные записи блочных и BLOB-объектов предоставляют только конечную точку службы BLOB-объектов.
@@ -177,7 +177,7 @@ AzCopy — это программа командной строки Windows, п
 
 Вы можете создать пользовательское приложение для переноса данных из учетной записи хранения общего назначения v1 в учетную запись хранения BLOB-объектов. Используйте одну из клиентских библиотек Azure или REST API служб хранилища Azure. Служба хранилища Azure предоставляет богатые клиентские библиотеки для создания приложений с использованием .NET, Java, Android, C++, Node.js, PHP, Ruby и Python. Клиентские библиотеки предлагают дополнительные возможности, такие как логический алгоритм повтора, ведение журнала и параллельная загрузка. Также есть возможность вести разработку непосредственно через интерфейс API REST, который можно вызывать в любом языке программирования, поддерживающем запросы HTTP/HTTPS.
 
-Дополнительные сведения о REST API службы хранилища Azure см. в [справочнике по интерфейсу REST API для служб хранилища Azure](https://docs.microsoft.com/rest/api/storageservices/).
+Дополнительные сведения о REST API службы хранилища Azure см. в [справочнике по интерфейсу REST API для служб хранилища Azure](/rest/api/storageservices/).
 
 > [!IMPORTANT]
 > Вместе с большими двоичными объектами, зашифрованными на стороне клиента, хранятся связанные с шифрованием метаданные. При копировании большого двоичного объекта, зашифрованного на стороне клиента, убедитесь, что при операции копирования сохраняются метаданные большого двоичного объекта и особенно метаданные, связанные с шифрованием. Если скопировать большой двоичный объект без метаданных шифрования, его содержимое нельзя будет извлечь повторно. Дополнительные сведения о метаданных, связанных с шифрованием, см. в статье [Шифрование на стороне клиента для службы хранилища Microsoft Azure](../common/storage-client-side-encryption.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json).

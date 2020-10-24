@@ -1,17 +1,18 @@
 ---
-title: Изменение размера зашифрованных дисков управления логическими томами с помощью шифрования дисков Azure
+title: Как изменить размер дисков, зашифрованных с помощью шифрования дисков Azure
 description: В этой статье приводятся инструкции по изменению размера зашифрованных дисков ADE с помощью управления логическими томами.
 author: jofrance
-ms.service: security
+ms.service: virtual-machines-linux
+ms.subservice: security
 ms.topic: article
 ms.author: jofrance
 ms.date: 09/21/2020
-ms.openlocfilehash: 8e32e4960776084669c8f2f7743b66b9d0f9a6ae
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: ddd6097fffbc02c9b7b027bcb712e20cc47f2f96
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91978481"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92487965"
 ---
 # <a name="how-to-resize-logical-volume-management-devices-that-use-azure-disk-encryption"></a>Изменение размера устройств управления логическими томами, использующих шифрование дисков Azure
 
@@ -572,7 +573,7 @@ lvdisplay lvname
     >
     >Дополнительные сведения см. [в статье configure LVM and RAID On encrypted Devices](how-to-configure-lvm-raid-on-crypt.md).
 
-    Пример:
+    Ниже приведен пример:
 
     ``` bash
     az vm encryption enable \

@@ -6,12 +6,12 @@ ms.author: ambhatna
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 10/21/2020
-ms.openlocfilehash: 3a5a4b3997a9286901fc24173e57563c5abe68a1
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: bd2f91a697fffa1ef83f5173a394686245cf9826
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92429037"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92488917"
 ---
 # <a name="planned-maintenance-notification-in-azure-database-for-mysql---single-server"></a>Уведомление о плановом обслуживании в базе данных Azure для MySQL — одиночный сервер
 
@@ -63,7 +63,7 @@ ms.locfileid: "92429037"
 
 Подробные инструкции по созданию **оповещений о работоспособности службы**см. в статье [Создание оповещений журнала действий для уведомлений службы](../service-health/alerts-activity-log-service-notifications.md).
 
-## <a name="can-i-control-or-change-planned-maintenance-for-my-servers-after-i-receive-a-notification-event"></a>Можно ли управлять или изменять плановое обслуживание моих серверов после получения события уведомления?
+## <a name="can-i-cancel-or-postpone-planned-maintenance"></a>Можно ли отменить или отложить плановое обслуживание?
 
 Обслуживание необходимо для обеспечения безопасности, стабильной и актуальной работы сервера. Событие запланированного обслуживания не может быть отменено или отложено. После отправки уведомления в указанный регион Azure изменения расписания исправлений не могут быть сделаны для отдельных серверов в этом регионе. Исправление размещается для всего региона за один раз. Служба "база данных Azure для MySQL" предназначена для облачных машинных приложений, которые не нуждаются в детализированном управлении или настройке службы. Если вы хотите иметь возможность запланировать обслуживание серверов, мы рекомендуем использовать [Гибкие серверы](./flexible-server/overview.md).
 

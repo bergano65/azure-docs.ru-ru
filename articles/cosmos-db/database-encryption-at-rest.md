@@ -7,12 +7,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: seodec18
-ms.openlocfilehash: fb3dda7a2f33fa76ab78a67f86fb015430c64099
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ceb2b8812b52b1ca2030a0fd0006c9388630c05e
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85114781"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92487489"
 ---
 # <a name="data-encryption-in-azure-cosmos-db"></a>Шифрование данных в Azure Cosmos DB 
 
@@ -46,7 +46,7 @@ A. Ключами управляет корпорация Майкрософт.
 A. В корпорации Майкрософт есть ряд внутренних правил касательно смены ключей шифрования, которым следует Cosmos DB. Эти правила не публикуются. Однако корпорация Майкрософт публикует [жизненный цикл разработки защищенных приложений (SDL)](https://www.microsoft.com/sdl/default.aspx), который представляет собой часть внутренних рекомендаций и содержит полезные указания для разработчиков.
 
 ### <a name="q-can-i-use-my-own-encryption-keys"></a>Вопрос. Можно ли использовать собственные ключи шифрования?
-Ответ. Да, эта функция теперь доступна для новых учетных записей Azure Cosmos DB и должна выполняться во время создания учетной записи. Дополнительные сведения см. в документе [с ключами, управляемыми клиентом](https://docs.microsoft.com/azure/cosmos-db/how-to-setup-cmk) .
+Ответ. Да, эта функция теперь доступна для новых учетных записей Azure Cosmos DB и должна выполняться во время создания учетной записи. Дополнительные сведения см. в документе [с ключами, управляемыми клиентом](./how-to-setup-cmk.md) .
 
 ### <a name="q-what-regions-have-encryption-turned-on"></a>Вопрос. В каких регионах включено шифрование?
 A. Шифрование пользовательских данных включено во всех регионах Azure Cosmos DB.

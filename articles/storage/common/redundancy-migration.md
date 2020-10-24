@@ -1,5 +1,5 @@
 ---
-title: Изменение порядка репликации учетной записи хранения
+title: Изменение способа репликации для учетной записи хранения
 titleSuffix: Azure Storage
 description: Узнайте, как изменить репликацию данных в существующей учетной записи хранения.
 services: storage
@@ -11,14 +11,14 @@ ms.author: tamram
 ms.reviewer: artek
 ms.subservice: common
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: c305292e915e02a1b53eb140ccd052990efbd315
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a16199891c00e2b8133aebebd1eaa6488423896c
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91827307"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92487897"
 ---
-# <a name="change-how-a-storage-account-is-replicated"></a>Изменение порядка репликации учетной записи хранения
+# <a name="change-how-a-storage-account-is-replicated"></a>Изменение способа репликации для учетной записи хранения
 
 В службе хранилища Azure всегда хранится несколько копий данных для защиты от запланированных и незапланированных событий, включая временные сбои оборудования, сети или энергоснабжения, масштабные стихийные бедствия и т. д. Избыточность гарантирует соответствие учетной записи хранения [Соглашению об уровне обслуживания (SLA) для службы хранилища Azure](https://azure.microsoft.com/support/legal/sla/storage/) даже при сбоях.
 
@@ -76,7 +76,7 @@ Set-AzStorageAccount -ResourceGroupName <resource_group> `
     -SkuName <sku>
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 
 Чтобы изменить параметр избыточности для учетной записи хранения с Azure CLI, вызовите команду [AZ Storage Account Update](/cli/azure/storage/account#az-storage-account-update) и укажите `--sku` параметр:
 
@@ -137,16 +137,16 @@ ZRS поддерживает только учетные записи общег
     - **Сведения**: введите дополнительные сведения в поле **сведения** , например, я хочу перейти на ZRS из [LRS, GRS] в \_ \_ регионе.
 5. Выберите **Далее**.
 6. Проверьте правильность контактных данных в колонке **Контактные данные**.
-7. Нажмите кнопку **создания**.
+7. Нажмите кнопку **Создать**.
 
 Специалист службы поддержки свяжется с вами и предоставит любую необходимую помощь.
 
 > [!NOTE]
 > Динамическая миграция в настоящее время не поддерживается для файловых ресурсов уровня "Премиум". Сейчас поддерживается только копирование и перемещение данных вручную.
 >
-> Учетные записи хранения ГЗРС в настоящее время не поддерживают уровень архива. Дополнительные сведения см. в статье [хранилище BLOB-объектов Azure: горячий, стильный и архивный уровни доступа](https://docs.microsoft.com/azure/storage/blobs/storage-blob-storage-tiers) .
+> Учетные записи хранения ГЗРС в настоящее время не поддерживают уровень архива. Дополнительные сведения см. в статье [хранилище BLOB-объектов Azure: горячий, стильный и архивный уровни доступа](/azure/storage/blobs/storage-blob-storage-tiers) .
 >
-> Управляемые диски доступны только для LRS и не могут быть перенесены в ZRS. Вы можете хранить моментальные снимки и образы для стандартных управляемых дисков SSD на стандартном жестком диске и [выбирать между LRS и ZRS](https://azure.microsoft.com/pricing/details/managed-disks/). Сведения об интеграции с группами доступности см. [в статье Введение в управляемые диски Azure](https://docs.microsoft.com/azure/virtual-machines/windows/managed-disks-overview#integration-with-availability-sets).
+> Управляемые диски доступны только для LRS и не могут быть перенесены в ZRS. Вы можете хранить моментальные снимки и образы для стандартных управляемых дисков SSD на стандартном жестком диске и [выбирать между LRS и ZRS](https://azure.microsoft.com/pricing/details/managed-disks/). Сведения об интеграции с группами доступности см. [в статье Введение в управляемые диски Azure](/azure/virtual-machines/windows/managed-disks-overview#integration-with-availability-sets).
 
 ## <a name="switch-from-zrs-classic"></a>Переключение из классической модели ZRS
 
@@ -167,7 +167,7 @@ ZRS поддерживает только учетные записи общег
 
 Чтобы выполнить обновление до ZRS в портал Azure, перейдите к параметрам **конфигурации** учетной записи и выберите **Обновить**.
 
-![Обновление классической версии ZRS до ZRS на портале](media/redundancy-migration/portal-zrs-classic-upgrade.png)
+![Обновление классического хранилища ZRS до ZRS на портале](media/redundancy-migration/portal-zrs-classic-upgrade.png)
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
@@ -177,7 +177,7 @@ ZRS поддерживает только учетные записи общег
 Set-AzStorageAccount -ResourceGroupName <resource_group> -AccountName <storage_account> -UpgradeToStorageV2
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 
 Чтобы выполнить обновление до ZRS с помощью Azure CLI, вызовите следующую команду:
 

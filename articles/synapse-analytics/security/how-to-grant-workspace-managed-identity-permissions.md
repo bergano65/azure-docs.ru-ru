@@ -8,12 +8,12 @@ ms.subservice: security
 ms.date: 04/15/2020
 ms.author: ronytho
 ms.reviewer: jrasnick
-ms.openlocfilehash: 5c07943d517f893e67eed5103660a953b508cc87
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 08ead12c99ae4919a2daf523065cfe332c644df1
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87535048"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92487200"
 ---
 # <a name="grant-permissions-to-workspace-managed-identity-preview"></a>Предоставление разрешений управляемому удостоверению рабочей области (Предварительная версия)
 
@@ -70,7 +70,7 @@ Azure синапсе будет пытаться предоставить упр
 
 
 Выберите тот же контейнер или файловую систему, чтобы предоставить управляемому удостоверению роль *участника данных BLOB-объекта хранилища* .
-![ADLS 2-го поколения выбор контейнера учетной записи хранения](./media/how-to-grant-workspace-managed-identity-permissions/configure-workspace-managed-identity-6.png)
+![Снимок экрана, показывающий контейнер или файловую систему, которые следует выбрать.](./media/how-to-grant-workspace-managed-identity-permissions/configure-workspace-managed-identity-6.png)
 
 #### <a name="step-3-navigate-to-access-control"></a>Шаг 3. Переход к контролю доступа
 
@@ -117,6 +117,6 @@ Azure синапсе будет пытаться предоставить упр
 Управляемое удостоверение должно отображаться в разделе **участник данных BLOB-объекта хранилища** с назначенной ему ролью *участника данных BLOB-объекта хранилища* . 
 ![ADLS 2-го поколения выбор контейнера учетной записи хранения](./media/how-to-grant-workspace-managed-identity-permissions/configure-workspace-managed-identity-15.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об [управляемом удостоверении рабочей области](./synapse-workspace-managed-identity.md)

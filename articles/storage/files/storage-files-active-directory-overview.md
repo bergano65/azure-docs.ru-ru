@@ -7,12 +7,12 @@ ms.subservice: files
 ms.topic: conceptual
 ms.date: 05/29/2020
 ms.author: rogarana
-ms.openlocfilehash: be308a91b5b583f96406f10675344ab263150a81
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 48e9fc4c1efa3517f5de46b7198c868a22331c79
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91716075"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92486395"
 ---
 # <a name="overview-of-azure-files-identity-based-authentication-options-for-smb-access"></a>Обзор параметров проверки подлинности на основе удостоверений службы файлов Azure для доступа к SMB
 [!INCLUDE [storage-files-aad-auth-include](../../../includes/storage-files-aad-auth-include.md)]
@@ -104,7 +104,7 @@ ms.locfileid: "91716075"
 
 На следующей схеме показана локальная проверка подлинности AD DS в файловых ресурсах Azure по протоколу SMB. Локальная AD DS должна быть синхронизирована с Azure AD с помощью Azure AD Connect Sync. Только гибридные пользователи, которые существуют как в локальной AD DS, так и в Azure AD, могут пройти проверку подлинности и авторизоваться для доступа к общей папке Azure. Это связано с тем, что разрешение уровня общего ресурса настраивается для удостоверения, представленного в Azure AD, где разрешение на уровне каталога или файлов применяется в AD DS. Убедитесь, что разрешения правильно настроены для одного и того же гибридного пользователя.
 
-:::image type="content" source="media/storage-files-active-directory-overview/Files-on-premises-AD-DS-Diagram.png" alt-text="Схема":::
+:::image type="content" source="media/storage-files-active-directory-overview/Files-on-premises-AD-DS-Diagram.png" alt-text="На этой схеме показана локальная проверка подлинности AD DS в файловые ресурсы Azure по протоколу SMB.":::
 
 ### <a name="azure-ad-ds"></a>Azure AD DS
 
@@ -116,7 +116,7 @@ ms.locfileid: "91716075"
 
 - Во вторых, все пользователи, которые существуют в Azure AD, могут пройти проверку подлинности и авторизоваться. Пользователь может быть только облаком или гибридным. Синхронизация из Azure AD в Azure AD DS управляется платформой без необходимости настройки пользователя. Однако клиент должен быть присоединен к домену Azure AD DS, он не может быть присоединен или зарегистрирован в Azure AD. 
 
-:::image type="content" source="media/storage-files-active-directory-overview/Files-Azure-AD-DS-Diagram.png" alt-text="Схема":::
+:::image type="content" source="media/storage-files-active-directory-overview/Files-Azure-AD-DS-Diagram.png" alt-text="На этой схеме показана локальная проверка подлинности AD DS в файловые ресурсы Azure по протоколу SMB.":::
 
 ### <a name="enable-identity-based-authentication"></a>Включить проверку подлинности на основе удостоверений
 
@@ -144,10 +144,10 @@ ms.locfileid: "91716075"
 ## <a name="pricing"></a>Цены
 Для включения проверки подлинности на основе удостоверений через SMB в вашей учетной записи хранения дополнительная плата за обслуживание не взимается. Дополнительные сведения о ценах см. в статье цены на службу [файлов Azure](https://azure.microsoft.com/pricing/details/storage/files/) и [цены на доменные службы Azure AD](https://azure.microsoft.com/pricing/details/active-directory-ds/).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о службе файлов Azure и аутентификации на основе удостоверений по протоколу SMB см. в следующих ресурсах:
 
-- [Планирование развертывания службы файлов Azure](storage-files-planning.md)
+- [Планирование развертывания Файлов Azure](storage-files-planning.md)
 - [Включение проверки подлинности локальных служб домен Active Directory Services по протоколу SMB для файловых ресурсов Azure](storage-files-identity-auth-active-directory-enable.md)
 - [Включение проверки подлинности доменных служб Azure Active Directory в службе файлов Azure](storage-files-identity-auth-active-directory-domain-service-enable.md)
 - [Часто задаваемые вопросы](storage-files-faq.md)
