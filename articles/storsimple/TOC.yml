@@ -194,7 +194,7 @@
                   items:
                     - name: Часто задаваемые вопросы. Локально закрепленные тома
                       href: storsimple-8000-local-volume-faq.md
-                - name: Управление доступом на основе ролей
+                - name: Управление доступом на основе ролей в Azure
                   href: storsimple-8000-role-based-access-control.md
                 - name: Управление записями ACR
                   href: storsimple-8000-manage-acrs.md

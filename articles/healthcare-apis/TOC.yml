@@ -19,6 +19,7 @@
         - name: Использование синтаксиса командной строки
           href: fhir-paas-cli-quickstart.md
         - name: Использование шаблона ARM
+          displayName: Resource Manager
           href: fhir-paas-arm-template-quickstart.md
     - name: "Развертывание соединителя \"Azure IoT для FHIR\" (предварительная версия)\_— портал"
       href: iot-fhir-portal-quickstart.md

@@ -497,7 +497,7 @@
           items:
             - name: Портал Azure
               href: flexible-server/how-to-configure-high-availability.md
-        - name: Сети
+        - name: Сеть
           items:
             - name: Закрытый доступ (интеграция виртуальной сети)
               items:
@@ -515,6 +515,14 @@
               items:
                 - name: Подключение с использованием TLS или SSL
                   href: flexible-server/how-to-connect-tls-ssl.md
+        - name: Настройка параметров сервера
+          items:
+            - name: Портал Azure
+              href: flexible-server/how-to-configure-server-parameters-portal.md
+              displayName: server parameters
+            - name: Azure CLI
+              href: flexible-server/how-to-configure-server-parameters-cli.md
+              displayName: 'server parameters, cli'
         - name: Мониторинг и журналы
           items:
             - name: Создание оповещений на основе метрик
