@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 04/07/2020
-ms.openlocfilehash: 533fe0f391779a5bbe53bf7f2a136c3e9fb19017
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a14a7276d51b7bc1f490bc9ab49f72aedfb829f7
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86080624"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92541848"
 ---
 # <a name="create-apache-hadoop-clusters-in-hdinsight-by-using-resource-manager-templates"></a>Создание кластеров Apache Hadoop в HDInsight с помощью шаблонов Resource Manager
 
@@ -51,11 +51,11 @@ Resource Manager позволяет экспортировать шаблон Re
 
 ## <a name="deploy-using-powershell"></a>Развертывание с помощью PowerShell
 
-Шаблон Resource Manager можно развернуть с помощью Azure PowerShell. Дополнительные сведения см. в статьях [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell](../azure-resource-manager/templates/deploy-powershell.md) и [Развертывание частного шаблона Resource Manager с использованием токена SAS и Azure PowerShell](../azure-resource-manager/resource-manager-powershell-sas-token.md).
+Шаблон Resource Manager можно развернуть с помощью Azure PowerShell. Дополнительные сведения см. в статьях [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell](../azure-resource-manager/templates/deploy-powershell.md) и [Развертывание частного шаблона Resource Manager с использованием токена SAS и Azure PowerShell](../azure-resource-manager/templates/secure-template-with-sas-token.md).
 
 ## <a name="deploy-using-azure-cli"></a>Развертывание с помощью Azure CLI
 
-Шаблон Resource Manager можно развернуть с помощью Azure CLI. Дополнительные сведения см. в статьях [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure CLI](../azure-resource-manager/templates/deploy-cli.md) и [Развертывание частного шаблона Resource Manager с использованием токена SAS и Azure CLI](../azure-resource-manager/resource-manager-cli-sas-token.md).
+Шаблон Resource Manager можно развернуть с помощью Azure CLI. Дополнительные сведения см. в статьях [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure CLI](../azure-resource-manager/templates/deploy-cli.md) и [Развертывание частного шаблона Resource Manager с использованием токена SAS и Azure CLI](../azure-resource-manager/templates/secure-template-with-sas-token.md).
 
 ## <a name="deploy-using-the-rest-api"></a>Развертывание с помощью REST API
 
@@ -78,6 +78,6 @@ Resource Manager позволяет экспортировать шаблон Re
 * Дополнительные шаблоны, связанные с HDInsight, см. в статье шаблоны быстрого запуска [Azure](https://azure.microsoft.com/resources/templates/?term=hdinsight).
 * Пример развертывания ресурсов с помощью клиентской библиотеки .NET см. в статье [Развертывание виртуальной машины Azure с помощью C# и шаблона Resource Manager](../virtual-machines/windows/csharp-template.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 * Подробный пример развертывания приложения см. в статье [Предсказуемые подготовка и развертывание микрослужб в Azure](../app-service/deploy-complex-application-predictably.md).
-* Инструкции по развертыванию своего решения в различных средах см. в статье [Среды разработки и тестирования в Microsoft Azure](../solution-dev-test-environments.md).
+* Инструкции по развертыванию своего решения в различных средах см. в статье [Среды разработки и тестирования в Microsoft Azure](../devtest-labs/devtest-lab-overview.md).
 * Дополнительную информацию о разделах в шаблоне Azure Resource Manager см. в статье [Создание шаблонов диспетчера ресурсов Azure](../azure-resource-manager/templates/template-syntax.md).
 * Список функций, которые можно использовать в шаблоне Azure Resource Manager, см. в статье [Функции шаблонов диспетчера ресурсов Azure](../azure-resource-manager/templates/template-functions.md).

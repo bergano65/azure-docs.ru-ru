@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 08/24/2020
 ms.author: bwren
 ms.custom: subject-monitoring
-ms.openlocfilehash: 6bfedc7d14c234f88e8140281a01ffcc330ba532
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: af1419dfb47f9090fd3aa307c71f7e62206e3e93
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92488373"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92543361"
 ---
 # <a name="monitoring-azure-cosmos-db"></a>Мониторинг Azure Cosmos DB
 
@@ -66,9 +66,9 @@ Azure Cosmos DB собирает данные мониторинга тех же
 
 ## <a name="analyzing-metric-data"></a><a id="analyze-metric-data"></a> Анализ данных метрик
 
-Azure Cosmos DB предоставляет пользовательский интерфейс для работы с метриками. Подробные сведения об использовании этого интерфейса и анализе различных сценариев Azure Cosmos DB см. в статье о [мониторинге и отладке метрик Azure Cosmos DB в Azure Monitor]().
+Azure Cosmos DB предоставляет пользовательский интерфейс для работы с метриками.
 
-Вы можете анализировать метрики Azure Cosmos DB вместе с метриками из других служб Azure с помощью обозревателя метрик. Для этого выберите пункт **Метрики** в меню **Azure Monitor**. Подробные сведения об использовании этого средства см. в статье [Начало работы с обозревателем метрик Azure](../azure-monitor/platform/metrics-getting-started.md). Все метрики Azure Cosmos DB находятся в пространстве имен **Стандартные метрики Cosmos DB**. При добавлении фильтра к диаграмме можно использовать следующие измерения с метриками.
+Вы можете анализировать метрики Azure Cosmos DB вместе с метриками из других служб Azure с помощью обозревателя метрик. Для этого выберите пункт **Метрики** в меню **Azure Monitor** . Подробные сведения об использовании этого средства см. в статье [Начало работы с обозревателем метрик Azure](../azure-monitor/platform/metrics-getting-started.md). Все метрики Azure Cosmos DB находятся в пространстве имен **Стандартные метрики Cosmos DB** . При добавлении фильтра к диаграмме можно использовать следующие измерения с метриками.
 
 * CollectionName
 * имя_базы_данных
@@ -80,11 +80,11 @@ Azure Cosmos DB предоставляет пользовательский ин
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
 
-1. На панели навигации слева выберите пункт **Монитор**, а затем выберите **Метрики**.
+1. На панели навигации слева выберите пункт **Монитор** , а затем выберите **Метрики** .
 
    :::image type="content" source="./media/monitor-cosmos-db/monitor-metrics-blade.png" alt-text="Параметры мониторинга, доступные в портал Azure":::
 
-1. В области **Метрики** щелкните **Выбрать ресурс** и выберите требуемые **подписку** и **группу ресурсов**. В поле **Тип ресурса** выберите **Учетные записи Azure Cosmos DB**, выберите одну из существующих учетных записей Azure Cosmos и нажмите кнопку **Применить**.
+1. В области **Метрики** щелкните **Выбрать ресурс** и выберите требуемые **подписку** и **группу ресурсов** . В поле **Тип ресурса** выберите **Учетные записи Azure Cosmos DB** , выберите одну из существующих учетных записей Azure Cosmos и нажмите кнопку **Применить** .
 
    :::image type="content" source="./media/monitor-cosmos-db/select-cosmosdb-account.png" alt-text="Параметры мониторинга, доступные в портал Azure":::
 
@@ -96,11 +96,11 @@ Azure Cosmos DB предоставляет пользовательский ин
 
 ### <a name="add-filters-to-metrics"></a>Добавление фильтров к метрикам
 
-Можно также отфильтровать метрики и отображаемую диаграмму по определенному значению **CollectionName**, **DatabaseName**, **OperationType**, **Region** или **StatusCode**. Чтобы отфильтровать метрики, выберите команду **Добавить фильтр**, а затем выберите требуемое свойство, например **OperationType**, и значение, например **Запрос**. После этого на графе отобразятся единицы запросов, использованные для операции запроса за выбранный период. Операции, выполняемые с помощью хранимой процедуры, не регистрируются в журнале, поэтому они недоступны в метрике OperationType.
+Можно также отфильтровать метрики и отображаемую диаграмму по определенному значению **CollectionName** , **DatabaseName** , **OperationType** , **Region** или **StatusCode** . Чтобы отфильтровать метрики, выберите команду **Добавить фильтр** , а затем выберите требуемое свойство, например **OperationType** , и значение, например **Запрос** . После этого на графе отобразятся единицы запросов, использованные для операции запроса за выбранный период. Операции, выполняемые с помощью хранимой процедуры, не регистрируются в журнале, поэтому они недоступны в метрике OperationType.
 
 :::image type="content" source="./media/monitor-cosmos-db/add-metrics-filter.png" alt-text="Параметры мониторинга, доступные в портал Azure":::
 
-Метрики можно группировать с помощью параметра **Применить разделение**. Например, можно сгруппировать единицы запросов по типу операции и просмотреть граф для всех операций сразу, как показано на следующем рисунке:
+Метрики можно группировать с помощью параметра **Применить разделение** . Например, можно сгруппировать единицы запросов по типу операции и просмотреть граф для всех операций сразу, как показано на следующем рисунке:
 
 :::image type="content" source="./media/monitor-cosmos-db/apply-metrics-splitting.png" alt-text="Параметры мониторинга, доступные в портал Azure":::
 
@@ -114,11 +114,11 @@ Azure Cosmos DB предоставляет пользовательский ин
 | AzureActivity    | Общая таблица, в которой хранятся все записи из журнала действий.
 
 > [!IMPORTANT]
-> Если выбрать в меню Azure Cosmos DB пункт **Журналы**, откроется Log Analytics с текущей базой данных Azure Cosmos в качестве области запроса. Это означает, что запросы к журналам будут содержать данные только из этого ресурса. Если требуется выполнить запрос, включающий данные из других баз данных или служб Azure, выберите в меню **Azure Monitor** пункт **Журналы**. Подробные сведения см. в статье [Область запросов журнала и временной диапазон в Azure Monitor Log Analytics](../azure-monitor/log-query/scope.md).
+> Если выбрать в меню Azure Cosmos DB пункт **Журналы** , откроется Log Analytics с текущей базой данных Azure Cosmos в качестве области запроса. Это означает, что запросы к журналам будут содержать данные только из этого ресурса. Если требуется выполнить запрос, включающий данные из других баз данных или служб Azure, выберите в меню **Azure Monitor** пункт **Журналы** . Подробные сведения см. в статье [Область запросов журнала и временной диапазон в Azure Monitor Log Analytics](../azure-monitor/log-query/scope.md).
 
 ### <a name="azure-cosmos-db-log-analytics-queries-in-azure-monitor"></a>Запросы Log Analytics для Azure Cosmos DB в Azure Monitor
 
-Ниже приведены некоторые запросы, которые можно ввести в поле **поиска по журналам**, чтобы выполнить мониторинг контейнеров Azure Cosmos. Эти запросы поддерживают [новый язык](../azure-monitor/log-query/log-query-overview.md).
+Ниже приведены некоторые запросы, которые можно ввести в поле **поиска по журналам** , чтобы выполнить мониторинг контейнеров Azure Cosmos. Эти запросы поддерживают [новый язык](../azure-monitor/log-query/log-query-overview.md).
 
 Ниже приведены запросы, которые можно использовать для мониторинга баз данных Azure Cosmos.
 
@@ -153,7 +153,7 @@ Azure Cosmos DB предоставляет пользовательский ин
 
 * Чтобы использовать REST API, [выполните запрос GET к коллекции](/rest/api/cosmos-db/get-a-collection). Квота и данные об использовании коллекции возвращаются в заголовке ответа x-ms-resource-quota и x-ms-resource-usage headers.
 
-* Чтобы использовать пакет SDK для .NET, воспользуйтесь методом [DocumentClient.ReadDocumentCollectionAsync](/dotnet/api/microsoft.azure.documents.client.documentclient.readdocumentcollectionasync), возвращающим объект [ResourceResponse](/dotnet/api/microsoft.azure.documents.client.resourceresponse-1), который содержит ряд свойств использования, например **CollectionSizeUsage**, **DatabaseUsage**, **DocumentUsage** и прочие.
+* Чтобы использовать пакет SDK для .NET, воспользуйтесь методом [DocumentClient.ReadDocumentCollectionAsync](/dotnet/api/microsoft.azure.documents.client.documentclient.readdocumentcollectionasync), возвращающим объект [ResourceResponse](/dotnet/api/microsoft.azure.documents.client.resourceresponse-1), который содержит ряд свойств использования, например **CollectionSizeUsage** , **DatabaseUsage** , **DocumentUsage** и прочие.
 
 Чтобы получить дополнительные метрики, используйте [пакет SDK для Azure Monitor](https://www.nuget.org/packages/Microsoft.Azure.Insights). Доступные определения метрик можно получить с помощью следующего вызова.
 

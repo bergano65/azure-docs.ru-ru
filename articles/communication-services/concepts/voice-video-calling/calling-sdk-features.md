@@ -64,7 +64,7 @@ ms.locfileid: "91977873"
 
 |                                  | Windows          | MacOS          | Ubuntu | Linux  | Android | iOS    |
 | -------------------------------- | ---------------- | -------------- | ------- | ------ | ------ | ------ |
-| **Клиентская библиотека для вызовов** | Chrome*, новый Edge | Chrome *, Safari** | Chrome*  | Chrome* | Chrome* | Safari** |
+| **Клиентская библиотека для вызовов** | Chrome*, новый Microsoft Edge | Chrome *, Safari** | Chrome*  | Chrome* | Chrome* | Safari** |
 
 
 * Обратите внимание, что для Chrome кроме двух предыдущих выпусков поддерживается также последняя версия.<br/>

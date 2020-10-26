@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 05/01/2020
-ms.openlocfilehash: 615e23dc388f36f5ae1cd7e0d846acc14ffa2236
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5cfc2abad828a3974c04074a4cde062a479f673f
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86086421"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92533569"
 ---
 # <a name="how-to-monitor-cluster-availability-with-apache-ambari-in-azure-hdinsight"></a>Как отслеживать доступность кластера с помощью Apache Ambari в Azure HDInsight
 
@@ -62,7 +62,6 @@ Ambari предлагает множество стандартных преду
 | Процент доступных Жаурналнодес    | Это оповещение активируется, если количество Жаурналнодес вниз в кластере превышает заданное критическое пороговое значение. Он объединяет результаты проверок процесса Жаурналноде. |
 | Доступно узлов в процентах       | Это оповещение активируется, если число отключенных узлов данных в кластере превышает заданное критическое пороговое значение. В нем суммируются результаты проверок в процессе обработки узлов данных.|
 
-Полный список оповещений Ambari, помогающих отслеживать доступность кластера, можно найти [здесь](https://docs.microsoft.com/azure/hdinsight/hdinsight-high-availability-linux#ambari-web-ui).
 
 Чтобы просмотреть сведения о предупреждении или изменить критерии, выберите **имя** оповещения. В качестве примера следует использовать **сводку по работоспособности узлов** . Вы можете просмотреть описание предупреждения, а также конкретные критерии, которые активируют предупреждение или критическое оповещение и интервал проверки для критерия. Чтобы изменить конфигурацию, нажмите кнопку **изменить** в правом верхнем углу окна конфигурации.
 
@@ -87,7 +86,7 @@ Ambari предлагает множество стандартных преду
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Доступность и надежность кластеров Apache Hadoop в HDInsight](hdinsight-high-availability-linux.md)
+- [Доступность и надежность кластеров Apache Hadoop в HDInsight](./hdinsight-business-continuity.md)
 - [Доступность кластера — журналы Azure Monitor](./cluster-availability-monitor-logs.md)
 - [Использование журналов Azure Monitor](hdinsight-hadoop-oms-log-analytics-tutorial.md)
 - [Уведомления по электронной почте Apache Ambari](apache-ambari-email.md)

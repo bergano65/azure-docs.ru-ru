@@ -8,20 +8,20 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 11/21/2019
-ms.openlocfilehash: 689417dd0743b01afd18b57b5336640f11edd044
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 19466174faeef20b8ac29882b047d74ad2adc5ff
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89504661"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92535184"
 ---
 # <a name="synchronize-azure-active-directory-users-to-an-hdinsight-cluster"></a>Синхронизация пользователей Azure Active Directory с кластером HDInsight
 
-[Кластеры HDInsight с корпоративный пакет безопасности (ESP)](hdinsight-domain-joined-introduction.md) могут использовать строгую проверку подлинности для пользователей Azure Active Directory (Azure AD), а также политики *управления доступом на основе ролей Azure (Azure RBAC)* . При добавлении пользователей и групп в Azure AD можно синхронизировать пользователей, которым необходим доступ к кластеру.
+[Кластеры HDInsight с корпоративный пакет безопасности (ESP)](./domain-joined/hdinsight-security-overview.md) могут использовать строгую проверку подлинности для пользователей Azure Active Directory (Azure AD), а также политики *управления доступом на основе ролей Azure (Azure RBAC)* . При добавлении пользователей и групп в Azure AD можно синхронизировать пользователей, которым необходим доступ к кластеру.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Если вы еще этого не сделали, [создайте кластер HDInsight с Корпоративным пакетом безопасности](hdinsight-domain-joined-configure.md).
+Если вы еще этого не сделали, [создайте кластер HDInsight с Корпоративным пакетом безопасности](./domain-joined/apache-domain-joined-configure-using-azure-adds.md).
 
 ## <a name="add-new-azure-ad-users"></a>Добавление новых пользователей Azure AD
 
@@ -33,11 +33,11 @@ ms.locfileid: "89504661"
 
     ![портал Azure пользователей и групп](./media/hdinsight-sync-aad-users-to-cluster/users-and-groups-new.png)
 
-3. Заполните форму нового пользователя. Выберите группы, созданные для назначения разрешений на основе кластеров. В этом примере создайте группу с именем HiveUsers, которой можно назначить новых пользователей. [Примеры инструкций](hdinsight-domain-joined-configure.md) для создания кластера ESP включают в себя добавление двух групп: `HiveUsers` и `AAD DC Administrators`.
+3. Заполните форму нового пользователя. Выберите группы, созданные для назначения разрешений на основе кластеров. В этом примере создайте группу с именем HiveUsers, которой можно назначить новых пользователей. [Примеры инструкций](./domain-joined/apache-domain-joined-configure-using-azure-adds.md) для создания кластера ESP включают в себя добавление двух групп: `HiveUsers` и `AAD DC Administrators`.
 
     ![портал Azure область пользователя "Выбор групп"](./media/hdinsight-sync-aad-users-to-cluster/hdinsight-new-user-form.png)
 
-4. Нажмите кнопку **создания**.
+4. Щелкните **Создать** .
 
 ## <a name="use-the-apache-ambari-rest-api-to-synchronize-users"></a>Синхронизация пользователей с помощью REST API Apache Ambari
 
@@ -120,16 +120,16 @@ ms.locfileid: "89504661"
     }
     ```
 
-1. В результате отобразится состояние " **завершено**", был создан один пользователь, и ему было назначено членство. В этом примере пользователь назначен для группы HiveUsers, синхронизированной по протоколу LDAP, так как он был добавлен в ту же группу в Azure AD.
+1. В результате отобразится состояние " **завершено** ", был создан один пользователь, и ему было назначено членство. В этом примере пользователь назначен для группы HiveUsers, синхронизированной по протоколу LDAP, так как он был добавлен в ту же группу в Azure AD.
 
     > [!NOTE]  
-    > Предыдущий метод синхронизирует только группы Azure AD, указанные в свойстве **доступа к группе пользователей** параметров домена во время создания кластера. Дополнительные сведения см. в статье [Настройка среды с присоединенной к домену песочницей HDInsight](domain-joined/apache-domain-joined-configure.md).
+    > Предыдущий метод синхронизирует только группы Azure AD, указанные в свойстве **доступа к группе пользователей** параметров домена во время создания кластера. Дополнительные сведения см. в статье [Настройка среды с присоединенной к домену песочницей HDInsight](./domain-joined/apache-domain-joined-configure-using-azure-adds.md).
 
 ## <a name="verify-the-newly-added-azure-ad-user"></a>Проверка только что добавленного пользователя Azure AD
 
 Откройте [веб-интерфейс Apache Ambari](hdinsight-hadoop-manage-ambari.md) и убедитесь, что новый пользователь Azure AD добавлен. Получите доступ к веб-ИНТЕРФЕЙСу Ambari, перейдя по адресу **`https://CLUSTERNAME.azurehdinsight.net`** . Укажите имя администратора и пароль кластера.
 
-1. На панели мониторинга Ambari выберите **Manage Ambari** (Управление Ambari) в меню **admin**.
+1. На панели мониторинга Ambari выберите **Manage Ambari** (Управление Ambari) в меню **admin** .
 
     ![Панель мониторинга Apache Ambari управление Ambari](./media/hdinsight-sync-aad-users-to-cluster/manage-apache-ambari.png)
 
@@ -146,8 +146,8 @@ ms.locfileid: "89504661"
 Когда новый пользователь (или любой другой пользователь домена) входит в Ambari, он использует полное имя пользователя и учетные данные домена Azure AD.  В Ambari показан псевдоним пользователя, являющийся отображаемым именем пользователя в Azure AD.
 В новом примере имя пользователя — `hiveuser3@contoso.com`. В Ambari этот пользователь отображается как `hiveuser3`, но он входит в Ambari как `hiveuser3@contoso.com`.
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
-* [Настройка политик Apache Hive в кластере HDInsight с ESP](hdinsight-domain-joined-run-hive.md)
-* [Управление кластерами HDInsight с помощью корпоративного пакета безопасности](hdinsight-domain-joined-manage.md)
+* [Настройка политик Apache Hive в кластере HDInsight с ESP](./domain-joined/apache-domain-joined-run-hive.md)
+* [Управление кластерами HDInsight с помощью корпоративного пакета безопасности](./domain-joined/apache-domain-joined-manage.md)
 * [Предоставление пользователям доступа к представлениям Apache Ambari](hdinsight-authorize-users-to-ambari.md)

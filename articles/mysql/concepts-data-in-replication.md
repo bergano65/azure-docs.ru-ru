@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 8/7/2020
-ms.openlocfilehash: 9212142ff6f43a84b141b0781fbe9828eebcbd40
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e84f0c9beaee8a755499467925d28a83ba3139fc
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91537163"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92544058"
 ---
 # <a name="replicate-data-into-azure-database-for-mysql"></a>Репликация данных в базу данных Azure для MySQL
 
@@ -41,16 +41,16 @@ ms.locfileid: "91537163"
 - Каждая таблица должна иметь первичный ключ.
 - На исходном сервере должен использоваться модуль MySQL InnoDB Engine.
 - Пользователь должен иметь разрешения на настройку ведения журнала в двоичном формате и создание новых пользователей на исходном сервере.
-- Если на исходном сервере включен протокол SSL, убедитесь, что сертификат ЦС SSL, предоставленный для домена, включен в `mysql.az_replication_change_master` хранимую процедуру. См. следующие [примеры](https://docs.microsoft.com/azure/mysql/howto-data-in-replication#link-master-and-replica-servers-to-start-data-in-replication) и `master_ssl_ca` параметр.
-- Убедитесь, что IP-адрес исходного сервера добавлен в базу данных Azure для правил брандмауэра сервера реплики MySQL. Измените правила брандмауэра на [портале Azure](https://docs.microsoft.com/azure/mysql/howto-manage-firewall-using-portal) или с помощью [Azure CLI](https://docs.microsoft.com/azure/mysql/howto-manage-firewall-using-cli).
+- Если на исходном сервере включен протокол SSL, убедитесь, что сертификат ЦС SSL, предоставленный для домена, включен в `mysql.az_replication_change_master` хранимую процедуру. См. следующие [примеры](./howto-data-in-replication.md#link-source-and-replica-servers-to-start-data-in-replication) и `master_ssl_ca` параметр.
+- Убедитесь, что IP-адрес исходного сервера добавлен в базу данных Azure для правил брандмауэра сервера реплики MySQL. Измените правила брандмауэра на [портале Azure](./howto-manage-firewall-using-portal.md) или с помощью [Azure CLI](./howto-manage-firewall-using-cli.md).
 - Убедитесь, что компьютер, на котором размещается исходный сервер, допускает входящий и исходящий трафик через порт 3306.
-- Убедитесь, что исходный сервер имеет **общедоступный IP-адрес**, DNS является общедоступным или имеет полное доменное имя (FQDN).
+- Убедитесь, что исходный сервер имеет **общедоступный IP-адрес** , DNS является общедоступным или имеет полное доменное имя (FQDN).
 
-### <a name="other"></a>Другое
+### <a name="other"></a>Другие
 - Репликация данных поддерживается только в ценовых категориях общего назначения и с оптимизацией для операций в памяти.
 - Идентификаторы глобальных транзакций (GTID) не поддерживаются.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Узнайте, как [настроить репликацию данных](howto-data-in-replication.md)
 - Дополнительные сведения см. в статье [Реплики чтения в базе данных Azure для MySQL](concepts-read-replicas.md).
 - Сведения о [переносе данных с минимальным временем простоя с помощью DMS](howto-migrate-online.md)

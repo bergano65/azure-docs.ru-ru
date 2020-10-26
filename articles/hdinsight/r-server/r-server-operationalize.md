@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: how-to
 ms.date: 06/27/2018
-ms.openlocfilehash: 1a5a46957c92fb2c14907db728216481f3f57aac
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 20159cf911670eb70fd5757991c07b63b3f1776b
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86087696"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92536272"
 ---
 # <a name="operationalize-ml-services-cluster-on-azure-hdinsight"></a>Ввод в эксплуатацию кластера служб машинного обучения в Azure HDInsight
 
@@ -21,14 +21,14 @@ ms.locfileid: "86087696"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Кластер служб машинного обучения в HDInsight. Ознакомьтесь со статьей [Create Linux-based clusters in HDInsight by using the Azure portal](../hdinsight-hadoop-create-linux-clusters-portal.md) (Создание кластеров под управлением Linux в HDInsight с помощью портала Azure) и выберите **Службы машинного обучения ML Services** для параметра **Тип кластера**.
+* Кластер служб машинного обучения в HDInsight. Ознакомьтесь со статьей [Create Linux-based clusters in HDInsight by using the Azure portal](../hdinsight-hadoop-create-linux-clusters-portal.md) (Создание кластеров под управлением Linux в HDInsight с помощью портала Azure) и выберите **Службы машинного обучения ML Services** для параметра **Тип кластера** .
 
 * Клиент Secure Shell (SSH). Клиент SSH используется для удаленного подключения к кластеру HDInsight и выполнения команд непосредственно в кластере. Дополнительные сведения см. в статье [Использование SSH с Hadoop на основе Linux в HDInsight из Linux, Unix или OS X](../hdinsight-hadoop-linux-use-ssh-unix.md).
 
 ## <a name="operationalize-ml-services-cluster-with-one-box-configuration"></a>Ввод в эксплуатацию кластера служб машинного обучения в универсальной конфигурации
 
 > [!NOTE]  
-> Приведенные ниже действия применимы к R Server 9.0 и Machine Learning Server (ML Server) 9.1. Действия для ML Server 9.3 см. в статье [Launch the administration tool/CLI to manage the operationalization configuration](https://docs.microsoft.com/machine-learning-server/operationalize/configure-admin-cli-launch) (Запуск средства администрирования или CLI для управления конфигурацией ввода в эксплуатацию).
+> Приведенные ниже действия применимы к R Server 9.0 и Machine Learning Server (ML Server) 9.1. Действия для ML Server 9.3 см. в статье [Launch the administration tool/CLI to manage the operationalization configuration](/machine-learning-server/operationalize/configure-admin-cli-launch) (Запуск средства администрирования или CLI для управления конфигурацией ввода в эксплуатацию).
 
 1. Подключитесь к граничному узлу по протоколу SSH.
 
@@ -54,11 +54,11 @@ ms.locfileid: "86087696"
         sudo dotnet Microsoft.DeployR.Utils.AdminUtil/Microsoft.DeployR.Utils.AdminUtil.dll
         ```
 
-1. У вас есть несколько вариантов на выбор. Выберите первый вариант, как показано на следующем снимке экрана, чтобы **настроить ML Server для ввода в эксплуатацию**.
+1. У вас есть несколько вариантов на выбор. Выберите первый вариант, как показано на следующем снимке экрана, чтобы **настроить ML Server для ввода в эксплуатацию** .
 
     ![Программа администрирования R Server, выбор](./media/r-server-operationalize/admin-util-one-box-1.png)
 
-1. Теперь вам предлагаются доступные методы для ввода в эксплуатацию ML Server. Выберите первый из представленных вариантов, введя символ **A**.
+1. Теперь вам предлагаются доступные методы для ввода в эксплуатацию ML Server. Выберите первый из представленных вариантов, введя символ **A** .
 
     ![Эксплуатацию служебной программы администрирования R Server](./media/r-server-operationalize/admin-util-one-box-2.png)
 
@@ -70,7 +70,7 @@ ms.locfileid: "86087696"
 
 1. По желанию вы можете запустить диагностический тест, как показано ниже.
 
-    a. В главном меню выберите **6**, чтобы выполнить диагностические тесты.
+    a. В главном меню выберите **6** , чтобы выполнить диагностические тесты.
 
     ![Диагностическое средство для программы администрирования R Server](./media/r-server-operationalize/hdinsight-diagnostic1.png)
 
@@ -82,7 +82,7 @@ ms.locfileid: "86087696"
 
     ![Проход служебной программы администрирования R Server](./media/r-server-operationalize/hdinsight-diagnostic3.png)
 
-    d. Из предложенного меню выберите вариант **E**, чтобы вернуться к главному меню, а затем введите **8** для выхода из служебной программы администрирования.
+    d. Из предложенного меню выберите вариант **E** , чтобы вернуться к главному меню, а затем введите **8** для выхода из служебной программы администрирования.
 
 ### <a name="long-delays-when-consuming-web-service-on-apache-spark"></a>Длительные задержки при использовании веб-службы в Apache Spark
 
@@ -103,7 +103,7 @@ chmod 777 /var/RevoShare/rserve2
 rxSparkConnect(reset = TRUE)
 ```
 
-Итак, вы завершили настройку для практического использования. Теперь с помощью пакета `mrsdeploy` на RClient вы можете подключаться к введенному в эксплуатацию решению на граничном узле и применять разные функции, например [удаленное выполнение](https://docs.microsoft.com/machine-learning-server/r/how-to-execute-code-remotely) и [веб-службы](https://docs.microsoft.com/machine-learning-server/operationalize/concept-what-are-web-services). В зависимости от того, настроен ли кластер в виртуальной сети, может потребоваться настроить туннелирование с перенаправлением портов через сеанс SSH. В следующих разделах описано, как настроить этот туннель.
+Итак, вы завершили настройку для практического использования. Теперь с помощью пакета `mrsdeploy` на RClient вы можете подключаться к введенному в эксплуатацию решению на граничном узле и применять разные функции, например [удаленное выполнение](/machine-learning-server/r/how-to-execute-code-remotely) и [веб-службы](/machine-learning-server/operationalize/concept-what-are-web-services). В зависимости от того, настроен ли кластер в виртуальной сети, может потребоваться настроить туннелирование с перенаправлением портов через сеанс SSH. В следующих разделах описано, как настроить этот туннель.
 
 ### <a name="ml-services-cluster-on-virtual-network"></a>Кластер служб машинного обучения в виртуальной сети
 
@@ -155,17 +155,17 @@ remoteLogin(
 
 1. Выберите рабочие узлы, которые вы намерены вывести из эксплуатации.
 
-1. Щелкните **действия**  >  **Выбранные узлы**  >  **узлы**  >  **включить режим обслуживания**. Например, на следующем рисунке для вывода из эксплуатации выбраны узлы wn3 и wn4.  
+1. Щелкните **действия**  >  **Выбранные узлы**  >  **узлы**  >  **включить режим обслуживания** . Например, на следующем рисунке для вывода из эксплуатации выбраны узлы wn3 и wn4.  
 
    ![Включение режима обслуживания Apache Ambari](./media/r-server-operationalize/get-started-operationalization.png)  
 
-* Выберите **Actions**  >  **Выбранные**действия размещение  >  **узлов** > щелкните **списание**.
-* Выберите **действия**  >  **Выбранные узлы**  >  **NodeManagers** > щелкните **списать**.
-* Выберите **Actions**  >  **Выбранные**действия размещение  >  **узлов** > нажмите кнопку " **Закрыть**".
-* Выберите **действия**  >  **Выбранные узлы**  >  **NodeManagers** > нажмите кнопку " **Закрыть**".
-* Выберите **Actions**  >  **выбранные действия узлы**  >  **узлы** > нажмите кнопку " **Отключить все компоненты**".
+* Выберите **Actions**  >  **Выбранные** действия размещение  >  **узлов** > щелкните **списание** .
+* Выберите **действия**  >  **Выбранные узлы**  >  **NodeManagers** > щелкните **списать** .
+* Выберите **Actions**  >  **Выбранные** действия размещение  >  **узлов** > нажмите кнопку " **Закрыть** ".
+* Выберите **действия**  >  **Выбранные узлы**  >  **NodeManagers** > нажмите кнопку " **Закрыть** ".
+* Выберите **Actions**  >  **выбранные действия узлы**  >  **узлы** > нажмите кнопку " **Отключить все компоненты** ".
 * Отмените выбор рабочих узлов и выберите головные узлы.
-* Выберите **Actions**  >  **выбранные действия узлы** > "**узлы**  >  **перезапускают все компоненты**.
+* Выберите **Actions**  >  **выбранные действия узлы** > " **узлы**  >  **перезапускают все компоненты** .
 
 ### <a name="step-2-configure-compute-nodes-on-each-decommissioned-worker-nodes"></a>Шаг 2. Настройка вычислительных узлов на каждом из рабочих узлов, выведенных из эксплуатации
 
@@ -177,9 +177,9 @@ remoteLogin(
     dotnet /usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Utils.AdminUtil/Microsoft.DeployR.Utils.AdminUtil.dll
     ```
 
-1. Введите **1**, чтобы выбрать параметр **Configure ML Server for Operationalization** (Настройка ML Server для ввода в эксплуатацию).
+1. Введите **1** , чтобы выбрать параметр **Configure ML Server for Operationalization** (Настройка ML Server для ввода в эксплуатацию).
 
-1. Введите **C**, чтобы выбрать пункт `C. Compute node`. Это настраивает вычислительный узел на рабочем узле.
+1. Введите **C** , чтобы выбрать пункт `C. Compute node`. Это настраивает вычислительный узел на рабочем узле.
 
 1. Выйдите из служебной программы администрирования.
 
@@ -189,7 +189,7 @@ remoteLogin(
 
 1. Подключитесь к граничному узлу по протоколу SSH.
 
-1. Выполните `vi /usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/appsettings.json`.
+1. Выполните команду `vi /usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/appsettings.json`.
 
 1. Найдите раздел URI и добавьте в него информацию об IP-адресах и портах рабочих узлов.
 

@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 4/10/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 2cc60af26754eddbe8699019ae8d906a4c1e9e62
-ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
+ms.openlocfilehash: f560f16c6437b219dd1e7017d70976ff4650c2c0
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92057694"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92544364"
 ---
 # <a name="parse-and-validate-models-with-the-dtdl-parser-library"></a>Анализ и проверка моделей с помощью библиотеки анализатора ДТДЛ
 
@@ -36,7 +36,7 @@ ms.locfileid: "92057694"
 DTDLValidator
 ```
 
-При использовании параметров по умолчанию образец будет искать `*.json` файлы в текущем каталоге и во всех подкаталогах. Можно также добавить следующий параметр, чтобы образец поиска в указанном каталоге и всех подкаталогах для файлов с расширением *. дтдл*:
+При использовании параметров по умолчанию образец будет искать `*.json` файлы в текущем каталоге и во всех подкаталогах. Можно также добавить следующий параметр, чтобы образец поиска в указанном каталоге и всех подкаталогах для файлов с расширением *. дтдл* :
 
 ```cmd/sh
 DTDLValidator -d C:\Work\DTDL -e dtdl 
@@ -77,32 +77,50 @@ DTDLValidator -i
 
 Для поддержки приведенного ниже примера кода синтаксического анализатора рассмотрим несколько моделей, определенных в экземпляре Azure Digital двойников.
 
-> [!TIP] 
-> `dtmi:com:contoso:coffeeMaker`Модель использует синтаксис *модели возможностей* , который подразумевает, что он был установлен в службе путем подключения устройства PnP, предоставляющего эту модель.
-
 ```json
-{
-  "@id": " dtmi:com:contoso:coffeeMaker",
-  "@type": "CapabilityModel",
-  "implements": [
-        { "name": "coffeeMaker", "schema": " dtmi:com:contoso:coffeeMakerInterface" }
-  ]    
-}
-{
-  "@id": " dtmi:com:contoso:coffeeMakerInterface",
-  "@type": "Interface",
-  "contents": [
-      { "@type": "Property", "name": "waterTemp", "schema": "double" }  
-  ]
-}
-{
-  "@id": " dtmi:com:contoso:coffeeBar",
-  "@type": "Interface",
-  "contents": [
-        { "@type": "relationship", "contains": " dtmi:com:contoso:coffeeMaker" },
-        { "@type": "property", "name": "capacity", "schema": "integer" }
-  ]    
-}
+[
+  {
+    "@context": "dtmi:dtdl:context;2",
+    "@id": "dtmi:com:contoso:coffeeMaker;1",
+    "@type": "Interface",
+    "contents": [
+      {
+        "@type": "Component",
+        "name": "coffeeMaker",
+        "schema": "dtmi:com:contoso:coffeeMakerInterface;1"
+      }
+    ]
+  },
+  {
+    "@context": "dtmi:dtdl:context;2",
+    "@id": "dtmi:com:contoso:coffeeMakerInterface;1",
+    "@type": "Interface",
+    "contents": [
+      {
+        "@type": "Property",
+        "name": "waterTemp",
+        "schema": "double"
+      }
+    ]
+  },
+  {
+    "@context": "dtmi:dtdl:context;2",
+    "@id": "dtmi:com:contoso:coffeeBar;1",
+    "@type": "Interface",
+    "contents": [
+      {
+        "@type": "Relationship",
+        "name": "foo",
+        "target": "dtmi:com:contoso:coffeeMaker;1"
+      },
+      {
+        "@type": "Property",
+        "name": "capacity",
+        "schema": "integer"
+      }
+    ]
+  }
+]
 ```
 
 В следующем коде показан пример использования библиотеки синтаксического анализатора для отражения этих определений в C#:

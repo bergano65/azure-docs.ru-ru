@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: seoapr2020
 ms.date: 04/29/2020
-ms.openlocfilehash: 874cea2377d3c0a128894bb67278e8ec2cbe7edc
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 22ce91a81964ed52830fc19dbbbd52e7f170b0d4
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92490974"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92535405"
 ---
 # <a name="scale-azure-hdinsight-clusters"></a>Масштабирование кластеров Azure HDInsight
 
@@ -32,8 +32,8 @@ HDInsight обеспечивает эластичность с помощью п
 
 |Служебная программа | Описание|
 |---|---|
-|[PowerShell Az](https://docs.microsoft.com/powershell/azure)|[`Set-AzHDInsightClusterSize`](https://docs.microsoft.com/powershell/module/az.hdinsight/set-azhdinsightclustersize) `-ClusterName CLUSTERNAME -TargetInstanceCount NEWSIZE`|
-|[PowerShell AzureRM](https://docs.microsoft.com/powershell/azure/azurerm) |[`Set-AzureRmHDInsightClusterSize`](https://docs.microsoft.com/powershell/module/azurerm.hdinsight/set-azurermhdinsightclustersize) `-ClusterName CLUSTERNAME -TargetInstanceCount NEWSIZE`|
+|[PowerShell Az](/powershell/azure)|[`Set-AzHDInsightClusterSize`](/powershell/module/az.hdinsight/set-azhdinsightclustersize) `-ClusterName CLUSTERNAME -TargetInstanceCount NEWSIZE`|
+|[PowerShell AzureRM](/powershell/azure/azurerm) |[`Set-AzureRmHDInsightClusterSize`](/powershell/module/azurerm.hdinsight/set-azurermhdinsightclustersize) `-ClusterName CLUSTERNAME -TargetInstanceCount NEWSIZE`|
 |[Azure CLI](/cli/azure/); | [`az hdinsight resize`](/cli/azure/hdinsight#az-hdinsight-resize) `--resource-group RESOURCEGROUP --name CLUSTERNAME --workernode-count NEWSIZE`|
 |[Классический Azure CLI](hdinsight-administer-use-command-line.md)|`azure hdinsight cluster resize CLUSTERNAME NEWSIZE` |
 |[Портал Azure](https://portal.azure.com)|Откройте панель кластера HDInsight, выберите **Размер кластера** в меню слева, затем на панели размер кластера введите число рабочих узлов и нажмите кнопку Сохранить.|  
@@ -44,7 +44,7 @@ HDInsight обеспечивает эластичность с помощью п
 
 > [!IMPORTANT]  
 > * Классический интерфейс командной строки Azure является устаревшим и должен использоваться только с классической моделью развертывания. Для всех остальных развертываний используйте [Azure CLI](/cli/azure/).
-> * Модуль PowerShell AzureRM является устаревшим.  При возможности используйте [модуль AZ](https://docs.microsoft.com/powershell/azure/new-azureps-module-az) .
+> * Модуль PowerShell AzureRM является устаревшим.  При возможности используйте [модуль AZ](/powershell/azure/new-azureps-module-az) .
 
 ## <a name="impact-of-scaling-operations"></a>Влияние операций масштабирования
 
@@ -82,7 +82,7 @@ HDInsight обеспечивает эластичность с помощью п
 
     1. Откройте `https://CLUSTERNAME.azurehdinsight.net/stormui` в веб-браузере, где `CLUSTERNAME` — это имя кластера с расширением. При появлении запроса введите имя администратора кластера HDInsight (admin) и пароль, указанный при создании кластера.
 
-    1. Выберите топологию, для которой нужно выполнить повторную балансировку, и нажмите кнопку **Перераспределить**. Введите задержку до завершения операции перераспределения.
+    1. Выберите топологию, для которой нужно выполнить повторную балансировку, и нажмите кнопку **Перераспределить** . Введите задержку до завершения операции перераспределения.
 
         ![HDInsight, Storm, масштабирование, перераспределение](./media/hdinsight-scaling-best-practices/hdinsight-portal-scale-cluster-storm-rebalance.png)
 
@@ -125,12 +125,12 @@ HDInsight обеспечивает эластичность с помощью п
 1. Завершите задания вручную.
 1. Повторно отправьте задания после завершения операции масштабирования.
 
-Чтобы просмотреть список ожидающих и выполняющихся заданий, можно использовать **Пользовательский интерфейс YARN диспетчер ресурсов**, выполнив следующие действия.
+Чтобы просмотреть список ожидающих и выполняющихся заданий, можно использовать **Пользовательский интерфейс YARN диспетчер ресурсов** , выполнив следующие действия.
 
 1. На [портале Azure](https://portal.azure.com/) выберите свой кластер.  Кластер откроется на новой странице портала.
-2. В главном представлении перейдите к **панели мониторинга кластера**  >  **Ambari Домашняя страница**. Введите учетные данные кластера.
+2. В главном представлении перейдите к **панели мониторинга кластера**  >  **Ambari Домашняя страница** . Введите учетные данные кластера.
 3. В пользовательском интерфейсе Ambari выберите **YARN** в списке служб в меню слева.  
-4. На странице YARN выберите **быстрые ссылки** и наведите указатель мыши на активный головной узел, а затем выберите **Диспетчер ресурсов Пользовательский интерфейс**.
+4. На странице YARN выберите **быстрые ссылки** и наведите указатель мыши на активный головной узел, а затем выберите **Диспетчер ресурсов Пользовательский интерфейс** .
 
     ![Быстрые ссылки Apache Ambari диспетчер ресурсов UI](./media/hdinsight-scaling-best-practices/resource-manager-ui1.png)
 
@@ -146,7 +146,7 @@ HDInsight обеспечивает эластичность с помощью п
 yarn application -kill <application_id>
 ```
 
-Например:
+Пример:
 
 ```bash
 yarn application -kill "application_1499348398273_0003"

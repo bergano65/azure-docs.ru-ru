@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 11/08/2019
 ms.custom: seodec18
-ms.openlocfilehash: b51b2c21fd9256c93f6947386a48336af2b75d88
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fc08adb2f71c49fad3c8574e9cfd5315f13d7f44
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84700371"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92532770"
 ---
 # <a name="troubleshoot-apache-storm-by-using-azure-hdinsight"></a>Устранение неполадок в Apache Storm с помощью Azure HDInsight
 
@@ -27,7 +27,7 @@ ms.locfileid: "84700371"
 ### <a name="apache-ambari-ui"></a>Пользовательский интерфейс Apache Ambari
 
 1. Перейдите к панели мониторинга Ambari.
-2. В списке служб выберите **Storm**.
+2. В списке служб выберите **Storm** .
 3. В меню **Quick Links** (Быстрые ссылки) выберите **Storm UI** (Пользовательский интерфейс Storm).
 
 ### <a name="direct-link"></a>Прямая ссылка
@@ -95,7 +95,7 @@ ms.locfileid: "84700371"
 
 Для конкретных версий HDP в/usr/HDP может существовать несколько двоичных файлов (например, `/usr/hdp/2.5.0.1233/storm` ). `/usr/hdp/current/storm-client`Папка симлинкед до последней версии, работающей в кластере.
 
-Дополнительные сведения см. в статье [Подключение к HDInsight (Hadoop) с помощью SSH](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-linux-use-ssh-unix) и [Apache Storm](https://storm.apache.org/).
+Дополнительные сведения см. в статье [Подключение к HDInsight (Hadoop) с помощью SSH](../hdinsight-hadoop-linux-use-ssh-unix.md) и [Apache Storm](https://storm.apache.org/).
 
 ## <a name="how-do-i-determine-the-deployment-topology-of-a-storm-cluster"></a>Как определить топологию развертывания кластера Storm?
 
@@ -141,7 +141,7 @@ HDInsight поставляется с кворумом Zookeeper, включаю
 
 ### <a name="c-based-topology-mono-on-hdinsight-34-linux-storm-clusters"></a>Топология на основе C# (Mono в кластерах Linux Storm для HDInsight 3.4+)
 
-[Обработка событий из Центров событий Azure с помощью Apache Storm в HDInsight (C#)](https://docs.microsoft.com/azure/hdinsight/hdinsight-storm-develop-csharp-event-hub-topology)
+[Обработка событий из Центров событий Azure с помощью Apache Storm в HDInsight (C#)](./apache-storm-develop-csharp-event-hub-topology.md)
 
 ### <a name="latest-apache-storm-event-hub-spout-binaries-for-hdinsight-35-linux-storm-clusters"></a>Последние двоичные файлы spout концентратора событий Apache Storm для кластеров Linux Storm для HDInsight 3.5+
 
@@ -186,4 +186,4 @@ HDInsight поставляется с кворумом Zookeeper, включаю
 
 - Подпишитесь на [@AzureSupport](https://twitter.com/azuresupport) — официальный канал Microsoft Azure для работы с клиентами. Вступайте в сообщество Azure для получения нужных ресурсов: ответов, поддержки и советов экспертов.
 
-- Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки на [портале Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **Поддержка** в строке меню или откройте центр **Справка и поддержка**. Дополнительные сведения см. в статье [Создание запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request). Доступ к управлению подписками и поддержкой выставления счетов уже включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется в рамках одного из [планов Службы поддержки Azure](https://azure.microsoft.com/support/plans/).
+- Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки на [портале Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **Поддержка** в строке меню или откройте центр **Справка и поддержка** . Дополнительные сведения см. в статье [Создание запроса на поддержку Azure](../../azure-portal/supportability/how-to-create-azure-support-request.md). Доступ к управлению подписками и поддержкой выставления счетов уже включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется в рамках одного из [планов Службы поддержки Azure](https://azure.microsoft.com/support/plans/).

@@ -8,12 +8,12 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.topic: troubleshooting
 ms.date: 08/15/2019
-ms.openlocfilehash: 02247adb9852a72b386feb2ef0924b0f1b3d6277
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: eb522e047ed8bb4929a3aba270df35322256319b
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75895236"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92534895"
 ---
 # <a name="troubleshoot-apache-hive-by-using-azure-hdinsight"></a>Устранение неполадок в Apache Hive с помощью Azure HDInsight
 
@@ -49,7 +49,7 @@ ms.locfileid: "75895236"
 
 ### <a name="resolution-steps"></a>Способы устранения
 
-1. Подключитесь к кластеру HDInsight с помощью протокола SSH. Подробные сведения см. в разделе **Дополнительные материалы**.
+1. Подключитесь к кластеру HDInsight с помощью протокола SSH. Подробные сведения см. в разделе **Дополнительные материалы** .
 
 2. Чтобы просмотреть журналы клиента Hive, используйте следующую команду:
 
@@ -155,7 +155,7 @@ ms.locfileid: "75895236"
   1. Перейдите в Ambari.
   2. Выберите представление Tez (под значком плитки в правом верхнем углу).
   3. Выберите направленный ациклический граф, который необходимо просмотреть.
-  4. Выберите **Скачать данные**.
+  4. Выберите **Скачать данные** .
 
 ### <a name="additional-reading"></a><a name="additional-reading-end"></a>Дополнительные материалы
 
@@ -169,4 +169,4 @@ ms.locfileid: "75895236"
 
 - Подпишитесь на [@AzureSupport](https://twitter.com/azuresupport) — официальный канал Microsoft Azure для работы с клиентами. Вступайте в сообщество Azure для получения нужных ресурсов: ответов, поддержки и советов экспертов.
 
-- Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки на [портале Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **Поддержка** в строке меню или откройте центр **Справка и поддержка**. Дополнительные сведения см. в статье [Создание запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request). Доступ к управлению подписками и поддержкой выставления счетов уже включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется в рамках одного из [планов Службы поддержки Azure](https://azure.microsoft.com/support/plans/).
+- Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки на [портале Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **Поддержка** в строке меню или откройте центр **Справка и поддержка** . Дополнительные сведения см. в статье [Создание запроса на поддержку Azure](../azure-portal/supportability/how-to-create-azure-support-request.md). Доступ к управлению подписками и поддержкой выставления счетов уже включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется в рамках одного из [планов Службы поддержки Azure](https://azure.microsoft.com/support/plans/).

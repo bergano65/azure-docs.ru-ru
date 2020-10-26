@@ -6,12 +6,12 @@ ms.author: nlarin
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 09/22/2020
-ms.openlocfilehash: 2fccf5431666990919faf7e6378b46c41d682437
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cf749f3aef10a0c67814722577f79906f447ffdb
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90937091"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92532787"
 ---
 # <a name="audit-logging-in-azure-database-for-postgresql---flexible-server"></a>Ведение журнала аудита в базе данных Azure для PostgreSQL — гибкого сервера
 
@@ -57,7 +57,7 @@ CREATE EXTENSION pgaudit;
 Чтобы быстро приступить к работе, присвойте параметру значение `pgaudit.log` `WRITE` и откройте журналы сервера для просмотра выходных данных. 
 
 ## <a name="viewing-audit-logs"></a>Просмотр журналов аудита
-Способ доступа к журналам зависит от выбранной конечной точки. Сведения о службе хранилища Azure см. в статье [учетная запись хранения журналов](../../azure-monitor/platform/resource-logs-collect-storage.md) . Сведения о концентраторах событий см. в статье [Streaming Azure Logs](../../azure-monitor/platform/resource-logs-stream-event-hubs.md) .
+Способ доступа к журналам зависит от выбранной конечной точки. Сведения о службе хранилища Azure см. в статье [учетная запись хранения журналов](../../azure-monitor/platform/resource-logs.md#send-to-azure-storage) . Сведения о концентраторах событий см. в статье [Streaming Azure Logs](../../azure-monitor/platform/resource-logs.md#send-to-azure-event-hubs) .
 
 Для журналов Azure Monitor журналы отправляются в выбранную рабочую область. Журналы postgres используют режим сбора **AzureDiagnostics** , поэтому их можно запрашивать из таблицы AzureDiagnostics. Поля в таблице описаны ниже. Дополнительные сведения о запросах и предупреждениях см. в статье о [запросах Azure Monitor журналов](../../azure-monitor/log-query/log-query-overview.md) .
 
@@ -71,6 +71,6 @@ AzureDiagnostics
 | where Message contains "AUDIT:"
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Сведения о ведении журнала в базе данных Azure для PostgreSQL — гибком сервере](concepts-logging.md)
 - [Узнайте, как настроить ведение журнала в базе данных Azure для PostgreSQL-гибкого сервера и получить доступ к журналам.](howto-configure-and-access-logs.md)
