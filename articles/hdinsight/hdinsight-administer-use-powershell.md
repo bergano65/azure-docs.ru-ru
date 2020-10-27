@@ -8,18 +8,18 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 02/13/2020
-ms.openlocfilehash: 0fbafd81fac1982f624adae9286000fb61db62c5
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 0b4a31b88c9a6fa8c2c6170fce38760c1a361f2e
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92474926"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92533433"
 ---
 # <a name="manage-apache-hadoop-clusters-in-hdinsight-by-using-azure-powershell"></a>Управление кластерами Apache Hadoop в HDInsight с помощью Azure PowerShell
 
 [!INCLUDE [selector](../../includes/hdinsight-portal-management-selector.md)]
 
-Azure PowerShell можно использовать для контроля и автоматизации развертывания рабочих нагрузок, а также управления ими в Azure. Из этой статьи вы узнаете, как управлять кластерами [Apache Hadoop](https://hadoop.apache.org/) в Azure HDInsight с помощью модуля Azure PowerShell AZ. Список командлетов HDInsight PowerShell см. в [справочнике по AZ. HDInsight](https://docs.microsoft.com/powershell/module/az.hdinsight).
+Azure PowerShell можно использовать для контроля и автоматизации развертывания рабочих нагрузок, а также управления ими в Azure. Из этой статьи вы узнаете, как управлять кластерами [Apache Hadoop](https://hadoop.apache.org/) в Azure HDInsight с помощью модуля Azure PowerShell AZ. Список командлетов HDInsight PowerShell см. в [справочнике по AZ. HDInsight](/powershell/module/az.hdinsight).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -27,7 +27,7 @@ Azure PowerShell можно использовать для контроля и
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Установите [модуль Az](https://docs.microsoft.com/powershell/azure/) для PowerShell.
+Установите [модуль Az](/powershell/azure/) для PowerShell.
 
 ## <a name="create-clusters"></a>Создание кластеров
 
@@ -75,7 +75,7 @@ Set-AzHDInsightClusterSize -ClusterName <Cluster Name> -TargetInstanceCount <New
 
 ## <a name="update-http-user-credentials"></a>Обновление учетных данных пользователя HTTP
 
-[Set-аздинсигхтгатевайкредентиал](https://docs.microsoft.com/powershell/module/az.hdinsight/set-azhdinsightgatewaycredential) задает учетные данные HTTP шлюза для кластера Azure HDInsight.
+[Set-аздинсигхтгатевайкредентиал](/powershell/module/az.hdinsight/set-azhdinsightgatewaycredential) задает учетные данные HTTP шлюза для кластера Azure HDInsight.
 
 ```powershell
 $clusterName = "CLUSTERNAME"
@@ -146,7 +146,7 @@ $resourceGroupName = $cluster.ResourceGroup
 
 ## <a name="see-also"></a>См. также:
 
-* [AZ. HDInsight командлеты](https://docs.microsoft.com/powershell/module/az.hdinsight/#hdinsight)
+* [AZ. HDInsight командлеты](/powershell/module/az.hdinsight/#hdinsight)
 * [Управление кластерами Apache Hadoop в HDInsight с помощью портала Azure](hdinsight-administer-use-portal-linux.md)
 * [Администрирование HDInsight с помощью интерфейса командной строки](hdinsight-administer-use-command-line.md)
 * [Создание кластеров HDInsight](hdinsight-hadoop-provision-linux-clusters.md)

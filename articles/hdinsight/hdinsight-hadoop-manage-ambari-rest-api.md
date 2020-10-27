@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/29/2020
-ms.openlocfilehash: 45b9c158aca85d62b02d65282876d5e40129878f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6ba1d1e15b1dbb3efb24219b6c09a6827e701d46
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87081072"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92546081"
 ---
 # <a name="manage-hdinsight-clusters-by-using-the-apache-ambari-rest-api"></a>Управление кластерами HDInsight с помощью Apache Ambari REST API
 
@@ -25,11 +25,11 @@ ms.locfileid: "87081072"
 
 Apache Ambari упрощает управление кластерами Hadoop и их мониторинг, предоставляя простой в использовании интерфейс веб-интерфейса, поддерживаемый его [интерфейсами API](https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md).  Ambari предоставляется по умолчанию с кластерами HDInsight на платформе Linux.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Кластер Hadoop в HDInsight. Ознакомьтесь со статьей [Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](hadoop/apache-hadoop-linux-tutorial-get-started.md).
 
-* Bash на Ubuntu в Windows 10.  В примерах, приведенных в этой статье, используется оболочка Bash в Windows 10. Шаги установки см. в статье [Windows Subsystem for Linux Installation Guide for Windows 10](https://docs.microsoft.com/windows/wsl/install-win10) (Подсистема Windows для Linux в Windows 10).  Другие [оболочки Unix](https://www.gnu.org/software/bash/) также будут работать.  Примеры с некоторыми незначительными изменениями могут работать в командной строке Windows.  Также можно использовать Windows PowerShell.
+* Bash на Ubuntu в Windows 10.  В примерах, приведенных в этой статье, используется оболочка Bash в Windows 10. Шаги установки см. в статье [Windows Subsystem for Linux Installation Guide for Windows 10](/windows/wsl/install-win10) (Подсистема Windows для Linux в Windows 10).  Другие [оболочки Unix](https://www.gnu.org/software/bash/) также будут работать.  Примеры с некоторыми незначительными изменениями могут работать в командной строке Windows.  Также можно использовать Windows PowerShell.
 
 * jq — обработчик командной строки JSON.  См. раздел [https://stedolan.github.io/jq/](https://stedolan.github.io/jq/).
 
@@ -37,11 +37,11 @@ Apache Ambari упрощает управление кластерами Hadoop 
 
 ## <a name="base-uniform-resource-identifier-for-ambari-rest-api"></a>Базовый универсальный идентификатор ресурса для Ambari API-интерфейса RESTful
 
- Базовый универсальный код ресурса (URI) для REST API Ambari в HDInsight — `https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME` , где `CLUSTERNAME` — это имя кластера.  В именах кластеров в URI **учитывается регистр**.  Хотя имя кластера в части URI () в полном доменном имени ( `CLUSTERNAME.azurehdinsight.net` ) не учитывает регистр, другие вхождения в URI учитывают регистр.
+ Базовый универсальный код ресурса (URI) для REST API Ambari в HDInsight — `https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME` , где `CLUSTERNAME` — это имя кластера.  В именах кластеров в URI **учитывается регистр** .  Хотя имя кластера в части URI () в полном доменном имени ( `CLUSTERNAME.azurehdinsight.net` ) не учитывает регистр, другие вхождения в URI учитывают регистр.
 
 ## <a name="authentication"></a>Аутентификация
 
-Подключение к Ambari в HDInsight выполняется по протоколу HTTPS. Используйте имя учетной записи администратора (по умолчанию — **admin**) и пароль, указанные при создании кластера.
+Подключение к Ambari в HDInsight выполняется по протоколу HTTPS. Используйте имя учетной записи администратора (по умолчанию — **admin** ) и пароль, указанные при создании кластера.
 
 Для Корпоративный пакет безопасности кластеров вместо `admin` используйте полное имя пользователя, например `username@domain.onmicrosoft.com` .
 
@@ -87,7 +87,7 @@ $clusterName
 
 ### <a name="parsing-json-data"></a>Анализ данных JSON
 
-В следующем примере используется [JQ](https://stedolan.github.io/jq/) или [ConvertFrom-JSON](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertfrom-json) для анализа документа ответа JSON и вывода только `health_report` сведений из результатов.
+В следующем примере используется [JQ](https://stedolan.github.io/jq/) или [ConvertFrom-JSON](/powershell/module/microsoft.powershell.utility/convertfrom-json) для анализа документа ответа JSON и вывода только `health_report` сведений из результатов.
 
 ```bash
 curl -u admin:$password -sS -G "https://$clusterName.azurehdinsight.net/api/v1/clusters/$clusterName" \
@@ -253,7 +253,7 @@ $respObj.items.configurations.properties.'fs.defaultFS'
     Вернется похожее значение: `/clusters/CLUSTERNAME/`. Это значение представляет путь в учетной записи Data Lake Storage. Путь является корнем совместимой файловой системы HDFS для кластера.  
 
 > [!NOTE]  
-> Командлет [Get-аздинсигхтклустер](https://docs.microsoft.com/powershell/module/az.hdinsight/get-azhdinsightcluster) , предоставляемый [Azure PowerShell](/powershell/azure/) , также возвращает сведения о хранилище для кластера.
+> Командлет [Get-аздинсигхтклустер](/powershell/module/az.hdinsight/get-azhdinsightcluster) , предоставляемый [Azure PowerShell](/powershell/azure/) , также возвращает сведения о хранилище для кластера.
 
 ### <a name="get-all-configurations"></a>Получить все конфигурации
 
@@ -335,7 +335,7 @@ $resp.Content
 
    * Создает корневой документ для новой конфигурации.
 
-   * Возвращает содержимое массива `.items[]` и добавляет его в элемент **desired_config**.
+   * Возвращает содержимое массива `.items[]` и добавляет его в элемент **desired_config** .
 
    * Удаляет элементы `href`, `version` и `Config`, так как они не нужны для отправки новой конфигурации.
 

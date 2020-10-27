@@ -6,12 +6,12 @@ ms.author: lufittl
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 10/16/2020
-ms.openlocfilehash: 334eaa88ae927ae61ebb445343494cfdce570563
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: b139e2f14379e0cd52ca72c347d49bcb4512c473
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92167497"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92542086"
 ---
 # <a name="supported-postgresql-major-versions-in-azure-database-for-postgresql---flexible-server"></a>Поддерживаемые основные версии PostgreSQL в базе данных Azure для PostgreSQL-гибкого сервера
 
@@ -30,7 +30,7 @@ ms.locfileid: "92167497"
 
 ## <a name="postgresql-version-10-and-older"></a>PostgreSQL версии 10 и более ранних версий
 
-Мы не поддерживаем PostgreSQL версии 10 и более ранних версий для базы данных Azure для PostgreSQL-гибкого сервера. Если требуются более старые версии, используйте вариант развертывания на [одном сервере](https://docs.microsoft.com/azure/postgresql/concepts-supported-versions) .
+Мы не поддерживаем PostgreSQL версии 10 и более ранних версий для базы данных Azure для PostgreSQL-гибкого сервера. Если требуются более старые версии, используйте вариант развертывания на [одном сервере](../concepts-supported-versions.md) .
 
 ## <a name="managing-upgrades"></a>Управление обновлениями
 

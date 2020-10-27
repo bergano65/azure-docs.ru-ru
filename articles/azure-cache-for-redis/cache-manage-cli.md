@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 01/23/2017
 ms.author: yegu
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: db55ac4ce868f2e6ce2afbfbf014aac67653ce4a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7643f882d5ac330046c169e0a3f2fa4920331d4e
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87500510"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92537700"
 ---
 # <a name="how-to-create-and-manage-azure-cache-for-redis-using-the-azure-classic-cli"></a>Создание кэша Azure для Redis и управление им с помощью классического Azure CLI
 > [!div class="op_single_selector"]
@@ -26,23 +26,23 @@ ms.locfileid: "87500510"
 > [!NOTE]
 > Последние примеры сценариев Azure CLI для кэша Azure для Redis см. в [этой статье](cli-samples.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 Для создания экземпляров кэша Azure для Redis и управления ими с помощью классического Azure CLI необходимо выполнить следующие действия.
 
 * Необходимо иметь учетную запись Azure. Если ее нет, можно создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/) всего за пару минут.
-* [Установите классический интерфейс командной строки Azure](../cli-install-nodejs.md).
+* [Установите классический интерфейс командной строки Azure](/cli/azure/install-classic-cli).
 * Подключите установленный Azure CLI к личной либо рабочей или учебной учетной записи Azure, а затем выполните вход из классического Azure CLI с помощью команды `azure login`.
-* Перед выполнением любой из указанных ниже команд переключите классический Azure CLI в режим диспетчера ресурсов, выполнив команду `azure config mode arm`. Дополнительные сведения см. в разделе [Управление ресурсами и группами ресурсов Azure с помощью классического Azure CLI](../xplat-cli-azure-resource-manager.md).
+* Перед выполнением любой из указанных ниже команд переключите классический Azure CLI в режим диспетчера ресурсов, выполнив команду `azure config mode arm`. Дополнительные сведения см. в разделе [Управление ресурсами и группами ресурсов Azure с помощью классического Azure CLI](../azure-resource-manager/management/manage-resources-cli.md).
 
 ## <a name="azure-cache-for-redis-properties"></a>Свойства кэша Azure для Redis
 При создании и обновлении экземпляров кэша Azure для Redis используются следующие свойства.
 
-| Свойство | Параметр | Описание |
+| Свойство. | Параметр | Описание |
 | --- | --- | --- |
 | name |-n, --name |Имя кэша Azure для Redis. |
 | resource group |-g, --resource-group |Имя группы ресурсов. |
 | location |-l, --location |Расположение для создания кэша. |
-| size |-z, --size |Размер кэша Azure для Redis. Допустимые значения: [C0, C1, C2, C3, C4, C5, C6, P1, P2, P3, P4] |
+| размер; |-z, --size |Размер кэша Azure для Redis. Допустимые значения: [C0, C1, C2, C3, C4, C5, C6, P1, P2, P3, P4] |
 | sku |-x, --sku |Номер SKU Redis. Должен иметь одно из этих значений: [Basic, Standard, Premium] |
 | EnableNonSslPort |-e, --enable-non-ssl-port |Свойство EnableNonSslPort кэша Azure для Redis. Добавьте этот флаг, если вы хотите включить для кэша порт, не поддерживающий протокол TLS/SSL. |
 | Конфигурация Redis |-c, --redis-configuration |Конфигурация Redis. Введите строку ключей и значений конфигурации в формате JSON. Формат:"{"":"","":""}" |

@@ -6,18 +6,18 @@ ms.author: yegu
 ms.service: cache
 ms.topic: conceptual
 ms.date: 08/06/2020
-ms.openlocfilehash: 13ba529dd3067ae16167f0d9c14c8f72b982f52c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 398b567e173691068e6dd932e075d6598dcfe601
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88010875"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92537411"
 ---
 # <a name="azure-cache-for-redis-planning-faqs"></a>Вопросы по планированию кэша Azure для Redis
 
 В этой статье содержатся ответы на часто задаваемые вопросы о планировании кэша Azure для Redis.
 
-## <a name="common-questions-and-answers"></a>Частые вопросы и ответы
+## <a name="common-questions-and-answers"></a>Общие вопросы и ответы
 В этом разделе рассматриваются следующие вопросы и ответы:
 
 * [Производительность кэша Azure для Redis](#azure-cache-for-redis-performance)
@@ -84,12 +84,12 @@ ms.locfileid: "88010875"
 
 Дополнительные сведения о рекомендациях по использованию кэша Azure для Redis с другими облаками см. в следующих ссылках.
 
-- [Azure Government Databases – Azure Cache for Redis](../azure-government/documentation-government-services-database.md#azure-cache-for-redis) (Базы данных Azure для государственных организаций – кэш Azure для Redis)
+- [Azure Government Databases – Azure Cache for Redis](../azure-government/compare-azure-government-global-azure.md) (Базы данных Azure для государственных организаций – кэш Azure для Redis)
 - [Облако Azure для Китая (21Vianet) — кэш Azure для Redis](https://www.azure.cn/home/features/redis-cache/)
 - [Microsoft Azure для Германии](https://azure.microsoft.com/overview/clouds/germany/)
 
 Сведения об использовании кэша Azure для Redis с помощью PowerShell в облаке Azure для государственных организаций, Azure для Китая (21Vianet) или Microsoft Azure — Германия см. в статье [Подключение к другим облакам — Управление кэшем Azure для Redis с использованием Azure PowerShell](cache-how-to-manage-redis-cache-powershell.md#how-to-connect-to-other-clouds).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о другом [кэше Azure для Redis часто задаваемых вопросов](cache-faq.md).

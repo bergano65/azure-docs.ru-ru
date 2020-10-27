@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 06/22/2020
-ms.openlocfilehash: 2177e74bd627e80ea1afbcacaf85baf4e030834c
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
+ms.openlocfilehash: 725b616fec9c2bc4a0540a7941098377e01732e2
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91928985"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92546472"
 ---
 # <a name="reboot-vms-for-hdinsight-clusters"></a>Перезагрузка виртуальных машин для кластеров HDInsight
 
@@ -38,13 +38,13 @@ ms.locfileid: "91928985"
 
 Для использования операции перезагрузки узла требуется два шага: список узлов и перезагрузка узлов.
 
-1. Список узлов. Список узлов кластера можно получить в [Get-аздинсигхсост](https://docs.microsoft.com/powershell/module/az.hdinsight/get-azhdinsighthost).
+1. Список узлов. Список узлов кластера можно получить в [Get-аздинсигхсост](/powershell/module/az.hdinsight/get-azhdinsighthost).
 
       ```
       Get-AzHDInsightHost -ClusterName myclustername
       ```
 
-1. Перезапустите узлы. После получения имен узлов, которые требуется перезагрузить, перезапустите узлы с помощью [restart-аздинсигхсост](https://docs.microsoft.com/powershell/module/az.hdinsight/restart-azhdinsighthost).
+1. Перезапустите узлы. После получения имен узлов, которые требуется перезагрузить, перезапустите узлы с помощью [restart-аздинсигхсост](/powershell/module/az.hdinsight/restart-azhdinsighthost).
 
       ```
       Restart-AzHDInsightHost -ClusterName myclustername -Name wn0-myclus, wn1-myclus
@@ -54,13 +54,13 @@ ms.locfileid: "91928985"
 
 Для отправки запросов в HDInsight можно использовать функцию **попробовать** в документации по API. Для использования операции перезагрузки узла требуется два шага: список узлов и перезагрузка узлов.
 
-1. Список узлов. Список узлов кластера можно получить из REST API или в Ambari. Дополнительные сведения см. в разделе [список HDInsight hosts REST API Operation](https://docs.microsoft.com/rest/api/hdinsight/virtualmachines/listhosts).
+1. Список узлов. Список узлов кластера можно получить из REST API или в Ambari. Дополнительные сведения см. в разделе [список HDInsight hosts REST API Operation](/rest/api/hdinsight/virtualmachines/listhosts).
 
     ```
     POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HDInsight/clusters/{clusterName}/listHosts?api-version=2018-06-01-preview
     ```
 
-1. Перезапустите узлы. После получения имен узлов, которые требуется перезагрузить, перезапустите узлы, используя REST API для перезагрузки узлов. Имя узла соответствует шаблону *NodeType (WN/HN/ZK/GW)*  +  *x*  +  *первых шести символов имени кластера*. Дополнительные сведения см. в статье [Перезагрузка узлов в HDInsight REST API операция](https://docs.microsoft.com/rest/api/hdinsight/virtualmachines/restarthosts).
+1. Перезапустите узлы. После получения имен узлов, которые требуется перезагрузить, перезапустите узлы, используя REST API для перезагрузки узлов. Имя узла соответствует шаблону *NodeType (WN/HN/ZK/GW)*  +  *x*  +  *первых шести символов имени кластера* . Дополнительные сведения см. в статье [Перезагрузка узлов в HDInsight REST API операция](/rest/api/hdinsight/virtualmachines/restarthosts).
 
     ```
     POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HDInsight/clusters/{clusterName}/restartHosts?api-version=2018-06-01-preview
@@ -75,8 +75,8 @@ ms.locfileid: "91928985"
 ]
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Restart-Аздинсигхсост](https://docs.microsoft.com/powershell/module/az.hdinsight/restart-azhdinsighthost)
-* [Виртуальные машины HDInsight REST API](https://docs.microsoft.com/rest/api/hdinsight/virtualmachines)
-* [REST API HDInsight](https://docs.microsoft.com/rest/api/hdinsight/)
+* [Restart-Аздинсигхсост](/powershell/module/az.hdinsight/restart-azhdinsighthost)
+* [Виртуальные машины HDInsight REST API](/rest/api/hdinsight/virtualmachines)
+* [REST API HDInsight](/rest/api/hdinsight/)

@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 05/05/2017
 ms.author: radeltch
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 82b0b53b1933a7ca08163a12b2b7649b7b9538f4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c112896e78c07fafa2d714b0533db1f58dd57ffd
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91361642"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92535609"
 ---
 # <a name="utilize-azure-infrastructure-vm-restart-to-achieve-higher-availability-of-an-sap-system"></a>Использование перезапуска виртуальной машины в инфраструктуре Azure для косвенного повышения доступности системы SAP
 
@@ -228,7 +228,7 @@ ms.locfileid: "91361642"
 
 Ниже представлен пример архитектуры для системы SAP NetWeaver, в которой используются высокая доступность инфраструктуры Azure и учетные записи хранения.
 
-![Использование высокой доступности инфраструктуры Azure для косвенного повышения уровня доступности приложений SAP][planning-guide-figure-2900]
+![Схема, на которой показана архитектура системы SAP NetWeaver, которая использует высокую доступность и учетные записи хранения в инфраструктуре Azure.][planning-guide-figure-2900]
 
 Ниже представлен пример архитектуры для системы SAP NetWeaver, в которой используются высокий уровень доступности инфраструктуры Azure и управляемые диски.
 
@@ -280,6 +280,6 @@ ms.locfileid: "91361642"
   * [Start/Stop SAP along with your Unix Server Start/Stop](https://scn.sap.com/community/unix/blog/2012/08/07/startstop-sap-along-with-your-unix-server-startstop) (Запуск и остановка SAP одновременно с запуском и остановкой сервера UNIX)
   * [Запуск и остановка агентов управления SAP NetWeaver](https://help.sap.com/saphelp_nwpi711/helpdata/en/49/9a15525b20423ee10000000a421938/content.htm)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Информацию обо всех возможностях по повышению доступности для SAP NetWeaver с учетом приложений см. в разделе [Высокая доступность приложений SAP в Azure IaaS][sap-high-availability-architecture-scenarios-sap-app-ha].

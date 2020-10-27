@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: troubleshooting
 ms.custom: hdinsightactive
 ms.date: 04/14/2020
-ms.openlocfilehash: 021bfc0b87b0da800728eda26d9f5222bd52bc1e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: dbae7254949eaa642b8344b4e550de4a44b2f33f
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86086965"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92545979"
 ---
 # <a name="understand-and-resolve-errors-received-from-webhcat-on-hdinsight"></a>Понимание и устранение ошибок, полученных из WebHCat в HDInsight
 
@@ -39,7 +39,7 @@ ms.locfileid: "86086965"
 
 ## <a name="too-many-requests"></a>Слишком много запросов
 
-**Код состояния HTTP**: 429
+**Код состояния HTTP** : 429
 
 | Причина | Решение |
 | --- | --- |
@@ -47,7 +47,7 @@ ms.locfileid: "86086965"
 
 ## <a name="server-unavailable"></a>Сервер недоступен
 
-**Код состояния HTTP**: 503
+**Код состояния HTTP** : 503
 
 | Причина | Решение |
 | --- | --- |
@@ -55,7 +55,7 @@ ms.locfileid: "86086965"
 
 ## <a name="bad-request-content-could-not-find-job"></a>Недопустимый запрос. Содержимое: не удалось найти задание
 
-**Код состояния HTTP**: 400
+**Код состояния HTTP** : 400
 
 | Причина | Решение |
 | --- | --- |
@@ -65,7 +65,7 @@ ms.locfileid: "86086965"
 
 ## <a name="bad-gateway"></a>Недопустимый шлюз
 
-**Код состояния HTTP**: 502
+**Код состояния HTTP** : 502
 
 | Причина | Решение |
 | --- | --- |
@@ -83,7 +83,7 @@ ms.locfileid: "86086965"
 
 * Подпишитесь на [@AzureSupport](https://twitter.com/azuresupport) — официальный канал Microsoft Azure для работы с клиентами. Вступайте в сообщество Azure для получения нужных ресурсов: ответов, поддержки и советов экспертов.
 
-* Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки на [портале Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **Поддержка** в строке меню или откройте центр **Справка и поддержка**. Дополнительные сведения см. в статье [Создание запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request). Доступ к управлению подписками и поддержкой выставления счетов уже включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется в рамках одного из [планов Службы поддержки Azure](https://azure.microsoft.com/support/plans/).
+* Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки на [портале Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **Поддержка** в строке меню или откройте центр **Справка и поддержка** . Дополнительные сведения см. в статье [Создание запроса на поддержку Azure](../azure-portal/supportability/how-to-create-azure-support-request.md). Доступ к управлению подписками и поддержкой выставления счетов уже включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется в рамках одного из [планов Службы поддержки Azure](https://azure.microsoft.com/support/plans/).
 
 [maximum-applications]: https://docs.cloudera.com/HDPDocuments/HDP2/HDP-2.1.3/bk_system-admin-guide/content/setting_application_limits.html
 [max-procs]: https://cwiki.apache.org/confluence/display/Hive/WebHCat+Configure#WebHCatConfigure-WebHCatConfiguration

@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 08/24/2020
-ms.openlocfilehash: 25e38beb561ee954db2987643775f3a3c6e05737
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 85382ecd627ec8afc63a85de0debd98f94a89849
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89668773"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92544891"
 ---
 # <a name="ipsec-encryption-in-transit-for-azure-hdinsight"></a>Шифрование IPSec при передаче для Azure HDInsight
 
@@ -21,13 +21,13 @@ ms.locfileid: "89668773"
 > [!Note]
 > Шифрование в передаче сейчас включено для следующих регионов: Восточная часть США, Юго-Центральный регион США, Западная США 2. 
 
-## <a name="background"></a>История
+## <a name="background"></a>Историческая справка
 
 Azure HDInsight предлагает разнообразные функции безопасности для защиты корпоративных данных. Эти решения группируются с учетом основных принципов безопасности периметра, проверки подлинности, авторизации, аудита, шифрования и соответствия. Шифрование может применяться к данным как при хранении, так и при передаче.
 
 Шифрование неактивных данных охватывается шифрованием на стороне сервера в учетных записях хранения Azure, а также шифрование дисков на виртуальных машинах Azure, которые входят в кластер HDInsight.
 
-Шифрование данных при передаче в HDInsight достигается благодаря [протоколу TLS](https://docs.microsoft.com/azure/hdinsight/transport-layer-security) для аккссингя шлюзов кластера и [безопасности протокола IP (IPSec)](https://en.wikipedia.org/wiki/IPsec) между узлами кластера. IPSec можно дополнительно включить между всеми головными узлами, рабочими узлами, граничными узлами и узлами Zookeeper. Он не включен для трафика между узлами шлюза или [брокера идентификаторов](https://docs.microsoft.com/azure/hdinsight/domain-joined/identity-broker) , которые являются виртуальными машинами на основе Windows и другими узлами на основе Linux в кластере.
+Шифрование данных при передаче в HDInsight достигается благодаря [протоколу TLS](../transport-layer-security.md) для аккссингя шлюзов кластера и [безопасности протокола IP (IPSec)](https://en.wikipedia.org/wiki/IPsec) между узлами кластера. IPSec можно дополнительно включить между всеми головными узлами, рабочими узлами, граничными узлами и узлами Zookeeper. Он не включен для трафика между узлами шлюза или [брокера идентификаторов](./identity-broker.md) , которые являются виртуальными машинами на основе Windows и другими узлами на основе Linux в кластере.
 
 ## <a name="enable-encryption-in-transit"></a>Включить шифрование при передаче
 
@@ -79,7 +79,7 @@ az group deployment create --name HDInsightEnterpriseSecDeployment \
     --parameters parameters.json
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Общие сведения о корпоративной безопасности в Azure HDInsight](hdinsight-security-overview.md)
 * [Синхронизация Azure Active Directory пользователей с кластером HDInsight](../disk-encryption.md).

@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 04/16/2020
-ms.openlocfilehash: 886e8cb1c5d86c1a61e65fa8cbd54c022f6c1c6b
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: d4fcf7830250e5e6d2e4255ddb88867023606d0e
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92484820"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92547560"
 ---
 # <a name="create-virtual-networks-for-azure-hdinsight-clusters"></a>Создание виртуальных сетей для кластеров Azure HDInsight
 
@@ -27,7 +27,7 @@ ms.locfileid: "92484820"
 
 Ниже приведены другие необходимые условия для примеров в этой статье.
 
-* Если вы используете PowerShell, необходимо установить [модуль AZ](https://docs.microsoft.com/powershell/azure/).
+* Если вы используете PowerShell, необходимо установить [модуль AZ](/powershell/azure/).
 * Если вы хотите использовать Azure CLI и еще не установили ее, см. статью [установка Azure CLI](/cli/azure/install-azure-cli).
 
 > [!IMPORTANT]  
@@ -377,6 +377,6 @@ az network nsg rule create -g RESOURCEGROUP --nsg-name hdisecure -n ssh --protoc
 * См. инструкции по [настройке георепликации кластера Apache HBase в виртуальных сетях Azure](hbase/apache-hbase-replication.md).
 * Дополнительные сведения о виртуальных сетях Azure см. в статье [Виртуальная сеть Azure](../virtual-network/virtual-networks-overview.md).
 
-* Дополнительные сведения о группах безопасности сети см. в статье [Фильтрация сетевого трафика с помощью групп безопасности сети](../virtual-network/security-overview.md).
+* Дополнительные сведения о группах безопасности сети см. в статье [Фильтрация сетевого трафика с помощью групп безопасности сети](../virtual-network/network-security-groups-overview.md).
 
 * Дополнительные сведения о пользовательских маршрутах см. в статье [User-defined routes and IP forwarding](../virtual-network/virtual-networks-udr-overview.md) (Определяемые пользователем маршруты и IP-пересылка).

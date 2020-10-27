@@ -7,12 +7,12 @@ ms.service: mariadb
 ms.topic: how-to
 ms.date: 01/09/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 565e6fb2def64dd594e1b0018f3378ea09bc63cb
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: fb3ed4e41125131538957addce5bf935b897b581
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92426192"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92537224"
 ---
 # <a name="create-and-manage-private-link-for-azure-database-for-mariadb-using-cli"></a>Создание и управление частной ссылкой для базы данных Azure для MariaDB с помощью интерфейса командной строки
 
@@ -40,7 +40,7 @@ az group create --name myResourceGroup --location westeurope
 ```
 
 ## <a name="create-a-virtual-network"></a>Создайте виртуальную сеть
-Создайте виртуальную сеть с помощью команды [az network vnet create](/cli/azure/network/vnet). В этом примере создается виртуальная сеть по умолчанию с именем *myVirtualNetwork* с подсетью *mySubnet*.
+Создайте виртуальную сеть с помощью команды [az network vnet create](/cli/azure/network/vnet). В этом примере создается виртуальная сеть по умолчанию с именем *myVirtualNetwork* с подсетью *mySubnet* .
 
 ```azurecli-interactive
 az network vnet create \
@@ -50,7 +50,7 @@ az network vnet create \
 ```
 
 ## <a name="disable-subnet-private-endpoint-policies"></a>Отключение политик подсети частной конечной точки 
-Azure развертывает ресурсы в подсеть в виртуальной сети, поэтому необходимо создать или обновить подсеть, чтобы отключить [политики сети](../private-link/disable-private-endpoint-network-policy.md)частной конечной точки. Обновите конфигурацию подсети *mySubnet* с помощью команды [az network vnet subnet update](/cli/azure/network/vnet/subnet?view=azure-cli-latest#az-network-vnet-subnet-update).
+Azure развертывает ресурсы в подсеть в виртуальной сети, поэтому необходимо создать или обновить подсеть, чтобы отключить [политики сети](../private-link/disable-private-endpoint-network-policy.md)частной конечной точки. Обновите конфигурацию подсети *mySubnet* с помощью команды [az network vnet subnet update](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-update).
 
 ```azurecli-interactive
 az network vnet subnet update \
@@ -60,7 +60,7 @@ az network vnet subnet update \
  --disable-private-endpoint-network-policies true
 ```
 ## <a name="create-the-vm"></a>Создание виртуальной машины 
-Создайте виртуальную машину с помощью команды az vm create. При появлении запроса укажите пароль в качестве учетных данных для входа на виртуальную машину. В этом примере создается виртуальная машина с именем *myVM*. 
+Создайте виртуальную машину с помощью команды az vm create. При появлении запроса укажите пароль в качестве учетных данных для входа на виртуальную машину. В этом примере создается виртуальная машина с именем *myVM* . 
 ```azurecli-interactive
 az vm create \
   --resource-group myResourceGroup \
@@ -133,24 +133,24 @@ az network private-dns record-set a add-record --record-set-name mydemoserver --
 
 Подключитесь к виртуальной машине *myVm* из Интернета, выполнив следующие действия.
 
-1. На портале в строке поиска введите *myVm*.
+1. На портале в строке поиска введите *myVm* .
 
-1. Нажмите кнопку **Подключиться**. После нажатия кнопки **Подключиться** откроется окно **Connect to virtual machine** (Подключение к виртуальной машине).
+1. Нажмите кнопку **Подключиться** . После нажатия кнопки **Подключиться** откроется окно **Connect to virtual machine** (Подключение к виртуальной машине).
 
-1. Щелкните **Скачать RDP-файл**. Azure создаст и скачает на ваш компьютер файл протокола удаленного рабочего стола (*RDP*).
+1. Щелкните **Скачать RDP-файл** . Azure создаст и скачает на ваш компьютер файл протокола удаленного рабочего стола ( *RDP* ).
 
-1. Откройте файл *downloaded.rdp*.
+1. Откройте файл *downloaded.rdp* .
 
-    1. При появлении запроса выберите **Подключиться**.
+    1. При появлении запроса выберите **Подключиться** .
 
     1. Введите имя пользователя и пароль, указанные при создании виртуальной машины.
 
         > [!NOTE]
         > Возможно, потребуется выбрать **More choices** > **Use a different account** (Дополнительные варианты > Использовать другую учетную запись), чтобы указать учетные данные, введенные при создании виртуальной машины.
 
-1. Щелкните **ОК**.
+1. Щелкните **ОК** .
 
-1. При входе в систему может появиться предупреждение о сертификате. В таком случае выберите **Да** или **Продолжить**.
+1. При входе в систему может появиться предупреждение о сертификате. В таком случае выберите **Да** или **Продолжить** .
 
 1. Когда появится рабочий стол виртуальной машины, сверните его, чтобы вернуться на локальный рабочий стол.  
 
@@ -171,7 +171,7 @@ az network private-dns record-set a add-record --record-set-name mydemoserver --
 
 3. Проверьте подключение к частной ссылке для сервера MariaDB, используя любой доступный клиент. В примере ниже я использовал [MySQL Workbench](https://dev.mysql.com/doc/workbench/en/wb-installing-windows.html) для выполнения этой операции.
 
-4. В окне **новое подключение**введите или выберите следующие сведения:
+4. В окне **новое подключение** введите или выберите следующие сведения:
 
     | Параметр | Значение |
     | ------- | ----- |
@@ -181,7 +181,7 @@ az network private-dns record-set a add-record --record-set-name mydemoserver --
     | Пароль | Введите пароль, указанный при создании сервера MariaDB. |
     ||
 
-5. Выберите **проверить подключение** или **ОК**.
+5. Выберите **проверить подключение** или **ОК** .
 
 6. При необходимости Просмотр баз данных из левого меню и создание или запрос информации из базы данных MariaDB
 

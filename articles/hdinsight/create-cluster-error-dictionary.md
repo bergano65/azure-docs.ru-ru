@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: troubleshooting
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 08/24/2020
-ms.openlocfilehash: cae8647d970020a22d59dc49b058d43fe28dd00c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 97cad12ad1854df37b54ff663385fe79ca15b7c2
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88816462"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92543106"
 ---
 # <a name="azure-hdinsight-cluster-creation-errors"></a>Azure HDInsight: ошибки создания кластера
 
@@ -24,7 +24,7 @@ ms.locfileid: "88816462"
 
 ## <a name="error-codedeploymentdocument-csmdocument_2_0-failed-the-validation"></a>Код ошибки: Деплойментдокумент "CsmDocument_2_0" не прошел проверку
 
-**Ошибка**: "не удается получить доступ к расположению действия скрипта: \<SCRIPT ACTION URL\> "
+**Ошибка** : "не удается получить доступ к расположению действия скрипта: \<SCRIPT ACTION URL\> "
 
 ### <a name="error-message-1"></a>Сообщение об ошибке 1
 
@@ -72,7 +72,7 @@ ms.locfileid: "88816462"
 
 ## <a name="error-codeinvalidvirtualnetworkid"></a>Код ошибки: Инвалидвиртуалнетворкид  
 
-### <a name="error"></a>Ошибка
+### <a name="error"></a>Error
 
 "VirtualNetworkId является недопустимым. VirtualNetworkId ' \<USER_VIRTUALNETWORKID\> ' * '
 
@@ -96,7 +96,7 @@ ms.locfileid: "88816462"
 
 ## <a name="error-code-customizationfailederrorcode"></a>Код ошибки: Кустомизатионфаиледерроркоде
 
-### <a name="error"></a>Ошибка
+### <a name="error"></a>Error
 
 "Сбой развертывания кластера из-за ошибки в действии пользовательского скрипта. Действия, завершившиеся сбоем: \<SCRIPT_NAME\> . для дальнейшей отладки ошибки перейдите в пользовательский интерфейс Ambari. "
 
@@ -112,7 +112,7 @@ ms.locfileid: "88816462"
 
 ## <a name="error-codeinvaliddocumenterrorcode"></a>Код ошибки: Инвалиддокументерроркоде
 
-### <a name="error"></a>Ошибка
+### <a name="error"></a>Error
 
 " \<META_STORE_TYPE\> Версия схемы хранилище метаданных \<METASTORE_MAJOR_VERSION\> в базе данных \<DATABASE_NAME\> несовместима с версией кластера \<CLUSTER_VERSION\> "
 
@@ -128,7 +128,7 @@ ms.locfileid: "88816462"
 
 ## <a name="error-code-failedtoconnectwithclustererrorcode"></a>Код ошибки: Фаиледтоконнектвисклустерерроркоде 
 
-### <a name="error"></a>Ошибка
+### <a name="error"></a>Error
 
 "Не удалось подключиться к конечной точке управления кластера для выполнения операции масштабирования. Убедитесь, что правила сетевой безопасности не блокируют внешний доступ к кластеру, и что доступ к пользовательскому интерфейсу диспетчера кластеров (Ambari) возможен успешно».
 
@@ -141,7 +141,7 @@ ms.locfileid: "88816462"
 Если вы планируете использовать группы безопасности сети для управления сетевым трафиком, перед установкой HDInsight выполните следующие действия.
 
 - Определите регион Azure, который планируется использовать для HDInsight.
-- Определите IP-адреса, необходимые для HDInsight. Дополнительные сведения см. в статье [HDInsight management IP addresses](https://docs.microsoft.com/azure/hdinsight/hdinsight-management-ip-addresses) (IP-адреса управления HDInsight).
+- Определите IP-адреса, необходимые для HDInsight. Дополнительные сведения см. в статье [HDInsight management IP addresses](./hdinsight-management-ip-addresses.md) (IP-адреса управления HDInsight).
   - Создайте или измените группы безопасности сети для подсети, в которой планируется установить HDInsight.
   - Для групп безопасности сети разрешите входящий трафик через порт 443 с IP-адресов. Эта конфигурация гарантирует, что службы управления HDInsight могут получить доступ к кластеру извне виртуальной сети.
 
@@ -149,7 +149,7 @@ ms.locfileid: "88816462"
 
 ## <a name="error-code-storagepermissionsblockedformsi"></a>Код ошибки: Сторажепермиссионсблоккедформси
 
-### <a name="error"></a>Ошибка
+### <a name="error"></a>Error
 
 "У управляемого удостоверения нет разрешений на учетную запись хранения. Убедитесь, что роль "владелец данных BLOB-объекта хранилища" назначена управляемому удостоверению для учетной записи хранения. Хранилище:/Subscriptions/ \<Subscription ID\> /ResourceGroups/ \< Resource Group Name\> /Провидерс/Микрософт.стораже/сторажеаккаунтс/ \<Storage Account Name\> , управляемое удостоверение:/Subscriptions/ \<Subscription ID\> /resourceGroups// \< Resource Group Name\> /провидерс/Микрософт.манажедидентити/усерассигнедидентитиес/ \<User Managed Identity Name\> "
 
@@ -161,7 +161,7 @@ ms.locfileid: "88816462"
 
 1. Перейдите на портал Azure.
 1. Войдите в свою учетную запись хранения.
-1. Просмотрите раздел **Управление доступом (IAM)**.
+1. Просмотрите раздел **Управление доступом (IAM)** .
 1. Убедитесь, что пользователь имеет роль участника данных BLOB-объекта хранилища или назначенную ему роль владельца данных BLOB-объекта хранилища.
 
 Дополнительные сведения см. в разделе [Настройка разрешений для управляемого удостоверения в учетной записи Data Lake Storage 2-го поколения](hdinsight-hadoop-use-data-lake-storage-gen2.md).
@@ -170,9 +170,9 @@ ms.locfileid: "88816462"
 
 ## <a name="error-code-invalidnetworksecuritygroupsecurityrules"></a>Код ошибки: InvalidNetworkSecurityGroupSecurityRules
 
-### <a name="error"></a>Ошибка
+### <a name="error"></a>Error
 
-"Правила безопасности в группе безопасности сети/Subscriptions/ \<SubscriptionID\> /resourceGroups/<имя группы ресурсов \> по умолчанию/поставщики/Microsoft. Network/networkSecurityGroups/ \<Network Security Group Name\> настроены с подсетью/Subscriptions/ \<SubscriptionID\> /resourceGroups/ \<Resource Group name\> РГ-вестеуропе-внет-ТомТом-дефаулт/providers/Microsoft. Network/virtualNetworks/ \<Virtual Network Name\> /субнетс/не \<Subnet Name\> разрешают обязательное входящее и/или исходящее подключение. Дополнительные сведения см. в [Подплане плана виртуальной сети для Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-plan-virtual-network-deployment)или обратитесь в службу поддержки ".
+"Правила безопасности в группе безопасности сети/Subscriptions/ \<SubscriptionID\> /resourceGroups/<имя группы ресурсов \> по умолчанию/поставщики/Microsoft. Network/networkSecurityGroups/ \<Network Security Group Name\> настроены с подсетью/Subscriptions/ \<SubscriptionID\> /resourceGroups/ \<Resource Group name\> РГ-вестеуропе-внет-ТомТом-дефаулт/providers/Microsoft. Network/virtualNetworks/ \<Virtual Network Name\> /субнетс/не \<Subnet Name\> разрешают обязательное входящее и/или исходящее подключение. Дополнительные сведения см. в [Подплане плана виртуальной сети для Azure HDInsight](./hdinsight-plan-virtual-network-deployment.md)или обратитесь в службу поддержки ".
 
 ### <a name="cause"></a>Причина
 
@@ -182,15 +182,15 @@ ms.locfileid: "88816462"
 
 Если вы планируете использовать группы безопасности сети для управления сетевым трафиком, перед установкой HDInsight выполните следующие действия.
 
-- Укажите регион Azure, который планируется использовать для HDInsight, и создайте список надежных IP-адресов для вашего региона. Дополнительные сведения см. в разделе [службы работоспособности и управления: конкретные регионы](https://docs.microsoft.com/azure/hdinsight/hdinsight-management-ip-addresses#health-and-management-services-specific-regions).
-- Выявление IP-адресов, необходимых для HDInsight. Дополнительные сведения см. в разделе [IP-адреса управления HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-management-ip-addresses).
+- Укажите регион Azure, который планируется использовать для HDInsight, и создайте список надежных IP-адресов для вашего региона. Дополнительные сведения см. в разделе [службы работоспособности и управления: конкретные регионы](./hdinsight-management-ip-addresses.md#health-and-management-services-specific-regions).
+- Выявление IP-адресов, необходимых для HDInsight. Дополнительные сведения см. в разделе [IP-адреса управления HDInsight](./hdinsight-management-ip-addresses.md).
 - Создайте или измените группы безопасности сети для подсети, в которой планируется установить HDInsight. Для групп безопасности сети разрешите входящий трафик через порт 443 с IP-адресов. Эта конфигурация гарантирует, что службы управления HDInsight могут получить доступ к кластеру извне виртуальной сети.
 
 ---
 
 ## <a name="error-code-cluster-setup-failed-to-install-components-on-one-or-more-hosts"></a>Код ошибки: программе установки кластера не удалось установить компоненты на одном или нескольких узлах
 
-### <a name="error"></a>Ошибка
+### <a name="error"></a>Error
 
 "Программе установки кластера не удалось установить компоненты на одном или нескольких узлах. Повторите запрос ".
 
@@ -206,7 +206,7 @@ ms.locfileid: "88816462"
 
 ## <a name="error-code-failedtoconnectwithclustererrorcode"></a>Код ошибки: Фаиледтоконнектвисклустерерроркоде
 
-### <a name="error"></a>Ошибка
+### <a name="error"></a>Error
 
 Не удалось подключиться к конечной точке управления кластера. Повторите попытку позже.
 
@@ -216,7 +216,7 @@ ms.locfileid: "88816462"
 
 ### <a name="resolution"></a>Решение
 
-При использовании пользовательской группы безопасности сети VNet (группы безопасности сети) и определяемых пользователем маршрутов (определяемые пользователем маршруты) убедитесь, что кластер может обмениваться данными со службами управления HDInsight. Дополнительные сведения см. в разделе [IP-адреса управления HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-management-ip-addresses).
+При использовании пользовательской группы безопасности сети VNet (группы безопасности сети) и определяемых пользователем маршрутов (определяемые пользователем маршруты) убедитесь, что кластер может обмениваться данными со службами управления HDInsight. Дополнительные сведения см. в разделе [IP-адреса управления HDInsight](./hdinsight-management-ip-addresses.md).
 
 ---
 
@@ -240,4 +240,4 @@ ms.locfileid: "88816462"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об устранении ошибок при создании кластера см. в статье [Устранение неполадок при создании кластера с помощью Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hadoop/hdinsight-troubleshoot-cluster-creation-fails).
+Дополнительные сведения об устранении ошибок при создании кластера см. в статье [Устранение неполадок при создании кластера с помощью Azure HDInsight](./hadoop/hdinsight-troubleshoot-cluster-creation-fails.md).

@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/19/2019
-ms.openlocfilehash: 5c0694f9ef16de9c69d424b5005ca0d5a277a77f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fdd43a017e584a07d61d41e1af06d30db2f30ac7
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89505035"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92542783"
 ---
 # <a name="set-up-backup-and-replication-for-apache-hbase-and-apache-phoenix-on-hdinsight"></a>Настройка резервного копирования и репликации Apache HBase и Apache Phoenix в HDInsight
 
@@ -52,7 +52,7 @@ HBase в HDInsight использует хранилище по умолчани
 
 * Создайте экземпляр HDInsight, указывающий на текущее место хранения. Созданный экземпляр будет содержать все имеющиеся данные.
 
-* Скопируйте папку `hbase` в другой контейнер больших двоичных объектов службы хранилища Azure или другое расположение Data Lake Storage, а затем запустите новый кластер с этими данными. Для службы хранилища Azure используйте служебную программу [AzCopy](../../storage/common/storage-use-azcopy.md), а для Data Lake Storage — [AdlCopy](../../data-lake-store/data-lake-store-copy-data-azure-storage-blob.md).
+* Скопируйте папку `hbase` в другой контейнер больших двоичных объектов службы хранилища Azure или другое расположение Data Lake Storage, а затем запустите новый кластер с этими данными. Для службы хранилища Azure используйте служебную программу [AzCopy](../../storage/common/storage-use-azcopy-v10.md), а для Data Lake Storage — [AdlCopy](../../data-lake-store/data-lake-store-copy-data-azure-storage-blob.md).
 
 ## <a name="export-then-import"></a>Экспорт и импорт
 
@@ -173,7 +173,7 @@ curl -u admin:<password> -X GET -H "X-Requested-By: ambari" "https://<clusterNam
 
 ## <a name="snapshots"></a>Моментальные снимки
 
-[Моментальные снимки](https://hbase.apache.org/book.html#ops.snapshots) позволяют создавать резервные копии данных в хранилище HBase на момент времени. Они имеют минимальные издержки и создаются в течение нескольких секунд. Во время этой операции, которая, по сути, является операцией с метаданными, записываются имена всех файлов, сохраненных на этот момент в хранилище. При создании моментального снимка фактические данные не копируются. Моментальные снимки зависят от постоянных данных, хранящихся в HDFS, где операции обновления, удаления и вставки представляют собой новые данные. Вы можете восстановить (*клонировать*) моментальный снимок в том же кластере или экспортировать его в другой кластер.
+[Моментальные снимки](https://hbase.apache.org/book.html#ops.snapshots) позволяют создавать резервные копии данных в хранилище HBase на момент времени. Они имеют минимальные издержки и создаются в течение нескольких секунд. Во время этой операции, которая, по сути, является операцией с метаданными, записываются имена всех файлов, сохраненных на этот момент в хранилище. При создании моментального снимка фактические данные не копируются. Моментальные снимки зависят от постоянных данных, хранящихся в HDFS, где операции обновления, удаления и вставки представляют собой новые данные. Вы можете восстановить ( *клонировать* ) моментальный снимок в том же кластере или экспортировать его в другой кластер.
 
 Чтобы создать моментальный снимок, подключитесь к головному узлу кластера HDInsight HBase по протоколу SSH и запустите оболочку `hbase`:
 
@@ -242,7 +242,7 @@ hbase org.apache.hadoop.hbase.snapshot.ExportSnapshot -Dfs.azure.account.key.mya
 
 Чтобы включить репликацию в HDInsight, примените действие скрипта к выполняющемуся исходному кластеру HDInsight. Пошаговые инструкции по включению репликации в кластере или настройке репликации в образцах кластеров, созданных в виртуальных сетях с помощью шаблонов Azure Resource Manager, см. в статье о [Настройке репликации Apache HBase](apache-hbase-replication.md). Эта статья также содержит инструкции по включению репликации метаданных Phoenix.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Настройка репликации Apache HBase](apache-hbase-replication.md)
-* [Работа с программой импорта и экспорта HBase](https://blogs.msdn.microsoft.com/data_otaku/2016/12/21/working-with-the-hbase-import-and-export-utility/)
+* [Работа с программой импорта и экспорта HBase](/archive/blogs/data_otaku/working-with-the-hbase-import-and-export-utility)

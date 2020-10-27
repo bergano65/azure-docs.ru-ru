@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 02/17/2020
-ms.openlocfilehash: 593d6861ee5913fffb25bfdea4829e1b1ce6ddc6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5128ac7608dfce08471f7a7f97ed28a7971e62b2
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86087407"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92534453"
 ---
 # <a name="analyze-logs-for-apache-kafka-on-hdinsight"></a>Анализ журналов для Apache Kafka в HDInsight
 
@@ -50,7 +50,7 @@ ms.locfileid: "86087407"
 
 1. В [портал Azure](https://portal.azure.com)выберите рабочую область log Analytics.
 
-2. В меню слева в разделе **Общие**выберите **журналы**. Здесь можно выполнять поиск данных, собранных из Kafka. Введите запрос в окне запроса и нажмите кнопку **выполнить**. Ниже приведены некоторые примеры поисковых запросов:
+2. В меню слева в разделе **Общие** выберите **журналы** . Здесь можно выполнять поиск данных, собранных из Kafka. Введите запрос в окне запроса и нажмите кнопку **выполнить** . Ниже приведены некоторые примеры поисковых запросов:
 
 * Использование диска:
 
@@ -104,7 +104,7 @@ ms.locfileid: "86087407"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о Azure Monitor см. в статьях [обзор Azure Monitor](../../log-analytics/log-analytics-get-started.md)и [запрос Azure Monitor журналов для мониторинга кластеров HDInsight](../hdinsight-hadoop-oms-log-analytics-use-queries.md).
+Дополнительные сведения о Azure Monitor см. в статьях [обзор Azure Monitor](../../azure-monitor/overview.md)и [запрос Azure Monitor журналов для мониторинга кластеров HDInsight](../hdinsight-hadoop-oms-log-analytics-use-queries.md).
 
 Дополнительные сведения о работе с Apache Kafka см. в следующих документах:
 

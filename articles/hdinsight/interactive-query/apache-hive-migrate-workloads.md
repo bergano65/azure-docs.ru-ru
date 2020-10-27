@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 11/13/2019
-ms.openlocfilehash: 26dfe8d134f9f38d8272895583ba2eff614d78e4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bcc0faa8fdbd61ab3e3e0886256f7c796e5a98e2
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91308390"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92534691"
 ---
 # <a name="migrate-azure-hdinsight-36-hive-workloads-to-hdinsight-40"></a>Перенос рабочих нагрузок Hive из Azure HDInsight 3.6 в HDInsight 4.0
 
@@ -39,9 +39,9 @@ ms.locfileid: "91308390"
 ### <a name="3-upgrade-metastore-schema"></a>3. обновление схемы хранилище метаданных
 После завершения **копирования** хранилище метаданных запустите сценарий обновления схемы в [действии сценария](../hdinsight-hadoop-customize-cluster-linux.md) в существующем кластере HDInsight 3,6, чтобы обновить схему хранилище метаданных до куста 3. (Этот шаг не требует подключения нового хранилище метаданных к кластеру.) Это позволяет подключить базу данных как HDInsight 4,0 хранилище метаданных.
 
-Используйте значения в таблице ниже. Замените на `SQLSERVERNAME DATABASENAME USERNAME PASSWORD` соответствующие значения для хранилище метаданных Hive **копии**, разделенные пробелами. При указании имени SQL Server не включайте ". database.windows.net".
+Используйте значения в таблице ниже. Замените на `SQLSERVERNAME DATABASENAME USERNAME PASSWORD` соответствующие значения для хранилище метаданных Hive **копии** , разделенные пробелами. При указании имени SQL Server не включайте ". database.windows.net".
 
-|Свойство | Значение |
+|Свойство. | Значение |
 |---|---|
 |Тип скрипта|- Custom|
 |Имя|Обновление Hive|
@@ -103,7 +103,7 @@ select * from dbo.version
 >
 > * После завершения этого сценария предполагается, что старый кластер больше не будет использоваться для доступа к любой из таблиц или баз данных, на которые ссылается скрипт.
 >
-> * Все управляемые таблицы станут транзакционными в HDInsight 4,0. При необходимости обеспечьте нетранзакционную таблицу, экспортируя данные во внешнюю таблицу со свойством external. Table. очисткой = ' true '. Например,
+> * Все управляемые таблицы станут транзакционными в HDInsight 4,0. При необходимости обеспечьте нетранзакционную таблицу, экспортируя данные во внешнюю таблицу со свойством external. Table. очисткой = ' true '. Например, примененная к объекту директива
 >
 >    ```SQL
 >    create table tablename_backup like tablename;
@@ -117,7 +117,7 @@ select * from dbo.version
 
 1. Подключитесь к кластеру HDInsight 3,6 с помощью [клиента Secure Shell (SSH)](../hdinsight-hadoop-linux-use-ssh-unix.md).
 
-1. В открытом сеансе SSH Скачайте следующий файл скрипта, чтобы создать файл с именем **аллтаблес. HQL**.
+1. В открытом сеансе SSH Скачайте следующий файл скрипта, чтобы создать файл с именем **аллтаблес. HQL** .
 
     ```bash
     wget https://hdiconfigactions.blob.core.windows.net/hivemetastoreschemaupgrade/exporthive_hdi_3_6.sh
@@ -208,11 +208,11 @@ select * from dbo.version
 
 ## <a name="query-execution-across-hdinsight-versions"></a>Выполнение запросов в версиях HDInsight
 
-Существует два способа выполнения и отладки запросов Hive/LLAP в кластере HDInsight 3,6. Хивекли предоставляет возможности командной строки, а представление [представления/Hive Tez](https://docs.microsoft.com/azure/hdinsight/hadoop/apache-hadoop-use-hive-ambari-view) предоставляет рабочий процесс на основе графического пользовательского интерфейса.
+Существует два способа выполнения и отладки запросов Hive/LLAP в кластере HDInsight 3,6. Хивекли предоставляет возможности командной строки, а представление [представления/Hive Tez](../hadoop/apache-hadoop-use-hive-ambari-view.md) предоставляет рабочий процесс на основе графического пользовательского интерфейса.
 
 В HDInsight 4,0 Хивекли был заменен на Beeline. Представление Tez/Hive предоставляет рабочий процесс на основе графического пользовательского интерфейса. Хивекли — это Thrift клиент для Hiveserver 1, а Beeline — клиент JDBC, предоставляющий доступ к Hiveserver 2. Beeline также можно использовать для подключения к любой другой конечной точке базы данных, совместимой с JDBC. Beeline доступен в HDInsight 4,0 без необходимости установки.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Объявление о HDInsight 4,0](../hdinsight-version-release.md)
 * [HDInsight 4,0. подробное углубление](https://azure.microsoft.com/blog/deep-dive-into-azure-hdinsight-4-0/)

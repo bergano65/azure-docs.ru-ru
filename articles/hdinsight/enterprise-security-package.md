@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 05/08/2020
-ms.openlocfilehash: 8801929412da614784c76dbdf7c8282b31364409
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.openlocfilehash: d77d9877fbc49fbb147965b30e299b75b60ccce3
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92327898"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92546659"
 ---
 # <a name="enterprise-security-package-for-azure-hdinsight"></a>Корпоративный пакет безопасности для Azure HDInsight
 
@@ -22,13 +22,13 @@ ms.locfileid: "92327898"
 
     В прошлом вы создали кластеры HDInsight с локальным пользователем-администратором и локальным пользователем SSH. Локальный администратор может получить доступ ко всем файлам, папкам, таблицам и столбцам.  С Корпоративный пакет безопасности вы включаете управление доступом на основе ролей Azure, интегрируя HDInsight с вашими доменными службами Azure Active Directory.
 
-    Дополнительные сведения см. в разделе:
+    Дополнительные сведения см. на странице
 
     * [Общие сведения об обеспечении безопасности Apache Hadoop с помощью Корпоративного пакета безопасности](./domain-joined/hdinsight-security-overview.md)
 
     * [Корпоративный пакет безопасности для HDInsight](./domain-joined/apache-domain-joined-architecture.md)
 
-    * [Настройка среды с присоединенной к домену песочницей](./domain-joined/apache-domain-joined-configure.md)
+    * [Настройка среды с присоединенной к домену песочницей](./domain-joined/apache-domain-joined-configure-using-azure-adds.md)
 
     * [Настройка присоединенных к домену кластеров HDInsight с помощью доменных служб Azure Active Directory](./domain-joined/apache-domain-joined-configure-using-azure-adds.md)
 

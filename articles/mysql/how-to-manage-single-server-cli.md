@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: how-to
 ms.date: 9/22/2020
-ms.openlocfilehash: c3a3fae9150b6805e9bb1533f2bb585d8845b253
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1f0b059a25cd9fc77a59dc0a78feb18c2c549057
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90940439"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92546863"
 ---
 # <a name="manage-an-azure-database-for-mysql-single-server-using-the-azure-cli"></a>Управление базой данных Azure для MySQL Single Server с помощью Azure CLI
 
@@ -20,13 +20,13 @@ ms.locfileid: "90940439"
 ## <a name="prerequisites"></a>Предварительные требования
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу. Для этой статьи требуется запустить локально Azure CLI версии 2.0 или более поздней. Чтобы узнать, какая установлена версия, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
 
-Вам потребуется выполнить вход в учетную запись с помощью команды [az login](https://docs.microsoft.com/cli/azure/reference-index?view=azure-cli-latest#az-login). Обратите внимание на свойство **идентификатора**, которое ссылается на **идентификатор подписки** вашей учетной записи Azure.
+Вам потребуется выполнить вход в учетную запись с помощью команды [az login](/cli/azure/reference-index#az-login). Обратите внимание на свойство **идентификатора** , которое ссылается на **идентификатор подписки** вашей учетной записи Azure.
 
 ```azurecli-interactive
 az login
 ```
 
-Выберите конкретную подписку вашей учетной записи, выполнив команду [az account set](/cli/azure/account). Запишите значение **идентификатора** из выходных данных команды **az login**, чтобы использовать его в команде в качестве значения аргумента **подписки**. Если вы используете несколько подписок, выберите соответствующую, в которой за ресурс будет взиматься плата. Чтобы отобразить все ваши подписки, выполните команду [az account list](https://docs.microsoft.com/cli/azure/account?view=azure-cli-latest#az-account-list).
+Выберите конкретную подписку вашей учетной записи, выполнив команду [az account set](/cli/azure/account). Запишите значение **идентификатора** из выходных данных команды **az login** , чтобы использовать его в команде в качестве значения аргумента **подписки** . Если вы используете несколько подписок, выберите соответствующую, в которой за ресурс будет взиматься плата. Чтобы отобразить все ваши подписки, выполните команду [az account list](/cli/azure/account#az-account-list).
 
 ```azurecli
 az account set --subscription <subscription id>
@@ -35,7 +35,7 @@ az account set --subscription <subscription id>
 Если вы еще не создали сервер, обратитесь к этому [краткому](quickstart-create-mysql-server-database-using-azure-cli.md) руководству, чтобы создать его.
 
 ## <a name="scale-compute-and-storage"></a>Масштабирование вычислений и хранилища
-Вы можете легко масштабировать ценовую категорию, вычисления и хранилище с помощью следующей команды. Вы можете просмотреть все операции сервера, которые можно выполнить с помощью [AZ MySQL Server Overview](/cli/azure/mysql/server?view=azure-cli-latest) .
+Вы можете легко масштабировать ценовую категорию, вычисления и хранилище с помощью следующей команды. Вы можете просмотреть все операции сервера, которые можно выполнить с помощью [AZ MySQL Server Overview](/cli/azure/mysql/server) .
 
 ```azurecli-interactive
 az mysql server update --resource-group myresourcegroup --name mydemoserver --sku-name GP_Gen5_4 --storage-size 6144
@@ -82,7 +82,7 @@ az mysql server update --resource-group myresourcegroup --name mydemoserver --ad
 az mysql server delete --resource-group myresourcegroup --name mydemoserver
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Перезапуск сервера](howto-restart-server-cli.md)
 - [Восстановление сервера в неправильном состоянии](howto-restore-server-cli.md)
 - [Мониторинг и настройка сервера](concepts-monitoring.md)

@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 01/08/2020
-ms.openlocfilehash: ff0c7001184af58432a7915b3a7df29f900bedec
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8b5f5a9fb8ddd25f750b19044bac7253bbff2f98
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87006608"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92545214"
 ---
 # <a name="run-mapreduce-jobs-with-apache-hadoop-on-hdinsight-using-powershell"></a>Выполнение заданий MapReduce с помощью PowerShell и Apache Hadoop в HDInsight
 
@@ -25,7 +25,7 @@ ms.locfileid: "87006608"
 
 * Кластер Apache Hadoop в HDInsight. См. [Создание кластеров под управлением Linux в HDInsight с помощью портала Azure](../hdinsight-hadoop-create-linux-clusters-portal.md).
 
-* Установите [модуль Az](https://docs.microsoft.com/powershell/azure/) для PowerShell.
+* Установите [модуль Az](/powershell/azure/) для PowerShell.
 
 ## <a name="run-a-mapreduce-job"></a>Выполнение задания MapReduce
 
@@ -36,14 +36,14 @@ Azure PowerShell предоставляет *командлеты* , позво�
 |Командлет | Описание |
 |---|---|
 |Connect-AzAccount|выполняет аутентификацию Azure PowerShell для подписки Azure.|
-|New-AzHDInsightMapReduceJobDefinition|создает *определение задания*, используя заданную информацию MapReduce.|
-|Start-AzHDInsightJob|отправляет определение задания в HDInsight и запускает задание. Будет возвращен объект *задания*.|
+|New-AzHDInsightMapReduceJobDefinition|создает *определение задания* , используя заданную информацию MapReduce.|
+|Start-AzHDInsightJob|отправляет определение задания в HDInsight и запускает задание. Будет возвращен объект *задания* .|
 |Wait-AzHDInsightJob|проверяет состояние задания с помощью объекта-задания. Он ожидает завершения задания или превышения времени ожидания.|
 |Get-AzHDInsightJobOutput|используется для получения выходных данных задания.|
 
 Следующие шаги показывают, как использовать эти командлеты для выполнения задания в кластере HDInsight:
 
-1. С помощью редактора Сохраните следующий код как **mapreducejob.ps1**.
+1. С помощью редактора Сохраните следующий код как **mapreducejob.ps1** .
 
     [!code-powershell[main](../../../powershell_scripts/hdinsight/use-mapreduce/use-mapreduce.ps1?range=5-69)]
 
