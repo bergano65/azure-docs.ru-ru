@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 08/14/2019
-ms.openlocfilehash: d27c648980338b3a9e12bd618eb4620fe9988fd7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 84c48f14ae57cfa4aa3290924d3d170c075fe3a6
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80436919"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92532552"
 ---
 # <a name="frequently-asked-questions-about-apache-kafka-in-azure-hdinsight"></a>Frequently asked questions about Apache Kafka in Azure HDInsight (Часто задаваемые вопросы о Apache Kafka в Azure HDInsight)
 
@@ -68,7 +68,7 @@ ms.locfileid: "80436919"
 
 ## <a name="can-a-kafka-cluster-work-with-databricks"></a>Может ли кластер Kafka работать с модулями. 
 
-Да, кластеры Kafka могут работать с модулями, пока они находятся в одной виртуальной сети. Чтобы использовать кластер Kafka с модулями, создайте виртуальную сеть с кластером HDInsight Kafka, а затем укажите эту виртуальную сеть при создании рабочей области "кирпичы" и используйте внедрение виртуальной сети. Дополнительные сведения см. в статье [Deploy Azure Databricks in your Azure Virtual Network (VNet Injection)](https://docs.microsoft.com/azure/databricks/administration-guide/cloud-configurations/azure/vnet-inject) (Развертывание Azure Databricks в виртуальной сети Azure (внедрение виртуальной сети)). При создании рабочей области "кирпичи данных" необходимо указать имена брокера начальной загрузки кластера Kafka. Сведения о получении имен Kafka Broker см. [в статье Получение сведений об узле Apache Zookeeper и брокера](https://docs.microsoft.com/azure/hdinsight/kafka/apache-kafka-get-started#getkafkainfo).
+Да, кластеры Kafka могут работать с модулями, пока они находятся в одной виртуальной сети. Чтобы использовать кластер Kafka с модулями, создайте виртуальную сеть с кластером HDInsight Kafka, а затем укажите эту виртуальную сеть при создании рабочей области "кирпичы" и используйте внедрение виртуальной сети. Дополнительные сведения см. в статье [Deploy Azure Databricks in your Azure Virtual Network (VNet Injection)](/azure/databricks/administration-guide/cloud-configurations/azure/vnet-inject) (Развертывание Azure Databricks в виртуальной сети Azure (внедрение виртуальной сети)). При создании рабочей области "кирпичи данных" необходимо указать имена брокера начальной загрузки кластера Kafka. Сведения о получении имен Kafka Broker см. [в статье Получение сведений об узле Apache Zookeeper и брокера](./apache-kafka-get-started.md#getkafkainfo).
 
 ## <a name="how-can-i-have-maximum-data-durability"></a>Как можно получить максимальную устойчивость данных?
 

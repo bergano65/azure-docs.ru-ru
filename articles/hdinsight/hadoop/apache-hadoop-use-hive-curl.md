@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 01/06/2020
-ms.openlocfilehash: 524c888bb132405f03af44f9c28198be0ac89370
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 956406ec5ac99be5973f1928bbb89db10e68b339
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92489597"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92533773"
 ---
 # <a name="run-apache-hive-queries-with-apache-hadoop-in-hdinsight-using-rest"></a>Выполнение запросов Apache Hive в Apache Hadoop в HDInsight с использованием REST
 
@@ -25,13 +25,13 @@ ms.locfileid: "92489597"
 
 * Кластер Apache Hadoop в HDInsight. Ознакомьтесь со статьей [Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](./apache-hadoop-linux-tutorial-get-started.md).
 
-* Клиент REST. В этом документе используется [командлет Invoke-WebRequest](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest) [в Windows PowerShell и](https://curl.haxx.se/) функция [Bash](https://docs.microsoft.com/windows/wsl/install-win10).
+* Клиент REST. В этом документе используется [командлет Invoke-WebRequest](/powershell/module/microsoft.powershell.utility/invoke-webrequest) [в Windows PowerShell и](https://curl.haxx.se/) функция [Bash](/windows/wsl/install-win10).
 
 * При использовании Bash также потребуется JQ, процессор командной строки JSON.  См. раздел [https://stedolan.github.io/jq/](https://stedolan.github.io/jq/).
 
 ## <a name="base-uri-for-rest-api"></a>Базовый URI для API-интерфейса RESTful
 
-Базовый универсальный код ресурса (URI) для REST API в HDInsight — `https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME` , где `CLUSTERNAME` — это имя кластера.  В именах кластеров в URI **учитывается регистр**.  Хотя имя кластера в части URI () в полном доменном имени ( `CLUSTERNAME.azurehdinsight.net` ) не учитывает регистр, другие вхождения в URI учитывают регистр.
+Базовый универсальный код ресурса (URI) для REST API в HDInsight — `https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME` , где `CLUSTERNAME` — это имя кластера.  В именах кластеров в URI **учитывается регистр** .  Хотя имя кластера в части URI () в полном доменном имени ( `CLUSTERNAME.azurehdinsight.net` ) не учитывает регистр, другие вхождения в URI учитывают регистр.
 
 ## <a name="authentication"></a>Аутентификация
 
@@ -120,7 +120,7 @@ $clusterName
     {"module":"hive","version":"1.2.1000.2.6.5.3008-11"}
     ```
 
-1. Используйте следующую команду, чтобы создать таблицу **log4jLogs**.
+1. Используйте следующую команду, чтобы создать таблицу **log4jLogs** .
 
     ```bash
     jobid=$(curl -s -u admin:$password -d user.name=admin -d execute="DROP+TABLE+log4jLogs;CREATE+EXTERNAL+TABLE+log4jLogs(t1+string,t2+string,t3+string,t4+string,t5+string,t6+string,t7+string)+ROW+FORMAT+DELIMITED+FIELDS+TERMINATED+BY+' '+STORED+AS+TEXTFILE+LOCATION+'/example/data/';SELECT+t4+AS+sev,COUNT(*)+AS+count+FROM+log4jLogs+WHERE+t4+=+'[ERROR]'+AND+INPUT__FILE__NAME+LIKE+'%25.log'+GROUP+BY+t4;" -d statusdir="/example/rest" https://$clusterName.azurehdinsight.net/templeton/v1/hive | jq -r .id)
@@ -156,7 +156,7 @@ $clusterName
 
    * `ROW FORMAT` — настройка форматирования данных. Поля всех журналов разделены пробелами.
    * `STORED AS TEXTFILE LOCATION` — Где хранятся данные (каталог example/Data) и хранятся в виде текста.
-   * `SELECT` — Выбирает количество строк, в которых столбец **T4** содержит значение **[Error]**. Эта инструкция возвращает значение **3**, так как данное значение содержат три строки.
+   * `SELECT` — Выбирает количество строк, в которых столбец **T4** содержит значение **[Error]** . Эта инструкция возвращает значение **3** , так как данное значение содержат три строки.
 
      > [!NOTE]  
      > Обратите внимание, что при использовании Curl пробелы между операторами HiveQL заменяются знаком `+`. Заключенные в кавычки значения, содержащие пробелы в качестве разделителя, заменять на `+`не нужно.
@@ -185,7 +185,7 @@ $clusterName
 
 1. После изменения состояния задания на **SUCCEEDED** результаты задания можно получить из хранилища больших двоичных объектов Azure. Параметр `statusdir`, передаваемый с помощью запроса, содержит расположение выходного файла. В данном случае это `/example/rest`. Этот адрес задает каталог `example/curl` для сохранения выходных данных, который размещен в хранилище по умолчанию для кластера.
 
-    Вы можете вывести список этих файлов и скачать их с помощью [интерфейса командной строки Azure](/cli/azure/install-azure-cli). Дополнительные сведения об использовании Azure CLI со службой хранилища Azure см. в документе [Использование Azure CLI со службой хранилища Azure](https://docs.microsoft.com/azure/storage/storage-azure-cli).
+    Вы можете вывести список этих файлов и скачать их с помощью [интерфейса командной строки Azure](/cli/azure/install-azure-cli). Дополнительные сведения об использовании Azure CLI со службой хранилища Azure см. в документе [Использование Azure CLI со службой хранилища Azure](../../storage/blobs/storage-quickstart-blobs-cli.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

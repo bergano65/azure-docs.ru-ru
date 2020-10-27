@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: how-to
 ms.date: 10/14/2019
-ms.openlocfilehash: 2a6b324c4caf9619566ba335ab2e5a318ab68bb6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e85226e7a2544cda01f40a1c1be6be32f11d9dfc
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86079434"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92542800"
 ---
 # <a name="use-apache-zeppelin-to-run-apache-phoenix-queries-over-apache-hbase-in-azure-hdinsight"></a>Использование Apache Zeppelin для запуска запросов Apache Phoenix через Apache HBase в Azure HDInsight
 
@@ -31,7 +31,7 @@ Apache Zeppelin — это веб-Записная книжка с открыт�
 
 1. В URL-адресе `https://CLUSTERNAME.azurehdinsight.net/zeppelin` замените `CLUSTERNAME` именем своего кластера. В веб-браузере перейдите по этому URL-адресу. Введите имя пользователя и пароль для входа в кластер.
 
-1. На странице Zeppelin выберите **создать новую заметку**.
+1. На странице Zeppelin выберите **создать новую заметку** .
 
     ![Заметка Zeppelin для кластера Interactive Query HDInsight](./media/apache-hbase-phoenix-zeppelin/hbase-zeppelin-create-note.png)
 
@@ -40,13 +40,13 @@ Apache Zeppelin — это веб-Записная книжка с открыт�
     - Имя примечания. Введите имя для примечания.
     - Интерпретатор по умолчанию: выберите **JDBC** из раскрывающегося списка.
 
-    Затем выберите **создать заметку**.
+    Затем выберите **создать заметку** .
 
 1. Убедитесь, что в заголовке записной книжки отображается состояние подключено. Он обозначается зеленой точкой в правом верхнем углу.
 
     ![Состояния записной книжки Zeppelin](./media/apache-hbase-phoenix-zeppelin/hbase-zeppelin-connected.png "Состояния записной книжки Zeppelin")
 
-1. Создайте таблицу HBase. Введите следующую команду и нажмите клавиши **SHIFT + ВВОД**:
+1. Создайте таблицу HBase. Введите следующую команду и нажмите клавиши **SHIFT + ВВОД** :
 
     ```sql
     %jdbc(phoenix)
@@ -98,5 +98,5 @@ Apache Zeppelin — это веб-Записная книжка с открыт�
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Apache Phoenix теперь поддерживает Zeppelin в Azure HDInsight](https://blogs.msdn.microsoft.com/ashish/2018/08/17/apache-phoenix-now-supports-zeppelin-in-azure-hdinsight/)
+- [Apache Phoenix теперь поддерживает Zeppelin в Azure HDInsight](/archive/blogs/ashish/apache-phoenix-now-supports-zeppelin-in-azure-hdinsight)
 - [Грамматика Apache Phoenix](https://phoenix.apache.org/language/index.html)

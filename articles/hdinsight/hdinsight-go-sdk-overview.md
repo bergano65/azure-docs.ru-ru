@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: seodec18
 ms.date: 01/03/2020
-ms.openlocfilehash: 162049c12c0618298695e43dae43f16e9fb50260
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: d46f20f33e2627525f8f7f5b08bdaa2875626940
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92372197"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92541984"
 ---
 # <a name="hdinsight-sdk-for-go-preview"></a>Пакет SDK для HDInsight для Go (Предварительная версия)
 
@@ -39,7 +39,7 @@ ms.locfileid: "92372197"
 Для использования пакета SDK нужно выполнить аутентификацию с помощью подписки Azure.  Ниже описано, как создать субъект-службу и использовать его для аутентификации. После этого у вас будет экземпляр `ClustersClient` , который содержит множество функций (описанных в разделах ниже), которые можно использовать для выполнения операций управления.
 
 > [!NOTE]  
-> Кроме описанного выше, есть и другие методы аутентификации, которые могут оказаться удобнее для вас. Дополнительные сведения о функциях см. в статье [Методы аутентификации в пакете Azure SDK для Go](https://docs.microsoft.com/azure/go/azure-sdk-go-authorization)
+> Кроме описанного выше, есть и другие методы аутентификации, которые могут оказаться удобнее для вас. Дополнительные сведения о функциях см. в статье [Методы аутентификации в пакете Azure SDK для Go](/azure/go/azure-sdk-go-authorization)
 
 ### <a name="authentication-example-using-a-service-principal"></a>Пример аутентификации с помощью субъекта-службы
 
@@ -365,7 +365,7 @@ extClient.Authorizer, _ = credentials.Authorizer()
 ### <a name="enable-oms-monitoring"></a>Включение мониторинга OMS
 
 > [!NOTE]  
-> Чтобы включить мониторинг OMS, требуется рабочая область Log Analytics. Если вы не создавали такую рабочую область, см. статью [Создание рабочей области Log Analytics на портале Azure](https://docs.microsoft.com/azure/log-analytics/log-analytics-quick-create-workspace).
+> Чтобы включить мониторинг OMS, требуется рабочая область Log Analytics. Если вы не создавали такую рабочую область, см. статью [Создание рабочей области Log Analytics на портале Azure](../azure-monitor/learn/quick-create-workspace.md).
 
 Чтобы включить мониторинг OMS в кластере, выполните такую команду:
 
@@ -394,7 +394,7 @@ extClient.DisableMonitoring(context.Background(), "<Resource Group Name", "Clust
 В кластерах HDInsight поддерживается функция конфигурации с использованием действий сценариев, которая вызывает пользовательские сценарии настройки кластера.
 
 > [!NOTE]  
-> Дополнительные сведения о действиях скриптов см. в статье [Настройка кластеров HDInsight под управлением Linux с помощью действий сценариев](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-customize-cluster-linux).
+> Дополнительные сведения о действиях скриптов см. в статье [Настройка кластеров HDInsight под управлением Linux с помощью действий сценариев](./hdinsight-hadoop-customize-cluster-linux.md).
 
 ### <a name="execute-script-actions"></a>Выполнение действий сценариев
 
@@ -489,6 +489,6 @@ for (page.NotDone()) {
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Просмотрите [справочные материалы GoDoc](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/preview/hdinsight/mgmt/2015-03-01-preview/hdinsight). GoDocs предоставляет справочную документацию по всем функциям в пакете SDK.

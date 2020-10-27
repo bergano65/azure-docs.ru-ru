@@ -4,12 +4,12 @@ description: Узнайте о поддерживаемых службах и с
 ms.subservice: logs
 ms.topic: reference
 ms.date: 09/01/2020
-ms.openlocfilehash: b9d3dafdf62bda2d07eb7f9d7c357f61ec913d44
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 791f95dc75c55c7a5c7c26d0719e186245713fba
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92143997"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92543416"
 ---
 # <a name="common-and-service-specific-schema-for-azure-resource-logs"></a>Распространенная и зависящая от службы схема для журналов ресурсов Azure
 
@@ -70,7 +70,7 @@ ms.locfileid: "92143997"
 | ExpressRoute | Схема недоступна. |
 | Брандмауэр Azure | Схема недоступна. |
 | Front Door | [Ведение журнала для передней дверцы](../../frontdoor/front-door-diagnostics.md) |
-| Центр Интернета вещей | [Использование Azure Monitor](../../iot-hub/iot-hub-monitor-resource-health.md#use-azure-monitor) |
+| Центр Интернета вещей | [Использование Azure Monitor](../../iot-hub/monitor-iot-hub-reference.md#resource-logs) |
 | Key Vault |[Ведение журнала хранилища ключей Azure](../../key-vault/general/logging.md) |
 | Служба Kubernetes |[Ведение журнала Kubernetes для Azure](../../aks/view-master-logs.md#log-event-schema) |
 | Load Balancer |[Служба анализа журналов для балансировщика нагрузки Azure](../../load-balancer/load-balancer-monitor-log.md) |

@@ -4,12 +4,12 @@ ms.author: glenga
 ms.date: 7/24/2019
 ms.topic: include
 ms.service: azure-functions
-ms.openlocfilehash: 1928a8238cd73087e3c199675574dd1395f4d76d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0159ceb6e5d6d64a7a9bda383396607e4ce05b84
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "68881319"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92164876"
 ---
 #### <a name="built-in-log-streaming"></a>Встроенная потоковая передача журналов
 
@@ -19,9 +19,12 @@ ms.locfileid: "68881319"
 func azure functionapp logstream <FunctionAppName>
 ```
 
+>[!NOTE]
+>Встроенная потоковая передача журналов пока что не поддерживается в Core Tools для приложений-функций, выполняемых в Linux в рамках плана "Потребление". Чтобы просматривать журналы почти в реальном времени, для таких планов размещения необходимо использовать Live Metrics Stream.
+
 #### <a name="live-metrics-stream"></a>Динамический поток метрик
 
-Кроме того, вы можете просмотреть [Live Metrics Stream](../articles/azure-monitor/app/live-stream.md) для своего приложения-функции в новом окне браузера. Для этого включите параметр `--browser`, как показано в следующем примере:
+Вы можете просмотреть журналы [Live Metrics Stream](../articles/azure-monitor/app/live-stream.md) для своего приложения-функции в новом окне браузера. Для этого включите параметр `--browser`, как показано в следующем примере:
 
 ```bash
 func azure functionapp logstream <FunctionAppName> --browser

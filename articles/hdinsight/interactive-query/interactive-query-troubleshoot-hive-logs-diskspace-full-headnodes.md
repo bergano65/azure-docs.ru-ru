@@ -7,12 +7,12 @@ author: nisgoel
 ms.author: nisgoel
 ms.reviewer: jasonh
 ms.date: 10/05/2020
-ms.openlocfilehash: a102c9f375b37579cf6f92b08d67f762d3dfd26a
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: 5554a66927fc70f22ec552b938ae62038a04acb9
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92220896"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92533025"
 ---
 # <a name="scenario-apache-hive-logs-are-filling-up-the-disk-space-on-the-head-nodes-in-azure-hdinsight"></a>Сценарий: журналы Apache Hive заполняют дисковое пространство головных узлов в Azure HDInsight.
 
@@ -23,7 +23,7 @@ ms.locfileid: "92220896"
 В кластере Apache Hive или LLAP нежелательные журналы занимают все дисковое пространство на головных узлах. Из-за этого могут возникнуть следующие проблемы.
 
 1. Отказ в доступе SSH из-за отсутствия свободного места на головном узле.
-2. Ambari выдает *ошибку HTTP: служба 503 недоступна*.
+2. Ambari выдает *ошибку HTTP: служба 503 недоступна* .
 3. HiveServer2 Interactive не перезапускается.
 
 `ambari-agent`При возникновении проблемы в журналах будет отображаться следующее.
@@ -77,4 +77,4 @@ ambari_agent - HostCheckReportFileHandler.py - [54697] - ambari_agent.HostCheckR
 
 * Подключитесь к [@AzureSupport](https://twitter.com/azuresupport) — официальной учетной записи Microsoft Azure. Она помогает оптимизировать работу пользователей благодаря возможности доступа к ресурсам сообщества Azure (ответы на вопросы, поддержка и консультации специалистов).
 
-* Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки на [портале Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **Поддержка** в строке меню или откройте центр **Справка и поддержка**. Дополнительные сведения см. в статье [Создание запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request). Доступ к управлению подписками и поддержкой выставления счетов уже включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется в рамках одного из [планов Службы поддержки Azure](https://azure.microsoft.com/support/plans/).
+* Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки на [портале Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **Поддержка** в строке меню или откройте центр **Справка и поддержка** . Дополнительные сведения см. в статье [Создание запроса на поддержку Azure](../../azure-portal/supportability/how-to-create-azure-support-request.md). Доступ к управлению подписками и поддержкой выставления счетов уже включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется в рамках одного из [планов Службы поддержки Azure](https://azure.microsoft.com/support/plans/).

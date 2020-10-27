@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 01/23/2020
-ms.openlocfilehash: f7861ae4980f13fbd87780ab2d26fa3376f33532
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b6bd7d807916ef53177b11df6ed9ce0b22f530be
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "76776200"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92533348"
 ---
 # <a name="scenario-unable-to-read-apache-yarn-log-in-azure-hdinsight"></a>Сценарий: не удается прочитать журнал Apache Yarn в Azure HDInsight
 
@@ -34,7 +34,7 @@ java.io.IOException: Not a valid BCFile.
 
 1. В веб-браузере перейдите на страницу `https://CLUSTERNAME.azurehdinsight.net`, где `CLUSTERNAME` — это имя вашего кластера.
 
-1. В пользовательском интерфейсе Ambari перейдите на страницу конфигурации **YARN**  >  **Configs**  >  **Advanced**  >  **Advanced YARN-site**.
+1. В пользовательском интерфейсе Ambari перейдите на страницу конфигурации **YARN**  >  **Configs**  >  **Advanced**  >  **Advanced YARN-site** .
 
 1. Для хранилища WASB: значение по умолчанию для `yarn.log-aggregation.file-formats` — `IndexedFormat,TFile` . Измените значение на `TFile` .
 
@@ -50,4 +50,4 @@ java.io.IOException: Not a valid BCFile.
 
 * Подпишитесь на [@AzureSupport](https://twitter.com/azuresupport) — официальный канал Microsoft Azure для работы с клиентами. Вступайте в сообщество Azure для получения нужных ресурсов: ответов, поддержки и советов экспертов.
 
-* Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки на [портале Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **Поддержка** в строке меню или откройте центр **Справка и поддержка**. Дополнительные сведения см. в статье [Создание запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request). Доступ к управлению подписками и поддержкой выставления счетов уже включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется в рамках одного из [планов Службы поддержки Azure](https://azure.microsoft.com/support/plans/).
+* Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки на [портале Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **Поддержка** в строке меню или откройте центр **Справка и поддержка** . Дополнительные сведения см. в статье [Создание запроса на поддержку Azure](../../azure-portal/supportability/how-to-create-azure-support-request.md). Доступ к управлению подписками и поддержкой выставления счетов уже включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется в рамках одного из [планов Службы поддержки Azure](https://azure.microsoft.com/support/plans/).

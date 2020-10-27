@@ -7,12 +7,12 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.topic: how-to
 ms.date: 09/23/2020
-ms.openlocfilehash: 6d4539e5dbc7182386a60317a9ee45a986ffd61f
-ms.sourcegitcommit: 090ea6e8811663941827d1104b4593e29774fa19
+ms.openlocfilehash: 99ea17dad4f99cdab3fb44b8031e60e6cf69879c
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91999941"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92543157"
 ---
 # <a name="azure-hdinsight-id-broker-preview"></a>Брокер ИДЕНТИФИКАТОРов Azure HDInsight (Предварительная версия)
 
@@ -43,7 +43,7 @@ ms.locfileid: "91999941"
 
 По-прежнему может быть несколько устаревших приложений, поддерживающих только обычную проверку подлинности (то есть имя пользователя и пароль). Для этих сценариев по-прежнему можно использовать обычную проверку подлинности HTTP для подключения к шлюзам кластера. В этой настройке необходимо обеспечить сетевое подключение между узлами шлюза с конечной точкой службы федерации Active Directory (AD FS) (AD FS), чтобы обеспечить прямую отправку информации из узлов шлюза.
 
-На следующей схеме показана обычная последовательность проверки подлинности для федеративных пользователей. Сначала шлюз пытается выполнить проверку подлинности с помощью [ропк Flow](https://docs.microsoft.com/azure/active-directory/develop/v2-oauth-ropc). Если в Azure AD не синхронизированы хэши паролей, то возвращается обнаружение конечной точки AD FS и завершает проверку подлинности путем доступа к конечной точке AD FS.
+На следующей схеме показана обычная последовательность проверки подлинности для федеративных пользователей. Сначала шлюз пытается выполнить проверку подлинности с помощью [ропк Flow](../../active-directory/develop/v2-oauth-ropc.md). Если в Azure AD не синхронизированы хэши паролей, то возвращается обнаружение конечной точки AD FS и завершает проверку подлинности путем доступа к конечной точке AD FS.
 
 :::image type="content" source="media/identity-broker/basic-authentication.png" alt-text="Схема, показывающая поток проверки подлинности с помощью брокера ИДЕНТИФИКАТОРов HDInsight.":::
 
@@ -54,7 +54,7 @@ ms.locfileid: "91999941"
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 1. Выполните базовые действия по созданию кластера Корпоративный пакет безопасности. Дополнительные сведения см. в статье [Создание кластера HDInsight с корпоративный пакет безопасности](apache-domain-joined-configure-using-azure-adds.md#create-an-hdinsight-cluster-with-esp).
-1. Выберите **включить брокер идентификаторов HDInsight**.
+1. Выберите **включить брокер идентификаторов HDInsight** .
 
 Функция брокера ИДЕНТИФИКАТОРов HDInsight добавляет в кластер одну лишнюю виртуальную машину. Эта виртуальная машина — это узел брокера ИДЕНТИФИКАТОРов HDInsight, который включает серверные компоненты для поддержки проверки подлинности. Узел брокера ИДЕНТИФИКАТОРов HDInsight — это домен, присоединенный к домену Azure AD DS.
 
@@ -103,7 +103,7 @@ ms.locfileid: "91999941"
 
 ## <a name="tool-integration"></a>Интеграция средств
 
-Средства HDInsight обновлены для встроенной поддержки OAuth. Используйте эти средства для современного доступа на основе OAuth к кластерам. [Подключаемый модуль HDInsight IntelliJ](https://docs.microsoft.com/azure/hdinsight/spark/apache-spark-intellij-tool-plugin#integrate-with-hdinsight-identity-broker-hib) можно использовать для приложений на основе Java, таких как Scala. [Средства Spark и Hive для Visual Studio Code](https://docs.microsoft.com/azure/hdinsight/hdinsight-for-vscode) можно использовать для заданий PySpark и Hive. Эти средства поддерживают как пакетные, так и Интерактивные задания.
+Средства HDInsight обновлены для встроенной поддержки OAuth. Используйте эти средства для современного доступа на основе OAuth к кластерам. [Подключаемый модуль HDInsight IntelliJ](../spark/apache-spark-intellij-tool-plugin.md#integrate-with-hdinsight-identity-broker-hib) можно использовать для приложений на основе Java, таких как Scala. [Средства Spark и Hive для Visual Studio Code](../hdinsight-for-vscode.md) можно использовать для заданий PySpark и Hive. Эти средства поддерживают как пакетные, так и Интерактивные задания.
 
 ## <a name="ssh-access-without-a-password-hash-in-azure-ad-ds"></a>Доступ по протоколу SSH без хэша пароля в Azure AD DS
 
@@ -117,11 +117,11 @@ ms.locfileid: "91999941"
 
 Если ваша организация не синхронизирует хэши паролей с AD DS Azure, рекомендуется создать одного облачного пользователя в Azure AD. Затем назначьте его администратору кластера при создании кластера и используйте его в целях администрирования. Его можно использовать для получения корневого доступа к виртуальным машинам по протоколу SSH.
 
-Сведения об устранении неполадок при проверке подлинности см. в [этом](https://docs.microsoft.com/azure/hdinsight/domain-joined/domain-joined-authentication-issues)разделе.
+Сведения об устранении неполадок при проверке подлинности см. в [этом](./domain-joined-authentication-issues.md)разделе.
 
 ## <a name="clients-using-oauth-to-connect-to-an-hdinsight-gateway-with-hdinsight-id-broker"></a>Клиенты, использующие OAuth для подключения к шлюзу HDInsight с помощью Azure ID Broker
 
-В программе установки брокера HDInsight ID можно обновить пользовательские приложения и клиенты, подключающиеся к шлюзу, чтобы сначала получить требуемый маркер OAuth. Выполните действия, описанные в [этом документе](https://docs.microsoft.com/azure/storage/common/storage-auth-aad-app) , чтобы получить маркер со следующими сведениями:
+В программе установки брокера HDInsight ID можно обновить пользовательские приложения и клиенты, подключающиеся к шлюзу, чтобы сначала получить требуемый маркер OAuth. Выполните действия, описанные в [этом документе](../../storage/common/storage-auth-aad-app.md) , чтобы получить маркер со следующими сведениями:
 
 *   URI ресурса OAuth: `https://hib.azurehdinsight.net` 
 *   AppId: 7865c1d2-F040-46cc-875f-831a1ef6a28a

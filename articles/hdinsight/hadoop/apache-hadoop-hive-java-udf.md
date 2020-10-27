@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,hdiseo17may2017, devx-track-java
 ms.date: 11/20/2019
-ms.openlocfilehash: 15a86fd191eefc5882150fb276228d18efd6ff5d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1e0c16ee7aa66847cc6f3f4618b8090b7ce86663
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87323797"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92533790"
 ---
 # <a name="use-a-java-udf-with-apache-hive-in-hdinsight"></a>Использование определяемых пользователем функций Java с Apache Hive в HDInsight
 
@@ -22,7 +22,7 @@ ms.locfileid: "87323797"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Кластер Hadoop в HDInsight. Ознакомьтесь со статьей [Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](./apache-hadoop-linux-tutorial-get-started.md).
-* [Java Developer Kit (JDK) версии 8](https://aka.ms/azure-jdks)
+* [Java Developer Kit (JDK) версии 8](/azure/developer/java/fundamentals/java-jdk-long-term-support)
 * Средство [Apache Maven](https://maven.apache.org/download.cgi), [установленное](https://maven.apache.org/install.html) согласно инструкций Apache.  Maven — система сборки проектов Java.
 * [Схема универсального кода ресурса (URI)](../hdinsight-hadoop-linux-information.md#URI-and-scheme) для основного хранилища кластеров. Это будет wasb://для службы хранилища Azure, abfs://для Azure Data Lake Storage 2-го поколения или adl://для Azure Data Lake Storage 1-го поколения. Если для службы хранилища Azure включено безопасное перемещение, URI будет таким: `wasbs://`.  См. также сведения о [безопасной передаче](../../storage/common/storage-require-secure-transfer.md).
 
@@ -269,7 +269,7 @@ $text = [IO.File]::ReadAllText($original_file) -replace "`r`n", "`n"
 [IO.File]::WriteAllText($original_file, $text)
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Другие способы работы с Hive в HDInsight см. в [этой статье](hdinsight-use-hive.md).
 

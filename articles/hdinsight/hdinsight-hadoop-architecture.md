@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 02/07/2020
-ms.openlocfilehash: cbd1303417f008da476356a274dde30d7d02d36f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 389aee77ac56407f3a116d42ad62fbd94de1bb4e
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89505511"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92541950"
 ---
 # <a name="apache-hadoop-architecture-in-hdinsight"></a>Архитектура Apache Hadoop в HDInsight
 
@@ -37,7 +37,7 @@ ResourceManager (диспетчер ресурсов) предоставляет
 
 Он также запускает процесс веб-сервера, предоставляющий пользовательский веб-интерфейс для мониторинга состояния приложения.
 
-Когда пользователь отправляет приложение MapReduce на выполнение в кластере, оно попадает в ResourceManager, который, в свою очередь, выделяет контейнер на доступных узлах NodeManager (диспетчер узлов). Именно на них и выполняется приложение. В первом выделенном контейнере выполняется специальное приложение ApplicationMaster. Оно отвечает за получение ресурсов в виде последующих контейнеров, необходимых для выполнения отправленного приложения. ApplicationMaster проверяет этапы приложения (например, этап сопоставления и снижения нагрузки) и факторы, определяемые количеством данных для обработки. Затем ApplicationMaster запрашивает (*согласовывает*) ресурсы у ResourceManager от имени приложения. ResourceManager, в свою очередь, предоставляет ресурсы, необходимые для выполнения приложения, из NodeManager в кластер для ApplicationMaster.
+Когда пользователь отправляет приложение MapReduce на выполнение в кластере, оно попадает в ResourceManager, который, в свою очередь, выделяет контейнер на доступных узлах NodeManager (диспетчер узлов). Именно на них и выполняется приложение. В первом выделенном контейнере выполняется специальное приложение ApplicationMaster. Оно отвечает за получение ресурсов в виде последующих контейнеров, необходимых для выполнения отправленного приложения. ApplicationMaster проверяет этапы приложения (например, этап сопоставления и снижения нагрузки) и факторы, определяемые количеством данных для обработки. Затем ApplicationMaster запрашивает ( *согласовывает* ) ресурсы у ResourceManager от имени приложения. ResourceManager, в свою очередь, предоставляет ресурсы, необходимые для выполнения приложения, из NodeManager в кластер для ApplicationMaster.
 
 NodeManager запускает задачи, составляющие приложение, а затем сообщает о ходе выполнения и состоянии приложению ApplicationMaster. Оно, в свою очередь, отправляет отчет о состоянии приложения в ResourceManager, который возвращает результаты клиенту.
 
@@ -53,12 +53,12 @@ YARN развертывается во всех типах кластера HDIn
 
 ### <a name="azure-storage"></a>Хранилище Azure
 
-* [Soft delete for Azure Storage blobs](../storage/blobs/storage-blob-soft-delete.md) (Обратимое удаление больших двоичных объектов службы хранилища Azure)
-* [Отменить удаление BLOB-объекта](https://docs.microsoft.com/rest/api/storageservices/undelete-blob)
+* [Soft delete for Azure Storage blobs](../storage/blobs/soft-delete-blob-overview.md) (Обратимое удаление больших двоичных объектов службы хранилища Azure)
+* [Отменить удаление BLOB-объекта](/rest/api/storageservices/undelete-blob)
 
 ### <a name="azure-data-lake-storage-gen-1"></a>Azure Data Lake Storage 1-го поколения
 
-[Restore-Аздаталакестоределетедитем](https://docs.microsoft.com/powershell/module/az.datalakestore/restore-azdatalakestoredeleteditem)
+[Restore-Аздаталакестоределетедитем](/powershell/module/az.datalakestore/restore-azdatalakestoredeleteditem)
 
 ### <a name="azure-data-lake-storage-gen-2"></a>Azure Data Lake Storage 2-го поколения
 
@@ -66,9 +66,9 @@ YARN развертывается во всех типах кластера HDIn
 
 ## <a name="trash-purging"></a>Удаление корзины
 
-`fs.trash.interval`Свойство из **HDFS**  >  серверной системы HDFS с**расширенным ядром** должно оставаться в значении по умолчанию, поскольку не следует `0` хранить данные в локальной файловой системе. Это значение не влияет на удаленные учетные записи хранения (WASB, ADLS GEN1, АБФС)
+`fs.trash.interval`Свойство из **HDFS**  >  серверной системы HDFS с **расширенным ядром** должно оставаться в значении по умолчанию, поскольку не следует `0` хранить данные в локальной файловой системе. Это значение не влияет на удаленные учетные записи хранения (WASB, ADLS GEN1, АБФС)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Использование MapReduce в Apache Hadoop в HDInsight](hadoop/hdinsight-use-mapreduce.md)
 * [Введение в Azure HDInsight](hadoop/apache-hadoop-introduction.md)

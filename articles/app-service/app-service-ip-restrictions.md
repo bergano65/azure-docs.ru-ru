@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 06/06/2019
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: 782fa75cee5ffb5f9c86082a86e2b3552914c274
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: 6f1a94ae070419c38efb481e8f3967aec6a212d0
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92168228"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92533960"
 ---
 # <a name="azure-app-service-access-restrictions"></a>Ограничения доступа для службы приложений Azure
 
@@ -61,7 +61,8 @@ ms.locfileid: "92168228"
 С конечными точками службы можно настроить приложения с помощью шлюзов приложений или других устройств WAF. Кроме того, можно настроить многоуровневые приложения с защищенными серверными интерфейсами. Дополнительные сведения о некоторых возможностях см. в статье [Сетевые компоненты, служба приложений](networking-features.md) и [Интеграция шлюза приложений с конечными точками службы](networking/app-gateway-with-service-endpoints.md).
 
 > [!NOTE]
-> Сейчас конечные точки службы не поддерживаются для веб-приложений, использующих SSL на основе IP виртуальный IP-адрес (VIP). 
+> - Сейчас конечные точки службы не поддерживаются для веб-приложений, использующих SSL на основе IP виртуальный IP-адрес (VIP).
+> - Существует ограничение в 512 строк с ограничениями на конечную точку службы или IP-адреса. Если вам требуется свыше 512 строк ограничений, мы рекомендуем взглянуть на автономный продукт безопасности, например на переднюю дверцу Azure, шлюз приложений Azure или брандмауэр веб-приложения (WAF).
 >
 
 ## <a name="managing-access-restriction-rules"></a>Управление правилами ограничения доступа
@@ -74,7 +75,7 @@ ms.locfileid: "92168228"
 
 ![Снимок экрана диалогового окна "изменение ограничений IP-адресов" в портал Azure отображение параметров правила виртуальной сети.](media/app-service-ip-restrictions/access-restrictions-vnet-edit.png)
 
-Чтобы удалить правило, щелкните.. **.** в правиле и нажмите кнопку **Удалить**.
+Чтобы удалить правило, щелкните.. **.** в правиле и нажмите кнопку **Удалить** .
 
 ![удалить правило ограничения доступа](media/app-service-ip-restrictions/access-restrictions-delete.png)
 
@@ -111,7 +112,7 @@ Add-AzWebAppAccessRestrictionRule -ResourceGroupName "ResourceGroup" -WebAppName
 
 Эти сведения в Resource Manager находятся здесь:
 
-management.azure.com/subscriptions/**ИД_подписки**/resourceGroups/**группы_ресурсов**/providers/Microsoft.Web/sites/**имя_веб-приложения**/config/web?api-version=2018-02-01
+management.azure.com/subscriptions/ **ИД_подписки** /resourceGroups/ **группы_ресурсов** /providers/Microsoft.Web/sites/ **имя_веб-приложения** /config/web?api-version=2018-02-01
 
 Ниже показан синтаксис JSON для приведенного выше примера.
 ```json
