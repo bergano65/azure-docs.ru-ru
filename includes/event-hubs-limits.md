@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 09/10/2020
 ms.author: spelluru
 ms.custom: include file
-ms.openlocfilehash: d0015868f6b53c2903b83795839e2dbcffd09ce4
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: ea1ac064799b0cede1de82851a514a2b389f20aa
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92116744"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92499149"
 ---
 В таблице ниже перечислены квоты и ограничения для [Центров событий Azure](https://azure.microsoft.com/services/event-hubs/). См. сведения о [ценах на Центры событий](https://azure.microsoft.com/pricing/details/event-hubs/).
 
@@ -46,6 +46,8 @@ ms.locfileid: "92116744"
 
 ### <a name="dedicated-tier"></a>Уровень "Выделенный"
 Использование Центров событий ценовой категории "Выделенный" оплачивается по фиксированному месячному тарифу; минимальное время использования составляет 4 часа. Уровень "Выделенный" включает все возможности плана "Стандартный", но с емкостью и ограничениями уровня "Корпоративный" для клиентов с ресурсоемкими рабочими нагрузками. 
+
+Сведения о создании выделенного кластера Центров событий с помощью портала Azure см. в этом [документе](https://docs.microsoft.com/azure/event-hubs/event-hubs-dedicated-cluster-create-portal).
 
 | Компонент | Ограничения |
 | --- | ---|

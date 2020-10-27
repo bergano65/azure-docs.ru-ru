@@ -164,7 +164,7 @@
       href: recovery-plan-overview.md
     - name: Сведения о миграции в Azure
       href: migrate-overview.md
-    - name: Об управлении доступом на основе ролей с помощью Site Recovery
+    - name: Об управлении доступом на основе ролей Azure с помощью Site Recovery
       href: site-recovery-role-based-linked-access-control.md
     - name: Сведения об аварийном восстановлении на дополнительный локальный сайт
       items:

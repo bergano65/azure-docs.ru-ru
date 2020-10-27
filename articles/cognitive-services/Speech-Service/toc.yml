@@ -297,17 +297,15 @@
           href: index-conversation-scenarios.yml
         - name: Транскрибирование бесед
           items:
-            - name: Обзор
-              items:
-                - name: Что такое транскрибирование бесед?
-                  href: conversation-transcription.md
+            - name: Общие сведения о транскрибировании бесед
+              href: conversation-transcription.md
+            - name: Краткое руководство. Транскрибирование бесед в реальном времени
+              href: how-to-use-conversation-transcription.md
             - name: Практические руководства
               items:
                 - name: Работа со сценариями центра обработки вызовов
                   displayName: 'IVRs, IVR, Telephony Data, Transcription for Telephony Data, Real-time Transcription for Call Centers'
                   href: call-center-transcription.md
-                - name: Транскрибирование бесед в реальном времени
-                  href: how-to-use-conversation-transcription.md
                 - name: Асинхронное транскрибирование бесед
                   href: how-to-async-conversation-transcription.md
             - name: Справочник
@@ -341,14 +339,10 @@
                       href: 'https://signature.centralus.cts.speech.microsoft.com/UI/index.html'
         - name: Ведение беседы с использованием нескольких устройств
           items:
-            - name: Обзор
-              items:
-                - name: Что такое беседа с использованием нескольких устройств?
-                  href: multi-device-conversation.md
-            - name: Краткое руководство
-              items:
-                - name: Начало беседы и присоединение к ней
-                  href: quickstarts/multi-device-conversation.md
+            - name: Общие сведения о ведении беседы с использованием нескольких устройств
+              href: multi-device-conversation.md
+            - name: Краткое руководство по ведению беседы с использованием нескольких устройств
+              href: quickstarts/multi-device-conversation.md
             - name: Справочник
               items:
                 - name: Пакет SDK для службы "Речь"
@@ -363,12 +357,8 @@
       items:
         - name: Документация по голосовым помощникам
           href: index-voice-assistants.yml
-        - name: Обзор
-          items:
-            - name: Что такое голосовой помощник?
-              href: voice-assistants.md
-            - name: Примеры голосового помощника (GitHub)
-              href: 'https://github.com/Azure-Samples/Cognitive-Services-Voice-Assistant'
+        - name: Общие сведения о голосовых помощниках
+          href: voice-assistants.md
         - name: Пользовательские команды
           items:
             - name: Что собой представляют пользовательские команды?

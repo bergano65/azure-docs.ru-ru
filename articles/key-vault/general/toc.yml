@@ -100,7 +100,9 @@
           href: rbac-migration.md
         - name: Устранение неполадок с доступом
           href: troubleshooting-access-issues.md
-    - name: Включение ведения журнала
+    - name: Включение обратимого удаления и защиты от очистки
+      href: key-vault-recovery.md
+    - name: Включение ведения журналов
       href: howto-logging.md
     - name: Разработка
       items:
@@ -109,7 +111,7 @@
         - name: Использование Azure Resource Manager для развертывания Key Vault
           href: vault-create-template.md
         - name: Сохранение секретов веб-приложений
-          href: vs-secure-secret-appsettings.md
+          href: /previous-versions/azure/key-vault/vs-secure-secret-appsettings?toc=/azure/key-vault/general/toc.json&bc=/azure/key-vault/breadcrumb/toc.json
         - name: Аутентификация между службами с помощью .NET
           href: service-to-service-authentication.md
         - name: Использование подключенной службы Key Vault
@@ -134,14 +136,6 @@
           href: private-link-service.md
         - name: "Доступ к Key Vault за брандмауэром\_—Azure Key Vault"
           href: access-behind-firewall.md
-    - name: Обратимое удаление
-      items:
-        - name: Восстановление в Key Vault (обратимое удаление и защита от очистки)
-          href: key-vault-recovery.md
-        - name: Обратимое удаление с помощью CLI
-          href: soft-delete-cli.md
-        - name: Обратимое удаление с помощью PowerShell
-          href: soft-delete-powershell.md
     - name: Перемещение хранилища ключей
       items:
         - name: Перемещение Key Vault в другую группу ресурсов

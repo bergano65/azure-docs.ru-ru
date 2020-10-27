@@ -95,6 +95,8 @@
   items:
     - name: Управление учетными записями службы Maps
       items:
+        - name: Создание учетной записи с помощью шаблона ARM
+          href: how-to-create-template.md
         - name: Управление учетными записями
           href: how-to-manage-account-keys.md
         - name: Управление аутентификацией

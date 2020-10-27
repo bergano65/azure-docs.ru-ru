@@ -63,6 +63,7 @@
           href: protect-with-drm.md
         - name: "Защита контента в Azure\_AD"
           href: azure-ad-content-protection.md
+          displayName: 'AAD, Active Directory'
     - name: REST
       items:
         - name: Кодирование и потоковая передача размещенных удаленно файлов (REST)
@@ -129,8 +130,8 @@
         - name: Обзор
           href: analyzing-video-audio-files-concept.md
           displayName: 'analyze, analyzing, presets, jobs'
-        - name: Преобразования и задания
-          href: transforms-jobs-concept.md
+    - name: Преобразования и задания
+      href: transforms-jobs-concept.md
     - name: Потоковая передача в реальном времени
       items:
         - name: Обзор
@@ -265,6 +266,8 @@
       items:
         - name: Создание преобразований
           href: cli-create-transform.md
+        - name: Создание базового преобразования звука с помощью REST
+          href: how-to-create-basic-audio-transform.md
         - name: Создание заданий
           href: cli-create-jobs.md
         - name: Создание входных данных задания с помощью локального файла и .NET

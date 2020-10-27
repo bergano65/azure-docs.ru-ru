@@ -140,7 +140,7 @@
             - name: "Пакет SDK для .NET (C#)\_— источник"
               href: 'https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/digitaltwins/Microsoft.Azure.Management.DigitalTwins'
             - name: Пакет SDK для Java
-              href: 'https://search.maven.org/artifact/com.microsoft.azure.digitaltwins.v2020_03_01_preview/azure-mgmt-digitaltwins'
+              href: 'https://search.maven.org/artifact/com.microsoft.azure.digitaltwins.v2020_10_31/azure-mgmt-digitaltwins/1.0.0/jar'
             - name: "Пакет SDK для Java\_— справочник"
               href: /java/api/overview/azure/digitaltwins/management?view=azure-java-preview
             - name: "Пакет SDK для Java\_— источник"
@@ -153,8 +153,8 @@
               href: 'https://pypi.org/project/azure-mgmt-digitaltwins/'
             - name: "Пакет SDK для Python\_— источник"
               href: 'https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/digitaltwins/azure-mgmt-digitaltwins'
-            - name: "Пакет SDK для Go\_— источник"
-              href: 'https://github.com/Azure/azure-sdk-for-go/tree/master/services/preview/digitaltwins/mgmt/2020-03-01-preview/digitaltwins'
+            - name: Пакет SDK для GO
+              href: 'https://godoc.org/github.com/Azure/azure-sdk-for-go/services/digitaltwins/mgmt/2020-10-31/digitaltwins'
         - name: Плоскость данных
           items:
             - name: Swagger
@@ -175,6 +175,8 @@
               href: 'https://www.npmjs.com/package/@azure/digital-twins/'
             - name: Справочник по пакету SDK для JavaScript
               href: /javascript/api/@azure/digital-twins/?preserve-view=true&view=azure-node-latest
+            - name: "Пакет SDK для Python\_— PyPi"
+              href: 'https://pypi.org/project/azure-digitaltwins-core/1.0.0b1/'
     - name: CLI Digital Twins
       items:
         - name: Справочник по CLI Digital Twins

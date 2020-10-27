@@ -235,7 +235,7 @@
           displayName: policy
     - name: Создание рабочих областей и управление ими
       items:
-        - name: Использование портала Azure
+        - name: Использование портала Azure или пакета SDK для Python
           href: how-to-manage-workspace.md
         - name: Использование Azure CLI
           href: how-to-manage-workspace-cli.md
