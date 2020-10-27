@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 03/11/2020
-ms.openlocfilehash: 452a3b04637126b40aca907178bebd6f74ec4481
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 86d951089e4247d9b959476c812b98e170d92bd8
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "79365797"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92547985"
 ---
 # <a name="use-enterprise-security-package-in-hdinsight"></a>Корпоративный пакет безопасности для HDInsight
 
@@ -57,7 +57,7 @@ HDInsight в настоящее время поддерживает только
 
 Если у вас используется локальный экземпляр Active Directory или более сложная конфигурация Active Directory для домена, то вы можете синхронизировать их удостоверения в Azure AD с помощью Azure AD Connect. Затем вы можете включить Azure AD DS на этом клиенте Active Directory.
 
-Так как в протоколе Kerberos используются хэши паролей, необходимо будет [включить синхронизацию хэша пароля в Azure AD DS](../../active-directory-domain-services/active-directory-ds-getting-started-password-sync.md).
+Так как в протоколе Kerberos используются хэши паролей, необходимо будет [включить синхронизацию хэша пароля в Azure AD DS](../../active-directory-domain-services/tutorial-create-instance.md).
 
 Если вы используете Федерацию с службы федерации Active Directory (AD FS) (AD FS), необходимо включить синхронизацию хэша паролей. (Рекомендуемый вариант установки см. в [этом видео](https://youtu.be/qQruArbu2Ew).) Синхронизация хэша паролей помогает при аварийном восстановлении в случае сбоя инфраструктуры AD FS, а также в обеспечении защиты от утечки учетных данных. Дополнительные сведения см. в статье [Реализация синхронизации хэшированных паролей в службе синхронизации Azure AD Connect](../../active-directory/hybrid/how-to-connect-password-hash-synchronization.md).
 
@@ -65,7 +65,7 @@ HDInsight в настоящее время поддерживает только
 
 Если используется Федерация и хэши паролей синхронизированы правильно, но при этом возникают ошибки проверки подлинности, проверьте, включена ли проверка подлинности облачных паролей для субъекта-службы PowerShell. Если нет, вы должны установить [Политику обнаружения домашней области (HRD)](../../active-directory/manage-apps/configure-authentication-for-federated-users-portal.md) для вашего клиента Azure AD. Чтобы проверить и установить политику HRD, выполните следующие действия.
 
-1. Установите предварительную версию [модуля Azure AD PowerShell](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2).
+1. Установите предварительную версию [модуля Azure AD PowerShell](/powershell/azure/active-directory/install-adv2).
 
    ```powershell
    Install-Module AzureAD

@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/19/2019
-ms.openlocfilehash: 7deaca67212146881754f785e6dceaa064bde6e7
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.openlocfilehash: 6fd59a346a36a304f699894c493d8ba9800489b2
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92329429"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92545265"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight---security-and-devops-best-practices"></a>Миграция локальных кластеров Apache Hadoop в Azure HDInsight — рекомендации по обеспечению безопасности и операциям DevOps
 
@@ -44,7 +44,7 @@ ms.locfileid: "92329429"
 
     |Параметр |Описание |
     |---|---|
-    |Имя домена|доменное имя, связанное с Azure AD DS.|
+    |Доменное имя|доменное имя, связанное с Azure AD DS.|
     |Имя пользователя домена|учетная запись службы в управляемом домене Azure AD DS в контроллере домена, созданная в предыдущем разделе, например `hdiadmin@contoso.onmicrosoft.com`. Этот пользователь домена станет администратором этого кластера HDInsight.|
     |Пароль домена|пароль учетной записи службы.|
     |Подразделение|уникальное имя подразделения, которое необходимо использовать с кластером HDInsight, например `OU=HDInsightOU,DC=contoso,DC=onmicrosoft,DC=com`. Если это подразделение не существует, кластер HDInsight пытается создать подразделение с использованием привилегий учетной записи службы.|
@@ -84,7 +84,7 @@ ms.locfileid: "92329429"
 Дополнительные сведения см. в следующих статьях:
 
 - [Обзор виртуальных сетей Azure](../../virtual-network/virtual-networks-overview.md)
-- [Группы безопасности](../../virtual-network/security-overview.md)
+- [Группы безопасности](../../virtual-network/network-security-groups-overview.md)
 - [Пиринг между виртуальными сетями Azure](../../virtual-network/virtual-network-peering-overview.md)
 - [Руководство по безопасности службы хранилища Azure](../../storage/blobs/security-recommendations.md)
 - [Шифрование службы хранилища Azure для неактивных данных](../../storage/common/storage-service-encryption.md)
@@ -116,10 +116,10 @@ ms.locfileid: "92329429"
 
 ## <a name="post-migration"></a>Действия после миграции
 
-1. **Исправление приложений**. Внесите необходимые изменения в заданиях, процессах и сценариях в итеративном режиме.
-2. **Выполнение тестов**. Выполните функциональные тесты и тесты производительности в итеративном режиме.
-3. **Оптимизация**. Устраните любые проблемы с производительностью на основе вышеуказанных результатов тестов, а затем выполните повторное тестирование для подтверждения повышения производительности.
+1. **Исправление приложений** . Внесите необходимые изменения в заданиях, процессах и сценариях в итеративном режиме.
+2. **Выполнение тестов** . Выполните функциональные тесты и тесты производительности в итеративном режиме.
+3. **Оптимизация** . Устраните любые проблемы с производительностью на основе вышеуказанных результатов тестов, а затем выполните повторное тестирование для подтверждения повышения производительности.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-[Сведения об HDInsight 4.0](https://docs.microsoft.com/azure/hdinsight/hadoop/apache-hadoop-introduction).
+[Сведения об HDInsight 4.0](./apache-hadoop-introduction.md).

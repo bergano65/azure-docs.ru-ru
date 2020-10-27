@@ -8,12 +8,12 @@ ms.devlang: azurecli
 ms.topic: how-to
 ms.date: 3/18/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: d981bf66ef9c17fda031e66e12e18a2ad9c67cc3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cb7f8547419b45314ad044b41957a53085cdbe13
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87503061"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92546404"
 ---
 # <a name="create-and-manage-azure-database-for-mysql-firewall-rules-by-using-the-azure-cli"></a>Создание правил брандмауэра базы данных Azure для MySQL и управление ими с помощью Azure CLI
 Правила брандмауэра уровня сервера можно использовать для управления доступом к серверу базы данных Azure для MySQL с определенного IP-адреса или диапазона IP-адресов. С помощью удобных команд Azure CLI можно создавать, обновлять, удалять, выводить список и отображать правила брандмауэра для управления сервером. Общие сведения о брандмауэрах базы данных Azure для MySQL см. в статье [правила брандмауэра сервера базы данных Azure для MySQL](./concepts-firewall-rules.md).
@@ -21,21 +21,21 @@ ms.locfileid: "87503061"
 Правила виртуальной сети (VNet) также можно использовать для защиты доступа к серверу. Дополнительные сведения о [создании конечных точек и правил виртуальных сетевых служб и управлении ими с помощью Azure CLI](howto-manage-vnet-using-cli.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
-* [Установите Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
+* [Установите Azure CLI](/cli/azure/install-azure-cli).
 * [Сервер и база данных Azure для MySQL](quickstart-create-mysql-server-database-using-azure-cli.md).
 
 ## <a name="firewall-rule-commands"></a>Команды для правил брандмауэра:
 Команда **az mysql server firewall-rule** используется в Azure CLI для создания, удаления, вывода списка, отображения и обновления правил брандмауэра.
 
 Команды:
-- **create**: создание правила брандмауэра сервера Azure MySQL.
-- **delete**: удаление правила брандмауэра сервера Azure MySQL.
-- **List**: Перечисление правил брандмауэра сервера Azure MySQL.
-- **Показывать**: отображение сведений о правиле брандмауэра сервера Azure MySQL.
-- **update**: обновление правила брандмауэра сервера Azure MySQL.
+- **create** : создание правила брандмауэра сервера Azure MySQL.
+- **delete** : удаление правила брандмауэра сервера Azure MySQL.
+- **List** : Перечисление правил брандмауэра сервера Azure MySQL.
+- **Показывать** : отображение сведений о правиле брандмауэра сервера Azure MySQL.
+- **update** : обновление правила брандмауэра сервера Azure MySQL.
 
 ## <a name="sign-in-to-azure-and-list-your-azure-database-for-mysql-servers"></a>Войдите в Azure и выведите список серверов базы данных Azure для MySQL.
-Безопасно подключитесь к Azure CLI с помощью своей учетной записи Azure, используя команду **az login**.
+Безопасно подключитесь к Azure CLI с помощью своей учетной записи Azure, используя команду **az login** .
 
 1. В командной строке выполните следующую команду.
     ```azurecli
@@ -65,7 +65,7 @@ ms.locfileid: "87503061"
     ```
 
 ## <a name="list-firewall-rules-on-azure-database-for-mysql-server"></a>Вывод списка правил брандмауэра для сервера базы данных Azure для MySQL 
-Используя имя сервера и имя группы ресурсов, выведите список существующих правил брандмауэра на сервере. Введите команду [az mysql server firewall list](/cli/azure/mysql/server/firewall-rule#az-mysql-server-firewall-rule-list).  Обратите внимание, что атрибут имени сервера указан в параметре **--server**, а не в параметре **--name**. 
+Используя имя сервера и имя группы ресурсов, выведите список существующих правил брандмауэра на сервере. Введите команду [az mysql server firewall list](/cli/azure/mysql/server/firewall-rule#az-mysql-server-firewall-rule-list).  Обратите внимание, что атрибут имени сервера указан в параметре **--server** , а не в параметре **--name** . 
 ```azurecli-interactive
 az mysql server firewall-rule list --resource-group myresourcegroup --server-name mydemoserver
 ```

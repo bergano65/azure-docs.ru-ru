@@ -9,18 +9,18 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: how-to
 ms.date: 05/29/2019
 ms.author: hrasheed
-ms.openlocfilehash: de2a8e6377ababadc7d42f873a816a01a8f3b77e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4f19797fa1c79261dc3459e2b924ed45d0b7e36e
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86207469"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92547968"
 ---
 # <a name="get-started-with-an-apache-hadoop-sandbox-an-emulator-on-a-virtual-machine"></a>Начало работы с Apache Hadoop песочницой, эмулятором на виртуальной машине
 
 Узнайте, как настроить на виртуальной машине песочницу Apache Hadoop от Hortonworks, чтобы ознакомиться с экосистемой Hadoop. Песочница представляет собой локальную среду разработки для ознакомления с Hadoop, распределенной файловой системой Hadoop (HDFS) и отправкой заданий. Если вы знакомы с Hadoop, вы можете начать использовать Hadoop в Azure, создав кластер HDInsight. Дополнительные сведения см. в статье [Руководство по Hadoop. Начало работы с Hadoop в HDInsight на платформе Linux](apache-hadoop-linux-tutorial-get-started.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * [VirtualBox Oracle](https://www.virtualbox.org/). Скачайте и установите приложение [отсюда](https://www.virtualbox.org/wiki/Downloads).
 
@@ -34,7 +34,7 @@ ms.locfileid: "86207469"
 
 Инструкции по настройке "песочницы" см. в статье [развертывание и установка песочницы](https://hortonworks.com/tutorial/sandbox-deployment-and-install-guide/section/1/).
 
-Чтобы скачать более раннюю версию песочницы HDP, ознакомьтесь со ссылками в **более ранних версиях**.
+Чтобы скачать более раннюю версию песочницы HDP, ознакомьтесь со ссылками в **более ранних версиях** .
 
 ## <a name="start-the-virtual-machine"></a>Запуск виртуальной машины
 
@@ -85,7 +85,7 @@ ms.locfileid: "86207469"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Использование средств Azure Data Lake для Visual Studio с песочницей Hortonworks](../hdinsight-hadoop-emulator-visual-studio.md)
+* [Использование средств Azure Data Lake для Visual Studio с песочницей Hortonworks](./apache-hadoop-visual-studio-tools-get-started.md)
 
 * [Learning the ropes of the Hortonworks Sandbox](https://hortonworks.com/hadoop-tutorial/learning-the-ropes-of-the-hortonworks-sandbox/)
 

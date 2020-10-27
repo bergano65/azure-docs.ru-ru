@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/10/2019
-ms.openlocfilehash: f2b3810afab86b2f81a18bac442ef361404f2309
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: b67ddd57c3a0787213763253cef5083f420cefe0
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92490362"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92541678"
 ---
 # <a name="create-apache-hadoop-clusters-using-the-azure-rest-api"></a>Создание кластеров Apache Hadoop с помощью REST API Azure
 
@@ -219,7 +219,7 @@ Azure Resource Manager шаблоны — это документы JSON, опи
 ## <a name="create-a-service-principal"></a>Создание субъекта-службы
 
 > [!NOTE]  
-> Приведенные действия представляют собой сокращенную версию раздела *Создание субъекта-службы с использованием пароля* статьи [Использование интерфейса командной строки Azure для создания субъекта-службы и доступа к ресурсам](../azure-resource-manager/resource-group-authenticate-service-principal-cli.md). Выполнив эти действия, вы создадите субъект-службу, используемый для аутентификации в Azure REST API.
+> Приведенные действия представляют собой сокращенную версию раздела *Создание субъекта-службы с использованием пароля* статьи [Использование интерфейса командной строки Azure для создания субъекта-службы и доступа к ресурсам](/cli/azure/create-an-azure-service-principal-azure-cli). Выполнив эти действия, вы создадите субъект-службу, используемый для аутентификации в Azure REST API.
 
 1. Используйте следующую команду в командной строке, чтобы вывести список подписок Azure.
 
@@ -227,7 +227,7 @@ Azure Resource Manager шаблоны — это документы JSON, опи
    az account list --query '[].{Subscription_ID:id,Tenant_ID:tenantId,Name:name}'  --output table
    ```
 
-    Из списка выберите подписку, которую нужно использовать, и обратите внимание на столбцы **Subscription_ID** и __Tenant_ID__. Сохраните эти значения.
+    Из списка выберите подписку, которую нужно использовать, и обратите внимание на столбцы **Subscription_ID** и __Tenant_ID__ . Сохраните эти значения.
 
 2. Используйте следующую команду, чтобы создать приложение в Azure Active Directory.
 
@@ -242,15 +242,15 @@ Azure Resource Manager шаблоны — это документы JSON, опи
 
    Эта команда возвращает значение __App ID__ для нового приложения. Сохраните его.
 
-3. Используйте следующую команду, чтобы создать субъект-службу с помощью **App ID**:
+3. Используйте следующую команду, чтобы создать субъект-службу с помощью **App ID** :
 
    ```azurecli
    az ad sp create --id <App ID> --query 'objectId'
    ```
 
-     Эта команда возвращает значение __Object ID__. Сохраните его.
+     Эта команда возвращает значение __Object ID__ . Сохраните его.
 
-4. Назначьте роль **Владелец** субъекту-службе, используя значение **Object ID**. Используйте **идентификатор подписки**, полученный ранее.
+4. Назначьте роль **Владелец** субъекту-службе, используя значение **Object ID** . Используйте **идентификатор подписки** , полученный ранее.
 
    ```azurecli
    az role assignment create --assignee <Object ID> --role Owner --scope /subscriptions/<Subscription ID>/
@@ -274,7 +274,7 @@ curl -X "POST" "https://login.microsoftonline.com/$TENANTID/oauth2/token" \
 
 Если этот запрос завершится успешно, будет получен ответ серии 200, и тело ответа будет содержать документ JSON.
 
-Документ JSON, возвращаемый этим запросом, содержит элемент **access_token**. Значение **access_token** используется для проверки подлинности запросов API REST.
+Документ JSON, возвращаемый этим запросом, содержит элемент **access_token** . Значение **access_token** используется для проверки подлинности запросов API REST.
 
 ```json
 {

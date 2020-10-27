@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 12/20/2019
-ms.openlocfilehash: a663eb65bcd85a1b2e91e6f2ad90dc64b61273ce
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 6482b2ec07a0473ddbea2098d37c5d67c8b68704
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92484769"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92539706"
 ---
 # <a name="work-in-the-apache-hadoop-ecosystem-on-hdinsight-from-a-windows-pc"></a>Работа в экосистеме Apache Hadoop в HDInsight на компьютере с Windows
 
@@ -31,17 +31,17 @@ Azure PowerShell — это среда сценариев, которая по�
 * [Выполнение Apache Hive запросов с помощью PowerShell](hadoop/apache-hadoop-use-hive-powershell.md).
 * [Управление кластерами с помощью PowerShell](hdinsight-administer-use-powershell.md).
 
-Указания по установке и настройке последней версии Azure PowerShell см. [здесь](https://docs.microsoft.com/powershell/azure/install-az-ps).
+Указания по установке и настройке последней версии Azure PowerShell см. [здесь](/powershell/azure/install-az-ps).
 
 ## <a name="utilities-you-can-run-in-a-browser"></a>Браузерные служебные программы
 
 Ниже приведены примеры служебных программ с веб-интерфейсом, выполняемым в браузере.
-* **[Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview)** — это интерактивная оболочка командной строки, которая работает в браузере и в портал Azure.
+* **[Azure Cloud Shell](../cloud-shell/overview.md)** — это интерактивная оболочка командной строки, которая работает в браузере и в портал Azure.
 
 * **[Веб-интерфейс Apache Ambari](hdinsight-hadoop-manage-ambari.md)**  — служебная программа для управления и мониторинга, доступная на портале Azure. Она позволяет управлять разными видами заданий, например:
     * [интеграция Apache Ambari с REST API;](hdinsight-hadoop-manage-ambari-rest-api.md)
     * [представление Apache Hive в Apache Ambari;](hadoop/apache-hadoop-use-hive-ambari-view.md)
-    * [представление Apache Tez в Apache Ambari.](hdinsight-debug-ambari-tez-view.md)
+    * [представление Apache Tez в Apache Ambari.](./index.yml)
 
 ## <a name="data-lake-hadoop-tools-for-visual-studio"></a>Средства Data Lake (Hadoop) для Visual Studio
 
@@ -84,7 +84,7 @@ Visual Studio с пакетом SDK для .NET позволяет управл�
 
 Если вам нужно использовать средство или технологию, которые доступны только в Linux, рассмотрите следующие варианты.
 
-* **Bash в Ubuntu в Windows 10** предоставляет подсистему Linux в Windows. Это средство позволяет напрямую запускать служебные программы Linux, не устанавливая выделенный сервер Linux. Шаги установки см. в статье [Windows Subsystem for Linux Installation Guide for Windows 10](https://docs.microsoft.com/windows/wsl/install-win10) (Подсистема Windows для Linux в Windows 10).  Другие [оболочки Unix](https://www.gnu.org/software/bash/) также будут работать.
+* **Bash в Ubuntu в Windows 10** предоставляет подсистему Linux в Windows. Это средство позволяет напрямую запускать служебные программы Linux, не устанавливая выделенный сервер Linux. Шаги установки см. в статье [Windows Subsystem for Linux Installation Guide for Windows 10](/windows/wsl/install-win10) (Подсистема Windows для Linux в Windows 10).  Другие [оболочки Unix](https://www.gnu.org/software/bash/) также будут работать.
 * **Docker для Windows** предоставляет доступ ко многим средствам Linux. Эту платформу можно запустить непосредственно из Windows. Например, с помощью Docker можно запустить клиент Beeline для Hive непосредственно из Windows. Кроме того, Docker позволяет запускать локальные записные книжки Jupyter и удаленно подключаться к Spark в HDInsight. [Начните работу с Docker для Windows.](https://docs.docker.com/docker-for-windows/)
 * **[MobaXTerm](https://mobaxterm.mobatek.net/)** позволяет графически просматривать файловую систему кластера через SSH-подключение.
 

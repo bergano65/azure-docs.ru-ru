@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: troubleshooting
 ms.custom: seoapr2020
 ms.date: 04/22/2020
-ms.openlocfilehash: 527d2d8cb8086ed6b5e87417e2bc80dd52aa6e63
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a47781bcdf60d863d6dcf77d70bc0ee496a51388
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82188418"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92538805"
 ---
 # <a name="troubleshoot-resource-creation-failures-in-azure-hdinsight"></a>Устранение сбоев при создании ресурсов в Azure HDInsight
 
@@ -25,7 +25,7 @@ ms.locfileid: "82188418"
 
 Чтобы устранить эту проблему, удалите развертывания, которые больше не нужны, с помощью портал Azure, CLI или PowerShell.
 
-Дополнительные сведения см. в статье [устранении ошибок, связанных с квотами ресурсов](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-quota-errors).
+Дополнительные сведения см. в статье [устранении ошибок, связанных с квотами ресурсов](../azure-resource-manager/templates/error-resource-quota.md).
 
 ## <a name="error-the-maximum-node-exceeded-the-available-cores-in-this-region"></a>Ошибка: максимальный размер узла превышает доступные ядра в этом регионе
 
@@ -33,15 +33,15 @@ ms.locfileid: "82188418"
 
 Чтобы запросить увеличение квоты, сделайте следующее:
 
-1. Перейдите в [портал Azure](https://portal.azure.com)и выберите Справка и **Поддержка**.
+1. Перейдите в [портал Azure](https://portal.azure.com)и выберите Справка и **Поддержка** .
 
-1. Выберите **Новый запрос в службу поддержки**.
+1. Выберите **Новый запрос в службу поддержки** .
 
 1. На вкладке **основы** на странице **новый запрос в службу поддержки** укажите следующие сведения.
 
-   * **Тип проблемы:** Выберите **пределы службы и подписки (квоты)**.
+   * **Тип проблемы:** Выберите **пределы службы и подписки (квоты)** .
    * **Подписка:** Выберите подписку, которую необходимо изменить.
-   * **Тип квоты:** Выберите **HDInsight**.
+   * **Тип квоты:** Выберите **HDInsight** .
 
 См. сведения о [создании запроса в службу поддержки для увеличения количества ядер](hdinsight-capacity-planning.md#quotas).
 
@@ -53,4 +53,4 @@ ms.locfileid: "82188418"
 
 * Подпишитесь на [@AzureSupport](https://twitter.com/azuresupport) — официальный канал Microsoft Azure для работы с клиентами. Вступайте в сообщество Azure для получения нужных ресурсов: ответов, поддержки и советов экспертов.
 
-* Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки на [портале Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **Поддержка** в строке меню или откройте центр **Справка и поддержка**. Дополнительные сведения см. в статье [Создание запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request). Доступ к управлению подписками и поддержкой выставления счетов уже включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется в рамках одного из [планов Службы поддержки Azure](https://azure.microsoft.com/support/plans/).
+* Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки на [портале Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **Поддержка** в строке меню или откройте центр **Справка и поддержка** . Дополнительные сведения см. в статье [Создание запроса на поддержку Azure](../azure-portal/supportability/how-to-create-azure-support-request.md). Доступ к управлению подписками и поддержкой выставления счетов уже включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется в рамках одного из [планов Службы поддержки Azure](https://azure.microsoft.com/support/plans/).

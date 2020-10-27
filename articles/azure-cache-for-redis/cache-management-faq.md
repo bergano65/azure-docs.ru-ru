@@ -7,17 +7,17 @@ ms.service: cache
 ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 08/06/2020
-ms.openlocfilehash: 5c5c7a5adae9891f764f714d1700c6024376de02
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 15c7ed4ca9d04e4bb314eea8b92bef749d2369b1
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88205397"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92537666"
 ---
 # <a name="azure-cache-for-redis-management-faqs"></a>Вопросы и ответы по управлению кэшем Azure для Redis
 В этой статье содержатся ответы на часто задаваемые вопросы об управлении кэшем Azure для Redis.
 
-## <a name="common-questions-and-answers"></a>Частые вопросы и ответы
+## <a name="common-questions-and-answers"></a>Общие вопросы и ответы
 В этом разделе рассматриваются следующие вопросы и ответы:
 
 * [Когда следует включать порт, не являющийся портом TLS/SSL, для подключения к Redis?](#when-should-i-enable-the-non-tlsssl-port-for-connecting-to-redis)
@@ -63,7 +63,7 @@ ms.locfileid: "88205397"
 * Клиентская виртуальная машина, используемая для тестирования, должна находиться в том же регионе, что и экземпляр кэша Azure для Redis.
 * В качестве клиента рекомендуется использовать виртуальные машины серии Dv2, так как в них используется более производительное оборудование и они выдают лучшие результаты.
 * Убедитесь, что у выбранной клиентской виртуальной машины как минимум такая же емкость вычислительных ресурсов и пропускной способности, что и у тестируемого кэша.
-* Включите VRSS на клиентском компьютере, если используется среда Windows. [Щелкните здесь, чтобы узнать больше](https://technet.microsoft.com/library/dn383582.aspx).
+* Включите VRSS на клиентском компьютере, если используется среда Windows. [Щелкните здесь, чтобы узнать больше](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn383582(v=ws.11)).
 * Экземпляры Redis уровня "Премиум" обеспечивают меньшие сетевые задержки и большую пропускную способность, так как используют более производительные ЦП и сетевое оборудование.
 
 ### <a name="what-are-some-of-the-considerations-when-using-common-redis-commands"></a>Какие факторы следует учитывать при использовании общих команд Redis?
@@ -144,10 +144,10 @@ WORKER: (Busy=3,Free=997,Min=4,Max=1000)
     > [!NOTE]
     > Значение, указанное в этом методе, — это глобальный параметр, который влияет на весь домен приложения. Например, если у вас 4-ядерный компьютер и вам нужно установить для параметров *minWorkerThreads* и *minIOThreads* значение 50 на ЦП во время выполнения, используется **ThreadPool.SetMinThreads (200, 200)** .
 
-* Кроме того, можно указать минимальное число потоков с помощью [параметра конфигурации *minIoThreads* или *minWorkerThreads*](https://msdn.microsoft.com/library/vstudio/7w2sway1(v=vs.100).aspx) в элементе конфигурации `<processModel>` в `Machine.config`, обычно расположенном в `%SystemRoot%\Microsoft.NET\Framework\[versionNumber]\CONFIG\`. **Установка минимального числа потоков таким способом обычно не рекомендуется, так как это параметр на уровне системы.**
+* Кроме того, можно указать минимальное число потоков с помощью [параметра конфигурации *minIoThreads* или *minWorkerThreads*](/previous-versions/dotnet/netframework-4.0/7w2sway1(v=vs.100)) в элементе конфигурации `<processModel>` в `Machine.config`, обычно расположенном в `%SystemRoot%\Microsoft.NET\Framework\[versionNumber]\CONFIG\`. **Установка минимального числа потоков таким способом обычно не рекомендуется, так как это параметр на уровне системы.**
 
   > [!NOTE]
-  > В этом элементе конфигурации задается параметр *per-core*. Например, если у вас 4-ядерный компьютер и вы хотите установить для параметра *minIOThreads* значение 200 во время выполнения, то можно использовать `<processModel minIoThreads="50"/>`.
+  > В этом элементе конфигурации задается параметр *per-core* . Например, если у вас 4-ядерный компьютер и вы хотите установить для параметра *minIOThreads* значение 200 во время выполнения, то можно использовать `<processModel minIoThreads="50"/>`.
   >
 
 ### <a name="enable-server-gc-to-get-more-throughput-on-the-client-when-using-stackexchangeredis"></a>Включение сборки мусора сервера для получения более высокой пропускной способности на стороне клиента при использовании StackExchange.Redis
@@ -163,6 +163,6 @@ WORKER: (Busy=3,Free=997,Min=4,Max=1000)
 
 Дополнительные сведения о разных пределах подключений для каждого уровня см. в статье [Цены на Кэш Azure для Redis](https://azure.microsoft.com/pricing/details/cache/). Дополнительные сведения о подключениях и других конфигурациях по умолчанию см. в статье [Конфигурация сервера Redis по умолчанию](cache-configure.md#default-redis-server-configuration).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о другом [кэше Azure для Redis часто задаваемых вопросов](cache-faq.md).

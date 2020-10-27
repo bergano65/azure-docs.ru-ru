@@ -1,20 +1,21 @@
 ---
 title: Подключение и запрос — одиночный сервер MySQL
-description: Ссылки на краткие руководства по базе данных SQL Azure, в которых показано, как подключиться к серверу и выполнить запросы.
+description: Ссылки на краткие руководства, в которых показано, как подключиться к серверу базы данных Azure My SQL и выполнить запросы.
 services: mysql
 ms.service: mysql
 ms.topic: how-to
 author: mksuni
 ms.author: sumuth
 ms.date: 09/22/2020
-ms.openlocfilehash: 229011f11ad6898555f59b063910d80a679070e0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0414aaad5a1cf6edb9c2152eed70f8753946cca1
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90940450"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92546438"
 ---
 # <a name="connect-and-query-overview-for-azure-database-for-mysql--single-server"></a>Общие сведения о подключении и запросах для базы данных Azure для MySQL — одиночный сервер
+
 В следующем документе приведены ссылки на примеры, демонстрирующие подключение и выполнение запросов к серверу базы данных Azure для MySQL. В этом руководством также содержатся рекомендации и библиотеки TLS, которые можно использовать для подключения к серверу на поддерживаемых языках.
 
 ## <a name="quickstarts"></a>Краткие руководства
@@ -22,7 +23,7 @@ ms.locfileid: "90940450"
 | Краткое руководство | Описание |
 |---|---|
 |[MySQL Workbench](connect-workbench.md)|В этом кратком руководстве показано, как использовать клиент MySQL Workbench для подключения к базе данных. Затем можно использовать операторы MySQL для запроса, вставки, обновления и удаления данных в базе данных.|
-|[Azure Cloud Shell](https://docs.microsoft.com/azure/mysql/quickstart-create-mysql-server-database-using-azure-cli#connect-to-azure-database-for-mysql-server-using-mysql-command-line-client)|В этой статье показано, как запустить **mysql.exe** в [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview) , чтобы подключиться к серверу, а затем выполнить инструкции для запроса, вставки, обновления и удаления данных в базе данных.|
+|[Azure Cloud Shell](./quickstart-create-mysql-server-database-using-azure-cli.md#connect-to-azure-database-for-mysql-server-using-mysql-command-line-client)|В этой статье показано, как запустить **mysql.exe** в [Azure Cloud Shell](../cloud-shell/overview.md) , чтобы подключиться к серверу, а затем выполнить инструкции для запроса, вставки, обновления и удаления данных в базе данных.|
 |[MySQL с Visual Studio](https://www.mysql.com/why-mysql/windows/visualstudio)|Для подключения к серверу MySQL можно использовать MySQL для Visual Studio. MySQL для Visual Studio интегрируется непосредственно в обозреватель сервера упрощает настройку новых соединений и работу с объектами базы данных.|
 |[PHP](connect-php.md)|В этом кратком руководстве показано, как с помощью PHP создать программу для подключения к базе данных и использовать инструкции MySQL для запроса данных.|
 |[Java](connect-java.md)|В этом кратком руководстве показано, как использовать Java для подключения к базе данных, а затем с помощью инструкций MySQL запрашивать данные.|
@@ -33,19 +34,17 @@ ms.locfileid: "90940450"
 |[Ruby](connect-ruby.md)|В этом кратком руководстве показано, как использовать Ruby для создания программы для подключения к базе данных и использования операторов MySQL для запроса данных.|
 |[C++](connect-cpp.md)|В этом кратком руководстве показано, как использовать C++ + для создания программы для подключения к базе данных и использования данных запроса.|
 
-
 ## <a name="tls-considerations-for-database-connectivity"></a>Рекомендации по использованию протокола TLS для подключения к базе данных
 
 Протокол TLS используется всеми драйверами, предоставляемыми или поддерживаемыми корпорацией Майкрософт для подключения к базам данных Azure для MySQL. Специальная настройка не требуется, но необходимо применить TLS 1,2 для вновь созданных серверов. Мы рекомендуем использовать TLS 1,0 и 1,1, а затем обновить версию TLS для серверов. См. раздел [Настройка TLS](howto-tls-configurations.md) .
-
 
 ## <a name="libraries"></a>Библиотеки
 
 База данных Azure для MySQL использует самый популярный выпуск Community Edition базы данных MySQL. Таким образом, он совместим с широким спектром языков программирования и драйверов. Цель этого руководства — обеспечить поддержку трех последних версий драйверов MySQL и взаимодействие с сообществом разработчиков открытого кода, чтобы постоянно улучшать функциональность и удобство использования драйверов MySQL.
 
-Узнайте, какие [драйверы](concepts-compatibility.md) совместимы с сервером базы данных Azure для MySQL. 
+Узнайте, какие [драйверы](concepts-compatibility.md) совместимы с сервером базы данных Azure для MySQL.
 
+## <a name="next-steps"></a>Дальнейшие действия
 
-## <a name="next-steps"></a>Next Steps 
 - [Перенос данных с помощью дампа и восстановления](concepts-migrate-dump-restore.md)
 - [Перенос данных с помощью импорта и экспорта](concepts-migrate-import-export.md)
