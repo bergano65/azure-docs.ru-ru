@@ -7,18 +7,18 @@ ms.service: mysql
 ms.topic: conceptual
 ms.custom: references_regions
 ms.date: 10/21/2020
-ms.openlocfilehash: 4589687593abbe5667aa4b21b1361b68e4bed07f
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: b2670862814495ab04f92d8f34a757d3ede6cf4a
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92428120"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92546880"
 ---
 # <a name="monitoring-in-azure-database-for-mysql"></a>Мониторинг в базе данных Azure для MySQL
 Мониторинг данных о серверах помогает устранять неполадки и оптимизировать рабочую нагрузку. База данных Azure для MySQL предоставляет различные метрики, позволяющие понять действия сервера.
 
 ## <a name="metrics"></a>Метрики
-Все метрики Azure записываются ежеминутно, и каждая из них предоставляет данные за последние 30 дней. Вы можете настроить оповещения на основе метрик. Пошаговые инструкции см. в статье [Использование портала Azure для настройки оповещений на основе метрик для базы данных Azure для MySQL](howto-alert-on-metric.md). Другие задачи включают настройку автоматических действий, выполнение расширенной аналитики и архивирование журнала. Дополнительные сведения см. в статье [Обзор метрик в Microsoft Azure](../monitoring-and-diagnostics/monitoring-overview-metrics.md).
+Все метрики Azure записываются ежеминутно, и каждая из них предоставляет данные за последние 30 дней. Вы можете настроить оповещения на основе метрик. Пошаговые инструкции см. в статье [Использование портала Azure для настройки оповещений на основе метрик для базы данных Azure для MySQL](howto-alert-on-metric.md). Другие задачи включают настройку автоматических действий, выполнение расширенной аналитики и архивирование журнала. Дополнительные сведения см. в статье [Обзор метрик в Microsoft Azure](../azure-monitor/platform/data-platform.md).
 
 ### <a name="list-of-metrics"></a>Список метрик
 Для базы данных Azure для MySQL доступны следующие метрики:
@@ -61,6 +61,6 @@ ms.locfileid: "92428120"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - См. рекомендации по созданию оповещений для метрики в статье [Как настраивать оповещения](howto-alert-on-metric.md).
-- Дополнительные сведения о доступе к метрикам и их экспорте с помощью портала Azure, REST API или интерфейса командной строки см. в статье [Обзор метрик в Microsoft Azure](../monitoring-and-diagnostics/monitoring-overview-metrics.md).
+- Дополнительные сведения о доступе к метрикам и их экспорте с помощью портала Azure, REST API или интерфейса командной строки см. в статье [Обзор метрик в Microsoft Azure](../azure-monitor/platform/data-platform.md).
 - Читайте наш блог, чтобы ознакомиться с [рекомендациями по мониторингу сервера](https://azure.microsoft.com/blog/best-practices-for-alerting-on-metrics-with-azure-database-for-mysql-monitoring/).
 - Дополнительные сведения о [запланированных уведомлениях об обслуживании](./concepts-planned-maintenance-notification.md) в базе данных Azure для MySQL — один сервер

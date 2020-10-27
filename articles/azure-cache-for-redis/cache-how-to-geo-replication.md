@@ -6,12 +6,12 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 03/06/2019
 ms.author: yegu
-ms.openlocfilehash: f6ac02f0bcd9becf5dd1ffcd600f78b848b47cda
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 33d5ec89ef7563df16e0fe9b447eca88b1dba7fe
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91839696"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92536884"
 ---
 # <a name="how-to-set-up-geo-replication-for-azure-cache-for-redis"></a>Как настроить георепликацию для кэша Azure для Redis
 
@@ -63,11 +63,11 @@ ms.locfileid: "91839696"
 
     ![Контекстное меню георепликации](./media/cache-how-to-geo-replication/cache-geo-location-select-link-context-menu.png)
 
-3. Чтобы связывать два кэша друг с другом и начать процесс репликации, нажмите кнопку **Связь**.
+3. Чтобы связывать два кэша друг с другом и начать процесс репликации, нажмите кнопку **Связь** .
 
     ![Связывание кэшей](./media/cache-how-to-geo-replication/cache-geo-location-confirm-link.png)
 
-4. Ход выполнения процесса репликации можно просмотреть в колонке **Георепликация**.
+4. Ход выполнения процесса репликации можно просмотреть в колонке **Георепликация** .
 
     ![Состояние связывания](./media/cache-how-to-geo-replication/cache-geo-location-linking.png)
 
@@ -75,7 +75,7 @@ ms.locfileid: "91839696"
 
     ![Снимок экрана, посвященный просмотру состояния связывания для основного и дополнительного кэшей.](./media/cache-how-to-geo-replication/cache-geo-location-link-status.png)
 
-    По завершении процесса репликации **Состояние связи** изменится на **Успешно**.
+    По завершении процесса репликации **Состояние связи** изменится на **Успешно** .
 
     ![Состояние кэша](./media/cache-how-to-geo-replication/cache-geo-location-link-successful.png)
 
@@ -145,8 +145,8 @@ ms.locfileid: "91839696"
 
 - Георепликация между кэшами в одной виртуальной сети поддерживается.
 - Также поддерживается Георепликация между кэшами в разных виртуальных сетей.
-  - Если виртуальных сетей находятся в одном регионе, их можно подключить с помощью [пиринга](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview) [виртуальных сетей или подключения виртуальной сети VPN-шлюза](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways#V2V).
-  - Если виртуальных сетей находятся в разных регионах, Георепликация с использованием пиринга виртуальных сетей поддерживается, но Клиентская виртуальная машина в виртуальной сети 1 (регион 1) не сможет получить доступ к кэшу в виртуальной сети 2 (регион 2) по его DNS-имени, поскольку ограничение основано на внутренних подсистемах балансировки нагрузки. Дополнительные сведения об ограничениях пиринга виртуальных сетей см. в статье [виртуальные сети — пиринг — требования и ограничения](https://docs.microsoft.com/azure/virtual-network/virtual-network-manage-peering#requirements-and-constraints). Рекомендуемым решением является подключение между виртуальными сетями через VPN-шлюз.
+  - Если виртуальных сетей находятся в одном регионе, их можно подключить с помощью [пиринга](../virtual-network/virtual-network-peering-overview.md) [виртуальных сетей или подключения виртуальной сети VPN-шлюза](../vpn-gateway/vpn-gateway-howto-vnet-vnet-resource-manager-portal.md).
+  - Если виртуальных сетей находятся в разных регионах, Георепликация с использованием пиринга виртуальных сетей поддерживается, но Клиентская виртуальная машина в виртуальной сети 1 (регион 1) не сможет получить доступ к кэшу в виртуальной сети 2 (регион 2) по его DNS-имени, поскольку ограничение основано на внутренних подсистемах балансировки нагрузки. Дополнительные сведения об ограничениях пиринга виртуальных сетей см. в статье [виртуальные сети — пиринг — требования и ограничения](../virtual-network/virtual-network-manage-peering.md#requirements-and-constraints). Рекомендуемым решением является подключение между виртуальными сетями через VPN-шлюз.
   
 С помощью [этого шаблона Azure](https://azure.microsoft.com/resources/templates/201-redis-vnet-geo-replication/)можно быстро развернуть два геореплицированных кэша в виртуальной сети, подключенной с помощью подключения "Виртуальная сеть VPN-шлюза".
 
@@ -166,7 +166,7 @@ ms.locfileid: "91839696"
 
 ### <a name="can-i-use-powershell-or-azure-cli-to-manage-geo-replication"></a>Можно ли использовать PowerShell или Azure CLI для управления георепликацией?
 
-Да, георепликацию можно управлять с помощью портал Azure, PowerShell или Azure CLI. Дополнительные сведения см. в документации по [PowerShell](https://docs.microsoft.com/powershell/module/az.rediscache/?view=azps-1.4.0#redis_cache) или документация [Azure CLI](https://docs.microsoft.com/cli/azure/redis/server-link?view=azure-cli-latest).
+Да, георепликацию можно управлять с помощью портал Azure, PowerShell или Azure CLI. Дополнительные сведения см. в документации по [PowerShell](/powershell/module/az.rediscache/?view=azps-1.4.0#redis_cache) или документация [Azure CLI](/cli/azure/redis/server-link?view=azure-cli-latest).
 
 ### <a name="how-much-does-it-cost-to-replicate-my-data-across-azure-regions"></a>Сколько стоит реплицировать мои данные между регионами Azure?
 
@@ -188,9 +188,9 @@ ms.locfileid: "91839696"
 
 ### <a name="can-i-configure-a-firewall-with-geo-replication"></a>Можно ли настроить брандмауэр с георепликацией?
 
-Да, можно настроить [брандмауэр](https://docs.microsoft.com/azure/azure-cache-for-redis/cache-configure#firewall) с георепликацией. Чтобы Георепликация функционировала вместе с брандмауэром, убедитесь, что IP-адрес вторичного кэша добавлен в правила брандмауэра основного кэша.
+Да, можно настроить [брандмауэр](./cache-configure.md#firewall) с георепликацией. Чтобы Георепликация функционировала вместе с брандмауэром, убедитесь, что IP-адрес вторичного кэша добавлен в правила брандмауэра основного кэша.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о кэше Azure для функций Redis.
 

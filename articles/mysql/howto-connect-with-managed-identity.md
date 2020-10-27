@@ -7,12 +7,12 @@ ms.service: mysql
 ms.topic: how-to
 ms.date: 05/19/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 5b656ff670d4ab4d50f4b6dfbd1c60bfe3db22dd
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 63a9a0acc7a3cb7f5b5a5d451ab6199ec5f1390f
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92425248"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92546744"
 ---
 # <a name="connect-with-managed-identity-to-azure-database-for-mysql"></a>Подключение к базе данных Azure для MySQL с помощью управляемого удостоверения
 
@@ -38,13 +38,13 @@ ms.locfileid: "92425248"
 
 ## <a name="creating-a-user-assigned-managed-identity-for-your-vm"></a>Создание управляемого удостоверения, назначаемого пользователем, для виртуальной машины
 
-Создайте в подписке удостоверение, используя команду [az identity create](/cli/azure/identity?view=azure-cli-latest#az-identity-create). Вы можете использовать ту же группу ресурсов, в которой работает ваша виртуальная машина, или другую.
+Создайте в подписке удостоверение, используя команду [az identity create](/cli/azure/identity#az-identity-create). Вы можете использовать ту же группу ресурсов, в которой работает ваша виртуальная машина, или другую.
 
 ```azurecli-interactive
 az identity create --resource-group myResourceGroup --name myManagedIdentity
 ```
 
-Чтобы настроить удостоверение на следующих шагах, выполните команду [az identity show](/cli/azure/identity?view=azure-cli-latest#az-identity-show) для сохранения идентификаторов ресурса и клиента удостоверения в переменных.
+Чтобы настроить удостоверение на следующих шагах, выполните команду [az identity show](/cli/azure/identity#az-identity-show) для сохранения идентификаторов ресурса и клиента удостоверения в переменных.
 
 ```azurecli
 # Get resource ID of the user-assigned identity
@@ -54,7 +54,7 @@ resourceID=$(az identity show --resource-group myResourceGroup --name myManagedI
 clientID=$(az identity show --resource-group myResourceGroup --name myManagedIdentity --query clientId --output tsv)
 ```
 
-Теперь можно назначить виртуальной машине удостоверение, назначаемое пользователем, с помощью команды [az vm identity assign](/cli/azure/vm/identity?view=azure-cli-latest#az-vm-identity-assign):
+Теперь можно назначить виртуальной машине удостоверение, назначаемое пользователем, с помощью команды [az vm identity assign](/cli/azure/vm/identity#az-vm-identity-assign):
 
 ```azurecli
 az vm identity assign --resource-group myResourceGroup --name myVM --identities $resourceID

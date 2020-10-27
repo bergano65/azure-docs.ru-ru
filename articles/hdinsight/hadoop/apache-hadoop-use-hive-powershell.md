@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/24/2019
-ms.openlocfilehash: 327a8a0de0d144a5c1d8494a6dd22a8b89a7bd93
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 013eb8215064173e002aea23043bc2e9ba92b525
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87081055"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92545248"
 ---
 # <a name="run-apache-hive-queries-using-powershell"></a>Выполнение запросов Apache Hive с помощью PowerShell
 
@@ -28,7 +28,7 @@ ms.locfileid: "87081055"
 
 * Кластер Apache Hadoop в HDInsight. Ознакомьтесь со статьей [Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](./apache-hadoop-linux-tutorial-get-started.md).
 
-* Установите [модуль Az](https://docs.microsoft.com/powershell/azure/) для PowerShell.
+* Установите [модуль Az](/powershell/azure/) для PowerShell.
 
 ## <a name="run-a-hive-query"></a>Выполнение запроса Hive
 
@@ -38,7 +38,7 @@ Azure PowerShell предоставляет *командлеты* , позво�
 
 * `Connect-AzAccount` — выполняет аутентификацию Azure PowerShell для подписки Azure.
 * `New-AzHDInsightHiveJobDefinition` — создает *определение задания* с использованием заданных операторов HiveQL.
-* `Start-AzHDInsightJob` — отправляет определение задания в HDInsight и запускает задание. Будет возвращен объект *задания*.
+* `Start-AzHDInsightJob` — отправляет определение задания в HDInsight и запускает задание. Будет возвращен объект *задания* .
 * `Wait-AzHDInsightJob` — использует объект-задание для проверки состояния задания. Он ожидает завершения задания или превышения времени ожидания.
 * `Get-AzHDInsightJobOutput` — используется для получения выходных данных задания.
 * `Invoke-AzHDInsightHiveJob` — используется для выполнения операторов HiveQL. Этот командлет блокирует выполнение запроса, после чего возвращаются результаты.
@@ -84,7 +84,7 @@ Azure PowerShell предоставляет *командлеты* , позво�
    >
    > `Invoke-AzHDInsightHiveJob -File "wasbs://<ContainerName>@<StorageAccountName>/<Path>/query.hql"`
    >
-   > Дополнительные сведения о командлете **Here-Strings** см. <a href="https://technet.microsoft.com/library/ee692792.aspx" target="_blank">здесь</a>.
+   > Дополнительные сведения о **строках** см. в разделе " [строки](/powershell/module/microsoft.powershell.core/about/about_quoting_rules#here-strings)".
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 

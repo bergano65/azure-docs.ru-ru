@@ -6,12 +6,12 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 10/22/2019
 ms.author: yegu
-ms.openlocfilehash: 7be987b99c60185647ab976691d42b72236c6364
-ms.sourcegitcommit: d6a739ff99b2ba9f7705993cf23d4c668235719f
+ms.openlocfilehash: fd0e6f893d152259c46ff06e9ec20af54395c5e6
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92496062"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92545316"
 ---
 # <a name="remove-tls-10-and-11-from-use-with-azure-cache-for-redis"></a>Удаление поддержки TLS 1.0 и 1.1 при работе с Кэшем Azure для Redis
 
@@ -65,7 +65,7 @@ ms.locfileid: "92496062"
 
 Клиенты Redis .NET Core по умолчанию имеют версию протокола TLS, установленную по умолчанию в ОС, которая, очевидно, зависит от самой ОС. 
 
-В зависимости от версии ОС и всех примененных исправлений, действующая версия TLS по умолчанию может отличаться. Хотя существует один источник сведений об этом, [ниже](https://docs.microsoft.com/dotnet/framework/network-programming/tls#support-for-tls-12) приведена статья для Windows. 
+В зависимости от версии ОС и всех примененных исправлений, действующая версия TLS по умолчанию может отличаться. Хотя существует один источник сведений об этом, [ниже](/dotnet/framework/network-programming/tls#support-for-tls-12) приведена статья для Windows. 
 
 Однако если вы используете старую ОС или просто хотите убедиться, рекомендуется вручную настроить предпочтительную версию TLS с помощью клиента.
 

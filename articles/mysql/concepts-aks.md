@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 07/14/2020
-ms.openlocfilehash: 712bf702ba355ec3b2ca6184c33da8489f8a178e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bc40903de09ebfe04858c631eee0233561784418
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86519870"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92546914"
 ---
 # <a name="connecting-azure-kubernetes-service-and-azure-database-for-mysql"></a>Подключение Службы Azure Kubernetes к Базе данных Azure для MySQL
 
@@ -26,11 +26,11 @@ ms.locfileid: "86519870"
 Чтобы проверить, использует ли ваш кластер AKS ускоренную сеть, сделайте следующее:
 1. Перейдите на портал Azure и выберите свой кластер AKS.
 2. Выберите вкладку "Свойства".
-3. Скопируйте имя **группы ресурсов инфраструктуры**.
+3. Скопируйте имя **группы ресурсов инфраструктуры** .
 4. С помощью панели поиска на портале найдите и откройте группу ресурсов инфраструктуры.
 5. Выберите в этой группе ресурсов виртуальную машину.
 6. Перейдите на вкладку **Сети** для виртуальной машины.
-7. Проверьте, включена ли **ускоренная сеть**.
+7. Проверьте, включена ли **ускоренная сеть** .
 
 Или с помощью Azure CLI выполните следующие две команды.
 ```azurecli
@@ -43,5 +43,5 @@ az network nic list --resource-group nodeResourceGroup -o table
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- [Создание кластера службы Azure Kubernetes](../aks/kubernetes-walkthrough.md)
-- Узнайте, как [установить WordPress из чарта Helm с помощью OSBA и Базы данных Azure для MySQL](../aks/integrate-azure.md).
+- [Создание кластера службы Kubernetes Azure](../aks/kubernetes-walkthrough.md)
+- Узнайте, как [установить WordPress из чарта Helm с помощью OSBA и Базы данных Azure для MySQL](../aks/index.yml).

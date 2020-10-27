@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: how-to
 ms.date: 06/19/2019
-ms.openlocfilehash: 1e04662cb0f67863e23f1fc1ce7e1f21ca4e9197
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 898a02796d578d76f9b45d167f4e92a4bf9831ba
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86087645"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92536289"
 ---
 # <a name="manage-ml-services-cluster-on-azure-hdinsight"></a>Управление кластером служб машинного обучения в Azure HDInsight
 
@@ -21,7 +21,7 @@ ms.locfileid: "86087645"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Кластер служб машинного обучения в HDInsight. Ознакомьтесь со статьей [Create Linux-based clusters in HDInsight by using the Azure portal](../hdinsight-hadoop-create-linux-clusters-portal.md) (Создание кластеров под управлением Linux в HDInsight с помощью портала Azure) и выберите **Службы машинного обучения ML Services** для параметра **Тип кластера**.
+* Кластер служб машинного обучения в HDInsight. Ознакомьтесь со статьей [Create Linux-based clusters in HDInsight by using the Azure portal](../hdinsight-hadoop-create-linux-clusters-portal.md) (Создание кластеров под управлением Linux в HDInsight с помощью портала Azure) и выберите **Службы машинного обучения ML Services** для параметра **Тип кластера** .
 
 * Клиент Secure Shell (SSH). Клиент SSH используется для удаленного подключения к кластеру HDInsight и выполнения команд непосредственно в кластере. Дополнительные сведения см. в статье [Использование SSH с HDInsight.](../hdinsight-hadoop-linux-use-ssh-unix.md)
 
@@ -31,8 +31,8 @@ ms.locfileid: "86087645"
 
 ![HDI портал Azure параметры входа](./media/r-server-hdinsight-manage/hdi-concurrent-users1.png)
 
-- **Имя пользователя для входа в кластер** — пользователь HTTP для проверки подлинности с помощью шлюза HDInsight, который применяется для защиты созданных вами кластеров HDInsight. Эти учетные данные пользователя HTTP нужны для доступа к пользовательскому интерфейсу Apache Ambari, пользовательскому интерфейсу Apache Hadoop YARN, а также другим компонентам пользовательского интерфейса.
-- **Secure Shell (SSH) username**— пользователь SSH для доступа к кластеру через Secure Shell. Этот пользователь применяется в системе Linux для всех головных, рабочих и граничных узлов. Таким образом, с помощью безопасной оболочки вы можете получить доступ к любому узлу в удаленном кластере.
+- **Имя пользователя для входа в кластер**  — пользователь HTTP для проверки подлинности с помощью шлюза HDInsight, который применяется для защиты созданных вами кластеров HDInsight. Эти учетные данные пользователя HTTP нужны для доступа к пользовательскому интерфейсу Apache Ambari, пользовательскому интерфейсу Apache Hadoop YARN, а также другим компонентам пользовательского интерфейса.
+- **Secure Shell (SSH) username** — пользователь SSH для доступа к кластеру через Secure Shell. Этот пользователь применяется в системе Linux для всех головных, рабочих и граничных узлов. Таким образом, с помощью безопасной оболочки вы можете получить доступ к любому узлу в удаленном кластере.
 
 Версия RStudio Server Community, которая используется в кластере служб машинного обучения в HDInsight, поддерживает только один метод входа: имя пользователя и пароль Linux. Эта версия не поддерживает передачу токенов. Таким образом, при первом входе в RStudio в кластере служб машинного обучения потребуется ввести учетные данные два раза.
 
@@ -68,13 +68,13 @@ sudo passwd <yournewusername>
 
 ![одновременные пользователи выводят на экран снимок экрана](./media/r-server-hdinsight-manage/hdi-concurrent-users2.png)
 
-При появлении запроса на ввод текущего пароля Kerberos нажмите клавишу **ВВОД**, чтобы игнорировать его. Параметр `-m` в команде `useradd` указывает, что система создаст домашнюю папку пользователя, которая обязательна для версии RStudio Community.
+При появлении запроса на ввод текущего пароля Kerberos нажмите клавишу **ВВОД** , чтобы игнорировать его. Параметр `-m` в команде `useradd` указывает, что система создаст домашнюю папку пользователя, которая обязательна для версии RStudio Community.
 
 ### <a name="step-3-use-rstudio-community-version-with-the-user-created"></a>Шаг 3. Использование версии RStudio Community с помощью созданного пользователя
 
 Войдите в RStudio из `https://CLUSTERNAME.azurehdinsight.net/rstudio/`. Если вы впервые входите в систему после создания кластера, сначала введите учетные данные администратора кластера, а затем созданные учетные данные пользователя SSH. Если это уже не первый вход, достаточно ввести учетные данные нового пользователя SSH.
 
-Вы также можете войти параллельно с помощью исходных учетных данных (по умолчанию — *sshuser*) в другом окне браузера.
+Вы также можете войти параллельно с помощью исходных учетных данных (по умолчанию — *sshuser* ) в другом окне браузера.
 
 Обратите внимание, что у добавленных пользователей нет привилегированных прав в системе Linux, но у них есть тот же доступ ко всем файлам в удаленном хранилище HDFS и WASB.
 
@@ -106,7 +106,7 @@ mySparkCluster <- RxSpark(
 )
 ```
 
-Дополнительные сведения см. в разделе об использовании Microsoft Machine Learning Server в качестве клиента Apache Hadoop в статье [How to use RevoScaleR in a Spark compute context](https://docs.microsoft.com/machine-learning-server/r/how-to-revoscaler-spark#more-spark-scenarios) (Как использовать RevoScaleR в контексте вычислений Spark).
+Дополнительные сведения см. в разделе об использовании Microsoft Machine Learning Server в качестве клиента Apache Hadoop в статье [How to use RevoScaleR in a Spark compute context](/machine-learning-server/r/how-to-revoscaler-spark#more-spark-scenarios) (Как использовать RevoScaleR в контексте вычислений Spark).
 
 ## <a name="use-a-compute-context"></a>Использование контекста вычислений
 
@@ -197,15 +197,15 @@ rxSparkDisconnect(myHadoopCluster)
 
 3. В разделе **Отправка действия скрипта** введите следующие сведения.
 
-   * В поле **Тип скрипта** выберите **Пользовательский**.
+   * В поле **Тип скрипта** выберите **Пользовательский** .
 
    * В поле **Имя** укажите имя для действия скрипта.
 
      * В поле **URI bash-скрипта** введите `https://mrsactionscripts.blob.core.windows.net/rpackages-v01/InstallRPackages.sh`. Этот скрипт устанавливает дополнительные пакеты R на рабочий узел.
 
-   * Установите флажок только для параметра **Рабочая роль**.
+   * Установите флажок только для параметра **Рабочая роль** .
 
-   * **Параметры**: устанавливаемые пакеты R. Например `bitops stringr arules`.
+   * **Параметры** : устанавливаемые пакеты R. Например, `bitops stringr arules`
 
    * Установите флажок **Persist this script action** (Сохранить это действие скрипта).  
 
@@ -216,7 +216,7 @@ rxSparkDisconnect(myHadoopCluster)
 
    ![Действие "отправить скрипт" портал Azure](./media/r-server-hdinsight-manage/submit-script-action.png)
 
-4. Нажмите кнопку **Создать**, чтобы выполнить скрипт. После завершения выполнения пакеты R будут доступны на всех рабочих узлах.
+4. Нажмите кнопку **Создать** , чтобы выполнить скрипт. После завершения выполнения пакеты R будут доступны на всех рабочих узлах.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 04/28/2020
-ms.openlocfilehash: 3818ce9ebae8e6af6ee8bb5ed30c7ab446a6f6b2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a93b3e0da7b881b80f7613907e40af509bffadbd
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91855180"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92545571"
 ---
 # <a name="apache-spark-guidelines"></a>Рекомендации по Apache Spark
 
@@ -56,7 +56,7 @@ ms.locfileid: "91855180"
 | Apache Hive в HDInsight | [Integrate Apache Spark and Apache Hive with the Hive Warehouse Connector](../interactive-query/apache-hive-warehouse-connector.md) (Интеграция Apache Spark и Apache Hive с помощью соединителя хранилища Hive) |
 | Apache HBase в HDInsight | [Чтение и запись данных Apache HBase с помощью Apache Spark](../hdinsight-using-spark-query-hbase.md) |
 | Apache Kafka в HDInsight | [Руководство по Использование структурированной потоковой передачи Apache Spark с Apache Kafka в HDInsight](../hdinsight-apache-kafka-spark-structured-streaming.md) |
-| Azure Cosmos DB | [Azure Cosmos DB: реализация лямбда-архитектуры на платформе Azure](../../cosmos-db/lambda-architecture.md) |
+| Azure Cosmos DB | [Сведения об Azure Synapse Link для Azure Cosmos DB](../../cosmos-db/synapse-link.md) |
 
 ## <a name="what-are-my-storage-options"></a>Что такое мои параметры хранения?
 
@@ -66,7 +66,7 @@ ms.locfileid: "91855180"
 | Хранилище Azure Data Lake Storage 1-го поколения | [Использование Azure Data Lake Storage 1-го поколения с кластерами Azure HDInsight](../hdinsight-hadoop-use-data-lake-storage-gen1.md) |
 | хранилище BLOB-объектов Azure | [Использование службы хранилища Azure с кластерами Azure HDInsight](../hdinsight-hadoop-use-blob-storage.md) |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Настройка параметров Apache Spark](apache-spark-settings.md)
 * [Оптимизация заданий Apache Spark в Azure HDInsight](apache-spark-perf.md)

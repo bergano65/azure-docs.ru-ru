@@ -3,15 +3,15 @@ title: Политики интеграции ДАПР управления API A
 description: Узнайте о политиках управления API Azure для взаимодействия с расширениями микрослужб ДАПР.
 author: vladvino
 ms.author: vlvinogr
-ms.date: 9/13/2020
+ms.date: 10/23/2020
 ms.topic: article
 ms.service: api-management
-ms.openlocfilehash: d537040be4ed4cbf961a4621980d3d290e306359
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2bf9c4d233cfad454d63da4dce30a38af80d24ab
+ms.sourcegitcommit: d3c3f2ded72bfcf2f552e635dc4eb4010491eb75
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91345138"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92558403"
 ---
 # <a name="api-management-dapr-integration-policies"></a>Политики интеграции ДАПР управления API
 
@@ -89,7 +89,7 @@ template:
 
 ### <a name="attributes"></a>Атрибуты
 
-| Атрибут        | Описание                     | Обязательно | По умолчанию |
+| Атрибут        | Описание                     | Обязательно | Значение по умолчанию |
 |------------------|---------------------------------|----------|---------|
 | backend-id       | Необходимо задать значение "ДАПР"           | Да      | Н/Д     |
 | ДАПР-App-ID      | Имя целевой микрослужбы. Сопоставляется с параметром [AppID](https://github.com/dapr/docs/blob/master/reference/api/service_invocation_api.md) в ДАПР.| Да | Н/Д |
@@ -104,14 +104,14 @@ template:
 
 ## <a name="send-message-to-pubsub-topic"></a><a name="pubsub"></a> Отправить сообщение в Pub/подраздел
 
-Эта политика указывает шлюзу управления API на отправку сообщения в раздел публикации и подписки ДАПР. Политика выполняет эту задачу, создавая запрос HTTP POST для `http://localhost:3500/v1.0/publish/{{pub-name}}/{{topic}}` замены параметров шаблона и добавления содержимого, указанного в инструкции политики.
+Эта политика указывает шлюзу управления API на отправку сообщения в раздел публикации и подписки ДАПР. Политика выполняет эту задачу, создавая запрос HTTP POST для `http://localhost:3500/v1.0/publish/{{pubsub-name}}/{{topic}}` замены параметров шаблона и добавления содержимого, указанного в инструкции политики.
 
 Политика предполагает, что среда выполнения ДАПР выполняется в контейнере расширения в том же Pod, что и шлюз. Среда выполнения ДАПР реализует семантику публикации и подтипа.
 
 ### <a name="policy-statement"></a>Правило политики
 
 ```xml
-<publish-to-dapr topic=”topic-name” ignore-error="false|true" response-variable-name="resp-var-name" timeout="in seconds" template=”Liquid” content-type="application/json">
+<publish-to-dapr pubsub-name="pubsub-name" topic=”topic-name” ignore-error="false|true" response-variable-name="resp-var-name" timeout="in seconds" template=”Liquid” content-type="application/json">
     <!-- message content -->
 </publish-to-dapr>
 ```
@@ -131,7 +131,8 @@ template:
      <inbound>
         <base />
         <publish-to-dapr
-               topic="@("orders/new")"
+           pubsub-name="orders"
+               topic="new"
                response-variable-name="dapr-response">
             @(context.Request.Body.As<string>())
         </publish-to-dapr>
@@ -156,9 +157,10 @@ template:
 
 ### <a name="attributes"></a>Атрибуты
 
-| Атрибут        | Описание                     | Обязательно | По умолчанию |
+| Атрибут        | Описание                     | Обязательно | Значение по умолчанию |
 |------------------|---------------------------------|----------|---------|
-| Раздел            | Имя целевого раздела               | Да      | Н/Д     |
+| pubsub — имя      | Имя целевого компонента PubSub. Сопоставляется с параметром [пубсубнаме](https://github.com/dapr/docs/blob/master/reference/api/pubsub_api.md) в ДАПР. Если он отсутствует, значение атрибута __раздела__ должно быть в виде `pubsub-name/topic-name` .    | Нет       | None    |
+| Раздел            | Имя раздела. Сопоставляется с параметром [раздела](https://github.com/dapr/docs/blob/master/reference/api/pubsub_api.md) в ДАПР.               | Да      | Н/Д     |
 | ignore-error     | Если задано значение, `true` то политика не активирует раздел ["On-Error"](api-management-error-handling-policies.md) при получении ошибки из среды выполнения ДАПР | Нет | `false` |
 | response-variable-name | Имя записи коллекции [Variables](api-management-policy-expressions.md#ContextVariables) , используемой для хранения ответа от среды выполнения ДАПР | Нет | None |
 | timeout | Время (в секундах) ожидания ответа среды выполнения ДАПР. Может находиться в диапазоне от 1 до 240 секунд. | Нет | 5 |
@@ -241,7 +243,7 @@ template:
 
 ### <a name="attributes"></a>Атрибуты
 
-| Атрибут        | Описание                     | Обязательно | По умолчанию |
+| Атрибут        | Описание                     | Обязательно | Значение по умолчанию |
 |------------------|---------------------------------|----------|---------|
 | name            | Имя целевой привязки. Должно совпадать с именем привязок, [определенных](https://github.com/dapr/docs/blob/master/reference/api/bindings_api.md#bindings-structure) в ДАПР.           | Да      | Н/Д     |
 | Операция       | Имя целевой операции (только для привязки). Сопоставляется со свойством [Operation](https://github.com/dapr/docs/blob/master/reference/api/bindings_api.md#invoking-output-bindings) в ДАПР. | Нет | None |
