@@ -5,12 +5,12 @@ services: container-service
 ms.topic: overview
 ms.date: 05/06/2019
 ms.custom: mvc
-ms.openlocfilehash: f4c1e96a0603caa8e026f1968299fa24b8755a42
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: ee709868cd7e78afbcc480913c4e4c8fd2acf832
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88003215"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92167191"
 ---
 # <a name="azure-kubernetes-service-aks"></a>Служба Azure Kubernetes (AKS)
 
@@ -63,6 +63,12 @@ ms.locfileid: "88003215"
 Служба AKS поддерживает создание пулов узлов с процессорами GPU. В настоящее время Azure предоставляет одну или несколько виртуальных машин с поддержкой процессоров GPU. Виртуальные машины с поддержкой процессоров GPU предназначены для рабочих нагрузок с большим объемом вычислений, графической обработки и визуализаций.
 
 Дополнительные сведения см. в статье об [использовании GPU в AKS][aks-gpu].
+
+### <a name="confidential-computing-nodes-public-preview"></a>Узлы конфиденциальных вычислений (общедоступная предварительная версия)
+
+AKS поддерживает создание пулов узлов конфиденциальных вычислений на основе Intel SGX (виртуальные машины DCSv2). Узлы конфиденциальных вычислений позволяют контейнерам работать в доверенной и изолированной среде выполнения (в анклавах) на основе оборудования. Изоляция между контейнерами в сочетании с обеспечением целостности кода с помощью аттестации может помочь при разработке стратегии углубленной защиты контейнеров. Узлы конфиденциальных вычислений поддерживают как конфиденциальные контейнеры (существующие приложения Docker), так и контейнеры, поддерживающие анклавы.
+
+Дополнительные сведения см. в статье об [узлах конфиденциальных вычислений в AKS][conf-com-node].
 
 ### <a name="storage-volume-support"></a>Поддержка тома хранилища
 
@@ -143,3 +149,4 @@ Azure Kubernetes Service (AKS) соответствуют требованиям
 [kubernetes-rbac]: concepts-identity.md#kubernetes-role-based-access-control-rbac
 [concepts-identity]: concepts-identity.md
 [concepts-storage]: concepts-storage.md
+[conf-com-node]: ../confidential-computing/confidential-nodes-aks-overview.md

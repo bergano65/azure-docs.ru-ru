@@ -6,12 +6,12 @@ ms.service: container-service
 ms.topic: overview
 ms.date: 9/22/2020
 ms.author: amgowda
-ms.openlocfilehash: b388b8efb7d993baa243975dbf499576246f3185
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 01f10d3ba83d23478a7113cf4935181ee34959e3
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "90998538"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92125292"
 ---
 # <a name="enclave-aware-containers"></a>Контейнеры с поддержкой анклавов
 
@@ -51,14 +51,19 @@ ms.locfileid: "90998538"
 
 Начните работу по миграции модели машинного обучения методом lift-and-shift в среду выполнения ONNX, выполнив действия, описанные [здесь](https://aka.ms/confidentialinference).
 
-## <a name="container-samples-implementations"></a>Реализации примеров контейнеров
+### <a name="edgeless-rt"></a>Edgeless RT
 
-[Примеры Azure для контейнеров с поддержкой анклавов в AKS](https://github.com/Azure-Samples/enclave-aware-container-samples)
+Edgeless RT — это проект с открытым кодом, созданный на основе пакета SDK Open Enclave. В нем добавлена поддержка Go и дополнительных функций C++. Начните работу с простым конфиденциальным приложением Go, используя знакомую среду VS Code, [здесь](https://github.com/edgelesssys/edgelessrt). В случае с приложениями Edgeless в AKS следуйте [этим инструкциям](https://github.com/edgelesssys/edgelessrt/blob/master/docs/ERTAzureAKSDeployment.md).
+
+
+## <a name="container-based-sample-implementations"></a>Примеры реализации на основе контейнеров
+
+[Примеры Azure для контейнеров с поддержкой анклавов в AKS](https://github.com/Azure-Samples/confidential-computing/tree/main/containersamples)
 
 <!-- LINKS - external -->
-[Azure Attestation]: https://docs.microsoft.com/en-us/azure/attestation/
+[Аттестация Azure](../attestation/overview.md)
 
 
 <!-- LINKS - internal -->
-[DC Virtual Machine]: /confidential-computing/virtual-machine-solutions
-[Confidential Containers]: /confidential-computing/containercompute/confidential-containers
+[Виртуальная машина контроллера домена](/confidential-computing/virtual-machine-solutions)
+[Конфиденциальные контейнеры](/confidential-computing/containercompute/confidential-containers)

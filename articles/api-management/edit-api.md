@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 11/08/2017
 ms.author: apimpm
-ms.openlocfilehash: d3ce7318266f3fbaf818e5bcfa245ce5f64d74ba
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 4241ba55c464169257ec0a4b2d20eaa5e76534d5
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/15/2020
-ms.locfileid: "92076935"
+ms.locfileid: "92092704"
 ---
 # <a name="edit-an-api"></a>Изменение API
 
@@ -35,29 +35,29 @@ ms.locfileid: "92076935"
 
 ## <a name="edit-an-api-in-apim"></a>Изменение API в службе управления API
 
-![Изменение API](./media/edit-api/edit-api001.png)
+![Снимок экрана, на котором показан процесс изменения API в APIM.](./media/edit-api/edit-api001.png)
 
-1. Щелкните вкладку **Интерфейсы API**.
+1. Щелкните вкладку **Интерфейсы API** .
 2. Выберите один из API, которые вы импортировали ранее.
-3. Выберите вкладку **Конструктор**.
+3. Выберите вкладку **Конструктор** .
 4. Выберите операцию, которую нужно изменить.
-5. Чтобы переименовать операцию, щелкните значок **карандаша** в окне **Интерфейсный сервер**.
+5. Чтобы переименовать операцию, щелкните значок **карандаша** в окне **Интерфейсный сервер** .
 
 ## <a name="update-the-swagger"></a>Обновление Swagger
 
 Можно обновить API внутреннего сервера на портале Azure, выполнив следующие действия:
 
-1. Выберите **Все операции**.
-2. Щелкните значок карандаша в окне **Интерфейсный сервер**.
+1. Выберите **Все операции** .
+2. Щелкните значок карандаша в окне **Интерфейсный сервер** .
 
-    ![Изменение API](./media/edit-api/edit-api002.png)
+    ![Снимок экрана, на котором изображен значок карандаша в окне "Интерфейсный сервер".](./media/edit-api/edit-api002.png)
 
     Отобразится спецификация Swagger API.
 
     ![Изменение API](./media/edit-api/edit-api003.png)
 
 3. Обновите Swagger.
-4. Нажмите кнопку **Save**(Сохранить).
+4. Нажмите кнопку **Save** (Сохранить).
 
 [!INCLUDE [api-management-define-api-topics.md](../../includes/api-management-define-api-topics.md)]
 

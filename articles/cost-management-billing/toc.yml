@@ -48,8 +48,6 @@
           href: costs/manage-automation.md
         - name: Управление затратами для партнеров
           href: costs/get-started-partners.md
-        - name: Выбор между службой "Управление затратами" и Cloudyn
-          href: costs/choose-between-azure-cost-management-cloudyn.md
     - name: Резервирование
       items:
         - name: Общие сведения о резервированиях в Azure
@@ -440,10 +438,6 @@
           href: cloudyn/overview.md
     - name: Краткие руководства
       items:
-        - name: Просмотр данных о затратах
-          href: cloudyn/quick-register-azure-sub.md
-        - name: "Просмотр данных о затратах\_— EA"
-          href: cloudyn/quick-register-ea.md
         - name: "Просмотр данных о затратах\_— CSP"
           href: cloudyn/quick-register-csp.md
     - name: Учебники
@@ -468,8 +462,6 @@
           href: cloudyn/activate-subs-accounts.md
         - name: Добавление расширенных метрик для виртуальных машин
           href: cloudyn/azure-vm-extended-metrics.md
-        - name: Подключение учетной записи Google
-          href: cloudyn/connect-google-account.md
         - name: Подключение учетной записи AWS
           href: cloudyn/connect-aws-account.md
         - name: Настройка учетных записей хранения

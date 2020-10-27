@@ -11,12 +11,12 @@ ms.topic: include
 ms.date: 09/14/2020
 ms.author: nitinme
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: 08996d7343ccab4c5d6e688b580a8e6e1ca5bceb
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 1c7587a4434a84c6934179393baa5ae684f9b1fd
+ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91376834"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92116724"
 ---
 [Иммерсивное средство чтения](https://www.onenote.com/learningtools) — это инклюзивное решение, в котором реализованы проверенные методы, улучшающие понимание текста при чтении у людей, которые учатся читать или изучают язык, а также у людей, которые испытывают определенные трудности при обучении, например, из-за дислексии. Вы можете использовать иммерсивное средство чтения в своих приложениях, чтобы изолировать текст для фокусировки, отображать рисунки, связанные с часто используемыми словами, выделять части речи, читать вслух выделенный текст, переводить слова и фразы в реальном времени и многое другое.
 
@@ -42,7 +42,7 @@ ms.locfileid: "91376834"
 
 ### <a name="configure-authentication-values"></a>Настройка значений проверки подлинности
 
-Щелкните правой кнопкой мыши проект в _обозревателе решений_, а затем выберите **Управление секретами пользователей**. Откроется файл с именем _secrets.json_. Этот файл не возвращен в систему управления версиями. Дополнительные сведения см. [здесь](https://docs.microsoft.com/aspnet/core/security/app-secrets?view=aspnetcore-3.1&tabs=windows&preserve-view=true). Замените содержимое _secrets.json_ следующим параметром, указав значения, заданные при создании ресурса "Иммерсивное средство чтения".
+Щелкните правой кнопкой мыши проект в _обозревателе решений_ , а затем выберите **Управление секретами пользователей** . Откроется файл с именем _secrets.json_ . Этот файл не возвращен в систему управления версиями. Дополнительные сведения см. [здесь](https://docs.microsoft.com/aspnet/core/security/app-secrets?view=aspnetcore-3.1&tabs=windows&preserve-view=true). Замените содержимое _secrets.json_ следующим параметром, указав значения, заданные при создании ресурса "Иммерсивное средство чтения".
 
 ```json
 {
@@ -53,11 +53,11 @@ ms.locfileid: "91376834"
 }
 ```
 
-### <a name="install-active-directory"></a>Установка Active Directory
+### <a name="install-active-directory-nuget-package"></a>Установка пакета NuGet Active Directory
 
-В приведенном далее коде используется пакет NuGet **Microsoft.IdentityModel.Clients.ActiveDirectory**, поэтому необходимо добавить в проект ссылку на этот пакет.
+В приведенном далее коде используется пакет NuGet **Microsoft.IdentityModel.Clients.ActiveDirectory** , поэтому необходимо добавить в проект ссылку на этот пакет.
 
-Откройте консоль диспетчера пакетов NuGet, выбрав **Средства -> Диспетчер пакетов NuGet -> Консоль диспетчера пакетов**, и запустите приведенную ниже команду.
+Откройте консоль диспетчера пакетов NuGet, выбрав **Средства -> Диспетчер пакетов NuGet -> Консоль диспетчера пакетов** , и запустите приведенную ниже команду.
 
 ```powershell
     Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -Version 5.2.0
@@ -65,13 +65,13 @@ ms.locfileid: "91376834"
 
 ### <a name="update-the-controller-to-acquire-the-token"></a>Обновление контроллера для получения токена 
 
-Откройте _Controllers\HomeController.cs_, а затем добавьте следующий код после операторов _using_ в верхней части файла.
+Откройте _Controllers\HomeController.cs_ , а затем добавьте следующий код после операторов _using_ в верхней части файла.
 
 ```csharp
 using Microsoft.IdentityModel.Clients.ActiveDirectory;
 ```
 
-Теперь настроим контроллер для получения значений Azure AD из _secrets.json_. В верхней части класса _HomeController_ добавьте следующий код после ```public class HomeController : Controller {```.
+Теперь настроим контроллер для получения значений Azure AD из _secrets.json_ . В верхней части класса _HomeController_ добавьте следующий код после ```public class HomeController : Controller {```.
 
 ```csharp
 private readonly string TenantId;     // Azure subscription TenantId
@@ -142,7 +142,7 @@ public async Task<JsonResult> GetTokenAndSubdomain()
 ```
 
 ## <a name="add-sample-content"></a>Добавление примеров содержимого
-Сначала откройте _Views\Shared\Layout.cshtml_. Перед строкой ```</head>```добавьте следующие строки:
+Сначала откройте _Views\Shared\Layout.cshtml_ . Перед строкой ```</head>```добавьте следующие строки:
 
 ```html
 @RenderSection("Styles", required: false)
@@ -214,7 +214,7 @@ public async Task<JsonResult> GetTokenAndSubdomain()
 </div>
 ```
 
-Обратите внимание, что весь текст имеет атрибут **lang**, который описывает языки текста. Этот атрибут помогает Иммерсивному средству чтения предоставить соответствующие функции языка и грамматики.
+Обратите внимание, что весь текст имеет атрибут **lang** , который описывает языки текста. Этот атрибут помогает Иммерсивному средству чтения предоставить соответствующие функции языка и грамматики.
 
 ## <a name="add-javascript-to-handle-launching-immersive-reader"></a>Добавление JavaScript для обработки запуска иммерсивного средства чтения
 
@@ -292,7 +292,7 @@ public async Task<JsonResult> GetTokenAndSubdomain()
 
 ## <a name="build-and-run-the-app"></a>Создание и запуск приложения
 
-В строке меню выберите **Отладка > Начать отладку** или нажмите клавишу **F5**, чтобы запустить приложение.
+В строке меню выберите **Отладка > Начать отладку** или нажмите клавишу **F5** , чтобы запустить приложение.
 
 В браузере вы уведите:
 

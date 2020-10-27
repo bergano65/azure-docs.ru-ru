@@ -10,12 +10,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 10/31/2019
 ms.author: chlound
-ms.openlocfilehash: 5a662119d9ccf95eac23785c5fe9a787da882531
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1766705e73afab5d15cdb5aa2c5bb1487ad3d7c5
+ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91537401"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92634289"
 ---
 # <a name="use-azure-key-vault-secrets-in-pipeline-activities"></a>Использование секретов Azure Key Vault в действиях конвейера
 
@@ -25,7 +25,7 @@ ms.locfileid: "91537401"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Эта функция основана на управляемом удостоверении фабрики данных.  Узнайте, как это работает из [управляемого удостоверения для фабрики данных](https://docs.microsoft.com/azure/data-factory/data-factory-service-identity) и убедитесь, что фабрика данных имеет одну связь.
+Эта функция основана на управляемом удостоверении фабрики данных.  Узнайте, как это работает из [управляемого удостоверения для фабрики данных](./data-factory-service-identity.md) и убедитесь, что фабрика данных имеет одну связь.
 
 ## <a name="steps"></a>Шаги
 
@@ -39,7 +39,7 @@ ms.locfileid: "91537401"
 
     ![Политики доступа Key Vault](media/how-to-use-azure-key-vault-secrets-pipeline-activities/akvaccesspolicies-2.png)
 
-    Нажмите кнопку **Добавить**, а затем — **сохранить**.
+    Нажмите кнопку **Добавить** , а затем — **сохранить** .
 
 3. Перейдите к Key Vault секрету и скопируйте идентификатор секрета.
 
@@ -65,10 +65,10 @@ ms.locfileid: "91537401"
     > [!CAUTION]
     > Задайте для параметра безопасный вывод значение true, чтобы предотвратить запись секретного значения в обычный текст.  Для всех дальнейших действий, которые используют это значение, параметр "Защищенный ввод" должен иметь значение true.
 
-5. Чтобы использовать значение в другом действии, используйте следующее выражение кода ** @activity ("web1"). Output. Value**.
+5. Чтобы использовать значение в другом действии, используйте следующее выражение кода **@activity ("web1"). Output. Value** .
 
     ![Выражение кода](media/how-to-use-azure-key-vault-secrets-pipeline-activities/usewebactivity.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Сведения об использовании Azure Key Vault для хранения учетных данных для хранилищ данных и вычислений см. [в разделе Хранение учетных данных в Azure Key Vault](https://docs.microsoft.com/azure/data-factory/store-credentials-in-key-vault)
+Сведения об использовании Azure Key Vault для хранения учетных данных для хранилищ данных и вычислений см. [в разделе Хранение учетных данных в Azure Key Vault](./store-credentials-in-key-vault.md)

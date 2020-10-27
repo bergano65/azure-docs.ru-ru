@@ -1,23 +1,24 @@
 ---
-title: Поддержка Gremlin в базе данных Azure Cosmos DB
-description: Узнайте о языке Gremlin из Apache TinkerPop. Узнайте, какие функции и действия доступны в Azure Cosmos DB
-author: jasonwhowell
+title: Поддержка Gremlin в Azure Cosmos DB и совместимость с функциями TinkerPop
+description: Узнайте о языке Gremlin из Apache TinkerPop. Сведения о функциях и действиях, доступных в Azure Cosmos DB, и различиях в совместимости с подсистемой графов TinkerPop.
+author: SnehaGunda
 ms.service: cosmos-db
 ms.subservice: cosmosdb-graph
 ms.topic: overview
-ms.date: 04/23/2020
-ms.author: jasonh
-ms.openlocfilehash: 2629cfc40a9f3c0745df78d9a22883be8476beb9
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.date: 10/13/2020
+ms.author: sngun
+ms.openlocfilehash: f435185d0f00d8f64425e3f2b7081e0ee9a393ce
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91409750"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92276218"
 ---
-# <a name="azure-cosmos-db-gremlin-graph-support"></a>Поддержка графа Gremlin в базе данных Azure Cosmos DB
-Azure Cosmos DB поддерживает язык обхода графов [Apache Tinkerpop](https://tinkerpop.apache.org), известный как [Gremlin](https://tinkerpop.apache.org/docs/3.3.2/reference/#graph-traversal-steps). Вы можете использовать язык Gremlin, чтобы создать сущности графа (вершины и ребра), изменить свойства в этих сущностях, выполнить запросы и обходы графа, а также удалить сущности. 
+# <a name="azure-cosmos-db-gremlin-graph-support-and-compatibility-with-tinkerpop-features"></a>Поддержка графов на языке Gremlin в Azure Cosmos DB и совместимость с функциями TinkerPop
 
-Эта статья содержит краткое руководство по языку Gremlin с перечислением функций Gremlin, поддерживаемых в API Gremlin.
+Azure Cosmos DB поддерживает язык обхода графов [Apache Tinkerpop](https://tinkerpop.apache.org), известный как [Gremlin](https://tinkerpop.apache.org/docs/3.3.2/reference/#graph-traversal-steps). Вы можете использовать язык Gremlin, чтобы создать сущности графа (вершины и ребра), изменить свойства в этих сущностях, выполнить запросы и обходы графа, а также удалить сущности.
+
+Подсистема графов Azure Cosmos DB по большей части соответствует спецификации обхода графов [Apache TinkerPop](https://tinkerpop.apache.org/docs/current/reference/#graph-traversal-steps), но для Azure Cosmos DB характерные определенные отличия в реализации. Эта статья содержит краткое руководство по языку Gremlin с перечислением функций Gremlin, поддерживаемых в API Gremlin.
 
 ## <a name="compatible-client-libraries"></a>Совместимые клиентские библиотеки
 
@@ -33,6 +34,7 @@ Azure Cosmos DB поддерживает язык обхода графов [Apa
 | [Консоль Gremlin](https://tinkerpop.apache.org/downloads.html) | [Документация по TinkerPop](https://tinkerpop.apache.org/docs/current/reference/#gremlin-console) |  [Создание приложения Graph с помощью консоли Gremlin](create-graph-gremlin-console.md) | 3.2.0 и выше |
 
 ## <a name="supported-graph-objects"></a>Поддерживаемые объекты Graph
+
 TinkerPop — это стандартная платформа, которая охватывает широкий ряд технологий графа. Таким образом, она содержит стандартную терминологию для описания функций, которые предоставляет поставщик графа. База данных Azure Cosmos DB обеспечивает временную базу данных графа с высокой степенью параллелизма и возможностью записи, которую можно разделить на секции на нескольких серверах или кластерах. 
 
 В таблице ниже перечислены функции TinkerPop, реализованные в базе данных Azure Cosmos DB: 
@@ -114,6 +116,7 @@ TinkerPop — это стандартная платформа, которая 
 | `value` | Значение свойства
 
 ## <a name="gremlin-steps"></a>Шаги Gremlin
+
 Теперь рассмотрим шаги Gremlin, поддерживаемые базой данных Azure Cosmos DB. Дополнительные сведения о Gremlin см. в [руководстве по TinkerPop](https://tinkerpop.apache.org/docs/3.3.2/reference).
 
 | Шаг | Описание | Руководство по TinkerPop 3.2 |
@@ -162,6 +165,61 @@ TinkerPop — это стандартная платформа, которая 
 
 Оптимизированный для операций записи обработчик Azure Cosmos DB по умолчанию поддерживает автоматическое индексирование всех свойств вершин и ребер. Следовательно, запросы с фильтрами, запросы диапазона, сортировка или статистические функции для любого свойства обрабатываются из индекса и эффективно обслуживаются. Дополнительные сведения о выполнении индексирования в базе данных Azure Cosmos DB см. в руководстве об [индексировании без использования схем](https://www.vldb.org/pvldb/vol8/p1668-shukla.pdf).
 
-## <a name="next-steps"></a>Дальнейшие действия
-* Создайте приложение графа [с использованием пакетов SDK](create-graph-dotnet.md). 
-* Дополнительные сведения о [поддержке графа](graph-introduction.md) в Azure Cosmos DB
+## <a name="behavior-differences"></a>Отличия в поведении
+
+* Подсистема графов Azure Cosmos DB выполняет обход ***в ширину*** , а решение на Gremlin для TinkerPop — в глубину. Такое поведение обеспечивает лучшую производительность в горизонтально масштабируемых системах, к каковым относится Cosmos DB.
+
+## <a name="unsupported-features"></a>Неподдерживаемые функции
+
+***[Gremlin Bytecode](https://tinkerpop.apache.org/docs/current/tutorials/gremlin-language-variants/)***  — это независимая от языка спецификация для обходов графа. Граф Cosmos DB еще ее не поддерживает. Используйте `GremlinClient.SubmitAsync()` и передавайте обход как текстовую строку.
+
+Кратность наборов ***`property(set, 'xyz', 1)`*** сейчас не поддерживается. Взамен рекомендуется использовать `property(list, 'xyz', 1)`. Дополнительные сведения см. в разделе ["Свойства вершин" в документации TinkerPop](http://tinkerpop.apache.org/docs/current/reference/#vertex-properties).
+
+***Шаг `match()`*** в настоящее время недоступен. Этот шаг предоставляет возможности декларативного запроса.
+
+***Объекты как свойства*** для вершин и ребер не поддерживаются. Как свойства могут использоваться только примитивные типы или массивы.
+
+***Сортировка по свойствам массива*** `order().by(<array property>)` не поддерживается. Сортировка поддерживается только для примитивных типов.
+
+***Непримитивные типы JSON*** не поддерживаются. Используйте типы `string`, `number` или `true`/`false`. Значения `null` не поддерживаются. 
+
+Сериализатор ***GraphSONv3*** в настоящее время не поддерживается. Используйте классы `GraphSONv2` для сериализаторов, модулей чтения и модулей записи в конфигурации подключения. Формат результатов, возвращаемых API Gremlin Azure Cosmos DB, такой же, как у GraphSON. 
+
+**Лямбда-выражения и функции** в настоящее время не поддерживаются. К ним относятся функции `.map{<expression>}`, `.by{<expression>}` и `.filter{<expression>}`. Дополнительные сведения о них и о том, как переписать их с помощью шагов Gremlin, см. в [примечании о лямбда-выражениях](http://tinkerpop.apache.org/docs/current/reference/#a-note-on-lambdas).
+
+* ***Транзакции*** не поддерживаются из-за распределенного характера системы.  Настройте соответствующую модель согласованности для учетной записи Gremlin, чтобы она "считывала ваши собственные записи", и используйте оптимистическую блокировку для разрешения конфликтов операций записи.
+
+## <a name="known-limitations"></a>Известные ограничения
+
+**Использование индексов для запросов Gremlin с шагами обхода середины `.V()`** . В настоящее время индекс будет использоваться только при первом вызове `.V()` в обходе для разрешения всех фильтров или связанных с ним предикатов. При последующих вызовах индекс не применяется, что может увеличить задержку и расходы на запрос.
+    
+    Assuming default indexing, a typical read Gremlin query that starts with the `.V()` step would use parameters in its attached filtering steps, such as `.has()` or `.where()` to optimize the cost and performance of the query. For example:
+
+    ```java
+    g.V().has('category', 'A')
+    ```
+
+    However, when more than one `.V()` step is included in the Gremlin query, the resolution of the data for the query might not be optimal. Take the following query as an example:
+
+    ```java
+    g.V().has('category', 'A').as('a').V().has('category', 'B').as('b').select('a', 'b')
+    ```
+
+    This query will return two groups of vertices based on their property called `category`. In this case, only the first call, `g.V().has('category', 'A')` will make use of the index to resolve the vertices based on the values of their properties.
+
+    A workaround for this query is to use subtraversal steps such as `.map()` and `union()`. This is exemplified below:
+
+    ```java
+    // Query workaround using .map()
+    g.V().has('category', 'A').as('a').map(__.V().has('category', 'B')).as('b').select('a','b')
+
+    // Query workaround using .union()
+    g.V().has('category', 'A').fold().union(unfold(), __.V().has('category', 'B'))
+    ```
+
+    You can review the performance of the queries by using the [Gremlin `executionProfile()` step](graph-execution-profile.md).
+
+## <a name="next-steps"></a>При использовании индексирования по умолчанию типичный запрос Gremlin на чтение, начинающийся с шага `.V()`, будет использовать для оптимизации затрат на запрос и производительности его выполнения параметры в связанных с ним шагах фильтрации, например `.has()` или `.where()`.
+
+* Пример: 
+* Однако если запрос Gremlin содержит несколько шагов `.V()`, разрешение данных для запроса может быть неоптимальным.

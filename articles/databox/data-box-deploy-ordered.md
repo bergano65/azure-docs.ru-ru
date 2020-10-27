@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: tutorial
 ms.date: 09/15/2020
 ms.author: alkohli
-ms.openlocfilehash: 3181b88b0cf49516eb5230585460d0cc91bb4042
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f36836681e338c597c068a91a6d4bc011cce3511
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91575305"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92206803"
 ---
 # <a name="tutorial-order-azure-data-box"></a>Руководство по Заказ Azure Data Box
 
@@ -55,7 +55,7 @@ Azure Data Box — это гибридное решение, которое по
 
 #### <a name="install-the-cli-locally"></a>Установка CLI локально
 
-* Установите [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) версии 2.0.67 или более поздней. Кроме того, вы можете [выполнить установку с помощью MSI](https://aka.ms/installazurecliwindows).
+* Установите [Azure CLI](/cli/azure/install-azure-cli) версии 2.0.67 или более поздней. Кроме того, вы можете [выполнить установку с помощью MSI](https://aka.ms/installazurecliwindows).
 
 **Вход в Azure**
 
@@ -164,13 +164,13 @@ You have logged in. Now let us find all the subscriptions to which you have acce
     WSManStackVersion              3.0
 ```
 
-Если версия ниже 6.2.4, обновите Windows PowerShell. Сведения об установке последней версии Windows PowerShell см. в статье [Установка Azure PowerShell](https://docs.microsoft.com/powershell/scripting/install/installing-powershell?view=powershell-7).
+Если версия ниже 6.2.4, обновите Windows PowerShell. Сведения об установке последней версии Windows PowerShell см. в статье [Установка Azure PowerShell](/powershell/scripting/install/installing-powershell?view=powershell-7&preserve-view=true).
 
 **Установка Azure PowerShell и модулей Data Box**
 
 Чтобы использовать Azure PowerShell для заказа Azure Data Box, понадобится установить модули Azure PowerShell. Чтобы установить модули Azure PowerShell, сделайте следующее:
 
-1. Установите [модуль Az для Azure PowerShell](https://docs.microsoft.com/powershell/azure/new-azureps-module-az).
+1. Установите [модуль Az для Azure PowerShell](/powershell/azure/new-azureps-module-az).
 2. Затем установите Az.DataBox, используя команду `Install-Module -Name Az.DataBox`.
 
 ```azurepowershell
@@ -184,7 +184,7 @@ Version              Name                                Repository           De
 
 #### <a name="sign-in-to-azure"></a>Вход в Azure
 
-Откройте командное окно Windows PowerShell и войдите в Azure с помощью команды [Connect-AzAccount](https://docs.microsoft.com/powershell/module/az.accounts/Connect-AzAccount):
+Откройте командное окно Windows PowerShell и войдите в Azure с помощью команды [Connect-AzAccount](/powershell/module/az.accounts/Connect-AzAccount):
 
 ```azurepowershell
 PS C:\Windows> Connect-AzAccount
@@ -202,7 +202,7 @@ gusp@contoso.com     MySubscription                            aaaaaaaa-aaaa-aaa
 PS C:\Windows\System32>
 ```
 
-Подробные сведения о входе в Azure, используя Windows PowerShell, см. в статье [Вход с помощью Azure PowerShell](https://docs.microsoft.com/powershell/azure/authenticate-azureps).
+Подробные сведения о входе в Azure, используя Windows PowerShell, см. в статье [Вход с помощью Azure PowerShell](/powershell/azure/authenticate-azureps).
 
 ---
 
@@ -213,19 +213,19 @@ PS C:\Windows\System32>
 Чтобы заказать устройство, выполните следующие шаги на портале Azure.
 
 1. Используйте учетные данные Microsoft Azure для входа по этому URL-адресу: [https://portal.azure.com](https://portal.azure.com).
-2. Выберите **+Создать ресурс** и выполните поиск по фразе *Azure Data Box*. Выберите **Azure Data Box**.
+2. Выберите **+Создать ресурс** и выполните поиск по фразе *Azure Data Box* . Выберите **Azure Data Box** .
 
    ![Снимок экрана нового раздела с Azure Data Box в поле поиска.](media/data-box-deploy-ordered/select-data-box-import-02.png)
 
-3. Нажмите кнопку **создания**.
+3. Нажмите кнопку **создания** .
 
    ![Снимок экрана раздела Azure Data Box с вызванным параметром создания.](media/data-box-deploy-ordered/select-data-box-import-03.png)
 
-4. Проверьте, доступен ли сервис Data Box в вашем регионе. Введите или выберите следующие сведения и нажмите кнопку **Применить**.
+4. Проверьте, доступен ли сервис Data Box в вашем регионе. Введите или выберите следующие сведения и нажмите кнопку **Применить** .
 
     |Параметр  |Значение  |
     |---------|---------|
-    |Тип передачи     | Выберите **Импорт в Azure**.        |
+    |Тип передачи     | Выберите **Импорт в Azure** .        |
     |Подписка     | Выберите для использования службы Data Box подписку EA, CSP или "Спонсорское предложение Azure". <br> Подписка привязана к учетной записи для выставления счетов.       |
     |Группа ресурсов | Выберите имеющуюся группу ресурсов. Группа ресурсов — это логический контейнер для ресурсов, которые могут управляться или развертываться вместе. |
     |Страна или регион отправки    |    Выберите страну/регион, в которой находятся ваши данные.         |
@@ -233,11 +233,11 @@ PS C:\Windows\System32>
 
     [![Заказ на импорт Azure Data Box](media/data-box-deploy-ordered/select-data-box-import-04b.png)](media/data-box-deploy-ordered/select-data-box-import-04b.png#lightbox)
 
-5. Выберите **Data Box**. Максимальная полезная емкость для одного заказа составляет 80 ТБ. Для больших размеров данных можно создать несколько заказов.
+5. Выберите **Data Box** . Максимальная полезная емкость для одного заказа составляет 80 ТБ. Для больших размеров данных можно создать несколько заказов.
 
     ![Снимок экрана с различными размерами данных, доступными для выбора, а именно: Диск Data Box 40 ТБ, Data Box 100 ТБ, Data Box Heavy, 1000 ТБ и отправка собственных дисков 1 ТБ.](media/data-box-deploy-ordered/select-data-box-import-05.png)
 
-6. На странице **Заказ** перейдите на вкладку **Основы**. Введите или выберите следующие сведения и нажмите кнопку **Next: Data destination>** (Далее: назначение данных>).
+6. На странице **Заказ** перейдите на вкладку **Основы** . Введите или выберите следующие сведения и нажмите кнопку **Next: Data destination>** (Далее: назначение данных>).
 
     |Параметр  |Значение  |
     |---------|---------|
@@ -249,13 +249,13 @@ PS C:\Windows\System32>
 
     По умолчанию пароль для разблокировки устройства шифруется с помощью ключа, управляемого корпорацией Майкрософт. Ключ, управляемый клиентом, можно добавить после завершения заказа. Ключ, управляемый клиентом, позволяет использовать собственный ключ из Azure Key Vault для защиты устройства с помощью пароля разблокировки. Дополнительные сведения см. в статье [Использование ключей, управляемых клиентом, в Azure Key Vault для Azure Data Box](data-box-customer-managed-encryption-key-portal.md).
 
-7. На вкладке **Назначение данных** выберите пункт **Назначение данных**.
+7. На вкладке **Назначение данных** выберите пункт **Назначение данных** .
 
     При использовании **учетной записи хранения** в качестве целевого хранилища вы увидите следующий снимок экрана.
 
     ![Назначение данных Azure Data Box](media/data-box-deploy-ordered/select-data-box-import-07.png)
 
-    Исходя из заданного региона Azure, выберите в отфильтрованном списке существующую учетную запись хранения. Data Box можно связать с 10 учетными записями хранения. Вы также можете создать новую **Учетную запись общего назначения версии 1**, **Учетную запись общего назначения версии 2** или **Учетную запись хранения BLOB-объекта**.
+    Исходя из заданного региона Azure, выберите в отфильтрованном списке существующую учетную запись хранения. Data Box можно связать с 10 учетными записями хранения. Вы также можете создать новую **Учетную запись общего назначения версии 1** , **Учетную запись общего назначения версии 2** или **Учетную запись хранения BLOB-объекта** .
 
     Поддерживаются учетные записи хранения в виртуальных сетях. Чтобы служба Data Box могла работать с защищенными учетными записями хранения, включите доверенные службы в настройках сетевого брандмауэра учетной записи хранения. Дополнительные сведения см. в статье о [добавлении Azure Data Box в качестве доверенной службы](../storage/common/storage-network-security.md#exceptions).
 
@@ -273,28 +273,58 @@ PS C:\Windows\System32>
 
     По завершении выберите **Next: Security** (Далее: безопасность), чтобы продолжить.
 
-1. Если вы хотите включить двойное шифрование на основе программного обеспечения, на вкладке **Безопасность** выберите **Enable double encryption for the order** (Включить двойное шифрование для заказа). 
+    На экране **Безопасность** можно использовать собственное устройство и предоставить общий доступ к паролям, а также использовать двойное шифрование. 
+
+    Все параметры на экране **Безопасность** являются необязательными. Если никак не изменять эти параметры, будут применяться параметры по умолчанию.
+
+    ![Экран "Безопасность" для заказа импорта Data Box](media/data-box-deploy-ordered/select-data-box-import-security-01.png)
+
+1. Если вы не хотите использовать созданные системой пароли, которые Azure Data Box использует по умолчанию, разверните элемент **Создать собственный пароль** .
+
+   Пароли, созданные системой, являются безопасными и рекомендуется использовать их, если в организации не требуется иное.
+
+   ![Развернутый элемент "Создать собственный пароль" для заказа импорта Data Box](media/data-box-deploy-ordered/select-data-box-import-security-02.png) 
+
+   - Чтобы использовать собственный пароль для нового устройства с использованием параметра **Set preference for the device password** (Задать предпочтения для пароля устройства), выберите **Использовать собственный пароль** и введите пароль, соответствующий требованиям безопасности.
+   
+     ![Экран "Безопасность" для импорта Data Box, параметры для использования собственного пароля устройства](media/data-box-deploy-ordered/select-data-box-import-security-03.png)
+
+   - Чтобы использовать собственные пароли для общих ресурсов, выполните следующие действия.
+
+     1. Рядом с **Set preference for share passwords** (Задать предпочтения для паролей общих папок), выберите **Использовать собственные пароли** , а затем — **Выбрать пароли для общих папок** .
+     
+        ![Экран "Безопасность" для импорта Data Box, параметры для использования собственного пароля для общей папки](media/data-box-deploy-ordered/select-data-box-import-security-04.png)
+
+     1. Введите пароль для каждой учетной записи хранения в заказе. Пароль будет использоваться для всех общих папок в учетной записи хранения.
+     
+        Чтобы использовать один и тот же пароль для всех учетных записей хранения, выберите **Копировать во все** . По завершении нажмите кнопку **Сохранить** .
+     
+        ![Экран для ввода паролей для общих папок для заказа на импорт Data Box](media/data-box-deploy-ordered/select-data-box-import-security-05.png)
+
+       Чтобы изменить пароли, на экране **Безопасность** можно использовать **View of change passwords** (Представление изменения паролей).
+
+1. Чтобы включить двойное программное шифрование, на экране **Безопасность** разверните элемент **Double-encryption (for highly secure environments)** (Двойное шифрование (для сред с высоким уровнем безопасности)) и выберите **Включить двойное шифрование для заказа** .
+
+   ![Экран "Безопасность" для импорта Data Box, включение программного шифрования для заказа Data Box](media/data-box-deploy-ordered/select-data-box-import-security-07.png)
 
    Программное шифрование в Data Box выполняется в дополнение к шифрованию данных AES-256.
 
    > [!NOTE]
    > Включение этого параметра может привести к увеличению времени на обработку заказов и копирование данных. После создания заказа нельзя изменить этот параметр.
 
-   ![Экран безопасности для импорта Data Box, двойное шифрование](media/data-box-deploy-ordered/select-data-box-import-07c.png)
-
    По завершении выберите **Next: Contact details** (Далее: контактные сведения), чтобы продолжить.
 
-8. На вкладке **Контактные сведения** выберите **+ Добавить адрес доставки**.
+8. На вкладке **Контактные сведения** выберите **+ Добавить адрес доставки** .
 
     ![Снимок экрана мастера заказов с шагом "Контактные сведения" и выбранным параметром добавления адреса доставки.](media/data-box-deploy-ordered/select-data-box-import-08a.png)
 
-9. Во вкладке **Адрес доставки** укажите свое имя и фамилию, название и почтовый адрес компании и действительный номер телефона. Выберите **Проверить адрес**. Данная служба проверяет адрес доставки на доступность услуг. Если служба доступна для указанного адреса доставки, вы получите соответствующее уведомление.
+9. Во вкладке **Адрес доставки** укажите свое имя и фамилию, название и почтовый адрес компании и действительный номер телефона. Выберите **Проверить адрес** . Данная служба проверяет адрес доставки на доступность услуг. Если служба доступна для указанного адреса доставки, вы получите соответствующее уведомление.
 
    ![Снимок экрана диалогового окна добавления адреса доставки с параметрами доставки и добавления адреса доставки.](media/data-box-deploy-ordered/select-data-box-import-10.png)
 
    Если вы выбрали самоуправляемую доставку, после успешного размещения заказа вы получите уведомление по электронной почте. Дополнительные сведения см. в статье [об использовании самостоятельной доставки](data-box-portal-customer-managed-shipping.md).
 
-10. После успешной проверки сведений о доставке выберите **Добавить адрес доставки**. Вы вернетесь на вкладку **Контактные сведения**.
+10. После успешной проверки сведений о доставке выберите **Добавить адрес доставки** . Вы вернетесь на вкладку **Контактные сведения** .
 
 11. После возвращения на вкладку **Контактные сведения** добавьте один или несколько адресов электронной почты. Служба отправляет уведомления по электронной почте об обновлениях состояния заказа на указанные адреса электронной почты.
 
@@ -304,7 +334,7 @@ PS C:\Windows\System32>
 
 12. Просмотрите во вкладке **Review + Order** (Просмотр и заказ) сведения, относящиеся к заказу, контактам, уведомлениям и условиям конфиденциальности. Установите флажок, соответствующий соглашению с условиями конфиденциальности.
 
-13. Выберите **Заказ**. Создание заказа может занять несколько минут.
+13. Выберите **Заказ** . Создание заказа может занять несколько минут.
 
     ![Снимок экрана мастера заказа с шагом просмотра и заказа, а также вызванным параметром заказа.](media/data-box-deploy-ordered/select-data-box-import-11.png)
 
@@ -338,7 +368,7 @@ PS C:\Windows\System32>
    |query| Строка запроса JMESPath. Дополнительные сведения см. в [документации по JMESPath](http://jmespath.org/). | --query <string>|
    |verbose| Включение подробного ведения журнала. | --verbose |
 
-2. В выбранном сеансе командной строки или терминале введите [az data box job create](https://docs.microsoft.com/cli/azure/ext/databox/databox/job?view=azure-cli-latest#ext-databox-az-databox-job-create), чтобы создать заказ на Azure Data Box.
+2. В выбранном сеансе командной строки или терминале введите [az data box job create](/cli/azure/ext/databox/databox/job?view=azure-cli-latest#ext-databox-az-databox-job-create&preserve-view=true), чтобы создать заказ на Azure Data Box.
 
    ```azurecli
    az databox job create --resource-group <resource-group> --name <order-name> --location <azure-location> --sku <databox-device-type> --contact-name <contact-name> --phone <phone-number> --email-list <email-list> --street-address1 <street-address-1> --street-address2 <street-address-2> --city "contact-city" --state-or-province <state-province> --country <country> --postal-code <postal-code> --company-name <company-name> --storage-account "storage-account"
@@ -431,7 +461,7 @@ PS C:\Windows\System32>
     $storAcct = Get-AzStorageAccount -Name "mystorageaccount" -ResourceGroup "myresourcegroup"
    ```
 
-2. Запишите параметры заказа Data Box. Эти параметры содержат личные данные или сведения об организации, имя подписки, сведения об устройстве и доставке. Эти сведения нужно указать в качестве параметров при выполнении команды PowerShell, которая создает заказ на Data Box. В следующей таблице приведены значения параметров, примененные для [New-AzDataBoxJob](https://docs.microsoft.com/powershell/module/az.databox/New-AzDataBoxJob).
+2. Запишите параметры заказа Data Box. Эти параметры содержат личные данные или сведения об организации, имя подписки, сведения об устройстве и доставке. Эти сведения нужно указать в качестве параметров при выполнении команды PowerShell, которая создает заказ на Data Box. В следующей таблице приведены значения параметров, примененные для [New-AzDataBoxJob](/powershell/module/az.databox/New-AzDataBoxJob).
 
     | Настройка (параметр) | Описание |  Образец значения |
     |---|---|---|
@@ -452,7 +482,7 @@ PS C:\Windows\System32>
     |CompanyName| Название компании, в которой вы работаете.| "Contoso, LTD" |
     |StorageAccountResourceId [обязательный]| ИД учетной записи хранения Azure, из которой вы будете импортировать данные.| <AzStorageAccount>.id |
 
-3. В выбранном сеансе командной строки или терминале используйте команду [New-AzDataBoxJob](https://docs.microsoft.com/powershell/module/az.databox/New-AzDataBoxJob), чтобы создать заказ на Azure Data Box.
+3. В выбранном сеансе командной строки или терминале используйте команду [New-AzDataBoxJob](/powershell/module/az.databox/New-AzDataBoxJob), чтобы создать заказ на Azure Data Box.
 
    ```azurepowershell
     PS> $storAcct = Get-AzureStorageAccount -StorageAccountName "mystorageaccount"
@@ -485,7 +515,7 @@ PS C:\Windows\System32>
 
 # <a name="portal"></a>[Портал](#tab/portal)
 
-После размещения заказа можно отслеживать его состояние на портале Azure. Перейдите к заказу Data Box, а затем щелкните **Обзор** для просмотра состояния. Заказ на портале отображается в состоянии **Заказано**.
+После размещения заказа можно отслеживать его состояние на портале Azure. Перейдите к заказу Data Box, а затем щелкните **Обзор** для просмотра состояния. Заказ на портале отображается в состоянии **Заказано** .
 
 Если устройство недоступно, вы получите уведомление. Если устройство доступно, корпорация Майкрософт определяет устройство для поставки и подготавливает отгрузку. Во время подготовки устройства выполняются следующие действия.
 
@@ -494,11 +524,11 @@ PS C:\Windows\System32>
 * Также создается пароль устройства, который позволяет его разблокировать.
 * Устройство Data Box заблокировано для предотвращения несанкционированного доступа к устройству.
 
-После завершения подготовки устройства на портале отображается состояние заказа — **Обработано**.
+После завершения подготовки устройства на портале отображается состояние заказа — **Обработано** .
 
 ![Порядок обработки заказа Data Box](media/data-box-overview/data-box-order-status-processed.png)
 
-Майкрософт подготавливает и отправляет диски с помощью регионального поставщика. Когда устройство будет отправлено, вы получите номер для отслеживания. На портале отобразится состояние заказа — **Отправлено**.
+Майкрософт подготавливает и отправляет диски с помощью регионального поставщика. Когда устройство будет отправлено, вы получите номер для отслеживания. На портале отобразится состояние заказа — **Отправлено** .
 
 ![Порядок отправки Data Box](media/data-box-overview/data-box-order-status-dispatched.png)
 
@@ -506,7 +536,7 @@ PS C:\Windows\System32>
 
 ### <a name="track-a-single-order"></a>Отслеживание одного заказа
 
-Чтобы получить сведения об одном уже существующем заказе на Azure Data Box, выполните команду [az databox job show](https://docs.microsoft.com/cli/azure/ext/databox/databox/job?view=azure-cli-latest#ext-databox-az-databox-job-show). Эта команда отображает различные сведения о заказе, в том числе следующие: имя, группа ресурсов, сведения для отслеживания, идентификатор подписки, контактная информация, тип доставки и ценовая категория устройства.
+Чтобы получить сведения об одном уже существующем заказе на Azure Data Box, выполните команду [az databox job show](/cli/azure/ext/databox/databox/job?view=azure-cli-latest#ext-databox-az-databox-job-show&preserve-view=true). Эта команда отображает различные сведения о заказе, в том числе следующие: имя, группа ресурсов, сведения для отслеживания, идентификатор подписки, контактная информация, тип доставки и ценовая категория устройства.
 
    ```azurecli
    az databox job show --resource-group <resource-group> --name <order-name>
@@ -547,7 +577,7 @@ PS C:\Windows\System32>
 
 ### <a name="list-all-orders"></a>Список всех заказов
 
-Если вы заказали несколько устройств, с помощью команды [az databox job list](https://docs.microsoft.com/cli/azure/ext/databox/databox/job?view=azure-cli-latest#ext-databox-az-databox-job-list) можно просмотреть все заказы на Azure Data Box. Эта команда выводит список всех заказов, которые относятся к определенной группе ресурсов. В выходные данные также включаются следующие сведения: имя заказа, состояние доставки, регион Azure, тип доставки, состояние заказа. Отмененные заказы также включаются в список.
+Если вы заказали несколько устройств, с помощью команды [az databox job list](/cli/azure/ext/databox/databox/job?view=azure-cli-latest#ext-databox-az-databox-job-list&preserve-view=true) можно просмотреть все заказы на Azure Data Box. Эта команда выводит список всех заказов, которые относятся к определенной группе ресурсов. В выходные данные также включаются следующие сведения: имя заказа, состояние доставки, регион Azure, тип доставки, состояние заказа. Отмененные заказы также включаются в список.
 Среди прочего, эта команда отображает для каждого заказа отметки времени.
 
 ```azurecli
@@ -590,7 +620,7 @@ az databox job list --resource-group <resource-group>
 
 ### <a name="track-a-single-order"></a>Отслеживание одного заказа
 
-Чтобы получить сведения об одном уже существующем заказе на Azure Data Box, выполните команду [Get-AzDataBoxJob](https://docs.microsoft.com/powershell/module/az.databox/Get-AzDataBoxJob). Эта команда отображает различные сведения о заказе, в том числе следующие: имя, группа ресурсов, сведения для отслеживания, идентификатор подписки, контактная информация, тип доставки и ценовая категория устройства.
+Чтобы получить сведения об одном уже существующем заказе на Azure Data Box, выполните команду [Get-AzDataBoxJob](/powershell/module/az.databox/Get-AzDataBoxJob). Эта команда отображает различные сведения о заказе, в том числе следующие: имя, группа ресурсов, сведения для отслеживания, идентификатор подписки, контактная информация, тип доставки и ценовая категория устройства.
 
 > [!NOTE]
 > `Get-AzDataBoxJob` используется для отображения как одного, так и нескольких заказов. Разница заключается в том, что вам понадобится указать имена всех заказов.
@@ -623,7 +653,7 @@ az databox job list --resource-group <resource-group>
 
 ### <a name="list-all-orders"></a>Список всех заказов
 
-Если вы заказали несколько устройств, с помощью команды [Get-AzDataBoxJob](https://docs.microsoft.com/powershell/module/az.databox/Get-AzDataBoxJob) можно просмотреть все заказы на Azure Data Box. Эта команда выводит список всех заказов, которые относятся к определенной группе ресурсов. В выходные данные также включаются следующие сведения: имя заказа, состояние доставки, регион Azure, тип доставки, состояние заказа. Отмененные заказы также включаются в список.
+Если вы заказали несколько устройств, с помощью команды [Get-AzDataBoxJob](/powershell/module/az.databox/Get-AzDataBoxJob) можно просмотреть все заказы на Azure Data Box. Эта команда выводит список всех заказов, которые относятся к определенной группе ресурсов. В выходные данные также включаются следующие сведения: имя заказа, состояние доставки, регион Azure, тип доставки, состояние заказа. Отмененные заказы также включаются в список.
 Среди прочего, эта команда отображает для каждого заказа отметки времени.
 
 ```azurepowershell
@@ -666,7 +696,7 @@ PS C:\WINDOWS\system32>
 
 ### <a name="cancel-an-order"></a>Отмена заказа
 
-Чтобы отменить заказ на Azure Data Box, выполните команду [az databox job cancel](https://docs.microsoft.com/cli/azure/ext/databox/databox/job?view=azure-cli-latest#ext-databox-az-databox-job-cancel). Вам придется указать причину отмены заказа.
+Чтобы отменить заказ на Azure Data Box, выполните команду [az databox job cancel](/cli/azure/ext/databox/databox/job?view=azure-cli-latest#ext-databox-az-databox-job-cancel&preserve-view=true). Вам придется указать причину отмены заказа.
 
    ```azurecli
    az databox job cancel --resource-group <resource-group> --name <order-name> --reason <cancel-description>
@@ -703,7 +733,7 @@ PS C:\WINDOWS\system32>
 
 ### <a name="delete-an-order"></a>Удаление заказа
 
-Если вы отменили заказ на Azure Data Box, с помощью команды [az databox job delete](https://docs.microsoft.com/cli/azure/ext/databox/databox/job?view=azure-cli-latest#ext-databox-az-databox-job-delete) вы можете удалить этот заказ.
+Если вы отменили заказ на Azure Data Box, с помощью команды [az databox job delete](/cli/azure/ext/databox/databox/job?view=azure-cli-latest#ext-databox-az-databox-job-delete&preserve-view=true) вы можете удалить этот заказ.
 
    ```azurecli
    az databox job delete --name [-n] <order-name> --resource-group <resource-group> [--yes] [--verbose]
@@ -742,7 +772,7 @@ PS C:\WINDOWS\system32>
 
 ### <a name="cancel-an-order"></a>Отмена заказа
 
-Чтобы отменить заказ на Azure Data Box, выполните команду [Stop-AzDataBoxJob](https://docs.microsoft.com/powershell/module/az.databox/stop-azdataboxjob). Вам придется указать причину отмены заказа.
+Чтобы отменить заказ на Azure Data Box, выполните команду [Stop-AzDataBoxJob](/powershell/module/az.databox/stop-azdataboxjob). Вам придется указать причину отмены заказа.
 
 ```azurepowershell
 Stop-AzDataBoxJob -ResourceGroup <String> -Name <String> -Reason <String>
@@ -776,7 +806,7 @@ PS C:\WINDOWS\system32>
 
 ### <a name="delete-an-order"></a>Удаление заказа
 
-Если вы отменили заказ на Azure Data Box, его можно удалить с помощью команды [Remove-AzDataBoxJob](https://docs.microsoft.com/powershell/module/az.databox/remove-azdataboxjob).
+Если вы отменили заказ на Azure Data Box, его можно удалить с помощью команды [Remove-AzDataBoxJob](/powershell/module/az.databox/remove-azdataboxjob).
 
 ```azurepowershell
 Remove-AzDataBoxJob -Name <String> -ResourceGroup <String>

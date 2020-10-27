@@ -13,12 +13,12 @@ ms.author: abnarain
 ms.custom: devx-track-csharp
 manager: anandsub
 robots: noindex
-ms.openlocfilehash: 17e5b5eaea90b5f67ad91f0b09a51b2f1aeffd68
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a5e53cab30f1adca05652a3b3b7541e12ebebbdb
+ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91322621"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92631467"
 ---
 # <a name="transform-data-by-running-u-sql-scripts-on-azure-data-lake-analytics"></a>Преобразование данных с помощью сценариев U-SQL в Azure Data Lake Analytics 
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -28,7 +28,7 @@ ms.locfileid: "91322621"
 > [!NOTE]
 > В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию Фабрики данных, см. руководство по [применению действия U-SQL в службе "Фабрика данных Azure" версии 2](../transform-data-using-data-lake-analytics.md).
 
-Конвейер в фабрике данных Azure обрабатывает данные в связанной службе хранилища с помощью связанных вычислительных служб. В нем содержится последовательность действий, каждое из которых выполняет определенную операцию обработки. В этой статье описывается **действие U-SQL в Data Lake Analytics**, которое запускает сценарий **U-SQL** в связанной службе вычислений **Azure Data Lake Analytics**. 
+Конвейер в фабрике данных Azure обрабатывает данные в связанной службе хранилища с помощью связанных вычислительных служб. В нем содержится последовательность действий, каждое из которых выполняет определенную операцию обработки. В этой статье описывается **действие U-SQL в Data Lake Analytics** , которое запускает сценарий **U-SQL** в связанной службе вычислений **Azure Data Lake Analytics** . 
 
 Перед созданием конвейера с действием U-SQL в Data Lake Analytics следует создать учетную запись Data Lake Analytics. Дополнительные сведения об Azure Data Lake Analytics см. в статье [Начало работы с аналитикой озера данных Azure](../../data-lake-analytics/data-lake-analytics-get-started-portal.md).
 
@@ -48,14 +48,14 @@ ms.locfileid: "91322621"
 
 | Свойство | Описание | Обязательно |
 | --- | --- | --- |
-| **type** |Свойству type необходимо присвоить значение **AzureDataLakeAnalytics**. |Да |
+| **type** |Свойству type необходимо присвоить значение **AzureDataLakeAnalytics** . |Да |
 | **accountName** |Имя учетной записи аналитики озера данных Azure. |Да |
 | **dataLakeAnalyticsUri** |Универсальный код ресурса (URI) аналитики озера данных Azure. |Нет |
 | **subscriptionId** |Идентификатор подписки Azure |Нет (если не указан, используется подписка фабрики данных). |
 | **resourceGroupName** |Имя группы ресурсов Azure |Нет (если не указано, используется группа ресурсов фабрики данных). |
 
 ### <a name="service-principal-authentication-recommended"></a>Проверка подлинности на основе субъекта-службы (рекомендуется)
-При использовании проверки подлинности на основе субъекта-службы необходимо зарегистрировать сущность приложения в Azure Active Directory (Azure AD) и предоставить ей доступ к Data Lake Store. Подробные инструкции см. в статье [Аутентификация между службами в Data Lake Store с помощью Azure Active Directory](../../data-lake-store/data-lake-store-authenticate-using-active-directory.md). Запишите следующие значения, которые используются для определения связанной службы:
+При использовании проверки подлинности на основе субъекта-службы необходимо зарегистрировать сущность приложения в Azure Active Directory (Azure AD) и предоставить ей доступ к Data Lake Store. Подробные инструкции см. в статье [Аутентификация между службами в Data Lake Store с помощью Azure Active Directory](../../data-lake-store/data-lake-store-service-to-service-authenticate-using-active-directory.md). Запишите следующие значения, которые используются для определения связанной службы:
 * Идентификатор приложения
 * Ключ приложения 
 * Tenant ID
@@ -114,14 +114,14 @@ ms.locfileid: "91322621"
 ```
 
 #### <a name="token-expiration"></a>Срок действия маркера
-Срок действия кода авторизации, созданного с помощью кнопки **Авторизовать**, через некоторое время истекает. Сроки действия для различных типов учетных записей пользователей см. в следующей таблице. По истечении **срока действия маркера** проверки подлинности может появиться следующее сообщение об ошибке: "Произошла ошибка при операции с учетными данными: invalid_grant — AADSTS70002: ошибка при проверке учетных данных". AADSTS70008: срок действия предоставленных прав доступа истек или они были отозваны. Идентификатор отслеживания: d18629e8-af88-43c5-88e3-d8419eb1fca1 Идентификатор корреляции: fac30a0c-6be6-4e02-8d69-a776d2ffefd7 Временная отметка: 2015-12-15 21:09:31Z".
+Срок действия кода авторизации, созданного с помощью кнопки **Авторизовать** , через некоторое время истекает. Сроки действия для различных типов учетных записей пользователей см. в следующей таблице. По истечении **срока действия маркера** проверки подлинности может появиться следующее сообщение об ошибке: "Произошла ошибка при операции с учетными данными: invalid_grant — AADSTS70002: ошибка при проверке учетных данных". AADSTS70008: срок действия предоставленных прав доступа истек или они были отозваны. Идентификатор отслеживания: d18629e8-af88-43c5-88e3-d8419eb1fca1 Идентификатор корреляции: fac30a0c-6be6-4e02-8d69-a776d2ffefd7 Временная отметка: 2015-12-15 21:09:31Z".
 
 | Тип пользователя | Срок действия |
 |:--- |:--- |
 | Учетные записи пользователей, которые не управляются с помощью Azure Active Directory (@hotmail.com, @live.com и т. д.) |12 часов |
 | Учетные записи пользователей, которые управляются Azure Active Directory (AAD) |14 дней после последнего запуска среза. <br/><br/>90 дней, если срез, основанный на связанной службе на основе OAuth, выполняется по крайней мере раз в 14 дней. |
 
-Чтобы избежать этой ошибки или исправить ее, вам потребуется повторно авторизоваться с помощью кнопки **Авторизовать** и повторно развернуть связанную службу, когда **срок действия маркера истечет**. Значения свойств **sessionId** и **authorization** также можно задавать программно с помощью кода:
+Чтобы избежать этой ошибки или исправить ее, вам потребуется повторно авторизоваться с помощью кнопки **Авторизовать** и повторно развернуть связанную службу, когда **срок действия маркера истечет** . Значения свойств **sessionId** и **authorization** также можно задавать программно с помощью кода:
 
 ```csharp
 if (linkedService.Properties.TypeProperties is AzureDataLakeStoreLinkedService ||
@@ -148,7 +148,7 @@ if (linkedService.Properties.TypeProperties is AzureDataLakeStoreLinkedService |
 }
 ```
 
-Подробные сведения о классах фабрики данных, используемых в коде, см. в статьях [AzureDataLakeStoreLinkedService — класс](https://msdn.microsoft.com/library/microsoft.azure.management.datafactories.models.azuredatalakestorelinkedservice.aspx), [AzureDataLakeAnalyticsLinkedService — класс](https://msdn.microsoft.com/library/microsoft.azure.management.datafactories.models.azuredatalakeanalyticslinkedservice.aspx) и [AuthorizationSessionGetResponse — класс](https://msdn.microsoft.com/library/microsoft.azure.management.datafactories.models.authorizationsessiongetresponse.aspx). Для использования класса WindowsFormsWebAuthenticationDialog следует добавить ссылку на Microsoft.IdentityModel.Clients.ActiveDirectory.WindowsForms.dll. 
+Подробные сведения о классах фабрики данных, используемых в коде, см. в статьях [AzureDataLakeStoreLinkedService — класс](/dotnet/api/microsoft.azure.management.datafactories.models.azuredatalakestorelinkedservice), [AzureDataLakeAnalyticsLinkedService — класс](/dotnet/api/microsoft.azure.management.datafactories.models.azuredatalakeanalyticslinkedservice) и [AuthorizationSessionGetResponse — класс](/dotnet/api/microsoft.azure.management.datafactories.models.authorizationsessiongetresponse). Для использования класса WindowsFormsWebAuthenticationDialog следует добавить ссылку на Microsoft.IdentityModel.Clients.ActiveDirectory.WindowsForms.dll. 
 
 ## <a name="data-lake-analytics-u-sql-activity"></a>Действие U-SQL в Data Lake Analytics
 В следующем фрагменте кода JSON определяется конвейер с действием U-SQL в аналитике озера данных. Определение действия содержит ссылку на созданную ранее связанную службу аналитики озера данных Azure.   
@@ -208,7 +208,7 @@ if (linkedService.Properties.TypeProperties is AzureDataLakeStoreLinkedService |
 
 | Свойство            | Описание                              | Обязательно                                 |
 | :------------------ | :--------------------------------------- | :--------------------------------------- |
-| type                | Для свойства type нужно задать значение **DataLakeAnalyticsU-SQL**. | Да                                      |
+| type                | Для свойства type нужно задать значение **DataLakeAnalyticsU-SQL** . | Да                                      |
 | linkedServiceName   | Ссылка на службу Azure Data Lake Analytics, зарегистрированную в качестве связанной службы в фабрике данных | Да                                      |
 | scriptPath          | Путь к папке, содержащей скрипт U-SQL В имени файла учитывается регистр. | Нет (если используется скрипт)                   |
 | scriptLinkedService | Связанная служба, которая связывает хранилище, содержащее скрипт, с фабрикой данных | Нет (если используется скрипт)                   |
@@ -217,7 +217,7 @@ if (linkedService.Properties.TypeProperties is AzureDataLakeStoreLinkedService |
 | priority            | Определяет, какие задания из всех в очереди должны запускаться в первую очередь. Чем меньше число, тем выше приоритет. | Нет                                       |
 | параметры          | Параметры скрипта U-SQL          | Нет                                       |
 | runtimeVersion      | Версия среды выполнения обработчика U-SQL, которую нужно использовать. | Нет                                       |
-| compilationMode     | <p>Режим компиляции U-SQL. Может иметь одно из следующих значений.</p> <ul><li>**Semantic**: выполнение только семантических проверок и необходимых проверок работоспособности.</li><li>**Full:** выполнение полной компиляции, включая проверку синтаксиса, оптимизацию, создание кода и т. д.</li><li>**SingleBox:** выполнение полной компиляции с параметром TargetType, заданным для SingleBox.</li></ul><p>Если не указать значение для этого свойства, сервер определит оптимальный режим компиляции. </p> | Нет                                       |
+| compilationMode     | <p>Режим компиляции U-SQL. Может иметь одно из следующих значений.</p> <ul><li>**Semantic** : выполнение только семантических проверок и необходимых проверок работоспособности.</li><li>**Full:** выполнение полной компиляции, включая проверку синтаксиса, оптимизацию, создание кода и т. д.</li><li>**SingleBox:** выполнение полной компиляции с параметром TargetType, заданным для SingleBox.</li></ul><p>Если не указать значение для этого свойства, сервер определит оптимальный режим компиляции. </p> | Нет                                       |
 
 Определение сценария см. в разделе [Определение сценария SearchLogProcessing.txt](#sample-u-sql-script). 
 
@@ -317,7 +317,7 @@ OUTPUT @rs1
       USING Outputters.Tsv(quoting:false, dateTimeFormat:null);
 ```
 
-Значения параметров ** \@ in** и ** \@ out** в скрипте U-SQL динамически передаются модулем ADF с помощью раздела Parameters. См. раздел parameters в определении конвейера.
+Значения параметров **\@ in** и **\@ out** в скрипте U-SQL динамически передаются модулем ADF с помощью раздела Parameters. См. раздел parameters в определении конвейера.
 
 В определении конвейера для заданий, которые выполняются в службе Azure Data Lake Analytics, можно определить другие свойства, например degreeOfParallelism и priority.
 
@@ -340,6 +340,4 @@ OUTPUT @rs1
 }
 ```
 
-В этом случае входные файлы по-прежнему берутся из папки /datalake/input, а выходные файлы создаются в папке /datalake/output. Имена файлов присваиваются динамически, на основе времени начала среза.  
-
-
+В этом случае входные файлы по-прежнему берутся из папки /datalake/input, а выходные файлы создаются в папке /datalake/output. Имена файлов присваиваются динамически, на основе времени начала среза.

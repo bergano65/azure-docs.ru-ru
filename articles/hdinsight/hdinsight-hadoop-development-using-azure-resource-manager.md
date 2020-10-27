@@ -3,17 +3,17 @@ title: Миграция в средства Azure Resource Manager для HDInsi
 description: Процесс перехода к средствам разработки на основе Azure Resource Manager для кластеров HDInsight
 ms.reviewer: jasonh
 author: hrasheed-msft
+ms.author: hrasheed
 ms.service: hdinsight
 ms.custom: hdinsightactive, devx-track-azurecli
 ms.topic: how-to
 ms.date: 02/21/2018
-ms.author: hrasheed
-ms.openlocfilehash: deaf98077e0652dac8bb327839ffa2bf34007c9f
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 57dec799cbda03e20717a402a88f1d818d9acd92
+ms.sourcegitcommit: 3e8058f0c075f8ce34a6da8db92ae006cc64151a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92546217"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92629482"
 ---
 # <a name="migrating-to-azure-resource-manager-based-development-tools-for-hdinsight-clusters"></a>Переход к средствам разработки на основе Azure Resource Manager для кластеров HDInsight
 
@@ -83,7 +83,7 @@ ms.locfileid: "92546217"
 ## <a name="migrating-azure-powershell-to-azure-resource-manager"></a>Переход с Azure PowerShell на диспетчер ресурсов Azure
 Общие сведения об Azure PowerShell в режиме Azure Resource Manager (ARM) см. в статье [Управление ресурсами с помощью Azure PowerShell](../azure-resource-manager/management/manage-resources-powershell.md).
 
-Командлеты диспетчера ресурсов Azure PowerShell могут устанавливаться параллельно с командлетами ASM. Командлеты двух режимов можно различать по именам.  Диспетчер ресурсов режим имеет *аздинсигхт* в именах командлетов, которые сравниваются с *AZUREHDINSIGHT* в режиме ASM.  Например, *New-аздинсигхтклустер* и *New-азурехдинсигхтклустер* . Параметры и переключатели могут иметь новые имена, а при использовании диспетчера ресурсов появляется доступ к множеству новых параметров.  Например, для некоторых командлетов требуется новый переключатель *-ResourceGroupName* . 
+Командлеты диспетчера ресурсов Azure PowerShell могут устанавливаться параллельно с командлетами ASM. Командлеты двух режимов можно различать по именам.  Диспетчер ресурсов режим имеет *аздинсигхт* в именах командлетов, которые сравниваются с *AzureHDInsight* в более старом режиме управления службами Azure.  Например, *New-аздинсигхтклустер* и *New-азурехдинсигхтклустер* . Параметры и переключатели могут иметь новые имена, а при использовании диспетчера ресурсов появляется доступ к множеству новых параметров.  Например, для некоторых командлетов требуется новый переключатель *-ResourceGroupName* .
 
 Перед использованием командлетов HDInsight необходимо подключиться к учетной записи Azure и создать новую группу ресурсов:
 

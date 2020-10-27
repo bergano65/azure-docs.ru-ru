@@ -11,12 +11,12 @@ author: aashishb
 ms.reviewer: larryfr
 ms.date: 07/17/2020
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 081c07be49178be2415edccbfc2026336eb8a8a5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d0f30edeb24f3c4abed6f144f3fb7f755cc08a72
+ms.sourcegitcommit: 3e8058f0c075f8ce34a6da8db92ae006cc64151a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90604416"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92629465"
 ---
 # <a name="use-workspace-behind-a-firewall-for-azure-machine-learning"></a>Использование рабочей области за брандмауэром для Машинное обучение Azure
 
@@ -58,11 +58,13 @@ ms.locfileid: "90604416"
 | **\*. instances.azureml.net** | Машинное обучение Azureные экземпляры вычислений |
 | **\*. instances.azureml.ms** | Машинное обучение Azureные экземпляры вычислений, когда в рабочей области включена частная ссылка |
 | **windows.net** | хранилище BLOB-объектов Azure |
-| **vault.azure.net** | Хранилище ключей Azure; |
+| **vault.azure.net** | Azure Key Vault |
 | **azurecr.io** | Реестр контейнеров Azure |
 | **mcr.microsoft.com** | Реестр контейнеров Microsoft для базовых образов DOCKER |
 | **your-acr-server-name.azurecr.io** | Требуется только в том случае, если реестр контейнеров Azure находится за виртуальной сетью. В этой конфигурации частная ссылка создается из среды Майкрософт в экземпляр записи контроля доступа в подписке. Используйте имя сервера записи контроля доступа для рабочей области Машинное обучение Azure. |
 | **\*. notebooks.azure.net** | Требуется для записных книжек в Машинное обучение Azure Studio. |
+| **\*. file.core.windows.net** | Требуется проводником в Машинное обучение Azure Studio. |
+| **\*. dfs.core.windows.net** | Требуется проводником в Машинное обучение Azure Studio. |
 | **graph.windows.net** | Требуется для записных книжек |
 
 > [!TIP]
@@ -76,7 +78,7 @@ ms.locfileid: "90604416"
 | ---- | ---- |
 | **anaconda.com**</br>**\*. anaconda.com** | Используется для установки пакетов по умолчанию. |
 | **\*. anaconda.org** | Используется для получения данных репозитория. |
-| **pypi.org** | Используется для перечисления зависимостей из индекса по умолчанию, если таковые имеются, а индекс не перезаписывается параметрами пользователя. Если индекс перезаписывается, необходимо также разрешить ** \* . pythonhosted.org**. |
+| **pypi.org** | Используется для перечисления зависимостей из индекса по умолчанию, если таковые имеются, а индекс не перезаписывается параметрами пользователя. Если индекс перезаписывается, необходимо также разрешить **\* . pythonhosted.org** . |
 
 ## <a name="r-hosts"></a>Узлы R
 

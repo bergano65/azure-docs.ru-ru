@@ -4,12 +4,12 @@ description: В этой статье вы узнаете о выборочно�
 ms.topic: conceptual
 ms.date: 07/17/2020
 ms.custom: references_regions
-ms.openlocfilehash: 21e4ead8b3302ceef4cc53c126b9eab5784544b4
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.openlocfilehash: 1052e7e531f6762de660ba89e22c7fbb0d01f808
+ms.sourcegitcommit: 3e8058f0c075f8ce34a6da8db92ae006cc64151a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92174115"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92628768"
 ---
 # <a name="selective-disk-backup-and-restore-for-azure-virtual-machines"></a>Выборочное резервное копирование и восстановление для виртуальных машин Azure
 
@@ -46,7 +46,7 @@ az account set -s {subscriptionID}
 
 ### <a name="configure-backup-with-azure-cli"></a>Настройка резервного копирования с помощью Azure CLI
 
-Во время операции настройки защиты необходимо указать параметр списка дисков с **inclusion**  /  параметром**исключения** включения, указав номера LUN дисков, которые должны быть включены в резервную копию или исключены из нее.
+Во время операции настройки защиты необходимо указать параметр списка дисков с **inclusion**  /  параметром **исключения** включения, указав номера LUN дисков, которые должны быть включены в резервную копию или исключены из нее.
 
 ```azurecli
 az backup protection enable-for-vm --resource-group {resourcegroup} --vault-name {vaultname} --vm {vmname} --policy-name {policyname} --disk-list-setting include --diskslist {LUN number(s) separated by space}
@@ -192,7 +192,11 @@ az backup item show -c {vmname} -n {vmname} --vault-name {vaultname} --resource-
 ### <a name="enable-backup-with-powershell"></a>Включение резервного копирования с помощью PowerShell
 
 ```azurepowershell
-Enable-AzRecoveryServicesBackupProtection -Policy $pol -Name "V2VM" -ResourceGroupName "RGName1"  -DiskListSetting "Include"/"Exclude" -DisksList[Strings] -VaultId $targetVault.ID
+Enable-AzRecoveryServicesBackupProtection -Policy $pol -Name "V2VM" -ResourceGroupName "RGName1"  -InclusionDisksList[Strings] -VaultId $targetVault.ID
+```
+
+```azurepowershell
+Enable-AzRecoveryServicesBackupProtection -Policy $pol -Name "V2VM" -ResourceGroupName "RGName1"  -ExclusionDisksList[Strings] -VaultId $targetVault.ID
 ```
 
 ### <a name="backup-only-os-disk-during-configure-backup-with-powershell"></a>Создание резервной копии только диска ОС во время настройки резервного копирования с помощью PowerShell
@@ -212,7 +216,11 @@ $item= Get-AzRecoveryServicesBackupItem -BackupManagementType "AzureVM" -Workloa
 ### <a name="modify-protection-for-already-backed-up-vms-with-powershell"></a>Изменение защиты для уже резервных копий виртуальных машин с помощью PowerShell
 
 ```azurepowershell
-Enable-AzRecoveryServicesBackupProtection -Item $item -DiskListSetting "Include"/"Exclude" -DisksList[Strings]   -VaultId $targetVault.ID
+Enable-AzRecoveryServicesBackupProtection -Item $item -InclusionDisksList[Strings] -VaultId $targetVault.ID
+```
+
+```azurepowershell
+Enable-AzRecoveryServicesBackupProtection -Item $item -ExclusionDisksList[Strings] -VaultId $targetVault.ID
 ```
 
 ### <a name="backup-only-os-disk-during-modify-protection-with-powershell"></a>Создавать резервную копию только диска ОС во время защиты от изменения с помощью PowerShell
@@ -224,7 +232,7 @@ Enable-AzRecoveryServicesBackupProtection -Item $item  -ExcludeAllDataDisks -Vau
 ### <a name="reset-disk-exclusion-setting-with-powershell"></a>Сброс параметров исключения диска с помощью PowerShell
 
 ```azurepowershell
-Enable-AzRecoveryServicesBackupProtection -Item $item -DiskListSetting "Reset" -VaultId $targetVault.ID
+Enable-AzRecoveryServicesBackupProtection -Item $item -ResetExclusionSettings -VaultId $targetVault.ID
 ```
 
 ### <a name="restore-selective-disks-with-powershell"></a>Восстановление выборочных дисков с помощью PowerShell

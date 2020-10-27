@@ -6,15 +6,15 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.devlang: dotnet
 ms.topic: quickstart
-ms.date: 09/22/2020
+ms.date: 10/09/2020
 ms.author: anfeldma
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 7d8f51b12c16afbb8a0cf71e99b9b357719db4be
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 74ff6983b08b6f19a94384be7c4361d4266d6a20
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91319050"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92108768"
 ---
 # <a name="quickstart-build-a-todo-app-with-xamarin-using-azure-cosmos-db-sql-api-account"></a>Краткое руководство. Создание приложения со списком дел с помощью Xamarin и API SQL для Azure Cosmos DB | Документация Майкрософт
 
@@ -38,7 +38,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Если вы разрабатываете приложение в Windows, но еще не установили Visual Studio 2019, скачайте **бесплатный** [выпуск Visual Studio 2019 Community Edition](https://www.visualstudio.com/downloads/). При установке Visual Studio необходимо включить рабочие нагрузки **Разработка для Azure** и **Разработка мобильных приложений на .NET**.
+Если вы разрабатываете приложение в Windows, но еще не установили Visual Studio 2019, скачайте **бесплатный** [выпуск Visual Studio 2019 Community Edition](https://www.visualstudio.com/downloads/). При установке Visual Studio необходимо включить рабочие нагрузки **Разработка для Azure** и **Разработка мобильных приложений на .NET** .
 
 Если вы используете Mac, скачайте **бесплатный** выпуск [Visual Studio для Mac](https://www.visualstudio.com/vs/mac/).
 
@@ -68,7 +68,7 @@ Azure Cosmos DB — это глобально распределенная мн
 1. Откройте командную строку, создайте папку git-samples, а затем закройте окно командной строки.
 
     ```bash
-    md "C:\git-samples"
+    mkdir "C:\git-samples"
     ```
 
 2. Откройте окно терминала git, например git bash, и выполните команду `cd`, чтобы перейти в новую папку для установки примера приложения.
@@ -83,25 +83,31 @@ Azure Cosmos DB — это глобально распределенная мн
     git clone https://github.com/Azure-Samples/azure-cosmos-db-sql-xamarin-getting-started.git
     ```
 
-4. Затем откройте файл ToDoItems.sln из папки samples/xamarin/ToDoItems в Visual Studio.
+4. В Visual Studio откройте файл **C:\git-samples\azure-cosmos-db-sql-xamarin-getting-started\src\ToDoItems.sln** . 
 
 ## <a name="obtain-your-api-keys"></a>Получение ключей API
 
 Вернитесь на портал Azure, чтобы найти сведения о ключе API. Скопируйте эти данные в приложение.
 
-1. На [портале Azure](https://portal.azure.com/) перейдите к учетной записи API SQL для Azure Cosmos DB и на левой панели навигации щелкните **Ключи**, а затем выберите **Ключи записи-чтения**. На следующем шаге используйте кнопки копирования в правой части экрана, чтобы скопировать универсальный код ресурса (URI) и первичный ключ в файл APIKeys.cs.
+1. На [портале Azure](https://portal.azure.com/) перейдите к учетной записи API SQL для Azure Cosmos DB и на левой панели навигации щелкните **Ключи** , а затем выберите **Ключи записи-чтения** . На следующем шаге используйте кнопки копирования в правой части экрана, чтобы скопировать универсальный код ресурса (URI) и первичный ключ в файл APIKeys.cs.
 
     :::image type="content" source="./media/create-sql-api-xamarin-dotnet/keys.png" alt-text="Приложение со списком дел Xamarin в iOS":::
 
-2. В Visual Studio 2019 или Visual Studio для Mac откройте файл APIKeys.cs в папке azure-cosmos-db-sql-xamarin-getting-started/src/ToDoItems.Core/Helpers.
+2. В Visual Studio откройте файл **ToDoItems.Core/Helpers/APIKeys.cs** .
 
-3. Скопируйте значение URI с портала (с помощью кнопки копирования) и добавьте его в качестве значения переменной `CosmosEndpointUrl` в файле APIKeys.cs.
+3. На портале Azure скопируйте значение **URI** с помощью кнопки копирования и добавьте его в качестве значения переменной `CosmosEndpointUrl` в файл APIKeys.cs.
 
-    `public static readonly string CosmosEndpointUrl = "";`
+    ```csharp
+    //#error Enter the URL of your Azure Cosmos DB endpoint here
+            public static readonly string CosmosEndpointUrl = "[URI Copied from Azure Portal]";
+    ```
 
-4. Затем скопируйте значение первичного ключа с портала и добавьте его в качестве значения параметра `Cosmos Auth Key` в файле APIKeys.cs.
+4. На портале Azure скопируйте значение **PRIMARY KEY** с помощью кнопки копирования и добавьте его в качестве значения `Cosmos Auth Key` в файл APIKeys.cs.
 
-    `public static readonly string CosmosAuthKey = "";`
+    ```csharp
+    //#error Enter the read/write authentication key of your Azure Cosmos DB endpoint here
+            public static readonly string CosmosAuthKey = "[PRIMARY KEY copied from Azure Portal";
+    ```
 
 [!INCLUDE [cosmos-db-auth-key-info](../../includes/cosmos-db-auth-key-info.md)]
 
@@ -113,15 +119,18 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Код в решении ToDoItems содержит:
 
-* ToDoItems.Core: проект .NET Standard, который содержит проект Xamarin.Forms и общий код логики приложения, используемый для элементов списка дел в Azure Cosmos DB.
-* ToDoItems.Android: проект, который содержит приложение Android.
-* ToDoItems.iOS: проект, который содержит приложение iOS.
+* **ToDoItems.Core** :
+   * проект .NET Standard, который содержит проект Xamarin.Forms и общий код логики приложения, используемый для элементов списка дел в Azure Cosmos DB.
+* **ToDoItems.Android** :
+  * проект, который содержит приложение Android.
+* **ToDoItems.iOS** :
+  * проект, который содержит приложение iOS.
 
 Рассмотрим краткий обзор того, как приложение обменивается данными с Azure Cosmos DB.
 
 * Во все проекты необходимо добавить пакет NuGet [Microsoft.Azure.DocumentDb.Core](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core/).
-* Класс `ToDoItem` в папке azure-documentdb-dotnet/samples/xamarin/ToDoItems/ToDoItems.Core/Models позволяет моделировать документы в созданном ранее контейнере **Элементы**. Обратите внимание, что в именах свойств учитывается регистр.
-* Класс `CosmosDBService` в папке azure-documentdb-dotnet/samples/xamarin/ToDoItems/ToDoItems.Core/Services позволяет инкапсулировать данные о подключении к Azure Cosmos DB.
+* Класс `ToDoItem` в папке **ToDoItems.Core/Models** позволяет моделировать документы в созданном ранее контейнере **Элементы** . Обратите внимание, что в именах свойств учитывается регистр.
+* Класс `CosmosDBService` в папке **ToDoItems.Core/Services** позволяет инкапсулировать данные о подключении к Azure Cosmos DB.
 * Класс `CosmosDBService` содержит переменную типа `DocumentClient`. Переменная `DocumentClient` используется для настройки и выполнения запросов к учетной записи Azure Cosmos DB с созданием экземпляра:
 
     ```csharp

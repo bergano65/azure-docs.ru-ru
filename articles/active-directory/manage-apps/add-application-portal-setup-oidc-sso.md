@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.workload: identity
 ms.date: 07/01/2020
 ms.author: kenwith
-ms.openlocfilehash: 0f3073214fb47de006c6d9ebb07f443f3e63a4f3
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 0a25d910b694968802e853a81c16e34dd0539f7a
+ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91348326"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92203506"
 ---
 # <a name="quickstart-set-up-oidc-based-single-sign-on-sso-for-an-application-in-your-azure-active-directory-azure-ad-tenant"></a>Краткое руководство. Настройка единого входа на основе OIDC для приложения в арендаторе Azure Active Directory (Azure AD)
 
@@ -47,12 +47,12 @@ ms.locfileid: "91348326"
     :::image type="content" source="media/add-application-portal-setup-oidc-sso/sign-up-oidc-sso.png" alt-text="Снимок экрана: параметр единого входа и кнопка регистрации." lightbox="media/add-application-portal-setup-oidc-sso/sign-up-oidc-sso.png":::
 
 
-2. Выберите **Регистрация**, и вы будете перенаправлены на страницу входа для разработчиков приложений. Войдите, используя учетные данные для входа Azure Active Directory. 
+2. Выберите **Регистрация** , и вы будете перенаправлены на страницу входа для разработчиков приложений. Войдите, используя учетные данные для входа Azure Active Directory. 
 
    > [!IMPORTANT]
     > Если у вас уже есть подписка на приложение, будет выполнена проверка данных пользователя и информации об арендаторе или каталоге. Если приложение не может проверить пользователя, оно перенаправит вас на регистрацию в службе приложения или на страницу ошибки.
 
-3. После успешной проверки подлинности появится диалоговое окно с запросом согласия администратора. Выберите **Согласие от имени вашей организации**, а затем — **Принять**. 
+3. После успешной проверки подлинности появится диалоговое окно с запросом согласия администратора. Выберите **Согласие от имени вашей организации** , а затем — **Принять** . 
 
     :::image type="content" source="media/add-application-portal-setup-oidc-sso/consent.png" alt-text="Снимок экрана: параметр единого входа и кнопка регистрации." lightbox="media/add-application-portal-setup-oidc-sso/consent.png":::
 
@@ -65,7 +65,7 @@ ms.locfileid: "91348326"
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Если вы завершили работу с этой серией кратких руководств, удалите приложение, чтобы очистить тестового арендатора. Сведения о том, как удалить приложение, см. в последнем кратком руководстве этой серии, [Удаление приложения](delete-application-portal.md).
+Завершив работу с этой серией кратких руководств, удалите приложение, чтобы очистить тестовый арендатор. Сведения о том, как удалить приложение, см. в последнем кратком руководстве этой серии, [Удаление приложения](delete-application-portal.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

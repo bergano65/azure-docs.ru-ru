@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 01/14/2019
-ms.openlocfilehash: 602ed2cca725814e4f150bc684036d166b8ff45a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 620a5dad7966347667e0a0a50eb30d562ab700b2
+ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91619042"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92330110"
 ---
 # <a name="use-geo-restore-to-recover-a-multitenant-saas-application-from-database-backups"></a>Использование геовосстановления для восстановления мультитенантного приложения SaaS из резервных копий базы данных
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -184,7 +184,7 @@ ms.locfileid: "91619042"
 
 3. Отслеживайте состояние процесса восстановления в окне PowerShell.
 
-    ![Процесс восстановления](./media/saas-dbpertenant-dr-geo-restore/dr-in-progress.png)
+    ![Снимок экрана, на котором показано окно PowerShell, где можно отслеживать состояние процесса восстановления.](./media/saas-dbpertenant-dr-geo-restore/dr-in-progress.png)
 
 > [!NOTE]
 > Чтобы изучить код заданий восстановления, просмотрите скрипты PowerShell в папке ...\Learning Modules\Business Continuity and Disaster Recovery\DR-RestoreFromBackup\RecoveryJobs.
@@ -202,7 +202,7 @@ ms.locfileid: "91619042"
 
   * На странице событий клиента, который в этот момент не подключен, отображается уведомление об автономном режиме клиента. Например, попробуйте перейти по адресу http://events.wingtip-dpt.&lt;user&gt;.trafficmanager.net/contosoconcerthall, когда клиент Contoso Concert Hall отключен.
 
-    ![Процесс восстановления](./media/saas-dbpertenant-dr-geo-restore/dr-in-progress-offline-contosoconcerthall.png)
+    ![Снимок экрана, на котором показана страница мероприятий, проводимых "вне сети".](./media/saas-dbpertenant-dr-geo-restore/dr-in-progress-offline-contosoconcerthall.png)
 
 ## <a name="provision-a-new-tenant-in-the-recovery-region"></a>Подготовка нового клиента в регионе восстановления
 Даже перед восстановлением баз данных клиентов вы можете подготовить новые клиенты в регионе восстановления. Новые базы данных клиентов, подготовленные в регионе восстановления, позже возвращаются в исходное расположение с восстановленными базами данных.   

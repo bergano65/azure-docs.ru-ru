@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 03/05/2020
 ms.author: hahamil
 ms.custom: aaddev, identityplatformtop40, devx-track-js
-ms.openlocfilehash: ae486ac8ddd233487bb10c897a155337aa815fe5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c93704130e150a7ca26144d4895e82756657fae2
+ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91611254"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92096255"
 ---
 # <a name="tutorial-sign-in-users-and-call-the-microsoft-graph-api-from-an-angular-single-page-application"></a>Руководство по входу пользователей в систему и вызову API Microsoft Graph из одностраничного приложения Angular
 
@@ -124,7 +124,7 @@ ng generate component page-name                  # To add a new page (such as a 
     |---------|---------|
     |Enter_the_Application_Id_Here|Это значение **идентификатора приложения (клиента)** со страницы **обзора** регистрации приложения. |
     |Enter_the_Cloud_Instance_Id_Here|Это экземпляр облака Azure. Для основного или глобального облака Azure введите **https://login.microsoftonline.com** . Сведения для национальных облаков (например, Китая) см. в [этой статье](./authentication-national-cloud.md).|
-    |Enter_the_Tenant_Info_Here| Задайте один из следующих параметров: Если приложение поддерживает *учетные записи только в этом каталоге организации*, замените это значение идентификатором каталога (клиента) или именем клиента (например, **contoso.microsoft.com**). Если ваше приложение поддерживает *учетные записи в любом каталоге организации*, замените это значение на **organizations**. Если приложение поддерживает *учетные записи в любом каталоге организации и личные учетные записи Майкрософт*, замените это значение на **common**. Чтобы ограничить поддержку только *личными учетными записями Майкрософт*, замените это значение на **consumers**. |
+    |Enter_the_Tenant_Info_Here| Задайте один из следующих параметров: Если приложение поддерживает *учетные записи только в этом каталоге организации* , замените это значение идентификатором каталога (клиента) или именем клиента (например, **contoso.microsoft.com** ). Если ваше приложение поддерживает *учетные записи в любом каталоге организации* , замените это значение на **organizations** . Если приложение поддерживает *учетные записи в любом каталоге организации и личные учетные записи Майкрософт* , замените это значение на **common** . Чтобы ограничить поддержку только *личными учетными записями Майкрософт* , замените это значение на **consumers** . |
     |Enter_the_Redirect_Uri_Here|Замените на **http://localhost:4200** .|
 
     Подробные сведения о доступных настраиваемых параметрах см. в статье [Initialize client applications using MSAL.js](msal-js-initializing-client-applications.md) (Инициализация клиентских приложений с помощью MSAL.js).
@@ -194,7 +194,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 }
 ```
 
-Затем предоставьте `MsalModule.forRoot()` карту защищенных ресурсов в виде `protectedResourceMap` и включите эти области в `consentScopes`:
+Затем предоставьте `MsalModule.forRoot()` карту защищенных ресурсов в виде `protectedResourceMap` и включите эти области в `consentScopes`. Для URL-адресов, которые вы указываете в коллекции `protectedResourceMap`, учитывается регистр.
 
 ```javascript
 @NgModule({
@@ -318,7 +318,7 @@ logout() {
     npm install
     npm start
     ```
-1. В браузере введите **http://localhost:4200** или **http://localhost:{port}** (*port* — это порт, прослушивающий ваш веб-сервер).
+1. В браузере введите **http://localhost:4200** или **http://localhost:{port}** ( *port*  — это порт, прослушивающий ваш веб-сервер).
 
 
 ### <a name="provide-consent-for-application-access"></a>Предоставление разрешения на доступ к приложению
@@ -329,7 +329,7 @@ logout() {
 
 ## <a name="add-scopes-and-delegated-permissions"></a>Добавление областей и делегированных разрешений
 
-Для чтения профиля пользователя API Microsoft Graph требуется область *user.read*. По умолчанию эта область автоматически добавляется в каждое приложение, зарегистрированное на портале регистрации. Для других API Microsoft Graph, а также для пользовательских API вашего внутреннего сервера, могут потребоваться дополнительные области. Например, для отображения списка календарей пользователя для API Microsoft Graph требуется область *Calendars.Read*.
+Для чтения профиля пользователя API Microsoft Graph требуется область *user.read* . По умолчанию эта область автоматически добавляется в каждое приложение, зарегистрированное на портале регистрации. Для других API Microsoft Graph, а также для пользовательских API вашего внутреннего сервера, могут потребоваться дополнительные области. Например, для отображения списка календарей пользователя для API Microsoft Graph требуется область *Calendars.Read* .
 
 Чтобы из контекста приложения получить доступ к календарям пользователя, добавьте делегированное разрешение *Calendars.Read* в сведения о регистрации приложения. Затем добавьте область *Calendars.Read* в вызов `acquireTokenSilent`.
 

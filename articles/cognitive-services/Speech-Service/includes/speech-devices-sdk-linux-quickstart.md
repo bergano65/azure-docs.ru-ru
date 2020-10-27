@@ -5,12 +5,12 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 02/20/2020
 ms.author: trbye
-ms.openlocfilehash: aee6e6d8ca505bfdcfd4a51e4693779f44b2b0c0
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 8c0aef1817581e2b09297d8807676cf0049e1d3e
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88226543"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92169103"
 ---
 В этом кратком руководстве вы узнаете, как использовать пакет SDK для речевых устройств в Linux для создания устройства с поддержкой речевых функций или его использования в качестве устройства для [транскрибирования бесед](../conversation-transcription-service.md). Сейчас поддерживается только [Azure Kinect DK](https://azure.microsoft.com/services/kinect-dk/).
 
@@ -68,19 +68,19 @@ ms.locfileid: "88226543"
 
 1. Запустите Eclipse.
 
-1. В **средстве запуска интегрированной среды разработки Eclipse** в поле **Workspace** (Рабочая область) введите имя каталога новой рабочей области. Затем выберите **Запустить**.
+1. В **средстве запуска интегрированной среды разработки Eclipse** в поле **Workspace** (Рабочая область) введите имя каталога новой рабочей области. Затем выберите **Запустить** .
 
-   ![Снимок экрана средства запуска Eclipse](../media/speech-devices-sdk/eclipse-launcher-linux.png)
+   ![Снимок экрана, на котором показано средство запуска Eclipse.](../media/speech-devices-sdk/eclipse-launcher-linux.png)
 
 1. После этого отобразится главное окно интегрированной среды разработки Eclipse. Если отобразится экран приветствия, закройте его.
 
 1. В строке меню Eclipse создайте новый проект, выбрав **File** > **New** > **Java Project** (Файл > Создать > Проект Java). Если последнего пункта нет, выберите **Project** (Проект), а затем — **Java Project** (Проект Java).
 
-1. После этого запустится мастер **создания проектов Java**. **Перейдите** к расположению примера проекта. Нажмите кнопку **Готово**.
+1. После этого запустится мастер **создания проектов Java** . **Перейдите** к расположению примера проекта. Нажмите кнопку **Готово** .
 
    ![Снимок экрана с изображением мастера создания проекта Java](../media/speech-devices-sdk/eclipse-new-java-project-linux.png)
 
-1. В **обозревателе пакетов** щелкните проект правой кнопкой мыши. В контекстном меню выберите **Настроить** > **Convert to Maven Project** (Преобразовать в проект Maven). Нажмите кнопку **Готово**.
+1. В **обозревателе пакетов** щелкните проект правой кнопкой мыши. В контекстном меню выберите **Настроить** > **Convert to Maven Project** (Преобразовать в проект Maven). Нажмите кнопку **Готово** .
 
    ![Снимок экрана обозревателя пакетов](../media/speech-devices-sdk/eclipse-convert-to-maven.png)
 
@@ -107,15 +107,15 @@ ms.locfileid: "88226543"
 
 1. В **обозревателе пакетов** щелкните проект правой кнопкой мыши. Выберите **Properties** (Свойства), а затем — **Run/Debug Settings** (Параметры отладки/запуска) > **New…** (Создать…) > **Java Application** (Приложение Java). 
 
-1. Появится окно **Edit Configuration** (Изменение конфигурации). В поле **Name** (Имя) введите **Main** и используйте кнопку **Search** (Поиск) в разделе **Main Class** (Класс Main), чтобы найти и выбрать **com.microsoft.cognitiveservices.speech.samples.FunctionsList**.
+1. Появится окно **Edit Configuration** (Изменение конфигурации). В поле **Name** (Имя) введите **Main** и используйте кнопку **Search** (Поиск) в разделе **Main Class** (Класс Main), чтобы найти и выбрать **com.microsoft.cognitiveservices.speech.samples.FunctionsList** .
 
    ![Снимок экрана: изменение конфигурации запуска](../media/speech-devices-sdk/eclipse-edit-launch-configuration-linux.png)
 
-1. Скопируйте двоичные файлы аудио для целевой архитектуры из **Linux-arm** или **Linux-x64** в расположение проекта Java, например в **/home/wcaltest/JRE-Sample-Release**.
+1. Скопируйте двоичные файлы аудио для целевой архитектуры из **Linux-arm** или **Linux-x64** в расположение проекта Java, например в **/home/wcaltest/JRE-Sample-Release** .
 
-1. В окне **Edit Configuration** (Изменение конфигурации) выберите страницу **Environment** (Среда) и **New** (Новая). Появится окно переменной **New Environment Variable** (Новая переменная среды). В поле **Name** (Имя) введите **LD_LIBRARY_PATH** и в поле **Value** (Значение) введите папку, содержащую файлы *.so, например **/home/wcaltest/JRE-Sample-Release**.
+1. В окне **Edit Configuration** (Изменение конфигурации) выберите страницу **Environment** (Среда) и **New** (Новая). Появится окно переменной **New Environment Variable** (Новая переменная среды). В поле **Name** (Имя) введите **LD_LIBRARY_PATH** и в поле **Value** (Значение) введите папку, содержащую файлы *.so, например **/home/wcaltest/JRE-Sample-Release** .
 
-1. Скопируйте `kws.table` и `participants.properties` в папку проекта **target/classes**.
+1. Скопируйте `kws.table` и `participants.properties` в папку проекта **target/classes** .
 
 
 ## <a name="configure-the-sample-application"></a>Настройка примера приложения
@@ -147,7 +147,7 @@ ms.locfileid: "88226543"
 
     Для использования нового ключевого слова обновите следующую строку в файле `FunctionsList.java` и скопируйте ключевое слово в приложение. Например, чтобы использовать ключевое слово "Машина" из файла `machine.zip` пакета ключевых слов, сделайте следующее.
 
-   * Скопируйте файл `kws.table` из ZIP-пакета слов в папку проекта **target/classes**.
+   * Скопируйте файл `kws.table` из ZIP-пакета слов в папку проекта **target/classes** .
 
    * Укажите в файле `FunctionsList.java` имя ключевого слова:
 
@@ -161,22 +161,22 @@ ms.locfileid: "88226543"
 
 1. Запускается пример приложения пакета SDK для речевых устройств, отображающий следующие параметры:
 
-   ![Пример приложения пакета SDK для речевых устройств и параметры](../media/speech-devices-sdk/java-sample-app-linux.png)
+   ![Снимок экрана, на котором показан пример приложения из пакета SDK для речевых устройств и параметры.](../media/speech-devices-sdk/java-sample-app-linux.png)
 
-1. Попробуйте новую демоверсию **транскрибирования бесед**. Запустите транскрибирование, выбрав **Session** (Сеанс) > **Start** (Запустить). По умолчанию все являются гостями. Тем не менее, если у вас есть голосовые подписи участников, вы можете добавить их в файл `participants.properties` в папке проекта **target/classes**. Сведения о том, как создать голосовую подпись, см. в статье о [транскрибировании бесед (пакет SDK)](../how-to-use-conversation-transcription-service.md).
+1. Попробуйте новую демоверсию **транскрибирования бесед** . Запустите транскрибирование, выбрав **Session** (Сеанс) > **Start** (Запустить). По умолчанию все являются гостями. Тем не менее, если у вас есть голосовые подписи участников, вы можете добавить их в файл `participants.properties` в папке проекта **target/classes** . Сведения о том, как создать голосовую подпись, см. в статье о [транскрибировании бесед (пакет SDK)](../how-to-use-conversation-transcription-service.md).
 
-   ![Демоверсия приложения транскрибирования бесед](../media/speech-devices-sdk/cts-sample-app-linux.png)
+   ![Снимок экрана, на котором показана демоверсия приложения транскрибирования бесед.](../media/speech-devices-sdk/cts-sample-app-linux.png)
 
 ## <a name="create-and-run-standalone-the-application"></a>Создание и запуск автономного приложения
 
 1. В **обозревателе пакетов** щелкните проект правой кнопкой мыши. Выберите **Export** (Экспорт). 
 1. Появится окно **Export** (Экспорт). Разверните узел **Java** и выберите **Runnable JAR file** (Готовый к запуску JAR-файл), а затем нажмите кнопку **Next** (Далее).
 
-   ![Снимок экрана: окно экспорта](../media/speech-devices-sdk/eclipse-export-linux.png) 
+   ![Снимок экрана, на котором показаны параметры экспорта.](../media/speech-devices-sdk/eclipse-export-linux.png) 
 
 1. Появится окно **Runnable JAR File Export** (Экспорт готовых к запуску JAR-файлов). Выберите **назначение экспорта** для приложения, а затем нажмите кнопку **Finish** (Готово).
  
-   ![Снимок экрана: экспорт готовых к запуску JAR-файлов](../media/speech-devices-sdk/eclipse-export-jar-linux.png)
+   ![Снимок экрана, на котором показано окно для экспорта готовых к запуску JAR-файлов.](../media/speech-devices-sdk/eclipse-export-jar-linux.png)
 
 1. Поместите `kws.table` и `participants.properties` в папку назначения, выбранную выше, так как эти файлы необходимы для приложения.
 

@@ -29,7 +29,7 @@ ms.locfileid: "92534946"
 > [!NOTE]  
 > Еще один способ определения рабочих процессов с помощью HDInsight — использование фабрики данных Azure. Дополнительные сведения о фабрике данных см. в статье [Использование данных Apache Pig and Apache Hive в фабрике данных Azure](../data-factory/transform-data.md). Сведения об использовании Oozie в кластерах с Корпоративным пакетом безопасности см. в статье [Запуск Apache Oozie в кластерах Hadoop HDInsight с Корпоративным пакетом безопасности](domain-joined/hdinsight-use-oozie-domain-joined-clusters.md).
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * **Кластер Hadoop в HDInsight** . Ознакомьтесь со статьей [Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](hadoop/apache-hadoop-linux-tutorial-get-started.md).
 

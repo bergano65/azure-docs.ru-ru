@@ -1,6 +1,6 @@
 ---
-title: включить файл
-description: включить файл
+title: Включить файл
+description: Включить файл
 services: storage
 author: normesta
 ms.service: storage

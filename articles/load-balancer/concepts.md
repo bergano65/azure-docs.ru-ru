@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/13/2020
 ms.author: allensu
-ms.openlocfilehash: 5c12b7d0bf9bed551e54ccb2e54a4674a8323a9c
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
+ms.openlocfilehash: 28c3e4ade2c78a1a77ef7263463803e40727ba8f
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91930923"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92315303"
 ---
 # <a name="azure-load-balancer-algorithm"></a>Алгоритм Azure Load Balancer
 
@@ -57,6 +57,7 @@ Load Balancer не взаимодействует напрямую с прото
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
+- Узнайте о [компонентах](components.md) Azure Load Balancer.
 - Чтобы приступить к работе с подсистемой балансировки нагрузки, создайте ее, создайте виртуальные машины с установленным пользовательским расширением IIS и распределяйте нагрузку веб-приложения между виртуальными машинами, как описано в статье [Краткое руководство. Создание Load Balancer (цен. категория "Стандартный") с помощью Azure CLI для распределения нагрузки между виртуальными машинами](quickstart-load-balancer-standard-public-portal.md).
 - Ознакомьтесь со сведениями об [исходящих подключениях Azure Load Balancer](load-balancer-outbound-connections.md).
 - [Дополнительные сведения об Azure Load Balancer](load-balancer-overview.md).

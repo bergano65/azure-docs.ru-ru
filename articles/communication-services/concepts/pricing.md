@@ -9,24 +9,19 @@ ms.author: mikben
 ms.date: 09/29/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 4eec258cf642688c87b363ff467f1f368727a013
-ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
+ms.openlocfilehash: 779fa577b25bd4f2aa92aa8b8cc1244a58bdf1ae
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91761232"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92126196"
 ---
 # <a name="pricing-scenarios"></a>Сценарии ценообразования
 
 [!INCLUDE [Public Preview Notice](../includes/public-preview-include.md)]
 
-<!--
-> [!WARNING]
-> This document is under construction and needs the following items to be addressed:
-> - Looks like other resources point to a /pricing page that is managed by Commerce or Marketing? https://azure.microsoft.com/pricing/details/functions/ Should we? FOLLOWING UP WITH KRISTIN TO FIND THE RIGHT ACS PAGE
--->
 
-Цены для Служб коммуникации Azure основаны на модели с оплатой по мере использования без предоплат. Вам будет выставлен счет только за потребление и использование служб.
+Цены для Служб коммуникации Azure по большей части основаны на модели с оплатой по мере использования.
 
 ## <a name="voicevideo-calling-and-screen-sharing"></a>Звонки (голос и видео) и демонстрация экрана
 
@@ -51,7 +46,7 @@ ms.locfileid: "91761232"
 - 2 участника x 60 минут x 0,004 долл. США на участника в минуту = 0,48 долл. [и видео и аудио оплачиваются по одному тарифу]
 - 1 участник x 43 минуты x 0,004 долл. США на участника в минуту = 0,172 долл. [и видео и аудио оплачиваются по одному тарифу]
 
-**Общая стоимость группового звонка**: 0,48 долл. + 0,172 долл. = 0,652 долл.
+**Общая стоимость группового звонка** : 0,48 долл. + 0,172 долл. = 0,652 долл.
 
 ## <a name="chat"></a>Чат
 
@@ -84,6 +79,16 @@ ms.locfileid: "91761232"
 ## <a name="price"></a>Цена 
 
 За услуги телефонии взимается поминутная оплата, в то время как за SMS взимается плата за каждое сообщение. Цены определяются типом и расположением используемого номера, а также пунктом назначения вызовов и SMS-сообщений.
+
+### <a name="telephone-number-leasing"></a>Аренда номера телефона
+
+Сначала за аренду номера телефона вносится предоплата, а затем оплата взимается ежемесячно.
+
+|Числовой тип   |Ежемесячная плата   |
+|--------------|-----------|
+|Местный номер телефона (США)     |1 долл. США в месяц        |
+|Бесплатный номер (США) |2 долл. США в месяц |
+
 
 ### <a name="telephone-calling"></a>Телефонный вызов
 

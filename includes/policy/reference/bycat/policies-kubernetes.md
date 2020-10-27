@@ -2,19 +2,20 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 10/07/2020
+ms.date: 10/20/2020
 ms.author: dacoulte
 ms.custom: generated
-ms.openlocfilehash: 31d6c091e07d2f35d8856dce3adab04997b012b6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e83e5fdd0d8797377407e27614e98c348b008164
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91820695"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92312192"
 ---
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
 |[В ваших кластерах должна быть установлена и включена надстройка службы "Политика Azure" для службы Kubernetes (AKS)](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F0a15ec92-a229-4763-bb14-0ea34a568f8d) |Надстройка службы "Политика Azure" для службы Kubernetes (AKS) расширяет возможности Gatekeeper версии 3, представляющего собой веб-перехватчик контроллера допуска для Open Policy Agent (OPA), чтобы централизованным и согласованным образом применить правила и меры безопасности для кластеров в требуемом масштабе. |Audit, Disabled |[1.0.1 (предварительная версия)](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Kubernetes/AKS_AzurePolicyAddOn_Audit.json) |
+|[Развертывание надстройки службы "Политика Azure" в кластерах Службы Azure Kubernetes](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fa8eff44f-8c92-45c3-a3fb-9880802d67a7) |Надстройка службы "Политика Azure" позволяет управлять состоянием соответствия кластеров Службы Azure Kubernetes (AKS) и получать уведомления о нем. Дополнительные сведения см. в статье [https://aka.ms/akspolicydoc](https://aka.ms/akspolicydoc). |deployIfNotExists |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Kubernetes/AKS_AzurePolicyAddOn_Deploy.json) |
 |[Развертывание GitOps в кластер Kubernetes](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F1d61c4d2-aef2-432b-87fc-7f96b019b7e1) |Эта политика развертывает конфигурацию "sourceControlConfiguration" в кластерах Kubernetes, чтобы обеспечить для них достоверный источник из определенного git-репозитория. Инструкции по использованию этой политики см. на странице [https://aka.ms/K8sGitOpsPolicy](https://aka.ms/K8sGitOpsPolicy). |DeployIfNotExists |[1.0.0 (предварительная версия)](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Kubernetes/Deploy-GitOps-to-Kubernetes-cluster_DINE.json) |
 |[Не разрешать привилегированные контейнеры в кластере Kubernetes](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F95edb821-ddaf-4404-9732-666045e056b4) |Эта политика не позволяет создавать привилегированные контейнеры в кластере Kubernetes. Эта политика общедоступна для службы Kubernetes (AKS), но для обработчика AKS и Azure Arc с поддержкой Kubernetes она доступна в предварительной версии. Инструкции по использованию этой политики см. на странице [https://aka.ms/kubepolicydoc](https://aka.ms/kubepolicydoc). |Audit, Deny, Disabled |[4.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Kubernetes/ContainerNoPrivilege.json) |
 |[Обеспечить прием входящего HTTPS-трафика в кластере Kubernetes](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F1a5b4dca-0b6f-4cf5-907c-56316bc1bf3d) |Эта политика обеспечивает принудительное использование HTTPS для входящего трафика в кластере Kubernetes. Эта политика общедоступна для службы Kubernetes (AKS), но для обработчика AKS и Azure Arc с поддержкой Kubernetes она доступна в предварительной версии. Инструкции по использованию этой политики см. на странице [https://aka.ms/kubepolicydoc](https://aka.ms/kubepolicydoc). |Audit, Deny, Disabled |[4.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Kubernetes/IngressHttpsOnly.json) |

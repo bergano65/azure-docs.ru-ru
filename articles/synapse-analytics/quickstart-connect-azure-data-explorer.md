@@ -1,81 +1,82 @@
 ---
-title: Краткое руководство. Подключение Azure Data Explorer к рабочей области Synapse
-description: Сведения о подключении кластера Azure Data Explorer к рабочей области Synapse с помощью Azure Synapse Apache Spark
+title: Краткое руководство. Подключение Azure Data Explorer к рабочей области Azure Synapse Analytics
+description: Подключение кластера Azure Data Explorer к рабочей области Azure Synapse Analytics с помощью Apache Spark для Azure Synapse Analytics.
 services: synapse-analytics
 author: manojraheja
 ms.service: synapse-analytics
 ms.topic: quickstart
-ms.subservice: ''
+ms.subservice: workspace
 ms.date: 10/07/2020
 ms.author: maraheja
 ms.reviewer: jrasnick
-ms.openlocfilehash: 53092f5c49073098f28d2fd06f38391e858b2b9d
-ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
+ms.openlocfilehash: ee9d137973bfa4eeb28bc6526437e76e781f3199
+ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91946979"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92172273"
 ---
-# <a name="connect-to-azure-data-explorer-using-synapse-apache-spark"></a>Подключение к Azure Data Explorer с помощью Synapse Apache Spark
+# <a name="connect-to-azure-data-explorer-using-apache-spark-for-azure-synapse-analytics"></a>Подключение к Azure Data Explorer с помощью Apache Spark для Azure Synapse Analytics
 
-В этой статье описывается, как получить доступ к базам данных Azure Data Explorer из Synapse Studio с помощью Synapse Apache Spark. 
+В этой статье описывается, как получить доступ к базам данных Azure Data Explorer из Synapse Studio с помощью Apache Spark для Azure Synapse Analytics.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 * [Создайте кластер и базу данных Azure Data Explorer](/azure/data-explorer/create-cluster-database-portal).
-* имеющаяся рабочая область Synapse (можно также создать новую рабочую область, следуя инструкциям в этом [кратком руководстве](./quickstart-create-workspace.md)). 
-* Существующий пул Apache Spark (можно также создать новый пул, следуя инструкциям в этом [кратком руководстве](./quickstart-create-apache-spark-pool-portal.md)).
-* [Создайте приложение Azure AD, выполнив подготовку приложения Azure AD.](/azure/data-explorer/kusto/management/access-control/how-to-provision-aad-app)
-* Предоставьте приложению Azure AD доступ к базе данных, как описано в разделе [Управление разрешениями базы данных Azure Data Explorer](/azure/data-explorer/manage-database-permissions)
+* Если у вас нет рабочей области Azure Synapse Analytics, создайте новую рабочую область, выполнив действия, описанные в [кратком руководстве по созданию рабочей области Azure Synapse](./quickstart-create-workspace.md).
+* Если у вас нет существующего пула Apache Spark, создайте новый пул, выполнив действия, описанные в руководстве [ Создание пула Apache Spark с помощью портала Azure](./quickstart-create-apache-spark-pool-portal.md).
+* [Создание приложения Azure Active Directory (Azure AD) путем подготовки приложения Azure AD](/azure/data-explorer/kusto/management/access-control/how-to-provision-aad-app).
+* Предоставьте приложению Azure AD доступ к базе данных, выполнив действия, описанные в разделе [Управление разрешениями базы данных Azure Data Explorer](/azure/data-explorer/manage-database-permissions).
 
-## <a name="navigate-to-synapse-studio"></a>Перейдите в Synapse Studio
+## <a name="go-to-synapse-studio"></a>Перейдите в Synapse Studio
 
-В рабочей области Synapse выберите **Запуск Synapse Studio**. На домашней странице Synapse Studio выберите **Данные**, чтобы перейти в **обозреватель объектов данных**.
+В рабочей области Azure Synapse выберите **Запуск Synapse Studio** . На домашней странице Synapse Studio выберите **Данные** , чтобы открыть **обозреватель объектов данных** .
 
-## <a name="connect-an-azure-data-explorer-database-to-a-synapse-workspace"></a>Подключение базы данных Azure Data Explorer к рабочей области Synapse
+## <a name="connect-an-azure-data-explorer-database-to-an-azure-synapse-workspace"></a>Подключение базы данных Azure Data Explorer к рабочей области Azure Synapse
 
-Подключение базы данных Azure Data Explorer к рабочей области выполняется через связанную службу. Связанная служба Azure Data Explore позволяет пользователям просматривать и изучать данные, а также считывать и записывать их из Apache Spark для Azure Synapse Analytics и выполнять задания интеграции в конвейере.
+Подключение базы данных Azure Data Explorer к рабочей области выполняется через связанную службу. С помощью связанной службы Azure Data Explorer вы можете просматривать, изучать, читать и записывать данные из Apache Spark для Azure Synapse. Вы также можете запускать задания интеграции в конвейере.
 
 В обозревателе объектов данных выполните следующие действия, чтобы создать прямое соединение с кластером Azure Data Explorer.
 
-1. Щелкните значок **+** рядом с данными.
-2. Выберите **Подключение** к внешнем данным
-3. Выберите **Azure Data Explorer (Kusto)**
-5. Выберите **Продолжить**
-6. Присвойте имя связанной службе. Имя будет отображаться в обозревателе объектов и использоваться во время выполнения Synapse для подключения к базе данных. Рекомендуем использовать понятное имя
-7. Выберите кластер Azure Data Explore из подписки или введите универсальный код ресурса (URI).
-8. Введите значения для пунктов "Идентификатор субъекта-службы" и "Ключ субъекта-службы" (убедитесь, что у субъекта-службы есть доступ на просмотр данных в базе данных для операций чтения и получения доступа для приема данных).
-9. Введите имя базы данных Azure Data Explorer
-10. Щелкните **Проверить подключение**, чтобы убедиться в наличии нужных разрешений.
-11. Нажмите кнопку **Создать**
+1. Выберите значок **+** рядом с областью **Данные** .
+1. Выберите **Подключиться** , чтобы подключиться к внешним данным.
+1. Выберите **Azure Data Explorer (Kusto)**
+1. Выберите **Continue** (Продолжить).
+1. Чтобы присвоить имя связанной службе, используйте понятное имя. Имя появится в обозревателе объектов данных и будет использоваться средами выполнения Azure Synapse для подключения к базе данных.
+1. Выберите кластер Azure Data Explorer из подписки или введите универсальный код ресурса (URI).
+1. Введите **идентификатор субъекта-службы** и **ключ субъекта-службы** . Убедитесь, что субъект-служба имеет доступ на просмотр к базе данных для чтения и получения доступа для приема данных.
+1. Введите имя базы данных Azure Data Explorer.
+1. Щелкните **Проверить подключение** , чтобы убедиться в наличии нужных разрешений.
+1. Нажмите кнопку **создания** .
 
-    ![Новая связанная служба](./media/quickstart-connect-azure-data-explorer/003-new-linked-service.png)
+    ![Снимок экрана, на котором показана новая связанная служба.](./media/quickstart-connect-azure-data-explorer/003-new-linked-service.png)
 
     > [!NOTE]
-    > (Необязательно) Проверка подключения не проверяет наличие доступа на запись. Убедитесь, что идентификатору субъекта-службы предоставлен доступ на запись в базу данных Azure Data Explorer.
+    > (Необязательно) **Проверка подключения** не проверяет доступ на запись. Убедитесь, что у идентификатора субъекта-службы есть доступ на запись к базе данных Azure Data Explorer.
 
-12. Кластеры и базы данных Azure Data Explorer отображаются на вкладке **Связанные** в разделе Azure Data Explorer. 
+1. Кластеры и базы данных Azure Data Explorer отображаются на вкладке **Связанные** в разделе **Azure Data Explorer** .
 
-    ![Обзор кластеров](./media/quickstart-connect-azure-data-explorer/004-browse-clusters.png)
+    ![Снимок экрана, на котором показаны кластеры.](./media/quickstart-connect-azure-data-explorer/004-browse-clusters.png)
 
-    > [!NOTE] 
-    > В текущем выпуске объекты базы данных заполняются на основе разрешений учетной записи AAD в базах данных Azure Data Explorer. При запуске записных книжек Apache Spark или заданий интеграции будут использоваться учетные данные в службе каналов (например, субъект-служба).
-
+    > [!NOTE]
+    > В текущем выпуске объекты базы данных заполняются на основе разрешений учетной записи Azure AD в базах данных Azure Data Explorer. При запуске записных книжек Apache Spark или заданий интеграции будут использоваться учетные данные в службе каналов (например, субъект-служба).
 
 ## <a name="quickly-interact-with-code-generated-actions"></a>Быстрое взаимодействие с созданными кодом действиями
 
-* Если щелкнуть правой кнопкой мыши базу данных или таблицу, появится список жестов, которые активируют пример записной книжки Spark для чтения данных, записи данных и потоковой передачи данных в Azure Data Explorer. 
-    [![Примеры Записных книжек AML](./media/quickstart-connect-azure-data-explorer/005-new-notebook.png)](./media/quickstart-connect-azure-data-explorer/005-new-notebook.png#lightbox)
+Если щелкнуть правой кнопкой мыши базу данных или таблицу, появится список примеров записных книжек Spark. Выберите параметр для чтения, записи или потоковой передачи данных в Azure Data Explorer.
 
-* Ниже приведен пример считывания данных. Подключите записную книжку к пулу Spark и запустите ячейку [![New Read Notebook](./media/quickstart-connect-azure-data-explorer/006-read-data.png)](./media/quickstart-connect-azure-data-explorer/006-read-data.png#lightbox) (Создать записную книжку для чтения)
+[![Снимок экрана, на котором показаны новые примеры записных книжек.](./media/quickstart-connect-azure-data-explorer/005-new-notebook.png)](./media/quickstart-connect-azure-data-explorer/005-new-notebook.png#lightbox)
 
-   > [!NOTE] 
-   > Первый запуск сеанса Spark может занять более трех минут. Последующие выполнения будут завершаться значительно быстрее.  
+Ниже приведен пример считывания данных. Подключите записную книжку к пулу Spark и выполните эту ячейку.
 
+[![Снимок экрана, на котором показана новая записная книжка для чтения.](./media/quickstart-connect-azure-data-explorer/006-read-data.png)](./media/quickstart-connect-azure-data-explorer/006-read-data.png#lightbox)
+
+   > [!NOTE]
+   > Первый запуск сеанса Spark может занять более трех минут. Последующие выполнения будут завершаться значительно быстрее.
 
 ## <a name="limitations"></a>Ограничения
-Соединитель Azure Data Explorer в настоящее время не поддерживается в управляемой виртуальной сети Azure Synapse.
 
+Соединитель Azure Data Explorer в настоящее время не поддерживается в управляемых виртуальных сетях Azure Synapse.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

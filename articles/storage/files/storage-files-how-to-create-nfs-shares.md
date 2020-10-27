@@ -8,12 +8,12 @@ ms.date: 09/15/2020
 ms.author: rogarana
 ms.subservice: files
 ms.custom: references_regions
-ms.openlocfilehash: d5b394833dbc920612f521b01f4da88af6c3e015
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: 293fc1bca47f7c58f89a8dac50cc636be8231d4f
+ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92220753"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92633507"
 ---
 # <a name="how-to-create-an-nfs-share"></a>Создание общей папки NFS
 
@@ -86,17 +86,17 @@ az feature show --name AllowNfsFileShares --namespace Microsoft.Storage --subscr
 
 Теперь, когда вы создали учетную запись Филестораже и настроили сеть, можно создать файловый ресурс NFS. Процесс аналогичен созданию общего ресурса SMB. при создании общей папки выбирается **NFS** вместо **SMB** .
 
-1. Перейдите к своей учетной записи хранения и выберите **Общие папки**.
+1. Перейдите к своей учетной записи хранения и выберите **Общие папки** .
 1. Выберите **+ Общая папка** , чтобы создать новый файловый ресурс.
 1. Назовите общую папку и выберите подготовленную емкость.
-1. В качестве **протокола** выберите **NFS (Предварительная версия)**.
+1. В качестве **протокола** выберите **NFS (Предварительная версия)** .
 1. Для выбора **корневого Squash** сделайте выбор.
 
     - Root Squash (по умолчанию) — доступ для удаленного суперпользователя (root) сопоставляется с UID (65534) и GID (65534).
     - Без корневого Squash — удаленный суперпользователь (root) получает доступ от имени привилегированного пользователя.
     - Все Squash — все пользователи сопоставлены с UID (65534) и GID (65534).
     
-1. Нажмите кнопку **создания**.
+1. Нажмите кнопку **создания** .
 
     :::image type="content" source="media/storage-files-how-to-create-mount-nfs-shares/create-nfs-file-share.png" alt-text="Снимок экрана: колонка создания файлового ресурса":::
 
@@ -120,7 +120,7 @@ az feature show --name AllowNfsFileShares --namespace Microsoft.Storage --subscr
 
 1. Закройте, а затем снова откройте консоль PowerShell.
 
-1. Установите модуль просмотра **AZ. Storage** предварительной версии **2.5.2-Preview**.
+1. Установите модуль просмотра **AZ. Storage** предварительной версии **2.5.2-Preview** .
 
    ```powershell
    Install-Module Az.Storage -Repository PsGallery -RequiredVersion 2.5.2-preview -AllowClobber -AllowPrerelease -Force  
@@ -152,10 +152,9 @@ az feature show --name AllowNfsFileShares --namespace Microsoft.Storage --subscr
 
 ```azurecli-interactive
 az storage share-rm create \
-    --account-name $STORAGEACCT \
-    --account-key $STORAGEKEY \
+    --storage-account $STORAGEACCT \
     --enabled-protocol NFS \
-    --root-access RootSquash \
+    --root-squash RootSquash \
     --name "myshare" 
 ```
 ---

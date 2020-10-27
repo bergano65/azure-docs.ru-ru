@@ -7,13 +7,13 @@ ms.service: azure-resource-manager
 ms.topic: quickstart
 ms.custom: subject-armqs
 ms.author: mbaldwin
-ms.date: 08/31/2020
-ms.openlocfilehash: a73294e41f27a15d70ab95b3aa7b100cab5320b4
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.date: 10/16/2020
+ms.openlocfilehash: 8c56a37ebcc799b0170785666212eb4e3b00a5f0
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89237119"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92144976"
 ---
 # <a name="quickstart-create-an-azure-attestation-provider-with-an-arm-template"></a>Краткое руководство. Создание поставщика аттестации Azure с помощью шаблона ARM
 
@@ -21,60 +21,22 @@ ms.locfileid: "89237119"
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
-Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure** . Шаблон откроется на портале Azure.
 
 [![Развернуть в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-attestation-provider-create%2Fazuredeploy.json)
 
+## <a name="prerequisites"></a>Предварительные требования
+
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="review-the-template"></a>Изучение шаблона
 
 Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-attestation-provider-create).
 
-```json
-{
-  "$schema": "https://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json#",
-  "contentVersion": "1.0.0.0",
-  "parameters": {
-    "name": {
-      "type": "string"
-    },
-    "location": {
-      "type": "string"
-    },
-    "tags": {
-      "type": "Object"
-    },
-    "policySigningCertificates": {
-      "type": "string"
-    }
-  },
-  "variables": {
-    "PolicySigningCertificates": {
-      "PolicySigningCertificates": {
-        "keys": [
-          {
-            "kty": "RSA",
-            "use": "sig",
-            "x5c": [ "[parameters('policySigningCertificates')]" ]
-          }
-        ]
-      }
-    }
-  },
-  "resources": [
-    {
-      "apiVersion": "2018-09-01-preview",
-      "name": "[parameters('name')]",
-      "location": "[parameters('location')]",
-      "type": "Microsoft.Attestation/attestationProviders",
-      "tags": "[parameters('tags')]",
-      "Properties": "[if(empty(parameters('policySigningCertificates')), json('{}'), variables('PolicySigningCertificates'))]"
-    }
-  ]
-}
-```
+:::code language="json" source="~/quickstart-templates/101-attestation-provider-create/azuredeploy.json":::
 
 В шаблоне определены следующие ресурсы Azure:
+
 - Microsoft.Attestation/attestationProviders
 
 ## <a name="deploy-the-template"></a>Развертывание шаблона
@@ -83,15 +45,15 @@ ms.locfileid: "89237119"
 
     [![Развернуть в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-attestation-provider-create%2Fazuredeploy.json)
 
-2. Введите или выберите следующие значения.
+1. Введите или выберите следующие значения.
 
     Если поставщик аттестации не указан, при создании используйте значение по умолчанию.
 
-    * **name**. Выберите имя поставщика аттестации Azure.
-    * **location**: Выберите расположение. Например, **центральная часть США**.
-    * **tags**: выберите расположение. Например, **центральная часть США**.
+    - **Имя поставщика аттестации.** Выберите имя поставщика аттестации Azure.
+    - **Расположение.** Выберите расположение. Например, **центральная часть США** .
+    - **Теги** . Выберите расположение. Например, **центральная часть США** .
 
-3. Щелкните **Приобрести**. После успешного развертывания ресурса аттестации вы получите такое уведомление:
+1. Щелкните **Приобрести** . После успешного развертывания ресурса аттестации вы получите уведомление.
 
 Для развертывания шаблона используется портал Azure. В дополнение к порталу Azure можно также использовать Azure PowerShell, Azure CLI и REST API. Дополнительные сведения о других методах развертывания см. в статье о [развертывании с использованием шаблонов](../azure-resource-manager/templates/deploy-powershell.md).
 
@@ -126,4 +88,4 @@ Write-Host "Press [ENTER] to continue..."
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого краткого руководства вы узнали, как создать ресурс аттестации с помощью шаблона ARM и проверить это развертывание. Дополнительные сведения об аттестации Azure см. в статье [Обзор аттестации Azure](overview.md).
+Из этого краткого руководства вы узнали, как создать ресурс аттестации с помощью шаблона ARM и проверить это развертывание. Дополнительные сведения о службе "Аттестация Azure" см. в статье [Аттестация Microsoft Azure (предварительная версия)](overview.md).
