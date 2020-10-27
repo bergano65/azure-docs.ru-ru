@@ -13,12 +13,12 @@ ms.custom:
 - mqtt
 - 'Role: Cloud Development'
 - 'Role: Operations'
-ms.openlocfilehash: c82f6eb37d542f80b6cb79ffb1fae6fe0cf0c233
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: bd016fcfe377dc610d5918ad8128fff4f6473fe5
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92144272"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92538465"
 ---
 # <a name="choose-the-right-iot-hub-tier-for-your-solution"></a>Выбор правильного уровня Центра Интернета вещей для решения
 
@@ -47,7 +47,7 @@ ms.locfileid: "92144272"
 | [Маршрутизация сообщений](iot-hub-devguide-messages-read-custom.md), [обогащение сообщений](iot-hub-message-enrichments-overview.md) и [интеграция службы "Сетка событий"](iot-hub-event-grid.md) | Да | Да |
 | [Протоколы HTTP, AMQP и MQTT](iot-hub-devguide-protocols.md) | Да | Да |
 | [Служба подготовки устройств](../iot-dps/about-iot-dps.md) | Да | Да |
-| [Мониторинг и диагностика](iot-hub-monitor-resource-health.md) | Да | Да |
+| [Мониторинг и диагностика](monitor-iot-hub.md) | Да | Да |
 | [Передача сообщений из облака на устройство](iot-hub-devguide-c2d-guidance.md) |   | Да |
 | [Двойники устройств](iot-hub-devguide-device-twins.md), [двойники модулей](iot-hub-devguide-module-twins.md) и [управление устройствами](iot-hub-device-management-overview.md) |   | Да |
 | [Потоки устройств (предварительная версия)](iot-hub-device-streams-overview.md) |   | Да |

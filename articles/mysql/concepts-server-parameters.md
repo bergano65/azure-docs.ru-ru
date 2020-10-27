@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 6/25/2020
-ms.openlocfilehash: 5415446e0211618cfbee917d0df91213d68b7097
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b6a914df9ed277625d3706465fe335e128aeced1
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91627352"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92545163"
 ---
 # <a name="server-parameters-in-azure-database-for-mysql"></a>Параметры сервера в базе данных Azure для MySQL
 
@@ -57,9 +57,9 @@ MySQL традиционно назначает поток для каждого
 
 ### <a name="log_bin_trust_function_creators"></a>log_bin_trust_function_creators
 
-В базе данных Azure для MySQL Двоичные журналы всегда включены (т. е. параметр включен `log_bin` ). Если вы хотите использовать триггеры, появится сообщение об ошибке, похожее на отсутствие *привилегий суперпользователя и ведение журнала в двоичном формате (возможно, вы захотите использовать менее надежную `log_bin_trust_function_creators` переменную)*. 
+В базе данных Azure для MySQL Двоичные журналы всегда включены (т. е. параметр включен `log_bin` ). Если вы хотите использовать триггеры, появится сообщение об ошибке, похожее на отсутствие *привилегий суперпользователя и ведение журнала в двоичном формате (возможно, вы захотите использовать менее надежную `log_bin_trust_function_creators` переменную)* . 
 
-Двоичный формат ведения журнала всегда имеет значение **Row** , а все соединения с сервером **всегда** используют двоичное ведение журнала на основе строк. При ведении журнала в двоичном формате на основе строк проблемы безопасности не возникают, и регистрация в двоичном журнале не может быть нарушена, поэтому можно безопасно установить значение [`log_bin_trust_function_creators`](https://dev.mysql.com/doc/refman/5.7/en/replication-options-binary-log.html#sysvar_log_bin_trust_function_creators) **true**.
+Двоичный формат ведения журнала всегда имеет значение **Row** , а все соединения с сервером **всегда** используют двоичное ведение журнала на основе строк. При ведении журнала в двоичном формате на основе строк проблемы безопасности не возникают, и регистрация в двоичном журнале не может быть нарушена, поэтому можно безопасно установить значение [`log_bin_trust_function_creators`](https://dev.mysql.com/doc/refman/5.7/en/replication-options-binary-log.html#sysvar_log_bin_trust_function_creators) **true** .
 
 ### <a name="innodb_buffer_pool_size"></a>innodb_buffer_pool_size
 
@@ -215,9 +215,9 @@ Lower_case_table_name по умолчанию имеет значение 1, и 
 
 ### <a name="innodb_strict_mode"></a>innodb_strict_mode
 
-Если появляется сообщение об ошибке, похожее на "слишком большой размер строки (> 8126)", может потребоваться отключить параметр **innodb_strict_mode**. Параметр сервера **innodb_strict_mode** не может быть изменен глобально на уровне сервера, так как если размер данных строки превышает 8 КБ, данные будут обрезаны без ошибок, приводящих к возможной потере данных. Рекомендуется изменить схему в соответствии с предельным размером страницы. 
+Если появляется сообщение об ошибке, похожее на "слишком большой размер строки (> 8126)", может потребоваться отключить параметр **innodb_strict_mode** . Параметр сервера **innodb_strict_mode** не может быть изменен глобально на уровне сервера, так как если размер данных строки превышает 8 КБ, данные будут обрезаны без ошибок, приводящих к возможной потере данных. Рекомендуется изменить схему в соответствии с предельным размером страницы. 
 
-Этот параметр можно задать на уровне сеанса с помощью `init_connect` . Чтобы задать **innodb_strict_mode** на уровне сеанса, см. [параметр](https://docs.microsoft.com/azure/mysql/howto-server-parameters#setting-parameters-not-listed)параметра, которого нет в списке.
+Этот параметр можно задать на уровне сеанса с помощью `init_connect` . Чтобы задать **innodb_strict_mode** на уровне сеанса, см. [параметр](./howto-server-parameters.md#setting-parameters-not-listed)параметра, которого нет в списке.
 
 > [!NOTE]
 > При наличии сервера реплики чтения установка **INNODB_STRICT_MODE** Off на уровне сеанса на исходном сервере приведет к нарушению репликации. Мы рекомендуем оставить параметру значение OFF, если у вас есть реплики Read.
@@ -280,7 +280,7 @@ Lower_case_table_name по умолчанию имеет значение 1, и 
 
 Другие переменные, не указанные здесь, устанавливаются в значения по умолчанию для стандартных значений MySQL. Значения по умолчанию см. в документации по MySQL для версий [8,0](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html), [5,7](https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html)и [5,6](https://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html) . 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как [настроить параметры сервера с помощью портал Azure](./howto-server-parameters.md)
 - Узнайте, как [настроить параметры сервера с помощью Azure CLI](./howto-configure-server-parameters-using-cli.md)

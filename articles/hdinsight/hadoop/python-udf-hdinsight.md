@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.date: 11/15/2019
 ms.custom: H1Hack27Feb2017,hdinsightactive, devx-track-python
-ms.openlocfilehash: 9c16b3ff013c2985ea381ed4bb002276b1c3fdb8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0179fd10e75af0ced55b4bb41f9525dc26b3efe5
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89462247"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92540386"
 ---
 # <a name="use-python-user-defined-functions-udf-with-apache-hive-and-apache-pig-in-hdinsight"></a>Использование определяемых пользователем функций Python с Apache Hive и Apache Pig в HDInsight
 
@@ -27,11 +27,11 @@ ms.locfileid: "89462247"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* **Кластер Hadoop в HDInsight**. Ознакомьтесь со статьей [Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](apache-hadoop-linux-tutorial-get-started.md).
-* **Клиент SSH**. Дополнительные сведения см. в руководстве по [подключению к HDInsight (Apache Hadoop) с помощью SSH](../hdinsight-hadoop-linux-use-ssh-unix.md).
+* **Кластер Hadoop в HDInsight** . Ознакомьтесь со статьей [Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](apache-hadoop-linux-tutorial-get-started.md).
+* **Клиент SSH** . Дополнительные сведения см. в руководстве по [подключению к HDInsight (Apache Hadoop) с помощью SSH](../hdinsight-hadoop-linux-use-ssh-unix.md).
 * [Схема универсального кода ресурса (URI)](../hdinsight-hadoop-linux-information.md#URI-and-scheme) для основного хранилища кластеров. Это может быть `wasb://` для службы хранилища Azure, `abfs://` для Azure Data Lake Storage 2-го поколения или adl://для Azure Data Lake Storage 1-го поколения. Если для службы хранилища Azure включено безопасное перемещение, URI будет wasbs://.  См. также сведения о [безопасной передаче](../../storage/common/storage-require-secure-transfer.md).
 * **Возможное изменение конфигурации хранилища.**  Если используется тип учетной записи хранения, см. раздел [Конфигурация хранилища](#storage-configuration) `BlobStorage` .
-* Необязательный параметр.  Если планируется использовать PowerShell, необходимо установить [модуль AZ](https://docs.microsoft.com/powershell/azure/new-azureps-module-az) .
+* Необязательный элемент.  Если планируется использовать PowerShell, необходимо установить [модуль AZ](/powershell/azure/new-azureps-module-az) .
 
 > [!NOTE]  
 > Учетная запись хранения, используемая в этой статье, была включена в службу хранилища Azure с включенной [безопасной](../../storage/common/storage-require-secure-transfer.md) поддержкой и поэтому `wasbs` используется во всей статье.
@@ -46,7 +46,7 @@ ms.locfileid: "89462247"
 > * Вы создаете скрипты Python в локальной среде разработки.
 > * Вы отправляете скрипты в HDInsight с помощью `scp` команды или предоставленного скрипта PowerShell.
 >
-> Если вы хотите использовать [Azure Cloud Shell (bash)](https://docs.microsoft.com/azure/cloud-shell/overview) для работы с HDInsight, необходимо выполнить следующие действия.
+> Если вы хотите использовать [Azure Cloud Shell (bash)](../../cloud-shell/overview.md) для работы с HDInsight, необходимо выполнить следующие действия.
 >
 > * Создать скрипты в среде Cloud Shell.
 > * Использовать `scp` для отправки файлов из Cloud Shell в HDInsight.
@@ -301,7 +301,7 @@ Get-AzHDInsightJobOutput `
 Чтобы указать интерпретатор Python, используйте `register` при указании ссылки на скрипт Python. Следующие примеры регистрируют скрипты с Pig в качестве `myfuncs`:
 
 * **Чтобы использовать Jython,** сделайте следующее: `register '/path/to/pigudf.py' using jython as myfuncs;`
-* **Чтобы использовать язык C Python**: `register '/path/to/pigudf.py' using streaming_python as myfuncs;`
+* **Чтобы использовать язык C Python** : `register '/path/to/pigudf.py' using streaming_python as myfuncs;`
 
 > [!IMPORTANT]  
 > При использовании Jython путь к файлу pig_jython может быть локальным путем или WASBS://. Но при использовании CPython необходимо указать ссылку на файл в локальной файловой системе узла, который используется для отправки задания Pig.
@@ -343,7 +343,7 @@ def create_structure(input):
 
 В примере Pig Latin `LINE` входные данные определяются как массив символов CharArray, так как для входных данных не существует соответствующей схемы. Скрипт Python выполняет преобразование данных в согласованную схему на выходе.
 
-1. Инструкция `@outputSchema` задает формат данных, в котором они возвращаются в Pig. В данном случае это **data bag**, являющийся типом данных Pig. Корзина содержит следующие поля, все они имеют тип "Массив строк" (строки):
+1. Инструкция `@outputSchema` задает формат данных, в котором они возвращаются в Pig. В данном случае это **data bag** , являющийся типом данных Pig. Корзина содержит следующие поля, все они имеют тип "Массив строк" (строки):
 
    * date — дата создания записи журнала;
    * date — время создания записи журнала;
@@ -423,7 +423,7 @@ def create_structure(input):
     #from pig_util import outputSchema
     ```
 
-    Эта строка изменяет сценарий Python для работы с C Python вместо Jython. Закончив вносить изменения, нажмите клавиши **CTRL+X**, чтобы выйти из редактора. Выберите **Y**, а затем **введите** , чтобы сохранить изменения.
+    Эта строка изменяет сценарий Python для работы с C Python вместо Jython. Закончив вносить изменения, нажмите клавиши **CTRL+X** , чтобы выйти из редактора. Выберите **Y** , а затем **введите** , чтобы сохранить изменения.
 
 6. Используйте команду `pig` , чтобы снова запустить оболочку. При появлении запроса `grunt>` введите следующие инструкции, чтобы запустить сценарий Python с помощью интерпретатора CPython.
 
@@ -563,7 +563,7 @@ Get-AzHDInsightJobOutput `
 ((2012-02-03,20:11:56,SampleClass3,[INFO],everything normal for id 530537821))
 ```
 
-## <a name="troubleshooting"></a><a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a><a name="troubleshooting"></a>Диагностика
 
 ### <a name="errors-when-running-jobs"></a>Ошибки при выполнении заданий
 
@@ -594,7 +594,7 @@ Caused by: org.apache.hadoop.hive.ql.metadata.HiveException: [Error 20001]: An e
 
 ## <a name="next-steps"></a><a name="next"></a>Следующие шаги
 
-Если вам нужно загрузить модули Python, которые не поставляются по умолчанию, см. статью [How to deploy a Python module to Windows Azure HDInsight](https://docs.microsoft.com/archive/blogs/benjguin/how-to-deploy-a-python-module-to-windows-azure-hdinsight) (Как развернуть модуль Python в Windows Azure HDInsight).
+Если вам нужно загрузить модули Python, которые не поставляются по умолчанию, см. статью [How to deploy a Python module to Windows Azure HDInsight](/archive/blogs/benjguin/how-to-deploy-a-python-module-to-windows-azure-hdinsight) (Как развернуть модуль Python в Windows Azure HDInsight).
 
 Сведения о других способах использования Pig и Hive и дополнительную информацию об использовании MapReduce см. в следующих документах:
 

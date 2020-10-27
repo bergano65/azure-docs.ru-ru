@@ -8,18 +8,18 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/19/2019
-ms.openlocfilehash: 402092f1667abb49da4521b91ba1f0e7d471f0d1
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 08426c74b26c18b15466578d9921520da1e9c923
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92490260"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92536238"
 ---
 # <a name="submit-jobs-from-r-tools-for-visual-studio"></a>Отправка заданий из расширения "Инструменты R для Visual Studio"
 
-[Инструменты R для Visual Studio](https://marketplace.visualstudio.com/items?itemName=MikhailArkhipov007.RTVS2019) (RTVS) — это бесплатное расширение с открытым исходным кодом для выпусков Community (бесплатно), Professional и Enterprise как [Visual Studio 2017](https://www.visualstudio.com/downloads/), так и [Visual Studio 2015 с обновлением 3](https://go.microsoft.com/fwlink/?LinkId=691129) или выше. RTVS недоступен для [Visual Studio 2019](https://docs.microsoft.com/visualstudio/porting/port-migrate-and-upgrade-visual-studio-projects?view=vs-2019&preserve-view=true).
+[Инструменты R для Visual Studio](https://marketplace.visualstudio.com/items?itemName=MikhailArkhipov007.RTVS2019) (RTVS) — это бесплатное расширение с открытым исходным кодом для выпусков Community (бесплатно), Professional и Enterprise как [Visual Studio 2017](https://www.visualstudio.com/downloads/), так и [Visual Studio 2015 с обновлением 3](https://go.microsoft.com/fwlink/?LinkId=691129) или выше. RTVS недоступен для [Visual Studio 2019](/visualstudio/porting/port-migrate-and-upgrade-visual-studio-projects?preserve-view=true&view=vs-2019).
 
-Расширение RTVS улучшает ваш рабочий процесс R, предлагая такие инструменты, как [Интерактивное окно R](https://docs.microsoft.com/visualstudio/rtvs/interactive-repl) (REPL), технология IntelliSense (завершение кода), [визуализация в виде графиков](https://docs.microsoft.com/visualstudio/rtvs/visualizing-data) через библиотеки R, такие как ggplot2 и ggviz, [отладка кода R](https://docs.microsoft.com/visualstudio/rtvs/debugging) и другие.
+Расширение RTVS улучшает ваш рабочий процесс R, предлагая такие инструменты, как [Интерактивное окно R](/visualstudio/rtvs/interactive-repl) (REPL), технология IntelliSense (завершение кода), [визуализация в виде графиков](/visualstudio/rtvs/visualizing-data) через библиотеки R, такие как ggplot2 и ggviz, [отладка кода R](/visualstudio/rtvs/debugging) и другие.
 
 ## <a name="set-up-your-environment"></a>Настройка среды
 
@@ -27,29 +27,29 @@ ms.locfileid: "92490260"
 
     ![Установка RTVS в Visual Studio 2017](./media/r-server-submit-jobs-r-tools-vs/install-r-tools-for-vs.png)
 
-2. Выберите рабочую нагрузку *Приложения для обработки и анализа данных и аналитические приложения*, а затем выберите пункты **Поддержка языка R**, **Поддержка среды выполнения для разработки R** и **Microsoft R Client**.
+2. Выберите рабочую нагрузку *Приложения для обработки и анализа данных и аналитические приложения* , а затем выберите пункты **Поддержка языка R** , **Поддержка среды выполнения для разработки R** и **Microsoft R Client** .
 
 3. Для проверки подлинности по SSH необходимы открытые и закрытые ключи.
    <!-- {TODO tbd, no such file yet}[use SSH with HDInsight](hdinsight-hadoop-linux-use-ssh-windows.md) -->
 
-4. Установите на компьютер [ML Server](https://msdn.microsoft.com/microsoft-r/rserver-install-windows). ML Server предоставляет [`RevoScaleR`](https://msdn.microsoft.com/microsoft-r/scaler/scaler) функции и `RxSpark` .
+4. Установите на компьютер [ML Server](/previous-versions/machine-learning-server/install/r-server-install-windows). ML Server предоставляет [`RevoScaleR`](/machine-learning-server/r-reference/revoscaler/revoscaler) функции и `RxSpark` .
 
 5. Установите [PuTTY](https://www.putty.org/), чтобы предоставить контекст вычисления для выполнения функций `RevoScaleR` из локального клиента к кластеру HDInsight.
 
 6. Вы можете применить параметры обработки и анализа данных к среде Visual Studio, которая предоставляет новый макет рабочего пространства для инструментов R.
-   1. Чтобы сохранить текущие параметры Visual Studio, используйте команду **Инструменты > Импорт и экспорт параметров**, а затем выберите **Экспортировать выбранные параметры среды** и укажите имя файла. Чтобы восстановить эти параметры, используйте ту же команду и выберите **Импортировать выбранные параметры среды**.
+   1. Чтобы сохранить текущие параметры Visual Studio, используйте команду **Инструменты > Импорт и экспорт параметров** , а затем выберите **Экспортировать выбранные параметры среды** и укажите имя файла. Чтобы восстановить эти параметры, используйте ту же команду и выберите **Импортировать выбранные параметры среды** .
 
-   2. Перейдите в пункт меню **Инструменты R**, а затем выберите **Параметры обработки и анализа данных...**
+   2. Перейдите в пункт меню **Инструменты R** , а затем выберите **Параметры обработки и анализа данных...**
 
        ![Visual Studio Параметры обработки и анализа данных](./media/r-server-submit-jobs-r-tools-vs/data-science-settings.png)
 
       > [!NOTE]  
-      > С помощью подхода из шага 1 вы также можете сохранить и восстановить персонализированный макет обработки и анализа данных вместо того, чтобы повторять команду **Параметры обработки и анализа данных**.
+      > С помощью подхода из шага 1 вы также можете сохранить и восстановить персонализированный макет обработки и анализа данных вместо того, чтобы повторять команду **Параметры обработки и анализа данных** .
 
 ## <a name="execute-local-r-methods"></a>Выполнение локальных методов R
 
 1. Создайте кластер HDInsight для Служб машинного обучения.
-2. Установите [расширение RTVS](https://docs.microsoft.com/visualstudio/rtvs/installation).
+2. Установите [расширение RTVS](/visualstudio/rtvs/installation).
 3. Загрузите [ZIP-файл с примерами](https://github.com/Microsoft/RTVS-docs/archive/master.zip).
 4. Откройте `examples/Examples.sln` для запуска решения в Visual Studio.
 5. Откройте файл `1-Getting Started with R.R` в папке решений `A first look at R`.
@@ -111,17 +111,17 @@ ms.locfileid: "92490260"
     ![Успешное ](./media/r-server-submit-jobs-r-tools-vs/successful-rx-commands.png) выполнение команды RX
 1. Убедитесь, что команда `rxHadoopCopy` успешно скопировала файл `people.json` из папки данных для примера в недавно созданную папку `/user/RevoShare/newUser`:
 
-    1. На панели кластера HDInsight для Служб машинного обучения в Azure в меню слева выберите **Учетные записи хранения**.
+    1. На панели кластера HDInsight для Служб машинного обучения в Azure в меню слева выберите **Учетные записи хранения** .
 
         ![Учетные записи хранения Azure HDInsight](./media/r-server-submit-jobs-r-tools-vs/hdinsight-storage-accounts.png)
 
     2. Выберите учетную запись хранения по умолчанию для своего кластера, записав имя контейнера и каталога.
 
-    3. На панели учетных записей хранения в меню слева выберите **Контейнеры**.
+    3. На панели учетных записей хранения в меню слева выберите **Контейнеры** .
 
         ![Контейнеры хранилища Azure HDInsight](./media/r-server-submit-jobs-r-tools-vs/hdi-storage-containers.png)
 
-    4. Выберите имя контейнера вашего кластера, перейдите в папку **пользователя** (возможно, внизу списка нужно будет нажать *Загрузить еще*), выберите *RevoShare*, а затем — **newUser**. Файл `people.json` должен появиться в папке `newUser`.
+    4. Выберите имя контейнера вашего кластера, перейдите в папку **пользователя** (возможно, внизу списка нужно будет нажать *Загрузить еще* ), выберите *RevoShare* , а затем — **newUser** . Файл `people.json` должен появиться в папке `newUser`.
 
         ![Расположение папки "скопированные файлы HDInsight"](./media/r-server-submit-jobs-r-tools-vs/hdinsight-copied-file.png)
 

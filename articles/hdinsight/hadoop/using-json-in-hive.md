@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: seoapr2020
 ms.date: 04/20/2020
-ms.openlocfilehash: 31fc6fe02559c356f072761c024308f158ae4d9c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9a7d3992ecd2c74947eaa1071b97b2032000c749
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86085452"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92547611"
 ---
 # <a name="process-and-analyze-json-documents-by-using-apache-hive-in-azure-hdinsight"></a>Обработка и анализ документов JSON с использованием Apache Hive в Azure HDInsight
 
@@ -88,13 +88,13 @@ SELECT * FROM StudentsOneLine
 
 Необработанный файл JSON находится в `wasb://processjson@hditutorialdata.blob.core.windows.net/`. Таблица Hive **studentsraw указывает** указывает на необработанный документ JSON, который не является плоским.
 
-Таблица Hive **StudentsOneLine** сохраняет данные в файловой системе по умолчанию HDInsight в каталоге **/json/students/**.
+Таблица Hive **StudentsOneLine** сохраняет данные в файловой системе по умолчанию HDInsight в каталоге **/json/students/** .
 
 Инструкция **INSERT** заполняет таблицу **StudentOneLine** плоскими данными JSON.
 
 Инструкция **SELECT** возвращает всего одну строку.
 
-Вот результат выполнения инструкции **SELECT**:
+Вот результат выполнения инструкции **SELECT** :
 
 ![Обработка документа JSON с помощью HDInsight](./media/using-json-in-hive/hdinsight-flatten-json.png)
 
@@ -129,7 +129,7 @@ FROM StudentsOneLine;
 * Так как каждое поле в запросе требует повторного синтаксического анализа запроса, это влияет на производительность.
 * **GET\_JSON_OBJECT()** возвращает строковое представление массива. Для преобразования этого массива в массив Hive необходимо использовать регулярные выражения для замены квадратных скобок "[" и "]", а затем также выполнить разбиение для получения массива.
 
-Это преобразование объясняется тем, почему вики-узел Hive рекомендует использовать **json_tuple**.  
+Это преобразование объясняется тем, почему вики-узел Hive рекомендует использовать **json_tuple** .  
 
 ### <a name="use-the-json_tuple-udf"></a>Использование определяемой пользователем функции JSON_TUPLE
 
@@ -154,11 +154,11 @@ SerDe отлично подходит для синтаксического ан
 
 ## <a name="summary"></a>Сводка
 
-Тип оператора JSON в выбранном Hive зависит от сценария. Используя простой документ JSON и одно поле для поиска, выберите параметр UDF **Get_json_object**Hive. При наличии нескольких ключей для поиска можно использовать **json_tuple**. Для вложенных документов используйте **JSON SerDe**.
+Тип оператора JSON в выбранном Hive зависит от сценария. Используя простой документ JSON и одно поле для поиска, выберите параметр UDF **Get_json_object** Hive. При наличии нескольких ключей для поиска можно использовать **json_tuple** . Для вложенных документов используйте **JSON SerDe** .
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Другие статьи по этой теме см. в следующих источниках:
 
-* [Использование Apache Hive и HiveQL с Apache Hadoop в HDInsight для анализа примера файла log4j Apache](../hdinsight-use-hive.md)
+* [Использование Apache Hive и HiveQL с Apache Hadoop в HDInsight для анализа примера файла log4j Apache](./hdinsight-use-hive.md)
 * [Анализ данных о задержке рейсов с помощью интерактивного запроса в HDInsight](../interactive-query/interactive-query-tutorial-analyze-flight-data.md)

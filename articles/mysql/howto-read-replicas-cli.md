@@ -7,12 +7,12 @@ ms.service: mysql
 ms.topic: how-to
 ms.date: 6/10/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 74e62c39295d36132abdce0abc033162fa22cb64
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 747b8bc1abbf19c861e180faf17e2fa1a143a237
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91531638"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92546319"
 ---
 # <a name="how-to-create-and-manage-read-replicas-in-azure-database-for-mysql-using-the-azure-cli-and-rest-api"></a>Как создавать реплики чтения и управлять ими в базе данных Azure для MySQL с помощью Azure CLI и REST API
 
@@ -21,9 +21,9 @@ ms.locfileid: "91531638"
 ## <a name="azure-cli"></a>Azure CLI
 Вы можете создавать реплики чтения и управлять ими с помощью Azure CLI.
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Обязательные условия
 
-- [Установите Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+- [Установите Azure CLI 2.0](/cli/azure/install-azure-cli).
 - [Сервер базы данных Azure для MySQL](quickstart-create-mysql-server-database-using-azure-portal.md) , который будет использоваться в качестве исходного сервера. 
 
 > [!IMPORTANT]
@@ -42,9 +42,9 @@ az mysql server replica create --name mydemoreplicaserver --source-server mydemo
 
 Для команды `az mysql server replica create` обязательны указанные ниже параметры.
 
-| Параметр | Пример значения | Описание  |
+| Параметр | Пример значения | Описание  |
 | --- | --- | --- |
-| resource-group |  myresourcegroup |  Группа ресурсов, в которой будет создан сервер реплики.  |
+| resource-group |  myresourcegroup |  Группа ресурсов, в которой будет создан сервер реплики.  |
 | name | mydemoreplicaserver | Имя нового сервера реплики, который создается. |
 | source-server | mydemoserver | Имя или идентификатор существующего исходного сервера, с которого выполняется репликация. |
 
@@ -71,9 +71,9 @@ az mysql server replica list --server-name mydemoserver --resource-group myresou
 
 Для команды `az mysql server replica list` обязательны указанные ниже параметры.
 
-| Параметр | Пример значения | Описание  |
+| Параметр | Пример значения | Описание  |
 | --- | --- | --- |
-| resource-group |  myresourcegroup |  Группа ресурсов, в которой будет создан сервер реплики.  |
+| resource-group |  myresourcegroup |  Группа ресурсов, в которой будет создан сервер реплики.  |
 | server-name | mydemoserver | Имя или идентификатор исходного сервера. |
 
 ### <a name="stop-replication-to-a-replica-server"></a>Остановка репликации на сервер-реплику
@@ -89,14 +89,14 @@ az mysql server replica stop --name mydemoreplicaserver --resource-group myresou
 
 Для команды `az mysql server replica stop` обязательны указанные ниже параметры.
 
-| Параметр | Пример значения | Описание  |
+| Параметр | Пример значения | Описание  |
 | --- | --- | --- |
-| resource-group |  myresourcegroup |  Группа ресурсов, в которой находится сервер реплики.  |
+| resource-group |  myresourcegroup |  Группа ресурсов, в которой находится сервер реплики.  |
 | name | mydemoreplicaserver | Имя сервера реплики для остановки репликации. |
 
 ### <a name="delete-a-replica-server"></a>Удаление сервера-реплики
 
-Сервер реплики чтения можно удалить, выполнив команду **[az mysql server delete](/cli/azure/mysql/server)**.
+Сервер реплики чтения можно удалить, выполнив команду **[az mysql server delete](/cli/azure/mysql/server)** .
 
 ```azurecli-interactive
 az mysql server delete --resource-group myresourcegroup --name mydemoreplicaserver

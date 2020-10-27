@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 02/17/2020
-ms.openlocfilehash: 0628033ecf6f2e51cf18f61c6e5b36042557dc7b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 82044796cca3e135c15e750d6706fe504622ebdb
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90530167"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92540352"
 ---
 # <a name="manage-disk-space-in-azure-hdinsight"></a>Управление дисковым пространством в Azure HDInsight
 
@@ -22,7 +22,7 @@ ms.locfileid: "90530167"
 
 1. В веб-браузере перейдите на страницу `https://CLUSTERNAME.azurehdinsight.net`, где `CLUSTERNAME` — это имя вашего кластера.
 
-1. Последовательно выберите **Hive**  >  **настройки**Hive дополнительно  >  **Advanced**  >  **Hive-log4j**. Проверьте следующие параметры:
+1. Последовательно выберите **Hive**  >  **настройки** Hive дополнительно  >  **Advanced**  >  **Hive-log4j** . Проверьте следующие параметры:
 
     * `hive.root.logger=DEBUG,RFA`. Это значение по умолчанию. Измените [уровень ведения журнала](https://logging.apache.org/log4j/2.x/log4j-api/apidocs/org/apache/logging/log4j/Level.html) на, `INFO` чтобы напечатать меньше записей журналов.
 
@@ -38,7 +38,7 @@ ms.locfileid: "90530167"
 
     1. В веб-браузере перейдите на страницу `https://CLUSTERNAME.azurehdinsight.net`, где `CLUSTERNAME` — это имя вашего кластера.
 
-    1. Перейдите к **Hive**  >  **Configs**  >  **расширенным**  >  **Диспетчер ресурсов**config Hive. Убедитесь, что установлен флажок **включить объединение журналов** . Если отключено, узлы имен будут хранить журналы локально, а не объединять их в удаленном хранилище при завершении или прекращении работы приложения.
+    1. Перейдите к **Hive**  >  **Configs**  >  **расширенным**  >  **Диспетчер ресурсов** config Hive. Убедитесь, что установлен флажок **включить объединение журналов** . Если отключено, узлы имен будут хранить журналы локально, а не объединять их в удаленном хранилище при завершении или прекращении работы приложения.
 
 * Убедитесь, что размер кластера соответствует рабочей нагрузке. Возможно, Рабочая нагрузка изменилась недавно или размер кластера был изменен. Увеличьте [масштаб](../hdinsight-scaling-best-practices.md) кластера в соответствии с более высокой рабочей нагрузкой.
 
@@ -52,4 +52,4 @@ ms.locfileid: "90530167"
 
 * Подпишитесь на [@AzureSupport](https://twitter.com/azuresupport) — официальный канал Microsoft Azure для работы с клиентами. Вступайте в сообщество Azure для получения нужных ресурсов: ответов, поддержки и советов экспертов.
 
-* Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки на [портале Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **Поддержка** в строке меню или откройте центр **Справка и поддержка**. Дополнительные сведения см. в статье [Создание запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request). Доступ к управлению подписками и поддержкой выставления счетов уже включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется в рамках одного из [планов Службы поддержки Azure](https://azure.microsoft.com/support/plans/).
+* Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки на [портале Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **Поддержка** в строке меню или откройте центр **Справка и поддержка** . Дополнительные сведения см. в статье [Создание запроса на поддержку Azure](../../azure-portal/supportability/how-to-create-azure-support-request.md). Доступ к управлению подписками и поддержкой выставления счетов уже включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется в рамках одного из [планов Службы поддержки Azure](https://azure.microsoft.com/support/plans/).

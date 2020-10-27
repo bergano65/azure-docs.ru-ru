@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 02/18/2020
-ms.openlocfilehash: f1707c7f8d6324678c8bf5a470bbded1e58c719e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 85e974d51f49bbb6742683ed253c077bb3ff69de
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "77470723"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92545554"
 ---
 # <a name="debug-wasb-file-operations-in-azure-hdinsight"></a>Отладка файловых операций WASB в Azure HDInsight
 
@@ -28,13 +28,13 @@ ms.locfileid: "77470723"
 
 1. В веб-браузере перейдите в `https://CLUSTERNAME.azurehdinsight.net/#/main/services/SPARK2/configs` папку, где `CLUSTERNAME` — имя кластера Spark.
 
-1. Перейдите к **расширенному spark2-log4j-Properties**.
+1. Перейдите к **расширенному spark2-log4j-Properties** .
 
     1. Измените `log4j.appender.console.Threshold=INFO` на `log4j.appender.console.Threshold=DEBUG` .
 
     1. Добавьте `log4j.logger.org.apache.hadoop.fs.azure.NativeAzureFileSystem=DEBUG`.
 
-1. Перейдите к **расширенному livy2-log4j-Properties**.
+1. Перейдите к **расширенному livy2-log4j-Properties** .
 
     Добавьте `log4j.logger.org.apache.hadoop.fs.azure.NativeAzureFileSystem=DEBUG`.
 
@@ -65,4 +65,4 @@ log4j.appender.adlsFile.layout.ConversionPattern=%p\t%d{ISO8601}\t%r\t%c\t[%t]\t
 
 * Подпишитесь на [@AzureSupport](https://twitter.com/azuresupport) — официальный канал Microsoft Azure для работы с клиентами. Вступайте в сообщество Azure для получения нужных ресурсов: ответов, поддержки и советов экспертов.
 
-* Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки на [портале Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **Поддержка** в строке меню или откройте центр **Справка и поддержка**. Дополнительные сведения см. в статье [Создание запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request). Доступ к управлению подписками и поддержкой выставления счетов уже включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется в рамках одного из [планов Службы поддержки Azure](https://azure.microsoft.com/support/plans/).
+* Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки на [портале Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **Поддержка** в строке меню или откройте центр **Справка и поддержка** . Дополнительные сведения см. в статье [Создание запроса на поддержку Azure](../../azure-portal/supportability/how-to-create-azure-support-request.md). Доступ к управлению подписками и поддержкой выставления счетов уже включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется в рамках одного из [планов Службы поддержки Azure](https://azure.microsoft.com/support/plans/).

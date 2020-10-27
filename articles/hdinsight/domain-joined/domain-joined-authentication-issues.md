@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 08/24/2020
-ms.openlocfilehash: 6473b6b69ba45138c30e4f2c8a7f1ba1a7f2ae7e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 633b6b33bc044b28628cc444227021cd0b4ff377
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88816853"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92544908"
 ---
 # <a name="authentication-issues-in-azure-hdinsight"></a>Проблемы проверки подлинности в Azure HDInsight
 
@@ -154,7 +154,7 @@ Reason: Bad Request, Detailed Response: {"error":"invalid_grant","error_descript
 
 * Если вы можете войти в Ambari с помощью локального администратора Ambari, просмотрите список пользователей.
 
-* При наличии компьютера, [присоединенного к домену](../../active-directory-domain-services/manage-domain.md), можно использовать стандартные средства Windows AD для просмотра. Для этого требуется Рабочая учетная запись в домене.
+* При наличии компьютера, [присоединенного к домену](../../active-directory-domain-services/tutorial-create-management-vm.md), можно использовать стандартные средства Windows AD для просмотра. Для этого требуется Рабочая учетная запись в домене.
 
 * С головного узла можно использовать команды SAMBA для поиска. Для этого требуется допустимый сеанс Kerberos (успешный kinit). Поиск баннеров в Интернете "(userPrincipalName = Bob *)"
 
@@ -220,4 +220,4 @@ Kinit завершается сбоем с `Preauthentication` ошибкой.
 
 * Подпишитесь на [@AzureSupport](https://twitter.com/azuresupport) — официальный канал Microsoft Azure для работы с клиентами. Вступайте в сообщество Azure для получения нужных ресурсов: ответов, поддержки и советов экспертов.
 
-* Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки на [портале Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **Поддержка** в строке меню или откройте центр **Справка и поддержка**. Дополнительные сведения см. в статье [Создание запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request). Доступ к управлению подписками и поддержкой выставления счетов уже включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется в рамках одного из [планов Службы поддержки Azure](https://azure.microsoft.com/support/plans/).
+* Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки на [портале Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **Поддержка** в строке меню или откройте центр **Справка и поддержка** . Дополнительные сведения см. в статье [Создание запроса на поддержку Azure](../../azure-portal/supportability/how-to-create-azure-support-request.md). Доступ к управлению подписками и поддержкой выставления счетов уже включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется в рамках одного из [планов Службы поддержки Azure](https://azure.microsoft.com/support/plans/).

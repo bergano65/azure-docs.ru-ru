@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.topic: troubleshooting
 ms.custom: hdinsightactive
 ms.date: 11/28/2019
-ms.openlocfilehash: 71f9bc75bc2b84708af54ba89918cd874099a2d4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d91da1aa6f7079069541ac955fce8331591a3bc6
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85961903"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92546183"
 ---
 # <a name="fix-an-apache-hive-out-of-memory-error-in-azure-hdinsight"></a>Устранение ошибки нехватки памяти Apache Hive в Azure HDInsight
 
@@ -91,7 +91,7 @@ where (T1.KEY1 = T2.KEY1….
 
 "When Hive. Auto. Convert. Join. noconditionaltask = true мы проверяем noconditionaltask. size и, если сумма размеров таблиц в соединении Map меньше noconditionaltask. размер, с которым план создавал соединение Map, проблема в том, что при вычислении не учитывается накладные расходы, представленные в разных реализациях HashTable, если сумма размеров входных данных меньше, чем размер noconditionaltask на небольшие запросы, будут возникать простоя".
 
-Для свойства **hive.auto.convert.join.noconditionaltask** в файле hive-site.xml задано значение **true**:
+Для свойства **hive.auto.convert.join.noconditionaltask** в файле hive-site.xml задано значение **true** :
 
 ```xml
 <property>
@@ -105,14 +105,14 @@ where (T1.KEY1 = T2.KEY1….
 </property>
 ```
 
-Скорее всего, соединение с картой не является причиной ошибки нехватки памяти в куче. Как описано в записи блога [Hadoop Yarn memory settings in HDInsight](https://docs.microsoft.com/archive/blogs/shanyu/hadoop-yarn-memory-settings-in-hdinsight) (Параметры памяти Hadoop Yarn в HDInsight), при использовании модуля Tez используемое пространство кучи на самом деле принадлежит контейнеру Tez. Описание памяти контейнера Tez см. на рисунке ниже.
+Скорее всего, соединение с картой не является причиной ошибки нехватки памяти в куче. Как описано в записи блога [Hadoop Yarn memory settings in HDInsight](/archive/blogs/shanyu/hadoop-yarn-memory-settings-in-hdinsight) (Параметры памяти Hadoop Yarn в HDInsight), при использовании модуля Tez используемое пространство кучи на самом деле принадлежит контейнеру Tez. Описание памяти контейнера Tez см. на рисунке ниже.
 
 ![Схема памяти контейнера Tez: ошибка нехватки памяти Hive](./media/hdinsight-hadoop-hive-out-of-memory-error-oom/hive-out-of-memory-error-oom-tez-container-memory.png)
 
-Как следует из записи блога, два следующих параметра памяти определяют контейнер памяти для кучи: **hive.tez.container.size** и **hive.tez.java.opts**. Из нашего опыта исключение нехватки памяти не означает, что размер контейнера слишком мал. Оно означает, что размер кучи Java (hive.tez.java.opts) слишком мал. Поэтому каждый раз, когда вы видите ошибку нехватки памяти, можно попытаться увеличить **hive.tez.java.opts**. При необходимости может потребоваться увеличение параметра **hive.tez.container.size**. Параметр **Java.opts** должен составлять около 80 % от **container.size**.
+Как следует из записи блога, два следующих параметра памяти определяют контейнер памяти для кучи: **hive.tez.container.size** и **hive.tez.java.opts** . Из нашего опыта исключение нехватки памяти не означает, что размер контейнера слишком мал. Оно означает, что размер кучи Java (hive.tez.java.opts) слишком мал. Поэтому каждый раз, когда вы видите ошибку нехватки памяти, можно попытаться увеличить **hive.tez.java.opts** . При необходимости может потребоваться увеличение параметра **hive.tez.container.size** . Параметр **Java.opts** должен составлять около 80 % от **container.size** .
 
 > [!NOTE]  
-> Параметр **hive.tez.java.opts** всегда должен быть меньше, чем **hive.tez.container.size**.
+> Параметр **hive.tez.java.opts** всегда должен быть меньше, чем **hive.tez.container.size** .
 
 Поскольку компьютер D12 имеет 28 ГБ памяти, мы решили использовать размер контейнера 10 ГБ (10240 МБ) и назначить 80% для Java. назначайте:
 

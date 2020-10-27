@@ -8,12 +8,12 @@ ms.devlang: azurecli
 ms.topic: conceptual
 ms.date: 04/14/2017
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 9bfdd2d03b3ab6edd04a641787475930435a9ffc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 32530982bc2a9d1b5deb31b3bc71460462352258
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87499608"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92536425"
 ---
 # <a name="manage-azure-cache-for-redis-with-azure-cli"></a>Управление кэшем Azure для Redis с помощью Azure CLI
 
@@ -30,4 +30,4 @@ ms.locfileid: "87499608"
 |**Удалить кэш**| **Описание** |
 | [Удаление кэша](./scripts/delete-cache.md) | Удаляет экземпляр кэша Azure для Redis.  |
 
-Дополнительные сведения об Azure CLI см. в статьях [Установка интерфейса командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli) и [Приступая к работе с Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli).
+Дополнительные сведения об Azure CLI см. в статьях [Установка интерфейса командной строки Azure](/cli/azure/install-azure-cli) и [Приступая к работе с Azure CLI](/cli/azure/get-started-with-azure-cli).

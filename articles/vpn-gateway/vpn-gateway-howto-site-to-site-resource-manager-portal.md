@@ -8,12 +8,12 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 10/22/2020
 ms.author: cherylmc
-ms.openlocfilehash: 069add9a7e5dd6b19810b8b36a4fca49818bfb02
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: b8c12048283cb8cc4220cb325762b272cde4a68f
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92479632"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92541321"
 ---
 # <a name="create-a-site-to-site-connection-in-the-azure-portal"></a>Создание подключения типа "сеть — сеть" на портале Azure
 
@@ -100,7 +100,7 @@ ms.locfileid: "92479632"
 Для подключения типа "сеть — сеть" к локальной сети требуется VPN-устройство. На этом этапе мы настроим VPN-устройство. При настройке VPN-устройства вам потребуются следующие значения:
 
 * Общий ключ. Это тот же общий ключ, который указывается при создании VPN-подключения "сеть — сеть". В наших примерах мы используем простые общие ключи. Для практического использования рекомендуется создавать более сложные ключи.
-* Общедоступный IP-адрес шлюза виртуальной сети. Общедоступный IP-адрес можно просмотреть с помощью портала Azure, PowerShell или CLI. Чтобы найти общедоступный IP-адрес VPN-шлюза с помощью портал Azure, перейдите к разделу **шлюзы виртуальной сети**, а затем выберите имя шлюза.
+* Общедоступный IP-адрес шлюза виртуальной сети. Общедоступный IP-адрес можно просмотреть с помощью портала Azure, PowerShell или CLI. Чтобы найти общедоступный IP-адрес VPN-шлюза с помощью портал Azure, перейдите к разделу **шлюзы виртуальной сети** , а затем выберите имя шлюза.
 
 [!INCLUDE [Configure a VPN device](../../includes/vpn-gateway-configure-vpn-device-include.md)]
 
@@ -122,7 +122,7 @@ ms.locfileid: "92479632"
 
 ## <a name="how-to-connect-to-a-virtual-machine"></a><a name="connectVM"></a>Подключение к виртуальной машине
 
-[!INCLUDE [Connect to a VM](../../includes/vpn-gateway-connect-vm-s2s-include.md)]
+[!INCLUDE [Connect to a VM](../../includes/vpn-gateway-connect-vm.md)]
 
 ## <a name="how-to-reset-a-vpn-gateway"></a><a name="reset"></a>Как сбросить VPN-шлюз
 
@@ -141,7 +141,7 @@ ms.locfileid: "92479632"
 1. Если вы используете подключение "сеть — сеть", но еще не создали шлюз для локальной сети, к которой подключаетесь, создайте этот шлюз.
 1. Укажите общий ключ, который требуется использовать, а затем нажмите кнопку **ОК** , чтобы создать подключение.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения о BGP см. в статьях [Обзор использования BGP с VPN-шлюзами Azure](vpn-gateway-bgp-overview.md) и [Настройка BGP на VPN-шлюзах Azure с помощью Azure Resource Manager и PowerShell](vpn-gateway-bgp-resource-manager-ps.md).
 * Сведения о принудительном туннелировании см. в статье [Настройка принудительного туннелирования с помощью модели развертывания Azure Resource Manager](vpn-gateway-forced-tunneling-rm.md).

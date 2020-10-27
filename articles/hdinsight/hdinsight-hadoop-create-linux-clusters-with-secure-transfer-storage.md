@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 02/18/2020
-ms.openlocfilehash: 8c1ff1eebabd94c5e6b1241b33ca83960e8eedbb
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 69844a392aa03dc962f8af456996ab51f1adf561
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92490294"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92547475"
 ---
 # <a name="apache-hadoop-clusters-with-secure-transfer-storage-accounts-in-azure-hdinsight"></a>Apache Hadoop кластеры с учетными записями хранения с безопасной переносю в Azure HDInsight
 
@@ -32,7 +32,7 @@ ms.locfileid: "92490294"
 
 ### <a name="powershell"></a>PowerShell
 
-Для командлета PowerShell [New-азсторажеаккаунт](https://docs.microsoft.com/powershell/module/az.storage/new-azstorageaccount)убедитесь, что параметр `-EnableHttpsTrafficOnly` имеет значение `1` .
+Для командлета PowerShell [New-азсторажеаккаунт](/powershell/module/az.storage/new-azstorageaccount)убедитесь, что параметр `-EnableHttpsTrafficOnly` имеет значение `1` .
 
 Сведения об обновлении существующей учетной записи хранения с помощью PowerShell см. в статье [требование безопасной пересылки с помощью PowerShell](../storage/common/storage-require-secure-transfer.md#require-secure-transfer-with-powershell).
 

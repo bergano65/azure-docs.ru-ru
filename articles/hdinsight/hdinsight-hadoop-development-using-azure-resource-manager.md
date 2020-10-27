@@ -8,19 +8,19 @@ ms.custom: hdinsightactive, devx-track-azurecli
 ms.topic: how-to
 ms.date: 02/21/2018
 ms.author: hrasheed
-ms.openlocfilehash: f157cc7ac2331f948a562dc12e99acc60e979ada
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: deaf98077e0652dac8bb327839ffa2bf34007c9f
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92488169"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92546217"
 ---
 # <a name="migrating-to-azure-resource-manager-based-development-tools-for-hdinsight-clusters"></a>Переход к средствам разработки на основе Azure Resource Manager для кластеров HDInsight
 
 Средства для HDInsight на основе диспетчера служб Azure (ASM) устарели. Если для работы с кластерами HDInsight вы используете Azure PowerShell, классический Azure CLI или пакет SDK для HDInsight .NET, рекомендуем перейти на версии PowerShell, CLI и пакета SDK для .NET на основе Azure Resource Manager. В этой статье рассказывается, как перейти на средства, основанные на Azure Resource Manager. В этом документе везде, где это применимо, подчеркиваются различия между подходами ASM и Resource Manager для HDInsight.
 
 > [!IMPORTANT]  
-> Поддержка PowerShell, интерфейса командной строки и пакета SDK для .NET на основе ASM будет прекращена **1 января 2017 года**.
+> Поддержка PowerShell, интерфейса командной строки и пакета SDK для .NET на основе ASM будет прекращена **1 января 2017 года** .
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -54,7 +54,7 @@ ms.locfileid: "92488169"
 * [Выполнение запросов Hive в Apache Hadoop в HDInsight с использованием REST](hadoop/apache-hadoop-use-hive-curl.md)
 
 
-Сведения о других методах интерактивного выполнения Apache Hadoop MapReduce, Apache Hive и Apache Pig см. в статьях [Использование MapReduce в HDInsight](hadoop/hdinsight-use-mapreduce.md), [Обзор Apache Hive и HiveQL в Azure HDInsight](hadoop/hdinsight-use-hive.md) и [Использование Apache Pig с Apache Hadoop в HDInsight](hadoop/hdinsight-use-pig.md).
+Сведения о других методах интерактивного выполнения Apache Hadoop MapReduce, Apache Hive и Apache Pig см. в статьях [Использование MapReduce в HDInsight](hadoop/hdinsight-use-mapreduce.md), [Обзор Apache Hive и HiveQL в Azure HDInsight](hadoop/hdinsight-use-hive.md) и [Использование Apache Pig с Apache Hadoop в HDInsight](./index.yml).
 
 ### <a name="examples"></a>Примеры
 **Создание кластера**
@@ -81,14 +81,14 @@ ms.locfileid: "92488169"
 * Новая команда — `azure hdinsight cluster show myhdicluster -g myresourcegroup`
 
 ## <a name="migrating-azure-powershell-to-azure-resource-manager"></a>Переход с Azure PowerShell на диспетчер ресурсов Azure
-Общие сведения об Azure PowerShell в режиме Azure Resource Manager (ARM) см. в статье [Управление ресурсами с помощью Azure PowerShell](../powershell-azure-resource-manager.md).
+Общие сведения об Azure PowerShell в режиме Azure Resource Manager (ARM) см. в статье [Управление ресурсами с помощью Azure PowerShell](../azure-resource-manager/management/manage-resources-powershell.md).
 
-Командлеты диспетчера ресурсов Azure PowerShell могут устанавливаться параллельно с командлетами ASM. Командлеты двух режимов можно различать по именам.  Диспетчер ресурсов режим имеет *аздинсигхт* в именах командлетов, которые сравниваются с *AZUREHDINSIGHT* в режиме ASM.  Например, *New-аздинсигхтклустер* и *New-азурехдинсигхтклустер*. Параметры и переключатели могут иметь новые имена, а при использовании диспетчера ресурсов появляется доступ к множеству новых параметров.  Например, для некоторых командлетов требуется новый переключатель *-ResourceGroupName*. 
+Командлеты диспетчера ресурсов Azure PowerShell могут устанавливаться параллельно с командлетами ASM. Командлеты двух режимов можно различать по именам.  Диспетчер ресурсов режим имеет *аздинсигхт* в именах командлетов, которые сравниваются с *AZUREHDINSIGHT* в режиме ASM.  Например, *New-аздинсигхтклустер* и *New-азурехдинсигхтклустер* . Параметры и переключатели могут иметь новые имена, а при использовании диспетчера ресурсов появляется доступ к множеству новых параметров.  Например, для некоторых командлетов требуется новый переключатель *-ResourceGroupName* . 
 
 Перед использованием командлетов HDInsight необходимо подключиться к учетной записи Azure и создать новую группу ресурсов:
 
 * [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount)
-* [New-AzResourceGroup](https://msdn.microsoft.com/library/mt603739.aspx)
+* [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup)
 
 ### <a name="renamed-cmdlets"></a>Переименованные командлеты
 Получение списка командлетов HDInsight ASM в консоли Windows PowerShell:
@@ -101,50 +101,50 @@ help *azurehdinsight*
 
 | Командлеты ASM | Командлеты диспетчера ресурсов |
 | --- | --- |
-| Add-AzureHDInsightConfigValue |[Add-Аздинсигхтконфигвалуе](https://docs.microsoft.com/powershell/module/az.hdinsight/add-azhdinsightconfigvalue) |
-| Add-AzureHDInsightMetastore |[Add-Аздинсигхтметасторе](https://docs.microsoft.com/powershell/module/az.hdinsight/add-azhdinsightmetastore) |
-| Add-AzureHDInsightScriptAction |[Add-Аздинсигхтскриптактион](https://docs.microsoft.com/powershell/module/az.hdinsight/add-azhdinsightscriptaction) |
-| Add-AzureHDInsightStorage |[Add-Аздинсигхтстораже](https://docs.microsoft.com/powershell/module/az.hdinsight/add-azhdinsightstorage) |
-| Get-AzureHDInsightCluster |[Get-Аздинсигхтклустер](https://docs.microsoft.com/powershell/module/az.hdinsight/get-azhdinsightcluster) |
-| Get-AzureHDInsightJob |[Get-Аздинсигхтжоб](https://docs.microsoft.com/powershell/module/az.hdinsight/get-azhdinsightjob) |
-| Get-AzureHDInsightJobOutput |[Get-Аздинсигхтжобаутпут](https://docs.microsoft.com/powershell/module/az.hdinsight/get-azhdinsightjoboutput) |
-| Get-AzureHDInsightProperty |[Get-Аздинсигхтпроперти](https://docs.microsoft.com/powershell/module/az.hdinsight/get-azhdinsightproperty) |
-| Grant-AzureHDInsightHttpServicesAccess |[Grant-AzureRmHDInsightHttpServicesAccess](https://docs.microsoft.com/powershell/module/azurerm.hdinsight/grant-azurermhdinsighthttpservicesaccess) |
-| Grant-AzureHdinsightRdpAccess |[Grant-AzHDInsightRdpServicesAccess](https://docs.microsoft.com/powershell/module/az.hdinsight/grant-azhdinsightrdpservicesaccess) |
-| Invoke-AzureHDInsightHiveJob |[Invoke-Аздинсигхсивежоб](https://docs.microsoft.com/powershell/module/az.hdinsight/invoke-azhdinsighthivejob) |
-| New-AzureHDInsightCluster |[New-Аздинсигхтклустер](https://docs.microsoft.com/powershell/module/az.hdinsight/new-azhdinsightcluster) |
-| New-AzureHDInsightClusterConfig |[New-Аздинсигхтклустерконфиг](https://docs.microsoft.com/powershell/module/az.hdinsight/new-azhdinsightclusterconfig) |
-| New-AzureHDInsightHiveJobDefinition |[New-Аздинсигхсивежобдефинитион](https://docs.microsoft.com/powershell/module/az.hdinsight/new-azhdinsighthivejobdefinition) |
-| New-AzureHDInsightMapReduceJobDefinition |[New-Аздинсигхтмапредуцежобдефинитион](https://docs.microsoft.com/powershell/module/az.hdinsight/new-azhdinsightmapreducejobdefinition) |
-| New-AzureHDInsightPigJobDefinition |[New-Аздинсигхтпигжобдефинитион](https://docs.microsoft.com/powershell/module/az.hdinsight/new-azhdinsightpigjobdefinition) |
-| New-AzureHDInsightSqoopJobDefinition |[New-Аздинсигхтскупжобдефинитион](https://docs.microsoft.com/powershell/module/az.hdinsight/new-azhdinsightsqoopjobdefinition) |
-| New-AzureHDInsightStreamingMapReduceJobDefinition |[New-Аздинсигхтстреамингмапредуцежобдефинитион](https://docs.microsoft.com/powershell/module/az.hdinsight/new-azhdinsightstreamingmapreducejobdefinition) |
-| Remove-AzureHDInsightCluster |[Remove-Аздинсигхтклустер](https://docs.microsoft.com/powershell/module/az.hdinsight/remove-azhdinsightcluster) |
-| Revoke-AzureHDInsightHttpServicesAccess |[Revoke-AzHDInsightHttpServicesAccess](https://docs.microsoft.com/powershell/module/azurerm.hdinsight/revoke-azurermhdinsighthttpservicesaccess) |
-| Revoke-AzureHdinsightRdpAccess |[Revoke-AzHDInsightRdpServicesAccess](https://docs.microsoft.com/powershell/module/az.hdinsight/revoke-azhdinsightrdpservicesaccess) |
-| Set-AzureHDInsightClusterSize |[Set-Аздинсигхтклустерсизе](https://docs.microsoft.com/powershell/module/az.hdinsight/set-azhdinsightclustersize) |
-| Set-AzureHDInsightDefaultStorage |[Set-Аздинсигхтдефаултстораже](https://docs.microsoft.com/powershell/module/az.hdinsight/set-azhdinsightdefaultstorage) |
-| Start-AzureHDInsightJob |[Start-Аздинсигхтжоб](https://docs.microsoft.com/powershell/module/az.hdinsight/start-azhdinsightjob) |
-| Stop-AzureHDInsightJob |[Аздинсигхтжоб](https://docs.microsoft.com/powershell/module/az.hdinsight/stop-azhdinsightjob) |
-| Use-AzureHDInsightCluster |[Use-Аздинсигхтклустер](https://docs.microsoft.com/powershell/module/az.hdinsight/use-azhdinsightcluster) |
-| Wait-AzureHDInsightJob |[Wait-Аздинсигхтжоб](https://docs.microsoft.com/powershell/module/az.hdinsight/wait-azhdinsightjob) |
+| Add-AzureHDInsightConfigValue |[Add-Аздинсигхтконфигвалуе](/powershell/module/az.hdinsight/add-azhdinsightconfigvalue) |
+| Add-AzureHDInsightMetastore |[Add-Аздинсигхтметасторе](/powershell/module/az.hdinsight/add-azhdinsightmetastore) |
+| Add-AzureHDInsightScriptAction |[Add-Аздинсигхтскриптактион](/powershell/module/az.hdinsight/add-azhdinsightscriptaction) |
+| Add-AzureHDInsightStorage |[Add-Аздинсигхтстораже](/powershell/module/az.hdinsight/add-azhdinsightstorage) |
+| Get-AzureHDInsightCluster |[Get-Аздинсигхтклустер](/powershell/module/az.hdinsight/get-azhdinsightcluster) |
+| Get-AzureHDInsightJob |[Get-Аздинсигхтжоб](/powershell/module/az.hdinsight/get-azhdinsightjob) |
+| Get-AzureHDInsightJobOutput |[Get-Аздинсигхтжобаутпут](/powershell/module/az.hdinsight/get-azhdinsightjoboutput) |
+| Get-AzureHDInsightProperty |[Get-Аздинсигхтпроперти](/powershell/module/az.hdinsight/get-azhdinsightproperty) |
+| Grant-AzureHDInsightHttpServicesAccess |[Grant-AzureRmHDInsightHttpServicesAccess](/powershell/module/azurerm.hdinsight/grant-azurermhdinsighthttpservicesaccess) |
+| Grant-AzureHdinsightRdpAccess |[Grant-AzHDInsightRdpServicesAccess](/powershell/module/az.hdinsight/grant-azhdinsightrdpservicesaccess) |
+| Invoke-AzureHDInsightHiveJob |[Invoke-Аздинсигхсивежоб](/powershell/module/az.hdinsight/invoke-azhdinsighthivejob) |
+| New-AzureHDInsightCluster |[New-Аздинсигхтклустер](/powershell/module/az.hdinsight/new-azhdinsightcluster) |
+| New-AzureHDInsightClusterConfig |[New-Аздинсигхтклустерконфиг](/powershell/module/az.hdinsight/new-azhdinsightclusterconfig) |
+| New-AzureHDInsightHiveJobDefinition |[New-Аздинсигхсивежобдефинитион](/powershell/module/az.hdinsight/new-azhdinsighthivejobdefinition) |
+| New-AzureHDInsightMapReduceJobDefinition |[New-Аздинсигхтмапредуцежобдефинитион](/powershell/module/az.hdinsight/new-azhdinsightmapreducejobdefinition) |
+| New-AzureHDInsightPigJobDefinition |[New-Аздинсигхтпигжобдефинитион](/powershell/module/az.hdinsight/new-azhdinsightpigjobdefinition) |
+| New-AzureHDInsightSqoopJobDefinition |[New-Аздинсигхтскупжобдефинитион](/powershell/module/az.hdinsight/new-azhdinsightsqoopjobdefinition) |
+| New-AzureHDInsightStreamingMapReduceJobDefinition |[New-Аздинсигхтстреамингмапредуцежобдефинитион](/powershell/module/az.hdinsight/new-azhdinsightstreamingmapreducejobdefinition) |
+| Remove-AzureHDInsightCluster |[Remove-Аздинсигхтклустер](/powershell/module/az.hdinsight/remove-azhdinsightcluster) |
+| Revoke-AzureHDInsightHttpServicesAccess |[Revoke-AzHDInsightHttpServicesAccess](/powershell/module/azurerm.hdinsight/revoke-azurermhdinsighthttpservicesaccess) |
+| Revoke-AzureHdinsightRdpAccess |[Revoke-AzHDInsightRdpServicesAccess](/powershell/module/az.hdinsight/revoke-azhdinsightrdpservicesaccess) |
+| Set-AzureHDInsightClusterSize |[Set-Аздинсигхтклустерсизе](/powershell/module/az.hdinsight/set-azhdinsightclustersize) |
+| Set-AzureHDInsightDefaultStorage |[Set-Аздинсигхтдефаултстораже](/powershell/module/az.hdinsight/set-azhdinsightdefaultstorage) |
+| Start-AzureHDInsightJob |[Start-Аздинсигхтжоб](/powershell/module/az.hdinsight/start-azhdinsightjob) |
+| Stop-AzureHDInsightJob |[Аздинсигхтжоб](/powershell/module/az.hdinsight/stop-azhdinsightjob) |
+| Use-AzureHDInsightCluster |[Use-Аздинсигхтклустер](/powershell/module/az.hdinsight/use-azhdinsightcluster) |
+| Wait-AzureHDInsightJob |[Wait-Аздинсигхтжоб](/powershell/module/az.hdinsight/wait-azhdinsightjob) |
 
 ### <a name="new-cmdlets"></a>Новые командлеты
 Ниже перечислены новые командлеты, доступные только в режиме диспетчера ресурсов. 
 
 **Командлеты, связанные с действиями сценариев:**
 
-* **Get-аздинсигхтперсистедскриптактион**: возвращает сохраненные действия скрипта для кластера и перечисляет их в хронологическом порядке или получает сведения для указанного сохраненного действия скрипта. 
-* **Get-аздинсигхтскриптактионхистори**: Получает журнал действий скрипта для кластера и перечисляет его в обратный хронологический порядок или получает сведения о ранее выполненном действии сценария. 
-* **Remove-аздинсигхтперсистедскриптактион**: удаляет сохраненное действие скрипта из кластера HDInsight.
-* **Set-аздинсигхтперсистедскриптактион**: задает ранее выполненное действие сценария как сохраненное действие скрипта.
-* **Submit-аздинсигхтскриптактион**: отправляет новое действие скрипта в кластер Azure HDInsight. 
+* **Get-аздинсигхтперсистедскриптактион** : возвращает сохраненные действия скрипта для кластера и перечисляет их в хронологическом порядке или получает сведения для указанного сохраненного действия скрипта. 
+* **Get-аздинсигхтскриптактионхистори** : Получает журнал действий скрипта для кластера и перечисляет его в обратный хронологический порядок или получает сведения о ранее выполненном действии сценария. 
+* **Remove-аздинсигхтперсистедскриптактион** : удаляет сохраненное действие скрипта из кластера HDInsight.
+* **Set-аздинсигхтперсистедскриптактион** : задает ранее выполненное действие сценария как сохраненное действие скрипта.
+* **Submit-аздинсигхтскриптактион** : отправляет новое действие скрипта в кластер Azure HDInsight. 
 
 Дополнительные сведения об использовании см. в статье [Настройка кластеров HDInsight под управлением Linux с помощью действия сценария](hdinsight-hadoop-customize-cluster-linux.md).
 
 **Командлеты, связанные с идентификатором кластера:**
 
-* **Add-аздинсигхтклустеридентити**: добавляет удостоверение кластера в объект конфигурации кластера, чтобы кластер HDInsight мог получить доступ к Azure Data Lake Storage. См. статью [Создание кластера HDInsight с Data Lake Storage с помощью Azure PowerShell](../data-lake-store/data-lake-store-hdinsight-hadoop-use-powershell.md).
+* **Add-аздинсигхтклустеридентити** : добавляет удостоверение кластера в объект конфигурации кластера, чтобы кластер HDInsight мог получить доступ к Azure Data Lake Storage. См. статью [Создание кластера HDInsight с Data Lake Storage с помощью Azure PowerShell](../data-lake-store/data-lake-store-hdinsight-hadoop-use-powershell.md).
 
 ### <a name="examples"></a>Примеры
 **Создать кластер**
@@ -232,7 +232,7 @@ Get-AzHDInsightCluster -ResourceGroupName $resourceGroupName -clusterName $clust
 * [Отправка заданий Apache Sqoop](hadoop/apache-hadoop-use-sqoop-powershell.md)
 
 ## <a name="migrating-to-the-new-hdinsight-net-sdk"></a>Переход на новый пакет SDK для HDInsight .NET
-[Пакет SDK для HDInsight .NET (ASM)](https://msdn.microsoft.com/library/azure/mt416619.aspx) на основе управления службами Azure устарел. Настоятельно рекомендуем использовать [пакет SDK для HDInsight .NET на основе диспетчера ресурсов](/dotnet/api/overview/azure/hdinsight) на базе Azure Resource Management. Следующие пакеты HDInsight на основе ASM устарели:
+[Пакет SDK для HDInsight .NET (ASM)](/previous-versions/azure/reference/mt416619(v=azure.100)) на основе управления службами Azure устарел. Настоятельно рекомендуем использовать [пакет SDK для HDInsight .NET на основе диспетчера ресурсов](/dotnet/api/overview/azure/hdinsight) на базе Azure Resource Management. Следующие пакеты HDInsight на основе ASM устарели:
 
 * `Microsoft.WindowsAzure.Management.HDInsight`
 * `Microsoft.Hadoop.Client`

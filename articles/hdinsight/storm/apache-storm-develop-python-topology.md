@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,hdiseo17may2017, devx-track-python
 ms.date: 12/16/2019
-ms.openlocfilehash: 1f062a8f358ac311b53e657fb5714583458bd9b5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e62e2583f8a4d3872a1342f0f702a1913f733e7f
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87872588"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92545469"
 ---
 # <a name="develop-apache-storm-topologies-using-python-on-hdinsight"></a>Разработка топологий Apache Storm с помощью Python в HDInsight
 
@@ -22,15 +22,15 @@ ms.locfileid: "87872588"
 > [!IMPORTANT]  
 > Сведения в этом документе были проверены с использованием Storm в HDInsight 3.6.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
-* Кластер Apache Storm в HDInsight. Ознакомьтесь со статьей [Create Linux-based clusters in HDInsight by using the Azure portal](../hdinsight-hadoop-create-linux-clusters-portal.md) (Создание кластеров под управлением Linux в HDInsight с помощью портала Azure) и выберите **Storm** для параметра **Тип кластера**.
+* Кластер Apache Storm в HDInsight. Ознакомьтесь со статьей [Create Linux-based clusters in HDInsight by using the Azure portal](../hdinsight-hadoop-create-linux-clusters-portal.md) (Создание кластеров под управлением Linux в HDInsight с помощью портала Azure) и выберите **Storm** для параметра **Тип кластера** .
 
 * Среда разработки в локальной среде (необязательно). Локальная среда разработки Storm требуется только в том случае, если вы хотите запускать топологию локально. Дополнительные сведения см. в разделе [Setting up a development environment](https://storm.apache.org/releases/current/Setting-up-development-environment.html) (Настройка среды разработки).
 
 * [Python 2,7 или более поздней версии](https://www.python.org/downloads/).
 
-* [Java Developer Kit (JDK) версии 8](https://aka.ms/azure-jdks).
+* [Java Developer Kit (JDK) версии 8](/azure/developer/java/fundamentals/java-jdk-long-term-support).
 
 * Средство [Apache Maven](https://maven.apache.org/download.cgi), [установленное](https://maven.apache.org/install.html) согласно инструкций Apache.  Maven — система сборки проектов Java.
 
@@ -114,7 +114,7 @@ Flux ожидает, что сценарии Python находятся в кат
     storm kill wordcount
     ```
 
-    Кроме того, можно использовать пользовательский интерфейс. В разделе **действия топологии** для топологии выберите **Kill**.
+    Кроме того, можно использовать пользовательский интерфейс. В разделе **действия топологии** для топологии выберите **Kill** .
 
 ## <a name="run-the-topology-locally"></a>Локальный запуск топологии
 
@@ -141,8 +141,8 @@ storm jar WordCount-1.0-SNAPSHOT.jar org.apache.storm.flux.Flux -l -R /topology.
 24303 [Thread-17-log-executor[3 3]] INFO  o.a.s.f.w.b.LogInfoBolt - {word=four, count=160}
 ```
 
-Чтобы остановить топологию, нажмите сочетание клавиш __CTRL+C__.
+Чтобы остановить топологию, нажмите сочетание клавиш __CTRL+C__ .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Другие способы использования Python с HDInsight см. в следующих документах: [как использовать пользовательские функции Python (UDF) в Apache Pig и Apache Hive](../hadoop/python-udf-hdinsight.md).

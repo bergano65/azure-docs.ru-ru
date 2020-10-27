@@ -6,12 +6,12 @@ ms.topic: article
 author: rboucher
 ms.author: robb
 ms.date: 07/01/2020
-ms.openlocfilehash: a029dcbebf6dfe7a2b6cb517641c824a5937ca95
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 96aea35a4796eae9d31062cedaf917a736f0fe82
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90988242"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92547135"
 ---
 # <a name="upgrading-your-log-analytics-dashboard-visualizations"></a>Обновление визуализаций панели мониторинга Log Analytics
 
@@ -47,7 +47,7 @@ ms.locfileid: "90988242"
  
 ![Боковая панель](media/dashboard-upgrade/update-message-1.png)
  
-![Боковая панель](media/dashboard-upgrade/update-message-2.png)
+![Снимок экрана, показывающий, как обновить визуализацию плитки.](media/dashboard-upgrade/update-message-2.png)
 
 > [!WARNING]
 > После публикации панель мониторинга обновляется необратимо. Однако изменения отбрасываются при переходе с панели мониторинга без повторной публикации.  
@@ -56,7 +56,7 @@ ms.locfileid: "90988242"
 
 После обновления визуализаций необходимо повторно опубликовать панель мониторинга, чтобы изменения вступили в силу.
 
-![Боковая панель](media/dashboard-upgrade/update-message-3.png)
+![Снимок экрана, на котором показаны обновленные визуализации.](media/dashboard-upgrade/update-message-3.png)
 
 ## <a name="stage-2---migration-of-all-dashboards"></a>Этап 2. Перенос всех панелей мониторинга
 
@@ -74,12 +74,12 @@ Log Analytics визуализации, закрепленные на панел
 
 Панели мониторинга могут быть визуально сжаты и сложны. Чтобы сократить переводимую нагрузку при просмотре панели мониторинга, мы оптимизируем визуализации, ограничивая их на 25 разных типов данных. Если число превышает 25, Log Analytics оптимизирует данные. Он по отдельности показывает 25 типов с наибольшим объемом данных, а затем группирует остальные значения в значение "Other". Такая ситуация показана на следующей диаграмме.  
 
-![Боковая панель](media/dashboard-upgrade/values-25-limit.png)
+![Снимок экрана, на котором показана панель мониторинга с 25 различными типами данных.](media/dashboard-upgrade/values-25-limit.png)
 
 ### <a name="dashboard-refresh-on-load"></a>Обновление панели мониторинга при загрузке
 
 Панели мониторинга обновляются после загрузки. Все запросы, связанные с панелью мониторинга — закрепленные Log Analytics визуализации выполняются, и панель мониторинга обновляется после загрузки. Если страница панели мониторинга остается открытой, данные на панели мониторинга обновляются каждые 60 минут.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Создание панелей мониторинга и общий доступ к ним в Log Analytics](../learn/tutorial-logs-dashboards.md)

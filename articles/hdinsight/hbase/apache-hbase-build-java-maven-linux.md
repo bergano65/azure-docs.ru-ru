@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seodec18, devx-track-java
 ms.date: 12/24/2019
-ms.openlocfilehash: 7cd368df1f2a94c8f49454530e7f5997f2659a32
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 61b8aaf9ea61ebe85eac6708d7390c386dea2696
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87323780"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92547917"
 ---
 # <a name="build-java-applications-for-apache-hbase"></a>Создание приложений Java для Apache HBase
 
@@ -21,17 +21,17 @@ ms.locfileid: "87323780"
 
 В этом руководстве для создания и сборки проекта используется [Apache Maven](https://maven.apache.org/). Maven — это инструмент для управления и повышения обозримости проектов программного обеспечения, позволяющий создавать ПО, документацию и отчеты для проектов Java.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Кластер Apache HBase в HDInsight. См. статью [Начало работы с Apache HBase](./apache-hbase-tutorial-get-started-linux.md).
 
-* [Java Developer Kit (JDK) версии 8](https://aka.ms/azure-jdks).
+* [Java Developer Kit (JDK) версии 8](/azure/developer/java/fundamentals/java-jdk-long-term-support).
 
 * Средство [Apache Maven](https://maven.apache.org/download.cgi), [установленное](https://maven.apache.org/install.html) согласно инструкций Apache.  Maven — система сборки проектов Java.
 
 * Клиент SSH. Дополнительные сведения см. в руководстве по [подключению к HDInsight (Apache Hadoop) с помощью SSH](../hdinsight-hadoop-linux-use-ssh-unix.md).
 
-* При использовании PowerShell вам потребуется [модуль AZ](https://docs.microsoft.com/powershell/azure/).
+* При использовании PowerShell вам потребуется [модуль AZ](/powershell/azure/).
 
 * Текстовый редактор. В этой статье используется Блокнот Microsoft Notepad.
 
@@ -48,7 +48,7 @@ cd C:\HDI
 
 ## <a name="create-a-maven-project"></a>Создание проекта Maven
 
-1. Введите следующую команду, чтобы создать проект Maven с именем **hbaseapp**:
+1. Введите следующую команду, чтобы создать проект Maven с именем **hbaseapp** :
 
     ```cmd
     mvn archetype:generate -DgroupId=com.microsoft.examples -DartifactId=hbaseapp -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
@@ -95,7 +95,7 @@ notepad pom.xml
 </dependency>
 ```  
 
-В этом разделе показано, что для проекта требуются компоненты **hbase-client** и **phoenix-core**. При компиляции эти зависимости скачиваются из репозитория Maven по умолчанию. Можно воспользоваться [поиском в центральном репозитории Maven](https://search.maven.org/artifact/org.apache.hbase/hbase-client/1.1.2/jar) , чтобы получить дополнительную информацию об этой зависимости.
+В этом разделе показано, что для проекта требуются компоненты **hbase-client** и **phoenix-core** . При компиляции эти зависимости скачиваются из репозитория Maven по умолчанию. Можно воспользоваться [поиском в центральном репозитории Maven](https://search.maven.org/artifact/org.apache.hbase/hbase-client/1.1.2/jar) , чтобы получить дополнительную информацию об этой зависимости.
 
 > [!IMPORTANT]  
 > Номер версии hbase-client должен соответствовать версии Apache HBase, которая поставляется с кластером HDInsight. Воспользуйтесь следующей таблицей, чтобы найти правильный номер версии.
@@ -442,7 +442,7 @@ public class DeleteTable {
 
 ## <a name="upload-the-jar-and-run-jobs-powershell"></a>Передача JAR-файла и запуск заданий (PowerShell)
 
-В следующих шагах используется [модуль Azure PowerShell AZ](https://docs.microsoft.com/powershell/azure/new-azureps-module-az) для передачи JAR-файла в хранилище по умолчанию для кластера Apache HBase. Затем командлеты HDInsight используются для удаленного запуска примеров.
+В следующих шагах используется [модуль Azure PowerShell AZ](/powershell/azure/new-azureps-module-az) для передачи JAR-файла в хранилище по умолчанию для кластера Apache HBase. Затем командлеты HDInsight используются для удаленного запуска примеров.
 
 1. После установки и настройки модуля AZ создайте файл с именем `hbase-runner.psm1` . В качестве содержимого файла добавьте следующий текст:
 
@@ -645,8 +645,8 @@ public class DeleteTable {
 
     Этот файл содержит два модуля:
 
-   * **Add-HDInsightFile** — используется для загрузки файлов в кластер;
-   * **Start-HBaseExample** — используется для запуска классов, созданных ранее.
+   * **Add-HDInsightFile**  — используется для загрузки файлов в кластер;
+   * **Start-HBaseExample**  — используется для запуска классов, созданных ранее.
 
 2. Сохраните `hbase-runner.psm1` файл в `hbaseapp` каталоге.
 

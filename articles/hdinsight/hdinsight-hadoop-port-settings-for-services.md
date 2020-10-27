@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/28/2020
-ms.openlocfilehash: a9f050bb25873e4b6ede234c800b00f2c34085d3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e3e2ca2eca0d258a14365edc97b98d0c827b0b6f
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86085282"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92546064"
 ---
 # <a name="ports-used-by-apache-hadoop-services-on-hdinsight"></a>Порты, используемые службами Apache Hadoop в HDInsight
 
@@ -59,7 +59,7 @@ HDInsight реализуется несколькими виртуальными
 
 Все общедоступные службы в Интернете должны проходить проверку подлинности.
 
-| Порт | Учетные данные |
+| Port | Учетные данные |
 | --- | --- |
 | 22 или 23 |Учетные данные пользователя SSH, указанные при создании кластера. |
 | 443 |Имя для входа (по умолчанию — admin) и пароль, указанные при создании кластера. |
@@ -74,7 +74,7 @@ HDInsight реализуется несколькими виртуальными
 
 ### <a name="ambari"></a>Ambari
 
-| Служба | Узлы | Порт | URL-адрес | Протокол |
+| Служба | Узлы | Port | URL-адрес | Протокол |
 | --- | --- | --- | --- | --- |
 | Веб-интерфейс Ambari | Головные узлы | 8080 | / | HTTP |
 | Ambari REST API | Головные узлы | 8080 | /api/v1 | HTTP |
@@ -158,7 +158,7 @@ HDInsight реализуется несколькими виртуальными
 | --- | --- | --- | --- | --- |
 | Broker |Рабочие узлы |9092 |Сетевой протокол Kafka |Используется для связи с клиентами |
 | &nbsp; |Узлы Zookeeper |2181 |&nbsp; |Порт, используемый клиентами для подключения к ZooKeeper |
-| Прокси-сервер RESTFUL | Узлы управления Kafka |9400 |HTTPS |[Спецификация Kafka RESTFUL](https://docs.microsoft.com/rest/api/hdinsight-kafka-rest-proxy/) |
+| Прокси-сервер RESTFUL | Узлы управления Kafka |9400 |HTTPS |[Спецификация Kafka RESTFUL](/rest/api/hdinsight-kafka-rest-proxy/) |
 
 ### <a name="spark-ports"></a>Порты Spark
 

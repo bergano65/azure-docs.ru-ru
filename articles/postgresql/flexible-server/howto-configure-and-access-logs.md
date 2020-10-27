@@ -6,12 +6,12 @@ ms.author: lufittl
 ms.service: postgresql
 ms.topic: how-to
 ms.date: 09/22/2020
-ms.openlocfilehash: 0b7b09696cbbe12a57d066e452b4c8ea7a7b8f27
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 319b7a40a87d29454b22a26088df313ef524dc56
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90938848"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92545826"
 ---
 # <a name="configure-and-access-logs-in-azure-database-for-postgresql---flexible-server"></a>Настройка журналов и доступ к ним в базе данных Azure для PostgreSQL-гибкого сервера
 
@@ -22,20 +22,20 @@ ms.locfileid: "90938848"
 
 ## <a name="configure-diagnostic-settings"></a>Настройка параметров диагностики
 
-Вы можете включить параметры диагностики для сервера Postgres с помощью портал Azure, CLI, REST API и PowerShell. Категория журнала для выбора — **постгрескллогс**.
+Вы можете включить параметры диагностики для сервера Postgres с помощью портал Azure, CLI, REST API и PowerShell. Категория журнала для выбора — **постгрескллогс** .
 
 Чтобы включить журналы ресурсов с помощью портал Azure:
 
 1. На портале выберите *параметры диагностики* в меню навигации сервера postgres.
    
-2. Выберите *Добавить параметр диагностики*.
+2. Выберите *Добавить параметр диагностики* .
    :::image type="content" source="media/howto-logging/diagnostic-settings.png" alt-text="Кнопка добавления параметров диагностики":::
 
 3. Назовите этот параметр. 
 
 4. Выберите предпочитаемую конечную точку (учетную запись хранения, концентратор событий, log Analytics). 
 
-5. Выберите тип журнала **постгрескллогс**.
+5. Выберите тип журнала **постгрескллогс** .
    :::image type="content" source="media/howto-logging/diagnostic-create-setting.png" alt-text="Кнопка добавления параметров диагностики":::
 
 7. Сохраните вашу настройку.
@@ -44,7 +44,7 @@ ms.locfileid: "90938848"
 
 ### <a name="access-resource-logs"></a>Доступ к журналам ресурсов
 
-Способ доступа к журналам зависит от выбранной конечной точки. Сведения о службе хранилища Azure см. в статье [учетная запись хранения журналов](../../azure-monitor/platform/resource-logs-collect-storage.md) . Сведения о концентраторах событий см. в статье [Streaming Azure Logs](../../azure-monitor/platform/resource-logs-stream-event-hubs.md) .
+Способ доступа к журналам зависит от выбранной конечной точки. Сведения о службе хранилища Azure см. в статье [учетная запись хранения журналов](../../azure-monitor/platform/resource-logs.md#send-to-azure-storage) . Сведения о концентраторах событий см. в статье [Streaming Azure Logs](../../azure-monitor/platform/resource-logs.md#send-to-azure-event-hubs) .
 
 Для журналов Azure Monitor журналы отправляются в выбранную рабочую область. Журналы postgres используют режим сбора **AzureDiagnostics** , поэтому их можно запрашивать из таблицы AzureDiagnostics. Поля в таблице описаны ниже. Дополнительные сведения о запросах и предупреждениях см. в статье о [запросах Azure Monitor журналов](../../azure-monitor/log-query/log-query-overview.md) .
 
@@ -69,7 +69,7 @@ AzureDiagnostics
 
 В приведенном выше запросе отобразятся результаты за последние 6 часов для любого журнала postgres сервера в этой рабочей области.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Приступая к работе с запросами log Analytics](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-portal)
-- Сведения о [концентраторах событий Azure](https://docs.microsoft.com/azure/event-hubs/event-hubs-about)
+- [Приступая к работе с запросами log Analytics](../../azure-monitor/log-query/get-started-portal.md)
+- Сведения о [концентраторах событий Azure](../../event-hubs/event-hubs-about.md)

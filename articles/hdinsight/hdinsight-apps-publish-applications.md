@@ -8,17 +8,17 @@ ms.custom: hdinsightactive
 ms.topic: how-to
 ms.date: 05/14/2018
 ms.author: hrasheed
-ms.openlocfilehash: 2cee60a71f6f19e09194dc689f95999bb11faad3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ca84cb6cdd6b47976eadbc5298701a46fe677426
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86086472"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92547832"
 ---
 # <a name="publish-an-hdinsight-application-in-the-azure-marketplace"></a>Публикация приложения HDInsight в Azure Marketplace
-Вы можете установить приложения Azure HDInsight в кластере HDInsight под управлением Linux. В этой статье описано, как опубликовать приложение HDInsight в Azure Marketplace. Общие сведения о публикации в Azure Marketplace см. в статье [Публикация предложения и управление им в Azure Marketplace](../marketplace/marketplace-publishers-guide.md).
+Вы можете установить приложения Azure HDInsight в кластере HDInsight под управлением Linux. В этой статье описано, как опубликовать приложение HDInsight в Azure Marketplace. Общие сведения о публикации в Azure Marketplace см. в статье [Публикация предложения и управление им в Azure Marketplace](../marketplace/overview.md).
 
-В приложениях HDInsight используется модель *с использованием собственной лицензии (BYOL)*. В сценарии BYOL поставщик приложения отвечает за предоставление лицензии пользователям приложения. С пользователей приложения плата взимается только за созданные ресурсы Azure, например кластер HDInsight, виртуальные машины и узлы кластера. Сейчас счета за само приложение не выставляются в Azure.
+В приложениях HDInsight используется модель *с использованием собственной лицензии (BYOL)* . В сценарии BYOL поставщик приложения отвечает за предоставление лицензии пользователям приложения. С пользователей приложения плата взимается только за созданные ресурсы Azure, например кластер HDInsight, виртуальные машины и узлы кластера. Сейчас счета за само приложение не выставляются в Azure.
 
 Дополнительные сведения см. в этих статьях о приложении HDInsight:
 
@@ -28,10 +28,10 @@ ms.locfileid: "86086472"
 ## <a name="prerequisites"></a>Предварительные требования
 Чтобы отправить пользовательское приложение в Marketplace, необходимо сначала [создать и протестировать его](hdinsight-apps-install-custom-applications.md).
 
-Также вы должны зарегистрировать учетную запись разработчика. Дополнительные сведения см. в статье [Публикация предложения и управление им в Azure Marketplace](../marketplace/marketplace-publishers-guide.md) и [Создание учетной записи разработчика Майкрософт](../marketplace/marketplace-publishers-guide.md).
+Также вы должны зарегистрировать учетную запись разработчика. Дополнительные сведения см. в статье [Публикация предложения и управление им в Azure Marketplace](../marketplace/overview.md) и [Создание учетной записи разработчика Майкрософт](../marketplace/overview.md).
 
 ## <a name="define-the-application"></a>Определение приложения
-Публикация приложений в Marketplace осуществляется в два этапа. Сначала определите файл *createUiDef.json*. Файл createUiDef.json указывает, с какими кластерами совместимо ваше приложение. Затем опубликуйте шаблон с помощью портала Azure. Вот пример файла createUiDef.json:
+Публикация приложений в Marketplace осуществляется в два этапа. Сначала определите файл *createUiDef.json* . Файл createUiDef.json указывает, с какими кластерами совместимо ваше приложение. Затем опубликуйте шаблон с помощью портала Azure. Вот пример файла createUiDef.json:
 
 ```json
 {
@@ -63,7 +63,7 @@ ms.locfileid: "86086472"
   > * Дефис (-) для удобочитаемости.
   > * Уникальная строковая функция с именем приложения в качестве параметра.
   > 
-  > В предыдущем примере в сохраненном списке действий сценария имя будет выглядеть так: **hue-install-v0-4wkahss55hlas**. Для дополнительной информации см. [пример полезных данных JSON](https://raw.githubusercontent.com/hdinsight/Iaas-Applications/master/Hue/azuredeploy.json).
+  > В предыдущем примере в сохраненном списке действий сценария имя будет выглядеть так: **hue-install-v0-4wkahss55hlas** . Для дополнительной информации см. [пример полезных данных JSON](https://raw.githubusercontent.com/hdinsight/Iaas-Applications/master/Hue/azuredeploy.json).
   > 
 
 Сценарий установки должен иметь следующие характеристики:
@@ -89,7 +89,7 @@ ms.locfileid: "86086472"
 1. Войдите на [Портал публикации Azure](https://publish.windowsazure.com/).
 2. В меню слева выберите **Solution templates** (Шаблоны решений).
 3. Введите заголовок и нажмите **Create a new solution template** (Создать шаблон решения).
-4. Щелкните **Create Dev Center account and join the Azure program** (Создать учетную запись центра разработчиков и присоединиться к программе Azure), чтобы зарегистрировать свою компанию, если вы еще этого не сделали.  Дополнительные сведения см. в статье [Создание учетной записи разработчика Майкрософт](../marketplace/marketplace-publishers-guide.md).
+4. Щелкните **Create Dev Center account and join the Azure program** (Создать учетную запись центра разработчиков и присоединиться к программе Azure), чтобы зарегистрировать свою компанию, если вы еще этого не сделали.  Дополнительные сведения см. в статье [Создание учетной записи разработчика Майкрософт](../marketplace/overview.md).
 5. Выберите **Define some Topologies to get Started** (Определить некоторые топологии и начать работу). Шаблон решения служит родительским элементом для всех своих топологий. В одном шаблоне предложений или решения можно определить сразу несколько топологий. Когда предложение переходит к стадии промежуточного развертывания, вместе с ним отправляются все его топологии. 
 6. Введите имя топологии, а затем выберите **+** .
 7. Введите новую версию, а затем выберите **+** .
@@ -102,4 +102,3 @@ ms.locfileid: "86086472"
 * Инструкции по [настройке кластеров HDInsight под управлением Linux с помощью действия сценария](hdinsight-hadoop-customize-cluster-linux.md) и добавлению других приложений. 
 * Инструкции по [созданию кластера Apache Hadoop под управлением Linux в HDInsight с помощью шаблонов Azure Resource Manager](hdinsight-hadoop-create-linux-clusters-arm-templates.md).
 * Инструкции по [использованию пустых граничных узлов в HDInsight](hdinsight-apps-use-edge-node.md), чтобы получить доступ к кластеру HDInsight, а также тестировать и разместить приложения HDInsight.
-

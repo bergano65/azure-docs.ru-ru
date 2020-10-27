@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 05/07/2020
-ms.openlocfilehash: 999be38e413288d2eb2f6342874e692972f300ad
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 93c07b47e03bde20d494feb1c86179cd9a24ba26
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91409720"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92539417"
 ---
 # <a name="requesting-quota-increases-for-azure-hdinsight"></a>Запрос на увеличение квоты для Azure HDInsight
 
@@ -30,7 +30,7 @@ ms.locfileid: "91409720"
 
     1. Войдите на [портал Azure](https://portal.azure.com/).
     1. Перейдите на страницу **Обзор** для кластера HDInsight.
-    1. В меню слева выберите пункт **Пределы квоты**. На странице отобразится количество используемых ядер, количество доступных ядер и общее число ядер.
+    1. В меню слева выберите пункт **Пределы квоты** . На странице отобразится количество используемых ядер, количество доступных ядер и общее число ядер.
 
 Чтобы запросить увеличение квоты, выполните указанные ниже действия.
 
@@ -39,12 +39,12 @@ ms.locfileid: "91409720"
 
     ![Кнопка "Справка и поддержка"](./media/quota-increase-request/help-support-button.png)
 
-1. Выберите **Новый запрос в службу поддержки**.
+1. Выберите **Новый запрос в службу поддержки** .
 1. В разделе **Новый запрос на поддержку** во вкладке **Основы** выберите следующие параметры:
 
-   - **Тип проблемы**. **Ограничения службы и подписки (квоты)**
-   - **Подписка**. Подписка, которую необходимо изменить.
-   - **Тип квоты**. **HDInsight**
+   - **Тип проблемы** . **Ограничения службы и подписки (квоты)**
+   - **Подписка** . Подписка, которую необходимо изменить.
+   - **Тип квоты** . **HDInsight**
 
      ![Создание запроса в службу поддержки для увеличения квоты на ядра HDInsight](./media/quota-increase-request/hdinsight-quota-support-request.png)
 
@@ -62,14 +62,14 @@ ms.locfileid: "91409720"
     ![сведения о проблеме](./media/quota-increase-request/problem-details.png)
 
 1. По завершении выберите **Next: Просмотр и создание >>** .
-1. На вкладке **Проверить и создать** выберите **Создать**.
+1. На вкладке **Проверить и создать** выберите **Создать** .
 
 > [!NOTE]  
 > Если вам нужно увеличить квоту ядра HDInsight в частном регионе, [отправьте запрос утвержденного списка](https://aka.ms/canaryintwhitelist).
 
-Вы можете [обратиться в службу поддержки, чтобы запросить увеличение квоты](https://docs.microsoft.com/azure/azure-portal/supportability/resource-manager-core-quotas-request).
+Вы можете [обратиться в службу поддержки, чтобы запросить увеличение квоты](../azure-portal/supportability/resource-manager-core-quotas-request.md).
 
-Существует ряд фиксированных квот. Например, одна подписка Azure может содержать не более 10 000 ядер. Сведения об этих ограничениях см. в статье [Подписка Azure, границы, квоты и ограничения службы](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits).
+Существует ряд фиксированных квот. Например, одна подписка Azure может содержать не более 10 000 ядер. Сведения об этих ограничениях см. в статье [Подписка Azure, границы, квоты и ограничения службы](../azure-resource-manager/management/azure-subscription-service-limits.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

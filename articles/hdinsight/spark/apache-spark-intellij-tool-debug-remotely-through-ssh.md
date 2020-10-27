@@ -8,16 +8,16 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 12/23/2019
-ms.openlocfilehash: 219b7c0586542ae371776d904d0206d52569ccd6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 421993ac4aaba551b6fcbd002783d44559ce377d
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86081831"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92545741"
 ---
 # <a name="debug-apache-spark-applications-on-an-hdinsight-cluster-with-azure-toolkit-for-intellij-through-ssh"></a>Отладка Apache Spark приложений в кластере HDInsight с Azure Toolkit for IntelliJ через SSH
 
-В этой статье содержатся пошаговые инструкции по использованию средств HDInsight в [Azure Toolkit for IntelliJ](https://docs.microsoft.com/azure/developer/java/toolkit-for-intellij) для удаленной отладки приложений в кластере HDInsight. Для отладки проекта можно также просмотреть видео [Debug HDInsight Spark applications with Azure Toolkit for IntelliJ](https://channel9.msdn.com/Series/AzureDataLake/Debug-HDInsight-Spark-Applications-with-Azure-Toolkit-for-IntelliJ) (Отладка приложений HDInsight Spark с помощью набора средств Azure для IntelliJ).
+В этой статье содержатся пошаговые инструкции по использованию средств HDInsight в [Azure Toolkit for IntelliJ](/azure/developer/java/toolkit-for-intellij) для удаленной отладки приложений в кластере HDInsight. Для отладки проекта можно также просмотреть видео [Debug HDInsight Spark applications with Azure Toolkit for IntelliJ](https://channel9.msdn.com/Series/AzureDataLake/Debug-HDInsight-Spark-Applications-with-Azure-Toolkit-for-IntelliJ) (Отладка приложений HDInsight Spark с помощью набора средств Azure для IntelliJ).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -25,11 +25,11 @@ ms.locfileid: "86081831"
 
 * Для пользователей Windows: при запуске локального приложения Spark Scala на компьютере Windows может возникнуть исключение, как описано в [Spark-2356](https://issues.apache.org/jira/browse/SPARK-2356). Это исключение возникает, так как в Windows отсутствует файл WinUtils.exe.
 
-    Чтобы устранить эту ошибку, скачайте [Winutils.exe](https://github.com/steveloughran/winutils) в расположение, например **C:\WinUtils\bin**. После этого добавьте переменную среды **HADOOP_HOME** и присвойте ей значение **C\WinUtils**.
+    Чтобы устранить эту ошибку, скачайте [Winutils.exe](https://github.com/steveloughran/winutils) в расположение, например **C:\WinUtils\bin** . После этого добавьте переменную среды **HADOOP_HOME** и присвойте ей значение **C\WinUtils** .
 
 * [IntelliJная идея](https://www.jetbrains.com/idea/download/#section=windows) (выпуск Community Edition предоставляется бесплатно).
 
-* [Azure Toolkit for IntelliJ](https://docs.microsoft.com/azure/developer/java/toolkit-for-intellij/installation).
+* [Azure Toolkit for IntelliJ](/azure/developer/java/toolkit-for-intellij/installation).
 
 * [Подключаемый модуль Scala для IntelliJ](../spark/apache-spark-intellij-tool-plugin.md#install-scala-plugin-for-intellij-idea).
 
@@ -39,7 +39,7 @@ ms.locfileid: "86081831"
 
 1. Запустите IntelliJ IDEA и выберите **Create New Project** (Создать проект), чтобы открыть окно **New Project** (Новый проект).
 
-1. На панели слева выберите **Azure Spark/HDInsight**.
+1. На панели слева выберите **Azure Spark/HDInsight** .
 
 1. Выберите **проект Spark с примерами (Scala)** в главном окне.
 
@@ -50,40 +50,40 @@ ms.locfileid: "86081831"
 
      ![IntelliJ создать новый проект Spark](./media/apache-spark-intellij-tool-debug-remotely-through-ssh/hdinsight-create-projectfor-debug-remotely.png)
 
-1. Выберите **Далее**.
+1. Выберите **Далее** .
 
 1. В следующем окне **нового проекта** укажите следующие сведения:
 
-    |Свойство |Описание |
+    |Свойство. |Описание |
     |---|---|
     |Имя проекта|Введите имя. В этом пошаговом руководстве используются `myApp` .|
     |Расположение проекта|Введите необходимое расположение для сохранения проекта.|
     |Project SDK (Пакет SDK проекта)|Если поле пусто, выберите **создать...** и перейдите к своему JDK.|
-    |Версия Spark|Мастер создания интегрирует правильную версию пакетов SDK для Spark и Scala. Если используется версия кластера Spark более ранняя, чем 2.0, выберите **Spark 1.x**. В противном случае выберите **Spark 2. x.**. В этом примере используется **Spark 2.3.0 (Scala 2.11.8)** .|
+    |Версия Spark|Мастер создания интегрирует правильную версию пакетов SDK для Spark и Scala. Если используется версия кластера Spark более ранняя, чем 2.0, выберите **Spark 1.x** . В противном случае выберите **Spark 2. x.** . В этом примере используется **Spark 2.3.0 (Scala 2.11.8)** .|
 
    ![IntelliJ новый проект выберите версию Spark](./media/apache-spark-intellij-tool-debug-remotely-through-ssh/hdinsight-new-project.png)
 
-1. Нажмите кнопку **Готово**. Может пройти несколько минут, прежде чем проект станет доступным. Просмотрите ход выполнения в нижнем правом углу.
+1. Нажмите кнопку **Готово** . Может пройти несколько минут, прежде чем проект станет доступным. Просмотрите ход выполнения в нижнем правом углу.
 
-1. Разверните проект и перейдите в раздел **src**  >  **Main**  >  **Scala**  >  **Sample**. Дважды щелкните **SparkCore_WasbIOTest**.
+1. Разверните проект и перейдите в раздел **src**  >  **Main**  >  **Scala**  >  **Sample** . Дважды щелкните **SparkCore_WasbIOTest** .
 
 ## <a name="perform-local-run"></a>Выполнение локального запуска
 
 1. В скрипте **SparkCore_WasbIOTest** щелкните правой кнопкой мыши редактор скриптов и выберите пункт **выполнить "SparkCore_WasbIOTest"** , чтобы выполнить локальный запуск.
 
-1. После завершения локального выполнения можно просмотреть выходной файл, который будет сохранен в **текущем обозревателе проектов**  >  **__по умолчанию__**.
+1. После завершения локального выполнения можно просмотреть выходной файл, который будет сохранен в **текущем обозревателе проектов**  >  **__по умолчанию__** .
 
     ![Результат локального запуска проекта IntelliJ](./media/apache-spark-intellij-tool-debug-remotely-through-ssh/spark-local-run-result.png)
 
-1. С помощью наших средств при локальном запуске и локальной отладке по умолчанию настраивается конфигурацию локального запуска. Откройте конфигурацию **[Spark в hdinsight] XXX** в правом верхнем углу, вы увидите **[Spark в hdinsight] XXX** , уже созданную в разделе **Apache Spark в HDInsight**. Откройте вкладку **Locally Run** (Локальный запуск).
+1. С помощью наших средств при локальном запуске и локальной отладке по умолчанию настраивается конфигурацию локального запуска. Откройте конфигурацию **[Spark в hdinsight] XXX** в правом верхнем углу, вы увидите **[Spark в hdinsight] XXX** , уже созданную в разделе **Apache Spark в HDInsight** . Откройте вкладку **Locally Run** (Локальный запуск).
 
     ![Локальное выполнение конфигураций запуска и отладки в Intellij](./media/apache-spark-intellij-tool-debug-remotely-through-ssh/local-run-configuration.png)
 
-    - [Переменные среды.](#prerequisites) Если вы уже задали переменную среды **HADOOP_HOME** для **C:\WinUtils**, она определяется автоматически и добавлять ее вручную не нужно.
+    - [Переменные среды.](#prerequisites) Если вы уже задали переменную среды **HADOOP_HOME** для **C:\WinUtils** , она определяется автоматически и добавлять ее вручную не нужно.
     - [Расположение WinUtils.exe.](#prerequisites) Если вы не задали переменную среды, найдите расположение, нажав соответствующую кнопку.
     - Просто выберите один из вариантов (в MacOS и Linux в этом нет необходимости).
 
-1. Кроме того, вы можете вручную задать конфигурацию перед локальным запуском и локальной отладкой. На предыдущем снимке экрана выберите знак "плюс" ( **+** ). Затем выберите параметр **Apache Spark в HDInsight** . Укажите **имя** и **имя класса Main**, чтобы сохранить их, а затем нажмите кнопку локального запуска.
+1. Кроме того, вы можете вручную задать конфигурацию перед локальным запуском и локальной отладкой. На предыдущем снимке экрана выберите знак "плюс" ( **+** ). Затем выберите параметр **Apache Spark в HDInsight** . Укажите **имя** и **имя класса Main** , чтобы сохранить их, а затем нажмите кнопку локального запуска.
 
 ## <a name="perform-local-debugging"></a>Локальная отладка
 
@@ -93,17 +93,17 @@ ms.locfileid: "86081831"
 
 ## <a name="perform-remote-run"></a>Удаленный запуск
 
-1. Перейдите к разделу **выполнение**  >  **изменения конфигураций..**.. В этом меню можно создавать или изменять конфигурации для удаленной отладки.
+1. Перейдите к разделу **выполнение**  >  **изменения конфигураций..** .. В этом меню можно создавать или изменять конфигурации для удаленной отладки.
 
-1. В диалоговом окне **Run/Debug Configurations** (Конфигурации выполнения и отладки) щелкните знак "плюс" (**+**). Затем выберите параметр **Apache Spark в HDInsight** .
+1. В диалоговом окне **Run/Debug Configurations** (Конфигурации выполнения и отладки) щелкните знак "плюс" ( **+** ). Затем выберите параметр **Apache Spark в HDInsight** .
 
    ![IntelliJ добавить новую конфигурацию](./media/apache-spark-intellij-tool-debug-remotely-through-ssh/hdinsight-add-new-Configuration.png)
 
-1. Перейдите в режим **удаленного запуска на вкладке кластер** . Введите данные для **имени**, **кластера Spark**и **имени класса Main**. Затем щелкните **Расширенная конфигурация (удаленная отладка)**. Наши средства поддерживают отладку с **исполнителями**. Для параметра **numExectors** по умолчанию устанавливается значение 5. Лучше не указывать значение больше 3.
+1. Перейдите в режим **удаленного запуска на вкладке кластер** . Введите данные для **имени** , **кластера Spark** и **имени класса Main** . Затем щелкните **Расширенная конфигурация (удаленная отладка)** . Наши средства поддерживают отладку с **исполнителями** . Для параметра **numExectors** по умолчанию устанавливается значение 5. Лучше не указывать значение больше 3.
 
    ![IntelliJ запуск конфигураций отладки](./media/apache-spark-intellij-tool-debug-remotely-through-ssh/hdinsight-run-debug-configurations.png)
 
-1. В части **Расширенная конфигурация (удаленная отладка)** выберите **включить удаленную отладку Spark**. Введите имя пользователя SSH, затем введите пароль либо воспользуйтесь файлом закрытого ключа. Для выполнения удаленной отладки необходимо настроить ее. Чтобы использовать удаленный запуск, не нужно настраивать отладку.
+1. В части **Расширенная конфигурация (удаленная отладка)** выберите **включить удаленную отладку Spark** . Введите имя пользователя SSH, затем введите пароль либо воспользуйтесь файлом закрытого ключа. Для выполнения удаленной отладки необходимо настроить ее. Чтобы использовать удаленный запуск, не нужно настраивать отладку.
 
    ![Расширенная конфигурация IntelliJ включение удаленной отладки Spark](./media/apache-spark-intellij-tool-debug-remotely-through-ssh/hdinsight-enable-spark-remote-debug.png)
 
@@ -113,7 +113,7 @@ ms.locfileid: "86081831"
 
    ![Кнопка удаленного запуска IntelliJ отладки удаленного задания Spark](./media/apache-spark-intellij-tool-debug-remotely-through-ssh/perform-remote-run-button.png)
 
-1. Нажмите кнопку **Отключить**, чтобы журналы отправки не отображались на левой панели. Тем не менее она все еще выполняется в серверной части.
+1. Нажмите кнопку **Отключить** , чтобы журналы отправки не отображались на левой панели. Тем не менее она все еще выполняется в серверной части.
 
    ![Результат удаленного запуска IntelliJ отладки удаленного задания Spark](./media/apache-spark-intellij-tool-debug-remotely-through-ssh/spark-remote-run-result.png)
 
@@ -123,7 +123,7 @@ ms.locfileid: "86081831"
 
    ![Значок отладки задания удаленной отладки Spark IntelliJ](./media/apache-spark-intellij-tool-debug-remotely-through-ssh/hdinsight-debug-icon.png)
 
-1. Когда выполнение программы достигнет точки останова, в области **Debugger** (Отладчик) вы увидите вкладку **Driver** (Драйвер) и две вкладки **Executor** (Исполнитель). Щелкните значок **Resume Program** (Возобновить выполнение программы), чтобы продолжить выполнение кода, который затем достигнет следующей точки останова. Откройте соответствующую вкладку **Исполнитель**, чтобы найти целевой исполнитель для отладки. Вы можете просмотреть журналы выполнения на соответствующей вкладке **Консоль**.
+1. Когда выполнение программы достигнет точки останова, в области **Debugger** (Отладчик) вы увидите вкладку **Driver** (Драйвер) и две вкладки **Executor** (Исполнитель). Щелкните значок **Resume Program** (Возобновить выполнение программы), чтобы продолжить выполнение кода, который затем достигнет следующей точки останова. Откройте соответствующую вкладку **Исполнитель** , чтобы найти целевой исполнитель для отладки. Вы можете просмотреть журналы выполнения на соответствующей вкладке **Консоль** .
 
    ![Вкладка "Отладка IntelliJ отладки заданий удаленного задания Spark"](./media/apache-spark-intellij-tool-debug-remotely-through-ssh/hdinsight-debugger-tab.png)
 
@@ -143,7 +143,7 @@ ms.locfileid: "86081831"
 
 1. Чтобы динамически обновить значение переменной с помощью функции отладки IntelliJ, еще раз щелкните значок **Debug** (Отладка). Снова появится область **Variables** (Переменные).
 
-1. Щелкните правой кнопкой мыши целевой объект на вкладке **Debug** (Отладка), а затем выберите **Set Value** (Задать значение). Затем введите новое значение переменной. Нажмите клавишу **ВВОД**, чтобы сохранить значение.
+1. Щелкните правой кнопкой мыши целевой объект на вкладке **Debug** (Отладка), а затем выберите **Set Value** (Задать значение). Затем введите новое значение переменной. Нажмите клавишу **ВВОД** , чтобы сохранить значение.
 
    ![Значение набора заданий IntelliJ Debug Remote Spark](./media/apache-spark-intellij-tool-debug-remotely-through-ssh/hdinsight-set-value1.png)
 
@@ -165,18 +165,18 @@ ms.locfileid: "86081831"
 * [Руководство. Анализ данных Apache Spark с использованием Power BI в HDInsight](apache-spark-use-bi-tools.md)
 * [Apache Spark и Машинное обучение. Анализ температуры в здании на основе данных системы кондиционирования с помощью Spark в HDInsight](apache-spark-ipython-notebook-machine-learning.md)
 * [Apache Spark и Машинное обучение. Прогнозирование результатов проверки пищевых продуктов с помощью Spark в HDInsight](apache-spark-machine-learning-mllib-ipython.md)
-* [Анализ журналов веб-сайтов с помощью Apache Spark в HDInsight](../hdinsight-apache-spark-custom-library-website-log-analysis.md)
+* [Анализ журналов веб-сайтов с помощью Apache Spark в HDInsight](./apache-spark-custom-library-website-log-analysis.md)
 
 ### <a name="create-and-run-applications"></a>Создание и запуск приложений
 
-* [Создание автономного приложения с использованием Scala](../hdinsight-apache-spark-create-standalone-application.md)
+* [Создание автономного приложения с использованием Scala](./apache-spark-create-standalone-application.md)
 * [Удаленный запуск заданий с помощью Apache Livy в кластере Apache Spark](apache-spark-livy-rest-interface.md)
 
 ### <a name="tools-and-extensions"></a>Средства и расширения
 
 * [Создание приложений Apache Spark для кластера HDInsight с помощью Azure Toolkit for IntelliJ](apache-spark-intellij-tool-plugin.md)
 * [Удаленная отладка приложений Spark в HDInsight через VPN с помощью Azure Toolkit for IntelliJ](apache-spark-intellij-tool-plugin-debug-jobs-remotely.md)
-* [Использование средств HDInsight в Azure Toolkit for Eclipse для создания приложений Apache Spark](../hdinsight-apache-spark-eclipse-tool-plugin.md)
+* [Использование средств HDInsight в Azure Toolkit for Eclipse для создания приложений Apache Spark](./apache-spark-eclipse-tool-plugin.md)
 * [Использование записных книжек Zeppelin с кластером Apache Spark в Azure HDInsight](apache-spark-zeppelin-notebook.md)
 * [Ядра, доступные для записной книжки Jupyter в кластере Apache Spark в HDInsight](apache-spark-jupyter-notebook-kernels.md)
 * [Использование внешних пакетов с записными книжками Jupyter](apache-spark-jupyter-notebook-use-external-packages.md)

@@ -6,12 +6,12 @@ ms.author: yegu
 ms.service: cache
 ms.topic: conceptual
 ms.date: 03/22/2018
-ms.openlocfilehash: e8a3183e1fcac3f1a71d07835cacc37c2f57fb06
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4ca8980123240a90f73a4866c37a79800ce403d1
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91839050"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92538023"
 ---
 # <a name="how-to-use-the-redis-command-line-tool-with-azure-cache-for-redis"></a>Использование программы командной строки Redis с кэшем Redis для Azure
 
@@ -27,8 +27,8 @@ ms.locfileid: "91839050"
 
 Существует три способа сбора сведений, необходимых для доступа к кэшу.
 
-1. С помощью Azure CLI и команды [az redis list-keys](https://docs.microsoft.com/cli/azure/redis?view=azure-cli-latest#az-redis-list-keys).
-2. С помощью Azure PowerShell и командлета [Get-AzRedisCacheKey](https://docs.microsoft.com/powershell/module/az.rediscache/Get-AzRedisCacheKey).
+1. С помощью Azure CLI и команды [az redis list-keys](/cli/azure/redis?view=azure-cli-latest#az-redis-list-keys).
+2. С помощью Azure PowerShell и командлета [Get-AzRedisCacheKey](/powershell/module/az.rediscache/Get-AzRedisCacheKey).
 3. С помощью портала Azure.
 
 В этом разделе вы будете получать ключи с портала Azure.
@@ -44,13 +44,13 @@ ms.locfileid: "91839050"
 
 2. Скачайте и установите [stunnel](https://www.stunnel.org/downloads.html).
 
-    Выполните команду **stunnel GUI Start**, чтобы запустить сервер.
+    Выполните команду **stunnel GUI Start** , чтобы запустить сервер.
 
     Щелкните правой кнопкой мыши значок сервера stunnel и выберите пункт **Show Log Window** (Открыть окно журнала).
 
     В меню окна журнала stunnel щелкните **Конфигурация**  >  **изменить конфигурацию** , чтобы открыть текущий файл конфигурации.
 
-    В разделе **Определения службы** добавьте следующую запись для программы *redis cli.exe*. Вместо `yourcachename` вставьте фактическое имя кэша. 
+    В разделе **Определения службы** добавьте следующую запись для программы *redis cli.exe* . Вместо `yourcachename` вставьте фактическое имя кэша. 
 
     ```
     [redis-cli]
@@ -61,7 +61,7 @@ ms.locfileid: "91839050"
 
     Сохраните и закройте файл конфигурации. 
   
-    В меню окна журнала stunnel щелкните **Конфигурация**  >  **Перезагрузить конфигурацию**.
+    В меню окна журнала stunnel щелкните **Конфигурация**  >  **Перезагрузить конфигурацию** .
 
 
 ## <a name="connect-using-the-redis-command-line-tool"></a>Подключитесь с помощью программы командной строки Redis.
@@ -74,7 +74,7 @@ redis-cli.exe -p 6380 -a YourAccessKey
 
 ![Снимок экрана, на котором показано, что подключение к кэшу прошло успешно.](media/cache-how-to-redis-cli-tool/cache-redis-cli-stunnel.png)
 
-Если вы используете тестовый кэш с **незащищенным** портом без протокола TLS, запустите `redis-cli.exe` и передайте *имя узла*, *порт*и *ключ доступа* (первичный или дополнительный) для подключения к тестовому кэшу.
+Если вы используете тестовый кэш с **незащищенным** портом без протокола TLS, запустите `redis-cli.exe` и передайте *имя узла* , *порт* и *ключ доступа* (первичный или дополнительный) для подключения к тестовому кэшу.
 
 ```
 redis-cli.exe -h yourcachename.redis.cache.windows.net -p 6379 -a YourAccessKey
@@ -85,7 +85,6 @@ redis-cli.exe -h yourcachename.redis.cache.windows.net -p 6379 -a YourAccessKey
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте больше об использовании [консоли Redis](cache-configure.md#redis-console) для выполнения команд.
-

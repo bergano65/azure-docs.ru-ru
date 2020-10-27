@@ -7,12 +7,12 @@ ms.service: mysql
 ms.topic: how-to
 ms.date: 01/09/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 05a3846de1ad4100abec996f8051201882bb7566
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: b6c26c99d68e5b92477a4d7f2c6734190d112aba
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92127547"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92538771"
 ---
 # <a name="create-and-manage-private-link-for-azure-database-for-mysql-using-cli"></a>Создание и управление частной связью для базы данных Azure для MySQL с помощью интерфейса командной строки
 
@@ -21,7 +21,7 @@ ms.locfileid: "92127547"
 > [!NOTE]
 > Функция закрытых ссылок доступна только для серверов базы данных Azure для MySQL в общего назначения или в ценовой категории, оптимизированные для памяти. Убедитесь, что сервер базы данных находится в одной из этих ценовых категорий.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -36,7 +36,7 @@ az group create --name myResourceGroup --location westeurope
 ```
 
 ## <a name="create-a-virtual-network"></a>Создайте виртуальную сеть
-Создайте виртуальную сеть с помощью команды [az network vnet create](/cli/azure/network/vnet). В этом примере создается виртуальная сеть по умолчанию с именем *myVirtualNetwork* с подсетью *mySubnet*.
+Создайте виртуальную сеть с помощью команды [az network vnet create](/cli/azure/network/vnet). В этом примере создается виртуальная сеть по умолчанию с именем *myVirtualNetwork* с подсетью *mySubnet* .
 
 ```azurecli-interactive
 az network vnet create \
@@ -46,7 +46,7 @@ az network vnet create \
 ```
 
 ## <a name="disable-subnet-private-endpoint-policies"></a>Отключение политик подсети частной конечной точки 
-Azure развертывает ресурсы в подсеть в виртуальной сети, поэтому необходимо создать или обновить подсеть, чтобы отключить [политики сети](../private-link/disable-private-endpoint-network-policy.md)частной конечной точки. Обновите конфигурацию подсети *mySubnet* с помощью команды [az network vnet subnet update](https://docs.microsoft.com/cli/azure/network/vnet/subnet?view=azure-cli-latest#az-network-vnet-subnet-update).
+Azure развертывает ресурсы в подсеть в виртуальной сети, поэтому необходимо создать или обновить подсеть, чтобы отключить [политики сети](../private-link/disable-private-endpoint-network-policy.md)частной конечной точки. Обновите конфигурацию подсети *mySubnet* с помощью команды [az network vnet subnet update](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-update).
 
 ```azurecli-interactive
 az network vnet subnet update \
@@ -56,7 +56,7 @@ az network vnet subnet update \
  --disable-private-endpoint-network-policies true
 ```
 ## <a name="create-the-vm"></a>Создание виртуальной машины 
-Создайте виртуальную машину с помощью команды az vm create. При появлении запроса укажите пароль в качестве учетных данных для входа на виртуальную машину. В этом примере создается виртуальная машина с именем *myVM*. 
+Создайте виртуальную машину с помощью команды az vm create. При появлении запроса укажите пароль в качестве учетных данных для входа на виртуальную машину. В этом примере создается виртуальная машина с именем *myVM* . 
 ```azurecli-interactive
 az vm create \
   --resource-group myResourceGroup \
@@ -128,24 +128,24 @@ az network private-dns record-set a add-record --record-set-name myserver --zone
 
 Подключитесь к виртуальной машине *myVm* из Интернета, выполнив следующие действия.
 
-1. На портале в строке поиска введите *myVm*.
+1. На портале в строке поиска введите *myVm* .
 
-1. Нажмите кнопку **Подключиться**. После нажатия кнопки **Подключиться** откроется окно **Connect to virtual machine** (Подключение к виртуальной машине).
+1. Нажмите кнопку **Подключиться** . После нажатия кнопки **Подключиться** откроется окно **Connect to virtual machine** (Подключение к виртуальной машине).
 
-1. Щелкните **Скачать RDP-файл**. Azure создаст и скачает на ваш компьютер файл протокола удаленного рабочего стола (*RDP*).
+1. Щелкните **Скачать RDP-файл** . Azure создаст и скачает на ваш компьютер файл протокола удаленного рабочего стола ( *RDP* ).
 
-1. Откройте файл *downloaded.rdp*.
+1. Откройте файл *downloaded.rdp* .
 
-    1. При появлении запроса выберите **Подключиться**.
+    1. При появлении запроса выберите **Подключиться** .
 
     1. Введите имя пользователя и пароль, указанные при создании виртуальной машины.
 
         > [!NOTE]
         > Возможно, потребуется выбрать **More choices** > **Use a different account** (Дополнительные варианты > Использовать другую учетную запись), чтобы указать учетные данные, введенные при создании виртуальной машины.
 
-1. Щелкните **ОК**.
+1. Щелкните **ОК** .
 
-1. При входе в систему может появиться предупреждение о сертификате. В таком случае выберите **Да** или **Продолжить**.
+1. При входе в систему может появиться предупреждение о сертификате. В таком случае выберите **Да** или **Продолжить** .
 
 1. Когда появится рабочий стол виртуальной машины, сверните его, чтобы вернуться на локальный рабочий стол.  
 
@@ -167,7 +167,7 @@ az network private-dns record-set a add-record --record-set-name myserver --zone
 3. Проверьте подключение к частному каналу для сервера MySQL с помощью любого доступного клиента. В примере ниже я использовал [MySQL Workbench](https://dev.mysql.com/doc/workbench/en/wb-installing-windows.html) для выполнения этой операции.
 
 
-4. В окне **новое подключение**введите или выберите следующие сведения:
+4. В окне **новое подключение** введите или выберите следующие сведения:
 
     | Параметр | Значение |
     | ------- | ----- |
@@ -193,7 +193,7 @@ az group delete --name myResourceGroup --yes
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- Подробнее о том [, что такое частная конечная точка Azure](https://docs.microsoft.com/azure/private-link/private-endpoint-overview)
+- Подробнее о том [, что такое частная конечная точка Azure](../private-link/private-endpoint-overview.md)
 
 <!-- Link references, to text, Within this same GitHub repo. -->
 [resource-manager-portal]: ../azure-resource-manager/management/resource-providers-and-types.md
