@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 08/12/2019
 ms.author: alkohli
 ms.subservice: common
-ms.openlocfilehash: 7b7915e1b7779c4d0359b9ac190574c43a624cbe
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d17b9cdebf06e7d754a23a7224bbe3dba1a2832c
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87276403"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92783612"
 ---
 # <a name="azure-importexport-system-requirements"></a>Требования к системе для импорта и экспорта Azure
 
@@ -21,13 +21,13 @@ ms.locfileid: "87276403"
 
 ## <a name="supported-operating-systems"></a>Поддерживаемые операционные системы
 
-При подготовке жестких дисков с использованием инструмента WAImportExport поддерживаются следующие **64-разрядные ОС с возможностью шифрования диска BitLocker**.
+При подготовке жестких дисков с использованием инструмента WAImportExport поддерживаются следующие **64-разрядные ОС с возможностью шифрования диска BitLocker** .
 
 
 |Платформа |Версия |
 |---------|---------|
 |Windows     | Windows 7 Корпоративная, Windows 7 Максимальная <br> Windows 8 Pro, Windows 8 Корпоративная, Windows 8.1 Pro, Windows 8.1 Корпоративная <br> Windows 10        |
-|Windows Server     |Windows Server 2008 R2 <br> Windows Server 2012, Windows Server 2012 R2         |
+|Windows Server     |Windows Server 2008 R2 <br> Windows Server 2012, Windows Server 2012 R2         |
 
 ## <a name="other-required-software-for-windows-client"></a>Другое необходимое программное обеспечение для клиента Windows
 
@@ -50,7 +50,7 @@ ms.locfileid: "87276403"
 Каждое задание может использоваться для обмена данными только с одной учетной записью хранения. Другими словами, отдельное задание импорта и экспорта не может распространяться на несколько учетных записей хранения. Сведения о создании учетной записи хранения см. в разделе [Создание учетной записи хранения](storage-account-create.md).
 
 > [!IMPORTANT]
-> Для учетных записей хранения, в которых включена функция [конечных точек службы виртуальной сети](../../virtual-network/virtual-network-service-endpoints-overview.md)   , используйте параметр **Разрешить доверенные службы Майкрософт...** [Включение службы импорта](/azure/storage/common/storage-network-security) и экспорта для выполнения импорта и экспорта данных в Azure и обратно.
+> Для учетных записей хранения, в которых включена функция [конечных точек службы виртуальной сети](../../virtual-network/virtual-network-service-endpoints-overview.md) , используйте параметр **Разрешить доверенные службы Майкрософт...** [Включение службы импорта](./storage-network-security.md) и экспорта для выполнения импорта и экспорта данных в Azure и обратно.
 
 ## <a name="supported-storage-types"></a>Поддерживаемые типы хранилища
 
@@ -94,4 +94,4 @@ ms.locfileid: "87276403"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Перенос данных с помощью служебной программы командной строки AzCopy](storage-use-azcopy.md)
+* [Перенос данных с помощью служебной программы командной строки AzCopy](./storage-use-azcopy-v10.md)

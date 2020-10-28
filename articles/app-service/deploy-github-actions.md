@@ -7,12 +7,12 @@ ms.date: 09/14/2020
 ms.author: jafreebe
 ms.reviewer: ushan
 ms.custom: devx-track-python, github-actions-azure
-ms.openlocfilehash: bdc236c3ba4c70ba44e61457e2bade7df65f3153
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: 638dfc63b6a37bae3905703bbd5ecabaa94d2020
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92108054"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92783085"
 ---
 # <a name="deploy-to-app-service-using-github-actions"></a>Развертывание в Службе приложений с помощью GitHub Actions
 
@@ -37,7 +37,7 @@ ms.locfileid: "92108054"
 
 |Section  |Задания  |
 |---------|---------|
-|**Аутентификация** | 1. Определите субъект-службу или профиль публикации. <br /> 2. Создайте секрет GitHub. |
+|**Аутентификация** | 1. Определите субъект-службу или профиль публикации. <br /> 2. Создание секрета GitHub. |
 |**Сборка** | 1. Настройте среду. <br /> 2. Создайте веб-приложение. |
 |**Развертывание** | 1. Разверните веб-приложение. |
 
@@ -59,7 +59,7 @@ ms.locfileid: "92108054"
 
 Вы также можете развернуть рабочий процесс без использования центра развертывания. Для этого необходимо сначала создать учетные данные развертывания. 
 
-## <a name="generate-deployment-credentials"></a>Создать учетные данные развертывания
+## <a name="generate-deployment-credentials"></a>Создание учетных данных для развертывания.
 
 Рекомендуемый способ проверки подлинности в службе приложений Azure для действий GitHub — профиль публикации. Вы также можете пройти проверку подлинности с помощью субъекта-службы, но процесс требует дополнительных действий. 
 
@@ -71,13 +71,13 @@ ms.locfileid: "92108054"
 
 1. Перейдите к службе приложений в портал Azure. 
 
-1. На странице **Обзор** выберите **получить профиль публикации**.
+1. На странице **Обзор** выберите **получить профиль публикации** .
 
 1. Сохраните скачанный файл. Вы будете использовать содержимое файла для создания секрета GitHub.
 
 # <a name="service-principal"></a>[Субъект-служба](#tab/userlevel)
 
-Вы можете создать [субъект-службу](../active-directory/develop/app-objects-and-service-principals.md#service-principal-object) с помощью команды [AZ AD SP Create/for-RBAC](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac&preserve-view=true) в [Azure CLI](/cli/azure/). Выполните эту команду с [Azure Cloud Shell](https://shell.azure.com/) в портал Azure или нажав кнопку **попробовать** .
+Вы можете создать [субъект-службу](../active-directory/develop/app-objects-and-service-principals.md#service-principal-object) с помощью команды [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac&preserve-view=true) в [Azure CLI](/cli/azure/). Чтобы выполнить эту команду, откройте [Azure Cloud Shell](https://shell.azure.com/) на портале Azure или нажмите кнопку **Попробовать** .
 
 ```azurecli-interactive
 az ad sp create-for-rbac --name "myApp" --role contributor \
@@ -107,7 +107,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor \
 
 # <a name="publish-profile"></a>[Опубликовать профиль](#tab/applevel)
 
-В [GitHub](https://github.com/)найдите репозиторий, выберите **параметры > секреты > добавить новый секрет**.
+В [GitHub](https://github.com/)найдите репозиторий, выберите **параметры > секреты > добавить новый секрет** .
 
 Чтобы использовать [учетные данные уровня приложения](#generate-deployment-credentials), вставьте содержимое скачанного файла профиля публикации в поле значение секрета. Назовите секрет `AZURE_WEBAPP_PUBLISH_PROFILE` .
 
@@ -121,11 +121,11 @@ az ad sp create-for-rbac --name "myApp" --role contributor \
 
 # <a name="service-principal"></a>[Субъект-служба](#tab/userlevel)
 
-В [GitHub](https://github.com/)найдите репозиторий, выберите **параметры > секреты > добавить новый секрет**.
+В [GitHub](https://github.com/)найдите репозиторий, выберите **параметры > секреты > добавить новый секрет** .
 
-Чтобы использовать [учетные данные на уровне пользователя](#generate-deployment-credentials), вставьте все выходные данные JSON из команды Azure CLI в поле значения секрета. Присвойте секрету имя, например `AZURE_CREDENTIALS` .
+Чтобы использовать [учетные данные на уровне пользователя](#generate-deployment-credentials), вставьте все выходные данные JSON из команды Azure CLI в поле значения секрета. Присвойте секрету имя `AZURE_CREDENTIALS`.
 
-Когда вы настроите файл рабочего процесса позже, используйте секрет для входа `creds` в действие Azure Login. Пример:
+Когда вы позже настроите файл рабочего процесса, этот секрет будет передан в действие входа в Azure как параметр `creds`. Пример:
 
 ```yaml
 - uses: azure/login@v1

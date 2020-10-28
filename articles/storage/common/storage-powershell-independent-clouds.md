@@ -10,12 +10,12 @@ ms.date: 12/04/2019
 ms.author: tamram
 ms.subservice: common
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: b610a5537d110a4046bd42ac86f5c938aeafe953
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e924a5f6c765b5b964fe3b1492393b063d9d23b4
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89072967"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92783578"
 ---
 # <a name="managing-storage-in-the-azure-independent-clouds-using-powershell"></a>Управление службой хранилища в независимых от Azure облаках с помощью Azure PowerShell
 
@@ -31,7 +31,7 @@ ms.locfileid: "89072967"
 
 Чтобы использовать службу хранилища Azure в одном из независимых облаков, нужно подключиться к нему вместо общедоступного облака Azure. Чтобы использовать одно из независимых облаков Azure вместо общедоступного, выполните следующие инструкции:
 
-* Укажите *среду*, к которой выполняется подключение.
+* Укажите *среду* , к которой выполняется подключение.
 * Определите и используйте доступные регионы.
 * Используйте правильный суффикс конечной точки, который отличается от суффикса общедоступного облака Azure.
 
@@ -51,7 +51,7 @@ Get-AzEnvironment
 Connect-AzAccount –Environment AzureUSGovernment
 ```
 
-Для доступа к облаку для Китая используйте среду **AzureChinaCloud**. Для доступа к облаку для Германии используйте среду**AzureGermanCloud**.
+Для доступа к облаку для Китая используйте среду **AzureChinaCloud** . Для доступа к облаку для Германии используйте среду **AzureGermanCloud** .
 
 На этом этапе для создания учетной записи хранения иди другого ресурса вам может потребоваться список расположений в выбранном облаке. Запросите этот список с помощью командлета [Get AzLocation](/powershell/module/az.resources/get-azlocation).
 
@@ -69,11 +69,11 @@ Get-AzLocation | select Location, DisplayName
 
 ## <a name="endpoint-suffix"></a>Суффикс конечной точки
 
-Суффикс конечной точки для каждой из этих сред отличается от суффикса конечной точки общедоступного облака Azure. Например, суффикс конечной точки большого двоичного объекта в общедоступном облаке Azure — **blob.core.windows.net**. В облаке Azure для государственных организаций суффикс конечной точки большого двоичного объекта — **blob.core.usgovcloudapi.net**.
+Суффикс конечной точки для каждой из этих сред отличается от суффикса конечной точки общедоступного облака Azure. Например, суффикс конечной точки большого двоичного объекта в общедоступном облаке Azure — **blob.core.windows.net** . В облаке Azure для государственных организаций суффикс конечной точки большого двоичного объекта — **blob.core.usgovcloudapi.net** .
 
 ### <a name="get-endpoint-using-get-azenvironment"></a>Получение конечной точки с помощью командлета Get-AzEnvironment
 
-Получите суффикс конечной точки с помощью командлета [Get AzEnvironment](/powershell/module/az.accounts/get-azenvironment). Конечная точка — это свойство среды *StorageEndpointSuffix*.
+Получите суффикс конечной точки с помощью командлета [Get AzEnvironment](/powershell/module/az.accounts/get-azenvironment). Конечная точка — это свойство среды *StorageEndpointSuffix* .
 
 В следующих фрагментах кода показано, как получить суффикс конечной точки. Все эти команды возвращают нечто вроде "core.cloudapp.net" или "core.cloudapi.de" и т. д. Добавьте суффикс в службу хранилища для доступа к этой службе. Например, конечная точка queue.core.cloudapi.de получит доступ к службе очередей в облаке для Германии.
 
@@ -164,10 +164,10 @@ table endpoint = http://myexistingstorageaccount.table.core.usgovcloudapi.net/
 Remove-AzResourceGroup -Name $resourceGroup
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Использование учетных данных для входа в разных сеансах PowerShell](/powershell/azure/context-persistence).
-* [Хранилище Azure для государственных организаций](../../azure-government/documentation-government-services-storage.md)
+* [Хранилище Azure для государственных организаций](../../azure-government/compare-azure-government-global-azure.md)
 * [Руководство для разработчиков Microsoft Azure Government](../../azure-government/documentation-government-developer-guide.md)
 * [Примечания для разработчиков для приложений Azure для Китая в Китае](https://msdn.microsoft.com/library/azure/dn578439.aspx)
 * [Документация по Azure для Германии](../../germany/germany-welcome.md).

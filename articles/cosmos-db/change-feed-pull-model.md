@@ -6,21 +6,21 @@ ms.author: tisande
 ms.service: cosmos-db
 ms.devlang: dotnet
 ms.topic: conceptual
-ms.date: 09/09/2020
+ms.date: 10/27/2020
 ms.reviewer: sngun
-ms.openlocfilehash: 59f1231e2edf3277898ff57d8e6f8da42ee057ca
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: aa0586ab2a0ff21e3187bba070dd4be7ef325288
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92276976"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92784683"
 ---
 # <a name="change-feed-pull-model-in-azure-cosmos-db"></a>Модель извлечения канала изменений в Azure Cosmos DB
 
 С помощью модели извлечения веб-канала изменений вы можете обрабатывать данные веб-канала изменений Azure Cosmos DB в удобном для себя темпе. Как и в случае с уже изученным [обработчиком веб-канала изменений](change-feed-processor.md), модель извлечения веб-канала изменений можно применить для параллельной обработки изменений в нескольких потребителях веб-канала изменений.
 
 > [!NOTE]
-> Модель извлечения веб-канала изменений в настоящее время предоставляется только в [пакете SDK .NET для Azure Cosmos DB и в режиме предварительной версии](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/3.13.0-preview). Для других версий пакета SDK пока недоступна даже предварительная версия.
+> Модель извлечения веб-канала изменений в настоящее время предоставляется только в [пакете SDK .NET для Azure Cosmos DB и в режиме предварительной версии](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/3.15.0-preview). Для других версий пакета SDK пока недоступна даже предварительная версия.
 
 ## <a name="comparing-with-change-feed-processor"></a>Сравнение с обработчиком канала изменений
 
@@ -44,9 +44,13 @@ ms.locfileid: "92276976"
 | Отслеживание текущей точки обработки в веб-канале изменений | Аренда (хранится в контейнере Azure Cosmos DB) | Маркер продолжения (сохраненный в памяти или вручную) |
 | Возможность воспроизведения прошлых изменений | Да, с моделью отправки | Да, с моделью извлечения|
 | Опрос предстоящих изменений | Автоматическая проверка наличия изменений по указанному пользователем `WithPollInterval` | Вручную |
+| Поведение при отсутствии новых изменений | Автоматическое ожидание `WithPollInterval` и повторная проверка | Необходимо перехватить исключение и вручную выполнить повторную проверку |
 | Обработка изменений от целого контейнера | Да, с автоматической параллелизацией по нескольким потокам или компьютерам для одного контейнера| Да, с параллелизацией вручную через FeedToken |
 | Обработка изменений по одному ключу секции | Не поддерживается | Да|
 | Уровень поддержки | Общедоступная версия | Preview (Предварительный просмотр) |
+
+> [!NOTE]
+> В отличие от считывания с помощью обработчика веб-канала изменений, необходимо явно отреагировать на случаи, когда нет новых изменений. 
 
 ## <a name="consuming-an-entire-containers-changes"></a>Обработка изменений для всего контейнера
 
@@ -75,14 +79,22 @@ FeedIterator iteratorForTheEntireContainer = container.GetChangeFeedStreamIterat
 
 while (iteratorForTheEntireContainer.HasMoreResults)
 {
-   FeedResponse<User> users = await iteratorForTheEntireContainer.ReadNextAsync();
+    try {
+        FeedResponse<User> users = await iteratorForTheEntireContainer.ReadNextAsync();
 
-   foreach (User user in users)
-    {
-        Console.WriteLine($"Detected change for user with id {user.id}");
+        foreach (User user in users)
+            {
+                Console.WriteLine($"Detected change for user with id {user.id}");
+            }
+    }
+    catch {
+        Console.WriteLine($"No new changes");
+        Thread.Sleep(5000);
     }
 }
 ```
+
+Так как канал изменений фактически является бесконечным списком элементов, охватывающих все будущие операции записи и обновления, значение `HasMoreResults` всегда равно true. При попытке чтения веб-канала изменений и отсутствии новых изменений вы получите исключение. В приведенном выше примере исключение обрабатывается в течение 5 секунд, после чего выполняется повторная проверка на наличие изменений.
 
 ## <a name="consuming-a-partition-keys-changes"></a>Обработка изменений по ключу секции
 
@@ -93,11 +105,17 @@ FeedIterator<User> iteratorForPartitionKey = container.GetChangeFeedIterator<Use
 
 while (iteratorForThePartitionKey.HasMoreResults)
 {
-   FeedResponse<User> users = await iteratorForThePartitionKey.ReadNextAsync();
+    try {
+        FeedResponse<User> users = await iteratorForThePartitionKey.ReadNextAsync();
 
-   foreach (User user in users)
-    {
-        Console.WriteLine($"Detected change for user with id {user.id}");
+        foreach (User user in users)
+            {
+                Console.WriteLine($"Detected change for user with id {user.id}");
+            }
+    }
+    catch {
+        Console.WriteLine($"No new changes");
+        Thread.Sleep(5000);
     }
 }
 ```
@@ -129,11 +147,17 @@ IReadOnlyList<FeedRange> ranges = await container.GetFeedRangesAsync();
 FeedIterator<User> iteratorA = container.GetChangeFeedIterator<User>(ChangeFeedStartFrom.Beginning(ranges[0]));
 while (iteratorA.HasMoreResults)
 {
-   FeedResponse<User> users = await iteratorA.ReadNextAsync();
+    try {
+        FeedResponse<User> users = await iteratorA.ReadNextAsync();
 
-   foreach (User user in users)
-    {
-        Console.WriteLine($"Detected change for user with id {user.id}");
+        foreach (User user in users)
+            {
+                Console.WriteLine($"Detected change for user with id {user.id}");
+            }
+    }
+    catch {
+        Console.WriteLine($"No new changes");
+        Thread.Sleep(5000);
     }
 }
 ```
@@ -144,11 +168,17 @@ while (iteratorA.HasMoreResults)
 FeedIterator<User> iteratorB = container.GetChangeFeedIterator<User>(ChangeFeedStartFrom.Beginning(ranges[1]));
 while (iteratorB.HasMoreResults)
 {
-   FeedResponse<User> users = await iteratorB.ReadNextAsync();
+    try {
+        FeedResponse<User> users = await iteratorA.ReadNextAsync();
 
-   foreach (User user in users)
-    {
-        Console.WriteLine($"Detected change for user with id {user.id}");
+        foreach (User user in users)
+            {
+                Console.WriteLine($"Detected change for user with id {user.id}");
+            }
+    }
+    catch {
+        Console.WriteLine($"No new changes");
+        Thread.Sleep(5000);
     }
 }
 ```
@@ -164,13 +194,19 @@ string continuation = null;
 
 while (iterator.HasMoreResults)
 {
-   FeedResponse<User> users = await iterator.ReadNextAsync();
-   continuation = users.ContinuationToken;
+   try { 
+        FeedResponse<User> users = await iterator.ReadNextAsync();
+        continuation = users.ContinuationToken;
 
-   foreach (User user in users)
-    {
-        Console.WriteLine($"Detected change for user with id {user.id}");
-    }
+        foreach (User user in users)
+            {
+                Console.WriteLine($"Detected change for user with id {user.id}");
+            }
+   }
+    catch {
+        Console.WriteLine($"No new changes");
+        Thread.Sleep(5000);
+    }   
 }
 
 // Some time later

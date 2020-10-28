@@ -8,12 +8,12 @@ ms.date: 07/24/2020
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
-ms.openlocfilehash: 13d2633576454ea6445deb4d2b0b11c2bbb1514e
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: de97640ab462ac8ea7342d235d0fad802c232179
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92478377"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92783374"
 ---
 # <a name="azcopy-sync"></a>azcopy sync
 
@@ -78,7 +78,7 @@ azcopy sync "/path/to/file.txt" "https://[account].blob.core.windows.net/[contai
 azcopy sync "/path/to/dir" "https://[account].blob.core.windows.net/[container]/[path/to/virtual/dir]"
 ```
 
-или
+or
 
 ```azcopy
 azcopy sync "/path/to/dir" "https://[account].blob.core.windows.net/[container]/[path/to/virtual/dir]" --put-md5
@@ -129,7 +129,7 @@ azcopy sync "https://[account].file.core.windows.net/[share]/[path/to/dir]?[SAS]
 > [!NOTE]
 > Если флаги включения и исключения используются вместе, будут рассматриваться только файлы, соответствующие шаблонам включения, но те, которые соответствуют шаблонам исключения, всегда будут игнорироваться.
 
-## <a name="options"></a>Параметры
+## <a name="options"></a>Варианты
 
 **--Block-Size-МБ** float используйте этот размер блока (указанный в MIB) при отправке в службу хранилища Azure или скачивании из службы хранилища Azure. Значение по умолчанию вычисляется автоматически на основе размера файла. Десятичные дроби разрешены (например: `0.25` ).
 
@@ -159,7 +159,7 @@ azcopy sync "https://[account].file.core.windows.net/[share]/[path/to/dir]?[SAS]
 
 **--recursive** `True` по умолчанию при синхронизации между каталогами рекурсивно выполняется Поиск подкаталогов.     (по умолчанию `True` ). 
 
-**--S2S-Preserve-уровень доступа**  Сохранение уровня доступа во время копирования службы в службу. Дополнительные сведения см. в статье [хранилище BLOB-объектов Azure: горячий, холодный и архивный уровни доступа](/azure/storage/blobs/storage-blob-storage-tiers) , чтобы гарантировать, что Целевая учетная запись хранения поддерживает настройку уровня доступа. В случаях, когда установка уровня доступа не поддерживается, используйте s2sPreserveAccessTier = false, чтобы обойти копирование уровня доступа. (по умолчанию `true` ). 
+**--S2S-Preserve-уровень доступа**  Сохранение уровня доступа во время копирования службы в службу. Дополнительные сведения см. в статье [хранилище BLOB-объектов Azure: горячий, холодный и архивный уровни доступа](../blobs/storage-blob-storage-tiers.md) , чтобы гарантировать, что Целевая учетная запись хранения поддерживает настройку уровня доступа. В случаях, когда установка уровня доступа не поддерживается, используйте s2sPreserveAccessTier = false, чтобы обойти копирование уровня доступа. (по умолчанию `true` ). 
 
 ## <a name="options-inherited-from-parent-commands"></a>Параметры, унаследованные от родительских команд
 
@@ -167,8 +167,8 @@ azcopy sync "https://[account].file.core.windows.net/[share]/[path/to/dir]?[SAS]
 |---|---|
 |--Cap-Мбит/с UInt32|Скорость передачи с прописными буквами в мегабит в секунду. Посекундная пропускная способность может немного отличаться от ограничения. Если этот параметр имеет значение 0 или пропущен, пропускная способность не ограничена.|
 |--строка выходного типа|Формат вывода команды. Среди вариантов: Text, JSON. Значение по умолчанию — "Text".|
-|--Trusted-Microsoft-суффикс строка   |Указывает дополнительные суффиксы домена, в которых могут быть отправлены Azure Active Directory токены входа.  Значение по умолчанию — "*. Core.Windows.NET;*". core.chinacloudapi.cn; *. Core.cloudapi.de;*. core.usgovcloudapi.net ". Все перечисленные здесь значения добавляются к значениям по умолчанию. В целях безопасности следует размещать только Microsoft Azureные домены. Несколько записей разделяются точкой с запятой.|
+|--Trusted-Microsoft-суффикс строка   |Указывает дополнительные суффиксы домена, в которых могут быть отправлены Azure Active Directory токены входа.  Значение по умолчанию — " *. Core.Windows.NET;* ". core.chinacloudapi.cn; *. Core.cloudapi.de;* . core.usgovcloudapi.net ". Все перечисленные здесь значения добавляются к значениям по умолчанию. В целях безопасности следует размещать только Microsoft Azureные домены. Несколько записей разделяются точкой с запятой.|
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также статью
 
 - [azcopy](storage-ref-azcopy.md)

@@ -10,12 +10,12 @@ ms.date: 09/24/2020
 ms.author: tamram
 ms.subservice: common
 ms.custom: devx-track-azurecli, devx-track-azurepowershell
-ms.openlocfilehash: f1cdd04be4b5774944f70e551221a08261aef22d
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: b7faec5023abe37802d8b08980f216934d70a6ac
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92488900"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92784360"
 ---
 # <a name="create-a-storage-account"></a>Создание учетной записи хранения
 
@@ -45,7 +45,7 @@ Get-InstalledModule -Name "Az"
 
 Сведения об установке или обновлении Azure PowerShell см. в разделе [install Azure PowerShell Module](/powershell/azure/install-Az-ps).
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Вы можете войти в Azure и выполнить команды Azure CLI одним из двух способов:
 
@@ -86,7 +86,7 @@ Azure CLI также можно установить и применять ло�
 Connect-AzAccount
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Чтобы запустить Azure Cloud Shell, войдите в [портал Azure](https://portal.azure.com).
 
@@ -154,7 +154,7 @@ New-AzStorageAccount -ResourceGroupName $resourceGroup `
 |Хранилище, геоизбыточное между зонами (GZRS)    |Standard_GZRS         |
 |Хранилище, геоизбыточное между зонами, с доступом на чтение (RA-GZRS)    |Standard_RAGZRS         |
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Сначала создайте новую группу ресурсов с помощью Azure CLI, используя команду [az group create](/cli/azure/group#az_group_create).
 
@@ -199,7 +199,7 @@ az storage account create \
 
 # <a name="template"></a>[Шаблон](#tab/template)
 
-Чтобы развернуть шаблон диспетчер ресурсов для создания учетной записи хранения, можно использовать либо Azure PowerShell, либо Azure CLI. Шаблон, используемый в этой статье, относится к [Azure Resource Manager шаблонам](https://azure.microsoft.com/resources/templates/101-storage-account-create/)быстрого запуска. Чтобы запустить скрипты, выберите команду **попробовать** , чтобы открыть Azure Cloud Shell. Чтобы вставить сценарий, щелкните правой кнопкой мыши оболочку и выберите **Вставить**.
+Чтобы развернуть шаблон диспетчер ресурсов для создания учетной записи хранения, можно использовать либо Azure PowerShell, либо Azure CLI. Шаблон, используемый в этой статье, относится к [Azure Resource Manager шаблонам](https://azure.microsoft.com/resources/templates/101-storage-account-create/)быстрого запуска. Чтобы запустить скрипты, выберите команду **попробовать** , чтобы открыть Azure Cloud Shell. Чтобы вставить сценарий, щелкните правой кнопкой мыши оболочку и выберите **Вставить** .
 
 ```azurepowershell-interactive
 $resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
@@ -223,7 +223,7 @@ az group deployment create --resource-group $resourceGroupName --template-file "
 
 Сведения о том, как изменить этот шаблон или создать новые, см. в следующих статьях:
 
-- [Azure Resource Manager документация](/azure/azure-resource-manager/).
+- [Azure Resource Manager документация](../../azure-resource-manager/index.yml).
 - [Microsoft.Storage resource types](/azure/templates/microsoft.storage/allversions) (Типы ресурсов Microsoft.Storage).
 - [Шаблоны быстрого запуска Azure](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Storage).
 
@@ -236,7 +236,7 @@ az group deployment create --resource-group $resourceGroupName --template-file "
 # <a name="portal"></a>[Портал](#tab/azure-portal)
 
 1. Перейдите к учетной записи хранения в [портал Azure](https://portal.azure.com).
-1. Щелкните **Удалить**.
+1. Щелкните **Удалить** .
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -246,7 +246,7 @@ az group deployment create --resource-group $resourceGroupName --template-file "
 Remove-AzStorageAccount -Name <storage-account> -ResourceGroupName <resource-group>
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Чтобы удалить учетную запись хранения, используйте команду [AZ Storage Account Delete](/cli/azure/storage/account#az-storage-account-delete) :
 
@@ -279,7 +279,7 @@ az storage account delete --name storageAccountName --resource-group resourceGro
 > [!WARNING]
 > Восстановить удаленную учетную запись хранения или ее содержимое невозможно. Создайте резервные копии нужных данных, прежде чем удалять учетную запись. Это касается также любых ресурсов в учетной записи. Восстановить удаленный BLOB-объект, таблицу, очередь или файл невозможно.
 >
-> Если вы попытаетесь удалить учетную запись хранения, связанную с виртуальной машиной Azure, может появиться сообщение об ошибке, уведомляющее, что учетная запись хранения используется. Сведения об устранении этой ошибки см. в разделе [Устранение ошибок при удалении учетных записей хранения](../common/storage-resource-manager-cannot-delete-storage-account-container-vhd.md).
+> Если вы попытаетесь удалить учетную запись хранения, связанную с виртуальной машиной Azure, может появиться сообщение об ошибке, уведомляющее, что учетная запись хранения используется. Сведения об устранении этой ошибки см. в разделе [Устранение ошибок при удалении учетных записей хранения](../../virtual-machines/troubleshooting/index.yml).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -7,12 +7,12 @@ ms.service: storage
 ms.topic: best-practice
 ms.date: 07/30/2020
 ms.author: cralvord
-ms.openlocfilehash: b403a960016be3795857ddd5645eb73e53e83bd6
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 283ec9999f9b4362035b6770383984efb0879d49
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92488611"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92783765"
 ---
 # <a name="azure-storage-explorer-security-guide"></a>Обозреватель службы хранилища Azure рекомендации по безопасности
 
@@ -44,13 +44,13 @@ ms.locfileid: "92488611"
 
 #### <a name="azure-role-based-access-control-azure-rbac"></a>Управление доступом Azure на основе ролей (Azure RBAC)
 
-[Управление доступом на основе ролей Azure (Azure RBAC)](/azure/role-based-access-control/overview) обеспечивает детальный контроль доступа к ресурсам Azure. Для управления ролями и разрешениями Azure можно использовать портал Azure.
+[Управление доступом на основе ролей Azure (Azure RBAC)](../../role-based-access-control/overview.md) обеспечивает детальный контроль доступа к ресурсам Azure. Для управления ролями и разрешениями Azure можно использовать портал Azure.
 
 Обозреватель службы хранилища поддерживает доступ Azure RBAC к учетным записям хранения, BLOB-объектам и очередям. Если вам нужен доступ к общим папкам или таблицам, вам потребуется назначить роли Azure, предоставляющие разрешение на получение списка ключей учетной записи хранения.
 
 #### <a name="access-control-lists-acls"></a>Списки управления доступом (ACL)
 
-[Списки управления доступом (ACL)](/azure/storage/blobs/data-lake-storage-access-control) позволяют управлять доступом на уровне файлов и папок в ADLS 2-го поколения контейнерах больших двоичных объектов. Управлять списками ACL можно с помощью Обозреватель службы хранилища.
+[Списки управления доступом (ACL)](../blobs/data-lake-storage-access-control.md) позволяют управлять доступом на уровне файлов и папок в ADLS 2-го поколения контейнерах больших двоичных объектов. Управлять списками ACL можно с помощью Обозреватель службы хранилища.
 
 ### <a name="shared-access-signatures-sas"></a>Подписанные URL-адреса (SAS)
 
@@ -102,4 +102,4 @@ ms.locfileid: "92488611"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Рекомендации по безопасности](/azure/storage/blobs/security-recommendations)
+- [Рекомендации по безопасности](../blobs/security-recommendations.md)

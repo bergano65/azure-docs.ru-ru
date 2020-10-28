@@ -7,12 +7,12 @@ ms.service: web-application-firewall
 ms.topic: article
 ms.date: 05/05/2020
 ms.author: victorh
-ms.openlocfilehash: 3bc71e10167b21b65616dd20f8edb9a1d902527e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1fbe930780ff026be748bc42104f821ee9e5c443
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "83798346"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92785108"
 ---
 # <a name="frequently-asked-questions-for-azure-web-application-firewall-on-application-gateway"></a>Часто задаваемые вопросы о брандмауэре веб-приложения Azure в Шлюзе приложений
 
@@ -58,6 +58,9 @@ SKU WAF поддерживает все функции, доступные в SK
 
 Да. Вы можете включить защиту от атак DDos в виртуальной сети, где развертывается шлюз приложений. Эта настройка гарантирует, что служба Защиты от атак DDoS также защищает виртуальный IP-адрес шлюза приложений.
 
+### <a name="does-waf-store-customer-data"></a>WAF ли хранение данных клиента?
+
+Нет, WAF не хранит данные клиента.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

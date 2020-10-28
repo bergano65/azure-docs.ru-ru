@@ -10,18 +10,18 @@ ms.date: 09/14/2020
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: queues
-ms.openlocfilehash: 27a742b5f683a7e542ca8d51a711d903b00bda61
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6937f3aa136ee4d5b906492c3f8cffc86acbc2e5
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91715471"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92785669"
 ---
 # <a name="run-powershell-commands-with-azure-ad-credentials-to-access-queue-data"></a>Выполнение команд PowerShell с учетными данными Azure AD для доступа к данным очереди
 
 Служба хранилища Azure предоставляет расширения для PowerShell, которые позволяют входить в систему и выполнять команды сценариев с учетными данными Azure Active Directory (Azure AD). При входе в PowerShell с учетными данными Azure AD возвращается маркер доступа OAuth 2,0. Этот маркер автоматически используется PowerShell для авторизации последующих операций с данными в хранилище очередей. Для поддерживаемых операций больше не требуется передавать ключ учетной записи или маркер SAS с помощью команды.
 
-Можно назначить разрешения на доступ к данным из очереди субъекту безопасности Azure AD через Управление доступом на основе ролей Azure (Azure RBAC). Дополнительные сведения о ролях Azure в службе хранилища Azure см. в статье [Управление правами доступа к данным службы хранилища Azure с помощью Azure RBAC](../common/storage-auth-aad-rbac.md).
+Можно назначить разрешения на доступ к данным из очереди субъекту безопасности Azure AD через Управление доступом на основе ролей Azure (Azure RBAC). Дополнительные сведения о ролях Azure в службе хранилища Azure см. в статье [Управление правами доступа к данным службы хранилища Azure с помощью Azure RBAC](../common/storage-auth-aad-rbac-portal.md).
 
 ## <a name="supported-operations"></a>Поддерживаемые операции
 
@@ -68,7 +68,7 @@ ms.locfileid: "91715471"
     $ctx = New-AzStorageContext -StorageAccountName "<storage-account>" -UseConnectedAccount
     ```
 
-1. Перед созданием очереди назначьте себе роль [участника данных очереди хранилища](../../role-based-access-control/built-in-roles.md#storage-queue-data-contributor) . Несмотря на то, что вы являетесь владельцем учетной записи, вам нужны явные разрешения на выполнение операций с данными с учетной записью хранения. Дополнительные сведения о назначении ролей Azure см. в статье [использование портал Azure для назначения роли Azure доступа к данным BLOB-объектов и очередей](../common/storage-auth-aad-rbac.md).
+1. Перед созданием очереди назначьте себе роль [участника данных очереди хранилища](../../role-based-access-control/built-in-roles.md#storage-queue-data-contributor) . Несмотря на то, что вы являетесь владельцем учетной записи, вам нужны явные разрешения на выполнение операций с данными с учетной записью хранения. Дополнительные сведения о назначении ролей Azure см. в статье [использование портал Azure для назначения роли Azure доступа к данным BLOB-объектов и очередей](../common/storage-auth-aad-rbac-portal.md).
 
     > [!IMPORTANT]
     > Назначение ролей Azure может занимать несколько минут.
@@ -80,7 +80,7 @@ ms.locfileid: "91715471"
     New-AzStorageQueue -Name $queueName -Context $ctx
     ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Назначение роли Azure для доступа к данным BLOB-объектов и очередей с помощью PowerShell](../common/storage-auth-aad-rbac-powershell.md)
 - [Авторизация доступа к данным BLOB-объектов и очередей с помощью управляемых удостоверений для ресурсов Azure](../common/storage-auth-aad-msi.md)

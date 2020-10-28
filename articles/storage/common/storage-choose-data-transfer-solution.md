@@ -8,12 +8,12 @@ ms.subservice: blobs
 ms.topic: conceptual
 ms.date: 09/25/2020
 ms.author: alkohli
-ms.openlocfilehash: 08f677c23cce6eb840a1caee15dcddf6c8311517
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 11ea9c759bdb4bb2b837028407ce6e83f6e25a8c
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92488696"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92784054"
 ---
 # <a name="choose-an-azure-solution-for-data-transfer"></a>Выбор решения Azure для передачи данных
 
@@ -23,9 +23,9 @@ ms.locfileid: "92488696"
 
 Передачу данных можно выполнять как в сети, так и вне ее. Выбор решения зависит от следующих характеристик:
 
-- **размер данных**, то есть объем переносимых данных;
-- **периодичность передачи** — например, однократно или периодически;
-- **сеть** — в частности пропускная способность, доступная для передачи данных в вашей среде.
+- **размер данных** , то есть объем переносимых данных;
+- **периодичность передачи**  — например, однократно или периодически;
+- **сеть**  — в частности пропускная способность, доступная для передачи данных в вашей среде.
 
 Различают следующие типы передачи данных:
 
@@ -68,17 +68,17 @@ ms.locfileid: "92488696"
 
 Вы также можете открыть учетную запись хранения Azure в портал Azure и выбрать функцию **пересылки данных** . Укажите пропускную способность сети в вашей среде, размер данных, которые требуется передавать, и частоту передачи данных. Вы увидите оптимальные решения для обмена данными, соответствующие предоставленным данным. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Introduction to Microsoft Azure Storage Explorer](https://azure.microsoft.com/resources/videos/introduction-to-microsoft-azure-storage-explorer/) (Общие сведения об Обозревателе службы хранилища Azure).
-- [Общие сведения об AzCopy](/azure/storage/common/storage-use-azcopy-v10).
+- [Общие сведения об AzCopy](./storage-use-azcopy-v10.md).
 - [Краткое руководство. Отправка, скачивание и составление списка больших двоичных объектов с помощью PowerShell](../blobs/storage-quickstart-blobs-powershell.md)
 - [Краткое руководство. Создание, скачивание и составление списка больших двоичных объектов с помощью Azure CLI](../blobs/storage-quickstart-blobs-cli.md)
 - Кроме того, вы узнаете о таких возможностях, как:
 
-    - [Azure Data Box, Диск Azure Data Box и Azure Data Box Heavy для передачи данных вне сети](/azure/databox/);
-    - [Шлюз Azure Data Box и Azure Stack границы для передачи в сети](/azure/databox-online/).
-- [Сведения о Фабрике данных Azure](/azure/data-factory/copy-activity-overview).
+    - [Azure Data Box, Диск Azure Data Box и Azure Data Box Heavy для передачи данных вне сети](../../databox/index.yml);
+    - [Шлюз Azure Data Box и Azure Stack границы для передачи в сети](../../databox-online/index.yml).
+- [Сведения о Фабрике данных Azure](../../data-factory/copy-activity-overview.md).
 - Использование интерфейсов REST API для передачи данных:
 
     - [в .NET](/dotnet/api/overview/azure/storage);
