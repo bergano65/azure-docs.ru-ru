@@ -13,13 +13,13 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 12/09/2019
 ms.author: madsd
-ms.custom: seodec18
-ms.openlocfilehash: fdb502685259a5e12bf0182c36aa6c73ec7c1dd5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: seodec18, devx-track-azurecli
+ms.openlocfilehash: 837a57ee6ce836fb781f5bf5d5362d7c56cba31e
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88958939"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92746194"
 ---
 # <a name="application-gateway-integration-with-service-endpoints"></a>Интеграция шлюза приложений с конечными точками службы
 Существует три варианта службы приложений, требующие немного иной настройки интеграции с шлюзом приложений Azure. Варианты включают в себя обычную службу приложений, которая также называется многоклиентской, внутренней Load Balancer (ILB) Среда службы приложений (ASE) и External ASE. В этой статье описано, как настроить службу приложений (с несколькими клиентами) и обсудить ILB и внешние ASE.

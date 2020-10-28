@@ -7,13 +7,13 @@ ms.subservice: security
 ms.topic: how-to
 ms.author: mbaldwin
 ms.date: 08/06/2019
-ms.custom: seodec18
-ms.openlocfilehash: cf7e596c8ed057a3244ed2b12de59d02c4ba2cae
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.custom: seodec18, devx-track-azurecli
+ms.openlocfilehash: baa6e10d33d1c0a1a9c367baa8888fdfb5a47c01
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91977941"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92746232"
 ---
 # <a name="azure-disk-encryption-scenarios-on-windows-vms"></a>Сценарии шифрования дисков Azure для виртуальных машин Windows
 
@@ -125,7 +125,7 @@ ms.locfileid: "91977941"
 
 1. На странице шаблона быстрого запуска Azure нажмите кнопку **Deploy to Azure** (Развернуть в Azure).
 
-2. Выберите подписку, группу ресурсов, расположение, параметры, условия использования и соглашение. Нажмите кнопку **Покупка**, чтобы включить шифрование на существующей или работающей виртуальной машине IaaS.
+2. Выберите подписку, группу ресурсов, расположение, параметры, условия использования и соглашение. Нажмите кнопку **Покупка** , чтобы включить шифрование на существующей или работающей виртуальной машине IaaS.
 
 В следующей таблице перечислены параметры шаблона Resource Manager для имеющихся или работающих виртуальных машин.
 
@@ -135,7 +135,7 @@ ms.locfileid: "91977941"
 | keyVaultName | Имя хранилища ключей, в которое будет передан ключ BitLocker. Его можно получить с помощью командлета `(Get-AzKeyVault -ResourceGroupName <MyKeyVaultResourceGroupName>). Vaultname` или команды Azure CLI `az keyvault list --resource-group "MyKeyVaultResourceGroup"`.|
 | keyVaultResourceGroup | Имя группы ресурсов, содержащей хранилище ключей.|
 |  keyEncryptionKeyURL | URL-адрес ключа шифрования ключа в формате https:// &lt; keyvault-Name &gt; . Vault.Azure.NET/key/ &lt; Key-Name &gt; . Если вы не хотите использовать KEK, оставьте это поле пустым. |
-| volumeType | Тип тома, для которого будет выполняться шифрование. Допустимые значения: _OS_, _Data_ и _All_. 
+| volumeType | Тип тома, для которого будет выполняться шифрование. Допустимые значения: _OS_ , _Data_ и _All_ . 
 | forceUpdateTag | Передает уникальное значение, такое как GUID, каждый раз, когда операция должна выполняться принудительно. |
 | resizeOSDisk | Если размер раздела ОС будет изменен и займет весь виртуальный жесткий диск ОС до разделения системного тома. |
 | location | Расположение для всех ресурсов. |

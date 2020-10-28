@@ -6,14 +6,14 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
-ms.custom: seodec18
+ms.custom: seodec18, devx-track-azurecli
 ms.date: 01/03/2020
-ms.openlocfilehash: d46f20f33e2627525f8f7f5b08bdaa2875626940
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 6fdd7b9e5fda92bd75e54ea5b4aad6a3ba6ecbea
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92541984"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92748748"
 ---
 # <a name="hdinsight-sdk-for-go-preview"></a>Пакет SDK для HDInsight для Go (Предварительная версия)
 
@@ -142,7 +142,7 @@ func main() {
 
 Кластер можно создать, вызвав `client.Create()`. 
 
-#### <a name="example"></a>Пример
+#### <a name="example"></a>Например, .
 
 В этом примере показано, как создать кластер [Apache Spark](https://spark.apache.org/) с двумя головными узлами и одним рабочим узлом.
 
@@ -261,7 +261,7 @@ client.Create(context.Background(), resourceGroupName, clusterName, parameters)
 client.Get(context.Background(), "<Resource Group Name>", "<Cluster Name>")
 ```
 
-#### <a name="example"></a>Пример
+#### <a name="example"></a>Например, .
 
 Вы можете использовать `get` для подтверждения успешного создания кластера.
 
@@ -298,7 +298,7 @@ client.ListByResourceGroup("<Resource Group Name>")
 > [!NOTE]  
 > `List()` и `ListByResourceGroup()` возвращают структуры `ClusterListResultPage`. Чтобы перейти на следующую страницу, можно вызвать `Next()`. Команду можно повторять, пока для экземпляра `ClusterListResultPage.NotDone()` не будет возвращено значение `false`, как показано ниже.
 
-#### <a name="example"></a>Пример
+#### <a name="example"></a>Например, .
 
 В следующем примере выводятся свойства всех кластеров в пределах текущей подписки:
 
@@ -334,7 +334,7 @@ client.Delete(context.Background(), "<Resource Group Name>", "<Cluster Name>")
 client.Update(context.Background(), "<Resource Group Name>", "<Cluster Name>", hdi.ClusterPatchParameters{<map[string]*string} of Tags>)
 ```
 
-#### <a name="example"></a>Пример
+#### <a name="example"></a>Например, .
 
 ```golang
 client.Update(context.Background(), "SDKTestRG", "SDKTest", hdi.ClusterPatchParameters{map[string]*string{"tag1Name" : to.StringPtr("tag1Value"), "tag2Name" : to.StringPtr("tag2Value")}})
@@ -433,7 +433,7 @@ scriptActionsClient.Delete(context.Background(), "<Resource Group Name>", "<Clus
 scriptActionsClient.ListByCluster(context.Background(), "<Resource Group Name>", "<Cluster Name>")
 ```
 
-#### <a name="example"></a>Пример
+#### <a name="example"></a>Например, .
 
 ```golang
 page, err := scriptActionsClient.ListByCluster(context.Background(), resourceGroupName, clusterName)
@@ -469,7 +469,7 @@ scriptExecutionHistoryClient.Authorizer, _ = credentials.Authorizer()
 scriptExecutionHistoryClient.ListByCluster(context.Background(), "<Resource Group Name>", "<Cluster Name>")
 ```
 
-#### <a name="example"></a>Пример
+#### <a name="example"></a>Например, .
 
 В этом примере выводятся сведения обо всех выполнявшихся скриптах.
 

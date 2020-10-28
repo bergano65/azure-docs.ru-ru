@@ -10,12 +10,13 @@ ms.topic: conceptual
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: 3164de9c3e44001d58d46eab9f823041b440960b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 612ba18ba71a22ad6c346b26008e688195c1d1e4
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90984182"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92746580"
 ---
 # <a name="create-a-storage-account-with-infrastructure-encryption-enabled-for-double-encryption-of-data"></a>Создание учетной записи хранения с включенным шифрованием инфраструктуры для двойного шифрования данных
 
@@ -95,7 +96,7 @@ az provider register --namespace 'Microsoft.Storage'
 
 1. В портал Azure перейдите на страницу **учетные записи хранения** .
 1. Нажмите кнопку **Добавить** , чтобы добавить новую учетную запись хранения общего назначения версии 2.
-1. На вкладке **Дополнительно** перейдите в раздел шифрование **инфраструктуры** и выберите **включено**.
+1. На вкладке **Дополнительно** перейдите в раздел шифрование **инфраструктуры** и выберите **включено** .
 1. Выберите **Проверка + создать** , чтобы завершить создание учетной записи хранения.
 
     :::image type="content" source="media/infrastructure-encryption-enable/create-account-infrastructure-encryption-portal.png" alt-text="Снимок экрана, показывающий, как включить шифрование инфраструктуры при создании учетной записи":::
@@ -178,7 +179,7 @@ az storage account create \
 Чтобы проверить, включено ли шифрование инфраструктуры для учетной записи хранения с портал Azure, выполните следующие действия.
 
 1. Войдите в свою учетную запись хранения на портале Azure.
-1. В разделе **Параметры**выберите **Шифрование**.
+1. В разделе **Параметры** выберите **Шифрование** .
 
     :::image type="content" source="media/infrastructure-encryption-enable/verify-infrastructure-encryption-portal.png" alt-text="Снимок экрана, показывающий, как включить шифрование инфраструктуры при создании учетной записи":::
 

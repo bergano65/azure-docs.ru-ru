@@ -6,14 +6,14 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
-ms.custom: seoapr2020
+ms.custom: seoapr2020, devx-track-azurecli
 ms.date: 09/02/2020
-ms.openlocfilehash: b3ff84f3f648ad08769a36a791f1679a0a57bc73
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 35c3901e9a48523a10c1a6aacbc52e6c165e278f
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92546251"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92748707"
 ---
 # <a name="customize-azure-hdinsight-clusters-by-using-script-actions"></a>Настройка кластеров Azure HDInsight с помощью действий сценариев
 
@@ -155,7 +155,7 @@ Status            : Succeeded
 
     В приведенной ниже таблице описываются элементы формы.
 
-    | Свойство. | Значение |
+    | Свойство | Значение |
     | --- | --- |
     | Выберите скрипт | Чтобы использовать собственный скрипт, выберите __Настраиваемый__ . В противном случае выберите один из предоставленных скриптов. |
     | Имя |Укажите имя для действия сценария. |
@@ -229,7 +229,7 @@ Status            : Succeeded
 
     В приведенной ниже таблице описываются элементы формы.
 
-    | Свойство. | Значение |
+    | Свойство | Значение |
     | --- | --- |
     | Выберите скрипт | Чтобы использовать собственный скрипт, выберите __Пользовательский__ . В противном случае выберите предоставленный скрипт. |
     | Имя |Укажите имя для действия сценария. |
@@ -321,7 +321,7 @@ NodeTypes       : {HeadNode, WorkerNode}
 
 ### <a name="azure-cli"></a>Azure CLI
 
-| Команда | Описание |
+| Get-Help | Описание |
 | --- | --- |
 | [`az hdinsight script-action delete`](/cli/azure/hdinsight/script-action#az-hdinsight-script-action-delete) |Удаляет указанное действие сохраненного скрипта в кластере. Эта команда не отменяет действия, выполненные сценарием, но удаляет только флаг PERSISTED.|
 |[`az hdinsight script-action execute`](/cli/azure/hdinsight/script-action#az-hdinsight-script-action-execute)|Для выполнения действий скриптов в указанном кластере HDInsight.|

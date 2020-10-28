@@ -5,13 +5,13 @@ author: georgewallace
 ms.topic: conceptual
 ms.date: 11/21/2018
 ms.author: gwallace
-ms.custom: mvc, devcenter
-ms.openlocfilehash: 01cee3dc3f6b67aba1e6f8455ed7b538a44fc6f7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: mvc, devcenter , devx-track-azurecli
+ms.openlocfilehash: 00addbe992bc113c67df08f73414107d51b3bce5
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91842793"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92748204"
 ---
 # <a name="mount-an-azure-files-based-volume-in-a-service-fabric-mesh-application"></a>Подключение тома службы файлов Azure в приложении "Сетка Service Fabric" 
 
@@ -75,9 +75,9 @@ az storage account keys list --account-name <storageAccountName> --query "[?keyN
 ```
 
 Эти значения также можно найти на [портале Azure](https://portal.azure.com):
-* `<storageAccountName>` (в разделе **Учетные записи хранения**) — это имя учетной записи хранения, используемой для создания файлового ресурса.
-* `<storageAccountKey>` Выберите учетную запись хранения в разделе **Учетные записи хранения**, а затем выберите **Ключи доступа** и используйте значение в разделе **key1**.
-* `<fileShareName>` Выберите учетную запись хранения в разделе **Учетные записи хранения**, а затем выберите **Файлы**. Нужно использовать имя созданного файлового ресурса.
+* `<storageAccountName>` (в разделе **Учетные записи хранения** ) — это имя учетной записи хранения, используемой для создания файлового ресурса.
+* `<storageAccountKey>` Выберите учетную запись хранения в разделе **Учетные записи хранения** , а затем выберите **Ключи доступа** и используйте значение в разделе **key1** .
+* `<fileShareName>` Выберите учетную запись хранения в разделе **Учетные записи хранения** , а затем выберите **Файлы** . Нужно использовать имя созданного файлового ресурса.
 
 ## <a name="declare-a-volume-resource-and-update-the-service-resource-json"></a>Объявление ресурса тома и обновление ресурса службы (JSON)
 
@@ -246,7 +246,7 @@ application:
             - name: VolumeTestNetwork
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь с примером приложения, использующего том службы файлов Azure, на сайте [GitHub](https://github.com/Azure-Samples/service-fabric-mesh/tree/master/src/counter).
 - Узнайте больше о модели ресурсов Service Fabric из раздела [Introduction to Service Fabric Resource Model](service-fabric-mesh-service-fabric-resources.md) (Общие сведения о модели ресурсов Service Fabric).

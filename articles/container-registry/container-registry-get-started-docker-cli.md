@@ -3,13 +3,13 @@ title: Образ DOCKER & для отправки по запросу
 description: Отправка образов Docker в частный реестр контейнеров в Azure и их получение с помощью интерфейса командной строки Docker
 ms.topic: article
 ms.date: 01/23/2019
-ms.custom: seodec18, H1Hack27Feb2017
-ms.openlocfilehash: 6751a04c3c1bfe826334161704c20c1ba2e5a6d2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: seodec18, H1Hack27Feb2017, devx-track-azurecli
+ms.openlocfilehash: 067b5749332c2c41b86d22e7de60083d5f61a442
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "74456355"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92746633"
 ---
 # <a name="push-your-first-image-to-a-private-docker-container-registry-using-the-docker-cli"></a>Отправка первого образа в частный реестр контейнеров Docker с помощью интерфейса командной строки Docker
 
@@ -20,11 +20,11 @@ ms.locfileid: "74456355"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * **Реестр контейнеров Azure** . Создайте реестр контейнеров в подписке Azure. Это можно сделать на [портале Azure](container-registry-get-started-portal.md) или с помощью [Azure CLI](container-registry-get-started-azure-cli.md).
-* **Docker CLI**. Также необходим локально установленный модуль Docker. Docker предоставляет пакеты, которые позволяют быстро настроить Docker в системе под управлением [macOS][docker-mac], [Windows][docker-windows] или [Linux][docker-linux].
+* **Docker CLI** . Также необходим локально установленный модуль Docker. Docker предоставляет пакеты, которые позволяют быстро настроить Docker в системе под управлением [macOS][docker-mac], [Windows][docker-windows] или [Linux][docker-linux].
 
 ## <a name="log-in-to-a-registry"></a>Вход в раздел реестра
 
-Существуют [несколько способов выполнить аутентификацию](container-registry-authentication.md) в частном реестре контейнеров. При работе в командной строке мы рекомендуем выполнить команду Azure CLI [az acr login](/cli/azure/acr?view=azure-cli-latest#az-acr-login). Например, чтобы войти в реестр с именем *myregistry*, выполните следующую команду:
+Существуют [несколько способов выполнить аутентификацию](container-registry-authentication.md) в частном реестре контейнеров. При работе в командной строке мы рекомендуем выполнить команду Azure CLI [az acr login](/cli/azure/acr?view=azure-cli-latest#az-acr-login). Например, чтобы войти в реестр с именем *myregistry* , выполните следующую команду:
 
 ```azurecli
 az acr login --name myregistry
@@ -39,7 +39,7 @@ docker login myregistry.azurecr.io
 По завершению обе команды возвращают `Login Succeeded`.
 
 > [!TIP]
-> Всегда указывайте полное имя реестра (все знаки в нижнем реестре), когда используете `docker login` и когда отмечаете изображения тегами для отправки в свой реестр. В примерах этой статьи полное доменное имя выглядит так: *myregistry.azurecr.io*.
+> Всегда указывайте полное имя реестра (все знаки в нижнем реестре), когда используете `docker login` и когда отмечаете изображения тегами для отправки в свой реестр. В примерах этой статьи полное доменное имя выглядит так: *myregistry.azurecr.io* .
 
 ## <a name="pull-the-official-nginx-image"></a>Извлечение официального образа Nginx
 

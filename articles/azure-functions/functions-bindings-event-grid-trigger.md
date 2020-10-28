@@ -5,13 +5,13 @@ author: craigshoemaker
 ms.topic: reference
 ms.date: 02/14/2020
 ms.author: cshoe
-ms.custom: devx-track-csharp, fasttrack-edit, devx-track-python
-ms.openlocfilehash: 96daa93c28617bd34f263b11afcd244e3b7bacf0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: devx-track-csharp, fasttrack-edit, devx-track-python, devx-track-azurecli
+ms.openlocfilehash: 3bbe704e6223bb04a17af7109c61875ca3b21bf9
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88214131"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92748184"
 ---
 # <a name="azure-event-grid-trigger-for-azure-functions"></a>Триггер службы "Сетка событий Azure" для Функций Azure
 
@@ -80,7 +80,7 @@ namespace Company.Function
 
 В следующем примере показаны привязка триггера в файле *function.json* и [функция сценария C#](functions-reference-csharp.md), которая использует эту привязку.
 
-Данные привязки в файле *function.json*:
+Данные привязки в файле *function.json* :
 
 ```json
 {
@@ -132,7 +132,7 @@ public static void Run(JObject eventGridEvent, TraceWriter log)
 
 В следующем примере показана привязка триггера в файле *function.json* и [функция JavaScript](functions-reference-node.md), которая использует привязку.
 
-Данные привязки в файле *function.json*:
+Данные привязки в файле *function.json* :
 
 ```json
 {
@@ -163,7 +163,7 @@ module.exports = function (context, eventGridEvent) {
 
 В следующем примере показаны привязка триггера в файле *function.json* и [функция Python](functions-reference-python.md), использующая эту привязку.
 
-Данные привязки в файле *function.json*:
+Данные привязки в файле *function.json* :
 
 ```json
 {
@@ -305,7 +305,7 @@ public static void EventGridTest([EventGridTrigger] JObject eventGridEvent, ILog
 
 ## <a name="configuration"></a>Конфигурация
 
-В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json*. В атрибуте `EventGridTrigger` не задаются параметры или свойства конструкции.
+В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* . В атрибуте `EventGridTrigger` не задаются параметры или свойства конструкции.
 
 |свойство function.json |Описание|
 |---------|---------|
@@ -345,11 +345,11 @@ public static void EventGridTest([EventGridTrigger] JObject eventGridEvent, ILog
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-Экземпляр Сетки событий доступен через параметр, который настраивается в свойстве `name` файла *function.json*.
+Экземпляр Сетки событий доступен через параметр, который настраивается в свойстве `name` файла *function.json* .
 
 # <a name="python"></a>[Python](#tab/python)
 
-Экземпляр Сетки событий доступен через параметр, который настраивается в свойстве `name` с типом `func.EventGridEvent` в файле *function.json*.
+Экземпляр Сетки событий доступен через параметр, который настраивается в свойстве `name` с типом `func.EventGridEvent` в файле *function.json* .
 
 # <a name="java"></a>[Java](#tab/java)
 
@@ -401,11 +401,11 @@ public static void EventGridTest([EventGridTrigger] JObject eventGridEvent, ILog
 
 ### <a name="azure-portal"></a>Портал Azure
 
-Для функций, разрабатываемых на портале Azure с использованием триггера Сетки событий, выберите **Интеграция**, **Триггер Сетки событий** и **Создание подписки для Сетки событий**.
+Для функций, разрабатываемых на портале Azure с использованием триггера Сетки событий, выберите **Интеграция** , **Триггер Сетки событий** и **Создание подписки для Сетки событий** .
 
 :::image type="content" source="media/functions-bindings-event-grid/portal-sub-create.png" alt-text="Подключите новую подписку на событие к триггеру с помощью портала.":::
 
-Когда вы щелкните эту ссылку, на портале откроется страница **Создать подписку на события**, где автоматически определена конечная точка текущего триггера.
+Когда вы щелкните эту ссылку, на портале откроется страница **Создать подписку на события** , где автоматически определена конечная точка текущего триггера.
 
 :::image type="content" source="media/functions-bindings-event-grid/endpoint-url.png" alt-text="Подключите новую подписку на событие к триггеру с помощью портала." :::
 
@@ -514,7 +514,7 @@ http://{functionappname}.azurewebsites.net/admin/host/systemkeys/eventgridextens
 
 Чтобы упростить запись сообщений о событиях, разверните [готовое веб-приложение](https://github.com/Azure-Samples/azure-event-grid-viewer), которое отображает сообщения о событиях. Развернутое решение содержит план службы приложений, веб-приложение службы приложений и исходный код из GitHub.
 
-Выберите **Развернуть в Azure**, чтобы развернуть решение в своей подписке. На портале Azure укажите значения остальных параметров.
+Выберите **Развернуть в Azure** , чтобы развернуть решение в своей подписке. На портале Azure укажите значения остальных параметров.
 
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure-Samples%2Fazure-event-grid-viewer%2Fmaster%2Fazuredeploy.json" target="_blank"><img src="https://azuredeploy.net/deploybutton.png" alt="Button to Deploy to Azure." /></a>
 

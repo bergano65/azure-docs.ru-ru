@@ -5,15 +5,15 @@ author: konichi3
 ms.author: koichih
 ms.date: 08/21/2020
 ms.topic: how-to
-ms.custom: mvc
+ms.custom: mvc, devx-track-azurecli
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 5cdee274ebc815b23b8ce59e8b9eca90d00e3818
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: b20dab7719e4c55c5868032db3178bb7baaddda0
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92042972"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92748485"
 ---
 # <a name="how-to-certify-iot-plug-and-play-devices"></a>Сертификация устройств Plug and Play IoT
 
@@ -182,7 +182,7 @@ az iot product test task create --type QueueTestRun --test-id d45d53d9-656d-4be7
 
 Чтобы сертифицировать устройство, необходимо сначала создать новый проект.
 
-Перейдите на [портал сертификации](https://aka.ms/acdp). На странице **проекты** выберите *+ создать новый проект*. Затем введите имя проекта, имя устройства и выберите класс устройства.
+Перейдите на [портал сертификации](https://aka.ms/acdp). На странице **проекты** выберите *+ создать новый проект* . Затем введите имя проекта, имя устройства и выберите класс устройства.
 
 Сведения о продукте, которые вы предоставляете во время процесса сертификации, делятся на четыре категории:
 

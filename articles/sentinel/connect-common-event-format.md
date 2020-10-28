@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/01/2020
 ms.author: yelevin
-ms.openlocfilehash: d63893ab219854a270652da38c474e3ccad83abc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: dae8ce6cbad1ae08898ae439c1f621bef185b5df
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91630514"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92747895"
 ---
 # <a name="connect-your-external-solution-using-common-event-format"></a>Подключение внешнего решения с помощью общего формата событий
 
@@ -44,7 +44,7 @@ ms.locfileid: "91630514"
 
 ## <a name="security-considerations"></a>Вопросы безопасности
 
-Обязательно настройте безопасность компьютера в соответствии с политикой безопасности вашей организации. Например, можно настроить сеть для согласования с политикой безопасности корпоративной сети и изменить порты и протоколы в управляющей программе в соответствии с вашими требованиями. Для улучшения конфигурации безопасности компьютера можно использовать следующие инструкции:  [безопасная виртуальная машина в Azure](../virtual-machines/security-policy.md), рекомендации [по сетевой безопасности](../security/fundamentals/network-best-practices.md).
+Обязательно настройте безопасность компьютера в соответствии с политикой безопасности вашей организации. Например, можно настроить сеть для согласования с политикой безопасности корпоративной сети и изменить порты и протоколы в управляющей программе в соответствии с вашими требованиями. Для улучшения конфигурации безопасности компьютера можно использовать следующие инструкции:  [безопасная виртуальная машина в Azure](../virtual-machines/security-policy.md), рекомендации [по сетевой безопасности](../security/fundamentals/network-best-practices.md).
 
 Чтобы использовать TLS-связь между источником syslog и сервером пересылки syslog, необходимо настроить управляющую программу syslog (rsyslog или syslog-ng) для взаимодействия в TLS: [шифрование трафика syslog с помощью TLS — rsyslog](https://www.rsyslog.com/doc/v8-stable/tutorials/tls_cert_summary.html), [Шифрование сообщений журнала с помощью TLS – syslog-ng](https://support.oneidentity.com/technical-documents/syslog-ng-open-source-edition/3.22/administration-guide/60#TOPIC-1209298).
  
@@ -55,14 +55,14 @@ ms.locfileid: "91630514"
 - 64-разрядная
   - CentOS 7 и подверсии и выше (не 6)
   - Amazon Linux 2017.09
-  - Oracle Linux 6 и 7
+  - Oracle Linux 7
   - Red Hat Enterprise Linux (RHEL) Server 7 и подверсии и выше (не 6)
   - Debian GNU/Linux 8 и 9
   - Ubuntu Linux 14.04 LTS, 16.04 LTS и 18.04 LTS
   - SUSE Linux Enterprise Server 12
 - 32-битная
    - CentOS 7
-   - Oracle Linux 6
+   - Oracle Linux 7
    - Red Hat Enterprise Linux Server 7
    - Debian GNU/Linux 8 и 9
    - Ubuntu Linux 14.04 LTS и 16.04 LTS
@@ -79,9 +79,9 @@ ms.locfileid: "91630514"
 - Разрешения
     - Необходимо иметь повышенные разрешения (sudo) на компьютере. 
 - Требования к программному обеспечению
-    - Убедитесь, что на вашем компьютере установлен Python (2,7 или более поздней версии)
+    - Убедитесь, что на вашем компьютере установлен Python 2,7.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом документе вы узнали, как подключить устройства CEF к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).

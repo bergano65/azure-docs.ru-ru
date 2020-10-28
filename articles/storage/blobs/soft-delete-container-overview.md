@@ -9,13 +9,13 @@ ms.topic: conceptual
 ms.date: 08/25/2020
 ms.author: tamram
 ms.subservice: blobs
-ms.custom: references_regions
-ms.openlocfilehash: 3c6aa408ab3e89c367fca0701773b35fb9b41bb8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: references_regions, devx-track-azurecli
+ms.openlocfilehash: 1ebfa137357e60a1f462ef90c6430cbf0cb5b968
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91460804"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92746596"
 ---
 # <a name="soft-delete-for-containers-preview"></a>Обратимое удаление для контейнеров (Предварительная версия)
 
@@ -57,7 +57,7 @@ ms.locfileid: "91460804"
 - Блокировать учетные записи хранения BLOB-объектов
 - Учетные записи хранения BLOB-объектов
 
-Если ваша учетная запись хранения является учетной записью общего назначения v1, используйте портал Azure для обновления до учетной записи общего назначения версии 2. Дополнительные сведения об учетных записях хранения см. в статье [Обзор учетной записи хранения Azure](../common/storage-account-overview.md).
+Если ваша учетная запись хранения является учетной записью общего назначения v1, используйте портал Azure для обновления до учетной записи общего назначения версии 2. Дополнительные сведения об учетных записях хранения см. в статье [Общие сведения об учетной записи хранения](../common/storage-account-overview.md).
 
 Также поддерживаются учетные записи хранения с иерархическим пространством имен, разрешенным для использования с Azure Data Lake Storage 2-го поколения.
 
@@ -115,7 +115,7 @@ az feature show --namespace Microsoft.Storage --name ContainerSoftDelete
 
 Для включения обратимого удаления контейнера дополнительная плата не взимается. Счета за данные в обратимо удаленных контейнерах выставляются по той же ставке, что и активные данные.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Настройка обратимого удаления контейнера](soft-delete-container-enable.md)
 - [Обратимое удаление для больших двоичных объектов](soft-delete-blob-overview.md)

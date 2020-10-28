@@ -1,19 +1,19 @@
 ---
-title: включить файл
-description: включить файл
+title: Включить файл
+description: Включить файл
 services: virtual-machines
 author: cynthn
 ms.service: virtual-machines
 ms.topic: include
 ms.date: 03/24/2020
 ms.author: cynthn
-ms.custom: include file
-ms.openlocfilehash: b49dc6ef2bfee311bc3ca524a5ccb0a4e4b5ca9c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: include file, devx-track-azurecli
+ms.openlocfilehash: 58f38f5fe5544f01636d5fd2b2393025e5cb01ab
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84793675"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92755531"
 ---
 ## <a name="create-an-image-gallery"></a>Создание коллекции образов 
 
@@ -21,7 +21,7 @@ ms.locfileid: "84793675"
 
 Допустимыми знаками для имени коллекции являются прописные или строчные буквы, цифры и точки. Имя коллекции не должно содержать дефисы.   Имена коллекций должны быть уникальным в пределах вашей подписки. 
 
-Создайте коллекцию образов, используя команду [az sig create](/cli/azure/sig#az-sig-create). В следующем примере показано, как создать группу ресурсов с именем *myGalleryRG* в регионе *восточная часть США* и коллекцию с именем *myGallery*.
+Создайте коллекцию образов, используя команду [az sig create](/cli/azure/sig#az-sig-create). В следующем примере показано, как создать группу ресурсов с именем *myGalleryRG* в регионе *восточная часть США* и коллекцию с именем *myGallery* .
 
 ```azurecli-interactive
 az group create --name myGalleryRG --location eastus

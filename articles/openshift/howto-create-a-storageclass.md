@@ -1,5 +1,5 @@
 ---
-title: Создание файлов Azure Сторажекласс в Azure Red Hat OpenShift 4
+title: Создание StorageClass службы "Файлы Azure" в Azure Red Hat OpenShift 4
 description: Узнайте, как создать файлы Azure Сторажекласс в Azure Red Hat OpenShift
 ms.service: container-service
 ms.topic: article
@@ -8,14 +8,14 @@ author: grantomation
 ms.author: b-grodel
 keywords: АТО, openshift, AZ АТО, Red Hat, CLI, файл Azure
 ms.custom: mvc
-ms.openlocfilehash: c0d809324baa095b2ce8262170289e0dfec8bfd1
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: a7415a481b133c2f528ba4636c0297ce5cfa23a7
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92428954"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92747884"
 ---
-# <a name="create-an-azure-files-storageclass-on-azure-red-hat-openshift-4"></a>Создание файлов Azure Сторажекласс в Azure Red Hat OpenShift 4
+# <a name="create-an-azure-files-storageclass-on-azure-red-hat-openshift-4"></a>Создание StorageClass службы "Файлы Azure" в Azure Red Hat OpenShift 4
 
 В этой статье вы создадите Сторажекласс для Azure Red Hat OpenShift 4, который динамически подготавливает хранилище Реадвритемани (RWX) с помощью службы файлов Azure. Вы узнаете, как выполнять такие задачи.
 
@@ -32,7 +32,7 @@ ms.locfileid: "92428954"
 
 ### <a name="set-up-azure-storage-account"></a>Настройка учетной записи хранения Azure
 
-На этом шаге будет создана группа ресурсов за пределами группы ресурсов кластера Azure Red Hat OpenShift. Эта группа ресурсов будет содержать общие папки службы файлов Azure, созданные динамическим средством подготовки Azure Red Hat OpenShift.
+На этом шаге будет создана группа ресурсов за пределами группы ресурсов кластера Azure Red Hat OpenShift (АТО). Эта группа ресурсов будет содержать общие папки службы файлов Azure, созданные динамическим средством подготовки Azure Red Hat OpenShift.
 
 ```bash
 AZURE_FILES_RESOURCE_GROUP=aro_azure_files

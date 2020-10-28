@@ -4,13 +4,13 @@ description: Узнайте, как настроить параметры при
 ms.assetid: 81eb04f8-9a27-45bb-bf24-9ab6c30d205c
 ms.topic: conceptual
 ms.date: 04/13/2020
-ms.custom: cc996988-fb4f-47
-ms.openlocfilehash: 057c030b060343d5bc6f85c38d61feee0b01dfde
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: cc996988-fb4f-47, devx-track-azurecli
+ms.openlocfilehash: f597e58c70d6ac9daff753f5c0a54199c2383c42
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "83122309"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92746163"
 ---
 # <a name="manage-your-function-app"></a>Управление приложением функции 
 
@@ -29,11 +29,11 @@ ms.locfileid: "83122309"
 
 1. Для начала перейдите на [портал Azure] и войдите, используя свою учетную запись Azure. В строке поиска в верхней части портала введите имя приложения функции и выберите его из списка. 
 
-2. В разделе **Параметры** в левой области выберите **Конфигурация**.
+2. В разделе **Параметры** в левой области выберите **Конфигурация** .
 
     :::image type="content" source="./media/functions-how-to-use-azure-function-app-settings/azure-function-app-main.png" alt-text="Обзор приложения-функции на портале Azure":::
 
-Вы можете выбрать все необходимое для управления приложением-функцией на странице Обзор, в частности **[Параметры приложения](#settings)** и **[функции платформы](#platform-features)**.
+Вы можете выбрать все необходимое для управления приложением-функцией на странице Обзор, в частности **[Параметры приложения](#settings)** и **[функции платформы](#platform-features)** .
 
 ## <a name="application-settings"></a><a name="settings"></a>Параметры приложения
 
@@ -107,7 +107,7 @@ az functionapp config appsettings set --name <FUNCTION_APP_NAME> \
 
 ![Настройка Kudu](./media/functions-how-to-use-azure-function-app-settings/configure-function-app-kudu.png)
 
-Дополнительные средства для службы приложений (которые также называются Kudu) предоставляют доступ к расширенным административным функциям для приложения-функции. С помощью Kudu можно управлять системными сведениями, параметрами приложения, переменными среды, заголовками HTTP и переменными сервера. Кроме того, можно также запустить **Kudu**, перейдя на конечную точку SCM для приложения-функции, например `https://<myfunctionapp>.scm.azurewebsites.net/`. 
+Дополнительные средства для службы приложений (которые также называются Kudu) предоставляют доступ к расширенным административным функциям для приложения-функции. С помощью Kudu можно управлять системными сведениями, параметрами приложения, переменными среды, заголовками HTTP и переменными сервера. Кроме того, можно также запустить **Kudu** , перейдя на конечную точку SCM для приложения-функции, например `https://<myfunctionapp>.scm.azurewebsites.net/`. 
 
 
 ### <a name="deployment-center"></a><a name="deployment"></a>Центр развертывания

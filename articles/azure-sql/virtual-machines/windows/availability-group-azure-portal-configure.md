@@ -12,13 +12,13 @@ ms.workload: iaas-sql-server
 ms.date: 08/20/2020
 ms.author: mathoma
 ms.reviewer: jroth
-ms.custom: seo-lt-2019
-ms.openlocfilehash: 8634efa1e8e5ab8a3b962b711ec8dfcdac4e6ced
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.custom: seo-lt-2019, devx-track-azurecli
+ms.openlocfilehash: 9e7a9beec101354672bffd558bdb0714eaf97ece
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92164573"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92746756"
 ---
 # <a name="use-azure-portal-to-configure-an-availability-group-preview-for-sql-server-on-azure-vm"></a>Использование портал Azure для настройки группы доступности (Предварительная версия) для SQL Server на виртуальной машине Azure 
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -61,7 +61,7 @@ ms.locfileid: "92164573"
 
 1. Войдите на [портал Azure](https://portal.azure.com). 
 1. Перейдите к ресурсу [виртуальных машин SQL](https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.SqlVirtualMachine%2FSqlVirtualMachines) . 
-1. Выберите **высокий уровень доступности** в разделе **Параметры**. 
+1. Выберите **высокий уровень доступности** в разделе **Параметры** . 
 1. Выберите **+ создать отказоустойчивый кластер Windows Server** , чтобы открыть страницу **Настройка отказоустойчивого кластера Windows** .  
 
    :::image type="content" source="media/availability-group-az-portal-configure/create-new-cluster.png" alt-text="Создайте новый кластер, выбрав + новый кластер на портале.":::
@@ -85,7 +85,7 @@ ms.locfileid: "92164573"
 
 1. Войдите на [портал Azure](https://portal.azure.com). 
 1. Перейдите к ресурсу [виртуальных машин SQL](https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.SqlVirtualMachine%2FSqlVirtualMachines) . 
-1. Выберите **высокий уровень доступности** в разделе **Параметры**. 
+1. Выберите **высокий уровень доступности** в разделе **Параметры** . 
 1. Выберите подключить **существующий отказоустойчивый кластер Windows Server** , чтобы открыть страницу **отказоустойчивого кластера Windows Server** . 
 
    :::image type="content" source="media/availability-group-az-portal-configure/onboard-existing-cluster.png" alt-text="Создайте новый кластер, выбрав + новый кластер на портале.":::
@@ -102,7 +102,7 @@ ms.locfileid: "92164573"
 
 1. Войдите на [портал Azure](https://portal.azure.com). 
 1. Перейдите к ресурсу [виртуальных машин SQL](https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.SqlVirtualMachine%2FSqlVirtualMachines) . 
-1. Выберите **высокий уровень доступности** в разделе **Параметры**. 
+1. Выберите **высокий уровень доступности** в разделе **Параметры** . 
 1. Выберите **+ New Always on группа доступности** , чтобы открыть страницу **Создание группы доступности** .
 
    :::image type="content" source="media/availability-group-az-portal-configure/create-new-availability-group.png" alt-text="Создайте новый кластер, выбрав + новый кластер на портале.":::
@@ -136,8 +136,8 @@ ms.locfileid: "92164573"
 1. Подключитесь к одной из SQL Server виртуальных машин с помощью предпочтительного метода, например подключение к удаленному рабочему столу (RDP). 
 1. Откройте SQL Server Management Studio (SSMS).
 1. Подключитесь к экземпляру SQL Server. 
-1. Разверните **Always on высокий уровень доступности** в **обозревателе объектов**.
-1. Разверните узел **группы доступности**, щелкните правой кнопкой мыши группу доступности и выберите **Добавить базу данных...**.
+1. Разверните **Always on высокий уровень доступности** в **обозревателе объектов** .
+1. Разверните узел **группы доступности** , щелкните правой кнопкой мыши группу доступности и выберите **Добавить базу данных...** .
 
    :::image type="content" source="media/availability-group-az-portal-configure/add-database.png" alt-text="Создайте новый кластер, выбрав + новый кластер на портале.":::
 
@@ -155,14 +155,14 @@ ms.locfileid: "92164573"
 
 1. Войдите на [портал Azure](https://portal.azure.com). 
 1. Перейдите к ресурсу [виртуальных машин SQL](https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.SqlVirtualMachine%2FSqlVirtualMachines) . 
-1. Выберите **высокий уровень доступности** в разделе **Параметры**. 
+1. Выберите **высокий уровень доступности** в разделе **Параметры** . 
 1. Выберите **настроить отказоустойчивый кластер Windows Server** , чтобы открыть страницу **Настройка отказоустойчивого кластера Windows Server** . 
 
    :::image type="content" source="media/availability-group-az-portal-configure/configure-existing-cluster.png" alt-text="Создайте новый кластер, выбрав + новый кластер на портале.":::
 
 1. Разверните узел **учетные данные отказоустойчивого кластера Windows Server** и введите учетные записи, используемые для службы SQL Server, оператора кластера и начальной загрузки кластера. 
 1. Выберите SQL Server виртуальные машины, которые необходимо добавить в кластер. 
-1. Нажмите кнопку **Применить**. 
+1. Нажмите кнопку **Применить** . 
 
 Состояние развертывания можно проверить в **журнале действий** , доступном по значку колокольчика на верхней панели навигации. 
 
@@ -170,7 +170,7 @@ ms.locfileid: "92164573"
 ## <a name="modify-availability-group"></a>Изменение группы доступности 
 
 
-Можно **добавить дополнительные реплики** в группу доступности, **настроить прослушиватель**или **удалить прослушиватель** на странице **высокой доступности** в портал Azure, нажав кнопку с многоточием (...) рядом с группой доступности: 
+Можно **добавить дополнительные реплики** в группу доступности, **настроить прослушиватель** или **удалить прослушиватель** на странице **высокой доступности** в портал Azure, нажав кнопку с многоточием (...) рядом с группой доступности: 
 
 :::image type="content" source="media/availability-group-az-portal-configure/configure-listener.png" alt-text="Создайте новый кластер, выбрав + новый кластер на портале.":::
 
@@ -231,7 +231,7 @@ Remove-AzSqlVMGroup -ResourceGroupName "<resource group name>" -Name "<cluster n
 
 ---
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Диагностика
 
 При возникновении проблем можно проверить историю развертывания и просмотреть распространенные ошибки, а также их разрешения. 
 
@@ -243,7 +243,7 @@ Remove-AzSqlVMGroup -ResourceGroupName "<resource group name>" -Name "<cluster n
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 1. Перейдите к группе ресурсов.
-1. Выберите **Развертывания** в разделе **Параметры**.
+1. Выберите **Развертывания** в разделе **Параметры** .
 1. Выберите нужное развертывание, чтобы узнать больше о развертывании. 
 
 

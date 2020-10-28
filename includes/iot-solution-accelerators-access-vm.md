@@ -1,25 +1,25 @@
 ---
-title: включить файл
-description: включить файл
+title: Включить файл
+description: Включить файл
 services: iot-accelerators
 author: dominicbetts
 ms.service: iot-accelerators
 ms.topic: include
 ms.date: 08/16/2018
 ms.author: dobett
-ms.custom: include file
-ms.openlocfilehash: a58e408feadd10e6dbc9d6878b82a4d045918ea6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: include file, devx-track-azurecli
+ms.openlocfilehash: 817c41a969f03ad04d372c516a16ef6b770f3e18
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "68781489"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92755778"
 ---
 ## <a name="access-the-virtual-machine"></a>Доступ к виртуальной машине
 
 В следующих шагах используется Azure CLI в Azure Cloud Shell. При желании можно [установить Azure CLI](/cli/azure/install-azure-cli) на компьютере разработки и выполнить команды локально.
 
-Ниже показано, как настроить виртуальную машину Azure, чтобы разрешить доступ **SSH**. Представленные шаги предполагают, что имя, которое вы выбрали для ускорителя решения, — **contoso-simulation**. Замените это значение на имя вашего развертывания.
+Ниже показано, как настроить виртуальную машину Azure, чтобы разрешить доступ **SSH** . Представленные шаги предполагают, что имя, которое вы выбрали для ускорителя решения, — **contoso-simulation** . Замените это значение на имя вашего развертывания.
 
 1. Список содержимого группы ресурсов, которая содержит ресурсы ускорителя решения, приведен ниже.
 
@@ -29,7 +29,7 @@ ms.locfileid: "68781489"
 
     Запишите имя виртуальной машины, общедоступный IP-адрес и группу безопасности сети — эти значения понадобятся вам позже.
 
-1. Обновите группу безопасности сети, чтобы разрешить доступ SSH. Следующая команда предполагает, что имя группы сетевой безопасности, — **contoso-simulation-nsg**. Замените это значение на имя вашей группы безопасности сети.
+1. Обновите группу безопасности сети, чтобы разрешить доступ SSH. Следующая команда предполагает, что имя группы сетевой безопасности, — **contoso-simulation-nsg** . Замените это значение на имя вашей группы безопасности сети.
 
     ```azurecli-interactive
     az network nsg rule update --name SSH --nsg-name contoso-simulation-nsg -g contoso-simulation --access Allow -o table
@@ -43,7 +43,7 @@ ms.locfileid: "68781489"
     az vm user update --name vm-vikxv --username azureuser --password YOURSECRETPASSWORD  -g contoso-simulation
     ```
 
-1. Найдите общедоступный IP-адрес вашей виртуальной машины. Следующая команда предполагает, что имя виртуальной машины — **vm-vikxv**. Замените это значение именем виртуальной машины, которое вы записали ранее.
+1. Найдите общедоступный IP-адрес вашей виртуальной машины. Следующая команда предполагает, что имя виртуальной машины — **vm-vikxv** . Замените это значение именем виртуальной машины, которое вы записали ранее.
 
     ```azurecli-interactive
     az vm list-ip-addresses --name vm-vikxv -g contoso-simulation -o table

@@ -7,13 +7,13 @@ ms.topic: how-to
 ms.date: 09/30/2020
 ms.author: rogarana
 ms.subservice: disks
-ms.custom: references_regions
-ms.openlocfilehash: 82d482cd0a1b3a5b6028b9249030b7b1a093d22d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: references_regions, devx-track-azurecli
+ms.openlocfilehash: 1efd4baf80c9ba30b1d1ea35390386bc4e7659d3
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91570540"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92747783"
 ---
 # <a name="enable-shared-disk"></a>Включить общий диск
 
@@ -206,9 +206,9 @@ PR_EXCLUSIVE_ACCESS_ALL_REGISTRANTS
 Кроме того, при использовании PR_RESERVE, PR_REGISTER_AND_IGNORE, PR_REGISTER_KEY, PR_PREEMPT_RESERVATION, PR_CLEAR_RESERVATION или PR_RELEASE-RESERVATION необходимо указать постоянный ключ-резервирование.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы предпочитаете использовать шаблоны Azure Resource Manager для развертывания диска, доступны следующие примеры шаблонов:
-- [Диск SSD (цен. категория "Премиум")](https://aka.ms/SharedPremiumDiskARMtemplate)
+- [SSD (цен. категория "Премиум")](https://aka.ms/SharedPremiumDiskARMtemplate)
 - [Региональные диски Ultra](https://aka.ms/SharedUltraDiskARMtemplateRegional)
 - [Зональные Ultra Disks](https://aka.ms/SharedUltraDiskARMtemplateZonal)

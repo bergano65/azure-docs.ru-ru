@@ -5,13 +5,13 @@ ms.date: 12/10/2019
 ms.topic: conceptual
 description: Узнайте, как настроить Azure Dev Spaces для использования пользовательского контроллера входящих данных NGINX и настройки HTTPS с помощью этого контроллера входящего трафика.
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
-ms.custom: devx-track-js
-ms.openlocfilehash: 1ef462171199ce818b6146efbe705cca30b24564
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.custom: devx-track-js, devx-track-azurecli
+ms.openlocfilehash: e1918b5ce9c0fdba81174f0b36fd1ce51d0df70a
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91973093"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92748813"
 ---
 # <a name="use-a-custom-nginx-ingress-controller-and-configure-https"></a>Использование пользовательского контроллера входящих данных NGINX и настройка HTTPS
 
@@ -100,8 +100,8 @@ cd dev-spaces/samples/BikeSharingApp/charts
 ```
 
 Откройте [Values. YAML][values-yaml] и внесите следующие обновления:
-* Замените все экземпляры *<REPLACE_ME_WITH_HOST_SUFFIX>* *nginx. MY_CUSTOM_DOMAIN* использование домена для *MY_CUSTOM_DOMAIN*. 
-* Замените *kubernetes.IO/Ingress.class: траефик-аздс # dev Spaces, относящийся* к *kubernetes.IO/Ingress.class: nginx # Custom входной*вход. 
+* Замените все экземпляры *<REPLACE_ME_WITH_HOST_SUFFIX>* *nginx. MY_CUSTOM_DOMAIN* использование домена для *MY_CUSTOM_DOMAIN* . 
+* Замените *kubernetes.IO/Ingress.class: траефик-аздс # dev Spaces, относящийся* к *kubernetes.IO/Ingress.class: nginx # Custom входной* вход. 
 
 Ниже приведен пример обновленного `values.yaml` файла.
 
@@ -210,7 +210,7 @@ spec:
 ```
 
 > [!NOTE]
-> Для тестирования также существует [промежуточный сервер][letsencrypt-staging-issuer] , который можно использовать для *клустериссуер*.
+> Для тестирования также существует [промежуточный сервер][letsencrypt-staging-issuer] , который можно использовать для *клустериссуер* .
 
 Используйте `kubectl` для применения `letsencrypt-clusterissuer.yaml` .
 

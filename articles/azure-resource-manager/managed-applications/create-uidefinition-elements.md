@@ -3,14 +3,14 @@ title: Создание элементов определения пользов
 description: Сведения об элементах, используемых при создании определений пользовательского интерфейса для портала Azure.
 author: tfitzmac
 ms.topic: conceptual
-ms.date: 07/13/2020
+ms.date: 10/27/2020
 ms.author: tomfitz
-ms.openlocfilehash: 8b6c6e78c64f83ca39a29f319a103e893d8d8b38
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c3ba36fc3aaa98aec54b6c70cd416c589be27cfa
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88923727"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92747358"
 ---
 # <a name="createuidefinition-elements"></a>Элементы CreateUiDefinition
 
@@ -42,7 +42,7 @@ ms.locfileid: "88923727"
 | toolTip | Нет | Текст для отображения в подсказке элемента. Аналогично `label` некоторые элементы поддерживают несколько строк с подсказками. С помощью синтаксиса Markdown можно внедрить встроенные ссылки.
 | constraints | Нет | Одно или несколько свойств, используемых для настройки поведения проверки элемента. Поддерживаемые свойства для constraints зависят от типа элемента. Некоторые типы элементов не поддерживают настройку поведения проверки и поэтому не содержат свойство constraints. |
 | параметры | Нет | Дополнительные свойства, позволяющие настроить поведение элемента. Аналогично `constraints` поддерживаемые свойства зависят от типа элемента. |
-| visible | Нет | Указывает, отображается ли элемент. Если задано значение `true`, элемент и применимые дочерние элементы будут отображены. Значение по умолчанию — `true`. Используйте [логические функции](create-uidefinition-functions.md#logical-functions), чтобы динамически управлять значением свойства.
+| visible | Нет | Указывает, отображается ли элемент. Если задано значение `true`, элемент и применимые дочерние элементы будут отображены. Значение по умолчанию — `true`. Используйте [логические функции](create-uidefinition-functions.md#logical-functions), чтобы динамически управлять значением свойства.
 
 ## <a name="elements"></a>Элементы
 
@@ -63,6 +63,7 @@ ms.locfileid: "88923727"
 - [Элемент пользовательского интерфейса Microsoft.Compute.CredentialsCombo](microsoft-compute-credentialscombo.md)
 - [Элемент пользовательского интерфейса Microsoft.Compute.SizeSelector](microsoft-compute-sizeselector.md)
 - [Элемент пользовательского интерфейса Microsoft.Compute.UserNameTextBox](microsoft-compute-usernametextbox.md)
+- [Microsoft. KeyVault. Кэйваултцертификатеселектор](microsoft-keyvault-keyvaultcertificateselector.md)
 - [Microsoft. ManagedIdentity. Идентитиселектор](microsoft-managedidentity-identityselector.md)
 - [Элемент пользовательского интерфейса Microsoft.Network.PublicIpAddressCombo](microsoft-network-publicipaddresscombo.md)
 - [Элемент пользовательского интерфейса Microsoft.Network.VirtualNetworkCombo](microsoft-network-virtualnetworkcombo.md)
@@ -70,7 +71,8 @@ ms.locfileid: "88923727"
 - [Microsoft. Solutions. Ресаурцеселектор](microsoft-solutions-resourceselector.md)
 - [Элемент пользовательского интерфейса Microsoft.Storage.MultiStorageAccountCombo](microsoft-storage-multistorageaccountcombo.md)
 - [Элемент пользовательского интерфейса Microsoft.Storage.StorageAccountSelector](microsoft-storage-storageaccountselector.md)
+- [Microsoft. Storage. Сторажеблобселектор](microsoft-storage-storageblobselector.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Общие сведения о создании определений пользовательского интерфейса см. в статье [Начало работы с CreateUiDefinition](create-uidefinition-overview.md).

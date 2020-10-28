@@ -1,7 +1,7 @@
 ---
 title: Доступ к хранилищам данных и файловым ресурсам с помощью проверки подлинности Windows
 description: Узнайте, как настроить каталог служб MSSQL Integration Services в Базе данных SQL Azure и Azure-SSIS Integration Runtime в Фабрике данных Azure для запуска пакетов с доступом к хранилищам данных и общим папкам с использованием проверки подлинности Windows.
-ms.date: 3/22/2018
+ms.date: 10/27/2020
 ms.topic: conceptual
 ms.prod: sql
 ms.prod_service: integration-services
@@ -10,12 +10,12 @@ ms.technology: integration-services
 author: swinarko
 ms.author: sawinark
 ms.reviewer: maghan
-ms.openlocfilehash: 14d016f0deba518f16908492b4fae020b2dcc58c
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: 545f698f444e99d3f3807f22b308963172018fcb
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/27/2020
-ms.locfileid: "92637553"
+ms.locfileid: "92746662"
 ---
 # <a name="access-data-stores-and-file-shares-with-windows-authentication-from-ssis-packages-in-azure"></a>Доступ к хранилищам данных и общим папкам из пакетов служб Integration Services в Azure с использованием проверки подлинности Windows
 
@@ -25,9 +25,9 @@ ms.locfileid: "92637553"
 
 | Метод подключения | Область действия | Этап настройки | Метод доступа в пакетах | Число наборов учетных данных и подключенных ресурсов | Тип подключенных ресурсов | 
 |---|---|---|---|---|---|
-| Настройка контекста выполнения на уровне действий | Для каждого выполняемого действия пакета служб Integration Services | Настройте свойство **проверки подлинности Windows** для настройки контекста выполнения или запуска как при выполнении пакетов служб Integration Services в виде действий "Выполнение пакета SSIS" в конвейерах ADF.<br/><br/> Дополнительные сведения см. в руководстве по [настройке действий "Выполнение пакета SSIS"](./how-to-invoke-ssis-package-ssis-activity.md). | Доступ к ресурсам напрямую в пакетах через UNC-путь, например, при использовании файловых ресурсов или файлов Azure: `\\YourFileShareServerName\YourFolderName` или `\\YourAzureStorageAccountName.file.core.windows.net\YourFolderName` | Поддержка только одного набора учетных данных для всех подключенных ресурсов: | — общие файловые ресурсы в локальной среде и (или) на виртуальных машинах Azure;<br/><br/> — файлы Azure, как описано в [этой статье](../storage/files/storage-how-to-use-files-windows.md). <br/><br/> – серверы SQL Server в локальной среде или на виртуальных машинах Azure с проверкой подлинности Windows;<br/><br/> – другие ресурсы с проверкой подлинности Windows. |
-| Настройка контекста выполнения на уровне каталога | На Azure-SSIS IR, но переопределяется при настройке контекста выполнения на уровне действия (см. выше). | Выполните хранимую процедуру SSISDB `catalog.set_execution_credential`, чтобы настроить контекст выполнения или запуска как.<br/><br/> Дополнительные сведения см. ниже в этой статье. | Доступ к ресурсам напрямую в пакетах через UNC-путь, например, при использовании файловых ресурсов или файлов Azure: `\\YourFileShareServerName\YourFolderName` или `\\YourAzureStorageAccountName.file.core.windows.net\YourFolderName` | Поддержка только одного набора учетных данных для всех подключенных ресурсов: | — общие файловые ресурсы в локальной среде и (или) на виртуальных машинах Azure;<br/><br/> — файлы Azure, как описано в [этой статье](../storage/files/storage-how-to-use-files-windows.md). <br/><br/> – серверы SQL Server в локальной среде или на виртуальных машинах Azure с проверкой подлинности Windows;<br/><br/> – другие ресурсы с проверкой подлинности Windows. |
-| Сохранение учетных данных посредством команды `cmdkey` | На Azure-SSIS IR, но переопределяется при настройке контекста выполнения действия или уровня каталога (см. выше). | Выполните `cmdkey` команду в пользовательском скрипте установки ( `main.cmd` ) при подготовке Azure-SSIS IR, например, при использовании файловых ресурсов или файлов Azure: `cmdkey /add:YourFileShareServerName /user:YourDomainName\YourUsername /pass:YourPassword` или `cmdkey /add:YourAzureStorageAccountName.file.core.windows.net /user:azure\YourAzureStorageAccountName /pass:YourAccessKey` .<br/><br/> Дополнительные сведения см. в статье [Пользовательская установка для среды выполнения интеграции Azure–SSI](./how-to-configure-azure-ssis-ir-custom-setup.md). | Доступ к ресурсам напрямую в пакетах через UNC-путь, например, при использовании файловых ресурсов или файлов Azure: `\\YourFileShareServerName\YourFolderName` или `\\YourAzureStorageAccountName.file.core.windows.net\YourFolderName` | Поддержка нескольких наборов учетных данных для разных подключенных ресурсов: | — общие файловые ресурсы в локальной среде и (или) на виртуальных машинах Azure;<br/><br/> — файлы Azure, как описано в [этой статье](../storage/files/storage-how-to-use-files-windows.md). <br/><br/> – серверы SQL Server в локальной среде или на виртуальных машинах Azure с проверкой подлинности Windows;<br/><br/> – другие ресурсы с проверкой подлинности Windows. |
+| Настройка контекста выполнения на уровне действий | Для каждого выполняемого действия пакета служб Integration Services | Настройте свойство **проверки подлинности Windows** для настройки контекста выполнения или запуска как при выполнении пакетов служб Integration Services в виде действий "Выполнение пакета SSIS" в конвейерах ADF.<br/><br/> Дополнительные сведения см. в руководстве по [настройке действий "Выполнение пакета SSIS"](./how-to-invoke-ssis-package-ssis-activity.md). | Доступ к ресурсам напрямую в пакетах, например, используйте UNC-путь для доступа к файловым ресурсам или файлам Azure: `\\YourFileShareServerName\YourFolderName` или `\\YourAzureStorageAccountName.file.core.windows.net\YourFolderName` | Поддержка только одного набора учетных данных для всех подключенных ресурсов: | — общие файловые ресурсы в локальной среде и (или) на виртуальных машинах Azure;<br/><br/> — файлы Azure, как описано в [этой статье](../storage/files/storage-how-to-use-files-windows.md).<br/><br/> – серверы SQL Server в локальной среде или на виртуальных машинах Azure с проверкой подлинности Windows;<br/><br/> – другие ресурсы с проверкой подлинности Windows. |
+| Настройка контекста выполнения на уровне каталога | На Azure-SSIS IR, но переопределяется при настройке контекста выполнения на уровне действия (см. выше). | Выполните хранимую процедуру SSISDB `catalog.set_execution_credential`, чтобы настроить контекст выполнения или запуска как.<br/><br/> Дополнительные сведения см. ниже в этой статье. | Доступ к ресурсам напрямую в пакетах, например, используйте UNC-путь для доступа к файловым ресурсам или файлам Azure: `\\YourFileShareServerName\YourFolderName` или `\\YourAzureStorageAccountName.file.core.windows.net\YourFolderName` | Поддержка только одного набора учетных данных для всех подключенных ресурсов: | — общие файловые ресурсы в локальной среде и (или) на виртуальных машинах Azure;<br/><br/> — файлы Azure, как описано в [этой статье](../storage/files/storage-how-to-use-files-windows.md).<br/><br/> – серверы SQL Server в локальной среде или на виртуальных машинах Azure с проверкой подлинности Windows;<br/><br/> – другие ресурсы с проверкой подлинности Windows. |
+| Сохранение учетных данных посредством команды `cmdkey` | На Azure-SSIS IR, но переопределяется при настройке контекста выполнения действия или уровня каталога (см. выше). | Выполните `cmdkey` команду в пользовательском скрипте установки ( `main.cmd` ) при подготовке Azure-SSIS IR, например при использовании файловых ресурсов, файлов Azure или SQL Server:<br/><br/> `cmdkey /add:YourFileShareServerName /user:YourDomainName\YourUsername /pass:YourPassword`,<br/><br/> `cmdkey /add:YourAzureStorageAccountName.file.core.windows.net /user:azure\YourAzureStorageAccountName /pass:YourAccessKey`или<br/><br/> `cmdkey /add:YourSQLServerFullyQualifiedDomainNameOrIPAddress:YorSQLServerPort /user:YourDomainName\YourUsername /pass:YourPassword`.<br/><br/> Дополнительные сведения см. в статье [Пользовательская установка для среды выполнения интеграции Azure–SSI](./how-to-configure-azure-ssis-ir-custom-setup.md). | Доступ к ресурсам напрямую в пакетах, например, используйте UNC-путь для доступа к файловым ресурсам или файлам Azure: `\\YourFileShareServerName\YourFolderName` или `\\YourAzureStorageAccountName.file.core.windows.net\YourFolderName` | Поддержка нескольких наборов учетных данных для разных подключенных ресурсов: | — общие файловые ресурсы в локальной среде и (или) на виртуальных машинах Azure;<br/><br/> — файлы Azure, как описано в [этой статье](../storage/files/storage-how-to-use-files-windows.md).<br/><br/> – серверы SQL Server в локальной среде или на виртуальных машинах Azure с проверкой подлинности Windows;<br/><br/> – другие ресурсы с проверкой подлинности Windows. |
 | Подключение дисков во время выполнения пакета (без сохранения состояния) | Для каждого пакета | Выполните команду `net use` в задаче "Выполнение процесса", которая добавляется в начало потока управления в пакетах, например, `net use D: \\YourFileShareServerName\YourFolderName`. | Обращение к общим папкам через подключенные диски. | Поддержка нескольких дисков для разных файловых ресурсов: | — общие файловые ресурсы в локальной среде и (или) на виртуальных машинах Azure;<br/><br/> — файлы Azure, как описано в [этой статье](../storage/files/storage-how-to-use-files-windows.md). |
 |||||||
 
@@ -99,7 +99,7 @@ ms.locfileid: "92637553"
 
 3. В среде SSMS проверьте возможность подключения к требуемому серверу SQL Server в локальной среде.
 
-### <a name="prerequisites"></a>предварительные требования
+### <a name="prerequisites"></a>Предварительные требования
 
 Для доступа к SQL Server в локальной среде из пакетов, выполняющихся в Azure, сделайте следующее:
 
@@ -126,7 +126,7 @@ ms.locfileid: "92637553"
 
 3. Проверьте, возвращен ли список каталогов из общей папки в локальной среде.
 
-### <a name="prerequisites"></a>предварительные требования
+### <a name="prerequisites"></a>Предварительные требования
 
 Для доступа к общей папке в локальной среде из пакетов, выполняющихся в Azure, сделайте следующее:
 
@@ -170,4 +170,4 @@ ms.locfileid: "92637553"
 
 - Развертывание пакетов. Дополнительные сведения см. в статье [Развертывание проекта служб SSIS с помощью SQL Server Management Studio (SSMS)](/sql/integration-services/ssis-quickstart-deploy-ssms).
 - Запуск пакетов. Дополнительные сведения см. в статье [Выполнение пакета служб SSIS с помощью SQL Server Management Studio (SSMS)](/sql/integration-services/ssis-quickstart-run-ssms).
-- Планирование выполнения пакетов. Дополнительные сведения см. в разделе [Планирование выполнения пакетов служб SSIS в Azure](/sql/integration-services/lift-shift/ssis-azure-schedule-packages-ssms?view=sql-server-ver15).
+- Планирование выполнения пакетов. Дополнительные сведения см. [в разделе Планирование пакетов служб SSIS в Azure](/sql/integration-services/lift-shift/ssis-azure-schedule-packages-ssms?view=sql-server-ver15).

@@ -7,13 +7,13 @@ ms.service: virtual-machines
 ms.topic: include
 ms.date: 10/06/2019
 ms.author: mbaldwin
-ms.custom: include file
-ms.openlocfilehash: 234aa602cccb90d130e4d4b6aca375726ca29f0d
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.custom: include file, devx-track-azurecli
+ms.openlocfilehash: 489ee630deb56aef6c004067f29779053fbcd3e7
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91989583"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92755349"
 ---
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -64,7 +64,7 @@ New-AzKeyvault -name "<your-unique-keyvault-name>" -ResourceGroupName "myResourc
 Вы также можете создать хранилище ключей с помощью [шаблона Resource Manager](https://github.com/Azure/azure-quickstart-templates/tree/master/101-key-vault-create).
 
 1. На странице шаблона быстрого запуска Azure нажмите кнопку **Deploy to Azure** (Развернуть в Azure).
-2. Выберите подписку, группу ресурсов, расположение группы ресурсов, имя хранилища ключей, идентификатор объекта, юридические условия и соглашение, а затем щелкните **Приобрести**. 
+2. Выберите подписку, группу ресурсов, расположение группы ресурсов, имя хранилища ключей, идентификатор объекта, юридические условия и соглашение, а затем щелкните **Приобрести** . 
 
 
 ##  <a name="set-key-vault-advanced-access-policies"></a>установить политики расширенного доступа к хранилищу ключей.
@@ -117,10 +117,10 @@ New-AzKeyvault -name "<your-unique-keyvault-name>" -ResourceGroupName "myResourc
 
 ### <a name="azure-portal"></a>Портал Azure
 
-1. Выберите хранилище ключей, перейдите на вкладку **Политики доступа** и выберите **Щелкните, чтобы показать политики расширенного доступа**.
-2. Установите флажок **Включить доступ к шифрованию дисков Azure для шифрования томов**.
-3. Выберите **Включить доступ к виртуальным машинам Azure для развертывания** или **Включить доступ к Azure Resource Manager для развертывания шаблонов**, если это необходимо. 
-4. Нажмите кнопку **Сохранить**.
+1. Выберите хранилище ключей, перейдите на вкладку **Политики доступа** и выберите **Щелкните, чтобы показать политики расширенного доступа** .
+2. Установите флажок **Включить доступ к шифрованию дисков Azure для шифрования томов** .
+3. Выберите **Включить доступ к виртуальным машинам Azure для развертывания** или **Включить доступ к Azure Resource Manager для развертывания шаблонов** , если это необходимо. 
+4. Нажмите кнопку **Сохранить** .
 
     ![Установка политики расширенного доступа к хранилищу Azure Key Vault](../articles/virtual-machines/media/disk-encryption/keyvault-portal-fig4.png)
 
