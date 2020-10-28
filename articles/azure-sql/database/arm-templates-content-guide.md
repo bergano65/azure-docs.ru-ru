@@ -11,12 +11,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein
 ms.date: 02/04/2019
-ms.openlocfilehash: 48a2c00f7ff487def13e9872c4f43a3ca36809ba
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5202145af6f60f34bdce57aa94f4fec92a8b227f
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91444632"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92677256"
 ---
 # <a name="azure-resource-manager-templates-for-azure-sql-database--sql-managed-instance"></a>Шаблоны Azure Resource Manager для Базы данных SQL Azure и Управляемого экземпляра SQL
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -39,7 +39,7 @@ ms.locfileid: "91444632"
 | [Веб-приложение Azure с Базой данных SQL](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-sql-database) | Этот пример создает бесплатное веб-приложение Azure и базу данных в Базе данных SQL Azure с уровнем обслуживания "Базовый".|
 | [Веб-приложение Azure и Кэш Redis с Базой данных SQL](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-redis-cache-sql-database) | Этот шаблон создает веб-приложение, Redis Cache и базу данных в той же группе ресурсов, а также две строки подключения в веб-приложении для базы данных и Redis Cache.|
 | [Импорт данных из Хранилища BLOB-объектов с помощью ADF версии 2](https://github.com/Azure/azure-quickstart-templates/tree/master/101-data-factory-v2-blob-to-sql-copy) | Этот шаблон Azure Resource Manager создает экземпляр Фабрики данных Azure версии 2, который копирует данные из Хранилища BLOB-объектов Azure в Базу данных SQL.|
-| [Кластер HDInsight с базой данных](https://github.com/Azure/azure-quickstart-templates/tree/master/101-hdinsight-linux-with-sql-database) | Этот шаблон создает кластер HDInsight, логический сервер SQL, базу данных и две таблицы. Этот шаблон применяется в статье [Использование Apache Sqoop с Hadoop в HDInsight](https://docs.microsoft.com/azure/hdinsight/hadoop/hdinsight-use-sqoop). |
+| [Кластер HDInsight с базой данных](https://github.com/Azure/azure-quickstart-templates/tree/master/101-hdinsight-linux-with-sql-database) | Этот шаблон создает кластер HDInsight, логический сервер SQL, базу данных и две таблицы. Этот шаблон применяется в статье [Использование Apache Sqoop с Hadoop в HDInsight](../../hdinsight/hadoop/hdinsight-use-sqoop.md). |
 | [Приложение логики Azure, выполняющее хранимую процедуру SQL по расписанию](https://github.com/Azure/azure-quickstart-templates/tree/master/101-logic-app-sql-proc) | Этот шаблон создает приложение логики, которое будет запускать хранимую процедуру SQL по расписанию. Все аргументы для процедуры можно поместить в раздел body шаблона.|
 
 ## <a name="azure-sql-managed-instance"></a>[Управляемый экземпляр SQL Azure](#tab/managed-instance)
@@ -54,4 +54,3 @@ ms.locfileid: "91444632"
 | [Управляемый экземпляр SQL с виртуальной машиной](https://github.com/Azure/azure-quickstart-templates/tree/master/201-sqlmi-new-vnet-w-jumpbox) | Это развертывание создает виртуальную сеть Azure с двумя подсетями: `ManagedInstance` и `Management`. Управляемый экземпляр SQL развертывается в подсети `ManagedInstance`. Виртуальная машина с последней версией SQL Server Management Studio (SSMS) развертывается в подсети `Management`. |
 
 ---
-

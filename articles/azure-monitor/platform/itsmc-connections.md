@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 05/12/2020
-ms.openlocfilehash: 7de9de7e1ba8028cbdb24744775294a4890afe40
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: c40f1762ea7c87ea73ec20e47b0398e0d3e364b4
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92547747"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92677129"
 ---
 # <a name="connect-itsm-productsservices-with-it-service-management-connector"></a>Подключение продуктов и служб ITSM с помощью соединителя управления ИТ-службами
 В этой статье описывается, как настроить в Log Analytics связь между продуктами или службами ITSM и соединителем управления ИТ-службами (ITSM), чтобы централизованно управлять рабочими элементами ITSM. Дополнительные сведения об ITSMC см. в [этом обзоре](./itsmc-overview.md).
@@ -350,7 +350,7 @@ ms.locfileid: "92547747"
 | **Синхронизация данных** | Введите число прошедших дней, которые будут учитываться при синхронизации. **Максимальное ограничение:** 120 дней. |
 | **Создание нового элемента конфигурации в решении ITSM** | Выберите этот параметр, если вы хотите создать элементы конфигурации в продукте ITSM. После выбора этого параметра ITSM создаст необходимые элементы (если они еще не созданы) как элементы конфигурации в поддерживаемой системе ITSM. **Параметр по умолчанию** : отключено.|
 
-![Подключение Provance](media/itsmc-connections/itsm-connections-provance-latest.png)
+![Снимок экрана, на котором показаны имена подключения и типы партнеров.](media/itsmc-connections/itsm-connections-provance-latest.png)
 
 **После успешного подключения и синхронизации:**
 

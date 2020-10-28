@@ -4,15 +4,15 @@ description: Узнайте, Синхронизация файлов Azure па�
 author: roygara
 ms.service: storage
 ms.topic: how-to
-ms.date: 06/24/2019
+ms.date: 09/30/2020
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: e4f011d9286a0685f1b091b930155db969407423
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 69fdfea6768a895db1f85df4c2936936a2ffd3f5
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87903720"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92675787"
 ---
 # <a name="azure-file-sync-proxy-and-firewall-settings"></a>Параметры брандмауэра и прокси-сервера службы "Синхронизация файлов Azure"
 Служба "Синхронизация файлов Azure" подключает локальные серверы к службе файлов Azure, обеспечивая синхронизацию нескольких сайтов и распределение данных по уровням облака. Таким образом локальный сервер должен быть подключен к Интернету. Администратор отдела ИТ должен выбрать наилучший путь подключения сервера к облачным службам Azure.
@@ -25,7 +25,7 @@ ms.locfileid: "87903720"
 Служба "Синхронизация файлов Azure" действует как служба оркестрации между Windows Server, вашим файловым ресурсом Azure и несколькими другими службами Azure, которая синхронизирует данные, как описано в группе синхронизации. Чтобы служба "Синхронизация файлов Azure" работала правильно, необходимо настроить серверы для взаимодействия со следующими службами Azure.
 
 - Хранилище Azure
-- Служба синхронизации файлов Azure
+- Синхронизация файлов Azure
 - Azure Resource Manager
 - Службы аутентификации
 
@@ -111,31 +111,33 @@ Set-StorageSyncProxyConfiguration -Address <url> -Port <port number> -ProxyCrede
 
 | Cloud  | Регион | URL-адрес основной конечной точки | Парный регион | URL-адрес обнаружения |
 |--------|--------|----------------------|---------------|---------------|
-| Общие |Восточная Австралия | HTTPS: \/ /australiaeast01.AFS.Azure.NET<br>HTTPS: \/ /kailani-Aue.One.Microsoft.com | Australia Southeast | HTTPS: \/ /TM-australiaeast01.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani-Aue.One.Microsoft.com |
-| Общие |Australia Southeast | HTTPS: \/ /australiasoutheast01.AFS.Azure.NET<br>HTTPS: \/ /kailani-AUS.One.Microsoft.com | Восточная Австралия | HTTPS: \/ /TM-australiasoutheast01.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani-AUS.One.Microsoft.com |
-| Общие | Южная Бразилия | HTTPS: \/ /brazilsouth01.AFS.Azure.NET | Центрально-южная часть США | HTTPS: \/ /TM-brazilsouth01.AFS.Azure.NET |
-| Общие | Центральная Канада | HTTPS: \/ /canadacentral01.AFS.Azure.NET<br>HTTPS: \/ /kailani-CAC.One.Microsoft.com | Восточная Канада | HTTPS: \/ /TM-canadacentral01.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani-CAC.One.Microsoft.com |
-| Общие | Восточная Канада | HTTPS: \/ /canadaeast01.AFS.Azure.NET<br>HTTPS: \/ /kailani-CAE.One.Microsoft.com | Центральная Канада | HTTPS: \/ /TM-canadaeast01.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani.CAE.One.Microsoft.com |
-| Общие | Центральная Индия | HTTPS: \/ /centralindia01.AFS.Azure.NET<br>HTTPS: \/ /kailani-cIn.One.Microsoft.com | Южная Индия | HTTPS: \/ /TM-centralindia01.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani-cIn.One.Microsoft.com |
-| Общие | Центральная часть США | HTTPS: \/ /centralus01.AFS.Azure.NET<br>HTTPS: \/ /kailani-CUS.One.Microsoft.com | восточная часть США 2 | HTTPS: \/ /TM-centralus01.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani-CUS.One.Microsoft.com |
-| Общие | Восточная Азия | HTTPS: \/ /eastasia01.AFS.Azure.NET<br>HTTPS: \/ /kailani11.One.Microsoft.com | Юго-Восточная Азия | HTTPS: \/ /TM-eastasia01.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani11.One.Microsoft.com |
-| Общие | Восточная часть США | HTTPS: \/ /eastus01.AFS.Azure.NET<br>HTTPS: \/ /kailani1.One.Microsoft.com | западная часть США | HTTPS: \/ /TM-eastus01.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani1.One.Microsoft.com |
-| Общие | восточная часть США 2 | HTTPS: \/ /eastus201.AFS.Azure.NET<br>HTTPS: \/ /kailani-ESS.One.Microsoft.com | Центральная часть США | HTTPS: \/ /TM-eastus201.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani-ESS.One.Microsoft.com |
-| Общие | Japan East | HTTPS: \/ /japaneast01.AFS.Azure.NET | Западная Япония | HTTPS: \/ /TM-japaneast01.AFS.Azure.NET |
-| Общие | Западная Япония | HTTPS: \/ /japanwest01.AFS.Azure.NET | Japan East | HTTPS: \/ /TM-japanwest01.AFS.Azure.NET |
-| Общие | Республика Корея, центральный регион | HTTPS: \/ /koreacentral01.AFS.Azure.NET/ | Республика Корея, южный регион | HTTPS: \/ /TM-koreacentral01.AFS.Azure.NET/ |
-| Общие | Республика Корея, южный регион | HTTPS: \/ /koreasouth01.AFS.Azure.NET/ | Республика Корея, центральный регион | HTTPS: \/ /TM-koreasouth01.AFS.Azure.NET/ |
-| Общие | Центрально-северная часть США | HTTPS: \/ /northcentralus01.AFS.Azure.NET | Центрально-южная часть США | HTTPS: \/ /TM-northcentralus01.AFS.Azure.NET |
-| Общие | Северная Европа | HTTPS: \/ /northeurope01.AFS.Azure.NET<br>HTTPS: \/ /kailani7.One.Microsoft.com | Западная Европа | HTTPS: \/ /TM-northeurope01.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani7.One.Microsoft.com |
-| Общие | Центрально-южная часть США | HTTPS: \/ /southcentralus01.AFS.Azure.NET | Центрально-северная часть США | HTTPS: \/ /TM-southcentralus01.AFS.Azure.NET |
-| Общие | Южная Индия | HTTPS: \/ /southindia01.AFS.Azure.NET<br>HTTPS: \/ /kailani-Sin.One.Microsoft.com | Центральная Индия | HTTPS: \/ /TM-southindia01.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani-Sin.One.Microsoft.com |
-| Общие | Юго-Восточная Азия | HTTPS: \/ /southeastasia01.AFS.Azure.NET<br>HTTPS: \/ /kailani10.One.Microsoft.com | Восточная Азия | HTTPS: \/ /TM-southeastasia01.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani10.One.Microsoft.com |
-| Общие | южная часть Соединенного Королевства | HTTPS: \/ /uksouth01.AFS.Azure.NET<br>HTTPS: \/ /kailani-UKS.One.Microsoft.com | западная часть Соединенного Королевства | HTTPS: \/ /TM-uksouth01.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani-UKS.One.Microsoft.com |
-| Общие | западная часть Соединенного Королевства | HTTPS: \/ /ukwest01.AFS.Azure.NET<br>HTTPS: \/ /kailani-UKW.One.Microsoft.com | южная часть Соединенного Королевства | HTTPS: \/ /TM-ukwest01.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani-UKW.One.Microsoft.com |
-| Общие | центрально-западная часть США | HTTPS: \/ /westcentralus01.AFS.Azure.NET | западная часть США 2 | HTTPS: \/ /TM-westcentralus01.AFS.Azure.NET |
-| Общие | Западная Европа | HTTPS: \/ /westeurope01.AFS.Azure.NET<br>HTTPS: \/ /kailani6.One.Microsoft.com | Северная Европа | HTTPS: \/ /TM-westeurope01.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani6.One.Microsoft.com |
-| Общие | западная часть США | HTTPS: \/ /westus01.AFS.Azure.NET<br>HTTPS: \/ /kailani.One.Microsoft.com | Восточная часть США | HTTPS: \/ /TM-westus01.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani.One.Microsoft.com |
-| Общие | западная часть США 2 | HTTPS: \/ /westus201.AFS.Azure.NET | центрально-западная часть США | HTTPS: \/ /TM-westus201.AFS.Azure.NET |
+| Public |Восточная Австралия | HTTPS: \/ /australiaeast01.AFS.Azure.NET<br>HTTPS: \/ /kailani-Aue.One.Microsoft.com | Юго-Восточная часть Австралии | HTTPS: \/ /TM-australiaeast01.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani-Aue.One.Microsoft.com |
+| Public |Юго-Восточная часть Австралии | HTTPS: \/ /australiasoutheast01.AFS.Azure.NET<br>HTTPS: \/ /kailani-AUS.One.Microsoft.com | Восточная Австралия | HTTPS: \/ /TM-australiasoutheast01.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani-AUS.One.Microsoft.com |
+| Public | Южная Бразилия | HTTPS: \/ /brazilsouth01.AFS.Azure.NET | Центрально-южная часть США | HTTPS: \/ /TM-brazilsouth01.AFS.Azure.NET |
+| Public | Центральная Канада | HTTPS: \/ /canadacentral01.AFS.Azure.NET<br>HTTPS: \/ /kailani-CAC.One.Microsoft.com | Восточная Канада | HTTPS: \/ /TM-canadacentral01.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani-CAC.One.Microsoft.com |
+| Public | Восточная Канада | HTTPS: \/ /canadaeast01.AFS.Azure.NET<br>HTTPS: \/ /kailani-CAE.One.Microsoft.com | Центральная Канада | HTTPS: \/ /TM-canadaeast01.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani.CAE.One.Microsoft.com |
+| Public | Центральная Индия | HTTPS: \/ /centralindia01.AFS.Azure.NET<br>HTTPS: \/ /kailani-cIn.One.Microsoft.com | Южная Индия | HTTPS: \/ /TM-centralindia01.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani-cIn.One.Microsoft.com |
+| Public | Центральная часть США | HTTPS: \/ /centralus01.AFS.Azure.NET<br>HTTPS: \/ /kailani-CUS.One.Microsoft.com | восточная часть США 2 | HTTPS: \/ /TM-centralus01.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani-CUS.One.Microsoft.com |
+| Public | Восточная Азия | HTTPS: \/ /eastasia01.AFS.Azure.NET<br>HTTPS: \/ /kailani11.One.Microsoft.com | Юго-Восточная Азия | HTTPS: \/ /TM-eastasia01.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani11.One.Microsoft.com |
+| Public | Восточная часть США | HTTPS: \/ /eastus01.AFS.Azure.NET<br>HTTPS: \/ /kailani1.One.Microsoft.com | западная часть США | HTTPS: \/ /TM-eastus01.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani1.One.Microsoft.com |
+| Public | восточная часть США 2 | HTTPS: \/ /eastus201.AFS.Azure.NET<br>HTTPS: \/ /kailani-ESS.One.Microsoft.com | Центральная часть США | HTTPS: \/ /TM-eastus201.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani-ESS.One.Microsoft.com |
+| Public | Северная Германия | HTTPS: \/ /germanynorth01.AFS.Azure.NET | Центрально-Западная Германия | HTTPS: \/ /TM-germanywestcentral01.AFS.Azure.NET |
+| Public | Центрально-Западная Германия | HTTPS: \/ /germanywestcentral01.AFS.Azure.NET | Северная Германия | HTTPS: \/ /TM-germanynorth01.AFS.Azure.NET |
+| Public | Восточная Япония | HTTPS: \/ /japaneast01.AFS.Azure.NET | Западная Япония | HTTPS: \/ /TM-japaneast01.AFS.Azure.NET |
+| Public | Западная Япония | HTTPS: \/ /japanwest01.AFS.Azure.NET | Восточная Япония | HTTPS: \/ /TM-japanwest01.AFS.Azure.NET |
+| Public | Республика Корея, центральный регион | HTTPS: \/ /koreacentral01.AFS.Azure.NET/ | Республика Корея, южный регион | HTTPS: \/ /TM-koreacentral01.AFS.Azure.NET/ |
+| Public | Республика Корея, южный регион | HTTPS: \/ /koreasouth01.AFS.Azure.NET/ | Республика Корея, центральный регион | HTTPS: \/ /TM-koreasouth01.AFS.Azure.NET/ |
+| Public | Центрально-северная часть США | HTTPS: \/ /northcentralus01.AFS.Azure.NET | Центрально-южная часть США | HTTPS: \/ /TM-northcentralus01.AFS.Azure.NET |
+| Public | Северная Европа | HTTPS: \/ /northeurope01.AFS.Azure.NET<br>HTTPS: \/ /kailani7.One.Microsoft.com | Западная Европа | HTTPS: \/ /TM-northeurope01.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani7.One.Microsoft.com |
+| Public | Центрально-южная часть США | HTTPS: \/ /southcentralus01.AFS.Azure.NET | Центрально-северная часть США | HTTPS: \/ /TM-southcentralus01.AFS.Azure.NET |
+| Public | Южная Индия | HTTPS: \/ /southindia01.AFS.Azure.NET<br>HTTPS: \/ /kailani-Sin.One.Microsoft.com | Центральная Индия | HTTPS: \/ /TM-southindia01.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani-Sin.One.Microsoft.com |
+| Public | Юго-Восточная Азия | HTTPS: \/ /southeastasia01.AFS.Azure.NET<br>HTTPS: \/ /kailani10.One.Microsoft.com | Восточная Азия | HTTPS: \/ /TM-southeastasia01.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani10.One.Microsoft.com |
+| Public | южная часть Соединенного Королевства | HTTPS: \/ /uksouth01.AFS.Azure.NET<br>HTTPS: \/ /kailani-UKS.One.Microsoft.com | западная часть Соединенного Королевства | HTTPS: \/ /TM-uksouth01.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani-UKS.One.Microsoft.com |
+| Public | западная часть Соединенного Королевства | HTTPS: \/ /ukwest01.AFS.Azure.NET<br>HTTPS: \/ /kailani-UKW.One.Microsoft.com | южная часть Соединенного Королевства | HTTPS: \/ /TM-ukwest01.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani-UKW.One.Microsoft.com |
+| Public | центрально-западная часть США | HTTPS: \/ /westcentralus01.AFS.Azure.NET | Западная часть США 2 | HTTPS: \/ /TM-westcentralus01.AFS.Azure.NET |
+| Public | Западная Европа | HTTPS: \/ /westeurope01.AFS.Azure.NET<br>HTTPS: \/ /kailani6.One.Microsoft.com | Северная Европа | HTTPS: \/ /TM-westeurope01.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani6.One.Microsoft.com |
+| Public | западная часть США | HTTPS: \/ /westus01.AFS.Azure.NET<br>HTTPS: \/ /kailani.One.Microsoft.com | Восточная часть США | HTTPS: \/ /TM-westus01.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani.One.Microsoft.com |
+| Public | Западная часть США 2 | HTTPS: \/ /westus201.AFS.Azure.NET | центрально-западная часть США | HTTPS: \/ /TM-westus201.AFS.Azure.NET |
 | Государственный сектор | US Gov (Аризона) | HTTPS: \/ /usgovarizona01.AFS.Azure.US | US Gov (Техас) | HTTPS: \/ /TM-usgovarizona01.AFS.Azure.US |
 | Государственный сектор | US Gov (Техас) | HTTPS: \/ /usgovtexas01.AFS.Azure.US | US Gov (Аризона) | HTTPS: \/ /TM-usgovtexas01.AFS.Azure.US |
 
@@ -279,7 +281,7 @@ Test-StorageSyncNetworkConnectivity
 
 Настройка домена с ограничивающими правилами брандмауэра может служить мерой повышения безопасности. Если используются такие конфигурации брандмауэров, необходимо помнить, что URL-адреса со временем добавляются и могут измениться. Периодически просматривайте эту статью.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Планирование развертывания службы синхронизации файлов Azure (предварительная версия)](storage-sync-files-planning.md)
 - [Как развернуть службу синхронизации файлов Azure (предварительная версия)](storage-sync-files-deployment-guide.md)
 - [Мониторинг Синхронизации файлов Azure](storage-sync-files-monitoring.md)

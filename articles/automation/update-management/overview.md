@@ -3,14 +3,14 @@ title: Обзор функции "Управление обновлениями"
 description: В этой статье представлен обзор функции "Управление обновлениями", которая реализует обновления для компьютеров на платформе Windows и Linux.
 services: automation
 ms.subservice: update-management
-ms.date: 09/23/2020
+ms.date: 10/26/2020
 ms.topic: conceptual
-ms.openlocfilehash: 92d8c52ee9da1df67be27ea0867e788e2aaed37b
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: 217ccbcef28545710ea0875a318bcf5b4b555825
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92222487"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92677708"
 ---
 # <a name="update-management-overview"></a>Общие сведения о службе "Управление обновлениями"
 
@@ -18,15 +18,18 @@ ms.locfileid: "92222487"
 
 Включить Управление обновлениями для виртуальных машин можно следующими способами.
 
-* Из [учетной записи службы автоматизации Azure](enable-from-automation-account.md) для одной или нескольких машин Azure и других компьютеров, отличных от Azure.
-* Вручную для компьютеров, не относящихся к Azure, включая компьютеры или серверы, зарегистрированные на [серверах с поддержкой Arc](../../azure-arc/servers/overview.md) (Предварительная версия).
-* Для одной виртуальной машины Azure со страницы "Виртуальная машина" на портале Azure. Этот сценарий доступен для виртуальных машин [Linux](../../virtual-machines/linux/tutorial-config-management.md#enable-update-management) и [Windows](../../virtual-machines/windows/tutorial-config-management.md#enable-update-management).
-* Для [нескольких виртуальных машин Azure](enable-from-portal.md), выбрав их на странице "Виртуальные машины" на портале Azure.
+- Из [учетной записи службы автоматизации Azure](enable-from-automation-account.md) для одной или нескольких машин Azure и других компьютеров, отличных от Azure.
+
+- Вручную для компьютеров, не относящихся к Azure, включая компьютеры или серверы, зарегистрированные на [серверах с поддержкой дуги Azure](../../azure-arc/servers/overview.md).
+
+- Для одной виртуальной машины Azure со [страницы виртуальной машины](enable-from-vm.md) в портал Azure. Этот сценарий доступен для виртуальных машин Linux и Windows.
+
+- Для [нескольких виртуальных машин Azure](enable-from-portal.md), выбрав их на странице "Виртуальные машины" на портале Azure.
 
 > [!NOTE]
 > Для Управления обновлениями требуется связать рабочую область Log Analytics с учетной записью службы автоматизации. Полный список поддерживаемых регионов см. в статье о [сопоставлении рабочих областей Azure](../how-to/region-mappings.md). Сопоставления регионов не влияют на возможность управления виртуальными машинами в отдельном регионе из учетной записи службы автоматизации.
 
-Для развертывания функции "Управление обновлениями" в новой или имеющейся учетной записи службы автоматизации и рабочей области Log Analytics в подписке доступен [шаблон Azure Resource Manager](enable-from-template.md).
+Для включения функции Управление обновлениями в новой или существующей учетной записи службы автоматизации и рабочей области Log Analytics в подписке доступен [шаблон Azure Resource Manager](enable-from-template.md) . Эта функция не включает виртуальные машины Azure и не являющиеся виртуальными машинами Azure. Этот шаг выполняется позже с помощью одного из перечисленных выше методов.
 
 > [!NOTE]
 > Если на компьютере настроена функция "Управление обновлениями", вы не сможете использовать его для выполнения пользовательских скриптов из службы автоматизации Azure. На этом компьютере можно запустить только скрипт обновления, подписанный корпорацией Майкрософт.
@@ -106,7 +109,7 @@ ms.locfileid: "92222487"
 
 #### <a name="windows"></a>Windows
 
-На агентах Windows необходимо настроить связь с сервером служб WSUS или доступ к Центру обновления Майкрософт. Дополнительные сведения по установке агента Log Analytics для Windows см. в статье [Подключение компьютеров Windows к Azure Monitor](../../azure-monitor/platform/agent-windows.md).
+На агентах Windows необходимо настроить связь с сервером служб WSUS или доступ к Центру обновления Майкрософт. Дополнительные сведения по установке агента Log Analytics для Windows см. в статье [Подключение компьютеров Windows к Azure Monitor](../../azure-monitor/platform/agent-windows.md). Для гибридных компьютеров рекомендуется установить агент Log Analytics для Windows, сначала подключив компьютер к [серверам с поддержкой дуги Azure](../../azure-arc/servers/overview.md), а затем с помощью политики Azure назначить встроенную политику [развертывания log Analytics агента на компьютерах Arc Windows Azure](../../governance/policy/samples/built-in-policies.md#monitoring) . Если вы планируете выполнять мониторинг компьютеров с Azure Monitor для виртуальных машин, используйте инициативу [Enable Azure Monitor для виртуальных машин](../../governance/policy/samples/built-in-initiatives.md#monitoring) .
 
 Управление обновлениями можно использовать совместно с Microsoft Endpoint Configuration Manager. Дополнительные сведения см. в статье о [сценариях интеграции Управления обновлениями с Microsoft Endpoint Configuration Manager](mecmintegration.md). Агент [Log Analytics для Windows](../../azure-monitor/platform/agent-windows.md) необходим для серверов Windows, управляемых сайтами в среде Configuration Manager. 
 
@@ -122,7 +125,7 @@ ms.locfileid: "92222487"
 > [!NOTE]
 > Оценка обновлений для компьютеров с Linux поддерживается только в определенных регионах. Дополнительные сведения см. в [таблице сопоставлений](../how-to/region-mappings.md#supported-mappings) для учетной записи службы автоматизации и рабочей области Log Analytics.
 
-Дополнительные сведения см. в статье об [установке агента Log Analytics для Linux и скачивании его последней версии](../../azure-monitor/platform/agent-linux.md).
+Дополнительные сведения см. в статье об [установке агента Log Analytics для Linux и скачивании его последней версии](../../azure-monitor/platform/agent-linux.md). Для гибридных компьютеров рекомендуется установить агент Log Analytics для Windows, сначала подключив компьютер к [серверам с поддержкой дуги Azure](../../azure-arc/servers/overview.md), а затем используя политику Azure, чтобы log Analytics назначить встроенную политику [для компьютеров ARC в Azure на основе машинных систем Linux](../../governance/policy/samples/built-in-policies.md#monitoring) . Если вы планируете также отслеживать компьютеры с Azure Monitor для виртуальных машин, используйте инициативу [Enable Azure Monitor для виртуальных машин](../../governance/policy/samples/built-in-initiatives.md#monitoring) .
 
 Виртуальные машины, созданные на основе образов Red Hat Enterprise Linux по требованию (RHEL), доступных в Azure Marketplace, регистрируются для доступа к [инфраструктуре Red Hat Update Framework (RHUI)](../../virtual-machines/workloads/redhat/redhat-rhui.md) , которая развернута в Azure. Любой другой дистрибутив Linux должен быть обновлен с помощью интернет-репозитория дистрибутивов посредством поддерживаемых им методов.
 
@@ -151,7 +154,7 @@ ms.locfileid: "92222487"
 * пакет управления развертыванием обновлений.
 
 > [!NOTE]
-> Если у вас есть группа управления Operations Manager 1807 или 2019, подключенная к рабочей области Log Analytics, агенты которой настроены в этой группе для сбора данных журналов, необходимо переопределить параметр `IsAutoRegistrationEnabled` и присвоить ему значение True в правиле **Microsoft.IntelligencePacks.AzureAutomation.HybridAgent.Init**.
+> Если у вас есть группа управления Operations Manager 1807 или 2019, подключенная к рабочей области Log Analytics, агенты которой настроены в этой группе для сбора данных журналов, необходимо переопределить параметр `IsAutoRegistrationEnabled` и присвоить ему значение True в правиле **Microsoft.IntelligencePacks.AzureAutomation.HybridAgent.Init** .
 
 Дополнительные сведения об обновлении пакетов управления см. в статье [Подключение Operations Manager к Azure Monitor](../../azure-monitor/platform/om-agents.md).
 
@@ -191,7 +194,7 @@ ms.locfileid: "92222487"
 |`*.blob.core.windows.net` | `*.blob.core.usgovcloudapi.net`|
 |`*.azure-automation.net` | `*.azure-automation.us`|
 
-При создании правил безопасности сетевой группы или настройке брандмауэра Azure для разрешения трафика в службу автоматизации и Log Analytics рабочей области используйте [тег службы](../../virtual-network/service-tags-overview.md#available-service-tags) **гуестандхибридманажемент** и **азуремонитор**. Это упрощает текущее управление правилами безопасности сети. Для безопасного и частного подключения к службе автоматизации виртуальных машин Azure см. раздел [Использование частной связи Azure](../how-to/private-link-security.md). Сведения о получении тега текущей службы и сведений о диапазоне для включения в локальные конфигурации брандмауэра см. в разделе [Загружаемые файлы JSON](../../virtual-network/service-tags-overview.md#discover-service-tags-by-using-downloadable-json-files).
+При создании правил безопасности сетевой группы или настройке брандмауэра Azure для разрешения трафика в службу автоматизации и Log Analytics рабочей области используйте [тег службы](../../virtual-network/service-tags-overview.md#available-service-tags) **гуестандхибридманажемент** и **азуремонитор** . Это упрощает текущее управление правилами безопасности сети. Для безопасного и частного подключения к службе автоматизации виртуальных машин Azure см. раздел [Использование частной связи Azure](../how-to/private-link-security.md). Сведения о получении тега текущей службы и сведений о диапазоне для включения в локальные конфигурации брандмауэра см. в разделе [Загружаемые файлы JSON](../../virtual-network/service-tags-overview.md#discover-service-tags-by-using-downloadable-json-files).
 
 Для компьютеров с Windows необходимо также разрешить передачу трафика на любые конечные точки, необходимые Центру обновления Windows. Обновленный список обязательных конечных точек приведен в разделе [Проблемы с HTTP- и прокси-сервером](/windows/deployment/update/windows-update-troubleshooting#issues-related-to-httpproxy). При наличии локального [сервера Центра обновления Windows](/windows-server/administration/windows-server-update-services/plan/plan-your-wsus-deployment) необходимо также разрешить трафик на сервер, указанный в [ключе WSUS](/windows/deployment/update/waas-wu-settings#configuring-automatic-updates-by-editing-the-registry).
 

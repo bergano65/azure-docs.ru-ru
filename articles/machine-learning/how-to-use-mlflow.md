@@ -11,12 +11,12 @@ ms.reviewer: nibaccam
 ms.date: 09/08/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 3fb177afa804788632f22d24bbd376d64cbe1c9f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a81e60e3bb7a1b0f34a29ccd9cebf3d82279027e
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91250697"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92676655"
 ---
 # <a name="track-experiment-runs-and-deploy-ml-models-with-mlflow-and-azure-machine-learning-preview"></a>Следите за запуском экспериментов и развертыванием моделей ML с помощью Млфлов и Машинное обучение Azure (Предварительная версия)
 
@@ -353,13 +353,16 @@ webservice.wait_for_deployment()
 
 1. В списке выберите созданную группу ресурсов.
 
-1. Выберите **Удалить группу ресурсов**.
+1. Выберите **Удалить группу ресурсов** .
 
-1. Введите имя группы ресурсов. Теперь щелкните **Удалить**.
+1. Введите имя группы ресурсов. Теперь щелкните **Удалить** .
 
 ## <a name="example-notebooks"></a>Примеры записных книжек
 
 В примере использования [MLflow с записными книжками Машинного обучения Azure](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/track-and-monitor-experiments/using-mlflow) демонстрируются и поясняются основные понятия, представленные в этой статье.
+
+> [!NOTE]
+> Основанный на сообществе репозиторий примеров с использованием млфлов можно найти по адресу https://github.com/Azure/azureml-examples .
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

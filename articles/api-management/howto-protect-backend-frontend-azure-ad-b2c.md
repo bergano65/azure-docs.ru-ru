@@ -13,13 +13,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/20/2020
 ms.author: wieastbu
-ms.custom: fasttrack-new
-ms.openlocfilehash: 60177dd00dc6326aae4cfdc0b658c85f2635f8c0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: fasttrack-new, devx-track-js
+ms.openlocfilehash: aa3bce73d2a91538dff0fdeb9e0eb814d878459a
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86253700"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92676018"
 ---
 # <a name="protect-spa-backend-with-oauth-20-azure-active-directory-b2c-and-azure-api-management"></a>Защита серверной части SPA с помощью OAuth 2,0, Azure Active Directory B2C и Azure API Management
 
@@ -180,7 +180,7 @@ ms.locfileid: "86253700"
    > Теперь API-интерфейс функции не следует вызывать из любого места, отличного от управления через Управление API, или вашего адреса.
    
 ## <a name="import-the-function-app-definition"></a>Импорт определения приложения функции
-1. Откройте *колонку управления API*, а затем откройте *свой экземпляр*.
+1. Откройте *колонку управления API* , а затем откройте *свой экземпляр* .
 1. Выберите колонку API из раздела управления API своего экземпляра.
 1. В области "добавить новый API" выберите "приложение-функция", а затем в верхней части всплывающего окна выберите "полная".
 1. Нажмите кнопку Обзор, выберите приложение-функцию, в котором вы размещаете API, и нажмите кнопку Выбрать.

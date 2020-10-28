@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.service: virtual-machines
 ms.date: 08/17/2020
 ms.reviewer: cynthn
-ms.openlocfilehash: 6deb7b535c3876ae8a8e83174b97a75582e82e58
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.openlocfilehash: dc8aa50c5c4ecb5e4b56a7e49453c266dad28818
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91996434"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92678090"
 ---
 # <a name="deploy-azure-monitor-for-sap-solutions-with-azure-portal"></a>Развертывание Azure Monitor для решений SAP с помощью портал Azure
 
@@ -24,7 +24,7 @@ Azure Monitor для ресурсов решений SAP можно создат
 
 ## <a name="create-monitoring-resource"></a>Создание ресурса мониторинга
 
-1. Выберите **Azure Monitor для решений SAP** в **Azure Marketplace**.
+1. Выберите **Azure Monitor для решений SAP** в **Azure Marketplace** .
 
    :::image type="content" source="./media/azure-monitor-sap/azure-monitor-quickstart-1.png" alt-text="На рисунке показано, как выбрать Azure Monitor для решений SAP в Azure Marketplace." lightbox="./media/azure-monitor-sap/azure-monitor-quickstart-1.png":::
 
@@ -47,15 +47,18 @@ Azure Monitor для ресурсов решений SAP можно создат
 
 2. Щелкните **Добавить поставщика** и выберите **SAP HANA** в раскрывающемся списке. 
 
+   > [!IMPORTANT]
+   > Убедитесь, что SAP HANA поставщик настроен для SAP HANA главного узла.
+
 3. Введите частный IP-адрес для сервера HANA.
 
 4. Введите имя клиента базы данных, который вы хотите использовать. Вы можете выбрать любой клиент, но мы рекомендуем использовать **системдб** , так как он обеспечивает широкий спектр областей наблюдения. 
 
-5. Введите номер порта SQL, связанный с базой данных HANA. Номер порта должен быть в формате **[3]**  +  **[instance #]**  +  **[13]** или **[3]**  +  **[instance #]**  +  **[15]**. Например, 30013 или 30015. 
+5. Введите номер порта SQL, связанный с базой данных HANA. Номер порта должен быть в формате **[3]**  +  **[instance #]**  +  **[13]** или **[3]**  +  **[instance #]**  +  **[15]** . Например, 30013 или 30015. 
 
 6. Введите имя пользователя базы данных, которое вы хотите использовать. Убедитесь, что пользователь базы данных имеет назначенные роли **мониторинга** и **чтения каталога** . 
 
-7. По завершении нажмите кнопку **Добавить поставщика**. Продолжайте добавлять дополнительные поставщики по мере необходимости или выберите **проверить и создать** , чтобы завершить развертывание.
+7. По завершении нажмите кнопку **Добавить поставщика** . Продолжайте добавлять дополнительные поставщики по мере необходимости или выберите **проверить и создать** , чтобы завершить развертывание.
 
    :::image type="content" source="./media/azure-monitor-sap/azure-monitor-quickstart-4.png" alt-text="На рисунке показано, как выбрать Azure Monitor для решений SAP в Azure Marketplace." lightbox="./media/azure-monitor-sap/azure-monitor-quickstart-4.png":::
 
@@ -70,7 +73,7 @@ Azure Monitor для ресурсов решений SAP можно создат
  
 3. Введите идентификатор системы (SID), имя узла и название кластера.
 
-4. По завершении нажмите кнопку **Добавить поставщика**. Продолжайте добавлять дополнительные поставщики по мере необходимости или выберите **проверить и создать** , чтобы завершить развертывание.
+4. По завершении нажмите кнопку **Добавить поставщика** . Продолжайте добавлять дополнительные поставщики по мере необходимости или выберите **проверить и создать** , чтобы завершить развертывание.
 
    :::image type="content" source="./media/azure-monitor-sap/azure-monitor-quickstart-5.png" alt-text="На рисунке показано, как выбрать Azure Monitor для решений SAP в Azure Marketplace." lightbox="./media/azure-monitor-sap/azure-monitor-quickstart-5.png":::
 
@@ -108,7 +111,7 @@ Azure Monitor для ресурсов решений SAP можно создат
 
 3. Заполните поля, используя сведения, связанные с Microsoft SQL Server. 
 
-4. По завершении нажмите кнопку **Добавить поставщика**. Продолжайте добавлять дополнительные поставщики по мере необходимости или выберите **проверить и создать** , чтобы завершить развертывание.
+4. По завершении нажмите кнопку **Добавить поставщика** . Продолжайте добавлять дополнительные поставщики по мере необходимости или выберите **проверить и создать** , чтобы завершить развертывание.
 
      :::image type="content" source="./media/azure-monitor-sap/azure-monitor-quickstart-6.png" alt-text="На рисунке показано, как выбрать Azure Monitor для решений SAP в Azure Marketplace." lightbox="./media/azure-monitor-sap/azure-monitor-quickstart-6.png":::
 

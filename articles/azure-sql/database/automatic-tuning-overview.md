@@ -11,12 +11,12 @@ author: danimir
 ms.author: danil
 ms.reviewer: jrasnik, sstein
 ms.date: 03/30/2020
-ms.openlocfilehash: 4c2faa6f015a8c1ce8f360155abdc14367d3057b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 180f6e8902dc881c99a74a6491eeb3012bc03d0f
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91330746"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92675224"
 ---
 # <a name="automatic-tuning-in-azure-sql-database-and-azure-sql-managed-instance"></a>Автоматическая настройка в базе данных SQL Azure и Управляемый экземпляр Azure SQL
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -46,7 +46,7 @@ ms.locfileid: "91330746"
 
 ![Как работает автоматическая настройка](./media/automatic-tuning-overview/how-does-automatic-tuning-work.png)
 
-Автоматическая настройка базы данных SQL Azure предоставляет доступ к своей основной логике с помощью функции автоматической настройки SQL Server в ядре СУБД. Дополнительные технические сведения о встроенном механизме настройки см. в статье [Automatic tuning](https://docs.microsoft.com/sql/relational-databases/automatic-tuning/automatic-tuning) (Автоматическая настройка).
+Автоматическая настройка базы данных SQL Azure предоставляет доступ к своей основной логике с помощью функции автоматической настройки SQL Server в ядре СУБД. Дополнительные технические сведения о встроенном механизме настройки см. в статье [Automatic tuning](/sql/relational-databases/automatic-tuning/automatic-tuning) (Автоматическая настройка).
 
 В приведенном ниже видео представлены принципы работы автоматической настройки и типичные сценарии использования.
 
@@ -54,8 +54,8 @@ ms.locfileid: "91330746"
 
 ## <a name="enable-automatic-tuning"></a>Включение автоматической настройки
 
-- [Автоматическая настройка базы данных SQL Azure включается в портал Azure](automatic-tuning-enable.md) или с помощью инструкции [ALTER DATABASE](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql-set-options?view=azuresqldb-current) T-SQL.
-- Включить автоматическую настройку для Управляемый экземпляр SQL Azure можно с помощью инструкции [ALTER DATABASE](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql-set-options?view=azuresqldb-mi-current) T-SQL.
+- [Автоматическая настройка базы данных SQL Azure включается в портал Azure](automatic-tuning-enable.md) или с помощью инструкции [ALTER DATABASE](/sql/t-sql/statements/alter-database-transact-sql-set-options?view=azuresqldb-current) T-SQL.
+- Включить автоматическую настройку для Управляемый экземпляр SQL Azure можно с помощью инструкции [ALTER DATABASE](/sql/t-sql/statements/alter-database-transact-sql-set-options?view=azuresqldb-mi-current) T-SQL.
 
 ## <a name="automatic-tuning-options"></a>Параметры автоматической настройки
 
@@ -69,7 +69,7 @@ ms.locfileid: "91330746"
 
 ### <a name="automatic-tuning-for-sql-database"></a>Автоматическая настройка базы данных SQL
 
-Автоматическая настройка базы данных SQL Azure использует для оптимизации производительности базы данных **Создание индекса**, **DROP INDEX**и **принудительного выполнения последнего хорошего плана** рекомендаций помощника по базам. Дополнительные сведения см. [в разделе рекомендации помощника по базам данных в портал Azure](database-advisor-find-recommendations-portal.md), в [PowerShell](https://docs.microsoft.com/powershell/module/az.sql/get-azsqldatabaserecommendedaction)и в [REST API](https://docs.microsoft.com/rest/api/sql/serverautomatictuning).
+Автоматическая настройка базы данных SQL Azure использует для оптимизации производительности базы данных **Создание индекса** , **DROP INDEX** и **принудительного выполнения последнего хорошего плана** рекомендаций помощника по базам. Дополнительные сведения см. [в разделе рекомендации помощника по базам данных в портал Azure](database-advisor-find-recommendations-portal.md), в [PowerShell](/powershell/module/az.sql/get-azsqldatabaserecommendedaction)и в [REST API](/rest/api/sql/serverautomatictuning).
 
 Можно либо вручную применить рекомендации по настройке с помощью портал Azure, либо включить автоматическую настройку для автономного применения рекомендаций по настройке. Преимущество автономного системного применения рекомендаций по настройке заключается в том, что система автоматически проверяет возможность увеличить производительность рабочей нагрузки. Если значительное повышение производительности не обнаружено, система автоматически вернется к рекомендации по настройке. Обратите внимание, что в случае запросов, на которые могут повлиять рекомендации по настройке, выполняемые нечасто, этап проверки может занять до 72 часов.
 
@@ -90,9 +90,9 @@ ms.locfileid: "91330746"
 
 ### <a name="automatic-tuning-for-azure-sql-managed-instance"></a>Автоматическая настройка Управляемый экземпляр Azure SQL
 
-Автоматическая настройка SQL Управляемый экземпляр поддерживает только **последний хороший план**. Дополнительные сведения о настройке параметров автоматической настройки с помощью T-SQL см. в разделе [Автоматическая настройка содержит автоматическое исправление плана](https://azure.microsoft.com/blog/automatic-tuning-introduces-automatic-plan-correction-and-t-sql-management/) и [Автоматическое исправление плана](https://docs.microsoft.com/sql/relational-databases/automatic-tuning/automatic-tuning?view=sql-server-ver15#automatic-plan-correction).
+Автоматическая настройка SQL Управляемый экземпляр поддерживает только **последний хороший план** . Дополнительные сведения о настройке параметров автоматической настройки с помощью T-SQL см. в разделе [Автоматическая настройка содержит автоматическое исправление плана](https://azure.microsoft.com/blog/automatic-tuning-introduces-automatic-plan-correction-and-t-sql-management/) и [Автоматическое исправление плана](/sql/relational-databases/automatic-tuning/automatic-tuning?view=sql-server-ver15#automatic-plan-correction).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о встроенных аналитических аналитиках, используемых в автоматической настройке, см. в статье [искусственный интеллект — Настройка базы данных SQL Azure](https://azure.microsoft.com/blog/artificial-intelligence-tunes-azure-sql-databases/).
 - Чтобы узнать, как работает автоматическая настройка, см. статью [Автоматическое индексирование миллионов баз данных в база данных SQL Microsoft Azure](https://www.microsoft.com/research/uploads/prod/2019/02/autoindexing_azuredb.pdf).

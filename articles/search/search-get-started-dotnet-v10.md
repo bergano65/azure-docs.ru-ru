@@ -8,24 +8,25 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.devlang: dotnet
 ms.topic: conceptual
-ms.date: 08/05/2020
+ms.date: 10/27/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: ce676c8966f67aeb233b2b9daf3f8f1c57327e6a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c6dd64ae8b7b7307d7dcd510d1fdb877365c6f36
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89462094"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92675960"
 ---
-# <a name="quickstart-create-a-search-index-using-the-microsoftazuresearch-v10-client-library"></a>Краткое руководство. Создание индекса поиска с помощью клиентской библиотеки Microsoft. Azure. Search V10
+# <a name="quickstart-create-a-search-index-using-the-legacy-microsoftazuresearch-v10-client-library"></a>Краткое руководство. Создание индекса поиска с помощью устаревшей клиентской библиотеки Microsoft. Azure. Search V10
 
-Эта статья является кратким руководством по C# для устаревшей клиентской библиотеки Microsoft. Azure. Search (версия 10), которая теперь заменена клиентской библиотекой Azure.Search.Docументс (версия 11). При наличии существующих решений для поиска, использующих библиотеки Microsoft. Azure. Search, вы можете использовать это краткое руководство для получения сведений об этих API. 
+Эта статья является кратким руководством по C# для устаревшей клиентской библиотеки [**Microsoft. Azure. Search**](/dotnet/api/overview/azure/search/client10) (версия 10), которая теперь заменена клиентской библиотекой [**Azure.Search.Docументс**](/dotnet/api/overview/azure/search.documents-readme) (версия 11).
 
-Для новых решений рекомендуется использовать новую библиотеку Azure.Search.Docументс. Общие сведения см. в разделе [Краткое руководство. Создание индекса поиска с помощью Azure.Search.Docбиблиотеки ументс](search-get-started-dotnet.md).
+> [!NOTE]
+> При наличии существующих или порядковых проектов разработки можно продолжать использовать версию 10. Но для новых проектов или для использования новых функций следует перейти к [новой библиотеке](/dotnet/api/overview/azure/search.documents-readme).
 
 ## <a name="about-this-quickstart"></a>Сведения об этом кратком руководстве
 
-Создайте консольное приложение .NET Core на C#, которое создает, загружает и запрашивает индекс Когнитивный поиск Azure с помощью Visual Studio и [клиентских библиотек Microsoft. Azure. Search](/dotnet/api/overview/azure/search/client10?view=azure-dotnet). 
+Создайте консольное приложение .NET Core на C#, которое создает, загружает и запрашивает индекс Когнитивный поиск Azure с помощью Visual Studio и [клиентских библиотек Microsoft. Azure. Search](/dotnet/api/overview/azure/search/client10). 
 
 В этой статье объясняется, как создать приложение. Вы также можете [скачать и запустить законченное приложение](https://github.com/Azure-Samples/azure-search-dotnet-samples/tree/master/quickstart/v10).
 
@@ -70,7 +71,7 @@ ms.locfileid: "89462094"
 
 1. В разделе **Инструменты** > **Диспетчер пакетов NuGet** выберите  **Управление пакетами NugGet для решения...** . 
 
-1. Нажмите кнопку **Обзор**.
+1. Нажмите кнопку **Обзор** .
 
 1. Найдите `Microsoft.Azure.Search` и выберите версию 10.
 
@@ -85,9 +86,9 @@ ms.locfileid: "89462094"
 
 1. В диалоге добавления элемента выполните поиск по строке JSON, чтобы получить список типов элементов, связанных с JSON.
 
-1. Выберите **файл JSON**, присвойте файлу имя appsettings.json и щелкните **Добавить**. 
+1. Выберите **файл JSON** , присвойте файлу имя appsettings.json и щелкните **Добавить** . 
 
-1. Добавьте файл в каталог выходных данных. Щелкните правой кнопкой мыши файл appsettings.json и выберите **Свойства**. Для параметра **Копировать в выходной каталог** выберите значение **Копировать, если новее**.
+1. Добавьте файл в каталог выходных данных. Щелкните правой кнопкой мыши файл appsettings.json и выберите **Свойства** . Для параметра **Копировать в выходной каталог** выберите значение **Копировать, если новее** .
 
 1. Скопируйте указанный ниже код JSON в созданный файл JSON. 
 
@@ -103,7 +104,7 @@ ms.locfileid: "89462094"
 
 ### <a name="add-class-method-files-to-your-project"></a>Добавление файлов класса ".Method" в проект
 
-Этот шаг необходим для получения осмысленных выходных данных в консоли. При выводе результатов в окно консоли отдельные поля из объекта Hotel должны возвращаться как строки. Для выполнения этой задачи на этом шаге вы реализуете метод [ToString()](/dotnet/api/system.object.tostring?view=netframework-4.8), скопировав необходимый код в два новых файла.
+Этот шаг необходим для получения осмысленных выходных данных в консоли. При выводе результатов в окно консоли отдельные поля из объекта Hotel должны возвращаться как строки. Для выполнения этой задачи на этом шаге вы реализуете метод [ToString()](/dotnet/api/system.object.tostring), скопировав необходимый код в два новых файла.
 
 1. Добавьте в проект два пустых определения классов: Address.Methods.cs и Hotel.Methods.cs.
 
@@ -198,15 +199,15 @@ ms.locfileid: "89462094"
     Атрибуты поля определяют его использование в приложении. Например, атрибут `IsSearchable` нужно назначить каждому полю, которое должно включаться в полнотекстовый поиск. 
     
     > [!NOTE]
-    > В пакете SDK для .NET полям должны быть явно заданы такие атрибуты, как [`IsSearchable`](/dotnet/api/microsoft.azure.search.models.field.issearchable?view=azure-dotnet), [`IsFilterable`](/dotnet/api/microsoft.azure.search.models.field.isfilterable?view=azure-dotnet), [`IsSortable`](/dotnet/api/microsoft.azure.search.models.field.issortable?view=azure-dotnet) и [`IsFacetable`](/dotnet/api/microsoft.azure.search.models.field.isfacetable?view=azure-dotnet). В отличие от этого, REST API неявно включает атрибуты на основе типа данных (например, простые строковые поля автоматически доступны для поиска).
+    > В пакете SDK для .NET полям должны быть явно заданы такие атрибуты, как [`IsSearchable`](/dotnet/api/microsoft.azure.search.models.field.issearchable), [`IsFilterable`](/dotnet/api/microsoft.azure.search.models.field.isfilterable), [`IsSortable`](/dotnet/api/microsoft.azure.search.models.field.issortable) и [`IsFacetable`](/dotnet/api/microsoft.azure.search.models.field.isfacetable). В отличие от этого, REST API неявно включает атрибуты на основе типа данных (например, простые строковые поля автоматически доступны для поиска).
 
     Только одно поле в индексе типа `string` должно быть назначено как *ключевое* (key), то есть уникальное для каждого документа. В нашей схеме ключевым является `HotelId`.
 
-    В этом индексе поля описания имеют необязательное свойство [`analyzer`](/dotnet/api/microsoft.azure.search.models.field.analyzer?view=azure-dotnet), которое используется для переопределения стандартного анализатора Lucene. Поле `description_fr` использует анализатор Lucene для французского языка ([FrLucene](/dotnet/api/microsoft.azure.search.models.analyzername.frlucene?view=azure-dotnet)), так как в нем хранится текст на французском языке. Поле `description` использует необязательный анализатор языка Майкрософт ([EnMicrosoft](/dotnet/api/microsoft.azure.search.models.analyzername.enmicrosoft?view=azure-dotnet)).
+    В этом индексе поля описания имеют необязательное свойство [`analyzer`](/dotnet/api/microsoft.azure.search.models.field.analyzer), которое используется для переопределения стандартного анализатора Lucene. Поле `description_fr` использует анализатор Lucene для французского языка ([FrLucene](/dotnet/api/microsoft.azure.search.models.analyzername.frlucene)), так как в нем хранится текст на французском языке. Поле `description` использует необязательный анализатор языка Майкрософт ([EnMicrosoft](/dotnet/api/microsoft.azure.search.models.analyzername.enmicrosoft)).
 
-1. Создайте в файле Program.cs экземпляр класса [`SearchServiceClient`](/dotnet/api/microsoft.azure.search.searchserviceclient?view=azure-dotnet) для подключения к службе с использованием значений, которые хранятся в файле конфигурации приложения (appsettings.json). 
+1. Создайте в файле Program.cs экземпляр класса [`SearchServiceClient`](/dotnet/api/microsoft.azure.search.searchserviceclient) для подключения к службе с использованием значений, которые хранятся в файле конфигурации приложения (appsettings.json). 
 
-   `SearchServiceClient` содержит свойство [`Indexes`](/dotnet/api/microsoft.azure.search.searchserviceclient.indexes?view=azure-dotnet), которое предоставляет все методы для создания, перечисления, обновления или удаления индексов службы "Когнитивный поиск Azure". 
+   `SearchServiceClient` содержит свойство [`Indexes`](/dotnet/api/microsoft.azure.search.searchserviceclient.indexes), которое предоставляет все методы для создания, перечисления, обновления или удаления индексов службы "Когнитивный поиск Azure". 
 
     ```csharp
     using System;
@@ -306,7 +307,7 @@ ms.locfileid: "89462094"
 
 Документы в службе "Когнитивный поиск Azure" представляют собой структуры данных, которые служат входами для индексирования и (или) выходами для запросов. Полученные из внешнего источника данных входные документы могут содержать строки базы данных, большие двоичные объекты из хранилища BLOB-объектов или сохраненные на диске документы JSON. В нашем примере мы выбрали самый простой путь, внедрив прямо в код документы JSON с информацией о четырех отелях. 
 
-При отправке документов следует использовать объект [`IndexBatch`](/dotnet/api/microsoft.azure.search.models.indexbatch?view=azure-dotnet). `IndexBatch` содержит коллекцию объектов [`IndexAction`](/dotnet/api/microsoft.azure.search.models.indexaction?view=azure-dotnet), каждый из которых содержит документ и свойство с описанием действия, которое должен выполнить Когнитивный поиск Azure ([отправка, объединение, удаление и mergeOrUpload](search-what-is-data-import.md#indexing-actions)).
+При отправке документов следует использовать объект [`IndexBatch`](/dotnet/api/microsoft.azure.search.models.indexbatch). `IndexBatch` содержит коллекцию объектов [`IndexAction`](/dotnet/api/microsoft.azure.search.models.indexaction), каждый из которых содержит документ и свойство с описанием действия, которое должен выполнить Когнитивный поиск Azure ([отправка, объединение, удаление и mergeOrUpload](search-what-is-data-import.md#indexing-actions)).
 
 1. В файле Program.cs создайте массив документов и действий индексирования, а затем передайте этот массив в `IndexBatch`. Приведенные ниже документы соответствуют индексу hotel-quickstart, который определен в классах hotel и address.
 
@@ -428,7 +429,7 @@ ms.locfileid: "89462094"
     }
     ```
 
-    Получив инициализированный объект `IndexBatch`, вы можете отправить его в индекс, вызвав метод [`Documents.Index`](/dotnet/api/microsoft.azure.search.documentsoperationsextensions.index?view=azure-dotnet) из объекта [`SearchIndexClient`](/dotnet/api/microsoft.azure.search.searchindexclient?view=azure-dotnet). `Documents` является свойством `SearchIndexClient` и предоставляет методы для добавления, изменения, удаления документов в индексе и запроса по ним.
+    Получив инициализированный объект `IndexBatch`, вы можете отправить его в индекс, вызвав метод [`Documents.Index`](/dotnet/api/microsoft.azure.search.documentsoperationsextensions.index) из объекта [`SearchIndexClient`](/dotnet/api/microsoft.azure.search.searchindexclient). `Documents` является свойством `SearchIndexClient` и предоставляет методы для добавления, изменения, удаления документов в индексе и запроса по ним.
 
     Блок `try`/`catch` вокруг вызова метода `Index` перехватывает ошибки индексирования, которые могут возникать при большой нагрузке на службу. В реальной системе вы можете после некоторой паузы повторить попытку индексирования документов, с которыми возникла ошибка, либо занести ошибку в журнал и продолжить работу, как в нашем примере, или выполнить другие действия в зависимости от требований к целостности данных для вашего приложения.
 
@@ -446,16 +447,15 @@ ms.locfileid: "89462094"
 
     Если сборка проекта завершится успешно, откроется окно консоли с сообщениями о состоянии, где теперь будет сообщение об отправке документов. На портале Azure откройте **обзорную страницу** для службы поиска, на которой теперь должно появиться четыре документа в индексе hotels-quickstart.
 
-Дополнительные сведения об обработке документов см. в разделе [Обработка документов пакетом SDK для .NET](search-howto-dotnet-sdk.md#how-dotnet-handles-documents).
+Дополнительные сведения об обработке документов см. в разделе [Обработка документов пакетом SDK для .NET](search-howto-dotnet-sdk-v10.md#how-dotnet-handles-documents).
 
 ## <a name="3---search-an-index"></a>3\. Поиск в индексе
 
 Результаты запросов можно получить сразу по завершении индексирования первого документа, но для полноценного тестирования индекса придется подождать, пока закончится индексирование всех документов. 
 
-В этом разделе мы добавим две новые функции: логику запроса и результаты. Для запросов используйте метод [`Search`](/dotnet/api/microsoft.azure.search.documentsoperationsextensions.search?view=azure-dotnet
-). Этот метод принимает текст для поиска и другие [параметры](/dotnet/api/microsoft.azure.search.models.searchparameters?view=azure-dotnet). 
+В этом разделе мы добавим две новые функции: логику запроса и результаты. Для запросов используйте метод [`Search`](/dotnet/api/microsoft.azure.search.documentsoperationsextensions.search). Этот метод принимает текст для поиска и другие [параметры](/dotnet/api/microsoft.azure.search.models.searchparameters). 
 
-Класс [`DocumentsSearchResult`](/dotnet/api/microsoft.azure.search.models.documentsearchresult-1?view=azure-dotnet) представляет результаты запроса.
+Класс [`DocumentsSearchResult`](/dotnet/api/microsoft.azure.search.models.documentsearchresult-1) представляет результаты запроса.
 
 
 1. В файле Program.cs создайте метод WriteDocuments, который выводит в консоль результаты поиска.

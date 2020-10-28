@@ -12,12 +12,12 @@ ms.reviewer: jrasnick
 manager: craigg
 ms.custom: seo-lt-2019
 tags: azure-synapse
-ms.openlocfilehash: 6f7af74cce6bbafea7924d505f768503c7b1f108
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b3c941139b12fdf19bf1080b4dddecb8ab761568
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89457997"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92676133"
 ---
 # <a name="azure-synapse-analytics-release-notes"></a>Заметки о выпуске Azure Synapse Analytics
 
@@ -39,6 +39,13 @@ ms.locfileid: "89457997"
 >
 > SELECT SERVERPROPERTY('EngineEdition')
 > ```
+
+## <a name="oct-2020"></a>Октябрь 2020
+
+| Улучшения службы | Сведения |
+| --- | --- |
+|**Встроенные функции Table-Valued T-SQL (Предварительная версия)**|В этом выпуске теперь можно создавать встроенные функции с табличным значением с помощью Transact-SQL и запрашивать их результаты, как в таблице. Сейчас эта функция доступна в предварительной версии. она будет поддерживаться в общедоступных средствах. Дополнительные сведения см. в статье [Создание функции (Azure синапсе Analytics)](https://docs.microsoft.com/sql/t-sql/statements/create-function-sql-data-warehouse?view=azure-sqldw-latest).|
+|**Команда MERGE (Предварительная версия)**|Теперь можно выполнять операции вставки, обновления или удаления в целевой таблице из результатов объединения с исходной таблицей. Например, можно синхронизировать две таблицы путем вставки, обновления или удаления строк в одной таблице на основании отличий, найденных в другой таблице.  Дополнительные сведения см. в инструкции [Merge](https://docs.microsoft.com/sql/t-sql/statements/merge-transact-sql?view=azuresqldb-current) .|
 
 ## <a name="aug-2020"></a>Авг 2020
 

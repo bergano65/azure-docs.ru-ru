@@ -6,12 +6,12 @@ ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 04/06/2020
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: 7d7dc8564ee35bcd8bfd92d996d07e1d0c365806
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: dcf912f431d578a6e678801d3dc8f4e11484ea78
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91776499"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92678369"
 ---
 # <a name="accept-active-learning-suggested-questions-in-the-knowledge-base"></a>Принять предлагаемые активные обучающие вопросы в базе знаний
 
@@ -22,15 +22,15 @@ ms.locfileid: "91776499"
 
 ## <a name="turn-on-active-learning"></a>Включение активного обучения
 
-Чтобы увидеть предлагаемые вопросы, необходимо [включить активное обучение](use-active-learning.md) для ресурса QnA Maker.
+Чтобы увидеть предлагаемые вопросы, необходимо [включить активное обучение](https://docs.microsoft.com/azure/cognitive-services/qnamaker/concepts/active-learning-suggestions) для ресурса QnA Maker.
 
 ## <a name="view-suggested-questions"></a>Просмотреть предлагаемые вопросы
 
-1. Чтобы просмотреть предлагаемые вопросы, на странице « **изменение** базы знаний» выберите **Просмотр параметров**, а затем выберите **Показать активные предложения по обучению**.
+1. Чтобы просмотреть предлагаемые вопросы, на странице « **изменение** базы знаний» выберите **Просмотр параметров** , а затем выберите **Показать активные предложения по обучению** .
 
     [![В разделе "Правка" на портале выберите Показать предложения, чтобы просмотреть альтернативы нового вопроса активного обучения.](../media/improve-knowledge-base/show-suggestions-button.png)](../media/improve-knowledge-base/show-suggestions-button.png#lightbox)
 
-1. Отфильтруйте базу знаний с помощью пар вопросов и ответов, чтобы отображались только предложения, выбрав **Фильтр по предложениям**.
+1. Отфильтруйте базу знаний с помощью пар вопросов и ответов, чтобы отображались только предложения, выбрав **Фильтр по предложениям** .
 
     [![Используйте переключатель фильтровать по предложениям для просмотра только альтернативных вариантов вопроса, предлагаемых в активном обучении.](../media/improve-knowledge-base/filter-by-suggestions.png)](../media/improve-knowledge-base/filter-by-suggestions.png#lightbox)
 
@@ -143,8 +143,8 @@ Content-Type: application/json
 |Свойство тела JSON|Тип|Назначение|
 |--|--|--|--|
 |`feedbackRecords`|массиве|Список отзывов.|
-|`userId`|строка|Идентификатор пользователя, который принимает предлагаемые вопросы. Пользователь должен иметь формат идентификатора пользователя. Например, адрес электронной почты может быть допустимым ИДЕНТИФИКАТОРом пользователя в вашей архитектуре. Необязательный параметр.|
-|`userQuestion`|строка|Точный текст запроса пользователя. Обязательный элемент.|
+|`userId`|строка|Идентификатор пользователя, который принимает предлагаемые вопросы. Пользователь должен иметь формат идентификатора пользователя. Например, адрес электронной почты может быть допустимым ИДЕНТИФИКАТОРом пользователя в вашей архитектуре. Необязательный элемент.|
+|`userQuestion`|строка|Точный текст запроса пользователя. Обязательный.|
 |`qnaID`|number|Идентификатор вопроса, найденный в [ответе женератеансвер](metadata-generateanswer-usage.md#generateanswer-response-properties). |
 
 Пример текста JSON выглядит следующим образом:
@@ -341,7 +341,7 @@ async callTrain(stepContext){
 
 Рекомендации по использованию активного обучения см. в статье [Рекомендации по использованию базы знаний QnA Maker](../Concepts/best-practices.md#active-learning).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Использование метаданных с помощью API GenerateAnswer](metadata-generateanswer-usage.md)

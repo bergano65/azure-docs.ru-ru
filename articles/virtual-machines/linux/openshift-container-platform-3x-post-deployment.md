@@ -9,13 +9,13 @@ ms.topic: how-to
 ms.workload: infrastructure
 ms.date: 10/14/2019
 ms.author: haroldw
-ms.custom: devx-track-ansible
-ms.openlocfilehash: 8e34f73f1c403e3a7d21c6c30844f8b9073b3113
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: devx-track-ansible, devx-track-azurecli
+ms.openlocfilehash: dd967ad08b628f9073edfe548033f7e97845d047
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87373578"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92735110"
 ---
 # <a name="post-deployment-tasks"></a>Задачи, выполняемые после развертывания
 
@@ -68,25 +68,25 @@ az ad app create --display-name OCPAzureAD --homepage https://masterdns343khhde.
 
 Запишите свойство appId, возвращенное из команды. Оно понадобится в дальнейшем.
 
-На портале Azure выполните следующие действия.
+На портале Azure выполните следующие действия:
 
-1. Выберите **Azure Active Directory**  >  **Регистрация приложения**.
+1. Выберите **Azure Active Directory**  >  **Регистрация приложения** .
 2. Найдите зарегистрированное приложение (например, OCPAzureAD).
 3. В результатах поиска щелкните нужное зарегистрированное приложение.
-4. В области **Параметры** щелкните **Требуемые разрешения**.
-5. В области **Необходимые разрешения** щелкните **Добавить**.
+4. В области **Параметры** щелкните **Требуемые разрешения** .
+5. В области **Необходимые разрешения** щелкните **Добавить** .
 
    ![Регистрация приложения](media/openshift-post-deployment/app-registration.png)
 
-6. Щелкните "Шаг 1. Выбрать API" и выберите **Windows Azure Active Directory (Microsoft.Azure.ActiveDirectory)**. Щелкните **Выбрать** внизу.
+6. Щелкните "Шаг 1. Выбрать API" и выберите **Windows Azure Active Directory (Microsoft.Azure.ActiveDirectory)** . Щелкните **Выбрать** внизу.
 
    ![Регистрация приложения. Выбор API](media/openshift-post-deployment/app-registration-select-api.png)
 
-7. В области "Шаг 2. Выбор разрешений" выберите **Вход и чтение профиля пользователя** в разделе **Делегированные разрешения**, затем щелкните **Выбрать**.
+7. В области "Шаг 2. Выбор разрешений" выберите **Вход и чтение профиля пользователя** в разделе **Делегированные разрешения** , затем щелкните **Выбрать** .
 
    ![Доступ к регистрации приложения](media/openshift-post-deployment/app-registration-access.png)
 
-8. Нажмите кнопку **Готово**.
+8. Нажмите кнопку **Готово** .
 
 ### <a name="configure-openshift-for-azure-ad-authentication"></a>Настройка OpenShift для аутентификации Azure AD
 

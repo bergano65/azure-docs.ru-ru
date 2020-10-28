@@ -2,50 +2,50 @@
 title: Развертывание ресурсов с помощью REST API и шаблона
 description: Сведения о том, как применить Azure Resource Manager и REST API Resource Manager для развертывания ресурсов в Azure. Эти ресурсы определяются в шаблоне Resource Manager.
 ms.topic: conceptual
-ms.date: 07/21/2020
-ms.openlocfilehash: 17ea7da3e0b581ed60d2db97d350a70d5250ef28
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 10/22/2020
+ms.openlocfilehash: d1c8a365153007d3337d922bc163ba3767eeddc9
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87079489"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92675404"
 ---
-# <a name="deploy-resources-with-arm-templates-and-resource-manager-rest-api"></a>Развертывание ресурсов с использованием шаблонов ARM и REST API Resource Manager.
+# <a name="deploy-resources-with-arm-templates-and-azure-resource-manager-rest-api"></a>Развертывание ресурсов с помощью шаблонов ARM и Azure Resource Manager REST API
 
-В этой статье описано, как использовать REST API Resource Manager с шаблонами Azure Resource Manager (ARM) для развертывания ресурсов в Azure.
+В этой статье объясняется, как использовать Azure Resource Manager REST API с шаблонами Azure Resource Manager (шаблоны ARM) для развертывания ресурсов в Azure.
 
 Вы можете включить шаблон в текст запроса или связать с файлом. Файл может быть локальным или внешним, доступным по универсальному коду ресурса (URI). Если шаблон находится в учетной записи хранения, то во время развертывания можно ограничить доступ к шаблону и предоставить маркер подписанного URL-адреса (SAS).
 
 ## <a name="deployment-scope"></a>Область развертывания
 
-Вы можете нацелить развертывание на группу управления, подписку Azure или группу ресурсов. В большинстве случаев в качестве области развертывания используется группа ресурсов. Развертывание в группе управления или подписке удобно для применения политик и назначений ролей в соответствующей области. Также развертывание в подписке используется, чтобы создать группу ресурсов и развернуть в ней ресурсы. В зависимости от области развертывания используются разные команды.
+Вы можете выбрать для развертывания группу ресурсов, подписку Azure, группу управления или клиент. В зависимости от области развертывания используются разные команды.
 
-* Чтобы выполнить развертывание в **группе ресурсов**, используйте инструкции из статьи [Развертывания: создание](/rest/api/resources/deployments/createorupdate). Назначение для такого запроса:
+* Чтобы выполнить развертывание в **группе ресурсов** , используйте инструкции из статьи [Развертывания: создание](/rest/api/resources/deployments/createorupdate). Назначение для такого запроса:
 
   ```HTTP
-  PUT https://management.azure.com/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Resources/deployments/{deploymentName}?api-version=2019-10-01
+  PUT https://management.azure.com/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Resources/deployments/{deploymentName}?api-version=2020-06-01
   ```
 
-* Чтобы выполнить развертывание в **подписке**, используйте инструкции из статьи [Развертывания: создание в области подписки](/rest/api/resources/deployments/createorupdateatsubscriptionscope). Назначение для такого запроса:
+* Чтобы выполнить развертывание в **подписке** , используйте инструкции из статьи [Развертывания: создание в области подписки](/rest/api/resources/deployments/createorupdateatsubscriptionscope). Назначение для такого запроса:
 
   ```HTTP
-  PUT https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.Resources/deployments/{deploymentName}?api-version=2019-10-01
+  PUT https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.Resources/deployments/{deploymentName}?api-version=2020-06-01
   ```
 
   Дополнительные сведения о развертываниях на уровне подписки см. в статье [Создание групп ресурсов и ресурсов на уровне подписки](deploy-to-subscription.md).
 
-* Чтобы выполнить развертывание в **группе управления**, используйте инструкции из статьи [Развертывания: создание в области группы управления](/rest/api/resources/deployments/createorupdateatmanagementgroupscope). Назначение для такого запроса:
+* Чтобы выполнить развертывание в **группе управления** , используйте инструкции из статьи [Развертывания: создание в области группы управления](/rest/api/resources/deployments/createorupdateatmanagementgroupscope). Назначение для такого запроса:
 
   ```HTTP
-  PUT https://management.azure.com/providers/Microsoft.Management/managementGroups/{groupId}/providers/Microsoft.Resources/deployments/{deploymentName}?api-version=2019-10-01
+  PUT https://management.azure.com/providers/Microsoft.Management/managementGroups/{groupId}/providers/Microsoft.Resources/deployments/{deploymentName}?api-version=2020-06-01
   ```
 
   Дополнительные сведения о развертываниях на уровне групп управления см. в статье [Создание ресурсов на уровне группы управления](deploy-to-management-group.md).
 
-* Чтобы выполнить развертывание в **клиенте**, используйте инструкции из статьи [Развертывания: создание или обновление в области клиента](/rest/api/resources/deployments/createorupdateattenantscope). Назначение для такого запроса:
+* Чтобы выполнить развертывание в **клиенте** , используйте инструкции из статьи [Развертывания: создание или обновление в области клиента](/rest/api/resources/deployments/createorupdateattenantscope). Назначение для такого запроса:
 
   ```HTTP
-  PUT https://management.azure.com/providers/Microsoft.Resources/deployments/{deploymentName}?api-version=2019-10-01
+  PUT https://management.azure.com/providers/Microsoft.Resources/deployments/{deploymentName}?api-version=2020-06-01
   ```
 
   Дополнительные сведения о развертываниях на уровне клиента см. в статье [Создание ресурсов на уровне клиента](deploy-to-tenant.md).
@@ -56,10 +56,10 @@ ms.locfileid: "87079489"
 
 1. Задайте [общие параметры и заголовки](/rest/api/azure/), включая маркеры аутентификации.
 
-1. Создайте группу ресурсов, если у вас нет существующей группы ресурсов. Укажите идентификатор подписки, имя новой группы ресурсов и расположение, необходимое для решения. Дополнительную информацию см. в разделе [Создание группы ресурсов](/rest/api/resources/resourcegroups/createorupdate).
+1. Если развертывание выполняется в несуществующей группе ресурсов, создайте группу ресурсов. Укажите идентификатор подписки, имя новой группы ресурсов и расположение, необходимое для решения. Дополнительную информацию см. в разделе [Создание группы ресурсов](/rest/api/resources/resourcegroups/createorupdate).
 
    ```HTTP
-   PUT https://management.azure.com/subscriptions/<YourSubscriptionId>/resourcegroups/<YourResourceGroupName>?api-version=2019-10-01
+   PUT https://management.azure.com/subscriptions/<YourSubscriptionId>/resourcegroups/<YourResourceGroupName>?api-version=2020-06-01
    ```
 
    С текстом запроса:
@@ -83,7 +83,7 @@ ms.locfileid: "87079489"
 
    В тексте запроса укажите ссылку на шаблон и файл параметров. Дополнительные сведения о файле параметров см. в статье [Создание файла параметров Resource Manager](parameter-files.md).
 
-   Обратите внимание, что для параметра **mode** выбрано значение **Incremental**. Чтобы выполнить полное развертывание, установите для параметра **mode** значение **Complete**. Будьте внимательны при использовании полного режима, так как вы можете случайно удалить ресурсы, которые находятся не в шаблоне.
+   Обратите внимание, что для параметра **mode** выбрано значение **Incremental** . Чтобы выполнить полное развертывание, установите для параметра **mode** значение **Complete** . Будьте внимательны при использовании полного режима, так как вы можете случайно удалить ресурсы, которые находятся не в шаблоне.
 
    ```json
    {

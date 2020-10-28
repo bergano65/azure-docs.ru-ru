@@ -11,12 +11,12 @@ author: shkale-msft
 ms.author: shkale
 ms.reviewer: mathoma, stevestein, danil
 ms.date: 10/05/2020
-ms.openlocfilehash: be40cd4a0bef43d81c792fd10508014f5b886fba
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: dc6d083efd1d39d96f9df995fe5e7e4bcc95abff
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92124192"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92675307"
 ---
 # <a name="automated-backups---azure-sql-database--sql-managed-instance"></a>Автоматическое резервное копирование базы данных SQL Azure & SQL Управляемый экземпляр
 
@@ -30,7 +30,7 @@ ms.locfileid: "92124192"
 
 ### <a name="backup-frequency"></a>Частота резервного копирования
 
-Как база данных SQL, так и SQL Управляемый экземпляр используют технологию SQL Server для создания [полных резервных копий](https://docs.microsoft.com/sql/relational-databases/backup-restore/full-database-backups-sql-server) каждую неделю, [разностные резервные копии](https://docs.microsoft.com/sql/relational-databases/backup-restore/differential-backups-sql-server) каждые 12-24 часов и [резервные копии журналов транзакций](https://docs.microsoft.com/sql/relational-databases/backup-restore/transaction-log-backups-sql-server) каждые 5 – 10 минут. Периодичность резервного копирования журнала транзакций зависит от размера вычислений и объема активности базы данных.
+Как база данных SQL, так и SQL Управляемый экземпляр используют технологию SQL Server для создания [полных резервных копий](/sql/relational-databases/backup-restore/full-database-backups-sql-server) каждую неделю, [разностные резервные копии](/sql/relational-databases/backup-restore/differential-backups-sql-server) каждые 12-24 часов и [резервные копии журналов транзакций](/sql/relational-databases/backup-restore/transaction-log-backups-sql-server) каждые 5 – 10 минут. Периодичность резервного копирования журнала транзакций зависит от размера вычислений и объема активности базы данных.
 
 При восстановлении базы данных служба определяет, какие резервные копии полных, разностных и журналов транзакций необходимо восстановить.
 
@@ -56,7 +56,7 @@ ms.locfileid: "92124192"
 
 Эти резервные копии позволяют выполнить следующие операции:
 
-- **Восстановление существующей базы данных**  -  на момент времени [Восстановите существующую базу данных до точки во времени в прошлом](recovery-using-backups.md#point-in-time-restore) в течение срока хранения с помощью портал Azure, Azure PowerShell, Azure CLI или REST API. Для базы данных SQL эта операция создает новую базу данных на том же сервере, что и исходная база данных, но использует другое имя, чтобы избежать перезаписи исходной базы данных. После завершения восстановления можно удалить исходную базу данных. Кроме того, можно [Переименовать](https://docs.microsoft.com/sql/relational-databases/databases/rename-a-database) исходную базу данных, а затем переименовать восстановленную базу данных в исходное имя базы данных. Аналогично, для Управляемый экземпляр SQL эта операция создает копию базы данных на том же или другом управляемом экземпляре в той же подписке и том же регионе.
+- **Восстановление существующей базы данных**  -  на момент времени [Восстановите существующую базу данных до точки во времени в прошлом](recovery-using-backups.md#point-in-time-restore) в течение срока хранения с помощью портал Azure, Azure PowerShell, Azure CLI или REST API. Для базы данных SQL эта операция создает новую базу данных на том же сервере, что и исходная база данных, но использует другое имя, чтобы избежать перезаписи исходной базы данных. После завершения восстановления можно удалить исходную базу данных. Кроме того, можно [Переименовать](/sql/relational-databases/databases/rename-a-database) исходную базу данных, а затем переименовать восстановленную базу данных в исходное имя базы данных. Аналогично, для Управляемый экземпляр SQL эта операция создает копию базы данных на том же или другом управляемом экземпляре в той же подписке и том же регионе.
 - **Восстановление удаленной базы данных**  -  на момент времени [Восстановление удаленной базы данных до момента удаления](recovery-using-backups.md#deleted-database-restore) или в любой момент времени в течение срока хранения. Удаленную базу данных можно восстановить только на том же сервере или в управляемом экземпляре, где была создана исходная база данных. При удалении базы данных служба выполняет окончательную резервную копию журнала транзакций перед удалением, чтобы предотвратить потери данных.
 - **Геовосстановление**  -  [Восстановление базы данных в другой географический регион](recovery-using-backups.md#geo-restore). Геовосстановление позволяет восстанавливаться после географической аварии, когда доступ к базе данных или резервным копиям в основном регионе невозможен. Она создает новую базу данных на любом существующем сервере или управляемом экземпляре в любом регионе Azure.
    > [!IMPORTANT]
@@ -72,11 +72,11 @@ ms.locfileid: "92124192"
 
 | Операция | Портал Azure | Azure PowerShell |
 |---|---|---|
-| **Изменение срока хранения резервной копии** | [База данных SQL](automated-backups-overview.md?tabs=single-database#change-the-pitr-backup-retention-period-by-using-the-azure-portal) <br/> [Управляемый экземпляр SQL](automated-backups-overview.md?tabs=managed-instance#change-the-pitr-backup-retention-period-by-using-the-azure-portal) | [База данных SQL](automated-backups-overview.md#change-the-pitr-backup-retention-period-by-using-powershell) <br/>[Управляемый экземпляр SQL](https://docs.microsoft.com/powershell/module/az.sql/set-azsqlinstancedatabasebackupshorttermretentionpolicy) |
+| **Изменение срока хранения резервной копии** | [База данных SQL](automated-backups-overview.md?tabs=single-database#change-the-pitr-backup-retention-period-by-using-the-azure-portal) <br/> [Управляемый экземпляр SQL](automated-backups-overview.md?tabs=managed-instance#change-the-pitr-backup-retention-period-by-using-the-azure-portal) | [База данных SQL](automated-backups-overview.md#change-the-pitr-backup-retention-period-by-using-powershell) <br/>[Управляемый экземпляр SQL](/powershell/module/az.sql/set-azsqlinstancedatabasebackupshorttermretentionpolicy) |
 | **Изменение долгосрочного хранения резервных копий** | [База данных SQL](long-term-backup-retention-configure.md#configure-long-term-retention-policies)<br/>SQL Управляемый экземпляр-N/A  | [База данных SQL](long-term-backup-retention-configure.md)<br/>[Управляемый экземпляр SQL](../managed-instance/long-term-backup-retention-configure.md)  |
-| **Восстановление базы данных на момент времени** | [База данных SQL](recovery-using-backups.md#point-in-time-restore)<br>[Управляемый экземпляр SQL](../managed-instance/point-in-time-restore.md) | [База данных SQL](https://docs.microsoft.com/powershell/module/az.sql/restore-azsqldatabase) <br/> [Управляемый экземпляр SQL](https://docs.microsoft.com/powershell/module/az.sql/restore-azsqlinstancedatabase) |
-| **Восстановление удаленной базы данных** | [База данных SQL](recovery-using-backups.md)<br>[Управляемый экземпляр SQL](../managed-instance/point-in-time-restore.md#restore-a-deleted-database) | [База данных SQL](https://docs.microsoft.com/powershell/module/az.sql/get-azsqldeleteddatabasebackup) <br/> [Управляемый экземпляр SQL](https://docs.microsoft.com/powershell/module/az.sql/get-azsqldeletedinstancedatabasebackup)|
-| **Восстановление базы данных из хранилища BLOB-объектов Azure** | База данных SQL — н/д <br/>SQL Управляемый экземпляр-N/A  | База данных SQL — н/д <br/>[Управляемый экземпляр SQL](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-get-started-restore) |
+| **Восстановление базы данных на момент времени** | [База данных SQL](recovery-using-backups.md#point-in-time-restore)<br>[Управляемый экземпляр SQL](../managed-instance/point-in-time-restore.md) | [База данных SQL](/powershell/module/az.sql/restore-azsqldatabase) <br/> [Управляемый экземпляр SQL](/powershell/module/az.sql/restore-azsqlinstancedatabase) |
+| **Восстановление удаленной базы данных** | [База данных SQL](recovery-using-backups.md)<br>[Управляемый экземпляр SQL](../managed-instance/point-in-time-restore.md#restore-a-deleted-database) | [База данных SQL](/powershell/module/az.sql/get-azsqldeleteddatabasebackup) <br/> [Управляемый экземпляр SQL](/powershell/module/az.sql/get-azsqldeletedinstancedatabasebackup)|
+| **Восстановление базы данных из хранилища BLOB-объектов Azure** | База данных SQL — н/д <br/>SQL Управляемый экземпляр-N/A  | База данных SQL — н/д <br/>[Управляемый экземпляр SQL](../managed-instance/restore-sample-database-quickstart.md) |
 
 ## <a name="backup-scheduling"></a>Планирование резервного копирования
 
@@ -115,7 +115,7 @@ ms.locfileid: "92124192"
 
 - Сократите [срок хранения резервных копий](#change-the-pitr-backup-retention-period-by-using-the-azure-portal) до минимально возможной потребности.
 - Избегайте выполнения больших операций записи, таких как перестроение индекса, чаще, чем требуется.
-- Для операций загрузки больших данных рассмотрите возможность использования [кластеризованных индексов columnstore](https://docs.microsoft.com/sql/relational-databases/indexes/columnstore-indexes-overview) и [следующих связанных рекомендаций](https://docs.microsoft.com/sql/relational-databases/indexes/columnstore-indexes-data-loading-guidance), а также уменьшения числа некластеризованных индексов.
+- Для операций загрузки больших данных рассмотрите возможность использования [кластеризованных индексов columnstore](/sql/relational-databases/indexes/columnstore-indexes-overview) и [следующих связанных рекомендаций](/sql/relational-databases/indexes/columnstore-indexes-data-loading-guidance), а также уменьшения числа некластеризованных индексов.
 - На уровне служб общего назначения подготовленное хранилище данных менее затратно, чем стоимость хранилища резервных копий. При постоянном повышении затрат на хранение резервных копий можно увеличить объем хранилища данных для сохранения в хранилище резервных копий.
 - Используйте базу данных TempDB вместо постоянных таблиц в логике приложения для хранения временных результатов и (или) временных данных.
 - Используйте локально избыточное хранилище резервных копий везде, где это возможно (например, в средах разработки и тестирования).
@@ -190,9 +190,9 @@ ms.locfileid: "92124192"
 
 ### <a name="monitor-costs"></a>Мониторинг затрат
 
-Чтобы узнать стоимость хранилища резервных копий, выберите **Управление затратами + выставление счетов** в портал Azure, щелкните **Управление затратами**, а затем выберите **анализ затрат**. Выберите нужную подписку в качестве **области**, а затем выполните фильтрацию за период времени и службу, которые вас интересуют.
+Чтобы узнать стоимость хранилища резервных копий, выберите **Управление затратами + выставление счетов** в портал Azure, щелкните **Управление затратами** , а затем выберите **анализ затрат** . Выберите нужную подписку в качестве **области** , а затем выполните фильтрацию за период времени и службу, которые вас интересуют.
 
-Добавьте фильтр для **имени службы**, а затем выберите **база данных SQL** в раскрывающемся списке. Используйте фильтр **Подкатегория подкатегории** , чтобы выбрать счетчик выставления счетов для службы. Для отдельной базы данных или пула эластичных баз данных выберите **один или эластичный пул PITR хранилище резервных копий**. Для управляемого экземпляра выберите **PITR хранилище резервных копий**. Подкатегории **хранилища** и **вычислений** могут быть также интересны, но не связаны с затратами на хранение резервных копий.
+Добавьте фильтр для **имени службы** , а затем выберите **база данных SQL** в раскрывающемся списке. Используйте фильтр **Подкатегория подкатегории** , чтобы выбрать счетчик выставления счетов для службы. Для отдельной базы данных или пула эластичных баз данных выберите **один или эластичный пул PITR хранилище резервных копий** . Для управляемого экземпляра выберите **PITR хранилище резервных копий** . Подкатегории **хранилища** и **вычислений** могут быть также интересны, но не связаны с затратами на хранение резервных копий.
 
 ![Анализ затрат на хранилище резервных копий](./media/automated-backups-overview/check-backup-storage-cost-sql-mi.png)
 
@@ -249,7 +249,7 @@ ms.locfileid: "92124192"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 > [!IMPORTANT]
-> Модуль PowerShell AzureRM по-прежнему поддерживается базой данных SQL и Управляемый экземпляр SQL, но вся будущая разработка предназначена для модуля AZ. SQL. Дополнительные сведения см. в разделе [AzureRM. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле AZ существенно идентичны параметрам в модулях AzureRm.
+> Модуль PowerShell AzureRM по-прежнему поддерживается базой данных SQL и Управляемый экземпляр SQL, но вся будущая разработка предназначена для модуля AZ. SQL. Дополнительные сведения см. в разделе [AzureRM. SQL](/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле AZ существенно идентичны параметрам в модулях AzureRm.
 
 #### <a name="sql-database"></a>[База данных SQL](#tab/single-database)
 
@@ -333,7 +333,7 @@ PUT https://management.azure.com/subscriptions/00000000-1111-2222-3333-444444444
 }
 ```
 
-Дополнительные сведения о политиках краткосрочного хранения резервных копий см. [здесь](https://docs.microsoft.com/rest/api/sql/backupshorttermretentionpolicies).
+Дополнительные сведения о политиках краткосрочного хранения резервных копий см. [здесь](/rest/api/sql/backupshorttermretentionpolicies).
 
 #### <a name="sample-request"></a>Пример запроса
 
@@ -366,7 +366,7 @@ PUT https://management.azure.com/subscriptions/00000000-1111-2222-3333-444444444
 }
 ```
 
-Дополнительные сведения о политиках краткосрочного хранения резервных копий см. [здесь](https://docs.microsoft.com/rest/api/sql/backupshorttermretentionpolicies).
+Дополнительные сведения о политиках краткосрочного хранения резервных копий см. [здесь](/rest/api/sql/backupshorttermretentionpolicies).
 
 ## <a name="configure-backup-storage-redundancy"></a>Настройка избыточности хранилища резервных копий
 
@@ -403,7 +403,7 @@ PUT https://management.azure.com/subscriptions/00000000-1111-2222-3333-444444444
 New-AzSqlDatabase -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database03" -Edition "GeneralPurpose" -Vcore 2 -ComputeGeneration "Gen5" -BackupStorageRedundancy Geo
 ```
 
-Дополнительные сведения см. в описании [New-азсклдатабасе](https://docs.microsoft.com/powershell/module/az.sql/new-azsqldatabase).
+Дополнительные сведения см. в описании [New-азсклдатабасе](/powershell/module/az.sql/new-azsqldatabase).
 
 Чтобы обновить избыточность хранилища резервных копий существующей базы данных, можно использовать параметр-BackupStorageRedundancy. Возможные значения: GEO, Zone и local.
 Обратите внимание, что для применения изменений к базе данных может потребоваться до 48 часов. Переключение с геоизбыточного хранилища резервных копий на локальное или в хранилище, избыточное в зоне, отключает географическое восстановление. 
@@ -413,7 +413,7 @@ New-AzSqlDatabase -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -D
 Set-AzSqlDatabase -ResourceGroupName "ResourceGroup01" -DatabaseName "Database01" -ServerName "Server01" -BackupStorageRedundancy Zone
 ```
 
-Дополнительные сведения см. в описании [Set-азсклдатабасе](https://docs.microsoft.com/powershell/module/az.sql/set-azsqldatabase)
+Дополнительные сведения см. в описании [Set-азсклдатабасе](/powershell/module/az.sql/set-azsqldatabase)
 
 > [!NOTE]
 > Чтобы использовать параметр-BackupStorageRedundancy с восстановлением базы данных, копированием базы данных или созданием вторичных операций, используйте Azure PowerShell версии AZ. SQL 2.11.0. 
@@ -427,13 +427,13 @@ Set-AzSqlDatabase -ResourceGroupName "ResourceGroup01" -DatabaseName "Database01
 New-AzSqlInstance -Name managedInstance2 -ResourceGroupName ResourceGroup01 -Location westcentralus -AdministratorCredential (Get-Credential) -SubnetId "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/resourcegroup01/providers/Microsoft.Network/virtualNetworks/vnet_name/subnets/subnet_name" -LicenseType LicenseIncluded -StorageSizeInGB 1024 -VCore 16 -Edition "GeneralPurpose" -ComputeGeneration Gen4 -BackupStorageRedundancy Geo
 ```
 
-Дополнительные сведения см. в описании [New-азсклинстанце](https://docs.microsoft.com/powershell/module/az.sql/new-azsqlinstance).
+Дополнительные сведения см. в описании [New-азсклинстанце](/powershell/module/az.sql/new-azsqlinstance).
 
 ---
 
 ## <a name="use-azure-policy-to-enforce-backup-storage-redundancy"></a>Использование политики Azure для обеспечения избыточности хранилища резервных копий
 
-Если у вас есть требования к местонахождениеу данных, для которых требуется хранить все данные в одном регионе Azure, вы можете применить избыточные в пределах зоны или локально избыточные резервные копии базы данных SQL или Управляемый экземпляр с помощью политики Azure. Политика Azure — это служба, которую можно использовать для создания, назначения и управления политиками, которые применяют правила к ресурсам Azure. Политика Azure помогает защитить эти ресурсы в соответствии с корпоративными стандартами и соглашениями об уровне обслуживания. Дополнительные сведения см. в статье [Что такое служба "Политика Azure"?](https://docs.microsoft.com/azure/governance/policy/overview). 
+Если у вас есть требования к местонахождениеу данных, для которых требуется хранить все данные в одном регионе Azure, вы можете применить избыточные в пределах зоны или локально избыточные резервные копии базы данных SQL или Управляемый экземпляр с помощью политики Azure. Политика Azure — это служба, которую можно использовать для создания, назначения и управления политиками, которые применяют правила к ресурсам Azure. Политика Azure помогает защитить эти ресурсы в соответствии с корпоративными стандартами и соглашениями об уровне обслуживания. Дополнительные сведения см. в статье [Что такое служба "Политика Azure"?](../../governance/policy/overview.md). 
 
 ### <a name="built-in-backup-storage-redundancy-policies"></a>Встроенные политики избыточности хранилища резервных копий 
 
@@ -443,17 +443,17 @@ New-AzSqlInstance -Name managedInstance2 -ResourceGroupName ResourceGroup01 -Loc
 
 [Управляемые экземпляры SQL не должны использовать избыточность GRS для резервных копий](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fa9934fd7-29f2-4e6d-ab3d-607ea38e9079)
 
-Полный список определений встроенных политик для базы данных SQL и Управляемый экземпляр можно найти [здесь](https://docs.microsoft.com/azure/azure-sql/database/policy-reference).
+Полный список определений встроенных политик для базы данных SQL и Управляемый экземпляр можно найти [здесь](./policy-reference.md).
 
 Чтобы применить требования местонахождение данных на уровне Организации, эти политики можно назначить подписке. После того как они будут назначены на уровне подписки, пользователи в данной подписке не смогут создать базу данных или управляемый экземпляр с геоизбыточным хранилищем резервных копий с помощью портал Azure или Azure PowerShell. 
 
 > [!IMPORTANT]
-> Политики Azure не применяются при создании базы данных с помощью T-SQL. Чтобы принудительно применить местонахождение данных при создании базы данных с помощью T-SQL, [используйте в качестве входного аргумента "Local" или "Zone" для BACKUP_STORAGE_REDUNDANCY в инструкции CREATE DATABASE](https://docs.microsoft.com/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-current#create-database-using-zone-redundancy-for-backups).
+> Политики Azure не применяются при создании базы данных с помощью T-SQL. Чтобы принудительно применить местонахождение данных при создании базы данных с помощью T-SQL, [используйте в качестве входного аргумента "Local" или "Zone" для BACKUP_STORAGE_REDUNDANCY в инструкции CREATE DATABASE](/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-current#create-database-using-zone-redundancy-for-backups).
 
-Сведения о назначении политик с помощью [портал Azure](https://docs.microsoft.com/azure/governance/policy/assign-policy-portal) или [Azure PowerShell](https://docs.microsoft.com/azure/governance/policy/assign-policy-powershell)
+Сведения о назначении политик с помощью [портал Azure](../../governance/policy/assign-policy-portal.md) или [Azure PowerShell](../../governance/policy/assign-policy-powershell.md)
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Резервные копии базы данных являются важной частью любой стратегии непрерывности бизнес-процессов и аварийного восстановления, так как они защищают данные от случайного повреждения или удаления. Дополнительные сведения о других решениях для обеспечения непрерывности бизнес-процессов базы данных SQL см. в статье [Обзор непрерывности бизнес-процессов](business-continuity-high-availability-disaster-recover-hadr-overview.md).
 - Получите дополнительные сведения о [восстановлении базы данных на момент времени с помощью портал Azure](recovery-using-backups.md).

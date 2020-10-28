@@ -2,17 +2,24 @@
 title: Кнопка "Развертывание в Azure"
 description: Используйте кнопку для развертывания шаблонов Azure Resource Manager из репозитория GitHub.
 ms.topic: conceptual
-ms.date: 07/20/2020
-ms.openlocfilehash: 9fe69eba2a91bf19e0662ae071c222905c348666
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 10/22/2020
+ms.openlocfilehash: 62a0a8b0336d9a7fcf00efb172775b9606bcef98
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87079472"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92675391"
 ---
 # <a name="use-a-deployment-button-to-deploy-templates-from-github-repository"></a>Использование кнопки развертывания для развертывания шаблонов из репозитория GitHub
 
-В этой статье описывается, как использовать кнопку **развертывание в Azure** для развертывания шаблонов из репозитория GitHub. Вы можете добавить кнопку непосредственно в файл README.md в репозитории GitHub или на веб-страницу, которая ссылается на репозиторий. Этот метод поддерживает только развертывание на уровне группы ресурсов.
+В этой статье описывается, как использовать кнопку **развертывание в Azure** для развертывания шаблонов из репозитория GitHub. Вы можете добавить кнопку непосредственно в файл README.md в репозитории GitHub. Или можно добавить кнопку на веб-страницу, которая ссылается на репозиторий.
+
+Область развертывания определяется схемой шаблона. Дополнительные сведения можно найти в разделе
+
+* [группы ресурсов](deploy-to-resource-group.md)
+* [оформления](deploy-to-subscription.md)
+* [группы управления](deploy-to-management-group.md)
+* [Клиенты](deploy-to-tenant.md).
 
 ## <a name="use-common-image"></a>Использовать общий образ
 
@@ -28,7 +35,7 @@ ms.locfileid: "87079472"
 
 ## <a name="create-url-for-deploying-template"></a>Создание URL-адреса для развертывания шаблона
 
-Чтобы создать URL-адрес для шаблона, начните с необработанного URL-адреса шаблона в репозитории. Чтобы просмотреть необработанный URL-адрес, выберите **необработанный**.
+Чтобы создать URL-адрес для шаблона, начните с необработанного URL-адреса шаблона в репозитории. Чтобы просмотреть необработанный URL-адрес, выберите **необработанный** .
 
 :::image type="content" source="./media/deploy-to-azure-button/select-raw.png" alt-text="выбрать необработанный":::
 
@@ -38,7 +45,7 @@ URL-адрес имеет формат:
 https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-storage-account-create/azuredeploy.json
 ```
 
-Затем URL-адрес кодирует его. Можно использовать интерактивный кодировщик или выполнить команду. В следующем примере PowerShell показано, как кодировать значение в URL-адрес.
+Затем преобразуйте URL-адрес в значение, закодированное URL-адресом. Можно использовать интерактивный кодировщик или выполнить команду. В следующем примере PowerShell показано, как кодировать значение в URL-адрес.
 
 ```powershell
 [uri]::EscapeDataString($url)

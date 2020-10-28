@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 01/08/2020
-ms.openlocfilehash: 9b34a2435486a905923e783153ccae97628193a2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: be966a651df0c896ac7e1973d7783bb7fb686be3
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91443757"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92676500"
 ---
 # <a name="import-or-export-an-azure-sql-database-without-allowing-azure-services-to-access-the-server"></a>Импорт или экспорт базы данных SQL Azure без предоставления службам Azure доступа к серверу
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -46,30 +46,30 @@ ms.locfileid: "91443757"
 
    ![На снимке экрана показана страница обзора виртуальной машины с кнопкой подключить.](./media/database-import-export-azure-services-off/vm.png)  
 
-2. Выберите **Подключиться**.
+2. Выберите **Подключиться** .
 
    Для виртуальной машины отобразится форма файла протокола удаленного рабочего стола (RDP-файл), а также общедоступный IP-адрес и номер порта.
 
    ![Форма RDP](./media/database-import-export-azure-services-off/rdp.png)  
 
-3. Выберите **Скачать RDP-файл**.
+3. Выберите **Скачать RDP-файл** .
 
    > [!NOTE]
    > Вы также можете подключаться к виртуальной машине по протоколу SSH.
 
 4. Закройте форму **Connect to virtual machine** (Подключение к виртуальной машине).
 5. Чтобы подключиться к виртуальной машине, откройте скачанный RDP-файл.
-6. При появлении запроса выберите **Подключиться**. На компьютере Mac вам понадобится клиент RDP, например [Remote Desktop Client](https://apps.apple.com/app/microsoft-remote-desktop-10/id1295203466?mt=12) из Mac App Store.
+6. При появлении запроса выберите **Подключиться** . На компьютере Mac вам понадобится клиент RDP, например [Remote Desktop Client](https://apps.apple.com/app/microsoft-remote-desktop-10/id1295203466?mt=12) из Mac App Store.
 
-7. Введите имя пользователя и пароль, указанные при создании виртуальной машины, и нажмите кнопку **ОК**.
+7. Введите имя пользователя и пароль, указанные при создании виртуальной машины, и нажмите кнопку **ОК** .
 
-8. При входе в систему может появиться предупреждение о сертификате. Чтобы продолжить процесс подключения, выберите **Да** или **Продолжить**.
+8. При входе в систему может появиться предупреждение о сертификате. Чтобы продолжить процесс подключения, выберите **Да** или **Продолжить** .
 
 ## <a name="install-sqlpackage"></a>Установка SqlPackage
 
-[Скачайте и установите последнюю версию SqlPackage](https://docs.microsoft.com/sql/tools/sqlpackage-download).
+[Скачайте и установите последнюю версию SqlPackage](/sql/tools/sqlpackage-download).
 
-Дополнительные сведения см. в разделе [SqlPackage.exe](https://docs.microsoft.com/sql/tools/sqlpackage).
+Дополнительные сведения см. в разделе [SqlPackage.exe](/sql/tools/sqlpackage).
 
 ## <a name="create-a-firewall-rule-to-allow-the-vm-access-to-the-database"></a>Создание правила брандмауэра, разрешающего доступ виртуальной машины к базе данных
 
@@ -77,27 +77,27 @@ ms.locfileid: "91443757"
 
 Ниже описано, как создать правило брандмауэра IP на уровне сервера для общедоступного IP-адреса виртуальной машины и включить подключение с виртуальной машины.
 
-1. Выберите **базы данных SQL** в меню слева, а затем выберите свою базу данных на странице **базы данных SQL** . Откроется страница обзора для базы данных, в которой отображается полное имя сервера (например, **ServerName.Database.Windows.NET**) и приводятся параметры для дальнейшей настройки.
+1. Выберите **базы данных SQL** в меню слева, а затем выберите свою базу данных на странице **базы данных SQL** . Откроется страница обзора для базы данных, в которой отображается полное имя сервера (например, **ServerName.Database.Windows.NET** ) и приводятся параметры для дальнейшей настройки.
 
 2. Скопируйте полное имя сервера для использования при подключении к серверу и его базам данных.
 
    ![имя сервера](./media/database-import-export-azure-services-off/server-name.png)
 
-3. На панели инструментов щелкните **Настройка брандмауэра для сервера**. Откроется страница **Параметры брандмауэра** сервера.
+3. На панели инструментов щелкните **Настройка брандмауэра для сервера** . Откроется страница **Параметры брандмауэра** сервера.
 
    ![Правило брандмауэра для IP-адресов на уровне сервера](./media/database-import-export-azure-services-off/server-firewall-rule.png)
 
 4. Чтобы добавить общедоступный IP-адрес виртуальной машины в новое правило брандмауэра IP-адреса на уровне сервера, на панели инструментов выберите **Добавить IP-клиент** . С использованием правила брандмауэра для IP-адресов на уровне сервера вы можете открыть порт 1433 для одного IP-адреса или диапазона IP-адресов.
 
-5. Щелкните **Сохранить**. Правило брандмауэра IP на уровне сервера создается для общедоступного IP-адреса виртуальной машины, открывающего порт 1433 на сервере.
+5. Щелкните **Сохранить** . Правило брандмауэра IP на уровне сервера создается для общедоступного IP-адреса виртуальной машины, открывающего порт 1433 на сервере.
 
-6. Закройте страницу **Параметры брандмауэра**.
+6. Закройте страницу **Параметры брандмауэра** .
 
 ## <a name="export-a-database-using-sqlpackage"></a>Экспорт базы данных с помощью SqlPackage
 
-Сведения о том, как экспортировать базу данных SQL Azure с помощью служебной программы командной строки [SqlPackage](https://docs.microsoft.com/sql/tools/sqlpackage) , см. в разделе [Экспорт параметров и свойств](https://docs.microsoft.com/sql/tools/sqlpackage#export-parameters-and-properties). Служебная программа SqlPackage поставляется с последними версиями [SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) и [SQL Server Data Tools](https://docs.microsoft.com/sql/ssdt/download-sql-server-data-tools-ssdt)или можно скачать последнюю версию [SqlPackage](https://docs.microsoft.com/sql/tools/sqlpackage-download).
+Сведения о том, как экспортировать базу данных SQL Azure с помощью служебной программы командной строки [SqlPackage](/sql/tools/sqlpackage) , см. в разделе [Экспорт параметров и свойств](/sql/tools/sqlpackage#export-parameters-and-properties). Служебная программа SqlPackage поставляется с последними версиями [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) и [SQL Server Data Tools](/sql/ssdt/download-sql-server-data-tools-ssdt)или можно скачать последнюю версию [SqlPackage](/sql/tools/sqlpackage-download).
 
-Мы рекомендуем использовать служебную программу SqlPackage для масштабирования и производительности в большинстве рабочих сред. Сведения о миграции из SQL Server в Базу данных SQL Azure с использованием BACPAC-файлов см. в [блоге группы консультирования клиентов SQL Server](https://blogs.msdn.microsoft.com/sqlcat/20../../migrating-from-sql-server-to-azure-sql-database-using-bacpac-files/).
+Мы рекомендуем использовать служебную программу SqlPackage для масштабирования и производительности в большинстве рабочих сред. Сведения о миграции из SQL Server в Базу данных SQL Azure с использованием BACPAC-файлов см. в [блоге группы консультирования клиентов SQL Server](/archive/blogs/sqlcat/migrating-from-sql-server-to-azure-sql-database-using-bacpac-files).
 
 В этом примере показано, как экспортировать базу данных с помощью SqlPackage.exe с Active Directoryой универсальной аутентификации. Замените на значения, характерные для вашей среды.
 
@@ -107,11 +107,11 @@ SqlPackage.exe /a:Export /tf:testExport.bacpac /scs:"Data Source=<servername>.da
 
 ## <a name="import-a-database-using-sqlpackage"></a>Импорт базы данных с помощью SqlPackage
 
-Импорт базы данных SQL Server с помощью программы командной строки [SqlPackage](https://docs.microsoft.com/sql/tools/sqlpackage) описывается в разделе [Параметры и свойства импорта](https://docs.microsoft.com/sql/tools/sqlpackage#import-parameters-and-properties). SqlPackage содержит последние [SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) и [SQL Server Data Tools](https://docs.microsoft.com/sql/ssdt/download-sql-server-data-tools-ssdt). Вы также можете скачать последнюю версию [SqlPackage](https://docs.microsoft.com/sql/tools/sqlpackage-download).
+Импорт базы данных SQL Server с помощью программы командной строки [SqlPackage](/sql/tools/sqlpackage) описывается в разделе [Параметры и свойства импорта](/sql/tools/sqlpackage#import-parameters-and-properties). SqlPackage содержит последние [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) и [SQL Server Data Tools](/sql/ssdt/download-sql-server-data-tools-ssdt). Вы также можете скачать последнюю версию [SqlPackage](/sql/tools/sqlpackage-download).
 
-Вместо портала Azure рекомендуется использовать SqlPackage для масштабирования и обеспечения производительности в большинстве рабочих сред. Сведения о миграции из SQL Server в Базу данных SQL Azure с помощью файлов `BACPAC` см. в блоге команды Помощника по Azure для пользователей SQL Server [здесь](https://blogs.msdn.microsoft.com/sqlcat/2016/10/20/migrating-from-sql-server-to-azure-sql-database-using-bacpac-files/).
+Вместо портала Azure рекомендуется использовать SqlPackage для масштабирования и обеспечения производительности в большинстве рабочих сред. Сведения о миграции из SQL Server в Базу данных SQL Azure с помощью файлов `BACPAC` см. в блоге команды Помощника по Azure для пользователей SQL Server [здесь](/archive/blogs/sqlcat/migrating-from-sql-server-to-azure-sql-database-using-bacpac-files).
 
-Следующая команда SqlPackage импортирует базу данных **AdventureWorks2017** из локального хранилища в базу данных SQL Azure. Эта команда создает базу данных **myMigratedDatabase** с уровнем служб **Премиум** и целевым уровнем служб **P6**. Подставьте соответствующие значения для своей среды.
+Следующая команда SqlPackage импортирует базу данных **AdventureWorks2017** из локального хранилища в базу данных SQL Azure. Эта команда создает базу данных **myMigratedDatabase** с уровнем служб **Премиум** и целевым уровнем служб **P6** . Подставьте соответствующие значения для своей среды.
 
 ```cmd
 sqlpackage.exe /a:import /tcs:"Data Source=<serverName>.database.windows.net;Initial Catalog=myMigratedDatabase>;User Id=<userId>;Password=<password>" /sf:AdventureWorks2017.bacpac /p:DatabaseEdition=Premium /p:DatabaseServiceObjective=P6
@@ -141,19 +141,19 @@ sqlpackage.exe /a:Import /sf:testExport.bacpac /tdn:NewDacFX /tsn:apptestserver.
 
 ## <a name="store-the-imported-or-exported-bacpac-file"></a>Сохраните импортированный или экспортированный объект. BACPAC-файл
 
-Тот. BACPAC-файл можно хранить в [больших двоичных объектах Azure](https://docs.microsoft.com/azure/storage/blobs/storage-blobs-overview)или в [службе файлов Azure](https://docs.microsoft.com/azure/storage/files/storage-files-introduction).
+Тот. BACPAC-файл можно хранить в [больших двоичных объектах Azure](../../storage/blobs/storage-blobs-overview.md)или в [службе файлов Azure](../../storage/files/storage-files-introduction.md).
 
 Для достижения максимальной производительности используйте службу файлов Azure. SqlPackage работает с файловой системой, чтобы она могла обращаться непосредственно к файлам Azure.
 
-Чтобы снизить затраты, используйте большие двоичные объекты Azure, стоимость которых меньше, чем общая папка Azure уровня "Премиум". Однако для этого потребуется скопировать [. BACPAC-файл](https://docs.microsoft.com/sql/relational-databases/data-tier-applications/data-tier-applications#bacpac) между большим двоичным объектом и локальной файловой системой перед операцией импорта или экспорта. В результате процесс займет больше времени.
+Чтобы снизить затраты, используйте большие двоичные объекты Azure, стоимость которых меньше, чем общая папка Azure уровня "Премиум". Однако для этого потребуется скопировать [. BACPAC-файл](/sql/relational-databases/data-tier-applications/data-tier-applications#bacpac) между большим двоичным объектом и локальной файловой системой перед операцией импорта или экспорта. В результате процесс займет больше времени.
 
 Для отправки или загрузки. BACPAC-файлы см. в разделе [Перенос данных с помощью AzCopy и хранилища BLOB-объектов](../../storage/common/storage-use-azcopy-blobs.md)и [Перенос данных с помощью AzCopy и хранилища файлов](../../storage/common/storage-use-azcopy-files.md).
 
 В зависимости от среды может потребоваться [настроить брандмауэры службы хранилища Azure и виртуальные сети](../../storage/common/storage-network-security.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о подключении к импортированной базе данных SQL и выполнении запросов к ней см. в разделе [Краткое руководство по базе данных SQL Azure: использование SQL Server Management Studio для подключения и запроса данных](connect-query-ssms.md).
 - Сведения о миграции из SQL Server в Базу данных SQL Azure с использованием BACPAC-файлов см. в [блоге группы консультирования клиентов SQL Server](https://techcommunity.microsoft.com/t5/DataCAT/Migrating-from-SQL-Server-to-Azure-SQL-Database-using-Bacpac/ba-p/305407).
 - Описание процесса миграции базы данных SQL Server в базу данных SQL Azure, включая рекомендации по его использованию, см. в [этой статье](migrate-to-database-from-sql-server.md).
-- Чтобы узнать, как безопасно управлять ключами к хранилищу данных и подписанными URL-адресами и совместно их использовать, ознакомьтесь с [руководством по безопасности службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-security-guide).
+- Чтобы узнать, как безопасно управлять ключами к хранилищу данных и подписанными URL-адресами и совместно их использовать, ознакомьтесь с [руководством по безопасности службы хранилища Azure](../../storage/blobs/security-recommendations.md).

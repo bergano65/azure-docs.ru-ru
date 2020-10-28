@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: conceptual
-ms.date: 09/03/2020
+ms.date: 10/22/2020
 ms.author: aahi
 ms.custom: seodec18
-ms.openlocfilehash: 00c96333e612c7f92d7c53630eaa006b060986ad
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5094bd4aa5ac68c24f284cfb74e410fbdf089af7
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91536245"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92677177"
 ---
 # <a name="configure-read-ocr-docker-containers"></a>Настройка чтения ОПТИЧЕСКИх контейнеров DOCKER
 
@@ -92,17 +92,17 @@ ms.locfileid: "91536245"
 
 |Необязательно| Имя | Тип данных | Описание |
 |-------|------|-----------|-------------|
-|Не разрешено| `Input` | Строковый тип | Контейнеры API компьютерного зрения не используют этот элемент.|
-|Необязательный| `Output` | Строка | Цель выходного подключения. Значение по умолчанию — `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример.<br>`--mount type=bind,src=c:\output,target=/output`|
+|Не разрешено| `Input` | Строка | Контейнеры API компьютерного зрения не используют этот элемент.|
+|Необязательный| `Output` | Строка | Цель выходного подключения. Значение по умолчанию — `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример.<br>`--mount type=bind,src=c:\output,target=/output`|
 
 ## <a name="example-docker-run-commands"></a>Примеры команд docker run
 
 В следующих примерах параметры конфигурации иллюстрируют процесс написания и использования команд `docker run`.  После запуска контейнер продолжает работу, пока вы его не [остановите](computer-vision-how-to-install-containers.md#stop-the-container).
 
-* **Символ продолжения строки**: команды DOCKER, приведенные в следующих разделах, используют обратную косую черту в `\` качестве символа продолжения строки. Замените или удалите ее в соответствии с требованиями вашей операционной системы. 
-* **Порядок аргументов**. не изменяйте порядок аргументов, если вы не знакомы с контейнерами DOCKER.
+* **Символ продолжения строки** : команды DOCKER, приведенные в следующих разделах, используют обратную косую черту в `\` качестве символа продолжения строки. Замените или удалите ее в соответствии с требованиями вашей операционной системы. 
+* **Порядок аргументов** . не изменяйте порядок аргументов, если вы не знакомы с контейнерами DOCKER.
 
-Замените строку {_имя_аргумента_} собственными значениями.
+Замените строку { _имя_аргумента_ } собственными значениями.
 
 | Заполнитель | Значение | Формат или пример |
 |-------------|-------|---|
@@ -144,29 +144,6 @@ ApiKey={API_KEY}
 Logging:Console:LogLevel:Default=Information
 ```
 
-# <a name="version-30-preview"></a>[Версия 3.0-preview](#tab/version-3)
-
-### <a name="basic-example"></a>Простой пример
-
-```bash
-docker run --rm -it -p 5000:5000 --memory 18g --cpus 8 \
-mcr.microsoft.com/azure-cognitive-services/vision/read:3.0-preview \
-Eula=accept \
-Billing={ENDPOINT_URI} \
-ApiKey={API_KEY}
-```
-
-### <a name="logging-example"></a>Пример ведения журнала 
-
-```bash
-docker run --rm -it -p 5000:5000 --memory 18g --cpus 8 \
-mcr.microsoft.com/azure-cognitive-services/vision/read:3.0-preview \
-Eula=accept \
-Billing={ENDPOINT_URI} \
-ApiKey={API_KEY}
-Logging:Console:LogLevel:Default=Information
-```
-
 # <a name="version-20-preview"></a>[Версия 2,0-Preview](#tab/version-2)
 
 ### <a name="basic-example"></a>Простой пример
@@ -193,6 +170,6 @@ Logging:Console:LogLevel:Default=Information
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте [, как устанавливать и запускать контейнеры](computer-vision-how-to-install-containers.md).

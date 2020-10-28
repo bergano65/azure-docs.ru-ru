@@ -12,12 +12,12 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, sstein
 ms.date: 08/28/2020
-ms.openlocfilehash: 2035fa811ed6bb5760f2527f66e0f2ca48ccb2c9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c64112e30bdaf0da2218177bd2737c3ebe688b0c
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91627233"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92675300"
 ---
 # <a name="use-auto-failover-groups-to-enable-transparent-and-coordinated-failover-of-multiple-databases"></a>Использование групп автоматической отработки отказа для включения прозрачной и согласованной отработки отказа в нескольких базах данных
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -243,7 +243,7 @@ ms.locfileid: "91627233"
 
 ### <a name="creating-a-failover-group-between-managed-instances-in-different-subscriptions"></a>Создание группы отработки отказа между управляемыми экземплярами в разных подписках
 
-Группу отработки отказа можно создать между управляемыми экземплярами SQL в двух разных подписках при условии, что подписки связаны с одним и тем же [клиентом Azure Active Directory](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-whatis#terminology). При использовании API PowerShell можно сделать это, указав `PartnerSubscriptionId` параметр для вторичного управляемый экземпляр SQL. При использовании REST API каждый идентификатор экземпляра, входящий в `properties.managedInstancePairs` параметр, может иметь собственное значение subscriptionID.
+Группу отработки отказа можно создать между управляемыми экземплярами SQL в двух разных подписках при условии, что подписки связаны с одним и тем же [клиентом Azure Active Directory](../../active-directory/fundamentals/active-directory-whatis.md#terminology). При использовании API PowerShell можно сделать это, указав `PartnerSubscriptionId` параметр для вторичного управляемый экземпляр SQL. При использовании REST API каждый идентификатор экземпляра, входящий в `properties.managedInstancePairs` параметр, может иметь собственное значение subscriptionID.
   
 > [!IMPORTANT]
 > Портал Azure не поддерживает создание групп отработки отказа в разных подписках. Кроме того, для существующих групп отработки отказа в разных подписках или группах ресурсов отработка отказа не может быть инициирована вручную с помощью портала из основного Управляемый экземпляр SQL. Запустите ее из вспомогательного экземпляра геообъекта.
@@ -341,8 +341,8 @@ CREATE LOGIN foo WITH PASSWORD = '<enterStrongPasswordHere>', SID = <login_sid>;
 1. [Создание общедоступного IP-адреса](../../virtual-network/virtual-network-public-ip-address.md#create-a-public-ip-address)
 2. [создайте общедоступный балансировщик нагрузки](../../load-balancer/quickstart-load-balancer-standard-public-portal.md) и назначьте ему общедоступный IP-адрес;
 3. [создайте виртуальную сеть и виртуальные машины](../../load-balancer/quickstart-load-balancer-standard-public-portal.md) для интерфейсных компонентов;
-4. [создайте группу безопасности сети](../../virtual-network/security-overview.md) и настройте входящие подключения.
-5. Убедитесь, что исходящие подключения открыты для базы данных SQL Azure с помощью [тега службы](../../virtual-network/security-overview.md#service-tags)"SQL".
+4. [создайте группу безопасности сети](../../virtual-network/network-security-groups-overview.md) и настройте входящие подключения.
+5. Убедитесь, что исходящие подключения открыты для базы данных SQL Azure с помощью [тега службы](../../virtual-network/network-security-groups-overview.md#service-tags)"SQL".
 6. Создайте [правило брандмауэра базы данных SQL](firewall-configure.md) , разрешающее входящий трафик с общедоступного IP-адреса, созданного на шаге 1.
 
 Дополнительные сведения о настройке исходящего доступа и IP-адреса для использования в правилах брандмауэра см. в разделе [Исходящие подключения балансировщика нагрузки](../../load-balancer/load-balancer-outbound-connections.md).
@@ -362,7 +362,7 @@ CREATE LOGIN foo WITH PASSWORD = '<enterStrongPasswordHere>', SID = <login_sid>;
 - Виртуальные сети, используемые экземплярами SQL Управляемый экземпляр, должны быть подключены через [VPN-шлюз](../../vpn-gateway/vpn-gateway-about-vpngateways.md) или [Express Route](../../expressroute/expressroute-howto-circuit-portal-resource-manager.md). Если две виртуальные сети подключаются через локальную сеть, убедитесь в отсутствии правил брандмауэра, блокирующих порты 5022 и 11000–11999. Глобальные пиринга виртуальных сетей поддерживаются с ограничениями, описанными в примечании ниже.
 
    > [!IMPORTANT]
-   > [На 9/22/2020 мы объявили глобальный пиринг виртуальных сетей для вновь созданных виртуальных кластеров](https://azure.microsoft.com/en-us/updates/global-virtual-network-peering-support-for-azure-sql-managed-instance-now-available/). Это означает, что глобальный пиринг между виртуальными сетями поддерживается для управляемых экземпляров SQL, созданных в пустых подсетях после даты объявления, а также для всех последующих управляемых экземпляров, созданных в этих подсетях. Для всех остальных способов поддержки пиринга с управляемыми экземплярами SQL ограничены сетями в том же регионе из-за [ограничений глобального пиринга виртуальной сети](../../virtual-network/virtual-network-manage-peering.md#requirements-and-constraints). Дополнительные сведения см. в разделе, посвященном [часто задаваемым вопросам о виртуальных сетях Azure](https://docs.microsoft.com/azure/virtual-network/virtual-networks-faq#what-are-the-constraints-related-to-global-vnet-peering-and-load-balancers) . 
+   > [На 9/22/2020 мы объявили глобальный пиринг виртуальных сетей для вновь созданных виртуальных кластеров](https://azure.microsoft.com/en-us/updates/global-virtual-network-peering-support-for-azure-sql-managed-instance-now-available/). Это означает, что глобальный пиринг между виртуальными сетями поддерживается для управляемых экземпляров SQL, созданных в пустых подсетях после даты объявления, а также для всех последующих управляемых экземпляров, созданных в этих подсетях. Для всех остальных способов поддержки пиринга с управляемыми экземплярами SQL ограничены сетями в том же регионе из-за [ограничений глобального пиринга виртуальной сети](../../virtual-network/virtual-network-manage-peering.md#requirements-and-constraints). Дополнительные сведения см. в разделе, посвященном [часто задаваемым вопросам о виртуальных сетях Azure](../../virtual-network/virtual-networks-faq.md#what-are-the-constraints-related-to-global-vnet-peering-and-load-balancers) . 
 
 - Два виртуальных сетей SQL Управляемый экземпляр не могут иметь перекрывающиеся IP-адреса.
 - Вы должны настроить группы безопасности сети (NSG) так, чтобы порты 5022 и диапазон 11000–12000 были открыты для входящих и исходящих подключений из подсети или другого управляемого экземпляра. Это позволяет обеспечить трафик репликации между экземплярами.
@@ -406,7 +406,7 @@ CREATE LOGIN foo WITH PASSWORD = '<enterStrongPasswordHere>', SID = <login_sid>;
 
 ## <a name="programmatically-managing-failover-groups"></a>Программное управление группами отработки отказа
 
-Как уже говорилось ранее, группами автоматической отработки отказа и активной георепликацией можно также управлять программно с помощью Azure PowerShell и REST API. В приведенных ниже таблицах описан доступный для этого набор команд. Активная георепликация включает в себя набор API-интерфейсов Azure Resource Manager для управления, в том числе [REST API Базы данных SQL Azure](https://docs.microsoft.com/rest/api/sql/) и [командлеты Azure PowerShell](https://docs.microsoft.com/powershell/azure/). Эти интерфейсы API требуют использования групп ресурсов и поддерживают безопасность на основе ролей (RBAC). Дополнительные сведения о реализации ролей доступа см. в статье [Управление доступом на основе ролей в Azure (Azure RBAC)](../../role-based-access-control/overview.md).
+Как уже говорилось ранее, группами автоматической отработки отказа и активной георепликацией можно также управлять программно с помощью Azure PowerShell и REST API. В приведенных ниже таблицах описан доступный для этого набор команд. Активная георепликация включает в себя набор API-интерфейсов Azure Resource Manager для управления, в том числе [REST API Базы данных SQL Azure](/rest/api/sql/) и [командлеты Azure PowerShell](/powershell/azure/). Эти интерфейсы API требуют использования групп ресурсов и поддерживают безопасность на основе ролей (RBAC). Дополнительные сведения о реализации ролей доступа см. в статье [Управление доступом на основе ролей в Azure (Azure RBAC)](../../role-based-access-control/overview.md).
 
 ### <a name="manage-sql-database-failover"></a>Управление отработкой отказа базы данных SQL
 
@@ -435,13 +435,13 @@ CREATE LOGIN foo WITH PASSWORD = '<enterStrongPasswordHere>', SID = <login_sid>;
 
 | API | Описание |
 | --- | --- |
-| [Создание или обновление группы отработки отказа](https://docs.microsoft.com/rest/api/sql/failovergroups/createorupdate) | Создает или обновляет группу отработки отказа. |
-| [Удаление группы отработки отказа](https://docs.microsoft.com/rest/api/sql/failovergroups/delete) | Удаляет группу отработки отказа с сервера |
-| [Плановая отработка отказа](https://docs.microsoft.com/rest/api/sql/failovergroups/failover) | Активирует отработку отказа с текущего сервера-источника на сервер-получатель с полной синхронизацией данных.|
-| [Принудительная отработка отказа (возможна потеря данных)](https://docs.microsoft.com/rest/api/sql/failovergroups/forcefailoverallowdataloss) | Активирует отработку отказа с текущего сервера-источника на сервер-получатель без синхронизации данных. Эта операция может привести к утере данных. |
-| [Получение группы отработки отказа](https://docs.microsoft.com/rest/api/sql/failovergroups/get) | Извлекает конфигурацию группы отработки отказа. |
-| [Вывод списка групп отработки отказа с фильтрацией по серверу](https://docs.microsoft.com/rest/api/sql/failovergroups/listbyserver) | Список групп отработки отказа на сервере. |
-| [Обновление группы отработки отказа](https://docs.microsoft.com/rest/api/sql/failovergroups/update) | Обновляет конфигурацию группы отработки отказа. |
+| [Создание или обновление группы отработки отказа](/rest/api/sql/failovergroups/createorupdate) | Создает или обновляет группу отработки отказа. |
+| [Удаление группы отработки отказа](/rest/api/sql/failovergroups/delete) | Удаляет группу отработки отказа с сервера |
+| [Плановая отработка отказа](/rest/api/sql/failovergroups/failover) | Активирует отработку отказа с текущего сервера-источника на сервер-получатель с полной синхронизацией данных.|
+| [Принудительная отработка отказа (возможна потеря данных)](/rest/api/sql/failovergroups/forcefailoverallowdataloss) | Активирует отработку отказа с текущего сервера-источника на сервер-получатель без синхронизации данных. Эта операция может привести к утере данных. |
+| [Получение группы отработки отказа](/rest/api/sql/failovergroups/get) | Извлекает конфигурацию группы отработки отказа. |
+| [Вывод списка групп отработки отказа с фильтрацией по серверу](/rest/api/sql/failovergroups/listbyserver) | Список групп отработки отказа на сервере. |
+| [Обновление группы отработки отказа](/rest/api/sql/failovergroups/update) | Обновляет конфигурацию группы отработки отказа. |
 
 ---
 
@@ -473,16 +473,16 @@ CREATE LOGIN foo WITH PASSWORD = '<enterStrongPasswordHere>', SID = <login_sid>;
 
 | API | Описание |
 | --- | --- |
-| [Создание или обновление группы отработки отказа](https://docs.microsoft.com/rest/api/sql/instancefailovergroups/createorupdate) | Создает или обновляет конфигурацию группы отработки отказа. |
-| [Удаление группы отработки отказа](https://docs.microsoft.com/rest/api/sql/instancefailovergroups/delete) | Удаляет группу отработки отказа из экземпляра. |
-| [Плановая отработка отказа](https://docs.microsoft.com/rest/api/sql/instancefailovergroups/failover) | Активирует отработку отказа с текущего первичного экземпляра на этот экземпляр с полной синхронизацией данных. |
-| [Принудительная отработка отказа (возможна потеря данных)](https://docs.microsoft.com/rest/api/sql/instancefailovergroups/forcefailoverallowdataloss) | Активирует отработку отказа из текущего первичного экземпляра в экземпляр-получатель без синхронизации данных. Эта операция может привести к утере данных. |
-| [Получение группы отработки отказа](https://docs.microsoft.com/rest/api/sql/instancefailovergroups/get) | Извлекает конфигурацию группы отработки отказа. |
-| [Перечисление групп отработки отказа – Перечисление по расположению](https://docs.microsoft.com/rest/api/sql/instancefailovergroups/listbylocation) | Перечисляет группы отработки отказа в расположении. |
+| [Создание или обновление группы отработки отказа](/rest/api/sql/instancefailovergroups/createorupdate) | Создает или обновляет конфигурацию группы отработки отказа. |
+| [Удаление группы отработки отказа](/rest/api/sql/instancefailovergroups/delete) | Удаляет группу отработки отказа из экземпляра. |
+| [Плановая отработка отказа](/rest/api/sql/instancefailovergroups/failover) | Активирует отработку отказа с текущего первичного экземпляра на этот экземпляр с полной синхронизацией данных. |
+| [Принудительная отработка отказа (возможна потеря данных)](/rest/api/sql/instancefailovergroups/forcefailoverallowdataloss) | Активирует отработку отказа из текущего первичного экземпляра в экземпляр-получатель без синхронизации данных. Эта операция может привести к утере данных. |
+| [Получение группы отработки отказа](/rest/api/sql/instancefailovergroups/get) | Извлекает конфигурацию группы отработки отказа. |
+| [Перечисление групп отработки отказа – Перечисление по расположению](/rest/api/sql/instancefailovergroups/listbylocation) | Перечисляет группы отработки отказа в расположении. |
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Подробные руководства см. в разделе
   - [Добавление базы данных SQL в группу отработки отказа](failover-group-add-single-database-tutorial.md)
