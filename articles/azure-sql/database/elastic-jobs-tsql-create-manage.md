@@ -11,12 +11,12 @@ ms.author: jaredmoo
 author: jaredmoo
 ms.reviewer: sstein
 ms.date: 02/07/2020
-ms.openlocfilehash: bbecfac4bfd3d5ce1510cb671b93df5f4982cbc4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9c9f5972cdd2690b86610ea585bdd82d736ed163
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91803863"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92792146"
 ---
 # <a name="use-transact-sql-t-sql-to-create-and-manage-elastic-database-jobs-preview"></a>Использование Transact-SQL (T-SQL) для создания заданий обработки эластичных баз данных и управления ими (Предварительная версия)
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -73,7 +73,7 @@ SELECT * FROM jobs.target_group_members WHERE target_group_name='ServerGroup1';
 
 ## <a name="exclude-an-individual-database"></a>Исключение отдельной базы данных
 
-В следующем примере показано, как выполнить задание для всех баз данных на сервере, за исключением базы данных с именем *маппингдб*.  
+В следующем примере показано, как выполнить задание для всех баз данных на сервере, за исключением базы данных с именем *маппингдб* .  
 Подключитесь к [*базе данных заданий*](job-automation-overview.md#job-database) и выполните команду, приведенную ниже.
 
 ```sql
@@ -169,7 +169,7 @@ CREATE TABLE [dbo].[Test]([TestId] [int] NOT NULL);',
 - $(job_execution_create_time)
 - $(target_group_name)
 
-Например, чтобы сгруппировать все результаты выполнения одного задания, используйте *$(job_execution_id)*, как показано в команде ниже.
+Например, чтобы сгруппировать все результаты выполнения одного задания, используйте *$(job_execution_id)* , как показано в команде ниже.
 
 ```sql
 @command= N' SELECT DB_NAME() DatabaseName, $(job_execution_id) AS job_execution_id, * FROM sys.dm_db_resource_stats WHERE end_time > DATEADD(mi, -20, GETDATE());'
@@ -179,7 +179,7 @@ CREATE TABLE [dbo].[Test]([TestId] [int] NOT NULL);',
 
 Приведенный ниже пример создает задание для сбора данных производительности из нескольких баз данных.
 
-По умолчанию агент заданий создаст выходную таблицу для хранения возвращаемых результатов. Поэтому участник базы данных, связанный с выходными учетными данными, должен иметь как минимум следующие разрешения: `CREATE TABLE` в базе данных,,, `ALTER` `SELECT` `INSERT` `DELETE` в выходной таблице или ее схеме, а также `SELECT` в представлении каталога [sys. indexes](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-indexes-transact-sql) .
+По умолчанию агент заданий создаст выходную таблицу для хранения возвращаемых результатов. Поэтому участник базы данных, связанный с выходными учетными данными, должен иметь как минимум следующие разрешения: `CREATE TABLE` в базе данных,,, `ALTER` `SELECT` `INSERT` `DELETE` в выходной таблице или ее схеме, а также `SELECT` в представлении каталога [sys. indexes](/sql/relational-databases/system-catalog-views/sys-indexes-transact-sql) .
 
 Если необходимо вручную создать таблицу заранее, необходимо иметь следующие свойства:
 
@@ -424,16 +424,16 @@ EXEC jobs.sp_delete_job @job_name='ResultsPoolsJob'
 
 #### <a name="arguments"></a>Аргументы  
 
-[ ** \@ job_name =** ] ' job_name '  
+[ **\@ job_name =** ] ' job_name '  
 Имя задания. Это имя должно быть уникальным и не должно содержать символ процента (%). Типом job_name является nvarchar(128), значение по умолчанию отсутствует.
 
-[ ** \@ Description =** ] "Description"  
+[ **\@ Description =** ] "Description"  
 Описание задания. Типом description является nvarchar(512), значение по умолчанию — NULL. Если описание не указано, используется пустая строка.
 
-[ ** \@ включено =** ] включено  
+[ **\@ включено =** ] включено  
 Указывает, включено ли задание. Типом enabled является bit, значение по умолчанию — 0 (отключено). При значении 0 задание не включено и не выполняется по заданному расписанию, однако его можно запустить вручную. При значении 1 задание выполняется по своему расписанию, а также может быть выполнено вручную.
 
-[ ** \@ schedule_interval_type =**] schedule_interval_type  
+[ **\@ schedule_interval_type =** ] schedule_interval_type  
 Это значение указывает, когда должно выполняться задание. Типом schedule_interval_type является nvarchar(50), значение по умолчанию — Once. Допускаются следующие значения:
 
 - Once
@@ -443,16 +443,16 @@ EXEC jobs.sp_delete_job @job_name='ResultsPoolsJob'
 - Weeks
 - Months
 
-[ ** \@ schedule_interval_count =** ] schedule_interval_count  
+[ **\@ schedule_interval_count =** ] schedule_interval_count  
 Число периодов schedule_interval_count между выполнениями задания. Типом schedule_interval_count является int, значение по умолчанию — 1. Это значение должно быть больше или равно 1.
 
-[ ** \@ schedule_start_time =** ] schedule_start_time  
+[ **\@ schedule_start_time =** ] schedule_start_time  
 Дата, когда может начаться выполнение задания. Типом schedule_start_time является DATETIME2, значение по умолчанию — 0001-01-01 00:00:00.0000000.
 
-[ ** \@ schedule_end_time =** ] schedule_end_time  
+[ **\@ schedule_end_time =** ] schedule_end_time  
 Дата, когда может быть остановлено выполнение задания. Типом schedule_end_time является DATETIME2, значение по умолчанию — 9999-12-31 11:59:59.0000000.
 
-[ ** \@ job_id =** ] job_id выходные данные  
+[ **\@ job_id =** ] job_id выходные данные  
 Идентификационный номер задания, присваиваемый заданию после успешного создания. job_id является выходной переменно типа uniqueidentifier.
 
 #### <a name="return-code-values"></a>Значения кода возврата
@@ -491,19 +491,19 @@ sp_add_job необходимо выполнять из базы данных а
 
 #### <a name="arguments"></a>Аргументы
 
-[ ** \@ job_name =** ] ' job_name '  
+[ **\@ job_name =** ] ' job_name '  
 Имя обновляемого задания. Типом job_name является nvarchar(128).
 
-[ ** \@ new_name =** ] ' new_name '  
+[ **\@ new_name =** ] ' new_name '  
 Новое имя задания. Типом new_name является nvarchar(128).
 
-[ ** \@ Description =** ] "Description"  
+[ **\@ Description =** ] "Description"  
 Описание задания. Типом description является nvarchar(512).
 
-[ ** \@ включено =** ] включено  
+[ **\@ включено =** ] включено  
 Указывает, включено (1) или отключено (0) расписание задания. Типом enabled является bit.
 
-[ ** \@ schedule_interval_type =** ] schedule_interval_type  
+[ **\@ schedule_interval_type =** ] schedule_interval_type  
 Это значение указывает, когда должно выполняться задание. Типом schedule_interval_type является nvarchar(50). Допускаются следующие значения:
 
 - Once
@@ -513,13 +513,13 @@ sp_add_job необходимо выполнять из базы данных а
 - Weeks
 - Months
 
-[ ** \@ schedule_interval_count =** ] schedule_interval_count  
+[ **\@ schedule_interval_count =** ] schedule_interval_count  
 Число периодов schedule_interval_count между выполнениями задания. Типом schedule_interval_count является int, значение по умолчанию — 1. Это значение должно быть больше или равно 1.
 
-[ ** \@ schedule_start_time =** ] schedule_start_time  
+[ **\@ schedule_start_time =** ] schedule_start_time  
 Дата, когда может начаться выполнение задания. Типом schedule_start_time является DATETIME2, значение по умолчанию — 0001-01-01 00:00:00.0000000.
 
-[ ** \@ schedule_end_time =** ] schedule_end_time  
+[ **\@ schedule_end_time =** ] schedule_end_time  
 Дата, когда может быть остановлено выполнение задания. Типом schedule_end_time является DATETIME2, значение по умолчанию — 9999-12-31 11:59:59.0000000.
 
 #### <a name="return-code-values"></a>Значения кода возврата
@@ -551,10 +551,10 @@ sp_add_job необходимо выполнять из базы данных а
 
 #### <a name="arguments"></a>Аргументы
 
-[ ** \@ job_name =** ] ' job_name '  
+[ **\@ job_name =** ] ' job_name '  
 Имя удаляемого задания. Типом job_name является nvarchar(128).
 
-[ ** \@ Force =** ] принудительно  
+[ **\@ Force =** ] принудительно  
 Указывает, следует ли выполнить удаление, отменив все текущие выполнения задания, если оно выполняется (1), или следует выдать ошибку (0). Типом force является bit.
 
 #### <a name="return-code-values"></a>Значения кода возврата
@@ -607,79 +607,79 @@ sp_add_job необходимо выполнять из базы данных а
 
 #### <a name="arguments"></a>Аргументы
 
-[ ** \@ job_name =** ] ' job_name '  
+[ **\@ job_name =** ] ' job_name '  
 Имя задания, к которому добавляется этап. Типом job_name является nvarchar(128).
 
-[ ** \@ step_id =** ] step_id  
+[ **\@ step_id =** ] step_id  
 Порядковый идентификационный номер для шага задания. Последовательные идентификационные номера начинаются с 1 и увеличиваются без пропусков. Если у существующего шага уже есть этот идентификатор, его идентификатор будет увеличиваться, чтобы можно было вставить этот новый шаг в последовательность. Если идентификатор не указан, то step_id назначается автоматически всем шагам в последовательности. Типом step_id является int.
 
-[ ** \@ step_name =** ] step_name  
+[ **\@ step_name =** ] step_name  
 Имя шага этапа. Необходимо указать, за исключением первого шага задания, которое (для удобства) имеет имя по умолчанию "JobStep". Типом step_name является nvarchar(128).
 
-[ ** \@ command_type =** ] ' command_type '  
+[ **\@ command_type =** ] ' command_type '  
 Тип команды, выполняемой данным шагом задания. Типом command_type является nvarchar(50), значение по умолчанию — TSql (указывает, что значением параметра @command_type является сценарий T-SQL).
 
 Если этот аргумент указывается, его значением должно быть TSql.
 
-[ ** \@ command_source =** ] ' command_source '  
+[ **\@ command_source =** ] ' command_source '  
 Тип расположения, в котором хранится команда. Типом command_source является nvarchar(50), значение по умолчанию — Inline (указывает, что значением параметра @command_source является литеральный ткст команды).
 
 Если этот аргумент указывается, его значением должно быть Inline.
 
-[ ** \@ команда =** ] ' Command '  
+[ **\@ команда =** ] ' Command '  
 Аргументом command должен быть допустимый сценарий T-SQL, который выполняется данным шагом задания. Типом command является nvarchar(max), значение по умолчанию — NULL.
 
-[ ** \@ credential_name =** ] ' credential_name '  
+[ **\@ credential_name =** ] ' credential_name '  
 Имя учетных данных базы данных, которые хранятся в этой базе данных управления заданиями и используются для подключения к целевым базам данных в целевой группе при выполнении данного шага. Типом credential_name является nvarchar(128).
 
-[ ** \@ target_group_name =** ] ' target-group_name '  
+[ **\@ target_group_name =** ] ' target-group_name '  
 Имя целевой группы, содержащей целевые базы данных, для которых будет выполнен шаг задания. Типом target_group_name является nvarchar(128).
 
-[ ** \@ initial_retry_interval_seconds =** ] initial_retry_interval_seconds  
+[ **\@ initial_retry_interval_seconds =** ] initial_retry_interval_seconds  
 Задержка перед первой повторной попыткой в случае сбоя при первой попытке выполнения задания. Типом initial_retry_interval_seconds является int, значение по умолчанию — 1.
 
-[ ** \@ maximum_retry_interval_seconds =** ] maximum_retry_interval_seconds  
+[ **\@ maximum_retry_interval_seconds =** ] maximum_retry_interval_seconds  
 Максимальная задержка между повторными попытками. Если задержка между повторными попытками превышает это значение, она ограничивается указанным значением. Типом maximum_retry_interval_seconds является int, значение по умолчанию — 120.
 
-[ ** \@ retry_interval_backoff_multiplier =** ] retry_interval_backoff_multiplier  
+[ **\@ retry_interval_backoff_multiplier =** ] retry_interval_backoff_multiplier  
 Коэффициент, на который умножается значение задержки перед повторной попыткой в случае нескольких попыток выполнения шага задания. Например, если перед первой попыткой задержка составляет 5 секунд, а коэффициент отхода равен 2,0, то задержка перед второй попыткой составит 10 секунд, а перед третьей — 20 секунд. Типом retry_interval_backoff_multiplier является real, значение по умолчанию — 2,0.
 
-[ ** \@ retry_attempts =** ] retry_attempts  
+[ **\@ retry_attempts =** ] retry_attempts  
 Число попыток выполнения в случае сбоя первоначальной попытки. Например, если значение retry_attempts равно 10, то будет выполнена 1 первоначальная попытка и 10 повторных попыток, то есть всего 11 попыток. В случае сбоя последней попытки выполнение задания прекращается с состоянием жизненного цикла Failed. Типом retry_attempts является int, значение по умолчанию — 10.
 
-[ ** \@ step_timeout_seconds =** ] step_timeout_seconds  
+[ **\@ step_timeout_seconds =** ] step_timeout_seconds  
 Максимальная продолжительность выполнения шага. При превышении этого значения выполнение задания завершается с состоянием жизненного цикла TimedOut. Типом step_timeout_seconds является int, значение по умолчанию — 43 200 секунд (12 часов).
 
-[ ** \@ output_type =** ] ' output_type '  
+[ **\@ output_type =** ] ' output_type '  
 Если значение не равно NULL, указывает тип назначения для записи первого результирующего набора команды. Типом output_type является nvarchar(50), значение по умолчанию — NULL.
 
 Если этот аргумент указан, его значением должно быть SqlDatabase.
 
-[ ** \@ output_credential_name =** ] ' output_credential_name '  
+[ **\@ output_credential_name =** ] ' output_credential_name '  
 Если значение не равно NULL, указывает имя учетных данных базы данных, используемых для подключения к выходной базе данных. Должен указываться, если значение output_type равно SqlDatabase. Типом output_credential_name является nvarchar(128), значение по умолчанию — NULL.
 
-[ ** \@ output_subscription_id =** ] ' output_subscription_id '  
+[ **\@ output_subscription_id =** ] ' output_subscription_id '  
 Требуется описание.
 
-[ ** \@ output_resource_group_name =** ] ' output_resource_group_name '  
+[ **\@ output_resource_group_name =** ] ' output_resource_group_name '  
 Требуется описание.
 
-[ ** \@ output_server_name =** ] ' output_server_name '  
+[ **\@ output_server_name =** ] ' output_server_name '  
 Если значение не равно NULL, указывает полное DNS-имя сервера, содержащего целевую выходную базу данных. Должен указываться, если значение output_type равно SqlDatabase. Типом output_server_name является nvarchar(256), значение по умолчанию — NULL.
 
-[ ** \@ output_database_name =** ] ' output_database_name '  
+[ **\@ output_database_name =** ] ' output_database_name '  
 Если значение не равно NULL, указывает имя базы данных, содержащей целевую выходную таблицу. Должен указываться, если значение output_type равно SqlDatabase. Типом output_database_name является nvarchar(128), значение по умолчанию — NULL.
 
-[ ** \@ output_schema_name =** ] ' output_schema_name '  
+[ **\@ output_schema_name =** ] ' output_schema_name '  
 Если значение не равно NULL, указывает имя схемы SQL, содержащей целевую выходную таблицу. Если значение output_type равно SqlDatabase, то значение по умолчанию — dbo. Типом output_schema_name является nvarchar(128).
 
-[ ** \@ output_table_name =** ] ' output_table_name '  
+[ **\@ output_table_name =** ] ' output_table_name '  
 Если значение не равно NULL, указывает имя таблицы для записи первого результирующего набора команды. Если таблица не существует, она будет создана в соответствии со схемой возвращенного результирующего набора. Должен указываться, если значение output_type равно SqlDatabase. Типом output_table_name является nvarchar(128), значение по умолчанию — NULL.
 
-[ ** \@ job_version =** ] job_version выходные данные  
+[ **\@ job_version =** ] job_version выходные данные  
 Параметр вывода, которому будет присвоен номер версии нового задания. Типом job_version является int.
 
-[ ** \@ max_parallelism =** ] max_parallelism выходные данные  
+[ **\@ max_parallelism =** ] max_parallelism выходные данные  
 Максимальный уровень параллелизма на эластичный пул. Если этот аргумент задан, то шаг задания сможет обрабатывать не больше указанного максимального числа баз данных на эластичный пул. Это относится к каждому эластичному пулу, который либо непосредственно добавлен в целевую группу, либо размещен на сервере, добавленном в целевую группу. Типом max_parallelism является int.
 
 #### <a name="return-code-values"></a>Значения кода возврата
@@ -732,79 +732,79 @@ sp_add_job необходимо выполнять из базы данных а
 
 #### <a name="arguments"></a>Аргументы
 
-[ ** \@ job_name =** ] ' job_name '  
+[ **\@ job_name =** ] ' job_name '  
 Имя задания, которому принадлежит шаг. Типом job_name является nvarchar(128).
 
-[ ** \@ step_id =** ] step_id  
+[ **\@ step_id =** ] step_id  
 Идентификационный номер шага задания, которое необходимо изменить. Требуется указать step_id или step_name. Типом step_id является int.
 
-[ ** \@ step_name =** ] ' step_name '  
+[ **\@ step_name =** ] ' step_name '  
 Имя изменяемого шага. Требуется указать step_id или step_name. Типом step_name является nvarchar(128).
 
-[ ** \@ new_id =** ] new_id  
+[ **\@ new_id =** ] new_id  
 Новый последовательный идентификационный номер шага задания. Последовательные идентификационные номера начинаются с 1 и увеличиваются без пропусков. Если порядок шага изменяется, остальные шаги автоматически перенумеровываются.
 
-[ ** \@ new_name =** ] ' new_name '  
+[ **\@ new_name =** ] ' new_name '  
 Новое имя шага. Типом new_name является nvarchar(128).
 
-[ ** \@ command_type =** ] ' command_type '  
+[ **\@ command_type =** ] ' command_type '  
 Тип команды, выполняемой данным шагом задания. Типом command_type является nvarchar(50), значение по умолчанию — TSql (указывает, что значением параметра @command_type является сценарий T-SQL).
 
 Если этот аргумент указывается, его значением должно быть TSql.
 
-[ ** \@ command_source =** ] ' command_source '  
+[ **\@ command_source =** ] ' command_source '  
 Тип расположения, в котором хранится команда. Типом command_source является nvarchar(50), значение по умолчанию — Inline (указывает, что значением параметра @command_source является литеральный ткст команды).
 
 Если этот аргумент указывается, его значением должно быть Inline.
 
-[ ** \@ команда =** ] ' Command '  
+[ **\@ команда =** ] ' Command '  
 Аргументом command должен быть допустимый сценарий T-SQL, который выполняется данным шагом задания. Типом command является nvarchar(max), значение по умолчанию — NULL.
 
-[ ** \@ credential_name =** ] ' credential_name '  
+[ **\@ credential_name =** ] ' credential_name '  
 Имя учетных данных базы данных, которые хранятся в этой базе данных управления заданиями и используются для подключения к целевым базам данных в целевой группе при выполнении данного шага. Типом credential_name является nvarchar(128).
 
-[ ** \@ target_group_name =** ] ' target-group_name '  
+[ **\@ target_group_name =** ] ' target-group_name '  
 Имя целевой группы, содержащей целевые базы данных, для которых будет выполнен шаг задания. Типом target_group_name является nvarchar(128).
 
-[ ** \@ initial_retry_interval_seconds =** ] initial_retry_interval_seconds  
+[ **\@ initial_retry_interval_seconds =** ] initial_retry_interval_seconds  
 Задержка перед первой повторной попыткой в случае сбоя при первой попытке выполнения задания. Типом initial_retry_interval_seconds является int, значение по умолчанию — 1.
 
-[ ** \@ maximum_retry_interval_seconds =** ] maximum_retry_interval_seconds  
+[ **\@ maximum_retry_interval_seconds =** ] maximum_retry_interval_seconds  
 Максимальная задержка между повторными попытками. Если задержка между повторными попытками превышает это значение, она ограничивается указанным значением. Типом maximum_retry_interval_seconds является int, значение по умолчанию — 120.
 
-[ ** \@ retry_interval_backoff_multiplier =** ] retry_interval_backoff_multiplier  
+[ **\@ retry_interval_backoff_multiplier =** ] retry_interval_backoff_multiplier  
 Коэффициент, на который умножается значение задержки перед повторной попыткой в случае нескольких попыток выполнения шага задания. Например, если перед первой попыткой задержка составляет 5 секунд, а коэффициент отхода равен 2,0, то задержка перед второй попыткой составит 10 секунд, а перед третьей — 20 секунд. Типом retry_interval_backoff_multiplier является real, значение по умолчанию — 2,0.
 
-[ ** \@ retry_attempts =** ] retry_attempts  
+[ **\@ retry_attempts =** ] retry_attempts  
 Число попыток выполнения в случае сбоя первоначальной попытки. Например, если значение retry_attempts равно 10, то будет выполнена 1 первоначальная попытка и 10 повторных попыток, то есть всего 11 попыток. В случае сбоя последней попытки выполнение задания прекращается с состоянием жизненного цикла Failed. Типом retry_attempts является int, значение по умолчанию — 10.
 
-[ ** \@ step_timeout_seconds =** ] step_timeout_seconds  
+[ **\@ step_timeout_seconds =** ] step_timeout_seconds  
 Максимальная продолжительность выполнения шага. При превышении этого значения выполнение задания завершается с состоянием жизненного цикла TimedOut. Типом step_timeout_seconds является int, значение по умолчанию — 43 200 секунд (12 часов).
 
-[ ** \@ output_type =** ] ' output_type '  
+[ **\@ output_type =** ] ' output_type '  
 Если значение не равно NULL, указывает тип назначения для записи первого результирующего набора команды. Чтобы сбросить значение output_type до NULL, задайте для этого параметра значение '' (пустая строка). Типом output_type является nvarchar(50), значение по умолчанию — NULL.
 
 Если этот аргумент указан, его значением должно быть SqlDatabase.
 
-[ ** \@ output_credential_name =** ] ' output_credential_name '  
+[ **\@ output_credential_name =** ] ' output_credential_name '  
 Если значение не равно NULL, указывает имя учетных данных базы данных, используемых для подключения к выходной базе данных. Должен указываться, если значение output_type равно SqlDatabase. Чтобы сбросить значение output_credential_name до NULL, задайте для этого параметра значение '' (пустая строка). Типом output_credential_name является nvarchar(128), значение по умолчанию — NULL.
 
-[ ** \@ output_server_name =** ] ' output_server_name '  
+[ **\@ output_server_name =** ] ' output_server_name '  
 Если значение не равно NULL, указывает полное DNS-имя сервера, содержащего целевую выходную базу данных. Должен указываться, если значение output_type равно SqlDatabase. Чтобы сбросить значение output_server_name до NULL, задайте для этого параметра значение '' (пустая строка). Типом output_server_name является nvarchar(256), значение по умолчанию — NULL.
 
-[ ** \@ output_database_name =** ] ' output_database_name '  
+[ **\@ output_database_name =** ] ' output_database_name '  
 Если значение не равно NULL, указывает имя базы данных, содержащей целевую выходную таблицу. Должен указываться, если значение output_type равно SqlDatabase. Чтобы сбросить значение output_database_name до NULL, задайте для этого параметра значение '' (пустая строка). Типом output_database_name является nvarchar(128), значение по умолчанию — NULL.
 
-[ ** \@ output_schema_name =** ] ' output_schema_name '  
+[ **\@ output_schema_name =** ] ' output_schema_name '  
 Если значение не равно NULL, указывает имя схемы SQL, содержащей целевую выходную таблицу. Если значение output_type равно SqlDatabase, то значение по умолчанию — dbo. Чтобы сбросить значение output_schema_name до NULL, задайте для этого параметра значение '' (пустая строка). Типом output_schema_name является nvarchar(128).
 
-[ ** \@ output_table_name =** ] ' output_table_name '  
+[ **\@ output_table_name =** ] ' output_table_name '  
 Если значение не равно NULL, указывает имя таблицы для записи первого результирующего набора команды. Если таблица не существует, она будет создана в соответствии со схемой возвращенного результирующего набора. Должен указываться, если значение output_type равно SqlDatabase. Чтобы сбросить значение output_server_name до NULL, задайте для этого параметра значение '' (пустая строка). Типом output_table_name является nvarchar(128), значение по умолчанию — NULL.
 
-[ ** \@ job_version =** ] job_version выходные данные  
+[ **\@ job_version =** ] job_version выходные данные  
 Параметр вывода, которому будет присвоен номер версии нового задания. Типом job_version является int.
 
-[ ** \@ max_parallelism =** ] max_parallelism выходные данные  
+[ **\@ max_parallelism =** ] max_parallelism выходные данные  
 Максимальный уровень параллелизма на эластичный пул. Если этот аргумент задан, то шаг задания сможет обрабатывать не больше указанного максимального числа баз данных на эластичный пул. Это относится к каждому эластичному пулу, который либо непосредственно добавлен в целевую группу, либо размещен на сервере, добавленном в целевую группу. Чтобы сбросить значение max_parallelism до NULL, задайте для этого параметра значение -1. Типом max_parallelism является int.
 
 #### <a name="return-code-values"></a>Значения кода возврата
@@ -838,16 +838,16 @@ sp_add_job необходимо выполнять из базы данных а
 
 #### <a name="arguments"></a>Аргументы
 
-[ ** \@ job_name =** ] ' job_name '  
+[ **\@ job_name =** ] ' job_name '  
 Имя задания, из которого удаляется этап. Типом job_name является nvarchar(128), значение по умолчанию отсутствует.
 
-[ ** \@ step_id =** ] step_id  
+[ **\@ step_id =** ] step_id  
 Идентификационный номер удаляемого шага задания. Требуется указать step_id или step_name. Типом step_id является int.
 
-[ ** \@ step_name =** ] ' step_name '  
+[ **\@ step_name =** ] ' step_name '  
 Имя удаляемого шага. Требуется указать step_id или step_name. Типом step_name является nvarchar(128).
 
-[ ** \@ job_version =** ] job_version выходные данные  
+[ **\@ job_version =** ] job_version выходные данные  
 Параметр вывода, которому будет присвоен номер версии нового задания. Типом job_version является int.
 
 #### <a name="return-code-values"></a>Значения кода возврата
@@ -881,10 +881,10 @@ sp_add_job необходимо выполнять из базы данных а
 
 #### <a name="arguments"></a>Аргументы
 
-[ ** \@ job_name =** ] ' job_name '  
+[ **\@ job_name =** ] ' job_name '  
 Имя задания, из которого удаляется этап. Типом job_name является nvarchar(128), значение по умолчанию отсутствует.
 
-[ ** \@ job_execution_id =** ] job_execution_id выходные данные  
+[ **\@ job_execution_id =** ] job_execution_id выходные данные  
 Выходной параметр, которому будет назначен идентификатор выполнения задания. job_version имеет тип uniqueidentifier.
 
 #### <a name="return-code-values"></a>Значения кода возврата
@@ -915,7 +915,7 @@ sp_add_job необходимо выполнять из базы данных а
 
 #### <a name="arguments"></a>Аргументы
 
-[ ** \@ job_execution_id =** ] job_execution_id  
+[ **\@ job_execution_id =** ] job_execution_id  
 Идентификационный номер останавливаемого выполнения задания. Типом job_execution_id является uniqueidentifier, значение по умолчанию — NULL.
 
 #### <a name="return-code-values"></a>Значения кода возврата
@@ -947,10 +947,10 @@ sp_add_job необходимо выполнять из базы данных а
 
 #### <a name="arguments"></a>Аргументы
 
-[ ** \@ target_group_name =** ] ' target_group_name '  
+[ **\@ target_group_name =** ] ' target_group_name '  
 Имя создаваемой целевой группы. Типом target_group_name является nvarchar(128), значение по умолчанию отсутствует.
 
-[ ** \@ target_group_id =** ] target_group_id вывод идентификационного номера целевой группы, назначенного заданию при успешном создании задания. target_group_id является выходной переменной типа uniqueidentifier, значение по умолчанию — NULL.
+[ **\@ target_group_id =** ] target_group_id вывод идентификационного номера целевой группы, назначенного заданию при успешном создании задания. target_group_id является выходной переменной типа uniqueidentifier, значение по умолчанию — NULL.
 
 #### <a name="return-code-values"></a>Значения кода возврата
 
@@ -980,7 +980,7 @@ sp_add_job необходимо выполнять из базы данных а
 
 #### <a name="arguments"></a>Аргументы
 
-[ ** \@ target_group_name =** ] ' target_group_name '  
+[ **\@ target_group_name =** ] ' target_group_name '  
 Имя удаляемой целевой группы. Типом target_group_name является nvarchar(128), значение по умолчанию отсутствует.
 
 #### <a name="return-code-values"></a>Значения кода возврата
@@ -1019,31 +1019,31 @@ sp_add_job необходимо выполнять из базы данных а
 
 #### <a name="arguments"></a>Аргументы
 
-[ ** \@ target_group_name =** ] ' target_group_name '  
+[ **\@ target_group_name =** ] ' target_group_name '  
 Имя целевой группы для добавления элемента. Типом target_group_name является nvarchar(128), значение по умолчанию отсутствует.
 
-[ ** \@ membership_type =** ] ' membership_type '  
+[ **\@ membership_type =** ] ' membership_type '  
 Указывает, добавляется или исключается ли элемент целевой группы. Типом target_group_name является nvarchar(128), значение по умолчанию — Include. Допустимые значения для membership_type: "include" или "Exclude".
 
-[ ** \@ target_type =** ] ' target_type '  
+[ **\@ target_type =** ] ' target_type '  
 Тип целевой базы данных или коллекции баз данных, включая все базы данных на сервере, все базы данных в эластичном пуле, все базы данных в сопоставлении сегментов или отдельную базу данных. Типом target_type является nvarchar(128), значение по умолчанию отсутствует. Допустимые значения target_type: SqlServer, SqlElasticPool, SqlDatabase, SqlShardMap.
 
-[ ** \@ refresh_credential_name =** ] ' refresh_credential_name '  
+[ **\@ refresh_credential_name =** ] ' refresh_credential_name '  
 Имя учетных данных области базы данных. Типом refresh_credential_name является nvarchar(128), значение по умолчанию отсутствует.
 
-[ ** \@ server_name =** ] ' server_name '  
+[ **\@ server_name =** ] ' server_name '  
 Имя сервера, который необходимо добавить в указанную целевую группу. Значение server_name следует указывать, если значением target_type является SqlServer. Типом server_name является nvarchar(128), значение по умолчанию отсутствует.
 
-[ ** \@ database_name =** ] ' database_name '  
+[ **\@ database_name =** ] ' database_name '  
 Имя базы данных, добавляемой в указанную целевую группу. Значение database_name следует указывать, если значением target_type является SqlDatabase. Типом database_name является nvarchar(128), значение по умолчанию отсутствует.
 
-[ ** \@ elastic_pool_name =** ] ' elastic_pool_name '  
+[ **\@ elastic_pool_name =** ] ' elastic_pool_name '  
 Имя эластичного пула, добавляемого в указанную целевую группу. Значение elastic_pool_name следует указывать, если значением target_type является SqlElasticPool. Типом elastic_pool_name является nvarchar(128), значение по умолчанию отсутствует.
 
-[ ** \@ shard_map_name =** ] ' shard_map_name '  
+[ **\@ shard_map_name =** ] ' shard_map_name '  
 Имя сопоставления сегментов, добавляемого в указанную целевую группу. elastic_pool_name следует указывать, если target_type имеет "Склшардмап". Типом shard_map_name является nvarchar(128), значение по умолчанию отсутствует.
 
-[ ** \@ target_id =** ] target_group_id выходные данные  
+[ **\@ target_id =** ] target_group_id выходные данные  
 Целевой идентификационный номер, который назначается элементу целевой группы при его успешном создании и добавлении в целевую группу. target_id является выходной переменой типа uniqueidentifier, значение по умолчанию — NULL.
 Значения кода возврата: 0 (успех) или 1 (сбой).
 
@@ -1162,13 +1162,13 @@ GO
 
 #### <a name="arguments"></a>Аргументы
 
-[ ** \@ job_name =** ] ' job_name '  
+[ **\@ job_name =** ] ' job_name '  
 Имя задания, для которого удаляются записи журнала. Типом job_name является nvarchar(128), значение по умолчанию — NULL. Необходимо указать job_id или job_name, но не одновременно.
 
-[ ** \@ job_id =** ] job_id  
+[ **\@ job_id =** ] job_id  
  Идентификатор задания, для которого удаляются записи. Типом job_id является uniqueidentifier, значение по умолчанию — NULL. Необходимо указать job_id или job_name, но не одновременно.
 
-[ ** \@ oldest_date =** ] oldest_date  
+[ **\@ oldest_date =** ] oldest_date  
  Самая ранняя запись журнала, которую необходимо сохранить. Типом oldest_date является DATETIME2, значение по умолчанию — NULL. Если указан аргумент oldest_date, то sp_purge_jobhistory удаляет только записи, которые старше указанного значения.
 
 #### <a name="return-code-values"></a>Значения кода возврата
@@ -1344,9 +1344,9 @@ GO
 
 ## <a name="resources"></a>Ресурсы
 
-- ![Значок ссылки на раздел](https://docs.microsoft.com/sql/database-engine/configure-windows/media/topic-link.gif "Значок ссылки на раздел") [Синтаксические обозначения в Transact-SQL](https://docs.microsoft.com/sql/t-sql/language-elements/transact-sql-syntax-conventions-transact-sql)  
+- ![Значок ссылки на раздел](/sql/database-engine/configure-windows/media/topic-link.gif "Значок ссылки на раздел") [Синтаксические обозначения в Transact-SQL](/sql/t-sql/language-elements/transact-sql-syntax-conventions-transact-sql)  
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Создание заданий обработки эластичных баз данных и управление ими с помощью PowerShell](elastic-jobs-powershell-create.md)
-- [Авторизация и разрешения](https://docs.microsoft.com/dotnet/framework/data/adonet/sql/authorization-and-permissions-in-sql-server)
+- [Авторизация и разрешения](/dotnet/framework/data/adonet/sql/authorization-and-permissions-in-sql-server)

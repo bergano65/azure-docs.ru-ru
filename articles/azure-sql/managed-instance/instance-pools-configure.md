@@ -12,12 +12,12 @@ author: bonova
 ms.author: bonova
 ms.reviewer: sstein
 ms.date: 09/05/2019
-ms.openlocfilehash: 5798220ad92a99f32f757ffa20f9233b8c79151b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 732a9bab018103321a9a3a759b31495bd67a209e
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91617440"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92793115"
 ---
 # <a name="deploy-azure-sql-managed-instance-to-an-instance-pool"></a>Развертывание Управляемый экземпляр SQL Azure в пуле экземпляров
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -41,7 +41,7 @@ ms.locfileid: "91617440"
 |Создание базы данных в экземпляре в пуле|Да|Да|
 |Удаление базы данных из SQL Управляемый экземпляр|Да|Да|
 
-Доступные [команды PowerShell](https://docs.microsoft.com/powershell/module/az.sql/):
+Доступные [команды PowerShell](/powershell/module/az.sql/):
 
 |Командлет |Описание |
 |:---|:---|
@@ -52,9 +52,9 @@ ms.locfileid: "91617440"
 |[Get-AzSqlInstancePoolUsage](/powershell/module/az.sql/get-azsqlinstancepoolusage/) | Возвращает сведения об использовании пула SQL Управляемый экземпляр. |
 
 
-Чтобы использовать PowerShell, [установите последнюю версию PowerShell Core](https://docs.microsoft.com/powershell/scripting/install/installing-powershell#powershell) и следуйте инструкциям по [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps).
+Чтобы использовать PowerShell, [установите последнюю версию PowerShell Core](/powershell/scripting/install/installing-powershell#powershell) и следуйте инструкциям по [установке модуля Azure PowerShell](/powershell/azure/install-az-ps).
 
-Для операций, относящихся к экземплярам внутри пулов и отдельным экземплярам, используйте стандартные [команды управляемого экземпляра](api-references-create-manage-instance.md#powershell-create-and-configure-managed-instances), но при использовании этих команд для экземпляра в пуле необходимо заполнить свойство *имени пула экземпляров*.
+Для операций, относящихся к экземплярам внутри пулов и отдельным экземплярам, используйте стандартные [команды управляемого экземпляра](api-references-create-manage-instance.md#powershell-create-and-configure-managed-instances), но при использовании этих команд для экземпляра в пуле необходимо заполнить свойство *имени пула экземпляров* .
 
 ## <a name="deployment-process"></a>Процесс развертывания
 

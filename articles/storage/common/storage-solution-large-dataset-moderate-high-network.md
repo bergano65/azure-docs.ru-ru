@@ -8,12 +8,12 @@ ms.subservice: blobs
 ms.topic: conceptual
 ms.date: 04/01/2019
 ms.author: alkohli
-ms.openlocfilehash: c88da1c7fba5d7cb51863a580ae420eb6b3298a2
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 962bb7a4484f28d52ffd4f0cae985140ec2f0d28
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92491280"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92792928"
 ---
 # <a name="data-transfer-for-large-datasets-with-moderate-to-high-network-bandwidth"></a>Передача больших наборов данных со средней или высокой пропускной способностью сети
  
@@ -67,7 +67,7 @@ ms.locfileid: "92491280"
 |    **Размер данных**                    |    До 35 ТБ                 |    До 80 ТБ на устройство                       |    До 800 ТБ на устройство               |    Переменная                            |
 |    **Data type**                    |    Большие двоичные объекты Azure                  |    Большие двоичные объекты Azure<br>Файлы Azure                    |    Большие двоичные объекты Azure<br>Файлы Azure            |    Большие двоичные объекты Azure<br>Файлы Azure          |
 |    **Форм-фактор**                  |    Не более 5 SSD в одном заказе             |    1 x 23 кг одно устройство в заказе размером с настольный компьютер    |    1 X ~227 кг большое устройство в заказе    |    До 10 жестких дисков или твердотельных накопителей в одном заказе        |
-|    **Время начальной настройки**               |    Низкая <br>(15 мин)            |    От низкой до умеренной сложности <br> (менее 30 мин)               |    Средняя<br>(1–2 ч)               |    От умеренной до высокой сложности<br>(переменная) |
+|    **Время начальной настройки**               |    Низкий <br>(15 мин)            |    От низкой до умеренной сложности <br> (менее 30 мин)               |    Средняя<br>(1–2 ч)               |    От умеренной до высокой сложности<br>(переменная) |
 |    **Отправка данных в Azure**           |    Да                          |    Да                                           |    Да                                   |    Да                                 |
 |    **Экспорт данных из Azure**           |    Нет                           |    Нет                                            |    Нет                                    |    Да                                 |
 |    **Шифрование**                   |    AES, 128-битное                  |    AES, 256-битное                                   |    AES, 256-битное                           |    AES, 128-битное                         |
@@ -95,16 +95,16 @@ ms.locfileid: "92491280"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Сведения о передаче данных с помощью службы "Импорт и экспорт"](/azure/storage/common/storage-import-export-data-to-blobs).
+- [Сведения о передаче данных с помощью службы "Импорт и экспорт"](./storage-import-export-data-to-blobs.md).
 - Практические руководства по:
 
-    - [передаче данных с помощью Диска Data Box](/azure/databox/data-box-disk-quickstart-portal);
-    - [передаче данных с помощью Data Box](/azure/databox/data-box-quickstart-portal).
-- [Перенесите данные с помощью AzCopy](/azure/storage/common/storage-use-azcopy-v10).
+    - [передаче данных с помощью Диска Data Box](../../databox/data-box-disk-quickstart-portal.md);
+    - [передаче данных с помощью Data Box](../../databox/data-box-quickstart-portal.md).
+- [Перенесите данные с помощью AzCopy](./storage-use-azcopy-v10.md).
 - Практические руководства по:
-    - [Руководство по передаче данных с помощью Шлюза Data Box (предварительная версия)](/azure/databox-online/data-box-gateway-deploy-add-shares).
-    - [преобразованию данных с помощью Data Box Edge перед отправкой в Azure](/azure/databox-online/data-box-edge-deploy-configure-compute).
-- [Сведения о передаче данных с помощью службы "Фабрика данных Azure"](/azure/data-factory/quickstart-create-data-factory-portal).
+    - [Руководство по передаче данных с помощью Шлюза Data Box (предварительная версия)](../../databox-online/data-box-gateway-deploy-add-shares.md).
+    - [преобразованию данных с помощью Data Box Edge перед отправкой в Azure](../../databox-online/azure-stack-edge-deploy-configure-compute.md).
+- [Сведения о передаче данных с помощью службы "Фабрика данных Azure"](../../data-factory/quickstart-create-data-factory-portal.md).
 - Использование интерфейсов REST API для передачи данных:
 
     - [в .NET](/dotnet/api/overview/azure/storage);

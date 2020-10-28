@@ -10,12 +10,12 @@ author: danimir
 ms.author: danil
 ms.reviewer: douglas, sstein
 ms.date: 08/31/2020
-ms.openlocfilehash: 3be0695c20eafb71564211d1168bc59813f8800a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ebf36c99e6c4dd636c41086d4c72fd6761f6d5ca
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91617763"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92791636"
 ---
 # <a name="user-initiated-manual-failover-on-sql-managed-instance"></a>Ручная отработка отказа, инициированная пользователем в SQL Управляемый экземпляр
 
@@ -46,7 +46,7 @@ ms.locfileid: "91617763"
 - Пользовательская роль со следующим разрешением:
   - `Microsoft.Sql/managedInstances/failover/action`
 
-### <a name="using-powershell"></a>Использование PowerShell
+### <a name="using-powershell"></a>Регистрация с помощью PowerShell
 
 Минимальная версия AZ. SQL должна быть [v 2.9.0](https://www.powershellgallery.com/packages/Az.Sql/2.9.0). Рассмотрите возможность использования [Azure Cloud Shell](../../cloud-shell/overview.md) из портал Azure, где всегда доступна последняя версия PowerShell. 
 
@@ -62,7 +62,7 @@ Connect-AzAccount
 Select-AzSubscription -SubscriptionId $subscription
 ```
 
-Используйте командлет PowerShell Command [-азсклинстанцефаиловер](https://docs.microsoft.com/powershell/module/az.sql/invoke-azsqlinstancefailover) в следующем примере, чтобы инициировать отработку отказа основного узла, применимую к уровню служб BC и GP.
+Используйте командлет PowerShell Command [-азсклинстанцефаиловер](/powershell/module/az.sql/invoke-azsqlinstancefailover) в следующем примере, чтобы инициировать отработку отказа основного узла, применимую к уровню служб BC и GP.
 
 ```powershell
 $ResourceGroup = 'enter resource group of your MI'
@@ -96,7 +96,7 @@ az sql mi failover -g myresourcegroup -n myinstancename --replica-type ReadableS
 
 ### <a name="using-rest-api"></a>Использование REST API
 
-Для опытных пользователей, которым, возможно, потребуется автоматизировать отработку отказа управляемых экземпляров SQL в целях реализации непрерывного конвейера тестирования или автоматизированного механизма снижения производительности, эту функцию можно выполнить, инициируя отработку отказа через вызов API. Дополнительные сведения см. в разделе [управляемые экземпляры — REST API отработки отказа](https://docs.microsoft.com/rest/api/sql/managed%20instances%20-%20failover/failover) .
+Для опытных пользователей, которым, возможно, потребуется автоматизировать отработку отказа управляемых экземпляров SQL в целях реализации непрерывного конвейера тестирования или автоматизированного механизма снижения производительности, эту функцию можно выполнить, инициируя отработку отказа через вызов API. Дополнительные сведения см. в разделе [управляемые экземпляры — REST API отработки отказа](/rest/api/sql/managed%20instances%20-%20failover/failover) .
 
 Чтобы инициировать отработку отказа с помощью вызова REST API, сначала создайте маркер проверки подлинности с помощью клиента API по своему усмотрению. Созданный маркер проверки подлинности используется в качестве свойства авторизации в заголовке запроса API и является обязательным.
 
@@ -140,11 +140,11 @@ SELECT DISTINCT replication_endpoint_url, fabric_replica_role_desc FROM sys.dm_h
 
 > [!IMPORTANT]
 > Функциональные ограничения инициированной пользователем ручной отработки отказа:
-> - Может быть один (1) отработка отказа, инициированная на одном Управляемый экземпляр каждые **30 минут**.
+> - Может быть один (1) отработка отказа, инициированная на одном Управляемый экземпляр каждые **30 минут** .
 > - Для экземпляров BC должен существовать кворум реплик, чтобы запрос отработки отказа был принят.
 > - Для экземпляров BC невозможно указать, на какой вторичной реплике для запуска отработки отказа будет выполняться операция.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте больше о высокой доступности управляемого экземпляра [Высокая доступность для управляемый экземпляр Azure SQL](../database/high-availability-sla.md).
 - Общие сведения см. в статье [что такое Azure SQL управляемый экземпляр?](sql-managed-instance-paas-overview.md).

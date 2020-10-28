@@ -11,12 +11,12 @@ author: MladjoA
 ms.author: mlandzic
 ms.reviewer: sstein
 ms.date: 01/03/2019
-ms.openlocfilehash: ced546f8f4375433d9fcd59f7ce46f9604f72921
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 148c4828309738a18dbda5fd35ea634e8384bfde
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91443116"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92792112"
 ---
 # <a name="reporting-across-scaled-out-cloud-databases-preview"></a>Отчеты по масштабируемым облачным базам данных (предварительная версия)
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -40,10 +40,10 @@ ms.locfileid: "91443116"
 
 Эти инструкции позволяют представлять метаданные уровня сегментированных данных через запрос к эластичной базе данных.
 
-1. [CREATE MASTER KEY](https://msdn.microsoft.com/library/ms174382.aspx)
-2. [CREATE DATABASE SCOPED CREDENTIAL](https://msdn.microsoft.com/library/mt270260.aspx)
-3. [CREATE EXTERNAL DATA SOURCE](https://msdn.microsoft.com/library/dn935022.aspx)
-4. [CREATE EXTERNAL TABLE](https://msdn.microsoft.com/library/dn935021.aspx)
+1. [CREATE MASTER KEY](/sql/t-sql/statements/create-master-key-transact-sql)
+2. [CREATE DATABASE SCOPED CREDENTIAL](/sql/t-sql/statements/create-database-scoped-credential-transact-sql)
+3. [CREATE EXTERNAL DATA SOURCE](/sql/t-sql/statements/create-external-data-source-transact-sql)
+4. [CREATE EXTERNAL TABLE](/sql/t-sql/statements/create-external-table-transact-sql)
 
 ## <a name="11-create-database-scoped-master-key-and-credentials"></a>1.1. Создание главного ключа и учетных данных для конкретной базы данных
 
@@ -74,7 +74,7 @@ SECRET = '<password>'
                ) [;]
 ```
 
-### <a name="example"></a>Пример
+### <a name="example"></a>Например, .
 
 ```sql
 CREATE EXTERNAL DATA SOURCE MyExtSrc
@@ -159,11 +159,11 @@ DROP EXTERNAL TABLE [ database_name . [ schema_name ] . | schema_name. ] table_n
 
 Предложение DISTRIBUTION определяет распределение данных, используемое для этой таблицы: Обработчик запросов использует сведения, указанные в предложении DISTRIBUTION, для создания наиболее эффективных планов запросов.
 
-1. **Сегментированный** означает, что данные горизонтально секционированы по базам данных. Ключ секционирования для распределения данных указывается в параметре **<sharding_column_name>**.
+1. **Сегментированный** означает, что данные горизонтально секционированы по базам данных. Ключ секционирования для распределения данных указывается в параметре **<sharding_column_name>** .
 2. **Репликация** означает, что в каждой базе данных имеются идентичные копии таблицы. Вы должны самостоятельно позаботиться о соответствии реплик во всех базах данных.
 3. В **сторону \_ Перераспределение означает, что таблица** горизонтально секционирована с использованием метода распределения, зависящего от приложения.
 
-**Ссылка на уровень данных**: язык DDL внешней таблицы ссылается на внешний источник данных. Внешний источник данных указывает карту сегментов, которая предоставляет внешней таблице сведения, необходимые для нахождение всех баз данных на вашем уровне.
+**Ссылка на уровень данных** : язык DDL внешней таблицы ссылается на внешний источник данных. Внешний источник данных указывает карту сегментов, которая предоставляет внешней таблице сведения, необходимые для нахождение всех баз данных на вашем уровне.
 
 ### <a name="security-considerations"></a>Вопросы безопасности
 
@@ -194,7 +194,7 @@ DROP EXTERNAL TABLE [ database_name . [ schema_name ] . | schema_name. ] table_n
 
 ## <a name="stored-procedure-for-remote-t-sql-execution-sp_execute_remote"></a>Хранимая процедура для удаленного выполнения T-SQL: sp\_execute_remote
 
-С функцией эластичных запросов вам становится доступна хранимая процедура, которая обеспечивает прямой доступ к сегментам. Хранимая процедура называется [sp\_execute\_remote](https://msdn.microsoft.com/library/mt703714), она может использоваться для выполнения удаленных хранимых процедур или кода T-SQL в удаленных базах данных. Она принимает следующие параметры.
+С функцией эластичных запросов вам становится доступна хранимая процедура, которая обеспечивает прямой доступ к сегментам. Хранимая процедура называется [sp\_execute\_remote](/sql/relational-databases/system-stored-procedures/sp-execute-remote-azure-sql-database), она может использоваться для выполнения удаленных хранимых процедур или кода T-SQL в удаленных базах данных. Она принимает следующие параметры.
 
 * Имя источника данных (nvarchar): имя внешнего источника данных типа "реляционная СУБД".
 * Запрос (nvarchar): запрос T-SQL, выполняемый для каждого сегмента.
@@ -222,13 +222,13 @@ DROP EXTERNAL TABLE [ database_name . [ schema_name ] . | schema_name. ] table_n
 * Функция эластичных запросов в настоящее время не позволяет исключать сегменты, когда предикаты для ключа сегментирования безопасно исключают определенные сегменты из процесса обработки.
 * Эластичные запросы оптимальны, когда основная часть вычислений может быть выполнена в сегментах. Обычно наиболее эффективны запросы с предикатами выборочных фильтров, дающие возможность вычисления в сегментах или соединениях путем секционирования ключей с выравниванием по секциям для всех сегментов. Для других шаблонов запросов может потребоваться загрузка больших объемов данных из сегментов в головной узел, что может стать причиной снижения производительности.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Общие сведения об эластичных запросах см. в разделе [Обзор эластичных запросов к базе данных SQL Azure (предварительная версия)](elastic-query-overview.md).
 * Руководств по вертикальному секционированию см. в статье [Приступая к работе с межбазовыми запросами (вертикальное секционирование) (предварительная версия)](elastic-query-getting-started-vertical.md).
 * Описание синтаксиса и примеры запросов вертикально секционированных данных см. в разделе [Запрос к нескольким облачным базам данных с разными схемами (предварительная версия)](elastic-query-vertical-partitioning.md).
 * Руководство по горизонтальному секционированию (сегментированию) см. в статье [Отчеты по масштабируемым облачным базам данных (предварительная версия)](elastic-query-getting-started.md).
-* В описании [sp\_execute \_remote](https://msdn.microsoft.com/library/mt703714) приведена хранимая процедура, которая выполняет инструкцию Transact-SQL для отдельной удаленной базы данных SQL Azure или набора баз данных, выступающих в качестве сегментов в схеме горизонтального секционирования.
+* В описании [sp\_execute \_remote](/sql/relational-databases/system-stored-procedures/sp-execute-remote-azure-sql-database) приведена хранимая процедура, которая выполняет инструкцию Transact-SQL для отдельной удаленной базы данных SQL Azure или набора баз данных, выступающих в качестве сегментов в схеме горизонтального секционирования.
 
 <!--Image references-->
 [1]: ./media/elastic-query-horizontal-partitioning/horizontalpartitioning.png

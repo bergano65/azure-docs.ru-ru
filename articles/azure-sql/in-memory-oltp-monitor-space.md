@@ -11,12 +11,12 @@ author: juliemsft
 ms.author: jrasnick
 ms.reviewer: genemi
 ms.date: 01/25/2019
-ms.openlocfilehash: 2134cf1fda5f0f1699feb46582813d198304f92e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 84e4ec1e7b3b5ec935bb9d5d819b4562e7fd3e5a
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91616386"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92791704"
 ---
 # <a name="monitor-in-memory-oltp-storage-in-azure-sql-database-and-azure-sql-managed-instance"></a>Мониторинг In-Memory хранилища OLTP в базе данных SQL Azure и Azure SQL Управляемый экземпляр
 [!INCLUDE[appliesto-sqldb-sqlmi](includes/appliesto-sqldb-sqlmi.md)]
@@ -65,8 +65,8 @@ ms.locfileid: "91616386"
 - Если вам необходимо сохранить данные в таблицах, оптимизированных для памяти, повысьте уровень служб, чтобы получить достаточный объем хранилища In-Memory.
 
 > [!NOTE]
-> В редких случаях ошибки 41823 и 41840 могут оказаться временными, то есть имеется достаточный объем хранилища выполняющейся в памяти OLTP, и повторное выполнение операции завершается успешно. Поэтому рекомендуется отслеживать общий доступный объем хранилища выполняющейся в памяти OLTP и повторять операцию при первом возникновении ошибки 41823 или 41840. Дополнительные сведения о логике повтора см. в разделе [Обнаружение конфликтов и логика повторных попыток](https://docs.microsoft.com/sql/relational-databases/In-memory-oltp/transactions-with-memory-optimized-tables#conflict-detection-and-retry-logic).
+> В редких случаях ошибки 41823 и 41840 могут оказаться временными, то есть имеется достаточный объем хранилища выполняющейся в памяти OLTP, и повторное выполнение операции завершается успешно. Поэтому рекомендуется отслеживать общий доступный объем хранилища выполняющейся в памяти OLTP и повторять операцию при первом возникновении ошибки 41823 или 41840. Дополнительные сведения о логике повтора см. в разделе [Обнаружение конфликтов и логика повторных попыток](/sql/relational-databases/In-memory-oltp/transactions-with-memory-optimized-tables#conflict-detection-and-retry-logic).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Инструкции по мониторингу см. [в разделе Мониторинг с помощью динамических административных представлений](database/monitoring-with-dmvs.md).

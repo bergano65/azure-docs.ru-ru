@@ -7,12 +7,12 @@ ms.date: 9/22/2020
 ms.topic: how-to
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: e3eb6b750c805951a67a2e869c862f1285a342a8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6a40ffab652a6ae8671d6cd1c0dd9336764ce2c4
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91448317"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92791942"
 ---
 # <a name="respond-to-azure-defender-for-key-vault-alerts"></a>Azure Defender: реагирование на оповещения Key Vault
 При получении оповещения от защитника Azure для Key Vault мы рекомендуем исследовать и реагировать на это предупреждение, как описано ниже. Защитник Azure для Key Vault защищает приложения и учетные данные, поэтому даже если вы знакомы с приложением или пользователем, вызвавшим оповещение, важно проверить ситуацию, окружающую каждое оповещение.  
@@ -66,10 +66,10 @@ ms.locfileid: "91448317"
     1. Если были использованы скомпрометированные учетные данные, владелец приложения должен найти сведения, к которым осуществлялся доступ, и снизить влияние.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 На этой странице описывается процесс реагирования на предупреждение от защитника Azure для Key Vault. Связанные сведения см. на следующих страницах:
 
 - [Общие сведения об Azure Defender для Key Vault](defender-for-key-vault-introduction.md)
 - [Отключение оповещений от Azure Defender](alerts-suppression-rules.md)
-- [Экспортировать оповещения системы безопасности](continuous-export.md)
+- [Непрерывный экспорт данных центра безопасности](continuous-export.md)

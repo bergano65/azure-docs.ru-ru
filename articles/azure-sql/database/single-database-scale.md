@@ -11,18 +11,18 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 09/16/2020
-ms.openlocfilehash: 41760eb91d2a8406d4deb52cd8e247731239e2b4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d24143a440c0d30c3abcd6eb5efd454033b8f71c
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91309869"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92791483"
 ---
 # <a name="scale-single-database-resources-in-azure-sql-database"></a>Масштабирование ресурсов отдельной базы данных в Базе данных SQL Azure
 
 В этой статье описывается, как масштабировать ресурсы вычислений и хранения, доступные для базы данных SQL Azure, на подготовленном уровне вычислений. Кроме того, [уровень вычислений "бессерверный](serverless-tier-overview.md) " обеспечивает автоматическое масштабирование вычислений и счета за секунду для используемых вычислений.
 
-После первоначального выбора количества виртуальных ядер или DTU можно динамически масштабировать отдельную базу данных в зависимости от фактического взаимодействия с помощью [портал Azure](single-database-manage.md#the-azure-portal), [Transact-SQL](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql#examples-1), [PowerShell](/powershell/module/az.sql/set-azsqldatabase), [Azure CLI](/cli/azure/sql/db#az-sql-db-update)или [REST API](https://docs.microsoft.com/rest/api/sql/databases/update).
+После первоначального выбора количества виртуальных ядер или DTU можно динамически масштабировать отдельную базу данных в зависимости от фактического взаимодействия с помощью [портал Azure](single-database-manage.md#the-azure-portal), [Transact-SQL](/sql/t-sql/statements/alter-database-transact-sql#examples-1), [PowerShell](/powershell/module/az.sql/set-azsqldatabase), [Azure CLI](/cli/azure/sql/db#az-sql-db-update)или [REST API](/rest/api/sql/databases/update).
 
 В следующем видео показано динамическое изменение уровня служб и объема вычислительных ресурсов для увеличения количества доступных единиц DTU отдельной базы данных.
 
@@ -58,7 +58,7 @@ ms.locfileid: "91309869"
 |**Уровень "Гипермасштабирование"**|Недоступно|Недоступно|Недоступно|&bull;&nbsp;Постоянная задержка во времени независимо от используемого пространства</br>&bull;&nbsp;Обычно менее 2 минут|
 
 > [!NOTE]
-> Кроме того, для баз данных Standard (S2-S12) и общего назначения, задержка перемещения базы данных в эластичный пул или между пулами эластичных пулов будет пропорционально размеру базы данных, если база данных использует хранилище привилегированного файлового ресурса ([PFS](https://docs.microsoft.com/azure/storage/files/storage-files-introduction)).
+> Кроме того, для баз данных Standard (S2-S12) и общего назначения, задержка перемещения базы данных в эластичный пул или между пулами эластичных пулов будет пропорционально размеру базы данных, если база данных использует хранилище привилегированного файлового ресурса ([PFS](../../storage/files/storage-files-introduction.md)).
 >
 > Чтобы определить, использует ли база данных PFS-хранилище, выполните следующий запрос в контексте базы данных. Если значение в столбце AccountType равно `PremiumFileStorage` или `PremiumFileStorage-ZRS` , то база данных использует хранилище PFS.
  
@@ -72,7 +72,7 @@ WHERE s.type_desc IN ('ROWS', 'LOG');
 ```
 
 > [!TIP]
-> Сведения о мониторинге выполняемых операций см. в статьях [Управление операциями с помощью REST API SQL](https://docs.microsoft.com/rest/api/sql/operations/list), [Управление операциями с помощью интерфейса командной строки](/cli/azure/sql/db/op), [мониторинг операций с помощью T-SQL](/sql/relational-databases/system-dynamic-management-views/sys-dm-operation-status-azure-sql-database) и следующие две команды PowerShell: [Get-азсклдатабасеактивити](/powershell/module/az.sql/get-azsqldatabaseactivity) и [останавливают-азсклдатабасеактивити](/powershell/module/az.sql/stop-azsqldatabaseactivity).
+> Сведения о мониторинге выполняемых операций см. в статьях [Управление операциями с помощью REST API SQL](/rest/api/sql/operations/list), [Управление операциями с помощью интерфейса командной строки](/cli/azure/sql/db/op), [мониторинг операций с помощью T-SQL](/sql/relational-databases/system-dynamic-management-views/sys-dm-operation-status-azure-sql-database) и следующие две команды PowerShell: [Get-азсклдатабасеактивити](/powershell/module/az.sql/get-azsqldatabaseactivity) и [останавливают-азсклдатабасеактивити](/powershell/module/az.sql/stop-azsqldatabaseactivity).
 
 ## <a name="cancelling-changes"></a>Отмена изменений
 
@@ -84,7 +84,7 @@ WHERE s.type_desc IN ('ROWS', 'LOG');
 
 ![Текущая операция](./media/single-database-scale/ongoing-operations.png)
 
-Затем нажмите кнопку **отменить эту операцию**.
+Затем нажмите кнопку **отменить эту операцию** .
 
 ![Отменить текущую операцию](./media/single-database-scale/cancel-ongoing-operation.png)
 
@@ -122,7 +122,7 @@ else {
 ### <a name="vcore-based-purchasing-model"></a>Модель приобретения на основе виртуальных ядер
 
 - Хранилище можно подготовить к максимальному размеру хранилища данных с шагом в 1 ГБ. Минимальное настраиваемое хранилище данных — 1 ГБ. См. раздел Документация по ограничению ресурсов для [отдельных баз данных](resource-limits-vcore-single-databases.md) и [эластичных пулов](resource-limits-vcore-elastic-pools.md) для ограничения максимального размера хранилища данных в каждой цели обслуживания.
-- Хранилище данных для отдельной базы данных может быть подготовлено путем увеличения или уменьшения максимального размера с помощью [портал Azure](https://portal.azure.com), [Transact-SQL](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql#examples-1), [PowerShell](/powershell/module/az.sql/set-azsqldatabase), [Azure CLI](/cli/azure/sql/db#az-sql-db-update)или [REST API](https://docs.microsoft.com/rest/api/sql/databases/update). Если значение максимального размера указано в байтах, оно должно быть кратно 1 ГБ (1073741824 байт).
+- Хранилище данных для отдельной базы данных может быть подготовлено путем увеличения или уменьшения максимального размера с помощью [портал Azure](https://portal.azure.com), [Transact-SQL](/sql/t-sql/statements/alter-database-transact-sql#examples-1), [PowerShell](/powershell/module/az.sql/set-azsqldatabase), [Azure CLI](/cli/azure/sql/db#az-sql-db-update)или [REST API](/rest/api/sql/databases/update). Если значение максимального размера указано в байтах, оно должно быть кратно 1 ГБ (1073741824 байт).
 - Объем данных, которые могут храниться в файлах данных базы данных, ограничен максимальным размером хранилища данных. Помимо этого хранилища, база данных SQL Azure автоматически выделяет 30% больше места для хранения журнала транзакций.
 - База данных SQL Azure автоматически выделяет 32 ГБ на виртуальное ядро для `tempdb` базы данных. `tempdb` находится в локальном хранилище SSD на всех уровнях служб.
 - Стоимость хранилища для отдельной базы данных или эластичного пула — это сумма хранилища данных и объемов хранилища журнала транзакций, умноженная на цену единицы хранения уровня службы. Стоимость `tempdb` включается в цену. Дополнительные сведения о ценах на хранение см. на странице [цен на базу данных SQL Azure](https://azure.microsoft.com/pricing/details/sql-database/).
@@ -133,7 +133,7 @@ else {
 ### <a name="dtu-based-purchasing-model"></a>Модель приобретения на основе единиц DTU
 
 - Цена DTU для отдельной базы данных включает в себя определенный объем хранилища, не требующий дополнительной платы. Дополнительный объем хранилища, сверх включенного, можно подготовить за дополнительную плату в пределах максимального допустимого размера с шагом в 250 ГБ при объеме хранилища до 1 ТБ и с шагом в 256 ГБ — при объеме более 1 ТБ. Сведения о включенном объеме хранилища и ограничениях максимального размера см. в разделе [Отдельная база данных: размеры хранилища и объемы вычислительных ресурсов](resource-limits-dtu-single-databases.md#single-database-storage-sizes-and-compute-sizes).
-- Дополнительные хранилища для одной базы данных можно подготовить, увеличив ее максимальный размер с помощью портал Azure, [Transact-SQL](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql#examples-1), [PowerShell](/powershell/module/az.sql/set-azsqldatabase), [Azure CLI](/cli/azure/sql/db#az-sql-db-update)или [REST API](https://docs.microsoft.com/rest/api/sql/databases/update).
+- Дополнительные хранилища для одной базы данных можно подготовить, увеличив ее максимальный размер с помощью портал Azure, [Transact-SQL](/sql/t-sql/statements/alter-database-transact-sql#examples-1), [PowerShell](/powershell/module/az.sql/set-azsqldatabase), [Azure CLI](/cli/azure/sql/db#az-sql-db-update)или [REST API](/rest/api/sql/databases/update).
 - Стоимость дополнительного хранилища для отдельной базы данных равна объему хранилища, умноженному на цену единицы хранения этого хранилища для уровня служб. Дополнительные сведения о цене дополнительного хранилища см. на странице [цен на базу данных SQL Azure](https://azure.microsoft.com/pricing/details/sql-database/).
 
 > [!IMPORTANT]
@@ -153,7 +153,6 @@ else {
   - Обновление базы данных-источника в отношениях георепликации. При изменении максимального размера и указании значения больше 1 ТБ в базе данных-источнике такие же изменения произойдут в базе данных-получателе. Чтобы изменения в базе данных-источнике вступили в силу, оба обновления должны быть успешными. При этом применяются ограничения по регионам для максимального размера больше 1 ТБ. Если база данных-получатель находится в регионе, который не поддерживает более 1 ТБ, первичный сервер не обновляется.
 - Использование службы импорта и экспорта для загрузки баз данных P11/p15 с более чем 1 ТБ не поддерживается. Для [импорта](database-import.md) и [экспорта](database-export.md) данных используйте файл SqlPackage.exe.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Общие ограничения ресурсов см. в статье [ограничения ресурсов на основе виртуальное ядро базы данных SQL Azure — отдельные базы данных](resource-limits-vcore-single-databases.md) и [ограничения ресурсов на основе DTU базы данных SQL Azure — отдельные базы данных](resource-limits-dtu-single-databases.md).
- 

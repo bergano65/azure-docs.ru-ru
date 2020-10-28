@@ -10,12 +10,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 10/27/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 5c54da3621df1e5d49e7269781e6ae33fc9c0923
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: 47cface4efbf38f2cec630745d498db674c936d3
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92675673"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92791959"
 ---
 # <a name="how-to-use-azuresearchdocuments-in-a-c-net-application"></a>Использование Azure.Search.Docументс в приложении .NET на C#
 
@@ -23,7 +23,7 @@ ms.locfileid: "92675673"
 
 ## <a name="about-version-11"></a>О версии 11
 
-Пакет Azure SDK для .NET добавляет новую клиентскую библиотеку из группы Azure SDK, которая функционально эквивалентна [Microsoft. Azure. Search](/dotnet/api/overview/azure/search/client10) Client Libraries, но использует общие подходы и соглашения там, где это применимо. Некоторые примеры включают [`AzureKeyCredential`](/dotnet/api/azure.azurekeycredential) проверку подлинности и [System.Text.Js. Сериализация](/dotnet/api/system.text.json.serialization) для СЕРИАЛИЗАЦИИ JSON.
+Пакет Azure SDK для .NET добавляет новую клиентскую библиотеку [**Azure.Search.Docументс**](/dotnet/api/overview/azure/search) из группы Azure SDK, которая функционально эквивалентна [Microsoft. Azure. Search](/dotnet/api/overview/azure/search/client10) Client Libraries, но использует общие подходы и соглашения там, где это применимо. Некоторые примеры включают [`AzureKeyCredential`](/dotnet/api/azure.azurekeycredential) проверку подлинности и [System.Text.Js. Сериализация](/dotnet/api/system.text.json.serialization) для СЕРИАЛИЗАЦИИ JSON.
 
 Как и в предыдущих версиях, эту библиотеку можно использовать в следующих случаях:
 

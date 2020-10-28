@@ -7,12 +7,12 @@ ms.service: key-vault
 ms.topic: conceptual
 ms.date: 06/30/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 58c5fdcfef5e866d0c69d65412582c0ed649f7c6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2396aac67a17352987d9d6e3b49535c19ffe8917
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86230831"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92792384"
 ---
 # <a name="key-vault-versions"></a>Версии Key Vault
 
@@ -33,7 +33,7 @@ ms.locfileid: "86230831"
 ## <a name="2019"></a>2019
 
 - Выпуск пакетов SDK Azure Key Vault нового поколения. Примеры их использования см. в кратких руководствах по секретам Azure Key Vault для [Python](../secrets/quick-create-python.md), [.NET](../secrets/quick-create-net.md), [Java](../secrets/quick-create-java.md) и [Node.js](../secrets/quick-create-node.md).
-- Новые политики Azure для управления сертификатами хранилищ ключей. См. статью [Встроенные определения в Политике Azure для Key Vault](../policy-samples.md).
+- Новые политики Azure для управления сертификатами хранилищ ключей. См. статью [Встроенные определения в Политике Azure для Key Vault](../policy-reference.md).
 - Расширение виртуальной машины в Azure Key Vault теперь общедоступно.  См. статьи [Расширение виртуальной машины в Key Vault для Linux](../../virtual-machines/extensions/key-vault-linux.md) и [Расширение виртуальной машины в Key Vault для Windows](../../virtual-machines/extensions/key-vault-windows.md).
 - Управление секретами с учетом событий для Azure Key Vault теперь доступно в Сетке событий Azure. Дополнительные сведения см. в статье [Схема Сетки событий для событий в Azure Key Vault](../../event-grid/event-schema-key-vault.md], а также узнайте, как [получать оповещения хранилища ключей и реагировать на них с помощью Сетки событий Azure](event-grid-tutorial.md).
 
@@ -49,8 +49,8 @@ ms.locfileid: "86230831"
 
 Новые функции, выпущенные в этом году:
 
-- Ключи управляемой учетной записи хранения. Функция "Ключи учетной записи хранения" упрощает интеграцию со службой хранилища Azure. Дополнительные сведения см. в статье [Ключи учетной записи хранения Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-ovw-storage-keys).
-- Обратимое удаление. Функция обратимого удаления улучшает защиту данных для хранилищ ключей и его объектов. Дополнительные сведения см. в статье [Общие сведения об обратимом удалении в Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-ovw-soft-delete).
+- Ключи управляемой учетной записи хранения. Функция "Ключи учетной записи хранения" упрощает интеграцию со службой хранилища Azure. Дополнительные сведения см. в статье [Ключи учетной записи хранения Azure Key Vault](../secrets/overview-storage-keys.md).
+- Обратимое удаление. Функция обратимого удаления улучшает защиту данных для хранилищ ключей и его объектов. Дополнительные сведения см. в статье [Общие сведения об обратимом удалении в Azure Key Vault](./soft-delete-overview.md).
 
 ## <a name="2015"></a>2015
 
@@ -64,7 +64,7 @@ ms.locfileid: "86230831"
 - Восстановление ключа: удалено поле use.     
 - В алгоритмах RSA изменено RSA_OAEP на RSA-OAEP. Ознакомьтесь со статьей [About keys, secrets, and certificates](about-keys-secrets-certificates.md) (Сведения о ключах, секретах и сертификатах).    
  
-О выходе второй предварительной версии (2015-02-01-preview) было объявлено 20 апреля 2015 г. Дополнительные сведения см. в записи блога [REST API Update](https://docs.microsoft.com/archive/blogs/kv/rest-api-update) (Обновление REST API). Были обновлены следующие задачи:
+О выходе второй предварительной версии (2015-02-01-preview) было объявлено 20 апреля 2015 г. Дополнительные сведения см. в записи блога [REST API Update](/archive/blogs/kv/rest-api-update) (Обновление REST API). Были обновлены следующие задачи:
  
 - Составление списка ключей в хранилище. Добавлена поддержка разбиения на страницы для выполнения операции.
 - Составление списка версий ключа. Добавлена операция перечисления версий ключа.  

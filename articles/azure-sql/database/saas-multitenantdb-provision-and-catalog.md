@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 09/24/2018
-ms.openlocfilehash: 0b381e2dbdbfd30d10f37637b30bcdfbab8ed99a
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.openlocfilehash: eddb0c8339069025f0742e9bcbc371efbef094ee
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92331946"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92793336"
 ---
 # <a name="provision-and-catalog-new-tenants-in-a-saas-application-using-a-sharded-multi-tenant-azure-sql-database"></a>Подготовка и каталогизация новых клиентов и в приложении SaaS с помощью сегментированной мультитенантной Базы данных SQL Azure
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -127,9 +127,9 @@ ms.locfileid: "92331946"
 
 Для работы с этим руководством выполните следующие предварительные требования:
 
-- Установите Azure PowerShell. Дополнительные сведения см. в статье [Начало работы с Azure PowerShell](https://docs.microsoft.com/powershell/azure/get-started-azureps).
+- Установите Azure PowerShell. Дополнительные сведения см. в статье [Начало работы с Azure PowerShell](/powershell/azure/get-started-azureps).
 
-- Разверните приложение SaaS-приложение Wingtip Tickets c мультитенантной БД. Вы можете развернуть его менее чем за пять минут, используя инструкцию из статьи [Deploy and explore a sharded multi-tenant application that uses Azure SQL Database](../../sql-database/saas-multitenantdb-get-started-deploy.md) (Развертывание и изучение сегментированного мультитенантного приложения, использующего Базу данных SQL Azure).
+- Разверните приложение SaaS-приложение Wingtip Tickets c мультитенантной БД. Вы можете развернуть его менее чем за пять минут, используя инструкцию из статьи [Deploy and explore a sharded multi-tenant application that uses Azure SQL Database](./saas-multitenantdb-get-started-deploy.md) (Развертывание и изучение сегментированного мультитенантного приложения, использующего Базу данных SQL Azure).
 
 - Получите скрипты Wingtip и исходный код:
     - Сценарии для приложения SaaS Wingtip Tickets c мультитенантной базой данных и исходный код этого приложения вы найдете в репозитории GitHub [WingtipTicketsSaaS-MultitenantDB](https://github.com/microsoft/WingtipTicketsSaaS-MultiTenantDB).
@@ -173,7 +173,7 @@ ms.locfileid: "92331946"
 
 5. Отслеживайте выполнение скрипта и используйте клавиши **F10** и **F11** (меню **Отладка** ), чтобы обойти вызываемые функции или перейти в них по очереди.
 
-Дополнительные сведения об отладке сценариев PowerShell см. в разделе [Отладка сценариев в интегрированной среде сценариев Windows PowerShell](https://docs.microsoft.com/powershell/scripting/components/ise/how-to-debug-scripts-in-windows-powershell-ise).
+Дополнительные сведения об отладке сценариев PowerShell см. в разделе [Отладка сценариев в интегрированной среде сценариев Windows PowerShell](/powershell/scripting/components/ise/how-to-debug-scripts-in-windows-powershell-ise).
 
 ## <a name="provision-a-tenant-in-its-own-database"></a>Подготовка клиента в *собственной* базе данных
 
@@ -263,9 +263,9 @@ ms.locfileid: "92331946"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-<!-- - Additional [tutorials that build upon the Wingtip SaaS application](../../sql-database/saas-dbpertenant-wingtip-app-overview.md#sql-database-wingtip-saas-tutorials)-->
+<!-- - Additional [tutorials that build upon the Wingtip SaaS application](./saas-dbpertenant-wingtip-app-overview.md#sql-database-wingtip-saas-tutorials)-->
 - [Клиентская библиотека эластичной базы данных](elastic-database-client-library.md)
-- [Отладка сценариев в интегрированной среде сценариев Windows PowerShell](https://docs.microsoft.com/powershell/scripting/components/ise/how-to-debug-scripts-in-windows-powershell-ise)
+- [Отладка сценариев в интегрированной среде сценариев Windows PowerShell](/powershell/scripting/components/ise/how-to-debug-scripts-in-windows-powershell-ise)
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
@@ -277,5 +277,4 @@ ms.locfileid: "92331946"
 > * Подготовка пакета дополнительных клиентов.
 > * Получение сведений о подготовке клиентов и их регистрация в каталоге.
 
-Ознакомьтесь с [руководством по мониторингу производительности](../../sql-database/saas-multitenantdb-performance-monitoring.md).
-
+Ознакомьтесь с [руководством по мониторингу производительности](./saas-multitenantdb-performance-monitoring.md).

@@ -10,12 +10,12 @@ author: denzilribeiro
 ms.author: denzilr
 ms.reviewer: sstein
 ms.date: 10/18/2019
-ms.openlocfilehash: 7bd2b404627e21a80fc41a4561300d7252d1519c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ed31ff5d77b258d141a77fc174c2d5452adf7d01
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84324404"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92791721"
 ---
 # <a name="sql-hyperscale-performance-troubleshooting-diagnostics"></a>Диагностика по устранению неполадок производительности в SQL
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -97,7 +97,7 @@ ms.locfileid: "84324404"
 
 ## <a name="data-io-in-resource-utilization-statistics"></a>Ввод-вывод данных в статистику использования ресурсов
 
-В базе данных, отличной от для масштабирования, объединенные операции чтения и записи операций ввода-вывода в файлы данных, относящиеся к ограничению операций ввода-вывода данных управления [ресурсами](/azure/sql-database/sql-database-resource-limits-database-server#resource-governance) , отображаются в [sys.dm_db_resource_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-db-resource-stats-azure-sql-database) и [sys.resource_stats](/sql/relational-databases/system-catalog-views/sys-resource-stats-azure-sql-database) представлениях в `avg_data_io_percent` столбце. То же значение указывается в портал Azure в качестве _процента операций ввода-вывода данных_.
+В базе данных, отличной от для масштабирования, объединенные операции чтения и записи операций ввода-вывода в файлы данных, относящиеся к ограничению операций ввода-вывода данных управления [ресурсами](./resource-limits-logical-server.md#resource-governance) , отображаются в [sys.dm_db_resource_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-db-resource-stats-azure-sql-database) и [sys.resource_stats](/sql/relational-databases/system-catalog-views/sys-resource-stats-azure-sql-database) представлениях в `avg_data_io_percent` столбце. То же значение указывается в портал Azure в качестве _процента операций ввода-вывода данных_ .
 
 В этом столбце в базе данных для масштабирования в этой статье задается отчет об использовании операций ввода-вывода в секунду относительно ограничения локального хранилища только для реплик вычислений, а именно для операций ввода-вывода в RBPEX и `tempdb` . Значение 100% в этом столбце указывает, что управление ресурсами ограничивает число операций ввода-вывода в локальном хранилище. Если это связано с проблемой с производительностью, настройте рабочую нагрузку для создания меньшего количества операций ввода-вывода или увеличьте цель службы базы данных, чтобы увеличить [ограничение максимального количества](resource-limits-vcore-single-databases.md) _операций ввода-вывода_ в управлении ресурсами. Для управления ресурсами при операциях чтения и записи RBPEX система подсчитывает количество отдельных 8-КИЛОБАЙТных IOs, а не более крупных IOs, которые могут выдаваться ядром СУБД SQL Server.
 

@@ -12,12 +12,12 @@ ms.date: 04/07/2020
 ms.author: kenwith
 ms.reviewer: japere
 ms.custom: contperfq2
-ms.openlocfilehash: fcf06c280a93489b2e958b9baff2e132da37c005
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 81a735966b2a0ebdd7c8fcd9e9aa467d68aac354
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92426458"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92792758"
 ---
 # <a name="work-with-existing-on-premises-proxy-servers"></a>Работа с имеющимися локальными прокси-серверами
 
@@ -77,7 +77,7 @@ ms.locfileid: "92426458"
 
 Если автоматическое обнаружение веб-прокси включено в среде и настроено должным образом, соединитель обнаружит исходящий прокси-сервер автоматически и попытается его использовать. Тем не менее можно явным образом настроить использование исходящего прокси-сервера для соединителя.
 
-Для этого измените файл C:\Program Files\Microsoft AAD App Proxy Connector\ApplicationProxyConnectorService.exe.config и добавьте раздел *system.net*, поместив в него следующий образец кода. Вместо *proxyserver:8080* укажите имя или IP-адрес локального прокси-сервера и номер порта для доступа к нему. Значение должно иметь префикс http://, даже если вы используете IP-адрес.
+Для этого измените файл C:\Program Files\Microsoft AAD App Proxy Connector\ApplicationProxyConnectorService.exe.config и добавьте раздел *system.net* , поместив в него следующий образец кода. Вместо *proxyserver:8080* укажите имя или IP-адрес локального прокси-сервера и номер порта для доступа к нему. Значение должно иметь префикс http://, даже если вы используете IP-адрес.
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -111,11 +111,12 @@ ms.locfileid: "92426458"
 
 Разрешите доступ к следующим URL-адресам.
 
-| URL-адрес | Как он используется |
-| --- | --- |
-| \*.msappproxy.net;<br>\*.servicebus.windows.net. | Связь между соединителем и облачной службой прокси приложения |
-| crl3.digicert.com<br>crl4.digicert.com<br>ocsp.digicert.com<br>www.d-trust.net<br>root-c3-ca2-2009.ocsp.d-trust.net<br>crl.microsoft.com<br>oneocsp.microsoft.com<br>ocsp.msocsp.com<br> | Соединитель использует эти URL-адреса для проверки сертификатов. |
-| login.windows.net<br>secure.aadcdn.microsoftonline-p.com<br>*.microsoftonline.com<br>* .microsoftonline-p.com<br>*.msauth.net<br>* .msauthimages.net<br>*.msecnd.net<br>* .msftauth.net<br>*.msftauthimages.net<br>* .phonefactor.net<br>enterpriseregistration.windows.net<br>management.azure.com<br>policykeyservice.dc.ad.msft.net<br>ctldl.windowsupdate.com:80 | Соединитель использует эти URL-адреса во время регистрации. |
+| URL-адрес | Порт |  Как он используется |
+| --- | --- | --- |
+| &ast;.msappproxy.net;<br>&ast;.servicebus.windows.net. | 443/HTTPS | Связь между соединителем и облачной службой прокси приложения |
+| crl3.digicert.com<br>crl4.digicert.com<br>ocsp.digicert.com<br>crl.microsoft.com<br>oneocsp.microsoft.com<br>ocsp.msocsp.com<br> | 80/HTTP | Соединитель использует эти URL-адреса для проверки сертификатов. |
+| login.windows.net<br>secure.aadcdn.microsoftonline-p.com<br>&ast;.microsoftonline.com<br>&ast;.microsoftonline-p.com<br>&ast;.msauth.net<br>&ast;.msauthimages.net<br>&ast;.msecnd.net<br>&ast;.msftauth.net<br>&ast;.msftauthimages.net<br>&ast;.phonefactor.net<br>enterpriseregistration.windows.net<br>management.azure.com<br>policykeyservice.dc.ad.msft.net<br>ctldl.windowsupdate.com | 443/HTTPS | Соединитель использует эти URL-адреса во время регистрации. |
+| ctldl.windowsupdate.com | 80/HTTP | В процессе регистрации соединитель использует этот URL-адрес. |
 
 Если брандмауэр или прокси-сервер позволяет настроить списки разрешенных DNS, можно разрешить подключения к \*.msappproxy.net и \*.servicebus.windows.net.
 
@@ -188,7 +189,7 @@ ms.locfileid: "92426458"
 
 Если соединитель прокси приложения настроен для обхода прокси-серверов и напрямую подключается к службе прокси приложения, можно просмотреть сетевые данные на наличие неудачных попыток подключения TCP.
 
-Эти попытки можно определить с помощью фильтра анализатора сообщений. Введите `property.TCPSynRetransmit` в поле фильтра и выберите **Применить**.
+Эти попытки можно определить с помощью фильтра анализатора сообщений. Введите `property.TCPSynRetransmit` в поле фильтра и выберите **Применить** .
 
 Пакет SYN — это первый пакет, отправленный для установления подключения TCP. Если ответ на этот пакет не возвращается, пакет SYN отправляется еще раз. Для поиска повторных пакетов SYN можно использовать предыдущий фильтр. После этого можно проверить, соответствуют ли эти пакеты SYN трафику соединителя.
 
@@ -198,7 +199,7 @@ ms.locfileid: "92426458"
 
 Если трафик соединителя прокси приложения настроен для прохода через прокси-серверы, можно найти неудачные HTTP-подключения к прокси.
 
-Чтобы отфильтровать сетевые данные для таких попыток подключения, введите `(https.Request or https.Response) and tcp.port==8080` в фильтре анализатора сообщений, заменив 8080 своим портом службы прокси. Чтобы просмотреть результаты фильтрации, выберите **Применить**.
+Чтобы отфильтровать сетевые данные для таких попыток подключения, введите `(https.Request or https.Response) and tcp.port==8080` в фильтре анализатора сообщений, заменив 8080 своим портом службы прокси. Чтобы просмотреть результаты фильтрации, выберите **Применить** .
 
 Указанный выше фильтр отбирает только HTTP-запросы на порт прокси-сервера и его ответы. Нужно найти запросы CONNECT, которые демонстрируют взаимодействие с прокси-сервером. В случае успеха вы получите ответ OK с HTTP-кодом 200.
 

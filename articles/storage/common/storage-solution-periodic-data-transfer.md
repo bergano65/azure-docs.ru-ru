@@ -8,12 +8,12 @@ ms.subservice: blobs
 ms.topic: conceptual
 ms.date: 06/24/2019
 ms.author: alkohli
-ms.openlocfilehash: 09498587ad65a8de0935a3a4455bb3b66ed6c3ec
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: a0efc6f6f6d4ae6355fbb42fbc7e13ad7c078cf3
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92491263"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92792894"
 ---
 # <a name="solutions-for-periodic-data-transfer"></a>Решения для периодической передачи данных
  
@@ -52,12 +52,12 @@ ms.locfileid: "92491263"
 
 ### <a name="continuous-data-ingestion-over-network"></a>Непрерывный прием данных по сети
 
-| Функция                                       | Шлюз Data Box | Data Box Edge   | Фабрика данных Azure        |
+| Компонент                                       | Шлюз Data Box | Data Box Edge   | Фабрика данных Azure        |
 |----------------------------------|-----------------------------------------|--------------------------|---------------------------|
 | Форм-фактор                                   | Виртуальное устройство             | Физическое устройство          | Служба размещена на портале Azure, агент размещен локально                                                            |
 | Оборудование                                      | Ваша низкоуровневая оболочка            | Предоставляет Майкрософт    | Н/Д                                                            |
 | Трудозатраты на начальную настройку                          | Низкие (< 30 мин)            | Средние (~ несколько часов) | Высокие (~ несколько дней)                                                 |
-| Формат данных                                   | Большие двоичные объекты Azure, Файлы Azure   | Большие двоичные объекты Azure, Файлы Azure | [Поддерживает более 70 соединителей данных для разных хранилищ и форматов](/azure/data-factory/copy-activity-overview#supported-data-stores-and-formats)|
+| Формат данных                                   | Большие двоичные объекты Azure, Файлы Azure   | Большие двоичные объекты Azure, Файлы Azure | [Поддерживает более 70 соединителей данных для разных хранилищ и форматов](../../data-factory/copy-activity-overview.md#supported-data-stores-and-formats)|
 | Предварительная обработка данных                           | Нет                         | Да, с помощью пограничных вычислений    | Да                                                           |
 | Локальный кэш<br>(хранение локальных данных)    | Да                        | Да                      | Нет                                                            |
 | Перенос из других облаков                    | Нет                         | Нет                       | Да                                                           |
@@ -65,9 +65,9 @@ ms.locfileid: "92491263"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Перенесите данные с помощью AzCopy](/azure/storage/common/storage-use-azcopy-v10?toc=%2fazure%2fstorage%2ftables%2ftoc.json).
+- [Перенесите данные с помощью AzCopy](./storage-use-azcopy-v10.md?toc=%252fazure%252fstorage%252ftables%252ftoc.json).
 - [Дополнительные сведения о передаче данных с помощью REST API службы хранилища](/dotnet/api/overview/azure/storage)
 - Практические руководства по:
-    - [Руководство по передаче данных с помощью Шлюза Data Box (предварительная версия)](/azure/databox-online/data-box-gateway-deploy-add-shares).
-    - [преобразованию данных с помощью Data Box Edge перед отправкой в Azure](/azure/databox-online/data-box-edge-deploy-configure-compute).
-- [Сведения о передаче данных с помощью службы "Фабрика данных Azure"](/azure/data-factory/tutorial-bulk-copy-portal).
+    - [Руководство по передаче данных с помощью Шлюза Data Box (предварительная версия)](../../databox-online/data-box-gateway-deploy-add-shares.md).
+    - [преобразованию данных с помощью Data Box Edge перед отправкой в Azure](../../databox-online/azure-stack-edge-deploy-configure-compute.md).
+- [Сведения о передаче данных с помощью службы "Фабрика данных Azure"](../../data-factory/tutorial-bulk-copy-portal.md).

@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 10/01/2018
-ms.openlocfilehash: 30f6bf7629152050bc1249a1e22aff0aa30642de
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2e836a175b45c6fca46f9c76760e1cbaef305a47
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88209529"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92792588"
 ---
 # <a name="public-data-sets-for-testing-and-prototyping"></a>Общедоступные наборы данных для тестирования и создания прототипов
 [!INCLUDE[appliesto-asf](includes/appliesto-asf.md)]
@@ -45,7 +45,7 @@ ms.locfileid: "88209529"
 | [Данные Open Science Data Cloud](https://www.opensciencedatacloud.org/projects/) | "С помощью Open Science Data Cloud научному сообществу предоставляются ресурсы для хранения, совместного использования и анализа научных наборов данных, измеряемых в терабайтах и ​​петабайтах".| Наборы данных доступны в различных форматах. |
 | [Глобальные климатические данные WorldClim](https://worldclim.org/) | "WorldClim — это набор глобальных климатических слоев (климатические данные с координатной привязкой) с пространственным разрешением около 1 кв. км. Эти данные можно использовать для картографирования и пространственного моделирования". | Эти файлы содержат геопространственные данные. Дополнительные сведения см. на странице [Data format](https://worldclim.org/formats1) (Формат данных). |
 | [Данные о человеческом обществе. Проект GDELT](https://www.gdeltproject.org/data.html) | "Проект GDELT — это самая крупная и наиболее полная открытая база данных с высоким разрешением, посвященная человеческому обществу". | Файлы необработанных данных доступны в формате CSV. |
-| [Данные для прогнозирования переходов по рекламным объявлениям для машинного обучения от Criteo](https://labs.criteo.com/2013/12/download-terabyte-click-logs/) | "Это самый большой из когда-либо опубликованных наборов данных машинного обучения". Дополнительные сведения см. на странице [Now Available on Azure ML – Criteo's 1TB Click Prediction Dataset](https://blogs.technet.microsoft.com/machinelearning/20../../now-available-on-azure-ml-criteos-1tb-click-prediction-dataset/) (Теперь доступно в Azure ML. Набор данных Criteo для прогнозирования переходов по рекламным объявлениям размером 1 ТБ). | |
+| [Данные для прогнозирования переходов по рекламным объявлениям для машинного обучения от Criteo](https://labs.criteo.com/2013/12/download-terabyte-click-logs/) | "Это самый большой из когда-либо опубликованных наборов данных машинного обучения". Дополнительные сведения см. на странице [Now Available on Azure ML – Criteo's 1TB Click Prediction Dataset](/archive/blogs/machinelearning/now-available-on-azure-ml-criteos-1tb-click-prediction-dataset) (Теперь доступно в Azure ML. Набор данных Criteo для прогнозирования переходов по рекламным объявлениям размером 1 ТБ). | |
 | [Набор данных интеллектуального анализа текста ClueWeb09 из проекта Lemur](https://www.lemurproject.org/clueweb09.php/) | "Набор данных ClueWeb09 был создан для поддержки исследований по извлечению информации и связанных технологий естественного языка. Он состоит примерно из 1 миллиарда веб-страниц на десяти языках, которые были собраны в январе и феврале 2009 года". | Дополнительные сведения см. на странице [сведений о наборе данных](https://www.lemurproject.org/clueweb09/datasetInformation.php).|
 
 ## <a name="online-service-data"></a>Данные веб-службы

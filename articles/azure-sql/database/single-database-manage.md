@@ -4,19 +4,19 @@ description: Узнайте, как создавать и администрир
 services: sql-database
 ms.service: sql-database
 ms.subservice: single-database
-ms.custom: sqldbrb=1
+ms.custom: sqldbrb=1, devx-track-azurecli
 ms.devlang: ''
 ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 03/12/2019
-ms.openlocfilehash: 43e28774625db0217dde1227bad160ba87750c8c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2c487b5bc5c8d5fa01388b2942a70defa0001253
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85254996"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92791534"
 ---
 # <a name="create-and-manage-servers-and-single-databases-in-azure-sql-database"></a>Создание серверов и отдельных баз данных и управление ими в базе данных SQL Azure
 
@@ -58,7 +58,7 @@ ms.locfileid: "85254996"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 > [!IMPORTANT]
-> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка сосредоточена на модуле Az.Sql. Сведения об этих командлетах см. в разделе [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы команд в модулях Az и AzureRm практически идентичны.
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка сосредоточена на модуле Az.Sql. Сведения об этих командлетах см. в разделе [AzureRM.Sql](/powershell/module/AzureRM.Sql/). Аргументы команд в модулях Az и AzureRm практически идентичны.
 
 Для создания и управления серверами, одними и базами данных в составе пула, а также брандмауэрами уровня сервера с Azure PowerShell используйте следующие командлеты PowerShell. Если вам нужно выполнить установку или обновление PowerShell, см. статью [об установке модуля Azure PowerShell](/powershell/azure/install-az-ps).
 
@@ -74,7 +74,7 @@ ms.locfileid: "85254996"
 |[New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup)|Создает группу ресурсов.|
 |[New-AzSqlServer](/powershell/module/az.sql/new-azsqlserver)|Создает сервер.|
 |[Get-Азсклсервер](/powershell/module/az.sql/get-azsqlserver)|Возвращает сведения о серверах.|
-|[Set-Азсклсервер](https://docs.microsoft.com/powershell/module/az.sql/set-azsqlserver)|Изменяет свойства сервера.|
+|[Set-Азсклсервер](/powershell/module/az.sql/set-azsqlserver)|Изменяет свойства сервера.|
 |[Remove-Азсклсервер](/powershell/module/az.sql/remove-azsqlserver)|Удаляет сервера.|
 |[New-AzSqlServerFirewallRule](/powershell/module/az.sql/new-azsqlserverfirewallrule)|Создает правило брандмауэра уровня сервера. |
 |[Get-Азсклсерверфиреваллруле](/powershell/module/az.sql/get-azsqlserverfirewallrule)|Получает правила брандмауэра для сервера.|
@@ -84,7 +84,7 @@ ms.locfileid: "85254996"
 
 ## <a name="the-azure-cli"></a>Azure CLI
 
-Для создания серверов, баз данных и брандмауэров и управления ими с помощью [Azure CLI](/cli/azure)используйте следующие [Azure CLI](/cli/azure/sql/db) команды. Запускайте интерфейс командной строки в браузере с помощью [Cloud Shell](/azure/cloud-shell/overview) либо [установите](/cli/azure/install-azure-cli) его на платформе macOS, Linux или Windows. Изучите дополнительные сведения о создании [эластичных пулов](elastic-pool-overview.md) и управлении ими.
+Для создания серверов, баз данных и брандмауэров и управления ими с помощью [Azure CLI](/cli/azure)используйте следующие [Azure CLI](/cli/azure/sql/db) команды. Запускайте интерфейс командной строки в браузере с помощью [Cloud Shell](../../cloud-shell/overview.md) либо [установите](/cli/azure/install-azure-cli) его на платформе macOS, Linux или Windows. Изучите дополнительные сведения о создании [эластичных пулов](elastic-pool-overview.md) и управлении ими.
 
 > [!TIP]
 > Краткое руководство по Azure CLI см. [в разделе Создание отдельной базы данных SQL Azure с помощью Azure CLI](az-cli-script-samples-content-guide.md). Примеры сценариев Azure CLI см. в статьях [Использование CLI для создания базы данных в базе данных SQL Azure и настройка правила брандмауэра базы данных SQL](scripts/create-and-configure-database-cli.md) и [Использование интерфейса командной строки для мониторинга и масштабирования базы данных в базе данных SQL Azure](scripts/monitor-and-scale-database-cli.md).
@@ -144,22 +144,22 @@ ms.locfileid: "85254996"
 
 | Get-Help | Описание |
 | --- | --- |
-|[Серверы — создание или обновление](https://docs.microsoft.com/rest/api/sql/servers/createorupdate)|Создает или обновляет сервер.|
-|[Серверы: удаление](https://docs.microsoft.com/rest/api/sql/servers/delete)|Удаляет сервер SQL Server.|
-|[Серверы: получение](https://docs.microsoft.com/rest/api/sql/servers/get)|Получает сервер.|
-|[Серверы: вывод списка](https://docs.microsoft.com/rest/api/sql/servers/list)|Возвращает список серверов в подписке.|
-|[Серверы: вывод списка по группе ресурсов](https://docs.microsoft.com/rest/api/sql/servers/listbyresourcegroup)|Возвращает список серверов в группе ресурсов.|
-|[Серверы: обновление](https://docs.microsoft.com/rest/api/sql/servers/update)|Обновляет существующий сервер.|
-|[Базы данных — создание или обновление](https://docs.microsoft.com/rest/api/sql/databases/createorupdate)|Создает новую базу данных или обновляет имеющуюся.|
-|[Базы данных: удаление](https://docs.microsoft.com/rest/api/sql/databases/delete)|Удаляет базу данных.|
-|[Базы данных: получение](https://docs.microsoft.com/rest/api/sql/databases/get)|Получает базу данных.|
-|[Базы данных — список по эластичному пулу](https://docs.microsoft.com/rest/api/sql/databases/listbyelasticpool)|Возвращает список баз данных в пуле эластичных баз данных.|
-|[Базы данных — список по серверам](https://docs.microsoft.com/rest/api/sql/databases/listbyserver)|Возвращает список баз данных на сервере.|
-|[Базы данных: обновление](https://docs.microsoft.com/rest/api/sql/databases/update)|Обновляет имеющуюся базу данных.|
-|[Правила брандмауэра — создание или обновление](https://docs.microsoft.com/rest/api/sql/firewallrules/createorupdate)|Создает или обновляет правило брандмауэра.|
-|[Правила брандмауэра — удалить](https://docs.microsoft.com/rest/api/sql/firewallrules/delete)|Удаляет правило брандмауэра.|
-|[Правила брандмауэра — получение](https://docs.microsoft.com/rest/api/sql/firewallrules/get)|Получает правило брандмауэра.|
-|[Правила брандмауэра — список по серверам](https://docs.microsoft.com/rest/api/sql/firewallrules/listbyserver)|Возвращает список правил брандмауэра.|
+|[Серверы — создание или обновление](/rest/api/sql/servers/createorupdate)|Создает или обновляет сервер.|
+|[Серверы: удаление](/rest/api/sql/servers/delete)|Удаляет сервер SQL Server.|
+|[Серверы: получение](/rest/api/sql/servers/get)|Получает сервер.|
+|[Серверы: вывод списка](/rest/api/sql/servers/list)|Возвращает список серверов в подписке.|
+|[Серверы: вывод списка по группе ресурсов](/rest/api/sql/servers/listbyresourcegroup)|Возвращает список серверов в группе ресурсов.|
+|[Серверы: обновление](/rest/api/sql/servers/update)|Обновляет существующий сервер.|
+|[Базы данных — создание или обновление](/rest/api/sql/databases/createorupdate)|Создает новую базу данных или обновляет имеющуюся.|
+|[Базы данных: удаление](/rest/api/sql/databases/delete)|Удаляет базу данных.|
+|[Базы данных: получение](/rest/api/sql/databases/get)|Получает базу данных.|
+|[Базы данных — список по эластичному пулу](/rest/api/sql/databases/listbyelasticpool)|Возвращает список баз данных в пуле эластичных баз данных.|
+|[Базы данных — список по серверам](/rest/api/sql/databases/listbyserver)|Возвращает список баз данных на сервере.|
+|[Базы данных: обновление](/rest/api/sql/databases/update)|Обновляет имеющуюся базу данных.|
+|[Правила брандмауэра — создание или обновление](/rest/api/sql/firewallrules/createorupdate)|Создает или обновляет правило брандмауэра.|
+|[Правила брандмауэра — удалить](/rest/api/sql/firewallrules/delete)|Удаляет правило брандмауэра.|
+|[Правила брандмауэра — получение](/rest/api/sql/firewallrules/get)|Получает правило брандмауэра.|
+|[Правила брандмауэра — список по серверам](/rest/api/sql/firewallrules/listbyserver)|Возвращает список правил брандмауэра.|
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

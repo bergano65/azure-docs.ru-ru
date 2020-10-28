@@ -7,12 +7,12 @@ ms.date: 09/22/2020
 ms.topic: how-to
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 6670f654685f8d5cdcaf55d2b1679738a57ecab4
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 958402e61f6dc81a3e6618dbcd4df4c8dd6b9ced
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92042802"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92793064"
 ---
 # <a name="how-to-connect-an--iot-plug-and-play-bridge-sample-running-on-linux-or-windows-to-iot-hub"></a>Как подключить пример моста IoT Plug and Play под управлением Linux или Windows в центр Интернета вещей
 
@@ -30,14 +30,14 @@ ms.locfileid: "92042802"
 
 Для выполнения инструкций, указанных в этом кратком руководстве, в ОС Linux необходимо установить указанное ниже программное обеспечение в локальной среде.
 
-Установите **GCC**, **Git**, **cmake** и все необходимые зависимости с помощью команды `apt-get`:
+Установите **GCC** , **Git** , **cmake** и все необходимые зависимости с помощью команды `apt-get`:
 
 ```sh
 sudo apt-get update
 sudo apt-get install -y git cmake build-essential curl libcurl4-openssl-dev libssl-dev uuid-dev
 ```
 
-Убедитесь, что версия `cmake` выше **2.8.12**, а версия **GCC** выше **4.4.7**.
+Убедитесь, что версия `cmake` выше **2.8.12** , а версия **GCC** выше **4.4.7** .
 
 ```sh
 cmake --version
@@ -54,7 +54,7 @@ gcc --version
 
 ### <a name="azure-iot-explorer"></a>Обозреватель Интернета вещей Azure
 
-Для взаимодействия с примером устройства во второй части этого краткого руководства используется **обозреватель Интернета вещей Azure**. [Скачайте и установите последний выпуск обозревателя Интернета вещей Azure](./howto-use-iot-explorer.md) для вашей операционной системы.
+Для взаимодействия с примером устройства во второй части этого краткого руководства используется **обозреватель Интернета вещей Azure** . [Скачайте и установите последний выпуск обозревателя Интернета вещей Azure](./howto-use-iot-explorer.md) для вашей операционной системы.
 
 [!INCLUDE [iot-pnp-prepare-iot-hub.md](../../includes/iot-pnp-prepare-iot-hub.md)]
 
@@ -67,7 +67,7 @@ az iot hub show-connection-string --hub-name <YourIoTHubName> --output table
 > [!TIP]
 > Вы также можете использовать обозреватель Интернета вещей, чтобы найти строку подключения для центра Интернета вещей.
 
-Выполните указанную ниже команду, чтобы получить _строку подключения устройства_, добавленного в центр. Запишите эту строку подключения. Вы будете использовать ее позже при работе с этим кратким руководством.
+Выполните указанную ниже команду, чтобы получить _строку подключения устройства_ , добавленного в центр. Запишите эту строку подключения. Вы будете использовать ее позже при работе с этим кратким руководством.
 
 ```azurecli-interactive
 az iot hub device-identity show-connection-string --hub-name <YourIoTHubName> --device-id <YourDeviceID> --output table
@@ -79,7 +79,7 @@ az iot hub device-identity show-connection-string --hub-name <YourIoTHubName> --
 
 При скачивании кода на приведенном ниже шаге он включает примеры файлов модели в `pnpbridge/docs/schema` папке. Чтобы подготовить обозреватель IoT Azure, выполните следующие действия.
 
-1. Создайте на локальном компьютере папку *models*.
+1. Создайте на локальном компьютере папку *models* .
 1. Просмотрите [EnvironmentalSensor.js](https://aka.ms/iot-pnp-bridge-env-model) и сохраните JSON файл в папку *Models* .
 1. Просмотрите [RootBridgeSampleDevice.js](https://aka.ms/iot-pnp-bridge-root-model) и сохраните JSON файл в папку *Models* .
 
@@ -107,9 +107,13 @@ git submodule update --init --recursive
 
 После клонирования репозитория центра Интернета вещей Plug and Play на компьютер перейдите в `pnpbridge/docs/schema` Каталог клонированного репозитория, где можно найти [конфигурацию JSON](https://aka.ms/iot-pnp-bridge-env-config) или `config.json` пример датчика окружающей среды. Дополнительные сведения о файлах конфигурации см. в [документе Основные понятия о bridge Plug and Play для центра Интернета вещей](concepts-iot-pnp-bridge.md).
 
-Для `root-_interface_model_id` поля потребуется скопировать идентификатор модели Plug and Play IOT, определяющий модель для устройства. В нашем примере поисковый запрос будет выглядеть так: `dtmi:com:example:SampleDevice;1`. Измените следующие параметры в разделе **pnp_bridge_parameters** Node в `config.json` файле в папке ":
+Для `root-_interface_model_id` поля потребуется скопировать идентификатор модели Plug and Play IOT, определяющий модель для устройства. В нашем примере поисковый запрос будет выглядеть так: `dtmi:com:example:SampleDevice;1`. Измените следующие параметры в разделе **pnp_bridge_parameters** Node в `config.json` файле:
 
-  Использование строки подключения (Примечание. symmetric_key должен соответствовать ключу SAS в строке подключения):
+* connection_string 
+* symmetric_key 
+
+>[!NOTE]
+> Symmetric_key должен соответствовать ключу SAS в строке подключения.
 
   ```JSON
     {
@@ -126,7 +130,7 @@ git submodule update --init --recursive
   }
   ```
 
- После заполнения `config.json` файла он должен выглядеть следующим образом:
+ После заполнения `config.json` файл должен выглядеть следующим образом:
 
    ```JSON
     {

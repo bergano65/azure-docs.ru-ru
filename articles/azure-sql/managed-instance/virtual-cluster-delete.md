@@ -11,12 +11,12 @@ author: danimir
 ms.author: danil
 ms.reviewer: douglas, sstein
 ms.date: 06/26/2019
-ms.openlocfilehash: 0b8ceee1260e4209420778d7f327d771b858a899
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4ed8f6dc90debddd17282f8f96962ffd78055030
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91617729"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92791670"
 ---
 # <a name="delete-a-subnet-after-deleting-a-managed-instance-of-sql-managed-instance"></a>Удаление подсети после удаления управляемого экземпляра SQL Управляемый экземпляр
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -29,7 +29,7 @@ ms.locfileid: "91617729"
 
 > [!IMPORTANT]
 > - Виртуальный кластер не должен содержать управляемых экземпляров, чтобы удаление было успешным. 
-> - Удаление виртуального кластера — это длительная операция, содействующая примерно за 1,5 часов (см. раздел [операции управления управляемыми экземплярами](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance#managed-instance-management-operations) для обновления времени удаления виртуального кластера). Виртуальный кластер по-прежнему будет отображаться на портале до завершения этого процесса.
+> - Удаление виртуального кластера — это длительная операция, содействующая примерно за 1,5 часов (см. раздел [операции управления управляемыми экземплярами](./sql-managed-instance-paas-overview.md#management-operations) для обновления времени удаления виртуального кластера). Виртуальный кластер по-прежнему будет отображаться на портале до завершения этого процесса.
 
 ## <a name="delete-a-virtual-cluster-from-the-azure-portal"></a>Удаление виртуального кластера из портал Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "91617729"
 
 ![Снимок экрана портал Azure с выделенным полем поиска](./media/virtual-cluster-delete/virtual-clusters-search.png)
 
-Найдя виртуальный кластер, который необходимо удалить, выберите этот ресурс и нажмите кнопку **Удалить**. Вам будет предложено подтвердить удаление виртуального кластера.
+Найдя виртуальный кластер, который необходимо удалить, выберите этот ресурс и нажмите кнопку **Удалить** . Вам будет предложено подтвердить удаление виртуального кластера.
 
 ![Снимок экрана панели мониторинга "портал Azure виртуальные кластеры" с выделенным параметром "Удалить"](./media/virtual-cluster-delete/virtual-clusters-delete.png)
 
@@ -48,9 +48,9 @@ ms.locfileid: "91617729"
 
 ## <a name="delete-a-virtual-cluster-by-using-the-api"></a>Удаление виртуального кластера с помощью API
 
-Чтобы удалить виртуальный кластер с помощью API, используйте параметры URI, указанные в [методе Delete виртуальных кластеров](https://docs.microsoft.com/rest/api/sql/virtualclusters/delete).
+Чтобы удалить виртуальный кластер с помощью API, используйте параметры URI, указанные в [методе Delete виртуальных кластеров](/rest/api/sql/virtualclusters/delete).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Общие сведения см. в статье [что такое Azure SQL управляемый экземпляр?](sql-managed-instance-paas-overview.md).
 - Узнайте о [архитектуре подключения в управляемый экземпляр SQL](connectivity-architecture-overview.md).

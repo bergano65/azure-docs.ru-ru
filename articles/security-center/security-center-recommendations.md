@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/22/2020
 ms.author: memildin
-ms.openlocfilehash: f3fb31dc7db4808db83f33abdf14179265d147f9
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: c0952e0f267f9c2511a2e80fa7106958d8dd0ee5
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92425179"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92791891"
 ---
 # <a name="security-recommendations-in-azure-security-center"></a>Рекомендации по безопасности в Центре безопасности Azure 
 В этом разделе объясняется, как просмотреть и изучить рекомендации в центре безопасности Azure, которые помогут защитить ресурсы Azure.
@@ -77,8 +77,8 @@ ms.locfileid: "92425179"
 
 В этом документе описываются рекомендации по безопасности в Центре безопасности. Для получения связанных сведений:
 
-- [Исправление рекомендаций](security-center-remediate-recommendations.md) . Узнайте, как настроить политики безопасности для подписок и групп ресурсов Azure.
+- [Исправление рекомендаций](security-center-remediate-recommendations.md)— Узнайте, как настроить политики безопасности для подписок и групп ресурсов Azure.
 - [Предотвращение несоблюдения конфигураций с рекомендациями принудительного применения и запретов](prevent-misconfigurations.md).
-- [Автоматизация ответов рекомендации](workflow-automation.md)
+- [Автоматизируйте ответы на триггеры центра безопасности](workflow-automation.md)— Автоматизируйте ответы на рекомендации.
 - [Исключение ресурса из рекомендации](exempt-resource.md)
 - [Рекомендации по безопасности — справочное руководство](recommendations-reference.md)

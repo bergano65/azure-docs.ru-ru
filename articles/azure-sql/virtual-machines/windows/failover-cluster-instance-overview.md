@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/02/2020
 ms.author: mathoma
-ms.openlocfilehash: 29ab7def6209483ee891dc0d26bf8163cdc39a23
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: 6f216a7f0851661efc61a771fc35feb71e77fd1f
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92165264"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92792486"
 ---
 # <a name="failover-cluster-instances-with-sql-server-on-azure-virtual-machines"></a>Экземпляры отказоустойчивого кластера с SQL Server на Виртуальных машинах Azure
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -30,8 +30,8 @@ SQL Server на Виртуальных машинах Azure использует
 
 В остальной части статьи рассматриваются различия между экземплярами отказоустойчивого кластера, которые используются с SQL Server на Виртуальных машинах Azure. Дополнительные сведения о технологии отказоустойчивой кластеризации см. в следующих статьях: 
 
-- [технологии кластера под управлением Windows](https://docs.microsoft.com/windows-server/failover-clustering/failover-clustering-overview);
-- [Экземпляры отказоустойчивого кластера SQL Server](https://docs.microsoft.com/sql/sql-server/failover-clusters/windows/always-on-failover-cluster-instances-sql-server)
+- [технологии кластера под управлением Windows](/windows-server/failover-clustering/failover-clustering-overview);
+- [Экземпляры отказоустойчивого кластера SQL Server](/sql/sql-server/failover-clusters/windows/always-on-failover-cluster-instances-sql-server)
 
 ## <a name="quorum"></a>Кворум
 
@@ -71,7 +71,7 @@ SQL Server на Виртуальных машинах Azure предлагает
 - Поддерживают FileStream.
 
 
-**Ограничения**. 
+**Ограничения** . 
 - Виртуальные машины должны размещаться в одной группе доступности и одной группе размещения близкого взаимодействия.
 - Зоны доступности не поддерживаются.
 - Кэширование диска SSD (цен. категория "Премиум") не поддерживается.
@@ -155,7 +155,7 @@ SQL Server на Виртуальных машинах Azure предлагает
 
 ### <a name="msdtc"></a>MSDTC 
 
-Виртуальные машины Azure поддерживают координатор распределенных транзакций (Майкрософт) в Windows Server 2019 с хранилищем на общих томах кластера (CSV) и с [Azure Load Balancer ценовой категории "Стандартный"](../../../load-balancer/load-balancer-standard-overview.md) или на виртуальных машинах SQL Server, использующих общие диски Azure. 
+Виртуальные машины Azure поддерживают координатор распределенных транзакций (Майкрософт) в Windows Server 2019 с хранилищем на общих томах кластера (CSV) и с [Azure Load Balancer ценовой категории "Стандартный"](../../../load-balancer/load-balancer-overview.md) или на виртуальных машинах SQL Server, использующих общие диски Azure. 
 
 Координатор распределенных транзакций (Майкрософт) не поддерживается на Виртуальных машинах Azure в Windows Server 2016 и более ранних версий с общими томами кластера по следующим причинам:
 
@@ -171,4 +171,3 @@ SQL Server на Виртуальных машинах Azure предлагает
 
 - [технологии кластера под управлением Windows](/windows-server/failover-clustering/failover-clustering-overview);   
 - [Экземпляры отказоустойчивого кластера SQL Server](/sql/sql-server/failover-clusters/windows/always-on-failover-cluster-instances-sql-server)
-

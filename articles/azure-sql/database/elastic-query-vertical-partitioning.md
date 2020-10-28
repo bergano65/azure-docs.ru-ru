@@ -11,12 +11,12 @@ author: MladjoA
 ms.author: mlandzic
 ms.reviewer: sstein
 ms.date: 01/25/2019
-ms.openlocfilehash: daa1bbbace55281f81e04c4639b083b3e934b9f8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c507a4c618713ba83d25b9defa918092db1a3c8e
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91443087"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92792095"
 ---
 # <a name="query-across-cloud-databases-with-different-schemas-preview"></a>Запрос к нескольким облачным базам данных с разными схемами (предварительная версия)
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -36,10 +36,10 @@ ms.locfileid: "91443087"
 > В отличие от горизонтального секционирования эти инструкции DDL не зависят от определения уровня данных с помощью карты сегментов через клиентскую библиотеку эластичной базы данных.
 >
 
-1. [CREATE MASTER KEY](https://msdn.microsoft.com/library/ms174382.aspx)
-2. [CREATE DATABASE SCOPED CREDENTIAL](https://msdn.microsoft.com/library/mt270260.aspx)
-3. [CREATE EXTERNAL DATA SOURCE](https://msdn.microsoft.com/library/dn935022.aspx)
-4. [CREATE EXTERNAL TABLE](https://msdn.microsoft.com/library/dn935021.aspx)
+1. [CREATE MASTER KEY](/sql/t-sql/statements/create-master-key-transact-sql)
+2. [CREATE DATABASE SCOPED CREDENTIAL](/sql/t-sql/statements/create-database-scoped-credential-transact-sql)
+3. [CREATE EXTERNAL DATA SOURCE](/sql/t-sql/statements/create-external-data-source-transact-sql)
+4. [CREATE EXTERNAL TABLE](/sql/t-sql/statements/create-external-table-transact-sql)
 
 ## <a name="create-database-scoped-master-key-and-credentials"></a>Создание главного ключа и учетных данных для конкретной базы данных
 
@@ -63,9 +63,9 @@ SECRET = '<password>'
     CREDENTIAL = <credential_name>) [;]
 
 > [!IMPORTANT]
-> Параметру TYPE должно быть присвоено значение **RDBMS**.
+> Параметру TYPE должно быть присвоено значение **RDBMS** .
 
-### <a name="example"></a>Пример
+### <a name="example"></a>Например, .
 
 В следующем примере демонстрируется использование инструкции CREATE для внешних источников данных.
 
@@ -95,7 +95,7 @@ select * from sys.external_data_sources;
 
 <rdbms_external_table_options>:: = DATA_SOURCE = <External_Data_Source>, [SCHEMA_NAME = N ' nonescaped_schema_name ',] [OBJECT_NAME = N ' nonescaped_object_name ',]
 
-### <a name="example"></a>Пример
+### <a name="example"></a>Например, .
 
 ```sql
 CREATE EXTERNAL TABLE [dbo].[customer]
@@ -120,8 +120,8 @@ select * from sys.external_tables;
 
 Эластичные запросы расширяют существующий синтаксис доступа к внешним таблицам, позволяя определять внешние таблицы, использующие внешние источники данных типа реляционной СУБД. Определение внешней таблицы для вертикального секционирования содержит следующие элементы:
 
-* **Схема**: язык DDL внешней таблицы определяет схему, которую можно использовать в запросах. Схема из определения вашей внешней таблицы должна соответствовать схеме таблиц в удаленной базе данных, в которой хранятся данные.
-* **Ссылка на удаленную базу данных**: язык DDL внешней таблицы ссылается на внешний источник данных. Внешний источник данных указывает имя сервера и имя базы данных удаленной базы данных, в которой хранятся фактические данные таблицы.
+* **Схема** : язык DDL внешней таблицы определяет схему, которую можно использовать в запросах. Схема из определения вашей внешней таблицы должна соответствовать схеме таблиц в удаленной базе данных, в которой хранятся данные.
+* **Ссылка на удаленную базу данных** : язык DDL внешней таблицы ссылается на внешний источник данных. Внешний источник данных указывает имя сервера и имя базы данных удаленной базы данных, в которой хранятся фактические данные таблицы.
 
 Используя внешний источник данных (в соответствии с инструкциями, приведенными в предыдущем разделе), вы можете создавать внешние таблицы при помощи следующего синтаксиса:
 
@@ -135,7 +135,7 @@ select * from sys.external_tables;
 DROP EXTERNAL TABLE [ [ schema_name ] . | schema_name. ] table_name[;]  
 ```
 
-**Разрешения для инструкции CREATE/DROP EXTERNAL TABLE**: для схемы данных внешней таблицы требуются разрешения ALTER ANY EXTERNAL DATA SOURCE, необходимые также для ссылки на базовый источник данных.  
+**Разрешения для инструкции CREATE/DROP EXTERNAL TABLE** : для схемы данных внешней таблицы требуются разрешения ALTER ANY EXTERNAL DATA SOURCE, необходимые также для ссылки на базовый источник данных.  
 
 ## <a name="security-considerations"></a>Вопросы безопасности
 
@@ -163,7 +163,7 @@ DROP EXTERNAL TABLE [ [ schema_name ] . | schema_name. ] table_name[;]
 
 ## <a name="stored-procedure-for-remote-t-sql-execution-sp_execute_remote"></a>Хранимая процедура для удаленного выполнения T-SQL: sp\_execute_remote
 
-С функцией эластичных запросов вам становится доступна хранимая процедура, которая обеспечивает прямой доступ к удаленной базе данных. Хранимая процедура называется [sp\_execute\_remote](https://msdn.microsoft.com/library/mt703714) и может использоваться для выполнения удаленных хранимых процедур или кода T-SQL в удаленной базе данных. Она принимает следующие параметры.
+С функцией эластичных запросов вам становится доступна хранимая процедура, которая обеспечивает прямой доступ к удаленной базе данных. Хранимая процедура называется [sp\_execute\_remote](/sql/relational-databases/system-stored-procedures/sp-execute-remote-azure-sql-database) и может использоваться для выполнения удаленных хранимых процедур или кода T-SQL в удаленной базе данных. Она принимает следующие параметры.
 
 * Имя источника данных (nvarchar): имя внешнего источника данных типа "реляционная СУБД".
 * Запрос (nvarchar): запрос T-SQL, выполняемый в удаленной базе данных.
@@ -189,13 +189,13 @@ DROP EXTERNAL TABLE [ [ schema_name ] . | schema_name. ] table_name[;]
 * Убедитесь, что базе данных конечной точки эластичного запроса предоставлен доступ к удаленной базе данных, включив доступ для служб Azure в конфигурации брандмауэра базы данных SQL Azure. Кроме того, убедитесь, что учетные данные, указанные в определении внешнего источника данных, позволяют войти в удаленную базу данных и имеют разрешения на доступ к удаленной таблице.  
 * Эластичные запросы оптимальны, когда основная часть вычислений может быть выполнена в удаленной базе данных. Обычно наиболее эффективны запросы с предикатами выборочных фильтров, дающие возможность вычисления в удаленных базах данных, или соединениями, которые могут быть полностью выполнены в удаленной базе данных. Для других шаблонов запросов может потребоваться загрузка больших объемов данных из удаленной базы данных, и эти шаблоны могут сработать неэффективно.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Общие сведения об эластичных запросах см. в разделе [Обзор эластичных запросов к базе данных SQL Azure (предварительная версия)](elastic-query-overview.md).
 * Руководств по вертикальному секционированию см. в статье [Приступая к работе с межбазовыми запросами (вертикальное секционирование) (предварительная версия)](elastic-query-getting-started-vertical.md).
 * Руководство по горизонтальному секционированию (сегментированию) см. в статье [Отчеты по масштабируемым облачным базам данных (предварительная версия)](elastic-query-getting-started.md).
 * Описание синтаксиса и примеры запросов горизонтально секционированных данных см. в разделе [Отчеты по масштабируемым облачным базам данных (предварительная версия)](elastic-query-horizontal-partitioning.md).
-* В описании [sp\_execute \_remote](https://msdn.microsoft.com/library/mt703714) приведена хранимая процедура, которая выполняет инструкцию Transact-SQL для отдельной удаленной базы данных SQL Azure или набора баз данных, выступающих в качестве сегментов в схеме горизонтального секционирования.
+* В описании [sp\_execute \_remote](/sql/relational-databases/system-stored-procedures/sp-execute-remote-azure-sql-database) приведена хранимая процедура, которая выполняет инструкцию Transact-SQL для отдельной удаленной базы данных SQL Azure или набора баз данных, выступающих в качестве сегментов в схеме горизонтального секционирования.
 
 <!--Image references-->
 [1]: ./media/elastic-query-vertical-partitioning/verticalpartitioning.png

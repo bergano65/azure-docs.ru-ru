@@ -4,12 +4,12 @@ description: Узнайте, как интегрировать Azure NetApp File
 services: container-service
 ms.topic: article
 ms.date: 09/26/2019
-ms.openlocfilehash: c0648100e155d1462f3291a7f5f078cf316bc0aa
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 76bbf0ccaffecd05570848ab487f6d35f5ae5f01
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84465649"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92791568"
 ---
 # <a name="integrate-azure-netapp-files-with-azure-kubernetes-service"></a>Интеграция Azure NetApp Files со службой Kubernetes Azure
 
@@ -21,7 +21,7 @@ ms.locfileid: "84465649"
 > [!IMPORTANT]
 > Кластер AKS также должен находиться [в регионе, поддерживающем Azure NetApp Files][anf-regions].
 
-Кроме того, нужно установить и настроить Azure CLI версии 2.0.59 или более поздней. Чтобы узнать версию, выполните команду  `az --version`. Если вам необходимо выполнить установку или обновление, см. статью  [Установка Azure CLI][install-azure-cli].
+Кроме того, нужно установить и настроить Azure CLI версии 2.0.59 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][install-azure-cli].
 
 ### <a name="limitations"></a>Ограничения
 
@@ -47,7 +47,7 @@ az provider register --namespace Microsoft.NetApp --wait
 > [!NOTE]
 > Это может занять некоторое время.
 
-При создании учетной записи Azure NetApp для использования с AKS необходимо создать учетную запись в группе ресурсов **узла** . Сначала получите имя группы ресурсов, выполнив команду [az aks show][az-aks-show] и добавив параметр запроса `--query nodeResourceGroup`. В следующем примере выполняется получение группы ресурсов узла для кластера AKS с именем *myAKSCluster* в группе ресурсов с именем *myResourceGroup*:
+При создании учетной записи Azure NetApp для использования с AKS необходимо создать учетную запись в группе ресурсов **узла** . Сначала получите имя группы ресурсов, выполнив команду [az aks show][az-aks-show] и добавив параметр запроса `--query nodeResourceGroup`. В следующем примере выполняется получение группы ресурсов узла для кластера AKS с именем *myAKSCluster* в группе ресурсов с именем *myResourceGroup* :
 
 ```azurecli-interactive
 az aks show --resource-group myResourceGroup --name myAKSCluster --query nodeResourceGroup -o tsv
@@ -106,7 +106,7 @@ VNET_ID=$(az network vnet show --resource-group $RESOURCE_GROUP --name $VNET_NAM
 SUBNET_NAME=MyNetAppSubnet
 SUBNET_ID=$(az network vnet subnet show --resource-group $RESOURCE_GROUP --vnet-name $VNET_NAME --name $SUBNET_NAME --query "id" -o tsv)
 VOLUME_SIZE_GiB=100 # 100 GiB
-UNIQUE_FILE_PATH="myfilepath2" # Please note that creation token needs to be unique within all ANF Accounts
+UNIQUE_FILE_PATH="myfilepath2" # Please note that file path needs to be unique within all ANF Accounts
 
 az netappfiles volume create \
     --resource-group $RESOURCE_GROUP \
@@ -118,7 +118,7 @@ az netappfiles volume create \
     --vnet $VNET_ID \
     --subnet $SUBNET_ID \
     --usage-threshold $VOLUME_SIZE_GiB \
-    --creation-token $UNIQUE_FILE_PATH \
+    --file-path $UNIQUE_FILE_PATH \
     --protocol-types "NFSv3"
 ```
 

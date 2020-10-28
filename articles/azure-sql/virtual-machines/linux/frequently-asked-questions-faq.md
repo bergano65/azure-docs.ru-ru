@@ -11,12 +11,12 @@ ms.workload: iaas-sql-server
 ms.date: 12/13/2017
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: afd36eb079b6e5f29fa664050cded3c5ddd17d8e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ad991974df30060e552d21a44d5796cd2ba165e2
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84669471"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92792554"
 ---
 # <a name="frequently-asked-questions-for-sql-server-on-linux-virtual-machines"></a>Часто задаваемые вопросы о SQL Server на Linux виртуальных машинах
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -61,7 +61,7 @@ ms.locfileid: "84669471"
 
 1. **Как установить лицензированную копию SQL Server в виртуальной машине Azure?**
 
-   Сначала создайте виртуальную машину, на которой установлена только операционная система Linux. Затем выполните [действия по установке SQL Server](https://docs.microsoft.com/sql/linux/sql-server-linux-setup#platforms) для своего дистрибутива Linux. Если устанавливаемый выпуск SQL Server не относится к свободно лицензируемым, вам потребуется лицензия на SQL Server и возможность [перемещения лицензий в рамках программы Software Assurance в Azure](https://azure.microsoft.com/pricing/license-mobility/).
+   Сначала создайте виртуальную машину, на которой установлена только операционная система Linux. Затем выполните [действия по установке SQL Server](/sql/linux/sql-server-linux-setup#platforms) для своего дистрибутива Linux. Если устанавливаемый выпуск SQL Server не относится к свободно лицензируемым, вам потребуется лицензия на SQL Server и возможность [перемещения лицензий в рамках программы Software Assurance в Azure](https://azure.microsoft.com/pricing/license-mobility/).
 
 1. **Существуют ли образы виртуальных машин SQL Server на базе Linux, позволяющие использовать собственную лицензию (BYOL)?**
 
@@ -75,7 +75,7 @@ ms.locfileid: "84669471"
 
 1. **Можно ли управлять виртуальной машиной Linux под управлением SQL Server с SQL Server Management Studio (SSMS)?**
 
-   Да. Но сейчас средства SSMS доступны только в ОС Windows. Необходимо удаленно подключиться с компьютера Windows для использования SSMS с виртуальными машинами Linux под управлением SQL Server. На компьютере с Linux большинство задач администрирования можно выполнять с помощью нового средства [mssql-conf](https://docs.microsoft.com/sql/linux/sql-server-linux-configure-mssql-conf). Сведения о кроссплатформенном средстве управления базой данных см. в статье об [Azure Data Studio](https://docs.microsoft.com/sql/azure-data-studio/what-is).
+   Да. Но сейчас средства SSMS доступны только в ОС Windows. Необходимо удаленно подключиться с компьютера Windows для использования SSMS с виртуальными машинами Linux под управлением SQL Server. На компьютере с Linux большинство задач администрирования можно выполнять с помощью нового средства [mssql-conf](/sql/linux/sql-server-linux-configure-mssql-conf). Сведения о кроссплатформенном средстве управления базой данных см. в статье об [Azure Data Studio](/sql/azure-data-studio/what-is).
 
 1. **Можно ли полностью удалить SQL Server с виртуальной машины SQL Server?**
 
@@ -85,7 +85,7 @@ ms.locfileid: "84669471"
 
 1. **Как выполнить обновление до новой версии или выпуска SQL Server в виртуальной машине Azure?**
 
-   В настоящее время выполнить обновление на месте для SQL Server в виртуальной машине Azure невозможно. Создайте виртуальную машину Azure с нужной версией или выпуском SQL Server, а затем перенесите базы данных на новый сервер с помощью стандартных [методов миграции данных](https://docs.microsoft.com/sql/linux/sql-server-linux-migrate-overview).
+   В настоящее время выполнить обновление на месте для SQL Server в виртуальной машине Azure невозможно. Создайте виртуальную машину Azure с нужной версией или выпуском SQL Server, а затем перенесите базы данных на новый сервер с помощью стандартных [методов миграции данных](/sql/linux/sql-server-linux-migrate-overview).
 
 ## <a name="general"></a>Общие сведения
 
@@ -95,13 +95,13 @@ ms.locfileid: "84669471"
 
 ## <a name="resources"></a>Ресурсы
 
-**Для виртуальных машин Linux**:
+**Для виртуальных машин Linux** :
 
 * [Обзор SQL Server на виртуальных машинах Linux](sql-server-on-linux-vm-what-is-iaas-overview.md).
 * [Инициализация SQL Server на виртуальной машине Linux](sql-vm-create-portal-quickstart.md)
-* [Документация по SQL Server в Linux](https://docs.microsoft.com/sql/linux/sql-server-linux-overview).
+* [Документация по SQL Server в Linux](/sql/linux/sql-server-linux-overview).
 
-**Для виртуальных машин Windows**:
+**Для виртуальных машин Windows** :
 
 * [Обзор SQL Server на виртуальных машинах Windows](../windows/sql-server-on-azure-vm-iaas-what-is-overview.md).
 * [Инициализация SQL Server на виртуальной машине Windows](../windows/sql-vm-create-portal-quickstart.md)
