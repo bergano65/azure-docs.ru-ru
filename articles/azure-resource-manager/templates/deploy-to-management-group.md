@@ -2,15 +2,15 @@
 title: Развертывание ресурсов в группе управления
 description: Описывает развертывание ресурсов в области группы управления в шаблоне Azure Resource Manager.
 ms.topic: conceptual
-ms.date: 09/24/2020
-ms.openlocfilehash: 23f86d7d0b7e1f882cf3fb74adc484e0fe47db87
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 10/22/2020
+ms.openlocfilehash: 084ab69f463334569d37efd9187bfe587bfc524d
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91372431"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92668935"
 ---
-# <a name="create-resources-at-the-management-group-level"></a>Создание ресурсов на уровне группы управления
+# <a name="management-group-deployments-with-arm-templates"></a>Развертывание группы управления с помощью шаблонов ARM
 
 По мере развития вашей организации можно развернуть шаблон Azure Resource Manager (шаблон ARM) для создания ресурсов на уровне группы управления. Например, может потребоваться определить и назначить [политики](../../governance/policy/overview.md) или [Управление доступом на основе ролей Azure (Azure RBAC)](../../role-based-access-control/overview.md) для группы управления. С помощью шаблонов уровня группы управления можно декларативно применять политики и назначать роли на уровне группы управления.
 
@@ -52,42 +52,26 @@ ms.locfileid: "91372431"
 Для шаблонов используйте:
 
 ```json
-https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
+    ...
+}
 ```
 
 Схема для файла параметров одинакова для всех областей развертывания. Для файлов параметров используйте:
 
 ```json
-https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    ...
+}
 ```
-
-## <a name="deployment-scopes"></a>Области развертывания
-
-При развертывании в группе управления можно ориентироваться на группу управления, указанную в команде развертывания, или можно выбрать другие группы управления в клиенте.
-
-Ресурсы, определенные в разделе ресурсов шаблона, применяются к группе управления из команды развертывания.
-
-:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/default-mg.json" highlight="5":::
-
-Чтобы выбрать другую группу управления, добавьте вложенное развертывание и укажите `scope` свойство. Задайте `scope` для свойства значение в формате `Microsoft.Management/managementGroups/<mg-name>` .
-
-:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/scope-mg.json" highlight="10,17,22":::
-
-Вы также можете ориентироваться на подписки или группы ресурсов в группе управления. Пользователь, развертывающий шаблон, должен иметь доступ к указанной области.
-
-Чтобы назначить подписку в группе управления, используйте вложенное развертывание и `subscriptionId` свойство.
-
-:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/mg-to-subscription.json" highlight="10,18":::
-
-Чтобы назначить группу ресурсов в рамках этой подписки, добавьте еще одно вложенное развертывание и `resourceGroup` свойство.
-
-:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/mg-to-resource-group.json" highlight="10,21,25":::
-
-Сведения об использовании развертывания группы управления для создания группы ресурсов в подписке и развертывании учетной записи хранения в этой группе ресурсов см. в статье [развертывание в подписке и группе ресурсов](#deploy-to-subscription-and-resource-group).
 
 ## <a name="deployment-commands"></a>Команды развертывания
 
-Команды для развертываний группы управления отличаются от команд для развертываний групп ресурсов.
+Для развертывания в группе управления используйте команды развертывания группы управления.
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Для Azure CLI используйте команду [AZ Deployment mg Create](/cli/azure/deployment/mg#az-deployment-mg-create):
 
@@ -99,6 +83,8 @@ az deployment mg create \
   --template-uri "https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/management-level-deployment/azuredeploy.json"
 ```
 
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
+
 Для Azure PowerShell используйте [New-азманажементграупдеплоймент](/powershell/module/az.resources/new-azmanagementgroupdeployment).
 
 ```azurepowershell-interactive
@@ -109,42 +95,70 @@ New-AzManagementGroupDeployment `
   -TemplateUri "https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/management-level-deployment/azuredeploy.json"
 ```
 
-Для REST API используйте [развертывания — создание в области группы управления](/rest/api/resources/deployments/createorupdateatmanagementgroupscope).
+---
+
+Более подробные сведения о командах и параметрах развертывания для развертывания шаблонов ARM см. в следующих статьях:
+
+* [Развертывание ресурсов с помощью шаблонов ARM и портал Azure](deploy-portal.md)
+* [Развертывание ресурсов с помощью шаблонов ARM и Azure CLI](deploy-cli.md)
+* [Развертывание ресурсов с помощью шаблонов ARM и Azure PowerShell](deploy-powershell.md)
+* [Развертывание ресурсов с помощью шаблонов ARM и Azure Resource Manager REST API](deploy-rest.md)
+* [Использование кнопки развертывания для развертывания шаблонов из репозитория GitHub](deploy-to-azure-button.md)
+* [Развертывание шаблонов ARM из Cloud Shell](deploy-cloud-shell.md)
+
+## <a name="deployment-scopes"></a>Области развертывания
+
+При развертывании в группе управления можно развернуть ресурсы в:
+
+* Целевая группа управления из операции
+* Другая группа управления в клиенте
+* подписки в группе управления
+* группы ресурсов в группе управления (с помощью двух вложенных развертываний)
+* [ресурсы расширения](scope-extension-resources.md) можно применять к ресурсам
+
+Пользователь, развертывающий шаблон, должен иметь доступ к указанной области.
+
+В этом разделе показано, как указать различные области. Эти различные области можно объединить в один шаблон.
+
+### <a name="scope-to-target-management-group"></a>Область действия для целевой группы управления
+
+Ресурсы, определенные в разделе ресурсов шаблона, применяются к группе управления из команды развертывания.
+
+:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/default-mg.json" highlight="5":::
+
+### <a name="scope-to-another-management-group"></a>Область в другую группу управления
+
+Чтобы выбрать другую группу управления, добавьте вложенное развертывание и укажите `scope` свойство. Задайте `scope` для свойства значение в формате `Microsoft.Management/managementGroups/<mg-name>` .
+
+:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/scope-mg.json" highlight="10,17,22":::
+
+### <a name="scope-to-subscription"></a>Область действия для подписки
+
+Кроме того, можно ориентироваться на подписки в группе управления. Пользователь, развертывающий шаблон, должен иметь доступ к указанной области.
+
+Чтобы назначить подписку в группе управления, используйте вложенное развертывание и `subscriptionId` свойство.
+
+:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/mg-to-subscription.json" highlight="10,18":::
+
+### <a name="scope-to-resource-group"></a>Область действия для группы ресурсов
+
+Чтобы назначить группу ресурсов в рамках этой подписки, добавьте два вложенных развертывания. Первая предназначена для подписки, в которой есть группа ресурсов. Вторая предназначена для группы ресурсов путем задания `resourceGroup` Свойства.
+
+:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/mg-to-resource-group.json" highlight="10,21,25":::
+
+Сведения об использовании развертывания группы управления для создания группы ресурсов в подписке и развертывании учетной записи хранения в этой группе ресурсов см. в статье [развертывание в подписке и группе ресурсов](#deploy-to-subscription-and-resource-group).
 
 ## <a name="deployment-location-and-name"></a>Расположение и имя развертывания
 
 Для развертываний на уровне группы управления необходимо указать расположение для развертывания. Расположение развертывания отделено от расположения развертываемых ресурсов. В расположении развертывания указывается место хранения данных развертывания.
 
-Можно указать имя развертывания или использовать имя развертывания по умолчанию. Имя по умолчанию — это имя файла шаблона. Например, развернув шаблон с именем **azuredeploy.json** создается имя развертывания по умолчанию **azuredeploy**.
+Можно указать имя развертывания или использовать имя развертывания по умолчанию. Имя по умолчанию — это имя файла шаблона. Например, развернув шаблон с именем **azuredeploy.json** создается имя развертывания по умолчанию **azuredeploy** .
 
 Для каждого имени развертывания расположение остается неизменным. Нельзя создать развертывание в одном расположении, если в другом уже есть развертывание с таким же именем. Если появится код ошибки `InvalidDeploymentLocation`, используйте другое имя или то же расположение, что и для предыдущего развертывания с этим именем.
 
-## <a name="use-template-functions"></a>Использование функций шаблонов
-
-При развертывании группы управления при использовании функций шаблона необходимо учитывать некоторые важные моменты.
-
-* Функция [resourceGroup()](template-functions-resource.md#resourcegroup)**не** поддерживается.
-* Функция [subscription()](template-functions-resource.md#subscription) **не** поддерживается.
-* Функции [reference()](template-functions-resource.md#reference) и [list()](template-functions-resource.md#list) поддерживаются.
-* Не используйте функцию [resourceId ()](template-functions-resource.md#resourceid) для ресурсов, развернутых в группе управления.
-
-  Вместо этого используйте функцию [екстенсионресаурцеид ()](template-functions-resource.md#extensionresourceid) для ресурсов, которые реализуются как расширения группы управления. Определения настраиваемой политики, развернутые в группе управления, являются расширениями группы управления.
-
-  Чтобы получить идентификатор ресурса для определения пользовательской политики на уровне группы управления, используйте:
-  
-  ```json
-  "policyDefinitionId": "[extensionResourceId(variables('mgScope'), 'Microsoft.Authorization/policyDefinitions', parameters('policyDefinitionID'))]"
-  ```
-
-  Используйте функцию [тенантресаурцеид](template-functions-resource.md#tenantresourceid) для ресурсов клиента, доступных в группе управления. Встроенные определения политик — это ресурсы уровня клиента.
-
-  Чтобы получить идентификатор ресурса для встроенного определения политики, используйте:
-  
-  ```json
-  "policyDefinitionId": "[tenantResourceId('Microsoft.Authorization/policyDefinitions', parameters('policyDefinitionID'))]"
-  ```
-
 ## <a name="azure-policy"></a>Политика Azure
+
+Определения настраиваемой политики, развернутые в группе управления, являются расширениями группы управления. Чтобы получить идентификатор определения пользовательской политики, используйте функцию [екстенсионресаурцеид ()](template-functions-resource.md#extensionresourceid) . Встроенные определения политик — это ресурсы уровня клиента. Чтобы получить идентификатор определения встроенной политики, используйте функцию [тенантресаурцеид](template-functions-resource.md#tenantresourceid) .
 
 В следующем примере показано, как [определить](../../governance/policy/concepts/definition-structure.md) политику на уровне группы управления и назначить ее.
 
@@ -294,7 +308,7 @@ New-AzManagementGroupDeployment `
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о назначении ролей см. в статье [Добавление назначений ролей Azure с помощью шаблонов Azure Resource Manager](../../role-based-access-control/role-assignments-template.md).
 * Пример развертывания параметров рабочей области для центра безопасности Azure см. в разделе о [deployASCwithWorkspaceSettings.json](https://github.com/krnese/AzureDeploy/blob/master/ARM/deployments/deployASCwithWorkspaceSettings.json).

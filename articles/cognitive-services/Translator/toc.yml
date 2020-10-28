@@ -7,7 +7,7 @@
     - name: Краткое руководство
       href: quickstart-translator.md
     - name: Поддержка языков
-      href: 'https://docs.microsoft.com/azure/cognitive-services/translator/language-support#customization'
+      href: language-support.md
     - name: Учебники
       items:
         - name: Создание приложения WPF для службы "Переводчик" (C#)

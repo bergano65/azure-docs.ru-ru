@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 9/03/2019
-ms.openlocfilehash: 2197136b86d0bfbb2de79af6712c953339d46371
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8192b1351d54acbb553bacb8b36474cba271cb05
+ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89442843"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92638080"
 ---
 # <a name="use-azure-data-factory-to-migrate-data-from-an-on-premises-netezza-server-to-azure"></a>Перенос данных с локального сервера Netezza в Azure с помощью фабрики данных Azure 
 
@@ -41,13 +41,13 @@ ms.locfileid: "89442843"
 
 Приведенная выше схема может интерпретироваться следующим образом:
 
-- Одно действие копирования может воспользоваться преимуществами масштабируемых ресурсов вычислений. При использовании Azure Integration Runtime можно указать [до 256 диус](https://docs.microsoft.com/azure/data-factory/copy-activity-performance#data-integration-units) для каждого действия копирования в бессерверном режиме. С помощью локальной среды выполнения интеграции (с локальным размещением) можно вручную масштабировать компьютер или масштабировать его на несколько компьютеров ([до четырех узлов](https://docs.microsoft.com/azure/data-factory/create-self-hosted-integration-runtime#high-availability-and-scalability)), и одно действие копирования распределяет свой раздел по всем узлам. 
+- Одно действие копирования может воспользоваться преимуществами масштабируемых ресурсов вычислений. При использовании Azure Integration Runtime можно указать [до 256 диус](./copy-activity-performance.md#data-integration-units) для каждого действия копирования в бессерверном режиме. С помощью локальной среды выполнения интеграции (с локальным размещением) можно вручную масштабировать компьютер или масштабировать его на несколько компьютеров ([до четырех узлов](./create-self-hosted-integration-runtime.md#high-availability-and-scalability)), и одно действие копирования распределяет свой раздел по всем узлам. 
 
 - Одно действие копирования считывает и выполняет запись в хранилище данных с помощью нескольких потоков. 
 
-- Поток управления фабрики данных Azure может запускать несколько операций копирования параллельно. Например, он может запускать их с помощью [цикла for each](https://docs.microsoft.com/azure/data-factory/control-flow-for-each-activity). 
+- Поток управления фабрики данных Azure может запускать несколько операций копирования параллельно. Например, он может запускать их с помощью [цикла for each](./control-flow-for-each-activity.md). 
 
-Дополнительные сведения см. в разделе Краткое информация о [производительности и масштабируемости действий копирования](https://docs.microsoft.com/azure/data-factory/copy-activity-performance).
+Дополнительные сведения см. в разделе Краткое информация о [производительности и масштабируемости действий копирования](./copy-activity-performance.md).
 
 ## <a name="resilience"></a>Устойчивость
 
@@ -95,33 +95,33 @@ ms.locfileid: "89442843"
 
 ### <a name="manage-authentication-and-credentials"></a>Управление проверкой подлинности и учетными данными 
 
-- Для проверки подлинности в Netezza можно использовать [проверку подлинности ODBC с помощью строки подключения](https://docs.microsoft.com/azure/data-factory/connector-netezza#linked-service-properties). 
+- Для проверки подлинности в Netezza можно использовать [проверку подлинности ODBC с помощью строки подключения](./connector-netezza.md#linked-service-properties). 
 
 - Для проверки подлинности в хранилище BLOB-объектов Azure: 
 
-   - Мы настоятельно рекомендуем использовать [управляемые удостоверения для ресурсов Azure](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage#managed-identity). Управляемые удостоверения, созданные на основе автоматически управляемого удостоверения фабрики данных Azure в Azure Active Directory (Azure AD), позволяют настраивать конвейеры без необходимости указывать учетные данные в определении связанной службы.  
+   - Мы настоятельно рекомендуем использовать [управляемые удостоверения для ресурсов Azure](./connector-azure-blob-storage.md#managed-identity). Управляемые удостоверения, созданные на основе автоматически управляемого удостоверения фабрики данных Azure в Azure Active Directory (Azure AD), позволяют настраивать конвейеры без необходимости указывать учетные данные в определении связанной службы.  
 
-   - Кроме того, вы можете пройти проверку подлинности в хранилище BLOB-объектов Azure, используя [субъект](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage#service-principal-authentication), [подпись общего доступа](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage#shared-access-signature-authentication)или [ключ учетной записи хранения](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage#account-key-authentication). 
+   - Кроме того, вы можете пройти проверку подлинности в хранилище BLOB-объектов Azure, используя [субъект](./connector-azure-blob-storage.md#service-principal-authentication), [подпись общего доступа](./connector-azure-blob-storage.md#shared-access-signature-authentication)или [ключ учетной записи хранения](./connector-azure-blob-storage.md#account-key-authentication). 
 
 - Для проверки подлинности в Azure Data Lake Storage 2-го поколения: 
 
-   - Мы настоятельно рекомендуем использовать [управляемые удостоверения для ресурсов Azure](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage#managed-identity).
+   - Мы настоятельно рекомендуем использовать [управляемые удостоверения для ресурсов Azure](./connector-azure-data-lake-storage.md#managed-identity).
    
-   - Также можно использовать [субъект-службу](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage#service-principal-authentication) или [ключ учетной записи хранения](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage#account-key-authentication). 
+   - Также можно использовать [субъект-службу](./connector-azure-data-lake-storage.md#service-principal-authentication) или [ключ учетной записи хранения](./connector-azure-data-lake-storage.md#account-key-authentication). 
 
 - Для аутентификации в Azure синапсе Analytics:
 
-   - Мы настоятельно рекомендуем использовать [управляемые удостоверения для ресурсов Azure](https://docs.microsoft.com/azure/data-factory/connector-azure-sql-data-warehouse#managed-identity).
+   - Мы настоятельно рекомендуем использовать [управляемые удостоверения для ресурсов Azure](./connector-azure-sql-data-warehouse.md#managed-identity).
    
-   - Также можно использовать [субъект-службу](https://docs.microsoft.com/azure/data-factory/connector-azure-sql-data-warehouse#service-principal-authentication) или [проверку подлинности SQL](https://docs.microsoft.com/azure/data-factory/connector-azure-sql-data-warehouse#sql-authentication).
+   - Также можно использовать [субъект-службу](./connector-azure-sql-data-warehouse.md#service-principal-authentication) или [проверку подлинности SQL](./connector-azure-sql-data-warehouse.md#sql-authentication).
 
-- Если управляемые удостоверения для ресурсов Azure не используются, настоятельно рекомендуется [хранить учетные данные в Azure Key Vault](https://docs.microsoft.com/azure/data-factory/store-credentials-in-key-vault) , чтобы упростить централизованное управление ключами и их вращение без изменения связанных служб фабрики данных Azure. Это также одна из [рекомендаций для CI/CD](https://docs.microsoft.com/azure/data-factory/continuous-integration-deployment#best-practices-for-cicd). 
+- Если управляемые удостоверения для ресурсов Azure не используются, настоятельно рекомендуется [хранить учетные данные в Azure Key Vault](./store-credentials-in-key-vault.md) , чтобы упростить централизованное управление ключами и их вращение без изменения связанных служб фабрики данных Azure. Это также одна из [рекомендаций для CI/CD](./continuous-integration-deployment.md#best-practices-for-cicd). 
 
 ### <a name="migrate-initial-snapshot-data"></a>Перенос исходных данных моментальных снимков 
 
 Для небольших таблиц (т. е. таблиц с объемом менее 100 ГБ или, которые могут быть перенесены в Azure в течение двух часов) можно создать для каждой таблицы данные загрузки каждого задания копирования. Для повышения пропускной способности можно запустить несколько заданий копирования фабрики данных Azure для параллельной загрузки отдельных таблиц. 
 
-В каждом задании копирования для выполнения параллельных запросов и копирования данных по секциям можно также достичь определенного уровня параллелизма, используя [ `parallelCopies` параметр свойства](https://docs.microsoft.com/azure/data-factory/copy-activity-performance#parallel-copy) с одним из следующих параметров секции данных:
+В каждом задании копирования для выполнения параллельных запросов и копирования данных по секциям можно также достичь определенного уровня параллелизма, используя [ `parallelCopies` параметр свойства](./copy-activity-performance.md#parallel-copy) с одним из следующих параметров секции данных:
 
 - Чтобы повысить эффективность, мы рекомендуем начать с среза данных.  Убедитесь, что значение в `parallelCopies` параметре меньше, чем общее число секций срезов данных в таблице на сервере Netezza.  
 
@@ -192,20 +192,20 @@ ms.locfileid: "89442843"
 Дополнительные сведения см. в следующих статьях и руководствах:
 
 - [Перенос данных из локальной базы данных реляционного хранилища данных в Azure с помощью фабрики данных Azure](https://azure.microsoft.com/resources/data-migration-from-on-premise-relational-data-warehouse-to-azure-data-lake-using-azure-data-factory/)
-- [Соединитель Netezza](https://docs.microsoft.com/azure/data-factory/connector-netezza)
-- [Соединитель ODBC](https://docs.microsoft.com/azure/data-factory/connector-odbc)
-- [Соединитель хранилища BLOB-объектов Azure](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage)
-- [Copy data to or from Azure Data Lake Storage Gen2 Preview using Azure Data Factory (Preview)](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage) (Копирование данных в Azure Data Lake Storage Gen2 (предварительная версия) или из него с помощью фабрики данных Azure)
-- [Соединитель Azure синапсе Analytics](https://docs.microsoft.com/azure/data-factory/connector-azure-sql-data-warehouse)
-- [Руководство по настройке производительности действия копирования](https://docs.microsoft.com/azure/data-factory/copy-activity-performance)
-- [Создание и настройка локальной среды выполнения интеграции](https://docs.microsoft.com/azure/data-factory/create-self-hosted-integration-runtime)
-- [Высокая доступность и масштабируемость локальной среды выполнения интеграции](https://docs.microsoft.com/azure/data-factory/create-self-hosted-integration-runtime#high-availability-and-scalability)
-- [Вопросы безопасности при перемещении данных](https://docs.microsoft.com/azure/data-factory/data-movement-security-considerations)
-- [Хранение учетных данных в Azure Key Vault](https://docs.microsoft.com/azure/data-factory/store-credentials-in-key-vault)
-- [Добавочное копирование данных из одной таблицы](https://docs.microsoft.com/azure/data-factory/tutorial-incremental-copy-portal)
-- [Добавочное копирование данных из нескольких таблиц](https://docs.microsoft.com/azure/data-factory/tutorial-incremental-copy-multiple-tables-portal)
+- [Соединитель Netezza](./connector-netezza.md)
+- [Соединитель ODBC](./connector-odbc.md)
+- [Соединитель хранилища BLOB-объектов Azure](./connector-azure-blob-storage.md)
+- [Copy data to or from Azure Data Lake Storage Gen2 Preview using Azure Data Factory (Preview)](./connector-azure-data-lake-storage.md) (Копирование данных в Azure Data Lake Storage Gen2 (предварительная версия) или из него с помощью фабрики данных Azure)
+- [Соединитель Azure синапсе Analytics](./connector-azure-sql-data-warehouse.md)
+- [Руководство по настройке производительности действия копирования](./copy-activity-performance.md)
+- [Создание и настройка локальной среды выполнения интеграции](./create-self-hosted-integration-runtime.md)
+- [Высокая доступность и масштабируемость локальной среды выполнения интеграции](./create-self-hosted-integration-runtime.md#high-availability-and-scalability)
+- [Вопросы безопасности при перемещении данных](./data-movement-security-considerations.md)
+- [Хранение учетных данных в Azure Key Vault](./store-credentials-in-key-vault.md)
+- [Добавочное копирование данных из одной таблицы](./tutorial-incremental-copy-portal.md)
+- [Добавочное копирование данных из нескольких таблиц](./tutorial-incremental-copy-multiple-tables-portal.md)
 - [Страница цен на Фабрику данных Azure](https://azure.microsoft.com/pricing/details/data-factory/data-pipeline/)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Копирование файлов из нескольких контейнеров с помощью фабрики данных Azure](solution-template-copy-files-multiple-containers.md)

@@ -12,12 +12,12 @@ manager: shwang
 ms.reviewer: douglasl
 ms.custom: seo-lt-2019
 ms.date: 09/23/2020
-ms.openlocfilehash: 942cbda3652692acc8eedf2ec9508bb501a60547
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 204399186ae229324f9dc478e0ef58a173060013
+ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91332106"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92638182"
 ---
 # <a name="copy-data-from-and-to-dynamics-365-common-data-service-or-dynamics-crm-by-using-azure-data-factory"></a>Копирование данных из Dynamics 365 (Common Data Service) или Dynamics CRM и в эти решения с помощью фабрики данных Azure
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -56,14 +56,14 @@ ms.locfileid: "91332106"
 
 Этот соединитель не поддерживает другие типы приложений, такие как финансы, операции и прочее.
 
-Этот соединитель Dynamics построен на основе [инструментов Dynamics XRM](https://docs.microsoft.com/dynamics365/customer-engagement/developer/build-windows-client-applications-xrm-tools).
+Этот соединитель Dynamics построен на основе [инструментов Dynamics XRM](/dynamics365/customer-engagement/developer/build-windows-client-applications-xrm-tools).
 
 >[!TIP]
 >Чтобы скопировать данные из Dynamics 365 Финансы и операции, можно использовать [соединитель Dynamics AX](connector-dynamics-ax.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы использовать этот соединитель с проверкой подлинности субъекта-службы Azure AD, необходимо настроить проверку подлинности "сервер-сервер" (S2S) в Common Data Service или Dynamics. Подробные инструкции см. в [этой статье](https://docs.microsoft.com/powerapps/developer/common-data-service/build-web-applications-server-server-s2s-authentication) .
+Чтобы использовать этот соединитель с проверкой подлинности субъекта-службы Azure AD, необходимо настроить проверку подлинности "сервер-сервер" (S2S) в Common Data Service или Dynamics. Подробные инструкции см. в [этой статье](/powerapps/developer/common-data-service/build-web-applications-server-server-s2s-authentication) .
 
 ## <a name="get-started"></a>Начало работы
 
@@ -172,7 +172,7 @@ ms.locfileid: "91332106"
 
 ### <a name="dynamics-365-and-dynamics-crm-on-premises-with-ifd"></a>Dynamics 365 и Dynamics CRM (локальная версия) с IFD
 
-Дополнительными свойствами, которые сравниваются с Dynamics Online, являются **имя узла** и **порт**.
+Дополнительными свойствами, которые сравниваются с Dynamics Online, являются **имя узла** и **порт** .
 
 | Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
@@ -255,7 +255,7 @@ ms.locfileid: "91332106"
 | Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
 | type | Свойство Type источника действия копирования должно иметь значение "DynamicsSource", "Динамикскрмсаурце" или "Коммондатасервицефораппссаурце". | Да |
-| query | FetchXML — это собственный язык запросов, используемый в Dynamics Online и локальной среде. См. следующий пример. Дополнительные сведения см. в статье [Создание запросов с помощью FetchXML](https://msdn.microsoft.com/library/gg328332.aspx). | No `entityName` , если в наборе данных указан |
+| query | FetchXML — это собственный язык запросов, используемый в Dynamics Online и локальной среде. См. следующий пример. Дополнительные сведения см. в статье [Создание запросов с помощью FetchXML](/previous-versions/dynamicscrm-2016/developers-guide/gg328332(v=crm.8)). | No `entityName` , если в наборе данных указан |
 
 >[!NOTE]
 >Столбец первичного ключа будет копироваться всегда, даже если он отсутствует в проекции столбца, настроенной в запросе FetchXML.
@@ -264,7 +264,7 @@ ms.locfileid: "91332106"
 >- При копировании данных из Dynamics явное сопоставление столбцов из Dynamics с приемником является необязательным. Но мы настоятельно рекомендуем использовать сопоставление для обеспечения детерминированного результата копирования.
 >- Когда фабрика данных импортирует схему в пользовательском интерфейсе разработки, она выводит схему. Это достигается путем выборки верхних строк из результата запроса Dynamics для инициализации списка исходных столбцов. В этом случае столбцы без значений в верхних строках опущены. Такое же поведение применяется к выполнению копирования, если нет явного сопоставления. Вы можете просматривать и добавлять в сопоставление дополнительные столбцы, которые учитываются во время выполнения копирования.
 
-#### <a name="example"></a>Пример
+#### <a name="example"></a>Например, .
 
 ```json
 "activities":[
@@ -326,16 +326,16 @@ ms.locfileid: "91332106"
 | writeBehavior | Поведение операции при записи. Значение должно быть "Upsert". | Да |
 | алтернатекэйнаме | Альтернативное имя ключа, определенное в сущности для Upsert. | Нет. |
 | writeBatchSize | Количество строк данных, записываемых в Dynamics в каждом пакете. | Нет. Значение по умолчанию — 10. |
-| ignoreNullValues | Следует ли пропускать значения NULL из входных данных, отличных от ключевых полей во время операции записи.<br/><br/>Допустимые значения: **true** и **false**.<ul><li>**True**: при выполнении операции Upsert или обновления оставляет данные в целевом объекте без изменений. При выполнении операции вставки (insert) вставьте определенное значение по умолчанию.</li><li>**False**: при выполнении операции Upsert или Update обновите данные в целевом объекте до значения NULL. При выполнении операции вставки вставляется значение null.</li></ul> | Нет. Значение по умолчанию — **false**. |
+| ignoreNullValues | Следует ли пропускать значения NULL из входных данных, отличных от ключевых полей во время операции записи.<br/><br/>Допустимые значения: **true** и **false** .<ul><li>**True** : при выполнении операции Upsert или обновления оставляет данные в целевом объекте без изменений. При выполнении операции вставки (insert) вставьте определенное значение по умолчанию.</li><li>**False** : при выполнении операции Upsert или Update обновите данные в целевом объекте до значения NULL. При выполнении операции вставки вставляется значение null.</li></ul> | Нет. Значение по умолчанию — **false** . |
 
 >[!NOTE]
 >Значение по умолчанию для приемника **writeBatchSize** и **[parallelCopies](copy-activity-performance-features.md#parallel-copy)** действия копирования для приемника Dynamics — 10. Таким образом, 100 по умолчанию в Dynamics отправляются записи.
 
-Для Dynamics 365 Online существует ограничение в [двух одновременных пакетных вызовах для каждой организации](https://msdn.microsoft.com/library/jj863631.aspx#Run-time%20limitations). При превышении этого ограничения выдается исключение «сервер занят», прежде чем первый запрос запустится. Старайтесь не использовать **writeBatchSize** в 10 или менее, чтобы избежать такого регулирования одновременных вызовов.
+Для Dynamics 365 Online существует ограничение в [двух одновременных пакетных вызовах для каждой организации](/previous-versions/dynamicscrm-2016/developers-guide/jj863631(v=crm.8)#Run-time%20limitations). При превышении этого ограничения выдается исключение «сервер занят», прежде чем первый запрос запустится. Старайтесь не использовать **writeBatchSize** в 10 или менее, чтобы избежать такого регулирования одновременных вызовов.
 
 Оптимальное сочетание **writeBatchSize** и **parallelCopies** зависит от схемы сущности. Элементы схемы включают число столбцов, размер строк и число подключаемых модулей, рабочих процессов или действий рабочего процесса, привязанных к этим вызовам. По умолчанию параметр **writeBatchSize** (10) &times; **parallelCopies** (10) является рекомендацией в соответствии со службой Dynamics. Это значение подходит для большинства сущностей Dynamics, хотя оно может не дать наилучшей производительности. Вы можете настроить производительность путем корректировки комбинации в настройках активности копирования.
 
-#### <a name="example"></a>Пример
+#### <a name="example"></a>Например, .
 
 ```json
 "activities":[
@@ -378,26 +378,26 @@ ms.locfileid: "91332106"
 | Тип данных Dynamics | Тип промежуточных данных фабрики данных | Поддерживается в качестве источника | Поддерживается в качестве приемника |
 |:--- |:--- |:--- |:--- |
 | AttributeTypeCode.BigInt | Long | ✓ | ✓ |
-| AttributeTypeCode.Boolean | Логическое | ✓ | ✓ |
-| AttributeType.Customer | Код GUID | ✓ | ✓ (См. [руководство](#writing-data-to-a-lookup-field)) |
+| AttributeTypeCode.Boolean | Логическое значение | ✓ | ✓ |
+| AttributeType.Customer | GUID | ✓ | ✓ (См. [руководство](#writing-data-to-a-lookup-field)) |
 | AttributeType.DateTime | Datetime | ✓ | ✓ |
 | AttributeType.Decimal | Десятичный тип | ✓ | ✓ |
 | AttributeType.Double | Double | ✓ | ✓ |
-| AttributeType.EntityName | Строковый тип | ✓ | ✓ |
+| AttributeType.EntityName | Строка | ✓ | ✓ |
 | AttributeType.Integer | Int32 | ✓ | ✓ |
-| AttributeType.Lookup | Код GUID | ✓ | ✓ (См. [руководство](#writing-data-to-a-lookup-field)) |
-| AttributeType.ManagedProperty | Логическое | ✓ | |
-| AttributeType.Memo | Строковый тип | ✓ | ✓ |
+| AttributeType.Lookup | GUID | ✓ | ✓ (См. [руководство](#writing-data-to-a-lookup-field)) |
+| AttributeType.ManagedProperty | Логическое значение | ✓ | |
+| AttributeType.Memo | Строка | ✓ | ✓ |
 | AttributeType.Money | Десятичный тип | ✓ | ✓ |
-| AttributeType.Owner | Код GUID | ✓ | ✓ (См. [руководство](#writing-data-to-a-lookup-field)) |
+| AttributeType.Owner | GUID | ✓ | ✓ (См. [руководство](#writing-data-to-a-lookup-field)) |
 | AttributeType.Picklist | Int32 | ✓ | ✓ |
-| AttributeType.Uniqueidentifier | Код GUID | ✓ | ✓ |
-| AttributeType.String | Строковый тип | ✓ | ✓ |
+| AttributeType.Uniqueidentifier | GUID | ✓ | ✓ |
+| AttributeType.String | Строка | ✓ | ✓ |
 | AttributeType.State | Int32 | ✓ | ✓ |
 | AttributeType.Status | Int32 | ✓ | ✓ |
 
 > [!NOTE]
-> Типы данных Dynamics **attributeType. CalendarRules**, **attributeType. мултиселектпикклист**и **attributeType. PartyList** не поддерживаются.
+> Типы данных Dynamics **attributeType. CalendarRules** , **attributeType. мултиселектпикклист** и **attributeType. PartyList** не поддерживаются.
 
 ## <a name="writing-data-to-a-lookup-field"></a>Запись данных в поле подстановки
 
@@ -413,15 +413,15 @@ ms.locfileid: "91332106"
 
 Например, предположим, что источник содержит следующие два столбца:
 
-- **Кустомерфиелд** столбец типа **GUID**, который является значением первичного ключа целевой сущности в Dynamics.
-- **Целевой** столбец типа **String**, который является логическим именем целевой сущности.
+- **Кустомерфиелд** столбец типа **GUID** , который является значением первичного ключа целевой сущности в Dynamics.
+- **Целевой** столбец типа **String** , который является логическим именем целевой сущности.
 
-Также предположим, что необходимо скопировать такие данные в поле приемника сущности Dynamics **кустомерфиелд** типа **Customer**.
+Также предположим, что необходимо скопировать такие данные в поле приемника сущности Dynamics **кустомерфиелд** типа **Customer** .
 
 В сопоставлении столбцов копирования и действий сопоставьте два столбца следующим образом:
 
-- **Кустомерфиелд** **кустомерфиелд**. Это сопоставление является нормальным сопоставлением полей.
-- **Целевой объект** для **кустомерфиелд \@ EntityReference**. Столбец приемника представляет собой виртуальный столбец, представляющий ссылку на сущность. Введите такие имена полей в сопоставлении, так как они не будут отображаться при импорте схем.
+- **Кустомерфиелд** **кустомерфиелд** . Это сопоставление является нормальным сопоставлением полей.
+- **Целевой объект** для **кустомерфиелд \@ EntityReference** . Столбец приемника представляет собой виртуальный столбец, представляющий ссылку на сущность. Введите такие имена полей в сопоставлении, так как они не будут отображаться при импорте схем.
 
 ![Сопоставление столбцов полей в Dynamics](./media/connector-dynamics-crm-office-365/connector-dynamics-lookup-field-column-mapping.png)
 
@@ -433,5 +433,5 @@ ms.locfileid: "91332106"
 
 Дополнительные сведения о свойствах см. в разделе [действие поиска](control-flow-lookup-activity.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Список хранилищ данных, которые действие копирования в фабрике данных поддерживает как источники и приемники, см. в разделе [Поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats).

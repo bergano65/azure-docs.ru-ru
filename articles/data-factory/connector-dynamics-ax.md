@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 06/12/2020
-ms.openlocfilehash: 23a486dfe1256cea46f6722873950ffcb1bde084
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b4dbedc0a30c80748ffc27bb7e17c86067ca0238
+ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84982702"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92638165"
 ---
 # <a name="copy-data-from-dynamics-ax-by-using-azure-data-factory"></a>Копирование данных из Dynamics AX с помощью Фабрики данных Azure
 
@@ -34,10 +34,10 @@ ms.locfileid: "84982702"
 
 Данные из Dynamics AX можно скопировать в любое хранилище данных, поддерживаемое в качестве приемника. Список хранилищ данных, поддерживаемых действием копирования в качестве источников и приемников, приведен в разделе [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats).
 
-В частности, этот соединитель Dynamics AX поддерживает копирование данных из Dynamics AX с помощью **протокола OData** с **проверкой подлинности субъекта-службы**.
+В частности, этот соединитель Dynamics AX поддерживает копирование данных из Dynamics AX с помощью **протокола OData** с **проверкой подлинности субъекта-службы** .
 
 >[!TIP]
->Этот соединитель также можно использовать для копирования данных из **Dynamics 365 Finance and Operations**. Ознакомьтесь со сведениями о [поддержке OData](https://docs.microsoft.com/dynamics365/unified-operations/dev-itpro/data-entities/odata) Dynamics 365 и [методе проверки подлинности](https://docs.microsoft.com/dynamics365/unified-operations/dev-itpro/data-entities/services-home-page#authentication).
+>Этот соединитель также можно использовать для копирования данных из **Dynamics 365 Finance and Operations** . Ознакомьтесь со сведениями о [поддержке OData](/dynamics365/unified-operations/dev-itpro/data-entities/odata) Dynamics 365 и [методе проверки подлинности](/dynamics365/unified-operations/dev-itpro/data-entities/services-home-page#authentication).
 
 ## <a name="get-started"></a>Начало работы
 
@@ -63,10 +63,10 @@ ms.locfileid: "84982702"
 
 | Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
-| type | Для свойства**type** необходимо задать значение **DynamicsAX**. |Да |
+| type | Для свойства **type** необходимо задать значение **DynamicsAX** . |Да |
 | url | Конечная точка OData экземпляра Dynamics AX (или Dynamics 365 Finance and Operations). |Да |
 | servicePrincipalId | Укажите идентификатора клиента приложения. | Да |
-| servicePrincipalKey | Укажите ключ приложения. Пометьте это поле как **SecureString**, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
+| servicePrincipalKey | Укажите ключ приложения. Пометьте это поле как **SecureString** , чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
 | tenant | Укажите сведения о клиенте (доменное имя или идентификатор клиента), в котором находится приложение. Его можно получить, наведя указатель мыши на правый верхний угол страницы портала Azure. | Да |
 | aadResourceId | Укажите ресурс AAD, для которого запрашивается авторизация. Например, если Dynamics имеет URL-адрес `https://sampledynamics.sandbox.operations.dynamics.com/data/`, то обычно соответствующий ресурс AAD имеет адрес `https://sampledynamics.sandbox.operations.dynamics.com`. | Да |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Вы можете выбрать среду выполнения интеграции Azure или локальную среду IR (если хранилище данных расположено в частной сети). Если не указано другое, по умолчанию используется интегрированная Azure Integration Runtime. |Нет |
@@ -103,11 +103,11 @@ ms.locfileid: "84982702"
 
 Полный список разделов и свойств, используемых для определения наборов данных, приведен в статье [Наборы данных и связанные службы в фабрике данных Azure](concepts-datasets-linked-services.md). 
 
-Чтобы скопировать данные из Dynamics, установите для свойства **type** набора данных значение **DynamicsAXResource**. Поддерживаются следующие свойства:
+Чтобы скопировать данные из Dynamics, установите для свойства **type** набора данных значение **DynamicsAXResource** . Поддерживаются следующие свойства:
 
 | Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
-| type | Свойство **type** набора данных должно быть со значением **DynamicsAXResource**. | Да |
+| type | Свойство **type** набора данных должно быть со значением **DynamicsAXResource** . | Да |
 | path | Путь к сущности OData Dynamics AX. | Да |
 
 **Пример**
@@ -137,13 +137,13 @@ ms.locfileid: "84982702"
 
 ### <a name="dynamics-ax-as-source"></a>Использование Dynamics AX в качестве источника
 
-Чтобы копировать данные из Dynamics AX, установите для типа **источника** в действии копирования значение **DynamicsAXSource**. В разделе **source** действия копирования поддерживаются следующие свойства:
+Чтобы копировать данные из Dynamics AX, установите для типа **источника** в действии копирования значение **DynamicsAXSource** . В разделе **source** действия копирования поддерживаются следующие свойства:
 
 | Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
-| type | Свойство **type** источника действия копирования должно быть со значением **DynamicsAXSource**. | Да |
+| type | Свойство **type** источника действия копирования должно быть со значением **DynamicsAXSource** . | Да |
 | query | Параметры запроса OData для фильтрации данных. Например, `"?$select=Name,Description&$top=5"`.<br/><br/>**Примечание.** Соединитель копирует данные из объединенного URL-адреса: `[URL specified in linked service]/[path specified in dataset][query specified in copy activity source]`. Дополнительные сведения см. в статье о [компонентах URL-адреса OData](https://www.odata.org/documentation/odata-version-3-0/url-conventions/). | Нет |
-| httpRequestTimeout | Время ожидания (значение **Временной диапазон**) ответа для HTTP-запроса. Это значение является интервалом времени для получения ответа, а не считывания данных ответа. Если не указано, значение по умолчанию — **00:30:00** (30 минут). | нет |
+| httpRequestTimeout | Время ожидания (значение **Временной диапазон** ) ответа для HTTP-запроса. Это значение является интервалом времени для получения ответа, а не считывания данных ответа. Если не указано, значение по умолчанию — **00:30:00** (30 минут). | Нет |
 
 **Пример**
 

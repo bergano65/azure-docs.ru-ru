@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 8/04/2019
-ms.openlocfilehash: 963a541835c5e45c5642f2d516da53fd165142b4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: be1cb7abbc243e3f79e183223fbbb32380f5d02d
+ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91616930"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92638046"
 ---
 # <a name="use-azure-data-factory-to-migrate-data-from-amazon-s3-to-azure-storage"></a>Миграция данных из Amazon S3 в службу хранилища Azure с помощью Фабрики данных Azure 
 
@@ -41,9 +41,9 @@ ms.locfileid: "91616930"
 
 На рисунке выше показано, как можно обеспечить высокую скорость перемещения данных с помощью различных уровней параллелизма.
  
-- Для одного действия копирования можно использовать масштабируемые вычислительные ресурсы: при использовании Azure Integration Runtime можно указать [до 256 единиц интеграции данных](https://docs.microsoft.com/azure/data-factory/copy-activity-performance#data-integration-units) для каждого бессерверного действия копирования. При использовании локальной среды выполнения интеграции можно вручную масштабировать компьютер по вертикали или выполнить масштабирование по горизонтали до нескольких компьютеров ([до 4 узлов](https://docs.microsoft.com/azure/data-factory/create-self-hosted-integration-runtime#high-availability-and-scalability)), и действие копирования разделит набор файлов по всем узлам. 
+- Для одного действия копирования можно использовать масштабируемые вычислительные ресурсы: при использовании Azure Integration Runtime можно указать [до 256 единиц интеграции данных](./copy-activity-performance.md#data-integration-units) для каждого бессерверного действия копирования. При использовании локальной среды выполнения интеграции можно вручную масштабировать компьютер по вертикали или выполнить масштабирование по горизонтали до нескольких компьютеров ([до 4 узлов](./create-self-hosted-integration-runtime.md#high-availability-and-scalability)), и действие копирования разделит набор файлов по всем узлам. 
 - Одно действие копирования считывает данные из хранилища данных и записывает их в него с помощью нескольких потоков. 
-- Поток управления Фабрики данных Azure может запускать несколько операций копирования параллельно, например с помощью [цикла For Each](https://docs.microsoft.com/azure/data-factory/control-flow-for-each-activity). 
+- Поток управления Фабрики данных Azure может запускать несколько операций копирования параллельно, например с помощью [цикла For Each](./control-flow-for-each-activity.md). 
 
 ## <a name="resilience"></a>Устойчивость
 
@@ -81,10 +81,10 @@ ms.locfileid: "91616930"
 
 ### <a name="authentication-and-credential-management"></a>Управление проверкой подлинности и учетными данными 
 
-- Для проверки подлинности учетной записи Amazon S3 необходимо использовать [ключ доступа для учетной записи IAM](https://docs.microsoft.com/azure/data-factory/connector-amazon-simple-storage-service#linked-service-properties). 
-- Для подключения к Хранилищу BLOB-объектов Azure поддерживаются несколько типов проверки подлинности.  Настоятельно рекомендуется использовать [управляемые удостоверения для ресурсов Azure](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage#managed-identity): они основаны на автоматически управляемой системе идентификации Фабрики данных Azure в Azure AD и позволяют настраивать конвейеры, не предоставляя учетные данные в определении связанной службы.  Кроме того, проверку подлинности в Хранилище BLOB-объектов Azure можно проходить, используя [субъект-службу](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage#service-principal-authentication), [подписанный URL-адрес](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage#shared-access-signature-authentication) или [ключ учетной записи хранения](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage#account-key-authentication). 
-- Для подключения к Azure Data Lake Storage 2-го поколения также поддерживаются несколько типов проверки подлинности.  Настоятельно рекомендуется использовать [управляемые удостоверения для ресурсов Azure](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage#managed-identity), хотя также можно применять [субъект-службу](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage#service-principal-authentication) или [ключ учетной записи хранения](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage#account-key-authentication). 
-- Если вы не используете управляемые удостоверения для ресурсов Azure, настоятельно рекомендуется [хранить учетные данные в Azure Key Vault](https://docs.microsoft.com/azure/data-factory/store-credentials-in-key-vault), чтобы упростить централизованное управление и смену ключей без изменения связанных служб Фабрики данных Azure.  Это также одна из [рекомендаций для CI/CD](https://docs.microsoft.com/azure/data-factory/continuous-integration-deployment#best-practices-for-cicd). 
+- Для проверки подлинности учетной записи Amazon S3 необходимо использовать [ключ доступа для учетной записи IAM](./connector-amazon-simple-storage-service.md#linked-service-properties). 
+- Для подключения к Хранилищу BLOB-объектов Azure поддерживаются несколько типов проверки подлинности.  Настоятельно рекомендуется использовать [управляемые удостоверения для ресурсов Azure](./connector-azure-blob-storage.md#managed-identity): они основаны на автоматически управляемой системе идентификации Фабрики данных Azure в Azure AD и позволяют настраивать конвейеры, не предоставляя учетные данные в определении связанной службы.  Кроме того, проверку подлинности в Хранилище BLOB-объектов Azure можно проходить, используя [субъект-службу](./connector-azure-blob-storage.md#service-principal-authentication), [подписанный URL-адрес](./connector-azure-blob-storage.md#shared-access-signature-authentication) или [ключ учетной записи хранения](./connector-azure-blob-storage.md#account-key-authentication). 
+- Для подключения к Azure Data Lake Storage 2-го поколения также поддерживаются несколько типов проверки подлинности.  Настоятельно рекомендуется использовать [управляемые удостоверения для ресурсов Azure](./connector-azure-data-lake-storage.md#managed-identity), хотя также можно применять [субъект-службу](./connector-azure-data-lake-storage.md#service-principal-authentication) или [ключ учетной записи хранения](./connector-azure-data-lake-storage.md#account-key-authentication). 
+- Если вы не используете управляемые удостоверения для ресурсов Azure, настоятельно рекомендуется [хранить учетные данные в Azure Key Vault](./store-credentials-in-key-vault.md), чтобы упростить централизованное управление и смену ключей без изменения связанных служб Фабрики данных Azure.  Это также одна из [рекомендаций для CI/CD](./continuous-integration-deployment.md#best-practices-for-cicd). 
 
 ### <a name="initial-snapshot-data-migration"></a>Перенос исходных моментальных снимков 
 
@@ -138,16 +138,16 @@ ms.locfileid: "91616930"
 ![Снимок экрана таблицы показывает оценочную цену.](media/data-migration-guidance-s3-to-azure-storage/pricing-table.png)
 
 ### <a name="additional-references"></a>Дополнительные ссылки 
-- [Соединитель Amazon Simple Storage Service](https://docs.microsoft.com/azure/data-factory/connector-amazon-simple-storage-service)
-- [Соединитель хранилища BLOB-объектов Azure](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage)
-- [Copy data to or from Azure Data Lake Storage Gen2 Preview using Azure Data Factory (Preview)](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage) (Копирование данных в Azure Data Lake Storage Gen2 (предварительная версия) или из него с помощью фабрики данных Azure)
-- [Руководство по настройке производительности действия копирования](https://docs.microsoft.com/azure/data-factory/copy-activity-performance)
-- [Создание и настройка локальной среды выполнения интеграции](https://docs.microsoft.com/azure/data-factory/create-self-hosted-integration-runtime)
-- [Высокая доступность и масштабируемость локальной среды выполнения интеграции](https://docs.microsoft.com/azure/data-factory/create-self-hosted-integration-runtime#high-availability-and-scalability)
-- [Вопросы безопасности при перемещении данных](https://docs.microsoft.com/azure/data-factory/data-movement-security-considerations)
-- [Хранение учетных данных в Azure Key Vault](https://docs.microsoft.com/azure/data-factory/store-credentials-in-key-vault)
-- [Добавочное копирование файлов на основе имен файлов с разделением по времени](https://docs.microsoft.com/azure/data-factory/tutorial-incremental-copy-partitioned-file-name-copy-data-tool)
-- [Копирование новых и измененных файлов на основе LastModifiedDate](https://docs.microsoft.com/azure/data-factory/tutorial-incremental-copy-lastmodified-copy-data-tool)
+- [Соединитель Amazon Simple Storage Service](./connector-amazon-simple-storage-service.md)
+- [Соединитель хранилища BLOB-объектов Azure](./connector-azure-blob-storage.md)
+- [Copy data to or from Azure Data Lake Storage Gen2 Preview using Azure Data Factory (Preview)](./connector-azure-data-lake-storage.md) (Копирование данных в Azure Data Lake Storage Gen2 (предварительная версия) или из него с помощью фабрики данных Azure)
+- [Руководство по настройке производительности действия копирования](./copy-activity-performance.md)
+- [Создание и настройка локальной среды выполнения интеграции](./create-self-hosted-integration-runtime.md)
+- [Высокая доступность и масштабируемость локальной среды выполнения интеграции](./create-self-hosted-integration-runtime.md#high-availability-and-scalability)
+- [Вопросы безопасности при перемещении данных](./data-movement-security-considerations.md)
+- [Хранение учетных данных в Azure Key Vault](./store-credentials-in-key-vault.md)
+- [Добавочное копирование файлов на основе имен файлов с разделением по времени](./tutorial-incremental-copy-partitioned-file-name-copy-data-tool.md)
+- [Копирование новых и измененных файлов на основе LastModifiedDate](./tutorial-incremental-copy-lastmodified-copy-data-tool.md)
 - [Страница цен на Фабрику данных Azure](https://azure.microsoft.com/pricing/details/data-factory/data-pipeline/)
 
 ## <a name="template"></a>Шаблон

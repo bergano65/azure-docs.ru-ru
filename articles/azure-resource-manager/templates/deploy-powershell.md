@@ -2,31 +2,40 @@
 title: Развертывание ресурсов с помощью PowerShell и шаблона
 description: Используйте Azure Resource Manager и Azure PowerShell для развертывания ресурсов в Azure. Эти ресурсы определяются в шаблоне Resource Manager.
 ms.topic: conceptual
-ms.date: 09/08/2020
-ms.openlocfilehash: e47de54558962215fe3be78f5b9c45c8d46c54a3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 10/22/2020
+ms.openlocfilehash: 5266aa51422dce6dfa4b82238e905f4f630ccf48
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91372448"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92668565"
 ---
 # <a name="deploy-resources-with-arm-templates-and-azure-powershell"></a>Развертывание ресурсов с помощью шаблонов ARM и Azure PowerShell
 
 В этой статье объясняется, как использовать Azure PowerShell с шаблонами Azure Resource Manager (шаблоны ARM) для развертывания ресурсов в Azure. Если вы не знакомы с концепциями развертывания и управления решениями Azure, см. раздел [Общие сведения о развертывании шаблонов](overview.md).
 
+## <a name="prerequisites"></a>Предварительные требования
+
+Вам нужен шаблон для развертывания. Если у вас его еще нет, скачайте и сохраните [Пример шаблона](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-storage-account-create/azuredeploy.json) из репозитория шаблонов быстрого запуска Azure. В этой статье используется локальный файл с именем **c:\MyTemplates\azuredeploy.json** .
+
+Необходимо установить Azure PowerShell и подключиться к Azure:
+
+- **Установите командлеты Azure PowerShell на локальном компьютере.** Дополнительные сведения см. в статье [Начало работы с Azure PowerShell](/powershell/azure/get-started-azureps).
+- **Подключитесь к Azure с помощью командлета [Connect-AZAccount](/powershell/module/az.accounts/connect-azaccount)** . Если у вас несколько подписок Azure, выполните также командлет [Set-AzContext](/powershell/module/Az.Accounts/Set-AzContext). См. дополнительные сведения в статье [Use multiple Azure subscriptions](/powershell/azure/manage-subscriptions-azureps) (Использование нескольких подписок Azure).
+
+Если вы не установили PowerShell, можно использовать Cloud Shell. Дополнительные сведения см. [в статье Развертывание шаблонов ARM из Cloud Shell](deploy-cloud-shell.md).
+
 ## <a name="deployment-scope"></a>Область развертывания
 
-Вы можете выбрать для развертывания группу ресурсов, подписку, группу управления или клиент. В большинстве случаев вы планируете развертывание в группе ресурсов. Чтобы применить политики и назначения ролей в более масштабной области, используйте развертывание по подписке, группе управления или развертыванию клиента. При развертывании в подписке можно создать группу ресурсов и развернуть в ней ресурсы.
+Вы можете выбрать для развертывания группу ресурсов, подписку, группу управления или клиент. В зависимости от области развертывания используются разные команды.
 
-В зависимости от области развертывания используются разные команды.
-
-* Чтобы выполнить развертывание в **группе ресурсов**, используйте команду [New-азресаурцеграупдеплоймент](/powershell/module/az.resources/new-azresourcegroupdeployment).
+* Чтобы выполнить развертывание в **группе ресурсов** , используйте команду [New-азресаурцеграупдеплоймент](/powershell/module/az.resources/new-azresourcegroupdeployment).
 
   ```azurepowershell
   New-AzResourceGroupDeployment -ResourceGroupName <resource-group-name> -TemplateFile <path-to-template>
   ```
 
-* Для развертывания в **подписке**используйте New-азсубскриптиондеплоймент:
+* Для развертывания в **подписке** используйте New-азсубскриптиондеплоймент:
 
   ```azurepowershell
   New-AzSubscriptionDeployment -Location <location> -TemplateFile <path-to-template>
@@ -34,7 +43,7 @@ ms.locfileid: "91372448"
 
   Дополнительные сведения о развертываниях на уровне подписки см. в статье [Создание групп ресурсов и ресурсов на уровне подписки](deploy-to-subscription.md).
 
-* Для развертывания в **группе управления**используйте [New-азманажементграупдеплоймент](/powershell/module/az.resources/New-AzManagementGroupDeployment).
+* Для развертывания в **группе управления** используйте [New-азманажементграупдеплоймент](/powershell/module/az.resources/New-AzManagementGroupDeployment).
 
   ```azurepowershell
   New-AzManagementGroupDeployment -Location <location> -TemplateFile <path-to-template>
@@ -42,7 +51,7 @@ ms.locfileid: "91372448"
 
   Дополнительные сведения о развертываниях на уровне групп управления см. в статье [Создание ресурсов на уровне группы управления](deploy-to-management-group.md).
 
-* Для развертывания в **клиенте**используйте [New-азтенантдеплоймент](/powershell/module/az.resources/new-aztenantdeployment).
+* Для развертывания в **клиенте** используйте [New-азтенантдеплоймент](/powershell/module/az.resources/new-aztenantdeployment).
 
   ```azurepowershell
   New-AzTenantDeployment -Location <location> -TemplateFile <path-to-template>
@@ -50,36 +59,53 @@ ms.locfileid: "91372448"
 
   Дополнительные сведения о развертываниях на уровне клиента см. в статье [Создание ресурсов на уровне клиента](deploy-to-tenant.md).
 
-В примерах, приведенных в этой статье, мы используем развертывание в группе ресурсов.
-
-## <a name="prerequisites"></a>Предварительные требования
-
-Вам нужен шаблон для развертывания. Если у вас его еще нет, скачайте и сохраните [Пример шаблона](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-storage-account-create/azuredeploy.json) из репозитория шаблонов быстрого запуска Azure. В этой статье используется локальный файл с именем **c:\MyTemplates\azuredeploy.json**.
-
-Если вы не используете Azure Cloud Shell для развертывания шаблонов, необходимо установить Azure PowerShell и подключиться к Azure:
-
-- **Установите командлеты Azure PowerShell на локальном компьютере.** Дополнительные сведения см. в статье [Начало работы с Azure PowerShell](/powershell/azure/get-started-azureps).
-- **Подключитесь к Azure с помощью командлета [Connect-AZAccount](/powershell/module/az.accounts/connect-azaccount)**. Если у вас несколько подписок Azure, выполните также командлет [Set-AzContext](/powershell/module/Az.Accounts/Set-AzContext). См. дополнительные сведения в статье [Use multiple Azure subscriptions](/powershell/azure/manage-subscriptions-azureps) (Использование нескольких подписок Azure).
+Для каждой области пользователь, развертывающий шаблон, должен иметь необходимые разрешения для создания ресурсов.
 
 ## <a name="deploy-local-template"></a>Развертывание локального шаблона
 
-В следующем примере создается группа ресурсов и развертывается шаблон на локальном компьютере. Имя группы ресурсов может содержать только буквы, цифры, точки, знаки подчеркивания, дефисы и скобки. Оно может содержать до 90 знаков и не должно заканчиваться точкой.
+Вы можете развернуть шаблон с локального компьютера или из него, который хранится извне. В этом разделе описывается развертывание локального шаблона.
+
+Если развертывание выполняется в несуществующей группе ресурсов, создайте группу ресурсов. Имя группы ресурсов может содержать только буквы, цифры, точки, знаки подчеркивания, дефисы и скобки. Оно может содержать до 90 знаков и Имя не может заканчиваться точкой.
 
 ```azurepowershell
-$resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
-$location = Read-Host -Prompt "Enter the location (i.e. centralus)"
+New-AzResourceGroup -Name ExampleGroup -Location "Central US"
+```
 
-New-AzResourceGroup -Name $resourceGroupName -Location $location
-New-AzResourceGroupDeployment -Name ExampleDeployment `
-  -ResourceGroupName $resourceGroupName `
+Чтобы развернуть локальный шаблон, используйте `-TemplateFile` параметр в команде развертывания. В следующем примере также показано, как задать значение параметра, поступающих из шаблона.
+
+```azurepowershell
+New-AzResourceGroupDeployment `
+  -Name ExampleDeployment `
+  -ResourceGroupName ExampleGroup `
   -TemplateFile c:\MyTemplates\azuredeploy.json
 ```
 
 Развертывание может занять несколько минут.
 
+## <a name="deploy-remote-template"></a>Развертывание удаленного шаблона
+
+Вместо того чтобы хранить шаблоны ARM на локальном компьютере, вы можете хранить их во внешнем расположении. Вы можете хранить шаблоны в репозитории системы управления версиями (например, GitHub). А также их можно хранить в учетной записи хранения Azure для общего доступа в организации.
+
+Если развертывание выполняется в несуществующей группе ресурсов, создайте группу ресурсов. Имя группы ресурсов может содержать только буквы, цифры, точки, знаки подчеркивания, дефисы и скобки. Оно может содержать до 90 знаков и Имя не может заканчиваться точкой.
+
+```azurepowershell
+New-AzResourceGroup -Name ExampleGroup -Location "Central US"
+```
+
+Для развертывания внешнего шаблона используйте параметр `-TemplateUri`.
+
+```azurepowershell
+New-AzResourceGroupDeployment `
+  -Name ExampleDeployment `
+  -ResourceGroupName ExampleGroup `
+  -TemplateUri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-storage-account-create/azuredeploy.json
+```
+
+В предыдущем примере для шаблона требуется общедоступный код URI, который подходит для большинства сценариев, так как шаблон не должен содержать конфиденциальные данные. Если необходимо указать конфиденциальные данные (например, пароль администратора), то передайте это значение с помощью безопасного параметра. Однако если вы хотите управлять доступом к шаблону, рассмотрите возможность использования [спецификаций шаблонов](#deploy-template-spec).
+
 ## <a name="deployment-name"></a>Deployment name (Имя развертывания)
 
-В предыдущем примере вы назвали развертывание `ExampleDeployment` . Если имя для развертывания не указано, используется имя файла шаблона. Например, если развернуть шаблон с именем `azuredeploy.json` и не указывать имя развертывания, то развертывание будет называться `azuredeploy` .
+При развертывании шаблона ARM можно присвоить имя развертыванию. Это имя может помочь получить развертывание из журнала развертывания. Если имя для развертывания не указано, используется имя файла шаблона. Например, если развернуть шаблон с именем `azuredeploy.json` и не указывать имя развертывания, то развертывание будет называться `azuredeploy` .
 
 Каждый раз при выполнении развертывания в журнал развертывания группы ресурсов добавляется запись с именем развертывания. Если запустить другое развертывание и присвоить ему такое же имя, то Предыдущая запись будет заменена текущим развертыванием. Если требуется хранить уникальные записи в журнале развертывания, присвойте каждому развертыванию уникальное имя.
 
@@ -105,36 +131,24 @@ $deploymentName="ExampleDeployment"+"$today"
 
 Чтобы избежать конфликтов с параллельными развертываниями и обеспечить уникальность записей в журнале развертывания, присвойте каждому развертыванию уникальное имя.
 
-## <a name="deploy-remote-template"></a>Развертывание удаленного шаблона
-
-Вместо того чтобы хранить шаблоны ARM на локальном компьютере, вы можете хранить их во внешнем расположении. Вы можете хранить шаблоны в репозитории системы управления версиями (например, GitHub). А также их можно хранить в учетной записи хранения Azure для общего доступа в организации.
-
-Чтобы развернуть внешний шаблон, используйте параметр **TemplateUri** . Используйте универсальный код ресурса (URI) в примере для развертывания примера шаблона из GitHub.
-
-```azurepowershell
-$resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
-$location = Read-Host -Prompt "Enter the location (i.e. centralus)"
-
-New-AzResourceGroup -Name $resourceGroupName -Location $location
-New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName `
-  -TemplateUri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-storage-account-create/azuredeploy.json
-```
-
-В предыдущем примере для шаблона требуется общедоступный код URI, который подходит для большинства сценариев, так как шаблон не должен содержать конфиденциальные данные. Если необходимо указать конфиденциальные данные (например, пароль администратора), то передайте это значение с помощью безопасного параметра. Но если вы не хотите, чтобы шаблон был общедоступным, можно защитить его, сохранив в закрытом контейнере хранилища. Сведения о развертывании шаблона, требующего маркер подписанного URL-адреса (SAS), см. в статье [Развертывание частного шаблона Resource Manager с использованием токена SAS и Azure PowerShell](secure-template-with-sas-token.md). Дополнительные сведения см. в разделе [учебник. интеграция Azure Key Vault в развертывании шаблона ARM](template-tutorial-use-key-vault.md).
-
 ## <a name="deploy-template-spec"></a>Развертывание спецификации шаблона
 
 Вместо развертывания локального или удаленного шаблона можно создать [спецификацию шаблона](template-specs.md). Спецификация шаблона — это ресурс в подписке Azure, который содержит шаблон ARM. Это позволяет легко обеспечить безопасный общий доступ к шаблону для пользователей в вашей организации. Используйте управление доступом на основе ролей Azure (Azure RBAC), чтобы предоставить доступ к спецификации шаблона. Сейчас эта функция доступна в предварительной версии.
 
 В следующих примерах показано, как создать и развернуть спецификацию шаблона. Эти команды доступны только в том случае, если вы [подписались на предварительную версию](https://aka.ms/templateSpecOnboarding).
 
-Сначала вы создадите спецификацию шаблона, предоставив шаблон ARM.
+Сначала создайте шаблон Spec, указав шаблон ARM.
 
 ```azurepowershell
-New-AzTemplateSpec -Name storageSpec -Version 1.0 -ResourceGroupName templateSpecsRg -Location westus2 -TemplateJsonFile ./mainTemplate.json
+New-AzTemplateSpec `
+  -Name storageSpec `
+  -Version 1.0 `
+  -ResourceGroupName templateSpecsRg `
+  -Location westus2 `
+  -TemplateJsonFile ./mainTemplate.json
 ```
 
-Затем вы получите идентификатор для спецификации шаблона и развернете его.
+Затем получите идентификатор для спецификации шаблона и разверните его.
 
 ```azurepowershell
 $id = (Get-AzTemplateSpec -Name storageSpec -ResourceGroupName templateSpecsRg -Version 1.0).Version.Id
@@ -149,23 +163,6 @@ New-AzResourceGroupDeployment `
 ## <a name="preview-changes"></a>Предварительный просмотр изменений
 
 Перед развертыванием шаблона можно просмотреть изменения, которые шаблон будет вносить в вашу среду. Используйте [операцию "что если](template-deploy-what-if.md) ", чтобы убедиться, что шаблон вносит необходимые изменения. Что если также проверяет шаблон на наличие ошибок.
-
-## <a name="deploy-from-azure-cloud-shell"></a>Развертывание из Azure Cloud Shell
-
-Для развертывания шаблона можно использовать [Azure Cloud Shell](https://shell.azure.com). Чтобы развернуть внешний шаблон, укажите URI шаблона. Чтобы развернуть локальный шаблон, сначала необходимо загрузить шаблон для Cloud Shell в учетную запись хранения. Чтобы отправить файлы в Cloud Shell, щелкните значок **Upload/Download files** (Отправить/скачать файлы) в окне Cloud Shell.
-
-Чтобы открыть Cloud Shell, перейдите к [https://shell.azure.com](https://shell.azure.com) или выберите команду " **попробовать** " в следующем разделе кода:
-
-```azurepowershell-interactive
-$resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
-$location = Read-Host -Prompt "Enter the location (i.e. centralus)"
-
-New-AzResourceGroup -Name $resourceGroupName -Location $location
-New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName `
-  -TemplateUri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-storage-account-create/azuredeploy.json
-```
-
-Чтобы вставить код в Cloud Shell, щелкните правой кнопкой мыши внутри окна, а затем выберите **Paste** (Вставить).
 
 ## <a name="pass-parameter-values"></a>Передача значений параметров
 
@@ -212,7 +209,7 @@ New-AzResourceGroupDeployment -ResourceGroupName testgroup `
 
 Дополнительные сведения о файле параметров см. в статье [Создание файла параметров Resource Manager](parameter-files.md).
 
-Чтобы передать локальный файл параметров, используйте параметр **TemplateParameterFile**:
+Чтобы передать локальный файл параметров, используйте параметр **TemplateParameterFile** :
 
 ```powershell
 New-AzResourceGroupDeployment -Name ExampleDeployment -ResourceGroupName ExampleResourceGroup `
@@ -220,7 +217,7 @@ New-AzResourceGroupDeployment -Name ExampleDeployment -ResourceGroupName Example
   -TemplateParameterFile c:\MyTemplates\storage.parameters.json
 ```
 
-Чтобы передать внешний файл параметров, используйте параметр **TemplateParameterUri**:
+Чтобы передать внешний файл параметров, используйте параметр **TemplateParameterUri** :
 
 ```powershell
 New-AzResourceGroupDeployment -Name ExampleDeployment -ResourceGroupName ExampleResourceGroup `

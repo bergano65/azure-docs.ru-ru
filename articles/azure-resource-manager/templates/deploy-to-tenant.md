@@ -2,15 +2,15 @@
 title: Развертывание ресурсов в клиенте
 description: В этой статье объясняется, как развертывать ресурсы в клиенте в шаблоне Azure Resource Manager.
 ms.topic: conceptual
-ms.date: 09/24/2020
-ms.openlocfilehash: 48b3fbcedb119ae699624e79f83297f4ecbc9ede
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 10/22/2020
+ms.openlocfilehash: 854ccbd43509b6c0b5a04357844c78c32b7e6396
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91372397"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92668695"
 ---
-# <a name="create-resources-at-the-tenant-level"></a>Создание ресурсов на уровне клиента
+# <a name="tenant-deployments-with-arm-templates"></a>Развертывание клиентов с помощью шаблонов ARM
 
 По мере развития вашей организации может потребоваться определить и назначить [политики](../../governance/policy/overview.md) или [Управление доступом на основе ролей Azure (Azure RBAC)](../../role-based-access-control/overview.md) в клиенте Azure AD. С помощью шаблонов уровня клиента можно декларативно применять политики и назначать роли на глобальном уровне.
 
@@ -49,13 +49,19 @@ ms.locfileid: "91372397"
 Для шаблонов используйте:
 
 ```json
-https://schema.management.azure.com/schemas/2019-08-01/tenantDeploymentTemplate.json#
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-08-01/tenantDeploymentTemplate.json#",
+    ...
+}
 ```
 
 Схема для файла параметров одинакова для всех областей развертывания. Для файлов параметров используйте:
 
 ```json
-https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    ...
+}
 ```
 
 ## <a name="required-access"></a>Требуемый доступ
@@ -78,21 +84,11 @@ https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json
 
 У субъекта теперь есть необходимые разрешения для развертывания шаблона.
 
-## <a name="deployment-scopes"></a>Области развертывания
-
-При развертывании в клиенте можно ориентироваться на клиента, группы управления, подписки и группы ресурсов в клиенте. Пользователь, развертывающий шаблон, должен иметь доступ к указанной области.
-
-Ресурсы, определенные в разделе ресурсов шаблона, применяются к клиенту.
-
-:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/default-tenant.json" highlight="5":::
-
-Чтобы выбрать целевую группу управления в клиенте, добавьте вложенное развертывание и укажите `scope` свойство.
-
-:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/tenant-to-mg.json" highlight="10,17,22":::
-
 ## <a name="deployment-commands"></a>Команды развертывания
 
 Команды, используемые для развертываний клиентов, отличаются от команд для развертываний группы ресурсов.
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Для Azure CLI используйте [az deployment tenant create](/cli/azure/deployment/tenant#az-deployment-tenant-create):
 
@@ -103,6 +99,8 @@ az deployment tenant create \
   --template-uri "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/tenant-deployments/new-mg/azuredeploy.json"
 ```
 
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
+
 Для Azure PowerShell используйте [New-AzTenantDeployment](/powershell/module/az.resources/new-aztenantdeployment).
 
 ```azurepowershell-interactive
@@ -112,38 +110,58 @@ New-AzTenantDeployment `
   -TemplateUri "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/tenant-deployments/new-mg/azuredeploy.json"
 ```
 
-Для REST API используйте инструкции в статье [Развертывания — создание или обновление в области клиента](/rest/api/resources/deployments/createorupdateattenantscope).
+---
+
+Более подробные сведения о командах и параметрах развертывания для развертывания шаблонов ARM см. в следующих статьях:
+
+* [Развертывание ресурсов с помощью шаблонов ARM и портал Azure](deploy-portal.md)
+* [Развертывание ресурсов с помощью шаблонов ARM и Azure CLI](deploy-cli.md)
+* [Развертывание ресурсов с помощью шаблонов ARM и Azure PowerShell](deploy-powershell.md)
+* [Развертывание ресурсов с помощью шаблонов ARM и Azure Resource Manager REST API](deploy-rest.md)
+* [Использование кнопки развертывания для развертывания шаблонов из репозитория GitHub](deploy-to-azure-button.md)
+* [Развертывание шаблонов ARM из Cloud Shell](deploy-cloud-shell.md)
+
+## <a name="deployment-scopes"></a>Области развертывания
+
+При развертывании в группе управления можно развернуть ресурсы в:
+
+* Клиент
+* группы управления в клиенте
+* subscriptions
+* группы ресурсов (с помощью двух вложенных развертываний)
+* [ресурсы расширения](scope-extension-resources.md) можно применять к ресурсам
+
+Пользователь, развертывающий шаблон, должен иметь доступ к указанной области.
+
+В этом разделе показано, как указать различные области. Эти различные области можно объединить в один шаблон.
+
+### <a name="scope-to-tenant"></a>Область для клиента
+
+Ресурсы, определенные в разделе ресурсов шаблона, применяются к клиенту.
+
+:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/default-tenant.json" highlight="5":::
+
+### <a name="scope-to-management-group"></a>Область в группе управления
+
+Чтобы выбрать целевую группу управления в клиенте, добавьте вложенное развертывание и укажите `scope` свойство.
+
+:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/tenant-to-mg.json" highlight="10,17,22":::
+
+### <a name="scope-to-subscription"></a>Область действия для подписки
+
+Вы также можете ориентироваться на подписки в клиенте. Пользователь, развертывающий шаблон, должен иметь доступ к указанной области.
+
+Чтобы назначить подписку в клиенте, используйте вложенное развертывание и `subscriptionId` свойство.
+
+:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/tenant-to-subscription.json" highlight="10,18":::
 
 ## <a name="deployment-location-and-name"></a>Расположение и имя развертывания
 
 Для развертываний на уровне клиента необходимо указать расположение для развертывания. Расположение развертывания отделено от расположения развертываемых ресурсов. В расположении развертывания указывается место хранения данных развертывания.
 
-Можно указать имя развертывания или использовать имя развертывания по умолчанию. Имя по умолчанию — это имя файла шаблона. Например, развернув шаблон с именем **azuredeploy.json** создается имя развертывания по умолчанию **azuredeploy**.
+Можно указать имя развертывания или использовать имя развертывания по умолчанию. Имя по умолчанию — это имя файла шаблона. Например, развернув шаблон с именем **azuredeploy.json** создается имя развертывания по умолчанию **azuredeploy** .
 
 Для каждого имени развертывания расположение остается неизменным. Нельзя создать развертывание в одном расположении, если в другом уже есть развертывание с таким же именем. Если появится код ошибки `InvalidDeploymentLocation`, используйте другое имя или то же расположение, что и для предыдущего развертывания с этим именем.
-
-## <a name="use-template-functions"></a>Использование функций шаблонов
-
-Важные рекомендации при использовании функций шаблонов для развертываний на уровне клиента:
-
-* Функция [resourceGroup()](template-functions-resource.md#resourcegroup)**не** поддерживается.
-* Функция [subscription()](template-functions-resource.md#subscription) **не** поддерживается.
-* Функции [reference()](template-functions-resource.md#reference) и [list()](template-functions-resource.md#list) поддерживаются.
-* Не используйте [resourceId ()](template-functions-resource.md#resourceid) , чтобы получить идентификатор ресурса для ресурсов, развернутых на уровне клиента.
-
-  Вместо этого используйте функцию [тенантресаурцеид ()](template-functions-resource.md#tenantresourceid) .
-
-  Например, чтобы получить идентификатор ресурса для встроенного определения политики, используйте:
-
-  ```json
-  tenantResourceId('Microsoft.Authorization/policyDefinitions/', parameters('policyDefinition'))
-  ```
-
-  Возвращенный идентификатор ресурса имеет следующий формат:
-
-  ```json
-  /providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
-  ```
 
 ## <a name="create-management-group"></a>Создание группы управления
 

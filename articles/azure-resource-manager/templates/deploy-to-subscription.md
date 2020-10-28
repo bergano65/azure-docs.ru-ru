@@ -2,15 +2,15 @@
 title: Развертывание ресурсов в подписке
 description: В этой статье описывается создание группы ресурсов в шаблоне Azure Resource Manager. Здесь также показано, как развернуть ресурсы в области подписки Azure.
 ms.topic: conceptual
-ms.date: 10/05/2020
-ms.openlocfilehash: 0673ea5260c7312395acde8a62b5d457657b9793
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 10/26/2020
+ms.openlocfilehash: 7b0edde4f3571255e92c65d82429b4ddd1a689b8
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91729123"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92668889"
 ---
-# <a name="create-resource-groups-and-resources-at-the-subscription-level"></a>Создание групп ресурсов и ресурсов на уровне подписки
+# <a name="subscription-deployments-with-arm-templates"></a>Развертывание подписок с помощью шаблонов ARM
 
 Чтобы упростить управление ресурсами, можно использовать шаблон Azure Resource Manager (шаблон ARM) для развертывания ресурсов на уровне подписки Azure. Например, можно развернуть [политики](../../governance/policy/overview.md) и [Управление доступом на основе ролей Azure (Azure RBAC)](../../role-based-access-control/overview.md) в подписке, которая применяет их в рамках подписки. Вы также можете создавать группы ресурсов в подписке и развертывать ресурсы в группах ресурсов в подписке.
 
@@ -71,32 +71,26 @@ ms.locfileid: "91729123"
 Для шаблонов используйте:
 
 ```json
-https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#
+{
+    "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+    ...
+}
 ```
 
 Схема для файла параметров одинакова для всех областей развертывания. Для файлов параметров используйте:
 
 ```json
-https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    ...
+}
 ```
-
-## <a name="deployment-scopes"></a>Области развертывания
-
-При развертывании в подписку можно ориентироваться на одну подписку и любые группы ресурсов в рамках подписки. Нельзя выполнить развертывание в подписке, которая отличается от целевой подписки. Пользователь, развертывающий шаблон, должен иметь доступ к указанной области.
-
-Ресурсы, определенные в разделе ресурсов шаблона, применяются к подписке.
-
-:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/default-sub.json" highlight="5":::
-
-Чтобы назначить группу ресурсов в подписке, добавьте вложенное развертывание и включите `resourceGroup` свойство. В следующем примере вложенное развертывание предназначено для группы ресурсов с именем `rg2` .
-
-:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/sub-to-resource-group.json" highlight="9,13":::
-
-В этой статье можно найти шаблоны, демонстрирующие развертывание ресурсов в различных областях. Сведения о шаблоне, который создает группу ресурсов и развертывает в ней учетную запись хранения, см. в разделе [Создание группы ресурсов и ресурсов](#create-resource-group-and-resources). Для шаблона, который создает группу ресурсов, применяет к ней блокировку и назначает роль для группы ресурсов, см. раздел [Управление доступом](#access-control).
 
 ## <a name="deployment-commands"></a>Команды развертывания
 
-Команды, используемые для развертываний на уровне подписки, отличаются от команд для развертываний группы ресурсов.
+Для развертывания в подписке используйте команды развертывания на уровне подписки.
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Для Azure CLI используйте [az deployment sub create](/cli/azure/deployment/sub#az-deployment-sub-create). В следующем примере выполняется развертывание шаблона для создания группы ресурсов.
 
@@ -108,7 +102,9 @@ az deployment sub create \
   --parameters rgName=demoResourceGroup rgLocation=centralus
 ```
 
-В качестве команды развертывания в PowerShell используйте [New-AzDeployment](/powershell/module/az.resources/new-azdeployment) или **New-AzSubscriptionDeployment**. В следующем примере выполняется развертывание шаблона для создания группы ресурсов.
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
+
+В качестве команды развертывания в PowerShell используйте [New-AzDeployment](/powershell/module/az.resources/new-azdeployment) или **New-AzSubscriptionDeployment** . В следующем примере выполняется развертывание шаблона для создания группы ресурсов.
 
 ```azurepowershell-interactive
 New-AzSubscriptionDeployment `
@@ -119,35 +115,52 @@ New-AzSubscriptionDeployment `
   -rgLocation centralus
 ```
 
-Для REST API используйте инструкции в статье [Развертывания — создание в области подписки](/rest/api/resources/deployments/createorupdateatsubscriptionscope).
+---
+
+Более подробные сведения о командах и параметрах развертывания для развертывания шаблонов ARM см. в следующих статьях:
+
+* [Развертывание ресурсов с помощью шаблонов ARM и портал Azure](deploy-portal.md)
+* [Развертывание ресурсов с помощью шаблонов ARM и Azure CLI](deploy-cli.md)
+* [Развертывание ресурсов с помощью шаблонов ARM и Azure PowerShell](deploy-powershell.md)
+* [Развертывание ресурсов с помощью шаблонов ARM и Azure Resource Manager REST API](deploy-rest.md)
+* [Использование кнопки развертывания для развертывания шаблонов из репозитория GitHub](deploy-to-azure-button.md)
+* [Развертывание шаблонов ARM из Cloud Shell](deploy-cloud-shell.md)
+
+## <a name="deployment-scopes"></a>Области развертывания
+
+При развертывании в подписку можно развернуть ресурсы в:
+
+* Целевая подписка из операции
+* группы ресурсов в подписке
+* [ресурсы расширения](scope-extension-resources.md) можно применять к ресурсам
+
+Нельзя выполнить развертывание в подписке, которая отличается от целевой подписки. Пользователь, развертывающий шаблон, должен иметь доступ к указанной области.
+
+В этом разделе показано, как указать различные области. Эти различные области можно объединить в один шаблон.
+
+### <a name="scope-to-subscription"></a>Область действия для подписки
+
+Чтобы развернуть ресурсы в целевой подписке, добавьте эти ресурсы в раздел ресурсов шаблона.
+
+:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/default-sub.json" highlight="5":::
+
+Примеры развертывания в подписке см. в разделе [Создание групп ресурсов](#create-resource-groups) и [назначение определения политики](#assign-policy-definition).
+
+### <a name="scope-to-resource-group"></a>Область действия для группы ресурсов
+
+Чтобы развернуть ресурсы в группе ресурсов в подписке, добавьте вложенное развертывание и включите `resourceGroup` свойство. В следующем примере вложенное развертывание предназначено для группы ресурсов с именем `demoResourceGroup` .
+
+:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/sub-to-resource-group.json" highlight="9,13":::
+
+Пример развертывания в группе ресурсов см. в разделе [Создание группы ресурсов и ресурсов](#create-resource-group-and-resources).
 
 ## <a name="deployment-location-and-name"></a>Расположение и имя развертывания
 
 Для развертываний на уровне подписки необходимо указать расположение для развертывания. Расположение развертывания отделено от расположения развертываемых ресурсов. В расположении развертывания указывается место хранения данных развертывания.
 
-Можно указать имя развертывания или использовать имя развертывания по умолчанию. Имя по умолчанию — это имя файла шаблона. Например, развернув шаблон с именем **azuredeploy.json** создается имя развертывания по умолчанию **azuredeploy**.
+Можно указать имя развертывания или использовать имя развертывания по умолчанию. Имя по умолчанию — это имя файла шаблона. Например, развернув шаблон с именем **azuredeploy.json** создается имя развертывания по умолчанию **azuredeploy** .
 
 Для каждого имени развертывания расположение остается неизменным. Нельзя создать развертывание в одном расположении, если в другом уже есть развертывание с таким же именем. Если появится код ошибки `InvalidDeploymentLocation`, используйте другое имя или то же расположение, что и для предыдущего развертывания с этим именем.
-
-## <a name="use-template-functions"></a>Использование функций шаблонов
-
-Важные рекомендации при использовании функций шаблонов для развертываний на уровне подписки:
-
-* Функция [resourceGroup()](template-functions-resource.md#resourcegroup)**не** поддерживается.
-* Функции [reference()](template-functions-resource.md#reference) и [list()](template-functions-resource.md#list) поддерживаются.
-* Не используйте [resourceId ()](template-functions-resource.md#resourceid) , чтобы получить идентификатор ресурса для ресурсов, развернутых на уровне подписки. Вместо этого используйте функцию [субскриптионресаурцеид ()](template-functions-resource.md#subscriptionresourceid) .
-
-  Например, чтобы получить идентификатор ресурса для определения политики, развернутой в подписке, используйте:
-
-  ```json
-  subscriptionResourceId('Microsoft.Authorization/roleDefinitions/', parameters('roleDefinition'))
-  ```
-
-  Возвращенный идентификатор ресурса имеет следующий формат:
-
-  ```json
-  /subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
-  ```
 
 ## <a name="resource-groups"></a>Группы ресурсов
 
@@ -454,7 +467,7 @@ New-AzSubscriptionDeployment `
 
 :::code language="json" source="~/quickstart-templates/subscription-deployments/create-rg-lock-role-assignment/azuredeploy.json":::
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Пример развертывания параметров рабочей области для центра безопасности Azure см. в разделе о [deployASCwithWorkspaceSettings.json](https://github.com/krnese/AzureDeploy/blob/master/ARM/deployments/deployASCwithWorkspaceSettings.json).
 * Примеры шаблонов можно найти на [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/subscription-deployments).

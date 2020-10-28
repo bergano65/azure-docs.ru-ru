@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 05/26/2020
 ms.author: jingwang
-ms.openlocfilehash: 3c65ed7e5fa6bb1652791eee75d4caa4c9c5f1ca
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f890e4c47a427b6ca8c07463d6795f0813ef5bbd
+ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "83873638"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92638199"
 ---
 # <a name="copy-data-from-db2-by-using-azure-data-factory"></a>Копирование данных из DB2 с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -49,7 +49,7 @@ ms.locfileid: "83873638"
 * IBM DB2 для LUW версии 10.1
 
 >[!TIP]
->Соединитель DB2 создан на основе поставщика OLE DB для DB2 (Майкрософт). Чтобы устранить неполадки с соединителем DB2, изучите [коды ошибок поставщика данных](https://docs.microsoft.com/host-integration-server/db2oledbv/data-provider-error-codes#drda-protocol-errors).
+>Соединитель DB2 создан на основе поставщика OLE DB для DB2 (Майкрософт). Чтобы устранить неполадки с соединителем DB2, изучите [коды ошибок поставщика данных](/host-integration-server/db2oledbv/data-provider-error-codes#drda-protocol-errors).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -88,7 +88,7 @@ ms.locfileid: "83873638"
 > [!TIP]
 > Если вы получите сообщение об ошибке `The package corresponding to an SQL statement execution request was not found. SQLSTATE=51002 SQLCODE=-805`, это означает, что необходимый пакет для пользователя не создан. По умолчанию ADF попытается создать пакет в коллекции с тем же именем, что у пользователя, которое использовалось при подключении к DB2. Укажите свойство коллекции пакетов, чтобы определить, где ADF будет создавать необходимые пакеты при запросе к базе данных.
 
-**Пример**.
+**Пример** .
 
 ```json
 {
@@ -114,13 +114,13 @@ ms.locfileid: "83873638"
         "type": "Db2",
         "typeProperties": {
             "connectionString": "server=<server:port>;database=<database>;authenticationType=Basic;username=<username>;packageCollection=<packagecollection>;certificateCommonName=<certname>;",
-            "password": { 
-                "type": "AzureKeyVaultSecret", 
-                "store": { 
-                    "referenceName": "<Azure Key Vault linked service name>", 
-                    "type": "LinkedServiceReference" 
-                }, 
-                "secretName": "<secretName>" 
+            "password": { 
+                "type": "AzureKeyVaultSecret", 
+                "store": { 
+                    "referenceName": "<Azure Key Vault linked service name>", 
+                    "type": "LinkedServiceReference" 
+                }, 
+                "secretName": "<secretName>" 
             }
         },
         "connectVia": {
@@ -204,7 +204,7 @@ ms.locfileid: "83873638"
 | type | Свойству type источника действия копирования необходимо задать значение **Db2Source** | Да |
 | query | Используйте пользовательский SQL-запрос для чтения данных. Например: `"query": "SELECT * FROM \"DB2ADMIN\".\"Customers\""`. | Нет (если для набора данных задано свойство tableName) |
 
-**Пример**.
+**Пример** .
 
 ```json
 "activities":[
