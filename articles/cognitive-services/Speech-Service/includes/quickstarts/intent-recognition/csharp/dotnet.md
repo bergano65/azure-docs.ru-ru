@@ -7,12 +7,12 @@ ms.topic: include
 ms.author: trbye
 ms.custom: devx-track-csharp
 zone_pivot_groups: programming-languages-set-two
-ms.openlocfilehash: 70dc07fcbfc740ce0ec6b7a841221e3b0af5f7d6
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 83e2c0486c193608739b78665d9dbbc3a52afc9e
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88925983"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92470716"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -53,7 +53,7 @@ ms.locfileid: "88925983"
 
 [!code-csharp[](~/samples-cognitive-services-speech-sdk/quickstart/csharp/dotnet/intent-recognition/helloworld/Program.cs?range=26)]
 
-В этом примере для создания `SpeechConfig` используется метод `FromSubscription()`. Полный список доступных методов см. в статье [SpeechConfig Class](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.speechconfig?view=azure-dotnet) (Класс SpeechConfig).
+В этом примере для создания `SpeechConfig` используется метод `FromSubscription()`. Полный список доступных методов см. в статье [SpeechConfig Class](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.speechconfig?view=azure-dotnet&preserve-view=true) (Класс SpeechConfig).
 
 Пакет SDK для распознавания речи по умолчанию распознает использование языкового стандарта en-us. Дополнительные сведения о выборе исходного языка см. в разделе [Specify source language for speech to text](../../../../how-to-specify-source-language.md) (Указание исходного языка для преобразования речи в текст).
 
@@ -103,9 +103,9 @@ ms.locfileid: "88925983"
 
 Теперь можно приступать к созданию приложения и проверке распознавания речи, используя службу "Речь".
 
-1. **Скомпилируйте код**. В строке меню Visual Studio последовательно выберите **Сборка** > **Собрать решение**.
-2. **Запустите приложение**. В строке меню выберите **Отладка** > **Начать отладку** или нажмите клавишу <kbd>F5</kbd>.
-3. **Начните распознавание**. Вам будет предложено произнести фразу на английском языке. Речь, записанная в виде текста, отправляется в службу "Речь" и выводится в консоли.
+1. **Скомпилируйте код** . В строке меню Visual Studio последовательно выберите **Сборка** > **Собрать решение** .
+2. **Запустите приложение** . В строке меню выберите **Отладка** > **Начать отладку** или нажмите клавишу <kbd>F5</kbd>.
+3. **Начните распознавание** . Вам будет предложено произнести фразу на английском языке. Речь, записанная в виде текста, отправляется в службу "Речь" и выводится в консоли.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

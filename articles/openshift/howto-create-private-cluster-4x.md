@@ -7,13 +7,13 @@ ms.date: 03/12/2020
 author: georgewallace
 ms.author: gwallace
 keywords: aro, openshift, az aro, red hat, cli
-ms.custom: mvc
-ms.openlocfilehash: eedd796e3223c6cbcd0844cc4e814a35172d6c7e
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.custom: mvc, devx-track-azurecli
+ms.openlocfilehash: 3082f30f46a1e450a9ac42958163894c014de66d
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92078533"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92737205"
 ---
 # <a name="create-an-azure-red-hat-openshift-4-private-cluster"></a>Создание частного кластера Azure Red Hat OpenShift 4
 
@@ -81,7 +81,7 @@ ms.locfileid: "92078533"
    CLUSTER=aro-cluster             # the name of your cluster
    ```
 
-1. **Создайте группу ресурсов**.
+1. **Создайте группу ресурсов** .
 
     Группа ресурсов Azure — это логическая группа, в которой развертываются и управляются ресурсы Azure. Во время создания группы ресурсов вам будет предложено указать расположение. В этом расположении сохраняются метаданные группы ресурсов, а также выполняется их работа в Azure, если во время создания ресурса вы не указали другой регион. Создайте группу ресурсов с помощью команды [az group create][az-group-create].
 
@@ -192,7 +192,7 @@ az aro create \
 После выполнения команды `az aro create` создание кластера обычно занимает около 35 минут.
 
 >[!IMPORTANT]
-> Если вы решили указать личный домен, например **foo.example.com**, консоль OpenShift будет доступна по URL-адресу, например `https://console-openshift-console.apps.foo.example.com`, вместо встроенного адреса `https://console-openshift-console.apps.<random>.<location>.aroapp.io` домена.
+> Если вы решили указать личный домен, например **foo.example.com** , консоль OpenShift будет доступна по URL-адресу, например `https://console-openshift-console.apps.foo.example.com`, вместо встроенного адреса `https://console-openshift-console.apps.<random>.<location>.aroapp.io` домена.
 >
 > По умолчанию OpenShift использует самозаверяющие сертификаты для всех маршрутов, созданных в `*.apps.<random>.<location>.aroapp.io`.  Если вы решили использовать пользовательскую службу DNS, то после подключения к кластеру нужно выполнить действия, описанные в документации по OpenShift, чтобы [настроить пользовательский ЦС для контроллера входящего трафика](https://docs.openshift.com/container-platform/4.3/authentication/certificates/replacing-default-ingress-certificate.html) и [пользовательский ЦС для сервера API](https://docs.openshift.com/container-platform/4.3/authentication/certificates/api-server.html).
 
@@ -233,7 +233,7 @@ URL-адрес консоли кластера можно найти, выпол
 
 ## <a name="install-the-openshift-cli"></a>Установка интерфейса командной строки OpenShift
 
-После входа в веб-консоль OpenShift щелкните **?** в правом верхнем углу, а затем выберите **Программы командной строки**. Скачайте выпуск, подходящий вашему компьютеру.
+После входа в веб-консоль OpenShift щелкните **?** в правом верхнем углу, а затем выберите **Программы командной строки** . Скачайте выпуск, подходящий вашему компьютеру.
 
 ![Экран входа в Azure Red Hat OpenShift](media/aro4-download-cli.png)
 

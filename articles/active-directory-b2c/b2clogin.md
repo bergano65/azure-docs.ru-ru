@@ -8,27 +8,25 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 07/17/2020
+ms.date: 10/27/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 53d41b5024b29a8c6c394d65a3ce36f8bb878fc2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b82edf39185067e4c761c7598b159a655dfc370c
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90524986"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92735410"
 ---
 # <a name="set-redirect-urls-to-b2clogincom-for-azure-active-directory-b2c"></a>Установка b2clogin.com в качестве URL-адреса перенаправления для Azure Active Directory B2C
 
-При настройке поставщика удостоверений для регистрации и входа в приложение Azure Active Directory B2C (Azure AD B2C) необходимо указать URL-адрес перенаправления. Больше не следует ссылаться на *Login.microsoftonline.com* в приложениях и API для проверки подлинности пользователей с помощью Azure AD B2C. Вместо этого используйте *b2clogin.com* для всех новых приложений и перенесите существующие приложения из *Login.microsoftonline.com* в *b2clogin.com*.
+При настройке поставщика удостоверений для регистрации и входа в приложение Azure Active Directory B2C (Azure AD B2C) необходимо указать URL-адрес перенаправления. Больше не следует ссылаться на *Login.microsoftonline.com* в приложениях и API для проверки подлинности пользователей с помощью Azure AD B2C. Вместо этого используйте *b2clogin.com* для всех новых приложений и перенесите существующие приложения из *Login.microsoftonline.com* в *b2clogin.com* .
 
 ## <a name="deprecation-of-loginmicrosoftonlinecom"></a>Нерекомендуемость login.microsoftonline.com
 
-На 04 декабря 2019 мы объявили о запланированном прекращении поддержки login.microsoftonline.com в Azure AD B2C **4 декабря 2020**:
+**Обновление за октябрь 2020 г.:** Мы расширяем льготный период для клиентов, которые не соответствуют первоначально объявленной дате устаревания (04 декабря 2020). Прекращение использования login.microsoftonline.com будет выполнено не раньше **14 января 2021.**
 
-[Azure Active Directory B2C не является устаревшим login.microsoftonline.com](https://azure.microsoft.com/updates/b2c-deprecate-msol/)
-
-Прекращение использования login.microsoftonline.com действует для всех клиентов Azure AD B2C на 04 декабря 2020, предоставляя существующие клиенты в один (1) год для миграции на b2clogin.com. Новые клиенты, созданные после 04 декабря 2019, не будут принимать запросы от login.microsoftonline.com. Все функциональные возможности остаются неизменными в конечной точке b2clogin.com.
+**Background** : на 04 декабря 2019 мы первоначально [объявили](https://azure.microsoft.com/updates/b2c-deprecate-msol/) о запланированном прекращении поддержки Login.microsoftonline.com в Azure AD B2C 4 декабря 2020. В этом случае существующие клиенты предоставили один (1) год для миграции на b2clogin.com. Новые клиенты, созданные после 04 декабря 2019, не будут принимать запросы от login.microsoftonline.com. Все функциональные возможности остаются неизменными в конечной точке b2clogin.com.
 
 Нерекомендуемое значение login.microsoftonline.com не влияет на Azure Active Directory клиентов. Это изменение затрагивает только Azure Active Directory B2C клиентов.
 
@@ -47,7 +45,7 @@ ms.locfileid: "90524986"
 > [!IMPORTANT]
 > Необходимо обновить конечные точки, использующие параметр "Policy", а также [URL-адреса перенаправления поставщика удостоверений](#change-identity-provider-redirect-urls).
 
-Некоторые Azure AD B2C клиенты используют общие возможности корпоративных клиентов Azure AD, такие как учетные данные клиента OAuth 2,0. Доступ к этим функциям осуществляется с помощью конечных точек login.microsoftonline.com Azure AD, *которые не содержат параметр политики*. __Эти конечные точки не затрагиваются__.
+Некоторые Azure AD B2C клиенты используют общие возможности корпоративных клиентов Azure AD, такие как учетные данные клиента OAuth 2,0. Доступ к этим функциям осуществляется с помощью конечных точек login.microsoftonline.com Azure AD, *которые не содержат параметр политики* . __Эти конечные точки не затрагиваются__ .
 
 ## <a name="benefits-of-b2clogincom"></a>Преимущества b2clogin.com
 
@@ -55,13 +53,13 @@ ms.locfileid: "90524986"
 
 * Пространство, используемое службами Майкрософт в заголовке файлов cookie, уменьшается.
 * URL-адреса перенаправления больше не должны включать ссылку на Майкрософт.
-* Код на стороне клиента JavaScript поддерживается (в настоящее время находится на [этапе предварительной версии](user-flow-javascript-overview.md)) на настраиваемых страницах. Из-за ограничений безопасности код JavaScript и HTML-элементы формы удаляются из пользовательских страниц, если используется *Login.microsoftonline.com*.
+* Код на стороне клиента JavaScript поддерживается (в настоящее время находится на [этапе предварительной версии](user-flow-javascript-overview.md)) на настраиваемых страницах. Из-за ограничений безопасности код JavaScript и HTML-элементы формы удаляются из пользовательских страниц, если используется *Login.microsoftonline.com* .
 
 ## <a name="overview-of-required-changes"></a>Общие сведения о необходимых изменениях
 
-Существует несколько изменений, которые может потребоваться выполнить для переноса приложений в *b2clogin.com*:
+Существует несколько изменений, которые может потребоваться выполнить для переноса приложений в *b2clogin.com* :
 
-* Измените URL-адрес перенаправления в приложениях поставщика удостоверений, чтобы он ссылался на *b2clogin.com*.
+* Измените URL-адрес перенаправления в приложениях поставщика удостоверений, чтобы он ссылался на *b2clogin.com* .
 * Обновите приложения Azure AD B2C, чтобы использовать *b2clogin.com* в своих потоках пользователей и ссылках на конечные точки маркеров. Это может быть обновление использования библиотеки проверки подлинности, такой как библиотека проверки подлинности Майкрософт (MSAL).
 * Обновите все **Разрешенные источники** , определенные в параметрах CORS для [настройки пользовательского интерфейса](custom-policy-ui-customization.md).
 
@@ -74,7 +72,7 @@ ms.locfileid: "90524986"
 
 ## <a name="change-identity-provider-redirect-urls"></a>Изменение URL-адресов перенаправления поставщика удостоверений
 
-На каждом веб-сайте поставщика удостоверений, в котором вы создали приложение, измените все доверенные URL-адреса, чтобы они перенаправлялись на `your-tenant-name.b2clogin.com` *Login.microsoftonline.com*.
+На каждом веб-сайте поставщика удостоверений, в котором вы создали приложение, измените все доверенные URL-адреса, чтобы они перенаправлялись на `your-tenant-name.b2clogin.com` *Login.microsoftonline.com* .
 
 Для URL-адресов перенаправления b2clogin.com можно использовать два формата. Первый предоставляет преимущества отсутствия "Майкрософт" в URL-адресе, используя идентификатор клиента (GUID) вместо имени домена клиента:
 
@@ -115,7 +113,7 @@ https://contosob2c.b2clogin.com/00000000-0000-0000-0000-000000000000/B2C_1_signu
 
 ### <a name="msalnet-validateauthority-property"></a>MSAL.NET Валидатеаусорити, свойство
 
-Если вы используете [MSAL.NET][msal-dotnet] v2 или более раннюю версию, установите свойство **валидатеаусорити** в значение `false` On Client, чтобы разрешить перенаправление в *b2clogin.com*. Установка этого значения в `false` MSAL.NET v3 и более поздних версий не требуется.
+Если вы используете [MSAL.NET][msal-dotnet] v2 или более раннюю версию, установите свойство **валидатеаусорити** в значение `false` On Client, чтобы разрешить перенаправление в *b2clogin.com* . Установка этого значения в `false` MSAL.NET v3 и более поздних версий не требуется.
 
 ```csharp
 ConfidentialClientApplication client = new ConfidentialClientApplication(...); // Can also be PublicClientApplication
@@ -153,7 +151,7 @@ this.clientApplication = new UserAgentApplication(
 );
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о миграции веб-приложений на основе OWIN в b2clogin.com см. в статье [Миграция веб-API на основе OWIN в b2clogin.com](multiple-token-endpoints.md).
 

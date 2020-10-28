@@ -13,13 +13,13 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.custom: cli,portal
-ms.openlocfilehash: 8924b77cddc9efc4d2b1b8451df38de77b37c09c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: cli,portal, devx-track-azurecli
+ms.openlocfilehash: 07088ebfa5fde4c3c790bd554c1eba8d6844b7d1
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89267366"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92736071"
 ---
 # <a name="find-your-azure-subscription"></a>Поиск подписки Azure
 
@@ -45,7 +45,7 @@ ms.locfileid: "89267366"
 
 [!INCLUDE [List your Azure subscriptions with CLI](./includes/task-list-set-subscription-cli.md)]
 
-### <a name="see-also"></a>См. также
+### <a name="see-also"></a>См. также статью
 
 * [Azure CLI](/cli/azure/ams?view=azure-cli-latest)
 

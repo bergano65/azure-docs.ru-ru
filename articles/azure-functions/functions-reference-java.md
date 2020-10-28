@@ -3,13 +3,13 @@ title: Справочник для разработчика Java по Функц
 description: Информация о разработке функций на языке Java.
 ms.topic: conceptual
 ms.date: 09/14/2018
-ms.custom: devx-track-java
-ms.openlocfilehash: 2dfd00484e84f4b2c31e52392df43bb07a800f73
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.custom: devx-track-java, devx-track-azurecli
+ms.openlocfilehash: fcacfd96ece68424c876b0349ceb49d3eaabb598
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92519628"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92736698"
 ---
 # <a name="azure-functions-java-developer-guide"></a>Руководство разработчика Java по Функциям Azure
 
@@ -45,7 +45,7 @@ ms.locfileid: "92519628"
 
 ### <a name="project-scaffolding"></a>Формирование шаблонов для проекта
 
-Если вы предпочитаете выполнять разработку из командной строки терминала, сформировать шаблоны для проектов функций на основе Java вам проще всего будет с использованием архетипов `Apache Maven`. Архетип Maven для Функций Azure на Java опубликован со следующими идентификаторами _groupId_:_artifactId_: [com.microsoft.azure:azure-functions-archetype](https://search.maven.org/artifact/com.microsoft.azure/azure-functions-archetype/). 
+Если вы предпочитаете выполнять разработку из командной строки терминала, сформировать шаблоны для проектов функций на основе Java вам проще всего будет с использованием архетипов `Apache Maven`. Архетип Maven для Функций Azure на Java опубликован со следующими идентификаторами _groupId_ : _artifactId_ : [com.microsoft.azure:azure-functions-archetype](https://search.maven.org/artifact/com.microsoft.azure/azure-functions-archetype/). 
 
 Следующая команда создает новый проект функции Java на основе этого архетипа:
 
@@ -143,7 +143,7 @@ public class Function {
 | Версия службы "Функции" | Версии Java (Windows) | Версии Java (Linux) |
 | ----- | ----- | --- |
 | 3.x | 11 <br/>8 | 11 <br/>8 |
-| 2.x | 8 | н/д |
+| 2.x | 8 | Н/Д |
 
 Если для развертывания не указана версия Java, Maven архетипа по умолчанию имеет значение Java 8 во время развертывания в Azure.
 

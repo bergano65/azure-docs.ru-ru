@@ -1,23 +1,23 @@
 ---
 title: Мониторинг делегированных ресурсов в масштабе
 description: Узнайте, как эффективно использовать журналы Azure Monitor в масштабируемом способе между клиентами клиентов, которыми вы управляете.
-ms.date: 08/12/2020
+ms.date: 10/26/2020
 ms.topic: how-to
-ms.openlocfilehash: fdd0147737da47613d6b7ef1bf6005e4c03de0dd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3e5c98b3b62a8fbc953a29cf51ac527e5de21110
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88163294"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92735847"
 ---
 # <a name="monitor-delegated-resources-at-scale"></a>Мониторинг делегированных ресурсов в масштабе
 
 Как поставщик услуг, вы могли подключить несколько клиентов клиента к [Azure лигхсаусе](../overview.md). Azure Lighthouse позволяет поставщикам служб выполнять операции одновременно в нескольких клиентах, что делает задачи управления более эффективными.
 
-В этом разделе показано, как использовать [журналы Azure Monitor](../../azure-monitor/platform/data-platform-logs.md) в масштабируемом способе между клиентами клиентов, которыми вы управляете.
+В этом разделе показано, как использовать [журналы Azure Monitor](../../azure-monitor/platform/data-platform-logs.md) в масштабируемом способе между клиентами клиентов, которыми вы управляете. Хотя в этом разделе мы будем называть поставщиков услуг и клиентов, это руководство также применяется к [предприятиям, использующим Azure лигхсаусе для управления несколькими клиентами](../concepts/enterprise.md).
 
-> [!TIP]
-> Хотя в этом разделе мы будем называть поставщиков услуг и клиентов, это руководство также применяется к [предприятиям, использующим Azure лигхсаусе для управления несколькими клиентами](../concepts/enterprise.md).
+> [!NOTE]
+> Убедитесь, что пользователям в ваших управляющих клиентах были предоставлены [необходимые роли для управления рабочими областями log Analytics](../../azure-monitor/platform/manage-access.md#manage-access-using-azure-permissions) в делегированных подписках клиента.
 
 ## <a name="create-log-analytics-workspaces"></a>Создание рабочих областей Log Analytics
 
@@ -26,6 +26,9 @@ ms.locfileid: "88163294"
 Рекомендуется создавать эти рабочие области непосредственно в клиентских клиентах. Таким образом их данные остаются в своих клиентах, а не экспортируются в. Это также позволяет осуществлять централизованный мониторинг любых ресурсов или служб, поддерживаемых Log Analytics, обеспечивая большую гибкость при мониторинге типов данных.
 
 Рабочую область Log Analytics можно создать с помощью [портал Azure](../../azure-monitor/learn/quick-create-workspace.md), с помощью [Azure CLI](../../azure-monitor/learn/quick-create-workspace-cli.md)или с помощью [Azure PowerShell](../../azure-monitor/platform/powershell-workspace-configuration.md).
+
+> [!IMPORTANT]
+> Даже если все рабочие области созданы в клиенте клиента, поставщик ресурсов Microsoft. Insights также должен быть зарегистрирован в подписке в управляющем клиенте.
 
 ## <a name="deploy-policies-that-log-data"></a>Развертывание политик, которые заменяют данные журнала
 
@@ -39,7 +42,7 @@ ms.locfileid: "88163294"
 
 После развертывания политик данные будут регистрироваться в Log Analytics рабочих областях, созданных в каждом клиенте клиента. Для получения подробных сведений обо всех управляемых клиентах можно использовать такие средства, как [Azure Monitor книги](../../azure-monitor/platform/workbooks-overview.md) , для сбора и анализа информации из нескольких источников данных. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Изучите [образец книги, созданной](https://github.com/scautomation/Azure-Automation-Update-Management-Workbooks)с помощью MVP, которая отслеживает отчеты о соответствии требованиям, [запросив журналы Управление обновлениями](../../automation/update-management/update-mgmt-query-logs.md) в нескольких log Analytics рабочих областях. 
 - Дополнительные сведения об [Azure Monitor](../../azure-monitor/index.yml).

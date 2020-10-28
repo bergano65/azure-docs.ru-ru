@@ -6,12 +6,12 @@ ms.date: 04/04/2020
 ms.topic: include
 ms.author: trbye
 zone_pivot_groups: programming-languages-set-two
-ms.openlocfilehash: 26b3b3bd061d3ec7c3efd5c613c5beec33867022
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 8bcc3e41f87570822f48a111fe98d1fdaf72679f
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87298728"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92470989"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -48,7 +48,7 @@ ms.locfileid: "87298728"
 
 [!code-java[](~/samples-cognitive-services-speech-sdk/quickstart/java/jre/intent-recognition/src/speechsdk/quickstart/Main.java?range=27)]
 
-В этом примере для создания `SpeechConfig` используется метод `FromSubscription()`. Полный список доступных методов см. в статье [SpeechConfig Class](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.speechconfig?view=azure-dotnet) (Класс SpeechConfig).
+В этом примере для создания `SpeechConfig` используется метод `FromSubscription()`. Полный список доступных методов см. в статье [SpeechConfig Class](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.speechconfig?view=azure-dotnet&preserve-view=true) (Класс SpeechConfig).
 
 Пакет SDK для распознавания речи по умолчанию распознает использование языкового стандарта en-us. Дополнительные сведения о выборе исходного языка см. в разделе [Specify source language for speech to text](../../../../how-to-specify-source-language.md) (Указание исходного языка для преобразования речи в текст).
 
@@ -104,7 +104,7 @@ ms.locfileid: "87298728"
 
 ## <a name="build-and-run-your-app"></a>Создание и запуск приложения
 
-Нажмите клавишу <kbd>F11</kbd> или выберите **Запустить** > **Отладка**.
+Нажмите клавишу <kbd>F11</kbd> или выберите **Запустить** > **Отладка** .
 Слова, произносимые в микрофон, в течение следующих 15 секунд будут распознаны и записаны в окне консоли.
 
 ## <a name="next-steps"></a>Дальнейшие действия

@@ -8,12 +8,13 @@ ms.author: jehollan
 ms.custom:
 - references_regions
 - fasttrack-edit
-ms.openlocfilehash: aaf5cb70e3099d84a54a22fa291f8f3ab9e0daa6
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+- devx-track-azurecli
+ms.openlocfilehash: 7efcff5709995898a6ec950dfea6450f7e0dd48d
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92490753"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92736798"
 ---
 # <a name="azure-functions-premium-plan"></a>План функций Azure Premium
 
@@ -47,14 +48,14 @@ az functionapp plan create --resource-group <RESOURCE_GROUP> --name <PLAN_NAME> 
 > [!NOTE]
 > Каждый план Premium будет постоянно иметь по крайней мере один активный (оплачивается) экземпляр.
 
-Вы можете настроить количество всегда готовых экземпляров в портал Azure, выбрав **приложение-функция**, перейдите на вкладку **функции платформы** и выберите параметры **Scale out** . В окне Изменение приложения функции всегда готовые экземпляры относятся только к этому приложению.
+Вы можете настроить количество всегда готовых экземпляров в портал Azure, выбрав **приложение-функция** , перейдите на вкладку **функции платформы** и выберите параметры **Scale out** . В окне Изменение приложения функции всегда готовые экземпляры относятся только к этому приложению.
 
 ![Параметры эластичного масштабирования](./media/functions-premium-plan/scale-out.png)
 
 Вы также можете настроить для приложения всегда готовые экземпляры с Azure CLI.
 
 ```azurecli-interactive
-az resource update -g <resource_group> -n <function_app_name>/config/web --set properties.minimumElasticInstanceCount=<desired_always_ready_count> --resource-type Microsoft.Web/sites 
+az resource update -g <resource_group> -n <function_app_name>/config/web --set properties.minimumElasticInstanceCount=<desired_always_ready_count> --resource-type Microsoft.Web/sites
 ```
 
 #### <a name="pre-warmed-instances"></a>Предварительно заданный экземпляр
@@ -68,7 +69,7 @@ az resource update -g <resource_group> -n <function_app_name>/config/web --set p
 Число предварительно заданных экземпляров для приложения можно изменить с помощью Azure CLI.
 
 ```azurecli-interactive
-az resource update -g <resource_group> -n <function_app_name>/config/web --set properties.preWarmedInstanceCount=<desired_prewarmed_count> --resource-type Microsoft.Web/sites 
+az resource update -g <resource_group> -n <function_app_name>/config/web --set properties.preWarmedInstanceCount=<desired_prewarmed_count> --resource-type Microsoft.Web/sites
 ```
 
 #### <a name="maximum-instances-for-an-app"></a>Максимальное число экземпляров для приложения
@@ -99,7 +100,7 @@ az resource update -g <resource_group> -n <function_app_name>/config/web --set p
 
 Если приложению требуются экземпляры за пределами всегда готовых экземпляров, можно продолжить масштабирование до тех пор, пока количество экземпляров не достигнет максимального количества пакетов.  Счета выставляются за экземпляры, которые выходят за пределы размера вашего плана, только когда они выполняются и выделяются вам в течение секунды.  Мы будем использовать все усилия при масштабировании приложения до заданного максимального предела.
 
-Можно настроить размер и максимум для плана в портал Azure, выбрав параметры **Scale out** в плане или приложение-функцию, развернутое в этом плане (в разделе **функции платформы**).
+Можно настроить размер и максимум для плана в портал Azure, выбрав параметры **Scale out** в плане или приложение-функцию, развернутое в этом плане (в разделе **функции платформы** ).
 
 Кроме того, можно увеличить максимальное число пакетов от Azure CLI:
 
@@ -122,9 +123,9 @@ az functionapp plan update -g <resource_group> -n <premium_plan_name> --min-inst
 
 ### <a name="available-instance-skus"></a>Номера SKU доступных экземпляров
 
-При создании или масштабировании плана можно выбрать один из трех размеров экземпляра.  Вам будет выставлен счет за общее количество ядер и подготовленной памяти в секунду, когда каждый экземпляр выделяется вам.  Приложение может автоматически масштабироваться на несколько экземпляров по мере необходимости.  
+При создании или масштабировании плана можно выбрать один из трех размеров экземпляра.  Вам будет выставлен счет за общее количество ядер и подготовленной памяти в секунду, когда каждый экземпляр выделяется вам.  Приложение может автоматически масштабироваться на несколько экземпляров по мере необходимости.
 
-|SKU|Ядра|Память|Память|
+|Номер SKU|Ядра|Память|Память|
 |--|--|--|--|
 |EP1|1|3,5 ГБ|Гбайт|
 |EP2|2|7 ГБ|Гбайт|
@@ -147,7 +148,7 @@ az functionapp plan update -g <resource_group> -n <premium_plan_name> --min-inst
 |Центральная Австралия 2| 100 | Недоступно |
 |Восточная Австралия| 100 | 20 |
 |Юго-Восточная часть Австралии | 100 | 20 |
-|Brazil South| 100 | 20 |
+|Южная Бразилия| 100 | 20 |
 |Центральная Канада| 100 | 20 |
 |Центральная часть США| 100 | 20 |
 |Восточный Китай 2| 100 | 20 |

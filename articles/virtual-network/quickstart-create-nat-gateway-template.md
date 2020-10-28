@@ -15,13 +15,13 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/09/2020
 ms.author: allensu
-ms.custom: subject-armqs
-ms.openlocfilehash: fc4804070e0fa4ca6e9e54dcf6e04aafcc17f91a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: subject-armqs, devx-track-azurecli
+ms.openlocfilehash: 24577fd110ce944e12750a7380192d1a2d3cb4cd
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88053904"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92736973"
 ---
 # <a name="create-a-nat-gateway---resource-manager-template"></a>Создание шлюза NAT с помощью шаблона Resource Manager
 
@@ -109,9 +109,9 @@ New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateUri
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 
-2. В области слева выберите **Группы ресурсов**.
+2. В области слева выберите **Группы ресурсов** .
 
-3. Выберите группу ресурсов, созданную при работе с предыдущим разделом. Имя группы ресурсов по умолчанию — **myResourceGroupNAT**.
+3. Выберите группу ресурсов, созданную при работе с предыдущим разделом. Имя группы ресурсов по умолчанию — **myResourceGroupNAT** .
 
 4. Убедитесь, что в группе ресурсов созданы следующие ресурсы:
 
@@ -138,7 +138,7 @@ Remove-AzResourceGroup -Name myResourceGroupNAT
 
 **Портал Azure**
 
-Удалите ставшие ненужными группу ресурсов, шлюз NAT и все связанные ресурсы. Выберите группу ресурсов **myResourceGroupNAT**, которая содержит шлюз NAT, а затем выберите **Удалить**.
+Удалите ставшие ненужными группу ресурсов, шлюз NAT и все связанные ресурсы. Выберите группу ресурсов **myResourceGroupNAT** , которая содержит шлюз NAT, а затем выберите **Удалить** .
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

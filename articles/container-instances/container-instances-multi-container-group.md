@@ -3,13 +3,13 @@ title: Руководство. Развертывание многоконтей
 description: Из этого руководства вы узнаете, как развернуть группу контейнеров с несколькими контейнерами в службе "Экземпляры контейнеров Azure" с помощью шаблона Azure Resource Manager и Azure CLI.
 ms.topic: article
 ms.date: 07/02/2020
-ms.custom: mvc
-ms.openlocfilehash: cb085112c6e6458d897f52f19988e6301d4ae6e8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: mvc, devx-track-azurecli
+ms.openlocfilehash: 5238d16af31e30a4ae3a7d4cc01fbbd93373cfeb
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86259578"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92737589"
 ---
 # <a name="tutorial-deploy-a-multi-container-group-using-a-resource-manager-template"></a>Руководство по развертыванию многоконтейнерной группы с использованием шаблона Resource Manager
 

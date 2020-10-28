@@ -9,13 +9,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 10/22/2020
 ms.topic: conceptual
-ms.custom: troubleshooting, devx-track-python
-ms.openlocfilehash: d31dffe6ee4190e72f413444621eb9f10791d4fc
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.custom: troubleshooting, devx-track-python, contperfq2
+ms.openlocfilehash: ce32871620cc0a471e56a5b65191834d7c23b88d
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92370276"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92735719"
 ---
 # <a name="debug-and-troubleshoot-machine-learning-pipelines"></a>Отладка и устранение неполадок в конвейерах машинного обучения
 
@@ -254,7 +254,7 @@ logger.error("I am an OpenCensus error statement with custom dimensions", {'step
 
 В некоторых случаях может потребоваться интерактивно отлаживать код Python, используемый в конвейере машинного обучения. С помощью Visual Studio Code (VS Code) и дебугпи можно присоединяться к коду, как он выполняется в среде обучения. Дополнительные сведения см. в [разделе Интерактивная Отладка в VS Code Guide](how-to-debug-visual-studio-code.md#debug-and-troubleshoot-machine-learning-pipelines).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Полный учебник по использованию см `ParallelRunStep` . в разделе [учебник. создание конвейера машинное обучение Azure для пакетной оценки](tutorial-pipeline-batch-scoring-classification.md).
 

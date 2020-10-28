@@ -5,16 +5,16 @@ services: synapse-analytics
 author: euangMS
 ms.service: synapse-analytics
 ms.topic: conceptual
-ms.date: 07/22/2020
+ms.date: 10/16/2020
 ms.author: euang
 ms.reviewer: jrasnick
 ms.subservice: spark
-ms.openlocfilehash: 02f627c9f606ced7e1b0d991e5053dab17050292
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 31201bb7168910915ee33d4361bf944e7669db66
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91826739"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92737986"
 ---
 # <a name="manage-libraries-for-apache-spark-in-azure-synapse-analytics"></a>Управление библиотеками для Apache Spark в Azure синапсе Analytics
 
@@ -58,7 +58,7 @@ alabaster==0.7.10
    
 3. Отправьте файл конфигурации среды с помощью средства выбора файлов в разделе " **пакеты** " страницы. 
    
-![Добавление библиотек Python во время создания пула](./media/apache-spark-azure-portal-add-libraries/apache-spark-azure-portal-add-library-python.png "Добавление библиотек Python")
+    ![Добавление библиотек Python во время создания пула](./media/apache-spark-azure-portal-add-libraries/apache-spark-azure-portal-add-library-python.png "Добавление библиотек Python")
  
 
 #### <a name="install-packages-from-the-synapse-workspace"></a>Установка пакетов из рабочей области синапсе
@@ -68,11 +68,11 @@ alabaster==0.7.10
    
 2.  Запустите рабочую область Azure синапсе Analytics из портал Azure.
 
-3.  Выберите **Управление** на главной панели навигации, а затем выберите **Пулы Apache Spark**.
+3.  Выберите **Управление** на главной панели навигации, а затем выберите **Пулы Apache Spark** .
    
 4. Выберите один пул Spark и отправьте файл конфигурации среды с помощью средства выбора файлов в разделе "  **пакеты** " страницы.
 
-![Добавление библиотек Python в синапсе](./media/apache-spark-azure-portal-add-libraries/apache-spark-azure-portal-update.png "Добавление библиотек Python")
+    ![Добавление библиотек Python в синапсе](./media/apache-spark-azure-portal-add-libraries/apache-spark-azure-portal-update.png)
    
 #### <a name="install-packages-from-the-azure-portal"></a>Установка пакетов из портал Azure
 Чтобы установить библиотеку в пул Spark (Предварительная версия) непосредственно из портал Azure:
@@ -85,7 +85,7 @@ alabaster==0.7.10
 
  4. Отправьте файл конфигурации среды с помощью средства выбора файлов.
 
-![Снимок экрана, посвященный кнопке "отправить файл конфигурации среды".](./media/apache-spark-azure-portal-add-libraries/apache-spark-add-library-azure.png "Добавление библиотек Python")
+    ![Снимок экрана, посвященный кнопке "отправить файл конфигурации среды".](./media/apache-spark-azure-portal-add-libraries/apache-spark-add-library-azure.png "Добавление библиотек Python")
 
 ### <a name="verify-installed-libraries"></a>Проверка установленных библиотек
 
@@ -106,13 +106,13 @@ for i in pip.get_installed_distributions(local_only=True):
 
 3. Перейдите к разделу " **пакеты** " и передайте новый файл конфигурации среды.
    
-4. После сохранения изменений необходимо будет завершить активные сеансы и разрешить перезапуск пула. При необходимости можно принудительно завершить активные сеансы, установив флажок для **принудительного применения новых параметров**.
+4. После сохранения изменений необходимо будет завершить активные сеансы и разрешить перезапуск пула. При необходимости можно принудительно завершить активные сеансы, установив флажок для **принудительного применения новых параметров** .
 
-![Добавление библиотек Python](./media/apache-spark-azure-portal-add-libraries/update-libraries.png "Добавление библиотек Python")
+    ![Добавление библиотек Python](./media/apache-spark-azure-portal-add-libraries/update-libraries.png "Добавление библиотек Python")
    
 
 > [!IMPORTANT]
-> Выбрав параметр для **принудительного создания новых параметров**, вы завершите все текущие сеансы для выбранного пула Spark. После завершения сеансов необходимо будет дождаться перезапуска пула. 
+> Выбрав параметр для **принудительного создания новых параметров** , вы завершите все текущие сеансы для выбранного пула Spark. После завершения сеансов необходимо будет дождаться перезапуска пула. 
 >
 > Если этот параметр не установлен, необходимо дождаться завершения текущего сеанса Spark или завершить его вручную. После завершения сеанса необходимо разрешить перезапуск пула. 
 
@@ -131,5 +131,5 @@ abfss://<file_system>@<account_name>.dfs.core.windows.net/synapse/workspaces/<wo
 >[!IMPORTANT]
 >Пользовательские пакеты можно добавлять или изменять между сеансами. Тем не менее для просмотра обновленного пакета необходимо подождать, пока пул и сеанс перезапускаются.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Просмотр библиотек по умолчанию: [Поддержка версий Apache Spark](apache-spark-version-support.md)

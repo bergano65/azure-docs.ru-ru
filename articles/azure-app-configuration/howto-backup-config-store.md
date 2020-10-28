@@ -6,16 +6,16 @@ author: avanigupta
 ms.assetid: ''
 ms.service: azure-app-configuration
 ms.devlang: csharp
-ms.custom: devx-track-dotnet
+ms.custom: devx-track-dotnet, devx-track-azurecli
 ms.topic: how-to
 ms.date: 04/27/2020
 ms.author: avgupta
-ms.openlocfilehash: 3c4bdf1268aea06d7b67776a4022c608549994e7
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: b48adfdfda4b3e120b2246e67a70000d25c25f3a
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92074861"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92737083"
 ---
 # <a name="back-up-app-configuration-stores-automatically"></a>Автоматическое резервное копирование хранилищ конфигурации приложений
 
@@ -62,7 +62,7 @@ az group create --name $resourceGroupName --location westus
 ## <a name="create-app-configuration-stores"></a>Создание хранилищ конфигурации приложений
 
 Создайте хранилище конфигурации основного и дополнительного приложений в разных регионах.
-Замените  `<primary_appconfig_name>` и `<secondary_appconfig_name>` уникальными именами для хранилищ конфигураций. Имя каждого магазина должно быть уникальным, так как оно используется в качестве DNS-имени.
+Замените `<primary_appconfig_name>` и `<secondary_appconfig_name>` уникальными именами для хранилищ конфигураций. Имя каждого магазина должно быть уникальным, так как оно используется в качестве DNS-имени.
 
 ```azurecli-interactive
 primaryAppConfigName="<primary_appconfig_name>"
@@ -213,7 +213,7 @@ az role assignment create \
 az appconfig kv set --name $primaryAppConfigName --key Foo --value Bar --yes
 ```
 
-Вы активировали событие. Через некоторое время в сетке событий будет отправлено уведомление о событии в очередь. *После следующего запланированного выполнения функции*просмотрите параметры конфигурации в дополнительном хранилище, чтобы узнать, содержит ли он обновленное значение ключа из основного хранилища.
+Вы активировали событие. Через некоторое время в сетке событий будет отправлено уведомление о событии в очередь. *После следующего запланированного выполнения функции* просмотрите параметры конфигурации в дополнительном хранилище, чтобы узнать, содержит ли он обновленное значение ключа из основного хранилища.
 
 > [!NOTE]
 > Вы можете [активировать функцию вручную](../azure-functions/functions-manually-run-non-http.md) во время тестирования и устранения неполадок, не дожидаясь запланированного триггера таймера.

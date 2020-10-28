@@ -3,13 +3,13 @@ title: Создание кластера Linux Service Fabric в Azure
 description: Узнайте, как развернуть кластер Service Fabric на платформе Linux в существующей виртуальной сети с помощью Azure CLI.
 ms.topic: conceptual
 ms.date: 02/14/2019
-ms.custom: mvc
-ms.openlocfilehash: c4b71328ce59284f8870407c9492d24afe9acd8a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: mvc, devx-track-azurecli
+ms.openlocfilehash: 52eba2e5780b1a66f3884a764631908335372273
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88586926"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92738956"
 ---
 # <a name="deploy-a-linux-service-fabric-cluster-into-an-azure-virtual-network"></a>Развертывание кластера Service Fabric на платформе Linux в виртуальной сети Azure
 
@@ -75,7 +75,7 @@ ms.locfileid: "88586926"
 
 ### <a name="virtual-network-and-subnet"></a>Виртуальная сеть и подсеть
 
-В параметрах шаблона объявляются имена виртуальной сети и подсети.  Адресные пространства виртуальной сети и подсети также объявляются в параметрах шаблона и настраиваются в ресурсе **Microsoft.Network/virtualNetworks**:
+В параметрах шаблона объявляются имена виртуальной сети и подсети.  Адресные пространства виртуальной сети и подсети также объявляются в параметрах шаблона и настраиваются в ресурсе **Microsoft.Network/virtualNetworks** :
 
 * адресное пространство виртуальной сети: 10.0.0.0/16;
 * адресное пространство подсети Service Fabric: 10.0.2.0/24.

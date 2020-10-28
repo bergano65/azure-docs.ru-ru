@@ -7,14 +7,14 @@ ms.service: cache
 ms.topic: conceptual
 ms.custom: subject-armqs
 ms.date: 08/18/2020
-ms.openlocfilehash: fdfa8c767757aa17983a28d0d586698551326fe4
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 8bd9a45ec7c43d9338dec184afd784d2b163c410
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92545333"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92735965"
 ---
-# <a name="create-an-azure-cache-for-redis-using-an-arm-template"></a>Создание кэша Azure для Redis с помощью шаблона ARM
+# <a name="quickstart-create-an-azure-cache-for-redis-using-an-arm-template"></a>Краткое руководство. Создание кэша Azure для Redis с помощью шаблона ARM
 
 Узнайте, как создать шаблон Azure Resource Manager (шаблон ARM), который развертывает кэш Azure для Redis. Кэш можно использовать с существующей учетной записи хранения для размещения данных диагностики. Вы узнаете, как определить развертываемые ресурсы и параметры, указываемые при развертывании. Этот шаблон можно использовать для собственных развертываний или настроить его в соответствии с вашими требованиями. В настоящее время параметры диагностики являются общими для всех кэшей в одном регионе подписки. Обновление одного кэша в регионе влияет на все кэши в нем.
 
