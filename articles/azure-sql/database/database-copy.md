@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sashan
 ms.reviewer: ''
 ms.date: 07/29/2020
-ms.openlocfilehash: 3aaa666ac6b7ddffcf5e0d2f5b62d26bd0f96004
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: 99eea73add47b6498833de7bfd7728feb4c5c4ab
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92516211"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92671570"
 ---
 # <a name="copy-a-transactionally-consistent-copy-of-a-database-in-azure-sql-database"></a>Копирование транзакционно согласованной копии базы данных в базе данных SQL Azure
 
@@ -43,7 +43,7 @@ ms.locfileid: "92516211"
 
 ## <a name="copy-using-the-azure-portal"></a>Копирование с помощью портала Azure
 
-Чтобы скопировать базу данных с помощью портала Azure, откройте страницу базы данных и щелкните **Копировать**.
+Чтобы скопировать базу данных с помощью портала Azure, откройте страницу базы данных и щелкните **Копировать** .
 
    ![Копирование базы данных](./media/database-copy/database-copy.png)
 
@@ -67,7 +67,7 @@ New-AzSqlDatabaseCopy -ResourceGroupName "<resourceGroup>" -ServerName $sourcese
 
 Полный пример скрипта PowerShell см. в разделе [копирование базы данных на новый сервер](scripts/copy-database-to-new-server-powershell.md).
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 ```azurecli
 az sql db copy --dest-name "CopyOfMySampleDatabase" --dest-resource-group "myResourceGroup" --dest-server $targetserver `
@@ -82,7 +82,7 @@ az sql db copy --dest-name "CopyOfMySampleDatabase" --dest-resource-group "myRes
 
 Войдите в базу данных master с помощью имени входа администратора сервера или имени входа, создавшего базу данных, которую необходимо скопировать. Для успешности копирования базы данных имена входа, не являющиеся администраторами сервера, должны быть членами `dbmanager` роли. Дополнительные сведения об именах для входа и подключении к серверу см. в статье [Проверка подлинности и авторизация в базе данных SQL: предоставление доступа](logins-create-manage.md).
 
-Начало копирования базы данных источника с помощью [создания базы данных... В качестве копии](https://docs.microsoft.com/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-current&preserve-view=true#copy-a-database) инструкции. Инструкция T-SQL продолжит выполнение до тех пор, пока не будет завершена операция копирования базы данных.
+Начало копирования базы данных источника с помощью [создания базы данных... В качестве копии](/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-current&preserve-view=true#copy-a-database) инструкции. Инструкция T-SQL продолжит выполнение до тех пор, пока не будет завершена операция копирования базы данных.
 
 > [!NOTE]
 > Завершение выполнения инструкции T-SQL не приводит к завершению операции копирования базы данных. Чтобы завершить операцию, удалите целевую базу данных.
@@ -143,13 +143,13 @@ CREATE DATABASE Database2 AS COPY OF server1.Database1;
 
 ## <a name="monitor-the-progress-of-the-copying-operation"></a>Отслеживание хода операции копирования
 
-Отслеживайте процесс копирования, запрашивая представления [sys. databases](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-databases-transact-sql), [sys.dm_database_copies](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-database-copies-azure-sql-database)и [sys.dm_operation_status](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-operation-status-azure-sql-database) . Во время копирования в столбце **state_desc** представления sys. databases для новой базы данных задается значение **копирование**.
+Отслеживайте процесс копирования, запрашивая представления [sys. databases](/sql/relational-databases/system-catalog-views/sys-databases-transact-sql), [sys.dm_database_copies](/sql/relational-databases/system-dynamic-management-views/sys-dm-database-copies-azure-sql-database)и [sys.dm_operation_status](/sql/relational-databases/system-dynamic-management-views/sys-dm-operation-status-azure-sql-database) . Во время копирования в столбце **state_desc** представления sys. databases для новой базы данных задается значение **копирование** .
 
-* В случае сбоя копирования в столбце **state_desc** представления sys. databases для новой базы данных устанавливается значение **SUSPECT**. Выполните инструкцию DROP для новой базы данных и повторите попытку позднее.
-* Если копирование выполняется, столбец **state_desc** в представлении sys. databases для новой базы данных устанавливается в состояние «в **сети**». Это означает, что копирование завершено и новая база данных является обычной базой данных, которую можно изменять независимо от исходной.
+* В случае сбоя копирования в столбце **state_desc** представления sys. databases для новой базы данных устанавливается значение **SUSPECT** . Выполните инструкцию DROP для новой базы данных и повторите попытку позднее.
+* Если копирование выполняется, столбец **state_desc** в представлении sys. databases для новой базы данных устанавливается в состояние «в **сети** ». Это означает, что копирование завершено и новая база данных является обычной базой данных, которую можно изменять независимо от исходной.
 
 > [!NOTE]
-> Чтобы отменить копирование до его завершения, выполните в новой базе данных инструкцию [DROP DATABASE](https://docs.microsoft.com/sql/t-sql/statements/drop-database-transact-sql).
+> Чтобы отменить копирование до его завершения, выполните в новой базе данных инструкцию [DROP DATABASE](/sql/t-sql/statements/drop-database-transact-sql).
 
 > [!IMPORTANT]
 > Если необходимо создать копию с целью существенно меньшей цели обслуживания, чем у источника, то Целевая база данных может не иметь достаточных ресурсов для завершения процесса заполнения, и это может привести к сбою в области Opera. В этом сценарии для создания копии на другом сервере и (или) другом регионе используется запрос географического восстановления. Дополнительные сведения см. в статье [Восстановление базы данных SQL Azure с помощью резервных копий](recovery-using-backups.md#geo-restore) .
@@ -182,7 +182,7 @@ CREATE DATABASE Database2 AS COPY OF server1.Database1;
 
 ## <a name="resolve-logins"></a>Разрешение имен для входа
 
-После того, как новая база данных будет подключена к сети на целевом сервере, используйте инструкцию [ALTER USER](https://docs.microsoft.com/sql/t-sql/statements/alter-user-transact-sql?view=azuresqldb-current&preserve-view=true) для повторного сопоставления пользователей из новой базы данных с именами входа на целевом сервере. Сведения о разрешении потерянных пользователей см. в разделе [Диагностика пользователей, утративших связь с учетной записью](https://docs.microsoft.com/sql/sql-server/failover-clusters/troubleshoot-orphaned-users-sql-server). См. также [руководство по управлению безопасностью базы данных SQL Azure после аварийного восстановления](active-geo-replication-security-configure.md).
+После того, как новая база данных будет подключена к сети на целевом сервере, используйте инструкцию [ALTER USER](/sql/t-sql/statements/alter-user-transact-sql?view=azuresqldb-current&preserve-view=true) для повторного сопоставления пользователей из новой базы данных с именами входа на целевом сервере. Сведения о разрешении потерянных пользователей см. в разделе [Диагностика пользователей, утративших связь с учетной записью](/sql/sql-server/failover-clusters/troubleshoot-orphaned-users-sql-server). См. также [руководство по управлению безопасностью базы данных SQL Azure после аварийного восстановления](active-geo-replication-security-configure.md).
 
 Все пользователи в новой базе данных получают такие же разрешения, как и в исходной базе данных. Пользователь, инициировавший копирование базы данных, станет владельцем новой базы данных. После завершения копирования и повторного сопоставления других пользователей только владелец базы данных может войти в новую базу данных.
 

@@ -9,12 +9,12 @@ author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: sstein, vanto
 ms.date: 07/06/2020
-ms.openlocfilehash: a3ceb78a85546e5e75c4c484f131b67ff7fc9249
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: eecd4220cdda471807e4b84261d7f76c31b9ba70
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91824145"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92672340"
 ---
 # <a name="azure-sql-connectivity-settings"></a>Параметры подключения к SQL Azure
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -22,7 +22,7 @@ ms.locfileid: "91824145"
 В этой статье описываются параметры, управляющие подключением к серверу для базы данных SQL Azure и Azure синапсе Analytics. Эти параметры применяются ко **всем** базам данных SQL и Azure синапсе, связанным с сервером.
 
 > [!IMPORTANT]
-> Эта статья *не* относится к **управляемому экземпляру базы данных SQL Azure**.
+> Эта статья *не* относится к **управляемому экземпляру базы данных SQL Azure** .
 
 Параметры подключения доступны на экране **брандмауэры и виртуальные сети** , как показано на следующем снимке экрана:
 
@@ -33,14 +33,14 @@ ms.locfileid: "91824145"
 
 ## <a name="deny-public-network-access"></a>Запрет доступа к общедоступной сети
 
-Если параметр **запрета доступа к общедоступной сети** имеет значение **Да**, разрешены только подключения через частные конечные точки. Если для этого параметра задано значение **нет** (по умолчанию), клиенты могут подключаться с помощью общедоступных конечных точек (правила брандмауэра на основе IP-адресов, правила брандмауэра на основе виртуальной сети) или частных конечных точек (с использованием частной ссылки), как описано в статье [Обзор доступа к сети](network-access-controls-overview.md). 
+Если параметр **запрета доступа к общедоступной сети** имеет значение **Да** , разрешены только подключения через частные конечные точки. Если для этого параметра задано значение **нет** (по умолчанию), клиенты могут подключаться с помощью общедоступных конечных точек (правила брандмауэра на основе IP-адресов, правила брандмауэра на основе виртуальной сети) или частных конечных точек (с использованием частной ссылки), как описано в статье [Обзор доступа к сети](network-access-controls-overview.md). 
 
  ![Снимок экрана подключения с запретом доступа к общедоступной сети][2]
 
 Любая попытка задать для параметра **запретить общий доступ к сети** значение **Да** без каких бы то ни было существующих частных конечных точек на логическом сервере завершится с сообщением об ошибке следующего вида:  
 
 > [!NOTE]
-> Чтобы определить правила брандмауэра виртуальной сети на логическом сервере, для которого уже настроены частные конечные точки, установите для параметра **запретить доступ к общедоступной сети** значение **нет**.
+> Чтобы определить правила брандмауэра виртуальной сети на логическом сервере, для которого уже настроены частные конечные точки, установите для параметра **запретить доступ к общедоступной сети** значение **нет** .
 
 ```output
 Error 42102
@@ -48,7 +48,7 @@ Unable to set Deny Public Network Access to Yes since there is no private endpoi
 Please set up private endpoints and retry the operation. 
 ```
 
-Если параметр **запрета доступа к общедоступной сети** имеет значение **Да**, разрешены только подключения через частные конечные точки, а все подключения через общедоступные конечные точки отклоняются с сообщением об ошибке следующего вида:  
+Если параметр **запрета доступа к общедоступной сети** имеет значение **Да** , разрешены только подключения через частные конечные точки, а все подключения через общедоступные конечные точки отклоняются с сообщением об ошибке следующего вида:  
 
 ```output
 Error 47073
@@ -57,7 +57,7 @@ The public network interface on this server is not accessible.
 To connect to this server, use the Private Endpoint from inside your virtual network.
 ```
 
-Если параметр **запретить доступ к общедоступной сети** имеет значение **Да**, любые попытки добавления или обновления правил брандмауэра будут отклонены с сообщением об ошибке следующего вида:
+Если параметр **запретить доступ к общедоступной сети** имеет значение **Да** , любые попытки добавления или обновления правил брандмауэра будут отклонены с сообщением об ошибке следующего вида:
 
 ```output
 Error 42101
@@ -68,7 +68,7 @@ To manage server or database level firewall rules, please enable the public netw
 ## <a name="change-public-network-access-via-powershell"></a>Изменение доступа к общедоступной сети с помощью PowerShell
 
 > [!IMPORTANT]
-> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка сосредоточена на модуле Az.Sql. Сведения об этих командлетах см. в разделе [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы команд в модулях Az и AzureRm практически идентичны. Для следующего скрипта требуется [модуль Azure PowerShell](/powershell/azure/install-az-ps).
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка сосредоточена на модуле Az.Sql. Сведения об этих командлетах см. в разделе [AzureRM.Sql](/powershell/module/AzureRM.Sql/). Аргументы команд в модулях Az и AzureRm практически идентичны. Для следующего скрипта требуется [модуль Azure PowerShell](/powershell/azure/install-az-ps).
 
 В следующем сценарии PowerShell показано, как `Get` и `Set` свойство **доступа к общедоступной сети** на уровне сервера.
 
@@ -85,7 +85,7 @@ Set-AzSqlServer -ServerName sql-server-name -ResourceGroupName sql-server-group 
 ## <a name="change-public-network-access-via-cli"></a>Изменение доступа к общедоступной сети с помощью интерфейса командной строки
 
 > [!IMPORTANT]
-> Для всех скриптов в этом разделе требуется [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
+> Для всех скриптов в этом разделе требуется [Azure CLI](/cli/azure/install-azure-cli).
 
 ### <a name="azure-cli-in-a-bash-shell"></a>Azure CLI в оболочке bash
 
@@ -124,7 +124,7 @@ Login failed with invalid TLS version
 ## <a name="set-minimal-tls-version-via-powershell"></a>Установка минимальной версии TLS с помощью PowerShell
 
 > [!IMPORTANT]
-> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка сосредоточена на модуле Az.Sql. Сведения об этих командлетах см. в разделе [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы команд в модулях Az и AzureRm практически идентичны. Для следующего скрипта требуется [модуль Azure PowerShell](/powershell/azure/install-az-ps).
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка сосредоточена на модуле Az.Sql. Сведения об этих командлетах см. в разделе [AzureRM.Sql](/powershell/module/AzureRM.Sql/). Аргументы команд в модулях Az и AzureRm практически идентичны. Для следующего скрипта требуется [модуль Azure PowerShell](/powershell/azure/install-az-ps).
 
 В следующем сценарии PowerShell показано, как `Get` и `Set` свойство **минимальной версии TLS** на уровне логического сервера.
 
@@ -141,7 +141,7 @@ Set-AzSqlServer -ServerName sql-server-name -ResourceGroupName sql-server-group 
 ## <a name="set-minimal-tls-version-via-azure-cli"></a>Установка минимальной версии TLS с помощью Azure CLI
 
 > [!IMPORTANT]
-> Для всех скриптов в этом разделе требуется [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
+> Для всех скриптов в этом разделе требуется [Azure CLI](/cli/azure/install-azure-cli).
 
 ### <a name="azure-cli-in-a-bash-shell"></a>Azure CLI в оболочке bash
 
@@ -164,7 +164,7 @@ az sql server update -n sql-server-name -g sql-server-group --set minimalTlsVers
 ## <a name="change-connection-policy-via-powershell"></a>Изменение политики подключения с помощью PowerShell
 
 > [!IMPORTANT]
-> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка сосредоточена на модуле Az.Sql. Сведения об этих командлетах см. в разделе [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы команд в модулях Az и AzureRm практически идентичны. Для следующего скрипта требуется [модуль Azure PowerShell](/powershell/azure/install-az-ps).
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка сосредоточена на модуле Az.Sql. Сведения об этих командлетах см. в разделе [AzureRM.Sql](/powershell/module/AzureRM.Sql/). Аргументы команд в модулях Az и AzureRm практически идентичны. Для следующего скрипта требуется [модуль Azure PowerShell](/powershell/azure/install-az-ps).
 
 В следующем сценарии PowerShell показано, как изменить политику подключения с помощью PowerShell.
 
@@ -185,7 +185,7 @@ Set-AzResource -ResourceId $id -Properties @{"connectionType" = "Proxy"} -f
 ## <a name="change-connection-policy-via-azure-cli"></a>Изменение политики подключения с помощью Azure CLI
 
 > [!IMPORTANT]
-> Для всех скриптов в этом разделе требуется [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
+> Для всех скриптов в этом разделе требуется [Azure CLI](/cli/azure/install-azure-cli).
 
 ### <a name="azure-cli-in-a-bash-shell"></a>Azure CLI в оболочке bash
 
@@ -220,10 +220,10 @@ az resource show --ids %sqlserverid%
 az resource update --ids %sqlserverid% --set properties.connectionType=Proxy
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Общие сведения о том, как работает подключение в базе данных SQL Azure, см. в статье [Архитектура подключения](connectivity-architecture.md) .
-- Сведения о том, как изменить политику подключения для сервера, см. в разделе [conn-Policy](https://docs.microsoft.com/cli/azure/sql/server/conn-policy).
+- Сведения о том, как изменить политику подключения для сервера, см. в разделе [conn-Policy](/cli/azure/sql/server/conn-policy).
 
 <!--Image references-->
 [1]: media/single-database-create-quickstart/manage-connectivity-settings.png

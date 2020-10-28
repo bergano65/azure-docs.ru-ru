@@ -8,12 +8,12 @@ ms.date: 04/29/2018
 ms.topic: conceptual
 ms.service: iot-accelerators
 services: iot-accelerators
-ms.openlocfilehash: bbd895686b52ae7d1ced00b635d4d33e93c970a7
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: fce4da9cc9577bc9805289473d3df7647b1b0934
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92069851"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92670928"
 ---
 # <a name="integrate-the-remote-monitoring-solution-with-azure-data-lake-store"></a>Интеграция решения для удаленного мониторинга с Azure Data Lake Store
 
@@ -40,7 +40,7 @@ ms.locfileid: "92069851"
 
 1. Войдите на портал Azure.
 
-1. На портале Azure нажмите кнопку **Cloud Shell**.
+1. На портале Azure нажмите кнопку **Cloud Shell** .
 
     ![Значок запуска на портале](./media/iot-accelerators-integrate-data-lake/portal-launch-icon.png)
 
@@ -57,7 +57,7 @@ az iot hub consumer-group create --hub-name contoso-rm30263 --name streamanalyti
 
 Создайте задание Azure Stream Analytics для потоковой передачи данных из вашего Центра Интернета вещей в хранилище Azure Data Lake Store.
 
-1. Нажмите кнопку **Создать ресурс**, выберите "Интернет вещей" в Marketplace и щелкните **Задание Stream Analytics**.
+1. Нажмите кнопку **Создать ресурс** , выберите "Интернет вещей" в Marketplace и щелкните **Задание Stream Analytics** .
 
     ![Новое задание Stream Analytics](./media/iot-accelerators-integrate-data-lake/new-stream-analytics-job.png)
 
@@ -65,9 +65,9 @@ az iot hub consumer-group create --hub-name contoso-rm30263 --name streamanalyti
 
 1. Выберите расположение в ближайшем или в том же регионе, где находится Data Lake Store. Здесь мы используем регион "Восточная часть США".
 
-1. Оставьте среду размещения по умолчанию (**Облако**).
+1. Оставьте среду размещения по умолчанию ( **Облако** ).
 
-1. Нажмите кнопку **Создать**.
+1. Нажмите кнопку **Создать** .
 
     ![Создание задания Stream Analytics](./media/iot-accelerators-integrate-data-lake/create-stream-analytics-job.png)
 
@@ -75,7 +75,7 @@ az iot hub consumer-group create --hub-name contoso-rm30263 --name streamanalyti
 
 1. Перейдите в **задание Stream Analytics** в группе ресурсов решения для удаленного мониторинга.
 
-1. На странице обзора щелкните **Входные данные**.
+1. На странице обзора щелкните **Входные данные** .
 
     ![Страница обзора](./media/iot-accelerators-integrate-data-lake/stream-analytics-overview.png)
 
@@ -83,15 +83,15 @@ az iot hub consumer-group create --hub-name contoso-rm30263 --name streamanalyti
 
     ![Добавление входных данных](./media/iot-accelerators-integrate-data-lake/stream-analytics-add-input.png)
 
-1. На вкладке "Новые входные данные" введите псевдоним **IoTHub**.
+1. На вкладке "Новые входные данные" введите псевдоним **IoTHub** .
 
-1. В раскрывающемся списке "Группа потребителей" выберите ранее созданную группу потребителей. Здесь мы используем **streamanalyticsjob**.
+1. В раскрывающемся списке "Группа потребителей" выберите ранее созданную группу потребителей. Здесь мы используем **streamanalyticsjob** .
 
     ![Выбор входных данных](./media/iot-accelerators-integrate-data-lake/stream-analytics-new-input.png)
 
-1. Выберите команду **Сохранить**.
+1. Выберите команду **Сохранить** .
 
-1. На странице обзора щелкните **Выходные данные**.
+1. На странице обзора щелкните **Выходные данные** .
 
     ![Добавление Data Lake Store](./media/iot-accelerators-integrate-data-lake/stream-analytics-overview-2.png)
 
@@ -99,15 +99,15 @@ az iot hub consumer-group create --hub-name contoso-rm30263 --name streamanalyti
 
     ![Добавление выходных данных](./media/iot-accelerators-integrate-data-lake/stream-analytics-output.png)
 
-1. На вкладке "Новые выходные данные" введите псевдоним **DataLakeStore**.
+1. На вкладке "Новые выходные данные" введите псевдоним **DataLakeStore** .
 
 1. Выберите учетную запись Data Lake Store, созданную ранее, и укажите структуру папок для потоковой передачи данных в хранилище.
 
-1. В поле формата даты введите **/streaming/{дата}/{время}**. Оставьте стандартные значения формата даты (ГГГГ/ММ/ДД) и формата времени (ЧЧ).
+1. В поле формата даты введите **/streaming/{дата}/{время}** . Оставьте стандартные значения формата даты (ГГГГ/ММ/ДД) и формата времени (ЧЧ).
 
     ![Указание структуры папок](./media/iot-accelerators-integrate-data-lake/stream-analytics-new-output.png)
 
-1. Щелкните **Авторизовать**.
+1. Щелкните **Авторизовать** .
 
     Авторизуйтесь в Data Lake Store для предоставления заданию Stream Analytics доступа на запись в файловой системе.
 
@@ -118,13 +118,13 @@ az iot hub consumer-group create --hub-name contoso-rm30263 --name streamanalyti
     > [!NOTE]
     > Если во всплывающем окне появится сообщение об ошибке, откройте новое окно браузера в анонимном режиме и повторите попытку.
 
-1. Выберите команду **Сохранить**.
+1. Выберите команду **Сохранить** .
 
 ## <a name="edit-the-stream-analytics-query"></a>Изменение запроса Stream Analytics
 
 Azure Stream Analytics использует SQL-подобный язык запросов для указания источника входных данных, выполняющего потоковую передачу данных, преобразования данных в необходимый вид и вывода данных в различные хранилища или пункты обработки.
 
-1. На вкладке "Обзор" щелкните **Изменить запрос**.
+1. На вкладке "Обзор" щелкните **Изменить запрос** .
 
     ![Изменить запрос](./media/iot-accelerators-integrate-data-lake/stream-analytics-edit-query.png)
 
@@ -141,20 +141,20 @@ Azure Stream Analytics использует SQL-подобный язык зап
 
     ![Запрос Stream Analytics](./media/iot-accelerators-integrate-data-lake/stream-analytics-query.png)
 
-1. Выберите команду **Сохранить**.
+1. Выберите команду **Сохранить** .
 1. Нажмите кнопку **Да** для принятия изменений.
 
 ## <a name="start-the-stream-analytics-job"></a>Запуск задания Stream Analytics
 
-1. На вкладке "Обзор" нажмите кнопку **Запуск**.
+1. На вкладке "Обзор" нажмите кнопку **Запуск** .
 
     ![Запускает задание Stream Analytics.](./media/iot-accelerators-integrate-data-lake/stream-analytics-start.png)
 
-1. На вкладке "Запуск задания" щелкните **Настраиваемое**.
+1. На вкладке "Запуск задания" щелкните **Настраиваемое** .
 
 1. Установите настраиваемое время, чтобы вернуться на несколько часов для выборки данных с момента, когда устройство начало потоковую передачу.
 
-1. Щелкните **Запуск**.
+1. Щелкните **Запуск** .
 
     ![Выбор настраиваемой даты](./media/iot-accelerators-integrate-data-lake/stream-analytics-start-custom.png)
 
@@ -168,11 +168,11 @@ Azure Stream Analytics использует SQL-подобный язык зап
 
 1. Перейдите в Data Lake Store.
 
-1. На вкладке "Обзор" щелкните**Обозреватель данных**.
+1. На вкладке "Обзор" щелкните **Обозреватель данных** .
 
-1. В обозревателе данных откройте папку **/streaming**. Вы увидите папки, созданные в формате "ГГГГ/ММ/ДД/ЧЧ".
+1. В обозревателе данных откройте папку **/streaming** . Вы увидите папки, созданные с помощью формата гггг/мм/дд.
 
-    ![Анализ данных потоковой передачи](./media/iot-accelerators-integrate-data-lake/data-lake-store-data-explorer.png)
+    ![Снимок экрана, на котором показан путь к папке/Стреаминг/ИИИИ/мм/дд/ХХ.](./media/iot-accelerators-integrate-data-lake/data-lake-store-data-explorer.png)
 
     Вы увидите JSON-файлы, один файл за каждый час.
 

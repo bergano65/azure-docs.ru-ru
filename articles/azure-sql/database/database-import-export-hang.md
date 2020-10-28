@@ -10,12 +10,12 @@ author: v-miegge
 ms.author: ramakoni
 ms.reviewer: ''
 ms.date: 09/27/2019
-ms.openlocfilehash: f98cfcd49806061a969a9227f9ade05f70ce79ff
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e69bba858ccf62f1b3a3b45b08771ddba71f11cf
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85982316"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92671396"
 ---
 # <a name="azure-sql-database-and-managed-instance-importexport-service-takes-a-long-time-to-import-or-export-a-database"></a>Для импорта или экспорта базы данных SQL Azure и Управляемый экземпляр службы импорта и экспорта требуется много времени.
 
@@ -25,7 +25,7 @@ ms.locfileid: "85982316"
 
 ## <a name="azure-sql-database-importexport-service"></a>Служба импорта и экспорта базы данных SQL Azure
 
-Служба импорта и экспорта базы данных SQL Azure — это веб-служба на основе RESTFUL, которая выполняется в каждом центре обработки данных Azure. Эта служба вызывается при использовании параметра [импорта базы данных](database-import.md#using-azure-portal) или [экспорта](https://docs.microsoft.com/azure/sql-database/sql-database-export#export-to-a-bacpac-file-using-the-azure-portal) для перемещения базы данных в портал Azure. Служба предоставляет бесплатные службы очереди запросов и вычислений для выполнения импорта и экспорта между базой данных SQL Azure и хранилищем BLOB-объектов Azure.
+Служба импорта и экспорта базы данных SQL Azure — это веб-служба на основе RESTFUL, которая выполняется в каждом центре обработки данных Azure. Эта служба вызывается при использовании параметра [импорта базы данных](database-import.md#using-azure-portal) или [экспорта](./database-import.md#using-azure-portal) для перемещения базы данных в портал Azure. Служба предоставляет бесплатные службы очереди запросов и вычислений для выполнения импорта и экспорта между базой данных SQL Azure и хранилищем BLOB-объектов Azure.
 
 Операции импорта и экспорта не представляют традиционную физическую резервную копию базы данных, а представляют собой логическую резервную копию базы данных, использующую Специальный формат BACPAC. Формат BACPAC позволяет избежать использования физического формата, который может отличаться в зависимости от версий Microsoft SQL Server, базы данных SQL Azure и Управляемый экземпляр SQL Azure.
 
@@ -40,20 +40,20 @@ ms.locfileid: "85982316"
 
 Если экспорт базы данных используется только для восстановления после случайного удаления данных, все выпуски базы данных SQL Azure предоставляют возможность самостоятельного восстановления из созданных системой резервных копий. Но если эти экспорты необходимы по другим причинам, и если требуется постоянно ускорить или более предсказуемую производительность импорта и экспорта, рассмотрите следующие варианты.
 
-* [Экспорт в BACPAC-файл с помощью служебной программы SqlPackage](https://docs.microsoft.com/azure/sql-database/sql-database-export#export-to-a-bacpac-file-using-the-sqlpackage-utility).
-* [Экспорт в BACPAC-файл с помощью SQL Server Management Studio (SSMS)](https://docs.microsoft.com/azure/sql-database/sql-database-export#export-to-a-bacpac-file-using-sql-server-management-studio-ssms).
+* [Экспорт в BACPAC-файл с помощью служебной программы SqlPackage](./database-export.md#sqlpackage-utility).
+* [Экспорт в BACPAC-файл с помощью SQL Server Management Studio (SSMS)](./database-export.md#sql-server-management-studio-ssms).
 * Выполните импорт или экспорт BACPAC непосредственно в код с помощью API Microsoft SQL Server Data-Tier Application Framework (DacFx). Дополнительные сведения см. в следующих источниках:
-  * [Экспорт приложения уровня данных](https://docs.microsoft.com/sql/relational-databases/data-tier-applications/export-a-data-tier-application)
-  * [Пространство имен Microsoft. SqlServer. DAC](https://docs.microsoft.com/dotnet/api/microsoft.sqlserver.dac)
+  * [Экспорт приложения уровня данных](/sql/relational-databases/data-tier-applications/export-a-data-tier-application)
+  * [Пространство имен Microsoft. SqlServer. DAC](/dotnet/api/microsoft.sqlserver.dac)
   * [Скачать DACFx](https://www.microsoft.com/download/details.aspx?id=55713)
 
 ## <a name="things-to-consider-when-you-export-or-import-a-database"></a>Вопросы, которые следует учитывать при экспорте или импорте базы данных
 
-* Все методы, описанные в этой статье, используют квоту единицы транзакций базы данных (DTU), что приводит к регулированию службы базы данных SQL Azure. [СТАТИСТИКУ DTU для базы данных можно просмотреть на портал Azure](https://docs.microsoft.com/azure/sql-database/sql-database-monitor-tune-overview#sql-database-resource-monitoring). Если база данных достигла пределов ресурсов, [Обновите уровень служб](https://docs.microsoft.com/azure/sql-database/sql-database-scale-resources) , чтобы добавить дополнительные ресурсы.
+* Все методы, описанные в этой статье, используют квоту единицы транзакций базы данных (DTU), что приводит к регулированию службы базы данных SQL Azure. [СТАТИСТИКУ DTU для базы данных можно просмотреть на портал Azure](./monitor-tune-overview.md#azure-sql-database-and-azure-sql-managed-instance-resource-monitoring). Если база данных достигла пределов ресурсов, [Обновите уровень служб](./scale-resources.md) , чтобы добавить дополнительные ресурсы.
 * В идеале следует запускать клиентские приложения (например, служебную программу SqlPackage или пользовательское приложение DAC) из виртуальной машины в том же регионе, что и база данных. В противном случае могут возникнуть проблемы с производительностью, связанные с задержкой сети.
 * Экспорт больших таблиц без кластеризованных индексов может быть очень медленным или даже причиной сбоя. Такое поведение обусловлено тем, что таблица не может быть разбита и экспортирована параллельно. Вместо этого он должен быть экспортирован в одну транзакцию, что приводит к снижению производительности и потенциальному сбою при экспорте, особенно для больших таблиц.
 
 
 ## <a name="related-documents"></a>Связанные документы
 
-[Рекомендации по экспорту базы данных](https://docs.microsoft.com/azure/sql-database/sql-database-export#considerations-when-exporting-an-azure-sql-database)
+[Рекомендации по экспорту базы данных](./database-export.md#considerations)

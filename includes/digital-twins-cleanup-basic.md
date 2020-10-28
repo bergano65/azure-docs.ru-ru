@@ -5,12 +5,12 @@ ms.service: digital-twins
 ms.topic: include
 ms.date: 8/13/2020
 ms.author: baanders
-ms.openlocfilehash: 2e095a7b286a8860535d6b58fa93098735b30c87
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 29a07ffa917153c0cb062d34e2807d43d039a373
+ms.sourcegitcommit: d6a739ff99b2ba9f7705993cf23d4c668235719f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92372329"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92494677"
 ---
 Если ресурсы, созданные для этого учебника, вам больше не нужны, можете удалить их.
 
@@ -21,6 +21,6 @@ ms.locfileid: "92372329"
 
 Откройте Azure Cloud Shell и выполните следующую команду, чтобы удалить группу ресурсов и все ее содержимое.
 
-```azurecli
+```azurecli-interactive
 az group delete --name <your-resource-group>
 ```
