@@ -10,12 +10,12 @@ ms.date: 06/09/2020
 author: nabhishek
 ms.author: abnarain
 manager: anandsub
-ms.openlocfilehash: c7880fd7fb687483409ce591059e0f5b2d2e2991
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9615dc358b1c5bed0e48c07c2571ccce05fcdf2e
+ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84659710"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92637213"
 ---
 # <a name="how-to-create-and-configure-azure-integration-runtime"></a>Создание и настройка среды выполнения интеграции Azure
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -41,27 +41,27 @@ Integration Runtime можно создать с помощью командле
 ```powershell
 Set-AzDataFactoryV2IntegrationRuntime -DataFactoryName "SampleV2DataFactory1" -Name "MySampleAzureIR" -ResourceGroupName "ADFV2SampleRG" -Type Managed -Location "West Europe"
 ```  
-Для типа среды выполнения интеграции Azure необходимо задать значение **Управляемый**. Указывать детальные сведения вычисления не нужно, так как служба эластично полностью управляется в облаке. Если нужно создать среду выполнения интеграции Azure SSIS, укажите такие сведения о вычислении, как размер и число узлов. Дополнительные сведения см. в статье [Создание среды выполнения интеграции Azure SSIS в фабрике данных Azure](create-azure-ssis-integration-runtime.md).
+Для типа среды выполнения интеграции Azure необходимо задать значение **Управляемый** . Указывать детальные сведения вычисления не нужно, так как служба эластично полностью управляется в облаке. Если нужно создать среду выполнения интеграции Azure SSIS, укажите такие сведения о вычислении, как размер и число узлов. Дополнительные сведения см. в статье [Создание среды выполнения интеграции Azure SSIS в фабрике данных Azure](create-azure-ssis-integration-runtime.md).
 
 Можно настроить существующий Azure IR для изменения его расположения с помощью командлета Set-AzDataFactoryV2IntegrationRuntime PowerShell. Дополнительные сведения о расположении среды выполнения интеграции Azure см. в статье [Integration runtime in Azure Data Factory](concepts-integration-runtime.md) (Среда выполнения интеграции в фабрике данных Azure).
 
 ### <a name="create-an-azure-ir-via-azure-data-factory-ui"></a>Создание Azure IR с помощью пользовательского интерфейса фабрики данных Azure
 Чтобы создать Azure IR с помощью пользовательского интерфейса фабрики данных Azure, выполните следующие действия.
 
-1. На странице **Начало работы** в пользовательском интерфейсе Фабрики данных Azure выберите вкладку [управления](https://docs.microsoft.com/azure/data-factory/author-management-hub) в крайней области слева.
+1. На странице **Начало работы** в пользовательском интерфейсе Фабрики данных Azure выберите вкладку [управления](./author-management-hub.md) в крайней области слева.
 
    ![Кнопка управления на домашней странице](media/doc-common-process/get-started-page-manage-button.png)
 
-1. Выберите элемент **Integration runtimes** (Среды выполнения интеграции) на панели слева. Затем выберите команду **+Создать**.
+1. Выберите элемент **Integration runtimes** (Среды выполнения интеграции) на панели слева. Затем выберите команду **+Создать** .
 
    ![Создание среды выполнения интеграции](media/doc-common-process/manage-new-integration-runtime.png)
 
-1. На странице **Настройка среды выполнения интеграции** выберите **Azure,** локальное размещение и нажмите кнопку **продолжить**. 
+1. На странице **Настройка среды выполнения интеграции** выберите **Azure,** локальное размещение и нажмите кнопку **продолжить** . 
 
-1. На следующей странице выберите **Azure** , чтобы создать Azure IR, а затем нажмите кнопку **продолжить**.
+1. На следующей странице выберите **Azure** , чтобы создать Azure IR, а затем нажмите кнопку **продолжить** .
    ![Создание среды выполнения интеграции](media/create-azure-integration-runtime/new-azure-integration-runtime.png)
 
-1. Введите имя Azure IR и нажмите кнопку **создать**.
+1. Введите имя Azure IR и нажмите кнопку **создать** .
    ![Создание Azure IR](media/create-azure-integration-runtime/create-azure-integration-runtime.png)
 
 1. После завершения создания появится всплывающее уведомление. На странице **среды выполнения интеграции** убедитесь, что в списке отображается только что созданный IR.
@@ -92,4 +92,3 @@ Set-AzDataFactoryV2IntegrationRuntime -DataFactoryName "SampleV2DataFactory1" -N
 
 - [Создание локальной среды выполнения интеграции](create-self-hosted-integration-runtime.md)
 - [Создание среды выполнения интеграции Azure SSIS в фабрике данных Azure](create-azure-ssis-integration-runtime.md)
- 

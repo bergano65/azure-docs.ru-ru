@@ -10,12 +10,12 @@ author: Blackmist
 ms.date: 09/30/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: fd6fc3ee88d63c1d933d3405437ec1bf49e0432e
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 45f9f61712903436d63f483673705650f5470b3f
+ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92426350"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92635955"
 ---
 # <a name="create-a-workspace-for-azure-machine-learning-with-azure-cli"></a>Создание рабочей области для Машинного обучения Azure с помощью Azure CLI
 
@@ -24,9 +24,9 @@ ms.locfileid: "92426350"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* **Подписка Azure**. Если у вас ее нет, используйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree).
+* **Подписка Azure** . Если у вас ее нет, используйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree).
 
-* Чтобы выполнять приведенные в этом документе команды CLI в **локальной среде**, вам потребуется [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true).
+* Чтобы выполнять приведенные в этом документе команды CLI в **локальной среде** , вам потребуется [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true).
 
     Если вы используете [Azure Cloud Shell](https://azure.microsoft.com//features/cloud-shell/), интерфейс командной строки доступен через браузер и находится в облаке.
 
@@ -78,7 +78,7 @@ az extension add -n azure-cli-ml
 
 ### <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Рабочая область Машинного обучения Azure должна создаваться внутри группы ресурсов. Вы можете выбрать существующую группу ресурсов или создать новую. Выполните следующую команду, чтобы __создать новую группу ресурсов__. Замените `<resource-group-name>` именем, которое будет использоваться для этой группы ресурсов. Замените `<location>` регионом Azure, который будет использоваться для этой группы ресурсов:
+Рабочая область Машинного обучения Azure должна создаваться внутри группы ресурсов. Вы можете выбрать существующую группу ресурсов или создать новую. Выполните следующую команду, чтобы __создать новую группу ресурсов__ . Замените `<resource-group-name>` именем, которое будет использоваться для этой группы ресурсов. Замените `<location>` регионом Azure, который будет использоваться для этой группы ресурсов:
 
 > [!TIP]
 > Необходимо выбрать регион, в котором доступно Машинное обучение Azure. Дополнительные сведения см. в статье [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=machine-learning-service).
@@ -107,7 +107,7 @@ az group create --name <resource-group-name> --location <location>
 
 ### <a name="automatically-create-required-resources"></a>Автоматическое создание необходимых ресурсов
 
-Чтобы создать новую рабочую область, в которой __службы создаются автоматически__, используйте следующую команду:
+Чтобы создать новую рабочую область, в которой __службы создаются автоматически__ , используйте следующую команду:
 
 ```azurecli-interactive
 az ml workspace create -w <workspace-name> -g <resource-group-name>
@@ -160,18 +160,17 @@ az ml workspace create -w <workspace-name> -g <resource-group-name>
 
 Вместо использования ключа, управляемого корпорацией Майкрософт, можно использовать собственный ключ. При этом создается экземпляр Azure Cosmos DB, в котором хранятся метрики и метаданные в подписке Azure. Используйте `--cmk-keyvault` параметр, чтобы указать Azure Key Vault, содержащую ключ, и `--resource-cmk-uri` указать URL-адрес ключа в хранилище.
 
-> [!IMPORTANT]
-> Перед использованием `--cmk-keyvault` параметров и `--resource-cmk-uri` необходимо сначала выполнить следующие действия.
->
-> 1. Авторизовать __приложение машинное обучение__ (в службе управления удостоверениями и доступом) с разрешениями участника в вашей подписке.
-> 1. Выполните действия, описанные в разделе [Настройка ключей, управляемых клиентом](/azure/cosmos-db/how-to-setup-cmk) :
->     * Регистрация поставщика Azure Cosmos DB
->     * Создание и настройка Azure Key Vault
->     * Создание ключа
->
->     Не нужно вручную создавать экземпляр Azure Cosmos DB, он будет создан автоматически во время создания рабочей области. Этот экземпляр Azure Cosmos DB будет создан в отдельной группе ресурсов, используя имя на основе этого шаблона: `<your-resource-group-name>_<GUID>` .
->
-> Этот параметр нельзя изменить после создания рабочей области. При удалении Azure Cosmos DB, используемого рабочей областью, необходимо также удалить рабочую область, которая ее использует.
+Перед использованием `--cmk-keyvault` параметров и `--resource-cmk-uri` необходимо сначала выполнить следующие действия.
+
+1. Авторизовать __приложение машинное обучение__ (в службе управления удостоверениями и доступом) с разрешениями участника в вашей подписке.
+1. Выполните действия, описанные в разделе [Настройка ключей, управляемых клиентом](/azure/cosmos-db/how-to-setup-cmk) :
+    * Регистрация поставщика Azure Cosmos DB
+    * Создание и настройка Azure Key Vault
+    * Создание ключа
+
+Не нужно вручную создавать экземпляр Azure Cosmos DB, он будет создан автоматически во время создания рабочей области. Этот экземпляр Azure Cosmos DB будет создан в отдельной группе ресурсов, используя имя на основе этого шаблона: `<your-resource-group-name>_<GUID>` .
+
+[!INCLUDE [machine-learning-customer-managed-keys.md](../../includes/machine-learning-customer-managed-keys.md)]
 
 Чтобы ограничить данные, собираемые корпорацией Майкрософт в рабочей области, используйте `--hbi-workspace` параметр. 
 
@@ -187,7 +186,7 @@ az ml workspace create -w <workspace-name> -g <resource-group-name>
 > [!IMPORTANT]
 > Вам не нужно указывать все существующие ресурсы. Можно указать один или несколько. Например, можно указать существующую учетную запись хранения, и рабочая область создаст остальные ресурсы.
 
-+ **Учетная запись хранения Azure**: `az storage account show --name <storage-account-name> --query "id"`
++ **Учетная запись хранения Azure** : `az storage account show --name <storage-account-name> --query "id"`
 
     Ответ этой команды аналогичен следующему тексту и является идентификатором вашей учетной записи хранения:
 
@@ -214,13 +213,13 @@ az ml workspace create -w <workspace-name> -g <resource-group-name>
 
         `"/subscriptions/<service-GUID>/resourceGroups/<resource-group-name>/providers/microsoft.insights/components/<application-insight-name>"`
 
-+ **Azure Key Vault**: `az keyvault show --name <key-vault-name> --query "ID"`
++ **Azure Key Vault** : `az keyvault show --name <key-vault-name> --query "ID"`
 
     Ответ этой команды аналогичен следующему тексту и является идентификатором вашего хранилища ключей:
 
     `"/subscriptions/<service-GUID>/resourceGroups/<resource-group-name>/providers/Microsoft.KeyVault/vaults/<key-vault-name>"`
 
-+ **Реестр контейнеров Azure**: `az acr show --name <acr-name> -g <resource-group-name> --query "id"`
++ **Реестр контейнеров Azure** : `az acr show --name <acr-name> -g <resource-group-name> --query "id"`
 
     Ответ этой команды аналогичен следующему тексту и является идентификатором вашего реестра контейнеров:
 

@@ -8,12 +8,12 @@ ms.technology: integration-services
 author: swinarko
 ms.author: sawinark
 ms.reviewer: maghan
-ms.openlocfilehash: 36660854b9a7ae13431545392ef551694b48e97c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a2b95e0de642dc17865643ec569e7220fe5581b2
+ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82628918"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92637502"
 ---
 # <a name="open-and-save-files-on-premises-and-in-azure-with-ssis-packages-deployed-in-azure"></a>Открытие и сохранение файлов в локальной среде и в Azure с помощью пакетов SSIS, развернутых в Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "82628918"
 
 2. Присоедините локальные общие папки к виртуальной сети Azure.
 
-3. Присоедините среду Azure-SSIS IR к той же виртуальной сети. Дополнительные сведения см. в разделе [Присоединение среды выполнения интеграции Azure SSIS к виртуальной сети](https://docs.microsoft.com/azure/data-factory/join-azure-ssis-integration-runtime-virtual-network).
+3. Присоедините среду Azure-SSIS IR к той же виртуальной сети. Дополнительные сведения см. в разделе [Присоединение среды выполнения интеграции Azure SSIS к виртуальной сети](./join-azure-ssis-integration-runtime-virtual-network.md).
 
 4. Подключите среду Azure-SSIS IR к локальным общим папкам в той же виртуальной сети, настроив учетные данные для доступа с проверкой подлинности Windows. Дополнительные сведения см. в статье [Подключение к данным и общим папкам с помощью проверки подлинности Windows](ssis-azure-connect-with-windows-auth.md).
 
@@ -51,6 +51,6 @@ ms.locfileid: "82628918"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Развертывание пакетов. Дополнительные сведения см. в статье [Развертывание проекта служб SSIS с помощью SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/integration-services/ssis-quickstart-deploy-ssms).
-- Запуск пакетов. Дополнительные сведения см. в статье [Выполнение пакета служб SSIS с помощью SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/integration-services/ssis-quickstart-run-ssms).
-- Планирование выполнения пакетов. Дополнительные сведения см. [в разделе Планирование пакетов служб SSIS в Azure](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-schedule-packages-ssms?view=sql-server-ver15).
+- Развертывание пакетов. Дополнительные сведения см. в статье [Развертывание проекта служб SSIS с помощью SQL Server Management Studio (SSMS)](/sql/integration-services/ssis-quickstart-deploy-ssms).
+- Запуск пакетов. Дополнительные сведения см. в статье [Выполнение пакета служб SSIS с помощью SQL Server Management Studio (SSMS)](/sql/integration-services/ssis-quickstart-run-ssms).
+- Планирование выполнения пакетов. Дополнительные сведения см. [в разделе Планирование пакетов служб SSIS в Azure](/sql/integration-services/lift-shift/ssis-azure-schedule-packages-ssms?view=sql-server-ver15).

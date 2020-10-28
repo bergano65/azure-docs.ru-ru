@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 07/13/2020
-ms.openlocfilehash: d83dcc5c86f2dfed5f588738e7799dd708333da1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 47ee4c71abadc4d4e3cb60d54aef1d8262e41119
+ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87076782"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92637315"
 ---
 # <a name="copy-data-from-and-to-salesforce-service-cloud-by-using-azure-data-factory"></a>Копирование данных из службы Salesforce в облако и обратно с помощью фабрики данных Azure
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -52,7 +52,7 @@ ms.locfileid: "87076782"
 
 Кроме того, в обоих случаях вы можете получить сообщение об ошибке "REQUEST_LIMIT_EXCEEDED". Дополнительные сведения см. в разделе API request limits (Ограничения запросов API) руководства об [ограничениях для разработчика Salesforce](https://developer.salesforce.com/docs/atlas.en-us.218.0.salesforce_app_limits_cheatsheet.meta/salesforce_app_limits_cheatsheet/salesforce_app_limits_platform_api.htm).
 
-## <a name="get-started"></a>Приступая к работе
+## <a name="get-started"></a>Начало работы
 
 [!INCLUDE [data-factory-v2-connector-get-started](../../includes/data-factory-v2-connector-get-started.md)]
 
@@ -64,7 +64,7 @@ ms.locfileid: "87076782"
 
 | Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
-| type |Для свойства Type необходимо задать значение **салесфорцесервицеклауд**. |Да |
+| type |Для свойства Type необходимо задать значение **салесфорцесервицеклауд** . |Да |
 | environmentUrl | Укажите URL-адрес облачного экземпляра службы Salesforce. <br> Значение по умолчанию — `"https://login.salesforce.com"`. <br> Чтобы скопировать данные из песочницы, укажите `"https://test.salesforce.com"`. <br> Чтобы скопировать данные из пользовательского домена, укажите URL-адрес, например `"https://[domain].my.salesforce.com"`. |Нет |
 | username |Укажите имя пользователя для учетной записи пользователя. |Да |
 | password |Укажите пароль для учетной записи пользователя.<br/><br/>Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). |Да |
@@ -143,7 +143,7 @@ ms.locfileid: "87076782"
 
 | Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
-| type | Для свойства Type необходимо задать значение **салесфорцесервицеклаудобжект**.  | Да |
+| type | Для свойства Type необходимо задать значение **салесфорцесервицеклаудобжект** .  | Да |
 | objectApiName | Имя объекта Salesforce, из которого извлекаются данные. | "Нет" для источника, "Да" для приемника |
 
 > [!IMPORTANT]
@@ -151,7 +151,7 @@ ms.locfileid: "87076782"
 
 ![Фабрика данных — подключение к Salesforce: имя API](media/copy-data-from-salesforce/data-factory-salesforce-api-name.png)
 
-**Пример**.
+**Пример** .
 
 ```json
 {
@@ -172,7 +172,7 @@ ms.locfileid: "87076782"
 
 | Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
-| type | Свойство type для набора данных должно иметь значение **RelationalTable**. | Да |
+| type | Свойство type для набора данных должно иметь значение **RelationalTable** . | Да |
 | tableName | Имя таблицы в облаке службы Salesforce. | Нет (если свойство query указано в источнике действия) |
 
 ## <a name="copy-activity-properties"></a>Свойства действия копирования
@@ -185,16 +185,16 @@ ms.locfileid: "87076782"
 
 | Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
-| type | Свойство Type источника действия копирования должно иметь значение **салесфорцесервицеклаудсаурце**. | Да |
+| type | Свойство Type источника действия копирования должно иметь значение **салесфорцесервицеклаудсаурце** . | Да |
 | query |Используйте пользовательский запрос для чтения данных. Вы можете использовать запрос, написанный на [объектно-ориентированном языке запросов Salesforce (SOQL)](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql.htm), или запрос SQL-92. Дополнительные советы см. в разделе [Советы по запросам](#query-tips). Если запрос не указан, будут получены все данные облачного объекта службы Salesforce, указанного в "Обжектапинаме" в наборе данных. | Нет (если в наборе данных задано свойство objectApiName) |
-| readBehavior | Указывает, следует ли запрашивать существующие записи или все записи, включая удаленные. Если значение не задано, по умолчанию используется первое значение. <br>Допустимые значения: **query** (по умолчанию), **queryAll**.  | Нет |
+| readBehavior | Указывает, следует ли запрашивать существующие записи или все записи, включая удаленные. Если значение не задано, по умолчанию используется первое значение. <br>Допустимые значения: **query** (по умолчанию), **queryAll** .  | Нет |
 
 > [!IMPORTANT]
 > Для любых настраиваемых объектов **имя API** должно содержать приставку "__c".
 
 ![Фабрика данных — подключение к Salesforce: список имен API](media/copy-data-from-salesforce/data-factory-salesforce-api-name-2.png)
 
-**Пример**.
+**Пример** .
 
 ```json
 "activities":[
@@ -232,13 +232,13 @@ ms.locfileid: "87076782"
 
 | Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
-| type | Свойство Type приемника действия копирования должно иметь значение **салесфорцесервицеклаудсинк**. | Да |
+| type | Свойство Type приемника действия копирования должно иметь значение **салесфорцесервицеклаудсинк** . | Да |
 | writeBehavior | Поведение операции при записи.<br/>Допустимые значения: **Insert** (Вставка) и **Upsert** (Вставка-обновление). | Нет (по умолчанию используется Insert) |
 | externalIdFieldName | Имя поля для внешнего идентификатора при операции upsert. Указанное поле должно быть определено как "поле внешнего идентификатора" в облачном объекте службы Salesforce. Оно не может иметь значения NULL в соответствующих входных данных. | "Да" для операции Upsert (Вставка-обновление) |
 | writeBatchSize | Число строк данных, записываемых в облако службы Salesforce в каждом пакете. | Нет (значение по умолчанию — 5,000) |
-| ignoreNullValues | Указывает, следует ли игнорировать значения NULL из входных данных во время операции записи.<br/>Допустимые значения: **true** и **false**.<br>- **True**: при выполнении операции upsert или обновления (update) оставьте данные в целевом объекте без изменений. При выполнении операции вставки (insert) вставьте определенное значение по умолчанию.<br/>- **False**: при выполнении операции upsert или обновления (update) обновите данные в целевом объекте до значения NULL. При выполнении операции вставки (insert) вставьте значение NULL. | Нет (по умолчанию используется значение false) |
+| ignoreNullValues | Указывает, следует ли игнорировать значения NULL из входных данных во время операции записи.<br/>Допустимые значения: **true** и **false** .<br>- **True** : при выполнении операции upsert или обновления (update) оставьте данные в целевом объекте без изменений. При выполнении операции вставки (insert) вставьте определенное значение по умолчанию.<br/>- **False** : при выполнении операции upsert или обновления (update) обновите данные в целевом объекте до значения NULL. При выполнении операции вставки (insert) вставьте значение NULL. | Нет (по умолчанию используется значение false) |
 
-**Пример**.
+**Пример** .
 
 ```json
 "activities":[
@@ -291,7 +291,7 @@ ms.locfileid: "87076782"
 |:--- |:--- |:--- |
 | Выбор столбцов | Необходимо перечислить поля для копирования в запросе, например `SELECT field1, filed2 FROM objectname` | `SELECT *` поддерживается в дополнении к выделенному фрагменту столбца. |
 | Кавычки | Имена полей или объектов не заключаются в кавычки. | Имена полей или объектов заключаются в кавычки, например `SELECT "id" FROM "Account"` |
-| Формат даты и времени |  Подробнее см. [здесь](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql_select_dateformats.htm), а примеры — в следующем разделе. | Подробнее см. [здесь](https://docs.microsoft.com/sql/odbc/reference/develop-app/date-time-and-timestamp-literals?view=sql-server-2017), а примеры — в следующем разделе. |
+| Формат даты и времени |  Подробнее см. [здесь](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql_select_dateformats.htm), а примеры — в следующем разделе. | Подробнее см. [здесь](/sql/odbc/reference/develop-app/date-time-and-timestamp-literals?view=sql-server-2017), а примеры — в следующем разделе. |
 | Логические значения | Представленные в виде `False` и `True`, например `SELECT … WHERE IsDeleted=True`. | Представленные в значении 0 или 1, например `SELECT … WHERE IsDeleted=1`. |
 | Переименование столбцов | Не поддерживается. | Поддерживается, например, `SELECT a AS b FROM …`. |
 | Relationship | Поддерживается, например, `Account_vod__r.nvs_Country__c`. | Не поддерживается. |
@@ -300,8 +300,8 @@ ms.locfileid: "87076782"
 
 При указании запроса SOQL или SQL обратите внимание на различие в формате даты и времени. Пример:
 
-* **Пример SOQL**: `SELECT Id, Name, BillingCity FROM Account WHERE LastModifiedDate >= @{formatDateTime(pipeline().parameters.StartTime,'yyyy-MM-ddTHH:mm:ssZ')} AND LastModifiedDate < @{formatDateTime(pipeline().parameters.EndTime,'yyyy-MM-ddTHH:mm:ssZ')}`
-* **Пример SQL**: `SELECT * FROM Account WHERE LastModifiedDate >= {ts'@{formatDateTime(pipeline().parameters.StartTime,'yyyy-MM-dd HH:mm:ss')}'} AND LastModifiedDate < {ts'@{formatDateTime(pipeline().parameters.EndTime,'yyyy-MM-dd HH:mm:ss')}'}`
+* **Пример SOQL** : `SELECT Id, Name, BillingCity FROM Account WHERE LastModifiedDate >= @{formatDateTime(pipeline().parameters.StartTime,'yyyy-MM-ddTHH:mm:ssZ')} AND LastModifiedDate < @{formatDateTime(pipeline().parameters.EndTime,'yyyy-MM-ddTHH:mm:ssZ')}`
+* **Пример SQL** : `SELECT * FROM Account WHERE LastModifiedDate >= {ts'@{formatDateTime(pipeline().parameters.StartTime,'yyyy-MM-dd HH:mm:ss')}'} AND LastModifiedDate < {ts'@{formatDateTime(pipeline().parameters.EndTime,'yyyy-MM-dd HH:mm:ss')}'}`
 
 ### <a name="error-of-malformed_query-truncated"></a>Ошибка MALFORMED_QUERY: усечено
 
@@ -314,16 +314,16 @@ ms.locfileid: "87076782"
 | Тип данных Cloud службы Salesforce | Тип промежуточных данных фабрики данных |
 |:--- |:--- |
 | Автонумерация |Строка |
-| Флажок |Логическое |
-| Валюта |Decimal |
+| Флажок |Логическое значение |
+| Валюта |Десятичный тип |
 | Дата |Дата и время |
 | Дата и время |Дата и время |
 | Email |Строка |
 | ID |Строка |
 | Связь для подстановки |Строка |
 | Список множественного выбора |Строка |
-| Число |Decimal |
-| Процент |Decimal |
+| Число |Десятичный тип |
+| Процент |Десятичный тип |
 | Телефон |Строка |
 | Список выбора |Строка |
 | Текстовый |Строковый |

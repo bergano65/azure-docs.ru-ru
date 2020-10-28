@@ -11,12 +11,12 @@ author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: anandsub
-ms.openlocfilehash: f609cfb0945d79cfa8ae21b786a5761b92b9dabb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7545f593aea2aca8c0aa240d44bcef3b7a1ca7c6
+ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84324629"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92636278"
 ---
 # <a name="reconfigure-the-azure-ssis-integration-runtime"></a>Перенастройка среды выполнения интеграции SQL Server Integration Services Azure
 
@@ -28,10 +28,10 @@ ms.locfileid: "84324629"
 Пользовательский интерфейс фабрики данных можно использовать для остановки, изменения, повторной настройки и удаления среды выполнения интеграции Azure SSIS. 
 
 1. Откройте пользовательский интерфейс фабрики данных, щелкнув плитку " **автор & монитор** " на домашней странице фабрики данных.
-2. Выберите **Управление** концентратором ниже **Главная**, **изменить**и **мониторинг** концентраторов, чтобы отображалась область **подключения** .
+2. Выберите **Управление** концентратором ниже **Главная** , **изменить** и **мониторинг** концентраторов, чтобы отображалась область **подключения** .
 
 ### <a name="to-reconfigure-an-azure-ssis-ir"></a>Перенастройка среды выполнения интеграции Azure SSIS
-На панели **Подключения** центра **Управление** перейдите на страницу **Среды выполнения интеграции** и выберите **Обновить**. 
+На панели **Подключения** центра **Управление** перейдите на страницу **Среды выполнения интеграции** и выберите **Обновить** . 
 
    ![Панель "Подключения"](./media/tutorial-create-azure-ssis-runtime-portal/connections-pane.png)
 
@@ -92,7 +92,7 @@ ms.locfileid: "84324629"
 Дополнительные сведения о среде выполнения Azure SSIS см. в следующих разделах: 
 
 - [Azure-SSIS Integration Runtime](concepts-integration-runtime.md#azure-ssis-integration-runtime). В этой статье содержатся общие сведения о средах выполнения интеграции в целом, включая Azure SSIS IR. 
-- [Развертывание пакетов служб интеграции SQL Server (SSIS) в Azure](tutorial-create-azure-ssis-runtime-portal.md). В этой статье приводятся пошаговые инструкции по созданию Azure-SSIS IR и использованию базы данных SQL Azure для размещения каталога служб SSIS. 
+- [Развертывание пакетов служб интеграции SQL Server (SSIS) в Azure](./tutorial-deploy-ssis-packages-azure.md). В этой статье приводятся пошаговые инструкции по созданию Azure-SSIS IR и использованию базы данных SQL Azure для размещения каталога служб SSIS. 
 - [Создание среды выполнения интеграции Azure SSIS](create-azure-ssis-integration-runtime.md). Эта статья разворачивается в этом руководстве и содержит инструкции по использованию Управляемый экземпляр Azure SQL и присоединению IR к виртуальной сети. 
 - [Присоединение среды выполнения интеграции Azure SSIS к виртуальной сети](join-azure-ssis-integration-runtime-virtual-network.md) В этой статье содержатся общие сведения о присоединении среды выполнения интеграции Azure–SSIS к виртуальной сети Azure. В ней также показано, как настроить виртуальную сеть, чтобы присоединить среду выполнения интеграции Azure–SSIS к виртуальной сети с помощью портала Azure. 
 - [Мониторинг среды выполнения интеграции в фабрике данных Azure](monitor-integration-runtime.md#azure-ssis-integration-runtime). В этом статье показано, как извлечь сведения о среде выполнения интеграции Azure SSIS и описания состояний из возвращаемых данных.

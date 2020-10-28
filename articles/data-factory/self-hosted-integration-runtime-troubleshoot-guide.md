@@ -7,12 +7,12 @@ ms.service: data-factory
 ms.topic: troubleshooting
 ms.date: 10/26/2020
 ms.author: lle
-ms.openlocfilehash: c85e27cedfbcebe7060dfed2f96fc53aea9838c9
-ms.sourcegitcommit: 3e8058f0c075f8ce34a6da8db92ae006cc64151a
+ms.openlocfilehash: 3598db409e5493737753a8a1b03de168af5c664b
+ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/27/2020
-ms.locfileid: "92629399"
+ms.locfileid: "92637196"
 ---
 # <a name="troubleshoot-self-hosted-integration-runtime"></a>Устранение неполадок с локальной средой выполнения интеграции
 
@@ -183,7 +183,7 @@ ms.locfileid: "92629399"
  
 `<LogProperties><ErrorInfo>[{"Code":0,"Message":"The type initializer for 'Npgsql.PoolManager' threw an exception.","EventType":0,"Category":5,"Data":{},"MsgId":null,"ExceptionType":"System.TypeInitializationException","Source":"Npgsql","StackTrace":"","InnerEventInfos":[{"Code":0,"Message":"Could not load file or assembly 'System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=XXXXXXXXX' or one of its dependencies. The system cannot find the file specified.","EventType":0,"Category":5,"Data":{},"MsgId":null,"ExceptionType":"System.IO.FileNotFoundException","Source":"Npgsql","StackTrace":"","InnerEventInfos":[]}]}]</ErrorInfo></LogProperties>`
  
-Дополнительные сведения о глобальном кэше сборок см. в [этой статье](https://docs.microsoft.com/dotnet/framework/app-domains/gac).
+Дополнительные сведения о глобальном кэше сборок см. в [этой статье](/dotnet/framework/app-domains/gac).
 
 
 ### <a name="how-to-audit-self-hosted-ir-key-missing"></a>Как выполнить аудит отсутствующего ключа локальной среды IR
@@ -468,7 +468,7 @@ ms.locfileid: "92629399"
 
 > [!NOTE] 
 > Рекомендации по использованию прокси-сервера:
-> *    Проверьте, не нужно ли добавить прокси-сервер в список надежных получателей. Если это так, включите в список надежных получателей [эти домены](https://docs.microsoft.com/azure/data-factory/data-movement-security-considerations#firewall-requirements-for-on-premisesprivate-network).
+> *    Проверьте, не нужно ли добавить прокси-сервер в список надежных получателей. Если это так, включите в список надежных получателей [эти домены](./data-movement-security-considerations.md#firewall-requirements-for-on-premisesprivate-network).
 > *    Убедитесь, что сертификат TLS/SSL с именем wu2.frontend.clouddatahub.net/ является доверенным на прокси-сервере.
 > *    Если вы используете в прокси-сервере проверку подлинности Active Directory, укажите в поле "Служба среды выполнения интеграции" вместо учетной записи службы учетную запись пользователя с доступом к прокси-серверу.
 
@@ -632,7 +632,7 @@ ms.locfileid: "92629399"
 - Вы не затронем правила брандмауэра на основе имен FQDN, используя описанный в этом документе подход: [Конфигурация брандмауэра и список разрешений для IP-адреса](data-movement-security-considerations.md#firewall-configurations-and-allow-list-setting-up-for-ip-address-of-gateway).
 - Если вы явно включаете список разрешений для исходящих IP-адресов в корпоративном брандмауэре, вы оказываете влияние на него.
 
-Действие, которое будет выполнено, если вы затронули: Сообщите команде сетевой инфраструктуры, чтобы обновить конфигурацию сети для использования последних IP-адресов фабрики данных 8 ноября 2020.  Чтобы скачать последние IP-адреса, перейдите в раздел [Сервис Теги диапазон IP-адресов ссылка для скачивания](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#discover-service-tags-by-using-downloadable-json-files).
+Действие, которое будет выполнено, если вы затронули: Сообщите команде сетевой инфраструктуры, чтобы обновить конфигурацию сети для использования последних IP-адресов фабрики данных 8 ноября 2020.  Чтобы скачать последние IP-адреса, перейдите в раздел [Сервис Теги диапазон IP-адресов ссылка для скачивания](../virtual-network/service-tags-overview.md#discover-service-tags-by-using-downloadable-json-files).
 
 ##### <a name="scenario-2-outbound-communication-from-self-hosted-integration-runtime-running-on-an-azure-vm-inside-customer-managed-azure-virtual-network"></a>Сценарий 2. исходящий трафик из автономной Integration Runtime, работающей на виртуальной машине Azure, в виртуальной сети Azure, управляемой клиентом
 Как определить, на что повлияет:
@@ -641,14 +641,14 @@ ms.locfileid: "92629399"
  ![Проверка назначений](media/self-hosted-integration-runtime-troubleshoot-guide/destination-check.png)
 - Если вы явно включаете список разрешений для исходящих IP-адресов в параметре правил NSG в виртуальной сети Azure, вы повлияете на это.
 
-Действие, которое будет выполнено, если вы затронули: уведомите группу сетевой инфраструктуры, чтобы обновить правила NSG в конфигурации виртуальной сети Azure, чтобы использовать последние IP-адреса фабрики данных 8 ноября 2020.  Чтобы скачать последние IP-адреса, перейдите в раздел [Сервис Теги диапазон IP-адресов ссылка для скачивания](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#discover-service-tags-by-using-downloadable-json-files).
+Действие, которое будет выполнено, если вы затронули: уведомите группу сетевой инфраструктуры, чтобы обновить правила NSG в конфигурации виртуальной сети Azure, чтобы использовать последние IP-адреса фабрики данных 8 ноября 2020.  Чтобы скачать последние IP-адреса, перейдите в раздел [Сервис Теги диапазон IP-адресов ссылка для скачивания](../virtual-network/service-tags-overview.md#discover-service-tags-by-using-downloadable-json-files).
 
 ##### <a name="scenario-3-outbound-communication-from-ssis-integration-runtime-in-customer-managed-azure-virtual-network"></a>Сценарий 3. исходящий трафик из служб SSIS Integration Runtime в виртуальной сети Azure, управляемой клиентом
 - Проверьте, есть ли в частной сети правила исходящего NSG, которые содержат Integration Runtime SSIS. Если ограничения для исходящего трафика отсутствуют, это не повлияет на.
 - Если у вас есть ограничения на исходящие правила, проверьте, не используется ли тег службы. Если вы используете тег службы, не нужно изменять или добавлять ничего, так как новые диапазоны IP-адресов находятся под существующим тегом службы.
 - Вы затронули, что если вы явно включаете список разрешений для исходящего IP-адреса в параметре правил NSG в виртуальной сети Azure.
 
-Действие, которое будет выполнено, если вы затронули: уведомите группу сетевой инфраструктуры, чтобы обновить правила NSG в конфигурации виртуальной сети Azure, чтобы использовать последние IP-адреса фабрики данных 8 ноября 2020.  Чтобы скачать последние IP-адреса, перейдите в раздел [Сервис Теги диапазон IP-адресов ссылка для скачивания](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#discover-service-tags-by-using-downloadable-json-files).
+Действие, которое будет выполнено, если вы затронули: уведомите группу сетевой инфраструктуры, чтобы обновить правила NSG в конфигурации виртуальной сети Azure, чтобы использовать последние IP-адреса фабрики данных 8 ноября 2020.  Чтобы скачать последние IP-адреса, перейдите в раздел [Сервис Теги диапазон IP-адресов ссылка для скачивания](../virtual-network/service-tags-overview.md#discover-service-tags-by-using-downloadable-json-files).
 
 ### <a name="could-not-establish-trust-relationship-for-the-ssltls-secure-channel"></a>Не удалось установить отношения доверия для безопасного канала ССЛТЛС 
 
@@ -702,14 +702,14 @@ ms.locfileid: "92629399"
 Локальная среда IR не может быть общей для перекрестных клиентов.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Для получения дополнительных сведений об устранении неполадок воспользуйтесь следующими ресурсами:
 
 *  [Блог о Фабрике данных](https://azure.microsoft.com/blog/tag/azure-data-factory/)
 *  [Запросы на добавление функции в Фабрику данных](https://feedback.azure.com/forums/270578-data-factory)
 *  [Видео по Azure](https://azure.microsoft.com/resources/videos/index/?sort=newest&services=data-factory)
-*  [Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)](https://docs.microsoft.com/answers/topics/azure-data-factory.html)
+*  [Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)](/answers/topics/azure-data-factory.html)
 *  [Форум о переполнении стека для фабрики данных](https://stackoverflow.com/questions/tagged/azure-data-factory)
 *  [Сведения о Фабрике данных в Twitter](https://twitter.com/hashtag/DataFactory)
 *  [Пошаговое руководств по производительности потоков данных сопоставления](concepts-data-flow-performance.md)

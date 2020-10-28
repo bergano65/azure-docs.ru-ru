@@ -7,18 +7,18 @@ ms.reviewer: gamal
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 11/01/2019
-ms.openlocfilehash: e63c3f329cb9c1fd5ca91274540f5145c3ad098a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3ee7761d43710e0833eb8002851e286ce5449983
+ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85921545"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92636125"
 ---
 # <a name="transformation-functions-in-wrangling-data-flow"></a>Функции преобразования в потоке данных структурирование
 
 [!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
-Поток данных структурирование в фабрике данных Azure позволяет выполнять динамическую подготовку данных и структурирование в масштабе облака. Поток данных структурирование интегрируется с [Power Query Online](https://docs.microsoft.com/powerquery-m/power-query-m-reference) и делает функции Power Query M доступными для структурирование данных с помощью выполнения Spark. 
+Поток данных структурирование в фабрике данных Azure позволяет выполнять динамическую подготовку данных и структурирование в масштабе облака. Поток данных структурирование интегрируется с [Power Query Online](/powerquery-m/power-query-m-reference) и делает функции Power Query M доступными для структурирование данных с помощью выполнения Spark. 
 
 > [!NOTE]
 > Поток данных структурирование в настоящее время доступных в общедоступной предварительной версии
@@ -31,60 +31,60 @@ ms.locfileid: "85921545"
 
 ## <a name="column-management"></a>Управление столбцами
 
-* Выбор: [Table. SelectColumns](https://docs.microsoft.com/powerquery-m/table-selectcolumns)
-* Удаление: [Table. ремовеколумнс](https://docs.microsoft.com/powerquery-m/table-removecolumns)
-* Переименование: [Table. RenameColumns](https://docs.microsoft.com/powerquery-m/table-renamecolumns), [таблица. префиксколумнс](https://docs.microsoft.com/powerquery-m/table-prefixcolumns), [Table. трансформколумннамес](https://docs.microsoft.com/powerquery-m/table-transformcolumnnames)
-* Изменение порядка: [Table. реордерколумнс](https://docs.microsoft.com/powerquery-m/table-reordercolumns)
+* Выбор: [Table. SelectColumns](/powerquery-m/table-selectcolumns)
+* Удаление: [Table. ремовеколумнс](/powerquery-m/table-removecolumns)
+* Переименование: [Table. RenameColumns](/powerquery-m/table-renamecolumns), [таблица. префиксколумнс](/powerquery-m/table-prefixcolumns), [Table. трансформколумннамес](/powerquery-m/table-transformcolumnnames)
+* Изменение порядка: [Table. реордерколумнс](/powerquery-m/table-reordercolumns)
 
 ## <a name="row-filtering"></a>Фильтрация строк
 
-Функция M [Table. селектровс](https://docs.microsoft.com/powerquery-m/table-selectrows) используется для фильтрации по следующим условиям.
+Функция M [Table. селектровс](/powerquery-m/table-selectrows) используется для фильтрации по следующим условиям.
 
 * Равенство и неравенство
 * Сравнения чисел, текста и дат (но не даты и времени)
-* Числовые данные, например [Number. четный](https://docs.microsoft.com/powerquery-m/number-iseven), / [четные](https://docs.microsoft.com/powerquery-m/number-iseven)
-* Текстовое вложение с использованием [Text. Contains](https://docs.microsoft.com/powerquery-m/text-contains), [Text. StartsWith](https://docs.microsoft.com/powerquery-m/text-startswith)или [Text. EndsWith](https://docs.microsoft.com/powerquery-m/text-endswith)
-* Диапазоны дат, включая все функции "Исин' [Date](https://docs.microsoft.com/powerquery-m/date-functions)". 
+* Числовые данные, например [Number. четный](/powerquery-m/number-iseven), / [четные](/powerquery-m/number-iseven)
+* Текстовое вложение с использованием [Text. Contains](/powerquery-m/text-contains), [Text. StartsWith](/powerquery-m/text-startswith)или [Text. EndsWith](/powerquery-m/text-endswith)
+* Диапазоны дат, включая все функции "Исин' [Date](/powerquery-m/date-functions)". 
 * Сочетания этих операторов с операторами AND, OR и not
 
 ## <a name="adding-and-transforming-columns"></a>Добавление и преобразование столбцов
 
-Следующие функции M добавляют или преобразуют столбцы: [таблица. addColumn](https://docs.microsoft.com/powerquery-m/table-addcolumn), [таблица. трансформколумнс](https://docs.microsoft.com/powerquery-m/table-transformcolumns), [таблица. реплацевалуе](https://docs.microsoft.com/powerquery-m/table-replacevalue), [Table. дупликатеколумн](https://docs.microsoft.com/powerquery-m/table-duplicatecolumn). Ниже приведены поддерживаемые функции преобразования.
+Следующие функции M добавляют или преобразуют столбцы: [таблица. addColumn](/powerquery-m/table-addcolumn), [таблица. трансформколумнс](/powerquery-m/table-transformcolumns), [таблица. реплацевалуе](/powerquery-m/table-replacevalue), [Table. дупликатеколумн](/powerquery-m/table-duplicatecolumn). Ниже приведены поддерживаемые функции преобразования.
 
 * Числовые арифметические операции
 * Сцепление текста
-* Date Андтиме арифметика (арифметические операторы, [Date. AddDays](https://docs.microsoft.com/powerquery-m/date-adddays), [Date. аддмонсс](https://docs.microsoft.com/powerquery-m/date-addmonths), [Date. аддкуартерс](https://docs.microsoft.com/powerquery-m/date-addquarters), [Date. аддвикс](https://docs.microsoft.com/powerquery-m/date-addweeks), [Date. аддеарс](https://docs.microsoft.com/powerquery-m/date-addyears))
-* Длительности можно использовать для арифметических операций с датами и временем, но они должны быть преобразованы в другой тип перед записью в приемник (арифметические операторы, [#duration](https://docs.microsoft.com/powerquery-m/sharpduration), [продолжительность. Days](https://docs.microsoft.com/powerquery-m/duration-days), [Duration. Hours](https://docs.microsoft.com/powerquery-m/duration-hours), [Duration.](https://docs.microsoft.com/powerquery-m/duration-minutes) [reтоталхаурс](https://docs.microsoft.com/powerquery-m/duration-totalhours) [, Duration](https://docs.microsoft.com/powerquery-m/duration-totalminutes). [Seconds](https://docs.microsoft.com/powerquery-m/duration-seconds) [, Duration.](https://docs.microsoft.com/powerquery-m/duration-totaldays) [тоталсекондс](https://docs.microsoft.com/powerquery-m/duration-totalseconds))    
-* Большинство стандартных, научных и тригонометрических числовых функций (всех функций в рамках [операций](https://docs.microsoft.com/powerquery-m/number-functions#operations), [округления](https://docs.microsoft.com/powerquery-m/number-functions#rounding)и [тригонометрических](https://docs.microsoft.com/powerquery-m/number-functions#trigonometry) , *за исключением* Number. факториал, Number. перестановок и числа. сочетаний)
-* Замена (замещаемый[. реплацетекст](https://docs.microsoft.com/powerquery-m/replacer-replacetext), [Place. реплацевалуе](https://docs.microsoft.com/powerquery-m/replacer-replacevalue), [Text. Replace](https://docs.microsoft.com/powerquery-m/text-replace), [Text. Replace](https://docs.microsoft.com/powerquery-m/text-remove))
-* Извлечение позиционированного текста ([Text. поситионоф](https://docs.microsoft.com/powerquery-m/text-positionof), [Text. length](https://docs.microsoft.com/powerquery-m/text-length), [Text. Start](https://docs.microsoft.com/powerquery-m/text-start), [Text. end](https://docs.microsoft.com/powerquery-m/text-end), [Text. Ближний](https://docs.microsoft.com/powerquery-m/text-middle), [Text. реплацеранже](https://docs.microsoft.com/powerquery-m/text-replacerange), [Text. ремоверанже](https://docs.microsoft.com/powerquery-m/text-removerange))
-* Основное форматирование текста ([Text. Lower](https://docs.microsoft.com/powerquery-m/text-lower), [Text. Upper](https://docs.microsoft.com/powerquery-m/text-upper), [Text. Trim](https://docs.microsoft.com/powerquery-m/text-trim) / [Начало](https://docs.microsoft.com/powerquery-m/text-trimstart) / [End](https://docs.microsoft.com/powerquery-m/text-trimend), [Text. падстарт](https://docs.microsoft.com/powerquery-m/text-padstart) / [End](https://docs.microsoft.com/powerquery-m/text-padend), [Text. Reverse](https://docs.microsoft.com/powerquery-m/text-reverse))
-* Функции даты и времени ([Дата. день](https://docs.microsoft.com/powerquery-m/date-day), [Дата. месяц](https://docs.microsoft.com/powerquery-m/date-month), [Дата. год,](https://docs.microsoft.com/powerquery-m/date-year) [время. час](https://docs.microsoft.com/powerquery-m/time-hour), [время. минута](https://docs.microsoft.com/powerquery-m/time-minute), [время. секунд](https://docs.microsoft.com/powerquery-m/time-second), [Дата. DayOfWeek](https://docs.microsoft.com/powerquery-m/date-dayofweek), [Date. DayOfYear](https://docs.microsoft.com/powerquery-m/date-dayofyear), [Date. дайсинмонс](https://docs.microsoft.com/powerquery-m/date-daysinmonth))
+* Date Андтиме арифметика (арифметические операторы, [Date. AddDays](/powerquery-m/date-adddays), [Date. аддмонсс](/powerquery-m/date-addmonths), [Date. аддкуартерс](/powerquery-m/date-addquarters), [Date. аддвикс](/powerquery-m/date-addweeks), [Date. аддеарс](/powerquery-m/date-addyears))
+* Длительности можно использовать для арифметических операций с датами и временем, но они должны быть преобразованы в другой тип перед записью в приемник (арифметические операторы, [#duration](/powerquery-m/sharpduration), [продолжительность. Days](/powerquery-m/duration-days), [Duration. Hours](/powerquery-m/duration-hours), [Duration.](/powerquery-m/duration-minutes) [reтоталхаурс](/powerquery-m/duration-totalhours) [, Duration](/powerquery-m/duration-totalminutes). [Seconds](/powerquery-m/duration-seconds) [, Duration.](/powerquery-m/duration-totaldays) [тоталсекондс](/powerquery-m/duration-totalseconds))    
+* Большинство стандартных, научных и тригонометрических числовых функций (всех функций в рамках [операций](/powerquery-m/number-functions#operations), [округления](/powerquery-m/number-functions#rounding)и [тригонометрических](/powerquery-m/number-functions#trigonometry) , *за исключением* Number. факториал, Number. перестановок и числа. сочетаний)
+* Замена (замещаемый[. реплацетекст](/powerquery-m/replacer-replacetext), [Place. реплацевалуе](/powerquery-m/replacer-replacevalue), [Text. Replace](/powerquery-m/text-replace), [Text. Replace](/powerquery-m/text-remove))
+* Извлечение позиционированного текста ([Text. поситионоф](/powerquery-m/text-positionof), [Text. length](/powerquery-m/text-length), [Text. Start](/powerquery-m/text-start), [Text. end](/powerquery-m/text-end), [Text. Ближний](/powerquery-m/text-middle), [Text. реплацеранже](/powerquery-m/text-replacerange), [Text. ремоверанже](/powerquery-m/text-removerange))
+* Основное форматирование текста ([Text. Lower](/powerquery-m/text-lower), [Text. Upper](/powerquery-m/text-upper), [Text. Trim](/powerquery-m/text-trim) / [Начало](/powerquery-m/text-trimstart) / [End](/powerquery-m/text-trimend), [Text. падстарт](/powerquery-m/text-padstart) / [End](/powerquery-m/text-padend), [Text. Reverse](/powerquery-m/text-reverse))
+* Функции даты и времени ([Дата. день](/powerquery-m/date-day), [Дата. месяц](/powerquery-m/date-month), [Дата. год,](/powerquery-m/date-year) [время. час](/powerquery-m/time-hour), [время. минута](/powerquery-m/time-minute), [время. секунд](/powerquery-m/time-second), [Дата. DayOfWeek](/powerquery-m/date-dayofweek), [Date. DayOfYear](/powerquery-m/date-dayofyear), [Date. дайсинмонс](/powerquery-m/date-daysinmonth))
 * Выражения if (но ветви должны иметь совпадающие типы)
 * Фильтры строк в качестве логического столбца
 * Константы числа, текста, логических, дат и даты и времени
 
 <a name="mergingjoining-tables"></a>Слияние и объединение таблиц
 ----------------------
-* Power Query создаст вложенное соединение (Table. Нестеджоин; пользователи могут также вручную написать [таблицу. адджоинколумн](https://docs.microsoft.com/powerquery-m/table-addjoincolumn)).
+* Power Query создаст вложенное соединение (Table. Нестеджоин; пользователи могут также вручную написать [таблицу. адджоинколумн](/powerquery-m/table-addjoincolumn)).
     Пользователи должны развернуть вложенный столбец JOIN в невложенное соединение (Table. Експандтаблеколумн, не поддерживается в любом другом контексте).
-* Таблица функций M   [. Join](https://docs.microsoft.com/powerquery-m/table-join) может быть написана напрямую, чтобы избежать необходимости в дополнительном шаге расширения, но пользователь должен убедиться в отсутствии повторяющихся имен столбцов между соединяемыми таблицами.
-* Поддерживаемые типы соединений:   [inner](https://docs.microsoft.com/powerquery-m/joinkind-inner),   [LeftOuter](https://docs.microsoft.com/powerquery-m/joinkind-leftouter),   [RightOuter](https://docs.microsoft.com/powerquery-m/joinkind-rightouter),   [FullOuter](https://docs.microsoft.com/powerquery-m/joinkind-fullouter)
-* Оба   [значения. Equals](https://docs.microsoft.com/powerquery-m/value-equals) и   [value. нуллабликуалс](https://docs.microsoft.com/powerquery-m/value-nullableequals) поддерживаются как компараторы равенства ключей
+* Таблица функций M   [. Join](/powerquery-m/table-join) может быть написана напрямую, чтобы избежать необходимости в дополнительном шаге расширения, но пользователь должен убедиться в отсутствии повторяющихся имен столбцов между соединяемыми таблицами.
+* Поддерживаемые типы соединений:   [inner](/powerquery-m/joinkind-inner),   [LeftOuter](/powerquery-m/joinkind-leftouter),   [RightOuter](/powerquery-m/joinkind-rightouter),   [FullOuter](/powerquery-m/joinkind-fullouter)
+* Оба   [значения. Equals](/powerquery-m/value-equals) и   [value. нуллабликуалс](/powerquery-m/value-nullableequals) поддерживаются как компараторы равенства ключей
 
 ## <a name="group-by"></a>Group by
 
-Используйте [Table. Group](https://docs.microsoft.com/powerquery-m/table-group) для статистической обработки значений.
+Используйте [Table. Group](/powerquery-m/table-group) для статистической обработки значений.
 * Должен использоваться с агрегатной функцией
-* Поддерживаемые статистические функции:   [Table. ROWCOUNT](https://docs.microsoft.com/powerquery-m/table-rowcount),   [List. Sum](https://docs.microsoft.com/powerquery-m/list-sum),   [List. Count](https://docs.microsoft.com/powerquery-m/list-count),   [List. СРЗНАЧ](https://docs.microsoft.com/powerquery-m/list-average),   [List. min](https://docs.microsoft.com/powerquery-m/list-min),   [List. Max](https://docs.microsoft.com/powerquery-m/list-max),   [List. стандартное отклонение](https://docs.microsoft.com/powerquery-m/list-standarddeviation),   [List. First](https://docs.microsoft.com/powerquery-m/list-first),   [List. Last](https://docs.microsoft.com/powerquery-m/list-last)
+* Поддерживаемые статистические функции:   [Table. ROWCOUNT](/powerquery-m/table-rowcount),   [List. Sum](/powerquery-m/list-sum),   [List. Count](/powerquery-m/list-count),   [List. СРЗНАЧ](/powerquery-m/list-average),   [List. min](/powerquery-m/list-min),   [List. Max](/powerquery-m/list-max),   [List. стандартное отклонение](/powerquery-m/list-standarddeviation),   [List. First](/powerquery-m/list-first),   [List. Last](/powerquery-m/list-last)
 
 ## <a name="sorting"></a>Сортировка
 
-Используйте [таблицу. Sort](https://docs.microsoft.com/powerquery-m/table-sort) для сортировки значений.
+Используйте [таблицу. Sort](/powerquery-m/table-sort) для сортировки значений.
 
 ## <a name="reducing-rows"></a>Сокращение количества строк
 
-Сохраняются и удаляются первые, сохраняют диапазоны (соответствующие функции M, только вспомогательные счетчики, not Conditions: [Table. FirstN](https://docs.microsoft.com/powerquery-m/table-firstn), [таблица. Skip](https://docs.microsoft.com/powerquery-m/table-skip), [таблица. ремовефирстн](https://docs.microsoft.com/powerquery-m/table-removefirstn), [таблица. диапазон](https://docs.microsoft.com/powerquery-m/table-range), [таблица. Минн](https://docs.microsoft.com/powerquery-m/table-minn), [Table. максн](https://docs.microsoft.com/powerquery-m/table-maxn))
+Сохраняются и удаляются первые, сохраняют диапазоны (соответствующие функции M, только вспомогательные счетчики, not Conditions: [Table. FirstN](/powerquery-m/table-firstn), [таблица. Skip](/powerquery-m/table-skip), [таблица. ремовефирстн](/powerquery-m/table-removefirstn), [таблица. диапазон](/powerquery-m/table-range), [таблица. Минн](/powerquery-m/table-minn), [Table. максн](/powerquery-m/table-maxn))
 
 ## <a name="known-unsupported-functions"></a>Известные неподдерживаемые функции
 

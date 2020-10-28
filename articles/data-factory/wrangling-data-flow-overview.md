@@ -7,12 +7,12 @@ ms.reviewer: gamal
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 11/01/2019
-ms.openlocfilehash: 5d0393ab5f2582efa2a4b727543bc799cdb1143e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fe3fd25753344c5ccfd21310ae01fca9962e3971
+ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87082874"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92636074"
 ---
 # <a name="what-are-wrangling-data-flows"></a>Что такое потоки данных структурирование?
 
@@ -21,7 +21,7 @@ ms.locfileid: "87082874"
 
 Организациям необходимо выполнять подготовку данных и структурирование для точного анализа сложных данных, которые постоянно растут каждый день. Подготовка данных необходима, чтобы организации могли использовать данные в различных бизнес-процессах и сократить время на ценность.
 
-Потоки данных структурирование в фабрике данных Azure позволяют итеративно выполнять подготовку данных без кода в масштабе облака. Структурирование потоки данных интегрируются с [Power Query Online](https://docs.microsoft.com/power-query/) и делают функции Power Query M доступными для пользователей фабрики данных.
+Потоки данных структурирование в фабрике данных Azure позволяют итеративно выполнять подготовку данных без кода в масштабе облака. Структурирование потоки данных интегрируются с [Power Query Online](/power-query/) и делают функции Power Query M доступными для пользователей фабрики данных.
 
 Поток данных структурирование преобразует M, созданный Power Query интерактивным гибридным редактором, в код Spark для выполнения масштабирования в облаке.
 
@@ -46,7 +46,7 @@ ms.locfileid: "87082874"
 
 ## <a name="supported-sources"></a>Поддерживаемые источники
 
-| Соединитель | Формат данных | Тип проверки подлинности |
+| Соединитель | Формат данных | Authentication type (Тип проверки подлинности) |
 | -- | -- | --|
 | [Хранилище BLOB-объектов Azure](connector-azure-blob-storage.md) | CSV, Parquet | Ключ учетной записи |
 | [Azure Data Lake Storage 1-го поколения](connector-azure-data-lake-store.md) | CSV | Субъект-служба |

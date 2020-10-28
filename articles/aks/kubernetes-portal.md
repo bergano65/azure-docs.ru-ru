@@ -2,16 +2,14 @@
 title: Доступ к ресурсам Kubernetes из портал Azure (Предварительная версия)
 description: Узнайте, как взаимодействовать с ресурсами Kubernetes для управления кластером службы Kubernetes Azure (AKS) из портал Azure.
 services: container-service
-author: laurenhughes
 ms.topic: article
 ms.date: 09/21/2020
-ms.author: lahugh
-ms.openlocfilehash: ce51e76829c19def1c1603b1a88592d1e683ccae
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: ae617615a8ba83e311a416581fb41d3cb6ca1b05
+ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92070645"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92635615"
 ---
 # <a name="access-kubernetes-resources-from-the-azure-portal-preview"></a>Доступ к ресурсам Kubernetes из портал Azure (Предварительная версия)
 
@@ -60,7 +58,7 @@ ms.locfileid: "92070645"
 
 Представление ресурсов Kubernetes также включает редактор YAML. Встроенный редактор YAML означает, что вы можете обновлять или создавать службы и развертывания на портале и немедленно применять изменения.
 
-:::image type="content" source="media/kubernetes-portal/service-editor.png" alt-text="Сведения о Pod Kubernetes, отображаемые в портал Azure." **проверить и сохранить**", подтверждая изменения, а затем сохранив их еще раз.
+:::image type="content" source="media/kubernetes-portal/service-editor.png" alt-text="Сведения о Pod Kubernetes, отображаемые в портал Azure." **проверить и сохранить** ", подтверждая изменения, а затем сохранив их еще раз.
 
 >[!WARNING]
 > Выполнять прямые изменения рабочей среды через пользовательский интерфейс или CLI не рекомендуется, вы должны использовать [рекомендации по непрерывной интеграции (CI) и непрерывному развертыванию (CD)](kubernetes-action.md). Возможности управления Kubernetes портала Azure и редактор YAML созданы для обучения и создания новых развертываний в параметрах разработки и тестирования.

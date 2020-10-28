@@ -4,12 +4,12 @@ description: Научитесь настраивать функцию прове
 ms.topic: article
 ms.date: 07/08/2020
 ms.custom: seodec18
-ms.openlocfilehash: 93c697162bfcb51b77c2e6f48b5824b81070bf51
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6120283ec240441cc62cad642bbeda0b735abc0f
+ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91816411"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92637332"
 ---
 # <a name="advanced-usage-of-authentication-and-authorization-in-azure-app-service"></a>Расширенное использование проверки подлинности и авторизации в Службе приложений Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "91816411"
 
 Во-первых, на странице **Authentication / Authorization** (Проверка подлинности и авторизация) на портале Azure настройте все поставщики удостоверений, которые нужно включить.
 
-В раскрывающемся списке **Action to take when request is not authenticated** (Предпринимаемое действие, если проверка подлинности для запроса не выполнена) выберите **Разрешить анонимные запросы (нет действия)**.
+В раскрывающемся списке **Action to take when request is not authenticated** (Предпринимаемое действие, если проверка подлинности для запроса не выполнена) выберите **Разрешить анонимные запросы (нет действия)** .
 
 На странице входа, на панели навигации или в любом другом расположении приложения добавьте ссылку входа для каждого включенного поставщика (`/.auth/login/<provider>`). Пример:
 
@@ -170,21 +170,21 @@ az webapp config appsettings set --name <app_name> --resource-group <group_name>
 
 По истечении срока действия маркера доступа вашего провайдера (а не [токена сеанса](#extend-session-token-expiration-grace-period)) необходимо повторно подтвердить подлинность пользователя, прежде чем снова использовать этот маркер. Истечения срока действия токена можно избежать, выполнив вызов `GET` к конечной точке приложения `/.auth/refresh`. При вызове служба приложений автоматически обновляет маркеры доступа в [хранилище токенов](overview-authentication-authorization.md#token-store) для пользователя, прошедшего проверку подлинности. В результате последующих запросов на токены с помощью кода приложения будут возвращаться обновленные токены. Однако для правильного обновления токена в хранилище токенов должны содержаться [токены обновления](https://auth0.com/learn/refresh-tokens/) для поставщика. Способ получения токенов обновления документируется каждым поставщиком, но ниже приведено краткое описание.
 
-- **Google**. Добавьте параметр строки запроса `access_type=offline` к вызову API `/.auth/login/google`. Если используется пакет SDK для мобильных служб, можно добавить параметр к одной из перегрузок `LogicAsync` (см. в разделе о [токенах обновления Google](https://developers.google.com/identity/protocols/OpenIDConnect#refresh-tokens)).
-- **Facebook**. Не предоставляет токены обновления. Срок действия токенов с долгим временем существования истекает через 60 дней (см. раздел об [истечении и продлении срока действия токенов доступа Facebook](https://developers.facebook.com/docs/facebook-login/access-tokens/expiration-and-extension)).
-- **Twitter**. Срок действия токенов доступа не истекает (см. раздел о [часто задаваемых вопросах о Twitter OAuth](https://developer.twitter.com/en/docs/basics/authentication/FAQ)).
-- **Учетная запись Майкрософт**. [Настраивая параметры проверки подлинности учетной записи Майкрософт](configure-authentication-provider-microsoft.md), выберите область `wl.offline_access`.
-- **Azure Active Directory**. В [https://resources.azure.com](https://resources.azure.com) сделайте следующее:
+- **Google** . Добавьте параметр строки запроса `access_type=offline` к вызову API `/.auth/login/google`. Если используется пакет SDK для мобильных служб, можно добавить параметр к одной из перегрузок `LogicAsync` (см. в разделе о [токенах обновления Google](https://developers.google.com/identity/protocols/OpenIDConnect#refresh-tokens)).
+- **Facebook** . Не предоставляет токены обновления. Срок действия токенов с долгим временем существования истекает через 60 дней (см. раздел об [истечении и продлении срока действия токенов доступа Facebook](https://developers.facebook.com/docs/facebook-login/access-tokens/expiration-and-extension)).
+- **Twitter** . Срок действия токенов доступа не истекает (см. раздел о [часто задаваемых вопросах о Twitter OAuth](https://developer.twitter.com/en/docs/basics/authentication/FAQ)).
+- **Учетная запись Майкрософт** . [Настраивая параметры проверки подлинности учетной записи Майкрософт](configure-authentication-provider-microsoft.md), выберите область `wl.offline_access`.
+- **Azure Active Directory** . В [https://resources.azure.com](https://resources.azure.com) сделайте следующее:
     1. В верхней части страницы выберите **Read/Write** (Чтение и запись).
-    2. В левом браузере перейдите к разделу **подписки** > * *_ \<subscription\_name_** > **resourceGroups** > * *_* * \<resource\_group\_name> _ **поставщики**>  >  **Microsoft. Web**  >  **Sites** > * *_ \<app\_name> _ * * > **config**  >  **authsettings**. 
-    3. Нажмите кнопку **Изменить**.
+    2. В левом браузере перейдите к разделу **подписки** > * * _\<subscription\_name_** > **resourceGroups** > * *_ * * \<resource\_group\_name> _**поставщики** >  >  **Microsoft. Web**  >  **Sites** > * *_ \<app\_name> _ * * > **config**  >  **authsettings** . 
+    3. Нажмите кнопку **Изменить** .
     4. Измените следующее свойство. Замените _\<app\_id>_ Azure Active Directory идентификатором приложения службы, к которой требуется получить доступ.
 
         ```json
         "additionalLoginParams": ["response_type=code id_token", "resource=<app_id>"]
         ```
 
-    5. Щелкните **Put**. 
+    5. Щелкните **Put** . 
 
 После настройки поставщика можно [найти токен обновления и срок действия для токена доступа](#retrieve-tokens-in-app-code) в хранилище токенов. 
 
@@ -221,11 +221,11 @@ az webapp auth update --resource-group <group_name> --name <app_name> --token-re
 
 ## <a name="limit-the-domain-of-sign-in-accounts"></a>Ограничение домена учетных записей для входа
 
-Учетные записи Майкрософт и Azure Active Directory позволяют выполнять вход из нескольких доменов. Например, учетная запись Майкрософт позволяет выполнять вход с помощью учетных записей _outlook.com_, _live.com_ и _hotmail.com_. Azure AD позволяет любому числу пользовательских доменов для учетных записей входа. Тем не менее, вам может потребоваться ускорить работу пользователей с собственной фирменной страницей входа в Azure AD (например, `contoso.com` ). Чтобы предложить доменное имя учетных записей входа, выполните следующие действия.
+Учетные записи Майкрософт и Azure Active Directory позволяют выполнять вход из нескольких доменов. Например, учетная запись Майкрософт позволяет выполнять вход с помощью учетных записей _outlook.com_ , _live.com_ и _hotmail.com_ . Azure AD позволяет любому числу пользовательских доменов для учетных записей входа. Тем не менее, вам может потребоваться ускорить работу пользователей с собственной фирменной страницей входа в Azure AD (например, `contoso.com` ). Чтобы предложить доменное имя учетных записей входа, выполните следующие действия.
 
-В [https://resources.azure.com](https://resources.azure.com) перейдите к разделу **подписки** > * *_ \<subscription\_name_** > **resourceGroups** > * *_* * \<resource\_group\_name> _ **поставщики**>  >  **Microsoft. Web**  >  **Sites** > * *_ \<app\_name> _ * * > **config**  >  **authsettings**. 
+В [https://resources.azure.com](https://resources.azure.com) перейдите к разделу **подписки** > * * _\<subscription\_name_** > **resourceGroups** > * *_ * * \<resource\_group\_name> _**поставщики** >  >  **Microsoft. Web**  >  **Sites** > * *_ \<app\_name> _ * * > **config**  >  **authsettings** . 
 
-Щелкните **Edit** (Изменить), измените следующее свойство и выберите **Put**. Не забудьте заменить _\<domain\_name>_ требуемым доменом.
+Щелкните **Edit** (Изменить), измените следующее свойство и выберите **Put** . Не забудьте заменить _\<domain\_name>_ требуемым доменом.
 
 ```json
 "additionalLoginParams": ["domain_hint=<domain_name>"]
@@ -247,13 +247,13 @@ az webapp auth update --resource-group <group_name> --name <app_name> --token-re
 
 ### <a name="server-level-windows-apps-only"></a>Уровень сервера (только для приложений Windows)
 
-Для любого приложения Windows можно определить поведение авторизации веб-сервера IIS, изменив файл *Web.config* . Приложения Linux не используют IIS и не могут быть настроены с помощью *Web.config*.
+Для любого приложения Windows можно определить поведение авторизации веб-сервера IIS, изменив файл *Web.config* . Приложения Linux не используют IIS и не могут быть настроены с помощью *Web.config* .
 
 1. Перейдите на страницу `https://<app-name>.scm.azurewebsites.net/DebugConsole`.
 
-1. В обозревателе браузера файлов службы приложений перейдите на *сайт Site/wwwroot*. Если *Web.config* не существует, создайте его, выбрав **+**  >  **создать файл**. 
+1. В обозревателе браузера файлов службы приложений перейдите на *сайт Site/wwwroot* . Если *Web.config* не существует, создайте его, выбрав **+**  >  **создать файл** . 
 
-1. Выберите карандаш для *Web.config* , чтобы изменить его. Добавьте следующий код конфигурации и нажмите кнопку **сохранить**. Если *Web.config* уже существует, просто добавьте `<authorization>` элемент со всеми элементами. Добавьте учетные записи, которые требуется разрешить, в `<allow>` элементе.
+1. Выберите карандаш для *Web.config* , чтобы изменить его. Добавьте следующий код конфигурации и нажмите кнопку **сохранить** . Если *Web.config* уже существует, просто добавьте `<authorization>` элемент со всеми элементами. Добавьте учетные записи, которые требуется разрешить, в `<allow>` элементе.
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -393,7 +393,7 @@ az webapp auth update --resource-group <group_name> --name <app_name> --token-re
             "graphApiVersion": "v3.3",
             "login": {
                 "scopes": [
-                    "profile",
+                    "public_profile",
                     "email"
                 ]
             },
@@ -533,7 +533,7 @@ az webapp auth update --name <my_app_name> \
 
 Эту команду можно выполнить в [Azure Cloud Shell](../cloud-shell/overview.md), выбрав **Попробовать** в предыдущем примере кода. Также можно использовать [Azure CLI локально](/cli/azure/install-azure-cli) для выполнения этой команды после выполнения команды [az login](/cli/azure/reference-index#az-login) для входа.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Руководство. Сквозная аутентификация и авторизация пользователей](tutorial-auth-aad.md)

@@ -13,12 +13,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 01/19/2018
 ms.author: jingwang
-ms.openlocfilehash: ab3b5c2ba892205f87235f7f0ce009719016622d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c7a99e7e5f27f8c3503c7fa6124d27cfc4e7f4a4
+ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85322130"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92636771"
 ---
 # <a name="invoke-an-ssis-package-using-stored-procedure-activity-in-azure-data-factory"></a>Вызов пакета SSIS с помощью действия хранимой процедуры в фабрике данных Azure
 В этой статье описывается, как вызвать пакет SSIS из конвейера фабрики данных Azure, используя действие хранимой процедуры. 
@@ -32,7 +32,7 @@ ms.locfileid: "85322130"
 В пошаговом руководстве в этой статье используется база данных SQL Azure. Вы также можете использовать Управляемый экземпляр Azure SQL.
 
 ### <a name="create-an-azure-ssis-integration-runtime"></a>Создание среды выполнения интеграции Azure SSIS.
-Создайте среду выполнения интеграции Azure SSIS, если у вас ее нет. Для этого выполните пошаговую инструкцию в статье [Развертывание пакетов служб интеграции SQL Server (SSIS) в Azure](../tutorial-create-azure-ssis-runtime-portal.md). Для создания среды выполнения интеграции Azure SSIS нельзя использовать службу "Фабрика данных" версии 1. 
+Создайте среду выполнения интеграции Azure SSIS, если у вас ее нет. Для этого выполните пошаговую инструкцию в статье [Развертывание пакетов служб интеграции SQL Server (SSIS) в Azure](../tutorial-deploy-ssis-packages-azure.md). Для создания среды выполнения интеграции Azure SSIS нельзя использовать службу "Фабрика данных" версии 1. 
 
 ## <a name="azure-powershell"></a>Azure PowerShell
 В этом разделе с помощью Azure PowerShell вы создадите конвейер фабрики данных с действием хранимой процедуры, которое вызывает пакет SSIS.
@@ -79,7 +79,7 @@ ms.locfileid: "85322130"
     ```
     The specified Data Factory name 'ADFTutorialFactory' is already in use. Data Factory names must be globally unique.
     ```
-* Чтобы создать экземпляры фабрики данных, нужно назначить учетной записи пользователя, используемой для входа в Azure, роль **участника**, **владельца** либо **администратора** подписки Azure.
+* Чтобы создать экземпляры фабрики данных, нужно назначить учетной записи пользователя, используемой для входа в Azure, роль **участника** , **владельца** либо **администратора** подписки Azure.
 
 ### <a name="create-an-azure-sql-database-linked-service"></a>Создание связанной службы Базы данных SQL Azure
 Создайте связанную службу, чтобы связать базу данных в базе данных SQL Azure, в которой размещен каталог служб SSIS, в фабрике данных. Фабрика данных использует информацию связанной службы для подключения к базе данных SSISDB и выполняет хранимую процедуру для запуска пакета SSIS. 
@@ -100,8 +100,8 @@ ms.locfileid: "85322130"
         }
         }
     ```
-2. В **Azure PowerShell** перейдите в папку **C:\ADF\RunSSISPackage**.
-3. Выполните командлет **New-аздатафакторилинкедсервице** , чтобы создать связанную службу: **AzureSqlDatabaseLinkedService**. 
+2. В **Azure PowerShell** перейдите в папку **C:\ADF\RunSSISPackage** .
+3. Выполните командлет **New-аздатафакторилинкедсервице** , чтобы создать связанную службу: **AzureSqlDatabaseLinkedService** . 
 
     ```powershell
     New-AzDataFactoryLinkedService $df -File ".\AzureSqlDatabaseLinkedService.json"
@@ -168,7 +168,7 @@ ms.locfileid: "85322130"
     }    
     ```
 
-2. Чтобы создать конвейер: **RunSSISPackagePipeline**, выполните командлет **New-аздатафакторипипелине** .
+2. Чтобы создать конвейер: **RunSSISPackagePipeline** , выполните командлет **New-аздатафакторипипелине** .
 
     ```powershell
     $DFPipeLine = New-AzDataFactoryPipeline -DataFactoryName $DataFactory.DataFactoryName -ResourceGroupName $ResGrp.ResourceGroupName -Name "RunSSISPackagePipeline" -DefinitionFile ".\RunSSISPackagePipeline.json"
@@ -182,13 +182,13 @@ ms.locfileid: "85322130"
     Get-AzDataFactorySlice $df -DatasetName sprocsampleout -StartDateTime 2017-10-01T00:00:00Z
     ```
     Обратите внимание, здесь указывается то же значение StartDateTime, что и в JSON конвейера. 
-1. Выполните командлет **Get-AzDataFactoryRun**, чтобы получить сведения о действиях, выполняемых для конкретного среза.
+1. Выполните командлет **Get-AzDataFactoryRun** , чтобы получить сведения о действиях, выполняемых для конкретного среза.
 
     ```powershell
     Get-AzDataFactoryRun $df -DatasetName sprocsampleout -StartDateTime 2017-10-01T00:00:00Z
     ```
 
-    Вы можете выполнять этот командлет до тех пор, пока не увидите срез с состоянием **Готово** или **Сбой**. 
+    Вы можете выполнять этот командлет до тех пор, пока не увидите срез с состоянием **Готово** или **Сбой** . 
 
     Можно выполнить следующий запрос к базе данных SSISDB на сервере, чтобы убедиться, что пакет выполнен. 
 
@@ -198,4 +198,3 @@ ms.locfileid: "85322130"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 См дополнительные сведения о [действии хранимой процедуры](data-factory-stored-proc-activity.md).
-

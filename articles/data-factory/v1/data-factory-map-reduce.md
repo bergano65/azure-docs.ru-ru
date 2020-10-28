@@ -12,12 +12,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: 98e352024ceea322f09947baf1bc759459a2af19
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 089a2e6a0b90c1682e2ebdd146626c93cec35f77
+ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92359974"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92636856"
 ---
 # <a name="invoke-mapreduce-programs-from-data-factory"></a>Вызов программы MapReduce из фабрики данных
 > [!div class="op_single_selector" title1="Действия преобразования"]
@@ -26,8 +26,8 @@ ms.locfileid: "92359974"
 > * [Действие MapReduce](data-factory-map-reduce.md)
 > * [Действие потоковой передачи Hadoop](data-factory-hadoop-streaming-activity.md)
 > * [Действие Spark](data-factory-spark.md)
-> * [Действие выполнения пакета Машинное обучение Azure Studio (классическая модель)](data-factory-azure-ml-batch-execution-activity.md)
-> * [Действие "обновить ресурс" Машинное обучение Azure Studio (классическая модель)](data-factory-azure-ml-update-resource-activity.md)
+> * [Действие выполнения пакета в Студии машинного обучения Azure (классическая)](data-factory-azure-ml-batch-execution-activity.md)
+> * [Действие обновления ресурса в Студии машинного обучения Azure (классическая)](data-factory-azure-ml-update-resource-activity.md)
 > * [Действие хранимой процедуры](data-factory-stored-proc-activity.md)
 > * [Действие U-SQL в Data Lake Analytics](data-factory-usql-activity.md)
 > * [Настраиваемое действие .NET](data-factory-use-custom-activities.md)
@@ -49,11 +49,11 @@ ms.locfileid: "92359974"
 ## <a name="json-for-hdinsight-mapreduce-activity"></a>JSON для действия MapReduce в HDInsight
 В определении JSON для действия HDInsight: 
 
-1. В поле **тип** для **действия** задайте значение **HDInsight**.
-2. Укажите имя класса для свойства **className**.
-3. Укажите путь к JAR-файлу, включающий имя файла для свойства **jarFilePath**.
-4. Укажите связанную службу, которая ссылается на хранилище BLOB-объектов Azure, содержащее JAR-файл для свойства **jarLinkedService**.   
-5. Задайте аргументы для программы MapReduce в разделе **аргументов**. Во время выполнения вы увидите несколько дополнительных аргументов (например, mapreduce.job.tags) платформы MapReduce. Чтобы отличать свои аргументы от аргументов MapReduce, вы можете использовать параметр и значение в качестве аргументов, как показано в следующем примере (-s, --input, --output и т. д — параметры, за которыми сразу следуют их значения).
+1. В поле **тип** для **действия** задайте значение **HDInsight** .
+2. Укажите имя класса для свойства **className** .
+3. Укажите путь к JAR-файлу, включающий имя файла для свойства **jarFilePath** .
+4. Укажите связанную службу, которая ссылается на хранилище BLOB-объектов Azure, содержащее JAR-файл для свойства **jarLinkedService** .   
+5. Задайте аргументы для программы MapReduce в разделе **аргументов** . Во время выполнения вы увидите несколько дополнительных аргументов (например, mapreduce.job.tags) платформы MapReduce. Чтобы отличать свои аргументы от аргументов MapReduce, вы можете использовать параметр и значение в качестве аргументов, как показано в следующем примере (-s, --input, --output и т. д — параметры, за которыми сразу следуют их значения).
 
     ```JSON   
     {
@@ -183,7 +183,7 @@ ms.locfileid: "92359974"
 
 | Свойство | Примечания |
 |:--- |:--- |
-| тип |Должен быть задан тип **HDInsightMapReduce**. |
+| type |Должен быть задан тип **HDInsightMapReduce** . |
 | className |Имя класса: **wordcount** |
 | jarFilePath |Путь к JAR-файлу, содержащему этот класс. Если вы копируете и вставляете приведенный код, не забудьте изменить имя кластера. |
 | jarLinkedService |Служба, связанная со службой хранилища Azure, содержащая JAR-файл. Эта связанная служба ссылается на хранилище, связанное с кластером HDInsight. |
@@ -235,20 +235,19 @@ ms.locfileid: "92359974"
 ## <a name="run-spark-programs"></a>Запуск программ Spark
 Действие MapReduce можно использовать для запуска программ Spark в кластере HDInsight Spark. Дополнительные сведения см. в разделе [Вызов программ Spark из фабрики данных](data-factory-spark.md).  
 
-[developer-reference]: https://go.microsoft.com/fwlink/?LinkId=516908
+[developer-reference]: /previous-versions/azure/dn834987(v=azure.100)
 [cmdlet-reference]: https://go.microsoft.com/fwlink/?LinkId=517456
 
 
 [adfgetstarted]: data-factory-copy-data-from-azure-blob-storage-to-sql-database.md
 [adfgetstartedmonitoring]:data-factory-copy-data-from-azure-blob-storage-to-sql-database.md#monitor-pipelines 
 
-[Developer Reference]: https://go.microsoft.com/fwlink/?LinkId=516908
+[Developer Reference]: /previous-versions/azure/dn834987(v=azure.100)
 [Azure Portal]: https://portal.azure.com
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также:
 * [Действие Hive](data-factory-hive-activity.md)
 * [Действие Pig](data-factory-pig-activity.md)
 * [Действие потоковой передачи Hadoop](data-factory-hadoop-streaming-activity.md)
 * [Вызов программ Spark](data-factory-spark.md)
 * [Вызов сценариев R](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/RunRScriptUsingADFSample)
-

@@ -13,12 +13,12 @@ ms.author: daperlov
 ms.reviewer: maghan
 manager: anandsub
 robots: noindex
-ms.openlocfilehash: 45aa444393ed81bc320a770203ca114c35e16107
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7afc16beaacee5b75d57c4e4216a105734d20a09
+ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84195902"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92637077"
 ---
 # <a name="troubleshoot-data-factory-issues"></a>Устранение неполадок Фабрики данных
 > [!NOTE]
@@ -62,12 +62,12 @@ ms.locfileid: "84195902"
 * Щелкните ссылку **Установка вручную** в той же колонке на портале. Этот подход используется для скачивания файла установки и его запуска вручную. После успешного завершения установки откроется диалоговое окно настройки шлюза управления данными. Скопируйте **ключ** на экране портала и используйте его в диспетчере конфигурации, чтобы вручную зарегистрировать шлюз в службе.  
 
 ### <a name="problem-fail-to-connect-to-sql-server"></a>Проблема: не удалось подключиться к SQL Server
-Запустите **диспетчер конфигурации шлюза управления данными** на компьютере шлюза и используйте вкладку **Устранение неполадок**, чтобы проверить подключение к SQL Server с компьютера шлюза. Советы по устранению неполадок, связанных со шлюзом или подключением, см. в разделе [Устранение неполадок в работе шлюза](data-factory-data-management-gateway.md#troubleshooting-gateway-issues).   
+Запустите **диспетчер конфигурации шлюза управления данными** на компьютере шлюза и используйте вкладку **Устранение неполадок** , чтобы проверить подключение к SQL Server с компьютера шлюза. Советы по устранению неполадок, связанных со шлюзом или подключением, см. в разделе [Устранение неполадок в работе шлюза](data-factory-data-management-gateway.md#troubleshooting-gateway-issues).   
 
 ### <a name="problem-input-slices-are-in-waiting-state-forever"></a>Проблема. неограниченное состояние входных срезов
-Срезы могут находиться в состоянии **ожидания** по разным причинам. Одна из распространенных причин — для свойства **external** не задано значение **true**. Все наборы данных, созданные вне фабрики данных Azure, должны быть помечены свойством **external** . Это свойство указывает на то, что данные являются внешними и не поддерживаются какими-либо конвейерами в фабрике данных. После того как данные станут доступны в соответствующем хранилище, срезы данных помечаются флагом **Ready** (готово).
+Срезы могут находиться в состоянии **ожидания** по разным причинам. Одна из распространенных причин — для свойства **external** не задано значение **true** . Все наборы данных, созданные вне фабрики данных Azure, должны быть помечены свойством **external** . Это свойство указывает на то, что данные являются внешними и не поддерживаются какими-либо конвейерами в фабрике данных. После того как данные станут доступны в соответствующем хранилище, срезы данных помечаются флагом **Ready** (готово).
 
-Пример использования свойства **external** приведен ниже. При необходимости можно указать **externalData***, если параметру External присвоить значение true.
+Пример использования свойства **external** приведен ниже. При установке значения External в значение true можно дополнительно указать **externalData** _.
 
 Дополнительные сведения об этом свойстве см. в статье [Наборы данных](data-factory-create-datasets.md).
 
@@ -97,7 +97,7 @@ ms.locfileid: "84195902"
 }
 ```
 
-Чтобы устранить эту ошибку, добавьте свойство **external** и дополнительный раздел **externalData** в определение JSON входной таблицы и повторно создайте эту таблицу.
+Чтобы устранить эту ошибку, добавьте свойство _ *External* * и необязательный раздел **EXTERNALDATA** в определение JSON входной таблицы и воссоздайте таблицу.
 
 ### <a name="problem-hybrid-copy-operation-fails"></a>Проблема: сбой гибридной операции копирования
 Действия по устранению неполадок с копированием в локальное хранилище данных и из него с помощью шлюза управления данными см. в статье [Устранение неполадок в работе шлюза](data-factory-data-management-gateway.md#troubleshooting-gateway-issues).
@@ -130,9 +130,9 @@ Failed to create cluster. Exception: Unable to complete the cluster create opera
 [adfgetstarted]: data-factory-copy-data-from-azure-blob-storage-to-sql-database.md
 [use-custom-activities]: data-factory-use-custom-activities.md
 [troubleshoot]: data-factory-troubleshoot.md
-[developer-reference]: https://go.microsoft.com/fwlink/?LinkId=516908
+[developer-reference]: /previous-versions/azure/dn834987(v=azure.100)
 [cmdlet-reference]: https://go.microsoft.com/fwlink/?LinkId=517456
-[json-scripting-reference]: https://go.microsoft.com/fwlink/?LinkId=516971
+[json-scripting-reference]: /previous-versions/azure/dn835050(v=azure.100)
 
 [azure-portal]: https://portal.azure.com/
 
