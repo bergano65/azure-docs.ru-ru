@@ -7,12 +7,12 @@ ms.workload: infrastructure
 ms.topic: how-to
 ms.date: 09/09/2020
 ms.author: manayar
-ms.openlocfilehash: 0a777b9008864368a6d1731cae0374e55a4c585f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8c7574daced9cec078b6e98e378212ce30d6f4f6
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91842875"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92744730"
 ---
 # <a name="preview-automatic-vm-guest-patching-for-windows-vms-in-azure"></a>Предварительный просмотр: Автоматическая установка исправлений гостевых виртуальных машин для виртуальных машин Windows в Azure
 
@@ -80,17 +80,20 @@ ms.locfileid: "91842875"
 
 **Аутоматикбиплатформ:**
 - Этот режим включает автоматическое исправление гостевых виртуальных машин для виртуальной машины Windows и последующий процесс установки исправлений в Azure.
+- Этот режим необходим для установки исправлений, необходимых для обеспечения доступности.
 - Установка этого режима также отключает автоматическое обновление машинного кода на виртуальной машине Windows во избежание дублирования.
 - Этот режим поддерживается только для виртуальных машин, созданных с помощью описанных выше образов платформы операционной системы.
 - Чтобы использовать этот режим, задайте свойство `osProfile.windowsConfiguration.enableAutomaticUpdates=true` и задайте свойство  `osProfile.windowsConfiguration.patchSettings.patchMode=AutomaticByPlatfom` в ШАБЛОНЕ виртуальной машины.
 
 **Аутоматикбйос:**
 - Этот режим включает автоматическое обновление на виртуальной машине Windows, а исправления устанавливаются на ВИРТУАЛЬНОЙ машине с помощью автоматическое обновление.
+- Этот режим не поддерживает обновление при первом доступе.
 - Этот режим задается по умолчанию, если не указан другой режим обновления.
 - Чтобы использовать этот режим, задайте свойство `osProfile.windowsConfiguration.enableAutomaticUpdates=true` и задайте свойство  `osProfile.windowsConfiguration.patchSettings.patchMode=AutomaticByOS` в ШАБЛОНЕ виртуальной машины.
 
 **Вручную:**
 - Этот режим отключает автоматическое обновление на виртуальной машине Windows.
+- Этот режим не поддерживает обновление при первом доступе.
 - Этот режим следует задавать при использовании настраиваемых решений по исправлению.
 - Чтобы использовать этот режим, задайте свойство `osProfile.windowsConfiguration.enableAutomaticUpdates=false` и задайте свойство  `osProfile.windowsConfiguration.patchSettings.patchMode=Manual` в ШАБЛОНЕ виртуальной машины.
 
@@ -196,7 +199,7 @@ Set-AzVMOperatingSystem -VM $VirtualMachine -Windows -ComputerName $ComputerName
 ```
 
 ### <a name="azure-cli-20"></a>Azure CLI 2.0
-Используйте команду [AZ VM Create](/cli/azure/vm#az-vm-create) , чтобы включить автоматическое исправление ГОСТЕВЫХ виртуальных машин при создании новой виртуальной машины. В следующем примере выполняется настройка автоматической установки исправлений гостевых виртуальных машин для виртуальной машины с именем *myVM* в группе ресурсов с именем *myResourceGroup*:
+Используйте команду [AZ VM Create](/cli/azure/vm#az-vm-create) , чтобы включить автоматическое исправление ГОСТЕВЫХ виртуальных машин при создании новой виртуальной машины. В следующем примере выполняется настройка автоматической установки исправлений гостевых виртуальных машин для виртуальной машины с именем *myVM* в группе ресурсов с именем *myResourceGroup* :
 
 ```azurecli-interactive
 az vm create --resource-group myResourceGroup --name myVM --image Win2019Datacenter --enable-agent --enable-auto-update --patch-mode AutomaticByPlatform
@@ -275,6 +278,6 @@ Invoke-AzVmPatchAssessment -ResourceGroupName "myResourceGroup" -VMName "myVM"
 az vm assess-patches --resource-group myResourceGroup --name myVM
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 > [!div class="nextstepaction"]
 > [Дополнительные сведения о создании виртуальных машин Windows и управлении ими](tutorial-manage-vm.md)

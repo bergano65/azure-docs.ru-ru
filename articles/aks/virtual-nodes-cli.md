@@ -5,13 +5,13 @@ description: Сведения о том, как с помощью Azure CLI со
 services: container-service
 ms.topic: conceptual
 ms.date: 05/06/2019
-ms.custom: references_regions
-ms.openlocfilehash: 1e62af4f2ab8233125777bf6edf713758e4f2ec7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: references_regions, devx-track-azurecli
+ms.openlocfilehash: 96c47ed59fd904f1523347d9f0ef7bc00edb866f
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87543084"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92745652"
 ---
 # <a name="create-and-configure-an-azure-kubernetes-services-aks-cluster-to-use-virtual-nodes-using-the-azure-cli"></a>Создание и настройка кластера Службы Azure Kubernetes (AKS) для использования виртуальных узлов с помощью Azure CLI
 
@@ -21,7 +21,7 @@ ms.locfileid: "87543084"
 
 ## <a name="before-you-begin"></a>Перед началом
 
-Виртуальные узлы обеспечивают сетевое взаимодействие контейнеров pod, которые выполняются в Экземплярах контейнеров Azure (ACI) и кластере AKS. Для обеспечения этого взаимодействия создается подсеть виртуальной сети и назначаются делегированные разрешения. Виртуальные узлы работают только с кластерами AKS, созданными с помощью сетевого взаимодействия уровня *Расширенный*. По умолчанию кластеры AKS создаются с помощью сетевого взаимодействия уровня *Базовый*. В этой статье показано, как создать виртуальную сеть и подсети, а затем развернуть кластер AKS, использующий сетевое взаимодействие уровня "Расширенный".
+Виртуальные узлы обеспечивают сетевое взаимодействие контейнеров pod, которые выполняются в Экземплярах контейнеров Azure (ACI) и кластере AKS. Для обеспечения этого взаимодействия создается подсеть виртуальной сети и назначаются делегированные разрешения. Виртуальные узлы работают только с кластерами AKS, созданными с помощью сетевого взаимодействия уровня *Расширенный* . По умолчанию кластеры AKS создаются с помощью сетевого взаимодействия уровня *Базовый* . В этой статье показано, как создать виртуальную сеть и подсети, а затем развернуть кластер AKS, использующий сетевое взаимодействие уровня "Расширенный".
 
 Если вы не использовали ACI ранее, зарегистрируйте поставщик служб в подписке. Вы можете проверить состояние регистрации поставщика ACI с помощью команды [az provider list][az-provider-list], как показано в следующем примере.
 
@@ -29,7 +29,7 @@ ms.locfileid: "87543084"
 az provider list --query "[?contains(namespace,'Microsoft.ContainerInstance')]" -o table
 ```
 
-Поставщик *Microsoft.ContainerInstance* должен иметь состояние *Registered*, как показано в следующем примере выходных данных.
+Поставщик *Microsoft.ContainerInstance* должен иметь состояние *Registered* , как показано в следующем примере выходных данных.
 
 ```output
 Namespace                    RegistrationState    RegistrationPolicy
@@ -37,7 +37,7 @@ Namespace                    RegistrationState    RegistrationPolicy
 Microsoft.ContainerInstance  Registered           RegistrationRequired
 ```
 
-Если поставщик имеет состояние *NotRegistered*, зарегистрируйте этот поставщик с помощью команды [az provider register][az-provider-register], как показано в следующем примере.
+Если поставщик имеет состояние *NotRegistered* , зарегистрируйте этот поставщик с помощью команды [az provider register][az-provider-register], как показано в следующем примере.
 
 ```azurecli-interactive
 az provider register --namespace Microsoft.ContainerInstance
@@ -75,7 +75,7 @@ az provider register --namespace Microsoft.ContainerInstance
 
 Azure Cloud Shell — это бесплатная интерактивная оболочка, с помощью которой можно выполнять действия, описанные в этой статье. Она включает предварительно установленные общие инструменты Azure и настроена для использования с вашей учетной записью.
 
-Чтобы открыть Cloud Shell, выберите **Попробовать** в правом верхнем углу блока кода. Cloud Shell можно также запустить в отдельной вкладке браузера, перейдя на страницу [https://shell.azure.com/bash](https://shell.azure.com/bash). Нажмите кнопку **Копировать**, чтобы скопировать блоки кода. Вставьте код в Cloud Shell и нажмите клавишу "ВВОД", чтобы выполнить его.
+Чтобы открыть Cloud Shell, выберите **Попробовать** в правом верхнем углу блока кода. Cloud Shell можно также запустить в отдельной вкладке браузера, перейдя на страницу [https://shell.azure.com/bash](https://shell.azure.com/bash). Нажмите кнопку **Копировать** , чтобы скопировать блоки кода. Вставьте код в Cloud Shell и нажмите клавишу "ВВОД", чтобы выполнить его.
 
 Если вы решили установить и использовать CLI локально, для выполнения инструкций из этой статьи вам потребуется Azure CLI 2.0.49 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
 
@@ -89,7 +89,7 @@ az group create --name myResourceGroup --location westus
 
 ## <a name="create-a-virtual-network"></a>Создание виртуальной сети
 
-Создайте виртуальную сеть с помощью команды [az network vnet create][az-network-vnet-create]. В следующем примере создается виртуальная сеть с именем *myVnet* и префиксом адреса *10.0.0.0/8*, а также подсеть с именем *myAKSSubnet*: По умолчанию используется префикс адреса подсети *10.240.0.0/16*:
+Создайте виртуальную сеть с помощью команды [az network vnet create][az-network-vnet-create]. В следующем примере создается виртуальная сеть с именем *myVnet* и префиксом адреса *10.0.0.0/8* , а также подсеть с именем *myAKSSubnet* : По умолчанию используется префикс адреса подсети *10.240.0.0/16* :
 
 ```azurecli-interactive
 az network vnet create \
@@ -100,7 +100,7 @@ az network vnet create \
     --subnet-prefix 10.240.0.0/16
 ```
 
-Теперь создайте дополнительную подсеть для виртуальных узлов с помощью команды [az network vnet subnet create][az-network-vnet-subnet-create]. В следующем примере создается подсеть с именем *myVirtualNodeSubnet* с префиксом адреса *10.241.0.0/16*.
+Теперь создайте дополнительную подсеть для виртуальных узлов с помощью команды [az network vnet subnet create][az-network-vnet-subnet-create]. В следующем примере создается подсеть с именем *myVirtualNodeSubnet* с префиксом адреса *10.241.0.0/16* .
 
 ```azurecli-interactive
 az network vnet subnet create \
@@ -132,7 +132,7 @@ az ad sp create-for-rbac --skip-assignment
 }
 ```
 
-Запишите значения параметров *appId* и *password*. Эти значения используются в приведенных далее действиях.
+Запишите значения параметров *appId* и *password* . Эти значения используются в приведенных далее действиях.
 
 ## <a name="assign-permissions-to-the-virtual-network"></a>Назначение разрешений для виртуальной сети
 
@@ -178,7 +178,7 @@ az aks create \
 
 ## <a name="enable-virtual-nodes-addon"></a>Включение надстройки виртуальных узлов
 
-Чтобы включить виртуальные узлы, теперь используйте команду [az aks enable-addons][az-aks-enable-addons]. В следующем примере используется подсеть с именем *myVirtualNodeSubnet*, созданная на предыдущем шаге:
+Чтобы включить виртуальные узлы, теперь используйте команду [az aks enable-addons][az-aks-enable-addons]. В следующем примере используется подсеть с именем *myVirtualNodeSubnet* , созданная на предыдущем шаге:
 
 ```azurecli-interactive
 az aks enable-addons \
@@ -202,7 +202,7 @@ az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
 kubectl get nodes
 ```
 
-В следующем примере выходных данных показано создание одного узла виртуальной машины и одного виртуального узла для Linux с именем *virtual-node-aci-linux*:
+В следующем примере выходных данных показано создание одного узла виртуальной машины и одного виртуального узла для Linux с именем *virtual-node-aci-linux* :
 
 ```output
 NAME                          STATUS    ROLES     AGE       VERSION

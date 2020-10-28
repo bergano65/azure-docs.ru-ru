@@ -5,13 +5,13 @@ author: ashishnegi
 ms.topic: conceptual
 ms.date: 12/03/2018
 ms.author: asnegi
-ms.custom: mvc, devcenter
-ms.openlocfilehash: f26fe70afe7d9e2872f06ac6da7143556278b1b0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: mvc, devcenter, devx-track-azurecli
+ms.openlocfilehash: 1db412a3b83da905475749deea0432fbeae06e8f
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75497965"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92742766"
 ---
 # <a name="mount-highly-available-service-fabric-reliable-disk-based-volume-in-a-service-fabric-mesh-application"></a>Подключение тома надежного диска высокой доступности Service Fabric в приложении "Сетка Azure Service Fabric" 
 Распространенный способ сохранения состояния в приложениях-контейнерах — использовать удаленное хранилище, такое как хранилище файлов Azure, или базу данных, такую как Azure Cosmos DB. Это влечет за собой значительную сетевую задержку при доступе к удаленному хранилищу для чтения и записи.

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/01/2020
 ms.author: yelevin
-ms.openlocfilehash: 643b28b2e88f233d2924270511d3c87fa4d9b767
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ba14e2c475611ed77661060d6e17ae0bcbf0a6ca
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91631636"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92744219"
 ---
 # <a name="step-3-validate-connectivity"></a>Шаг 3. Проверка подключения
 
@@ -29,18 +29,27 @@ ms.locfileid: "91631636"
 
 - Необходимо иметь повышенные разрешения (sudo) на компьютере сервера пересылки журналов.
 
-- На компьютере сервера пересылки журналов должна быть установлена Python.<br>
+- На компьютере сервера пересылки журналов должна быть установлена **python 2,7** .<br>
 Используйте `python –version` команду для проверки.
+
+- В этом процессе может потребоваться идентификатор рабочей области и первичный ключ рабочей области. Их можно найти в ресурсе рабочей области в разделе **Управление агентами** .
 
 ## <a name="how-to-validate-connectivity"></a>Проверка подключения
 
-1. В меню навигации меток Azure откройте **журналы**. Выполните запрос с помощью схемы **CommonSecurityLog** , чтобы узнать, поступают ли журналы из решения по обеспечению безопасности.<br>
-Имейте в виду, что журналы в **log Analytics**могут занять около 20 минут. 
+1. В меню навигации меток Azure откройте **журналы** . Выполните запрос с помощью схемы **CommonSecurityLog** , чтобы узнать, поступают ли журналы из решения по обеспечению безопасности.<br>
+Имейте в виду, что журналы в **log Analytics** могут занять около 20 минут. 
 
 1. Если результаты запроса не отображаются, убедитесь, что события формируются из решения безопасности, или попытайтесь создать некоторые из них и убедитесь, что они перенаправлены на указанный компьютер сервера пересылки системного журнала. 
 
-1. Выполните следующий скрипт на стороне сервера пересылки журналов, чтобы проверить подключение между решением безопасности, перенаправителем журналов и Sentinel Azure. Этот сценарий проверяет, что управляющая программа прослушивает правильные порты, что пересылка настроена правильно и что ничто не блокирует обмен данными между управляющей программой и агентом Log Analytics. Он также отправляет фиктивные сообщения "Тесткоммоневентформат" для проверки сквозного подключения. <br>
- `sudo wget https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/DataConnectors/CEF/cef_troubleshoot.py&&sudo python cef_troubleshoot.py [WorkspaceID]`
+1. Выполните следующий скрипт на стороне сервера пересылки журналов (вместо заполнителя используйте идентификатор рабочей области), чтобы проверить подключение между решением безопасности, пересылкой журнала и Sentinel Azure. Этот сценарий проверяет, что управляющая программа прослушивает правильные порты, что пересылка настроена правильно и что ничто не блокирует обмен данными между управляющей программой и агентом Log Analytics. Он также отправляет фиктивные сообщения "Тесткоммоневентформат" для проверки сквозного подключения. <br>
+
+    ```bash
+    sudo wget https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/DataConnectors/CEF/cef_troubleshoot.py&&sudo python cef_troubleshoot.py [WorkspaceID]` 
+    ```
+
+   - Вы можете получить сообщение с запросом на выполнение команды для устранения проблемы с **сопоставлением поля *компьютер*** . Дополнительные сведения см. в описании [в скрипте проверки](#mapping-command) .
+
+    - Вы можете получить сообщение с запросом на выполнение команды, чтобы устранить проблемы с **анализом журналов брандмауэра Cisco ASA** . Дополнительные сведения см. в описании [в скрипте проверки](#parsing-command) .
 
 ## <a name="validation-script-explained"></a>Описание скрипта проверки
 
@@ -72,21 +81,31 @@ ms.locfileid: "91631636"
     </filter>
     ```
 
-1. Проверяет, что анализ Cisco ASA для событий брандмауэра настроен ожидаемым образом:
+1. Проверяет, что синтаксический анализ событий брандмауэра Cisco ASA настроен ожидаемым образом, с помощью следующей команды: 
 
     ```bash
-    sed -i "s|return '%ASA' if ident.include?('%ASA')|return ident if ident.include?('%ASA')|g" 
-        /opt/microsoft/omsagent/plugin/security_lib.rb && 
-        sudo /opt/microsoft/omsagent/bin/service_control restart [workspaceID]
+    grep -i "return ident if ident.include?('%ASA')" /opt/microsoft/omsagent/plugin/security_lib.rb
     ```
 
-1. Проверяет, что поле " *компьютер* " в источнике системного журнала правильно сопоставлено в агенте log Analytics:
+    - <a name="parsing-command"></a>Если при синтаксическом анализе возникла ошибка, скрипт выдаст сообщение об ошибке, направляющее **выполнить следующую команду вручную** (вместо ЗАПОЛНИТЕЛЯ используется идентификатор рабочей области). Команда обеспечит правильный анализ и перезапустите агент.
+    
+        ```bash
+        # Cisco ASA parsing fix
+        sed -i "s|return '%ASA' if ident.include?('%ASA')|return ident if ident.include?('%ASA')|g" /opt/microsoft/omsagent/plugin/security_lib.rb && sudo /opt/microsoft/omsagent/bin/service_control restart [workspaceID]
+        ```
+
+1. Проверяет, что поле " *компьютер* " в источнике системного журнала правильно сопоставлено в агенте log Analytics, используя следующую команду: 
 
     ```bash
-    sed -i -e "/'Severity' => tags\[tags.size - 1\]/ a \ \t 'Host' => record['host']" 
-        -e "s/'Severity' => tags\[tags.size - 1\]/&,/" /opt/microsoft/omsagent/pl ugin/
-        filter_syslog_security.rb && sudo /opt/microsoft/omsagent/bin/service_control restart [workspaceID]
+    grep -i "'Host' => record\['host'\]"  /opt/microsoft/omsagent/plugin/filter_syslog_security.rb
     ```
+
+    - <a name="mapping-command"></a>При возникновении проблемы с сопоставлением сценарий выдаст сообщение об ошибке, в котором можно **выполнить следующую команду вручную** (вместо ЗАПОЛНИТЕЛЯ используется идентификатор рабочей области). Команда обеспечит правильное сопоставление и перезапустите агент.
+
+        ```bash
+        # Computer field mapping fix
+        sed -i -e "/'Severity' => tags\[tags.size - 1\]/ a \ \t 'Host' => record['host']" -e "s/'Severity' => tags\[tags.size - 1\]/&,/" /opt/microsoft/omsagent/plugin/filter_syslog_security.rb && sudo /opt/microsoft/omsagent/bin/service_control restart [workspaceID]
+        ```
 
 1. Проверяет наличие каких-либо улучшений безопасности на компьютере, которые могут блокировать сетевой трафик (например, брандмауэр узла).
 
@@ -155,21 +174,31 @@ ms.locfileid: "91631636"
     </filter>
     ```
 
-1. Проверяет, что анализ Cisco ASA для событий брандмауэра настроен ожидаемым образом:
+1. Проверяет, что синтаксический анализ событий брандмауэра Cisco ASA настроен ожидаемым образом, с помощью следующей команды: 
 
     ```bash
-    sed -i "s|return '%ASA' if ident.include?('%ASA')|return ident if ident.include?('%ASA')|g" 
-        /opt/microsoft/omsagent/plugin/security_lib.rb && 
-        sudo /opt/microsoft/omsagent/bin/service_control restart [workspaceID]
+    grep -i "return ident if ident.include?('%ASA')" /opt/microsoft/omsagent/plugin/security_lib.rb
     ```
 
-1. Проверяет, что поле " *компьютер* " в источнике системного журнала правильно сопоставлено в агенте log Analytics:
+    - <a name="parsing-command"></a>Если при синтаксическом анализе возникла ошибка, скрипт выдаст сообщение об ошибке, направляющее **выполнить следующую команду вручную** (вместо ЗАПОЛНИТЕЛЯ используется идентификатор рабочей области). Команда обеспечит правильный анализ и перезапустите агент.
+    
+        ```bash
+        # Cisco ASA parsing fix
+        sed -i "s|return '%ASA' if ident.include?('%ASA')|return ident if ident.include?('%ASA')|g" /opt/microsoft/omsagent/plugin/security_lib.rb && sudo /opt/microsoft/omsagent/bin/service_control restart [workspaceID]
+        ```
+
+1. Проверяет, что поле " *компьютер* " в источнике системного журнала правильно сопоставлено в агенте log Analytics, используя следующую команду: 
 
     ```bash
-    sed -i -e "/'Severity' => tags\[tags.size - 1\]/ a \ \t 'Host' => record['host']" 
-        -e "s/'Severity' => tags\[tags.size - 1\]/&,/" /opt/microsoft/omsagent/pl ugin/
-        filter_syslog_security.rb && sudo /opt/microsoft/omsagent/bin/service_control restart [workspaceID]
+    grep -i "'Host' => record\['host'\]"  /opt/microsoft/omsagent/plugin/filter_syslog_security.rb
     ```
+
+    - <a name="mapping-command"></a>При возникновении проблемы с сопоставлением сценарий выдаст сообщение об ошибке, в котором можно **выполнить следующую команду вручную** (вместо ЗАПОЛНИТЕЛЯ используется идентификатор рабочей области). Команда обеспечит правильное сопоставление и перезапустите агент.
+
+        ```bash
+        # Computer field mapping fix
+        sed -i -e "/'Severity' => tags\[tags.size - 1\]/ a \ \t 'Host' => record['host']" -e "s/'Severity' => tags\[tags.size - 1\]/&,/" /opt/microsoft/omsagent/plugin/filter_syslog_security.rb && sudo /opt/microsoft/omsagent/bin/service_control restart [workspaceID]
+        ```
 
 1. Проверяет наличие каких-либо улучшений безопасности на компьютере, которые могут блокировать сетевой трафик (например, брандмауэр узла).
 
@@ -215,7 +244,7 @@ ms.locfileid: "91631636"
     ```
 ---
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В этом документе вы узнали, как подключить устройства CEF к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats.md).

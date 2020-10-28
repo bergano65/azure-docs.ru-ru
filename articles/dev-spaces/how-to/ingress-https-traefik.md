@@ -5,13 +5,13 @@ ms.date: 12/10/2019
 ms.topic: conceptual
 description: Узнайте, как настроить Azure Dev Spaces для использования пользовательского контроллера входящих данных траефик и настройки HTTPS с помощью этого контроллера входящего трафика.
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
-ms.custom: devx-track-js
-ms.openlocfilehash: a30dae3b65a7e877dc20b4d6fae8de338024d3c7
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.custom: devx-track-js, devx-track-azurecli
+ms.openlocfilehash: fb45c310d306813dc10b667db6ce36048eccf217
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91973059"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92746119"
 ---
 # <a name="use-a-custom-traefik-ingress-controller-and-configure-https"></a>Использование пользовательского контроллера входящих данных траефик и настройка HTTPS
 
@@ -102,8 +102,8 @@ cd dev-spaces/samples/BikeSharingApp/charts
 ```
 
 Откройте [Values. YAML][values-yaml] и внесите следующие обновления:
-* Замените все экземпляры *<REPLACE_ME_WITH_HOST_SUFFIX>* *траефик. MY_CUSTOM_DOMAIN* использование домена для *MY_CUSTOM_DOMAIN*. 
-* Замените *kubernetes.IO/Ingress.class: траефик-аздс # dev Spaces, относящийся* к *kubernetes.IO/Ingress.class: Траефик # Custom входной*вход. 
+* Замените все экземпляры *<REPLACE_ME_WITH_HOST_SUFFIX>* *траефик. MY_CUSTOM_DOMAIN* использование домена для *MY_CUSTOM_DOMAIN* . 
+* Замените *kubernetes.IO/Ingress.class: траефик-аздс # dev Spaces, относящийся* к *kubernetes.IO/Ingress.class: Траефик # Custom входной* вход. 
 
 Ниже приведен пример обновленного `values.yaml` файла.
 
@@ -212,7 +212,7 @@ spec:
 ```
 
 > [!NOTE]
-> Для тестирования также существует [промежуточный сервер][letsencrypt-staging-issuer] , который можно использовать для *клустериссуер*.
+> Для тестирования также существует [промежуточный сервер][letsencrypt-staging-issuer] , который можно использовать для *клустериссуер* .
 
 Используйте `kubectl` для применения `letsencrypt-clusterissuer.yaml` .
 
@@ -220,7 +220,7 @@ spec:
 kubectl apply -f letsencrypt-clusterissuer.yaml --namespace traefik
 ```
 
-Удалите предыдущие *траефик* *клустерроле* и *клустерролебиндинг*, а затем обновите траефик, чтобы использовать протокол HTTPS с помощью `helm` .
+Удалите предыдущие *траефик* *клустерроле* и *клустерролебиндинг* , а затем обновите траефик, чтобы использовать протокол HTTPS с помощью `helm` .
 
 > [!NOTE]
 > Если в кластере AKS не включен RBAC, удалите параметр *--Set RBAC. Enabled = True* .
@@ -262,7 +262,7 @@ az network dns record-set a remove-record \
     --ipv4-address PREVIOUS_EXTERNAL_IP
 ```
 
-Приведенный выше пример обновляет запись *A* в зоне *MY_CUSTOM_DOMAIN* DNS для использования *PREVIOUS_EXTERNAL_IP*.
+Приведенный выше пример обновляет запись *A* в зоне *MY_CUSTOM_DOMAIN* DNS для использования *PREVIOUS_EXTERNAL_IP* .
 
 Обновите [Values. YAML][values-yaml] , чтобы включить сведения об использовании *ДИСПЕТЧЕРА сертификатов* и HTTPS. Ниже приведен пример обновленного `values.yaml` файла.
 
@@ -312,7 +312,7 @@ helm upgrade bikesharingsampleapp . --namespace dev --atomic
 Mixed Content: The page at 'https://azureuser1.s.dev.bikesharingweb.traefik.MY_CUSTOM_DOMAIN/devsignin' was loaded over HTTPS, but requested an insecure resource 'http://azureuser1.s.dev.gateway.traefik.MY_CUSTOM_DOMAIN/api/user/allUsers'. This request has been blocked; the content must be served over HTTPS.
 ```
 
-Чтобы устранить эту ошибку, обновите [бикешарингвеб/аздс. YAML][azds-yaml] , чтобы использовать *траефик* для *kubernetes.IO/Ingress.class* , и личный домен для *$ (хостсуффикс)*. Пример:
+Чтобы устранить эту ошибку, обновите [бикешарингвеб/аздс. YAML][azds-yaml] , чтобы использовать *траефик* для *kubernetes.IO/Ingress.class* , и личный домен для *$ (хостсуффикс)* . Пример:
 
 ```yaml
 ...

@@ -8,13 +8,13 @@ ms.service: virtual-machine-scale-sets
 ms.subservice: availability
 ms.date: 12/18/2018
 ms.reviewer: jushiman
-ms.custom: mimckitt
-ms.openlocfilehash: 70e1a131daf95a9b0f6ae75c022dec2fdbc394a7
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.custom: mimckitt, devx-track-azurecli
+ms.openlocfilehash: 4df340fa80ac4b9c4ff2a5e560580e09e01237e1
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92366669"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92745937"
 ---
 # <a name="choosing-the-right-number-of-fault-domains-for-virtual-machine-scale-set"></a>Выбор нужного числа доменов сбоя для масштабируемого набора виртуальных машин
 Масштабируемые наборы виртуальных машин создаются с пятью доменами сбоя по умолчанию в регионах Azure без зон. Для регионов, поддерживающих зональные развертывание масштабируемых наборов виртуальных машин и установлен этот параметр, значение по умолчанию для параметра количество доменов сбоя равно 1 для каждой из зон. FD = 1 в данном случае означает, что экземпляры виртуальных машин, принадлежащих к масштабируемому набору, будут распределены по многим стойкам по мере возможностей.
@@ -40,5 +40,5 @@ az vmss create \
 
 Создание и настройка всех ресурсов и виртуальных машин масштабируемого набора занимает несколько минут.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о [функциях доступности и избыточности](../virtual-machines/availability.md) для сред Azure.

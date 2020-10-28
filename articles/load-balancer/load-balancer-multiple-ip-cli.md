@@ -5,7 +5,7 @@ description: Узнайте, как назначить несколько IP-а�
 services: virtual-network
 documentationcenter: na
 author: asudbring
-ms.custom: seodec18
+ms.custom: seodec18, devx-track-azurecli
 ms.service: load-balancer
 ms.devlang: na
 ms.topic: how-to
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/25/2018
 ms.author: allensu
-ms.openlocfilehash: 9e9a74690108c0e089e99f9cd7f0f62e7a7d1778
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bc1e477882f3d065dfe89e8511259732129cec30
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84809158"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92746034"
 ---
 # <a name="load-balancing-on-multiple-ip-configurations-using-azure-cli"></a>Балансировка нагрузки в конфигурациях с несколькими IP-адресами с помощью Azure CLI
 
@@ -43,14 +43,14 @@ ms.locfileid: "84809158"
     az vm availability-set create --resource-group contosofabrikam --location westcentralus --name myAvailabilitySet
     ```
 
-4. [Создайте виртуальную сеть](../virtual-machines/linux/create-cli-complete.md?toc=%2fazure%2fvirtual-network%2ftoc.json#create-a-virtual-network-and-subnet)*myVNet* и подсеть *mySubnet*.
+4. [Создайте виртуальную сеть](../virtual-machines/linux/create-cli-complete.md?toc=%2fazure%2fvirtual-network%2ftoc.json#create-a-virtual-network-and-subnet)*myVNet* и подсеть *mySubnet* .
 
     ```azurecli
     az network vnet create --resource-group contosofabrikam --name myVnet --address-prefixes 10.0.0.0/16  --location westcentralus --subnet-name MySubnet --subnet-prefix 10.0.0.0/24
 
     ```
 
-5. [Создайте подсистему балансировки нагрузки](../virtual-machines/linux/create-cli-complete.md?toc=%2fazure%2fvirtual-network%2ftoc.json)*mylb*.
+5. [Создайте подсистему балансировки нагрузки](../virtual-machines/linux/create-cli-complete.md?toc=%2fazure%2fvirtual-network%2ftoc.json)*mylb* .
 
     ```azurecli
     az network lb create --resource-group contosofabrikam --location westcentralus --name mylb
@@ -64,14 +64,14 @@ ms.locfileid: "84809158"
     az network public-ip create --resource-group contosofabrikam --location westcentralus --name PublicIp2 --domain-name-label fabrikam --allocation-method Dynamic
     ```
 
-7. Создайте две интерфейсные IP-конфигурации, *contosofe* и *fabrikamfe*.
+7. Создайте две интерфейсные IP-конфигурации, *contosofe* и *fabrikamfe* .
 
     ```azurecli
     az network lb frontend-ip create --resource-group contosofabrikam --lb-name mylb --public-ip-name PublicIp1 --name contosofe
     az network lb frontend-ip create --resource-group contosofabrikam --lb-name mylb --public-ip-name PublicIp2 --name fabrkamfe
     ```
 
-8. Создайте внутренние пулы адресов, *contosopool* и *fabrikampool*, [пробу](../virtual-machines/linux/create-cli-complete.md?toc=%2fazure%2fvirtual-network%2ftoc.json) - *HTTP* и правила балансировки нагрузки, *HTTPc* и *HTTPf*.
+8. Создайте внутренние пулы адресов, *contosopool* и *fabrikampool* , [пробу](../virtual-machines/linux/create-cli-complete.md?toc=%2fazure%2fvirtual-network%2ftoc.json) - *HTTP* и правила балансировки нагрузки, *HTTPc* и *HTTPf* .
 
     ```azurecli
     az network lb address-pool create --resource-group contosofabrikam --lb-name mylb --name contosopool
@@ -97,7 +97,7 @@ ms.locfileid: "84809158"
     az storage account create --location westcentralus --resource-group contosofabrikam --kind Storage --sku-name GRS mystorageaccount1
     ```
 
-11. [Создайте сетевые интерфейсы](../virtual-machines/linux/create-cli-complete.md?toc=%2fazure%2fvirtual-network%2ftoc.json#create-a-virtual-nic) для VM1 и добавьте вторую IP-конфигурацию — *VM1-ipconfig2*. Затем [создайте виртуальную машину](../virtual-machines/linux/create-cli-complete.md?toc=%2fazure%2fvirtual-network%2ftoc.json#create-a-vm), как показано ниже.
+11. [Создайте сетевые интерфейсы](../virtual-machines/linux/create-cli-complete.md?toc=%2fazure%2fvirtual-network%2ftoc.json#create-a-virtual-nic) для VM1 и добавьте вторую IP-конфигурацию — *VM1-ipconfig2* . Затем [создайте виртуальную машину](../virtual-machines/linux/create-cli-complete.md?toc=%2fazure%2fvirtual-network%2ftoc.json#create-a-vm), как показано ниже.
 
     ```azurecli
     az network nic create --resource-group contosofabrikam --location westcentralus --subnet-vnet-name myVnet --subnet-name mySubnet --name VM1Nic1 --ip-config-name NIC1-ipconfig1

@@ -1,17 +1,17 @@
 ---
 title: Настройка Node.js приложений
 description: Узнайте, как настроить Node.js приложение в собственных экземплярах Windows или в предварительно созданном контейнере Linux в службе приложений Azure. В этой статье показаны наиболее распространенные задачи настройки.
-ms.custom: devx-track-js
+ms.custom: devx-track-js, devx-track-azurecli
 ms.devlang: nodejs
 ms.topic: article
 ms.date: 06/02/2020
 zone_pivot_groups: app-service-platform-windows-linux
-ms.openlocfilehash: 48b111966d58af80b6c34fa17231034f4f0cc213
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7f925854f4ef09ccc74c0ec1e8fdcca6b71d1437
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91311841"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92744057"
 ---
 # <a name="configure-a-nodejs-app-for-azure-app-service"></a>Настройка приложения Node.js для службы приложений Azure
 
@@ -93,8 +93,8 @@ az webapp config set --resource-group <resource-group-name> --name <app-name> --
 
 1. Запустите пользовательский скрипт, если он указан `PRE_BUILD_SCRIPT_PATH`.
 1. Запустите `npm install` без флагов, включая NPM `preinstall` и `postinstall` сценарии, а также устанавливает `devDependencies` .
-1. Выполните, `npm run build` Если в *package.jsна*выбран скрипт сборки.
-1. Выполните `npm run build:azure` , если сборка: Скрипт Azure указан в *package.jsна*.
+1. Выполните, `npm run build` Если в *package.jsна* выбран скрипт сборки.
+1. Выполните `npm run build:azure` , если сборка: Скрипт Azure указан в *package.jsна* .
 1. Запустите пользовательский скрипт, если он указан `POST_BUILD_SCRIPT_PATH`.
 
 > [!NOTE]
@@ -123,7 +123,7 @@ az webapp config appsettings set --name <app-name> --resource-group <resource-gr
 
 ### <a name="run-custom-command"></a>Выполнить пользовательскую команду
 
-Служба приложений может запустить приложение с помощью пользовательской команды, такой как исполняемый файл, например *Run.sh*. Например, чтобы выполнить `npm run start:prod` , выполните следующую команду в [Cloud Shell](https://shell.azure.com):
+Служба приложений может запустить приложение с помощью пользовательской команды, такой как исполняемый файл, например *Run.sh* . Например, чтобы выполнить `npm run start:prod` , выполните следующую команду в [Cloud Shell](https://shell.azure.com):
 
 ```azurecli-interactive
 az webapp config set --resource-group <resource-group-name> --name <app-name> --startup-file "npm run start:prod"
@@ -164,7 +164,7 @@ az webapp config set --resource-group <resource-group-name> --name <app-name> --
 Можно также настроить пользовательский файл запуска со следующими расширениями:
 
 - *JS* -файл
-- [Файл PM2](https://pm2.keymetrics.io/docs/usage/application-declaration/#process-file) с расширением *JSON*, *.config.js*, *YAML*или *. yml*
+- [Файл PM2](https://pm2.keymetrics.io/docs/usage/application-declaration/#process-file) с расширением *JSON* , *.config.js* , *YAML* или *. yml*
 
 Чтобы добавить пользовательский начальный файл, выполните следующую команду в [Cloud Shell](https://shell.azure.com):
 
@@ -177,7 +177,7 @@ az webapp config set --resource-group <resource-group-name> --name <app-name> --
 > [!NOTE]
 > Удаленная отладка сейчас доступна в предварительной версии.
 
-Вы можете выполнить удаленную отладку приложения Node.js в [Visual Studio Code](https://code.visualstudio.com/) , если он настроен для [работы с PM2](#run-with-pm2), за исключением случая, когда он выполняется с помощью * .config.js, *. yml или *. YAML*.
+Вы можете выполнить удаленную отладку приложения Node.js в [Visual Studio Code](https://code.visualstudio.com/) , если он настроен для [работы с PM2](#run-with-pm2), за исключением случая, когда он выполняется с помощью * .config.js, *. yml или *. YAML* .
 
 В большинстве случаев для приложения не требуется дополнительная настройка. Если приложение запускается с *process.js* файла (по умолчанию или настраиваемого), оно должно иметь `script` свойство в корне JSON. Пример:
 
@@ -191,9 +191,9 @@ az webapp config set --resource-group <resource-group-name> --name <app-name> --
 
 Чтобы настроить Visual Studio Code для удаленной отладки, установите [расширение службы приложений](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice). Следуйте инструкциям на странице расширение и войдите в Azure в Visual Studio Code.
 
-В Azure Explorer найдите приложение, которое нужно отладить, щелкните его правой кнопкой мыши и выберите команду **запустить удаленную отладку**. Нажмите кнопку **Да** , чтобы включить его для приложения. Служба приложений запускает прокси-сервер туннеля и присоединяет отладчик. Затем можно выполнить запросы к приложению и увидеть, что отладчик приостанавливается в точках останова.
+В Azure Explorer найдите приложение, которое нужно отладить, щелкните его правой кнопкой мыши и выберите команду **запустить удаленную отладку** . Нажмите кнопку **Да** , чтобы включить его для приложения. Служба приложений запускает прокси-сервер туннеля и присоединяет отладчик. Затем можно выполнить запросы к приложению и увидеть, что отладчик приостанавливается в точках останова.
 
-После завершения отладки закройте отладчик, выбрав **Отключить**. При появлении запроса нажмите кнопку **Да** , чтобы отключить удаленную отладку. Чтобы отключить его позже, снова щелкните свое приложение в Azure Explorer и выберите **Отключить удаленную отладку**.
+После завершения отладки закройте отладчик, выбрав **Отключить** . При появлении запроса нажмите кнопку **Да** , чтобы отключить удаленную отладку. Чтобы отключить его позже, снова щелкните свое приложение в Azure Explorer и выберите **Отключить удаленную отладку** .
 
 ::: zone-end
 
@@ -227,7 +227,7 @@ npm install kuduscript -g
 kuduscript --node --scriptType bash --suppressPrompt
 ```
 
-Корневой каталог репозитория теперь содержит два дополнительных файла: *. Deployment* и *deploy.sh*.
+Корневой каталог репозитория теперь содержит два дополнительных файла: *. Deployment* и *deploy.sh* .
 
 Откройте *deploy.sh* и найдите `Deployment` раздел, который выглядит следующим образом:
 
@@ -312,13 +312,13 @@ if (req.secure) {
 
 ::: zone-end
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Диагностика
 
 Когда работающий Node.js приложение работает иначе в службе приложений или с ошибками, попробуйте выполнить следующие действия.
 
 - [Получите доступ к потоку журнала](#access-diagnostic-logs).
 - Протестируйте приложение локально в рабочем режиме. Служба приложений запускает приложения Node.js в рабочем режиме, поэтому вам необходимо убедиться в том, что проект работает надлежащим образом локально в рабочем режиме. Пример:
-    - В зависимости от *package.jsв*рабочем режиме могут быть установлены различные пакеты ( `dependencies` VS `devDependencies` ).
+    - В зависимости от *package.jsв* рабочем режиме могут быть установлены различные пакеты ( `dependencies` VS `devDependencies` ).
     - Некоторые веб-платформы в рабочем режиме могут выполнять другие операции при развертывании статических файлов.
     - Некоторые веб-платформы могут использовать специальные скрипты запуска в рабочем режиме.
 - Запустите приложение в службе приложений в режиме разработки. Например, в [MEAN.js](https://meanjs.org/)можно настроить приложение в режиме разработки в среде выполнения, [задав `NODE_ENV` параметр приложения](configure-common.md).
@@ -329,7 +329,7 @@ if (req.secure) {
 
 ::: zone-end
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Руководство. Приложение Node.js с MongoDB](tutorial-nodejs-mongodb-app.md)

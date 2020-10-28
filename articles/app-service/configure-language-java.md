@@ -8,14 +8,14 @@ ms.topic: article
 ms.date: 04/12/2019
 ms.author: jafreebe
 ms.reviewer: cephalin
-ms.custom: seodec18, devx-track-java
+ms.custom: seodec18, devx-track-java, devx-track-azurecli
 zone_pivot_groups: app-service-platform-windows-linux
-ms.openlocfilehash: 65b31bd39c85ea9073bb9415b9829df12b7d9e35
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.openlocfilehash: 2e77d76ddae540a311655eca36c53b23c418f5e3
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92171571"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92744149"
 ---
 # <a name="configure-a-java-app-for-azure-app-service"></a>Настройка приложения Java для службы приложений Azure
 
@@ -191,7 +191,7 @@ jcmd <pid> JFR.dump name=continuous_recording filename="/home/recording1.jfr"
 
 ### <a name="turn-on-web-sockets"></a>Включение веб-сокетов
 
-Включите для приложения поддержку веб-сокетов на портале Azure в разделе **Параметры приложения**. Необходимо будет перезапустить приложение, чтобы этот параметр вступил в силу.
+Включите для приложения поддержку веб-сокетов на портале Azure в разделе **Параметры приложения** . Необходимо будет перезапустить приложение, чтобы этот параметр вступил в силу.
 
 Включите поддержку веб-сокетов с помощью Azure CLI, выполнив следующую команду.
 
@@ -231,11 +231,11 @@ az webapp start --name <app-name> --resource-group <resource-group-name>
 
 ### <a name="authenticate-users-easy-auth"></a>Аутентификация пользователей (Easy Auth)
 
-Настройте аутентификацию приложения на портале Azure с помощью параметра **Проверка подлинности и авторизация**. Вы можете включить аутентификацию с помощью Azure Active Directory или имен для входа в социальные сети, таких как Facebook, Google или GitHub. На портале Azure можно настроить только один поставщик аутентификации. Дополнительные сведения приведены в разделе [Настройка приложения службы приложений для использования входа с помощью Azure Active Directory](configure-authentication-provider-aad.md) и связанных статьях о других поставщиках удостоверений. Если необходимо включить несколько поставщиков входа, следуйте инструкциям в статье [Настройка проверки подлинности и авторизации в службе приложений Azure](app-service-authentication-how-to.md).
+Настройте аутентификацию приложения на портале Azure с помощью параметра **Проверка подлинности и авторизация** . Вы можете включить аутентификацию с помощью Azure Active Directory или имен для входа в социальные сети, таких как Facebook, Google или GitHub. На портале Azure можно настроить только один поставщик аутентификации. Дополнительные сведения приведены в разделе [Настройка приложения службы приложений для использования входа с помощью Azure Active Directory](configure-authentication-provider-aad.md) и связанных статьях о других поставщиках удостоверений. Если необходимо включить несколько поставщиков входа, следуйте инструкциям в статье [Настройка проверки подлинности и авторизации в службе приложений Azure](app-service-authentication-how-to.md).
 
 #### <a name="java-se"></a>Java SE
 
-Разработчики для Spring Boot могут использовать [краткое руководство по использованию Spring Boot и Azure Active Directory](/java/azure/spring-framework/configure-spring-boot-starter-java-app-with-azure-active-directory), чтобы защитить приложения с помощью привычных заметок и интерфейсов API Spring Security. Увеличьте максимальный размер заголовка в файле *application.properties*. Мы рекомендуем использовать значение `16384`.
+Разработчики для Spring Boot могут использовать [краткое руководство по использованию Spring Boot и Azure Active Directory](/java/azure/spring-framework/configure-spring-boot-starter-java-app-with-azure-active-directory), чтобы защитить приложения с помощью привычных заметок и интерфейсов API Spring Security. Увеличьте максимальный размер заголовка в файле *application.properties* . Мы рекомендуем использовать значение `16384`.
 
 #### <a name="tomcat"></a>Tomcat
 
@@ -330,29 +330,29 @@ keyStore.load(
 ::: zone pivot="platform-windows"
 
 1. Создайте учетную запись NewRelic на сайте [NewRelic.com](https://newrelic.com/signup)
-2. Скачайте агент Java с NewRelic. Его имя файла будет аналогично *newrelic-java-x.x.x.zip*.
+2. Скачайте агент Java с NewRelic. Его имя файла будет аналогично *newrelic-java-x.x.x.zip* .
 3. Скопируйте ключ лицензии. Он понадобиться позже для настройки агента.
-4. [Подключитесь к экземпляру службы приложений по протоколу SSH](configure-linux-open-ssh-session.md) и создайте каталог */home/site/wwwroot/apm*.
-5. Отправьте распакованные файлы агента Java NewRelic в каталог */home/site/wwwroot/apm*. Файлы агента должны располагаться в */home/site/wwwroot/apm/newrelic*.
+4. [Подключитесь к экземпляру службы приложений по протоколу SSH](configure-linux-open-ssh-session.md) и создайте каталог */home/site/wwwroot/apm* .
+5. Отправьте распакованные файлы агента Java NewRelic в каталог */home/site/wwwroot/apm* . Файлы агента должны располагаться в */home/site/wwwroot/apm/newrelic* .
 6. Измените файл YAML в каталоге */home/site/wwwroot/apm/newrelic/newrelic.yml* и замените значение лицензии в заполнителе собственным ключом лицензии.
 7. На портале Azure перейдите к приложению в службе приложений и создайте параметр приложения.
 
     - Для приложений **Java SE** создайте переменную среды с именем `JAVA_OPTS` и значением `-javaagent:/home/site/wwwroot/apm/newrelic/newrelic.jar` .
-    - Для **Tomcat**создайте переменную среды с именем `CATALINA_OPTS` и значением `-javaagent:/home/site/wwwroot/apm/newrelic/newrelic.jar` .
+    - Для **Tomcat** создайте переменную среды с именем `CATALINA_OPTS` и значением `-javaagent:/home/site/wwwroot/apm/newrelic/newrelic.jar` .
 
 ::: zone-end
 ::: zone pivot="platform-linux"
 
 1. Создайте учетную запись NewRelic на сайте [NewRelic.com](https://newrelic.com/signup)
-2. Скачайте агент Java с NewRelic. Его имя файла будет аналогично *newrelic-java-x.x.x.zip*.
+2. Скачайте агент Java с NewRelic. Его имя файла будет аналогично *newrelic-java-x.x.x.zip* .
 3. Скопируйте ключ лицензии. Он понадобиться позже для настройки агента.
-4. [Подключитесь к экземпляру службы приложений по протоколу SSH](configure-linux-open-ssh-session.md) и создайте каталог */home/site/wwwroot/apm*.
-5. Отправьте распакованные файлы агента Java NewRelic в каталог */home/site/wwwroot/apm*. Файлы агента должны располагаться в */home/site/wwwroot/apm/newrelic*.
+4. [Подключитесь к экземпляру службы приложений по протоколу SSH](configure-linux-open-ssh-session.md) и создайте каталог */home/site/wwwroot/apm* .
+5. Отправьте распакованные файлы агента Java NewRelic в каталог */home/site/wwwroot/apm* . Файлы агента должны располагаться в */home/site/wwwroot/apm/newrelic* .
 6. Измените файл YAML в каталоге */home/site/wwwroot/apm/newrelic/newrelic.yml* и замените значение лицензии в заполнителе собственным ключом лицензии.
 7. На портале Azure перейдите к приложению в службе приложений и создайте параметр приложения.
    
     - Для приложений **Java SE** создайте переменную среды с именем `JAVA_OPTS` и значением `-javaagent:/home/site/wwwroot/apm/newrelic/newrelic.jar` .
-    - Для **Tomcat**создайте переменную среды с именем `CATALINA_OPTS` и значением `-javaagent:/home/site/wwwroot/apm/newrelic/newrelic.jar` .
+    - Для **Tomcat** создайте переменную среды с именем `CATALINA_OPTS` и значением `-javaagent:/home/site/wwwroot/apm/newrelic/newrelic.jar` .
 
 ::: zone-end
 
@@ -363,9 +363,9 @@ keyStore.load(
 ::: zone pivot="platform-windows"
 
 1. Создайте учетную запись AppDynamics на сайте [AppDynamics.com](https://www.appdynamics.com/community/register/)
-2. Скачайте агент Java с веб-сайта AppDynamics. Имя файла будет аналогично *AppServerAgent-x.x.x.xxxxx.zip*.
-3. С помощью [консоли KUDU](https://github.com/projectkudu/kudu/wiki/Kudu-console) создайте новый каталог */Хоме/Сите/ввврут/АПМ*.
-4. Отправьте файлы агента Java в каталог */home/site/wwwroot/apm*. Файлы агента должны располагаться в */home/site/wwwroot/apm/appdynamics*.
+2. Скачайте агент Java с веб-сайта AppDynamics. Имя файла будет аналогично *AppServerAgent-x.x.x.xxxxx.zip* .
+3. С помощью [консоли KUDU](https://github.com/projectkudu/kudu/wiki/Kudu-console) создайте новый каталог */Хоме/Сите/ввврут/АПМ* .
+4. Отправьте файлы агента Java в каталог */home/site/wwwroot/apm* . Файлы агента должны располагаться в */home/site/wwwroot/apm/appdynamics* .
 5. На портале Azure перейдите к приложению в службе приложений и создайте параметр приложения.
 
    - Для приложений **Java SE** создайте переменную среды с именем `JAVA_OPTS` и значением, `-javaagent:/home/site/wwwroot/apm/appdynamics/javaagent.jar -Dappdynamics.agent.applicationName=<app-name>` где `<app-name>` — имя службы приложений.
@@ -375,9 +375,9 @@ keyStore.load(
 ::: zone pivot="platform-linux"
 
 1. Создайте учетную запись AppDynamics на сайте [AppDynamics.com](https://www.appdynamics.com/community/register/)
-2. Скачайте агент Java с веб-сайта AppDynamics. Имя файла будет аналогично *AppServerAgent-x.x.x.xxxxx.zip*.
-3. [Подключитесь к экземпляру службы приложений по протоколу SSH](configure-linux-open-ssh-session.md) и создайте каталог */home/site/wwwroot/apm*.
-4. Отправьте файлы агента Java в каталог */home/site/wwwroot/apm*. Файлы агента должны располагаться в */home/site/wwwroot/apm/appdynamics*.
+2. Скачайте агент Java с веб-сайта AppDynamics. Имя файла будет аналогично *AppServerAgent-x.x.x.xxxxx.zip* .
+3. [Подключитесь к экземпляру службы приложений по протоколу SSH](configure-linux-open-ssh-session.md) и создайте каталог */home/site/wwwroot/apm* .
+4. Отправьте файлы агента Java в каталог */home/site/wwwroot/apm* . Файлы агента должны располагаться в */home/site/wwwroot/apm/appdynamics* .
 5. На портале Azure перейдите к приложению в службе приложений и создайте параметр приложения.
 
    - Для приложений **Java SE** создайте переменную среды с именем `JAVA_OPTS` и значением, `-javaagent:/home/site/wwwroot/apm/appdynamics/javaagent.jar -Dappdynamics.agent.applicationName=<app-name>` где `<app-name>` — имя службы приложений.
@@ -392,7 +392,7 @@ keyStore.load(
 
 ### <a name="java-se"></a>Java SE
 
-Чтобы подключиться к источникам данных в приложениях Spring Boot, мы рекомендуем создавать строки подключения и внедрять их в файл *application.properties*.
+Чтобы подключиться к источникам данных в приложениях Spring Boot, мы рекомендуем создавать строки подключения и внедрять их в файл *application.properties* .
 
 1. В разделе "Конфигурация" на странице Службы приложений задайте имя строки, вставьте строку подключения JDBC в поле "Значение" и присвойте типу значение "Пользовательский". При необходимости можно задать эту строку подключения в качестве параметра слота.
 
@@ -463,7 +463,7 @@ keyStore.load(
 
 #### <a name="finalize-configuration"></a>Завершение конфигурации
 
-Наконец, мы поместим драйвер JAR в путь к классам Tomcat и перезапустите службу приложений. Убедитесь, что файлы драйвера JDBC доступны для загрузчика классов Tomcat, разместив их в каталоге */home/tomcat/lib*. (Если этот каталог отсутствует, создайте его.) Чтобы передать эти файлы в экземпляр службы приложений, выполните следующие действия.
+Наконец, мы поместим драйвер JAR в путь к классам Tomcat и перезапустите службу приложений. Убедитесь, что файлы драйвера JDBC доступны для загрузчика классов Tomcat, разместив их в каталоге */home/tomcat/lib* . (Если этот каталог отсутствует, создайте его.) Чтобы передать эти файлы в экземпляр службы приложений, выполните следующие действия.
 
 1. В [Cloud Shell](https://shell.azure.com) установите расширение webapp:
 
@@ -477,7 +477,7 @@ keyStore.load(
     az webapp remote-connection create --resource-group <resource-group-name> --name <app-name> --port <port-on-local-machine>
     ```
 
-3. Подключитесь к локальному порту туннелирования с помощью клиента SFTP и передайте эти файлы в папку */home/tomcat/lib*.
+3. Подключитесь к локальному порту туннелирования с помощью клиента SFTP и передайте эти файлы в папку */home/tomcat/lib* .
 
 Кроме того, драйвер JDBC можно отправить с помощью FTP-клиента. Чтобы получить учетные данные FTP, следуйте этим [инструкциям](deploy-configure-credentials.md).
 
@@ -541,16 +541,16 @@ keyStore.load(
 
 #### <a name="shared-server-level-resources"></a>Общие ресурсы уровня сервера
 
-Для добавления общего источника данных на уровне сервера потребуется изменить файл server.xml Tomcat. Сначала отправьте [сценарий запуска](faq-app-service-linux.md#built-in-images) и задайте путь к скрипту в разделе **Конфигурация** > **Команда запуска**. Сценарий запуска можно добавить с помощью [FTP](deploy-ftp.md).
+Для добавления общего источника данных на уровне сервера потребуется изменить файл server.xml Tomcat. Сначала отправьте [сценарий запуска](faq-app-service-linux.md#built-in-images) и задайте путь к скрипту в разделе **Конфигурация** > **Команда запуска** . Сценарий запуска можно добавить с помощью [FTP](deploy-ftp.md).
 
 Сценарий запуска [преобразует XSL](https://www.w3schools.com/xml/xsl_intro.asp) в файл server.xml и выведет полученный XML-файл в `/usr/local/tomcat/conf/server.xml`. Сценарий запуска должен установить libxslt через apk. XSL-файл и скрипт запуска можно отправить через FTP. Ниже приведен пример скрипта запуска.
 
 ```sh
-# Install libxslt. Also copy the transform file to /home/tomcat/conf/
+# Install libxslt. Also copy the transform file to /home/tomcat/conf/
 apk add --update libxslt
 
-# Usage: xsltproc --output output.xml style.xsl input.xml
-xsltproc --output /home/tomcat/conf/server.xml /home/tomcat/conf/transform.xsl /usr/local/tomcat/conf/server.xml
+# Usage: xsltproc --output output.xml style.xsl input.xml
+xsltproc --output /home/tomcat/conf/server.xml /home/tomcat/conf/transform.xsl /usr/local/tomcat/conf/server.xml
 ```
 
 Пример XSL-файла приведен ниже. В примере XSL-файл добавляет новый узел соединителя в server.xml Tomcat.
@@ -619,7 +619,7 @@ xsltproc --output /home/tomcat/conf/server.xml /home/tomcat/conf/transform.xsl 
 
 Наконец, разместите JAR-файлы драйверов в пути к классам Tomcat и перезапустите службу приложений.
 
-1. Убедитесь, что файлы драйвера JDBC доступны для загрузчика классов Tomcat, разместив их в каталоге */home/tomcat/lib*. (Если этот каталог отсутствует, создайте его.) Чтобы передать эти файлы в экземпляр службы приложений, выполните следующие действия.
+1. Убедитесь, что файлы драйвера JDBC доступны для загрузчика классов Tomcat, разместив их в каталоге */home/tomcat/lib* . (Если этот каталог отсутствует, создайте его.) Чтобы передать эти файлы в экземпляр службы приложений, выполните следующие действия.
 
     1. В [Cloud Shell](https://shell.azure.com) установите расширение webapp:
 
@@ -633,7 +633,7 @@ xsltproc --output /home/tomcat/conf/server.xml /home/tomcat/conf/transform.xsl 
       az webapp remote-connection create --resource-group <resource-group-name> --name <app-name> --port <port-on-local-machine>
       ```
 
-    3. Подключитесь к локальному порту туннелирования с помощью клиента SFTP и передайте эти файлы в папку */home/tomcat/lib*.
+    3. Подключитесь к локальному порту туннелирования с помощью клиента SFTP и передайте эти файлы в папку */home/tomcat/lib* .
 
     Кроме того, драйвер JDBC можно отправить с помощью FTP-клиента. Чтобы получить учетные данные FTP, следуйте этим [инструкциям](deploy-configure-credentials.md).
 
@@ -678,7 +678,7 @@ xsltproc --output /home/tomcat/conf/server.xml /home/tomcat/conf/transform.xsl 
     ```
 
 1. Используя FTP-клиент по своему усмотрению, отправьте драйвер JDBC, `jboss-cli-commands.cli` , `startup_script.sh` и определение модуля в `/site/deployments/tools/` .
-2. Настройте сайт для запуска `startup_script.sh` при запуске контейнера. На портале Azure перейдите к разделу **Конфигурация**  >  **Общие параметры**  >  **запуска**. Задайте для поля команда запуска значение `/home/site/deployments/tools/startup_script.sh` . **Сохраните** внесенные изменения.
+2. Настройте сайт для запуска `startup_script.sh` при запуске контейнера. На портале Azure перейдите к разделу **Конфигурация**  >  **Общие параметры**  >  **запуска** . Задайте для поля команда запуска значение `/home/site/deployments/tools/startup_script.sh` . **Сохраните** внесенные изменения.
 
 Чтобы убедиться, что источник данных добавлен на сервер JBoss, SSH-подключение в webapp и запустите `$JBOSS_HOME/bin/jboss-cli.sh --connect` . После подключения к JBoss выполните команду, `/subsystem=datasources:read-resource` чтобы распечатать список источников данных.
 

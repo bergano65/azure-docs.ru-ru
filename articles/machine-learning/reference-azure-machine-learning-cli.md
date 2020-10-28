@@ -9,13 +9,13 @@ ms.reviewer: jmartens
 ms.author: jordane
 author: jpe316
 ms.date: 06/22/2020
-ms.custom: seodec18
-ms.openlocfilehash: 50ac8ede9f8272d6956d1ac29e57a9c26d2c0bd9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: seodec18, devx-track-azurecli
+ms.openlocfilehash: 8ce32ab1e7dac6fd1a154fc6e730113428a8291b
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91708277"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92744478"
 ---
 # <a name="install--use-the-cli-extension-for-azure-machine-learning"></a>Установка и использование расширения CLI для Машинного обучения Azure
 
@@ -34,7 +34,7 @@ CLI для Машинного обучения Azure является расши
 
 * Для использования интерфейса командной строки необходима подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) уже сегодня.
 
-* Чтобы выполнять приведенные в этом документе команды CLI в **локальной среде**, вам потребуется [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true).
+* Чтобы выполнять приведенные в этом документе команды CLI в **локальной среде** , вам потребуется [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true).
 
     Если вы используете [Azure Cloud Shell](https://azure.microsoft.com//features/cloud-shell/), интерфейс командной строки доступен через браузер и находится в облаке.
 
@@ -411,7 +411,7 @@ az ml run submit-hyperdrive -e <experiment> -c <runconfig> --hyperdrive-configur
 
 | Поле JSON | Тип | Описание |
 |---|---|---|
-| `name` | `string` | Имя среды. Не начинайте имя с **Microsoft** или **AzureML**. |
+| `name` | `string` | Имя среды. Не начинайте имя с **Microsoft** или **AzureML** . |
 | `version` | `string` | Версия среды. |
 | `environmentVariables` | `{string: string}` | Хэш-карта имен и значений переменных среды. |
 | `python` | [`PythonSection`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.pythonsection?view=azure-ml-py&preserve-view=true)Hat определяет среду и интерпретатор Python для использования в целевом ресурсе вычислений. |

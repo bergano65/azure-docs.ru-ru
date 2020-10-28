@@ -10,13 +10,13 @@ ms.service: machine-learning
 ms.subservice: core
 ms.date: 07/23/2020
 ms.topic: conceptual
-ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 4db53b806adc2e29ae9c9a950faf8fc822c9d66b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: how-to, devx-track-python, devx-track-azurecli
+ms.openlocfilehash: 5a7d33e163c10a6d56416ea474d7e3a9e8624219
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91743987"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92744418"
 ---
 # <a name="create--use-software-environments-in-azure-machine-learning"></a>Создание & использование программных сред в Машинное обучение Azure
 
@@ -110,7 +110,7 @@ myenv = Environment.from_pip_requirements(name = "myenv"
 myenv.docker.enabled = True
 ```
 
-По умолчанию недавно созданный образ DOCKER отображается в реестре контейнеров, связанном с рабочей областью.  Имя репозитория имеет форму *azureml/azureml_ \<uuid\> *. Уникальный идентификатор (*UUID*) имени соответствует хэшу, вычисленному на основе конфигурации среды. Эта корреспонденция позволяет службе определить, существует ли уже образ для данной среды для повторного использования.
+По умолчанию недавно созданный образ DOCKER отображается в реестре контейнеров, связанном с рабочей областью.  Имя репозитория имеет форму *azureml/azureml_ \<uuid\>* . Уникальный идентификатор ( *UUID* ) имени соответствует хэшу, вычисленному на основе конфигурации среды. Эта корреспонденция позволяет службе определить, существует ли уже образ для данной среды для повторного использования.
 
 #### <a name="use-a-prebuilt-docker-image"></a>Использование предварительно созданного образа DOCKER
 
@@ -259,7 +259,7 @@ myenv.environment_variables = {"MESSAGE":"Hello from Azure Machine Learning"}
 ```
 
 >[!IMPORTANT]
-> Если вы используете одно и то же определение среды для другого запуска, служба Машинное обучение Azure повторно использует кэшированное изображение среды. Например, при создании среды с незакрепленной зависимостью пакета ```numpy``` Эта среда будет использовать версию пакета, установленную _во время создания среды_. Кроме того, любая будущая среда с соответствующим определением будет использовать старую версию. Дополнительные сведения см. в статье [Создание среды, кэширование и повторное использование](https://docs.microsoft.com/azure/machine-learning/concept-environments#environment-building-caching-and-reuse).
+> Если вы используете одно и то же определение среды для другого запуска, служба Машинное обучение Azure повторно использует кэшированное изображение среды. Например, при создании среды с незакрепленной зависимостью пакета ```numpy``` Эта среда будет использовать версию пакета, установленную _во время создания среды_ . Кроме того, любая будущая среда с соответствующим определением будет использовать старую версию. Дополнительные сведения см. в статье [Создание среды, кэширование и повторное использование](https://docs.microsoft.com/azure/machine-learning/concept-environments#environment-building-caching-and-reuse).
 
 ### <a name="private-python-packages"></a>Частные пакеты Python
 
@@ -428,7 +428,7 @@ az ml environment list
 az ml environment download -n myenv -d downloaddir
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения об использовании управляемого целевого объекта вычислений для обучения модели см. в разделе [учебник. Обучение модели](tutorial-train-models-with-aml.md).
 * После создания обученной модели Узнайте, [как и где развертываются модели](how-to-deploy-and-where.md).

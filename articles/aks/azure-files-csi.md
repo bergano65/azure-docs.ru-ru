@@ -5,12 +5,12 @@ services: container-service
 ms.topic: article
 ms.date: 08/27/2020
 author: palma21
-ms.openlocfilehash: 986db4edbf7b8856a12067fb66a370627642e970
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 556aec071ccb59a0223bc07d134f3427755117f3
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92078363"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92745790"
 ---
 # <a name="use-azure-files-container-storage-interface-csi-drivers-in-azure-kubernetes-service-aks-preview"></a>Использование драйверов службы файлов хранилища контейнера Azure (CSI) в службе Kubernetes Azure (AKS) (Предварительная версия)
 
@@ -33,13 +33,13 @@ CSI является стандартом для предоставления п
 
 ## <a name="dynamically-create-azure-files-pvs-by-using-the-built-in-storage-classes"></a>Динамическое создание файлов Azure постоянного хранилища версий с помощью встроенных классов хранения
 
-Класс хранения используется для определения способа создания общей папки службы файлов Azure. Учетная запись хранения автоматически создается в [группе ресурсов узла][node-resource-group] для использования с классом хранения для хранения общих папок службы файлов Azure. Выберите один из следующих [номеров SKU избыточности службы хранилища Azure][storage-skus] для *skuName*:
+Класс хранения используется для определения способа создания общей папки службы файлов Azure. Учетная запись хранения автоматически создается в [группе ресурсов узла][node-resource-group] для использования с классом хранения для хранения общих папок службы файлов Azure. Выберите один из следующих [номеров SKU избыточности службы хранилища Azure][storage-skus] для *skuName* :
 
-* **Standard_LRS**: стандартное локально избыточное хранилище
-* **Standard_GRS**: стандартное геоизбыточное хранилище
-* **Standard_ZRS**: хранилище, избыточное в стандартном поясе
-* **Standard_RAGRS**: стандартное геоизбыточное хранилище с доступом для чтения
-* **Premium_LRS**: локально избыточное хранилище уровня "Премиум"
+* **Standard_LRS** : стандартное локально избыточное хранилище
+* **Standard_GRS** : стандартное геоизбыточное хранилище
+* **Standard_ZRS** : хранилище, избыточное в стандартном поясе
+* **Standard_RAGRS** : стандартное геоизбыточное хранилище с доступом для чтения
+* **Premium_LRS** : локально избыточное хранилище уровня "Премиум"
 
 > [!NOTE]
 > Служба файлов Azure поддерживает хранилище Azure класса Premium. Минимальная общая папка Premium составляет 100 ГБ.
@@ -259,7 +259,7 @@ storageclass.storage.k8s.io/azurefile-csi created
 Вы можете развернуть пример [набора с отслеживанием состояния](https://github.com/kubernetes-sigs/azurefile-csi-driver/blob/master/deploy/example/statefulset.yaml) , который сохраняет метки времени в файл `data.txt` , развернув следующую команду с помощью команды [kubectl Apply][kubectl-apply] :
 
  ```console
-$ kubectl apply -f https://raw.githubusercontent.com/kubernetes-sigs/azurefile-csi-driver/master/deploy/example/windows/statefulset.yaml
+$ kubectl apply -f https://raw.githubusercontent.com/kubernetes-sigs/azurefile-csi-driver/master/deploy/example/statefulset.yaml
 
 statefulset.apps/statefulset-azurefile created
 ```

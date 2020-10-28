@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 05/24/2018
-ms.openlocfilehash: 344e15d3c15474fc8959b120f86bb86f22217ef6
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: 5c18a904f0ec0f100312ee3fafb53038bd2ccf19
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/27/2020
-ms.locfileid: "92677006"
+ms.locfileid: "92745696"
 ---
 # <a name="connect-azure-to-itsm-tools-using-it-service-management-connector"></a>Подключение Azure к инструментам ITSM с помощью соединителя управления ИТ-услугами
 
@@ -125,7 +125,7 @@ ms.locfileid: "92677006"
 1. В портал Azure щелкните  **оповещения** .
 2. В верхней области щелкните  **Управление действиями** . Откроется окно **Добавить группу действий** .
 
-    ![Группы действий](media/itsmc-overview/action-groups.png)
+    [![Группы действий](media/itsmc-overview/action-groups-selection.png)](media/itsmc-overview/action-groups-selection-big.png)
 
 3. Выберите **подписку** и **группу ресурсов** , в которых нужно создать группу действий. Укажите **имя группы действий** и **Отображаемое имя** для группы действий. Щелкните **Далее: уведомления** .
 
@@ -135,7 +135,7 @@ ms.locfileid: "92677006"
 5. В списке действий выберите **ITSM** из раскрывающегося меню **Тип действия** . Укажите **имя** действия и щелкните перо, представляющее **сведения об изменении** .
 6. Выберите **подписку** , в которой расположена рабочая область Log Analytics. Выберите имя **подключения** (имя соединителя ITSM), за которым следует имя рабочей области. Например, MyITSMMConnector(MyWorkspace).
 
-    ![Сведения о действиях ITSM](media/itsmc-overview/itsm-action-details.png)
+    ![Сведения о действиях ITSM](media/itsmc-overview/itsm-action-configuration.png)
 
 7. Выберите тип **рабочего элемента** из раскрывающегося меню.
 

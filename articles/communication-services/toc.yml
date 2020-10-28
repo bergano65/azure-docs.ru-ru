@@ -84,6 +84,8 @@
       href: concepts/logging-and-diagnostics.md
     - name: Метрики
       href: concepts/metrics.md
+    - name: Диагностика
+      href: concepts/troubleshooting-info.md
 - name: Примеры
   items:
     - name: Главный пример функции группового вызова
@@ -105,4 +107,4 @@
 - name: Ресурсы
   items:
     - name: Заметки о выпуске
-      href: 'https://github.com/Azure/Communication/blob/master/releasenotes/2020-September-22.md'
+      href: 'https://github.com/Azure/Communication/blob/master/releasenotes'

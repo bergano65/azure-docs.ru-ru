@@ -14,17 +14,18 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/01/2020
 ms.author: yelevin
-ms.openlocfilehash: a54dfa0f2b072d30cac605937a1b623ef9d4051d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6ab02cc7e60870852666c8c01ccc17a1b1102a62
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91631500"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92742836"
 ---
 # <a name="step-1-deploy-the-log-forwarder"></a>Шаг 1. Развертывание сервера пересылки журналов
 
 
 На этом шаге вы назначите и настроите компьютер Linux, который будет пересылать журналы из решения безопасности в рабочую область Azure Sentinel. Это может быть физический компьютер или виртуальная машина в локальной среде, ВИРТУАЛЬная машина Azure или ВИРТУАЛЬная машина в другом облаке. Используя указанную ссылку, вы запустите сценарий на указанном компьютере, который выполняет следующие задачи:
+
 - Устанавливает агент Log Analytics для Linux (также известный как агент OMS) и настраивает его для следующих целей:
     - Прослушивание сообщений CEF из встроенной управляющей программы Linux syslog на TCP-порте 25226
     - Безопасная отправка сообщений по протоколу TLS в рабочую область "Sentinel" Azure, где они анализируются и дополнены
@@ -36,18 +37,25 @@ ms.locfileid: "91631500"
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Необходимо иметь повышенные разрешения (sudo) на назначенном компьютере Linux.
-- На компьютере Linux должна быть установлена Python.<br>Используйте `python -version` команду для проверки.
+
+- На компьютере Linux должен быть установлен **python 2,7** .<br>Используйте `python -version` команду для проверки.
+
 - Перед установкой агента Log Analytics компьютер Linux не должен быть подключен к рабочим областям Azure.
+
+- В этом процессе может потребоваться идентификатор рабочей области и первичный ключ рабочей области. Их можно найти в ресурсе рабочей области в разделе **Управление агентами** .
 
 ## <a name="run-the-deployment-script"></a>Выполнение скрипта развертывания
  
-1. В меню навигации меток Azure щелкните **соединители данных**. В списке соединителей щелкните плитку **общий формат событий (CEF)** , а затем нажмите кнопку **Открыть соединительную страницу** в правом нижнем углу. 
+1. В меню навигации меток Azure щелкните **соединители данных** . В списке соединителей щелкните плитку **общий формат событий (CEF)** , а затем нажмите кнопку **Открыть соединительную страницу** в правом нижнем углу. 
 
-1. В разделе **1,2 Установка СБОРЩИКА CEF на компьютере Linux**скопируйте ссылку, указанную в разделе **выполните следующий сценарий, чтобы установить и применить сборщик CEF**, или из следующего текста:
+1. В разделе **1,2 Установка СБОРЩИКА CEF на компьютере Linux** скопируйте ссылку, указанную в разделе **выполните следующий скрипт, чтобы установить и применить сборщик CEF** , или из приведенного ниже текста (применение идентификатора рабочей области и первичного ключа вместо заполнителей):
 
-     `sudo wget https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/DataConnectors/CEF/cef_installer.py&&sudo python cef_installer.py [WorkspaceID] [Workspace Primary Key]`
+    ```bash
+    sudo wget https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/DataConnectors/CEF/cef_installer.py&&sudo python cef_installer.py [WorkspaceID] [Workspace Primary Key]`
+    ```
 
 1. Во время выполнения скрипта убедитесь, что не получены сообщения об ошибках и предупреждения.
+    - Вы можете получить сообщение с запросом на выполнение команды для устранения проблемы с сопоставлением поля *компьютер* . Дополнительные сведения см. в описании [в скрипте развертывания](#mapping-command) .
 
 > [!NOTE]
 > **Использование одного компьютера для пересылки обычных системных syslog *и* сообщений CEF**
@@ -122,12 +130,15 @@ ms.locfileid: "91631500"
 
 1. **Проверка соответствия поля *компьютера* ожидаемым образом:**
 
-    - Гарантирует, что поле " *компьютер* " в источнике системного журнала правильно сопоставлено в агенте log Analytics, выполнив эту команду и перезапустив агент.
+    - Проверяет, что поле " *компьютер* " в источнике системного журнала правильно сопоставлено в агенте log Analytics, используя следующую команду: 
 
         ```bash
-        sed -i -e "/'Severity' => tags\[tags.size - 1\]/ a \ \t 'Host' => record['host']" 
-            -e "s/'Severity' => tags\[tags.size - 1\]/&,/" /opt/microsoft/omsagent/pl ugin/
-            filter_syslog_security.rb && sudo /opt/microsoft/omsagent/bin/service_control restart [workspaceID]
+        grep -i "'Host' => record\['host'\]"  /opt/microsoft/omsagent/plugin/filter_syslog_security.rb
+        ```
+    - <a name="mapping-command"></a>При возникновении проблемы с сопоставлением сценарий выдаст сообщение об ошибке, в котором можно **выполнить следующую команду вручную** (вместо ЗАПОЛНИТЕЛЯ используется идентификатор рабочей области). Команда обеспечит правильное сопоставление и перезапустите агент.
+    
+        ```bash
+        sed -i -e "/'Severity' => tags\[tags.size - 1\]/ a \ \t 'Host' => record['host']" -e "s/'Severity' => tags\[tags.size - 1\]/&,/" /opt/microsoft/omsagent/plugin/filter_syslog_security.rb && sudo /opt/microsoft/omsagent/bin/service_control restart [workspaceID]
         ```
 
 # <a name="syslog-ng-daemon"></a>[Демон syslog-ng](#tab/syslogng)
@@ -187,17 +198,18 @@ ms.locfileid: "91631500"
 
 1. **Проверка соответствия поля *компьютера* ожидаемым образом:**
 
-    - Гарантирует, что поле " *компьютер* " в источнике системного журнала правильно сопоставлено в агенте log Analytics, выполнив эту команду и перезапустив агент.
+    - Проверяет, что поле " *компьютер* " в источнике системного журнала правильно сопоставлено в агенте log Analytics, используя следующую команду: 
 
         ```bash
-        sed -i -e "/'Severity' => tags\[tags.size - 1\]/ a \ \t 'Host' => record['host']" 
-            -e "s/'Severity' => tags\[tags.size - 1\]/&,/" /opt/microsoft/omsagent/pl ugin/
-            filter_syslog_security.rb && sudo /opt/microsoft/omsagent/bin/service_control restart [workspaceID]
+        grep -i "'Host' => record\['host'\]"  /opt/microsoft/omsagent/plugin/filter_syslog_security.rb
+        ```
+    - <a name="mapping-command"></a>При возникновении проблемы с сопоставлением сценарий выдаст сообщение об ошибке, в котором можно **выполнить следующую команду вручную** (вместо ЗАПОЛНИТЕЛЯ используется идентификатор рабочей области). Команда обеспечит правильное сопоставление и перезапустите агент.
+    
+        ```bash
+        sed -i -e "/'Severity' => tags\[tags.size - 1\]/ a \ \t 'Host' => record['host']" -e "s/'Severity' => tags\[tags.size - 1\]/&,/" /opt/microsoft/omsagent/plugin/filter_syslog_security.rb && sudo /opt/microsoft/omsagent/bin/service_control restart [workspaceID]
         ```
 
-
-
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В этом документе вы узнали, как развернуть агент Log Analytics, чтобы подключить устройства CEF к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats.md).

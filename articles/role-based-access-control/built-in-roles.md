@@ -9,12 +9,12 @@ author: rolyon
 ms.author: rolyon
 ms.date: 10/23/2020
 ms.custom: generated
-ms.openlocfilehash: 28de993f51b13e973edb0e42f138217cd35ab8dd
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: ed5d7c3007cf8471da453db93be0ab716805908c
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/27/2020
-ms.locfileid: "92636703"
+ms.locfileid: "92742950"
 ---
 # <a name="azure-built-in-roles"></a>Встроенные роли Azure
 
@@ -207,6 +207,8 @@ ms.locfileid: "92636703"
 > | [Support Request Contributor](#support-request-contributor) (Участник с правом создавать запросы на поддержку) | Позволяет создавать запросы в службу поддержки и управлять ими. | cfd33db0-3dd1-45e3-aa9d-cdbdf3b6f24e |
 > | [Участник по тегам](#tag-contributor) | Позволяет вам управлять тегами в сущностях, не предоставляя доступ к самим сущностям. | 4a9ae827-6dc8-4573-8ac7-8239d42aa03f |
 > | **Другое** |  |  |
+> | [Владелец данных Azure Digital двойников](#azure-digital-twins-data-owner) | Роль полного доступа для двойников данных уровня Digital | bcd981a7-7f74-457b-83e1-cceb9e632ffe |
+> | [Модуль чтения данных Azure Digital двойников](#azure-digital-twins-data-reader) | Роль только для чтения для свойств плоскости данных Digital двойников | d57506d4-4c8d-48b1-8587-93c323f6a5a3 |
 > | [Участник BizTalk](#biztalk-contributor) | Позволяет управлять службами BizTalk, но не доступом к ним. | 5e3c6656-6cfa-4708-81fe-0de47ac73342 |
 > | [Пользователь виртуализации рабочих столов](#desktop-virtualization-user) | Позволяет пользователю использовать приложения в группе приложений. | 1d18fff3-a72a-46b5-b4a9-0b38a3cd7e63 |
 > | [Участник коллекции заданий планировщика](#scheduler-job-collections-contributor) | Позволяет управлять коллекциями заданий планировщика, но не доступом к ним. | 188a0f2f-5c9e-469b-ae67-2aa5ce574b94 |
@@ -9211,6 +9213,102 @@ ms.locfileid: "92636703"
 
 ## <a name="other"></a>Другие
 
+
+### <a name="azure-digital-twins-data-owner"></a>Владелец данных Azure Digital двойников
+
+Роль полного доступа для данных Digital двойников. Дополнительные [сведения](../digital-twins/concepts-security.md)
+
+> [!div class="mx-tableFixed"]
+> | Действия | Описание |
+> | --- | --- |
+> | *Нет* |  |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | [Microsoft. дигиталтвинс](resource-provider-operations.md#microsoftdigitaltwins)/евентраутес/* |  |
+> | [Microsoft. дигиталтвинс](resource-provider-operations.md#microsoftdigitaltwins)/дигиталтвинс/* |  |
+> | [Microsoft. дигиталтвинс](resource-provider-operations.md#microsoftdigitaltwins)/дигиталтвинс/коммандс/* |  |
+> | [Microsoft. дигиталтвинс](resource-provider-operations.md#microsoftdigitaltwins)/дигиталтвинс/релатионшипс/* |  |
+> | [Microsoft. дигиталтвинс](resource-provider-operations.md#microsoftdigitaltwins)/Моделс/* |  |
+> | [Microsoft. дигиталтвинс](resource-provider-operations.md#microsoftdigitaltwins)/куери/* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Full access role for Digital Twins data-plane",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/bcd981a7-7f74-457b-83e1-cceb9e632ffe",
+  "name": "bcd981a7-7f74-457b-83e1-cceb9e632ffe",
+  "permissions": [
+    {
+      "actions": [],
+      "notActions": [],
+      "dataActions": [
+        "Microsoft.DigitalTwins/eventroutes/*",
+        "Microsoft.DigitalTwins/digitaltwins/*",
+        "Microsoft.DigitalTwins/digitaltwins/commands/*",
+        "Microsoft.DigitalTwins/digitaltwins/relationships/*",
+        "Microsoft.DigitalTwins/models/*",
+        "Microsoft.DigitalTwins/query/*"
+      ],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Azure Digital Twins Data Owner",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="azure-digital-twins-data-reader"></a>Модуль чтения данных Azure Digital двойников
+
+Роль "только чтение" для свойств Двойниковности данных Digital. Дополнительные [сведения](../digital-twins/concepts-security.md)
+
+> [!div class="mx-tableFixed"]
+> | Действия | Описание |
+> | --- | --- |
+> | *Нет* |  |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | /Дигиталтвинс/Реад [Microsoft. дигиталтвинс](resource-provider-operations.md#microsoftdigitaltwins) | Чтение цифровых двойника |
+> | /Дигиталтвинс/релатионшипс/Реад [Microsoft. дигиталтвинс](resource-provider-operations.md#microsoftdigitaltwins) | Чтение любого цифрового двойника отношения |
+> | /Евентраутес/Реад [Microsoft. дигиталтвинс](resource-provider-operations.md#microsoftdigitaltwins) | Чтение маршрута событий |
+> | /Моделс/Реад [Microsoft. дигиталтвинс](resource-provider-operations.md#microsoftdigitaltwins) | Чтение любой модели |
+> | /Куери/Актион [Microsoft. дигиталтвинс](resource-provider-operations.md#microsoftdigitaltwins) | Запрос любого цифрового двойников графа |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Read-only role for Digital Twins data-plane properties",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/d57506d4-4c8d-48b1-8587-93c323f6a5a3",
+  "name": "d57506d4-4c8d-48b1-8587-93c323f6a5a3",
+  "permissions": [
+    {
+      "actions": [],
+      "notActions": [],
+      "dataActions": [
+        "Microsoft.DigitalTwins/digitaltwins/read",
+        "Microsoft.DigitalTwins/digitaltwins/relationships/read",
+        "Microsoft.DigitalTwins/eventroutes/read",
+        "Microsoft.DigitalTwins/models/read",
+        "Microsoft.DigitalTwins/query/action"
+      ],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Azure Digital Twins Data Reader",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
 
 ### <a name="biztalk-contributor"></a>Участник BizTalk
 

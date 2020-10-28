@@ -8,13 +8,13 @@ ms.service: virtual-machine-scale-sets
 ms.subservice: management
 ms.date: 06/26/2020
 ms.reviewer: jushiman
-ms.custom: avverma
-ms.openlocfilehash: b5f3305fc5d2595c8b7b08d78ff20edea01c195e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: avverma, devx-track-azurecli
+ms.openlocfilehash: 334e0c745257354d9548a6f9c8cee4d43fa8da6d
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89229843"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92744747"
 ---
 # <a name="azure-virtual-machine-scale-set-automatic-os-image-upgrades"></a>Автоматические обновления образа ОС масштабируемого набора виртуальных машин Azure
 
@@ -54,7 +54,7 @@ ms.locfileid: "89229843"
 |-------------------------|---------------|--------------------|
 | Canonical               | UbuntuServer  | 16.04-LTS          |
 | Canonical               | UbuntuServer  | 18.04-LTS          |
-| Rogue Wave (OpenLogic)  | CentOS        | 7.5                |
+| Rogue Wave (OpenLogic)  | CentOS        | 7,5 %                |
 | CoreOS                  | CoreOS        | объем стабилен             |
 | Корпорация Майкрософт   | WindowsServer | 2012-R2-Datacenter |
 | Корпорация Майкрософт   | WindowsServer | 2016-Datacenter    |
@@ -68,7 +68,7 @@ ms.locfileid: "89229843"
 
 ## <a name="requirements-for-configuring-automatic-os-image-upgrade"></a>Требования к настройке автоматического обновления образа ОС
 
-- Свойство *Version* образа должно иметь значение *Latest*.
+- Свойство *Version* образа должно иметь значение *Latest* .
 - Используйте проверки работоспособности приложений или [расширения работоспособности приложения](virtual-machine-scale-sets-health-extension.md) для масштабируемых наборов, не связанных с Service Fabric.
 - Используйте API вычислений версии 2018-10-01 или более поздней.
 - Убедитесь, что внешние ресурсы, указанные в модели масштабируемого набора, доступны и обновлены. Примеры включают универсальный код ресурса (URI) SAS для начальной загрузки полезных данных в свойствах расширения виртуальной машины, полезные данные в учетной записи хранения, ссылки на секреты в модели и многое другое.
@@ -121,14 +121,14 @@ PUT or PATCH on `/subscriptions/subscription_id/resourceGroups/myResourceGroup/p
 ```
 
 ### <a name="azure-powershell"></a>Azure PowerShell
-Используйте командлет [Update-азвмсс](/powershell/module/az.compute/update-azvmss) , чтобы настроить автоматическое обновление образа ОС для масштабируемого набора. В следующем примере выполняется настройка автоматического обновления для масштабируемого набора с именем *myScaleSet* в группе ресурсов с именем *myResourceGroup*:
+Используйте командлет [Update-азвмсс](/powershell/module/az.compute/update-azvmss) , чтобы настроить автоматическое обновление образа ОС для масштабируемого набора. В следующем примере выполняется настройка автоматического обновления для масштабируемого набора с именем *myScaleSet* в группе ресурсов с именем *myResourceGroup* :
 
 ```azurepowershell-interactive
 Update-AzVmss -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleSet" -AutomaticOSUpgrade $true
 ```
 
 ### <a name="azure-cli-20"></a>Azure CLI 2.0
-Чтобы настроить автоматическое обновление образа ОС для масштабируемого набора, используйте команду [AZ vmss Update](/cli/azure/vmss#az-vmss-update) . Использование Azure CLI 2.0.47 или более поздней версии В следующем примере выполняется настройка автоматического обновления для масштабируемого набора с именем *myScaleSet* в группе ресурсов с именем *myResourceGroup*:
+Чтобы настроить автоматическое обновление образа ОС для масштабируемого набора, используйте команду [AZ vmss Update](/cli/azure/vmss#az-vmss-update) . Использование Azure CLI 2.0.47 или более поздней версии В следующем примере выполняется настройка автоматического обновления для масштабируемого набора с именем *myScaleSet* в группе ресурсов с именем *myResourceGroup* :
 
 ```azurecli-interactive
 az vmss update --name myScaleSet --resource-group myResourceGroup --set UpgradePolicy.AutomaticOSUpgradePolicy.EnableAutomaticOSUpgrade=true
@@ -184,7 +184,7 @@ az vmss update --name myScaleSet --resource-group myResourceGroup --set UpgradeP
 Вы можете проверить журнал последнего обновления ОС масштабируемого набора с помощью Azure PowerShell, Azure CLI 2.0 или интерфейсов REST API. Можно просмотреть журнал для последних пяти попыток обновлений операционной системы в течение последних двух месяцев.
 
 ### <a name="rest-api"></a>REST API
-В следующем примере используется [REST API](/rest/api/compute/virtualmachinescalesets/getosupgradehistory) для проверки состояния масштабируемого набора с именем *myScaleSet* в группе ресурсов с именем *myResourceGroup*:
+В следующем примере используется [REST API](/rest/api/compute/virtualmachinescalesets/getosupgradehistory) для проверки состояния масштабируемого набора с именем *myScaleSet* в группе ресурсов с именем *myResourceGroup* :
 
 ```
 GET on `/subscriptions/subscription_id/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachineScaleSets/myScaleSet/osUpgradeHistory?api-version=2019-12-01`
@@ -228,14 +228,14 @@ GET on `/subscriptions/subscription_id/resourceGroups/myResourceGroup/providers/
 ```
 
 ### <a name="azure-powershell"></a>Azure PowerShell
-Используйте командлет [Get-AzVmss](/powershell/module/az.compute/get-azvmss), чтобы проверить журнал обновлений ОС для масштабируемого набора. В следующем примере показано, как проверить состояние обновления ОС для масштабируемого набора с именем *myScaleSet* в группе ресурсов с именем *myResourceGroup*:
+Используйте командлет [Get-AzVmss](/powershell/module/az.compute/get-azvmss), чтобы проверить журнал обновлений ОС для масштабируемого набора. В следующем примере показано, как проверить состояние обновления ОС для масштабируемого набора с именем *myScaleSet* в группе ресурсов с именем *myResourceGroup* :
 
 ```azurepowershell-interactive
 Get-AzVmss -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleSet" -OSUpgradeHistory
 ```
 
 ### <a name="azure-cli-20"></a>Azure CLI 2.0
-Используйте командлет [az vmss get-os-upgrade-history](/cli/azure/vmss#az-vmss-get-os-upgrade-history), чтобы проверить журнал обновления ОС масштабируемого набора. Использование Azure CLI 2.0.47 или более поздней версии В следующем примере показано, как проверить состояние обновления ОС для масштабируемого набора с именем *myScaleSet* в группе ресурсов с именем *myResourceGroup*:
+Используйте командлет [az vmss get-os-upgrade-history](/cli/azure/vmss#az-vmss-get-os-upgrade-history), чтобы проверить журнал обновления ОС масштабируемого набора. Использование Azure CLI 2.0.47 или более поздней версии В следующем примере показано, как проверить состояние обновления ОС для масштабируемого набора с именем *myScaleSet* в группе ресурсов с именем *myResourceGroup* :
 
 ```azurecli-interactive
 az vmss get-os-upgrade-history --resource-group myResourceGroup --name myScaleSet
@@ -269,21 +269,21 @@ az vm image list --location "westus" --publisher "Canonical" --offer "UbuntuServ
 > Ручное срабатывание обновления образа ОС не предоставляет возможности автоматического отката. Если экземпляр не восстанавливает работоспособность после операции обновления, его предыдущий диск ОС восстановить невозможно.
 
 ### <a name="rest-api"></a>REST API
-Используйте вызов API [обновления операционной системы](/rest/api/compute/virtualmachinescalesetrollingupgrades/startosupgrade) для запуска последовательного обновления, чтобы переместить все экземпляры масштабируемых наборов виртуальных машин в последнюю доступную версию ОС образа. Экземпляры, которые уже используют последнюю доступную версию ОС, не затрагиваются. В следующем примере показано, как можно запустить пошаговое обновление ОС в масштабируемом наборе с именем *myScaleSet* в группе ресурсов с именем *myResourceGroup*:
+Используйте вызов API [обновления операционной системы](/rest/api/compute/virtualmachinescalesetrollingupgrades/startosupgrade) для запуска последовательного обновления, чтобы переместить все экземпляры масштабируемых наборов виртуальных машин в последнюю доступную версию ОС образа. Экземпляры, которые уже используют последнюю доступную версию ОС, не затрагиваются. В следующем примере показано, как можно запустить пошаговое обновление ОС в масштабируемом наборе с именем *myScaleSet* в группе ресурсов с именем *myResourceGroup* :
 
 ```
 POST on `/subscriptions/subscription_id/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachineScaleSets/myScaleSet/osRollingUpgrade?api-version=2019-12-01`
 ```
 
 ### <a name="azure-powershell"></a>Azure PowerShell
-Используйте командлет [Start-азвмссроллингосупграде](/powershell/module/az.compute/Start-AzVmssRollingOSUpgrade) , чтобы проверить журнал обновления ОС для масштабируемого набора. В следующем примере показано, как можно запустить пошаговое обновление ОС в масштабируемом наборе с именем *myScaleSet* в группе ресурсов с именем *myResourceGroup*:
+Используйте командлет [Start-азвмссроллингосупграде](/powershell/module/az.compute/Start-AzVmssRollingOSUpgrade) , чтобы проверить журнал обновления ОС для масштабируемого набора. В следующем примере показано, как можно запустить пошаговое обновление ОС в масштабируемом наборе с именем *myScaleSet* в группе ресурсов с именем *myResourceGroup* :
 
 ```azurepowershell-interactive
 Start-AzVmssRollingOSUpgrade -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleSet"
 ```
 
 ### <a name="azure-cli-20"></a>Azure CLI 2.0
-Чтобы проверить журнал обновления операционной системы для масштабируемого набора, выполните команду [AZ vmss чередующегося обновления](/cli/azure/vmss/rolling-upgrade#az-vmss-rolling-upgrade-start) . Использование Azure CLI 2.0.47 или более поздней версии В следующем примере показано, как можно запустить пошаговое обновление ОС в масштабируемом наборе с именем *myScaleSet* в группе ресурсов с именем *myResourceGroup*:
+Чтобы проверить журнал обновления операционной системы для масштабируемого набора, выполните команду [AZ vmss чередующегося обновления](/cli/azure/vmss/rolling-upgrade#az-vmss-rolling-upgrade-start) . Использование Azure CLI 2.0.47 или более поздней версии В следующем примере показано, как можно запустить пошаговое обновление ОС в масштабируемом наборе с именем *myScaleSet* в группе ресурсов с именем *myResourceGroup* :
 
 ```azurecli-interactive
 az vmss rolling-upgrade start --resource-group "myResourceGroup" --name "myScaleSet" --subscription "subscriptionId"
@@ -295,5 +295,5 @@ az vmss rolling-upgrade start --resource-group "myResourceGroup" --name "myScale
 
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fvm-scale-sets%2Fmaster%2Fpreview%2Fupgrade%2Fautoupdate.json" target="_blank"><img src="https://azuredeploy.net/deploybutton.png" alt="Button to Deploy to Azure." /></a>
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные примеры использования автоматических обновлений ОС с масштабируемыми наборами см. в [репозитории GitHub](https://github.com/Azure/vm-scale-sets/tree/master/preview/upgrade).
