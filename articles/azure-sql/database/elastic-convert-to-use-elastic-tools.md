@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 01/25/2019
-ms.openlocfilehash: 95afd0b9117caca4b531c453417217d8a8de7c7f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c6ad8b4c80f4b9c2fdb3c1a14209dcf0febc89e9
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91443474"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92787148"
 ---
 # <a name="migrate-existing-databases-to-scale-out"></a>Перенос существующих баз данных для развертывания
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -72,11 +72,11 @@ $ShardMapManager = Get-ShardMapManager -UserName '<user_name>' -Password '<passw
 
 ![Сопоставление по спискам][1]
 
-Мультитенантная модель назначает несколько клиентов отдельной базе данных (а группы клиентов вы можете распределять по нескольким базам данных). Эту модель можно использовать, когда у каждого отдельного клиента низкие потребности в обработке данных. В этой модели клиенты соотносятся с базой данных с использованием **сопоставления по диапазонам**.
+Мультитенантная модель назначает несколько клиентов отдельной базе данных (а группы клиентов вы можете распределять по нескольким базам данных). Эту модель можно использовать, когда у каждого отдельного клиента низкие потребности в обработке данных. В этой модели клиенты соотносятся с базой данных с использованием **сопоставления по диапазонам** .
 
 ![Сопоставление по диапазонам][2]
 
-Вы можете также реализовать модель с несколькими клиентами с помощью *сопоставления по списку*, чтобы назначить несколько клиентов отдельной базе данных. Например, база данных DB1 используется для хранения информации о клиенте 1 и 5, а DB2 хранит данные о клиенте 7 и 10.
+Вы можете также реализовать модель с несколькими клиентами с помощью *сопоставления по списку* , чтобы назначить несколько клиентов отдельной базе данных. Например, база данных DB1 используется для хранения информации о клиенте 1 и 5, а DB2 хранит данные о клиенте 7 и 10.
 
 ![Несколько клиентов для отдельной базы данных][3]
 
@@ -150,11 +150,11 @@ Get-Shards -ShardMap $ShardMap
 Get-Mappings -ShardMap $ShardMap
 ```
 
-## <a name="summary"></a>Итоги
+## <a name="summary"></a>Сводка
 
 После завершения настройки можно начать работу с клиентской библиотекой эластичной базы данных. Кроме того, можно воспользоваться [маршрутизацией, зависящей от данных](elastic-scale-data-dependent-routing.md), и [формированием многосегментных запросов](elastic-scale-multishard-querying.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Получите скрипты PowerShell из [сценариев инструментов базы данных SQL Azure Database-Elastic](https://gallery.technet.microsoft.com/scriptcenter/Azure-SQL-DB-Elastic-731883db).
 
@@ -168,7 +168,7 @@ Get-Mappings -ShardMap $ShardMap
 
 ## <a name="questions-and-feature-requests"></a>Вопросы и запросы на функции
 
-Для получения вопросов используйте [страницу Microsoft Q&A вопрос для базы данных SQL](https://docs.microsoft.com/answers/topics/azure-sql-database.html) , а для запросов функций добавьте их на [Форум обратной связи с базой данных SQL](https://feedback.azure.com/forums/217321-sql-database/).
+Для получения вопросов используйте [страницу Microsoft Q&A вопрос для базы данных SQL](/answers/topics/azure-sql-database.html) , а для запросов функций добавьте их на [Форум обратной связи с базой данных SQL](https://feedback.azure.com/forums/217321-sql-database/).
 
 <!--Image references-->
 [1]: ./media/elastic-convert-to-use-elastic-tools/listmapping.png

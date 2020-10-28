@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/02/2020
 ms.author: mathoma
-ms.openlocfilehash: 1a2c4364337083be005c550a8859079cd3bb1218
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: b385d6dfb5beba481ad92403d69f5d0988f3bce3
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92167956"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92786434"
 ---
 # <a name="cluster-configuration-best-practices-sql-server-on-azure-vms"></a>Рекомендации по настройке кластера (SQL Server на виртуальных машинах Azure)
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -106,7 +106,7 @@ ms.locfileid: "92167956"
 
 **Поддерживаемая ОС:** All   
 **Поддерживаемая версия SQL:** All   
-**Поддерживаемое решение HADR**: экземпляр отказоустойчивого кластера и группа доступности   
+**Поддерживаемое решение HADR** : экземпляр отказоустойчивого кластера и группа доступности   
 
 
 ### <a name="distributed-network-name-dnn"></a>Имя распределенной сети (DNN)
@@ -125,8 +125,8 @@ ms.locfileid: "92167956"
 Чтобы приступить к работе, научитесь настраивать ресурс имени распределенной сети для [экземпляра отказоустойчивого кластера](failover-cluster-instance-distributed-network-name-dnn-configure.md) или [группы доступности](availability-group-distributed-network-name-dnn-listener-configure.md) .
 
 **Поддерживаемая ОС:** Windows Server 2016 и более поздних версий.   
-**Поддерживаемая версия SQL**: SQL Server 2019 CU2 (FCI) и SQL Server 2019 CU8 (AG)   
-**Поддерживаемое решение HADR**: экземпляр отказоустойчивого кластера и группа доступности   
+**Поддерживаемая версия SQL** : SQL Server 2019 CU2 (FCI) и SQL Server 2019 CU8 (AG)   
+**Поддерживаемое решение HADR** : экземпляр отказоустойчивого кластера и группа доступности   
 
 
 ## <a name="limitations"></a>Ограничения
@@ -135,7 +135,7 @@ ms.locfileid: "92167956"
 
 ### <a name="msdtc"></a>MSDTC 
 
-Виртуальные машины Azure поддерживают координатор распределенных транзакций (Майкрософт) в Windows Server 2019 с хранилищем на общих томах кластера (CSV) и с [Azure Load Balancer ценовой категории "Стандартный"](../../../load-balancer/load-balancer-standard-overview.md) или на виртуальных машинах SQL Server, использующих общие диски Azure. 
+Виртуальные машины Azure поддерживают координатор распределенных транзакций (Майкрософт) в Windows Server 2019 с хранилищем на общих томах кластера (CSV) и с [Azure Load Balancer ценовой категории "Стандартный"](../../../load-balancer/load-balancer-overview.md) или на виртуальных машинах SQL Server, использующих общие диски Azure. 
 
 Координатор распределенных транзакций (Майкрософт) не поддерживается на Виртуальных машинах Azure в Windows Server 2016 и более ранних версий с общими томами кластера по следующим причинам:
 
@@ -145,5 +145,4 @@ ms.locfileid: "92167956"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Определив соответствующие рекомендации для решения, начните с [подготовки SQL Server виртуальной машины для FCI](failover-cluster-instance-prepare-vm.md) или создав свою группу доступности с помощью [портал Azure](availability-group-azure-portal-configure.md), [Azure CLI, PowerShell](availability-group-az-cli-configure.md)или шаблонов быстрого запуска [Azure](availability-group-quickstart-template-configure.md). 
-
+Определив соответствующие рекомендации для решения, начните с [подготовки SQL Server виртуальной машины для FCI](failover-cluster-instance-prepare-vm.md) или создав свою группу доступности с помощью [портал Azure](availability-group-azure-portal-configure.md), [Azure CLI, PowerShell](./availability-group-az-commandline-configure.md)или шаблонов быстрого запуска [Azure](availability-group-quickstart-template-configure.md).

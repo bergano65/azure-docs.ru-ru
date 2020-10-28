@@ -13,18 +13,18 @@ ms.workload: iaas-sql-server
 ms.date: 11/13/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: b09d808201d58b571b2fe5ceb2e228d4e1c21d11
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 28ab0a158507e3f29ecfdc026203d92d71877633
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91316959"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92786519"
 ---
 # <a name="change-the-license-model-for-a-sql-virtual-machine-in-azure"></a>Изменение модели лицензирования для виртуальной машины SQL в Azure
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
 
 
-В этой статье показано, как изменить модель лицензирования для виртуальной машины SQL Server в Azure с помощью нового поставщика ресурсов виртуальной машины SQL Server **Microsoft.SqlVirtualMachine**.
+В этой статье показано, как изменить модель лицензирования для виртуальной машины SQL Server в Azure с помощью нового поставщика ресурсов виртуальной машины SQL Server **Microsoft.SqlVirtualMachine** .
 
 Для виртуальной машины с SQL Server поддерживаются три модели лицензирования: с оплатой по мере использования, Преимущество гибридного использования Azure (AHB) и аварийное восстановление (DR). Вы можете изменить модель лицензирования для виртуальной машины SQL Server с помощью портала Azure, Azure CLI или PowerShell. 
 
@@ -49,7 +49,7 @@ ms.locfileid: "91316959"
 Для изменения модели лицензирования для виртуальной машины SQL Server требуется следующее: 
 
 - [Подписка Azure](https://azure.microsoft.com/free/).
-- [Виртуальная машина SQL Server](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-portal-sql-server-provision), зарегистрированная в [поставщике ресурсов виртуальных машин SQL](sql-vm-resource-provider-register.md).
+- [Виртуальная машина SQL Server](./create-sql-vm-portal.md), зарегистрированная в [поставщике ресурсов виртуальных машин SQL](sql-vm-resource-provider-register.md).
 - [Software Assurance](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default) как обязательное условие для использования [Преимущества гибридного использования Azure](https://azure.microsoft.com/pricing/hybrid-benefit/). 
 
 
@@ -62,9 +62,9 @@ ms.locfileid: "91316959"
 Модель лицензирования можно изменить непосредственно на портале, сделав следующее: 
 
 1. Откройте [портал Azure](https://portal.azure.com) и найдите [ресурс виртуальных машин SQL](manage-sql-vm-portal.md#access-the-sql-virtual-machines-resource) для нужной виртуальной машины SQL Server. 
-1. Выберите **Конфигурация** в разделе **Параметры**. 
+1. Выберите **Конфигурация** в разделе **Параметры** . 
 1. Выберите вариант **Преимущество гибридного использования Azure** и установите флажок, чтобы подтвердить наличие лицензии SQL Server с поддержкой Software Assurance. 
-1. Щелкните **Применить** в нижней части страницы **Конфигурация**. 
+1. Щелкните **Применить** в нижней части страницы **Конфигурация** . 
 
 ![Преимущество гибридного использования Azure на портале](./media/licensing-model-azure-hybrid-benefit-ahb-change/ahb-in-portal.png)
 
@@ -180,5 +180,3 @@ Update-AzSqlVM -ResourceGroupName <resource_group_name> -Name <VM_name> -License
 * [Вопросы и ответы об SQL Server на виртуальных машинах Windows](frequently-asked-questions-faq.md)
 * [Руководство по ценам для виртуальных машин SQL Server в Azure](pricing-guidance.md)
 * [Заметки о выпуске SQL Server на виртуальных машинах Windows](../../database/doc-changes-updates-release-notes.md)
-
-

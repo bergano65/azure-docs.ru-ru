@@ -9,12 +9,12 @@ ms.author: mbaldwin
 manager: rkarlin
 ms.date: 09/10/2019
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 6072c71fa675bd203e94f3f42814a1183b12ae8e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0d2d28a525f38aad3f48e439992a23abde0b7718
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91597983"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92786077"
 ---
 # <a name="create-sas-definition-and-fetch-shared-access-signature-tokens-in-code"></a>Создание определения SAS и получение маркеров SAS в коде
 
@@ -23,7 +23,7 @@ ms.locfileid: "91597983"
 > [!NOTE]
 > Мы рекомендуем защитить учетную запись хранения с помощью [управления доступом на основе ролей (RBAC)](../../storage/common/storage-auth-aad.md), чтобы усилить защиту и упростить авторизацию с использованием общего ключа.
 
-В этой статье представлены примеры кода .NET, который создает определение SAS и извлекает маркеры SAS. Полные сведения, включая созданный клиент для учетных записей хранения, управляемых Key Vault, см. в нашем примере [ShareLink](https://docs.microsoft.com/samples/azure/azure-sdk-for-net/share-link/). Сведения о создании и хранении маркеров SAS см. в статьях об управлении ключами учетной записи хранения с помощью [Key Vault и Azure CLI](overview-storage-keys.md) или с помощью [Key Vault и Azure PowerShell](overview-storage-keys-powershell.md).
+В этой статье представлены примеры кода .NET, который создает определение SAS и извлекает маркеры SAS. Полные сведения, включая созданный клиент для учетных записей хранения, управляемых Key Vault, см. в нашем примере [ShareLink](/samples/azure/azure-sdk-for-net/share-link/). Сведения о создании и хранении маркеров SAS см. в статьях об управлении ключами учетной записи хранения с помощью [Key Vault и Azure CLI](overview-storage-keys.md) или с помощью [Key Vault и Azure PowerShell](overview-storage-keys-powershell.md).
 
 ## <a name="code-samples"></a>Примеры кода
 
@@ -41,7 +41,7 @@ ms.locfileid: "91597983"
 
 Если срок действия маркера подписанного URL-адреса истекает, можно снова получить тот же секрет, чтобы создать новый.
 
-Сведения об использовании полученных данных из маркера SAS Key Vault для доступа к службам хранилища Azure см. в разделе [Использование SAS учетной записи из клиента](https://docs.microsoft.com/azure/storage/common/storage-account-sas-create-dotnet#use-an-account-sas-from-a-client).
+Сведения об использовании полученных данных из маркера SAS Key Vault для доступа к службам хранилища Azure см. в разделе [Использование SAS учетной записи из клиента](../../storage/common/storage-account-sas-create-dotnet.md#use-an-account-sas-from-a-client).
 
 > [!NOTE]
 > Приложение должно быть подготовлено к обновлению SAS на тот случай, если оно получит ошибку 403 от службы хранилища. Это требуется для тех ситуаций, когда ключ скомпрометирован и вам нужно сменить его быстрее, чем обычно. 

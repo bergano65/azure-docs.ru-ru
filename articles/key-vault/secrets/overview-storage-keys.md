@@ -10,12 +10,12 @@ ms.author: mbaldwin
 manager: rkarlin
 ms.date: 09/18/2019
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 26e1852058383ef1e4cc4b3b604e1bdc79d60e14
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 58b4a8c445548c711c2ad76c2d983acaec11ca7f
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91612189"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92786281"
 ---
 # <a name="manage-storage-account-keys-with-key-vault-and-the-azure-cli"></a>Управление ключами учетной записи хранения с помощью Key Vault и Azure CLI
 
@@ -32,13 +32,13 @@ ms.locfileid: "91612189"
 
 Мы рекомендуем использовать интеграцию службы хранилища Azure с Azure Active Directory (Azure AD), облачной службой корпорации Майкрософт для управления удостоверениями и доступом. Интеграция с Azure AD доступна для [BLOB-объектов и очередей Azure](../../storage/common/storage-auth-aad.md). Она обеспечивает доступ к службе хранилища Azure на основе токенов OAuth2 (точно так же, как Azure Key Vault).
 
-Azure AD позволяет проверять подлинность клиентского приложения, используя удостоверение приложения или пользователя вместо учетных данных учетной записи хранения. Вы можете использовать [управляемое удостоверение Azure AD](/azure/active-directory/managed-identities-azure-resources/) при запуске в Azure. Управляемые удостоверения устраняют необходимость проверки подлинности клиента и хранения учетных данных в приложении или вместе с ним.
+Azure AD позволяет проверять подлинность клиентского приложения, используя удостоверение приложения или пользователя вместо учетных данных учетной записи хранения. Вы можете использовать [управляемое удостоверение Azure AD](../../active-directory/managed-identities-azure-resources/index.yml) при запуске в Azure. Управляемые удостоверения устраняют необходимость проверки подлинности клиента и хранения учетных данных в приложении или вместе с ним.
 
 Для управления авторизацией, которая также поддерживается Key Vault, Azure AD использует управление доступом на основе ролей (RBAC).
 
 ## <a name="service-principal-application-id"></a>Идентификатор приложения субъекта-службы
 
-Арендатор Azure AD предоставляет каждому зарегистрированному приложению [субъект-службу](/azure/active-directory/develop/developer-glossary#service-principal-object). Субъект-служба выступает в качестве идентификатора приложения, который используется во время настройки авторизации для доступа к другим ресурсам Azure с использованием RBAC.
+Арендатор Azure AD предоставляет каждому зарегистрированному приложению [субъект-службу](../../active-directory/develop/developer-glossary.md#service-principal-object). Субъект-служба выступает в качестве идентификатора приложения, который используется во время настройки авторизации для доступа к другим ресурсам Azure с использованием RBAC.
 
 Key Vault — это приложение Майкрософт, которое предварительно зарегистрировано во всех клиентах Azure AD. Key Vault регистрируется с одним и тем же идентификатором приложения в каждом облаке Azure.
 
@@ -163,6 +163,6 @@ az keyvault secret show --vault-name <YourKeyVaultName> --id <SasDefinitionID>
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Узнайте больше о [ключах, секретах и сертификатах](https://docs.microsoft.com/rest/api/keyvault/).
-- Ознакомьтесь со статьями в [блоге команды разработчиков Azure Key Vault](https://blogs.technet.microsoft.com/kv/).
-- Просмотрите справочную документацию по [az keyvault storage](https://docs.microsoft.com/cli/azure/keyvault/storage?view=azure-cli-latest).
+- Узнайте больше о [ключах, секретах и сертификатах](/rest/api/keyvault/).
+- Ознакомьтесь со статьями в [блоге команды разработчиков Azure Key Vault](/archive/blogs/kv/).
+- Просмотрите справочную документацию по [az keyvault storage](/cli/azure/keyvault/storage?view=azure-cli-latest).

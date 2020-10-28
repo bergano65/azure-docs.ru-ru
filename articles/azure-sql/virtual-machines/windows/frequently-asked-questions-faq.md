@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 08/05/2019
 ms.author: mathoma
-ms.openlocfilehash: e1d1ffbf198a4e4c2574f93919ef98e36a90004a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b40afce24fad6bd793a625b11dc5a84f1f021ace
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91566998"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92786502"
 ---
 # <a name="frequently-asked-questions-for-sql-server-on-azure-vms"></a>Часто задаваемые вопросы о SQL Server на виртуальных машинах Azure
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -64,7 +64,7 @@ ms.locfileid: "91566998"
    `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\SysPrepExternal\Specialize`
 
    > [!NOTE]
-   > SQL Server на виртуальных машинах Azure, включая развернутые из пользовательских настраиваемых образов, должен быть [зарегистрирован с помощью поставщика ресурсов виртуальной машины SQL](/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-register-with-resource-provider?tabs=azure-cli%2Cbash) для соблюдения нормативных требований и использования дополнительных функций, таких как автоматическая установка исправлений и автоматическое резервное копирование. Поставщик ресурсов также позволяет [указать тип лицензии](/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-ahb?tabs=azure-portal) каждой виртуальной машины SQL Server.
+   > SQL Server на виртуальных машинах Azure, включая развернутые из пользовательских настраиваемых образов, должен быть [зарегистрирован с помощью поставщика ресурсов виртуальной машины SQL](./sql-vm-resource-provider-register.md?tabs=azure-cli%252cbash) для соблюдения нормативных требований и использования дополнительных функций, таких как автоматическая установка исправлений и автоматическое резервное копирование. Поставщик ресурсов также позволяет [указать тип лицензии](./licensing-model-azure-hybrid-benefit-ahb-change.md?tabs=azure-portal) каждой виртуальной машины SQL Server.
 
 1. **Можно ли использовать собственный виртуальный жесткий диск для развертывания виртуальной машины SQL Server?**
 
@@ -145,11 +145,11 @@ ms.locfileid: "91566998"
  
    Да, при условии, что виртуальная машина SQL Server была развернута в общедоступном облаке с помощью модели Resource Manager, а не классической модели. Остальные клиенты могут выполнять регистрацию в новом поставщике ресурсов виртуальной машины SQL Server. Тем не менее только клиенты с преимуществом [Software Assurance](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default?activetab=software-assurance-default-pivot%3aprimaryr3) могут использовать собственную лицензию, активировав [Преимущество гибридного использования Azure (AHB)](https://azure.microsoft.com/pricing/hybrid-benefit/) на виртуальной машине SQL Server. 
 
-1. **Что произойдет с ресурсом (_Microsoft.SqlVirtualMachine_) поставщика ресурсов, если ресурс виртуальной машины будет перемещен или удален?** 
+1. **Что произойдет с ресурсом ( _Microsoft.SqlVirtualMachine_ ) поставщика ресурсов, если ресурс виртуальной машины будет перемещен или удален?** 
 
    Когда ресурс Microsoft.Compute/VirtualMachine удаляется или перемещается, связанному с ним ресурсу виртуальной машины Microsoft.Sql приходит уведомление об асинхронной репликации операции.
 
-1. **Что произойдет с виртуальной машиной при удалении ресурса (_Microsoft.SqlVirtualMachine_) поставщика ресурсов?**
+1. **Что произойдет с виртуальной машиной при удалении ресурса ( _Microsoft.SqlVirtualMachine_ ) поставщика ресурсов?**
 
     Удаление ресурса Microsoft.SqlVirtualMachine не влияет на ресурс Microsoft.Compute/VirtualMachine. Тем не менее изменения лицензирования по умолчанию возвращают исходный источник образов. 
 
@@ -169,7 +169,7 @@ ms.locfileid: "91566998"
 
 1. **Можно ли удалить экземпляр по умолчанию SQL Server?**
 
-   Да, но нужно учесть некоторые факторы. Во-первых, в зависимости от модели лицензии виртуальной машины может продолжаться выставление счетов, связанных с SQL Server. Во вторых, как уже говорилось в предыдущем ответе, есть функции, которые используют [расширение агента IaaS SQL Server](sql-server-iaas-agent-extension-automate-management.md). Если вы удалите экземпляр по умолчанию не удалив расширение IaaS, то оно будет непрерывно искать экземпляр по умолчанию. Возможно, это приведет к регистрации ошибок в журнале событий. У этих ошибок два источника: **служба управления учетными данными Microsoft SQL Server** и **агент IaaS Microsoft SQL Server**. Пример одной из ошибок показан ниже.
+   Да, но нужно учесть некоторые факторы. Во-первых, в зависимости от модели лицензии виртуальной машины может продолжаться выставление счетов, связанных с SQL Server. Во вторых, как уже говорилось в предыдущем ответе, есть функции, которые используют [расширение агента IaaS SQL Server](sql-server-iaas-agent-extension-automate-management.md). Если вы удалите экземпляр по умолчанию не удалив расширение IaaS, то оно будет непрерывно искать экземпляр по умолчанию. Возможно, это приведет к регистрации ошибок в журнале событий. У этих ошибок два источника: **служба управления учетными данными Microsoft SQL Server** и **агент IaaS Microsoft SQL Server** . Пример одной из ошибок показан ниже.
 
       При подключении к SQL Server произошла ошибка, связанная с сетью или с определенным экземпляром. Сервер не найден или недоступен.
 
@@ -210,7 +210,7 @@ ms.locfileid: "91566998"
 
 1. **Можно ли обновить мой экземпляр SQL Server 2008 / 2008 R2 после его регистрации с помощью поставщика ресурсов виртуальной машины SQL Server?**
 
-   Да. Вы можете использовать любой установочный носитель для обновления версии и выпуска SQL Server, а затем обновить режим [расширения IaaS для SQL](sql-vm-resource-provider-register.md#management-modes) с _NoAgent_ до _полного_. Это обеспечит доступ ко всем преимуществам расширения IaaS для SQL, таким как управление порталом, автоматическое резервное копирование и автоматическая установка исправлений. 
+   Да. Вы можете использовать любой установочный носитель для обновления версии и выпуска SQL Server, а затем обновить режим [расширения IaaS для SQL](sql-vm-resource-provider-register.md#management-modes) с _NoAgent_ до _полного_ . Это обеспечит доступ ко всем преимуществам расширения IaaS для SQL, таким как управление порталом, автоматическое резервное копирование и автоматическая установка исправлений. 
 
 1. **Как можно получить бесплатные обновления для системы безопасности моих экземпляров SQL Server 2008 и SQL Server 2008 R2?**
 
@@ -241,7 +241,7 @@ ms.locfileid: "91566998"
 
 ## <a name="resources"></a>Ресурсы
 
-**Для виртуальных машин Windows**:
+**Для виртуальных машин Windows** :
 
 * [Обзор SQL Server на виртуальных машинах Windows](sql-server-on-azure-vm-iaas-what-is-overview.md).
 * [Инициализация SQL Server на виртуальной машине Windows](create-sql-vm-portal.md)
@@ -250,9 +250,9 @@ ms.locfileid: "91566998"
 * [Рекомендации по оптимизации производительности SQL Server на виртуальных машинах Azure](performance-guidelines-best-practices.md)
 * [Шаблоны приложений и стратегии разработки для SQL Server на виртуальных машинах Azure](application-patterns-development-strategies.md)
 
-**Для виртуальных машин Linux**:
+**Для виртуальных машин Linux** :
 
 * [Обзор SQL Server на виртуальных машинах Linux](../linux/sql-server-on-linux-vm-what-is-iaas-overview.md).
 * [Инициализация SQL Server на виртуальной машине Linux](../linux/sql-vm-create-portal-quickstart.md)
 * [Frequently asked questions for SQL Server on Linux Azure Virtual Machines](../linux/frequently-asked-questions-faq.md) (Часто задаваемые вопросы об SQL Server на виртуальных машинах Azure (Linux))
-* [Документация по SQL Server в Linux](https://docs.microsoft.com/sql/linux/sql-server-linux-overview).
+* [Документация по SQL Server в Linux](/sql/linux/sql-server-linux-overview).

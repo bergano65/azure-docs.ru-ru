@@ -11,12 +11,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: ''
 ms.date: 12/18/2018
-ms.openlocfilehash: 2829b1c71aebcc97452fc658e6509e4fae42da8c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b5a1035f8a213a6ce02dd3252ff7d3ddea46faf7
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91616811"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92786587"
 ---
 # <a name="in-memory-sample"></a>Пример использования технологий обработки в оперативной памяти
 [!INCLUDE[appliesto-sqldb-sqlmi](includes/appliesto-sqldb-sqlmi.md)]
@@ -49,7 +49,7 @@ ms.locfileid: "91616811"
 
 1. На [портале Azure](https://portal.azure.com/) создайте на сервере базу данных уровня "Премиум" или "Критически важный для бизнеса". Укажите **источник** для примера базы данных AdventureWorksLT. Подробные инструкции см. в статье [Краткое руководство. Создание отдельной базы данных в Базе данных SQL Azure](database/single-database-create-quickstart.md).
 
-2. Подключитесь к базе данных с помощью SQL Server Management Studio [(SSMS.exe)](https://msdn.microsoft.com/library/mt238290.aspx).
+2. Подключитесь к базе данных с помощью SQL Server Management Studio [(SSMS.exe)](/sql/ssms/download-sql-server-management-studio-ssms).
 
 3. Скопируйте в буфер обмена [скрипт Transact-SQL для In-Memory OLTP](https://raw.githubusercontent.com/microsoft/sql-server-samples/master/samples/features/in-memory-database/in-memory-oltp/t-sql-scripts/sql_in-memory_oltp_sample.sql) . Скрипт T-SQL создаст необходимые объекты обработки в оперативной памяти в образце базы данных AdventureWorksLT, созданной на этапе 1.
 
@@ -70,11 +70,11 @@ CREATE TABLE [SalesLT].[SalesOrderHeader_inmem](
 SELECT DatabasePropertyEx(DB_Name(), 'IsXTPSupported');
 ```
 
-Значение **0** указывает на то, что обработка в оперативной памяти не поддерживается, а значение **1** — наоборот. Чтобы установить причину проблемы, убедитесь, что для базы данных выбран уровень служб "Премиум".
+Значение **0** указывает на то, что обработка в оперативной памяти не поддерживается, а значение **1**  — наоборот. Чтобы установить причину проблемы, убедитесь, что для базы данных выбран уровень служб "Премиум".
 
 ### <a name="about-the-created-memory-optimized-items"></a>Сведения о созданных элементах, оптимизированных для памяти
 
-**Таблицы**— пример содержит следующие оптимизированные для памяти таблицы:
+**Таблицы** — пример содержит следующие оптимизированные для памяти таблицы:
 
 - SalesLT.Product_inmem
 - SalesLT.SalesOrderHeader_inmem
@@ -82,7 +82,7 @@ SELECT DatabasePropertyEx(DB_Name(), 'IsXTPSupported');
 - Demo.DemoSalesOrderHeaderSeed
 - Demo.DemoSalesOrderDetailSeed
 
-С помощью **обозревателя объектов** в SSMS-файле можно проверить оптимизированные для памяти таблицы. Щелкните правой кнопкой мыши **Таблицы** > **Фильтры** > **Параметры фильтров** > **Оптимизирован для памяти**. Значение равно 1.
+С помощью **обозревателя объектов** в SSMS-файле можно проверить оптимизированные для памяти таблицы. Щелкните правой кнопкой мыши **Таблицы** > **Фильтры** > **Параметры фильтров** > **Оптимизирован для памяти** . Значение равно 1.
 
 Можно также отправить запрос представлений каталога:
 
@@ -92,7 +92,7 @@ SELECT is_memory_optimized, name, type_desc, durability_desc
     WHERE is_memory_optimized = 1;
 ```
 
-**Скомпилированная в собственном коде хранимая процедура**: процедуру SalesLT.usp_InsertSalesOrder_inmem можно проверить с помощью запроса представления каталога.
+**Скомпилированная в собственном коде хранимая процедура** : процедуру SalesLT.usp_InsertSalesOrder_inmem можно проверить с помощью запроса представления каталога.
 
 ```sql
 SELECT uses_native_compilation, OBJECT_NAME(object_id), definition
@@ -122,7 +122,7 @@ SELECT uses_native_compilation, OBJECT_NAME(object_id), definition
 
 В этом разделе приведен скрипт T-SQL, внедренный в командную строку ostress.exe. Этот скрипт использует элементы, созданные ранее с помощью установленного скрипта T-SQL.
 
-Следующий скрипт вставляет образец заказа на продажу с пятью позициями строки в следующие оптимизированные для памяти *таблицы*:
+Следующий скрипт вставляет образец заказа на продажу с пятью позициями строки в следующие оптимизированные для памяти *таблицы* :
 
 - SalesLT.SalesOrderHeader_inmem
 - SalesLT.SalesOrderDetail_inmem
@@ -150,7 +150,7 @@ begin;
 end
 ```
 
-Чтобы создать версию представленного выше скрипта T-SQL для ostress.exe для таблиц *на диске*, измените оба вхождения подстроки *_inmem* на *_ondisk*. Эти замены влияют на имена таблиц и хранимых процедур.
+Чтобы создать версию представленного выше скрипта T-SQL для ostress.exe для таблиц *на диске* , измените оба вхождения подстроки *_inmem* на *_ondisk* . Эти замены влияют на имена таблиц и хранимых процедур.
 
 #### <a name="install-rml-utilities-and-ostress"></a>Установка служебных программ RML и `ostress`
 
@@ -160,8 +160,8 @@ end
 
 Дополнительные сведения можно найти в разделе
 
-- Обсуждение программы ostress.exe представлено в статье [Пример базы данных для выполняющейся в памяти OLTP](https://msdn.microsoft.com/library/mt465764.aspx).
-- Или ознакомьтесь со статьей [Пример базы данных для выполняющейся в памяти OLTP](https://msdn.microsoft.com/library/mt465764.aspx).
+- Обсуждение программы ostress.exe представлено в статье [Пример базы данных для выполняющейся в памяти OLTP](/sql/relational-databases/in-memory-oltp/sample-database-for-in-memory-oltp).
+- Или ознакомьтесь со статьей [Пример базы данных для выполняющейся в памяти OLTP](/sql/relational-databases/in-memory-oltp/sample-database-for-in-memory-oltp).
 - Можно также прочитать [блог об установке ostress.exe](https://techcommunity.microsoft.com/t5/sql-server-support/cumulative-update-2-to-the-rml-utilities-for-microsoft-sql/ba-p/317910).
 
 <!--
@@ -207,7 +207,7 @@ ostress.exe -n100 -r50 -S<servername>.database.windows.net -U<login> -P<password
 
 #### <a name="reset-edit-for-_ondisk-then-rerun"></a>Сброс базы данных, изменение значения *_ondisk* и повторный запуск
 
-Получив результат выполнения *_inmem*, выполните следующие действия для запуска *_ondisk*:
+Получив результат выполнения *_inmem* , выполните следующие действия для запуска *_ondisk* :
 
 1. Выполните сброс базы данных, запустив следующую команду в SSMS. Она удалит все данные, вставленные в ходе предыдущего запуска.
 
@@ -215,7 +215,7 @@ ostress.exe -n100 -r50 -S<servername>.database.windows.net -U<login> -P<password
    EXECUTE Demo.usp_DemoReset;
    ```
 
-2. Измените командную строку ostress.exe, заменив все вхождения *_inmem* на *_ondisk*.
+2. Измените командную строку ostress.exe, заменив все вхождения *_inmem* на *_ondisk* .
 
 3. Перезапустите ostress.exe еще раз и запишите результат (длительность выполнения).
 
@@ -233,7 +233,7 @@ ostress.exe -n100 -r50 -S<servername>.database.windows.net -U<login> -P<password
 
 В этом разделе вы сравните результаты ввода-вывода и статистические данные при использовании индекса columnstore и традиционного индекса сбалансированного дерева.
 
-Для анализа в режиме реального времени с использованием рабочей нагрузки OLTP зачастую лучше использовать некластеризованный индекс columnstore. Дополнительные сведения см. в статье [Руководство по индексам columnstore](https://msdn.microsoft.com/library/gg492088.aspx).
+Для анализа в режиме реального времени с использованием рабочей нагрузки OLTP зачастую лучше использовать некластеризованный индекс columnstore. Дополнительные сведения см. в статье [Руководство по индексам columnstore](/sql/relational-databases/indexes/columnstore-indexes-overview).
 
 ### <a name="prepare-the-columnstore-analytics-test"></a>Подготовка тестирования аналитики с помощью columnstore
 
@@ -246,7 +246,7 @@ ostress.exe -n100 -r50 -S<servername>.database.windows.net -U<login> -P<password
    - Скрипт создаст таблицу измерений и две таблицы фактов. Таблицы фактов заполняются 3,5 млн строк.
    - Выполнение скрипта может занять до 15 минут.
 
-3. Вставьте сценарий T-SQL в SSMS, а затем выполните его. Важным является ключевое слово **COLUMNSTORE** в инструкции **CREATE INDEX**, как и в:<br/>`CREATE NONCLUSTERED COLUMNSTORE INDEX ...;`
+3. Вставьте сценарий T-SQL в SSMS, а затем выполните его. Важным является ключевое слово **COLUMNSTORE** в инструкции **CREATE INDEX** , как и в:<br/>`CREATE NONCLUSTERED COLUMNSTORE INDEX ...;`
 
 4. Задайте для базы данных AdventureWorksLT уровень совместимости 130:<br/>`ALTER DATABASE AdventureworksLT SET compatibility_level = 130;`
 
@@ -254,9 +254,9 @@ ostress.exe -n100 -r50 -S<servername>.database.windows.net -U<login> -P<password
 
 #### <a name="key-tables-and-columnstore-indexes"></a>Ключевые таблицы и индексы columnstore
 
-- dbo.FactResellerSalesXL_CCI — это таблица, включающая в себя кластеризованный индекс columnstore с дополнительными возможностями сжатия на уровне *данных*.
+- dbo.FactResellerSalesXL_CCI — это таблица, включающая в себя кластеризованный индекс columnstore с дополнительными возможностями сжатия на уровне *данных* .
 
-- dbo.FactResellerSalesXL_PageCompressed — это таблица с эквивалентным обычным кластеризованным индексом, который сжат только на уровне *страницы*.
+- dbo.FactResellerSalesXL_PageCompressed — это таблица с эквивалентным обычным кластеризованным индексом, который сжат только на уровне *страницы* .
 
 #### <a name="key-queries-to-compare-the-columnstore-index"></a>Ключевые запросы для сравнения с индексом columnstore
 
@@ -335,7 +335,7 @@ GO
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Краткое руководство 1. Технологии выполнения OLTP в памяти для повышения производительности службы Transact-SQL](https://msdn.microsoft.com/library/mt694156.aspx)
+- [Краткое руководство 1. Технологии выполнения OLTP в памяти для повышения производительности службы Transact-SQL](/sql/relational-databases/in-memory-oltp/survey-of-initial-areas-in-in-memory-oltp)
 
 - [Повышение производительности приложений в базе данных SQL с помощью выполняющейся в памяти OLTP](in-memory-oltp-configure.md)
 
@@ -349,17 +349,17 @@ GO
 
 - [In-Memory OLTP in Azure SQL Database](https://azure.microsoft.com/blog/in-memory-oltp-in-azure-sql-database/) (Выполняющаяся в памяти OLTP в Базе данных SQL Azure)
 
-- [Learn about In-Memory OLTP](https://msdn.microsoft.com/library/dn133186.aspx) (Знакомство с In-Memory OLTP)
+- [Learn about In-Memory OLTP](/sql/relational-databases/in-memory-oltp/in-memory-oltp-in-memory-optimization) (Знакомство с In-Memory OLTP)
 
-- [Руководство по индексам columnstore](https://msdn.microsoft.com/library/gg492088.aspx)
+- [Руководство по индексам columnstore](/sql/relational-databases/indexes/columnstore-indexes-overview)
 
-- [Начало работы с Columnstore для получения операционной аналитики в реальном времени](https://msdn.microsoft.com/library/dn817827.aspx)
+- [Начало работы с Columnstore для получения операционной аналитики в реальном времени](/sql/relational-databases/indexes/get-started-with-columnstore-for-real-time-operational-analytics)
 
-- Технический документ с [рекомендациями по распространенным шаблонам рабочих нагрузок и миграции](https://msdn.microsoft.com/library/dn673538.aspx) включает описание шаблонов рабочих нагрузок, для которых выполняющаяся OLTP обычно обеспечивает значительное повышение производительности.
+- Технический документ с [рекомендациями по распространенным шаблонам рабочих нагрузок и миграции](/previous-versions/dn673538(v=msdn.10)) включает описание шаблонов рабочих нагрузок, для которых выполняющаяся OLTP обычно обеспечивает значительное повышение производительности.
 
 #### <a name="application-design"></a>Проектирование приложений
 
-- [In-Memory OLTP (оптимизация в памяти)](https://msdn.microsoft.com/library/dn133186.aspx)
+- [In-Memory OLTP (оптимизация в памяти)](/sql/relational-databases/in-memory-oltp/in-memory-oltp-in-memory-optimization)
 
 - [Повышение производительности приложений в базе данных SQL с помощью выполняющейся в памяти OLTP](in-memory-oltp-configure.md)
 
@@ -367,6 +367,6 @@ GO
 
 - [Портал Azure](https://portal.azure.com/)
 
-- [SQL Server Management Studio (SSMS)](https://msdn.microsoft.com/library/mt238290.aspx)
+- [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms)
 
-- [SQL Server Data Tools (SSDT)](https://msdn.microsoft.com/library/mt204009.aspx)
+- [SQL Server Data Tools (SSDT)](/sql/ssdt/download-sql-server-data-tools-ssdt)

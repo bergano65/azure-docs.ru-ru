@@ -12,12 +12,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein, mathoma
 ms.date: 08/25/2019
-ms.openlocfilehash: 9b4d0fadf157ce1eef6821ccbc32f5725aea611f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 31be497d017cb60de6f46d7657889c9c1fabef4a
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91616522"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92788355"
 ---
 # <a name="restore-a-database-in-azure-sql-managed-instance-to-a-previous-point-in-time"></a>Восстановление базы данных в Azure SQL Управляемый экземпляр до предыдущей точки во времени
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -58,16 +58,16 @@ ms.locfileid: "91616522"
 
 1. Войдите на [портал Azure](https://portal.azure.com). 
 2. Перейдите к Управляемый экземпляр SQL и выберите базу данных, которую требуется восстановить.
-3. На странице базы данных выберите **Восстановить**:
+3. На странице базы данных выберите **Восстановить** :
 
     ![Восстановление базы данных на портале Azure](./media/point-in-time-restore/restore-database-to-mi.png)
 
 4. На странице **Восстановление** выберите дату и время для восстановления базы данных.
-5. Чтобы восстановить базу данных, нажмите **Подтвердить**. Это действие запускает процесс восстановления, который создает новую базу данных и заполняет ее данными из исходной базы данных на указанный момент времени. Дополнительные сведения о процессе восстановления см. в статье [Время восстановления](../database/recovery-using-backups.md#recovery-time).
+5. Чтобы восстановить базу данных, нажмите **Подтвердить** . Это действие запускает процесс восстановления, который создает новую базу данных и заполняет ее данными из исходной базы данных на указанный момент времени. Дополнительные сведения о процессе восстановления см. в статье [Время восстановления](../database/recovery-using-backups.md#recovery-time).
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-Если у вас еще не установлен Azure PowerShell, см. раздел [Установка модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps).
+Если у вас еще не установлен Azure PowerShell, см. раздел [Установка модуля Azure PowerShell](/powershell/azure/install-az-ps).
 
 Чтобы восстановить базу данных с помощью PowerShell, укажите значения параметров в следующей команде. Затем выполните команду:
 
@@ -106,7 +106,7 @@ Restore-AzSqlInstanceDatabase -FromPointInTimeBackup `
                               -TargetInstanceName $targetInstanceName 
 ```
 
-Дополнительные сведения см. в разделе [Restore-AzSqlInstanceDatabase](https://docs.microsoft.com/powershell/module/az.sql/restore-azsqlinstancedatabase).
+Дополнительные сведения см. в разделе [Restore-AzSqlInstanceDatabase](/powershell/module/az.sql/restore-azsqlinstancedatabase).
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
@@ -128,7 +128,7 @@ az sql midb restore -g mygroupname --mi myinstancename -n mymanageddbname |
        --dest-mi mytargetinstancename
 ```
 
-Подробное описание доступных параметров см. в [документации CLI по восстановлению базы данных в управляемый экземпляр SQL](https://docs.microsoft.com/cli/azure/sql/midb?view=azure-cli-latest#az-sql-midb-restore).
+Подробное описание доступных параметров см. в [документации CLI по восстановлению базы данных в управляемый экземпляр SQL](/cli/azure/sql/midb?view=azure-cli-latest#az-sql-midb-restore).
 
 ---
 
@@ -139,7 +139,7 @@ az sql midb restore -g mygroupname --mi myinstancename -n mymanageddbname |
 ### <a name="portal"></a>Портал 
 
 
-Чтобы восстановить управляемую базу данных с помощью портал Azure, откройте страницу Обзор Управляемый экземпляр SQL и выберите **Удаленные базы данных**. Выберите удаленную базу данных, которую требуется восстановить, и введите имя новой базы данных, которая будет создана из данных, восстановленных из резервной копии.
+Чтобы восстановить управляемую базу данных с помощью портал Azure, откройте страницу Обзор Управляемый экземпляр SQL и выберите **Удаленные базы данных** . Выберите удаленную базу данных, которую требуется восстановить, и введите имя новой базы данных, которая будет создана из данных, восстановленных из резервной копии.
 
   ![Снимок экрана: восстановление удаленной базы данных экземпляра SQL Azure](./media/point-in-time-restore/restore-deleted-sql-managed-instance-annotated.png)
 
@@ -205,13 +205,13 @@ DROP DATABASE WorldWideImporters;
 
 Для подключения к базе данных в Управляемый экземпляр SQL используйте один из следующих методов:
 
-- [SSMS/Azure Data Studio через виртуальную машину Azure](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-configure-vm)
-- [Точка-сеть](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-configure-p2s)
-- [Общедоступная конечная точка](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-public-endpoint-configure)
+- [SSMS/Azure Data Studio через виртуальную машину Azure](./connect-vm-instance-configure.md)
+- [Точка-сеть](./point-to-site-p2s-configure.md)
+- [Общедоступная конечная точка](./public-endpoint-configure.md)
 
 # <a name="portal"></a>[Портал](#tab/azure-portal)
 
-В портал Azure выберите базу данных из Управляемый экземпляр SQL и нажмите кнопку **Удалить**.
+В портал Azure выберите базу данных из Управляемый экземпляр SQL и нажмите кнопку **Удалить** .
 
    ![Удаление базы данных на портале Azure](./media/point-in-time-restore/delete-database-from-mi.png)
 
@@ -247,9 +247,9 @@ ALTER DATABASE WorldWideImportersPITR MODIFY NAME = WorldWideImporters;
 
 Используйте один из следующих методов для подключения к базе данных в Управляемый экземпляр SQL:
 
-- [Виртуальная машина Azure](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-configure-vm)
-- [Точка-сеть](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-configure-p2s)
-- [Общедоступная конечная точка](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-public-endpoint-configure)
+- [Виртуальная машина Azure](./connect-vm-instance-configure.md)
+- [Точка-сеть](./point-to-site-p2s-configure.md)
+- [Общедоступная конечная точка](./public-endpoint-configure.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

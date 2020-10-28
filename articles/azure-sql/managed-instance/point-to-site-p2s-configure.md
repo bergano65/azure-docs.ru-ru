@@ -12,25 +12,25 @@ author: srdan-bozovic-msft
 ms.author: srbozovi
 ms.reviewer: sstein, bonova, jovanpop
 ms.date: 03/13/2019
-ms.openlocfilehash: d04d29b82ecf09d1ee52986fc40687e5511573da
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.openlocfilehash: 3baf2d7ed7c326895ae40948fc2d0a4cc03021f9
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92331912"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92788372"
 ---
 # <a name="quickstart-configure-a-point-to-site-connection-to-azure-sql-managed-instance-from-on-premises"></a>Краткое руководство. Настройка подключения "точка — сеть" к Управляемому экземпляру SQL Azure из локальной среды
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
 
-В этом кратком руководстве показано, как установить подключение "точка — сеть" к Управляемому экземпляру SQL Azure с помощью [SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/sql-server-management-studio-ssms) (SSMS) с локального клиентского компьютера. Дополнительные сведения см. в статье [Сведения о VPN-подключениях "точка — сеть"](../../vpn-gateway/point-to-site-about.md).
+В этом кратком руководстве показано, как установить подключение "точка — сеть" к Управляемому экземпляру SQL Azure с помощью [SQL Server Management Studio](/sql/ssms/sql-server-management-studio-ssms) (SSMS) с локального клиентского компьютера. Дополнительные сведения см. в статье [Сведения о VPN-подключениях "точка — сеть"](../../vpn-gateway/point-to-site-about.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 В этом кратком руководстве:
 
 - Как отправная точка используются ресурсы, созданные при работе с руководством по [созданию управляемого экземпляра](instance-create-quickstart.md).
-- На локальном клиентском компьютере требуется PowerShell 5.1 и Azure PowerShell 1.4.0 или более поздней версии. При необходимости ознакомьтесь с инструкциями по [установке модуля PowerShell для Azure](https://docs.microsoft.com/powershell/azure/install-az-ps#install-the-azure-powershell-module).
-- Требуется последняя версия [SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/sql-server-management-studio-ssms) на локальном клиентском компьютере.
+- На локальном клиентском компьютере требуется PowerShell 5.1 и Azure PowerShell 1.4.0 или более поздней версии. При необходимости ознакомьтесь с инструкциями по [установке модуля PowerShell для Azure](/powershell/azure/install-az-ps#install-the-azure-powershell-module).
+- Требуется последняя версия [SQL Server Management Studio](/sql/ssms/sql-server-management-studio-ssms) на локальном клиентском компьютере.
 
 ## <a name="attach-a-vpn-gateway-to-a-virtual-network"></a>Подключение VPN-шлюза к виртуальной сети
 
