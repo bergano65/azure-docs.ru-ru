@@ -6,12 +6,12 @@ author: harelbr
 ms.author: harelbr
 ms.date: 06/26/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: aa8529abf3d7eea7d413c59ce62c93c7eb6c76d1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 169ad40e32f688ae20a9d02f61db161844b1254a
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87309347"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92890519"
 ---
 # <a name="manage-application-insights-smart-detection-rules-using-azure-resource-manager-templates"></a>Управление правилами интеллектуального обнаружения Application Insights с помощью шаблонов Azure Resource Manager
 
@@ -21,18 +21,18 @@ ms.locfileid: "87309347"
 ## <a name="smart-detection-rule-configuration"></a>Настройка правила интеллектуального обнаружения
 
 Для правила интеллектуального обнаружения можно настроить следующие параметры:
-- Значение, если правило включено (по умолчанию — **true**).
-- Если сообщения электронной почты должны отправляться пользователям, связанным с ролью " [читатель мониторинга](../../role-based-access-control/built-in-roles.md#monitoring-reader) " в подписке и ролям [участников мониторинга](../../role-based-access-control/built-in-roles.md#monitoring-contributor) , при обнаружении обнаружения (значение по умолчанию — **true**).
+- Значение, если правило включено (по умолчанию — **true** ).
+- Если сообщения электронной почты должны отправляться пользователям, связанным с ролью " [читатель мониторинга](../../role-based-access-control/built-in-roles.md#monitoring-reader) " в подписке и ролям [участников мониторинга](../../role-based-access-control/built-in-roles.md#monitoring-contributor) , при обнаружении обнаружения (значение по умолчанию — **true** ).
 - Можно указать дополнительных получателей, которые должны получать уведомление при обнаружении.
-    -  Конфигурация электронной почты недоступна для правил интеллектуального обнаружения, помеченных как _Предварительная версия_.
+    -  Конфигурация электронной почты недоступна для правил интеллектуального обнаружения, помеченных как _Предварительная версия_ .
 
-Чтобы разрешить настройку параметров правил с помощью Azure Resource Manager, конфигурация правила интеллектуального обнаружения теперь доступна в качестве внутреннего ресурса в ресурсе Application Insights и называется **ProactiveDetectionConfigs**.
+Чтобы разрешить настройку параметров правил с помощью Azure Resource Manager, конфигурация правила интеллектуального обнаружения теперь доступна в качестве внутреннего ресурса в ресурсе Application Insights и называется **ProactiveDetectionConfigs** .
 Чтобы достичь максимальной гибкости, для каждого правила интеллектуального обнаружения можно настроить уникальные параметры уведомлений.
 
 ## <a name="examples"></a>Примеры
 
 Ниже приведено несколько примеров, в которых показано, как настроить параметры правила интеллектуального обнаружения с помощью шаблонов Azure Resource Manager.
-Во всех примерах используется ресурс Application Insights с именем _myApplication_ и правило интеллектуального обнаружения длительного срока зависимости с внутренним именем _longdependencyduration_.
+Во всех примерах используется ресурс Application Insights с именем _myApplication_ и правило интеллектуального обнаружения длительного срока зависимости с внутренним именем _longdependencyduration_ .
 Обязательно замените имя ресурса Application Insights и укажите соответствующее внутреннее имя правила интеллектуального обнаружения. В таблице ниже приведен список соответствующих внутренних имен Azure Resource Manager для каждого правила интеллектуального обнаружения.
 
 ### <a name="disable-a-smart-detection-rule"></a>Отключение правила интеллектуального обнаружения
@@ -44,7 +44,7 @@ ms.locfileid: "87309347"
       "type": "Microsoft.Insights/components",
       "location": "[resourceGroup().location]",
       "properties": {
-        "ApplicationId": "myApplication"
+        "Application_Type": "web"
       },
       "resources": [
         {
@@ -75,7 +75,7 @@ ms.locfileid: "87309347"
       "type": "Microsoft.Insights/components",
       "location": "[resourceGroup().location]",
       "properties": {
-        "ApplicationId": "myApplication"
+        "Application_Type": "web"
       },
       "resources": [
         {
@@ -106,7 +106,7 @@ ms.locfileid: "87309347"
       "type": "Microsoft.Insights/components",
       "location": "[resourceGroup().location]",
       "properties": {
-        "ApplicationId": "myApplication"
+        "Application_Type": "web"
       },
       "resources": [
         {
@@ -120,7 +120,7 @@ ms.locfileid: "87309347"
           "properties": {
             "name": "longdependencyduration",
             "sendEmailsToSubscriptionOwners": true,
-            "customEmails": ['alice@contoso.com', 'bob@contoso.com'],
+            "customEmails": ["alice@contoso.com", "bob@contoso.com"],
             "enabled": true
           }
         }
@@ -188,7 +188,7 @@ ms.locfileid: "87309347"
 > [!NOTE]
 > Этот шаблон Azure Resource Manager уникален для правила генерации оповещений об аномалиях сбоя и отличается от других правил интеллектуального обнаружения, описанных в этой статье. Если вы хотите управлять аномалиями сбоев вручную, это выполняется в Azure Monitor предупреждений, в то время как все другие правила интеллектуального обнаружения управляются на панели интеллектуального обнаружения в пользовательском интерфейсе.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 Дополнительные сведения об автоматическом обнаружении.
 

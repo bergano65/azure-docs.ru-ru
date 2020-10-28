@@ -11,12 +11,12 @@ metadata:
   manager: eliotgra
   ms.date: 03/23/2020
   ms.custom: amqp
-  ms.openlocfilehash: 91e3ff9dc19fdc33699fc6237cb5b6e51dbb9b52
-  ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+  ms.openlocfilehash: 5459129d5d49324839bfe36e2031d5be8d1e0521
+  ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 10/17/2020
-  ms.locfileid: "92148884"
+  ms.lasthandoff: 10/26/2020
+  ms.locfileid: "92545384"
 landingContent:
 - title: Приступая к работе
   linkLists:
@@ -40,10 +40,10 @@ landingContent:
     links:
     - text: Работа с двойниками устройств с использованием Node.js
       url: iot-hub-node-node-twin-getstarted.md
-    - text: Основные сведения о метриках Интернета вещей
-      url: iot-hub-metrics.md
-    - text: Журнал ведения диагностики
-      url: iot-hub-monitor-resource-health.md
+    - text: Мониторинг Центра Интернета вещей
+      url: monitor-iot-hub.md
+    - text: Справочник по данным мониторинга Центра Интернета вещей
+      url: monitor-iot-hub-reference.md
     - text: Мониторинг, диагностика и устранение неполадок с подключением к Интернету вещей
       url: iot-hub-troubleshoot-connectivity.md
 - title: Масштабирование своего решения

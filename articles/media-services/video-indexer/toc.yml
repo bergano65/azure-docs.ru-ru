@@ -13,7 +13,7 @@
       href: invite-users.md
 - name: Учебники
   items:
-    - name: Подключение к Azure
+    - name: Создание учетной записи с подключением к Azure
       href: connect-to-azure.md
     - name: Использование API Индексатора видео
       href: video-indexer-use-apis.md

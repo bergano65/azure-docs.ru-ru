@@ -9,20 +9,20 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen, devx-track-js
-ms.openlocfilehash: 74c8ba4ed1f228b9b3ba90b46c47f538d71ff409
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 96553e75d4b982cfe67d03961d4356a3844f253c
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91310464"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92891003"
 ---
 # <a name="add-a-polygon-layer-to-the-map"></a>Добавление слоя многоугольников на карту
 
-В этой статье показано, как визуализировать области геометрии компонентов `Polygon` и `MultiPolygon` на карте с помощью слоя многоугольников. Веб-пакет SDK Azure Maps также поддерживает создание геометрических объектов, как определено в [расширенной схеме GeoJSON](extend-geojson.md#circle). Эти круги преобразуются в многоугольники при отображении на карте. Все геометрии компонентов можно легко обновить при помощи класса [atlas.Shape](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.shape).
+В этой статье показано, как визуализировать области геометрии компонентов `Polygon` и `MultiPolygon` на карте с помощью слоя многоугольников. Веб-пакет SDK Azure Maps также поддерживает создание геометрических объектов, как определено в [расширенной схеме GeoJSON](extend-geojson.md#circle). Эти круги преобразуются в многоугольники при отображении на карте. Все геометрии компонентов можно легко обновить при помощи класса [atlas.Shape](/javascript/api/azure-maps-control/atlas.shape).
 
 ## <a name="use-a-polygon-layer"></a>Использование слоя многоугольников 
 
-Если слой многоугольников подключен к источнику данных и загружен на карту, он отображает область с компонентами `Polygon` и `MultiPolygon`. Чтобы создать многоугольник, добавьте его в источник данных и выводите на слой многоугольников с помощью класса [PolygonLayer](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.polygonlayer).
+Если слой многоугольников подключен к источнику данных и загружен на карту, он отображает область с компонентами `Polygon` и `MultiPolygon`. Чтобы создать многоугольник, добавьте его в источник данных и выводите на слой многоугольников с помощью класса [PolygonLayer](/javascript/api/azure-maps-control/atlas.layer.polygonlayer).
 
 ```javascript
 //Create a data source and add it to the map.
@@ -115,7 +115,7 @@ Azure Maps использует расширенную версию схемы G
 
 ## <a name="make-a-geometry-easy-to-update"></a>Упрощение обновления геометрии
 
-Класс `Shape` позволяет создать оболочку для [Геометрии](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.data.geometry) или [Компонента](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.data.feature) и упрощает их обновление и обслуживание. Чтобы создать экземпляр переменной фигуры, передайте геометрию или набор свойств в конструктор фигур.
+Класс `Shape` позволяет создать оболочку для [Геометрии](/javascript/api/azure-maps-control/atlas.data.geometry) или [Компонента](/javascript/api/azure-maps-control/atlas.data.feature) и упрощает их обновление и обслуживание. Чтобы создать экземпляр переменной фигуры, передайте геометрию или набор свойств в конструктор фигур.
 
 ```javascript
 //Creating a shape by passing in a geometry and a object containing properties.
@@ -137,10 +137,10 @@ var shape2 = new atlas.Shape(new atlas.data.Feature(new atlas.data.Point[0,0], {
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
 > [!div class="nextstepaction"]
-> [Многоугольник](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.data.polygon)
+> [Многоугольник](/javascript/api/azure-maps-control/atlas.data.polygon)
 
 > [!div class="nextstepaction"]
-> [PolygonLayer](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.polygonlayer)
+> [PolygonLayer](/javascript/api/azure-maps-control/atlas.layer.polygonlayer)
 
 > [!div class="nextstepaction"]
 > [PolygonLayerOptions](/javascript/api/azure-maps-control/atlas.polygonlayeroptions)

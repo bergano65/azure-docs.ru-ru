@@ -9,20 +9,20 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: devx-track-js
-ms.openlocfilehash: e993e3086ac63a6e9d5b8372327e35016b36239f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f2d7c9e39cb3eb14a2c2c6a7b13e37f3a526184b
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91285168"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92889805"
 ---
 # <a name="change-the-style-of-the-map"></a>Изменение стиля карты
 
-Элемент управления картой поддерживает несколько различных [параметров стиля](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.styleoptions) отображения и [базовых стилей карт](supported-map-styles.md). Все стили можно задать при инициализации элемента управления Map. Или можно задать стили с помощью функции элемента управления Map `setStyle` . В этой статье показано, как использовать эти параметры стиля для настройки внешнего вида схемы. Кроме того, вы узнаете, как реализовать элемент управления "Выбор стиля" на карте. Элемент управления Выбор стиля позволяет пользователю переключаться между различными базовыми стилями.
+Элемент управления картой поддерживает несколько различных [параметров стиля](/javascript/api/azure-maps-control/atlas.styleoptions) отображения и [базовых стилей карт](supported-map-styles.md). Все стили можно задать при инициализации элемента управления Map. Или можно задать стили с помощью функции элемента управления Map `setStyle` . В этой статье показано, как использовать эти параметры стиля для настройки внешнего вида схемы. Кроме того, вы узнаете, как реализовать элемент управления "Выбор стиля" на карте. Элемент управления Выбор стиля позволяет пользователю переключаться между различными базовыми стилями.
 
 ## <a name="set-map-style-options"></a>Установка параметров стиля схемы
 
-Параметры стиля можно задать во время инициализации веб-элемента управления. Можно также обновить параметры стиля, вызвав функцию элемента управления Map `setStyle` . Чтобы просмотреть все доступные параметры стиля, см. раздел [Параметры стиля](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.styleoptions).
+Параметры стиля можно задать во время инициализации веб-элемента управления. Можно также обновить параметры стиля, вызвав функцию элемента управления Map `setStyle` . Чтобы просмотреть все доступные параметры стиля, см. раздел [Параметры стиля](/javascript/api/azure-maps-control/atlas.styleoptions).
 
 ```javascript
 //Set the style options when creating the map.
@@ -82,7 +82,7 @@ var map = new atlas.Map('map', {
 map.setStyle({ style: 'satellite' });
 ```
 
-В следующем коде после загрузки экземпляра Map стиль схемы обновляется с `grayscale_dark` на с `satellite` помощью функции [SetStyle](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map#setstyle-styleoptions-) .
+В следующем коде после загрузки экземпляра Map стиль схемы обновляется с `grayscale_dark` на с `satellite` помощью функции [SetStyle](/javascript/api/azure-maps-control/atlas.map#setstyle-styleoptions-) .
 
 <br/>
 
@@ -93,7 +93,7 @@ map.setStyle({ style: 'satellite' });
 
 Элемент управления Выбор стиля позволяет легко использовать кнопку с раскрывающейся панелью, которая может использоваться конечным пользователем для переключения между базовыми стилями.
 
-Средство выбора стиля имеет два разных варианта макета: `icon` и `list` . Кроме того, средство выбора стилей позволяет выбрать два разных варианта управления Выбор стиля `style` : `light` и `dark` . В этом примере средство выбора стиля использует `icon` Макет и отображает список выбора стилей базовых карт в виде значков. Средство выбора элементов стиля включает следующий базовый набор стилей: `["road", "grayscale_light", "grayscale_dark", "night", "road_shaded_relief"]` . Дополнительные сведения о параметрах элемента управления "Выбор стиля" см. в разделе [Параметры элемента управления стиля](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.stylecontroloptions).
+Средство выбора стиля имеет два разных варианта макета: `icon` и `list` . Кроме того, средство выбора стилей позволяет выбрать два разных варианта управления Выбор стиля `style` : `light` и `dark` . В этом примере средство выбора стиля использует `icon` Макет и отображает список выбора стилей базовых карт в виде значков. Средство выбора элементов стиля включает следующий базовый набор стилей: `["road", "grayscale_light", "grayscale_dark", "night", "road_shaded_relief"]` . Дополнительные сведения о параметрах элемента управления "Выбор стиля" см. в разделе [Параметры элемента управления стиля](/javascript/api/azure-maps-control/atlas.stylecontroloptions).
 
 На рисунке ниже показан элемент управления "Выбор стиля", отображаемый в `icon` макете.
 
@@ -113,21 +113,21 @@ map.setStyle({ style: 'satellite' });
 <iframe height='500' scrolling='no' title='Добавление элемента выбора стиля' src='//codepen.io/azuremaps/embed/OwgyvG/?height=265&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>См. фрагмент кода <a href='https://codepen.io/azuremaps/pen/OwgyvG/'>Добавление элемента выбора стиля</a> в службе Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на сайте <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о классах и методах, используемых в этой статье.
 
 > [!div class="nextstepaction"]
-> [Схема](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map)
+> [Схема](/javascript/api/azure-maps-control/atlas.map)
 
 > [!div class="nextstepaction"]
-> [стилеоптионс](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.styleoptions)
+> [стилеоптионс](/javascript/api/azure-maps-control/atlas.styleoptions)
 
 > [!div class="nextstepaction"]
-> [StyleControl](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.control.stylecontrol).
+> [StyleControl](/javascript/api/azure-maps-control/atlas.control.stylecontrol).
 
 > [!div class="nextstepaction"]
-> [стилеконтролоптионс](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.stylecontroloptions)
+> [стилеконтролоптионс](/javascript/api/azure-maps-control/atlas.stylecontroloptions)
 
 Добавление элементов управления в карты:
 

@@ -9,6 +9,8 @@
       href: whats-new-docs.md
     - name: Cognitive Services и Машинное обучение
       href: cognitive-services-and-machine-learning.md
+    - name: Варианты разработки для Cognitive Services
+      href: cognitive-services-development-options.md
     - name: Пользовательские поддомены для Cognitive Services
       href: cognitive-services-custom-subdomains.md
     - name: Поддержка языков

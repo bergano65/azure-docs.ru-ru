@@ -33,3 +33,7 @@
     - name: Встроенные компоненты Политики Azure
       displayName: 'samples, policies, definitions'
       href: policy-reference.md
+- name: Ресурсы
+  items:
+    - name: "Начало работы с Azure\_Arc"
+      href: 'https://github.com/microsoft/azure_arc'

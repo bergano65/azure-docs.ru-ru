@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen, devx-track-js
-ms.openlocfilehash: 584db064bf6f6a6b99e6e2d09f6046912cfcd1bf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ec7459a356221fb7b599cbbc02f1cb825920b5b3
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91335251"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92890672"
 ---
 # <a name="show-traffic-on-the-map"></a>Отображение данных дорожного движения на карте
 
@@ -80,10 +80,10 @@ map.controls.add(new atlas.control.TrafficLegendControl(), { position: 'bottom-l
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
 > [!div class="nextstepaction"]
-> [Схема](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map)
+> [Схема](/javascript/api/azure-maps-control/atlas.map)
 
 > [!div class="nextstepaction"]
-> [TrafficOptions](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.trafficoptions)
+> [TrafficOptions](/javascript/api/azure-maps-control/atlas.trafficoptions)
 
 Расширьте возможности пользователей:
 

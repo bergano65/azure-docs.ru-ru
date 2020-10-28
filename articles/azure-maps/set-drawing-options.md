@@ -9,20 +9,20 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: devx-track-js
-ms.openlocfilehash: 9b40dbd91357038d1e98b04628bd866ebb336381
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 95a04d763fa5982181cc1c797bce969d9857ae4b
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91328893"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92890638"
 ---
 # <a name="use-the-drawing-tools-module"></a>Использование модуля средств рисования
 
-Веб-пакет SDK Azure Maps предоставляет *модуль средств рисования*. Этот модуль упрощает Рисование и изменение фигур на карте с помощью устройства ввода, такого как мышь или сенсорный экран. Основным классом этого модуля является [Диспетчер рисунков](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.drawing.drawingmanager#setoptions-drawingmanageroptions-). Диспетчер рисунков предоставляет все возможности, необходимые для рисования и редактирования фигур на карте. Его можно использовать напрямую и интегрировать с настраиваемым пользовательским ИНТЕРФЕЙСом панели инструментов. Можно также использовать встроенный класс [панели инструментов рисования](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.control.drawingtoolbar) . 
+Веб-пакет SDK Azure Maps предоставляет *модуль средств рисования* . Этот модуль упрощает Рисование и изменение фигур на карте с помощью устройства ввода, такого как мышь или сенсорный экран. Основным классом этого модуля является [Диспетчер рисунков](/javascript/api/azure-maps-drawing-tools/atlas.drawing.drawingmanager#setoptions-drawingmanageroptions-). Диспетчер рисунков предоставляет все возможности, необходимые для рисования и редактирования фигур на карте. Его можно использовать напрямую и интегрировать с настраиваемым пользовательским ИНТЕРФЕЙСом панели инструментов. Можно также использовать встроенный класс [панели инструментов рисования](/javascript/api/azure-maps-drawing-tools/atlas.control.drawingtoolbar) . 
 
 ## <a name="loading-the-drawing-tools-module-in-a-webpage"></a>Загрузка модуля средств рисования на веб-страницу
 
-1. Создайте новый HTML-файл и [реализуйте карту как обычно](https://docs.microsoft.com/azure/azure-maps/how-to-use-map-control).
+1. Создайте новый HTML-файл и [реализуйте карту как обычно](./how-to-use-map-control.md).
 2. Загрузите модуль инструментов для рисования Azure Maps. Загрузить его можно одним из двух способов:
     - Используйте глобально размещенную версию сети доставки содержимого Azure модуля Azure Maps Services. Добавьте ссылку на таблицу стилей JavaScript и CSS в `<head>` элемент файла:
 
@@ -44,7 +44,7 @@ ms.locfileid: "91328893"
 
 ## <a name="use-the-drawing-manager-directly"></a>Использование диспетчера рисунков напрямую
 
-После загрузки модуля инструменты рисования в приложение можно включить возможности рисования и редактирования с помощью [диспетчера рисунков](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.drawing.drawingmanager#setoptions-drawingmanageroptions-). Можно указать параметры для диспетчера рисунков при его создании или использовать `drawingManager.setOptions()` функцию.
+После загрузки модуля инструменты рисования в приложение можно включить возможности рисования и редактирования с помощью [диспетчера рисунков](/javascript/api/azure-maps-drawing-tools/atlas.drawing.drawingmanager#setoptions-drawingmanageroptions-). Можно указать параметры для диспетчера рисунков при его создании или использовать `drawingManager.setOptions()` функцию.
 
 ### <a name="set-the-drawing-mode"></a>Установка режима рисования
 
@@ -122,10 +122,10 @@ drawingManager = new atlas.drawing.DrawingManager(map,{
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
 > [!div class="nextstepaction"]
-> [Схема](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map)
+> [Схема](/javascript/api/azure-maps-control/atlas.map)
 
 > [!div class="nextstepaction"]
-> [Диспетчер рисунков](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.drawing.drawingmanager)
+> [Диспетчер рисунков](/javascript/api/azure-maps-drawing-tools/atlas.drawing.drawingmanager)
 
 > [!div class="nextstepaction"]
-> [Панель инструментов рисования](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.control.drawingtoolbar)
+> [Панель инструментов рисования](/javascript/api/azure-maps-drawing-tools/atlas.control.drawingtoolbar)

@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen, devx-track-js
-ms.openlocfilehash: 62aa8f966126d95af003478e7f43d3ccea2b48cd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 833b6413cc5dfde1129075a286e5fe93a06e159f
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91310413"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92890927"
 ---
 # <a name="create-a-map"></a>Создание карты
 
@@ -22,7 +22,7 @@ ms.locfileid: "91310413"
 
 ## <a name="loading-a-map"></a>Загрузка схемы
 
-Чтобы загрузить карту, создайте новый экземпляр [класса Map](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map). При инициализации карты передайте идентификатор элемента DIV для отрисовки карты и передайте набор параметров для использования при загрузке карты. Если в пространстве имен не указаны сведения для проверки подлинности по умолчанию `atlas` , эти сведения необходимо указать в параметрах Map при загрузке схемы. Эта схема асинхронно загружает несколько ресурсов для повышения производительности. Таким образом, после создания экземпляра Map присоедините `ready` `load` событие или к карте, а затем добавьте дополнительный код, взаимодействующий с картой с обработчиком событий. `ready`Событие срабатывает, как только на карте загружено достаточно ресурсов для взаимодействия с программным способом. `load`Событие срабатывает после полного завершения загрузки представления первоначальной таблицы. 
+Чтобы загрузить карту, создайте новый экземпляр [класса Map](/javascript/api/azure-maps-control/atlas.map). При инициализации карты передайте идентификатор элемента DIV для отрисовки карты и передайте набор параметров для использования при загрузке карты. Если в пространстве имен не указаны сведения для проверки подлинности по умолчанию `atlas` , эти сведения необходимо указать в параметрах Map при загрузке схемы. Эта схема асинхронно загружает несколько ресурсов для повышения производительности. Таким образом, после создания экземпляра Map присоедините `ready` `load` событие или к карте, а затем добавьте дополнительный код, взаимодействующий с картой с обработчиком событий. `ready`Событие срабатывает, как только на карте загружено достаточно ресурсов для взаимодействия с программным способом. `load`Событие срабатывает после полного завершения загрузки представления первоначальной таблицы. 
 
 <br/>
 
@@ -48,10 +48,10 @@ ms.locfileid: "91310413"
 
 При создании схемы существует несколько различных типов параметров, которые могут быть переданы для настройки функций Map, как показано ниже.
 
-- [Камераоптионс](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.cameraoptions) и [камерабаундоптионс](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.cameraboundsoptions) используются для указания области, отображаемой картой.
-- [Сервицеоптионс](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.serviceoptions) используются для указания того, как эта схема должна взаимодействовать со службами, которые работают с картой.
-- [Стилеоптионс](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.styleoptions) используются для указания того, должен ли сопоставленный стиль и отрисовываться.
-- [Усеринтерактионоптионс](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.userinteractionoptions) используются для указания способа, которым должна достигаться схема при взаимодействии пользователя с картой. 
+- [Камераоптионс](/javascript/api/azure-maps-control/atlas.cameraoptions) и [камерабаундоптионс](/javascript/api/azure-maps-control/atlas.cameraboundsoptions) используются для указания области, отображаемой картой.
+- [Сервицеоптионс](/javascript/api/azure-maps-control/atlas.serviceoptions) используются для указания того, как эта схема должна взаимодействовать со службами, которые работают с картой.
+- [Стилеоптионс](/javascript/api/azure-maps-control/atlas.styleoptions) используются для указания того, должен ли сопоставленный стиль и отрисовываться.
+- [Усеринтерактионоптионс](/javascript/api/azure-maps-control/atlas.userinteractionoptions) используются для указания способа, которым должна достигаться схема при взаимодействии пользователя с картой. 
 
 Эти параметры можно также обновить после загрузки схемы с помощью `setCamera` функций,, `setServiceOptions` `setStyle` и `setUserInteraction` . 
 
@@ -81,7 +81,7 @@ map.setCamera({
 });
 ```
 
-В следующем коде создается [объект Map](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map) , а также устанавливаются параметры центрирования и масштабирования. Свойства карт, такие как выравнивание по центру и масштабу, являются частью [камераоптионс](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.cameraoptions).
+В следующем коде создается [объект Map](/javascript/api/azure-maps-control/atlas.map) , а также устанавливаются параметры центрирования и масштабирования. Свойства карт, такие как выравнивание по центру и масштабу, являются частью [камераоптионс](/javascript/api/azure-maps-control/atlas.cameraoptions).
 
 <br/>
 
@@ -101,7 +101,7 @@ map.setCamera({
 });
 ```
 
-В следующем коде [объект Map](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map) создается с помощью `new atlas.Map()` . Свойства карты, например `CameraBoundsOptions`, можно определить через функцию [setCamera](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map) класса Map. Свойства границ и заполнения задаются с помощью `setCamera`.
+В следующем коде [объект Map](/javascript/api/azure-maps-control/atlas.map) создается с помощью `new atlas.Map()` . Свойства карты, например `CameraBoundsOptions`, можно определить через функцию [setCamera](/javascript/api/azure-maps-control/atlas.map) класса Map. Свойства границ и заполнения задаются с помощью `setCamera`.
 
 <br/>
 
@@ -110,7 +110,7 @@ map.setCamera({
 
 ### <a name="animate-map-view"></a>Просмотр анимации карты
 
-При настройке параметров камеры на карте можно также задать [Параметры анимации](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.animationoptions) . Эти параметры определяют тип анимации и длительность, которую необходимо предпринять для перемещения камеры.
+При настройке параметров камеры на карте можно также задать [Параметры анимации](/javascript/api/azure-maps-control/atlas.animationoptions) . Эти параметры определяют тип анимации и длительность, которую необходимо предпринять для перемещения камеры.
 
 ```javascript
 map.setCamera({
@@ -130,12 +130,12 @@ map.setCamera({
 
 ## <a name="request-transforms"></a>Преобразования запросов
 
-Иногда полезно иметь возможность изменять HTTP-запросы, выполняемые элементом управления картой. Пример:
+Иногда полезно иметь возможность изменять HTTP-запросы, выполняемые элементом управления картой. Пример.
 
 - Добавление дополнительных заголовков в запросы плиток. Это часто делается для защищенных паролем служб.
 - Измените URL-адреса для выполнения запросов через прокси-службу.
 
-[Параметры службы](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.serviceoptions) на карте имеют объект `transformRequest` , который можно использовать для изменения всех запросов, сделанных картой, до их внесения. `transformRequest`Параметр — это функция, которая принимает два параметра: Строковый URL-адрес и строку типа ресурса, которая указывает, для чего используется запрос. Эта функция должна возвращать результат [столбец requestparameters](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.requestparameters) .
+[Параметры службы](/javascript/api/azure-maps-control/atlas.serviceoptions) на карте имеют объект `transformRequest` , который можно использовать для изменения всех запросов, сделанных картой, до их внесения. `transformRequest`Параметр — это функция, которая принимает два параметра: Строковый URL-адрес и строку типа ресурса, которая указывает, для чего используется запрос. Эта функция должна возвращать результат [столбец requestparameters](/javascript/api/azure-maps-control/atlas.requestparameters) .
 
 ```JavaScript
 transformRequest: (url: string, resourceType: string) => RequestParameters
@@ -171,7 +171,7 @@ var map = new atlas.Map('myMap', {
 
 ## <a name="try-out-the-code"></a>Тестирование кода
 
-Взгляните на примеры кода. Код JavaScript можно изменить на **вкладке JS** и просмотреть изменения в представлении Map на **вкладке результат**. Можно также щелкнуть **изменить в CodePen**в правом верхнем углу и изменить код в CodePen.
+Взгляните на примеры кода. Код JavaScript можно изменить на **вкладке JS** и просмотреть изменения в представлении Map на **вкладке результат** . Можно также щелкнуть **изменить в CodePen** в правом верхнем углу и изменить код в CodePen.
 
 <a id="relatedReference"></a>
 
@@ -180,7 +180,7 @@ var map = new atlas.Map('myMap', {
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
 > [!div class="nextstepaction"]
-> [Схема](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map)
+> [Схема](/javascript/api/azure-maps-control/atlas.map)
 
 > [!div class="nextstepaction"]
 > [камераоптионс](/javascript/api/azure-maps-control/atlas.cameraoptions)
@@ -197,4 +197,4 @@ var map = new atlas.Map('myMap', {
 > [Добавление элементов управления на карту](map-add-controls.md)
 
 > [!div class="nextstepaction"]
-> [Примеры кода](https://docs.microsoft.com/samples/browse/?products=azure-maps)
+> [Примеры кода](/samples/browse/?products=azure-maps)

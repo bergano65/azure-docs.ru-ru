@@ -12,14 +12,14 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: tutorial
 ms.date: 07/21/2020
-ms.openlocfilehash: 0513b12c7ec9174c9a458400cd5682904d9ffb3b
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 85b42c6a3c3c59bd8c22bcdc8954b8dd3399c454
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92313144"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92460977"
 ---
-# <a name="tutorial-migrate-azure-db-for-postgresql---single-server-to-azure-db-for-postgresql---single-server--online-using-dms-via-the-azure-portal"></a>Руководство по сетевой миграции из одной Базы данных Azure для PostgreSQL (Отдельный сервер) в другую с помощью Azure Database Migration Service и портала Azure.
+# <a name="tutorial-migrateupgrade-azure-db-for-postgresql---single-server-to-azure-db-for-postgresql---single-server--online-using-dms-via-the-azure-portal"></a>Руководство по миграции и переходу с одной базы данных Azure для PostgreSQL (Отдельный сервер) на другую (более новую) по сети с помощью Database Migration Service и портала Azure.
 
 Azure Database Migration Service позволяет с минимальным простоем переносить базы данных из экземпляра [Базы данных Azure для PostgreSQL (Отдельный сервер)](https://docs.microsoft.com/azure/postgresql/overview#azure-database-for-postgresql---single-server) в экземпляр Базы данных Azure для PostgreSQL (Отдельный сервер или Гибкий сервер) аналогичной или другой версии. В этом руководстве показано, как перенести пример базы данных ( **Прокат DVD** ) из Базы данных Azure для PostgreSQL версии 10 в Базу данных Azure для PostgreSQL (отдельный сервер), выполнив сетевую миграцию в службе Azure Database Migration Service.
 
@@ -47,7 +47,7 @@ Azure Database Migration Service позволяет с минимальным п
 Для работы с этим руководством вам потребуется следующее:
 
 * Проверьте [состояние поддержки сценариев миграции в Azure Database Migration Service](https://docs.microsoft.com/azure/dms/resource-scenario-status), где описаны допустимые комбинации миграций и версий. 
-* Существующая [База данных Azure для PostgreSQL](https://docs.microsoft.com/azure/postgresql/) 10 и более поздней версии, где развернута база данных **Прокат DVD** . Azure Database Migration Service не поддерживает миграцию из Базы данных Azure для PostgreSQL 9.5 или 9.6.
+* Существующая [База данных Azure для PostgreSQL](https://docs.microsoft.com/azure/postgresql/) 10 и более поздней версии, где развернута база данных **Прокат DVD** . 
 
     Также обратите внимание, что версия целевой Базы данных Azure для PostgreSQL не может быть более ранней, чем версия исходного экземпляра. Например, базу данных PostgreSQL 10 можно перенести в Базу данных Azure для PostgreSQL 10 или 11, но не в Базу данных Azure для PostgreSQL 9.6.
 

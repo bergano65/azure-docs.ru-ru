@@ -79,6 +79,8 @@
               href: sync-ldap.md
             - name: Синхронизация SCIM
               href: sync-scim.md
+        - name: 'Центры сертификации, используемые в Azure'
+          href: certificate-authorities.md
     - name: Руководство по развертыванию
       items:
         - name: 'Развертывание 30, 90 и выше'

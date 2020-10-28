@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 03/12/2019
-ms.openlocfilehash: 9303d84b2862b556a9ccc286ffa118bf1e52b715
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5a646ffe1d306d7ea13da002715d5bd9b907107b
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84034655"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92793472"
 ---
 # <a name="moving-data-between-scaled-out-cloud-databases"></a>Перемещение данных между масштабируемыми облачными базами данных
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -43,13 +43,13 @@ ms.locfileid: "84034655"
 
 ## <a name="why-use-the-split-merge-tool"></a>Зачем использовать инструмент разделения и объединения?
 
-- **Гибкость**
+- **Обеспечения**
 
   Приложения должны быть более гибкими, чем ограничения отдельной базы данных в базе данных SQL Azure. Используйте средство для переноса необходимых данных в новые базы данных без потерь.
 
 - **Рост путем деления**
 
-  Чтобы увеличить емкость и справиться с резким ростом, создайте дополнительную емкость путем сегментирования данных и распределения информации по постепенно возрастающему количеству баз данных, пока не будет достигнут нужный объем. Это — отличный пример применения функции **разделения**.
+  Чтобы увеличить емкость и справиться с резким ростом, создайте дополнительную емкость путем сегментирования данных и распределения информации по постепенно возрастающему количеству баз данных, пока не будет достигнут нужный объем. Это — отличный пример применения функции **разделения** .
 
 - **Сжатием путем слияния**
 
@@ -220,7 +220,7 @@ ms.locfileid: "84034655"
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 > [!IMPORTANT]
-> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается, но вся будущая разработка предназначена для модуля AZ. SQL. Сведения об этих командлетах см. в разделе [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы команд в модулях Az и AzureRm практически идентичны.
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается, но вся будущая разработка предназначена для модуля AZ. SQL. Сведения об этих командлетах см. в разделе [AzureRM.Sql](/powershell/module/AzureRM.Sql/). Аргументы команд в модулях Az и AzureRm практически идентичны.
 
 Чтобы включить наблюдение и диагностику с помощью конфигурации диагностики для веб- и рабочих ролей, предоставленных пакетом NuGet, выполните следующие команды с помощью Azure PowerShell:
 
@@ -244,7 +244,7 @@ Set-AzureServiceDiagnosticsExtension -StorageContext $storageContext `
 
 ## <a name="retrieve-diagnostics"></a>Получение диагностики
 
-Диагностику можно получить при помощи Visual Studio Server Explorer, смотрите узел Azure в дереве обозревателя сервера. Откройте экземпляр Visual Studio и в строке меню щелкните Вид, затем Обозреватель серверов. Щелкните значок Azure, чтобы подключиться к подписке Azure. Перейдите в Azure -> Хранилище -> `<your storage account>` -> Таблицы -> WADLogsTable. Дополнительные сведения см. в описании [обозревателя сервера](https://msdn.microsoft.com/library/x603htbk.aspx).
+Диагностику можно получить при помощи Visual Studio Server Explorer, смотрите узел Azure в дереве обозревателя сервера. Откройте экземпляр Visual Studio и в строке меню щелкните Вид, затем Обозреватель серверов. Щелкните значок Azure, чтобы подключиться к подписке Azure. Перейдите в Azure -> Хранилище -> `<your storage account>` -> Таблицы -> WADLogsTable. Дополнительные сведения см. в описании [обозревателя сервера](/previous-versions/x603htbk(v=vs.140)).
 
 ![WADLogsTable][2]
 

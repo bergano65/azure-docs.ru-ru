@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen, devx-track-js
-ms.openlocfilehash: c1968df19ebc62d47da77b0338d93ceb5f49f2c0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9cf2f4876d62572ace118562fe5760f2b4010fa5
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91310532"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92891165"
 ---
 # <a name="add-a-line-layer-to-the-map"></a>Добавление на карту слоя линий
 
@@ -23,7 +23,7 @@ ms.locfileid: "91310532"
 > [!TIP]
 > Слои линий по умолчанию отображают координаты многоугольников, а также линий в источнике данных. Чтобы ограничить слой таким образом, чтобы он отображал только компоненты LineString, задайте для свойства `filter` слоя значение `['==', ['geometry-type'], 'LineString']` или `['any', ['==', ['geometry-type'], 'LineString'], ['==', ['geometry-type'], 'MultiLineString']]`, если требуется также включить функции MultiLineString.
 
-Ниже приведен код, создающий линию. Добавьте строку в источник данных, а затем отрисуйте ее с помощью слоя линий, используя класс [LineLayer](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.linelayer).
+Ниже приведен код, создающий линию. Добавьте строку в источник данных, а затем отрисуйте ее с помощью слоя линий, используя класс [LineLayer](/javascript/api/azure-maps-control/atlas.layer.linelayer).
 
 ```javascript
 //Create a data source and add it to the map.
@@ -88,7 +88,7 @@ map.layers.add(new atlas.layer.LineLayer(dataSource, null, {
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
 > [!div class="nextstepaction"]
-> [LineLayer](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.linelayer) 
+> [LineLayer](/javascript/api/azure-maps-control/atlas.layer.linelayer) 
 
 > [!div class="nextstepaction"]
 > [LineLayerOptions](/javascript/api/azure-maps-control/atlas.linelayeroptions)

@@ -123,9 +123,11 @@
         - name: Нет соответствующих подписок
           href: troubleshoot-no-eligible-subscriptions.md?toc=/azure/cost-management-billing/reservations/toc.json
         - name: 'Устранение неполадок, связанных с использованием резервирования'
-          href: troubleshoot-reservation-utilization.md??toc=/azure/cost-management-billing/reservations/toc.json
+          href: troubleshoot-reservation-utilization.md?toc=/azure/cost-management-billing/reservations/toc.json
         - name: Рекомендации по устранению неполадок с резервированием
-          href: troubleshoot-reservation-recommendation.md??toc=/azure/cost-management-billing/reservations/toc.json
+          href: troubleshoot-reservation-recommendation.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: 'Устранение неполадок, связанных с недоступностью резервирования'
+          href: troubleshoot-product-not-available.md?toc=/azure/cost-management-billing/reservations/toc.json
 - name: Справочник
   items:
     - name: "Резервирования\_— REST API"

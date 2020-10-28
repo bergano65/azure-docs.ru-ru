@@ -110,7 +110,7 @@
         - name: Шаблон Azure Resource Manager
           href: 'https://docs.microsoft.com/azure/virtual-network/ipv6-configure-standard-load-balancer-template-json'
           displayName: ARM
-    - name: Настройка времени ожидания простоя TCP для Load Balancer
+    - name: Настройка сброса подключений TCP и времени ожидания TCP в режиме простоя
       href: load-balancer-tcp-idle-timeout.md
     - name: Настройка режима распространения для Load Balancer
       href: load-balancer-distribution-mode.md

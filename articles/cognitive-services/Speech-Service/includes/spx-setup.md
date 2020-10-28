@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 05/15/2020
 ms.author: v-demjoh
-ms.openlocfilehash: 203ba2988d817e3e396fd8aec3db00eba9832041
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 4b04558077f6b59d0fef613308a6ab96680d7ff8
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92321329"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92470779"
 ---
 ## <a name="download-and-install"></a>Загрузите и установите
 
@@ -107,7 +107,8 @@ pwd
 
 ## <a name="create-subscription-config"></a>Создание конфигурации подписки
 
-Чтобы начать работу с интерфейсом командной строки службы "Речь", сначала необходимо ввести ключ подписки службы "Речь" и сведения о регионе. Идентификатор региона можно узнать в разделе о [поддержке регионов](https://docs.microsoft.com/azure/cognitive-services/speech-service/regions#speech-sdk). Указав ключ подписки и идентификатор региона (например, `eastus` и `westus`), выполните следующие команды.
+Чтобы начать работу с интерфейсом командной строки службы "Речь", необходимо ввести ключ подписки службы "Речь" и идентификатор региона. Чтобы получить эти учетные данные, выполните инструкции из раздела [Бесплатная пробная подписка на службу "Речь"](../overview.md#try-the-speech-service-for-free).
+Указав ключ подписки и идентификатор региона (например, `eastus` и `westus`), выполните следующие команды.
 
 ```shell
 spx config @key --set SUBSCRIPTION-KEY

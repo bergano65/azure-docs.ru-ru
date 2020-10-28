@@ -36,9 +36,11 @@
       items:
         - name: ASP.NET
           href: quickstart-v2-aspnet-webapp.md
-        - name: "ASP.NET\_Core"
+        - name: ASP.NET Core
           href: quickstart-v2-aspnet-core-webapp.md
-        - name: Node.js
+        - name: "Node.js\_— MSAL (предварительная версия)"
+          href: quickstart-v2-nodejs-webapp-msal.md
+        - name: "Node.js\_— Passport.js."
           href: quickstart-v2-nodejs-webapp.md
           displayName: OIDC
         - name: Java

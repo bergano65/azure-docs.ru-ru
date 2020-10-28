@@ -70,6 +70,8 @@
       href: my-account-portal-sign-ins-page.md
     - name: Изменение параметров портала
       href: my-account-portal-settings.md
+    - name: Переключение организаций
+      href: cross-tenant-switcher.md
 - name: Справка по сведениям для защиты
   items:
     - name: Добавление сведений для защиты при входе в систему

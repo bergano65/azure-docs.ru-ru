@@ -4,12 +4,12 @@ ms.service: app-service
 ms.topic: include
 ms.date: 03/04/2020
 ms.author: jroth
-ms.openlocfilehash: 557e20dcafabb2db0bc66c9dfda4977aca50de50
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 800dc50f82fa47228f1a88a143c5b515168812a6
+ms.sourcegitcommit: 3e8058f0c075f8ce34a6da8db92ae006cc64151a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91745443"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92755940"
 ---
 | Ресурс | Бесплатный | Совмещаемая блокировка | Basic | Standard | Премиум (версия3) | Isolated </th> |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -32,6 +32,7 @@ ms.locfileid: "91745443"
 | Гибридные подключения | | | 5 на план | 25 на план | 200 на приложение | 200 на приложение |
 | [Интеграция с виртуальной сетью](../articles/app-service/web-sites-integrate-with-vnet.md) | | |   |  X |  X  |  X  |
 | Интегрированная подсистема балансировки нагрузки | |X |X |X |X |X<sup>10</sup> |
+| [Ограничения доступа](../articles/app-service/networking-features.md#access-restrictions) | 512 правил на приложение | 512 правил на приложение | 512 правил на приложение | 512 правил на приложение | 512 правил на приложение | 512 правил на приложение |
 | [AlwaysOn](../articles/app-service/configure-common.md) | | |X |X |X |X |
 | [Резервное копирование по расписанию](../articles/app-service/manage-backup.md) | | | | Плановое резервное копирование каждые два часа, не более 12 резервных копий в день (ручные + плановые) | Плановое резервное копирование каждый час, не более 50 резервных копий в день (ручные + плановые) | Плановое резервное копирование каждый час, не более 50 резервных копий в день (ручные + плановые) |
 | [Автомасштабирование](../articles/app-service/manage-scale-up.md) | | | |X |X |X |

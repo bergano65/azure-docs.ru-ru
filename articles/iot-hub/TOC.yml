@@ -317,16 +317,10 @@
               href: iot-hub-configure-file-upload-powershell.md
             - name: Использование Azure CLI
               href: iot-hub-configure-file-upload-cli.md
-        - name: Метрики в Azure Monitor
-          href: iot-hub-metrics.md
-        - name: Настройка журналов диагностики
-          href: iot-hub-monitor-resource-health.md
         - name: Защита центра с использованием сертификата X.509
           href: iot-hub-security-x509-get-started.md
         - name: Обновление Центра Интернета вещей
           href: iot-hub-upgrade.md
-        - name: Включение отслеживания сообщений
-          href: iot-hub-distributed-tracing.md
         - name: Настройка фильтрации IP
           href: iot-hub-ip-filtering.md
         - name: Управление доступом к общедоступной сети
@@ -339,6 +333,16 @@
               href: iot-hub-automatic-device-management-cli.md
         - name: Массовый импорт и экспорт устройств Интернета вещей
           href: iot-hub-bulk-identity-mgmt.md
+    - name: Azure Monitor
+      items:
+        - name: Мониторинг Центра Интернета вещей
+          href: monitor-iot-hub.md
+        - name: Справочник по данным мониторинга
+          href: monitor-iot-hub-reference.md
+        - name: Включение отслеживания сообщений
+          href: iot-hub-distributed-tracing.md
+        - name: Работоспособность ресурсов и службы "Центр Интернета вещей"
+          href: iot-hub-azure-service-health-integration.md
     - name: Использование реальных устройств
       items:
         - name: Использование онлайн-симулятора

@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: codepen, devx-track-js
-ms.openlocfilehash: 6d0cb0c6a9cc3080ec4b2fbd2c4b707a52a88319
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9ecde4cb0c8a3bfe3dd8fb2edb59423838e0751c
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91285117"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92889873"
 ---
 # <a name="clustering-point-data"></a>Кластеризация данных точек
 
@@ -132,13 +132,13 @@ var datasource = new atlas.source.DataSource(null, {
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
 > [!div class="nextstepaction"]
-> [Класс DataSource](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource)
+> [Класс DataSource](/javascript/api/azure-maps-control/atlas.source.datasource)
 
 > [!div class="nextstepaction"]
-> [Объект DataSourceOptions](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.datasourceoptions)
+> [Объект DataSourceOptions](/javascript/api/azure-maps-control/atlas.datasourceoptions)
 
 > [!div class="nextstepaction"]
-> [Пространство имен atlas.math](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.math)
+> [Пространство имен atlas.math](/javascript/api/azure-maps-control/atlas.math)
 
 См. примеры кодов для добавления функций в приложение:
 

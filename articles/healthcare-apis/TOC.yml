@@ -79,6 +79,8 @@
           href: configure-cross-origin-resource-sharing.md
         - name: Настройка экспорта
           href: configure-export-data.md
+        - name: Настройка приватного канала
+          href: configure-private-link.md
     - name: Экспорт данных
       expanded: false
       items:

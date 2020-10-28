@@ -9,20 +9,20 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen, devx-track-js
-ms.openlocfilehash: 0621e0ecfbb91d151e3cc78d3b345ab92133695c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8121ceb68bdea9332316a9508bf6f4731e05b0ba
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91310379"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92890791"
 ---
 # <a name="interact-with-the-map"></a>Взаимодействие с картой
 
-В этой статье показано, как использовать [класс событий карты](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?#events). Это свойство выделяет события на карте и разных слоях карты. Также можно выделить события при взаимодействии с HTML-меткой.
+В этой статье показано, как использовать [класс событий карты](/javascript/api/azure-maps-control/atlas.map#events). Это свойство выделяет события на карте и разных слоях карты. Также можно выделить события при взаимодействии с HTML-меткой.
 
 ## <a name="interact-with-the-map"></a>Взаимодействие с картой
 
-Поработайте с приведенной ниже картой и посмотрите, как соответствующие события мыши выделяются в разделе справа. Вы можете щелкнуть **вкладку JS**, чтобы просмотреть и изменить код JavaScript. Кроме того, можно нажать кнопку **редактирования в CodePen** и изменить код в CodePen.
+Поработайте с приведенной ниже картой и посмотрите, как соответствующие события мыши выделяются в разделе справа. Вы можете щелкнуть **вкладку JS** , чтобы просмотреть и изменить код JavaScript. Кроме того, можно нажать кнопку **редактирования в CodePen** и изменить код в CodePen.
 
 <br/>
 
@@ -117,4 +117,4 @@ ms.locfileid: "91310379"
 > [Использование модуля служб Azure Maps](./how-to-use-services-module.md)
 
 > [!div class="nextstepaction"]
-> [Примеры кода](https://docs.microsoft.com/samples/browse/?products=azure-maps)
+> [Примеры кода](/samples/browse/?products=azure-maps)

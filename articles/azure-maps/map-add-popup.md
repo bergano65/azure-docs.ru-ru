@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen, devx-track-js
-ms.openlocfilehash: a67fad5d0980730eb73f4219f12eaf3a7b9ec7dc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 903574a8c8696f10d9903a685bab8d12b3e6395f
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91310481"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92891042"
 ---
 # <a name="add-a-popup-to-the-map"></a>Добавление всплывающего окна на карту
 
@@ -22,7 +22,7 @@ ms.locfileid: "91310481"
 
 ## <a name="understand-the-code"></a>Изучение кода
 
-Следующий код добавляет функцию Point, которая имеет `name` `description` Свойства и, в карту с помощью слоя символов. Экземпляр [класса Popup](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.popup) создан, но не отображается. События мыши добавляются на слой символов для активации открытия и закрытия всплывающего окна. При наведении указателя мыши свойство всплывающего окна `position` обновляется с указанием позиции маркера, а `content` параметр обновляется с помощью HTML-кода, который заключает в оболочку  `name` Свойства и `description` функции Point, на которую наведен указатель мыши. Затем всплывающее окно отображается на карте с помощью его `open` функции.
+Следующий код добавляет функцию Point, которая имеет `name` `description` Свойства и, в карту с помощью слоя символов. Экземпляр [класса Popup](/javascript/api/azure-maps-control/atlas.popup) создан, но не отображается. События мыши добавляются на слой символов для активации открытия и закрытия всплывающего окна. При наведении указателя мыши свойство всплывающего окна `position` обновляется с указанием позиции маркера, а `content` параметр обновляется с помощью HTML-кода, который заключает в оболочку  `name` Свойства и `description` функции Point, на которую наведен указатель мыши. Затем всплывающее окно отображается на карте с помощью его `open` функции.
 
 ```javascript
 //Define an HTML template for a custom popup content laypout.
@@ -279,13 +279,13 @@ var popup = new atlas.Popup({
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
 > [!div class="nextstepaction"]
-> [Popup](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.popup)
+> [Popup](/javascript/api/azure-maps-control/atlas.popup)
 
 > [!div class="nextstepaction"]
-> [PopupOptions](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.popupoptions)
+> [PopupOptions](/javascript/api/azure-maps-control/atlas.popupoptions)
 
 > [!div class="nextstepaction"]
-> [попуптемплате](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.popuptemplate)
+> [попуптемплате](/javascript/api/azure-maps-control/atlas.popuptemplate)
 
 Полные примеры кода см. в следующих превосходных статьях:
 

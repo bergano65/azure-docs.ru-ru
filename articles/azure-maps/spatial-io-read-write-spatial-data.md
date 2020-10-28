@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: devx-track-js
-ms.openlocfilehash: dd4a02ffdc062ed1940d35ca64e02a5e0a88a248
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 133674e6764e12742f5b238946e943d9b5011cd2
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91333330"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92891335"
 ---
 # <a name="read-and-write-spatial-data"></a>Чтение и запись пространственных данных
 
@@ -164,17 +164,17 @@ GML — это спецификация пространственных XML-ф�
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
-[статические функции atlas.io](https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/atlas.io)
+[статические функции atlas.io](/javascript/api/azure-maps-spatial-io/atlas.io)
 
-[спатиалдатасет](https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/atlas.spatialdataset)
+[спатиалдатасет](/javascript/api/azure-maps-spatial-io/atlas.spatialdataset)
 
-[спатиалдатасетстатс](https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/atlas.spatialdatasetstats)
+[спатиалдатасетстатс](/javascript/api/azure-maps-spatial-io/atlas.spatialdatasetstats)
 
-[гмлреадер](https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/atlas.io.core.gmlreader)
+[гмлреадер](/javascript/api/azure-maps-spatial-io/atlas.io.core.gmlreader)
 
-[гмлвритер](https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/atlas.io.core.gmlwriter)
+[гмлвритер](/javascript/api/azure-maps-spatial-io/atlas.io.core.gmlwriter)
 
-[функции Atlas. IO. OGC. WKT](https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/atlas.io.ogc.wkt)
+[функции Atlas. IO. OGC. WKT](/javascript/api/azure-maps-spatial-io/atlas.io.ogc.wkt)
 
 [Подключение службе WFS](spatial-io-connect-wfs-service.md)
 
@@ -183,7 +183,7 @@ GML — это спецификация пространственных XML-ф�
 [Сведения о поддерживаемых форматах данных](spatial-io-supported-data-format-details.md)
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные примеры кода для добавления в карты см. в следующих статьях:
 

@@ -59,13 +59,13 @@
         - name: Управление доступом на основе ролей
           displayName: rbac
           href: role-based-access-control.md
+        - name: Поддержка службы "Политика Azure"
+          href: policy.md
         - name: Элементы управления безопасностью службы "Политика Azure"
           displayName: 'regulatory, compliance, standards, domains'
           href: ./security-controls-policy.md
         - name: Базовые средства безопасности
           href: security-baseline.md
-        - name: Поддержка службы "Политика Azure"
-          href: policy.md
     - name: Аналитика с использованием Azure Synapse Link
       items:
         - name: "Azure Synapse Link для Cosmos\_DB"
@@ -202,11 +202,14 @@
           href: templates-samples-sql.md
     - name: Основные понятия
       items:
-        - name: Данные документов модели
-          displayName: document
-          href: modeling-data.md
-        - name: Секционирование
+        - name: Моделирование и секционирование
           items:
+            - name: Данные документов модели
+              displayName: document
+              href: modeling-data.md
+            - name: 'Моделирование и секционирование: реальный пример'
+              displayName: 'model, partition, example'
+              href: how-to-model-partition-example.md
             - name: Ключ искусственного раздела
               href: synthetic-partition-keys.md
         - name: SQL-запрос
@@ -631,13 +634,13 @@
           items:
             - name: Подготовленная пропускная способность
               items:
-                - name: Подготовка стандартной (масштабируемой вручную) пропускной способности в контейнере
+                - name: "Подготовка стандартной (масштабируемой вручную) пропускной способности\_— контейнер"
                   displayName: 'request units, RUs, RU, collection level'
                   href: how-to-provision-container-throughput.md
-                - name: Подготовка стандартной (масштабируемой вручную) пропускной способности в базе данных
+                - name: "Подготовка стандартной (масштабируемой вручную) пропускной способности\_— база данных"
                   displayName: 'request units, RUs, RU, shared throughput, database level'
                   href: how-to-provision-database-throughput.md
-                - name: Подготовка автомасштабируемой пропускной способности в базе данных или контейнере
+                - name: "Подготовка автомасштабируемой пропускной способности\_— база данных или контейнер"
                   displayName: 'request units, RUs, RU, shared throughput, database level, collection level, autoscale'
                   href: how-to-provision-autoscale-throughput.md
                 - name: Оценка единиц запросов в секунду с помощью планировщика ресурсов Cosmos
@@ -657,9 +660,6 @@
               href: large-partition-keys.md
             - name: Запрашивание контейнера
               href: how-to-query-container.md
-            - name: 'Моделирование и секционирование данных: реальный пример'
-              displayName: 'model, partition, example'
-              href: how-to-model-partition-example.md
             - name: Переход на секционированные контейнеры
               href: migrate-containers-partitioned-to-nonpartitioned.md
             - name: Настройка срока жизни
@@ -1179,8 +1179,6 @@
       items:
         - name: Заголовки откликов
           href: gremlin-headers.md
-        - name: Ограничения
-          href: gremlin-limits.md
         - name: Поставщик ресурсов REST
           href: /rest/api/cosmos-db-resource-provider/2020-04-01/gremlinresources
         - name: Шаблон Resource Manager

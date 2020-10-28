@@ -161,6 +161,8 @@
       href: ../../service-bus-messaging/security-baseline.md
     - name: Базовые средства безопасности Service Fabric
       href: ../../service-fabric/security-baseline.md
+    - name: Базовые средства безопасности Site Recovery
+      href: ../../site-recovery/security-baseline.md
     - name: Базовые уровень безопасности Stream Analytics
       href: ../../stream-analytics/security-baseline.md
     - name: Базовые показатели безопасности Synapse Analytics

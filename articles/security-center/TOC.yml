@@ -14,9 +14,17 @@
           href: security-center-services.md
         - name: Покрытие компонентов для ресурсов Azure PaaS
           href: features-paas.md
-    - name: Новые возможности в Центре безопасности
-      displayName: release notes
-      href: release-notes.md
+    - name: Новые возможности
+      items:
+        - name: Заметки о выпуске
+          displayName: changelog
+          href: release-notes.md
+        - name: Важные предстоящие изменения
+          displayName: 'release notes, changelog'
+          href: upcoming-changes.md
+        - name: Архивные заметки о выпуске (со сроком давности более шести месяцев)
+          displayName: changelog
+          href: release-notes-archive.md
     - name: Основы работы с Центром безопасности
       items:
         - name: Страница обзора в Центре безопасности
@@ -217,8 +225,13 @@
         - name: Настройка политики защиты информации
           href: security-center-info-protection-policy.md
     - name: Использование Azure Defender для реестров контейнеров
-      displayName: 'ACR, registry, images'
-      href: defender-for-container-registries-usage.md
+      items:
+        - name: Проверка образов реестра на наличие уязвимостей
+          displayName: 'ACR, registry, images, qualys'
+          href: defender-for-container-registries-usage.md
+        - name: Отключение результатов оценки для определенных уязвимостей образов
+          displayName: 'ACR, registry, images, qualys'
+          href: defender-for-container-registries-usage.md#disable-specific-findings-preview
     - name: Экспорт оповещений и рекомендаций
       items:
         - name: 'Экспорт в SIEM, SOAR или ITSM'
@@ -272,8 +285,6 @@
           href: faq-vms.md
         - name: Существующие пользователи Azure Log Analytics
           href: faq-azure-monitor-logs.md
-    - name: Архив новых возможностей Центра безопасности
-      href: release-notes-archive.md
     - name: Блог о стратегии развития Azure
       href: 'https://azure.microsoft.com/updates/?product=security-center'
     - name: Оценка защиты конечной точки и рекомендации

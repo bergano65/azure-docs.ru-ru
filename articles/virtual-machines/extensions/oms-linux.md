@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 02/18/2020
 ms.author: akjosh
-ms.openlocfilehash: 1193bfe74e8b5e20d2189c143f6ca0cb09abfd49
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.openlocfilehash: fc9c5e1f5922543ea14b13e3e5b424190dbbfb7a
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92329650"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92892216"
 ---
 # <a name="log-analytics-virtual-machine-extension-for-linux"></a>Расширение виртуальной машины Log Analytics для Linux
 
@@ -110,12 +110,15 @@ ms.locfileid: "92329650"
 | версия_API | 2018-06-01 |
 | publisher | Microsoft.EnterpriseCloud.Monitoring |
 | type | OmsAgentForLinux |
-| typeHandlerVersion | 1.7 |
+| typeHandlerVersion | 1.13 |
 | workspaceID (пример) | 6f680a37-00c6-41c7-a93f-1437e3462574 |
 | workspaceKey (пример) | z4bU3p1/GrnWpQkky4gdabWXAhbWSTz70hm4m2Xt92XI+rSRgE8qVvRhsGo9TXffbrTahyrwv35W0pOqQAU7uQ== |
 
 
 ## <a name="template-deployment"></a>Развертывание шаблона
+
+>[!NOTE]
+>Некоторые компоненты расширения Log Analytics VM также поставляются в [расширение виртуальной машины диагностики](./diagnostics-linux.md). Из-за этой архитектуры могут возникать конфликты, если оба расширения создаются в одном шаблоне ARM. Чтобы избежать этих конфликтов во время установки, используйте [ `dependsOn` директиву](../../azure-resource-manager/templates/define-resource-dependency.md#dependson) , чтобы убедиться, что расширения установлены последовательно. Расширения можно устанавливать в любом порядке.
 
 Расширения виртуальной машины Azure можно развернуть с помощью шаблонов Azure Resource Manager. Шаблоны идеально подходят для развертывания одной или нескольких виртуальных машин, требующих настройки после развертывания, например подключения к журналам Azure Monitor. Пример шаблона Resource Manager, включающего расширение виртуальной машины агента Log Analytics, можно найти в [коллекции быстрого запуска Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/201-oms-extension-ubuntu-vm). 
 
@@ -135,7 +138,7 @@ ms.locfileid: "92329650"
   "properties": {
     "publisher": "Microsoft.EnterpriseCloud.Monitoring",
     "type": "OmsAgentForLinux",
-    "typeHandlerVersion": "1.7",
+    "typeHandlerVersion": "1.13",
     "settings": {
       "workspaceId": "myWorkspaceId"
     },
@@ -160,7 +163,7 @@ ms.locfileid: "92329650"
   "properties": {
     "publisher": "Microsoft.EnterpriseCloud.Monitoring",
     "type": "OmsAgentForLinux",
-    "typeHandlerVersion": "1.7",
+    "typeHandlerVersion": "1.13",
     "settings": {
       "workspaceId": "myWorkspaceId"
     },
@@ -173,7 +176,7 @@ ms.locfileid: "92329650"
 
 ## <a name="azure-cli-deployment"></a>Развертывание с помощью Azure CLI
 
-Azure CLI можно использовать для развертывания расширения виртуальной машины агента Log Analytics на существующей виртуальной машине. Замените *myWorkspaceKey* ниже значением ключа вашей рабочей области, а значение *myWorkspaceId* — идентификатором вашей рабочей области. Эти значения можно найти в рабочей области Log Analytics на портал Azure в разделе *Дополнительные параметры*. 
+Azure CLI можно использовать для развертывания расширения виртуальной машины агента Log Analytics на существующей виртуальной машине. Замените *myWorkspaceKey* ниже значением ключа вашей рабочей области, а значение *myWorkspaceId*  — идентификатором вашей рабочей области. Эти значения можно найти в рабочей области Log Analytics на портал Azure в разделе *Дополнительные параметры* . 
 
 ```azurecli
 az vm extension set \
@@ -181,7 +184,7 @@ az vm extension set \
   --vm-name myVM \
   --name OmsAgentForLinux \
   --publisher Microsoft.EnterpriseCloud.Monitoring \
-  --version 1.10.1 --protected-settings '{"workspaceKey":"myWorkspaceKey"}' \
+  --protected-settings '{"workspaceKey":"myWorkspaceKey"}' \
   --settings '{"workspaceId":"myWorkspaceId"}'
 ```
 

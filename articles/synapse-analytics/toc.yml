@@ -20,7 +20,7 @@
           href: get-started-analyze-sql-on-demand.md
         - name: 5. Анализ данных в учетной записи хранения
           href: get-started-analyze-storage.md
-        - name: 6. Оркестрация с использованием конвейеров
+        - name: 6. Интеграция с конвейерами
           href: get-started-pipelines.md
         - name: 7. Визуализация с помощью Power BI
           href: get-started-visualize-power-bi.md
@@ -42,7 +42,8 @@
       href: quickstart-create-workspace-cli.md
     - name: Создание рабочей области Synapse с помощью Azure PowerShell
       href: quickstart-create-workspace-powershell.md
-    - name: Развертывание с помощью шаблона
+    - name: Развертывание с помощью шаблона ARM
+      displayName: Resource Manager
       href: quickstart-deployment-template-workspaces.md
     - name: "Связывание рабочей области Power\_BI"
       href: quickstart-power-bi.md
@@ -168,7 +169,7 @@
               href: ../sql-database/transparent-data-encryption-azure-sql.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
             - name: Прозрачное шифрование данных с созданием собственных ключей
               href: ../sql-database/transparent-data-encryption-byok-azure-sql.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
-    - name: Интеграция и оркестрация
+    - name: Интеграция
       items:
         - name: Конвейер и действие
           href: ../data-factory/concepts-pipelines-activities.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
@@ -558,7 +559,7 @@
               href: ../data-factory/data-flow-unpivot.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
             - name: Окно
               href: ../data-factory/data-flow-window.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
-    - name: Интеграция и оркестрация
+    - name: Интеграция
       items:
         - name: Автор
           items:
@@ -893,8 +894,6 @@
               href: ../data-factory/data-factory-troubleshoot-guide.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
             - name: Устранение неполадок соединителя
               href: ../data-factory/connector-troubleshoot-guide.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
-            - name: Устранение неполадок со средством Копирования данных
-              href: ../data-factory/copy-data-tool-troubleshoot-guide.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
             - name: Устранение неполадок с локальными средами выполнения интеграции
               href: ../data-factory/self-hosted-integration-runtime-troubleshoot-guide.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
     - name: Подключение средств к рабочим областям Synapse

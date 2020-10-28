@@ -6,12 +6,12 @@ author: nicolela
 ms.topic: article
 ms.date: 06/26/2020
 ms.author: nicolela
-ms.openlocfilehash: d2a936a6acb6491c57cb1460c83ec0253561b102
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ae2bc6e87f0b694e949057280233c19e0b98132c
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85445667"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92892236"
 ---
 # <a name="connect-to-a-vm-using-remote-desktop-protocol-on-a-chromebook"></a>Подключение к виртуальной машине с помощью протокола удаленного рабочего стола на Chromebook
 В этом разделе показано, как учащийся может подключиться к виртуальной машине задания с компьютера Chromebook с помощью RDP.
@@ -23,12 +23,12 @@ ms.locfileid: "85445667"
 1. Установите последнюю версию удаленного рабочего стола (Майкрософт). 
 
 ## <a name="access-the-vm-from-your-chromebook-using-rdp"></a>Доступ к виртуальной машине с компьютера Chromebook с помощью RDP
-1. Откройте файл **RDP**, скачанный на компьютере с установленным **удаленным рабочим столом (Майкрософт)** . При этом должно начаться подключение к виртуальной машине. 
+1. Откройте файл **RDP** , скачанный на компьютере с установленным **удаленным рабочим столом (Майкрософт)** . При этом должно начаться подключение к виртуальной машине. 
 
     ![Подключение к виртуальной машине](./media/how-to-use-classroom-lab/connect-vm-chromebook.png)
 
 1. При появлении запроса введите свой пароль.
-    ![Подключение к виртуальной машине](./media/how-to-use-classroom-lab/password-chromebook.png)
+    ![Снимок экрана входа в систему, в котором вы вводите имя пользователя и пароль.](./media/how-to-use-classroom-lab/password-chromebook.png)
 
 
 1. Выберите **Continue** (Продолжить), если появится следующее предупреждение. 
