@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 12/18/2018
-ms.openlocfilehash: 8076b417c8043a4f6796ccca0e67db79360ede73
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.openlocfilehash: dd77305a1b2f7d11a2e371f7682855e15739ee7d
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92331674"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92790939"
 ---
 # <a name="cross-tenant-analytics-using-extracted-data---single-tenant-app"></a>Межклиентская аналитика на основе извлеченных с однотенантного приложения данных
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -69,11 +69,11 @@ ms.locfileid: "92331674"
 
 Для работы с этим руководством выполните следующие предварительные требования:
 
-- Разверните SaaS-приложение Wingtip Tickets c однотенантной БД. Чтобы развернуть его менее чем за пять минут, см. сведения в статье [Развертывание и изучение мультитенантного приложения SaaS, использующего базу данных SQL Azure](../../sql-database/saas-dbpertenant-get-started-deploy.md).
+- Разверните SaaS-приложение Wingtip Tickets c однотенантной БД. Чтобы развернуть его менее чем за пять минут, см. сведения в статье [Развертывание и изучение мультитенантного приложения SaaS, использующего базу данных SQL Azure](./saas-dbpertenant-get-started-deploy.md).
 - Загрузите из GitHub [исходный код](https://github.com/Microsoft/WingtipTicketsSaaS-DbPerTenant/) и сценарии для SaaS-приложения Wingtip Tickets c однотенантной БД. Ознакомьтесь с инструкциями по загрузке. *Разблокируйте ZIP-файл* , а затем извлеките его содержимое. Инструкции по скачиванию и разблокированию сценариев приложения SaaS Wingtip Tickets см. в статье [Общие рекомендации по работе с примерами приложений SaaS Wingtip Tickets](saas-tenancy-wingtip-app-guidance-tips.md).
 - Установите Power BI Desktop. [Скачивание Power BI Desktop](https://powerbi.microsoft.com/downloads/)
-- Подготовьте пакет дополнительных клиентов, используя рекомендации в руководстве по [**подготовке новых клиентов**](../../sql-database/saas-dbpertenant-provision-and-catalog.md).
-- Создайте учетную запись задания и базу данных в ней. Соответствующие шаги см. в [**этом разделе**](../../sql-database/saas-tenancy-schema-management.md#create-a-job-agent-database-and-new-job-agent).
+- Подготовьте пакет дополнительных клиентов, используя рекомендации в руководстве по [**подготовке новых клиентов**](./saas-dbpertenant-provision-and-catalog.md).
+- Создайте учетную запись задания и базу данных в ней. Соответствующие шаги см. в [**этом разделе**](./saas-tenancy-schema-management.md#create-a-job-agent-database-and-new-job-agent).
 
 ### <a name="create-data-for-the-demo"></a>Создание данных для демонстрации
 
@@ -93,7 +93,7 @@ ms.locfileid: "92331674"
     - Чтобы использовать Базу данных SQL с хранилищем столбцов, задайте **$DemoScenario** = **3** .  
 3. Нажмите клавишу **F5** для запуска демонстрационного сценария (который вызывает сценарий *Deploy-TenantAnalytics\<XX>.ps1* ), создающего хранилище аналитики клиента. 
 
-Теперь, когда вы развернули приложение и заполнили его соответствующими данными клиента, используйте [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) для подключения серверов **tenants1-dpt-&lt;User&gt;** и **catalog-dpt-&lt;User&gt;** , используя имя для входа *developer* и пароль *P\@ssword1* . Дополнительные рекомендации см. в этом [ознакомительном руководстве](../../sql-database/saas-dbpertenant-wingtip-app-overview.md).
+Теперь, когда вы развернули приложение и заполнили его соответствующими данными клиента, используйте [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) для подключения серверов **tenants1-dpt-&lt;User&gt;** и **catalog-dpt-&lt;User&gt;** , используя имя для входа *developer* и пароль *P\@ssword1* . Дополнительные рекомендации см. в этом [ознакомительном руководстве](./saas-dbpertenant-wingtip-app-overview.md).
 
 ![Снимок экрана, на котором показаны сведения, необходимые для подключения к SQL Server.](./media/saas-tenancy-tenant-analytics/ssmsSignIn.png)
 
@@ -240,6 +240,6 @@ AverageTicketsSold = AVERAGEX( SUMMARIZE( TableName, TableName[Venue Name] ), CA
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- Дополнительные [руководства по работе с приложением SaaS Wingtip](../../sql-database/saas-dbpertenant-wingtip-app-overview.md#sql-database-wingtip-saas-tutorials).
-- [Управление масштабируемыми облачными базами данных](../../sql-database/elastic-jobs-overview.md).
-- [Получение межклиентской аналитики на основе извлеченных с мультитенантного приложения данных](../../sql-database/saas-multitenantdb-tenant-analytics.md)
+- Дополнительные [руководства по работе с приложением SaaS Wingtip](./saas-dbpertenant-wingtip-app-overview.md#sql-database-wingtip-saas-tutorials).
+- [Управление масштабируемыми облачными базами данных](./elastic-jobs-overview.md).
+- [Получение межклиентской аналитики на основе извлеченных с мультитенантного приложения данных](./saas-multitenantdb-tenant-analytics.md)

@@ -13,6 +13,7 @@
     - name: "Создание канала ExpressRoute\_— CLI"
       href: howto-circuit-cli.md
     - name: "Создание канала ExpressRoute\_— шаблон ARM"
+      displayName: Resource Manager
       href: quickstart-create-expressroute-vnet-template.md
   expanded: true
 - name: Учебники

@@ -9,12 +9,12 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.date: 01/08/2020
 ms.custom: sqldbrb=1
-ms.openlocfilehash: 6e60403344a0341b4aee74a001287c09ba67e114
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e2f240247cbba0f80254d504792df45be55c6a1b
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91448899"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92790412"
 ---
 # <a name="how-to-migrate-your-sqlite-database-to-azure-sql-database-serverless"></a>Перенос базы данных SQLite в бессерверную Базу данных SQL Azure
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -53,13 +53,13 @@ ms.locfileid: "91448899"
     - Запустите ADF (создание и мониторинг из службы на портале Azure).
     - Щелкните вкладку "Создание" (синий карандаш) слева.
     - Щелкните "Подключения" (внизу слева), а затем выберите среды выполнения интеграции.
-    - Добавьте новую локальную среду выполнения интеграции и присвойте ей имя, а затем щелкните *Вариант 2*.
+    - Добавьте новую локальную среду выполнения интеграции и присвойте ей имя, а затем щелкните *Вариант 2* .
 
 5. Создайте в Фабрике данных новую связанную службу для исходной базы данных SQLite.
 
     ![Снимок экрана с пустой колонкой связанных служб в Фабрике данных Azure](./media/migrate-sqlite-db-to-azure-sql-serverless-offline-tutorial/linked-services-create.png)
 
-6. На странице **Подключения** в разделе **Связанная служба** щелкните **Создать**.
+6. На странице **Подключения** в разделе **Связанная служба** щелкните **Создать** .
 
 7. Найдите и выберите соединитель ODBC.
 
@@ -109,4 +109,4 @@ ms.locfileid: "91448899"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Чтобы начать работу, см. [краткое руководство по Создание отдельной базы данных в Базе данных SQL с помощью портала Azure](single-database-create-quickstart.md).
-- См. подробнее об [ограничениях ресурсов уровня бессерверных вычислений](../../sql-database/sql-database-vcore-resource-limits-single-databases.md#general-purpose---serverless-compute---gen5).
+- См. подробнее об [ограничениях ресурсов уровня бессерверных вычислений](./resource-limits-vcore-single-databases.md#general-purpose---serverless-compute---gen5).

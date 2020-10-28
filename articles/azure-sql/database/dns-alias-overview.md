@@ -11,12 +11,12 @@ author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: genemi, jrasnick, vanto
 ms.date: 06/26/2019
-ms.openlocfilehash: d208a9b9f8e1cc16e2c72aa825a2daf88ad00176
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4be3f8c6cd416743c2d1118cf2de01073c3022ff
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86145663"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92790497"
 ---
 # <a name="dns-alias-for-azure-sql-database"></a>Псевдоним DNS для Базы данных SQL Azure
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -71,7 +71,7 @@ ms.locfileid: "86145663"
 
 Документация по REST API доступна в следующей статье:
 
-- [Azure SQL Database REST API](https://docs.microsoft.com/rest/api/sql/) (REST API Базы данных SQL Azure)
+- [Azure SQL Database REST API](/rest/api/sql/) (REST API Базы данных SQL Azure)
 
 Кроме того, ознакомиться с REST API можно на сайте GitHub:
 
@@ -83,7 +83,7 @@ ms.locfileid: "86145663"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 > [!IMPORTANT]
-> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается, но вся будущая разработка предназначена для модуля AZ. SQL. Сведения об этих командлетах см. в разделе [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы команд в модулях Az и AzureRm практически идентичны.
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается, но вся будущая разработка предназначена для модуля AZ. SQL. Сведения об этих командлетах см. в разделе [AzureRM.Sql](/powershell/module/AzureRM.Sql/). Аргументы команд в модулях Az и AzureRm практически идентичны.
 
 Доступны командлеты PowerShell, которые вызывают REST API.
 
@@ -93,10 +93,10 @@ ms.locfileid: "86145663"
 
 В примере кода используются следующие командлеты:
 
-- [New-азсклсерверднсалиас](https://docs.microsoft.com/powershell/module/az.Sql/New-azSqlServerDnsAlias): создает новый псевдоним DNS в системе службы базы данных SQL Azure. Псевдоним относится к серверу 1.
-- [Get-азсклсерверднсалиас](https://docs.microsoft.com/powershell/module/az.Sql/Get-azSqlServerDnsAlias): получение и перечисление всех псевдонимов DNS, назначенных серверу 1.
-- [Set-азсклсерверднсалиас](https://docs.microsoft.com/powershell/module/az.Sql/Set-azSqlServerDnsAlias): изменяет имя сервера, на который ссылается псевдоним, с сервера 1 на сервер 2.
-- [Remove-азсклсерверднсалиас](https://docs.microsoft.com/powershell/module/az.Sql/Remove-azSqlServerDnsAlias). Удалите DNS-псевдоним с сервера 2, используя имя псевдонима.
+- [New-азсклсерверднсалиас](/powershell/module/az.Sql/New-azSqlServerDnsAlias): создает новый псевдоним DNS в системе службы базы данных SQL Azure. Псевдоним относится к серверу 1.
+- [Get-азсклсерверднсалиас](/powershell/module/az.Sql/Get-azSqlServerDnsAlias): получение и перечисление всех псевдонимов DNS, назначенных серверу 1.
+- [Set-азсклсерверднсалиас](/powershell/module/az.Sql/Set-azSqlServerDnsAlias): изменяет имя сервера, на который ссылается псевдоним, с сервера 1 на сервер 2.
+- [Remove-азсклсерверднсалиас](/powershell/module/az.Sql/Remove-azSqlServerDnsAlias). Удалите DNS-псевдоним с сервера 2, используя имя псевдонима.
 
 ## <a name="limitations-during-preview"></a>Ограничения для предварительной версии
 
@@ -104,7 +104,7 @@ ms.locfileid: "86145663"
 
 - *Задержка до 2 минут.* Для обновления или удаления псевдонима DNS требуется до 2 минут.
   - Независимо от задержки (даже небольшой), псевдоним немедленно прекращает ссылаться на клиентские подключения к устаревшему серверу.
-- *Поиск DNS.*[Поиск DNS](https://docs.microsoft.com/windows-server/administration/windows-commands/nslookup) — это единственный надежный способ проверить, на какой сервер ссылается псевдоним DNS.
+- *Поиск DNS.*[Поиск DNS](/windows-server/administration/windows-commands/nslookup) — это единственный надежный способ проверить, на какой сервер ссылается псевдоним DNS.
 - _Аудит таблиц не поддерживается:_ Нельзя использовать псевдоним DNS на сервере, на котором включен *Аудит таблиц* для базы данных.
   - Аудит таблиц не рекомендуется.
   - Рекомендуем использовать [аудит больших двоичных объектов](../../azure-sql/database/auditing-overview.md).
@@ -112,8 +112,8 @@ ms.locfileid: "86145663"
 ## <a name="related-resources"></a>Связанные ресурсы
 
 - Сведения об аварийном восстановлении см. в статье [Обзор обеспечения непрерывности бизнес-процессов с помощью Базы данных SQL Azure](business-continuity-high-availability-disaster-recover-hadr-overview.md).
-- [Справочник по REST API Azure](https://docs.microsoft.com/rest/api/azure/)
-- [API-псевдонимы сервера DNS](https://docs.microsoft.com/rest/api/sql/serverdnsaliases)
+- [Справочник по REST API Azure](/rest/api/azure/)
+- [API-псевдонимы сервера DNS](/rest/api/sql/serverdnsaliases)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

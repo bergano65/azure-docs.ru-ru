@@ -11,12 +11,12 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, sstein
 ms.date: 03/12/2019
-ms.openlocfilehash: 8e64e1a63b01e900988c999321423dfe92df00c4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 14031118a93f5760b302e4d2b76334205be6d087
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91335081"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92789630"
 ---
 # <a name="tutorial-implement-a-geo-distributed-database-azure-sql-database"></a>Учебник. Реализация геораспределенной базы данных (база данных SQL Azure)
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -36,7 +36,7 @@ ms.locfileid: "91335081"
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 > [!IMPORTANT]
-> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка сосредоточена на модуле Az.Sql. Сведения об этих командлетах см. в разделе [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы команд в модулях Az и AzureRm практически идентичны.
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка сосредоточена на модуле Az.Sql. Сведения об этих командлетах см. в разделе [AzureRM.Sql](/powershell/module/AzureRM.Sql/). Аргументы команд в модулях Az и AzureRm практически идентичны.
 
 Для работы с этим руководством необходимо убедиться, что установлены следующие компоненты:
 
@@ -47,7 +47,7 @@ ms.locfileid: "91335081"
   - [PowerShell](powershell-script-content-guide.md)
 
   > [!NOTE]
-  > В этом руководстве используется пример базы данных *AdventureWorksLT*.
+  > В этом руководстве используется пример базы данных *AdventureWorksLT* .
 
 - Сведения для Java и Maven можно просмотреть в разделе [Создание приложения с помощью SQL Server](https://www.microsoft.com/sql-server/developer-get-started/). Для этого выделите **Java** и выберите среду, а затем следуйте инструкциям.
 
@@ -120,7 +120,7 @@ az sql failover-group create --name $failoverGroup --partner-server $drServer `
 
 * * *
 
-Параметры георепликации можно также изменить в портал Azure, выбрав базу данных, а затем — **Параметры**  >  **георепликации**.
+Параметры георепликации можно также изменить в портал Azure, выбрав базу данных, а затем — **Параметры**  >  **георепликации** .
 
 ![Параметры георепликации](./media/geo-distributed-application-configure-tutorial/geo-replication.png)
 
@@ -132,7 +132,7 @@ az sql failover-group create --name $failoverGroup --partner-server $drServer `
    mvn archetype:generate "-DgroupId=com.sqldbsamples" "-DartifactId=SqlDbSample" "-DarchetypeArtifactId=maven-archetype-quickstart" "-Dversion=1.0.0"
    ```
 
-1. Введите **Y** и нажмите клавишу **ВВОД**.
+1. Введите **Y** и нажмите клавишу **ВВОД** .
 
 1. Перейдите в каталог с новым проектом.
 
@@ -182,9 +182,9 @@ az sql failover-group create --name $failoverGroup --partner-server $drServer `
    </build>
    ```
 
-1. Сохраните и закройте файл *pom.xml*.
+1. Сохраните и закройте файл *pom.xml* .
 
-1. Откройте файл *App.java*, расположенный в ..\SqlDbSample\src\main\java\com\sqldbsamples, и замените его содержимое кодом ниже.
+1. Откройте файл *App.java* , расположенный в ..\SqlDbSample\src\main\java\com\sqldbsamples, и замените его содержимое кодом ниже.
 
    ```java
    package com.sqldbsamples;
@@ -368,7 +368,7 @@ az sql failover-group show --name $failoverGroup --resource-group $resourceGroup
 
 * * *
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы настроили базу данных в базе данных SQL Azure и приложение для отработки отказа в удаленный регион и проверили план отработки отказа. Вы ознакомились с выполнением следующих задач:
 

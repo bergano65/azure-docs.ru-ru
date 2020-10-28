@@ -5,19 +5,19 @@ description: Узнайте, как реагировать на потенциа
 services: sql-database
 ms.service: sql-database
 ms.subservice: security
-ms.custom: seo-lt-2019 sqldbrb=1
+ms.custom: seo-lt-2019 sqldbrb=1, devx-track-azurecli
 ms.devlang: ''
 ms.topic: how-to
 author: jaszymas
 ms.author: jaszymas
 ms.reviewer: vanto
 ms.date: 02/24/2020
-ms.openlocfilehash: 77f2312438f3f9db7aa4e0dc7cc0f672644a87c6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 657e3967d9e34147364114cec4d946e900f60032
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91617423"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92791381"
 ---
 # <a name="remove-a-transparent-data-encryption-tde-protector-using-powershell"></a>Удаление предохранителя TDE с помощью PowerShell
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -26,15 +26,15 @@ ms.locfileid: "91617423"
 В этом разделе описывается, как реагировать на потенциально скомпрометированный TDE для защиты базы данных SQL Azure или Azure синапсе Analytics, использующей TDE с ключами, управляемыми клиентами, в службе поддержки Azure Key Vault-создание собственных ключей (BYOK). См. дополнительные сведения о [поддержке BYOK для TDE](transparent-data-encryption-byok-overview.md).
 
 > [!CAUTION]
-> Процедуры, описанные в этой статье, следует выполнять только в экстремальных случаях или в тестовых средах. Внимательно изучите шаги, так как удаление TDEных предохранителей из Azure Key Vault приведет к тому, что **база данных станет недоступна**.
+> Процедуры, описанные в этой статье, следует выполнять только в экстремальных случаях или в тестовых средах. Внимательно изучите шаги, так как удаление TDEных предохранителей из Azure Key Vault приведет к тому, что **база данных станет недоступна** .
 
 Если во всех случаях возникает угроза компрометации ключа, например, что служба или пользователь имели несанкционированный доступ к ключу, то лучше удалить ключ.
 
-Помните, что после удаления предохранителя TDE в Key Vault, в течение 10 минут все зашифрованные базы данных начинают блокировать все подключения с соответствующим сообщением об ошибке и меняют состояние на [недоступное](https://docs.microsoft.com/azure/sql-database/transparent-data-encryption-byok-azure-sql#inaccessible-tde-protector).
+Помните, что после удаления предохранителя TDE в Key Vault, в течение 10 минут все зашифрованные базы данных начинают блокировать все подключения с соответствующим сообщением об ошибке и меняют состояние на [недоступное](./transparent-data-encryption-byok-overview.md#inaccessible-tde-protector).
 
 В этом пошаговом руководство рассматриваются два подхода в зависимости от желаемого результата после скомпрометированного реагирования на инцидент:
 
-- Для внесения баз данных в базу данных SQL Azure или Azure синапсе Analytics в **недоступном**виде.
+- Для внесения баз данных в базу данных SQL Azure или Azure синапсе Analytics в **недоступном** виде.
 - Для создания баз данных в базе данных SQL Azure или Azure Azure синапсе Analytics (ранее — хранилище данных **SQL).**
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -45,7 +45,7 @@ ms.locfileid: "91617423"
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
- Инструкции по установке модуля Az см. в статье об [установке Azure PowerShell](/powershell/azure/install-az-ps). Конкретные командлеты см. в разделе [AzureRM. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/).
+ Инструкции по установке модуля Az см. в статье об [установке Azure PowerShell](/powershell/azure/install-az-ps). Конкретные командлеты см. в разделе [AzureRM. SQL](/powershell/module/AzureRM.Sql/).
 
 > [!IMPORTANT]
 > Модуль PowerShell Azure Resource Manager (RM) по-прежнему поддерживается, но вся будущая разработка предназначена для модуля AZ. SQL. Исправления ошибок для модуля AzureRM будут продолжать выпускаться как минимум до декабря 2020 г.  Аргументы команд в модулях Az и AzureRm практически идентичны. Дополнительные сведения о совместимости см. в статье [Знакомство с новым модулем Az для Azure PowerShell](/powershell/azure/new-azureps-module-az).
@@ -189,7 +189,7 @@ SELECT * FROM sys.dm_db_log_info (database_id)
 
 [!INCLUDE [sql-database-akv-permission-delay](../includes/sql-database-akv-permission-delay.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - См. дополнительные сведения о том, как [заменить предохранитель TDE для сервера в соответствии с требованиями к безопасности с помощью PowerShell](transparent-data-encryption-byok-key-rotation.md).
 - См. дополнительные сведения о [включении прозрачного шифрования данных с помощью собственного ключа из Key Vault с помощью PowerShell](transparent-data-encryption-byok-configure.md).

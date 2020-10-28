@@ -18,6 +18,7 @@
         - name: "Создание общедоступной зоны\_— CLI"
           href: dns-getstarted-cli.md
         - name: "Создание общедоступной зоны\_— шаблон ARM"
+          displayName: Resource Manager
           href: dns-get-started-template.md
     - name: Частная зона DNS
       items:

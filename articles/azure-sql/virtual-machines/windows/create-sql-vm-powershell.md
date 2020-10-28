@@ -15,12 +15,12 @@ ms.date: 12/21/2018
 ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: bb3fd9136f78a332a22f973d211dec748c4fb260
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6bf17f85892691fe930d3d4b1e12846da8f9dc58
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91317078"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92789817"
 ---
 # <a name="how-to-use-azure-powershell-to-provision-sql-server-on-azure-virtual-machines"></a>Использование Azure PowerShell для инициализации SQL Server на виртуальных машинах Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "91317078"
 
 ## <a name="configure-your-subscription"></a>Настройка подписки
 
-1. Откройте PowerShell и установите доступ к учетной записи Azure, выполнив команду **Connect-AzAccount**.
+1. Откройте PowerShell и установите доступ к учетной записи Azure, выполнив команду **Connect-AzAccount** .
 
    ```powershell
    Connect-AzAccount
@@ -135,7 +135,7 @@ $OSDiskName = $VMName + "OSDisk"
    Get-AzVMImageSku -Location $Location -Publisher 'MicrosoftSQLServer' -Offer $OfferName | Select Skus
    ```
 
-1. В данном руководстве используется SQL Server 2017 Developer Edition (**SQLDEV**). Лицензию Developer Edition для тестирования и разработки можно получить бесплатно. Вы оплачиваете только стоимость выполнения виртуальной машины.
+1. В данном руководстве используется SQL Server 2017 Developer Edition ( **SQLDEV** ). Лицензию Developer Edition для тестирования и разработки можно получить бесплатно. Вы оплачиваете только стоимость выполнения виртуальной машины.
 
    ```powershell
    $Sku = "SQLDEV"
@@ -143,7 +143,7 @@ $OSDiskName = $VMName + "OSDisk"
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Если используется модель развертывания с помощью Resource Manager, первый создаваемый объект — группа ресурсов. Чтобы создать группу ресурсов и входящие в нее ресурсы Azure, используйте командлет [New-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup). Укажите переменные, инициализированные ранее для имени группы ресурсов и расположения.
+Если используется модель развертывания с помощью Resource Manager, первый создаваемый объект — группа ресурсов. Чтобы создать группу ресурсов и входящие в нее ресурсы Azure, используйте командлет [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup). Укажите переменные, инициализированные ранее для имени группы ресурсов и расположения.
 
 Выполните следующий командлет, чтобы создать группу ресурсов.
 
@@ -153,7 +153,7 @@ New-AzResourceGroup -Name $ResourceGroupName -Location $Location
 
 ## <a name="create-a-storage-account"></a>Создание учетной записи хранения
 
-Виртуальной машине требуются ресурсы хранения для диска операционной системы, а также файлов данных и журналов SQL Server. Для упрощения создайте один диск для всех ресурсов. Позже можно будет подключить дополнительные диски, выполнив командлет [Add-Azure Disk](/powershell/module/servicemanagement/azure.service/add-azuredisk), чтобы поместить файлы данных и журналов SQL Server на выделенные диски. Чтобы создать стандартную учетную запись хранения в новой группе ресурсов, используйте командлет [New-AzStorageAccount](https://docs.microsoft.com/powershell/module/az.storage/new-azstorageaccount). Укажите переменные, которые ранее были инициализированы для имени учетной записи хранения, имени SKU хранилища и расположения.
+Виртуальной машине требуются ресурсы хранения для диска операционной системы, а также файлов данных и журналов SQL Server. Для упрощения создайте один диск для всех ресурсов. Позже можно будет подключить дополнительные диски, выполнив командлет [Add-Azure Disk](/powershell/module/servicemanagement/azure.service/add-azuredisk), чтобы поместить файлы данных и журналов SQL Server на выделенные диски. Чтобы создать стандартную учетную запись хранения в новой группе ресурсов, используйте командлет [New-AzStorageAccount](/powershell/module/az.storage/new-azstorageaccount). Укажите переменные, которые ранее были инициализированы для имени учетной записи хранения, имени SKU хранилища и расположения.
 
 Выполните этот командлет, чтобы создать учетную запись хранения.
 
@@ -176,7 +176,7 @@ $StorageAccount = New-AzStorageAccount -ResourceGroupName $ResourceGroupName `
 
 ### <a name="create-a-virtual-network-subnet-configuration"></a>Создание конфигурации подсети в виртуальной сети
 
-Сначала создайте конфигурацию подсети для виртуальной сети. В рамках этого руководства мы создадим подсеть по умолчанию, используя командлет [New-AzVirtualNetworkSubnetConfig](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetworksubnetconfig). Укажите переменные, инициализированные ранее для имени подсети и префикса адреса.
+Сначала создайте конфигурацию подсети для виртуальной сети. В рамках этого руководства мы создадим подсеть по умолчанию, используя командлет [New-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/new-azvirtualnetworksubnetconfig). Укажите переменные, инициализированные ранее для имени подсети и префикса адреса.
 
 > [!NOTE]
 > Выполнив этот командлет, можно определить дополнительные свойства конфигурации подсети виртуальной сети. Однако это выходит за рамки данного руководства.
@@ -189,7 +189,7 @@ $SubnetConfig = New-AzVirtualNetworkSubnetConfig -Name $SubnetName -AddressPrefi
 
 ### <a name="create-a-virtual-network"></a>Создание виртуальной сети
 
-Далее с помощью командлета [New-AzVirtualNetwork](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetwork) создайте виртуальную сеть в новой группе ресурсов. Укажите переменные, инициализированные ранее для имени, расположения и префикса адреса. Используйте конфигурацию подсети, определенную на предыдущем этапе.
+Далее с помощью командлета [New-AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork) создайте виртуальную сеть в новой группе ресурсов. Укажите переменные, инициализированные ранее для имени, расположения и префикса адреса. Используйте конфигурацию подсети, определенную на предыдущем этапе.
 
 Выполните следующий командлет, чтобы создать виртуальную сеть.
 
@@ -201,7 +201,7 @@ $VNet = New-AzVirtualNetwork -Name $VNetName `
 
 ### <a name="create-the-public-ip-address"></a>Создание общедоступного IP-адреса
 
-Определив виртуальную сеть, необходимо настроить IP-адрес для подключения к виртуальной машине. В рамках этого руководства мы создадим общедоступный IP-адрес с применением динамического предоставления IP-адресов, чтобы обеспечить подключение к Интернету. Создайте общедоступный IP-адрес в новой группе ресурсов с помощью командлета [New-AzPublicIpAddress](https://docs.microsoft.com/powershell/module/az.network/new-azpublicipaddress). Укажите переменные, инициализированные ранее для имени, расположения, метода распределения и метки доменного имени DNS.
+Определив виртуальную сеть, необходимо настроить IP-адрес для подключения к виртуальной машине. В рамках этого руководства мы создадим общедоступный IP-адрес с применением динамического предоставления IP-адресов, чтобы обеспечить подключение к Интернету. Создайте общедоступный IP-адрес в новой группе ресурсов с помощью командлета [New-AzPublicIpAddress](/powershell/module/az.network/new-azpublicipaddress). Укажите переменные, инициализированные ранее для имени, расположения, метода распределения и метки доменного имени DNS.
 
 > [!NOTE]
 > Выполнив этот командлет, можно определить дополнительные свойства общедоступного IP-адреса. Однако это выходит за рамки данного руководства. Кроме того, можно создать частный или статический адрес, но это также выходит за рамки данного руководства.
@@ -243,7 +243,7 @@ $PublicIp = New-AzPublicIpAddress -Name $InterfaceName `
 
 ### <a name="create-the-network-interface"></a>Создание сетевого интерфейса
 
-Теперь можно приступать к созданию сетевого интерфейса для виртуальной машины. Используйте командлет [New-азнетворкинтерфаце](https://docs.microsoft.com/powershell/module/az.network/new-aznetworkinterface) , чтобы создать сетевой интерфейс в новой группе ресурсов. Укажите определенные ранее имя, расположение, подсеть и общедоступный IP-адрес.
+Теперь можно приступать к созданию сетевого интерфейса для виртуальной машины. Используйте командлет [New-азнетворкинтерфаце](/powershell/module/az.network/new-aznetworkinterface) , чтобы создать сетевой интерфейс в новой группе ресурсов. Укажите определенные ранее имя, расположение, подсеть и общедоступный IP-адрес.
 
 Выполните следующий командлет, чтобы создать сетевой интерфейс.
 
@@ -265,7 +265,7 @@ $Interface = New-AzNetworkInterface -Name $InterfaceName `
 
 ### <a name="create-the-vm-object"></a>Создание виртуальной машины
 
-Сначала укажем размер виртуальной машины. В рамках этого руководства выберите размер DS13. Создайте настраиваемый объект виртуальной машины с помощью командлета [New-AzVMConfig](https://docs.microsoft.com/powershell/module/az.compute/new-azvmconfig). Укажите переменные, инициализированные ранее для имени и размера.
+Сначала укажем размер виртуальной машины. В рамках этого руководства выберите размер DS13. Создайте настраиваемый объект виртуальной машины с помощью командлета [New-AzVMConfig](/powershell/module/az.compute/new-azvmconfig). Укажите переменные, инициализированные ранее для имени и размера.
 
 Выполните этот командлет, чтобы создать объект виртуальной машины.
 
@@ -275,7 +275,7 @@ $VirtualMachine = New-AzVMConfig -VMName $VMName -VMSize $VMSize
 
 ### <a name="create-a-credential-object-to-hold-the-name-and-password-for-the-local-administrator-credentials"></a>Создание объекта учетных данных для хранения имени и пароля локального администратора
 
-Чтобы задать свойства операционной системы для виртуальной машины, необходимо сначала предоставить учетные данные для учетной записи локального администратора в виде защищенной строки. Для этого используйте командлет [Get-Credential](https://technet.microsoft.com/library/hh849815.aspx).
+Чтобы задать свойства операционной системы для виртуальной машины, необходимо сначала предоставить учетные данные для учетной записи локального администратора в виде защищенной строки. Для этого используйте командлет [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential).
 
 Выполните следующий командлет. Необходимо ввести имя локального администратора виртуальной машины и пароль в окно запроса учетных данных PowerShell.
 
@@ -285,7 +285,7 @@ $Credential = Get-Credential -Message "Type the name and password of the local a
 
 ### <a name="set-the-operating-system-properties-for-the-virtual-machine"></a>Определение свойств операционной системы для виртуальной машины
 
-Теперь вы можете настроить свойства операционной системы виртуальной машины, выполнив командлет [Set-AzVMOperatingSystem](https://docs.microsoft.com/powershell/module/az.compute/set-azvmoperatingsystem).
+Теперь вы можете настроить свойства операционной системы виртуальной машины, выполнив командлет [Set-AzVMOperatingSystem](/powershell/module/az.compute/set-azvmoperatingsystem).
 
 - Укажите Windows в качестве типа операционной системы.
 - Настройте обязательную установку [агента виртуальной машины](../../../virtual-machines/extensions/agent-windows.md).
@@ -302,7 +302,7 @@ $VirtualMachine = Set-AzVMOperatingSystem -VM $VirtualMachine `
 
 ### <a name="add-the-network-interface-to-the-virtual-machine"></a>Добавление сетевого интерфейса к виртуальной машине
 
-Используйте командлет [Add-AzVMNetworkInterface](https://docs.microsoft.com/powershell/module/az.compute/add-azvmnetworkinterface) и определенную ранее переменную, чтобы добавить сетевой интерфейс.
+Используйте командлет [Add-AzVMNetworkInterface](/powershell/module/az.compute/add-azvmnetworkinterface) и определенную ранее переменную, чтобы добавить сетевой интерфейс.
 
 Выполните следующий командлет, чтобы указать сетевой интерфейс для виртуальной машины.
 
@@ -322,7 +322,7 @@ $OSDiskUri = $StorageAccount.PrimaryEndpoints.Blob.ToString() + "vhds/" + $OSDis
 
 ### <a name="set-the-operating-system-disk-properties-for-the-virtual-machine"></a>Определение свойств диска операционной системы для виртуальной машины
 
-Затем определите свойства диска операционной системы для виртуальной машины с помощью командлета [Set-AzVMOSDisk](https://docs.microsoft.com/powershell/module/az.compute/set-azvmosdisk). 
+Затем определите свойства диска операционной системы для виртуальной машины с помощью командлета [Set-AzVMOSDisk](/powershell/module/az.compute/set-azvmosdisk). 
 
 - Укажите для виртуальной машины операционную систему, которая будет запускаться из образа.
 - Для кэширования установите параметр "только для чтения" (так как SQL Server установлен на этом же диске).
@@ -337,7 +337,7 @@ $VirtualMachine = Set-AzVMOSDisk -VM $VirtualMachine -Name `
 
 ### <a name="specify-the-platform-image-for-the-virtual-machine"></a>Определение образа платформы для виртуальной машины
 
-Последний этап конфигурации — определение образа платформы для виртуальной машины. В рамках этого руководства используется последний образ SQL Server 2016 CTP-версии. Чтобы использовать образ согласно значениям переменных, определенных ранее, примените командлет [Set-AzVMSourceImage](https://docs.microsoft.com/powershell/module/az.compute/set-azvmsourceimage).
+Последний этап конфигурации — определение образа платформы для виртуальной машины. В рамках этого руководства используется последний образ SQL Server 2016 CTP-версии. Чтобы использовать образ согласно значениям переменных, определенных ранее, примените командлет [Set-AzVMSourceImage](/powershell/module/az.compute/set-azvmsourceimage).
 
 Выполните следующий командлет, чтобы указать образ платформы для виртуальной машины.
 
@@ -349,7 +349,7 @@ $VirtualMachine = Set-AzVMSourceImage -VM $VirtualMachine `
 
 ## <a name="create-the-sql-vm"></a>Создание виртуальной машины SQL
 
-Теперь, по завершении конфигурации, все готово для создания виртуальной машины. Для этого используйте командлет [New-AzVM](https://docs.microsoft.com/powershell/module/az.compute/new-azvm) и уже определенные переменные.
+Теперь, по завершении конфигурации, все готово для создания виртуальной машины. Для этого используйте командлет [New-AzVM](/powershell/module/az.compute/new-azvm) и уже определенные переменные.
 
 > [!TIP]
 > Создание виртуальной машины может занять несколько минут.
@@ -387,7 +387,7 @@ Stop-AzVM -Name $VMName -ResourceGroupName $ResourceGroupName
 
 ## <a name="example-script"></a>Пример сценария
 
-Файл ниже содержит полный сценарий PowerShell для этого руководства. Предполагается, что вы уже настроили подписку Azure для использования с командами **Connect-AzAccount** и **Select-AzSubscription**.
+Файл ниже содержит полный сценарий PowerShell для этого руководства. Предполагается, что вы уже настроили подписку Azure для использования с командами **Connect-AzAccount** и **Select-AzSubscription** .
 
 ```powershell
 # Variables

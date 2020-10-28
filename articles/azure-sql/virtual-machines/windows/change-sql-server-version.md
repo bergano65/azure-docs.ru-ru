@@ -14,14 +14,14 @@ ms.date: 06/08/2020
 ms.author: RamaKoni
 ms.reviewer: sqlblt, daleche
 ms.custom: seo-lt-2019
-ms.openlocfilehash: a57a432a5f0f8e5a6bd802ec08b18350da3a77b3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4ec7ed958ac045c68fd7b616903f401dd07d8166
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91293379"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92789834"
 ---
-# <a name="in-place-change-of-sql-server-version-on-azure-vm"></a>Замена версии SQL Server на месте на виртуальной машине Azure
+# <a name="in-place-change-of-sql-server-version-on-azure-vm"></a>Изменение версии SQL Server на месте на виртуальной машине Azure
 
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
 
@@ -32,7 +32,7 @@ ms.locfileid: "91293379"
 Чтобы выполнить обновление на месте SQL Server, применяются следующие условия.
 
 - Требуется установочный носитель требуемой версии SQL Server. Клиенты, у которых есть программа [Software Assurance](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default), установочный носитель могут получить в [Центре корпоративного лицензирования](https://www.microsoft.com/Licensing/servicecenter/default.aspx). Клиенты, у которых нет программы Software Assurance, могут использовать установочный носитель из Azure Marketplace SQL Server образ виртуальной машины с более поздней версией SQL Server (обычно находится в К:\склсерверфулл).
-- Обновления выпуска должны соответствовать [путям обновления поддержки](https://docs.microsoft.com/sql/database-engine/install-windows/supported-version-and-edition-upgrades-version-15?view=sql-server-ver15).
+- Обновления выпуска должны соответствовать [путям обновления поддержки](/sql/database-engine/install-windows/supported-version-and-edition-upgrades-version-15?view=sql-server-ver15).
 
 ## <a name="planning-for-version-change"></a>Планирование изменения версии
 
@@ -40,34 +40,34 @@ ms.locfileid: "91293379"
 
 1. Проверьте новые возможности в версии, до которой вы планируете обновить:
 
-   - Новые возможности [SQL 2019](https://docs.microsoft.com/sql/sql-server/what-s-new-in-sql-server-ver15?view=sql-server-ver15)
-   - Новые возможности [SQL 2017](https://docs.microsoft.com/sql/sql-server/what-s-new-in-sql-server-2017?view=sql-server-ver15)
-   - Новые возможности [SQL 2016](https://docs.microsoft.com/sql/sql-server/what-s-new-in-sql-server-2016?view=sql-server-ver15)
-   - Новые возможности [SQL 2014](https://docs.microsoft.com/sql/sql-server/what-s-new-in-sql-server-2016?view=sql-server-2014)
+   - Новые возможности [SQL 2019](/sql/sql-server/what-s-new-in-sql-server-ver15?view=sql-server-ver15)
+   - Новые возможности [SQL 2017](/sql/sql-server/what-s-new-in-sql-server-2017?view=sql-server-ver15)
+   - Новые возможности [SQL 2016](/sql/sql-server/what-s-new-in-sql-server-2016?view=sql-server-ver15)
+   - Новые возможности [SQL 2014](/sql/sql-server/what-s-new-in-sql-server-2016?view=sql-server-2014)
 
-1. Рекомендуется проверить [сертификат совместимости](https://docs.microsoft.com/sql/database-engine/install-windows/compatibility-certification?view=sql-server-ver15) для версии, которую вы собираетесь изменить, чтобы можно было использовать режимы совместимости базы данных для снижения влияния обновления.
+1. Рекомендуется проверить [сертификат совместимости](/sql/database-engine/install-windows/compatibility-certification?view=sql-server-ver15) для версии, которую вы собираетесь изменить, чтобы можно было использовать режимы совместимости базы данных для снижения влияния обновления.
 1. Чтобы обеспечить успешный результат, можно обратиться к следующим статьям:
 
    - [Видео: модернизации SQL Server | PAM Лахауд & Педро Лопес | 20 лет PASS](https://www.youtube.com/watch?v=5RPkuQHcxxs&feature=youtu.be)
-   - [Database Experimentation Assistant для тестирования адресной книги](https://docs.microsoft.com/sql/dea/database-experimentation-assistant-overview?view=sql-server-ver15)
-   - [Обновление баз данных с помощью помощника по настройке запросов](https://docs.microsoft.com/sql/relational-databases/performance/upgrade-dbcompat-using-qta?view=sql-server-ver15)
-   - [Изменение уровня совместимости базы данных и использование хранилища запросов](https://docs.microsoft.com/sql/database-engine/install-windows/change-the-database-compatibility-mode-and-use-the-query-store?view=sql-server-ver15)
+   - [Database Experimentation Assistant для тестирования адресной книги](/sql/dea/database-experimentation-assistant-overview?view=sql-server-ver15)
+   - [Обновление баз данных с помощью помощника по настройке запросов](/sql/relational-databases/performance/upgrade-dbcompat-using-qta?view=sql-server-ver15)
+   - [Изменение уровня совместимости базы данных и использование хранилища запросов](/sql/database-engine/install-windows/change-the-database-compatibility-mode-and-use-the-query-store?view=sql-server-ver15)
 
 ## <a name="upgrade-sql-version"></a>Обновление версии SQL
 
 > [!WARNING]
 > Обновление версии SQL Server приведет к перезапуску службы для SQL Server в дополнение к любым связанным службам, таким как службы Analysis Services и R.
 
-Чтобы обновить версию SQL Server, получите установочный носитель SQL Server для более поздней версии, которая [поддерживает путь обновления](https://docs.microsoft.com/sql/database-engine/install-windows/supported-version-and-edition-upgrades-version-15?view=sql-server-ver15) SQL Server, и выполните следующие действия.
+Чтобы обновить версию SQL Server, получите установочный носитель SQL Server для более поздней версии, которая [поддерживает путь обновления](/sql/database-engine/install-windows/supported-version-and-edition-upgrades-version-15?view=sql-server-ver15) SQL Server, и выполните следующие действия.
 
 1. Перед началом процесса создайте резервную копию баз данных, включая систему (кроме tempdb) и пользовательские базы данных. Вы также можете создать для приложения резервную копию на уровне виртуальной машины с помощью служб Azure Backup Services.
 1. Запустите Setup.exe с установочного носителя SQL Server.
-1. Мастер установки запускает центр установки SQL Server. Чтобы обновить существующий экземпляр SQL Server, выберите **установить** на панели навигации, а затем выберите **обновление с более ранней версии SQL Server**.
+1. Мастер установки запускает центр установки SQL Server. Чтобы обновить существующий экземпляр SQL Server, выберите **установить** на панели навигации, а затем выберите **обновление с более ранней версии SQL Server** .
 
    :::image type="content" source="./media/change-sql-server-version/upgrade.png" alt-text="Выбор для обновления версии SQL Server":::
 
-1. На странице **ключ продукта** выберите параметр, чтобы указать, выполняется ли обновление до бесплатного выпуска SQL Server или имеется ключ PID для рабочей версии продукта. Дополнительные сведения см. в статьях [выпуски и поддерживаемые функции SQL Server 2019 (15. x)](https://docs.microsoft.com/sql/sql-server/editions-and-components-of-sql-server-version-15?view=sql-server-ver15) и [поддерживаемые обновления версий и выпусков (SQL Server 2016)](https://docs.microsoft.com/sql/database-engine/install-windows/supported-version-and-edition-upgrades?view=sql-server-ver15).
-1. Нажмите кнопку **Далее** , чтобы перейти на страницу **все готово к обновлению** , а затем выберите **Обновить**. В течение нескольких минут окно программы установки может перестать отвечать на запросы, пока изменения вступают в действие. На **полной** странице будет подтверждено, что обновление завершено. Пошаговые инструкции по обновлению см. [в полной процедуре](https://docs.microsoft.com/sql/database-engine/install-windows/upgrade-sql-server-using-the-installation-wizard-setup?view=sql-server-ver15#procedure).
+1. На странице **ключ продукта** выберите параметр, чтобы указать, выполняется ли обновление до бесплатного выпуска SQL Server или имеется ключ PID для рабочей версии продукта. Дополнительные сведения см. в статьях [выпуски и поддерживаемые функции SQL Server 2019 (15. x)](/sql/sql-server/editions-and-components-of-sql-server-version-15?view=sql-server-ver15) и [поддерживаемые обновления версий и выпусков (SQL Server 2016)](/sql/database-engine/install-windows/supported-version-and-edition-upgrades?view=sql-server-ver15).
+1. Нажмите кнопку **Далее** , чтобы перейти на страницу **все готово к обновлению** , а затем выберите **Обновить** . В течение нескольких минут окно программы установки может перестать отвечать на запросы, пока изменения вступают в действие. На **полной** странице будет подтверждено, что обновление завершено. Пошаговые инструкции по обновлению см. [в полной процедуре](/sql/database-engine/install-windows/upgrade-sql-server-using-the-installation-wizard-setup?view=sql-server-ver15#procedure).
 
    :::image type="content" source="./media/change-sql-server-version/complete-page.png" alt-text="Выбор для обновления версии SQL Server":::
 

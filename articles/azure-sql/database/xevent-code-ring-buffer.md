@@ -11,27 +11,27 @@ author: MightyPen
 ms.author: genemi
 ms.reviewer: jrasnik
 ms.date: 12/19/2018
-ms.openlocfilehash: 57449b0bbd39b6ea04ecae5a3ad766ae5687ca0b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d73efd7a64d0118cea11ca9b0a35f659ce7fee6a
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91619837"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92791296"
 ---
 # <a name="ring-buffer-target-code-for-extended-events-in-azure-sql-database"></a>Код целевого кольцевого буфера для расширенных событий в Базе данных SQL Azure
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
 
 [!INCLUDE [sql-database-xevents-selectors-1-include](../../../includes/sql-database-xevents-selectors-1-include.md)]
 
-Вам нужен полный образец кода для простой и быстрой регистрации и сообщения сведений о расширенных событиях в процессе тестирования. Самый простой целевой объект для данных расширенных событий — это [целевой объект "Кольцевой буфер"](https://msdn.microsoft.com/library/ff878182.aspx).
+Вам нужен полный образец кода для простой и быстрой регистрации и сообщения сведений о расширенных событиях в процессе тестирования. Самый простой целевой объект для данных расширенных событий — это [целевой объект "Кольцевой буфер"](/previous-versions/sql/sql-server-2016/bb630339(v=sql.130)).
 
 В этой статье представлен пример кода Transact-SQL, который:
 
 1. создает таблицу с данными для демонстрации;
-2. Создает сеанс для имеющегося расширенного события, а именно **sqlserver.sql_statement_starting**.
+2. Создает сеанс для имеющегося расширенного события, а именно **sqlserver.sql_statement_starting** .
 
-   * Событие ограничивается операторами SQL, содержащими определенную строку обновления: **оператор LIKE '%UPDATE tabEmployee%'**.
-   * Выбирает отправку выходных данных события в целевой объект типа "Кольцевой буфер", а именно **package0.ring_buffer**.
+   * Событие ограничивается операторами SQL, содержащими определенную строку обновления: **оператор LIKE '%UPDATE tabEmployee%'** .
+   * Выбирает отправку выходных данных события в целевой объект типа "Кольцевой буфер", а именно **package0.ring_buffer** .
 3. Запускает сеанс событий.
 4. Выдает пару простых операторов SQL UPDATE.
 5. Выдает инструкцию SQL SELECT для извлечения выходных данных события из кольцевого буфера.
@@ -50,7 +50,7 @@ ms.locfileid: "91619837"
 * SQL Server Management Studio (ssms.exe), в идеале — последняя ежемесячная версия обновления.
   Ресурсы для загрузки последней версии файла ssms.exe:
   
-  * Статья [Скачивание SQL Server Management Studio (SSMS)](https://msdn.microsoft.com/library/mt238290.aspx).
+  * Статья [Скачивание SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms).
   * [Прямая ссылка на загрузку.](https://go.microsoft.com/fwlink/?linkid=616025)
 
 ## <a name="code-sample"></a>Пример кода
@@ -218,9 +218,9 @@ GO
 
 Для запуска примера кода мы использовали `ssms.exe`.
 
-Чтобы просмотреть результаты, мы щелкнули ячейку под заголовком столбца **target_data_XML**.
+Чтобы просмотреть результаты, мы щелкнули ячейку под заголовком столбца **target_data_XML** .
 
-Затем в области результатов мы щелкнули ячейку под заголовком столбца **target_data_XML**. В результате в файле ssms.exe была создана дополнительная вкладка, на которой в виде XML-кода отображается содержимое итоговой ячейки.
+Затем в области результатов мы щелкнули ячейку под заголовком столбца **target_data_XML** . В результате в файле ssms.exe была создана дополнительная вкладка, на которой в виде XML-кода отображается содержимое итоговой ячейки.
 
 Выходные данные показаны в приведенном ниже блоке. Он выглядит длинным, но содержит всего два элемента **\<event>** .
 
@@ -315,7 +315,7 @@ SELECT 'AFTER__Updates', EmployeeKudosCount, * FROM tabEmployee;
 
 ### <a name="release-resources-held-by-your-ring-buffer"></a>Освобождение ресурсов, занятых кольцевым буфером
 
-По завершении работы с кольцевым буфером его можно удалить и освободить таким образом ресурсы. Для этого используется оператор **ALTER**.
+По завершении работы с кольцевым буфером его можно удалить и освободить таким образом ресурсы. Для этого используется оператор **ALTER** .
 
 ```sql
 ALTER EVENT SESSION eventsession_gm_azuresqldb51
@@ -349,6 +349,6 @@ ALTER EVENT SESSION eventsession_gm_azuresqldb51
 <!--
 ('lock_acquired' event.)
 
-- Code sample for SQL Server: [Determine Which Queries Are Holding Locks](https://msdn.microsoft.com/library/bb677357.aspx)
-- Code sample for SQL Server: [Find the Objects That Have the Most Locks Taken on Them](https://msdn.microsoft.com/library/bb630355.aspx)
+- Code sample for SQL Server: [Determine Which Queries Are Holding Locks](/sql/relational-databases/extended-events/determine-which-queries-are-holding-locks)
+- Code sample for SQL Server: [Find the Objects That Have the Most Locks Taken on Them](/sql/relational-databases/extended-events/find-the-objects-that-have-the-most-locks-taken-on-them)
 -->

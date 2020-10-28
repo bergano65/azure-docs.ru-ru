@@ -12,17 +12,17 @@ author: rmatchoro
 ms.author: ronmat
 ms.reviewer: vanto
 ms.date: 09/21/2020
-ms.openlocfilehash: d2ea14356bf85c795769f1d406f1571f36adaa38
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 31a47b9032ac014fa4eedde343d03d4fd343ff02
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91617925"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92790667"
 ---
 # <a name="configure-advanced-threat-protection-in-azure-sql-managed-instance"></a>Настройка расширенной защиты от угроз в Azure SQL Управляемый экземпляр
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
 
-[Расширенная защита от угроз](../database/threat-detection-overview.md) для [управляемый экземпляр Azure SQL](sql-managed-instance-paas-overview.md) обнаруживает аномальные действия, указывающие на необычные и потенциально опасные попытки доступа к базам данных или их использования. Расширенная защита от угроз позволяет определить **потенциальное внедрение кода SQL**, **получить доступ из необычного расположения или центра обработки данных**, **получить доступ из незнакомого основного или потенциально опасного приложения**и **выполнить подбор учетных данных SQL** [. Дополнительные](../database/threat-detection-overview.md#alerts)сведения см.
+[Расширенная защита от угроз](../database/threat-detection-overview.md) для [управляемый экземпляр Azure SQL](sql-managed-instance-paas-overview.md) обнаруживает аномальные действия, указывающие на необычные и потенциально опасные попытки доступа к базам данных или их использования. Расширенная защита от угроз позволяет определить **потенциальное внедрение кода SQL** , **получить доступ из необычного расположения или центра обработки данных** , **получить доступ из незнакомого основного или потенциально опасного приложения** и **выполнить подбор учетных данных SQL** [. Дополнительные](../database/threat-detection-overview.md#alerts)сведения см.
 
 Вы можете получать уведомления об обнаруженных угрозах с помощью [уведомлений по электронной почте](../database/threat-detection-overview.md#explore-detection-of-a-suspicious-event) или [портал Azure](../database/threat-detection-overview.md#explore-alerts-in-the-azure-portal)
 
@@ -31,7 +31,7 @@ ms.locfileid: "91617925"
 ##  <a name="azure-portal"></a>Портал Azure
 
 1. Войдите в  [портал Azure](https://portal.azure.com). 
-2. Перейдите на страницу конфигурации экземпляра SQL Управляемый экземпляр, который требуется защитить. В разделе **Безопасность**выберите **Центр безопасности**.
+2. Перейдите на страницу конфигурации экземпляра SQL Управляемый экземпляр, который требуется защитить. В разделе **Безопасность** выберите **Центр безопасности** .
 3. На странице конфигурации защитника Azure для SQL
    - Включите **защитник** Azure для SQL.
    - Настройте **список сообщений электронной почты** для получения оповещений системы безопасности при обнаружении аномальных действий базы данных.
@@ -39,10 +39,10 @@ ms.locfileid: "91617925"
    - Выберите **типы расширенной защиты от угроз** , которые вы хотите настроить. Дополнительные сведения об [оповещениях Advanced Threat protection](../database/threat-detection-overview.md).
 4. Нажмите кнопку **сохранить** , чтобы сохранить новую или обновленную политику Azure Defender для SQL.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [Advanced Threat protection](../database/threat-detection-overview.md).
 - Дополнительные сведения об управляемых экземплярах см. [в статье что такое управляемый экземпляр Azure SQL](sql-managed-instance-paas-overview.md).
 - Дополнительные сведения о [расширенной защите от угроз для базы данных SQL Azure](../database/threat-detection-configure.md).
-- Дополнительные сведения об [аудите управляемый экземпляр SQL](https://go.microsoft.com/fwlink/?linkid=869430).
-- Дополнительные сведения о [центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-intro).
+- Дополнительные сведения об [аудите управляемый экземпляр SQL](./auditing-configure.md).
+- Дополнительные сведения о [центре безопасности Azure](../../security-center/security-center-introduction.md).

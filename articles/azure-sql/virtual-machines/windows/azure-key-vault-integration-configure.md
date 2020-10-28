@@ -14,26 +14,26 @@ ms.workload: iaas-sql-server
 ms.date: 04/30/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 7fab8db1fcc02e26d1b19d3889414565ff56351b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3fca190d4818dc2ee8d598a3a1d3535ba7132398
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91293583"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92789970"
 ---
 # <a name="configure-azure-key-vault-integration-for-sql-server-on-azure-vms-resource-manager"></a>Настройка интеграции Azure Key Vault для SQL Server на виртуальных машинах Azure (Resource Manager)
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
 
-Существует несколько функций шифрования SQL Server, например [прозрачное шифрование данных (TDE)](https://msdn.microsoft.com/library/bb934049.aspx), [шифрование на уровне столбцов (CLE)](https://msdn.microsoft.com/library/ms173744.aspx) и [шифрование резервной копии](https://msdn.microsoft.com/library/dn449489.aspx). Эти формы шифрования требуют хранить используемые для шифрования ключи и управлять ими. Служба Azure Key Vault предназначена для обеспечения лучшей защиты этих ключей и управления ими в надежном расположении с высоким уровнем доступности. [Соединитель SQL Server](https://www.microsoft.com/download/details.aspx?id=45344) позволяет SQL Server использовать эти ключи из хранилища ключей Azure.
+Существует несколько функций шифрования SQL Server, например [прозрачное шифрование данных (TDE)](/sql/relational-databases/security/encryption/transparent-data-encryption), [шифрование на уровне столбцов (CLE)](/sql/t-sql/functions/cryptographic-functions-transact-sql) и [шифрование резервной копии](/sql/relational-databases/backup-restore/backup-encryption). Эти формы шифрования требуют хранить используемые для шифрования ключи и управлять ими. Служба Azure Key Vault предназначена для обеспечения лучшей защиты этих ключей и управления ими в надежном расположении с высоким уровнем доступности. [Соединитель SQL Server](https://www.microsoft.com/download/details.aspx?id=45344) позволяет SQL Server использовать эти ключи из хранилища ключей Azure.
 
-Если вы используете SQL Server в локальной среде, можете выполнить шаги для получения [доступа к Azure Key Vault из локального экземпляра SQL Server](https://msdn.microsoft.com/library/dn198405.aspx). Если SQL Server расположен на виртуальных машинах Azure, можно сэкономить время, воспользовавшись функцией *интеграции Azure Key Vault*.
+Если вы используете SQL Server в локальной среде, можете выполнить шаги для получения [доступа к Azure Key Vault из локального экземпляра SQL Server](/sql/relational-databases/security/encryption/extensible-key-management-using-azure-key-vault-sql-server). Если SQL Server расположен на виртуальных машинах Azure, можно сэкономить время, воспользовавшись функцией *интеграции Azure Key Vault* .
 
 Если эта функция включена, она автоматически устанавливает соединитель SQL Server, настраивает поставщик расширенного управления ключами для доступа к хранилищу ключей Azure и создает учетные данные, которые позволяют получить доступ к вашему хранилищу. Если вы изучили шаги в ранее упомянутой документации для локального компьютера, то увидели, что эта функция автоматизирует шаги 2 и 3. Единственное, что останется сделать вручную, — создать хранилище ключей и ключи. Далее вся настройка виртуальной машины SQL Server выполняется автоматически. Когда настройка этой функции завершится, можно выполнить инструкции Transact-SQL (T-SQL), чтобы начать шифрование или резервное копирование баз данных как обычно.
 
 [!INCLUDE [Prepare for Key Vault integration](../../../../includes/virtual-machines-sql-server-akv-prepare.md)]
 
   >[!NOTE]
-  > Поставщик расширенного управления ключами (EKM) версии 1.0.4.0 устанавливается на виртуальной машине SQL Server с помощью расширения [IaaS (инфраструктура как услуга) для SQL](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-agent-extension). При обновлении расширения IaaS для SQL версия поставщика не обновляется. При необходимости вручную обновите версию поставщика EKM (например, во время миграции на Управляемый экземпляр Базы данных SQL).
+  > Поставщик расширенного управления ключами (EKM) версии 1.0.4.0 устанавливается на виртуальной машине SQL Server с помощью расширения [IaaS (инфраструктура как услуга) для SQL](./sql-server-iaas-agent-extension-automate-management.md). При обновлении расширения IaaS для SQL версия поставщика не обновляется. При необходимости вручную обновите версию поставщика EKM (например, во время миграции на Управляемый экземпляр Базы данных SQL).
 
 
 ## <a name="enabling-and-configuring-key-vault-integration"></a>Включение и настройка интеграции Key Vault
@@ -50,11 +50,11 @@ ms.locfileid: "91293583"
 
 [!INCLUDE [windows-virtual-machines-sql-use-new-management-blade](../../../../includes/windows-virtual-machines-sql-new-resource.md)]
 
-Для существующих виртуальных машин SQL перейдите к ресурсу [Виртуальные машины SQL](manage-sql-vm-portal.md#access-the-sql-virtual-machines-resource) и в разделе **Настройки** выберите **Безопасность**. Выберите **Включить**, чтобы включить интеграцию Azure Key Vault. 
+Для существующих виртуальных машин SQL перейдите к ресурсу [Виртуальные машины SQL](manage-sql-vm-portal.md#access-the-sql-virtual-machines-resource) и в разделе **Настройки** выберите **Безопасность** . Выберите **Включить** , чтобы включить интеграцию Azure Key Vault. 
 
 ![Интеграция SQL с Key Vault для существующих виртуальных машин](./media/azure-key-vault-integration-configure/azure-sql-rm-akv-existing-vms.png)
 
-По завершении в нижней части страницы **Безопасность** нажмите кнопку **Применить**, чтобы сохранить изменения.
+По завершении в нижней части страницы **Безопасность** нажмите кнопку **Применить** , чтобы сохранить изменения.
 
 > [!NOTE]
 > Имя учетных данных, которое мы создали, позже будет сопоставлено с именем для входа в SQL. С помощью этих данных для входа в SQL можно получить доступ к хранилищу ключей. 

@@ -12,12 +12,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 05/28/2020
-ms.openlocfilehash: a5760d3daaa13a5ed16230e1ffb7fe3691455e09
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 8883263d6ddb2fb8ddc809f464288fcd282531bd
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92427042"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92788831"
 ---
 # <a name="choose-between-the-vcore-and-dtu-purchasing-models---azure-sql-database-and-sql-managed-instance"></a>Выбор между моделями приобретения Виртуальное ядро и DTU в базе данных SQL Azure и SQL Управляемый экземпляр
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -127,7 +127,7 @@ DTU наиболее полезны для понимания относител
 
 ### <a name="determine-the-number-of-dtus-needed-by-a-workload"></a>Определение числа единиц DTU, требуемых для рабочей нагрузки
 
-Если вы хотите перенести существующую локальную или SQL Server рабочую нагрузку виртуальной машины в базу данных SQL, используйте [Калькулятор DTU](https://dtucalculator.azurewebsites.net/) , чтобы приблизительно оценить необходимое количество DTU. Для существующей рабочей нагрузки базы данных SQL используйте [аналитические сведения о производительности запросов](query-performance-insight-use.md) , чтобы получить представление о потреблении ресурсов базы данных (DTU) и получать более подробные сведения для оптимизации рабочей нагрузки. Динамическое административное представление [sys.dm_db_resource_stats](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-db-resource-stats-azure-sql-database) позволяет просматривать потребление ресурсов за последний час. В представлении каталога [sys.resource_stats](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-resource-stats-azure-sql-database) отображается потребление ресурсов за последние 14 дней, но с более низким уровнем точности в среднем за пять минут.
+Если вы хотите перенести существующую локальную или SQL Server рабочую нагрузку виртуальной машины в базу данных SQL, используйте [Калькулятор DTU](https://dtucalculator.azurewebsites.net/) , чтобы приблизительно оценить необходимое количество DTU. Для существующей рабочей нагрузки базы данных SQL используйте [аналитические сведения о производительности запросов](query-performance-insight-use.md) , чтобы получить представление о потреблении ресурсов базы данных (DTU) и получать более подробные сведения для оптимизации рабочей нагрузки. Динамическое административное представление [sys.dm_db_resource_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-db-resource-stats-azure-sql-database) позволяет просматривать потребление ресурсов за последний час. В представлении каталога [sys.resource_stats](/sql/relational-databases/system-catalog-views/sys-resource-stats-azure-sql-database) отображается потребление ресурсов за последние 14 дней, но с более низким уровнем точности в среднем за пять минут.
 
 ### <a name="determine-dtu-utilization"></a>Определение использования DTU
 
@@ -135,7 +135,7 @@ DTU наиболее полезны для понимания относител
 
 `avg_dtu_percent = MAX(avg_cpu_percent, avg_data_io_percent, avg_log_write_percent)`
 
-Входные значения для этой формулы можно получить из [sys.dm_db_resource_stats](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-db-resource-stats-azure-sql-database), [sys.resource_stats](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-resource-stats-azure-sql-database)и [sys.elastic_pool_resource_stats](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-elastic-pool-resource-stats-azure-sql-database) DMV. Иными словами, чтобы определить процент использования DTU/eDTU в отношении ограничения DTU/eDTU базы данных или эластичного пула, выберите наибольшее процентное значение из следующих значений: `avg_cpu_percent` , `avg_data_io_percent` и `avg_log_write_percent` в определенный момент времени.
+Входные значения для этой формулы можно получить из [sys.dm_db_resource_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-db-resource-stats-azure-sql-database), [sys.resource_stats](/sql/relational-databases/system-catalog-views/sys-resource-stats-azure-sql-database)и [sys.elastic_pool_resource_stats](/sql/relational-databases/system-catalog-views/sys-elastic-pool-resource-stats-azure-sql-database) DMV. Иными словами, чтобы определить процент использования DTU/eDTU в отношении ограничения DTU/eDTU базы данных или эластичного пула, выберите наибольшее процентное значение из следующих значений: `avg_cpu_percent` , `avg_data_io_percent` и `avg_log_write_percent` в определенный момент времени.
 
 > [!NOTE]
 > Ограничение DTU базы данных определяется ЦП, операциями чтения, записи и памятью, доступной базе данных. Однако, поскольку ядро СУБД SQL обычно использует всю доступную память для кэша данных, чтобы повысить производительность, `avg_memory_usage_percent` значение обычно будет близко к 100% независимо от текущей загрузки базы данных. Таким образом, несмотря на то, что память косвенно влияет на предел DTU, она не используется в формуле использования DTU.
@@ -150,13 +150,13 @@ DTU наиболее полезны для понимания относител
 
 Например, база данных может быть перемещена в другое поколение оборудования, если она масштабируется по отношению к другой цели обслуживания или если текущая инфраструктура в центре обработки данных приближается к ограничениям емкости или если используемое в настоящее время оборудование списано из-за его жизненного цикла.
 
-Если база данных перемещается на другое оборудование, производительность рабочей нагрузки может измениться. Модель DTU гарантирует, что пропускная способность и время отклика рабочей нагрузки [производительности DTU](https://docs.microsoft.com/azure/sql-database/sql-database-service-tiers-dtu#dtu-benchmark) будут значительно совпадать, так как база данных переходит на другое поколение оборудования, если его цель обслуживания (число DTU) остается неизменной.
+Если база данных перемещается на другое оборудование, производительность рабочей нагрузки может измениться. Модель DTU гарантирует, что пропускная способность и время отклика рабочей нагрузки [производительности DTU](./service-tiers-dtu.md#dtu-benchmark) будут значительно совпадать, так как база данных переходит на другое поколение оборудования, если его цель обслуживания (число DTU) остается неизменной.
 
 Однако в широком спектре рабочих нагрузок клиента, выполняемых в базе данных SQL Azure, влияние использования различных аппаратных средств для одной цели обслуживания может быть более продолжено. Различные рабочие нагрузки будут использовать разные аппаратные конфигурации и функции. Таким образом, для рабочих нагрузок, отличных от производительности DTU, можно увидеть различия в производительности, если база данных перемещается из одного поколения оборудования в другое.
 
 Например, приложение, чувствительное к задержке в сети, может обеспечить лучшую производительность го поколения оборудования и го поколения из-за использования ускорения сети в го поколения, но приложение, использующее интенсивные операции ввода-вывода Read, может более эффективно работать на го поколения оборудовании и го поколения благодаря увеличению количества памяти на ядро в го поколения.
 
-Клиенты с рабочими нагрузками, которые чувствительны к изменениям оборудования или клиентам, желающим управлять выбором оборудования для своей базы данных, могут использовать модель [Виртуальное ядро](service-tiers-vcore.md) для выбора предпочтительного поколения оборудования во время создания и масштабирования базы данных. В модели Виртуальное ядро ограничения ресурсов каждой цели обслуживания в каждом формировании оборудования задокументированы как для [отдельных баз данных](resource-limits-vcore-single-databases.md) , так и для [эластичных пулов](resource-limits-vcore-elastic-pools.md). Дополнительные сведения о поколениях оборудования в модели Виртуальное ядро см. в разделе [поколения оборудования](https://docs.microsoft.com/azure/sql-database/sql-database-service-tiers-vcore#hardware-generations).
+Клиенты с рабочими нагрузками, которые чувствительны к изменениям оборудования или клиентам, желающим управлять выбором оборудования для своей базы данных, могут использовать модель [Виртуальное ядро](service-tiers-vcore.md) для выбора предпочтительного поколения оборудования во время создания и масштабирования базы данных. В модели Виртуальное ядро ограничения ресурсов каждой цели обслуживания в каждом формировании оборудования задокументированы как для [отдельных баз данных](resource-limits-vcore-single-databases.md) , так и для [эластичных пулов](resource-limits-vcore-elastic-pools.md). Дополнительные сведения о поколениях оборудования в модели Виртуальное ядро см. в разделе [поколения оборудования](./service-tiers-vcore.md#hardware-generations).
 
 ## <a name="frequently-asked-questions-faqs"></a>Часто задаваемые вопросы (FAQ)
 

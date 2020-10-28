@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/04/2018
 ms.author: mikeray
-ms.openlocfilehash: a4965c587cb2f42c8411d48af2417dd3fe3d5edb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a386ea5149b36a4e82b4c935e2373f505c6c83cf
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91360792"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92789885"
 ---
 # <a name="backup-and-restore-for-sql-server-on-azure-vms"></a>Резервное копирование и восстановление SQL Server на виртуальных машинах Azure
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -60,7 +60,7 @@ ms.locfileid: "91360792"
 
 ## <a name="azure-backup-for-sql-vms"></a><a id="azbackup"></a> Azure Backup для виртуальных машин SQL
 
-[Azure Backup](/azure/backup/) предоставляет возможности резервного копирования корпоративного класса для SQL Server на виртуальных машинах Azure. Все резервные копии хранятся в хранилище служб восстановления, где вы можете ими управлять. Это решение имеет ряд важных преимуществ, особенно для предприятий:
+[Azure Backup](../../../backup/index.yml) предоставляет возможности резервного копирования корпоративного класса для SQL Server на виртуальных машинах Azure. Все резервные копии хранятся в хранилище служб восстановления, где вы можете ими управлять. Это решение имеет ряд важных преимуществ, особенно для предприятий:
 
 - **Полное отсутствие необходимости создавать резервные копии инфраструктуры.** Вам не нужно управлять серверами резервного копирования или расположениями хранилищ.
 - **Масштабируемость.** Вы можете защитить большое число виртуальных машин SQL и тысячи баз данных.
@@ -83,19 +83,19 @@ ms.locfileid: "91360792"
 
 Если вы хотите вручную управлять операциями резервного копирования и восстановления для виртуальных машин SQL, это можно сделать несколькими способами в зависимости от используемой версии SQL Server. Обзор функций резервного копирования и восстановления см. в следующих статьях для разных версий SQL Server:
 
-- [Резервное копирование и восстановление для SQL Server 2016 и более поздних версий](https://docs.microsoft.com/sql/relational-databases/backup-restore/back-up-and-restore-of-sql-server-databases)
-- [Резервное копирование и восстановление для SQL Server 2014](https://msdn.microsoft.com/library/ms187048%28v=sql.120%29.aspx)
-- [Резервное копирование и восстановление для SQL Server 2012](https://msdn.microsoft.com/library/ms187048%28v=sql.110%29.aspx)
-- [Резервное копирование и восстановление для SQL Server 2008 R2](https://msdn.microsoft.com/library/ms187048%28v=sql.105%29.aspx)
-- [Резервное копирование и восстановление для SQL Server 2008](https://msdn.microsoft.com/library/ms187048%28v=sql.100%29.aspx)
+- [Резервное копирование и восстановление для SQL Server 2016 и более поздних версий](/sql/relational-databases/backup-restore/back-up-and-restore-of-sql-server-databases)
+- [Резервное копирование и восстановление для SQL Server 2014](/sql/relational-databases/backup-restore/back-up-and-restore-of-sql-server-databases?viewFallbackFrom=sql-server-2014)
+- [Резервное копирование и восстановление для SQL Server 2012](/previous-versions/sql/sql-server-2012/ms187048(v=sql.110))
+- [Резервное копирование и восстановление для SQL Server 2008 R2](/previous-versions/sql/sql-server-2008-r2/ms187048(v=sql.105))
+- [Резервное копирование и восстановление для SQL Server 2008](/previous-versions/sql/sql-server-2008/ms187048(v=sql.100))
 
 В следующих разделах подробнее описаны некоторые способы выполнять резервное копирование и восстановление вручную.
 
 ### <a name="backup-to-attached-disks"></a>Резервное копирование на подключенные диски
 
-Для SQL Server на виртуальных машинах Azure вы можете применить встроенные функции резервного копирования и восстановления, используя подключенные диски в качестве целевого хранилища для файлов резервных копий. При этом существует ограничение на количество дисков, которые можно присоединить к виртуальной машине Azure, связанное с [размером виртуальной машины](../../../virtual-machines/windows/sizes.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). Также необходимо учитывать накладные расходы на управление дисками.
+Для SQL Server на виртуальных машинах Azure вы можете применить встроенные функции резервного копирования и восстановления, используя подключенные диски в качестве целевого хранилища для файлов резервных копий. При этом существует ограничение на количество дисков, которые можно присоединить к виртуальной машине Azure, связанное с [размером виртуальной машины](../../../virtual-machines/sizes.md?toc=%252fazure%252fvirtual-machines%252fwindows%252ftoc.json). Также необходимо учитывать накладные расходы на управление дисками.
 
-В статье [Создание полной резервной копии базы данных (SQL Server)](https://docs.microsoft.com/sql/relational-databases/backup-restore/create-a-full-database-backup-sql-server) описано, как вручную создать полную резервную копию базы данных с помощью SQL Server Management Studio (SSMS) или Transact-SQL.
+В статье [Создание полной резервной копии базы данных (SQL Server)](/sql/relational-databases/backup-restore/create-a-full-database-backup-sql-server) описано, как вручную создать полную резервную копию базы данных с помощью SQL Server Management Studio (SSMS) или Transact-SQL.
 
 ### <a name="backup-to-url"></a>Резервное копирование на URL-адрес
 
@@ -104,13 +104,13 @@ ms.locfileid: "91360792"
 | Улучшения в версии SQL Server 2016. | Сведения |
 | --- | --- |
 | **Чередование** |Когда выполняется резервное копирование в хранилище BLOB-объектов Microsoft Azure, SQL Server 2016 позволяет использовать сразу несколько больших двоичных объектов и, таким образом, создавать резервные копии больших баз данных размером до 12,8 ТБ. |
-| **Резервное копирование моментальных снимков** |Благодаря использованию моментальных снимков Azure функция резервного копирования моментальных снимков файлов SQL Server дает возможность практически мгновенно создавать резервные копии и быстро восстанавливать файлы баз данных, сохраненные с помощью службы хранилища BLOB-объектов Azure. Это позволяет упростить политики архивации и восстановления политик. Функция архивации моментальных снимков файлов поддерживает также восстановление до определенной точки во времени. Дополнительные сведения см. в статье [Резервные копии моментальных снимков файлов для файлов базы данных в Azure](https://docs.microsoft.com/sql/relational-databases/backup-restore/file-snapshot-backups-for-database-files-in-azure). |
+| **Резервное копирование моментальных снимков** |Благодаря использованию моментальных снимков Azure функция резервного копирования моментальных снимков файлов SQL Server дает возможность практически мгновенно создавать резервные копии и быстро восстанавливать файлы баз данных, сохраненные с помощью службы хранилища BLOB-объектов Azure. Это позволяет упростить политики архивации и восстановления политик. Функция архивации моментальных снимков файлов поддерживает также восстановление до определенной точки во времени. Дополнительные сведения см. в статье [Резервные копии моментальных снимков файлов для файлов базы данных в Azure](/sql/relational-databases/backup-restore/file-snapshot-backups-for-database-files-in-azure). |
 
 Дополнительные сведения см. в следующих статьях для разных версий SQL Server:
 
-- **SQL Server 2016 и 2017:** [Резервное копирование SQL Server в указанное расположение](https://docs.microsoft.com/sql/relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service).
-- **SQL Server 2014:** [Резервное копирование SQL Server 2014 в указанное расположение](https://msdn.microsoft.com/library/jj919148%28v=sql.120%29.aspx).
-- **SQL Server 2012**: [Резервное копирование SQL Server 2012 в указанное расположение](https://msdn.microsoft.com/library/jj919148%28v=sql.110%29.aspx).
+- **SQL Server 2016 и 2017:** [Резервное копирование SQL Server в указанное расположение](/sql/relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service).
+- **SQL Server 2014:** [Резервное копирование SQL Server 2014 в указанное расположение](/sql/relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service?viewFallbackFrom=sql-server-2014).
+- **SQL Server 2012** : [Резервное копирование SQL Server 2012 в указанное расположение](/previous-versions/sql/sql-server-2012/jj919148(v=sql.110)).
 
 ### <a name="managed-backup"></a>Управляемое резервное копирование
 
@@ -120,8 +120,8 @@ ms.locfileid: "91360792"
 
 Дополнительные сведения см. в следующих статьях для разных версий SQL Server:
 
-- [управляемое резервное копирование SQL Server в Microsoft Azure для SQL Server 2016 и более поздних версий](https://docs.microsoft.com/sql/relational-databases/backup-restore/sql-server-managed-backup-to-microsoft-azure);
-- [управляемое резервное копирование SQL Server в Microsoft Azure для SQL Server 2014](https://msdn.microsoft.com/library/dn449496%28v=sql.120%29.aspx).
+- [управляемое резервное копирование SQL Server в Microsoft Azure для SQL Server 2016 и более поздних версий](/sql/relational-databases/backup-restore/sql-server-managed-backup-to-microsoft-azure);
+- [управляемое резервное копирование SQL Server в Microsoft Azure для SQL Server 2014](/sql/relational-databases/backup-restore/sql-server-managed-backup-to-microsoft-azure?viewFallbackFrom=sql-server-2014).
 
 ## <a name="decision-matrix"></a>Матрица принятия решений
 

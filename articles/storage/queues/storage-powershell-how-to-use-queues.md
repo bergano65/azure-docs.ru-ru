@@ -9,12 +9,12 @@ ms.subservice: queues
 ms.topic: how-to
 ms.reviewer: dineshm
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: d1f758390a270f072bc08e13d1d542e08e4df553
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: e558b8ca6498b8419ce6d7ce5ff1b161c05ef3c6
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92425543"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92791143"
 ---
 # <a name="perform-azure-queue-storage-operations-with-azure-powershell"></a>Выполнение операций хранилища очередей Azure с помощью Azure PowerShell
 
@@ -45,7 +45,7 @@ Connect-AzAccount
 
 ## <a name="retrieve-list-of-locations"></a>Получение списка расположений
 
-Если вы не знаете, какое расположение нужно использовать, можно получить список доступных расположений. Получив список, найдите расположение, которое нужно использовать. В этом задании будет использоваться **eastus**. Сохраните его в переменной **location** для использования в будущем.
+Если вы не знаете, какое расположение нужно использовать, можно получить список доступных расположений. Получив список, найдите расположение, которое нужно использовать. В этом задании будет использоваться **eastus** . Сохраните его в переменной **location** для использования в будущем.
 
 ```powershell
 Get-AzLocation | Select-Object Location
@@ -56,7 +56,7 @@ $location = "eastus"
 
 Создайте группу ресурсов с помощью команды [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup).
 
-Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими. Сохраните имя группы ресурсов в переменной для будущего использования. В этом примере создается группа ресурсов с именем *howtoqueuesrg* в регионе *eastus*.
+Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими. Сохраните имя группы ресурсов в переменной для будущего использования. В этом примере создается группа ресурсов с именем *howtoqueuesrg* в регионе *eastus* .
 
 ```powershell
 $resourceGroup = "howtoqueuesrg"
@@ -86,7 +86,7 @@ $queueName = "howtoqueue"
 $queue = New-AzStorageQueue –Name $queueName -Context $ctx
 ```
 
-Сведения о соглашениях об именовании для службы очередей Azure см. в статье [Именование очередей и метаданных](https://msdn.microsoft.com/library/azure/dd179349.aspx).
+Сведения о соглашениях об именовании для службы очередей Azure см. в статье [Именование очередей и метаданных](/rest/api/storageservices/Naming-Queues-and-Metadata).
 
 ## <a name="retrieve-a-queue"></a>Извлечение очереди
 
@@ -133,7 +133,7 @@ $queue.CloudQueue.AddMessageAsync($QueueMessage)
 
 Ваш код считывает сообщение из очереди в два этапа. При вызове метода [Microsoft. Azure. Storage. Queue. CloudQueue.](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.getmessage) GetNext вы получаете следующее сообщение в очереди. Сообщение, возвращенное методом **onmessage** , станет невидимым для любого другого кода, считывающего сообщения из этой очереди. Чтобы завершить удаление сообщения из очереди, вызовите метод [Microsoft. Azure. Storage. Queue. CloudQueue. DeleteMessage](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.deletemessage) .
 
-В следующем примере можно прочитать три сообщения в очереди, после чего следует время ожидания 10 секунд (время ожидания невидимости). Затем можно снова прочитать три сообщения и удалить их после прочтения, вызвав **DeleteMessage**. При попытке чтения очереди после удаления сообщений $queueMessage будет возвращаться как значение NULL.
+В следующем примере можно прочитать три сообщения в очереди, после чего следует время ожидания 10 секунд (время ожидания невидимости). Затем можно снова прочитать три сообщения и удалить их после прочтения, вызвав **DeleteMessage** . При попытке чтения очереди после удаления сообщений $queueMessage будет возвращаться как значение NULL.
 
 ```powershell
 # Set the amount of time you want to entry to be invisible after read from the queue

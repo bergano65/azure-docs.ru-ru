@@ -12,19 +12,19 @@ author: jaszymas
 ms.author: jaszymas
 ms.reviewer: vanto
 ms.date: 10/12/2020
-ms.openlocfilehash: 878fa9f576e50fb53e648d3bf39f98558d6e880a
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 8fbbd7a2aabc9de417f1eefd2513edba3119bfc0
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92441119"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92791398"
 ---
 # <a name="transparent-data-encryption-for-sql-database-sql-managed-instance-and-azure-synapse-analytics"></a>Прозрачное шифрование данных для базы данных SQL, SQL Управляемый экземпляр и Azure синапсе Analytics
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
 
 [Прозрачное шифрование данных (TDE)](/sql/relational-databases/security/encryption/transparent-data-encryption) помогает защитить базу данных SQL Azure, azure SQL управляемый экземпляр и Azure синапсе Analytics относительно угрозы вредоносной автономной деятельности путем шифрования неактивных данных. Выполняется шифрование и расшифровка базы данных, связанных резервных копий и неактивных файлов журналов транзакций в реальном времени без необходимости изменения приложения. По умолчанию TDE включен для всех вновь развернутых баз данных SQL и должен быть включен вручную для старых баз данных SQL Azure, Управляемый экземпляр Azure SQL. Для Azure синапсе Analytics необходимо вручную включить TDE.
 
-Функция TDE выполняет шифрование и расшифровку ввода-вывода данных в реальном времени на уровне страницы. Каждая страница расшифровывается при считывании в память, а затем снова шифруется перед записью на диск. TDE шифрует хранилище всей базы данных с помощью симметричного ключа, который называется ключом шифрования базы данных (DEK). При запуске базы данных зашифрованный DEK расшифровывается, а затем используется для расшифровки и повторного шифрования файлов базы данных в SQL Server процессе ядра СУБД. DEK защищается предохранителем TDE. Предохранитель TDE — это либо управляемый службой сертификат (прозрачное шифрование данных, управляемое службой), либо асимметричный ключ, хранящийся в [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-secure-your-key-vault) (прозрачное шифрование данных, управляемое клиентом).
+Функция TDE выполняет шифрование и расшифровку ввода-вывода данных в реальном времени на уровне страницы. Каждая страница расшифровывается при считывании в память, а затем снова шифруется перед записью на диск. TDE шифрует хранилище всей базы данных с помощью симметричного ключа, который называется ключом шифрования базы данных (DEK). При запуске базы данных зашифрованный DEK расшифровывается, а затем используется для расшифровки и повторного шифрования файлов базы данных в SQL Server процессе ядра СУБД. DEK защищается предохранителем TDE. Предохранитель TDE — это либо управляемый службой сертификат (прозрачное шифрование данных, управляемое службой), либо асимметричный ключ, хранящийся в [Azure Key Vault](../../key-vault/general/secure-your-key-vault.md) (прозрачное шифрование данных, управляемое клиентом).
 
 Для базы данных SQL Azure и Azure синапсе средство защиты TDE устанавливается на уровне [сервера](logical-servers.md) и наследуется всеми базами данных, связанными с этим сервером. Для Управляемого экземпляра SQL Azure предохранитель TDE настраивается на уровне экземпляра и наследуется всеми зашифрованными базами данных этого экземпляра. В этом документе термин *сервер* обозначает как сервер, так и экземпляр, если не указано иное.
 
@@ -32,7 +32,7 @@ ms.locfileid: "92441119"
 > Все вновь созданные базы данных SQL шифруются по умолчанию с помощью прозрачного шифрования данных, управляемого службой. Существующие базы данных SQL, созданные до 2017 мая, а базы данных SQL, созданные с помощью инструкции RESTORE, Георепликация и копия базы данных, по умолчанию не шифруются. Существующие базы данных SQL Управляемый экземпляр, созданные до февраля 2019, по умолчанию не шифруются. Базы данных SQL Управляемый экземпляр, созданные с помощью инструкции RESTORE, наследуют состояние шифрования от источника.
 
 > [!NOTE]
-> TDE нельзя использовать для шифрования системных баз данных, таких как база данных **master** , в базе данных SQL Azure и azure SQL управляемый экземпляр. База данных **master** содержит объекты, которые необходимы для выполнения операций TDE для пользовательских баз данных.
+> TDE нельзя использовать для шифрования системных баз данных, таких как база данных **master** , в базе данных SQL Azure и azure SQL управляемый экземпляр. База данных **master** содержит объекты, которые необходимы для выполнения операций TDE для пользовательских баз данных. Не рекомендуется хранить конфиденциальные данные в системных базах данных. Теперь при [шифровании инфраструктуры](transparent-data-encryption-byok-overview.md#doubleencryption) выполняется шифрование системных баз данных, включая Master. 
 
 ## <a name="service-managed-transparent-data-encryption"></a>Управляемое службой прозрачное шифрование данных
 
@@ -42,7 +42,7 @@ ms.locfileid: "92441119"
 
 ## <a name="customer-managed-transparent-data-encryption---bring-your-own-key"></a>Управляемое клиентом прозрачное шифрование данных. Создание собственных ключей
 
-Управляемый клиентом TDE также называется поддержкой создание собственных ключей (BYOK) для TDE. В этом сценарии средство защиты TDE, которое шифрует DEK, является асимметричным ключом, управляемым клиентом, который хранится в принадлежащем заказчике и управляемом Azure Key Vaultе (облачной системе управления внешними ключами Azure) и никогда не покидает хранилище ключей. Средство защиты TDE может быть [создано хранилищем ключей или передано в хранилище ключей](https://docs.microsoft.com/azure/key-vault/key-vault-hsm-protected-keys) из локального аппаратного модуля безопасности (HSM). Для расшифровки и шифрования DEK базы данных SQL, SQL Управляемый экземпляр и Azure синапсе должны быть предоставлены разрешения в хранилище ключей, принадлежащее заказчику. Если разрешения сервера для хранилища ключей отозваны, база данных будет недоступна и все данные будут зашифрованы.
+Управляемый клиентом TDE также называется поддержкой создание собственных ключей (BYOK) для TDE. В этом сценарии средство защиты TDE, которое шифрует DEK, является асимметричным ключом, управляемым клиентом, который хранится в принадлежащем заказчике и управляемом Azure Key Vaultе (облачной системе управления внешними ключами Azure) и никогда не покидает хранилище ключей. Средство защиты TDE может быть [создано хранилищем ключей или передано в хранилище ключей](../../key-vault/keys/hsm-protected-keys.md) из локального аппаратного модуля безопасности (HSM). Для расшифровки и шифрования DEK базы данных SQL, SQL Управляемый экземпляр и Azure синапсе должны быть предоставлены разрешения в хранилище ключей, принадлежащее заказчику. Если разрешения сервера для хранилища ключей отозваны, база данных будет недоступна и все данные будут зашифрованы.
 
 Благодаря интеграции TDE с Azure Key Vault пользователи могут самостоятельно контролировать задачи управления ключами. В Azure Key Vault можно выполнять такие операции, как смена ключей, настройка разрешений для хранилища ключей, резервное копирование ключей, а также включать аудит и отчетность по всем предохранителям TDE. Key Vault обеспечивает централизованное управление ключами, использует тщательную отслеживаемую HSM и позволяет отделить обязанности между управлением ключами и данными, чтобы обеспечить соответствие политикам безопасности.
 Дополнительные сведения о BYOK для базы данных SQL Azure и Azure синапсе см. в статье [прозрачное шифрование данных с помощью интеграции с Azure Key Vault](transparent-data-encryption-byok-overview.md).
@@ -91,7 +91,7 @@ ms.locfileid: "92441119"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 > [!IMPORTANT]
-> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается, но вся будущая разработка предназначена для модуля AZ. SQL. Сведения об этих командлетах см. в разделе [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы команд в модулях Az и AzureRm практически идентичны.
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается, но вся будущая разработка предназначена для модуля AZ. SQL. Сведения об этих командлетах см. в разделе [AzureRM.Sql](/powershell/module/AzureRM.Sql/). Аргументы команд в модулях Az и AzureRm практически идентичны.
 
 Для настройки TDE с помощью PowerShell нужно подключиться в качестве владельца Azure, участника или диспетчера безопасности SQL.
 
@@ -101,14 +101,14 @@ ms.locfileid: "92441119"
 
 | Командлет | Описание |
 | --- | --- |
-| [Set-Азсклдатабасетранспарентдатаенкриптион](https://docs.microsoft.com/powershell/module/az.sql/set-azsqldatabasetransparentdataencryption) |Включает или отключает прозрачное шифрование данных для базы данных.|
-| [Get-Азсклдатабасетранспарентдатаенкриптион](https://docs.microsoft.com/powershell/module/az.sql/get-azsqldatabasetransparentdataencryption) |Возвращает состояние прозрачного шифрования данных для базы данных. |
-| [Get-Азсклдатабасетранспарентдатаенкриптионактивити](https://docs.microsoft.com/powershell/module/az.sql/get-azsqldatabasetransparentdataencryptionactivity) |Проверяет ход шифрования базы данных. |
-| [Add-Азсклсерверкэйваулткэй](https://docs.microsoft.com/powershell/module/az.sql/add-azsqlserverkeyvaultkey) |Добавляет ключ Key Vault на сервер. |
-| [Get-Азсклсерверкэйваулткэй](https://docs.microsoft.com/powershell/module/az.sql/get-azsqlserverkeyvaultkey) |Возвращает ключи Key Vault для сервера.  |
-| [Set-Азсклсервертранспарентдатаенкриптионпротектор](https://docs.microsoft.com/powershell/module/az.sql/set-azsqlservertransparentdataencryptionprotector) |Задает средство защиты прозрачного шифрования данных для сервера. |
-| [Get-Азсклсервертранспарентдатаенкриптионпротектор](https://docs.microsoft.com/powershell/module/az.sql/get-azsqlservertransparentdataencryptionprotector) |Получение предохранителя TDE |
-| [Remove-Азсклсерверкэйваулткэй](https://docs.microsoft.com/powershell/module/az.sql/remove-azsqlserverkeyvaultkey) |Удаляет ключ Key Vault с сервера. |
+| [Set-Азсклдатабасетранспарентдатаенкриптион](/powershell/module/az.sql/set-azsqldatabasetransparentdataencryption) |Включает или отключает прозрачное шифрование данных для базы данных.|
+| [Get-Азсклдатабасетранспарентдатаенкриптион](/powershell/module/az.sql/get-azsqldatabasetransparentdataencryption) |Возвращает состояние прозрачного шифрования данных для базы данных. |
+| [Get-Азсклдатабасетранспарентдатаенкриптионактивити](/powershell/module/az.sql/get-azsqldatabasetransparentdataencryptionactivity) |Проверяет ход шифрования базы данных. |
+| [Add-Азсклсерверкэйваулткэй](/powershell/module/az.sql/add-azsqlserverkeyvaultkey) |Добавляет ключ Key Vault на сервер. |
+| [Get-Азсклсерверкэйваулткэй](/powershell/module/az.sql/get-azsqlserverkeyvaultkey) |Возвращает ключи Key Vault для сервера.  |
+| [Set-Азсклсервертранспарентдатаенкриптионпротектор](/powershell/module/az.sql/set-azsqlservertransparentdataencryptionprotector) |Задает средство защиты прозрачного шифрования данных для сервера. |
+| [Get-Азсклсервертранспарентдатаенкриптионпротектор](/powershell/module/az.sql/get-azsqlservertransparentdataencryptionprotector) |Получение предохранителя TDE |
+| [Remove-Азсклсерверкэйваулткэй](/powershell/module/az.sql/remove-azsqlserverkeyvaultkey) |Удаляет ключ Key Vault с сервера. |
 |  | |
 
 > [!IMPORTANT]
@@ -138,22 +138,22 @@ ms.locfileid: "92441119"
 
 | Get-Help | Описание |
 | --- | --- |
-|[Создание или обновление сервера](https://docs.microsoft.com/rest/api/sql/servers/createorupdate)|Добавляет удостоверение Azure Active Directory на сервер. (используется для предоставления доступа к Key Vault)|
-|[Создание или обновление ключа сервера](https://docs.microsoft.com/rest/api/sql/serverkeys/createorupdate)|Добавляет ключ Key Vault на сервер.|
-|[Удаление ключа сервера](https://docs.microsoft.com/rest/api/sql/serverkeys/delete)|Удаляет ключ Key Vault с сервера. |
-|[Получение ключей сервера](https://docs.microsoft.com/rest/api/sql/serverkeys/get)|Возвращает конкретный ключ Key Vault с сервера.|
-|[Список ключей серверов, упорядоченный по серверам](https://docs.microsoft.com/rest/api/sql/serverkeys/listbyserver)|Возвращает ключи Key Vault для сервера. |
-|[Создание или обновление предохранителя шифрования](https://docs.microsoft.com/rest/api/sql/encryptionprotectors/createorupdate)|Задает средство защиты TDE для сервера.|
-|[Получение предохранителя шифрования](https://docs.microsoft.com/rest/api/sql/encryptionprotectors/get)|Возвращает средство защиты TDE для сервера.|
-|[Список предохранителей шифрования, упорядоченный по серверам](https://docs.microsoft.com/rest/api/sql/encryptionprotectors/listbyserver)|Возвращает предохранители TDE для сервера. |
-|[Создание или обновление конфигурации TDE](https://docs.microsoft.com/rest/api/sql/transparentdataencryptions/createorupdate)|Включает или отключает прозрачное шифрование данных для базы данных.|
-|[Получение конфигурации TDE](https://docs.microsoft.com/rest/api/sql/transparentdataencryptions/get)|Получает конфигурацию прозрачного шифрования данных для базы данных.|
-|[Список результатов TDE, упорядоченный по конфигурации](https://docs.microsoft.com/rest/api/sql/transparentdataencryptionactivities/listbyconfiguration)|Получает результат шифрования для базы данных.|
+|[Создание или обновление сервера](/rest/api/sql/servers/createorupdate)|Добавляет удостоверение Azure Active Directory на сервер. (используется для предоставления доступа к Key Vault)|
+|[Создание или обновление ключа сервера](/rest/api/sql/serverkeys/createorupdate)|Добавляет ключ Key Vault на сервер.|
+|[Удаление ключа сервера](/rest/api/sql/serverkeys/delete)|Удаляет ключ Key Vault с сервера. |
+|[Получение ключей сервера](/rest/api/sql/serverkeys/get)|Возвращает конкретный ключ Key Vault с сервера.|
+|[Список ключей серверов, упорядоченный по серверам](/rest/api/sql/serverkeys/listbyserver)|Возвращает ключи Key Vault для сервера. |
+|[Создание или обновление предохранителя шифрования](/rest/api/sql/encryptionprotectors/createorupdate)|Задает средство защиты TDE для сервера.|
+|[Получение предохранителя шифрования](/rest/api/sql/encryptionprotectors/get)|Возвращает средство защиты TDE для сервера.|
+|[Список предохранителей шифрования, упорядоченный по серверам](/rest/api/sql/encryptionprotectors/listbyserver)|Возвращает предохранители TDE для сервера. |
+|[Создание или обновление конфигурации TDE](/rest/api/sql/transparentdataencryptions/createorupdate)|Включает или отключает прозрачное шифрование данных для базы данных.|
+|[Получение конфигурации TDE](/rest/api/sql/transparentdataencryptions/get)|Получает конфигурацию прозрачного шифрования данных для базы данных.|
+|[Список результатов TDE, упорядоченный по конфигурации](/rest/api/sql/transparentdataencryptionactivities/listbyconfiguration)|Получает результат шифрования для базы данных.|
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также:
 
 - SQL Server на виртуальной машине Azure также может использовать асимметричный ключ из Key Vault. Этапы настройки в этом случае будут отличаться от настройки асимметричного ключа, сохраненного в Базе данных SQL и Управляемом экземпляре Базы данных SQL. Дополнительные сведения см. в статье о [расширенном управлении ключами с помощью Azure Key Vault (SQL Server)](/sql/relational-databases/security/encryption/extensible-key-management-using-azure-key-vault-sql-server).
 - Общее описание TDE см. в разделе [прозрачное шифрование данных](/sql/relational-databases/security/encryption/transparent-data-encryption).
 - Дополнительные сведения о TDE с поддержкой BYOK для базы данных SQL Azure, Управляемый экземпляр Azure SQL и Azure синапсе см. в статье [прозрачное шифрование данных с поддержкой создание собственных ключей](transparent-data-encryption-byok-overview.md).
 - Чтобы приступить к использованию TDE с поддержкой создание собственных ключей, см. Руководство по [включению прозрачного шифрования данных с помощью собственного ключа из Key Vault](transparent-data-encryption-byok-configure.md).
-- Дополнительные сведения о Key Vault см. [в статье безопасный доступ к хранилищу ключей](https://docs.microsoft.com/azure/key-vault/key-vault-secure-your-key-vault).
+- Дополнительные сведения о Key Vault см. [в статье безопасный доступ к хранилищу ключей](../../key-vault/general/secure-your-key-vault.md).

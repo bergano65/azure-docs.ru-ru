@@ -11,12 +11,12 @@ author: MladjoA
 ms.author: mlandzic
 ms.reviewer: ''
 ms.date: 10/12/2020
-ms.openlocfilehash: 7b95ddfdb75dd5e5951a9c95442798692582fe6a
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: bf0cfd70c9850cc6a5ff4482b494d68700022ad8
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91978379"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92790633"
 ---
 # <a name="time-zones-in-azure-sql-managed-instance"></a>Часовые пояса в Azure SQL Управляемый экземпляр
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -51,7 +51,7 @@ ms.locfileid: "91978379"
 
 ### <a name="azure-resource-manager-template"></a>Шаблон Azure Resource Manager
 
-Укажите свойство Тимезонеид в [шаблоне диспетчер ресурсов](https://aka.ms/sql-mi-create-arm-posh) , чтобы задать часовой пояс во время создания экземпляра.
+Укажите свойство Тимезонеид в [шаблоне диспетчер ресурсов](./scripts/create-powershell-azure-resource-manager-template.md) , чтобы задать часовой пояс во время создания экземпляра.
 
 ```json
 "properties": {
@@ -95,7 +95,7 @@ ms.locfileid: "91978379"
 
 ## <a name="limitations"></a>Ограничения
 
-- Невозможно изменить часовой пояс существующего управляемого экземпляра. В качестве обходного решения создайте новый управляемый экземпляр с соответствующим часовым поясом, а затем выполните резервное копирование и восстановление вручную или рекомендуем выполнить [восстановление на момент времени с перекрестным экземпляром](https://docs.microsoft.com/azure/azure-sql/managed-instance/point-in-time-restore?tabs=azure-portal#restore-an-existing-database).
+- Невозможно изменить часовой пояс существующего управляемого экземпляра. В качестве обходного решения создайте новый управляемый экземпляр с соответствующим часовым поясом, а затем выполните резервное копирование и восстановление вручную или рекомендуем выполнить [восстановление на момент времени с перекрестным экземпляром](./point-in-time-restore.md?tabs=azure-portal#restore-an-existing-database).
 - Внешние процессы, запущенные из заданий агент SQL Server, не проблюдают часовой пояс экземпляра.
 
 ## <a name="list-of-supported-time-zones"></a>Список поддерживаемых часовых поясов
@@ -135,7 +135,7 @@ ms.locfileid: "91978379"
 | Тихоокеанское время SA (зима) | (UTC-04:00) Сантьяго |
 | Ньюфаундленд (зима) | (UTC-03:30) Ньюфаундленд |
 | Токантинсское время (зима) | (UTC-03:00) Арагуаяна |
-| Д. Южная Америка (зима) | (UTC-03:00) Бразилиа |
+| E. Южная Америка (зима) | (UTC-03:00) Бразилиа |
 | Стандартное восточное время SA | (UTC-03:00) Кайенна, Форталеза |
 | Аргентина, зимнее время | (UTC-03:00) Город Буэнос Айрес |
 | Гренландия, зимнее время | (UTC-03:00) Зимне |
@@ -161,7 +161,7 @@ ms.locfileid: "91978379"
 | Греция ЗИМАское время (зима) | (UTC + 02:00) Афины, Бухарест |
 | Ливанское время (зима) | (UTC + 02:00) Бейрут |
 | Египетское время (зима) | (UTC + 02:00) Каиро |
-| Д. Европа (зима) | (UTC + 02:00) Кишинев |
+| E. Европа (зима) | (UTC + 02:00) Кишинев |
 | Сирийское время (зима) | (UTC + 02:00) Дамаск |
 | Западная часть Западной банка (зима) | (UTC + 02:00) Газа, Хеврон |
 | Южная Африка (зима) | (UTC + 02:00) Хараре, Претория |
@@ -176,7 +176,7 @@ ms.locfileid: "91978379"
 | Арабская со стандартным временем | (UTC + 03:00) Кувейт, Эр-Рияд |
 | Беларусь (зима) | (UTC + 03:00) Минск |
 | Московское время (зима) | (UTC + 03:00) Москва, Санкт-Петербург |
-| Д. Африка (зима) | (UTC + 03:00) Найроби |
+| E. Африка (зима) | (UTC + 03:00) Найроби |
 | Иранское время (зима) | (UTC + 03:30) Тегеран |
 | Арабское зимаское время (зима) | (UTC + 04:00) Абу-Даби, Маскат |
 | Астраханьское время (зима) | (UTC + 04:00) Астрахань, Ульяновск |
@@ -218,7 +218,7 @@ ms.locfileid: "91978379"
 | Якутское время (зима) | (UTC + 09:00) Якутск |
 | CEN. Австралия (зима) | (UTC + 09:30) Аделаида |
 | Центральная Австралия (зима) | (UTC + 09:30) Дарвин |
-| Д. Австралия (зима) | (UTC + 10:00) Брисбен |
+| E. Австралия (зима) | (UTC + 10:00) Брисбен |
 | СИДНЕЙское время (зима) | (UTC + 10:00) Канберра, Мельбурн, Сидней |
 | Западная тихоокеанское время (зима) | (UTC + 10:00) Гуам, Порт-Морсби |
 | Тасманияское время (зима) | (UTC + 10:00) Хобарт |
@@ -243,7 +243,7 @@ ms.locfileid: "91978379"
 
 ## <a name="see-also"></a>См. также статью 
 
-- [CURRENT_TIMEZONE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/functions/current-timezone-transact-sql)
-- [CURRENT_TIMEZONE_ID (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/functions/current-timezone-id-transact-sql)
-- [AT TIME ZONE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/queries/at-time-zone-transact-sql)
-- [sys.time_zone_info (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-time-zone-info-transact-sql)
+- [CURRENT_TIMEZONE (Transact-SQL)](/sql/t-sql/functions/current-timezone-transact-sql)
+- [CURRENT_TIMEZONE_ID (Transact-SQL)](/sql/t-sql/functions/current-timezone-id-transact-sql)
+- [AT TIME ZONE (Transact-SQL)](/sql/t-sql/queries/at-time-zone-transact-sql)
+- [sys.time_zone_info (Transact-SQL)](/sql/relational-databases/system-catalog-views/sys-time-zone-info-transact-sql)

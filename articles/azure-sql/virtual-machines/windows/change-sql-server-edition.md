@@ -13,12 +13,12 @@ ms.date: 01/14/2020
 ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 06587d80851839188f8d8dcfa870d331e8fa96d3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 997e867798922975757a588ef50248f0d09a96e0
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91293362"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92789851"
 ---
 # <a name="in-place-change-of-sql-server-edition-on-azure-vm"></a>Замена выпуска SQL Server на месте на виртуальной машине Azure
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -34,7 +34,7 @@ ms.locfileid: "91293362"
 Чтобы выполнить замену выпуска SQL Server на месте, вам потребуется следующее: 
 
 - [Подписка Azure](https://azure.microsoft.com/free/).
-- [Виртуальная машина SQL Server под управлением Windows](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-portal-sql-server-provision), зарегистрированная с помощью [поставщика ресурсов виртуальных машин SQL](sql-vm-resource-provider-register.md).
+- [Виртуальная машина SQL Server под управлением Windows](./create-sql-vm-portal.md), зарегистрированная с помощью [поставщика ресурсов виртуальных машин SQL](sql-vm-resource-provider-register.md).
 - Установочный носитель с **требуемым выпуском** SQL Server. Клиенты, у которых есть программа [Software Assurance](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default), установочный носитель могут получить в [Центре корпоративного лицензирования](https://www.microsoft.com/Licensing/servicecenter/default.aspx). Клиенты, у которых нет программы Software Assurance, могут воспользоваться установочным носителем из образа виртуальной машины SQL Server в Azure Marketplace, который содержит нужный выпуск (обычно находятся по адресу `C:\SQLServerFull`). 
 
 
@@ -46,11 +46,11 @@ ms.locfileid: "91293362"
 Чтобы обновить выпуск SQL Server, получите установочный носитель SQL Server с нужным выпуском SQL Server, а затем выполните следующие действия:
 
 1. Откройте файл Setup.exe с установочного носителя SQL Server. 
-1. Перейдите в раздел **Обслуживание** и выберите параметр **Обновление выпуска**. 
+1. Перейдите в раздел **Обслуживание** и выберите параметр **Обновление выпуска** . 
 
    ![Выбор параметра для обновления выпуска SQL Server](./media/change-sql-server-edition/edition-upgrade.png)
 
-1. Выберите **Далее** пока не откроется страница **Все готово для обновления выпуска**, а затем щелкните **Обновить**. Окно установки может не отвечать на запросы в течение нескольких минут, пока изменение вступит в силу. Откроется страница **Завершено**, которая подтвердит, что обновление выпуска завершено. 
+1. Выберите **Далее** пока не откроется страница **Все готово для обновления выпуска** , а затем щелкните **Обновить** . Окно установки может не отвечать на запросы в течение нескольких минут, пока изменение вступит в силу. Откроется страница **Завершено** , которая подтвердит, что обновление выпуска завершено. 
 
 После обновления выпуска SQL Server измените свойство выпуска виртуальной машины SQL Server на портале Azure. При этом будут обновлены метаданные и данные для выставления счетов, связанные с этой виртуальной машиной.
 
@@ -79,12 +79,12 @@ ms.locfileid: "91293362"
 
 1. Войдите на [портал Azure](https://portal.azure.com). 
 1. Перейдите к ресурсу виртуальной машины SQL Server. 
-1. В разделе **Параметры** выберите **Конфигурация**. Затем выберите нужный выпуск SQL Server из раскрывающегося списка в разделе **Выпуск**. 
+1. В разделе **Параметры** выберите **Конфигурация** . Затем выберите нужный выпуск SQL Server из раскрывающегося списка в разделе **Выпуск** . 
 
    ![Изменение метаданных выпуска](./media/change-sql-server-edition/edition-change-in-portal.png)
 
 1. Обратите внимание на предупреждение о том, что сначала необходимо изменить выпуск SQL Server, а свойство выпуска должно соответствовать выпуску SQL Server. 
-1. Для применения изменений метаданных выпуска выберите **Применить**. 
+1. Для применения изменений метаданных выпуска выберите **Применить** . 
 
 
 ## <a name="remarks"></a>Remarks
@@ -102,5 +102,3 @@ ms.locfileid: "91293362"
 * [Вопросы и ответы об SQL Server на виртуальных машинах Windows](frequently-asked-questions-faq.md)
 * [Руководство по ценам для виртуальных машин SQL Server в Azure](pricing-guidance.md)
 * [Заметки о выпуске SQL Server на виртуальных машинах Windows](doc-changes-updates-release-notes.md)
-
-

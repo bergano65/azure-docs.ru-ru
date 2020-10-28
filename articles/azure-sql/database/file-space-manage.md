@@ -11,12 +11,12 @@ author: oslake
 ms.author: moslake
 ms.reviewer: jrasnick, sstein
 ms.date: 03/12/2019
-ms.openlocfilehash: 2e751a77d40403c7bdd4644e8e6fb03ff89063e8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3a46e47d6e12d52113bf63342c84a58ca98743d0
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91335077"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92789613"
 ---
 # <a name="manage-file-space-for-databases-in-azure-sql-database"></a>Управление пространством для баз данных в базе данных SQL Azure
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -40,13 +40,13 @@ ms.locfileid: "91335077"
 
 Большинство метрик дискового пространства, отображаемых на портале Azure, и следующие API-интерфейсы измеряют только размер используемых страниц данных:
 
-- API метрик на основе Azure Resource Manager, включая PowerShell [get-metrics](https://docs.microsoft.com/powershell/module/az.monitor/get-azmetric).
-- T-SQL: [sys.dm_db_resource_stats](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-db-resource-stats-azure-sql-database).
+- API метрик на основе Azure Resource Manager, включая PowerShell [get-metrics](/powershell/module/az.monitor/get-azmetric).
+- T-SQL: [sys.dm_db_resource_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-db-resource-stats-azure-sql-database).
 
 Тем не менее следующие API-интерфейсы также измеряют размер пространства, выделяемого для баз данных и эластичных пулов:
 
-- T-SQL: [sys.resource_stats](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-resource-stats-azure-sql-database).
-- T-SQL: [sys.elastic_pool_resource_stats](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-elastic-pool-resource-stats-azure-sql-database).
+- T-SQL: [sys.resource_stats](/sql/relational-databases/system-catalog-views/sys-resource-stats-azure-sql-database).
+- T-SQL: [sys.elastic_pool_resource_stats](/sql/relational-databases/system-catalog-views/sys-elastic-pool-resource-stats-azure-sql-database).
 
 ### <a name="shrinking-data-files"></a>Сжатие файлов данных
 
@@ -148,7 +148,7 @@ ORDER BY end_time DESC
 > [!IMPORTANT]
 > Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка сосредоточена на модуле Az.Sql. Исправления ошибок для модуля AzureRM будут продолжать выпускаться как минимум до декабря 2020 г. Аргументы команд в модулях Az и AzureRm практически идентичны. Дополнительные сведения о совместимости см. в статье [Знакомство с новым модулем Az для Azure PowerShell](/powershell/azure/new-azureps-module-az).
 
-Сценарию PowerShell требуется модуль SQL Server PowerShell. Дополнительные сведения см. в разделе [Установка модуля SQL Server PowerShell](https://docs.microsoft.com/sql/powershell/download-sql-server-ps-module).
+Сценарию PowerShell требуется модуль SQL Server PowerShell. Дополнительные сведения см. в разделе [Установка модуля SQL Server PowerShell](/sql/powershell/download-sql-server-ps-module).
 
 ```powershell
 $resourceGroupName = "<resourceGroupName>"
@@ -214,7 +214,7 @@ DBCC SHRINKDATABASE (N'db1')
 
 Эта команда может влиять на производительность базы данных во время выполнения, поэтому по возможности ее следует выполнять в периоды низкого уровня использования.  
 
-Дополнительные сведения об этой команде см. в статье [DBCC SHRINKDATABASE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-shrinkdatabase-transact-sql).
+Дополнительные сведения об этой команде см. в статье [DBCC SHRINKDATABASE (Transact-SQL)](/sql/t-sql/database-console-commands/dbcc-shrinkdatabase-transact-sql).
 
 ### <a name="auto-shrink"></a>Автоматическое сжатие
 
@@ -226,13 +226,13 @@ DBCC SHRINKDATABASE (N'db1')
 ALTER DATABASE [db1] SET AUTO_SHRINK ON
 ```
 
-Дополнительные сведения об этой команде см. в статье [Параметры ALTER DATABASE SET (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql-set-options?view=azuresqldb-current).
+Дополнительные сведения об этой команде см. в статье [Параметры ALTER DATABASE SET (Transact-SQL)](/sql/t-sql/statements/alter-database-transact-sql-set-options?view=azuresqldb-current).
 
 ### <a name="rebuild-indexes"></a>Перестроение индексов
 
-После сжатия файлов базы данных индексы могут стать фрагментированными, а эффективность оптимизации их производительности может ухудшиться. Если происходит замедление, попробуйте перестроить индексы базы данных. Дополнительные сведения о фрагментации и перестроении индексов см. в статье [Реорганизация и перестроение индексов](https://docs.microsoft.com/sql/relational-databases/indexes/reorganize-and-rebuild-indexes).
+После сжатия файлов базы данных индексы могут стать фрагментированными, а эффективность оптимизации их производительности может ухудшиться. Если происходит замедление, попробуйте перестроить индексы базы данных. Дополнительные сведения о фрагментации и перестроении индексов см. в статье [Реорганизация и перестроение индексов](/sql/relational-databases/indexes/reorganize-and-rebuild-indexes).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о максимальных размерах базы данных см. в статьях:
   - [Ограничения ресурсов для отдельной базы данных в Базе данных SQL Azure при использовании модели приобретения на основе виртуальных ядер](resource-limits-vcore-single-databases.md)

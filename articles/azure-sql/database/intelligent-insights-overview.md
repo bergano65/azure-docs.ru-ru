@@ -11,12 +11,12 @@ author: danimir
 ms.author: danil
 ms.reviewer: jrasnik, sstein
 ms.date: 06/12/2020
-ms.openlocfilehash: 4f6bbbdbbee6cf83a6bea463cf200be0cf671897
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6133d838fa31919a37ddd633193e5559c50de9b6
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91317061"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92790446"
 ---
 # <a name="intelligent-insights-using-ai-to-monitor-and-troubleshoot-database-performance-preview"></a>Intelligent Insights использование искусственного интеллекта для отслеживания и устранения неполадок производительности базы данных (Предварительная версия)
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -49,7 +49,7 @@ Intelligent Insights анализирует производительность
 
 Выявленные снижения производительности базы данных записываются в журнал SQLInsights с помощью интеллектуальных записей, состоящих из следующих свойств:
 
-| Свойство | Подробнее |
+| Свойство | Сведения |
 | :------------------- | ------------------- |
 | сведения о базе данных; | Метаданные базы данных, для которой была обнаружена аналитика. Например, URI ресурса. |
 | Наблюдаемый диапазон времени | Время начала и окончания периода обнаруженной аналитики. |
@@ -85,7 +85,7 @@ Intelligent Insights неисправностей обнаружения и ус
 
 Выходные данные Intelligent Insights могут быть передаваться в поток в одном из нескольких назначений для анализа:
 
-- Выходные данные в Log Analytics рабочей области можно использовать с [аналитика SQL Azure](https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-sql) для просмотра аналитических сведений через пользовательский интерфейс портал Azure. Это интегрированное решение Azure, а также наиболее типичный способ просмотра аналитических сведений.
+- Выходные данные в Log Analytics рабочей области можно использовать с [аналитика SQL Azure](../../azure-monitor/insights/azure-sql.md) для просмотра аналитических сведений через пользовательский интерфейс портал Azure. Это интегрированное решение Azure, а также наиболее типичный способ просмотра аналитических сведений.
 - Вывод потоковой передачи в концентраторы событий Azure можно использовать для разработки пользовательских сценариев мониторинга и оповещения.
 - Выходные данные, потоковые передачи в службу хранилища Azure можно использовать для разработки пользовательских приложений, например для создания пользовательских отчетов, долгосрочной архивации данных и т. д.
 
@@ -107,7 +107,7 @@ Intelligent Insights неисправностей обнаружения и ус
 
 ### <a name="set-up-with-event-hubs"></a>Настройка для использования с Центрами событий
 
-Чтобы использовать Intelligent Insights с концентраторами событий, настройте Intelligent Insights данные журнала для потоковой передачи в концентраторы событий, см. раздел [метрики и журнал диагностики](metrics-diagnostic-telemetry-logging-streaming-export-configure.md) и [потоковая передача журналов диагностики Azure в концентраторы событий](../../azure-monitor/platform/resource-logs-stream-event-hubs.md).
+Чтобы использовать Intelligent Insights с концентраторами событий, настройте Intelligent Insights данные журнала для потоковой передачи в концентраторы событий, см. раздел [метрики и журнал диагностики](metrics-diagnostic-telemetry-logging-streaming-export-configure.md) и [потоковая передача журналов диагностики Azure в концентраторы событий](../../azure-monitor/platform/resource-logs.md#send-to-azure-event-hubs).
 
 Сведения об использовании концентраторов событий для настройки настраиваемого мониторинга и оповещений см. в статье [что делать с метриками и журналами диагностики в концентраторах событий](metrics-diagnostic-telemetry-logging-streaming-export-configure.md#what-to-do-with-metrics-and-resource-logs-in-event-hubs).
 
@@ -185,7 +185,7 @@ Intelligent Insights неисправностей обнаружения и ус
 
 Если какое-либо из отслеживаемых критических исключений превышает абсолютное пороговое значение, управляемое системой, создается ценная аналитика, содержащая сведения о критическом исключении.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как [осуществлять мониторинг баз данных с помощью SQL Analytics](../../azure-monitor/insights/azure-sql.md).
 - Узнайте, как [устранять проблемы с производительностью Intelligent Insights](intelligent-insights-troubleshoot-performance.md).

@@ -12,13 +12,13 @@ ms.workload: iaas-sql-server
 ms.date: 08/20/2020
 ms.author: mathoma
 ms.reviewer: jroth
-ms.custom: seo-lt-2019
-ms.openlocfilehash: 78414e26836d1547fe195a0a7844b6a98bb0dfc8
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.custom: seo-lt-2019, devx-track-azurecli
+ms.openlocfilehash: a85c1326501a362371d3bc961f5c5ae448e8d22e
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92168262"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92790089"
 ---
 # <a name="use-powershell-or-az-cli-to-configure-an-availability-group-for-sql-server-on-azure-vm"></a>Настройка группы доступности для SQL Server на виртуальной машине Azure с помощью PowerShell или AZ CLI 
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -35,7 +35,7 @@ ms.locfileid: "92168262"
 
 - [Подписка Azure](https://azure.microsoft.com/free/).
 - Группа ресурсов с контроллером домена. 
-- Одна или несколько виртуальных машин, присоединенных к домену, [в Azure под управлением SQL Server 2016 (или более поздней версии) Enterprise Edition](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-portal-sql-server-provision) в *одной* группе доступности или *разных* зонах доступности, [зарегистрированных в поставщике ресурсов виртуальной машины SQL](sql-vm-resource-provider-register.md).  
+- Одна или несколько виртуальных машин, присоединенных к домену, [в Azure под управлением SQL Server 2016 (или более поздней версии) Enterprise Edition](./create-sql-vm-portal.md) в *одной* группе доступности или *разных* зонах доступности, [зарегистрированных в поставщике ресурсов виртуальной машины SQL](sql-vm-resource-provider-register.md).  
 - Последняя версия [PowerShell](/powershell/scripting/install/installing-powershell) или [Azure CLI](/cli/azure/install-azure-cli). 
 - Два доступных (неиспользуемых сущностью) IP-адреса. Один предназначен для внутренней подсистемы балансировки нагрузки. Второй — для прослушивателя группы доступности в той же подсети, что и группа доступности. Если вы используете существующую подсистему балансировки нагрузки, для прослушивателя группы доступности требуется только один доступный IP-адрес. 
 
@@ -64,7 +64,7 @@ az storage account create -n <name> -g <resource group name> -l <region> `
 ```
 
 >[!TIP]
-> Если вы используете устаревшую версию Azure CLI, может появиться сообщение об ошибке `az sql: 'vm' is not in the 'az sql' command group`. Скачайте [последнюю версию Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli-windows), чтобы устранить эту ошибку.
+> Если вы используете устаревшую версию Azure CLI, может появиться сообщение об ошибке `az sql: 'vm' is not in the 'az sql' command group`. Скачайте [последнюю версию Azure CLI](/cli/azure/install-azure-cli-windows), чтобы устранить эту ошибку.
 
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
@@ -84,7 +84,7 @@ New-AzStorageAccount -ResourceGroupName <resource group name> -Name <name> `
 
 ## <a name="define-cluster-metadata"></a>Определение метаданных кластера
 
-Группа команд [az sql vm group](https://docs.microsoft.com/cli/azure/sql/vm/group) Azure CLI управляет метаданными службы отказоустойчивого кластера Windows Server (WSFC), в которой размещается группа доступности. К метаданным кластера относятся домен Active Directory, учетные записи кластера, учетные записи хранения, которые используются в роли облака-свидетеля, и версия SQL Server. Используйте [az sql vm group create](https://docs.microsoft.com/cli/azure/sql/vm/group#az-sql-vm-group-create) для определения метаданных для WSFC, чтобы при добавлении первой виртуальной машины SQL Server был создан кластер в соответствии с определением. 
+Группа команд [az sql vm group](/cli/azure/sql/vm/group) Azure CLI управляет метаданными службы отказоустойчивого кластера Windows Server (WSFC), в которой размещается группа доступности. К метаданным кластера относятся домен Active Directory, учетные записи кластера, учетные записи хранения, которые используются в роли облака-свидетеля, и версия SQL Server. Используйте [az sql vm group create](/cli/azure/sql/vm/group#az-sql-vm-group-create) для определения метаданных для WSFC, чтобы при добавлении первой виртуальной машины SQL Server был создан кластер в соответствии с определением. 
 
 Следующий фрагмент кода определяет метаданные для кластера:
 
@@ -129,7 +129,7 @@ $group = New-AzSqlVMGroup -Name <name> -Location <regio>
 
 ## <a name="add-vms-to-the-cluster"></a>Добавление виртуальных машин в кластер
 
-При добавлении первой виртуальной машины SQL Server в кластер создается кластер. Вы можете создать кластер с указанным ранее именем, установить для него роль на виртуальных машинах SQL Server, а также добавить их в кластер с помощью команды [az sql vm add-to-group](https://docs.microsoft.com/cli/azure/sql/vm#az-sql-vm-add-to-group). Выполните команду `az sql vm add-to-group` еще раз, чтобы добавить в созданный кластер дополнительные виртуальные машины SQL Server. 
+При добавлении первой виртуальной машины SQL Server в кластер создается кластер. Вы можете создать кластер с указанным ранее именем, установить для него роль на виртуальных машинах SQL Server, а также добавить их в кластер с помощью команды [az sql vm add-to-group](/cli/azure/sql/vm#az-sql-vm-add-to-group). Выполните команду `az sql vm add-to-group` еще раз, чтобы добавить в созданный кластер дополнительные виртуальные машины SQL Server. 
 
 Следующий фрагмент кода создает кластер и добавляет в него первую виртуальную машину SQL Server: 
 
@@ -240,16 +240,16 @@ New-AzLoadBalancer -name sqlILB -ResourceGroupName <resource group name> `
 ---
 
 >[!IMPORTANT]
-> Ресурс общедоступного IP-адреса для каждой виртуальной машины SQL Server должен иметь номер SKU "Стандартный", чтобы обеспечить совместимость с подсистемой балансировки нагрузки ценовой категории "Стандартный". Чтобы определить номер SKU для ресурса общедоступного IP-адреса виртуальной машины, найдите **группу ресурсов** и выберите ресурс **Общедоступный IP-адрес** для требуемой виртуальной машины SQL Server, а затем найдите для него значение параметра **Номер SKU** на панели **Обзор**.  
+> Ресурс общедоступного IP-адреса для каждой виртуальной машины SQL Server должен иметь номер SKU "Стандартный", чтобы обеспечить совместимость с подсистемой балансировки нагрузки ценовой категории "Стандартный". Чтобы определить номер SKU для ресурса общедоступного IP-адреса виртуальной машины, найдите **группу ресурсов** и выберите ресурс **Общедоступный IP-адрес** для требуемой виртуальной машины SQL Server, а затем найдите для него значение параметра **Номер SKU** на панели **Обзор** .  
 
 ## <a name="create-listener"></a>Создание прослушивателя
 
 После создания группы доступности вручную можно создать прослушиватель с помощью команды [az sql vm ag-listener](/cli/azure/sql/vm/group/ag-listener#az-sql-vm-group-ag-listener-create). 
 
-*Идентификатор ресурса подсети* — это значение `/subnets/<subnetname>`, которое добавляется к идентификатору ресурса виртуальной сети. Чтобы определить идентификатор ресурса подсети, выполните следующие действия:
+*Идентификатор ресурса подсети*  — это значение `/subnets/<subnetname>`, которое добавляется к идентификатору ресурса виртуальной сети. Чтобы определить идентификатор ресурса подсети, выполните следующие действия:
    1. Перейдите к группе ресурсов на [портале Azure](https://portal.azure.com). 
    1. Выберите ресурс виртуальной сети. 
-   1. Выберите **Свойства** в области **Параметры**. 
+   1. Выберите **Свойства** в области **Параметры** . 
    1. Определите идентификатор ресурса для виртуальной сети и добавьте `/subnets/<subnetname>` к нему в конце, чтобы создать идентификатор ресурса подсети. Пример:
       - Ваш идентификатор ресурса виртуальной сети — `/subscriptions/a1a1-1a11a/resourceGroups/SQLVM-RG/providers/Microsoft.Network/virtualNetworks/SQLVMvNet`.
       - Ваше имя подсети — `default`.
@@ -521,4 +521,4 @@ Remove-AzSqlVMGroup -ResourceGroupName "<resource group name>" -Name "<cluster n
 * [Администрирование группы доступности (&#40;SQL Server&#41;)](/sql/database-engine/availability-groups/windows/administration-of-an-availability-group-sql-server)   
 * [Отслеживание групп доступности (SQL Server)](/sql/database-engine/availability-groups/windows/monitoring-of-availability-groups-sql-server)
 * [Общие сведения об инструкциях Transact-SQL для групп доступности Always On (&#40;SQL Server&#41;)](/sql/database-engine/availability-groups/windows/transact-sql-statements-for-always-on-availability-groups)   
-* [Обзор командлетов PowerShell для групп доступности Always On (&#40;SQL Server&#41;)](/sql/database-engine/availability-groups/windows/overview-of-powershell-cmdlets-for-always-on-availability-groups-sql-server)  
+* [Обзор командлетов PowerShell для групп доступности Always On (&#40;SQL Server&#41;)](/sql/database-engine/availability-groups/windows/overview-of-powershell-cmdlets-for-always-on-availability-groups-sql-server)

@@ -10,17 +10,17 @@ author: rmatchoro
 ms.author: ronmat
 ms.reviewer: vanto
 ms.date: 09/21/2020
-ms.openlocfilehash: 678de4354012dcea5b954980109fd71c1004aca4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 68ab5c820f3a67a7fd332557d47918d2a7aa4b62
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91619293"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92789426"
 ---
 # <a name="configure-advanced-threat-protection-for-azure-sql-database"></a>Настройка расширенной защиты от угроз для базы данных SQL Azure
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
 
-[Расширенная защита от угроз](threat-detection-overview.md) для базы данных SQL Azure обнаруживает аномальные действия, указывающие на необычные и потенциально опасные попытки доступа к базам данных или их использования. Расширенная защита от угроз позволяет определить **потенциальное внедрение кода SQL**, **получить доступ из необычного расположения или центра обработки данных**, **получить доступ из незнакомого основного или потенциально опасного приложения**и **выполнить подбор учетных данных SQL** [. Дополнительные](threat-detection-overview.md#alerts)сведения см.
+[Расширенная защита от угроз](threat-detection-overview.md) для базы данных SQL Azure обнаруживает аномальные действия, указывающие на необычные и потенциально опасные попытки доступа к базам данных или их использования. Расширенная защита от угроз позволяет определить **потенциальное внедрение кода SQL** , **получить доступ из необычного расположения или центра обработки данных** , **получить доступ из незнакомого основного или потенциально опасного приложения** и **выполнить подбор учетных данных SQL** [. Дополнительные](threat-detection-overview.md#alerts)сведения см.
 
 Вы можете получать уведомления об обнаруженных угрозах с помощью [уведомлений по электронной почте](threat-detection-overview.md#explore-detection-of-a-suspicious-event) или [портал Azure](threat-detection-overview.md#explore-alerts-in-the-azure-portal)
 
@@ -29,7 +29,7 @@ ms.locfileid: "91619293"
 ## <a name="set-up-advanced-threat-protection-in-the-azure-portal"></a>Настройка расширенной защиты от угроз в портал Azure
 
 1. Войдите на [портал Azure](https://portal.azure.com).
-2. Перейдите на страницу конфигурации сервера, который требуется защитить. В окне Параметры безопасности выберите **Центр безопасности**.
+2. Перейдите на страницу конфигурации сервера, который требуется защитить. В окне Параметры безопасности выберите **Центр безопасности** .
 3. На странице конфигурации **защитника Azure** выполните следующие действия.
 
    - Включите защитник Azure на сервере.
@@ -39,11 +39,11 @@ ms.locfileid: "91619293"
 
 Пример сценария см. в статье [Настройка аудита и расширенная защита от угроз с помощью PowerShell](scripts/auditing-threat-detection-powershell-configure.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [Advanced Threat protection](threat-detection-overview.md).
 - Дополнительные сведения о [расширенной защите от угроз в SQL управляемый экземпляр](../managed-instance/threat-detection-configure.md).  
 - Дополнительные сведения о [защитнике Azure для SQL](azure-defender-for-sql.md).
 - Дополнительные сведения об [аудите](../../azure-sql/database/auditing-overview.md).
-- Дополнительные сведения о [центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-intro)
-- Дополнительные сведения о ценах см. на [странице цен на базу данных SQL](https://azure.microsoft.com/pricing/details/sql-database/) .  
+- Дополнительные сведения о [центре безопасности Azure](../../security-center/security-center-introduction.md)
+- Дополнительные сведения о ценах см. на [странице цен на базу данных SQL](https://azure.microsoft.com/pricing/details/sql-database/) .

@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 01/22/2020
-ms.openlocfilehash: f30f92df505abeff108f8d1c503cb33162d2e409
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 0eb9afc179f1dd2559f0db7b212f6b3a1da15824
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92533552"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92790922"
 ---
 # <a name="cluster-creation-fails-with-invalidnetworkconfigurationerrorcode-in-azure-hdinsight"></a>Сбой создания кластера с InvalidNetworkConfigurationErrorCode в Azure HDInsight
 
@@ -68,6 +68,19 @@ ms.locfileid: "92533552"
 
     Если определены маршруты, убедитесь, что существуют маршруты для IP-адресов для региона, в котором развернут кластер, а **NextHopType** для каждого маршрута — в **Интернете** . Для каждого обязательного IP-адреса, описанного в упомянутой выше статье, должен быть определен маршрут.
 
+## <a name="failed-to-establish-an-outbound-connection-from-the-cluster-for-the-communication-with-the-hdinsight-resource-provider-please-ensure-that-outbound-connectivity-is-allowed"></a>"Не удалось установить исходящее подключение из кластера для связи с поставщиком ресурсов HDInsight. Убедитесь, что исходящее подключение разрешено ".
+
+### <a name="issue"></a>Проблема
+
+Описание ошибки "содержит" не удалось установить исходящее подключение из кластера для связи с поставщиком ресурсов HDInsight. Убедитесь, что исходящее подключение разрешено ".
+
+### <a name="cause"></a>Причина
+
+При использовании частных связанных кластеров HDInsight исходящий доступ из кластера должен быть настроен на разрешение подключений к поставщику ресурсов HDInsight.
+
+### <a name="resolution"></a>Решение
+
+* Чтобы устранить эту проблему, ознакомьтесь с инструкциями по настройке закрытой ссылки HDInsight по [ссылке Настройка частной связи](../hdinsight-private-link.md) .
 ---
 
 ## <a name="virtual-network-configuration-is-not-compatible-with-hdinsight-requirement"></a>"Конфигурация виртуальной сети несовместима с требованиями к HDInsight"

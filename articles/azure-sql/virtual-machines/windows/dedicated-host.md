@@ -13,20 +13,20 @@ ms.workload: iaas-sql-server
 ms.date: 08/12/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 140d95aeb7baf4b342044bc178d108239236229b
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: bb80abc35aedcdf0b46cefa279e477739cf1df6b
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92677680"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92789800"
 ---
 # <a name="run-sql-server-vm-on-an-azure-dedicated-host"></a>Запуск виртуальной машины SQL Server в службе "Выделенный узел Azure" 
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
 
-В этой статье подробно описаны особенности использования виртуальной машины SQL Server со службой [Выделенный узел Azure](/azure/virtual-machines/windows/dedicated-hosts). Дополнительные сведения о службе "Выделенный узел Azure" можно найти в [этой записи блога](https://azure.microsoft.com/blog/introducing-azure-dedicated-host/). 
+В этой статье подробно описаны особенности использования виртуальной машины SQL Server со службой [Выделенный узел Azure](../../../virtual-machines/dedicated-hosts.md). Дополнительные сведения о службе "Выделенный узел Azure" можно найти в [этой записи блога](https://azure.microsoft.com/blog/introducing-azure-dedicated-host/). 
 
 ## <a name="overview"></a>Обзор
-[Выделенный узел Azure](/azure/virtual-machines/windows/dedicated-hosts) — это служба, предоставляющая выделенные для одной подписки Azure физические серверы, способные вместить одну или несколько виртуальных машин. Выделенными узлами называют те же физические серверы, которые используются в центрах обработки данных корпорации Майкрософт и предоставляются в качестве ресурсов. Вы можете подготавливать выделенные узлы в пределах региона, зоны доступности и домена сбоя. Затем вы можете разместить в подготовленных узлах виртуальные машины с любой конфигурацией, которая соответствует вашим потребностям.
+[Выделенный узел Azure](../../../virtual-machines/dedicated-hosts.md) — это служба, предоставляющая выделенные для одной подписки Azure физические серверы, способные вместить одну или несколько виртуальных машин. Выделенными узлами называют те же физические серверы, которые используются в центрах обработки данных корпорации Майкрософт и предоставляются в качестве ресурсов. Вы можете подготавливать выделенные узлы в пределах региона, зоны доступности и домена сбоя. Затем вы можете разместить в подготовленных узлах виртуальные машины с любой конфигурацией, которая соответствует вашим потребностям.
 
 ## <a name="limitations"></a>Ограничения
 
@@ -54,7 +54,7 @@ ms.locfileid: "92677680"
 
 
 ## <a name="provisioning"></a>Подготовка  
-Подготовка виртуальной машины SQL Server для использования на выделенном узле ничем не отличается от подготовки любой виртуальной машины Azure. Это можно сделать с помощью [Azure PowerShell](../../../virtual-machines/windows/dedicated-hosts-powershell.md), [портала Azure](../../../virtual-machines/windows/dedicated-hosts-portal.md) и [Azure CLI](../../../virtual-machines/linux/dedicated-hosts-cli.md).
+Подготовка виртуальной машины SQL Server для использования на выделенном узле ничем не отличается от подготовки любой виртуальной машины Azure. Это можно сделать с помощью [Azure PowerShell](../../../virtual-machines/windows/dedicated-hosts-powershell.md), [портала Azure](../../../virtual-machines/dedicated-hosts-portal.md) и [Azure CLI](../../../virtual-machines/linux/dedicated-hosts-cli.md).
 
 Процесс добавления существующей виртуальной машины SQL Server на выделенный узел требует остановки работы, но не влияет на данные и не приводит к потере данных. Тем не менее, перед перемещением необходимо создать резервную копию всех баз данных, включая системные базы данных.
 
@@ -78,5 +78,3 @@ A. Клиенты могут с пользой применить существ
 * [Вопросы и ответы об SQL Server на виртуальных машинах Windows](frequently-asked-questions-faq.md)
 * [Руководство по ценам для виртуальных машин SQL Server в Azure](pricing-guidance.md)
 * [Заметки о выпуске SQL Server на виртуальных машинах Windows](doc-changes-updates-release-notes.md)
-
-

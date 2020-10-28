@@ -11,18 +11,18 @@ author: denzilribeiro
 ms.author: denzilr
 ms.reviewer: sstein
 ms.date: 09/02/2020
-ms.openlocfilehash: 36010ff0206ddf9dae08391eb6e4c3dd7762cc10
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2e01e74f5086f7f1eb7e85661fbd35f452d8dae8
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91319339"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92790208"
 ---
 # <a name="accelerate-real-time-big-data-analytics-using-the-spark-connector"></a>Ускорение анализа больших данных в реальном времени с помощью соединителя Spark
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
 
 > [!NOTE]
-> По отношению к Sep 2020 этот соединитель активно не поддерживается. Однако теперь доступен [соединитель Apache Spark для SQL Server и SQL Azure](https://docs.microsoft.com/sql/connect/spark/connector) , благодаря поддержке привязок Python и R, проще использовать интерфейс для выполнения операций вставки данных и много других улучшений. Мы настоятельно рекомендуем вам оценить и использовать новый соединитель вместо этого. Сведения о старом соединителе (Эта страница) сохраняется только в целях архивирования.
+> По отношению к Sep 2020 этот соединитель активно не поддерживается. Однако теперь доступен [соединитель Apache Spark для SQL Server и SQL Azure](/sql/connect/spark/connector) , благодаря поддержке привязок Python и R, проще использовать интерфейс для выполнения операций вставки данных и много других улучшений. Мы настоятельно рекомендуем вам оценить и использовать новый соединитель вместо этого. Сведения о старом соединителе (Эта страница) сохраняется только в целях архивирования.
 
 Соединитель Spark позволяет базам данных SQL Azure, Azure SQL Управляемый экземпляр и SQL Server действовать в качестве источника входных данных или приемника выходных данных для заданий Spark. Она позволяет использовать данные о транзакциях в реальном времени в аналитике больших данных и сохранять результаты для нерегламентированных запросов или отчетов. По сравнению со встроенным соединителем JDBC этот соединитель обеспечивает возможность выполнения операций вставки данных в базу данных. Он может более эффективны вставку строк с помощью 10 раз в 10x более высокую производительность. Соединитель Spark поддерживает проверку подлинности Azure Active Directory (Azure AD) для подключения к базе данных SQL Azure и Управляемый экземпляр SQL Azure, что позволяет подключать базу данных из Azure Databricks с помощью учетной записи Azure AD. Она предоставляет аналогичные интерфейсы со встроенным соединителем JDBC. Имеющиеся задания Spark можно легко перенести, чтобы использовать этот соединитель.
 
@@ -231,11 +231,11 @@ df.bulkCopyToSqlDB(bulkCopyConfig, bulkCopyMetadata)
 //df.bulkCopyToSqlDB(bulkCopyConfig) if no metadata is specified.
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы этого еще не сделали, скачайте соединитель Spark из [репозитория Azure-sqldb-Spark GitHub](https://github.com/Azure/azure-sqldb-spark) и изучите дополнительные ресурсы в репозитории:
 
 - [Примеры записных книжек Azure Databricks](https://github.com/Azure/azure-sqldb-spark/tree/master/samples/notebooks).
 - [Пример сценариев (Scala)](https://github.com/Azure/azure-sqldb-spark/tree/master/samples/scripts)
 
-Дополнительные сведения см. также в [руководстве по SQL, таблицам и наборам данных Apache Spark](https://spark.apache.org/docs/latest/sql-programming-guide.html) и в [документации по Azure Databricks](https://docs.microsoft.com/azure/azure-databricks/).
+Дополнительные сведения см. также в [руководстве по SQL, таблицам и наборам данных Apache Spark](https://spark.apache.org/docs/latest/sql-programming-guide.html) и в [документации по Azure Databricks](/azure/azure-databricks/).

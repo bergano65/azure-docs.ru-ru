@@ -12,12 +12,12 @@ author: MashaMSFT
 ms.author: mathoma
 ms.reviewer: sstein
 ms.date: 04/20/2020
-ms.openlocfilehash: a335f6ac015397ba2b2634d0d604c194a768260a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 76bb4ffb4ebeb01baf8236d6be84c900b23ffbc0
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91283247"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92790820"
 ---
 # <a name="transactional-replication-with-azure-sql-managed-instance-preview"></a>Репликация транзакций с помощью Управляемый экземпляр Azure SQL (Предварительная версия)
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -35,11 +35,11 @@ ms.locfileid: "91283247"
 - База данных экземпляра в Azure SQL Управляемый экземпляр
 
   > [!NOTE]
-  > Чтобы использовать все функции Управляемый экземпляр Azure SQL, необходимо использовать последние версии [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) и [SQL Server Data Tools (SSDT)](https://docs.microsoft.com/sql/ssdt/download-sql-server-data-tools-ssdt).
+  > Чтобы использовать все функции Управляемый экземпляр Azure SQL, необходимо использовать последние версии [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) и [SQL Server Data Tools (SSDT)](/sql/ssdt/download-sql-server-data-tools-ssdt).
 
 ### <a name="components"></a>Компоненты
 
-Ключевыми компонентами в репликации транзакций являются **Издатель**, **распространитель**и **подписчик**, как показано на следующем рисунке:  
+Ключевыми компонентами в репликации транзакций являются **Издатель** , **распространитель** и **подписчик** , как показано на следующем рисунке:  
 
 ![Репликация с Базой данных SQL](./media/replication-transactional-overview/replication-to-sql-database.png)
 
@@ -65,21 +65,21 @@ ms.locfileid: "91283247"
 
    > [!NOTE]
    >
-   > - Для других версий SQL Server, которые не поддерживают публикацию в объекты в Azure, можно использовать метод [повторной публикации данных](https://docs.microsoft.com/sql/relational-databases/replication/republish-data), чтобы перемещать данные в более новые версии SQL Server.
+   > - Для других версий SQL Server, которые не поддерживают публикацию в объекты в Azure, можно использовать метод [повторной публикации данных](/sql/relational-databases/replication/republish-data), чтобы перемещать данные в более новые версии SQL Server.
    > - Попытка настроить репликацию с использованием более старой версии может привести к ошибке MSSQL_REPL20084 (The process could not connect to Subscriber (Процессу не удалось подключиться к подписчику)) или MSSQ_REPL40532 ("Не удается открыть сервер \<name>, запрашиваемый с использованием имени для входа. Вход в систему не выполнен").
 
 ### <a name="types-of-replication"></a>Типы репликации
 
-Существуют разные [типы репликации](https://docs.microsoft.com/sql/relational-databases/replication/types-of-replication).
+Существуют разные [типы репликации](/sql/relational-databases/replication/types-of-replication).
 
 | Репликация | База данных SQL Azure | Управляемый экземпляр SQL Azure |
 | :----| :------------- | :--------------- |
-| [**Стандартная транзакционная**](https://docs.microsoft.com/sql/relational-databases/replication/transactional/transactional-replication) | Да (только в качестве подписчика) | Да |
-| [**Моментальный снимок**](https://docs.microsoft.com/sql/relational-databases/replication/snapshot-replication) | Да (только в качестве подписчика) | Да|
-| [**Репликация слиянием**](https://docs.microsoft.com/sql/relational-databases/replication/merge/merge-replication) | Нет | Нет|
-| [**Одноранговой**](https://docs.microsoft.com/sql/relational-databases/replication/transactional/peer-to-peer-transactional-replication) | Нет | Нет|
-| [**Двунаправленная репликация**](https://docs.microsoft.com/sql/relational-databases/replication/transactional/bidirectional-transactional-replication) | Нет | Да|
-| [**Обновляемые подписки**](https://docs.microsoft.com/sql/relational-databases/replication/transactional/updatable-subscriptions-for-transactional-replication) | Нет | Нет|
+| [**Стандартная транзакционная**](/sql/relational-databases/replication/transactional/transactional-replication) | Да (только в качестве подписчика) | Да |
+| [**Моментальный снимок**](/sql/relational-databases/replication/snapshot-replication) | Да (только в качестве подписчика) | Да|
+| [**Репликация слиянием**](/sql/relational-databases/replication/merge/merge-replication) | Нет | Нет|
+| [**Одноранговой**](/sql/relational-databases/replication/transactional/peer-to-peer-transactional-replication) | Нет | Нет|
+| [**Двунаправленная репликация**](/sql/relational-databases/replication/transactional/bidirectional-transactional-replication) | Нет | Да|
+| [**Обновляемые подписки**](/sql/relational-databases/replication/transactional/updatable-subscriptions-for-transactional-replication) | Нет | Нет|
 | &nbsp; | &nbsp; | &nbsp; |
 
 ### <a name="supportability-matrix"></a>Матрица поддержки
@@ -148,7 +148,7 @@ ms.locfileid: "91283247"
 - Настройте пиринг VPN между виртуальными сетями участников репликации, если виртуальные сети различаются.
 
 > [!NOTE]
-> При подключении к файлу службы хранилища Azure может возникнуть ошибка 53, если порт исходящей сетевой группы безопасности (NSG) 445 заблокирован, если распространитель является базой данных Azure SQL Управляемый экземпляр, а подписчик — локальным. Чтобы устранить эту проблему [, обновите NSG виртуальной сети](/azure/storage/files/storage-troubleshoot-windows-file-connection-problems) .
+> При подключении к файлу службы хранилища Azure может возникнуть ошибка 53, если порт исходящей сетевой группы безопасности (NSG) 445 заблокирован, если распространитель является базой данных Azure SQL Управляемый экземпляр, а подписчик — локальным. Чтобы устранить эту проблему [, обновите NSG виртуальной сети](../../storage/files/storage-troubleshoot-windows-file-connection-problems.md) .
 
 ## <a name="with-failover-groups"></a>С группами отработки отказа
 
@@ -190,22 +190,22 @@ ms.locfileid: "91283247"
 - Для отработки отказа с потерей данных также будет работать репликация. После этого будет выполнена повторная репликация потерянных изменений.
 - Для отработки отказа с потерей данных, но потери данных выходят за пределы срока хранения базы данных распространителя, администратору SQL Управляемый экземпляр потребуется повторно инициализировать базу данных подписки.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о настройке репликации транзакций см. в следующих учебниках:
 
 - [Настройка репликации между издателем SQL Управляемый экземпляр и подписчиком](../managed-instance/replication-between-two-instances-configure-tutorial.md)
 - [Настройка репликации между издателем SQL Управляемый экземпляр, распространителем SQL Управляемый экземпляр и подписчиком SQL Server](../managed-instance/replication-two-instances-and-sql-server-configure-tutorial.md)
-- [Создайте публикацию](https://docs.microsoft.com/sql/relational-databases/replication/publish/create-a-publication).
-- [Создайте принудительную подписку](https://docs.microsoft.com/sql/relational-databases/replication/create-a-push-subscription) , используя имя сервера в качестве подписчика (например, `N'azuresqldbdns.database.windows.net` и базу данных в имени базы данных SQL Azure в качестве целевой базы данных (например, **AdventureWorks**). )
+- [Создайте публикацию](/sql/relational-databases/replication/publish/create-a-publication).
+- [Создайте принудительную подписку](/sql/relational-databases/replication/create-a-push-subscription) , используя имя сервера в качестве подписчика (например, `N'azuresqldbdns.database.windows.net` и базу данных в имени базы данных SQL Azure в качестве целевой базы данных (например, **AdventureWorks** ). )
 
-## <a name="see-also"></a>См. также  
+## <a name="see-also"></a>См. также статью  
 
 - [Репликация с помощью Управляемый экземпляр SQL и группы отработки отказа](transact-sql-tsql-differences-sql-server.md#replication)
 - [Репликация в Базу данных SQL](../database/replication-to-sql-database.md)
 - [Репликация на управляемый экземпляр](../managed-instance/replication-between-two-instances-configure-tutorial.md)
-- [Create a Publication](https://docs.microsoft.com/sql/relational-databases/replication/publish/create-a-publication)
-- [Создание принудительной подписки](https://docs.microsoft.com/sql/relational-databases/replication/create-a-push-subscription/)
-- [Типы репликации](https://docs.microsoft.com/sql/relational-databases/replication/types-of-replication)
-- [Мониторинг (репликация)](https://docs.microsoft.com/sql/relational-databases/replication/monitor/monitoring-replication)
-- [Инициализация подписки](https://docs.microsoft.com/sql/relational-databases/replication/initialize-a-subscription)  
+- [Create a Publication](/sql/relational-databases/replication/publish/create-a-publication)
+- [Создание принудительной подписки](/sql/relational-databases/replication/create-a-push-subscription/)
+- [Типы репликации](/sql/relational-databases/replication/types-of-replication)
+- [Мониторинг (репликация)](/sql/relational-databases/replication/monitor/monitoring-replication)
+- [Инициализация подписки](/sql/relational-databases/replication/initialize-a-subscription)

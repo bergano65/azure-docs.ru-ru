@@ -7,12 +7,12 @@ ms.date: 07/16/2020
 ms.service: storage
 ms.subservice: common
 ms.topic: how-to
-ms.openlocfilehash: 959a58a38861075c6509fe57136d8991eeb98ce6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b51746326c2df81e2dd2bdc72bf2a9ab72b649b5
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88588201"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92790565"
 ---
 # <a name="use-the-azure-storage-emulator-for-development-and-testing"></a>Использование эмулятора хранения Azure для разработки и тестирования
 
@@ -44,7 +44,7 @@ ms.locfileid: "88588201"
 
 Чтобы запустить эмулятор хранения Azure, сделайте следующее:
 
-1. Нажмите кнопку **Пуск** или клавишу **Windows**.
+1. Нажмите кнопку **Пуск** или клавишу **Windows** .
 2. Начните вводить текст `Azure Storage Emulator`.
 3. Выберите эмулятор в списке отображенных приложений.
 
@@ -85,7 +85,7 @@ ms.locfileid: "88588201"
 Дополнительные сведения об этих командах см. в разделе [Справочник по программе командной строки эмулятора хранения](#storage-emulator-command-line-tool-reference).
 
 > [!TIP]
-> Для управления экземплярами SQL Server, включая установку LocalDB, можно использовать [Microsoft SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) (SSMS). В диалоговом окне **Подключение к серверу** SMSS укажите `(localdb)\MSSQLLocalDb` в поле **Имя сервера:**, чтобы подключиться к экземпляру LocalDB.
+> Для управления экземплярами SQL Server, включая установку LocalDB, можно использовать [Microsoft SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) (SSMS). В диалоговом окне **Подключение к серверу** SMSS укажите `(localdb)\MSSQLLocalDb` в поле **Имя сервера:** , чтобы подключиться к экземпляру LocalDB.
 
 ## <a name="authenticating-requests-against-the-storage-emulator"></a>Проверка подлинности запросов к эмулятору хранения
 
@@ -95,7 +95,7 @@ ms.locfileid: "88588201"
 
 [!INCLUDE [storage-emulator-connection-string-include](../../../includes/storage-emulator-connection-string-include.md)]
 
-Дополнительные сведения о строках подключения см. в разделе [Настройка строк подключения службы хранилища Azure](../storage-configure-connection-string.md).
+Дополнительные сведения о строках подключения см. в разделе [Настройка строк подключения службы хранилища Azure](./storage-configure-connection-string.md).
 
 ### <a name="authorize-with-a-shared-access-signature"></a>Авторизация с помощью подписанного URL-адреса
 
@@ -161,7 +161,7 @@ http://127.0.0.1:10000/devstoreaccount1/sascontainer?sv=2012-02-12&se=2015-07-08
 `http://127.0.0.1:10000/myaccount-secondary/mycontainer/myblob.txt`
 
 > [!NOTE]
-> Для программного доступа к базе данных-получателю с помощью эмулятора хранения используйте клиентскую библиотеку хранилища для .NET версии 3,2 или более поздней. Дополнительные сведения см. в разделе [Клиентская библиотека хранилища Microsoft Azure для .NET](https://msdn.microsoft.com/library/azure/dn261237.aspx).
+> Для программного доступа к базе данных-получателю с помощью эмулятора хранения используйте клиентскую библиотеку хранилища для .NET версии 3,2 или более поздней. Дополнительные сведения см. в разделе [Клиентская библиотека хранилища Microsoft Azure для .NET](/previous-versions/azure/dn261237(v=azure.100)).
 >
 >
 
@@ -178,17 +178,17 @@ http://127.0.0.1:10000/devstoreaccount1/sascontainer?sv=2012-02-12&se=2015-07-08
 
 `AzureStorageEmulator.exe [start] [stop] [status] [clear] [init] [help]`
 
-### <a name="options"></a>Параметры
+### <a name="options"></a>Варианты
 
 Чтобы просмотреть список параметров, в командной строке введите `/help` .
 
 | Параметр | Описание | Команда | Аргументы |
 | --- | --- | --- | --- |
-| **Начало** |Запускает эмулятор хранения. |`AzureStorageEmulator.exe start [-inprocess]` |*-Reprocess*: Запуск эмулятора в текущем процессе вместо создания нового процесса. |
+| **Начало** |Запускает эмулятор хранения. |`AzureStorageEmulator.exe start [-inprocess]` |*-Reprocess* : Запуск эмулятора в текущем процессе вместо создания нового процесса. |
 | **Остановить** |Останавливает эмулятор хранения. |`AzureStorageEmulator.exe stop` | |
 | **Состояние** |Выводит состояние эмулятора хранения. |`AzureStorageEmulator.exe status` | |
-| **Очистить** |Очищает данные во всех службах, указанных в командной строке. |`AzureStorageEmulator.exe clear [blob] [table] [queue] [all]` |*blob*: удаляет данные о больших двоичных объектах. <br/>*queue*: удаляет данные об очередях. <br/>*table*: удаляет данные о таблицах. <br/>*all*: удаляет все данные во всех службах. |
-| **Init** |Выполняет однократную инициализацию для настройки эмулятора. |<code>AzureStorageEmulator.exe init [-server serverName] [-sqlinstance instanceName] [-forcecreate&#124;-skipcreate] [-reserveports&#124;-unreserveports] [-inprocess]</code> |*-server serverName\instanceName*: указывает сервер для размещения экземпляра SQL. <br/>*-sqlinstance имя_экземпляра*: указывает имя экземпляра SQL, используемого на сервере по умолчанию. <br/>*-forcecreate*: принудительно создает базу данных SQL, даже если она уже существует. <br/>*-skipcreate*: пропускает создание базы данных SQL. Имеет приоритет над -forcecreate.<br/>*-reserveports*: пытается зарезервировать порты HTTP, связанные со службами.<br/>*-unreserveports*: пытается отменить резервирование портов HTTP, связанных со службами. Имеет приоритет над -reserveports.<br/>*-inprocess*: выполняет инициализацию в текущем процессе вместо порождения нового процесса. При изменении резервирований портов нужно запустить текущий процесс с повышенными привилегиями. |
+| **Очистить** |Очищает данные во всех службах, указанных в командной строке. |`AzureStorageEmulator.exe clear [blob] [table] [queue] [all]` |*blob* : удаляет данные о больших двоичных объектах. <br/>*queue* : удаляет данные об очередях. <br/>*table* : удаляет данные о таблицах. <br/>*all* : удаляет все данные во всех службах. |
+| **Init** |Выполняет однократную инициализацию для настройки эмулятора. |<code>AzureStorageEmulator.exe init [-server serverName] [-sqlinstance instanceName] [-forcecreate&#124;-skipcreate] [-reserveports&#124;-unreserveports] [-inprocess]</code> |*-server serverName\instanceName* : указывает сервер для размещения экземпляра SQL. <br/>*-sqlinstance имя_экземпляра* : указывает имя экземпляра SQL, используемого на сервере по умолчанию. <br/>*-forcecreate* : принудительно создает базу данных SQL, даже если она уже существует. <br/>*-skipcreate* : пропускает создание базы данных SQL. Имеет приоритет над -forcecreate.<br/>*-reserveports* : пытается зарезервировать порты HTTP, связанные со службами.<br/>*-unreserveports* : пытается отменить резервирование портов HTTP, связанных со службами. Имеет приоритет над -reserveports.<br/>*-inprocess* : выполняет инициализацию в текущем процессе вместо порождения нового процесса. При изменении резервирований портов нужно запустить текущий процесс с повышенными привилегиями. |
 
 ## <a name="differences-between-the-storage-emulator-and-azure-storage"></a>Различия между эмулятором хранения и хранилищем Azure
 
@@ -250,7 +250,7 @@ http://127.0.0.1:10000/devstoreaccount1/sascontainer?sv=2012-02-12&se=2015-07-08
 ### <a name="version-55"></a>Версия 5.5
 
 * Эмулятор хранения теперь поддерживает версию 2017-11-09 служб хранилища для конечных точек службы BLOB-объектов, очередей и таблиц.
-* Добавлена поддержка свойства большого двоичного объекта **Created**, которое возвращает время создания большого двоичного объекта.
+* Добавлена поддержка свойства большого двоичного объекта **Created** , которое возвращает время создания большого двоичного объекта.
 
 ### <a name="version-54"></a>Версия 5.4
 
@@ -310,7 +310,7 @@ http://127.0.0.1:10000/devstoreaccount1/sascontainer?sv=2012-02-12&se=2015-07-08
 
 ### <a name="version-40"></a>Версия 4.0
 
-* Исполняемый файл эмулятора хранения переименован в *AzureStorageEmulator.exe*.
+* Исполняемый файл эмулятора хранения переименован в *AzureStorageEmulator.exe* .
 
 ### <a name="version-32"></a>Версия 3.2
 
@@ -329,7 +329,7 @@ http://127.0.0.1:10000/devstoreaccount1/sascontainer?sv=2012-02-12&se=2015-07-08
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Оцените кросс-платформенный, поддерживаемый сообществом эмулятор хранилища с открытым кодом [азурите](https://github.com/azure/azurite). 
-* Статья [Примеры для службы хранилища Azure с использованием .NET](../storage-samples-dotnet.md) содержит ссылки на несколько примеров кода, которые можно использовать при разработке приложения.
+* Статья [Примеры для службы хранилища Azure с использованием .NET](./storage-samples-dotnet.md) содержит ссылки на несколько примеров кода, которые можно использовать при разработке приложения.
 * Вы можете использовать [Обозреватель службы хранилища Microsoft Azure](https://storageexplorer.com) для работы с ресурсами в облачной учетной записи хранения и в эмуляторе хранения.
 
 ## <a name="see-also"></a>См. также:

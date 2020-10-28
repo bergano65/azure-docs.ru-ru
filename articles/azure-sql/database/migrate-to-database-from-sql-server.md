@@ -12,12 +12,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 02/11/2019
-ms.openlocfilehash: 06763624231fde344990da6d0a4639bcccdedf00
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 41f3505388e72fba15277067a94cf4e473008f20
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91448861"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92790429"
 ---
 # <a name="sql-server-database-migration-to-azure-sql-database"></a>Перенос базы данных SQL Server в Базу данных SQL Azure
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -41,11 +41,11 @@ ms.locfileid: "91448861"
 
   ![Схема переноса VSSSDT](./media/migrate-to-database-from-sql-server/azure-sql-migration-sql-db.png)
 
-1. [Оцените](https://docs.microsoft.com/sql/dma/dma-assesssqlonprem) базу данных для обеспечения совместимости с помощью [Data Migration Assistant (DMA)](https://www.microsoft.com/download/details.aspx?id=53595) последней версии.
+1. [Оцените](/sql/dma/dma-assesssqlonprem) базу данных для обеспечения совместимости с помощью [Data Migration Assistant (DMA)](https://www.microsoft.com/download/details.aspx?id=53595) последней версии.
 2. Подготовьте все необходимые исправления в виде скриптов Transact-SQL.
-3. Создайте транзакционно согласованную копию переносимой базы данных-источника или остановите новые транзакции в этой базе данных на время переноса. К методам выполнения последнего действия относится отключение подключений клиентов или создание [моментального снимка базы данных](https://msdn.microsoft.com/library/ms175876.aspx). После переноса можно использовать репликацию транзакций для обновления перенесенных баз данных с учетом изменений, которые были внесены после точки отсчета переноса. См. раздел [Метод 2. Использование репликации транзакций](migrate-to-database-from-sql-server.md#method-2-use-transactional-replication).  
+3. Создайте транзакционно согласованную копию переносимой базы данных-источника или остановите новые транзакции в этой базе данных на время переноса. К методам выполнения последнего действия относится отключение подключений клиентов или создание [моментального снимка базы данных](/sql/relational-databases/databases/create-a-database-snapshot-transact-sql). После переноса можно использовать репликацию транзакций для обновления перенесенных баз данных с учетом изменений, которые были внесены после точки отсчета переноса. См. раздел [Метод 2. Использование репликации транзакций](migrate-to-database-from-sql-server.md#method-2-use-transactional-replication).  
 4. Разверните скрипты Transact-SQL для применения исправлений к копии базы данных.
-5. [Перенос](https://docs.microsoft.com/sql/dma/dma-migrateonpremsql) копии базы данных в новую базу данных в базе данных SQL Azure с помощью помощник по миграции данных.
+5. [Перенос](/sql/dma/dma-migrateonpremsql) копии базы данных в новую базу данных в базе данных SQL Azure с помощью помощник по миграции данных.
 
 > [!NOTE]
 > Вместо DMA можно также использовать BACPAC-файл. См. раздел [импорт BACPAC-файла в новую базу данных в базе данных SQL Azure](database-import.md).
@@ -63,11 +63,11 @@ ms.locfileid: "91448861"
 
 ### <a name="optimize-performance-after-the-migration-completes"></a>Оптимизация производительности после завершения миграции
 
-[Обновите статистику](https://docs.microsoft.com/sql/t-sql/statements/update-statistics-transact-sql) с использованием полной проверки после завершения миграции.
+[Обновите статистику](/sql/t-sql/statements/update-statistics-transact-sql) с использованием полной проверки после завершения миграции.
 
 ## <a name="method-2-use-transactional-replication"></a>Метод 2. Использование репликации транзакций
 
-Если вы не можете удалить базу данных SQL Server из рабочей среды во время миграции, можно использовать SQL Serverную репликацию транзакций в качестве решения для миграции. Чтобы использовать этот метод, база данных-источник должна соответствовать [требованиям к репликации транзакций](https://msdn.microsoft.com/library/mt589530.aspx) и быть совместимой с Базой данных SQL Azure. Получите дополнительные сведения о [настройке репликации для групп доступности AlwaysOn (SQL Server)](/sql/database-engine/availability-groups/windows/configure-replication-for-always-on-availability-groups-sql-server).
+Если вы не можете удалить базу данных SQL Server из рабочей среды во время миграции, можно использовать SQL Serverную репликацию транзакций в качестве решения для миграции. Чтобы использовать этот метод, база данных-источник должна соответствовать [требованиям к репликации транзакций](./replication-to-sql-database.md) и быть совместимой с Базой данных SQL Azure. Получите дополнительные сведения о [настройке репликации для групп доступности AlwaysOn (SQL Server)](/sql/database-engine/availability-groups/windows/configure-replication-for-always-on-availability-groups-sql-server).
 
 Чтобы использовать это решение, необходимо настроить базу данных в базе данных SQL Azure в качестве подписчика на экземпляр SQL Server, который вы хотите перенести. Распространитель репликации транзакций обеспечивает синхронизацию данных из базы данных (издателя) по мере возникновения новых транзакций.
 
@@ -108,22 +108,21 @@ ms.locfileid: "91448861"
 Существует множество различных проблем совместимости, которые могут возникнуть в зависимости от версии SQL Server в базе данных-источнике и сложности переносимой базы данных. В более старых версиях SQL Server имеются дополнительные проблемы совместимости. Воспользуйтесь поиском в Интернете, а также следующими ресурсами:
 
 - [Функции базы данных SQL Server, которые не поддерживаются в Базе данных SQL Azure](transact-sql-tsql-differences-sql-server.md)
-- [Неподдерживаемые функции ядра СУБД в SQL Server 2016](https://msdn.microsoft.com/library/ms144262%28v=sql.130%29)
-- [Неподдерживаемые функции ядро СУБД в SQL Server 2014](https://msdn.microsoft.com/library/ms144262%28v=sql.120%29)
-- [Неподдерживаемые функции ядро СУБД в SQL Server 2012](https://msdn.microsoft.com/library/ms144262%28v=sql.110%29)
-- [Неподдерживаемые функции ядра СУБД в SQL Server 2008 R2](https://msdn.microsoft.com/library/ms144262%28v=sql.105%29)
-- [Неподдерживаемые функции ядра СУБД в SQL Server 2005](https://msdn.microsoft.com/library/ms144262%28v=sql.90%29)
+- [Неподдерживаемые функции ядра СУБД в SQL Server 2016](/sql/database-engine/discontinued-database-engine-functionality-in-sql-server)
+- [Неподдерживаемые функции ядро СУБД в SQL Server 2014](/sql/database-engine/discontinued-database-engine-functionality-in-sql-server?viewFallbackFrom=sql-server-2014)
+- [Неподдерживаемые функции ядро СУБД в SQL Server 2012](/previous-versions/sql/sql-server-2012/ms144262(v=sql.110))
+- [Неподдерживаемые функции ядра СУБД в SQL Server 2008 R2](/previous-versions/sql/sql-server-2008-r2/ms144262(v=sql.105))
+- [Неподдерживаемые функции ядра СУБД в SQL Server 2005](/previous-versions/sql/sql-server-2005/ms144262(v=sql.90))
 
-Помимо поиска в Интернете и использования этих ресурсов, используйте [страницу Microsoft Q&A вопрос для базы данных SQL Azure](https://docs.microsoft.com/answers/topics/azure-sql-database.html) или [StackOverflow](https://stackoverflow.com/).
+Помимо поиска в Интернете и использования этих ресурсов, используйте [страницу Microsoft Q&A вопрос для базы данных SQL Azure](/answers/topics/azure-sql-database.html) или [StackOverflow](https://stackoverflow.com/).
 
 > [!IMPORTANT]
 > Управляемый экземпляр Azure SQL позволяет перенести существующий экземпляр SQL Server и его базы данных с минимальными затратами на проблемы с совместимостью. См. раздел [что такое управляемый экземпляр](../managed-instance/sql-managed-instance-paas-overview.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Воспользуйтесь скриптом в блоге разработчиков EMEA SQL Azure для [отслеживания использования базы данных TempDB во время миграции](https://blogs.msdn.microsoft.com/azuresqlemea/2016/12/28/lesson-learned-10-monitoring-tempdb-usage/).
-- Воспользуйтесь скриптом в блоге разработчиков EMEA SQL Azure, чтобы [отслеживать объем, занимаемый журналом транзакций в базе данных, во время миграции](https://docs.microsoft.com/archive/blogs/azuresqlemea/lesson-learned-7-monitoring-the-transaction-log-space-of-my-database).
-- Сведения о миграции из SQL Server в Базу данных SQL Azure с использованием BACPAC-файлов см. в [блоге группы консультирования клиентов SQL Server](https://blogs.msdn.microsoft.com/sqlcat/2016/10/20/migrating-from-sql-server-to-azure-sql-database-using-bacpac-files/).
-- Сведения об изменении часового пояса по умолчанию для локального часового пояса см. на [этой странице](https://blogs.msdn.microsoft.com/azuresqlemea/2016/07/27/lesson-learned-4-modifying-the-default-time-zone-for-your-local-time-zone/).
-- Сведения об изменении языка по умолчанию в базе данных SQL Azure после миграции см. на [этой странице](https://blogs.msdn.microsoft.com/azuresqlemea/2017/01/13/lesson-learned-16-how-to-change-the-default-language-of-azure-sql-database/).
- 
+- Воспользуйтесь скриптом в блоге разработчиков EMEA SQL Azure для [отслеживания использования базы данных TempDB во время миграции](/archive/blogs/azuresqlemea/lesson-learned-10-monitoring-tempdb-usage).
+- Воспользуйтесь скриптом в блоге разработчиков EMEA SQL Azure, чтобы [отслеживать объем, занимаемый журналом транзакций в базе данных, во время миграции](/archive/blogs/azuresqlemea/lesson-learned-7-monitoring-the-transaction-log-space-of-my-database).
+- Сведения о миграции из SQL Server в Базу данных SQL Azure с использованием BACPAC-файлов см. в [блоге группы консультирования клиентов SQL Server](/archive/blogs/sqlcat/migrating-from-sql-server-to-azure-sql-database-using-bacpac-files).
+- Сведения об изменении часового пояса по умолчанию для локального часового пояса см. на [этой странице](/archive/blogs/azuresqlemea/lesson-learned-4-modifying-the-default-time-zone-for-your-local-time-zone).
+- Сведения об изменении языка по умолчанию в базе данных SQL Azure после миграции см. на [этой странице](/archive/blogs/azuresqlemea/lesson-learned-16-how-to-change-the-default-language-of-azure-sql-database).

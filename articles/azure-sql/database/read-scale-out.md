@@ -11,12 +11,12 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: sstein
 ms.date: 09/03/2020
-ms.openlocfilehash: fbde77de0ad8698ff82b80b440ae1d4bdcae1f36
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 9c09a54daa482d738ded9f7aca1c95c2b640617e
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92427005"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92790276"
 ---
 # <a name="use-read-only-replicas-to-offload-read-only-query-workloads"></a>Использование реплик только для чтения для разгрузки рабочих нагрузок запросов только для чтения
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -36,7 +36,7 @@ ms.locfileid: "92427005"
 > [!NOTE]
 > Горизонтальное масштабирование чтения всегда включено на уровне служб критически важный для бизнеса Управляемый экземпляр.
 
-Если строка подключения SQL настроена с помощью `ApplicationIntent=ReadOnly` , приложение будет перенаправляться в реплику, доступную только для чтения этой базы данных или управляемого экземпляра. Сведения об использовании `ApplicationIntent` свойства см. в разделе [Указание намерения приложения](https://docs.microsoft.com/sql/relational-databases/native-client/features/sql-server-native-client-support-for-high-availability-disaster-recovery#specifying-application-intent).
+Если строка подключения SQL настроена с помощью `ApplicationIntent=ReadOnly` , приложение будет перенаправляться в реплику, доступную только для чтения этой базы данных или управляемого экземпляра. Сведения об использовании `ApplicationIntent` свойства см. в разделе [Указание намерения приложения](/sql/relational-databases/native-client/features/sql-server-native-client-support-for-high-availability-disaster-recovery#specifying-application-intent).
 
 Если вы хотите убедиться, что приложение подключается к первичной реплике независимо от `ApplicationIntent` параметра в строке подключения SQL, необходимо явно отключить горизонтальное масштабирование чтения при создании базы данных или при изменении ее конфигурации. Например, если вы обновите базу данных с уровня "Стандартный" или "общего назначения" на "Премиум", критически важный для бизнеса или "Масштаб" и хотите убедиться, что все подключения продолжают работать с первичной репликой, отключите горизонтальное масштабирование чтения. Дополнительные сведения о том, как ее отключить, см. в разделе [Включение и отключение горизонтального масштабирования для чтения](#enable-and-disable-read-scale-out).
 
@@ -87,16 +87,16 @@ SELECT DATABASEPROPERTYEX(DB_NAME(), 'Updateability');
 
 | Имя | Назначение |
 |:---|:---|
-|[sys.dm_db_resource_stats](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-db-resource-stats-azure-sql-database)| Предоставляет метрики использования ресурсов за последний час, включая ЦП, операции ввода-вывода данных и использование записи журнала относительно ограничений цели службы.|
-|[sys.dm_os_wait_stats](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-os-wait-stats-transact-sql)| Предоставляет совокупную статистику ожидания для экземпляра ядра СУБД. |
-|[sys.dm_database_replica_states](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-database-replica-states-azure-sql-database)| Предоставляет состояние работоспособности реплики и статистику синхронизации. Размер очереди повтора и скорость повтора служат индикаторами задержки данных в реплике только для чтения. |
-|[sys.dm_os_performance_counters](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-os-performance-counters-transact-sql)| Предоставляет счетчики производительности ядра СУБД.|
-|[sys.dm_exec_query_stats](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-query-stats-transact-sql)| Предоставляет статистику выполнения по запросу, например количество выполнений, использованное время ЦП и т. д.|
-|[sys.dm_exec_query_plan ()](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-query-plan-transact-sql)| Предоставляет кэшированные планы запросов. |
-|[sys.dm_exec_sql_text ()](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-sql-text-transact-sql)| Предоставляет текст запроса для кэшированного плана запроса.|
-|[sys.dm_exec_query_profiles](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-query-plan-stats-transact-sql)| Предоставляет ход выполнения запросов в реальном времени во время выполнения запросов.|
-|[sys.dm_exec_query_plan_stats ()](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-query-plan-stats-transact-sql)| Предоставляет Последний известный фактический план выполнения, включая статистику времени выполнения для запроса.|
-|[sys.dm_io_virtual_file_stats ()](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-io-virtual-file-stats-transact-sql)| Предоставляет статистику операций ввода-вывода, пропускной способности и задержки хранилища для всех файлов базы данных. |
+|[sys.dm_db_resource_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-db-resource-stats-azure-sql-database)| Предоставляет метрики использования ресурсов за последний час, включая ЦП, операции ввода-вывода данных и использование записи журнала относительно ограничений цели службы.|
+|[sys.dm_os_wait_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-os-wait-stats-transact-sql)| Предоставляет совокупную статистику ожидания для экземпляра ядра СУБД. |
+|[sys.dm_database_replica_states](/sql/relational-databases/system-dynamic-management-views/sys-dm-database-replica-states-azure-sql-database)| Предоставляет состояние работоспособности реплики и статистику синхронизации. Размер очереди повтора и скорость повтора служат индикаторами задержки данных в реплике только для чтения. |
+|[sys.dm_os_performance_counters](/sql/relational-databases/system-dynamic-management-views/sys-dm-os-performance-counters-transact-sql)| Предоставляет счетчики производительности ядра СУБД.|
+|[sys.dm_exec_query_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-query-stats-transact-sql)| Предоставляет статистику выполнения по запросу, например количество выполнений, использованное время ЦП и т. д.|
+|[sys.dm_exec_query_plan ()](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-query-plan-transact-sql)| Предоставляет кэшированные планы запросов. |
+|[sys.dm_exec_sql_text ()](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-sql-text-transact-sql)| Предоставляет текст запроса для кэшированного плана запроса.|
+|[sys.dm_exec_query_profiles](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-query-plan-stats-transact-sql)| Предоставляет ход выполнения запросов в реальном времени во время выполнения запросов.|
+|[sys.dm_exec_query_plan_stats ()](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-query-plan-stats-transact-sql)| Предоставляет Последний известный фактический план выполнения, включая статистику времени выполнения для запроса.|
+|[sys.dm_io_virtual_file_stats ()](/sql/relational-databases/system-dynamic-management-views/sys-dm-io-virtual-file-stats-transact-sql)| Предоставляет статистику операций ввода-вывода, пропускной способности и задержки хранилища для всех файлов базы данных. |
 
 > [!NOTE]
 > Динамические `sys.resource_stats` `sys.elastic_pool_resource_stats` административные представления и в логической базе данных master возвращают данные об использовании ресурсов первичной реплики.
@@ -109,13 +109,13 @@ SELECT DATABASEPROPERTYEX(DB_NAME(), 'Updateability');
 
 ### <a name="transaction-isolation-level-on-read-only-replicas"></a>Уровень изоляции транзакций для реплик только для чтения
 
-Запросы, выполняемые на репликах только для чтения, всегда сопоставляются с уровнем изоляции транзакции [snapshot](https://docs.microsoft.com/dotnet/framework/data/adonet/sql/snapshot-isolation-in-sql-server) . Изоляция моментальных снимков использует управление версиями строк во избежание ситуаций блокировки, в которых читатели блокируют модули записи.
+Запросы, выполняемые на репликах только для чтения, всегда сопоставляются с уровнем изоляции транзакции [snapshot](/dotnet/framework/data/adonet/sql/snapshot-isolation-in-sql-server) . Изоляция моментальных снимков использует управление версиями строк во избежание ситуаций блокировки, в которых читатели блокируют модули записи.
 
-В редких случаях, если транзакция изоляции моментального снимка обращается к метаданным объекта, которые были изменены в другой параллельной транзакции, она может получить ошибку [3961](https://docs.microsoft.com/sql/relational-databases/errors-events/mssqlserver-3961-database-engine-error), "Сбой транзакции изоляции моментального снимка в базе данных"%. * ls ", так как объект, к которому обращается инструкция, был изменен инструкцией DDL в другой параллельной транзакции с момента запуска этой транзакции. Это запрещено, так как управление версиями метаданных не осуществляется. Параллельное обновление метаданных может привести к несогласованности при использовании смешанного режима с изоляцией моментальных снимков ".
+В редких случаях, если транзакция изоляции моментального снимка обращается к метаданным объекта, которые были изменены в другой параллельной транзакции, она может получить ошибку [3961](/sql/relational-databases/errors-events/mssqlserver-3961-database-engine-error), "Сбой транзакции изоляции моментального снимка в базе данных"%. * ls ", так как объект, к которому обращается инструкция, был изменен инструкцией DDL в другой параллельной транзакции с момента запуска этой транзакции. Это запрещено, так как управление версиями метаданных не осуществляется. Параллельное обновление метаданных может привести к несогласованности при использовании смешанного режима с изоляцией моментальных снимков ".
 
 ### <a name="long-running-queries-on-read-only-replicas"></a>Длительные запросы к репликам только для чтения
 
-Запросы, выполняющиеся в репликах только для чтения, должны иметь доступ к метаданным для объектов, на которые ссылается запрос (таблицы, индексы, статистика и т. д.). В редких случаях, если объект метаданных изменяется на первичной реплике, в то время как запрос удерживает блокировку того же объекта в реплике только для чтения, запрос может [заблокировать](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/troubleshoot-primary-changes-not-reflected-on-secondary#BKMK_REDOBLOCK) процесс, который применяет изменения из первичной реплики к реплике только для чтения. Если такой запрос был выполнен в течение длительного времени, то реплика только для чтения может значительно не синхронизироваться с первичной репликой. 
+Запросы, выполняющиеся в репликах только для чтения, должны иметь доступ к метаданным для объектов, на которые ссылается запрос (таблицы, индексы, статистика и т. д.). В редких случаях, если объект метаданных изменяется на первичной реплике, в то время как запрос удерживает блокировку того же объекта в реплике только для чтения, запрос может [заблокировать](/sql/database-engine/availability-groups/windows/troubleshoot-primary-changes-not-reflected-on-secondary#BKMK_REDOBLOCK) процесс, который применяет изменения из первичной реплики к реплике только для чтения. Если такой запрос был выполнен в течение длительного времени, то реплика только для чтения может значительно не синхронизироваться с первичной репликой. 
 
 Если длительный запрос в реплике, доступном только для чтения, вызывает такую блокировку, он будет автоматически прерван, а сеанс получит ошибку 1219, "сеанс был отключен из-за операции DDL с высоким приоритетом".
 
@@ -123,7 +123,7 @@ SELECT DATABASEPROPERTYEX(DB_NAME(), 'Updateability');
 > Если при выполнении запросов к реплике только для чтения появляется сообщение об ошибке 3961 или 1219, повторите запрос.
 
 > [!TIP]
-> В уровнях обслуживания Premium и критически важный для бизнеса при подключении к реплике только для чтения `redo_queue_size` `redo_rate` столбцы и в динамическом административном наборе [sys.dm_database_replica_states](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-database-replica-states-azure-sql-database) могут использоваться для мониторинга процесса синхронизации данных, выступая в качестве индикаторов задержки данных в реплике только для чтения.
+> В уровнях обслуживания Premium и критически важный для бизнеса при подключении к реплике только для чтения `redo_queue_size` `redo_rate` столбцы и в динамическом административном наборе [sys.dm_database_replica_states](/sql/relational-databases/system-dynamic-management-views/sys-dm-database-replica-states-azure-sql-database) могут использоваться для мониторинга процесса синхронизации данных, выступая в качестве индикаторов задержки данных в реплике только для чтения.
 > 
 
 ## <a name="enable-and-disable-read-scale-out"></a>Включение и отключение горизонтального масштабирования для чтения
@@ -144,7 +144,7 @@ SELECT DATABASEPROPERTYEX(DB_NAME(), 'Updateability');
 > [!IMPORTANT]
 > Модуль PowerShell Azure Resource Manager по-прежнему поддерживается, но вся будущая разработка предназначена для модуля AZ. SQL. Модуль Azure Resource Manager продолжит отправлять исправления ошибок до 2020 декабря.  Аргументы для команд в модуле AZ и в Azure Resource Managerных модулях значительно идентичны. Дополнительные сведения о совместимости см. в разделе [Введение в новый модуль Azure PowerShell AZ](/powershell/azure/new-azureps-module-az).
 
-Для управления горизонтальным масштабированием чтения в Azure PowerShell требуется выпуск от декабря 2016 Azure PowerShell или более поздней версии. Последнюю версию Azure PowerShell см. [здесь](https://docs.microsoft.com/powershell/azure/install-az-ps).
+Для управления горизонтальным масштабированием чтения в Azure PowerShell требуется выпуск от декабря 2016 Azure PowerShell или более поздней версии. Последнюю версию Azure PowerShell см. [здесь](/powershell/azure/install-az-ps).
 
 Можно отключить или повторно включить горизонтальное масштабирование чтения в Azure PowerShell, вызвав командлет [Set-азсклдатабасе](/powershell/module/az.sql/set-azsqldatabase) и передав нужное значение ( `Enabled` или `Disabled` ) для `-ReadScale` параметра.
 
@@ -180,7 +180,7 @@ Body: {
 }
 ```
 
-Дополнительные сведения см. в разделе [базы данных — создание или обновление](https://docs.microsoft.com/rest/api/sql/databases/createorupdate).
+Дополнительные сведения см. в разделе [базы данных — создание или обновление](/rest/api/sql/databases/createorupdate).
 
 ## <a name="using-the-tempdb-database-on-a-read-only-replica"></a>Использование `tempdb` базы данных в реплике только для чтения
 

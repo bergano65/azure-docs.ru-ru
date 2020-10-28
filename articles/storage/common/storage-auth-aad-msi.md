@@ -11,12 +11,12 @@ ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 2914a0e9b4c38cff01222ac9a9bffc99827d7162
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 16ac28e46e9231918f433c0e9eb077cb0d8cf230
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92488747"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92791177"
 ---
 # <a name="authorize-access-to-blob-and-queue-data-with-managed-identities-for-azure-resources"></a>Авторизация доступа к данным BLOB-объектов и очередей с помощью управляемых удостоверений для ресурсов Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "92488747"
 
 Прежде чем использовать управляемые удостоверения для ресурсов Azure для авторизации доступа к BLOB-объектам и очередям из виртуальной машины, сначала необходимо включить управляемые удостоверения для ресурсов Azure на виртуальной машине. Сведения о включении управляемых удостоверений для ресурсов Azure см. в одной из следующих статей.
 
-- [Портал Azure](/azure/active-directory/managed-service-identity/qs-configure-portal-windows-vm)
+- [Портал Azure](../../active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm.md)
 - [Azure PowerShell](../../active-directory/managed-identities-azure-resources/qs-configure-powershell-windows-vm.md)
 - [Azure CLI](../../active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm.md)
 - [Шаблон Azure Resource Manager](../../active-directory/managed-identities-azure-resources/qs-configure-template-windows-vm.md)
@@ -161,8 +161,8 @@ async static Task CreateBlockBlobAsync(string accountName, string containerName,
 > [!NOTE]
 > Для авторизации запросов к данным большого двоичного объекта или очереди с помощью Azure AD необходимо использовать протокол HTTPS для этих запросов.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Управление правами доступа к данным хранилища с помощью Azure RBAC](storage-auth-aad-rbac.md).
+- [Управление правами доступа к данным хранилища с помощью Azure RBAC](./storage-auth-aad-rbac-portal.md).
 - [Используйте Azure AD с приложениями службы хранилища](storage-auth-aad-app.md).
 - [Выполнение команд PowerShell с учетными данными Azure AD для доступа к данным большого двоичного объекта](../blobs/authorize-active-directory-powershell.md)

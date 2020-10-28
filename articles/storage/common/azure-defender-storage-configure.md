@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: tamram
 ms.reviewer: ozgun
-ms.openlocfilehash: eb71c5eda66d3d11385577da7142970f4fbcbad2
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 0bda32aaab301fe9ed685f0bfd6d4596fab4e5db
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92474858"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92789018"
 ---
 # <a name="configure-azure-defender-for-storage"></a>Настройка защитника Azure для хранилища
 
@@ -37,7 +37,7 @@ ms.locfileid: "92474858"
 
 - Состояние выпуска:
   - [Хранилище BLOB-объектов](https://azure.microsoft.com/services/storage/blobs/) (общая доступность)
-  - Службы [файлов Azure](/azure/storage/files/storage-files-introduction) (общая доступность)
+  - Службы [файлов Azure](../files/storage-files-introduction.md) (общая доступность)
   - Azure Data Lake Storage 2-го поколения (общая доступность)
 - Облако.<br>
     ✔ коммерческие облака;<br>
@@ -53,10 +53,10 @@ ms.locfileid: "92474858"
 При оформлении подписки на уровень "Стандартный" в центре безопасности Azure защитник Azure автоматически настраивается для всех учетных записей хранения. Вы можете включить или отключить защитник Azure для учетных записей хранения в определенной подписке следующим образом:
 
 1. Запустите **Центр безопасности Azure** на [портал Azure](https://portal.azure.com).
-1. В главном меню в разделе **Управление**выберите **параметры ценообразования &**.
+1. В главном меню в разделе **Управление** выберите **параметры ценообразования &** .
 1. Выберите подписку, для которой вы хотите включить или отключить защитник Azure.
 1. Выберите **защитник Azure** , чтобы включить защитник Azure для подписки.
-1. В разделе **Выбор плана защитника Azure по типу ресурса**выберите строку **хранилища** и выберите **включено** в столбце **план** .
+1. В разделе **Выбор плана защитника Azure по типу ресурса** выберите строку **хранилища** и выберите **включено** в столбце **план** .
 1. Сохраните изменения.
 
     :::image type="content" source="media/azure-defender-storage-configure/enable-azure-defender-security-center.png" alt-text="Снимок экрана, показывающий, как включить защитник Azure для хранилища в центре безопасности":::
@@ -66,8 +66,8 @@ ms.locfileid: "92474858"
 ### <a name="portal"></a>[Портал](#tab/azure-portal)
 
 1. Запустите [портал Azure](https://portal.azure.com/).
-1. Войдите в свою учетную запись хранения. В разделе **Параметры**выберите пункт **Расширенная безопасность**.
-1. Выберите **включить защитник Azure для хранилища**.
+1. Войдите в свою учетную запись хранения. В разделе **Параметры** выберите пункт **Расширенная безопасность** .
+1. Выберите **включить защитник Azure для хранилища** .
 
     :::image type="content" source="media/azure-defender-storage-configure/enable-azure-defender-portal.png" alt-text="Снимок экрана, показывающий, как включить защитник Azure для хранилища в центре безопасности":::
 
@@ -135,7 +135,7 @@ ms.locfileid: "92474858"
 
 Оповещения создаются при нестандартных и потенциально вредоносных попытках получить доступ к учетным записям хранения или использовать их. Список оповещений для службы хранилища Azure см. в статье [оповещения для службы хранилища Azure](../../security-center/alerts-reference.md#alerts-azurestorage).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [журналах в учетных записях хранения Azure](/rest/api/storageservices/About-Storage-Analytics-Logging)
-- Узнайте больше о [центре безопасности Azure](../../security-center/security-center-intro.md).
+- Узнайте больше о [центре безопасности Azure](../../security-center/security-center-introduction.md).

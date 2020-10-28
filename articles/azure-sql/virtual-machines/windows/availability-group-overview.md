@@ -14,12 +14,12 @@ ms.workload: iaas-sql-server
 ms.date: 10/07/2020
 ms.author: mathoma
 ms.custom: seo-lt-2019, devx-track-azurecli
-ms.openlocfilehash: 26d4080e20fb8d00ec4d276e56e09170001d2b8e
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: 4919abd29ecf10c9116257750374ef53b4bd9d16
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92166545"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92789919"
 ---
 # <a name="always-on-availability-group-on-sql-server-on-azure-vms"></a>Группы доступности Always On для SQL Server на виртуальных машинах Azure
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -37,7 +37,7 @@ ms.locfileid: "92166545"
 
 ## <a name="vm-redundancy"></a>Избыточность виртуальных машин 
 
-Для повышения избыточности и обеспечения высокого уровня доступности виртуальные машины SQL Server должны находиться в одной [группе доступности](../../../virtual-machines/windows/tutorial-availability-sets.md#availability-set-overview) или в разных [зонах доступности](/azure/availability-zones/az-overview).
+Для повышения избыточности и обеспечения высокого уровня доступности виртуальные машины SQL Server должны находиться в одной [группе доступности](../../../virtual-machines/windows/tutorial-availability-sets.md#availability-set-overview) или в разных [зонах доступности](../../../availability-zones/az-overview.md).
 
 Группа доступности служит средством для объединения ресурсов, которые необходимо размещать в разных зонах доступности. Этот механизм запрещает одновременное задействование ресурсов из одной группы при плановом развертывании обновлений. 
 
@@ -74,7 +74,7 @@ ms.locfileid: "92166545"
 
 В следующей таблице собраны данные о доступных вариантах для сравнения. 
 
-| |**[Портал Azure](availability-group-azure-portal-configure.md)**|**[Azure CLI / PowerShell](availability-group-az-cli-configure.md)**|**[Шаблоны быстрого запуска](availability-group-quickstart-template-configure.md)**|**[Вручную](availability-group-manually-configure-prerequisites-tutorial.md)** | 
+| |**[Портал Azure](availability-group-azure-portal-configure.md)**|**[Azure CLI / PowerShell](./availability-group-az-commandline-configure.md)**|**[Шаблоны быстрого запуска](availability-group-quickstart-template-configure.md)**|**[Вручную](availability-group-manually-configure-prerequisites-tutorial.md)** | 
 |---------|---------|---------|--------- |---------|
 |**Версия SQL Server** |2016 и выше |2016 и выше|2016 и выше|2012 и выше|
 |**Выпуск SQL Server** |Enterprise |Enterprise |Enterprise |Enterprise, Standard|
@@ -100,6 +100,6 @@ ms.locfileid: "92166545"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Изучите [рекомендации по обеспечению высокой доступности и аварийного восстановления](hadr-cluster-best-practices.md), а затем переходите к развертыванию группы доступности [вручную](availability-group-manually-configure-prerequisites-tutorial.md) либо с помощью [портала Azure](availability-group-azure-portal-configure.md), [Azure CLI или PowerShell](availability-group-az-cli-configure.md) и [шаблонов быстрого запуска](availability-group-quickstart-template-configure.md).
+Изучите [рекомендации по обеспечению высокой доступности и аварийного восстановления](hadr-cluster-best-practices.md), а затем переходите к развертыванию группы доступности [вручную](availability-group-manually-configure-prerequisites-tutorial.md) либо с помощью [портала Azure](availability-group-azure-portal-configure.md), [Azure CLI или PowerShell](./availability-group-az-commandline-configure.md) и [шаблонов быстрого запуска](availability-group-quickstart-template-configure.md).
 
-Кроме того, вы можете развернуть [группу доступности без кластеров](availability-group-clusterless-workgroup-configure.md) или [группу доступности в нескольких регионах](availability-group-manually-configure-multiple-regions.md). 
+Кроме того, вы можете развернуть [группу доступности без кластеров](availability-group-clusterless-workgroup-configure.md) или [группу доступности в нескольких регионах](availability-group-manually-configure-multiple-regions.md).

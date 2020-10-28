@@ -13,12 +13,12 @@ ms.date: 08/20/2020
 ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: seo-lt-2019, devx-track-azurecli
-ms.openlocfilehash: 9e7a9beec101354672bffd558bdb0714eaf97ece
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 3a8086c75a7125b744730de83c760db44ce222e9
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92746756"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92790106"
 ---
 # <a name="use-azure-portal-to-configure-an-availability-group-preview-for-sql-server-on-azure-vm"></a>Использование портал Azure для настройки группы доступности (Предварительная версия) для SQL Server на виртуальной машине Azure 
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -38,7 +38,7 @@ ms.locfileid: "92746756"
 
 - [Подписка Azure](https://azure.microsoft.com/free/).
 - Группа ресурсов с контроллером домена. 
-- Одна или несколько виртуальных машин, присоединенных к домену, [в Azure под управлением SQL Server 2016 (или более поздней версии) Enterprise Edition](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-portal-sql-server-provision) в *одной* группе доступности или *разных* зонах доступности, [зарегистрированных в поставщике ресурсов виртуальной машины SQL в режиме полной управляемости](sql-vm-resource-provider-register.md) , и используют одну учетную запись домена для службы SQL Server на каждой виртуальной машине.
+- Одна или несколько виртуальных машин, присоединенных к домену, [в Azure под управлением SQL Server 2016 (или более поздней версии) Enterprise Edition](./create-sql-vm-portal.md) в *одной* группе доступности или *разных* зонах доступности, [зарегистрированных в поставщике ресурсов виртуальной машины SQL в режиме полной управляемости](sql-vm-resource-provider-register.md) , и используют одну учетную запись домена для службы SQL Server на каждой виртуальной машине.
 - Два доступных (неиспользуемых сущностью) IP-адреса. Один предназначен для внутренней подсистемы балансировки нагрузки. Второй — для прослушивателя группы доступности в той же подсети, что и группа доступности. Если вы используете существующую подсистему балансировки нагрузки, для прослушивателя группы доступности требуется только один доступный IP-адрес. 
 
 ## <a name="permissions"></a>Разрешения
@@ -70,7 +70,7 @@ ms.locfileid: "92746756"
 
    :::image type="content" source="media/availability-group-az-portal-configure/configure-new-cluster-1.png" alt-text="Создайте новый кластер, выбрав + новый кластер на портале.":::
 
-1. Разверните узел **учетные данные отказоустойчивого кластера Windows Server** , чтобы предоставить [учетные данные](https://docs.microsoft.com/rest/api/sqlvm/sqlvirtualmachinegroups/createorupdate#wsfcdomainprofile) SQL Server учетной записи службы, а также оператор кластера и учетные записи начальной загрузки, если они отличаются от учетной записи, используемой для службы SQL Server. 
+1. Разверните узел **учетные данные отказоустойчивого кластера Windows Server** , чтобы предоставить [учетные данные](/rest/api/sqlvm/sqlvirtualmachinegroups/createorupdate#wsfcdomainprofile) SQL Server учетной записи службы, а также оператор кластера и учетные записи начальной загрузки, если они отличаются от учетной записи, используемой для службы SQL Server. 
 
    :::image type="content" source="media/availability-group-az-portal-configure/configure-new-cluster-2.png" alt-text="Создайте новый кластер, выбрав + новый кластер на портале."
     ```

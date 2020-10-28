@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 12/18/2018
-ms.openlocfilehash: 8ee440c77ec94a7c3e61c37e589aa5ef23031ca7
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.openlocfilehash: 860fcb2948869d21eb78d0b318074b9a5e2ba0b9
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92332422"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92790327"
 ---
 # <a name="explore-saas-analytics-with-azure-sql-database-azure-synapse-analytics-data-factory-and-power-bi"></a>Изучение аналитики SaaS с помощью Базы данных SQL Azure, Хранилища данных SQL, Фабрики данных и Power BI
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -45,7 +45,7 @@ ms.locfileid: "92332422"
 
 Получать доступ к данным всех клиентов просто, когда все данные находятся в одной мультитенантной базе данных. Когда же данные распределены по тысячам масштабируемых баз данных, мы сталкиваемся с более сложным доступом. Один из способов избежать сложностей доступа — извлечь данные в базу данных аналитики или хранилище данных для запроса.
 
-В этом руководстве представлен комплексный сценарий аналитики для приложения Wingtip Tickets. Сначала [ADF](../../data-factory/introduction.md) используется как средство оркестрации для извлечения сведений о продаже билетов и связанных данных из каждой базы данных клиентов. Эти данные загружаются в промежуточные таблицы в хранилище аналитики. Таким хранилищем может быть база данных SQL или пул SQL. В рамках этого руководства в качестве хранилища аналитики используется [Azure Synapse Analytics (ранее — Хранилище данных SQL)](https://docs.microsoft.com/azure/sql-data-warehouse/sql-data-warehouse-overview-what-is).
+В этом руководстве представлен комплексный сценарий аналитики для приложения Wingtip Tickets. Сначала [ADF](../../data-factory/introduction.md) используется как средство оркестрации для извлечения сведений о продаже билетов и связанных данных из каждой базы данных клиентов. Эти данные загружаются в промежуточные таблицы в хранилище аналитики. Таким хранилищем может быть база данных SQL или пул SQL. В рамках этого руководства в качестве хранилища аналитики используется [Azure Synapse Analytics (ранее — Хранилище данных SQL)](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md).
 
 Далее извлеченные данные преобразовываются и загружаются в набор таблиц со [схемой типа "звезда"](https://www.wikipedia.org/wiki/Star_schema). Таблицы состоят из центральной таблицы фактов, а также соответствующих таблиц измерения:
 
@@ -70,10 +70,10 @@ ms.locfileid: "92332422"
 
 Для работы с этим руководством выполните следующие предварительные требования:
 
-- Разверните SaaS-приложение Wingtip Tickets c однотенантной БД. Это можно сделать менее чем за пять минут, следуя инструкциям из статьи [Развертывание и изучение мультитенантного приложения SaaS на основе базы данных SQL Azure, в котором используется отдельная база данных для каждого клиента](../../sql-database/saas-dbpertenant-get-started-deploy.md).
+- Разверните SaaS-приложение Wingtip Tickets c однотенантной БД. Это можно сделать менее чем за пять минут, следуя инструкциям из статьи [Развертывание и изучение мультитенантного приложения SaaS на основе базы данных SQL Azure, в котором используется отдельная база данных для каждого клиента](./saas-dbpertenant-get-started-deploy.md).
 - Загрузите из GitHub [исходный код](https://github.com/Microsoft/WingtipTicketsSaaS-DbPerTenant/) и сценарии для SaaS-приложения Wingtip Tickets c однотенантной БД. Ознакомьтесь с инструкциями по загрузке. *Разблокируйте ZIP-файл* , а затем извлеките его содержимое.
 - Установите Power BI Desktop. [Загрузить Power BI Desktop.](https://powerbi.microsoft.com/downloads/)
-- Подготовьте пакет дополнительных клиентов, используя рекомендации в руководстве по [**подготовке новых клиентов**](../../sql-database/saas-dbpertenant-provision-and-catalog.md).
+- Подготовьте пакет дополнительных клиентов, используя рекомендации в руководстве по [**подготовке новых клиентов**](./saas-dbpertenant-provision-and-catalog.md).
 
 ### <a name="create-data-for-the-demo"></a>Создание данных для демонстрации
 
@@ -85,7 +85,7 @@ ms.locfileid: "92332422"
 
 ### <a name="deploy-azure-synapse-analytics-data-factory-and-blob-storage"></a>Развертывание Azure Synapse Analytics, Фабрики данных и Хранилища BLOB-объектов
 
-В приложении Wingtip Tickets данные о транзакциях клиентов распределяются по нескольким базам данных. Фабрика данных Azure (ADF) используется для оркестрации извлечения, загрузки и преобразования (ELT) этих данных в хранилище данных. Чтобы наиболее эффективно загрузить данные в Azure Synapse Analytics (ранее Хранилище данных SQL), ADF извлекает данные в промежуточные файлы больших двоичных объектов, а затем передает эти данные в хранилище данных с помощью [PolyBase](https://docs.microsoft.com/azure/sql-data-warehouse/design-elt-data-loading).
+В приложении Wingtip Tickets данные о транзакциях клиентов распределяются по нескольким базам данных. Фабрика данных Azure (ADF) используется для оркестрации извлечения, загрузки и преобразования (ELT) этих данных в хранилище данных. Чтобы наиболее эффективно загрузить данные в Azure Synapse Analytics (ранее Хранилище данных SQL), ADF извлекает данные в промежуточные файлы больших двоичных объектов, а затем передает эти данные в хранилище данных с помощью [PolyBase](../../synapse-analytics/sql-data-warehouse/design-elt-data-loading.md).
 
 На этом шаге развертываются дополнительные ресурсы, используемые в этом руководстве: пул SQL с именем _tenantanalytics_ , Фабрика данных Azure с именем _dbtodwload-\<user\>_ и учетная запись хранения Azure с именем _wingtipstaging\<user\>_ . Учетная запись хранения используется для временного хранения файлов извлеченных данных в виде больших двоичных объектов перед их загрузкой в хранилище данных. На этом шаге также развертывается схема хранилища данных и определяются конвейеры ADF, которые выполняют оркестрацию процесса ELT.
 
@@ -97,7 +97,7 @@ ms.locfileid: "92332422"
 
 #### <a name="tenant-databases-and-analytics-store"></a>Базы данных клиентов и хранилище аналитики
 
-Подключитесь к серверам **tenants1-dpt-&lt;пользователь&gt;** и **catalog-dpt-&lt;пользователь&gt;** с помощью [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms). Замените &lt;user&gt; значением, используемым при развертывании приложения. Укажите имя для входа *developer* и пароль *P\@ssword1* . Дополнительные рекомендации см. в этом [ознакомительном руководстве](../../sql-database/saas-dbpertenant-wingtip-app-overview.md).
+Подключитесь к серверам **tenants1-dpt-&lt;пользователь&gt;** и **catalog-dpt-&lt;пользователь&gt;** с помощью [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms). Замените &lt;user&gt; значением, используемым при развертывании приложения. Укажите имя для входа *developer* и пароль *P\@ssword1* . Дополнительные рекомендации см. в этом [ознакомительном руководстве](./saas-dbpertenant-wingtip-app-overview.md).
 
 ![Подключение к базе данных SQL из SSMS](./media/saas-tenancy-tenant-analytics-adf/ssmsSignIn.JPG)
 
@@ -148,14 +148,14 @@ ms.locfileid: "92332422"
 
 ![adf_overview](./media/saas-tenancy-tenant-analytics-adf/adf-data-factory.PNG)
 
-На странице обзора перейдите на вкладку **Author** (Создание) на левой панели и обратите внимание, что создано три [конвейера](https://docs.microsoft.com/azure/data-factory/concepts-pipelines-activities) и три [набора данных](https://docs.microsoft.com/azure/data-factory/concepts-datasets-linked-services).
+На странице обзора перейдите на вкладку **Author** (Создание) на левой панели и обратите внимание, что создано три [конвейера](../../data-factory/concepts-pipelines-activities.md) и три [набора данных](../../data-factory/concepts-datasets-linked-services.md).
 ![adf_author](./media/saas-tenancy-tenant-analytics-adf/adf_author_tab.JPG)
 
 Три вложенных конвейера: SQLDBToDW, DBCopy и TableCopy.
 
 **Конвейер 1 — SQLDBToDW** ищет имена баз данных клиентов, хранящихся в базе данных каталога (имя таблицы: [__ShardManagement].[ShardsGlobal]), и для каждой клиентской базы данных выполняет конвейер **DBCopy** . По завершении выполняется указанная схема хранимой процедуры **sp_TransformExtractedData** . Эта хранимая процедура преобразовывает загруженные данные в промежуточные таблицы и заполняет таблицы схемы типа "звезда".
 
-**Конвейер 2 — DBCopy** ищет имена исходных таблиц и столбцов из файла конфигурации, хранящегося в хранилище BLOB-объектов.  Затем конвейер **TableCopy** запускается для каждой из четырех таблиц: TicketFacts, CustomerFacts, EventFacts и VenueFacts. Действие **[Foreach](https://docs.microsoft.com/azure/data-factory/control-flow-for-each-activity)** выполняется в параллельном режиме для всех 20 баз данных. ADF поддерживает параллельное выполнение не более 20 итераций цикла. Рассмотрите возможность создания нескольких конвейеров для большего количества баз данных.
+**Конвейер 2 — DBCopy** ищет имена исходных таблиц и столбцов из файла конфигурации, хранящегося в хранилище BLOB-объектов.  Затем конвейер **TableCopy** запускается для каждой из четырех таблиц: TicketFacts, CustomerFacts, EventFacts и VenueFacts. Действие **[Foreach](../../data-factory/control-flow-for-each-activity.md)** выполняется в параллельном режиме для всех 20 баз данных. ADF поддерживает параллельное выполнение не более 20 итераций цикла. Рассмотрите возможность создания нескольких конвейеров для большего количества баз данных.
 
 **Конвейер 3 — TableCopy** использует номера версий строк в базе данных SQL ( _rowversion_ ) для определения измененных или обновленных строк. Это действие выполняет поиск версии начальной и конечной строк для извлечения строк из исходных таблиц. Таблица **CopyTracker** , хранящаяся в каждой базе данных клиентов, отслеживает последнюю строку, извлеченную из каждой исходной таблицы при каждом запуске. Новые или измененные строки копируются в соответствующие промежуточные таблицы в хранилище данных: **raw_Tickets** , **raw_Customers** , **raw_Venues** и **raw_Events** . Наконец, версия последней строки сохраняется в таблице **CopyTracker** для использования в качестве версии начальной строки для следующего сеанса извлечения.
 
@@ -276,4 +276,4 @@ AverageTicketsSold = DIVIDE(DIVIDE(COUNTROWS(fact_Tickets),DISTINCT(dim_Venues[V
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- Дополнительные [руководства по работе с приложением SaaS Wingtip](../../sql-database/saas-dbpertenant-wingtip-app-overview.md#sql-database-wingtip-saas-tutorials).
+- Дополнительные [руководства по работе с приложением SaaS Wingtip](./saas-dbpertenant-wingtip-app-overview.md#sql-database-wingtip-saas-tutorials).
