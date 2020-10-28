@@ -7,12 +7,12 @@ ms.author: pariks
 ms.custom: mvc
 ms.topic: overview
 ms.date: 8/20/2020
-ms.openlocfilehash: ebe9f936e3d0dfafec23842fcdbfd225995d546b
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: f64d4d2b9acbe0e6585ca546c915b82d2d1dbbc4
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88719787"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92737185"
 ---
 # <a name="common-errors"></a>Распространенные ошибки
 
@@ -36,13 +36,13 @@ BEGIN
 END;
 ```
 
-**Решение**.  Чтобы устранить эту ошибку, на портале в колонке [параметров сервера](howto-server-parameters.md) установите для log_bin_trust_function_creators значение 1. Запустите выполнение инструкций DDL или импортируйте схему, чтобы создать нужные объекты, и восстановите предыдущее значение параметра log_bin_trust_function_creators после создания.
+**Решение** .  Чтобы устранить эту ошибку, на портале в колонке [параметров сервера](howto-server-parameters.md) установите для log_bin_trust_function_creators значение 1. Запустите выполнение инструкций DDL или импортируйте схему, чтобы создать нужные объекты, и восстановите предыдущее значение параметра log_bin_trust_function_creators после создания.
 
 #### <a name="error-1227-42000-at-line-101-access-denied-you-need-at-least-one-of-the-super-privileges-for-this-operation-operation-failed-with-exitcode-1"></a>ОШИБКА 1227 (42000) в строке 101. Доступ запрещен — для выполнения этой операции необходимо иметь (по крайней мере одно) разрешение SUPER; операция завершилась ошибкой с кодом выхода 1
 
 Описанная выше ошибка может произойти при импорте файла дампа или создании процедуры, содержащей предложения [DEFINER](https://dev.mysql.com/doc/refman/5.7/en/create-procedure.html). 
 
-**Решение**.  Чтобы устранить эту ошибку, пользователь с правами администратора может предоставить права на создание или выполнение процедур с помощью команды GRANT, как показано в следующих примерах.
+**Решение** .  Чтобы устранить эту ошибку, пользователь с правами администратора может предоставить права на создание или выполнение процедур с помощью команды GRANT, как показано в следующих примерах.
 
 ```sql
 GRANT CREATE ROUTINE ON mydb.* TO 'someuser'@'somehost';
@@ -64,7 +64,7 @@ DELIMITER ;
 
 ## <a name="next-steps"></a>Следующие шаги
 Если вы не нашли ответ, который искали, воспользуйтесь следующими рекомендациями.
-- Опубликуйте свой вопрос на [странице вопросов и ответов на сайте Microsoft Q&A](https://docs.microsoft.com/answers/topics/azure-database-mysql.html) или [Stack Overflow](https://stackoverflow.com/questions/tagged/azure-database-mysql).
+- Опубликуйте свой вопрос на [странице вопросов и ответов на сайте Microsoft Q&A](/answers/topics/azure-database-mysql.html) или [Stack Overflow](https://stackoverflow.com/questions/tagged/azure-database-mysql).
 - Отправьте сообщение электронной почты команде разработчиков службы "База данных Azure для MySQL" [по этому адресу (@Ask)](mailto:AskAzureDBforMySQL@service.microsoft.com). Учтите, что это не электронный адрес службы технической поддержки.
 - Обратитесь в Службу поддержки Azure, [отправив запрос с портала Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade). Чтобы устранить проблему, связанную с учетной записью, отправьте [запрос в службу поддержки](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest) на портале Azure.
 - Чтобы отправить отзыв или отправить запрос на новые возможности, создайте запись через [UserVoice](https://feedback.azure.com/forums/597982-azure-database-for-mysql).

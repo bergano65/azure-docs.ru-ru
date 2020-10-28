@@ -10,12 +10,12 @@ ms.workload: data-services
 ms.topic: overview
 ms.date: 04/09/2018
 ms.author: makromer
-ms.openlocfilehash: 6c43906468ee0124187dc5ce6d6f1405e3b96b2e
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: c6a46f6c8a57b681f66bb98fced17bf0e2464fcd
+ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "86231239"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92638250"
 ---
 # <a name="compare-azure-data-factory-with-data-factory-version-1"></a>Сравнение Фабрики данных Azure c Фабрикой данных версии 1
 
@@ -87,7 +87,7 @@ ms.locfileid: "86231239"
 
 Среда выполнения интеграции Azure SSIS — это полностью управляемый кластер виртуальных машин (узлов) Azure, выделенных для выполнения пакетов служб SSIS в облаке. Подготовив среду выполнения интеграции Azure SSIS, вы сможете использовать те же средства, с которыми вы работали при развертывании пакетов служб SSIS для служб SSIS в локальной среде. 
 
-Например, вы можете использовать SQL Server Data Tools ​​или SQL Server Management Studio для развертывания пакетов служб SSIS в этой среде выполнения в Azure. Пошаговые инструкции см. в руководстве [Развертывание пакетов служб интеграции SQL Server (SSIS) в Azure](tutorial-create-azure-ssis-runtime-portal.md). 
+Например, вы можете использовать SQL Server Data Tools ​​или SQL Server Management Studio для развертывания пакетов служб SSIS в этой среде выполнения в Azure. Пошаговые инструкции см. в руководстве [Развертывание пакетов служб интеграции SQL Server (SSIS) в Azure](./tutorial-deploy-ssis-packages-azure.md). 
 
 ## <a name="flexible-scheduling"></a>Гибкое планирование
 В Фабрике данных текущей версии вам не нужно определять расписание обеспечения доступности для наборов данных. Вы можете определить ресурс триггера, который будет планировать работу конвейеров, используя парадигму планировщика часов. Вы также можете передавать параметры в конвейеры из триггера для использования гибкой модели планирования и выполнения. 
@@ -118,9 +118,9 @@ ms.locfileid: "86231239"
 ## <a name="sdks"></a>Пакеты SDK
  В текущей версии Фабрики данных доступны разные пакеты SDK, которые можно использовать для создания, администрирования и мониторинга конвейеров.
 
-- **Пакет SDK для .NET**: Пакет SDK для .NET обновлен в текущей версии.
+- **Пакет SDK для .NET** : Пакет SDK для .NET обновлен в текущей версии.
 
-- **PowerShell**: Командлеты PowerShell обновлены в текущей версии. Командлеты текущей версии содержат в имени **DataFactoryV2**. Например, Get-AzDataFactoryV2. 
+- **PowerShell** : Командлеты PowerShell обновлены в текущей версии. Командлеты текущей версии содержат в имени **DataFactoryV2** . Например, Get-AzDataFactoryV2. 
 
 - **Пакет SDK для Python.** Этот пакет SDK не использовался до текущей версии.
 
@@ -133,11 +133,11 @@ ms.locfileid: "86231239"
 | | версия 2 | версия 1 |
 | ------ | -- | -- | 
 | **Портал Azure** | [Да](quickstart-create-data-factory-portal.md) | Нет |
-| **Azure PowerShell** | [Да](quickstart-create-data-factory-powershell.md) | [Да](data-factory-build-your-first-pipeline-using-powershell.md) |
-| **Пакет SDK для .NET** | [Да](quickstart-create-data-factory-dot-net.md) | [Да](data-factory-build-your-first-pipeline-using-vs.md) |
-| **REST API** | [Да](quickstart-create-data-factory-rest-api.md) | [Да](data-factory-build-your-first-pipeline-using-rest-api.md) |
+| **Azure PowerShell** | [Да](quickstart-create-data-factory-powershell.md) | [Да](./v1/data-factory-build-your-first-pipeline-using-powershell.md) |
+| **Пакет SDK для .NET** | [Да](quickstart-create-data-factory-dot-net.md) | [Да](./v1/data-factory-build-your-first-pipeline-using-vs.md) |
+| **REST API** | [Да](quickstart-create-data-factory-rest-api.md) | [Да](./v1/data-factory-build-your-first-pipeline-using-rest-api.md) |
 | **Пакет SDK для Python** | [Да](quickstart-create-data-factory-python.md) | Нет |
-| **Шаблон Resource Manager** | [Да](quickstart-create-data-factory-resource-manager-template.md) | [Да](data-factory-build-your-first-pipeline-using-arm.md) | 
+| **Шаблон Resource Manager** | [Да](quickstart-create-data-factory-resource-manager-template.md) | [Да](./v1/data-factory-build-your-first-pipeline-using-arm.md) | 
 
 ## <a name="roles-and-permissions"></a>Роли и разрешения
 
@@ -148,4 +148,4 @@ ms.locfileid: "86231239"
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Дополнительные сведения о создании фабрики данных см. в руководствах по [PowerShell](quickstart-create-data-factory-powershell.md), [.NET](quickstart-create-data-factory-dot-net.md), [Python](quickstart-create-data-factory-python.md) и [REST API](quickstart-create-data-factory-rest-api.md). 
+Дополнительные сведения о создании фабрики данных см. в руководствах по [PowerShell](quickstart-create-data-factory-powershell.md), [.NET](quickstart-create-data-factory-dot-net.md), [Python](quickstart-create-data-factory-python.md) и [REST API](quickstart-create-data-factory-rest-api.md).

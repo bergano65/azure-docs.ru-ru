@@ -5,19 +5,19 @@ titleSuffix: Azure SQL Database & SQL Managed Instance
 services: sql-database
 ms.service: sql-database
 ms.subservice: development
-ms.custom: sqldbrb=2 
+ms.custom: sqldbrb=2
 ms.devlang: ruby
 ms.topic: quickstart
 author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 05/29/2020
-ms.openlocfilehash: 57e364d8cbd3cb9e1e2996786ee6414b7d7e04a8
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 0434a99d28b4f71594e0ca9ce312087dee5b0ee2
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "86504961"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92672533"
 ---
 # <a name="quickstart-use-ruby-to-query-a-database-in-azure-sql-database-or-azure-sql-managed-instance"></a>Краткое руководство. Использование Ruby для отправки запросов к базе данных в службе "База данных SQL Azure" или Управляемом экземпляру SQL Azure
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -46,11 +46,11 @@ ms.locfileid: "86504961"
   
 - Ruby и связанное программное обеспечение для используемой операционной системы:
   
-  - **macOS**: установите Homebrew, rbenv и ruby-build, Ruby, FreeTDS и TinyTDS. См. шаги в разделе 1.2, 1.3, 1.4, 1.5 и 2.1 в статье [Create Ruby apps using SQL Server on macOS](https://www.microsoft.com/sql-server/developer-get-started/ruby/mac/) (Создание приложений Ruby с помощью SQL Server в macOS).
+  - **macOS** : установите Homebrew, rbenv и ruby-build, Ruby, FreeTDS и TinyTDS. См. шаги в разделе 1.2, 1.3, 1.4, 1.5 и 2.1 в статье [Create Ruby apps using SQL Server on macOS](https://www.microsoft.com/sql-server/developer-get-started/ruby/mac/) (Создание приложений Ruby с помощью SQL Server в macOS).
   
-  - **Ubuntu**: установите необходимые компоненты для Ruby, rbenv и ruby-build, Ruby, FreeTDS и TinyTDS. См. шаги в разделе 1.2, 1.3, 1.4, 1.5 и 2.1 в статье о [Create Ruby apps using SQL Server on Ubuntu](https://www.microsoft.com/sql-server/developer-get-started/ruby/ubuntu/) (Создание приложений Ruby с помощью SQL Server в Ubuntu).
+  - **Ubuntu** : установите необходимые компоненты для Ruby, rbenv и ruby-build, Ruby, FreeTDS и TinyTDS. См. шаги в разделе 1.2, 1.3, 1.4, 1.5 и 2.1 в статье о [Create Ruby apps using SQL Server on Ubuntu](https://www.microsoft.com/sql-server/developer-get-started/ruby/ubuntu/) (Создание приложений Ruby с помощью SQL Server в Ubuntu).
   
-  - **Windows**: установите Ruby, Ruby Devkit и TinyTDS. См. [Configure development environment for Ruby development](/sql/connect/ruby/step-1-configure-development-environment-for-ruby-development) (Настройка среды разработки Ruby).
+  - **Windows** : установите Ruby, Ruby Devkit и TinyTDS. См. [Configure development environment for Ruby development](/sql/connect/ruby/step-1-configure-development-environment-for-ruby-development) (Настройка среды разработки Ruby).
 
 ## <a name="get-server-connection-information"></a>Получение сведений о подключении к серверу
 
@@ -58,9 +58,9 @@ ms.locfileid: "86504961"
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
 
-2. Перейдите на страницу **Базы данных SQL** или **Управляемые экземпляры SQL**.
+2. Перейдите на страницу **Базы данных SQL** или **Управляемые экземпляры SQL** .
 
-3. На странице **Обзор** просмотрите полное имя сервера рядом с полем **Имя сервера** для базы данных в службе "База данных SQL Azure" или полное имя сервера (либо IP-адрес) рядом с полем **Узел** для Управляемого экземпляра SQL Azure или SQL Server на виртуальной машине Azure. Чтобы скопировать имя сервера или имя узла, наведите на него указатель мыши и щелкните значок **копирования**.
+3. На странице **Обзор** просмотрите полное имя сервера рядом с полем **Имя сервера** для базы данных в службе "База данных SQL Azure" или полное имя сервера (либо IP-адрес) рядом с полем **Узел** для Управляемого экземпляра SQL Azure или SQL Server на виртуальной машине Azure. Чтобы скопировать имя сервера или имя узла, наведите на него указатель мыши и щелкните значок **копирования** .
 
 > [!NOTE]
 > Сведения о подключении SQL Server на виртуальной машине Azure см. в [этом разделе](../virtual-machines/windows/sql-vm-create-portal-quickstart.md#connect-to-sql-server).
@@ -108,4 +108,4 @@ ms.locfileid: "86504961"
 - [Учебник. Проектирование реляционной базы данных в службе "База данных SQL Azure" с помощью SSMS](design-first-database-tutorial.md)
 - [Просмотрите репозиторий GitHub для TinyTDS](https://github.com/rails-sqlserver/tiny_tds).
 - [Сообщите о проблемах или задайте вопросы по TinyTDS](https://github.com/rails-sqlserver/tiny_tds/issues)
-- [Драйвер Ruby для SQL Server](https://docs.microsoft.com/sql/connect/ruby/ruby-driver-for-sql-server/)
+- [Драйвер Ruby для SQL Server](/sql/connect/ruby/ruby-driver-for-sql-server/)

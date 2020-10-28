@@ -7,13 +7,13 @@ ms.date: 7/14/2020
 ms.topic: quickstart
 ms.service: iot-pnp
 services: iot-pnp
-ms.custom: mvc
-ms.openlocfilehash: 187a0598dfc26394d1fd48e67d83ef7e98ef6226
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.custom: mvc, devx-track-azurecli
+ms.openlocfilehash: 065e65c0c8ccf61dd67da19fd5a94d4506db73ff
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91574041"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92737305"
 ---
 # <a name="quickstart-connect-a-sample-iot-plug-and-play-device-application-to-iot-hub-python"></a>Краткое руководство. Подключение примера приложения устройства IoT Plug and Play к Центру Интернета вещей (Python)
 
@@ -37,7 +37,7 @@ python --version
 pip install azure-iot-device
 ```
 
-Клонируйте репозиторий пакета SDK центра Интернета вещей для Python и извлеките **образец**:
+Клонируйте репозиторий пакета SDK центра Интернета вещей для Python и извлеките **образец** :
 
 ```cmd/sh
 git clone https://github.com/Azure/azure-iot-sdk-python
@@ -45,7 +45,7 @@ git clone https://github.com/Azure/azure-iot-sdk-python
 
 ## <a name="run-the-sample-device"></a>Запуск примера устройства
 
-В папке *azure-iot-sdk-python\azure-iot-device\samples\pnp* содержится пример кода для устройства IoT Plug and Play. В этом кратком руководстве используется файл *simple_thermostat.py*. Этот пример кода реализует устройство, совместимое с IoT Plug and Play, и использует клиентскую библиотеку устройства Python для Интернета вещей Azure.
+В папке *azure-iot-sdk-python\azure-iot-device\samples\pnp* содержится пример кода для устройства IoT Plug and Play. В этом кратком руководстве используется файл *simple_thermostat.py* . Этот пример кода реализует устройство, совместимое с IoT Plug and Play, и использует клиентскую библиотеку устройства Python для Интернета вещей Azure.
 
 Откройте файл **simple_thermostat.py** в текстовом редакторе. Обратите внимание на следующее:
 
@@ -57,19 +57,19 @@ git clone https://github.com/Azure/azure-iot-sdk-python
 
 1. Определяет функцию прослушивателя клавиатуры ввода, которая позволяет выйти из приложения.
 
-1. Имеет функцию **main**. Функция **main**:
+1. Имеет функцию **main** . Функция **main** :
 
     1. Использует пакет SDK для устройств для создания клиента устройства и подключения к центру Интернета вещей.
 
-    1. Обновляет свойства. Используемая модель, **Thermostat**, определяет в качестве свойств Thermostat `targetTemperature` и `maxTempSinceLastReboot`, поэтому мы будем использовать их. Свойства обновляются с помощью метода `patch_twin_reported_properties`, определенного в `device_client`.
+    1. Обновляет свойства. Используемая модель, **Thermostat** , определяет в качестве свойств Thermostat `targetTemperature` и `maxTempSinceLastReboot`, поэтому мы будем использовать их. Свойства обновляются с помощью метода `patch_twin_reported_properties`, определенного в `device_client`.
 
-    1. Начинает прослушивание запросов команд с помощью функции **execute_command_listener**. Функция настраивает прослушиватель на ожидание передачи данных от команд службы. При настройке прослушивателя вы предоставляете параметры `method_name`, `user_command_handler`, а также `create_user_response_handler`.
+    1. Начинает прослушивание запросов команд с помощью функции **execute_command_listener** . Функция настраивает прослушиватель на ожидание передачи данных от команд службы. При настройке прослушивателя вы предоставляете параметры `method_name`, `user_command_handler`, а также `create_user_response_handler`.
         - Функция `user_command_handler` определяет действия устройства при получении команды. Например, если будильник отключается, результатом получения этой команды будут сведения о том, что вы проснулись. Считайте это "эффектом" вызываемой команды.
         - Функция `create_user_response_handler` создает ответ, который будет отправлен в центр Интернета вещей при успешном выполнении команды. Например, если вы отключаете будильник или откладываете сигнал, что является отзывом о службе. Это можно рассматривать как ответ, предоставленный службе. Этот ответ можно просмотреть на портале.
 
     1. Начинает отправку телеметрии. Метод **pnp_send_telemetry** определен в файле pnp_methods.py. В примере кода используется цикл, который вызывает эту функцию каждые восемь секунд.
 
-    1. Отключает все прослушиватели и задачи и выходит из цикла при нажатии кнопки **Q** или **q**.
+    1. Отключает все прослушиватели и задачи и выходит из цикла при нажатии кнопки **Q** или **q** .
 
 [!INCLUDE [iot-pnp-environment](../../includes/iot-pnp-environment.md)]
 

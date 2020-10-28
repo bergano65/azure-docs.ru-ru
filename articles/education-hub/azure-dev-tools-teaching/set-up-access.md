@@ -7,12 +7,12 @@ ms.topic: quickstart
 ms.service: azure-education
 ms.subservice: education-hub
 ms.date: 06/30/2020
-ms.openlocfilehash: 83ae2fdea2ffe586a626f8a45cba74a22c07ae7b
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 3151da4375c440bec44523711448149f51440d5c
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87101126"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92676535"
 ---
 # <a name="setting-up-access-for-azure-dev-tools"></a>Настройка доступа к средствам Azure Dev
 
@@ -30,7 +30,7 @@ ms.locfileid: "87101126"
 ## <a name="for-students-faculty-and-administrators"></a>Для учащихся, преподавателей и администраторов
 Учащиеся получают доступ к средствам разработки Azure через [Центр образования](https://aka.ms/devtoolsforteaching).
 
-Учащиеся и преподаватели могут получить доступ ко всем преимуществам скачивания программного обеспечения через Центр образования. Центр образования на портале Azure предоставляет учащимся простой доступ ко всему каталогу программного обеспечения, а также доступ ко всему каталогу [Microsoft Learn](https://docs.microsoft.com/learn/).
+Учащиеся и преподаватели могут получить доступ ко всем преимуществам скачивания программного обеспечения через Центр образования. Центр образования на портале Azure предоставляет учащимся простой доступ ко всему каталогу программного обеспечения, а также доступ ко всему каталогу [Microsoft Learn](/learn/).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - [Управление учетными записями учащихся](manage-students.md)

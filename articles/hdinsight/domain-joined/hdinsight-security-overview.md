@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: overview
 ms.custom: seoapr2020
 ms.date: 08/24/2020
-ms.openlocfilehash: ea61ca42c345fe9df0436a193fb2adcb00ce6195
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 7f450d54a0039f591178ae839fbb404f31d80671
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92150808"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92537275"
 ---
 # <a name="overview-of-enterprise-security-in-azure-hdinsight"></a>Общие сведения о корпоративной безопасности в Azure HDInsight
 
@@ -78,10 +78,10 @@ HDInsight поддерживает шифрование неактивных д�
 | Безопасность доступа к данным | Настройка [списков управления доступом (ACL)](../../storage/blobs/data-lake-storage-access-control.md) для Azure Data Lake Storage 1-го поколения и 2-го поколения  | Customer |
 |  | Включите свойство [Требуется безопасное перемещение](../../storage/common/storage-require-secure-transfer.md) в учетной записи хранения. | Customer |
 |  | Настройка [брандмауэров службы хранилища Azure](../../storage/common/storage-network-security.md) и виртуальных сетей | Customer |
-|  | Настройка [конечных точек службы для виртуальной сети Azure](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview) для Cosmos DB и [Базы данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview) | Customer |
+|  | Настройка [конечных точек службы для виртуальной сети Azure](../../virtual-network/virtual-network-service-endpoints-overview.md) для Cosmos DB и [Базы данных SQL Azure](../../azure-sql/database/vnet-service-endpoint-rule-overview.md) | Customer |
 |  | Убедитесь, что функция [шифрования при передаче](./encryption-in-transit.md) включена, чтобы при передаче данных внутри кластера использовались TLS и IPSec. | Customer |
-|  | Настройка [управляемых пользователем ключей](../../storage/common/storage-encryption-keys-portal.md) для шифрования службы хранилища Azure | Customer |
-|  | Контролируйте доступ специалистов службы поддержки Azure к вашим данным, используя [защищенное хранилище](https://docs.microsoft.com/azure/security/fundamentals/customer-lockbox-overview). | Customer |
+|  | Настройка [управляемых пользователем ключей](../../storage/common/customer-managed-keys-configure-key-vault.md) для шифрования службы хранилища Azure | Customer |
+|  | Контролируйте доступ специалистов службы поддержки Azure к вашим данным, используя [защищенное хранилище](../../security/fundamentals/customer-lockbox-overview.md). | Customer |
 | Безопасность приложений и ПО промежуточного слоя | Интеграция с AAD-DS и [настройка ESP](apache-domain-joined-configure-using-azure-adds.md) или использование [HIB для проверки подлинности OAuth](identity-broker.md)| Customer |
 |  | Настройка политик [авторизации Apache Ranger](apache-domain-joined-run-hive.md) | Customer |
 |  | Использование [журналов Azure Monitor](../hdinsight-hadoop-oms-log-analytics-tutorial.md) | Customer |
@@ -98,5 +98,5 @@ HDInsight поддерживает шифрование неактивных д�
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Корпоративный пакет безопасности для HDInsight](apache-domain-joined-architecture.md)
-* [Настройка кластера HDInsight с корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory](apache-domain-joined-configure.md)
+* [Настройка кластера HDInsight с корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory](./apache-domain-joined-configure-using-azure-adds.md)
 * [Управление кластерами HDInsight с помощью корпоративного пакета безопасности](apache-domain-joined-manage.md)

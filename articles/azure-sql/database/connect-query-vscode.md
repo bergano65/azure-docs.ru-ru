@@ -13,12 +13,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 05/29/2020
-ms.openlocfilehash: 7a096e355e140b18bd7df010c379e31d21f90634
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: f823b6d04a217328fe2e825e64906460cd9cbae9
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "86515059"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92672494"
 ---
 # <a name="quickstart-use-visual-studio-code-to-connect-and-query"></a>Краткое руководство. Использование Visual Studio Code для подключения и отправки запросов 
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -45,13 +45,13 @@ ms.locfileid: "86515059"
 
 ## <a name="install-visual-studio-code"></a>Установка Visual Studio Code
 
-Убедитесь, что установили последнюю версию [Visual Studio Code](https://code.visualstudio.com/Download) и загрузили [расширение mssql](https://aka.ms/mssql-marketplace). Руководство по установке расширения mssql см. в разделе [об установке Visual Studio Code](https://docs.microsoft.com/sql/linux/sql-server-linux-develop-use-vscode#install-and-start-visual-studio-code) и на странице [расширения mssql для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-mssql.mssql).
+Убедитесь, что установили последнюю версию [Visual Studio Code](https://code.visualstudio.com/Download) и загрузили [расширение mssql](https://aka.ms/mssql-marketplace). Руководство по установке расширения mssql см. в разделе [об установке Visual Studio Code](/sql/linux/sql-server-linux-develop-use-vscode#install-and-start-visual-studio-code) и на странице [расширения mssql для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-mssql.mssql).
 
 ## <a name="configure-visual-studio-code"></a>Откройте Visual Studio Code.
 
 ### <a name="macos"></a>**macOS**
 
-Для macOS необходимо установить OpenSSL. Это предварительное требование для платформы .NET Core, используемой для расширения mssql. Откройте терминал и введите следующие команды для установки **brew** и **OpenSSL**.
+Для macOS необходимо установить OpenSSL. Это предварительное требование для платформы .NET Core, используемой для расширения mssql. Откройте терминал и введите следующие команды для установки **brew** и **OpenSSL** .
 
 ```bash
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -76,21 +76,21 @@ ln -s /usr/local/opt/openssl/lib/libssl.1.0.0.dylib /usr/local/lib/
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
 
-2. Перейдите на страницу **Базы данных SQL** или **Управляемые экземпляры SQL**.
+2. Перейдите на страницу **Базы данных SQL** или **Управляемые экземпляры SQL** .
 
-3. На странице **Обзор** просмотрите полное имя сервера рядом с полем **Имя сервера** для Базы данных SQL или полное имя сервера рядом с полем **Узел** для Управляемого экземпляра SQL. Чтобы скопировать имя сервера или имя узла, наведите на него указатель мыши и щелкните значок **копирования**.
+3. На странице **Обзор** просмотрите полное имя сервера рядом с полем **Имя сервера** для Базы данных SQL или полное имя сервера рядом с полем **Узел** для Управляемого экземпляра SQL. Чтобы скопировать имя сервера или имя узла, наведите на него указатель мыши и щелкните значок **копирования** .
 
 ## <a name="set-language-mode-to-sql"></a>Выбор режима языка SQL
 
-В Visual Studio Code укажите для режима языка значение **SQL**, чтобы активировать команды mssql и T-SQL IntelliSense.
+В Visual Studio Code укажите для режима языка значение **SQL** , чтобы активировать команды mssql и T-SQL IntelliSense.
 
 1. Откройте новое окно Visual Studio Code.
 
-2. Нажмите клавиши **CTRL**+**N**. Откроется новый обычный текстовый файл.
+2. Нажмите клавиши **CTRL**+**N** . Откроется новый обычный текстовый файл.
 
-3. В правом нижнем углу строки состояния выберите **Обычный текст**.
+3. В правом нижнем углу строки состояния выберите **Обычный текст** .
 
-4. В открывшемся раскрывающемся меню **Выберите языковой режим** выберите **SQL**.
+4. В открывшемся раскрывающемся меню **Выберите языковой режим** выберите **SQL** .
 
 ## <a name="connect-to-your-database"></a>Подключение к базе данных
 
@@ -99,9 +99,9 @@ ln -s /usr/local/opt/openssl/lib/libssl.1.0.0.dylib /usr/local/lib/
 > [!IMPORTANT]
 > Прежде чем продолжить, приготовьте сервер и данные для входа. Если при вводе данных профиля подключения переключиться с Visual Studio Code, понадобится начать создание профиля заново.
 
-1. В Visual Studio Code нажмите клавиши **CTRL+SHIFT+P** (или **F1**), чтобы открыть палитру команд.
+1. В Visual Studio Code нажмите клавиши **CTRL+SHIFT+P** (или **F1** ), чтобы открыть палитру команд.
 
-2. Выберите **MS SQL:Connect** и нажмите клавишу **ВВОД**.
+2. Выберите **MS SQL:Connect** и нажмите клавишу **ВВОД** .
 
 3. Выберите **Create Connection Profile** (Создать профиль подключения).
 
@@ -109,19 +109,19 @@ ln -s /usr/local/opt/openssl/lib/libssl.1.0.0.dylib /usr/local/lib/
 
    | Свойство       | Рекомендуемое значение | Описание |
    | ------------ | ------------------ | ------------------------------------------------- |
-   | **Имя сервера** | Полное имя сервера | Примерно такое: **mynewserver20170313.database.windows.net**. |
+   | **Имя сервера** | Полное имя сервера | Примерно такое: **mynewserver20170313.database.windows.net** . |
    | **Имя базы данных** | mySampleDatabase | База данных для подключения. |
    | **Аутентификация** | Имя входа SQL| В этом руководстве используется проверка подлинности SQL. |
    | **User name** | Имя пользователя | Имя пользователя учетной записи администратора сервера, используемое для создания сервера. |
    | **Пароль (имя входа SQL)** | Пароль | Пароль учетной записи администратора сервера, используемый для создания сервера. |
-   | **Сохранить пароль?** | "Да" или "Нет". | Выберите **Да**, если вы не хотите вводить пароль каждый раз. |
+   | **Сохранить пароль?** | "Да" или "Нет". | Выберите **Да** , если вы не хотите вводить пароль каждый раз. |
    | **Введите имя для этого профиля** | Имя профиля, например **mySampleProfile** | Сохраненный профиль повышает скорость подключения при последующих входах. |
 
    В случае успешного выполнения появится уведомление о том, что профиль создан и подключен.
 
 ## <a name="query-data"></a>Данные запросов
 
-Выполните указанную нижу инструкцию Transact-SQL [SELECT](https://msdn.microsoft.com/library/ms189499.aspx), чтобы запросить 20 основных продуктов из категории.
+Выполните указанную нижу инструкцию Transact-SQL [SELECT](/sql/t-sql/queries/select-transact-sql), чтобы запросить 20 основных продуктов из категории.
 
 1. В окне редактора вставьте следующий запрос SQL.
 
@@ -138,7 +138,7 @@ ln -s /usr/local/opt/openssl/lib/libssl.1.0.0.dylib /usr/local/lib/
 
 ## <a name="insert-data"></a>Добавление данных
 
-Выполните указанную ниже инструкцию Transact-SQL [INSERT](https://msdn.microsoft.com/library/ms174335.aspx), чтобы добавить новый продукт в таблицу `SalesLT.Product`.
+Выполните указанную ниже инструкцию Transact-SQL [INSERT](/sql/t-sql/statements/insert-transact-sql), чтобы добавить новый продукт в таблицу `SalesLT.Product`.
 
 1. Замените предыдущий запрос следующим содержимым.
 
@@ -166,7 +166,7 @@ ln -s /usr/local/opt/openssl/lib/libssl.1.0.0.dylib /usr/local/lib/
 
 ## <a name="update-data"></a>Обновление данных
 
-Выполните указанную ниже инструкцию Transact-SQL [UPDATE](https://msdn.microsoft.com/library/ms177523.aspx), чтобы обновить добавленный продукт.
+Выполните указанную ниже инструкцию Transact-SQL [UPDATE](/sql/t-sql/queries/update-transact-sql), чтобы обновить добавленный продукт.
 
 1. Замените предыдущий запрос следующим содержимым:
 
@@ -176,11 +176,11 @@ ln -s /usr/local/opt/openssl/lib/libssl.1.0.0.dylib /usr/local/lib/
    WHERE Name = 'myNewProduct';
    ```
 
-2. Нажмите клавиши **CTRL**+**SHIFT**+**E**, чтобы обновить указанную строку в таблице `Product`.
+2. Нажмите клавиши **CTRL**+**SHIFT**+**E** , чтобы обновить указанную строку в таблице `Product`.
 
 ## <a name="delete-data"></a>Удаление данных
 
-Выполните указанную ниже инструкцию Transact-SQL [DELETE](https://docs.microsoft.com/sql/t-sql/statements/delete-transact-sql), чтобы удалить новый продукт.
+Выполните указанную ниже инструкцию Transact-SQL [DELETE](/sql/t-sql/statements/delete-transact-sql), чтобы удалить новый продукт.
 
 1. Замените предыдущий запрос следующим содержимым:
 
@@ -189,10 +189,10 @@ ln -s /usr/local/opt/openssl/lib/libssl.1.0.0.dylib /usr/local/lib/
    WHERE Name = 'myNewProduct';
    ```
 
-2. Нажмите клавиши **CTRL**+**SHIFT**+**E**, чтобы удалить указанную строку в таблице `Product`.
+2. Нажмите клавиши **CTRL**+**SHIFT**+**E** , чтобы удалить указанную строку в таблице `Product`.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о подключении и отправке запросов с помощью SQL Server Management Studio см. в статье [Краткое руководство. Использование SSMS для подключения и создания запросов к Базе данных SQL Azure или Управляемому экземпляру SQL Azure](connect-query-ssms.md).
 - Сведения о подключении и отправке запросов с помощью портала Azure см. в статье [Краткое руководство. Портал Azure: использование редактора SQL-запросов для подключения к данным и создания запросов к данным](connect-query-portal.md).
-- Статью из журнала MSDN, посвященную использованию кода Visual Studio, можно просмотреть в записи блога о [создании базы данных IDE с помощью расширения MSSQL](https://msdn.microsoft.com/magazine/mt809115).
+- Статью из журнала MSDN, посвященную использованию кода Visual Studio, можно просмотреть в записи блога о [создании базы данных IDE с помощью расширения MSSQL](/archive/msdn-magazine/2017/june/data-points-visual-studio-code-create-a-database-ide-with-mssql-extension).

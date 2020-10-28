@@ -7,12 +7,12 @@ ms.topic: quickstart
 ms.author: jukullam
 ms.date: 10/12/2020
 ms.custom: github-actions-azure
-ms.openlocfilehash: 7b4620c739b2f94cb6b96743280cd1decbbb746e
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: ce045da7d21c2af0dfde5ee896b4f7f343ce6545
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92326122"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92541270"
 ---
 # <a name="use-github-actions-to-connect-to-azure-mysql"></a>Использование GitHub Actions для подключения к Azure MySQL
 
@@ -39,7 +39,7 @@ ms.locfileid: "92326122"
 
 ## <a name="generate-deployment-credentials"></a>Создание учетных данных для развертывания.
 
-Вы можете создать [субъект-службу](../active-directory/develop/app-objects-and-service-principals.md) с помощью команды [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac&preserve-view=true) в [Azure CLI](/cli/azure/). Чтобы выполнить эту команду, откройте [Azure Cloud Shell](https://shell.azure.com/) на портале Azure или нажмите кнопку **Попробовать** .
+Вы можете создать [субъект-службу](../active-directory/develop/app-objects-and-service-principals.md) с помощью команды [az ad sp create-for-rbac](/cli/azure/ad/sp#az-ad-sp-create-for-rbac&preserve-view=true) в [Azure CLI](/cli/azure/). Чтобы выполнить эту команду, откройте [Azure Cloud Shell](https://shell.azure.com/) на портале Azure или нажмите кнопку **Попробовать** .
 
 Замените заполнители `server-name` именем сервера MySQL, размещенного в Azure. Замените `subscription-id` и `resource-group` идентификатором подписки и группой ресурсов, связанных с вашим сервером MySQL.  
 
@@ -191,4 +191,4 @@ ms.locfileid: "92326122"
 ## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
-> [Сведения об интеграции Azure с GitHub](https://docs.microsoft.com/azure/developer/github/)
+> [Сведения об интеграции Azure с GitHub](/azure/developer/github/)

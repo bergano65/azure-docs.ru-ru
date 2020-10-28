@@ -5,7 +5,7 @@ description: В этой статье показано, как с помощью
 services: sql-database
 ms.service: sql-database
 ms.subservice: machine-learning
-ms.custom: sqldbrb=2 
+ms.custom: sqldbrb=2
 ms.devlang: python
 ms.topic: quickstart
 author: garyericson
@@ -14,12 +14,12 @@ ms.reviewer: davidph, sstein
 manager: cgronlun
 ms.date: 05/29/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 3a939c816cac44ed85802ecfa591564effc1ee73
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 62f1015bc945b5c01f719d7e96e6446c49ac8b8a
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91328840"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92675154"
 ---
 # <a name="quickstart-use-r-with-azure-sql-database-machine-learning-services-preview-to-query-a-database"></a>Краткое руководство. Использование языка R с помощью Служб машинного обучения в Базе данных SQL Azure (предварительная версия) для выполнения запросов к базе данных 
 
@@ -33,11 +33,11 @@ ms.locfileid: "91328840"
 
 - Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) бесплатно.
 - [База данных SQL Azure](single-database-create-quickstart.md).
-- [Службы машинного обучения](machine-learning-services-overview.md) (с поддержкой R) включены.
+- [Службы машинного обучения](../managed-instance/machine-learning-services-overview.md) (с поддержкой R) включены.
 - [SQL Server Management Studio](/sql/ssms/sql-server-management-studio-ssms) (SSMS).
 
 > [!IMPORTANT]
-> Скрипты в этой статье предназначены для использования базы данных **Adventure Works**.
+> Скрипты в этой статье предназначены для использования базы данных **Adventure Works** .
 
 Службы машинного обучения с поддержкой R — это функция Базы данных SQL Azure, которая используется для выполнения скриптов R в базе данных. Дополнительные сведения см. [The R Project for Statistical Computing](https://www.r-project.org/) (Проект R для статических вычислений)
 
@@ -47,9 +47,9 @@ ms.locfileid: "91328840"
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
 
-2. Перейдите на страницу **Базы данных SQL** или **Управляемые экземпляры SQL**.
+2. Перейдите на страницу **Базы данных SQL** или **Управляемые экземпляры SQL** .
 
-3. На странице **Обзор** просмотрите полное имя сервера рядом с полем **Имя сервера** для базы данных в службе "База данных SQL Azure" или полное имя сервера рядом с полем **Узел** для управляемого экземпляра в Управляемом экземпляре SQL Azure. Чтобы скопировать имя сервера или имя узла, наведите на него указатель мыши и щелкните значок **копирования**.
+3. На странице **Обзор** просмотрите полное имя сервера рядом с полем **Имя сервера** для базы данных в службе "База данных SQL Azure" или полное имя сервера рядом с полем **Узел** для управляемого экземпляра в Управляемом экземпляре SQL Azure. Чтобы скопировать имя сервера или имя узла, наведите на него указатель мыши и щелкните значок **копирования** .
 
 ## <a name="create-code-to-query-your-database"></a>Создание кода для запроса к базе данных
 
@@ -57,7 +57,7 @@ ms.locfileid: "91328840"
 
    Если вам нужна помощь с подключением, ознакомьтесь с разделом [Краткое руководство. Подключение к базе данных в службе "База данных SQL Azure" и создание запросов к ней с помощью SQL Server Management Studio](connect-query-ssms.md).
 
-1. Передайте полный сценарий R в хранимую процедуру [sp_execute_external_script](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql).
+1. Передайте полный сценарий R в хранимую процедуру [sp_execute_external_script](/sql/relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql).
 
    Сценарий передается с помощью аргумента `@script`. Все, что находится внутри аргумента `@script`, должно быть допустимым кодом R.
    
@@ -76,12 +76,12 @@ ms.locfileid: "91328840"
 
 ## <a name="run-the-code"></a>Выполнение кода
 
-1. Выполните хранимую процедуру [sp_execute_external_script](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql).
+1. Выполните хранимую процедуру [sp_execute_external_script](/sql/relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql).
 
 1. В окне **Сообщения**  убедитесь, что возвращены первые 20 строк с продуктами из категории.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Учебник. Проектирование реляционной базы данных в службе "База данных SQL Azure" с помощью SSMS](design-first-database-tutorial.md)
-- [Machine Learning Services (with R) in Azure SQL Database (preview)](machine-learning-services-overview.md) (Службы машинного обучения (с использованием R) в Базе данных SQL Azure (предварительная версия))
-- [Создание и выполнение простых сценариев R в Службах машинного обучения в Базе данных SQL Azure (предварительная версия)](r-script-create-quickstart.md)
+- [Machine Learning Services (with R) in Azure SQL Database (preview)](../managed-instance/machine-learning-services-overview.md) (Службы машинного обучения (с использованием R) в Базе данных SQL Azure (предварительная версия))
+- [Создание и выполнение простых сценариев R в Службах машинного обучения в Базе данных SQL Azure (предварительная версия)](/sql/machine-learning/tutorials/quickstart-r-create-script?context=%252fazure%252fazure-sql%252fmanaged-instance%252fcontext%252fml-context)

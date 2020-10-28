@@ -6,14 +6,14 @@ ms.author: brendm
 ms.service: spring-cloud
 ms.topic: quickstart
 ms.date: 09/08/2020
-ms.custom: devx-track-java
+ms.custom: devx-track-java, devx-track-azurecli
 zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: a248699b47cf99980c9490bf16c10e7196ee6ecf
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 22abdb64a2349045923e148db57f683b4be87636
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92091089"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92742708"
 ---
 # <a name="quickstart-provision-azure-spring-cloud-service"></a>Краткое руководство. Подготовка службы Azure Spring Cloud
 
@@ -103,25 +103,25 @@ az extension add --name spring-cloud
 
 1. На новой вкладке откройте [портал Azure](https://ms.portal.azure.com/). 
 
-2. В поле поиска сверху введите **Azure Spring Cloud**.
+2. В поле поиска сверху введите **Azure Spring Cloud** .
 
 3. Выберите пункт **Azure Spring Cloud** в списке результатов.
 
     ![Значок ASC — запуск](media/spring-cloud-quickstart-launch-app-portal/find-spring-cloud-start.png)
 
-4. На странице Azure Spring Cloud щелкните элемент **+ Добавить**.
+4. На странице Azure Spring Cloud щелкните элемент **+ Добавить** .
 
     ![Значок ASC — добавление](media/spring-cloud-quickstart-launch-app-portal/spring-cloud-add.png)
 
 5. Заполните форму на странице **создания** Azure Spring Cloud.  Ознакомьтесь со следующими рекомендациями:
-    - **Подписка**: Выберите подписку, на которую будет выставляться счет за этот ресурс.
+    - **Подписка** : Выберите подписку, на которую будет выставляться счет за этот ресурс.
     - **Группа ресурсов.** Советуем создавать группы ресурсов для новых ресурсов. Обратите внимание, что она будет использоваться на следующих шагах как **\<resource group name\>** .
     - **Сведения о службе или ее название.** Укажите **\<service instance name\>** .  Его длина должна быть от 4 до 32 знаков. Имя может содержать только строчные буквы, цифры и дефисы.  Первым символом в имени службы должна быть буква, а последним — буква или цифра.
     - **Расположение.** Выберите расположение для экземпляра службы.
 
     ![Начальная страница портала ASC](media/spring-cloud-quickstart-launch-app-portal/portal-start.png)
 
-6. Щелкните **Проверка и создание**.
+6. Щелкните **Проверка и создание** .
 
 > [!div class="nextstepaction"]
 > [У меня есть проблема](https://www.research.net/r/javae2e?tutorial=asc-cli-quickstart&step=public-endpoint)

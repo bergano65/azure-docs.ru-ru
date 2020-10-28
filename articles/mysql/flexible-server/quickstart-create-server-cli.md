@@ -8,16 +8,16 @@ ms.devlang: azurecli
 ms.topic: quickstart
 ms.date: 9/21/2020
 ms.custom: mvc
-ms.openlocfilehash: 7a5bab13dbaa5715aa8dd34e41aba34ce62557a2
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 4be295ada476e4dc41a86d06908ef1d653a3bad8
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91329534"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92545027"
 ---
 # <a name="quickstart-create-an-azure-database-for-mysql-flexible-server-using-azure-cli"></a>Краткое руководство. Создание Базы данных Azure для MySQL (Гибкий сервер) с помощью Azure CLI
 
-В этом кратком руководстве описывается, как с помощью команд [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli) в [Azure Cloud Shell](https://shell.azure.com) за 5 минут создать гибкий сервер Базы данных Azure для MySQL. Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
+В этом кратком руководстве описывается, как с помощью команд [Azure CLI](/cli/azure/get-started-with-azure-cli) в [Azure Cloud Shell](https://shell.azure.com) за 5 минут создать гибкий сервер Базы данных Azure для MySQL. Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
 > [!IMPORTANT] 
 > Сейчас предоставляется общедоступная предварительная версия Гибкого сервера Базы данных Azure для MySQL.
@@ -26,19 +26,19 @@ ms.locfileid: "91329534"
 
 [Azure Cloud Shell](../../cloud-shell/overview.md) — это бесплатная интерактивная оболочка, с помощью которой можно выполнять действия, описанные в этой статье. Она включает предварительно установленные общие инструменты Azure и настроена для использования с вашей учетной записью.
 
-Чтобы открыть Cloud Shell, просто выберите **Попробовать** в правом верхнем углу блока кода. Кроме того, Cloud Shell можно открыть в отдельной вкладке браузера. Для этого перейдите на страницу [https://shell.azure.com/bash](https://shell.azure.com/bash). Нажмите кнопку **Копировать**, чтобы скопировать блоки кода. Вставьте код в Cloud Shell и нажмите клавишу **ВВОД**, чтобы выполнить его.
+Чтобы открыть Cloud Shell, просто выберите **Попробовать** в правом верхнем углу блока кода. Кроме того, Cloud Shell можно открыть в отдельной вкладке браузера. Для этого перейдите на страницу [https://shell.azure.com/bash](https://shell.azure.com/bash). Нажмите кнопку **Копировать** , чтобы скопировать блоки кода. Вставьте код в Cloud Shell и нажмите клавишу **ВВОД** , чтобы выполнить его.
 
-Если вы решили установить и использовать CLI локально, для выполнения инструкций, приведенных в этом кратком руководстве, вам потребуется Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli).
+Если вы решили установить и использовать CLI локально, для выполнения инструкций, приведенных в этом кратком руководстве, вам потребуется Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Вам потребуется выполнить вход в учетную запись с помощью команды [az login](https://docs.microsoft.com/cli/azure/reference-index#az-login). Обратите внимание на свойство **идентификатора**, которое ссылается на **идентификатор подписки** вашей учетной записи Azure.
+Вам потребуется выполнить вход в учетную запись с помощью команды [az login](/cli/azure/reference-index#az-login). Обратите внимание на свойство **идентификатора** , которое ссылается на **идентификатор подписки** вашей учетной записи Azure.
 
 ```azurecli-interactive
 az login
 ```
 
-Выберите конкретную подписку вашей учетной записи, выполнив команду [az account set](https://docs.microsoft.com/cli/azure/account#az-account-set). Запишите значение **идентификатора** из выходных данных команды **az login**, чтобы использовать его в команде в качестве значения аргумента **подписки**. Если вы используете несколько подписок, выберите соответствующую, в которой за ресурс будет взиматься плата. Чтобы отобразить все ваши подписки, выполните команду [az account list](https://docs.microsoft.com/cli/azure/account#az-account-list).
+Выберите конкретную подписку вашей учетной записи, выполнив команду [az account set](/cli/azure/account#az-account-set). Запишите значение **идентификатора** из выходных данных команды **az login** , чтобы использовать его в команде в качестве значения аргумента **подписки** . Если вы используете несколько подписок, выберите соответствующую, в которой за ресурс будет взиматься плата. Чтобы отобразить все ваши подписки, выполните команду [az account list](/cli/azure/account#az-account-list).
 
 ```azurecli
 az account set --subscription <subscription id>
@@ -46,13 +46,13 @@ az account set --subscription <subscription id>
 
 ## <a name="create-a-flexible-server"></a>Создание гибкого сервера
 
-Создайте [группу ресурсов Azure](https://docs.microsoft.com/azure/azure-resource-manager/management/overview) с помощью команды `az group create`, а затем создайте гибкий сервер MySQL в этой группе ресурсов. Необходимо указать уникальное имя. В следующем примере создается группа ресурсов с именем `myresourcegroup` в расположении именем `eastus2`.
+Создайте [группу ресурсов Azure](../../azure-resource-manager/management/overview.md) с помощью команды `az group create`, а затем создайте гибкий сервер MySQL в этой группе ресурсов. Необходимо указать уникальное имя. В следующем примере создается группа ресурсов с именем `myresourcegroup` в расположении именем `eastus2`.
 
 ```azurecli-interactive
 az group create --name myresourcegroup --location eastus2
 ```
 
-Создайте гибкий сервер с помощью команды `az mysql flexible-server create`. Сервер может управлять несколькими базами данных. Следующая команда создает сервер, используя параметры и значения по умолчанию для [локального контекста](https://docs.microsoft.com/cli/azure/local-context) Azure CLI: 
+Создайте гибкий сервер с помощью команды `az mysql flexible-server create`. Сервер может управлять несколькими базами данных. Следующая команда создает сервер, используя параметры и значения по умолчанию для [локального контекста](/cli/azure/local-context) Azure CLI: 
 
 ```azurecli
 az mysql flexible-server create
@@ -107,7 +107,7 @@ Make a note of your password. If you forget, you would have to reset your passwo
 az mysql flexible-server show --resource-group myresourcegroup --name mydemoserver
 ```
 
-Результаты выводятся в формате JSON. Запишите значения **fullyQualifiedDomainName** и **administratorLogin**. Ниже приведен пример выходных данных JSON: 
+Результаты выводятся в формате JSON. Запишите значения **fullyQualifiedDomainName** и **administratorLogin** . Ниже приведен пример выходных данных JSON: 
 
 ```json
 {

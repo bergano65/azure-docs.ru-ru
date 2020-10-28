@@ -12,12 +12,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 05/29/2020
-ms.openlocfilehash: 5257e8730830c6b51808d5d014bc3bdec6036bfe
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: b3cbda70fd836482448aa381f6e781ed15666f2c
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87843986"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92675166"
 ---
 # <a name="quickstart-use-python-to-query-a-database-in-azure-sql-database-or-azure-sql-managed-instance"></a>Краткое руководство. Использование Python для отправки запросов к базе данных в службе "База данных SQL Azure" или Управляемом экземпляре SQL Azure
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -45,7 +45,7 @@ ms.locfileid: "87843986"
 
   # <a name="macos"></a>[macOS](#tab/macos)
 
-  Для установки Homebrew и Python, драйвера ODBC и SQLCMD, а также драйвера Python для SQL Server используйте шаги **1.2**, **1.3** и **2.1** в [create Python apps using SQL Server on macOS](https://www.microsoft.com/sql-server/developer-get-started/python/mac/) (Создание приложений Python с помощью SQL Server на MacOS).
+  Для установки Homebrew и Python, драйвера ODBC и SQLCMD, а также драйвера Python для SQL Server используйте шаги **1.2** , **1.3** и **2.1** в [create Python apps using SQL Server on macOS](https://www.microsoft.com/sql-server/developer-get-started/python/mac/) (Создание приложений Python с помощью SQL Server на MacOS).
 
   Дополнительные сведения см. в статье [Установка драйвера ODBC Microsoft на macOS](/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server).
 
@@ -66,7 +66,7 @@ ms.locfileid: "87843986"
 ---
 
 > [!IMPORTANT]
-> Скрипты в этой статье предназначены для использования базы данных **Adventure Works**.
+> Скрипты в этой статье предназначены для использования базы данных **Adventure Works** .
 
 > [!NOTE]
 > Вы также можете использовать Управляемый экземпляр SQL Azure.
@@ -83,9 +83,9 @@ ms.locfileid: "87843986"
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
 
-2. Перейдите на страницу **Базы данных SQL** или **Управляемые экземпляры SQL**.
+2. Перейдите на страницу **Базы данных SQL** или **Управляемые экземпляры SQL** .
 
-3. На странице **Обзор** просмотрите полное имя сервера рядом с полем **Имя сервера** для базы данных в службе "База данных SQL Azure" или полное имя сервера (или IP-адрес) рядом с полем **Узел** для Управляемого экземпляра SQL Azure или SQL Server в виртуальной машине Azure. Чтобы скопировать имя сервера или имя узла, наведите на него указатель мыши и щелкните значок **копирования**.
+3. На странице **Обзор** просмотрите полное имя сервера рядом с полем **Имя сервера** для базы данных в службе "База данных SQL Azure" или полное имя сервера (или IP-адрес) рядом с полем **Узел** для Управляемого экземпляра SQL Azure или SQL Server в виртуальной машине Azure. Чтобы скопировать имя сервера или имя узла, наведите на него указатель мыши и щелкните значок **копирования** .
 
 > [!NOTE]
 > Сведения о подключении к экземпляру SQL Server на виртуальной машине Azure см. в разделе [Подключение к экземпляру SQL Server](../virtual-machines/windows/sql-vm-create-portal-quickstart.md#connect-to-sql-server).
@@ -130,6 +130,5 @@ ms.locfileid: "87843986"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Руководство по разработке первой базы данных в службе "База данных SQL Azure"](design-first-database-tutorial.md)
-- [Сведения о драйверах Microsoft Python для SQL Server](https://docs.microsoft.com/sql/connect/python/python-driver-for-sql-server/)
+- [Сведения о драйверах Microsoft Python для SQL Server](/sql/connect/python/python-driver-for-sql-server/)
 - [Центр по разработке на Python](https://azure.microsoft.com/develop/python/?v=17.23h)
-

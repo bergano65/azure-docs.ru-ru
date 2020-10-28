@@ -8,19 +8,19 @@ ms.devlang: azurecli
 ms.topic: quickstart
 ms.date: 07/15/2020
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: a7d69ae15e72133e08b3e66de607aa06fefdbd32
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 161d1c95507d366ce00f75580a100fd2607675d9
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87495393"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92544024"
 ---
 # <a name="quickstart-create-an-azure-database-for-mysql-server-using-azure-cli"></a>Краткое руководство. Создание сервера базы данных Azure для MySQL с помощью Azure CLI
 
 > [!TIP]
 > Рассмотрите возможность использования более простой команды Azure CLI [az postgres up](/cli/azure/ext/db-up/mysql#ext-db-up-az-mysql-up) (сейчас в предварительной версии). Ознакомьтесь с [кратким руководством](./quickstart-create-server-up-azure-cli.md).
 
-В этом кратком руководстве описывается, как с помощью команд [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli) в [Azure Cloud Shell](https://shell.azure.com) создать сервер службы "База данных Azure для MySQL" за 5 минут. Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
+В этом кратком руководстве описывается, как с помощью команд [Azure CLI](/cli/azure/get-started-with-azure-cli) в [Azure Cloud Shell](https://shell.azure.com) создать сервер службы "База данных Azure для MySQL" за 5 минут. Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it](../../includes/cloud-shell-try-it.md)]
 
@@ -30,13 +30,13 @@ ms.locfileid: "87495393"
 ## <a name="prerequisites"></a>Предварительные требования
 Для этой статьи требуется запустить локально Azure CLI версии 2.0 или более поздней. Чтобы узнать, какая установлена версия, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
 
-Вам потребуется выполнить вход в учетную запись с помощью команды [az login](https://docs.microsoft.com/cli/azure/reference-index?view=azure-cli-latest#az-login). Обратите внимание на свойство **идентификатора**, которое ссылается на **идентификатор подписки** вашей учетной записи Azure. 
+Вам потребуется выполнить вход в учетную запись с помощью команды [az login](/cli/azure/reference-index#az-login). Обратите внимание на свойство **идентификатора** , которое ссылается на **идентификатор подписки** вашей учетной записи Azure. 
 
 ```azurecli-interactive
 az login
 ```
 
-Выберите конкретную подписку вашей учетной записи, выполнив команду [az account set](/cli/azure/account). Запишите значение **идентификатора** из выходных данных команды **az login**, чтобы использовать его в команде в качестве значения аргумента **подписки**. Если вы используете несколько подписок, выберите соответствующую, в которой за ресурс будет взиматься плата. Чтобы отобразить все ваши подписки, выполните команду [az account list](https://docs.microsoft.com/cli/azure/account?view=azure-cli-latest#az-account-list).
+Выберите конкретную подписку вашей учетной записи, выполнив команду [az account set](/cli/azure/account). Запишите значение **идентификатора** из выходных данных команды **az login** , чтобы использовать его в команде в качестве значения аргумента **подписки** . Если вы используете несколько подписок, выберите соответствующую, в которой за ресурс будет взиматься плата. Чтобы отобразить все ваши подписки, выполните команду [az account list](/cli/azure/account#az-account-list).
 
 ```azurecli
 az account set --subscription <subscription id>
@@ -62,7 +62,7 @@ az mysql server create --resource-group myresourcegroup --name mydemoserver --lo
 name | mydemoserver | Введите уникальное имя для сервера службы "База данных Azure для MySQL". Имя сервера может содержать только строчные буквы, цифры и знак дефиса (-). Его длина должна составлять от 3 до 63 символов.
 resource-group | myresourcegroup | Укажите имя группы ресурсов Azure.
 location | westus | Расположение сервера в Azure.
-admin-user | myadmin | Имя для входа администратора. Не может иметь значение **azure_superuser**, **admin**, **administrator**, **root**, **guest** или **public**.
+admin-user | myadmin | Имя для входа администратора. Не может иметь значение **azure_superuser** , **admin** , **administrator** , **root** , **guest** или **public** .
 admin-password | *Надежный пароль* | Пароль администратора. Пароль должен содержать от 8 до 128 символов. Пароль должен содержать символы из таких трех категорий: прописные латинские буквы, строчные латинские буквы, цифры и небуквенно-цифровые знаки.
 sku-name|GP_Gen5_2|Введите имя ценовой категории и конфигурацию вычислительных ресурсов. В сокращенной записи соответствует схеме {ценовая категория} _{поколение вычислительных ресурсов}_ {число виртуальных ядер}. Дополнительные сведения см. на странице с [ценовыми категориями](./concepts-pricing-tiers.md).
 
@@ -91,7 +91,7 @@ az mysql server firewall-rule create --resource-group myresourcegroup --server m
 az mysql server show --resource-group myresourcegroup --name mydemoserver
 ```
 
-Результаты выводятся в формате JSON. Запишите значения **fullyQualifiedDomainName** и **administratorLogin**.
+Результаты выводятся в формате JSON. Запишите значения **fullyQualifiedDomainName** и **administratorLogin** .
 ```json
 {
   "administratorLogin": "myadmin",
@@ -143,6 +143,6 @@ az mysql server delete --resource-group myresourcegroup --name mydemoserver
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
->[Создание приложения PHP в Windows с помощью MySQL](../app-service/app-service-web-tutorial-php-mysql.md)
->[Создание приложения PHP в Linux с помощью MySQL](../app-service/containers/tutorial-php-mysql-app.md)
->[Создание приложения Spring на основе Java с помощью MySQL](https://docs.microsoft.com/azure/developer/java/spring-framework/spring-app-service-e2e?tabs=bash)
+>[Создание приложения PHP в Windows с помощью MySQL](../app-service/tutorial-php-mysql-app.md)
+>[Создание приложения PHP в Linux с помощью MySQL](../app-service/tutorial-php-mysql-app.md?pivots=platform-linux%253fpivots%253dplatform-linux)
+>[Создание приложения Spring на основе Java с помощью MySQL](/azure/developer/java/spring-framework/spring-app-service-e2e?tabs=bash)

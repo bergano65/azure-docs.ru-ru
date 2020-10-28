@@ -8,16 +8,16 @@ ms.devlang: azurecli
 ms.topic: quickstart
 ms.date: 9/22/2020
 ms.custom: mvc
-ms.openlocfilehash: 78824ef6f557a2df431e664158da9d858df0603f
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 75d76c64c10bf3ecc28c32452618048119bb9a59
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "90946287"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92547628"
 ---
 # <a name="quickstart-create-an-azure-database-for-postgresql-flexible-server-using-azure-cli"></a>Краткое руководство. Создание сервера Базы данных Azure для PostgreSQL (Гибкий сервер) с помощью Azure CLI
 
-В этом кратком руководстве объясняется, как с помощью команд [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli) в [Azure Cloud Shell](https://shell.azure.com) за пять минут создать сервер Базы данных Azure для PostgreSQL (Гибкий сервер). Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
+В этом кратком руководстве объясняется, как с помощью команд [Azure CLI](/cli/azure/get-started-with-azure-cli) в [Azure Cloud Shell](https://shell.azure.com) за пять минут создать сервер Базы данных Azure для PostgreSQL (Гибкий сервер). Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
 > [!IMPORTANT] 
 > Сейчас доступна предварительная версия Гибкого сервера Базы данных Azure для PostgreSQL.
@@ -26,19 +26,19 @@ ms.locfileid: "90946287"
 
 [Azure Cloud Shell](../../cloud-shell/overview.md) — это бесплатная интерактивная оболочка, с помощью которой можно выполнять действия, описанные в этой статье. Она включает предварительно установленные общие инструменты Azure и настроена для использования с вашей учетной записью.
 
-Чтобы открыть Cloud Shell, просто выберите **Попробовать** в правом верхнем углу блока кода. Кроме того, Cloud Shell можно открыть в отдельной вкладке браузера. Для этого перейдите на страницу [https://shell.azure.com/bash](https://shell.azure.com/bash). Нажмите кнопку **Копировать**, чтобы скопировать блоки кода. Вставьте код в Cloud Shell и нажмите клавишу **ВВОД**, чтобы выполнить его.
+Чтобы открыть Cloud Shell, просто выберите **Попробовать** в правом верхнем углу блока кода. Кроме того, Cloud Shell можно открыть в отдельной вкладке браузера. Для этого перейдите на страницу [https://shell.azure.com/bash](https://shell.azure.com/bash). Нажмите кнопку **Копировать** , чтобы скопировать блоки кода. Вставьте код в Cloud Shell и нажмите клавишу **ВВОД** , чтобы выполнить его.
 
-Если вы решили установить и использовать CLI локально, для выполнения инструкций, приведенных в этом кратком руководстве, вам потребуется Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+Если вы решили установить и использовать CLI локально, для выполнения инструкций, приведенных в этом кратком руководстве, вам потребуется Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Вам потребуется выполнить вход в учетную запись с помощью команды [az login](https://docs.microsoft.com/cli/azure/reference-index?view=azure-cli-latest#az-login). Обратите внимание на свойство **идентификатора**, которое ссылается на **идентификатор подписки** вашей учетной записи Azure.
+Вам потребуется выполнить вход в учетную запись с помощью команды [az login](/cli/azure/reference-index#az-login). Обратите внимание на свойство **идентификатора** , которое ссылается на **идентификатор подписки** вашей учетной записи Azure.
 
 ```azurecli-interactive
 az login
 ```
 
-Выберите конкретную подписку вашей учетной записи, выполнив команду [az account set](https://docs.microsoft.com/cli/azure/account?view=azure-cli-latest#az-account-set). Запишите значение **идентификатора** из выходных данных команды **az login**, чтобы использовать его в команде в качестве значения аргумента **подписки**. Если вы используете несколько подписок, выберите соответствующую, в которой за ресурс будет взиматься плата. Чтобы отобразить все ваши подписки, выполните команду [az account list](https://docs.microsoft.com/cli/azure/account?view=azure-cli-latest#az-account-list).
+Выберите конкретную подписку вашей учетной записи, выполнив команду [az account set](/cli/azure/account#az-account-set). Запишите значение **идентификатора** из выходных данных команды **az login** , чтобы использовать его в команде в качестве значения аргумента **подписки** . Если вы используете несколько подписок, выберите соответствующую, в которой за ресурс будет взиматься плата. Чтобы отобразить все ваши подписки, выполните команду [az account list](/cli/azure/account#az-account-list).
 
 ```azurecli
 az account set --subscription <subscription id>
@@ -46,13 +46,13 @@ az account set --subscription <subscription id>
 
 ## <a name="create-a-flexible-server"></a>Создание гибкого сервера
 
-Создайте [группу ресурсов Azure](https://docs.microsoft.com/azure/azure-resource-manager/management/overview) с помощью команды `az group create`, а затем создайте гибкий сервер PostgreSQL в этой группе ресурсов. Необходимо указать уникальное имя. В следующем примере создается группа ресурсов с именем `myresourcegroup` в расположении именем `westus`.
+Создайте [группу ресурсов Azure](../../azure-resource-manager/management/overview.md) с помощью команды `az group create`, а затем создайте гибкий сервер PostgreSQL в этой группе ресурсов. Необходимо указать уникальное имя. В следующем примере создается группа ресурсов с именем `myresourcegroup` в расположении именем `westus`.
 
 ```azurecli-interactive
 az group create --name myresourcegroup --location westus
 ```
 
-Создайте гибкий сервер с помощью команды `az postgres flexible-server create`. Сервер может управлять несколькими базами данных. Следующая команда создает сервер, используя параметры и значения по умолчанию для [локального контекста](https://docs.microsoft.com/cli/azure/local-context?view=azure-cli-latest) Azure CLI: 
+Создайте гибкий сервер с помощью команды `az postgres flexible-server create`. Сервер может управлять несколькими базами данных. Следующая команда создает сервер, используя параметры и значения по умолчанию для [локального контекста](/cli/azure/local-context) Azure CLI: 
 
 ```azurecli
 az postgres flexible-server create
@@ -79,7 +79,7 @@ az postgres flexible-server create
 az postgres flexible-server show --resource-group myresourcegroup --name mydemoserver
 ```
 
-Результаты выводятся в формате JSON. Запишите значения **fullyQualifiedDomainName** и **administratorLogin**.
+Результаты выводятся в формате JSON. Запишите значения **fullyQualifiedDomainName** и **administratorLogin** .
 
 <!--FIXME-->
 ```json

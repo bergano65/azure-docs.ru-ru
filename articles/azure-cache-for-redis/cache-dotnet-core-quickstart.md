@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.custom: devx-track-csharp, mvc
 ms.topic: quickstart
 ms.date: 06/18/2020
-ms.openlocfilehash: 1cb35ce995a27030612499cc3147943112e1c50e
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 12466f64daa699925e4e184536b2d50c5fb89847
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89662369"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92547730"
 ---
 # <a name="quickstart-use-azure-cache-for-redis-with-a-net-core-app"></a>Краткое руководство. Использование кэша Azure для Redis в приложениях .NET Core
 
@@ -29,7 +29,7 @@ ms.locfileid: "89662369"
 
 [!INCLUDE [redis-cache-access-keys](../../includes/redis-cache-access-keys.md)]
 
-Запомните или запишите **имя узла** и **первичный ключ доступа**. Эти значения вам потребуются позже для создания секрета *CacheConnection*.
+Запомните или запишите **имя узла** и **первичный ключ доступа** . Эти значения вам потребуются позже для создания секрета *CacheConnection* .
 
 
 
@@ -41,15 +41,15 @@ ms.locfileid: "89662369"
 dotnet new console -o Redistest
 ```
 
-В этом же окне командной строки перейдите к каталогу нового проекта *Redistest*.
+В этом же окне командной строки перейдите к каталогу нового проекта *Redistest* .
 
 
 
 ## <a name="add-secret-manager-to-the-project"></a>Добавление менеджера секретных ключей в проект
 
-В этом разделе добавьте [инструмент "Диспетчер секретов"](https://docs.microsoft.com/aspnet/core/security/app-secrets) в проект. Инструмент "Диспетчер секретов" хранит конфиденциальные данные для разработки вне вашего дерева проектов. Этот подход помогает предотвратить случайный обмен секретами приложений в исходном коде.
+В этом разделе добавьте [инструмент "Диспетчер секретов"](/aspnet/core/security/app-secrets) в проект. Инструмент "Диспетчер секретов" хранит конфиденциальные данные для разработки вне вашего дерева проектов. Этот подход помогает предотвратить случайный обмен секретами приложений в исходном коде.
 
-Откройте файл *Redistest.csproj*. Добавьте элемент `DotNetCliToolReference`, чтобы включить *Microsoft.Extensions.SecretManager.Tools*. Кроме того, добавьте элемент `UserSecretsId`, как показано ниже, и сохраните файл.
+Откройте файл *Redistest.csproj* . Добавьте элемент `DotNetCliToolReference`, чтобы включить *Microsoft.Extensions.SecretManager.Tools* . Кроме того, добавьте элемент `UserSecretsId`, как показано ниже, и сохраните файл.
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -64,7 +64,7 @@ dotnet new console -o Redistest
 </Project>
 ```
 
-Выполните следующую команду, чтобы добавить в проект пакет *Microsoft.Extensions.Configuration.UserSecrets*:
+Выполните следующую команду, чтобы добавить в проект пакет *Microsoft.Extensions.Configuration.UserSecrets* :
 
 ```
 dotnet add package Microsoft.Extensions.Configuration.UserSecrets
@@ -76,7 +76,7 @@ dotnet add package Microsoft.Extensions.Configuration.UserSecrets
 dotnet restore
 ```
 
-В том же окне командной строки выполните следующую команду, чтобы сохранить новый секрет с именем *CacheConnection*. Не забудьте заменить заполнители (включая угловые скобки) именем кэша и первичным ключом доступа.
+В том же окне командной строки выполните следующую команду, чтобы сохранить новый секрет с именем *CacheConnection* . Не забудьте заменить заполнители (включая угловые скобки) именем кэша и первичным ключом доступа.
 
 ```
 dotnet user-secrets set CacheConnection "<cache name>.redis.cache.windows.net,abortConnect=false,ssl=true,password=<primary-access-key>"
@@ -107,7 +107,7 @@ private static void InitializeConfiguration()
 
 В этом разделе вы настроите в консольном приложении использование клиента [StackExchange.Redis](https://github.com/StackExchange/StackExchange.Redis) для .NET.
 
-В окне командной строки выполните следующую команду в каталоге проекта *Redistest*:
+В окне командной строки выполните следующую команду в каталоге проекта *Redistest* :
 
 ```
 dotnet add package StackExchange.Redis
@@ -191,7 +191,7 @@ static void Main(string[] args)
 }
 ```
 
-Сохраните *Program.cs*.
+Сохраните *Program.cs* .
 
 В кэше Azure для Redis настраивается число баз данных (по умолчанию 16) для обеспечения логического разделения данных в нем. Этот код подключается к стандартной базе данных DB 0. Дополнительные сведения см. в разделах [What are Redis databases?](cache-configure.md#default-redis-server-configuration) (Что такое базы данных Redis) и [Конфигурация сервера Redis по умолчанию](cache-development-faq.md#what-are-redis-databases).
 
@@ -222,19 +222,19 @@ dotnet run
 
 Простой способ сериализовать объекты — использовать методы сериализации `JsonConvert` из [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) и выполнять сериализацию в нотацию JSON и из нее. В этом разделе вы добавите в кэш объект .NET.
 
-Выполните следующую команду, чтобы добавить в приложение пакет *Newtonsoft.json*:
+Выполните следующую команду, чтобы добавить в приложение пакет *Newtonsoft.json* :
 
 ```
 dotnet add package Newtonsoft.json
 ```
 
-Добавьте следующую инструкцию `using` в начало файла *Program.cs*:
+Добавьте следующую инструкцию `using` в начало файла *Program.cs* :
 
 ```csharp
 using Newtonsoft.Json;
 ```
 
-Добавьте следующее определение класса `Employee` в файл *Program.cs*:
+Добавьте следующее определение класса `Employee` в файл *Program.cs* :
 
 ```csharp
 class Employee
@@ -293,13 +293,13 @@ dotnet run
 > Удаление группы ресурсов — необратимая операция, и все соответствующие ресурсы удаляются окончательно. Будьте внимательны, чтобы случайно не удалить не ту группу ресурсов или не те ресурсы. Если ресурсы для размещения этого примера созданы в имеющейся группе ресурсов, содержащей ресурсы, которые следует сохранить, можно удалить каждый ресурс отдельно в соответствующих колонках вместо удаления группы ресурсов.
 >
 
-Войдите на [портал Azure](https://portal.azure.com) и щелкните **Группы ресурсов**.
+Войдите на [портал Azure](https://portal.azure.com) и щелкните **Группы ресурсов** .
 
-Введите имя группы ресурсов в текстовое поле **Фильтровать по имени...** . В инструкциях в этой статье использовалась группа ресурсов с именем *TestResources*. В своей группе ресурсов в списке результатов щелкните **...** , а затем **Удалить группу ресурсов**.
+Введите имя группы ресурсов в текстовое поле **Фильтровать по имени...** . В инструкциях в этой статье использовалась группа ресурсов с именем *TestResources* . В своей группе ресурсов в списке результатов щелкните **...** , а затем **Удалить группу ресурсов** .
 
 ![DELETE](./media/cache-dotnet-core-quickstart/cache-delete-resource-group.png)
 
-Подтвердите операцию удаления группы ресурсов. Введите имя группы ресурсов и нажмите кнопку **Удалить**.
+Подтвердите операцию удаления группы ресурсов. Введите имя группы ресурсов и нажмите кнопку **Удалить** .
 
 Через некоторое время группа ресурсов и все ее ресурсы будут удалены.
 
@@ -317,4 +317,4 @@ dotnet run
 Хотите оптимизировать и сократить ваши расходы на облако?
 
 > [!div class="nextstepaction"]
-> [Начните анализировать затраты с помощью службы "Управление затратами"](https://docs.microsoft.com/azure/cost-management-billing/costs/quick-acm-cost-analysis?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)
+> [Начните анализировать затраты с помощью службы "Управление затратами"](../cost-management-billing/costs/quick-acm-cost-analysis.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)

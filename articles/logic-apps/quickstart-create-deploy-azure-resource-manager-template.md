@@ -5,14 +5,14 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: jonfan, logicappspm
 ms.topic: quickstart
-ms.custom: mvc, subject-armqs
+ms.custom: mvc, subject-armqs, devx-track-azurecli
 ms.date: 06/30/2020
-ms.openlocfilehash: 10cc89d1a0cc975df4384e551dddde32be0a4a72
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 689582d73e29cb60cc2ee5294b568b5db2f73244
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87078119"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92739329"
 ---
 # <a name="quickstart-create-and-deploy-a-logic-app-workflow-by-using-an-arm-template"></a>Краткое руководство. Создание и развертывание рабочего процесса приложения логики с помощью шаблона ARM
 
@@ -20,7 +20,7 @@ ms.locfileid: "87078119"
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
-Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure** . Шаблон откроется на портале Azure.
 
 [![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3a%2f%2fraw.githubusercontent.com%2fAzure%2fazure-quickstart-templates%2fmaster%2f101-logic-app-create%2fazuredeploy.json)
 
@@ -78,7 +78,7 @@ ms.locfileid: "87078119"
 
    ![Предоставление сведений для шаблона быстрого запуска](./media/quickstart-create-deploy-azure-resource-manager-template/create-logic-app-template-portal.png)
 
-1. Когда все будет готово, выберите **Просмотр и создание**.
+1. Когда все будет готово, выберите **Просмотр и создание** .
 
 1. Выполните действия, описанные в разделе [Обзор развернутых ресурсов](#review-deployed-resources).
 
@@ -234,7 +234,7 @@ Read-Host -Prompt "Press [ENTER] to continue ..."
 
 1. После открытия конструктора приложений логики изучите приложение логики, созданное с помощью шаблона быстрого запуска.
 
-1. Чтобы проверить приложение логики, на панели инструментов конструктора щелкните **Запустить**.
+1. Чтобы проверить приложение логики, на панели инструментов конструктора щелкните **Запустить** .
 
 ### <a name="cli"></a>[CLI](#tab/azure-cli)
 
@@ -288,7 +288,7 @@ GET https://management.azure.com/subscriptions/xxxxXXXXxxxxXXXXX/resourceGroups/
 
 1. На портале Azure найдите и выберите группу ресурсов, которую необходимо удалить (в нашем примере — `Check-Azure-Status-RG`).
 
-1. При необходимости в меню группы ресурсов выберите **Обзор**. На странице обзора выберите **Удалить группу ресурсов**.
+1. При необходимости в меню группы ресурсов выберите **Обзор** . На странице обзора выберите **Удалить группу ресурсов** .
 
 1. Для подтверждения введите имя группы ресурсов.
 

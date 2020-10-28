@@ -7,13 +7,13 @@ ms.date: 10/05/2020
 ms.topic: quickstart
 ms.service: iot-pnp
 services: iot-pnp
-ms.custom: mvc
-ms.openlocfilehash: d04a1eda7dc414233075f5d70e29c967c8bdfc35
-ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
+ms.custom: mvc, devx-track-azurecli
+ms.openlocfilehash: ad5fa271e3abfaf0c7ee4884881262773a9ad485
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91946082"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92741498"
 ---
 # <a name="quickstart-interact-with-an-iot-plug-and-play-device-thats-connected-to-your-solution-python"></a>Краткое руководство. Взаимодействие с подключенным к решению устройством IoT Plug and Play с помощью Python
 
@@ -39,7 +39,7 @@ python --version
 pip install azure-iot-device
 ```
 
-Установите пакет **azure-iot-hub**, выполнив следующую команду:
+Установите пакет **azure-iot-hub** , выполнив следующую команду:
 
 ```cmd/sh
 pip install azure-iot-hub
@@ -59,7 +59,7 @@ pip install azure-iot-hub
     git clone https://github.com/Azure/azure-iot-sdk-python
     ```
 
-1. Это окно терминала используется в качестве терминала **устройства**. Перейдите в папку клонированного репозитория, а затем в папку */azure-iot-sdk-python/azure-iot-device/samples/pnp*.
+1. Это окно терминала используется в качестве терминала **устройства** . Перейдите в папку клонированного репозитория, а затем в папку */azure-iot-sdk-python/azure-iot-device/samples/pnp* .
 
 1. Запустите пример термостата с помощью следующей команды:
 
@@ -73,23 +73,23 @@ pip install azure-iot-hub
 
 В рамках этого краткого руководства вы примените пример решения Интернета вещей на Python для взаимодействия с только что настроенным примером устройства.
 
-1. Откройте другое окно терминала, которое будет терминалом **службы**.
+1. Откройте другое окно терминала, которое будет терминалом **службы** .
 
 1. Перейдите в папку */azure-iot-sdk-python/azure-iot-hub/samples* в клонированном репозитории SDK Python.
 
 1. Откройте файл *registry_manager_pnp_sample.py* и проверьте код. В этом примере показано, как использовать класс **IoTHubRegistryManager** для взаимодействия с устройством IoT Plug and Play.
 
 > [!NOTE]
-> В этих примерах служб мы используем класс **IoTHubRegistryManager** из **клиента службы Центра Интернета вещей**. Дополнительные сведения об интерфейсах API, включая API цифровых двойников, см. в [руководстве для разработчиков служб](concepts-developer-guide-service.md).
+> В этих примерах служб мы используем класс **IoTHubRegistryManager** из **клиента службы Центра Интернета вещей** . Дополнительные сведения об интерфейсах API, включая API цифровых двойников, см. в [руководстве для разработчиков служб](concepts-developer-guide-service.md).
 
 ### <a name="get-the-device-twin"></a>Получение двойника устройства
 
 Во время прохождения статьи [Настройка среды для кратких руководств и учебников IoT Plug and Play](set-up-environment.md) вы создали две переменные среды, чтобы настроить пример для подключения к центру Интернета вещей и устройству:
 
-* **IOTHUB_CONNECTION_STRING**: строка подключения центра Интернета вещей, которую вы записали ранее.
-* **IOTHUB_DEVICE_ID**: `"my-pnp-device"`.
+* **IOTHUB_CONNECTION_STRING** : строка подключения центра Интернета вещей, которую вы записали ранее.
+* **IOTHUB_DEVICE_ID** : `"my-pnp-device"`.
 
-Чтобы запустить этот пример, используйте следующую команду в терминале **службы**:
+Чтобы запустить этот пример, используйте следующую команду в терминале **службы** :
 
 ```cmd/sh
 set IOTHUB_METHOD_NAME="getMaxMinReport"
@@ -107,7 +107,7 @@ The Model ID for this device is:
 dtmi:com:example:Thermostat;1
 ```
 
-В следующем фрагменте показан пример кода из файла *registry_manager_pnp_sample.py*:
+В следующем фрагменте показан пример кода из файла *registry_manager_pnp_sample.py* :
 
 ```python
     # Create IoTHubRegistryManager
@@ -143,7 +143,7 @@ dtmi:com:example:Thermostat;1
     print("")
 ```
 
-Вы можете убедиться, что обновление успешно применено, в терминале **устройства**, где отображаются следующие выходные данные:
+Вы можете убедиться, что обновление успешно применено, в терминале **устройства** , где отображаются следующие выходные данные:
 
 ```cmd/sh
 the data in the desired properties patch was: {'targetTemperature': 42, '$version': 2}
