@@ -12,12 +12,12 @@ ms.author: garye
 ms.reviewer: sstein, davidph
 manager: cgronlun
 ms.date: 06/03/2020
-ms.openlocfilehash: 2fb584d999d48c7d29420db26daebf592790af2b
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: c5392c822c42c2e0ee3f6ce9edffc6229d572165
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92676818"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92782422"
 ---
 # <a name="machine-learning-services-in-azure-sql-managed-instance-preview"></a>Службы машинного обучения в Управляемый экземпляр SQL Azure (Предварительная версия)
 
@@ -44,7 +44,7 @@ ms.locfileid: "92676818"
 
 - **Развертывание моделей и скриптов в рабочей среде в хранимых процедурах** . скрипты и обученные модели могут работать просто путем их внедрения в хранимые процедуры T-SQL. Приложения, подключающиеся к Azure SQL Управляемый экземпляр могут воспользоваться преимуществами прогнозов и аналитики в этих моделях, просто вызвав хранимую процедуру. Можно также использовать собственную функцию ПРОГНОЗИРОВАНИя T-SQL, чтобы эксплуатацию модели для быстрой оценки в сценариях оценки с высокой степенью актуальности в реальном времени.
 
-Базовые распределения Python и R включены в Службы машинного обучения. Вы можете установить и использовать платформы и пакеты с открытым исходным кодом, такие как PyTorch, TensorFlow и scikit-learn, в дополнение к пакетам Microsoft [revoscalepy](https://docs.microsoft.com/sql/advanced-analytics/python/ref-py-revoscalepy) и [microsoftml](https://docs.microsoft.com/sql/advanced-analytics/python/ref-py-microsoftml) для Python и [RevoScaleR](https://docs.microsoft.com/sql/advanced-analytics/r/ref-r-revoscaler), [MicrosoftML](https://docs.microsoft.com/sql/advanced-analytics/r/ref-r-microsoftml), [OLAP](https://docs.microsoft.com/sql/advanced-analytics/r/ref-r-olapr) и [sqlrutils](https://docs.microsoft.com/sql/advanced-analytics/r/ref-r-sqlrutils) для R.
+Базовые распределения Python и R включены в Службы машинного обучения. Вы можете установить и использовать платформы и пакеты с открытым исходным кодом, такие как PyTorch, TensorFlow и scikit-learn, в дополнение к пакетам Microsoft [revoscalepy](/sql/advanced-analytics/python/ref-py-revoscalepy) и [microsoftml](/sql/advanced-analytics/python/ref-py-microsoftml) для Python и [RevoScaleR](/sql/advanced-analytics/r/ref-r-revoscaler), [MicrosoftML](/sql/advanced-analytics/r/ref-r-microsoftml), [OLAP](/sql/advanced-analytics/r/ref-r-olapr) и [sqlrutils](/sql/advanced-analytics/r/ref-r-sqlrutils) для R.
 
 <a name="signup"></a>
 
@@ -85,6 +85,6 @@ ms.locfileid: "92676818"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь с [основными отличиями от SQL Server службы машинного обучения](machine-learning-services-differences.md).
-- Сведения об использовании Python в Службы машинного обучения см. в разделе [выполнение скриптов Python](https://docs.microsoft.com/sql/machine-learning/tutorials/quickstart-python-create-script?context=/azure/azure-sql/managed-instance/context/ml-context&view=sql-server-ver15).
-- Сведения об использовании R в Службы машинного обучения см. в разделе [выполнение скриптов r](https://docs.microsoft.com/sql/machine-learning/tutorials/quickstart-r-create-script?context=/azure/azure-sql/managed-instance/context/ml-context&view=sql-server-ver15).
-- Дополнительные сведения о машинном обучении на других платформах SQL см. в [документации по машинному обучению SQL](https://docs.microsoft.com/sql/machine-learning/).
+- Сведения об использовании Python в Службы машинного обучения см. в разделе [выполнение скриптов Python](/sql/machine-learning/tutorials/quickstart-python-create-script?context=%252fazure%252fazure-sql%252fmanaged-instance%252fcontext%252fml-context&view=sql-server-ver15).
+- Сведения об использовании R в Службы машинного обучения см. в разделе [выполнение скриптов r](/sql/machine-learning/tutorials/quickstart-r-create-script?context=%252fazure%252fazure-sql%252fmanaged-instance%252fcontext%252fml-context&view=sql-server-ver15).
+- Дополнительные сведения о машинном обучении на других платформах SQL см. в [документации по машинному обучению SQL](/sql/machine-learning/).

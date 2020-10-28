@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 01/15/2017
 ms.author: alkohli
 ms.subservice: common
-ms.openlocfilehash: e03601bc929354a69e7f9027db5ac9b7697c3c82
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5f9b69cef5741ab609b72f6c2c34e3aa50b45648
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90054081"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92782082"
 ---
 # <a name="setting-up-the-azure-importexport-tool-v1"></a>Настройка средства импорта и экспорта Azure v1
 Инструмент импорта и экспорта Microsoft Azure используется в службе импорта и экспорта Microsoft Azure для подготовки и исправления дисков. Это средство может выполнять перечисленные ниже функции.  
@@ -247,10 +247,10 @@ Examples:
         es\drama /dstdir:movies/drama/ /skipwrite
 ```  
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Подготовка жестких дисков для задания импорта](../storage-import-export-tool-preparing-hard-drives-import-v1.md)   
-* [Предварительный просмотр использования дисков для задания экспорта](../storage-import-export-tool-previewing-drive-usage-export-v1.md)   
-* [Просмотр состояния задания с помощью файлов журнала копирования](../storage-import-export-tool-reviewing-job-status-v1.md)   
-* [Подготовка задания импорта](../storage-import-export-tool-repairing-an-import-job-v1.md)   
-* [Подготовка задания экспорта](../storage-import-export-tool-repairing-an-export-job-v1.md)
+* [Подготовка жестких дисков для задания импорта](/previous-versions/azure/storage/common/storage-import-export-tool-preparing-hard-drives-import-v1)   
+* [Предварительный просмотр использования дисков для задания экспорта](/previous-versions/azure/storage/common/storage-import-export-tool-previewing-drive-usage-export-v1)   
+* [Просмотр состояния задания с помощью файлов журнала копирования](./storage-import-export-tool-reviewing-job-status-v1.md)   
+* [Подготовка задания импорта](./storage-import-export-tool-repairing-an-import-job-v1.md)   
+* [Подготовка задания экспорта](./storage-import-export-tool-repairing-an-export-job-v1.md)

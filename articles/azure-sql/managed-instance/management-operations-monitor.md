@@ -12,12 +12,12 @@ author: urosmil
 ms.author: urmilano
 ms.reviewer: sstein, bonova, MashaMSFT
 ms.date: 09/03/2020
-ms.openlocfilehash: bdb021bc0247972fa29975c62bc9214e3b474e2c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0f76d2079b7ed5aacbf835540ea92febd034e2d0
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90996839"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92782456"
 ---
 # <a name="monitoring-azure-sql-managed-instance-management-operations"></a>Мониторинг операций управления Управляемый экземпляр SQL Azure
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -62,9 +62,9 @@ API операций управления специально предназн�
 
 | Get-Help | Описание |
 | --- | --- |
-|[Операции Управляемый экземпляр — получение](https://docs.microsoft.com/rest/api/sql/managedinstanceoperations/get)|Возвращает операцию управления управляемым экземпляром.|
-|[Управляемый экземпляр операции — отмена](https://docs.microsoft.com/rest/api/sql/managedinstanceoperations/cancel)|Отменяет асинхронную операцию на управляемом экземпляре.|
-|[Управляемый экземпляр операций — список по Управляемый экземпляр](https://docs.microsoft.com/rest/api/sql/managedinstanceoperations/listbymanagedinstance)|Возвращает список операций, выполненных с управляемым экземпляром.|
+|[Операции Управляемый экземпляр — получение](/rest/api/sql/managedinstanceoperations/get)|Возвращает операцию управления управляемым экземпляром.|
+|[Управляемый экземпляр операции — отмена](/rest/api/sql/managedinstanceoperations/cancel)|Отменяет асинхронную операцию на управляемом экземпляре.|
+|[Управляемый экземпляр операций — список по Управляемый экземпляр](/rest/api/sql/managedinstanceoperations/listbymanagedinstance)|Возвращает список операций, выполненных с управляемым экземпляром.|
 
 > [!NOTE]
 > Используйте API версии 2020-02-02, чтобы просмотреть операцию создания управляемого экземпляра в списке операций. Это версия по умолчанию, используемая в портал Azure и последние пакеты PowerShell и Azure CLI.
@@ -98,7 +98,7 @@ $managementOperations = Get-AzSqlInstanceOperation `
     -ManagedInstanceName $managedInstance  -ResourceGroupName $resourceGroup
 ```
 
-Подробное описание команд см. в разделе [Get-азсклинстанцеоператион](https://docs.microsoft.com/powershell/module/az.sql/get-azsqlinstanceoperation).
+Подробное описание команд см. в разделе [Get-азсклинстанцеоператион](/powershell/module/az.sql/get-azsqlinstanceoperation).
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
@@ -108,7 +108,7 @@ $managementOperations = Get-AzSqlInstanceOperation `
 az sql mi op list -g yourResourceGroupName --mi yourInstanceName 
 ```
 
-Подробное описание команд см. в разделе [AZ SQL MI Op](https://docs.microsoft.com/cli/azure/sql/mi/op).
+Подробное описание команд см. в разделе [AZ SQL MI Op](/cli/azure/sql/mi/op).
 
 ---
 

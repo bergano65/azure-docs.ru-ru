@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: mathoma
 ms.date: 04/28/2020
-ms.openlocfilehash: 079d187f66cf77585121198df06cabafc454fea1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6ff1d485ab4c0662ae8a9d754ce67b1446b76fcc
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91362135"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92780960"
 ---
 # <a name="replication-to-azure-sql-database"></a>Репликация в базу данных SQL Azure
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -24,7 +24,7 @@ ms.locfileid: "91362135"
 Вы можете настроить базу данных SQL Azure в качестве извещающего подписчика в односторонней топологии репликации транзакций или моментальных снимков.
 
 > [!NOTE]
-> В этой статье описывается использование [репликации транзакций](https://docs.microsoft.com/sql/relational-databases/replication/transactional/transactional-replication) в базе данных SQL Azure. Он не связан с [активной георепликацией](https://docs.microsoft.com/azure/sql-database/sql-database-active-geo-replication), компонентом базы данных SQL Azure, который позволяет создавать полные доступные для чтения реплики отдельных баз данных.
+> В этой статье описывается использование [репликации транзакций](/sql/relational-databases/replication/transactional/transactional-replication) в базе данных SQL Azure. Он не связан с [активной георепликацией](./active-geo-replication-overview.md), компонентом базы данных SQL Azure, который позволяет создавать полные доступные для чтения реплики отдельных баз данных.
 
 ## <a name="supported-configurations"></a>Поддерживаемые конфигурации
   
@@ -50,16 +50,16 @@ ms.locfileid: "91362135"
 
 ### <a name="types-of-replication"></a>Типы репликации
 
-Существуют разные [типы репликации](https://docs.microsoft.com/sql/relational-databases/replication/types-of-replication).
+Существуют разные [типы репликации](/sql/relational-databases/replication/types-of-replication).
 
 | Репликация | База данных SQL Azure | Управляемый экземпляр SQL Azure |
 | :----| :------------- | :--------------- |
-| [**Стандартная транзакционная**](https://docs.microsoft.com/sql/relational-databases/replication/transactional/transactional-replication) | Да (только в качестве подписчика) | Да | 
-| [**Моментальный снимок**](https://docs.microsoft.com/sql/relational-databases/replication/snapshot-replication) | Да (только в качестве подписчика) | Да|
-| [**Репликация слиянием**](https://docs.microsoft.com/sql/relational-databases/replication/merge/merge-replication) | Нет | Нет|
-| [**Одноранговой**](https://docs.microsoft.com/sql/relational-databases/replication/transactional/peer-to-peer-transactional-replication) | Нет | Нет|
-| [**Двунаправленная репликация**](https://docs.microsoft.com/sql/relational-databases/replication/transactional/bidirectional-transactional-replication) | Нет | Да|
-| [**Обновляемые подписки**](https://docs.microsoft.com/sql/relational-databases/replication/transactional/updatable-subscriptions-for-transactional-replication) | Нет | Нет|
+| [**Стандартная транзакционная**](/sql/relational-databases/replication/transactional/transactional-replication) | Да (только в качестве подписчика) | Да | 
+| [**Моментальный снимок**](/sql/relational-databases/replication/snapshot-replication) | Да (только в качестве подписчика) | Да|
+| [**Репликация слиянием**](/sql/relational-databases/replication/merge/merge-replication) | Нет | Нет|
+| [**Одноранговой**](/sql/relational-databases/replication/transactional/peer-to-peer-transactional-replication) | Нет | Нет|
+| [**Двунаправленная репликация**](/sql/relational-databases/replication/transactional/bidirectional-transactional-replication) | Нет | Да|
+| [**Обновляемые подписки**](/sql/relational-databases/replication/transactional/updatable-subscriptions-for-transactional-replication) | Нет | Нет|
 | &nbsp; | &nbsp; | &nbsp; |
 
   
@@ -126,14 +126,14 @@ ms.locfileid: "91362135"
 
 Создайте публикацию и принудительную подписку. Дополнительные сведения см. в разделе:
   
-- [Create a Publication](https://docs.microsoft.com/sql/relational-databases/replication/publish/create-a-publication)
-- [Создайте принудительную подписку](https://docs.microsoft.com/sql/relational-databases/replication/create-a-push-subscription/) , используя имя сервера в качестве подписчика (например, **N'azuresqldbdns. Database. Windows. NET**) и имя базы данных SQL Azure в качестве целевой базы данных (например, **AdventureWorks**).  
+- [Create a Publication](/sql/relational-databases/replication/publish/create-a-publication)
+- [Создайте принудительную подписку](/sql/relational-databases/replication/create-a-push-subscription/) , используя имя сервера в качестве подписчика (например, **N'azuresqldbdns. Database. Windows. NET** ) и имя базы данных SQL Azure в качестве целевой базы данных (например, **AdventureWorks** ).  
 
 ## <a name="see-also"></a>См. также:  
 
 - [Репликация транзакций](../managed-instance/replication-transactional-overview.md)
-- [Create a Publication](https://docs.microsoft.com/sql/relational-databases/replication/publish/create-a-publication)
-- [Создание принудительной подписки](https://docs.microsoft.com/sql/relational-databases/replication/create-a-push-subscription/)
-- [Типы репликации](https://docs.microsoft.com/sql/relational-databases/replication/types-of-replication)
-- [Мониторинг (репликация)](https://docs.microsoft.com/sql/relational-databases/replication/monitor/monitoring-replication)
-- [Инициализация подписки](https://docs.microsoft.com/sql/relational-databases/replication/initialize-a-subscription)  
+- [Create a Publication](/sql/relational-databases/replication/publish/create-a-publication)
+- [Создание принудительной подписки](/sql/relational-databases/replication/create-a-push-subscription/)
+- [Типы репликации](/sql/relational-databases/replication/types-of-replication)
+- [Мониторинг (репликация)](/sql/relational-databases/replication/monitor/monitoring-replication)
+- [Инициализация подписки](/sql/relational-databases/replication/initialize-a-subscription)

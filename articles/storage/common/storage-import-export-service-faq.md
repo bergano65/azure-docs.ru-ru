@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 05/06/2020
 ms.author: alkohli
 ms.subservice: common
-ms.openlocfilehash: d2e50502c8c3e37c5d48359079e2e72c13feea4a
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 17a29621d3d70d56745d2e51e0ce80974876a9ef
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92487880"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92782167"
 ---
 # <a name="azure-importexport-service-frequently-asked-questions"></a>Служба "Импорт и экспорт Azure". Часто задаваемые вопросы
 
@@ -55,13 +55,13 @@ ms.locfileid: "92487880"
 
 ### <a name="do-i-need-to-perform-any-disk-preparation-when-creating-an-export-job"></a>Нужно ли провести какую-либо подготовку диска при создании задания экспорта?
 
-Нет. Рекомендуется выполнить некоторые предварительные проверки. Чтобы узнать необходимое количество дисков, используйте команду PreviewExport средства WAImportExport. Дополнительные сведения см. в разделе [Предварительный просмотр использования дисков для задания экспорта](https://msdn.microsoft.com/library/azure/dn722414.aspx). Эта команда позволяет просмотреть потребление диска для выбранных больших двоичных объектов в зависимости от объема дисков, которые вы собираетесь использовать. Убедитесь также, что вы можете считывать и записывать данные на жесткий диск, который предоставлен для задания экспорта.
+Нет. Рекомендуется выполнить некоторые предварительные проверки. Чтобы узнать необходимое количество дисков, используйте команду PreviewExport средства WAImportExport. Дополнительные сведения см. в разделе [Предварительный просмотр использования дисков для задания экспорта](/previous-versions/azure/storage/common/storage-import-export-tool-previewing-drive-usage-export-v1). Эта команда позволяет просмотреть потребление диска для выбранных больших двоичных объектов в зависимости от объема дисков, которые вы собираетесь использовать. Убедитесь также, что вы можете считывать и записывать данные на жесткий диск, который предоставлен для задания экспорта.
 
 ## <a name="importexport-jobs"></a>Задания импорта и экспорта
 
 ### <a name="can-i-cancel-my-job"></a>Можно ли отменить задание?
 
-Да. Вы можете отменить задание, если его состояние указано как **Создание** или **Отправка**. Если указано другое состояние, задание отменить нельзя и его выполнение продолжается до последнего этапа.
+Да. Вы можете отменить задание, если его состояние указано как **Создание** или **Отправка** . Если указано другое состояние, задание отменить нельзя и его выполнение продолжается до последнего этапа.
 
 ### <a name="how-long-can-i-view-the-status-of-completed-jobs-in-the-azure-portal"></a>Как долго на портале Azure отображаются состояния выполненных заданий?
 
@@ -132,7 +132,7 @@ ms.locfileid: "92487880"
 
 ### <a name="how-can-i-access-data-that-is-imported-by-this-service"></a>Каким образом можно получить доступ к импортируемым службой данным?
 
-Используйте портал Azure или [Обозреватель службы хранилища](/azure/vs-azure-tools-storage-manage-with-storage-explorer) для доступа к данным в учетной записи хранения Azure.  
+Используйте портал Azure или [Обозреватель службы хранилища](../../vs-azure-tools-storage-manage-with-storage-explorer.md) для доступа к данным в учетной записи хранения Azure.  
 
 ### <a name="after-the-import-is-complete-what-does-my-data-look-like-in-the-storage-account-is-my-directory-hierarchy-preserved"></a>Как будут выглядеть мои данные в учетной записи хранения после завершения импорта? Сохранится ли иерархия моих каталогов?
 
@@ -144,7 +144,7 @@ ms.locfileid: "92487880"
 
 ### <a name="is-the-waimportexport-tool-compatible-with-32-bit-operating-systems"></a>Совместимо ли средство WAImportExport с 32-разрядной операционной системой?
 
-Нет. Средство WAImportExport совместимо только с 64-разрядной операционной системой Windows. Полный список поддерживаемых операционных систем см. в [этой статье](/azure/storage/common/storage-import-export-requirements).
+Нет. Средство WAImportExport совместимо только с 64-разрядной операционной системой Windows. Полный список поддерживаемых операционных систем см. в [этой статье](./storage-import-export-requirements.md).
 
 ### <a name="what-is-the-maximum-block-blob-and-page-blob-size-supported-by-azure-importexport"></a>Какой максимальный размер блочного и страничного BLOB-объектов, поддерживаемый службой "Импорт и экспорт Azure"?
 

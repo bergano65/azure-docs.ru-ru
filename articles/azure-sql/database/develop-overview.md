@@ -10,12 +10,12 @@ ms.author: sstein
 ms.reviewer: genemi
 ms.date: 11/14/2019
 ms.custom: sqldbrb=2
-ms.openlocfilehash: b099158261de55c829ab2b89a2f994b35b3e50d4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7ea3456dbd1d0942cba48c97d70982ae088d73f9
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85254061"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92782983"
 ---
 # <a name="application-development-overview---sql-database--sql-managed-instance"></a>Общие сведения о разработке приложений — База данных SQL & SQL Управляемый экземпляр
 
@@ -27,7 +27,7 @@ ms.locfileid: "85254061"
 
 Для подключения и отправки запросов к базе данных SQL Azure подходят различные [языки и платформы](connect-query-content-reference-guide.md). Вы можете найти [примеры приложений](https://azure.microsoft.com/resources/samples/?service=sql-database&sort=0) , которые можно использовать для подключения к базе данных.
 
-Вы можете использовать инструменты с открытым кодом, такие как [cheetah](https://github.com/wunderlist/cheetah), [sql-cli](https://www.npmjs.com/package/sql-cli) и [VS Code](https://code.visualstudio.com/). Кроме того, база данных SQL Azure поддерживает инструменты Майкрософт, например [Visual Studio](https://www.visualstudio.com/downloads/) и [SQL Server Management Studio](https://msdn.microsoft.com/library/ms174173.aspx). Кроме того, портал Azure, PowerShell и интерфейсы REST API дополнительно упростят вам работу.
+Вы можете использовать инструменты с открытым кодом, такие как [cheetah](https://github.com/wunderlist/cheetah), [sql-cli](https://www.npmjs.com/package/sql-cli) и [VS Code](https://code.visualstudio.com/). Кроме того, база данных SQL Azure поддерживает инструменты Майкрософт, например [Visual Studio](https://www.visualstudio.com/downloads/) и [SQL Server Management Studio](/sql/ssms/sql-server-management-studio-ssms). Кроме того, портал Azure, PowerShell и интерфейсы REST API дополнительно упростят вам работу.
 
 ## <a name="authentication"></a>Аутентификация
 
@@ -39,7 +39,7 @@ ms.locfileid: "85254061"
 
 В логике подключения к клиенту задайте для времени ожидания по умолчанию 30 секунд. Установленных изначально 15 секунд недостаточно, если подключение зависит от Интернета.
 
-Если вы используете [пул подключений](https://msdn.microsoft.com/library/8xx3tyca.aspx), не забудьте закрыть экземпляр подключения, который ваша программа не использует активно и который не предполагается использовать повторно.
+Если вы используете [пул подключений](/dotnet/framework/data/adonet/sql-server-connection-pooling), не забудьте закрыть экземпляр подключения, который ваша программа не использует активно и который не предполагается использовать повторно.
 
 Избегайте длительных транзакций, потому что при любом сбое инфраструктуры или подключения может произойти откат транзакции. Если возможно, разделите транзакцию на несколько меньших транзакций и используйте [пакетную обработку, чтобы повысить производительность](../performance-improve-use-batching.md).
 

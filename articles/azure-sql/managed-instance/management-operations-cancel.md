@@ -12,12 +12,12 @@ author: urosmil
 ms.author: urmilano
 ms.reviewer: sstein, bonova, MashaMSFT
 ms.date: 09/03/2020
-ms.openlocfilehash: 4ec999cc35e7d18287679c74c6d45a5aa2ecb9e7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 092981f9d74a3f9f18c491ca6cee539a29e73c83
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90997244"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92782507"
 ---
 # <a name="canceling-azure-sql-managed-instance-management-operations"></a>Отмена операций управления Управляемый экземпляр SQL Azure
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -75,7 +75,7 @@ ms.locfileid: "90997244"
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-Если у вас еще не установлен Azure PowerShell, см. раздел [Установка модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps).
+Если у вас еще не установлен Azure PowerShell, см. раздел [Установка модуля Azure PowerShell](/powershell/azure/install-az-ps).
 
 Чтобы отменить операцию управления, необходимо указать имя операции управления. Поэтому сначала используйте команду Get, чтобы получить список операций, а затем отмените определенную операцию.
 
@@ -93,7 +93,7 @@ foreach ($mo in $managementOperations ) {
 }
 ```
 
-Подробные сведения о командах см. в разделе [Get-азсклинстанцеоператион](https://docs.microsoft.com/powershell/module/az.sql/get-azsqlinstanceoperation) и [останавливает-азсклинстанцеоператион](https://docs.microsoft.com/powershell/module/az.sql/stop-azsqlinstanceoperation).
+Подробные сведения о командах см. в разделе [Get-азсклинстанцеоператион](/powershell/module/az.sql/get-azsqlinstanceoperation) и [останавливает-азсклинстанцеоператион](/powershell/module/az.sql/stop-azsqlinstanceoperation).
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
@@ -110,13 +110,13 @@ az sql mi op cancel -g yourResourceGroupName --mi yourInstanceName -n $operation
 done
 ```
 
-Подробное описание команд см. в разделе [AZ SQL MI Op](https://docs.microsoft.com/cli/azure/sql/mi/op).
+Подробное описание команд см. в разделе [AZ SQL MI Op](/cli/azure/sql/mi/op).
 
 ---
 
 ## <a name="canceled-deployment-request"></a>Отмененный запрос на развертывание
 
-При использовании API версии 2020-02-02, как только запрос на создание экземпляра будет принят, экземпляр начнет существовать как ресурс, независимо от хода выполнения процесса развертывания (состояние управляемого экземпляра — **Подготовка**). Если отменить запрос на развертывание экземпляра (создание нового экземпляра), управляемый экземпляр перейдет из состояния **подготовки** в **фаиледтокреате**.
+При использовании API версии 2020-02-02, как только запрос на создание экземпляра будет принят, экземпляр начнет существовать как ресурс, независимо от хода выполнения процесса развертывания (состояние управляемого экземпляра — **Подготовка** ). Если отменить запрос на развертывание экземпляра (создание нового экземпляра), управляемый экземпляр перейдет из состояния **подготовки** в **фаиледтокреате** .
 
 Экземпляры, которые не удалось создать, по-прежнему находятся в виде ресурса и: 
 

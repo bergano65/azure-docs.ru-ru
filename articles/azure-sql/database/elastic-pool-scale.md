@@ -11,12 +11,12 @@ author: oslake
 ms.author: moslake
 ms.reviewer: sstein
 ms.date: 09/16/2020
-ms.openlocfilehash: 2792a93748600d71c37972058c8e496928543c9b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 947d842860452425f8b30fbdaf9558c2a94a89a2
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91330712"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92781215"
 ---
 # <a name="scale-elastic-pool-resources-in-azure-sql-database"></a>Масштабирование ресурсов эластичного пула в Базе данных SQL Azure
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -25,7 +25,7 @@ ms.locfileid: "91330712"
 
 ## <a name="change-compute-resources-vcores-or-dtus"></a>Изменение ресурсов вычислений (виртуальных ядер или DTU)
 
-После первоначального выбора количества виртуальных ядер или Edtu можно динамически масштабировать эластичный пул в зависимости от фактической работы с помощью [портал Azure](elastic-pool-manage.md#azure-portal), [PowerShell](/powershell/module/az.sql/Get-AzSqlElasticPool), [Azure CLI](/cli/azure/sql/elastic-pool#az-sql-elastic-pool-update)или [REST API](https://docs.microsoft.com/rest/api/sql/elasticpools/update).
+После первоначального выбора количества виртуальных ядер или Edtu можно динамически масштабировать эластичный пул в зависимости от фактической работы с помощью [портал Azure](elastic-pool-manage.md#azure-portal), [PowerShell](/powershell/module/az.sql/Get-AzSqlElasticPool), [Azure CLI](/cli/azure/sql/elastic-pool#az-sql-elastic-pool-update)или [REST API](/rest/api/sql/elasticpools/update).
 
 ### <a name="impact-of-changing-service-tier-or-rescaling-compute-size"></a>Влияние изменения уровня служб или повторного масштабирования размера вычислений
 
@@ -57,7 +57,7 @@ ms.locfileid: "91330712"
 >
 > - В случае изменения уровня служб или масштабирования вычислений для эластичного пула необходимо использовать для вычисления оценки объем пространства, используемого во всех базах данных в пуле.
 > - В случае перемещения базы данных в эластичный пул или из него только пространство, используемое базой данных, влияет на задержку, а не на пространство, используемое пулом эластичных БД.
-> - Для пулов эластичных БД уровня "Стандартный" и общего назначения задержка перемещения базы данных в пул эластичных БД или между пулами эластичных пулов будет пропорционально размеру базы данных, если пул эластичных БД использует хранилище привилегированного файлового ресурса ([PFS](https://docs.microsoft.com/azure/storage/files/storage-files-introduction)). Чтобы определить, использует ли пул хранилище PFS, выполните следующий запрос в контексте любой базы данных в пуле. Если значение в столбце AccountType равно `PremiumFileStorage` или `PremiumFileStorage-ZRS` , то пул использует хранилище PFS.
+> - Для пулов эластичных БД уровня "Стандартный" и общего назначения задержка перемещения базы данных в пул эластичных БД или между пулами эластичных пулов будет пропорционально размеру базы данных, если пул эластичных БД использует хранилище привилегированного файлового ресурса ([PFS](../../storage/files/storage-files-introduction.md)). Чтобы определить, использует ли пул хранилище PFS, выполните следующий запрос в контексте любой базы данных в пуле. Если значение в столбце AccountType равно `PremiumFileStorage` или `PremiumFileStorage-ZRS` , то пул использует хранилище PFS.
 
 ```sql
 SELECT s.file_id,
@@ -69,7 +69,7 @@ WHERE s.type_desc IN ('ROWS', 'LOG');
 ```
 
 > [!TIP]
-> Сведения о мониторинге выполняемых операций см. в статьях [Управление операциями с помощью REST API SQL](https://docs.microsoft.com/rest/api/sql/operations/list), [Управление операциями с помощью интерфейса командной строки](/cli/azure/sql/db/op), [мониторинг операций с помощью T-SQL](/sql/relational-databases/system-dynamic-management-views/sys-dm-operation-status-azure-sql-database) и следующие две команды PowerShell: [Get-азсклдатабасеактивити](/powershell/module/az.sql/get-azsqldatabaseactivity) и [останавливают-азсклдатабасеактивити](/powershell/module/az.sql/stop-azsqldatabaseactivity).
+> Сведения о мониторинге выполняемых операций см. в статьях [Управление операциями с помощью REST API SQL](/rest/api/sql/operations/list), [Управление операциями с помощью интерфейса командной строки](/cli/azure/sql/db/op), [мониторинг операций с помощью T-SQL](/sql/relational-databases/system-dynamic-management-views/sys-dm-operation-status-azure-sql-database) и следующие две команды PowerShell: [Get-азсклдатабасеактивити](/powershell/module/az.sql/get-azsqldatabaseactivity) и [останавливают-азсклдатабасеактивити](/powershell/module/az.sql/stop-azsqldatabaseactivity).
 
 ### <a name="additional-considerations-when-changing-service-tier-or-rescaling-compute-size"></a>Дополнительные рекомендации при изменении уровня служб или масштабировании размера вычислений
 
@@ -100,12 +100,12 @@ WHERE s.type_desc IN ('ROWS', 'LOG');
 ### <a name="dtu-based-purchasing-model"></a>Модель приобретения на основе единиц DTU
 
 - Цена DTU для эластичного пула включает в себя определенный объем хранилища, не требующий дополнительной платы. Дополнительный объем хранилища, сверх включенного, можно подготовить за дополнительную плату в пределах максимального допустимого размера с шагом в 250 ГБ при объеме хранилища до 1 ТБ и с шагом в 256 ГБ — при объеме более 1 ТБ. Сведения о включенном объеме хранилища и ограничениях максимального размера см. в разделе [Отдельная база данных: размеры хранилища и объемы вычислительных ресурсов](resource-limits-dtu-elastic-pools.md#elastic-pool-storage-sizes-and-compute-sizes).
-- Дополнительное хранилище для эластичного пула можно подготовить, увеличив его максимальный размер с помощью [портала Azure](elastic-pool-manage.md#azure-portal), [PowerShell](/powershell/module/az.sql/Get-AzSqlElasticPool), [Azure CLI](/cli/azure/sql/elastic-pool#az-sql-elastic-pool-update) или [REST API](https://docs.microsoft.com/rest/api/sql/elasticpools/update).
+- Дополнительное хранилище для эластичного пула можно подготовить, увеличив его максимальный размер с помощью [портала Azure](elastic-pool-manage.md#azure-portal), [PowerShell](/powershell/module/az.sql/Get-AzSqlElasticPool), [Azure CLI](/cli/azure/sql/elastic-pool#az-sql-elastic-pool-update) или [REST API](/rest/api/sql/elasticpools/update).
 - Стоимость дополнительного хранилища для эластичного пула равна объему хранилища, умноженному на цену единицы хранения этого хранилища для уровня служб. Сведения о цене на дополнительное хранилище см. на [странице цен на Базу данных SQL](https://azure.microsoft.com/pricing/details/sql-database/).
 
 > [!IMPORTANT]
 > Иногда требуется сжать базу данных, чтобы освободить неиспользуемое пространство. Дополнительные сведения см. [в статье Управление дисковым пространством в базе данных SQL Azure](file-space-manage.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения об общих ограничениях ресурсов см. в статьях [Ограничения ресурсов базы данных SQL в модели приобретения на основе виртуальных ядер — эластичные пулы](resource-limits-vcore-elastic-pools.md) и [Ограничения ресурсов базы данных SQL в модели приобретения на основе единиц DTU — эластичные пулы](resource-limits-dtu-elastic-pools.md).

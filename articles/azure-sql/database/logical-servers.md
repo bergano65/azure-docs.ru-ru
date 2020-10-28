@@ -12,12 +12,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 03/12/2019
-ms.openlocfilehash: abb8f42e7fe4ffe6e933f466202247c73ece129a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 38133a63d65e45a4d1c83e9752dcaa01a86da33e
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89441720"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92782898"
 ---
 # <a name="what-is-a-logical-sql-server-in-azure-sql-database-and-azure-synapse"></a>Что такое логический сервер SQL Server в базе данных SQL Azure и Azure синапсе?
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -34,7 +34,7 @@ ms.locfileid: "89441720"
 - Выступает в качестве родительского ресурса для баз данных, эластичных пулов и хранилищ данных.
 - Предоставляет пространство имен для баз данных, эластичных пулов и базы данных хранилища данных
 - Является логическим контейнером со строгой семантикой времени существования — удаление сервера и удаление его баз данных, эластичных пулов и пулов СКК
-- Участвует в [управлении доступом на основе ролей Azure (Azure RBAC)](/azure/role-based-access-control/overview) . базы данных, эластичные пулы и база данных хранилища данных на сервере наследуют права доступа с сервера.
+- Участвует в [управлении доступом на основе ролей Azure (Azure RBAC)](../../role-based-access-control/overview.md) . базы данных, эластичные пулы и база данных хранилища данных на сервере наследуют права доступа с сервера.
 - — Это элемент с высоким порядком идентификации баз данных, эластичных пулов и базы данных хранилища данных для целей управления ресурсами Azure (см. схему URL-адресов для баз данных и пулов).
 - Выравнивает ресурсы в регионе.
 - Предоставляет конечную точку подключения к базе данных (`<serverName>`.database.windows.net).
@@ -83,7 +83,7 @@ ms.locfileid: "89441720"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 > [!IMPORTANT]
-> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается, но вся будущая разработка предназначена для модуля AZ. SQL. Сведения об этих командлетах см. в разделе [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы команд в модулях Az и AzureRm практически идентичны.
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается, но вся будущая разработка предназначена для модуля AZ. SQL. Сведения об этих командлетах см. в разделе [AzureRM.Sql](/powershell/module/AzureRM.Sql/). Аргументы команд в модулях Az и AzureRm практически идентичны.
 
 Для создания серверов, баз данных и брандмауэров и управления ими с помощью Azure PowerShell используйте следующие командлеты PowerShell. Если вам нужно выполнить установку или обновление PowerShell, см. статью [об установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Изучите дополнительные сведения о создании [эластичных пулов](elastic-pool-overview.md) и управлении ими.
 
@@ -96,7 +96,7 @@ ms.locfileid: "89441720"
 |[New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup)|Создает группу ресурсов.|
 |[New-AzSqlServer](/powershell/module/az.sql/new-azsqlserver)|Создает сервер.|
 |[Get-Азсклсервер](/powershell/module/az.sql/get-azsqlserver)|Возвращает сведения о серверах.|
-|[Set-Азсклсервер](https://docs.microsoft.com/powershell/module/az.sql/set-azsqlserver)|Изменяет свойства сервера.|
+|[Set-Азсклсервер](/powershell/module/az.sql/set-azsqlserver)|Изменяет свойства сервера.|
 |[Remove-Азсклсервер](/powershell/module/az.sql/remove-azsqlserver)|Удаляет сервера.|
 |[New-AzSqlServerFirewallRule](/powershell/module/az.sql/new-azsqlserverfirewallrule)|Создает правило брандмауэра уровня сервера. |
 |[Get-Азсклсерверфиреваллруле](/powershell/module/az.sql/get-azsqlserverfirewallrule)|Получает правила брандмауэра для сервера.|
@@ -110,7 +110,7 @@ ms.locfileid: "89441720"
 
 ## <a name="manage-servers-databases-and-firewalls-using-the-azure-cli"></a>Управление серверами, базами данных и брандмауэрами с помощью Azure CLI
 
-Для создания серверов, баз данных и брандмауэров и управления ими с помощью [Azure CLI](/cli/azure)используйте следующие команды [Azure CLI базы данных SQL](/cli/azure/sql/db) . Запускайте интерфейс командной строки в браузере с помощью [Cloud Shell](/azure/cloud-shell/overview) либо [установите](/cli/azure/install-azure-cli) его на платформе macOS, Linux или Windows. Изучите дополнительные сведения о создании [эластичных пулов](elastic-pool-overview.md) и управлении ими.
+Для создания серверов, баз данных и брандмауэров и управления ими с помощью [Azure CLI](/cli/azure)используйте следующие команды [Azure CLI базы данных SQL](/cli/azure/sql/db) . Запускайте интерфейс командной строки в браузере с помощью [Cloud Shell](../../cloud-shell/overview.md) либо [установите](/cli/azure/install-azure-cli) его на платформе macOS, Linux или Windows. Изучите дополнительные сведения о создании [эластичных пулов](elastic-pool-overview.md) и управлении ими.
 
 | Командлет | Описание |
 | --- | --- |
@@ -150,7 +150,7 @@ ms.locfileid: "89441720"
 |[CREATE DATABASE (база данных SQL Azure)](/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-current) | Отвечает за создание базы данных в Базе данных SQL Azure. Для создания новой базы данных необходимо подключение к базе данных master.|
 |[Создание базы данных (Azure синапсе)](/sql/t-sql/statements/create-database-transact-sql?view=azure-sqldw-latest) | Создает новую базу данных хранилища данных в Azure синапсе. Для создания новой базы данных необходимо подключение к базе данных master.|
 | [CREATE DATABASE (база данных SQL Azure)](/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-current) |Изменяет базу данных или эластичный пул. |
-|[ALTER DATABASE (Azure синапсе Analytics)](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=sql-server-ver15)|Изменяет базу данных хранилища данных в Azure синапсе.|
+|[ALTER DATABASE (Azure синапсе Analytics)](/sql/t-sql/statements/alter-database-transact-sql?view=sql-server-ver15)|Изменяет базу данных хранилища данных в Azure синапсе.|
 |[DROP DATABASE (Transact-SQL)](/sql/t-sql/statements/drop-database-transact-sql)|Удаляет базу данных.|
 |[sys.database_service_objectives (база данных SQL Azure)](/sql/relational-databases/system-catalog-views/sys-database-service-objectives-azure-sql-database)|Возвращает выпуск (уровень служб), Цель обслуживания (ценовая категория) и имя эластичного пула (если таковые имеются) для базы данных. При входе в базу данных master для сервера возвращает сведения обо всех базах данных. Для Azure синапсе необходимо подключиться к базе данных master.|
 |[sys.dm_db_resource_stats (база данных SQL Azure)](/sql/relational-databases/system-dynamic-management-views/sys-dm-db-resource-stats-azure-sql-database)| Возвращает сведения о потреблении ресурсов ЦП, операций ввода-вывода и памяти для базы данных в базе данных SQL Azure. Существует одна строка для каждых 15 секунд, даже если в базе данных не выполняется никаких действий.|
@@ -173,24 +173,24 @@ ms.locfileid: "89441720"
 
 | Get-Help | Описание |
 | --- | --- |
-|[Серверы — создание или обновление](https://docs.microsoft.com/rest/api/sql/servers/createorupdate)|Создает или обновляет сервер.|
-|[Серверы: удаление](https://docs.microsoft.com/rest/api/sql/servers/delete)|Удаляет сервер.|
-|[Серверы: получение](https://docs.microsoft.com/rest/api/sql/servers/get)|Получает сервер.|
-|[Серверы: вывод списка](https://docs.microsoft.com/rest/api/sql/servers/list)|Возвращает список серверов.|
-|[Серверы: вывод списка по группе ресурсов](https://docs.microsoft.com/rest/api/sql/servers/listbyresourcegroup)|Возвращает список серверов в группе ресурсов.|
-|[Серверы: обновление](https://docs.microsoft.com/rest/api/sql/servers/update)|Обновляет существующий сервер.|
-|[Базы данных — создание или обновление](https://docs.microsoft.com/rest/api/sql/databases/createorupdate)|Создает новую базу данных или обновляет имеющуюся.|
-|[Базы данных: удаление](https://docs.microsoft.com/rest/api/sql/databases/delete)|Удаляет базу данных.|
-|[Базы данных: получение](https://docs.microsoft.com/rest/api/sql/databases/get)|Получает базу данных.|
-|[Базы данных — список по эластичному пулу](https://docs.microsoft.com/rest/api/sql/databases/listbyelasticpool)|Возвращает список баз данных в пуле эластичных баз данных.|
-|[Базы данных — список по серверам](https://docs.microsoft.com/rest/api/sql/databases/listbyserver)|Возвращает список баз данных на сервере.|
-|[Базы данных: обновление](https://docs.microsoft.com/rest/api/sql/databases/update)|Обновляет имеющуюся базу данных.|
-|[Правила брандмауэра — создание или обновление](https://docs.microsoft.com/rest/api/sql/firewallrules/createorupdate)|Создает или обновляет правило брандмауэра.|
-|[Правила брандмауэра — удалить](https://docs.microsoft.com/rest/api/sql/firewallrules/delete)|Удаляет правило брандмауэра.|
-|[Правила брандмауэра — получение](https://docs.microsoft.com/rest/api/sql/firewallrules/get)|Получает правило брандмауэра.|
-|[Правила брандмауэра — список по серверам](https://docs.microsoft.com/rest/api/sql/firewallrules/listbyserver)|Возвращает список правил брандмауэра.|
+|[Серверы — создание или обновление](/rest/api/sql/servers/createorupdate)|Создает или обновляет сервер.|
+|[Серверы: удаление](/rest/api/sql/servers/delete)|Удаляет сервер.|
+|[Серверы: получение](/rest/api/sql/servers/get)|Получает сервер.|
+|[Серверы: вывод списка](/rest/api/sql/servers/list)|Возвращает список серверов.|
+|[Серверы: вывод списка по группе ресурсов](/rest/api/sql/servers/listbyresourcegroup)|Возвращает список серверов в группе ресурсов.|
+|[Серверы: обновление](/rest/api/sql/servers/update)|Обновляет существующий сервер.|
+|[Базы данных — создание или обновление](/rest/api/sql/databases/createorupdate)|Создает новую базу данных или обновляет имеющуюся.|
+|[Базы данных: удаление](/rest/api/sql/databases/delete)|Удаляет базу данных.|
+|[Базы данных: получение](/rest/api/sql/databases/get)|Получает базу данных.|
+|[Базы данных — список по эластичному пулу](/rest/api/sql/databases/listbyelasticpool)|Возвращает список баз данных в пуле эластичных баз данных.|
+|[Базы данных — список по серверам](/rest/api/sql/databases/listbyserver)|Возвращает список баз данных на сервере.|
+|[Базы данных: обновление](/rest/api/sql/databases/update)|Обновляет имеющуюся базу данных.|
+|[Правила брандмауэра — создание или обновление](/rest/api/sql/firewallrules/createorupdate)|Создает или обновляет правило брандмауэра.|
+|[Правила брандмауэра — удалить](/rest/api/sql/firewallrules/delete)|Удаляет правило брандмауэра.|
+|[Правила брандмауэра — получение](/rest/api/sql/firewallrules/get)|Получает правило брандмауэра.|
+|[Правила брандмауэра — список по серверам](/rest/api/sql/firewallrules/listbyserver)|Возвращает список правил брандмауэра.|
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о переносе базы данных SQL Server в базу данных SQL Azure см. в статье [Миграция в базу данных SQL](migrate-to-database-from-sql-server.md)Azure.
 - Дополнительные сведения о поддерживаемых функциях см. [здесь](features-comparison.md).

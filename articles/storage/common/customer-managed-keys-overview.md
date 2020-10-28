@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: 993c0bdf1e8e29a7cff9bd1cad60bf78386b16a2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2b474ae184374a2c91dcba15517048556686ec35
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91578229"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92782235"
 ---
 # <a name="customer-managed-keys-for-azure-storage-encryption"></a>Управляемые клиентом ключи для шифрования службы хранилища Azure
 
@@ -65,7 +65,7 @@ ms.locfileid: "91578229"
 > [!IMPORTANT]
 > Управляемые клиентом ключи основываются на управляемых удостоверениях для ресурсов Azure — функции Azure AD. Сейчас управляемые удостоверения не поддерживаются в сценариях работы с разными каталогами. При настройке ключей, управляемых клиентом, в портал Azure управляемое удостоверение автоматически назначается вашей учетной записи хранения, как описано в этой статье. Если впоследствии вы перемещаете подписку, группу ресурсов или учетную запись хранения из одного каталога Azure AD в другой, управляемое удостоверение, связанное с учетной записью хранения, не передается в новый клиент, поэтому управляемые клиентом ключи могут перестать работать. Дополнительные сведения см. в статье **Передача подписки между каталогами Azure AD** в [часто задаваемых вопросах и известных проблемах с управляемыми удостоверениями для ресурсов Azure](../../active-directory/managed-identities-azure-resources/known-issues.md#transferring-a-subscription-between-azure-ad-directories).  
 
-Шифрование службы хранилища Azure поддерживает ключи RSA и RSA-HSM размером 2048, 3072 и 4096. Дополнительные сведения о ключах см. в разделе **Key Vault Keys** раздела [о Azure Key Vault ключах, секретах и сертификатах](../../key-vault/about-keys-secrets-and-certificates.md#key-vault-keys).
+Шифрование службы хранилища Azure поддерживает ключи RSA и RSA-HSM размером 2048, 3072 и 4096. Дополнительные сведения о ключах см. в разделе [о ключах](../../key-vault/keys/about-keys.md).
 
 Использование хранилища ключей или управляемого модуля HSM связано с затратами. Дополнительные сведения см. в разделе [цены на Key Vault](https://azure.microsoft.com/pricing/details/key-vault/).
 
@@ -109,13 +109,13 @@ ms.locfileid: "91578229"
 
 Все операции с данными, которые не перечислены в этом разделе, могут продолжаться после отзыва ключей, управляемых клиентом, или отключения или удаления ключа.
 
-Чтобы отозвать доступ к ключам, управляемым клиентом, используйте [PowerShell](storage-encryption-keys-powershell.md#revoke-customer-managed-keys) или [Azure CLI](storage-encryption-keys-cli.md#revoke-customer-managed-keys).
+Чтобы отозвать доступ к ключам, управляемым клиентом, используйте [PowerShell](./customer-managed-keys-configure-key-vault.md#revoke-customer-managed-keys) или [Azure CLI](./customer-managed-keys-configure-key-vault.md#revoke-customer-managed-keys).
 
 ## <a name="customer-managed-keys-for-azure-managed-disks"></a>Управляемые клиентом ключи для управляемых дисков Azure
 
 Ключи, управляемые клиентом, также доступны для управления шифрованием управляемых дисков Azure. Управляемые клиентом ключи ведут себя иначе для управляемых дисков, чем для ресурсов службы хранилища Azure. Дополнительные сведения см. в статье [Шифрование управляемых дисков Azure](../../virtual-machines/windows/disk-encryption.md) на стороне сервера для Windows или [Шифрование на стороне сервера для управляемых дисков Azure](../../virtual-machines/linux/disk-encryption.md) для Linux.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Шифрование службы хранилища Azure для неактивных данных](storage-service-encryption.md)
 - [Настройка шифрования с помощью управляемых клиентом ключей, хранящихся в Azure Key Vault](customer-managed-keys-configure-key-vault.md)

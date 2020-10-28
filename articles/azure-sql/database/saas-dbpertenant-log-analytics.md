@@ -11,17 +11,17 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 01/25/2019
-ms.openlocfilehash: 787ee50dc04337d82940973d47af454264629afe
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a078ba6147d4d874a890f406563111b6fdb82ed6
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91619803"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92780909"
 ---
 # <a name="set-up-and-use-azure-monitor-logs-with-a-multitenant-azure-sql-database-saas-app"></a>Настройка и использование журналов Azure Monitor с мультитенантным приложением SaaS для Базы данных SQL Azure
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
 
-В этом учебнике показано, как настроить и использовать [журналы Azure Monitor](/azure/log-analytics/log-analytics-overview) для мониторинга эластичных пулов и баз данных. Данный документ основан на руководстве [Мониторинг производительности баз данных и пулов SQL Azure в мультитенантном приложении SaaS и управление ею](saas-dbpertenant-performance-monitoring.md). Здесь показано, как использовать журналы Azure Monitor для расширения функций мониторинга и оповещения на портале Azure. Журналы Azure Monitor позволяют выполнять мониторинг тысяч эластичных пулов и сотен тысяч баз данных. Журналы Azure Monitor также предлагают единое решение для мониторинга, с помощью которого можно отслеживать различные приложения и службы Azure в нескольких подписках Azure.
+В этом учебнике показано, как настроить и использовать [журналы Azure Monitor](../../azure-monitor/log-query/log-query-overview.md) для мониторинга эластичных пулов и баз данных. Данный документ основан на руководстве [Мониторинг производительности баз данных и пулов SQL Azure в мультитенантном приложении SaaS и управление ею](saas-dbpertenant-performance-monitoring.md). Здесь показано, как использовать журналы Azure Monitor для расширения функций мониторинга и оповещения на портале Azure. Журналы Azure Monitor позволяют выполнять мониторинг тысяч эластичных пулов и сотен тысяч баз данных. Журналы Azure Monitor также предлагают единое решение для мониторинга, с помощью которого можно отслеживать различные приложения и службы Azure в нескольких подписках Azure.
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../../includes/azure-monitor-log-analytics-rebrand.md)]
 
@@ -33,8 +33,8 @@ ms.locfileid: "91619803"
 
 Для работы с этим руководством выполните следующие предварительные требования:
 
-* Должно быть развернуто приложение SaaS Wingtip Tickets, использующее одну базу данных на клиент. Изучите инструкции из руководства по быстрому [развертыванию приложения SaaS Wingtip Tickets, использующего одну базу данных на клиент](../../sql-database/saas-dbpertenant-get-started-deploy.md).
-* Установите Azure PowerShell. Дополнительные сведения см. в статье [Начало работы с Azure PowerShell](https://docs.microsoft.com/powershell/azure/get-started-azureps).
+* Должно быть развернуто приложение SaaS Wingtip Tickets, использующее одну базу данных на клиент. Изучите инструкции из руководства по быстрому [развертыванию приложения SaaS Wingtip Tickets, использующего одну базу данных на клиент](./saas-dbpertenant-get-started-deploy.md).
+* Установите Azure PowerShell. Дополнительные сведения см. в статье [Начало работы с Azure PowerShell](/powershell/azure/get-started-azureps).
 
 Обсуждение сценариев и шаблонов SaaS и их влияния на требования к решениям для мониторинга можно найти в статье [Мониторинг производительности баз данных и пулов SQL Azure в мультитенантном приложении SaaS и управление ею](saas-dbpertenant-performance-monitoring.md).
 
@@ -48,10 +48,10 @@ ms.locfileid: "91619803"
 
 ### <a name="create-performance-diagnostic-data-by-simulating-a-workload-on-your-tenants"></a>Создание диагностических данных о производительности путем имитации рабочей нагрузки в клиентах 
 
-1. В интегрированной среде сценариев PowerShell откройте файл *..\\WingtipTicketsSaaS-MultiTenantDb-master\\Learning Modules\\Performance Monitoring and Management\\Demo-PerformanceMonitoringAndManagement.ps1*. Не закрывайте этот сценарий, так как при работе с данным руководством может потребоваться запустить несколько сценариев генератора нагрузки.
+1. В интегрированной среде сценариев PowerShell откройте файл *..\\WingtipTicketsSaaS-MultiTenantDb-master\\Learning Modules\\Performance Monitoring and Management\\Demo-PerformanceMonitoringAndManagement.ps1* . Не закрывайте этот сценарий, так как при работе с данным руководством может потребоваться запустить несколько сценариев генератора нагрузки.
 1. Если вы еще не сделали этого, подготовьте пакет клиентов, чтобы предоставить более содержательный контекст мониторинга. Этот процесс займет несколько минут.
 
-   a. Чтобы выбрать сценарий **подготовки пакета клиентов**, задайте для параметра _$DemoScenario_ значение 1.
+   a. Чтобы выбрать сценарий **подготовки пакета клиентов** , задайте для параметра _$DemoScenario_ значение 1.
 
    b. Чтобы запустить сценарий или развернуть 17 дополнительных клиентов, нажмите клавишу F5.
 
@@ -69,7 +69,7 @@ ms.locfileid: "91619803"
 
 Azure Monitor — это отдельная служба, которую нужно настроить. Журналы Azure Monitor собирают данные журналов, телеметрию и метрики в рабочей области Log Analytics. Рабочую область Log Analytics нужно создать, как и другие ресурсы в Azure. Рабочую область не обязательно создавать в одной группе ресурсов с приложением, которое она отслеживает. Однако зачастую это самый оптимальный вариант. Использование одной группы ресурсов с приложением Wingtip Tickets гарантирует, что рабочая область удаляется вместе с приложением.
 
-1. В интегрированной среде сценариев PowerShell откройте файл *..\\WingtipTicketsSaaS-MultiTenantDb-master\\Learning Modules\\Performance Monitoring and Management\\Log Analytics\\Demo-LogAnalytics.ps1*.
+1. В интегрированной среде сценариев PowerShell откройте файл *..\\WingtipTicketsSaaS-MultiTenantDb-master\\Learning Modules\\Performance Monitoring and Management\\Log Analytics\\Demo-LogAnalytics.ps1* .
 1. Нажмите клавишу F5 для запуска сценария.
 
 Теперь вы можете открыть журналы Azure Monitor на портале Azure. Для сбора данных телеметрии и их отображения в рабочей области Log Analytics требуется несколько минут. Чем дольше выполняется сбор системных данных диагностики, тем содержательнее результат. 
@@ -79,20 +79,20 @@ Azure Monitor — это отдельная служба, которую нуж
 
 Для этого упражнения откройте рабочую область Log Analytics на портале Azure для просмотра данных телеметрии, собранных для баз данных и пулов.
 
-1. Перейдите на [портал Azure](https://portal.azure.com). Выберите **Все службы**, чтобы открыть рабочую область Log Analytics. Найдите Log Analytics.
+1. Перейдите на [портал Azure](https://portal.azure.com). Выберите **Все службы** , чтобы открыть рабочую область Log Analytics. Найдите Log Analytics.
 
    ![Открытие рабочей области Log Analytics](./media/saas-dbpertenant-log-analytics/log-analytics-open.png)
 
-1. Выберите рабочую область _wtploganalytics-&lt;пользователь&gt;_.
+1. Выберите рабочую область _wtploganalytics-&lt;пользователь&gt;_ .
 
-1. Щелкните **Обзор**, чтобы открыть решение анализа журналов на портале Azure.
+1. Щелкните **Обзор** , чтобы открыть решение анализа журналов на портале Azure.
 
    ![Обзор](./media/saas-dbpertenant-log-analytics/click-overview.png)
 
     > [!IMPORTANT]
     > Активация решения может занять несколько минут. 
 
-1. Щелкните элемент **Аналитика SQL Azure**, чтобы открыть его.
+1. Щелкните элемент **Аналитика SQL Azure** , чтобы открыть его.
 
     ![Элемент обзора](./media/saas-dbpertenant-log-analytics/overview.png)
 
@@ -102,7 +102,7 @@ Azure Monitor — это отдельная служба, которую нуж
 
     ![Панель мониторинга Log Analytics](./media/saas-dbpertenant-log-analytics/log-analytics-overview.png)
 
-1. Измените параметр фильтра, чтобы указать диапазон времени. В рамках этого руководства выберите **Последний час**.
+1. Измените параметр фильтра, чтобы указать диапазон времени. В рамках этого руководства выберите **Последний час** .
 
     ![Фильтр времени](./media/saas-dbpertenant-log-analytics/log-analytics-time-filter.png)
 
@@ -114,7 +114,7 @@ Azure Monitor — это отдельная служба, которую нуж
  
      ![Метрики базы данных](./media/saas-dbpertenant-log-analytics/log-analytics-database-metrics.png)
 
-1. Прокрутите страницу аналитики влево и щелкните элемент сервера в списке **Сведения о ресурсе**.  
+1. Прокрутите страницу аналитики влево и щелкните элемент сервера в списке **Сведения о ресурсе** .  
 
     ![Список "Сведения о ресурсе"](./media/saas-dbpertenant-log-analytics/log-analytics-resource-info.png)
 
@@ -127,7 +127,7 @@ Azure Monitor — это отдельная служба, которую нуж
     ![Метрики пула](./media/saas-dbpertenant-log-analytics/log-analytics-pool-metrics.png)
 
 
-1. В рабочей области Log Analytics выберите **Портал OMS**, чтобы открыть на нем рабочую область.
+1. В рабочей области Log Analytics выберите **Портал OMS** , чтобы открыть на нем рабочую область.
 
     ![Рабочая область Log Analytics](./media/saas-dbpertenant-log-analytics/log-analytics-workspace-oms-portal.png)
 
@@ -135,7 +135,7 @@ Azure Monitor — это отдельная служба, которую нуж
 
 В отличие от функции оповещения, определенной для каждого ресурса на портале Azure, функции мониторинга и оповещения в журналах Azure Monitor основаны на запросах к данным в рабочей области. Создавая оповещения на основе запросов, вместо того чтобы определять одно оповещение для каждой базы данных, можно определить одно общее оповещение для всех баз данных. Запросы ограничиваются только данными, доступными в рабочей области.
 
-Сведения об использовании журналов Azure Monitor для создания запросов и настройки оповещений см. в статье [Создание, просмотр оповещений метрик и управление ими с помощью Azure Monitor](https://docs.microsoft.com/azure/log-analytics/log-analytics-alerts-creating).
+Сведения об использовании журналов Azure Monitor для создания запросов и настройки оповещений см. в статье [Создание, просмотр оповещений метрик и управление ими с помощью Azure Monitor](../../azure-monitor/platform/alerts-metric.md).
 
 За использование журналов Azure Monitor для Базы данных SQL будет взиматься плата на основе потребляемого объема данных в рабочей области. В этом руководстве вы создали бесплатную рабочую область с ограничением в 500 МБ в день. По достижении этого ограничения данные больше не будут добавляться в рабочую область.
 

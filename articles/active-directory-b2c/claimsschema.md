@@ -10,18 +10,18 @@ ms.topic: reference
 ms.date: 03/05/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: d02bc8d97b65f4ea2c2585201654899a63d3229b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: aadb75d7257470cf4288c6123263f3d2dfe14d21
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85201367"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92781725"
 ---
 # <a name="claimsschema"></a>ClaimsSchema
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-Элемент **ClaimsSchema** определяет типы утверждений, на которые можно ссылаться в рамках политики. Схема утверждений — это место, где вы объявляете свои утверждения. Утверждением может быть имя, фамилия, отображаемое имя, номер телефона и т. д. Элемент ClaimsSchema содержит список элементов **ClaimType**. Элемент **ClaimType** содержит атрибут **Id**, который является именем утверждения.
+Элемент **ClaimsSchema** определяет типы утверждений, на которые можно ссылаться в рамках политики. Схема утверждений — это место, где вы объявляете свои утверждения. Утверждением может быть имя, фамилия, отображаемое имя, номер телефона и т. д. Элемент ClaimsSchema содержит список элементов **ClaimType** . Элемент **ClaimType** содержит атрибут **Id** , который является именем утверждения.
 
 ```xml
 <BuildingBlocks>
@@ -52,13 +52,13 @@ ms.locfileid: "85201367"
 | ------- | ----------- | ----------- |
 | DisplayName | 1:1 | Заголовок, который отображается для пользователей на различных экранах. Значение может быть [локализовано](localization.md). |
 | DataType | 1:1 | Тип утверждения. |
-| DefaultPartnerClaimTypes | 0:1 | Типы стандартных утверждений партнера для использования по указанному протоколу. Значение может быть перезаписано в свойстве **PartnerClaimType**, указанном в элементах **InputClaim** или **OutputClaim**. Этот элемент используется для указания имени по умолчанию для протокола.  |
+| DefaultPartnerClaimTypes | 0:1 | Типы стандартных утверждений партнера для использования по указанному протоколу. Значение может быть перезаписано в свойстве **PartnerClaimType** , указанном в элементах **InputClaim** или **OutputClaim** . Этот элемент используется для указания имени по умолчанию для протокола.  |
 | Mask | 0:1 | Необязательная строка знаков маскировки, которые могут применяться при отображении утверждения. Например, телефонный номер 324-232-4343 можно замаскировать как XXX-XXX-4343. |
 | UserHelpText | 0:1 | Описание типа утверждения, которое может помочь пользователям понять его назначение. Значение может быть [локализовано](localization.md). |
 | UserInputType | 0:1 | Тип элемента управления для ввода, который должен быть доступен пользователю, когда он вручную вводит данные утверждения для типа утверждения. См. типы элементов для ввода данных пользователем, определенные ниже на этой странице. |
 | админхелптекст | 0:1 | Описание типа утверждения, которое может быть полезно для администраторов, чтобы понять его назначение. |
 | Ограничение | 0:1 | Ограничения значений для этого утверждения, такие как регулярное выражение или список допустимых значений. Значение может быть [локализовано](localization.md). |
-PredicateValidationReference| 0:1 | Ссылка на элемент **PredicateValidationsInput**. Элементы **PredicateValidationReference** позволяют выполнить процесс проверки, чтобы обеспечить ввод только правильно сформированных данных. Дополнительные сведения см. в статье [Элементы Predicates и PredicateValidations](predicates.md). |
+PredicateValidationReference| 0:1 | Ссылка на элемент **PredicateValidationsInput** . Элементы **PredicateValidationReference** позволяют выполнить процесс проверки, чтобы обеспечить ввод только правильно сформированных данных. Дополнительные сведения см. в статье [Элементы Predicates и PredicateValidations](predicates.md). |
 
 
 
@@ -66,7 +66,7 @@ PredicateValidationReference| 0:1 | Ссылка на элемент **Predicate
 
 Элемент **DataType** поддерживает следующие значения:
 
-| Type | Описание |
+| Тип | Описание |
 | ------- | ----------- |
 |Логическое|Представляет логическое значение (`true` или `false`).|
 |Дата| Представляет мгновенное время, обычно выраженное как дата дня. Значение даты соответствует соглашению ISO 8601.|
@@ -228,7 +228,7 @@ PredicateValidationReference| 0:1 | Ссылка на элемент **Predicate
   <UserHelpText>Email address that can be used to contact you.</UserHelpText>
   <UserInputType>TextBox</UserInputType>
   <Restriction>
-    <Pattern RegularExpression="^[a-zA-Z0-9.!#$%&amp;'^_`{}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" HelpText="Please enter a valid email address." />
+    <Pattern RegularExpression="^[a-zA-Z0-9.+!#$%&amp;'^_`{}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" HelpText="Please enter a valid email address." />
     </Restriction>
  </ClaimType>
 ```
@@ -284,7 +284,7 @@ Azure AD B2C поддерживает различные типы элемент
   <UserHelpText>Email address that can be used to contact you.</UserHelpText>
   <UserInputType>EmailBox</UserInputType>
   <Restriction>
-    <Pattern RegularExpression="^[a-zA-Z0-9!#$%&amp;'+^_`{}~-]+(?:\.[a-zA-Z0-9!#$%&amp;'+^_`{}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$" HelpText="Please enter a valid email address." />
+    <Pattern RegularExpression="^[a-zA-Z0-9.+!#$%&amp;'+^_`{}~-]+(?:\.[a-zA-Z0-9!#$%&amp;'+^_`{}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$" HelpText="Please enter a valid email address." />
   </Restriction>
 </ClaimType>
 ```

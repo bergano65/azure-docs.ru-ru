@@ -8,12 +8,12 @@ ms.date: 07/24/2020
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
-ms.openlocfilehash: f3d691692553a8201b3e3eccfaead82a2cbb9ca0
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: a5c0d8bb47b337b0415565a0b6dad5c6822d0b94
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92479703"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92781742"
 ---
 # <a name="azcopy-copy"></a>azcopy copy
 
@@ -90,7 +90,7 @@ cat "/path/to/file.txt" | azcopy cp "https://[account].blob.core.windows.net/[co
 azcopy cp "/path/to/dir" "https://[account].blob.core.windows.net/[container]/[path/to/directory]?[SAS]" --recursive
 ```
 
-или
+or
 
 ```azcopy
 azcopy cp "/path/to/dir" "https://[account].blob.core.windows.net/[container]/[path/to/directory]?[SAS]" --recursive --put-md5
@@ -214,7 +214,7 @@ azcopy cp "https://s3.amazonaws.com/" "https://[destaccount].blob.core.windows.n
 - azcopy cp "https://s3.amazonaws.com/[bucket*name]/" "https://[destaccount].blob.core.windows.net?[SAS]" --recursive
 ```
 
-## <a name="options"></a>Параметры
+## <a name="options"></a>Варианты
 
 **--BACKUP** Активирует Windows "Себаккуппривилеже для отправки" или "Сересторепривилеже для скачивания", чтобы разрешить AzCopy просматривать и читать все файлы независимо от разрешений файловой системы и восстанавливать все разрешения. Требует, чтобы учетная запись, в которой запущен AzCopy, уже имеет эти разрешения (например, имеет права администратора или является членом `Backup Operators` группы). Этот флаг активирует привилегии, которые у учетной записи уже есть.
 
@@ -292,7 +292,7 @@ azcopy cp "https://s3.amazonaws.com/" "https://[destaccount].blob.core.windows.n
 
 **--S2S-handle-недопустимо — строка метаданных** указывает, как обрабатываются недопустимые ключи метаданных. Доступные варианты: Ексклудеифинвалид, Фаилифинвалид, Ренамеифинвалид. (по умолчанию `ExcludeIfInvalid` ). (по умолчанию "Ексклудеифинвалид")
 
-**--S2S-Preserve-уровень доступа**   Сохранение уровня доступа во время копирования службы в службу. Дополнительные сведения см. в статье [хранилище BLOB-объектов Azure: горячий, холодный и архивный уровни доступа](/azure/storage/blobs/storage-blob-storage-tiers) , чтобы гарантировать, что Целевая учетная запись хранения поддерживает настройку уровня доступа. В случаях, когда установка уровня доступа не поддерживается, используйте s2sPreserveAccessTier = false, чтобы обойти копирование уровня доступа. (по умолчанию `true` ).  (по умолчанию "true")
+**--S2S-Preserve-уровень доступа**   Сохранение уровня доступа во время копирования службы в службу. Дополнительные сведения см. в статье [хранилище BLOB-объектов Azure: горячий, холодный и архивный уровни доступа](../blobs/storage-blob-storage-tiers.md) , чтобы гарантировать, что Целевая учетная запись хранения поддерживает настройку уровня доступа. В случаях, когда установка уровня доступа не поддерживается, используйте s2sPreserveAccessTier = false, чтобы обойти копирование уровня доступа. (по умолчанию `true` ).  (по умолчанию "true")
 
 **--S2S-Preserve-свойства**   Сохранять полные свойства во время копирования службы в службу. Для AWS S3 и файлов Azure, не являющихся файлами в одном файле, операция List не возвращает полные свойства объектов и файлов. Чтобы сохранить полные свойства, AzCopy должен отправить один дополнительный запрос на объект или файл. (по умолчанию true)
 
@@ -304,6 +304,6 @@ azcopy cp "https://s3.amazonaws.com/" "https://[destaccount].blob.core.windows.n
 
 **--Trusted-Microsoft-суффиксы** указывает дополнительные суффиксы домена, в которых могут отправляться Azure Active Directory токены входа.  Значение по умолчанию — `*.core.windows.net;*.core.chinacloudapi.cn;*.core.cloudapi.de;*.core.usgovcloudapi.net`. Все перечисленные здесь значения добавляются к значениям по умолчанию. В целях безопасности следует размещать только Microsoft Azureные домены. Несколько записей разделяются точкой с запятой.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также статью
 
 - [azcopy](storage-ref-azcopy.md)

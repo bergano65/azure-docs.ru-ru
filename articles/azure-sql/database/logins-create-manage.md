@@ -13,12 +13,12 @@ author: VanMSFT
 ms.author: vanto
 ms.reviewer: sstein
 ms.date: 03/23/2020
-ms.openlocfilehash: ca458bebf75f8e77774236166704794b817b7c3f
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: 940ea0ac471604b22c64dc008eebd8b580121cf7
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92167140"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92782745"
 ---
 # <a name="authorize-database-access-to-sql-database-sql-managed-instance-and-azure-synapse-analytics"></a>Авторизация доступа к базе данных SQL, SQL Управляемый экземпляр и Azure синапсе Analytics
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
@@ -39,27 +39,27 @@ ms.locfileid: "92167140"
 [**Проверка подлинности**](security-overview.md#authentication) — это процесс проверки пользователя на то, что он заказывает. Пользователь подключается к базе данных с помощью учетной записи пользователя.
 Когда пользователь пытается подключиться к базе данных, он предоставляет учетную запись пользователя и сведения о проверке подлинности. Проверка подлинности пользователя выполняется с помощью одного из следующих двух методов проверки подлинности:
 
-- [Проверка подлинности SQL](https://docs.microsoft.com/sql/relational-databases/security/choose-an-authentication-mode#connecting-through-sql-server-authentication).
+- [Проверка подлинности SQL](/sql/relational-databases/security/choose-an-authentication-mode#connecting-through-sql-server-authentication).
 
   При использовании этого метода проверки подлинности пользователь отправляет имя учетной записи пользователя и связанный пароль для установления соединения. Этот пароль хранится в базе данных master для учетных записей пользователей, связанных с именем входа, или хранится в базе данных, содержащей учетные записи пользователей, *не* связанные с именем входа.
 - [Аутентификация Azure Active Directory](authentication-aad-overview.md)
 
   При использовании этого метода проверки подлинности пользователь отправляет имя учетной записи пользователя и запрашивает, что служба использует учетные данные, хранящиеся в Azure Active Directory (Azure AD).
 
-**Имена входа и пользователи**. учетная запись пользователя в базе данных может быть связана с именем входа, хранящимся в базе данных master, или именем пользователя, хранящимся в отдельной базе данных.
+**Имена входа и пользователи** . учетная запись пользователя в базе данных может быть связана с именем входа, хранящимся в базе данных master, или именем пользователя, хранящимся в отдельной базе данных.
 
 - **Имя входа** — это отдельная учетная запись в базе данных master, с которой может быть связана учетная запись пользователя в одной или нескольких базах данных. Если используется имя для входа, вместе с ним хранятся учетные данные для учетной записи пользователя.
 - **Учетная запись пользователя** — это отдельная учетная запись в любой базе данных, которая может быть, но не обязательно связана с именем входа. Если учетная запись пользователя не связана с именем для входа, то учетные данные хранятся вместе с учетной записью пользователя.
 
-[**Авторизация**](security-overview.md#authorization) для доступа к данным и выполнения различных действий управляется с помощью ролей базы данных и явных разрешений. Авторизация относится к разрешениям, назначенным пользователю, и определяет, что разрешено выполнять пользователю. Авторизация контролируется [членством в роли](https://docs.microsoft.com/sql/relational-databases/security/authentication-access/database-level-roles) базы данных пользователя и [разрешениями уровня объектов](https://docs.microsoft.com/sql/relational-databases/security/permissions-database-engine). Обычно пользователям рекомендуется предоставлять наименьшие необходимые привилегии.
+[**Авторизация**](security-overview.md#authorization) для доступа к данным и выполнения различных действий управляется с помощью ролей базы данных и явных разрешений. Авторизация относится к разрешениям, назначенным пользователю, и определяет, что разрешено выполнять пользователю. Авторизация контролируется [членством в роли](/sql/relational-databases/security/authentication-access/database-level-roles) базы данных пользователя и [разрешениями уровня объектов](/sql/relational-databases/security/permissions-database-engine). Обычно пользователям рекомендуется предоставлять наименьшие необходимые привилегии.
 
 ## <a name="existing-logins-and-user-accounts-after-creating-a-new-database"></a>Существующие имена входа и учетные записи пользователей после создания новой базы данных
 
-При первом развертывании SQL Azure укажите имя входа администратора и соответствующий пароль для этого имени входа. Эта административная учетная запись называется **администратором сервера**. Следующая конфигурация имен входа и пользователей в базах данных master и User происходит во время развертывания:
+При первом развертывании SQL Azure укажите имя входа администратора и соответствующий пароль для этого имени входа. Эта административная учетная запись называется **администратором сервера** . Следующая конфигурация имен входа и пользователей в базах данных master и User происходит во время развертывания:
 
-- Имя входа SQL с правами администратора создается с использованием указанного имени входа. [Имя входа](https://docs.microsoft.com/sql/relational-databases/security/authentication-access/principals-database-engine#sa-login) — это отдельная учетная запись пользователя для входа в базу данных SQL, SQL управляемый экземпляр и Azure синапсе.
-- Этому имени входа предоставляются полные административные разрешения на все базы данных в качестве [участника уровня сервера](https://docs.microsoft.com/sql/relational-databases/security/authentication-access/principals-database-engine). Имя входа имеет все доступные разрешения и не может быть ограничено. В Управляемый экземпляр SQL это имя входа добавляется к [предопределенной роли сервера sysadmin](https://docs.microsoft.com/sql/relational-databases/security/authentication-access/server-level-roles) (эта роль не существует в базе данных SQL Azure).
-- [user account](https://docs.microsoft.com/sql/relational-databases/security/authentication-access/getting-started-with-database-engine-permissions#database-users) `dbo` Для этого имени входа в каждой пользовательской базе данных создается учетная запись пользователя с именем. У пользователя [dbo](https://docs.microsoft.com/sql/relational-databases/security/authentication-access/principals-database-engine) есть все разрешения базы данных, и он сопоставлен с `db_owner` предопределенной ролью базы данных. Дополнительные предопределенные роли базы данных обсуждаются далее в этой статье.
+- Имя входа SQL с правами администратора создается с использованием указанного имени входа. [Имя входа](/sql/relational-databases/security/authentication-access/principals-database-engine#sa-login) — это отдельная учетная запись пользователя для входа в базу данных SQL, SQL управляемый экземпляр и Azure синапсе.
+- Этому имени входа предоставляются полные административные разрешения на все базы данных в качестве [участника уровня сервера](/sql/relational-databases/security/authentication-access/principals-database-engine). Имя входа имеет все доступные разрешения и не может быть ограничено. В Управляемый экземпляр SQL это имя входа добавляется к [предопределенной роли сервера sysadmin](/sql/relational-databases/security/authentication-access/server-level-roles) (эта роль не существует в базе данных SQL Azure).
+- [user account](/sql/relational-databases/security/authentication-access/getting-started-with-database-engine-permissions#database-users) `dbo` Для этого имени входа в каждой пользовательской базе данных создается учетная запись пользователя с именем. У пользователя [dbo](/sql/relational-databases/security/authentication-access/principals-database-engine) есть все разрешения базы данных, и он сопоставлен с `db_owner` предопределенной ролью базы данных. Дополнительные предопределенные роли базы данных обсуждаются далее в этой статье.
 
 Чтобы найти учетные записи администратора для базы данных, откройте портал Azure и перейдите на вкладку **Свойства** сервера или управляемого экземпляра.
 
@@ -68,7 +68,7 @@ ms.locfileid: "92167140"
 ![Снимок экрана, посвященный пункту меню "Свойства".](./media/logins-create-manage/sql-admins2.png)
 
 > [!IMPORTANT]
-> Имя для входа администратора нельзя изменить после его создания. Чтобы сбросить пароль администратора сервера, на [портале Azure](https://portal.azure.com) щелкните **Серверы SQL**, выберите в списке сервер и щелкните **Сбросить пароль**. Чтобы сбросить пароль для Управляемый экземпляр SQL, перейдите в портал Azure, щелкните экземпляр и нажмите кнопку **Сброс пароля**. Можно также использовать PowerShell или Azure CLI.
+> Имя для входа администратора нельзя изменить после его создания. Чтобы сбросить пароль администратора сервера, на [портале Azure](https://portal.azure.com) щелкните **Серверы SQL** , выберите в списке сервер и щелкните **Сбросить пароль** . Чтобы сбросить пароль для Управляемый экземпляр SQL, перейдите в портал Azure, щелкните экземпляр и нажмите кнопку **Сброс пароля** . Можно также использовать PowerShell или Azure CLI.
 
 ## <a name="create-additional-logins-and-users-having-administrative-permissions"></a>Создание дополнительных учетных записей и пользователей, имеющих административные разрешения
 
@@ -84,19 +84,19 @@ ms.locfileid: "92167140"
 - **В Управляемый экземпляр SQL создайте имена входа SQL с полными разрешениями администратора.**
 
   - Создайте дополнительное имя входа SQL в базе данных master.
-  - Добавьте имя входа к [предопределенной роли сервера sysadmin](https://docs.microsoft.com/sql/relational-databases/security/authentication-access/server-level-roles) с помощью инструкции [ALTER Server Role](https://docs.microsoft.com/sql/t-sql/statements/alter-server-role-transact-sql) . Это имя для входа будет иметь полные административные разрешения.
+  - Добавьте имя входа к [предопределенной роли сервера sysadmin](/sql/relational-databases/security/authentication-access/server-level-roles) с помощью инструкции [ALTER Server Role](/sql/t-sql/statements/alter-server-role-transact-sql) . Это имя для входа будет иметь полные административные разрешения.
   - Кроме того, можно создать [имя входа Azure AD](authentication-aad-configure.md#provision-azure-ad-admin-sql-managed-instance) с помощью синтаксиса [CREATE LOGIN](/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current) .
 
 - **В базе данных SQL создайте имена входа SQL с ограниченными административными разрешениями.**
 
   - Создайте дополнительное имя входа SQL в базе данных master.
   - Создайте учетную запись пользователя в базе данных master, связанной с новым именем входа.
-  - Добавьте учетную запись пользователя в `dbmanager` , `loginmanager` роль или обе в `master` базе данных с помощью инструкции [ALTER ROLE](https://docs.microsoft.com/sql/t-sql/statements/alter-role-transact-sql) (для Azure синапсе используйте инструкцию [sp_addrolemember](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-addrolemember-transact-sql) ).
+  - Добавьте учетную запись пользователя в `dbmanager` , `loginmanager` роль или обе в `master` базе данных с помощью инструкции [ALTER ROLE](/sql/t-sql/statements/alter-role-transact-sql) (для Azure синапсе используйте инструкцию [sp_addrolemember](/sql/relational-databases/system-stored-procedures/sp-addrolemember-transact-sql) ).
 
   > [!NOTE]
   > `dbmanager``loginmanager`роли и **не** относятся к развертываниям управляемый экземпляр SQL.
 
-  Члены этих [специальных ролей главной базы данных](https://docs.microsoft.com/sql/relational-databases/security/authentication-access/database-level-roles#special-roles-for--and-) для базы данных SQL Azure имеют права на создание баз данных и управление ими, а также на создание имен входа и управление ими. В базах данных, созданных пользователем, который является членом `dbmanager` роли, член сопоставляется с `db_owner` предопределенной ролью базы данных и может входить в эту базу данных и управлять ею с помощью `dbo` учетной записи пользователя. Эти роли не имеют явных разрешений вне базы данных master.
+  Члены этих [специальных ролей главной базы данных](/sql/relational-databases/security/authentication-access/database-level-roles#special-roles-for--and-) для базы данных SQL Azure имеют права на создание баз данных и управление ими, а также на создание имен входа и управление ими. В базах данных, созданных пользователем, который является членом `dbmanager` роли, член сопоставляется с `db_owner` предопределенной ролью базы данных и может входить в эту базу данных и управлять ею с помощью `dbo` учетной записи пользователя. Эти роли не имеют явных разрешений вне базы данных master.
 
   > [!IMPORTANT]
   > Невозможно создать дополнительное имя входа SQL с полными правами администратора в базе данных SQL.
@@ -122,10 +122,10 @@ ms.locfileid: "92167140"
 
 Примеры, демонстрирующие создание имен входа и пользователей, см. в следующих статьях:
 
-- [Создание имени входа для базы данных SQL Azure](https://docs.microsoft.com/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-current#examples-1)
-- [Создание имени входа для Управляемый экземпляр Azure SQL](https://docs.microsoft.com/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current#examples-2)
-- [Создание имени входа для Azure синапсе](https://docs.microsoft.com/sql/t-sql/statements/create-login-transact-sql?view=azure-sqldw-latest#examples-3)
-- [Создание пользователя](https://docs.microsoft.com/sql/t-sql/statements/create-user-transact-sql#examples)
+- [Создание имени входа для базы данных SQL Azure](/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-current#examples-1)
+- [Создание имени входа для Управляемый экземпляр Azure SQL](/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current#examples-2)
+- [Создание имени входа для Azure синапсе](/sql/t-sql/statements/create-login-transact-sql?view=azure-sqldw-latest#examples-3)
+- [Создание пользователя](/sql/t-sql/statements/create-user-transact-sql#examples)
 - [Создание пользователей, содержащихся в Azure AD](authentication-aad-configure.md#create-contained-users-mapped-to-azure-ad-identities)
 
 > [!TIP]
@@ -137,19 +137,19 @@ ms.locfileid: "92167140"
 
 - **Предопределенные роли базы данных**
 
-  Добавьте учетную запись пользователя к [предопределенной роли базы данных](https://docs.microsoft.com/sql/relational-databases/security/authentication-access/database-level-roles). Существует 9 фиксированных ролей базы данных, каждый из которых имеет определенный набор разрешений. Наиболее распространенные предопределенные роли базы данных: **db_owner**, **db_ddladmin**, **db_datawriter**, **db_datareader**, **db_denydatawriter**и **db_denydatareader**. Роль **db_owner** обычно используется для предоставления полных прав ограниченному числу пользователей. Другие фиксированные роли можно использовать для быстрого получения простых баз данных при разработке, но их не рекомендуется использовать для большинства рабочих баз данных. Например, предопределенная роль базы данных **db_datareader** предоставляет доступ на чтение к каждой таблице в базе данных, что более строго требуется.
+  Добавьте учетную запись пользователя к [предопределенной роли базы данных](/sql/relational-databases/security/authentication-access/database-level-roles). Существует 9 фиксированных ролей базы данных, каждый из которых имеет определенный набор разрешений. Наиболее распространенные предопределенные роли базы данных: **db_owner** , **db_ddladmin** , **db_datawriter** , **db_datareader** , **db_denydatawriter** и **db_denydatareader** . Роль **db_owner** обычно используется для предоставления полных прав ограниченному числу пользователей. Другие фиксированные роли можно использовать для быстрого получения простых баз данных при разработке, но их не рекомендуется использовать для большинства рабочих баз данных. Например, предопределенная роль базы данных **db_datareader** предоставляет доступ на чтение к каждой таблице в базе данных, что более строго требуется.
 
   - Чтобы добавить пользователя к предопределенной роли базы данных, выполните следующие действия.
 
-    - В базе данных SQL Azure используйте инструкцию [ALTER ROLE](https://docs.microsoft.com/sql/t-sql/statements/alter-role-transact-sql) . Примеры см. в разделе [ALTER ROLE examples](https://docs.microsoft.com/sql/t-sql/statements/alter-role-transact-sql#examples) .
-    - Azure синапсе. Используйте инструкцию [sp_addrolemember](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-addrolemember-transact-sql) . Примеры см. в разделе [sp_addrolemember примеры](https://docs.microsoft.com/sql/t-sql/statements/alter-role-transact-sql).
+    - В базе данных SQL Azure используйте инструкцию [ALTER ROLE](/sql/t-sql/statements/alter-role-transact-sql) . Примеры см. в разделе [ALTER ROLE examples](/sql/t-sql/statements/alter-role-transact-sql#examples) .
+    - Azure синапсе. Используйте инструкцию [sp_addrolemember](/sql/relational-databases/system-stored-procedures/sp-addrolemember-transact-sql) . Примеры см. в разделе [sp_addrolemember примеры](/sql/t-sql/statements/alter-role-transact-sql).
 
 - **Пользовательская роль базы данных**
 
-  Создайте пользовательскую роль базы данных с помощью инструкции [CREATE ROLE](https://docs.microsoft.com/sql/t-sql/statements/create-role-transact-sql) . Настраиваемая роль позволяет создавать собственные пользовательские роли базы данных и тщательно предоставлять каждой роли минимальные разрешения, необходимые для нужд бизнеса. Затем можно добавить пользователей в пользовательскую роль. Если пользователь является участником нескольких ролей, то ему предоставлены разрешения всех этих ролей.
+  Создайте пользовательскую роль базы данных с помощью инструкции [CREATE ROLE](/sql/t-sql/statements/create-role-transact-sql) . Настраиваемая роль позволяет создавать собственные пользовательские роли базы данных и тщательно предоставлять каждой роли минимальные разрешения, необходимые для нужд бизнеса. Затем можно добавить пользователей в пользовательскую роль. Если пользователь является участником нескольких ролей, то ему предоставлены разрешения всех этих ролей.
 - **Предоставление разрешений напрямую**
 
-  Предоставьте [разрешения](https://docs.microsoft.com/sql/relational-databases/security/permissions-database-engine) учетной записи пользователя напрямую. Существует более 100 разрешений, которые можно по отдельности предоставлять или отменять в базе данных SQL. Многие эти разрешения являются частью других разрешений. Например, разрешение `UPDATE` на схеме включает в себя разрешение `UPDATE` для каждой таблицы в этой схеме. Как и в большинстве систем разрешений, отмена разрешения переопределяет предоставление. Так как некоторые разрешения включены в другие разрешения и их достаточно много, необходимо внимательно изучить их, чтобы спроектировать соответствующую систему разрешений, которая будет надежно защищать базу данных. Изучите список разрешений на [этой странице](https://docs.microsoft.com/sql/relational-databases/security/permissions-database-engine) и ознакомьтесь с [графическим представлением](https://docs.microsoft.com/sql/relational-databases/security/media/database-engine-permissions.png) разрешений.
+  Предоставьте [разрешения](/sql/relational-databases/security/permissions-database-engine) учетной записи пользователя напрямую. Существует более 100 разрешений, которые можно по отдельности предоставлять или отменять в базе данных SQL. Многие эти разрешения являются частью других разрешений. Например, разрешение `UPDATE` на схеме включает в себя разрешение `UPDATE` для каждой таблицы в этой схеме. Как и в большинстве систем разрешений, отмена разрешения переопределяет предоставление. Так как некоторые разрешения включены в другие разрешения и их достаточно много, необходимо внимательно изучить их, чтобы спроектировать соответствующую систему разрешений, которая будет надежно защищать базу данных. Изучите список разрешений на [этой странице](/sql/relational-databases/security/permissions-database-engine) и ознакомьтесь с [графическим представлением](/sql/relational-databases/security/media/database-engine-permissions.png) разрешений.
 
 ## <a name="using-groups"></a>Использование групп
 
@@ -164,10 +164,10 @@ ms.locfileid: "92167140"
 
 Ознакомьтесь со следующими возможностями, которые можно использовать, чтобы ограничить или расширить права:
 
-- Чтобы безопасно временно повысить уровень разрешений, можно использовать [олицетворение](https://docs.microsoft.com/dotnet/framework/data/adonet/sql/customizing-permissions-with-impersonation-in-sql-server) и [подписание модулей](https://docs.microsoft.com/dotnet/framework/data/adonet/sql/signing-stored-procedures-in-sql-server).
-- [Безопасности на уровне строк](https://docs.microsoft.com/sql/relational-databases/security/row-level-security) может использоваться, чтобы ограничить доступ пользователя к строкам.
+- Чтобы безопасно временно повысить уровень разрешений, можно использовать [олицетворение](/dotnet/framework/data/adonet/sql/customizing-permissions-with-impersonation-in-sql-server) и [подписание модулей](/dotnet/framework/data/adonet/sql/signing-stored-procedures-in-sql-server).
+- [Безопасности на уровне строк](/sql/relational-databases/security/row-level-security) может использоваться, чтобы ограничить доступ пользователя к строкам.
 - [Маскирование данных](dynamic-data-masking-overview.md) позволяет снизить уязвимость конфиденциальных данных.
-- [хранимые процедуры](https://docs.microsoft.com/sql/relational-databases/stored-procedures/stored-procedures-database-engine) .
+- [хранимые процедуры](/sql/relational-databases/stored-procedures/stored-procedures-database-engine) .
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

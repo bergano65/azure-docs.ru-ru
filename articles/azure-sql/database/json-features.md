@@ -11,12 +11,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: ''
 ms.date: 04/19/2020
-ms.openlocfilehash: 53428a542bb8d8d546e68f63aaf80ee40f2b0874
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4258c60335a13a6c0f27588aac1c6cdb185fcf6a
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91450247"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92782807"
 ---
 # <a name="getting-started-with-json-features-in-azure-sql-database-and-azure-sql-managed-instance"></a>Приступая к работе с функциями JSON в базе данных SQL Azure и Управляемый экземпляр Azure SQL
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -196,6 +196,4 @@ END
 
 Чтобы узнать, как интегрировать JSON в приложение, ознакомьтесь с приведенным ниже материалами.
 
-Чтобы узнать о различных сценариях интеграции JSON в приложение, ознакомьтесь с роликами [Channel 9](https://channel9.msdn.com/Events/DataDriven/SQLServer2016/JSON-as-a-bridge-betwen-NoSQL-and-relational-worlds) или найдите подходящий вам сценарий в [записях блога о JSON](https://docs.microsoft.com/archive/blogs/sqlserverstorageengine/json-in-sql-server-use-cases).
-
-
+Чтобы узнать о различных сценариях интеграции JSON в приложение, ознакомьтесь с роликами [Channel 9](https://channel9.msdn.com/Events/DataDriven/SQLServer2016/JSON-as-a-bridge-betwen-NoSQL-and-relational-worlds) или найдите подходящий вам сценарий в [записях блога о JSON](/archive/blogs/sqlserverstorageengine/json-in-sql-server-use-cases).
