@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendleton
 ms.custom: codepen, devx-track-js
-ms.openlocfilehash: f43c0086cfd6e51e0fbcd5d30911aa6c8e9a6518
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5f455a1132a0f63e1ba3eb5d2a57a1f9bfa9a867
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91335557"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92895687"
 ---
 # <a name="how-to-use-image-templates"></a>Использование шаблонов образов
 
@@ -24,7 +24,7 @@ ms.locfileid: "91335557"
  - Слои многоугольников можно визуализировать с помощью изображения шаблона заливки. 
  - Маркеры HTML могут отображать точки с помощью изображений и других элементов HTML.
 
-Чтобы обеспечить хорошую производительность при работе с слоями, перед отрисовкой Загрузите изображения в ресурс с изображением Sprite. [Иконоптионс](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.iconoptions)(симболлайер) предварительно загружает несколько изображений маркера в несколько цветов в спрайт изображения Map по умолчанию. Эти изображения маркеров и многое другое доступны в виде шаблонов SVG. Они могут использоваться для создания изображений с настраиваемыми масштабами или использования в качестве основного и дополнительного цветов клиента. В итоге предусмотрено 42 шаблонов изображений: 27 значков символов и 15 узоров заливки многоугольников.
+Чтобы обеспечить хорошую производительность при работе с слоями, перед отрисовкой Загрузите изображения в ресурс с изображением Sprite. [Иконоптионс](/javascript/api/azure-maps-control/atlas.iconoptions)(симболлайер) предварительно загружает несколько изображений маркера в несколько цветов в спрайт изображения Map по умолчанию. Эти изображения маркеров и многое другое доступны в виде шаблонов SVG. Они могут использоваться для создания изображений с настраиваемыми масштабами или использования в качестве основного и дополнительного цветов клиента. В итоге предусмотрено 42 шаблонов изображений: 27 значков символов и 15 узоров заливки многоугольников.
 
 Шаблоны изображений можно добавить в ресурсы с изображением Sprite с помощью `map.imageSprite.createFromTemplate` функции. Эта функция позволяет передавать до пяти параметров;
 
@@ -514,10 +514,10 @@ map.imageSprite.createFromTemplate('myTemplatedIcon', 'marker-flat', 'teal', '#f
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
 > [!div class="nextstepaction"]
-> [имажеспритеманажер](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.imagespritemanager)
+> [имажеспритеманажер](/javascript/api/azure-maps-control/atlas.imagespritemanager)
 
 > [!div class="nextstepaction"]
-> [пространство имен Atlas](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas#functions
+> [пространство имен Atlas](/javascript/api/azure-maps-control/atlas#functions
 )
 
 Дополнительные примеры кода, в которых можно использовать шаблоны изображений, см. в следующих статьях:

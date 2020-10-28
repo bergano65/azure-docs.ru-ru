@@ -6,13 +6,13 @@ ms.author: daperlov
 manager: anandsub
 ms.service: data-factory
 ms.topic: conceptual
-ms.date: 03/10/2020
-ms.openlocfilehash: 0442c701f39fd3e84361ad0201aaf8d1840d8851
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 10/27/2020
+ms.openlocfilehash: 6fe85db6612a16099f61cb52fe9c5864882f35b3
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81606283"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92892933"
 ---
 # <a name="mapping-data-flow-transformation-overview"></a>Общие сведения о преобразовании потока данных сопоставления
 
@@ -33,6 +33,7 @@ ms.locfileid: "81606283"
 | [Уточняющий запрос](data-flow-lookup.md) | Несколько входов и выходов | Справочные данные из другого источника. |
 | [Новая ветвь](data-flow-new-branch.md) | Несколько входов и выходов | Применение нескольких наборов операций и преобразований к одному потоку данных. |
 | [Сведение](data-flow-pivot.md) | Модификатор схемы | Агрегат, в котором один или несколько столбцов группирования имеют различные значения строк, преобразованные в отдельные столбцы. |
+| [Рейтинг](data-flow-rank.md) | Модификатор схемы | Создание упорядоченного ранжирования на основе условий сортировки |
 | [Select](data-flow-select.md) | Модификатор схемы | Псевдонимы столбцов и потоков, а также удаление или Переупорядочение столбцов |
 | [Приемник](data-flow-sink.md) | - | Конечное назначение для данных |
 | [Sort](data-flow-sort.md) | Модификатор строки | Сортировка входящих строк в текущем потоке данных |

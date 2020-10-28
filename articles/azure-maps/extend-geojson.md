@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: ''
-ms.openlocfilehash: e6cfbef3751a7b4256f689af0e5b3524ae6fa878
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 87a5dec2582796c6703bfb37b76e26e53a1192c0
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88037462"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92895789"
 ---
 # <a name="extended-geojson-geometries"></a>Расширенные геометрические объекты геоjson
 
@@ -29,7 +29,7 @@ Azure Maps предоставляет список мощных интерфей
 * Точка
 * Многоугольник
 
-Некоторые Azure Maps API принимают геометрические объекты, которые не являются частью [спецификации геоjson][1]. Например, [Поиск внутри геометрического](https://docs.microsoft.com/rest/api/maps/search/postsearchinsidegeometry) API принимает круги и многоугольники.
+Некоторые Azure Maps API принимают геометрические объекты, которые не являются частью [спецификации геоjson][1]. Например, [Поиск внутри геометрического](/rest/api/maps/search/postsearchinsidegeometry) API принимает круги и многоугольники.
 
 В этой статье приводится подробное объяснение того, как Azure Maps расширяет [спецификацию GeoJSON][1] для представления определенных геометрических объектов.
 
@@ -98,7 +98,7 @@ Azure Maps предоставляет список мощных интерфей
 }
 
 ```
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о данных геоjson см. в Azure Maps:
 

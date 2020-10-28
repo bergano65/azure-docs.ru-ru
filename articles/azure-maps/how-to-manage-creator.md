@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 579294388dbcf9f785ef41e06505c14b6767565f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e6d8a2bfe20d0e7b52dcd60127b3666f0c21a792
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "83677944"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92895806"
 ---
 # <a name="manage-azure-maps-creator"></a>Управление службой Creator в Azure Maps
 
@@ -25,11 +25,11 @@ ms.locfileid: "83677944"
 
 1. Войдите на [портал Azure](https://portal.azure.com)
 
-2. Выберите свою учетную запись службы Azure Maps. Если вы не видите учетную запись Azure Maps в разделе **Последние ресурсы**, перейдите в меню портала Azure. Щелкните **Все ресурсы**. Найдите и выберите свою учетную запись службы Azure Maps.
+2. Выберите свою учетную запись службы Azure Maps. Если вы не видите учетную запись Azure Maps в разделе **Последние ресурсы** , перейдите в меню портала Azure. Щелкните **Все ресурсы** . Найдите и выберите свою учетную запись службы Azure Maps.
 
     ![Домашняя страница портала Azure Maps](./media/how-to-manage-creator/select-maps-account.png)
 
-3. На странице учетной записи Azure Maps выберите элемент **Обзор** в разделе **Creator**. Щелкните **Создать**, чтобы создать ресурс Creator в Azure Maps.
+3. На странице учетной записи Azure Maps выберите элемент **Обзор** в разделе **Creator** . Щелкните **Создать** , чтобы создать ресурс Creator в Azure Maps.
 
     ![Страница создания ресурса Creator в Azure Maps](./media/how-to-manage-creator/creator-blade-settings.png)
 
@@ -37,7 +37,7 @@ ms.locfileid: "83677944"
 
    ![Страница для ввода сведений об учетной записи Creator](./media/how-to-manage-creator/creator-creation-dialog.png)
 
-5. Проверьте параметры и нажмите кнопку **Создать**.
+5. Проверьте параметры и нажмите кнопку **Создать** .
 
     ![Страница подтверждения параметров учетной записи Creator](./media/how-to-manage-creator/creator-create-dialog.png)
 
@@ -45,7 +45,7 @@ ms.locfileid: "83677944"
 
    ![Страница состояния развертывания ресурса](./media/how-to-manage-creator/creator-resource-created.png)
 
-7. Щелкните **Перейти к ресурсу**. На странице представления ресурса Creator отображается состояние ресурса Creator и выбранный демографический регион.
+7. Щелкните **Перейти к ресурсу** . На странице представления ресурса Creator отображается состояние ресурса Creator и выбранный демографический регион.
 
     ![Страница состояния ресурса Creator](./media/how-to-manage-creator/creator-resource-view.png)
 
@@ -54,7 +54,7 @@ ms.locfileid: "83677944"
 
 ## <a name="delete-creator-resource"></a>Удаление ресурса Creator
 
-Чтобы удалить ресурс Creator, перейдите к учетной записи Azure Maps. В разделе **Creator** выберите **Обзор**. Нажмите кнопку **Удалить** .
+Чтобы удалить ресурс Creator, перейдите к учетной записи Azure Maps. В разделе **Creator** выберите **Обзор** . Нажмите кнопку **Удалить** .
 
 >[!WARNING]
 >При удалении ресурса Creator учетной записи Azure Maps также будут удалены наборы данных, наборы фрагментов и наборы состояний функции, созданные с помощью служб Creator.
@@ -69,7 +69,7 @@ ms.locfileid: "83677944"
 
 Creator наследует параметры службы контроля доступа Azure Maps (IAM). Все вызовы API для доступа к данным должны отправляться с соблюдением правил проверки подлинности и авторизации.
 
-Данные об использовании Creator записываются в диаграммы использования и журнал действий Azure Maps.  Дополнительные сведения см. в статье [Управление аутентификацией в Azure Maps](https://docs.microsoft.com/azure/azure-maps/how-to-manage-authentication).
+Данные об использовании Creator записываются в диаграммы использования и журнал действий Azure Maps.  Дополнительные сведения см. в статье [Управление аутентификацией в Azure Maps](./how-to-manage-authentication.md).
 
 ## <a name="access-to-creator-services"></a>Доступ к службам Creator
 

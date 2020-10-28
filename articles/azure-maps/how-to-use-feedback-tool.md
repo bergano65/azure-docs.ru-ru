@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: 807c8908b70065d5d82229e7750b166bfabcf53b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b53ea7cf3ec29d7bad7e65a535cd140877bcea09
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91335370"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92895517"
 ---
 # <a name="provide-data-feedback-to-azure-maps"></a>Предоставьте отзыв о данных для Azure Maps
 
@@ -63,8 +63,8 @@ Azure Maps был доступен с 2018 мая. Azure Maps предостав
   ![состояние отзыва](./media/how-to-use-feedback-tool/feedback-status.png)
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы публиковать технические вопросы, связанные с Azure Maps, посетите веб:
 
-* [Microsoft Q & A](https://docs.microsoft.com/answers/topics/azure-maps.html)
+* [Microsoft Q & A](/answers/topics/azure-maps.html)

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 4e37ae82b46ce06162d0a67d74af54cddaf3f6eb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 15dbe7d30652d0ace78bca4dc053757d57361c1a
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88030951"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92895313"
 ---
 # <a name="set-map-style-using-azure-maps-android-sdk"></a>Задание стиля схемы с помощью Azure Maps пакет SDK для Android
 
@@ -22,12 +22,12 @@ ms.locfileid: "88030951"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы завершить процесс, описанный в этой статье, необходимо установить [Azure Maps пакет SDK для Android](https://docs.microsoft.com/azure/azure-maps/how-to-use-android-map-control-library) , чтобы загрузить карту.
+Чтобы завершить процесс, описанный в этой статье, необходимо установить [Azure Maps пакет SDK для Android](./how-to-use-android-map-control-library.md) , чтобы загрузить карту.
 
 
 ## <a name="set-map-style-in-the-layout"></a>Задать стиль схемы в макете
 
-Стиль схемы можно задать в файле макета для класса действия. Измените **разметку res > > activity_main.xml**, поэтому она выглядит следующим образом:
+Стиль схемы можно задать в файле макета для класса действия. Измените **разметку res > > activity_main.xml** , поэтому она выглядит следующим образом:
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -51,7 +51,7 @@ ms.locfileid: "88030951"
 </FrameLayout>
 ```
 
-Приведенный `mapcontrol_style` выше атрибут устанавливает стиль отображения **grayscale_dark**. 
+Приведенный `mapcontrol_style` выше атрибут устанавливает стиль отображения **grayscale_dark** . 
 
 <center>
 
@@ -59,7 +59,7 @@ ms.locfileid: "88030951"
 
 ## <a name="set-map-style-in-the-activity-class"></a>Задание стиля схемы в классе действия
 
-Стиль схемы можно задать в классе действия. Скопируйте следующий фрагмент кода в метод **OnCreate ()** `MainActivity.java` класса. Этот код установит стиль отображения **satellite_road_labels**.
+Стиль схемы можно задать в классе действия. Скопируйте следующий фрагмент кода в метод **OnCreate ()** `MainActivity.java` класса. Этот код установит стиль отображения **satellite_road_labels** .
 
 ```Java
 mapControl.onReady(map -> {

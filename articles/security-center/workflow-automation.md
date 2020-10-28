@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: how-to
 ms.date: 10/27/2020
 ms.author: memildin
-ms.openlocfilehash: bbd46237e0b3b21b822b088c545c91f678a8034e
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: cbe6adc37025f0b727fa5f5d3ace46ed34afaa9e
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/28/2020
-ms.locfileid: "92792299"
+ms.locfileid: "92895228"
 ---
 # <a name="automate-responses-to-security-center-triggers"></a>Автоматизация ответов на триггеры центра безопасности
 
@@ -24,7 +24,7 @@ ms.locfileid: "92792299"
 
 ## <a name="availability"></a>Доступность
 
-|Аспект|Сведения|
+|Аспект|Подробнее|
 |----|:----|
 |Состояние выпуска:|Общедоступная версия (GA)|
 |Цены|Free|
@@ -153,5 +153,5 @@ ms.locfileid: "92792299"
 - [Рекомендации по безопасности в Центре безопасности Azure](security-center-recommendations.md)
 - [Оповещения безопасности в Центре безопасности Azure](security-center-alerts-overview.md)
 - [Общие сведения об Azure Logic Apps](../logic-apps/logic-apps-overview.md)
-- [Соединители Logic Apps](/connectors/)
+- [Список соединителей](../connectors/apis-list.md)
 - [Схемы типов данных автоматизации рабочих процессов](https://aka.ms/ASCAutomationSchemas)

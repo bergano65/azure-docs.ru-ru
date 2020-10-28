@@ -10,12 +10,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: devx-track-js
-ms.openlocfilehash: 1668c7ccad75771a598aaa55f5403f070ea2dff8
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: ebdc4b219e0840c18e6bef8ebfe9b8eefa8faf3b
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92090222"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92895582"
 ---
 # <a name="secure-a-web-application-with-user-sign-in"></a>Защита веб-приложения с помощью входа пользователя
 
@@ -27,36 +27,36 @@ ms.locfileid: "92090222"
 
 Чтобы пользователи могли выполнять вход, необходимо создать веб-приложение в Azure AD. Это веб-приложение будет делегировать доступ пользователей к Azure Maps интерфейсам API-интерфейса RESTFUL.
 
-1. В портал Azure в списке служб Azure выберите **Azure Active Directory**  >  **Регистрация приложений**  >  **Новая регистрация**.  
+1. В портал Azure в списке служб Azure выберите **Azure Active Directory**  >  **Регистрация приложений**  >  **Новая регистрация** .  
 
     > [!div class="mx-imgBorder"]
     > ![Интеграция приложений с Azure Active Directory](./media/how-to-manage-authentication/app-registration.png)
 
-2. Введите **имя**, выберите **тип учетной записи поддержки**, укажите универсальный код ресурса (URI) перенаправления, который будет представлять URL-адрес, по которому Azure AD будет выдавать маркер, а — URL-адрес, по которому размещается элемент управления картой. Дополнительные сведения см. в статье сценарий Azure AD [: веб-приложение, которое входит в систему пользователей](https://docs.microsoft.com/azure/active-directory/develop/scenario-web-app-sign-user-overview). Выполните указанные действия в сценарии Azure AD.  
+2. Введите **имя** , выберите **тип учетной записи поддержки** , укажите универсальный код ресурса (URI) перенаправления, который будет представлять URL-адрес, по которому Azure AD будет выдавать маркер, а — URL-адрес, по которому размещается элемент управления картой. Дополнительные сведения см. в статье сценарий Azure AD [: веб-приложение, которое входит в систему пользователей](../active-directory/develop/scenario-web-app-sign-user-overview.md). Выполните указанные действия в сценарии Azure AD.  
 
 3. После завершения регистрации приложения убедитесь, что вход в приложение работает для пользователей. После входа в систему приложению можно предоставить делегированный доступ к Azure Maps интерфейсам API.
     
-4.  Чтобы назначить разрешения делегированного API для Azure Maps, перейдите в приложение. Затем выберите **разрешения API**  >  **Добавить разрешение**. В разделе API, которые **использует Моя организация**, найдите и выберите **Azure Maps**.
+4.  Чтобы назначить разрешения делегированного API для Azure Maps, перейдите в приложение. Затем выберите **разрешения API**  >  **Добавить разрешение** . В разделе API, которые **использует Моя организация** , найдите и выберите **Azure Maps** .
 
     > [!div class="mx-imgBorder"]
     > ![Добавить разрешения API приложения](./media/how-to-manage-authentication/app-permissions.png)
 
-5. Установите флажок для **доступа к Azure Maps**, а затем выберите **Добавить разрешения**.
+5. Установите флажок для **доступа к Azure Maps** , а затем выберите **Добавить разрешения** .
 
     > [!div class="mx-imgBorder"]
     > ![Выбор разрешений API приложения](./media/how-to-manage-authentication/select-app-permissions.png)
 
-6. Разрешите веб-приложению вызывать Azure Maps интерфейсы API RESTFUL, настроив регистрацию приложения с помощью секрета приложения. подробные инструкции см. [в веб-приложении, которое вызывает веб-API: регистрация приложения](https://docs.microsoft.com/azure/active-directory/develop/scenario-web-app-call-api-app-registration). Для проверки подлинности в Azure AD от имени пользователя требуется секрет. Сертификат регистрации приложения или секрет должен храниться в безопасном хранилище, чтобы веб-приложение было извлечено для проверки подлинности в Azure AD. 
+6. Разрешите веб-приложению вызывать Azure Maps интерфейсы API RESTFUL, настроив регистрацию приложения с помощью секрета приложения. подробные инструкции см. [в веб-приложении, которое вызывает веб-API: регистрация приложения](../active-directory/develop/scenario-web-app-call-api-app-registration.md). Для проверки подлинности в Azure AD от имени пользователя требуется секрет. Сертификат регистрации приложения или секрет должен храниться в безопасном хранилище, чтобы веб-приложение было извлечено для проверки подлинности в Azure AD. 
    
    * Если приложение уже настроило регистрацию приложения Azure AD и секретный код, этот шаг можно пропустить.
 
 > [!Tip]
-> Если приложение размещено в среде Azure, мы рекомендуем использовать [управляемые удостоверения для ресурсов Azure](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) и экземпляр Azure Key Vault для доступа к секретам, [получая маркер доступа](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token) для доступа к Azure Key Vault секретам или сертификатам. Чтобы подключиться к Azure Key Vault для получения секретов, см. [руководство по подключению через управляемое удостоверение](https://docs.microsoft.com/azure/key-vault/general/tutorial-net-create-vault-azure-web-app).
+> Если приложение размещено в среде Azure, мы рекомендуем использовать [управляемые удостоверения для ресурсов Azure](../active-directory/managed-identities-azure-resources/overview.md) и экземпляр Azure Key Vault для доступа к секретам, [получая маркер доступа](../active-directory/managed-identities-azure-resources/how-to-use-vm-token.md) для доступа к Azure Key Vault секретам или сертификатам. Чтобы подключиться к Azure Key Vault для получения секретов, см. [руководство по подключению через управляемое удостоверение](../key-vault/general/tutorial-net-create-vault-azure-web-app.md).
    
 7. Реализуйте конечную точку безопасного маркера для Azure Maps веб-пакета SDK, чтобы получить доступ к маркеру. 
    
    * Пример контроллера маркеров см. в разделе [Azure Maps примеры Azure AD](https://github.com/Azure-Samples/Azure-Maps-AzureAD-Samples/blob/master/src/OpenIdConnect/AzureMapsOpenIdConnectv1/AzureMapsOpenIdConnect/Controllers/TokenController.cs). 
-   * Сведения о реализации, отличной от AspNetCore, см. в статье [Получение маркера для приложения](https://docs.microsoft.com/azure/active-directory/develop/scenario-web-app-call-api-acquire-token) из документации по Azure AD.
+   * Сведения о реализации, отличной от AspNetCore, см. в статье [Получение маркера для приложения](../active-directory/develop/scenario-web-app-call-api-acquire-token.md) из документации по Azure AD.
    * Защищенная конечная точка токена отвечает за возврат маркера доступа для пользователя, прошедшего проверку подлинности и уполномоченного, для вызова Azure Maps интерфейсов API.
 
 8. Настройте управление доступом на основе ролей Azure (Azure RBAC) для пользователей или групп. См. раздел [предоставление пользователям доступа на основе ролей](#grant-role-based-access-for-users-to-azure-maps).
@@ -100,7 +100,7 @@ var map = new atlas.Map("map", {
 
 Дополнительные сведения о сценарии веб-приложений:
 > [!div class="nextstepaction"]
-> [Scenario: Веб-приложение, выполняющее вход пользователей](https://docs.microsoft.com/azure/active-directory/develop/scenario-web-app-sign-user-overview)
+> [Scenario: Веб-приложение, выполняющее вход пользователей](../active-directory/develop/scenario-web-app-sign-user-overview.md)
 
 Найдите метрики использования API для учетной записи Azure Maps:
 > [!div class="nextstepaction"]

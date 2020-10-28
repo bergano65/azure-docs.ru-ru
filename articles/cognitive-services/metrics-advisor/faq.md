@@ -10,22 +10,18 @@ ms.subservice: metrics-advisor
 ms.topic: conceptual
 ms.date: 10/15/2020
 ms.author: mbullwin
-ms.openlocfilehash: 6b5292ca7e1220b60b1b2a2501b3150550da8db9
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
+ms.openlocfilehash: da4dc3579630d641fcbc1d4321b56de0cc09d555
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92131689"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92893583"
 ---
 # <a name="metrics-advisor-frequently-asked-questions"></a>Рекомендации по метрикам часто задаваемые вопросы
 
 ### <a name="what-is-the-cost-of-my-instance"></a>Какова стоимость своего экземпляра?
 
 Сейчас в предварительной версии не стоит платить за использование вашего экземпляра.
-
-### <a name="why-is-the-demo-website-readonly"></a>Почему демонстрационный веб-сайт предназначен только для чтения?
-
-[Демонстрационный веб-сайт](https://anomaly-detector.azurewebsites.net/) доступен для общего доступа. Этот экземпляр доступен только для чтения, чтобы предотвратить случайную передачу каких-либо данных.
 
 ### <a name="why-cant-i-create-the-resource-the-pricing-tier-is-unavailable-and-it-says-you-have-already-created-1-s0-for-this-subscription"></a>Почему не удается создать ресурс? "Ценовая категория" недоступна и говорит "вы уже создали 1 S0 для этой подписки"?
 
@@ -141,9 +137,8 @@ ms.locfileid: "92131689"
  
 Например, при возникновении аномалии `Service = S2 | Data Center = DC2 | Machine = M5` отклонение аномалии влияет на родительский узел, `Service= S2` который также обнаружил аномалию, но аномалия не влияет на весь центр обработки данных в `DC2` и все службы в `M5` . Дерево инцидентов будет построено, как показано на снимке экрана ниже, `Service = S2` и основная причина может быть проанализирована в двух путях, в которых они ведут `Service = S2 | Data Center = DC2 | Machine = M5` .
 
- :::image type="content" source="media/root-cause-paths.png" alt-text="пять пометок вершин с двумя разными путями, Соединенными краями с общим узлом, обозначенным как S2. Старшие аномалии фиксируются в службе = S2, и основная причина может быть проанализирована по двум путям, которые как ведущие к службе = S2 | Центр обработки данных = DC2 | Компьютер = M5" lightbox="media/root-cause-paths.png":::
+ :::image type="content" source="media/root-cause-paths.png" alt-text="пять пометок вершин с двумя разными путями, Соединенными краями с общим узлом, обозначенным S2. Старшие аномалии фиксируются в службе = S2, и основная причина может быть проанализирована по двум путям, которые как ведущие к службе = S2 | Центр обработки данных = DC2 | Компьютер = M5" lightbox="media/root-cause-paths.png":::
 
 ## <a name="next-steps"></a>Next Steps
 - [Общие сведения о Помощнике по метрикам](overview.md)
-- [Попробуйте демонстрационный сайт](quickstarts/explore-demo.md)
 - [Использование веб-портала](quickstarts/web-portal.md)

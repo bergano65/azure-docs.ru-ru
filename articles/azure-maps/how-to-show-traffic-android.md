@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 93cabb566db02de7ef991fe9cdd293f8c399c3a3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bc37f2b3f603262f67a46746187df6e4b5a494b5
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91272962"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92895534"
 ---
 # <a name="show-traffic-data-on-the-map-using-azure-maps-android-sdk"></a>Отображение данных трафика на карте с помощью Azure Maps пакет SDK для Android
 
@@ -21,7 +21,7 @@ ms.locfileid: "91272962"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Перед отображением трафика на карте необходимо [сделать учетную запись Azure](quick-demo-map-app.md#create-an-azure-maps-account)и [получить ключ подписки](quick-demo-map-app.md#get-the-primary-key-for-your-account). Затем необходимо установить [Azure Maps пакет SDK для Android](https://docs.microsoft.com/azure/azure-maps/how-to-use-android-map-control-library) и загрузить карту.
+Перед отображением трафика на карте необходимо [сделать учетную запись Azure](quick-demo-map-app.md#create-an-azure-maps-account)и [получить ключ подписки](quick-demo-map-app.md#get-the-primary-key-for-your-account). Затем необходимо установить [Azure Maps пакет SDK для Android](./how-to-use-android-map-control-library.md) и загрузить карту.
 
 ## <a name="incidents-traffic-data"></a>Данные трафика инцидентов
 
@@ -73,7 +73,7 @@ protected void onCreate(Bundle savedInstanceState) {
 
 Чтобы получить инциденты для определенного компонента, можно использовать приведенный ниже код. При нажатии на эту функцию логика кода проверяет наличие инцидентов и создает сообщение об инциденте. В нижней части экрана появится сообщение с подробными сведениями.
 
-1. Сначала необходимо изменить **разметку res > > activity_main.xml**, чтобы она выглядела так, как показано ниже. Вы можете заменить `mapcontrol_centerLat` , `mapcontrol_centerLng` и `mapcontrol_zoom` нужными значениями. Помните, что уровень масштаба — это значение в диапазоне от 0 до 22. На уровне масштабирования 0 весь мир занимает одну плитку.
+1. Сначала необходимо изменить **разметку res > > activity_main.xml** , чтобы она выглядела так, как показано ниже. Вы можете заменить `mapcontrol_centerLat` , `mapcontrol_centerLng` и `mapcontrol_zoom` нужными значениями. Помните, что уровень масштаба — это значение в диапазоне от 0 до 22. На уровне масштабирования 0 весь мир занимает одну плитку.
 
    ```XML
    <?xml version="1.0" encoding="utf-8"?>
@@ -229,7 +229,7 @@ protected void onCreate(Bundle savedInstanceState) {
 
    </center>
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы узнать, как добавить дополнительные данные на карту, ознакомьтесь со следующими руководствами.
 

@@ -11,12 +11,12 @@ ms.workload: infrastructure-services
 ms.date: 08/17/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017, devx-track-azurecli
-ms.openlocfilehash: a0347e76a39be8bada9ec59eb8accef17e784951
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: ea53eda3863ea5164142fa0d37fff7be365a4d5c
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92738123"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92894106"
 ---
 # <a name="azure-virtual-machines-planning-and-implementation-for-sap-netweaver"></a>SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению
 
@@ -1832,7 +1832,7 @@ SAProuter позволяет осуществлять взаимодействи
 
 Пример архитектуры системы SAP NetWeaver, в которой используется высокая доступность инфраструктуры Azure и учетные записи хранения:
 
-![Использование высокой доступности инфраструктуры Azure для повышения доступности приложений SAP][planning-guide-figure-2900]
+![Схема, на которой показана система SAP NetWeaver, использующая высокую доступность инфраструктуры Azure и учетные записи хранения.][planning-guide-figure-2900]
 
 Пример архитектуры системы SAP NetWeaver, в которой используется высокая доступность инфраструктуры Azure и управляемые диски:
 
@@ -1892,7 +1892,7 @@ SAProuter позволяет осуществлять взаимодействи
 
 ##### <a name="windows-logologo_windows-ha-on-windows"></a>![Эмблема Windows.][Logo_Windows] Высокая доступность в Windows
 
-![Высокодоступная архитектура приложений SAP NetWeaver с сервером SQL Server в Azure IaaS][planning-guide-figure-3200]
+![Схема, на которой показана архитектура приложения SAP NetWeaver с высоким уровнем доступности и SQL Server в Azure IaaS.][planning-guide-figure-3200]
 
 Чтобы минимизировать воздействие проблем инфраструктуры и установки исправлений на узлы, система SAP NetWeaver развертывается следующим образом.
 

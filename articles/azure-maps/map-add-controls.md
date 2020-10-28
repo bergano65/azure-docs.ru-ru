@@ -9,16 +9,16 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: devx-track-js
-ms.openlocfilehash: 08a3b72bb137713721345ecb52cf4e1bb7afcdc2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2a225d4ea19cccea114e47cc61a8055d28e8cd99
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91310770"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92895296"
 ---
 # <a name="add-controls-to-a-map"></a>Добавление элементов управления на карту
 
-В этой статье показано, как добавить элементы управления на карту. Вы также узнаете, как создать карту со всеми элементами управления и [выбором стиля](https://docs.microsoft.com/azure/azure-maps/choose-map-style).
+В этой статье показано, как добавить элементы управления на карту. Вы также узнаете, как создать карту со всеми элементами управления и [выбором стиля](./choose-map-style.md).
 
 ## <a name="add-zoom-control"></a>Добавление элемента управления масштабом
 
@@ -142,4 +142,3 @@ map.controls.add([
 
 > [!div class="nextstepaction"]
 > [Добавление слоя пузырьков](map-add-bubble-layer.md)
-

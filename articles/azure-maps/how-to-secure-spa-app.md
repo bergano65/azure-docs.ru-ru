@@ -10,12 +10,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: devx-track-js
-ms.openlocfilehash: 000f6a80a2cee14abc3d954de479dd87b1edf876
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: c39104912c99b199d38cf489bb61d64e83b89286
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92090256"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92895602"
 ---
 # <a name="how-to-secure-a-single-page-application-with-non-interactive-sign-in"></a>Как защитить одностраничное приложение с помощью неинтерактивного входа
 
@@ -30,15 +30,15 @@ ms.locfileid: "92090256"
 
 Создайте защищенное приложение веб-службы, которое отвечает за проверку подлинности в Azure AD. 
 
-1. Создайте функцию в портал Azure. Дополнительные сведения см. в статье [Создание функции Azure](https://docs.microsoft.com/azure/azure-functions/functions-create-first-azure-function).
+1. Создайте функцию в портал Azure. Дополнительные сведения см. в статье [Создание функции Azure](../azure-functions/functions-create-first-azure-function.md).
 
-2. Настройте политику CORS для функции Azure, чтобы она была доступна для веб-приложения с одной страницей. Это обеспечит защиту клиентов браузера от разрешенных источников веб-приложения. См. раздел [Добавление функции CORS](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-rest-api#add-cors-functionality).
+2. Настройте политику CORS для функции Azure, чтобы она была доступна для веб-приложения с одной страницей. Это обеспечит защиту клиентов браузера от разрешенных источников веб-приложения. См. раздел [Добавление функции CORS](../app-service/app-service-web-tutorial-rest-api.md#add-cors-functionality).
 
-3. Добавьте в функцию Azure [удостоверение, назначенное системой](https://docs.microsoft.com/azure/app-service/overview-managed-identity?tabs=dotnet#add-a-system-assigned-identity) , чтобы разрешить создание субъекта-службы для проверки подлинности в Azure AD.  
+3. Добавьте в функцию Azure [удостоверение, назначенное системой](../app-service/overview-managed-identity.md?tabs=dotnet#add-a-system-assigned-identity) , чтобы разрешить создание субъекта-службы для проверки подлинности в Azure AD.  
 
 4. Предоставить учетной записи Azure Maps доступ на основе ролей для назначенного системой удостоверения. Дополнительные сведения см. в разделе [предоставление доступа на основе ролей](#grant-role-based-access) .
 
-5. Напишите код для функции Azure, чтобы получить Azure Maps маркеры доступа, используя назначенное системой удостоверение с одним из поддерживаемых механизмов или протоколом RESTFUL. См. статью [получение маркеров для ресурсов Azure](https://docs.microsoft.com/azure/app-service/overview-managed-identity?tabs=dotnet#add-a-system-assigned-identity) .
+5. Напишите код для функции Azure, чтобы получить Azure Maps маркеры доступа, используя назначенное системой удостоверение с одним из поддерживаемых механизмов или протоколом RESTFUL. См. статью [получение маркеров для ресурсов Azure](../app-service/overview-managed-identity.md?tabs=dotnet#add-a-system-assigned-identity) .
 
     Пример протокола RESTFUL:
 
@@ -64,8 +64,8 @@ ms.locfileid: "92090256"
 
 6. Настройка безопасности для функции Azure HttpTrigger
 
-   * [Создание ключа доступа функции](https://docs.microsoft.com/azure/azure-functions/functions-bindings-http-webhook-trigger?tabs=csharp#authorization-keys)
-   * [Защищенная конечная точка HTTP](https://docs.microsoft.com/azure/azure-functions/functions-bindings-http-webhook-trigger?tabs=csharp#secure-an-http-endpoint-in-production) для функции Azure в рабочей среде.
+   * [Создание ключа доступа функции](../azure-functions/functions-bindings-http-webhook-trigger.md?tabs=csharp#authorization-keys)
+   * [Защищенная конечная точка HTTP](../azure-functions/functions-bindings-http-webhook-trigger.md?tabs=csharp#secure-an-http-endpoint-in-production) для функции Azure в рабочей среде.
    
 7. Настройте веб-пакет SDK для Azure Maps Web Application. 
 
@@ -102,25 +102,25 @@ ms.locfileid: "92090256"
 
 ## <a name="grant-role-based-access"></a>Предоставление доступа на основе ролей
 
-Вы предоставляете доступ к *управлению доступом на основе ролей Azure (Azure RBAC)* , назначив назначенное системой удостоверение одному или нескольким определениям ролей Azure. Чтобы просмотреть определения ролей Azure, доступные для Azure Maps, перейдите в раздел **Управление доступом (IAM)**. Выберите **роли**, а затем найдите роли, которые начинаются с *Azure Maps*.
+Вы предоставляете доступ к *управлению доступом на основе ролей Azure (Azure RBAC)* , назначив назначенное системой удостоверение одному или нескольким определениям ролей Azure. Чтобы просмотреть определения ролей Azure, доступные для Azure Maps, перейдите в раздел **Управление доступом (IAM)** . Выберите **роли** , а затем найдите роли, которые начинаются с *Azure Maps* .
 
-1. Перейдите к **учетной записи Azure Maps**. Выберите назначение ролей **управления доступом (IAM)**  >  **Role assignment**.
+1. Перейдите к **учетной записи Azure Maps** . Выберите назначение ролей **управления доступом (IAM)**  >  **Role assignment** .
 
     > [!div class="mx-imgBorder"]
     > ![Предоставление доступа с помощью Azure RBAC](./media/how-to-manage-authentication/how-to-grant-rbac.png)
 
-2. На вкладке **назначения ролей** в разделе **роль**выберите встроенное определение роли Azure Maps, например **Azure Maps модуль чтения данных** или **участник данных Azure Maps**. В разделе **назначение доступа к**выберите **приложение-функция**. Выберите участника по имени. Затем нажмите кнопку **Save** (Сохранить).
+2. На вкладке **назначения ролей** в разделе **роль** выберите встроенное определение роли Azure Maps, например **Azure Maps модуль чтения данных** или **участник данных Azure Maps** . В разделе **назначение доступа к** выберите **приложение-функция** . Выберите участника по имени. Затем нажмите кнопку **Save** (Сохранить).
 
-   * См. Дополнительные сведения о [добавлении и удалении назначений ролей](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal).
+   * См. Дополнительные сведения о [добавлении и удалении назначений ролей](../role-based-access-control/role-assignments-portal.md).
 
 > [!WARNING]
-> Azure Maps определения встроенных ролей предоставляют очень большие разрешения на доступ к множеству Azure Maps интерфейсов API. Чтобы ограничить доступ через API к минимуму, см. раздел [Создание пользовательского определения роли и назначение назначенного системой удостоверения](https://docs.microsoft.com/azure/role-based-access-control/custom-roles) пользовательскому определению роли. Это обеспечит минимальный уровень привилегий, необходимых приложению для доступа к Azure Maps.
+> Azure Maps определения встроенных ролей предоставляют очень большие разрешения на доступ к множеству Azure Maps интерфейсов API. Чтобы ограничить доступ через API к минимуму, см. раздел [Создание пользовательского определения роли и назначение назначенного системой удостоверения](../role-based-access-control/custom-roles.md) пользовательскому определению роли. Это обеспечит минимальный уровень привилегий, необходимых приложению для доступа к Azure Maps.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Дальнейшее понимание сценария одностраничного приложения:
 > [!div class="nextstepaction"]
-> [Одностраничное приложение](https://docs.microsoft.com/azure/active-directory/develop/scenario-spa-overview)
+> [Одностраничное приложение](../active-directory/develop/scenario-spa-overview.md)
 
 Найдите метрики использования API для учетной записи Azure Maps:
 > [!div class="nextstepaction"]

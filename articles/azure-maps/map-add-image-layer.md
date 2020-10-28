@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen, devx-track-js
-ms.openlocfilehash: 4116028cc8c4668c897d7de7bbffb607b5e5daba
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 43de832095e2c2dd674a156da914ed26f1e472d0
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91310549"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92892950"
 ---
 # <a name="add-an-image-layer-to-a-map"></a>Добавление слоя изображений на карту
 
@@ -27,7 +27,7 @@ ms.locfileid: "91310549"
 * Лепестковые изображения погоды
 
 > [!TIP]
-> [Имажелайер](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.imagelayer) — это простой способ наложения изображения на карту. Обратите внимание, что обозреватели могут испытывать трудности при загрузке большого изображения. В этом случае рассмотрите возможность разбить изображение на плитки и загрузить их на карту как [тилелайер](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.tilelayer).
+> [Имажелайер](/javascript/api/azure-maps-control/atlas.layer.imagelayer) — это простой способ наложения изображения на карту. Обратите внимание, что обозреватели могут испытывать трудности при загрузке большого изображения. В этом случае рассмотрите возможность разбить изображение на плитки и загрузить их на карту как [тилелайер](/javascript/api/azure-maps-control/atlas.layer.tilelayer).
 
 Слой изображений поддерживает следующие форматы изображений:
 
@@ -38,7 +38,7 @@ ms.locfileid: "91310549"
 
 ## <a name="add-an-image-layer"></a>Добавление слоя изображений
 
-Следующий код накладывает изображение на карту [Ньюарке, Нью-Джерси, с 1922](https://www.lib.utexas.edu/maps/historical/newark_nj_1922.jpg) на карте. [Имажелайер](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.imagelayer) создается путем передачи URL-адреса изображению и координат для четырех углов в формате `[Top Left Corner, Top Right Corner, Bottom Right Corner, Bottom Left Corner]` .
+Следующий код накладывает изображение на карту [Ньюарке, Нью-Джерси, с 1922](https://www.lib.utexas.edu/maps/historical/newark_nj_1922.jpg) на карте. [Имажелайер](/javascript/api/azure-maps-control/atlas.layer.imagelayer) создается путем передачи URL-адреса изображению и координат для четырех углов в формате `[Top Left Corner, Top Right Corner, Bottom Right Corner, Bottom Left Corner]` .
 
 ```javascript
 //Create an image layer and add it to the map.
@@ -64,7 +64,7 @@ map.layers.add(new atlas.layer.ImageLayer({
 
 В этом образце показано, как добавить сведения о наложении КМЛ на землю в виде слоя изображения на карте. Наложение заземления КМЛ предоставляет координаты Севера, Юг, Восток и Запад и поворот по часовой стрелке. Но уровень изображения ожидает координаты для каждого угла изображения. Наложение заземления КМЛ в этом примере предназначено для Чартрес Каседрал, а источник — из [некоммерческого](https://commons.wikimedia.org/wiki/File:Chartres.svg/overlay.kml).
 
-В коде используется статическая `getCoordinatesFromEdges` функция из класса [имажелайер](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.imagelayer) . Он вычисляет четыре угла изображения, используя сведения о севере, Южной, Восточной, Западной и повороте наложения заземления КМЛ.
+В коде используется статическая `getCoordinatesFromEdges` функция из класса [имажелайер](/javascript/api/azure-maps-control/atlas.layer.imagelayer) . Он вычисляет четыре угла изображения, используя сведения о севере, Южной, Восточной, Западной и повороте наложения заземления КМЛ.
 
 <br/>
 
@@ -85,10 +85,10 @@ map.layers.add(new atlas.layer.ImageLayer({
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
 > [!div class="nextstepaction"]
-> [Класс ImageLayer](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.imagelayer)
+> [Класс ImageLayer](/javascript/api/azure-maps-control/atlas.layer.imagelayer)
 
 > [!div class="nextstepaction"]
-> [Интерфейс ImageLayerOptions](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.imagelayeroptions)
+> [Интерфейс ImageLayerOptions](/javascript/api/azure-maps-control/atlas.imagelayeroptions)
 
 Дополнительные примеры кода для добавления в карты см. в следующих статьях:
 

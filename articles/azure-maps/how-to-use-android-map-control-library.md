@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 2cda543781118a19ba4999e774b96ae81857f442
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bd2c714c2e16cb8a7a9c530e8e458c33218b1c2b
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91330933"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92895500"
 ---
 # <a name="getting-started-with-azure-maps-android-sdk"></a>Приступая к работе с пакетом SDK для Android для Azure Maps
 
@@ -57,7 +57,7 @@ Android Studio позволяет настроить виртуальное ус
 
 Следующим шагом при создании приложения является установка пакета SDK для Android для Azure Maps. Чтобы установить этот пакет SDK, выполните следующие действия.
 
-1. Откройте файл **build.gradle** верхнего уровня и добавьте следующий код во **все проекты** в разделе блока **репозиториев**.
+1. Откройте файл **build.gradle** верхнего уровня и добавьте следующий код во **все проекты** в разделе блока **репозиториев** .
 
     ```
     maven {
@@ -107,7 +107,7 @@ Android Studio позволяет настроить виртуальное ус
     
     * добавить операции импорта для пакета SDK в Azure Maps;
     * настроить сведения о проверке подлинности Azure Maps;
-    * получить экземпляр элемента управления картой в методе **onCreate**.
+    * получить экземпляр элемента управления картой в методе **onCreate** .
 
     Если задать сведения о проверке подлинности в классе `AzureMaps` глобально с помощью методов `setSubscriptionKey` или `setAadProperties`, не нужно будет добавлять эти сведения в каждое представление. 
 
@@ -299,7 +299,7 @@ mapControl.onReady(map -> {
 > [Добавление слоя символов на карту Android](how-to-add-symbol-to-android-map.md)
 
 > [!div class="nextstepaction"]
-> [Добавление фигур на карту Android](https://docs.microsoft.com/azure/azure-maps/how-to-add-shapes-to-android-map)
+> [Добавление фигур на карту Android](./how-to-add-shapes-to-android-map.md)
 
 > [!div class="nextstepaction"]
-> [Изменение стилей карт Android](https://docs.microsoft.com/azure/azure-maps/set-android-map-styles)
+> [Изменение стилей карт Android](./set-android-map-styles.md)

@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen, devx-track-js
-ms.openlocfilehash: 446a70a4399b7ec0e16fed2d33c9ec711acfe200
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cae29dcc0d334a2296199da0d8e3bc4562e275d3
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91310838"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92895334"
 ---
 # <a name="add-a-bubble-layer-to-a-map"></a>Добавление слоя пузырьков на карту
 
@@ -25,7 +25,7 @@ ms.locfileid: "91310838"
 
 ## <a name="add-a-bubble-layer"></a>Добавление слоя пузырьков
 
-Следующий код загружает массив точек в источник данных. Затем он соединяет точки данных с [пузырьковым слоем](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.bubblelayer). Пузырьковый слой отображает радиус каждого пузырька с пятью пикселями и цветом заливки белого цвета. И, цвет обводки синего и ширина штриха, равная шести пикселям. 
+Следующий код загружает массив точек в источник данных. Затем он соединяет точки данных с [пузырьковым слоем](/javascript/api/azure-maps-control/atlas.layer.bubblelayer). Пузырьковый слой отображает радиус каждого пузырька с пятью пикселями и цветом заливки белого цвета. И, цвет обводки синего и ширина штриха, равная шести пикселям. 
 
 ```javascript
 //Add point locations.
@@ -83,10 +83,10 @@ map.layers.add(new atlas.layer.BubbleLayer(dataSource, null, {
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
 > [!div class="nextstepaction"]
-> [BubbleLayer](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.bubblelayer)
+> [BubbleLayer](/javascript/api/azure-maps-control/atlas.layer.bubblelayer)
 
 > [!div class="nextstepaction"]
-> [BubbleLayerOptions](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.bubblelayeroptions)
+> [BubbleLayerOptions](/javascript/api/azure-maps-control/atlas.bubblelayeroptions)
 
 Дополнительные примеры кода для добавления в карты см. в следующих статьях:
 
@@ -100,4 +100,4 @@ map.layers.add(new atlas.layer.BubbleLayer(dataSource, null, {
 > [Использование стилистических выражений на основе данных](data-driven-style-expressions-web-sdk.md)
 
 > [!div class="nextstepaction"]
-> [Примеры кода](https://docs.microsoft.com/samples/browse/?products=azure-maps)
+> [Примеры кода](/samples/browse/?products=azure-maps)

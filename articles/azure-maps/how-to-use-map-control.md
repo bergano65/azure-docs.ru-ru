@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: devx-track-js
-ms.openlocfilehash: 19db4fb0d75369a0f272eef1180e86f47d45d284
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 21fd5f5c94b56f2f63d0e90d9982edd60a2d95d6
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91335336"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92895449"
 ---
 # <a name="use-the-azure-maps-map-control"></a>Использование элемента управления картой в Azure Maps
 
@@ -26,7 +26,7 @@ ms.locfileid: "91335336"
 
 * [Создайте учетную запись Azure Maps](quick-demo-map-app.md#create-an-azure-maps-account) и [получите ключ первичной подписки](quick-demo-map-app.md#get-the-primary-key-for-your-account), также известный как первичный ключ или ключ подписки.
 
-* Получите учетные данные Azure Active Directory (AAD) с [параметрами проверки подлинности](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.authenticationoptions).
+* Получите учетные данные Azure Active Directory (AAD) с [параметрами проверки подлинности](/javascript/api/azure-maps-control/atlas.authenticationoptions).
 
 ## <a name="create-a-new-map-in-a-web-page"></a>Создание карты на веб-странице
 
@@ -75,7 +75,7 @@ ms.locfileid: "91335336"
     </style>
    ```
 
-4. В основной области страницы добавьте элемент `<div>` и присвойте ему `id`**myMap**.
+4. В основной области страницы добавьте элемент `<div>` и присвойте ему `id`**myMap** .
 
    ```HTML
     <body onload="InitMap()">
@@ -83,7 +83,7 @@ ms.locfileid: "91335336"
     </body>
    ```
 
-5. Теперь мы инициализируем элемент управления картой. Чтобы проверить подлинность элемента управления, необходимо либо владеть Azure Maps ключом подписки, либо использовать учетные данные Azure Active Directory (AAD) с [параметрами проверки подлинности](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.authenticationoptions).
+5. Теперь мы инициализируем элемент управления картой. Чтобы проверить подлинность элемента управления, необходимо либо владеть Azure Maps ключом подписки, либо использовать учетные данные Azure Active Directory (AAD) с [параметрами проверки подлинности](/javascript/api/azure-maps-control/atlas.authenticationoptions).
 
     Если вы используете ключ подписки для проверки подлинности, скопируйте и вставьте следующий элемент script в `<head>` элемент и ниже первого `<script>` элемента. Замените на `<Your Azure Maps Key>` ключ первичной подписки Azure Maps.
 
@@ -261,7 +261,7 @@ var searchURL = new atlas.service.SearchURL(pipeline, 'atlas.azure.us');
 - [Компонент React Azure Maps](https://github.com/WiredSolutions/react-azure-maps) — программа-оболочка React для управления Azure Maps.
 - [Vue Azure Maps](https://github.com/rickyruiz/vue-azure-maps) — компонент Azure Maps для приложения Vue.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как создавать и взаимодействовать с картой:
 
@@ -279,7 +279,7 @@ var searchURL = new atlas.service.SearchURL(pipeline, 'atlas.azure.us');
 > [Создание карты](map-create.md)
 
 > [!div class="nextstepaction"]
-> [Примеры кода](https://docs.microsoft.com/samples/browse/?products=azure-maps)
+> [Примеры кода](/samples/browse/?products=azure-maps)
 
 Список примеров, демонстрирующих интеграцию Azure Active Directory (AAD) с Azure Maps, см. в следующих статьях:
 

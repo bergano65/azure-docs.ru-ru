@@ -17,13 +17,13 @@
     - name: Новые возможности
       items:
         - name: Заметки о выпуске
-          displayName: changelog
+          displayName: 'changelog, news'
           href: release-notes.md
         - name: Важные предстоящие изменения
-          displayName: 'release notes, changelog'
+          displayName: 'release notes, changelog, news'
           href: upcoming-changes.md
         - name: Архивные заметки о выпуске (со сроком давности более шести месяцев)
-          displayName: changelog
+          displayName: 'changelog, news'
           href: release-notes-archive.md
     - name: Основы работы с Центром безопасности
       items:
@@ -92,6 +92,7 @@
     - name: Настройка уведомлений по электронной почте
       href: security-center-provide-security-contact-details.md
     - name: Создание автоматического ответа на оповещение с помощью шаблона ARM
+      displayName: Resource Manager
       href: quickstart-automation-alert.md
 - name: Учебники
   items:
@@ -238,6 +239,7 @@
           displayName: 'continuous, SIEM, SOAR, Splunk, QRadar, ServiceNow, ArcSight, Monitor, Graph, Sentinel,'
           href: export-to-siem.md
         - name: Экспорт в рабочую область Log Analytics или концентратор событий Azure
+          displayName: continuous
           href: continuous-export.md
         - name: Скачивание отчета в формате CSV для всех оповещений
           href: continuous-export.md#manual-one-time-export-of-alerts-and-recommendations

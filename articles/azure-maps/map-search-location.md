@@ -9,18 +9,18 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: be6d508da15b7c403259bd66c86c3b3e72ff2f12
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 647a8fc25f27ef7f441ed7459ecd543d4f35581e
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90089279"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92895279"
 ---
 # <a name="show-search-results-on-the-map"></a>Отображение результатов поиска на карте
 
 В этой статье объясняется, как выполнить поиск расположения и вывести результаты поиска на карту.
 
-Существует два способа найти нужное место. Во-первых, можно использовать модуль службы для поискового запроса. Во-вторых, можно сделать поисковой запрос через [API поиска нечетких соответствий Azure Maps](https://docs.microsoft.com/rest/api/maps/search/getsearchfuzzy) с помощью [Fetch API](https://fetch.spec.whatwg.org/). Оба способа описаны ниже.
+Существует два способа найти нужное место. Во-первых, можно использовать модуль службы для поискового запроса. Во-вторых, можно сделать поисковой запрос через [API поиска нечетких соответствий Azure Maps](/rest/api/maps/search/getsearchfuzzy) с помощью [Fetch API](https://fetch.spec.whatwg.org/). Оба способа описаны ниже.
 
 ## <a name="make-a-search-request-via-service-module"></a>Поисковой запрос через модуль службы
 
@@ -29,15 +29,15 @@ ms.locfileid: "90089279"
 
 В приведенном выше коде первый блок создает объект карты и настраивает механизм проверки подлинности на использование маркера доступа. См. инструкции по [созданию карты](./map-create.md).
 
-Второй блок кода создает `TokenCredential` для проверки подлинности HTTP-запросов к Azure Maps с маркером доступа. Затем он передает `TokenCredential` в `atlas.service.MapsURL.newPipeline()` и создает экземпляр [конвейера](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.pipeline). `searchURL` представляет собой URL-адрес к операциям [поиска](https://docs.microsoft.com/rest/api/maps/search) службы Azure Maps.
+Второй блок кода создает `TokenCredential` для проверки подлинности HTTP-запросов к Azure Maps с маркером доступа. Затем он передает `TokenCredential` в `atlas.service.MapsURL.newPipeline()` и создает экземпляр [конвейера](/javascript/api/azure-maps-rest/atlas.service.pipeline). `searchURL` представляет собой URL-адрес к операциям [поиска](/rest/api/maps/search) службы Azure Maps.
 
-В третьем блоке кода создается объект источника данных с помощью класса [DataSource](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource), к которому добавляются результаты поиска. В [слое символов](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.symbollayer) данные на основе точек в оболочке [DataSource](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource) преобразовываются для просмотра в качестве символов на карте с помощью текста или значков.  Затем создается слой символов. Источник данных добавляется в слой символов, который затем добавляется на карту.
+В третьем блоке кода создается объект источника данных с помощью класса [DataSource](/javascript/api/azure-maps-control/atlas.source.datasource), к которому добавляются результаты поиска. В [слое символов](/javascript/api/azure-maps-control/atlas.layer.symbollayer) данные на основе точек в оболочке [DataSource](/javascript/api/azure-maps-control/atlas.source.datasource) преобразовываются для просмотра в качестве символов на карте с помощью текста или значков.  Затем создается слой символов. Источник данных добавляется в слой символов, который затем добавляется на карту.
 
-Четвертый блок кода использует метод [SearchFuzzy](/javascript/api/azure-maps-rest/atlas.service.models.searchgetsearchfuzzyoptionalparams) в [модуле службы](how-to-use-services-module.md). Он позволяет выполнять поиск текста произвольной формы с помощью [REST API поиска нечетких соответствий](https://docs.microsoft.com/rest/api/maps/search/getsearchfuzzy) для поиска точки интереса. Запросы GET к API поиска нечетких соответствий могут работать с любым сочетанием нечетких входных данных. Затем с помощью метода `geojson.getFeatures()` из ответа извлекается коллекция функций GeoJSON и добавляется к источнику данных, после чего данные автоматически отображаются на карте с помощью слоя символов.
+Четвертый блок кода использует метод [SearchFuzzy](/javascript/api/azure-maps-rest/atlas.service.models.searchgetsearchfuzzyoptionalparams) в [модуле службы](how-to-use-services-module.md). Он позволяет выполнять поиск текста произвольной формы с помощью [REST API поиска нечетких соответствий](/rest/api/maps/search/getsearchfuzzy) для поиска точки интереса. Запросы GET к API поиска нечетких соответствий могут работать с любым сочетанием нечетких входных данных. Затем с помощью метода `geojson.getFeatures()` из ответа извлекается коллекция функций GeoJSON и добавляется к источнику данных, после чего данные автоматически отображаются на карте с помощью слоя символов.
 
-Последний блок кода корректирует границы камеры для карты с помощью свойства карты [setCamera](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map#setcamera-cameraoptions---cameraboundsoptions---animationoptions-).
+Последний блок кода корректирует границы камеры для карты с помощью свойства карты [setCamera](/javascript/api/azure-maps-control/atlas.map#setcamera-cameraoptions---cameraboundsoptions---animationoptions-).
 
-Поисковый запрос, источник данных, слой символов и границы камеры находятся внутри [прослушивателя событий](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map#events) карты. Нам необходимо убедиться, что результаты отображаются после полной загрузки карты.
+Поисковый запрос, источник данных, слой символов и границы камеры находятся внутри [прослушивателя событий](/javascript/api/azure-maps-control/atlas.map#events) карты. Нам необходимо убедиться, что результаты отображаются после полной загрузки карты.
 
 
 ## <a name="make-a-search-request-via-fetch-api"></a>Поиск через Fetch API
@@ -49,28 +49,28 @@ ms.locfileid: "90089279"
 
 Второй блок кода создает URL-адрес для выполнения поискового запроса. Он также создает два массива для хранения границ и закреплений для результатов поиска.
 
-В третьем блоке кода используется [Fetch API](https://fetch.spec.whatwg.org/). [Fetch API](https://fetch.spec.whatwg.org/) используется для выполнения запроса к [API поиска нечетких соответствий Azure Maps](https://docs.microsoft.com/rest/api/maps/search/getsearchfuzzy) для поиска точек интереса. API поиска нечетких соответствий может обрабатывать любую комбинацию нечетких входных данных. Затем он обрабатывает и анализирует ответ поиска и добавляет результирующие закрепления в массив searchPins.
+В третьем блоке кода используется [Fetch API](https://fetch.spec.whatwg.org/). [Fetch API](https://fetch.spec.whatwg.org/) используется для выполнения запроса к [API поиска нечетких соответствий Azure Maps](/rest/api/maps/search/getsearchfuzzy) для поиска точек интереса. API поиска нечетких соответствий может обрабатывать любую комбинацию нечетких входных данных. Затем он обрабатывает и анализирует ответ поиска и добавляет результирующие закрепления в массив searchPins.
 
-В четвертом блоке кода создается объект источника данных с помощью класса [DataSource](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource). В коде мы добавляем результаты поиска в исходный объект. В [слое символов](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.symbollayer) данные на основе точек в оболочке [DataSource](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource) преобразовываются для просмотра в качестве символов на карте с помощью текста или значков. Затем создается слой символов. Источник данных добавляется в слой символов, который затем добавляется на карту.
+В четвертом блоке кода создается объект источника данных с помощью класса [DataSource](/javascript/api/azure-maps-control/atlas.source.datasource). В коде мы добавляем результаты поиска в исходный объект. В [слое символов](/javascript/api/azure-maps-control/atlas.layer.symbollayer) данные на основе точек в оболочке [DataSource](/javascript/api/azure-maps-control/atlas.source.datasource) преобразовываются для просмотра в качестве символов на карте с помощью текста или значков. Затем создается слой символов. Источник данных добавляется в слой символов, который затем добавляется на карту.
 
-Последний блок кода создает объект [BoundingBox](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.data.boundingbox). Он использует массив результатов, а затем настраивает границы камеры для карты с помощью [setCamera](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map#setcamera-cameraoptions---cameraboundsoptions---animationoptions-) карты. Затем выполняется отрисовка результатов.
+Последний блок кода создает объект [BoundingBox](/javascript/api/azure-maps-control/atlas.data.boundingbox). Он использует массив результатов, а затем настраивает границы камеры для карты с помощью [setCamera](/javascript/api/azure-maps-control/atlas.map#setcamera-cameraoptions---cameraboundsoptions---animationoptions-) карты. Затем выполняется отрисовка результатов.
 
-Поисковый запрос, источник данных, слой символов и границы камеры задаются в [прослушивателе событий](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map#events) карты. Таким образом, результаты отображаются после полной загрузки карты.
+Поисковый запрос, источник данных, слой символов и границы камеры задаются в [прослушивателе событий](/javascript/api/azure-maps-control/atlas.map#events) карты. Таким образом, результаты отображаются после полной загрузки карты.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Рекомендации по использованию службы поиска Azure Maps](how-to-use-best-practices-for-search.md)
 
-Дополнительные сведения о **поиске нечетких соответствий**:
+Дополнительные сведения о **поиске нечетких соответствий** :
 
 > [!div class="nextstepaction"]
-> [API поиска нечетких соответствий службы "Карты Azure"](https://docs.microsoft.com/rest/api/maps/search/getsearchfuzzy)
+> [API поиска нечетких соответствий службы "Карты Azure"](/rest/api/maps/search/getsearchfuzzy)
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
 > [!div class="nextstepaction"]
-> [Схема](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map)
+> [Схема](/javascript/api/azure-maps-control/atlas.map)
 
 Полные примеры кода см. в следующих статьях:
 
