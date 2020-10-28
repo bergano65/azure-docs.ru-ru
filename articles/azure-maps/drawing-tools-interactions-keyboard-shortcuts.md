@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: cpendle
-ms.openlocfilehash: 429baa4d5dc85476192758e4500f4c1f14610e6d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b609a21348222150faf5fb828f2cc38ca6658f5d
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90089315"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92895823"
 ---
 # <a name="interaction-types-and-keyboard-shortcuts-in-the-drawing-tools-module"></a>Типы взаимодействия и сочетания клавиш в модуле «средства рисования»
 
@@ -141,12 +141,12 @@ ms.locfileid: "90089315"
 | `Escape` | Отменяет все выполняющиеся операции и устанавливает режим рисования в состояние простоя. Фокус будет перемещен на элемент Map верхнего уровня.  |
 | `F` | Добавляет координату к точке, линии или многоугольнику, если указатель мыши наведен на карту. Эквивалентное действие при щелчке по карте в выбранном или гибридном режиме. Это сочетание клавиш позволяет создавать более точные и быстрые рисунки. Можно использовать один рукой для позиционирования мыши и другого, чтобы нажать кнопку, не перемещая указатель мыши с помощью жеста нажатия. |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о классах в модуле средств рисования:
 
 > [!div class="nextstepaction"]
-> [Диспетчер рисунков](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.drawing.drawingmanager)
+> [Диспетчер рисунков](/javascript/api/azure-maps-drawing-tools/atlas.drawing.drawingmanager)
 
 > [!div class="nextstepaction"]
-> [Панель инструментов рисования](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.control.drawingtoolbar)
+> [Панель инструментов рисования](/javascript/api/azure-maps-drawing-tools/atlas.control.drawingtoolbar)

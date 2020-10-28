@@ -9,23 +9,23 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: codepen, devx-track-js
-ms.openlocfilehash: 75d2833a5b270fcfdcffa668ec0e308399edab8a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9c82b74ffdc8672dc3d84a98a036c6083bc6c309
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91311456"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92895925"
 ---
 # <a name="create-a-data-source"></a>Создание источника данных
 
 Azure Maps веб-пакет SDK хранит данные в источниках данных. Использование источников данных оптимизирует операции с данными для выполнения запросов и подготовки к просмотру. В настоящее время существует два типа источников данных:
 
-- **Источник**географического формата. управляет данными необработанных расположений в формате геоjson локально. Подходит для небольших и средних наборов данных (в направлении сотен тысяч фигур).
-- **Источник плитки вектора**: загружает данные, отформатированные как векторные плитки для текущего представления карты, на основе системы разбиения на карты. Идеально подходит для больших и огромных наборов данных (миллионы или миллиарды фигур).
+- **Источник** географического формата. управляет данными необработанных расположений в формате геоjson локально. Подходит для небольших и средних наборов данных (в направлении сотен тысяч фигур).
+- **Источник плитки вектора** : загружает данные, отформатированные как векторные плитки для текущего представления карты, на основе системы разбиения на карты. Идеально подходит для больших и огромных наборов данных (миллионы или миллиарды фигур).
 
 ## <a name="geojson-data-source"></a>Источник данных геоjson
 
-Источник данных на основе геообъектного формата JSON загружает и сохраняет данные локально с помощью `DataSource` класса. Данные геоjson можно создавать или создавать вручную с помощью вспомогательных классов в пространстве имен [Atlas. Data](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.data) . `DataSource`Класс предоставляет функции для импорта локальных и удаленных геоjson файлов. Удаленные геоjson-файлы должны размещаться на конечной точке с поддержкой CORs. `DataSource`Класс предоставляет функциональные возможности для данных точки кластеризации. И можно легко добавлять, удалять и обновлять данные с помощью `DataSource` класса. В следующем коде показано, как можно создавать геообъектные данные JSON в Azure Maps.
+Источник данных на основе геообъектного формата JSON загружает и сохраняет данные локально с помощью `DataSource` класса. Данные геоjson можно создавать или создавать вручную с помощью вспомогательных классов в пространстве имен [Atlas. Data](/javascript/api/azure-maps-control/atlas.data) . `DataSource`Класс предоставляет функции для импорта локальных и удаленных геоjson файлов. Удаленные геоjson-файлы должны размещаться на конечной точке с поддержкой CORs. `DataSource`Класс предоставляет функциональные возможности для данных точки кластеризации. И можно легко добавлять, удалять и обновлять данные с помощью `DataSource` класса. В следующем коде показано, как можно создавать геообъектные данные JSON в Azure Maps.
 
 ```javascript
 //Create raw GeoJSON object.
@@ -46,7 +46,7 @@ var geoJsonClass = new atlas.data.Feature(new atlas.data.Point([-100, 45]), {
 }); 
 ```
 
-После создания источники данных можно добавить на карту с помощью `map.sources` свойства, которое является [саурцеманажер](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.sourcemanager). В следующем коде показано, как создать объект `DataSource` и добавить его в карту.
+После создания источники данных можно добавить на карту с помощью `map.sources` свойства, которое является [саурцеманажер](/javascript/api/azure-maps-control/atlas.sourcemanager). В следующем коде показано, как создать объект `DataSource` и добавить его в карту.
 
 ```javascript
 //Create a data source and add it to the map.
@@ -74,7 +74,7 @@ dataSource.setShapes(geoJsonData);
 
 ## <a name="vector-tile-source"></a>Источник плитки вектора
 
-Источник векторной плитки описывает, как получить доступ к слою векторной плитки. Используйте класс [вектортилесаурце](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.vectortilesource) для создания экземпляра источника плитки вектора. Векторные мозаичные слои похожи на мозаичные слои, но они не одинаковы. Мозаичный слой — это растровое изображение. Векторные мозаичные слои — это сжатый файл в формате **ПБФ** . Этот сжатый файл содержит данные о векторной карте и один или несколько слоев. Файл может быть визуализирован и применен на стороне клиента в зависимости от стиля каждого слоя. Данные в векторной плитке содержат географические функции в виде точек, линий и многоугольников. Существует несколько преимуществ использования векторных слоев, а не растровых слоев мозаики.
+Источник векторной плитки описывает, как получить доступ к слою векторной плитки. Используйте класс [вектортилесаурце](/javascript/api/azure-maps-control/atlas.source.vectortilesource) для создания экземпляра источника плитки вектора. Векторные мозаичные слои похожи на мозаичные слои, но они не одинаковы. Мозаичный слой — это растровое изображение. Векторные мозаичные слои — это сжатый файл в формате **ПБФ** . Этот сжатый файл содержит данные о векторной карте и один или несколько слоев. Файл может быть визуализирован и применен на стороне клиента в зависимости от стиля каждого слоя. Данные в векторной плитке содержат географические функции в виде точек, линий и многоугольников. Существует несколько преимуществ использования векторных слоев, а не растровых слоев мозаики.
 
  - Размер файла плитки вектора обычно намного меньше, чем эквивалентная растровая плитка. Поэтому используется меньшая пропускная способность. Это означает более низкую задержку, более быструю карту и удобство работы пользователей.
  - Так как векторные плитки отображаются на клиенте, они адаптируются к разрешению устройства, на котором они отображаются. В результате отображаемые карты будут более четко определены с помощью меток Crystal Clear.
@@ -83,10 +83,10 @@ dataSource.setShapes(geoJsonData);
 
 Azure Maps соответствует [спецификации плитки вектора мапбокс](https://github.com/mapbox/vector-tile-spec)— открытым стандартом. Azure Maps предоставляет следующие службы векторных плиток в составе платформы:
 
-- [documentation](https://docs.microsoft.com/rest/api/maps/renderv2/getmaptilepreview)  |  [Сведения о формате данных](https://developer.tomtom.com/maps-api/maps-api-documentation-vector/tile) документации для дорожных плиток
-- [documentation](https://docs.microsoft.com/rest/api/maps/traffic/gettrafficincidenttile)  |  [Сведения о формате данных](https://developer.tomtom.com/traffic-api/traffic-api-documentation-traffic-incidents/vector-incident-tiles) в документации по инцидентам трафика
-- [documentation](https://docs.microsoft.com/rest/api/maps/traffic/gettrafficflowtile)  |  [Сведения о формате данных](https://developer.tomtom.com/traffic-api/traffic-api-documentation-traffic-flow/vector-flow-tiles) документации потока трафика
-- Создатель Azure Maps также позволяет создавать пользовательские векторные плитки и получать к ним доступ через элемент [Get плитка для прорисовки v2](https://docs.microsoft.com/rest/api/maps/renderv2/getmaptilepreview) .
+- [documentation](/rest/api/maps/renderv2/getmaptilepreview)  |  [Сведения о формате данных](https://developer.tomtom.com/maps-api/maps-api-documentation-vector/tile) документации для дорожных плиток
+- [documentation](/rest/api/maps/traffic/gettrafficincidenttile)  |  [Сведения о формате данных](https://developer.tomtom.com/traffic-api/traffic-api-documentation-traffic-incidents/vector-incident-tiles) в документации по инцидентам трафика
+- [documentation](/rest/api/maps/traffic/gettrafficflowtile)  |  [Сведения о формате данных](https://developer.tomtom.com/traffic-api/traffic-api-documentation-traffic-flow/vector-flow-tiles) документации потока трафика
+- Создатель Azure Maps также позволяет создавать пользовательские векторные плитки и получать к ним доступ через элемент [Get плитка для прорисовки v2](/rest/api/maps/renderv2/getmaptilepreview) .
 
 > [!TIP]
 > При использовании векторных или растровых изображений из Azure Maps службы отрисовки с веб-пакетом SDK можно заменить `atlas.microsoft.com` заполнительом `{azMapsDomain}` . Этот заполнитель будет заменен тем же доменом, который используется картой, и будет автоматически добавлять те же сведения проверки подлинности. Это значительно упрощает проверку подлинности с помощью службы Render при использовании Azure Active Directory проверки подлинности.
@@ -213,16 +213,16 @@ map.layers.add([polygonLayer, lineLayer, bubbleLayer]);
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
 > [!div class="nextstepaction"]
-> [DataSource](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource)
+> [DataSource](/javascript/api/azure-maps-control/atlas.source.datasource)
 
 > [!div class="nextstepaction"]
-> [DataSourceOptions](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.datasourceoptions)
+> [DataSourceOptions](/javascript/api/azure-maps-control/atlas.datasourceoptions)
 
 > [!div class="nextstepaction"]
-> [вектортилесаурце](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.vectortilesource)
+> [вектортилесаурце](/javascript/api/azure-maps-control/atlas.source.vectortilesource)
 
 > [!div class="nextstepaction"]
-> [вектортилесаурцеоптионс](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.vectortilesourceoptions)
+> [вектортилесаурцеоптионс](/javascript/api/azure-maps-control/atlas.vectortilesourceoptions)
 
 Дополнительные примеры кода для добавления в карты см. в следующих статьях:
 
@@ -248,4 +248,4 @@ map.layers.add([polygonLayer, lineLayer, bubbleLayer]);
 > [Добавление тепловой карты](map-add-heat-map-layer.md)
 
 > [!div class="nextstepaction"]
-> [Примеры кода](https://docs.microsoft.com/samples/browse/?products=azure-maps)
+> [Примеры кода](/samples/browse/?products=azure-maps)
