@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 02/04/2017
 ms.author: juliako
-ms.openlocfilehash: 6beaee98e78e79c48270801f5696e4e487b0a2c3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5807d38e22d8cecf40b5ad4262f9e4662b77ec4c
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84883707"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92779141"
 ---
 # <a name="manage-azure-cdn-caching-policy-in-azure-media-services"></a>Управление политикой кэширования Azure CDN в службах мультимедиа Azure
 Службы мультимедиа Azure предоставляют адаптивную потоковую передачу и прогрессивное скачивание на основе протокола HTTP. Потоковая передача на основе протокола HTTP — это технология с высоким уровнем масштабируемости, обладающая преимуществами кэширования на стороне прокси-сервера и на стороне клиента, а также преимуществами слоев CDN. Функция конечных точек потоковой передачи предоставляет общие возможности потоковой передачи, а также конфигурацию для заголовков кэша HTTP. Она также задает заголовки HTTP Cache-Control: max-age и Expires. Узнать больше о заголовках кэша HTTP можно на веб-сайте [W3.org](https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html).
@@ -40,10 +40,9 @@ ms.locfileid: "84883707"
 
 1. Чтобы настроить заголовки кэша с помощью портала Azure, выполните инструкции в разделе "Настройка конечной точки потоковой передачи" статьи [Управление конечными точками потоковой передачи с помощью портала Azure](../media-services/previous/media-services-portal-manage-streaming-endpoints.md).
 2. Интерфейс REST API служб мультимедиа Azure, [StreamingEndpoint](/rest/api/media/operations/streamingendpoint#StreamingEndpointCacheControl).
-3. Пакет SDK для служб мультимедиа Azure для .NET, [свойства StreamingEndpointCacheControl](https://go.microsoft.com/fwlink/?LinkId=615302).
+3. Пакет SDK для служб мультимедиа Azure для .NET, [свойства StreamingEndpointCacheControl](/dotnet/api/microsoft.windowsazure.mediaservices.client.streamingendpointcachecontrol).
 
 ## <a name="cache-configuration-precedence-order"></a>Порядок приоритета конфигурации кэша
 1. Настроенные значения кэша служб мультимедиа Azure переопределяют значение по умолчанию.
 2. При отсутствии настроек, заданных вручную, применяются значения по умолчанию.
 3. По умолчанию для манифеста динамической потоковой передачи (списка воспроизведения) используются 2-секундные заголовки кэша независимо от конфигурации мультимедиа Azure или службы хранилища Azure, и переопределить это значение невозможно.
-

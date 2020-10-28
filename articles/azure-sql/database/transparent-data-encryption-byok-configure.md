@@ -5,19 +5,19 @@ description: Узнайте, как настроить базу данных SQL
 services: sql-database
 ms.service: sql-db-mi
 ms.subservice: security
-ms.custom: seo-lt-2019 sqldbrb=1
+ms.custom: seo-lt-2019 sqldbrb=1, devx-track-azurecli
 ms.devlang: ''
 ms.topic: how-to
 author: jaszymas
 ms.author: jaszymas
 ms.reviewer: vanto
 ms.date: 03/12/2019
-ms.openlocfilehash: e2cdf7d5213f1667b0b588cc5bfa9f105245b6b3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 38be8b97b3255e4e63301e693d2a5f295e8d801b
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91619123"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92779974"
 ---
 # <a name="powershell-and-the-azure-cli-enable-transparent-data-encryption-with-customer-managed-key-from-azure-key-vault"></a>PowerShell и Azure CLI: включение прозрачное шифрование данных с управляемым клиентом ключом из Azure Key Vault
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
@@ -36,11 +36,11 @@ ms.locfileid: "91619123"
 - Чтобы использовать ключ для TDE, обязательно настройте для него следующие атрибуты:
   - без даты окончания срока действия;
   - не отключено;
-  - возможность выполнять операции *получения*, *упаковки ключа* и *распаковки ключа*.
+  - возможность выполнять операции *получения* , *упаковки ключа* и *распаковки ключа* .
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-Инструкции по установке модуля Az см. в статье об [установке Azure PowerShell](/powershell/azure/install-az-ps). Конкретные командлеты см. в разделе [AzureRM. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/).
+Инструкции по установке модуля Az см. в статье об [установке Azure PowerShell](/powershell/azure/install-az-ps). Конкретные командлеты см. в разделе [AzureRM. SQL](/powershell/module/AzureRM.Sql/).
 
 Дополнительные сведения о Key Vault см. в [инструкциях по PowerShell из Key Vault](../../key-vault/secrets/quick-create-powershell.md) и [об использовании Key Vault обратимого удаления с помощью PowerShell](../../key-vault/general/soft-delete-powershell.md).
 
@@ -123,7 +123,7 @@ Get-AzSqlDatabaseTransparentDataEncryptionActivity -ResourceGroupName <SQLDataba
 
 # <a name="the-azure-cli"></a>[CLI Azure.](#tab/azure-cli)
 
-Чтобы установить требуемую версию Azure CLI (версии 2,0 или более поздней) и подключиться к подписке Azure, см. статью [Установка и настройка Межплатформенного Command-Lineного интерфейса azure 2,0](https://docs.microsoft.com/cli/azure/install-azure-cli).
+Чтобы установить требуемую версию Azure CLI (версии 2,0 или более поздней) и подключиться к подписке Azure, см. статью [Установка и настройка Межплатформенного Command-Lineного интерфейса azure 2,0](/cli/azure/install-azure-cli).
 
 Дополнительные сведения о Key Vault см. в статьях [управление Key Vault с помощью интерфейса командной строки 2,0](../../key-vault/general/manage-with-cli2.md) и [Использование Key Vault обратимого удаления с помощью интерфейса командной строки](../../key-vault/general/soft-delete-cli.md).
 
@@ -217,7 +217,7 @@ az sql db tde show --database <dbname> --server <servername> --resource-group <r
 
 * * *
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Диагностика
 
 При возникновении ошибок выполните следующие проверки.
 
@@ -239,9 +239,9 @@ az sql db tde show --database <dbname> --server <servername> --resource-group <r
 
 - Если не удается добавить на сервер новый ключ или указать новый в качестве предохранителя TDE, проверьте следующее:
    - ключ не должен иметь дату окончания срока действия;
-   - для ключа должны быть включены операции *получения*, *упаковки ключа* и *распаковки ключа*.
+   - для ключа должны быть включены операции *получения* , *упаковки ключа* и *распаковки ключа* .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как сменить средство защиты TDE сервера в соответствии с требованиями безопасности: [поворачивайте средство защиты прозрачное шифрование данных с помощью PowerShell](transparent-data-encryption-byok-key-rotation.md).
 - Сведения о том, как удалить потенциально скомпрометированный предохранитель TDE в случае угрозы безопасности, вы найдете в [этой статье](transparent-data-encryption-byok-remove-tde-protector.md).

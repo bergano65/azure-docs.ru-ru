@@ -1,5 +1,5 @@
 ---
-title: Вопросы и ответы
+title: Часто задаваемые вопросы
 titleSuffix: Azure SQL Managed Instance
 description: Часто задаваемые вопросы об Управляемом экземпляре SQL Azure
 services: sql-database
@@ -12,12 +12,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein
 ms.date: 09/21/2020
-ms.openlocfilehash: fedbcf00512e2eb671656ca1c585df83560a8c02
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6b217e77310224779ea3ea840e613e28da6c86a3
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91627624"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92779872"
 ---
 # <a name="azure-sql-managed-instance-frequently-asked-questions-faq"></a>Часто задаваемые вопросы об Управляемом экземпляре SQL Azure
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -82,7 +82,7 @@ ms.locfileid: "91627624"
 
 **Как можно подготавливать SQL Управляемый экземпляр?**
 
-Экземпляр можно подготавливать на основе шаблонов [портал Azure](instance-create-quickstart.md), [PowerShell](scripts/create-configure-managed-instance-powershell.md), [Azure CLI](https://techcommunity.microsoft.com/t5/azure-sql-database/create-azure-sql-managed-instance-using-azure-cli/ba-p/386281) и [ARM](https://docs.microsoft.com/archive/blogs/sqlserverstorageengine/creating-azure-sql-managed-instance-using-arm-templates).
+Экземпляр можно подготавливать на основе шаблонов [портал Azure](instance-create-quickstart.md), [PowerShell](scripts/create-configure-managed-instance-powershell.md), [Azure CLI](https://techcommunity.microsoft.com/t5/azure-sql-database/create-azure-sql-managed-instance-using-azure-cli/ba-p/386281) и [ARM](/archive/blogs/sqlserverstorageengine/creating-azure-sql-managed-instance-using-arm-templates).
 
 **Можно ли подготавливать управляемые экземпляры в существующей подписке?**
 
@@ -94,7 +94,7 @@ ms.locfileid: "91627624"
 
 **Как масштабировать управляемый экземпляр?**
 
-Вы можете масштабировать управляемый экземпляр на основе шаблонов [портал Azure](../database/service-tiers-vcore.md?tabs=azure-portal#selecting-a-hardware-generation), [PowerShell](https://docs.microsoft.com/archive/blogs/sqlserverstorageengine/change-size-azure-sql-managed-instance-using-powershell), [Azure CLI](https://docs.microsoft.com/cli/azure/sql/mi?view=azure-cli-latest#az-sql-mi-update&preserve-view=true) или [ARM](https://docs.microsoft.com/archive/blogs/sqlserverstorageengine/updating-azure-sql-managed-instance-properties-using-arm-templates).
+Вы можете масштабировать управляемый экземпляр на основе шаблонов [портал Azure](../database/service-tiers-vcore.md?tabs=azure-portal#selecting-a-hardware-generation), [PowerShell](/archive/blogs/sqlserverstorageengine/change-size-azure-sql-managed-instance-using-powershell), [Azure CLI](/cli/azure/sql/mi?view=azure-cli-latest#az-sql-mi-update&preserve-view=true) или [ARM](/archive/blogs/sqlserverstorageengine/updating-azure-sql-managed-instance-properties-using-arm-templates).
 
 **Можно ли переместить Управляемый экземпляр из одного региона в другой?**
 
@@ -102,7 +102,7 @@ ms.locfileid: "91627624"
 
 **Как удалить Управляемый экземпляр?**
 
-Вы можете удалить управляемые экземпляры с помощью портал Azure, [PowerShell](https://docs.microsoft.com/powershell/module/az.sql/remove-azsqlinstance?view=azps-4.3.0&preserve-view=true), [Azure CLI](https://docs.microsoft.com/cli/azure/sql/mi?view=azure-cli-latest#az-sql-mi-delete&preserve-view=true) или [Диспетчер ресурсов интерфейсов API](https://docs.microsoft.com/rest/api/sql/managedinstances/delete).
+Вы можете удалить управляемые экземпляры с помощью портал Azure, [PowerShell](/powershell/module/az.sql/remove-azsqlinstance?preserve-view=true&view=azps-4.3.0), [Azure CLI](/cli/azure/sql/mi?view=azure-cli-latest#az-sql-mi-delete&preserve-view=true) или [Диспетчер ресурсов интерфейсов API](/rest/api/sql/managedinstances/delete).
 
 **Сколько времени занимает создание или обновление экземпляра или восстановление базы данных?**
 
@@ -118,7 +118,7 @@ ms.locfileid: "91627624"
 
 Да, Управляемый экземпляр зону DNS по умолчанию *. Database.Windows.NET* можно изменить. 
 
-Для использования другой зоны DNS вместо значения по умолчанию, например *. contoso.com*: 
+Для использования другой зоны DNS вместо значения по умолчанию, например *. contoso.com* : 
 - Используйте Кликонфиг для определения псевдонима. Это средство является просто оболочкой параметров реестра, поэтому ее можно выполнить с помощью групповой политики или скрипта.
 - Используйте *CNAME* с параметром *TrustServerCertificate = true* .
 
@@ -137,7 +137,7 @@ ms.locfileid: "91627624"
 
 [Репликацию транзакций](replication-two-instances-and-sql-server-configure-tutorial.md?view=sql-server-2017&preserve-view=true) можно использовать, если все таблицы в базе данных имеют *первичные* ключи и в базе данных нет объектов OLTP в памяти.
 
-Резервные копии машинного COPY_ONLY, созданные из управляемого экземпляра, не могут быть восстановлены в SQL Server, так как для управляемого экземпляра выше по сравнению с SQL Server. Дополнительные сведения см. в разделе [резервное копирование только для копирования](https://docs.microsoft.com/sql/relational-databases/backup-restore/copy-only-backups-sql-server?view=sql-server-ver15&preserve-view=true).
+Резервные копии машинного COPY_ONLY, созданные из управляемого экземпляра, не могут быть восстановлены в SQL Server, так как для управляемого экземпляра выше по сравнению с SQL Server. Дополнительные сведения см. в разделе [резервное копирование только для копирования](/sql/relational-databases/backup-restore/copy-only-backups-sql-server?preserve-view=true&view=sql-server-ver15).
 
 **Как перенести экземпляр SQL Server в SQL Управляемый экземпляр?**
 
@@ -180,15 +180,15 @@ ms.locfileid: "91627624"
 
 **Каковы варианты мониторинга и оповещения для своего управляемого экземпляра?**
 
-Сведения о всех возможных параметрах мониторинга и оповещения о потреблении и производительности SQL Управляемый экземпляр см. в записи [блога о параметрах мониторинга управляемый экземпляр SQL Azure](https://techcommunity.microsoft.com/t5/azure-sql-database/monitoring-options-available-for-azure-sql-managed-instance/ba-p/1065416). Сведения о мониторинге производительности в режиме реального времени для SQL MI см. в статье [мониторинг производительности в режиме реального времени для управляемый экземпляр базы данных SQL Azure](https://docs.microsoft.com/archive/blogs/sqlcat/real-time-performance-monitoring-for-azure-sql-database-managed-instance).
+Сведения о всех возможных параметрах мониторинга и оповещения о потреблении и производительности SQL Управляемый экземпляр см. в записи [блога о параметрах мониторинга управляемый экземпляр SQL Azure](https://techcommunity.microsoft.com/t5/azure-sql-database/monitoring-options-available-for-azure-sql-managed-instance/ba-p/1065416). Сведения о мониторинге производительности в режиме реального времени для SQL MI см. в статье [мониторинг производительности в режиме реального времени для управляемый экземпляр базы данных SQL Azure](/archive/blogs/sqlcat/real-time-performance-monitoring-for-azure-sql-database-managed-instance).
 
 **Можно ли использовать Профайлер SQL для отслеживания производительности?**
 
-Да, SQL Profiler поддерживается или SQL Управляемый экземпляр. Дополнительные сведения см. в разделе [SQL Profiler](https://docs.microsoft.com/sql/tools/sql-server-profiler/sql-server-profiler?view=sql-server-ver15&preserve-view=true).
+Да, SQL Profiler поддерживается или SQL Управляемый экземпляр. Дополнительные сведения см. в разделе [SQL Profiler](/sql/tools/sql-server-profiler/sql-server-profiler?preserve-view=true&view=sql-server-ver15).
 
 **Поддерживаются ли Помощник по базам данных и анализ производительности запросов для баз данных Управляемый экземпляр?**
 
-Нет, они не поддерживаются. Вы можете использовать динамические [административные представления](../database/monitoring-with-dmvs.md) и [хранилище запросов](https://docs.microsoft.com/sql/relational-databases/performance/monitoring-performance-by-using-the-query-store?view=sql-server-ver15&preserve-view=true) вместе с [SQL Profiler](https://docs.microsoft.com/sql/tools/sql-server-profiler/sql-server-profiler?view=sql-server-ver15&preserve-view=true) и [XEvents](https://docs.microsoft.com/sql/relational-databases/extended-events/extended-events?view=sql-server-ver15&preserve-view=true) для мониторинга баз данных.
+Нет, они не поддерживаются. Вы можете использовать динамические [административные представления](../database/monitoring-with-dmvs.md) и [хранилище запросов](/sql/relational-databases/performance/monitoring-performance-by-using-the-query-store?preserve-view=true&view=sql-server-ver15) вместе с [SQL Profiler](/sql/tools/sql-server-profiler/sql-server-profiler?preserve-view=true&view=sql-server-ver15) и [XEvents](/sql/relational-databases/extended-events/extended-events?preserve-view=true&view=sql-server-ver15) для мониторинга баз данных.
 
 **Можно ли создавать оповещения метрик в Управляемый экземпляр SQL?**
 
@@ -228,11 +228,11 @@ ms.locfileid: "91627624"
 
 **Поддерживается ли резервное копирование по запросу?**
 
-Да, можно создать полную резервную копию только для копирования в хранилище BLOB-объектов Azure, но это будет restorable только в Управляемый экземпляр. Дополнительные сведения см. в разделе [резервное копирование только для копирования](https://docs.microsoft.com/sql/relational-databases/backup-restore/copy-only-backups-sql-server?view=sql-server-ver15&preserve-view=true). Однако резервное копирование только для копирования невозможно, если база данных шифруется с помощью TDE, управляемых службой, так как сертификат, используемый для шифрования, недоступен. В таком случае используйте функцию восстановления до точки во времени, чтобы переместить базу данных в другой Управляемый экземпляр SQL, или переключитесь на ключ, управляемый клиентом.
+Да, можно создать полную резервную копию только для копирования в хранилище BLOB-объектов Azure, но это будет restorable только в Управляемый экземпляр. Дополнительные сведения см. в разделе [резервное копирование только для копирования](/sql/relational-databases/backup-restore/copy-only-backups-sql-server?preserve-view=true&view=sql-server-ver15). Однако резервное копирование только для копирования невозможно, если база данных шифруется с помощью TDE, управляемых службой, так как сертификат, используемый для шифрования, недоступен. В таком случае используйте функцию восстановления до точки во времени, чтобы переместить базу данных в другой Управляемый экземпляр SQL, или переключитесь на ключ, управляемый клиентом.
 
 **Является ли собственное восстановление (из BAK-файлов) Управляемый экземпляр поддерживается?**
 
-Да, оно поддерживается и доступно для SQL Server 2005 и более поздних версий.  Чтобы использовать собственное восстановление, передайте файл BAK в хранилище BLOB-объектов Azure и выполните команды T-SQL. Дополнительные сведения см. [в разделе Native Restore from URL](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-migrate#native-restore-from-url).
+Да, оно поддерживается и доступно для SQL Server 2005 и более поздних версий.  Чтобы использовать собственное восстановление, передайте файл BAK в хранилище BLOB-объектов Azure и выполните команды T-SQL. Дополнительные сведения см. [в разделе Native Restore from URL](./migrate-to-instance-from-sql-server.md#native-restore-from-url).
 
 ## <a name="business-continuity"></a>Непрерывность бизнес-процессов
 
@@ -254,7 +254,7 @@ SQL Управляемый экземпляр отвечает за настро
 
 **Можно ли получить диапазоны исходных IP-адресов, используемых для входящего трафика управления?**
 
-Да. Вы можете анализировать трафик, поступающий через группу безопасности сети, [настроив журналы потоков наблюдателя за сетями](https://docs.microsoft.com/azure/network-watcher/network-watcher-monitoring-overview#analyze-traffic-to-or-from-a-network-security-group).
+Да. Вы можете анализировать трафик, поступающий через группу безопасности сети, [настроив журналы потоков наблюдателя за сетями](../../network-watcher/network-watcher-monitoring-overview.md#analyze-traffic-to-or-from-a-network-security-group).
 
 **Можно ли задать NSG для управления доступом к конечной точке данных (порт 1433)?**
 
@@ -273,7 +273,7 @@ SQL Управляемый экземпляр отвечает за настро
  
 **Сколько IP-адресов требуется для Управляемый экземпляр?**
 
-Подсеть должна иметь достаточное количество доступных [IP-адресов](connectivity-architecture-overview.md#network-requirements). Сведения об определении размера подсети VNet для SQL Управляемый экземпляр см. в разделе [Определение требуемого размера подсети и диапазона для управляемый экземпляр](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-determine-size-vnet-subnet). 
+Подсеть должна иметь достаточное количество доступных [IP-адресов](connectivity-architecture-overview.md#network-requirements). Сведения об определении размера подсети VNet для SQL Управляемый экземпляр см. в разделе [Определение требуемого размера подсети и диапазона для управляемый экземпляр](./vnet-subnet-determine-size.md). 
 
 **Что делать, если нет достаточного количества IP-адресов для выполнения операции обновления экземпляра?**
 
@@ -285,7 +285,7 @@ SQL Управляемый экземпляр отвечает за настро
 
 **Можно ли изменить диапазон адресов подсети?**
 
-Не при наличии управляемых экземпляров внутри. Это ограничение сетевой инфраструктуры Azure. Вы можете [добавить дополнительное адресное пространство только в пустую подсеть](https://docs.microsoft.com/azure/virtual-network/virtual-network-manage-subnet#change-subnet-settings). 
+Не при наличии управляемых экземпляров внутри. Это ограничение сетевой инфраструктуры Azure. Вы можете [добавить дополнительное адресное пространство только в пустую подсеть](../../virtual-network/virtual-network-manage-subnet.md#change-subnet-settings). 
 
 **Можно ли переместить управляемый экземпляр в другую подсеть?**
 
@@ -293,7 +293,7 @@ SQL Управляемый экземпляр отвечает за настро
 
 **Нужна ли пустая виртуальная сеть для создания Управляемый экземпляр?**
 
-Это необязательное значение. Вы можете [создать виртуальную сеть для SQL azure управляемый экземпляр](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-create-vnet-subnet) или [настроить существующую виртуальную сеть для управляемый экземпляр SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-configure-vnet-subnet).
+Это необязательное значение. Вы можете [создать виртуальную сеть для SQL azure управляемый экземпляр](./virtual-network-subnet-create-arm-template.md) или [настроить существующую виртуальную сеть для управляемый экземпляр SQL Azure](./vnet-existing-add-subnet.md).
 
 **Можно ли поместить Управляемый экземпляр с другими службами в подсети?**
 
@@ -316,13 +316,13 @@ SQL Управляемый экземпляр отвечает за настро
 
 **У Управляемый экземпляр есть общедоступная конечная точка?**
 
-Да. Управляемый экземпляр имеет общедоступную конечную точку, которая по умолчанию используется только для управления службами, но клиент может также включить его для доступа к данным. Дополнительные сведения см. в статье [использование управляемый экземпляр SQL с общедоступными конечными точками](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-public-endpoint-securely). Чтобы настроить общедоступную конечную точку, перейдите к разделу [Настройка общедоступной конечной точки в управляемый экземпляр SQL](public-endpoint-configure.md).
+Да. Управляемый экземпляр имеет общедоступную конечную точку, которая по умолчанию используется только для управления службами, но клиент может также включить его для доступа к данным. Дополнительные сведения см. в статье [использование управляемый экземпляр SQL с общедоступными конечными точками](./public-endpoint-overview.md). Чтобы настроить общедоступную конечную точку, перейдите к разделу [Настройка общедоступной конечной точки в управляемый экземпляр SQL](public-endpoint-configure.md).
 
 **Как Управляемый экземпляр управлять доступом к общедоступной конечной точке?**
 
 Управляемый экземпляр управляет доступом к общедоступной конечной точке на уровне сети и приложения.
 
-Службы управления и развертывания подключаются к управляемому экземпляру с помощью [конечной точки управления](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-connectivity-architecture#management-endpoint) , сопоставленной с внешней подсистемой балансировки нагрузки. Трафик направляется на узлы, только если он получен на предопределенном наборе портов, используемых только компонентами управления управляемого экземпляра. Встроенный брандмауэр на узлах настроен на разрешение трафика только из диапазонов IP-адресов Майкрософт. Сертификаты взаимно проходят проверку подлинности всего обмена данными между компонентами управления и плоскостью управления. Дополнительные сведения см. в статье [Архитектура подключения для SQL управляемый экземпляр](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-connectivity-architecture#virtual-cluster-connectivity-architecture).
+Службы управления и развертывания подключаются к управляемому экземпляру с помощью [конечной точки управления](./connectivity-architecture-overview.md#management-endpoint) , сопоставленной с внешней подсистемой балансировки нагрузки. Трафик направляется на узлы, только если он получен на предопределенном наборе портов, используемых только компонентами управления управляемого экземпляра. Встроенный брандмауэр на узлах настроен на разрешение трафика только из диапазонов IP-адресов Майкрософт. Сертификаты взаимно проходят проверку подлинности всего обмена данными между компонентами управления и плоскостью управления. Дополнительные сведения см. в статье [Архитектура подключения для SQL управляемый экземпляр](./connectivity-architecture-overview.md#virtual-cluster-connectivity-architecture).
 
 **Можно ли использовать общедоступную конечную точку для доступа к данным в Управляемый экземпляр базах данных?**
 
@@ -337,9 +337,9 @@ SQL Управляемый экземпляр отвечает за настро
 Для этого предпочтительным способом является пиринг контура Express Route. Глобальный пиринг между виртуальными сетями поддерживается с ограничением, описанным в примечании ниже.  
 
 > [!IMPORTANT]
-> [На 9/22/2020 мы объявили глобальный пиринг виртуальных сетей для вновь созданных виртуальных кластеров](https://azure.microsoft.com/en-us/updates/global-virtual-network-peering-support-for-azure-sql-managed-instance-now-available/). Это означает, что глобальный пиринг между виртуальными сетями поддерживается для управляемых экземпляров SQL, созданных в пустых подсетях после даты объявления, а также для всех последующих управляемых экземпляров, созданных в этих подсетях. Для всех остальных способов поддержки пиринга с управляемыми экземплярами SQL ограничены сетями в том же регионе из-за [ограничений глобального пиринга виртуальной сети](../../virtual-network/virtual-network-manage-peering.md#requirements-and-constraints). Дополнительные сведения см. в разделе, посвященном [часто задаваемым вопросам о виртуальных сетях Azure](https://docs.microsoft.com/azure/virtual-network/virtual-networks-faq#what-are-the-constraints-related-to-global-vnet-peering-and-load-balancers) . 
+> [На 9/22/2020 мы объявили глобальный пиринг виртуальных сетей для вновь созданных виртуальных кластеров](https://azure.microsoft.com/en-us/updates/global-virtual-network-peering-support-for-azure-sql-managed-instance-now-available/). Это означает, что глобальный пиринг между виртуальными сетями поддерживается для управляемых экземпляров SQL, созданных в пустых подсетях после даты объявления, а также для всех последующих управляемых экземпляров, созданных в этих подсетях. Для всех остальных способов поддержки пиринга с управляемыми экземплярами SQL ограничены сетями в том же регионе из-за [ограничений глобального пиринга виртуальной сети](../../virtual-network/virtual-network-manage-peering.md#requirements-and-constraints). Дополнительные сведения см. в разделе, посвященном [часто задаваемым вопросам о виртуальных сетях Azure](../../virtual-network/virtual-networks-faq.md#what-are-the-constraints-related-to-global-vnet-peering-and-load-balancers) . 
 
-Если пиринг каналов Express и глобальная связь между виртуальными сетями невозможны, единственным другим вариантом является создание VPN-подключения типа "сеть — сеть" ([портал Azure](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal), [PowerShell](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-create-site-to-site-rm-powershell), [Azure CLI](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-cli)).
+Если пиринг каналов Express и глобальная связь между виртуальными сетями невозможны, единственным другим вариантом является создание VPN-подключения типа "сеть — сеть" ([портал Azure](../../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md), [PowerShell](../../vpn-gateway/vpn-gateway-create-site-to-site-rm-powershell.md), [Azure CLI](../../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-cli.md)).
 
 ## <a name="mitigate-data-exfiltration-risks"></a>Устранение рисков утечка данных  
 
@@ -347,19 +347,19 @@ SQL Управляемый экземпляр отвечает за настро
 
 Чтобы уменьшить риски утечка данных, рекомендуется применить набор параметров безопасности и элементов управления.
 
-- Включите [прозрачное шифрование данных (TDE)](https://docs.microsoft.com/azure/sql-database/transparent-data-encryption-azure-sql) во всех базах данных.
+- Включите [прозрачное шифрование данных (TDE)](../database/transparent-data-encryption-tde-overview.md) во всех базах данных.
 - Выключите среду CLR. Это также рекомендуется и в локальной среде.
 - Используйте только проверку подлинности Azure Active Directory (Azure AD).
 - Получите доступ к экземпляру с учетной записью администратора базы данных с низким уровнем привилегий.
 - Настройка доступа к JIT-Jumpbox для учетной записи sysadmin.
-- Включите [аудит SQL](https://docs.microsoft.com/sql/relational-databases/security/auditing/sql-server-audit-database-engine)и интегрируйте его с механизмами предупреждений.
-- Включите [обнаружение угроз](https://docs.microsoft.com/azure/sql-database/sql-database-threat-detection) в [защитнике Azure для SQL](https://docs.microsoft.com/azure/azure-sql/database/azure-defender-for-sql) Suite.
+- Включите [аудит SQL](/sql/relational-databases/security/auditing/sql-server-audit-database-engine)и интегрируйте его с механизмами предупреждений.
+- Включите [обнаружение угроз](../database/threat-detection-configure.md) в [защитнике Azure для SQL](../database/azure-defender-for-sql.md) Suite.
 
 ## <a name="dns"></a>DNS
 
 **Можно ли настроить пользовательский DNS для Управляемый экземпляр SQL?**
 
-Да. См. статью [Настройка настраиваемой службы DNS для управляемый экземпляр Azure SQL](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-custom-dns).
+Да. См. статью [Настройка настраиваемой службы DNS для управляемый экземпляр Azure SQL](./custom-dns-configure.md).
 
 **Можно ли выполнить обновление DNS?**
 
@@ -378,22 +378,22 @@ SQL Управляемый экземпляр отвечает за настро
 
 Настройка часового пояса может быть установлена при первой инициализации управляемого экземпляра. Изменение часового пояса существующего управляемого экземпляра не поддерживается. Дополнительные сведения см. в разделе [ограничения часовых поясов](timezones-overview.md#limitations).
 
-К обходным решениям относятся создание нового управляемого экземпляра с соответствующим часовым поясом, а затем выполнение резервного копирования и восстановления вручную, а также рекомендации по выполнению [восстановления на момент времени между экземплярами](https://blogs.msdn.microsoft.com/sqlserverstorageengine/2018/06/07/cross-instance-point-in-time-restore-in-azure-sql-database-managed-instance/).
+К обходным решениям относятся создание нового управляемого экземпляра с соответствующим часовым поясом, а затем выполнение резервного копирования и восстановления вручную, а также рекомендации по выполнению [восстановления на момент времени между экземплярами](/archive/blogs/sqlserverstorageengine/cross-instance-point-in-time-restore-in-azure-sql-database-managed-instance).
 
 
 ## <a name="security-and-database-encryption"></a>Безопасность и шифрование базы данных
 
 **Доступна ли роль сервера sysadmin для SQL Управляемый экземпляр?**
 
-Да, клиенты могут создавать имена входа, являющиеся членами роли sysadmin.  Клиенты, получившие права sysadmin, также предполагают ответственность за работу экземпляра, что может негативно повлиять на обязательства соглашения об уровне обслуживания. Чтобы добавить имя входа в роль сервера sysadmin, ознакомьтесь с [проверкой подлинности Azure AD](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-aad-security-tutorial#azure-ad-authentication).
+Да, клиенты могут создавать имена входа, являющиеся членами роли sysadmin.  Клиенты, получившие права sysadmin, также предполагают ответственность за работу экземпляра, что может негативно повлиять на обязательства соглашения об уровне обслуживания. Чтобы добавить имя входа в роль сервера sysadmin, ознакомьтесь с [проверкой подлинности Azure AD](./aad-security-configure-tutorial.md#azure-ad-authentication).
 
 **Поддерживается ли прозрачное шифрование данных для Управляемый экземпляр SQL?**
 
-Да, прозрачное шифрование данных поддерживается для SQL Управляемый экземпляр. Дополнительные сведения см. в разделе [прозрачное шифрование данных for SQL управляемый экземпляр](https://docs.microsoft.com/azure/sql-database/transparent-data-encryption-azure-sql?tabs=azure-portal).
+Да, прозрачное шифрование данных поддерживается для SQL Управляемый экземпляр. Дополнительные сведения см. в разделе [прозрачное шифрование данных for SQL управляемый экземпляр](../database/transparent-data-encryption-tde-overview.md?tabs=azure-portal).
 
 **Можно ли использовать модель "использование собственного ключа" для TDE?**
 
-Да, Azure Key Vault для сценария BYOK доступен для Управляемый экземпляр SQL Azure. Дополнительные сведения см. [в разделе прозрачное шифрование данных с ключом, управляемым клиентом](https://docs.microsoft.com/azure/sql-database/transparent-data-encryption-azure-sql?view=sql-server-ver15&tabs=azure-portal#customer-managed-transparent-data-encryption---bring-your-own-key&preserve-view=true).
+Да, Azure Key Vault для сценария BYOK доступен для Управляемый экземпляр SQL Azure. Дополнительные сведения см. [в разделе прозрачное шифрование данных с ключом, управляемым клиентом](../database/transparent-data-encryption-tde-overview.md?tabs=azure-portal#customer-managed-transparent-data-encryption---bring-your-own-key).
 
 **Можно ли перенести зашифрованную базу данных SQL Server?**
 
@@ -409,8 +409,8 @@ SQL Управляемый экземпляр отвечает за настро
 
 Да, вам не нужно расшифровывать базу данных, чтобы восстановить ее в SQL Управляемый экземпляр. Необходимо предоставить сертификат или ключ, используемый в качестве предохранителя ключа шифрования в исходной системе для SQL Управляемый экземпляр, чтобы иметь возможность считывать данные из зашифрованного файла резервной копии. Это можно осуществить двумя путями:
 
-- *Отправка предохранителя сертификата в управляемый экземпляр SQL*. Это можно сделать только с помощью PowerShell. [Пример скрипта](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-migrate-tde-certificate) описывает весь процесс.
-- *Отправьте асимметричный ключ-предохранитель в Azure Key Vault и наведите на него управляемый экземпляр SQL*. Этот подход похож на вариант использования, используемый в качестве собственного ключа (BYOK), который также использует интеграцию Key Vault для хранения ключа шифрования. Если вы не хотите использовать ключ в качестве предохранителя ключа шифрования и просто хотите сделать ключ доступным для SQL Управляемый экземпляр для восстановления зашифрованных баз данных, следуйте инструкциям по [настройке BYOK TDE](https://docs.microsoft.com/azure/sql-database/transparent-data-encryption-azure-sql#manage-transparent-data-encryption)и не устанавливайте флажок **сделать выбранный ключ TDE предохранителем по умолчанию**.
+- *Отправка предохранителя сертификата в управляемый экземпляр SQL* . Это можно сделать только с помощью PowerShell. [Пример скрипта](./tde-certificate-migrate.md) описывает весь процесс.
+- *Отправьте асимметричный ключ-предохранитель в Azure Key Vault и наведите на него управляемый экземпляр SQL* . Этот подход похож на вариант использования, используемый в качестве собственного ключа (BYOK), который также использует интеграцию Key Vault для хранения ключа шифрования. Если вы не хотите использовать ключ в качестве предохранителя ключа шифрования и просто хотите сделать ключ доступным для SQL Управляемый экземпляр для восстановления зашифрованных баз данных, следуйте инструкциям по [настройке BYOK TDE](../database/transparent-data-encryption-tde-overview.md#manage-transparent-data-encryption)и не устанавливайте флажок **сделать выбранный ключ TDE предохранителем по умолчанию** .
 
 После того как средство защиты шифрования будет доступно для Управляемый экземпляр SQL, можно продолжить стандартную процедуру восстановления базы данных.
 
@@ -423,17 +423,17 @@ SQL Управляемый экземпляр предлагает [модель
 **Какие преимущества можно использовать для SQL Управляемый экземпляр?**
 
 Вы можете сэкономить затраты с помощью преимуществ SQL Azure следующим образом:
--   Разворачивание существующих инвестиций в локальные лицензии и сэкономьте до 55% на [преимущество гибридного использования Azure](https://docs.microsoft.com/azure/azure-sql/azure-hybrid-benefit?tabs=azure-powershell). 
--   Зафиксируйте резервирование для вычислительных ресурсов и сэкономьте до 33 процентов с помощью [преимущества зарезервированного экземпляра](https://docs.microsoft.com/azure/sql-database/sql-database-reserved-capacity). Объедините это с преимуществом гибридного использования Azure, чтобы сэкономить до 82 процентов. 
+-   Разворачивание существующих инвестиций в локальные лицензии и сэкономьте до 55% на [преимущество гибридного использования Azure](../azure-hybrid-benefit.md?tabs=azure-powershell). 
+-   Зафиксируйте резервирование для вычислительных ресурсов и сэкономьте до 33 процентов с помощью [преимущества зарезервированного экземпляра](../database/reserved-capacity-overview.md). Объедините это с преимуществом гибридного использования Azure, чтобы сэкономить до 82 процентов. 
 -   Сэкономьте до 55 процентов и цены на прейскуранты с помощью преимущества цены на разработку и [тестирование Azure](https://azure.microsoft.com/pricing/dev-test/) , которая предлагает скидки для текущих рабочих нагрузок разработки и тестирования.
 
 **Кто имеет право на преимущество зарезервированного экземпляра?**
 
-Чтобы иметь право на преимущество зарезервированного экземпляра, тип подписки должен быть соглашением Enterprise (номера предложения: MS-AZR-0017P или MS-AZR-0148P) или отдельное соглашение с оплатой по мере использования (номера предложений: MS-AZR-0003P или MS-AZR-0023P). Дополнительные сведения о резервировании см. в разделе [преимущество зарезервированного экземпляра](https://docs.microsoft.com/azure/sql-database/sql-database-reserved-capacity). 
+Чтобы иметь право на преимущество зарезервированного экземпляра, тип подписки должен быть соглашением Enterprise (номера предложения: MS-AZR-0017P или MS-AZR-0148P) или отдельное соглашение с оплатой по мере использования (номера предложений: MS-AZR-0003P или MS-AZR-0023P). Дополнительные сведения о резервировании см. в разделе [преимущество зарезервированного экземпляра](../database/reserved-capacity-overview.md). 
 
 **Можно ли отменять, переводить или отменять резервирование?**
 
-Вы можете отменять, переводить и отменять резервирование с определенными ограничениями. Дополнительные сведения см. в статье [Self-service exchanges and refunds for Azure Reservations](https://docs.microsoft.com/azure/cost-management-billing/reservations/exchange-and-refund-azure-reservations) (Самостоятельное выполнение обмена и возмещения средств для резервирований Azure).
+Вы можете отменять, переводить и отменять резервирование с определенными ограничениями. Дополнительные сведения см. в статье [Self-service exchanges and refunds for Azure Reservations](../../cost-management-billing/reservations/exchange-and-refund-azure-reservations.md) (Самостоятельное выполнение обмена и возмещения средств для резервирований Azure).
 
 ## <a name="billing-for-managed-instance-and-backup-storage"></a>Выставление счетов за Управляемый экземпляр и хранилище резервных копий
 
@@ -443,7 +443,7 @@ SQL Управляемый экземпляр предлагает [модель
 
 **Как можно отвести затраты на выставление счетов за управляемый экземпляр?**
 
-Это можно сделать с помощью [решения для управления затратами Azure](https://docs.microsoft.com/azure/cost-management-billing/). Перейдите к разделу **подписки** в [портал Azure](https://portal.azure.com) и выберите **анализ затрат**. 
+Это можно сделать с помощью [решения для управления затратами Azure](../../cost-management-billing/index.yml). Перейдите к разделу **подписки** в [портал Azure](https://portal.azure.com) и выберите **анализ затрат** . 
 
 Используйте параметр **накопленные затраты** , а затем выполните фильтрацию по **типу ресурса** `microsoft.sql/managedinstances` .
 
@@ -453,7 +453,7 @@ SQL Управляемый экземпляр предлагает [модель
 
 **Как можно отслеживать затраты на использование хранилища резервных копий?**
 
-Вы можете отслеживать затраты на хранилище резервных копий с помощью портал Azure. Инструкции см. в разделе [мониторинг затрат для автоматически создаваемых резервных копий](https://docs.microsoft.com/azure/azure-sql/database/automated-backups-overview?tabs=managed-instance#monitor-costs). 
+Вы можете отслеживать затраты на хранилище резервных копий с помощью портал Azure. Инструкции см. в разделе [мониторинг затрат для автоматически создаваемых резервных копий](../database/automated-backups-overview.md?tabs=managed-instance#monitor-costs). 
 
 **Как оптимизировать затраты на хранение резервных копий на управляемом экземпляре?**
 
@@ -490,7 +490,7 @@ SQL Управляемый экземпляр предлагает [модель
 | Максимальный срок действия пароля. | 42 дней |
 | Минимальный срок действия пароля. | 1 день |
 | Минимальная длина пароля | 10 символов |
-| Пароль должен соответствовать требованиям к сложности | Включен |
+| Пароль должен соответствовать требованиям к сложности | Активировано |
 
 **Можно ли отключить сложность и срок действия пароля в SQL Управляемый экземпляр на уровне входа?**
 
@@ -515,11 +515,11 @@ ALTER LOGIN <login_name> WITH CHECK_EXPIRATION = OFF;
 
 **Что такое изменение корневого ЦС для базы данных SQL Azure & Управляемый экземпляр SQL?**
 
-См. раздел [Смена сертификатов для базы данных SQL Azure & управляемый экземпляр SQL](https://docs.microsoft.com/azure/azure-sql/updates/ssl-root-certificate-expiring). 
+См. раздел [Смена сертификатов для базы данных SQL Azure & управляемый экземпляр SQL](../updates/ssl-root-certificate-expiring.md). 
 
 **Что такое событие планового обслуживания для Управляемый экземпляр SQL?**
 
-См. статью [планирование событий обслуживания Azure в управляемый экземпляр SQL](https://docs.microsoft.com/azure/azure-sql/database/planned-maintenance). 
+См. статью [планирование событий обслуживания Azure в управляемый экземпляр SQL](../database/planned-maintenance.md). 
 
 
 ## <a name="azure-feedback-and-support"></a>Отзывы и поддержка Azure
@@ -530,5 +530,4 @@ ALTER LOGIN <login_name> WITH CHECK_EXPIRATION = OFF;
 
 **Как можно создать запрос на поддержку Azure?**
 
-Сведения о том, как создать запрос на поддержку Azure, см. в статье [Создание запроса в службу поддержки Azure](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request).
-
+Сведения о том, как создать запрос на поддержку Azure, см. в статье [Создание запроса в службу поддержки Azure](../../azure-portal/supportability/how-to-create-azure-support-request.md).

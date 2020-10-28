@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/22/2019
 ms.author: allensu
-ms.openlocfilehash: dc7af555bcaf8654ecdb27d804cbef0c2cedb284
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: befd0658c79ac6b395b82b65b935a7bc4c735c2d
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81253821"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92778675"
 ---
 # <a name="azure-cdn-ddos-protection"></a>Защита Azure CDN от атак DDoS
 
@@ -27,7 +27,7 @@ ms.locfileid: "81253821"
 
 ## <a name="azure-cdn-from-microsoft"></a>Azure CDN от Майкрософт
 
-Azure CDN от Майкрософт защищены с помощью [Azure Basic от атак DDoS](https://docs.microsoft.com/azure/virtual-network/ddos-protection-overview). Она интегрирована в Azure CDN от платформы Майкрософт по умолчанию и не имеет дополнительных затрат. Полное масштабирование и емкость Azure CDN от глобально развернутой сети Майкрософт обеспечивают защиту от распространенных атак сетевого уровня благодаря постоянному мониторингу трафика и устранению рисков в режиме реального времени. Базовая защита от атак DDoS также защищает от наиболее распространенных, часто встречающихся переполнений запросов DNS уровня 7, а также атак уровня 3 и 4 объемные, предназначенных для конечных точек CDN. Эта служба также имеет проверенную запись о дорожках для защиты корпоративных и потребительских служб Майкрософт от крупномасштабных атак.
+Azure CDN от Майкрософт защищены с помощью [Azure Basic от атак DDoS](../virtual-network/ddos-protection-overview.md). Она интегрирована в Azure CDN от платформы Майкрософт по умолчанию и не имеет дополнительных затрат. Полное масштабирование и емкость Azure CDN от глобально развернутой сети Майкрософт обеспечивают защиту от распространенных атак сетевого уровня благодаря постоянному мониторингу трафика и устранению рисков в режиме реального времени. Базовая защита от атак DDoS также защищает от наиболее распространенных, часто встречающихся переполнений запросов DNS уровня 7, а также атак уровня 3 и 4 объемные, предназначенных для конечных точек CDN. Эта служба также имеет проверенную запись о дорожках для защиты корпоративных и потребительских служб Майкрософт от крупномасштабных атак.
 
 ## <a name="azure-cdn-from-verizon"></a>Azure CDN от Verizon
 
@@ -39,4 +39,4 @@ Azure CDN от Akamai защищаются собственной платфор
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об [Azure от атак DDoS](https://docs.microsoft.com/azure/virtual-network/ddos-protection-overview). 
+Дополнительные сведения об [Azure от атак DDoS](../virtual-network/ddos-protection-overview.md).

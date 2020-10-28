@@ -15,20 +15,20 @@ ms.topic: article
 ms.date: 08/22/2019
 ms.author: allensu
 ms.custom: ''
-ms.openlocfilehash: 13d4587a80cbbe66e18eb1bec8f3154221ac62b5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 43b4bcaee447d84efa088e84340ccfc717fe2777
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88192554"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92778321"
 ---
 # <a name="retrieve-the-current-pop-ip-list-for-azure-cdn"></a>Получение списка текущих IP-адресов POP для Azure CDN
 
 ## <a name="retrieve-the-current-verizon-pop-ip-list-for-azure-cdn"></a>Получение списка IP-адресов POP текущего Verizon для Azure CDN
 
-С помощью REST API можно получить набор IP-адресов для серверов точек подключения (POP) Verizon. Эти серверы POP отправляют запросы к серверам-источникам, которые связаны с конечными точками сети доставки содержимого (CDN) Azure в профиле Verizon (**Azure CDN уровня "Стандартный" от Verizon ** или **Azure CDN уровня "Премиум" от Verizon**). Обратите внимание, что этот набор IP-адресов отличается от IP-адресов, которые будет видеть клиент при выполнении запросов к точкам POP. 
+С помощью REST API можно получить набор IP-адресов для серверов точек подключения (POP) Verizon. Эти серверы POP отправляют запросы к серверам-источникам, которые связаны с конечными точками сети доставки содержимого (CDN) Azure в профиле Verizon ( **Azure CDN уровня "Стандартный" от Verizon** или **Azure CDN уровня "Премиум" от Verizon** ). Обратите внимание, что этот набор IP-адресов отличается от IP-адресов, которые будет видеть клиент при выполнении запросов к точкам POP. 
 
-Синтаксис операции REST API для получения списка точек POP см. в статье [Edge Nodes - List](https://docs.microsoft.com/rest/api/cdn/edgenodes/list) (Пограничные узлы — список).
+Синтаксис операции REST API для получения списка точек POP см. в статье [Edge Nodes - List](/rest/api/cdn/edgenodes/list) (Пограничные узлы — список).
 
 ## <a name="retrieve-the-current-microsoft-pop-ip-list-for-azure-cdn"></a>Получение списка IP-адресов Microsoft POP для Azure CDN
 
@@ -46,6 +46,6 @@ ms.locfileid: "88192554"
 
 В целях безопасности этот список IP-адресов можно использовать для принудительного выполнения запросов к серверу-источнику только с допустимой точки POP Verizon. Например, если кто-то узнает имя узла или IP-адрес сервера-источника конечной точки CDN, он сможет отправлять запросы напрямую на сервер-источник, обходя, таким образом, функции масштабирования и безопасности, предоставляемые Azure CDN. Чтобы избежать такой ситуации, IP-адреса в возвращаемом списке следует задать только как разрешенные на сервере-источнике. Чтобы иметь в распоряжении актуальный список точек POP, получайте его по меньшей мере один раз в день. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о REST API см. в статье [Azure CDN REST API](https://docs.microsoft.com/rest/api/cdn/) (REST API сети доставки содержимого Azure).
+Дополнительные сведения о REST API см. в статье [Azure CDN REST API](/rest/api/cdn/) (REST API сети доставки содержимого Azure).

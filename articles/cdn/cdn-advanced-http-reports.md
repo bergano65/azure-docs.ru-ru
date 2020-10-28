@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 01/23/2017
 ms.author: mazha
-ms.openlocfilehash: c06af1cc7f068070954669fc4ec269c9e679f278
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e2ef1367cbbb1fb71159c4520c3d1481904c1769
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84886061"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92779328"
 ---
 # <a name="analyze-usage-statistics-with-azure-cdn-advanced-http-reports"></a>Анализ статистики использования с помощью расширенных отчетов HTTP Azure CDN
 ## <a name="overview"></a>Обзор
@@ -33,7 +33,7 @@ ms.locfileid: "84886061"
     ![Кнопка управления в колонке профиля CDN](./media/cdn-advanced-http-reports/cdn-manage-btn.png)
    
     Откроется портал управления CDN.
-2. Наведите указатель на вкладку **Аналитика**, а затем выберите всплывающий элемент **Расширенные отчеты HTTP**.  Выберите **Большая HTTP-платформа**.
+2. Наведите указатель на вкладку **Аналитика** , а затем выберите всплывающий элемент **Расширенные отчеты HTTP** .  Выберите **Большая HTTP-платформа** .
    
     ![Портал управления CDN — меню дополнительных отчетов](./media/cdn-advanced-http-reports/cdn-advanced-reports.png)
    
@@ -199,9 +199,8 @@ ms.locfileid: "84886061"
 
 Непосредственно под диаграммой приводятся следующие сведения для 250 основных ресурсов: относительный путь (включая имя файла), количество запросов, завершившихся ошибкой «404 не найдено», количество запросов ресурса и процент запросов, завершившихся ошибкой «404 не найдено».
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также статью
 * [Обзор Azure CDN](cdn-overview.md)
 * [Статистика сети CDN Microsoft Azure в режиме реального времени](cdn-real-time-stats.md)
-* [Переопределение стандартного поведения через HTTP с помощью обработчика правил](cdn-rules-engine.md)
+* [Переопределение стандартного поведения через HTTP с помощью обработчика правил](./cdn-verizon-premium-rules-engine.md)
 * [Анализ производительности Edge](cdn-edge-performance.md)
-

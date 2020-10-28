@@ -12,12 +12,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein
 ms.date: 04/16/2019
-ms.openlocfilehash: 208793d3ba8c3463abe892b368beb41d4b79f214
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b7f2f060f32cf3bf92660a2e8b75a45b7ec76b82
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91617457"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92779770"
 ---
 # <a name="azure-sql-managed-instance-content-reference"></a>Справочник по содержимому Управляемый экземпляр Azure SQL
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -64,7 +64,7 @@ ms.locfileid: "91617457"
 
 - [Настройка вручную](../database/performance-guidance.md)
 - [Использование динамических административных представлений для мониторинга производительности](../database/monitoring-with-dmvs.md)
-- [Использование хранилища запросов для наблюдения за производительностью](https://docs.microsoft.com/sql/relational-databases/performance/best-practice-with-the-query-store#Insight)
+- [Использование хранилища запросов для наблюдения за производительностью](/sql/relational-databases/performance/best-practice-with-the-query-store#Insight)
 - [Устранение проблем с производительностью с помощью Intelligent Insights](../database/intelligent-insights-troubleshoot-performance.md)
 - [Использование журнала диагностики Intelligent Insights](../database/intelligent-insights-use-diagnostics-log.md)
 - [Мониторинг пространства In-Memory OLTP](../in-memory-oltp-monitor-space.md)
@@ -85,7 +85,7 @@ ms.locfileid: "91617457"
 
 ## <a name="develop-applications"></a>Разработка приложений
 
-- [Соединение](../database/connect-query-content-reference-guide.md#libraries)
+- [Подключение](../database/connect-query-content-reference-guide.md#libraries)
 - [Использование соединителя Spark](../../cosmos-db/spark-connector.md)
 - [Проверка подлинности приложения](../database/application-authentication-get-client-id-keys.md)
 - [Использование пакетной обработки для лучшей производительности](../performance-improve-use-batching.md)
@@ -108,6 +108,6 @@ ms.locfileid: "91617457"
 - [Индексатор видео SaaS](../database/saas-tenancy-video-index-wingtip-brk3120-20171011.md)
 - [Безопасность приложений SaaS](../database/saas-tenancy-elastic-tools-multi-tenant-row-level-security.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Начните с [развертывания управляемый экземпляр SQL](instance-create-quickstart.md).

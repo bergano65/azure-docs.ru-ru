@@ -187,7 +187,7 @@
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/'
     - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
-      href: 'https://docs.microsoft.com/answers/topics/azure-cdn.html'
+      href: /answers/topics/azure-cdn.html
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/cdn/'
     - name: Калькулятор цен

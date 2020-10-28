@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.topic: how-to
 ms.date: 01/09/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 297190a99f9231cd07cffe1364202a1acbe75323
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 780ce6bed230ebbcf2a603962afc711fb9ab7f11
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92490005"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92777934"
 ---
 # <a name="create-and-manage-private-link-for-azure-database-for-postgresql---single-server-using-cli"></a>Создание и управление частной связью для базы данных Azure для PostgreSQL — одиночный сервер с помощью интерфейса командной строки
 
@@ -40,7 +40,7 @@ az group create --name myResourceGroup --location westeurope
 ```
 
 ## <a name="create-a-virtual-network"></a>Создайте виртуальную сеть
-Создайте виртуальную сеть с помощью команды [az network vnet create](/cli/azure/network/vnet). В этом примере создается виртуальная сеть по умолчанию с именем *myVirtualNetwork* с подсетью *mySubnet*.
+Создайте виртуальную сеть с помощью команды [az network vnet create](/cli/azure/network/vnet). В этом примере создается виртуальная сеть по умолчанию с именем *myVirtualNetwork* с подсетью *mySubnet* .
 
 ```azurecli-interactive
 az network vnet create \
@@ -60,7 +60,7 @@ az network vnet subnet update \
  --disable-private-endpoint-network-policies true
 ```
 ## <a name="create-the-vm"></a>Создание виртуальной машины 
-Создайте виртуальную машину с помощью команды az vm create. При появлении запроса укажите пароль в качестве учетных данных для входа на виртуальную машину. В этом примере создается виртуальная машина с именем *myVM*. 
+Создайте виртуальную машину с помощью команды az vm create. При появлении запроса укажите пароль в качестве учетных данных для входа на виртуальную машину. В этом примере создается виртуальная машина с именем *myVM* . 
 ```azurecli-interactive
 az vm create \
   --resource-group myResourceGroup \
@@ -70,7 +70,7 @@ az vm create \
  Запишите общедоступный IP-адрес виртуальной машины. Этот адрес используется на следующем шаге, чтобы подключиться к виртуальной машине из Интернета.
 
 ## <a name="create-an-azure-database-for-postgresql---single-server"></a>Создание базы данных Azure для PostgreSQL — одиночный сервер 
-Создайте базу данных Azure для PostgreSQL с помощью команды AZ postgres Server Create. Помните, что имя сервера PostgreSQL должно быть уникальным в пределах Azure, поэтому замените значение заполнителя в квадратных скобках своим уникальным значением: 
+Создайте базу данных Azure для PostgreSQL с помощью команды AZ postgres Server Create. Помните, что имя сервера PostgreSQL должно быть уникальным в Azure, поэтому замените значение заполнителя собственными уникальными значениями, которые использовались ранее: 
 
 ```azurecli-interactive
 # Create a server in the resource group 
@@ -132,30 +132,30 @@ az network private-dns record-set a add-record --record-set-name myserver --zone
 
 Подключитесь к виртуальной машине *myVm* из Интернета, выполнив следующие действия.
 
-1. На портале в строке поиска введите *myVm*.
+1. На портале в строке поиска введите *myVm* .
 
-1. Нажмите кнопку **Подключиться**. После нажатия кнопки **Подключиться** откроется окно **Connect to virtual machine** (Подключение к виртуальной машине).
+1. Нажмите кнопку **Подключиться** . После нажатия кнопки **Подключиться** откроется окно **Connect to virtual machine** (Подключение к виртуальной машине).
 
-1. Щелкните **Скачать RDP-файл**. Azure создаст и скачает на ваш компьютер файл протокола удаленного рабочего стола (*RDP*).
+1. Щелкните **Скачать RDP-файл** . Azure создаст и скачает на ваш компьютер файл протокола удаленного рабочего стола ( *RDP* ).
 
-1. Откройте файл *downloaded.rdp*.
+1. Откройте файл *downloaded.rdp* .
 
-    1. При появлении запроса выберите **Подключиться**.
+    1. При появлении запроса выберите **Подключиться** .
 
     1. Введите имя пользователя и пароль, указанные при создании виртуальной машины.
 
         > [!NOTE]
         > Возможно, потребуется выбрать **More choices** > **Use a different account** (Дополнительные варианты > Использовать другую учетную запись), чтобы указать учетные данные, введенные при создании виртуальной машины.
 
-1. Щелкните **ОК**.
+1. Щелкните **ОК** .
 
-1. При входе в систему может появиться предупреждение о сертификате. В таком случае выберите **Да** или **Продолжить**.
+1. При входе в систему может появиться предупреждение о сертификате. В таком случае выберите **Да** или **Продолжить** .
 
 1. Когда появится рабочий стол виртуальной машины, сверните его, чтобы вернуться на локальный рабочий стол.  
 
 ## <a name="access-the-postgresql-server-privately-from-the-vm"></a>Доступ к серверу PostgreSQL в частном порядке с виртуальной машины
 
-1. Откройте PowerShell на удаленном рабочем столе *myVm*.
+1. Откройте PowerShell на удаленном рабочем столе *myVm* .
 
 2. Введите  `nslookup mydemopostgresserver.privatelink.postgres.database.azure.com`. 
 
@@ -170,15 +170,15 @@ az network private-dns record-set a add-record --record-set-name myserver --zone
 
 3. Проверьте подключение к частной ссылке для сервера PostgreSQL, используя любой доступный клиент. В приведенном ниже примере я использовал [Azure Data Studio](/sql/azure-data-studio/download?view=sql-server-ver15) для выполнения этой операции.
 
-4. В окне **новое подключение**введите или выберите следующие сведения:
+4. В окне **новое подключение** введите или выберите следующие сведения:
 
     | Параметр | Значение |
     | ------- | ----- |
-    | Тип сервера| Выберите **PostgreSQL**.|
+    | Тип сервера| Выберите **PostgreSQL** .|
     | Имя сервера| Выбор *mydemopostgresserver.privatelink.postgres.Database.Azure.com* |
     | Имя пользователя | Введите имя пользователя, username@servername которое предоставляется во время создания сервера PostgreSQL. |
     |Пароль |Введите пароль, указанный при создании сервера PostgreSQL. |
-    |SSL|Выберите **обязательный**.|
+    |SSL|Выберите **обязательный** .|
     ||
 
 5. Нажмите кнопку "Подключиться".
