@@ -7,13 +7,13 @@ ms.date: 09/03/2020
 ms.service: key-vault
 ms.subservice: keys
 ms.topic: quickstart
-ms.custom: devx-track-python
-ms.openlocfilehash: 2eeb68ca5b0b6be0970a1adb071a7662399bc879
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.custom: devx-track-python, devx-track-azurecli
+ms.openlocfilehash: d3d5fd34ee6c1d73429af63693094acdaed6c9d2
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92042564"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92784615"
 ---
 # <a name="quickstart-azure-key-vault-keys-client-library-for-python"></a>Краткое руководство. Использование клиентской библиотеки ключей Azure Key Vault для Python
 
@@ -24,14 +24,14 @@ ms.locfileid: "92042564"
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- [Python 2.7+ или 3.5.3+](https://docs.microsoft.com/azure/developer/python/configure-local-development-environment)
+- [Python 2.7+ или 3.5.3+](/azure/developer/python/configure-local-development-environment)
 - [Azure CLI](/cli/azure/install-azure-cli)
 
 В этом кратком руководстве предполагается, что вы используете [Azure CLI](/cli/azure/install-azure-cli) в окне терминала Linux.
 
 ## <a name="set-up-your-local-environment"></a>Настройка локальной среды
 
-В этом кратком руководстве используется библиотека удостоверений Azure и Azure CLI для проверки подлинности пользователя в службах Azure. Разработчики также могут использовать Visual Studio или Visual Studio Code для проверки подлинности своих вызовов. Дополнительные сведения см. в статье [Проверка подлинности клиента с помощью клиентской библиотеки удостоверений Azure](https://docs.microsoft.com/java/api/overview/azure/identity-readme).
+В этом кратком руководстве используется библиотека удостоверений Azure и Azure CLI для проверки подлинности пользователя в службах Azure. Разработчики также могут использовать Visual Studio или Visual Studio Code для проверки подлинности своих вызовов. Дополнительные сведения см. в статье [Проверка подлинности клиента с помощью клиентской библиотеки удостоверений Azure](/java/api/overview/azure/identity-readme).
 
 ### <a name="sign-in-to-azure"></a>Вход в Azure
 
@@ -98,7 +98,7 @@ export KEY_VAULT_NAME=<your-key-vault-name>
 
 Клиентская библиотека ключей Azure Key Vault для Python позволяет управлять криптографическими ключами. В приведенном ниже примере кода показано, как создать клиент, а также как задать, извлечь и удалить ключ.
 
-Создайте файл с именем *kv_keys.py*, который содержит этот код.
+Создайте файл с именем *kv_keys.py* , который содержит этот код.
 
 ```python
 import os
@@ -134,7 +134,7 @@ print(" done.")
 
 ## <a name="run-the-code"></a>Выполнение кода
 
-Убедитесь, что код из предыдущего раздела находится в файле с именем *kv_keys.py*. Затем выполните следующую команду, чтобы запустить код:
+Убедитесь, что код из предыдущего раздела находится в файле с именем *kv_keys.py* . Затем выполните следующую команду, чтобы запустить код:
 
 ```terminal
 python kv_keys.py

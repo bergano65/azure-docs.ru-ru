@@ -8,13 +8,13 @@ ms.service: virtual-machine-scale-sets
 ms.subservice: linux
 ms.date: 03/27/2020
 ms.reviewer: mimckitt
-ms.custom: mimckitt, subject-armqs
-ms.openlocfilehash: f6ab030b7f807a884b5d05487724fc9c66a6de87
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.custom: mimckitt, subject-armqs, devx-track-azurecli
+ms.openlocfilehash: d040215968b0ebb433edba03e4839ffe7add0e5c
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88648638"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92745868"
 ---
 # <a name="quickstart-create-a-linux-virtual-machine-scale-set-with-an-arm-template"></a>Краткое руководство. Создание масштабируемого набора виртуальных машин Linux с помощью шаблона ARM
 
@@ -24,7 +24,7 @@ ms.locfileid: "88648638"
 
 Шаблоны ARM позволяют развертывать группы связанных ресурсов. С помощью одного шаблона можно создать масштабируемый набор виртуальных машин, установить приложения и настроить правила автоматического масштабирования. Вы можете повторно использовать этот шаблон, применив переменные и параметры, чтобы обновить существующие или создать дополнительные масштабируемые наборы. Шаблоны можно развернуть с помощью портала Azure, Azure CLI или Azure PowerShell либо же на основе конвейеров непрерывной интеграции и непрерывной поставки (CI/CD).
 
-Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure** . Шаблон откроется на портале Azure.
 
 [![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-vmss-bottle-autoscale%2Fazuredeploy.json)
 
@@ -77,11 +77,11 @@ ms.locfileid: "88648638"
 
 В шаблоне используется настраиваемое расширение скриптов для установки [Bottle](https://bottlepy.org/docs/dev/), веб-платформы Python и простого HTTP-сервера.
 
-Два скрипта определены в файлах **fileUris** - *installserver.sh* и *workserver.py*. Эти файлы скачиваются из GitHub, затем *commandToExecute* выполняет `bash installserver.sh` для установки и настройки приложения.
+Два скрипта определены в файлах **fileUris** - *installserver.sh* и *workserver.py* . Эти файлы скачиваются из GitHub, затем *commandToExecute* выполняет `bash installserver.sh` для установки и настройки приложения.
 
 ## <a name="deploy-the-template"></a>Развертывание шаблона
 
-Вы можете развернуть шаблон, нажав следующую кнопку **Развертывание в Azure**. После ее нажатия откроется портал Azure, загрузится весь шаблон и появится диалог для ввода параметров, таких как имя масштабируемого набора, число экземпляров и учетные данные администратора.
+Вы можете развернуть шаблон, нажав следующую кнопку **Развертывание в Azure** . После ее нажатия откроется портал Azure, загрузится весь шаблон и появится диалог для ввода параметров, таких как имя масштабируемого набора, число экземпляров и учетные данные администратора.
 
 [![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-vmss-bottle-autoscale%2Fazuredeploy.json)
 
@@ -109,7 +109,7 @@ az network public-ip list \
     --query [*].ipAddress -o tsv
 ```
 
-Введите в браузер общедоступный IP-адрес своей подсистемы балансировки нагрузки в формате *http:\//publicIpAddress:9000/do_work*. Подсистема балансировки нагрузки передаст запрос на один из экземпляров виртуальной машины, как показано в следующем примере:
+Введите в браузер общедоступный IP-адрес своей подсистемы балансировки нагрузки в формате *http:\//publicIpAddress:9000/do_work* . Подсистема балансировки нагрузки передаст запрос на один из экземпляров виртуальной машины, как показано в следующем примере:
 
 ![Веб-страница NGINX по умолчанию](media/virtual-machine-scale-sets-create-template/running-python-app.png)
 

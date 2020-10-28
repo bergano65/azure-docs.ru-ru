@@ -7,13 +7,13 @@ ms.date: 07/10/2020
 ms.topic: quickstart
 ms.service: iot-pnp
 services: iot-pnp
-ms.custom: mvc, devx-track-js
-ms.openlocfilehash: e9ab4f2639569537b7c5967235a926c567aca0d5
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.custom: mvc, devx-track-js, devx-track-azurecli
+ms.openlocfilehash: 2342577fdd7e42f4b21d1f47348c39e3ed4a46e3
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91576138"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92747237"
 ---
 # <a name="quickstart-connect-a-sample-iot-plug-and-play-device-application-to-iot-hub-nodejs"></a>Краткое руководство. Подключение примера приложения устройства IoT Plug and Play к Центру Интернета вещей (Node.js)
 
@@ -47,7 +47,7 @@ git clone https://github.com/Azure/azure-iot-sdk-node
 
 Используйте пакет SDK для устройств, чтобы выполнить сборку прилагаемого примера кода. Создаваемое приложение имитирует устройство, которое подключается к Центру Интернета вещей. Оно отправляет данные телеметрии и свойства, а также получает команды.
 
-1. В окне локального терминала перейдите в папку клонированного репозитория, а затем в папку */azure-iot-sdk-node/device/samples/pnp*. Затем выполните следующую команду, чтобы установить обязательные библиотеки:
+1. В окне локального терминала перейдите в папку клонированного репозитория, а затем в папку */azure-iot-sdk-node/device/samples/pnp* . Затем выполните следующую команду, чтобы установить обязательные библиотеки:
 
     ```cmd/sh
     npm install
@@ -63,7 +63,7 @@ git clone https://github.com/Azure/azure-iot-sdk-node
 
 В этом примере используется простой терморегулятор IoT Plug and Play. Модель, которую реализует этот пример, не использует [компоненты](concepts-components.md) IoT Plug and Play. [Файл модели DTDL для терморегулятора](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/samples/Thermostat.json) определяет данные телеметрии, свойства и команды, выполняемые устройством.
 
-Откройте файл _simple_thermostat.js_. Из этого файла вы узнаете, как выполнять такие действия:
+Откройте файл _simple_thermostat.js_ . Из этого файла вы узнаете, как выполнять такие действия:
 
 1. импортирование необходимых интерфейсов;
 1. создание обработчика изменения свойства и команд;
@@ -73,7 +73,7 @@ git clone https://github.com/Azure/azure-iot-sdk-node
 В основной функции вы можете увидеть, как все это происходит вместе:
 
 1. Создайте устройство из строки подключения или подготовьте его с помощью DPS.
-1. Используйте параметр **modelID**, чтобы указать модель устройства IoT Plug and Play.
+1. Используйте параметр **modelID** , чтобы указать модель устройства IoT Plug and Play.
 1. Включите обработчик команд.
 1. Отправьте телеметрию с устройства в свой концентратор.
 1. Получите двойников устройств и обновите сообщаемые свойства.

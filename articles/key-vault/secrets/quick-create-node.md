@@ -7,19 +7,19 @@ ms.date: 10/20/2019
 ms.service: key-vault
 ms.subservice: secrets
 ms.topic: quickstart
-ms.custom: devx-track-js
-ms.openlocfilehash: 045589d3b1f0e376eaf854562d271a4483702997
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.custom: devx-track-js, devx-track-azurecli
+ms.openlocfilehash: 35713a2e854cf65054d162ce0191bf2dfde4e90b
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92047902"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92786145"
 ---
 # <a name="quickstart-azure-key-vault-client-library-for-javascript-v4"></a>Краткое руководство. Клиентская библиотека Azure Key Vault для JavaScript (версия 4)
 
 Начало работы с клиентской библиотекой секретов Azure Key Vault для JavaScript. Чтобы установить пакет и испробовать пример кода для выполнения базовых задач, выполните описанные ниже шаги.
 
-[Справочная документация по API](https://docs.microsoft.com/javascript/api/overview/azure/key-vault-index) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/keyvault) | [Пакет (npm)](https://www.npmjs.com/package/@azure/keyvault-secrets).
+[Справочная документация по API](/javascript/api/overview/azure/key-vault-index) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/keyvault) | [Пакет (npm)](https://www.npmjs.com/package/@azure/keyvault-secrets).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -30,7 +30,7 @@ ms.locfileid: "92047902"
 В этом кратком руководстве предполагается, что вы используете [Azure CLI](/cli/azure/install-azure-cli) в окне терминала Linux.
 
 ## <a name="setting-up"></a>Настройка
-В этом кратком руководстве используется библиотека удостоверений Azure и Azure CLI для проверки подлинности пользователя в службах Azure. Разработчики также могут использовать Visual Studio или Visual Studio Code для проверки подлинности своих вызовов. Дополнительные сведения см. в статье [Проверка подлинности клиента с помощью клиентской библиотеки удостоверений Azure](https://docs.microsoft.com/javascript/api/overview/azure/identity-readme).
+В этом кратком руководстве используется библиотека удостоверений Azure и Azure CLI для проверки подлинности пользователя в службах Azure. Разработчики также могут использовать Visual Studio или Visual Studio Code для проверки подлинности своих вызовов. Дополнительные сведения см. в статье [Проверка подлинности клиента с помощью клиентской библиотеки удостоверений Azure](/javascript/api/overview/azure/identity-readme).
 
 ### <a name="sign-in-to-azure"></a>Вход в Azure
 

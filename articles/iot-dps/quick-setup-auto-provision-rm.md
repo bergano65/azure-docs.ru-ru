@@ -7,13 +7,13 @@ ms.date: 11/08/2019
 ms.topic: quickstart
 ms.service: iot-dps
 services: iot-dps
-ms.custom: mvc
-ms.openlocfilehash: e1ca3d7270fb0858bb2512e5b9e285eb8d4555c6
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.custom: mvc, devx-track-azurecli
+ms.openlocfilehash: 91e4e7de73d820c345b2973896d07d3479e49f9e
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91297153"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92748092"
 ---
 # <a name="quickstart-set-up-the-iot-hub-device-provisioning-service-with-an-azure-resource-manager-template"></a>Краткое руководство. Настройка службы "Подготовка устройств к добавлению в Центр Интернета вещей" c помощью шаблона Azure Resource Manager
 
@@ -113,7 +113,7 @@ ms.locfileid: "91297153"
 
    ```
 
-4. Чтобы создать Центр Интернета вещей, добавьте следующие строки в коллекцию **resources**. JSON определяет минимальные свойства, необходимые для создания центра Интернета вещей. Значения **name** и **location** будут передаваться в качестве параметров из другого файла. Дополнительные сведения о свойствах, которые можно указать для центра Интернета вещей в шаблоне, см. в статье [Microsoft.Devices IotHubs template reference](https://docs.microsoft.com/azure/templates/microsoft.devices/iothubs) (Справочник по шаблону Microsoft.Devices IotHubs).
+4. Чтобы создать Центр Интернета вещей, добавьте следующие строки в коллекцию **resources** . JSON определяет минимальные свойства, необходимые для создания центра Интернета вещей. Значения **name** и **location** будут передаваться в качестве параметров из другого файла. Дополнительные сведения о свойствах, которые можно указать для центра Интернета вещей в шаблоне, см. в статье [Microsoft.Devices IotHubs template reference](https://docs.microsoft.com/azure/templates/microsoft.devices/iothubs) (Справочник по шаблону Microsoft.Devices IotHubs).
 
    ```json
         {
@@ -133,9 +133,9 @@ ms.locfileid: "91297153"
 
    ``` 
 
-5. Чтобы создать службу подготовки, добавьте следующие строки после указания Центра Интернета вещей в коллекции **resources**. Свойства службы подготовки **name** и **location** будут передаваться в качестве параметров. В коллекции **iotHubs** определяются центры Интернета вещей, которые будут связаны со службой подготовки. Как минимум необходимо указать свойства **connectionString** и **location** для всех связанных Центров Интернета вещей. Кроме того, можно задать свойства **allocWeight** и **applyAllocationPolicy** в каждом Центре Интернета вещей, а также свойства **allocPolicy** и **authorizationPolicies** в самой службе подготовки. Дополнительные сведения см. в статье [Microsoft.Devices/IotHubs template reference](https://docs.microsoft.com/azure/templates/microsoft.devices/provisioningservices) (Справка по шаблону Microsoft.Devices/provisioningServices).
+5. Чтобы создать службу подготовки, добавьте следующие строки после указания Центра Интернета вещей в коллекции **resources** . Свойства службы подготовки **name** и **location** будут передаваться в качестве параметров. В коллекции **iotHubs** определяются центры Интернета вещей, которые будут связаны со службой подготовки. Как минимум необходимо указать свойства **connectionString** и **location** для всех связанных Центров Интернета вещей. Кроме того, можно задать свойства **allocWeight** и **applyAllocationPolicy** в каждом Центре Интернета вещей, а также свойства **allocPolicy** и **authorizationPolicies** в самой службе подготовки. Дополнительные сведения см. в статье [Microsoft.Devices/IotHubs template reference](https://docs.microsoft.com/azure/templates/microsoft.devices/provisioningservices) (Справка по шаблону Microsoft.Devices/provisioningServices).
 
-   Свойство **dependsOn** используется, чтобы убедиться, что диспетчер ресурсов создает Центр Интернета вещей до службы подготовки. Для шаблона требуется указать строку подключения к Центру Интернета вещей, чтобы задать его связь со службой подготовки устройств, а также чтобы сначала создавались центр и его ключи. Шаблон использует такие функции, как **concat** и **listKeys**, чтобы создать строку подключения из параметризованных переменных. Дополнительные сведения см. в статье [Функции шаблона Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-template-functions).
+   Свойство **dependsOn** используется, чтобы убедиться, что диспетчер ресурсов создает Центр Интернета вещей до службы подготовки. Для шаблона требуется указать строку подключения к Центру Интернета вещей, чтобы задать его связь со службой подготовки устройств, а также чтобы сначала создавались центр и его ключи. Шаблон использует такие функции, как **concat** и **listKeys** , чтобы создать строку подключения из параметризованных переменных. Дополнительные сведения см. в статье [Функции шаблона Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-template-functions).
 
    ```json
         {
@@ -306,7 +306,7 @@ ms.locfileid: "91297153"
      az group deployment create -g {your resource group name} --template-file template.json --parameters @parameters.json
     ```
 
-   Выполнение этой операции займет несколько минут. После этого найдите свойство **provisioningState**, успешно завершившееся в выходных данных. 
+   Выполнение этой операции займет несколько минут. После этого найдите свойство **provisioningState** , успешно завершившееся в выходных данных. 
 
    ![Выходные данные подготовки](./media/quick-setup-auto-provision-rm/output.png) 
 

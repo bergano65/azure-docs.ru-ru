@@ -11,12 +11,12 @@ author: mumian
 ms.author: jgao
 ms.reviewer: sstein
 ms.date: 06/24/2020
-ms.openlocfilehash: d53f854bc3513a97398a92ee16c34a0a74650687
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 6e56d6558b3a80707a9f845740980f8ebbc87e35
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91614059"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92791500"
 ---
 # <a name="quickstart-create-a-single-database-in-azure-sql-database-using-an-arm-template"></a>Краткое руководство. Создание отдельной базы данных в Базе данных SQL Azure с помощью шаблона ARM
 
@@ -24,7 +24,7 @@ ms.locfileid: "91614059"
 
 [!INCLUDE [About Azure Resource Manager](../../../includes/resource-manager-quickstart-introduction.md)]
 
-Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure** . Шаблон откроется на портале Azure.
 
 [![Развертывание в Azure](../../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-sql-database%2Fazuredeploy.json)
 
@@ -85,7 +85,7 @@ Remove-AzResourceGroup -Name $resourceGroupName
 - Создайте правило брандмауэра на уровне сервера, чтобы подключиться к отдельной базе данных с помощью локальных или удаленных средств. Подробные сведения см. в разделе [Создание правила брандмауэра на уровне сервера](firewall-create-server-level-portal-quickstart.md).
 - Создав правило брандмауэра на уровне сервера, вы сможете [устанавливать подключение и выполнять запросы к базе данных](connect-query-content-reference-guide.md) с помощью разных средств и языков.
   - [подключиться и создать запрос с помощью SQL Server Management Studio](connect-query-ssms.md);
-  - [подключиться и создать запрос с помощью Azure Data Studio](https://docs.microsoft.com/sql/azure-data-studio/quickstart-sql-database?toc=/azure/sql-database/toc.json).
+  - [подключиться и создать запрос с помощью Azure Data Studio](/sql/azure-data-studio/quickstart-sql-database?toc=%252fazure%252fsql-database%252ftoc.json).
 - Чтобы создать отдельную базу данных с помощью Azure CLI, ознакомьтесь с [этими примерами Azure CLI](az-cli-script-samples-content-guide.md).
 - Чтобы создать отдельную базу данных с помощью Azure PowerShell, ознакомьтесь со статьей [Примеры Azure PowerShell для базы данных SQL Azure](powershell-script-content-guide.md).
 - Сведения о создании шаблонов ARM см. в статье [Руководство. Создание и развертывание шаблона ARM](../../azure-resource-manager/templates/template-tutorial-create-first-template.md).

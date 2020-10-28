@@ -12,12 +12,12 @@ manager: celestedg
 ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cfce0031d912b1611b6810310e56241857821579
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: d10eb3334154f4915aa0bddd488ddc78bde06805
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87926728"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92897268"
 ---
 # <a name="what-is-guest-user-access-in-azure-active-directory-b2b"></a>Что представляет собой гостевой доступ в службе совместной работы Azure Active Directory B2B?
 
@@ -74,8 +74,8 @@ ms.locfileid: "87926728"
 
 Вы можете регистрировать внешних партнеров так, как требуется вашей организации.
 
-- Используйте функцию [управления правами Azure AD](https://docs.microsoft.com/azure/active-directory/governance/entitlement-management-overview), чтобы настроить политики для [управления доступом внешних пользователей](https://docs.microsoft.com/azure/active-directory/governance/entitlement-management-external-users#how-access-works-for-external-users).
-- Воспользуйтесь [интерфейсами API приглашения службы совместной работы B2B](https://developer.microsoft.com/graph/docs/api-reference/v1.0/resources/invitation), чтобы настроить процесс подключения.
+- Используйте функцию [управления правами Azure AD](../governance/entitlement-management-overview.md), чтобы настроить политики для [управления доступом внешних пользователей](../governance/entitlement-management-external-users.md#how-access-works-for-external-users).
+- Воспользуйтесь [интерфейсами API приглашения службы совместной работы B2B](/graph/api/resources/invitation), чтобы настроить процесс подключения.
 
 ## <a name="integrate-with-identity-providers"></a>Интеграция с поставщиками удостоверений
 
@@ -95,6 +95,6 @@ Azure AD поддерживает внешние поставщики удост
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Руководство по лицензированию службы совместной работы Azure AD B2B](licensing-guidance.md)
+- [Цены на внешние удостоверения](external-identities-pricing.md)
 - [Гостевые пользователи службы совместной работы B2B на портале Azure](add-users-administrator.md)
 - [Описание процесса активации приглашения](redemption-experience.md)

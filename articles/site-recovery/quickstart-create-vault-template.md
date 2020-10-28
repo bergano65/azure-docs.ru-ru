@@ -2,14 +2,14 @@
 title: Краткое руководство. Создание хранилища Служб восстановления Azure с помощью шаблона Azure Resource Manager.
 description: Из этого краткого руководства вы узнаете, как с помощью шаблона Azure Resource Manager (шаблона ARM) создать хранилище Служб восстановления Azure.
 ms.topic: quickstart
-ms.custom: subject-armqs
+ms.custom: subject-armqs, devx-track-azurecli
 ms.date: 04/29/2020
-ms.openlocfilehash: 62bfe71c397367282c696eecdf55ab9c900c69a1
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: c1c6d625c67130a4e3608cee6134b8c81404c01b
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88684122"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92745880"
 ---
 # <a name="quickstart-create-a-recovery-services-vault-using-an-arm-template"></a>Краткое руководство. Создание хранилища Служб восстановления с помощью шаблона ARM
 
@@ -17,7 +17,7 @@ ms.locfileid: "88684122"
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
-Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure** . Шаблон откроется на портале Azure.
 
 [![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-recovery-services-vault-create%2Fazuredeploy.json)
 
@@ -42,9 +42,9 @@ ms.locfileid: "88684122"
 
 ## <a name="deploy-the-template"></a>Развертывание шаблона
 
-Чтобы развернуть шаблон, укажите значения для параметров **Подписка**, **Группа ресурсов** и **Имя хранилища**.
+Чтобы развернуть шаблон, укажите значения для параметров **Подписка** , **Группа ресурсов** и **Имя хранилища** .
 
-1. Чтобы войти в Azure и открыть шаблон, выберите **Развертывание в Azure**.
+1. Чтобы войти в Azure и открыть шаблон, выберите **Развертывание в Azure** .
 
    [![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-recovery-services-vault-create%2Fazuredeploy.json)
 
@@ -52,16 +52,16 @@ ms.locfileid: "88684122"
 
    :::image type="content" source="media/quickstart-create-vault-template/create-vault-template.png" alt-text="Шаблон для создания хранилища Служб восстановления.":::
 
-   - **Подписка**. Выберите подписку Azure.
-   - **Группа ресурсов.** Выберите существующую группу или щелкните **Создать новую**, чтобы добавить группу.
+   - **Подписка** . Выберите подписку Azure.
+   - **Группа ресурсов.** Выберите существующую группу или щелкните **Создать новую** , чтобы добавить группу.
    - **Расположение.** По умолчанию используется расположение группы ресурсов. Этот параметр становится недоступным после выбора группы ресурсов.
    - **Имя хранилища.** Укажите имя хранилища.
-   - **Изменить тип хранилища.** Значение по умолчанию — **false**. Выберите значение **true**, только если необходимо изменить тип хранения в хранилище.
-   - **Тип хранения в хранилище.** Значение по умолчанию — **GloballyRedundant**. Если для параметра изменения типа хранилища установлено значение **true**, выберите **LocallyRedundant**.
-   - **Расположение.** Функция `[resourceGroup().location]` по умолчанию соответствует расположению группы ресурсов. Чтобы изменить расположение, введите значение, например **westus**.
-   - Установите флажок **Я принимаю указанные выше условия**.
+   - **Изменить тип хранилища.** Значение по умолчанию — **false** . Выберите значение **true** , только если необходимо изменить тип хранения в хранилище.
+   - **Тип хранения в хранилище.** Значение по умолчанию — **GloballyRedundant** . Если для параметра изменения типа хранилища установлено значение **true** , выберите **LocallyRedundant** .
+   - **Расположение.** Функция `[resourceGroup().location]` по умолчанию соответствует расположению группы ресурсов. Чтобы изменить расположение, введите значение, например **westus** .
+   - Установите флажок **Я принимаю указанные выше условия** .
 
-1. Чтобы начать развертывание хранилища, нажмите кнопку **Приобрести**. После успешного развертывания отобразится уведомление.
+1. Чтобы начать развертывание хранилища, нажмите кнопку **Приобрести** . После успешного развертывания отобразится уведомление.
 
    :::image type="content" source="media/quickstart-create-vault-template/deployment-success.png" alt-text="Шаблон для создания хранилища Служб восстановления.":::
 

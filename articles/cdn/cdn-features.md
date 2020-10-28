@@ -9,12 +9,12 @@ ms.topic: overview
 ms.date: 11/15/2019
 ms.author: allensu
 ms.custom: mvc
-ms.openlocfilehash: c8d8b01e8c5f4ea3054e639ecc9dd8b14bbf048b
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: f1ea8d16a441230323b4f0213229d223a0b035bc
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92148738"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92778644"
 ---
 # <a name="what-are-the-comparisons-between-azure-cdn-product-features"></a>Сравнение функций продуктов Azure CDN
 
@@ -29,22 +29,22 @@ ms.locfileid: "92148738"
 
 | **Возможности для повышения производительности и оптимизации** | **Уровень "Стандартный" от корпорации Майкрософт** | **Akamai уровня "Стандартный"** | **Verizon уровня "Стандартный"** | **Verizon уровня "Премиум"** |
 | --- | --- | --- | --- | --- |
-| [Динамическое ускорение сайтов](https://docs.microsoft.com/azure/cdn/cdn-dynamic-site-acceleration)  | Доступны в [Azure Front Door Service](https://docs.microsoft.com/azure/frontdoor/front-door-overview) | **&#x2713;**  | **&#x2713;** | **&#x2713;** |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Динамическое ускорение сайтов — адаптивное сжатие изображений](https://docs.microsoft.com/azure/cdn/cdn-dynamic-site-acceleration#adaptive-image-compression-azure-cdn-from-akamai-only)  |  | **&#x2713;**  |  |  |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Динамическое ускорение сайтов — предварительная выборка объектов](https://docs.microsoft.com/azure/cdn/cdn-dynamic-site-acceleration#object-prefetch-azure-cdn-from-akamai-only)  |  | **&#x2713;**  |  |  |
-| [Оптимизация общей веб-доставки](https://docs.microsoft.com/azure/cdn/cdn-optimization-overview#general-web-delivery)  | **&#x2713;** | **&#x2713;** . Этот тип оптимизации используется для файлов со средним размером не более 10 МБ.  | **&#x2713;** |  **&#x2713;** |
-| [Оптимизация потоковой передачи видео](https://docs.microsoft.com/azure/cdn/cdn-media-streaming-optimization)  | с помощью общей веб-доставки | **&#x2713;**  | с помощью общей веб-доставки |  с помощью общей веб-доставки |
-| [Оптимизация больших файлов](https://docs.microsoft.com/azure/cdn/cdn-large-file-optimization)  | с помощью общей веб-доставки | **&#x2713;** . Этот тип оптимизации используется для файлов размером более 10 МБ.   | с помощью общей веб-доставки |  с помощью общей веб-доставки |
+| [Динамическое ускорение сайтов](./cdn-dynamic-site-acceleration.md)  | Доступны в [Azure Front Door Service](../frontdoor/front-door-overview.md) | **&#x2713;**  | **&#x2713;** | **&#x2713;** |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Динамическое ускорение сайтов — адаптивное сжатие изображений](./cdn-dynamic-site-acceleration.md#adaptive-image-compression-azure-cdn-from-akamai-only)  |  | **&#x2713;**  |  |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Динамическое ускорение сайтов — предварительная выборка объектов](./cdn-dynamic-site-acceleration.md#object-prefetch-azure-cdn-from-akamai-only)  |  | **&#x2713;**  |  |  |
+| [Оптимизация общей веб-доставки](./cdn-optimization-overview.md#general-web-delivery)  | **&#x2713;** | **&#x2713;** . Этот тип оптимизации используется для файлов со средним размером не более 10 МБ.  | **&#x2713;** |  **&#x2713;** |
+| [Оптимизация потоковой передачи видео](./cdn-media-streaming-optimization.md)  | с помощью общей веб-доставки | **&#x2713;**  | с помощью общей веб-доставки |  с помощью общей веб-доставки |
+| [Оптимизация больших файлов](./cdn-large-file-optimization.md)  | с помощью общей веб-доставки | **&#x2713;** . Этот тип оптимизации используется для файлов размером более 10 МБ.   | с помощью общей веб-доставки |  с помощью общей веб-доставки |
 | Изменение типа оптимизации | |**&#x2713;** | | |
-| Порт источника |Все TCP-порты |[Разрешенные порты источника](https://docs.microsoft.com/previous-versions/azure/mt757337(v%3Dazure.100)#allowed-origin-ports) |Все TCP-порты |Все TCP-порты |
-| [Глобальная балансировка нагрузки сервера (GSLB)](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-load-balancing-azure)  | **&#x2713;** |**&#x2713;** |**&#x2713;** |**&#x2713;** |
+| Порт источника |Все TCP-порты |[Разрешенные порты источника](/previous-versions/azure/mt757337(v%3Dazure.100)#allowed-origin-ports) |Все TCP-порты |Все TCP-порты |
+| [Глобальная балансировка нагрузки сервера (GSLB)](../traffic-manager/traffic-manager-load-balancing-azure.md)  | **&#x2713;** |**&#x2713;** |**&#x2713;** |**&#x2713;** |
 | [Быстрая очистка.](cdn-purge-endpoint.md)  | **&#x2713;** |**&#x2713;** . "Очистить все" и "Очистка по подстановочным знакам" сейчас не поддерживается в Azure CDN от Akamai. |**&#x2713;** |**&#x2713;** |
 | [Предварительная загрузка ресурса.](cdn-preload-endpoint.md)  |  | |**&#x2713;** |**&#x2713;** |
 | Параметры кэша и заголовка (с использованием [правил кэширования](cdn-caching-rules.md))  |**✓** с помощью [стандартного обработчика правил](cdn-standard-rules-engine.md)  |**&#x2713;** |**&#x2713;** | |
-| Настраиваемый модуль доставки контента на основе правил |**✓** с помощью [стандартного обработчика правил](cdn-standard-rules-engine.md)  | | |**✓** с помощью [обработчика правил](cdn-rules-engine.md) |
-| Параметры кэша и заголовка  |**✓** с помощью [стандартного обработчика правил](cdn-standard-rules-engine.md) | | |**✓** с помощью [обработчика правил категории "Премиум"](cdn-rules-engine.md) |
-| Перенаправление и перезапись URL-адреса |**✓** с помощью [стандартного обработчика правил](cdn-standard-rules-engine.md)  | | |**✓** с помощью [обработчика правил категории "Премиум"](cdn-rules-engine.md) |
-| Правила для мобильных устройств  |**✓** с помощью [стандартного обработчика правил](cdn-standard-rules-engine.md) | | |**✓** с помощью [обработчика правил категории "Премиум"](cdn-rules-engine.md) |
+| Настраиваемый модуль доставки контента на основе правил |**✓** с помощью [стандартного обработчика правил](cdn-standard-rules-engine.md)  | | |**✓** с помощью [обработчика правил](./cdn-verizon-premium-rules-engine.md) |
+| Параметры кэша и заголовка  |**✓** с помощью [стандартного обработчика правил](cdn-standard-rules-engine.md) | | |**✓** с помощью [обработчика правил категории "Премиум"](./cdn-verizon-premium-rules-engine.md) |
+| Перенаправление и перезапись URL-адреса |**✓** с помощью [стандартного обработчика правил](cdn-standard-rules-engine.md)  | | |**✓** с помощью [обработчика правил категории "Премиум"](./cdn-verizon-premium-rules-engine.md) |
+| Правила для мобильных устройств  |**✓** с помощью [стандартного обработчика правил](cdn-standard-rules-engine.md) | | |**✓** с помощью [обработчика правил категории "Премиум"](./cdn-verizon-premium-rules-engine.md) |
 | [Кэширование строк запроса.](cdn-query-string.md)  | **&#x2713;** |**&#x2713;** |**&#x2713;** |**&#x2713;** |
 | Двойной стек IPv4/IPv6 | **&#x2713;** |**&#x2713;** |**&#x2713;** |**&#x2713;** |
 | [Поддержка HTTP/2](cdn-http2.md)  | **&#x2713;** |**&#x2713;** |**&#x2713;** |**&#x2713;** |
@@ -57,7 +57,7 @@ ms.locfileid: "92148738"
 | [Аутентификация на основе маркера безопасности](cdn-token-auth.md)  |  |  |  |**&#x2713;**| 
 | [Защита от атак DDoS](https://www.us-cert.gov/ncas/tips/ST04-015)  | **&#x2713;** |**&#x2713;** |**&#x2713;** |**&#x2713;** |
 | [Использование собственного сертификата](cdn-custom-ssl.md?tabs=option-2-enable-https-with-your-own-certificate#tlsssl-certificates) |**&#x2713;** |  | **&#x2713;** | **&#x2713;** |
-| Поддерживаемые версии протокола TLS | TLS 1.2, TLS 1.0/1.1 — [с возможностью настройки](https://docs.microsoft.com/rest/api/cdn/customdomains/enablecustomhttps#usermanagedhttpsparameters) | TLS 1.2 | TLS 1.2 | TLS 1.2 |
+| Поддерживаемые версии протокола TLS | TLS 1.2, TLS 1.0/1.1 — [с возможностью настройки](/rest/api/cdn/customdomains/enablecustomhttps#usermanagedhttpsparameters) | TLS 1.2 | TLS 1.2 | TLS 1.2 |
 ||||
 | **Аналитика и отчетность** | **Уровень "Стандартный" от корпорации Майкрософт** | **Akamai уровня "Стандартный"** | **Verizon уровня "Стандартный"** | **Verizon уровня "Премиум"** | 
 | [Журналы диагностики Azure](cdn-azure-diagnostic-logs.md)  | **&#x2713;** | **&#x2713;** |**&#x2713;** |**&#x2713;** |
@@ -69,9 +69,9 @@ ms.locfileid: "92148738"
 | [Оповещения в реальном времени](cdn-real-time-alerts.md)  |  | | |**&#x2713;** |
 ||||
 | **Простота использования** | **Уровень "Стандартный" от корпорации Майкрософт** | **Akamai уровня "Стандартный"** | **Verizon уровня "Стандартный"** | **Verizon уровня "Премиум"** | 
-| Простая интеграция со службами Azure, такими как [служба хранилища](cdn-create-a-storage-account-with-cdn.md), [веб-приложения](cdn-add-to-web-app.md) и [Службы мультимедиа](../media-services/media-services-portal-manage-streaming-endpoints.md).  | **&#x2713;** |**&#x2713;** |**&#x2713;** |**&#x2713;** |
+| Простая интеграция со службами Azure, такими как [служба хранилища](cdn-create-a-storage-account-with-cdn.md), [веб-приложения](cdn-add-to-web-app.md) и [Службы мультимедиа](../media-services/previous/media-services-portal-manage-streaming-endpoints.md).  | **&#x2713;** |**&#x2713;** |**&#x2713;** |**&#x2713;** |
 | Управление с помощью [REST API](/rest/api/cdn/), [.NET](cdn-app-dev-net.md), [Node.js](cdn-app-dev-node.md) или [PowerShell](cdn-manage-powershell.md)  | **&#x2713;** |**&#x2713;** |**&#x2713;** |**&#x2713;** |
-| [Типы сжатия MIME](https://docs.microsoft.com/azure/cdn/cdn-improve-performance)  |Только по умолчанию |Настраивается |Возможность настройки  |Настраивается  |
+| [Типы сжатия MIME](./cdn-improve-performance.md)  |Только по умолчанию |Настраивается |Возможность настройки  |Настраивается  |
 | Кодирование сжатия  |gzip, brotli |gzip |gzip, deflate, bzip2, brotili  |gzip, deflate, bzip2, brotili  |
 
 ## <a name="migration"></a>Миграция
@@ -84,6 +84,3 @@ ms.locfileid: "92148738"
 ## <a name="next-steps"></a>Дальнейшие шаги
 
 * Узнайте больше об [Azure CDN](cdn-overview.md).
-
-
-

@@ -6,13 +6,13 @@ ms.author: mamccrea
 ms.date: 12/20/2018
 ms.topic: quickstart
 ms.service: stream-analytics
-ms.custom: mvc, devx-track-azurepowershell
-ms.openlocfilehash: 997d74b1afc59e72b2c3fe7a7d47166d5efb8715
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.custom: mvc, devx-track-azurepowershell, devx-track-azurecli
+ms.openlocfilehash: 69571afceddab61c2a6134516e237facfb7a5073
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89072984"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92746886"
 ---
 # <a name="quickstart-create-a-stream-analytics-job-using-azure-powershell"></a>Краткое руководство. Создание задания Stream Analytics с помощью Azure PowerShell
 
@@ -78,7 +78,7 @@ New-AzResourceGroup `
     az account set --subscription "<your subscription>"
     ```
 
-2. Создайте Центр Интернета вещей с помощью команды [az iot hub create](../iot-hub/iot-hub-create-using-cli.md#create-an-iot-hub). Этот пример создает Центр Интернета вещей с именем **MyASAIoTHub**. Так как имена Центров Интернета вещей являются уникальными, необходимо придумать собственное имя Центра Интернета вещей. Задайте для номера SKU значение F1, чтобы использовать уровень "Бесплатный", если он доступен с вашей подпиской. В противном случае выберите следующий самый низкий уровень.
+2. Создайте Центр Интернета вещей с помощью команды [az iot hub create](../iot-hub/iot-hub-create-using-cli.md#create-an-iot-hub). Этот пример создает Центр Интернета вещей с именем **MyASAIoTHub** . Так как имена Центров Интернета вещей являются уникальными, необходимо придумать собственное имя Центра Интернета вещей. Задайте для номера SKU значение F1, чтобы использовать уровень "Бесплатный", если он доступен с вашей подпиской. В противном случае выберите следующий самый низкий уровень.
 
     ```azurecli
     az iot hub create --name "<your IoT Hub name>" --resource-group $resourceGroup --sku S1
@@ -90,7 +90,7 @@ New-AzResourceGroup `
     az iot hub show-connection-string --hub-name "MyASAIoTHub"
     ```
 
-3. Добавьте устройство к Центру Интернета вещей с помощью команды [az iothub device-identity create](../iot-hub/quickstart-send-telemetry-c.md#register-a-device). В этом примере создается устройство с именем **MyASAIoTDevice**.
+3. Добавьте устройство к Центру Интернета вещей с помощью команды [az iothub device-identity create](../iot-hub/quickstart-send-telemetry-c.md#register-a-device). В этом примере создается устройство с именем **MyASAIoTDevice** .
 
     ```azurecli
     az iot hub device-identity create --hub-name "MyASAIoTHub" --device-id "MyASAIoTDevice"
@@ -304,7 +304,7 @@ New-AzStreamAnalyticsTransformation `
 
 2. Замените значения заполнителя в 15-й строке строкой подключения устройства Центра Интернета вещей, которую вы сохранили при работе с предыдущим разделом.
 
-3. Нажмите кнопку **Запустить**. В выходных данных должны присутствовать показания датчика и сообщения, отправляемые в Центр Интернета вещей.
+3. Нажмите кнопку **Запустить** . В выходных данных должны присутствовать показания датчика и сообщения, отправляемые в Центр Интернета вещей.
 
     ![Онлайн-симулятор Raspberry Pi для Интернета вещей Azure.](./media/stream-analytics-quick-create-powershell/ras-pi-connection-string.png)
 

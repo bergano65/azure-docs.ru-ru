@@ -8,12 +8,12 @@ ms.service: storage
 ms.subservice: queues
 ms.topic: quickstart
 ms.custom: devx-track-js
-ms.openlocfilehash: ad26cba30986ee9a5f642755840ad5ec281219aa
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 1446b501b9d91c94c12c82755d0e31f361f8cd8f
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91320291"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92783425"
 ---
 # <a name="quickstart-azure-queue-storage-client-library-v12-for-javascript"></a>Краткое руководство. Использование клиентской библиотеки Хранилища очередей Azure версии 12 для JavaScript
 
@@ -31,15 +31,15 @@ ms.locfileid: "91320291"
 
 Дополнительные ресурсы:
 
-* [Справочная документация по API](https://docs.microsoft.com/javascript/api/@azure/storage-queue/)
+* [Справочная документация по API](/javascript/api/@azure/storage-queue/)
 * [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-queue)
 * [Пакет (диспетчер пакетов узла)](https://www.npmjs.com/package/@azure/storage-queue)
-* [Примеры](https://docs.microsoft.com/azure/storage/common/storage-samples-javascript?toc=%2fazure%2fstorage%2fqueues%2ftoc.json#queue-samples)
+* [Примеры](../common/storage-samples-javascript.md?toc=%252fazure%252fstorage%252fqueues%252ftoc.json#queue-samples)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
-* Учетная запись хранения Azure — [создайте такую учетную запись](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account).
+* Учетная запись хранения Azure — [создайте такую учетную запись](../common/storage-account-create.md).
 * Последняя версия [Node.js](https://nodejs.org/en/download/) для вашей операционной системы.
 
 ## <a name="setting-up"></a>Настройка
@@ -48,7 +48,7 @@ ms.locfileid: "91320291"
 
 ### <a name="create-the-project"></a>Создание проекта
 
-Создайте приложение Node.js с именем *queues-quickstart-v12*.
+Создайте приложение Node.js с именем *queues-quickstart-v12* .
 
 1. В окне консоли (командная строка, PowerShell или Bash) создайте каталог для проекта.
 
@@ -56,13 +56,13 @@ ms.locfileid: "91320291"
     mkdir queues-quickstart-v12
     ```
 
-1. Перейдите в только что созданный каталог *queues-quickstart-v12*.
+1. Перейдите в только что созданный каталог *queues-quickstart-v12* .
 
     ```console
     cd queues-quickstart-v12
     ```
 
-1. Создайте текстовый файл *package.json*. Этот файл определяет проект Node.js. Сохраните этот файл в каталоге *queues-quickstart-v12*. Ниже приведено содержимое файла.
+1. Создайте текстовый файл *package.json* . Этот файл определяет проект Node.js. Сохраните этот файл в каталоге *queues-quickstart-v12* . Ниже приведено содержимое файла.
 
     ```json
     {
@@ -87,7 +87,7 @@ ms.locfileid: "91320291"
 
 ### <a name="install-the-package"></a>Установка пакета
 
-Оставаясь в каталоге *queues-quickstart-v12*, установите пакет клиентской библиотеки Хранилища очередей Azure для JavaScript с помощью команды `npm install`.
+Оставаясь в каталоге *queues-quickstart-v12* , установите пакет клиентской библиотеки Хранилища очередей Azure для JavaScript с помощью команды `npm install`.
 
 ```console
 npm install
@@ -118,7 +118,7 @@ npm install
 
     ```
 
-1. Сохраните новый файл как *queues-quickstart-v12.js* в каталоге *queues-quickstart-v12*.
+1. Сохраните новый файл как *queues-quickstart-v12.js* в каталоге *queues-quickstart-v12* .
 
 [!INCLUDE [storage-quickstart-credentials-include](../../../includes/storage-quickstart-credentials-include.md)]
 
@@ -136,9 +136,9 @@ npm install
 
 Используйте следующие классы JavaScript для взаимодействия с этими ресурсами.
 
-* [QueueServiceClient](https://docs.microsoft.com/javascript/api/@azure/storage-queue/queueserviceclient). `QueueServiceClient` позволяет управлять всеми очередями в учетной записи хранения.
-* [QueueClient](https://docs.microsoft.com/javascript/api/@azure/storage-queue/queueclient). Класс `QueueClient` позволяет управлять отдельной очередью и сообщениями в ней.
-* [QueueMessage](https://docs.microsoft.com/javascript/api/@azure/storage-queue/queuemessage). Класс `QueueMessage` представляет отдельные объекты, которые возвращаются при вызове [receiveMessages](https://docs.microsoft.com/javascript/api/@azure/storage-queue/queueclient?view=azure-node-latest#receivemessages-queuereceivemessageoptions-) для очереди.
+* [QueueServiceClient](/javascript/api/@azure/storage-queue/queueserviceclient). `QueueServiceClient` позволяет управлять всеми очередями в учетной записи хранения.
+* [QueueClient](/javascript/api/@azure/storage-queue/queueclient). Класс `QueueClient` позволяет управлять отдельной очередью и сообщениями в ней.
+* [QueueMessage](/javascript/api/@azure/storage-queue/queuemessage). Класс `QueueMessage` представляет отдельные объекты, которые возвращаются при вызове [receiveMessages](/javascript/api/@azure/storage-queue/queueclient#receivemessages-queuereceivemessageoptions-) для очереди.
 
 ## <a name="code-examples"></a>Примеры кода
 
@@ -174,9 +174,9 @@ const AZURE_STORAGE_CONNECTION_STRING = process.env.AZURE_STORAGE_CONNECTION_STR
 Выберите имя для новой очереди. Приведенный ниже код добавляет к имени очереди значение UUID, чтобы сделать это имя уникальным.
 
 > [!IMPORTANT]
-> Имя очереди может содержать только строчные буквы, цифры и дефисы и должно начинаться с буквы или цифры. Перед каждым дефисом должен быть знак без дефиса. Количество символов в имени должно быть от 3 до 63. Дополнительные сведения см. в статье о [присвоении имен очередям и метаданным](https://docs.microsoft.com/rest/api/storageservices/naming-queues-and-metadata).
+> Имя очереди может содержать только строчные буквы, цифры и дефисы и должно начинаться с буквы или цифры. Перед каждым дефисом должен быть знак без дефиса. Количество символов в имени должно быть от 3 до 63. Дополнительные сведения см. в статье о [присвоении имен очередям и метаданным](/rest/api/storageservices/naming-queues-and-metadata).
 
-Создайте экземпляр класса [QueueClient](https://docs.microsoft.com/javascript/api/@azure/storage-queue/queueclient). Затем вызовите метод [create](https://docs.microsoft.com/javascript/api/@azure/storage-queue/queueclient#create-queuecreateoptions-), чтобы создать очередь в своей учетной записи хранения.
+Создайте экземпляр класса [QueueClient](/javascript/api/@azure/storage-queue/queueclient). Затем вызовите метод [create](/javascript/api/@azure/storage-queue/queueclient#create-queuecreateoptions-), чтобы создать очередь в своей учетной записи хранения.
 
 Добавьте следующий код в конец функции `main`.
 
@@ -197,7 +197,7 @@ console.log("Queue created, requestId:", createQueueResponse.requestId);
 
 ### <a name="add-messages-to-a-queue"></a>Добавление сообщений в очередь
 
-Следующий фрагмент кода добавляет сообщения в очередь, вызывая метод [sendMessage](https://docs.microsoft.com/javascript/api/@azure/storage-queue/queueclient#sendmessage-string--queuesendmessageoptions-). Он также сохраняет [QueueMessage](https://docs.microsoft.com/javascript/api/@azure/storage-queue/queuemessage), полученный из третьего вызова `sendMessage`. Возвращенный `sendMessageResponse` используется для обновления содержимого сообщения далее в коде программы.
+Следующий фрагмент кода добавляет сообщения в очередь, вызывая метод [sendMessage](/javascript/api/@azure/storage-queue/queueclient#sendmessage-string--queuesendmessageoptions-). Он также сохраняет [QueueMessage](/javascript/api/@azure/storage-queue/queuemessage), полученный из третьего вызова `sendMessage`. Возвращенный `sendMessageResponse` используется для обновления содержимого сообщения далее в коде программы.
 
 Добавьте следующий код в конец функции `main`.
 
@@ -214,7 +214,7 @@ console.log("Messages added, requestId:", sendMessageResponse.requestId);
 
 ### <a name="peek-at-messages-in-a-queue"></a>Просмотр сообщений из очереди
 
-Чтобы просмотреть сообщение в начале очереди, вызовите метод [peekMessages](https://docs.microsoft.com/javascript/api/@azure/storage-queue/queueclient#peekmessages-queuepeekmessagesoptions-). Метод `peekMessages` извлекает одно или несколько сообщений из начала очереди, не изменяя видимость этих сообщений.
+Чтобы просмотреть сообщение в начале очереди, вызовите метод [peekMessages](/javascript/api/@azure/storage-queue/queueclient#peekmessages-queuepeekmessagesoptions-). Метод `peekMessages` извлекает одно или несколько сообщений из начала очереди, не изменяя видимость этих сообщений.
 
 Добавьте следующий код в конец функции `main`.
 
@@ -232,7 +232,7 @@ for (i = 0; i < peekedMessages.peekedMessageItems.length; i++) {
 
 ### <a name="update-a-message-in-a-queue"></a>Обновление сообщений в очереди
 
-Чтобы обновить содержимое сообщения, вызовите метод [updateMessage](https://docs.microsoft.com/javascript/api/@azure/storage-queue/queueclient#updatemessage-string--string--string--undefined---number--queueupdatemessageoptions-). Метод `updateMessage` может изменить время видимости сообщения и (или) его содержимое. Содержимое сообщение должно иметь формат строки в кодировке UTF-8 длиной не более 64 КБ. Вместе с новым содержимым передайте `messageId` и `popReceipt` из ответа, сохраненного ранее в коде программы. Свойства `sendMessageResponse` указывают, какое сообщение следует обновить.
+Чтобы обновить содержимое сообщения, вызовите метод [updateMessage](/javascript/api/@azure/storage-queue/queueclient#updatemessage-string--string--string--undefined---number--queueupdatemessageoptions-). Метод `updateMessage` может изменить время видимости сообщения и (или) его содержимое. Содержимое сообщение должно иметь формат строки в кодировке UTF-8 длиной не более 64 КБ. Вместе с новым содержимым передайте `messageId` и `popReceipt` из ответа, сохраненного ранее в коде программы. Свойства `sendMessageResponse` указывают, какое сообщение следует обновить.
 
 ```javascript
 console.log("\nUpdating the third message in the queue...");
@@ -249,7 +249,7 @@ console.log("Message updated, requestId:", updateMessageResponse.requestId);
 
 ### <a name="receive-messages-from-a-queue"></a>Получение сообщений из очереди
 
-Чтобы скачать ранее добавленные сообщения, вызовите метод [receiveMessages](https://docs.microsoft.com/javascript/api/@azure/storage-queue/queueclient#receivemessages-queuereceivemessageoptions-).  В поле `numberOfMessages` передайте максимальное число получаемых сообщений для этого вызова.
+Чтобы скачать ранее добавленные сообщения, вызовите метод [receiveMessages](/javascript/api/@azure/storage-queue/queueclient#receivemessages-queuereceivemessageoptions-).  В поле `numberOfMessages` передайте максимальное число получаемых сообщений для этого вызова.
 
 Добавьте следующий код в конец функции `main`.
 
@@ -266,7 +266,7 @@ console.log("Messages received, requestId:", receivedMessagesResponse.requestId)
 
 Удалите из очереди сообщения, которые уже получены и обработаны. В нашем примере обработка сводится к выводу сообщения в консоль.
 
-Чтобы удалить сообщение, вызовите метод [deleteMessage](https://docs.microsoft.com/javascript/api/@azure/storage-queue/queueclient#deletemessage-string--string--queuedeletemessageoptions-). Все сообщения, которые не были удалены явным образом, снова становятся видимыми в очереди для новой попытки их обработать.
+Чтобы удалить сообщение, вызовите метод [deleteMessage](/javascript/api/@azure/storage-queue/queueclient#deletemessage-string--string--queuedeletemessageoptions-). Все сообщения, которые не были удалены явным образом, снова становятся видимыми в очереди для новой попытки их обработать.
 
 Добавьте следующий код в конец функции `main`.
 
@@ -289,7 +289,7 @@ for (i = 0; i < receivedMessagesResponse.receivedMessageItems.length; i++) {
 
 ### <a name="delete-a-queue"></a>Удаление очереди
 
-Следующий код очищает созданные приложением ресурсы, удаляя очередь с помощью метода [delete](https://docs.microsoft.com/javascript/api/@azure/storage-queue/queueclient#delete-queuedeleteoptions-).
+Следующий код очищает созданные приложением ресурсы, удаляя очередь с помощью метода [delete](/javascript/api/@azure/storage-queue/queueclient#delete-queuedeleteoptions-).
 
 Добавьте этот код в конец функции `main` и сохраните файл.
 
@@ -304,7 +304,7 @@ console.log("Queue deleted, requestId:", deleteQueueResponse.requestId);
 
 Это приложение создает три сообщения и добавляет их в очередь Azure. Затем код получает список сообщений, извлекает и удаляет их, и наконец удаляет саму очередь.
 
-В окне консоли перейдите в каталог, который содержит файл *queues-quickstart-v12.js*, а затем запустите приложение, выполнив следующую команду `node`.
+В окне консоли перейдите в каталог, который содержит файл *queues-quickstart-v12.js* , а затем запустите приложение, выполнив следующую команду `node`.
 
 ```console
 node queues-quickstart-v12.js
@@ -354,7 +354,7 @@ Done
 Руководства, примеры, краткие руководства и другую документацию можно найти здесь:
 
 > [!div class="nextstepaction"]
-> [Документация по работе с Azure для JavaScript](https://docs.microsoft.com/azure/developer/javascript/).
+> [Документация по работе с Azure для JavaScript](/azure/developer/javascript/).
 
 * Дополнительные сведения см в документации по [клиентской библиотеке Хранилища очередей Azure для JavaScript](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-queue).
 * Дополнительные примеры приложений для Хранилища очередей Azure версии 12 для JavaScript собраны [здесь](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-queue/samples).

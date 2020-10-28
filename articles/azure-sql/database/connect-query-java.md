@@ -9,25 +9,25 @@ ms.subservice: development
 ms.topic: quickstart
 ms.devlang: java
 ms.date: 06/26/2020
-ms.custom: devx-track-java
-ms.openlocfilehash: 829a106a643c10626a65855152375c349cd76f9a
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.custom: devx-track-java, devx-track-azurecli
+ms.openlocfilehash: badf6b8887c356c2a7fc7308f6aa15f551e4bb67
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87833595"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92746731"
 ---
 # <a name="use-java-and-jdbc-with--azure-sql-database"></a>Использование Java и JDBC с Базой данных SQL Azure
 
-В этой статье показано, как создать пример приложения, которое использует Java и [JDBC](https://en.wikipedia.org/wiki/Java_Database_Connectivity) для сохранения данных в [Базе данных SQL Azure](https://docs.microsoft.com/azure/sql-database/) и их извлечения из нее.
+В этой статье показано, как создать пример приложения, которое использует Java и [JDBC](https://en.wikipedia.org/wiki/Java_Database_Connectivity) для сохранения данных в [Базе данных SQL Azure](/azure/sql-database/) и их извлечения из нее.
 
 JDBC — это стандартный API Java для подключения к классическим реляционным базам данных.
 
 ## <a name="prerequisites"></a>Предварительные условия
 
 - Учетная запись Azure. Если у вас ее нет, [получите бесплатную пробную версию](https://azure.microsoft.com/free/).
-- [Azure Cloud Shell](/azure/cloud-shell/quickstart) или [Azure CLI](/cli/azure/install-azure-cli) Мы рекомендуем использовать Azure Cloud Shell, так вы автоматически войдете в систему и получите доступ ко всем необходимым средствам.
-- Поддерживаемый [пакет средств разработки Java (JDK)](https://aka.ms/azure-jdks) версии 8 (включена в Azure Cloud Shell).
+- [Azure Cloud Shell](../../cloud-shell/quickstart.md) или [Azure CLI](/cli/azure/install-azure-cli) Мы рекомендуем использовать Azure Cloud Shell, так вы автоматически войдете в систему и получите доступ ко всем необходимым средствам.
+- Поддерживаемый [пакет средств разработки Java (JDK)](/azure/developer/java/fundamentals/java-jdk-long-term-support) версии 8 (включена в Azure Cloud Shell).
 - Средство сборки [Apache Maven](https://maven.apache.org/).
 
 ## <a name="prepare-the-working-environment"></a>Подготовка среды выполнения
@@ -69,7 +69,7 @@ az group create \
 Для начала мы создадим управляемый сервер Базы данных SQL Azure.
 
 > [!NOTE]
-> См. сведения о создании сервера Базы данных SQL Azure в руководстве по [ созданию отдельной базы данных в Базе данных SQL Azure](/azure/sql-database/sql-database-single-database-get-started).
+> См. сведения о создании сервера Базы данных SQL Azure в руководстве по [ созданию отдельной базы данных в Базе данных SQL Azure](./single-database-create-quickstart.md).
 
 Выполните следующую команду в [Azure Cloud Shell](https://shell.azure.com/):
 
@@ -225,12 +225,12 @@ public class DemoApplication {
 }
 ```
 
-Этот код Java, используя ранее созданные файлы *application.properties* и *schema.sql*, подключится к базе данных SQL Server и создаст схему для хранения данных.
+Этот код Java, используя ранее созданные файлы *application.properties* и *schema.sql* , подключится к базе данных SQL Server и создаст схему для хранения данных.
 
 Как видите, в этом файле мы закомментировали методы вставки, чтения, обновления и удаления данных. Эти методы мы создадим позже, и вы просто последовательно раскомментируете их.
 
 > [!NOTE]
-> Учетные данные для базы данных хранятся в свойствах *user* и *password* в файле *application.properties*. Эти учетные данные используются при выполнении `DriverManager.getConnection(properties.getProperty("url"), properties);`, так как файл свойств передается в качестве аргумента.
+> Учетные данные для базы данных хранятся в свойствах *user* и *password* в файле *application.properties* . Эти учетные данные используются при выполнении `DriverManager.getConnection(properties.getProperty("url"), properties);`, так как файл свойств передается в качестве аргумента.
 
 Теперь вы можете выполнить класс main в любом удобном инструменте.
 
@@ -315,7 +315,7 @@ public class Todo {
 }
 ```
 
-Этот класс является доменной моделью, сопоставленной с таблицей `todo`, которую вы создали при выполнении скрипта *schema.sql*.
+Этот класс является доменной моделью, сопоставленной с таблицей `todo`, которую вы создали при выполнении скрипта *schema.sql* .
 
 ### <a name="insert-data-into-azure-sql-database"></a>Вставка данных в базу данных SQL Azure
 
@@ -498,4 +498,4 @@ az group delete \
 
 - [Разработка первой базы данных в Базе данных Azure SQL](design-first-database-tutorial.md)  
 - [Драйвер Microsoft JDBC для SQL Server](https://github.com/microsoft/mssql-jdbc)  
-- [Сообщите о проблеме или задайте вопросы](https://github.com/microsoft/mssql-jdbc/issues)  
+- [Сообщите о проблеме или задайте вопросы](https://github.com/microsoft/mssql-jdbc/issues)

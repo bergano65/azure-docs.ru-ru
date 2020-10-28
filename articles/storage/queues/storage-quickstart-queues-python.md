@@ -8,12 +8,12 @@ ms.service: storage
 ms.subservice: queues
 ms.topic: quickstart
 ms.custom: devx-track-python
-ms.openlocfilehash: 12c2652b4dcef46c5affde2c3fb9ef9288176eb9
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 57fc0ebc10158b41539d4802aa6a8ebdd466dd90
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87852265"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92783306"
 ---
 # <a name="quickstart-azure-queue-storage-client-library-v12-for-python"></a>Краткое руководство. Клиентская библиотека Хранилища очередей Azure версии 12 для Python
 
@@ -31,15 +31,15 @@ ms.locfileid: "87852265"
 
 Дополнительные ресурсы:
 
-* [Справочная документация по API](https://docs.microsoft.com/python/api/azure-storage-queue/index)
+* [Справочная документация по API](/python/api/azure-storage-queue/index)
 * [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-queue)
 * [Пакет (индекс пакета Python)](https://pypi.org/project/azure-storage-queue/)
-* [Примеры](https://docs.microsoft.com/azure/storage/common/storage-samples-python?toc=%2fazure%2fstorage%2fqueues%2ftoc.json#queue-samples)
+* [Примеры](../common/storage-samples-python.md?toc=%252fazure%252fstorage%252fqueues%252ftoc.json#queue-samples)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
-* Учетная запись хранения Azure — [создайте такую учетную запись](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account).
+* Учетная запись хранения Azure — [создайте такую учетную запись](../common/storage-account-create.md).
 * [Python](https://www.python.org/downloads/) 2.7, Python 3.5 или более поздней версии для вашей операционной системы.
 
 ## <a name="setting-up"></a>Настройка
@@ -48,7 +48,7 @@ ms.locfileid: "87852265"
 
 ### <a name="create-the-project"></a>Создание проекта
 
-Создайте приложение Python с именем *queues-quickstart-v12*.
+Создайте приложение Python с именем *queues-quickstart-v12* .
 
 1. В окне консоли (командная строка, PowerShell или Bash) создайте каталог для проекта.
 
@@ -56,7 +56,7 @@ ms.locfileid: "87852265"
     mkdir queues-quickstart-v12
     ```
 
-1. Перейдите в только что созданный каталог *queues-quickstart-v12*.
+1. Перейдите в только что созданный каталог *queues-quickstart-v12* .
 
     ```console
     cd queues-quickstart-v12
@@ -93,7 +93,7 @@ pip install azure-storage-queue
 
     ```
 
-1. Сохраните новый файл как *queues-quickstart-v12.py* в каталоге *queues-quickstart-v12*.
+1. Сохраните новый файл как *queues-quickstart-v12.py* в каталоге *queues-quickstart-v12* .
 
 [!INCLUDE [storage-quickstart-credentials-include](../../../includes/storage-quickstart-credentials-include.md)]
 
@@ -111,9 +111,9 @@ pip install azure-storage-queue
 
 Используйте следующие классы Python для взаимодействия с этими ресурсами.
 
-* [QueueServiceClient](https://docs.microsoft.com/python/api/azure-storage-queue/azure.storage.queue.queueserviceclient). `QueueServiceClient` позволяет управлять всеми очередями в учетной записи хранения.
-* [QueueClient](https://docs.microsoft.com/python/api/azure-storage-queue/azure.storage.queue.queueclient). Класс `QueueClient` позволяет управлять отдельной очередью и сообщениями в ней.
-* [QueueMessage](https://docs.microsoft.com/python/api/azure-storage-queue/azure.storage.queue.queuemessage). Класс `QueueMessage` представляет отдельные объекты, которые возвращаются при вызове [receive_messages](https://docs.microsoft.com/python/api/azure-storage-queue/azure.storage.queue.queueclient#receive-messages---kwargs-) для очереди.
+* [QueueServiceClient](/python/api/azure-storage-queue/azure.storage.queue.queueserviceclient). `QueueServiceClient` позволяет управлять всеми очередями в учетной записи хранения.
+* [QueueClient](/python/api/azure-storage-queue/azure.storage.queue.queueclient). Класс `QueueClient` позволяет управлять отдельной очередью и сообщениями в ней.
+* [QueueMessage](/python/api/azure-storage-queue/azure.storage.queue.queuemessage). Класс `QueueMessage` представляет отдельные объекты, которые возвращаются при вызове [receive_messages](/python/api/azure-storage-queue/azure.storage.queue.queueclient#receive-messages---kwargs-) для очереди.
 
 ## <a name="code-examples"></a>Примеры кода
 
@@ -149,9 +149,9 @@ pip install azure-storage-queue
 Выберите имя для новой очереди. Приведенный ниже код добавляет к имени очереди значение UUID, чтобы сделать это имя уникальным.
 
 > [!IMPORTANT]
-> Имя очереди может содержать только строчные буквы, цифры и дефисы и должно начинаться с буквы или цифры. Перед каждым дефисом должен быть знак без дефиса. Количество символов в имени должно быть от 3 до 63. Дополнительные сведения см. в статье о [присвоении имен очередям и метаданным](https://docs.microsoft.com/rest/api/storageservices/naming-queues-and-metadata).
+> Имя очереди может содержать только строчные буквы, цифры и дефисы и должно начинаться с буквы или цифры. Перед каждым дефисом должен быть знак без дефиса. Количество символов в имени должно быть от 3 до 63. Дополнительные сведения см. в статье о [присвоении имен очередям и метаданным](/rest/api/storageservices/naming-queues-and-metadata).
 
-Создайте экземпляр класса [QueueClient](https://docs.microsoft.com/python/api/azure-storage-queue/azure.storage.queue.queueclient). Затем вызовите метод [create_queue](https://docs.microsoft.com/python/api/azure-storage-queue/azure.storage.queue.queueclient#create-queue---kwargs-), чтобы создать очередь в своей учетной записи хранения.
+Создайте экземпляр класса [QueueClient](/python/api/azure-storage-queue/azure.storage.queue.queueclient). Затем вызовите метод [create_queue](/python/api/azure-storage-queue/azure.storage.queue.queueclient#create-queue---kwargs-), чтобы создать очередь в своей учетной записи хранения.
 
 Добавьте следующий код в конец блока `try`.
 
@@ -171,7 +171,7 @@ pip install azure-storage-queue
 
 ### <a name="add-messages-to-a-queue"></a>Добавление сообщений в очередь
 
-Следующий фрагмент кода добавляет сообщения в очередь, вызывая метод [send_message](https://docs.microsoft.com/python/api/azure-storage-queue/azure.storage.queue.queueclient#send-message-content----kwargs-). Он также сохраняет [QueueMessage](https://docs.microsoft.com/python/api/azure-storage-queue/azure.storage.queue.queuemessage), полученный из третьего вызова `send_message`. Этот `saved_message` используется для обновления содержимого сообщения далее в коде программы.
+Следующий фрагмент кода добавляет сообщения в очередь, вызывая метод [send_message](/python/api/azure-storage-queue/azure.storage.queue.queueclient#send-message-content----kwargs-). Он также сохраняет [QueueMessage](/python/api/azure-storage-queue/azure.storage.queue.queuemessage), полученный из третьего вызова `send_message`. Этот `saved_message` используется для обновления содержимого сообщения далее в коде программы.
 
 Добавьте следующий код в конец блока `try`.
 
@@ -186,7 +186,7 @@ pip install azure-storage-queue
 
 ### <a name="peek-at-messages-in-a-queue"></a>Просмотр сообщений из очереди
 
-Чтобы просмотреть сообщение в начале очереди, вызовите метод [peek_messages](https://docs.microsoft.com/python/api/azure-storage-queue/azure.storage.queue.queueclient#peek-messages-max-messages-none----kwargs-). Метод `peek_messages` извлекает одно или несколько сообщений из начала очереди, не изменяя видимость этих сообщений.
+Чтобы просмотреть сообщение в начале очереди, вызовите метод [peek_messages](/python/api/azure-storage-queue/azure.storage.queue.queueclient#peek-messages-max-messages-none----kwargs-). Метод `peek_messages` извлекает одно или несколько сообщений из начала очереди, не изменяя видимость этих сообщений.
 
 Добавьте следующий код в конец блока `try`.
 
@@ -203,7 +203,7 @@ pip install azure-storage-queue
 
 ### <a name="update-a-message-in-a-queue"></a>Обновление сообщений в очереди
 
-Чтобы обновить содержимое сообщения, вызовите метод [update_message](https://docs.microsoft.com/python/api/azure-storage-queue/azure.storage.queue.queueclient#update-message-message--pop-receipt-none--content-none----kwargs-). Метод `update_message` может изменить время видимости сообщения и (или) его содержимое. Содержимое сообщение должно иметь формат строки в кодировке UTF-8 длиной не более 64 КБ. Вместе с новым содержимым передайте значения из сообщения, сохраненного ранее в коде программы. Значения `saved_message` указывают, какое сообщение следует обновить.
+Чтобы обновить содержимое сообщения, вызовите метод [update_message](/python/api/azure-storage-queue/azure.storage.queue.queueclient#update-message-message--pop-receipt-none--content-none----kwargs-). Метод `update_message` может изменить время видимости сообщения и (или) его содержимое. Содержимое сообщение должно иметь формат строки в кодировке UTF-8 длиной не более 64 КБ. Вместе с новым содержимым передайте значения из сообщения, сохраненного ранее в коде программы. Значения `saved_message` указывают, какое сообщение следует обновить.
 
 ```python
     print("\nUpdating the third message in the queue...")
@@ -215,7 +215,7 @@ pip install azure-storage-queue
 
 ### <a name="receive-messages-from-a-queue"></a>Получение сообщений из очереди
 
-Чтобы скачать ранее добавленные сообщения, вызовите метод [receive_messages](https://docs.microsoft.com/python/api/azure-storage-queue/azure.storage.queue.queueclient#receive-messages---kwargs-).
+Чтобы скачать ранее добавленные сообщения, вызовите метод [receive_messages](/python/api/azure-storage-queue/azure.storage.queue.queueclient#receive-messages---kwargs-).
 
 Добавьте следующий код в конец блока `try`.
 
@@ -249,7 +249,7 @@ pip install azure-storage-queue
 
 ### <a name="delete-a-queue"></a>Удаление очереди
 
-Следующий код очищает созданные приложением ресурсы, удаляя очередь с помощью метода [delete_queue](https://docs.microsoft.com/python/api/azure-storage-queue/azure.storage.queue.queueclient#delete-queue---kwargs-).
+Следующий код очищает созданные приложением ресурсы, удаляя очередь с помощью метода [delete_queue](/python/api/azure-storage-queue/azure.storage.queue.queueclient#delete-queue---kwargs-).
 
 Добавьте этот код в конец блока `try` и сохраните файл.
 
@@ -268,7 +268,7 @@ pip install azure-storage-queue
 
 Это приложение создает три сообщения и добавляет их в очередь Azure. Затем код получает список сообщений, извлекает и удаляет их, и наконец удаляет саму очередь.
 
-В окне консоли перейдите в каталог, который содержит файл *queues-quickstart-v12.py*, а затем запустите приложение, выполнив следующую команду `python`.
+В окне консоли перейдите в каталог, который содержит файл *queues-quickstart-v12.py* , а затем запустите приложение, выполнив следующую команду `python`.
 
 ```console
 python queues-quickstart-v12.py
@@ -305,7 +305,7 @@ Done
 
 Когда приложение приостановится перед получением сообщений, проверьте учетную запись хранения на [портале Azure](https://portal.azure.com). Убедитесь, что сообщения находятся в очереди.
 
-Нажмите клавишу **ВВОД**, чтобы получить и удалить сообщения. При появлении запроса снова нажмите клавишу **ВВОД**, чтобы удалить очередь и завершить демонстрацию.
+Нажмите клавишу **ВВОД** , чтобы получить и удалить сообщения. При появлении запроса снова нажмите клавишу **ВВОД** , чтобы удалить очередь и завершить демонстрацию.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
@@ -314,7 +314,7 @@ Done
 Руководства, примеры, краткие руководства и другую документацию можно найти здесь:
 
 > [!div class="nextstepaction"]
-> [Azure для разработчиков Python](https://docs.microsoft.com/azure/python/)
+> [Azure для разработчиков Python](/azure/python/)
 
 * Чтобы узнать больше, ознакомьтесь с [библиотеками службы хранилища Azure для Python](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage).
 * Дополнительные примеры приложений для Хранилища очередей Azure версии 12 для Python собраны [здесь](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-queue/samples).

@@ -8,13 +8,13 @@ ms.topic: how-to
 ms.date: 10/12/2020
 ms.reviewer: andalmia
 ms.author: banders
-ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 28397d36a611f26544fefb9f4fa7593a0fdf3f73
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.custom: devx-track-azurepowershell, devx-track-azurecli
+ms.openlocfilehash: 59d3a44b1eff544f7214014f2dd31edc92bfc6bc
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92014534"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92748182"
 ---
 # <a name="programmatically-create-azure-subscriptions-with-the-latest-apis"></a>Программное создание подписок Azure с помощью новейших API
 
@@ -119,7 +119,7 @@ we're still working on enabling CLI SDK for billing APIs. Check back soon.
 
 ### <a name="create-subscriptions-under-a-specific-enrollment-account"></a>Создание подписок с помощью определенной учетной записи регистрации
 
-В следующем примере в учетной записи регистрации, выбранной на предыдущем шаге, создается подписка с именем *Dev Team Subscription*. 
+В следующем примере в учетной записи регистрации, выбранной на предыдущем шаге, создается подписка с именем *Dev Team Subscription* . 
 
 ### <a name="rest"></a>[REST](#tab/rest-EA)
 
@@ -183,7 +183,7 @@ GET https://management.azure.com/providers/Microsoft.Subscription/aliases/sample
 
 Чтобы установить последнюю версию модуля, содержащего командлет `New-AzSubscriptionAlias`, запустите `Install-Module Az.Subscription`. Сведения о том, как установить последнюю версию PowerShellGet, см. в статье о [получении модуля PowerShellGet](/powershell/scripting/gallery/installing-psget).
 
-Воспользуйтесь следующей командой [New-AzSubscriptionAlias](/powershell/module/az.subscription/New-AzSubscriptionAlias), указав область выставления счетов `"/providers/Microsoft.Billing/BillingAccounts/1234567/enrollmentAccounts/7654321"`. 
+Воспользуйтесь следующей командой [New-AzSubscriptionAlias](/powershell/module/az.subscription/new-azsubscription), указав область выставления счетов `"/providers/Microsoft.Billing/BillingAccounts/1234567/enrollmentAccounts/7654321"`. 
 
 ```azurepowershell-interactive
 New-AzSubscriptionAlias -AliasName "sampleAlias" -SubscriptionName "Dev Team Subscription" -BillingScope "/providers/Microsoft.Billing/BillingAccounts/1234567/enrollmentAccounts/7654321" -Workload 'Production"
@@ -281,7 +281,7 @@ GET https://management.azure.com/providers/Microsoft.Billing/billingaccounts/?ap
 }
 ```
 
-Используйте свойство `displayName`, чтобы определить учетную запись выставления счетов, для которой нужно создать подписки. Убедитесь, что значение agreementType для учетной записи равно *MicrosoftCustomerAgreement*. Скопируйте значение `name` учетной записи.  Например, чтобы создать подписку для учетной записи выставления счетов `Contoso`, скопируйте `5e98e158-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx_xxxx-xx-xx`. Вставьте это значение в любое место, чтобы его можно было использовать на следующем шаге.
+Используйте свойство `displayName`, чтобы определить учетную запись выставления счетов, для которой нужно создать подписки. Убедитесь, что значение agreementType для учетной записи равно *MicrosoftCustomerAgreement* . Скопируйте значение `name` учетной записи.  Например, чтобы создать подписку для учетной записи выставления счетов `Contoso`, скопируйте `5e98e158-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx_xxxx-xx-xx`. Вставьте это значение в любое место, чтобы его можно было использовать на следующем шаге.
 
 <!--
 ### [PowerShell](#tab/azure-powershell-getBillingAccounts)
@@ -400,7 +400,7 @@ we're still working on enabling CLI SDK for billing APIs. Check back soon.
 
 ### <a name="create-a-subscription-for-an-invoice-section"></a>Создание подписки для раздела счета
 
-В следующем примере создается подписка с именем *Dev Team subscription* для раздела счета *Development*. Счет за подписку будет выставлен для *профиля выставления счетов Contoso*, а сама подписка будет указана в разделе *Development* этого счета. Используйте область выставления счетов, скопированную из предыдущего шага: `/providers/Microsoft.Billing/billingAccounts/5e98e158-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx_xxxx-xx-xx/billingProfiles/AW4F-xxxx-xxx-xxx/invoiceSections/SH3V-xxxx-xxx-xxx`. 
+В следующем примере создается подписка с именем *Dev Team subscription* для раздела счета *Development* . Счет за подписку будет выставлен для *профиля выставления счетов Contoso* , а сама подписка будет указана в разделе *Development* этого счета. Используйте область выставления счетов, скопированную из предыдущего шага: `/providers/Microsoft.Billing/billingAccounts/5e98e158-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx_xxxx-xx-xx/billingProfiles/AW4F-xxxx-xxx-xxx/invoiceSections/SH3V-xxxx-xxx-xxx`. 
 
 ### <a name="rest"></a>[REST](#tab/rest-MCA)
 
@@ -463,7 +463,7 @@ GET https://management.azure.com/providers/Microsoft.Subscription/aliases/sample
 
 Чтобы установить последнюю версию модуля, содержащего командлет `New-AzSubscriptionAlias`, запустите `Install-Module Az.Subscription`. Сведения о том, как установить последнюю версию PowerShellGet, см. в статье о [получении модуля PowerShellGet](/powershell/scripting/gallery/installing-psget).
 
-Воспользуйтесь следующей командой [New-AzSubscriptionAlias](/powershell/module/az.subscription/New-AzSubscriptionAlias) и областью выставления счетов `"/providers/Microsoft.Billing/billingAccounts/5e98e158-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx_xxxx-xx-xx/billingProfiles/AW4F-xxxx-xxx-xxx/invoiceSections/SH3V-xxxx-xxx-xxx"`. 
+Воспользуйтесь следующей командой [New-AzSubscriptionAlias](/powershell/module/az.subscription/new-azsubscription) и областью выставления счетов `"/providers/Microsoft.Billing/billingAccounts/5e98e158-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx_xxxx-xx-xx/billingProfiles/AW4F-xxxx-xxx-xxx/invoiceSections/SH3V-xxxx-xxx-xxx"`. 
 
 ```azurepowershell-interactive
 New-AzSubscriptionAlias -AliasName "sampleAlias" -SubscriptionName "Dev Team Subscription" -BillingScope "/providers/Microsoft.Billing/billingAccounts/5e98e158-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx_xxxx-xx-xx/billingProfiles/AW4F-xxxx-xxx-xxx/invoiceSections/SH3V-xxxx-xxx-xxx" -Workload 'Production"
@@ -553,7 +553,7 @@ GET https://management.azure.com/providers/Microsoft.Billing/billingaccounts/?ap
 }
 ```
 
-Используйте свойство `displayName`, чтобы определить учетную запись выставления счетов, для которой нужно создать подписки. Убедитесь, что значение agreementType для учетной записи равно *MicrosoftPartnerAgreement*. Скопируйте `name` для учетной записи. Например, чтобы создать подписку для учетной записи выставления счетов `Contoso`, скопируйте `99a13315-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx_xxxx-xx-xx`. Вставьте это значение в любое место, чтобы его можно было использовать на следующем шаге.
+Используйте свойство `displayName`, чтобы определить учетную запись выставления счетов, для которой нужно создать подписки. Убедитесь, что значение agreementType для учетной записи равно *MicrosoftPartnerAgreement* . Скопируйте `name` для учетной записи. Например, чтобы создать подписку для учетной записи выставления счетов `Contoso`, скопируйте `99a13315-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx_xxxx-xx-xx`. Вставьте это значение в любое место, чтобы его можно было использовать на следующем шаге.
 
 <!--
 ### [PowerShell](#tab/azure-powershell-getBillingAccounts-MPA)
@@ -678,7 +678,7 @@ we're still working on enabling CLI SDK for billing APIs. Check back soon.
 
 ### <a name="create-a-subscription-for-a-customer"></a>Создание подписки для клиента
 
-В следующем примере создается подписка с именем *Dev Team subscription* для *Fabrikam toys*, которая затем связывается с торговым посредником *Wingtip*. Используйте область выставления счетов, скопированную из предыдущего шага: `/providers/Microsoft.Billing/billingAccounts/99a13315-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx_xxxx-xx-xx/customers/2281f543-xxxx-xxxx-xxxx-xxxxxxxxxxxx`. 
+В следующем примере создается подписка с именем *Dev Team subscription* для *Fabrikam toys* , которая затем связывается с торговым посредником *Wingtip* . Используйте область выставления счетов, скопированную из предыдущего шага: `/providers/Microsoft.Billing/billingAccounts/99a13315-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx_xxxx-xx-xx/customers/2281f543-xxxx-xxxx-xxxx-xxxxxxxxxxxx`. 
 
 ### <a name="rest"></a>[REST](#tab/rest-MPA)
 
@@ -736,13 +736,13 @@ GET https://management.azure.com/providers/Microsoft.Subscription/aliases/sample
 
 Состояние "Выполняется" возвращается в виде состояния `Accepted` в разделе `provisioningState`. 
 
-Передайте в тексте запроса API необязательное значение *resellerId*, скопированное на втором шаге.
+Передайте в тексте запроса API необязательное значение *resellerId* , скопированное на втором шаге.
 
 ### <a name="powershell"></a>[PowerShell](#tab/azure-powershell-MPA)
 
 Чтобы установить последнюю версию модуля, содержащего командлет `New-AzSubscriptionAlias`, запустите `Install-Module Az.Subscription`. Сведения о том, как установить последнюю версию PowerShellGet, см. в статье о [получении модуля PowerShellGet](/powershell/scripting/gallery/installing-psget).
 
-Воспользуйтесь следующей командой [New-AzSubscriptionAlias](/powershell/module/az.subscription/New-AzSubscriptionAlias), указав область выставления счетов `"/providers/Microsoft.Billing/billingAccounts/99a13315-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx_xxxx-xx-xx/customers/2281f543-xxxx-xxxx-xxxx-xxxxxxxxxxxx"`. 
+Воспользуйтесь следующей командой [New-AzSubscriptionAlias](/powershell/module/az.subscription/new-azsubscription), указав область выставления счетов `"/providers/Microsoft.Billing/billingAccounts/99a13315-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx_xxxx-xx-xx/customers/2281f543-xxxx-xxxx-xxxx-xxxxxxxxxxxx"`. 
 
 ```azurepowershell-interactive
 New-AzSubscriptionAlias -AliasName "sampleAlias" -SubscriptionName "Dev Team Subscription" -BillingScope "/providers/Microsoft.Billing/billingAccounts/99a13315-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx_xxxx-xx-xx/customers/2281f543-xxxx-xxxx-xxxx-xxxxxxxxxxxx" -Workload 'Production"
@@ -762,7 +762,7 @@ New-AzSubscriptionAlias -AliasName "sampleAlias" -SubscriptionName "Dev Team Sub
 }
 ```
 
-При вызове `New-AzSubscriptionAlias` передайте необязательное значение *resellerId*, скопированное на втором шаге.
+При вызове `New-AzSubscriptionAlias` передайте необязательное значение *resellerId* , скопированное на втором шаге.
 
 ### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli-MPA)
 
@@ -788,7 +788,7 @@ az account alias create --name "sampleAlias" --billing-scope "/providers/Microso
 }
 ```
 
-При вызове `az account alias create` передайте необязательное значение *resellerId*, скопированное на втором шаге.
+При вызове `az account alias create` передайте необязательное значение *resellerId* , скопированное на втором шаге.
 
 ---
 
@@ -838,7 +838,7 @@ GET https://management.azure.com/providers/Microsoft.Billing/billingaccounts/?ap
 }
 ```
 
-Используйте свойство `displayName`, чтобы определить учетную запись выставления счетов, для которой нужно создать подписки. Убедитесь, что значение agreementType для учетной записи равно *MicrosoftCustomerAgreement*. Скопируйте значение `name` учетной записи. Например, чтобы создать подписку для учетной записи выставления счетов `Contoso`, скопируйте `5e98e158-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx_xxxx-xx-xx`. Вставьте это значение в любое место, чтобы его можно было использовать на следующем шаге.
+Используйте свойство `displayName`, чтобы определить учетную запись выставления счетов, для которой нужно создать подписки. Убедитесь, что значение agreementType для учетной записи равно *MicrosoftCustomerAgreement* . Скопируйте значение `name` учетной записи. Например, чтобы создать подписку для учетной записи выставления счетов `Contoso`, скопируйте `5e98e158-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx_xxxx-xx-xx`. Вставьте это значение в любое место, чтобы его можно было использовать на следующем шаге.
 
 <!--
 ### [PowerShell](#tab/azure-powershell-getBillingAccounts)
@@ -958,7 +958,7 @@ we're still working on enabling CLI SDK for billing APIs. Check back soon.
 
 ### <a name="create-a-subscription-and-resource-group-with-a-template"></a>Создание подписки и группы ресурсов по шаблону
 
-Следующий шаблон Resource Manager позволяет создать подписку с именем *Dev Team subscription* для раздела счета *Development*. Счет за подписку будет выставлен для *профиля выставления счетов Contoso*, а сама подписка будет указана в разделе *Development* этого счета. Используйте область выставления счетов, скопированную из предыдущего шага: `/providers/Microsoft.Billing/billingAccounts/5e98e158-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx_xxxx-xx-xx/billingProfiles/AW4F-xxxx-xxx-xxx/invoiceSections/SH3V-xxxx-xxx-xxx`. 
+Следующий шаблон Resource Manager позволяет создать подписку с именем *Dev Team subscription* для раздела счета *Development* . Счет за подписку будет выставлен для *профиля выставления счетов Contoso* , а сама подписка будет указана в разделе *Development* этого счета. Используйте область выставления счетов, скопированную из предыдущего шага: `/providers/Microsoft.Billing/billingAccounts/5e98e158-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx_xxxx-xx-xx/billingProfiles/AW4F-xxxx-xxx-xxx/invoiceSections/SH3V-xxxx-xxx-xxx`. 
 
 #### <a name="request"></a>Запрос
 

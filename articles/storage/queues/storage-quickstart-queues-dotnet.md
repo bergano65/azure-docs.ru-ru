@@ -8,12 +8,12 @@ ms.service: storage
 ms.subservice: queues
 ms.topic: quickstart
 ms.custom: devx-track-csharp
-ms.openlocfilehash: f23512bfd85c520c36cd98843db37371b84af293
-ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
+ms.openlocfilehash: ca3b218da7835ee9f3e9e8653f4829767a1ffb07
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2020
-ms.locfileid: "91939208"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92783476"
 ---
 # <a name="quickstart-azure-queue-storage-client-library-v12-for-net"></a>Краткое руководство. Использование клиентской библиотеки Хранилища очередей Azure версии 12 для .NET
 
@@ -34,12 +34,12 @@ ms.locfileid: "91939208"
 * [Справочная документация по API](/dotnet/api/azure.storage.queues)
 * [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/storage/Azure.Storage.Queues)
 * [Пакет (NuGet)](https://www.nuget.org/packages/Azure.Storage.Queues/12.0.0)
-* [Примеры](https://docs.microsoft.com/azure/storage/common/storage-samples-dotnet?toc=%2fazure%2fstorage%2fqueues%2ftoc.json#queue-samples)
+* [Примеры](../common/storage-samples-dotnet.md?toc=%252fazure%252fstorage%252fqueues%252ftoc.json#queue-samples)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
-* Учетная запись хранения Azure — [создайте такую учетную запись](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account).
+* Учетная запись хранения Azure — [создайте такую учетную запись](../common/storage-account-create.md).
 * [Пакет SDK для .NET Core](https://dotnet.microsoft.com/download/dotnet-core) последней версии для вашей операционной системы. Обязательно получите пакет SDK, а не среду выполнения.
 
 ## <a name="setting-up"></a>Настройка
@@ -48,15 +48,15 @@ ms.locfileid: "91939208"
 
 ### <a name="create-the-project"></a>Создание проекта
 
-Создайте приложение .NET Core с именем *QueuesQuickstartV12*.
+Создайте приложение .NET Core с именем *QueuesQuickstartV12* .
 
-1. В окне консоли (командная строка, PowerShell или Bash) выполните команду `dotnet new`, чтобы создать консольное приложение *QueuesQuickstartV12*. Эта команда создает простой проект Hello World на языке C# с одним файлом исходного кода: *Program.cs*.
+1. В окне консоли (командная строка, PowerShell или Bash) выполните команду `dotnet new`, чтобы создать консольное приложение *QueuesQuickstartV12* . Эта команда создает простой проект Hello World на языке C# с одним файлом исходного кода: *Program.cs* .
 
    ```console
    dotnet new console -n QueuesQuickstartV12
    ```
 
-1. Переключитесь на только что созданный каталог *QueuesQuickstartV12*.
+1. Переключитесь на только что созданный каталог *QueuesQuickstartV12* .
 
    ```console
    cd QueuesQuickstartV12
@@ -77,7 +77,7 @@ dotnet add package Azure.Storage.Queues
 1. Откройте файл *Program.cs* в редакторе.
 1. Удалите инструкцию `Console.WriteLine("Hello World!");`.
 1. Добавьте директивы `using`.
-1. Обновите объявление метода `Main` для [поддержки асинхронного кода](https://docs.microsoft.com/dotnet/csharp/whats-new/csharp-7#async-main).
+1. Обновите объявление метода `Main` для [поддержки асинхронного кода](/dotnet/csharp/whats-new/csharp-7#async-main).
 
 
 
@@ -325,7 +325,7 @@ Done
 
 Когда приложение приостановится перед получением сообщений, проверьте учетную запись хранения на [портале Azure](https://portal.azure.com). Убедитесь, что сообщения находятся в очереди.
 
-Нажмите клавишу **ВВОД**, чтобы получить и удалить сообщения. При появлении запроса снова нажмите клавишу **ВВОД**, чтобы удалить очередь и завершить демонстрацию.
+Нажмите клавишу **ВВОД** , чтобы получить и удалить сообщения. При появлении запроса снова нажмите клавишу **ВВОД** , чтобы удалить очередь и завершить демонстрацию.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
@@ -334,7 +334,7 @@ Done
 Руководства, примеры, краткие руководства и другую документацию можно найти здесь:
 
 > [!div class="nextstepaction"]
-> [Azure для разработчиков .NET и .NET Core](https://docs.microsoft.com/dotnet/azure/)
+> [Azure для разработчиков .NET и .NET Core](/dotnet/azure/)
 
 * Чтобы узнать больше, ознакомьтесь с [библиотеками службы хранилища Azure для .NET](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/storage).
 * Дополнительные примеры приложений для Хранилища очередей Azure версии 12 для .NET собраны [здесь](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/storage/Azure.Storage.Queues/samples).

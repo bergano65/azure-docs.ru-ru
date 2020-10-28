@@ -12,12 +12,12 @@ author: srdan-bozovic-msft
 ms.author: srbozovi
 ms.reviewer: sstein, bonova
 ms.date: 12/14/2018
-ms.openlocfilehash: 18f717ca05e93c9a8f06ac8868e9a6e5ff80eadb
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.openlocfilehash: 413786cf8946c1ffbb76bd0e18eae7c7ba16a9c1
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91355539"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92790752"
 ---
 # <a name="quickstart-restore-a-database-to-azure-sql-managed-instance-with-ssms"></a>Краткое руководство. Восстановление резервной копии базы данных в Управляемый экземпляр SQL Azure с помощью SSMS
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -35,22 +35,22 @@ ms.locfileid: "91355539"
 В этом кратком руководстве:
 
 - Используйте ресурсы из статьи [Краткое руководство. Создание Управляемого экземпляра Базы данных SQL Azure](instance-create-quickstart.md).
-- Необходимо установить последнюю версию [SSMS](https://docs.microsoft.com/sql/ssms/sql-server-management-studio-ssms).
+- Необходимо установить последнюю версию [SSMS](/sql/ssms/sql-server-management-studio-ssms).
 - SSMS используется для подключения к Управляемому экземпляру SQL. Ознакомьтесь с этими краткими руководствами по подключению.
   - [Включение общедоступной конечной точки](public-endpoint-configure.md) в Управляемом экземпляре SQL. Рекомендуется использовать этот подход для работы с данным руководством.
   - [Подключение к Управляемому экземпляру SQL с виртуальной машины Azure.](connect-vm-instance-configure.md)
   - [Настройка соединения "точка — сеть" с Управляемым экземпляром SQL.](point-to-site-p2s-configure.md)
 
 > [!NOTE]
-> Дополнительные сведения о резервном копировании и восстановлении базы данных SQL Server при помощи хранилища BLOB-объектов Azure и [ключа подписанного URL-адреса (SAS)](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1) см. в статье [Краткое руководство. Восстановление резервной копии базы данных в Управляемый экземпляр Базы данных SQL Azure](https://docs.microsoft.com/sql/relational-databases/backup-restore/sql-server-backup-to-url?view=sql-server-2017).
+> Дополнительные сведения о резервном копировании и восстановлении базы данных SQL Server при помощи хранилища BLOB-объектов Azure и [ключа подписанного URL-адреса (SAS)](../../storage/common/storage-sas-overview.md) см. в статье [Краткое руководство. Восстановление резервной копии базы данных в Управляемый экземпляр Базы данных SQL Azure](/sql/relational-databases/backup-restore/sql-server-backup-to-url?view=sql-server-2017).
 
 ## <a name="restore-from-a-backup-file"></a>Восстановление из файла резервной копии
 
 В SQL Server Management Studio выполните следующие шаги для восстановления базы данных Wide World Importers в Управляемый экземпляр SQL. Файл резервной копии базы данных хранится в предварительно настроенной учетной записи хранения больших двоичных объектов Azure.
 
 1. Откройте SSMS и подключитесь к Управляемому экземпляру.
-2. В **обозревателе объектов** щелкните правой кнопкой мыши Управляемый экземпляр и выберите **Создать запрос**, чтобы открыть окно нового запроса.
-3. Запустите следующий скрипт SQL, в котором используется предварительно настроенная учетная запись хранения и ключ SAS, чтобы [создать учетные данные](https://docs.microsoft.com/sql/t-sql/statements/create-credential-transact-sql) в управляемом экземпляре.
+2. В **обозревателе объектов** щелкните правой кнопкой мыши Управляемый экземпляр и выберите **Создать запрос** , чтобы открыть окно нового запроса.
+3. Запустите следующий скрипт SQL, в котором используется предварительно настроенная учетная запись хранения и ключ SAS, чтобы [создать учетные данные](/sql/t-sql/statements/create-credential-transact-sql) в управляемом экземпляре.
 
    ```sql
    CREATE CREDENTIAL [https://mitutorials.blob.core.windows.net/databases]
@@ -88,15 +88,15 @@ ms.locfileid: "91355539"
    WHERE r.command in ('BACKUP DATABASE','RESTORE DATABASE')
    ```
 
-7. По завершении восстановления просмотрите базу данных в обозревателе объектов. Чтобы убедиться, что восстановление базы данных завершено, используйте представление [sys.dm_operation_status](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-operation-status-azure-sql-database).
+7. По завершении восстановления просмотрите базу данных в обозревателе объектов. Чтобы убедиться, что восстановление базы данных завершено, используйте представление [sys.dm_operation_status](/sql/relational-databases/system-dynamic-management-views/sys-dm-operation-status-azure-sql-database).
 
 > [!NOTE]
-> Операция восстановления базы данных является асинхронной и повторяемой. В случае разрыва подключения или истечения времени ожидания в SQL Server Management Studio может возникнуть ошибка. База данных SQL Azure будет пытаться восстановить базу данных в фоновом режиме, и вы сможете отслеживать ход восстановления с помощью представлений [sys.dm_exec_requests](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql) и [sys.dm_operation_status](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-operation-status-azure-sql-database).
-> На некоторых этапах процесса восстановления в системных представлениях вместо фактического имени базы данных будет отображаться ее уникальный идентификатор. [Узнайте больше](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-transact-sql-information#restore-statement) о различиях в поведении инструкции `RESTORE`.
+> Операция восстановления базы данных является асинхронной и повторяемой. В случае разрыва подключения или истечения времени ожидания в SQL Server Management Studio может возникнуть ошибка. База данных SQL Azure будет пытаться восстановить базу данных в фоновом режиме, и вы сможете отслеживать ход восстановления с помощью представлений [sys.dm_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql) и [sys.dm_operation_status](/sql/relational-databases/system-dynamic-management-views/sys-dm-operation-status-azure-sql-database).
+> На некоторых этапах процесса восстановления в системных представлениях вместо фактического имени базы данных будет отображаться ее уникальный идентификатор. [Узнайте больше](./transact-sql-tsql-differences-sql-server.md#restore-statement) о различиях в поведении инструкции `RESTORE`.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Если на шаге 5 восстановление базы данных завершается и появляется сообщение ID 22003 (Идентификатор 22003), создайте новый файл резервной копии, содержащий контрольные суммы резервной копии, и снова выполните восстановление. См. статью [Включение или отключение вычисления контрольных сумм резервных копий во время архивации или восстановления](https://docs.microsoft.com/sql/relational-databases/backup-restore/enable-or-disable-backup-checksums-during-backup-or-restore-sql-server).
-- См. раздел [Резервное копирование SQL Server на URL-адрес — рекомендации и устранение неполадок](https://docs.microsoft.com/sql/relational-databases/backup-restore/sql-server-backup-to-url-best-practices-and-troubleshooting).
+- Если на шаге 5 восстановление базы данных завершается и появляется сообщение ID 22003 (Идентификатор 22003), создайте новый файл резервной копии, содержащий контрольные суммы резервной копии, и снова выполните восстановление. См. статью [Включение или отключение вычисления контрольных сумм резервных копий во время архивации или восстановления](/sql/relational-databases/backup-restore/enable-or-disable-backup-checksums-during-backup-or-restore-sql-server).
+- См. раздел [Резервное копирование SQL Server на URL-адрес — рекомендации и устранение неполадок](/sql/relational-databases/backup-restore/sql-server-backup-to-url-best-practices-and-troubleshooting).
 - Обзор вариантов подключения для приложений см. в статье [Подключение приложения к Управляемому экземпляру SQL](connect-application-instance.md).
 - Чтобы отправлять запросы с помощью привычных средств или языков, ознакомьтесь со статьей [Краткие руководства. Подключение и создание запросов к Базе данных SQL Azure](../database/connect-query-content-reference-guide.md).

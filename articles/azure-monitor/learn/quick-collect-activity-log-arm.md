@@ -3,16 +3,16 @@ title: Отправка журнала действий Azure в рабочую 
 description: Используйте шаблоны ARM, чтобы создать параметр диагностики и рабочую область Log Analytics для отправки журнала действий в журналы Azure Monitor.
 ms.subservice: logs
 ms.topic: quickstart
-ms.custom: subject-armqs
+ms.custom: subject-armqs, devx-track-azurecli
 author: bwren
 ms.author: bwren
 ms.date: 06/25/2020
-ms.openlocfilehash: 552df72901b9fde7acedd554b429f3a2ce0f671b
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: abcaee8cffd36e22c918b9d82f37370df1d61c26
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91631857"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92747043"
 ---
 # <a name="quickstart-send-azure-activity-log-to-log-analytics-workspace-using-an-arm-template"></a>Краткое руководство. Отправка журнала действий Azure в рабочую область Log Analytics с помощью шаблона ARM
 
@@ -29,7 +29,7 @@ ms.locfileid: "91631857"
 
 ### <a name="review-the-template"></a>Изучение шаблона
 
-Следующий шаблон создает пустую рабочую область Log Analytics. Сохраните этот шаблон как файл *CreateWorkspace.json*.
+Следующий шаблон создает пустую рабочую область Log Analytics. Сохраните этот шаблон как файл *CreateWorkspace.json* .
 
 ```json
 {
@@ -134,7 +134,7 @@ ms.locfileid: "91631857"
 
 ### <a name="deploy-the-template"></a>Развертывание шаблона
 
-Разверните шаблон с помощью любого стандартного метода [развертывания шаблона ARM](../../azure-resource-manager/templates/deploy-portal.md), например с помощью CLI и PowerShell, как в примерах ниже. Замените примеры значений для **группы ресурсов**, **workspaceName**и **location** соответствующими значениями из вашей среды. Имя рабочей области должно быть уникальным в пределах всех подписок Azure.
+Разверните шаблон с помощью любого стандартного метода [развертывания шаблона ARM](../../azure-resource-manager/templates/deploy-portal.md), например с помощью CLI и PowerShell, как в примерах ниже. Замените примеры значений для **группы ресурсов** , **workspaceName** и **location** соответствующими значениями из вашей среды. Имя рабочей области должно быть уникальным в пределах всех подписок Azure.
 
 # <a name="cli"></a>[CLI](#tab/CLI)
 
@@ -180,7 +180,7 @@ Get-AzOperationalInsightsWorkspace -Name my-workspace-01 -ResourceGroupName my-r
 
 ### <a name="review-the-template"></a>Изучение шаблона
 
-Следующий шаблон создает параметр диагностики, который отправляет журнал действий в рабочую область Log Analytics. Сохраните этот шаблон как файл *CreateDiagnosticSetting.json*.
+Следующий шаблон создает параметр диагностики, который отправляет журнал действий в рабочую область Log Analytics. Сохраните этот шаблон как файл *CreateDiagnosticSetting.json* .
 
 ```json
 {
@@ -248,7 +248,7 @@ Get-AzOperationalInsightsWorkspace -Name my-workspace-01 -ResourceGroupName my-r
 
 ### <a name="deploy-the-template"></a>Развертывание шаблона
 
-Разверните шаблон с помощью любого стандартного метода [развертывания шаблона ARM](../../azure-resource-manager/templates/deploy-portal.md), например с помощью CLI и PowerShell, как в примерах ниже. Замените примеры значений для **группы ресурсов**, **workspaceName**и **location** соответствующими значениями из вашей среды. Имя рабочей области должно быть уникальным в пределах всех подписок Azure.
+Разверните шаблон с помощью любого стандартного метода [развертывания шаблона ARM](../../azure-resource-manager/templates/deploy-portal.md), например с помощью CLI и PowerShell, как в примерах ниже. Замените примеры значений для **группы ресурсов** , **workspaceName** и **location** соответствующими значениями из вашей среды. Имя рабочей области должно быть уникальным в пределах всех подписок Azure.
 
 # <a name="cli"></a>[CLI](#tab/CLI)
 
@@ -281,15 +281,15 @@ az monitor diagnostic-settings show --resource '/subscriptions/00000000-0000-000
 
 ## <a name="retrieve-data-with-a-log-query"></a>Получение данных путем отправки запроса к журналу
 
-Используйте портал Azure, чтобы получить данные из рабочей области с помощью Log Analytics. На портале Azure найдите и выберите **Монитор**.
+Используйте портал Azure, чтобы получить данные из рабочей области с помощью Log Analytics. На портале Azure найдите и выберите **Монитор** .
 
 ![Портал Azure](media/quick-collect-activity-log/azure-portal-monitor.png)
 
-Выберите **Журналы** в меню **Azure Monitor**. Закройте страницу **Примеры запросов**. Если область не задана для созданной рабочей области, щелкните **Выбрать область** и найдите ее.
+Выберите **Журналы** в меню **Azure Monitor** . Закройте страницу **Примеры запросов** . Если область не задана для созданной рабочей области, щелкните **Выбрать область** и найдите ее.
 
 ![Область Log Analytics](media/quick-collect-activity-log/log-analytics-scope.png)
 
-В окне запроса введите `AzureActivity` и щелкните **Выполнить**. Это простой запрос. Он возвращает все записи в таблице *AzureActivity*, которая содержит все записи, отправленные из журнала действий.
+В окне запроса введите `AzureActivity` и щелкните **Выполнить** . Это простой запрос. Он возвращает все записи в таблице *AzureActivity* , которая содержит все записи, отправленные из журнала действий.
 
 ![Простой запрос](media/quick-collect-activity-log/query-01.png)
 

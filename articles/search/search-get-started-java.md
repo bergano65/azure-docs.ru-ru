@@ -10,16 +10,16 @@ ms.service: cognitive-search
 ms.topic: quickstart
 ms.date: 09/25/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: ed44431af6d99daa5549d019f42efda4bbf9912b
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.openlocfilehash: 336f58635465f77c60d04c53bb1893cb60f5f35f
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91540359"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92791228"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-index-in-java-using-rest-apis"></a>Краткое руководство. Создание индекса службы "Когнитивный поиск Azure" в Java с помощью REST API
 > [!div class="op_single_selector"]
-> * [JavaScript](search-get-started-nodejs.md)
+> * [JavaScript](search-get-started-javascript.md)
 > * [C#](search-get-started-dotnet.md)
 > * [Java](search-get-started-java.md)
 > * [Портал](search-get-started-portal.md)
@@ -53,7 +53,7 @@ ms.locfileid: "91540359"
 
    Создайте также ключ запросов. Мы рекомендуем создавать запросы с доступом только для чтения.
 
-:::image type="content" source="media/search-get-started-nodejs/service-name-and-keys.png" alt-text="Получение имени службы, ключей запросов и администратора" border="false":::
+:::image type="content" source="media/search-get-started-javascript/service-name-and-keys.png" alt-text="Получение имени службы, ключей запросов и администратора" border="false":::
 
 Для любого запроса, отправляемого к службе, требуется ключ API. Если есть действительный ключ, для каждого запроса устанавливаются отношения доверия между приложением, которое отправляет запрос, и службой, которая его обрабатывает.
 
@@ -64,7 +64,7 @@ ms.locfileid: "91540359"
 ### <a name="create-the-project"></a>Создание проекта
 
 1. Откройте IntelliJ IDEA и выберите **Create New Project** (Создать проект).
-1. Выберите **Maven**.
+1. Выберите **Maven** .
 1. В списке **Project SDK** (Пакет SDK проекта) выберите Java 11 SDK (Пакет SDK для Java 11).
 
     :::image type="content" source="media/search-get-started-java/java-quickstart-create-new-maven-project.png" alt-text="Получение имени службы, ключей запросов и администратора" border="false":::
@@ -76,7 +76,7 @@ ms.locfileid: "91540359"
 
 1. Щелкните **File** (Файл) > **Settings** (Параметры).
 1. В окне **Settings** (Параметры) выберите **Build, Execution, Deployment** (Сборка, выполнение, развертывание) > **Build Tools** (Средства сборки) > **Maven** > **Importing** (Импорт).
-1. Установите флажок **Import Maven projects automatically**(Импортировать проекты Maven автоматически) и щелкните **OK**, чтобы закрыть это окно. Подключаемые модули Maven и другие зависимости теперь автоматически синхронизируются, когда вы обновите файл pom.xml на следующем шаге.
+1. Установите флажок **Import Maven projects automatically** (Импортировать проекты Maven автоматически) и щелкните **OK** , чтобы закрыть это окно. Подключаемые модули Maven и другие зависимости теперь автоматически синхронизируются, когда вы обновите файл pom.xml на следующем шаге.
 
     :::image type="content" source="media/search-get-started-java/java-quickstart-settings-import-maven-auto.png" alt-text="Получение имени службы, ключей запросов и администратора" border="false":::
 

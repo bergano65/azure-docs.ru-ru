@@ -6,15 +6,15 @@ ms.service: iot-hub
 services: iot-hub
 ms.devlang: c
 ms.topic: quickstart
-ms.custom: mvc
+ms.custom: mvc, devx-track-azurecli
 ms.date: 08/20/2019
 ms.author: robinsh
-ms.openlocfilehash: 57baa06803e9d8c23c04170626b38c47542a4c2f
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: ad31eb04f53197c4c3ccdd173cd57564c65d5a35
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92150682"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92747461"
 ---
 # <a name="quickstart-communicate-to-a-device-application-in-c-via-iot-hub-device-streams-preview"></a>Краткое руководство. Взаимодействие с приложением устройства в C с помощью потоков устройств Центра Интернета вещей (предварительная версия)
 
@@ -89,7 +89,7 @@ ms.locfileid: "92150682"
     cd cmake
     ```
 
-1. Выполните приведенную ниже команду из каталога *cmake*, чтобы создать версию пакета SDK для используемой клиентской платформы разработки.
+1. Выполните приведенную ниже команду из каталога *cmake* , чтобы создать версию пакета SDK для используемой клиентской платформы разработки.
 
    * В Linux:
 
@@ -98,7 +98,7 @@ ms.locfileid: "92150682"
       make -j
       ```
 
-   * В Windows откройте [командную строку разработчика для Visual Studio](/dotnet/framework/tools/developer-command-prompt-for-vs). Выполните команду для своей версии Visual Studio. В этом кратком руководстве используется Visual Studio 2019. Эти команды также создают решение Visual Studio для имитированного устройства в каталоге *cmake*.
+   * В Windows откройте [командную строку разработчика для Visual Studio](/dotnet/framework/tools/developer-command-prompt-for-vs). Выполните команду для своей версии Visual Studio. В этом кратком руководстве используется Visual Studio 2019. Эти команды также создают решение Visual Studio для имитированного устройства в каталоге *cmake* .
 
       ```cmd
       rem For VS2015
@@ -126,7 +126,7 @@ ms.locfileid: "92150682"
 
    > [!NOTE]
    > * Замените заполнитель *YourIoTHubName* именем созданного центра Интернета вещей.
-   > * Для имени регистрируемого устройства рекомендуется использовать имя *MyDevice*, как показано в примере. Если вы выбрали другое имя для устройства, используйте его при работе с этой статьей и обновите имя устройства в примерах приложений перед их запуском.
+   > * Для имени регистрируемого устройства рекомендуется использовать имя *MyDevice* , как показано в примере. Если вы выбрали другое имя для устройства, используйте его при работе с этой статьей и обновите имя устройства в примерах приложений перед их запуском.
 
     ```azurecli-interactive
     az iot hub device-identity create --hub-name {YourIoTHubName} --device-id MyDevice

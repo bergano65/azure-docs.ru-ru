@@ -11,14 +11,15 @@ ms.custom:
 - mvc
 - mqtt
 - devx-track-java
+- devx-track-azurecli
 ms.date: 06/21/2019
 ms.author: wesmc
-ms.openlocfilehash: bd23483997b94f16e926c2849e0879b41316fba3
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: a1166874ed743efa599743fa6db8341e94c0fe1f
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92148908"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92747656"
 ---
 # <a name="quickstart-control-a-device-connected-to-an-iot-hub-android"></a>Краткое руководство. Управление подключенным к Центру Интернета вещей устройством Android
 
@@ -66,9 +67,9 @@ az extension add --name azure-iot
 
 1. Выполните приведенные ниже команды в Azure Cloud Shell, чтобы создать удостоверение устройства.
 
-   **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
+   **YourIoTHubName** . Замените этот заполнитель именем вашего центра Интернета вещей.
 
-   **MyAndroidDevice**. Это имя регистрируемого устройства. Рекомендуется использовать **MyAndroidDevice**, как показано ниже. Если вы выбрали другое имя для устройства, используйте его при работе с этим руководством и обновите имя устройства в примерах приложений перед их запуском.
+   **MyAndroidDevice** . Это имя регистрируемого устройства. Рекомендуется использовать **MyAndroidDevice** , как показано ниже. Если вы выбрали другое имя для устройства, используйте его при работе с этим руководством и обновите имя устройства в примерах приложений перед их запуском.
 
     ```azurecli-interactive
     az iot hub device-identity create \
@@ -77,7 +78,7 @@ az extension add --name azure-iot
 
 2. Выполните следующую команду в Azure Cloud Shell, чтобы получить _строку подключения_ зарегистрированного устройства:
 
-   **YourIoTHubName**. Замените этот заполнитель именем вашего Центра Интернета вещей.
+   **YourIoTHubName** . Замените этот заполнитель именем вашего Центра Интернета вещей.
 
     ```azurecli-interactive
     az iot hub device-identity show-connection-string \
@@ -94,9 +95,9 @@ az extension add --name azure-iot
 
 ## <a name="retrieve-the-service-connection-string"></a>Получение строки подключения к службе
 
-Чтобы разрешить внутреннему приложению-службе подключаться к центру Интернета вещей, выполнять методы и получать сообщения, требуется _строка подключения к службе_. Следующая команда извлекает строку подключения службы для Центра Интернета вещей:
+Чтобы разрешить внутреннему приложению-службе подключаться к центру Интернета вещей, выполнять методы и получать сообщения, требуется _строка подключения к службе_ . Следующая команда извлекает строку подключения службы для Центра Интернета вещей:
 
-**YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
+**YourIoTHubName** . Замените этот заполнитель именем вашего центра Интернета вещей.
 
 ```azurecli-interactive
 az iot hub show-connection-string --policy-name service --name {YourIoTHubName} --output table
@@ -114,7 +115,7 @@ az iot hub show-connection-string --policy-name service --name {YourIoTHubName} 
 
 Пример приложения с использованием пакета SDK для устройств может выполняться на физическом устройстве Android или в эмуляторе Android. Такое приложение подключается к конечной точке конкретного устройства в Центре Интернета вещей, отправляет имитированные данные телеметрии и ожидает передачи данных при вызове прямого метода из центра. В рамках этого краткого руководства вызов прямого метода из центра инициирует изменение интервала, с которым устройство отправляет данные телеметрии. После выполнения прямого метода имитированное устройство отправляет подтверждение в центр.
 
-1. В Android Studio откройте пример проекта Android, полученный из GitHub. Проект находится в указанном ниже каталоге копии клонированного или скачанного репозитория [azure-iot-sample-java](https://github.com/Azure-Samples/azure-iot-samples-java): *\azure-iot-samples-java\iot-hub\Samples\device\AndroidSample*.
+1. В Android Studio откройте пример проекта Android, полученный из GitHub. Проект находится в указанном ниже каталоге копии клонированного или скачанного репозитория [azure-iot-sample-java](https://github.com/Azure-Samples/azure-iot-samples-java): *\azure-iot-samples-java\iot-hub\Samples\device\AndroidSample* .
 
 2. В Android Studio откройте *gradle.properties* для примера проекта и замените заполнитель **Device_Connection_String** строкой подключения устройства, которую вы записали ранее.
 
@@ -144,7 +145,7 @@ az iot hub show-connection-string --policy-name service --name {YourIoTHubName} 
 
 1. С помощью Azure Cloud Shell выполните следующую команду для установки подключения к центру Интернета вещей и чтения поступающих из него сообщений:
 
-   **YourIoTHubName**. Замените этот заполнитель именем вашего Центра Интернета вещей.
+   **YourIoTHubName** . Замените этот заполнитель именем вашего Центра Интернета вещей.
 
     ```azurecli-interactive
     az iot hub monitor-events --hub-name {YourIoTHubName} --output table
@@ -164,7 +165,7 @@ az iot hub show-connection-string --policy-name service --name {YourIoTHubName} 
 
 Внутреннее приложение-служба Центра Интернета вещей обычно выполняется в облаке. Это позволяет сократить риски, связанные с конфиденциальными данными строки подключения, которая используется для управлениям всеми устройствами в Центре Интернета вещей. В этом примере в качестве такого приложения мы используем приложение Android (только для демонстрации). В других языковых версиях этого краткого руководства предоставляются примеры, которые больше соответствуют обычному внутреннему приложению-службе.
 
-1. В Android Studio откройте пример проекта Android со службой, полученный из GitHub. Проект находится в указанном ниже каталоге копии клонированного или скачанного репозитория [azure-iot-sample-java](https://github.com/Azure-Samples/azure-iot-samples-java): *\azure-iot-samples-java\iot-hub\Samples\service\AndroidSample*.
+1. В Android Studio откройте пример проекта Android со службой, полученный из GitHub. Проект находится в указанном ниже каталоге копии клонированного или скачанного репозитория [azure-iot-sample-java](https://github.com/Azure-Samples/azure-iot-samples-java): *\azure-iot-samples-java\iot-hub\Samples\service\AndroidSample* .
 
 2. В Android Studio откройте файл *gradle.properties* для примера проекта. Замените значение свойства **ConnectionString** записанной ранее строкой подключения к службе, а значение свойства **DeviceId** идентификатором зарегистрированного устройства Android.
 

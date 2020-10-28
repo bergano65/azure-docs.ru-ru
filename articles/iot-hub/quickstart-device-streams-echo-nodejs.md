@@ -6,15 +6,15 @@ ms.service: iot-hub
 services: iot-hub
 ms.devlang: nodejs
 ms.topic: quickstart
-ms.custom: mvc, devx-track-js
+ms.custom: mvc, devx-track-js, devx-track-azurecli
 ms.date: 03/14/2019
 ms.author: robinsh
-ms.openlocfilehash: 7401bc0661459e1322c9b2f2226d45794f814732
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: ef362b34fe99212ee6648830ac442e507515719f
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91302950"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92747526"
 ---
 # <a name="quickstart-communicate-to-a-device-application-in-nodejs-via-iot-hub-device-streams-preview"></a>Краткое руководство. Взаимодействие с приложением устройства в Node.js с помощью потоков устройств Центра Интернета вещей (предварительная версия)
 
@@ -74,17 +74,17 @@ az extension add --name azure-iot
 
 1. Выполните приведенные ниже команды в Azure Cloud Shell, чтобы создать удостоверение устройства.
 
-   **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
+   **YourIoTHubName** . Замените этот заполнитель именем вашего центра Интернета вещей.
 
-   **MyDevice**. Это имя регистрируемого устройства. Рекомендуется использовать **MyDevice**, как показано ниже. Если вы выбрали другое имя для устройства, используйте его при работе с этим руководством и обновите имя устройства в примерах приложений перед их запуском.
+   **MyDevice** . Это имя регистрируемого устройства. Рекомендуется использовать **MyDevice** , как показано ниже. Если вы выбрали другое имя для устройства, используйте его при работе с этим руководством и обновите имя устройства в примерах приложений перед их запуском.
 
     ```azurecli-interactive
     az iot hub device-identity create --hub-name {YourIoTHubName} --device-id MyDevice
     ```
 
-2. Чтобы разрешить внутреннему приложению подключаться к Центру Интернета вещей и получать сообщения, вам необходима *строка подключения к службе*. Следующая команда извлекает строку подключения службы для Центра Интернета вещей:
+2. Чтобы разрешить внутреннему приложению подключаться к Центру Интернета вещей и получать сообщения, вам необходима *строка подключения к службе* . Следующая команда извлекает строку подключения службы для Центра Интернета вещей:
 
-    **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
+    **YourIoTHubName** . Замените этот заполнитель именем вашего центра Интернета вещей.
 
     ```azurecli-interactive
     az iot hub show-connection-string --policy-name service --name {YourIoTHubName} --output table
@@ -131,7 +131,7 @@ az extension add --name azure-iot
    SET STREAMING_TARGET_DEVICE=MyDevice
    ```
   
-   Измените заполнитель ServiceConnectionString, чтобы он соответствовал строке подключения к службе, и **MyDevice**, чтобы он соответствовал коду устройства, если вы указали другое имя.
+   Измените заполнитель ServiceConnectionString, чтобы он соответствовал строке подключения к службе, и **MyDevice** , чтобы он соответствовал коду устройства, если вы указали другое имя.
 
 * Перейдите к папке `Quickstarts/device-streams-service` в распакованной папке проекта и запустите образец, используя узел.
 

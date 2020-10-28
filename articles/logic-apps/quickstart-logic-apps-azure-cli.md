@@ -5,21 +5,21 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: estfan, logicappspm
 ms.topic: quickstart
-ms.custom: mvc
+ms.custom: mvc, devx-track-azurecli
 ms.date: 07/30/2020
-ms.openlocfilehash: e492a5f0afdfc2087e5719df65221d08db0a2e77
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: e6e53755d9231008d0f48c755ff9da297d7305d7
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87499557"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92747173"
 ---
 # <a name="quickstart-create-and-manage-logic-apps-using-the-azure-cli"></a>Краткое руководство. Создание приложений логики и управление ими с помощью Azure CLI
 
 В этом кратком руководстве показано, как создавать приложения логики и управлять ими с помощью [расширений Azure CLI Logic Apps](/cli/azure/ext/logic/logic?view=azure-cli-latest) (`az logic`). В командной строке можно создать приложение логики, определив его рабочий процесс с помощью JSON-файла. Затем вы можете управлять приложением логики, выполняя из командной строки такие операции, как `list`, `show` (`get`), `update` и `delete`.
 
 > [!WARNING]
-> Расширение Azure CLI Logic Apps в настоящее время *экспериментальное*, на него не предоставляется *клиентская поддержка*. Используйте это расширение CLI с осторожностью, особенно в рабочих средах.
+> Расширение Azure CLI Logic Apps в настоящее время *экспериментальное* , на него не предоставляется *клиентская поддержка* . Используйте это расширение CLI с осторожностью, особенно в рабочих средах.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -61,7 +61,7 @@ az group create --name testResourceGroup --location westus
 
 ## <a name="workflow-definition"></a>Определение рабочего процесса
 
-Прежде чем [создать приложение логики](#create-logic-apps-from-cli) или [обновить существующее](#update-logic-apps-from-cli) с помощью Azure CLI, вам потребуется определение рабочего процесса для приложения логики. На портале Azure можно просмотреть базовое определение рабочего процесса приложения логики в формате JSON, переключив представление **Конструктор** на **Представление кода**.
+Прежде чем [создать приложение логики](#create-logic-apps-from-cli) или [обновить существующее](#update-logic-apps-from-cli) с помощью Azure CLI, вам потребуется определение рабочего процесса для приложения логики. На портале Azure можно просмотреть базовое определение рабочего процесса приложения логики в формате JSON, переключив представление **Конструктор** на **Представление кода** .
 
 При выполнении команд для создания или обновления приложения логики определение рабочего процесса отправляется в качестве обязательного параметра (`--definition`). Необходимо создать определение рабочего процесса в виде JSON-файла, который следует за [схемой языка определения рабочего процесса](./logic-apps-workflow-definition-language.md).
 

@@ -8,12 +8,12 @@ ms.service: storage
 ms.subservice: queues
 ms.topic: overview
 ms.reviewer: dineshm
-ms.openlocfilehash: c16f02922b2e815ddd4986ab07bf260b20d871ee
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: d1ec251edf384e8032a67dc66982787d17c75dbd
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87826506"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92781470"
 ---
 # <a name="what-are-azure-queues"></a>Что такое очереди Azure?
 
@@ -25,7 +25,7 @@ ms.locfileid: "87826506"
 
 ![Схема, на которой показана связь между учетной записью хранения, очередями и сообщениями](./media/storage-queues-introduction/queue1.png)
 
-* **Формат URL-адреса**. К очереди можно обратиться, используя следующий формат URL-адреса:
+* **Формат URL-адреса** . К очереди можно обратиться, используя следующий формат URL-адреса:
 
     `https://<storage account>.queue.core.windows.net/<queue>`
   
@@ -33,13 +33,13 @@ ms.locfileid: "87826506"
   
     `https://myaccount.queue.core.windows.net/images-to-download`
 
-* **Учетная запись хранения**. Весь доступ к хранилищу Azure осуществляется с помощью учетной записи хранения. Сведения о емкости учетной записи хранения см. в статье о [целевых показателях масштабируемости и производительности для учетных записей хранения ценовой категории "Стандартный"](../common/scalability-targets-standard-account.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json).
+* **Учетная запись хранения** . Весь доступ к хранилищу Azure осуществляется с помощью учетной записи хранения. Сведения о емкости учетной записи хранения см. в статье о [целевых показателях масштабируемости и производительности для учетных записей хранения ценовой категории "Стандартный"](../common/scalability-targets-standard-account.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json).
 
-* **Очередь**. Очередь содержит набор сообщений. Имя очереди **должно** содержать только строчные символы. Дополнительные сведения см. в статье о [присвоении имен очередям и метаданным](https://msdn.microsoft.com/library/azure/dd179349.aspx).
+* **Очередь** . Очередь содержит набор сообщений. Имя очереди **должно** содержать только строчные символы. Дополнительные сведения см. в статье о [присвоении имен очередям и метаданным](/rest/api/storageservices/Naming-Queues-and-Metadata).
 
 * **Сообщение.** Сообщение в любом формате размером до 64 КБ. В версиях, предшествовавших 2017-07-29, максимальный срок жизни сообщения составлял семь дней. Начиная с версии 2017-07-29, максимальный срок жизни может быть задан любым положительным числом или значением -1, свидетельствующим о том, что срок жизни сообщения неограничен. Если этот параметр не указан, срок жизни по умолчанию составляет семь дней.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [создать учетную запись хранения;](../storage-create-storage-account.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json)
+* [создать учетную запись хранения;](../common/storage-account-create.md?toc=%252fazure%252fstorage%252fqueues%252ftoc.json)
 * [Начало работы с очередями с использованием .NET](storage-dotnet-how-to-use-queues.md)

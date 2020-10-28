@@ -2,18 +2,18 @@
 title: Краткое руководство по использованию клиентской библиотеки Azure Key Vault для Java
 description: Сведения о критериях, применяемых к формату и содержимому для создания кратких руководств по клиентским библиотекам Azure SDK.
 author: msmbaldwin
-ms.custom: devx-track-java
+ms.custom: devx-track-java, devx-track-azurecli
 ms.author: mbaldwin
 ms.date: 10/20/2019
 ms.service: key-vault
 ms.subservice: secrets
 ms.topic: quickstart
-ms.openlocfilehash: 87d7bbaa40226e02726b92cf7f7705c8028149f7
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: f4008b43c487f9dd1c8cfe5e5b67a250ff849daf
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92019636"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92786213"
 ---
 # <a name="quickstart-azure-key-vault-secret-client-library-for-java"></a>Краткое руководство. Использование клиентской библиотеки секретов Azure Key Vault для Java
 
@@ -37,7 +37,7 @@ ms.locfileid: "92019636"
 
 ## <a name="setting-up"></a>Настройка
 
-В этом кратком руководстве используется библиотека удостоверений Azure и Azure CLI для проверки подлинности пользователя в службах Azure. Разработчики также могут использовать Visual Studio или Visual Studio Code для проверки подлинности своих вызовов. Дополнительные сведения см. в статье [Проверка подлинности клиента с помощью клиентской библиотеки удостоверений Azure](https://docs.microsoft.com/java/api/overview/azure/identity-readme).
+В этом кратком руководстве используется библиотека удостоверений Azure и Azure CLI для проверки подлинности пользователя в службах Azure. Разработчики также могут использовать Visual Studio или Visual Studio Code для проверки подлинности своих вызовов. Дополнительные сведения см. в статье [Проверка подлинности клиента с помощью клиентской библиотеки удостоверений Azure](/java/api/overview/azure/identity-readme).
 
 ### <a name="sign-in-to-azure"></a>Вход в Azure
 

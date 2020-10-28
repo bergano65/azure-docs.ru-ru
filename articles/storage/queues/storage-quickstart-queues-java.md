@@ -8,12 +8,12 @@ ms.date: 09/10/2020
 ms.service: storage
 ms.subservice: queues
 ms.topic: quickstart
-ms.openlocfilehash: 9b9f68737ca714c0661ffb008347149235886c68
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: b6be3c0f3b7ff8e44bd9dda089c803a27e883383
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "90015030"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92783442"
 ---
 # <a name="quickstart-azure-queue-storage-client-library-v12-for-java"></a>Краткое руководство. Использование клиентской библиотеки Хранилища очередей Azure версии 12 для Java
 
@@ -33,14 +33,14 @@ ms.locfileid: "90015030"
 * [Справочная документация по API](/java/api/overview/azure/storage-queue-readme)
 * [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/storage/azure-storage-queue)
 * [Пакет (Maven)](https://mvnrepository.com/artifact/com.azure/azure-storage-queue)
-* [Примеры](/azure/storage/common/storage-samples-java?toc=%2fazure%2fstorage%2fqueues%2ftoc.json#queue-samples)
+* [Примеры](../common/storage-samples-java.md?toc=%252fazure%252fstorage%252fqueues%252ftoc.json#queue-samples)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 * [Пакет разработчиков Java (JDK)](/java/azure/jdk/) версии 8 или более поздней версии.
 * [Apache Maven](https://maven.apache.org/download.cgi)
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
-* Учетная запись хранения Azure — [создайте такую учетную запись](/azure/storage/common/storage-quickstart-create-account).
+* Учетная запись хранения Azure — [создайте такую учетную запись](../common/storage-account-create.md).
 
 ## <a name="setting-up"></a>Настройка
 
@@ -48,9 +48,9 @@ ms.locfileid: "90015030"
 
 ### <a name="create-the-project"></a>Создание проекта
 
-Создайте приложение Java с именем *queues-quickstart-v12*.
+Создайте приложение Java с именем *queues-quickstart-v12* .
 
-1. В окне консоли (командная строка, PowerShell или Bash) с помощью Maven создайте консольное приложение с именем *queues-quickstart-v12*. Введите следующую команду **mvn**, чтобы создать проект Java "Hello World".
+1. В окне консоли (командная строка, PowerShell или Bash) с помощью Maven создайте консольное приложение с именем *queues-quickstart-v12* . Введите следующую команду **mvn** , чтобы создать проект Java "Hello World".
 
    ```console
    mvn archetype:generate -DgroupId=com.queues.quickstart \
@@ -97,7 +97,7 @@ ms.locfileid: "90015030"
     [INFO] ------------------------------------------------------------------------
     ```
 
-1. Перейдите в только что созданный каталог *queues-quickstart-v12*.
+1. Перейдите в только что созданный каталог *queues-quickstart-v12* .
 
    ```console
    cd queues-quickstart-v12
@@ -119,7 +119,7 @@ ms.locfileid: "90015030"
 
 Из каталога проекта:
 
-1. Перейдите в каталог */src/main/java/com/queues/quickstart*.
+1. Перейдите в каталог */src/main/java/com/queues/quickstart* .
 1. Откройте файл *App.java* в редакторе.
 1. Удалите оператор `System.out.println("Hello world!");`.
 1. Добавьте директивы `import`.
@@ -363,7 +363,7 @@ Done
 
 Когда приложение приостановится перед получением сообщений, проверьте учетную запись хранения на [портале Azure](https://portal.azure.com). Убедитесь, что сообщения находятся в очереди.
 
-Нажмите клавишу **ВВОД**, чтобы получить и удалить сообщения. При появлении запроса снова нажмите клавишу **ВВОД**, чтобы удалить очередь и завершить демонстрацию.
+Нажмите клавишу **ВВОД** , чтобы получить и удалить сообщения. При появлении запроса снова нажмите клавишу **ВВОД** , чтобы удалить очередь и завершить демонстрацию.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
