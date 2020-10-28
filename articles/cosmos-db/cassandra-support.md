@@ -8,12 +8,12 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-cassandra
 ms.topic: overview
 ms.date: 09/14/2020
-ms.openlocfilehash: f9d472b94b5490d00eac6d160af40c61d547534b
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: 89e8a6a2abfc38c497be646bd70910895f92588f
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92107493"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92489325"
 ---
 # <a name="apache-cassandra-features-supported-by-azure-cosmos-db-cassandra-api"></a>Функции Apache Cassandra, поддерживаемые API Cassandra для Azure Cosmos DB 
 
@@ -208,7 +208,7 @@ API Cassandra для Azure Cosmos DB — это платформа управл�
 
 **Windows:**
 
-При использовании Windows рекомендуется включить [файловую систему Windows для Linux](https://docs.microsoft.com/windows/wsl/install-win10#install-the-windows-subsystem-for-linux). Затем вы можете выполнять приведенные ниже команды Linux.
+При использовании Windows рекомендуется включить [файловую систему Windows для Linux](/windows/wsl/install-win10#install-the-windows-subsystem-for-linux). Затем вы можете выполнять приведенные ниже команды Linux.
 
 **UNIX/Linux и Mac:**
 
@@ -255,7 +255,7 @@ foreach (string key in insertResult.Info.IncomingPayload)
 
 ## <a name="consistency-mapping"></a>Сопоставление согласованности 
 
-API Cassandra для Azure Cosmos DB предоставляет согласованные операции чтения.  Сопоставление согласованности подробно описано [здесь](consistency-levels-across-apis.md#cassandra-mapping).
+API Cassandra для Azure Cosmos DB предоставляет согласованные операции чтения.  Сопоставление согласованности подробно описано [здесь](./cassandra-consistency.md#mapping-consistency-levels).
 
 ## <a name="permission-and-role-management"></a>Управление разрешениями и ролями
 

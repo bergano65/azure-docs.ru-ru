@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 10/09/2020
 ms.author: anfeldma
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 74ff6983b08b6f19a94384be7c4361d4266d6a20
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: 2d82b7f618757fbf77072bd7147595eec3083885
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92108768"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92487642"
 ---
 # <a name="quickstart-build-a-todo-app-with-xamarin-using-azure-cosmos-db-sql-api-account"></a>Краткое руководство. Создание приложения со списком дел с помощью Xamarin и API SQL для Azure Cosmos DB | Документация Майкрософт
 
@@ -32,7 +32,7 @@ Azure Cosmos DB — это глобально распределенная мн
 > [!NOTE]
 > Полный канонический пример кода для приложения Xamarin, демонстрирующий множество предложений Azure, включая Cosmos DB, можно найти [на этой странице](https://github.com/xamarinhq/app-geocontacts) сайта GitHub. Это приложение позволяет просмотреть географически распределенные контакты и обеспечивает обновление их расположения.
 
-В этом кратком руководстве описано, как с помощью портала Azure создать учетную запись API SQL для Azure Cosmos DB, базу данных документов и контейнер. Затем вы создадите и развернете мобильное приложение со списком дел на основе [API-интерфейса .NET для SQL](sql-api-sdk-dotnet.md) и [Xamarin](https://docs.microsoft.com/xamarin/), используя [Xamarin.Forms](https://docs.microsoft.com/xamarin/) и [шаблон архитектуры MVVM](https://docs.microsoft.com/xamarin/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm).
+В этом кратком руководстве описано, как с помощью портала Azure создать учетную запись API SQL для Azure Cosmos DB, базу данных документов и контейнер. Затем вы создадите и развернете мобильное приложение со списком дел на основе [API-интерфейса .NET для SQL](sql-api-sdk-dotnet.md) и [Xamarin](/xamarin/), используя [Xamarin.Forms](/xamarin/) и [шаблон архитектуры MVVM](/xamarin/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm).
 
 :::image type="content" source="./media/create-sql-api-xamarin-dotnet/ios-todo-screen.png" alt-text="Приложение со списком дел Xamarin в iOS":::
 
@@ -177,7 +177,7 @@ Azure Cosmos DB — это глобально распределенная мн
 Ниже приведены инструкции по запуску приложения с помощью отладчика Visual Studio для Mac.
 
 > [!NOTE]
-> Для приложения версии Android используются такие же действия. Все различия будут рассмотрены далее. Чтобы выполнить отладку в Visual Studio в Windows, ознакомьтесь с документацией по предложению со списком дел [для iOS](https://docs.microsoft.com/xamarin/ios/deploy-test/debugging-in-xamarin-ios?tabs=vswin) и [для Android](https://docs.microsoft.com/xamarin/android/deploy-test/debugging/).
+> Для приложения версии Android используются такие же действия. Все различия будут рассмотрены далее. Чтобы выполнить отладку в Visual Studio в Windows, ознакомьтесь с документацией по предложению со списком дел [для iOS](/xamarin/ios/deploy-test/debugging-in-xamarin-ios?tabs=vswin) и [для Android](/xamarin/android/deploy-test/debugging/).
 
 1. Сначала выберите целевую платформу. Для этого щелкните выделенный раскрывающийся список и выберите ToDoItems.iOS для iOS или ToDoItems.Android для Android.
 

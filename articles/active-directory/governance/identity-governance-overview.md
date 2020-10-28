@@ -16,12 +16,12 @@ ms.date: 06/18/2020
 ms.author: ajburnle
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2ecbebfc75cb8c77ebb99ad04b1f9e33b3c4ef64
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: e02df83d4b7874a1d158aae45f1619eb543e0aec
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91306469"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92362456"
 ---
 # <a name="what-is-azure-ad-identity-governance"></a>Что такое Azure AD Identity Governance?
 
@@ -58,7 +58,7 @@ ms.locfileid: "91306469"
 
 Обычно ИТ-подразделения передают решения по утверждению доступа ответственным лицам в организации.  Также в этом процессе могут участвовать сами пользователи.  Например, пользователям, которые работают с конфиденциальными данными клиентов в маркетинговом приложении для Европы, нужна информация о соответствующих корпоративных политиках. Гостевые пользователи могут ничего не знать о внутренних требованиях к обработке данных, которые действуют в пригласившей их организации.
 
-Организации могут автоматизировать процессы управления жизненным циклом доступа, применив такие технологии, как [динамические группы](../users-groups-roles/groups-dynamic-membership.md) и подготовка пользователей в [приложениях SaaS](../saas-apps/tutorial-list.md) или [приложениях, интегрированных с SCIM](../app-provisioning/use-scim-to-provision-users-and-groups.md).  Организации также могут выбирать, [какие гостевые пользователи получат доступ к локальным приложениям](../external-identities/hybrid-cloud-to-on-premises.md).  Также эти права доступа можно регулярно проверять с помощью [проверок доступа Azure Active Directory](access-reviews-overview.md).   [Управления правами Azure AD](entitlement-management-overview.md) также позволяет определить, как пользователи запрашивают доступ, для разных пакетов членств в группах и командах, ролей приложений и ролей SharePoint Online.
+Организации могут автоматизировать процессы управления жизненным циклом доступа, применив такие технологии, как [динамические группы](../enterprise-users/groups-dynamic-membership.md) и подготовка пользователей в [приложениях SaaS](../saas-apps/tutorial-list.md) или [приложениях, интегрированных с SCIM](../app-provisioning/use-scim-to-provision-users-and-groups.md).  Организации также могут выбирать, [какие гостевые пользователи получат доступ к локальным приложениям](../external-identities/hybrid-cloud-to-on-premises.md).  Также эти права доступа можно регулярно проверять с помощью [проверок доступа Azure Active Directory](access-reviews-overview.md).   [Управления правами Azure AD](entitlement-management-overview.md) также позволяет определить, как пользователи запрашивают доступ, для разных пакетов членств в группах и командах, ролей приложений и ролей SharePoint Online.
 
 Когда пользователь пытается получить доступ к приложениям, Azure AD применяет политики [условного доступа](../conditional-access/index.yml). Например, в политики условного доступа можно включить [отображение условий использования](../conditional-access/terms-of-use.md) и [получение согласия пользователя](../conditional-access/require-tou.md) на эти условия перед предоставлением доступа к приложению.
 
@@ -100,7 +100,7 @@ ms.locfileid: "91306469"
 Невозможно подобрать идеальное для всех клиентов решение или рекомендацию, но следующие рекомендации по конфигурации предоставят вам базовые сведения о политиках, которые корпорация Майкрософт рекомендует для повышения безопасности и производительности сотрудников.
 
 - [Конфигурации доступа для удостоверений и устройств](/microsoft-365/enterprise/microsoft-365-policies-configurations)
-- [Защита привилегированного доступа](../users-groups-roles/directory-admin-roles-secure.md)
+- [Защита привилегированного доступа](../roles/security-planning.md)
 
 ## <a name="appendix---least-privileged-roles-for-managing-in-identity-governance-features"></a>Приложение — роли с минимально необходимыми привилегиями для управления возможностями Identity Governance
 

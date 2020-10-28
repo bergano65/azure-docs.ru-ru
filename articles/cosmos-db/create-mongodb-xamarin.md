@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 10/09/2020
 ms.author: masoucou
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 10e3f420a187d67e19392dd3647692b54a817fa5
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: ffa8e473fb084b2d5f0e7f59a07b3de50e04752e
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92090307"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92475865"
 ---
 # <a name="quickstart-build-a-xamarinforms-app-with-net-sdk-and-azure-cosmos-dbs-api-for-mongodb"></a>Краткое руководство. Создание приложения Xamarin.Forms с помощью пакета SDK для .NET и API Azure Cosmos DB для MongoDB
 
@@ -35,7 +35,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Чтобы запустить пример, вам потребуется [Visual Studio](https://www.visualstudio.com/downloads/) или [Visual Studio для Mac](https://visualstudio.microsoft.com/vs/mac/) и действительная учетная запись Azure CosmosDB.
 
-Если вы еще не установили Visual Studio, скачайте [Visual Studio 2019 Community Edition](https://www.visualstudio.com/downloads/) с установленной и настроенной рабочей нагрузкой **Разработка мобильных приложений на .NET**.
+Если вы еще не установили Visual Studio, скачайте [Visual Studio 2019 Community Edition](https://www.visualstudio.com/downloads/) с установленной и настроенной рабочей нагрузкой **Разработка мобильных приложений на .NET** .
 
 Если вы предпочитаете работать на компьютере Mac, скачайте [Visual Studio для Mac](https://visualstudio.microsoft.com/vs/mac/) и запустите программу установки.
 
@@ -163,11 +163,11 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Теперь вернитесь на портал Azure, чтобы получить данные строки подключения. Скопируйте эти данные в приложение.
 
-1. На [портале Azure](https://portal.azure.com/) перейдите к учетной записи базы данных Azure Cosmos DB и на левой панели навигации щелкните **Строка подключения**, а затем выберите **Ключи записи-чтения**. В следующих шагах используйте кнопки копирования в правой части экрана, чтобы скопировать основную строку подключения.
+1. На [портале Azure](https://portal.azure.com/) перейдите к учетной записи базы данных Azure Cosmos DB и на левой панели навигации щелкните **Строка подключения** , а затем выберите **Ключи записи-чтения** . В следующих шагах используйте кнопки копирования в правой части экрана, чтобы скопировать основную строку подключения.
 
-2. Откройте файл **APIKeys.cs** в каталоге **Helpers** проекта **TaskList.Core**.
+2. Откройте файл **APIKeys.cs** в каталоге **Helpers** проекта **TaskList.Core** .
 
-3. Скопируйте **основную строку подключения** на портале (с помощью кнопки копирования) и используйте ее в качестве значения поля **ConnectionString** в файле **APIKeys.cs**.
+3. Скопируйте **основную строку подключения** на портале (с помощью кнопки копирования) и используйте ее в качестве значения поля **ConnectionString** в файле **APIKeys.cs** .
 
 4. Удалите `&replicaSet=globaldb` из строки подключения. Вы получите ошибку во время выполнения, если не удалите это значение из строки запроса.
 
@@ -180,12 +180,12 @@ Azure Cosmos DB — это глобально распределенная мн
 
 ### <a name="visual-studio-2019"></a>Visual Studio 2019
 
-1. В Visual Studio в **обозревателе решений** щелкните каждый проект правой кнопкой мыши и выберите **Управление пакетами NuGet**.
-2. Щелкните **Восстановить все пакеты NuGet**.
-3. Щелкните правой кнопкой мыши **TaskList.Android** и выберите **Назначить запускаемым проектом**.
+1. В Visual Studio в **обозревателе решений** щелкните каждый проект правой кнопкой мыши и выберите **Управление пакетами NuGet** .
+2. Щелкните **Восстановить все пакеты NuGet** .
+3. Щелкните правой кнопкой мыши **TaskList.Android** и выберите **Назначить запускаемым проектом** .
 4. Нажмите клавишу F5 для запуска отладки приложения.
-5. Если вы хотите запустить приложение на устройстве iOS, сначала необходимо подключиться к компьютеру Mac (для этого [выполните следующие действия](https://docs.microsoft.com/xamarin/ios/get-started/installation/windows/introduction-to-xamarin-ios-for-visual-studio)).
-6. Щелкните проект правой кнопкой мыши **TaskList.iOS** и выберите **Назначить запускаемым проектом**.
+5. Если вы хотите запустить приложение на устройстве iOS, сначала необходимо подключиться к компьютеру Mac (для этого [выполните следующие действия](/xamarin/ios/get-started/installation/windows/introduction-to-xamarin-ios-for-visual-studio)).
+6. Щелкните проект правой кнопкой мыши **TaskList.iOS** и выберите **Назначить запускаемым проектом** .
 7. Нажмите клавишу F5 для запуска отладки приложения.
 
 ### <a name="visual-studio-for-mac"></a>Visual Studio для Mac
@@ -206,4 +206,4 @@ Azure Cosmos DB — это глобально распределенная мн
 Из этого краткого руководства вы узнали, как создать учетную запись Azure Cosmos DB и запустить приложение Xamarin.Forms, используя API MongoDB. Теперь можно импортировать дополнительные данные в учетную запись Azure Cosmos DB.
 
 > [!div class="nextstepaction"]
-> [Руководство по переносу данных в учетную запись API MongoDB в Azure Cosmos DB](mongodb-migrate.md)
+> [Руководство по переносу данных в учетную запись API MongoDB в Azure Cosmos DB](../dms/tutorial-mongodb-cosmos-db.md?toc=%252fazure%252fcosmos-db%252ftoc.json%253ftoc%253d%252fazure%252fcosmos-db%252ftoc.json)

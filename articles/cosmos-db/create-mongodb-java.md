@@ -9,12 +9,12 @@ ms.devlang: java
 ms.topic: quickstart
 ms.date: 12/26/2018
 ms.custom: seo-java-august2019, seo-java-september2019, devx-track-java
-ms.openlocfilehash: 301bedc75d243f427120c955bda539508ff43200
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: a831921ec3b3fa755496c08c02665b1c0fe99557
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87323644"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92475963"
 ---
 # <a name="quickstart-create-a-console-app-with-java-and-the-mongodb-api-in-azure-cosmos-db"></a>Краткое руководство. Создание консольного приложения с использованием Java и API MongoDB в Azure Cosmos DB
 
@@ -41,7 +41,7 @@ ms.locfileid: "87323644"
 
 ## <a name="add-a-collection"></a>Добавление коллекции
 
-Присвойте новой базе данных имя **db**, а новой коллекции — **coll**.
+Присвойте новой базе данных имя **db** , а новой коллекции — **coll** .
 
 [!INCLUDE [cosmos-db-create-collection](../../includes/cosmos-db-mongodb-create-collection.md)] 
 
@@ -73,7 +73,7 @@ ms.locfileid: "87323644"
 
 Это необязательный шаг. Если вы хотите узнать, как создать в коде ресурсы базы данных, изучите приведенные ниже фрагменты кода. Если вас это не интересует, можете сразу переходить к разделу [Обновление строки подключения](#update-your-connection-string). 
 
-Приведенные ниже фрагменты кода взяты из файла *Program.java*.
+Приведенные ниже фрагменты кода взяты из файла *Program.java* .
 
 Это консольное приложение использует [драйвер Java для MongoDB](https://docs.mongodb.com/ecosystem/drivers/java/). 
 
@@ -111,9 +111,9 @@ ms.locfileid: "87323644"
 
 Теперь вернитесь на портал Azure, чтобы получить данные строки подключения. Скопируйте эти данные в приложение.
 
-1. В учетной записи Azure Cosmos DB щелкните **Быстрый запуск**, выберите **Java**, а затем скопируйте строку подключения в буфер обмена.
+1. В учетной записи Azure Cosmos DB щелкните **Быстрый запуск** , выберите **Java** , а затем скопируйте строку подключения в буфер обмена.
 
-2. Откройте файл *Program.java*, замените аргумент конструктора MongoClientURI строкой подключения. Теперь приложение со всеми сведениями, необходимыми для взаимодействия с Azure Cosmos DB, обновлено. 
+2. Откройте файл *Program.java* , замените аргумент конструктора MongoClientURI строкой подключения. Теперь приложение со всеми сведениями, необходимыми для взаимодействия с Azure Cosmos DB, обновлено. 
     
 ## <a name="run-the-console-app"></a>Запуск консольного приложения
 
@@ -136,4 +136,4 @@ ms.locfileid: "87323644"
 Из этого краткого руководства вы узнали, как создать учетную запись API Azure Cosmos DB для MongoDB, добавить базу данных и контейнер с помощью обозревателя данных, а также добавить данные с помощью консольного приложения Java. Теперь вы можете импортировать дополнительные данные в базу данных Cosmos. 
 
 > [!div class="nextstepaction"]
-> [Перенос данных MongoDB в Azure Cosmos DB](mongodb-migrate.md)
+> [Перенос данных MongoDB в Azure Cosmos DB](../dms/tutorial-mongodb-cosmos-db.md?toc=%252fazure%252fcosmos-db%252ftoc.json%253ftoc%253d%252fazure%252fcosmos-db%252ftoc.json)

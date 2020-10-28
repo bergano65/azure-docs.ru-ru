@@ -8,12 +8,12 @@ ms.devlang: azurecli
 ms.topic: quickstart
 ms.date: 3/18/2020
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 7fe68e7b1a56c22e8c0d9638408982518105888e
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 198a8eee38da2738552bc5e2a2ba52e13a890122
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88185168"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92424480"
 ---
 # <a name="quickstart-create-an-azure-database-for-mariadb-server-by-using-the-azure-cli"></a>Краткое руководство. Создание сервера Базы данных Azure для MariaDB с помощью Azure CLI
 
@@ -33,7 +33,7 @@ az account set --subscription 00000000-0000-0000-0000-000000000000
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Создайте [группу ресурсов Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview) с помощью команды [az group create](/cli/azure/group#az-group-create). Группа ресурсов — это логический контейнер, в котором ресурсы Azure развертываются и администрируются как группа.
+Создайте [группу ресурсов Azure](../azure-resource-manager/management/overview.md) с помощью команды [az group create](/cli/azure/group#az-group-create). Группа ресурсов — это логический контейнер, в котором ресурсы Azure развертываются и администрируются как группа.
 
 В следующем примере создается группа ресурсов с именем `myresourcegroup` в расположении `westus`:
 
@@ -49,14 +49,14 @@ az group create --name myresourcegroup --location westus
 ---|---|---
 name | **mydemoserver** | Введите уникальное имя, идентифицирующее сервер Базы данных Azure для MariaDB. Имя сервера может содержать только строчные буквы, цифры и знак дефиса (-). Оно должно содержать от 3 до 63 символов.
 resource-group | **myresourcegroup** | Введите имя группы ресурсов Azure.
-sku-name | **GP_Gen5_2** | Имя номера SKU. Сокращенная запись соответствует соглашению: *ценовая категория*\_*поколение вычислительных ресурсов*\_*число виртуальных ядер*. Под этой таблицей приведены дополнительные сведения о параметре **sku-name**.
+sku-name | **GP_Gen5_2** | Имя номера SKU. Сокращенная запись соответствует соглашению: *ценовая категория*\_*поколение вычислительных ресурсов*\_*число виртуальных ядер* . Под этой таблицей приведены дополнительные сведения о параметре **sku-name** .
 backup-retention | **7** | Срок хранения резервной копии. Указывается в днях. Диапазон: 7–35 
-geo-redundant-backup | **Отключено** | Позволяет включить или отключить создание геоизбыточных резервных копий для этого сервера. Допустимые значения: **Enabled**, **Disabled**.
+geo-redundant-backup | **Отключено** | Позволяет включить или отключить создание геоизбыточных резервных копий для этого сервера. Допустимые значения: **Enabled** , **Disabled** .
 location | **westus** | Расположение сервера в Azure.
-ssl-enforcement | **Enabled** | Позволяет включить или отключить SSL для этого сервера. Допустимые значения: **Enabled**, **Disabled**.
+ssl-enforcement | **Enabled** | Позволяет включить или отключить SSL для этого сервера. Допустимые значения: **Enabled** , **Disabled** .
 storage-size | **51200** | Объем хранилища сервера (в мегабайтах). Допустимые размеры хранилища: 5120 МБ (минимум) с шагом увеличения в 1024 МБ. Ознакомьтесь с документом о [ценовых категориях](./concepts-pricing-tiers.md), чтобы узнать больше об ограничениях размера хранилища. 
 version | **10.2** | Основной номер версии ядра СУБД MariaDB.
-admin-user | **myadmin** | Имя для входа администратора. Не используйте для параметра **admin-user** такие значения: **azure_superuser**, **admin**, **administrator**, **root**, **guest** или **public**.
+admin-user | **myadmin** | Имя для входа администратора. Не используйте для параметра **admin-user** такие значения: **azure_superuser** , **admin** , **administrator** , **root** , **guest** или **public** .
 admin-password | *ваш пароль* | Пароль администратора. Ваш пароль должен состоять из 8–128 символов. Пароль должен содержать знаки из таких трех категорий: прописные латинские буквы, строчные латинские буквы, цифры и небуквенно-цифровые знаки.
 
 Значение параметра sku-name соответствует соглашению {ценовая категория}\_{поколение вычислительных ресурсов}\_{количество виртуальных ядер}, как показано в примерах ниже:
@@ -66,7 +66,7 @@ admin-password | *ваш пароль* | Пароль администратор
 
 Сведения о допустимых значениях по регионам и ценовым категориям см. на странице [ценовых категорий](./concepts-pricing-tiers.md).
 
-В следующем примере создается сервер с именем **mydemoserver** в регионе "Западная часть США". Сервер находится в группе ресурсов **myresourcegroup** и имеет имя для входа администратора сервера **myadmin**. Это сервер 5-го поколения с ценовой категорией "Общего назначения" и 2 виртуальными ядрами. Имя сервера сопоставляется с DNS-именем и должно быть глобально уникальным в Azure. Замените `<server_admin_password>` паролем администратора сервера.
+В следующем примере создается сервер с именем **mydemoserver** в регионе "Западная часть США". Сервер находится в группе ресурсов **myresourcegroup** и имеет имя для входа администратора сервера **myadmin** . Это сервер 5-го поколения с ценовой категорией "Общего назначения" и 2 виртуальными ядрами. Имя сервера сопоставляется с DNS-именем и должно быть глобально уникальным в Azure. Замените `<server_admin_password>` паролем администратора сервера.
 
 ```azurecli-interactive
 az mariadb server create --resource-group myresourcegroup --name mydemoserver  --location westus --admin-user myadmin --admin-password <server_admin_password> --sku-name GP_Gen5_2 --version 10.2
@@ -106,7 +106,7 @@ az mariadb server update --resource-group myresourcegroup --name mydemoserver --
 az mariadb server show --resource-group myresourcegroup --name mydemoserver
 ```
 
-Результаты выводятся в формате JSON. Запишите значения **fullyQualifiedDomainName** и **administratorLogin**.
+Результаты выводятся в формате JSON. Запишите значения **fullyQualifiedDomainName** и **administratorLogin** .
 
 ```json
 {
@@ -139,7 +139,7 @@ az mariadb server show --resource-group myresourcegroup --name mydemoserver
 
 ## <a name="connect-to-the-server-by-using-the-mysql-command-line-tool"></a>Подключение к серверу с помощью программы командной строки mysql
 
-Подключитесь к серверу с помощью программы командной строки mysql. Эту программу командной строки можно скачать [отсюда](https://dev.mysql.com/downloads/) и установить на компьютер. Программу командной строки также можно открыть, нажав кнопку **Попробовать** в примере кода в этой статье. Другой способ доступа к программе командной строки — нажать кнопку **>_** на верхней правой панели инструментов на портале Azure, чтобы открыть **Azure Cloud Shell**.
+Подключитесь к серверу с помощью программы командной строки mysql. Эту программу командной строки можно скачать [отсюда](https://dev.mysql.com/downloads/) и установить на компьютер. Программу командной строки также можно открыть, нажав кнопку **Попробовать** в примере кода в этой статье. Другой способ доступа к программе командной строки — нажать кнопку **>_** на верхней правой панели инструментов на портале Azure, чтобы открыть **Azure Cloud Shell** .
 
 Чтобы подключиться к серверу с помощью программы командной строки mysql:
 
@@ -219,7 +219,7 @@ az mariadb server show --resource-group myresourcegroup --name mydemoserver
    | Имя пользователя | **myadmin\@mydemoserver** | Имя для входа администратора сервера, которое вы указали ранее. |
    | Пароль | *ваш пароль* | Используйте пароль учетной записи администратора, настроенный ранее. |
 
-3. Щелкните **Проверить подключение**, чтобы проверить, все ли параметры настроены правильно.
+3. Щелкните **Проверить подключение** , чтобы проверить, все ли параметры настроены правильно.
 
 4. Выберите только что созданное подключение, чтобы успешно подключиться к серверу.
 
@@ -240,4 +240,4 @@ az mariadb server delete --resource-group myresourcegroup --name mydemoserver
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Проектирование базы данных MariaDB с помощью Azure CLI](./tutorial-design-database-cli.md)
+> [Проектирование базы данных MariaDB с помощью Azure CLI](tutorial-design-database-cli.md)

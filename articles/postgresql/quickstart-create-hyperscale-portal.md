@@ -8,12 +8,12 @@ ms.subservice: hyperscale-citus
 ms.custom: mvc
 ms.topic: quickstart
 ms.date: 08/17/2020
-ms.openlocfilehash: e43e20ceb5e84d652fee9ca4db6d5dc871ed1e4f
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: d4925b8ecb7768f1f49b2c971f7234d58339c056
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91268458"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92481114"
 ---
 # <a name="quickstart-create-a-hyperscale-citus-server-group-in-the-azure-portal"></a>Краткое руководство. Создание серверной группы Гипермасштабирования (Citus) на портале Azure
 
@@ -132,11 +132,11 @@ SELECT gu.login, count(*)
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-На предыдущих шагах вы создали ресурсы Azure в группе серверов. Если эти ресурсы вам больше не нужны, удалите группу серверов. Нажмите кнопку **Удалить** на странице **Обзор**, чтобы удалить группу серверов. При появлении запроса на всплывающей странице проверьте имя группы серверов и нажмите кнопку **Удалить**.
+На предыдущих шагах вы создали ресурсы Azure в группе серверов. Если эти ресурсы вам больше не нужны, удалите группу серверов. Нажмите кнопку **Удалить** на странице **Обзор** , чтобы удалить группу серверов. При появлении запроса на всплывающей странице проверьте имя группы серверов и нажмите кнопку **Удалить** .
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого краткого руководства вы узнали, как подготовить к работе группу серверов Hyperscale (Citus). Вы подключились к ней с помощью psql, создали схему и выполнили распределение данных.
 
-- Ознакомьтесь с учебником по [созданию мультитенантных масштабируемых приложений](https://aka.ms/hyperscale-tutorial-multi-tenant).
+- Ознакомьтесь с учебником по [созданию мультитенантных масштабируемых приложений](./tutorial-design-database-hyperscale-multi-tenant.md).
 - Определите оптимальный [первоначальный размер](howto-hyperscale-scaling.md#picking-initial-size) для своей группы серверов.

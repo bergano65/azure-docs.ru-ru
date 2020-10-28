@@ -9,12 +9,12 @@ ms.subservice: queues
 ms.topic: quickstart
 ms.reviewer: dineshm
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 8e782dc632fe4100194015c3e0adb4ceb1ac30a6
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: d73f225f0e6f230509c856af0d15bc02e80fcd98
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89011469"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92425881"
 ---
 # <a name="quickstart-use-the-azure-storage-sdk-v11-for-net-to-manage-a-queue"></a>Краткое руководство. Использование пакета SDK службы хранилища Azure версии 11 для .NET, чтобы управлять очередью
 
@@ -34,7 +34,7 @@ ms.locfileid: "89011469"
 - Установите [.NET Core для Windows](https://www.microsoft.com/net/download/windows) или [.NET Framework](https://www.microsoft.com/net/download/windows) (входит в состав Visual Studio для Windows).
 - Установите [Visual Studio для Windows](https://www.visualstudio.com/). Если вы используете .NET Core, устанавливать Visual Studio не обязательно.  
 
-Сведения о выборе между .NET Core и .NET Framework см. в статье [Выбор между .NET Core и .NET Framework для серверных приложений](https://docs.microsoft.com/dotnet/standard/choosing-core-framework-server).
+Сведения о выборе между .NET Core и .NET Framework см. в статье [Выбор между .NET Core и .NET Framework для серверных приложений](/dotnet/standard/choosing-core-framework-server).
 
 ### <a name="linux"></a>Linux
 
@@ -56,7 +56,7 @@ ms.locfileid: "89011469"
 git clone https://github.com/Azure-Samples/storage-queues-dotnet-quickstart.git
 ```
 
-Эта команда клонирует репозиторий в локальную папку git. Чтобы открыть решение Visual Studio, найдите папку *storage-queues-dotnet-quickstart*, откройте ее и дважды щелкните файл *storage-queues-dotnet-quickstart.sln*. 
+Эта команда клонирует репозиторий в локальную папку git. Чтобы открыть решение Visual Studio, найдите папку *storage-queues-dotnet-quickstart* , откройте ее и дважды щелкните файл *storage-queues-dotnet-quickstart.sln* . 
 
 [!INCLUDE [storage-copy-connection-string-portal](../../../includes/storage-copy-connection-string-portal.md)]
 
@@ -148,7 +148,7 @@ Press any key to delete the sample queue.
 
 ### <a name="try-parsing-the-connection-string"></a>Разбор строки подключения
 
-Сначала в примере проверяется, содержит ли переменная среды строку подключения, которую можно проанализировать, чтобы создать объект [CloudStorageAccount](/dotnet/api/microsoft.azure.cosmos.table.cloudstorageaccount), указывающий на учетную запись хранения. Чтобы проверить, допустима ли строка подключения, в приложении используется метод [TryParse](/dotnet/api/microsoft.azure.cosmos.table.cloudstorageaccount.tryparse). Если результаты выполнения метода **TryParse** успешны, он инициализирует переменную *storageAccount* и возвращает значение **true**.
+Сначала в примере проверяется, содержит ли переменная среды строку подключения, которую можно проанализировать, чтобы создать объект [CloudStorageAccount](/dotnet/api/microsoft.azure.cosmos.table.cloudstorageaccount), указывающий на учетную запись хранения. Чтобы проверить, допустима ли строка подключения, в приложении используется метод [TryParse](/dotnet/api/microsoft.azure.cosmos.table.cloudstorageaccount.tryparse). Если результаты выполнения метода **TryParse** успешны, он инициализирует переменную *storageAccount* и возвращает значение **true** .
 
 ```csharp
 // Retrieve the connection string for use with the application. The storage connection string is stored
@@ -266,14 +266,14 @@ if (queue != null)
 
 ### <a name="binaries-and-source-code"></a>Двоичные файлы и исходный код
 
-- Скачайте пакеты NuGet для последней версии [клиентской библиотеки службы хранилища Azure для .NET](/dotnet/api/overview/azure/storage?view=azure-dotnet).
+- Скачайте пакеты NuGet для последней версии [клиентской библиотеки службы хранилища Azure для .NET](/dotnet/api/overview/azure/storage).
     - [Common](https://www.nuget.org/packages/Microsoft.Azure.Storage.Common/)
     - [Очереди](https://www.nuget.org/packages/Azure.Storage.Queues/)
 - См. [исходный код клиентской библиотеки .NET](https://github.com/Azure/azure-storage-net) на сайте GitHub.
 
 ### <a name="client-library-reference-and-samples"></a>Справочник по клиентской библиотеке и примеры
 
-- Подробные сведения о клиентской библиотеке .NET см. в [справочнике по API-интерфейсу .NET](https://docs.microsoft.com/dotnet/api/overview/azure/storage).
+- Подробные сведения о клиентской библиотеке .NET см. в [справочнике по API-интерфейсу .NET](/dotnet/api/overview/azure/storage).
 - Изучите [примеры для хранилища очередей](https://azure.microsoft.com/resources/samples/?sort=0&service=storage&platform=dotnet&term=queues), написанные с использованием клиентской библиотеки .NET.
 
 ## <a name="next-steps"></a>Дальнейшие действия
@@ -281,6 +281,6 @@ if (queue != null)
 Из этого краткого руководства вы узнали, как добавлять сообщения в очередь, просматривать их и выводить из очереди, а также обрабатывать сообщения с помощью .NET. 
 
 > [!div class="nextstepaction"]
-> [Обмен данными между приложениями с помощью хранилища очередей Azure](https://docs.microsoft.com/learn/modules/communicate-between-apps-with-azure-queue-storage/index)
+> [Обмен данными между приложениями с помощью хранилища очередей Azure](/learn/modules/communicate-between-apps-with-azure-queue-storage/index)
 
 - Дополнительные сведения о .NET Core см. в статье [Get started with .NET in 10 minutes](https://www.microsoft.com/net/learn/get-started/) (Быстрое начало работы с .NET).

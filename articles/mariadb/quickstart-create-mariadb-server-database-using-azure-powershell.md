@@ -8,12 +8,12 @@ ms.devlang: azurepowershell
 ms.topic: quickstart
 ms.date: 05/26/2020
 ms.custom: mvc, devx-track-azurepowershell
-ms.openlocfilehash: 3715b3eb00a1ccb549bf77d14ce33969f9a7eda1
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 7db89d315e0df51aad7f4660ec5da64425eae2aa
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87502262"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92424436"
 ---
 # <a name="quickstart-create-an-azure-database-for-mariadb-server-using-powershell"></a>Краткое руководство. Создание сервера Базы данных Azure для MariaDB с помощью PowerShell
 
@@ -23,13 +23,13 @@ ms.locfileid: "87502262"
 
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись, прежде чем начинать работу.
 
-Если вы решили использовать PowerShell локально, для работы с этой статьей установите модуль PowerShell Az и подключитесь к учетной записи Azure с помощью командлета [Connect-AzAccount](https://docs.microsoft.com/powershell/module/az.accounts/connect-azaccount). См. сведения об [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps).
+Если вы решили использовать PowerShell локально, для работы с этой статьей установите модуль PowerShell Az и подключитесь к учетной записи Azure с помощью командлета [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount). См. сведения об [установке модуля Azure PowerShell](/powershell/azure/install-az-ps).
 
 > [!IMPORTANT]
 > Так как модуль PowerShell Az.MariaDb предоставляется в предварительной версии, его нужно установить отдельно от модуля Az PowerShell с помощью команды `Install-Module -Name Az.MariaDb -AllowPrerelease`.
 > Как только модуль PowerShell Az.MariaDb станет общедоступным, он будет включен в один из будущих выпусков модуля Az PowerShell и встроен в Azure Cloud Shell.
 
-Если вы впервые используете службу "База данных Azure для MariaDB", необходимо зарегистрировать поставщик ресурсов **Microsoft.DBforMariaDB**.
+Если вы впервые используете службу "База данных Azure для MariaDB", необходимо зарегистрировать поставщик ресурсов **Microsoft.DBforMariaDB** .
 
 ```azurepowershell-interactive
 Register-AzResourceProvider -ProviderNamespace Microsoft.DBforMariaDB
@@ -37,7 +37,7 @@ Register-AzResourceProvider -ProviderNamespace Microsoft.DBforMariaDB
 
 [!INCLUDE [cloud-shell-try-it](../../includes/cloud-shell-try-it.md)]
 
-Если вы используете несколько подписок Azure, выберите ту, за ресурсы в которой будут выставляться счета. Выберите идентификатор требуемой подписки с помощью командлета [Set-AzContext](https://docs.microsoft.com/powershell/module/az.accounts/set-azcontext).
+Если вы используете несколько подписок Azure, выберите ту, за ресурсы в которой будут выставляться счета. Выберите идентификатор требуемой подписки с помощью командлета [Set-AzContext](/powershell/module/az.accounts/set-azcontext).
 
 ```azurepowershell-interactive
 Set-AzContext -SubscriptionId 00000000-0000-0000-0000-000000000000
@@ -45,9 +45,9 @@ Set-AzContext -SubscriptionId 00000000-0000-0000-0000-000000000000
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Создайте [группу ресурсов Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview) с помощью командлета [New-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup). Группа ресурсов — это логический контейнер, в котором ресурсы Azure развертываются и администрируются как группа.
+Создайте [группу ресурсов Azure](../azure-resource-manager/management/overview.md) с помощью командлета [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup). Группа ресурсов — это логический контейнер, в котором ресурсы Azure развертываются и администрируются как группа.
 
-В следующем примере создается группа ресурсов с именем **myresourcegroup** в регионе **Западная часть США**.
+В следующем примере создается группа ресурсов с именем **myresourcegroup** в регионе **Западная часть США** .
 
 ```azurepowershell-interactive
 New-AzResourceGroup -Name myresourcegroup -Location westus
@@ -63,17 +63,17 @@ New-AzResourceGroup -Name myresourcegroup -Location westus
 | -------------------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Имя                       | mydemoserver     | Выберите глобально уникальное имя в Azure для сервера Базы данных Azure для MariaDB. Имя сервера может содержать только буквы, цифры и дефис (-). Все символы в верхнем регистре при создании будут автоматически преобразованы в нижний регистр. Его длина должна составлять от 3 до 63 символов. |
 | ResourceGroupName          | myresourcegroup  | Укажите имя группы ресурсов Azure.                                                                                                                                                                                                                                                                                            |
-| Sku                        | GP_Gen5_2        | Имя номера SKU. Сокращенная запись соответствует соглашению: **ценовая-категория\_поколение-вычислительных-ресурсов\_число-виртуальных-ядер**. Под этой таблицей приведены дополнительные сведения о параметре SKU.                                                                                                                                           |
+| Sku                        | GP_Gen5_2        | Имя номера SKU. Сокращенная запись соответствует соглашению: **ценовая-категория\_поколение-вычислительных-ресурсов\_число-виртуальных-ядер** . Под этой таблицей приведены дополнительные сведения о параметре SKU.                                                                                                                                           |
 | BackupRetentionDay         | 7                | Срок хранения резервной копии. Указывается в днях. Можно указать от 7 до 35 дней.                                                                                                                                                                                                                                                                       |
 | GeoRedundantBackup         | Активировано          | Позволяет включить или отключить создание геоизбыточных резервных копий для этого сервера. Это значение нельзя использовать для серверов ценовой категории "Базовый", а также изменять после создания сервера. Допустимые значения: Enabled, Disabled.                                                                                                      |
 | Расположение                   | westus           | Регион Azure для сервера.                                                                                                                                                                                                                                                                                                         |
 | SslEnforcement             | Активировано          | Позволяет включить или отключить SSL для этого сервера. Допустимые значения: Enabled, Disabled.                                                                                                                                                                                                                                                 |
 | StorageInMb                | 51 200            | Объем хранилища сервера (в мегабайтах). StorageInMb имеет минимальное значение 5120 МБ, которое увеличивается на 1024 МБ. См. сведения об ограничениях размера хранилища в описании [ценовых категорий Базы данных Azure для MariaDB](./concepts-pricing-tiers.md).                                                                               |
 | Версия                    | 5.7              | Основной номер версии MariaDB.                                                                                                                                                                                                                                                                                                                 |
-| AdministratorUserName      | myadmin          | Имя для входа администратора. Не может иметь значение **azure_superuser**, **admin**, **administrator**, **root**, **guest** или **public**.                                                                                                                                                                                            |
+| AdministratorUserName      | myadmin          | Имя для входа администратора. Не может иметь значение **azure_superuser** , **admin** , **administrator** , **root** , **guest** или **public** .                                                                                                                                                                                            |
 | AdministratorLoginPassword | `<securestring>` | Пароль администратора в виде защищенной строки. Пароль должен содержать от 8 до 128 символов. Пароль должен содержать символы из таких трех категорий: прописные латинские буквы, строчные латинские буквы, цифры и небуквенно-цифровые знаки.                                       |
 
-Значение параметра **SKU** соответствует формату **ценовая-категория\_поколение-вычислительных-ресурсов\_количество-виртуальных-ядер**, как показано в примерах ниже.
+Значение параметра **SKU** соответствует формату **ценовая-категория\_поколение-вычислительных-ресурсов\_количество-виртуальных-ядер** , как показано в примерах ниже.
 
 - `-Sku B_Gen5_1` — "Базовый", поколение 5, 1 виртуальное ядро; Это номер SKU наименьший по размеру из доступных.
 - `-Sku GP_Gen5_32` — "Общего назначения", поколение 5, 32 виртуальных ядра;
@@ -81,7 +81,7 @@ New-AzResourceGroup -Name myresourcegroup -Location westus
 
 См. сведения о допустимых значениях **SKU** по регионам и ценовым категориям в описании [ценовых категорий Базы данных Azure для MariaDB](./concepts-pricing-tiers.md).
 
-В следующем примере в регионе **Западная часть США** создается сервер MariaDB с именем **mydemoserver** в группе ресурсов **myresourcegroup** с администратором сервера с именем **myadmin**. Это сервер 5-го поколения ценовой категории "Общего назначения" с двумя виртуальными ядрами и геоизбыточным резервным копированием. Запишите пароль, указанный в первой строке примера, так как это пароль для учетной записи администратора сервера MariaDB.
+В следующем примере в регионе **Западная часть США** создается сервер MariaDB с именем **mydemoserver** в группе ресурсов **myresourcegroup** с администратором сервера с именем **myadmin** . Это сервер 5-го поколения ценовой категории "Общего назначения" с двумя виртуальными ядрами и геоизбыточным резервным копированием. Запишите пароль, указанный в первой строке примера, так как это пароль для учетной записи администратора сервера MariaDB.
 
 > [!TIP]
 > Имя сервера сопоставляется с DNS-именем и должно быть глобально уникальным в Azure.
@@ -100,7 +100,7 @@ New-AzMariaDbServer -Name mydemoserver -ResourceGroupName myresourcegroup -Sku G
 
 Создайте правило брандмауэра для сервера Базы данных Azure для MariaDB, используя командлет `New-AzMariaDbFirewallRule`. Правило брандмауэра на уровне сервера позволяет внешним приложениям, таким как программа командной строки `mysql` или MariaDB Workbench, подключаться к серверу через брандмауэр службы "База данных Azure для MariaDB".
 
-В приведенном ниже примере создается правило брандмауэра с именем **AllowMyIP**, которое разрешает подключения с определенного IP-адреса (192.168.0.1). Замените его IP-адресом или диапазоном IP-адресов, которые применяются для того расположения, из которого вы подключаетесь.
+В приведенном ниже примере создается правило брандмауэра с именем **AllowMyIP** , которое разрешает подключения с определенного IP-адреса (192.168.0.1). Замените его IP-адресом или диапазоном IP-адресов, которые применяются для того расположения, из которого вы подключаетесь.
 
 ```azurepowershell-interactive
 New-AzMariaDbFirewallRule -Name AllowMyIP -ResourceGroupName myresourcegroup -ServerName mydemoserver -StartIPAddress 192.168.0.1 -EndIPAddress 192.168.0.1
@@ -124,7 +124,7 @@ Update-AzMariaDbServer -Name mydemoserver -ResourceGroupName myresourcegroup -Ss
 
 ## <a name="get-the-connection-information"></a>Получение сведений о подключении
 
-Чтобы подключиться к серверу, необходимо указать сведения об узле и учетные данные для доступа. Чтобы получить сведения о подключении, используйте следующий пример. Запишите значения **FullyQualifiedDomainName** и **AdministratorLogin**.
+Чтобы подключиться к серверу, необходимо указать сведения об узле и учетные данные для доступа. Чтобы получить сведения о подключении, используйте следующий пример. Запишите значения **FullyQualifiedDomainName** и **AdministratorLogin** .
 
 ```azurepowershell-interactive
 Get-AzMariaDbServer -Name mydemoserver -ResourceGroupName myresourcegroup |
@@ -214,7 +214,7 @@ mydemoserver.mariadb.database.azure.com       myadmin
     | Имя пользователя          | myadmin@mydemoserver                      | Имя для входа администратора сервера, которое вы записали ранее                |
     | Пароль          | *************                             | Используйте пароль учетной записи администратора, настроенный ранее      |
 
-1. Щелкните **Проверить подключение**, чтобы проверить, все ли параметры настроены правильно.
+1. Щелкните **Проверить подключение** , чтобы проверить, все ли параметры настроены правильно.
 
 1. Выберите подключение для соединения с сервером.
 

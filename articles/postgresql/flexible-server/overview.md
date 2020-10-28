@@ -7,12 +7,12 @@ ms.custom: mvc
 ms.service: postgresql
 ms.topic: overview
 ms.date: 09/22/2020
-ms.openlocfilehash: 268eedf6f9d64d52539e20006322b6b1dd9964e8
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: b4df91f4654f39780f81e0a27139677431926238
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91439962"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92532668"
 ---
 # <a name="azure-database-for-postgresql---flexible-server"></a>Гибкий сервер Базы данных Azure для PostgreSQL
 
@@ -90,11 +90,9 @@ ms.locfileid: "91439962"
 
 В этой службе работает версия PostgreSQL виртуального сообщества. Это обеспечивает полную совместимость приложений и минимальные затраты на рефакторинг при переносе на гибкий сервер существующих приложений, разработанных для ядра СУБД PostgreSQL. 
 
-- **Создание резервной копии и восстановление.** Для миграций в автономной среде, где допустим некоторый простой для пользователей, самым быстрым способом миграции будет создание резервной копии с последующим восстановлением, для которой применяются такие средства сообщества, как pg_dump and pg_restore. Дополнительные сведения см. в статье [Миграция с использованием дампа и восстановления](https://docs.microsoft.com/azure/postgresql/howto-migrate-using-dump-and-restore).
-- **Azure Database Migration Service.** Чтобы без проблем выполнить простую миграцию на гибкий сервер с минимальным временем простоя, можно применить Azure Database Migration Service. Изучите возможности [DMS с использованием портала](https://docs.microsoft.com/azure/dms/tutorial-postgresql-azure-postgresql-online-portal) и [DMS с использованием CLI](https://docs.microsoft.com/azure/dms/tutorial-postgresql-azure-postgresql-online). Вы можете выполнить миграцию из Базы данных Azure для PostgreSQL (с отдельного сервера на гибкий сервер). Подробные сведения см. в [статье о DMS](https://docs.microsoft.com/azure/dms/tutorial-azure-postgresql-to-azure-postgresql-online-portal).
+- **Создание резервной копии и восстановление.** Для миграций в автономной среде, где допустим некоторый простой для пользователей, самым быстрым способом миграции будет создание резервной копии с последующим восстановлением, для которой применяются такие средства сообщества, как pg_dump and pg_restore. Дополнительные сведения см. в статье [Миграция с использованием дампа и восстановления](../howto-migrate-using-dump-and-restore.md).
+- **Azure Database Migration Service.** Чтобы без проблем выполнить простую миграцию на гибкий сервер с минимальным временем простоя, можно применить Azure Database Migration Service. Изучите возможности [DMS с использованием портала](../../dms/tutorial-postgresql-azure-postgresql-online-portal.md) и [DMS с использованием CLI](../../dms/tutorial-postgresql-azure-postgresql-online.md). Вы можете выполнить миграцию из Базы данных Azure для PostgreSQL (с отдельного сервера на гибкий сервер). Подробные сведения см. в [статье о DMS](../../dms/tutorial-azure-postgresql-to-azure-postgresql-online-portal.md).
 
 ## <a name="next-steps"></a>Следующие шаги
 
 Итак, вы завершили знакомство с режимом развертывания Базы данных Azure для PostgreSQL с отдельным сервером и теперь готовы создать свой первый сервер. [Создание гибкого сервера Базы данных Azure для PostgreSQL с помощью портала Azure](./quickstart-create-server-portal.md)
-
-

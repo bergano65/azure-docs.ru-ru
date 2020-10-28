@@ -8,12 +8,12 @@ ms.devlang: azurecli
 ms.topic: quickstart
 ms.date: 05/06/2019
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: e4615db3dbabbc4b18dad7d6ec805ddff10e8fd7
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: c11a98c04f81e7c111faf4aa449ab2bf9a4890bb
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91705115"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92485228"
 ---
 # <a name="quickstart-use-an-azure-cli-command-az-postgres-up-preview-to-create-an-azure-database-for-postgresql---single-server"></a>Краткое руководство. Создание базы данных в службе "База данных Azure для PostgreSQL — отдельный сервер" с помощью команды Azure CLI az postgres up (предварительная версия)
 
@@ -28,7 +28,7 @@ ms.locfileid: "91705115"
 
 Для этой статьи требуется запустить локально Azure CLI версии 2.0 или более поздней. Чтобы узнать, какая установлена версия, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
 
-Вам потребуется войти в учетную запись с помощью команды [az login](/cli/azure/authenticate-azure-cli?view=interactive-log-in). Запишите свойство **ID** из выходных данных команды для соответствующего имени подписки.
+Вам потребуется войти в учетную запись с помощью команды [az login](/cli/azure/authenticate-azure-cli). Запишите свойство **ID** из выходных данных команды для соответствующего имени подписки.
 
 ```azurecli
 az login

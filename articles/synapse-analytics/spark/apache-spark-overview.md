@@ -9,12 +9,12 @@ ms.subservice: spark
 ms.date: 04/15/2020
 ms.author: euang
 ms.reviewer: euang
-ms.openlocfilehash: 3a2ba65fcef2b6481835cb45243449870361c062
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 3c269f07c177d99e46dcc343b80979835b429b68
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87498928"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92369358"
 ---
 # <a name="apache-spark-in-azure-synapse-analytics"></a>Apache Spark в Azure Synapse Analytics
 
@@ -45,7 +45,7 @@ Apache Spark предоставляет примитивы для кластер
 
 Пулы Spark в Azure Synapse включают в себя указанные ниже компоненты, доступные в пулах по умолчанию.
 
-- [Ядро Spark](https://spark.apache.org/docs/latest/). Включает в себя ядро Spark, Spark SQL, GraphX и MLlib.
+- [Ядро Spark](https://spark.apache.org/docs/2.4.5/). Включает в себя ядро Spark, Spark SQL, GraphX и MLlib.
 - [Anaconda](https://docs.continuum.io/anaconda/)
 - [Apache Livy](https://github.com/cloudera/hue/tree/master/apps/spark/java#welcome-to-livy-the-rest-spark-server)
 - [Записная книжка Nteract](https://nteract.io/)
@@ -81,7 +81,7 @@ Apache Spark предусматривает множество языковых 
 - [Краткое руководство. Создание пула Apache Spark (предварительной версии) в Synapse Analytics с помощью веб-средств](../quickstart-create-apache-spark-pool-portal.md)
 - [Краткое руководство. Создание записной книжки Apache Spark](../quickstart-apache-spark-notebook.md)
 - [Руководство. Использование машинного обучения с Apache Spark](./apache-spark-machine-learning-mllib-notebook.md)
-- [Официальная документация по Apache Spark](https://spark.apache.org/docs/latest/)
+- [Официальная документация по Apache Spark](https://spark.apache.org/docs/2.4.5/)
 
 > [!NOTE]
 > Некоторые из официальных документов по Apache Spark предполагают использование консоли Spark, которая недоступна в Azure Synapse Spark. Вместо этого используйте интерфейсы записной книжки или IntelliJ.

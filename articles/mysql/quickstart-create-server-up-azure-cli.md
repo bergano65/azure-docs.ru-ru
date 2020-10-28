@@ -8,12 +8,12 @@ ms.devlang: azurecli
 ms.topic: quickstart
 ms.date: 3/18/2020
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 40f820a32c7848b5370cb664d706e9f20928bc5c
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: a02d2e32a035581d486f22b97fc789957d0b4138
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89296487"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92534045"
 ---
 # <a name="quickstart-create-an-azure-database-for-mysql-using-a-simple-azure-cli-command---az-mysql-up-preview"></a>Краткое руководство. Создание Базы данных Azure для MySQL с помощью простой команды Azure CLI — az mysql up (предварительная версия)
 
@@ -28,7 +28,7 @@ ms.locfileid: "89296487"
 
 Для этой статьи требуется запустить локально Azure CLI версии 2.0 или более поздней. Чтобы узнать, какая установлена версия, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
 
-Вам потребуется выполнить вход в учетную запись с помощью команды [az login](/cli/azure/authenticate-azure-cli?view=interactive-log-in). Запишите свойство **id** из выходных данных команды для соответствующего имени подписки.
+Вам потребуется выполнить вход в учетную запись с помощью команды [az login](/cli/azure/authenticate-azure-cli). Запишите свойство **id** из выходных данных команды для соответствующего имени подписки.
 
 ```azurecli
 az login

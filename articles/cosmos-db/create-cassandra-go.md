@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-cassandra
 ms.devlang: go
 ms.topic: quickstart
 ms.date: 07/14/2020
-ms.openlocfilehash: ba53fb786b1d1f61535168cda2152049a12dfb99
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 87f3ea2d1ce8d3d9f2f584db379618fc6c4a4a67
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "86535649"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92491246"
 ---
 # <a name="quickstart-build-a-go-app-with-the-gocql-client-to-manage-azure-cosmos-db-cassandra-api-data"></a>Краткое руководство. Создание приложения Go с помощью клиента `gocql` для управления данными в Azure Cosmos DB через API Cassandra
 
@@ -85,7 +85,7 @@ func GetSession(cosmosCassandraContactPoint, cosmosCassandraPort, cosmosCassandr
 }
 ```
 
-Узел Cassandra в Azure Cosmos DB передается функции [`gocql.NewCluster`](https://godoc.org/github.com/gocql/gocql#NewCluster), которая возвращает структуру [`*gocql.ClusterConfig`](https://godoc.org/github.com/gocql/gocql#ClusterConfig), для которой мы затем настраиваем имя пользователя, пароль, порт и версию TLS ([требование безопасности для шифрования HTTPS/SSL/TLS](https://docs.microsoft.com/azure/cosmos-db/database-security?WT.mc_id=cassandrago-docs-abhishgu#how-does-azure-cosmos-db-secure-my-database)).
+Узел Cassandra в Azure Cosmos DB передается функции [`gocql.NewCluster`](https://godoc.org/github.com/gocql/gocql#NewCluster), которая возвращает структуру [`*gocql.ClusterConfig`](https://godoc.org/github.com/gocql/gocql#ClusterConfig), для которой мы затем настраиваем имя пользователя, пароль, порт и версию TLS ([требование безопасности для шифрования HTTPS/SSL/TLS](./database-security.md?WT.mc_id=cassandrago-docs-abhishgu#how-does-azure-cosmos-db-secure-my-database)).
 
 Затем из функции `main` (`main.go`) вызывается функция `GetSession`.
 
@@ -252,7 +252,7 @@ go run main.go
 
 3. В окне терминала отображаются уведомления об операциях, включая настройку пространства ключей и таблицы, создание пользователя и т. д.
 
-4. На портале Azure откройте **обозреватель данных**, чтобы запросить, изменить и обработать новые данные. 
+4. На портале Azure откройте **обозреватель данных** , чтобы запросить, изменить и обработать новые данные. 
 
     :::image type="content" source="./media/create-cassandra-go/view-data-explorer-go-app.png" alt-text="Просмотр и копирование сведений со страницы Строка подключения на портале Azure":::
 
