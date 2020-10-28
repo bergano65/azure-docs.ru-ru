@@ -359,9 +359,9 @@
     - name: Пакеты SDK для Центра Интернета вещей Azure
       items:
         - name: Пакеты SDK для служб IoT
-          href: /azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks
+          href: /azure/iot-hub/iot-hub-devguide-sdks#azure-iot-hub-service-sdks
         - name: Пакеты SDK для устройств Интернета вещей
-          href: /azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks
+          href: /azure/iot-hub/iot-hub-devguide-sdks#azure-iot-hub-device-sdks
     - name: Условия использования Azure Maps
       href: 'https://azure.microsoft.com/support/legal/'
     - name: Цены на Azure Maps

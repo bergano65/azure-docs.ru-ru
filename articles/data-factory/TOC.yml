@@ -748,8 +748,6 @@
           href: connector-troubleshoot-guide.md
         - name: Потоки данных
           href: data-flow-troubleshoot-guide.md
-        - name: Средство копирования данных
-          href: copy-data-tool-troubleshoot-guide.md
         - name: Локальные среды выполнения интеграции
           href: self-hosted-integration-runtime-troubleshoot-guide.md
         - name: Среда выполнения интеграции Azure SSIS
@@ -783,7 +781,7 @@
     - name: Блог
       href: 'https://techcommunity.microsoft.com/t5/azure-data-factory/bg-p/AzureDataFactoryBlog#'
     - name: Задание вопроса. Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
-      href: 'https://docs.microsoft.com/answers/topics/azure-data-factory.html'
+      href: /answers/topics/azure-data-factory.html
     - name: "Задать вопрос\_— Stack Overflow"
       href: 'https://stackoverflow.com/questions/tagged/azure-data-factory'
     - name: Запрашивание функции

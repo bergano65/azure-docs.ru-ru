@@ -13,6 +13,7 @@
     - name: "Создание профиля диспетчера трафика (Azure\_CLI)"
       href: quickstart-create-traffic-manager-profile-cli.md
     - name: Создание профиля Диспетчера трафика (шаблон ARM)
+      displayName: Resource Manager
       href: quickstart-create-traffic-manager-profile-template.md
   expanded: true
 - name: Учебники

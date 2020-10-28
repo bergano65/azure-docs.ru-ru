@@ -13,13 +13,13 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.custom: seodec18
-ms.openlocfilehash: 5ceff9eba0363ea2784c48e026807c53447f1e32
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: seodec18, devx-track-azurecli
+ms.openlocfilehash: f86b3fbebfaa2eb6fc35d5373eab2bb296ff5043
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89296908"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92740615"
 ---
 # <a name="creating-filters-with-cli"></a>Создание фильтров с помощью CLI
 
@@ -132,6 +132,6 @@ az ams streaming-locator create -a amsAccount -g resourceGroup -n streamingLocat
 
 [Потоковая передача видео](stream-files-tutorial-with-api.md) 
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также статью
 
 [Azure CLI](/cli/azure/ams?view=azure-cli-latest)

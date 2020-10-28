@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 09/02/2020
-ms.openlocfilehash: 65357642d940453b5bbfabf2fbb726ca909ce6f5
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.openlocfilehash: 0eec1538814b93c024fe6a5aa34ee73c4c09184c
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92173130"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92740429"
 ---
 # <a name="understanding-the-changes-in-the-root-ca-change-for-azure-database-for-postgresql-single-server"></a>Основные сведения об изменениях в корневом ЦС для одного сервера базы данных Azure для PostgreSQL
 
@@ -52,11 +52,11 @@ ms.locfileid: "92173130"
 *   Создайте объединенное хранилище сертификатов ЦС с сертификатами **BaltimoreCyberTrustRoot** и **DigiCertGlobalRootG2** .
     *   Для пользователей Java (PostgreSQL JDBC), использующих Дефаултжавасслфактори, выполните:
 
-          ```azurecli-interactive
+          ```console
           keytool -importcert -alias PostgreSQLServerCACert  -file D:\BaltimoreCyberTrustRoot.crt.pem  -keystore truststore -storepass password -noprompt
           ```
 
-          ```azurecli-interactive
+          ```console
           keytool -importcert -alias PostgreSQLServerCACert2  -file D:\DigiCertGlobalRootG2.crt.pem -keystore truststore -storepass password  -noprompt
           ```
 
@@ -133,7 +133,7 @@ ms.locfileid: "92173130"
 Чтобы проверить, используется ли SSL-соединение для подключения к серверу, обратитесь к [проверке SSL](concepts-ssl-connection-security.md#applications-that-require-certificate-verification-for-tls-connectivity).
 
 ### <a name="13-is-there-an-action-needed-if-i-already-have-the-digicertglobalrootg2-in-my-certificate-file"></a>13. требуется ли действие, если в файле сертификата уже есть DigiCertGlobalRootG2?
-Нет. Если файл сертификата уже содержит **DigiCertGlobalRootG2**, никаких действий не требуется.
+Нет. Если файл сертификата уже содержит **DigiCertGlobalRootG2** , никаких действий не требуется.
 
 ### <a name="14-what-is-you-are-using-docker-image-of-pgbouncer-sidecar-provided-by-microsoft"></a>14. что такое образ DOCKER из Пгбаунцер расширения, предоставляемый корпорацией Майкрософт?
 Новый образ DOCKER, который поддерживает как [**Baltimore**](https://www.digicert.com/CACerts/BaltimoreCyberTrustRoot.crt.pem) , так и [**DigiCert**](https://cacerts.digicert.com/DigiCertGlobalRootG2.crt.pem) , опубликован ниже [(последний](https://hub.docker.com/_/microsoft-azure-oss-db-tools-pgbouncer-sidecar) тег). Вы можете извлечь этот новый образ, чтобы избежать перерывов в подключении, начиная с 15 февраля 2021. 

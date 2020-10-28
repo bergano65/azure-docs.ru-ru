@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.workload: identity
 ms.date: 10/14/2020
 ms.author: nichola
-ms.openlocfilehash: 27a58fc66de31fef272ab2f2c2bfaa9896a07d4b
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: a3899d9fbf04f9629885ec38f6b0b2bde728561b
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92210160"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92740144"
 ---
 # <a name="support-single-sign-on-and-app-protection-policies-in-mobile-apps-you-develop"></a>Поддержка единого входа и политик защиты приложений в мобильных приложениях, которые вы разрабатываете
 
@@ -47,7 +47,7 @@ ms.locfileid: "92210160"
 
 Для приложений iOS имеется [Краткое](quickstart-v2-ios.md) руководство, в котором показано, как настроить входы с помощью MSAL, а также [инструкции по настройке MSAL для различных сценариев единого входа](single-sign-on-macos-ios.md).
 
-Для приложений Android имеется [Краткое](quickstart-v2-android.md) руководство, в котором показано, как настроить входы с помощью MSAL, а также инструкции по использованию агентов [проверки подлинности](brokered-auth.md) и [авторизации](authorization-agents.md)через брокер.
+Для приложений Android у нас есть [Краткое](quickstart-v2-android.md) руководство, в котором показано, как настроить входы с помощью MSAL, а также инструкции по [включению единого входа между приложениями в Android с помощью MSAL](msal-android-single-sign-on.md).
 
 ### <a name="use-the-system-web-browser"></a>Использование системного веб-браузера
 
