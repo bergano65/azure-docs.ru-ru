@@ -10,15 +10,14 @@ author: sdgilley
 ms.date: 09/30/2020
 ms.topic: conceptual
 ms.custom: how-to, fasttrack-edit
-ms.openlocfilehash: 733a5c899e72809d979dfeeb60e4157c0d587bcf
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: 9abfbe03a4192411a3790bb6d6e488d674c13109
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92633711"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92897166"
 ---
 # <a name="create-and-manage-azure-machine-learning-workspaces"></a>Создание рабочих областей Машинное обучение Azure и управление ими 
-
 
 В этой статье вы создадите, просмотрите и удалите [**машинное обучение Azure рабочие области**](concept-workspace.md) для [Машинное обучение Azure](overview-what-is-azure-ml.md), используя портал Azure или [пакет SDK для Python](https://docs.microsoft.com/python/api/overview/azure/ml/?view=azure-ml-py&preserve-view=true) .
 
@@ -33,48 +32,82 @@ ms.locfileid: "92633711"
 
 # <a name="python"></a>[Python](#tab/python)
 
-В первом примере требуется только минимальная спецификация, и все зависимые ресурсы, а также группа ресурсов будут созданы автоматически.
+* **Спецификация по умолчанию.** По умолчанию зависимые ресурсы, а также группа ресурсов будут созданы автоматически. Этот код создает рабочую область с именем `myworkspace` и группу ресурсов `myresourcegroup` в `eastus2` .
+    
+    ```python
+    from azureml.core import Workspace
+    
+    ws = Workspace.create(name='myworkspace',
+                   subscription_id='<azure-subscription-id>',
+                   resource_group='myresourcegroup',
+                   create_resource_group=True,
+                   location='eastus2'
+                   )
+    ```
+    Задайте значение `create_resource_group` false, если у вас есть группа ресурсов Azure, которую вы хотите использовать для рабочей области.
 
-```python
-from azureml.core import Workspace
-   ws = Workspace.create(name='myworkspace',
-               subscription_id='<azure-subscription-id>',
-               resource_group='myresourcegroup',
-               create_resource_group=True,
-               location='eastus2'
-               )
-```
-Задайте значение `create_resource_group` false, если у вас есть группа ресурсов Azure, которую вы хотите использовать для рабочей области.
+* <a name="create-multi-tenant"></a>**Несколько клиентов.**  Если у вас несколько учетных записей, добавьте идентификатор клиента Azure Active Directory, который вы хотите использовать.  Найдите идентификатор клиента из [портал Azure](https://portal.azure.com) в разделе **Azure Active Directory внешние удостоверения** .
 
-Вы также можете создать рабочую область, которая использует существующие ресурсы Azure с форматом идентификатора ресурса Azure. Поиск конкретных идентификаторов ресурсов Azure в портал Azure или с помощью пакета SDK. В этом примере предполагается, что группа ресурсов, учетная запись хранения, хранилище ключей, App Insights и реестр контейнеров уже существуют.
+    ```python
+    from azureml.core.authentication import InteractiveLoginAuthentication
+    from azureml.core import Workspace
+    
+    interactive_auth = InteractiveLoginAuthentication(tenant_id="my-tenant-id")
+    ws = Workspace.create(name='myworkspace',
+                subscription_id='<azure-subscription-id>',
+                resource_group='myresourcegroup',
+                create_resource_group=True,
+                location='eastus2',
+                auth=interactive_auth
+                )
+    ```
 
-```python
-import os
+* **[Независимых Cloud](reference-machine-learning-cloud-parity.md)** . Вам потребуется дополнительный код для проверки подлинности в Azure, если вы работаете в независимых облаке.
+
+    ```python
+    from azureml.core.authentication import InteractiveLoginAuthentication
+    from azureml.core import Workspace
+    
+    interactive_auth = InteractiveLoginAuthentication(cloud="<cloud name>") # for example, cloud="AzureUSGovernment"
+    ws = Workspace.create(name='myworkspace',
+                subscription_id='<azure-subscription-id>',
+                resource_group='myresourcegroup',
+                create_resource_group=True,
+                location='eastus2',
+                auth=interactive_auth
+                )
+    ```
+
+* **Используйте существующие ресурсы Azure** .  Вы также можете создать рабочую область, которая использует существующие ресурсы Azure с форматом идентификатора ресурса Azure. Поиск конкретных идентификаторов ресурсов Azure в портал Azure или с помощью пакета SDK. В этом примере предполагается, что группа ресурсов, учетная запись хранения, хранилище ключей, App Insights и реестр контейнеров уже существуют.
+
+   ```python
+   import os
    from azureml.core import Workspace
    from azureml.core.authentication import ServicePrincipalAuthentication
 
    service_principal_password = os.environ.get("AZUREML_PASSWORD")
 
    service_principal_auth = ServicePrincipalAuthentication(
-       tenant_id="<tenant-id>",
-       username="<application-id>",
-       password=service_principal_password)
+      tenant_id="<tenant-id>",
+      username="<application-id>",
+      password=service_principal_password)
 
-   ws = Workspace.create(name='myworkspace',
-                         auth=service_principal_auth,
-                         subscription_id='<azure-subscription-id>',
-                         resource_group='myresourcegroup',
-                         create_resource_group=False,
-                         location='eastus2',
-                         friendly_name='My workspace',
-                         storage_account='subscriptions/<azure-subscription-id>/resourcegroups/myresourcegroup/providers/microsoft.storage/storageaccounts/mystorageaccount',
-                         key_vault='subscriptions/<azure-subscription-id>/resourcegroups/myresourcegroup/providers/microsoft.keyvault/vaults/mykeyvault',
-                         app_insights='subscriptions/<azure-subscription-id>/resourcegroups/myresourcegroup/providers/microsoft.insights/components/myappinsights',
-                         container_registry='subscriptions/<azure-subscription-id>/resourcegroups/myresourcegroup/providers/microsoft.containerregistry/registries/mycontainerregistry',
-                         exist_ok=False)
-```
+                        auth=service_principal_auth,
+                             subscription_id='<azure-subscription-id>',
+                             resource_group='myresourcegroup',
+                             create_resource_group=False,
+                             location='eastus2',
+                             friendly_name='My workspace',
+                             storage_account='subscriptions/<azure-subscription-id>/resourcegroups/myresourcegroup/providers/microsoft.storage/storageaccounts/mystorageaccount',
+                             key_vault='subscriptions/<azure-subscription-id>/resourcegroups/myresourcegroup/providers/microsoft.keyvault/vaults/mykeyvault',
+                             app_insights='subscriptions/<azure-subscription-id>/resourcegroups/myresourcegroup/providers/microsoft.insights/components/myappinsights',
+                             container_registry='subscriptions/<azure-subscription-id>/resourcegroups/myresourcegroup/providers/microsoft.containerregistry/registries/mycontainerregistry',
+                             exist_ok=False)
+   ```
 
-Дополнительные сведения см. в статье [Справочник по пакету SDK для рабочей области](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py&preserve-view=true) .
+Дополнительные сведения см. в статье [Справочник по пакету SDK для рабочей области](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py&preserve-view=true).
+
+Если у вас возникли проблемы при доступе к подписке, см. статью [Настройка проверки подлинности для машинное обучение Azure ресурсов и рабочих процессов](how-to-setup-authentication.md), а также [Проверка подлинности в машинное обучение Azure](https://aka.ms/aml-notebook-auth) записной книжке.
 
 # <a name="portal"></a>[Портал](#tab/azure-portal)
 
@@ -237,6 +270,37 @@ ws.write_config()
 
 Поместите файл в структуру каталогов со скриптами Python или приложениями Jupyter Notebook. Он может находиться в том же каталоге, подкаталоге с именем *.azureml* или родительском каталоге. При создании вычислительного экземпляра этот файл добавляется в правильный каталог на виртуальной машине.
 
+## <a name="connect-to-a-workspace"></a>Подключение к рабочей области
+
+В коде Python создайте объект рабочей области для подключения к рабочей области.  Этот код будет считывать содержимое файла конфигурации для поиска рабочей области.  Вы получите запрос на вход, если вы еще не прошли проверку подлинности.
+
+```python
+from azureml.core import Workspace
+
+ws = Workspace.from_config()
+```
+
+* <a name="connect-multi-tenant"></a>**Несколько клиентов.**  Если у вас несколько учетных записей, добавьте идентификатор клиента Azure Active Directory, который вы хотите использовать.  Найдите идентификатор клиента из [портал Azure](https://portal.azure.com) в разделе **Azure Active Directory внешние удостоверения** .
+
+    ```python
+    from azureml.core.authentication import InteractiveLoginAuthentication
+    from azureml.core import Workspace
+    
+    interactive_auth = InteractiveLoginAuthentication(tenant_id="my-tenant-id")
+    ws = Workspace.from_config(auth=interactive_auth)
+    ```
+
+* **[Независимых Cloud](reference-machine-learning-cloud-parity.md)** . Вам потребуется дополнительный код для проверки подлинности в Azure, если вы работаете в независимых облаке.
+
+    ```python
+    from azureml.core.authentication import InteractiveLoginAuthentication
+    from azureml.core import Workspace
+    
+    interactive_auth = InteractiveLoginAuthentication(cloud="<cloud name>") # for example, cloud="AzureUSGovernment"
+    ws = Workspace.from_config(auth=interactive_auth)
+    ```
+    
+Если у вас возникли проблемы при доступе к подписке, см. статью [Настройка проверки подлинности для машинное обучение Azure ресурсов и рабочих процессов](how-to-setup-authentication.md), а также [Проверка подлинности в машинное обучение Azure](https://aka.ms/aml-notebook-auth) записной книжке.
 
 ## <a name="find-a-workspace"></a><a name="view"></a>Найти рабочую область
 

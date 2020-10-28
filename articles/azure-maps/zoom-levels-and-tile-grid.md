@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 618c8597f7f10ce669bb340b9f5ea4c96f5c1d3f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4d15f78c19b5f142f8879d54a1ae32e229ce7f50
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91825297"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92896588"
 ---
 # <a name="zoom-levels-and-tile-grid"></a>Уровни увеличения и сетка фрагментов
 
@@ -74,7 +74,7 @@ var mapWidth = tileSize * Math.pow(2, zoom);
 var mapHeight = mapWidth;
 ```
 
-Так как ширина и высота карт различаются на каждом уровне масштаба, то есть координаты в пикселях. Пиксель в левом верхнем углу на карте всегда имеет координаты пикселей (0, 0). Пиксель в правом нижнем углу на карте имеет координаты в пикселях *(ширина-1, высота-1)* или ссылается на уравнения в предыдущем разделе *(тилесизе \* 2<sup>Zoom</sup>– 1, тилесизе \* 2<sup>Zoom</sup>– 1)*. Например, при использовании 512 квадратных плиток на уровне 2 диапазон координат пикселя — от (0, 0) до (2047, 2047), как показано ниже:
+Так как ширина и высота карт различаются на каждом уровне масштаба, то есть координаты в пикселях. Пиксель в левом верхнем углу на карте всегда имеет координаты пикселей (0, 0). Пиксель в правом нижнем углу на карте имеет координаты в пикселях *(ширина-1, высота-1)* или ссылается на уравнения в предыдущем разделе *(тилесизе \* 2 <sup>Zoom</sup>– 1, тилесизе \* 2 <sup>Zoom</sup>– 1)* . Например, при использовании 512 квадратных плиток на уровне 2 диапазон координат пикселя — от (0, 0) до (2047, 2047), как показано ниже:
 
 :::image type="content" border="false" source="./media/zoom-levels-and-tile-grid/map-width-height.png" alt-text="Плитка карты мира":::
 
@@ -100,7 +100,7 @@ var numberOfTilesWide = Math.pow(2, zoom);
 var numberOfTilesHigh = numberOfTilesWide;
 ```
 
-Каждой плитке присваиваются координаты координат от (0,0) в верхнем левом углу до *(2<sup>масштаба</sup>– 1, 2<sup>масштаба</sup>– 1)* в правом нижнем углу. Например, на уровне масштабирования 3 Координаты плитки находятся в диапазоне от (0, 0) до (7, 7) следующим образом:
+Каждой плитке присваиваются координаты координат от (0,0) в верхнем левом углу до *(2 <sup>масштаба</sup>– 1, 2 <sup>масштаба</sup>– 1)* в правом нижнем углу. Например, на уровне масштабирования 3 Координаты плитки находятся в диапазоне от (0, 0) до (7, 7) следующим образом:
 
 :::image type="content" border="false" source="./media/zoom-levels-and-tile-grid/map-tiles-x-y-coordinates-7x7.png" alt-text="Плитка карты мира":::
 
@@ -933,20 +933,20 @@ module AzureMaps {
 
 > [!NOTE]
 > Интерактивные элементы управления картой в Azure Maps пакете SDK имеют вспомогательные функции для преобразования геопространственных положений и точек просмотра. 
-> - [Веб-пакет SDK: вычисление пикселей и позиций в карте](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map#pixelstopositions-pixel---)
+> - [Веб-пакет SDK: вычисление пикселей и позиций в карте](/javascript/api/azure-maps-control/atlas.map#pixelstopositions-pixel---)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Прямой доступ к плиткам карт из Azure Maps служб RESTFUL:
 
 > [!div class="nextstepaction"]
-> [Получение плиток карт](https://docs.microsoft.com/rest/api/maps/render/getmaptile)
+> [Получение плиток карт](/rest/api/maps/render/getmaptile)
 
 > [!div class="nextstepaction"]
-> [Получение плиток потока трафика](https://docs.microsoft.com/rest/api/maps/traffic/gettrafficflowtile)
+> [Получение плиток потока трафика](/rest/api/maps/traffic/gettrafficflowtile)
 
 > [!div class="nextstepaction"]
-> [Получение плиток "инцидент трафика"](https://docs.microsoft.com/rest/api/maps/traffic/gettrafficincidenttile)
+> [Получение плиток "инцидент трафика"](/rest/api/maps/traffic/gettrafficincidenttile)
 
 Дополнительные сведения о геопространственных понятиях:
 

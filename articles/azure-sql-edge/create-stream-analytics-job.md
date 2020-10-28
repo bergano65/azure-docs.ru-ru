@@ -9,12 +9,12 @@ author: SQLSourabh
 ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 07/27/2020
-ms.openlocfilehash: f0fcdf7aab5f43a0412cd28a1c15188b19770dc6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9e75edad9f2e473d27d81c73fc784c568c4e404c
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90888095"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92896146"
 ---
 # <a name="create-a-data-streaming-job-in-azure-sql-edge"></a>Создание задания потоковой передачи данных в Azure SQL ребро 
 
@@ -103,7 +103,7 @@ ms.locfileid: "90888095"
 
 3. Создайте внешний источник данных с помощью инструкции CREATE EXTERNAL DATA SOURCE. Следующий пример:
 
-    * Создает внешний источник данных с именем *локалсклаутпут*.
+    * Создает внешний источник данных с именем *локалсклаутпут* .
     * Определяет внешний источник данных (LOCATION = <vendor>://<server>[:<port>]). В этом примере он указывает на локальный экземпляр Azure SQL ребр.
     * Использует учетные данные, созданные ранее.
 
@@ -117,7 +117,7 @@ ms.locfileid: "90888095"
     go
     ```
 
-4. Создайте объект внешнего потока. В следующем примере создается объект внешнего потока, указывающий на таблицу *dbo. Температуремеасурементс*в *мисклдатабасе*базы данных.
+4. Создайте объект внешнего потока. В следующем примере создается объект внешнего потока, указывающий на таблицу *dbo. Температуремеасурементс* в *мисклдатабасе* базы данных.
 
     ```sql
     CREATE EXTERNAL STREAM TemperatureMeasurements 
@@ -233,7 +233,8 @@ exec sys.sp_get_streaming_job @name=N'StreamingJob1'
 (
        (
        name nvarchar(256),
-       status nvarchar(256)
+       status nvarchar(256),
+       error nvarchar(256)
        )
 )
 ```
@@ -250,7 +251,7 @@ exec sys.sp_get_streaming_job @name=N'StreamingJob1'
 | Остановлена | Выполнение задания потоковой передачи остановлено. |
 | Failed | Сбой задания потоковой передачи. Обычно это указывает на неустранимую ошибку при обработке. |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Просмотр метаданных, связанных с заданиями потоковой передачи в Azure SQL ребро](streaming-catalog-views.md) 
 - [Создание внешнего потока](create-external-stream-transact-sql.md)

@@ -48,7 +48,7 @@
               href: ../../hdinsight/spark/apache-spark-jupyter-spark-sql.md?toc=/azure/azure-resource-manager/templates/toc.json
             - name: Stream Analytics
               href: ../../stream-analytics/quick-create-azure-resource-manager.md?toc=/azure/azure-resource-manager/templates/toc.json
-            - name: Synapse Analytics
+            - name: "Пул SQL для Synapse\_Analytics"
               href: ../../synapse-analytics/sql-data-warehouse/quickstart-arm-template.md?toc=/azure/azure-resource-manager/templates/toc.json
         - name: Блокчейн
           items:
@@ -158,6 +158,10 @@
               href: ../../application-gateway/quick-create-template.md?toc=/azure/azure-resource-manager/templates/toc.json
             - name: Сеть доставки содержимого
               href: ../../cdn/create-profile-endpoint-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: DNS
+              href: ../../dns/dns-get-started-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: ExpressRoute
+              href: ../../expressroute/quickstart-create-expressroute-vnet-template.md?toc=/azure/azure-resource-manager/templates/toc.json
             - name: Брандмауэр. Зоны доступности
               href: ../../firewall/deploy-template.md?toc=/azure/azure-resource-manager/templates/toc.json
             - name: Брандмауэр. Группы IP-адресов
@@ -166,20 +170,26 @@
               href: ../../firewall/quick-create-multiple-ip-template.md?toc=/azure/azure-resource-manager/templates/toc.json
             - name: Диспетчер брандмауэра
               href: ../../firewall-manager/quick-secure-virtual-hub.md?toc=/azure/azure-resource-manager/templates/toc.json
-            - name: Load Balancer
+            - name: Подсистема балансировки нагрузки (общедоступная)
               href: ../../load-balancer/quickstart-load-balancer-standard-public-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: Шлюз NAT
+              href: ../../virtual-network/quickstart-create-nat-gateway-template.md?toc=/azure/azure-resource-manager/templates/toc.json
             - name: Частная конечная точка
               href: ../../private-link/create-private-endpoint-template.md?toc=/azure/azure-resource-manager/templates/toc.json
             - name: Служба "Приватный канал"
               href: ../../private-link/create-private-link-service-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: Диспетчер трафика
+              href: ../../traffic-manager/quickstart-create-traffic-manager-profile-template.md?toc=/azure/azure-resource-manager/templates/toc.json
             - name: Брандмауэр веб-приложения
               href: ../../web-application-firewall/ag/quick-create-template.md?toc=/azure/azure-resource-manager/templates/toc.json
         - name: Безопасность
           items:
             - name: Аттестация
               href: ../../attestation/quickstart-template.md?toc=/azure/azure-resource-manager/templates/toc.json
-            - name: Key Vault
+            - name: Key Vault (секрет)
               href: ../../key-vault/secrets/quick-create-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: Центр безопасности
+              href: ../../security-center/quickstart-automation-alert.md?toc=/azure/azure-resource-manager/templates/toc.json
         - name: Память
           items:
             - name: Data Share
@@ -188,6 +198,8 @@
               href: ../../storage/common/storage-account-create.md?toc=/azure/azure-resource-manager/templates/toc.json
         - name: Интернет
           items:
+            - name: Управление API
+              href: ../../api-management/quickstart-arm-template.md?toc=/azure/azure-resource-manager/templates/toc.json
             - name: Служба приложений
               href: ../../app-service/quickstart-arm-template.md?toc=/azure/azure-resource-manager/templates/toc.json
             - name: Центры уведомлений
@@ -343,36 +355,42 @@
             - name: Выходные данные
               displayName: 'iteration,copy'
               href: copy-outputs.md
-    - name: Обнаружение свойств шаблона
-      items:
-        - name: Экспорт шаблона
-          href: export-template-portal.md
-        - name: Обнаружение ресурсов
-          href: view-resources.md
-    - name: Проверка шаблонов
-      items:
-        - name: Развертывание "что если"
-          href: template-deploy-what-if.md
-        - name: Набор средств тестирования
-          href: test-toolkit.md
-        - name: Проверочные варианты
-          href: test-cases.md
     - name: Развертывание шаблонов
       items:
-        - name: "Развертывание\_— портал"
-          displayName: deployment
-          href: deploy-portal.md
-        - name: "Развертывание\_— CLI"
-          displayName: deployment
-          href: deploy-cli.md
-        - name: "Развертывание\_— PowerShell"
-          displayName: deployment
-          href: deploy-powershell.md
-        - name: "Развертывание\_— REST API"
-          displayName: deployment
-          href: deploy-rest.md
-        - name: Развертывание из GitHub
-          href: deploy-to-azure-button.md
+        - name: операции развертывания.
+          items:
+            - name: "Развертывание\_— портал"
+              displayName: deployment
+              href: deploy-portal.md
+            - name: "Развертывание\_— CLI"
+              displayName: deployment
+              href: deploy-cli.md
+            - name: "Развертывание\_— PowerShell"
+              displayName: deployment
+              href: deploy-powershell.md
+            - name: "Развертывание\_— REST API"
+              displayName: deployment
+              href: deploy-rest.md
+            - name: "Развертывание\_— GitHub"
+              href: deploy-to-azure-button.md
+            - name: "Развертывание\_— Cloud\_Shell"
+              href: deploy-cloud-shell.md
+        - name: Области действия
+          items:
+            - name: Группа ресурсов
+              href: deploy-to-resource-group.md
+            - name: Подписка
+              href: deploy-to-subscription.md
+            - name: группа управления;
+              href: deploy-to-management-group.md
+            - name: Клиент
+              href: deploy-to-tenant.md
+            - name: Ресурсы расширения
+              href: scope-extension-resources.md
+            - name: Функции в разных областях
+              href: scope-functions.md
+        - name: Развертывание "что если"
+          href: template-deploy-what-if.md
         - name: Повторное развертывание при возникновении ошибки
           displayName: rollback
           href: rollback-on-error.md
@@ -380,16 +398,6 @@
           href: secure-template-with-sas-token.md
         - name: Просмотр журнала развертывания
           href: deployment-history.md
-    - name: Развертывание в области
-      items:
-        - name: Подписка
-          href: deploy-to-subscription.md
-        - name: группа управления;
-          href: deploy-to-management-group.md
-        - name: Клиент
-          href: deploy-to-tenant.md
-        - name: Развертывания в разных областях
-          href: cross-scope-deployment.md
     - name: Предоставление параметров
       items:
         - name: Создание файла параметров
@@ -397,12 +405,24 @@
         - name: Передача конфиденциальных значений
           displayname: key vault
           href: key-vault-parameter.md
+    - name: Тестирование шаблонов
+      items:
+        - name: Набор средств тестирования
+          href: test-toolkit.md
+        - name: Проверочные варианты
+          href: test-cases.md
     - name: CI/CD
       items:
         - name: Шаблоны ARM с конвейерами
           href: add-template-to-azure-pipelines.md
         - name: "Развертывание\_— GitHub Actions"
           href: deploy-github-actions.md
+    - name: Обнаружение свойств шаблона
+      items:
+        - name: Экспорт шаблона
+          href: export-template-portal.md
+        - name: Обнаружение ресурсов
+          href: view-resources.md
     - name: Использование средств разработки
       items:
         - name: Visual Studio

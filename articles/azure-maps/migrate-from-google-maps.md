@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: ''
-ms.openlocfilehash: 3ece62e671caa0838bbf4713c0ad4a74f19fd6cb
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: 61b6f4a530ab1861c67b0bd4983167546e268957
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92518880"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92896333"
 ---
 # <a name="tutorial---migrate-from-google-maps-to-azure-maps"></a>Руководство по переходу с Google Карт на Azure Maps
 
@@ -79,7 +79,7 @@ Azure Maps предоставляет разработчикам из всех 
 - [Цены на Azure Maps](https://azure.microsoft.com/pricing/details/azure-maps/)
 - [Калькулятор цен Azure](https://azure.microsoft.com/pricing/calculator/?service=azure-maps).
 - [Условия использования Azure Maps](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=46) (в составе условий для служб Microsoft Online Services)
-- [Choose the right pricing tier in Azure Maps](https://docs.microsoft.com/azure/azure-maps/choose-pricing-tier) (Выбор подходящей ценовой категории для Azure Maps)
+- [Choose the right pricing tier in Azure Maps](./choose-pricing-tier.md) (Выбор подходящей ценовой категории для Azure Maps)
 
 ## <a name="suggested-migration-plan"></a>Предлагаемый план миграции
 
@@ -87,7 +87,7 @@ Azure Maps предоставляет разработчикам из всех 
 
 1. Проведите инвентаризацию пакетов SDK Google Карт и служб, которые использует ваше приложение. Убедитесь, что Azure Maps предоставляет альтернативные службы и пакеты SDK.
 2. Если у вас еще нету подписки Azure, создайте ее на странице [https://azure.com](https://azure.com).
-3. Создайте учетную запись Azure Maps ([документация](https://docs.microsoft.com/azure/azure-maps/how-to-manage-account-keys)) и ключ проверки подлинности или службу Azure Active Directory ([документация](https://docs.microsoft.com/azure/azure-maps/how-to-manage-authentication)).
+3. Создайте учетную запись Azure Maps ([документация](./how-to-manage-account-keys.md)) и ключ проверки подлинности или службу Azure Active Directory ([документация](./how-to-manage-authentication.md)).
 4. Переместите код приложения.
 5. Протестируйте перенесенное приложение.
 6. Разверните перенесенное приложение в рабочей среде.
@@ -98,17 +98,17 @@ Azure Maps предоставляет разработчикам из всех 
 
 1. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
 2. Войдите на [портал Azure](https://portal.azure.com/).
-3. Создайте [учетную запись службы Azure Maps](https://docs.microsoft.com/azure/azure-maps/how-to-manage-account-keys). 
-4. [Получите ключ подписки Azure Maps](https://docs.microsoft.com/azure/azure-maps/how-to-manage-authentication#view-authentication-details) или настройте проверку подлинности Azure Active Directory для повышения уровня безопасности.
+3. Создайте [учетную запись службы Azure Maps](./how-to-manage-account-keys.md). 
+4. [Получите ключ подписки Azure Maps](./how-to-manage-authentication.md#view-authentication-details) или настройте проверку подлинности Azure Active Directory для повышения уровня безопасности.
 
 ## <a name="azure-maps-technical-resources"></a>Технические ресурсы по Azure Maps
 
 Ниже приведен список полезных технических ресурсов для Azure Maps.
 
 - Общие сведения: [https://azure.com/maps](https://azure.com/maps)
-- Документация: [https://aka.ms/AzureMapsDocs](https://aka.ms/AzureMapsDocs)
+- Документация: [https://aka.ms/AzureMapsDocs](./index.yml)
 - Примеры кода для веб-пакетов SDK: [https://aka.ms/AzureMapsSamples](https://aka.ms/AzureMapsSamples)
-- Форумы разработчиков: [https://aka.ms/AzureMapsForums](https://aka.ms/AzureMapsForums)
+- Форумы разработчиков: [https://aka.ms/AzureMapsForums](/answers/topics/azure-maps.html)
 - Видео: [https://aka.ms/AzureMapsVideos](https://aka.ms/AzureMapsVideos)
 - Блог: [https://aka.ms/AzureMapsBlog](https://aka.ms/AzureMapsBlog)
 - Технический блог: [https://aka.ms/AzureMapsTechBlog](https://aka.ms/AzureMapsTechBlog)
@@ -117,7 +117,7 @@ Azure Maps предоставляет разработчикам из всех 
 
 ## <a name="migration-support"></a>Поддержка миграции
 
-Разработчики могут получить поддержку по миграции на [форумах](https://aka.ms/AzureMapsForums) или через любой из многих каналов поддержки Azure: [https://azure.microsoft.com/support/options](https://azure.microsoft.com/support/options)
+Разработчики могут получить поддержку по миграции на [форумах](/answers/topics/azure-maps.html) или через любой из многих каналов поддержки Azure: [https://azure.microsoft.com/support/options](https://azure.microsoft.com/support/options)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

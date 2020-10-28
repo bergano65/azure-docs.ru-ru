@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 10969e20cd7ae71cade230f6643a27d5d940ceaa
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: acd5f06a5383308ce736f2860810ebee7e5bce28
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91311280"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92897115"
 ---
 # <a name="add-a-symbol-layer-to-a-map-using-azure-maps-android-sdk"></a>Добавление слоя символов в карту с помощью Azure Maps пакет SDK для Android
 
@@ -21,13 +21,13 @@ ms.locfileid: "91311280"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы полностью выполнить действия, описанные в этой статье, необходимо установить [Azure Maps пакет SDK для Android](https://docs.microsoft.com/azure/azure-maps/how-to-use-android-map-control-library) , чтобы загрузить карту.
+Чтобы полностью выполнить действия, описанные в этой статье, необходимо установить [Azure Maps пакет SDK для Android](./how-to-use-android-map-control-library.md) , чтобы загрузить карту.
 
 ## <a name="add-a-symbol-layer"></a>Добавление слоя символов
 
 Чтобы добавить маркер на карту с помощью слоя символов, выполните следующие действия:
 
-1. Измените макет " **RES**  >  **layout**  >  "**activity_main.xml** так, чтобы он выглядел как следующий XML:
+1. Измените макет " **RES**  >  **layout**  >  " **activity_main.xml** так, чтобы он выглядел как следующий XML:
     
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -175,12 +175,12 @@ ms.locfileid: "91311280"
 > [!TIP]
 > По умолчанию слои символов оптимизируют отрисовку символов путем скрытия перекрывающихся символов. При изменении масштаба скрытые символы становятся видимыми. Чтобы отключить эту функцию и вывести все символы в любое время, установите `iconAllowOverlap` параметр в значение `true` .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о добавлении дополнительных материалов на карту см. в следующих статьях:
 
 > [!div class="nextstepaction"]
-> [Добавление фигур на карту Android](https://docs.microsoft.com/azure/azure-maps/how-to-add-shapes-to-android-map)
+> [Добавление фигур на карту Android](./how-to-add-shapes-to-android-map.md)
 
 > [!div class="nextstepaction"]
 > [Отображение сведений о компоненте](display-feature-information-android.md)

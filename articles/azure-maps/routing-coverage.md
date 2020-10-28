@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: ''
-ms.openlocfilehash: 160e8182a2de56b494e8f37bbedf4a8cec66c608
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 05c3cfc390fed905f4a1b09c221095b56867d540
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88030900"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92896180"
 ---
 # <a name="azure-maps-routing-coverage"></a>Покрытие для маршрутизации в службе "Карты Azure"
 
@@ -70,7 +70,7 @@ ms.locfileid: "88030900"
 | Руанда                         |        ✓       |                       |             |
 | Сенегал                        |        ✓       |                       |             |
 | Сейшельские Острова                     |        ✓       |                       |             |
-| Южно-Африканская Республика                   |        ✓       ||         ✓            |             |
+| ЮАР                   |        ✓       ||         ✓            |             |
 | Свазиленд                      |        ✓       |                       |             |
 | Танзания                       |        ✓       |                       |             |
 | Того                           |        ✓       |                       |             |
@@ -135,7 +135,7 @@ ms.locfileid: "88030900"
 | Камбоджа                       |        ✓       |                      |             |
 | Фиджи                           |        ✓       |                      |             |
 | Гуам                           |        ✓       |                      |             |
-| Гонконг (САР)                  |        ✓       |         ✓            |             |
+| Гонконг, САР                  |        ✓       |         ✓            |             |
 | Индия                          |        ✓       |         ✓            |             |
 | Индонезия                      |        ✓       |         ✓            |             |
 | Казахстан                |        ✓       |                     |             |
@@ -177,7 +177,7 @@ ms.locfileid: "88030900"
 | + St. Бартельми                |        ✓       |                      |             |
 | + Сен-Мартен                    |        ✓       |                      |             |
 | + Сен-Пьер & Микелон         |        ✓       |                      |             |
-| Грузия                        |        ✓       |                      |             |
+| Джорджия                        |        ✓       |                      |             |
 | Германия                        |        ✓       |         ✓            |     ✓      | 
 | Греция                         |        ✓       |         ✓            |     ✓      |  
 | Гернси                       |        ✓       |                      |             |
@@ -245,4 +245,4 @@ ms.locfileid: "88030900"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о маршрутизации Azure Maps см. на страницах справочника по [маршрутизации](https://docs.microsoft.com/rest/api/maps/route) .
+Дополнительные сведения о маршрутизации Azure Maps см. на страницах справочника по [маршрутизации](/rest/api/maps/route) .

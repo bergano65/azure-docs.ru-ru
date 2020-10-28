@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: ''
-ms.openlocfilehash: 8a0d930d1c0fd30c48d97b0d1d4b94548077fbca
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6ab99f32932f39d5ad140b7a16d16ceae30fff54
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86262159"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92896214"
 ---
 # <a name="add-a-tile-layer"></a>Добавление слоя фрагментов
 
@@ -57,11 +57,11 @@ ms.locfileid: "86262159"
 -   `{quadkey}` — `quadkey` Идентификатор плитки, основанный на соглашении об именовании системы плиток Bing Maps.
 -   `{bbox-epsg-3857}` — Строка ограничивающего прямоугольника с форматом `{west},{south},{east},{north}` в системе пространственной ссылки EPSG 3857.
 
-В качестве примера ниже представлен отформатированный URL-адрес плитки для [службы плитки "радар погоды](https://docs.microsoft.com/rest/api/maps/renderv2/getmaptilepreview) " в Azure Maps. Обратите внимание, что `[subscription-key]` — это заполнитель для ключа подписки Azure Maps.
+В качестве примера ниже представлен отформатированный URL-адрес плитки для [службы плитки "радар погоды](/rest/api/maps/renderv2/getmaptilepreview) " в Azure Maps. Обратите внимание, что `[subscription-key]` — это заполнитель для ключа подписки Azure Maps.
 
 > `https://atlas.microsoft.com/map/tile?zoom={z}&x={x}&y={y}&tilesetId=microsoft.weather.radar.main&api-version=2.0&subscription-key=[subscription-key]`
 
-Дополнительные сведения о Azure Maps системе мозаичного заполнения см. в разделе [уровни масштабирования и сетка плиток](zoom-levels-and-tile-grid.md).
+Дополнительные сведения о Azure Maps системе мозаичного заполнения см. в разделе [уровни масштабирования и сетка плиток](zoom-levels-and-tile-grid.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

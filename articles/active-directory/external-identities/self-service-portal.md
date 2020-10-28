@@ -11,12 +11,12 @@ author: msmimart
 manager: celestedg
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f72c255ddac1889131234fefd7d6b014b453d417
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 4f9cd421224ad134b4df853b06b3bc34333a0613
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92441731"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92896112"
 ---
 # <a name="self-service-for-azure-ad-b2b-collaboration-sign-up"></a>Самостоятельная регистрация на портале для службы совместной работы Azure AD B2B
 
@@ -33,5 +33,5 @@ ms.locfileid: "92441731"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Что такое служба совместной работы Azure AD B2B?](what-is-b2b.md)
-* [Руководство по лицензированию службы совместной работы Azure Active Directory B2B](licensing-guidance.md)
+* [Цены на внешние удостоверения](external-identities-pricing.md)
 * [Часто задаваемые вопросы о службе совместной работы Azure Active Directory B2B](faq.md)

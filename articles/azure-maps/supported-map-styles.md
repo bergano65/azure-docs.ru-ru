@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 4a50a9d6d4a485f7d8e63adb9ae5032f49edc261
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b3404c02dc159309ed1e9fcd6f9f6bb593fc7552
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91310362"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92896945"
 ---
 # <a name="azure-maps-supported-built-in-map-styles"></a>Azure Maps поддерживаемые встроенные стили карт
 
@@ -27,8 +27,8 @@ ms.locfileid: "91310362"
 
 **Применимые API:**
 
-* [Изображение карты](https://docs.microsoft.com/rest/api/maps/render/getmapimage)
-* [Плитка карты](https://docs.microsoft.com/rest/api/maps/render/getmaptile)
+* [Изображение карты](/rest/api/maps/render/getmapimage)
+* [Плитка карты](/rest/api/maps/render/getmaptile)
 * Элемент управления картой веб-пакета SDK
 * Элемент управления картой Android
 * визуальный элемент Power BI;
@@ -52,7 +52,7 @@ ms.locfileid: "91310362"
 
 **Применимые API:**
 
-* [Фрагмент спутниковой карты](https://docs.microsoft.com/rest/api/maps/render/getmapimagerytilepreview)
+* [Фрагмент спутниковой карты](/rest/api/maps/render/getmapimagerytilepreview)
 * Элемент управления картой веб-пакета SDK
 * Элемент управления картой Android
 * визуальный элемент Power BI;
@@ -77,8 +77,8 @@ ms.locfileid: "91310362"
 
 **Применимые API:**
 
-* [Изображение карты](https://docs.microsoft.com/rest/api/maps/render/getmapimage)
-* [Плитка карты](https://docs.microsoft.com/rest/api/maps/render/getmaptile)
+* [Изображение карты](/rest/api/maps/render/getmapimage)
+* [Плитка карты](/rest/api/maps/render/getmaptile)
 * Элемент управления картой веб-пакета SDK
 * Элемент управления картой Android
 * визуальный элемент Power BI;
@@ -96,7 +96,7 @@ ms.locfileid: "91310362"
 
 ## <a name="night"></a>ночь
 
-**Ночь** — это темная версия стиля дорожной карты с цветными дорогами и символами.
+**Ночь**  — это темная версия стиля дорожной карты с цветными дорогами и символами.
 
 ![стиль карт ночью](./media/supported-map-styles/night.png)
 
@@ -108,13 +108,13 @@ ms.locfileid: "91310362"
 
 ## <a name="road_shaded_relief"></a>road_shaded_relief
 
-**road shaded relief** — это основной стиль Azure Maps, дополненный рельефами Земли.
+**road shaded relief**  — это основной стиль Azure Maps, дополненный рельефами Земли.
 
 ![Затененный стиль карт рельефов](./media/supported-map-styles/shaded-relief.png)
 
 **Применимые API:**
 
-* [Плитка карты](https://docs.microsoft.com/rest/api/maps/render/getmaptile)
+* [Плитка карты](/rest/api/maps/render/getmaptile)
 * Элемент управления картой веб-пакета SDK
 * Элемент управления картой Android
 * визуальный элемент Power BI;
@@ -130,8 +130,8 @@ ms.locfileid: "91310362"
 * Элемент управления картой веб-пакета SDK
 * визуальный элемент Power BI;
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как задать стиль схемы в Azure Maps.
 
-[Выбор стиля карты](https://docs.microsoft.com/azure/azure-maps/choose-map-style)
+[Выбор стиля карты](./choose-map-style.md)

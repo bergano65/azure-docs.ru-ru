@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: seoapr2020, devx-track-python
 ms.date: 04/29/2020
-ms.openlocfilehash: dc1da641ba628cef92250549c1c6b6482cf18b51
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 5a0f9f9f972ec42987d6152c16e4377e399cdba5
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92547339"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92896418"
 ---
 # <a name="safely-manage-python-environment-on-azure-hdinsight-using-script-action"></a>Безопасное управление средой Python в Azure HDInsight с помощью действия скрипта
 
@@ -129,6 +129,24 @@ ms.locfileid: "92547339"
     4. Сохраните изменения и перезапустите затронутые службы. Эти изменения требуют перезапуска службы Spark2. В пользовательском интерфейсе Ambari появится напоминание о необходимости перезапуска. Нажмите кнопку Restart (Перезапустить), чтобы перезапустить все затронутые службы.
 
         ![Перезапуск служб](./media/apache-spark-python-package-installation/ambari-restart-services.png)
+
+    5. Задайте для сеанса Spark два свойства, чтобы убедиться, что задание указывает на обновленную конфигурацию Spark: `spark.yarn.appMasterEnv.PYSPARK_PYTHON` и `spark.yarn.appMasterEnv.PYSPARK_DRIVER_PYTHON` . 
+
+        Используя терминал или записную книжку, используйте `spark.conf.set` функцию.
+
+        ```spark
+        spark.conf.set("spark.yarn.appMasterEnv.PYSPARK_PYTHON", "/usr/bin/anaconda/envs/py35/bin/python")
+        spark.conf.set("spark.yarn.appMasterEnv.PYSPARK_DRIVER_PYTHON", "/usr/bin/anaconda/envs/py35/bin/python")
+        ```
+
+        Если вы используете Livy, добавьте следующие свойства в текст запроса:
+
+        ```
+        “conf” : {
+        “spark.yarn.appMasterEnv.PYSPARK_PYTHON”:”/usr/bin/anaconda/envs/py35/bin/python”,
+        “spark.yarn.appMasterEnv.PYSPARK_DRIVER_PYTHON”:”/usr/bin/anaconda/envs/py35/bin/python”
+        }
+        ```
 
 4. Если вы хотите использовать созданную виртуальную среду в Jupyter, измените конфигурации Jupyter и перезапустите Jupyter. Выполните действия скрипта для всех головных узлов, используя приведенную ниже инструкцию для указания новой виртуальной среды в Jupyter. Не забудьте изменить в пути префикс, заданный для виртуальной среды. После выполнения этого действия скрипта перезапустите службу Jupyter в пользовательском интерфейсе Ambari, чтобы это изменение стало доступно.
 

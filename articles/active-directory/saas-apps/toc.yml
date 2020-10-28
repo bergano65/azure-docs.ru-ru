@@ -21,6 +21,8 @@
           href: 8x8virtualoffice-tutorial.md
     - name: Объект
       items:
+        - name: ABBYY FlexiCapture Cloud
+          href: abbyy-flexicapture-cloud-tutorial.md
         - name: abintegro
           href: abintegro-tutorial.md
         - name: Absorb LMS
@@ -173,6 +175,8 @@
           href: bambubysproutsocial-tutorial.md
         - name: BC in the Cloud
           href: bcinthecloud-tutorial.md
+        - name: Beautiful.ai
+          href: beautiful.ai-tutorial.md
         - name: Соединитель данных Beekeeper для Azure AD
           href: beekeeper-azure-ad-data-connector-tutorial.md
         - name: BeeLine
@@ -295,6 +299,8 @@
           href: chatwork-tutorial.md
         - name: Chargebee
           href: chargebee-tutorial.md
+        - name: CheckProof
+          href: checkproof-tutorial.md
         - name: Cherwell
           href: cherwell-tutorial.md
         - name: Chromeriver
@@ -493,6 +499,8 @@
           href: dynamicsignal-tutorial.md
         - name: Dynatrace
           href: dynatrace-tutorial.md
+        - name: EAComposer
+          href: eacomposer-tutorial.md
         - name: EAB Navigate
           href: eab-navigate-tutorial.md
         - name: EAB Navigate IMPL
@@ -1501,6 +1509,8 @@
           href: sendsafely-tutorial.md
         - name: "SensoScientific\_— беспроводная система мониторинга температуры"
           href: sensoscientific-tutorial.md
+        - name: Sentry
+          href: sentry-tutorial.md
         - name: Sequr
           href: sequr-tutorial.md
         - name: Программные решения для использования пространства от Serraview
@@ -1849,6 +1859,8 @@
           href: workboard-tutorial.md
         - name: Workday
           href: workday-tutorial.md
+        - name: Workday Mobile Application
+          href: workday-mobile-tutorial.md
         - name: Workfront
           href: workfront-tutorial.md
         - name: Workgrid
@@ -1976,6 +1988,8 @@
           href: cinode-provisioning-tutorial.md
         - name: Cisco Webex
           href: cisco-webex-provisioning-tutorial.md
+        - name: Clarizen One
+          href: clarizen-one-provisioning-tutorial.md
         - name: Coda
           href: coda-provisioning-tutorial.md
         - name: Code42
@@ -2072,7 +2086,7 @@
           href: myday-provision-tutorial.md
     - name: N–Z
       items:
-        - name: Проверка подлинности пользователей Netskope
+        - name: Создание пользователя в Netskope Administrator Console
           href: netskope-administrator-console-provisioning-tutorial.md
         - name: Использование New Relic с разбивкой по организацией
           href: new-relic-by-organization-provisioning-tutorial.md
@@ -2152,6 +2166,8 @@
           href: teamviewer-provisioning-tutorial.md
         - name: ThousandEyes
           href: thousandeyes-provisioning-tutorial.md
+        - name: Tic-Tac Mobile
+          href: tic-tac-mobile-provisioning-tutorial.md
         - name: Templafy
           href: templafy-provisioning-tutorial.md
         - name: TheOrgWiki

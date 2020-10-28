@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 6ff64f975550a0222fd56325115bc98976fb038a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 04773ef279717c7728cf1b07761c6e4c0726a877
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91311314"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92897132"
 ---
 # <a name="add-a-shape-to-a-map-using-azure-maps-android-sdk"></a>Добавление фигуры в карту с помощью Azure Maps пакет SDK для Android
 
@@ -21,12 +21,12 @@ ms.locfileid: "91311314"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы завершить процесс, описанный в этой статье, необходимо установить [Azure Maps пакет SDK для Android](https://docs.microsoft.com/azure/azure-maps/how-to-use-android-map-control-library) , чтобы загрузить карту.
+Чтобы завершить процесс, описанный в этой статье, необходимо установить [Azure Maps пакет SDK для Android](./how-to-use-android-map-control-library.md) , чтобы загрузить карту.
 
 
 ## <a name="add-a-line-to-the-map"></a>Добавление линии на карту
 
-Вы можете добавить линию на карту с помощью **слоя линий**, выполнив приведенные ниже шаги, чтобы добавить линию на карте.
+Вы можете добавить линию на карту с помощью **слоя линий** , выполнив приведенные ниже шаги, чтобы добавить линию на карте.
 
 1. Измените **разметку res > > activity_main.xml** так, чтобы она выглядела так:
 
@@ -353,7 +353,7 @@ ms.locfileid: "91311314"
 ![Многоугольник, отображаемый на карте Android](./media/how-to-add-shapes-to-android-map/android-map-polygon.png)</center>
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы добавить дополнительные данные на карту, выполните следующие действия.
 
