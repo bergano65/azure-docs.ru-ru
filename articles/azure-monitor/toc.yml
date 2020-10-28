@@ -556,8 +556,6 @@
               href: platform/alerts-managing-smart-groups.md
             - name: Управление состоянием оповещений и смарт-групп
               href: platform/alerts-managing-alert-states.md
-            - name: Управление оповещениями из других служб мониторинга
-              href: platform/alerts-managing-nagios-zabbix-scom.md
         - name: API оповещений
           href: platform/api-alerts.md
         - name: 'Устранение неполадок, связанных с оповещениями'
@@ -576,8 +574,6 @@
               href: platform/itsmc-service-manager-script.md
             - name: Исправление проблем с синхронизацией ServiceNow ITSM
               href: platform/itsmc-resync-servicenow.md
-        - name: Решение по управлению оповещениями
-          href: platform/alert-management-solution.md
         - name: Перенос классических правил генерации оповещений
           items:
             - name: Сведения о классических оповещениях
@@ -1138,6 +1134,8 @@
               href: insights/vmware.md
             - name: Решение Wire Data
               href: insights/wire-data.md
+            - name: Решение по управлению оповещениями
+              href: platform/alert-management-solution.md
     - name: Workbooks
       items:
         - name: Обзор

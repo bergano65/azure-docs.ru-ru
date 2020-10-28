@@ -10,12 +10,12 @@ author: lobrien
 ms.date: 08/20/2020
 ms.topic: conceptual
 ms.custom: how-to, contperfq4, devx-track-python
-ms.openlocfilehash: a1bd93931f8a94f598952b28fc3db23d33e5783f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 195c334500c8c540d819e949353b34bea65b3d4f
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91329777"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92741897"
 ---
 # <a name="moving-data-into-and-between-ml-pipeline-steps-python"></a>Перемещение данных в этапы конвейера машинного обучения и между ними (Python)
 
@@ -101,6 +101,9 @@ train_step = PythonScriptStep(
 )
 ```
 
+> [!NOTE]
+> Необходимо заменить значения для всех этих аргументов (то есть,,, `"train_data"` `"train.py"` `cluster` и `iris_dataset` ) собственными данными. Приведенный выше фрагмент кода просто показывает форму вызова и не является частью примера Microsoft. 
+
 Можно также использовать методы, такие как `random_split()` и, `take_sample()` чтобы создать несколько входов или уменьшить объем данных, передаваемых на шаг конвейера:
 
 ```python
@@ -150,6 +153,9 @@ ws = run.experiment.workspace
 ds = Dataset.get_by_name(workspace=ws, name='mnist_opendataset')
 ```
 
+> [!NOTE]
+> Приведенные выше фрагменты кода показывают форму вызовов и не являются частью примера Microsoft. Необходимо заменить различные аргументы значениями из собственного проекта.
+
 ## <a name="use-pipelinedata-for-intermediate-data"></a>Использовать `PipelineData` для промежуточных данных
 
 Хотя `Dataset` объекты представляют постоянные данные, объекты [пипелинедата](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata?view=azure-ml-py&preserve-view=true) используются для временных данных, выводимых шагами конвейера. Так как время существования `PipelineData` объекта длиннее, чем один шаг конвейера, оно определяется в скрипте определения конвейера. При создании `PipelineData` объекта необходимо указать имя и хранилище данных, в котором будут размещаться данные. Передайте `PipelineData` объекты в объект `PythonScriptStep` _both_ с помощью `arguments` `outputs` аргументов и.
@@ -175,6 +181,9 @@ dataprep_step = PythonScriptStep(
 ```python
 PipelineData("clean_data", datastore=def_blob_store, output_mode="upload", output_path_on_compute="clean_data_output/")
 ```
+
+> [!NOTE]
+> Приведенные выше фрагменты кода показывают форму вызовов и не являются частью примера Microsoft. Необходимо заменить различные аргументы значениями из собственного проекта.
 
 > [!TIP]
 > С помощью общедоступного класса предварительной версии можно улучшить процесс передачи промежуточных данных между этапами конвейера [`OutputFileDatasetConfig`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.outputfiledatasetconfig?view=azure-ml-py&preserve-view=true) . Пример кода с помощью см `OutputFileDatasetConfig` . в разделе [создание конвейера машинного обучения на два этапа](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/work-with-data/datasets-tutorial/pipeline-with-datasets/pipeline-for-image-classification.ipynb).
@@ -226,6 +235,9 @@ pipeline = Pipeline(workspace=ws, steps=[step1, step2])
 ```
 
 `PipelineData`Входным значением является путь к предыдущему выходному файлу. 
+
+> [!NOTE]
+> Приведенные выше фрагменты кода показывают форму вызовов и не являются частью примера Microsoft. Необходимо заменить различные аргументы значениями из собственного проекта.
 
 > [!TIP]
 > С помощью общедоступного класса предварительной версии можно улучшить процесс передачи промежуточных данных между этапами конвейера [`OutputFileDatasetConfig`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.outputfiledatasetconfig?view=azure-ml-py&preserve-view=true) . Пример кода с помощью см `OutputFileDatasetConfig` . в разделе [создание конвейера машинного обучения на два этапа](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/work-with-data/datasets-tutorial/pipeline-with-datasets/pipeline-for-image-classification.ipynb).

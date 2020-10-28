@@ -7,13 +7,13 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.topic: how-to
 ms.date: 10/15/2020
-ms.custom: devx-track-csharp
-ms.openlocfilehash: 823f5f90bc1a72b1df87ee21e37cf39fed0b2340
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.custom: devx-track-csharp, devx-track-azurecli
+ms.openlocfilehash: 452259015cf78234aa6a96194342de20db9a3724
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92486163"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92740888"
 ---
 # <a name="provision-autoscale-throughput-on-database-or-container-in-azure-cosmos-db---sql-api"></a>Подготавливает пропускную способность автомасштабирования для базы данных или контейнера в Azure Cosmos DB API SQL
 
@@ -27,13 +27,13 @@ ms.locfileid: "92486163"
 
 1. Войдите на [портал Azure](https://portal.azure.com) или в [обозреватель Azure Cosmos DB](https://cosmos.azure.com/).
 
-1. Перейдите к своей учетной записи Azure Cosmos DB и откройте вкладку **Data Explorer**.
+1. Перейдите к своей учетной записи Azure Cosmos DB и откройте вкладку **Data Explorer** .
 
-1. Выберите **Новый контейнер**. Введите имя базы данных, контейнера и ключа раздела. В разделе **Пропускная способность** выберите параметр **Автомасштабирование** и задайте значение [максимальной пропускной способности (единиц запросов в секунду)](provision-throughput-autoscale.md#how-autoscale-provisioned-throughput-works), которое будет использоваться для масштабирования базы данных или контейнера.
+1. Выберите **Новый контейнер** . Введите имя базы данных, контейнера и ключа раздела. В разделе **Пропускная способность** выберите параметр **Автомасштабирование** и задайте значение [максимальной пропускной способности (единиц запросов в секунду)](provision-throughput-autoscale.md#how-autoscale-provisioned-throughput-works), которое будет использоваться для масштабирования базы данных или контейнера.
 
    :::image type="content" source="./media/how-to-provision-autoscale-throughput/create-new-autoscale-container.png" alt-text="Создание контейнера и настройка пропускной способности, подготовленной с использованием автомасштабирования":::
 
-1. Щелкните **ОК**.
+1. Щелкните **ОК** .
 
 Чтобы подготовить автомасштабирование для базы данных с совместно используемой пропускной способностью, выберите параметр **Подготовка пропускной способности базы данных** при создании новой базы данных. 
 
@@ -44,11 +44,11 @@ ms.locfileid: "92486163"
 
 1. Войдите на [портал Azure](https://portal.azure.com) или в [обозреватель Azure Cosmos DB](https://cosmos.azure.com/).
 
-1. Перейдите к своей учетной записи Azure Cosmos DB и откройте вкладку **Data Explorer**.
+1. Перейдите к своей учетной записи Azure Cosmos DB и откройте вкладку **Data Explorer** .
 
 1. Выберите **Масштаб и параметры** для контейнера или **Масштаб** для базы данных.
 
-1. В разделе **Масштаб** выберите параметр **Автомасштабирование** и нажмите **Сохранить**.
+1. В разделе **Масштаб** выберите параметр **Автомасштабирование** и нажмите **Сохранить** .
 
    :::image type="content" source="./media/how-to-provision-autoscale-throughput/autoscale-scale-and-settings.png" alt-text="Создание контейнера и настройка пропускной способности, подготовленной с использованием автомасштабирования":::
 
