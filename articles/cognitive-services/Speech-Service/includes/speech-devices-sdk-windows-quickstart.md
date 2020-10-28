@@ -5,12 +5,12 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 02/20/2020
 ms.author: trbye
-ms.openlocfilehash: d2160a5cd38fcd24c3af5d32ccbbbee8ac723b2f
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 6ce0006c493228d99131ca564a34600800f0ab5e
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88226111"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92169102"
 ---
 В этом кратком руководстве вы узнаете, как использовать пакет Speech Devices SDK для Windows для создания устройства с поддержкой речевых функций или его использования в качестве устройства [Транскрипция диалога](../conversation-transcription-service.md) (Conversation Transcription). Для транскрибирования бесед поддерживается только [Azure Kinect DK](https://azure.microsoft.com/services/kinect-dk/). Для других речевых функций используются линейные микрофонные решетки, обеспечивающие геометрию микрофонной решетки.
 
@@ -42,19 +42,19 @@ ms.locfileid: "88226111"
 
 1. Запустите Eclipse.
 
-1. В **средстве запуска интегрированной среды разработки Eclipse** в поле **Workspace** (Рабочая область) введите имя каталога новой рабочей области. Затем выберите **Запустить**.
+1. В **средстве запуска интегрированной среды разработки Eclipse** в поле **Workspace** (Рабочая область) введите имя каталога новой рабочей области. Затем выберите **Запустить** .
 
-   ![Снимок экрана средства запуска Eclipse](../media/speech-devices-sdk/eclipse-launcher.png)
+   ![Снимок экрана: средство запуска Eclipse, в котором вводится имя каталога рабочей области.](../media/speech-devices-sdk/eclipse-launcher.png)
 
 1. После этого отобразится главное окно интегрированной среды разработки Eclipse. Если отобразится экран приветствия, закройте его.
 
 1. В строке меню Eclipse создайте новый проект, выбрав **File** > **New** > **Java Project** (Файл > Создать > Проект Java). Если последнего пункта нет, выберите **Project** (Проект), а затем — **Java Project** (Проект Java).
 
-1. После этого запустится мастер **создания проектов Java**. **Перейдите** к расположению примера проекта. Нажмите кнопку **Готово**.
+1. После этого запустится мастер **создания проектов Java** . **Перейдите** к расположению примера проекта. Нажмите кнопку **Готово** .
 
-   ![Снимок экрана с изображением мастера создания проекта Java](../media/speech-devices-sdk/eclipse-new-java-project.png)
+   ![Снимок экрана: мастер создания проекта Java.](../media/speech-devices-sdk/eclipse-new-java-project.png)
 
-1. В **обозревателе пакетов** щелкните проект правой кнопкой мыши. В контекстном меню выберите **Настроить** > **Convert to Maven Project** (Преобразовать в проект Maven). Нажмите кнопку **Готово**.
+1. В **обозревателе пакетов** щелкните проект правой кнопкой мыши. В контекстном меню выберите **Настроить** > **Convert to Maven Project** (Преобразовать в проект Maven). Нажмите кнопку **Готово** .
 
    ![Снимок экрана обозревателя пакетов](../media/speech-devices-sdk/eclipse-convert-to-maven.png)
 
@@ -81,7 +81,7 @@ ms.locfileid: "88226111"
 
 1. Скопируйте содержимое **Windows-x64** в расположение проекта Java, например **C:\SDSDK\JRE-Sample-Release**
 
-1. Скопируйте `kws.table`,`participants.properties` и `Microsoft.CognitiveServices.Speech.extension.pma.dll` в папку проекта **target/classes**.
+1. Скопируйте `kws.table`,`participants.properties` и `Microsoft.CognitiveServices.Speech.extension.pma.dll` в папку проекта **target/classes** .
 
 ## <a name="configure-the-sample-application"></a>Настройка примера приложения
 
@@ -112,7 +112,7 @@ ms.locfileid: "88226111"
 
     Для использования нового ключевого слова обновите следующую строку в файле `FunctionsList.java` и скопируйте ключевое слово в приложение. Например, чтобы использовать ключевое слово "Машина" из файла `machine.zip` пакета ключевых слов, сделайте следующее.
 
-   * Скопируйте файл `kws.table` из ZIP-пакета слов в папку проекта **target/classes**.
+   * Скопируйте файл `kws.table` из ZIP-пакета слов в папку проекта **target/classes** .
    * Укажите в файле `FunctionsList.java` имя ключевого слова:
 
      ```java
@@ -121,17 +121,17 @@ ms.locfileid: "88226111"
 
 ## <a name="run-the-sample-application-from-eclipse"></a>Запуск примера приложения из Eclipse
 
-1. В строке меню Eclipse нажмите**Run** > **Run As** > **приложения Java**. Затем выберите **FunctionsList** и **ОК**.
+1. В строке меню Eclipse нажмите **Run** > **Run As** > **приложения Java** . Затем выберите **FunctionsList** и **ОК** .
 
    ![Снимок экрана: выбор приложения Java](../media/speech-devices-sdk/eclipse-run-sample.png)
 
 1. Запускается пример приложения пакета SDK для речевых устройств, отображающий следующие параметры:
 
-   ![Пример приложения пакета SDK для речевых устройств и параметры](../media/speech-devices-sdk/java-sample-app-windows.png)
+   ![Снимок экрана: пример приложения пакета SDK для речевых устройств и параметры.](../media/speech-devices-sdk/java-sample-app-windows.png)
 
-1. Попробуйте новую демоверсию **транскрибирования бесед**. Запустите транскрибирование, выбрав **Session** (Сеанс) > **Start** (Запустить). По умолчанию все являются гостями. Тем не менее, если у вас есть голосовые подписи участников, вы можете добавить их в файл `participants.properties` в папке проекта **target/classes**. Сведения о том, как создать голосовую подпись, см. в статье о [транскрибировании бесед (пакет SDK)](../how-to-use-conversation-transcription-service.md).
+1. Попробуйте новую демоверсию **транскрибирования бесед** . Запустите транскрибирование, выбрав **Session** (Сеанс) > **Start** (Запустить). По умолчанию все являются гостями. Тем не менее, если у вас есть голосовые подписи участников, вы можете добавить их в файл `participants.properties` в папке проекта **target/classes** . Сведения о том, как создать голосовую подпись, см. в статье о [транскрибировании бесед (пакет SDK)](../how-to-use-conversation-transcription-service.md).
 
-   ![Демоверсия приложения транскрибирования бесед](../media/speech-devices-sdk/cts-sample-app-windows.png)
+   ![Снимок экрана: демоверсия приложения транскрибирования бесед.](../media/speech-devices-sdk/cts-sample-app-windows.png)
 
 ## <a name="create-and-run-a-standalone-application"></a>Создание и запуск автономного приложения
 
@@ -139,11 +139,11 @@ ms.locfileid: "88226111"
 
 1. Появится окно **Export** (Экспорт). Разверните узел **Java** и выберите **Runnable JAR file** (Готовый к запуску JAR-файл), а затем нажмите кнопку **Next** (Далее).
 
-   ![Снимок экрана: окно экспорта](../media/speech-devices-sdk/eclipse-export-windows.png)
+   ![Снимок экрана: окно экспорта, в котором можно выбрать готовые к запуску JAR-файлы.](../media/speech-devices-sdk/eclipse-export-windows.png)
 
 1. Появится окно **Runnable JAR File Export** (Экспорт готовых к запуску JAR-файлов). Выберите **назначение экспорта** для приложения, а затем нажмите кнопку **Finish** (Готово).
 
-   ![Снимок экрана: экспорт готовых к запуску JAR-файлов](../media/speech-devices-sdk/eclipse-export-jar-windows.png)
+   ![Снимок экрана: окно экспорта готовых к запуску JAR-файлов, в котором можно выбрать назначение экспорта.](../media/speech-devices-sdk/eclipse-export-jar-windows.png)
 
 1. Поместите `kws.table`, `participants.properties`, `unimic_runtime.dll`, `pma.dll` и `Microsoft.CognitiveServices.Speech.extension.pma.dll` в папку назначения, выбранную выше, так как эти файлы необходимы для приложения.
 

@@ -1,22 +1,22 @@
 ---
-title: Преобразование устройства IoT Plug and Play в универсальный модуль | Документация Майкрософт
-description: Используйте код C# устройства PnP и преобразуйте его в модуль.
+title: Подключение универсального модуля IoT Plug and Play | Документация Майкрософт
+description: Используйте пример кода устройства IoT Plug and Play на C# в универсальном модуле.
 author: ericmitt
 ms.author: ericmitt
 ms.date: 9/22/2020
 ms.topic: tutorial
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: ccc450242c50f82d4215f6b172f72d8eceab7c52
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 671809b9cdbe72c8f3091b0056897c2342a38b1f
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92046342"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92089168"
 ---
-# <a name="tutorial-how-to-convert-an-iot-plug-and-play-device-to-a-module-c"></a>Руководство по Преобразование устройства Plug and Play IoT в модуль (C#)
+# <a name="tutorial-connect-an-iot-plug-and-play-module-c"></a>Руководство по подключению модуля IoT Plug and Play (C#)
 
-В этом руководстве показано, как преобразовать код устройства IoT Plug and Play для запуска в качестве универсального модуля.
+В этом руководстве показано, как подключить универсальный [модуль](../iot-hub/iot-hub-devguide-module-twins.md) IoT Plug and Play.
 
 Устройство — это устройство IoT Plug and Play, если оно публикует свой идентификатор модели при подключении к центру Интернета вещей и реализует свойства и методы, описанные в модели DTDL, определяемой идентификатором модели. Дополнительные сведения о том, как устройства используют DTDL и идентификатор модели, см. в статье [Руководство разработчика IoT Plug and Play](./concepts-developer-guide-device-csharp.md). Модули используют идентификаторы моделей и модели DTDL одинаковым образом.
 
@@ -33,15 +33,15 @@ ms.locfileid: "92046342"
 
 Используйте средство Обозревателя Интернета вещей Azure, чтобы добавить новое устройство с именем **my-module-device** в центр Интернета вещей.
 
-Добавьте модуль с именем **my-module** в **my-module-device**:
+Добавьте модуль с именем **my-module** в **my-module-device** :
 
-1. В средстве Обозревателя Интернета вещей Azure перейдите к устройству **my-module-device**.
+1. В средстве Обозревателя Интернета вещей Azure перейдите к устройству **my-module-device** .
 
-1. Выберите **Удостоверение модуля**, а затем выберите **Добавить**.
+1. Выберите **Удостоверение модуля** , а затем выберите **Добавить** .
 
-1. Введите **my-module** в качестве имени удостоверения модуля и нажмите кнопку **Сохранить**.
+1. Введите **my-module** в качестве имени удостоверения модуля и нажмите кнопку **Сохранить** .
 
-1. В списке удостоверений модулей выберите **my-module**. Затем скопируйте основную строку подключения. Строка подключения модуля понадобится позже.
+1. В списке удостоверений модулей выберите **my-module** . Затем скопируйте основную строку подключения. Строка подключения модуля понадобится позже.
 
 1. Перейдите на вкладку **Двойник модуля** и обратите внимание, что на ней нет требуемых или наблюдаемых свойств:
 
@@ -96,7 +96,7 @@ git clone https://github.com/Azure-Samples/azure-iot-samples-csharp.git
 
 1. Откройте файл проекта *azure-iot-sdk-csharp\iot-hub\Samples\device\PnpDeviceSamples\Thermostat\Thermostat.csproj* в Visual Studio 2019.
 
-1. В Visual Studio последовательно выберите **Проект > Thermostat Properties (Свойства термостата) > Отладка**. Затем добавьте в проект следующие переменные среды:
+1. В Visual Studio последовательно выберите **Проект > Thermostat Properties (Свойства термостата) > Отладка** . Затем добавьте в проект следующие переменные среды:
 
     | Имя | Значение |
     | ---- | ----- |
@@ -109,7 +109,7 @@ git clone https://github.com/Azure-Samples/azure-iot-samples-csharp.git
 
 Чтобы изменить код для работы в качестве модуля, а не устройства, выполните следующие действия.
 
-1. В Visual Studio откройте файл *Parameter.cs* и измените строку, которая задает переменную **PrimaryConnectionString**, следующим образом:
+1. В Visual Studio откройте файл *Parameter.cs* и измените строку, которая задает переменную **PrimaryConnectionString** , следующим образом:
 
     ```csharp
     public string PrimaryConnectionString { get; set; } = Environment.GetEnvironmentVariable("IOTHUB_MODULE_CONNECTION_STRING");
@@ -169,9 +169,9 @@ git clone https://github.com/Azure-Samples/azure-iot-samples-csharp.git
 
 Пакеты SDK для служб позволяют получить идентификатор модели подключенных устройств и модулей IoT Plug and Play. Пакеты SDK для служб можно использовать для задания перезаписываемых свойств и команд вызова:
 
-1. В другом экземпляре Visual Studio откройте проект *azure-iot-sdk-csharp\iot-hub\Samples\service\PnpServiceSamples\Thermostat\Thermostat.csproj*.
+1. В другом экземпляре Visual Studio откройте проект *azure-iot-sdk-csharp\iot-hub\Samples\service\PnpServiceSamples\Thermostat\Thermostat.csproj* .
 
-1. В Visual Studio последовательно выберите **Проект > Thermostat Properties (Свойства термостата) > Отладка**. Затем добавьте в проект следующие переменные среды:
+1. В Visual Studio последовательно выберите **Проект > Thermostat Properties (Свойства термостата) > Отладка** . Затем добавьте в проект следующие переменные среды:
 
     | Имя | Значение |
     | ---- | ----- |

@@ -10,18 +10,18 @@ ms.date: 12/26/2018
 ms.author: jopapa
 ms.custom: seodec18
 ms.reviewer: sngun
-ms.openlocfilehash: d2e7ce959edffdb2e8c929c81837e0ac3fc3da9e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 992111f6b28356d5220e27a80068acdaf80b4055
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75444689"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92280509"
 ---
 # <a name="create-an-angular-app-with-azure-cosmos-dbs-api-for-mongodb"></a>Создание приложения Angular с помощью API Azure Cosmos DB для MongoDB
 
 Из этого руководства в нескольких частях вы узнаете, как создать новое приложение, написанное на Node.js с использованием Express и Angular, а затем подключить его к [учетной записи Cosmos, настроенной с помощью API Cosmos DB для MongoDB](mongodb-introduction.md).
 
-Azure Cosmos DB — это глобально распределенная многомодельная служба базы данных Майкрософт. Она позволяет быстро создавать и запрашивать документы, пары "ключ — значение" и базы данных графов, используя преимущества глобального распределения и горизонтального масштабирования Cosmos DB. 
+Azure Cosmos DB — это быстрая база данных NoSQL от Майкрософт с открытыми API для использования в любом масштабе. Она позволяет разрабатывать современные приложения с высоким уровнем доступности и скорости работы, гарантируемых соглашением об уровне обслуживания, с возможностью автоматического и быстрого масштабирования, а также с API с открытым кодом для многих ядер NoSQL.
 
 В этом руководстве из нескольких частей рассматриваются следующие задачи:
 

@@ -3,18 +3,18 @@ title: Управление затратами и использованием A
 description: Эта статья поможет вам понять, как использовать анализ затрат и бюджеты в "Управлении затратами" для управления затратами и использованием AWS.
 author: bandersmsft
 ms.author: banders
-ms.date: 08/28/2020
+ms.date: 10/16/2020
 ms.topic: how-to
 ms.service: cost-management-billing
 ms.subservice: cost-management
 ms.reviewer: matrive
 ms.custom: ''
-ms.openlocfilehash: 7df27a6ed288555d0f4815223fd0bb6dddff6f44
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: 5fed70ccdbebbd178412c416f37c2e9001a81f38
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89266225"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92148967"
 ---
 # <a name="manage-aws-costs-and-usage-in-azure"></a>Управление затратами и использованием AWS в Azure
 
@@ -22,7 +22,7 @@ ms.locfileid: "89266225"
 
 Если вы еще не настроили интеграцию, см. статью [Set up and configure AWS Usage report integration](aws-integration-set-up-configure.md) (Установка и настройка интеграции отчетов об использовании AWS).
 
-_Перед началом_: если вы не знакомы с анализом затрат, см. [Краткое руководство. Изучение и анализ затрат с помощью функции анализа затрат](quick-acm-cost-analysis.md). Если вы не знакомы с бюджетами в Azure, см. [Tutorial: Create and manage Azure budgets](tutorial-acm-create-budgets.md) (Учебник. Создание бюджетов Azure и управление ими).
+_Перед началом_ : если вы не знакомы с анализом затрат, см. [Краткое руководство. Изучение и анализ затрат с помощью функции анализа затрат](quick-acm-cost-analysis.md). Если вы не знакомы с бюджетами в Azure, см. [Tutorial: Create and manage Azure budgets](tutorial-acm-create-budgets.md) (Учебник. Создание бюджетов Azure и управление ими).
 
 ## <a name="view-aws-costs-in-cost-analysis"></a>Просмотр затрат AWS в анализе затрат
 
@@ -40,11 +40,11 @@ _Перед началом_: если вы не знакомы с анализо
 
 В окне анализа затрат откройте средство выбора области и выберите группу управления, в которой находятся связанные учетные записи AWS. Ниже приведен пример образа на портале Azure:
 
-:::image type="content" source="./media/aws-integration-manage/select-scope01.png" alt-text="Пример представления Выбор области со связанными учетными записями в группе управления" :::
+:::image type="content" source="./media/aws-integration-manage/select-scope01.png" alt-text="Пример представления &quot;Выбор области&quot; со связанными учетными записями в группе управления" :::
 
 Ниже приведен пример, показывающий затраты группы управления в анализе затрат, сгруппированных по поставщику (Azure и AWS).
 
-:::image type="content" source="./media/aws-integration-manage/cost-analysis-aws-azure.png" alt-text="Пример, демонстрирующий затраты Azure и AWS за квартал в анализе затрат" lightbox="./media/aws-integration-manage/cost-analysis-aws-azure.png" :::
+:::image type="content" source="./media/aws-integration-manage/cost-analysis-aws-azure.png" alt-text="Пример представления &quot;Выбор области&quot; со связанными учетными записями в группе управления" lightbox="./media/aws-integration-manage/cost-analysis-aws-azure.png" :::
 
 > [!NOTE]
 > В настоящее время группы управления не поддерживаются для клиентов с Клиентским соглашением Майкрософт (MCA). Клиенты с MCA могут создать соединитель и просматривать свои данные AWS. Однако они не могут одновременно просматривать свои расходы на Azure и AWS в группе управления.
@@ -55,17 +55,17 @@ _Перед началом_: если вы не знакомы с анализо
 
 Ниже приведен пример, в котором показано, как выбрать область связанной учетной записи AWS.
 
-:::image type="content" source="./media/aws-integration-manage/select-scope02.png" alt-text="Пример представления Выбор области со связанными учетными записями AWS" :::
+:::image type="content" source="./media/aws-integration-manage/select-scope02.png" alt-text="Пример представления &quot;Выбор области&quot; со связанными учетными записями в группе управления" :::
 
 ### <a name="view-aws-consolidated-account-costs"></a>Просмотр затрат на консолидированную учетную запись AWS
 
 Чтобы просмотреть затраты на консолидированную учетную запись AWS, откройте средство выбора области и выберите консолидированную учетную запись AWS. Ниже приведен пример, в котором показано, как выбрать область консолидированной учетной записи AWS.
 
-:::image type="content" source="./media/aws-integration-manage/select-scope03.png" alt-text="Пример представления Выбор области с консолидированными учетными записями" :::
+:::image type="content" source="./media/aws-integration-manage/select-scope03.png" alt-text="Пример представления &quot;Выбор области&quot; со связанными учетными записями в группе управления" :::
 
 Эта область предоставляет сводное представление всех связанных учетных записей AWS, связанных с консолидированной учетной записью AWS. Ниже приведен пример, в котором показаны затраты на консолидированную учетную запись AWS, сгруппированную по имени службы.
 
-:::image type="content" source="./media/aws-integration-manage/cost-analysis-aws-consolidated.png" alt-text="Пример, демонстрирующий консолидированные затраты AWS в анализе затрат" lightbox="./media/aws-integration-manage/cost-analysis-aws-consolidated.png" :::
+:::image type="content" source="./media/aws-integration-manage/cost-analysis-aws-consolidated.png" alt-text="Пример представления &quot;Выбор области&quot; со связанными учетными записями в группе управления" lightbox="./media/aws-integration-manage/cost-analysis-aws-consolidated.png" :::
 
 ### <a name="dimensions-available-for-filtering-and-grouping"></a>Измерения, доступные для фильтрации и группирования
 
@@ -95,7 +95,7 @@ _Перед началом_: если вы не знакомы с анализо
 
 Используйте бюджеты для упреждающего управления затратами и контроля использования в организации. Бюджеты задаются на консолидированной учетной записи AWS и связанной учетной записи AWS. Ниже приведен пример бюджетов для консолидированной учетной записи AWS, отображаемой в разделе "Управление затратами":
 
-:::image type="content" source="./media/aws-integration-manage/budgets-aws-consolidated-account01.png" alt-text="Пример отображения бюджетов для консолидированной учетной записи AWS" :::
+:::image type="content" source="./media/aws-integration-manage/budgets-aws-consolidated-account01.png" alt-text="Пример представления &quot;Выбор области&quot; со связанными учетными записями в группе управления" :::
 
 ## <a name="aws-data-collection-process"></a>Процесс сбора данных AWS
 
@@ -117,7 +117,7 @@ _Перед началом_: если вы не знакомы с анализо
 
 - Бюджеты в Управлении затратами не поддерживают группы управления с несколькими валютами. Для групп управления с несколькими валютами оценка бюджета отображаться не будет. Если при создании бюджета вы выбираете группу управления с несколькими валютами, отображается сообщение об ошибке.
 - Облачные соединители не поддерживают AWS GovCloud (US), AWS Gov, или AWS China.
-- В службе "Управление затратами" отображаются только _затраты на использование_ AWS. Налоги, поддержка, возмещение, RI, кредиты и другие типы оплаты пока не поддерживаются.
+- В службе "Управление затратами" отображаются только _затраты на использование_  AWS. Налоги, поддержка, возмещение, RI, кредиты и другие типы оплаты пока не поддерживаются.
 
 ## <a name="troubleshooting-aws-integration"></a>Устранение неполадок с интеграцией AWS
 
@@ -145,7 +145,7 @@ _Перед началом_: если вы не знакомы с анализо
 - Внешний идентификатор совпадает с именем в определении роли и в определении соединителя.
 - Тип роли установлен на **другую учетную запись AWS, принадлежащую вам или сторонним лицам.**
 - Флажок с пункта **Требовать MFA** снят.
-- Доверенная учетная запись AWS в роли AWS — _432263259397_.
+- Доверенная учетная запись AWS в роли AWS — _432263259397_ .
 
 ### <a name="collection-failed-with-access-denied---cur-report-definitions"></a>Не удалось выполнить сбор из-за отказа в доступе — Определение отчета CUR
 
@@ -175,7 +175,13 @@ _Перед началом_: если вы не знакомы с анализо
 
 **Код ошибки:** _ReportIsNotValid_
 
-Эта ошибка связана с определением отчета о затратах и использовании AWS. Для этого отчета требуются определенные параметры. См. требования в [Create a Cost and Usage report in AWS](aws-integration-set-up-configure.md#create-a-cost-and-usage-report-in-aws) (Создание отчета о затратах и использовании в AWS).
+Эта ошибка связана с определением отчета о затратах и использовании AWS. Для этого отчета требуются определенные параметры. См. требования в разделе [Создание отчета о затратах и использовании в AWS](aws-integration-set-up-configure.md#create-a-cost-and-usage-report-in-aws).
+
+### <a name="internal-error-when-creating-connector"></a>Внутренняя ошибка при создании соединителя
+
+**Код ошибки:** _Создание соединителя — не удалось создать соединитель &lt;имя_соединителя&gt;. Причина: Внутренняя ошибка. Убедитесь, что свойства AWS указаны правильно._
+
+Эта ошибка может возникнуть, если соединитель AWS и подписка находятся в разных группах управления. Соединитель AWS и подписка должны находиться в одной группе управления.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

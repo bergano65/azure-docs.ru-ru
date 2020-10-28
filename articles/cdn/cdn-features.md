@@ -1,30 +1,29 @@
 ---
-title: Сравнение функций продуктов сети доставки содержимого Azure (CDN) | Документация Майкрософт
+title: Сравнение функций продуктов сети доставки содержимого Azure (CDN)
 description: Сведения о возможностях, которые поддерживает каждый продукт Azure доставки содержимого сети (CDN).
 services: cdn
 documentationcenter: ''
 author: asudbring
-manager: danielgi
-editor: mdgattuso
-ms.assetid: ''
 ms.service: azure-cdn
-ms.workload: tbd
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: overview
 ms.date: 11/15/2019
 ms.author: allensu
 ms.custom: mvc
-ms.openlocfilehash: 0e57ae691bf4b07b8161bc343929510d6be041a8
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: c8d8b01e8c5f4ea3054e639ecc9dd8b14bbf048b
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "81260519"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92148738"
 ---
-# <a name="compare-azure-cdn-product-features"></a>Сравнение функций продуктов Azure CDN
+# <a name="what-are-the-comparisons-between-azure-cdn-product-features"></a>Сравнение функций продуктов Azure CDN
 
-Сеть доставки содержимого Microsoft Azure (CDN) включает в себя четыре продукта: **Azure CDN уровня "Стандартный" от корпорации Майкрософт**, **Azure CDN уровня "Стандартный" от Akamai**, **Azure CDN уровня "Стандартный" от Verizon** и **Azure CDN уровня "Премиум" от Verizon**. Дополнительные сведения о переходе с профиля **Azure CDN ценовой категории "Стандартный" от Verizon** на профиль **Azure CDN ценовой категории "Премиум" от Verizon** см. [здесь](cdn-migrate.md). Обратите внимание, что хотя существует вариант обновления со Standard Verizon до Premium Verizon, механизм преобразования между другими продуктами в настоящее время отсутствует.
+Сеть доставки содержимого Microsoft Azure (CDN) включает в себя четыре продукта: 
+
+* **Azure CDN уровня "Стандартный" от Майкрософт** ;
+* **Azure CDN уровня "Стандартный" от Akamai** ;
+* **Azure CDN уровня "Стандартный" от Verizon** ;
+* **Azure CDN уровня "Премиум" от Verizon** . 
 
 В следующей таблице перечислены функции, доступные в каждом из продуктов.
 
@@ -72,11 +71,19 @@ ms.locfileid: "81260519"
 | **Простота использования** | **Уровень "Стандартный" от корпорации Майкрософт** | **Akamai уровня "Стандартный"** | **Verizon уровня "Стандартный"** | **Verizon уровня "Премиум"** | 
 | Простая интеграция со службами Azure, такими как [служба хранилища](cdn-create-a-storage-account-with-cdn.md), [веб-приложения](cdn-add-to-web-app.md) и [Службы мультимедиа](../media-services/media-services-portal-manage-streaming-endpoints.md).  | **&#x2713;** |**&#x2713;** |**&#x2713;** |**&#x2713;** |
 | Управление с помощью [REST API](/rest/api/cdn/), [.NET](cdn-app-dev-net.md), [Node.js](cdn-app-dev-node.md) или [PowerShell](cdn-manage-powershell.md)  | **&#x2713;** |**&#x2713;** |**&#x2713;** |**&#x2713;** |
-| [Типы сжатия MIME](https://docs.microsoft.com/azure/cdn/cdn-improve-performance)  |Только по умолчанию |Настраивается |Настраивается  |Настраивается  |
+| [Типы сжатия MIME](https://docs.microsoft.com/azure/cdn/cdn-improve-performance)  |Только по умолчанию |Настраивается |Возможность настройки  |Настраивается  |
 | Кодирование сжатия  |gzip, brotli |gzip |gzip, deflate, bzip2, brotili  |gzip, deflate, bzip2, brotili  |
 
+## <a name="migration"></a>Миграция
 
+Дополнительные сведения о переходе с профиля **Azure CDN ценовой категории "Стандартный" от Verizon** на профиль **Azure CDN ценовой категории "Премиум" от Verizon** см. [здесь](cdn-migrate.md). 
 
+> [!NOTE]
+> Существует вариант перехода с уровня "Стандартный" (Verizon) до уровня "Премиум" (Verizon), но механизм преобразования между другими продуктами в настоящее время отсутствует.
+
+## <a name="next-steps"></a>Дальнейшие шаги
+
+* Узнайте больше об [Azure CDN](cdn-overview.md).
 
 
 

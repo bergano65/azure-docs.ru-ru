@@ -9,12 +9,12 @@ ms.devlang: nodejs
 ms.topic: quickstart
 ms.date: 05/18/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 19039f8b87145d6bbb1a6b3636ea0892b06ccfe8
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: fe017476993872a989fc10564caa94983b9071c5
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91253434"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92164284"
 ---
 # <a name="quickstart-build-a-cassandra-app-with-nodejs-sdk-and-azure-cosmos-db"></a>Краткое руководство. Создание приложения Cassandra с помощью пакета SDK для Node.js и Azure Cosmos DB
 
@@ -236,7 +236,7 @@ ms.locfileid: "91253434"
 
     Нажмите клавиши CTRL+C, чтобы остановить выполнение программы и закрыть окно консоли. 
 
-5. На портале Azure откройте **обозреватель данных**, чтобы запросить, изменить и обработать новые данные. 
+5. На портале Azure откройте **обозреватель данных** , чтобы запросить, изменить и обработать новые данные. 
 
     :::image type="content" source="./media/create-cassandra-nodejs/data-explorer.png" alt-text="Просмотр и копирование значений параметров Contact point (Контакт), &quot;Пользователь&quot; и &quot;Пароль&quot; на странице строки подключения на портале Azure"::: 
 

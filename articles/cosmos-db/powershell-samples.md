@@ -1,21 +1,23 @@
 ---
-title: Примеры Azure PowerShell для базы данных Azure Cosmos DB
-description: Получение примеров Azure PowerShell для выполнения типичных задач в Azure Cosmos DB
+title: Примеры Azure PowerShell для API Core (SQL) службы Azure Cosmos DB
+description: Получение примеров Azure PowerShell для выполнения типичных задач в Azure Cosmos DB для Core API (SQL).
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: sample
-ms.date: 10/07/2020
+ms.date: 10/13/2020
 ms.author: mjbrown
-ms.openlocfilehash: 0c2d13ef49676917bc48dd5a2e682471558567f3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 174458d9e5be24de669060ea8264f62017489c7a
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91842977"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92279314"
 ---
-# <a name="azure-powershell-samples-for-azure-cosmos-db"></a>Примеры Azure PowerShell для базы данных Azure Cosmos DB
+# <a name="azure-powershell-samples-for-azure-cosmos-db-core-sql-api"></a>Примеры Azure PowerShell для API Core (SQL) службы Azure Cosmos DB
 
 В приведенной ниже таблице содержатся ссылки на популярные скрипты Azure PowerShell для Azure Cosmos DB. Щелкните ссылки справа, чтобы перейти к примерам API. Общие примеры одинаковы для всех API. Страницы справки по всем командлетам PowerShell Azure Cosmos DB доступны в [справочнике по Azure PowerShell](/powershell/module/az.cosmosdb). Регулярно проверяйте наличие обновлений для `Az.CosmosDB`. Если вы хотите создать вилки этих примеров PowerShell для Cosmos DB, посетите [страницу репозитория с примерами PowerShell для Cosmos DB на сайте GitHub](https://github.com/Azure/azure-docs-powershell-samples/tree/master/cosmosdb).
+
+Командлеты PowerShell для других интерфейсов API см. в статьях [Примеры PowerShell для Cassandra](powershell-samples-cassandra.md), [Примеры PowerShell для API MongoDB](powershell-samples-mongodb.md), [Примеры PowerShell для Gremlin](powershell-samples-gremlin.md) и [Примеры PowerShell для таблиц](powershell-samples-table.md).
 
 ## <a name="common-samples"></a>Распространенные примеры
 
@@ -39,48 +41,4 @@ ms.locfileid: "91842977"
 |[Получение списка либо возврат баз данных или контейнеров](scripts/powershell/sql/list-get.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Получение списка либо возврат баз данных или контейнеров. |
 |[Операции с пропускной способностью](scripts/powershell/sql/throughput.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Операции c пропускной способностью для базы данных или контейнера, включая получение, обновление и миграцию между автомасштабируемой и стандартной пропускной способностью. |
 |[Блокировка ресурсов от удаления](scripts/powershell/sql/lock.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Запрет на удаление ресурсов с помощью блокировок ресурсов. |
-|||
-
-## <a name="cassandra-api-samples"></a>Примеры API Cassandra
-
-|Задача | Описание |
-|---|---|
-|[Создание учетной записи, пространства ключей и таблицы](scripts/powershell/cassandra/create.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Создание учетной записи Azure Cosmos, пространства ключей и таблицы. |
-|[Создание учетной записи, пространства ключей и таблицы с автомасштабированием](scripts/powershell/cassandra/autoscale.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Создание учетной записи Azure Cosmos, пространства ключей и таблицы с автомасштабированием. |
-|[Получение списка либо возврат пространств ключей или таблиц](scripts/powershell/cassandra/list-get.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Получение списка либо возврат пространств ключей или таблиц. |
-|[Операции с пропускной способностью](scripts/powershell/cassandra/throughput.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Операции c пропускной способностью для пространства ключей или таблицы, включая получение, обновление и миграцию между автомасштабируемой и стандартной пропускной способностью. |
-|[Блокировка ресурсов от удаления](scripts/powershell/cassandra/lock.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Запрет на удаление ресурсов с помощью блокировок ресурсов. |
-|||
-
-## <a name="mongo-db-api-samples"></a>Примеры API Mongo DB
-
-|Задача | Описание |
-|---|---|
-|[Создание учетной записи, базы данных и коллекции](scripts/powershell/mongodb/create.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Создание учетной записи Azure Cosmos, базы данных и коллекции. |
-|[Создание учетной записи, базы данных и коллекции с автомасштабированием](scripts/powershell/mongodb/autoscale.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Создание учетной записи Azure Cosmos, базы данных и коллекции с автомасштабированием. |
-|[Получение списка либо возврат баз данных или коллекций](scripts/powershell/mongodb/list-get.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Получение списка либо возврат баз данных или коллекций. |
-|[Операции с пропускной способностью](scripts/powershell/mongodb/throughput.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Операции c пропускной способностью для базы данных или коллекции, включая получение, обновление и миграцию между автомасштабируемой и стандартной пропускной способностью. |
-|[Блокировка ресурсов от удаления](scripts/powershell/mongodb/lock.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Запрет на удаление ресурсов с помощью блокировок ресурсов. |
-|||
-
-## <a name="gremlin-api-samples"></a>Примеры API Gremlin
-
-|Задача | Описание |
-|---|---|
-|[Создание учетной записи, базы данных и графа](scripts/powershell/gremlin/create.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Создание учетной записи Azure Cosmos, базы данных и графа. |
-|[Создание учетной записи, базы данных и графа с автомасштабированием](scripts/powershell/gremlin/autoscale.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Создание учетной записи Azure Cosmos, базы данных и графа с автомасштабированием. |
-|[Получение списка либо возврат баз данных или графов](scripts/powershell/gremlin/list-get.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Получение списка либо возврат баз данных или графов. |
-|[Операции с пропускной способностью](scripts/powershell/gremlin/throughput.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Операции c пропускной способностью для базы данных или графа, включая получение, обновление и миграцию между автомасштабируемой и стандартной пропускной способностью. |
-|[Блокировка ресурсов от удаления](scripts/powershell/gremlin/lock.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Запрет на удаление ресурсов с помощью блокировок ресурсов. |
-|||
-
-## <a name="table-api-samples"></a>Примеры API таблиц
-
-|Задача | Описание |
-|---|---|
-|[Создание учетной записи и таблицы](scripts/powershell/table/create.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Создание учетной записи Azure Cosmos и таблицы. |
-|[Создание учетной записи и таблицы с автомасштабированием](scripts/powershell/table/autoscale.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Создание учетной записи Azure Cosmos и таблицы с автомасштабированием. |
-|[Получение списка либо возврат таблиц](scripts/powershell/table/list-get.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Получение списка либо возврат таблиц. |
-|[Операции с пропускной способностью](scripts/powershell/table/throughput.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Операции c пропускной способностью для таблицы, включая получение, обновление и миграцию между автомасштабируемой и стандартной пропускной способностью. |
-|[Блокировка ресурсов от удаления](scripts/powershell/table/lock.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Запрет на удаление ресурсов с помощью блокировок ресурсов. |
 |||

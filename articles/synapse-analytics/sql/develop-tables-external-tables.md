@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 05/07/2020
 ms.author: jrasnick
 ms.reviewer: jrasnick
-ms.openlocfilehash: 6c76fcc0fefdf8aa3ae97a4c131481f7ea6ada81
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: a9bb3ac7d3028937a422f2cd94aca4f4f4f41b58
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91288857"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92167541"
 ---
 # <a name="use-external-tables-with-synapse-sql"></a>Использование внешних таблиц в Synapse SQL
 
@@ -165,6 +165,8 @@ WITH ( LOCATION = 'https://azureopendatastorage.blob.core.windows.net/nyctlc/yel
 
 ### <a name="syntax-for-create-external-file-format"></a>Синтаксис инструкции CREATE EXTERNAL FILE FORMAT
 
+#### <a name="sql-pool"></a>[Пул SQL](#tab/sql-pool)
+
 ```syntaxsql
 -- Create an external file format for PARQUET files.  
 CREATE EXTERNAL FILE FORMAT file_format_name  
@@ -192,6 +194,40 @@ WITH (
     | Encoding = {'UTF8' | 'UTF16'}
 }
 ```
+
+#### <a name="sql-on-demand"></a>[SQL по запросу](#tab/sql-on-demand)
+
+```syntaxsql
+-- Create an external file format for PARQUET files.  
+CREATE EXTERNAL FILE FORMAT file_format_name  
+WITH (  
+    FORMAT_TYPE = PARQUET  
+    [ , DATA_COMPRESSION = {  
+        'org.apache.hadoop.io.compress.SnappyCodec'  
+      | 'org.apache.hadoop.io.compress.GzipCodec'      }  
+    ]);  
+
+--Create an external file format for DELIMITED TEXT files
+CREATE EXTERNAL FILE FORMAT file_format_name  
+WITH (  
+    FORMAT_TYPE = DELIMITEDTEXT  
+    [ , DATA_COMPRESSION = 'org.apache.hadoop.io.compress.GzipCodec' ]
+    [ , FORMAT_OPTIONS ( <format_options> [ ,...n  ] ) ]  
+    );  
+
+<format_options> ::=  
+{  
+    FIELD_TERMINATOR = field_terminator  
+    | STRING_DELIMITER = string_delimiter
+    | First_Row = integer
+    | USE_TYPE_DEFAULT = { TRUE | FALSE }
+    | Encoding = {'UTF8' | 'UTF16'}
+    | PARSER_VERSION = {'parser_version'}
+}
+```
+
+---
+
 
 ### <a name="arguments-for-create-external-file-format"></a>Аргументы инструкции CREATE EXTERNAL FILE FORMAT
 
@@ -245,6 +281,8 @@ DATA_COMPRESSION = *data_compression_method* задает метод сжати�
 
 - DATA_COMPRESSION = 'org.apache.hadoop.io.compress.GzipCodec'
 
+PARSER_VERSION = 'parser_version' позволяет указать версию средства синтаксического анализа, которая используется при чтении файлов. Дополнительные сведения об аргументе PARSER_VERSION см. в разделе об [аргументах OPENROWSET](develop-openrowset.md#arguments).
+
 ### <a name="example-for-create-external-file-format"></a>Пример инструкции CREATE EXTERNAL FILE FORMAT
 
 В следующем примере создается формат внешнего файла для данных о переписи населения:
@@ -285,7 +323,7 @@ column_name <data_type>
 
 Имя создаваемой таблицы, состоящее из одной, двух или трех частей. Для внешней таблицы SQL по запросу хранит только метаданные таблицы. Никакие данные не перемещаются и не хранятся в SQL по запросу.
 
-<column_definition>, ...*n* ]
+<column_definition>, ... *n* ]
 
 CREATE EXTERNAL TABLE поддерживает возможность настроить имя столбца, тип данных, допустимость значений NULL и параметры сортировки. Параметр DEFAULT CONSTRAINT нельзя использовать с внешними таблицами.
 
@@ -307,9 +345,9 @@ LOCATION = *путь_к_папке_или_файлу*
 
 ![Рекурсивные данные для внешних таблиц](./media/develop-tables-external-tables/folder-traversal.png)
 
-DATA_SOURCE = *имя_внешнего_источника_данных*. Задает имя внешнего источника данных, который содержит расположение внешних данных. Для создания внешнего источника данных используйте инструкцию [CREATE EXTERNAL DATA SOURCE](#create-external-data-source).
+DATA_SOURCE = *имя_внешнего_источника_данных* . Задает имя внешнего источника данных, который содержит расположение внешних данных. Для создания внешнего источника данных используйте инструкцию [CREATE EXTERNAL DATA SOURCE](#create-external-data-source).
 
-FILE_FORMAT = *имя_формата_внешнего_файла*. Задает имя объекта формата внешнего файла, который хранит тип файла и метод сжатия внешних данных. Чтобы создать формат внешнего файла, используйте [CREATE EXTERNAL FILE FORMAT](#create-external-file-format).
+FILE_FORMAT = *имя_формата_внешнего_файла* . Задает имя объекта формата внешнего файла, который хранит тип файла и метод сжатия внешних данных. Чтобы создать формат внешнего файла, используйте [CREATE EXTERNAL FILE FORMAT](#create-external-file-format).
 
 ### <a name="permissions-create-external-table"></a>Разрешения для CREATE EXTERNAL TABLE
 
@@ -351,7 +389,7 @@ SELECT TOP 1 * FROM census_external_table
 
 - Вам нужны по меньшей мере [права на создание](/sql/t-sql/statements/create-external-table-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest#permissions-2&preserve-view=true) внешних таблиц и на выполнение запросов в пуле SQL или SQL по запросу.
 
-- Связанная служба, настроенная для учетной записи ADLS 2-го поколения, **должна иметь доступ к нужному файлу**. Например, если для связанной службы используется способ проверки подлинности "Управляемое удостоверение", управляемое удостоверение рабочей области должно иметь по меньшей мере роль читателя для BLOB-объектов хранилища в учетной записи хранения.
+- Связанная служба, настроенная для учетной записи ADLS 2-го поколения, **должна иметь доступ к нужному файлу** . Например, если для связанной службы используется способ проверки подлинности "Управляемое удостоверение", управляемое удостоверение рабочей области должно иметь по меньшей мере роль читателя для BLOB-объектов хранилища в учетной записи хранения.
 
 На панели "Данные" выберите файл, из которого нужно создать внешнюю таблицу.
 > [!div class="mx-imgBorder"]

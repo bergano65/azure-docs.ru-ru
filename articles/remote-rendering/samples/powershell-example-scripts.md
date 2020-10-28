@@ -6,12 +6,12 @@ ms.author: flborn
 ms.date: 02/12/2020
 ms.topic: sample
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: c17750fbe016e8bfa86569f34f9af26b1c6de3bd
-ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
+ms.openlocfilehash: cb8cc98a020cb382a6941c1e410eab4543594629
+ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92055857"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92278999"
 ---
 # <a name="example-powershell-scripts"></a>Примеры скриптов PowerShell
 
@@ -22,18 +22,21 @@ ms.locfileid: "92055857"
 
 [Репозиторий примеров для ARR](https://github.com/Azure/azure-remote-rendering) содержит в папке *Scripts* примеры скриптов для взаимодействия с REST API этой службы. В этой статье описывается их использование.
 
+> [!TIP]
+> Существует также [средство ARRT на базе пользовательского интерфейса](azure-remote-rendering-asset-tool.md), предназначенное для взаимодействия со службой. Это хорошая альтернатива использованию скриптов. ![ARRT](./media/azure-remote-rendering-asset-tool.png "Снимок экрана ARRT")
+
 > [!CAUTION]
-> Слишком частые вызовы функций REST API приведут к тому, что сервер начнет использовать регулирование и в итоге вернет ошибку. В этом случае идентификатор кода ошибки HTTP будет таким: 429 ("Слишком много запросов"). Поэтому очень важно, чтобы между последовательными вызовами была задержка в **5–10 секунд**.
+> Слишком частые вызовы функций REST API приведут к тому, что сервер начнет использовать регулирование и в итоге вернет ошибку. В этом случае идентификатор кода ошибки HTTP будет таким: 429 ("Слишком много запросов"). Поэтому очень важно, чтобы между последовательными вызовами была задержка в **5–10 секунд** .
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для выполнения примеров скриптов требуется действующая оболочка [Azure PowerShell](https://docs.microsoft.com/powershell/azure/).
+Для выполнения примеров скриптов требуется действующая оболочка [Azure PowerShell](/powershell/azure/).
 
 1. Чтобы установить Azure PowerShell, выполните следующие действия.
     1. Откройте окно PowerShell с правами администратора.
     1. Выполните `Install-Module -Name Az -AllowClobber`.
 
-1. Если при выполнении скриптов будут возникать ошибки, проверьте правильность [политики выполнения](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-6).
+1. Если при выполнении скриптов будут возникать ошибки, проверьте правильность [политики выполнения](/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-6).
     1. Откройте окно PowerShell с правами администратора.
     1. Выполните `Set-ExecutionPolicy -ExecutionPolicy Unrestricted`.
 
@@ -44,9 +47,9 @@ ms.locfileid: "92055857"
     1. Выполните `Connect-AzAccount` и следуйте инструкциям на экране.
 
     > [!NOTE]
-    > Если в организации есть несколько подписок, может потребоваться указать аргументы SubscriptionId и Tenant. Подробные сведения см. в [документации по Connect-AzAccount](https://docs.microsoft.com/powershell/module/az.accounts/connect-azaccount).
+    > Если в организации есть несколько подписок, может потребоваться указать аргументы SubscriptionId и Tenant. См. документацию по [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount).
 
-1. Скачайте папку *Scripts* из [репозитория Удаленной отрисовки Azure на сайте GithHub](https://github.com/Azure/azure-remote-rendering).
+1. Скачайте папку *Scripts* в [репозитории службы "Удаленная отрисовка Azure" на сайте GitHub](https://github.com/Azure/azure-remote-rendering).
 
 ## <a name="configuration-file"></a>Файл конфигурации
 
@@ -90,14 +93,14 @@ ms.locfileid: "92055857"
 
 ### <a name="renderingsessionsettings"></a>renderingSessionSettings
 
-Эта структура должна быть заполнена, если вы намерены выполнять **RenderingSession.ps1**:
+Эта структура должна быть заполнена, если вы намерены выполнять **RenderingSession.ps1** :
 
 - **vmSize.** Определяет размер виртуальной машины. Выберите [*standard*](../reference/vm-sizes.md) или [*premium*](../reference/vm-sizes.md). Завершайте сеансы отрисовки, когда они становятся не нужны.
 - **maxLeaseTime.** Прогнозируемая продолжительность аренды виртуальной машины. По истечении срока действия аренды работа виртуальной машины будет прекращена. Срок аренды можно продлить позже (как описано ниже).
 
 ### <a name="assetconversionsettings"></a>assetConversionSettings
 
-Эта структура должна быть заполнена, если вы намерены выполнять **Conversion.ps1**.
+Эта структура должна быть заполнена, если вы намерены выполнять **Conversion.ps1** .
 
 Подробные сведения см. в статье [Подготовка учетной записи хранения Azure](../how-tos/conversion/blob-storage.md#prepare-azure-storage-accounts).
 
@@ -116,9 +119,9 @@ ms.locfileid: "92055857"
 .\RenderingSession.ps1
 ```
 
-Этот скрипт вызовет [REST API управления сеансами](../how-tos/session-rest-api.md) для запуска виртуальной машины отрисовки с указанными параметрами. При успешном выполнении он получит *sessionId*. После этого он будет опрашивать свойства этого сеанса, пока тот не будет завершен (успешно или с ошибкой).
+Этот скрипт вызовет [REST API управления сеансами](../how-tos/session-rest-api.md) для запуска виртуальной машины отрисовки с указанными параметрами. При успешном выполнении он получит *sessionId* . После этого он будет опрашивать свойства этого сеанса, пока тот не будет завершен (успешно или с ошибкой).
 
-Чтобы использовать **альтернативный файл конфигурации**, выполните:
+Чтобы использовать **альтернативный файл конфигурации** , выполните:
 
 ```PowerShell
 .\RenderingSession.ps1 -ConfigFile D:\arr\myotherconfigFile.json
@@ -130,7 +133,7 @@ ms.locfileid: "92055857"
 .\RenderingSession.ps1 -Region <region> -VmSize <vmsize> -MaxLeaseTime <hh:mm:ss>
 ```
 
-Вы можете **запустить сеанс без опроса**:
+Вы можете **запустить сеанс без опроса** :
 
 ```PowerShell
 .\RenderingSession.ps1 -CreateSession
@@ -216,13 +219,13 @@ ms.locfileid: "92055857"
 
 ### <a name="additional-command-line-options"></a>Дополнительные параметры командной строки
 
-Чтобы использовать **альтернативный файл конфигурации**, выполните:
+Чтобы использовать **альтернативный файл конфигурации** , выполните:
 
 ```PowerShell
 .\Conversion.ps1 -ConfigFile D:\arr\myotherconfigFile.json
 ```
 
-Вы можете **запустить преобразование модели без опроса**:
+Вы можете **запустить преобразование модели без опроса** :
 
 ```PowerShell
 .\Conversion.ps1 -ConvertAsset
@@ -259,7 +262,7 @@ ms.locfileid: "92055857"
 .\Conversion.ps1 -Upload
 ```
 
-Запустить только процесс преобразования модели, уже отправленной в хранилище BLOB-объектов (без отправки и без опроса состояния преобразования). Скрипт вернет значение *conversionId*.
+Запустить только процесс преобразования модели, уже отправленной в хранилище BLOB-объектов (без отправки и без опроса состояния преобразования). Скрипт вернет значение *conversionId* .
 
 ```PowerShell
 .\Conversion.ps1 -ConvertAsset

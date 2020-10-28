@@ -11,12 +11,12 @@ ms.author: sgilley
 ms.reviewer: sgilley
 ms.date: 03/05/2020
 ms.custom: seodec18
-ms.openlocfilehash: 10cf06a829b991bfe15d7b24c4fc61d0fe22eaaf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 14ae5f01e23a7922f508c4a2674e1a3f29e354b8
+ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88653721"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92166069"
 ---
 # <a name="explore-azure-machine-learning-with-jupyter-notebooks"></a>Использование записных книжек Jupyter в Машинном обучении Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "88653721"
 - [Виртуальные машины для обработки и анализа данных](#dsvm)
 
 > [!NOTE]
-> Клонировав репозиторий, вы получите руководства по работе с записными книжками в папке **tutorials**, а сами записные книжки, связанные с определенными функциями, — в папке **how-to-use-azureml**.
+> Клонировав репозиторий, вы получите руководства по работе с записными книжками в папке **tutorials** , а сами записные книжки, связанные с определенными функциями, — в папке **how-to-use-azureml** .
 
 <a name="notebookvm"></a>
 ## <a name="get-samples-on-azure-machine-learning-compute-instance"></a>Получение примеров вычислительных операций Машинного обучения Azure
@@ -58,6 +58,7 @@ ms.locfileid: "88653721"
 См. [примеры записных книжек](https://github.com/Azure/MachineLearningNotebooks), чтобы узнать, какие функции поддерживает Машинное обучение Azure.
 
 Дополнительные образцы проектов и примеры см. в следующих репозиториях GitHub:
++ [Azure/azureml-examples](https://github.com/Azure/azureml-examples)
 + [Microsoft/MLOps](https://github.com/Microsoft/MLOps)
 + [Microsoft/MLOpsPython](https://github.com/microsoft/MLOpsPython)
 

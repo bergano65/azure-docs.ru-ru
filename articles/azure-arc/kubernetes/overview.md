@@ -9,12 +9,12 @@ ms.author: mlearned
 description: В этой статье представлен обзор Kubernetes с поддержкой Azure Arc.
 keywords: Kubernetes, Arc, Azure, контейнеры
 ms.custom: references_regions
-ms.openlocfilehash: a4d53614a0ab6783b9adfe395fec4d79e7b62e1c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 601fcb096bf2bfeb1a6120015690c9aff4b6177b
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91858427"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92216085"
 ---
 # <a name="what-is-azure-arc-enabled-kubernetes-preview"></a>Что собой представляет Kubernetes с поддержкой Azure Arc (предварительная версия)?
 
@@ -72,7 +72,7 @@ Kubernetes с поддержкой Azure Arc в настоящее время д
 
     Нет. Все функции Kubernetes с поддержкой Azure Arc, такие как Azure Monitor, Политика Azure (Gatekeeper), изначально доступны в службе AKS, у которой уже есть представление ресурсов в Azure.
     
-* Следует ли подключить мой кластер AKS на Azure Stack HCI к Azure Arc? Как насчет кластеров Kubernetes, выполняющихся в Azure Stack Hub или Azure Stack Engine?
+* Следует ли подключить мой кластер AKS на Azure Stack HCI к Azure Arc? Как насчет кластеров Kubernetes, выполняющихся в Azure Stack Hub или Azure Stack Edge?
 
     Да, подключение этих кластеров к Azure Arc дает определенные преимущества. Оно обеспечивает представление ресурса для этих кластеров Kubernetes в Azure Resource Manager. Используя это представление, такие функции, как конфигурация кластера, Azure Monitor, Политика Azure (Gatekeeper) можно расширить на эти кластеры Kubernetes.
 

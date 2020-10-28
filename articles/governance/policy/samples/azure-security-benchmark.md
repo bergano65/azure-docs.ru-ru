@@ -1,22 +1,22 @@
 ---
 title: Сведения о соответствии нормативным требованиям теста производительности системы безопасности Azure
 description: Подробные сведения о встроенной инициативе о соответствии нормативным требованиям теста производительности системы безопасности Azure. Каждый элемент управления сопоставляется с определениями одной или нескольких Политик Azure, которые помогают выполнять оценку.
-ms.date: 10/07/2020
+ms.date: 10/20/2020
 ms.topic: sample
 ms.custom: generated
-ms.openlocfilehash: 0ac37714aa18806d3eddbb5cf03c922754483f85
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
+ms.openlocfilehash: c4f009b24889f3c855e9cb612fed7bdc1342e313
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91932181"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92311462"
 ---
 # <a name="details-of-the-azure-security-benchmark-regulatory-compliance-built-in-initiative"></a>Подробные сведения о встроенной инициативе о соответствии нормативным требованиям теста производительности системы безопасности Azure
 
 В следующей статье подробно описано, как определение встроенной инициативы о соответствии нормативным требованиям Политики Azure сопоставляется с **областями соответствия нормативным требованиям** и **элементами управления** в тесте для оценки системы безопасности Azure.
 Дополнительные сведения об этом стандарте соответствия см. в статье о [тесте производительности системы безопасности Azure](../../../security/benchmarks/overview.md). Сведения о термине _Ответственный_ см. в статьях [Определение службы "Политика Azure"](../concepts/definition-structure.md#type) и [Разделение ответственности в облаке](../../../security/fundamentals/shared-responsibility.md).
 
-Далее представлены сопоставления элементов управления **Azure Security Benchmark**. Используйте панель навигации справа для перехода непосредственно к конкретной **области соответствия нормативным требованиям**. Многие элементы управления реализуются с помощью определения инициативы [Политики Azure](../overview.md). Чтобы просмотреть полное определение инициативы, откройте раздел **Политика** на портале Azure и перейдите на страницу **Определения**.
+Далее представлены сопоставления элементов управления **Azure Security Benchmark** . Используйте панель навигации справа для перехода непосредственно к конкретной **области соответствия нормативным требованиям** . Многие элементы управления реализуются с помощью определения инициативы [Политики Azure](../overview.md). Чтобы просмотреть полное определение инициативы, откройте раздел **Политика** на портале Azure и перейдите на страницу **Определения** .
 Затем найдите и выберите встроенное определение инициативы **Тесты производительности системы безопасности Azure** по обеспечению соответствия нормативным требованиям.
 
 Эта встроенная инициатива развертывается в составе [примера схемы для оценки системы безопасности Azure](../../blueprints/samples/azure-security-benchmark.md).
@@ -29,7 +29,7 @@ ms.locfileid: "91932181"
 
 ### <a name="protect-resources-using-network-security-groups-or-azure-firewall-on-your-virtual-network"></a>Защита ресурсов в виртуальной сети с помощью групп безопасности сети или Брандмауэра Azure
 
-**Идентификатор**. Azure Security Benchmark 1.1 **Ответственный**: Customer
+**Идентификатор** . Azure Security Benchmark 1.1 **Ответственный** : Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -58,7 +58,7 @@ ms.locfileid: "91932181"
 
 ### <a name="monitor-and-log-the-configuration-and-traffic-of-vnets-subnets-and-nics"></a>Мониторинг и запись конфигурации и трафика виртуальных сетей, подсетей и сетевых карт
 
-**Идентификатор**. Azure Security Benchmark 1.2 **Ответственный**: Customer
+**Идентификатор** . Azure Security Benchmark 1.2 **Ответственный** : Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -66,7 +66,7 @@ ms.locfileid: "91932181"
 
 ### <a name="protect-critical-web-applications"></a>Защита критических веб-приложений
 
-**Идентификатор**. Azure Security Benchmark 1.3 **Ответственный**: Customer
+**Идентификатор** . Azure Security Benchmark 1.3 **Ответственный** : Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -80,7 +80,7 @@ ms.locfileid: "91932181"
 
 ### <a name="deny-communications-with-known-malicious-ip-addresses"></a>Запрет взаимодействия с известными опасными IP-адресами
 
-**Идентификатор**. Azure Security Benchmark 1.4 **Ответственный**: Customer
+**Идентификатор** . Azure Security Benchmark 1.4 **Ответственный** : Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -91,7 +91,7 @@ ms.locfileid: "91932181"
 
 ### <a name="record-network-packets-and-flow-logs"></a>Запись сетевых пакетов и журналов потоков
 
-**Идентификатор**. Azure Security Benchmark 1.5 **Ответственный**: Customer
+**Идентификатор** . Azure Security Benchmark 1.5 **Ответственный** : Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -99,7 +99,7 @@ ms.locfileid: "91932181"
 
 ### <a name="use-automated-tools-to-monitor-network-resource-configurations-and-detect-changes"></a>Использование автоматизированных средств для мониторинга конфигураций сетевых ресурсов и обнаружения изменений
 
-**Идентификатор**. Azure Security Benchmark 1.11 **Ответственный**: Customer
+**Идентификатор** . Azure Security Benchmark 1.11 **Ответственный** : Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -115,7 +115,7 @@ ms.locfileid: "91932181"
 
 ### <a name="configure-central-security-log-management"></a>Настройка централизованного управления журналами безопасности
 
-**Идентификатор**. Azure Security Benchmark 2.2 **Ответственный**: Customer
+**Идентификатор** . Azure Security Benchmark 2.2 **Ответственный** : Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -128,7 +128,7 @@ ms.locfileid: "91932181"
 
 ### <a name="enable-audit-logging-for-azure-resources"></a>Включение журналов аудита для ресурсов Azure
 
-**Идентификатор**. Azure Security Benchmark 2.3 **Ответственный**: Customer
+**Идентификатор** . Azure Security Benchmark 2.3 **Ответственный** : Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -150,7 +150,7 @@ ms.locfileid: "91932181"
 
 ### <a name="collect-security-logs-from-operating-systems"></a>Сбор журналов безопасности из операционных систем
 
-**Идентификатор**. Azure Security Benchmark 2.4 **Ответственный**: Customer
+**Идентификатор** . Azure Security Benchmark 2.4 **Ответственный** : Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -161,7 +161,7 @@ ms.locfileid: "91932181"
 
 ### <a name="configure-security-log-storage-retention"></a>Настройка хранения журнала безопасности
 
-**Идентификатор**. Azure Security Benchmark 2.5 **Ответственный**: Customer
+**Идентификатор** . Azure Security Benchmark 2.5 **Ответственный** : Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -169,7 +169,7 @@ ms.locfileid: "91932181"
 
 ### <a name="enable-alerts-for-anomalous-activity"></a>Включение оповещений об аномальных действиях
 
-**Идентификатор**. Azure Security Benchmark 2.7 **Ответственный**: Customer
+**Идентификатор** . Azure Security Benchmark 2.7 **Ответственный** : Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -178,7 +178,7 @@ ms.locfileid: "91932181"
 
 ### <a name="centralize-anti-malware-logging"></a>Централизованное ведение журнала защиты от вредоносных программ
 
-**Идентификатор**. Azure Security Benchmark 2.8 **Ответственный**: Customer
+**Идентификатор** . Azure Security Benchmark 2.8 **Ответственный** : Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -190,7 +190,7 @@ ms.locfileid: "91932181"
 
 ### <a name="maintain-an-inventory-of-administrative-accounts"></a>Инвентаризация учетных записей администраторов
 
-**Идентификатор**. Azure Security Benchmark 3.1 **Ответственный**: Customer
+**Идентификатор** . Azure Security Benchmark 3.1 **Ответственный** : Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -201,7 +201,7 @@ ms.locfileid: "91932181"
 
 ### <a name="use-dedicated-administrative-accounts"></a>Применение выделенных административных учетных записей
 
-**Идентификатор**. Azure Security Benchmark 3.3 **Ответственный**: Customer
+**Идентификатор** . Azure Security Benchmark 3.3 **Ответственный** : Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -213,7 +213,7 @@ ms.locfileid: "91932181"
 
 ### <a name="use-multi-factor-authentication-for-all-azure-active-directory-based-access"></a>Использование многофакторной проверки подлинности для любого доступа на основе Azure Active Directory
 
-**Идентификатор**. Azure Security Benchmark 3.5 **Ответственный**: Customer
+**Идентификатор** . Azure Security Benchmark 3.5 **Ответственный** : Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -223,7 +223,7 @@ ms.locfileid: "91932181"
 
 ### <a name="use-azure-active-directory"></a>Использование Azure Active Directory
 
-**Идентификатор**. Azure Security Benchmark 3.9 **Ответственный**: Customer
+**Идентификатор** . Azure Security Benchmark 3.9 **Ответственный** : Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -232,7 +232,7 @@ ms.locfileid: "91932181"
 
 ### <a name="regularly-review-and-reconcile-user-access"></a>Регулярная проверка и согласование доступа пользователей
 
-**Идентификатор**. Azure Security Benchmark 3.10 **Ответственный**: Customer
+**Идентификатор** . Azure Security Benchmark 3.10 **Ответственный** : Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -246,7 +246,7 @@ ms.locfileid: "91932181"
 
 ### <a name="maintain-an-inventory-of-sensitive-information"></a>Инвентаризация конфиденциальных данных
 
-**Идентификатор**. Azure Security Benchmark 4.1 **Ответственный**: Customer
+**Идентификатор** . Azure Security Benchmark 4.1 **Ответственный** : Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -254,7 +254,7 @@ ms.locfileid: "91932181"
 
 ### <a name="encrypt-all-sensitive-information-in-transit"></a>Шифрование любой конфиденциальной информации при передаче
 
-**Идентификатор**. Azure Security Benchmark 4.4 **Ответственный**: Совмещаемая блокировка
+**Идентификатор** . Azure Security Benchmark 4.4 **Ответственный** : Совмещаемая блокировка
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -274,7 +274,7 @@ ms.locfileid: "91932181"
 
 ### <a name="use-an-active-discovery-tool-to-identify-sensitive-data"></a>Использование средства активного обнаружения для распознавания конфиденциальных данных
 
-**Идентификатор**. Azure Security Benchmark 4.5 **Ответственный**: Customer
+**Идентификатор** . Azure Security Benchmark 4.5 **Ответственный** : Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -284,7 +284,7 @@ ms.locfileid: "91932181"
 
 ### <a name="use-azure-rbac-to-control-access-to-resources"></a>Контроль доступа к ресурсам с помощью RBAC
 
-**Идентификатор**. Azure Security Benchmark 4.6 **Ответственный**: Customer
+**Идентификатор** . Azure Security Benchmark 4.6 **Ответственный** : Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -293,7 +293,7 @@ ms.locfileid: "91932181"
 
 ### <a name="encrypt-sensitive-information-at-rest"></a>Шифрование конфиденциальной информации при хранении
 
-**Идентификатор**. Azure Security Benchmark 4.8 **Ответственный**: Customer
+**Идентификатор** . Azure Security Benchmark 4.8 **Ответственный** : Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -307,7 +307,7 @@ ms.locfileid: "91932181"
 
 ### <a name="log-and-alert-on-changes-to-critical-azure-resources"></a>Включение в журнал и создание оповещений по изменениям критических ресурсов Azure
 
-**Идентификатор**. Azure Security Benchmark 4.9 **Ответственный**: Customer
+**Идентификатор** . Azure Security Benchmark 4.9 **Ответственный** : Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -317,7 +317,7 @@ ms.locfileid: "91932181"
 
 ### <a name="run-automated-vulnerability-scanning-tools"></a>Выполнение автоматизированных средства анализа уязвимостей
 
-**Идентификатор**. Azure Security Benchmark 5.1 **Ответственный**: Customer
+**Идентификатор** . Azure Security Benchmark 5.1 **Ответственный** : Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -327,7 +327,7 @@ ms.locfileid: "91932181"
 
 ### <a name="deploy-automated-operating-system-patch-management-solution"></a>Развертывание автоматизированного решения для управления исправлениями операционной системы
 
-**Идентификатор**. Azure Security Benchmark 5.2 **Ответственный**: Customer
+**Идентификатор** . Azure Security Benchmark 5.2 **Ответственный** : Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -336,23 +336,23 @@ ms.locfileid: "91932181"
 
 ### <a name="deploy-automated-third-party-software-patch-management-solution"></a>Развертывание автоматизированного решения для управления исправлениями ПО сторонних производителей
 
-**Идентификатор**. Azure Security Benchmark 5.3 **Ответственный**: Customer
+**Идентификатор** . Azure Security Benchmark 5.3 **Ответственный** : Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
-|[В приложении API должна использоваться последняя версия Java](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F88999f4c-376a-45c8-bcb3-4058f713cf39) |Для Java периодически выпускаются новые версии, которые устраняют уязвимости безопасности или включают дополнительные функции. Чтобы получить эти возможности и преимущества, для приложений API рекомендуется использовать последнюю версию Python. |AuditIfNotExists, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/App%20Service/AppService_ApiApp_Audit_java_Latest.json) |
-|[В приложении-функции должна использоваться последняя версия Java](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F9d0b6ea4-93e2-4578-bf2f-6bb17d22b4bc) |Для программного обеспечения Java периодически выпускаются новые версии, которые устраняют уязвимости безопасности или включают дополнительные функции. Чтобы получить эти возможности и преимущества, для приложений-функций рекомендуется использовать последнюю версию Java. |AuditIfNotExists, Disabled |[1.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/App%20Service/AppService_FunctionApp_Audit_java_Latest.json) |
-|[В веб-приложении должна использоваться последняя версия Java](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F496223c3-ad65-4ecd-878a-bae78737e9ed) |Для программного обеспечения Java периодически выпускаются новые версии, которые устраняют уязвимости безопасности или включают дополнительные функции. Чтобы получить эти возможности и преимущества, для веб-приложений рекомендуется использовать последнюю версию Java. |AuditIfNotExists, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/App%20Service/AppService_WebApp_Audit_java_Latest.json) |
-|[В приложении API должна использоваться последняя версия PHP](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F1bc1795e-d44a-4d48-9b3b-6fff0fd5f9ba) |Для программного обеспечения PHP периодически выпускаются новые версии, которые устраняют уязвимости безопасности или включают дополнительные функции. Чтобы получить эти возможности и преимущества, для приложений API рекомендуется использовать последнюю версию PHP. |AuditIfNotExists, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/App%20Service/AppService_ApiApp_Audit_PHP_Latest.json) |
-|[В веб-приложении должна использоваться последняя версия PHP](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F7261b898-8a84-4db8-9e04-18527132abb3) |Для программного обеспечения PHP периодически выпускаются новые версии, которые устраняют уязвимости безопасности или включают дополнительные функции. Чтобы получить эти возможности и преимущества, для веб-приложений рекомендуется использовать последнюю версию PHP. |AuditIfNotExists, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/App%20Service/AppService_Webapp_Audit_PHP_Latest.json) |
-|[В приложении API должна использоваться последняя версия Python](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F74c3584d-afae-46f7-a20a-6f8adba71a16) |Для программного обеспечения Python периодически выпускаются новые версии, которые устраняют уязвимости безопасности или включают дополнительные функции. Чтобы получить эти возможности и преимущества, для приложений API рекомендуется использовать последнюю версию Python. |AuditIfNotExists, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/App%20Service/AppService_ApiApp_Audit_python_Latest.json) |
-|[В приложении-функции должна использоваться последняя версия Python](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F7238174a-fd10-4ef0-817e-fc820a951d73) |Для программного обеспечения Python периодически выпускаются новые версии, которые устраняют уязвимости безопасности или включают дополнительные функции. Чтобы получить эти возможности и преимущества, для приложений-функций рекомендуется использовать последнюю версию Python. |AuditIfNotExists, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/App%20Service/AppService_FunctionApp_Audit_python_Latest.json) |
-|[В веб-приложении должна использоваться последняя версия Python](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F7008174a-fd10-4ef0-817e-fc820a951d73) |Для программного обеспечения Python периодически выпускаются новые версии, которые устраняют уязвимости безопасности или включают дополнительные функции. Чтобы получить эти возможности и преимущества, для веб-приложений рекомендуется использовать последнюю версию Python. |AuditIfNotExists, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/App%20Service/AppService_WebApp_Audit_python_Latest.json) |
+|[В приложении API должна использоваться последняя версия Java](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F88999f4c-376a-45c8-bcb3-4058f713cf39) |Для Java периодически выпускаются новые версии, которые устраняют уязвимости безопасности или включают дополнительные функции. Чтобы получить эти возможности и преимущества, для приложений API рекомендуется использовать последнюю версию Python. Сейчас эта политика применяется только к веб-приложениям Linux. |AuditIfNotExists, Disabled |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/App%20Service/AppService_ApiApp_Audit_java_Latest.json) |
+|[В приложении-функции должна использоваться последняя версия Java](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F9d0b6ea4-93e2-4578-bf2f-6bb17d22b4bc) |Для программного обеспечения Java периодически выпускаются новые версии, которые устраняют уязвимости безопасности или включают дополнительные функции. Чтобы получить эти возможности и преимущества, для приложений-функций рекомендуется использовать последнюю версию Java. Сейчас эта политика применяется только к веб-приложениям Linux. |AuditIfNotExists, Disabled |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/App%20Service/AppService_FunctionApp_Audit_java_Latest.json) |
+|[В веб-приложении должна использоваться последняя версия Java](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F496223c3-ad65-4ecd-878a-bae78737e9ed) |Для программного обеспечения Java периодически выпускаются новые версии, которые устраняют уязвимости безопасности или включают дополнительные функции. Чтобы получить эти возможности и преимущества, для веб-приложений рекомендуется использовать последнюю версию Java. Сейчас эта политика применяется только к веб-приложениям Linux. |AuditIfNotExists, Disabled |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/App%20Service/AppService_WebApp_Audit_java_Latest.json) |
+|[В приложении API должна использоваться последняя версия PHP](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F1bc1795e-d44a-4d48-9b3b-6fff0fd5f9ba) |Для программного обеспечения PHP периодически выпускаются новые версии, которые устраняют уязвимости безопасности или включают дополнительные функции. Чтобы получить эти возможности и преимущества, для приложений API рекомендуется использовать последнюю версию PHP. Сейчас эта политика применяется только к веб-приложениям Linux. |AuditIfNotExists, Disabled |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/App%20Service/AppService_ApiApp_Audit_PHP_Latest.json) |
+|[В веб-приложении должна использоваться последняя версия PHP](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F7261b898-8a84-4db8-9e04-18527132abb3) |Для программного обеспечения PHP периодически выпускаются новые версии, которые устраняют уязвимости безопасности или включают дополнительные функции. Чтобы получить эти возможности и преимущества, для веб-приложений рекомендуется использовать последнюю версию PHP. Сейчас эта политика применяется только к веб-приложениям Linux. |AuditIfNotExists, Disabled |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/App%20Service/AppService_Webapp_Audit_PHP_Latest.json) |
+|[В приложении API должна использоваться последняя версия Python](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F74c3584d-afae-46f7-a20a-6f8adba71a16) |Для программного обеспечения Python периодически выпускаются новые версии, которые устраняют уязвимости безопасности или включают дополнительные функции. Чтобы получить эти возможности и преимущества, для приложений API рекомендуется использовать последнюю версию Python. Сейчас эта политика применяется только к веб-приложениям Linux. |AuditIfNotExists, Disabled |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/App%20Service/AppService_ApiApp_Audit_python_Latest.json) |
+|[В приложении-функции должна использоваться последняя версия Python](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F7238174a-fd10-4ef0-817e-fc820a951d73) |Для программного обеспечения Python периодически выпускаются новые версии, которые устраняют уязвимости безопасности или включают дополнительные функции. Чтобы получить эти возможности и преимущества, для приложений-функций рекомендуется использовать последнюю версию Python. Сейчас эта политика применяется только к веб-приложениям Linux. |AuditIfNotExists, Disabled |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/App%20Service/AppService_FunctionApp_Audit_python_Latest.json) |
+|[В веб-приложении должна использоваться последняя версия Python](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F7008174a-fd10-4ef0-817e-fc820a951d73) |Для программного обеспечения Python периодически выпускаются новые версии, которые устраняют уязвимости безопасности или включают дополнительные функции. Чтобы получить эти возможности и преимущества, для веб-приложений рекомендуется использовать последнюю версию Python. Сейчас эта политика применяется только к веб-приложениям Linux. |AuditIfNotExists, Disabled |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/App%20Service/AppService_WebApp_Audit_python_Latest.json) |
 |[Службы Kubernetes должны быть обновлены до версии с устраненными уязвимостями](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Ffb893a29-21bb-418c-a157-e99480ec364c) |Обновите версию службы Kubernetes своего кластера, чтобы получить защиту от известных уязвимостей текущей версии. Уязвимость CVE-2019-9946 исправлена в Kubernetes версий 1.11.9+, 1.12.7+, 1.13.5+ и 1.14.0+ |Audit, Disabled |[1.0.2](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_UpgradeVersion_KubernetesService_Audit.json) |
 
 ### <a name="use-a-risk-rating-process-to-prioritize-the-remediation-of-discovered-vulnerabilities"></a>Использование процесса оценки рисков для определения приоритета в устранении обнаруженных уязвимостей
 
-**Идентификатор**. Azure Security Benchmark 5.5 **Ответственный**: Customer
+**Идентификатор** . Azure Security Benchmark 5.5 **Ответственный** : Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -366,7 +366,7 @@ ms.locfileid: "91932181"
 
 ### <a name="use-only-approved-applications"></a>Использование только утвержденных приложений
 
-**Идентификатор**. Azure Security Benchmark 6.8 **Ответственный**: Customer
+**Идентификатор** . Azure Security Benchmark 6.8 **Ответственный** : Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -374,7 +374,7 @@ ms.locfileid: "91932181"
 
 ### <a name="use-only-approved-azure-services"></a>Использование только утвержденных служб Azure
 
-**Идентификатор**. Azure Security Benchmark 6.9 **Ответственный**: Customer
+**Идентификатор** . Azure Security Benchmark 6.9 **Ответственный** : Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -383,7 +383,7 @@ ms.locfileid: "91932181"
 
 ### <a name="implement-approved-application-list"></a>Реализация списка утвержденных приложений
 
-**Идентификатор**. Azure Security Benchmark 6.10 **Ответственный**: Customer
+**Идентификатор** . Azure Security Benchmark 6.10 **Ответственный** : Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -393,7 +393,7 @@ ms.locfileid: "91932181"
 
 ### <a name="maintain-secure-operating-system-configurations"></a>Сохранение безопасных конфигураций для операционных систем
 
-**Идентификатор**. Azure Security Benchmark 7.4 **Ответственный**: Совмещаемая блокировка
+**Идентификатор** . Azure Security Benchmark 7.4 **Ответственный** : Совмещаемая блокировка
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -403,7 +403,7 @@ ms.locfileid: "91932181"
 
 ### <a name="implement-automated-configuration-monitoring-for-operating-systems"></a>Реализация автоматизированного мониторинга конфигурации для операционных систем
 
-**Идентификатор**. Azure Security Benchmark 7.10 **Ответственный**: Customer
+**Идентификатор** . Azure Security Benchmark 7.10 **Ответственный** : Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -413,7 +413,7 @@ ms.locfileid: "91932181"
 
 ### <a name="manage-azure-secrets-securely"></a>Безопасное управление секретами Azure
 
-**Идентификатор**. Azure Security Benchmark 7.11 **Ответственный**: Customer
+**Идентификатор** . Azure Security Benchmark 7.11 **Ответственный** : Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -421,7 +421,7 @@ ms.locfileid: "91932181"
 
 ### <a name="manage-identities-securely-and-automatically"></a>Безопасное и автоматическое управление удостоверениями 
 
-**Идентификатор**. Azure Security Benchmark 7.12 **Ответственный**: Customer
+**Идентификатор** . Azure Security Benchmark 7.12 **Ответственный** : Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -433,7 +433,7 @@ ms.locfileid: "91932181"
 
 ### <a name="use-centrally-managed-anti-malware-software"></a>Использование централизованно управляемого программного обеспечения для защиты от вредоносных программ
 
-**Идентификатор**. Azure Security Benchmark 8.1 **Ответственный**: Customer
+**Идентификатор** . Azure Security Benchmark 8.1 **Ответственный** : Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -442,7 +442,7 @@ ms.locfileid: "91932181"
 
 ### <a name="ensure-anti-malware-software-and-signatures-are-updated"></a>Своевременное обновление программного обеспечения для защиты от вредоносных программ и подписей
 
-**Идентификатор**. Azure Security Benchmark 8.3 **Ответственный**: Customer
+**Идентификатор** . Azure Security Benchmark 8.3 **Ответственный** : Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -452,7 +452,7 @@ ms.locfileid: "91932181"
 
 ### <a name="ensure-regular-automated-back-ups"></a>Обеспечение регулярного автоматического резервного копирования
 
-**Идентификатор**. Azure Security Benchmark 9.1 **Ответственный**: Customer
+**Идентификатор** . Azure Security Benchmark 9.1 **Ответственный** : Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -464,7 +464,7 @@ ms.locfileid: "91932181"
 
 ### <a name="perform-complete-system-backups-and-backup-any-customer-managed-keys"></a>Выполнение полного резервного копирования системы и любых ключей, управляемых клиентом
 
-**Идентификатор**. Azure Security Benchmark 9.2 **Ответственный**: Customer
+**Идентификатор** . Azure Security Benchmark 9.2 **Ответственный** : Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -476,7 +476,7 @@ ms.locfileid: "91932181"
 
 ### <a name="ensure-protection-of-backups-and-customer-managed-keys"></a>Обеспечение защиты резервных копий и управляемых клиентом ключей
 
-**Идентификатор**. Azure Security Benchmark 9.4 **Ответственный**: Customer
+**Идентификатор** . Azure Security Benchmark 9.4 **Ответственный** : Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -486,7 +486,7 @@ ms.locfileid: "91932181"
 
 ### <a name="provide-security-incident-contact-details-and-configure-alert-notifications-for-security-incidents"></a>Предоставление контактных сведений и настройка уведомлений по инцидентам безопасности
 
-**Идентификатор**. Azure Security Benchmark 10.4 **Ответственный**: Customer
+**Идентификатор** . Azure Security Benchmark 10.4 **Ответственный** : Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|

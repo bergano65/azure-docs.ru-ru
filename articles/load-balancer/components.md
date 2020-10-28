@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/04/2020
 ms.author: allensu
-ms.openlocfilehash: 4dbbd3443ec6c455ba9bcb88ff90dd4960aff5d2
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
+ms.openlocfilehash: 97b872c5fe0a155bb6e474f327f8d0c65e22b21f
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91930957"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92317445"
 ---
 # <a name="azure-load-balancer-components"></a>Компоненты Azure Load Balancer
 
@@ -82,7 +82,7 @@ Load Balancer ценовой категории "Базовый" не подде
 
 ## <a name="high-availability-ports"></a>Порты с высоким уровнем доступности
 
-Правило подсистемы балансировки нагрузки, для которого настроены значения **protocol — all и port — 0**. 
+Правило подсистемы балансировки нагрузки, для которого настроены значения **protocol — all и port — 0** . 
 
 Это позволяет указать единое правило балансировки нагрузки для всех потоков TCP и UDP, поступающих на все порты внутренней подсистемы Load Balancer (цен. категория "Стандартный"). 
 
@@ -128,6 +128,7 @@ Load Balancer ценовой категории "Базовый" не подде
 
 ## <a name="limitations"></a>Ограничения
 
+- См. дополнительные сведения об [ограничениях](https://aka.ms/lblimits) Load Balancer. 
 - Подсистема балансировки нагрузки обеспечивает балансировку нагрузки и перенаправление портов для конкретных протоколов TCP или UDP. Правила балансировки нагрузки и правила NAT для входящего трафика поддерживают TCP и UDP, но не другие протоколы IP, включая ICMP.
 - Перенаправление исходящего потока от внутренней виртуальной машины к внешнему интерфейсу внутреннего экземпляра Load Balancer завершится сбоем.
 - Правило подсистемы балансировки нагрузки не может охватывать две виртуальные сети.  Внешние интерфейсы и их внутренние экземпляры должны быть расположены в одной виртуальной сети.  

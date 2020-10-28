@@ -1,14 +1,14 @@
 ---
 title: Краткое руководство. Создание назначения политики с помощью REST API
 description: В рамках этого краткого руководства с помощью REST API вы создадите назначение в службе "Политика Azure", позволяющее определить ресурсы, которые не соответствуют требованиям.
-ms.date: 08/10/2020
+ms.date: 10/14/2020
 ms.topic: quickstart
-ms.openlocfilehash: 04880ef013060bc5ff12618af6a9156295a26a88
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: ab05079c5bb319f0808a743a1d668649df51b1b3
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88137095"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92074011"
 ---
 # <a name="quickstart-create-a-policy-assignment-to-identify-non-compliant-resources-with-rest-api"></a>Краткое руководство. Создание назначения политики для идентификации ресурсов, не соответствующих требованиям, с помощью REST API
 
@@ -59,12 +59,12 @@ REST API используется для создания ресурсов Azure
   - Подписка: `/subscriptions/{subscriptionId}`
   - группу ресурсов `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}`;
   - Ресурс: `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/[{parentResourcePath}/]{resourceType}/{resourceName}`.
-- **Name** — фактическое имя назначения. В этом примере использовалось имя _audit-vm-manageddisks_.
+- **Name** — фактическое имя назначения. В этом примере использовалось имя _audit-vm-manageddisks_ .
 
 Тело запроса:
-- **DisplayName** — отображаемое имя назначения политики. В этом случае используется определение _аудита виртуальных машин без назначения управляемых дисков_.
+- **DisplayName** — отображаемое имя назначения политики. В этом случае используется определение _аудита виртуальных машин без назначения управляемых дисков_ .
 - **Description** — более подробное объяснение того, что делает политика или почему она относится к этой области.
-- **policyDefinitionId** — идентификатор определения политики, на основе которой вы создаете назначение. В нашем случае это идентификатор определения политики _аудита виртуальных машин, которые не используют управляемые диски_.
+- **policyDefinitionId** — идентификатор определения политики, на основе которой вы создаете назначение. В нашем случае это идентификатор определения политики _аудита виртуальных машин, которые не используют управляемые диски_ .
 
 ## <a name="identify-non-compliant-resources"></a>Выявление несоответствующих ресурсов
 

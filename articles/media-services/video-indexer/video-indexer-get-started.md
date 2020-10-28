@@ -8,14 +8,14 @@ manager: femila
 ms.service: media-services
 ms.subservice: video-indexer
 ms.topic: quickstart
-ms.date: 03/17/2020
+ms.date: 10/19/2020
 ms.author: juliako
-ms.openlocfilehash: f6c3953947e6f7e84f4cf9b565d2f66648b177f7
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 6b154db25f1f13b60e4110d1b1866308ee952487
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "85130761"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92219796"
 ---
 # <a name="quickstart-how-to-sign-up-and-upload-your-first-video"></a>Краткое руководство. Как зарегистрироваться и отправить видео
 
@@ -39,20 +39,24 @@ ms.locfileid: "85130761"
 ### <a name="upload-a-video"></a>Отправка видео
 
 1. Войдите на веб-сайт [Индексатора видео](https://www.videoindexer.ai/).
-2. Чтобы отправить видео, нажмите кнопку **Отправить** или щелкните ссылку.
+1. Чтобы отправить видео, нажмите кнопку **Отправить** или щелкните ссылку.
 
     > [!NOTE]
     > Имя видео должно содержать не более 80 символов.
 
-    ![Передать](./media/video-indexer-get-started/video-indexer-upload.png)
+    > [!div class="mx-imgBorder"]
+    > :::image type="content" source="./media/video-indexer-get-started/video-indexer-upload.png" alt-text="Передача":::
+1. После отправки видео Индексатор видео запускает индексирование и анализ видео. Будут отображаться сведения о ходе выполнения. 
 
-    После отправки видео Индексатор видео запускает индексирование и анализ видео.
+    > [!div class="mx-imgBorder"]
+    > :::image type="content" source="./media/video-indexer-get-started/progress.png" alt-text="Передача":::
+1. Когда Индексатор видео завершит анализ, вы получите сообщение электронной почты, содержащее ссылку на ваше видео и краткое описание того, что в нем обнаружено. Например: люди, произнесенные и записанные слова, темы и именованные сущности.
+1. Позднее вы сможете найти видео в списке библиотек и выполнять различные операции. Например: поиск, повторное индексирование, изменение.
 
-    ![Отправка](./media/video-indexer-get-started/video-indexer-uploaded.png) 
-
-    Когда Индексатор видео завершит анализ, вы получите уведомление, содержащее ссылку на ваше видео и краткое описание того, что в нем обнаружено. Например, люди, разделы, распознавание текста.
-
-## <a name="see-also"></a>См. также раздел
+    > [!div class="mx-imgBorder"]
+    > :::image type="content" source="./media/video-indexer-get-started/uploaded.png" alt-text="Передача":::
+ 
+## <a name="see-also"></a>См. также статью
 
 Дополнительные сведения см. в разделе [Upload and index videos](upload-index-videos.md) (Отправка и индексирование видео).
 
@@ -60,7 +64,7 @@ ms.locfileid: "85130761"
 
 [Начало использования API](video-indexer-use-apis.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Подробные сведения можно получить на нашем [вводном практическом занятии](https://github.com/Azure-Samples/media-services-video-indexer/blob/master/IntroToVideoIndexer.md). 
 

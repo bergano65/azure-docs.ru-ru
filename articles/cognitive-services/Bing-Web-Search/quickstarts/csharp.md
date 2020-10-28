@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-web-search
 ms.topic: quickstart
-ms.date: 05/22/2020
+ms.date: 10/19/2020
 ms.author: aahi
 ms.custom: seodec2018, devx-track-csharp
-ms.openlocfilehash: 2760e6a46801871a25ecbe23a2400211ae312650
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: f87cf1ed9194ff74f85dcd11ed398824750ef696
+ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88921704"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92217292"
 ---
 # <a name="quickstart-search-the-web-using-the-bing-web-search-rest-api-and-c"></a>Краткое руководство. Поиск в Интернете с помощью REST API Bing для поиска в Интернете и C#
 
@@ -29,14 +29,14 @@ ms.locfileid: "88921704"
 Для работы с этим кратким руководством вам потребуется следующее:
 
 * Windows: [Visual Studio 2017 или более поздней версии](https://www.visualstudio.com/downloads/)
-* Linux или MacOS: [Mono](https://www.mono-project.com/).  
-* ключ подписки;
+* Linux или MacOS: [Visual Studio Code](https://code.visualstudio.com/) и [.NET Core](https://dotnet.microsoft.com/download).
+* [Бесплатная подписка Azure.](https://azure.microsoft.com/free/dotnet)
 
 [!INCLUDE [bing-web-search-quickstart-signup](../../../../includes/bing-web-search-quickstart-signup.md)]
 
 ## <a name="create-a-project-and-declare-dependencies"></a>Создание проекта и объявление зависимостей
 
-Создайте проект в Visual Studio или Mono. Используйте следующий код, чтобы импортировать необходимые пространства имен и типы:
+Создайте консольный проект в Visual Studio или Visual Studio Code. Используйте следующий код, чтобы импортировать необходимые пространства имен и типы:
 
 ```csharp
 using System;

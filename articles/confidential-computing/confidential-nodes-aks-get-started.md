@@ -6,12 +6,12 @@ ms.service: container-service
 ms.topic: quickstart
 ms.date: 9/22/2020
 ms.author: amgowda
-ms.openlocfilehash: c8c64dadebb092d7f376fd2b6590b26f4dde0ee0
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 9343d3fa82302711311d8db3672713fa80fab1f7
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "90998550"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92122188"
 ---
 # <a name="quickstart-deploy-an-azure-kubernetes-service-aks-cluster-with-confidential-computing-nodes-using-azure-cli-preview"></a>Краткое руководство. Развертывание кластера Службы Azure Kubernetes (AKS) с узлами конфиденциальных вычислений с помощью Azure CLI (предварительная версия)
 
@@ -75,7 +75,7 @@ az provider register --namespace Microsoft.ContainerService
 
 Если у вас уже есть кластер AKS, который соответствует указанным выше требованиям, [перейдите к разделу для существующего кластера](#existing-cluster), чтобы добавить новый пул с узлами конфиденциальных вычислений.
 
-Сначала создайте группу ресурсов для кластера, выполнив команду az group create. В следующем примере создается группа ресурсов *myResourceGroup* в регионе *westus2*:
+Сначала создайте группу ресурсов для кластера, выполнив команду az group create. В следующем примере создается группа ресурсов *myResourceGroup* в регионе *westus2* :
 
 ```azurecli-interactive
 az group create --name myResourceGroup --location westus2
@@ -118,6 +118,8 @@ kube-system     sgx-device-plugin-xxxx     1/1     Running
 ```azurecli-interactive
 az aks update --enable-addons confcom --resource-group myResourceGroup --name myAKSCluster
 ```
+
+![Создание кластера DCSv2 AKS](./media/confidential-nodes-aks-overview/CLIAKSProvisioning.gif)
 
 ## <a name="adding-confidential-computing-node-to-existing-aks-cluster"></a>Добавление узла конфиденциальных вычислений в существующий кластер AKS<a id="existing-cluster"></a>
 

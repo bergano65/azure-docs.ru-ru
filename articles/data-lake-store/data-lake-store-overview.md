@@ -7,12 +7,12 @@ ms.service: data-lake-store
 ms.topic: overview
 ms.date: 04/17/2019
 ms.author: twooley
-ms.openlocfilehash: 2ca6ceb326a1fd6f7aaf5a9871d043377e60de83
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 52c00359fb4e759d9517dee958e31c00feb2b33e
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "85508560"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92149247"
 ---
 # <a name="what-is-azure-data-lake-storage-gen1"></a>Что представляет собой Azure Data Lake Storage 1-го поколения?
 
@@ -60,7 +60,7 @@ Data Lake Storage 1-го поколения также обеспечивает 
 
 | Компонент | Описание |
 | --- | --- |
-| Аутентификация |Data Lake Storage 1-го поколения интегрируется с Azure AD для управления удостоверениями и доступом для всех данных, хранящихся в Data Lake Storage 1-го поколения. Благодаря такой интеграции Data Lake Storage 1-го поколения получает доступ ко всем функциям Azure AD, в числе которых многофакторная проверка подлинности, условный доступ, управление доступом на основе ролей, отслеживание использования приложений, мониторинг безопасности и предупреждения и т. д. Data Lake Storage 1-го поколения поддерживает протокол OAuth 2.0 для аутентификации в интерфейсе REST. См. статью [Проверка подлинности в Data Lake Storage 1-го поколения](data-lakes-store-authentication-using-azure-active-directory.md).|
+| Аутентификация |Data Lake Storage 1-го поколения интегрируется с Azure AD для управления удостоверениями и доступом для всех данных, хранящихся в Data Lake Storage 1-го поколения. Благодаря такой интеграции Data Lake Storage 1-го поколения получает доступ ко всем функциям Azure AD, в числе которых многофакторная проверка подлинности, условный доступ, управление доступом на основе ролей Azure, отслеживание использования приложений, мониторинг безопасности и предупреждения и т. д. Data Lake Storage 1-го поколения поддерживает протокол OAuth 2.0 для аутентификации в интерфейсе REST. См. статью [Проверка подлинности в Data Lake Storage 1-го поколения](data-lakes-store-authentication-using-azure-active-directory.md).|
 | Управление доступом |Data Lake Storage 1-го поколения обеспечивает контроль доступа за счет поддержки разрешений POSIX, предоставляемых протоколом WebHDFS. Списки управления доступом можно включить для корневой папки, вложенных папок, а также отдельных файлов. Дополнительные сведения о принципе работы списков управления доступом в контексте Data Lake Storage 1-го поколения см. в статье [Контроль доступа в Azure Data Lake Storage 1-го поколения](data-lake-store-access-control.md). |
 | Шифрование |В Data Lake Storage 1-го поколения можно также включить шифрование данных, хранящихся в учетной записи. Параметры шифрования можно задать во время создания учетной записи Data Lake Storage 1-го поколения. Шифрование данных можно как включить, так и отключить. Дополнительные сведения см. в статье [Шифрование данных в Data Lake Storage 1-го поколения](data-lake-store-encryption.md). Инструкции по настройке шифрования см. в статье [Начало работы с Data Lake Storage Gen1 с помощью портала Azure](data-lake-store-get-started-portal.md). |
 

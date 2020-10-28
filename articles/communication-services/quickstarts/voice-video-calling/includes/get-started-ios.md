@@ -6,12 +6,12 @@ ms.author: marobert
 ms.date: 07/24/2020
 ms.topic: quickstart
 ms.service: azure-communication-services
-ms.openlocfilehash: bb0af58c9abc4fad701b1d0927f4c13e1fdcca49
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 48a3972d7b7db3f0c68866f23d6deca0bbce2e35
+ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91376755"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92157950"
 ---
 Из этого краткого руководства вы узнаете, как начать вызов с помощью клиентской библиотеки Служб коммуникации Azure для реализации вызовов для iOS.
 
@@ -28,7 +28,7 @@ ms.locfileid: "91376755"
 
 ### <a name="creating-the-xcode-project"></a>Создание проекта Xcode
 
-В Xcode создайте новый проект iOS и выберите шаблон **Single View App** (Приложение с одним представлением). В этом руководстве используется [платформа SwiftUI](https://developer.apple.com/xcode/swiftui/), поэтому для параметра **Language** (Язык) нужно задать значение **Swift**, а для параметра **User Interface** (Пользовательский интерфейс) — значение **SwiftUI**. В рамках этого краткого руководства вы не будете создавать тесты. Вы можете снять флажок **Include Tests** (Включить тесты).
+В Xcode создайте новый проект iOS и выберите шаблон **Single View App** (Приложение с одним представлением). В этом руководстве используется [платформа SwiftUI](https://developer.apple.com/xcode/swiftui/), поэтому для параметра **Language** (Язык) нужно задать значение **Swift** , а для параметра **User Interface** (Пользовательский интерфейс) — значение **SwiftUI** . В рамках этого краткого руководства вы не будете создавать тесты. Вы можете снять флажок **Include Tests** (Включить тесты).
 
 :::image type="content" source="../media/ios/xcode-new-ios-project.png" alt-text="Снимок экрана с окном New Project (Новый проект) в Xcode.":::
 
@@ -43,8 +43,8 @@ ms.locfileid: "91376755"
 2. В Xcode щелкните файл проекта и выберите целевой объект сборки, чтобы открыть редактор параметров проекта.
 3. На вкладке **General** (Общие) прокрутите к разделу **Frameworks, Libraries, and Embedded Content** (Платформы, библиотеки и встроенное содержимое) и щелкните значок **+** .
 4. В левом нижнем углу диалогового окна выберите в раскрывающемся списке элемент **Add Files** (Добавить файлы) и перейдите к каталогу **AzureCommunicationCalling.framework** разархивированного пакета клиентской библиотеки.
-    1. Повторите последний шаг, чтобы добавить **AzureCore.framework** и **AzureCommunication.framework**.
-5. Откройте вкладку **Build Settings** (Параметры сборки) в редакторе параметров проекта и прокрутите к разделу **Search Paths** (Пути поиска). Добавьте новую запись **Framework Search Paths** (Пути поиска платформы) для каталога, содержащего **AzureCommunicationCalling.framework**.
+    1. Повторите последний шаг, чтобы добавить **AzureCore.framework** и **AzureCommunication.framework** .
+5. Откройте вкладку **Build Settings** (Параметры сборки) в редакторе параметров проекта и прокрутите к разделу **Search Paths** (Пути поиска). Добавьте новую запись **Framework Search Paths** (Пути поиска платформы) для каталога, содержащего **AzureCommunicationCalling.framework** .
     1. Добавьте еще одну запись путей поиска платформы, указывающую на папку с зависимостями.
 
 :::image type="content" source="../media/ios/xcode-framework-search-paths.png" alt-text="Снимок экрана с окном New Project (Новый проект) в Xcode.":::
@@ -125,7 +125,7 @@ struct ContentView: View {
 
 ## <a name="authenticate-the-client"></a>Аутентификация клиента
 
-Инициализируйте экземпляр `CallAgent` с помощью маркера доступа пользователя, что позволит нам выполнять и принимать вызовы. Добавьте следующий код в обратный вызов `onAppear` в **ContentView.swift**:
+Инициализируйте экземпляр `CallAgent` с помощью маркера доступа пользователя, что позволит нам выполнять и принимать вызовы. Добавьте следующий код в обратный вызов `onAppear` в **ContentView.swift** :
 
 ```swift
 var userCredential: CommunicationUserCredential?
@@ -155,7 +155,7 @@ self.callClient?.createCallAgent(userCredential) { (agent, error) in
 
 ## <a name="start-a-call"></a>Инициирование вызова
 
-Метод `startCall` задан в качестве действия, которое будет выполняться при нажатии кнопки *Начать вызов*. Измените реализацию, чтобы вызов начинался с помощью `ASACallAgent`:
+Метод `startCall` задан в качестве действия, которое будет выполняться при нажатии кнопки *Начать вызов* . Измените реализацию, чтобы вызов начинался с помощью `ASACallAgent`:
 
 ```swift
 func startCall()
@@ -175,7 +175,7 @@ func startCall()
 
 ## <a name="end-a-call"></a>Завершение вызова
 
-Реализуйте метод `endCall`, чтобы завершать текущий вызов при нажатии кнопки *Завершить вызов*.
+Реализуйте метод `endCall`, чтобы завершать текущий вызов при нажатии кнопки *Завершить вызов* .
 
 ```swift
 func endCall()
@@ -194,10 +194,10 @@ func endCall()
 
 :::image type="content" source="../media/ios/quick-start-make-call.png" alt-text="Снимок экрана с окном New Project (Новый проект) в Xcode.":::
 
-Вы можете выполнить исходящий VOIP-вызов, указав идентификатор пользователя в текстовом поле и нажав кнопку **Начать вызов**. При вызове `8:echo123` вы будете подключены к эхо-боту, что позволит начать работу и проверить работоспособность ваших аудиоустройств. 
+Вы можете выполнить исходящий VOIP-вызов, указав идентификатор пользователя в текстовом поле и нажав кнопку **Начать вызов** . При вызове `8:echo123` вы будете подключены к эхо-боту, что позволит начать работу и проверить работоспособность ваших аудиоустройств. 
 
 > [!NOTE]
-> При первом вызове в системе отобразится запрос на получение доступа к микрофону. В приложении в рабочей среде используйте [проверку состояния разрешения](https://developer.apple.com/documentation/uikit/protecting_the_user_s_privacy/requesting_access_to_protected_resources) API `AVAudioSession` и корректно обновите поведение приложения, если разрешение не предоставлено.
+> При первом вызове в системе отобразится запрос на получение доступа к микрофону. В приложении в рабочей среде используйте API `AVAudioSession` для [проверки состояния разрешения](https://developer.apple.com/documentation/uikit/protecting_the_user_s_privacy/requesting_access_to_protected_resources) и корректно обновите поведение приложения, если разрешение не предоставлено.
 
 ## <a name="sample-code"></a>Пример кода
 

@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 02/07/2019
 ms.author: robb
 ms.custom: include file
-ms.openlocfilehash: e6b64b5a1a60ba3bbf93e607536eeb0379669c73
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e206c12a85cfbaed3297f2a44bf0a5d694c2d170
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91642517"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92322631"
 ---
 **Объем собираемых данных и срок их хранения** 
 
@@ -70,31 +70,7 @@ Azure Monitor — это высокомасштабируемая служба,
 
 Если в одну рабочую область вы отправляете данные, объем которых превышает 80 % от настроенного порога, каждые 6 часов, в течение которых пороговое значение превышено, в таблицу *Операция* в рабочей области будет отправляться событие. Если объем принимаемых данных превышает пороговое значение, часть данных будет удалена, а событие будет отправляться в таблицу *Операция* в рабочей области каждые 6 часов, пока пороговое значение будет превышено. Если ограничение на объем принимаемых за день данных продолжает превышаться или будет превышено в ближайшее время, вы можете запросить увеличение порога, отправив запрос на поддержку. 
 
-Чтобы получать уведомления о достижении ограничения на объем принимаемых за день данных в рабочей области или о том, что такое ограничение скоро будет достигнуто, создайте [правило генерации оповещений журнала](../articles/azure-monitor/platform/alerts-log.md). Для этого используйте приведенный ниже запрос, в котором применяется логика оповещений на основе количества результатов больше нуля, периода оценки в пять минут и частоты в пять минут.
-
-Превышено ограничение на объем принимаемых данных
-```Kusto
-Operation
-| where OperationCategory == "Ingestion"
-| where OperationKey == "Ingestion rate limit"
-| where OperationStatus == "Error"
-```
-
-Объем принимаемых данных превысил 80 % порогового объема
-```Kusto
-Operation
-| where OperationCategory == "Ingestion"
-| where OperationKey == "Ingestion rate limit"
-| where OperationStatus == "Warning"
-```
-
-Объем принимаемых данных превысил 70 % порогового объема
-```Kusto
-Operation
-| where OperationCategory == "Ingestion"
-| where OperationKey == "Ingestion rate limit"
-| where OperationStatus == "Info"
-```
+Сведения о том, как создать правило генерации оповещений, чтобы автоматически получать уведомления при достижении ограничений на прием данных, см. в статье [Мониторинг работоспособности рабочей области Log Analytics в Azure Monitor](../articles/azure-monitor/platform/monitor-workspace.md).
 
 >[!NOTE]
 >В зависимости от того, как давно вы используете Log Analytics, у вас может быть доступ к устаревшим ценовым категориям. Дополнительные сведения о таких ценовых категориях Log Analytics см. разделе [Устаревшие ценовые категории](https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#legacy-pricing-tiers). 

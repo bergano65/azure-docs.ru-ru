@@ -6,5 +6,5 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 10/09/2020
 ms.locfileid: "90533330"
 ---
-<Token>**ОБЛАСТЬ ПРИМЕНЕНИЯ:** :::image type="icon" source="../media/applies-to/yes.png" border="false":::База данных SQL Azure :::image type="icon" source="../media/applies-to/yes.png" border="false":::Управляемый экземпляр SQL Azure :::image type="icon" source="../media/applies-to/yes.png" border="false"::: Azure Synapse Analytics (хранилище данных SQL) </Token> 
+<Token>**ОБЛАСТЬ ПРИМЕНЕНИЯ:** :::image type="icon" source="../media/applies-to/yes.png" border="false":::База данных SQL Azure :::image type="icon" source="../media/applies-to/yes.png" border="false":::Управляемый экземпляр SQL Azure :::image type="icon" source="../media/applies-to/yes.png" border="false"::: Azure Synapse Analytics (хранилище данных SQL)</Token> 
 

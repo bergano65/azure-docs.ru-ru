@@ -9,12 +9,12 @@ ms.subservice: ''
 ms.date: 04/15/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick
-ms.openlocfilehash: 78807db19b413bb642e8dcf61e480d6d954b6178
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: c3c1b61cb4f799b79ca00fc92ffadc2374a61c03
+ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87059562"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92132471"
 ---
 # <a name="connect-to-synapse-sql-with-azure-data-studio-preview"></a>Подключение к Synapse SQL с помощью Azure Data Studio (предварительная версия)
 
@@ -30,11 +30,11 @@ ms.locfileid: "87059562"
 
 ## <a name="connect"></a>Подключение
 
-Чтобы подключиться к Synapse SQL, откройте Azure Data Studio и выберите **Новое подключение**.
+Чтобы подключиться к Synapse SQL, откройте Azure Data Studio и выберите **Новое подключение** .
 
 ![Откройте Azure Data Studio.](./media/get-started-azure-data-studio/1-start.png)
 
-Выберите **Microsoft SQL Server** в качестве **типа подключения**.
+Выберите **Microsoft SQL Server** в качестве **типа подключения** .
 
 Для подключения требуются следующие параметры.
 
@@ -46,26 +46,26 @@ ms.locfileid: "87059562"
 >
 > - `<Azure Synapse workspace name>`-ondemand.sql.azuresynapse.net.
 >
-> Если вы хотите использовать **пул SQL**, URL-адрес должен выглядеть следующим образом:
+> Если вы хотите использовать **пул SQL** , URL-адрес должен выглядеть следующим образом:
 >
 > - `<Azure Synapse workspace name>`.sql.azuresynapse.net
 
-Выберите в качестве **типа проверки подлинности** **Проверка подлинности Windows**, **Azure Active Directory** или **Имя входа SQL**.
+Выберите в качестве **типа проверки подлинности** **Проверка подлинности Windows** , **Azure Active Directory** или **Имя входа SQL** .
 
 Чтобы использовать **Имя входа SQL** в качестве типа проверки подлинности, добавьте параметры имени пользователя или пароля:
 
-* **Пользователь**: пользователь сервера в формате `<User>`
+* **Пользователь** : пользователь сервера в формате `<User>`
 * **Пароль:** пароль, связанный с пользователем
 
 Чтобы использовать Azure Active Directory, следует выбрать необходимый тип проверки подлинности.
 
 ![Проверка подлинности AAD](./media/get-started-azure-data-studio/3-aad-auth.png)
 
-На следующем снимке экрана показаны **сведения о подключении** для **проверки подлинности Windows**:
+На следующем снимке экрана показаны **сведения о подключении** для **проверки подлинности Windows** :
 
 ![Проверка подлинности Windows](./media/get-started-azure-data-studio/3-windows-auth.png)
 
-На следующем снимке экрана показаны **сведения о подключении** с использованием **имени для входа SQL**:
+На следующем снимке экрана показаны **сведения о подключении** с использованием **имени для входа SQL** :
 
 ![Имя входа SQL](./media/get-started-azure-data-studio/2-database-details.png)
 
@@ -73,7 +73,7 @@ ms.locfileid: "87059562"
 
 ## <a name="query"></a>Запрос
 
-После подключения Synapse SQL можно запросить с помощью поддерживаемых для экземпляра инструкций [Transact-SQL (T-SQL)](/sql/t-sql/language-reference?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest). Чтобы начать работу, выберите в представлении панели мониторинга **Новый запрос**.
+После подключения Synapse SQL можно запросить с помощью поддерживаемых для экземпляра инструкций [Transact-SQL (T-SQL)](/sql/t-sql/language-reference?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest). Чтобы начать работу, выберите в представлении панели мониторинга **Новый запрос** .
 
 ![Новый запрос](./media/get-started-azure-data-studio/5-new-query.png)
 
@@ -94,4 +94,5 @@ OPENROWSET(
 - [Power BI](get-started-power-bi-professional.md)
 - [Visual Studio](../sql-data-warehouse/sql-data-warehouse-query-visual-studio.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json)
 - [sqlcmd](get-started-connect-sqlcmd.md)
- 
+
+Дополнительные сведения см. в руководстве [Использование Azure Data Studio для подключения и запроса данных с помощью выделенного пула SQL в Azure Synapse Analytics](https://docs.microsoft.com/sql/azure-data-studio/quickstart-sql-dw). 

@@ -7,12 +7,12 @@ ms.service: attestation
 ms.topic: overview
 ms.date: 08/31/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 538aa29ab66fce48da944dbdf9ea79d5c8f7f330
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: d25cdce2670de64fecc8590a2f5f833c10d2df69
+ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89421294"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92316003"
 ---
 # <a name="quickstart-set-up-azure-attestation-with-azure-powershell"></a>Краткое руководство. Настройка службы "Аттестация Azure" с помощью Azure PowerShell
 
@@ -186,7 +186,7 @@ $teeType = "<tee Type>"
 Get-AzAttestationPolicy   -Name $attestationProvider -ResourceGroupName $attestationResourceGroup -Tee $teeType 
 ```
 
-Для TEE поддерживаются типы sgxenclave и vbsenclave.
+Для TEE поддерживаются типы SgxEnclave, OpenEnclave и VbsEnclave.
 
 Командлет Set-AttestationPolicy задает новую политику для указанного TEE. Этот командлет принимает политику в формате простого текста или маркера JWT, а его поведением управляет параметр PolicyFormat. По умолчанию PolicyFormat имеет значение Text. 
 
