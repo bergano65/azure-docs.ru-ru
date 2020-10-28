@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/12/2020
 ms.author: memildin
-ms.openlocfilehash: a311439e8efc5481fbfd7431c1514ba6be576e39
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 59a87e7c91266dd1ec2d7263df7149d07f6e7ce8
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91858019"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92342303"
 ---
 # <a name="feature-coverage-for-machines"></a>Поддерживаемые функции для виртуальных машин
 
@@ -28,7 +28,7 @@ ms.locfileid: "91858019"
 
 ### <a name="windows-machines"></a>[**Компьютеры Windows**](#tab/features-windows)
 
-|**Возможность**|**Виртуальные машины Azure**|**Масштабируемые наборы виртуальных машин Azure**|**Компьютеры, не связанные с Azure**|**Требуется ли Azure Defender**
+|**Возможность**|**Виртуальные машины Azure**|**Масштабируемые наборы виртуальных машин Azure**|**Компьютеры с поддержкой Azure Arc**|**Требуется ли Azure Defender**
 |----|:----:|:----:|:----:|:----:|
 |[Интеграция с ATP в Microsoft Defender](security-center-wdatp.md)|✔</br>(в поддерживаемых версиях)|✔</br>(в поддерживаемых версиях)|✔|Да|
 |[Аналитика поведения виртуальных машин (и оповещения системы безопасности)](alerts-reference.md)|✔|✔|✔|Да|
@@ -42,9 +42,9 @@ ms.locfileid: "91858019"
 |[Адаптивная защита сети](security-center-adaptive-network-hardening.md)|✔|-|-|Да|
 |[Соответствие нормативным требованиям: панель мониторинга и отчеты](security-center-compliance-dashboard.md)|✔|✔|✔|Да|
 |Рекомендации и защита от угроз для IaaS-контейнеров Docker|-|-|-|Да|
-|Оценка на предмет отсутствующих исправлений ОС|✔|✔|✔|Azure Нет<br><br>Не связанные с Azure: Да|
-|Оценка на предмет неправильных настроек системы безопасности|✔|✔|✔|Azure Нет<br><br>Не связанные с Azure: Да|
-|[Оценка защиты конечных точек](security-center-services.md#supported-endpoint-protection-solutions-)|✔|✔|✔|Azure Нет<br><br>Не связанные с Azure: Да|
+|Оценка на предмет отсутствующих исправлений ОС|✔|✔|✔|Azure Нет<br><br>Поддержка Arc: Да|
+|Оценка на предмет неправильных настроек системы безопасности|✔|✔|✔|Azure Нет<br><br>Поддержка Arc: Да|
+|[Оценка защиты конечных точек](security-center-services.md#supported-endpoint-protection-solutions-)|✔|✔|✔|Azure Нет<br><br>Поддержка Arc: Да|
 |Оценка шифрования дисков|✔</br>(в [поддерживаемых сценариях](../virtual-machines/windows/disk-encryption-windows.md#unsupported-scenarios))|✔|-|Нет|
 |Оценка уязвимостей сторонних решений|✔|-|-|Нет|
 |[Оценка безопасности сети](security-center-network-recommendations.md)|✔|✔|-|Нет|
@@ -52,10 +52,10 @@ ms.locfileid: "91858019"
 
 ### <a name="linux-machines"></a>[**Компьютеры Linux**](#tab/features-linux)
 
-|**Возможность**|**Виртуальные машины Azure**|**Масштабируемые наборы виртуальных машин Azure**|**Компьютеры, не связанные с Azure**|**Требуется ли Azure Defender**
+|**Возможность**|**Виртуальные машины Azure**|**Масштабируемые наборы виртуальных машин Azure**|**Компьютеры с поддержкой Azure Arc**|**Требуется ли Azure Defender**
 |----|:----:|:----:|:----:|:----:|
 |[Интеграция с ATP в Microsoft Defender](security-center-wdatp.md)|-|-|-|Да|
-|[Аналитика поведения виртуальных машин (и оповещения системы безопасности)](security-center-alerts-iaas.md)|✔</br>(в поддерживаемых версиях)|✔</br>(в поддерживаемых версиях)|✔|Да|
+|[Аналитика поведения виртуальных машин (и оповещения системы безопасности)](./azure-defender.md)|✔</br>(в поддерживаемых версиях)|✔</br>(в поддерживаемых версиях)|✔|Да|
 |[Оповещения системы безопасности о бесфайловых угрозах](alerts-reference.md#alerts-windows)|-|-|-|Да|
 |[Оповещения системы безопасности об угрозах на уровне сети](other-threat-protections.md#network-layer)|✔|✔|-|Да|
 |[JIT-доступ к виртуальной машине](security-center-just-in-time.md)|✔|-|-|Да|
@@ -66,8 +66,8 @@ ms.locfileid: "91858019"
 |[Адаптивная защита сети](security-center-adaptive-network-hardening.md)|✔|-|-|Да|
 |[Соответствие нормативным требованиям: панель мониторинга и отчеты](security-center-compliance-dashboard.md)|✔|✔|✔|Да|
 |Рекомендации и защита от угроз для IaaS-контейнеров Docker|✔|✔|✔|Да|
-|Оценка на предмет отсутствующих исправлений ОС|✔|✔|✔|Azure Нет<br><br>Не связанные с Azure: Да|
-|Оценка на предмет неправильных настроек системы безопасности|✔|✔|✔|Azure Нет<br><br>Не связанные с Azure: Да|
+|Оценка на предмет отсутствующих исправлений ОС|✔|✔|✔|Azure Нет<br><br>Поддержка Arc: Да|
+|Оценка на предмет неправильных настроек системы безопасности|✔|✔|✔|Azure Нет<br><br>Поддержка Arc: Да|
 |[Оценка защиты конечных точек](security-center-services.md#supported-endpoint-protection-solutions-)|-|-|-|Нет|
 |Оценка шифрования дисков|✔</br>(в [поддерживаемых сценариях](../virtual-machines/windows/disk-encryption-windows.md#unsupported-scenarios))|✔|-|Нет|
 |Оценка уязвимостей сторонних решений|✔|-|-|Нет|
@@ -96,10 +96,10 @@ ms.locfileid: "91858019"
 | Trend Micro — агент Deep Security | Семейство Windows Server  | Нет | Да |
 | Symantec v12.1.1100+| Семейство Windows Server  | Нет | Да |
 | McAfee v10+ | Семейство Windows Server  | Нет | Да |
-| McAfee v10+ | Семейство Linux Server  | Нет | Да **\*** |
-| Sophos, начиная с версии 9| Семейство Linux Server  | Нет | Да **\***  |
+| McAfee v10+ | Семейство Linux Server  | Нет | Да * *\** _ |
+| Sophos, начиная с версии 9| Семейство Linux Server  | Нет | Да _*\**_  |
 
- **\*** Сведения о поддержке и вспомогательные данные сейчас доступны только в рабочей области Log Analytics, связанной с защищенными подписками. Они не отображаются на портале Центра безопасности Azure.
+ _ *\** *Сведения о поддержке и вспомогательные данные сейчас доступны только в рабочей области Log Analytics, связанной с защищенными подписками. Они не отображаются на портале Центра безопасности Azure.
 
 > [!NOTE]
 > Чтобы служба System Center Endpoint Protection (SCEP) была доступна для обнаружения на виртуальной машине Windows Server 2008 R2, службу нужно установить после установки PowerShell 3.0 или более поздней версии.

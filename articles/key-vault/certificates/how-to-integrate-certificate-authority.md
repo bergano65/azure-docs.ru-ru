@@ -10,12 +10,12 @@ ms.subservice: certificates
 ms.topic: how-to
 ms.date: 06/02/2020
 ms.author: sebansal
-ms.openlocfilehash: 01383acad9f221e376f814ecf99794eb0431d0cd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d5370343ac83d75df94e7291d26c87ce0c419d0e
+ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88588931"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92327422"
 ---
 # <a name="integrating-key-vault-with-digicert-certificate-authority"></a>Интеграция Key Vault с центром сертификации DigiCert
 
@@ -51,17 +51,17 @@ Azure Key Vault позволяет легко подготавливать, а�
 ### <a name="azure-portal"></a>Портал Azure
 
 1.  Чтобы добавить центр сертификации DigiCert, перейдите к хранилищу ключей, в которое нужно добавить DigiCert. 
-2.  На странице свойств Key Vault выберите **Сертификаты**.
-3.  Выберите вкладку **Центры сертификации**. ![Свойства сертификатов](../media/certificates/how-to-integrate-certificate-authority/select-certificate-authorities.png)
-4.  Выберите действие **Добавить**.
- ![Свойства сертификатов](../media/certificates/how-to-integrate-certificate-authority/add-certificate-authority.png)
+2.  На странице свойств Key Vault выберите **Сертификаты** .
+3.  Выберите вкладку **Центры сертификации** . ![Выбор центров сертификации](../media/certificates/how-to-integrate-certificate-authority/select-certificate-authorities.png)
+4.  Выберите действие **Добавить** .
+ ![Добавление центров сертификации](../media/certificates/how-to-integrate-certificate-authority/add-certificate-authority.png)
 5.  На экране **Создание ЦС** выберите следующие значения:
     -   **Name** (Имя). Добавьте понятное имя издателя. Например, DigicertCA.
     -   **Поставщик.** В раскрывающемся меню выберите DigiCert.
     -   **Идентификатор учетной записи.** Введите идентификатор учетной записи DigiCert CertCentral.
     -   **Пароль учетной записи.** Введите ключ API, созданный для учетной записи DigiCert CertCentral.
     -   **Идентификатор организации.** Введите значение OrgID, полученное из учетной записи DigiCert CertCentral. 
-    -   Нажмите кнопку **Создать**.
+    -   Нажмите кнопку **Создать** .
    
 6.  Вы увидите, что DigicertCA появился в списке центров сертификации.
 
@@ -76,7 +76,7 @@ Azure PowerShell используется для создания ресурсо
 Login-AzAccount
 ```
 
-1.  Создайте **группу ресурсов**.
+1.  Создайте **группу ресурсов** .
 
 Создайте группу ресурсов Azure с помощью командлета [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup). Группа ресурсов — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими. 
 
@@ -84,13 +84,13 @@ Login-AzAccount
 New-AzResourceGroup -Name ContosoResourceGroup -Location EastUS
 ```
 
-2. Создайте **хранилище ключей**.
+2. Создайте **хранилище ключей** .
 
 Для хранилища ключей необходимо указать уникальное имя. В этом руководстве для хранилища ключей используется имя Contoso-Vaultname.
 
-- **Имя хранилища**: Contoso-Vaultname.
-- **Имя группы ресурсов**: ContosoResourceGroup.
-- **Расположение**: EastUS.
+- **Имя хранилища** : Contoso-Vaultname.
+- **Имя группы ресурсов** : ContosoResourceGroup.
+- **Расположение** : EastUS.
 
 ```azurepowershell-interactive
 New-AzKeyVault -Name 'Contoso-Vaultname' -ResourceGroupName 'ContosoResourceGroup' -Location 'EastUS'
@@ -98,27 +98,25 @@ New-AzKeyVault -Name 'Contoso-Vaultname' -ResourceGroupName 'ContosoResourceGrou
 
 3. Определите переменные для сведений, полученных из учетной записи DigiCert CertCentral.
 
-- Определите переменную **Account ID**.
-- Определите переменную **Org ID**.
-- Определите переменную **API Key**.
-- Определите переменную **Issuer Name**.
+- Определите переменную **Account ID** .
+- Определите переменную **Org ID** .
+- Определите переменную **API Key** .
 
 ```azurepowershell-interactive
 $accountId = "myDigiCertCertCentralAccountID"
-$org = New-AzKeyVaultCertificateOrganizationDetails -Id OrganizationIDfromDigiCertAccount
+$org = New-AzKeyVaultCertificateOrganizationDetail -Id OrganizationIDfromDigiCertAccount
 $secureApiKey = ConvertTo-SecureString DigiCertCertCentralAPIKey -AsPlainText –Force
-$issuerName = "DigiCertCA"
 ```
 
-4. Укажите значение **Issuer**. Это действие добавляет Digicert в качестве центра сертификации в хранилище ключей.
+4. Укажите значение **Issuer** . Это действие добавляет Digicert в качестве центра сертификации в хранилище ключей. Дополнительные сведения о параметрах см. [здесь](https://docs.microsoft.com/powershell/module/az.keyvault/Set-AzKeyVaultCertificateIssuer).
 ```azurepowershell-interactive
-Set-AzureKeyVaultCertificateIssuer -VaultName $vaultName -IssuerName $issuerName -IssuerProvider DigiCert -AccountId $accountId -ApiKey $secureApiKey -OrganizationDetails $org
+Set-AzKeyVaultCertificateIssuer -VaultName "Contoso-Vaultname" -Name "TestIssuer01" -IssuerProvider DigiCert -AccountId $accountId -ApiKey $secureApiKey -OrganizationDetails $org -PassThru
 ```
 
 5. **Настройте политику для сертификата и реализуйте выдачу сертификата** DigiCert непосредственно из Key Vault.
 
 ```azurepowershell-interactive
-$Policy = New-AzKeyVaultCertificatePolicy -SecretContentType "application/x-pkcs12" -SubjectName "CN=contoso.com" -IssuerName DigiCertCA -ValidityInMonths 12 -RenewAtNumberOfDaysBeforeExpiry 60
+$Policy = New-AzKeyVaultCertificatePolicy -SecretContentType "application/x-pkcs12" -SubjectName "CN=contoso.com" -IssuerName "TestIssuer01" -ValidityInMonths 12 -RenewAtNumberOfDaysBeforeExpiry 60
 Add-AzKeyVaultCertificate -VaultName "Contoso-Vaultname" -Name "ExampleCertificate" -CertificatePolicy $Policy
 ```
 
@@ -126,9 +124,9 @@ Add-AzKeyVaultCertificate -VaultName "Contoso-Vaultname" -Name "ExampleCertifica
 
 ## <a name="troubleshoot"></a>Диагностика
 
-Если выданный сертификат имеет состояние disabled (отключено) на портале Azure, изучите инструкции **по работе с сертификатами**, чтобы просмотреть сообщение DigiCert об ошибке, связанной с этим сертификатом.
+Если выданный сертификат имеет состояние disabled (отключено) на портале Azure, изучите инструкции **по работе с сертификатами** , чтобы просмотреть сообщение DigiCert об ошибке, связанной с этим сертификатом.
 
- ![Свойства сертификатов](../media/certificates/how-to-integrate-certificate-authority/certificate-operation-select.png)
+ ![Операция с сертификатом](../media/certificates/how-to-integrate-certificate-authority/certificate-operation-select.png)
 
 Дополнительные сведения о работе с сертификатами см. в [справочнике по работе с Azure Key Vault с помощью REST API](/rest/api/keyvault). Сведения об установке разрешений см. в статьях [Vaults — Create Or Update](/rest/api/keyvault/vaults/createorupdate) (Хранилища. Создание или обновление) и [Vaults — Update Access Policy](/rest/api/keyvault/vaults/updateaccesspolicy) (Хранилища. Обновление политики доступа).
 
@@ -136,8 +134,15 @@ Add-AzKeyVaultCertificate -VaultName "Contoso-Vaultname" -Name "ExampleCertifica
 
 - Можно ли создать групповой сертификат DigiCert посредством KeyVault? 
    Да. Это зависит от того, как настроена учетная запись DigiCert.
-- Если мы хотим создать сертификат EV, что нужно указать? 
-   При создании сертификата выберите "Расширенная конфигурация политики", а затем укажите тип сертификата. Поддерживаемые значения: OV-SSL, EV-SSL.
+- Как создать сертификат **OV-SSL или EV-SSL** с использованием DigiCert? 
+   Хранилище ключей поддерживает создание SSL-сертификатов OV и EV. При создании сертификата выберите "Расширенная конфигурация политики", а затем укажите тип сертификата. Поддерживаемые значения: OV-SSL, EV-SSL.
+   
+   Вы сможете создать сертификат такого типа в хранилище ключей, если это разрешено учетной записью DigiCert. Для этого типа сертификатов проверка выполняется с помощью DigiCert, а группа поддержки поможет вам принять решение, если проверка завершится неудачно. Вы можете добавить дополнительные сведения при создании сертификата, определив их в subjectName.
+
+Пример
+    ```SubjectName="CN = docs.microsoft.com, OU = Microsoft Corporation, O = Microsoft Corporation, L = Redmond, S = WA, C = US"
+    ```
+   
 - Существует ли задержка при создании сертификата DigiCert посредством интеграции по сравнению с получением сертификата напрямую через DigiCert?
    Нет. При создании сертификата задержка может возникнуть в процессе проверки, так как она зависит от процесса DigiCert.
 

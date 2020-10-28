@@ -137,7 +137,7 @@
                 - name: Установка пользовательских приложений
                   href: hdinsight-apps-install-custom-applications.md
                 - name: Установка приложений с помощью REST
-                  href: 'https://msdn.microsoft.com/library/mt706515.aspx'
+                  href: /rest/api/hdinsight/hdinsight-application
                 - name: Публикация приложений HDInsight в Azure Marketplace
                   href: hdinsight-apps-publish-applications.md
         - name: Безопасность
@@ -301,7 +301,7 @@
         - name: Включение дампов кучи для служб Apache Hadoop
           href: ./hdinsight-hadoop-collect-debug-heap-dump-linux.md
         - name: Получение справки на странице вопросов (раздел вопросов и ответов на сайте Майкрософт)
-          href: 'https://docs.microsoft.com/answers/topics/azure-hdinsight.html'
+          href: /answers/topics/azure-hdinsight.html
         - name: Калькулятор цен
           href: 'https://azure.microsoft.com/pricing/calculator/'
         - name: Средства Windows для HDInsight
@@ -433,8 +433,6 @@
                   href: ./spark/apache-spark-use-with-data-lake-store.md
                 - name: Подключение к Базе данных SQL Azure
                   href: ./spark/apache-spark-connect-to-sql-database.md
-                - name: Реализация лямбда-архитектуры с использованием Apache Spark и Cosmos DB
-                  href: ../cosmos-db/lambda-architecture.md
                 - name: Выполнение рабочих нагрузок Машинного обучения Azure с помощью AutoML
                   href: ./spark/apache-spark-run-machine-learning-automl.md
         - name: Диагностика

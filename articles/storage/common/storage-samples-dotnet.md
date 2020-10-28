@@ -3,16 +3,16 @@ title: Примеры для службы хранилища Azure с испол
 description: Просмотрите, загрузите и запустите образцы кода и приложений для хранилища Azure. Воспользуйтесь примерами для начала работы с большими двоичными объектами, очередями, таблицами и файлами с помощью клиентских библиотек хранилища .NET.
 author: mhopkins-msft
 ms.author: mhopkins
-ms.date: 02/13/2020
+ms.date: 10/01/2020
 ms.service: storage
 ms.subservice: common
 ms.topic: sample
-ms.openlocfilehash: f02c08e752575dd1f57ce91dfc3145b69e3a2fd2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 760fedd94ef682b183eede1215186de973e9a216
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81010500"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92359787"
 ---
 # <a name="azure-storage-samples-using-v12-net-client-libraries"></a>Примеры использования службы хранилища Azure с помощью клиентских библиотек для .NET версии 12
 
@@ -336,4 +336,5 @@ ms.locfileid: "81010500"
 * Java: [Примеры для службы хранилища Azure с использованием Java](storage-samples-java.md)
 * Python: [Примеры для работы со службой хранилища Azure с помощью Python](storage-samples-python.md)
 * JavaScript/Node.js: [Примеры для службы хранилища Azure с использованием JavaScript](storage-samples-javascript.md)
+* C++: [Примеры для службы хранилища Azure с использованием C++](storage-samples-c-plus-plus.md)
 * Остальные языки: [Примеры для службы хранилища Azure](storage-samples.md)

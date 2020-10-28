@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: tutorial
 ms.date: 01/08/2020
-ms.openlocfilehash: b7e9491f3ddc49d49cf5301bba9d4f51fc9dd008
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 51df2d836d3b3c42b0f2a378ec258dd184c68d5e
+ms.sourcegitcommit: d6a739ff99b2ba9f7705993cf23d4c668235719f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91282346"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92495596"
 ---
 # <a name="tutorial-migrate-mysql-to-azure-database-for-mysql-online-using-dms"></a>Руководство. Перенос MySQL в Базу данных Azure для MySQL по сети с помощью DMS
 
@@ -49,7 +49,7 @@ Azure Database Migration Service можно использовать для пе
 
 Для работы с этим руководством вам потребуется следующее:
 
-* Скачайте и установите [MySQL Community Edition](https://dev.mysql.com/downloads/mysql/) версии 5.6 или 5.7. Локальная версия MySQL должна соответствовать версии Базы данных Azure для MySQL. Например, MySQL версии 5.6 можно перенести только в Базу данных Azure для MySQL версии 5.6, но не версии 5.7.
+* Скачайте и установите [MySQL Community Edition](https://dev.mysql.com/downloads/mysql/) версии 5.6 или 5.7. Локальная версия MySQL должна соответствовать версии Базы данных Azure для MySQL. Например, MySQL версии 5.6 можно перенести только в Базу данных Azure для MySQL версии 5.6, но не версии 5.7. Миграция в версию MySQL 8.0 или из нее не поддерживается. Миграция в версию MySQL 8.0 или из нее не поддерживается.
 * [Создайте экземпляр в Базе данных Azure для MySQL](https://docs.microsoft.com/azure/mysql/quickstart-create-mysql-server-database-using-azure-portal). Ознакомьтесь со статьей [База данных Azure для MySQL: подключение и запрос данных с помощью MySQL Workbench](https://docs.microsoft.com/azure/mysql/connect-workbench), чтобы узнать, как подключить и создать базу данных с помощью портала Azure.  
 * Создайте виртуальную сеть Microsoft Azure для Azure Database Migration Service с помощью модели развертывания Azure Resource Manager, которая обеспечивает подключение "сеть — сеть" к локальным исходным серверам с помощью [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) или [VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways). Дополнительные сведения о создании виртуальной сети приведены в [документации по виртуальным сетям](https://docs.microsoft.com/azure/virtual-network/). В частности, уделите внимание кратким руководствам с пошаговыми инструкциями.
 
@@ -158,25 +158,25 @@ SELECT Concat('DROP TRIGGER ', Trigger_Name, ';') FROM  information_schema.TRIGG
 
 ## <a name="register-the-microsoftdatamigration-resource-provider"></a>Регистрация поставщика ресурсов Microsoft.DataMigration
 
-1. Войдите на портал Azure, щелкните **Все службы** и выберите **Подписки**.
+1. Войдите на портал Azure, щелкните **Все службы** и выберите **Подписки** .
 
    ![Отображение подписок на портале](media/tutorial-mysql-to-azure-mysql-online/portal-select-subscriptions.png)
 
-2. Выберите подписку, в которой нужно создать экземпляр Azure Database Migration Service, а затем щелкните **Поставщики ресурсов**.
+2. Выберите подписку, в которой нужно создать экземпляр Azure Database Migration Service, а затем щелкните **Поставщики ресурсов** .
 
     ![Отображение поставщиков ресурсов](media/tutorial-mysql-to-azure-mysql-online/portal-select-resource-provider.png)
 
-3. В поле поиска введите migration, а затем справа от **Microsoft.DataMigration** щелкните **Зарегистрировать**.
+3. В поле поиска введите migration, а затем справа от **Microsoft.DataMigration** щелкните **Зарегистрировать** .
 
     ![Регистрация поставщика ресурсов](media/tutorial-mysql-to-azure-mysql-online/portal-register-resource-provider.png)
 
 ## <a name="create-a-dms-instance"></a>Создание экземпляра DMS
 
-1. На портале Azure выберите **+Создать ресурс**, введите в поле поиска "Azure Database Migration Service", а затем в раскрывающемся списке выберите **Azure Database Migration Service**.
+1. На портале Azure выберите **+Создать ресурс** , введите в поле поиска "Azure Database Migration Service", а затем в раскрывающемся списке выберите **Azure Database Migration Service** .
 
     ![Azure Marketplace](media/tutorial-mysql-to-azure-mysql-online/portal-marketplace.png)
 
-2. На экране **Azure Database Migration Service** выберите **Создать**.
+2. На экране **Azure Database Migration Service** выберите **Создать** .
 
     ![Создание экземпляра Azure Database Migration Service](media/tutorial-mysql-to-azure-mysql-online/dms-create1.png)
   
@@ -194,13 +194,13 @@ SELECT Concat('DROP TRIGGER ', Trigger_Name, ';') FROM  information_schema.TRIGG
 
     ![Настройка параметров экземпляра Database Migration Service](media/tutorial-mysql-to-azure-mysql-online/dms-settings3.png)
 
-6. Выберите **Создать**, чтобы создать службу.
+6. Выберите **Создать** , чтобы создать службу.
 
 ## <a name="create-a-migration-project"></a>Создание проекта миграции
 
 После создания службы найдите ее на портале Azure, откройте и создайте проект миграции.
 
-1. На портале Azure щелкните **Все службы**, выполните поиск по запросу "Azure Database Migration Service" и выберите **Azure Database Migration Services** (Службы Azure Database Migration Service).
+1. На портале Azure щелкните **Все службы** , выполните поиск по запросу "Azure Database Migration Service" и выберите **Azure Database Migration Services** (Службы Azure Database Migration Service).
 
       ![Поиск всех экземпляров Azure Database Migration Service](media/tutorial-mysql-to-azure-mysql-online/dms-search.png)
 
@@ -208,16 +208,16 @@ SELECT Concat('DROP TRIGGER ', Trigger_Name, ';') FROM  information_schema.TRIGG
 
      ![Поиск экземпляра службы Azure Database Migration Service](media/tutorial-mysql-to-azure-mysql-online/dms-instance-search.png)
 
-3. Выберите **+ Новый проект миграции**.
-4. В окне **Новый проект миграции** задайте имя для проекта, в текстовом поле **Source server type** (Тип исходного сервера) выберите **MySQL**, а затем в текстовом поле **Target server type** (Тип целевого сервера) выберите **AzureDbForMySQL**.
+3. Выберите **+ Новый проект миграции** .
+4. В окне **Новый проект миграции** задайте имя для проекта, в текстовом поле **Source server type** (Тип исходного сервера) выберите **MySQL** , а затем в текстовом поле **Target server type** (Тип целевого сервера) выберите **AzureDbForMySQL** .
 5. В разделе **Choose type of activity** (Выберите тип действия) выберите **Online data migration** (Оперативное перемещение данных).
 
     ![Создание проекта Database Migration Service](media/tutorial-mysql-to-azure-mysql-online/dms-create-project4.png)
 
     > [!NOTE]
-    > Кроме того, вы можете выбрать **Создать только проект**, чтобы создать проект миграции для отложенного выполнения.
+    > Кроме того, вы можете выбрать **Создать только проект** , чтобы создать проект миграции для отложенного выполнения.
 
-6. Нажмите кнопку **Сохранить**, обратите внимание на требования для успешного переноса данных с помощью DMS, а затем выберите **Create and run activity** (Создать и запустить действие).
+6. Нажмите кнопку **Сохранить** , обратите внимание на требования для успешного переноса данных с помощью DMS, а затем выберите **Create and run activity** (Создать и запустить действие).
 
 ## <a name="specify-source-details"></a>Указание сведений об источнике
 
@@ -227,11 +227,11 @@ SELECT Concat('DROP TRIGGER ', Trigger_Name, ';') FROM  information_schema.TRIGG
 
 ## <a name="specify-target-details"></a>Указание сведений о цели
 
-1. Нажмите кнопку **Сохранить**, а затем на экране **данных целевого объекта** укажите сведения о подключении для целевого сервера Базы данных Azure для MySQL, а именно — предварительно подготовленного экземпляра базы данных, для которой была развернута схема **Сотрудники** с помощью mysqldump.
+1. Нажмите кнопку **Сохранить** , а затем на экране **данных целевого объекта** укажите сведения о подключении для целевого сервера Базы данных Azure для MySQL, а именно — предварительно подготовленного экземпляра базы данных, для которой была развернута схема **Сотрудники** с помощью mysqldump.
 
     ![Экран сведений о целевом объекте](media/tutorial-mysql-to-azure-mysql-online/dms-add-target-details.png)
 
-2. Нажмите кнопку **Сохранить**, а затем на экране **Сопоставление с целевыми базами данных** сопоставьте исходную и целевую базы данных для миграции.
+2. Нажмите кнопку **Сохранить** , а затем на экране **Сопоставление с целевыми базами данных** сопоставьте исходную и целевую базы данных для миграции.
 
     Если в целевой базе данных содержится база данных с тем же именем, что у исходной базы данных, Azure Database Migration Service по умолчанию выберет целевую базу данных.
 
@@ -245,17 +245,17 @@ SELECT Concat('DROP TRIGGER ', Trigger_Name, ';') FROM  information_schema.TRIGG
 
 ## <a name="run-the-migration"></a>Выполнение миграции
 
-* Выберите **Запустить миграцию**.
+* Выберите **Запустить миграцию** .
 
-    Появится окно действия миграции и в поле **Состояние** будет указано **Инициализация**.
+    Появится окно действия миграции и в поле **Состояние** будет указано **Инициализация** .
 
 ## <a name="monitor-the-migration"></a>Мониторинг миграции
 
-1. На экране действия миграции нажмите кнопку **Обновить**, чтобы обновить содержимое экрана, пока **состояние** миграции не поменяется на **Завершено**.
+1. На экране действия миграции нажмите кнопку **Обновить** , чтобы обновить содержимое экрана, пока **состояние** миграции не поменяется на **Завершено** .
 
      ![Состояние действия "Завершено"](media/tutorial-mysql-to-azure-mysql-online/dms-activity-completed.png)
 
-2. В столбце **Имя базы данных** выберите определенную базу данных, чтобы получить состояние миграции для операций **полной загрузки данных** и **добавочной синхронизации данных**.
+2. В столбце **Имя базы данных** выберите определенную базу данных, чтобы получить состояние миграции для операций **полной загрузки данных** и **добавочной синхронизации данных** .
 
     В разделе полной загрузки данных отображается состояние начальной загрузки, а в разделе добавочной синхронизации данных — состояние отслеживания измененных данных (CDC).
 
@@ -265,15 +265,15 @@ SELECT Concat('DROP TRIGGER ', Trigger_Name, ';') FROM  information_schema.TRIGG
 
 ## <a name="perform-migration-cutover"></a>Выполнение прямой миграции
 
-После завершения начальной полной загрузки базы данных помечаются как **готовые к прямой миграции**.
+После завершения начальной полной загрузки базы данных помечаются как **готовые к прямой миграции** .
 
-1. Когда вы будете готовы выполнить миграцию базы данных, щелкните **Запустить прямую миграцию**.
+1. Когда вы будете готовы выполнить миграцию базы данных, щелкните **Запустить прямую миграцию** .
 
     ![Запуск прямой миграции](media/tutorial-mysql-to-azure-mysql-online/dms-start-cutover.png)
 
-2. Обязательно остановите все входящие транзакции в исходную базу данных. Подождите, пока в счетчике **Ожидающие изменения** появится значение **0**.
-3. Выберите **Подтвердить**, а затем — **Применить**.
-4. Когда состояние миграции базы данных изменится на **Завершено**, подключите свои приложения к новой целевой базе данных SQL Azure.
+2. Обязательно остановите все входящие транзакции в исходную базу данных. Подождите, пока в счетчике **Ожидающие изменения** появится значение **0** .
+3. Выберите **Подтвердить** , а затем — **Применить** .
+4. Когда состояние миграции базы данных изменится на **Завершено** , подключите свои приложения к новой целевой базе данных SQL Azure.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

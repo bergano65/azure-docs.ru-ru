@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 02/20/2020
+ms.date: 10/26/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: bd5ae5c60530890f65f8cc9a98171c29820a7762
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fd2f7d46df09085d19b19709c7f45cd3d6566988
+ms.sourcegitcommit: 3e8058f0c075f8ce34a6da8db92ae006cc64151a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85202863"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92628666"
 ---
 # <a name="contentdefinitions"></a>ContentDefinitions
 
@@ -24,7 +24,7 @@ ms.locfileid: "85202863"
 
 Вы можете настроить внешний вид любого [самоподтвержденного технического профиля](self-asserted-technical-profile.md). Azure Active Directory B2C (Azure AD B2C) выполняет код в браузере клиента и использует современный подход, именуемый обменом ресурсами между источниками (CORS).
 
-Для настройки пользовательского интерфейса необходимо указать URL-адрес в элементе **ContentDefinition** с настраиваемым содержимым HTML. В самоподтвержденном техническом профиле или **OrchestrationStep** нужно указать этот идентификатор определения содержимого. Определение содержимого может содержать элемент **LocalizedResourcesReferences**, задающий список локализованных ресурсов для загрузки. Azure AD B2C объединяет элементы пользовательского интерфейса с содержимым HTML, загруженным по указанному URL-адресу, и отображает страницу для пользователя.
+Для настройки пользовательского интерфейса необходимо указать URL-адрес в элементе **ContentDefinition** с настраиваемым содержимым HTML. В самоподтвержденном техническом профиле или **OrchestrationStep** нужно указать этот идентификатор определения содержимого. Определение содержимого может содержать элемент **LocalizedResourcesReferences** , задающий список локализованных ресурсов для загрузки. Azure AD B2C объединяет элементы пользовательского интерфейса с содержимым HTML, загруженным по указанному URL-адресу, и отображает страницу для пользователя.
 
 Элемент **ContentDefinitions** содержит URL-адреса шаблонов HTML5, которые могут использоваться в пути взаимодействия пользователя. URI страницы HTML5 используется для указанного шага пользовательского интерфейса, например для входа или регистрации, сброса пароля или страниц ошибок. Внешний вид можно изменить с помощью переопределения LoadUri для файла HTML5. Можно создать новые определения содержимого в соответствии с потребностями. Этот элемент может содержать ссылку на локализованные ресурсы — идентификатор локализации, заданный в элементе [Localization](localization.md).
 
@@ -44,7 +44,7 @@ ms.locfileid: "85202863"
     ...
 ```
 
-Метаданные самоподтвержденного технического профиля **LocalAccountSignUpWithLogonEmail** содержат идентификатор определения содержимого **ContentDefinitionReferenceId**, для которого задано значение `api.localaccountsignup`
+Метаданные самоподтвержденного технического профиля **LocalAccountSignUpWithLogonEmail** содержат идентификатор определения содержимого **ContentDefinitionReferenceId** , для которого задано значение `api.localaccountsignup`
 
 ```xml
 <TechnicalProfile Id="LocalAccountSignUpWithLogonEmail">
@@ -111,7 +111,7 @@ ms.locfileid: "85202863"
 
 #### <a name="migrating-to-page-layout"></a>Переход на макет страницы
 
-Формат значения должен содержать слово `contract` : _urn: com: Microsoft: AAD: B2C: Elements:**контракт**:p Age-Name: версия_. Чтобы указать макет страницы в пользовательских политиках, использующих старое значение **DataUri** , используйте следующую таблицу для перехода к новому формату.
+Формат значения должен содержать слово `contract` : _urn: com: Microsoft: AAD: B2C: Elements: **контракт** :p Age-Name: версия_ . Чтобы указать макет страницы в пользовательских политиках, использующих старое значение **DataUri** , используйте следующую таблицу для перехода к новому формату.
 
 | Старое значение DataUri | Новое значение DataUri |
 | ----------------- | ----------------- |
@@ -126,6 +126,39 @@ ms.locfileid: "85202863"
 | `urn:com:microsoft:aad:b2c:elements:unifiedssp:1.0.0` | `urn:com:microsoft:aad:b2c:elements:contract:unifiedssp:1.2.0` |
 | `urn:com:microsoft:aad:b2c:elements:unifiedssp:1.1.0` | `urn:com:microsoft:aad:b2c:elements:contract:unifiedssp:1.2.0` |
 
+В следующем примере показаны идентификаторы определения содержимого и соответствующие **DataUri** с контрактом страницы: 
+
+```xml
+<ContentDefinitions>
+  <ContentDefinition Id="api.error">
+    <DataUri>urn:com:microsoft:aad:b2c:elements:contract:globalexception:1.2.0</DataUri>
+  </ContentDefinition>
+  <ContentDefinition Id="api.idpselections">
+    <DataUri>urn:com:microsoft:aad:b2c:elements:contract:providerselection:1.2.0</DataUri>
+  </ContentDefinition>
+  <ContentDefinition Id="api.idpselections.signup">
+    <DataUri>urn:com:microsoft:aad:b2c:elements:contract:providerselection:1.2.0</DataUri>
+  </ContentDefinition>
+  <ContentDefinition Id="api.signuporsignin">
+    <DataUri>urn:com:microsoft:aad:b2c:elements:contract:unifiedssp:1.2.0</DataUri>
+  </ContentDefinition>
+  <ContentDefinition Id="api.selfasserted">
+    <DataUri>urn:com:microsoft:aad:b2c:elements:contract:selfasserted:1.2.0</DataUri>
+  </ContentDefinition>
+  <ContentDefinition Id="api.selfasserted.profileupdate">
+    <DataUri>urn:com:microsoft:aad:b2c:elements:contract:selfasserted:1.2.0</DataUri>
+  </ContentDefinition>
+  <ContentDefinition Id="api.localaccountsignup">
+    <DataUri>urn:com:microsoft:aad:b2c:elements:contract:selfasserted:1.2.0</DataUri>
+  </ContentDefinition>
+  <ContentDefinition Id="api.localaccountpasswordreset">
+    <DataUri>urn:com:microsoft:aad:b2c:elements:contract:selfasserted:1.2.0</DataUri>
+  </ContentDefinition>
+  <ContentDefinition Id="api.phonefactor">
+    <DataUri>urn:com:microsoft:aad:b2c:elements:contract:multifactor:1.2.0</DataUri>
+  </ContentDefinition>
+</ContentDefinitions>
+```
 
 ### <a name="metadata"></a>Метаданные
 
@@ -145,7 +178,7 @@ ms.locfileid: "85202863"
 
 Определение содержимого поддерживает следующие элементы метаданных:
 
-| Ключ | Обязательно | Описание |
+| Клавиши | Обязательно | Описание |
 | --------- | -------- | ----------- |
 | DisplayName | Нет | Строка, содержащая имя определения содержимого. |
 
@@ -162,7 +195,7 @@ ms.locfileid: "85202863"
 | attribute | Обязательно | Описание |
 | --------- | -------- | ----------- |
 | Язык | Да | Строка, содержащая поддерживаемый язык для политики согласно стандарту RFC 5646 "Tags for Identifying Languages" (Теги для идентификации языков). |
-| LocalizedResourcesReferenceId | Да | Идентификатор элемента **LocalizedResources**. |
+| LocalizedResourcesReferenceId | Да | Идентификатор элемента **LocalizedResources** . |
 
 Следующий пример показывает определение содержимого регистрации или входа в систему со ссылкой на локализацию для английского, французского и испанского языков:
 

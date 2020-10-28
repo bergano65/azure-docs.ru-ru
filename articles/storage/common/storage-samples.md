@@ -3,17 +3,17 @@ title: Примеры кода для службы хранилища Azure | Д
 description: Просмотрите, загрузите и запустите образцы кода и приложений для хранилища Azure. Воспользуйтесь примерами для начала работы с BLOB-объектами, очередями, таблицами и файлами с помощью клиентских библиотек хранилища .NET, Java, Python, Node.js, Azure CLI и C++.
 author: mhopkins-msft
 ms.author: mhopkins
-ms.date: 09/06/2019
+ms.date: 10/01/2020
 ms.service: storage
 ms.subservice: common
 ms.topic: sample
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: edf30d628a73c879ce81f68bda7cd2d7daa6cde3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2cf1b643caef515411842d6aaf668708e873e96d
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87503656"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92367896"
 ---
 # <a name="azure-storage-samples"></a>Примеры для службы хранилища Azure
 
@@ -49,11 +49,11 @@ ms.locfileid: "87503656"
 
 ## <a name="c-samples"></a>Примеры для C++
 
-Для просмотра примеров C++ загрузите [Клиентскую библиотеку хранилища C++](https://www.nuget.org/packages/wastorage/) на NuGet.
+Чтобы ознакомиться с примерами на C++, скачайте [клиентскую библиотеку службы хранилища Azure для C++](https://github.com/Azure/azure-sdk-for-cpp/tree/master/sdk/storage) на сайте GitHub.
 
-* [Начало работы с BLOB-объектами](https://github.com/Azure/azure-storage-cpp/tree/master/Microsoft.WindowsAzure.Storage/samples/BlobsGettingStarted.cpp)
-* [Начало работы с таблицами](https://github.com/Azure/azure-storage-cpp/tree/master/Microsoft.WindowsAzure.Storage/samples/TablesGettingStarted.cpp)
-* [Начало работы с очередями](https://github.com/Azure/azure-storage-cpp/tree/master/Microsoft.WindowsAzure.Storage/samples/QueuesGettingStarted.cpp)
+* [Начало работы с BLOB-объектами Azure](https://github.com/Azure/azure-sdk-for-cpp/blob/master/sdk/storage/azure-storage-blobs/sample/blob_getting_started.cpp)
+* [Начало работы с Azure Data Lake](https://github.com/Azure/azure-sdk-for-cpp/blob/master/sdk/storage/azure-storage-files-datalake/sample/datalake_getting_started.cpp)
+* [Начало работы со службой "Файлы Azure"](https://github.com/Azure/azure-sdk-for-cpp/blob/master/sdk/storage/azure-storage-files-shares/sample/file_share_getting_started.cpp)
 
 ## <a name="azure-cli"></a>Azure CLI
 
@@ -71,7 +71,7 @@ ms.locfileid: "87503656"
 | Java | [Справочник по клиентской библиотеке Java](https://docs.microsoft.com/java/api/overview/azure/storage) | [Исходный код для клиентской библиотеки хранилища Java](https://github.com/azure/azure-storage-java) |
 | Python | [Справочник по клиентской библиотеке Python](https://azure-storage.readthedocs.io/) | [Исходный код для клиентской библиотеки хранилища Python](https://github.com/Azure/azure-storage-python) |
 | Node.js | [Справочник по клиентской библиотеке Node.js](https://azure.github.io/azure-storage-node) | [Исходный код для клиентской библиотеки хранилища Node.js](https://github.com/Azure/azure-storage-node) |
-| C++ | [Справочник по клиентской библиотеке C++](https://azure.github.io/azure-storage-cpp/) | [Исходный код для клиентской библиотеки хранилища C++](https://github.com/Azure/azure-storage-cpp)|
+| C++ | [Справочник по клиентской библиотеке C++](https://azure.github.io/azure-sdk-for-cpp/) | [Исходный код для клиентской библиотеки хранилища C++](https://github.com/Azure/azure-sdk-for-cpp/tree/master/sdk/storage)|
 | Azure CLI | [Ссылка на библиотеку Azure CLI](/cli/azure/storage) | [Исходный код для клиентской библиотеки хранилища Azure CLI](https://github.com/Azure-Samples/azure-cli-samples/tree/master/storage)
 
 ## <a name="next-steps"></a>Дальнейшие действия
@@ -82,4 +82,5 @@ ms.locfileid: "87503656"
 * [Примеры для службы хранилища Azure с использованием Java](storage-samples-java.md)
 * [Примеры для службы хранилища Azure с использованием JavaScript](storage-samples-javascript.md)
 * [Примеры для работы со службой хранилища Azure с помощью Python](storage-samples-python.md)
+* [Примеры для службы хранилища Azure с использованием C++](storage-samples-c-plus-plus.md)
 * [Примеры для службы хранилища Azure с использованием Azure CLI](/azure/storage/blobs/storage-samples-blobs-cli)

@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 11/28/2019
-ms.openlocfilehash: c392ad7a098116a8f2224d6844d38dc40e01d753
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: f7959b639b75d912d44670c8b00a7327cb7857d6
+ms.sourcegitcommit: 3e8058f0c075f8ce34a6da8db92ae006cc64151a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92545996"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92629448"
 ---
 # <a name="script-action-development-with-hdinsight"></a>Разработка действий сценариев с помощью HDInsight
 
@@ -239,7 +239,7 @@ wget -O /tmp/HDInsightUtilities-v01.sh -q https://hdiconfigactions.blob.core.win
 | --- | --- |
 | `download_file SOURCEURL DESTFILEPATH [OVERWRITE]` |Скачивает файл из исходного универсального кода ресурса (URI) и сохраняет его в указанное расположение. По умолчанию существующий файл не перезаписывается. |
 | `untar_file TARFILE DESTDIR` |Извлекает TAR-файл (с помощью `-xf`) в папку назначения. |
-| `test_is_headnode` |При запуске на головном узле кластера возвращает значение 1, в противном случае — 0. |
+| `test_is_headnode` |Если сценарий выполнялся на головном узле кластера, возвращается значение 1; в противном случае — значение 0. |
 | `test_is_datanode` |Если текущий узел является узлом данных (рабочим узлом), то возвращается значение 1, в противном случае — 0. |
 | `test_is_first_datanode` |Если текущий узел является первым узлом данных (рабочим узлом с именем workernode0), возвращается значение 1, в противном случае — 0. |
 | `get_headnodes` |Возвращает полное доменное имя головных узлов в кластере. Имена содержат разделители-запятые. При возникновении ошибки возвращается пустая строка. |
@@ -268,7 +268,7 @@ wget -O /tmp/HDInsightUtilities-v01.sh -q https://hdiconfigactions.blob.core.win
 VARIABLENAME=value
 ```
 
-Где VARIABLENAME — имя переменной. Для доступа к переменной используйте `$VARIABLENAME`. Например, чтобы присвоить значение позиционного параметра переменной среды с именем PASSWORD, воспользуйтесь следующей инструкцией:
+В предыдущем примере `VARIABLENAME` — это имя переменной. Для доступа к переменной используйте `$VARIABLENAME`. Например, чтобы присвоить значение позиционного параметра переменной среды с именем PASSWORD, воспользуйтесь следующей инструкцией:
 
 ```bash
 PASSWORD=$1
@@ -328,7 +328,7 @@ echo "HADOOP_CONF_DIR=/etc/hadoop/conf" | sudo tee -a /etc/environment
 
 Корпорация Майкрософт предоставляет примеры сценариев для установки компонентов в кластере HDInsight. Пример действия сценария см. [в разделе Установка и использование оттенок в кластерах HDInsight](hdinsight-hadoop-hue-linux.md) .
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Диагностика
 
 Ниже приведены ошибки, которые могут возникнуть при использовании разработанных скриптов.
 

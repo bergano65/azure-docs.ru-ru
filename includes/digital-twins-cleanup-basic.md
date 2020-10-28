@@ -1,16 +1,16 @@
 ---
 author: baanders
-description: Содержит файл для удаления основного экземпляра Azure Digital Twins и регистрации приложения.
+description: Содержит файл для удаления основного экземпляра Azure Digital Twins.
 ms.service: digital-twins
 ms.topic: include
 ms.date: 8/13/2020
 ms.author: baanders
-ms.openlocfilehash: e8f167555434338416381aaf8978a3d551686fb2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2e095a7b286a8860535d6b58fa93098735b30c87
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90606601"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92372329"
 ---
 Если ресурсы, созданные для этого учебника, вам больше не нужны, можете удалить их.
 
@@ -23,10 +23,4 @@ ms.locfileid: "90606601"
 
 ```azurecli
 az group delete --name <your-resource-group>
-```
-
-Затем удалите регистрацию приложения Azure Active Directory, которую вы создали для своего клиентского приложения, с помощью следующей команды:
-
-```azurecli
-az ad app delete --id <your-application-ID>
 ```

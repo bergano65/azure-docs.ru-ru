@@ -4,16 +4,16 @@ description: Просмотрите, загрузите и запустите о
 author: mhopkins-msft
 ms.custom: devx-track-java
 ms.author: mhopkins
-ms.date: 02/13/2020
+ms.date: 10/01/2020
 ms.service: storage
 ms.subservice: common
 ms.topic: sample
-ms.openlocfilehash: b0e0588810fcac239a3647f9b750dd036341ab9f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9e3cd6be0da7c6d9401945293283de874c7cd866
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87322233"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92359770"
 ---
 # <a name="azure-storage-samples-using-v12-java-client-libraries"></a>Примеры использования службы хранилища Azure с помощью клиентских библиотек для Java версии 12
 
@@ -453,4 +453,5 @@ ms.locfileid: "87322233"
 * .NET: [Примеры для службы хранилища Azure с использованием .NET](storage-samples-dotnet.md)
 * Python: [Примеры для работы со службой хранилища Azure с помощью Python](storage-samples-python.md)
 * JavaScript/Node.js: [Примеры для службы хранилища Azure с использованием JavaScript](storage-samples-javascript.md)
+* C++: [Примеры для службы хранилища Azure с использованием C++](storage-samples-c-plus-plus.md)
 * Остальные языки: [Примеры для службы хранилища Azure](storage-samples.md)

@@ -4,12 +4,12 @@ ms.service: data-factory
 ms.topic: include
 ms.date: 11/09/2018
 ms.author: jingwang
-ms.openlocfilehash: 5e7bdce3a195d8171fef1963f2e389bfeec5fffb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 19927fd274cbb7337248fb2ae8cf9d882612d570
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91571902"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92369252"
 ---
 Фабрика данных Azure поддерживает указанные ниже действия преобразования, которые вы можете добавлять в конвейеры как по отдельности, так и в связи с другим действием.
 
@@ -20,7 +20,7 @@ ms.locfileid: "91571902"
 | [MapReduce](../articles/data-factory/v1/data-factory-map-reduce.md) |HDInsight [Hadoop] |
 | [Потоковая передача Hadoop](../articles/data-factory/v1/data-factory-hadoop-streaming-activity.md) |HDInsight [Hadoop] |
 | [Spark](../articles/data-factory/v1/data-factory-spark.md) | HDInsight [Hadoop] |
-| [Действия машинного обучения: выполнение пакета и обновление ресурса](../articles/data-factory/v1/data-factory-azure-ml-batch-execution-activity.md) |Azure |
+| [Действия Машинного обучения Azure Studio (классическая модель): машинного обучения Azure и фабрики данных Azure](../articles/data-factory/v1/data-factory-azure-ml-batch-execution-activity.md) |Azure |
 | [Хранимая процедура](../articles/data-factory/v1/data-factory-stored-proc-activity.md) |Azure SQL, Azure Synapse Analytics или SQL Server |
 | [Аналитика озера данных U-SQL](../articles/data-factory/v1/data-factory-usql-activity.md) |Аналитика озера данных Azure |
 | [DotNet](../articles/data-factory/v1/data-factory-use-custom-activities.md) |HDInsight [Hadoop] или пакетная служба Azure |

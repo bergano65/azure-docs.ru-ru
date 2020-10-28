@@ -7,12 +7,12 @@ ms.date: 9/12/2020
 ms.topic: overview
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 3308a72421b851402642f12daf56359c7e3c9216
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: dd92e1529b889671bc29939f7e9611eceac7ee20
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91449068"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92370514"
 ---
 # <a name="introduction-to-azure-defender-for-kubernetes"></a>Общие сведения об Azure Defender для Kubernetes
 
@@ -20,7 +20,7 @@ ms.locfileid: "91449068"
 
 В комплексе Центр безопасности Azure и AKS представляют собой лучшее из ориентированных на облако решений по обеспечению безопасности Kubernetes. Они обеспечивают усиление защиты среды, защиту рабочих нагрузок и защиту во время выполнения, как описано ниже.
 
-Для обнаружения угроз в кластерах Kubernetes включите **Azure Defender для Kubernetes**.
+Для обнаружения угроз в кластерах Kubernetes включите **Azure Defender для Kubernetes** .
 
 Обнаружение угроз на уровне узла доступно для узлов AKS в Linux при включенном [Azure Defender для серверов](defender-for-servers-introduction.md).
 
@@ -49,7 +49,7 @@ ms.locfileid: "91449068"
     >[!IMPORTANT]
     > Если вы решили не устанавливать агенты на узлах, то получите только часть преимуществ защиты от угроз и лишь некоторые из оповещений системы безопасности. Вы будете по-прежнему получать оповещения, связанные с анализом сети и обменом данными с вредоносными серверами.
 
-- **Уровень кластера AKS (предоставляется Azure Defender для Kubernetes).** На уровне кластера защита от угроз реализуется на основе анализа журналов аудита Kubernetes. Чтобы включить **мониторинг без агента**, включите Azure Defender. Для создания предупреждений на этом уровне Центр безопасности отслеживает службы, которыми управляет служба AKS, с помощью полученных ею журналов. Примерами событий на этом уровне могут служить представление панелей мониторинга Kubernetes, создание ролей с высоким уровнем привилегий и создание конфиденциальных подключений.
+- **Уровень кластера AKS (предоставляется Azure Defender для Kubernetes).** На уровне кластера защита от угроз реализуется на основе анализа журналов аудита Kubernetes. Чтобы включить **мониторинг без агента** , включите Azure Defender. Для создания предупреждений на этом уровне Центр безопасности отслеживает службы, которыми управляет служба AKS, с помощью полученных ею журналов. Примерами событий на этом уровне могут служить представление панелей мониторинга Kubernetes, создание ролей с высоким уровнем привилегий и создание конфиденциальных подключений.
 
     Список оповещений на уровне кластера AKS см. в [справочной таблице оповещений](alerts-reference.md#alerts-akscluster).
 
@@ -72,7 +72,7 @@ ms.locfileid: "91449068"
 - журналы аудита с сервера API;
 - необработанные события безопасности от агента Log Analytics;
 - сведения о конфигурации кластера из кластера AKS;
-- конфигурации рабочих нагрузок из Политики Azure (через **надстройку Политики Azure для Kubernetes**). [Дополнительные сведения о защите рабочих нагрузок с использованием средств управления допуском в Kubernetes](container-security.md#workload-protection-best-practices-using-kubernetes-admission-control)
+- конфигурации рабочих нагрузок из Политики Azure (через **надстройку Политики Azure для Kubernetes** ). [Дополнительные сведения о защите рабочих нагрузок с использованием средств управления допуском в Kubernetes](container-security.md#workload-protection-best-practices-using-kubernetes-admission-control)
 
 :::image type="content" source="./media/defender-for-kubernetes-intro/kubernetes-service-security-center-integration-detailed.png" alt-text="Подробная схема взаимодействия между Центром безопасности Azure, Службой Azure Kubernetes и Политикой Azure" lightbox="./media/defender-for-kubernetes-intro/kubernetes-service-security-center-integration-detailed.png":::
 
@@ -88,6 +88,23 @@ ms.locfileid: "91449068"
 Мы рекомендуем развернуть оба инструмента, чтобы обеспечить максимально полную защиту.
 
 Если вы решите не устанавливать агенты на узлах, то получите только часть преимуществ защиты от угроз и лишь некоторые из оповещений системы безопасности. Вы будете по-прежнему получать оповещения, связанные с анализом сети и обменом данными с вредоносными серверами.
+
+
+### <a name="does-aks-allow-me-to-install-custom-vm-extensions-on-my-aks-nodes"></a>Разрешает ли AKS устанавливать пользовательские расширения виртуальных машин в узлах AKS?
+
+Чтобы средство Azure Defender отслеживало узлы AKS, на них должен работать агент Log Analytics. 
+
+AKS — это управляемая служба, а так как агент Log analytics является расширением, управляемым корпорацией Майкрософт, его также поддерживают кластеры AKS.
+
+
+
+### <a name="if-my-cluster-is-already-running-an-azure-monitor-for-containers-agent-do-i-need-the-log-analytics-agent-too"></a>Если в моем кластере уже выполняется Azure Monitor для агента контейнеров, мне также нужен агент Log Analytics?
+
+Чтобы средство Azure Defender отслеживало узлы AKS, на них должен работать агент Log Analytics.
+
+Если в кластерах уже используется агент Azure Monitor для контейнеров, вы можете установить и агент Log Analytics. Два агента могут работать параллельно без каких бы то ни было проблем.
+
+[См. сведения об Azure Monitor для агента контейнеров](../azure-monitor/insights/container-insights-manage-agent.md).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

@@ -3,17 +3,17 @@ title: Примеры для работы со службой хранилища
 description: Просмотрите, загрузите и запустите образцы кода и приложений для хранилища Azure. Воспользуйтесь примерами, чтобы начать работу с большими двоичными объектами, очередями, таблицами и файлами с помощью клиентских библиотек хранилища Python.
 author: mhopkins-msft
 ms.author: mhopkins
-ms.date: 02/13/2020
+ms.date: 10/01/2020
 ms.service: storage
 ms.subservice: common
 ms.topic: sample
 ms.custom: devx-track-python
-ms.openlocfilehash: 0d1bfd146729a4a0ef94099a0ad79972517b4f42
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f57fa1b668cacdaaceb2026f9e5d7fff0cc56d7f
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87848192"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92371364"
 ---
 # <a name="azure-storage-samples-using-v12-python-client-libraries"></a>Примеры использования службы хранилища Azure с помощью клиентских библиотек версии 12 для Python
 
@@ -594,4 +594,5 @@ ms.locfileid: "87848192"
 * .NET: [Примеры для службы хранилища Azure с использованием .NET](storage-samples-dotnet.md)
 * Java: [Примеры для службы хранилища Azure с использованием Java](storage-samples-java.md)
 * JavaScript/Node.js: [Примеры для службы хранилища Azure с использованием JavaScript](storage-samples-javascript.md)
+* C++: [Примеры для службы хранилища Azure с использованием C++](storage-samples-c-plus-plus.md)
 * Остальные языки: [Примеры для службы хранилища Azure](storage-samples.md)
