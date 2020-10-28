@@ -9,19 +9,19 @@ author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto
 ms.date: 08/14/2020
-ms.openlocfilehash: 0f9b6e0250acb53899ab0443a62db7c9cc51f992
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 2374b1fb7f355b336c713a8a3240eacc8b1f188c
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92370106"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92675077"
 ---
 # <a name="directory-readers-role-in-azure-active-directory-for-azure-sql"></a>Роль "Читатели каталогов" в Azure Active Directory для Azure SQL
 
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
 
 > [!NOTE]
-> Эта функция в этой статье доступна в **общедоступной предварительной версии**.
+> Эта функция в этой статье доступна в **общедоступной предварительной версии** .
 
 Azure Active Directory (Azure AD) предоставила [Использование облачных групп для управления назначениями ролей в Azure Active Directory (Предварительная версия)](../../active-directory/roles/groups-concept.md). Это позволяет назначать роли Azure AD группам.
 
@@ -31,7 +31,7 @@ Azure Active Directory (Azure AD) предоставила [Использова
 
 - Создание имен входа Azure AD для SQL Управляемый экземпляр
 - Олицетворение пользователей Azure AD в Azure SQL
-- Миграция SQL Server пользователей, использующих проверку подлинности Windows, в SQL Управляемый экземпляр с проверкой подлинности Azure AD (с помощью команды [ALTER USER (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-user-transact-sql?view=azuresqldb-mi-current#d-map-the-user-in-the-database-to-an-azure-ad-login-after-migration) )
+- Миграция SQL Server пользователей, использующих проверку подлинности Windows, в SQL Управляемый экземпляр с проверкой подлинности Azure AD (с помощью команды [ALTER USER (Transact-SQL)](/sql/t-sql/statements/alter-user-transact-sql?view=azuresqldb-mi-current#d-map-the-user-in-the-database-to-an-azure-ad-login-after-migration) )
 - Изменение администратора Azure AD для Управляемый экземпляр SQL
 - Разрешение [субъектов-служб (приложений)](authentication-aad-service-principal.md) создавать пользователей Azure AD в Azure SQL
 
@@ -39,17 +39,17 @@ Azure Active Directory (Azure AD) предоставила [Использова
 
 Чтобы назначить роль " [**читатели каталога**](../../active-directory/roles/permissions-reference.md#directory-readers) " удостоверению, требуется пользователь с разрешениями администратора [глобального администратора](../../active-directory/roles/permissions-reference.md#global-administrator--company-administrator) или [привилегированной роли](../../active-directory/roles/permissions-reference.md#privileged-role-administrator) . Пользователи, которые часто управляют или развертывают базу данных SQL, SQL Управляемый экземпляр или Azure синапсе, могут не иметь доступа к этим ролям с высоким уровнем привилегий. Это часто может привести к осложнениям для пользователей, которые создают незапланированные ресурсы SQL Azure или нуждаются в помощи членов ролей с высоким уровнем привилегий, которые часто недоступны в крупных организациях.
 
-Чтобы [настроить администратора Azure AD для Управляемого экземпляра SQL](authentication-aad-configure.md#provision-azure-ad-admin-sql-managed-instance), удостоверению управляемого экземпляра необходимо назначить роль **Читатели каталогов**. 
+Чтобы [настроить администратора Azure AD для Управляемого экземпляра SQL](authentication-aad-configure.md#provision-azure-ad-admin-sql-managed-instance), удостоверению управляемого экземпляра необходимо назначить роль **Читатели каталогов** . 
 
-Для Базы данных SQL или Azure Synapse при настройке администратора Azure AD для логического сервера назначение роли **Читатели каталогов** удостоверению сервера не требуется. Однако для создания объекта Azure AD в Базе данных SQL или Azure Synapse от имени приложения Azure AD требуется роль **Читатели каталогов**. Если роль удостоверению логического сервера SQL не назначена, создание пользователей Azure AD в Azure SQL завершится ошибкой. Дополнительные сведения см. в статье [Субъект-служба Azure Active Directory с SQL Azure](authentication-aad-service-principal.md).
+Для Базы данных SQL или Azure Synapse при настройке администратора Azure AD для логического сервера назначение роли **Читатели каталогов** удостоверению сервера не требуется. Однако для создания объекта Azure AD в Базе данных SQL или Azure Synapse от имени приложения Azure AD требуется роль **Читатели каталогов** . Если роль удостоверению логического сервера SQL не назначена, создание пользователей Azure AD в Azure SQL завершится ошибкой. Дополнительные сведения см. в статье [Субъект-служба Azure Active Directory с SQL Azure](authentication-aad-service-principal.md).
 
 ## <a name="granting-the-directory-readers-role-to-an-azure-ad-group"></a>Предоставление роли "читатели каталога" группе Azure AD
 
-Сейчас в **общедоступной предварительной версии**вы можете создать группу Azure AD с правами [глобального администратора](../../active-directory/roles/permissions-reference.md#global-administrator--company-administrator) или [администратора привилегированных ролей](../../active-directory/roles/permissions-reference.md#privileged-role-administrator) и назначить ей разрешение [**чтение каталога**](../../active-directory/roles/permissions-reference.md#directory-readers) . Это позволит получить доступ к API Graph Azure AD для членов этой группы. Кроме того, пользователи Azure AD, являющиеся владельцами этой группы, могут назначать новые члены для этой группы, включая удостоверения логических серверов Azure SQL.
+Сейчас в **общедоступной предварительной версии** вы можете создать группу Azure AD с правами [глобального администратора](../../active-directory/roles/permissions-reference.md#global-administrator--company-administrator) или [администратора привилегированных ролей](../../active-directory/roles/permissions-reference.md#privileged-role-administrator) и назначить ей разрешение [**чтение каталога**](../../active-directory/roles/permissions-reference.md#directory-readers) . Это позволит получить доступ к API Graph Azure AD для членов этой группы. Кроме того, пользователи Azure AD, являющиеся владельцами этой группы, могут назначать новые члены для этой группы, включая удостоверения логических серверов Azure SQL.
 
 Этому решению по-прежнему требуется пользователь с высоким уровнем прав (глобальный администратор или администратор привилегированных ролей) для создания группы и назначения пользователей в качестве однократного действия, но владельцы групп Azure AD смогут назначать дополнительные участники. Это избавляет от необходимости использования пользователя с высоким уровнем привилегий в будущем для настройки всех баз данных SQL, управляемых экземпляров SQL или серверов Azure синапсе в своем клиенте Azure AD.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Руководство по назначению роли "Читатели каталогов" группе Azure AD и управлению назначениями ролей](authentication-aad-directory-readers-role-tutorial.md)

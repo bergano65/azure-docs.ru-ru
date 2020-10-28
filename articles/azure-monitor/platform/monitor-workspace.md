@@ -6,17 +6,18 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/20/2020
-ms.openlocfilehash: d6c29cb41d38e5473a9b24dbc89fd99d3e19c16f
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: 9a70dcbabea9bc55703a5e9875df05b534eb372a
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/27/2020
-ms.locfileid: "92638335"
+ms.locfileid: "92674751"
 ---
 # <a name="monitor-health-of-log-analytics-workspace-in-azure-monitor"></a>Мониторинг работоспособности рабочей области Log Analytics в Azure Monitor
 Чтобы обеспечить производительность и доступность рабочей области Log Analytics в Azure Monitor, необходимо иметь возможность упреждающего обнаружения возникающих проблем. В этой статье описывается, как отслеживать работоспособность рабочей области Log Analytics с помощью данных в таблице [операций](https://docs.microsoft.com/azure/azure-monitor/reference/tables/operation) . Эта таблица включается в каждую Log Analytics рабочую область и содержит ошибки и предупреждения, происходящие в рабочей области. Следует регулярно проверять эти данные и создавать оповещения, чтобы заранее получать уведомления при наличии в рабочей области важных инцидентов.
 
 ## <a name="_logoperation-function"></a>Функция _LogOperation
+
 Azure Monitor журналы отправляют сведения о проблемах в таблицу [операций](https://docs.microsoft.com/azure/azure-monitor/reference/tables/operation) в рабочей области, в которой возникла проблема. **_LogOperation** системная функция основана на таблице **операций** и предоставляет упрощенный набор сведений для анализа и оповещений.
 
 ## <a name="columns"></a>Столбцы
@@ -36,6 +37,7 @@ Azure Monitor журналы отправляют сведения о пробл
 
 
 ## <a name="categories"></a>Категории
+
 В следующей таблице описаны категории из функции _LogOperation. 
 
 | Категория | Описание |

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/26/2020
 author: mingshen-ms
 ms.author: mingshen
-ms.openlocfilehash: d4c1005d300a5b326ff2f41d9fa3838dbb1c7552
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: e29aeb7570ad6daba9d6fc652291471fa246bf0a
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92278023"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92674632"
 ---
 # <a name="marketplace-metered-billing-apis"></a>API для выставления счетов с оплатой в Marketplace
 
@@ -34,7 +34,7 @@ API события использования должен вызываться 
 
 Только одно событие использования может быть выдаваться за каждый час календарного дня на ресурс. Если в течение часа используется более одной единицы, накапливает все единицы, потребленные в течение часа, а затем выдает их в одном событии. События использования могут выдаваться только за последние 24 часа. Если вы выдаете событие использования в любое время между 8:00 и 8:59:59 (и принимаете) и отправляете дополнительное событие для того же дня между 8:00 и 8:59:59, оно будет отклонено как повторяющееся.
 
-**POST**: `https://marketplaceapi.microsoft.com/api/usageEvent?api-version=<ApiVersion>`
+**POST** : `https://marketplaceapi.microsoft.com/api/usageEvent?api-version=<ApiVersion>`
 
 *Параметры запроса:*
 
@@ -67,7 +67,7 @@ API события использования должен вызываться 
 >[!NOTE]
 >`resourceId` имеет другое значение для приложения SaaS и управляемого приложения, выдачи настраиваемого счетчика. 
 
-Для планов управляемых приложений Azure `resourceId` представляет собой `resourceUsageId`, размещенный в параметре `billingDetails` объекта метаданных для управляемого приложения. Пример скрипта для его получения приведен в разделе [Использование токена удостоверений, управляемых Azure](./marketplace-metering-service-authentication.md#using-the-azure-managed-identities-token). 
+Для планов приложений, управляемых приложением Azure, `resourceId` это управляемое приложение `resource group Id` . Пример скрипта для его получения приведен в разделе [Использование токена удостоверений, управляемых Azure](./marketplace-metering-service-authentication.md#using-the-azure-managed-identities-token). 
 
 Для предложений SaaS `resourceId` содержит идентификатор подписки SaaS. Дополнительные сведения о подписках SaaS см. [в этом списке](./pc-saas-fulfillment-api-v2.md#get-list-of-all-subscriptions).
 
@@ -191,7 +191,7 @@ API событий использования пакетной службы по
 >[!NOTE]
 >`resourceId` имеет другое значение для приложения SaaS и управляемого приложения, выдачи настраиваемого счетчика. 
 
-Для планов управляемых приложений Azure `resourceId` представляет собой `resourceUsageId`, размещенный в параметре `billingDetails` объекта метаданных для управляемого приложения. Пример скрипта для его получения приведен в разделе [Использование токена удостоверений, управляемых Azure](./marketplace-metering-service-authentication.md#using-the-azure-managed-identities-token). 
+Для планов приложений, управляемых приложением Azure, `resourceId` это управляемое приложение `resource group Id` . Пример скрипта для его получения приведен в разделе [Использование токена удостоверений, управляемых Azure](./marketplace-metering-service-authentication.md#using-the-azure-managed-identities-token). 
 
 Для предложений SaaS `resourceId` содержит идентификатор подписки SaaS. Дополнительные сведения о подписках SaaS см. [в этом списке](./pc-saas-fulfillment-api-v2.md#get-list-of-all-subscriptions).
 
@@ -271,7 +271,7 @@ API событий использования пакетной службы по
 
 Вы также можете использовать частный план для существующего предложения Live, чтобы ограничить доступ к этому плану во время тестирования до ограниченной аудитории.
 
-## <a name="get-support"></a>Получение поддержки
+## <a name="get-support"></a>Техническая поддержка
 
 Следуйте инструкциям в [технической поддержке программы коммерческого рынка в центре партнеров](../support.md) , чтобы узнать о вариантах поддержки издателя и отправить запрос в службу поддержки корпорации Майкрософт.
 

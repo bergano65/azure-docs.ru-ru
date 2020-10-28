@@ -12,13 +12,13 @@ ms.workload: identity
 ms.date: 06/05/2020
 ms.author: negoe
 ms.reviewer: nacanuma
-ms.custom: aaddev
-ms.openlocfilehash: ab072fa53d3ecc3f856b6765acfb8c19da3ff298
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.custom: aaddev devx-track-js
+ms.openlocfilehash: 327280c193c3c2fb829e468bccfc352f35edfdb5
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92442258"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92673513"
 ---
 # <a name="use-microsoft-authentication-library-for-javascript-to-work-with-azure-ad-b2c"></a>Использование библиотеки проверки подлинности Майкрософт для JavaScript для работы с Azure AD B2C
 
@@ -56,7 +56,7 @@ git clone https://github.com/Azure-Samples/active-directory-b2c-javascript-nodej
 
 ### <a name="step-3-configure-authentication"></a>Шаг 3. Настройка проверки подлинности
 
-1. Откройте файл `config.json` в примере.
+1. Откройте файл *config.js* в образце.
 
 2. Настройте пример с учетными данными приложения, полученными ранее при регистрации приложения. Измените следующие строки кода, заменив значения именем клиента, ИДЕНТИФИКАТОРом клиента и именем политики.
 
@@ -169,7 +169,7 @@ git clone https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-
 
 ### <a name="step-2-catch-and-handle-authentication-errors-in-your-login-method"></a>Шаг 2. перехват и обработку ошибок проверки подлинности в методе входа
 
-Когда пользователь выбирает команду " **забыли пароль**", приложение выдает ошибку, которую следует перехватить в коде, а затем обработаемся путем представления соответствующего потока пользователя. В этом случае это `b2c_1_reset` поток сброса пароля.
+Когда пользователь выбирает команду " **забыли пароль** ", приложение выдает ошибку, которую следует перехватить в коде, а затем обработаемся путем представления соответствующего потока пользователя. В этом случае это `b2c_1_reset` поток сброса пароля.
 
 1. Расширьте метод входа следующим образом:
 

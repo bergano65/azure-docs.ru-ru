@@ -13,19 +13,19 @@ ms.author: mireks
 ms.reviewer: vanto
 ms.date: 09/28/2020
 tags: azure-synapse
-ms.openlocfilehash: 2a3e1e7279e915c0c5992190ef0c8d1d83880dbb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3b81572266f6ee5bd90662a98988d41479f399cc
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91596134"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92675009"
 ---
 # <a name="using-multi-factor-azure-active-directory-authentication"></a>Использование многофакторной проверки подлинности Azure Active Directory
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
 
-База данных SQL Azure, Azure SQL Управляемый экземпляр и Azure синапсе Analytics поддерживают подключения из [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) с помощью *Azure Active Directory-Universal с* проверкой подлинности mfa. В этой статье обсуждаются различия между различными вариантами проверки подлинности, а также ограничения, связанные с использованием универсальной проверки подлинности в Azure Active Directory (Azure AD) для Azure SQL.
+База данных SQL Azure, Azure SQL Управляемый экземпляр и Azure синапсе Analytics поддерживают подключения из [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) с помощью *Azure Active Directory-Universal с* проверкой подлинности mfa. В этой статье обсуждаются различия между различными вариантами проверки подлинности, а также ограничения, связанные с использованием универсальной проверки подлинности в Azure Active Directory (Azure AD) для Azure SQL.
 
-**Скачивание последней версии SSMS.** Скачайте последнюю версию SSMS на клиентский компьютер, воспользовавшись страницей [Скачивание SQL Server Management Studio (SSMS)](https://aka.ms/ssms). 
+**Скачивание последней версии SSMS.** Скачайте последнюю версию SSMS на клиентский компьютер, воспользовавшись страницей [Скачивание SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms). 
 
 [!INCLUDE[ssms-connect-azure-ad](../includes/ssms-connect-azure-ad.md)]
 
@@ -47,18 +47,18 @@ ms.locfileid: "91596134"
 
 Azure MFA помогает защитить доступ к данным и приложениям, а также удовлетворить потребность пользователей в простом процессе входа. Она обеспечивает надежную аутентификацию с использованием ряда простых вариантов подтверждения: телефонного звонка, текстового сообщения, смарт-карты с ПИН-кодом или уведомления в мобильном приложении. Пользователи сами выбирают предпочтительный способ подтверждения. Интерактивная MFA с использованием Azure AD может привести к появлению всплывающего диалогового окна для реализации проверки.
 
-Описание многофакторной идентификации Azure [см. в](../../active-directory/authentication/multi-factor-authentication.md)этой статье.
+Описание многофакторной идентификации Azure [см. в](../../active-directory/authentication/concept-mfa-howitworks.md)этой статье.
 Инструкции по настройке см. в разделе [Настройка многофакторной проверки подлинности в Базе данных SQL Azure для SQL Server Management Studio](authentication-mfa-ssms-configure.md).
 
 ### <a name="azure-ad-domain-name-or-tenant-id-parameter"></a>Параметр доменного имени или идентификатора клиента Azure AD
 
-Начиная с [SSMS версии 17](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms)пользователи, импортированные в текущую службу Azure AD из других каталогов Azure в качестве гостевых пользователей, могут указать доменное имя Azure AD или идентификатор клиента при подключении. К гостевым пользователям относятся пользователи, приглашенные из других каталогов Azure AD, учетные записи Майкрософт, такие как outlook.com, hotmail.com и live.com, или другие учетные записи, например, gmail.com. Эти сведения обеспечивают `Azure Active Directory - Universal with MFA` проверку подлинности для идентификации правильного центра проверки подлинности. Этот параметр также является обязательным для поддержки учетных записей Майкрософт (MSA), таких как outlook.com, hotmail.com или live.com, и сторонних учетных записей. 
+Начиная с [SSMS версии 17](/sql/ssms/download-sql-server-management-studio-ssms)пользователи, импортированные в текущую службу Azure AD из других каталогов Azure в качестве гостевых пользователей, могут указать доменное имя Azure AD или идентификатор клиента при подключении. К гостевым пользователям относятся пользователи, приглашенные из других каталогов Azure AD, учетные записи Майкрософт, такие как outlook.com, hotmail.com и live.com, или другие учетные записи, например, gmail.com. Эти сведения обеспечивают `Azure Active Directory - Universal with MFA` проверку подлинности для идентификации правильного центра проверки подлинности. Этот параметр также является обязательным для поддержки учетных записей Майкрософт (MSA), таких как outlook.com, hotmail.com или live.com, и сторонних учетных записей. 
 
 Все гостевые пользователи, которые хотят пройти проверку подлинности с помощью универсальной проверки подлинности, должны ввести свое доменное имя или идентификатор клиента Azure AD. Этот параметр представляет текущее доменное имя или идентификатор клиента Azure AD, с которым связан логический сервер SQL Azure. Например, если логический сервер SQL связан с доменом Azure AD `contosotest.onmicrosoft.com` , где пользователь `joe@contosodev.onmicrosoft.com` размещен в качестве импортированного пользователя из домена Azure AD `contosodev.onmicrosoft.com` , доменное имя, необходимое для проверки подлинности этого пользователя, — `contosotest.onmicrosoft.com` . Если пользователь является собственным пользователем Azure AD, связанным с логическим сервером SQL, и не является учетной записью MSA, имя домена или идентификатор клиента не требуются. Чтобы ввести параметр (начиная с SSMS версии 17,2):
 
 
 1. Откройте подключение в среде SSMS. Введите имя сервера и выберите **Azure Active Directory-Universal с** проверкой подлинности mfa. Добавьте **имя пользователя** , с которым хотите войти.
-1. Выберите поле **Параметры** и перейдите на вкладку **Свойства подключения** . В диалоговом окне **Подключение к базе данных** заполните диалоговое окно для своей базы данных. Установите флажок **Доменное имя AD или идентификатор клиента** и укажите центр аутентификации, введя доменное имя (**contosotest.onmicrosoft.com**) или GUID идентификатора клиента. 
+1. Выберите поле **Параметры** и перейдите на вкладку **Свойства подключения** . В диалоговом окне **Подключение к базе данных** заполните диалоговое окно для своей базы данных. Установите флажок **Доменное имя AD или идентификатор клиента** и укажите центр аутентификации, введя доменное имя ( **contosotest.onmicrosoft.com** ) или GUID идентификатора клиента. 
 
    ![Снимок экрана: вкладка "Свойства подключения", в которой выделяются параметры подключения к базе данных, доменному имени AD или ИДЕНТИФИКАТОРу клиента.](./media/authentication-mfa-ssms-overview/mfa-tenant-ssms.png)
 
@@ -69,11 +69,11 @@ Azure MFA помогает защитить доступ к данным и пр
 ### <a name="azure-ad-business-to-business-support"></a>Поддержка Azure AD B2B
 
 > [!IMPORTANT]
-> Поддержка гостевых пользователей для подключения к базе данных SQL Azure, SQL Управляемый экземпляр и Azure синапсе без необходимости быть частью группы в настоящее время доступна в **общедоступной предварительной версии**. Дополнительные сведения см. в статье [Создание гостевых пользователей Azure AD и назначение их в качестве администратора Azure AD](authentication-aad-guest-users.md).
+> Поддержка гостевых пользователей для подключения к базе данных SQL Azure, SQL Управляемый экземпляр и Azure синапсе без необходимости быть частью группы в настоящее время доступна в **общедоступной предварительной версии** . Дополнительные сведения см. в статье [Создание гостевых пользователей Azure AD и назначение их в качестве администратора Azure AD](authentication-aad-guest-users.md).
 
-Пользователи Azure AD, которые поддерживаются в сценариях Azure AD B2B в качестве гостевых пользователей (см. раздел [что такое служба совместной работы Azure B2B](../../active-directory/active-directory-b2b-what-is-azure-ad-b2b.md)), могут подключаться к базе данных SQL и Azure синапсе только как часть членов группы, созданной в связанном Azure AD, и сопоставлять вручную с помощью инструкции [CREATE USER (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-user-transact-sql) в данной базе данных. Например, если `steve@gmail.com` приглашен в Azure AD `contosotest` (с доменом Azure AD `contosotest.onmicrosoft.com` ), Группа Azure AD, например, `usergroup` должна быть создана в Azure AD, содержащей `steve@gmail.com` член. Затем эту группу необходимо создать для конкретной базы данных (например, `MyDatabase` ) с помощью администратора SQL Azure AD или Azure AD dbo, выполнив инструкцию Transact-SQL `CREATE USER [usergroup] FROM EXTERNAL PROVIDER` . 
+Пользователи Azure AD, которые поддерживаются в сценариях Azure AD B2B в качестве гостевых пользователей (см. раздел [что такое служба совместной работы Azure B2B](../../active-directory/external-identities/what-is-b2b.md)), могут подключаться к базе данных SQL и Azure синапсе только как часть членов группы, созданной в связанном Azure AD, и сопоставлять вручную с помощью инструкции [CREATE USER (Transact-SQL)](/sql/t-sql/statements/create-user-transact-sql) в данной базе данных. Например, если `steve@gmail.com` приглашен в Azure AD `contosotest` (с доменом Azure AD `contosotest.onmicrosoft.com` ), Группа Azure AD, например, `usergroup` должна быть создана в Azure AD, содержащей `steve@gmail.com` член. Затем эту группу необходимо создать для конкретной базы данных (например, `MyDatabase` ) с помощью администратора SQL Azure AD или Azure AD dbo, выполнив инструкцию Transact-SQL `CREATE USER [usergroup] FROM EXTERNAL PROVIDER` . 
 
-После создания пользователя базы данных пользователь `steve@gmail.com` может войти в систему `MyDatabase` с помощью параметра проверки подлинности SSMS `Azure Active Directory – Universal with MFA` . По умолчанию компонент `usergroup` имеет только разрешение CONNECT. Любой дополнительный доступ к данным должен быть [предоставлен](https://docs.microsoft.com/sql/t-sql/statements/grant-transact-sql) пользователю с достаточными правами. 
+После создания пользователя базы данных пользователь `steve@gmail.com` может войти в систему `MyDatabase` с помощью параметра проверки подлинности SSMS `Azure Active Directory – Universal with MFA` . По умолчанию компонент `usergroup` имеет только разрешение CONNECT. Любой дополнительный доступ к данным должен быть [предоставлен](/sql/t-sql/statements/grant-transact-sql) пользователю с достаточными правами. 
 
 > [!NOTE]
 > Для SSMS 17. x, используя `steve@gmail.com` в качестве гостевого пользователя, необходимо проверить поле **доменное имя AD или идентификатор клиента** и добавить доменное имя AD `contosotest.onmicrosoft.com` в диалоговом окне **Свойства соединения** . Параметр **доменное имя AD или идентификатор клиента** поддерживается только для **Azure Active Directory-Universal с** проверкой подлинности mfa. В противном случае флажок будет серым.
@@ -88,7 +88,7 @@ Azure MFA помогает защитить доступ к данным и пр
 - Для универсальной аутентификации Active Directory не требуется дополнительное программное обеспечение, за исключением того, что необходимо использовать поддерживаемую версию SSMS.  
 - См. следующую ссылку для последней версии Библиотека проверки подлинности Active Directory (ADAL) для универсальной проверки подлинности: [Microsoft. IdentityModel. Clients. ActiveDirectory](https://www.nuget.org/packages/Microsoft.IdentityModel.Clients.ActiveDirectory/).  
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Инструкции по настройке см. в разделе [Настройка многофакторной проверки подлинности в Базе данных SQL Azure для SQL Server Management Studio](authentication-mfa-ssms-configure.md).
 - Предоставьте другим пользователям доступ к своей базе данных: [Проверка подлинности и авторизация в базе данных SQL: предоставление доступа](logins-create-manage.md).  
@@ -96,8 +96,8 @@ Azure MFA помогает защитить доступ к данным и пр
 - [Настройка проверки подлинности Azure Active Directory и управление ею с помощью базы данных SQL или Azure синапсе](authentication-aad-configure.md)
 - [Создание гостевых пользователей Azure AD и предоставление им прав администратора Azure AD](authentication-aad-guest-users.md) 
 - [Платформа приложения уровня данных Microsoft® SQL Server® (17.0.0 GA)](https://www.microsoft.com/download/details.aspx?id=55088)  
-- [SQLPackage.exe](https://docs.microsoft.com/sql/tools/sqlpackage)  
+- [SQLPackage.exe](/sql/tools/sqlpackage)  
 - [Импорт BACPAC-файла в новую базу данных](database-import.md)  
 - [Экспорт базы данных в BACPAC-файл](database-export.md)  
-- Интерфейс C# [IUniversalAuthProvider](https://msdn.microsoft.com/library/microsoft.sqlserver.dac.iuniversalauthprovider.aspx)  
-- При использовании **Azure Active Directory-Universal с** аутентификацией MFA доступна трассировка ADAL, начиная с [SSMS 17,3](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms). Трассировка ADAL по умолчанию отключена. Включите ее в меню**Средства**, **Параметры** в разделе **Службы Azure**, **Облако Azure**, **Уровень трассировки для окна вывода ADAL** после включения **Вывод** в меню **Представление**. Эти трассировки доступны в окне вывода при выборе **параметра Azure Active Directory**.  
+- Интерфейс C# [IUniversalAuthProvider](/dotnet/api/microsoft.sqlserver.dac.iuniversalauthprovider)  
+- При использовании **Azure Active Directory-Universal с** аутентификацией MFA доступна трассировка ADAL, начиная с [SSMS 17,3](/sql/ssms/download-sql-server-management-studio-ssms). Трассировка ADAL по умолчанию отключена. Включите ее в меню **Средства** , **Параметры** в разделе **Службы Azure** , **Облако Azure** , **Уровень трассировки для окна вывода ADAL** после включения **Вывод** в меню **Представление** . Эти трассировки доступны в окне вывода при выборе **параметра Azure Active Directory** .

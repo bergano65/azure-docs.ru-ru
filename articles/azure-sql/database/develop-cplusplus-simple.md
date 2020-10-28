@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 12/12/2018
-ms.openlocfilehash: 38e4839a41ad8e58e575e552e877303a5105ff36
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e891c5797c9ce93e6cab7a07d2f68de1a9157249
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91443661"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92674760"
 ---
 # <a name="connect-to-sql-database-using-c-and-c"></a>Подключение к базе данных SQL с помощью C и C++
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -29,7 +29,7 @@ ms.locfileid: "91443661"
 
 * Активная учетная запись Azure. Если у вас нет такой учетной записи, вы можете зарегистрироваться для использования [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 * [Visual Studio](https://www.visualstudio.com/downloads/). Для разработки и запуска этого примера необходимо установить компоненты языка C++.
-* [Инструменты разработки Visual Studio для Linux](https://docs.microsoft.com/cpp/linux/?view=vs-2019). Если вы разрабатываете приложение на платформе Linux, необходимо также установить расширение Linux для Visual Studio.
+* [Инструменты разработки Visual Studio для Linux](/cpp/linux/?view=vs-2019). Если вы разрабатываете приложение на платформе Linux, необходимо также установить расширение Linux для Visual Studio.
 
 ## <a name="azure-sql-database-and-sql-server-on-virtual-machines"></a><a id="AzureSQL"></a>База данных SQL Azure и SQL Server на виртуальных машинах
 
@@ -39,7 +39,7 @@ ms.locfileid: "91443661"
 
 ## <a name="data-access-technologies-odbc-and-ole-db"></a><a id="ODBC"></a>Технологии доступа к данным: ODBC и OLE DB
 
-Подключение к базе данных SQL Azure не отличается. в настоящее время существует два способа подключения к базам данных: ODBC (Open Database Connectivity) и OLE DB (связывание объектов и внедрение базы данных). В последние годы корпорация Майкрософт поддерживает [ODBC для доступа к собственным реляционным данным](https://blogs.msdn.microsoft.com/sqlnativeclient/20../../microsoft-is-aligning-with-odbc-for-native-relational-data-access/). Технология ODBC относительно проста и работает гораздо быстрее, чем OLE DB. Единственное предостережение — ODBC использует старый API в стиле C.
+Подключение к базе данных SQL Azure не отличается. в настоящее время существует два способа подключения к базам данных: ODBC (Open Database Connectivity) и OLE DB (связывание объектов и внедрение базы данных). В последние годы корпорация Майкрософт поддерживает [ODBC для доступа к собственным реляционным данным](/archive/blogs/sqlnativeclient/microsoft-is-aligning-with-odbc-for-native-relational-data-access). Технология ODBC относительно проста и работает гораздо быстрее, чем OLE DB. Единственное предостережение — ODBC использует старый API в стиле C.
 
 ## <a name="step-1--creating-your-azure-sql-database"></a><a id="Create"></a>Шаг 1. Создание базы данных SQL Azure
 
@@ -55,7 +55,7 @@ ms.locfileid: "91443661"
 
 ![ODBCConnectionStringProps](./media/develop-cplusplus-simple/dbconnection.png)
 
-Скопируйте содержимое строки **ODBC (включает Node.js) [проверка подлинности SQL]**. Оно будет использоваться позже для подключения из интерпретатора командной строки ODBC C++. Эта строка содержит такие сведения, как драйвер, сервер и другие параметры подключения к базе данных.
+Скопируйте содержимое строки **ODBC (включает Node.js) [проверка подлинности SQL]** . Оно будет использоваться позже для подключения из интерпретатора командной строки ODBC C++. Эта строка содержит такие сведения, как драйвер, сервер и другие параметры подключения к базе данных.
 
 ## <a name="step-3--add-your-ip-to-the-firewall"></a><a id="Firewall"></a>Шаг 3. Добавление IP-адреса в брандмауэр
 
@@ -73,7 +73,7 @@ ms.locfileid: "91443661"
 
 Убедитесь, что в строке подключения к базе данных указаны правильные сведения для проверки подлинности.
 
-Запустите приложение, чтобы создать его. Должно появиться следующее окно, подтверждающее успешность подключения. Чтобы проверить подключение базы данных, можно выполнить базовые команды SQL, например **создать таблицу**:
+Запустите приложение, чтобы создать его. Должно появиться следующее окно, подтверждающее успешность подключения. Чтобы проверить подключение базы данных, можно выполнить базовые команды SQL, например **создать таблицу** :
 
 ![Команды SQL](./media/develop-cplusplus-simple/sqlcommands.png)
 
@@ -123,7 +123,7 @@ ms.locfileid: "91443661"
 
 ![Добавление ODBC в качестве входной библиотеки](./media/develop-cplusplus-simple/lib.png)
 
-Чтобы запустить приложение, откройте консоль Linux из меню **Отладка**:
+Чтобы запустить приложение, откройте консоль Linux из меню **Отладка** :
 
 ![Консоль Linux](./media/develop-cplusplus-simple/linuxconsole.png)
 
@@ -140,10 +140,10 @@ ms.locfileid: "91443661"
 * [образец ODBC C++ Windows](https://github.com/Microsoft/VCSamples/tree/master/VC2015Samples/ODBC%20database%20sample%20%28windows%29) — загрузите образец ODBC C++ Windows для подключения к Azure SQL;
 * [образец ODBC C++ Linux](https://github.com/Microsoft/VCSamples/tree/master/VC2015Samples/ODBC%20database%20sample%20%28linux%29) — загрузите образец ODBC C++ Linux для подключения к Azure SQL.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Обзор разработки базы данных SQL](develop-overview.md)
-* См. дополнительные сведения в [справочнике по API ODBC](https://docs.microsoft.com/sql/odbc/reference/syntax/odbc-api-reference/)
+* См. дополнительные сведения в [справочнике по API ODBC](/sql/odbc/reference/syntax/odbc-api-reference/)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -8,12 +8,12 @@ ms.service: site-reliability-engineering
 ms.topic: article
 ms.date: 09/14/2020
 ms.author: dnb
-ms.openlocfilehash: 3d0698f2780a4ccc41eedbde70fddea1766c5f21
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 62872443c386c45d9821053dc901ad8e0055b74f
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90090335"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92674274"
 ---
 # <a name="frequently-asked-questions-whats-the-relationship-between-sre-and-devops"></a>Часто задаваемые вопросы: что такое отношение между выполняются и DevOps?
 
@@ -50,7 +50,7 @@ _Книга надежности сайта_ (упомянутая в нашем
 
 Затем было бы легко сказать, что слово для выполняются — «надежность». Если он находится в середине имени, также предлагается несколько отличных доказательств для этого утверждения.
 
-Если мы используем это определение DevOps из [центра ресурсов Azure DevOps](https://docs.microsoft.com/azure/devops/learn/):
+Если мы используем это определение DevOps из [центра ресурсов Azure DevOps](/azure/devops/learn/):
 
 > DevOps — это объединение людей, процессов и продуктов для непрерывной поставки значимых ресурсов конечным пользователям.
 
@@ -80,4 +80,4 @@ _Книга надежности сайта_ (упомянутая в нашем
 
 ## <a name="next-steps"></a>Next Steps
 
-Хотите узнать больше о проектировании надежности сайта или DevOps? Ознакомьтесь с сайтом по обеспечению [надежности сайта](../index.yml) и [центром ресурсов Azure DevOps](https://docs.microsoft.com/azure/devops/learn/).
+Хотите узнать больше о проектировании надежности сайта или DevOps? Ознакомьтесь с сайтом по обеспечению [надежности сайта](../index.yml) и [центром ресурсов Azure DevOps](/azure/devops/learn/).

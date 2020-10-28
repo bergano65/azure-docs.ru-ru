@@ -11,12 +11,12 @@ author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto, sstein
 ms.date: 04/23/2020
-ms.openlocfilehash: d90cc76da20861ae9eca7aaf59a49e5f3e866c92
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a57de3d6beda5336f480f20137a9ccaa014b012d
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91444438"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92675089"
 ---
 # <a name="use-azure-active-directory-authentication"></a>Использовать проверку подлинности Azure Active Directory
 
@@ -108,7 +108,7 @@ ms.locfileid: "91444438"
 
     `SQL Error [2760] [S0001]: The specified schema name 'user@mydomain.com' either does not exist or you do not have permission to use it.`
 
-    Предоставляйте роль `db_owner` напрямую отдельным пользователям Azure AD во избежание проблем с синтаксисом **CREATE DATABASE SCOPED CREDENTIAL**.
+    Предоставляйте роль `db_owner` напрямую отдельным пользователям Azure AD во избежание проблем с синтаксисом **CREATE DATABASE SCOPED CREDENTIAL** .
 
 - Эти системные функции возвращают значения NULL при выполнении с помощью субъектов Azure AD:
 
@@ -153,21 +153,21 @@ ms.locfileid: "91444438"
   - Добавление участников сервера Azure AD (имен входа) для SQL Управляемый экземпляр позволяет создавать несколько участников сервера Azure AD (имен входа), которые могут быть добавлены к `sysadmin` роли.
 - Только администратор Azure AD для сервера может сначала подключиться к серверу или управляемому экземпляру с помощью учетной записи Azure Active Directory. Затем администратор Active Directory может настроить других пользователей базы данных Azure AD.
 - Мы рекомендуем установить время ожидания подключения в 30 секунд.
-- Проверку подлинности Azure Active Directory поддерживают SQL Server 2016 Management Studio и SQL Server Data Tools для Visual Studio 2015 (версии 14.0.60311.1, выпущенной в апреле 2016 г., или более поздней). (Проверку подлинности Azure AD поддерживает **поставщик данных .NET Framework для SQL Server**, требуется версия .NET Framework не ниже 4.6.) Поэтому новейшие версии этих средств и приложений уровня данных (DAC и BACPAC) могут использовать проверку подлинности Azure AD.
+- Проверку подлинности Azure Active Directory поддерживают SQL Server 2016 Management Studio и SQL Server Data Tools для Visual Studio 2015 (версии 14.0.60311.1, выпущенной в апреле 2016 г., или более поздней). (Проверку подлинности Azure AD поддерживает **поставщик данных .NET Framework для SQL Server** , требуется версия .NET Framework не ниже 4.6.) Поэтому новейшие версии этих средств и приложений уровня данных (DAC и BACPAC) могут использовать проверку подлинности Azure AD.
 - Начиная с версии 15.0.1, [программа sqlcmd](/sql/tools/sqlcmd-utility) и [программа bcp](/sql/tools/bcp-utility) поддерживают Active Directory интерактивную проверку подлинности с помощью многофакторной проверки подлинности.
-- Для SQL Server Data Tools для Visual Studio 2015 требуется версия Data Tools, выпущенная в апреле 2016 г. (14.0.60311.1), или более поздняя. Сейчас пользователи Azure AD не отображаются в обозревателе объектов SSDT. Сведения о пользователях можно просмотреть в файле [sys.database_principals](https://msdn.microsoft.com/library/ms187328.aspx).
+- Для SQL Server Data Tools для Visual Studio 2015 требуется версия Data Tools, выпущенная в апреле 2016 г. (14.0.60311.1), или более поздняя. Сейчас пользователи Azure AD не отображаются в обозревателе объектов SSDT. Сведения о пользователях можно просмотреть в файле [sys.database_principals](/sql/relational-databases/system-catalog-views/sys-database-principals-transact-sql).
 - [Драйвер Microsoft JDBC 6.0 для SQL Server](https://www.microsoft.com/download/details.aspx?id=11774) поддерживает проверку подлинности Azure AD. Вы можете также ознакомиться с [настройкой свойств подключения](/sql/connect/jdbc/setting-the-connection-properties).
 - PolyBase не поддерживает проверку подлинности Azure AD.
 - Аутентификация Azure AD поддерживается для базы данных SQL Azure и Azure синапсе с помощью портал Azure **импорта базы** данных и **экспорта баз данных** . Импорт и экспорт с помощью аутентификации Azure AD также поддерживаются командой PowerShell.
-- Проверка подлинности Azure AD поддерживается для базы данных SQL, SQL Управляемый экземпляр и Azure синапсе с помощью интерфейса командной строки. Дополнительные сведения см. в статьях [Настройка аутентификации Azure AD и управление ею с помощью базы данных SQL или Azure синапсе](authentication-aad-configure.md) и [SQL Server-AZ SQL Server](https://docs.microsoft.com/cli/azure/sql/server).
+- Проверка подлинности Azure AD поддерживается для базы данных SQL, SQL Управляемый экземпляр и Azure синапсе с помощью интерфейса командной строки. Дополнительные сведения см. в статьях [Настройка аутентификации Azure AD и управление ею с помощью базы данных SQL или Azure синапсе](authentication-aad-configure.md) и [SQL Server-AZ SQL Server](/cli/azure/sql/server).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Чтобы узнать, как создать и заполнить экземпляр Azure AD, а затем настроить его с помощью базы данных SQL Azure, Управляемый экземпляр SQL или Azure синапсе, см. статью [Настройка и управление Azure Active Directory аутентификацией с помощью базы данных SQL, sql управляемый экземпляр или Azure синапсе](authentication-aad-configure.md).
 - Руководство по использованию участников-серверов Azure AD (имен входа) с SQL Управляемый экземпляр см. в статье [участники сервера Azure AD (имена входа) с sql управляемый экземпляр](../managed-instance/aad-security-configure-tutorial.md)
 - Общие сведения о именах входа, пользователях, ролях базы данных и разрешениях в базе данных SQL см. в разделе [имена входа, пользователи, роли базы данных и разрешения](logins-create-manage.md).
-- Дополнительные сведения о субъектах базы данных см. в [этой статье](https://msdn.microsoft.com/library/ms181127.aspx).
-- Дополнительные сведения о ролях баз данных см. в статье [Роли уровня базы данных](https://msdn.microsoft.com/library/ms189121.aspx).
+- Дополнительные сведения о субъектах базы данных см. в [этой статье](/sql/relational-databases/security/authentication-access/principals-database-engine).
+- Дополнительные сведения о ролях баз данных см. в статье [Роли уровня базы данных](/sql/relational-databases/security/authentication-access/database-level-roles).
 - Синтаксис создания субъектов-серверов Azure AD (имен входа) для SQL Управляемый экземпляр см. в разделе  [Создание имени входа](/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current&preserve-view=true).
 - Дополнительные сведения о правилах брандмауэра см. в статье [Обзор правил брандмауэра базы данных SQL Azure](firewall-configure.md).
 

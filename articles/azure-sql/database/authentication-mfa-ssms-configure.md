@@ -12,12 +12,12 @@ author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto
 ms.date: 08/27/2019
-ms.openlocfilehash: 1fb90c106c334073cea18cf014edce491029edec
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2de48946088316e9070e13396f124148a4ff6099
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91596167"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92675028"
 ---
 # <a name="configure-multi-factor-authentication-for-sql-server-management-studio-and-azure-ad"></a>Настройка Многофакторной идентификации для SQL Server Management Studio и Azure AD
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
@@ -29,10 +29,10 @@ ms.locfileid: "91596167"
 
 ## <a name="configuration-steps"></a>Этапы настройки
 
-1. **Настройка Azure Active Directory.** Дополнительные сведения см. в статьях [Управление каталогом Azure AD](https://msdn.microsoft.com/library/azure/hh967611.aspx), [Интеграция локальных удостоверений с Azure Active Directory](../../active-directory/hybrid/whatis-hybrid-identity.md) и [AzureADHelp](https://msdn.microsoft.com/library/azure/jj151815.aspx) и записях блога [Add your own domain name to Azure AD](https://azure.microsoft.com/blog/20../../windows-azure-now-supports-federation-with-windows-server-active-directory/) (Добавление собственного имени домена в Azure AD) и [Microsoft Azure now supports federation with Windows Server Active Directory](https://azure.microsoft.com/blog/20../../windows-azure-now-supports-federation-with-windows-server-active-directory/) (Microsoft Azure теперь поддерживает федерацию с Windows Server Active Directory).
-2. **Настройка MFA.** Пошаговые инструкции см. в разделах [Что такое Многофакторная идентификация Azure?](../../active-directory/authentication/multi-factor-authentication.md) и [Условный доступ (MFA) и база данных SQL Azure и хранилище данных](conditional-access-configure.md). (Для полного условного доступа требуется Azure Active Directory Premium. Azure AD Standard обеспечивает ограниченные возможности MFA).
+1. **Настройка Azure Active Directory.** Дополнительные сведения см. в статьях [Управление каталогом Azure AD](/previous-versions/azure/azure-services/hh967611(v=azure.100)), [Интеграция локальных удостоверений с Azure Active Directory](../../active-directory/hybrid/whatis-hybrid-identity.md) и [AzureADHelp](/previous-versions/azure/jj151815(v=azure.100)) и записях блога [Add your own domain name to Azure AD](https://azure.microsoft.com/blog/20../../windows-azure-now-supports-federation-with-windows-server-active-directory/) (Добавление собственного имени домена в Azure AD) и [Microsoft Azure now supports federation with Windows Server Active Directory](https://azure.microsoft.com/blog/20../../windows-azure-now-supports-federation-with-windows-server-active-directory/) (Microsoft Azure теперь поддерживает федерацию с Windows Server Active Directory).
+2. **Настройка MFA.** Пошаговые инструкции см. в разделах [Что такое Многофакторная идентификация Azure?](../../active-directory/authentication/concept-mfa-howitworks.md) и [Условный доступ (MFA) и база данных SQL Azure и хранилище данных](conditional-access-configure.md). (Для полного условного доступа требуется Azure Active Directory Premium. Azure AD Standard обеспечивает ограниченные возможности MFA).
 3. **Настройка аутентификация Azure AD** . пошаговые инструкции см. в статьях [Подключение к базе данных sql, SQL управляемый экземпляр или Azure синапсе с использованием проверки подлинности Azure Active Directory](authentication-aad-overview.md).
-4. **Скачивание SSMS.** Скачайте последнюю версию SSMS на клиентский компьютер, воспользовавшись страницей [Скачивание SQL Server Management Studio (SSMS)](https://msdn.microsoft.com/library/mt238290.aspx).
+4. **Скачивание SSMS.** Скачайте последнюю версию SSMS на клиентский компьютер, воспользовавшись страницей [Скачивание SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms).
 
 ## <a name="connecting-by-using-universal-authentication-with-ssms"></a>Подключение с помощью универсальной аутентификации и SSMS
 
@@ -40,7 +40,7 @@ ms.locfileid: "91596167"
 
 [!INCLUDE[ssms-connect-azure-ad](../includes/ssms-connect-azure-ad.md)]
 
-1. Чтобы подключиться с помощью универсальной проверки подлинности, в диалоговом окне **Подключение к серверу** в SQL Server Management Studio (SSMS) выберите **Active Directory-Universal с поддержкой MFA**. (Если отображается параметр **Универсальная проверка подлинности Active Directory**, значит, у вас не самая последняя версия SSMS.)
+1. Чтобы подключиться с помощью универсальной проверки подлинности, в диалоговом окне **Подключение к серверу** в SQL Server Management Studio (SSMS) выберите **Active Directory-Universal с поддержкой MFA** . (Если отображается параметр **Универсальная проверка подлинности Active Directory** , значит, у вас не самая последняя версия SSMS.)
 
    ![Снимок экрана: вкладка "Свойства подключения" в диалоговом окне "соединение с сервером" в s м S. в раскрывающемся списке подключение к базе данных выбрано значение "MyDatabase".](./media/authentication-mfa-ssms-configure/mfa-no-tenant-ssms.png)  
 2. Заполните поле **Имя пользователя** учетными данными Azure Active Directory в формате `user_name@domain.com`.
@@ -50,11 +50,11 @@ ms.locfileid: "91596167"
 
    ![Снимок экрана: вкладка "Свойства подключения" в диалоговом окне "соединение с сервером" в s м S. в раскрывающемся списке подключение к базе данных выбрано значение "MyDatabase".](./media/authentication-mfa-ssms-configure/mfa-no-tenant-ssms.png)
 
-   Однако если вы подключаетесь от имени гостевого пользователя с помощью SSMS 17. x или более ранней версии, необходимо нажать кнопку **Параметры**и в диалоговом окне **Свойства соединения** и заполнить поле **доменное имя AD или идентификатор клиента** .
+   Однако если вы подключаетесь от имени гостевого пользователя с помощью SSMS 17. x или более ранней версии, необходимо нажать кнопку **Параметры** и в диалоговом окне **Свойства соединения** и заполнить поле **доменное имя AD или идентификатор клиента** .
 
    ![Снимок экрана: вкладка "Свойства подключения" диалогового окна "соединение с сервером" в s м S. поле "параметр доменное имя AD" или "идентификатор клиента" заполнено.](./media/authentication-mfa-ssms-configure/mfa-tenant-ssms.png)
 
-4. Выберите **Параметры** и укажите базу данных в диалоговом окне **Параметры** . (Если подключенный пользователь является гостевым пользователем (т. е. joe@outlook.com ), необходимо установить флажок и добавить текущее доменное имя AD или идентификатор клиента как часть параметров. См. статью [Универсальная проверка подлинности с помощью базы данных SQL и Azure синапсе Analytics (поддержка SSMS для MFA)](../database/authentication-mfa-ssms-overview.md). Щелкните **Подключить**.  
+4. Выберите **Параметры** и укажите базу данных в диалоговом окне **Параметры** . (Если подключенный пользователь является гостевым пользователем (т. е. joe@outlook.com ), необходимо установить флажок и добавить текущее доменное имя AD или идентификатор клиента как часть параметров. См. статью [Универсальная проверка подлинности с помощью базы данных SQL и Azure синапсе Analytics (поддержка SSMS для MFA)](../database/authentication-mfa-ssms-overview.md). Щелкните **Подключить** .  
 5. Когда откроется диалоговое окно **Вход в учетную запись** , укажите учетную запись и пароль своего удостоверения Azure Active Directory. Пароль не требуется, если пользователь является частью домена в федерации с Azure AD.
 
    ![Снимок экрана: диалоговое окно входа в учетную запись для базы данных SQL Azure и хранилища данных. Учетная запись и пароль заполняются.](./media/authentication-mfa-ssms-configure/2mfa-sign-in.png)  
@@ -70,15 +70,15 @@ ms.locfileid: "91596167"
 7. В диалоговом окне второй одноразовой операции можно выбрать параметры метода аутентификации. Возможные параметры настраиваются администратором.
 
    ![Снимок экрана: диалоговое окно дополнительной проверки безопасности с параметрами выбора и настройки метода проверки подлинности.](./media/authentication-mfa-ssms-configure/4mfa-verify-1.png)  
-8. Azure Active Directory отправляет вам информациею о подтверждении. Получив код проверки, введите его в поле **Введите проверочный код** и нажмите кнопку **Вход**.
+8. Azure Active Directory отправляет вам информациею о подтверждении. Получив код проверки, введите его в поле **Введите проверочный код** и нажмите кнопку **Вход** .
 
    ![Снимок экрана: диалоговое окно входа в учетную запись для базы данных SQL Azure и хранилища данных с запросом на ввод кода проверки.](./media/authentication-mfa-ssms-configure/5mfa-verify-2.png)  
 
 Обычно по завершении проверки выполняется подключение SSMS при условии, что указаны действительные учетные данные и в брандмауэре разрешен доступ.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Общие сведения о многофакторной проверке подлинности см. [в статье универсальная проверка подлинности с использованием базы данных SQL, sql управляемый экземпляр и Azure синапсе (поддержка SSMS для MFA)](../database/authentication-mfa-ssms-overview.md).  
 - Предоставьте другим пользователям доступ к своей базе данных: [Проверка подлинности и авторизация в базе данных SQL: предоставление доступа](logins-create-manage.md).  
-- Убедитесь, что другие пользователи могут подключаться через брандмауэр: [Настройка правила брандмауэра на уровне сервера с помощью портал Azure](https://docs.microsoft.com/azure/azure-sql/database/firewall-configure)  
-- При использовании универсальной аутентификации **Active Directory с MFA** трассировка ADAL доступна начиная с версии [SSMS 17.3](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms). Трассировка ADAL по умолчанию отключена. Включите ее в меню**Средства**, **Параметры** в разделе **Службы Azure**, **Облако Azure**, **Уровень трассировки для окна вывода ADAL** после включения **Вывод** в меню **Представление**. Эти трассировки доступны в окне вывода при выборе **параметра Azure Active Directory**.
+- Убедитесь, что другие пользователи могут подключаться через брандмауэр: [Настройка правила брандмауэра на уровне сервера с помощью портал Azure](./firewall-configure.md)  
+- При использовании универсальной аутентификации **Active Directory с MFA** трассировка ADAL доступна начиная с версии [SSMS 17.3](/sql/ssms/download-sql-server-management-studio-ssms). Трассировка ADAL по умолчанию отключена. Включите ее в меню **Средства** , **Параметры** в разделе **Службы Azure** , **Облако Azure** , **Уровень трассировки для окна вывода ADAL** после включения **Вывод** в меню **Представление** . Эти трассировки доступны в окне вывода при выборе **параметра Azure Active Directory** .
