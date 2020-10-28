@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: how-to
 ms.date: 07/12/2020
 ms.author: memildin
-ms.openlocfilehash: be2aa75fb7c532d48188493b2ed09adc8b141b6a
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: fe358e35f2d68a3e55e9d9bb4ac57a13f42085e3
+ms.sourcegitcommit: 3e8058f0c075f8ce34a6da8db92ae006cc64151a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92340025"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92629244"
 ---
 # <a name="understanding-just-in-time-jit-vm-access"></a>Основные сведения о JIT-доступе к виртуальной машине
 
@@ -67,6 +67,10 @@ ms.locfileid: "92340025"
 
 ### <a name="what-permissions-are-needed-to-configure-and-use-jit"></a>Какие разрешения необходимы для настройки и использования JIT?
 
+Для JIT-компилятора требуется включить в подписке службу ["защитник Azure" для серверов](defender-for-servers-introduction.md) . 
+
+Роли **Reader** и **секуритиреадер** могут просматривать состояние JIT и параметры.
+
 Если вы хотите создать настраиваемые роли, которые могут работать с JIT, вам понадобятся сведения из следующей таблицы.
 
 > [!TIP]
@@ -83,7 +87,7 @@ ms.locfileid: "92340025"
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 На этой странице объясняется, _почему_ следует использовать JIT-доступ к виртуальной машине. 
 

@@ -11,12 +11,12 @@ ms.author: abnarain
 manager: shwang
 ms.custom: seo-lt-2019
 ms.date: 05/08/2020
-ms.openlocfilehash: 8b6f75204f64f892f80abb4890796551bffd22a7
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 5bdb1c7f0158b0e45145b41d9960c7c55a0d8ead
+ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92368967"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92631875"
 ---
 # <a name="transform-data-using-hadoop-pig-activity-in-azure-data-factory"></a>Преобразование данных с помощью действия Hadoop Pig в фабрике данных Azure
 
@@ -65,7 +65,7 @@ ms.locfileid: "92368967"
 | description         | Текст, описывающий, для чего используется действие | нет       |
 | type                | Для действия Hive используется тип действия HDinsightPig. | Да      |
 | linkedServiceName   | Ссылка на кластер HDInsight, зарегистрированный в качестве связанной службы в фабрике данных. Дополнительные сведения об этой связанной службе см. в статье [Вычислительные среды, поддерживаемые фабрикой данных Azure](compute-linked-services.md). | Да      |
-| scriptLinkedService | Ссылки на связанные службы хранилища Azure, используемые для хранения скрипта Pig, который следует выполнить. Здесь поддерживаются только связанные службы **[Хранилище BLOB-объектов Azure](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage)** и **[ADLS 2-го поколения](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage)** . Если не указать эту связанную службу, будет использоваться связанная служба хранилища Azure, определенная в связанной службе HDInsight. | нет       |
+| scriptLinkedService | Ссылки на связанные службы хранилища Azure, используемые для хранения скрипта Pig, который следует выполнить. Здесь поддерживаются только связанные службы **[Хранилище BLOB-объектов Azure](./connector-azure-blob-storage.md)** и **[ADLS 2-го поколения](./connector-azure-data-lake-storage.md)** . Если не указать эту связанную службу, будет использоваться связанная служба хранилища Azure, определенная в связанной службе HDInsight. | нет       |
 | scriptPath          | Укажите путь к файлу скрипта, который хранится в службе хранилища Azure, на который ссылается scriptLinkedService. В имени файла учитывается регистр знаков. | нет       |
 | getDebugInfo        | Указывает, когда файлы журнала копируются в службу хранилища Azure, используемую кластером HDInsight или определенную scriptLinkedService. Допустимые значения: None (никогда), Always (всегда) или Failure (в случае сбоя). Значение по умолчанию: Нет. | нет       |
 | аргументы           | Указывает массив аргументов для задания Hadoop. Аргументы передаются в качестве аргументов командной строки в каждую задачу. | нет       |

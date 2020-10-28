@@ -10,12 +10,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 05/08/2020
-ms.openlocfilehash: 7cc8e2e02aef9e323da9859ce6fd0bebea2ce036
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 85dd75b2af5d14d835db8aacc415069a2d67298e
+ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92368916"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92631841"
 ---
 # <a name="transform-data-using-hadoop-streaming-activity-in-azure-data-factory"></a>Преобразование данных с помощью действия потоковой передачи Hadoop в фабрике данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -78,7 +78,7 @@ ms.locfileid: "92368916"
 | mapper            | Указывает имя исполняемого файла средства сопоставления. | Да      |
 | reducer           | Указывает имя исполняемого файла средства приведения. | Да      |
 | combiner          | Указывает имя исполняемого файла средства объединения. | Нет       |
-| fileLinkedService | Ссылки на связанные службы хранилища Azure, используемые для хранения программ средств сопоставления, объединения и приведения, которые следует выполнить. Здесь поддерживаются только связанные службы **[Хранилище BLOB-объектов Azure](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage)** и **[ADLS 2-го поколения](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage)** . Если не указать эту связанную службу, будет использоваться связанная служба хранилища Azure, определенная в связанной службе HDInsight. | Нет       |
+| fileLinkedService | Ссылки на связанные службы хранилища Azure, используемые для хранения программ средств сопоставления, объединения и приведения, которые следует выполнить. Здесь поддерживаются только связанные службы **[Хранилище BLOB-объектов Azure](./connector-azure-blob-storage.md)** и **[ADLS 2-го поколения](./connector-azure-data-lake-storage.md)** . Если не указать эту связанную службу, будет использоваться связанная служба хранилища Azure, определенная в связанной службе HDInsight. | Нет       |
 | filePath          | Предоставляет массив путей к программам средств сопоставления, объединения и приведения, хранящийся в службе хранилища Azure, на которую ссылается свойство fileLinkedService. Путь учитывает регистр. | Да      |
 | input             | Указывает путь WASB к входному файлу для средства сопоставления. | Да      |
 | output            | Указывает путь WASB к выходному файлу для средства приведения. | Да      |

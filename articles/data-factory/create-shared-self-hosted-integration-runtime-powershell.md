@@ -11,12 +11,12 @@ author: nabhishek
 manager: anansub
 ms.custom: seo-lt-2019
 ms.date: 06/10/2020
-ms.openlocfilehash: 28836d0b1109952d8cf81c66b44b1f98d9b770bf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8734247a913bdf6a44a9156f6f87705b618f7228
+ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88136054"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92632895"
 ---
 # <a name="create-a-shared-self-hosted-integration-runtime-in-azure-data-factory"></a>Создание общей локальной среды выполнения интеграции в Фабрике данных Azure
 
@@ -55,9 +55,9 @@ ms.locfileid: "88136054"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-- **Подписка Azure**. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу. 
+- **Подписка Azure** . Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу. 
 
-- **Azure PowerShell**. Выполните инструкции из руководства [Install Azure PowerShell on Windows with PowerShellGet](https://docs.microsoft.com/powershell/azure/install-az-ps) (Установка Azure PowerShell в Windows c помощью PowerShellGet). С помощью PowerShell выполните скрипт, чтобы создать локальную среду выполнения интеграции, которую можно использовать совместно с другими фабриками данных. 
+- **Azure PowerShell** . Выполните инструкции из руководства [Install Azure PowerShell on Windows with PowerShellGet](/powershell/azure/install-az-ps) (Установка Azure PowerShell в Windows c помощью PowerShellGet). С помощью PowerShell выполните скрипт, чтобы создать локальную среду выполнения интеграции, которую можно использовать совместно с другими фабриками данных. 
 
 > [!NOTE]  
 > Чтобы получить список регионов Azure, в которых сейчас доступна Фабрика данных, выберите интересующие вас регионы на странице [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=data-factory).
@@ -66,7 +66,7 @@ ms.locfileid: "88136054"
 
 1. Откройте интегрированную среду сценариев (ISE) Windows PowerShell.
 
-1. Создайте переменные. Скопируйте и вставьте следующий скрипт. Замените переменные, такие как **SubscriptionName** и **ResourceGroupName**, фактическими значениями: 
+1. Создайте переменные. Скопируйте и вставьте следующий скрипт. Замените переменные, такие как **SubscriptionName** и **ResourceGroupName** , фактическими значениями: 
 
     ```powershell
     # If input contains a PSH special character, e.g. "$", precede it with the escape character "`" like "`$". 
@@ -99,7 +99,7 @@ ms.locfileid: "88136054"
     > [!NOTE]  
     > Это необязательный шаг. Если у вас уже есть фабрика данных, пропустите этот шаг. 
 
-    Создайте [группу ресурсов Azure](../azure-resource-manager/management/overview.md) с помощью команды [New-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup). Группа ресурсов — это логический контейнер, в котором ресурсы Azure развертываются и администрируются как группа. В следующем примере создается группа ресурсов с именем `myResourceGroup` в расположении WestEurope. 
+    Создайте [группу ресурсов Azure](../azure-resource-manager/management/overview.md) с помощью команды [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup). Группа ресурсов — это логический контейнер, в котором ресурсы Azure развертываются и администрируются как группа. В следующем примере создается группа ресурсов с именем `myResourceGroup` в расположении WestEurope. 
 
     ```powershell
     New-AzResourceGroup -Location $DataFactoryLocation -Name $ResourceGroupName
@@ -155,7 +155,7 @@ Get-AzDataFactoryV2IntegrationRuntimeKey `
 #### <a name="create-another-data-factory"></a>Создание другой фабрикой данных
 
 > [!NOTE]  
-> Это необязательный шаг. Если у вас уже есть фабрика данных, которой вы хотите предоставить общий доступ, пропустите этот шаг. Однако для добавления или удаления назначений ролей в другой фабрике данных необходимы `Microsoft.Authorization/roleAssignments/write` `Microsoft.Authorization/roleAssignments/delete` разрешения и, например [администратор доступа пользователей](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#user-access-administrator) или [владелец](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner).
+> Это необязательный шаг. Если у вас уже есть фабрика данных, которой вы хотите предоставить общий доступ, пропустите этот шаг. Однако для добавления или удаления назначений ролей в другой фабрике данных необходимы `Microsoft.Authorization/roleAssignments/write` `Microsoft.Authorization/roleAssignments/delete` разрешения и, например [администратор доступа пользователей](../role-based-access-control/built-in-roles.md#user-access-administrator) или [владелец](../role-based-access-control/built-in-roles.md#owner).
 
 ```powershell
 $factory = Set-AzDataFactoryV2 -ResourceGroupName $ResourceGroupName `
@@ -216,6 +216,6 @@ Remove-AzDataFactoryV2IntegrationRuntime `
 
 ### <a name="next-steps"></a>Дальнейшие действия
 
-- Ознакомьтесь с [основными понятиями среды выполнения интеграции в Фабрике данных Azure](https://docs.microsoft.com/azure/data-factory/concepts-integration-runtime).
+- Ознакомьтесь с [основными понятиями среды выполнения интеграции в Фабрике данных Azure](./concepts-integration-runtime.md).
 
-- Узнайте, как [создать локальную среду выполнения интеграции на портале Azure](https://docs.microsoft.com/azure/data-factory/create-self-hosted-integration-runtime).
+- Узнайте, как [создать локальную среду выполнения интеграции на портале Azure](./create-self-hosted-integration-runtime.md).

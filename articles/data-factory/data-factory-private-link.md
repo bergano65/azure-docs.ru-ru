@@ -11,18 +11,18 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 09/01/2020
-ms.openlocfilehash: a6faac66edaaf047f5ba025e94a1522c2313f9ed
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: c21b4d746d763f41f4360cf93f67939bcd6dc49f
+ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92546676"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92632691"
 ---
 # <a name="azure-private-link-for-azure-data-factory"></a>Частная ссылка Azure для фабрики данных Azure
 
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-xxx-md.md)]
 
-С помощью частной связи Azure можно подключаться к развертываниям PaaS в Azure с помощью частной конечной точки. Частная конечная точка — это частный IP-адрес в определенной виртуальной сети и подсети. Список развертываний PaaS, поддерживающих функции закрытых ссылок, см. в [документации по частным ссылкам](https://docs.microsoft.com/azure/private-link/). 
+С помощью частной связи Azure можно подключаться к развертываниям PaaS в Azure с помощью частной конечной точки. Частная конечная точка — это частный IP-адрес в определенной виртуальной сети и подсети. Список развертываний PaaS, поддерживающих функции закрытых ссылок, см. в [документации по частным ссылкам](../private-link/index.yml). 
 
 ## <a name="secure-communication-between-customer-networks-and-azure-data-factory"></a>Защита обмена данными между сетями клиентов и фабрикой данных Azure 
 Виртуальную сеть Azure можно настроить как логическое представление сети в облаке. Это обеспечивает следующие преимущества:
@@ -67,7 +67,7 @@ ms.locfileid: "92546676"
 > При создании связанной службы убедитесь, что учетные данные хранятся в хранилище ключей Azure. В противном случае учетные данные не будут работать при включении частного канала в фабрике данных Azure.
 
 ## <a name="set-up-private-link-for-azure-data-factory"></a>Настройка частной ссылки для фабрики данных Azure
-Частные конечные точки можно создать с помощью [портал Azure](https://docs.microsoft.com/azure/private-link/create-private-endpoint-portal).
+Частные конечные точки можно создать с помощью [портал Azure](../private-link/create-private-endpoint-portal.md).
 
 Вы также можете зайти в фабрику данных Azure в портал Azure и создать закрытую конечную точку, как показано ниже:
 
@@ -89,4 +89,3 @@ ms.locfileid: "92546676"
 - [Создание фабрики данных с помощью пользовательского интерфейса фабрики данных Azure](quickstart-create-data-factory-portal.md)
 - [Общие сведения о службе фабрики данных Azure, службе интеграции данных в облаке](introduction.md)
 - [Визуальная разработка в фабрике данных Azure](author-visually.md)
-

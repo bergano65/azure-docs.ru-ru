@@ -10,12 +10,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 07/06/2020
 ms.author: jingwang
-ms.openlocfilehash: 6b79b2722438403e29851d3a87929ddc67eef727
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: 117b0db4f04c3fd631f6692d288945019507f5c6
+ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92123755"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92632810"
 ---
 # <a name="managed-identity-for-data-factory"></a>Управляемое удостоверение для Фабрики данных
 
@@ -39,9 +39,9 @@ ms.locfileid: "92123755"
 
 Управляемое удостоверение для фабрики данных создается следующим образом:
 
-- При создании фабрики данных с помощью **портал Azure или PowerShell**управляемое удостоверение всегда будет создаваться автоматически.
-- При создании фабрики данных с помощью **пакета SDK**управляемое удостоверение создается только в том случае, если в объекте фабрики будет указано "Identity = New FactoryIdentity ()" для создания. Пример см. в инструкциях по [созданию фабрики данных из краткого руководства по .NET](quickstart-create-data-factory-dot-net.md#create-a-data-factory).
-- При создании фабрики данных с помощью **REST API**управляемое удостоверение будет создано только при указании раздела Identity в тексте запроса. Пример см. в инструкциях по [созданию фабрики данных из краткого руководства по REST](quickstart-create-data-factory-rest-api.md#create-a-data-factory).
+- При создании фабрики данных с помощью **портал Azure или PowerShell** управляемое удостоверение всегда будет создаваться автоматически.
+- При создании фабрики данных с помощью **пакета SDK** управляемое удостоверение создается только в том случае, если в объекте фабрики будет указано "Identity = New FactoryIdentity ()" для создания. Пример см. в инструкциях по [созданию фабрики данных из краткого руководства по .NET](quickstart-create-data-factory-dot-net.md#create-a-data-factory).
+- При создании фабрики данных с помощью **REST API** управляемое удостоверение будет создано только при указании раздела Identity в тексте запроса. Пример см. в инструкциях по [созданию фабрики данных из краткого руководства по REST](quickstart-create-data-factory-rest-api.md#create-a-data-factory).
 
 Если у фабрики данных нет управляемого удостоверения, связанного после [получения управляемой](#retrieve-managed-identity) инструкции по идентификации, вы можете явно создать ее, обновив фабрику данных с помощью инициатора удостоверений программным путем.
 
@@ -79,7 +79,7 @@ ProvisioningState : Succeeded
 PATCH https://management.azure.com/subscriptions/<subsID>/resourceGroups/<resourceGroupName>/providers/Microsoft.DataFactory/factories/<data factory name>?api-version=2018-06-01
 ```
 
-**Текст запроса**: add "identity": { "type": "SystemAssigned" }.
+**Текст запроса** : add "identity": { "type": "SystemAssigned" }.
 
 ```json
 {
@@ -92,7 +92,7 @@ PATCH https://management.azure.com/subscriptions/<subsID>/resourceGroups/<resour
 }
 ```
 
-**Ответ**. управляемое удостоверение создается автоматически, а раздел "Identity" заполняется соответствующим образом.
+**Ответ** . управляемое удостоверение создается автоматически, а раздел "Identity" заполняется соответствующим образом.
 
 ```json
 {
@@ -201,7 +201,7 @@ Type                  : ServicePrincipal
 GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}?api-version=2018-06-01
 ```
 
-**Ответ**. в следующем примере вы получите ответ, как показано ниже. Раздел "Identity" заполняется соответствующим образом.
+**Ответ** . в следующем примере вы получите ответ, как показано ниже. Раздел "Identity" заполняется соответствующим образом.
 
 ```json
 {
@@ -246,10 +246,10 @@ GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В следующих разделах представлены сведения о том, когда и как использовать управляемое удостоверение фабрики данных.
 
 - [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md)
 - [Копирование данных в Azure Data Lake Storage Gen1 и из него с помощью фабрики данных Azure](connector-azure-data-lake-store.md)
 
-Дополнительные сведения об управляемых удостоверениях для ресурсов Azure, на которых основан управляемый идентификатор фабрики данных, см. в статье [управляемые удостоверения для ресурсов Azure](/azure/active-directory/managed-identities-azure-resources/overview) . 
+Дополнительные сведения об управляемых удостоверениях для ресурсов Azure, на которых основан управляемый идентификатор фабрики данных, см. в статье [управляемые удостоверения для ресурсов Azure](../active-directory/managed-identities-azure-resources/overview.md) .

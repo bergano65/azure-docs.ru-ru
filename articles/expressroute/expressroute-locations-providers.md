@@ -5,14 +5,14 @@ services: expressroute
 author: duongau
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 09/29/2020
+ms.date: 10/26/2020
 ms.author: duau
-ms.openlocfilehash: 820fec5fd782d66e5b681f5fbb9bbb8f8d4f6648
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: b2890c8f37106ef124fe1a11206d13127d93eed1
+ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92106524"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92633575"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Партнеры и одноранговые расположения ExpressRoute
 
@@ -32,7 +32,7 @@ ms.locfileid: "92106524"
 Регионы Azure — это глобальные центры обработки данных, в которых размещаются ресурсы вычислений, сети и хранилища Azure. При создании ресурса Azure клиенту необходимо выбрать расположение ресурса. Расположение ресурса определяет, в каком центре обработки данных Azure (или в какой зоне доступности) создается этот ресурс.
 
 ## <a name="expressroute-locations"></a>Расположения ExpressRoute
-Расположения ExpressRoute (которые иногда называют расположениями пиринга) — это объекты совместного размещения, в которых установлены устройства Microsoft Enterprise Edge (MSEE). Расположения ExpressRoute являются точкой входа в сеть корпорации Майкрософт. Они распределены по всему миру, предоставляя клиентам возможность подключаться к сети корпорации Майкрософт в любом регионе. Именно в этих расположениях партнеры ExpressRoute и клиенты ExpressRoute Direct создают перекрестные подключения к сети корпорации Майкрософт. В общем случае расположения ExpressRoute не обязаны соответствовать регионам Azure. Например, клиент может создать канал ExpressRoute в расположении пиринга *Сиэтл* для доступа к ресурсу в регионе *Восточная часть США*.
+Расположения ExpressRoute (которые иногда называют расположениями пиринга) — это объекты совместного размещения, в которых установлены устройства Microsoft Enterprise Edge (MSEE). Расположения ExpressRoute являются точкой входа в сеть корпорации Майкрософт. Они распределены по всему миру, предоставляя клиентам возможность подключаться к сети корпорации Майкрософт в любом регионе. Именно в этих расположениях партнеры ExpressRoute и клиенты ExpressRoute Direct создают перекрестные подключения к сети корпорации Майкрософт. В общем случае расположения ExpressRoute не обязаны соответствовать регионам Azure. Например, клиент может создать канал ExpressRoute в расположении пиринга *Сиэтл* для доступа к ресурсу в регионе *Восточная часть США* .
 
 Вы сможете получить доступ ко всем службам Azure во всех регионах соответствующего геополитического региона, если вы подключены по меньшей мере к одному расположению ExpressRoute в этом регионе. 
 
@@ -69,7 +69,7 @@ ms.locfileid: "92106524"
 
 В таблице ниже приведены расположения для подключения и поставщики услуг в каждом расположении. Поставщики услуг и расположения, в которых они предоставляют услуги, перечислены в разделе [Расположения поставщиков услуг подключения](expressroute-locations.md).
 
-* **Локальные регионы Azure** — это те, к которым могут получить доступ сети [ExpressRoute ценовой категории "Локальный"](expressroute-faqs.md) в каждом расположении пиринга. **н/д** указывает, что локальная сеть ExpressRoute недоступна в этом расположении пиринга.
+* **Локальные регионы Azure**  — это те, к которым могут получить доступ сети [ExpressRoute ценовой категории "Локальный"](expressroute-faqs.md) в каждом расположении пиринга. **н/д** указывает, что локальная сеть ExpressRoute недоступна в этом расположении пиринга.
 
 * **Зоны** определяют [цены](https://azure.microsoft.com/pricing/details/expressroute/).
 
@@ -111,7 +111,7 @@ ms.locfileid: "92106524"
 | **Марсель** |[Interxion MRS1](https://www.interxion.com/Locations/marseille/) | 1 | Южная Франция | Недоступно | DE-CIX, GEANT, Interxion, Jaguar Network, Ooredoo Cloud Connect |
 | **Мельбурн** | [NextDC M1](https://www.nextdc.com/data-centres/m1-melbourne-data-centre) | 2 | Юго-Восточная часть Австралии | 10G, 100G | AARNet, Devoli, Equinix, Megaport, NEXTDC, Optus, Telstra Corporation, TPG Telecom |
 | **Майами** | [Equinix MI1](https://www.equinix.com/locations/americas-colocation/united-states-colocation/miami-data-centers/mi1/) | 1 | Недоступно | 10G, 100G | Claro, C3ntro, Equinix, Megaport, Neutrona Networks |
-| **Милан** | [IRIDEOS](https://irideos.it/en/data-centers/) | 1 | Недоступно | 10G | Colt, Equinix, Ретелит |
+| **Милан** | [IRIDEOS](https://irideos.it/en/data-centers/) | 1 | Недоступно | 10G | Colt, Equinix, Фаствеб, Ретелит |
 | **Миннеаполисе** | [Кологикс MIN1](https://www.cologix.com/data-centers/minneapolis/min1/) | 1 | Недоступно | 10G, 100G | Cologix |
 | **Монреаль** | [Cologix MTL3](https://www.cologix.com/data-centers/montreal/mtl3/) | 1 | Недоступно | 10G, 100G | Bell для Канады, Кологикс, Фибреноире, Orange, Телус, Zayo |
 | **Мумбай** | Tata Communications | 2 | Западная Индия | 10G | DE-ЦИКС, Global Клаудксчанже (ГККС), зависимость ЖИО, Сифи, Tata Communications, Verizon |

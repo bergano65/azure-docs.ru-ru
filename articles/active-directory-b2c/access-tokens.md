@@ -7,20 +7,20 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 10/19/2020
+ms.date: 10/26/2020
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: b6adb06f22013e68987f3315d52e3594fba63907
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 937041bbb48f112e2c8ed7d222dc7c7ef7ea8d81
+ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92309013"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92631399"
 ---
 # <a name="request-an-access-token-in-azure-active-directory-b2c"></a>Запрос маркера доступа в Azure Active Directory B2C
 
-*Маркер доступа* содержит утверждения, которые можно использовать в Azure Active Directory B2C (Azure AD B2C) для определения разрешений, предоставленных API-интерфейсам. При вызове сервера ресурсов маркер доступа должен присутствовать в HTTP-запросе. В ответах из Azure AD B2C маркер доступа обозначается как **access_token**.
+*Маркер доступа* содержит утверждения, которые можно использовать в Azure Active Directory B2C (Azure AD B2C) для определения разрешений, предоставленных API-интерфейсам. При вызове сервера ресурсов маркер доступа должен присутствовать в HTTP-запросе. В ответах из Azure AD B2C маркер доступа обозначается как **access_token** .
 
 В этой статье содержатся сведения о запросе маркер доступа для веб-приложения и веб-API. Дополнительные сведения о маркерах в Azure AD B2C см. в статье с [обзором маркеров в Azure Active Directory B2C](tokens-overview.md).
 
@@ -56,8 +56,8 @@ scope=https%3A%2F%2Fcontoso.onmicrosoft.com%2Fapi%2Fread%20openid%20offline_acce
 
 Стандартное утверждение OpenID Connect определяет несколько специальных значений области. Следующие области представляют разрешение на доступ к профилю пользователя:
 
-- **openid** — запрашивает маркер идентификатора.
-- **offline_access** — запрашивает маркер обновления с помощью [потоков кода аутентификации](authorization-code-flow.md).
+- **openid**  — запрашивает маркер идентификатора.
+- **offline_access**  — запрашивает маркер обновления с помощью [потоков кода аутентификации](authorization-code-flow.md).
 - **00000000-0000-0000-0000-000000000000** — использование идентификатора клиента в качестве области означает, что приложению требуется маркер доступа, который можно использовать для собственной службы или веб-API, представленного одним и тем же идентификатором клиента.
 
 Если параметр **response_type** в запросе `/authorize` включает `token`, параметр **scope** должен содержать хотя бы одну область ресурса (отличную от `openid` и `offline_access`), которая будет предоставлена. В противном случае запрос `/authorize` завершается ошибкой.
@@ -71,10 +71,10 @@ scope=https%3A%2F%2Fcontoso.onmicrosoft.com%2Fapi%2Fread%20openid%20offline_acce
 - `<tenant-name>` — имя вашего клиента Azure Active Directory B2C.
 - `<policy-name>` — имя вашей пользовательской политики или потока пользователя.
 - `<application-ID>` — идентификатор веб-приложения, которое вы зарегистрировали для поддержки потока пользователя.
-- `<redirect-uri>` — **URI перенаправления**, который вы ввели при регистрации клиентского приложения.
+- `<redirect-uri>` — **URI перенаправления** , который вы ввели при регистрации клиентского приложения.
 
 ```http
-GET https://<tenant-name>.b2clogin.com/tfp/<tenant-name>.onmicrosoft.com/<policy-name>/oauth2/v2.0/authorize?
+GET https://<tenant-name>.b2clogin.com/<tenant-name>.onmicrosoft.com/<policy-name>/oauth2/v2.0/authorize?
 client_id=<application-ID>
 &nonce=anyRandomValue
 &redirect_uri=https://jwt.ms

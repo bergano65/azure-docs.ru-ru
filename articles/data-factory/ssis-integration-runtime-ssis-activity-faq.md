@@ -11,12 +11,12 @@ ms.reviewer: sawinark
 manager: shwang
 ms.custom: seo-lt-2019
 ms.date: 04/15/2019
-ms.openlocfilehash: 9b331ccee183ec101cf3449f12b4f656a1325819
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4c817194bbe0e4cf211992920bad9deb40bf05f4
+ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84118092"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92632215"
 ---
 # <a name="troubleshoot-package-execution-in-the-ssis-integration-runtime"></a>Устранение неполадок при выполнении пакетов в среде выполнения интеграции SSIS
 
@@ -28,7 +28,7 @@ ms.locfileid: "84118092"
 
 Используйте портал фабрики данных Azure для проверки выходных данных действия выполнения пакета служб SSIS. Выходные данные включают результат выполнения, сообщения об ошибках и идентификатор операции. Дополнительные сведения см. [в разделе Мониторинг конвейера](how-to-invoke-ssis-package-ssis-activity.md#monitor-the-pipeline).
 
-Используйте каталог SSIS (SSISDB) для проверки подробных журналов выполнения. Дополнительные сведения см. в разделе [мониторинг выполняемых пакетов и других операций](https://docs.microsoft.com/sql/integration-services/performance/monitor-running-packages-and-other-operations?view=sql-server-2017).
+Используйте каталог SSIS (SSISDB) для проверки подробных журналов выполнения. Дополнительные сведения см. в разделе [мониторинг выполняемых пакетов и других операций](/sql/integration-services/performance/monitor-running-packages-and-other-operations?view=sql-server-2017).
 
 ## <a name="common-errors-causes-and-solutions"></a>Распространенные ошибки, причины и решения
 
@@ -56,7 +56,7 @@ ms.locfileid: "84118092"
 
 ### <a name="error-message-the-connection--is-not-found"></a>Сообщение об ошибке: "подключение"... не найден "
 
-Эту ошибку может вызывать известная проблема, существующая в предыдущих версиях SQL Server Management Studio (SSMS). Если пакет содержит пользовательский компонент (например, пакет дополнительных компонентов Azure для MSSQL Integration Services или компоненты партнера), который не установлен на компьютере, на котором используется среда SSMS для развертывания, эта среда удалит компонент и выдаст сообщение об ошибке. Обновите [среду SSMS](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) до последней версии с исправленной проблемой.
+Эту ошибку может вызывать известная проблема, существующая в предыдущих версиях SQL Server Management Studio (SSMS). Если пакет содержит пользовательский компонент (например, пакет дополнительных компонентов Azure для MSSQL Integration Services или компоненты партнера), который не установлен на компьютере, на котором используется среда SSMS для развертывания, эта среда удалит компонент и выдаст сообщение об ошибке. Обновите [среду SSMS](/sql/ssms/download-sql-server-management-studio-ssms) до последней версии с исправленной проблемой.
 
 ### <a name="error-messagessis-executor-exit-code--1073741819"></a>Сообщение об ошибке: "код выхода исполнителя служб SSIS:-1073741819".
 
@@ -91,17 +91,17 @@ ms.locfileid: "84118092"
 Эта ошибка возникает, когда при выполнении пакета не удается найти файл на локальном диске в среде выполнения интеграции SSIS. Попробуйте выполнить следующие действия:
 * Не используйте абсолютный путь в пакете, который выполняется в среде выполнения интеграции SSIS. Использовать текущий рабочий каталог выполнения (.) или временную папку (% TEMP%) Используйте.
 * Если необходимо сохранить некоторые файлы на узлах среды выполнения интеграции SSIS, подготовьте их, как описано в разделе [Настройка установки](how-to-configure-azure-ssis-ir-custom-setup.md). После завершения выполнения все файлы в рабочем каталоге будут очищены.
-* Используйте службу файлов Azure вместо хранения файла в узле среды выполнения интеграции SSIS. Дополнительные сведения см. в статье [Использование файловых ресурсов Azure](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-files-file-shares?view=sql-server-2017#use-azure-file-shares).
+* Используйте службу файлов Azure вместо хранения файла в узле среды выполнения интеграции SSIS. Дополнительные сведения см. в статье [Использование файловых ресурсов Azure](/sql/integration-services/lift-shift/ssis-azure-files-file-shares?view=sql-server-2017#use-azure-file-shares).
 
 ### <a name="error-message-the-database-ssisdb-has-reached-its-size-quota"></a>Сообщение об ошибке: "база данных" SSISDB "достигла квоты на размер"
 
 Возможная причина заключается в том, что база данных SSISDB, созданная в базе данных SQL Azure или в SQL Управляемый экземпляр, достигла своей квоты. Попробуйте выполнить следующие действия:
-* Попробуйте увеличить число единиц транзакций базы данных. Подробные сведения см. в [ограничениях базы данных SQL для логического сервера](https://docs.microsoft.com/azure/sql-database/sql-database-resource-limits-logical-server).
+* Попробуйте увеличить число единиц транзакций базы данных. Подробные сведения см. в [ограничениях базы данных SQL для логического сервера](../azure-sql/database/resource-limits-logical-server.md).
 * Проверьте, создает ли ваш пакет много журналов. В этом случае можно настроить задание обработки эластичных баз данных для очистки этих журналов. См. подробнее об [очистке журналов SSISDB с помощью заданий обработки эластичных баз данных Azure](how-to-clean-up-ssisdb-logs-with-elastic-jobs.md).
 
 ### <a name="error-message-the-request-limit-for-the-database-is--and-has-been-reached"></a>Сообщение об ошибке: "предельное число запросов для базы данных —... и достигнут ".
 
-Если в среде выполнения интеграции SSIS выполняется параллельное выполнение множества пакетов, эта ошибка может возникать из-за того, что SSISDB достигнет предельного количества запросов. Чтобы устранить эту проблему, попробуйте увеличить DTC в SSISDB. Подробные сведения см. в [ограничениях базы данных SQL для логического сервера](https://docs.microsoft.com/azure/sql-database/sql-database-resource-limits-logical-server).
+Если в среде выполнения интеграции SSIS выполняется параллельное выполнение множества пакетов, эта ошибка может возникать из-за того, что SSISDB достигнет предельного количества запросов. Чтобы устранить эту проблему, попробуйте увеличить DTC в SSISDB. Подробные сведения см. в [ограничениях базы данных SQL для логического сервера](../azure-sql/database/resource-limits-logical-server.md).
 
 ### <a name="error-message-ssis-operation-failed-with-unexpected-operation-status-"></a>Сообщение об ошибке: "сбой операции служб SSIS с непредвиденным состоянием операции:..."
 
@@ -113,7 +113,7 @@ ms.locfileid: "84118092"
 
 ### <a name="error-message-there-is-no-active-worker"></a>Сообщение об ошибке: "нет активного рабочего процесса".
 
-Эта ошибка обычно означает, что среда выполнения интеграции SSIS имеет неработоспособное состояние. Проверьте портал Azure состояния и подробных сведений об ошибках. Дополнительные сведения см. в разделе [Среда выполнения интеграции Azure SSIS](https://docs.microsoft.com/azure/data-factory/monitor-integration-runtime#azure-ssis-integration-runtime).
+Эта ошибка обычно означает, что среда выполнения интеграции SSIS имеет неработоспособное состояние. Проверьте портал Azure состояния и подробных сведений об ошибках. Дополнительные сведения см. в разделе [Среда выполнения интеграции Azure SSIS](./monitor-integration-runtime.md#azure-ssis-integration-runtime).
 
 ### <a name="error-message-your-integration-runtime-cannot-be-upgraded-and-will-eventually-stop-working-since-we-cannot-access-the-azure-blob-container-you-provided-for-custom-setup"></a>Сообщение об ошибке: "не удается обновить среду выполнения интеграции, и в конечном итоге она перестанет работать, так как мы не можем получить доступ к контейнеру больших двоичных объектов Azure, предоставленному для выборочной установки".
 
@@ -123,16 +123,16 @@ ms.locfileid: "84118092"
 
 Одна из возможных причин заключается в том, что имя пользователя или пароль с включенной многофакторной идентификацией Azure настроены для проверки подлинности Azure Analysis Services. Эта проверка подлинности не поддерживается в среде выполнения интеграции SSIS. Попробуйте использовать субъект-службу для проверки подлинности Azure Analysis Services:
 
-1. Подготовьте субъект-службу, как описано в статье [Автоматизация с помощью субъектов-служб](https://docs.microsoft.com/azure/analysis-services/analysis-services-service-principal).
-2. В диспетчере соединений настройте **использовать указанные имя пользователя и пароль**: задайте **AppID** в качестве имени пользователя и **clientSecret** в качестве пароля.
+1. Подготовьте субъект-службу, как описано в статье [Автоматизация с помощью субъектов-служб](../analysis-services/analysis-services-service-principal.md).
+2. В диспетчере соединений настройте **использовать указанные имя пользователя и пароль** : задайте **AppID** в качестве имени пользователя и **clientSecret** в качестве пароля.
 
 ### <a name="error-message-adonet-source-has-failed-to-acquire-the-connection-guid-with-the-following-error-message-login-failed-for-user-nt-authorityanonymous-logon-when-using-a-managed-identity"></a>Сообщение об ошибке: "источнику АДОНЕТ не удалось получить подключение {GUID} со следующим сообщением об ошибке: при использовании управляемого удостоверения не удалось войти в систему пользователя NT AUTHORITY\ANONYMOUS logon»" "
 
-Убедитесь, что метод проверки подлинности диспетчера соединений не настроен как **Active Directory проверки подлинности** с помощью пароля, если параметр *Коннектусингманажедидентити* имеет **значение true**. Вместо этого можно настроить **проверку подлинности SQL** , что не учитывается, если задан параметр *коннектусингманажедидентити* .
+Убедитесь, что метод проверки подлинности диспетчера соединений не настроен как **Active Directory проверки подлинности** с помощью пароля, если параметр *Коннектусингманажедидентити* имеет **значение true** . Вместо этого можно настроить **проверку подлинности SQL** , что не учитывается, если задан параметр *коннектусингманажедидентити* .
 
 ### <a name="error-message-0xc020801f-at--odata-source--cannot-acquire-a-managed-connection-from-the-run-time-connection-manager"></a>Сообщение об ошибке: "0xC020801F at..., источник OData [...]: не удается получить управляемое соединение от диспетчера соединений времени выполнения"
 
-Одна из возможных причин заключается в том, что протокол TLS не включен в среде выполнения интеграции SSIS, который необходим для источника OData. Включить TLS в среде выполнения интеграции служб SSIS можно с помощью команды настроить установку. Дополнительные сведения см. в [подсоединении Project Online OData из служб SSIS](https://docs.microsoft.com/office365/troubleshoot/cant-connect-project-online-odata-from-ssis) и [настройке программы установки для среды выполнения интеграции Azure SSIS](how-to-configure-azure-ssis-ir-custom-setup.md).
+Одна из возможных причин заключается в том, что протокол TLS не включен в среде выполнения интеграции SSIS, который необходим для источника OData. Включить TLS в среде выполнения интеграции служб SSIS можно с помощью команды настроить установку. Дополнительные сведения см. в [подсоединении Project Online OData из служб SSIS](/office365/troubleshoot/cant-connect-project-online-odata-from-ssis) и [настройке программы установки для среды выполнения интеграции Azure SSIS](how-to-configure-azure-ssis-ir-custom-setup.md).
 
 ### <a name="error-message-request-staging-task-with-operation-guid--fail-since-error-failed-to-dispatch-staging-operation-with-error-message-microsoftsqlserverintegrationservicesaisagentcoreaisagentexception-failed-to-load-data-proxy"></a>Сообщение об ошибке: "запрос промежуточной задачи с GUID операции... сбой с ошибкой: не удалось отправить промежуточную операцию. сообщение об ошибке: Microsoft. SqlServer. IntegrationServices. Аисаженткоре. Аисажентексцептион: не удалось загрузить прокси-сервер данных ".
 
@@ -154,7 +154,7 @@ ms.locfileid: "84118092"
 
 * Возможная причина и рекомендуемое действие.
   * Если имеется также предупреждающее сообщение "компонент не поддерживает использование диспетчера соединений с параметром Коннектбипрокси value true" в журнале выполнения, это означает, что диспетчер соединений используется для компонента, который еще не поддерживал "Коннектбипрокси". Поддерживаемые компоненты можно найти на странице [настройка Self-Hosted IR в качестве прокси-сервера для Azure-SSIS IR в ADF](self-hosted-integration-runtime-proxy-ssis.md#enable-ssis-packages-to-connect-by-proxy) .
-  * Журнал выполнения можно найти в [отчете SSMS](https://docs.microsoft.com/sql/integration-services/performance/monitor-running-packages-and-other-operations?view=sql-server-2017#reports) или в папке журнала, указанной в действии выполнения пакета служб SSIS.
+  * Журнал выполнения можно найти в [отчете SSMS](/sql/integration-services/performance/monitor-running-packages-and-other-operations?view=sql-server-2017#reports) или в папке журнала, указанной в действии выполнения пакета служб SSIS.
   * Виртуальную сеть можно также использовать для доступа к локальным данным в качестве альтернативы. Дополнительные сведения можно найти в привязке [среды выполнения интеграции Azure SSIS к виртуальной сети](join-azure-ssis-integration-runtime-virtual-network.md) .
 
 ### <a name="error-message-staging-task-status-failed-staging-task-error-errorcode-2906-errormessage-package-execution-failed-output-operationerrormessages-ssis-executor-exit-code--1n-loglocation-ssistelemetryexecutionlog-effectiveintegrationruntime--executionduration--durationinqueue--integrationruntimequeue--"></a>Сообщение об ошибке: "состояние промежуточной задачи: сбой. Ошибка промежуточной задачи: код ошибки: 2906, ErrorMessage: сбой выполнения пакета., выходные данные: {"Оператионеррормессажес": "службы SSIS Exit код выхода:-1. \ n", "LogLocation": "... \\ Ссистелеметри \\ ExecutionLog \\ ... "," еффективеинтегратионрунтиме ":"... "," ексекутиондуратион ":...," дуратионинкуеуе ": {" интегратионрунтимекуеуе ":...}}"
@@ -165,7 +165,7 @@ ms.locfileid: "84118092"
 
 * Возможная причина и рекомендуемое действие.
   * Действие хранимой процедуры ADF или операция поиска используются для запуска выполнения пакета служб SSIS. Команда t-SQL может вызвать временную ошибку и запустить повторное выполнение, что приведет к выполнению нескольких пакетов.
-  * Вместо этого используйте действие Ексекутессиспаккаже, которое гарантирует, что выполнение пакета не будет выполняться повторно, если число повторных попыток не задается пользователем. Подробные сведения можно найти по адресу [https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-ssis-activity](https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-ssis-activity)
+  * Вместо этого используйте действие Ексекутессиспаккаже, которое гарантирует, что выполнение пакета не будет выполняться повторно, если число повторных попыток не задается пользователем. Подробные сведения можно найти по адресу [https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-ssis-activity](./how-to-invoke-ssis-package-ssis-activity.md)
   * Уточните команду t-SQL, чтобы выполнить повторный запуск, проверив, активировано ли уже выполнение.
 
 ### <a name="package-execution-takes-too-long"></a>Выполнение пакета занимает слишком много времени
@@ -187,7 +187,7 @@ ms.locfileid: "84118092"
 
 * Убедитесь, что среда выполнения интеграции SSIS находится в том же регионе, что и источник данных и назначение.
 
-* Задайте уровень ведения журнала выполнения пакета для **производительности** , чтобы получить сведения о продолжительности каждого компонента во время выполнения. Дополнительные сведения см. в разделе [ведение журнала Integration Services (SSIS)](https://docs.microsoft.com/sql/integration-services/performance/integration-services-ssis-logging).
+* Задайте уровень ведения журнала выполнения пакета для **производительности** , чтобы получить сведения о продолжительности каждого компонента во время выполнения. Дополнительные сведения см. в разделе [ведение журнала Integration Services (SSIS)](/sql/integration-services/performance/integration-services-ssis-logging).
 
 * Проверьте производительность узла IR в портал Azure:
   * Сведения о мониторинге среды выполнения интеграции SSIS см. в разделе [Среда выполнения интеграции Azure SSIS](monitor-integration-runtime.md#azure-ssis-integration-runtime).

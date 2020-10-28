@@ -11,12 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: e94445a6cb16eacb496daedbec21379928a4dafd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b5df2f9cd0a47e5a89d7ff2eb12aefe593cae7a8
+ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84194462"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92631484"
 ---
 # <a name="use-templates-to-create-azure-data-factory-entities"></a>Создание сущностей фабрики данных Azure с помощью шаблонов
 > [!NOTE]
@@ -228,12 +228,12 @@ ms.locfileid: "84194462"
 }
 ```
 ## <a name="parameterizing-data-factory-template"></a>Параметризация шаблона фабрики данных
-Рекомендации по параметризации см. в статье [Описание структуры и синтаксиса шаблонов Azure Resource Manager](../../azure-resource-manager/resource-manager-template-best-practices.md). Как правило, следует использовать как можно меньше параметров, особенно если вместо них можно использовать переменные. Предоставляйте параметры только в следующих сценариях:
+Рекомендации по параметризации см. в статье [Описание структуры и синтаксиса шаблонов Azure Resource Manager](../../azure-resource-manager/templates/template-best-practices.md). Как правило, следует использовать как можно меньше параметров, особенно если вместо них можно использовать переменные. Предоставляйте параметры только в следующих сценариях:
 
 * параметры различаются в зависимости от среды (например, среда разработки, тестирования и рабочая среда);
 * секретов (например, паролей);
 
-Если при развертывании сущностей фабрики данных Azure с помощью шаблонов секреты необходимо извлечь из [хранилища ключей Azure](../../key-vault/general/overview.md), укажите **хранилище ключей** и **секретное имя**, как показано в следующем примере:
+Если при развертывании сущностей фабрики данных Azure с помощью шаблонов секреты необходимо извлечь из [хранилища ключей Azure](../../key-vault/general/overview.md), укажите **хранилище ключей** и **секретное имя** , как показано в следующем примере:
 
 ```JSON
 "parameters": {
