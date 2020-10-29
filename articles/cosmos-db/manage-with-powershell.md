@@ -7,16 +7,16 @@ ms.topic: how-to
 ms.date: 10/13/2020
 ms.author: mjbrown
 ms.custom: seodec18
-ms.openlocfilehash: c56f3b561dbced9f00bb2616f5709a51fa02fbcb
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 3b5cc1dd61b4f01e40c1cc812e93a448855ad92d
+ms.sourcegitcommit: dd45ae4fc54f8267cda2ddf4a92ccd123464d411
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92481012"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92926518"
 ---
 # <a name="manage-azure-cosmos-db-core-sql-api-resources-using-powershell"></a>Управление ресурсами API Azure Cosmos DB Core (SQL) с помощью PowerShell
 
-В следующем разделе описано, как использовать PowerShell для создания скриптов и автоматизации управления ресурсами API Azure Cosmos DB Core (SQL), включая учетную запись Cosmos, базу данных, контейнер и пропускную способность. Командлеты PowerShell для других интерфейсов API см. в [примерах](powershell-samples-cassandra.md)PowerShell для Cassandra, [примеры PowerShell для API MongoDB](powershell-samples-mongodb.md), [примеры PowerShell для Gremlin](powershell-samples-gremlin.md), [примеры PowerShell для таблицы](powershell-samples-table.md)
+В следующем разделе описано, как использовать PowerShell для создания скриптов и автоматизации управления ресурсами API Azure Cosmos DB Core (SQL), включая учетную запись Cosmos, базу данных, контейнер и пропускную способность. Командлеты PowerShell для других интерфейсов API см. в статьях [Примеры PowerShell для Cassandra](powershell-samples-cassandra.md), [Примеры PowerShell для API MongoDB](powershell-samples-mongodb.md), [Примеры PowerShell для Gremlin](powershell-samples-gremlin.md) и [Примеры PowerShell для таблиц](powershell-samples-table.md).
 
 > [!NOTE]
 > В примерах этой статьи используются командлеты управления [Az.CosmosDB](/powershell/module/az.cosmosdb). Сведения о последних изменениях см. на странице справочника по API [Az.CosmosDB](/powershell/module/az.cosmosdb).
@@ -78,7 +78,7 @@ New-AzCosmosDBAccount `
 * `$resourceGroupName` — группа ресурсов Azure, куда нужно развернуть учетную запись Cosmos. Этот ресурс должен уже существовать.
 * `$locations` Регионы для учетной записи базы данных — регион, в котором `FailoverPriority 0` находится регион записи.
 * `$accountName`: имя учетной записи Azure Cosmos. Имя должно быть уникальным, состоять из букв нижнего регистра, содержать только буквенно-цифровые символы и символ "-", а также иметь длину от 3 до 31 символа.
-* `$apiKind` — тип учетной записи Cosmos, которую нужно создать. Дополнительные сведения см. в описании [API в Cosmos DB](introduction.md#develop-applications-on-cosmos-db-using-popular-open-source-software-oss-apis).
+* `$apiKind` — тип учетной записи Cosmos, которую нужно создать. Дополнительные сведения см. в описании [API в Cosmos DB](introduction.md#simplified-application-development).
 * `$consistencyPolicy`, `$maxStalenessInterval` и `$maxStalenessPrefix` — уровень согласованности и параметры по умолчанию для учетной записи Azure Cosmos. Дополнительные сведения см. в статье о [настраиваемых уровнях согласованности в Azure Cosmos DB](consistency-levels.md).
 
 Для учетных записей Azure Cosmos можно настроить брандмауэр IP-адресов, конечные точки службы для виртуальной сети и (или) частные конечные точки. Сведения о настройке брандмауэра IP-адресов для Azure Cosmos DB см. в [этой статье](how-to-configure-firewall.md). Сведения о включении конечных точек службы для Azure Cosmos DB см. в статье [Настройка доступа из виртуальных сетей](how-to-configure-vnet-service-endpoint.md). Сведения о включении частных конечных точек для Azure Cosmos DB см. в статье [Настройка доступа из частных конечных точек](how-to-configure-private-endpoints.md).

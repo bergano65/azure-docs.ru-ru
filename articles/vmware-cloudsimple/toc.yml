@@ -1,7 +1,7 @@
 - name: Решение VMware от CloudSimple
   href: ./index.md
   items:
-    - name: Обзор
+    - name: Общие сведения
       items:
         - name: Решение VMware от CloudSimple
           href: cloudsimple-vmware-solutions-overview.md
@@ -52,6 +52,8 @@
           href: node-quota.md
         - name: Обслуживание и обновления
           href: cloudsimple-maintenance-updates.md
+        - name: Запрещенные действия
+          href: forbidden-actions.md
         - name: Вопросы и ответы
           href: cloudsimple-faq.md
     - name: Учебники

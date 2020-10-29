@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: conceptual
 ms.date: 10/05/2019
 ms.author: allensu
-ms.openlocfilehash: 91823ff0d324cd30566948fecd86cc441342f14e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6ee6d88b5247209d5628c7f85f1985507d53811d
+ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91757050"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92913727"
 ---
 # <a name="azure-private-link-frequently-asked-questions-faq"></a>Часто задаваемые вопросы о частной ссылке Azure
 
@@ -20,8 +20,8 @@ ms.locfileid: "91757050"
 
 ### <a name="what-is-azure-private-endpoint-and-azure-private-link-service"></a>Что такое частная конечная точка Azure и служба частной связи Azure?
 
-- **[Частная конечная точка Azure](private-endpoint-overview.md)**. Частная конечная точка Azure — это сетевой интерфейс, который обеспечивает безопасное и надежное подключение к службе с помощью частной связи Azure. Частные конечные точки можно использовать для подключения к службе PaaS Azure, которая поддерживает закрытую ссылку или собственную службу частной связи.
-- Служба **[частной связи Azure](private-link-service-overview.md)**: служба частной связи Azure — это служба, созданная поставщиком услуг. В настоящее время служба частной связи может быть подключена к интерфейсной IP-конфигурации Load Balancer (цен. категория "Стандартный"). 
+- **[Частная конечная точка Azure](private-endpoint-overview.md)** . Частная конечная точка Azure — это сетевой интерфейс, который обеспечивает безопасное и надежное подключение к службе с помощью частной связи Azure. Частные конечные точки можно использовать для подключения к службе PaaS Azure, которая поддерживает закрытую ссылку или собственную службу частной связи.
+- Служба **[частной связи Azure](private-link-service-overview.md)** : служба частной связи Azure — это служба, созданная поставщиком услуг. В настоящее время служба частной связи может быть подключена к интерфейсной IP-конфигурации Load Balancer (цен. категория "Стандартный"). 
 
 ### <a name="how-is-traffic-being-sent-when-using-private-link"></a>Как отправляется трафик при использовании частной ссылки?
 Трафик отправляется частным образом с помощью магистрали Майкрософт. Он не проходит через Интернет. Частная ссылка Azure не хранит данные клиента.
@@ -48,6 +48,9 @@ ms.locfileid: "91757050"
  
 ### <a name="can-private-endpoint-connect-to-azure-paas-resources-across-azure-regions"></a>Может ли частная конечная точка подключаться к ресурсам Azure PaaS в регионах Azure?
 Да. Частные конечные точки могут подключаться к ресурсам Azure PaaS в регионах Azure.
+
+### <a name="can-i-modify-my-private-endpoint-network-interface-nic-"></a>Можно ли изменить сетевой интерфейс (NIC) частной конечной точки?
+При создании частной конечной точки назначается сетевая карта, доступная только для чтения. Этот параметр не может быть изменен и останется в течение жизненного цикла закрытой конечной точки.
 
 ## <a name="private-link-service"></a>Служба "Приватный канал"
  
@@ -79,6 +82,6 @@ ms.locfileid: "91757050"
 ### <a name="im-a-service-provider-using-azure-private-link-do-i-need-to-make-sure-all-my-customers-have-unique-ip-space-and-dont-overlap-with-my-ip-space"></a>Я являюсь поставщиком услуг, используя частную ссылку Azure. Нужно ли, чтобы все мои клиенты имели уникальные IP-пространство и не перекрывались с моим IP-адресом? 
 Нет. Частная ссылка Azure предоставляет эту функцию. Не обязательно включать в адресное пространство клиента неперекрывающиеся адресные пространства. 
 
-##  <a name="next-steps"></a>Дальнейшие шаги
+##  <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о [частной ссылке Azure](private-link-overview.md)

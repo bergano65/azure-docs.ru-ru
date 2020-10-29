@@ -8,12 +8,12 @@ ms.service: security
 ms.subservice: security-develop
 ms.topic: article
 ms.date: 04/03/2019
-ms.openlocfilehash: 8d24eb868a13e7b2d9ff3d2b625302c1c1fcb908
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 69dd2c6cdba41779849b4eb6b889cde9b1d6e5c9
+ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91318013"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92913574"
 ---
 # <a name="threat-modeling-tool-update-release-71604081---492019"></a>Threat Modeling Tool обновления выпуска 7.1.60408.1 — 4/9/2019
 
@@ -28,7 +28,7 @@ ms.locfileid: "91318013"
 
 ### <a name="new-stencils-for-azure-key-vault-and-azure-traffic-manager"></a>Новые наборы элементов для Azure Key Vault и диспетчера трафика Azure
 
-![Набор элементов Azure Key Vault](./media/threat-modeling-tool-releases-71604081/tmt_keyvault_trafficmanager.PNG)
+![На снимке экрана показаны значки для Azure Key Vault и диспетчера трафика Azure.](./media/threat-modeling-tool-releases-71604081/tmt_keyvault_trafficmanager.PNG)
 
 В набор трафаретов Azure добавлены новые наборы элементов и угрозы для Azure Key Vault и диспетчера трафика Azure. При открытии моделей, основанных на наборе элементов Azure, пользователям будет предложено обновить шаблон, связанный с моделью. Обновление модели на основе набора элементов Azure также может инициироваться вручную с помощью команды "применить шаблон" в меню "файл" и повторного применения последнего файла облачных служб Azure. tb7.
 
@@ -36,7 +36,7 @@ ms.locfileid: "91318013"
 
 Клиентская версия Threat Modeling Tool теперь отображается на начальном экране приложения для простоты доступа.
 
-![Набор элементов Azure Key Vault](./media/threat-modeling-tool-releases-71604081/tmt_version.PNG)
+![На снимке экрана показан Microsoft Threat Modeling Tool с номером версии клиента.](./media/threat-modeling-tool-releases-71604081/tmt_version.PNG)
 
 ### <a name="support-links-have-been-updated"></a>Ссылки на поддержку обновлены
 
@@ -55,6 +55,6 @@ ms.locfileid: "91318013"
 
 - Документация по Threat Modeling Tool находится на сайте [docs.microsoft.com](threat-modeling-tool.md) и содержит информацию [об использовании средства](threat-modeling-tool-getting-started.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Скачайте последнюю версию [Microsoft Threat Modeling Tool](https://aka.ms/threatmodelingtool).

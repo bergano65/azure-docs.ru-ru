@@ -1,5 +1,5 @@
 ---
-title: Поиск и удаление неподключенных управляемых и неуправляемых дисков Azure
+title: Azure CLI — Поиск и удаление неподключенных управляемых и неуправляемых дисков
 description: Как найти и удалить неподключенные управляемые и неуправляемые диски Azure (виртуальные жесткие диски и страничные BLOB-объекты) с помощью Azure CLI.
 author: roygara
 ms.service: virtual-machines
@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 03/30/2018
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: 821ba551dc19f92988a352b8f1bab792ce52207b
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 0c3e8bb2ff6f3313e851a4253a95a5ad923a8f70
+ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91978923"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92913948"
 ---
 # <a name="find-and-delete-unattached-azure-managed-and-unmanaged-disks-using-the-azure-cli"></a>Поиск и удаление неподключенных управляемых и неуправляемых дисков Azure с помощью Azure CLI
 Когда вы удаляете виртуальную машину в Azure, подключенные к ней диски не удаляются по умолчанию. Это предотвращает потерю данных из-за случайного удаления виртуальной машины. Тем не менее вы продолжаете платить за неподключенные диски. В этой статье показано, как найти и удалить все неподключенные диски и сократить затраты. 
@@ -29,11 +29,9 @@ ms.locfileid: "91978923"
 >
 
 ```azurecli
-
 # Set deleteUnattachedDisks=1 if you want to delete unattached Managed Disks
 # Set deleteUnattachedDisks=0 if you want to see the Id of the unattached Managed Disks
 deleteUnattachedDisks=0
-
 unattachedDiskIds=$(az disk list --query '[?managedBy==`null`].[id]' -o tsv)
 for id in ${unattachedDiskIds[@]}
 do
@@ -52,7 +50,7 @@ done
 
 ## <a name="unmanaged-disks-find-and-delete-unattached-disks"></a>Неуправляемые диски. Поиск и удаление неподключенных дисков 
 
-Неуправляемые диски — это VHD-файлы, которые хранятся в [учетных записях хранения Azure](../../storage/common/storage-account-overview.md) как [страничные BLOB-объекты](/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs#about-page-blobs). В следующем скрипте показано, как с помощью свойства **LeaseStatus** найти неподключенные неуправляемые диски (страничные BLOB-объекты). Если неуправляемый диск подключен к виртуальной машине, свойство **LeaseStatus** имеет значение **Locked**. Если неуправляемый диск не подключен к виртуальной машине, свойство **LeaseStatus** имеет значение **Unlocked**. Сценарий проверяет все неуправляемые диски во всех учетных записях хранения Azure в подписке Azure. Когда скрипт находит неуправляемый диск со значением свойства **LeaseStatus** равным **Unlocked**, он определяет, что диск не подключен.
+Неуправляемые диски — это VHD-файлы, которые хранятся в [учетных записях хранения Azure](../../storage/common/storage-account-overview.md) как [страничные BLOB-объекты](/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs#about-page-blobs). В следующем скрипте показано, как с помощью свойства **LeaseStatus** найти неподключенные неуправляемые диски (страничные BLOB-объекты). Если неуправляемый диск подключен к виртуальной машине, свойство **LeaseStatus** имеет значение **Locked** . Если неуправляемый диск не подключен к виртуальной машине, свойство **LeaseStatus** имеет значение **Unlocked** . Сценарий проверяет все неуправляемые диски во всех учетных записях хранения Azure в подписке Azure. Когда скрипт находит неуправляемый диск со значением свойства **LeaseStatus** равным **Unlocked** , он определяет, что диск не подключен.
 
 >[!IMPORTANT]
 >Сначала запустите скрипт, установив для переменной **deleteUnattachedVHDs** значение 0. Это действие позволяет найти и просмотреть все неподключенные неуправляемые виртуальные жесткие диски.
@@ -61,13 +59,10 @@ done
 >
 
 ```azurecli
-   
 # Set deleteUnattachedVHDs=1 if you want to delete unattached VHDs
 # Set deleteUnattachedVHDs=0 if you want to see the details of the unattached VHDs
 deleteUnattachedVHDs=0
-
 storageAccountIds=$(az storage account list --query [].[id] -o tsv)
-
 for id in ${storageAccountIds[@]}
 do
     connectionString=$(az storage account show-connection-string --ids $id --query connectionString -o tsv)

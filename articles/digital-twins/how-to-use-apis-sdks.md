@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 06/04/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 52ecc1f7de2afb83d3f37ddae6b1b618a8a8e34d
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: 1ad9d72d69e23e4029de163ded1a71ae4dfb82fb
+ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92636023"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92913778"
 ---
 # <a name="use-the-azure-digital-twins-apis-and-sdks"></a>Использование интерфейсов API и пакетов SDK для Azure Digital Twins
 
@@ -63,10 +63,12 @@ API-интерфейсы плоскости данных — это API-инте
    - Источник пакета SDK можно найти в GitHub: [Клиентская библиотека Microsoft Azure IOT Digital двойников для Java](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/digitaltwins/azure-digitaltwins-core)
    - Вы можете просмотреть [справочную документацию по пакету SDK](/java/api/overview/azure/digitaltwins/client?preserve-view=true&view=azure-java-preview) .
 * Вы можете использовать пакет SDK для **JavaScript** . Для использования пакета SDK для JavaScript...
-   - Вы можете просмотреть и установить пакет из NPM: [Клиентская библиотека Azure Azure Digital двойников для JavaScript](https://www.npmjs.com/package/@azure/digital-twins).
+   - Вы можете просмотреть и установить пакет из NPM: [Клиентская библиотека Azure Azure Digital двойников для JavaScript](https://www.npmjs.com/package/@azure/digital-twins-core).
    - Вы можете просмотреть [справочную документацию по пакету SDK](/javascript/api/@azure/digital-twins/?preserve-view=true&view=azure-node-latest).
+   - Источник пакета SDK можно найти в GitHub: [Клиентская библиотека Azure Digital двойников Core для JavaScript](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/digitaltwins/digital-twins-core) .
 * Вы можете использовать пакет SDK для **Python** . Чтобы использовать пакет SDK для Python...
    - Вы можете просмотреть и установить пакет: [Клиентская библиотека Azure Digital двойников Core для Python](https://pypi.org/project/azure-digitaltwins-core/1.0.0b1/).
+   - Источник пакета SDK можно найти в GitHub: [Клиентская библиотека Azure Digital двойников Core для Python](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/digitaltwins/azure-digitaltwins-core)
 * Вы можете создать пакет SDK для другого языка с помощью функции автоотдыха. Следуйте инструкциям в разделе [*инструкции по созданию настраиваемых пакетов SDK для Azure Digital двойников с помощью автоrestful*](how-to-create-custom-sdks.md).
 
 Вы также можете использовать API-интерфейсы плоскости с датами, взаимодействуя с Azure Digital двойников через интерфейс [командной строки](how-to-use-cli.md).

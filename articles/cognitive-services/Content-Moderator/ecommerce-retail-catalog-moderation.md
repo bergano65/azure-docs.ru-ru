@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.date: 10/23/2020
 ms.author: pafarley
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 9aae410d320713650704e175006a6593b30f52a7
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: 6d105528404c99f7273687fcdea6972b4212fcf1
+ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92504162"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92913693"
 ---
 # <a name="tutorial-moderate-e-commerce-product-images-with-azure-content-moderator"></a>Руководство по Модерация изображений товаров для электронной коммерции с помощью Azure Content Moderator
 
@@ -37,7 +37,7 @@ ms.locfileid: "92504162"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Ключ подписки Content Moderator. Следуйте инструкциям в руководстве по [созданию учетной записи Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account), чтобы получить подписку и ключ для службы Content Moderator.
+- Ключ подписки Content Moderator. Следуйте инструкциям в руководстве по [созданию учетной записи Cognitive Services](../cognitive-services-apis-create-account.md), чтобы получить подписку и ключ для службы Content Moderator.
 - Ключ подписки Компьютерного зрения (см. те же инструкции).
 - Любой выпуск [Visual Studio 2015 или 2017](https://www.visualstudio.com/downloads/).
 - Набор изображений для каждой метки, которую будет использовать классификатор Пользовательского визуального распознавания (в нашем примере это игрушки, ручки и флаги США).
@@ -48,7 +48,7 @@ ms.locfileid: "92504162"
 
 ## <a name="create-custom-moderation-tags"></a>Создание пользовательских тегов модерации
 
-Теперь создайте настраиваемые теги в средстве проверки (если потребуется помощь с этим процессом, см. [сведения о тегах](https://docs.microsoft.com/azure/cognitive-services/content-moderator/review-tool-user-guide/tags)). В нашем примере добавляются следующие теги: **celebrity** (знаменитость), **USA** (США), **flag** (флаг), **toy** (игрушка) и **pen** (ручка). В качестве тегов можно использовать не только категории, выявляемые Компьютерным зрением (например, **celebrity** ), но и настраиваемые пользовательские теги, для обнаружения которых вы позже проведете обучение классификатора Пользовательского визуального распознавания.
+Теперь создайте настраиваемые теги в средстве проверки (если потребуется помощь с этим процессом, см. [сведения о тегах](./review-tool-user-guide/configure.md#tags)). В нашем примере добавляются следующие теги: **celebrity** (знаменитость), **USA** (США), **flag** (флаг), **toy** (игрушка) и **pen** (ручка). В качестве тегов можно использовать не только категории, выявляемые Компьютерным зрением (например, **celebrity** ), но и настраиваемые пользовательские теги, для обнаружения которых вы позже проведете обучение классификатора Пользовательского визуального распознавания.
 
 ![Настройка пользовательских тегов](images/tutorial-ecommerce-tags2.PNG)
 
@@ -90,11 +90,11 @@ ms.locfileid: "92504162"
 
 ## <a name="evaluatecustomvisiontags-method"></a>Метод EvaluateCustomVisionTags
 
-Теперь мы перейдем к методу **EvaluateCustomVisionTags** , который классифицирует товары — в нашем примере это флаги, игрушки и ручки. Следуйте инструкциям в руководстве по [созданию классификатора](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/getting-started-build-a-classifier), чтобы создать настраиваемый пользовательский классификатор изображений и определить наличие флагов, игрушек и ручек (вы можете выбрать любые другие пользовательские теги) на изображениях. Можно использовать изображения из папки с **примерами изображений** в [репозитории GitHub](https://github.com/MicrosoftContentModerator/samples-eCommerceCatalogModeration) для быстрого обучения некоторых категорий в этом примере.
+Теперь мы перейдем к методу **EvaluateCustomVisionTags** , который классифицирует товары — в нашем примере это флаги, игрушки и ручки. Следуйте инструкциям в руководстве по [созданию классификатора](../custom-vision-service/getting-started-build-a-classifier.md), чтобы создать настраиваемый пользовательский классификатор изображений и определить наличие флагов, игрушек и ручек (вы можете выбрать любые другие пользовательские теги) на изображениях. Можно использовать изображения из папки с **примерами изображений** в [репозитории GitHub](https://github.com/MicrosoftContentModerator/samples-eCommerceCatalogModeration) для быстрого обучения некоторых категорий в этом примере.
 
 ![Веб-страница Пользовательского визуального распознавания с обучающими изображениями ручек, игрушек и флагов](images/tutorial-ecommerce-custom-vision.PNG)
 
-Завершив обучение классификатора, получите ключ прогнозирования и URL-адрес конечной точки прогнозирования (если потребуется помощь, воспользуйтесь [этими инструкциями](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/use-prediction-api#get-the-url-and-prediction-key)) и сохраните эти значения в поля `CustomVisionKey` и `CustomVisionUri`, соответственно. Этот метод использует значения в запросе к классификатору. Если классификатор обнаружит на изображении один или несколько пользовательских тегов, он сохранит значения **True** для соответствующих параметров в массиве **ReviewTags** .
+Завершив обучение классификатора, получите ключ прогнозирования и URL-адрес конечной точки прогнозирования (если потребуется помощь, воспользуйтесь [этими инструкциями](../custom-vision-service/use-prediction-api.md#get-the-url-and-prediction-key)) и сохраните эти значения в поля `CustomVisionKey` и `CustomVisionUri`, соответственно. Этот метод использует значения в запросе к классификатору. Если классификатор обнаружит на изображении один или несколько пользовательских тегов, он сохранит значения **True** для соответствующих параметров в массиве **ReviewTags** .
 
 [!code-csharp[define EvaluateCustomVisionTags method](~/samples-eCommerceCatalogModeration/Fusion/Program.cs?range=148-171)]
 

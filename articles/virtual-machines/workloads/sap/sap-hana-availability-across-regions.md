@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 09/12/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 68a393865038722f2fd7fa5e42334f8d5e760951
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3de5a449e90452307f3c9b02c725050df6fdd873
+ms.sourcegitcommit: dd45ae4fc54f8267cda2ddf4a92ccd123464d411
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "70078855"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92925685"
 ---
 # <a name="sap-hana-availability-across-azure-regions"></a>Доступность SAP HANA в разных регионах Azure
 
@@ -74,7 +74,7 @@ ms.locfileid: "70078855"
 
 Если у организации есть требования относительно готовности высокого уровня доступности во втором (DR) регионе Azure, архитектура будет выглядеть следующим образом.
 
-![Схема трех виртуальных машин в двух многоцелевых регионах](./media/sap-hana-availability-two-region/saphanaavailability_hana_system_2region_HA_and_DR_multitarget_4VMs.PNG)
+![Схема, на которой показана организация с требованиями к обеспечению высокого уровня доступности во втором регионе Azure (DR).](./media/sap-hana-availability-two-region/saphanaavailability_hana_system_2region_HA_and_DR_multitarget_4VMs.PNG)
 
 
 При использовании logreplay в качестве режима работы эта конфигурация обеспечивает значение RPO 0 с низким целевым временем восстановления (RTO) в пределах основного региона. Она также предоставляет сниженный показатель RPO, если выполняется перемещение в другой регион. Время RTO второго региона зависит от того, выполняется ли предварительная загрузка данных. Многие клиенты используют виртуальную машину в дополнительном регионе, чтобы запустить тестовую систему. В таком варианте использования данные не могут быть предварительно загружены.

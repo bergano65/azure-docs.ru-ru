@@ -7,8 +7,6 @@
       href: overview.md
 - name: Краткие руководства
   items:
-    - name: Изучение демонстрационного сайта
-      href: quickstarts/explore-demo.md
     - name: Использование веб-портала
       href: quickstarts/web-portal.md
     - name: Использование REST API
@@ -40,9 +38,9 @@
     - name: API "Помощник по метрикам"
       href: 'https://go.microsoft.com/fwlink/?linkid=2141634'
     - name: Справочник по Azure CLI
-      href: 'https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest#az_cognitiveservices_list'
+      href: /cli/azure/cognitiveservices?view=azure-cli-latest#az_cognitiveservices_list
     - name: Справочник по PowerShell
-      href: 'https://aka.ms/azure-powershell-cognitiveservices'
+      href: /powershell/module/azurerm.cognitiveservices/
 - name: Ресурсы
   items:
     - name: Возможности получения поддержки и справки

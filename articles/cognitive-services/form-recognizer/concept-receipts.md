@@ -10,12 +10,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 08/17/2019
 ms.author: pafarley
-ms.openlocfilehash: 16d90aea8edc47750dfb7e64de7b50885971f632
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: 5125fff0ef8987d313c6611e4d5de08d090f2263
+ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92893692"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92913200"
 ---
 # <a name="receipt-concepts"></a>Сведения о квитанциях
 
@@ -449,7 +449,7 @@ API получения также возвращает следующие све
 
 Уведомления содержат полезные данные, которые можно использовать для анализа поведения потребителей и тенденций покупок.
 
-API прихода также включает [функцию обработки поступления аибуилдер](https://docs.microsoft.com/ai-builder/prebuilt-receipt-processing).
+API прихода также включает [функцию обработки поступления аибуилдер](/ai-builder/prebuilt-receipt-processing).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
@@ -459,4 +459,4 @@ API прихода также включает [функцию обработк�
 ## <a name="see-also"></a>См. также
 
 * [Что такое Распознаватель документов?](./overview.md)
-* [Справочная документация по REST API](https://docs.microsoft.com/azure/cognitive-services/form-recognizer)
+* [Справочная документация по REST API](./index.yml)

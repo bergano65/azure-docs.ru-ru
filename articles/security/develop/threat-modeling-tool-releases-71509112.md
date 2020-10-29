@@ -8,12 +8,12 @@ ms.service: security
 ms.subservice: security-develop
 ms.topic: article
 ms.date: 01/15/2019
-ms.openlocfilehash: 780ddc614feef492dafa54862abbea9552496274
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7b0afdd90f2a1413c7f8364fc4518c4d1116454a
+ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87539821"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92913591"
 ---
 # <a name="threat-modeling-tool-ga-release-71509112---9122018"></a>Threat Modeling Tool, общедоступный выпуск 7.1.50911.2 от 12.09.2018
 
@@ -65,13 +65,13 @@ ms.locfileid: "87539821"
 
 Функция, позволяющая открыть из OneDrive, в предварительной версии была удалена. Пользователи с недавно открытыми моделями, которые были сохранены в OneDrive, получат следующую ошибку.
 
-![Функция OneDrive удалена](./media/threat-modeling-tool-releases-71509112/tmt_save_error-300x131.png)
+![На снимках экрана показана ошибка: ошибка при открытии ссылки на объект файла, которая не задана экземпляром объекта.](./media/threat-modeling-tool-releases-71509112/tmt_save_error-300x131.png)
 
 #### <a name="workaround"></a>Обходной путь
 
 Пользователям OneDrive рекомендуется использовать клиент Майкрософт [OneDrive для Windows](https://onedrive.live.com/about/en-us/download/) для доступа к файлам, хранящимся в OneDrive, через стандартное диалоговое окно Open a model (Открытие модели).
 
-![Функция OneDrive удалена](./media/threat-modeling-tool-releases-71509112/tmt_save_onedrive-300x149.png)
+![Снимок экрана: OneDrive, выбранный в диалоговом окне «Открытие модели».](./media/threat-modeling-tool-releases-71509112/tmt_save_onedrive-300x149.png)
 
 ### <a name="my-organization-uses-the-2016-version-of-the-tool-can-i-use-the-azure-stencil-set"></a>Моя организация использует версию средства 2016 года. Могу ли я использовать набор элементов Azure?
 
@@ -92,6 +92,6 @@ ms.locfileid: "87539821"
 
 - Документация по Threat Modeling Tool находится на сайте [docs.microsoft.com](threat-modeling-tool.md) и содержит информацию [об использовании средства](threat-modeling-tool-getting-started.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Скачайте последнюю версию [Microsoft Threat Modeling Tool](https://aka.ms/threatmodelingtool).

@@ -11,12 +11,12 @@ ms.topic: sample
 ms.date: 05/01/2019
 ms.author: sbowles
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 5341c2613624c6a52f1649dcd8a64b6746b84f67
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b35b66615bd5c577dd73faca77d3ea20468442f8
+ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91332395"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92913523"
 ---
 # <a name="example-use-the-large-scale-feature"></a>Пример Использование функции для увеличения масштаба
 
@@ -232,7 +232,7 @@ using (Stream stream = File.OpenRead(QueryImagePath))
 
 Если допустима относительно большая задержка, операцию обучения не обязательно запускать сразу после добавления новых данных. Вместо этого операцию Train можно отделить от главной логики и активировать с регулярным интервалом. Такая стратегия подходит для динамических сценариев с допустимой задержкой. Ее также можно применить в статических сценариях, чтобы дополнительно сократить частоту обучения.
 
-Допустим, есть функция `TrainLargePersonGroup`, аналогичная `TrainLargeFaceList`. Типичная реализация изолированного обучения для LargePersonGroup через класс [`Timer`](https://msdn.microsoft.com/library/system.timers.timer(v=vs.110).aspx) из `System.Timers` будет выглядеть так:
+Допустим, есть функция `TrainLargePersonGroup`, аналогичная `TrainLargeFaceList`. Типичная реализация изолированного обучения для LargePersonGroup через класс [`Timer`](/dotnet/api/system.timers.timer) из `System.Timers` будет выглядеть так:
 
 ```csharp
 private static void Main()

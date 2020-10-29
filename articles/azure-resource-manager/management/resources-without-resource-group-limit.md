@@ -2,13 +2,13 @@
 title: Ресурсы без ограничения числа 800
 description: Список типов ресурсов Azure, которые могут иметь более 800 экземпляров в группе ресурсов.
 ms.topic: conceptual
-ms.date: 09/21/2020
-ms.openlocfilehash: e7a15607b144f1d7916f310948f15dc28d76a205
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 10/28/2020
+ms.openlocfilehash: cec7ea87bbe81d3bfcca37f3133ac650e66f849f
+ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91330763"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92913506"
 ---
 # <a name="resources-not-limited-to-800-instances-per-resource-group"></a>Ресурсы, не ограниченные 800 экземплярами на группу ресурсов
 
@@ -81,6 +81,7 @@ ms.locfileid: "91330763"
 
 ## <a name="microsoftdevtestlab"></a>Microsoft.DevTestLab
 
+* Labs/virtualMachines — по умолчанию ограничено до 800 экземпляров. Это ограничение можно увеличить, обратившись в службу поддержки.
 * schedules
 
 ## <a name="microsoftenterpriseknowledgegraph"></a>Microsoft.EnterpriseKnowledgeGraph
@@ -173,6 +174,10 @@ ms.locfileid: "91330763"
 
 * Воркспацеколлектионс — по умолчанию ограничено до 800 экземпляров. Это ограничение можно увеличить, обратившись в службу поддержки.
 
+## <a name="microsoftpowerbidedicated"></a>Microsoft.PowerBIDedicated
+
+* емкости — по умолчанию ограничение составляет 800 экземпляров. Это ограничение можно увеличить, обратившись в службу поддержки.
+
 ## <a name="microsoftrelay"></a>Microsoft.Relay
 
 * пространства имен
@@ -185,24 +190,27 @@ ms.locfileid: "91330763"
 
 * пространства имен
 
-## <a name="microsoftservicefabricmesh"></a>Microsoft.ServiceFabricMesh
+## <a name="microsoftsingularity"></a>Microsoft. Единственное,
 
-* веб-масштабированием;
-* containerGroups
-* gateways
-* networks
-* секретные коды
-* volumes.
+* accounts
+* Accounts/АккаунткуотаполиЦиес
+* Accounts/ГраупполиЦиес
+* учетные записи и задания
+* Accounts/Сторажеконтаинерс
 
 ## <a name="microsoftstorage"></a>Microsoft.Storage;
 
 * storageAccounts
+
+## <a name="microsoftsql"></a>Microsoft.Sql
+
+* servers/databases
 
 ## <a name="microsoftweb"></a>Microsoft.Web
 
 * apiManagementAccounts/apis
 * sites
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Полный список квот и ограничений см. в статье [Подписка Azure, границы, квоты и ограничения службы](azure-subscription-service-limits.md).

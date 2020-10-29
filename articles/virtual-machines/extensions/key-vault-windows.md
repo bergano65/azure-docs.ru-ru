@@ -8,12 +8,12 @@ ms.service: virtual-machines-windows
 ms.topic: article
 ms.date: 12/02/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 78231fa5cc6e5061ab3e2b26faf97da76da83b32
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: f06c5f2b2938505380ea668a7c4113015c852b1d
+ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92427905"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92913965"
 ---
 # <a name="key-vault-virtual-machine-extension-for-windows"></a>Расширение виртуальной машины Key Vault для Windows
 
@@ -25,7 +25,7 @@ ms.locfileid: "92427905"
 
 - Windows Server 2019
 - Windows Server 2016
-- Windows Server 2012
+- Windows Server 2012
 
 Key Vault VM личному также поддерживается на пользовательской локальной виртуальной машине, которая передается и преобразуется в специализированный образ для использования в Azure с помощью установки Windows Server 2019 Core.
 
@@ -81,7 +81,7 @@ Key Vault VM личному также поддерживается на пол�
 > Это связано с тем, что путь `/secrets` возвращает полный сертификат, включая закрытый ключ, а путь `/certificates` — нет. Дополнительные сведения о сертификатах можно найти в статье [Сертификаты Key Vault](../../key-vault/general/about-keys-secrets-certificates.md).
 
 > [!IMPORTANT]
-> Свойство "authenticationSettings" **требуется** только для виртуальных машин с **назначенными пользователем удостоверениями**.
+> Свойство "authenticationSettings" **требуется** только для виртуальных машин с **назначенными пользователем удостоверениями** .
 > В нем указывается удостоверение, используемое для проверки подлинности в Key Vault.
 
 
@@ -98,7 +98,7 @@ Key Vault VM личному также поддерживается на пол�
 | linkOnRenewal | false | Логическое |
 | certificateStoreLocation  | LocalMachine или CurrentUser (с учетом регистра) | строка |
 | requiredInitialSync | Да | Логическое |
-| observedCertificates  | ["https://myvault.vault.azure.net/secrets/mycertificate"] | массив строк
+| observedCertificates  | ["https://myvault.vault.azure.net/secrets/mycertificate","https://myvault.vault.azure.net/secrets/mycertificate2"] | массив строк
 | мсиендпоинт | http://169.254.169.254/metadata/identity | строка |
 | msiClientId | c7373ae5-91c2-4165-8ab6-7381d6e75619 | строка |
 
@@ -132,7 +132,7 @@ Key Vault VM личному также поддерживается на пол�
           "pollingIntervalInS": <polling interval in seconds, e.g: "3600">,
           "certificateStoreName": <certificate store name, e.g.: "MY">,
           "certificateStoreLocation": <certificate store location, currently it works locally only e.g.: "LocalMachine">,
-          "observedCertificates": <list of KeyVault URIs representing monitored certificates, e.g.: "https://myvault.vault.azure.net/secrets/mycertificate"
+          "observedCertificates": <list of KeyVault URIs representing monitored certificates, e.g.: ["https://myvault.vault.azure.net/secrets/mycertificate", "https://myvault.vault.azure.net/secrets/mycertificate2"]>
         }      
       }
       }
@@ -154,7 +154,7 @@ Azure PowerShell можно использовать для развертыва
         { "pollingIntervalInS": "' + <pollingInterval> + 
         '", "certificateStoreName": "' + <certStoreName> + 
         '", "certificateStoreLocation": "' + <certStoreLoc> + 
-        '", "observedCertificates": ["' + <observedCerts> + '"] } }'
+        '", "observedCertificates": ["' + <observedCert1> + '","' + <observedCert2> + '"] } }'
         $extName =  "KeyVaultForWindows"
         $extPublisher = "Microsoft.Azure.KeyVault"
         $extType = "KeyVaultForWindows"
@@ -174,7 +174,7 @@ Azure PowerShell можно использовать для развертыва
         { "pollingIntervalInS": "' + <pollingInterval> + 
         '", "certificateStoreName": "' + <certStoreName> + 
         '", "certificateStoreLocation": "' + <certStoreLoc> + 
-        '", "observedCertificates": ["' + <observedCerts> + '"] } }'
+        '", "observedCertificates": ["' + <observedCert1> + '","' + <observedCert2> + '"] } }'
         $extName = "KeyVaultForWindows"
         $extPublisher = "Microsoft.Azure.KeyVault"
         $extType = "KeyVaultForWindows"
@@ -200,7 +200,7 @@ Azure PowerShell можно использовать для развертыва
          --publisher Microsoft.Azure.KeyVault `
          -resource-group "<resourcegroup>" `
          --vm-name "<vmName>" `
-         --settings '{\"secretsManagementSettings\": { \"pollingIntervalInS\": \"<pollingInterval>\", \"certificateStoreName\": \"<certStoreName>\", \"certificateStoreLocation\": \"<certStoreLoc>\", \"observedCertificates\": [\" <observedCerts> \"] }}'
+         --settings '{\"secretsManagementSettings\": { \"pollingIntervalInS\": \"<pollingInterval>\", \"certificateStoreName\": \"<certStoreName>\", \"certificateStoreLocation\": \"<certStoreLoc>\", \"observedCertificates\": [\" <observedCert1> \", \" <observedCert2> \"] }}'
     ```
 
 * Чтобы развернуть расширение в масштабируемом наборе виртуальных машин, сделайте следующее:
@@ -211,7 +211,7 @@ Azure PowerShell можно использовать для развертыва
          --publisher Microsoft.Azure.KeyVault `
          -resource-group "<resourcegroup>" `
          --vmss-name "<vmName>" `
-         --settings '{\"secretsManagementSettings\": { \"pollingIntervalInS\": \"<pollingInterval>\", \"certificateStoreName\": \"<certStoreName>\", \"certificateStoreLocation\": \"<certStoreLoc>\", \"observedCertificates\": [\" <observedCerts> \"] }}'
+         --settings '{\"secretsManagementSettings\": { \"pollingIntervalInS\": \"<pollingInterval>\", \"certificateStoreName\": \"<certStoreName>\", \"certificateStoreLocation\": \"<certStoreLoc>\", \"observedCertificates\": [\" <observedCert1> \", \" <observedCert2> \"] }}'
     ```
 
 Ознакомьтесь со следующими ограничениями и требованиями.
@@ -221,31 +221,30 @@ Azure PowerShell можно использовать для развертыва
 
 ## <a name="troubleshoot-and-support"></a>Устранение неполадок и поддержка
 
-### <a name="troubleshoot"></a>Диагностика
-
-Данные о состоянии развертываний расширения можно получить на портале Azure, а также с помощью Azure PowerShell. Чтобы просмотреть состояние развертывания расширений для определенной виртуальной машины, выполните следующую команду в Azure PowerShell.
-
 ### <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 
 * Существует ли ограничение на количество Обсерведцертификатес, которые можно настроить?
   Нет, Key Vaultное расширение виртуальной машины не ограничивает число Обсерведцертификатес.
 
-## <a name="azure-powershell"></a>Azure PowerShell
+### <a name="troubleshoot"></a>Диагностика
+
+Данные о состоянии развертываний расширения можно получить на портале Azure, а также с помощью Azure PowerShell. Чтобы просмотреть состояние развертывания расширений для определенной виртуальной машины, выполните следующую команду в Azure PowerShell.
+
+**Azure PowerShell**
 ```powershell
 Get-AzVMExtension -VMName <vmName> -ResourceGroupname <resource group name>
 ```
 
-## <a name="azure-cli"></a>Azure CLI
+**Azure CLI**
 ```azurecli
  az vm get-instance-view --resource-group <resource group name> --name  <vmName> --query "instanceView.extensions"
 ```
 
-Выходные данные выполнения расширения регистрируются в следующем файле:
+#### <a name="logs-and-configuration"></a>Журналы и конфигурация
 
 ```
 %windrive%\WindowsAzure\Logs\Plugins\Microsoft.Azure.KeyVault.KeyVaultForWindows\<version>\akvvm_service_<date>.log
 ```
-
 
 ### <a name="support"></a>Поддержка
 

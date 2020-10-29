@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 05/16/2019
 ms.author: yluiu
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 3278a1522fe3967dd1de5551e90732e63b7666f2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5a70b10f7d22c9cc04427bdfbb44243fad457ba0
+ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88931562"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92913489"
 ---
 # <a name="specify-a-face-detection-model"></a>Указание модели определения лиц
 
@@ -28,7 +28,7 @@ ms.locfileid: "88931562"
 
 Если вы не уверены, следует ли использовать последнюю модель, перейдите к разделу [Вычисление различных моделей](#evaluate-different-models) , чтобы оценить новую модель и сравнить результаты с помощью текущего набора данных.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Вы должны быть знакомы с концепцией обнаружения лиц в AI. Если вы не видите, ознакомьтесь с концептуальным руководством по обнаружению лиц или пошаговым руководством.
 
@@ -110,9 +110,9 @@ await client.FaceList.AddFaceFromUrlAsync(faceListId, imageUrl, detectionModel: 
 
 В этой статье вы узнали, как указать модель обнаружения для использования с различными API распознавания лиц. Затем следуйте инструкциям краткого руководства, чтобы приступить к работе с обнаружением лиц.
 
-* [Пакет SDK для .NET для лиц](../Quickstarts/csharp-sdk.md)
-* [Пакет SDK для Python для лиц](../Quickstarts/python-sdk.md)
-* [Пакет SDK для лиц Go](../Quickstarts/go-sdk.md)
+* [Пакет SDK для .NET для лиц](../quickstarts/client-libraries.md?pivots=programming-language-csharp%253fpivots%253dprogramming-language-csharp)
+* [Пакет SDK для Python для лиц](../quickstarts/client-libraries.md?pivots=programming-language-python%253fpivots%253dprogramming-language-python)
+* [Пакет SDK для лиц Go](../quickstarts/client-libraries.md?pivots=programming-language-go%253fpivots%253dprogramming-language-go)
 
 [Лицо — обнаружить;]: https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d
 [Face - Find Similar]: https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395237

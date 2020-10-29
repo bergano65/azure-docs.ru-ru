@@ -12,12 +12,12 @@ ms.date: 10/27/2020
 ms.author: curtand
 ms.reviewer: kasimpso
 ms.custom: user-help, seo-update-azuread-jan
-ms.openlocfilehash: a8e3b6cfce9bff76ec3989273cadadebb23d6d40
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 1af7f2918af7071320244dd35882a8de9717654f
+ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92795399"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92913251"
 ---
 # <a name="switching-organizations-in-a-portal"></a>Переключение организаций на портале
 
@@ -34,7 +34,7 @@ ms.locfileid: "92795399"
 
 ## <a name="switch-organizations"></a>Переключение организаций
 
-Вот как можно переключиться на другую организацию. В этом примере используется на портале " **Моя учетная запись** ", но значок и размещение переключателя также похожи на другие порталы.
+Вот как можно переключиться на другую организацию. В этом примере используется портал " **Моя учетная запись** ", но значок и размещение переключателя аналогичны на других порталах.
 
 1. Войдите в рабочую или учебную учетную запись, а затем откройте страницу [Моя учетная запись](https://myaccount.microsoft.com) .
 1. Выберите переключатель организации :::image type="content" source="media/cross-tenant-switcher/switcher-icon.png" alt-text="значок"::: переключателя организация в верхней части страницы рядом с фотографией вашей учетной записи.

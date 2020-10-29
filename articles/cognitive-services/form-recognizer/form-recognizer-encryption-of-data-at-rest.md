@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 08/28/2020
 ms.author: egeaney
-ms.openlocfilehash: c959231826125349ecd6a62afe529248f7ac2eec
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7a8b331c1295ed19afa64e95318bfa14414e6d9f
+ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91326802"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92913064"
 ---
 # <a name="form-recognizer-encryption-of-data-at-rest"></a>Расшифровка неактивных данных распознавателем форм
 
@@ -27,7 +27,7 @@ ms.locfileid: "91326802"
 
 [!INCLUDE [cognitive-services-cmk](../includes/configure-customer-managed-keys.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Форма запроса ключа Customer-Managed распознавания форм](https://aka.ms/cogsvc-cmk)
-* [Дополнительные сведения о Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-overview)
+* [Дополнительные сведения о Azure Key Vault](../../key-vault/general/overview.md)

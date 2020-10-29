@@ -5,15 +5,15 @@ author: bwren
 services: cosmos-db
 ms.service: cosmos-db
 ms.topic: how-to
-ms.date: 07/17/2020
+ms.date: 10/28/2020
 ms.author: bwren
 ms.custom: subject-monitoring
-ms.openlocfilehash: 43a059354c70c792592ba46aa3d5b63677bda4eb
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: c17d660c75fdfd6f1eb429db3a8b55f3e3db1b2d
+ms.sourcegitcommit: dd45ae4fc54f8267cda2ddf4a92ccd123464d411
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92488356"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92925957"
 ---
 # <a name="azure-cosmos-db-monitoring-data-reference"></a>Справочник по данным мониторинга Azure Cosmos DB
 
@@ -27,27 +27,29 @@ ms.locfileid: "92488356"
 | --- | --- | --- |
 | **time** | **TimeGenerated** | Дата и время (UTC) выполнения операции. |
 | **resourceId** | **Ресурс** | Учетная запись Azure Cosmos DB, для которой включены журналы.|
-| **category** | **Категория** | Для Azure Cosmos DB, **DataPlaneRequests**, **MongoRequests**, **куерирунтиместатистикс**, **партитионкэйстатистикс**, **партитионкэйруконсумптион**, **контролпланерекуестс** — это доступные типы журналов. |
+| **category** | **Категория** | Для Azure Cosmos DB, **DataPlaneRequests** , **MongoRequests** , **куерирунтиместатистикс** , **партитионкэйстатистикс** , **партитионкэйруконсумптион** , **контролпланерекуестс** — это доступные типы журналов. |
 | **operationName** | **OperationName** | Имя операции. Имя операции может иметь значение  `Create` , `Update` , `Read` , `ReadFeed` , `Delete` , `Replace` , `Execute` , `SqlQuery` , `Query` , `JSQuery` , `Head` , `HeadFeed` или `Upsert` .   |
-| **properties** | н/д | Содержимое этого поля описано в строках, приведенных ниже. |
+| **properties** | Н/Д | Содержимое этого поля описано в строках, приведенных ниже. |
 | **activityId** | **activityId_g** | Уникальный идентификатор GUID регистрируемой операции. |
 | **Агента** | **userAgent_s** | Строка, указывающая агент пользователя клиента, из которого был отправлен запрос. Формат агента пользователя — `{user agent name}/{version}` .|
 | **рекуестресаурцетипе** | **requestResourceType_s** | Тип доступного ресурса. Это значение может быть базой данных, контейнером, документом, вложением, пользователем, разрешениями, хранимой процедурой, триггером, определяемой пользователем функцией или предложением. |
 | **statusCode** | **statusCode_s** | Состояние ответа операции. |
-| **requestResourceId** | **Идентификатора** | Идентификатор ресурса, который относится к запросу. В зависимости от выполняемой операции это значение может указывать на `databaseRid` , `collectionRid` или `documentRid` .|
+| **requestResourceId** | **ResourceId** | Идентификатор ресурса, который относится к запросу. В зависимости от выполняемой операции это значение может указывать на `databaseRid` , `collectionRid` или `documentRid` .|
 | **clientIpAddress** | **clientIpAddress_s** | IP-адрес клиента. |
 | **requestCharge** | **requestCharge_s** | Количество единиц запросов в секунду, используемых операцией |
 | **collectionRid** | **collectionId_s** | Уникальный идентификатор коллекции.|
 | **duration** | **duration_d** | Длительность операции в миллисекундах. |
 | **requestLength** | **requestLength_s** | Длина запроса в байтах. |
 | **responseLength** | **responseLength_s** | Длина ответа в байтах.|
+| **ресаурцетокенпермиссионид** | **resourceTokenPermissionId_s** | Это свойство указывает идентификатор разрешения маркера ресурса, который вы указали. Дополнительные сведения о разрешениях см. в разделе [безопасный доступ к вашей статье данных](./secure-access-to-data.md#permissions) . |
+| **ресаурцетокенпермиссионмоде** | **resourceTokenPermissionMode_s** | Это свойство указывает режим разрешений, заданный при создании маркера ресурса. Режим разрешения может иметь такие значения, как "все" или "чтение". Дополнительные сведения о разрешениях см. в разделе [безопасный доступ к вашей статье данных](./secure-access-to-data.md#permissions) . |
 | **resourceTokenUserRid** | **resourceTokenUserRid_s** | Это свойство должно быть заполнено, если [маркеры ресурсов](./secure-access-to-data.md#resource-tokens) используются для проверки подлинности. Значение указывает на идентификатор ресурса пользователя. |
 | **responseLength** | **responseLength_s** | Длина ответа в байтах.|
 
 Список всех категорий журналов Azure Monitor и ссылки на связанные схемы см. в разделе [Azure Monitor журналы — категории и схемы](../azure-monitor/platform/resource-logs-schema.md). 
 
 ## <a name="metrics"></a>Метрики
-В следующих таблицах перечислены метрики платформы, собранные для Azure CosmOS DB. Все метрики хранятся в пространстве имен **Cosmos DB стандартных метриках**.
+В следующих таблицах перечислены метрики платформы, собранные для Azure CosmOS DB. Все метрики хранятся в пространстве имен **Cosmos DB стандартных метриках** .
 
 Список всех метрик поддержки Azure Monitor (в том числе Azure Cosmos DB) см. в статье [Azure Monitor поддерживаемые метрики](../azure-monitor/platform/metrics-supported.md). 
 
@@ -101,7 +103,7 @@ ms.locfileid: "92488356"
 | Кассандрарекуестчаржес (плата за запрос Cassandra) | Количество (SUM, min, Max, AVG) | Единицы запросов, потребляемые API Cassandra | DatabaseName, CollectionName, Region, OperationType, ResourceType| Все| Позволяет отслеживать единицы запросов, используемые в минуту учетной записью API Cassandra.|
 | Кассандраконнектионклосурес (замыкания на Cassandra подключения) |Количество (число) |Число закрытых подключений Cassandra| ClosureReason, Region| Все | Позволяет отслеживать возможность подключения между клиентами и API Cassandra для Azure Cosmos DB.|
 
-## <a name="see-also"></a>См. также:
+## <a name="see-also"></a>См. также
 
 - Описание Azure Cosmos DB мониторинга см. в разделе [monitoring Azure Cosmos DB](monitor-cosmos-db.md) .
 - Подробные сведения о мониторинге ресурсов Azure см. в статье [Мониторинг ресурсов Azure с помощью Azure Monitor](../azure-monitor/insights/monitor-azure-resource.md).

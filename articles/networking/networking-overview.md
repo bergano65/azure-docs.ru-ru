@@ -8,14 +8,14 @@ ms.service: virtual-network
 ms.devlang: na
 ms.topic: article
 ms.workload: infrastructure-services
-ms.date: 09/29/2020
+ms.date: 10/28/2020
 ms.author: kumud
-ms.openlocfilehash: 791a248c8fb10bc4db483451971d452a359c8a07
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f49a340a004a4aef37bcae9e3ae1c2b02ae030b9
+ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91569240"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92913095"
 ---
 # <a name="azure-networking-services-overview"></a>Обзор сетевых служб Azure
 
@@ -27,29 +27,16 @@ ms.locfileid: "91569240"
 
 ## <a name="connectivity-services"></a><a name="connect"></a>Службы подключения
  
-В этом разделе описываются службы, обеспечивающие подключение между ресурсами Azure, подключение из локальной сети к ресурсам Azure и подключение филиала в Azure — виртуальная сеть, Виртуальная глобальная сеть, ExpressRoute, VPN-шлюз, шлюз NAT виртуальной сети, Azure DNS, служба пиринга Azure и Azure бастиона.
+В этом разделе описываются службы, обеспечивающие подключение между ресурсами Azure, подключение из локальной сети к ресурсам Azure и подключение филиала в Azure — виртуальная сеть, ExpressRoute, VPN-шлюз, Виртуальная глобальная сеть, шлюз NAT виртуальной сети, Azure DNS, служба пиринга Azure и Azure бастиона.
 
-|Служба|Зачем использовать?|Сценарии|
-|---|---|---|
-|[Виртуальная сеть](#vnet)|Позволяет ресурсам Azure безопасно взаимодействовать друг с другом, через Интернет и локальные сети.| <p>[Фильтрация сетевого трафика](../virtual-network/tutorial-filter-network-traffic.md)</p> <p>[Маршрутизация сетевого трафика](../virtual-network/tutorial-create-route-table-portal.md)</p> <p>[Ограничение сетевого доступа к ресурсам](../virtual-network/tutorial-restrict-network-access-to-resources.md)</p> <p>[подключение виртуальных сетей.](../virtual-network/tutorial-connect-virtual-networks-portal.md)</p>|
-|[ExpressRoute](#expressroute)|Расширяет локальные сети в облако Майкрософт по частному соединению, которое обеспечивается поставщиком услуг подключения.|<p>[Создание и изменение канала ExpressRoute](../expressroute/expressroute-howto-circuit-portal-resource-manager.md)</p> <p>[Создание и изменение пиринга для канала ExpressRoute](../expressroute/expressroute-howto-routing-portal-resource-manager.md)</p> <p>[Связывание виртуальной сети с каналом ExpressRoute](../expressroute/expressroute-howto-linkvnet-portal-resource-manager.md)</p> <p>[Настройка фильтров маршрутов и управление ими для каналов ExpressRoute](../expressroute/how-to-routefilter-portal.md)</p>|
-|[VPN-шлюз](#vpngateway)|Отправляет зашифрованный трафик между виртуальной сетью Azure и локальным расположением через общедоступный Интернет.|<p>[Подключения "сеть — сеть"](../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md)</p> <p>[Подключения "виртуальная сеть — виртуальная сеть"](../vpn-gateway/vpn-gateway-howto-vnet-vnet-resource-manager-portal.md)</p> <p>[Подключения "точка — сеть"](../vpn-gateway/vpn-gateway-howto-point-to-site-resource-manager-portal.md)</p>|
-|[Виртуальная глобальная сеть](#virtualwan)|Оптимизирует и автоматизирует подключение филиала к, и через Azure. Регионы Azure служат в качестве концентраторов, к которым вы можете подключить ветви.|<p>Подключения " [сеть — сеть](../virtual-wan/virtual-wan-site-to-site-portal.md)", [подключения ExpressRoute](../virtual-wan/virtual-wan-expressroute-portal.md)</p>|
-|[Azure DNS](#dns)|Размещает домены DNS, предоставляющие разрешение имен, с помощью инфраструктуры Microsoft Azure.|<p>[Размещение домена в Azure DNS](../dns/dns-delegate-domain-azure-dns.md)</p><p>[Создание записей DNS для веб-приложения](../dns/dns-web-sites-custom-domain.md)</p> <p>[Создание записи псевдонима для диспетчера трафика](../dns/tutorial-alias-tm.md)</p> <p>[Создание записи псевдонима для общедоступного IP-адреса](../dns/tutorial-alias-pip.md)</p> <p>[Создание записи псевдонима для записи ресурса зоны](../dns/tutorial-alias-rr.md)</p>|
-|[Бастион Azure](#bastion)|Настройте безопасное и удобное подключение через RDP или SSH к виртуальным машинам непосредственно в портал Azure по протоколу TLS. При подключении через Azure бастиона виртуальным машинам не требуется общедоступный IP-адрес|<p>[Создание узла-бастиона Azure](../bastion/bastion-create-host-portal.md)</p><p>[Подключение по протоколу SSH к виртуальной машине Linux](../bastion/bastion-connect-vm-ssh.md)</p><p>[Подключение по протоколу RDP к виртуальной машине Windows](../bastion/bastion-connect-vm-rdp.md)</p>|
-|[Шлюз NAT виртуальной сети](#nat)|Создание шлюза NAT для обеспечения исходящего подключения к виртуальной машине.|<p>[Создание шлюза NAT](../virtual-network/quickstart-create-nat-gateway-portal.md)</p>|
-|[Служба пиринга Azure](#azurepeeringservice)|Работайте совместно с поставщиками услуг, чтобы обеспечить оптимальную и надежную маршрутизацию в облако Майкрософт по общедоступной сети.|<p>[Регистрация службы пиринга Azure](../peering-service/azure-portal.md)</p>|
-| [Пограничные зоны Azure](#edge-zones)| Разверните виртуальные машины, контейнеры и другие службы в пограничных зонах, чтобы устранить низкую задержку и требования к высокой пропускной способности.| <p>[Зоны пограничных устройств с перевозчиком](edge-zones-overview.md#carrier)<p> <p>[Зоны частного периметра](edge-zones-overview.md#private-edge-zones)</p>|
-| [Azure Орбитал](#orbital)| Обмен данными с бортовой или вспомогательным созвездиями, разную и исходящей связью, обработка данных в облаке, последовательное взаимодействие служб со службами Azure в уникальных сценариях и создание продуктов для клиентов.  | <p>[Глобальная связь](azure-orbital-overview.md#global-communication)</p>  <p>[Партнерские станции-Аренда](azure-orbital-overview.md#digital-transformation)</p>|
-||||
 
 ### <a name="virtual-network"></a><a name="vnet"></a>Виртуальная сеть
 
 Виртуальная сеть (VNet) Azure — это стандартный строительный блок для вашей частной сети в Azure. Виртуальных сетей можно использовать для:
-- **Обмен данными между ресурсами Azure**. виртуальные машины и другие типы ресурсов Azure можно развернуть в виртуальной сети, например в средах службы приложений Azure, в службе Azure Kubernetes Service (AKS) и в масштабируемых наборах виртуальных машин Azure. Полный список ресурсов Azure, которые можно развернуть в виртуальной сети, см. в статье [Интеграция виртуальной сети для служб Azure](../virtual-network/virtual-network-for-azure-services.md).
-- **Обмен данными между**собой. виртуальные сети можно подключать друг к другу, что позволяет ресурсам в виртуальной сети взаимодействовать друг с другом, используя пиринг виртуальных сетей. Виртуальные сети, которые вы подключаете, могут находиться в одном или в разных регионах Azure. Дополнительные сведения см. в статье [Пиринг между виртуальными сетями](../virtual-network/virtual-network-peering-overview.md).
-- **Подключение к Интернету**. по умолчанию все ресурсы в виртуальной сети могут обмениваться данными по сети. Можно также установить входящее подключение к ресурсу, присвоив ему общедоступный IP-адрес, или общедоступный экземпляр Load Balancer. Для управления исходящими подключениями можно также использовать [общедоступные IP-адреса](../virtual-network/virtual-network-public-ip-address.md) или общедоступные [Load Balancer](../load-balancer/load-balancer-overview.md) .
-- **Взаимодействие с локальными сетями**. Вы можете подключить локальные компьютеры и сети к виртуальной сети с помощью [VPN-шлюза](../vpn-gateway/vpn-gateway-about-vpngateways.md) или [ExpressRoute](../expressroute/expressroute-introduction.md).
+- **Обмен данными между ресурсами Azure** . виртуальные машины и другие типы ресурсов Azure можно развернуть в виртуальной сети, например в средах службы приложений Azure, в службе Azure Kubernetes Service (AKS) и в масштабируемых наборах виртуальных машин Azure. Полный список ресурсов Azure, которые можно развернуть в виртуальной сети, см. в статье [Интеграция виртуальной сети для служб Azure](../virtual-network/virtual-network-for-azure-services.md).
+- **Обмен данными между** собой. виртуальные сети можно подключать друг к другу, что позволяет ресурсам в виртуальной сети взаимодействовать друг с другом, используя пиринг виртуальных сетей. Виртуальные сети, которые вы подключаете, могут находиться в одном или в разных регионах Azure. Дополнительные сведения см. в статье [Пиринг между виртуальными сетями](../virtual-network/virtual-network-peering-overview.md).
+- **Подключение к Интернету** . по умолчанию все ресурсы в виртуальной сети могут обмениваться данными по сети. Можно также установить входящее подключение к ресурсу, присвоив ему общедоступный IP-адрес, или общедоступный экземпляр Load Balancer. Для управления исходящими подключениями можно также использовать [общедоступные IP-адреса](../virtual-network/virtual-network-public-ip-address.md) или общедоступные [Load Balancer](../load-balancer/load-balancer-overview.md) .
+- **Взаимодействие с локальными сетями** . Вы можете подключить локальные компьютеры и сети к виртуальной сети с помощью [VPN-шлюза](../vpn-gateway/vpn-gateway-about-vpngateways.md) или [ExpressRoute](../expressroute/expressroute-introduction.md).
 
 Дополнительные сведения см. в статье [что такое виртуальная сеть Azure?](../virtual-network/virtual-networks-overview.md).
 
@@ -99,30 +86,18 @@ Azure Orbital — это полностью управляемая облачн
 
 ## <a name="application-protection-services"></a><a name="protect"></a>Службы защиты приложений
 
-В этом разделе описываются сетевые службы в Azure, помогающие защитить ваши сетевые ресурсы. Защитите свои приложения с помощью любой или комбинации этих сетевых служб в Azure-Private Link, от атак DDoS защиты, брандмауэра, групп безопасности сети, брандмауэра веб-приложения и конечных точек виртуальной сети.
-
-|Служба|Зачем использовать?|Сценарий|
-|---|---|---|
-|[Защита от атак DDoS](#ddosprotection) |Высокий уровень доступности для приложений с защитой от избыточных данных по IP-трафику|[Управление защитой от атак DDoS в Azure](../virtual-network/manage-ddos-protection.md)|
-|[Брандмауэр веб-приложения](#waf)|<p>[Azure WAF с шлюзом приложений](../web-application-firewall/ag/ag-overview.md) обеспечивает стандартную защиту сущностей в общедоступном и частном адресном пространстве.</p><p>[Azure WAF с интерфейсом "Передняя дверь](../web-application-firewall/afds/afds-overview.md) " обеспечивает защиту в границах сети для общедоступных конечных точек.</p>|<p>[Настройка правил защиты Bot](../frontdoor/waf-front-door-policy-configure-bot-protection.md)</p> <p>[Настройка кода отклика](../frontdoor/waf-front-door-configure-custom-response-code.md)</p> <p>[Настройка правил ограничения IP-адресов](../frontdoor/waf-front-door-configure-ip-restriction.md)</p> <p>[Настройка правила ограничения скорости](../frontdoor/waf-front-door-rate-limit-powershell.md)</p> |
-|[Брандмауэр Azure](#firewall)|Брандмауэр Azure — это управляемая облачная служба сетевой безопасности, которая защищает ресурсы виртуальной сети Azure. Это высокодоступная служба с полным отслеживанием состояния и неограниченными возможностями облачного масштабирования.|<p>[Развертывание брандмауэра Azure в виртуальной сети](../firewall/tutorial-firewall-deploy-portal.md)</p> <p>[— Развертывание брандмауэра Azure в гибридной сети](../firewall/tutorial-hybrid-ps.md)</p> <p>[Фильтрация входящего трафика с помощью брандмауэра Azure ДНаТ](../firewall/tutorial-firewall-dnat.md)</p>|
-|[Группы безопасности сети](#nsg)|Полный детализация распределенного управления конечным узлом на виртуальной машине или подсети для всех потоков сетевого трафика|[Фильтрация сетевого трафика с помощью групп безопасности сети](../virtual-network/tutorial-filter-network-traffic.md)|
-|[Конечные точки службы для виртуальной сети](#serviceendpoints)|Позволяет ограничить сетевой доступ к некоторым ресурсам службы Azure для подсети виртуальной сети.|[Настройка конечных точек служб виртуальной сети](../virtual-network/tutorial-restrict-network-access-to-resources-powershell.md)|
-[Приватный канал](#privatelink)|Обеспечивает доступ к службам Azure PaaS (например, службе хранилища Azure и базе данных SQL), а также службам, принадлежащим клиентам, и партнерам, размещенным в частной конечной точке в виртуальной сети.|<p>[Создание частной конечной точки](../private-link/create-private-endpoint-portal.md)</p><p>[Создание службы "Приватный канал"](../private-link/create-private-link-service-portal.md)</p>|
-|||
+В этом разделе описываются сетевые службы в Azure, помогающие защитить ваши сетевые ресурсы. Защитите свои приложения с помощью любой или комбинации этих сетевых служб в Azure-от атак DDoS Protection, частной ссылке, брандмауэре, брандмауэре веб-приложения, группах безопасности сети и конечных точках службы виртуальной сети.
 
 ### <a name="ddos-protection"></a><a name="ddosprotection"></a>Защита от атак DDoS 
 [Защита Azure от атак DDoS](../virtual-network/manage-ddos-protection.md) обеспечивает контрмеры для самых сложных угроз от атак DDoS. Служба предоставляет расширенные возможности по устранению рисков от атак DDoS для приложения и ресурсов, развернутых в виртуальных сетях. Кроме того, клиенты, использующие службу защиты Azure от атак DDoS, имеют доступ к от атак DDoS быстрой реакции, чтобы привлечь экспертов от атак DDoS во время активной атаки.
 
 :::image type="content" source="./media/networking-overview/ddos-protection.png" alt-text="Azure ExpressRoute":::
 
-### <a name="web-application-firewall"></a><a name="waf"></a>Брандмауэр веб-приложения
+### <a name="azure-private-link"></a><a name="privatelink"></a>Приватный канал Azure
+[Частная ссылка Azure](../private-link/private-link-overview.md) позволяет получить доступ к службам Azure PaaS (например, службе хранилища Azure и базе данных SQL), а также службам, принадлежащим заказчику, или партнерскую службу, размещенную в частной конечной точке в виртуальной сети.
+Трафик между виртуальной сетью и службой проходит через магистральную сеть Майкрософт. Предоставление доступа к службе через общедоступный Интернет больше не требуется. Вы можете создать собственную службу приватного канала в виртуальной сети и предоставлять ее клиентам.
 
-[Брандмауэр веб-приложения Azure](../web-application-firewall/overview.md) (WAF) обеспечивает защиту веб-приложений от распространенных веб-эксплойтов и уязвимостей, таких как внедрение кода SQL и межсайтовые сценарии. Azure WAF обеспечивает стандартную защиту от OWASP первых 10 уязвимостей через управляемые правила. Кроме того, клиенты могут настраивать настраиваемые правила, которые являются управляемыми правилами клиентов для обеспечения дополнительной защиты на основе диапазона IP-адресов источника, и такие атрибуты запросов, как заголовки, файлы cookie, поля данных формы или параметры строки запроса.
-
-Клиенты могут выбрать развертывание [Azure WAF с помощью шлюза приложений](../application-gateway/waf-overview.md) , который обеспечивает региональную защиту сущностей в общедоступном и частном адресном пространстве. Клиенты также могут развернуть [WAF Azure с помощью передней дверцы](../frontdoor/waf-overview.md) , которая обеспечивает защиту на границе сети до общедоступных конечных точек.
-
-:::image type="content" source="./media/networking-overview/waf-overview.png" alt-text="Azure ExpressRoute":::
+:::image type="content" source="./media/networking-overview/private-endpoint.png" alt-text="Azure ExpressRoute":::
 
 ### <a name="azure-firewall"></a><a name="firewall"></a>Брандмауэр Azure
 Брандмауэр Azure — это управляемая облачная служба сетевой безопасности, которая защищает ресурсы виртуальной сети Azure. С помощью брандмауэра Azure можно централизованно создавать, применять и регистрировать политики приложений и сетевых подключений в подписках и виртуальных сетях. Брандмауэр Azure использует статический общедоступный IP-адрес для виртуальных сетевых ресурсов, позволяя внешним брандмауэрам идентифицировать трафик, исходящий из виртуальной сети. 
@@ -131,40 +106,34 @@ Azure Orbital — это полностью управляемая облачн
 
 :::image type="content" source="./media/networking-overview/firewall-threat.png" alt-text="Azure ExpressRoute":::
 
+### <a name="web-application-firewall"></a><a name="waf"></a>Брандмауэр веб-приложения
+[Брандмауэр веб-приложения Azure](../web-application-firewall/overview.md) (WAF) обеспечивает защиту веб-приложений от распространенных веб-эксплойтов и уязвимостей, таких как внедрение кода SQL и межсайтовые сценарии. Azure WAF обеспечивает стандартную защиту от OWASP первых 10 уязвимостей через управляемые правила. Кроме того, клиенты могут настраивать настраиваемые правила, которые являются управляемыми правилами клиентов для обеспечения дополнительной защиты на основе диапазона IP-адресов источника, и такие атрибуты запросов, как заголовки, файлы cookie, поля данных формы или параметры строки запроса.
+
+Клиенты могут выбрать развертывание [Azure WAF с помощью шлюза приложений](../application-gateway/waf-overview.md) , который обеспечивает региональную защиту сущностей в общедоступном и частном адресном пространстве. Клиенты также могут развернуть [WAF Azure с помощью передней дверцы](../frontdoor/waf-overview.md) , которая обеспечивает защиту на границе сети до общедоступных конечных точек.
+
+:::image type="content" source="./media/networking-overview/waf-overview.png" alt-text="Azure ExpressRoute":::
+
 ### <a name="network-security-groups"></a><a name="nsg"></a>Группы безопасности сети
-Отфильтровать трафик, поступающий из ресурсов Azure и обратно, в виртуальной сети можно с помощью группы безопасности сети. Дополнительные сведения см. в [обзоре безопасности](../virtual-network/security-overview.md).
+Отфильтровать трафик, поступающий из ресурсов Azure и обратно, в виртуальной сети можно с помощью группы безопасности сети. Дополнительные сведения см. в разделе [Группы безопасности сети](../virtual-network/network-security-groups-overview.md).
 
 ### <a name="service-endpoints"></a><a name="serviceendpoints"></a>Конечные точки службы
 Конечные точки служб виртуальной сети расширяют пространство частных адресов и возможности идентификации вашей виртуальной сети в службах Azure благодаря прямому соединению. Конечные точки позволяют защищать критически важные ресурсы служб Azure в пределах отдельных виртуальных сетей. Трафик, поступающий из виртуальной сети в службу Azure, всегда остается в магистральной сети Microsoft Azure. Дополнительные сведения см. в статье [Конечные точки служб для виртуальной сети](../virtual-network/virtual-network-service-endpoints-overview.md).
 
 :::image type="content" source="./media/networking-overview/vnet-service-endpoints-overview.png" alt-text="Azure ExpressRoute":::
 
-### <a name="azure-private-link"></a><a name="privatelink"></a>Приватный канал Azure
-[Частная ссылка Azure](../private-link/private-link-overview.md) позволяет получить доступ к службам Azure PaaS (например, службе хранилища Azure и базе данных SQL), а также службам, принадлежащим заказчику, или партнерскую службу, размещенную в частной конечной точке в виртуальной сети.
-Трафик между виртуальной сетью и службой проходит через магистральную сеть Майкрософт. Предоставление доступа к службе через общедоступный Интернет больше не требуется. Вы можете создать собственную службу приватного канала в виртуальной сети и предоставлять ее клиентам.
-
-:::image type="content" source="./media/networking-overview/private-endpoint.png" alt-text="Azure ExpressRoute":::
-
 ## <a name="application-delivery-services"></a><a name="deliver"></a>Службы доставки приложений
 
 В этом разделе описываются сетевые службы в Azure, которые помогают доставлять приложения — сеть доставки содержимого, служба "Передняя дверца Azure", диспетчер трафика, Load Balancer и шлюз приложений.
 
-|Служба|Зачем использовать?|Сценарий|
-|---|---|---|
-|[Сеть доставки содержимого](#cdn)|Предоставляет пользователям содержимое с высокой пропускной способностью. CDN Хранение кэшированного содержимого на пограничных серверах в расположениях точки присутствия (POP), близких к конечным пользователям, чтобы уменьшить задержку.|<p>[Добавление CDN в веб-приложение](../cdn/cdn-add-to-web-app.md)</p> <p>[— Доступ к BLOB-объектам хранилища с помощью пользовательского домена Azure CDN по протоколу HTTPS](..//cdn/cdn-storage-custom-domain-https.md)</p> <p>[Добавление личного домена к конечной точке Azure CDN](../cdn/cdn-map-content-to-custom-domain.md)</p> <p>[Настройка протокола HTTPS для личного домена в Azure CDN](../cdn/cdn-custom-ssl.md?tabs=option-1-default-enable-https-with-a-cdn-managed-certificate)</p>|
-|[Azure Front Door Service](#frontdoor)|Позволяет определять и отслеживать глобальную маршрутизацию для веб-трафика, а также управлять ею, оптимизируя для лучшей производительности и мгновенной глобальной отработки отказа для обеспечения высокой доступности.|<p>[Добавление личного домена в Azure Front Door Service](../frontdoor/front-door-custom-domain.md)</p> <p>[Настройка протокола HTTPS на личном домене Front Door](../frontdoor/front-door-custom-domain-https.md)</p><p>[Настройка политики брандмауэра веб-приложения для географической фильтрации](../frontdoor/front-door-tutorial-geo-filtering.md)|
-|[Диспетчер трафика](#trafficmanager)|Распространяет трафик, основанный на DNS, на службы в глобальных регионах Azure, обеспечивая высокий уровень доступности и скорости реагирования.|<p> [Перенаправление трафика для обеспечения минимальной задержки](../traffic-manager/tutorial-traffic-manager-improve-website-response.md)</p><p>[Перенаправление трафика к приоритетной конечной точке](../traffic-manager/traffic-manager-configure-priority-routing-method.md)</p><p> [Управление трафиком с помощью весовых коэффициентов конечных точек](../traffic-manager/tutorial-traffic-manager-weighted-endpoint-routing.md)</p><p>[Маршрутизация трафика на основе географического расположения конечной точки](../traffic-manager/traffic-manager-configure-geographic-routing-method.md)</p> <p> [Маршрутизация трафика через подсеть пользователя](../traffic-manager/tutorial-traffic-manager-subnet-routing.md)</p>|
-|[Load Balancer](#loadbalancer)|Обеспечивает региональную балансировку нагрузки путем маршрутизации трафика между зонами доступности и виртуальных сетей. Обеспечивает внутреннюю балансировку нагрузки путем маршрутизации трафика между ресурсами и между ними для создания регионального приложения.|<p> [Балансировка интернет-трафика на виртуальных машинах](../load-balancer/tutorial-load-balancer-standard-manage-portal.md)</p> <p>[Балансировка нагрузки трафика между виртуальными машинами в виртуальной сети](../load-balancer/tutorial-load-balancer-standard-internal-portal.md)<p>[Перенаправление трафика на конкретный порт на конкретных виртуальных машинах](../load-balancer/tutorial-load-balancer-port-forwarding-portal.md)</p><p> [Настройка правил балансировки нагрузки и исходящего трафика](../load-balancer/configure-load-balancer-outbound-cli.md)</p>|
-|[Шлюз приложений](#applicationgateway)|Шлюз приложений Azure — это подсистема балансировки нагрузки веб-трафика, предназначенная для управления трафиком веб-приложений.|<p>[Маршрутизация веб-трафика с помощью Шлюза приложений](../application-gateway/quick-create-portal.md)</p><p>[Руководство. Настройка шлюза приложений с завершением TSL-запросов с помощью портала Azure](../application-gateway/create-ssl-portal.md)</p><p>[Создание шлюза приложений с перенаправлением на основе URL-пути](../application-gateway/create-url-route-portal.md) </p>|
-|
-
-### <a name="content-delivery-network"></a><a name="cdn"></a>Сеть доставки содержимого (CDN)
+### <a name="content-delivery-network"></a><a name="cdn"></a>Сеть доставки содержимого
 Azure CDN предлагает разработчикам глобальное решение для быстрой доставки больших объемов содержимого пользователям путем кэширования содержимого на стратегически расположенных физических узлах по всему миру. Дополнительные сведения о Azure CDN см. в статье [сеть доставки содержимого Azure](../cdn/cdn-overview.md).
 
 :::image type="content" source="./media/networking-overview/cdn-overview.png" alt-text="Azure ExpressRoute":::
 
-### <a name="azure-front-door-service"></a><a name="frontdoor"></a>Служба "Передняя дверца Azure"
+### <a name="azure-front-door-service"></a><a name="frontdoor"></a>Azure Front Door Service
 Azure Front Door Service позволяет определять, управлять и отслеживать глобальную маршрутизацию для вашего веб-трафика посредством оптимизации для обеспечения наилучшей производительности и мгновенной глобальной отработки отказа для обеспечения высокой доступности. С помощью службы Front Door вы можете преобразовать глобальные (с поддержкой нескольких регионов) пользовательские и корпоративные приложения в современные, надежные, высокопроизводительные и персонализированные приложения, интерфейсы API и содержимое, которые охватывают глобальную аудиторию с помощью Azure. Дополнительные сведения см. в статье [Передняя дверца Azure](../frontdoor/front-door-overview.md).
+
+:::image type="content" source="./media/networking-overview/front-door-visual-diagram.png" alt-text="Azure ExpressRoute":::
 
 ### <a name="traffic-manager"></a><a name="trafficmanager"></a>Диспетчер трафика
 
@@ -191,33 +160,29 @@ Azure Load Balancer обеспечивает высокую производит
 :::image type="content" source="./media/networking-overview/figure1-720.png" alt-text="Azure ExpressRoute":::
 
 ## <a name="network-monitoring-services"></a><a name="monitor"></a>Службы мониторинга сети
-В этом разделе описываются сетевые службы в Azure, помогающие отслеживать сетевые ресурсы — наблюдатель за сетями, монитор ExpressRoute, Azure Monitor и TAP.
-
-|Служба|Зачем использовать?|Сценарий|
-|---|---|---|
-|[Наблюдатель за сетями](#networkwatcher)|Помогает отслеживать и устранять проблемы с подключением, помогает диагностировать проблемы с VPN, NSG и маршрутизацией, записывать пакеты на виртуальной машине, автоматизировать запуск средств диагностики с помощью функций Azure и Logic Apps|<p>[Диагностика проблем с фильтрацией трафика виртуальной машины](../network-watcher/diagnose-vm-network-traffic-filtering-problem.md)</p><p>[Диагностика проблем с маршрутизацией трафика виртуальной машины](../network-watcher/diagnose-vm-network-routing-problem.md)</p><p>[Мониторинг взаимодействия между виртуальными машинами](../network-watcher/connection-monitor.md)</p><p>[Руководство по диагностике проблем с обменом данными между сетями](../network-watcher/diagnose-communication-problem-between-networks.md)</p><p>[Запись сетевого входящего и исходящего трафика виртуальной машины в журнал](../network-watcher/network-watcher-nsg-flow-logging-portal.md)</p>|
-|[Монитор ExpressRoute](#expressroutemonitor)|Обеспечивает мониторинг производительности сети, доступности и использования, помогает при автоматическом обнаружении топологии сети, обеспечивает более быструю изоляцию сбоев, обнаруживает временные сетевые проблемы, помогает анализировать исторические характеристики производительности сети, поддерживает несколько подписок.|<p>[Настройка решения "Монитор производительности сети" для ExpressRoute](../expressroute/how-to-npm.md)</p><p>[Мониторинг, метрики и оповещения в ExpressRoute](../expressroute/expressroute-monitoring-metrics-alerts.md)</p>|
-|[Azure Monitor](#azuremonitor);|Помогает понять, как работают приложения и заранее определяет проблемы, влияющие на них, а также на ресурсы, от которых они зависят.|<p>[Метрики и оповещения диспетчера трафика](../traffic-manager/traffic-manager-metrics-alerts.md)</p><p>[Диагностика Azure Monitor для Load Balancer (цен. категория "Стандартный")](../load-balancer/load-balancer-standard-diagnostics.md)</p><p>[Мониторинг журналов и метрик Брандмауэра Azure](../firewall/tutorial-diagnostics.md)</p><p>[Мониторинг и ведение журнала для брандмауэра веб-приложения Azure](../frontdoor/waf-front-door-monitor.md)</p>|
-|[КАСАНИе виртуальной сети](#vnettap)|Обеспечивает непрерывную потоковую передачу сетевого трафика виртуальной машины в сборщик пакетов, включает решения для управления производительностью сети и приложений и средства анализа безопасности.|[Создание ресурса TAP для виртуальной сети](../virtual-network/tutorial-tap-virtual-network-cli.md)|
-|
+В этом разделе описываются сетевые службы в Azure, помогающие отслеживать сетевые ресурсы — наблюдатель за сетями, Azure Monitor для сетей, мониторов ExpressRoute, Azure Monitor и TAP для виртуальной сети.
 
 ### <a name="network-watcher"></a><a name="networkwatcher"></a>Наблюдатель за сетями
 Наблюдатель за сетями Azure предоставляет инструменты для мониторинга, диагностики, просмотра метрик и включения или отключения журналов для ресурсов в виртуальной сети Azure. Дополнительные сведения см. в статье [что такое наблюдатель за сетями](../network-watcher/network-watcher-monitoring-overview.md?toc=%2fazure%2fnetworking%2ftoc.json).
+
+### <a name="azure-monitor-for-networks-preview"></a>Предварительная версия Azure Monitor для сетей
+Azure Monitor для сетей предоставляет исчерпывающее представление о работоспособности и метриках для всех развернутых сетевых ресурсов, не требуя настройки. Он также предоставляет доступ к возможностям мониторинга сети, таким как [монитор подключения](../network-watcher/connection-monitor-preview.md), [ведение журнала потоков для групп безопасности сети](../network-watcher/network-watcher-nsg-flow-logging-overview.md)и [аналитика трафика](../network-watcher/traffic-analytics.md). Дополнительные сведения см. в разделе [Azure Monitor for Networks Preview](../azure-monitor/insights/network-insights-overview.md?toc=%2fazure%2fnetworking%2ftoc.json).
+
 ### <a name="expressroute-monitor"></a><a name="expressroutemonitor"></a>Монитор ExpressRoute
 Сведения о том, как просматривать метрики канала ExpressRoute, журналы ресурсов и оповещения, см. в разделе [мониторинг expressroute, метрики и оповещения](../expressroute/expressroute-monitoring-metrics-alerts.md?toc=%2fazure%2fnetworking%2ftoc.json).
 ### <a name="azure-monitor"></a><a name="azuremonitor"></a>Azure Monitor
 Служба Azure Monitor обеспечивает максимальную доступность и производительность приложений, предоставляя полноценное решение для сбора, анализа и обработки данных телеметрии из облачных и локальных сред. Она поможет вам понять, как выполняются приложения, а также заранее определить проблемы, влияющие на них, и ресурсы, от которых они зависят. Дополнительные сведения см. в разделе [Azure Monitor обзор](../azure-monitor/overview.md?toc=%2fazure%2fnetworking%2ftoc.json).
 ### <a name="virtual-network-tap"></a><a name="vnettap"></a>КАСАНИе виртуальной сети
-TAP (точка доступа к терминалу) виртуальной сети Azure позволяет непрерывно передавать сетевой трафик виртуальной машины в сборщик сетевых пакетов или средство аналитики. Средство сбора данных или анализа предоставляется партнером по [сетевым виртуальным устройствам](https://azure.microsoft.com/solutions/network-appliances/) . 
+TAP (точка доступа к терминалу) виртуальной сети Azure позволяет непрерывно передавать сетевой трафик виртуальной машины в сборщик сетевых пакетов или средство аналитики. Средство сбора данных или анализа предоставляется партнером по [сетевым виртуальным устройствам](https://azure.microsoft.com/solutions/network-appliances/) .
 
-Ниже показано, как работает TAP виртуальной сети. 
+На следующем рисунке показано, как работает КАСАНИе виртуальной сети.
 
 :::image type="content" source="./media/networking-overview/virtual-network-tap-architecture.png" alt-text="Azure ExpressRoute":::
 
 Дополнительные сведения см. в разделе [что такое касание виртуальной сети](../virtual-network/virtual-network-tap-overview.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Создайте первую виртуальную сеть и подключите к ней несколько виртуальных машин, выполнив действия, описанные в [этой статье](../virtual-network/quick-create-portal.md?toc=%2fazure%2fnetworking%2ftoc.json).
+- Создайте первую виртуальную сеть и подключите к ней несколько виртуальных машин, выполнив действия, описанные в статье [Создание первой виртуальной сети](../virtual-network/quick-create-portal.md?toc=%2fazure%2fnetworking%2ftoc.json) .
 - Подключите компьютер к виртуальной сети, выполнив действия, описанные в [статье Настройка подключения типа "точка — сеть](../vpn-gateway/vpn-gateway-howto-point-to-site-resource-manager-portal.md?toc=%2fazure%2fnetworking%2ftoc.json)".
 - Реализуйте балансировку интернет-трафика на общедоступные серверы, выполнив действия, описанные в статье [Создание подсистемы балансировки нагрузки для Интернета на портале Azure](../load-balancer/load-balancer-get-started-internet-portal.md?toc=%2fazure%2fnetworking%2ftoc.json).
