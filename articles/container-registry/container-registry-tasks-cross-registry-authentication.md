@@ -3,12 +3,12 @@ title: Проверка подлинности между реестрами с 
 description: Настройка задачи Реестра контейнеров Azure (задача ACR) для доступа к другому частному реестру контейнеров в Azure с использованием управляемого удостоверения для ресурсов Azure
 ms.topic: article
 ms.date: 07/06/2020
-ms.openlocfilehash: 8b961a2ff6a795f03798cc6f6a7d303391036ef8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9a460102eafa5c1eda2f37330887d985387d5df5
+ms.sourcegitcommit: daab0491bbc05c43035a3693a96a451845ff193b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86057367"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "93026264"
 ---
 # <a name="cross-registry-authentication-in-an-acr-task-using-an-azure-managed-identity"></a>Проверка подлинности между реестрами с помощью задачи ACR с использованием удостоверения, управляемого Azure 
 
@@ -30,8 +30,8 @@ ms.locfileid: "86057367"
 
 Для работы с этой статьей вам понадобится два реестра контейнеров Azure:
 
-* Первый реестр используется для создания и выполнения задач ACR. В этой статье ему присвоено имя *myregistry*. 
-* Во втором реестре размещается базовый образ, используемый в задаче для создания образа. Имя второго реестра в этой статье — *mybaseregistry*. 
+* Первый реестр используется для создания и выполнения задач ACR. В этой статье ему присвоено имя *myregistry* . 
+* Во втором реестре размещается базовый образ, используемый в задаче для создания образа. Имя второго реестра в этой статье — *mybaseregistry* . 
 
 На следующих шагах замените эти значения именами ваших реестров.
 
@@ -39,16 +39,12 @@ ms.locfileid: "86057367"
 
 ## <a name="prepare-base-registry"></a>Подготовка базового реестра
 
-Сначала создайте рабочую папку, а затем создайте файл с именем Dockerfile и следующим содержимым. В этом простом примере создается базовый образ Node.js на основе общедоступного образа в Docker Hub.
-    
-```bash
-echo FROM node:9-alpine > Dockerfile
-```
+В демонстрационных целях в качестве одноразовой операции выполните команду [AZ запись контроля доступа] [AZ-контроля учетных записей], чтобы импортировать открытый образ Node.js из DOCKER Hub в основной реестр. На практике другая команда или процесс в Организации может поддерживать образы в основном реестре.
 
-В текущем каталоге выполните команду [az acr build][az-acr-build], чтобы создать и отправить базовый образ в базовый реестр. На практике другая команда или процесс в организации могут использовать базовый реестр.
-    
 ```azurecli
-az acr build --image baseimages/node:9-alpine --registry mybaseregistry --file Dockerfile .
+az acr import --name mybaseregistry \
+  --source docker.io/library/node:9-alpine \
+  --image baseimages/node:9-alpine 
 ```
 
 ## <a name="define-task-steps-in-yaml-file"></a>Определение шагов задачи в файле YAML
@@ -73,7 +69,7 @@ steps:
 
 ### <a name="create-task"></a>Создание задачи
 
-Теперь создайте задачу *helloworldtask*, выполнив следующую команду [az acr task create][az-acr-task-create]. Задача выполняется без контекста исходного кода, а команда ссылается на файл `helloworldtask.yaml` в рабочей папке. Параметр `--assign-identity` передает идентификатор ресурса для удостоверения, назначаемого пользователем. 
+Теперь создайте задачу *helloworldtask* , выполнив следующую команду [az acr task create][az-acr-task-create]. Задача выполняется без контекста исходного кода, а команда ссылается на файл `helloworldtask.yaml` в рабочей папке. Параметр `--assign-identity` передает идентификатор ресурса для удостоверения, назначаемого пользователем. 
 
 ```azurecli
 az acr task create \
@@ -88,7 +84,7 @@ az acr task create \
 
 ### <a name="give-identity-pull-permissions-to-the-base-registry"></a>Предоставление удостоверению разрешений на извлечение данных из базового реестра
 
-В этом разделе описано, как предоставить управляемому удостоверению разрешения на извлечение данных из базового реестра *mybaseregistry*.
+В этом разделе описано, как предоставить управляемому удостоверению разрешения на извлечение данных из базового реестра *mybaseregistry* .
 
 Используйте команду [az acr show][az-acr-show], чтобы получить идентификатор ресурса для базового реестра и сохранить его в переменной.
 
@@ -113,7 +109,7 @@ az role assignment create \
 
 ### <a name="create-task"></a>Создание задачи
 
-Теперь создайте задачу *helloworldtask*, выполнив следующую команду [az acr task create][az-acr-task-create]. Задача выполняется без контекста исходного кода, а команда ссылается на файл `helloworldtask.yaml` в рабочей папке. Параметр `--assign-identity` без значений включает удостоверение, назначаемое системой, в задаче. 
+Теперь создайте задачу *helloworldtask* , выполнив следующую команду [az acr task create][az-acr-task-create]. Задача выполняется без контекста исходного кода, а команда ссылается на файл `helloworldtask.yaml` в рабочей папке. Параметр `--assign-identity` без значений включает удостоверение, назначаемое системой, в задаче. 
 
 ```azurecli
 az acr task create \
@@ -127,7 +123,7 @@ az acr task create \
 
 ### <a name="give-identity-pull-permissions-to-the-base-registry"></a>Предоставление удостоверению разрешений на извлечение данных из базового реестра
 
-В этом разделе описано, как предоставить управляемому удостоверению разрешения на извлечение данных из базового реестра *mybaseregistry*.
+В этом разделе описано, как предоставить управляемому удостоверению разрешения на извлечение данных из базового реестра *mybaseregistry* .
 
 Используйте команду [az acr show][az-acr-show], чтобы получить идентификатор ресурса для базового реестра и сохранить его в переменной.
 
@@ -223,7 +219,7 @@ The push refers to repository [myregistry.azurecr.io/hello-world]
 Run ID: cf10 was successful after 32s
 ```
 
-Чтобы убедиться, что образ создан и успешно отправлен в *myregistry*, выполните команду [az acr repository show-tags][az-acr-repository-show-tags].
+Чтобы убедиться, что образ создан и успешно отправлен в *myregistry* , выполните команду [az acr repository show-tags][az-acr-repository-show-tags].
 
 ```azurecli
 az acr repository show-tags --name myregistry --repository hello-world --output tsv

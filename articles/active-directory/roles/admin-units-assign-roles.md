@@ -1,6 +1,6 @@
 ---
 title: Назначение ролей и их перечисление с помощью области административной единицы — Azure Active Directory | Документация Майкрософт
-description: Использование административных единиц для ограничения области назначений ролей в Azure Active Directory
+description: Используйте административные единицы, чтобы ограничить область назначений ролей в Azure Active Directory.
 services: active-directory
 documentationcenter: ''
 author: curtand
@@ -14,20 +14,20 @@ ms.author: curtand
 ms.reviewer: anandy
 ms.custom: oldportal;it-pro;
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 66a4810b3a84cac55a49744025b6ac71c3f1c0a7
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: dfae813f01d3e7a08e18cde76e5c26ca253a371f
+ms.sourcegitcommit: daab0491bbc05c43035a3693a96a451845ff193b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92377949"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "93026604"
 ---
 # <a name="assign-scoped-roles-to-an-administrative-unit"></a>Назначение ролей с заданной областью административной единице
 
-В Azure Active Directory (Azure AD) можно назначить пользователей роли Azure AD с областью действия ограничено одним или несколькими административными единицами (Au) для более детального административного управления.
+В Azure Active Directory (Azure AD) для более детального административного управления можно назначить пользователей роли Azure AD с областью, ограниченной одним или несколькими административными единицами.
 
-Инструкции по подготовке к использованию PowerShell и Microsoft Graph для управления административными единицами см. в разделе [Начало работы](admin-units-manage.md#get-started).
+Чтобы подготовиться к использованию PowerShell и Microsoft Graph для управления административными единицами, см. статью Приступая к [работе](admin-units-manage.md#get-started).
 
-## <a name="roles-available"></a>Доступные роли
+## <a name="available-roles"></a>Доступные роли
 
 Роль  |  Описание
 ----- |  -----------
@@ -43,26 +43,33 @@ ms.locfileid: "92377949"
 Следующие субъекты безопасности могут быть назначены роли с областью административной единицы.
 
 * Пользователи
-* Назначаемые облачные группы ролей (Предварительная версия)
+* Назначаемые ролями облачные группы (Предварительная версия)
 * Имя субъекта-службы (SPN)
 
 ## <a name="assign-a-scoped-role"></a>Назначение роли с областью действия
 
-### <a name="azure-portal"></a>Портал Azure
+Роль с областью действия можно назначить с помощью портал Azure, PowerShell или Microsoft Graph.
 
-Перейдите на портале в раздел **Azure AD > Административные единицы**. Выберите административную единицу, для которой необходимо назначить роль пользователю. В области слева выберите роли и администраторы, чтобы получить список всех доступных ролей.
+### <a name="use-the-azure-portal"></a>Использование портала Azure
 
-![Выберите административную единицу для изменения области роли](./media/admin-units-assign-roles/select-role-to-scope.png)
+1. В портал Azure перейдите в **Azure AD** .
 
-Выберите роль, которую необходимо назначить, а затем щелкните **добавить назначения**. Откроется панель справа, где можно выбрать одного или нескольких пользователей, которым будет назначена роль.
+1. Выберите **административные единицы** , а затем выберите административную единицу, которой необходимо назначить область роли пользователя. 
 
-![Выберите роль в области, а затем щелкните Добавить назначения.](./media/admin-units-assign-roles/select-add-assignment.png)
+1. В области слева выберите **роли и администраторы** , чтобы получить список всех доступных ролей.
+
+   ![Снимок экрана: панель "роли и Администраторы" для выбора административной единицы, область роли которой необходимо назначить.](./media/admin-units-assign-roles/select-role-to-scope.png)
+
+1. Выберите роль, которую необходимо назначить, а затем щелкните **добавить назначения** . 
+
+1. На панели **Добавление назначений** выберите одного или нескольких пользователей, которым будет назначена роль.
+
+   ![Выберите роль в области, а затем щелкните Добавить назначения.](./media/admin-units-assign-roles/select-add-assignment.png)
 
 > [!Note]
->
-> Чтобы назначить роль административной единицы с помощью PIM, выполните действия, описанные [здесь](../privileged-identity-management/pim-how-to-add-role-to-user.md?tabs=new#assign-a-role-with-restricted-scope).
+> Сведения о назначении роли в административной единице с помощью Azure AD Privileged Identity Management (PIM) см. [в статье назначение ролей Azure AD в PIM](../privileged-identity-management/pim-how-to-add-role-to-user.md?tabs=new#assign-a-role-with-restricted-scope).
 
-### <a name="powershell"></a>PowerShell
+### <a name="use-powershell"></a>Использование PowerShell
 
 ```powershell
 $AdminUser = Get-AzureADUser -ObjectId "Use the user's UPN, who would be an admin on this unit"
@@ -73,9 +80,9 @@ $RoleMember.ObjectId = $AdminUser.ObjectId
 Add-AzureADMSScopedRoleMembership -ObjectId $administrativeUnit.ObjectId -RoleObjectId $Role.ObjectId -RoleMemberInfo $RoleMember
 ```
 
-Выделенную часть можно изменить в соответствии с требованиями конкретной среды.
+Выделенный раздел можно изменить в соответствии с требованиями конкретной среды.
 
-### <a name="microsoft-graph"></a>Microsoft Graph
+### <a name="use-microsoft-graph"></a>Использование Microsoft Graph
 
 ```http
 Http request
@@ -90,22 +97,30 @@ Request body
 }
 ```
 
-## <a name="list-the-scoped-admins-on-an-au"></a>Вывод списка администраторов с заданной областью в AU
+## <a name="view-a-list-of-the-scoped-admins-in-an-administrative-unit"></a>Просмотр списка администраторов с заданной областью в административной единице
 
-### <a name="azure-portal"></a>Портал Azure
+Список администраторов с заданной областью можно просмотреть с помощью портал Azure, PowerShell или Microsoft Graph.
 
-Все назначения ролей, выполненные с помощью области административной единицы, можно просмотреть в [разделе административные единицы в Azure AD](https://ms.portal.azure.com/?microsoft_aad_iam_adminunitprivatepreview=true&microsoft_aad_iam_rbacv2=true#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/AdminUnit). Перейдите на портале в раздел **Azure AD > Административные единицы**. Выберите административную единицу для назначений ролей, которые необходимо перечислить. Выберите **роли и администраторы** и откройте роль, чтобы просмотреть назначения в административной единице.
+### <a name="use-the-azure-portal"></a>Использование портала Azure
 
-### <a name="powershell"></a>PowerShell
+Все назначения ролей, созданные с помощью области административной единицы, можно просмотреть в [разделе административные единицы в Azure AD](https://ms.portal.azure.com/?microsoft_aad_iam_adminunitprivatepreview=true&microsoft_aad_iam_rbacv2=true#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/AdminUnit). 
+
+1. В портал Azure перейдите в **Azure AD** .
+
+1. В левой области выберите **административные единицы** , а затем выберите административную единицу для списка назначений ролей, которые требуется просмотреть. 
+
+1. Выберите **роли и администраторы** , а затем откройте роль, чтобы просмотреть назначения в административной единице.
+
+### <a name="use-powershell"></a>Использование PowerShell
 
 ```powershell
 $administrativeUnit = Get-AzureADMSAdministrativeUnit -Filter "displayname eq 'The display name of the unit'"
 Get-AzureADMSScopedRoleMembership -ObjectId $administrativeUnit.ObjectId | fl *
 ```
 
-Выделенную часть можно изменить в соответствии с требованиями конкретной среды.
+Выделенный раздел можно изменить в соответствии с требованиями конкретной среды.
 
-### <a name="microsoft-graph"></a>Microsoft Graph
+### <a name="use-microsoft-graph"></a>Использование Microsoft Graph
 
 ```http
 Http request

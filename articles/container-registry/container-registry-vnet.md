@@ -3,12 +3,12 @@ title: Ограничение доступа с помощью конечной 
 description: Ограничьте доступ к реестру контейнеров Azure, используя конечную точку службы в виртуальной сети Azure. Доступ к конечной точке службы является компонентом уровня служб Premium.
 ms.topic: article
 ms.date: 05/04/2020
-ms.openlocfilehash: 3472549827781c6ed2f6be0417866747c81edd93
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: 5f9bc7c9a6c8f2061765510a6396611502fd4a2a
+ms.sourcegitcommit: daab0491bbc05c43035a3693a96a451845ff193b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92215507"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "93026230"
 ---
 # <a name="restrict-access-to-a-container-registry-using-a-service-endpoint-in-an-azure-virtual-network"></a>Ограничение доступа к реестру контейнеров с использованием конечной точки службы в виртуальной сети Azure
 
@@ -19,7 +19,7 @@ ms.locfileid: "92215507"
 > [!IMPORTANT]
 > Реестр контейнеров Azure теперь поддерживает [Приватный канал Azure](container-registry-private-link.md), что позволяет размещать в реестре частные конечные точки из виртуальной сети. Частные конечные точки доступны только из виртуальной сети через частные IP-адреса. Мы рекомендуем в большинстве сетевых сценариев использовать частные конечные точки вместо конечных точек службы.
 
-Настройка конечной точки службы для реестра доступна для реестра контейнеров с уровнем **Премиум**. Сведения об уровнях служб реестра и ограничениях см. в статье [Уровни служб Реестра контейнеров Azure](container-registry-skus.md).
+Настройка конечной точки службы для реестра доступна для реестра контейнеров с уровнем **Премиум** . Сведения об уровнях служб реестра и ограничениях см. в статье [Уровни служб Реестра контейнеров Azure](container-registry-skus.md).
 
 ## <a name="preview-limitations"></a>Ограничения предварительной версии
 
@@ -53,7 +53,7 @@ ms.locfileid: "92215507"
 
 ### <a name="add-a-service-endpoint-to-a-subnet"></a>Добавление конечной точки службы в подсеть
 
-При создании виртуальной машины Azure по умолчанию создает в той же группе ресурсов виртуальную сеть. Имя для этой виртуальной сети создается автоматически на основе имени виртуальной машины. Например, если вы присвоите виртуальной машине имя *myDockerVM*, то созданная по умолчанию виртуальная сеть будет называться *myDockerVMVNET*, а подсеть в ней — *myDockerVMSubnet*. Проверьте это с помощью команды [AZ Network vnet List][az-network-vnet-list] :
+При создании виртуальной машины Azure по умолчанию создает в той же группе ресурсов виртуальную сеть. Имя для этой виртуальной сети создается автоматически на основе имени виртуальной машины. Например, если вы присвоите виртуальной машине имя *myDockerVM* , то созданная по умолчанию виртуальная сеть будет называться *myDockerVMVNET* , а подсеть в ней — *myDockerVMSubnet* . Проверьте это с помощью команды [AZ Network vnet List][az-network-vnet-list] :
 
 ```azurecli
 az network vnet list \
@@ -189,7 +189,6 @@ az group delete --name myResourceGroup
 
 
 <!-- LINKS - External -->
-[aci-helloworld]: https://hub.docker.com/r/microsoft/aci-helloworld/
 [terms-of-use]: https://azure.microsoft.com/support/legal/preview-supplemental-terms/
 [kubectl]: https://kubernetes.io/docs/user-guide/kubectl/
 [docker-linux]: https://docs.docker.com/engine/installation/#supported-platforms

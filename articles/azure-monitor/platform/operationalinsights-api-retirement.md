@@ -6,19 +6,19 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/29/2020
-ms.openlocfilehash: 4075e27c3711cbc4c584005126b53f7c99942049
-ms.sourcegitcommit: dd45ae4fc54f8267cda2ddf4a92ccd123464d411
+ms.openlocfilehash: 7ddfb3221c73c740a339dd8d9d4f60cca46c6425
+ms.sourcegitcommit: daab0491bbc05c43035a3693a96a451845ff193b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/29/2020
-ms.locfileid: "92926731"
+ms.locfileid: "93026774"
 ---
 # <a name="operationalinsights-api-version-retirement"></a>Прекращение использования версии API OperationalInsights
-Корпорация Майкрософт предоставляет уведомление не менее чем за 12 месяцев до прекращения использования API для сглаживания перехода до более новой или поддерживаемой версии. Мы выпустили новую версию (2020-08-01) для API поставщика ресурсов **OperationalInsights** и выпустим предыдущие версии API в 29 февраля 2014 г.
+Корпорация Майкрософт предоставляет уведомление не менее чем за 12 месяцев до прекращения использования API для сглаживания перехода до более новой или поддерживаемой версии. Мы выпустили новую версию (2020-08-01) для API поставщика ресурсов **OperationalInsights** и выпустим более ранние версии API-29 февраля 2024.
 
 Мы рекомендуем начать использовать версию 2020-08-01, чтобы получить преимущества новых функций, таких как [выделенный кластер](https://docs.microsoft.com/azure/azure-monitor/log-query/logs-dedicated-clusters), [управляемые клиентом ключи](https://docs.microsoft.com/azure/azure-monitor/platform/customer-managed-keys), [Частная связь](https://docs.microsoft.com/azure/azure-monitor/platform/private-link-security) и [Экспорт данных](https://docs.microsoft.com/azure/azure-monitor/platform/logs-data-export). Кроме того, новые функции и функции и оптимизации добавляются только к текущему API.
 
-После 29 февраля 2014 г. Azure Monitor больше не будет поддерживать более ранние версии API, чем 2020-08-01. Если вы предпочитаете не выполнять обновление, запросы, отправленные из более ранних версий, будут по прежнему обслуживаться Azure Monitorной службой до 29 февраля 2014 г.
+После 29 февраля 2024 Azure Monitor больше не будет поддерживать более ранние версии API, чем 2020-08-01. Если вы предпочитаете не выполнять обновление, запросы, отправленные из более ранних версий, продолжат обслуживаться службой Azure Monitor до 29 февраля 2024.
 
 ## <a name="migration-steps"></a>Этапы миграции
 В зависимости от используемого метода конфигурации следует обновить новую версию в запросах **RESTful** и **Диспетчер ресурсов шаблонах** . Чтобы обновить версию API, выполните приведенные ниже примеры.

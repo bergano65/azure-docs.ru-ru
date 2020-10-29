@@ -10,12 +10,12 @@ ms.subservice: sql-dw
 ms.date: 02/04/2020
 ms.author: kevin
 ms.reviewer: jrasnick
-ms.openlocfilehash: 01a22aa5d2ec7ed54be62f0975b0fefbafd84cd8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 53c68f44273b14658bd4d95ce7cf3cf847c077d0
+ms.sourcegitcommit: daab0491bbc05c43035a3693a96a451845ff193b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85211567"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "93025958"
 ---
 # <a name="monitor-workload---azure-portal"></a>Мониторинг рабочей нагрузки — портал Azure
 
@@ -26,15 +26,15 @@ ms.locfileid: "85211567"
 - Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
 - Пул SQL. Мы будем собирать журналы для пула SQL. Если у вас нет подготовленного пула SQL, см. инструкции в разделе [Создание пула SQL](load-data-from-azure-blob-storage-using-polybase.md).
 
-## <a name="create-a-log-analytics-workspace"></a>Создание рабочей области Log Analytics
+## <a name="create-a-log-analytics-workspace"></a>Создание рабочей области Log Analytics
 
 Перейдите в колонку "Обзор" для Log Analytics рабочих областей и создайте рабочую область.
 
 ![Рабочие области Log Analytics](./media/sql-data-warehouse-monitor-workload-portal/log_analytics_workspaces.png)
 
-![Добавить рабочую область аналитики](./media/sql-data-warehouse-monitor-workload-portal/add_analytics_workspace.png)
+![На снимке экрана показаны Log Analytics рабочие области, в которых можно выбрать команду Добавить.](./media/sql-data-warehouse-monitor-workload-portal/add_analytics_workspace.png)
 
-![Добавить рабочую область аналитики](./media/sql-data-warehouse-monitor-workload-portal/add_analytics_workspace_2.png)
+![На снимке экрана показана Log Analytics Рабочая область, в которую можно ввести значения.](./media/sql-data-warehouse-monitor-workload-portal/add_analytics_workspace_2.png)
 
 Дополнительные сведения о рабочих областях см. в следующей [документации](../../azure-monitor/learn/quick-create-workspace.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.jsond#create-a-workspace).
 

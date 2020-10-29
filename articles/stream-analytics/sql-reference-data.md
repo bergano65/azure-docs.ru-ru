@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 01/29/2019
-ms.openlocfilehash: e00ab059c68d7a3f2288d94894199773cab63ac5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1ae5908fe3ab95dcd62da976988bd7ce107217e5
+ms.sourcegitcommit: daab0491bbc05c43035a3693a96a451845ff193b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86039302"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "93027412"
 ---
 # <a name="use-reference-data-from-a-sql-database-for-an-azure-stream-analytics-job"></a>Использование эталонных данных из Базы данных SQL для задания Azure Stream Analytics
 
@@ -32,7 +32,7 @@ Azure Stream Analytics поддерживает базу данных SQL Azure 
 
 ### <a name="define-sql-database-reference-data-input"></a>Определение Базы данных SQL в качестве источника эталонных входных данных
 
-1. В задании Stream Analytics в разделе **Топология задания** выберите **Входные данные**. Щелкните **Добавить ссылочный вход** и выберите **База данных SQL**.
+1. В задании Stream Analytics в разделе **Топология задания** выберите **Входные данные** . Щелкните **Добавить ссылочный вход** и выберите **База данных SQL** .
 
    ![Входные данные задания Stream Analytics](./media/sql-reference-data/stream-analytics-inputs.png)
 
@@ -44,7 +44,7 @@ Azure Stream Analytics поддерживает базу данных SQL Azure 
 
 ### <a name="specify-storage-account-in-job-config"></a>Выбор учетной записи хранения в конфигурации задания
 
-В разделе **Настройка** выберите пункт **Параметры учетной записи хранения** и щелкните **Добавить учетную запись хранения**.
+В разделе **Настройка** выберите пункт **Параметры учетной записи хранения** и щелкните **Добавить учетную запись хранения** .
 
    ![Параметры учетной записи хранения Stream Analytics](./media/sql-reference-data/storage-account-settings.png)
 
@@ -79,17 +79,17 @@ create table chemicals(Id Bigint,Name Nvarchar(max),FullName Nvarchar(max));
 
 ### <a name="choose-your-subscription"></a>Выберите свою подписку
 
-1. В Visual Studio в меню **Вид** выберите **Обозреватель серверов**.
+1. В Visual Studio в меню **Вид** выберите **Обозреватель серверов** .
 
 2. Щелкните пункт **Azure** правой кнопкой мыши, выберите **Connect to Microsoft Azure Subscription** (Подключиться к подписке Microsoft Azure) и войдите в систему с помощью учетной записи Azure.
 
 ### <a name="create-a-stream-analytics-project"></a>Создание проекта Stream Analytics
 
-1. Выберите **Файл > Новый проект**. 
+1. Выберите **Файл > Новый проект** . 
 
 2. Из списка шаблонов слева выберите **Stream Analytics** и щелкните **Azure Stream Analytics Application** (Приложение Azure Stream Analytics). 
 
-3. Введите значения в поля **Имя**, **Расположение** и **Имя решения** для проекта, а затем нажмите кнопку **ОК**.
+3. Введите значения в поля **Имя** , **Расположение** и **Имя решения** для проекта, а затем нажмите кнопку **ОК** .
 
    ![Новый проект Stream Analytics в Visual Studio](./media/sql-reference-data/stream-analytics-vs-new-project.png)
 
@@ -99,33 +99,33 @@ create table chemicals(Id Bigint,Name Nvarchar(max),FullName Nvarchar(max));
 
    ![Новые входные данные Stream Analytics в Visual Studio](./media/sql-reference-data/stream-analytics-vs-input.png)
 
-2. Дважды щелкните файл **Input.json** в **обозревателе решений**.
+2. Дважды щелкните файл **Input.json** в **обозревателе решений** .
 
-3. Заполните **конфигурацию входных данных Stream Analytics**. Выберите имя базы данных, имя сервера, тип и частоту обновления. Укажите частоту обновления в формате `DD:HH:MM`.
+3. Заполните **конфигурацию входных данных Stream Analytics** . Выберите имя базы данных, имя сервера, тип и частоту обновления. Укажите частоту обновления в формате `DD:HH:MM`.
 
    ![Настройка входных данных Stream Analytics в Visual Studio](./media/sql-reference-data/stream-analytics-vs-input-config.png)
 
-   Если вы выберете параметр Execute only once (Выполнить только один раз) или Execute periodically (Выполнять периодически), в узле файла **Input.json** проекта будет создан файл SQL с программным кодом, который называется **[Псевдоним входных данных].snapshot.sql**.
+   Если вы выберете параметр Execute only once (Выполнить только один раз) или Execute periodically (Выполнять периодически), в узле файла **Input.json** проекта будет создан файл SQL с программным кодом, который называется **[Псевдоним входных данных].snapshot.sql** .
 
    ![Программный код входных данных в Visual Studio](./media/sql-reference-data/once-or-periodically-codebehind.png)
 
-   Если вы выберете параметр Refresh Periodically with Delta (Периодическое разностное обновление), будет создано два файла SQL с программным кодом: **[Псевдоним входных данных].snapshot.sql** и **[Псевдоним входных данных].delta.sql**.
+   Если вы выберете параметр Refresh Periodically with Delta (Периодическое разностное обновление), будет создано два файла SQL с программным кодом: **[Псевдоним входных данных].snapshot.sql** и **[Псевдоним входных данных].delta.sql** .
 
    ![Программный код в обозревателе решений](./media/sql-reference-data/periodically-delta-codebehind.png)
 
 4. Откройте файл SQL в редакторе и напишите SQL-запрос.
 
-5. Если вы используете Visual Studio 2019 и установили SQL Server Data Tools, запрос можно проверить, щелкнув **Выполнить**. Появится окно мастера, помогающее подключиться к базе данных SQL, и результат запроса появится в окне внизу.
+5. Если вы используете Visual Studio 2019 и установили SQL Server Data Tools, запрос можно проверить, щелкнув **Выполнить** . Появится окно мастера, помогающее подключиться к базе данных SQL, и результат запроса появится в окне внизу.
 
 ### <a name="specify-storage-account"></a>Определение учетной записи хранения
 
-Откройте файл **JobConfig.json**, чтобы указать учетную запись хранения для хранения моментальных снимков эталонных данных SQL.
+Откройте файл **JobConfig.json** , чтобы указать учетную запись хранения для хранения моментальных снимков эталонных данных SQL.
 
    ![Настройка задания Stream Analytics в Visual Studio](./media/sql-reference-data/stream-analytics-job-config.png)
 
 ### <a name="test-locally-and-deploy-to-azure"></a>Локальное тестирование и развертывание в Azure
 
-Прежде чем развернуть задание в Azure, вы можете локально протестировать логику запроса с использованием реальных входных данных. Дополнительные сведения об этой функции см. в статье [Тестирование реальных данных в локальной среде с помощью инструментов Azure Stream Analytics для Visual Studio (предварительная версия)](stream-analytics-live-data-local-testing.md). После завершения тестирования щелкните **Отправить в Azure**. Дополнительные сведения о создании задания см. в статье [Краткое руководство. Создание задания Stream Analytics с использованием инструментов Azure Stream Analytics для Visual Studio](stream-analytics-quick-create-vs.md).
+Прежде чем развернуть задание в Azure, вы можете локально протестировать логику запроса с использованием реальных входных данных. Дополнительные сведения об этой функции см. в статье [Тестирование реальных данных в локальной среде с помощью инструментов Azure Stream Analytics для Visual Studio (предварительная версия)](stream-analytics-live-data-local-testing.md). После завершения тестирования щелкните **Отправить в Azure** . Дополнительные сведения о создании задания см. в статье [Краткое руководство. Создание задания Stream Analytics с использованием инструментов Azure Stream Analytics для Visual Studio](stream-analytics-quick-create-vs.md).
 
 ## <a name="delta-query"></a>Разностный запрос
 
@@ -147,7 +147,7 @@ create table chemicals(Id Bigint,Name Nvarchar(max),FullName Nvarchar(max));
    ```
 2. Создайте запрос моментального снимка. 
 
-   Используйте параметр ** \@ снапшоттиме** , чтобы указать среде выполнения Stream Analytics получить эталонный набор данных из темпоральной таблицы базы данных SQL, допустимой в системном времени. Если этот параметр не указан, существует риск получения неточного базового набора эталонных данных из-за рассинхронизации часов. Ниже показан пример полного запроса моментального снимка.
+   Используйте параметр **\@ снапшоттиме** , чтобы указать среде выполнения Stream Analytics получить эталонный набор данных из темпоральной таблицы базы данных SQL, допустимой в системном времени. Если этот параметр не указан, существует риск получения неточного базового набора эталонных данных из-за рассинхронизации часов. Ниже показан пример полного запроса моментального снимка.
    ```SQL
       SELECT DeviceId, GroupDeviceId, [Description]
       FROM dbo.DeviceTemporal
@@ -156,7 +156,7 @@ create table chemicals(Id Bigint,Name Nvarchar(max),FullName Nvarchar(max));
  
 2. Создайте разностный запрос. 
    
-   Этот запрос извлекает все строки в базе данных SQL, которые были вставлены или удалены в течение времени начала, ** \@ делтастарттиме**и времени окончания ** \@ делтаендтиме**. Разностный запрос должен возвращать те же столбцы, что и запрос моментального снимка, а также столбец **_operation_**. Этот столбец определяет, будет ли строка вставлена или удалена в период между **\@deltaStartTime** и **\@deltaEndTime**. Итоговые строки помечены как **1**, если записи были вставлены, или **2**, если они были удалены. Запрос также должен добавлять **водяной знак** на стороне SQL Server, чтобы гарантировать правильное сохранение всех обновлений за период внесения изменений. Использование разностного запроса без **водяного знака** может привести к нарушениям в эталонном наборе данных.  
+   Этот запрос извлекает все строки в базе данных SQL, которые были вставлены или удалены в течение времени начала, **\@ делтастарттиме** и времени окончания **\@ делтаендтиме** . Разностный запрос должен возвращать те же столбцы, что и запрос моментального снимка, а также столбец **_operation_** . Этот столбец определяет, будет ли строка вставлена или удалена в период между **\@deltaStartTime** и **\@deltaEndTime** . Итоговые строки помечены как **1** , если записи были вставлены, или **2** , если они были удалены. Запрос также должен добавлять **водяной знак** на стороне SQL Server, чтобы гарантировать правильное сохранение всех обновлений за период внесения изменений. Использование разностного запроса без **водяного знака** может привести к нарушениям в эталонном наборе данных.  
 
    Темпоральная таблица ведет учет обновленных записей путем записи операций вставки и удаления. Затем среда выполнения Stream Analytics применит результаты разностного запроса к предыдущему моментальному снимку, чтобы обновить эталонные данные. Ниже показан пример разностного запроса.
 
@@ -174,6 +174,35 @@ create table chemicals(Id Bigint,Name Nvarchar(max),FullName Nvarchar(max));
 
 ## <a name="test-your-query"></a>Тестирование запроса
    Важно убедиться, что запрос возвращает ожидаемый набор данных, который будет использоваться заданием Stream Analytics в качестве эталонных данных. Чтобы проверить запрос, перейдите к элементу "Ввод" в разделе "Топология задания" на портале. Теперь выберите "Образец данных" для эталонных входных данных Базы данных SQL. Когда образец станет доступен, скачайте файл и проверьте, правильно ли возвращаются данные. Если вы хотите оптимизировать итерации разработки и тестирования, мы рекомендуем применить [средства Stream Analytics для Visual Studio](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-tools-for-visual-studio-install). Вы можете использовать любой другой инструмент, но сначала убедитесь, что запрос возвращает из Базы данных SQL Azure правильные результаты, а затем применяйте его в задании Stream Analytics. 
+
+### <a name="test-your-query-with-visual-studio-code"></a>Тестирование запроса с помощью Visual Studio Code
+
+   Установите [средства Azure Stream Analytics](https://marketplace.visualstudio.com/items?itemName=ms-bigdatatools.vscode-asa) и [SQL Server (mssql)](https://marketplace.visualstudio.com/items?itemName=ms-mssql.mssql) на Visual Studio Code и настройте свой проект ASA. Дополнительные сведения см. [в разделе Краткое руководство. создание Azure Stream Analytics задания в Visual Studio Code](https://docs.microsoft.com/azure/stream-analytics/quick-create-vs-code) и в [учебнике по расширению SQL Server (MSSQL)](https://aka.ms/mssql-getting-started).
+
+1. Настройте входные ссылочные данные SQL.
+   
+   ![Настройка входных ссылочных данных SQL](./media/sql-reference-data/configure-sql-reference-data-input.png)
+
+2. Выберите значок SQL Server и нажмите кнопку **Добавить подключение** .
+   
+   ![Щелкните значок SQL Server и выберите Добавить подключение.](./media/sql-reference-data/add-sql-connection.png)
+
+3. Введите сведения о подключении.
+   
+   ![Настройка входных данных Stream Analytics в Visual Studio](./media/sql-reference-data/fill-connection-information.png)
+
+4. Щелкните правой кнопкой мыши ссылку на SQL и выберите команду **выполнить запрос** .
+   
+   ![Настройка входных данных Stream Analytics в Visual Studio](./media/sql-reference-data/execute-query.png)
+
+5. Выберите подключение.
+   
+   ![Настройка входных данных Stream Analytics в Visual Studio](./media/sql-reference-data/choose-connection.png)
+
+6. Проверьте и проверьте результат запроса.
+   
+   ![Настройка входных данных Stream Analytics в Visual Studio](./media/sql-reference-data/verify-result.png)
+
 
 ## <a name="faqs"></a>Часто задаваемые вопросы
 
