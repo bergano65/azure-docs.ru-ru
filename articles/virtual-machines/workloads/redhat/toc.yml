@@ -1,5 +1,9 @@
 - name: Обзор
   href: overview.md
+- name: Краткие руководства по Red Hat
+  items: null
+- name: Краткое руководство по использованию WildFly в CentOS
+  href: wildfly-on-centos.md
 - name: Образы Red Hat Enterprise Linux
   items:
     - name: Сведения об образах Red Hat Enterprise Linux

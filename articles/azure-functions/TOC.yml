@@ -79,7 +79,33 @@
         - name: TypeScript
           href: /samples/browse/?products=azure-functions&languages=typescript
     - name: Azure CLI
-      href: functions-cli-samples.md
+      items:
+        - name: Указатель по примерам для CLI
+          href: functions-cli-samples.md
+        - name: Создание приложения-функции
+          items:
+            - name: Бессерверное приложение-функция
+              href: ./scripts/functions-cli-create-serverless.md
+            - name: Бессерверное приложение Python
+              href: ./scripts/functions-cli-create-serverless-python.md
+            - name: Приложение с поддержкой масштабируемого плана "Премиум"
+              href: ./scripts/functions-cli-create-premium-plan.md
+            - name: Приложение с поддержкой выделенного плана (Служба приложений)
+              href: ./scripts/functions-cli-create-app-service-plan.md
+        - name: Интеграция служб
+          items:
+            - name: Подключить службу хранилища Azure
+              href: ./scripts/functions-cli-create-function-app-connect-to-storage-account.md
+            - name: "Подключение Azure Cosmos\_DB"
+              href: ./scripts/functions-cli-create-function-app-connect-to-cosmos-db.md
+            - name: Общая папка с подключением к приложению-функции Python
+              href: ./scripts/functions-cli-mount-files-storage-linux.md
+        - name: Непрерывное развертывание
+          items:
+            - name: Развертывание из GitHub
+              href: ./scripts/functions-cli-create-function-app-github-continuous.md
+            - name: Развертывание DevOps
+              href: ./scripts/functions-cli-create-function-app-vsts-continuous.md
 - name: Основные понятия
   items:
     - name: Сравнение версий среды выполнения

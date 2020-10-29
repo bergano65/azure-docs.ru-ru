@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc, devx-track-python
-ms.openlocfilehash: 717cb600f1bdae228f45409cb271ab04d1d51a19
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f020f3d9e23b9f834fd203f6d030656581fb4416
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91310107"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92896605"
 ---
 # <a name="tutorial-join-sensor-data-with-weather-forecast-data-by-using-azure-notebooks-python"></a>Руководство по Объединение данных от датчиков с прогнозом погоды с помощью Записных книжек Azure (Python)
 
@@ -23,11 +23,11 @@ ms.locfileid: "91310107"
 Выполняя данное руководство, вы сделаете следующее:
 
 > [!div class="checklist"]
-> * Работать с файлами данных в [Записных книжках Azure](https://docs.microsoft.com/azure/notebooks) в облаке.
+> * Работать с файлами данных в [Записных книжках Azure](../notebooks/index.yml) в облаке.
 > * Загружать примеры данных из файла.
 > * Вызывать REST API Azure Maps с помощью Python.
 > * Отображать на карте данные о местоположении.
-> * Обогащать пример данных, используя [дневные прогнозы](https://aka.ms/AzureMapsWeatherDailyForecast) из Azure Maps.
+> * Обогащать пример данных, используя [дневные прогнозы](/rest/api/maps/weather/getdailyforecastpreview) из Azure Maps.
 > * Наносить данные прогнозов погоды на графики.
 
 
@@ -41,7 +41,7 @@ ms.locfileid: "91310107"
 
 Дополнительные сведения о проверке подлинности в Azure Maps см. в [этой статье](./how-to-manage-authentication.md).
 
-Ознакомьтесь с работой записных книжек Azure и узнайте, как их запускать, по инструкциям из [этой статьи](https://docs.microsoft.com/azure/azure-maps/tutorial-ev-routing#create-an-azure-notebook).
+Ознакомьтесь с работой записных книжек Azure и узнайте, как их запускать, по инструкциям из [этой статьи](./tutorial-ev-routing.md#create-an-azure-notebooks-project).
 
 > [!Note]
 > Файл записной книжки Jupyter для этого проекта можно скачать из [репозитория записной книжки Jupyter для Azure Maps](https://github.com/Azure-Samples/Azure-Maps-Jupyter-Notebook/tree/master/AzureMapsJupyterSamples/Tutorials/Analyze%20Weather%20Data).
@@ -68,7 +68,7 @@ df = pd.read_csv("./data/weather_dataset_demo.csv")
 
 ## <a name="request-daily-forecast-data"></a>Запрос данных прогноза по дням
 
-В нашем сценарии мы будем получать прогноз по дням для местоположений каждого датчика. Следующий скрипт вызывает [API прогноза погоды по дням](https://aka.ms/AzureMapsWeatherDailyForecast) Службы погоды Azure Maps. Этот интерфейс API возвращает ежедневный прогноз погоды для каждого ветрогенератора на 15 дней от текущей даты.
+В нашем сценарии мы будем получать прогноз по дням для местоположений каждого датчика. Следующий скрипт вызывает [API прогноза погоды по дням](/rest/api/maps/weather/getdailyforecastpreview) Службы погоды Azure Maps. Этот интерфейс API возвращает ежедневный прогноз погоды для каждого ветрогенератора на 15 дней от текущей даты.
 
 
 ```python
@@ -107,7 +107,7 @@ for i in range(0, len(coords), 2):
 await session.close()
 ```
 
-Следующий скрипт наносит на карту расположения ветрогенераторов, обращаясь к [службе получения изображения карты](https://docs.microsoft.com/rest/api/maps/render/getmapimage) в Azure Maps.
+Следующий скрипт наносит на карту расположения ветрогенераторов, обращаясь к [службе получения изображения карты](/rest/api/maps/render/getmapimage) в Azure Maps.
 
 ```python
 # Render the turbine locations on the map by calling the Azure Maps Get Map Image service
@@ -184,18 +184,18 @@ windsPlot.set_ylabel("Wind direction")
 
 Из этого руководства вы узнали, как вызывать REST API для Azure Maps для получения данных прогнозов погоды. Кроме того, теперь вы знаете, как визуализировать данные на графиках.
 
-Дополнительные сведения о вызове REST API для Azure Maps из Записных книжек Azure вы можете получить в [этой статье](https://docs.microsoft.com/azure/azure-maps/tutorial-ev-routing).
+Дополнительные сведения о вызове REST API для Azure Maps из Записных книжек Azure вы можете получить в [этой статье](./tutorial-ev-routing.md).
 
 Для изучения API-интерфейсов Azure Maps, используемых в этом руководстве, прочтите следующие статьи:
 
-* [Прогноз по дням](https://aka.ms/AzureMapsWeatherDailyForecast)
-* [Render — Get Map Image](https://docs.microsoft.com/rest/api/maps/render/getmapimage) (Отрисовка — получение изображения карты)
+* [Прогноз по дням](/rest/api/maps/weather/getdailyforecastpreview)
+* [Render — Get Map Image](/rest/api/maps/render/getmapimage) (Отрисовка — получение изображения карты)
 
-Полный список API-интерфейсов Azure Maps вы найдете на [этой странице](https://docs.microsoft.com/azure/azure-maps/consumption-model).
+Полный список API-интерфейсов Azure Maps вы найдете на [этой странице](./consumption-model.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о службе "Записные книжки Azure" см. в следующей статье:
 
 > [!div class="nextstepaction"]
-> [Записные книжки Azure](https://docs.microsoft.com/azure/notebooks)
+> [Записные книжки Azure](../notebooks/index.yml)

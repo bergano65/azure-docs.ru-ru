@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 3/11/2019
 ms.author: jeedes
-ms.openlocfilehash: bfbecc71638e6feaaf29809f09dda752dd29b2ae
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 65e424c6275f9990a5d5a42a54bc4131300a45bf
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "88526624"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92895041"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-workspot-control"></a>Руководство по Интеграция Azure Active Directory с Workspot Control
 
@@ -26,7 +26,7 @@ ms.locfileid: "88526624"
 * Вы можете включить автоматический вход пользователей в Workspot Control (единый вход) с помощью учетных записей Azure AD.
 * Централизованное управление учетными записями через портал Azure.
 
-Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -100,20 +100,20 @@ ms.locfileid: "88526624"
 
 4. Если вы хотите настроить приложение в режиме, инициируемом поставщиком удостоверений, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа для Workspot Control](common/idp-intiated.png)
+    ![Снимок экрана, на котором показан раздел "Базовая конфигурация SAML", где можно ввести идентификатор, URL-адрес ответа и нажать кнопку "Сохранить"](common/idp-intiated.png)
 
     1. В текстовое поле **Идентификатор** введите URL-адрес в следующем формате:<br/>
     **_https://<<i></i>ИМЯ_ЭКЗЕМПЛЯРА>-saml.workspot.com/saml/metadata_* _
 
     1. В текстовом поле _*URL-адрес ответа* * введите URL-адрес в таком формате:<br/>
-    **_https://<<i></i>ИМЯ_ЭКЗЕМПЛЯРА>-saml.workspot.com/saml/assertion_*_ .
+    **_https://< <i></i>ИМЯ_ЭКЗЕМПЛЯРА>-saml.workspot.com/saml/assertion_*_ .
 
 5. Если вы хотите настроить приложение для работы в режиме, инициируемом поставщиком услуг, выберите _*Задать дополнительные URL-адреса**.
 
-    ![Сведения о домене и URL-адресах единого входа для Workspot Control](common/metadata-upload-additional-signon.png)
+    ![Снимок экрана, на котором показан параметр "Задать дополнительные URL-адреса" и поле для ввода URL-адреса входа](common/metadata-upload-additional-signon.png)
 
     В текстовое поле **URL-адрес входа** введите URL-адрес в следующем формате:<br/>
-    **_https://<<i></i>ИМЯ_ЭКЗЕМПЛЯРА>-saml.workspot.com/_* _
+    **_https://< <i></i>ИМЯ_ЭКЗЕМПЛЯРА>-saml.workspot.com/_* _
 
     > [!NOTE]
     > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Workspot Control](mailto:support@workspot.com). Можно также просмотреть шаблоны в разделе _ *Базовая конфигурация SAML* * на портале Azure.
@@ -172,7 +172,7 @@ ms.locfileid: "88526624"
 
     1. В поле **Имя** введите **BrittaSimon** .
   
-    1. В поле **Имя пользователя** введите * *brittasimon @* ваш_домен.доменная_зона***. Например, введите **BrittaSimon@contoso.<i></i>com** .
+    1. В поле **Имя пользователя** введите * *brittasimon @* ваш_домен.доменная_зона***. Например, введите **BrittaSimon@contoso. <i></i>com** .
 
     1. Установите флажок **Показать пароль** . Запишите значение, которое отображается в поле **Пароль** .
 
@@ -224,7 +224,7 @@ ms.locfileid: "88526624"
 
     1. В поле **Last Name** (Фамилия) введите фамилию пользователя, например **Simon** .
 
-    1. В поле **Email** (Электронная почта) введите адрес электронной почты пользователя, например **Brittasimon@contoso.<i></i>com** .
+    1. В поле **Email** (Электронная почта) введите адрес электронной почты пользователя, например **Brittasimon@contoso. <i></i>com** .
 
     1. Выберите соответствующую роль пользователя из раскрывающегося списка **Role** (Роль).
 
@@ -236,12 +236,12 @@ ms.locfileid: "88526624"
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью *Панели доступа* .
 
-Щелкнув элемент **Workspot Control** на панели доступа, вы автоматически войдете в приложение Workspot Control, для которого настроили единый вход. Дополнительные сведения см. в статье [Общие сведения о панели доступа](https://docs.microsoft.com/azure/active-directory/user-help/my-apps-portal-end-user-access).
+Щелкнув элемент **Workspot Control** на панели доступа, вы автоматически войдете в приложение Workspot Control, для которого настроили единый вход. Дополнительные сведения см. в статье [Общие сведения о панели доступа](../user-help/my-apps-portal-end-user-access.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/saas-apps/tutorial-list)
+- [Руководства по интеграции приложений SaaS с Azure Active Directory](./tutorial-list.md)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on)
+- [Единый вход в приложениях в Azure Active Directory](../manage-apps/what-is-single-sign-on.md)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](../conditional-access/overview.md)

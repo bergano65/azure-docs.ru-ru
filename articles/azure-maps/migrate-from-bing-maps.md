@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: ''
-ms.openlocfilehash: ab4b4e0ab7d0474dc4fe7692cfe3c46835095f45
-ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
+ms.openlocfilehash: 0045520849ea20d3e53a30101e6db0f5d495ab15
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91873750"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92897013"
 ---
 # <a name="tutorial---migrate-from-bing-maps-to-azure-maps"></a>Руководство по переходу с Карт Bing на Azure Maps
 
@@ -69,7 +69,7 @@ ms.locfileid: "91873750"
 -   [Цены на Azure Maps](https://azure.microsoft.com/pricing/details/azure-maps/)
 -   [Калькулятор цен Azure](https://azure.microsoft.com/pricing/calculator/?service=azure-maps).
 -   [Условия использования Azure Maps](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=31) (в составе условий для служб Microsoft Online Services)
--   [Choose the right pricing tier in Azure Maps](https://docs.microsoft.com/azure/azure-maps/choose-pricing-tier) (Выбор подходящей ценовой категории для Azure Maps)
+-   [Choose the right pricing tier in Azure Maps](./choose-pricing-tier.md) (Выбор подходящей ценовой категории для Azure Maps)
 
 ## <a name="suggested-migration-plan"></a>Предлагаемый план миграции
 
@@ -77,7 +77,7 @@ ms.locfileid: "91873750"
 
 1.  Составьте список пакетов SDK и служб Карт Bing, которые используются в приложении, и убедитесь, что Azure Maps предоставляет пакеты SDK и службы с аналогичными возможностями.
 2.  Создайте подписку Azure (если у вас ее еще нет) на странице <https://azure.com>.
-3.  Создайте учетную запись Azure Maps ([документация](https://docs.microsoft.com/azure/azure-maps/how-to-manage-account-keys)) и ключ проверки подлинности или службу Azure Active Directory ([документация](https://docs.microsoft.com/azure/azure-maps/how-to-manage-authentication)).
+3.  Создайте учетную запись Azure Maps ([документация](./how-to-manage-account-keys.md)) и ключ проверки подлинности или службу Azure Active Directory ([документация](./how-to-manage-authentication.md)).
 4.  Переместите код приложения.
 5.  Протестируйте перенесенное приложение.
 6.  Разверните перенесенное приложение в рабочей среде.
@@ -88,8 +88,8 @@ ms.locfileid: "91873750"
 
 1. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
 2. Войдите на [портал Azure](https://portal.azure.com/).
-3. Создайте [учетную запись службы Azure Maps](https://docs.microsoft.com/azure/azure-maps/how-to-manage-account-keys). 
-4. [Получите ключ подписки Azure Maps](https://docs.microsoft.com/azure/azure-maps/how-to-manage-authentication#view-authentication-details) или настройте проверку подлинности Azure Active Directory для повышения уровня безопасности.
+3. Создайте [учетную запись службы Azure Maps](./how-to-manage-account-keys.md). 
+4. [Получите ключ подписки Azure Maps](./how-to-manage-authentication.md#view-authentication-details) или настройте проверку подлинности Azure Active Directory для повышения уровня безопасности.
 
 ## <a name="azure-maps-technical-resources"></a>Технические ресурсы по Azure Maps
 
@@ -105,7 +105,7 @@ ms.locfileid: "91873750"
 
 ## <a name="migration-support"></a>Поддержка миграции
 
-Разработчики могут получить поддержку по миграции на [форумах](https://aka.ms/AzureMapsForums) или через любой из многих каналов поддержки Azure: <https://azure.microsoft.com/support/options/>
+Разработчики могут получить поддержку по миграции на [форумах](/answers/topics/azure-maps.html) или через любой из многих каналов поддержки Azure: <https://azure.microsoft.com/support/options/>
 
 ## <a name="new-terminology"></a>Новые термины 
 

@@ -9,12 +9,12 @@ metadata:
   author: anastasia-ms
   ms.author: v-stharr
   ms.date: 1/15/2020
-  ms.openlocfilehash: e37bc2c9a6f6ad48695ce5fe346ef2402f3c6a6c
-  ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+  ms.openlocfilehash: 4a8d05c05f0c6dc357ac8ea8623ab10cae1e4335
+  ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 10/09/2020
-  ms.locfileid: "90086272"
+  ms.lasthandoff: 10/28/2020
+  ms.locfileid: "92895364"
 landingContent:
 - title: Использование службы "Карты Azure"
   linkLists:
@@ -77,17 +77,17 @@ landingContent:
     - text: Использование модуля схем помещений
       url: how-to-use-indoor-module.md
     - text: Использование Azure Digital Twins для обновления схемы помещения
-      url: https://docs.microsoft.com/azure/digital-twins/how-to-integrate-maps
+      url: ../digital-twins/how-to-integrate-maps.md
   - linkListType: reference
     links:
     - text: Служба преобразования
-      url: https://docs.microsoft.com/rest/api/maps/conversion
+      url: /rest/api/maps/conversion
     - text: Служба набора данных
-      url: https://docs.microsoft.com/rest/api/maps/dataset
+      url: /rest/api/maps/dataset
     - text: Служба набора фрагментов
-      url: https://docs.microsoft.com/rest/api/maps/tileset
+      url: /rest/api/maps/tileset
     - text: Служба набора состояний функций
-      url: https://docs.microsoft.com/rest/api/maps/featurestate
+      url: /rest/api/maps/featurestate
 - title: Разработка с использованием веб-пакета SDK
   linkLists:
   - linkListType: concept
@@ -121,13 +121,13 @@ landingContent:
   - linkListType: reference
     links:
     - text: Элемент управления картой
-      url: https://docs.microsoft.com/javascript/api/azure-maps-control/
+      url: /javascript/api/azure-maps-control/
     - text: Модуль средств рисования
-      url: https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/
+      url: /javascript/api/azure-maps-drawing-tools/
     - text: Модуль службы
-      url: https://docs.microsoft.com/javascript/api/azure-maps-rest/
+      url: /javascript/api/azure-maps-rest/
     - text: Модуль пространственного ввода-вывода
-      url: https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/
+      url: /javascript/api/azure-maps-spatial-io/
 - title: Разработка с использованием пакета SDK для Android
   linkLists:
   - linkListType: how-to-guide
@@ -165,13 +165,13 @@ landingContent:
   - linkListType: reference
     links:
     - text: Служба поиска
-      url: https://docs.microsoft.com/rest/api/maps/search
+      url: /rest/api/maps/search
     - text: Служба построения маршрутов
-      url: https://docs.microsoft.com/rest/api/maps/route
+      url: /rest/api/maps/route
     - text: Служба отслеживания дорожного движения
-      url: https://docs.microsoft.com/rest/api/maps/traffic
+      url: /rest/api/maps/traffic
     - text: Служба часовых поясов
-      url: https://docs.microsoft.com/rest/api/maps/timezone
+      url: /rest/api/maps/timezone
 - title: Пространственная аналитика
   linkLists:
   - linkListType: concept
@@ -187,9 +187,9 @@ landingContent:
   - linkListType: reference
     links:
     - text: Служба данных
-      url: https://docs.microsoft.com/rest/api/maps/data
+      url: /rest/api/maps/data
     - text: Служба пространственных данных
-      url: https://docs.microsoft.com/rest/api/maps/spatial
+      url: /rest/api/maps/spatial
 - title: Пространственный анализ с помощью Power BI
   linkLists:
   - linkListType: how-to-guide
@@ -215,7 +215,7 @@ landingContent:
   - linkListType: reference
     links:
     - text: Служба Mobility Service
-      url: https://docs.microsoft.com/rest/api/maps/mobility
+      url: /rest/api/maps/mobility
 - title: Разработка с использованием служб погоды
   linkLists:
   - linkListType: concept
@@ -229,4 +229,4 @@ landingContent:
   - linkListType: reference
     links:
     - text: Служба погоды
-      url: https://docs.microsoft.com/rest/api/maps/weather
+      url: /rest/api/maps/weather

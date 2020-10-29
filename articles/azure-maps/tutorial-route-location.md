@@ -9,22 +9,22 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc, devx-track-js
-ms.openlocfilehash: 3cb9bee65ab7fa2c29185c40ecb48fd531192187
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0004a250173ce6707462b852016d205782479717
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91321719"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92896686"
 ---
 # <a name="tutorial-how-to-display-route-directions-using-azure-maps-route-service-and-map-control"></a>Руководство по отображению направлений маршрута с помощью службы "Построение маршрутов" Azure Maps и элемента управления картой
 
-В этом руководстве показано, как применить [API службы "Построение маршрутов"](https://docs.microsoft.com/rest/api/maps/route) Azure Maps и [элемент управления картой](https://docs.microsoft.com/azure/azure-maps/how-to-use-map-control) для отображения направлений маршрута от начальной до конечной точки. Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве показано, как применить [API службы "Построение маршрутов"](/rest/api/maps/route) Azure Maps и [элемент управления картой](./how-to-use-map-control.md) для отображения направлений маршрута от начальной до конечной точки. Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * создание и отображение элемента управления картой на веб-странице; 
 > * определение отрисовки маршрута через [слои символов](map-add-pin.md) и [слои линий](map-add-line-layer.md);
 > * создание и добавление на карту объектов GeoJSON, которые будут представлять начальную и конечную точки;
-> * получение направлений маршрута от начальной до конечной точки, используя [API "Получение направлений маршрута"](https://docs.microsoft.com/rest/api/maps/route/getroutedirections).
+> * получение направлений маршрута от начальной до конечной точки, используя [API "Получение направлений маршрута"](/rest/api/maps/route/getroutedirections).
 
 Полный исходный код для этого примера можно получить [здесь](https://github.com/Azure-Samples/AzureMapsCodeSamples/blob/master/AzureMapsCodeSamples/Tutorials/route.html). Работающий пример можно изучить [здесь](https://azuremapscodesamples.azurewebsites.net/?sample=Route%20to%20a%20destination).
 
@@ -39,7 +39,7 @@ ms.locfileid: "91321719"
 
 В следующих шагах описаны создание и отображение элемента управления картой на веб-странице.
 
-1. На локальном компьютере создайте файл **MapRoute.html**.
+1. На локальном компьютере создайте файл **MapRoute.html** .
 2. Скопируйте следующую разметку HTML и вставьте ее в файл.
 
     ```HTML
@@ -170,7 +170,7 @@ ms.locfileid: "91321719"
 
     Этот код создает два [объекта Point в формате GeoJSON](https://en.wikipedia.org/wiki/GeoJSON), которые будут представлять начальную и конечную точки, и добавляет эти объекты в источник данных. 
 
-    Последний блок кода задает позицию камеры, используя данные о широте и долготе начальной и конечной точек. Начальная и конечная точки добавляются в источник данных. Ограничивающий прямоугольник для начальной и конечной точек вычисляется с использованием функции `atlas.data.BoundingBox.fromData`. Этот ограничивающий прямоугольник используется для формирования вида с камер карты по всему пути с помощью функции `map.setCamera`. Для компенсации размеров пикселей значков символов добавляется заполнение. Дополнительные сведения о свойстве setCamera элемента управления картой см. в документации по свойству [setCamera(CameraOptions | CameraBoundsOptions & AnimationOptions)](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-maps-typescript-latest#setcamera-cameraoptions---cameraboundsoptions---animationoptions-&preserve-view=false).
+    Последний блок кода задает позицию камеры, используя данные о широте и долготе начальной и конечной точек. Начальная и конечная точки добавляются в источник данных. Ограничивающий прямоугольник для начальной и конечной точек вычисляется с использованием функции `atlas.data.BoundingBox.fromData`. Этот ограничивающий прямоугольник используется для формирования вида с камер карты по всему пути с помощью функции `map.setCamera`. Для компенсации размеров пикселей значков символов добавляется заполнение. Дополнительные сведения о свойстве setCamera элемента управления картой см. в документации по свойству [setCamera(CameraOptions | CameraBoundsOptions & AnimationOptions)](/javascript/api/azure-maps-control/atlas.map?view=azure-maps-typescript-latest#setcamera-cameraoptions---cameraboundsoptions---animationoptions-&preserve-view=false).
 
 3. Сохраните файл **MapRoute.html** и обновите страницу в браузере. Карта сместится так, что в центре окажется Сиэтл. Синий маркер в форме капли обозначает начальную точку. Круглый синий маркер обозначает конечную точку маршрута.
 
@@ -183,7 +183,7 @@ ms.locfileid: "91321719"
 Из этого раздела вы узнаете, как использовать API направлений маршрута Azure Maps, чтобы получить направление маршрута и предполагаемое время прибытия от одной точки к другой.
 
 >[!TIP]
->API-интерфейсы предлагают службы "Построение маршрутов" Azure Maps для планирования маршрутов на основе различных типов, таких как *самые быстрые*, *кратчайшие*, *экономичные* или *захватывающие* маршруты на основе расстояния, плотности трафика и способа перемещения. Кроме того, с помощью этой службы пользователи могут планировать маршруты с учетом исторических данных о плотности трафика. Пользователь может получить прогноз продолжительности поездки для любого заданного времени. Дополнительные сведения см. в статье [Route — Get Route Directions](https://docs.microsoft.com/rest/api/maps/route/getroutedirections) (Маршрут. Получение направления маршрута).
+>API-интерфейсы предлагают службы "Построение маршрутов" Azure Maps для планирования маршрутов на основе различных типов, таких как *самые быстрые* , *кратчайшие* , *экономичные* или *захватывающие* маршруты на основе расстояния, плотности трафика и способа перемещения. Кроме того, с помощью этой службы пользователи могут планировать маршруты с учетом исторических данных о плотности трафика. Пользователь может получить прогноз продолжительности поездки для любого заданного времени. Дополнительные сведения см. в статье [Route — Get Route Directions](/rest/api/maps/route/getroutedirections) (Маршрут. Получение направления маршрута).
 
 1. В функции `GetMap` внутри обработчика событий `ready` элемента управления добавьте в код JavaScript следующее:
 
@@ -198,7 +198,7 @@ ms.locfileid: "91321719"
     var routeURL = new atlas.service.RouteURL(pipeline);
     ```
 
-   `SubscriptionKeyCredential` создает политику `SubscriptionKeyCredentialPolicy` для аутентификации HTTP-запросов для Azure Maps с помощью ключа подписки. `atlas.service.MapsURL.newPipeline()` принимает политику `SubscriptionKeyCredential` и создает экземпляр [конвейера](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.pipeline). `routeURL` представляет собой URL-адрес для операций [маршрута](https://docs.microsoft.com/rest/api/maps/route) Azure Maps.
+   `SubscriptionKeyCredential` создает политику `SubscriptionKeyCredentialPolicy` для аутентификации HTTP-запросов для Azure Maps с помощью ключа подписки. `atlas.service.MapsURL.newPipeline()` принимает политику `SubscriptionKeyCredential` и создает экземпляр [конвейера](/javascript/api/azure-maps-rest/atlas.service.pipeline). `routeURL` представляет собой URL-адрес для операций [маршрута](/rest/api/maps/route) Azure Maps.
 
 2. Указав учетные данные и URL-адрес, добавьте следующий код в конец обработчика событий `ready` элемента управления. Этот код создает маршрут от начальной точки к конечной точке. `routeURL` обращается к службе "Построение маршрутов" Azure Maps, чтобы рассчитать направления маршрута. Коллекция компонентов GeoJSON из ответа извлекается с помощью метода `geojson.getFeatures()` и добавляется в источник данных.
 
