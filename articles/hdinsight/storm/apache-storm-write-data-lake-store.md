@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: tutorial
 ms.date: 06/24/2019
-ms.openlocfilehash: 579163180f6c7ba19927ca66d20bd92d1b2de52e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8cdcc60e6eeec22e202d670c3fc057711bd432a6
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "73241212"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92545452"
 ---
 # <a name="tutorial-write-to-apache-hadoop-hdfs-from-apache-storm-on-azure-hdinsight"></a>Руководство по записи данных в Apache Hadoop HDFS из Apache Storm в Azure HDInsight
 
@@ -32,7 +32,7 @@ ms.locfileid: "73241212"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* [Java Developer Kit (JDK) версии 8](https://aka.ms/azure-jdks)
+* [Java Developer Kit (JDK) версии 8](/azure/developer/java/fundamentals/java-jdk-long-term-support)
 
 * Средство [Apache Maven](https://maven.apache.org/download.cgi), [установленное](https://maven.apache.org/install.html) согласно инструкций Apache.  Maven — система сборки проектов Java.
 
@@ -160,7 +160,7 @@ bolts:
     hdfs.url: wasbs:///
     ```
 
-    Чтобы сохранить этот файл, нажмите клавиши __CTRL+X__, введите __Y__ и нажмите клавишу __ВВОД__. Значения в этом файле позволяют задать URL-адрес хранилища и имя каталога, в который записываются данные.
+    Чтобы сохранить этот файл, нажмите клавиши __CTRL+X__ , введите __Y__ и нажмите клавишу __ВВОД__ . Значения в этом файле позволяют задать URL-адрес хранилища и имя каталога, в который записываются данные.
 
 1. Запустите топологию, используя следующую команду.
 
@@ -205,7 +205,7 @@ storm kill hdfswriter
 
 Чтобы удалить группу ресурсов с помощью портала Azure, сделайте следующее:
 
-1. На портале Azure разверните меню слева, чтобы открыть меню служб, а затем выберите __Группы ресурсов__, чтобы просмотреть список групп ресурсов.
+1. На портале Azure разверните меню слева, чтобы открыть меню служб, а затем выберите __Группы ресурсов__ , чтобы просмотреть список групп ресурсов.
 2. Найдите группу ресурсов, которую нужно удалить, и щелкните правой кнопкой мыши кнопку __Дополнительно__ (…) справа от списка.
 3. Выберите __Удалить группу ресурсов__ и подтвердите выбор.
 

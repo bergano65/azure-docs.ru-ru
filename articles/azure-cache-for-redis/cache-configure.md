@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 08/22/2017
 ms.author: yegu
 ms.openlocfilehash: f0d0742994b14f692c2aea9130edc73d779cff52
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
+ms.lasthandoff: 10/29/2020
 ms.locfileid: "92544772"
 ---
 # <a name="how-to-configure-azure-cache-for-redis"></a>Настройка кэша Azure для Redis
@@ -62,7 +62,7 @@ ms.locfileid: "92544772"
     * [Новый запрос на поддержку](#new-support-request)
 
 
-## <a name="overview"></a>Overview
+## <a name="overview"></a>Обзор
 
 В разделе **Обзор** содержатся основные сведения о кэше, такие как имя, порты, ценовая категория, и выбранные метрики кэша.
 
@@ -324,7 +324,7 @@ ms.locfileid: "92544772"
 >
 
 
-## <a name="monitoring"></a>Мониторинг
+## <a name="monitoring"></a>Наблюдение
 
 В разделе **Мониторинг** можно настроить диагностику и мониторинг для кэша Azure для Redis.
 Дополнительные сведения о мониторинге и диагностике кэша Azure для Redis см. в статье [How to monitor Azure Cache for Redis](cache-how-to-monitor.md) (Как отслеживать кэш Azure для Redis).

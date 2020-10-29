@@ -7,12 +7,12 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.topic: tutorial
 ms.date: 09/04/2019
-ms.openlocfilehash: 89e9faeb3c67d0fd0c57adea3a3f69ec5438e3a0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5747de399e7ae0cfe99ba013f8da376be0ba1b2a
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "73044645"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92544959"
 ---
 # <a name="tutorial-configure-apache-hbase-policies-in-hdinsight-with-enterprise-security-package"></a>Руководство по настройке политик Apache HBase в HDInsight с Корпоративным пакетом безопасности
 
@@ -45,7 +45,7 @@ ms.locfileid: "73044645"
 
 ## <a name="create-domain-users"></a>Создание пользователей домена
 
-В статье [Настройка кластера HDInsight с корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory](https://docs.microsoft.com/azure/hdinsight/domain-joined/apache-domain-joined-configure-using-azure-adds) можно узнать, как создать пользователей домена **sales_user1** и **marketing_user1**. В рабочем сценарии пользователи домена берутся из вашего клиента Active Directory.
+В статье [Настройка кластера HDInsight с корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory](./apache-domain-joined-configure-using-azure-adds.md) можно узнать, как создать пользователей домена **sales_user1** и **marketing_user1** . В рабочем сценарии пользователи домена берутся из вашего клиента Active Directory.
 
 ## <a name="create-hbase-tables-and-import-sample-data"></a>Создание таблиц HBase и импорт примера данных
 
@@ -93,9 +93,9 @@ ms.locfileid: "73044645"
 
 ## <a name="create-ranger-policies"></a>Создание политик Ranger
 
-Создайте политику Ranger для пользователей **sales_user1** и **marketing_user1**.
+Создайте политику Ranger для пользователей **sales_user1** и **marketing_user1** .
 
-1. Откройте **пользовательский интерфейс администратора Ranger**. В разделе **HBase** выберите **\<ClusterName>_hbase**.
+1. Откройте **пользовательский интерфейс администратора Ranger** . В разделе **HBase** выберите **\<ClusterName>_hbase** .
 
    ![Пользовательский интерфейс администратора Apache Ranger для HDInsight](./media/apache-domain-joined-run-hbase/apache-ranger-admin-login.png)
 
@@ -125,9 +125,9 @@ ms.locfileid: "73044645"
    >[!NOTE]
    >Подождите несколько минут, пока Ranger синхронизируется с Azure AD, если в поле **Выберите пользователя** автоматически не подставится пользователь домена.
 
-4. Щелкните **Добавить**, чтобы сохранить политику.
+4. Щелкните **Добавить** , чтобы сохранить политику.
 
-5. Щелкните **Добавить новую политику**, а затем введите следующие значения.
+5. Щелкните **Добавить новую политику** , а затем введите следующие значения.
 
    |**Параметр**  |**Рекомендуемое значение**  |
    |---------|---------|
@@ -141,7 +141,7 @@ ms.locfileid: "73044645"
 
    ![Создание политики Ranger для пользователей marketing](./media/apache-domain-joined-run-hbase/apache-ranger-hbase-policy-create-marketing.png)  
 
-6. Щелкните **Добавить**, чтобы сохранить политику.
+6. Щелкните **Добавить** , чтобы сохранить политику.
 
 ## <a name="test-the-ranger-policies"></a>Тестирование политик Ranger
 
@@ -191,7 +191,7 @@ ms.locfileid: "73044645"
 
 ### <a name="access-data-as-marketing_user1"></a>Получение доступа к данным как пользователь marketing_user1
 
-1. Откройте новое подключение SSH к кластеру. Выполните следующую команду, чтобы войти от имени пользователя **marketing_user1**.
+1. Откройте новое подключение SSH к кластеру. Выполните следующую команду, чтобы войти от имени пользователя **marketing_user1** .
 
    ```bash
    ssh sshuser@CLUSTERNAME-ssh.azurehdinsight.net
@@ -236,10 +236,10 @@ ms.locfileid: "73044645"
 Если вы не собираетесь использовать это приложение в дальнейшем, удалите созданный кластер HBase, сделав следующее:
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
-2. В поле **Поиск** в верхней части страницы введите **HDInsight**. 
-1. Выберите **Кластеры HDInsight** в разделе **Службы**.
+2. В поле **Поиск** в верхней части страницы введите **HDInsight** . 
+1. Выберите **Кластеры HDInsight** в разделе **Службы** .
 1. В списке кластеров HDInsight, который отобразится, щелкните **...** рядом с кластером, созданным при работе с этим руководством. 
-1. Щелкните **Удалить**. Нажмите кнопку **Да**.
+1. Щелкните **Удалить** . Нажмите кнопку **Да** .
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

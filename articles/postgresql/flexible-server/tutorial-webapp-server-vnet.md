@@ -8,19 +8,19 @@ ms.devlang: azurecli
 ms.topic: tutorial
 ms.date: 09/22/2020
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 20401a3c96a9a20399c07d1a30370d27f2858e29
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ab606e357bd911f4d7f266977bd14871f92744a0
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90929724"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92546574"
 ---
 # <a name="tutorial-create-an-azure-database-for-postgresql---flexible-server-with-app-services-web-app-in-virtual-network"></a>Руководство по созданию Базы данных Azure для PostgreSQL (Гибкий сервер) с веб-приложением Службы приложений в той же виртуальной сети
 
 > [!IMPORTANT]
 > Гибкий сервер Базы данных Azure для PostgreSQL предоставляется в режиме предварительной версии
 
-В этом руководстве показано, как создать веб-приложение Службы приложений Azure с использованием предварительной версии Базы данных Azure для PostgreSQL (Гибкий сервер) в [виртуальной сети](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview).
+В этом руководстве показано, как создать веб-приложение Службы приложений Azure с использованием предварительной версии Базы данных Azure для PostgreSQL (Гибкий сервер) в [виртуальной сети](../../virtual-network/virtual-networks-overview.md).
 
 В рамках этого руководства вы выполните следующие задачи:
 >[!div class="checklist"]
@@ -35,7 +35,7 @@ ms.locfileid: "90929724"
 
 Для этой статьи требуется запустить локально Azure CLI версии 2.0 или более поздней. Чтобы узнать, какая установлена версия, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
 
-Вам потребуется выполнить вход в учетную запись с помощью команды [az login](/cli/azure/authenticate-azure-cli?view=interactive-log-in). Запишите свойство **id** из выходных данных команды для соответствующего имени подписки.
+Вам потребуется выполнить вход в учетную запись с помощью команды [az login](/cli/azure/authenticate-azure-cli). Запишите свойство **id** из выходных данных команды для соответствующего имени подписки.
 
 ```azurecli
 az login
@@ -59,7 +59,7 @@ az postgres flexible-server create --resource-group myresourcegroup --location w
 - Будет создано имя сервера, если оно не предоставлено.
 - Создайте новую виртуальную сеть для нового сервера PostgreSQL. Запишите имя виртуальной сети и имя подсети, которые созданы для этого сервера, так как веб-приложение нужно будет добавить в ту же виртуальную сеть.
 - Будет создано имя пользователя и пароль администратора для этого сервера, если они не предоставлены.
-- Будет создана пустая база данных с именем **postgres**.
+- Будет создана пустая база данных с именем **postgres** .
 
 > [!NOTE]
 > - Если вы не указали пароль, запишите тот, который будет создан для вас автоматически. Если вы забудете пароль, вам придется сбросить его с помощью команды ``` az postgres flexible-server update```.
@@ -91,7 +91,7 @@ az webapp up --resource-group myresourcegroup --location westus2 --plan testapps
 - Передается репозиторий через развертывание на основе ZIP-файла с включенной автоматизацией сборки.
 
 ## <a name="add-the-web-app-to-the-virtual-network"></a>Добавление веб-приложения в виртуальную сеть
-Используйте команду **az webapp vnet-integration**, чтобы добавить в веб-приложение региональную интеграцию с виртуальной сетью. Замените <vnet-name> и <subnet-name> именем виртуальной сети и подсети, которые использует гибкий сервер.
+Используйте команду **az webapp vnet-integration** , чтобы добавить в веб-приложение региональную интеграцию с виртуальной сетью. Замените <vnet-name> и <subnet-name> именем виртуальной сети и подсети, которые использует гибкий сервер.
 
 ```azurecli
 az webapp vnet-integration add -g myresourcegroup -n  mywebapp --vnet <vnet-name> --subnet <subnet-name>
@@ -121,4 +121,4 @@ az group delete -n myresourcegroup
 
 ## <a name="next-steps"></a>Следующие шаги
 > [!div class="nextstepaction"]
-> [Сопоставление существующего настраиваемого DNS-имени со Службой приложений Azure](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-custom-domain)
+> [Сопоставление существующего настраиваемого DNS-имени со Службой приложений Azure](../../app-service/app-service-web-tutorial-custom-domain.md)
