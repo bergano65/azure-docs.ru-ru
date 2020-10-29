@@ -8,15 +8,15 @@ ms.subservice: core
 ms.author: keli19
 author: likebupt
 ms.reviewer: peterlu
-ms.date: 10/12/2020
+ms.date: 10/29/2020
 ms.topic: conceptual
 ms.custom: how-to, deploy, studio
-ms.openlocfilehash: e2f3e0b596847000af62aa6e23da5b137ee9de33
-ms.sourcegitcommit: 090ea6e8811663941827d1104b4593e29774fa19
+ms.openlocfilehash: 0d98d5103e26eb0b4ee0d31b95f1d07cdaa396ae
+ms.sourcegitcommit: dd45ae4fc54f8267cda2ddf4a92ccd123464d411
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91999009"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92927589"
 ---
 # <a name="use-the-studio-to-deploy-models-trained-in-the-designer"></a>Развертывание моделей, обученных в конструкторе, с помощью студии
 
@@ -33,7 +33,7 @@ ms.locfileid: "91999009"
 
 Модели, обученные в конструкторе, также можно развернуть с помощью пакета SDK или интерфейса командной строки (CLI). Дополнительные сведения см. в статье [развертывание существующей модели с помощью машинное обучение Azure](how-to-deploy-existing-model.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * [Рабочая область Машинное обучение Azure](how-to-manage-workspace.md)
 
@@ -56,7 +56,7 @@ ms.locfileid: "91999009"
 
     ![Снимок экрана с правой панелью модуля обучения модели](./media/how-to-deploy-model-designer/train-model-right-pane.png)
 
-1. Введите имя модели, а затем нажмите кнопку **сохранить**.
+1. Введите имя модели, а затем нажмите кнопку **сохранить** .
 
 После регистрации модели ее можно найти на странице ресурсов **модели** в студии.
     
@@ -104,8 +104,8 @@ ms.locfileid: "91999009"
 
     - Введите имя конечной точки.
     - Выберите, чтобы развернуть модель в [службе Azure Kubernetes](how-to-deploy-azure-kubernetes-service.md) или в [экземпляре контейнера Azure](how-to-deploy-azure-container-instance.md).
-    - Отправьте объект `score.py` для **файла скрипта записи**.
-    - Отправьте `conda_env.yml` **файл для файла зависимостей Conda**. 
+    - Отправьте объект `score.py` для **файла скрипта записи** .
+    - Отправьте `conda_env.yml` **файл для файла зависимостей Conda** . 
 
     >[!TIP]
     > В **дополнительном** параметре можно задать емкость ЦП/памяти и другие параметры для развертывания. Эти параметры важны для некоторых моделей, таких как модели PyTorch, которые потребляют значительный объем Мемери (около 4 ГБ).
@@ -299,6 +299,7 @@ score_params = dict(
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Обучение модели в конструкторе](tutorial-designer-automobile-price-train-score.md)
+* [Развертывание моделей с помощью пакета SDK для Машинное обучение Azure](how-to-deploy-and-where.md)
 * [Устранение неполадок при развертывании](how-to-troubleshoot-deployment.md)
 * [развертывание в Службе Azure Kubernetes](how-to-deploy-azure-kubernetes-service.md).
 * [Создание клиентских приложений для использования веб-служб](how-to-consume-web-service.md)

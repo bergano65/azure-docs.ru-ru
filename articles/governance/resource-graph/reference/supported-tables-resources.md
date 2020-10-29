@@ -1,19 +1,19 @@
 ---
 title: Поддерживаемые типы ресурсов Azure Resource Manager
 description: Укажите список типов ресурсов Azure Resource Manager, поддерживаемых графиком ресурсов Azure и журналом изменений.
-ms.date: 09/30/2020
+ms.date: 10/28/2020
 ms.topic: reference
 ms.custom: generated
-ms.openlocfilehash: 385ee96fa821b8d90ff529fecb52dbec9803dea2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e604fe7c5e3a7f40e31f43db64bcd59ae0545ac0
+ms.sourcegitcommit: dd45ae4fc54f8267cda2ddf4a92ccd123464d411
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91740009"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92927572"
 ---
 # <a name="azure-resource-graph-table-and-resource-type-reference"></a>Таблица Azure Resource Graph и сведения о типах ресурсов
 
-Azure Resource Graph поддерживает следующие **типы ресурсов**, создаваемые в [Azure Resource Manager](../../../azure-resource-manager/management/overview.md). Каждый **тип ресурса** является частью **таблицы** в Resource Graph.
+Azure Resource Graph поддерживает следующие **типы ресурсов** , создаваемые в [Azure Resource Manager](../../../azure-resource-manager/management/overview.md). Каждый **тип ресурса** является частью **таблицы** в Resource Graph.
 
 ## <a name="advisorresources"></a>advisorresources
 
@@ -30,14 +30,14 @@ Azure Resource Graph поддерживает следующие **типы ре
 
 - Microsoft. гуестконфигуратион/гуестконфигуратионассигнментс
 
-## <a name="healthresources"></a>healthresources
-
-- microsoft.resourcehealth/events
-
 ## <a name="maintenanceresources"></a>maintenanceresources
 
 - microsoft.maintenance/configurationassignments
 - microsoft.maintenance/updates
+
+## <a name="policyresources"></a>полициресаурцес
+
+- Microsoft. полициинсигхтс/полицистатес
 
 ## <a name="resourcecontainers"></a>resourcecontainers
 
@@ -71,6 +71,7 @@ Azure Resource Graph поддерживает следующие **типы ре
 - microsoft.alertsmanagement/smartdetectoralertrules
 - microsoft.analysisservices/servers
 - microsoft.apimanagement/service
+- Microsoft. аппассессмент/мигратепрожектс
 - microsoft.appconfiguration/configurationstores
 - microsoft.appplatform/spring
 - microsoft.archive/collections
@@ -107,6 +108,7 @@ Azure Resource Graph поддерживает следующие **типы ре
 - microsoft.batchai/fileservers
 - microsoft.batchai/jobs
 - microsoft.batchai/workspaces
+- Microsoft. Bing/учетные записи
 - microsoft.bingmaps/mapapis
 - microsoft.biztalkservices/biztalk
 - microsoft.blockchain/blockchainmembers
@@ -135,6 +137,7 @@ Azure Resource Graph поддерживает следующие **типы ре
 - microsoft.cognition/syntheticsaccounts
 - microsoft.cognitiveservices/accounts
 - microsoft.compute/availabilitysets
+- Microsoft. COMPUTE/клаудсервицес
 - microsoft.compute/diskaccesses
 - microsoft.compute/diskencryptionsets
 - microsoft.compute/disks
@@ -202,6 +205,8 @@ Azure Resource Graph поддерживает следующие **типы ре
 - microsoft.dbforpostgresql/servers
 - microsoft.dbforpostgresql/serversv2
 - microsoft.dbforpostgresql/singleservers
+- Microsoft. делегатеднетворк/делегатедсубнетс
+- Microsoft. делегатеднетворк/орчестраторинстанцес
 - microsoft.deploymentmanager/artifactsources
 - microsoft.deploymentmanager/rollouts
 - microsoft.deploymentmanager/servicetopologies
@@ -251,8 +256,10 @@ Azure Resource Graph поддерживает следующие **типы ре
 - microsoft.healthcareapis/services/privateendpointconnections
 - microsoft.hybridcompute/machines
 - microsoft.hybridcompute/machines/extensions
+- Microsoft. хибридкомпуте/привателинкскопес
 - microsoft.hybriddata/datamanagers
 - Microsoft. хибриднетворк/Devices
+- Microsoft. хибриднетворк/нетворкфунктионс
 - Microsoft. хибриднетворк/виртуалнетворкфунктионс
 - microsoft.importexport/jobs
 - Microsoft. индустридаталифецикле/басемоделс
@@ -297,6 +304,8 @@ Azure Resource Graph поддерживает следующие **типы ре
 - microsoft.machinelearningservices/workspaces
 - Microsoft. мачинелеарнингсервицес/workspaces/инференцеендпоинтс
 - Microsoft. мачинелеарнингсервицес/workspaces/инференцеендпоинтс/развертывания
+- Microsoft. мачинелеарнингсервицес/workspaces/онлининдпоинтс
+- Microsoft. мачинелеарнингсервицес/workspaces/онлининдпоинтс/развертывания
 - microsoft.maintenance/maintenanceconfigurations
 - microsoft.maintenance/maintenancepolicies
 - microsoft.managedidentity/groups
@@ -395,9 +404,12 @@ Azure Resource Graph поддерживает следующие **типы ре
 - microsoft.objectstore/osnamespaces
 - microsoft.offazure/hypervsites
 - microsoft.offazure/importsites
+- Microsoft. оффазуре/мастерситес
 - microsoft.offazure/serversites
 - microsoft.offazure/vmwaresites
+- Microsoft. опенлогистиксплатформ/рабочие области
 - microsoft.operationalinsights/clusters
+- Microsoft. operationalinsights/куерипаккс
 - microsoft.operationalinsights/workspaces
 - microsoft.operationsmanagement/solutions
 - microsoft.operationsmanagement/views
@@ -417,6 +429,7 @@ Azure Resource Graph поддерживает следующие **типы ре
 - microsoft.redhatopenshift/openshiftclusters
 - microsoft.relay/namespaces
 - microsoft.remoteapp/collections
+- Microsoft. устойчивость/чаосекспериментс
 - microsoft.resourcegraph/queries
 - microsoft.resources/deploymentscripts
 - microsoft.resources/templatespecs
@@ -471,6 +484,7 @@ Azure Resource Graph поддерживает следующие **типы ре
 - Microsoft. streamanalytics/кластеры
 - microsoft.streamanalytics/streamingjobs
 - Microsoft. Свифтлет/virtualmachines
+- Microsoft. Свифтлет/виртуалмачинеснапшотс
 - Microsoft. синапсе/привателинкхубс
 - microsoft.synapse/workspaces
 - microsoft.synapse/workspaces/bigdatapools
@@ -553,6 +567,10 @@ Azure Resource Graph поддерживает следующие **типы ре
 - microsoft.security/regulatorycompliancestandards/regulatorycompliancecontrols/regulatorycomplianceassessments
 - Microsoft. Security/секурескорес
 - Microsoft. Security/секурескорес/секурескореконтролс
+
+## <a name="servicehealthresources"></a>сервицехеалсресаурцес
+
+- microsoft.resourcehealth/events
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

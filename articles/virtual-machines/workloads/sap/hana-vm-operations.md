@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 10/01/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 602e3f58ac5f8f194ad4704a4e792d4f0aec3a3e
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 19abb3f12dc1a0fd2a3dff548ecdc9e7fff47659
+ms.sourcegitcommit: dd45ae4fc54f8267cda2ddf4a92ccd123464d411
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91978787"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92927674"
 ---
 # <a name="sap-hana-infrastructure-configurations-and-operations-on-azure"></a>Конфигурации инфраструктуры SAP HANA и работа с ней в Azure
 Этот документ содержит рекомендации по настройке архитектуры и работе с системами SAP HANA, развернутыми на виртуальных машинах Azure. Здесь также приведены сведения о настройке горизонтального масштабирования SAP HANA для номера SKU виртуальных машин M128s. Он не предназначен для замены стандартной документации SAP, к которой относятся следующие ресурсы:
@@ -135,7 +135,7 @@ ms.locfileid: "91978787"
 
 Стандартная базовая архитектура для одного узла в конфигурации с горизонтальным увеличением масштаба будет выглядеть так:
 
-![Основы горизонтального масштабирования одного узла](media/hana-vm-operations/scale-out-basics-anf-shared.PNG)
+![Схема, на которой показан типичный базовый проект для одного узла в конфигурации с горизонтальным масштабированием.](media/hana-vm-operations/scale-out-basics-anf-shared.PNG)
 
 Базовая конфигурация узла виртуальной машины для горизонтального масштабирования SAP HANA выглядит так:
 
